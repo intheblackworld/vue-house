@@ -1,8 +1,7 @@
 <template>
-  <div class="">
-    <button
-      v-scroll-to="{ element: '#section1', offset: 0, duration: 1000 }"
-    >section1</button>
+  <div class="contact" id="contact">
+    <Order />
+    <HouseInfo />
   </div>
 </template>
 <style lang="scss" scoped>
@@ -10,9 +9,15 @@
 </style>
 
 <script>
+import Order from '@/components/Order.vue'
+import HouseInfo from '@/components/HouseInfo.vue'
+
 export default {
   name: 'contactSection',
-  components: {},
+  components: {
+    Order,
+    HouseInfo,
+  },
 
   methods: {},
 }

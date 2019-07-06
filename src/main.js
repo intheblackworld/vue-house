@@ -15,11 +15,30 @@ import VueScrollTo from 'vue-scrollto' // scroll 錨點
 import VueLazyload from 'vue-lazyload' // 圖片 lazy load
 import VueScrollReveal from 'vue-scroll-reveal'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import {
+  faBars,
+  faTimes,
+  faPhone,
+  faPen,
+  faMapMarkerAlt
+} from '@fortawesome/free-solid-svg-icons'
+
+import { faFacebookMessenger, faFacebookF } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import VueSvgIcon from 'vue-svgicon'
 
 library.add(faBars)
+library.add(faTimes)
+library.add(faPhone)
+library.add(faPen)
+library.add(faFacebookMessenger)
+library.add(faFacebookF)
+library.add(faMapMarkerAlt)
+
 Vue.component('font-awesome-icon', FontAwesomeIcon)
+Vue.use(VueSvgIcon, {
+  tagName: 'icon'
+})
 
 Vue.use(config)
 

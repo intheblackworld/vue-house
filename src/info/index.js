@@ -10,4 +10,8 @@ export default {
 
   houseInfos: [['接待中心', '新北市五股區新五路三段二號旁'], ['聯絡電話', '02-22931666']],
   gtmCode: ['W6Z9NXS'], // 可放置多個
+  order: {
+    title: '預約賞屋',
+    subTitle: '買得起，住更好'
+  },
 }

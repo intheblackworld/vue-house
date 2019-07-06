@@ -7,11 +7,11 @@
           <div class="menu" @click="toggleSidebar">
             <font-awesome-icon icon="bars" />
           </div>
-          <div class="mask" @click="toggleSidebar" />
+          <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
             <li
               :key="item.name"
-              v-scroll-to="{ element: `#${item.element}`, offset: 0 }"
+              v-scroll-to="{ element: `#${item.section}`, offset: offset }"
               v-for="item in list"
             >
               <span class="link">
@@ -30,42 +30,32 @@
 </template>
 
 <script>
+import { isMobile, isTablet } from '@/utils'
+import navList from '@/info/navList'
 export default {
   name: 'navigation',
   components: {},
   data() {
     return {
       isOpen: false,
-      list: [
-        {
-          name: '翻轉東區',
-          imgSrc: '',
-          subTitle: '',
-          section: 'section2',
-        },
-
-        {
-          name: '精彩生活',
-          imgSrc: '',
-          subTitle: '',
-          section: 'section3',
-        },
-
-        {
-          name: '頂級御所',
-          imgSrc: '',
-          subTitle: '',
-          section: 'section4',
-        },
-
-        {
-          name: '珍藏精工',
-          imgSrc: '',
-          subTitle: '',
-          section: 'section5',
-        },
-      ],
+      isMobile,
+      isTablet,
+      list: navList,
     }
+  },
+
+  computed: {
+    offset() {
+      if (this.isMobile) {
+        return -45
+      }
+
+      if (this.isTablet) {
+        return -60
+      }
+
+      return -80
+    },
   },
 
   methods: {
@@ -75,7 +65,6 @@ export default {
   },
 }
 </script>
-
 
 <style lang="scss" scoped>
 @import '../assets/style/variableColor.scss';
@@ -202,6 +191,7 @@ export default {
 @media only screen and (max-width: 767px) {
   .navigation {
     height: $nav_phone_height;
+    z-index: 110;
   }
 
   .logo {
@@ -227,6 +217,7 @@ export default {
 
   .navlist {
     position: absolute;
+    z-index: 111;
     background: $nav_bg;
     width: 0%;
     right: 0;
@@ -275,16 +266,17 @@ export default {
   }
 
   .mask {
-    width: 0;
+    width: 100vw;
     top: $nav_phone_height;
     right: 0;
-    display: block;
     background: rgba(0, 0, 0, 0.5);
-    position: absolute;
+    position: fixed;
+    z-index: 110;
     height: calc(100vh - #{$nav_phone_height});
     opacity: 0;
     transition: all 0.3s ease-in;
     &.open {
+      display: block;
       width: 100vw;
       opacity: 1;
     }

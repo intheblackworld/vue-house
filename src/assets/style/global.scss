@@ -1,10 +1,19 @@
 @import './animate.scss';
 @import './variableDefault.scss';
+@import './variableColor.scss';
+@import './form.scss';
+@import './dialog.scss';
 @import './fonts.scss';
 @import './reset.scss';
+@import './customClass.scss';
 
+html,
 body {
-  background: #fff !important;
+  background: $bg !important;
+  overflow-x: hidden;
+  *::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 #app {
@@ -108,7 +117,7 @@ img[lazy='loaded'] {
 
   .home {
     padding-top: $nav_tablet_height;
-  
+
     &.no-padding-top {
       padding-top: 0;
     }
@@ -123,7 +132,7 @@ img[lazy='loaded'] {
 
   .home {
     padding-top: $nav_phone_height;
-  
+
     &.no-padding-top {
       padding-top: 0;
     }
