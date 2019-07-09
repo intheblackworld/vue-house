@@ -8,22 +8,32 @@
           {{info.phone}}
         </span>
       </div>
-      <div class="btn flex-c">
+      <div class="btn flex-c" v-if="isMobile">
         <span class="flex-c" @click="showMessengerDialog">
           <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB Messenger 諮詢
         </span>
       </div>
+      <a class="btn flex-c" :href="info.fbMessage" target="_blank" v-else>
+        <span class="flex-c">
+          <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB Messenger 諮詢
+        </span>
+      </a>
       <a class="btn flex-c" :href="info.fbLink" target="_blank">
         <span class="flex-c">
           <font-awesome-icon :icon="['fab', 'facebook-f']" />前往粉絲專頁
         </span>
       </a>
       <div class="address flex-c">{{info.address}}</div>
-      <div class="google-btn flex-c" @click="showMapDialog">
-        <span class="flex-c">
+      <div class="btn flex-c" v-if="isMobile">
+        <span class="flex-c" @click="showMapDialog">
           <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
         </span>
       </div>
+      <a class="google-btn flex-c" :href="info.googleLink" target="_blank" v-else>
+        <span class="flex-c">
+          <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
+        </span>
+      </a>
       <el-dialog title :visible.sync="isShowCallDialog" width="90%" :modal-append-to-body="false">
         <CallDialog :phone="info.phone" />
       </el-dialog>
@@ -35,7 +45,12 @@
       >
         <MessengerDialog :messenger="info.fbMessage" />
       </el-dialog>
-      <el-dialog title :visible.sync="isShowMapDialog" width="90%" :modal-append-to-body="false">
+      <el-dialog
+        title
+        :visible.sync="isShowMapDialog"
+        width="90%"
+        :modal-append-to-body="false"
+      >
         <MapDialog :link="info.googleLink" :address="info.address" />
       </el-dialog>
     </div>
@@ -68,16 +83,16 @@ export default {
   },
   methods: {
     showCallDialog() {
-      if (this.isMobile) return
+      if (!this.isMobile) return
       this.isShowCallDialog = true
     },
     showMessengerDialog() {
-      if (this.isMobile) return
+      if (!this.isMobile) return
       this.isShowMessengerDialog = true
     },
 
     showMapDialog() {
-      if (this.isMobile) return
+      if (!this.isMobile) return
       this.isShowMapDialog = true
     },
   },
@@ -157,6 +172,7 @@ export default {
   height: 60px;
   font-size: 16px;
   cursor: pointer;
+  text-decoration: none;
   color: $contact_google_btn_color;
   background: $contact_google_btn_bg;
   box-shadow: $contact_btn_border;

@@ -30,7 +30,7 @@ export default {
 @import '@/assets/style/variableColor.scss';
 .house-info {
   width: 100vw;
-  backgorund: $house_bg;
+  background: $house_bg;
 }
 .content {
   width: 686px;
