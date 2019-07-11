@@ -1,5 +1,5 @@
 <template>
-  <div class="mobile-nav">
+  <div :class="{ 'mobile-nav': true, 'is-bottom': isBottom }">
     <a class="nav-item" @click="showCallDialog">
       <font-awesome-icon icon="phone" />
       <div class="label">撥打電話</div>
@@ -20,7 +20,12 @@
     <el-dialog title :visible.sync="isShowCallDialog" width="90%" :modal-append-to-body="false">
       <CallDialog :phone="info.phone" />
     </el-dialog>
-    <el-dialog title :visible.sync="isShowMessengerDialog" width="90%" :modal-append-to-body="false">
+    <el-dialog
+      title
+      :visible.sync="isShowMessengerDialog"
+      width="90%"
+      :modal-append-to-body="false"
+    >
       <MessengerDialog :messenger="info.fbMessage" />
     </el-dialog>
     <el-dialog title :visible.sync="isShowMapDialog" width="90%" :modal-append-to-body="false">
@@ -41,7 +46,7 @@ export default {
   components: {
     CallDialog,
     MessengerDialog,
-    MapDialog
+    MapDialog,
   },
   data() {
     return {
@@ -49,6 +54,7 @@ export default {
 
       isMobile,
       isTablet,
+      isBottom: false,
       isShowCallDialog: false,
       isShowMessengerDialog: false,
       isShowMapDialog: false,
@@ -78,6 +84,24 @@ export default {
     showMapDialog() {
       this.isShowMapDialog = true
     },
+
+    handleScroll() {
+      const d = document.documentElement
+      const offset = d.scrollTop + window.innerHeight
+      const height = document.querySelector('#app').offsetHeight
+      console.log('offset: ', offset)
+      console.log('height: ', height)
+      if (offset >= height) {
+        console.log('bottom!')
+        this.isBottom = true
+      } else {
+        this.isBottom = false
+      }
+    }
+  },
+
+  created() {
+    window.addEventListener('scroll', this.handleScroll)
   },
 }
 </script>
@@ -95,6 +119,11 @@ export default {
   z-index: 100;
   box-shadow: 0 -2px 5px 0 #000;
   display: none;
+  transition: all .5s;
+
+  &.is-bottom {
+    bottom: 40px;
+  }
 
   .nav-item {
     flex: 1;
