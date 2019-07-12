@@ -14,7 +14,7 @@
     mysql_query("SET NAMES UTF8");
     mysql_select_db($db_name, $con);
 
-    $query = "SELECT tomail FROM susers WHERE email = 'wj'";
+    $query = "SELECT tomail FROM susers WHERE email = 'lkf'";
     $result = mysql_query($query, $con);
     $row = mysql_fetch_row($result);
 
@@ -53,7 +53,7 @@
     $utm_content = $_POST['utm_content'];
     $utm_campaign = $_POST['utm_campaign'];
     
-    $case_name = "立信吾界";
+    $case_name = "蘭桂坊";
 
     // echo $name;
     // echo "<br>";
