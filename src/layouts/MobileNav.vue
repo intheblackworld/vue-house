@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ 'mobile-nav': true, 'is-bottom': isBottom }">
+  <div :class="{ 'mobile-nav': true }">
     <a class="nav-item" @click="showCallDialog">
       <font-awesome-icon icon="phone" />
       <div class="label">撥打電話</div>
@@ -84,24 +84,6 @@ export default {
     showMapDialog() {
       this.isShowMapDialog = true
     },
-
-    handleScroll() {
-      const d = document.documentElement
-      const offset = d.scrollTop + window.innerHeight
-      const height = document.querySelector('#app').offsetHeight
-      console.log('offset: ', offset)
-      console.log('height: ', height)
-      if (offset >= height) {
-        console.log('bottom!')
-        this.isBottom = true
-      } else {
-        this.isBottom = false
-      }
-    }
-  },
-
-  created() {
-    window.addEventListener('scroll', this.handleScroll)
   },
 }
 </script>
@@ -120,10 +102,6 @@ export default {
   box-shadow: 0 -2px 5px 0 #000;
   display: none;
   transition: all .5s;
-
-  &.is-bottom {
-    bottom: 40px;
-  }
 
   .nav-item {
     flex: 1;

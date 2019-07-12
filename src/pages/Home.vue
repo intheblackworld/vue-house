@@ -5,12 +5,6 @@
     <div id="section1">
       <Section1 />
     </div>
-    <div id="section2">
-      <Section1 />
-    </div>
-    <div id="section3">
-      <Section1 />
-    </div>
     <ContactSection />
     <MobileNav />
     <AdminFooter />
@@ -25,7 +19,7 @@ import AdminFooter from '@/layouts/Footer.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import gtm from '@/mixins/gtm.js'
 
-import Section1 from '@/projects/base/Section1.vue'
+import Section1 from '@/projects/lkf/Section1.vue'
 
 export default {
   name: 'home',

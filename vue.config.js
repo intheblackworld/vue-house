@@ -14,6 +14,11 @@ module.exports = {
     }
   },
 
+  devServer: {
+    port: 9000, // CHANGE YOUR PORT HERE!
+    https: false,
+  },
+
   chainWebpack: config => {
     config.module.rules.delete('svg') // 重点:删除默认配置中处理svg,
     // const svgRule = config.module.rule('svg')

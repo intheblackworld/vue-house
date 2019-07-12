@@ -71,7 +71,9 @@ export default {
 @import '../assets/style/variableDefault.scss';
 
 .navigation {
-  background: $nav_bg;
+  background-color: $nav_bg;
+  background-image: $nav_bg;
+  background-size: cover;
   height: $nav_pc_height;
   z-index: 10;
   position: fixed;
