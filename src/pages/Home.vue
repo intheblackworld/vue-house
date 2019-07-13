@@ -7,7 +7,6 @@
     </div>
     <ContactSection />
     <MobileNav />
-    <AdminFooter />
   </div>
 </template>
 
@@ -15,7 +14,6 @@
 // @ is an alias to /src
 import Navigation from '@/layouts/Navigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
-import AdminFooter from '@/layouts/Footer.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import gtm from '@/mixins/gtm.js'
 
@@ -27,7 +25,6 @@ export default {
   components: {
     Navigation,
     ContactSection,
-    AdminFooter,
     MobileNav,
 
     Section1,

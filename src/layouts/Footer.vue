@@ -8,6 +8,7 @@
 .footer {
   width: 100%;
   height: 40px;
+  margin-bottom: 63px;
   background: #302626;
   display: flex;
   align-items: center;
@@ -28,6 +29,7 @@
   a {
     font-size: 12px;
     color: #fff;
+    text-decoration: none;
   }
 }
 
