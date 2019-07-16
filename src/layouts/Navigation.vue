@@ -47,14 +47,14 @@ export default {
   computed: {
     offset() {
       if (this.isMobile) {
-        return -45
+        return -39
       }
 
       if (this.isTablet) {
-        return -60
+        return -45
       }
 
-      return -80
+      return -56
     },
   },
 
@@ -167,9 +167,14 @@ export default {
     // left: -240px;
   }
 
+  .navlist {
+    width: 70%;
+  }
+
   .navlist .link {
     font-size: 12px;
-    width: 120px;
+    width: 70px;
+    white-space: nowrap;
 
     img {
       height: 35px;
