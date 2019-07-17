@@ -130,7 +130,7 @@ export default {
     }
 
     .title {
-      font-size: 22px;
+      font-size: 22px !important;
     }
 
     .subTitle {
