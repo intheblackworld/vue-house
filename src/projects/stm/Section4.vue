@@ -2,9 +2,17 @@
   <div class="section4">
     <div class="container">
       <h3 class="title flex-c" v-scroll-reveal.reset="!isMobile ? $fadeInUp(0) : $fadeInUp()">心靈時區</h3>
-      <h3 class="sub-title" v-scroll-reveal.reset="!isMobile ? $fadeInUp(300) : $fadeInUp()">遠離塵囂心自靜 近擁雙北核心圈</h3>
+      <h3
+        class="sub-title"
+        v-scroll-reveal.reset="!isMobile ? $fadeInUp(300) : $fadeInUp()"
+      >遠離塵囂心自靜 近擁雙北核心圈</h3>
       <div class="flex row">
-        <img v-scroll-reveal.reset="!isMobile ? $fadeInRight(600) : $fadeInUp()" class="img1" src="./s4_img1.png" alt />
+        <img
+          v-scroll-reveal.reset="!isMobile ? $fadeInRight(600) : $fadeInUp()"
+          class="img1"
+          src="./s4_img1.png"
+          alt
+        />
         <div class="text" v-scroll-reveal.reset="!isMobile ? $fadeInUp(600) : $fadeInUp()">
           <div class="item">
             <h3 class="label-title">
@@ -42,9 +50,21 @@
           </div>
         </div>
       </div>
+      <h3
+        class="gold-title"
+        v-scroll-reveal.reset="!isMobile ? $fadeInUp(900) : $fadeInUp()"
+      >五股交通大樞紐</h3>
       <div class="flex row small flex-c wrap">
-        <img v-scroll-reveal.reset="!isMobile ? $fadeInRight(900) : $fadeInUp()" class="map" src="./s4_map.png" alt />
-        <div class="slide relative" v-scroll-reveal.reset="!isMobile ? $fadeInLeft(900) : $fadeInUp()">
+        <img
+          v-scroll-reveal.reset="!isMobile ? $fadeInRight(900) : $fadeInUp()"
+          class="map"
+          src="./s4_map.png"
+          alt
+        />
+        <div
+          class="slide relative"
+          v-scroll-reveal.reset="!isMobile ? $fadeInLeft(900) : $fadeInUp()"
+        >
           <img
             v-for="(slide, index) in slideList"
             :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
@@ -115,6 +135,14 @@
       line-height: 1.44;
       color: #4d4d4d;
     }
+  }
+
+  .gold-title {
+    font-size: 32px;
+    color: #7b8125;
+    padding-left: 150px;
+    text-align: left;
+    margin-bottom: 30px;
   }
 
   .map {
@@ -275,6 +303,11 @@
       }
     }
 
+    .gold-title {
+      padding-left: 30px;
+      font-size: 23px;
+    }
+
     .map {
       width: 100vw;
       margin-right: 0px;
@@ -323,7 +356,7 @@ export default {
         },
         {
           src: require('./s4_item2.png'),
-        }
+        },
       ],
     }
   },

@@ -245,7 +245,7 @@
         .slide-desc {
           width: 100vw;
           padding-top: 0px;
-          padding: 10px 15px;
+          padding: 20px 15px 10px;
           text-align: left;
           color: #1a2739;
           background-color: #9ca5b2;

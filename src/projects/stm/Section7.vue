@@ -19,7 +19,7 @@
       <div
         class="section-sub-title"
         v-scroll-reveal.reset="!isMobile ? $fadeInUp(900) : $fadeInUp()"
-      >春木林團隊，向來只開發中大型基地</div>
+      >春木林團隊，以開發大型基地為主軸</div>
       <div class="list-container flex wrap" v-if="!isMobile">
         <div class="list-item" v-scroll-reveal.reset="$fadeInLeft(900)">
           <h3 class="list-label">01</h3>
@@ -205,24 +205,24 @@
     background-size: cover;
     background-image: url('./s7_section_bg_m.png');
     color: #fff;
-    padding-top: 80px;
+    padding-top: 60px;
     margin-bottom: 50px;
 
     .section-title {
-      font-size: 17px;
-      margin-bottom: 15px;
+      font-size: 20px;
+      margin-bottom: 12px;
     }
 
     .section-sub-title {
-      font-size: 14px;
-      margin-bottom: 20px;
+      font-size: 17px;
+      margin-bottom: 15px;
     }
 
     .list-container {
       width: 100vw;
       margin: 0 auto;
       .list-item {
-        width: 220px;
+        width: 230px;
         text-align: left;
         margin: 0 auto;
         margin-bottom: 15px;
@@ -242,15 +242,15 @@
         .list-label {
           height: 23px;
           border-left: 7px solid rgba(255, 255, 255, 0.3);
-          font-size: 14px;
+          font-size: 16px;
           padding-left: 15px;
           padding-top: 3px;
         }
 
         .list-desc {
-          padding-left: 20px;
+          padding-left: 15px;
           padding-top: 5px;
-          font-size: 14px;
+          font-size: 16px;
         }
       }
     }

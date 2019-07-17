@@ -168,7 +168,7 @@
         width: 150px;
         height: 184px;
         h3 {
-          margin-top: 140px;
+          margin-top: 90px;
           font-size: 18px;
           border-bottom: 3px solid #fff;
           padding-bottom: 7px;
@@ -234,13 +234,13 @@
       margin-top: 15px;
 
       .title {
-        font-size: 14px;
+        font-size: 16px;
         color: #2b466f;
         margin-bottom: 10px;
       }
 
       .desc {
-        font-size: 12px;
+        font-size: 14px;
         line-height: 1.5;
         color: #4d4d4d;
         margin-bottom: 30px;
@@ -318,7 +318,7 @@ export default {
   mounted() {
     window.setTimeout(() => {
       this.loading = false
-    }, 800)
+    }, 2000)
   },
 }
 </script>

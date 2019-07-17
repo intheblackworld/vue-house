@@ -189,7 +189,7 @@
       margin-top: 40px;
       > div {
         height: 200px;
-        margin-bottom: 20px;
+        margin-bottom: 35px;
 
         &:nth-last-child(1) {
           margin: 0 auto;
@@ -231,7 +231,7 @@
 
       .border {
         width: 100%;
-        height: auto;
+        height: 50vw;
         padding: 5px;
         position: relative;
         border-radius: 50% 50%;

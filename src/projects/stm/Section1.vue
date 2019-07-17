@@ -2,9 +2,9 @@
   <div class="section1">
     <Loading :loading="loading" />
     <!-- 背景圖覽家仔 -->
-    <div
-      class="lazy-bg fullscreen bg-cover no-nav flex-c"
-      v-lazy:background-image="require('./s1_bg.png')"
+    <section
+      class="fullscreen bg-cover no-nav flex-c bg"
+      v-scroll-reveal.reset="$fadeInUp()"
     >
       <div class="container">
         <img class="slogan" v-scroll-reveal.reset="$fadeInUp()" src="./title.png" />
@@ -14,10 +14,13 @@
           <p v-scroll-reveal.reset="$fadeInUp(900)">不論世界怎麼變，在心底總有一畝不變的記憶</p>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 <style lang="scss" scoped>
+.bg {
+  background-image: url('./s1_bg.png');
+}
 .container {
   width: 920px;
   height: 494px;
