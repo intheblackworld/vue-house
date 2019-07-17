@@ -127,7 +127,7 @@ img[lazy='loaded'] {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .fullscreen {
-    height: calc(100vh - #{$nav_phone_height});
+    height: calc(100vh - #{$nav_phone_height} - 63px);
   }
 
   .home {

@@ -10,12 +10,12 @@
       </div>
       <div class="btn flex-c" v-if="isMobile">
         <span class="flex-c" @click="showMessengerDialog">
-          <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB Messenger 諮詢
+          <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB 諮詢
         </span>
       </div>
       <a class="btn flex-c" :href="info.fbMessage" target="_blank" v-else>
         <span class="flex-c">
-          <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB Messenger 諮詢
+          <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB 諮詢
         </span>
       </a>
       <a class="btn flex-c" :href="info.fbLink" target="_blank">

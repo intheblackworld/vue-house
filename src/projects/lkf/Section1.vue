@@ -5,32 +5,49 @@
     <!-- <div class="lazy-bg fullscreen" v-lazy:background-image="require('./s1_bg.jpg')">
       
     </div>-->
-    <section v-scroll-reveal.reset="$fadeInDown()">
-      <img src="./s1_bg.jpg" class="img" />
+    <div class="fullscreen bg" v-scroll-reveal.reset="$fadeInDown()">
       <img src="./s1_footer.png" class="img" />
+      <img src="./s1_footer_m.png" class="imgM" />
+    </div>
+    <!-- <section v-scroll-reveal.reset="$fadeInDown()">
+      <img src="./s1_bg.jpg" class="img" />
+      
       <img src="./s1_bg_m.jpg" class="imgM" />
       <img src="./s1_footer_m.png" class="imgM" />
-    </section>
+    </section>-->
   </div>
 </template>
 <style lang="scss" scoped>
-.img {
-  display: block;
-  width: 100vw;
-}
+.bg {
+  background-image: url('./s1_bg.jpg');
+  background-position: center;
+  background-size: cover;
+  position: relative;
 
-.imgM {
-  width: 100vw;
-  display: block;
-  display: none;
+  .img {
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+    left: 0;
+  }
+
+  .imgM {
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+    left: 0;
+    display: none;
+  }
 }
 
 @media screen and (max-width: 767px) {
-  .img {
-    display: none;
-  }
-  .imgM {
-    display: block;
+  .bg {
+    .img {
+      display: none;
+    }
+    .imgM {
+      display: block;
+    }
   }
 }
 </style>
