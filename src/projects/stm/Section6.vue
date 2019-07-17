@@ -188,7 +188,7 @@
     .item-container {
       margin-top: 40px;
       > div {
-        height: 200px;
+        height: 240px;
         margin-bottom: 35px;
 
         &:nth-last-child(1) {
@@ -237,7 +237,7 @@
         border-radius: 50% 50%;
         box-shadow: inset 0 0 0 0px #638ece;
         transition: all 0.7s;
-        margin-bottom: 20px;
+        margin-bottom: 35px;
       }
 
       .in-border {
