@@ -8,7 +8,7 @@
           :key="item.src"
           v-scroll-reveal.reset="$fadeInRight(300 * index)"
         >
-          <img :src="item.src" alt />
+          <img :src="item.src" alt="心天畝的圖片" />
           <div class="mask flex-c absolute wrap">
             <h3>{{item.title}}</h3>
             <p v-html="item.desc"></p>
@@ -16,7 +16,7 @@
         </div>
       </div>
       <div class="row flex">
-        <img v-scroll-reveal.reset="$fadeInUp(600)" src="./s8_tree.png" alt class="tree" />
+        <img v-scroll-reveal.reset="$fadeInUp(600)" src="./s8_tree.png" alt="心天畝的圖片" class="tree" />
         <div class="text">
           <h3 class="title" v-scroll-reveal.reset="$fadeInUp(300)">吃果子拜樹頭，效法大樹共好精神</h3>
           <div class="desc" v-scroll-reveal.reset="$fadeInUp(400)">
@@ -49,7 +49,7 @@
           <h3 class="title" v-scroll-reveal.reset="$fadeInUp(400)">用心把房子蓋到最好</h3>
           <div class="desc" v-scroll-reveal.reset="$fadeInUp(500)">耕耘建築，收穫幸福</div>
         </div>
-        <img v-scroll-reveal.reset="$fadeInUp(600)" src="./s8_tree.png" alt class="tree" />
+        <img v-scroll-reveal.reset="$fadeInUp(600)" src="./s8_tree.png" alt="心天畝的圖片" class="tree" />
       </div>
       <div class="slide relative" v-scroll-reveal.reset="$fadeInUp(700)">
         <img
@@ -60,13 +60,13 @@
           alt
         />
         <div class="btn-group flex-jb flex-ac">
-          <img @click="addIndex" src="./small_left_btn.png" alt />
+          <img @click="addIndex" src="./small_left_btn.png" alt="心天畝的圖片" />
           <div class="slide-text">
             <h3>{{slideList[slideIndex].title}}</h3>
             <hr />
             <p v-html="slideList[slideIndex].desc"></p>
           </div>
-          <img @click="decIndex" src="./small_right_btn.png" alt />
+          <img @click="decIndex" src="./small_right_btn.png" alt="心天畝的圖片" />
         </div>
       </div>
     </div>

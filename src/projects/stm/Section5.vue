@@ -15,15 +15,15 @@
           :src="slide.src"
           alt
         />
-        <img class="left-btn" @click="addIndex" src="./left_btn.png" alt />
-        <img class="right-btn" @click="decIndex" src="./right_btn.png" alt />
+        <img class="left-btn" @click="addIndex" src="./left_btn.png" alt="心天畝的圖片" />
+        <img class="right-btn" @click="decIndex" src="./right_btn.png" alt="心天畝的圖片" />
         <div class="slide-content">
           <div class="slide-title">{{slideList[slideIndex].title}}</div>
           <div class="slide-desc" v-html="slideList[slideIndex].desc"></div>
         </div>
         <div class="btn-group flex-jb flex-ac">
-          <img @click="addIndex" src="./small_left_btn.png" alt />
-          <img @click="decIndex" src="./small_right_btn.png" alt />
+          <img @click="addIndex" src="./small_left_btn.png" alt="心天畝的圖片" />
+          <img @click="decIndex" src="./small_right_btn.png" alt="心天畝的圖片" />
         </div>
       </div>
     </div>

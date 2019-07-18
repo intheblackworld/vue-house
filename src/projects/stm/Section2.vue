@@ -34,7 +34,7 @@
       </div>
       <div class="video-container relative" v-scroll-reveal.reset="$fadeInUp(1000, 2500)">
         <div :class="`mask absolute flex-c ${isPlay ? 'hide' : ''}`">
-          <img src="./s2_play_btn.png" @click="play" alt />
+          <img src="./s2_play_btn.png" @click="play" alt="心天畝的圖片" />
         </div>
         <video ref="video">
           <source src="./video.mp4" type="video/mp4" />

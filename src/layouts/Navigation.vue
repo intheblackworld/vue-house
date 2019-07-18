@@ -3,7 +3,7 @@
     <div class="layout-container-fluid">
       <div class="layout-container">
         <div class="nav">
-          <img class="logo" src="@/assets/img/nav-logo.png" alt />
+          <img class="logo" src="@/assets/img/nav-logo.png" alt="心天畝的圖片" />
           <div class="menu" @click="toggleSidebar">
             <font-awesome-icon icon="bars" />
           </div>
@@ -15,7 +15,7 @@
               v-for="item in list"
             >
               <span class="link">
-                <img v-if="item.imgSrc" :src="item.imgSrc" alt />
+                <img v-if="item.imgSrc" :src="item.imgSrc" alt="心天畝的圖片" />
                 <span>
                   <p class="title">{{item.name}}</p>
                   <span class="subTitle">{{item.subTitle}}</span>

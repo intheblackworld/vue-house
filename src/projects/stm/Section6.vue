@@ -19,8 +19,8 @@
         >
           <div class="border flex-c">
             <div class="in-border flex-c">
-              <img :src="item.src" alt />
-              <img class="hover" :src="item.colorSrc" alt />
+              <img :src="item.src" alt="心天畝的圖片" />
+              <img class="hover" :src="item.colorSrc" alt="心天畝的圖片" />
             </div>
           </div>
           <div class="desc" v-html="item.desc"></div>
@@ -33,16 +33,16 @@
         >
           <div class="border flex-c">
             <div class="in-border flex-c">
-              <img :src="item.src" alt />
-              <img class="hover" :src="item.colorSrc" alt />
+              <img :src="item.src" alt="心天畝的圖片" />
+              <img class="hover" :src="item.colorSrc" alt="心天畝的圖片" />
             </div>
           </div>
           <div class="desc" v-html="item.desc"></div>
         </div>
       </div>
     </div>
-    <img class="bg" v-scroll-reveal.reset="$fadeInUp(!isMobile ? 300 : 0)" src="./s6_bg1.png" alt />
-    <img class="bg" v-scroll-reveal.reset="$fadeInUp(!isMobile ? 300 : 0)" src="./s6_bg2.png" alt />
+    <img class="bg" v-scroll-reveal.reset="$fadeInUp(!isMobile ? 300 : 0)" src="./s6_bg1.png" alt="心天畝的圖片" />
+    <img class="bg" v-scroll-reveal.reset="$fadeInUp(!isMobile ? 300 : 0)" src="./s6_bg2.png" alt="心天畝的圖片" />
   </div>
 </template>
 <style lang="scss" scoped>
@@ -189,7 +189,7 @@
       margin-top: 40px;
       > div {
         height: 240px;
-        margin-bottom: 35px;
+        margin-bottom: 30px !important;
 
         &:nth-last-child(1) {
           margin: 0 auto;
@@ -237,7 +237,7 @@
         border-radius: 50% 50%;
         box-shadow: inset 0 0 0 0px #638ece;
         transition: all 0.7s;
-        margin-bottom: 35px;
+        margin-bottom: 0px;
       }
 
       .in-border {

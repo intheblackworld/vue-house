@@ -1,7 +1,7 @@
 <template>
   <div class="section3">
     <div class="container">
-      <img v-scroll-reveal.reset="$fadeIn()" src="./s3_bg.png" alt class="bg" />
+      <img v-scroll-reveal.reset="$fadeIn()" src="./s3_bg.png" alt="心天畝的圖片" class="bg" />
       <div class="flex row flex-jc mb-20">
         <div class="text">
           <h3 v-scroll-reveal.reset="$fadeInUp()" class="title flex-c mb-20">翻轉五股</h3>
@@ -15,11 +15,11 @@
             <br />生態，迎向五股城市新風貌
           </p>
         </div>
-        <img v-scroll-reveal.reset="isMobile ? $fadeInLeft(400) : $fadeInUp()" class="img1" src="./s3_img1.png" alt />
+        <img v-scroll-reveal.reset="isMobile ? $fadeInLeft(400) : $fadeInUp()" class="img1" src="./s3_img1.png" alt="心天畝的圖片" />
       </div>
 
       <div class="flex row flex-c mb-90">
-        <img class="img2" v-scroll-reveal.reset="isMobile ? $fadeInRight(400) : $fadeInUp()" src="./s3_img2.png" alt />
+        <img class="img2" v-scroll-reveal.reset="isMobile ? $fadeInRight(400) : $fadeInUp()" src="./s3_img2.png" alt="心天畝的圖片" />
         <div class="text" v-scroll-reveal.reset="isMobile ? $fadeInUp(400) : $fadeInUp()">
           <h3 class="special-title">五股泰山輕軌計劃</h3>
           <p class="desc">
@@ -48,11 +48,11 @@
             <br />合式開發計劃重新塑造新店樣貌
           </p>
         </div>
-        <img v-scroll-reveal.reset="isMobile ? $fadeInLeft(400) : $fadeInUp()" class="img3" src="./s3_img3.png" alt />
+        <img v-scroll-reveal.reset="isMobile ? $fadeInLeft(400) : $fadeInUp()" class="img3" src="./s3_img3.png" alt="心天畝的圖片" />
       </div>
 
       <div class="flex row flex-c" v-if="isMobile">
-        <img v-scroll-reveal.reset="isMobile ? $fadeInLeft(400) : $fadeInUp()" class="img3" src="./s3_img3.png" alt />
+        <img v-scroll-reveal.reset="isMobile ? $fadeInLeft(400) : $fadeInUp()" class="img3" src="./s3_img3.png" alt="心天畝的圖片" />
         <div class="text" v-scroll-reveal.reset="isMobile ? $fadeInUp(400) : $fadeInUp()">
           <h3 class="special-title no-border mb-40">
             城市蛻變有其脈絡可循

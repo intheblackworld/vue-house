@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <img src="../assets/img/footerLogo.png" alt />
+    <img src="../assets/img/footerLogo.png" alt="心天畝的圖片" />
     <a href=" https://www.h35.tw/admin/test/login.php" target="_blank">網頁製作</a>
   </div>
 </template>

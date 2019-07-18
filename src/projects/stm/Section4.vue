@@ -7,12 +7,10 @@
         v-scroll-reveal.reset="!isMobile ? $fadeInUp(300) : $fadeInUp()"
       >遠離塵囂心自靜 近擁雙北核心圈</h3>
       <div class="flex row">
-        <img
-          v-scroll-reveal.reset="!isMobile ? $fadeInRight(600) : $fadeInUp()"
-          class="img1"
-          src="./s4_img1.png"
-          alt
-        />
+        <div v-scroll-reveal.reset="!isMobile ? $fadeInRight(600) : $fadeInUp()">
+          <img class="img1" src="./s4_img1.png" alt="心天畝的圖片" />
+        </div>
+
         <div class="text" v-scroll-reveal.reset="!isMobile ? $fadeInUp(600) : $fadeInUp()">
           <div class="item">
             <h3 class="label-title">
@@ -73,8 +71,8 @@
             alt
           />
           <div class="btn-group flex-jb flex-ac">
-            <img @click="addIndex" src="./small_left_btn.png" alt />
-            <img @click="decIndex" src="./small_right_btn.png" alt />
+            <img @click="addIndex" src="./small_left_btn.png" alt="心天畝的圖片" />
+            <img @click="decIndex" src="./small_right_btn.png" alt="心天畝的圖片" />
           </div>
         </div>
       </div>
