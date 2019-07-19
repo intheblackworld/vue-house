@@ -42,6 +42,7 @@
 
 @media screen and (max-width: 767px) {
   .bg {
+    background-image: url('./s1_bg_m.jpg');
     .img {
       display: none;
     }
