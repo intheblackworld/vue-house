@@ -8,7 +8,7 @@ export default {
   googleLink: 'https://goo.gl/maps/nSYjM15fL514PSRQ9',
   caseName: '蘭桂坊',
 
-  houseInfos: [['聯絡電話', '02-22931666']],
+  houseInfos: [['聯絡電話', '02-26095500']],
   gtmCode: ['KXKZVF4'], // 可放置多個
   order: {
     title: '預約賞屋',
