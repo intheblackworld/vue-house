@@ -1,6 +1,6 @@
 <template>
   <div class="section5">
-    <div class="bg bg-cover">
+    <div class="bg">
       <div v-if="isTablet" class="tablet-content">
         <div class="label" v-scroll-reveal.reset="$fadeIn()">【 蘊藏生活 】</div>
         <h3 class="title" v-scroll-reveal.reset="$fadeIn(300)">水岸優雅綻放，蘊藏生活絢美</h3>

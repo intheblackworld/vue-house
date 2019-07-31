@@ -1,5 +1,5 @@
 <template>
-  <div class="section4">
+  <div class="section4 fullscreen">
     <div class="container flex-ac flex-jb" v-if="!isMobile">
       <div class="item relative bg-cover" v-scroll-reveal.reset="$fadeIn()">
         <div class="mask absolute bg-cover" />
@@ -50,7 +50,7 @@
 </template>
 <style lang="scss" scoped>
 .section4 {
-  height: calc(100vw * (900 / 1440));
+  // height: calc(100vw * (900 / 1440));
   background-color: rgb(233, 44, 10);
 }
 

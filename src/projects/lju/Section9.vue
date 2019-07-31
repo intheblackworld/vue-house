@@ -9,10 +9,10 @@
           <div v-scroll-reveal.reset="$fadeIn()">
             <icon class="icon txt2" :data="txt2" />
           </div>
-          <div class="circle1 absolute">
+          <div class="circle1 absolute" v-scroll-reveal.reset="$fadeIn(300)">
             <txt3 />
           </div>
-          <div class="circle2 absolute">
+          <div class="circle2 absolute" v-scroll-reveal.reset="$fadeIn(300)">
             <txt3 />
           </div>
         </div>

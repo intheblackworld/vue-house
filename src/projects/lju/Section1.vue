@@ -5,7 +5,7 @@
     <!-- <div class="lazy-bg fullscreen" v-lazy:background-image="require('./s1_bg.jpg')">
       
     </div>-->
-    <div class="fullscreen bg-cover bg flex-c">
+    <div class="fullscreen bg flex-c">
       <div class="content m-auto relative flex-jb wrap">
         <div v-scroll-reveal.reset="$fadeIn()">
           <icon class="icon desc-1" :data="desc1" />

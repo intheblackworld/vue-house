@@ -1,6 +1,6 @@
 <template>
   <div class="section10">
-    <div class="bg bg-cover relative">
+    <div class="bg relative">
       <div class="flex-ac ball1" v-scroll-reveal.reset="!isMobile ? $fadeIn() : $fadeInUp()">
         <img src="./s10_icon_1.png" alt class="icon-1" />
         <div class="text">

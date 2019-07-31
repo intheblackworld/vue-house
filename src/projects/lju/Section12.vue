@@ -1,6 +1,6 @@
 <template>
   <div class="section12">
-    <div class="bg bg-cover relative">
+    <div class="bg relative">
       <div v-scroll-reveal.reset="$fadeIn()" class="absolute icon-1">
         <icon class="icon" :data="svg1" />
       </div>

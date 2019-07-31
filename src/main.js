@@ -23,9 +23,17 @@ import {
   faMapMarkerAlt
 } from '@fortawesome/free-solid-svg-icons'
 
-import { faFacebookMessenger, faFacebookF } from '@fortawesome/free-brands-svg-icons'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
+import {
+  faFacebookMessenger,
+  faFacebookF
+} from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueSvgIcon from 'vue-svgicon'
+
+AOS.init()
 
 library.add(faBars)
 library.add(faTimes)

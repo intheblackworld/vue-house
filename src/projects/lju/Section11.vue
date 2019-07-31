@@ -1,6 +1,6 @@
 <template>
   <div class="section11">
-    <div class="bg bg-cover relative">
+    <div class="bg relative">
       <img src="./s11_tree_1.png" alt="" class="tree-1 absolute">
       <div class="flex-jb flex-at wrap bottom">
         <div class="slide relative" v-scroll-reveal.reset="!isMobile ? $fadeIn(300) : $fadeInUp()">

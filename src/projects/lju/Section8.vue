@@ -1,5 +1,5 @@
 <template>
-  <div class="section8 bg-cover relative">
+  <div class="section8 relative">
     <img src="./s8_tree.png" alt class="tree absolute" />
     <h3
       class="title flex-ac"
