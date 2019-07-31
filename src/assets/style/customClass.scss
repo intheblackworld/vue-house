@@ -30,6 +30,11 @@
   position: absolute;
 }
 
+.absolute-ac {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
 .absolute-c {
   position: absolute;
   margin: 0 auto;
@@ -49,6 +54,16 @@
   align-items: center;
 }
 
+.flex-ab {
+  display: flex;
+  align-items: flex-end;
+}
+
+.flex-at {
+  display: flex;
+  align-items: flex-start;
+}
+
 .flex-jb {
   display: flex;
   justify-content: space-between;
@@ -57,6 +72,11 @@
 .flex-ja {
   display: flex;
   justify-content: space-around;
+}
+
+.flex-jr {
+  display: flex;
+  justify-content: flex-end;
 }
 
 
@@ -87,4 +107,8 @@
 
 .mb-90 {
   margin-bottom: 90px;
+}
+
+.m-auto {
+  margin: 0 auto;
 }

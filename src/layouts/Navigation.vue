@@ -3,7 +3,7 @@
     <div class="layout-container-fluid">
       <div class="layout-container">
         <div class="nav">
-          <img class="logo" src="@/assets/img/nav-logo.png" alt="心天畝的圖片" />
+          <img class="logo" src="@/assets/img/nav-logo.png" alt />
           <div class="menu" @click="toggleSidebar">
             <font-awesome-icon icon="bars" />
           </div>
@@ -15,7 +15,8 @@
               v-for="item in list"
             >
               <span class="link">
-                <img v-if="item.imgSrc" :src="item.imgSrc" alt="心天畝的圖片" />
+                <img v-if="item.imgSrc" :src="item.imgSrc" alt />
+                <icon v-if="item.svgSrc" class="icon" :data="icon1" />
                 <span>
                   <p class="title">{{item.name}}</p>
                   <span class="subTitle">{{item.subTitle}}</span>
@@ -32,6 +33,12 @@
 <script>
 import { isMobile, isTablet } from '@/utils'
 import navList from '@/info/navList'
+import icon1 from '../assets/svg/menu_icon1.svg'
+import icon2 from '../assets/svg/menu_icon2.svg'
+import icon3 from '../assets/svg/menu_icon3.svg'
+import icon4 from '../assets/svg/menu_icon4.svg'
+import icon5 from '../assets/svg/menu_icon5.svg'
+import icon6 from '../assets/svg/menu_icon6.svg'
 export default {
   name: 'navigation',
   components: {},
@@ -41,6 +48,12 @@ export default {
       isMobile,
       isTablet,
       list: navList,
+      icon1,
+      icon2,
+      icon3,
+      icon4,
+      icon5,
+      icon6,
     }
   },
 
@@ -61,7 +74,7 @@ export default {
   methods: {
     toggleSidebar() {
       this.isOpen = !this.isOpen
-    }
+    },
   },
 }
 </script>

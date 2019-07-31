@@ -226,6 +226,7 @@ img[lazy='loaded'] {
 @media only screen and (max-width: 767px) {
   .fullscreen {
     height: calc(100vh - #{$nav_phone_height});
+    overflow: hidden;
   }
 
   .home {

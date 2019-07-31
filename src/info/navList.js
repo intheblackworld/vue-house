@@ -1,9 +1,8 @@
 export default [
-  { name: '水碓秘境', imgSrc: '', subTitle: '', section: 'section2' },
-  { name: '翻轉五股', imgSrc: '', subTitle: '', section: 'section3' },
-  { name: '心靈時區', imgSrc: '', subTitle: '', section: 'section4' },
-  { name: '樹海為鄰', imgSrc: '', subTitle: '', section: 'section5' },
-  { name: '大樹建築', imgSrc: '', subTitle: '', section: 'section6' },
-  { name: '春木林團隊', imgSrc: '', subTitle: '', section: 'section7' },
-  { name: '聯絡資訊', imgSrc: '', subTitle: '', section: 'contact' },
+  { name: '醞釀翻轉', imgSrc: '', subTitle: '', section: 'section3', svgSrc: require('../assets/svg/menu_icon1.svg') },
+  { name: '蘊藏生活', imgSrc: '', subTitle: '', section: 'section5', svgSrc: require('../assets/svg/menu_icon2.svg') },
+  { name: '韻致建築', imgSrc: '', subTitle: '', section: 'section6', svgSrc: require('../assets/svg/menu_icon3.svg') },
+  { name: '放大幸福', imgSrc: '', subTitle: '', section: 'section10', svgSrc: require('../assets/svg/menu_icon4.svg') },
+  { name: '精工設備', imgSrc: '', subTitle: '', section: 'section12', svgSrc: require('../assets/svg/menu_icon5.svg') },
+  { name: '預約賞屋', imgSrc: '', subTitle: '', section: 'contact', svgSrc: require('../assets/svg/menu_icon6.svg') },
 ]
