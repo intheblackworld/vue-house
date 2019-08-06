@@ -2,24 +2,80 @@
   <div class="section5">
     <div class="bg">
       <div v-if="isTablet" class="tablet-content">
-        <div class="label" v-scroll-reveal.reset="$fadeIn()">【 蘊藏生活 】</div>
-        <h3 class="title" v-scroll-reveal.reset="$fadeIn(300)">水岸優雅綻放，蘊藏生活絢美</h3>
-        <div class="desc" v-scroll-reveal.reset="$fadeIn(600)">
+        <div
+          class="label"
+          data-aos="fade"
+          data-aos-offset="50"
+          data-aos-delay="0"
+          data-aos-duration="1500"
+          data-aos-mirror="true"
+          data-aos-once="false"
+        >【 蘊藏生活 】</div>
+        <h3
+          class="title"
+          data-aos="fade"
+          data-aos-offset="50"
+          data-aos-delay="300"
+          data-aos-duration="1500"
+          data-aos-mirror="true"
+          data-aos-once="false"
+        >水岸優雅綻放，蘊藏生活絢美</h3>
+        <div
+          class="desc"
+          data-aos="fade"
+          data-aos-offset="50"
+          data-aos-delay="600"
+          data-aos-duration="1500"
+          data-aos-mirror="true"
+          data-aos-once="false"
+        >
           校園第一排融合水岸雙景觀優勢，
           <br />雙國道快速道路動能，加倍獻上生活豐美
         </div>
       </div>
-      <div class="container flex-jb" v-if="!isMobile">
+      <div class="container flex-ja" v-if="!isMobile">
         <div class="side">
           <span v-if="!isTablet">
-            <div class="label" v-scroll-reveal.reset="$fadeIn()">【 蘊藏生活 】</div>
-            <h3 class="title" v-scroll-reveal.reset="$fadeIn(300)">水岸優雅綻放，蘊藏生活絢美</h3>
-            <div class="desc" v-scroll-reveal.reset="$fadeIn(600)">
+            <div
+              class="label"
+              data-aos="fade"
+              data-aos-offset="50"
+              data-aos-delay="0"
+              data-aos-duration="1500"
+              data-aos-mirror="true"
+              data-aos-once="false"
+            >【 蘊藏生活 】</div>
+            <h3
+              class="title"
+              data-aos="fade"
+              data-aos-offset="50"
+              data-aos-delay="300"
+              data-aos-duration="1500"
+              data-aos-mirror="true"
+              data-aos-once="false"
+            >水岸優雅綻放，蘊藏生活絢美</h3>
+            <div
+              class="desc"
+              data-aos="fade"
+              data-aos-offset="50"
+              data-aos-delay="600"
+              data-aos-duration="1500"
+              data-aos-mirror="true"
+              data-aos-once="false"
+            >
               校園第一排融合水岸雙景觀優勢，
               <br />雙國道快速道路動能，加倍獻上生活豐美
             </div>
           </span>
-          <div class="img-group" v-scroll-reveal.reset="$fadeIn(900)">
+          <div
+            class="img-group"
+            data-aos="fade"
+            data-aos-offset="50"
+            data-aos-delay="900"
+            data-aos-duration="1500"
+            data-aos-mirror="true"
+            data-aos-once="false"
+          >
             <div>
               <img src="./s5_img1.jpg" alt />
             </div>
@@ -37,15 +93,20 @@
             </div>
           </div>
         </div>
-        <div class="side">
+        <div class="side side2">
           <div
             class="item"
             v-for="(slide, index) in slideList"
             :key="slide.title"
-            v-scroll-reveal.reset="$fadeIn(index * 200)"
+            data-aos="fade"
+            data-aos-offset="50"
+            :data-aos-delay="index * 200"
+            data-aos-duration="1500"
+            data-aos-mirror="true"
+            data-aos-once="false"
           >
             <h3 class="title">{{slide.title}}</h3>
-            <div class="desc">{{slide.desc}}</div>
+            <div class="desc" v-html="slide.desc"></div>
           </div>
         </div>
       </div>
@@ -73,8 +134,9 @@
         </div>
       </div>
       <div class="relative bg-bottom">
+        <img src="./s5_bg_top.png" alt />
         <img src="./s5_bg_b.jpg" alt />
-        <img src="./s5_bg_f.png" alt class="absolute" style="bottom: 0;right: 0;" />
+        <img src="./s5_bg_f.png" alt class="absolute flower" style="bottom: 0;right: 0;" />
       </div>
     </div>
   </div>
@@ -89,6 +151,20 @@
   margin-top: 50px;
   img {
     width: auto;
+    display: block;
+  }
+}
+
+.flower {
+  animation: flower 2s linear infinite alternate;
+  transform-origin: bottom;
+}
+@keyframes flower {
+  from {
+    transform: skewX(-3deg);
+  }
+  to {
+    transform: skewX(0deg);
   }
 }
 
@@ -114,10 +190,17 @@
     .desc {
       font-size: 21px;
       margin-bottom: 40px;
+      line-height: 1.5;
     }
 
     .img-group {
       width: 100%;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
 
       div {
         overflow: hidden;
@@ -159,9 +242,15 @@
         margin-bottom: 20px;
       }
       .desc {
+        line-height: 1.5;
         font-size: 17px;
       }
     }
+  }
+
+  .side2 {
+    margin-top: 52px;
+    width: auto;
   }
 }
 
@@ -175,16 +264,22 @@
       width: 100%;
 
       &:nth-child(2) {
-        width: 50%;
+        width: 100%;
       }
     }
+
+    .flower {
+      width: 60%;
+    }
   }
+
   .tablet-content {
     width: 670px;
     margin: 0 auto;
     text-align: left;
     color: #231815;
     padding-top: 50px;
+    margin-left: 100px;
   }
   .label {
     font-size: 32px;
@@ -197,6 +292,7 @@
 
   .desc {
     font-size: 21px;
+    line-height: 1.5;
     margin-bottom: 20px;
   }
   .container {
@@ -271,6 +367,13 @@
       }
     }
   }
+
+  .container {
+    .side2 {
+      margin-top: 0;
+      padding-left: 35px;
+    }
+  }
 }
 
 /* 手機尺寸 */
@@ -280,15 +383,25 @@
     max-height: 600px;
   }
 
+  .container {
+    .side2 {
+      margin-top: 0;
+    }
+  }
+
   .bg-bottom {
     width: 100vw;
-    margin-top: 50px;
+    margin-top: 0px;
     img {
       width: 100%;
 
       &:nth-child(2) {
-        width: 50%;
+        width: 100%;
       }
+    }
+
+    .flower {
+      width: 60%;
     }
   }
   .slide {
@@ -296,6 +409,7 @@
     height: calc(100vw * (260 / 375) + 160px);
     img {
       width: 100%;
+      height: 260px;
     }
 
     .icon {
@@ -361,37 +475,37 @@ export default {
           src: require('./s5_img1.jpg'),
           title: '永久校園視野',
           desc:
-            '建築基地正對校園預定地，等同保有完美的視野棟距日後孩子上學下樓就到，家長接送更安心安全',
+            '建築基地正對校園預定地，等同保有完美的視野棟距<br />日後孩子上學下樓就到，家長接送更安心安全',
         },
         {
           src: require('./s5_img1.jpg'),
           title: '水岸綠金風光',
           desc:
-            '大台北都會公園，雙北最美的城市綠廊，騎上單車悠遊世界富人都羨慕的極致水岸風光，更享健康人生',
+            '大台北都會公園，雙北最美的城市綠廊，騎上單車<br />悠遊世界富人都羨慕的極致水岸風光，更享健康人生',
         },
         {
           src: require('./s5_img2.jpg'),
           title: '豐美生活滋味',
           desc:
-            '同步光復路精彩機能，生猛的熱炒料理、排隊的羊肉麵線鍋貼水餃、咖啡簡餐便利店，生活方便有滋味',
+            '同步光復路精彩機能，生猛的熱炒料理、排隊的羊肉麵線<br />鍋貼水餃、咖啡簡餐便利店，生活方便有滋味',
         },
         {
           src: require('./s5_img3.jpg'),
           title: '企業總部能量',
           desc:
-            '新三重，包括玉山金控、群光電子以及未來東森商業總部率先瞄準重劃區進駐，看好產業改變帶來的城市翻轉能量',
+            '新三重，包括玉山金控、群光電子以及未來東森商業總部<br />率先瞄準重劃區進駐，看好產業改變帶來的城市翻轉能量',
         },
         {
           src: require('./s5_img4.jpg'),
           title: '辰光橋直達三重站',
           desc:
-            '單車5分鐘就到雙捷三重站，具備機場捷運與新蘆線雙軌動能加上日後潤泰Citylink商場，世界級的水岸生活已隱然成形',
+            '單車5分鐘就到雙捷三重站，具備機場捷運與新蘆線雙軌動能<br />加上日後潤泰Citylink商場，世界級的水岸生活已隱然成形',
         },
         {
           src: require('./s5_img5.jpg'),
           title: '一分鐘直上快速道路',
           desc:
-            '轉個彎就是64快速道路，自在切換新北環快雙城市走廊國一國三雙國道動線，加上汐五高架與忠孝橋形成完美交通圈',
+            '轉個彎就是64快速道路，自在切換新北環快雙城市走廊<br />國一國三雙國道動線，加上汐五高架與忠孝橋形成完美交通圈',
         },
       ],
     }

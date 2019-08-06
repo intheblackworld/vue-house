@@ -1,45 +1,73 @@
 <template>
-  <div class="section8 relative">
-    <img src="./s8_tree.png" alt class="tree absolute" />
-    <h3
-      class="title flex-ac"
-      v-scroll-reveal.reset="!isMobile ? $fadeInLeft(0) : $fadeInUp()"
-    >雋永雅緻，讓回家成為最期望的事</h3>
-    <div class="absolute content">
-      <div
-        class="slide relative"
-        v-scroll-reveal.reset="!isMobile ? $fadeInLeft(300) : $fadeInUp()"
-      >
-        <img
-          v-for="(slide, index) in slideList"
-          :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
-          :key="`s4-slide-${index}`"
-          :src="slide.src"
-          alt
-        />
+  <div class="section8 relative fullscreen">
+    <div class="fullscreen-container custom">
+      <img
+        v-if="isMobile"
+        :data-aos="!isMobile ? 'fade-left' : 'fade-up'"
+        data-aos-offset="50"
+        data-aos-delay="600"
+        data-aos-duration="1500"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        src="./s8_tree.png"
+        class="tree absolute"
+        alt
+      />
+      <div class="absolute content">
+        <h3
+          class="title flex-ac"
+          :data-aos="!isMobile ? 'fade-left' : 'fade-up'"
+          data-aos-offset="50"
+          data-aos-delay="0"
+          data-aos-duration="1500"
+          data-aos-mirror="true"
+          data-aos-once="false"
+          v-html="isMobile ? '雋永雅緻<br />讓回家成為最期望的事' : '雋永雅緻，讓回家成為最期望的事'"
+        ></h3>
+        <div
+          class="slide relative"
+          :data-aos="!isMobile ? 'fade-left' : 'fade-up'"
+          data-aos-offset="50"
+          data-aos-delay="300"
+          data-aos-duration="1500"
+          data-aos-mirror="true"
+          data-aos-once="false"
+        >
+          <img
+            v-for="(slide, index) in slideList"
+            :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
+            :key="`s4-slide-${index}`"
+            :src="slide.src"
+            alt
+          />
 
-        <div class="btn-group flex-jb flex-ac">
-          <img @click="addIndex" src="./small_left_btn.png" alt />
-          <img @click="decIndex" src="./small_right_btn.png" alt />
-        </div>
-        <div class="slide-content absolute">
-          <h3 class="title">{{slideList[slideIndex].title}}</h3>
-          <div class="desc">{{slideList[slideIndex].desc}}</div>
-          <div
-            class="btn flex-c"
-            @click="slideIndex = slideList[slideIndex].goToIndex"
-          >{{slideList[slideIndex].btn}} ►</div>
+          <div class="btn-group flex-jb flex-ac">
+            <img @click="addIndex" src="./small_left_btn.png" alt />
+            <img @click="decIndex" src="./small_right_btn.png" alt />
+          </div>
+          <div class="slide-content absolute">
+            <h3 class="title">{{slideList[slideIndex].title}}</h3>
+            <div class="desc">{{slideList[slideIndex].desc}}</div>
+            <div
+              class="btn flex-c"
+              @click="slideIndex = slideList[slideIndex].goToIndex"
+            >{{slideList[slideIndex].btn}} ►</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
+@import '../../assets/style/variableDefault.scss';
 .section8 {
   width: 100vw;
-  height: calc(100vw * (900 / 1440));
+  // height: calc(100vw * (900 / 1440));
   background-image: url('./s8_bg.jpg');
-  padding-top: 77px;
+}
+
+.custom {
+  width: calc(180vh - 96px) !important;
 }
 
 .btn-group {
@@ -47,32 +75,39 @@
 }
 
 .tree {
-  left: calc(100vw * (1200 / 1440));
-  top: calc(100vw * (900 / 1440) * 15%);
+  left: 75%;
+  top: calc(100vw * (900 / 1440) * 0.15);
+}
+
+.content {
+  width: 100%;
 }
 
 .title {
-  font-size: 52px;
+  font-size: 49px;
   color: #000;
-  border-left: 59px solid #d43829;
+  border-left: 5.7vh solid #d43829;
   padding-left: 20px;
   text-align: left;
-  height: 83px;
+  height: 9vh;
+  margin-bottom: 2vh;
 }
 
 .slide {
-  width: calc(100vw * (1200 / 1440));
-  height: calc(100vw * (1200 / 1440) * (720 / 1200));
+  width: 90%;
+  height: calc(100vh - 190px);
   img {
-    width: calc(100vw * (1200 / 1440));
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .slide-content {
     background-image: url('./s8_shadow.png');
     width: 490px;
     height: 190px;
-    bottom: 150px;
-    right: -100px;
+    bottom: 80px;
+    right: -5%;
     padding: 40px;
 
     .title {
@@ -115,9 +150,7 @@
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .section8 {
     width: 100vw;
-    height: calc(100vw * (900 / 1440));
     background-image: url('./s8_bg.jpg');
-    padding-top: 70px;
   }
 
   .tree {
@@ -192,7 +225,20 @@
     width: 100vw;
     height: calc(100vw * (667 / 375));
     background-image: url('./s8_bg.jpg');
-    padding-top: 30px;
+    padding-top: 0px;
+  }
+
+  .tree {
+    left: auto;
+    right: 20px !important;
+  }
+
+  .custom {
+    width: 100vw !important;
+  }
+
+  .fullscreen-container {
+    padding-top: 20px;
   }
 
   .tree {
@@ -202,11 +248,12 @@
   }
 
   .title {
-    font-size: 34px;
-    width: 319px;
+    font-size: 4vh;
+    width: 90%;
+    margin: 0 auto;
     color: #000;
     border-left: none;
-    padding-left: 20px;
+    padding-left: 0px;
     line-height: 1.5;
     text-align: left;
     height: 79px;
@@ -236,10 +283,11 @@
       right: 0;
       top: calc(100vw * (240 / 375));
       left: 0;
-      padding: 30px;
+      padding: 2vh;
 
       .title {
-        font-size: 26px;
+        width: 100%;
+        font-size: 3.5vh;
         color: #252525;
         height: auto;
         border-left: none;
@@ -250,7 +298,8 @@
 
       .desc {
         color: #252525;
-        font-size: 16px;
+        width: 80%;
+        font-size: 2vh;
         line-height: 1.5;
         text-align: left;
       }
@@ -259,6 +308,12 @@
         display: none;
       }
     }
+  }
+
+  .tree {
+    top: auto;
+    right: 0;
+    bottom: 0;
   }
 
   .content {
@@ -289,6 +344,13 @@ export default {
           src: require('./s8_img_2.jpg'),
           title: '健身空間，喚醒身體的能量',
           desc: '兼具健身房與閱覽空間，陪伴孩子閱讀時也鍛鍊自己的身材與線條',
+          btn: '快遞包裹，社區郵件專用',
+          goToIndex: 2,
+        },
+        {
+          src: require('./s8_img_3.jpg'),
+          title: '快遞包裹，社區郵件專用',
+          desc: '具備臨時閱覽區，能方便您即時處理包裹文件的拆封，貼心住戶使用',
           btn: '麗韻門廳，如同飯店宴會Bar',
           goToIndex: 0,
         },

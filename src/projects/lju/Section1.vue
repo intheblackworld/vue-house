@@ -5,21 +5,38 @@
     <!-- <div class="lazy-bg fullscreen" v-lazy:background-image="require('./s1_bg.jpg')">
       
     </div>-->
-    <div class="fullscreen bg flex-c">
-      <div class="content m-auto relative flex-jb wrap">
-        <div v-scroll-reveal.reset="$fadeIn()">
-          <icon class="icon desc-1" :data="desc1" />
-          <icon class="icon desc-2" :data="desc2" />
-        </div>
-        <div v-scroll-reveal.reset="$fadeIn(300)">
-          <icon class="icon desc-3" :data="desc3" />
-          <icon class="icon desc-4" :data="desc4" />
-        </div>
+    <div class="fullscreen bg flex-c relative">
+      <div
+        class="content m-auto relative flex-jb wrap"
+        data-aos="fade"
+        data-aos-offset="50"
+        data-aos-delay="0"
+        data-aos-duration="1500"
+        data-aos-mirror="true"
+        data-aos-once="false"
+      >
+        <img src="./s1_title.png" alt class="title absolute" />
       </div>
-      <div v-scroll-reveal.reset="$fadeIn(600)" class="absolute tree-1">
-        <img src="./s1_tree_1.png" alt class="" />
+      <div
+        data-aos="fade-right"
+        data-aos-offset="50"
+        data-aos-delay="600"
+        data-aos-duration="1500"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        class="absolute tree-1"
+      >
+        <img src="./s1_tree_1.png" alt class />
       </div>
-      <div v-scroll-reveal.reset="$fadeIn(600)" class="absolute tree-2">
+      <div
+        data-aos="fade-left"
+        data-aos-offset="50"
+        data-aos-delay="600"
+        data-aos-duration="1500"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        class="absolute tree-2"
+      >
         <img src="./s1_tree_2.png" alt />
       </div>
     </div>
@@ -37,17 +54,11 @@
   left: -50px;
   margin-top: -250px;
   z-index: 2;
-  .desc-1,
-  .desc-2 {
-    height: 48px;
-    margin-bottom: 40px;
-    fill: #666;
-  }
 
-  .desc-3,
-  .desc-4 {
-    height: 52px;
-    fill: #333;
+  .title {
+    left: 20%;
+    height: 65vh;
+    transform: translateY(-22%);
   }
 }
 
@@ -75,19 +86,7 @@
   .content {
     width: 540px;
     left: auto;
-    margin-top: -150px;
-    .desc-1,
-    .desc-2 {
-      height: 38px;
-      margin-bottom: 25px;
-      fill: #666;
-    }
-
-    .desc-3,
-    .desc-4 {
-      height: 41px;
-      fill: #333;
-    }
+    margin-top: -250px;
   }
 
   .tree-1 {
@@ -113,43 +112,16 @@
     margin-top: -250px;
     display: block;
 
-    svg {
-      display: block;
-    }
-    .desc-1,
-    .desc-2 {
-      height: 26px;
-      margin-bottom: 15px;
-      fill: #666;
-    }
-
-    .desc-3,
-    .desc-4 {
-      height: 30px;
-      margin-bottom: 15px;
-      fill: #333;
-    }
-
-    .desc-1 {
-      margin-left: 25px;
-    }
-
-    .desc-2 {
-      margin-left: 50px;
-    }
-
-    .desc-3 {
-      margin-left: 75px;
-    }
-
-    .desc-4 {
-      margin-left: 100px;
+    .title {
+      left: 40%;
+      height: 40vh;
+      transform: translateY(-35%);
     }
   }
 
   .tree-1 {
     left: 0;
-    width: 146px;
+    width: 140px;
   }
 
   .tree-2 {

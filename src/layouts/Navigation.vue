@@ -1,7 +1,7 @@
 <template>
   <div class="navigation">
-    <div class="layout-container-fluid">
-      <div class="layout-container">
+    <div class="layout-container-fluid nav-container">
+      <div class="layout-container nav-container">
         <div class="nav">
           <img class="logo" src="@/assets/img/nav-logo.png" alt />
           <div class="menu" @click="toggleSidebar">
@@ -13,10 +13,11 @@
               :key="item.name"
               v-scroll-to="{ element: `#${item.section}`, offset: offset }"
               v-for="item in list"
+              class="flex-ac"
+              @click="toggleSidebar"
             >
               <span class="link">
                 <img v-if="item.imgSrc" :src="item.imgSrc" alt />
-                <icon v-if="item.svgSrc" class="icon" :data="icon1" />
                 <span>
                   <p class="title">{{item.name}}</p>
                   <span class="subTitle">{{item.subTitle}}</span>
@@ -33,12 +34,7 @@
 <script>
 import { isMobile, isTablet } from '@/utils'
 import navList from '@/info/navList'
-import icon1 from '../assets/svg/menu_icon1.svg'
-import icon2 from '../assets/svg/menu_icon2.svg'
-import icon3 from '../assets/svg/menu_icon3.svg'
-import icon4 from '../assets/svg/menu_icon4.svg'
-import icon5 from '../assets/svg/menu_icon5.svg'
-import icon6 from '../assets/svg/menu_icon6.svg'
+
 export default {
   name: 'navigation',
   components: {},
@@ -48,12 +44,6 @@ export default {
       isMobile,
       isTablet,
       list: navList,
-      icon1,
-      icon2,
-      icon3,
-      icon4,
-      icon5,
-      icon6,
     }
   },
 
@@ -97,7 +87,16 @@ export default {
   box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
+.nav-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .nav {
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -107,6 +106,10 @@ export default {
     cursor: pointer;
   }
 }
+
+// 紅#c72d1e
+// 綠#4f6e01
+// 藍#0082d3
 
 .logo {
   width: $logo_pc_width;
@@ -126,13 +129,18 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
+  li {
+    height: 100%;
+  }
 
   .link {
     color: $nav_link_color;
+    height: 100%;
     text-align: center;
     display: block;
     cursor: pointer;
-    margin-right: 40px;
+    padding: 0 20px;
     transition: all 0.3s;
     display: flex;
     align-items: center;
@@ -140,6 +148,7 @@ export default {
 
     &:hover {
       color: $nav_link_hover_color;
+      background: #4f6e01;
     }
 
     .title {
@@ -152,8 +161,8 @@ export default {
     }
 
     img {
-      width: 35px;
-      height: 35px;
+      // width: 35px;
+      // height: 35px;
       margin-right: 10px;
     }
   }
@@ -181,16 +190,16 @@ export default {
   }
 
   .navlist {
-    width: 70%;
+    width: 85%;
   }
 
   .navlist .link {
     font-size: 12px;
-    width: 70px;
+    width: 120px;
     white-space: nowrap;
 
     img {
-      height: 35px;
+      // height: 35px;
       margin-bottom: 5px;
     }
 
@@ -212,6 +221,11 @@ export default {
   .navigation {
     height: $nav_phone_height;
     z-index: 110;
+  }
+
+  .nav-container {
+    display: block;
+    height: auto;
   }
 
   .logo {
@@ -248,8 +262,13 @@ export default {
     display: block;
     transform: translateX(40%);
 
+    li {
+      height: 50px;
+      margin-bottom: 5px;
+    }
+
     .link {
-      height: 40px;
+      height: 50px;
       width: 100%;
       font-size: 17px;
       margin-top: 10px;
@@ -268,16 +287,15 @@ export default {
     }
 
     &.open {
-      width: 40%;
+      width: 100%;
       transform: translateX(0%);
 
       .link {
-        display: block;
+        display: flex;
+        justify-content: center;
         span {
           white-space: nowrap;
         }
-
-        img,
         .divided {
           display: none;
         }

@@ -2,13 +2,37 @@
   <div class="section3">
     <div class="fullscreen bg-cover bg flex-c relative">
       <div class="content m-auto absolute-c">
-        <div class="label" v-scroll-reveal.reset="$fadeIn()">【 醞釀翻轉 】</div>
+        <div
+          class="label"
+          data-aos="fade"
+          data-aos-offset="50"
+          data-aos-delay="0"
+          data-aos-duration="1500"
+          data-aos-mirror="true"
+          data-aos-once="false"
+        >【 醞釀翻轉 】</div>
         <div class="flex-ab flex-jb">
-          <h3 class="title" v-scroll-reveal.reset="$fadeIn(300)">
+          <h3
+            class="title"
+            data-aos="fade"
+            data-aos-offset="50"
+            data-aos-delay="300"
+            data-aos-duration="1500"
+            data-aos-mirror="true"
+            data-aos-once="false"
+          >
             聚焦三重2.0時代
             <br />啟動大西區計畫
           </h3>
-          <div class="desc" v-scroll-reveal.reset="$fadeIn(600)">
+          <div
+            class="desc"
+            data-aos="fade"
+            data-aos-offset="50"
+            data-aos-delay="300"
+            data-aos-duration="1500"
+            data-aos-mirror="true"
+            data-aos-once="false"
+          >
             北市西區復興計劃，掀起城市經濟紅利
             <br />跟著機場捷運、五星計劃放眼未來
           </div>
@@ -20,13 +44,14 @@
 <style lang="scss" scoped>
 .bg {
   background-image: url('./s3_bg.jpg');
+  height: calc(100vw * (900 / 1400));
 }
 
 .content {
   width: 810px;
   color: #fff;
   text-align: left;
-  top: 15%;
+  top: 25%;
   transform: none;
 }
 
@@ -53,14 +78,16 @@
 
 /* 手機尺寸 */
 @media screen and (max-width: 767px) {
-
+  .bg {
+    height: calc(100vw * (667 / 375));
+  }
   .content {
     width: 100vw;
     padding: 0 7px;
     color: #fff;
     text-align: left;
-    top: 15%;
-    transform: none;
+    top: 8%;
+    transform: none !important;
 
     .flex-ab {
       flex-wrap: wrap;

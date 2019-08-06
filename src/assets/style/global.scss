@@ -36,6 +36,14 @@ body {
 .fullscreen {
   width: 100vw;
   height: calc(100vh - #{$nav_pc_height});
+
+  // 從高度去調整比例，同步調整寬度，求與設計稿比例符合。留白沒關係
+  .fullscreen-container {
+    width: calc((100vh - #{$nav_pc_height}) * (1440 / 900));
+    height: calc(100vh - #{$nav_pc_height});
+    margin: 0 auto;
+    position: relative;
+  }
 }
 
 .layout-container-fluid {
@@ -120,7 +128,7 @@ body {
 
 @media only screen and (max-width: 1024px) {
   .layout-container {
-    width: auto;
+    width: 100%;
     margin-left: 1em !important;
     margin-right: 1em !important;
   }
@@ -163,6 +171,12 @@ img[lazy='loaded'] {
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .fullscreen {
     height: calc(100vh - #{$nav_tablet_height});
+
+    .fullscreen-container {
+      width: calc((100vh - #{$nav_tablet_height}) * (1440 / 900));
+      height: calc(100vh - #{$nav_tablet_height});
+      margin: 0 auto;
+    }
   }
 
   .home {
@@ -225,8 +239,15 @@ img[lazy='loaded'] {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .fullscreen {
-    height: calc(100vh - #{$nav_phone_height});
+    height: calc(100vh - #{$nav_phone_height} - 63px) !important;
     overflow: hidden;
+
+    .fullscreen-container {
+      width: 100vw;
+      min-width: 100vw;
+      height: calc(100vh - #{$nav_phone_height} - 63px);
+      margin: 0 auto;
+    }
   }
 
   .home {

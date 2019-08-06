@@ -1,35 +1,69 @@
 <template>
   <div class="section7 fullscreen bg-cover relative">
-    <div class="svg" v-scroll-reveal.reset="$fadeIn()">
-      <icon class="icon txt" :data="txt" />
-    </div>
+    <div
+      class="svg fullscreen bg-cover"
+      data-aos="fade"
+      data-aos-offset="50"
+      data-aos-delay="0"
+      data-aos-duration="1500"
+      data-aos-mirror="true"
+      data-aos-once="false"
+    ></div>
     <div class="content absolute">
-      <h3 class="title" v-scroll-reveal.reset="$fadeIn(300)">穩若泰山，抗震達國家標準</h3>
-      <p class="desc" v-scroll-reveal.reset="$fadeIn(600)">▉ 建築基礎工程採用筏式基礎與連續壁工法</p>
-      <p class="desc" v-scroll-reveal.reset="$fadeIn(900)">▉ 連續壁工法可預防土壤液化發生傾斜</p>
-      <p class="desc" v-scroll-reveal.reset="$fadeIn(1200)">
+      <h3
+        class="title"
+        data-aos="fade"
+        data-aos-offset="50"
+        data-aos-delay="300"
+        data-aos-duration="1500"
+        data-aos-mirror="true"
+        data-aos-once="false"
+      >穩若泰山，抗震達國家標準</h3>
+      <p
+        class="desc"
+        data-aos="fade"
+        data-aos-offset="50"
+        data-aos-delay="600"
+        data-aos-duration="1500"
+        data-aos-mirror="true"
+        data-aos-once="false"
+      >▉ 建築基礎工程採用筏式基礎與連續壁工法</p>
+      <p
+        class="desc"
+        data-aos="fade"
+        data-aos-offset="50"
+        data-aos-delay="900"
+        data-aos-duration="1500"
+        data-aos-mirror="true"
+        data-aos-once="false"
+      >▉ 連續壁工法可預防土壤液化發生傾斜</p>
+      <p
+        class="desc"
+        data-aos="fade"
+        data-aos-offset="50"
+        data-aos-delay="1200"
+        data-aos-duration="1500"
+        data-aos-mirror="true"
+        data-aos-once="false"
+      >
         ▉ 連續壁深度19米，厚度50公分，鋼性更強
-        水密度更高，嚴密防護基樁外緣
+        <br />水密度更高，嚴密防護基樁外緣
       </p>
     </div>
-    <img src="./s7_txt_m.png" alt="">
+    <img src="./s7_txt_m.png" alt />
   </div>
 </template>
 <style lang="scss" scoped>
+@import '../../assets/style/variableDefault.scss';
 .section7 {
   width: 100vw;
   height: calc(100vw * (900 / 1440));
   background-image: url('./s7_bg.jpg');
 
   .svg {
+    background-image: url('./s7_txt.png');
     width: 100vw;
     height: calc(100vw * (900 / 1440));
-    fill: #fff;
-    width: 100%;
-  }
-
-  img {
-    display: none;
   }
 }
 
@@ -37,8 +71,8 @@
   width: calc(100vw * (600 / 1440));
   height: calc(100vw * (600 / 1440) * (350 / 600));
   text-align: left;
-  right: 120px;
-  bottom: 200px;
+  right: 60px;
+  bottom: 100px;
 
   .title {
     font-size: 47.5px;
@@ -75,16 +109,15 @@
 @media screen and (max-width: 767px) {
   .section7 {
     width: 100vw;
-    height: calc(100vw * (666 / 375));
     background-image: url('./s7_bg_m.jpg');
 
     img {
       width: 100vw;
-      height: auto;
+      height: calc(100vh - #{$nav_phone_height} - 63px) !important;
       fill: #fff;
       position: absolute;
       left: 0;
-      top: calc(100vh * (270 / 568));
+      top: 0;
     }
 
     .svg {

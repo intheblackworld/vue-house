@@ -1,7 +1,15 @@
 <template>
   <div class="section4 fullscreen">
     <div class="container flex-ac flex-jb" v-if="!isMobile">
-      <div class="item relative bg-cover" v-scroll-reveal.reset="$fadeIn()">
+      <div
+        class="item relative bg-cover"
+        data-aos="fade"
+        data-aos-offset="50"
+        data-aos-delay="0"
+        data-aos-duration="1500"
+        data-aos-mirror="true"
+        data-aos-once="false"
+      >
         <div class="mask absolute bg-cover" />
         <div class="content relative">
           <h3 class="title">城市翻新浪潮</h3>
@@ -10,7 +18,15 @@
           >上北市東西翻轉大計劃，包括北門與雙子星特區，將勾勒城市全新樣貌，三重具備第一環的紅利優勢，加上產業趨勢改變，充沛豐富的城市浪潮，即將改寫三重風光，包括玉山金控、群光電子都看見蛻變中的新三重</div>
         </div>
       </div>
-      <div class="item relative bg-cover" v-scroll-reveal.reset="$fadeIn(300)">
+      <div
+        class="item relative bg-cover"
+        data-aos="fade"
+        data-aos-offset="50"
+        data-aos-delay="300"
+        data-aos-duration="1500"
+        data-aos-mirror="true"
+        data-aos-once="false"
+      >
         <div class="mask absolute bg-cover" />
         <div class="content relative">
           <h3 class="title">機捷加速驅動</h3>
@@ -19,7 +35,15 @@
           >機場捷運是台北捷運系統的第二具引擎，聯繫國門與首都的跨世紀能量，串連北市、新北、桃園近九百萬人口城市，三重驅動大勢，不僅是國門第一站，更連結水岸共生、城市再造的超規格版圖</div>
         </div>
       </div>
-      <div class="item relative bg-cover" v-scroll-reveal.reset="$fadeIn(600)">
+      <div
+        class="item relative bg-cover"
+        data-aos="fade"
+        data-aos-offset="50"
+        data-aos-delay="600"
+        data-aos-duration="1500"
+        data-aos-mirror="true"
+        data-aos-once="false"
+      >
         <div class="mask absolute bg-cover" />
         <div class="content relative">
           <h3 class="title">新北閃耀五星</h3>
@@ -29,7 +53,16 @@
         </div>
       </div>
     </div>
-    <div v-else class="slide relative" v-scroll-reveal.reset="!isMobile ? $fadeInLeft(900) : $fadeInUp()">
+    <div
+      v-else
+      class="slide relative"
+      data-aos="fade"
+      data-aos-offset="50"
+      data-aos-delay="900"
+      data-aos-duration="1500"
+      data-aos-mirror="true"
+      data-aos-once="false"
+    >
       <img
         v-for="(slide, index) in slideList"
         :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
@@ -176,9 +209,11 @@
   }
   .slide {
     width: 100vw;
-    height: calc(100vw * (370 / 375) + 60px);
-    img {
+    height: calc(100vw * (300 / 375) + 60px);
+    > img {
       width: 100%;
+      height: calc(100vw * (370 / 375));
+      object-fit: cover;
     }
 
     .btn-group {

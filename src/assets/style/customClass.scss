@@ -12,7 +12,6 @@
   display: flex;
 }
 
-
 .bg-cover {
   background-size: cover;
   background-position: center;
@@ -20,6 +19,12 @@
 
 .no-nav {
   height: 100vh !important;
+}
+
+.img-c {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .relative {
@@ -31,9 +36,9 @@
 }
 
 .absolute-ac {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
 }
 .absolute-c {
   position: absolute;
@@ -41,7 +46,7 @@
   left: 0;
   right: 0;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) !important;
 }
 
 .flex-jc {
@@ -78,8 +83,6 @@
   display: flex;
   justify-content: flex-end;
 }
-
-
 
 .pl-100 {
   padding-left: 100px;

@@ -1,26 +1,52 @@
 <template>
   <div class="section6">
-    <div class="fullscreen bg-cover bg flex-jb relative wrap">
-      <div class="content">
-        <div class="label" v-scroll-reveal.reset="$fadeIn()">【 韻致建築 】</div>
-        <div class="flex-ab flex-jb">
-          <h3 class="title" v-scroll-reveal.reset="$fadeIn(300)">
-            三重水畔最美留白
-            <br />超低建蔽規劃
-          </h3>
+    <div class="fullscreen bg-cover bg relative">
+      <div class="flex-jb wrap">
+        <div class="content">
+          <div
+            class="label"
+            data-aos="fade"
+            data-aos-offset="50"
+            data-aos-delay="0"
+            data-aos-duration="1500"
+            data-aos-mirror="true"
+            data-aos-once="false"
+          >【 韻致建築 】</div>
+          <div class="flex-ab flex-jb">
+            <h3
+              class="title"
+              data-aos="fade"
+              data-aos-offset="50"
+              data-aos-delay="300"
+              data-aos-duration="1500"
+              data-aos-mirror="true"
+              data-aos-once="false"
+            >
+              三重水畔最美留白
+              <br />超低建蔽規劃
+            </h3>
+          </div>
         </div>
-      </div>
-      <div class="toggle" v-scroll-reveal.reset="$fadeIn(600)">
         <div
-          :class="`item ${item.open ? 'open' : ''}`"
-          v-for="(item, index) in toggleList"
-          :key="item.title"
+          class="toggle"
+          data-aos="fade"
+          data-aos-offset="50"
+          data-aos-delay="600"
+          data-aos-duration="1500"
+          data-aos-mirror="true"
+          data-aos-once="false"
         >
-          <h3 @click="toggle(index)" class="title flex-jb flex-ac">
-            {{item.title}}
-            <img src="./s6_arrow.png" alt />
-          </h3>
-          <div class="desc">{{item.desc}}</div>
+          <div
+            :class="`item ${item.open ? 'open' : ''}`"
+            v-for="(item, index) in toggleList"
+            :key="item.title"
+          >
+            <h3 @click="toggle(index)" class="title flex-jb flex-ac">
+              {{item.title}}
+              <img src="./s6_arrow.png" alt />
+            </h3>
+            <div class="desc">{{item.desc}}</div>
+          </div>
         </div>
       </div>
     </div>
@@ -28,41 +54,52 @@
   </div>
 </template>
 <style lang="scss" scoped>
+@import '../../assets/style/variableDefault.scss';
 .bg {
   background-image: url('./s6_bg.jpg');
+}
+
+.fullscreen-container {
+  min-width: 1100px;
 }
 
 .content {
   color: #fff;
   text-align: left;
-  top: 15%;
-  transform: none;
-  margin-left: 40px;
-  margin-top: 120px;
+  // margin-top: calc((100vh - #{$nav_pc_height}) * (130 / 900));
+  // transform: none;
+  // margin-left: 20px;
+  position: absolute;
+  left: 34%;
+  transform: translate(-100%, 0);
+  top: 10%;
 }
 .label {
-  font-size: 34px;
+  font-size: 3.7vh;
   margin-bottom: 10px;
 }
 
 .title {
-  font-size: 48px;
-  line-height: 1.3;
+  font-size: 5.3vh;
+  line-height: 1.4;
   letter-spacing: 3px;
 }
 
 .desc {
-  font-size: 24px;
+  font-size: 2.7vh;
   line-height: 1.7;
 }
 
 .toggle {
-  margin-top: 120px;
-  margin-right: 40px;
+  // margin-top: calc((100vh - #{$nav_pc_height}) * (260 / 900));
+  // margin-right: 37px;
+  top: 30%;
+  left: 63%;
+  position: absolute;
 }
 
 .item {
-  width: 403px;
+  width: calc(380 * 100vw / 1440);
   height: 44px;
   background: rgba(12, 73, 127, 0.5);
   border-radius: 33px / 33px;
@@ -73,15 +110,17 @@
   transition: all 0.5s;
 
   &.open {
-    height: 180px;
+    height: auto;
     border-radius: 15px / 15px;
   }
   .title {
-    font-size: 25px;
-    margin-top: 7px;
+    font-size: 2.8vh;
+    height: 44px;
+    margin-top: 0px;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     padding: 0 10px 0 30px;
+    white-space: nowrap;
 
     img {
       width: 20px;
@@ -89,7 +128,7 @@
   }
 
   .desc {
-    font-size: 16px;
+    font-size: 1.7vh;
     padding: 0 20px 20px;
     text-align: justify;
   }
@@ -98,15 +137,47 @@
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .label {
+    font-size: 3vh;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    font-size: 4.5vh;
+    line-height: 1.4;
+    letter-spacing: 3px;
+  }
+
+  .desc {
+    font-size: 2vh;
+    line-height: 1.7;
+  }
+  .toggle {
+    margin-top: calc((100vh - #{$nav_pc_height}) * (260 / 900));
+    margin-right: 137px;
+  }
+
+  .item {
+    width: calc(420 * 100vw / 1440);
+    .title {
+      font-size: 2vh;
+    }
+  }
 }
 
 /* 手機尺寸 */
 @media screen and (max-width: 767px) {
+  .bg {
+    background-image: url('./s6_bg_m.jpg');
+  }
   .content {
     color: #fff;
     text-align: left;
     top: auto;
     transform: none;
+    position: relative;
+    left: auto;
+    top: auto;
     margin-left: 20px;
     margin-top: 40px;
 
@@ -115,28 +186,43 @@
     }
   }
 
+  .fullscreen-container {
+    min-width: auto;
+  }
+
   .label {
-    font-size: 22.5px;
+    font-size: 3vh;
     margin-bottom: 10px;
   }
 
   .title {
-    font-size: 30px;
+    font-size: 4vh;
     line-height: 1.3;
     letter-spacing: 3px;
   }
 
   .desc {
-    font-size: 18px;
+    font-size: 2.4vh;
     line-height: 1.7;
   }
 
   .toggle {
     margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    top: auto;
+    left: auto;
+  }
+
+  .fullscreen-container {
+    display: block;
   }
 
   .item {
-    width: 280px;
+    width: calc(340 * 100vw / 375);
     height: 33px;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 17px / 17px;
@@ -147,15 +233,17 @@
     transition: all 0.5s;
 
     &.open {
-      height: 180px;
+      height: auto;
       border-radius: 15px / 15px;
     }
     .title {
       font-size: 16px;
-      margin-top: 7px;
+      height: 33px;
+      margin-top: 0px;
       text-align: center;
-      margin-bottom: 30px;
-      padding: 0 10px 0 15px;
+      margin-bottom: 10px;
+      padding: 0 10px 0 30px;
+      white-space: nowrap;
 
       img {
         width: 20px;
@@ -197,8 +285,12 @@ export default {
 
   methods: {
     toggle(index) {
-      this.toggleList.forEach(item => (item.open = false))
-      this.toggleList[index].open = true
+      if (this.toggleList[index].open) {
+        this.toggleList[index].open = false
+      } else {
+        this.toggleList.forEach(item => (item.open = false))
+        this.toggleList[index].open = !this.toggleList[index].open
+      }
     },
   },
 

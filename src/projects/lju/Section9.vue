@@ -2,23 +2,50 @@
   <div class="section9">
     <div class="bg bg-cover relative fullscreen">
       <div class="container flex-c wrap">
-        <div class="title" v-scroll-reveal.reset="$fadeIn()">
+        <div
+          class="title"
+          data-aos-id="jumpTitle"
+          data-aos="jump"
+          data-aos-delay="0"
+          data-aos-duration="2300"
+          data-aos-once="false"
+        >
           <txt1 />
         </div>
         <div class="relative desc">
-          <div v-scroll-reveal.reset="$fadeIn()">
+          <div
+            data-aos="fade"
+            data-aos-offset="50"
+            data-aos-delay="0"
+            data-aos-duration="500"
+            data-aos-mirror="true"
+            data-aos-once="false"
+          >
             <icon class="icon txt2" :data="txt2" />
           </div>
-          <div class="circle1 absolute" v-scroll-reveal.reset="$fadeIn(300)">
+          <div
+            class="circle1 absolute"
+            data-aos="fade"
+            data-aos-offset="50"
+            data-aos-delay="0"
+            data-aos-duration="1500"
+            data-aos-mirror="true"
+            data-aos-once="false"
+          >
             <txt3 />
           </div>
-          <div class="circle2 absolute" v-scroll-reveal.reset="$fadeIn(300)">
+          <div
+            class="circle2 absolute"
+            data-aos="fade"
+            data-aos-offset="50"
+            data-aos-delay="0"
+            data-aos-duration="1500"
+            data-aos-mirror="true"
+            data-aos-once="false"
+          >
             <txt3 />
           </div>
         </div>
-      </div>
-      <div class="footer flex-c">
-        <h3>一層四戶2~3房 31~44坪大尺碼</h3>
       </div>
     </div>
   </div>
@@ -27,17 +54,58 @@
 .bg {
   width: 100vw;
   background-image: url('./s9_bg.jpg');
-  padding-top: 100px;
+  padding-top: calc(100vh / 9);
+}
+
+@keyframes jump {
+  0% {
+    opacity: 0;
+    left: -200px;
+  }
+  10% {
+    transform: scale(1.2, 0.8);
+  }
+  24%,
+  26% {
+    transform: translateY(-20vh) scale(1, 1.001);
+    opacity: 1;
+  }
+  40% {
+    transform: translateY(0) scale(1, 0.999);
+  }
+  44% {
+    transform: translateY(0) scale(1.05, 0.97);
+  }
+  56% {
+    transform: translateY(-6vh) scale(1.01, 1);
+  }
+  70% {
+    transform: translateY(0) scale(1, 1);
+  }
+
+  100% {
+    opacity: 1;
+    left: 0px;
+  }
 }
 
 .container {
-  width: 900px;
-  margin-top: 0px;
-  margin-left: 200px;
+  width: 980px;
+  margin: 0 auto;
 }
 
 .title {
   margin-right: 30px;
+  width: calc(100vh * (432 / 900));
+  opacity: 0;
+  position: relative;
+
+  &[data-aos='jump'] {
+    animation: jump 2.3s ease-in-out forwards;
+  }
+  svg {
+    width: 100%;
+  }
 }
 
 .txt2 {
@@ -52,16 +120,6 @@
 .circle2 {
   right: -4px;
   bottom: -7px;
-}
-
-.footer {
-  width: 100vw;
-  background-color: #c82514;
-  height: 60px;
-  font-size: 34px;
-  position: absolute;
-  bottom: 0;
-  color: #fff;
 }
 
 /* 螢幕尺寸標準 */
@@ -82,22 +140,27 @@
 
 /* 手機尺寸 */
 @media screen and (max-width: 767px) {
+  .section9 {
+    padding-top: 20vh;
+    background-color: #dcdcda;
+  }
   .bg {
     width: 100vw;
-    background-image: url('./s9_bg.jpg');
-    padding-top: 30px;
+    background-image: url('./s9_bg_m.jpg');
+    padding-top: 0px;
+    overflow: initial;
   }
 
   .container {
     width: 100vw;
     margin-left: 0;
-    margin-top: 0;
   }
 
   .title {
     width: 317px;
     margin: 0 auto;
-    margin-bottom: 30px;
+    margin-top: -12vh;
+    margin-bottom: 10px;
 
     svg {
       width: 100%;
@@ -115,7 +178,8 @@
   .footer {
     font-size: 24px;
   }
-  .circle1, .circle2 {
+  .circle1,
+  .circle2 {
     width: 87px;
     svg {
       width: 100%;

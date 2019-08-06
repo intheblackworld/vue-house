@@ -1,64 +1,52 @@
 <template>
-  <div class="section2">
+  <div class="section2 relative">
     <div class="flex-jc flex-at relative frame" ref="frame">
       <div :class="`mask absolute ${!showMask ? 'hide' : ''}`"></div>
       <img src="./s2_bg.jpg" alt class="bg" ref="bg" />
       <img src="./s2_hand.png" alt class="hand" />
       <div
-        class="text absolute"
+        class="text absolute flex-c wrap"
+        data-aos-id="ani-number"
         data-aos="fade"
         data-aos-offset="50"
         data-aos-delay="0"
-        data-aos-duration="2000"
+        data-aos-duration="500"
         data-aos-mirror="true"
         data-aos-once="false"
       >
-        <icon class="icon" :data="txt1" />
+        <!-- <icon class="icon" :data="txt1" />
+        <icon class="icon" :data="txt2" /> -->
+        <p class="title">
+          近擁<span class="number number1">{{animatedNumber1}}</span>公頃<br />
+          大台北都會公園
+        </p>
         <svgLine />
-        <icon class="icon" :data="txt2" />
-        <div
-          class="number absolute number1"
-          data-aos="fade"
-          data-aos-offset="50"
-          data-aos-delay="50"
-          data-aos-duration="2000"
-          data-aos-mirror="true"
-          data-aos-once="false"
-        >424</div>
-        <div
-          class="number absolute number2"
-          data-aos="fade"
-          data-aos-offset="50"
-          data-aos-delay="50"
-          data-aos-duration="2000"
-          data-aos-mirror="true"
-          data-aos-once="false"
-        >7755</div>
+        <p class="title">
+          正對<span class="number number2">{{animatedNumber2}}</span>坪<br />
+          校園預定地
+        </p>
       </div>
-      <div class="bubble-container absolute">
-        <div
-          class="bubble1"
-          data-aos="fade"
-          data-aos-offset="50"
-          data-aos-delay="100"
-          data-aos-duration="2000"
-          data-aos-mirror="true"
-          data-aos-once="false"
-        >
-          <bubble1 />
-        </div>
-        <div
-          class="bubble2"
-          data-aos="fade"
-          data-aos-offset="50"
-          data-aos-delay="100"
-          data-aos-duration="2000"
-          data-aos-mirror="true"
-          data-aos-once="false"
-        >
-          <bubble2 />
-        </div>
-      </div>
+      <img
+        class="bubble1"
+        data-aos="zoom-in-up"
+        data-aos-offset="50"
+        data-aos-delay="1200"
+        data-aos-duration="500"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        src="./bubble1.png"
+        alt
+      />
+      <img
+        class="bubble2"
+        data-aos="zoom-in-up"
+        data-aos-offset="50"
+        data-aos-delay="1200"
+        data-aos-duration="500"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        src="./bubble2.png"
+      />
     </div>
   </div>
 </template>
@@ -75,58 +63,62 @@
   display: none;
 }
 .text {
-  width: 920px;
-  height: 130px;
-  margin-top: 100px;
+  margin-top: 11vh;
   top: 10%;
+  .title {
+    font-size: 6vh;
+    font-weight: bold;
+    color: #000;
+    font-family: 'Noto Sans TC' !important;
+    text-align: left;
+  }
 
   .number {
     font-family: Calibri !important;
-    font-size: 100px;
+    font-size: 11vh;
     font-weight: bold;
     color: #d33828;
+    width: 188px;
+    display: inline-block;
   }
 
   .number1 {
-    left: 118px;
-    top: -32px;
+    // left: 13%;
+    // bottom: 48%;
+    width: 11vh *(188 / 104);
   }
 
   .number2 {
-    right: 70px;
-    top: -32px;
+    width: 11vh *(241 / 104);
+    // right: 8%;
+    // bottom: 48%;
   }
 }
 
-.bubble-container {
-  width: 918px;
-  bottom: 0px;
+.bubble1,
+.bubble2 {
+  position: absolute;
+}
 
-  .bubble1,
-  .bubble2 {
-    position: absolute;
-    width: 138px;
-    height: 125px;
-    svg {
-      width: 100%;
-    }
-  }
+.bubble1 {
+  width: auto;
+  height: calc(100vh * (125 / 900));
+  left: 29%;
+  bottom: 20%;
+}
 
-  .bubble1 {
-    left: 118px;
-    bottom: 50px;
-  }
-
-  .bubble2 {
-    right: 90px;
-    bottom: 50px;
-  }
+.bubble2 {
+  width: auto;
+  height: calc(100vh * (144 / 900));
+  right: 33%;
+  bottom: 16%;
 }
 .text > svg {
-  width: 420px;
+  height: calc(100vh * (130 / 900));
 
   &:nth-child(2) {
     width: 78px;
+    margin-top: 20px;
   }
 
   img {
@@ -180,7 +172,7 @@
     }
   }
   .bg {
-    width: auto;
+    width: 850px;
     height: calc(100vh - 123px);
   }
 
@@ -197,19 +189,19 @@
     .text {
       width: 850px;
 
-      .number {
-        font-size: 80px;
-      }
+      // .number {
+      //   font-size: 65px;
+      // }
 
-      .number1 {
-        left: 155px;
-        top: 0px;
-      }
+      // .number1 {
+      //   left: 167px;
+      //   top: -20px;
+      // }
 
-      .number2 {
-        right: 113px;
-        top: 0px;
-      }
+      // .number2 {
+      //   right: 130px;
+      //   top: -20px;
+      // }
     }
 
     .text > svg {
@@ -228,6 +220,20 @@
   .bubble-container {
     width: 850px;
   }
+
+  .bubble1 {
+    width: auto;
+    height: calc(100vh * (125 / 900));
+    left: 29vw;
+    bottom: 20%;
+  }
+
+  .bubble2 {
+    width: auto;
+    height: calc(100vh * (144 / 900));
+    left: 147vw;
+    bottom: 16%;
+  }
 }
 </style>
 
@@ -235,14 +241,11 @@
 import txt1 from '@/assets/svg/s2_txt1.svg'
 import txt2 from '@/assets/svg/s2_txt2.svg'
 import svgLine from './s2_txt'
-import bubble1 from './bubble1'
-import bubble2 from './bubble2'
+import { TweenLite } from 'gsap'
 export default {
   name: 'section2',
   components: {
     svgLine,
-    bubble1,
-    bubble2,
   },
 
   data() {
@@ -250,7 +253,19 @@ export default {
       txt1,
       txt2,
       showMask: true,
+      number1: 0,
+      tweenedNumber1: 0,
+      tweenedNumber2: 0,
     }
+  },
+
+  computed: {
+    animatedNumber1: function() {
+      return this.tweenedNumber1.toFixed(0)
+    },
+    animatedNumber2: function() {
+      return this.tweenedNumber2.toFixed(0)
+    },
   },
 
   methods: {
@@ -300,6 +315,18 @@ export default {
   mounted() {
     this.$refs.frame.addEventListener('scroll', () => {
       this.showMask = false
+    })
+
+    document.addEventListener('aos:in:ani-number', ({ detail }) => {
+      TweenLite.to(this.$data, 1.2, { tweenedNumber1: 424 })
+      TweenLite.to(this.$data, 1.2, { tweenedNumber2: 7755 })
+      console.log(123)
+    })
+
+    document.addEventListener('aos:out:ani-number', ({ detail }) => {
+      TweenLite.to(this.$data, 1.2, { tweenedNumber1: 0 })
+      TweenLite.to(this.$data, 1.2, { tweenedNumber2: 0 })
+      console.log(456)
     })
   },
 }

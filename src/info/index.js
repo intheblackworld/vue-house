@@ -5,8 +5,8 @@ export default {
   phone: '02-2995-8585',
   fbLink:
     'https://www.facebook.com/%E7%AB%8B%E7%91%BE%E9%86%9E-513418625854258/',
-  fbMessage: 'https://www.facebook.com/messages/t/513418625854258',
-  googleLink: 'https://goo.gl/maps/d4mpi3WPdJ2kLvsF7',
+  fbMessage: 'https://m.me/513418625854258/',
+  googleLink: 'https://www.google.com.tw/maps/place/%E7%AB%8B%E7%91%BE%E9%86%9E/@25.0573665,121.4720018,17z/data=!3m1!4b1!4m5!3m4!1s0x3442a9a77e8f9a69:0xcd5d3936dafc6b79!8m2!3d25.0573665!4d121.4741905',
   caseName: '心天畝',
 
   houseInfos: [
