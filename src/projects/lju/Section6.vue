@@ -153,8 +153,10 @@
     line-height: 1.7;
   }
   .toggle {
-    margin-top: calc((100vh - #{$nav_pc_height}) * (260 / 900));
-    margin-right: 137px;
+    margin-top: 0;
+    margin-right: 0;
+    top: 25%;
+    right: 67%;
   }
 
   .item {

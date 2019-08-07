@@ -47,7 +47,7 @@
         data-aos-once="false"
       >
         ▉ 連續壁深度19米，厚度50公分，鋼性更強
-        <br />水密度更高，嚴密防護基樁外緣
+        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;水密度更高，嚴密防護基樁外緣
       </p>
     </div>
     <img src="./s7_txt_m.png" alt />

@@ -92,7 +92,7 @@
 <style lang="scss" scoped>
 .bg {
   background-image: url('./s10_bg.jpg');
-  padding-top: 8vh;
+  padding-top: 4vh;
 
   .icon-1 {
     margin: 0 30px;
@@ -201,7 +201,7 @@
 
     .slide {
       width: 65%;
-      height: 377px;
+      height: 460px;
       .btn-group {
         bottom: 22vh;
       }

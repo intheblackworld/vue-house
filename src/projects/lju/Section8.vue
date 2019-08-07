@@ -96,6 +96,7 @@
 .slide {
   width: 90%;
   height: calc(100vh - 190px);
+  max-width: 1440px;
   img {
     width: 100%;
     height: 100%;

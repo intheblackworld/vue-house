@@ -15,6 +15,20 @@
         data-aos-mirror="true"
         data-aos-once="false"
       />
+      <h3 class="m-title" v-if="isMobile">
+        放大幸福 加倍感動
+        <br />大一點好室會發生!
+      </h3>
+      <div
+        class="m-desc"
+        data-aos="fade-up"
+        data-aos-offset="50"
+        data-aos-delay="0"
+        data-aos-duration="1500"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        v-if="isMobile"
+      >空間大一點，驚喜多一點，想不到的細節都藏在這裡</div>
       <div class="flex-jb wrap custom">
         <div
           class="slide relative"
@@ -67,24 +81,11 @@
             data-aos-mirror="true"
             data-aos-once="false"
           >
-            <div class="text">
-              <h3
-                class="title"
-                v-html="isMobile ? '放大幸福 加倍感動<br />大一點好室會發生!' : '放大幸福 加倍感動<br /> 大一點好室會發生!'"
-              ></h3>
-              <div class="desc" v-if="!isMobile">空間大一點，驚喜多一點，想不到的細節都藏在這裡</div>
+            <div class="text" v-if="!isMobile">
+              <h3 class="title" v-html="'放大幸福 加倍感動<br /> 大一點好室會發生!'"></h3>
+              <div class="desc">空間大一點，驚喜多一點，想不到的細節都藏在這裡</div>
             </div>
           </div>
-          <div
-            class="m-desc"
-            :data-aos="!isMobile ? 'fade' : 'fade-up'"
-            data-aos-offset="50"
-            data-aos-delay="0"
-            data-aos-duration="1500"
-            data-aos-mirror="true"
-            data-aos-once="false"
-            v-if="isMobile"
-          >空間大一點，驚喜多一點，想不到的細節都藏在這裡</div>
           <h3 class="border flex-c">三房</h3>
           <h3
             class="title"
@@ -177,7 +178,6 @@
     }
 
     .head {
-
     }
 
     .title {
@@ -216,7 +216,7 @@
 
     .slide {
       width: 65%;
-      height: 377px;
+      height: 460px;
 
       .btn-group {
         bottom: 22vh;
@@ -306,6 +306,19 @@
       color: #231815;
       margin-top: 15px;
       margin-bottom: 15px;
+      padding-left: 15px;
+    }
+
+    .m-title {
+      width: 100%;
+      margin: 0 auto;
+      font-size: 3.8vh;
+      text-align: left;
+      color: #231815;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      padding-left: 15px;
+      line-height: 1.5;
     }
 
     .slide {
@@ -343,7 +356,7 @@
       }
 
       .title {
-        width: 100vw;
+        width: 50vw;
         font-size: 24px;
         margin-left: 0;
         margin-bottom: 20px;

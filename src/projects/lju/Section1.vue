@@ -52,28 +52,34 @@
 .content {
   width: 640px;
   left: -50px;
-  margin-top: -250px;
+  // margin-top: -250px;
   z-index: 2;
 
   .title {
-    left: 20%;
-    height: 65vh;
-    transform: translateY(-22%);
+    top: 50%;
+    left: 50%;
+    width: 7.5vw;
+    transform: translate(-164%, -50%);
   }
 }
 
 .tree-1 {
   left: 0;
+  width: 28vw;
+  left: 0;
+
   img {
     width: 100%;
+    object-fit: cover;
   }
 }
 
 .tree-2 {
   right: 0;
-  margin-top: 50px;
+  width: 45.5vw;
   img {
     width: 100%;
+    object-fit: cover;
   }
 }
 

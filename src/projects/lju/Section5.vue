@@ -33,6 +33,43 @@
           <br />雙國道快速道路動能，加倍獻上生活豐美
         </div>
       </div>
+      <div class="container flex-ja" v-if="isMobile">
+        <div class="side">
+          <div
+            class="label"
+            data-aos="fade"
+            data-aos-offset="50"
+            data-aos-delay="0"
+            data-aos-duration="1500"
+            data-aos-mirror="true"
+            data-aos-once="false"
+          >【 蘊藏生活 】</div>
+          <h3
+            class="title"
+            data-aos="fade"
+            data-aos-offset="50"
+            data-aos-delay="300"
+            data-aos-duration="1500"
+            data-aos-mirror="true"
+            data-aos-once="false"
+          >
+            水岸優雅綻放
+            <br />蘊藏生活絢美
+          </h3>
+          <div
+            class="desc"
+            data-aos="fade"
+            data-aos-offset="50"
+            data-aos-delay="600"
+            data-aos-duration="1500"
+            data-aos-mirror="true"
+            data-aos-once="false"
+          >
+            校園第一排融合水岸雙景觀優勢，
+            <br />雙國道快速道路動能，加倍獻上生活豐美
+          </div>
+        </div>
+      </div>
       <div class="container flex-ja" v-if="!isMobile">
         <div class="side">
           <span v-if="!isTablet">
@@ -380,7 +417,6 @@
 @media screen and (max-width: 767px) {
   .section5 {
     height: auto;
-    max-height: 600px;
   }
 
   .container {
@@ -404,9 +440,29 @@
       width: 60%;
     }
   }
+
+  .container {
+    padding: 0 20px;
+    padding-top: 40px;
+    .side {
+      width: 100%;
+      .label {
+        font-size: 28px;
+      }
+
+      .title {
+        font-size: 46px;
+        line-height: 1.4;
+      }
+
+      .desc {
+        font-size: 18px;
+      }
+    }
+  }
   .slide {
     width: 100vw;
-    height: calc(100vw * (260 / 375) + 160px);
+    height: calc(100vw * (260 / 375) + 200px);
     img {
       width: 100%;
       height: 260px;
@@ -432,12 +488,12 @@
     .slide-content {
       color: #000;
       position: absolute;
-      bottom: 0px;
+      bottom: -30px;
       width: 90vw;
       left: 0;
       right: 0;
       margin: 0 auto;
-      padding-bottom: 20px;
+      padding-bottom: 40px;
 
       .title {
         font-size: 32px;

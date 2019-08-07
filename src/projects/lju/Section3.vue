@@ -83,7 +83,7 @@
   }
   .content {
     width: 100vw;
-    padding: 0 7px;
+    padding: 0 7%;
     color: #fff;
     text-align: left;
     top: 8%;

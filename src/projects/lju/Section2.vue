@@ -75,6 +75,7 @@
 
   .number {
     font-family: Calibri !important;
+    text-align: center;
     font-size: 11vh;
     font-weight: bold;
     color: #d33828;
