@@ -3,46 +3,35 @@
     <div class="bg relative">
       <img v-if="!isMobile" src="./s10_footer.png" alt class="footer" />
       <img v-else src="./s10_footer_m.png" alt class="footer" />
+      <img v-if="!isMobile" src="./s10_tree.png" alt class="tree-1 absolute" :data-aos="!isMobile ? 'fade' : 'fade'" />
       <img
-        src="./s11_tree_2.png"
+        src="./s11_tree_1.png"
         alt
-        v-if="isMobile"
-        class="m-tree"
-        :data-aos="!isMobile ? 'fade' : 'fade-up'"
+        class="tree-2 absolute"
+        :data-aos="!isMobile ? 'fade' : 'fade'"
         data-aos-offset="50"
-        data-aos-delay="1000"
+        data-aos-delay="300"
         data-aos-duration="1500"
         data-aos-mirror="true"
         data-aos-once="false"
       />
-      <h3 class="m-title" v-if="isMobile">
-        放大幸福 加倍感動
-        <br />大一點好室會發生!
-      </h3>
-      <div
-        class="m-desc"
-        data-aos="fade-up"
-        data-aos-offset="50"
-        data-aos-delay="0"
-        data-aos-duration="1500"
-        data-aos-mirror="true"
-        data-aos-once="false"
-        v-if="isMobile"
-      >空間大一點，驚喜多一點，想不到的細節都藏在這裡</div>
-      <div class="flex-jb wrap custom">
-        <div
-          class="slide relative"
-          :data-aos="!isMobile ? 'fade' : 'fade-up'"
-          data-aos-offset="50"
-          data-aos-delay="300"
-          data-aos-duration="1500"
-          data-aos-mirror="true"
-          data-aos-once="false"
-        >
+      <div class="head flex" v-if="isTablet">
+        <img src="./s10_icon_1.png" alt />
+        <div class="flex-ac wrap">
+          <h3 class="title">放大幸福 加倍感動 大一點好室會發生!</h3>
+          <p class="desc">空間大一點，驚喜多一點，想不到的細節都藏在這裡</p>
+        </div>
+      </div>
+      <div class="head" v-if="isMobile">
+        <h3 class="title">放大幸福 加倍感動<br />大一點好室會發生!</h3>
+        <p class="desc">空間大一點，驚喜多一點，想不到的細節都藏在這裡</p>
+      </div>
+      <div class="container flex-jb wrap">
+        <div class="slide relative">
           <img
             v-for="(slide, index) in slideList"
             :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
-            :key="`s4-slide-${index}`"
+            :key="`s10-slide-${index}`"
             :src="slide.src"
             alt
           />
@@ -52,55 +41,74 @@
             <img @click="decIndex" src="./small_right_btn.png" alt />
           </div>
         </div>
-        <img
-          src="./s10_icon_2.png"
-          alt
-          class="tree absolute-ac"
-          :data-aos="!isMobile ? 'fade' : 'fade'"
-          data-aos-offset="50"
-          data-aos-delay="300"
-          data-aos-duration="1500"
-          data-aos-mirror="true"
-          data-aos-once="false"
-        />
-        <div
-          class="content wrap"
-          :data-aos="!isMobile ? 'fade' : 'fade-up'"
-          data-aos-offset="50"
-          data-aos-delay="600"
-          data-aos-duration="1500"
-          data-aos-mirror="true"
-          data-aos-once="false"
-        >
-          <div
-            class="flex-ac head"
-            :data-aos="!isMobile ? 'fade' : 'fade-up'"
-            data-aos-offset="50"
-            data-aos-delay="0"
-            data-aos-duration="1500"
-            data-aos-mirror="true"
-            data-aos-once="false"
-          >
-            <div class="text" v-if="!isMobile">
-              <h3 class="title" v-html="'放大幸福 加倍感動<br /> 大一點好室會發生!'"></h3>
-              <div class="desc">空間大一點，驚喜多一點，想不到的細節都藏在這裡</div>
-            </div>
-          </div>
+        <div class="content">
+          <h3 class="title" v-if="!(isMobile || isTablet)">
+            放大幸福 加倍感動
+            <br />大一點好室會發生!
+          </h3>
+          <p class="desc" v-if="!(isMobile || isTablet)">空間大一點，驚喜多一點，想不到的細節都藏在這裡</p>
           <h3 class="border flex-c">三房</h3>
-          <h3
-            class="title"
-            v-html="(isMobile || isTablet) ? '寬裕客餐廳<br />主臥加碼更衣室' : '寬裕客餐廳，主臥加碼更衣室'"
-          ></h3>
-          <div
-            class="desc"
-            v-if="!isMobile"
-            v-html="(isTablet) ? '<p>大尺碼客餐廳，是親朋來訪好友相聚<br />小酌的完美場域</p> <p>主臥室升級更衣室雙排儲櫃，老婆閨<br />密講悄悄話的完美空間</p>' : '<p>大尺碼客餐廳，是親朋來訪好友相聚小酌的完美場域</p> <p>主臥室升級更衣室雙排儲櫃，老婆閨密講悄悄話的完美空間</p>'"
-          ></div>
-          <div class="desc" v-else>
-            <p>
-              大尺碼客餐廳，是親朋來訪好友相聚小酌的完美場域。
-              主臥室升級更衣室雙排儲櫃，老婆閨密講悄悄話的完美空間
-            </p>
+          <h3 class="small-title" v-if="!(isMobile || isTablet)">寬裕客餐廳，主臥加碼更衣室</h3>
+          <h3 class="small-title" v-else>
+            寬裕客餐廳
+            <br />主臥加碼更衣室
+          </h3>
+
+          <p class="desc" v-if="!(isMobile || isTablet)">
+            大尺碼客餐廳，是親朋來訪好友相聚小酌的完美場域
+            <br />主臥室升級更衣室雙排儲櫃，老婆閨密講悄悄話的完美空間
+          </p>
+          <p class="desc" v-if="isTablet">
+            大尺碼客餐廳，是親朋來訪好友相聚
+            <br />小酌的完美場域
+            <br />主臥室升級更衣室雙排儲櫃，老婆閨
+            <br />密講悄悄話的完美空間
+          </p>
+          <p class="desc" v-if="isMobile">
+            大尺碼客餐廳，是親朋來訪好友相聚
+            小酌的完美場域<br />
+            主臥室升級更衣室雙排儲櫃，老婆閨密講悄悄話的完美空間
+          </p>
+        </div>
+        <img src="./s11_tree_2.png" alt v-if="isMobile" class="m-tree" />
+      </div>
+      <div class="container flex-jb wrap reverse">
+        <img v-if="isMobile" src="./s10_tree.png" alt class="m-tree-2" :data-aos="!isMobile ? 'fade' : 'fade'" />
+        <div class="content content-r">
+          <h3 class="border flex-c" v-if="isMobile">兩房</h3>
+          <h3 class="small-title" v-if="!(isMobile || isTablet)">面寬三米五，靈活彈性好運用</h3>
+          <h3 class="small-title" v-else>
+            面寬三米五
+            <br />靈活彈性好運用
+          </h3>
+          <p class="desc" v-if="!(isMobile || isTablet)">
+            大面窗寬裕舒適的空間，是家人起居生活的好地方
+            <br />可自由調整的+1變化，讓家裡安排更有彈性更加溫馨
+          </p>
+          <p class="desc" v-if="isTablet">
+            大面窗寬裕舒適的空間，是家人起居
+            <br />生活的好地方
+            <br />可自由調整的+1變化，讓家裡安排更
+            <br />有彈性更加溫馨
+          </p>
+          <p class="desc" v-if="isMobile">
+            大面窗寬裕舒適的空間，是家人起居生活的好地方
+            <br />可自由調整的+1變化，讓家裡安排更有彈性更加溫馨
+          </p>
+          <h3 class="border flex-c" v-if="!isMobile">兩房</h3>
+        </div>
+        <div class="slide relative">
+          <img
+            v-for="(slide, index) in slideList2"
+            :class="`slide-img ${slide2Index === index ? 'active' : ''}`"
+            :key="`s11-slide-${index}`"
+            :src="slide.src"
+            alt
+          />
+
+          <div class="btn-group flex-jb flex-ac">
+            <img @click="addIndex2" src="./small_left_btn.png" alt />
+            <img @click="decIndex2" src="./small_right_btn.png" alt />
           </div>
         </div>
       </div>
@@ -112,277 +120,310 @@
 
 .bg {
   background-image: url('./s10_bg.jpg');
+  position: relative;
 
-  .icon-1 {
-    margin: 0 30px;
-    height: 20vh;
+  .footer {
+    width: 100vw;
   }
 
-  .tree {
-    height: 30vh;
+  .tree-1 {
+    top: 20vh;
     right: 0;
+    width: 14vw;
   }
 
-  .text {
-    text-align: left;
+  .tree-2 {
+    left: 0;
+    bottom: 0;
+    width: 33vw;
+  }
+
+  .container {
+    width: 100vw;
+
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-top: 60px;
+    z-index: 1;
     position: relative;
-    z-index: 2;
-    .title {
-      font-size: 49px;
-      color: #231815;
-      margin-bottom: 0px;
-    }
-
-    .desc {
-      font-size: 3.5vh;
-      color: #231815;
-      margin-bottom: 15px;
-    }
-  }
-
-  .head {
-    padding-top: calc(100vh * (15 / 900));
   }
 
   .slide {
-    width: 50%;
+    width: 62%;
     height: auto;
-    margin-top: 20px;
+    position: relative;
 
     .slide-img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+
+      &.active {
+        position: relative;
+      }
     }
 
     .btn-group {
       width: 95%;
-      bottom: 45%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
 
   .content {
+    width: 38%;
+    text-align: left;
+    padding-left: 40px;
     color: #231815;
-    padding: 0px;
-    padding-left: 30px;
-    width: 50%;
-    position: relative;
-    z-index: 2;
-    .border {
-      width: 103px;
-      height: 103px;
-      border: 1px solid #231815;
-      font-size: 42px;
-      color: #231815;
-      margin-bottom: 30px;
+    line-height: 1.5;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+
+    &.content-r {
+      padding-left: 0;
+      padding-right: 40px;
+      text-align: right;
+      align-items: flex-start;
+      align-content: flex-start;
+      justify-content: flex-end;
+
+      .small-title {
+        margin-bottom: 25px;
+      }
     }
 
-    .head {
+    > * {
+      width: 100%;
     }
 
     .title {
-      font-size: 32px;
-      margin-bottom: 0px;
-      line-height: 1.5;
-      text-align: left;
+      font-size: 49px;
+      line-height: 1.3;
     }
 
     .desc {
       font-size: 17px;
+    }
+
+    .small-title {
+      font-size: 36px;
       line-height: 1.5;
-      text-align: left;
-      margin-bottom: 20px;
+    }
+
+    .border {
+      width: 103px;
+      height: 103px;
+      margin-top: 40px;
+      border: 1px solid #231815;
+      font-size: 45px;
+      font-weight: 400 !important;
     }
   }
-}
-
-.footer {
-  width: 100vw;
-}
-
-.custom {
-  display: flex;
-  margin: 0 auto;
-  width: 1440px;
-  padding-left: 200px;
-  max-width: 100vw;
 }
 
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .bg {
-    width: 100vw;
+    .head {
+      text-align: left;
+      align-content: center;
+      color: #231815;
+      margin-left: 20px;
+      margin-top: 20px;
+      img {
+        width: 75px;
+        height: 120px;
+        margin-right: 30px;
+      }
 
-    .slide {
-      width: 65%;
-      height: 460px;
+      .title {
+        font-size: 45px;
+        margin-bottom: 20px;
+      }
 
-      .btn-group {
-        bottom: 22vh;
+      .desc {
+        font-size: 23px;
       }
     }
 
     .content {
-      width: 35%;
-    }
-
-    .text {
-      .title {
-        // font-size: 6vh;
+      .border {
+        width: 63px;
+        height: 63px;
+        font-size: 28px;
       }
     }
-
-    .content {
-      .title {
-        line-height: 1.3;
-      }
-    }
-
-    .tree {
-      height: 22vh;
-      right: 0;
-    }
-  }
-
-  .custom {
-    padding-left: 0px;
   }
 }
 
 /* 手機尺寸 */
 @media screen and (max-width: 767px) {
+  .tree-2 {
+    display: none;
+  }
   .bg {
-    width: 100vw;
-    height: auto;
     background-image: url('./s10_bg.jpg');
-    padding-top: 0px;
+    position: relative;
+    width: 100vw;
 
     .head {
-      padding-top: 30px;
-    }
-  }
-
-  .custom {
-    padding-left: 0px;
-  }
-
-  .fullscreen {
-    height: calc(100vh - 60px) !important;
-  }
-
-  .bg {
-    .icon-1 {
-      margin: 0;
-      height: 15vh;
-    }
-
-    .tree {
-      display: none;
-    }
-
-    .text {
-      text-align: center;
-      .title {
-        width: 100vw;
-        font-size: 4vh;
-        line-height: 1.3;
-        color: #231815;
-        margin-bottom: 0px;
-        margin-left: 20px;
-      }
-
-      .desc {
-        font-size: 15px;
-        color: #231815;
-      }
-    }
-
-    .m-desc {
-      width: 100%;
-      margin: 0 auto;
-      font-size: 1.9vh;
       text-align: left;
+      align-content: center;
       color: #231815;
-      margin-top: 15px;
-      margin-bottom: 15px;
-      padding-left: 15px;
-    }
-
-    .m-title {
-      width: 100%;
-      margin: 0 auto;
-      font-size: 3.8vh;
-      text-align: left;
-      color: #231815;
-      margin-top: 15px;
-      margin-bottom: 15px;
-      padding-left: 15px;
-      line-height: 1.5;
-    }
-
-    .slide {
-      width: 100vw;
-      height: calc(100vw * (430 / 885));
+      margin-left: 20px;
       margin-top: 20px;
-
-      .slide-img {
-        width: 100%;
-      }
-
-      .btn-group {
-        width: 100vw;
-        bottom: calc(100vw * (180 / 885));
-      }
-    }
-
-    .content {
-      color: #231815;
-      padding: 15px;
-      position: relative;
-      z-index: 2;
-      width: 100vw;
-      display: flex;
-      align-items: center;
-      .border {
-        width: 63px;
-        height: 63px;
-        border: 1px solid #231815;
-        font-size: 28px;
-        color: #231815;
-        margin-bottom: 2vh;
-        display: flex;
-        margin-right: 20px;
+      img {
+        width: 75px;
+        height: 120px;
+        margin-right: 30px;
       }
 
       .title {
-        width: 50vw;
-        font-size: 24px;
-        margin-left: 0;
-        margin-bottom: 20px;
+        font-size: 28px;
         line-height: 1.4;
-        text-align: left;
-        display: inline-block;
+        margin-bottom: 20px;
       }
 
       .desc {
         font-size: 14px;
-        text-align: left;
-        line-height: 1.4;
-        text-align: justify;
       }
+    }
+
+    .footer {
+      width: 100vw;
+    }
+
+    .tree-1 {
+      top: 20vh;
+      right: 0;
+      width: 14vw;
+    }
+
+    .tree-2 {
+      left: 0;
+      bottom: 0;
+      width: 33vw;
+    }
+
+    .container {
+      width: 100vw;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding-top: 40px;
+      z-index: 1;
+      position: relative;
+    }
+
+    .slide {
+      width: 100vw;
+      height: auto;
+      position: relative;
+
+      .slide-img {
+        width: 100%;
+
+        &.active {
+          position: relative;
+        }
+      }
+
+      .btn-group {
+        width: 95%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    .content {
+      width: 100%;
+      text-align: left;
+      padding-left: 20px;
+      padding-right: 20px;
+      color: #231815;
+      line-height: 1.5;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: none;
+      margin-top: 25px;
+
+      &.content-r {
+        padding-left: 0;
+        padding-right: 40px;
+        text-align: right;
+        align-items: flex-start;
+        align-content: flex-start;
+        justify-content: flex-end;
+
+        .small-title {
+          margin-bottom: 25px;
+        }
+      }
+
+      > * {
+        width: auto;
+      }
+
+      .title {
+        font-size: 49px;
+        line-height: 1.3;
+      }
+
+      .desc {
+        font-size: 14px;
+        margin-top: 20px;
+      }
+
+      .small-title {
+        font-size: 24px;
+        line-height: 1.4;
+      }
+
+      .border {
+        width: 63px;
+        height: 63px;
+        margin-top: 0px;
+        margin-right: 20px;
+        border: 1px solid #231815;
+        font-size: 28px;
+        font-weight: 400 !important;
+      }
+    }
+
+    .m-tree {
+      position: relative;
+      left: 70%;
     }
   }
 
-  .m-tree {
-    position: absolute;
-    right: 5vw;
-    bottom: 0;
-    width: 10vw;
-  }
+  .reverse {
+    flex-direction: column-reverse;
+    padding-top: 0 !important;
 
-  .custom {
-    margin: 0 auto;
+    .content {
+      text-align: left !important;
+      justify-content: flex-start !important;
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+      z-index: 1;
+      
+      .small-title {
+        margin-bottom: 20px !important;
+      }
+
+      .desc {
+        margin-top: 0 !important;
+        margin-bottom: 80px;
+      }
+    }
+
+    .m-tree-2 {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 20vw;
+    }
   }
 }
 </style>
@@ -399,6 +440,7 @@ export default {
     return {
       isMobile,
       isTablet,
+      slide2Index: 0,
       slideList: [
         {
           src: require('./s10_img_1.jpg'),
@@ -410,9 +452,31 @@ export default {
           src: require('./s10_img_3.jpg'),
         },
       ],
+      slideList2: [
+        {
+          src: require('./s11_img_1.jpg'),
+        },
+        {
+          src: require('./s11_img_2.jpg'),
+        },
+      ],
     }
   },
 
-  methods: {},
+  methods: {
+    addIndex2() {
+      this.slide2Index =
+        this.slide2Index === this.slideList2.length - 1
+          ? 0
+          : this.slide2Index + 1
+    },
+
+    decIndex2() {
+      this.slide2Index =
+        this.slide2Index === 0
+          ? this.slideList2.length - 1
+          : this.slide2Index - 1
+    },
+  },
 }
 </script>

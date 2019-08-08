@@ -32,9 +32,9 @@
     <div id="section10">
       <Section10 />
     </div>
-    <div id="section11">
+    <!-- <div id="section11">
       <Section11 />
-    </div>
+    </div> -->
     <div id="section12">
       <Section12 />
     </div>
@@ -60,7 +60,7 @@ import Section7 from '@/projects/lju/Section7.vue'
 import Section8 from '@/projects/lju/Section8.vue'
 import Section9 from '@/projects/lju/Section9.vue'
 import Section10 from '@/projects/lju/Section10.vue'
-import Section11 from '@/projects/lju/Section11.vue'
+// import Section11 from '@/projects/lju/Section11.vue'
 import Section12 from '@/projects/lju/Section12.vue'
 
 export default {
@@ -80,7 +80,7 @@ export default {
     Section8,
     Section9,
     Section10,
-    Section11,
+    // Section11,
     Section12,
   },
 

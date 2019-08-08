@@ -2,24 +2,13 @@
   <div class="section11">
     <div class="bg relative">
       <img
-        src="./s10_icon_2.png"
+        src="./s10_tree.png"
         alt
         v-if="isMobile"
         class="m-tree absolute"
         :data-aos="!isMobile ? 'fade' : 'fade-up'"
         data-aos-offset="50"
         data-aos-delay="1000"
-        data-aos-duration="1500"
-        data-aos-mirror="true"
-        data-aos-once="false"
-      />
-      <img
-        src="./s11_tree_1.png"
-        alt
-        class="tree-1 absolute"
-        :data-aos="!isMobile ? 'fade' : 'fade'"
-        data-aos-offset="50"
-        data-aos-delay="300"
         data-aos-duration="1500"
         data-aos-mirror="true"
         data-aos-once="false"
@@ -203,7 +192,7 @@
       width: 65%;
       height: 460px;
       .btn-group {
-        bottom: 22vh;
+        bottom: 27vh;
       }
     }
 

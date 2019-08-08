@@ -27,7 +27,7 @@
         data-aos-duration="1500"
         data-aos-mirror="true"
         data-aos-once="false"
-      >▉ 建築基礎工程採用筏式基礎與連續壁工法</p>
+      >建築基礎工程採用筏式基礎與連續壁工法</p>
       <p
         class="desc"
         data-aos="fade"
@@ -36,7 +36,7 @@
         data-aos-duration="1500"
         data-aos-mirror="true"
         data-aos-once="false"
-      >▉ 連續壁工法可預防土壤液化發生傾斜</p>
+      >連續壁工法可預防土壤液化發生傾斜</p>
       <p
         class="desc"
         data-aos="fade"
@@ -46,8 +46,8 @@
         data-aos-mirror="true"
         data-aos-once="false"
       >
-        ▉ 連續壁深度19米，厚度50公分，鋼性更強
-        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;水密度更高，嚴密防護基樁外緣
+        連續壁深度19米，厚度50公分，鋼性更強
+        <br />水密度更高，嚴密防護基樁外緣
       </p>
     </div>
     <img src="./s7_txt_m.png" alt />
@@ -86,6 +86,19 @@
     margin-bottom: 30px;
     line-height: 1.3;
     color: #fff;
+    position: relative;
+    margin-left: 1.3em;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 0.8em;
+      height: 0.8em;
+      position: absolute;
+      left: -1.3em;
+      top: 0.3em;
+      background: #fff;
+    }
   }
 }
 

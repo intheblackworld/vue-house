@@ -141,7 +141,7 @@
 /* 手機尺寸 */
 @media screen and (max-width: 767px) {
   .section9 {
-    padding-top: 20vh;
+    padding-top: 0;
     background-color: #dcdcda;
   }
   .bg {
@@ -159,7 +159,7 @@
   .title {
     width: 317px;
     margin: 0 auto;
-    margin-top: -12vh;
+    margin-top: 5vh;
     margin-bottom: 10px;
 
     svg {

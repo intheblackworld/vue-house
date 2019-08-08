@@ -162,8 +162,8 @@
         <!-- <icon class="icon" :data="arrow2" />
         <icon class="icon" :data="arrow1" />-->
         <div class="btn-group flex-jb flex-ac">
-          <div @click="addIndex" />
-          <div @click="decIndex" />
+          <img @click="addIndex" src="./small_left_btn.png" alt />
+          <img @click="decIndex" src="./small_right_btn.png" alt />
         </div>
         <div class="slide-content">
           <h3 class="title">{{slideList[slideIndex].title}}</h3>
@@ -466,6 +466,9 @@
     img {
       width: 100%;
       height: 260px;
+      &.active {
+        position: relative;
+      }
     }
 
     .icon {
@@ -477,11 +480,12 @@
     }
 
     .btn-group {
-      bottom: auto;
-      top: 0;
-      div {
-        width: 50px;
-        height: calc(100vw * (260 / 375));
+      width: 95%;
+      position: absolute;
+      top: 0%;
+      bottom: 190px;
+      img {
+        height: auto;
       }
     }
 
@@ -608,9 +612,9 @@ export default {
       ]
     }
 
-    setInterval(() => {
-      this.addIndex()
-    }, 2000)
+    // setInterval(() => {
+    //   this.addIndex()
+    // }, 2000)
   },
 }
 </script>

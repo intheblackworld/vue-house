@@ -49,6 +49,15 @@
   margin-top: $nav_pc_height;
 }
 
+@keyframes flower {
+  from {
+    transform: skewX(-3deg);
+  }
+  to {
+    transform: skewX(0deg);
+  }
+}
+
 .content {
   width: 640px;
   left: -50px;
@@ -67,6 +76,8 @@
   left: 0;
   width: 28vw;
   left: 0;
+  animation: flower 2s linear infinite alternate;
+  transform-origin: bottom;
 
   img {
     width: 100%;
@@ -77,6 +88,8 @@
 .tree-2 {
   right: 0;
   width: 45.5vw;
+  animation: flower 2s linear infinite alternate;
+  transform-origin: bottom;
   img {
     width: 100%;
     object-fit: cover;
@@ -119,6 +132,7 @@
     display: block;
 
     .title {
+      width: auto;
       left: 40%;
       height: 40vh;
       transform: translateY(-35%);

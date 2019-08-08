@@ -1,58 +1,56 @@
 <template>
   <div class="section8 relative fullscreen">
-    <div class="fullscreen-container custom">
-      <img
-        v-if="isMobile"
+    <img
+      v-if="isMobile"
+      :data-aos="!isMobile ? 'fade-left' : 'fade-up'"
+      data-aos-offset="50"
+      data-aos-delay="600"
+      data-aos-duration="1500"
+      data-aos-mirror="true"
+      data-aos-once="false"
+      src="./s8_tree.png"
+      class="tree absolute"
+      alt
+    />
+    <div class="container">
+      <h3
+        class="title flex-ac"
         :data-aos="!isMobile ? 'fade-left' : 'fade-up'"
         data-aos-offset="50"
-        data-aos-delay="600"
+        data-aos-delay="0"
         data-aos-duration="1500"
         data-aos-mirror="true"
         data-aos-once="false"
-        src="./s8_tree.png"
-        class="tree absolute"
-        alt
-      />
-      <div class="absolute content">
-        <h3
-          class="title flex-ac"
-          :data-aos="!isMobile ? 'fade-left' : 'fade-up'"
-          data-aos-offset="50"
-          data-aos-delay="0"
-          data-aos-duration="1500"
-          data-aos-mirror="true"
-          data-aos-once="false"
-          v-html="isMobile ? '雋永雅緻<br />讓回家成為最期望的事' : '雋永雅緻，讓回家成為最期望的事'"
-        ></h3>
-        <div
-          class="slide relative"
-          :data-aos="!isMobile ? 'fade-left' : 'fade-up'"
-          data-aos-offset="50"
-          data-aos-delay="300"
-          data-aos-duration="1500"
-          data-aos-mirror="true"
-          data-aos-once="false"
-        >
-          <img
-            v-for="(slide, index) in slideList"
-            :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
-            :key="`s4-slide-${index}`"
-            :src="slide.src"
-            alt
-          />
+        v-html="isMobile ? '雋永雅緻<br />讓回家成為最期望的事' : '雋永雅緻，讓回家成為最期望的事'"
+      ></h3>
+      <div
+        class="slide relative"
+        :data-aos="!isMobile ? 'fade-left' : 'fade-up'"
+        data-aos-offset="50"
+        data-aos-delay="300"
+        data-aos-duration="1500"
+        data-aos-mirror="true"
+        data-aos-once="false"
+      >
+        <img
+          v-for="(slide, index) in slideList"
+          :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
+          :key="`s4-slide-${index}`"
+          :src="slide.src"
+          alt
+        />
 
-          <div class="btn-group flex-jb flex-ac">
-            <img @click="addIndex" src="./small_left_btn.png" alt />
-            <img @click="decIndex" src="./small_right_btn.png" alt />
-          </div>
-          <div class="slide-content absolute">
-            <h3 class="title">{{slideList[slideIndex].title}}</h3>
-            <div class="desc">{{slideList[slideIndex].desc}}</div>
-            <div
-              class="btn flex-c"
-              @click="slideIndex = slideList[slideIndex].goToIndex"
-            >{{slideList[slideIndex].btn}} ►</div>
-          </div>
+        <div class="btn-group flex-jb flex-ac">
+          <img @click="addIndex" src="./small_left_btn.png" alt />
+          <img @click="decIndex" src="./small_right_btn.png" alt />
+        </div>
+        <div class="slide-content absolute">
+          <h3 class="title">{{slideList[slideIndex].title}}</h3>
+          <div class="desc">{{slideList[slideIndex].desc}}</div>
+          <div
+            class="btn flex-c"
+            @click="slideIndex = slideList[slideIndex].goToIndex"
+          >{{slideList[slideIndex].btn}} ►</div>
         </div>
       </div>
     </div>
@@ -66,10 +64,6 @@
   background-image: url('./s8_bg.jpg');
 }
 
-.custom {
-  width: calc(180vh - 96px) !important;
-}
-
 .btn-group {
   display: none;
 }
@@ -79,36 +73,43 @@
   top: calc(100vw * (900 / 1440) * 0.15);
 }
 
-.content {
+.container {
   width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-top: 40px;
 }
 
 .title {
   font-size: 49px;
+  line-height: 1.7;
   color: #000;
-  border-left: 5.7vh solid #d43829;
+  border-left: 40px solid #d43829;
   padding-left: 20px;
   text-align: left;
-  height: 9vh;
-  margin-bottom: 2vh;
+  margin-bottom: 40px;
 }
 
 .slide {
-  width: 90%;
-  height: calc(100vh - 190px);
+  width: 100%;
+  height: calc(100vh - 224px);
   max-width: 1440px;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
   img {
-    width: 100%;
+    width: 90%;
     height: 100%;
     object-fit: cover;
   }
 
   .slide-content {
     background-image: url('./s8_shadow.png');
+    background-size: 100% 100%;
     width: 490px;
-    height: 190px;
+    height: 210px;
     bottom: 80px;
-    right: -5%;
+    right: 20px;
     padding: 40px;
 
     .title {
@@ -134,8 +135,8 @@
       height: 50px;
       color: #fff;
       position: relative;
-      right: -200px;
-      bottom: -20px;
+      right: -190px;
+      bottom: 0px;
       cursor: pointer;
     }
   }
@@ -234,14 +235,6 @@
     right: 20px !important;
   }
 
-  .custom {
-    width: 100vw !important;
-  }
-
-  .fullscreen-container {
-    padding-top: 20px;
-  }
-
   .tree {
     width: 100px;
     right: 0;
@@ -315,10 +308,6 @@
     top: auto;
     right: 0;
     bottom: 0;
-  }
-
-  .content {
-    position: relative;
   }
 }
 </style>
