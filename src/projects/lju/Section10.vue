@@ -3,7 +3,13 @@
     <div class="bg relative">
       <img v-if="!isMobile" src="./s10_footer.png" alt class="footer" />
       <img v-else src="./s10_footer_m.png" alt class="footer" />
-      <img v-if="!isMobile" src="./s10_tree.png" alt class="tree-1 absolute" :data-aos="!isMobile ? 'fade' : 'fade'" />
+      <img
+        v-if="!isMobile"
+        src="./s10_tree.png"
+        alt
+        class="tree-1 absolute"
+        :data-aos="!isMobile ? 'fade' : 'fade'"
+      />
       <img
         src="./s11_tree_1.png"
         alt
@@ -17,17 +23,45 @@
       />
       <div class="head flex" v-if="isTablet">
         <img src="./s10_icon_1.png" alt />
-        <div class="flex-ac wrap">
+        <div
+          class="flex-ac wrap"
+          data-aos="fade"
+          data-aos-offset="50"
+          data-aos-delay="0"
+          data-aos-duration="1500"
+          data-aos-mirror="true"
+          data-aos-once="false"
+        >
           <h3 class="title">放大幸福 加倍感動 大一點好室會發生!</h3>
           <p class="desc">空間大一點，驚喜多一點，想不到的細節都藏在這裡</p>
         </div>
       </div>
-      <div class="head" v-if="isMobile">
-        <h3 class="title">放大幸福 加倍感動<br />大一點好室會發生!</h3>
+      <div
+        class="head"
+        v-if="isMobile"
+        data-aos="fade"
+        data-aos-offset="50"
+        data-aos-delay="0"
+        data-aos-duration="1500"
+        data-aos-mirror="true"
+        data-aos-once="false"
+      >
+        <h3 class="title">
+          放大幸福 加倍感動
+          <br />大一點好室會發生!
+        </h3>
         <p class="desc">空間大一點，驚喜多一點，想不到的細節都藏在這裡</p>
       </div>
       <div class="container flex-jb wrap">
-        <div class="slide relative">
+        <div
+          class="slide relative"
+          data-aos="fade"
+          data-aos-offset="50"
+          data-aos-delay="300"
+          data-aos-duration="1500"
+          data-aos-mirror="true"
+          data-aos-once="false"
+        >
           <img
             v-for="(slide, index) in slideList"
             :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
@@ -41,7 +75,15 @@
             <img @click="decIndex" src="./small_right_btn.png" alt />
           </div>
         </div>
-        <div class="content">
+        <div
+          class="content"
+          data-aos="fade"
+          data-aos-offset="50"
+          data-aos-delay="300"
+          data-aos-duration="1500"
+          data-aos-mirror="true"
+          data-aos-once="false"
+        >
           <h3 class="title" v-if="!(isMobile || isTablet)">
             放大幸福 加倍感動
             <br />大一點好室會發生!
@@ -66,15 +108,40 @@
           </p>
           <p class="desc" v-if="isMobile">
             大尺碼客餐廳，是親朋來訪好友相聚
-            小酌的完美場域<br />
-            主臥室升級更衣室雙排儲櫃，老婆閨密講悄悄話的完美空間
+            小酌的完美場域
+            <br />主臥室升級更衣室雙排儲櫃，老婆閨密講悄悄話的完美空間
           </p>
         </div>
-        <img src="./s11_tree_2.png" alt v-if="isMobile" class="m-tree" />
+        <img
+          src="./s11_tree_2.png"
+          alt
+          v-if="isMobile"
+          class="m-tree"
+          data-aos="fade"
+          data-aos-offset="50"
+          data-aos-delay="0"
+          data-aos-duration="1500"
+          data-aos-mirror="true"
+          data-aos-once="false"
+        />
       </div>
       <div class="container flex-jb wrap reverse">
-        <img v-if="isMobile" src="./s10_tree.png" alt class="m-tree-2" :data-aos="!isMobile ? 'fade' : 'fade'" />
-        <div class="content content-r">
+        <img
+          v-if="isMobile"
+          src="./s10_tree.png"
+          alt
+          class="m-tree-2"
+          :data-aos="!isMobile ? 'fade' : 'fade'"
+        />
+        <div
+          class="content content-r"
+          data-aos="fade"
+          data-aos-offset="50"
+          data-aos-delay="300"
+          data-aos-duration="1500"
+          data-aos-mirror="true"
+          data-aos-once="false"
+        >
           <h3 class="border flex-c" v-if="isMobile">兩房</h3>
           <h3 class="small-title" v-if="!(isMobile || isTablet)">面寬三米五，靈活彈性好運用</h3>
           <h3 class="small-title" v-else>
@@ -97,7 +164,15 @@
           </p>
           <h3 class="border flex-c" v-if="!isMobile">兩房</h3>
         </div>
-        <div class="slide relative">
+        <div
+          class="slide relative"
+          data-aos="fade"
+          data-aos-offset="50"
+          data-aos-delay="0"
+          data-aos-duration="1500"
+          data-aos-mirror="true"
+          data-aos-once="false"
+        >
           <img
             v-for="(slide, index) in slideList2"
             :class="`slide-img ${slide2Index === index ? 'active' : ''}`"
@@ -407,7 +482,7 @@
       padding-left: 20px !important;
       padding-right: 20px !important;
       z-index: 1;
-      
+
       .small-title {
         margin-bottom: 20px !important;
       }
