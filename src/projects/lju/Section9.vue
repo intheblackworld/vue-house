@@ -147,6 +147,8 @@
   .bg {
     width: 100vw;
     background-image: url('./s9_bg_m.jpg');
+    background-size: auto;
+    background-position: 50% 100%;
     padding-top: 0px;
     overflow: initial;
   }
