@@ -107,10 +107,6 @@ export default {
   }
 }
 
-// 紅#c72d1e
-// 綠#4f6e01
-// 藍#0082d3
-
 .logo {
   width: $logo_pc_width;
   height: auto;
@@ -148,7 +144,7 @@ export default {
 
     &:hover {
       color: $nav_link_hover_color;
-      background: #4f6e01;
+      background: $nav_link_hover_bg;
     }
 
     .title {

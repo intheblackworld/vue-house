@@ -36,6 +36,8 @@ body {
 .fullscreen {
   width: 100vw;
   height: calc(100vh - #{$nav_pc_height});
+  position: relative;
+  overflow: hidden;
 
   // 從高度去調整比例，同步調整寬度，求與設計稿比例符合。留白沒關係
   .fullscreen-container {

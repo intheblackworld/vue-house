@@ -44,7 +44,7 @@ import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import gtm from '@/mixins/gtm.js'
 
-import Section1 from '@/projects/lju/Section1.vue'
+import Section1 from '@/projects/ded/Section1.vue'
 import Section2 from '@/projects/lju/Section2.vue'
 import Section3 from '@/projects/lju/Section3.vue'
 import Section4 from '@/projects/lju/Section4.vue'
