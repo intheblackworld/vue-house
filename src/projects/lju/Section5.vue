@@ -462,7 +462,7 @@
   }
   .slide {
     width: 100vw;
-    height: calc(100vw * (260 / 375) + 200px);
+    height: calc(100vw * (254 / 375) + 200px);
     img {
       width: 100%;
       height: 260px;
@@ -492,7 +492,7 @@
     .slide-content {
       color: #000;
       position: absolute;
-      bottom: -30px;
+      top: calc(100vw * (254 / 375) + 50px);
       width: 90vw;
       left: 0;
       right: 0;

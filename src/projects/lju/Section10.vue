@@ -433,6 +433,7 @@
 
         .small-title {
           margin-bottom: 25px;
+          white-space: nowrap;
         }
       }
 
@@ -453,6 +454,7 @@
       .small-title {
         font-size: 24px;
         line-height: 1.4;
+        white-space: nowrap;
       }
 
       .border {
@@ -484,6 +486,7 @@
       z-index: 1;
 
       .small-title {
+        white-space: nowrap;
         margin-bottom: 20px !important;
       }
 
