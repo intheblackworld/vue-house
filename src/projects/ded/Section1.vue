@@ -89,9 +89,9 @@
     }
   }
   .title {
-    bottom: 3%;
-    left: 62%;
-    transform: translate(-20%, 0);
+    bottom: 5%;
+    right: 8%;
+    // transform: translate(-20%, 0);
     margin: 0 0 0 0px;
     z-index: 1;
     img {
@@ -102,7 +102,7 @@
 
   .title-bg {
     width: 100vw;
-    bottom: 0;
+    bottom: 2%;
   }
 }
 
