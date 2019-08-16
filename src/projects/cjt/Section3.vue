@@ -22,7 +22,7 @@
       data-aos-duration="600"
     />
 
-    <div class="slide absolute" data-aos="fade" data-aos-offset="50">
+    <div v-if="isMobile" class="slide absolute" data-aos="fade" data-aos-offset="50">
       <img @click="addIndex" class="btn" src="./s3_a.png" alt />
       <img
         v-for="(slide, index) in slideList"

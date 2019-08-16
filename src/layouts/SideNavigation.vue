@@ -199,12 +199,12 @@ export default {
   }
 
   .navlist {
-    width: 85%;
+    width: 0%;
   }
 
   .navlist .link {
-    font-size: 12px;
-    width: 120px;
+    font-size: 20px;
+    width: 230px;
     white-space: nowrap;
 
     img {
@@ -214,12 +214,6 @@ export default {
 
     .divided {
       margin-left: 6px;
-    }
-  }
-
-  :global {
-    .ui.fluid.container {
-      width: 100% !important;
     }
   }
 }

@@ -25,6 +25,15 @@
   }
 }
 
+/* 平板尺寸 */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .bg {
+    img {
+      width: 90vw;
+    }
+  }
+}
+
 @media screen and (max-width: 767px) {
   .bg {
     background-image: url('./s1_bg_m.jpg');
