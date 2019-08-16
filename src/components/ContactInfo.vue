@@ -100,6 +100,9 @@ export default {
 
 .contact-info {
   background: $contact_bg;
+  background-image: url('../assets/img/contact_bg.jpg');
+  background-size: cover;
+  background-position: 50% 100%;
   box-shadow: $contact_shadow;
   display: flex;
   flex-direction: column;
@@ -160,6 +163,7 @@ export default {
 .address {
   width: 600px;
   height: 60px;
+  background: $contact_btn_bg;
   box-shadow: $contact_btn_border;
 }
 .google-btn {
