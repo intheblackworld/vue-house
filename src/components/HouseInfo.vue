@@ -84,7 +84,7 @@ export default {
   }
 
   .desc {
-    font-size: 16px;
+    font-size: 15px;
     text-align: left;
     line-height: 1.4;
     color: $house_desc_color;
