@@ -18,6 +18,7 @@
     />
     <img
       v-if="isMobile"
+      @click="showDialog = true"
       class="bg-img"
       data-aos="fade"
       data-aos-delay="300"
@@ -25,6 +26,15 @@
       src="./s6_img_m.jpg"
       alt
     />
+
+    <div class="scale-img-dialog" v-if="showDialog">
+      <div class="mask">
+        <img @click="showDialog = false" class="close" src="@/assets/img/close.png" alt />
+        <div class="content">
+          <img src="./s6_img_m.jpg" alt />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -57,6 +67,7 @@ export default {
   data() {
     return {
       isMobile,
+      showDialog: false,
     }
   },
 }

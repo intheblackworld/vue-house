@@ -8,8 +8,16 @@
       src="./s5_bg.jpg"
       alt
     />
-    <div v-else class="bg-img" data-aos="fade" data-aos-duration="1500">
-      <vue-photo-zoom-pro :url="require('./s5_bg_m.jpg')" :high-url="require('./s5_bg.jpg')" type="circle"></vue-photo-zoom-pro>
+    <div v-else class="bg-img" data-aos="fade" data-aos-duration="1500" @click="showImgDialog">
+      <img src="./s5_bg_m.jpg" alt />
+    </div>
+    <div class="scale-img-dialog" v-if="showDialog">
+      <div class="mask">
+        <img @click="showDialog = false" class="close" src="@/assets/img/close.png" alt />
+        <div class="content">
+          <img src="./s5_bg.jpg" alt />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -42,11 +50,16 @@ import { isMobile } from '@/utils'
 export default {
   name: 'section5',
 
-  methods: {},
+  methods: {
+    showImgDialog() {
+      this.showDialog = true
+    },
+  },
 
   data() {
     return {
       isMobile,
+      showDialog: false,
     }
   },
 }
