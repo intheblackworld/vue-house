@@ -5,6 +5,9 @@
     <div id="section1">
       <Section1 />
     </div>
+    <div id="section2">
+      <Section2 />
+    </div>
     <ContactSection />
     <MobileNav />
   </div>
@@ -18,6 +21,7 @@ import MobileNav from '@/layouts/MobileNav.vue'
 import gtm from '@/mixins/gtm.js'
 
 import Section1 from '@/projects/lkf/Section1.vue'
+import Section2 from '@/projects/lkf/Section2.vue'
 
 export default {
   name: 'home',
@@ -28,6 +32,7 @@ export default {
     MobileNav,
 
     Section1,
+    Section2,
   },
 
   methods: {
