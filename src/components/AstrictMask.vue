@@ -26,6 +26,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  top: 0;
   display: none;
 
   p {
@@ -41,6 +42,7 @@
 
   svg {
     fill: $mask_icon_color;
+    width: 100px;
   }
 }
 

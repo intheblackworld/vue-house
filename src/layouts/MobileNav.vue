@@ -63,14 +63,14 @@ export default {
   computed: {
     offset() {
       if (this.isMobile) {
-        return -45
+        return 0
       }
 
       if (this.isTablet) {
-        return -60
+        return 0
       }
 
-      return -80
+      return 0
     },
   },
   methods: {
@@ -113,7 +113,7 @@ export default {
     align-items: center;
     border-right: 1px solid $mobile_nav_border;
 
-    &:nth-last-child(1) {
+    &:nth-child(4) {
       border-right: none;
     }
   }

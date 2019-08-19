@@ -5,7 +5,7 @@
       <div class="info">
         <div class="item" :key="infos[0]" v-for="infos in houseInfos">
           <h3 class="label">{{infos[0]}}</h3>
-          <p class="desc">{{infos[1]}}</p>
+          <p class="desc" v-html="infos[1]"></p>
         </div>
       </div>
     </div>
@@ -64,6 +64,7 @@ export default {
   margin-bottom: 40px;
   margin-right: 160px;
   width: 260px;
+  height: 30px;
   border-left: 4px solid $house_label_color;
   padding-left: 12px;
   display: flex;
@@ -83,7 +84,9 @@ export default {
   }
 
   .desc {
-    font-size: 16px;
+    font-size: 15px;
+    text-align: left;
+    line-height: 1.4;
     color: $house_desc_color;
   }
 }
@@ -105,6 +108,7 @@ export default {
     margin-bottom: 20px;
     margin-right: 0;
     width: 100%;
+    height: auto;
     margin-left: 20px;
     white-space: normal;
   }
