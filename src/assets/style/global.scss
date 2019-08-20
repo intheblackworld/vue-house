@@ -7,6 +7,7 @@
 @import './reset.scss';
 @import './customClass.scss';
 @import './slide.scss';
+@import './mapBg.scss';
 
 html,
 body {
@@ -105,6 +106,21 @@ body {
   width: calc(100% * (12 / 12));
 }
 
+.hidden-pc {
+  display: none !important;
+}
+.hidden-tablet {
+  display: block;
+}
+.hidden-mobile {
+  display: block;
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
+  .fullscreen {
+    height: auto;
+  }
+}
 @media only screen and (min-width: 1441px) {
   .layout-container {
     width: 1368px;
@@ -192,49 +208,59 @@ img[lazy='loaded'] {
   .col-tablet-1 {
     width: 100%;
   }
-  
+
   .col-tablet-2 {
     width: 50%;
   }
-  
+
   .col-tablet-3 {
     width: 25%;
   }
-  
+
   .col-tablet-4 {
     width: 33.33%;
   }
-  
+
   .col-tablet-5 {
     width: calc(100% * (5 / 12));
   }
-  
+
   .col-tablet-6 {
     width: 50%;
   }
-  
+
   .col-tablet-7 {
     width: calc(100% * (7 / 12));
   }
-  
+
   .col-tablet-8 {
     width: calc(100% * (8 / 12));
   }
-  
+
   .col-tablet-9 {
     width: calc(100% * (9 / 12));
   }
-  
+
   .col-tablet-10 {
     width: calc(100% * (10 / 12));
   }
-  
+
   .col-tablet-11 {
     width: calc(100% * (11 / 12));
   }
-  
+
   .col-tablet-12 {
     width: calc(100% * (12 / 12));
+  }
+
+  .hidden-pc {
+    display: block;
+  }
+  .hidden-tablet {
+    display: none !important;
+  }
+  .hidden-mobile {
+    display: block;
   }
 }
 
@@ -263,48 +289,62 @@ img[lazy='loaded'] {
   .col-mobile-1 {
     width: 100%;
   }
-  
+
   .col-mobile-2 {
     width: 50%;
   }
-  
+
   .col-mobile-3 {
     width: 25%;
   }
-  
+
   .col-mobile-4 {
     width: 33.33%;
   }
-  
+
   .col-mobile-5 {
     width: calc(100% * (5 / 12));
   }
-  
+
   .col-mobile-6 {
     width: 50%;
   }
-  
+
   .col-mobile-7 {
     width: calc(100% * (7 / 12));
   }
-  
+
   .col-mobile-8 {
     width: calc(100% * (8 / 12));
   }
-  
+
   .col-mobile-9 {
     width: calc(100% * (9 / 12));
   }
-  
+
   .col-mobile-10 {
     width: calc(100% * (10 / 12));
   }
-  
+
   .col-mobile-11 {
     width: calc(100% * (11 / 12));
   }
-  
+
   .col-mobile-12 {
     width: calc(100% * (12 / 12));
+  }
+
+  .hidden-pc {
+    display: block;
+  }
+  .hidden-tablet {
+    display: block;
+  }
+  .hidden-mobile {
+    display: none !important;
+  }
+
+  .visible-mobile {
+    display: block !important;
   }
 }

@@ -151,3 +151,79 @@
     cursor: pointer;
   }
 }
+
+/* 螢幕尺寸標準 */
+/* 平板尺寸 */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .flex-tablet-jc {
+    display: flex;
+    justify-content: center;
+  }
+
+  .flex-tablet-ac {
+    display: flex;
+    align-items: center;
+  }
+
+  .flex-tablet-ab {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .flex-tablet-at {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .flex-tablet-jb {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .flex-tablet-ja {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .flex-tablet-jr {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .flex-mobile-jc {
+    display: flex;
+    justify-content: center;
+  }
+
+  .flex-mobile-ac {
+    display: flex;
+    align-items: center;
+  }
+
+  .flex-mobile-ab {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .flex-mobile-at {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .flex-mobile-jb {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .flex-mobile-ja {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .flex-mobile-jr {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

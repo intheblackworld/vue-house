@@ -1,5 +1,5 @@
 <template>
-  <div :class="`loading-bg ${loading ? '' : 'hide'}`">
+  <div :class="`loading-bg ${loading ? '' : 'hide'} ${remove ? 'none' : ''}`">
     <ClipLoader class="loading-icon" loading="loading" :size="150" sizeUnit="px" />
   </div>
 </template>
@@ -28,6 +28,10 @@
     animation: hide 1s ease 0s forwards;
   }
 
+  &.none {
+    display: none;
+  }
+
   @keyframes hide {
     0% {
       oacity: 1;
@@ -51,6 +55,7 @@
 
 <script>
 import { ClipLoader } from '@saeris/vue-spinners'
+import { setTimeout } from 'timers'
 
 export default {
   name: 'loading',
@@ -59,5 +64,17 @@ export default {
   },
 
   props: ['loading'],
+
+  data() {
+    return {
+      remove: false,
+    }
+  },
+
+  created() {
+    setTimeout(() => {
+      this.remove = true
+    }, 1000)
+  },
 }
 </script>

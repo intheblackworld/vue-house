@@ -132,7 +132,7 @@ export default {
 
   .link {
     color: $nav_link_color;
-    height: 100%;
+    height: 22px;
     text-align: center;
     display: block;
     cursor: pointer;
@@ -141,6 +141,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-right: 1px solid $nav_link_hover_bg;
 
     &:hover {
       color: $nav_link_hover_color;
@@ -148,7 +149,7 @@ export default {
     }
 
     .title {
-      font-size: 22px !important;
+      font-size: 16px !important;
     }
 
     .subTitle {

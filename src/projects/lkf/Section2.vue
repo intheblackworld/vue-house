@@ -1,7 +1,14 @@
 <template>
   <div class="section2">
-    <video-bg autoplay="autoplay" :sources="[require('./s2_video.mp4')]" img="./s2_bg.jpg">
-      <img class="mask-img" src="./s2_mask.png" alt />
+    <div class="fix-group">
+      <div class="button" v-scroll-to="{ element: `#${'contact'}`, offset: -56 }">預約賞屋</div>
+      <div class="button" v-scroll-to="{ element: `#${'section2'}`, offset: -56 }">
+        <img src="./chevron-up.png" alt="">
+      </div>
+    </div>
+    <video-bg autoplay="autoplay" :sources="[require('./s2_video.mp4')]" img="./s2_bg.jpg" isFix>
+      <img class="mask-img hidden-mobile" src="./s2_mask.png" alt />
+      <img class="mask-img hidden-pc hidden-tablet visible-mobile" src="./s2_mask_m.png" alt />
       <div class="mask"></div>
       <div class="title">Luxury Life</div>
       <div class="content">
@@ -17,6 +24,14 @@
   </div>
 </template>
 <style lang="scss" scoped>
+.VideoBg {
+  width: 100vw;
+  height: calc(100vh - 60px) !important;
+  video {
+    position: fixed;
+    z-index: 0;
+  }
+}
 .mask {
   width: 100vw;
   height: 100vh;
@@ -30,7 +45,7 @@
   bottom: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 60px);
   z-index: 1;
 }
 
@@ -93,7 +108,89 @@
   }
 }
 
+.fix-group {
+  position: fixed;
+  z-index: 10;
+  right: 20px;
+  bottom: 20px;
+
+  .button {
+    font-size: 18px;
+    background: #c08d4e;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+  }
+}
+
+/* 螢幕尺寸標準 */
+/* 平板尺寸 */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .content {
+    width: 980px;
+  }
+}
+
 @media screen and (max-width: 767px) {
+  .VideoBg {
+    height: calc(100vh - 45px - 63px) !important;
+
+    video {
+      top: 48%;
+    }
+  }
+
+  .mask {
+    background-color: rgba(0, 0, 0, .6);
+  }
+  .mask,
+  .mask-img {
+    height: calc(100vh - 45px - 63px) !important;
+  }
+
+  .title {
+    font-size: 30px;
+    top: 20%;
+  }
+
+  .content {
+    width: 100vw;
+    top: 30%;
+    .sub-title {
+      width: 212px;
+      height: 16px;
+      font-family: NotoSansMonoCJKtc;
+      font-size: 15.5px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: left;
+      color: #ffffff;
+    }
+
+    .text {
+      width: 175px;
+      height: 30px;
+      font-family: NotoSansMonoCJKtc;
+      font-size: 14px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: -0.07px;
+      text-align: left;
+      color: #ffffff;
+    }
+  }
   .bg {
     background-image: url('./s1_bg_m.jpg');
     .img {
@@ -103,12 +200,16 @@
       display: block;
     }
   }
+
+  .fix-group {
+    display: none;
+  }
 }
 </style>
 
 <script>
 // @ is an alias to /src
-import VideoBg from 'vue-videobg'
+import VideoBg from '@/components/VideoBg.vue'
 
 export default {
   name: 'section2',

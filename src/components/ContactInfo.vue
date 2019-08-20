@@ -100,7 +100,7 @@ export default {
 
 .contact-info {
   background: $contact_bg;
-  background-image: url('../assets/img/contact_bg.jpg');
+  // background-image: url('../assets/img/contact_bg.jpg');
   background-size: cover;
   background-position: 50% 100%;
   box-shadow: $contact_shadow;
@@ -115,7 +115,7 @@ export default {
   height: 460px;
 
   margin: 0 auto;
-  padding: 60px 0 80px;
+  padding: 60px 0 50px;
 }
 
 .logo {

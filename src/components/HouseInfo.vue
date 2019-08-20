@@ -35,6 +35,8 @@ export default {
 .house-info {
   width: 100vw;
   background: $house_bg;
+  position: relative;
+  z-index: 1;
 }
 .content {
   width: 686px;
