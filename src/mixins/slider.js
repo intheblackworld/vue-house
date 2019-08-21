@@ -5,6 +5,28 @@ export default {
     }
   },
 
+  created() {
+    setInterval(() => {
+      if (this.slideList) {
+        this.addIndex()
+      }
+      if (this.slideList1) {
+        this.addMultiIndex(1)
+      }
+
+      if (this.slideList2) {
+        this.addMultiIndex(2)
+      }
+
+      if (this.slideList3) {
+        this.addMultiIndex(3)
+      }
+
+      if (this.slideList4) {
+        this.addMultiIndex(4)
+      }
+    }, 3000)
+  },
   methods: {
     addIndex() {
       this.slideIndex =
