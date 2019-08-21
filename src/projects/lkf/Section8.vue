@@ -4,8 +4,20 @@
       <div class="container">
         <div class="title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">一生一次 尊享禮遇</div>
         <hr data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500" />
-        <div class="desc" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1500">Boutique architecture</div>
-        <img src="./s8_img1.png" alt class="img1" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1500" />
+        <div
+          class="desc"
+          data-aos="fade-up"
+          data-aos-delay="400"
+          data-aos-duration="1500"
+        >Boutique architecture</div>
+        <img
+          src="./s8_img1.png"
+          alt
+          class="img1"
+          data-aos="fade-up"
+          data-aos-delay="600"
+          data-aos-duration="1500"
+        />
         <div class="content" data-aos="fade-up" data-aos-delay="800" data-aos-duration="1500">
           <div class="title">青山興業 頂級精品創作家</div>
           <div class="desc">【青山興業】由深耕林口十多年的城洲廣告專業團隊聯手打造，以了解土地價值創新生活理念為標竿，專業而深耕，精緻而時尚</div>
@@ -14,9 +26,22 @@
             營造事業品牌。
           </div>
         </div>
-        <img v-if="!isMobile" src="./s8_img2.png" alt class="img2" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1500" />
-        <img v-else src="./s8_img2_m.png" alt class="img2" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1500" />
-        <img v-if="isMobile" src="./s8_txt_m.png" alt class="txt" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1500" />
+        <img
+          v-if="!isMobile"
+          src="./s8_img2.png"
+          alt
+          class="img2"
+          data-aos="fade-up"
+          data-aos-delay="1000"
+          data-aos-duration="1500"
+        />
+        <img v-else src="./s8_img2_m.png" alt :class="`img2 ${imgIndex === 0 ? 'show' : ''}`" />
+        <img
+          v-if="isMobile"
+          src="./s8_txt_m.png"
+          alt
+          :class="`txt ${imgIndex === 1 ? 'show' : ''}`"
+        />
       </div>
     </div>
   </div>
@@ -136,7 +161,6 @@
     > .title {
       width: 184px;
       height: 21px;
-      font-family: NotoSansMonoCJKtc;
       font-size: 22px;
       font-weight: normal;
       font-style: normal;
@@ -182,12 +206,17 @@
   .img2 {
     width: 80%;
     margin: 0 auto;
-    opacity: .2 !important;
+    opacity: 0;
     position: absolute;
     left: 0;
     right: 0;
     top: 500px;
-    // transform: translateY(-50%);
+    transition: all 1s;
+
+    &.show {
+      margin-top: 0px;
+      opacity: 1;
+    }
   }
 
   .txt {
@@ -195,6 +224,13 @@
     top: 0;
     left: 0;
     width: 100%;
+    opacity: 0;
+    transition: all 1s;
+
+    &.show {
+      margin-top: 0px;
+      opacity: 1;
+    }
   }
 }
 </style>
@@ -225,9 +261,20 @@ export default {
         require('./s3_img_6_m.jpg'),
       ],
       isMobile,
+      imgIndex: 0,
     }
   },
 
   methods: {},
+
+  created() {
+    setInterval(() => {
+      if (this.imgIndex === 0) {
+        this.imgIndex = 1
+      } else {
+        this.imgIndex = 0
+      }
+    }, 5000)
+  },
 }
 </script>

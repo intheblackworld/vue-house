@@ -274,7 +274,6 @@
     .title {
       width: 184px;
       height: 21px;
-      font-family: NotoSansMonoCJKtc;
       font-size: 22px;
       font-weight: normal;
       font-style: normal;

@@ -203,7 +203,6 @@
     .title {
       width: 184px;
       height: 21px;
-      font-family: NotoSansMonoCJKtc;
       font-size: 22px;
       font-weight: normal;
       font-style: normal;
@@ -250,7 +249,6 @@
       .title {
         width: 200px;
         height: 19px;
-        font-family: SourceHanSansTW;
         font-size: 19px;
         font-weight: normal;
         font-style: normal;
@@ -268,7 +266,6 @@
         margin: 0 auto;
         height: auto;
         margin-bottom: 10px;
-        font-family: MicrosoftJhengHei;
         font-size: 14px;
         font-weight: normal;
         font-style: normal;

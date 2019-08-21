@@ -272,7 +272,6 @@
     .item-desc {
       width: 245px;
       height: 104px;
-      font-family: NotoSansCJKtc-B5pc-H;
       font-size: 14px;
       font-weight: normal;
       font-style: normal;
@@ -431,7 +430,6 @@
     .title {
       width: 184px;
       height: 21px;
-      font-family: NotoSansMonoCJKtc;
       font-size: 22px;
       font-weight: normal;
       font-style: normal;

@@ -159,7 +159,6 @@ hr {
     .title {
       width: 211px;
       height: auto;
-      font-family: NotoSansCJKtc-B5pc-H;
       font-size: 26px;
       font-weight: normal;
       font-style: normal;
@@ -175,7 +174,6 @@ hr {
     .desc {
       width: 211px;
       height: 128px;
-      font-family: NotoSansCJKtc-B5pc-H;
       font-size: 14px;
       font-weight: normal;
       font-style: normal;
@@ -248,7 +246,6 @@ hr {
   .title {
     width: 184px;
     height: 21px;
-    font-family: NotoSansMonoCJKtc;
     font-size: 22px;
     font-weight: normal;
     font-style: normal;

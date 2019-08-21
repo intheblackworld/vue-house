@@ -166,7 +166,6 @@
     .sub-title {
       width: 212px;
       height: 16px;
-      font-family: NotoSansMonoCJKtc;
       font-size: 15.5px;
       font-weight: normal;
       font-style: normal;
@@ -180,7 +179,6 @@
     .text {
       width: 175px;
       height: 30px;
-      font-family: NotoSansMonoCJKtc;
       font-size: 14px;
       font-weight: normal;
       font-style: normal;

@@ -6,8 +6,7 @@ h3,
 h4,
 h5,
 p {
-  font-family: '微軟正黑體', 'Microsoft JhengHei', 'Helvetica Neue', Helvetica,
-    Arial;
+  font-family: 'Noto Sans TC', serif;
 }
 
 h2 {
@@ -22,9 +21,9 @@ h3 {
 }
 
 p {
-  // font-family: 'Noto Sans TC', serif;
-  font-family: '微軟正黑體', 'Microsoft JhengHei', 'Helvetica Neue', Helvetica,
-    Arial;
+  font-family: 'Noto Sans TC', serif !important;
+  // font-family: '微軟正黑體', 'Microsoft JhengHei', 'Helvetica Neue', Helvetica,
+  //   Arial;
   margin: 0;
 }
 
