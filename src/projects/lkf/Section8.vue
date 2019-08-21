@@ -2,11 +2,11 @@
   <div class="section3">
     <div class="bg">
       <div class="container">
-        <div class="title">一生一次 尊享禮遇</div>
-        <hr />
-        <div class="desc">Boutique architecture</div>
-        <img src="./s8_img1.png" alt class="img1" />
-        <div class="content">
+        <div class="title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">一生一次 尊享禮遇</div>
+        <hr data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500" />
+        <div class="desc" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1500">Boutique architecture</div>
+        <img src="./s8_img1.png" alt class="img1" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1500" />
+        <div class="content" data-aos="fade-up" data-aos-delay="800" data-aos-duration="1500">
           <div class="title">青山興業 頂級精品創作家</div>
           <div class="desc">【青山興業】由深耕林口十多年的城洲廣告專業團隊聯手打造，以了解土地價值創新生活理念為標竿，專業而深耕，精緻而時尚</div>
           <div class="desc">
@@ -14,9 +14,9 @@
             營造事業品牌。
           </div>
         </div>
-        <img v-if="!isMobile" src="./s8_img2.png" alt class="img2" />
-        <img v-else src="./s8_img2_m.png" alt class="img2" />
-        <img v-if="isMobile" src="./s8_txt_m.png" alt class="txt" />
+        <img v-if="!isMobile" src="./s8_img2.png" alt class="img2" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1500" />
+        <img v-else src="./s8_img2_m.png" alt class="img2" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1500" />
+        <img v-if="isMobile" src="./s8_txt_m.png" alt class="txt" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1500" />
       </div>
     </div>
   </div>
@@ -182,12 +182,12 @@
   .img2 {
     width: 80%;
     margin: 0 auto;
-    opacity: .2;
+    opacity: .2 !important;
     position: absolute;
     left: 0;
     right: 0;
-    top: 600px;
-    transform: translateY(-50%);
+    top: 500px;
+    // transform: translateY(-50%);
   }
 
   .txt {

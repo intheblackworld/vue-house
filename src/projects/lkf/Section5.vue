@@ -2,9 +2,9 @@
   <div class="section5">
     <div class="fullscreen bg">
       <div class="container">
-        <div class="title">超強生機 娛樂休閒</div>
-        <hr />
-        <div class="desc">Highly Fashionable</div>
+        <div class="title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">超強生機 娛樂休閒</div>
+        <hr data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500" />
+        <div class="desc" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1500">Highly Fashionable</div>
         <div class="slide relative">
           <img
             v-for="(slide, index) in slideList"
@@ -12,17 +12,18 @@
             :key="`s3-slide-${index}`"
             :src="slide.src"
             alt
+            data-aos="fade" data-aos-delay="600" data-aos-duration="1500"
           />
 
           <div class="slide-content" v-if="!isMobile">
-            <div class="name">{{slideList[slideIndex].name}}</div>
-            <div class="white"></div>
-            <div class="text">
+            <div class="name" data-aos="fade" data-aos-delay="900" data-aos-duration="1500">{{slideList[slideIndex].name}}</div>
+            <div class="white" data-aos="fade-down" data-aos-delay="800" data-aos-duration="1500"></div>
+            <div class="text" data-aos="fade-right" data-aos-delay="600" data-aos-duration="1500">
               <div class="title">{{slideList[slideIndex].title}}</div>
               <div class="desc">{{slideList[slideIndex].desc}}</div>
             </div>
           </div>
-          <div class="btn-group flex-jc flex-ac flex-mobile-jb">
+          <div class="btn-group flex-jc flex-ac flex-mobile-jb" data-aos="fade" data-aos-delay="600" data-aos-duration="1500">
             <div
               class="dot"
               v-for="(slide, index) in slideList"
@@ -34,8 +35,8 @@
           </div>
         </div>
         <div class="slide-content-m" v-if="isMobile">
-          <div class="name">{{slideList[slideIndex].name}}</div>
-          <div class="content">
+          <div class="name" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">{{slideList[slideIndex].name}}</div>
+          <div class="content" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
             <div class="title">{{slideList[slideIndex].title}}</div>
             <div class="desc">{{slideList[slideIndex].desc}}</div>
           </div>

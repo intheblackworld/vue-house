@@ -7,11 +7,11 @@
       </div>
     </div>
     <video-bg autoplay="autoplay" :sources="[require('./s2_video.mp4')]" img="./s2_bg.jpg" isFix>
-      <img class="mask-img hidden-mobile" src="./s2_mask.png" alt />
+      <img data-aos="fade" data-aos-delay="0" data-aos-duration="1500" class="mask-img hidden-mobile" src="./s2_mask.png" alt />
       <img class="mask-img hidden-pc hidden-tablet visible-mobile" src="./s2_mask_m.png" alt />
       <div class="mask"></div>
-      <div class="title">Luxury Life</div>
-      <div class="content">
+      <div class="title" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500">Luxury Life</div>
+      <div class="content" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1500">
         <div>
           <p class="sub-title">捷運正對面 首座國際精裝寓所</p>
           <p class="text">

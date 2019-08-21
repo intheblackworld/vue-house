@@ -2,10 +2,10 @@
   <div class="section3">
     <div class="fullscreen bg">
       <div class="container">
-        <div class="title">國際都心 精裝風潮</div>
-        <hr />
-        <div class="desc">International City</div>
-        <div class="slide relative">
+        <div class="title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">國際都心 精裝風潮</div>
+        <hr data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500" />
+        <div class="desc" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1500">International City</div>
+        <div class="slide relative" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1500">
           <img
             v-for="(slide, index) in (isMobile ? slideListM : slideList)"
             :class="`slide-img ${slideIndex === index ? 'active' : ''}`"

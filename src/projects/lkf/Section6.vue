@@ -3,11 +3,11 @@
     <div class="bg">
       <div class="container">
         <div class="container-title">
-          <div class="title">國際都心 精裝風潮</div>
-          <hr />
-          <div class="desc">International City</div>
+          <div class="title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">國際都心 精裝風潮</div>
+          <hr data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500" />
+          <div class="desc" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1500">International City</div>
         </div>
-        <div class="slide relative">
+        <div class="slide relative" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
           <div v-if="!isMobile">
             <div class="slide-title">英國爵士風格 經典品味</div>
             <div class="slide-desc">承襲英國貴族風格，『蘭桂‧坊』大氣開展81米的建築面寬，加上歐式建築美學細膩雕琢，優雅的紳士品味，無論近觀或遠望，都是讚嘆的焦點</div>
@@ -31,12 +31,12 @@
           </div>
           <div class="slide-footer">建築外觀3D示意圖(實際依完工現況為準)</div>
         </div>
-        <div v-if="isMobile">
+        <div v-if="isMobile" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
           <div class="slide-title">英國爵士風格 經典品味</div>
           <div class="slide-desc">承襲英國貴族風格，『蘭桂‧坊』大氣開展81米的建築面寬，加上歐式建築美學細膩雕琢，優雅的紳士品味，無論近觀或遠望，都是讚嘆的焦點</div>
         </div>
 
-        <div class="slide relative">
+        <div class="slide relative" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
           <div v-if="!isMobile">
             <div class="slide-title">新東方時尚 雅緻盛宴</div>
             <div
@@ -62,14 +62,14 @@
           </div>
           <div class="slide-footer">迎賓大廳3D示意圖(實際依完工現況為準)</div>
         </div>
-        <div v-if="isMobile">
+        <div v-if="isMobile" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
           <div class="slide-title">新東方時尚 雅緻盛宴</div>
           <div
             class="slide-desc"
           >宛如頂級上海外灘超星級飯店門廳，優雅的窗櫺融入現代簡約的細膩雅緻，從迎賓門廳、LOUNGE交誼、多功能健身房等，一場極致的中式優雅品味，在回家的每一刻都是享受</div>
         </div>
 
-        <div class="slide relative">
+        <div class="slide relative" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
           <div v-if="!isMobile">
             <div class="slide-title">國際級精裝修 頂級享受</div>
             <div class="slide-desc">林口首座精裝修飯店風潮，18~22坪完美格局，絕無僅有的品味時尚，拎包入住的便利生活，無論自住或出租，家都是飯店人生得完美展現</div>
@@ -83,12 +83,12 @@
           </div>
           <div class="slide-footer">樣品屋3D示意圖(實際依完工現況為準)</div>
         </div>
-        <div v-if="isMobile">
+        <div v-if="isMobile" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
           <div class="slide-title">國際級精裝修 頂級享受</div>
           <div class="slide-desc">林口首座精裝修飯店風潮，18~22坪完美格局，絕無僅有的品味時尚，拎包入住的便利生活，無論自住或出租，家都是飯店人生得完美展現</div>
         </div>
 
-        <div class="slide relative">
+        <div class="slide relative" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
           <div v-if="!isMobile">
             <div class="slide-title">全套代租代管 尊榮禮遇</div>
             <div class="slide-desc">『蘭桂‧坊』以頂級生活服務，禮遇每位尊客，從飯店門廳服務、到生活服務與管理服務一應俱全，專屬為您打造您的生活禮遇</div>
@@ -112,7 +112,7 @@
           </div>-->
           <div class="slide-footer">飯店式服務示意圖</div>
         </div>
-        <div v-if="isMobile">
+        <div v-if="isMobile" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
           <div class="slide-title">全套代租代管 尊榮禮遇</div>
           <div class="slide-desc">『蘭桂‧坊』以頂級生活服務，禮遇每位尊客，從飯店門廳服務、到生活服務與管理服務一應俱全，專屬為您打造您的生活禮遇</div>
         </div>

@@ -4,9 +4,9 @@
       <img src="./s4_hand.png" alt class="hand" />
       <img class="map-bg" src="./s4_bg.jpg" alt />
       <div class="text">
-        <div class="title">國際線上 雙北暢遊</div>
-        <hr />
-        <div class="desc">International Flight</div>
+        <div class="title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">國際線上 雙北暢遊</div>
+        <hr data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500" />
+        <div class="desc" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1500">International Flight</div>
       </div>
       <img src="./s4/1.png" data-aos="fade-down" data-aos-delay="0" alt />
       <img src="./s4/2.png" data-aos="fade-down" data-aos-delay="100" alt />
@@ -26,7 +26,7 @@
     <div class="fluid">
       <div class="foot-container">
         <div class="content" v-if="!isMobile">
-          <div class="text">
+          <div class="text" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
             <div class="title">A9捷運站30秒漫步行</div>
             <div class="desc">
               一路之隔，就到捷運林口A9站，3站直達國際機場，出境入境輕鬆掌握；連結桃園機場
@@ -42,11 +42,11 @@
           </div>
         </div>
         <div v-else class="m-content">
-          <div class="title">{{mapText[mapIndex].title}}</div>
-          <div class="desc">
+          <div class="title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">{{mapText[mapIndex].title}}</div>
+          <div class="desc" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500">
             {{mapText[mapIndex].desc}}
           </div>
-          <div class="button" @click="mapIndex = mapIndex === 0 ? 1 : 0">
+          <div class="button" @click="mapIndex = mapIndex === 0 ? 1 : 0" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1500">
             <div class="triangle"></div>{{mapText[mapIndex === 0 ? 1 : 0].title}}
           </div>
         </div>

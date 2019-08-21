@@ -2,15 +2,15 @@
   <div class="section7">
     <div class="bg" v-if="!isMobile">
       <div class="container-title">
-        <div class="title">自有資金 超高投報</div>
-        <hr />
-        <div class="desc">Intelligent Investor</div>
+        <div class="title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">自有資金 超高投報</div>
+        <hr data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500" />
+        <div class="desc" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1500">Intelligent Investor</div>
       </div>
-      <img src="./s7_gold.png" alt class="gold" />
-      <div class="container">
-        <div class="content-title">高投報 出租自用雙贏</div>
+      <img src="./s7_gold.png" alt class="gold" data-aos="fade" data-aos-delay="0" data-aos-duration="1500" />
+      <div class="container" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
+        <div class="content-title" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500">高投報 出租自用雙贏</div>
         <div class="content">
-          <div class="description">
+          <div class="description" data-aos="fade" data-aos-delay="600" data-aos-duration="1500">
             <div class="title">磁吸六大特區 產業商業醫療齊聚</div>
             <div class="desc">
               一次全擁華亞科技園區、長庚醫療特區、國際媒體園區、新創園區以及
@@ -23,7 +23,7 @@
               在入手保值，未來更想增值利多！
             </div>
           </div>
-          <div class="slide relative">
+          <div class="slide relative" data-aos="fade" data-aos-delay="800" data-aos-duration="1500">
             <div class="img-name">{{slideList[slideIndex].title}}</div>
             <img
               v-for="(slide, index) in slideList"
@@ -45,7 +45,7 @@
           </div>
         </div>
         <div class="items">
-          <div class="item">
+          <div class="item" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1500">
             <img src="./s7_item1.png" alt />
             <div class="item-title">房東養成 小錢變大錢</div>
             <div class="item-desc">
@@ -54,7 +54,7 @@
               是“租”隊友！
             </div>
           </div>
-          <div class="item">
+          <div class="item" data-aos="fade-up" data-aos-delay="800" data-aos-duration="1500">
             <img src="./s7_item2.png" alt />
             <div class="item-title">有房有金 房客變房東</div>
             <div class="item-desc">
@@ -63,7 +63,7 @@
               低總價高收益高投報，當然再增值！
             </div>
           </div>
-          <div class="item">
+          <div class="item" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1500">
             <img src="./s7_item3.png" alt />
             <div class="item-title">買房養老 年金變成房</div>
             <div class="item-desc">
@@ -329,6 +329,9 @@
         }
       }
     }
+  }
+  .gold {
+    margin-top: 80px;
   }
   .slide {
     .slide-img {
