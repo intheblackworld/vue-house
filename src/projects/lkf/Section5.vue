@@ -5,14 +5,13 @@
         <div class="title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">超強生機 娛樂休閒</div>
         <hr data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500" />
         <div class="desc" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1500">Highly Fashionable</div>
-        <div class="slide relative">
+        <div class="slide relative" data-aos="fade" data-aos-delay="400" data-aos-duration="1500">
           <img
             v-for="(slide, index) in slideList"
             :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
             :key="`s3-slide-${index}`"
             :src="slide.src"
             alt
-            data-aos="fade" data-aos-delay="600" data-aos-duration="1500"
           />
 
           <div class="slide-content" v-if="!isMobile">
