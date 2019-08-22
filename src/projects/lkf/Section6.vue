@@ -36,8 +36,8 @@
               :key="`s6-dot-${index}`"
               @click="slideIndex1 = index"
             ></div>
-            <img @click="addMultiIndex(1)" src="./small_left_btn.png" alt class="arrow-btn" />
-            <img @click="decMultiIndex(1)" src="./small_right_btn.png" alt class="arrow-btn" />
+            <img @click="decMultiIndex(1)" src="./small_left_btn.png" alt class="arrow-btn" />
+            <img @click="addMultiIndex(1)" src="./small_right_btn.png" alt class="arrow-btn" />
           </div>
           <div class="slide-footer">建築外觀3D示意圖(實際依完工現況為準)</div>
         </div>
@@ -67,8 +67,8 @@
               :key="`s6-dot-${index}`"
               @click="slideIndex2 = index"
             ></div>
-            <img @click="addMultiIndex(2)" src="./small_left_btn.png" alt class="arrow-btn" />
-            <img @click="decMultiIndex(2)" src="./small_right_btn.png" alt class="arrow-btn" />
+            <img @click="decMultiIndex(2)" src="./small_left_btn.png" alt class="arrow-btn" />
+            <img @click="addMultiIndex(2)" src="./small_right_btn.png" alt class="arrow-btn" />
           </div>
           <div class="slide-footer">{{slideList2[slideIndex2].title}}</div>
         </div>
