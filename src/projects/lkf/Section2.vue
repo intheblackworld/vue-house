@@ -13,7 +13,7 @@
       <div class="title" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500">Luxury Life</div>
       <div class="content" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1500">
         <div>
-          <p class="sub-title">捷運正對面 首座國際精裝寓所</p>
+          <p class="sub-title">A9捷運正對面 首座國際精裝寓所</p>
           <p class="text">
             低總價 X 低月付 X 高投報
             <br />18~22坪 奢華質感機能住宅
@@ -81,7 +81,7 @@
   top: 60%;
   padding-right: 20px;
   .sub-title {
-    width: 430px;
+    width: 460px;
     height: 42px;
     font-size: 31.5px;
     font-weight: 400;
@@ -164,7 +164,7 @@
     width: 100vw;
     top: 30%;
     .sub-title {
-      width: 212px;
+      width: 230px;
       height: 16px;
       font-size: 15.5px;
       font-weight: normal;

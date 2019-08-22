@@ -3,14 +3,24 @@
     <div class="bg">
       <div class="container">
         <div class="container-title">
-          <div class="title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">國際都心 精裝風潮</div>
+          <div
+            class="title"
+            data-aos="fade-up"
+            data-aos-delay="0"
+            data-aos-duration="1500"
+          >國際都心 精裝風潮</div>
           <hr data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500" />
-          <div class="desc" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1500">International City</div>
+          <div
+            class="desc"
+            data-aos="fade-up"
+            data-aos-delay="400"
+            data-aos-duration="1500"
+          >International City</div>
         </div>
         <div class="slide relative" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
           <div v-if="!isMobile">
             <div class="slide-title">英國爵士風格 經典品味</div>
-            <div class="slide-desc">承襲英國貴族風格，『蘭桂‧坊』大氣開展81米的建築面寬，加上歐式建築美學細膩雕琢，優雅的紳士品味，無論近觀或遠望，都是讚嘆的焦點</div>
+            <div class="slide-desc">承襲英國貴族風格，『蘭桂‧坊』大氣開展80米的建築面寬，加上歐式建築美學細膩雕琢，優雅的紳士品味，無論近觀或遠望，都是讚嘆的焦點</div>
           </div>
           <img
             v-for="(slide, index) in slideList1"
@@ -33,7 +43,7 @@
         </div>
         <div v-if="isMobile" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
           <div class="slide-title">英國爵士風格 經典品味</div>
-          <div class="slide-desc">承襲英國貴族風格，『蘭桂‧坊』大氣開展81米的建築面寬，加上歐式建築美學細膩雕琢，優雅的紳士品味，無論近觀或遠望，都是讚嘆的焦點</div>
+          <div class="slide-desc">承襲英國貴族風格，『蘭桂‧坊』大氣開展80米的建築面寬，加上歐式建築美學細膩雕琢，優雅的紳士品味，無論近觀或遠望，都是讚嘆的焦點</div>
         </div>
 
         <div class="slide relative" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
@@ -47,7 +57,7 @@
             v-for="(slide, index) in slideList2"
             :class="`slide-img ${slideIndex2 === index ? 'active' : ''}`"
             :key="`s6-slide-${index}`"
-            :src="slide"
+            :src="slide.src"
             alt
           />
           <div class="btn-group flex-jc flex-ac flex-mobile-jb">
@@ -60,7 +70,7 @@
             <img @click="addMultiIndex(2)" src="./small_left_btn.png" alt class="arrow-btn" />
             <img @click="decMultiIndex(2)" src="./small_right_btn.png" alt class="arrow-btn" />
           </div>
-          <div class="slide-footer">迎賓大廳3D示意圖(實際依完工現況為準)</div>
+          <div class="slide-footer">{{slideList2[slideIndex2].title}}</div>
         </div>
         <div v-if="isMobile" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
           <div class="slide-title">新東方時尚 雅緻盛宴</div>
@@ -370,9 +380,12 @@ export default {
       slideIndex4: 0,
       slideList1: [require('./s6_img1-1.jpg'), require('./s6_img1-2.jpg')],
       slideList2: [
-        require('./s6_img2-1.jpg'),
-        require('./s6_img2-2.jpg'),
-        require('./s6_img2-3.jpg'),
+        { src: require('./s6_img2-1.jpg'), title: '迎賓大廳3D示意圖(實際依完工現況為準)' },
+        { src: require('./s6_img2-2.jpg'), title: '迎賓廊道3D示意圖(實際依完工現況為準)' },
+        { src: require('./s6_img2-3.jpg'), title: '交誼廳3D示意圖(實際依完工現況為準)' },
+        { src: require('./s6_img2-4.jpg'), title: '健身房3D示意圖(實際依完工現況為準)' },
+        { src: require('./s6_img2-5.jpg'), title: '洗衣中心3D示意圖(實際依完工現況為準)' },
+        { src: require('./s6_img2-6.jpg'), title: '信箱區3D示意圖(實際依完工現況為準)' },
       ],
       slideList4: [require('./s6_img4-1.jpg')],
       isMobile,

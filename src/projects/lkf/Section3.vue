@@ -78,7 +78,6 @@ hr {
 .desc {
   width: 128px;
   height: 20px;
-  font-family: TimesNewRomanPSMT;
   font-size: 18px;
   font-weight: normal;
   font-style: normal;
@@ -149,7 +148,6 @@ hr {
   .title {
     width: 184px;
     height: 21px;
-    font-family: NotoSansMonoCJKtc;
     font-size: 22px;
     font-weight: normal;
     font-style: normal;

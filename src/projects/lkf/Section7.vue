@@ -522,7 +522,7 @@ export default {
           src: require('./s7_img4.jpg'),
         },
         {
-          title: '華亞科技園區',
+          title: '郵政物流特區',
           src: require('./s7_img5.jpg'),
         },
       ],

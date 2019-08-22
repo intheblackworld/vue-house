@@ -1,28 +1,17 @@
 <template>
   <div class="section4">
-    <div class="map">
-      <img src="./s4_hand.png" alt class="hand" />
-      <img class="map-bg" src="./s4_bg.jpg" alt />
+    <Map :tagList="tagList" :bgSrc="bgSrc" :hand="hand">
       <div class="text">
         <div class="title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">國際線上 雙北暢遊</div>
         <hr data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500" />
-        <div class="desc" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1500">International Flight</div>
+        <div
+          class="desc"
+          data-aos="fade-up"
+          data-aos-delay="400"
+          data-aos-duration="1500"
+        >International Flight</div>
       </div>
-      <img src="./s4/1.png" data-aos="fade-down" data-aos-delay="0" alt />
-      <img src="./s4/2.png" data-aos="fade-down" data-aos-delay="100" alt />
-      <img src="./s4/3.png" data-aos="fade-down" data-aos-delay="200" alt />
-      <img src="./s4/4.png" data-aos="fade-down" data-aos-delay="300" alt />
-      <img src="./s4/5.png" data-aos="fade-down" data-aos-delay="400" alt />
-      <img src="./s4/6.png" data-aos="fade-down" data-aos-delay="500" alt />
-      <img src="./s4/7.png" data-aos="fade-down" data-aos-delay="600" alt />
-      <img src="./s4/8.png" data-aos="fade-down" data-aos-delay="700" alt />
-      <img src="./s4/9.png" data-aos="fade-down" data-aos-delay="800" alt />
-      <img src="./s4/10.png" data-aos="fade-down" data-aos-delay="900" alt />
-      <img src="./s4/11.png" data-aos="fade-down" data-aos-delay="1000" alt />
-      <img src="./s4/12.png" data-aos="fade-down" data-aos-delay="1100" alt />
-      <img src="./s4/13.png" data-aos="fade-down" data-aos-delay="1200" alt />
-      <img src="./s4/14.png" data-aos="fade-down" data-aos-delay="1300" alt />
-    </div>
+    </Map>
     <div class="fluid">
       <div class="foot-container">
         <div class="content" v-if="!isMobile">
@@ -42,12 +31,27 @@
           </div>
         </div>
         <div v-else class="m-content">
-          <div class="title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">{{mapText[mapIndex].title}}</div>
-          <div class="desc" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500">
-            {{mapText[mapIndex].desc}}
-          </div>
-          <div class="button" @click="mapIndex = mapIndex === 0 ? 1 : 0" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1500">
-            <div class="triangle"></div>{{mapText[mapIndex === 0 ? 1 : 0].title}}
+          <div
+            class="title"
+            data-aos="fade-up"
+            data-aos-delay="0"
+            data-aos-duration="1500"
+          >{{mapText[mapIndex].title}}</div>
+          <div
+            class="desc"
+            data-aos="fade-up"
+            data-aos-delay="200"
+            data-aos-duration="1500"
+          >{{mapText[mapIndex].desc}}</div>
+          <div
+            class="button"
+            @click="mapIndex = mapIndex === 0 ? 1 : 0"
+            data-aos="fade-up"
+            data-aos-delay="400"
+            data-aos-duration="1500"
+          >
+            <div class="triangle"></div>
+            {{mapText[mapIndex === 0 ? 1 : 0].title}}
           </div>
         </div>
       </div>
@@ -56,8 +60,6 @@
 </template>
 <style lang="scss" scoped>
 .map {
-  position: relative;
-  z-index: 1;
   .text {
     top: 70px;
     position: absolute;
@@ -198,6 +200,7 @@
 @media screen and (max-width: 767px) {
   .map {
     .text {
+      width: 200px;
       top: 40px;
     }
     .title {
@@ -300,11 +303,14 @@
 </style>
 
 <script>
-import slider from '@/mixins/slider.js'
+import Map from '@/components/Map.vue'
 import { isMobile } from '@/utils'
 export default {
   name: 'section4',
-  mixins: [slider],
+
+  components: {
+    Map,
+  },
 
   data() {
     return {
@@ -322,6 +328,25 @@ export default {
             '『蘭桂.坊』轉個彎即光速接軌林口交流道，進出台北市僅需15分鐘，內科18分鐘，上班通勤暢快便捷。',
         },
       ],
+      tagList: [
+        require('./s4/1.png'),
+        require('./s4/2.png'),
+        require('./s4/3.png'),
+        require('./s4/4.png'),
+        require('./s4/5.png'),
+        require('./s4/6.png'),
+        require('./s4/7.png'),
+        require('./s4/8.png'),
+        require('./s4/9.png'),
+        require('./s4/10.png'),
+        require('./s4/11.png'),
+        require('./s4/12.png'),
+        require('./s4/13.png'),
+        require('./s4/14.png'),
+      ],
+
+      bgSrc: require('./s4_bg.jpg'),
+      hand: require('./s4_hand.png'),
     }
   },
 
