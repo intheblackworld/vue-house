@@ -15,7 +15,7 @@
         <div>
           <p class="sub-title">A9捷運正對面 首座國際精裝寓所</p>
           <p class="text">
-            低總價 X 低月付 X 高投報
+            低總價 X 高投報
             <br />18~22坪 奢華質感機能住宅
           </p>
         </div>
