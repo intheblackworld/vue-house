@@ -51,6 +51,7 @@
   background-color: #fff;
   background-image: url('./s8_bg.png');
   background-position: 100% 0%;
+  background-attachment: fixed;
   position: relative;
 }
 .container {

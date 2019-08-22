@@ -100,8 +100,8 @@
               :key="`s7-dot-${index}`"
               @click="slideIndex = index"
             ></div>
-            <img @click="addIndex" src="./small_left_btn.png" alt class="arrow-btn" />
-            <img @click="decIndex" src="./small_right_btn.png" alt class="arrow-btn" />
+            <img @click="decIndex" src="./small_left_btn.png" alt class="arrow-btn" />
+            <img @click="addIndex" src="./small_right_btn.png" alt class="arrow-btn" />
           </div>
         </div>
         <div class="description">

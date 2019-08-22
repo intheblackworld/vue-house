@@ -109,7 +109,7 @@
 
 .fluid {
   width: 100vw;
-  background-color: #f5e9d9;
+  background-color: #f5ede0;
   position: relative;
   z-index: 1;
 }
@@ -119,7 +119,7 @@
   margin: 0 auto;
   padding-top: 20px;
   padding-bottom: 40px;
-  background-color: #f5e9d9;
+  background-color: #f5ede0;
   position: relative;
   border-bottom: solid 3px #c08d4e;
   .content {
@@ -129,7 +129,7 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    background-color: #f5e9d9;
+    background-color: #f5ede0;
     .text {
       width: 530px;
       height: 182px;
@@ -246,7 +246,7 @@
       right: 0;
       margin: 0 auto;
       bottom: 10px;
-      background-color: #f5e9d9;
+      background-color: #f5ede0;
       padding-top: 20px;
 
       .title {

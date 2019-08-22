@@ -165,6 +165,7 @@
     top: 30%;
     .sub-title {
       width: 230px;
+      white-space: nowrap;
       height: 16px;
       font-size: 15.5px;
       font-weight: normal;

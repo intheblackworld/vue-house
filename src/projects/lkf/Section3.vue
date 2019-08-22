@@ -79,6 +79,7 @@ hr {
   width: 128px;
   height: 20px;
   font-size: 18px;
+  font-family: TimesNewRomanPSMT;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;

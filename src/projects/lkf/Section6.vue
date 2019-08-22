@@ -135,6 +135,7 @@
   background-color: #fff;
   background-image: url('./s6_bg.png');
   background-position: 100% 0%;
+  background-attachment: fixed;
   background-size: auto;
   position: relative;
   padding-top: 25px;
