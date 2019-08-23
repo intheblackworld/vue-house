@@ -1,16 +1,30 @@
 <template>
   <div class="section2">
     <div class="fix-group">
-      <div class="button" v-scroll-to="{ element: `#${'contact'}`, offset: -56 }">預約賞屋</div>
-      <div class="button" v-scroll-to="{ element: `#${'section2'}`, offset: -56 }">
-        <img src="./chevron-up.png" alt="">
+      <div class="button" v-scroll-to="{ element: `#${'contact'}`, offset: -56 }">
+        <img src="./gold_btn.png" alt />
       </div>
+      <!-- <div class="button" v-scroll-to="{ element: `#${'section2'}`, offset: -56 }">
+        <img src="./chevron-up.png" alt />
+      </div> -->
     </div>
     <video-bg autoplay="autoplay" :sources="[require('./s2_video.mp4')]" img="./s2_bg.jpg" isFix>
-      <img data-aos="fade" data-aos-delay="0" data-aos-duration="1500" class="mask-img hidden-mobile" src="./s2_mask.png" alt />
+      <img
+        data-aos="fade"
+        data-aos-delay="0"
+        data-aos-duration="1500"
+        class="mask-img hidden-mobile"
+        src="./s2_mask.png"
+        alt
+      />
       <img class="mask-img hidden-pc hidden-tablet visible-mobile" src="./s2_mask_m.png" alt />
       <div class="mask"></div>
-      <div class="title" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500">Luxury Life</div>
+      <div
+        class="title"
+        data-aos="fade-up"
+        data-aos-delay="300"
+        data-aos-duration="1500"
+      >Luxury Life</div>
       <div class="content" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1500">
         <div>
           <p class="sub-title">A9捷運正對面 首座國際精裝寓所</p>
@@ -118,8 +132,8 @@
     font-size: 18px;
     background: #c08d4e;
     color: #fff;
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     border-radius: 999px;
     margin-bottom: 10px;
     display: flex;
@@ -127,6 +141,9 @@
     justify-content: center;
     flex-wrap: wrap;
     cursor: pointer;
+    img {
+      width: 100%;
+    }
   }
 }
 
@@ -148,7 +165,7 @@
   }
 
   .mask {
-    background-color: rgba(0, 0, 0, .6);
+    background-color: rgba(0, 0, 0, 0.6);
   }
   .mask,
   .mask-img {

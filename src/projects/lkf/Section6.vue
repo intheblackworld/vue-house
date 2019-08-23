@@ -8,14 +8,14 @@
             data-aos="fade-up"
             data-aos-delay="0"
             data-aos-duration="1500"
-          >國際都心 精裝風潮</div>
+          >奢華精裝 精品居住</div>
           <hr data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500" />
           <div
             class="desc"
             data-aos="fade-up"
             data-aos-delay="400"
             data-aos-duration="1500"
-          >International City</div>
+          >Sense Design</div>
         </div>
         <div class="slide relative" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
           <div v-if="!isMobile">
@@ -46,7 +46,7 @@
           <div class="slide-desc">承襲英國貴族風格，『蘭桂‧坊』大氣開展80米的建築面寬，加上歐式建築美學細膩雕琢，優雅的紳士品味，無論近觀或遠望，都是讚嘆的焦點</div>
         </div>
 
-        <div class="slide relative" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
+        <div class="slide relative" style="margin-bottom: 50px;" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
           <div v-if="!isMobile">
             <div class="slide-title">新東方時尚 雅緻盛宴</div>
             <div
@@ -72,6 +72,14 @@
           </div>
           <div class="slide-footer">{{slideList2[slideIndex2].title}}</div>
         </div>
+        <a class="slide relative" style="display: block;" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500" href="https://720yun.com/t/a9vknb2q7dh?scene_id=32516944" target="_blank">
+          <img
+            :class="`slide-img active`"
+            src="./s6_720.png"
+            alt
+          />
+          <div class="slide-footer">點擊前往720環景圖</div>
+        </a>
         <div v-if="isMobile" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
           <div class="slide-title">新東方時尚 雅緻盛宴</div>
           <div
@@ -381,12 +389,30 @@ export default {
       slideIndex4: 0,
       slideList1: [require('./s6_img1-1.jpg'), require('./s6_img1-2.jpg')],
       slideList2: [
-        { src: require('./s6_img2-1.jpg'), title: '迎賓大廳3D示意圖(實際依完工現況為準)' },
-        { src: require('./s6_img2-2.jpg'), title: '迎賓廊道3D示意圖(實際依完工現況為準)' },
-        { src: require('./s6_img2-3.jpg'), title: '交誼廳3D示意圖(實際依完工現況為準)' },
-        { src: require('./s6_img2-4.jpg'), title: '健身房3D示意圖(實際依完工現況為準)' },
-        { src: require('./s6_img2-5.jpg'), title: '洗衣中心3D示意圖(實際依完工現況為準)' },
-        { src: require('./s6_img2-6.jpg'), title: '信箱區3D示意圖(實際依完工現況為準)' },
+        {
+          src: require('./s6_img2-1.jpg'),
+          title: '迎賓大廳3D示意圖(實際依完工現況為準)',
+        },
+        {
+          src: require('./s6_img2-2.jpg'),
+          title: '迎賓廊道3D示意圖(實際依完工現況為準)',
+        },
+        {
+          src: require('./s6_img2-3.jpg'),
+          title: '交誼廳3D示意圖(實際依完工現況為準)',
+        },
+        {
+          src: require('./s6_img2-4.jpg'),
+          title: '洗衣中心3D示意圖(實際依完工現況為準)',
+        },
+        {
+          src: require('./s6_img2-5.jpg'),
+          title: '健身房3D示意圖(實際依完工現況為準)',
+        },
+        {
+          src: require('./s6_img2-6.jpg'),
+          title: '信箱區3D示意圖(實際依完工現況為準)',
+        },
       ],
       slideList4: [require('./s6_img4-1.jpg')],
       isMobile,
