@@ -130,7 +130,6 @@
 
   .button {
     font-size: 18px;
-    background: #c08d4e;
     color: #fff;
     width: 80px;
     height: 80px;
