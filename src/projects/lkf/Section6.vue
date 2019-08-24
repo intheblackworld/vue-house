@@ -72,14 +72,10 @@
           </div>
           <div class="slide-footer">{{slideList2[slideIndex2].title}}</div>
         </div>
-        <a class="slide relative" style="display: block;" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500" href="https://720yun.com/t/a9vknb2q7dh?scene_id=32516944" target="_blank">
-          <img
-            :class="`slide-img active`"
-            src="./s6_720.png"
-            alt
-          />
-          <div class="slide-footer">點擊前往720環景圖</div>
-        </a>
+        <div class="slide relative" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
+          <iframe src="https://720yun.com/t/a9vknb2q7dh?scene_id=32516944"></iframe>
+          <div class="slide-footer">720環景圖</div>
+        </div>
         <div v-if="isMobile" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
           <div class="slide-title">新東方時尚 雅緻盛宴</div>
           <div
@@ -207,7 +203,7 @@
     background-color: #c08d4e;
   }
 
-  .slide-img {
+  .slide-img, iframe {
     margin: 0 auto;
     width: 100%;
     max-height: 70vh;
@@ -280,6 +276,10 @@
       width: 100%;
       max-height: auto;
     }
+
+    iframe {
+      height: 70vh;
+    }
   }
 }
 
@@ -336,7 +336,7 @@
       bottom: 40%;
     }
 
-    .VideoBg {
+    .VideoBg, iframe {
       width: 87.4vw !important;
       margin: 0 auto;
       height: calc(87.4vw * 240 / 320) !important;
