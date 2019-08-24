@@ -1,12 +1,12 @@
 export default {
-  address: '新北市林口區文化三路一段 & 忠孝三路',
+  address: '台北市北投區中和街219-2號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d903.492388806323!2d121.36114082925653!3d25.06902099899725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDA0JzA4LjUiTiAxMjHCsDIxJzQyLjEiRQ!5e0!3m2!1szh-TW!2stw!4v1566448452968!5m2!1szh-TW!2stw',
+    'https://www.google.com.tw/maps/place/112%E5%8F%B0%E5%8C%97%E5%B8%82%E5%8C%97%E6%8A%95%E5%8D%80%E4%B8%AD%E5%92%8C%E8%A1%97219-2%E8%99%9F/@25.139388,121.4990573,17z/data=!3m1!4b1!4m5!3m4!1s0x3442ae4f0aa400b1:0x75ca2b2ce485be53!8m2!3d25.139388!4d121.501246?hl=zh-TW&authuser=0',
   phone: '02-26095500',
-  fbLink: 'https://www.facebook.com/蘭桂坊-102691431093421/',
-  fbMessage: 'https://m.me/102691431093421/',
-  googleLink: 'https://goo.gl/maps/nSYjM15fL514PSRQ9',
-  caseName: '蘭桂坊',
+  fbLink: '',
+  fbMessage: '',
+  googleLink: 'https://goo.gl/maps/xecuraRkoCuUYizeA',
+  caseName: '公園大院',
 
   houseInfos: [
     ['聯絡電話', '02-26095500'],

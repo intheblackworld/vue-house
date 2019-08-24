@@ -4,12 +4,12 @@
     <Loading :loading="loading" />
     <SideNavigation v-if="isSide" />
     <Navigation v-else />
-    <!-- <div id="section1">
+    <div id="section1">
       <Section1 />
-    </div> -->
-    <div id="section2">
-      <Section2 />
     </div>
+    <!-- <div id="section2">
+      <Section2 />
+    </div> -->
     <div id="section3">
       <Section3 />
     </div>
@@ -42,8 +42,8 @@ import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import gtm from '@/mixins/gtm.js'
 
-// import Section1 from '@/projects/lkf/Section1.vue'
-import Section2 from '@/projects/lkf/Section2.vue'
+import Section1 from '@/projects/gydy/Section1.vue'
+// import Section2 from '@/projects/lkf/Section2.vue'
 import Section3 from '@/projects/lkf/Section3.vue'
 import Section4 from '@/projects/lkf/Section4.vue'
 import Section5 from '@/projects/lkf/Section5.vue'
@@ -60,8 +60,8 @@ export default {
     SideNavigation,
     ContactSection,
     MobileNav,
-    // Section1,
-    Section2,
+    Section1,
+    // Section2,
     Section3,
     Section4,
     Section5,
