@@ -46,7 +46,13 @@
           <div class="slide-desc">承襲英國貴族風格，『蘭桂‧坊』大氣開展80米的建築面寬，加上歐式建築美學細膩雕琢，優雅的紳士品味，無論近觀或遠望，都是讚嘆的焦點</div>
         </div>
 
-        <div class="slide relative" style="margin-bottom: 50px;" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
+        <div
+          class="slide relative"
+          style="margin-bottom: 50px;"
+          data-aos="fade-up"
+          data-aos-delay="0"
+          data-aos-duration="1500"
+        >
           <div v-if="!isMobile">
             <div class="slide-title">新東方時尚 雅緻盛宴</div>
             <div
@@ -73,8 +79,9 @@
           <div class="slide-footer">{{slideList2[slideIndex2].title}}</div>
         </div>
         <div class="slide relative" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
-          <iframe src="https://720yun.com/t/a9vknb2q7dh?scene_id=32516944"></iframe>
-          <div class="slide-footer">720環景圖</div>
+          <iframe v-if="isShowVR" src="https://720yun.com/t/a9vknb2q7dh?scene_id=32516944"></iframe>
+          <img v-else src="./s6_720.png" alt="" class="slide-img active" @click="isShowVR = true">
+          <div class="slide-footer">點擊觀看720環景圖</div>
         </div>
         <div v-if="isMobile" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
           <div class="slide-title">新東方時尚 雅緻盛宴</div>
@@ -203,13 +210,20 @@
     background-color: #c08d4e;
   }
 
-  .slide-img, iframe {
+  .slide-img {
     margin: 0 auto;
     width: 100%;
     max-height: 70vh;
     object-fit: cover;
     left: 0;
     right: 0;
+  }
+
+  iframe {
+    margin: 0 auto;
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
   }
 
   .VideoBg {
@@ -336,10 +350,16 @@
       bottom: 40%;
     }
 
-    .VideoBg, iframe {
+    .VideoBg {
       width: 87.4vw !important;
       margin: 0 auto;
       height: calc(87.4vw * 240 / 320) !important;
+    }
+
+    iframe {
+      width: 94.5%;
+      margin: 0 auto;
+      height: auto;
     }
 
     .slide-img {
@@ -416,6 +436,7 @@ export default {
       ],
       slideList4: [require('./s6_img4-1.jpg')],
       isMobile,
+      isShowVR: false,
     }
   },
 
