@@ -7,9 +7,9 @@
     <div id="section1">
       <Section1 />
     </div>
-    <!-- <div id="section2">
+    <div id="section2">
       <Section2 />
-    </div> -->
+    </div>
     <div id="section3">
       <Section3 />
     </div>
@@ -43,10 +43,10 @@ import Loading from '@/components/Loading.vue'
 import gtm from '@/mixins/gtm.js'
 
 import Section1 from '@/projects/gydy/Section1.vue'
-// import Section2 from '@/projects/lkf/Section2.vue'
-import Section3 from '@/projects/lkf/Section3.vue'
-import Section4 from '@/projects/lkf/Section4.vue'
-import Section5 from '@/projects/lkf/Section5.vue'
+import Section2 from '@/projects/gydy/Section2.vue'
+import Section3 from '@/projects/gydy/Section3.vue'
+import Section4 from '@/projects/gydy/Section4.vue'
+import Section5 from '@/projects/gydy/Section5.vue'
 import Section6 from '@/projects/lkf/Section6.vue'
 import Section7 from '@/projects/lkf/Section7.vue'
 import Section8 from '@/projects/lkf/Section8.vue'
@@ -61,7 +61,7 @@ export default {
     ContactSection,
     MobileNav,
     Section1,
-    // Section2,
+    Section2,
     Section3,
     Section4,
     Section5,
