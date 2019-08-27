@@ -25,7 +25,7 @@ import {
   faMapMarkerAlt
 } from '@fortawesome/free-solid-svg-icons'
 
-import AOS from 'aos'
+import AOS from '@/lib/aos/src/js/aos'
 import 'aos/dist/aos.css'
 
 import {
@@ -35,7 +35,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueSvgIcon from 'vue-svgicon'
 
-AOS.init()
+// AOS.init()
 
 library.add(faBars)
 library.add(faTimes)
@@ -63,5 +63,8 @@ Vue.use(VueScrollReveal)
 new Vue({
   router,
   store,
+  created () {
+    AOS.init()
+  },
   render: h => h(App)
 }).$mount('#app')
