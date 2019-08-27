@@ -1,21 +1,21 @@
 <template>
-  <div class="section5">
+  <div class="section6">
     <div class="bg fullscreen relative">
-      <img v-if="!isMobile" src="./s5_label.png" alt class="img relative" />
-      <img v-if="!isMobile" src="./s5_subtitle.png" alt class="img" />
-      <img v-if="!isMobile" src="./s5_title.png" alt class="img" />
-      <img v-if="!isMobile" src="./s5_desc.png" alt class="img" />
-      <img v-if="!isMobile" src="./s5_img_1.png" alt class="img" />
-      <img v-if="!isMobile" src="./s5_img_2.png" alt class="img" />
+      <img v-if="!isMobile" src="./s6_label.png" alt class="img relative" />
+      <img v-if="!isMobile" src="./s6_subtitle.png" alt class="img" />
+      <img v-if="!isMobile" src="./s6_title.png" alt class="img" />
+      <img v-if="!isMobile" src="./s6_desc.png" alt class="img" />
+      <img v-if="!isMobile" src="./s6_img_2.png" alt class="img" />
+      <img v-if="!isMobile" src="./s6_img_1.png" alt class="img" />
       <div v-if="isMobile">
         <div class="title">
-          住捷境超捷徑
-          <br />最有效率的移動方式
-          <br />把時間留給更重要的事
+          環境不只造就人才
+          <br />還能讓孩子發揮潛能從
+          <br />起跑點一路贏到未來
         </div>
         <div class="subtitle">
-          北投站或是新北投站
-          端看心情嚮往哪一站
+          政商菁英名流學府
+          <br />薇閣名校近在咫尺
         </div>
         <div :class="`desc ${isOpenDesc ? 'active': ''}`">
           <img
@@ -25,16 +25,16 @@
             v-if="isMobile"
             alt
           />
-          住進溫泉鄉，通勤族也能擁有朝九晚五準時打卡的日常！出門鳥語導航緩步3分鐘就到MRT新北投站，轉運匯入淡水信義線，上車瞬即與大台北交通網絡全面串聯。若覺得時間還早漫步正好，一路逛逛悠閒自在沿景舒心，10分鐘直抵捷運北投站，方便南來北往走西東，對外更有洲美快速道路、中山高速公路八達暢行聯通，另有貼心的台灣好行巴士前往陽明山、竹子湖等近郊任你遊，還有完善自行車道讓U-bike騎士微旅行趴趴走。
+          向來強調中西並用，走向世界，也讓世界走進來的雙語學校「薇閣」，以幼稚園、國小、國中、高中之人才教育聞名，蔚為潮流的讀經閱冊之經典教育，加強學習、記憶與專注力，搭配不同主題、品格教育和多元外語，更致力於田園、環境、藝術、人文…等360度全方位學習，就算選擇了北投區域公立學校，文教場域文風鼎盛人文匯萃，不必是貴族亦能感受知性的書卷氣，各級學校大學林立，成為孕育術德兼備之英傑孵化基地。
         </div>
-        <img src="./s5_img_m.png" alt class="train" />
+        <img src="./s6_img_m.png" alt class="train" />
       </div>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 .bg {
-  background-image: url('./s5_bg.jpg');
+  background-image: url('./s6_bg.png');
   background-size: cover;
   position: relative;
 }
@@ -131,7 +131,7 @@
 // @ is an alias to /src
 import { isMobile } from '@/utils'
 export default {
-  name: 'section5',
+  name: 'section6',
 
   data() {
     return {

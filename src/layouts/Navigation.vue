@@ -81,7 +81,7 @@ export default {
   z-index: 10;
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 100vw;
   display: flex !important;
   align-items: center;
   box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
