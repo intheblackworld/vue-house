@@ -10,13 +10,19 @@ module.exports = {
     resolve: {
       alias: {
         '@': path.resolve(__dirname, 'src')
+      },
+    },
+    optimization: {
+      splitChunks: {
+        minSize: 10000,
+        maxSize: 20000
       }
     }
   },
 
   devServer: {
     port: 9000, // CHANGE YOUR PORT HERE!
-    https: false,
+    https: false
   },
 
   chainWebpack: config => {
