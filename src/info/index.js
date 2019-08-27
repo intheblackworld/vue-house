@@ -6,7 +6,7 @@ export default {
   fbLink: '',
   fbMessage: '',
   googleLink: 'https://goo.gl/maps/xecuraRkoCuUYizeA',
-  caseName: '公園大院',
+  caseName: '大學墅',
 
   houseInfos: [
     ['投資興建', '馥域建設開發股份有限公司<br />欣聯建設開發股份有限公司<br />首敦建設股份有限公司<br />'],
