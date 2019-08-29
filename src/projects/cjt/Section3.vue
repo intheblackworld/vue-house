@@ -145,6 +145,9 @@ export default {
         {
           src: require('./s3_img3.jpg'),
         },
+        {
+          src: require('./s3_img4.jpg'),
+        },
       ],
     }
   },
