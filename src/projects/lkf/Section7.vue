@@ -465,6 +465,8 @@
 
   .arrow-btn {
     display: block;
+    width: 28px !important;
+    height: auto;
   }
 
   .slide {
