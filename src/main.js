@@ -15,6 +15,10 @@ import VueScrollTo from 'vue-scrollto' // scroll 錨點
 import VueLazyload from 'vue-lazyload' // 圖片 lazy load
 import VueScrollReveal from 'vue-scroll-reveal'
 import VuePhotoZoomPro from 'vue-photo-zoom-pro'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+
+import 'swiper/dist/css/swiper.css'
+
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
@@ -59,6 +63,7 @@ Vue.use(ElementUI)
 Vue.use(VueScrollTo)
 Vue.use(VueLazyload)
 Vue.use(VueScrollReveal)
+Vue.use(VueAwesomeSwiper, /* { default global options } */)
 
 new Vue({
   router,

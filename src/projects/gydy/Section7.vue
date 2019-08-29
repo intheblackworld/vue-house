@@ -11,16 +11,24 @@
           <br />誓以安全陣容昇華安心笑容
         </div>
         <div class="subtitle">核心三巨頭_實力天團集氣三倍安心</div>
-        <div
-          class="desc"
-        >齊聚建築鐵三角，集結三倍豐厚實力與優質血統悉心擘劃，因「三希堂」聞名的馥域建設＿以留美建築學人之姿，締造高標以待的靈韻；欣聯建設＿為信賴營造職人之首，憑「東園綻」、「幸福捷境」、「欣聯大心」、「欣聯心」…等熱銷個案經典實績，奠定究極精工的基石；首敦建設＿任在地深耕達人，藉北投「鹿鳴館」名宅推手實力，融入居宅工藝，耗費三倍心力攜手累加斐然資歷，為翻轉北投街廓奉獻心力。</div>
+        <div :class="`desc ${isOpenDesc ? 'active': ''}`">
+          <img
+            @click="isOpenDesc = !isOpenDesc"
+            src="./add-icon.png"
+            class="add-icon"
+            v-if="isMobile"
+            alt
+          />
+          齊聚建築鐵三角，集結三倍豐厚實力與優質血統悉心擘劃，因「三希堂」聞名的馥域建設＿以留美建築學人之姿，締造高標以待的靈韻；欣聯建設＿為信賴營造職人之首，憑「東園綻」、「幸福捷境」、「欣聯大心」、「欣聯心」…等熱銷個案經典實績，奠定究極精工的基石；首敦建設＿任在地深耕達人，藉北投「鹿鳴館」名宅推手實力，融入居宅工藝，耗費三倍心力攜手累加斐然資歷，為翻轉北投街廓奉獻心力。
+        </div>
       </div>
       <div class="img-row">
-        <img src="./s7_img_1.jpg" alt="">
-        <img src="./s7_img_2.jpg" alt="">
-        <img src="./s7_img_3.jpg" alt="">
-        <img src="./s7_img_4.jpg" alt="">
+        <img src="./s7_img_1.jpg" alt />
+        <img src="./s7_img_2.jpg" alt />
+        <img src="./s7_img_3.jpg" alt />
+        <img src="./s7_img_4.jpg" alt />
       </div>
+      <img class="fake" src="./s7_bg_2.png" alt />
     </div>
   </div>
 </template>
@@ -104,6 +112,11 @@
   }
 }
 
+.fake {
+  width: 100vw;
+  margin-top: 20px;
+}
+
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .bg {
@@ -116,6 +129,11 @@
 
   .fullscreen {
     height: auto !important;
+  }
+
+  .container {
+    width: 100vw;
+    margin-bottom: 30px;
   }
 
   .title {
