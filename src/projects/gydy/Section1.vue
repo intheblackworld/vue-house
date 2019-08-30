@@ -5,7 +5,7 @@
       <img v-if="!isMobile" src="./s1_subtitle.png" alt class="img" />
       <img v-if="!isMobile" src="./s1_title.png" alt class="img" />
       <img v-if="!isMobile" src="./s1_desc.png" alt class="img" />
-      <img v-if="!isMobile" src="./s1_sky.png" alt class="img" />
+      <img v-if="!isMobile" src="./s1_footer.png" alt class="footer" />
       
       <div v-if="isMobile">
         <img src="./s1_logo_m.png" alt class="logo relative" />
@@ -18,7 +18,7 @@
           景觀3房 訂簽180萬
           <span>起</span>
         </div>
-        <img src="./s1_sky_m.png" alt class="sky" />
+        <img src="./s1_footer_m.png" alt class="footer" />
       </div>
     </div>
   </div>
@@ -41,6 +41,13 @@
   &.relative {
     position: relative;
   }
+}
+
+.footer {
+  position: absolute;
+  width: 100vw;
+  bottom: 0;
+  left: 0;
 }
 
 /* 平板尺寸 */
