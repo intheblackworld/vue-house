@@ -8,7 +8,6 @@
           data-aos-delay="0"
           data-aos-duration="1500"
         >樹海恬靜學區 爭藏氧森別墅</div>
-        <hr data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500" />
         <div
           class="desc"
           data-aos="fade-up"
@@ -28,7 +27,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('./s2_bg.jpg');
+  // background-image: url('./s2_bg.jpg');
 }
 .text {
   top: 70px;
@@ -36,6 +35,28 @@
   left: 0;
   right: 0;
   margin: 0 auto;
+}
+
+.title {
+  font-size: 111px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.14;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+}
+
+.desc {
+  font-size: 31px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.81;
+  letter-spacing: 3.1px;
+  text-align: center;
+  color: #ffffff;
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
@@ -54,28 +75,24 @@
     height: auto;
     margin-top: 100px;
   }
-  .video-container {
-    width: 750px;
-    margin: 0 auto;
-    right: -12vw;
-    .mask {
-      width: 532px;
-      height: 300px;
 
-      img {
-        width: 60px;
-      }
-    }
-    video {
-      width: 532px;
-    }
+  .title {
+    font-size: 52px;
+  }
+
+  .desc {
+    font-size: 24px;
+  }
+
+  .text {
+    top: 0;
   }
 }
 
 @media screen and (max-width: 767px) {
   .bg {
     background-position: 55%;
-    background-image: url('./s2_bg_m.jpg');
+    // background-image: url('./s3_bg_m.jpg');
   }
 
   .logo {
@@ -99,6 +116,20 @@
       position: relative;
       width: 100vw;
     }
+  }
+
+  .title {
+    width: 100vw;
+    font-size: 55px;
+  }
+
+  .desc {
+    width: 100vw;
+    font-size: 25px;
+  }
+
+  .text {
+    top: 0;
   }
 }
 </style>

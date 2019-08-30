@@ -25,6 +25,7 @@
   align-items: center;
   justify-content: center;
   background-image: url('./s2_bg.jpg');
+  margin-top: -1px;
 }
 
 .txt {
@@ -144,6 +145,10 @@
       position: relative;
       width: 100vw;
     }
+  }
+
+  .bg-bottom {
+    margin-top: calc(-100vw * (1270 / 1920));
   }
 }
 </style>
