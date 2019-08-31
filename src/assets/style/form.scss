@@ -55,6 +55,7 @@
   border-radius: 0 !important;
   font-size: 20px !important;
   background-color: $order_submit_bg;
+  background-image: $order_submit_bg;
   margin: 0 auto !important;
   margin-top: 20px !important;
   transition: all 0.3s !important;
@@ -64,6 +65,7 @@
 
   &.is-disabled {
     background-color: $order_sumbit_disable_bg;
+    opacity: .6;
   }
 
   svg {

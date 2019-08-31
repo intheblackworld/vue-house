@@ -185,7 +185,7 @@ export default {
 @import '@/assets/style/variableColor.scss';
 .order-bg {
   background-color: $order_bg_color;
-  // background-image: $order_bg_image;
+  background-image: url('../assets/img/order-bg.jpg');
   position: relative;
   padding-top: 80px;
 
@@ -281,6 +281,7 @@ export default {
 @media only screen and (max-width: 767px) {
   .order-bg {
     padding-top: 40px;
+    background-image: url('../assets/img/order-bg-m.jpg');
     .order-title {
       margin-top: 10px;
       margin-bottom: 20px;

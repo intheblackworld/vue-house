@@ -1,18 +1,22 @@
 <template>
   <div class="section3">
-    <Map :tagList="tagList" :bgSrc="bgSrc" :hand="hand">
-      <div class="text">
+    <div class="title-bg">
+      <div class="text" v-if="isMobile">
         <div
           class="title"
-          data-aos="fade-up"
-          data-aos-delay="0"
-          data-aos-duration="1500"
         >樹海恬靜學區 爭藏氧森別墅</div>
         <div
           class="desc"
-          data-aos="fade-up"
-          data-aos-delay="400"
-          data-aos-duration="1500"
+        >步行2分鐘抵高雄大學，自然生態日夜淨化空氣ING</div>
+      </div>
+    </div>
+    <Map :tagList="tagList" :bgSrc="isMobile ? bgmSrc: bgSrc" :hand="hand">
+      <div class="text" v-if="!isMobile">
+        <div
+          class="title"
+        >樹海恬靜學區 爭藏氧森別墅</div>
+        <div
+          class="desc"
         >步行2分鐘抵高雄大學，自然生態日夜淨化空氣ING</div>
       </div>
     </Map>
@@ -28,6 +32,12 @@
   align-items: center;
   justify-content: center;
   // background-image: url('./s2_bg.jpg');
+}
+
+.bg-top {
+  width: 100vw;
+  height: 530px;
+  display: block;
 }
 .text {
   top: 70px;
@@ -61,6 +71,14 @@
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
     height: 100vh;
+  }
+
+  .text {
+    top: 40px;
+  }
+
+  .title {
+    font-size: 100px;
   }
 }
 
@@ -130,6 +148,19 @@
 
   .text {
     top: 0;
+    background-size: cover;
+  }
+
+  .title-bg {
+    background-size: auto;
+    height: 530px;
+    background-image: url('./s3_bg_top.png');
+    display: flex;
+    align-items: center;
+
+    .text {
+      position: relative;
+    }
   }
 }
 </style>
@@ -150,6 +181,7 @@ export default {
       tagList: [require('./s3_title.png')],
 
       bgSrc: require('./s3_bg.jpg'),
+      bgmSrc: require('./s3_bg_m.jpg'),
       hand: require('../lkf/s4_hand.png'),
     }
   },

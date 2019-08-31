@@ -2,7 +2,7 @@
   <div class="sideNav">
     <div class="nav relative">
       <div class="menu" @click="toggleSidebar">
-        <img v-if="isOpen" src="@/assets/img/close.png" alt />
+        <img v-if="isOpen" src="@/assets/img/close.png" class="close" alt />
         <img v-else src="@/assets/img/menu-btn.png" alt />
       </div>
       <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
@@ -85,13 +85,19 @@ export default {
   display: block;
   position: fixed;
   z-index: 112;
-  top: 30px;
+  top: 0px;
   right: 30px;
-  width: 40px;
+  width: 80px;
   cursor: pointer;
 
   img {
+    width: 100%;
+  }
+
+  .close {
     width: 40px;
+    margin-top: 20px;
+    margin-right: -20px;
   }
 }
 
@@ -109,13 +115,13 @@ export default {
   transform: translateX(40%);
 
   li {
-    height: 50px;
+    height: 60px;
     margin-bottom: 5px;
     width: 100%;
   }
 
   .link {
-    height: 50px;
+    height: 60px;
     width: 100%;
     font-size: 17px;
     margin-top: 10px;
@@ -123,6 +129,7 @@ export default {
     align-items: center;
     justify-content: center;
     display: none;
+    background-size: cover;
 
     img,
     span {
@@ -130,6 +137,11 @@ export default {
     }
     span {
       line-height: 16px;
+    }
+
+    &:hover {
+      color: $nav_link_hover_color;
+      background: $nav_link_hover_bg;
     }
   }
 
@@ -245,7 +257,17 @@ export default {
     display: block;
     position: fixed;
     right: 30px;
-    width: 30px;
+    width: 80px;
+
+    img {
+      width: 100%;
+      margin-right: -30px;
+    }
+
+    .close {
+      width: 40px;
+      margin-right: -30px;
+    }
 
     svg {
       color: $nav_btn_color;

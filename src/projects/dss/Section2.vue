@@ -1,7 +1,8 @@
 <template>
   <div class="section2">
     <div class="fullscreen bg">
-      <img src="./s2_bg_txt.png" alt class="txt fullscreen" />
+      <img src="./s2_bg_txt.png" alt class="txt fullscreen" v-if="!isMobile" />
+      <img src="./s2_bg_txt1_m.png" alt class="txt-m" v-if="isMobile" />
       <div class="video-container relative">
         <div :class="`mask absolute ${isPlay ? 'hide' : ''}`">
           <img src="./s2_play_btn.png" @click="handlePlay" alt="" />
@@ -10,6 +11,7 @@
           <source src="./s2_video.mp4" type="video/mp4" />
         </video>
       </div>
+      <img src="./s2_bg_txt2_m.png" alt class="txt-m" v-if="isMobile" />
     </div>
     <img v-if="!isMobile" src="./s2_bg_bottom.png" alt class="bg-bottom" />
     <img v-if="isMobile" src="./s2_bg_bottom_m.png" alt class="bg-bottom" />
@@ -122,6 +124,7 @@
   .bg {
     background-position: 55%;
     background-image: url('./s2_bg_m.jpg');
+    display: block;
   }
 
   .logo {
@@ -132,23 +135,37 @@
   .video-container {
     width: 100%;
     margin: 0 auto;
+    position: relative;
+    top: 0;
+
     right: 0;
     .mask {
       width: 100vw;
       height: calc((100vw * 9) / 16);
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       img {
         width: 60px;
+        margin-top: 0;
       }
     }
     video {
       position: relative;
+      top: 0;
+      transform: none;
       width: 100vw;
     }
   }
 
   .bg-bottom {
     margin-top: calc(-100vw * (1270 / 1920));
+  }
+
+  .txt-m {
+    width: 100vw;
+    margin-bottom: 20px;
   }
 }
 </style>
