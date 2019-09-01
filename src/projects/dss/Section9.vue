@@ -1,7 +1,7 @@
 <template>
   <div class="section9">
     <div class="bg">
-      <div class="slide relative" v-if="!isMobile">
+      <div class="slide relative" v-if="!isMobile" data-aos="fade" data-aos-delay="300">
         <img
           v-for="(slide, index) in slideList"
           :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
@@ -9,7 +9,7 @@
           :src="slide.src"
           alt
         />
-        <div class="img-group">
+        <div class="img-group" data-aos="fade" data-aos-delay="600">
           <img
             v-for="(slide, index) in slideList"
             :class="`${slideIndex === index ? 'active' : ''}`"
@@ -21,7 +21,7 @@
         </div>
       </div>
       <div v-else>
-        <div class="slide relative">
+        <div class="slide relative" data-aos="fade" data-aos-delay="300">
           <img
             v-for="(slide, index) in slideListM"
             :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
@@ -125,6 +125,8 @@
   }
 
   .slide {
+    background-image: url('./s9/s9_bg_m.jpg');
+    background-size: cover;
     .btn-group {
       width: 95%;
       bottom: 50%;

@@ -1,7 +1,7 @@
 <template>
   <div class="section6">
     <div class="bg">
-      <div class="slide relative">
+      <div class="slide relative" data-aos="fade" data-aos-delay="300">
         <img
           v-for="(slide, index) in slideList"
           :class="`slide-img ${slideIndex === index ? 'active' : ''}`"

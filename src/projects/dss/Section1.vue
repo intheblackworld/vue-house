@@ -2,9 +2,10 @@
   <div class="section1">
     <div class="fullscreen bg">
       <div class="star comet"></div>
-      <img src="./s1_logo.png" alt class="logo" />
+      <img src="./s1_logo.png" alt class="logo" data-aos="fade-down" data-aos-delay="0" />
     </div>
-    <img src="./s1_bg_bottom.png" alt class="bg-bottom" />
+    <img src="./s1_bg_bottom.png" alt class="bg-bottom" v-if="!isMobile" />
+    <img src="./s1_bg_bottom_m.png" alt class="bg-bottom" v-if="isMobile" />
   </div>
 </template>
 <style lang="scss">
@@ -92,6 +93,10 @@
   .logo {
     width: 55vw;
     margin-top: -80px;
+  }
+
+  .bg-bottom {
+    margin-top: calc(-100vw * (218 / 750));
   }
 }
 </style>

@@ -1,11 +1,11 @@
 export default {
-  address: '台北市北投區中和街219-2號',
+  address: '高雄市楠梓區藍田路大學七街 交叉口',
   googleSrc:
-    'https://www.google.com.tw/maps/place/112%E5%8F%B0%E5%8C%97%E5%B8%82%E5%8C%97%E6%8A%95%E5%8D%80%E4%B8%AD%E5%92%8C%E8%A1%97219-2%E8%99%9F/@25.139388,121.4990573,17z/data=!3m1!4b1!4m5!3m4!1s0x3442ae4f0aa400b1:0x75ca2b2ce485be53!8m2!3d25.139388!4d121.501246?hl=zh-TW&authuser=0',
-  phone: '02-28960111',
-  fbLink: '',
-  fbMessage: '',
-  googleLink: 'https://goo.gl/maps/xecuraRkoCuUYizeA',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.0152705871374!2d120.28651681496243!3d22.72767378510322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e0f320b5498a3%3A0x2c9eeeaadf780327!2z5aSn5a245aKFIOaOpeW-heS4reW_gw!5e0!3m2!1szh-TW!2stw!4v1567323808325!5m2!1szh-TW!2stw',
+  phone: '07-366-3888',
+  fbLink: 'https://www.facebook.com/sunyoungthebestvilla/',
+  fbMessage: 'https://m.me/sunyoungthebestvilla/',
+  googleLink: 'https://goo.gl/maps/iZMGuC4QLJpcJUSTA',
   caseName: '大學墅',
 
   houseInfos: [

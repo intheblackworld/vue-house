@@ -1,12 +1,12 @@
 <template>
   <div class="section11">
     <div class="bg relative">
-      <img src="./s11_bg.jpg" alt="" class="bg-img" v-if="!isMobile">
-      <img src="./s11_bgm.jpg" alt="" class="bg-img" v-if="isMobile">
+      <img src="./s11_bg.jpg" alt="" class="bg-img" v-if="!isMobile" data-aos="fade" data-aos-delay="300">
+      <img src="./s11_bgm.jpg" alt="" class="bg-img" v-if="isMobile" data-aos="fade" data-aos-delay="300">
       <div class="absolute-c">
-        <img src="./s11_img.png" alt="" v-if="!isMobile">
-        <img src="./s11_imgm.png" alt="" v-if="isMobile" class="bg-img">
-        <div :class="`slide relative ${isMobile ? 'absolute-c' : ''}`">
+        <img src="./s11_img.png" alt="" v-if="!isMobile" data-aos="fade" data-aos-delay="700">
+        <img src="./s11_imgm.png" alt="" v-if="isMobile" class="bg-img" data-aos="fade" data-aos-delay="700">
+        <div :class="`slide relative ${isMobile ? 'absolute-c' : ''}`" data-aos="fade" data-aos-delay="900">
           <div
             v-for="(slide, index) in slideList"
             :class="`slide-img ${slideIndex === index ? 'active' : ''}`"

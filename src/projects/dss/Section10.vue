@@ -3,25 +3,25 @@
     <div class="bg">
       <div class="relative" v-if="!isMobile">
         <div class="row relative">
-          <img src="./s10/img1.png" alt />
-          <img src="./s10/img2.png" alt />
+          <img src="./s10/img1.png" alt data-aos="fade-right" data-aos-delay="300" />
+          <img src="./s10/img2.png" alt data-aos="fade-left" data-aos-delay="600" />
         </div>
         <div class="row relative">
-          <img src="./s10/img3.png" alt />
-          <img src="./s10/img4.png" alt />
+          <img src="./s10/img3.png" alt data-aos="fade-right" data-aos-delay="900" />
+          <img src="./s10/img4.png" alt data-aos="fade-left" data-aos-delay="1200" />
         </div>
       </div>
       <div v-else>
-        <div class="slide relative">
-          <img src="./s10/w.png" alt class="m-bg" />
-          <img src="./s10/b.png" alt class="m-bg" />
+        <div class="slide relative" style="overflow:hidden">
+          <img src="./s10/w.png" alt class="m-bg" data-aos="fade-up" data-aos-delay="500" />
+          <img src="./s10/b.png" alt class="m-bg" data-aos="fade-left" data-aos-delay="800" />
           <div
             v-for="(slide, index) in slideList"
             :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
             :key="`s4-slide-${index}`"
           >
-            <img :src="slide.src" alt />
-            <img :src="slide.txt" alt />
+            <img :src="slide.src" alt data-aos="fade" data-aos-delay="300" />
+            <img :src="slide.txt" alt data-aos="fade" data-aos-delay="900" />
           </div>
           <div class="btn-group flex-jb flex-ac flex-mobile-jb">
             <img @click="decIndex" src="./small_left_btn.png" alt />

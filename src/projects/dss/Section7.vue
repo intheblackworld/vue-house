@@ -3,7 +3,7 @@
   <div class="section6">
     <div class="bg fullscreen">
       <div class="relative m-container" v-if="isMobile">
-        <div class="slide relative">
+        <div class="slide relative" data-aos="fade" data-aos-delay="500">
           <img
             v-for="(slide, index) in slideList"
             :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
@@ -19,27 +19,27 @@
       </div>
       <div v-else>
         <div class="box">
-          <div class="box2">
+          <div class="box2" data-aos="fade" data-aos-delay="300">
             <img src="./s7/img_01.jpg" />
             <img src="./s7/txt_01.jpg" class="txt" />
           </div>
           <div class="box2">
             <div class="box3">
-              <div class="box4">
+              <div class="box4" data-aos="fade" data-aos-delay="400">
                 <img src="./s7/img_02.jpg" />
                 <img src="./s7/txt_02.jpg" class="txt" />
               </div>
-              <div class="box4">
+              <div class="box4" data-aos="fade" data-aos-delay="500">
                 <img src="./s7/img_03.jpg" />
                 <img src="./s7/txt_03.jpg" class="txt" />
               </div>
             </div>
             <div class="box3">
-              <div class="box4">
+              <div class="box4" data-aos="fade" data-aos-delay="600">
                 <img src="./s7/img_04.jpg" />
                 <img src="./s7/txt_04.jpg" class="txt" />
               </div>
-              <div class="box4">
+              <div class="box4" data-aos="fade" data-aos-delay="700">
                 <img src="./s7/img_05.jpg" />
                 <img src="./s7/txt_05.jpg" class="txt" />
               </div>

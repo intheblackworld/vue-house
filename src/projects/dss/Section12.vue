@@ -1,12 +1,12 @@
 <template>
   <div class="section12">
     <div class="bg relative">
-      <img src="./s12_bg.jpg" alt="" class="bg-img" v-if="!isMobile">
-      <img src="./s12_txt.png" alt="" class="bg-img" v-if="!isMobile">
-      <img src="./s12_bg_m.jpg" alt="" class="bg-img" v-if="isMobile">
-      <img src="./s12_txt1_m.png" alt="" class="bg-img" v-if="isMobile">
-      <img src="./s12_txt2_m.png" alt="" class="bg-img" v-if="isMobile">
-      <img src="./s12_txt3_m.png" alt="" class="bg-img" v-if="isMobile">
+      <img src="./s12_bg.jpg" alt="" class="bg-img" v-if="!isMobile" data-aos="fade" data-aos-delay="300">
+      <img src="./s12_txt.png" alt="" class="bg-img" v-if="!isMobile" data-aos="fade-down" data-aos-delay="900">
+      <img src="./s12_bg_m.jpg" alt="" class="bg-img" v-if="isMobile" data-aos="fade" data-aos-delay="300">
+      <img src="./s12_txt1_m.png" alt="" class="bg-img" v-if="isMobile" data-aos="fade" data-aos-delay="500">
+      <img src="./s12_txt2_m.png" alt="" class="bg-img" v-if="isMobile" data-aos="fade" data-aos-delay="700">
+      <img src="./s12_txt3_m.png" alt="" class="bg-img" v-if="isMobile" data-aos="fade" data-aos-delay="900">
     </div>
   </div>
 </template>

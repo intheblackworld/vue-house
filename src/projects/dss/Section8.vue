@@ -1,13 +1,11 @@
 <template>
   <div class="section8">
     <div class="bg">
-      <img src="./s8_txt.png" alt class="txt" v-if="!isMobile" />
+      <img src="./s8_txt.png" alt class="txt" v-if="!isMobile" data-aos="fade" data-aos-delay="300" />
       <div v-if="isMobile" class="m-content">
-        <img src="./s8_bg_1_m.jpg" alt class="m-bg" />
-        <img src="./s8_bg_2_m.jpg" alt class="m-bg" style="margin-top: -1px" />
-        <img src="./s8_bg_3_m.jpg" alt class="m-bg" style="margin-top: -1px" />
-        <img src="./s8_img_m.jpg" alt class="m-img" />
-        <div class="toggle">
+        <img src="./s8_bg_1_m.jpg" alt class="m-bg" data-aos="fade" data-aos-delay="300" />
+        <!-- <img src="./s8_bg_2_m.jpg" alt class="m-bg" style="margin-top: -1px" /> -->
+        <div class="toggle" data-aos="fade" data-aos-delay="500">
           <div
             :class="`item ${item.open ? 'open' : ''}`"
             v-for="(item, index) in toggleList"
@@ -20,6 +18,9 @@
             <div class="desc">{{item.desc}}</div>
           </div>
         </div>
+        <img src="./s8_bg_3_m.jpg" alt class="m-bg" style="margin-top: -1px" />
+        <img src="./s8_img_m.jpg" alt class="m-img" />
+        
       </div>
     </div>
   </div>
@@ -66,20 +67,20 @@
 
     .m-img {
       position: absolute;
-      top: 35%;
+      top: 77vw;
       right: 0;
-      width: 225px;
+      width: 54vw;
     }
     .toggle {
       margin: 0 auto;
-      margin-top: 20px;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      position: absolute;
       top: auto;
       left: auto;
-      top: 55%;
+      top: 0;
+      background: url('./s8_bg_2_m.jpg');
+      background-size: 100% 100%;
     }
 
     .item {

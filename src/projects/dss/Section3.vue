@@ -4,9 +4,13 @@
       <div class="text" v-if="isMobile">
         <div
           class="title"
+          data-aos="fade-down"
+          data-aos-delay="0"
         >樹海恬靜學區 爭藏氧森別墅</div>
         <div
           class="desc"
+          data-aos="fade-down"
+          data-aos-delay="200"
         >步行2分鐘抵高雄大學，自然生態日夜淨化空氣ING</div>
       </div>
     </div>
@@ -14,9 +18,13 @@
       <div class="text" v-if="!isMobile">
         <div
           class="title"
+          data-aos="fade-down"
+          data-aos-delay="0"
         >樹海恬靜學區 爭藏氧森別墅</div>
         <div
           class="desc"
+          data-aos="fade-down"
+          data-aos-delay="500"
         >步行2分鐘抵高雄大學，自然生態日夜淨化空氣ING</div>
       </div>
     </Map>
@@ -68,7 +76,7 @@
   text-align: center;
   color: #ffffff;
 }
-@media only screen and (max-width: 1280px) and (min-width: 1025px) {
+@media only screen and (max-width: 1440px) and (min-width: 1025px) {
   .fullscreen {
     height: 100vh;
   }
@@ -78,7 +86,7 @@
   }
 
   .title {
-    font-size: 100px;
+    font-size: 90px;
   }
 }
 
@@ -153,8 +161,9 @@
 
   .title-bg {
     background-size: auto;
-    height: 530px;
+    height: 270px;
     background-image: url('./s3_bg_top.png');
+    background-size: contain;
     display: flex;
     align-items: center;
 

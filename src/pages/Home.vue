@@ -102,7 +102,7 @@ export default {
         if (this.loading) {
           this.loading = false
         }
-      }, 500)
+      }, 0)
     })
   },
 

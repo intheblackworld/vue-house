@@ -4,7 +4,7 @@
     <img src="./s4_bg_1_m.jpg" alt class="bg-top" v-else />
     <div class="bg fullscreen">
       <div class="container">
-        <div class="row">
+        <div class="row" data-aos="fade" data-aos-delay="0">
           <div class="circle" v-if="!isMobile">
             <div>
               <div class="title">大學墅畫出最美的幸福圓</div>
@@ -23,7 +23,7 @@
               </div>
             </div>
           </div>
-          <div class="toggle" v-else>
+          <div class="toggle" v-else data-aos="fade" data-aos-delay="200">
             <div
               :class="`item ${item.open ? 'open' : ''}`"
               v-for="(item, index) in toggleList"
@@ -38,12 +38,12 @@
           </div>
         </div>
         <div class="row" v-if="!isMobile">
-          <img src="./s4_img1.png" alt />
-          <img src="./s4_img2.png" alt />
-          <img src="./s4_img3.png" alt />
+          <img src="./s4_img1.png" alt data-aos="fade" data-aos-delay="200" />
+          <img src="./s4_img2.png" alt data-aos="fade" data-aos-delay="400" />
+          <img src="./s4_img3.png" alt data-aos="fade" data-aos-delay="600" />
         </div>
       </div>
-      <div class="row" v-if="isMobile">
+      <div class="row" v-if="isMobile" data-aos="fade" data-aos-delay="200">
         <img src="./s4_img1.png" alt />
         <img src="./s4_img2.png" alt />
         <img src="./s4_img3.png" alt />
@@ -68,6 +68,10 @@
   display: block;
 }
 
+.fullscreen {
+  overflow: initial;
+}
+
 .container {
   width: 90vw;
   position: absolute;
@@ -78,6 +82,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: -10%;
 }
 
 .circle {
@@ -103,6 +108,10 @@
 
   img {
     width: 15vw;
+  }
+
+  &:nth-child(2) {
+    margin-top: -10%;
   }
 }
 

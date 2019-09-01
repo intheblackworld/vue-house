@@ -1,9 +1,9 @@
 <template>
   <div class="section2">
     <div class="fullscreen bg">
-      <img src="./s2_bg_txt.png" alt class="txt fullscreen" v-if="!isMobile" />
-      <img src="./s2_bg_txt1_m.png" alt class="txt-m" v-if="isMobile" />
-      <div class="video-container relative">
+      <img src="./s2_bg_txt.png" alt class="txt fullscreen" v-if="!isMobile" data-aos="fade" data-aos-delay="0" />
+      <img src="./s2_bg_txt1_m.png" alt class="txt-m" v-if="isMobile" data-aos="fade" data-aos-delay="0" />
+      <div class="video-container relative" data-aos="fade" data-aos-delay="500">
         <div :class="`mask absolute ${isPlay ? 'hide' : ''}`">
           <img src="./s2_play_btn.png" @click="handlePlay" alt="" />
         </div>
@@ -11,7 +11,7 @@
           <source src="./s2_video.mp4" type="video/mp4" />
         </video>
       </div>
-      <img src="./s2_bg_txt2_m.png" alt class="txt-m" v-if="isMobile" />
+      <img src="./s2_bg_txt2_m.png" alt class="txt-m" v-if="isMobile" data-aos="fade" data-aos-delay="300" />
     </div>
     <img v-if="!isMobile" src="./s2_bg_bottom.png" alt class="bg-bottom" />
     <img v-if="isMobile" src="./s2_bg_bottom_m.png" alt class="bg-bottom" />
@@ -123,6 +123,7 @@
 @media screen and (max-width: 767px) {
   .bg {
     background-position: 55%;
+    background-size: cover;
     background-image: url('./s2_bg_m.jpg');
     display: block;
   }

@@ -27,10 +27,10 @@ let initialized = false;
  * Default options
  */
 let options = {
-  offset: 120,
+  offset: 50,
   delay: 0,
   easing: 'ease',
-  duration: 1200,
+  duration: 1500,
   disable: false,
   once: false,
   mirror: false,
