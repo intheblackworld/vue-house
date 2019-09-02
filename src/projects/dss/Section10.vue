@@ -13,15 +13,15 @@
       </div>
       <div v-else>
         <div class="slide relative" style="overflow:hidden">
-          <img src="./s10/w.png" alt class="m-bg" data-aos="fade-up" data-aos-delay="500" />
+          <img src="./s10/w.png" alt class="m-bg" data-aos="fade-up" data-aos-delay="600" />
           <img src="./s10/b.png" alt class="m-bg" data-aos="fade-left" data-aos-delay="800" />
           <div
             v-for="(slide, index) in slideList"
             :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
             :key="`s4-slide-${index}`"
           >
-            <img :src="slide.src" alt data-aos="fade" data-aos-delay="300" />
-            <img :src="slide.txt" alt data-aos="fade" data-aos-delay="900" />
+            <img :src="slide.src" alt />
+            <img :src="slide.txt" alt />
           </div>
           <div class="btn-group flex-jb flex-ac flex-mobile-jb">
             <img @click="decIndex" src="./small_left_btn.png" alt />
@@ -113,6 +113,7 @@
 
   .slide {
     .slide-img {
+      transition: 0s;
       &.active {
         img {
           position: relative;
