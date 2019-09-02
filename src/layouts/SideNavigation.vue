@@ -85,9 +85,9 @@ export default {
   display: block;
   position: fixed;
   z-index: 112;
-  top: 0px;
+  top: 30px;
   right: 30px;
-  width: 80px;
+  width: 40px;
   cursor: pointer;
 
   img {
@@ -96,8 +96,8 @@ export default {
 
   .close {
     width: 40px;
-    margin-top: 20px;
-    margin-right: -20px;
+    margin-top: 0px;
+    margin-right: 0px;
   }
 }
 
@@ -141,7 +141,7 @@ export default {
 
     &:hover {
       color: $nav_link_hover_color;
-      background: $nav_link_hover_bg;
+      // background: $nav_link_hover_bg;
     }
   }
 
@@ -151,6 +151,38 @@ export default {
     display: flex;
     flex-wrap: wrap;
     align-content: center;
+
+    li:hover {
+      // custom style
+      &:nth-child(1),
+      &:nth-child(5) {
+        background-image: url('~@/assets/img/side/1.png');
+        background-size: 105px;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      &:nth-child(2),
+      &:nth-child(6) {
+        background-image: url('~@/assets/img/side/2.png');
+        background-size: 105px;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      &:nth-child(3),
+      &:nth-child(7) {
+        background-image: url('~@/assets/img/side/3.png');
+        background-size: 105px;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      &:nth-child(4),
+      &:nth-child(8) {
+        background-image: url('~@/assets/img/side/4.png');
+        background-size: 105px;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
 
     .link {
       display: flex;
@@ -257,7 +289,8 @@ export default {
     display: block;
     position: fixed;
     right: 30px;
-    width: 80px;
+    top: 20px;
+    width: 40px;
 
     img {
       width: 100%;

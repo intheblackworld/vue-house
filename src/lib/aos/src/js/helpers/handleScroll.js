@@ -66,13 +66,10 @@ const applyClasses = (el, top) => {
   };
 
   if (options.mirror && top >= position.out && !options.once) {
-    console.log('1 hide', top, position.out)
     hide();
   } else if (top >= position.in) {
-    console.log('2 show')
     show();
   } else if (el.animated && !options.once) {
-    console.log('3 hide')
     hide();
   }
 };

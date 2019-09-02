@@ -33,6 +33,10 @@
     font-size: 16px !important;
     border: $order_input_border;
     background: $order_input_bg;
+
+    &::placeholder {
+      color: $order_input_placeholder;  
+    }
   }
 }
 

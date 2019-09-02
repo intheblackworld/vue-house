@@ -281,7 +281,6 @@ export default {
 @media only screen and (max-width: 767px) {
   .order-bg {
     padding-top: 40px;
-    background-image: url('../assets/img/order-bg-m.jpg');
     .order-title {
       margin-top: 10px;
       margin-bottom: 20px;
