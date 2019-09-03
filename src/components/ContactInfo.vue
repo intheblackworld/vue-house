@@ -1,6 +1,6 @@
 <template>
   <div class="contact-info">
-    <img class="logo" src="@/assets/img/contact-logo.png" alt />
+    <img class="logo" src="@/assets/img/contact-logo.png" alt="心天畝的圖片" />
     <div class="info">
       <div class="btn flex-c" @click="showCallDialog">
         <span class="flex-c">
@@ -45,12 +45,7 @@
       >
         <MessengerDialog :messenger="info.fbMessage" />
       </el-dialog>
-      <el-dialog
-        title
-        :visible.sync="isShowMapDialog"
-        width="90%"
-        :modal-append-to-body="false"
-      >
+      <el-dialog title :visible.sync="isShowMapDialog" width="90%" :modal-append-to-body="false">
         <MapDialog :link="info.googleLink" :address="info.address" />
       </el-dialog>
     </div>
@@ -121,7 +116,7 @@ export default {
 }
 
 .logo {
-  width: $contact_logo_width;
+  width: $contact_logo_pc_width;
   height: auto;
   margin: 0 auto;
 }
@@ -203,6 +198,10 @@ export default {
     width: 90% !important;
     height: 460px;
     padding: 60px 0 80px;
+
+    .logo {
+      width: $contact_logo_tablet_width;
+    }
   }
 }
 
@@ -216,6 +215,10 @@ export default {
     transform: none;
     position: static;
     margin-top: 60px;
+
+    .logo {
+      width: $contact_logo_mobile_width;
+    }
   }
 
   .info {

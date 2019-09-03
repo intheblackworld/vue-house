@@ -9,14 +9,18 @@
         </div>
       </div>
     </div>
+    <Footer />
   </div>
 </template>
 
 <script>
 import info from '@/info'
+import Footer from '@/layouts/Footer.vue'
 export default {
   name: 'houseInfo',
-  components: {},
+  components: {
+    Footer,
+  },
   data() {
     return {
       houseInfos: info.houseInfos,
@@ -89,7 +93,7 @@ export default {
 @media only screen and (max-width: 767px) {
   .content {
     width: 100%;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
   }
 
   .title {

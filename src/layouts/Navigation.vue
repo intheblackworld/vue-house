@@ -3,7 +3,7 @@
     <div class="layout-container-fluid">
       <div class="layout-container">
         <div class="nav">
-          <img class="logo" src="@/assets/img/nav-logo.png" alt />
+          <img class="logo" src="@/assets/img/nav-logo.png" alt="心天畝的圖片" />
           <div class="menu" @click="toggleSidebar">
             <font-awesome-icon icon="bars" />
           </div>
@@ -15,7 +15,7 @@
               v-for="item in list"
             >
               <span class="link">
-                <img v-if="item.imgSrc" :src="item.imgSrc" alt />
+                <img v-if="item.imgSrc" :src="item.imgSrc" alt="心天畝的圖片" />
                 <span>
                   <p class="title">{{item.name}}</p>
                   <span class="subTitle">{{item.subTitle}}</span>
@@ -47,14 +47,14 @@ export default {
   computed: {
     offset() {
       if (this.isMobile) {
-        return -45
+        return -39
       }
 
       if (this.isTablet) {
-        return -60
+        return -45
       }
 
-      return -80
+      return -56
     },
   },
 
@@ -167,9 +167,14 @@ export default {
     // left: -240px;
   }
 
+  .navlist {
+    width: 70%;
+  }
+
   .navlist .link {
     font-size: 12px;
-    width: 120px;
+    width: 70px;
+    white-space: nowrap;
 
     img {
       height: 35px;
