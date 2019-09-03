@@ -1,7 +1,7 @@
 <template>
   <div class="navigation">
-    <div class="layout-container-fluid">
-      <div class="layout-container">
+    <div class="layout-container-fluid nav-container">
+      <div class="layout-container nav-container">
         <div class="nav">
           <img class="logo" src="@/assets/img/nav-logo.png" alt />
           <div class="menu" @click="toggleSidebar">
@@ -13,6 +13,8 @@
               :key="item.name"
               v-scroll-to="{ element: `#${item.section}`, offset: offset }"
               v-for="item in list"
+              class="flex-ac"
+              @click="toggleSidebar"
             >
               <span class="link">
                 <img v-if="item.imgSrc" :src="item.imgSrc" alt />
@@ -32,6 +34,7 @@
 <script>
 import { isMobile, isTablet } from '@/utils'
 import navList from '@/info/navList'
+
 export default {
   name: 'navigation',
   components: {},
@@ -47,21 +50,21 @@ export default {
   computed: {
     offset() {
       if (this.isMobile) {
-        return -45
+        return -39
       }
 
       if (this.isTablet) {
-        return -60
+        return -45
       }
 
-      return -80
+      return -56
     },
   },
 
   methods: {
     toggleSidebar() {
       this.isOpen = !this.isOpen
-    }
+    },
   },
 }
 </script>
@@ -84,7 +87,16 @@ export default {
   box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
+.nav-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .nav {
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -94,6 +106,10 @@ export default {
     cursor: pointer;
   }
 }
+
+// 紅#c72d1e
+// 綠#4f6e01
+// 藍#0082d3
 
 .logo {
   width: $logo_pc_width;
@@ -113,13 +129,18 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
+  li {
+    height: 100%;
+  }
 
   .link {
     color: $nav_link_color;
+    height: 100%;
     text-align: center;
     display: block;
     cursor: pointer;
-    margin-right: 40px;
+    padding: 0 20px;
     transition: all 0.3s;
     display: flex;
     align-items: center;
@@ -127,6 +148,7 @@ export default {
 
     &:hover {
       color: $nav_link_hover_color;
+      background: #4f6e01;
     }
 
     .title {
@@ -139,8 +161,8 @@ export default {
     }
 
     img {
-      width: 35px;
-      height: 35px;
+      // width: 35px;
+      // height: 35px;
       margin-right: 10px;
     }
   }
@@ -167,12 +189,17 @@ export default {
     // left: -240px;
   }
 
+  .navlist {
+    width: 85%;
+  }
+
   .navlist .link {
     font-size: 12px;
     width: 120px;
+    white-space: nowrap;
 
     img {
-      height: 35px;
+      // height: 35px;
       margin-bottom: 5px;
     }
 
@@ -194,6 +221,11 @@ export default {
   .navigation {
     height: $nav_phone_height;
     z-index: 110;
+  }
+
+  .nav-container {
+    display: block;
+    height: auto;
   }
 
   .logo {
@@ -230,8 +262,13 @@ export default {
     display: block;
     transform: translateX(40%);
 
+    li {
+      height: 50px;
+      margin-bottom: 5px;
+    }
+
     .link {
-      height: 40px;
+      height: 50px;
       width: 100%;
       font-size: 17px;
       margin-top: 10px;
@@ -250,16 +287,15 @@ export default {
     }
 
     &.open {
-      width: 40%;
+      width: 100%;
       transform: translateX(0%);
 
       .link {
-        display: block;
+        display: flex;
+        justify-content: center;
         span {
           white-space: nowrap;
         }
-
-        img,
         .divided {
           display: none;
         }

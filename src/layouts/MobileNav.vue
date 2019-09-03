@@ -113,7 +113,7 @@ export default {
     align-items: center;
     border-right: 1px solid $mobile_nav_border;
 
-    &:nth-last-child(1) {
+    &:nth-child(4) {
       border-right: none;
     }
   }
