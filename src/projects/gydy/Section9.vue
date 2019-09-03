@@ -13,6 +13,7 @@
           <div class="swiper-button-next" slot="button-next"></div>
         </swiper>
       </div>
+      <div class="triangle"></div>
       <div class="items" v-if="!isMobile">
         <swiper :options="swiperOptionSmall" ref="swiperSmall">
           <swiper-slide v-for="(carousel, index) in carouselList" :key="carousel.item">
@@ -41,6 +42,18 @@
     height: 100%;
     cursor: pointer;
   }
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 70px 70px 70px;
+  border-color: transparent transparent #007bff transparent;
+  margin: 0 auto;
+  margin-top: -50px;
+  position: relative;
+  z-index: 2;
 }
 
 /* 平板尺寸 */
@@ -143,6 +156,15 @@
   .fullscreen {
     height: auto !important;
   }
+
+  .triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 30px 30px 30px;
+    border-color: transparent transparent #007bff transparent;
+    margin: 0 auto;
+  }
 }
 </style>
 
@@ -172,12 +194,14 @@ export default {
 
       swiperOptionSmall: {
         slidesPerView: 5,
+        initialSlide: -2,
         spaceBetween: 0,
         loop: true,
       },
 
       swiperOptionSmallMobile: {
         slidesPerView: 3,
+        initialSlide: -1,
         spaceBetween: 0,
         loop: true,
       },
@@ -243,7 +267,7 @@ export default {
     },
 
     swipeSmallTo(index) {
-      this.swiperSmall.slideTo(index + (this.isMobile ? 2 : 4), 1000, false)
+      this.swiperSmall.slideTo(index + (this.isMobile ? 1 : 2), 1000, false)
     },
   },
 

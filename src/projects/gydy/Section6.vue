@@ -35,7 +35,6 @@
 <style lang="scss" scoped>
 .bg {
   background-image: url('./s6_bg.png');
-  background-size: cover;
   position: relative;
 }
 

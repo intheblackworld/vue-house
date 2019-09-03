@@ -1,7 +1,7 @@
 <template>
   <div class="section7">
     <div class="bg relative">
-      <div class="container">
+      <!-- <div class="container">
         <div class="label">
           安心建築
           <span>No.1</span>
@@ -21,27 +21,28 @@
           />
           齊聚建築鐵三角，集結三倍豐厚實力與優質血統悉心擘劃，因「三希堂」聞名的馥域建設＿以留美建築學人之姿，締造高標以待的靈韻；欣聯建設＿為信賴營造職人之首，憑「東園綻」、「幸福捷境」、「欣聯大心」、「欣聯心」…等熱銷個案經典實績，奠定究極精工的基石；首敦建設＿任在地深耕達人，藉北投「鹿鳴館」名宅推手實力，融入居宅工藝，耗費三倍心力攜手累加斐然資歷，為翻轉北投街廓奉獻心力。
         </div>
-      </div>
+      </div>-->
       <div class="img-row" v-if="!isMobile">
         <div class="col">
-          <div class="col-title">欣聯建設-芳朵</div>
-          <img src="./s7_img_1.jpg" alt />
+          <img src="./s7-5_img_1.png" alt />
         </div>
         <div class="col">
-          <div class="col-title">首敦建設-鹿鳴館</div>
-          <img src="./s7_img_2.jpg" alt />
+          <img src="./s7-5_img_1.png" alt />
         </div>
         <div class="col">
-          <div class="col-title black">欣聯建設-欣聯心</div>
-          <img src="./s7_img_3.jpg" alt />
+          <img src="./s7-5_img_2.jpg" alt />
         </div>
         <div class="col">
-          <div class="col-title black">馥域建設-三希堂</div>
-          <img src="./s7_img_4.jpg" alt />
+          <img src="./s7-5_img_3.jpg" alt />
         </div>
       </div>
-      <div class="slide relative" v-else>
-        <div :class="`slide-title ${slideIndex > 1 ? 'black' : ''}`">{{slideList[slideIndex].title}}</div>
+      <div class="bottom relative" v-if="!isMobile">
+        <div class="title">宅配綠意。如院以償</div>
+        <img src="./s7-5_img_b.png" alt class="build absolute" />
+      </div>
+      <div class="b-footer" v-if="!isMobile"></div>
+      <div class="title" v-if="isMobile">宅配綠意。如院以償</div>
+      <div class="slide relative" v-if="isMobile">
         <img
           v-for="(slide, index) in slideList"
           :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
@@ -54,6 +55,7 @@
           <img @click="addIndex" src="./arrow-right.png" alt />
         </div>
       </div>
+      <div class="b-footer" v-if="isMobile"></div>
     </div>
   </div>
 </template>
@@ -63,72 +65,12 @@
   position: relative;
 }
 
-.container {
-  width: 1185px;
-  margin: 0 auto;
-}
-
-.label {
-  width: 283px;
-  height: 60.5px;
-  background-color: #31426b;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 32px;
-
-  span {
-    font-size: 41px;
-    font-weight: 900;
-  }
-}
-
-.title {
-  width: 691px;
-  margin-bottom: 15px;
-  font-size: 48px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.35;
-  letter-spacing: normal;
-  text-align: left;
-  color: #16679e;
-}
-
-.subtitle {
-  width: 390px;
-  margin-bottom: 15px;
-  font-size: 24px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 2.71;
-  letter-spacing: normal;
-  text-align: left;
-  color: #9e1616;
-}
-
-.desc {
-  width: 1186px;
-  height: 89px;
-  font-size: 17px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.59;
-  letter-spacing: normal;
-  text-align: left;
-  color: #000000;
-  margin-bottom: 15px;
-}
-
 .img-row {
   width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  padding-top: 20px;
   .col {
     width: 24.3%;
     position: relative;
@@ -152,19 +94,59 @@
   }
 }
 
-.fake {
+.bottom {
+  background: url('./s7-5_img_1.png');
   width: 100vw;
   margin-top: 20px;
+  height: calc(24.3vw * (370 / 350));
+
+  .title {
+    width: 100vw;
+    height: 170px;
+    font-size: 65px;
+    font-weight: bold;
+    line-height: 0.4;
+    text-align: right;
+    color: #ffffff;
+    background-color: #5fc2c6;
+    padding-right: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute;
+    top: 0%;
+  }
+}
+
+.build {
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  z-index: 1;
+}
+
+.b-footer {
+  width: 100vw;
+  height: 54px;
+  background: #008f95;
 }
 
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .bg {
   }
+
+  .bottom {
+    .title {
+      font-size: 55px;
+      padding-right: 2%;
+    }
+  }
 }
 
 @media screen and (max-width: 767px) {
   .bg {
+    padding-top: 30px;
   }
 
   .fullscreen {
@@ -174,17 +156,21 @@
   .container {
     width: 100vw;
     margin-bottom: 30px;
+    
   }
 
   .title {
-    width: 90vw;
-    font-size: 32px;
-    line-height: 1.19;
-    text-align: left;
-    color: #16679e;
-    margin: 0 auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    width: 100vw;
+    padding: 30px 0;
+    font-size: 39px;
+    font-weight: bold;
+    line-height: 0.77;
+    text-align: center;
+    color: #ffffff;
+    background-color: #5fc2c6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .subtitle {
@@ -249,10 +235,13 @@
     top: 15px;
     z-index: 2;
 
-
     &.black {
       color: #000;
     }
+  }
+
+  .b-footer {
+    height: 29px;
   }
 }
 </style>
@@ -271,20 +260,10 @@ export default {
       isMobile,
       slideList: [
         {
-          src: require('./s7_img_1.jpg'),
-          title: '欣聯建設-芳朵',
+          src: require('./s7-5_img_2.jpg'),
         },
         {
-          src: require('./s7_img_2.jpg'),
-          title: '首敦建設-鹿鳴館',
-        },
-        {
-          src: require('./s7_img_3.jpg'),
-          title: '欣聯建設-欣聯心',
-        },
-        {
-          src: require('./s7_img_4.jpg'),
-          title: '馥域建設-三希堂',
+          src: require('./s7-5_img_3.jpg'),
         },
       ],
     }

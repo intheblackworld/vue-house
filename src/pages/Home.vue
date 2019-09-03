@@ -24,6 +24,7 @@
     </div>
     <div id="section7">
       <Section7 />
+      <Section75 />
     </div>
     <div id="section8">
       <Section8 />
@@ -52,6 +53,7 @@ import Section4 from '@/projects/gydy/Section4.vue'
 import Section5 from '@/projects/gydy/Section5.vue'
 import Section6 from '@/projects/gydy/Section6.vue'
 import Section7 from '@/projects/gydy/Section7.vue'
+import Section75 from '@/projects/gydy/Section7-5.vue'
 import Section8 from '@/projects/gydy/Section8.vue'
 import Section9 from '@/projects/gydy/Section9.vue'
 
@@ -71,6 +73,7 @@ export default {
     Section5,
     Section6,
     Section7,
+    Section75,
     Section8,
     Section9
   },
