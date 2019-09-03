@@ -117,6 +117,10 @@
     }
   }
 
+  .dog1, .dog2 {
+    z-index: 4;
+  }
+
   .text {
     top: 90%;
   }

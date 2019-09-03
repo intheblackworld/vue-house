@@ -115,7 +115,7 @@
     position: relative;
   }
 
-  .icon {
+  .icon, .icon2 {
     width: 100vw;
     height: auto;
     margin-top: 0;
