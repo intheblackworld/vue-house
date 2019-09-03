@@ -3,19 +3,21 @@
     <div class="bg fullscreen">
       <div v-if="!isMobile">
         <img src="./s1/1.png" alt class="img" data-aos="fade-down" data-aos-delay="0" />
-        <img src="./s1/2.png" alt class="img" data-aos="fade-down" data-aos-delay="300" />
+        <img src="./s1/2-1.png" alt :class="`img dog1 ${dog1 ? 'show' : ''}`" />
+        <img src="./s1/2-2.png" alt :class="`img dog2 ${dog2 ? 'show' : ''}`" />
         <img src="./s1/3.png" alt class="img" data-aos="fade-down" data-aos-delay="600" />
-        <img src="./s1/4.png" alt class="img" data-aos="fade" data-aos-delay="900" />
+        <img src="./s1/4.png" alt class="img grace" data-aos="fade" data-aos-delay="900" />
         <div class="text" data-aos="fade-down" data-aos-delay="900">
           弘華機構-和彩建設
           <br />在地深耕用心建築，值得您細心鑑賞
         </div>
       </div>
       <div v-else>
-        <img src="./s1/m1.png" alt class="img1" data-aos="fade-down" data-aos-delay="0" />
-        <img src="./s1/m2.png" alt class="img2" data-aos="fade-down" data-aos-delay="300" />
-        <img src="./s1/m3.png" alt class="img3" data-aos="fade-down" data-aos-delay="600" />
-        <img src="./s1/m4.png" alt class="img4" data-aos="fade-down" data-aos-delay="900" />
+        <img src="./s1/m1.png" alt class="img" data-aos="fade-down" data-aos-delay="0" />
+        <img src="./s1/2-1m.png" alt :class="`img dog1 ${dog1 ? 'show' : ''}`" />
+        <img src="./s1/2-2m.png" alt :class="`img dog2 ${dog2 ? 'show' : ''}`" />
+        <img src="./s1/m3.png" alt class="img" data-aos="fade-down" data-aos-delay="600" />
+        <img src="./s1/m4.png" alt class="img" data-aos="fade-down" data-aos-delay="900" />
         <div class="text" data-aos="fade-down" data-aos-delay="900">
           弘華機構-和彩建設
           <br />在地深耕用心建築，值得您細心鑑賞
@@ -42,6 +44,46 @@
   height: 100%;
   margin-left: -960px;
   object-fit: contain;
+}
+
+.dog1,
+.dog2 {
+  opacity: 0;
+
+  &.show {
+    opacity: 1;
+  }
+}
+
+.grace {
+  margin-left: -960px;
+  animation: grace 1s forwards 1.5s;
+}
+
+@keyframes grace {
+  0% {
+    margin-left: -960px;
+  }
+
+  20% {
+    margin-left: -980px;
+  }
+
+  40% {
+    margin-left: -940px;
+  }
+
+  60% {
+    margin-left: -970px;
+  }
+
+  80% {
+    margin-left: -950px;
+  }
+
+  100% {
+    margin-left: -960px;
+  }
 }
 
 .text {
@@ -73,35 +115,26 @@
   .bg {
   }
 
-  img {
-    position: absolute;
+  .fullscreen {
+    height: auto !important;
   }
 
-  .img1 {
-    width: 20vw;
-    top: 50%;
-    right: 0;
-    z-index: 2;
-  }
-
-  .img2 {
+  .img {
     width: 100vw;
-    right: 0;
-    top: 30%;
-  }
-
-  .img3 {
-    width: 70vw;
+    position: absolute;
+    top: 0;
     left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 3;
+    height: 100vh;
+    margin-left: 0px;
+    object-fit: initial;
+
+    &:nth-child(1) {
+      position: relative;
+    }
   }
 
-  .img4 {
-    width: 50vw;
-    top: 40%;
-    right: 0;
+  .text {
+    top: 90%;
   }
 }
 </style>
@@ -109,6 +142,7 @@
 <script>
 // @ is an alias to /src
 import { isMobile } from '@/utils'
+import { setInterval } from 'timers'
 
 export default {
   name: 'section1',
@@ -116,11 +150,18 @@ export default {
   data() {
     return {
       isMobile,
+      dog1: true,
+      dog2: false,
     }
   },
 
   methods: {},
 
-  created() {},
+  created() {
+    setInterval(() => {
+      this.dog1 = !this.dog1
+      this.dog2 = !this.dog2
+    }, 3000)
+  },
 }
 </script>
