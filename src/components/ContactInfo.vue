@@ -1,6 +1,6 @@
 <template>
   <div class="contact-info">
-    <img class="logo" src="@/assets/img/contact-logo.png" alt />
+    <img class="logo" src="@/assets/img/contact-logo.png" alt="心天畝的圖片" />
     <div class="info">
       <div class="btn flex-c" @click="showCallDialog">
         <span class="flex-c">
@@ -10,12 +10,12 @@
       </div>
       <div class="btn flex-c" v-if="isMobile">
         <span class="flex-c" @click="showMessengerDialog">
-          <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB Messenger 諮詢
+          <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB 諮詢
         </span>
       </div>
       <a class="btn flex-c" :href="info.fbMessage" target="_blank" v-else>
         <span class="flex-c">
-          <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB Messenger 諮詢
+          <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB 諮詢
         </span>
       </a>
       <a class="btn flex-c" :href="info.fbLink" target="_blank">
@@ -45,12 +45,7 @@
       >
         <MessengerDialog :messenger="info.fbMessage" />
       </el-dialog>
-      <el-dialog
-        title
-        :visible.sync="isShowMapDialog"
-        width="90%"
-        :modal-append-to-body="false"
-      >
+      <el-dialog title :visible.sync="isShowMapDialog" width="90%" :modal-append-to-body="false">
         <MapDialog :link="info.googleLink" :address="info.address" />
       </el-dialog>
     </div>
@@ -105,6 +100,9 @@ export default {
 
 .contact-info {
   background: $contact_bg;
+  // background-image: url('../assets/img/contact_bg.jpg');
+  background-size: cover;
+  background-position: 50% 100%;
   box-shadow: $contact_shadow;
   display: flex;
   flex-direction: column;
@@ -117,11 +115,11 @@ export default {
   height: 460px;
 
   margin: 0 auto;
-  padding: 60px 0 80px;
+  padding: 60px 0 50px;
 }
 
 .logo {
-  width: $contact_logo_width;
+  width: $contact_logo_pc_width;
   height: auto;
   margin: 0 auto;
 }
@@ -165,6 +163,7 @@ export default {
 .address {
   width: 600px;
   height: 60px;
+  background: $contact_btn_bg;
   box-shadow: $contact_btn_border;
 }
 .google-btn {
@@ -203,6 +202,10 @@ export default {
     width: 90% !important;
     height: 460px;
     padding: 60px 0 80px;
+
+    .logo {
+      width: $contact_logo_tablet_width;
+    }
   }
 }
 
@@ -216,6 +219,10 @@ export default {
     transform: none;
     position: static;
     margin-top: 60px;
+
+    .logo {
+      width: $contact_logo_mobile_width;
+    }
   }
 
   .info {

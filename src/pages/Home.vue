@@ -1,36 +1,89 @@
 <template>
   <div class="home">
     <div ref="gtmNoScript" />
-    <Navigation />
-    <div id="section1">
+    <Loading :loading="loading" />
+    <SideNavigation v-if="isSide" />
+    <Navigation v-else />
+    <!-- <div id="section1">
       <Section1 />
+    </div> -->
+    <div id="section2">
+      <Section2 />
+    </div>
+    <div id="section3">
+      <Section3 />
+    </div>
+    <div id="section4">
+      <Section4 />
+    </div>
+    <div id="section5">
+      <Section5 />
+    </div>
+    <div id="section6">
+      <Section6 />
+    </div>
+    <div id="section7">
+      <Section7 />
+    </div>
+    <div id="section8">
+      <Section8 />
     </div>
     <ContactSection />
     <MobileNav />
-    <AdminFooter />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Navigation from '@/layouts/Navigation.vue'
+import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
-import AdminFooter from '@/layouts/Footer.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
+import Loading from '@/components/Loading.vue'
 import gtm from '@/mixins/gtm.js'
 
-import Section1 from '@/projects/lkf/Section1.vue'
+// import Section1 from '@/projects/lkf/Section1.vue'
+import Section2 from '@/projects/lkf/Section2.vue'
+import Section3 from '@/projects/lkf/Section3.vue'
+import Section4 from '@/projects/lkf/Section4.vue'
+import Section5 from '@/projects/lkf/Section5.vue'
+import Section6 from '@/projects/lkf/Section6.vue'
+import Section7 from '@/projects/lkf/Section7.vue'
+import Section8 from '@/projects/lkf/Section8.vue'
 
 export default {
   name: 'home',
   mixins: [gtm],
   components: {
+    Loading,
     Navigation,
+    SideNavigation,
     ContactSection,
-    AdminFooter,
     MobileNav,
+    // Section1,
+    Section2,
+    Section3,
+    Section4,
+    Section5,
+    Section6,
+    Section7,
+    Section8,
+  },
 
-    Section1,
+  data() {
+    return {
+      isSide: false,
+      loading: true,
+    }
+  },
+  created() {
+    this.$Lazyload.$on('loaded', ({ el, src }) => {
+      setTimeout(() => {
+        if (this.loading) {
+          this.loading = false
+        }
+      }, 500)
+    })
   },
 
   methods: {
@@ -38,24 +91,5 @@ export default {
       console.log('done')
     },
   },
-
-  // mounted() {
-  //   const s = document.createElement('script')
-  //   s.type = 'text/javascript'
-  //   s.async = true
-  //   s.innerHTML = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  //   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  //   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  //   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  //   })(window,document,'script','dataLayer','GTM-${this.$gtmCode}');`
-
-  //   const n = document.createElement('noscript')
-  //   n.type = 'text/javascript'
-  //   n.async = true
-  //   n.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-${this.$gtmCode}"
-  //   height="0" width="0" style="display:none;visibility:hidden"></iframe>`
-  //   document.head.appendChild(s)
-  //   this.$refs.gtmNoScript.appendChild(n)
-  // },
 }
 </script>

@@ -1,10 +1,17 @@
 /* navigation */
-$nav_pc_height: 80px;
+$nav_pc_height: 60px;
 $nav_tablet_height: 60px;
 $nav_phone_height: 45px;
-$logo_pc_width: 80px;
+$logo_pc_width: 90px;
 $logo_tablet_width: 60px;
 $logo_phone_width: 60px;
 
 /* contactInfo */
-$contact_logo_width: 120px;
+$contact_logo_pc_width: 170px;
+$contact_logo_tablet_width: 170px;
+$contact_logo_mobile_width: 205px;
+
+// for calculate
+$nav_pc_height_number: 60;
+$nav_tablet_height_number: 60;
+$nav_phone_height_number: 60;

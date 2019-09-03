@@ -250,7 +250,7 @@ export default {
       width: 92px;
       font-size: 16px;
       opacity: 0.8;
-      color: #fff;
+      color: $order_input_label_color;
     }
   }
 

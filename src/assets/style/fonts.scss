@@ -6,7 +6,7 @@ h3,
 h4,
 h5,
 p {
-  font-family: '微軟正黑體', 'Microsoft JhengHei', 'Helvetica Neue', Helvetica, Arial !important;
+  font-family: 'Noto Sans TC', serif;
 }
 
 h2 {
@@ -15,15 +15,16 @@ h2 {
   font-weight: normal;
 }
 h3 {
-  font-family: 'Noto Serif TC', serif !important;
+  // font-family: 'Noto Serif TC', serif;
+  font-family: 'Noto Sans TC', serif;
   margin: 0;
-  font-weight: bold !important;
+  font-weight: normal;
 }
 
 p {
-  // font-family: 'Noto Sans TC', serif;
-  font-family: '微軟正黑體', 'Microsoft JhengHei', 'Helvetica Neue', Helvetica,
-  Arial;
+  font-family: 'Noto Sans TC', serif;
+  // font-family: '微軟正黑體', 'Microsoft JhengHei', 'Helvetica Neue', Helvetica,
+  //   Arial;
   margin: 0;
 }
 
@@ -35,4 +36,11 @@ p {
   src: url('~@/assets/font/DFPingJuStd-W7.otf?#iefix')
       format('embedded-opentype'),
     url('~@/assets/font/DFPingJuStd-W7.otf');
+}
+
+@font-face {
+  font-family: 'TimesNewRomanPSMT';
+  src: url('~@/assets/font/TimesNewRomanPSMT.ttf') format('truetype'), url('~@/assets/font/TimesNewRomanPSMT.ttf');
+  font-weight: normal;
+  font-style: normal;
 }

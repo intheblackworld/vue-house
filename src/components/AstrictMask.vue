@@ -1,9 +1,9 @@
 <template>
   <div class="mask">
-    <section v-scroll-reveal.reset="$fadeInUp()">
+    <section data-aos="fade" data-aos-delay="0">
       <icon class="icon" :data="vueIcon" />
     </section>
-    <section v-scroll-reveal.reset="$fadeInUp()">
+    <section data-aos="fade" data-aos-delay="0">
       <p>
         請將裝置轉至橫式
         <br />體驗最佳瀏覽方式
@@ -26,6 +26,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  top: 0;
   display: none;
 
   p {
@@ -41,6 +42,7 @@
 
   svg {
     fill: $mask_icon_color;
+    width: 100px;
   }
 }
 

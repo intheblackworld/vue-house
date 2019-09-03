@@ -1,7 +1,7 @@
 <template>
   <div class="navigation">
-    <div class="layout-container-fluid">
-      <div class="layout-container">
+    <div class="layout-container-fluid nav-container">
+      <div class="layout-container nav-container">
         <div class="nav">
           <img class="logo" src="@/assets/img/nav-logo.png" alt />
           <div class="menu" @click="toggleSidebar">
@@ -13,6 +13,8 @@
               :key="item.name"
               v-scroll-to="{ element: `#${item.section}`, offset: offset }"
               v-for="item in list"
+              class="flex-ac"
+              @click="toggleSidebar"
             >
               <span class="link">
                 <img v-if="item.imgSrc" :src="item.imgSrc" alt />
@@ -32,6 +34,7 @@
 <script>
 import { isMobile, isTablet } from '@/utils'
 import navList from '@/info/navList'
+
 export default {
   name: 'navigation',
   components: {},
@@ -47,21 +50,21 @@ export default {
   computed: {
     offset() {
       if (this.isMobile) {
-        return -45
+        return -39
       }
 
       if (this.isTablet) {
-        return -60
+        return -45
       }
 
-      return -80
+      return -56
     },
   },
 
   methods: {
     toggleSidebar() {
       this.isOpen = !this.isOpen
-    }
+    },
   },
 }
 </script>
@@ -84,7 +87,16 @@ export default {
   box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
+.nav-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .nav {
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -113,24 +125,77 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
+  li {
+    height: 100%;
+  }
 
   .link {
     color: $nav_link_color;
+    height: 22px;
     text-align: center;
     display: block;
     cursor: pointer;
-    margin-right: 40px;
-    transition: all 0.3s;
+    padding: 0 20px;
+    transition: all .8s;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border-right: 1px solid $nav_link_hover_bg;
 
     &:hover {
       color: $nav_link_hover_color;
+      // background: $nav_link_hover_bg;
+    }
+
+    &::before {
+      content: '';
+      width: 0%;
+      height: 100%;
+      display: block;
+      background: $nav_link_hover_bg; // second bg
+      position: absolute;
+      transform: skewX(-20deg);
+      left: -10%;
+      opacity: 1;
+      top: 0;
+      z-index: 2;
+      transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+      // box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
+    }
+
+    &::after {
+      content: '';
+      width: 0%;
+      height: 100%;
+      display: block;
+      background: #fff; // first bg
+      position: absolute;
+      transform: skewX(-20deg);
+      left: -10%;
+      opacity: 0;
+      top: 0;
+      z-index: 1;
+      transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
+      // box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
+    }
+    &:hover::before,
+    &:hover::before {
+      opacity: 1;
+      width: 116%;
+    }
+    &:hover::after,
+    &:hover::after {
+      opacity: 1;
+      width: 120%;
     }
 
     .title {
-      font-size: 16px;
+      font-size: 16px !important;
+      position: relative;
+      z-index: 3;
     }
 
     .subTitle {
@@ -139,8 +204,8 @@ export default {
     }
 
     img {
-      width: 35px;
-      height: 35px;
+      // width: 35px;
+      // height: 35px;
       margin-right: 10px;
     }
   }
@@ -167,12 +232,17 @@ export default {
     // left: -240px;
   }
 
+  .navlist {
+    width: 85%;
+  }
+
   .navlist .link {
     font-size: 12px;
     width: 120px;
+    white-space: nowrap;
 
     img {
-      height: 35px;
+      // height: 35px;
       margin-bottom: 5px;
     }
 
@@ -194,6 +264,11 @@ export default {
   .navigation {
     height: $nav_phone_height;
     z-index: 110;
+  }
+
+  .nav-container {
+    display: block;
+    height: auto;
   }
 
   .logo {
@@ -230,8 +305,13 @@ export default {
     display: block;
     transform: translateX(40%);
 
+    li {
+      height: 50px;
+      margin-bottom: 5px;
+    }
+
     .link {
-      height: 40px;
+      height: 50px;
       width: 100%;
       font-size: 17px;
       margin-top: 10px;
@@ -250,16 +330,15 @@ export default {
     }
 
     &.open {
-      width: 40%;
+      width: 100%;
       transform: translateX(0%);
 
       .link {
-        display: block;
+        display: flex;
+        justify-content: center;
         span {
           white-space: nowrap;
         }
-
-        img,
         .divided {
           display: none;
         }
