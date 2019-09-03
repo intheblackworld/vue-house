@@ -13,7 +13,13 @@
         src="./s2/map_icon.png"
         alt
         class="icon"
-        v-if="!isMobile"
+        data-aos="fade-down"
+        data-aos-delay="500"
+      />
+      <img
+        src="./s2/map_icon.png"
+        alt
+        class="icon2"
         data-aos="fade-down"
         data-aos-delay="500"
       />
@@ -24,14 +30,6 @@
         v-if="isMobile"
         data-aos="fade-down"
         data-aos-delay="0"
-      />
-      <img
-        src="./s2/map_icon.png"
-        alt
-        class="icon"
-        v-if="isMobile"
-        data-aos="fade-down"
-        data-aos-delay="500"
       />
     </div>
   </div>
@@ -53,7 +51,7 @@
   margin-top: 5vh;
 }
 
-.icon {
+.icon, .icon2 {
   position: absolute;
   height: 90vh;
   width: auto;
@@ -62,6 +60,9 @@
   margin: 0 auto;
   margin-top: 5vh;
   z-index: 2;
+}
+
+.icon {
   animation: heartbeat 1s infinite;
 }
 

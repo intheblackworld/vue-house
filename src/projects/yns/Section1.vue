@@ -57,32 +57,16 @@
 
 .grace {
   margin-left: -960px;
-  animation: grace 1s forwards 1.5s;
+  animation: grace 2s linear infinite alternate;
+  transform-origin: bottom;
 }
 
 @keyframes grace {
-  0% {
-    margin-left: -960px;
+  from {
+    transform: skewX(-5deg);
   }
-
-  20% {
-    margin-left: -980px;
-  }
-
-  40% {
-    margin-left: -940px;
-  }
-
-  60% {
-    margin-left: -970px;
-  }
-
-  80% {
-    margin-left: -950px;
-  }
-
-  100% {
-    margin-left: -960px;
+  to {
+    transform: skewX(0deg);
   }
 }
 
