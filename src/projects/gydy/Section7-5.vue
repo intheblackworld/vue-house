@@ -41,7 +41,7 @@
         <img src="./s7-5_img_b.png" alt class="build absolute" />
       </div>
       <div class="b-footer" v-if="!isMobile"></div>
-      <div class="title" v-if="isMobile">宅配綠意。如院以償</div>
+      <!-- <div class="title" v-if="isMobile">宅配綠意。如院以償</div> -->
       <div class="slide relative" v-if="isMobile">
         <img
           v-for="(slide, index) in slideList"
@@ -55,7 +55,6 @@
           <img @click="addIndex" src="./arrow-right.png" alt />
         </div>
       </div>
-      <div class="b-footer" v-if="isMobile"></div>
     </div>
   </div>
 </template>
@@ -240,9 +239,9 @@
     }
   }
 
-  .b-footer {
-    height: 29px;
-  }
+  // .b-footer {
+  //   height: 29px;
+  // }
 }
 </style>
 
@@ -259,6 +258,9 @@ export default {
       isOpenDesc: false,
       isMobile,
       slideList: [
+        {
+          src: require('./s7-5_img_1.jpg'),
+        },
         {
           src: require('./s7-5_img_2.jpg'),
         },
