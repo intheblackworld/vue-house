@@ -259,13 +259,13 @@ export default {
       isMobile,
       slideList: [
         {
-          src: require('./s7-5_img_1.jpg'),
+          src: require('./s7-5_img_1m.jpg'),
         },
         {
-          src: require('./s7-5_img_2.jpg'),
+          src: require('./s7-5_img_2m.jpg'),
         },
         {
-          src: require('./s7-5_img_3.jpg'),
+          src: require('./s7-5_img_3m.jpg'),
         },
       ],
     }
