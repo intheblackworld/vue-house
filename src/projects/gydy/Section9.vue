@@ -51,7 +51,7 @@
   border-width: 0 70px 70px 70px;
   border-color: transparent transparent #007bff transparent;
   margin: 0 auto;
-  margin-top: -50px;
+  margin-top: -70px;
   position: relative;
   z-index: 2;
 }
