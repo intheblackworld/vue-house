@@ -23,6 +23,8 @@
         </div>
       </div>
       <img src="./s6/circle.png" alt class="circle" />
+
+      
     </div>
   </div>
 </template>
