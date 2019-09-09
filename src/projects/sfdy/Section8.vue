@@ -91,7 +91,7 @@
   background-image: url("./box.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  width: 665.1px;
+  width: 600px;
   height: 407.2px;
   position: absolute;
   font-size: 25px;
@@ -123,7 +123,7 @@
 }
 
 .textbox-behind {
-  width: 665.1px;
+  width: 600px;
   height: 407.2px;
   background-image: linear-gradient(
     135deg,

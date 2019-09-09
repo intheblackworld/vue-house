@@ -36,12 +36,12 @@
     margin-top: 170px;
     line-height: 1.2;
     font-size: 23px;
-    width: 440px;
+    width: 420px;
     color: #595757;
   }
 
   .textbox-title {
-    font-size: 47px;
+    font-size: 43px;
     color: #249486;
     text-align: center;
     margin-bottom: 16px;
@@ -51,13 +51,16 @@
   }
 }
 
-@media only screen and (min-device-width: 1025px) and (max-device-width: 1680px) {
-  .textbox-text-area {
-    width: 390px;
-    font-size: 20px;
-  }
-  .textbox-title {
-    font-size: 40px;
+@media only screen and (min-width: 1281px) and (max-width: 1440px) {
+  .textbox-img {
+    .textbox-text-area {
+      font-size: 22px;
+      width: 353px;
+      margin-top: 140px;
+    }
+    .textbox-title {
+      font-size: 38px;
+    }
   }
 }
 

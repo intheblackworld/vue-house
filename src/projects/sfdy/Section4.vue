@@ -93,8 +93,16 @@
   top: 0%;
 }
 
+@media only screen and (min-width: 1281px) and (max-width: 1440px) {
+  .text-area-bg {
+    .text-area-title {
+      font-size: 42px;
+    }
+  }
+}
+
 @media only screen and (min-width: 1025px) and (max-width: 1280px) {
-    .text-area-bg {
+  .text-area-bg {
     .text-area-container {
       font-size: 18px;
     }

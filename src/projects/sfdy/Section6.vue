@@ -41,7 +41,7 @@
     margin-top: 125px;
     float: right;
     font-size: 21px;
-    margin-right: 14%;
+    margin-right: 13%;
     line-height: 1.2;
     font-weight: 300;
     width: 350px;
@@ -63,9 +63,18 @@
     font-size: 42px;
   }
 }
+@media only screen and (min-width: 1281px) and (max-width: 1440px) {
+  .textbox-img {
+    .textbox-text-area {
+      width: 300px;
+      margin-top: 100px;
+      font-size: 18px;
+    }
+  }
+}
 
 @media only screen and (min-width: 1025px) and (max-width: 1280px) {
-.textbox-img {
+  .textbox-img {
     .textbox-text-area {
       margin-top: 80px;
       margin-right: 14%;

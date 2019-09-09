@@ -96,7 +96,7 @@
       margin: 0 auto;
       margin-top: 10%;
       line-height: 1.2;
-      font-size: 18px;
+      font-size: 22px;
       color: #3e3a39;
     }
 
