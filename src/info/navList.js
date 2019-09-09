@@ -1,8 +1,8 @@
 export default [
-  { name: '公園綠活', imgSrc: '', subTitle: '', section: 'section3', svgSrc: '' },
-  { name: '美好生活', imgSrc: '', subTitle: '', section: 'section4', svgSrc: '' },
-  { name: '捷運交通', imgSrc: '', subTitle: '', section: 'section5', svgSrc: '' },
-  { name: '文教環境', imgSrc: '', subTitle: '', section: 'section6', svgSrc: '' },
-  { name: '安心建築', imgSrc: '', subTitle: '', section: 'section7', svgSrc: '' },
-  { name: '預約賞屋', imgSrc: '', subTitle: '', section: 'contact', svgSrc: '' },
+  { name: '區域地段', imgSrc: '', subTitle: '', section: 'section3', svgSrc: '' },
+  { name: '翻轉森活', imgSrc: '', subTitle: '', section: 'section4', svgSrc: '' },
+  { name: '森林會館', imgSrc: '', subTitle: '', section: 'section5', svgSrc: '' },
+  { name: '建築團隊', imgSrc: '', subTitle: '', section: 'section6', svgSrc: '' },
+  { name: '綠量公社', imgSrc: '', subTitle: '', section: 'section7', svgSrc: '' },
+  { name: '秘境居所', imgSrc: '', subTitle: '', section: 'contact', svgSrc: '' },
 ]                

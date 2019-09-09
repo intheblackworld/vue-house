@@ -24,13 +24,21 @@
     </div>
     <div id="section7">
       <Section7 />
-      <Section75 />
     </div>
     <div id="section8">
       <Section8 />
     </div>
     <div id="section9">
       <Section9 />
+    </div>
+    <div id="section10">
+      <Section10 />
+    </div>
+    <div id="section11">
+      <Section11 />
+    </div>
+    <div id="section12">
+      <Section12 />
     </div>
     <ContactSection />
     <MobileNav />
@@ -46,16 +54,18 @@ import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import gtm from '@/mixins/gtm.js'
 
-import Section1 from '@/projects/gydy/Section1.vue'
-import Section2 from '@/projects/gydy/Section2.vue'
-import Section3 from '@/projects/gydy/Section3.vue'
-import Section4 from '@/projects/gydy/Section4.vue'
-import Section5 from '@/projects/gydy/Section5.vue'
-import Section6 from '@/projects/gydy/Section6.vue'
-import Section7 from '@/projects/gydy/Section7.vue'
-import Section75 from '@/projects/gydy/Section7-5.vue'
-import Section8 from '@/projects/gydy/Section8.vue'
-import Section9 from '@/projects/gydy/Section9.vue'
+import Section1 from '@/projects/sfdy/Section1.vue'
+import Section2 from '@/projects/sfdy/Section2.vue'
+import Section3 from '@/projects/sfdy/Section3.vue'
+import Section4 from '@/projects/sfdy/Section4.vue'
+import Section5 from '@/projects/sfdy/Section5.vue'
+import Section6 from '@/projects/sfdy/Section6.vue'
+import Section7 from '@/projects/sfdy/Section7.vue'
+import Section8 from '@/projects/sfdy/Section8.vue'
+import Section9 from '@/projects/sfdy/Section9.vue'
+import Section10 from '@/projects/sfdy/Section10.vue'
+import Section11 from '@/projects/sfdy/Section11.vue'
+import Section12 from '@/projects/sfdy/Section12.vue'
 
 export default {
   name: 'home',
@@ -73,9 +83,11 @@ export default {
     Section5,
     Section6,
     Section7,
-    Section75,
     Section8,
-    Section9
+    Section9,
+    Section10,
+    Section11,
+    Section12
   },
 
   data() {
