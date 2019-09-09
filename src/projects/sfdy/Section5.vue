@@ -7,13 +7,10 @@
             <div class="text-area-title">
               <h3>“24000坪大基地”</h3>
               <h3>絕無僅有</h3>
-            </div>
-              規劃採光時，須考慮到太陽行進的面向，因此透過格柵的設計，隔絕較強的刺眼光線，當陽光透過格柵，輕盈地灑在室內各角落，成就美麗的風景。「幸福大院」戶戶規劃大陽台，不僅成為自然採光的設計重點，也是打造建築立面豐富層次的元素，陽台可種植喜愛的花草盆栽，透過妝點綠意，讓每一戶都有不同的巧思與表情。
-            </div>
+            </div>規劃採光時，須考慮到太陽行進的面向，因此透過格柵的設計，隔絕較強的刺眼光線，當陽光透過格柵，輕盈地灑在室內各角落，成就美麗的風景。「幸福大院」戶戶規劃大陽台，不僅成為自然採光的設計重點，也是打造建築立面豐富層次的元素，陽台可種植喜愛的花草盆栽，透過妝點綠意，讓每一戶都有不同的巧思與表情。
+          </div>
         </div>
-        <div
-          class="slide relative"
-        >
+        <div class="slide relative">
           <img
             v-for="(slide, index) in slideList"
             :class="`slide-img ${slideIndex === index ? 'active' : ''} img-c`"
@@ -34,9 +31,8 @@
   position: relative;
 }
 
-
 .tree {
-  background-image: url('./s5_tree.png');
+  background-image: url("./s5_tree.png");
   position: absolute;
   width: 100%;
   background-repeat: no-repeat;
@@ -47,7 +43,7 @@
 }
 
 .bg {
-  background-image: url('./s4_bg.jpg');
+  background-image: url("./s4_bg.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -75,12 +71,12 @@
   // text-align: center;
 
   .text-area-bg {
-    background-image: url('./box.png');
+    background-image: url("./box.png");
     background-size: 100% 100%;
     flex: 1;
     background-repeat: no-repeat;
     margin-right: 6px;
-    
+
     .text-area-container {
       text-align: left;
       color: #595757;
@@ -110,11 +106,11 @@
     // margin-left: 50px;
     // margin-bottom: 30px;
 
-    .left-btn{
+    .left-btn {
       margin-left: 34px;
     }
 
-    .right-btn{
+    .right-btn {
       margin-right: 34px;
     }
 
@@ -139,29 +135,42 @@
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .container {
-    .slide {
-      width: 710px;
-      height: 340px;
-      margin-left: 50px;
-      margin-bottom: 30px;
-
-      .slide-img {
-        width: 600px;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
+    .text-area-bg {
+      width: 240px;
+      .text-area-container {
+        padding: 40px 10px 180px;
+        line-height: 1.3;
+        font-size: 17px;
+        padding: 0;
       }
 
-      .left-btn,
-      .right-btn {
-        width: 40px;
-      }
-
-      .slide-content {
-        position: absolute;
-        bottom: 0px;
+      .text-area-title {
+        font-size: 30px;
       }
     }
+    // .slide {
+    //   width: 710px;
+    //   height: 340px;
+    //   margin-left: 50px;
+    //   margin-bottom: 30px;
+
+    //   .slide-img {
+    //     width: 600px;
+    //     left: 0;
+    //     right: 0;
+    //     margin: 0 auto;
+    //   }
+
+    //   .left-btn,
+    //   .right-btn {
+    //     width: 40px;
+    //   }
+
+    //   .slide-content {
+    //     position: absolute;
+    //     bottom: 0px;
+    //   }
+    // }
   }
 }
 
@@ -176,13 +185,13 @@
   }
 
   .tree {
-    background-image: url('./s5_tree_m.png');
+    background-image: url("./s5_tree_m.png");
     bottom: 0%;
     height: 23%;
     top: 77%;
     right: 0%;
     z-index: 2;
-  } 
+  }
   .container {
     display: block;
     width: 100vw;
@@ -195,7 +204,7 @@
       z-index: 2;
       width: 90%;
       left: 5%;
-      
+
       .text-area-container {
         padding: 20px 10px 180px;
         line-height: 1.3;
@@ -205,28 +214,6 @@
       .text-area-title {
         font-size: 35px;
       }
-    }
-
-    .title {
-      width: 300px;
-      height: 90px;
-      // background-image: url('./s5_title_bg.png');
-      background-size: cover;
-      margin-bottom: 15px;
-      color: #fff;
-      font-size: 32px;
-    }
-
-    .sub-title {
-      font-size: 18px;
-      color: #2b466f;
-      margin-bottom: 20px;
-    }
-
-    .small-title {
-      font-size: 18px;
-      color: #2b466f;
-      margin-bottom: 20px;
     }
 
     .slide {
@@ -263,27 +250,6 @@
       .slide-content {
         position: absolute;
         bottom: -100px;
-        .slide-title {
-          padding: 10px 15px;
-          text-align: center;
-          background: #2b466f;
-          color: #fff;
-          font-size: 18px;
-          position: relative;
-          z-index: 1;
-          margin: 0 10%;
-        }
-
-        .slide-desc {
-          width: 100vw;
-          padding-top: 0px;
-          padding: 20px 15px 10px;
-          text-align: left;
-          color: #1a2739;
-          background-color: #9ca5b2;
-          font-size: 13px;
-          transform: translate(0px, -8px);
-        }
       }
     }
   }
@@ -300,53 +266,52 @@
 
 <script>
 // @ is an alias to /src
-import slider from '@/mixins/slider.js'
-import { isMobile } from '@/utils'
+import slider from "@/mixins/slider.js";
+import { isMobile } from "@/utils";
 
 export default {
-  name: 'section5',
+  name: "section5",
   mixins: [slider],
   data() {
     return {
       isMobile,
       slideList: [
         {
-          src: require('./s5_item1.jpg'),
-          title: '水碓觀景公園，健康作靠山',
+          src: require("./s5_item1.jpg"),
+          title: "水碓觀景公園，健康作靠山",
           desc:
-            '出門200步就到水碓觀景公園<br />這是企業家的早餐會報，更是讓健康有靠的不二法門',
+            "出門200步就到水碓觀景公園<br />這是企業家的早餐會報，更是讓健康有靠的不二法門"
         },
         {
-          src: require('./s5_item2.jpg'),
-          title: '走步道看風景，樂觀向前行',
+          src: require("./s5_item2.jpg"),
+          title: "走步道看風景，樂觀向前行",
           desc:
-            '10.5公頃的水碓觀景公園，六條步道七座涼亭<br />山上視野好、空氣乾淨，心境自然輕鬆開朗',
+            "10.5公頃的水碓觀景公園，六條步道七座涼亭<br />山上視野好、空氣乾淨，心境自然輕鬆開朗"
         },
         {
-          src: require('./s5_item3.jpg'),
-          title: '散步石德公園，每天做早操 ',
+          src: require("./s5_item3.jpg"),
+          title: "散步石德公園，每天做早操 ",
           desc:
-            '大樹下是楚漢棋局，林蔭底是孩子的開心笑聲，<br />一片波光樹海是清幽雅緻的寧靜公園',
+            "大樹下是楚漢棋局，林蔭底是孩子的開心笑聲，<br />一片波光樹海是清幽雅緻的寧靜公園"
         },
         {
-          src: require('./s5_item4.jpg'),
-          title: '散步石德公園，每天做早操 ',
+          src: require("./s5_item4.jpg"),
+          title: "散步石德公園，每天做早操 ",
           desc:
-            '大樹下是楚漢棋局，林蔭底是孩子的開心笑聲，<br />一片波光樹海是清幽雅緻的寧靜公園',
+            "大樹下是楚漢棋局，林蔭底是孩子的開心笑聲，<br />一片波光樹海是清幽雅緻的寧靜公園"
         },
         {
-          src: require('./s5_item5.jpg'),
-          title: '散步石德公園，每天做早操 ',
+          src: require("./s5_item5.jpg"),
+          title: "散步石德公園，每天做早操 ",
           desc:
-            '大樹下是楚漢棋局，林蔭底是孩子的開心笑聲，<br />一片波光樹海是清幽雅緻的寧靜公園',
-        },
-        
-      ],
-    }
+            "大樹下是楚漢棋局，林蔭底是孩子的開心笑聲，<br />一片波光樹海是清幽雅緻的寧靜公園"
+        }
+      ]
+    };
   },
 
   methods: {},
 
-  created() {},
-}
+  created() {}
+};
 </script>

@@ -66,7 +66,16 @@
 }
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .bg {
+  .textbox-img {
+    .textbox-text-area {
+        margin-top: 100px;
+        margin-left: 108px;
+        font-size: 16px;
+    }
+    .textbox-title {
+      font-size: 25px;
+      margin-right: 30px;
+    }
   }
 }
 

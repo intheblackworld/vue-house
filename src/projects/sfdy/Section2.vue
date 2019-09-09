@@ -6,8 +6,7 @@
           <div class="textbox-title">
             <h3>“史博館第一排”</h3>
             <h3>台南首座生態別墅莊園</h3>
-          </div>
-            引領世界建築趨勢，超乎想像的建築計畫，首度開啟台南國際新視野。
+          </div>引領世界建築趨勢，超乎想像的建築計畫，首度開啟台南國際新視野。
         </div>
       </div>
     </div>
@@ -15,14 +14,14 @@
 </template>
 <style lang="scss" scoped>
 .bg {
-  background-image: url('./s2_bg.jpg');
+  background-image: url("./s2_bg.jpg");
   background-size: cover;
   background-position: center;
   height: 100vh;
 }
 
 .textbox-img {
-  background-image: url('./s2_textbox.png');
+  background-image: url("./s2_textbox.png");
   background-position: center;
   display: flex;
   justify-content: center;
@@ -33,7 +32,7 @@
   background-size: 100% 100%;
   top: 0%;
 
-  .textbox-text-area{
+  .textbox-text-area {
     margin-top: 170px;
     line-height: 1.2;
     font-size: 23px;
@@ -53,7 +52,7 @@
 }
 
 @media only screen and (min-device-width: 1025px) and (max-device-width: 1680px) {
-  .textbox-text-area{
+  .textbox-text-area {
     width: 390px;
     font-size: 20px;
   }
@@ -64,13 +63,21 @@
 
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .bg {
+  .textbox-img {
+    .textbox-text-area {
+      margin-top: 140px;
+      width: 240px;
+      font-size: 16px;
+    }
+    .textbox-title {
+      font-size: 26px;
+    }
   }
 }
 
 @media screen and (max-width: 767px) {
   .bg {
-    background-image: url('./s2_bg.jpg');
+    background-image: url("./s2_bg.jpg");
     background-size: cover;
   }
 
@@ -78,7 +85,7 @@
   }
 
   .textbox-img {
-    background-image: url('./s2_textbox_m.png');
+    background-image: url("./s2_textbox_m.png");
     height: 60%;
     background-size: contain;
     .textbox-text-area {
@@ -96,18 +103,18 @@
 
 <script>
 // @ is an alias to /src
-import { isMobile } from '@/utils'
+import { isMobile } from "@/utils";
 export default {
-  name: 'section2',
+  name: "section2",
 
   data() {
     return {
-      isMobile,
-    }
+      isMobile
+    };
   },
 
   methods: {},
 
-  created() {},
-}
+  created() {}
+};
 </script>
