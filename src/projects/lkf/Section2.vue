@@ -1,12 +1,20 @@
 <template>
   <div class="section2">
     <div class="fix-group">
-      <div class="button" v-scroll-to="{ element: `#${'contact'}`, offset: -56 }">
+      <div class="button" @click="modal = true">
         <img src="./gold_btn.png" alt />
       </div>
       <!-- <div class="button" v-scroll-to="{ element: `#${'section2'}`, offset: -56 }">
         <img src="./chevron-up.png" alt />
-      </div> -->
+      </div>-->
+    </div>
+    <div class="modal" v-if="modal">
+      <div class="mask"></div>
+      <div>
+        <img src="@/assets/img/close.png" alt class="close" @click="modal = false" />
+        <img src="./act.jpg" alt v-if="!isMobile" />
+        <img src="./act_m.jpg" alt v-else />
+      </div>
     </div>
     <video-bg autoplay="autoplay" :sources="[require('./s2_video.mp4')]" img="./s2_bg.jpg" isFix>
       <img
@@ -131,8 +139,8 @@
   .button {
     font-size: 18px;
     color: #fff;
-    width: 80px;
-    height: 80px;
+    width: 150px;
+    height: 150px;
     border-radius: 999px;
     margin-bottom: 10px;
     display: flex;
@@ -146,11 +154,85 @@
   }
 }
 
+.modal {
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .mask {
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    position: absolute;
+  }
+
+  > div {
+    position: relative;
+  }
+
+  img {
+    position: relative;
+    z-index: 122;
+  }
+
+  .close {
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    cursor: pointer;
+  }
+}
+
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .content {
     width: 980px;
+  }
+
+  .modal {
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .mask {
+      background: rgba(0, 0, 0, 0.4);
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      position: absolute;
+    }
+
+    > div {
+      position: relative;
+    }
+
+    img {
+      width: 80%;
+      position: relative;
+      z-index: 122;
+    }
+
+    .close {
+      width: 50px;
+      position: absolute;
+      top: -50px;
+      right: 20px;
+      cursor: pointer;
+    }
   }
 }
 
@@ -217,7 +299,46 @@
   }
 
   .fix-group {
-    display: none;
+    // display: none;
+    right: 0;
+  }
+
+  .modal {
+    width: 100vw;
+    height: 100vh;
+    z-index: 200;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .mask {
+      background: rgba(0, 0, 0, 0.4);
+      width: 100%;
+      height: 100vh !important;
+      position: absolute;
+      z-index: 110;
+    }
+
+    > div {
+      position: relative;
+    }
+
+    img {
+      width: 80%;
+      position: relative;
+      z-index: 122;
+    }
+
+    .close {
+      width: 50px;
+      position: absolute;
+      top: -50px;
+      right: 20px;
+      cursor: pointer;
+    }
   }
 }
 </style>
@@ -225,6 +346,7 @@
 <script>
 // @ is an alias to /src
 import VideoBg from '@/components/VideoBg.vue'
+import { isMobile } from '@/utils'
 
 export default {
   name: 'section2',
@@ -233,7 +355,10 @@ export default {
   },
 
   data() {
-    return {}
+    return {
+      modal: true,
+      isMobile,
+    }
   },
 
   methods: {},
