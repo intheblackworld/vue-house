@@ -64,6 +64,28 @@
   }
 }
 
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
+.textbox-img {
+    .textbox-text-area {
+      margin-top: 80px;
+      margin-right: 14%;
+      font-size: 18px;
+      width: 220px;
+    }
+
+    .textbox-title {
+      width: 280px;
+    }
+
+    h3 {
+      font-size: 24px;
+    }
+
+    h3.big {
+      font-size: 30px;
+    }
+  }
+}
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .textbox-img {

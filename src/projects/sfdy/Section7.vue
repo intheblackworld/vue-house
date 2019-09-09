@@ -113,6 +113,13 @@
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1280px) {
+  .content {
+    .text-area-bg {
+      .text-area-title {
+        font-size: 38px;
+      }
+    }
+  } 
 
 }
 

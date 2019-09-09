@@ -94,6 +94,19 @@
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1280px) {
+    .text-area-bg {
+    .text-area-container {
+      font-size: 18px;
+    }
+
+    .text-area-title {
+      font-size: 38px;
+    }
+  }
+  .tree {
+    top: 4%;
+    margin-left: -30px;
+  }
 }
 
 /* 平板尺寸 */

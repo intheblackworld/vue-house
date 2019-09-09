@@ -131,6 +131,19 @@
     display: none;
   }
 }
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
+  .container {
+    .text-area-bg {
+      .text-area-container {
+        font-size: 18px;
+      }
+    }
+  }
+  .tree {
+    margin-left: 94px;
+  }
+
+}
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -148,29 +161,6 @@
         font-size: 30px;
       }
     }
-    // .slide {
-    //   width: 710px;
-    //   height: 340px;
-    //   margin-left: 50px;
-    //   margin-bottom: 30px;
-
-    //   .slide-img {
-    //     width: 600px;
-    //     left: 0;
-    //     right: 0;
-    //     margin: 0 auto;
-    //   }
-
-    //   .left-btn,
-    //   .right-btn {
-    //     width: 40px;
-    //   }
-
-    //   .slide-content {
-    //     position: absolute;
-    //     bottom: 0px;
-    //   }
-    // }
   }
 }
 
