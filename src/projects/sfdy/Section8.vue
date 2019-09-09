@@ -255,29 +255,105 @@
 }
 
 @media only screen and (min-width: 1281px) and (max-width: 1440px) {
-  // .container-top {
-  //   width: 1024px;
-  // }
+  .container-top {
+    width: 90%;
+  }
+  .slide {
+    border: none;
+    .slide-img {
+      width: 800px;
+      height: 400px;
+    }
+  }
+  .btn-group {
+    width: 70%;
+    .btn-item-name {
+      font-size: 18px;
+    }
+    .btn-item-img {
+      width: 140px;
+    }
+  }
+  .textbox-wrapper {
+    top: 40px;
+  }
+  .textbox-behind {
+    height: 340px;
+    width: 450px;
+    top: 30px;
+    left: 30px;
+  }
 
-  // .slide {
-  //   margin-top: 50px;
-  //   transform: scale(0.85);
-  //   transform-origin: left;
-  // }
+  .text-area-bg {
+    top: 12px;
+    height: 340px;
+    font-size: 18px;
+    width: 460px;
+    padding: 20px 30px;
+    .text-area-title {
+      h3 {
+        font-size: 24px;
+      }
+      h3.big {
+        font-size: 32px;
+      }
+    }
+  }
+
+  .text-area-subTitle {
+    // margin-bottom: 10px;
+    font-size: 19px;
+  }
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1280px) {
-  // .container-top {
-  //   width: 1024px;
-  // }
-  // .fullscreen {
-  //   height: auto !important;
-  // }
-  // .slide {
-  //   margin-top: 50px;
-  //   transform: scale(0.85);
-  //   transform-origin: left;
-  // }
+   .container-top {
+    width: 90%;
+  }
+  .slide {
+    border: none;
+    .slide-img {
+      width: 600px;
+      height: 310px;
+    }
+  }
+  .btn-group {
+    width: 90%;
+    .btn-item-name {
+      font-size: 18px;
+    }
+    .btn-item-img {
+      width: 140px;
+    }
+  }
+  .textbox-wrapper {
+    top: 40px;
+  }
+  .textbox-behind {
+    width: 450px;
+    height: 220px;
+  }
+
+  .text-area-bg {
+    font-size: 15px;
+    width: 460px;
+    height: 230px;
+    top: 0px;
+    padding: 20px 30px;
+    .text-area-title {
+      h3 {
+        font-size: 24px;
+      }
+      h3.big {
+        font-size: 32px;
+      }
+    }
+  }
+
+  .text-area-subTitle {
+    margin-bottom: 10px;
+    font-size: 19px;
+  }
 }
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
