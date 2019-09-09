@@ -22,12 +22,6 @@
     <div id="section6">
       <Section6 />
     </div>
-    <div id="section7">
-      <Section7 />
-    </div>
-    <div id="section8">
-      <Section8 />
-    </div>
     <ContactSection />
     <MobileNav />
   </div>
@@ -42,14 +36,12 @@ import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import gtm from '@/mixins/gtm.js'
 
-import Section1 from '@/projects/yns/Section1.vue'
-import Section2 from '@/projects/yns/Section2.vue'
-import Section3 from '@/projects/yns/Section3.vue'
-import Section4 from '@/projects/yns/Section4.vue'
-import Section5 from '@/projects/yns/Section5.vue'
-import Section6 from '@/projects/yns/Section6.vue'
-import Section7 from '@/projects/yns/Section7.vue'
-import Section8 from '@/projects/yns/Section8.vue'
+import Section1 from '@/projects/cj/Section1.vue'
+import Section2 from '@/projects/cj/Section2.vue'
+import Section3 from '@/projects/cj/Section3.vue'
+import Section4 from '@/projects/cj/Section4.vue'
+import Section5 from '@/projects/cj/Section5.vue'
+import Section6 from '@/projects/cj/Section6.vue'
 
 export default {
   name: 'home',
@@ -66,13 +58,11 @@ export default {
     Section4,
     Section5,
     Section6,
-    Section7,
-    Section8,
   },
 
   data() {
     return {
-      isSide: true,
+      isSide: false,
       loading: true,
     }
   },

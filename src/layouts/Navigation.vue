@@ -295,7 +295,7 @@ export default {
   .navlist {
     position: absolute;
     z-index: 111;
-    background: $nav_bg;
+    background: transparent;
     width: 0%;
     right: 0;
     top: $nav_phone_height;
