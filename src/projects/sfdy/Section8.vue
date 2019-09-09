@@ -8,7 +8,7 @@
               v-for="(slide, index) in slideList"
               :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
               :key="`s3-slide-${index}`"
-              :src="slide.src"
+              :src="slide.srcHasTitle"
               alt
             />
           </div>
@@ -424,22 +424,27 @@ export default {
       slideList: [
         {
           src: require("./s8_img_1.jpg"),
+          srcHasTitle: require("./s8_img_1_hasTitle.png"),
           name: "生態規劃顧問"
         },
         {
           src: require("./s8_img_2.jpg"),
+          srcHasTitle: require("./s8_img_2_hasTitle.png"),
           name: "建築整合設計"
         },
         {
           src: require("./s8_img_3.jpg"),
+          srcHasTitle: require("./s8_img_3_hasTitle.png"),
           name: "社區燈光設計"
         },
         {
           src: require("./s8_img_4.jpg"),
+          srcHasTitle: require("./s8_img_4_hasTitle.png"),
           name: "水景觀設計"
         },
         {
           src: require("./s8_img_5.jpg"),
+          srcHasTitle: require("./s8_img_5_hasTitle.png"),
           name: "會館建築與室內設計"
         }
       ],
