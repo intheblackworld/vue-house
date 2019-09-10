@@ -35,11 +35,27 @@
       />
       <img
         v-if="isMobile"
+        src="./s1/s1_bg_m.jpg"
+        alt
+        class="img"
+        data-aos="mini-in"
+        data-aos-delay="0"
+      />
+      <img
+        v-if="isMobile"
         src="./s1/s1_logo_m.png"
         alt
         class="img logo"
-        data-aos="fade-down"
+        data-aos="mini-in"
         data-aos-delay="0"
+      />
+      <img
+        v-if="isMobile"
+        src="./s1/box2.png"
+        alt
+        class="img ribbon"
+        data-aos="fade"
+        data-aos-delay="400"
       />
     </div>
   </div>
@@ -108,13 +124,16 @@
 
 @media screen and (max-width: 767px) {
   .bg {
-    background-image: url('./s1/s1_bg_m.jpg');
     background-size: cover;
   }
 
-  .logo-s1 {
+  .logo {
     margin: 0 auto;
-    z-index: 1;
+    z-index: 6;
+  }
+
+  .ribbon {
+    top: 40px;
   }
 
   .fix-group {

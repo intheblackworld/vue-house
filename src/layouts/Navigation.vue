@@ -75,20 +75,20 @@ export default {
 
 .navigation {
   background-color: $nav_bg;
-  background-image: $nav_bg;
-  background-size: cover;
-  height: $nav_pc_height;
+  background-image: url('./box.png');
+  background-size: 1920px;
+  background-position: center;
+  height: 120px;
   z-index: 10;
   position: fixed;
   top: 0;
   width: 100vw;
   display: flex !important;
-  align-items: center;
-  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+  align-items: flex-start;
 }
 
 .nav-container {
-  height: 100%;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -262,7 +262,9 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .navigation {
-    height: $nav_phone_height;
+    height: 75px;
+    background-image: url('./box_m.png');
+    background-size: 375px;
     z-index: 110;
   }
 
