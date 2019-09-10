@@ -112,22 +112,22 @@
     background-image: url("./s3_bg.jpg");
     background-size: cover;
   }
-
-  .fullscreen {
-  }
-
+  
   .textbox-img {
     background-image: url("./s3_textbox_m.png");
     height: 60%;
     background-size: contain;
     .textbox-text-area {
       margin-top: 70px;
-      margin-left: 90px;
-      font-size: 14px;
+      margin-left: 70px;
+      font-size: 13px;
     }
     .textbox-title {
-      font-size: 27px;
+      font-size: 20px;
       left: 0;
+    }
+    sapn {
+      margin-right: 0px;
     }
   }
 }

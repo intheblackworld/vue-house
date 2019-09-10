@@ -78,9 +78,6 @@
   display: flex;
   width: 80%;
   height: 70%;
-  // width: 980px;
-  // margin: 0 auto;
-  // text-align: center;
 
   .text-area-bg {
     background-image: url("./s11_textbox.png");
@@ -96,7 +93,7 @@
       margin: 0 auto;
       margin-top: 10%;
       line-height: 1.2;
-      font-size: 22px;
+      font-size: 19px;
       color: #3e3a39;
     }
 
@@ -118,11 +115,6 @@
 
   .slide {
     flex: 2;
-    // width: 955px;
-    // height: 458px;
-    // margin-left: 50px;
-    // margin-bottom: 30px;
-
     .left-btn {
       margin-left: 34px;
     }
@@ -147,7 +139,7 @@
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .container {
-
+    
     .text-area-bg {
       width: 240px;
       .text-area-container {
@@ -165,8 +157,6 @@
     }
 
     .slide {
-
-
       .slide-img {
         width: 600px;
         left: 0;
@@ -182,8 +172,6 @@
   .bg {
     display: block;
     height: 120vh;
-  }
-  .fullscreen {
   }
 
   .container {
