@@ -1,18 +1,21 @@
 <template>
   <div class="section2">
     <div class="bg relative">
-      <div class="slide relative" data-aos="fade"
-        data-aos-delay="0">
+      <div class="slide relative" data-aos="fade" data-aos-delay="0">
         <img
           :src="slide.src"
           v-for="(slide, index) in slideList"
           :class="`fullscreen slide-img ${slideIndex === index ? 'active' : ''}`"
           :key="`s2-slide-${index}`"
         />
-        <div class="content" data-aos="fade-down"
-        data-aos-delay="600">
+        <div :class="`content ${open ? 'open' : ''}`">
           <div class="title">東區首席</div>
           <div class="subtitle">台北科技走廊之頂，北台灣黃金軸帶核心</div>
+          <div class="button" v-if="isMobile" @click="open = !open">
+            {{
+              open ? '-' : '+'
+            }}
+          </div>
           <div class="desc">
             北市外擴第一圈，康寧生活圈機能核心，與哈拉影城東湖商圈連成一器。
             周邊群聚內科、南軟、汐科這3座北臺灣最重要的金雞母，廣吸白領精英進駐，共同讓你點石成金。
@@ -20,10 +23,22 @@
           </div>
         </div>
         <img src="./s2/s2_bg1.png" alt class="img bg1" />
-        <img src="./s2/s2_block.png" alt class="img block" v-if="!isMobile" data-aos="fade"
-        data-aos-delay="0" />
-        <img src="./s2/s2_line.png" alt class="img line" v-if="!isMobile" data-aos="fade"
-        data-aos-delay="0" />
+        <img
+          src="./s2/s2_block.png"
+          alt
+          class="img block"
+          v-if="!isMobile"
+          data-aos="fade"
+          data-aos-delay="0"
+        />
+        <img
+          src="./s2/s2_line.png"
+          alt
+          class="img line"
+          v-if="!isMobile"
+          data-aos="fade"
+          data-aos-delay="0"
+        />
       </div>
       <div class="relative fullscreen" v-if="!isMobile">
         <img src="./s2/s2_bg2.jpg" alt class="img" />
@@ -31,8 +46,7 @@
         <img src="./s2/s2_logo.png" alt class="img" />
         <img src="./s2/s2_bg_bottom.png" alt class="img bg-bottom" />
       </div>
-      <Map :bgSrc="bgSrc" v-if="isMobile">
-      </Map>
+      <Map :bgSrc="bgSrc" v-if="isMobile"></Map>
     </div>
   </div>
 </template>
@@ -137,16 +151,36 @@
     background-size: cover;
   }
 
+  @keyframes pic {
+    from {
+      left: 0;
+    }
+    to {
+      left: -92vw;
+    }
+  }
+
+  .slide img {
+    width: 192vw;
+    animation: pic 10s linear infinite alternate;
+  }
+
   .content {
     width: 90vw;
+    height: 150px;
     opacity: 0.8;
     background-color: #334e66;
+    overflow: hidden;
     text-align: center;
     margin: 0 auto;
     right: 0;
     left: 0;
-    bottom: 0;
+    bottom: -50px;
     padding: 20px;
+
+    &.open {
+      height: auto;
+    }
 
     .title {
       font-size: 65px;
@@ -159,6 +193,15 @@
 
     .desc {
       font-size: 15px;
+    }
+
+    .button {
+      color: #fff;
+      font-size: 32px;
+      position: absolute;
+      right: 5px;
+      top: 0%;
+      cursor: pointer;
     }
   }
 }
@@ -188,7 +231,8 @@ export default {
           src: require('./s2/s2_img2.jpg'),
         },
       ],
-      bgSrc: require('./s2/mo/map.jpg')
+      bgSrc: require('./s2/mo/map.jpg'),
+      open: false,
     }
   },
 
