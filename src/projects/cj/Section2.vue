@@ -8,14 +8,23 @@
           :class="`fullscreen slide-img ${slideIndex === index ? 'active' : ''}`"
           :key="`s2-slide-${index}`"
         />
-        <div :class="`content ${open ? 'open' : ''}`">
+        <div :class="`content ${open ? 'open' : ''}`" v-if="isMobile">
           <div class="title">東區首席</div>
           <div class="subtitle">台北科技走廊之頂，北台灣黃金軸帶核心</div>
-          <div class="button" v-if="isMobile" @click="open = !open">
+          <div class="button" v-show="isMobile" @click="open = !open">
             {{
               open ? '-' : '+'
             }}
           </div>
+          <div class="desc">
+            北市外擴第一圈，康寧生活圈機能核心，與哈拉影城東湖商圈連成一器。
+            周邊群聚內科、南軟、汐科這3座北臺灣最重要的金雞母，廣吸白領精英進駐，共同讓你點石成金。
+            商圈與公園的雙享機能超越單一的公園綠生活或都會商圈型態，實現讓綠色幸福 + 繁華便利，創造出迷人又耀眼的生活風潮。
+          </div>
+        </div>
+        <div class="content" v-if="!isMobile" data-aos="fade-down" data-aos-delay="600">
+          <div class="title">東區首席</div>
+          <div class="subtitle">台北科技走廊之頂，北台灣黃金軸帶核心</div>
           <div class="desc">
             北市外擴第一圈，康寧生活圈機能核心，與哈拉影城東湖商圈連成一器。
             周邊群聚內科、南軟、汐科這3座北臺灣最重要的金雞母，廣吸白領精英進駐，共同讓你點石成金。
@@ -177,6 +186,7 @@
     left: 0;
     bottom: -50px;
     padding: 20px;
+    z-index: 10;
 
     &.open {
       height: auto;
@@ -202,6 +212,7 @@
       right: 5px;
       top: 0%;
       cursor: pointer;
+      z-index: 10;
     }
   }
 }
