@@ -41,12 +41,10 @@
     <div class="bg fullscreen" v-else>
       <div class="content">
         <div class="left-title">
-            <h3>台南美學首席</h3>
-            <h3>蘊綠養身寓所</h3>
-          </div>
-        <div
-          class="slide relative"
-        >
+          <h3>台南美學首席</h3>
+          <h3>蘊綠養身寓所</h3>
+        </div>
+        <div class="slide relative">
           <img
             v-for="(slide, index) in slideList"
             :class="`slide-img ${slideIndex === index ? 'active' : ''} img-c`"
@@ -59,10 +57,9 @@
           <div class="text-area-container">
             <div class="text-area-title">
               <h3>五感生活 從心啓動</h3>
-            </div>
-             不一樣的食養文化，不一樣的風光水色。
-              <br />五感體驗、身體律動，在此享受身心靈的全然滿足。
-            </div>
+            </div>不一樣的食養文化，不一樣的風光水色。
+            <br />五感體驗、身體律動，在此享受身心靈的全然滿足。
+          </div>
         </div>
       </div>
     </div>
@@ -223,56 +220,117 @@
 }
 
 @media only screen and (min-width: 1281px) and (max-width: 1440px) {
-  // .container {
-  //   width: 1024px;
-  // }
+  .left-title {
+    font-size: 32px;
+    margin-bottom: 10px;
+    width: 260px;
+  }
+  .content-left {
+    margin-right: 20px;
+  }
 
-  // .slide {
-  //   margin-top: 50px;
-  //   transform: scale(0.85);
-  //   transform-origin: left;
-  // }
+  .sofa {
+    height: 30px;
+    width: 45px;
+    top: calc(50% - 15px);
+  }
+
+  .btn-item {
+    font-size: 20px;
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+  }
+  .slide {
+    .slide-img {
+      width: 750px;
+      height: 500px;
+    }
+  }
+  .border-behind-image {
+    top: 30px;
+    left: 20px;
+  }
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1280px) {
-  // .container {
-  //   width: 1024px;
-  // }
-  // .fullscreen {
-  //   height: auto !important;
-  // }
-  // .slide {
-  //   margin-top: 50px;
-  //   transform: scale(0.85);
-  //   transform-origin: left;
-  // }
+  .left-title {
+    font-size: 32px;
+    margin-bottom: 10px;
+    width: 260px;
+  }
+  .content-left {
+    margin-right: 20px;
+  }
+
+  .sofa {
+    height: 30px;
+    width: 45px;
+    top: calc(50% - 15px);
+  }
+
+  .btn-item {
+    font-size: 20px;
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+  }
+  .slide {
+    .slide-img {
+      width: 750px;
+      height: 500px;
+    }
+  }
+  .border-behind-image {
+    top: 30px;
+    left: 20px;
+  }
 }
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  // .section10 {
-  //   margin-top: -1px;
-  // }
-  // .container {
-  //   width: 900px;
-  // }
+  .left-title {
+    font-size: 32px;
+    margin-bottom: 10px;
+    width: 260px;
+  }
+  .content-left {
+    margin-right: 20px;
+  }
 
-  // .slide {
-  //   margin-top: 0px;
-  //   transform: scale(0.74);
-  //   transform-origin: left;
-  // }
+  .sofa {
+    height: 30px;
+    width: 45px;
+    top: calc(50% - 15px);
+  }
+
+  .btn-item {
+    font-size: 20px;
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+  }
+  .slide {
+    .slide-img {
+      width: 600px;
+      height: 400px;
+    }
+  }
+  .border-behind-image {
+    top: 30px;
+    left: 20px;
+  }
 }
 
 @media screen and (max-width: 767px) {
   .content {
-    .left-title{
+    .left-title {
       margin: 20px auto;
     }
     width: 100%;
     display: block;
     .text-area-bg {
-      background-image: url('./box.png');
+      background-image: url("./box.png");
       background-size: 100% 100%;
       background-repeat: no-repeat;
       width: 90%;
@@ -302,7 +360,7 @@
         font-size: 27px;
       }
     }
-  } 
+  }
   .slide {
     .slide-img {
       width: 100vw;

@@ -112,13 +112,41 @@
   }
 }
 
+
+@media only screen and (min-width: 1281px) and (max-width: 1440px) {
+  .text-area-bg {
+    .text-area-title {
+      font-size: 42px;
+    }
+  }
+}
+
 @media only screen and (min-width: 1025px) and (max-width: 1280px) {
+  .content {
+    .text-area-bg {
+      .text-area-title {
+        font-size: 38px;
+      }
+    }
+  } 
 
 }
 
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .text-area-bg {
+      width: 240px;
+      .text-area-container {
+        padding: 40px 10px 180px;
+        line-height: 1.3;
+        font-size: 17px;
+        padding: 0;
+      }
 
+      .text-area-title {
+        font-size: 30px;
+      }
+    }
 }
 
 @media screen and (max-width: 767px) {

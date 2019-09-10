@@ -10,17 +10,16 @@
             <div class="text-area-title">
               <h3>“風的廊道”</h3>
               <h3>建築微氣候</h3>
-            </div>
-              風與水，這兩項是影響「建築微氣候」的關鍵，而「幸福大院」重視風、水、光、綠四大建築元素，在別墅間預留風的廊道，搭配垂直綠廊，讓風有效流動並降溫，即使從冷氣房走出來，也能感受到涼爽清新的微風吹拂。社區水撲滿設計，讓基地像...，能循環用水、更能調節氣候。「幸福大院」用自然生態及遠見思維，營造涼爽宜居的生活環境。
-            </div>
+            </div>風與水，這兩項是影響「建築微氣候」的關鍵，而「幸福大院」重視風、水、光、綠四大建築元素，在別墅間預留風的廊道，搭配垂直綠廊，讓風有效流動並降溫，即使從冷氣房走出來，也能感受到涼爽清新的微風吹拂。社區水撲滿設計，讓基地像...，能循環用水、更能調節氣候。「幸福大院」用自然生態及遠見思維，營造涼爽宜居的生活環境。
+          </div>
         </div>
       </div>
     </div>
-    <div class="tree"></div> 
+    <div class="tree"></div>
   </div>
 </template>
 <style lang="scss" scoped>
-@import '../../assets/style/variableDefault.scss';
+@import "../../assets/style/variableDefault.scss";
 
 .section4 {
   position: relative;
@@ -28,7 +27,7 @@
 
 .bg {
   display: flex;
-  background-image: url('./s4_bg.jpg');
+  background-image: url("./s4_bg.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -45,7 +44,6 @@
   overflow: hidden;
 }
 
-
 .content {
   display: flex;
   width: 80%;
@@ -53,14 +51,14 @@
 }
 
 .img {
-  background-image: url('./s4_img.jpg');
+  background-image: url("./s4_img.jpg");
   background-position: center;
   background-size: cover;
   flex: 2;
 }
 
 .text-area-bg {
-  background-image: url('./box.png');
+  background-image: url("./box.png");
   background-size: 100% 100%;
   flex: 1;
   background-repeat: no-repeat;
@@ -86,7 +84,7 @@
 }
 
 .tree {
-  background-image: url('./s4_tree.png');
+  background-image: url("./s4_tree.png");
   position: absolute;
   width: 100%;
   background-repeat: no-repeat;
@@ -95,13 +93,45 @@
   top: 0%;
 }
 
-@media only screen and (min-width: 1025px) and (max-width: 1280px) {
+@media only screen and (min-width: 1281px) and (max-width: 1440px) {
+  .text-area-bg {
+    .text-area-title {
+      font-size: 42px;
+    }
+  }
+}
 
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
+  .text-area-bg {
+    .text-area-container {
+      font-size: 18px;
+    }
+
+    .text-area-title {
+      font-size: 38px;
+    }
+  }
+  .tree {
+    top: 4%;
+    margin-left: -30px;
+  }
 }
 
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .text-area-bg {
+    .text-area-container {
+      font-size: 17px;
+      width: 80%;
+    }
 
+    .text-area-title {
+      font-size: 30px;
+    }
+  }
+  .tree {
+    top: 8%;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -141,29 +171,29 @@
   }
 
   .tree {
-    background-image: url('./s4_tree_m.png');
+    background-image: url("./s4_tree_m.png");
     bottom: 0%;
     height: 35%;
     top: 63%;
     right: 0%;
-  } 
+  }
 }
 </style>
 
 <script>
 // @ is an alias to /src
-import { isMobile } from '@/utils'
+import { isMobile } from "@/utils";
 export default {
-  name: 'section4',
+  name: "section4",
 
   data() {
     return {
-      isMobile,
-    }
+      isMobile
+    };
   },
 
   methods: {},
 
-  created() {},
-}
+  created() {}
+};
 </script>

@@ -42,7 +42,7 @@
             :src="slide.src"
             alt
           />
-           <div class="name" >{{slideList[slideIndex].name}}</div>
+          <div class="name">{{slideList[slideIndex].name}}</div>
           <img class="left-btn" @click="addIndex" src="./left_btn.png" alt="幸福大院的圖片" />
           <img class="right-btn" @click="decIndex" src="./right_btn.png" alt="幸福大院的圖片" />
         </div>
@@ -91,7 +91,7 @@
   background-image: url("./box.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  width: 665.1px;
+  width: 600px;
   height: 407.2px;
   position: absolute;
   font-size: 25px;
@@ -123,7 +123,7 @@
 }
 
 .textbox-behind {
-  width: 665.1px;
+  width: 600px;
   height: 407.2px;
   background-image: linear-gradient(
     135deg,
@@ -255,45 +255,156 @@
 }
 
 @media only screen and (min-width: 1281px) and (max-width: 1440px) {
-  // .container-top {
-  //   width: 1024px;
-  // }
+  .container-top {
+    width: 90%;
+  }
+  .slide {
+    border: none;
+    .slide-img {
+      width: 800px;
+      height: 400px;
+    }
+  }
+  .btn-group {
+    width: 70%;
+    .btn-item-name {
+      font-size: 18px;
+    }
+    .btn-item-img {
+      width: 140px;
+    }
+  }
+  .textbox-wrapper {
+    top: 40px;
+  }
+  .textbox-behind {
+    height: 340px;
+    width: 450px;
+    top: 30px;
+    left: 30px;
+  }
 
-  // .slide {
-  //   margin-top: 50px;
-  //   transform: scale(0.85);
-  //   transform-origin: left;
-  // }
+  .text-area-bg {
+    top: 12px;
+    height: 340px;
+    font-size: 18px;
+    width: 460px;
+    padding: 20px 30px;
+    .text-area-title {
+      h3 {
+        font-size: 24px;
+      }
+      h3.big {
+        font-size: 32px;
+      }
+    }
+  }
+
+  .text-area-subTitle {
+    // margin-bottom: 10px;
+    font-size: 19px;
+  }
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1280px) {
-  // .container-top {
-  //   width: 1024px;
-  // }
-  // .fullscreen {
-  //   height: auto !important;
-  // }
-  // .slide {
-  //   margin-top: 50px;
-  //   transform: scale(0.85);
-  //   transform-origin: left;
-  // }
+   .container-top {
+    width: 90%;
+  }
+  .slide {
+    border: none;
+    .slide-img {
+      width: 600px;
+      height: 310px;
+    }
+  }
+  .btn-group {
+    width: 90%;
+    .btn-item-name {
+      font-size: 18px;
+    }
+    .btn-item-img {
+      width: 140px;
+    }
+  }
+  .textbox-wrapper {
+    top: 40px;
+  }
+  .textbox-behind {
+    width: 450px;
+    height: 220px;
+  }
+
+  .text-area-bg {
+    font-size: 15px;
+    width: 460px;
+    height: 230px;
+    top: 0px;
+    padding: 20px 30px;
+    .text-area-title {
+      h3 {
+        font-size: 24px;
+      }
+      h3.big {
+        font-size: 32px;
+      }
+    }
+  }
+
+  .text-area-subTitle {
+    margin-bottom: 10px;
+    font-size: 19px;
+  }
 }
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  // .section8 {
-  //   margin-top: -1px;
-  // }
-  // .container-top {
-  //   width: 900px;
-  // }
+  .container-top {
+    width: 90%;
+  }
+  .slide {
+    border: none;
+    .slide-img {
+      width: 500px;
+      height: 260px;
+    }
+  }
+  .btn-group {
+    width: 90%;
+    .btn-item-name {
+      font-size: 18px;
+    }
+    .btn-item-img {
+      width: 140px;
+    }
+  }
+  .textbox-wrapper {
+    top: 40px;
+  }
+  .textbox-behind {
+    width: 450px;
+    height: 190px;
+  }
 
-  // .slide {
-  //   margin-top: 0px;
-  //   transform: scale(0.74);
-  //   transform-origin: left;
-  // }
+  .text-area-bg {
+    font-size: 15px;
+    width: 460px;
+    height: 230px;
+    top: -30px;
+    padding: 20px 30px;
+    .text-area-title {
+      h3 {
+        font-size: 24px;
+      }
+      h3.big {
+        font-size: 32px;
+      }
+    }
+  }
+
+  .text-area-subTitle {
+    margin-bottom: 10px;
+    font-size: 19px;
+  }
 }
 
 @media screen and (max-width: 767px) {

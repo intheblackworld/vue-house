@@ -96,7 +96,7 @@
       margin: 0 auto;
       margin-top: 10%;
       line-height: 1.2;
-      font-size: 18px;
+      font-size: 22px;
       color: #3e3a39;
     }
 
@@ -137,30 +137,6 @@
       right: 0;
       margin: 0 auto;
     }
-
-    .slide-content {
-      position: absolute;
-      bottom: 30px;
-      // .slide-title {
-      //   padding: 15px 20px;
-      //   text-align: center;
-      //   background: #2b466f;
-      //   color: #fff;
-      //   font-size: 24px;
-      //   position: relative;
-      //   z-index: 1;
-      // }
-
-      // .slide-desc {
-      //   padding: 15px 20px;
-      //   padding-top: 50px;
-      //   text-align: left;
-      //   color: #1a2739;
-      //   background-color: #9ca5b2;
-      //   font-size: 18px;
-      //   transform: translate(30px, -30px);
-      // }
-    }
   }
 
   .btn-group {
@@ -171,50 +147,31 @@
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .container {
-    // width: 810px;
-    // margin: 0 auto;
-    // text-align: center;
+
+    .text-area-bg {
+      width: 240px;
+      .text-area-container {
+        width: 80%;
+        font-size: 15px;
+      }
+
+      .text-area-title {
+        line-height: 1.5;
+        font-size: 20px;
+        .big {
+          font-size: 20px;
+        }
+      }
+    }
 
     .slide {
-      width: 710px;
-      height: 340px;
-      margin-left: 50px;
-      margin-bottom: 30px;
+
 
       .slide-img {
         width: 600px;
         left: 0;
         right: 0;
         margin: 0 auto;
-      }
-
-      .left-btn,
-      .right-btn {
-        width: 40px;
-      }
-
-      .slide-content {
-        position: absolute;
-        bottom: 0px;
-        .slide-title {
-          padding: 10px 15px;
-          text-align: center;
-          background: #2b466f;
-          color: #fff;
-          font-size: 18px;
-          position: relative;
-          z-index: 1;
-        }
-
-        .slide-desc {
-          padding: 10px 15px;
-          padding-top: 40px;
-          text-align: left;
-          color: #1a2739;
-          background-color: #9ca5b2;
-          font-size: 13px;
-          transform: translate(30px, -30px);
-        }
       }
     }
   }
