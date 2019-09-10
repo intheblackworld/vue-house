@@ -1,26 +1,5 @@
 export default {
   mounted() {
-    let scriptArray = []
-    this.$gtmCode.forEach((gtm, index) => {
-      const s = document.createElement('script')
-      s.type = 'text/javascript'
-      s.async = true
-      s.innerHTML = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-${gtm}');`
-      const n = document.createElement('noscript')
-      n.type = 'text/javascript'
-      n.async = true
-      n.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-${gtm}"height="0" width="0" style="display:none;visibility:hidden"></iframe>`
-      const obj = {
-        s,
-        n
-      }
-      scriptArray.push(obj)
-    })
-
-    scriptArray.forEach(script => {
-      document.head.appendChild(script.s)
-      this.$refs.gtmNoScript.appendChild(script.n)
-    })
     // dss custom
     // 1. ga new
     const tag1 = document.createElement('script')
@@ -31,7 +10,7 @@ export default {
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
   
-    gtag('config', 'UA-147268639-1');
+    gtag('config', 'UA-147268639-1');  
   `
     document.head.appendChild(tag1)
 
@@ -63,10 +42,31 @@ export default {
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
   
-    gtag('config', 'AW-741945426');
+    gtag('config', 'AW-741945426');  
   `
 
     document.head.appendChild(tag3)
     document.head.appendChild(tag4)
+    let scriptArray = []
+    this.$gtmCode.forEach((gtm, index) => {
+      const s = document.createElement('script')
+      s.type = 'text/javascript'
+      s.async = true
+      s.innerHTML = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-${gtm}');`
+      const n = document.createElement('noscript')
+      n.type = 'text/javascript'
+      n.async = true
+      n.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-${gtm}"height="0" width="0" style="display:none;visibility:hidden"></iframe>`
+      const obj = {
+        s,
+        n
+      }
+      scriptArray.push(obj)
+    })
+
+    scriptArray.forEach(script => {
+      document.head.appendChild(script.s)
+      this.$refs.gtmNoScript.appendChild(script.n)
+    })
   }
 }
