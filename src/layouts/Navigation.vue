@@ -50,14 +50,14 @@ export default {
   computed: {
     offset() {
       if (this.isMobile) {
-        return -39
+        return -60
       }
 
       if (this.isTablet) {
-        return -45
+        return -60
       }
 
-      return -56
+      return -60
     },
   },
 
@@ -85,7 +85,6 @@ export default {
   display: flex !important;
   align-items: center;
   box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
-  opacity: 0.75;
 }
 
 .nav-container {

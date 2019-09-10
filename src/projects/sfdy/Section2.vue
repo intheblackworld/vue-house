@@ -33,7 +33,7 @@
   top: 0%;
 
   .textbox-text-area {
-    margin-top: 170px;
+    margin-top: 180px;
     line-height: 1.2;
     font-size: 23px;
     width: 420px;
