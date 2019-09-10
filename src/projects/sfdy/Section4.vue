@@ -90,7 +90,7 @@
   background-repeat: no-repeat;
   height: 100%;
   background-size: 100% 100%;
-  top: 0%;
+  top: 5%;
 }
 
 @media only screen and (min-width: 1281px) and (max-width: 1440px) {
@@ -98,6 +98,10 @@
     .text-area-title {
       font-size: 42px;
     }
+  }
+  .tree {
+    top: 5%;
+    width: 96%;
   }
 }
 

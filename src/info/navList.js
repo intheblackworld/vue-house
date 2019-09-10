@@ -4,5 +4,5 @@ export default [
   { name: '森林會館', imgSrc: '', subTitle: '', section: 'section5', svgSrc: '' },
   { name: '建築團隊', imgSrc: '', subTitle: '', section: 'section6', svgSrc: '' },
   { name: '綠量公社', imgSrc: '', subTitle: '', section: 'section7', svgSrc: '' },
-  { name: '秘境居所', imgSrc: '', subTitle: '', section: 'contact', svgSrc: '' },
+  { name: '秘境居所', imgSrc: '', subTitle: '', section: 'section8', svgSrc: '' },
 ]                
