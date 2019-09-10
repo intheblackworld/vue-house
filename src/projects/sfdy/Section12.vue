@@ -182,23 +182,6 @@
     }
   }
 
-  .text {
-    background: #333;
-    color: #fff;
-    padding: 30px;
-    height: 330px;
-    .park {
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
-
-    .park-desc {
-      font-size: 20px;
-      line-height: 1.5;
-      text-align: justify;
-    }
-  }
-
   .text-area-bg {
     background-image: url("./box.png");
     background-size: 100% 100%;

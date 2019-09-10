@@ -78,7 +78,7 @@
 .img-1 {
   background-image: url('./s9_img_1.jpg');
   background-position: center;
-  background-size: cover;
+  background-size: 100% 100%;
   flex: 2;
 }
 

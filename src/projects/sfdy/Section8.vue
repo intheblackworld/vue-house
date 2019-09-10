@@ -358,6 +358,13 @@
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .container {
+    height: 100%;
+    margin-top: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   .container-top {
     width: 90%;
   }
@@ -408,18 +415,6 @@
 }
 
 @media screen and (max-width: 767px) {
-  // .section8 {
-  //   margin-top: -1px;
-  // }
-  // .container-top {
-  //   width: 100vw;
-  //   padding-bottom: 20px;
-  // }
-
-  // .fullscreen {
-  //   height: auto !important;
-  // }
-
   .slide {
     border: none;
     .slide-img {
@@ -483,43 +478,6 @@
   .text-area-subTitle {
     font-size: 14px;
   }
-
-  // .slide-content-m {
-  //   position: relative;
-  //   z-index: 4;
-  //   margin-top: -40px;
-
-  //   .name {
-  //     color: #fff;
-  //     margin-bottom: 10px;
-  //     text-shadow: 0 0 2px #333;
-  //   }
-
-  //   .content {
-  //     background-color: #c8a063;
-  //     color: #fff;
-  //     width: 90vw;
-  //     margin: 0 auto;
-  //     padding-top: 20px;
-  //   }
-
-  //   .title {
-  //     width: 210px;
-  //     height: auto;
-  //     font-size: 26px;
-  //     color: #fff;
-  //     margin-bottom: 5px;
-  //   }
-
-  //   .desc {
-  //     width: 210px;
-  //     height: auto;
-  //     font-size: 14px;
-  //     color: #fff;
-  //     text-align: justify;
-  //     padding-bottom: 15px;
-  //   }
-  // }
 }
 </style>
 

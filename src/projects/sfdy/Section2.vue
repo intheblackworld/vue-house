@@ -82,7 +82,7 @@
   .textbox-img {
     .textbox-text-area {
       margin-top: 140px;
-      width: 240px;
+      width: 260px;
       font-size: 16px;
     }
     .textbox-title {
@@ -96,10 +96,6 @@
     background-image: url("./s2_bg.jpg");
     background-size: cover;
   }
-
-  .fullscreen {
-  }
-
   .textbox-img {
     background-image: url("./s2_textbox_m.png");
     height: 60%;
@@ -109,9 +105,9 @@
       margin: 140px;
     }
     .textbox-title {
-      font-size: 29px;
+      font-size: 27px;
       left: 0;
-      width: 300px;
+      width: 280px;
     }
   }
 }
