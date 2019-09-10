@@ -1,6 +1,6 @@
 <template>
   <div class="section5">
-    <div class="bg fullscreen relative">
+    <div class="bg relative">
       <img v-if="!isMobile" src="./s5_label.png" alt class="img relative" />
       <img v-if="!isMobile" src="./s5_subtitle.png" alt class="img" />
       <img v-if="!isMobile" src="./s5_title.png" alt class="img" />
@@ -73,8 +73,8 @@
     text-align: left;
     color: #16679e;
     margin: 0 auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 
   .subtitle {

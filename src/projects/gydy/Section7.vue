@@ -11,15 +11,48 @@
           <br />誓以安全陣容昇華安心笑容
         </div>
         <div class="subtitle">核心三巨頭_實力天團集氣三倍安心</div>
-        <div
-          class="desc"
-        >齊聚建築鐵三角，集結三倍豐厚實力與優質血統悉心擘劃，因「三希堂」聞名的馥域建設＿以留美建築學人之姿，締造高標以待的靈韻；欣聯建設＿為信賴營造職人之首，憑「東園綻」、「幸福捷境」、「欣聯大心」、「欣聯心」…等熱銷個案經典實績，奠定究極精工的基石；首敦建設＿任在地深耕達人，藉北投「鹿鳴館」名宅推手實力，融入居宅工藝，耗費三倍心力攜手累加斐然資歷，為翻轉北投街廓奉獻心力。</div>
+        <div :class="`desc ${isOpenDesc ? 'active': ''}`">
+          <img
+            @click="isOpenDesc = !isOpenDesc"
+            src="./add-icon.png"
+            class="add-icon"
+            v-if="isMobile"
+            alt
+          />
+          齊聚建築鐵三角，集結三倍豐厚實力與優質血統悉心擘劃，因「三希堂」聞名的馥域建設＿以留美建築學人之姿，締造高標以待的靈韻；欣聯建設＿為信賴營造職人之首，憑「東園綻」、「幸福捷境」、「欣聯大心」、「欣聯心」…等熱銷個案經典實績，奠定究極精工的基石；首敦建設＿任在地深耕達人，藉北投「鹿鳴館」名宅推手實力，融入居宅工藝，耗費三倍心力攜手累加斐然資歷，為翻轉北投街廓奉獻心力。
+        </div>
       </div>
-      <div class="img-row">
-        <img src="./s7_img_1.jpg" alt="">
-        <img src="./s7_img_2.jpg" alt="">
-        <img src="./s7_img_3.jpg" alt="">
-        <img src="./s7_img_4.jpg" alt="">
+      <div class="img-row" v-if="!isMobile">
+        <div class="col">
+          <div class="col-title">欣聯建設-芳朵</div>
+          <img src="./s7_img_1.jpg" alt />
+        </div>
+        <div class="col">
+          <div class="col-title">首敦建設-鹿鳴館</div>
+          <img src="./s7_img_2.jpg" alt />
+        </div>
+        <div class="col">
+          <div class="col-title black">欣聯建設-欣聯心</div>
+          <img src="./s7_img_3.jpg" alt />
+        </div>
+        <div class="col">
+          <div class="col-title black">馥域建設-三希堂</div>
+          <img src="./s7_img_4.jpg" alt />
+        </div>
+      </div>
+      <div class="slide relative" v-else>
+        <div :class="`slide-title ${slideIndex > 1 ? 'black' : ''}`">{{slideList[slideIndex].title}}</div>
+        <img
+          v-for="(slide, index) in slideList"
+          :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
+          :key="`s7-slide-${index}`"
+          :src="slide.src"
+          alt
+        />
+        <div class="btn-group flex-jc flex-ac flex-mobile-jb" v-if="isMobile">
+          <img @click="decIndex" src="./arrow-left.png" alt />
+          <img @click="addIndex" src="./arrow-right.png" alt />
+        </div>
       </div>
     </div>
   </div>
@@ -27,7 +60,6 @@
 <style lang="scss" scoped>
 .bg {
   background-image: url('./s6_bg.png');
-  background-size: cover;
   position: relative;
 }
 
@@ -66,9 +98,8 @@
 }
 
 .subtitle {
-  width: 373px;
+  width: 390px;
   margin-bottom: 15px;
-  font-family: NotoSansHant;
   font-size: 24px;
   font-weight: normal;
   font-style: normal;
@@ -82,7 +113,6 @@
 .desc {
   width: 1186px;
   height: 89px;
-  font-family: NotoSansHant;
   font-size: 17px;
   font-weight: normal;
   font-style: normal;
@@ -99,9 +129,32 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  img {
+  .col {
     width: 24.3%;
+    position: relative;
+
+    .col-title {
+      font-size: 20px;
+      color: #fff;
+      text-align: center;
+      position: absolute;
+      width: 100%;
+      top: 15px;
+
+      &.black {
+        color: #000;
+      }
+    }
+
+    img {
+      width: 100%;
+    }
   }
+}
+
+.fake {
+  width: 100vw;
+  margin-top: 20px;
 }
 
 /* 平板尺寸 */
@@ -116,6 +169,11 @@
 
   .fullscreen {
     height: auto !important;
+  }
+
+  .container {
+    width: 100vw;
+    margin-bottom: 30px;
   }
 
   .title {
@@ -145,6 +203,7 @@
     width: 90vw;
     margin: 0 auto;
     font-size: 18px;
+    height: auto;
     text-overflow: clip;
     padding: 15px;
     line-height: 1.5;
@@ -176,19 +235,58 @@
     margin-top: 30px;
     margin-bottom: 30px;
   }
+
+  .slide .btn-group {
+    bottom: 45%;
+  }
+
+  .slide .slide-title {
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    top: 15px;
+    z-index: 2;
+
+
+    &.black {
+      color: #000;
+    }
+  }
 }
 </style>
 
 <script>
 // @ is an alias to /src
+import slider from '@/mixins/slider.js'
 import { isMobile } from '@/utils'
 export default {
   name: 'section7',
+  mixins: [slider],
 
   data() {
     return {
       isOpenDesc: false,
       isMobile,
+      slideList: [
+        {
+          src: require('./s7_img_1.jpg'),
+          title: '欣聯建設-芳朵',
+        },
+        {
+          src: require('./s7_img_2.jpg'),
+          title: '首敦建設-鹿鳴館',
+        },
+        {
+          src: require('./s7_img_3.jpg'),
+          title: '欣聯建設-欣聯心',
+        },
+        {
+          src: require('./s7_img_4.jpg'),
+          title: '馥域建設-三希堂',
+        },
+      ],
     }
   },
 

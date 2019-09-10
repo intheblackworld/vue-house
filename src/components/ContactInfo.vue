@@ -1,6 +1,6 @@
 <template>
   <div class="contact-info">
-    <img class="logo" src="@/assets/img/contact-logo.png" alt="心天畝的圖片" />
+    <img class="logo" src="@/assets/img/contact-logo.png" alt="幸福大院的圖片" />
     <div class="info">
       <div class="btn flex-c" @click="showCallDialog">
         <span class="flex-c">
@@ -107,7 +107,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-content: center;
-  justify-content: space-between;
+  // justify-content: space-between;
   transform: translateY(14%);
   position: relative;
   z-index: 3;
@@ -115,7 +115,7 @@ export default {
   height: 460px;
 
   margin: 0 auto;
-  padding: 60px 0 50px;
+  // padding: 60px 0 50px;
 }
 
 .logo {
@@ -152,7 +152,8 @@ export default {
   }
 
   &:hover {
-    background: $contact_btn_hover_bg;
+    // background: $contact_btn_hover_bg;
+    background-image: url("../assets/img/contact_gold_button.png");
     color: $contact_btn_hover_color;
 
     svg {
@@ -173,7 +174,8 @@ export default {
   cursor: pointer;
   text-decoration: none;
   color: $contact_google_btn_color;
-  background: $contact_google_btn_bg;
+  // background: $contact_google_btn_bg;
+  background-image: url("../assets/img/contact_gold_button.png");
   box-shadow: $contact_btn_border;
   transition: all 0.5s;
 

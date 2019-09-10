@@ -85,6 +85,7 @@ export default {
   display: flex !important;
   align-items: center;
   box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+  opacity: 0.75;
 }
 
 .nav-container {
@@ -193,7 +194,7 @@ export default {
     // }
 
     .title {
-      font-size: 16px !important;
+      font-size: 20px !important;
       position: relative;
       z-index: 3;
     }

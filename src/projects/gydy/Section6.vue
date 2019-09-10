@@ -1,6 +1,6 @@
 <template>
   <div class="section6">
-    <div class="bg fullscreen relative">
+    <div class="bg relative">
       <img v-if="!isMobile" src="./s6_label.png" alt class="img relative" />
       <img v-if="!isMobile" src="./s6_subtitle.png" alt class="img" />
       <img v-if="!isMobile" src="./s6_title.png" alt class="img" />
@@ -35,7 +35,6 @@
 <style lang="scss" scoped>
 .bg {
   background-image: url('./s6_bg.png');
-  background-size: cover;
   position: relative;
 }
 
@@ -73,8 +72,8 @@
     text-align: left;
     color: #16679e;
     margin: 0 auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 
   .subtitle {
