@@ -4,7 +4,8 @@
       <div class="relative fullscreen">
         <div class="container" data-aos="fade"
         data-aos-delay="0">
-          <img src="./s3/line.png" alt class="line" v-if="!isMobile" />
+          <img src="./s3/line.png" alt class="line" v-if="!isMobile" data-aos="scale-bottom"
+        data-aos-delay="0" />
           <img src="./s3/img.jpg" alt class="img" data-aos="fade"
         data-aos-delay="300" />
           <div class="content" data-aos="fade"

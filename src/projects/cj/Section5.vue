@@ -2,7 +2,8 @@
   <div class="section5">
     <div class="bg relative">
       <div class="relative fullscreen">
-        <img src="./s5/line.png" alt class="line" v-if="!isMobile" />
+        <img src="./s5/line.png" alt class="line" v-if="!isMobile" data-aos="scale-bottom"
+        data-aos-delay="0" />
         <div class="container">
           <div class="main-img relative" v-if="!isMobile" data-aos="fade"
         data-aos-delay="0">

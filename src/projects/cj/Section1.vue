@@ -11,18 +11,26 @@
     <div class="bg fullscreen relative">
       <img
         v-if="!isMobile"
+        src="./s1/s1_bg.jpg"
+        alt
+        class="img"
+        data-aos="mini-in"
+        data-aos-delay="0"
+      />
+      <img
+        v-if="!isMobile"
         src="./s1/s1_logo.png"
         alt
         class="img logo-s1 relative"
-        data-aos="fade-down"
-        data-aos-delay="0"
+        data-aos="mini-in"
+        data-aos-delay="500"
       />
       <img
         v-if="!isMobile"
         src="./s1/s1_ribbon.png"
         alt
         class="img ribbon"
-        data-aos="fade-down"
+        data-aos="fade"
         data-aos-delay="400"
       />
       <img
@@ -38,7 +46,8 @@
 </template>
 <style lang="scss" scoped>
 .bg {
-  background-image: url('./s1/s1_bg.jpg');
+  background-color: #fff;
+  // background-image: url('./s1/s1_bg.jpg');
   background-size: cover;
   position: relative;
 }

@@ -4,7 +4,8 @@
       <div class="relative fullscreen">
         <div class="container" v-if="!isMobile" data-aos="fade"
         data-aos-delay="0">
-          <img src="./s4/line.png" alt class="line" v-if="!isMobile" />
+          <img src="./s4/line.png" alt class="line" v-if="!isMobile" data-aos="scale-bottom"
+        data-aos-delay="0" />
           <div class="content" data-aos="fade"
         data-aos-delay="800">
             <div class="title">壯闊造鎮</div>
