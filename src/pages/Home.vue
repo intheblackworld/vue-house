@@ -62,7 +62,7 @@ export default {
 
   data() {
     return {
-      isSide: false,
+      isSide: true,
       loading: true,
     }
   },
