@@ -85,9 +85,9 @@ export default {
   display: block;
   position: fixed;
   z-index: 112;
-  top: 30px;
+  top: 0px;
   right: 30px;
-  width: 40px;
+  width: 100px;
   cursor: pointer;
 
   img {
@@ -113,6 +113,7 @@ export default {
   transition: all 0.3s ease-in;
   display: block;
   transform: translateX(40%);
+  background-image: url('./nav_bg.png');
 
   li {
     height: 60px;
@@ -151,38 +152,6 @@ export default {
     display: flex;
     flex-wrap: wrap;
     align-content: center;
-
-    li:hover {
-      // custom style
-      &:nth-child(1),
-      &:nth-child(5) {
-        background-image: url('~@/assets/img/side/1.png');
-        background-size: 105px;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-      &:nth-child(2),
-      &:nth-child(6) {
-        background-image: url('~@/assets/img/side/2.png');
-        background-size: 105px;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-      &:nth-child(3),
-      &:nth-child(7) {
-        background-image: url('~@/assets/img/side/3.png');
-        background-size: 105px;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-      &:nth-child(4),
-      &:nth-child(8) {
-        background-image: url('~@/assets/img/side/4.png');
-        background-size: 105px;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-    }
 
     .link {
       display: flex;

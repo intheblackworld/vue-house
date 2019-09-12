@@ -36,7 +36,7 @@ import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import gtm from '@/mixins/gtm.js'
 
-import Section1 from '@/projects/cj/Section1.vue'
+import Section1 from '@/projects/jh/Section1.vue'
 import Section2 from '@/projects/cj/Section2.vue'
 import Section3 from '@/projects/cj/Section3.vue'
 import Section4 from '@/projects/cj/Section4.vue'
