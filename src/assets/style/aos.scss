@@ -1,6 +1,7 @@
 [data-aos='mini-in'] {
   opacity: 0;
   transform: scale(1.1);
+  transform-origin: center;
 
   &.aos-animate {
     opacity: 1;
@@ -11,6 +12,7 @@
 [data-aos='scale-in'] {
   opacity: 0;
   transform: scale(.8);
+  transform-origin: center;
 
   &.aos-animate {
     opacity: 1;

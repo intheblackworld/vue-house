@@ -1,76 +1,60 @@
 <template>
   <div class="section3">
     <div class="bg fullscreen">
-      <img src="./s3/img1.png" alt class="img1" data-aos="fade-right" data-aos-delay="0" />
-      <div class="text" data-aos="fade-up" data-aos-delay="400">
-        <div class="title">依山面水 三峽最美</div>
-        <div class="desc">
-          佔據「鳶山vs大漢溪畔」交會點；
-          <br />獨霸三峽最強視野，讓眼界氣度更上層樓…
-          <br />讓親近大自然的心願，無須遠離都會就能實現！
-          <br />
-        </div>
-      </div>
-      <img src="./s3/img2.jpg" alt class="img2" v-if="!isMobile" />
-      <img src="./s3/img2m.jpg" alt class="img2" v-if="isMobile" />
+      <carousel-3d :width="960" :height="536" :perspective="0">
+        <slide v-for="(slide, i) in slides" :index="i" :key="slide.img" class="video-slide">
+          <img
+            src="./s3/play_btn.png"
+            alt
+            :class="`play-btn absolute-c ${slide.isPlay ? 'hide' : ''}`"
+            @click="handlePlay(i)"
+          />
+          <img :src="slide.img" :class="`video-img absolute ${slide.isPlay ? 'hide' : ''}`" />
+          <video :ref="`video${i}`" class="video" @click="pauseAll">
+            <source :src="slide.video" type="video/mp4" />
+          </video>
+        </slide>
+      </carousel-3d>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .bg {
-  background-color: #fff;
-  background-image: url('./s1/bg.png');
+  background-color: #3c2d2e;
+  background-image: url('./generic_bg.png');
   position: relative;
   overflow: hidden;
   position: relative;
+  padding: 50px 0;
 }
 
-.img1 {
-  position: absolute;
-  top: 0;
-  left: 10vw;
-  width: 310px;
-  height: auto;
-  z-index: 2;
-}
+.video-slide {
+  .play-btn {
+    width: 125px;
+    cursor: pointer;
+    z-index: 2;
 
-.img2 {
-  position: absolute;
-  width: 100vw;
-  height: auto;
-  bottom: 0;
-  left: 0;
-}
+    display: block;
 
-.text {
-  position: absolute;
-  left: calc(10vw + 210px);
-  top: 150px;
-  z-index: 2;
-
-  .title {
-    font-size: 30px;
-    font-weight: bold;
-    line-height: 1.2;
-    color: #231916;
-    margin-bottom: 15px;
-    text-align: left;
+    &.hide {
+      display: none;
+    }
   }
 
-  .desc {
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 1.5;
-    letter-spacing: -0.1px;
-    text-align: left;
-    color: #595857;
+  .video-img {
+    width: 960px;
+    display: block;
+
+    &.hide {
+      display: none;
+    }
   }
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
-    height: 100vh;
+    height: auto;
   }
 }
 
@@ -122,18 +106,60 @@
 <script>
 // @ is an alias to /src
 import { isMobile } from '@/utils'
+import { Carousel3d, Slide } from 'vue-carousel-3d'
 
 export default {
   name: 'section3',
+  components: {
+    Carousel3d,
+    Slide,
+  },
 
   data() {
     return {
       isMobile,
+      slides: [
+        {
+          img: require('./s3/1.jpg'),
+          video: require('./s3/20S_世紀地王篇_20190708.mp4'),
+          isPlay: false,
+        },
+        {
+          img: require('./s3/2.jpg'),
+          video: require('./s3/30S_時間價值篇_20190708.mp4'),
+          isPlay: false,
+        },
+        {
+          img: require('./s3/4.jpg'),
+          video: require('./s3/45S_永恆篇_20190708.mp4'),
+          isPlay: false,
+        },
+      ],
     }
   },
 
-  methods: {},
-
-  created() {},
+  methods: {
+    pauseAll() {
+      this.slides[0].isPlay = false
+      this.$refs[`video${0}`][0].pause()
+      this.slides[1].isPlay = false
+      this.$refs[`video${1}`][0].pause()
+      this.slides[2].isPlay = false
+      this.$refs[`video${2}`][0].pause()
+    },
+    // pausePlay(index) {
+    //   this.slides[index].isPlay = false
+    //   this.$refs[`video${index}`][0].pause()
+    // },
+    handlePlay(index) {
+      if (this.slides[index].isPlay) {
+        this.slides[index].isPlay = false
+        this.$refs[`video${index}`][0].pause()
+      } else {
+        this.slides[index].isPlay = true
+        this.$refs[`video${index}`][0].play()
+      }
+    },
+  },
 }
 </script>
