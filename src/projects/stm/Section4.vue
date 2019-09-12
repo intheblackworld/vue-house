@@ -14,36 +14,26 @@
         <div class="text" v-scroll-reveal.reset="!isMobile ? $fadeInUp(600) : $fadeInUp()">
           <div class="item">
             <h3 class="label-title">
-              三高、三快 交通暢行 |
-              <br />20分鐘生活圈
+              三高、三快 交通暢行
+              <br />20分鐘大台北生活圈
             </h3>
             <hr />
             <p>
-              南港從煙囪小鎮，經過半世紀的粹練，轉變為科技
-              <br />軟體資訊城市與金融中心
+              南港從煙囪小鎮，經過半世紀的粹練，轉變為
+              <br />科技軟體資訊城市與金融中心
             </p>
           </div>
           <div class="item">
-            <h3 class="label-title">
-              三高-
-              <br />中山高．汐五高．五楊高
-            </h3>
-            <hr />
+            <strong>中山高．汐五高．五楊高</strong>
             <p>
-              新店裕隆汽車廠，跟著產經進化腳步，以複合式開
-              <br />發計劃重新塑造新店樣貌
+              直上中山高泰山交流道，向前銜接汐五系統，進入松山內湖科技圈；
+              向後連結五楊系統，馳騁桃園中壢產業都心。
             </p>
           </div>
           <div class="item">
-            <h3 class="label-title">
-              三快
-              <br />64快．65快．台一線
-            </h3>
-            <hr />
+            <strong>64快．65快．台一線</strong>
             <p>
-              64快八里新店線、65快五股土城線、台一線高架道
-              <br />路，迅速接軌站前雙子星特區、新莊副都心，緊密
-              <br />結合繁榮大都會區。
+              64快八里新店線、65快五股土城線、台一線高架道路，迅速接軌站前雙子星特區、新莊副都心，緊密結合繁榮大都會區。
             </p>
           </div>
         </div>
@@ -112,6 +102,9 @@
 
   .text {
     text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
     .item {
       width: 360px;
       margin-bottom: 15px;
@@ -128,10 +121,16 @@
 
     hr {
     }
-    p {
+    p, strong {
       font-size: 16px;
       line-height: 1.44;
       color: #4d4d4d;
+    }
+
+    strong {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
     }
   }
 
@@ -213,7 +212,7 @@
 
       hr {
       }
-      p {
+      p, strong {
         font-size: 12px;
         line-height: 1.44;
         color: #4d4d4d;
@@ -294,7 +293,7 @@
 
       hr {
       }
-      p {
+      p, strong {
         font-size: 14px;
         line-height: 1.44;
         color: #4d4d4d;

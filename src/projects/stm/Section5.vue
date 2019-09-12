@@ -2,12 +2,15 @@
   <div class="section5">
     <div class="container">
       <h3 class="title flex-c" v-scroll-reveal.reset="!isMobile ? $fadeInUp() : $fadeInUp()">樹海為鄰</h3>
-      <h3 class="sub-title" v-scroll-reveal.reset="!isMobile ? $fadeInUp(300) : $fadeInUp()">有氧森活，比健身房更好的養生秘境</h3>
-      <div class="small-title" v-scroll-reveal.reset="!isMobile ? $fadeInUp(600) : $fadeInUp()">10公頃樹海造鎮，伴隨呼吸與大自然共舞，走出氧森之道</div>
+      <h3
+        class="sub-title"
+        v-scroll-reveal.reset="!isMobile ? $fadeInUp(300) : $fadeInUp()"
+      >有氧森活，比健身房更好的養生秘境</h3>
       <div
-        class="slide relative"
-        v-scroll-reveal.reset="!isMobile ? $fadeInUp(900) : $fadeInUp()"
-      >
+        class="small-title"
+        v-scroll-reveal.reset="!isMobile ? $fadeInUp(600) : $fadeInUp()"
+      >10公頃樹海造鎮，伴隨呼吸與大自然共舞，走出氧森之道</div>
+      <div class="slide relative" v-scroll-reveal.reset="!isMobile ? $fadeInUp(900) : $fadeInUp()">
         <img
           v-for="(slide, index) in slideList"
           :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
@@ -279,22 +282,22 @@ export default {
       isMobile,
       slideList: [
         {
-          src: require('./s5_item1.png'),
+          src: require('./s5_item2.png'),
           title: '水碓觀景公園，健康作靠山',
           desc:
             '出門200步就到水碓觀景公園<br />這是企業家的早餐會報，更是讓健康有靠的不二法門',
         },
         {
-          src: require('./s5_item2.png'),
-          title: '走步道看風景，樂觀向前行',
-          desc:
-            '10.5公頃的水碓觀景公園，六條步道七座涼亭<br />山上視野好、空氣乾淨，心境自然輕鬆開朗',
-        },
-        {
-          src: require('./s5_item3.png'),
+          src: require('./s5_item1.png'),
           title: '散步石德公園，每天做早操 ',
           desc:
             '大樹下是楚漢棋局，林蔭底是孩子的開心笑聲，<br />一片波光樹海是清幽雅緻的寧靜公園',
+        },
+        {
+          src: require('./s5_item3.png'),
+          title: '走步道看風景，樂觀向前行',
+          desc:
+            '10.5公頃的水碓觀景公園，六條步道七座涼亭<br />山上視野好、空氣乾淨，心境自然輕鬆開朗',
         },
       ],
     }
