@@ -1,13 +1,18 @@
 <template>
   <div class="section4">
     <div class="bg fullscreen">
-      <div class="dialog">
-        <div class="close"></div>
-        <img :src="mapSrc" alt="">
+      <div :class="`dialog ${isDialogShow ? 'show' : ''}`">
+        <div class="relative">
+          <img src="./s4/close.png" alt class="close" @click="isDialogShow = false" />
+          <img :src="mapSrc" alt class="map-detail" />
+        </div>
       </div>
-      <div class="container">
-        <img src="./s4/map1.png" alt="" @click="showDialog(1)">
-        <img src="./s4/map2.png" alt="" @click="showDialog(2)">
+      <div>
+        <h3 class="title">交響導聆</h3>
+        <div class="container">
+          <img src="./s4/map1.png" alt @click="showDialog(1)" />
+          <img src="./s4/map2.png" alt @click="showDialog(2)" />
+        </div>
       </div>
     </div>
   </div>
@@ -23,6 +28,16 @@
   padding: 50px 0;
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 0.88;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 80px;
 }
 
 .container {
@@ -34,6 +49,36 @@
     width: 700px;
     cursor: pointer;
   }
+}
+
+.dialog {
+  display: none;
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+  &.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .close {
+    cursor: pointer;
+    position: absolute;
+    top: -70px;
+    right: -70px;
+    z-index: 2;
+  }
+}
+
+.map-detail {
+  width: calc(100vw * (1022 / 1920));
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -75,14 +120,17 @@ export default {
   data() {
     return {
       isMobile,
-      isFirstDialogShow: false,
-      isSecondDialogShow: false,
+      isDialogShow: false,
       mapSrc1: require('./s4/maptxt1.png'),
       mapSrc2: require('./s4/maptxt2.png'),
     }
   },
 
   methods: {
+    showDialog(index) {
+      this.isDialogShow = true
+      this.mapSrc = this[`mapSrc${index}`]
+    },
   },
 }
 </script>
