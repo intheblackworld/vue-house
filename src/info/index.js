@@ -18,7 +18,7 @@ export default {
     ['接待中心', '新北市五股區水碓五路81號'],
     ['禮賓專線', '02-2291-8890']
   ],
-  gtmCode: ['KXKZVF4'], // 可放置多個
+  gtmCode: ['TFSP5SN'], // 可放置多個
   order: {
     title: '預約賞屋',
     subTitle: ''
