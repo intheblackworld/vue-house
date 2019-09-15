@@ -8,7 +8,10 @@
         </div>
       </div>
       <div>
-        <h3 class="title">交響導聆</h3>
+        <div class="title-block">
+          <h3 class="title">交響導聆</h3>
+          <div class="subtitle">About Symphony Newtown</div>
+        </div>
         <div class="container">
           <img src="./s4/map1.png" alt @click="showDialog(1)" />
           <img src="./s4/map2.png" alt @click="showDialog(2)" />
@@ -20,8 +23,6 @@
 
 <style lang="scss" scoped>
 .bg {
-  background-color: #3c2d2e;
-  background-image: url('./generic_bg.png');
   position: relative;
   overflow: hidden;
   position: relative;
@@ -29,15 +30,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.title {
-  font-size: 50px;
-  font-weight: bold;
-  line-height: 0.88;
-  text-align: center;
-  color: #ffffff;
-  margin-bottom: 80px;
 }
 
 .container {
@@ -53,7 +45,7 @@
 
 .dialog {
   display: none;
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 100%;
   left: 0;
@@ -96,16 +88,58 @@
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .bg {
+  .container {
+    width: 960px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    img {
+      width: 450px;
+      cursor: pointer;
+    }
+  }
+
+  .map-detail {
+    width: calc(100vw * (800 / 1024));
   }
 }
 
 @media screen and (max-width: 767px) {
   .bg {
+    padding: 0 0 40px;
   }
 
   .fullscreen {
     height: auto !important;
+  }
+
+  .container {
+    width: 100vw;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    img {
+      width: 50vw;
+      // height: 300px;
+      cursor: pointer;
+    }
+  }
+
+  .map-detail {
+    width: 100vw;
+  }
+
+  .dialog {
+    .close {
+      cursor: pointer;
+      position: absolute;
+      width: 50px;
+      top: -70px;
+      right: 0px;
+      z-index: 2;
+    }
   }
 }
 </style>
@@ -121,6 +155,7 @@ export default {
     return {
       isMobile,
       isDialogShow: false,
+      mapSrc: '',
       mapSrc1: require('./s4/maptxt1.png'),
       mapSrc2: require('./s4/maptxt2.png'),
     }

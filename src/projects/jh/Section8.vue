@@ -1,105 +1,286 @@
 <template>
-  <div class="section4">
-    <div class="bg relative">
-      <div class="container">
-        <div class="slide relative" data-aos="fade-right" data-aos-delay="0">
-          <div class="name" v-html="slideList[slideIndex].name"></div>
+  <div class="section8">
+    <div class="container relative">
+      <img src="./s8/bg1.png" alt class="bg-img" v-if="!isMobile" />
+      <div class="title-block">
+        <h3 class="title">精工團隊</h3>
+        <div class="subtitle">The Team</div>
+      </div>
+      <div class="block b2">
+        <div class="title">
+          <p>工藝V.S品質的營建美學</p>
+          <span>Elite Decorative Arts</span>
+        </div>
+        <div class="desc">品味需要時間淬煉，築禾建設從建築外觀、景觀規劃及公設設計等，集結業界名師設計團隊，為居住者提供最卓越超群的生活豐景。</div>
+        <div class="content left">
+          <div>
+            <div class="label">建築設計</div>
+            <h3 class="title">吳成榮建築師</h3>
+            <div class="subtitle">Architecture Design</div>
+            <div class="item-list" v-if="!isMobile">
+              <div
+                class="item"
+                v-for="slide in slideList1"
+                :key="slide.title"
+                @click="showDialog(slide)"
+              >
+                <img :src="slide.src" alt />
+                <div class="item-title">{{slide.title}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div :class="`slide relative`" v-if="isMobile">
           <img
-            v-for="(slide, index) in slideList"
-            :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
-            :key="`s10-slide-${index}`"
+            v-for="(slide, index) in slideList1"
+            :class="`slide-img ${slideIndex1 === index ? 'active' : ''}`"
+            :key="`s8-slide-${index}`"
             :src="slide.src"
             alt
           />
+          <div class="name">{{slideList1[slideIndex1].title}}</div>
           <div class="btn-group flex-jb flex-ac flex-mobile-jb">
-            <img @click="decIndex" src="./left_btn.png" alt />
-            <img @click="addIndex" src="./right_btn.png" alt />
+            <img @click="decMultiIndex(1)" src="./arrow-left.png" alt />
+            <img @click="addMultiIndex(1)" src="./arrow-right.png" alt />
           </div>
         </div>
-        <div class="content" data-aos="fade-left" data-aos-delay="500">
-          <div class="title">三峽靜好 細細品嚐</div>
-          <hr>
-          <div class="desc" v-html="slideList[slideIndex].desc"></div>
+      </div>
+
+      <div class="block b3">
+        <div class="content left">
+          <div>
+            <div class="label">公設規劃</div>
+            <h3 class="title">磐石空間</h3>
+            <div class="subtitle">Public Space Design</div>
+            <div class="item-list" v-if="!isMobile">
+              <div
+                class="item"
+                v-for="slide in slideList2"
+                :key="slide.title"
+                @click="showDialog(slide)"
+              >
+                <img :src="slide.src" alt />
+                <div class="item-title">{{slide.title}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div :class="`slide relative`" v-if="isMobile">
+          <img
+            v-for="(slide, index) in slideList2"
+            :class="`slide-img ${slideIndex2 === index ? 'active' : ''}`"
+            :key="`s8-slide-${index}`"
+            :src="slide.src"
+            alt
+          />
+          <div class="name">{{slideList2[slideIndex2].title}}</div>
+          <div class="btn-group flex-jb flex-ac flex-mobile-jb">
+            <img @click="decMultiIndex(2)" src="./arrow-left.png" alt />
+            <img @click="addMultiIndex(2)" src="./arrow-right.png" alt />
+          </div>
         </div>
       </div>
-      <img src="./s6/circle.png" alt class="circle" />
+      <div class="block b4">
+        <div class="content right">
+          <div>
+            <div class="label">景觀設計</div>
+            <h3 class="title">老圃景觀</h3>
+            <div class="subtitle">Landscape Design</div>
+            <div class="item-list" v-if="!isMobile">
+              <div
+                class="item"
+                v-for="slide in slideList3"
+                :key="slide.title"
+                @click="showDialog(slide)"
+              >
+                <img :src="slide.src" alt />
+                <div class="item-title">{{slide.title}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div :class="`slide relative`" v-if="isMobile">
+          <img
+            v-for="(slide, index) in slideList3"
+            :class="`slide-img ${slideIndex3 === index ? 'active' : ''}`"
+            :key="`s8-slide-${index}`"
+            :src="slide.src"
+            alt
+          />
+          <div class="name">{{slideList3[slideIndex3].title}}</div>
+          <div class="btn-group flex-jb flex-ac flex-mobile-jb">
+            <img @click="decMultiIndex(3)" src="./arrow-left.png" alt />
+            <img @click="addMultiIndex(3)" src="./arrow-right.png" alt />
+          </div>
+        </div>
+      </div>
+      <div :class="`dialog ${isDialogShow ? 'show' : ''}`">
+        <div class="relative">
+          <img src="./s4/close.png" alt class="close" @click="isDialogShow = false" />
+          <img :src="currentDialogImg" class="detail" alt />
+        </div>
+      </div>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
-.bg {
-  background-color: #fff;
-  background-image: url('./s1/bg.png');
-  position: relative;
+.section8 {
   overflow: hidden;
-  position: relative;
+}
+.bg-img {
+  width: 100%;
+  display: block;
 }
 
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 1280px;
-  margin: 0 auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-
-.title {
-  font-size: 30px;
-  font-weight: bold;
-  line-height: 1.2;
-  text-align: left;
-  color: #231916;
-  margin-bottom: 25px;
-}
-
-.desc {
-  font-size: 20px;
-  line-height: 1.5;
-  letter-spacing: -0.1px;
-  text-align: left;
-  color: #595857;
-  white-space: nowrap;
-}
-
-hr {
-  color: #776b39;
-}
-
-.circle {
+.title-block {
   position: absolute;
-  right: -40px;
-  top: 20%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 50px;
 }
 
-.slide {
-  width: 855px;
-  overflow: hidden;
-
-  .name {
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    font-size: 20px;
-    color: #fff;
-    line-height: 1.2;
-    z-index: 4;
-    text-align: right;
+.content {
+  display: flex;
+  align-items: center;
+  width: 990px;
+  height: 590px;
+  margin: 0 auto;
+  &.left {
+    justify-content: flex-start;
   }
 
-  .btn-group {
-    width: 95%;
-    bottom: 50%;
+  &.right {
+    justify-content: flex-end;
+  }
 
+  .label {
+    font-size: 18px;
+    text-align: left;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+
+  .title {
+    font-size: 50px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-align: left;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+
+  .subtitle {
+    font-family: Playball;
+    font-size: 20px;
+    text-align: left;
+    color: #ffffff;
+    margin-bottom: 30px;
+  }
+
+  .item-list {
+    width: 440px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .item {
+    margin-bottom: 15px;
+    cursor: pointer;
     img {
-      width: 20px;
+      width: 205px;
+    }
+
+    .item-title {
+      font-size: 16px;
+      margin-top: 5px;
+      text-align: center;
+      color: #ffffff;
     }
   }
 }
 
-.content {
-  width: 380px;
+.block {
+  width: 100%;
+  height: 700px;
+  background-image: url('./s8/bg2.jpg');
+  background-size: cover;
+  margin-top: -40px;
+
+  &.b2 {
+    background-image: url('./s8/bg2.jpg');
+  }
+
+  &.b3 {
+    background-image: url('./s8/bg3.jpg');
+  }
+
+  &.b4 {
+    background-image: url('./s8/bg4.jpg');
+  }
+
+  .title {
+    margin-bottom: 20px;
+    p {
+      font-size: 24px;
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 5px;
+    }
+
+    span {
+      font-family: Playball;
+      font-size: 18px;
+      text-align: center;
+      color: #ffffff;
+    }
+  }
+
+  .desc {
+    font-size: 18px;
+    line-height: 1.67;
+    letter-spacing: 1.8px;
+    text-align: left;
+    color: #ffffff;
+    width: 740px;
+    margin: 0 auto;
+  }
+}
+
+.container {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+.dialog {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+  &.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .close {
+    cursor: pointer;
+    position: absolute;
+    top: -70px;
+    right: -70px;
+    z-index: 2;
+  }
+
+  .detail {
+    width: 600px;
+  }
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -107,13 +288,13 @@ hr {
     height: 100vh;
   }
 
-  .slide {
-    width: 810px;
+  .bg-img {
+    height: 300px;
   }
 
-  .content {
-    width: 420px;
-    margin-right: 10px;
+  .container {
+    width: 100vw;
+    margin: 0 auto;
   }
 }
 
@@ -123,49 +304,19 @@ hr {
   .container {
     width: 100vw;
     margin: 0 auto;
-    margin-top: 80px;
-    margin-bottom: 50px;
   }
 
-  .title {
-    font-size: 30px;
-    font-weight: bold;
-    line-height: 1.2;
-    text-align: left;
-    color: #231916;
-    margin-bottom: 25px;
-  }
-
-  .desc {
-    font-size: 20px;
-    line-height: 1.5;
-    letter-spacing: -0.1px;
-    text-align: left;
-    color: #595857;
-  }
-
-  .circle {
-    position: absolute;
-    right: -10%;
-    top: 20%;
-  }
-
-  .slide {
-    width: 565px;
-
-    .btn-group {
-      width: 95%;
-      bottom: 50%;
-
-      img {
-        width: 20px;
-      }
+  .block {
+    &.b2,
+    &.b3 {
+      background-position: -340px;
+      padding-left: 40px;
     }
-  }
 
-  .content {
-    width: 420px;
-    margin-right: 10px;
+    &.b4 {
+      background-position: 0px;
+      padding-right: 40px;
+    }
   }
 }
 
@@ -173,56 +324,86 @@ hr {
   .container {
     width: 100vw;
     margin: 0 auto;
-    margin-top: 20px;
-    margin-bottom: 0px;
-    flex-direction: column-reverse;
-    flex-wrap: wrap;
+    background: #000;
   }
 
-  .title {
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 1.2;
-    text-align: left;
-    color: #231916;
-    margin-bottom: 25px;
-  }
-
-  .desc {
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: -0.1px;
-    text-align: left;
-    color: #595857;
-  }
-
-  .circle {
-    position: absolute;
-    right: -30%;
-    top: 0%;
-  }
-
-  .slide {
-    width: 100vw;
-    z-index: 2;
-
-    .name {
-      font-size: 16px;
+  .block {
+    height: auto;
+    margin-top: 0;
+    > .title {
+      padding-top: 200px;
     }
 
-    .btn-group {
-      width: 95%;
-      bottom: 50%;
+    .desc {
+      width: 90vw;
+      line-height: 1.5;
+    }
 
-      img {
-        width: 20px;
+    &.b2,
+    &.b3,
+    &.b4 {
+      background-image: none;
+    }
+
+    &.b2 {
+      .content {
+        background-image: url('./s8/mo/1_01.jpg');
+      }
+    }
+
+    &.b3 {
+      .content {
+        background-image: url('./s8/mo/2_01.jpg');
+      }
+    }
+
+    &.b4 {
+      .content {
+        background-image: url('./s8/mo/3_01.jpg');
+      }
+    }
+
+    .content {
+      width: 100vw;
+      padding-left: 5vw;
+      background-size: cover;
+      height: calc(100vw * (445 / 750));
+      align-items: flex-end;
+      padding-bottom: 30px;
+
+      &.right {
+        justify-content: flex-start;
+      }
+
+      .label {
+        font-size: 14px;
+        margin-bottom: 7px;
+      }
+
+      .title {
+        font-size: 30px;
+        margin-bottom: 7px;
+      }
+
+      .subtitle {
+        font-size: 14px;
+        margin-bottom: 7px;
       }
     }
   }
 
-  .content {
-    width: 100vw;
-    padding: 40px 5% 20px 10%;
+  .slide {
+    .name {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      top: 10px;
+      font-size: 17px;
+      color: #fff;
+      text-shadow: 0 1px 2px #000;
+      letter-spacing: 2px;
+    }
   }
 }
 </style>
@@ -233,61 +414,80 @@ import { isMobile } from '@/utils'
 
 import slider from '@/mixins/slider.js'
 export default {
-  name: 'section4',
+  name: 'section8',
   mixins: [slider],
 
-  methods: {},
+  methods: {
+    showDialog(slide) {
+      this.currentDialogImg = slide.src
+      this.isDialogShow = true
+    },
+  },
 
   data() {
     return {
       isMobile,
-      slideList: [
+      slideIndex1: 0,
+      slideList1: [
         {
-          src: require('./s8/1.jpg'),
-          name: '二高實景',
-          desc: '．北二高 一下就到<br />入籍三峽，最輕近的一回',
+          title: '泰禾基河路',
+          src: require('./s8/泰禾基河路.jpg'),
         },
         {
-          src: require('./s8/2.jpg'),
-          name: '北大實景',
-          desc: '．台北大學 學森活<br />大安公園2倍大，天龍國也讚嘆',
+          title: '奧斯卡仁愛路',
+          src: require('./s8/奧斯卡仁愛路.jpg'),
         },
         {
-          src: require('./s8/3.jpg'),
-          name: '北大實景',
-          desc: '．台北大學 學森活<br />大安公園2倍大，天龍國也讚嘆',
+          title: '花蓮洄瀾灣',
+          src: require('./s8/花蓮洄瀾灣.jpg'),
         },
         {
-          src: require('./s8/4.jpg'),
-          name: '三峽老街實景',
-          desc: '．三峽老街 品人文<br />想逛就來去，免跟遊客擠',
-        },
-        {
-          src: require('./s8/5.jpg'),
-          name: '情境示意圖<br />公車站實景',
-          desc: '．三鶯捷運 Ready Go<br />建設看得見！ 2023就通車',
-        },
-        {
-          src: require('./s8/6.jpg'),
-          name: '情境示意圖<br />公車站實景',
-          desc: '．三鶯捷運 Ready Go<br />建設看得見！ 2023就通車',
-        },
-        {
-          src: require('./s8/7.jpg'),
-          name: '公園實景',
-          desc: '．河濱公園 狗狗go<br />揮汗壘球場，河堤步道草原毛孩天堂',
-        },
-        {
-          src: require('./s8/8.jpg'),
-          name: '情境示意圖<br />恩主公醫院實景',
-          desc: '．看顧全家 恩主公<br />恩主公醫院，守護全家無後顧之憂',
-        },
-        {
-          src: require('./s8/9.jpg'),
-          name: '情境示意圖<br />恩主公醫院實景',
-          desc: '．看顧全家 恩主公<br />恩主公醫院，守護全家無後顧之憂',
+          title: '鄉林中港路',
+          src: require('./s8/鄉林中港路.jpg'),
         },
       ],
+
+      slideIndex2: 0,
+      slideList2: [
+        {
+          title: '冠德遠見',
+          src: require('./s8/冠德遠見.jpg'),
+        },
+        {
+          title: '草山清境',
+          src: require('./s8/草山清境.jpg'),
+        },
+        {
+          title: '麗寶芙蓉匯',
+          src: require('./s8/麗寶芙蓉匯.jpg'),
+        },
+        {
+          title: '麗寶雙璽',
+          src: require('./s8/麗寶雙璽.jpg'),
+        },
+      ],
+
+      slideIndex3: 0,
+      slideList3: [
+        {
+          title: '宏盛帝寶',
+          src: require('./s8/宏盛帝寶.jpg'),
+        },
+        {
+          title: '寶徠花園',
+          src: require('./s8/寶徠花園.jpg'),
+        },
+        {
+          title: '冠德遠見',
+          src: require('./s8/冠德遠見.jpg'),
+        },
+        {
+          title: '慕夏四季',
+          src: require('./s8/慕夏四季.jpg'),
+        },
+      ],
+      currentDialogImg: '',
+      isDialogShow: false,
     }
   },
 }

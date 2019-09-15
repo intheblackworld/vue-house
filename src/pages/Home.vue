@@ -22,10 +22,29 @@
     <div id="section6">
       <Section6 />
     </div>
+    <div id="section7">
+      <Section7 />
+    </div>
+    <div id="section8">
+      <Section8 />
+    </div>
+    <div id="section9">
+      <Section9 />
+    </div>
+    <div id="section10">
+      <Section10 />
+    </div>
+    <div id="section11">
+      <Section11 />
+    </div>
     <ContactSection />
     <MobileNav />
   </div>
 </template>
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Playball&display=swap');
+</style>
 
 <script>
 // @ is an alias to /src
@@ -40,8 +59,13 @@ import Section1 from '@/projects/jh/Section1.vue'
 import Section2 from '@/projects/jh/Section2.vue'
 import Section3 from '@/projects/jh/Section3.vue'
 import Section4 from '@/projects/jh/Section4.vue'
-import Section5 from '@/projects/cj/Section5.vue'
-import Section6 from '@/projects/cj/Section6.vue'
+import Section5 from '@/projects/jh/Section5.vue'
+import Section6 from '@/projects/jh/Section6.vue'
+import Section7 from '@/projects/jh/Section7.vue'
+import Section8 from '@/projects/jh/Section8.vue'
+import Section9 from '@/projects/jh/Section9.vue'
+import Section10 from '@/projects/jh/Section10.vue'
+import Section11 from '@/projects/jh/Section11.vue'
 
 export default {
   name: 'home',
@@ -58,6 +82,12 @@ export default {
     Section4,
     Section5,
     Section6,
+    Section7,
+    Section8,
+    Section9,
+    Section10,
+    Section11,
+
   },
 
   data() {

@@ -34,7 +34,6 @@
 
 <style lang="scss" scoped>
 .bg {
-  background-color: #fff;
   position: relative;
   overflow: hidden;
   position: relative;
@@ -80,7 +79,8 @@
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .bg {
+  .fullscreen {
+    height: auto;
   }
 }
 

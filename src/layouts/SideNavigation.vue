@@ -2,7 +2,7 @@
   <div class="sideNav">
     <div class="nav relative">
       <div class="menu" @click="toggleSidebar">
-        <img v-if="isOpen" src="@/assets/img/close.png" class="close" alt />
+        <img v-if="isOpen" src="@/projects/jh/s4/close.png" class="close" alt />
         <img v-else src="@/assets/img/menu-btn.png" alt />
       </div>
       <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />

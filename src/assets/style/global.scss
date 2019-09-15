@@ -14,9 +14,9 @@ html,
 body {
   background: $bg !important;
   overflow-x: hidden;
-  // *::-webkit-scrollbar {
-  //   display: none;
-  // }
+  *::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 #app {
@@ -33,6 +33,9 @@ body {
   &.no-padding-top {
     padding-top: 0;
   }
+
+  background-color: #3c2d2e;
+  background-image: url('../../projects/jh/generic_bg.png');
 }
 
 .fullscreen {
@@ -185,6 +188,43 @@ img[lazy='loaded'] {
   opacity: 1;
 }
 
+// custom jh title
+.title-block {
+  width: 369px;
+  height: 160px;
+  background-image: url('../../projects/jh/title.png');
+  background-size: 100%;
+  margin: 0 auto;
+  margin-bottom: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .title {
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 0.88;
+    text-align: center;
+    color: #ffffff;
+    width: 100%;
+  }
+
+  .subtitle {
+    white-space: nowrap;
+    font-family: Playball;
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.2;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    width: 100%;
+  }
+}
+
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -285,6 +325,9 @@ img[lazy='loaded'] {
     &.no-padding-top {
       padding-top: 0;
     }
+
+    background-color: #3c2d2e;
+    background-image: url('../../projects/jh/generic_bg_m.png');
   }
 
   .col-mobile-1 {
@@ -347,5 +390,23 @@ img[lazy='loaded'] {
 
   .visible-mobile {
     display: block !important;
+  }
+
+
+  // jh custom title
+  .title-block {
+    width: 369px;
+    height: 160px;
+    align-content: center;
+    margin-bottom: 0px;
+
+    .title {
+      font-size: 25px;
+    }
+
+    .subtitle {
+      font-size: 12px;
+      margin-top: 30px;
+    }
   }
 }
