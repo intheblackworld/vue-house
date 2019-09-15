@@ -37,6 +37,7 @@
   width: 980px;
   margin: 0 auto;
   text-align: center;
+  padding-bottom: 130px;
 
   .title {
     width: 340px;
@@ -76,10 +77,13 @@
 
     .slide-content {
       position: absolute;
-      bottom: 30px;
+      bottom: -134px;
+      margin-left: 73px;
+      width: 810px;
+
       .slide-title {
         padding: 15px 20px;
-        text-align: center;
+        text-align: left;
         background: #2b466f;
         color: #fff;
         font-size: 24px;
@@ -88,13 +92,13 @@
       }
 
       .slide-desc {
+        width: 810px;
         padding: 15px 20px;
-        padding-top: 50px;
+        padding-top: 30px;
         text-align: left;
         color: #1a2739;
         background-color: #9ca5b2;
         font-size: 18px;
-        transform: translate(30px, -30px);
       }
     }
   }
@@ -227,22 +231,25 @@
 
       .btn-group {
         width: 180px;
-        bottom: 0px;
+        bottom: -80px;
         display: flex;
       }
 
       .slide-content {
         position: absolute;
-        bottom: -100px;
+        bottom: -50px;
+        width: 100vw;
+        margin-left: 0;
         .slide-title {
+          width: 100vw;
           padding: 10px 15px;
-          text-align: center;
+          text-align: left;
           background: #2b466f;
           color: #fff;
           font-size: 18px;
           position: relative;
           z-index: 1;
-          margin: 0 10%;
+          margin: 0;
         }
 
         .slide-desc {

@@ -5,17 +5,16 @@
       <div class="flex row flex-jc mb-20">
         <div class="text">
           <h3 v-scroll-reveal.reset="$fadeInUp()" class="title flex-c mb-20">翻轉五股</h3>
-          <h3 v-scroll-reveal.reset="isMobile ? $fadeInUp(400) : $fadeInUp()" class="sub-title ml-100">五股新未來 繁華乍現</h3>
-          <p v-scroll-reveal.reset="isMobile ? $fadeInUp(400) : $fadeInUp()" class="small-title ml-100">30年城市演進觀點</p>
 
-          <h3 v-scroll-reveal.reset="isMobile ? $fadeInUp(400) : $fadeInUp()" class="special-title ml-100">五股新市鎮計劃</h3>
+          <h3 v-scroll-reveal.reset="isMobile ? $fadeInUp(0) : $fadeInUp()" class="special-title ml-100">五股新未來 繁華乍現</h3>
+          <h3 v-scroll-reveal.reset="isMobile ? $fadeInUp(400) : $fadeInUp()" class="sub-title ml-100">五股新市鎮計畫</h3>
           <p v-scroll-reveal.reset="isMobile ? $fadeInUp(400) : $fadeInUp()" class="desc ml-100">
             五股新市鎮朝向南港、新店等各城市
             <br />開發模式。結合產業升級，改變環境
             <br />生態，迎向五股城市新風貌
           </p>
         </div>
-        <img v-scroll-reveal.reset="isMobile ? $fadeInLeft(400) : $fadeInUp()" class="img1" src="./s3_img1.png" alt="心天畝的圖片" />
+        <img v-scroll-reveal.reset="isMobile ? $fadeInLeft(400) : $fadeInUp()" class="img1" src="./s3_img1.jpg" alt="心天畝的圖片" />
       </div>
 
       <div class="flex row flex-c mb-90">

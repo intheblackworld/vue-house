@@ -18,10 +18,6 @@
               <br />20分鐘大台北生活圈
             </h3>
             <hr />
-            <p>
-              南港從煙囪小鎮，經過半世紀的粹練，轉變為
-              <br />科技軟體資訊城市與金融中心
-            </p>
           </div>
           <div class="item">
             <strong>中山高．汐五高．五楊高</strong>
@@ -38,17 +34,11 @@
           </div>
         </div>
       </div>
-      <h3
+      <!-- <h3
         class="gold-title"
         v-scroll-reveal.reset="!isMobile ? $fadeInUp(900) : $fadeInUp()"
-      >五股交通大樞紐</h3>
+      >五股交通大樞紐</h3> -->
       <div class="flex row small flex-c wrap">
-        <img
-          v-scroll-reveal.reset="!isMobile ? $fadeInRight(900) : $fadeInUp()"
-          class="map"
-          src="./s4_map.png"
-          alt
-        />
         <div
           class="slide relative"
           v-scroll-reveal.reset="!isMobile ? $fadeInLeft(900) : $fadeInUp()"
@@ -64,6 +54,7 @@
             <img @click="addIndex" src="./small_left_btn.png" alt="心天畝的圖片" />
             <img @click="decIndex" src="./small_right_btn.png" alt="心天畝的圖片" />
           </div>
+          <h3 class="name">{{slideList[slideIndex].name}}</h3>
         </div>
       </div>
     </div>
@@ -147,17 +138,30 @@
     margin-right: 55px;
   }
 
+
+  .small {
+    padding-bottom: 80px;
+  }
   .slide {
-    width: 460px;
-    height: 360px;
+    width: 1090px;
+    height: 650px;
 
     .slide-img {
-      width: 460px;
+      width: 1090px;
     }
 
     .btn-group {
       width: 280px;
-      bottom: 10px;
+      bottom: -50px;
+    }
+
+    .name {
+      font-size: 18px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      bottom: -45px;
     }
   }
 }
@@ -319,8 +323,12 @@
       }
 
       .btn-group {
-        width: 180px;
+        width: 280px;
         bottom: 0px;
+      }
+
+      .name {
+        bottom: 5px;
       }
     }
   }
@@ -349,10 +357,20 @@ export default {
       isMobile,
       slideList: [
         {
-          src: require('./s4_item1.png'),
+          src: require('./s4_item1.jpg'),
+          name: '五股交通大樞紐'
         },
         {
-          src: require('./s4_item2.png'),
+          src: require('./s4_item2.jpg'),
+          name: '台北站前商圈'
+        },
+        {
+          src: require('./s4_item3.jpg'),
+          name: '大直美麗華商圈'
+        },
+        {
+          src: require('./s4_item4.jpg'),
+          name: '信義商圈'
         },
       ],
     }
