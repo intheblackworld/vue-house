@@ -20,7 +20,7 @@
       <div class="flex row flex-c mb-90">
         <img class="img2" v-scroll-reveal.reset="isMobile ? $fadeInRight(400) : $fadeInUp()" src="./s3_img2.png" alt="心天畝的圖片" />
         <div class="text" v-scroll-reveal.reset="isMobile ? $fadeInUp(400) : $fadeInUp()">
-          <h3 class="special-title">五股泰山輕軌計劃</h3>
+          <h3 class="sub-title">五股泰山輕軌計劃</h3>
           <p class="desc">
             捷運開發帶動資產上漲，看準輕軌潛
             <br />力。跟進輕軌五泰線，率先卡位捷運
@@ -31,7 +31,7 @@
 
       <div class="flex row flex-c" v-if="!isMobile">
         <div class="text" v-scroll-reveal.reset="isMobile ? $fadeInUp(400) : $fadeInUp()">
-          <h3 class="special-title no-border mb-40">
+          <h3 class="sub-title no-border mb-40">
             城市蛻變有其脈絡可循
             <br />沿著軌跡遇見五股新未來
           </h3>
@@ -53,7 +53,7 @@
       <div class="flex row flex-c" v-if="isMobile">
         <img v-scroll-reveal.reset="isMobile ? $fadeInLeft(400) : $fadeInUp()" class="img3" src="./s3_img3.png" alt="心天畝的圖片" />
         <div class="text" v-scroll-reveal.reset="isMobile ? $fadeInUp(400) : $fadeInUp()">
-          <h3 class="special-title no-border mb-40">
+          <h3 class="sub-title no-border mb-40">
             城市蛻變有其脈絡可循
             <br />沿著軌跡遇見五股新未來
           </h3>
@@ -129,6 +129,7 @@
   .sub-title {
     font-size: 28px;
     color: #2b466f;
+    margin-top: 20px;
     margin-bottom: 10px;
   }
 
@@ -151,9 +152,10 @@
   }
 
   .label-title {
-    font-size: 24px;
+    font-size: 21px;
     color: #005b96;
     padding-left: 10px;
+    margin-top: 30px;
     border-left: 10px solid #999;
   }
 
