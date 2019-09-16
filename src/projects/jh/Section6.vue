@@ -66,7 +66,9 @@
 
 .slide {
   width: 100vw;
-  height: 100%;
+  .slide-img {
+    height: 100%;
+  }
 }
 
 .text {

@@ -36,6 +36,9 @@ body {
 
   background-color: #3c2d2e;
   background-image: url('../../projects/jh/generic_bg.png');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
 }
 
 .fullscreen {
@@ -391,7 +394,6 @@ img[lazy='loaded'] {
   .visible-mobile {
     display: block !important;
   }
-
 
   // jh custom title
   .title-block {

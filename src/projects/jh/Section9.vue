@@ -39,7 +39,6 @@
 
 <style lang="scss" scoped>
 .bg {
-  background-color: #3c2d2e;
   position: relative;
   overflow: hidden;
   position: relative;

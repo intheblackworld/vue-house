@@ -13,8 +13,10 @@
           <div class="subtitle">About Symphony Newtown</div>
         </div>
         <div class="container">
-          <img src="./s4/map1.png" alt @click="showDialog(1)" />
-          <img src="./s4/map2.png" alt @click="showDialog(2)" />
+          <img src="./s4/map1.png" alt @click="showDialog(1)" v-if="!isMobile" />
+          <img src="./s4/map2.png" alt @click="showDialog(2)" v-if="!isMobile" />
+          <img src="./s4/map1_m.png" alt @click="showDialog(1)" v-if="isMobile" />
+          <img src="./s4/map2_m.png" alt @click="showDialog(2)" v-if="isMobile" />
         </div>
       </div>
     </div>
@@ -121,23 +123,34 @@
     align-items: center;
     justify-content: space-between;
     img {
-      width: 50vw;
+      width: 49vw;
+      border: 1px solid #e6b048;
+
+      &:nth-child(1) {
+        border-left: none;
+      }
+
+      &:nth-child(2) {
+        border-right: none;
+      }
       // height: 300px;
       cursor: pointer;
     }
   }
 
   .map-detail {
-    width: 100vw;
+    width: auto;
+    height: 80vh;
   }
 
   .dialog {
+    z-index: 10;
     .close {
       cursor: pointer;
       position: absolute;
-      width: 50px;
-      top: -70px;
-      right: 0px;
+      width: 40px;
+      top: 0px;
+      right: -70px;
       z-index: 2;
     }
   }
@@ -156,8 +169,8 @@ export default {
       isMobile,
       isDialogShow: false,
       mapSrc: '',
-      mapSrc1: require('./s4/maptxt1.png'),
-      mapSrc2: require('./s4/maptxt2.png'),
+      mapSrc1: isMobile ? require('./s4/mo_map1.png') : require('./s4/maptxt1.png'),
+      mapSrc2: isMobile ? require('./s4/mo_map2.png') : require('./s4/maptxt2.png'),
     }
   },
 

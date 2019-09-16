@@ -20,6 +20,7 @@
           <div class="subtitle">Big News</div>
         </div>
         <div class="container">
+          <div class="mask" v-if="!isMobile"></div>
           <swiper :options="swiperOption" ref="mySwiper">
             <swiper-slide
               v-for="(slide, index) in slideList"
@@ -68,12 +69,35 @@
   justify-content: center;
 }
 
+.swiper-button-prev,
+  .swiper-container-rtl .swiper-button-next,
+  .swiper-button-next,
+  .swiper-container-rtl .swiper-button-prev {
+    opacity: 0;
+
+    img {
+      width: 25px;
+    }
+  }
+
 .container {
   width: 90vw;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  .mask {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 10;
+    opacity: 0;
+  }
 
   .item {
     width: 20%;
@@ -246,6 +270,7 @@ export default {
         centeredSlides: true,
         spaceBetween: isTablet ? 20 : 30,
         slidesPerColumn: isMobile ? 1 : 2,
+
         // autoplay: {
         //   delay: 2500,
         //   disableOnInteraction: false,

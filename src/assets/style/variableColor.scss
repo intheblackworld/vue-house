@@ -7,7 +7,7 @@ $nav_btn_color: #fff;
 $nav_link_color: #fff;
 $nav_link_subtitle_color: #fff;
 $nav_link_hover_color: #fff;
-$nav_link_hover_bg: #fff;
+$nav_link_hover_bg: url('~@/assets/img/menu_hover.png');
 
 /* loading */
 $loading_bg_color: #fff;
@@ -48,13 +48,13 @@ $order_submit_color: #000 !important;
 $order_sumbit_disable_bg: rgba(0, 163, 152, .4) !important;
 
 // contactInfo
-$contact_bg: #fff;
+$contact_bg: url('~@/assets/img/contact-bg.png');
 $contact_shadow: 0 0 80px 0 rgba(0, 0, 0, 0.2);
 
 $contact_btn_border: 0 0 0px 1px #c0802e;
 $contact_btn_color: #333;
 $contact_btn_icon: #c0802e;
-$contact_btn_bg: transparent;
+$contact_btn_bg: #fff;
 $contact_btn_hover_color: #fff;
 $contact_btn_hover_icon: #fff;
 $contact_btn_hover_bg: #c0802e !important;

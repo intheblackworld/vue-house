@@ -142,7 +142,9 @@ export default {
 
     &:hover {
       color: $nav_link_hover_color;
-      // background: $nav_link_hover_bg;
+      background: $nav_link_hover_bg;
+      background-position: center;
+      background-size: cover;
     }
   }
 
@@ -257,18 +259,16 @@ export default {
   .menu {
     display: block;
     position: fixed;
-    right: 30px;
-    top: 20px;
-    width: 40px;
+    right: 0px;
+    top: 0px;
+    width: 60px;
 
     img {
       width: 100%;
-      margin-right: -30px;
     }
 
     .close {
       width: 40px;
-      margin-right: -30px;
     }
 
     svg {

@@ -26,6 +26,13 @@
     />
     <div class="bg fullscreen">
       <Map :bgSrc="bgSrc">
+        <img
+          src="./s2/light.png"
+          alt
+          class="absolute light"
+          data-aos="scale-bottom"
+          data-aos-delay="1200"
+        />
         <img src="./s2/frame.png" alt class="frame" />
       </Map>
     </div>
@@ -68,6 +75,15 @@
   top: -156px;
   height: calc(100vh * (270 / 1080));
   z-index: 2;
+}
+
+.light {
+  width: calc(100vw * (120 / 1920));
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 50%;
+  margin-top: calc(-100vh * (250 / 1080));
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -114,6 +130,10 @@
     top: -90px;
     height: auto;
     z-index: 12;
+  }
+
+  .light {
+    display: none;
   }
 }
 </style>
