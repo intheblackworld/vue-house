@@ -153,6 +153,7 @@
     .btn-group {
       width: 280px;
       bottom: -50px;
+      z-index: 5;
     }
 
     .name {

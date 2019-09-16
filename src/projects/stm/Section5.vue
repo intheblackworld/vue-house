@@ -77,7 +77,7 @@
 
     .slide-content {
       position: absolute;
-      bottom: -134px;
+      bottom: -119px;
       margin-left: 73px;
       width: 810px;
 
@@ -94,8 +94,9 @@
       .slide-desc {
         width: 810px;
         padding: 15px 20px;
-        padding-top: 30px;
+        // padding-top: 30px;
         text-align: left;
+        line-height: 1.3;
         color: #1a2739;
         background-color: #9ca5b2;
         font-size: 18px;
