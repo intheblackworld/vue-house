@@ -47,6 +47,9 @@
   </div>
 </template>
 <style lang="scss" scoped>
+.bg {
+  padding-top: calc(100vw * (220 / 1920));
+}
 .box {
   width: calc(100vw * (1530 / 1920));
   height: calc(100vw * (788 / 1920));
