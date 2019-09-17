@@ -40,7 +40,7 @@
         </div>
       </div>
     </div>
-    <div class="img-2"></div> 
+    <img src="./s7_img_2.png" alt="" class="img-2">
   </div>
 </template>
 <style lang="scss" scoped>
@@ -65,6 +65,7 @@
 .content {
   display: flex;
   width: 80%;
+  max-width: 1250px;
   height: 70%;
 }
 
@@ -76,13 +77,13 @@
 }
 
 .img-2 {
-  background-image: url('./s7_img_2.png');
-  height: 300px;
+  height: auto;
   position: absolute;
   width: 100%;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   bottom: 5%;
+  left: 0;
 }
 
 .text-area-bg {

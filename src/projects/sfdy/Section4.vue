@@ -47,6 +47,7 @@
 .content {
   display: flex;
   width: 80%;
+  max-width: 1250px;
   height: 70%;
 }
 

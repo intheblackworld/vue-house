@@ -77,6 +77,7 @@
   display: flex;
   display: flex;
   width: 80%;
+  max-width: 1250px;
   height: 70%;
 
   .text-area-bg {

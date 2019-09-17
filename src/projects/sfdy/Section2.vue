@@ -15,6 +15,7 @@
 <style lang="scss" scoped>
 .bg {
   background-image: url('./s2_bg.jpg');
+  background-attachment: fixed;
   background-size: cover;
   background-position: center;
   height: 100vh;

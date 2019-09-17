@@ -65,6 +65,7 @@
   display: flex;
   display: flex;
   width: 80%;
+  max-width: 1250px;
   height: 70%;
   // width: 980px;
   // margin: 0 auto;
