@@ -261,7 +261,7 @@ export default {
     position: fixed;
     right: 0px;
     top: 0px;
-    width: 60px;
+    width: 100px;
 
     img {
       width: 100%;
@@ -269,6 +269,7 @@ export default {
 
     .close {
       width: 40px;
+      margin-top: 20px;
     }
 
     svg {
