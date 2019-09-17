@@ -2,7 +2,7 @@
   <div class="section1">
     <div class="bg fullscreen">
       <div :class="`music-btn ${isPlay ? 'is-play' : ''}`" @click="playMusic"></div>
-      <audio controls style="display: none" ref="audio" loop="loop">
+      <audio controls style="display: none" ref="audio" loop="loop" autoplay>
         <source src="./music.mp3" type="audio/mpeg" />
       </audio>
       <div class="main">
@@ -223,7 +223,7 @@ export default {
       isMobile,
       dog1: true,
       dog2: false,
-      isPlay: false,
+      isPlay: true,
     }
   },
 

@@ -171,8 +171,13 @@
   }
 }
 
+.fullscreen {
+  min-height: 900px;
+}
+
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
+    min-height: 800px;
     height: auto;
   }
 
@@ -190,6 +195,7 @@
   }
 
   .fullscreen {
+    min-height: auto;
     height: 100vh;
   }
 
@@ -200,7 +206,8 @@
 }
 
 @media screen and (max-width: 767px) {
-  .bg {
+  .fullscreen {
+    min-height: auto;
   }
 
   .title-block {

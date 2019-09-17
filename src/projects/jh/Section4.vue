@@ -60,7 +60,7 @@
   top: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.8);
-  z-index: 1;
+  z-index: 15;
   &.show {
     display: flex;
     align-items: center;
@@ -149,13 +149,13 @@
   }
 
   .dialog {
-    z-index: 10;
+    z-index: 120;
     .close {
       cursor: pointer;
       position: absolute;
       width: 40px;
-      top: 0px;
-      right: -70px;
+      top: -40px;
+    right: -46px;
       z-index: 2;
     }
   }
