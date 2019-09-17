@@ -23,6 +23,6 @@ export default {
   gtmCode: ['KVP9LCJ'], // 可放置多個
   order: {
     title: '我要邁向悅成功',
-    subTitle: '留下您的大名、電話、進行預賞屋，就可以得到悦成功限量好禮!'
+    subTitle: '留下您的大名、電話、進行預賞屋，就可以得到悅成功限量好禮!'
   }
 }
