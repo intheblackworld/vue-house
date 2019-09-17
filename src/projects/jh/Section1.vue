@@ -117,18 +117,18 @@
 }
 
 .music-btn {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   background-image: url('./s1/music-btn.png');
   background-size: cover;
-  right: -10px;
-  top: 80px;
+  right: 30px;
+  top: 100px;
   cursor: pointer;
   position: fixed;
   z-index: 3;
 
   &.is-play {
-    animation: jump .5s linear alternate infinite;;
+    animation: jump 0.5s linear alternate infinite;
   }
 }
 
@@ -197,6 +197,15 @@
 
   .main > img.clock {
     width: 200%;
+  }
+
+  .music-btn {
+    width: 120px;
+    height: 120px;
+    background-image: url('./s1/music-btn.png');
+    background-size: cover;
+    right: -10px;
+    top: 80px;
   }
 }
 </style>

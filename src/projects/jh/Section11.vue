@@ -20,8 +20,8 @@
           <div class="subtitle">Big News</div>
         </div>
         <div class="container">
-          <div class="mask" v-if="!isMobile"></div>
-          <swiper :options="swiperOption" ref="mySwiper">
+          <!-- <div class="mask" v-if="!isMobile"></div> -->
+          <swiper :options="swiperOption" ref="mySwiper" swiper-no-swiping>
             <swiper-slide
               v-for="(slide, index) in slideList"
               :index="index"
@@ -70,15 +70,15 @@
 }
 
 .swiper-button-prev,
-  .swiper-container-rtl .swiper-button-next,
-  .swiper-button-next,
-  .swiper-container-rtl .swiper-button-prev {
-    opacity: 0;
+.swiper-container-rtl .swiper-button-next,
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+  opacity: 0;
 
-    img {
-      width: 25px;
-    }
+  img {
+    width: 25px;
   }
+}
 
 .container {
   width: 90vw;
@@ -104,8 +104,14 @@
     position: relative;
     cursor: pointer;
     padding: 3px;
-    border: 1px solid #dfae2e;
+    border: 1px solid #e6b048 !important;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      border-color: #fff !important;
+    }
     background: #000;
+    z-index: 11;
 
     img {
       width: 100%;
@@ -270,6 +276,8 @@ export default {
         centeredSlides: true,
         spaceBetween: isTablet ? 20 : 30,
         slidesPerColumn: isMobile ? 1 : 2,
+        allowSlidePrev: isMobile ? true : false,
+        allowSlideNext: isMobile ? true : false,
 
         // autoplay: {
         //   delay: 2500,

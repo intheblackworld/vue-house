@@ -67,6 +67,13 @@
 }
 
 .video-slide {
+  border: 1px solid #e6b048 !important;
+  cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+    border-color: #fff !important;
+  }
+  
   .play-btn {
     width: 125px;
     cursor: pointer;
@@ -77,6 +84,9 @@
     &.hide {
       display: none;
     }
+  }
+
+  .video {
   }
 
   .video-img {
@@ -294,7 +304,7 @@ export default {
     onAfterSlideChange(index) {
       this.currentIndex = index
       this.pauseAll()
-    }
+    },
   },
 }
 </script>

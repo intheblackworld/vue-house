@@ -41,7 +41,12 @@
   justify-content: space-between;
   img {
     width: 700px;
+    border: 1px solid #e6b048 !important;
     cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      border-color: #fff !important;
+    }
   }
 }
 
@@ -169,8 +174,12 @@ export default {
       isMobile,
       isDialogShow: false,
       mapSrc: '',
-      mapSrc1: isMobile ? require('./s4/mo_map1.png') : require('./s4/maptxt1.png'),
-      mapSrc2: isMobile ? require('./s4/mo_map2.png') : require('./s4/maptxt2.png'),
+      mapSrc1: isMobile
+        ? require('./s4/mo_map1.png')
+        : require('./s4/maptxt1.png'),
+      mapSrc2: isMobile
+        ? require('./s4/mo_map2.png')
+        : require('./s4/maptxt2.png'),
     }
   },
 

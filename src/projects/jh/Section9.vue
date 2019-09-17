@@ -61,7 +61,12 @@
     img {
       width: 100%;
       margin: 10px 0;
+      border: 1px solid #e6b048 !important;
       cursor: pointer;
+      transition: all 0.3s;
+      &:hover {
+        border-color: #fff !important;
+      }
     }
 
     .title {

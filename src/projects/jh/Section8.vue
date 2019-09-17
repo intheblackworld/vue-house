@@ -190,6 +190,12 @@
     cursor: pointer;
     img {
       width: 205px;
+      border: 1px solid #e6b048 !important;
+      cursor: pointer;
+      transition: all 0.3s;
+      &:hover {
+        border-color: #fff !important;
+      }
     }
 
     .item-title {
