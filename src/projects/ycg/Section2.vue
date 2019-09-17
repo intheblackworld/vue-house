@@ -1,7 +1,7 @@
 <template>
   <div class="section2">
     <div class="bg fullscreen relative">
-      <div class="container">
+      <div class="container" v-if="!isMobile">
         <div class="item">
           <img src="./s2/1.png" alt />
           <h3 class="title">感覺對了，就放手大賺一筆</h3>
@@ -11,6 +11,20 @@
           <h3 class="title">鴻運當頭時，連喝水都能賺！</h3>
         </div>
         <div class="item">
+          <img src="./s2/3.png" alt />
+          <h3 class="title">一兼二顧、又賺又拿別客氣！</h3>
+        </div>
+      </div>
+      <div class="container" v-if="isMobile">
+        <div class="item" data-aos="zoom-out-left" data-aos-duration="600"  data-aos-delay="0">
+          <img src="./s2/1.png" alt />
+          <h3 class="title">感覺對了，就放手大賺一筆</h3>
+        </div>
+        <div class="item" data-aos="zoom-out-right" data-aos-duration="600"  data-aos-delay="400">
+          <img src="./s2/2.png" alt />
+          <h3 class="title">鴻運當頭時，連喝水都能賺！</h3>
+        </div>
+        <div class="item" data-aos="zoom-out-left" data-aos-duration="600"  data-aos-delay="800">
           <img src="./s2/3.png" alt />
           <h3 class="title">一兼二顧、又賺又拿別客氣！</h3>
         </div>
