@@ -61,6 +61,65 @@
     background-size: cover;
   }
 
+  .fullscreen {
+    height: 100vh !important;
+  }
+
+  @keyframes flower {
+  from {
+    transform: skewX(-5deg);
+  }
+  to {
+    transform: skewX(0deg);
+  }
+}
+
+  .img {
+    transform-origin: bottom;
+    object-fit: cover;
+    &:nth-child(1) {
+      animation: flower 2s linear 0s infinite alternate;
+    }
+
+    &:nth-child(2) {
+      animation: flower 5s linear .3s infinite alternate;
+    }
+
+    &:nth-child(3) {
+      animation: flower 4s linear .6s infinite alternate;
+    }
+
+    // &:nth-child(4) {
+    //   animation: flower 2s linear .8s infinite alternate;
+    // }
+
+    &:nth-child(5) {
+      animation: flower 5s linear .5s infinite alternate;
+    }
+
+    &:nth-child(6) {
+      animation: flower 4s linear .5s infinite alternate;
+    }
+    // &:nth-child(7) {
+    //   animation: flower 7s linear .4s infinite alternate;
+    // }
+    // &:nth-child(8) {
+    //   animation: flower 2s linear .2s infinite alternate;
+    // }
+    // &:nth-child(9) {
+    //   animation: flower 3s linear .1s infinite alternate;
+    // }
+    // &:nth-child(10) {
+    //   animation: flower 5s linear 0s infinite alternate;
+    // }
+    &:nth-child(11) {
+      animation: flower 4s linear 0s infinite alternate;
+    }
+    &:nth-child(12) {
+      animation: flower 8s linear .5s infinite alternate;
+    }
+  }
+
 }
 </style>
 

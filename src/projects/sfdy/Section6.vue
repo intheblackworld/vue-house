@@ -130,7 +130,7 @@
     .textbox-text-area {
       margin-right: 0px;
       width: 80%;
-      margin-top: 60px;
+      margin-top: 20%;
       font-size: 16px;
       left: -7%;
       position: relative;

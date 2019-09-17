@@ -176,8 +176,10 @@
 
   .tree {
     background-image: url("./s4_tree_m.png");
+    width: 100vw;
+    height: calc(100vw * (281 / 375));
     bottom: 0%;
-    height: 35%;
+    
     top: 63%;
     right: 0%;
   }

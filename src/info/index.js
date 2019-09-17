@@ -1,11 +1,11 @@
 export default {
   address: '台南市安南區環館路358巷2號',
   googleSrc:
-    'https://www.google.com.tw/maps/place/112%E5%8F%B0%E5%8C%97%E5%B8%82%E5%8C%97%E6%8A%95%E5%8D%80%E4%B8%AD%E5%92%8C%E8%A1%97219-2%E8%99%9F/@25.139388,121.4990573,17z/data=!3m1!4b1!4m5!3m4!1s0x3442ae4f0aa400b1:0x75ca2b2ce485be53!8m2!3d25.139388!4d121.501246?hl=zh-TW&authuser=0',
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14683.644421308198!2d120.2364888!3d23.0637204!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1c3a1f04f9d9984a!2z5ZyL5o-a57-h57-g5qOu5p6X!5e0!3m2!1szh-TW!2stw!4v1568684298341!5m2!1szh-TW!2stw',
   phone: '06-7861788',
   fbLink: 'https://www.facebook.com/jadeforestvilla/',
   fbMessage: 'm.me/jadeforestvilla',
-  googleLink: 'https://goo.gl/maps/xecuraRkoCuUYizeA',
+  googleLink: 'https://goo.gl/maps/8yUfkfkP87hLqZDk7',
   caseName: '幸福大院',
 
   houseInfos: [

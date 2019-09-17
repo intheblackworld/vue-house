@@ -17,7 +17,7 @@
 </template>
 <style lang="scss" scoped>
 .bg {
-  background-image: url("./s3_bg.jpg");
+  background-image: url('./s3_bg.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
@@ -33,7 +33,7 @@
 }
 
 .textbox-img {
-  background-image: url("./s3_textbox.png");
+  background-image: url('./s3_textbox.png');
   background-position: center;
   display: flex;
   justify-content: center;
@@ -109,21 +109,22 @@
 
 @media screen and (max-width: 767px) {
   .bg {
-    background-image: url("./s3_bg.jpg");
+    background-image: url('./s3_bg.jpg');
     background-size: cover;
   }
-  
+
   .textbox-img {
-    background-image: url("./s3_textbox_m.png");
-    height: 60%;
+    background-image: url('./s3_textbox_m.png');
+    width: 100vw;
+    height: calc(100vw * (600 / 800));
     background-size: contain;
     .textbox-text-area {
-      margin-top: 70px;
+      margin-top: calc(100vw * (100 / 800));;
       margin-left: 70px;
-      font-size: 13px;
+      font-size: calc(100vw * (13 / 375));
     }
     .textbox-title {
-      font-size: 20px;
+      font-size: 18px;
       left: 0;
     }
     sapn {
@@ -135,18 +136,18 @@
 
 <script>
 // @ is an alias to /src
-import { isMobile } from "@/utils";
+import { isMobile } from '@/utils'
 export default {
-  name: "section3",
+  name: 'section3',
 
   data() {
     return {
-      isMobile
-    };
+      isMobile,
+    }
   },
 
   methods: {},
 
-  created() {}
-};
+  created() {},
+}
 </script>

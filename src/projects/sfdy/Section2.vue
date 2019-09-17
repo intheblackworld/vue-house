@@ -14,14 +14,14 @@
 </template>
 <style lang="scss" scoped>
 .bg {
-  background-image: url("./s2_bg.jpg");
+  background-image: url('./s2_bg.jpg');
   background-size: cover;
   background-position: center;
   height: 100vh;
 }
 
 .textbox-img {
-  background-image: url("./s2_textbox.png");
+  background-image: url('./s2_textbox.png');
   background-position: center;
   display: flex;
   justify-content: center;
@@ -93,21 +93,25 @@
 
 @media screen and (max-width: 767px) {
   .bg {
-    background-image: url("./s2_bg.jpg");
+    background-image: url('./s2_bg.jpg');
     background-size: cover;
   }
   .textbox-img {
-    background-image: url("./s2_textbox_m.png");
+    background-image: url('./s2_textbox_m.png');
     height: 60%;
     background-size: contain;
     .textbox-text-area {
-      font-size: 15px;
-      margin: 140px;
+      font-size: calc(100vw * (15 / 375));
+      margin-top: auto;
+      margin: auto;
+      width: 68vw;
+      margin-top: 21.5vh;
+      text-align: center;
     }
     .textbox-title {
-      font-size: 27px;
+      font-size: calc(100vw * (24 / 375));
       left: 0;
-      width: 280px;
+      width: 100%;
     }
   }
 }
@@ -115,18 +119,18 @@
 
 <script>
 // @ is an alias to /src
-import { isMobile } from "@/utils";
+import { isMobile } from '@/utils'
 export default {
-  name: "section2",
+  name: 'section2',
 
   data() {
     return {
-      isMobile
-    };
+      isMobile,
+    }
   },
 
   methods: {},
 
-  created() {}
-};
+  created() {},
+}
 </script>
