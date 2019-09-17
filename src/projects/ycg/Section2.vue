@@ -60,30 +60,32 @@
   position: relative;
   background-image: url('./s2/prize.png');
   background-size: cover;
-  transition: all .3s;
+  transition: all .2s;
 
   &:hover {
-    transform: translateY(-10px);
+    img {
+      transform: translateY(-10px);
+    }
   }
 
   &:nth-child(1) {
     margin-top: -100px;
     img {
-      width: calc(100vw * (250 / 1920));
+      width: calc(100vw * (625 / 1920));
     }
   }
 
   &:nth-child(2) {
     margin-top: 50px;
     img {
-      width: calc(100vw * (312 / 1920));
+      width: calc(100vw * (625 / 1920));
     }
   }
 
   &:nth-child(3) {
     margin-top: -100px;
     img {
-      width: calc(100vw * (380 / 1920));
+      width: calc(100vw * (625 / 1920));
     }
   }
 
@@ -111,6 +113,7 @@
   text-align: center;
   color: #d65b00;
   margin: 0 auto;
+  margin-bottom: 30px;
 }
 
 /* 平板尺寸 */
@@ -137,24 +140,21 @@
     &:nth-child(1) {
       margin-top: 0px;
       img {
-        width: 155px;
-        margin-top: -100px;
+        width: 285px;
       }
     }
 
     &:nth-child(2) {
       margin-top: 40px;
       img {
-        margin-top: 30px;
-        width: 223px;
+        width: 285px;
       }
     }
 
     &:nth-child(3) {
       margin-top: 40px;
       img {
-        margin-left: -30px;
-        width: 280px;
+        width: 285px;
       }
     }
 

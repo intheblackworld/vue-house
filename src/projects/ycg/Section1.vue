@@ -1,27 +1,35 @@
 <template>
   <div class="section1">
     <div class="bg relative">
-      <img src="./s1/bg1.jpg" alt class="bg-img" v-if="!isMobile" />
-      <img src="./s1/bg1_b.png" alt class="bg-img" v-if="!isMobile" />
-      <img src="./s1/mobg1.jpg" alt class="bg-img" v-if="isMobile" />
-      <img src="./s1/mobg1_b.png" alt class="bg-img" v-if="isMobile" />
+      <img src="./s1/bg1.jpg" alt class="bg-img" v-if="!isMobile" data-aos="fade"
+        data-aos-delay="0" />
+      <img src="./s1/bg1_b.png" alt class="bg-img" v-if="!isMobile" data-aos="fade"
+        data-aos-delay="0" />
+      <img src="./s1/mobg1.jpg" alt class="bg-img" v-if="isMobile" data-aos="fade"
+        data-aos-delay="0" />
+      <img src="./s1/mobg1_b.png" alt class="bg-img" v-if="isMobile" data-aos="fade"
+        data-aos-delay="0" />
       <div class="content absolute-c">
-        <div class="title flex-jb flex-ac">
+        <div class="title flex-jb flex-ac" data-aos="fade-down"
+        data-aos-delay="300">
           <h3>成功買好房</h3>
           <h3>掌握3大要訣</h3>
         </div>
         <div class="subtitle flex-jb flex-ac">
-          <div class="item relative flex-jb flex-ac">
+          <div class="item relative flex-jb flex-ac" data-aos="fade"
+        data-aos-delay="400">
             <img src="./s1/light.png" alt class="light" />
             <img src="./s1/diamond.png" alt class="diamond" />
             <div>地點</div>
           </div>
-          <div class="item relative flex-jb flex-ac">
+          <div class="item relative flex-jb flex-ac" data-aos="fade"
+        data-aos-delay="600">
             <img src="./s1/light.png" alt class="light" />
             <img src="./s1/diamond.png" alt class="diamond" />
             <div>機能</div>
           </div>
-          <div class="item relative flex-jb flex-ac">
+          <div class="item relative flex-jb flex-ac" data-aos="fade"
+        data-aos-delay="800">
             <img src="./s1/light.png" alt class="light" />
             <img src="./s1/diamond.png" alt class="diamond" />
             <div>增值潛力</div>
@@ -33,9 +41,11 @@
           data-aos-duration="500"
           data-aos="fade"
         >
-          <h3>悅成功</h3>
+          <h3 data-aos="fade"
+        data-aos-delay="1000">悅成功</h3>
           <div class="sub">
-            <div>投資觀點X自住享受</div>
+            <div data-aos="fade"
+        data-aos-delay="1200">投資觀點X自住享受</div>
             <div class="yellow">簽訂{{animatedNumber}}萬起!</div>
           </div>
         </div>
@@ -414,7 +424,6 @@ export default {
   mounted() {
     document.addEventListener('aos:in:ani-number', ({ detail }) => {
       TweenLite.to(this.$data, 1.2, { tweenedNumber: 75 })
-      console.log(123)
     })
   },
 }
