@@ -2,7 +2,7 @@
   <div class="section3">
     <div class="bg relative">
       <div class="box">
-        <h3 class="title">訂簽75萬起，耀升置產族</h3>
+        <h3 class="title">訂簽75萬起，躍升置產族</h3>
         <div class="desc" v-if="!isMobile">
           人生重大成就解鎖!
           <span>悦成功助您輕鬆買房</span>

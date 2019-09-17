@@ -1,7 +1,12 @@
 <template>
   <div class="order-bg">
-    <h3 class="order-title">{{order.title}}</h3>
-    <h3 class="order-subtitle">{{order.subTitle}}</h3>
+    <h3 class="order-title">
+      我要邁向
+      <span>悦</span>成功
+    </h3>
+    <h3 class="order-subtitle">
+      留下您的大名、電話、進行預賞屋，就可以得到<span>悦</span>成功限量好禮!
+    </h3>
     <div class="order">
       <div class="form">
         <div class="group">
@@ -243,7 +248,15 @@ export default {
     margin-bottom: 18px;
     text-align: center;
     color: $order_title_color;
-    font-weight: bold;
+    font-weight: 900;
+
+    span {
+      font-family: 'icomoon', 'Noto Serif TC', serif !important;
+      transform: translateY(12px);
+      display: inline-block;
+      // padding-top: 5px;
+      font-size: calc(100vw * (125 / 1920));
+    }
   }
 
   .order-subtitle {
@@ -251,6 +264,15 @@ export default {
     text-align: center;
     color: $order_subtitle_color;
     margin-bottom: 40px;
+    font-weight: 900;
+
+    span {
+      font-family: 'icomoon', 'Noto Serif TC', serif !important;
+      transform: translateY(1px);
+      display: inline-block;
+      // padding-top: 5px;
+      font-size: 19px;
+    }
   }
 
   .order {
@@ -312,7 +334,7 @@ export default {
 
 .hint {
   color: #545454;
-  font-size: 20px;
+  font-size: 14px;
   text-align: left;
   width: 650px;
   margin: 0 auto;
@@ -392,11 +414,24 @@ export default {
     .order-title {
       margin-top: 10px;
       margin-bottom: 20px;
+
+      span {
+        font-family: 'icomoon', 'Noto Serif TC', serif !important;
+        transform: translateY(3px);
+        display: inline-block;
+        // padding-top: 5px;
+        font-size: calc(100vw * (125 / 1920));
+      }
     }
 
     .order-subtitle {
       // display: none;
       font-size: 12px;
+
+      span {
+        font-size: 11px;
+        transform: translate(0px, .5px);
+      }
     }
     .order {
       width: 95% !important;

@@ -1,35 +1,55 @@
 <template>
   <div class="section1">
     <div class="bg relative">
-      <img src="./s1/bg1.jpg" alt class="bg-img" v-if="!isMobile" data-aos="fade"
-        data-aos-delay="0" />
-      <img src="./s1/bg1_b.png" alt class="bg-img" v-if="!isMobile" data-aos="fade"
-        data-aos-delay="0" />
-      <img src="./s1/mobg1.jpg" alt class="bg-img" v-if="isMobile" data-aos="fade"
-        data-aos-delay="0" />
-      <img src="./s1/mobg1_b.png" alt class="bg-img" v-if="isMobile" data-aos="fade"
-        data-aos-delay="0" />
+      <img
+        src="./s1/bg1.jpg"
+        alt
+        class="bg-img"
+        v-if="!isMobile"
+        data-aos="fade"
+        data-aos-delay="0"
+      />
+      <img
+        src="./s1/bg1_b.png"
+        alt
+        class="bg-img"
+        v-if="!isMobile"
+        data-aos="fade"
+        data-aos-delay="0"
+      />
+      <img
+        src="./s1/mobg1.jpg"
+        alt
+        class="bg-img"
+        v-if="isMobile"
+        data-aos="fade"
+        data-aos-delay="0"
+      />
+      <img
+        src="./s1/mobg1_b.png"
+        alt
+        class="bg-img"
+        v-if="isMobile"
+        data-aos="fade"
+        data-aos-delay="0"
+      />
       <div class="content absolute-c">
-        <div class="title flex-jb flex-ac" data-aos="fade-down"
-        data-aos-delay="300">
+        <div class="title flex-jb flex-ac" data-aos="fade-down" data-aos-delay="300">
           <h3>成功買好房</h3>
           <h3>掌握3大要訣</h3>
         </div>
         <div class="subtitle flex-jb flex-ac">
-          <div class="item relative flex-jb flex-ac" data-aos="fade"
-        data-aos-delay="400">
+          <div class="item relative flex-jb flex-ac" data-aos="fade" data-aos-delay="400">
             <img src="./s1/light.png" alt class="light" />
             <img src="./s1/diamond.png" alt class="diamond" />
             <div>地點</div>
           </div>
-          <div class="item relative flex-jb flex-ac" data-aos="fade"
-        data-aos-delay="600">
+          <div class="item relative flex-jb flex-ac" data-aos="fade" data-aos-delay="600">
             <img src="./s1/light.png" alt class="light" />
             <img src="./s1/diamond.png" alt class="diamond" />
             <div>機能</div>
           </div>
-          <div class="item relative flex-jb flex-ac" data-aos="fade"
-        data-aos-delay="800">
+          <div class="item relative flex-jb flex-ac" data-aos="fade" data-aos-delay="800">
             <img src="./s1/light.png" alt class="light" />
             <img src="./s1/diamond.png" alt class="diamond" />
             <div>增值潛力</div>
@@ -41,12 +61,12 @@
           data-aos-duration="500"
           data-aos="fade"
         >
-          <h3 data-aos="fade"
-        data-aos-delay="1000">悦成功</h3>
+          <h3 data-aos="fade" data-aos-delay="1000">
+            <span>悦</span>成功
+          </h3>
           <div class="sub">
-            <div data-aos="fade"
-        data-aos-delay="1200">投資觀點X自住享受</div>
-            <div class="yellow">簽訂{{animatedNumber}}萬起!</div>
+            <div data-aos="fade" data-aos-delay="1200">投資觀點X自住享受</div>
+            <div class="yellow">訂簽{{animatedNumber}}萬起!</div>
           </div>
         </div>
       </div>
@@ -152,6 +172,14 @@
       letter-spacing: 13px;
       text-align: left;
       color: #ffffff;
+      // font-family: 'icomoon' !important;
+      span {
+        font-family: 'icomoon', 'Noto Serif TC', serif;
+        transform: translateY(5px);
+        display: inline-block;
+        // padding-top: 5px;
+        font-size: 108px;
+      }
     }
 
     .sub {
@@ -367,6 +395,14 @@
         text-align: center;
         color: #ffffff;
         margin-top: 20px;
+
+        span {
+          font-family: 'icomoon', 'Noto Serif TC', serif;
+          transform: translateY(2px);
+          display: inline-block;
+          // padding-top: 5px;
+          font-size: 60px !important;
+        }
       }
 
       .sub {
@@ -391,7 +427,6 @@
         text-align: center;
         color: #ffda43;
         margin-top: 15px;
-
       }
     }
   }
