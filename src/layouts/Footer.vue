@@ -35,13 +35,13 @@
 
 @media screen and (max-width: 767px) {
   .footer {
-    margin-bottom: 63px;
+    margin-bottom: 0px;
   }
 }
 
 @media only screen and (max-width: 767px) {
   .footer {
-    margin-bottom: 63px;
+    margin-bottom: 0px;
   }
 }
 </style>

@@ -41,3 +41,15 @@
     transform: scaleX(1);
   }
 }
+
+
+[data-aos='sky-in'] {
+  opacity: 0;
+  transform: translateY(-100vh);
+  transform-origin: top;
+
+  &.aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
