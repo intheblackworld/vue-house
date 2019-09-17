@@ -1,6 +1,9 @@
 <template>
   <div class="section1">
     <div class="bg fullscreen">
+      <audio controls autoplay style="display: none">
+        <source src="./music.mp3" type="audio/mpeg" />Your browser does not support the audio element.
+      </audio>
       <div class="main">
         <div class="gear">
           <div class="l">
