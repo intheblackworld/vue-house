@@ -2,7 +2,7 @@
   <div class="section1">
     <div class="bg fullscreen">
       <div :class="`music-btn ${isPlay ? 'is-play' : ''}`" @click="playMusic"></div>
-      <audio controls style="display: none" ref="audio">
+      <audio controls style="display: none" ref="audio" loop="loop">
         <source src="./music.mp3" type="audio/mpeg" />
       </audio>
       <div class="main">
