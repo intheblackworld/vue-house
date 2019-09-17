@@ -42,7 +42,7 @@
           data-aos="fade"
         >
           <h3 data-aos="fade"
-        data-aos-delay="1000">悅成功</h3>
+        data-aos-delay="1000">悦成功</h3>
           <div class="sub">
             <div data-aos="fade"
         data-aos-delay="1200">投資觀點X自住享受</div>

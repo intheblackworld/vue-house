@@ -7,7 +7,7 @@ export default {
   fbLink:
     'https://www.facebook.com/悦成功-113518013364142',
   fbMessage: 'https://m.me/113518013364142',
-  caseName: '悅成功',
+  caseName: '悦成功',
 
   houseInfos: [
     ['投資興建', '築禾建設股份有限公司'],
@@ -22,7 +22,7 @@ export default {
 
   gtmCode: ['KVP9LCJ'], // 可放置多個
   order: {
-    title: '我要邁向悅成功',
-    subTitle: '留下您的大名、電話、進行預賞屋，就可以得到悅成功限量好禮!'
+    title: '我要邁向悦成功',
+    subTitle: '留下您的大名、電話、進行預賞屋，就可以得到悦成功限量好禮!'
   }
 }
