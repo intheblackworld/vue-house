@@ -7,20 +7,17 @@
             <div class="text-area-title">
               <h3 class="big">“國揚建設”</h3>
               <h3>用心打造幸福家園</h3>
-            </div>
-              國揚集團是台灣唯一橫跨「建築、百貨、飯店、美食」的企業，國揚建設、漢神百貨、漢來大飯店、漢來美食皆為南台灣品味首選。
-              <br><br>
-              集團不僅持續創造優質品味生活，更以四大領域優勢與專業合力打造台灣「心建築」。
-            </div>
+            </div>國揚集團是台灣唯一橫跨「建築、百貨、飯店、美食」的企業，國揚建設、漢神百貨、漢來大飯店、漢來美食皆為南台灣品味首選。
+            <br />
+            <br />集團不僅持續創造優質品味生活，更以四大領域優勢與專業合力打造台灣「心建築」。
+          </div>
         </div>
         <div class="img-1"></div>
       </div>
     </div>
     <div class="bg fullscreen" v-else>
       <div class="content">
-        <div
-          class="slide relative"
-        >
+        <div class="slide relative">
           <img
             v-for="(slide, index) in slideList"
             :class="`slide-img ${slideIndex === index ? 'active' : ''} img-c`"
@@ -36,16 +33,16 @@
             <div class="text-area-title">
               <h3>“國揚建設”</h3>
               <h3>用心打造幸福家園</h3>
-            </div>
-              國揚集團是台灣唯一橫跨「建築、百貨、飯店、美食」的企業，國揚建設、漢神百貨、漢來大飯店、漢來美食皆為南台灣品味首選。
-              <br><br>
-              集團不僅持續創造優質品味生活，更以四大領域優勢與專業合力打造台灣「心建築」。
-            </div>
+            </div>國揚集團是台灣唯一橫跨「建築、百貨、飯店、美食」的企業，國揚建設、漢神百貨、漢來大飯店、漢來美食皆為南台灣品味首選。
+            <br />
+            <br />集團不僅持續創造優質品味生活，更以四大領域優勢與專業合力打造台灣「心建築」。
+          </div>
         </div>
       </div>
+      <div class="img-3" v-if="isMobile"></div>
     </div>
     <div class="img-2"></div>
-    <div class="img-3"></div>
+    <div class="img-3" v-if="!isMobile"></div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -64,9 +61,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
-
 
 .content {
   display: flex;
@@ -144,28 +139,40 @@
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1280px) {
-
 }
 
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .text-area-bg {
-      width: 240px;
-      .text-area-container {
-        padding: 40px 10px 180px;
-        line-height: 1.3;
-        font-size: 17px;
-        padding: 0;
-      }
+    width: 240px;
+    .text-area-container {
+      padding: 40px 10px 180px;
+      line-height: 1.3;
+      font-size: 17px;
+      padding: 0;
+    }
 
-      .text-area-title {
-            line-height: 1.5;
-        font-size: 25px;
-        .big {
-          font-size: 32px;
-        }
+    .text-area-title {
+      line-height: 1.5;
+      font-size: 25px;
+      .big {
+        font-size: 32px;
       }
     }
+  }
+
+  .tree {
+    top: 0%;
+    // height: calc(100vw * (768 / 1024));
+  }
+
+  .content {
+    height: 440px;
+  }
+
+  .bg {
+    height: calc(100vw * (768 / 1024));
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -173,8 +180,19 @@
     display: block;
   }
   .fullscreen {
+    height: auto !important;
   }
-    .content {
+
+  .img-3 {
+    width: 55vw;
+    height: 51vw;
+    background-image: url('./s9_img_3m.png');
+    position: relative;
+    bottom: auto;
+    top: -80px;
+    left: 13vw;
+  }
+  .content {
     width: 100%;
     display: block;
     .text-area-bg {
@@ -182,6 +200,7 @@
       top: -50px;
       left: 5%;
       position: relative;
+      padding-bottom: 60px;
 
       .text-area-container {
         line-height: 1.2;
@@ -196,7 +215,7 @@
         font-size: 27px;
       }
     }
-  } 
+  }
   .slide {
     .right-btn {
       margin-right: 10px;
@@ -208,7 +227,6 @@
       width: 40px;
     }
   }
-
 }
 </style>
 

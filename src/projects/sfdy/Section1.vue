@@ -36,13 +36,72 @@
 }
 
 .img {
-  width: 100%;
+  width: 100vw;
   height: 100%;
   display: block;
   position: absolute;
   left: 0;
   top: 0;
 }
+
+@keyframes flower {
+  from {
+    transform: skewX(3deg);
+  }
+  to {
+    transform: skewX(-3deg);
+  }
+}
+
+  .img {
+    transform-origin: bottom;
+    object-fit: cover;
+    z-index: 1;
+
+    &:nth-child(2) {
+      animation: flower 5s linear .3s infinite alternate;
+    }
+
+    &:nth-child(3) {
+      animation: flower 4s linear .6s infinite alternate;
+    }
+
+    &:nth-child(4) {
+      animation: flower 2s linear .8s infinite alternate;
+    }
+
+    &:nth-child(5) {
+      animation: flower 5s linear .5s infinite alternate;
+    }
+
+    &:nth-child(6) {
+      animation: flower 2s linear .5s infinite alternate;
+    }
+    &:nth-child(7) {
+      animation: flower 7s linear .4s infinite alternate;
+    }
+    &:nth-child(8) {
+      animation: flower 5s linear .2s infinite alternate;
+    }
+    &:nth-child(9) {
+      animation: flower 3s linear .1s infinite alternate;
+      left: 50px;
+    }
+    &:nth-child(10) {
+      animation: flower 5s linear 0s infinite alternate;
+      left: -20px;
+    }
+    &:nth-child(11) {
+     z-index: 0;
+    }
+    &:nth-child(12) {
+      z-index: 0;
+    }
+
+    &:nth-child(12) {
+      z-index: 0;
+    }
+  }
 
 .center {
   position: relative;
@@ -89,9 +148,9 @@
       animation: flower 4s linear .6s infinite alternate;
     }
 
-    // &:nth-child(4) {
-    //   animation: flower 2s linear .8s infinite alternate;
-    // }
+    &:nth-child(4) {
+      animation: flower 4s linear .6s infinite alternate;
+    }
 
     &:nth-child(5) {
       animation: flower 5s linear .5s infinite alternate;
@@ -100,24 +159,25 @@
     &:nth-child(6) {
       animation: flower 4s linear .5s infinite alternate;
     }
-    // &:nth-child(7) {
-    //   animation: flower 7s linear .4s infinite alternate;
-    // }
-    // &:nth-child(8) {
-    //   animation: flower 2s linear .2s infinite alternate;
-    // }
-    // &:nth-child(9) {
-    //   animation: flower 3s linear .1s infinite alternate;
-    // }
-    // &:nth-child(10) {
-    //   animation: flower 5s linear 0s infinite alternate;
-    // }
-    &:nth-child(11) {
-      animation: flower 4s linear 0s infinite alternate;
+    &:nth-child(7) {
+      animation: none;
     }
-    &:nth-child(12) {
-      animation: flower 8s linear .5s infinite alternate;
+    &:nth-child(8) {
+      animation: none;
+      z-index: 0;
     }
+    &:nth-child(9) {
+      animation: none;
+    }
+    &:nth-child(10) {
+      animation: none;
+    }
+    // &:nth-child(11) {
+    //   animation: flower 4s linear 0s infinite alternate;
+    // }
+    // &:nth-child(12) {
+    //   animation: flower 8s linear .5s infinite alternate;
+    // }
   }
 
 }

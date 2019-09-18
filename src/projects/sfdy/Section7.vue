@@ -7,18 +7,15 @@
             <div class="text-area-title">
               <h3>“綠的生機”</h3>
               <h3>都市森林</h3>
-            </div>
-              夠大的土地，才能打造夠大的森林。「幸福大院」種下超過500棵喬木與樹苗，100種以上的植物，基地綠化量高達4500坪，高低錯落的立體森林，不僅是住戶們的自然遮陽傘。
-            </div>
+            </div>夠大的土地，才能打造夠大的森林。「幸福大院」種下超過500棵喬木與樹苗，100種以上的植物，基地綠化量高達4500坪，高低錯落的立體森林，不僅是住戶們的自然遮陽傘。
+          </div>
         </div>
         <div class="img-1"></div>
       </div>
     </div>
     <div class="bg fullscreen" v-else>
       <div class="content">
-        <div
-          class="slide relative"
-        >
+        <div class="slide relative">
           <img
             v-for="(slide, index) in slideList"
             :class="`slide-img ${slideIndex === index ? 'active' : ''} img-c`"
@@ -34,13 +31,12 @@
             <div class="text-area-title">
               <h3>“綠的生機”</h3>
               <h3>都市森林</h3>
-            </div>
-              夠大的土地，才能打造夠大的森林。「幸福大院」種下超過500棵喬木與樹苗，100種以上的植物，基地綠化量高達4500坪，高低錯落的立體森林，不僅是住戶們的自然遮陽傘。
-            </div>
+            </div>夠大的土地，才能打造夠大的森林。「幸福大院」種下超過500棵喬木與樹苗，100種以上的植物，基地綠化量高達4500坪，高低錯落的立體森林，不僅是住戶們的自然遮陽傘。
+          </div>
         </div>
       </div>
     </div>
-    <img src="./s7_img_2.png" alt="" class="img-2">
+    <img src="./s7_img_2.png" alt class="img-2" />
   </div>
 </template>
 <style lang="scss" scoped>
@@ -59,8 +55,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  // height: calc(100vw * (1080 / 1920));
 }
-
 
 .content {
   display: flex;
@@ -113,7 +109,6 @@
   }
 }
 
-
 @media only screen and (min-width: 1281px) and (max-width: 1440px) {
   .text-area-bg {
     .text-area-title {
@@ -129,25 +124,37 @@
         font-size: 38px;
       }
     }
-  } 
-
+  }
 }
 
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .text-area-bg {
-      width: 240px;
-      .text-area-container {
-        padding: 40px 10px 180px;
-        line-height: 1.3;
-        font-size: 17px;
-        padding: 0;
-      }
-
-      .text-area-title {
-        font-size: 30px;
-      }
+    width: 240px;
+    .text-area-container {
+      padding: 40px 10px 180px;
+      line-height: 1.3;
+      font-size: 14px;
+      padding: 0;
     }
+
+    .text-area-title {
+      font-size: 30px;
+    }
+  }
+
+  .tree {
+    top: 0%;
+    // height: calc(100vw * (768 / 1024));
+  }
+
+  .content {
+    height: 440px;
+  }
+
+  .bg {
+    height: calc(100vw * (768 / 1024));
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -178,7 +185,7 @@
         font-size: 35px;
       }
     }
-  } 
+  }
   .slide {
     .right-btn {
       margin-right: 10px;

@@ -39,7 +39,8 @@
   // left: 0;
   // top: 0;
   width: 100vw;
-  height: calc(100vh - 60px);
+  height: calc(100vw * (1080 / 1920));
+  // height: calc(100vh - 60px);
   position: relative;
   overflow: hidden;
 }
@@ -48,7 +49,9 @@
   display: flex;
   width: 80%;
   max-width: 1250px;
+  max-height: 700px;
   height: 70%;
+  // min-height: 710px;
 }
 
 .img {
@@ -89,7 +92,7 @@
   position: absolute;
   width: 100%;
   background-repeat: no-repeat;
-  height: 100%;
+  height: calc(100vw * (1080 / 1920));
   background-size: 100% 100%;
   top: 5%;
 }
@@ -126,7 +129,7 @@
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .text-area-bg {
     .text-area-container {
-      font-size: 17px;
+      font-size: 14px;
       width: 80%;
     }
 
@@ -134,8 +137,17 @@
       font-size: 30px;
     }
   }
+
+  .content {
+    height: 440px;
+  }
   .tree {
-    top: 8%;
+    top: 20%;
+    // height: calc(100vw * (768 / 1024));
+  }
+
+  .bg {
+    height: calc(100vw * (768 / 1024));
   }
 }
 
@@ -149,8 +161,9 @@
   }
   .content {
     width: 100%;
+    max-height: initial;
     display: block;
-    margin: 60px 0 100px 0;
+    margin: 60px 0 40px 0;
   }
 
   .img {
@@ -168,6 +181,7 @@
       padding: 40px 10px 180px;
       line-height: 1.3;
       font-size: 17px;
+      width: 80%;
     }
 
     .text-area-title {
@@ -179,9 +193,9 @@
     background-image: url("./s4_tree_m.png");
     width: 100vw;
     height: calc(100vw * (281 / 375));
-    bottom: 0%;
+    bottom: 2%;
     
-    top: 63%;
+    top: auto;
     right: 0%;
   }
 }

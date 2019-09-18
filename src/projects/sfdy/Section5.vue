@@ -56,7 +56,7 @@
   // left: 0;
   // top: 0;
   width: 100vw;
-  height: calc(100vh - 60px);
+  height: calc(100vw * (1080 / 1920));
   position: relative;
   overflow: hidden;
 }
@@ -66,6 +66,7 @@
   display: flex;
   width: 80%;
   max-width: 1250px;
+  max-height: 700px;
   height: 70%;
   // width: 980px;
   // margin: 0 auto;
@@ -154,7 +155,7 @@
       .text-area-container {
         padding: 40px 10px 180px;
         line-height: 1.3;
-        font-size: 17px;
+        font-size: 14px;
         padding: 0;
       }
 
@@ -163,13 +164,26 @@
       }
     }
   }
+
+  .tree {
+    top: 0%;
+    // height: calc(100vw * (768 / 1024));
+  }
+
+  .container {
+    height: 440px;
+  }
+
+  .bg {
+    height: calc(100vw * (768 / 1024));
+  }
 }
 
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .bg {
     display: block;
-    height: 150vh;
+    height: 120vh;
   }
   .fullscreen {
     height: auto !important;
@@ -178,8 +192,9 @@
   .tree {
     background-image: url("./s5_tree_m.png");
     bottom: 0%;
-    height: 23%;
-    top: 77%;
+    width: 100vw;
+    height: calc(100vw * (500 / 900));
+    top: auto;
     right: 0%;
     z-index: 2;
   }
@@ -197,9 +212,10 @@
       left: 5%;
 
       .text-area-container {
-        padding: 20px 10px 180px;
+        padding: 20px 10px 100px;
         line-height: 1.3;
         font-size: 17px;
+        width: 80%;
       }
 
       .text-area-title {

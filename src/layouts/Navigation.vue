@@ -77,7 +77,7 @@ export default {
   background-color: $nav_bg;
   background-image: $nav_bg;
   background-size: cover;
-  height: $nav_pc_height;
+  height: 60px;
   z-index: 10;
   position: fixed;
   top: 0;
@@ -223,7 +223,7 @@ export default {
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .navigation {
-    height: $nav_tablet_height;
+    height: 60px;
     justify-content: center;
   }
 
@@ -262,7 +262,7 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .navigation {
-    height: $nav_phone_height;
+    height: 60px;
     z-index: 110;
   }
 
@@ -278,7 +278,7 @@ export default {
 
   .nav {
     position: static;
-    height: $nav_phone_height;
+    height: 60px;
   }
 
   .menu {
@@ -298,8 +298,8 @@ export default {
     background: $nav_bg;
     width: 0%;
     right: 0;
-    top: $nav_phone_height;
-    height: calc(100vh - #{$nav_phone_height});
+    top: 60px;
+    height: calc(100vh - #{60px});
     text-align: center;
     transition: all 0.3s ease-in;
     display: block;
@@ -348,12 +348,12 @@ export default {
 
   .mask {
     width: 100vw;
-    top: $nav_phone_height;
+    top: 60px;
     right: 0;
     background: rgba(0, 0, 0, 0.5);
     position: fixed;
     z-index: 110;
-    height: calc(100vh - #{$nav_phone_height});
+    height: calc(100vh - #{60px});
     opacity: 0;
     transition: all 0.3s ease-in;
     &.open {

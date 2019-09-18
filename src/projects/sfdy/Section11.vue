@@ -43,7 +43,7 @@
 }
 
 .prize {
-  background-image: url("./s11_prize.png");
+  background-image: url('./s11_prize.png');
   bottom: 40px;
   margin-left: -100px;
   width: 200px;
@@ -55,7 +55,7 @@
 }
 
 .bg {
-  background-image: url("./s11_bg.jpg");
+  background-image: url('./s11_bg.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -81,7 +81,7 @@
   height: 70%;
 
   .text-area-bg {
-    background-image: url("./s11_textbox.png");
+    background-image: url('./s11_textbox.png');
     background-size: 100% 100%;
     flex: 1;
     background-repeat: no-repeat;
@@ -140,7 +140,6 @@
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .container {
-    
     .text-area-bg {
       width: 240px;
       .text-area-container {
@@ -165,6 +164,19 @@
         margin: 0 auto;
       }
     }
+  }
+
+  .tree {
+    top: 0%;
+    // height: calc(100vw * (768 / 1024));
+  }
+
+  .container {
+    height: 440px;
+  }
+
+  .bg {
+    height: calc(100vw * (768 / 1024));
   }
 }
 
@@ -248,34 +260,34 @@
 
 <script>
 // @ is an alias to /src
-import slider from "@/mixins/slider.js";
-import { isMobile } from "@/utils";
+import slider from '@/mixins/slider.js'
+import { isMobile } from '@/utils'
 
 export default {
-  name: "section11",
+  name: 'section11',
   mixins: [slider],
   data() {
     return {
       isMobile,
       slideList: [
         {
-          src: require("./s11_img_1.jpg")
+          src: require('./s11_img_1.jpg'),
         },
         {
-          src: require("./s11_img_2.jpg")
+          src: require('./s11_img_2.jpg'),
         },
         {
-          src: require("./s11_img_3.jpg")
+          src: require('./s11_img_3.jpg'),
         },
         {
-          src: require("./s11_img_4.jpg")
-        }
-      ]
-    };
+          src: require('./s11_img_4.jpg'),
+        },
+      ],
+    }
   },
 
   methods: {},
 
-  created() {}
-};
+  created() {},
+}
 </script>
