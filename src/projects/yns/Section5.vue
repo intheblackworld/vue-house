@@ -24,7 +24,7 @@
           </li>
           <li>
             結構技師劉國欽
-            <br />國泰信義亞緻、國泰金城、冠德美麗台北…名宅安全推
+            <br />國泰信義亞緻、國泰金城、冠德美麗台北…名宅安全推手
           </li>
         </div>
         <img src="./s5/img1.jpg" alt class="img1" data-aos="fade-left" data-aos-delay="500" />

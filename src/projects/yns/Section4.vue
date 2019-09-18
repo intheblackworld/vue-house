@@ -92,7 +92,7 @@
 }
 
 .content {
-  width: 350px;
+  width: 360px;
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
