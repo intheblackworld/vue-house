@@ -79,9 +79,16 @@
           <div class="slide-footer">{{slideList2[slideIndex2].title}}</div>
         </div>
         <div class="slide relative" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
-          <iframe v-if="isShowVR" src="https://720yun.com/t/a9vknb2q7dh?scene_id=32516944"></iframe>
-          <img v-else src="./s6_720.png" alt="" class="slide-img active" @click="isShowVR = true">
-          <div class="slide-footer">點擊觀看720環景圖</div>
+          <div class="slide-video">
+            <video-bg
+              autoplay="autoplay"
+              :sources="[require('./s6_videovr.mp4')]"
+              img="./s6_img3-1.jpg"
+            ></video-bg>
+          </div>
+          <!-- <iframe v-if="isShowVR" src="https://720yun.com/t/a9vknb2q7dh?scene_id=32516944"></iframe>
+          <img v-else src="./s6_720.png" alt="" class="slide-img active" @click="isShowVR = true"> -->
+          <div class="slide-footer">公設3D示意圖(實際依完工現況為準)</div>
         </div>
         <div v-if="isMobile" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
           <div class="slide-title">新東方時尚 雅緻盛宴</div>
