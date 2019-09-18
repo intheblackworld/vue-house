@@ -221,6 +221,7 @@
   .swiper-button-next,
   .swiper-container-rtl .swiper-button-prev {
     background-image: none !important;
+    opacity: 1;
 
     img {
       width: 25px;

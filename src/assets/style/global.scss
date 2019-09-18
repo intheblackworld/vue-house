@@ -8,6 +8,7 @@
 @import './fonts.scss';
 @import './customClass.scss';
 @import './slide.scss';
+@import './swiper.scss'; // vue awesome swiper
 @import './mapBg.scss';
 
 html,
@@ -410,5 +411,12 @@ img[lazy='loaded'] {
       font-size: 12px;
       margin-top: 30px;
     }
+  }
+}
+
+
+@media only screen and (min-width: 1025px) and (max-height: 770px) {
+  .fullscreen {
+    height: auto !important;
   }
 }

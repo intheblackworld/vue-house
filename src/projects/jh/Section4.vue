@@ -60,7 +60,8 @@
   top: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.8);
-  z-index: 15;
+  z-index: 150;
+  overflow: scroll;
   &.show {
     display: flex;
     align-items: center;
@@ -69,15 +70,15 @@
 
   .close {
     cursor: pointer;
-    position: absolute;
-    top: -70px;
-    right: -70px;
-    z-index: 2;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 152;
   }
 }
 
 .map-detail {
-  width: calc(100vw * (1022 / 1920));
+  width: calc(100vw * (1920 / 1920));
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -108,7 +109,7 @@
   }
 
   .map-detail {
-    width: calc(100vw * (800 / 1024));
+    width: calc(100vw * (1024 / 1024));
   }
 }
 
@@ -145,18 +146,17 @@
 
   .map-detail {
     width: auto;
-    height: 80vh;
+    height: 100vh;
   }
 
   .dialog {
     z-index: 120;
     .close {
       cursor: pointer;
-      position: absolute;
-      width: 40px;
-      top: -40px;
-    right: -46px;
-      z-index: 2;
+      position: fixed;
+      right: 20px;
+      top: 20px;
+      z-index: 152;
     }
   }
 }
