@@ -166,12 +166,12 @@ export default {
           txt: require('./s10/txt1m.png'),
         },
         {
-          src: require('./s10/img2m.jpg'),
-          txt: require('./s10/txt2m.png'),
-        },
-        {
           src: require('./s10/img3m.jpg'),
           txt: require('./s10/txt3m.png'),
+        },
+        {
+          src: require('./s10/img2m.jpg'),
+          txt: require('./s10/txt2m.png'),
         },
         {
           src: require('./s10/img4m.jpg'),
