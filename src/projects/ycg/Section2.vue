@@ -51,6 +51,10 @@
   margin-bottom: 40px;
 }
 
+.fullscreen {
+  overflow: visible;
+}
+
 .item {
   width: calc(100vw * (625 / 1920));
   height: calc(100vw * (625 / 1920));

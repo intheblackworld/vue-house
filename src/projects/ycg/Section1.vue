@@ -61,9 +61,7 @@
           data-aos-duration="500"
           data-aos="fade"
         >
-          <h3 data-aos="fade" data-aos-delay="1000">
-            <span>悦</span>成功
-          </h3>
+          <img data-aos="fade" data-aos-delay="1000" src="./s1/logo.png" alt class="logo" />
           <div class="sub">
             <div data-aos="fade" data-aos-delay="1200">投資觀點X自住享受</div>
             <div class="yellow">訂簽{{animatedNumber}}萬起!</div>
@@ -165,21 +163,7 @@
   }
 
   .desc {
-    h3 {
-      font-size: 114px;
-      font-weight: 900;
-      line-height: 1.2;
-      letter-spacing: 13px;
-      text-align: left;
-      color: #ffffff;
-      // font-family: 'icomoon' !important;
-      span {
-        font-family: 'icomoon', 'Noto Serif TC', serif;
-        transform: translateY(5px);
-        display: inline-block;
-        // padding-top: 5px;
-        font-size: 108px;
-      }
+    .logo {
     }
 
     .sub {
@@ -386,23 +370,9 @@
 
     .desc {
       flex-wrap: wrap;
-      h3 {
-        width: 100vw;
-        font-size: 65px;
-        font-weight: 900;
-        line-height: 1.2;
-        letter-spacing: 13px;
-        text-align: center;
-        color: #ffffff;
-        margin-top: 20px;
-
-        span {
-          font-family: 'icomoon', 'Noto Serif TC', serif;
-          transform: translateY(2px);
-          display: inline-block;
-          // padding-top: 5px;
-          font-size: 60px !important;
-        }
+      .logo {
+        width: 70vw;
+        margin: 40px auto 10px;
       }
 
       .sub {

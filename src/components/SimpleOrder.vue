@@ -2,10 +2,10 @@
   <div class="order-bg">
     <h3 class="order-title">
       我要邁向
-      <span>悦</span>成功
+      <img src="../projects/ycg/s1/logo2.png" alt class="custom" />
     </h3>
     <h3 class="order-subtitle">
-      留下您的大名、電話、進行預賞屋，就可以得到<span>悦</span>成功限量好禮!
+      留下您的大名、電話、進行預賞屋，就可以得到悦成功限量好禮!
     </h3>
     <div class="order">
       <div class="form">
@@ -250,6 +250,11 @@ export default {
     color: $order_title_color;
     font-weight: 900;
 
+    .custom {
+      margin-top: 10px;
+      height: calc(100vw * (128 / 1920));
+    }
+
     span {
       font-family: 'icomoon', 'Noto Serif TC', serif !important;
       transform: translateY(12px);
@@ -265,14 +270,7 @@ export default {
     color: $order_subtitle_color;
     margin-bottom: 40px;
     font-weight: 900;
-
-    span {
-      font-family: 'icomoon', 'Noto Serif TC', serif !important;
-      transform: translateY(1px);
-      display: inline-block;
-      // padding-top: 5px;
-      font-size: 19px;
-    }
+    font-family: '微軟正黑體', 'Microsoft JhengHei', 'Helvetica Neue', Helvetica !important,
   }
 
   .order {
@@ -415,6 +413,11 @@ export default {
       margin-top: 10px;
       margin-bottom: 20px;
 
+      .custom {
+        margin-top: 2px;
+        height: calc(100vw * (128 / 1920));
+      }
+
       span {
         font-family: 'icomoon', 'Noto Serif TC', serif !important;
         transform: translateY(3px);
@@ -430,7 +433,7 @@ export default {
 
       span {
         font-size: 11px;
-        transform: translate(0px, .5px);
+        transform: translate(0px, 0.5px);
       }
     }
     .order {
