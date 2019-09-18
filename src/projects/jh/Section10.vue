@@ -35,6 +35,12 @@
               </div>
               <img :src="slide.src" :class="`item-img`" />
             </swiper-slide>
+            <div class="swiper-button-prev" slot="button-prev">
+              <img src="./arrow-left.png" alt />
+            </div>
+            <div class="swiper-button-next" slot="button-next">
+              <img src="./arrow-right.png" alt />
+            </div>
           </swiper>
         </div>
         <!-- <div :class="`slide relative`" v-if="isMobile">
@@ -172,6 +178,17 @@
   }
 }
 
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next,
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+  opacity: 0;
+
+  img {
+    width: 25px;
+  }
+}
+
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .container {
     width: 1240px;
@@ -256,6 +273,18 @@
   .swiper-slide {
     width: 90%;
   }
+
+  .swiper-button-prev,
+  .swiper-container-rtl .swiper-button-next,
+  .swiper-button-next,
+  .swiper-container-rtl .swiper-button-prev {
+    background-image: none !important;
+    opacity: 1;
+
+    img {
+      width: 25px;
+    }
+  }
 }
 </style>
 
@@ -294,6 +323,10 @@ export default {
         //   el: '.swiper-pagination',
         //   clickable: true,
         // },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
       },
       iframeWidth: 960,
       iframeHeight: 536,
