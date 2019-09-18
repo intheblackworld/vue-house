@@ -81,7 +81,7 @@
 }
 
 .container {
-  width: 1200px;
+  width: 1160px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -125,7 +125,10 @@
       color: #ffffff;
       background: #000;
       line-height: 1.4;
-      height: 70px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      padding: 20px;
     }
 
     &::before {
@@ -295,17 +298,16 @@ export default {
       currentIframe: '',
       swiperOption: {
         slidesPerView: isMobile ? 1 : 3,
-        centeredSlides: true,
         spaceBetween: isTablet ? 20 : 30,
         slidesPerColumn: isMobile ? 1 : 2,
         allowSlidePrev: isMobile ? true : false,
         allowSlideNext: isMobile ? true : false,
-
+        // centeredSlides: true,
         // autoplay: {
         //   delay: 2500,
         //   disableOnInteraction: false,
         // },
-        loop: true,
+        loop: isMobile,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',

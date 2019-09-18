@@ -25,7 +25,7 @@
       data-aos-duration="700"
     />
     <div class="bg fullscreen">
-      <Map :bgSrc="bgSrc">
+      <Map :bgSrc="bgSrc" :hand="hand">
         <img
           src="./s2/light.png"
           alt
@@ -153,6 +153,7 @@ export default {
     return {
       isMobile,
       bgSrc: require('./s2/bg.jpg'),
+      hand: require('../lkf/s4_hand.png')
     }
   },
 

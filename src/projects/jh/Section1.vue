@@ -223,7 +223,7 @@ export default {
       isMobile,
       dog1: true,
       dog2: false,
-      isPlay: true,
+      isPlay: false,
     }
   },
 
