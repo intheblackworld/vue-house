@@ -1,8 +1,7 @@
 <template>
   <div class="order-bg">
     <h3 class="order-title">
-      我要邁向
-      <img src="../projects/ycg/s1/logo2.png" alt class="custom" />
+      我要邁向悦成功
     </h3>
     <h3 class="order-subtitle">
       留下您的大名、電話、進行預賞屋，就可以得到悦成功限量好禮!
@@ -249,19 +248,7 @@ export default {
     text-align: center;
     color: $order_title_color;
     font-weight: 900;
-
-    .custom {
-      margin-top: 10px;
-      height: calc(100vw * (128 / 1920));
-    }
-
-    span {
-      font-family: 'icomoon', 'Noto Serif TC', serif !important;
-      transform: translateY(12px);
-      display: inline-block;
-      // padding-top: 5px;
-      font-size: calc(100vw * (125 / 1920));
-    }
+    font-family: '微軟正黑體', 'Microsoft JhengHei', 'Helvetica Neue', Helvetica !important,
   }
 
   .order-subtitle {
@@ -412,19 +399,6 @@ export default {
     .order-title {
       margin-top: 10px;
       margin-bottom: 20px;
-
-      .custom {
-        margin-top: 2px;
-        height: calc(100vw * (128 / 1920));
-      }
-
-      span {
-        font-family: 'icomoon', 'Noto Serif TC', serif !important;
-        transform: translateY(3px);
-        display: inline-block;
-        // padding-top: 5px;
-        font-size: calc(100vw * (125 / 1920));
-      }
     }
 
     .order-subtitle {
