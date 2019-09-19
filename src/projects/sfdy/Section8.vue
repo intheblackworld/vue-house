@@ -235,6 +235,7 @@
   // border-image:  linear-gradient(225deg, #a07515, #d0ae5f 9%, #e5c77f 14%, #ffffc7 26%, #e5c77f 36%, #a07515 49%, #d0ae5f 57%, #e5c77f 61%, #ffffc7 74%, #e5c77f 84%, #a07515);
   border-image: linear-gradient(to top, #f80, #2ed);
   border: 20px transparent solid;
+  overflow: visible;
   // background-clip:padding-box,border-box;
 
   .slide-img {

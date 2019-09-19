@@ -40,6 +40,7 @@
   height: 100%;
   display: block;
   position: absolute;
+  object-fit: cover;
   left: 0;
   top: 0;
 }
