@@ -179,14 +179,14 @@
   .slide {
     .name {
       position: absolute;
-      left: 0;
-      right: 0;
+      right: 5vw;
       margin: 0 auto;
-      top: 10px;
+      bottom: 0;
       font-size: 17px;
       color: #fff;
-      text-shadow: 0 1px 2px #000;
       letter-spacing: 2px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 5px 15px;
     }
 
     .slide-img {
