@@ -179,6 +179,18 @@
           transform: translate(30px, -30px);
         }
       }
+
+      .slide-content {
+        margin-left: 55px;
+        width: 600px;
+        .slide-title {
+        }
+        .slide-desc {
+          padding-top: 15px;
+          transform: translate(0px, 0px);
+          width: 600px;
+        }
+      }
     }
   }
 }

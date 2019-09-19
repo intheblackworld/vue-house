@@ -28,18 +28,19 @@
           </div>
           <div class="item">
             <strong>64快．65快．台一線</strong>
-            <p>
-              64快八里新店線、65快五股土城線、台一線高架道路，迅速接軌站前雙子星特區、新莊副都心，緊密結合繁榮大都會區。
-            </p>
+            <p>64快八里新店線、65快五股土城線、台一線高架道路，迅速接軌站前雙子星特區、新莊副都心，緊密結合繁榮大都會區。</p>
           </div>
         </div>
       </div>
-      <!-- <h3
-        class="gold-title"
-        v-scroll-reveal.reset="!isMobile ? $fadeInUp(900) : $fadeInUp()"
-      >五股交通大樞紐</h3> -->
+      <h3 class="sub-title" v-scroll-reveal.reset="!isMobile ? $fadeInUp(900) : $fadeInUp()">五股交通大樞紐</h3>
       <div class="flex row small flex-c wrap">
-        <div
+        <div class="content">
+          <img src="./s4_map.png" alt class="map" />
+          <div class="link link1" @click="openDialog(1)">往台北站前商圈</div>
+          <div class="link link2" @click="openDialog(2)">往信義商圈</div>
+          <div class="link link3" @click="openDialog(3)">往大直商圈、內科</div>
+        </div>
+        <!-- <div
           class="slide relative"
           v-scroll-reveal.reset="!isMobile ? $fadeInLeft(900) : $fadeInUp()"
         >
@@ -55,6 +56,13 @@
             <img @click="decIndex" src="./small_right_btn.png" alt="心天畝的圖片" />
           </div>
           <h3 class="name">{{slideList[slideIndex].name}}</h3>
+        </div>-->
+      </div>
+      <div :class="`dialog ${isShowDialog ? 'open' : ''}`">
+        <img src="./close.png" alt class="close" @click="isShowDialog = false" />
+        <div class="relative">
+          <img :src="dialogSrc" alt class="dialog-detail" />
+          <div class="name">{{dialogName}}</div>
         </div>
       </div>
     </div>
@@ -112,7 +120,8 @@
 
     hr {
     }
-    p, strong {
+    p,
+    strong {
       font-size: 16px;
       line-height: 1.44;
       color: #4d4d4d;
@@ -134,10 +143,91 @@
   }
 
   .map {
-    width: 465px;
-    margin-right: 55px;
+    width: 931px;
+    margin: 0 auto;
   }
 
+  .content {
+    position: relative;
+    .link {
+      position: absolute;
+      font-size: 22px;
+      font-weight: bold;
+      line-height: 2;
+      text-align: left;
+      color: #000000;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        color: #006eb3;
+        text-decoration: underline;
+      }
+    }
+
+    .link1 {
+      left: 0;
+      bottom: 0px;
+    }
+
+    .link2 {
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      text-align: left;
+      width: 200px;
+      transform: translateX(60px);
+      bottom: 30px;
+    }
+
+    .link3 {
+      left: 0;
+      right: 0;
+      text-align: left;
+      width: 200px;
+      transform: translateX(60px);
+      margin: 0 auto;
+      bottom: 0px;
+    }
+  }
+
+  .dialog {
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 200;
+    display: none;
+    &.open {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .dialog-detail {
+      width: 80%;
+      max-width: 1280px;
+    }
+
+    .close {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+    }
+
+    .name {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      bottom: -40px;
+      color: #fff;
+      font-size: 26px;
+    }
+  }
 
   .small {
     padding-bottom: 80px;
@@ -217,7 +307,8 @@
 
       hr {
       }
-      p, strong {
+      p,
+      strong {
         font-size: 12px;
         line-height: 1.44;
         color: #4d4d4d;
@@ -225,8 +316,8 @@
     }
 
     .map {
-      width: 345px;
-      margin-right: 55px;
+      width: 645px;
+      // margin-right: 55px;
     }
 
     .slide {
@@ -298,7 +389,8 @@
 
       hr {
       }
-      p, strong {
+      p,
+      strong {
         font-size: 14px;
         line-height: 1.44;
         color: #4d4d4d;
@@ -313,6 +405,17 @@
     .map {
       width: 100vw;
       margin-right: 0px;
+    }
+
+    .content {
+      .link {
+        font-size: 18px;
+      }
+
+      .link2,
+      .link3 {
+        transform: translateX(90px);
+      }
     }
 
     .slide {
@@ -330,6 +433,45 @@
 
       .name {
         bottom: 5px;
+      }
+    }
+
+    .dialog {
+      width: 100vw;
+      height: 100vh;
+      overflow: scroll;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 200;
+      display: none;
+      &.open {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .dialog-detail {
+        width: 100%;
+        max-width: 1280px;
+      }
+
+      .close {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        cursor: pointer;
+      }
+
+      .name {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        bottom: -40px;
+        color: #fff;
+        font-size: 20px;
       }
     }
   }
@@ -356,27 +498,36 @@ export default {
   data() {
     return {
       isMobile,
+      dialogSrc: '',
+      dialogName: '',
+      isShowDialog: false,
       slideList: [
         {
           src: require('./s4_item1.jpg'),
-          name: '五股交通大樞紐'
+          name: '五股交通大樞紐',
         },
         {
           src: require('./s4_item2.jpg'),
-          name: '台北站前商圈'
-        },
-        {
-          src: require('./s4_item3.jpg'),
-          name: '大直美麗華商圈'
+          name: '台北站前商圈',
         },
         {
           src: require('./s4_item4.jpg'),
-          name: '信義商圈'
+          name: '信義商圈',
+        },
+        {
+          src: require('./s4_item3.jpg'),
+          name: '大直美麗華商圈',
         },
       ],
     }
   },
 
-  created() {},
+  methods: {
+    openDialog(index) {
+      this.dialogSrc = this.slideList[index].src
+      this.dialogName = this.slideList[index].name
+      this.isShowDialog = true
+    },
+  },
 }
 </script>
