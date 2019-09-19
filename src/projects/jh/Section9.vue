@@ -177,7 +177,7 @@
   }
 
   .slide {
-    width: 100vw;
+    width: 100vw !important;
     .name {
       position: absolute;
       right: 5vw;
