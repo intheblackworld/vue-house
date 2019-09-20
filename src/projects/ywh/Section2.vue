@@ -148,8 +148,8 @@
 }
 
 .carousel-3d-container {
-  z-index: 3;
-  margin-top: 100px;
+  z-index: 3 !important;
+  margin-top: 100px !important;
 }
 
 .indigator-group {
@@ -196,7 +196,7 @@
 
   .carousel-3d-container {
     z-index: 3;
-    margin-top: 30px;
+    margin-top: 30px !important;
   }
 
   .indigator-group {
