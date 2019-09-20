@@ -93,7 +93,7 @@
       height: 80%;
       margin: 0 auto;
       margin-top: 10%;
-      line-height: 1.2;
+      line-height: 1.6;
       font-size: 19px;
       color: #3e3a39;
     }
@@ -184,7 +184,7 @@
 @media only screen and (max-width: 767px) {
   .bg {
     display: block;
-    height: 120vh;
+    height: 140vh;
   }
 
   .container {
@@ -200,7 +200,7 @@
 
       .text-area-container {
         padding: 40px 0 120px 0;
-        line-height: 1.2;
+        line-height: 1.6;
         font-size: 17px;
         position: relative;
         z-index: 10;

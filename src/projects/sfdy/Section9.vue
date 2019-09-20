@@ -118,7 +118,7 @@
     height: 80%;
     margin: 0 auto;
     margin-top: 10%;
-    line-height: 1.3;
+    line-height: 1.6;
   }
 
   .text-area-title {
@@ -203,7 +203,7 @@
       padding-bottom: 60px;
 
       .text-area-container {
-        line-height: 1.2;
+        line-height: 1.6;
         font-size: 17px;
         padding: 20px 0;
         position: relative;

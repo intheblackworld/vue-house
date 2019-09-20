@@ -96,7 +96,7 @@
     height: 80%;
     margin: 0 auto;
     margin-top: 10%;
-    line-height: 1.3;
+    line-height: 1.6;
     font-size: 20px;
   }
 

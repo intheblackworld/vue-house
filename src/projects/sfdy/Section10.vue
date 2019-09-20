@@ -111,7 +111,7 @@
 .slide-text-area {
   width: 360px;
   font-weight: 300;
-  line-height: 1.2;
+  line-height: 1.6;
   text-align: left;
   color: #ffffff;
   position: absolute;
@@ -186,6 +186,7 @@
 .slide {
   z-index: 1;
   display: flex;
+  overflow: visible;
   border-image: linear-gradient(
     225deg,
     #a07515,
@@ -344,7 +345,7 @@
         font-size: 16px;
         text-align: left;
         color: #595757;
-        line-height: 1.2;
+        line-height: 1.6;
         font-size: 16px;
         padding: 20px;
         position: relative;

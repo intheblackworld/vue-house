@@ -56,7 +56,7 @@
 }
 
 .textbox-text-area {
-  line-height: 1.2;
+  line-height: 1.6;
   color: #ffffff;
   font-size: 18px;
   font-weight: 300;
@@ -69,7 +69,7 @@
 
   .textbox-title {
     color: #ffdf5a;
-    line-height: 1.2;
+    line-height: 1.6;
     font-size: 28px;
     margin-bottom: 20px;
   }
@@ -197,7 +197,7 @@
       font-size: 16px;
       text-align: left;
       color: #595757;
-      line-height: 1.5;
+      line-height: 1.6;
       font-size: 16px;
       padding: 20px;
       position: relative;

@@ -4,7 +4,7 @@ export default {
     'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14683.644421308198!2d120.2364888!3d23.0637204!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1c3a1f04f9d9984a!2z5ZyL5o-a57-h57-g5qOu5p6X!5e0!3m2!1szh-TW!2stw!4v1568684298341!5m2!1szh-TW!2stw',
   phone: '06-7861788',
   fbLink: 'https://www.facebook.com/jadeforestvilla/',
-  fbMessage: 'm.me/jadeforestvilla',
+  fbMessage: 'https://m.me/jadeforestvilla',
   googleLink: 'https://goo.gl/maps/8yUfkfkP87hLqZDk7',
   caseName: '幸福大院',
 

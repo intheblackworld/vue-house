@@ -2,7 +2,7 @@
   <div class="section5">
     <div class="bg">
       <div class="container">
-        <div class="text-area-bg">
+        <div class="text-area-bg" id="section5">
           <div class="text-area-container">
             <div class="text-area-title">
               <h3>“24000坪大基地”</h3>
@@ -23,7 +23,8 @@
         </div>
       </div>
     </div>
-    <div class="tree"></div>
+    <img src="./s5_tree.png" alt class="tree" v-if="!isMobile" />
+    <img src="./s5_tree_m.png" alt class="tree" v-if="isMobile" />
   </div>
 </template>
 <style lang="scss" scoped>
@@ -32,14 +33,12 @@
 }
 
 .tree {
-  background-image: url("./s5_tree.png");
   position: absolute;
-  width: 100%;
-  background-repeat: no-repeat;
-  height: 100%;
-  background-size: 100% 100%;
-  top: 0%;
-  pointer-events: none;
+  width: 100vw;
+  left: 0;
+  top: 12%;
+  left: 0;
+  z-index: 1;
 }
 
 .bg {
@@ -56,7 +55,7 @@
   // left: 0;
   // top: 0;
   width: 100vw;
-  height: calc(100vw * (1080 / 1920));
+  height: calc(100vw * (1227 / 1920));
   position: relative;
   overflow: hidden;
 }
@@ -86,7 +85,7 @@
       height: 80%;
       margin: 0 auto;
       margin-top: 10%;
-      line-height: 1.19;
+      line-height: 1.6;
       font-size: 20px;
     }
 
@@ -175,7 +174,7 @@
   }
 
   .bg {
-    height: calc(100vw * (768 / 1024));
+    height: calc(100vw * (576 / 1024));
   }
 }
 
@@ -183,17 +182,17 @@
 @media only screen and (max-width: 767px) {
   .bg {
     display: block;
-    height: 120vh;
+    height: 150vh;
   }
   .fullscreen {
     height: auto !important;
   }
 
   .tree {
-    background-image: url("./s5_tree_m.png");
+    // background-image: url("./s5_tree_m.png");
     bottom: 0%;
     width: 100vw;
-    height: calc(100vw * (500 / 900));
+    // height: calc(100vw * (500 / 900));
     top: auto;
     right: 0%;
     z-index: 2;
@@ -212,8 +211,8 @@
       left: 5%;
 
       .text-area-container {
-        padding: 20px 10px 100px;
-        line-height: 1.3;
+        padding: 20px 10px 180px;
+        line-height: 1.6;
         font-size: 17px;
         width: 80%;
       }

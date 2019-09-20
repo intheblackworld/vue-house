@@ -2,7 +2,7 @@
   <div class="section4">
     <!-- <div class="tree"></div>  -->
     <div class="bg">
-      <div class="content">
+      <div class="content" id="section4">
         <div class="img"></div>
         <!-- <div class="tree"></div> -->
         <div class="text-area-bg">
@@ -15,11 +15,19 @@
         </div>
       </div>
     </div>
-    <div class="tree"></div>
+    <img src="./s4_tree.png" alt class="tree" v-if="!isMobile" />
+    <img src="./s4_tree_m.png" alt class="tree" v-if="isMobile" />
   </div>
 </template>
+<style lang="scss">
+.home {
+  background: url('./s4_bg.jpg');
+  background-size: 1920px;
+  background-position: bottom;
+}
+</style>
 <style lang="scss" scoped>
-@import "../../assets/style/variableDefault.scss";
+@import '../../assets/style/variableDefault.scss';
 
 .section4 {
   position: relative;
@@ -27,7 +35,7 @@
 
 .bg {
   display: flex;
-  background-image: url("./s4_bg.jpg");
+  background-image: url('./s4_bg.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -39,10 +47,9 @@
   // left: 0;
   // top: 0;
   width: 100vw;
-  height: calc(100vw * (1080 / 1920));
+  height: calc(100vw * (1200 / 1920));
   // height: calc(100vh - 60px);
   position: relative;
-  overflow: hidden;
 }
 
 .content {
@@ -55,14 +62,14 @@
 }
 
 .img {
-  background-image: url("./s4_img.jpg");
+  background-image: url('./s4_img.jpg');
   background-position: center;
   background-size: cover;
   flex: 2;
 }
 
 .text-area-bg {
-  background-image: url("./box.png");
+  background-image: url('./box.png');
   background-size: 100% 100%;
   flex: 1;
   background-repeat: no-repeat;
@@ -75,7 +82,7 @@
     height: 80%;
     margin: 0 auto;
     margin-top: 10%;
-    line-height: 1.21;
+    line-height: 1.6;
     font-size: 20px;
   }
 
@@ -88,13 +95,12 @@
 }
 
 .tree {
-  background-image: url("./s4_tree.png");
   position: absolute;
-  width: 100%;
-  background-repeat: no-repeat;
-  height: calc(100vw * (1080 / 1920));
-  background-size: 100% 100%;
-  top: 5%;
+  width: 100vw;
+  left: 0;
+  top: 12%;
+  left: 0;
+  z-index: 1;
 }
 
 @media only screen and (min-width: 1281px) and (max-width: 1440px) {
@@ -147,7 +153,7 @@
   }
 
   .bg {
-    height: calc(100vw * (768 / 1024));
+    height: calc(100vw * (728 / 1024));
   }
 }
 
@@ -179,7 +185,7 @@
 
     .text-area-container {
       padding: 40px 10px 180px;
-      line-height: 1.3;
+      line-height: 1.6;
       font-size: 17px;
       width: 80%;
     }
@@ -190,11 +196,11 @@
   }
 
   .tree {
-    background-image: url("./s4_tree_m.png");
+    // background-image: url('./s4_tree_m.png');
     width: 100vw;
-    height: calc(100vw * (281 / 375));
+    // height: calc(100vw * (281 / 375));
     bottom: 2%;
-    
+
     top: auto;
     right: 0%;
   }
@@ -203,18 +209,18 @@
 
 <script>
 // @ is an alias to /src
-import { isMobile } from "@/utils";
+import { isMobile } from '@/utils'
 export default {
-  name: "section4",
+  name: 'section4',
 
   data() {
     return {
-      isMobile
-    };
+      isMobile,
+    }
   },
 
   methods: {},
 
-  created() {}
-};
+  created() {},
+}
 </script>

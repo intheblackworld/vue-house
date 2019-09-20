@@ -94,8 +94,8 @@
   width: 600px;
   height: 407.2px;
   position: absolute;
-  font-size: 25px;
-  line-height: 1.32;
+  font-size: 22px;
+  line-height: 1.6;
   padding: 30px 60px;
   text-align: left;
   font-weight: 300;
@@ -243,7 +243,7 @@
     height: 450px;
     object-fit: cover;
     z-index: 1;
-    object-fit: cover;
+    // object-fit: cover;
   }
 
   .slide-content {
@@ -452,7 +452,7 @@
   }
   .textbox-behind {
     width: 84%;
-    height: 200px;
+    height: 240px;
     top: -26px;
     left: 50px;
     position: absolute;
@@ -463,7 +463,7 @@
     font-size: 14px;
     padding: 20px;
     left: 5%;
-    height: 200px;
+    height: 240px;
     top: -36px;
     font-size: 14px;
     .text-area-title {

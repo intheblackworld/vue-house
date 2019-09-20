@@ -13,10 +13,10 @@
     <div id="section3">
       <Section3 />
     </div>
-    <div id="section4">
+    <div>
       <Section4 />
     </div>
-    <div id="section5">
+    <div>
       <Section5 />
     </div>
     <div id="section6">
