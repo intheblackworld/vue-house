@@ -1,11 +1,7 @@
 <template>
   <div class="order-bg">
-    <h3 class="order-title">
-      我要邁向悦成功
-    </h3>
-    <h3 class="order-subtitle">
-      留下您的大名、電話、進行預賞屋，就可以得到悦成功限量好禮!
-    </h3>
+    <h3 class="order-title">{{info.order.title}}</h3>
+    <h3 class="order-subtitle">{{info.order.subTitle}}</h3>
     <div class="order">
       <div class="form">
         <div class="group">
@@ -23,7 +19,7 @@
           </div>-->
           <div class="row">
             <label>居住城市</label>
-            <el-select v-model="form.city" placeholder>
+            <el-select v-model="form.city" placeholder="請選擇居住城市">
               <el-option
                 v-for="city in cityList"
                 :key="city.value"
@@ -32,9 +28,9 @@
               ></el-option>
             </el-select>
           </div>
-          <!-- <div class="row">
+          <div class="row">
             <label>居住地區</label>
-            <el-select v-model="form.area" placeholder>
+            <el-select v-model="form.area" placeholder="請選擇居住地區" no-data-text="請先選擇居住城市">
               <el-option
                 v-for="area in areaList"
                 :key="area.value"
@@ -42,7 +38,7 @@
                 :value="area.value"
               ></el-option>
             </el-select>
-          </div>-->
+          </div>
         </div>
         <!-- <div class="group">
           <div class="row">
@@ -233,22 +229,23 @@ export default {
   padding-top: 80px;
 
   .order-title {
-    width: calc(100vw * (1786 / 1920));
-    height: calc(100vw * (302 / 1920));
     font-size: calc(100vw * (135 / 1920));
-    background-image: url('./title.png');
     background-size: cover;
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    padding-top: calc(100vw * (50 / 1920));
     margin: 0 auto;
     margin-top: 40px;
     margin-bottom: 18px;
     text-align: center;
     color: $order_title_color;
-    font-weight: 900;
-    font-family: '微軟正黑體', 'Microsoft JhengHei', 'Helvetica Neue', Helvetica !important,
+    font-size: 90px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.38;
+    letter-spacing: 7.2px;
+    text-align: center;
   }
 
   .order-subtitle {
@@ -256,8 +253,12 @@ export default {
     text-align: center;
     color: $order_subtitle_color;
     margin-bottom: 40px;
-    font-weight: 900;
-    font-family: '微軟正黑體', 'Microsoft JhengHei', 'Helvetica Neue', Helvetica !important,
+    font-size: 26px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.54;
+    letter-spacing: normal;
   }
 
   .order {
@@ -276,7 +277,7 @@ export default {
   }
 
   .group {
-    height: 150px;
+    height: 250px;
 
     &:nth-child(1) {
       border-right: 1px solid rgba(0, 0, 0, 0.2);
@@ -352,7 +353,7 @@ export default {
     cursor: pointer;
     text-decoration: none;
     color: $contact_google_btn_color;
-    background-image: $contact_google_btn_bg;
+    background-color: $contact_google_btn_bg;
     box-shadow: $contact_btn_border;
     transition: all 0.5s;
 
@@ -365,7 +366,7 @@ export default {
     }
 
     &:hover {
-      background-image: $contact_google_hover_btn_bg;
+      background-color: $contact_google_hover_btn_bg;
       color: $contact_google_hover_btn_color;
 
       svg {
@@ -397,13 +398,15 @@ export default {
   .order-bg {
     padding-top: 40px;
     .order-title {
+      font-size: 34px;
+      letter-spacing: normal;
       margin-top: 10px;
       margin-bottom: 20px;
     }
 
     .order-subtitle {
       // display: none;
-      font-size: 12px;
+      font-size: 14px;
 
       span {
         font-size: 11px;
@@ -465,7 +468,7 @@ export default {
       width: 100%;
       height: 60px;
       margin-top: 0px;
-      box-shadow: 0 0 0 1px #00007d;
+      box-shadow: 0 0 0 1px #000;
       color: #444;
       font-size: 20px;
       display: flex;
@@ -478,7 +481,7 @@ export default {
       cursor: pointer;
       text-decoration: none;
       color: $contact_google_btn_color;
-      background-image: $contact_google_btn_bg;
+      background-color: $contact_google_btn_bg;
       box-shadow: $contact_btn_border;
       transition: all 0.5s;
 
@@ -491,7 +494,7 @@ export default {
       }
 
       &:hover {
-        background-image: $contact_google_hover_btn_bg;
+        background-color: $contact_google_hover_btn_bg;
         color: $contact_google_hover_btn_color;
 
         svg {

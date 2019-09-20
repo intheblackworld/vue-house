@@ -1,38 +1,93 @@
 <template>
   <div class="section2">
-    <div class="bg fullscreen relative">
-      <div class="container" v-if="!isMobile">
-        <div class="item">
-          <img src="./s2/1.png" alt />
-          <h3 class="title">感覺對了，就放手大賺一筆</h3>
-        </div>
-        <div class="item">
-          <img src="./s2/2.png" alt />
-          <h3 class="title">鴻運當頭時，連喝水都能賺！</h3>
-        </div>
-        <div class="item">
-          <img src="./s2/3.png" alt />
-          <h3 class="title">一兼二顧、又賺又拿別客氣！</h3>
-        </div>
-      </div>
-      <div class="container" v-if="isMobile">
-        <div class="item" data-aos="zoom-out-left" data-aos-duration="600"  data-aos-delay="0">
-          <img src="./s2/1.png" alt />
-          <h3 class="title">感覺對了，就放手大賺一筆</h3>
-        </div>
-        <div class="item" data-aos="zoom-out-right" data-aos-duration="600"  data-aos-delay="400">
-          <img src="./s2/2.png" alt />
-          <h3 class="title">鴻運當頭時，連喝水都能賺！</h3>
-        </div>
-        <div class="item" data-aos="zoom-out-left" data-aos-duration="600"  data-aos-delay="800">
-          <img src="./s2/3.png" alt />
-          <h3 class="title">一兼二顧、又賺又拿別客氣！</h3>
-        </div>
-      </div>
-      <div class="hint" v-if="!isMobile">＊預約賞屋＊ 鑽石筆X鑽石杯X全家禮卷兩佰元 送完為止!</div>
-      <div class="hint" v-if="isMobile">
-        ＊預約賞屋＊
-        <br />鑽石筆X鑽石杯X全家禮卷兩佰元 送完為止!
+    <div class="bg relaive">
+      <img
+        v-if="!isMobile"
+        src="./s2/title.png"
+        data-aos="fade-down"
+        data-aos-delay="200"
+        alt
+        class="title"
+      />
+      <img
+        v-if="!isMobile"
+        src="./s2/txt1.png"
+        data-aos="fade-down"
+        data-aos-delay="400"
+        alt
+        class="txt1"
+      />
+      <img
+        v-if="!isMobile"
+        src="./s2/txt2.png"
+        data-aos="fade-down"
+        data-aos-delay="600"
+        alt
+        class="txt2"
+      />
+      <img
+        v-if="isMobile"
+        src="./s2/mo/title.png"
+        data-aos="fade-down"
+        data-aos-delay="200"
+        alt
+        class="title"
+      />
+      <img
+        v-if="isMobile"
+        src="./s2/mo/txt1.png"
+        data-aos="fade-down"
+        data-aos-delay="400"
+        alt
+        class="txt1"
+      />
+      <img
+        v-if="isMobile"
+        src="./s2/mo/txt2.png"
+        data-aos="fade-down"
+        data-aos-delay="600"
+        alt
+        class="txt2"
+      />
+      <img src="./s2/框.png" alt class="frame" data-aos="fade-down" data-aos-delay="800" />
+      <img src="./s2/icon1.png" alt class="icon" data-aos="fade-down" data-aos-delay="1000" />
+      <carousel-3d
+        ref="mycarousel"
+        :width="imgWidth"
+        :height="imgHeight"
+        :perspective="0"
+        :disable3d="isMobile ? true : false"
+        :border="0"
+        :display="isMobile ? 1 : 3"
+        :space="isMobile ? 'auto' : 'auto'"
+        @after-slide-change="onAfterSlideChange"
+      >
+        <slide
+          v-for="(slide, index) in slideList"
+          :index="index"
+          :key="slide.img"
+          class="carousel-3d-item"
+        >
+          <img :src="slide.img" :class="`carousel-3d-img`" :alt="slide.alt" />
+        </slide>
+      </carousel-3d>
+      <div class="indigator-group">
+        <span v-for="(slide, index) in slideList" :key="slide.img">
+          <img
+            v-show="index === currentIndex"
+            src="./s2/點1.png"
+            alt
+            class="indigator"
+            @click="goToSlide(index)"
+          />
+          <img
+            v-show="index !== currentIndex"
+            src="./s2/點2.png"
+            alt
+            class="indigator"
+            @click="goToSlide(index)"
+          />
+        </span>
       </div>
     </div>
   </div>
@@ -42,82 +97,68 @@
   position: relative;
 }
 
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
+.carousel-3d-slide {
+  background-color: transparent;
+}
+
+.title {
+  width: calc(100vw * (1589 / 1920));
+  display: block;
   margin: 0 auto;
-  margin-bottom: 40px;
-}
-
-.fullscreen {
-  overflow: visible;
-}
-
-.item {
-  width: calc(100vw * (625 / 1920));
-  height: calc(100vw * (625 / 1920));
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
-  background-image: url('./s2/prize.png');
-  background-size: cover;
-  transition: all .2s;
-
-  &:hover {
-    img {
-      transform: translateY(-10px);
-    }
-  }
-
-  &:nth-child(1) {
-    margin-top: -100px;
-    img {
-      width: calc(100vw * (625 / 1920));
-    }
-  }
-
-  &:nth-child(2) {
-    margin-top: 50px;
-    img {
-      width: calc(100vw * (625 / 1920));
-    }
-  }
-
-  &:nth-child(3) {
-    margin-top: -100px;
-    img {
-      width: calc(100vw * (625 / 1920));
-    }
-  }
-
-  .title {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: calc(100vw * (80 / 1920));
-    margin: 0 auto;
-    font-size: calc(100vw * (29 / 1920));
-    font-weight: 900;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.17;
-    letter-spacing: 2.9px;
-    text-align: center;
-    color: #ffffff;
-  }
+  z-index: 3;
 }
 
-.hint {
-  font-size: 26px;
-  line-height: 3.46;
-  letter-spacing: 2.6px;
-  text-align: center;
-  color: #d65b00;
+.txt1 {
+  width: calc(100vw * (826 / 1920));
+  display: block;
   margin: 0 auto;
-  margin-bottom: 30px;
+  position: relative;
+  z-index: 3;
+}
+
+.txt2 {
+  width: calc(100vw * (694 / 1920));
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+}
+
+.frame {
+  width: calc(100vw * (982 / 1920));
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(-100vw * (200 / 1920));
+  z-index: 2;
+}
+
+.icon {
+  width: calc(100vw * (52 / 1920));
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100vw * (580 / 1920));
+  z-index: 2;
+}
+
+.carousel-3d-container {
+  z-index: 3;
+  margin-top: 100px;
+}
+
+.indigator-group {
+  margin: 0 auto;
+
+  .indigator {
+    margin: 0 10px;
+    cursor: pointer;
+  }
 }
 
 /* 平板尺寸 */
@@ -130,63 +171,42 @@
   .fullscreen {
     height: auto !important;
   }
-  .item {
-    width: 285px;
-    height: 285px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    margin: 0 auto;
-    background-image: url('./s2/prize.png');
-    background-size: cover;
 
-    &:nth-child(1) {
-      margin-top: 0px;
-      img {
-        width: 285px;
-      }
-    }
-
-    &:nth-child(2) {
-      margin-top: 40px;
-      img {
-        width: 285px;
-      }
-    }
-
-    &:nth-child(3) {
-      margin-top: 40px;
-      img {
-        width: 285px;
-      }
-    }
-
-    .title {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 38px;
-      margin: 0 auto;
-      font-size: 15px;
-      font-weight: 900;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.17;
-      letter-spacing: 1.5px;
-      text-align: center;
-      color: #ffffff;
-    }
+  .title {
+    width: 100vw;
   }
 
-  .hint {
-    font-size: 15px;
-    line-height: 1.4;
-    letter-spacing: 1.5px;
-    text-align: center;
-    color: #d65b00;
-    margin-top: -30px;
-    margin-bottom: 40px;
+  .txt1 {
+    width: 80vw;
+  }
+
+  .txt2 {
+    width: 65vw;
+  }
+
+  .frame {
+    width: 100vw;
+    top: calc(-100vw * (200 / 750));
+  }
+
+  .icon {
+    width: 20px;
+    top: calc(100vw * (420 / 750));
+  }
+
+  .carousel-3d-container {
+    z-index: 3;
+    margin-top: 30px;
+  }
+
+  .indigator-group {
+    margin: 0 auto;
+
+    .indigator {
+      width: 25px;
+      margin: 0 10px;
+      cursor: pointer;
+    }
   }
 }
 </style>
@@ -195,18 +215,74 @@
 // @ is an alias to /src
 import { isMobile } from '@/utils'
 import slider from '@/mixins/slider.js'
+import { Carousel3d, Slide } from 'vue-carousel-3d'
 export default {
   name: 'section2',
   mixins: [slider],
 
-  components: {},
+  components: {
+    Carousel3d,
+    Slide,
+  },
 
   data() {
     return {
       isMobile,
+      slideList: [
+        {
+          img: require('./s2/1.png'),
+          alt: '豪禮一. 樂奇全熱交換器'
+        },
+        {
+          img: require('./s2/2.png'),
+          alt: '豪禮二. 進口伊諾華超耐磨木地板'
+        },
+        {
+          img: require('./s2/3.png'),
+          alt: '豪禮三. 日本原裝Cleanup廚具'
+        },
+        {
+          img: require('./s2/4.png'),
+          alt: '豪禮四. 3M全戶式不銹鋼淨水系統'
+        },
+        {
+          img: require('./s2/5.png'),
+          alt: '豪禮五. 3M廚下型高效能熱飲機'
+        },
+        {
+          img: require('./s2/6.png'),
+          alt: '豪禮六. 英格爾超級馬桶'
+        },
+        {
+          img: require('./s2/7.png'),
+          alt: '豪禮七. 樂奇暖風機'
+        },
+      ],
+      currentIndex: 0,
+      imgWidth: 920,
+      imgHeight: 720,
     }
   },
 
-  methods: {},
+  mounted() {
+    if (this.isTablet) {
+      this.imgWidth = 800
+      this.imgHeight = 650
+    }
+    if (this.isMobile) {
+      this.imgWidth = window.screen.width
+      this.imgHeight = window.screen.width * (570 / 750)
+    }
+  },
+
+  methods: {
+    goToSlide(index) {
+      this.currentIndex = index
+      this.$refs.mycarousel.goSlide(index)
+    },
+    onAfterSlideChange(index) {
+      this.currentIndex = index
+    },
+  },
 }
 </script>
