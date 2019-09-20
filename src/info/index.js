@@ -1,5 +1,5 @@
 export default {
-  address: '114台北市內湖區成功路二段440號',
+  address: '接待中心：桃園市龜山區文化一路與文桃路口',
   googleSrc:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.595959978608!2d121.38554471500647!3d25.047782283965994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a7357888a373%3A0x722f5e46ee087c0e!2z5Y-L5paH5YyW5o6l5b6F5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1568889293433!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/mdTJAZW84cZ6XAch8',
