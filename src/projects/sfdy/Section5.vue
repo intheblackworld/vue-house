@@ -30,6 +30,7 @@
 <style lang="scss" scoped>
 .section5 {
   position: relative;
+  height: 100%;
 }
 
 .tree {
@@ -183,6 +184,7 @@
   .bg {
     display: block;
     height: 150vh;
+    background-attachment: scroll;
   }
   .fullscreen {
     height: auto !important;

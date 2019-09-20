@@ -13,6 +13,9 @@
   </div>
 </template>
 <style lang="scss" scoped>
+.section2 {
+  height: 100%;
+}
 .bg {
   background-image: url('./s2_bg.jpg');
   background-attachment: fixed;
@@ -106,7 +109,7 @@
       margin-top: auto;
       margin: auto;
       width: 68vw;
-      margin-top: 21.5vh;
+      margin-top: 23.5vh;
       text-align: center;
     }
     .textbox-title {

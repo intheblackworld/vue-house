@@ -31,6 +31,7 @@
 
 .section4 {
   position: relative;
+  height: 100%;
 }
 
 .bg {
@@ -161,6 +162,7 @@
   .bg {
     display: block;
     height: initial;
+    background-attachment: scroll;
   }
   .fullscreen {
     // height: auto !important;

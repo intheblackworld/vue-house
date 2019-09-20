@@ -1,41 +1,43 @@
 <template>
-  <div class="section12" v-if="!isMobile">
-    <div class="slide relative fullscreen">
-      <img
-        v-for="(slide, index) in slideList"
-        :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
-        :key="`s12-slide-${index}`"
-        :src="slide.src"
-        alt
-      />
-    </div>
-    <img class="mask" src="./s12_mask.png" alt />
-    <div class="textbox-text-area">
-      <div class="textbox-title">
-        <h3 class="big">“境豐盈 心富裕”</h3>
-        <h3>回家彷彿走進，專屬的夢幻森林。</h3>
-      </div>「幸福大院」在大地上種下夢想，讓家人可以在這沃土豐收！「國揚建設」回歸人性居住哲學，打造新時代幸福別墅空間。一戶一景，哲學之道的景深美學，一眼一境，側院的規劃，增添住戶隱私性！
-    </div>
-  </div>
-  <div class="section12" v-else>
-    <div class="slide relative fullscreen">
-      <div class="slide relative">
+  <div class="outer">
+    <div class="section12" v-if="!isMobile">
+      <div class="slide relative fullscreen">
         <img
           v-for="(slide, index) in slideList"
-          :class="`slide-img ${slideIndex === index ? 'active' : ''} img-c`"
-          :key="`s10-slide-${index}`"
+          :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
+          :key="`s12-slide-${index}`"
           :src="slide.src"
           alt
         />
       </div>
-      <div class="text-area-bg">
-        <div class="text-area-container">
-          <div class="text-area-title">
-            <h3 class="big">“境豐盈 心富裕”</h3>
-            <h3>回家彷彿走進，專屬的夢幻森林。</h3>
-          </div>「幸福大院」在大地上種下夢想，讓家人可以在這沃土豐收！
-            <br>「國揚建設」回歸人性居住哲學，打造新時代幸福別墅空間。
-            <br>一戶一景，哲學之道的景深美學，一眼一境，側院的規劃，增添住戶隱私性！
+      <img class="mask" src="./s12_mask.png" alt />
+      <div class="textbox-text-area">
+        <div class="textbox-title">
+          <h3 class="big">“境豐盈 心富裕”</h3>
+          <h3>回家彷彿走進，專屬的夢幻森林。</h3>
+        </div>「幸福大院」在大地上種下夢想，讓家人可以在這沃土豐收！「國揚建設」回歸人性居住哲學，打造新時代幸福別墅空間。一戶一景，哲學之道的景深美學，一眼一境，側院的規劃，增添住戶隱私性！
+      </div>
+    </div>
+    <div class="section12" v-else>
+      <div class="slide relative fullscreen">
+        <div class="slide relative">
+          <img
+            v-for="(slide, index) in slideList"
+            :class="`slide-img ${slideIndex === index ? 'active' : ''} img-c`"
+            :key="`s10-slide-${index}`"
+            :src="slide.src"
+            alt
+          />
+        </div>
+        <div class="text-area-bg">
+          <div class="text-area-container">
+            <div class="text-area-title">
+              <h3 class="big">“境豐盈 心富裕”</h3>
+              <h3>回家彷彿走進，專屬的夢幻森林。</h3>
+            </div>「幸福大院」在大地上種下夢想，讓家人可以在這沃土豐收！
+            <br />「國揚建設」回歸人性居住哲學，打造新時代幸福別墅空間。
+            <br />一戶一景，哲學之道的景深美學，一眼一境，側院的規劃，增添住戶隱私性！
+          </div>
         </div>
       </div>
     </div>
@@ -146,9 +148,12 @@
 }
 
 @media screen and (max-width: 767px) {
+  .outer {
+    height: 100%;
+  }
   .section12 {
-    background-image: url("./s11_bg.jpg");
-    background-attachment: fixed;
+    background-image: url('./s11_bg.jpg');
+    background-attachment: scroll;
     background-size: cover;
     background-position: center;
   }
@@ -183,7 +188,7 @@
   }
 
   .text-area-bg {
-    background-image: url("./box.png");
+    background-image: url('./box.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     width: 90%;
@@ -221,11 +226,11 @@
 
 <script>
 // @ is an alias to /src
-import slider from "@/mixins/slider.js";
-import { isMobile } from "@/utils";
-import { setInterval } from "timers";
+import slider from '@/mixins/slider.js'
+import { isMobile } from '@/utils'
+import { setInterval } from 'timers'
 export default {
-  name: "section12",
+  name: 'section12',
   mixins: [slider],
 
   data() {
@@ -233,33 +238,33 @@ export default {
       isMobile,
       slideList: [
         {
-          src: require("./s12_img_1.jpg")
+          src: require('./s12_img_1.jpg'),
         },
         {
-          src: require("./s12_img_2.jpg")
+          src: require('./s12_img_2.jpg'),
         },
         {
-          src: require("./s12_img_3.jpg")
+          src: require('./s12_img_3.jpg'),
         },
         {
-          src: require("./s12_img_4.jpg")
+          src: require('./s12_img_4.jpg'),
         },
         {
-          src: require("./s12_img_5.jpg")
+          src: require('./s12_img_5.jpg'),
         },
         {
-          src: require("./s12_img_6.jpg")
-        }
-      ]
-    };
+          src: require('./s12_img_6.jpg'),
+        },
+      ],
+    }
   },
 
   methods: {},
 
   created() {
     setInterval(() => {
-      this.addIndex();
-    }, 5000);
-  }
-};
+      this.addIndex()
+    }, 5000)
+  },
+}
 </script>

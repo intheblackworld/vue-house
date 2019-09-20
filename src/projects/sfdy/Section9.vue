@@ -50,6 +50,7 @@
 
 .section9 {
   position: relative;
+  height: 100%;
 }
 
 .bg {
@@ -178,6 +179,7 @@
 @media screen and (max-width: 767px) {
   .bg {
     display: block;
+    background-attachment: scroll;
   }
   .fullscreen {
     height: auto !important;

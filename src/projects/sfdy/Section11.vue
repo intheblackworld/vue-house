@@ -40,6 +40,7 @@
 <style lang="scss" scoped>
 .section11 {
   position: relative;
+  height: 100%;
 }
 
 .prize {
@@ -185,6 +186,7 @@
   .bg {
     display: block;
     height: 140vh;
+    background-attachment: scroll;
   }
 
   .container {

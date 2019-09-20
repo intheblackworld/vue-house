@@ -61,6 +61,9 @@
   </div>
 </template>
 <style lang="scss" scoped>
+.section8 {
+  height: 100%;
+}
 .bg {
   background-image: url("./s7_bg.jpg");
   background-attachment: fixed;
@@ -416,6 +419,9 @@
 }
 
 @media screen and (max-width: 767px) {
+  .bg {
+    background-attachment: scroll;
+  }
   .slide {
     border: none;
     .slide-img {
