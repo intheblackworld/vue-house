@@ -183,7 +183,8 @@
 @media only screen and (max-width: 767px) {
   .bg {
     display: block;
-    height: 150vh;
+    min-height: 930px;
+    height: 120vh;
     background-attachment: scroll;
   }
   .fullscreen {

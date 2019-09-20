@@ -185,7 +185,8 @@
 @media only screen and (max-width: 767px) {
   .bg {
     display: block;
-    height: 140vh;
+    height: 110vh;
+    min-height: 890px;
     background-attachment: scroll;
   }
 
@@ -194,8 +195,8 @@
     margin: 0 auto;
     text-align: center;
     .text-area-bg {
-      width: 90%;
-      left: 5%;
+      width: 95%;
+      left: 2.5%;
       position: absolute;
       top: 200px;
       margin: 0;

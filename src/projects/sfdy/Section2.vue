@@ -99,6 +99,7 @@
   .bg {
     background-image: url('./s2_bg.jpg');
     background-size: cover;
+    background-attachment: scroll;
   }
   .textbox-img {
     background-image: url('./s2_textbox_m.png');
