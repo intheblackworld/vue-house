@@ -14,9 +14,9 @@ html,
 body {
   background: $bg !important;
   overflow-x: hidden;
-  *::-webkit-scrollbar {
-    display: none;
-  }
+  // *::-webkit-scrollbar {
+  //   display: none;
+  // }
 }
 
 #app {
