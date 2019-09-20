@@ -14,7 +14,7 @@
         >步行2分鐘抵高雄大學，自然生態日夜淨化空氣ING</div>
       </div>
     </div>
-    <Map :tagList="tagList" :bgSrc="isMobile ? bgmSrc: bgSrc" :hand="hand">
+    <Map :tagList="isMobile ? [] : tagList" :bgSrc="isMobile ? bgmSrc: bgSrc" :hand="hand">
       <div class="text" v-if="!isMobile">
         <div
           class="title"
