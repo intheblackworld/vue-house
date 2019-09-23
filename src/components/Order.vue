@@ -139,7 +139,7 @@ export default {
       if (
         !this.form.name ||
         !this.form.phone ||
-        !this.form.email ||
+        // !this.form.email ||
         !this.form.city ||
         !this.form.area
       ) {
