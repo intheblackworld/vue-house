@@ -144,6 +144,10 @@
     padding: 0 0 40px;
   }
 
+  .title-block {
+    width: 100vw;
+  }
+
   .fullscreen {
     height: auto !important;
   }
@@ -188,6 +192,7 @@
       letter-spacing: 2px;
       background: rgba(0, 0, 0, 0.6);
       padding: 5px 15px;
+      border-top-left-radius: 5px;
     }
 
     .slide-img {
