@@ -5,7 +5,7 @@
       預約成功
       <br />我們將會盡快與您聯繫
     </p>
-    <a href="/">回到首頁</a>
+    <a href="/event">回到首頁</a>
   </div>
 </template>
 <style lang="scss" scoped>
