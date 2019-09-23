@@ -27,14 +27,14 @@
 // @ is an alias to /src
 // import Navigation from '@/layouts/Navigation.vue'
 // import SideNavigation from '@/layouts/SideNavigation.vue'
-// import ContactSection from '@/layouts/ContactSection.vue'
+import ContactSection from '@/layouts/ContactSection.vue'
 // import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import gtm from '@/mixins/gtm.js'
 
 import Section1 from '@/projects/ywh/Section1.vue'
 import Section2 from '@/projects/ywh/Section2.vue'
-import SimpleOrder from '@/components/SimpleOrder.vue'
+// import SimpleOrder from '@/components/SimpleOrder.vue'
 
 export default {
   name: 'home',
@@ -43,11 +43,11 @@ export default {
     Loading,
     // Navigation,
     // SideNavigation,
-    // ContactSection,
+    ContactSection,
     // MobileNav,
     Section1,
     Section2,
-    SimpleOrder,
+    // SimpleOrder,
 
   },
 

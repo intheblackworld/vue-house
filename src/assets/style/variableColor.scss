@@ -48,23 +48,23 @@ $order_submit_color: #fff !important;
 $order_sumbit_disable_bg: rgba(157, 31, 40, .4) !important;
 
 // contactInfo
-$contact_bg: url('~@/assets/img/contact-bg.png');
+$contact_bg: #9d1f28;
 $contact_shadow: 0 0 80px 0 rgba(0, 0, 0, 0.2);
 
-$contact_btn_border: 0 0 0px 1px #c0802e;
-$contact_btn_color: #333;
-$contact_btn_icon: #c0802e;
+$contact_btn_border: 0 0 0px 1px #000000;
+$contact_btn_color: #000;
+$contact_btn_icon: #cc0000;
 $contact_btn_bg: #fff;
-$contact_btn_hover_color: #fff;
-$contact_btn_hover_icon: #fff;
-$contact_btn_hover_bg: #c0802e !important;
+$contact_btn_hover_color: #000;
+$contact_btn_hover_icon: #cc0000;
+$contact_btn_hover_bg: #ffd74b !important;
 
-$contact_google_hover_btn_color: #fff;
-$contact_google_hover_btn_icon: #fff;
-$contact_google_hover_btn_bg: #9d1f28 !important;
-$contact_google_btn_color: #fff;
-$contact_google_btn_icon: #fff;
-$contact_google_btn_bg: #9d1f28 !important;
+$contact_google_hover_btn_color: #000;
+$contact_google_hover_btn_icon: #cc0000;
+$contact_google_hover_btn_bg: #fff !important;
+$contact_google_btn_color: #000;
+$contact_google_btn_icon: #cc0000;
+$contact_google_btn_bg: #ffd74b !important;
 
 
 // houseInfo
@@ -89,7 +89,7 @@ $mobile_dialog_submit_color: #fff;
 
 /* dialog */
 /* PhoneThanks.vue */
-$phone_thanks_bg: #c82514;
+$phone_thanks_bg: #9d1f28;
 $phone_thanks_title_color: #fff;
 $phone_thanks_desc_color: #fff;
 $phone_thanks_link_color: #fff;
