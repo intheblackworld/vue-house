@@ -13,8 +13,8 @@
     <!-- <div id="section4">
       <Section4 />
     </div> -->
-    <!-- <ContactSection /> -->
-    <SimpleOrder />
+    <ContactSection />
+    <!-- <SimpleOrder /> -->
     <!-- <MobileNav /> -->
   </div>
 </template>
