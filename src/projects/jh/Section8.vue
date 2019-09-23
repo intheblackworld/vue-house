@@ -409,7 +409,7 @@
       letter-spacing: 2px;
       background: rgba(0, 0, 0, 0.6);
       padding: 5px 15px;
-      border-top-left-radius: 5px;
+      border-top-left-radius: 15px;
     }
   }
 }
