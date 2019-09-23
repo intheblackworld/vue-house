@@ -244,4 +244,10 @@ export default {
     width: 280px;
   }
 }
+
+@media only screen and (max-width: 321px) {
+  .address {
+    font-size: 14px;
+  }
+}
 </style>

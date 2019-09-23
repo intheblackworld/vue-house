@@ -1,5 +1,5 @@
 export default {
-  address: '241新北市三重區中正北路大仁街口',
+  address: '241新北市三重區中正北路．大仁街',
   googleSrc:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.1546910795655!2d121.48948311500689!3d25.0627455839589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a904a97af995%3A0xe8c0cc3a227a6258!2z56-J56a-5Lqk6Z-_6Zmi!5e0!3m2!1szh-TW!2stw!4v1568116832178!5m2!1szh-TW!2stw',
   phone: '02-2972-8888',
