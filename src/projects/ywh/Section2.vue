@@ -56,6 +56,8 @@
         :width="imgWidth"
         :height="imgHeight"
         :autoplay="true"
+        :autoplayTimeout="5000"
+        :autoplayHoverPause="true"
         :perspective="0"
         :disable3d="isMobile ? true : false"
         :border="0"
