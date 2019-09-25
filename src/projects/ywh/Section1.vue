@@ -2,7 +2,6 @@
   <div class="section1">
     <div class="bg relative">
       <div v-if="!isMobile">
-        <!-- <img src="./s1/bg.jpg" alt class="img bg1" /> -->
         <img src="./s1/g1.png" alt class="img girl1" data-aos="fade" data-aos-delay="1000" />
         <img src="./s1/g2.png" alt class="img girl2" data-aos="fade" data-aos-delay="1000" />
         <img src="./s1/l.png" alt class="img" data-aos="fade" data-aos-delay="1200" data-aos-duration="500" />
@@ -13,7 +12,6 @@
         <img src="./s1/t4.png" alt class="img" data-aos="fade-right" data-aos-delay="1400" />
       </div>
       <div v-if="isMobile">
-        <!-- <img src="./s1/mo/bg.jpg" alt class="img bg1" /> -->
         <img src="./s1/mo/g1.png" alt class="img girl1" data-aos="fade" data-aos-delay="1000" />
         <img src="./s1/mo/g2.png" alt class="img girl2" data-aos="fade" data-aos-delay="1000" />
         <img src="./s1/mo/l.png" alt class="img" data-aos="fade" data-aos-delay="1200" data-aos-duration="500" />

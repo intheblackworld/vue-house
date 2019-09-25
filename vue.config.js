@@ -12,12 +12,12 @@ module.exports = {
         '@': path.resolve(__dirname, 'src')
       },
     },
-    optimization: {
-      splitChunks: {
-        minSize: 10000,
-        maxSize: 20000
-      }
-    }
+    // optimization: {
+    //   splitChunks: {
+    //     minSize: 10000,
+    //     maxSize: 20000
+    //   }
+    // }
   },
 
   devServer: {
