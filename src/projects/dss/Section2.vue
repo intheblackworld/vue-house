@@ -4,12 +4,22 @@
       <img src="./s2_bg_txt.png" alt class="txt fullscreen" v-if="!isMobile" data-aos="fade" data-aos-delay="0" />
       <img src="./s2_bg_txt1_m.png" alt class="txt-m" v-if="isMobile" data-aos="fade" data-aos-delay="0" />
       <div class="video-container relative" data-aos="fade" data-aos-delay="500">
-        <div :class="`mask absolute ${isPlay ? 'hide' : ''}`">
+        <!-- <div :class="`mask absolute ${isPlay ? 'hide' : ''}`">
           <img src="./s2_play_btn.png" @click="handlePlay" alt="" />
-        </div>
-        <video ref="video">
+        </div> -->
+        <!-- <video ref="video">
           <source src="./s2_video.mp4" type="video/mp4" />
-        </video>
+        </video> -->
+        <iframe
+            id="ytplayer"
+            type="text/html"
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/RDXrCp8NZQk"
+            frameborder="0"
+            class="video"
+            allowfullscreen
+          ></iframe>
       </div>
       <img src="./s2_bg_txt2_m.png" alt class="txt-m" v-if="isMobile" data-aos="fade" data-aos-delay="300" />
     </div>
@@ -65,10 +75,11 @@
       z-index: 2;
     }
   }
-  video {
+  .video {
     position: absolute;
     left: 0;
     width: 100%;
+    height: calc(100vw * (580 / 1920));
     right: 10vw;
     top: 50%;
     transform: translateY(-50%);
@@ -114,7 +125,7 @@
         width: 60px;
       }
     }
-    video {
+    .video {
       width: 532px;
     }
   }
@@ -152,11 +163,12 @@
         margin-top: 0;
       }
     }
-    video {
+    .video {
       position: relative;
       top: 0;
       transform: none;
       width: 100vw;
+      height: calc(100vw * (427 / 750));
     }
   }
 
