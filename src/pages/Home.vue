@@ -55,10 +55,10 @@ import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import gtm from '@/mixins/gtm.js'
 
-import Section1 from '@/projects/jh/Section1.vue'
-import Section2 from '@/projects/jh/Section2.vue'
-import Section3 from '@/projects/jh/Section3.vue'
-import Section4 from '@/projects/jh/Section4.vue'
+import Section1 from '@/projects/yt/Section1.vue'
+import Section2 from '@/projects/yt/Section2.vue'
+import Section3 from '@/projects/yt/Section3.vue'
+import Section4 from '@/projects/yt/Section4.vue'
 import Section5 from '@/projects/jh/Section5.vue'
 import Section6 from '@/projects/jh/Section6.vue'
 import Section7 from '@/projects/jh/Section7.vue'
@@ -92,7 +92,7 @@ export default {
 
   data() {
     return {
-      isSide: true,
+      isSide: false,
       loading: true,
     }
   },
