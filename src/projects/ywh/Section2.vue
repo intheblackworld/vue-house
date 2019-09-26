@@ -6,7 +6,7 @@
         src="./s2/title.png"
         data-aos="fade-down"
         data-aos-delay="200"
-        alt
+        alt="早鳥超豪禮"
         class="title"
       />
       <img
@@ -14,7 +14,7 @@
         src="./s2/txt1.png"
         data-aos="fade-down"
         data-aos-delay="400"
-        alt
+        alt="七大建材重量級鉅獻!"
         class="txt1"
       />
       <img
@@ -22,7 +22,7 @@
         src="./s2/txt2.png"
         data-aos="fade-down"
         data-aos-delay="600"
-        alt
+        alt="限定前50戶幸運兒"
         class="txt2"
       />
       <img
@@ -30,7 +30,7 @@
         src="./s2/mo/title.png"
         data-aos="fade-down"
         data-aos-delay="200"
-        alt
+        alt="早鳥超豪禮"
         class="title"
       />
       <img
@@ -38,7 +38,7 @@
         src="./s2/mo/txt1.png"
         data-aos="fade-down"
         data-aos-delay="400"
-        alt
+        alt="七大建材重量級鉅獻"
         class="txt1"
       />
       <img
@@ -46,7 +46,7 @@
         src="./s2/mo/txt2.png"
         data-aos="fade-down"
         data-aos-delay="600"
-        alt
+        alt="限定前50戶幸運兒"
         class="txt2"
       />
       <img src="./s2/框.png" alt class="frame" data-aos="fade-down" data-aos-delay="800" />
