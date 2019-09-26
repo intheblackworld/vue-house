@@ -18,7 +18,18 @@
           :key="slide.img"
           class="video-slide"
         >
-          <img
+          <iframe
+            id="ytplayer"
+            type="text/html"
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/7ib77J5S4Z4"
+            frameborder="0"
+            :class="`${currentIndex === index ? 'clickable' : ''}`"
+            allowfullscreen
+          ></iframe>
+
+          <!-- <img
             src="./s3/play_btn.png"
             alt
             :class="`play-btn absolute-c ${slide.isPlay ? 'hide' : ''}`"
@@ -27,7 +38,7 @@
           <img :src="slide.img" :class="`video-img absolute ${slide.isPlay ? 'hide' : ''}`" />
           <video :ref="`video${index}`" class="video" @click="pauseAll">
             <source :src="slide.video" type="video/mp4" />
-          </video>
+          </video> -->
         </slide>
       </carousel-3d>
       <div class="btn-group flex-jb flex-ac flex-mobile-jb" v-if="isMobile">
@@ -55,7 +66,7 @@
   &:hover {
     border-color: #fff !important;
   }
-  
+
   .play-btn {
     width: 125px;
     cursor: pointer;
@@ -78,6 +89,14 @@
     &.hide {
       display: none;
     }
+  }
+}
+
+iframe {
+  pointer-events: none;
+
+  &.clickable {
+    pointer-events: auto;
   }
 }
 
