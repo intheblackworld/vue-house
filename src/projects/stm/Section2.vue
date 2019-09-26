@@ -33,12 +33,22 @@
         </div>
       </div>
       <div class="video-container relative" v-scroll-reveal.reset="$fadeInUp(1000, 2500)">
-        <div :class="`mask absolute flex-c ${isPlay ? 'hide' : ''}`">
+        <!-- <div :class="`mask absolute flex-c ${isPlay ? 'hide' : ''}`">
           <img src="./s2_play_btn.png" @click="handlePlay" alt="心天畝的圖片" />
-        </div>
-        <video ref="video">
+        </div> -->
+        <!-- <video ref="video">
           <source src="./video.mp4" type="video/mp4" />
-        </video>
+        </video> -->
+        <iframe
+            id="ytplayer"
+            type="text/html"
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/dOk1eWKcCVI"
+            frameborder="0"
+            class="video"
+            allowfullscreen
+          ></iframe>
       </div>
     </div>
   </div>
@@ -120,10 +130,11 @@
         z-index: 2;
       }
     }
-    video {
+    .video {
       position: absolute;
       left: 0;
       width: 720px;
+      height: calc(100vw * (476 / 1440));
     }
   }
 }
@@ -185,7 +196,7 @@
           width: 60px;
         }
       }
-      video {
+      .video {
         width: 532px;
       }
     }
@@ -243,9 +254,10 @@
           width: 60px;
         }
       }
-      video {
+      .video {
         position: relative;
         width: 100vw;
+        height: calc(100vw * (220 / 320));
       }
     }
   }
