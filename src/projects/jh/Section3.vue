@@ -23,7 +23,7 @@
             type="text/html"
             width="100%"
             height="100%"
-            src="https://www.youtube.com/embed/7ib77J5S4Z4"
+            :src="slide.src"
             frameborder="0"
             :class="`${currentIndex === index ? 'clickable' : ''}`"
             allowfullscreen
@@ -94,9 +94,12 @@
 
 iframe {
   pointer-events: none;
+  // position: absolute;
+  // z-index: 1;
 
   &.clickable {
     pointer-events: auto;
+    // z-index: 100;
   }
 }
 
@@ -245,17 +248,17 @@ export default {
       slideList: [
         {
           img: require('./s3/1.jpg'),
-          video: require('./s3/20S_世紀地王篇_20190708.mp4'),
+          src: 'https://www.youtube.com/embed/7ib77J5S4Z4',
           isPlay: false,
         },
         {
           img: require('./s3/2.jpg'),
-          video: require('./s3/30S_時間價值篇_20190708.mp4'),
+          src: 'https://www.youtube.com/embed/8ptj1yuJcnE',
           isPlay: false,
         },
         {
           img: require('./s3/4.jpg'),
-          video: require('./s3/45S_永恆篇_20190708.mp4'),
+          src: 'https://www.youtube.com/embed/hZY4K9POpSs',
           isPlay: false,
         },
       ],
@@ -276,27 +279,27 @@ export default {
   },
 
   methods: {
-    pauseAll() {
-      this.slideList[0].isPlay = false
-      this.$refs[`video${0}`][0].pause()
-      this.slideList[1].isPlay = false
-      this.$refs[`video${1}`][0].pause()
-      this.slideList[2].isPlay = false
-      this.$refs[`video${2}`][0].pause()
-    },
+    // pauseAll() {
+    //   this.slideList[0].isPlay = false
+    //   this.$refs[`video${0}`][0].pause()
+    //   this.slideList[1].isPlay = false
+    //   this.$refs[`video${1}`][0].pause()
+    //   this.slideList[2].isPlay = false
+    //   this.$refs[`video${2}`][0].pause()
+    // },
     // pausePlay(index) {
     //   this.slideList[index].isPlay = false
     //   this.$refs[`video${index}`][0].pause()
     // },
-    handlePlay(index) {
-      if (this.slideList[index].isPlay) {
-        this.slideList[index].isPlay = false
-        this.$refs[`video${index}`][0].pause()
-      } else {
-        this.slideList[index].isPlay = true
-        this.$refs[`video${index}`][0].play()
-      }
-    },
+    // handlePlay(index) {
+    //   if (this.slideList[index].isPlay) {
+    //     this.slideList[index].isPlay = false
+    //     this.$refs[`video${index}`][0].pause()
+    //   } else {
+    //     this.slideList[index].isPlay = true
+    //     this.$refs[`video${index}`][0].play()
+    //   }
+    // },
 
     goToSlide(index) {
       this.$refs.mycarousel.goSlide(index)
@@ -304,7 +307,7 @@ export default {
 
     onAfterSlideChange(index) {
       this.currentIndex = index
-      this.pauseAll()
+      // this.pauseAll()
     },
   },
 }
