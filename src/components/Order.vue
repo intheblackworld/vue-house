@@ -71,6 +71,7 @@
     </div>
     <ContactInfo />
     <GoogleMap />
+    <Footer />
     <PolicyDialog :policyVisible="policyVisible" />
   </div>
 </template>
@@ -79,6 +80,7 @@
 import ContactInfo from '@/components/ContactInfo.vue'
 import GoogleMap from '@/components/GoogleMap.vue'
 import PolicyDialog from '@/components/PolicyDialog.vue'
+import Footer from '@/layouts/Footer.vue'
 import info from '@/info'
 import { cityList, renderAreaList } from '@/info/address'
 
@@ -88,6 +90,7 @@ export default {
     ContactInfo,
     GoogleMap,
     PolicyDialog,
+    Footer
   },
 
   data() {
