@@ -234,31 +234,31 @@ export default {
       slideList: [
         {
           img: require('./s2/1.png'),
-          alt: '豪禮一. 樂奇全熱交換器'
+          alt: '豪禮1 日本原裝CLEANUP'
         },
         {
           img: require('./s2/2.png'),
-          alt: '豪禮二. 進口伊諾華超耐磨木地板'
+          alt: '豪禮2 全熱交換器'
         },
         {
           img: require('./s2/3.png'),
-          alt: '豪禮三. 日本原裝Cleanup廚具'
+          alt: '豪禮3 3M全戶淨水器'
         },
         {
           img: require('./s2/4.png'),
-          alt: '豪禮四. 3M全戶式不銹鋼淨水系統'
+          alt: '豪禮4 3M廚下型冷熱飲水機'
         },
         {
           img: require('./s2/5.png'),
-          alt: '豪禮五. 3M廚下型高效能熱飲機'
+          alt: '豪禮5 全室進口木地板'
         },
         {
           img: require('./s2/6.png'),
-          alt: '豪禮六. 英格爾超級馬桶'
+          alt: '豪禮6 全室超級馬桶'
         },
         {
           img: require('./s2/7.png'),
-          alt: '豪禮七. 樂奇暖風機'
+          alt: '豪禮7 全室暖風機'
         },
       ],
       currentIndex: 0,
