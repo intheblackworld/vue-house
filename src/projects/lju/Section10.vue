@@ -521,22 +521,32 @@ export default {
       slide2Index: 0,
       slideList: [
         {
-          src: require('./s10_img_1.jpg'),
+          src: require('./s10/3_1.jpg'),
         },
         {
-          src: require('./s10_img_2.jpg'),
+          src: require('./s10/3_2.jpg'),
         },
         {
-          src: require('./s10_img_3.jpg'),
+          src: require('./s10/3_3.jpg'),
+        },
+        {
+          src: require('./s10/3_4.jpg'),
         },
       ],
       slideList2: [
         {
-          src: require('./s11_img_1.jpg'),
+          src: require('./s10/2_1.jpg'),
         },
         {
-          src: require('./s11_img_2.jpg'),
+          src: require('./s10/2_2.jpg'),
         },
+        {
+          src: require('./s10/2_3.jpg'),
+        },
+        {
+          src: require('./s10/2_4.jpg'),
+        },
+
       ],
     }
   },
