@@ -1,5 +1,5 @@
 <template>
-  <div class="section2">
+  <div class="section8">
     <div class="bg fullscreen">
       <div v-if="!isMobile">
         <img src="./s8/1.png" alt="耘耕美築 恆久淳萃 公園綠景第一排" class="bg-img" />
@@ -66,7 +66,7 @@
 import { isMobile } from '@/utils'
 
 export default {
-  name: 'section2',
+  name: 'section8',
 
   data() {
     return {

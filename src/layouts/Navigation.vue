@@ -19,7 +19,7 @@
               <span class="link">
                 <img v-if="item.imgSrc" :src="item.imgSrc" alt />
                 <span>
-                  <p class="title">{{item.name}}</p>
+                  <h3 class="title">{{item.name}}</h3>
                   <span class="subTitle">{{item.subTitle}}</span>
                 </span>
               </span>
@@ -113,8 +113,8 @@ export default {
   position: absolute;
   left: 0;
   display: block;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0px;
+  transform: translateY(0%);
 }
 
 .mask {
@@ -132,12 +132,12 @@ export default {
 
   .link {
     color: $nav_link_color;
-    height: 22px;
+    height: 100%;
     text-align: center;
     display: block;
     cursor: pointer;
     padding: 0 20px;
-    transition: all .8s;
+    transition: all 0.8s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -147,7 +147,18 @@ export default {
 
     &:hover {
       color: $nav_link_hover_color;
-      // background: $nav_link_hover_bg;
+      img {
+        animation: r5 0.5s infinite alternate;
+      }
+    }
+
+    @keyframes r5 {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(5deg);
+      }
     }
 
     // &::before {
@@ -204,8 +215,8 @@ export default {
     }
 
     img {
-      // width: 35px;
-      // height: 35px;
+      width: calc(100vw * 50 / 1920);
+      height: 35px;
       margin-right: 10px;
     }
   }

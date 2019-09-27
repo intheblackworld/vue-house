@@ -33,9 +33,11 @@ body {
 
   &.no-padding-top {
     padding-top: 0;
-  }
 
-  background-color: #fff;
+    .fullscreen {
+      height: 100vh;
+    }
+  }
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;
@@ -231,6 +233,13 @@ img[lazy='loaded'] {
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .home.no-padding-top {
+    padding-top: 0;
+
+    .fullscreen {
+      height: 100vh;
+    }
+  }
   .fullscreen {
     height: calc(100vh - #{$nav_tablet_height});
 
@@ -310,6 +319,13 @@ img[lazy='loaded'] {
 
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
+  .home.no-padding-top {
+    padding-top: 0;
+
+    .fullscreen {
+      height: calc(100vh - 63px) !important;
+    }
+  }
   .fullscreen {
     height: calc(100vh - #{$nav_phone_height} - 63px) !important;
     overflow: hidden;
@@ -412,7 +428,6 @@ img[lazy='loaded'] {
     }
   }
 }
-
 
 @media only screen and (min-width: 1025px) and (max-height: 770px) {
   .fullscreen {

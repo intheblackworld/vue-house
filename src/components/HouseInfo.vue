@@ -67,7 +67,7 @@ export default {
   margin-right: 160px;
   width: 260px;
   height: 30px;
-  border-left: 4px solid $house_label_color;
+  border-left: 4px solid $house_border_color;
   padding-left: 12px;
   display: flex;
   align-items: center;

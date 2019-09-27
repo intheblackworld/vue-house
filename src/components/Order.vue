@@ -1,11 +1,11 @@
 <template>
   <div class="order-bg">
-    <div class="title-block">
+    <!-- <div class="title-block">
       <h3 class="title">{{order.title}}</h3>
       <div class="subtitle">{{order.subTitle}}</div>
-    </div>
-    <!-- <h3 class="order-title">{{order.title}}</h3>
-    <h3 class="order-subtitle">{{order.subTitle}}</h3> -->
+    </div> -->
+    <h3 class="order-title">{{order.title}}</h3>
+    <h3 class="order-subtitle">{{order.subTitle}}</h3>
     <div class="order">
       <div class="form">
         <div class="group">

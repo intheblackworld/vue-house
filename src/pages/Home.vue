@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home no-padding-top">
     <div ref="gtmNoScript" />
     <Loading :loading="loading" />
     <SideNavigation v-if="isSide" />
@@ -31,12 +31,12 @@
     <div id="section9">
       <Section9 />
     </div>
-    <div id="section10">
+    <!-- <div id="section10">
       <Section10 />
     </div>
     <div id="section11">
       <Section11 />
-    </div>
+    </div> -->
     <ContactSection />
     <MobileNav />
   </div>
@@ -63,7 +63,7 @@ import Section5 from '@/projects/yt/Section5.vue'
 import Section6 from '@/projects/yt/Section6.vue'
 import Section7 from '@/projects/yt/Section7.vue'
 import Section8 from '@/projects/yt/Section8.vue'
-import Section9 from '@/projects/jh/Section9.vue'
+import Section9 from '@/projects/yt/Section9.vue'
 import Section10 from '@/projects/jh/Section10.vue'
 import Section11 from '@/projects/jh/Section11.vue'
 
