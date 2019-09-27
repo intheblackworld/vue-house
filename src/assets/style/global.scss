@@ -323,7 +323,7 @@ img[lazy='loaded'] {
     padding-top: 0;
 
     .fullscreen {
-      height: calc(100vh - 63px) !important;
+      height: calc(100vh - 63px);
     }
   }
   .fullscreen {
@@ -345,8 +345,7 @@ img[lazy='loaded'] {
       padding-top: 0;
     }
 
-    background-color: #3c2d2e;
-    background-image: url('../../projects/jh/generic_bg_m.png');
+    background-color: #fff;
   }
 
   .col-mobile-1 {

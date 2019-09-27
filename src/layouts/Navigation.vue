@@ -216,7 +216,7 @@ export default {
 
     img {
       width: calc(100vw * 50 / 1920);
-      height: 35px;
+      height: auto;
       margin-right: 10px;
     }
   }

@@ -7,7 +7,7 @@
         <img src="./s3/3.jpg" alt class="img" data-aos="fade-up" data-aos-delay="800" />
       </div>
       <div v-else data-aos="fade-down" data-aos-delay="200">
-        <swiper :options="swiperOption" ref="mySwiper" swiper-no-swiping>
+        <swiper :options="swiperOption" ref="mySwiper">
           <swiper-slide
             v-for="(slide, index) in slideList"
             :index="index"
