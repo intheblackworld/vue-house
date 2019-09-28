@@ -222,7 +222,11 @@ image {
 @media screen and (max-width: 767px) {
   .bg {
     background: url('./s1/mo/bg.jpg');
-    background-size: 100%;
+    background-size: 100% 100%;
+
+    // &.fullscreen {
+    //   height: auto !important;
+    // }
   }
 }
 </style>

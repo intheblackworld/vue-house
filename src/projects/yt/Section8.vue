@@ -76,6 +76,9 @@
     background: transparent;
     height: 100%;
     overflow: visible;
+    &.fullscreen {
+      height: auto !important;
+    }
   }
 
   .title {
@@ -122,7 +125,8 @@
   .m-block {
     margin-top: calc(-100vw * 360 / 750);
     position: relative;
-    z-index: 1
+    z-index: 1;
+    margin-bottom: 20px;
   }
 }
 </style>

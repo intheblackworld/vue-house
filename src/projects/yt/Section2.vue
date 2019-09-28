@@ -132,7 +132,7 @@
 @media screen and (max-width: 767px) {
   .bg {
     background: url('./s2/mo/bg.jpg');
-    background-size: 100%;
+    background-size: 100% 100%;
     // height: 100%;
 
     &.fullscreen {

@@ -39,7 +39,7 @@
           </div>
         </swiper>
         <swiper
-          :options="swiperOption"
+          :options="methodOption"
           ref="methodSwiper"
           @slideChangeTransitionEnd="slideChanged"
           data-aos="fade-down"
@@ -241,6 +241,22 @@ export default {
       isMobile,
       methodIndex: 0,
       swiperOption: {
+        slidesPerView: isMobile ? 1 : 3,
+        spaceBetween: isTablet ? 20 : 30,
+        // allowSlidePrev: isMobile ? true : false,
+        // allowSlideNext: isMobile ? true : false,
+        // centeredSlides: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        loop: isMobile,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      },
+      methodOption: {
         slidesPerView: isMobile ? 1 : 3,
         spaceBetween: isTablet ? 20 : 30,
         // allowSlidePrev: isMobile ? true : false,
