@@ -31,12 +31,6 @@
     <div id="section9">
       <Section9 />
     </div>
-    <!-- <div id="section10">
-      <Section10 />
-    </div>
-    <div id="section11">
-      <Section11 />
-    </div> -->
     <ContactSection />
     <MobileNav />
   </div>
@@ -64,8 +58,6 @@ import Section6 from '@/projects/yt/Section6.vue'
 import Section7 from '@/projects/yt/Section7.vue'
 import Section8 from '@/projects/yt/Section8.vue'
 import Section9 from '@/projects/yt/Section9.vue'
-import Section10 from '@/projects/jh/Section10.vue'
-import Section11 from '@/projects/jh/Section11.vue'
 
 export default {
   name: 'home',
@@ -85,8 +77,6 @@ export default {
     Section7,
     Section8,
     Section9,
-    Section10,
-    Section11,
 
   },
 

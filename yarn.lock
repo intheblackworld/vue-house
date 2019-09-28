@@ -2519,6 +2519,11 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
+createjs-cmd@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/createjs-cmd/-/createjs-cmd-0.1.0.tgz#2f6199f7b421ed84f92aef331872d9c73ffd9789"
+  integrity sha1-L2GZ97Qh7YT5Ku8zGHLZxz/9l4k=
+
 cross-spawn@^5.0.1, cross-spawn@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-5.1.0.tgz#e8bd0efee58fcff6f8f94510a0a554bbfa235449"

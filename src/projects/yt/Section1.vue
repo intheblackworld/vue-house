@@ -2,11 +2,56 @@
   <div class="section1">
     <div class="bg fullscreen">
       <div v-if="!isMobile">
-        <img src="./s1/1.png" alt="耘耕美築 恆久淳萃 公園綠景第一排" class="bg-img" data-aos="fade-down" data-aos-delay="1200" />
-        <img src="./s1/2.png" alt="耘耕美築 恆久淳萃 公園綠景第一排" class="bg-img" data-aos="fade" data-aos-delay="400" />
-        <img src="./s1/3.png" alt="耘耕美築 恆久淳萃 公園綠景第一排" class="bg-img" data-aos="fade" data-aos-delay="600" />
-        <img src="./s1/4.png" alt="耘耕美築 恆久淳萃 公園綠景第一排" class="bg-img" data-aos="fade" data-aos-delay="800" />
-        <img src="./s1/5.png" alt="耘耕美築 恆久淳萃 公園綠景第一排" class="bg-img" data-aos="fade" data-aos-delay="1000" />
+        <!-- <div
+          id="animation_container"
+          style="background-color:rgba(255, 255, 255, 1.00); width:1920px; height:1080px"
+        >
+          <canvas
+            id="canvas"
+            width="1920"
+            height="1080"
+            style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"
+          ></canvas>
+          <div
+            id="dom_overlay_container"
+            style="pointer-events:none; overflow:hidden; width:1920px; height:1080px; position: absolute; left: 0px; top: 0px; display: block;"
+          ></div>
+        </div>-->
+        <img
+          src="./s1/1.png"
+          alt="耘耕美築 恆久淳萃 公園綠景第一排"
+          class="bg-img"
+          data-aos="fade-down"
+          data-aos-delay="1200"
+        />
+        <img
+          src="./s1/2.png"
+          alt="耘耕美築 恆久淳萃 公園綠景第一排"
+          class="bg-img"
+          data-aos="fade"
+          data-aos-delay="400"
+        />
+        <img
+          src="./s1/3.png"
+          alt="耘耕美築 恆久淳萃 公園綠景第一排"
+          class="bg-img"
+          data-aos="fade"
+          data-aos-delay="600"
+        />
+        <img
+          src="./s1/4.png"
+          alt="耘耕美築 恆久淳萃 公園綠景第一排"
+          class="bg-img"
+          data-aos="fade"
+          data-aos-delay="800"
+        />
+        <img
+          src="./s1/5.png"
+          alt="耘耕美築 恆久淳萃 公園綠景第一排"
+          class="bg-img"
+          data-aos="fade"
+          data-aos-delay="1000"
+        />
       </div>
       <div v-else>
         <img
@@ -37,7 +82,13 @@
           data-aos="fade"
           data-aos-delay="800"
         />
-        <img src="./s1/mo/5.png" alt="耘耕美築 恆久淳萃 公園綠景第一排" class="bg-img" data-aos="fade-down" data-aos-delay="1000" />
+        <img
+          src="./s1/mo/5.png"
+          alt="耘耕美築 恆久淳萃 公園綠景第一排"
+          class="bg-img"
+          data-aos="fade-down"
+          data-aos-delay="1000"
+        />
       </div>
     </div>
   </div>
@@ -95,7 +146,6 @@
   }
 }
 </style>
-
 <script>
 // @ is an alias to /src
 import { isMobile } from '@/utils'
