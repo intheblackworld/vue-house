@@ -338,6 +338,12 @@ export default {
       span {
         line-height: 16px;
       }
+
+      img {
+        width: calc(100vw * 200 / 1920);
+        height: auto;
+        margin-right: 10px;
+      }
     }
 
     &.open {
