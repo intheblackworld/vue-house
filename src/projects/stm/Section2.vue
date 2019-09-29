@@ -36,6 +36,7 @@
         <!-- <div :class="`mask absolute flex-c ${isPlay ? 'hide' : ''}`">
           <img src="./s2_play_btn.png" @click="handlePlay" alt="心天畝的圖片" />
         </div> -->
+        <img :class="`mask absolute ${isPlay ? 'hide' : ''}`" src="./s2_video.jpg" @click="handlePlay" alt="" />
         <!-- <video ref="video">
           <source src="./video.mp4" type="video/mp4" />
         </video> -->
@@ -114,27 +115,22 @@
     .mask {
       z-index: 1;
       left: 0;
-      width: 720px;
-      height: 405px;
-      background: rgba(0, 0, 0, 0.4);
+      width: calc(100vw * (720 / 1920));
+      height: calc(100vw * (476 / 1920));
+      object-fit: cover;
+      border: 1px solid #eee;
       transition: all 0.5s;
+      cursor: pointer;
 
       &.hide {
-        opacity: 0;
-      }
-
-      img {
-        width: 70px;
-        cursor: pointer;
-        position: relative;
-        z-index: 2;
+        display: none;
       }
     }
     .video {
       position: absolute;
       left: 0;
-      width: 720px;
-      height: calc(100vw * (476 / 1440));
+      width: calc(100vw * (720 / 1920));
+      height: calc(100vw * (476 / 1920));
     }
   }
 }
@@ -198,6 +194,7 @@
       }
       .video {
         width: 532px;
+        height: 300px;
       }
     }
   }
@@ -248,7 +245,7 @@
       margin: 0 auto;
       .mask {
         width: 100vw;
-        height: calc((100vw * 9) / 16);
+        height: calc(100vw * (220 / 320));
 
         img {
           width: 60px;
