@@ -16,15 +16,15 @@
         <img src="./act_m.jpg" alt v-else />
       </div>
     </div>
-    <video-bg autoplay="autoplay" :sources="['']" img="./s2_bg.jpg" isFix>
-      <iframe
+    <video-bg autoplay="autoplay" :sources="['https://www.h35.banner.tw/lkf/lkf.mp4']" img="./s2_bg.jpg" isFix>
+      <!-- <iframe
         id="ytplayer"
         width="100%"
         height="100%"
         src="https://www.youtube.com/embed/WXB04Bsy8Xk?version=3&autoplay=1&loop=1&playlist=WXB04Bsy8Xk&controls=0&rel=0"
         frameborder="0"
         allowfullscreen
-      ></iframe>
+      ></iframe> -->
 
       <img
         data-aos="fade"

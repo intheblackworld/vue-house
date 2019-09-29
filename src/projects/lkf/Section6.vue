@@ -87,7 +87,7 @@
             ></video-bg>
           </div> -->
           <iframe width="100%" height="100%" v-if="isShowVR" src="https://www.youtube.com/embed/CUi8vTFA0eM?rel=0"></iframe>
-          <img v-else src="./s6_720.png" alt="" class="slide-img active" @click="isShowVR = true">
+          <img v-else src="./s6_720.jpg" alt="" class="slide-img active" style="cursor: pointer;" @click="isShowVR = true">
           <div class="slide-footer">公設3D示意圖(實際依完工現況為準)</div>
         </div>
         <div v-if="isMobile" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
@@ -102,14 +102,8 @@
             <div class="slide-title">國際級精裝修 頂級享受</div>
             <div class="slide-desc">林口首座精裝修飯店風潮，18~22坪完美格局，絕無僅有的品味時尚，拎包入住的便利生活，無論自住或出租，家都是飯店人生得完美展現</div>
           </div>
-          <!-- <div class="slide-video">
-            <video-bg
-              autoplay="autoplay"
-              :sources="[require('./s6_video3.mp4')]"
-              img="./s6_img3-1.jpg"
-            ></video-bg>
-          </div> -->
-          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/c87k-PzSKHg?rel=0&autoplay=1&loop=1"></iframe>
+          <iframe width="100%" v-if="isShow3D" height="100%" src="https://www.youtube.com/embed/c87k-PzSKHg?rel=0"></iframe>
+          <img v-else src="./s6_3d.jpg" alt="" class="slide-img active" style="cursor: pointer;" @click="isShow3D = true">
           <div class="slide-footer">樣品屋3D示意圖(實際依完工現況為準)</div>
         </div>
         <div v-if="isMobile" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
@@ -367,7 +361,7 @@
     iframe {
       width: 94.5%;
       margin: 0 auto;
-      height: auto;
+      height: calc(94.5vw * 184 / 328);
     }
 
     .slide-img {
@@ -445,6 +439,7 @@ export default {
       slideList4: [require('./s6_img4-1.jpg')],
       isMobile,
       isShowVR: false,
+      isShow3D: false,
     }
   },
 
