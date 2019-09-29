@@ -7,6 +7,7 @@
         <!-- <div :class="`mask absolute ${isPlay ? 'hide' : ''}`">
           <img src="./s2_play_btn.png" @click="handlePlay" alt="" />
         </div> -->
+        <img :class="`mask absolute ${isPlay ? 'hide' : ''}`" src="./s2_video.jpg" @click="handlePlay" alt="" />
         <!-- <video ref="video">
           <source src="./s2_video.mp4" type="video/mp4" />
         </video> -->
@@ -57,29 +58,30 @@
     z-index: 1;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 405px;
-    background: rgba(0, 0, 0, 0);
-    transition: all 0.5s;
-    opacity: 1;
+    width: calc(100vw * 1020 / 1920);
+    height: calc(100vw * 574 / 1920);
+    // background: rgba(0, 0, 0, 0);
+    object-fit: cover;
+    top: 50%;
+    transform: translateY(-50%);
 
     &.hide {
-      opacity: 0;
+      display: none;
     }
 
-    img {
-      width: 70px;
-      margin-top: -30px;
-      cursor: pointer;
-      position: relative;
-      z-index: 2;
-    }
+    // img {
+    //   width: 70px;
+    //   margin-top: -30px;
+    //   cursor: pointer;
+    //   position: relative;
+    //   z-index: 2;
+    // }
   }
   .video {
     position: absolute;
     left: 0;
     width: 100%;
-    height: calc(100vw * (580 / 1920));
+    height: calc(100vw * (574 / 1920));
     right: 10vw;
     top: 50%;
     transform: translateY(-50%);
@@ -168,7 +170,7 @@
       top: 0;
       transform: none;
       width: 100vw;
-      height: calc(100vw * (427 / 750));
+      height: calc(100vw * (420 / 750));
     }
   }
 
