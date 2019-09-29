@@ -45,9 +45,10 @@
             type="text/html"
             width="100%"
             height="100%"
-            src="https://www.youtube.com/embed/dOk1eWKcCVI"
+            src="https://www.youtube.com/embed/dOk1eWKcCVI?rel=0&autoplay=1"
             frameborder="0"
             class="video"
+            v-if="isPlay"
             allowfullscreen
           ></iframe>
       </div>
