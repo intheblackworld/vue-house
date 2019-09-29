@@ -18,6 +18,7 @@
           :key="slide.img"
           class="video-slide"
         >
+        <img :src="slide.img" :class="`video-img absolute ${slide.isPlay ? 'hide' : ''}`" @click="handlePlay(index)" />
           <iframe
             id="ytplayer"
             type="text/html"
@@ -35,7 +36,7 @@
             :class="`play-btn absolute-c ${slide.isPlay ? 'hide' : ''}`"
             @click="handlePlay(index)"
           />
-          <img :src="slide.img" :class="`video-img absolute ${slide.isPlay ? 'hide' : ''}`" />
+          
           <video :ref="`video${index}`" class="video" @click="pauseAll">
             <source :src="slide.video" type="video/mp4" />
           </video> -->
@@ -257,7 +258,7 @@ export default {
           isPlay: false,
         },
         {
-          img: require('./s3/4.jpg'),
+          img: require('./s3/3.jpg'),
           src: 'https://www.youtube.com/embed/hZY4K9POpSs',
           isPlay: false,
         },
@@ -291,15 +292,15 @@ export default {
     //   this.slideList[index].isPlay = false
     //   this.$refs[`video${index}`][0].pause()
     // },
-    // handlePlay(index) {
-    //   if (this.slideList[index].isPlay) {
-    //     this.slideList[index].isPlay = false
-    //     this.$refs[`video${index}`][0].pause()
-    //   } else {
-    //     this.slideList[index].isPlay = true
-    //     this.$refs[`video${index}`][0].play()
-    //   }
-    // },
+    handlePlay(index) {
+      if (this.slideList[index].isPlay) {
+        this.slideList[index].isPlay = false
+        this.$refs[`video${index}`][0].pause()
+      } else {
+        this.slideList[index].isPlay = true
+        this.$refs[`video${index}`][0].play()
+      }
+    },
 
     goToSlide(index) {
       this.$refs.mycarousel.goSlide(index)
