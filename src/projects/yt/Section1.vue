@@ -227,6 +227,10 @@ image {
     // &.fullscreen {
     //   height: auto !important;
     // }
+    svg {
+      position: relative;
+      z-index: 3;
+    }
   }
 }
 </style>
