@@ -26,6 +26,7 @@
             height="100%"
             :src="slide.src"
             frameborder="0"
+            v-if="slide.isPlay"
             :class="`${currentIndex === index ? 'clickable' : ''}`"
             allowfullscreen
           ></iframe>
@@ -249,17 +250,17 @@ export default {
       slideList: [
         {
           img: require('./s3/1.jpg'),
-          src: 'https://www.youtube.com/embed/7ib77J5S4Z4',
+          src: 'https://www.youtube.com/embed/7ib77J5S4Z4?rel=0&autoplay=1',
           isPlay: false,
         },
         {
           img: require('./s3/2.jpg'),
-          src: 'https://www.youtube.com/embed/8ptj1yuJcnE',
+          src: 'https://www.youtube.com/embed/8ptj1yuJcnE?rel=0&autoplay=1',
           isPlay: false,
         },
         {
           img: require('./s3/3.jpg'),
-          src: 'https://www.youtube.com/embed/hZY4K9POpSs',
+          src: 'https://www.youtube.com/embed/hZY4K9POpSs?rel=0&autoplay=1',
           isPlay: false,
         },
       ],
