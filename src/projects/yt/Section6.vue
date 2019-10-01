@@ -181,7 +181,7 @@
     margin: 0 auto;
   }
 
-  .fullscreen {
+  .bg.fullscreen {
     height: auto !important;
   }
 

@@ -319,7 +319,7 @@ img[lazy='loaded'] {
 
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
-  .home.no-padding-top {
+  .no-padding-top {
     padding-top: 0;
 
     .fullscreen {
