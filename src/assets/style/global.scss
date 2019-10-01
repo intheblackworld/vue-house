@@ -323,7 +323,7 @@ img[lazy='loaded'] {
     padding-top: 0;
 
     .fullscreen {
-      height: calc(100vh - 63px);
+      height: calc(100vh - 63px) !important;
     }
   }
   .fullscreen {

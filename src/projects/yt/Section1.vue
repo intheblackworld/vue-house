@@ -32,7 +32,7 @@
             <image overflow="visible" width="81" height="85" xlink:href="./s1/bee2.png">
               <animateMotion
                 dur="12s"
-                keyPoints="0;0.4;0.4;1"
+                keyPoints="0;0.42;0.42;1"
                 keyTimes="0;0.2;0.6;1"
                 path="M2098.053,858.767c-452.632-355.191-724.994,286.97-1002.632-134.135 c-157.89-239.478-518.434,152.007-718.423,68.421c-176.308-73.688-123.677-468.425-502.631-400"
                 repeatCount="indefinite"
@@ -42,9 +42,9 @@
             <image overflow="visible" width="81" height="85" xlink:href="./s1/bee1.png">
               <animateMotion
                 dur="12s"
-                keyPoints="0;0.5;0.5;1"
+                keyPoints="0;0.47;0.47;1"
                 keyTimes="0;0.3;0.7;1"
-                path="M-57.211,614.106c86.842-171.053,265.784-250.653,426.315-231.889 C777,429.896,903.316,82.527,1161.211,216.738c274.09,142.639,373.685-257.895,484.21-257.895"
+                path="M-57.21,614.11C29.63,443.05,158.57,333.45,319.1,352.22C727,399.9,823.32,12.53,1081.21,146.74 C1355.3,289.38,1534.9-41.16,1645.42-41.16"
                 repeatCount="indefinite"
                 rotate="auto"
                 begin="-3s"
@@ -190,6 +190,7 @@ image {
   left: 0;
   height: auto;
   display: block;
+  height: 100%;
   object-fit: cover;
 
   &:nth-child(1) {
