@@ -62,6 +62,7 @@
     width: 100vw;
     .item-img {
       width: 100%;
+      display: block;
     }
   }
 }
