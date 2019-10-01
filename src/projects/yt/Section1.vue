@@ -2,21 +2,6 @@
   <div class="section1">
     <div class="bg fullscreen">
       <div v-if="!isMobile">
-        <!-- <div
-          id="animation_container"
-          style="background-color:rgba(255, 255, 255, 1.00); width:1920px; height:1080px"
-        >
-          <canvas
-            id="canvas"
-            width="1920"
-            height="1080"
-            style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"
-          ></canvas>
-          <div
-            id="dom_overlay_container"
-            style="pointer-events:none; overflow:hidden; width:1920px; height:1080px; position: absolute; left: 0px; top: 0px; display: block;"
-          ></div>
-        </div>-->
         <svg
           version="1.1"
           id="bg_svg"

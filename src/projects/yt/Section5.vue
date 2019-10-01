@@ -2,43 +2,57 @@
   <div class="section4">
     <div class="bg">
       <div v-if="!isMobile">
-        <img src="./s5/1.png" alt="耘耕美築 恆久淳萃 公園綠景第一排" class="bg-img" data-aos="fade-left"
-          data-aos-delay="600" />
-        <img src="./s5/2.png" alt="耘耕美築 恆久淳萃 公園綠景第一排" class="bg-img" data-aos="fade-right"
-          data-aos-delay="600" />
-        <img src="./s5/logo.png" alt="耘耕美築 恆久淳萃 公園綠景第一排" class="bg-img" data-aos="fade"
-          data-aos-delay="1200" />
-        <img src="./s5/t1.png" alt="聽見 森林公園第一排" class="bg-img" data-aos="fade-down"
-          data-aos-delay="400" />
-        <img src="./s5/t2.png" alt="【下樓 走進一座綠色花園】" class="bg-img" data-aos="fade-right"
-          data-aos-delay="600" />
-        <img src="./s5/t3.png" alt="【散步 遇見輕軌的美好距離】" class="bg-img" data-aos="fade-right"
-          data-aos-delay="800" />
-        <img src="./s5/t4.png" alt="【轉彎 公司田溪腳踏車自由行】" class="bg-img" data-aos="fade-right"
-          data-aos-delay="900" />
+        <img
+          src="./s5/1.png"
+          alt="耘耕美築 恆久淳萃 公園綠景第一排"
+          class="bg-img"
+          data-aos="fade-left"
+          data-aos-delay="600"
+        />
+        <img
+          src="./s5/2.png"
+          alt="耘耕美築 恆久淳萃 公園綠景第一排"
+          class="bg-img"
+          data-aos="fade-right"
+          data-aos-delay="600"
+        />
+        <img
+          src="./s5/logo.png"
+          alt="耘耕美築 恆久淳萃 公園綠景第一排"
+          class="bg-img"
+          data-aos="fade"
+          data-aos-delay="1200"
+        />
+        <img
+          src="./s5/t1.png"
+          alt="聽見 森林公園第一排"
+          class="bg-img"
+          data-aos="fade-down"
+          data-aos-delay="400"
+        />
+        <img
+          src="./s5/t2.png"
+          alt="【下樓 走進一座綠色花園】"
+          class="bg-img"
+          data-aos="fade-right"
+          data-aos-delay="600"
+        />
+        <img
+          src="./s5/t3.png"
+          alt="【散步 遇見輕軌的美好距離】"
+          class="bg-img"
+          data-aos="fade-right"
+          data-aos-delay="800"
+        />
+        <img
+          src="./s5/t4.png"
+          alt="【轉彎 公司田溪腳踏車自由行】"
+          class="bg-img"
+          data-aos="fade-right"
+          data-aos-delay="900"
+        />
       </div>
       <div v-else>
-        <swiper
-          :options="swiperOption"
-          ref="mySwiper"
-          data-aos="fade-down"
-          data-aos-delay="200"
-        >
-          <swiper-slide
-            v-for="(slide, index) in slideList"
-            :index="index"
-            :key="slide.img"
-            class="item"
-          >
-            <img :src="slide.src" :class="`item-img`" />
-          </swiper-slide>
-          <div class="swiper-button-prev" slot="button-prev">
-            <img src="./arrow-left.png" alt />
-          </div>
-          <div class="swiper-button-next" slot="button-next">
-            <img src="./arrow-right.png" alt />
-          </div>
-        </swiper>
         <h3 class="title" data-aos="fade-down" data-aos-delay="400">聽見 森林公園第一排</h3>
         <div class="desc" data-aos="fade-down" data-aos-delay="600">
           綠意森濤的立體聲，
@@ -58,8 +72,24 @@
             <div class="content" v-html="item.desc"></div>
           </div>
         </div>
-        <img src="./s5/mo/bg.jpg" alt class="img" data-aos="fade" data-aos-delay="800" />
-        <img src="./s5/mo/logo.png" alt="" class="logo" data-aos="fade" data-aos-delay="1200">
+        <swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="200">
+          <swiper-slide
+            v-for="(slide, index) in slideList"
+            :index="index"
+            :key="slide.img"
+            class="item"
+          >
+            <img :src="slide.src" :class="`item-img`" />
+          </swiper-slide>
+          <div class="swiper-button-prev" slot="button-prev">
+            <img src="./arrow-left.png" alt />
+          </div>
+          <div class="swiper-button-next" slot="button-next">
+            <img src="./arrow-right.png" alt />
+          </div>
+        </swiper>
+        <!-- <img src="./s5/mo/bg.jpg" alt class="img" data-aos="fade" data-aos-delay="800" />
+        <img src="./s5/mo/logo.png" alt="" class="logo" data-aos="fade" data-aos-delay="1200">-->
       </div>
     </div>
   </div>
@@ -145,6 +175,7 @@
   }
 
   .dropdown {
+    margin-bottom: 30px;
     .item {
       height: 45px;
       overflow: hidden;
@@ -199,6 +230,26 @@
     bottom: 0;
     left: 0;
     display: block;
+  }
+
+  .swiper-container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .item-img {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .swiper-button-prev,
+  .swiper-container-rtl .swiper-button-next {
+    left: 5vw;
+  }
+
+  .swiper-button-next,
+  .swiper-container-rtl .swiper-button-prev {
+    right: 5vw;
   }
 }
 </style>
@@ -265,6 +316,9 @@ export default {
         },
         {
           src: require('./s5/mo/img2.jpg'),
+        },
+        {
+          src: require('./s5/mo/img3.jpg'),
         },
       ],
     }

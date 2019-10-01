@@ -105,14 +105,14 @@ export default {
       },
       slideList: [
         {
-          src: require('./s3/mo/1.jpg'),
+          src: require('./s3/1.jpg'),
         },
         {
-          src: require('./s3/mo/2.jpg'),
+          src: require('./s3/2.jpg'),
         },
 
         {
-          src: require('./s3/mo/3.jpg'),
+          src: require('./s3/3.jpg'),
         },
       ],
     }
