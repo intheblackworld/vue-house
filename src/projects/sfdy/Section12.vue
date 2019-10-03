@@ -217,7 +217,7 @@
       margin-bottom: 10px;
       font-size: 19px;
       .big {
-        font-size: 36px;
+        font-size: calc(100vw * 35 / 375);
       }
     }
   }
