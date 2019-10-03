@@ -195,10 +195,6 @@ image {
   .bg {
   }
 
-  .fullscreen {
-    height: auto !important;
-  }
-
   .bg-img {
     top: auto;
     bottom: 0;
