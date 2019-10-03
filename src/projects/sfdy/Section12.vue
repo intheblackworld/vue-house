@@ -13,8 +13,8 @@
       <img class="mask" src="./s12_mask.png" alt />
       <div class="textbox-text-area">
         <div class="textbox-title">
-          <h3 class="big">“境豐盈 心富裕”</h3>
-          <h3>回家彷彿走進，專屬的夢幻森林。</h3>
+          <h3 class="big">身心安定 洋溢幸福</h3>
+          <h3>一戶一樹 一庭一院</h3>
         </div>「幸福大院」在大地上種下夢想，讓家人可以在這沃土豐收！「國揚建設」回歸人性居住哲學，打造新時代幸福別墅空間。一戶一景，哲學之道的景深美學，一眼一境，側院的規劃，增添住戶隱私性！
       </div>
     </div>
@@ -32,8 +32,8 @@
         <div class="text-area-bg">
           <div class="text-area-container">
             <div class="text-area-title">
-              <h3 class="big">“境豐盈 心富裕”</h3>
-              <h3>回家彷彿走進，專屬的夢幻森林。</h3>
+              <h3 class="big">身心安定 洋溢幸福</h3>
+              <h3>一戶一樹 一庭一院</h3>
             </div>「幸福大院」在大地上種下夢想，讓家人可以在這沃土豐收！
             <br />「國揚建設」回歸人性居住哲學，打造新時代幸福別墅空間。
             <br />一戶一景，哲學之道的景深美學，一眼一境，側院的規劃，增添住戶隱私性！

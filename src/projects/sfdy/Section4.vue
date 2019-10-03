@@ -4,12 +4,13 @@
     <div class="bg">
       <div class="content" id="section4">
         <div class="img"></div>
+        <!-- <img src="./4img.jpg" alt="" class="img"> -->
         <!-- <div class="tree"></div> -->
         <div class="text-area-bg">
           <div class="text-area-container">
             <div class="text-area-title">
-              <h3>“風的廊道”</h3>
-              <h3>建築微氣候</h3>
+              <h3>"風光水綠 森林墅"</h3>
+              <h3>極致養生四大元素</h3>
             </div>風與水，這兩項是影響「建築微氣候」的關鍵，而「幸福大院」重視風、水、光、綠四大建築元素，在別墅間預留風的廊道，搭配垂直綠廊，讓風有效流動並降溫，即使從冷氣房走出來，也能感受到涼爽清新的微風吹拂。社區水撲滿設計，讓基地像...，能循環用水、更能調節氣候。「幸福大院」用自然生態及遠見思維，營造涼爽宜居的生活環境。
           </div>
         </div>
@@ -63,7 +64,7 @@
 }
 
 .img {
-  background-image: url('./s4_img.jpg');
+  background-image: url('./4img.jpg');
   background-position: center;
   background-size: cover;
   flex: 2;
@@ -77,7 +78,7 @@
   margin-left: 6px;
 
   .text-area-container {
-    text-align: left;
+    text-align: justify;
     color: #595757;
     width: 70%;
     height: 80%;
@@ -88,10 +89,11 @@
   }
 
   .text-area-title {
-    font-size: 48px;
+    font-size: calc(100vw * (35 / 1920));
     color: #249486;
     text-align: center;
     margin-bottom: 16px;
+    white-space: nowrap;
   }
 }
 
@@ -107,7 +109,7 @@
 @media only screen and (min-width: 1281px) and (max-width: 1440px) {
   .text-area-bg {
     .text-area-title {
-      font-size: 42px;
+      font-size: calc(100vw * (42 / 1920));
     }
   }
   .tree {
@@ -123,7 +125,7 @@
     }
 
     .text-area-title {
-      font-size: 38px;
+      font-size: calc(100vw * (45 / 1920));
     }
   }
   .tree {
@@ -141,7 +143,7 @@
     }
 
     .text-area-title {
-      font-size: 30px;
+      font-size: 26px;
     }
   }
 
@@ -193,7 +195,7 @@
     }
 
     .text-area-title {
-      font-size: 35px;
+      font-size: calc(100vw * (30 / 375));
     }
   }
 
@@ -201,7 +203,7 @@
     // background-image: url('./s4_tree_m.png');
     width: 100vw;
     // height: calc(100vw * (281 / 375));
-    bottom: 2%;
+    bottom: 0%;
 
     top: auto;
     right: 0%;

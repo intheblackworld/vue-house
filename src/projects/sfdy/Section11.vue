@@ -1,6 +1,6 @@
 <template>
   <div class="section11">
-    <div class="bg">
+    <div class="bg fullscreen">
       <div class="container">
         <!-- <h3 class="title flex-c" v-scroll-reveal.reset="!isMobile ? $fadeInUp() : $fadeInUp()">樹海為鄰</h3>
         <h3 class="sub-title" v-scroll-reveal.reset="!isMobile ? $fadeInUp(300) : $fadeInUp()">有氧森活，比健身房更好的養生秘境</h3>
@@ -27,8 +27,8 @@
         <div class="text-area-bg">
           <div class="text-area-container">
             <div class="text-area-title">
-              <h3 class="big">“飯店式精緻物業管理”</h3>
-              <h3>贏得您的信任與芳心</h3>
+              <h3 class="big">五星級飯店式物業管理</h3>
+              <h3>賓至如歸的貼心禮遇</h3>
             </div>「幸福大院」為首座引用「飯店式精緻物業管理」服務的別墅社區，我們期望住進來就是享受的開始，因此提供高爾夫球車內接送服務，創造峇里島頂級VILLA的生活情境，由專業的管家秘書團隊，為住戶提供貼心的生活服務。加強社區總體營造，社區將不定期舉辦生活分享系列課程，讓鄰里關係更緊密，從軟體服務提升別墅的生活境界，才是頂級生活應有的尊貴，應有的享受。
           </div>
           <div class="prize"></div>

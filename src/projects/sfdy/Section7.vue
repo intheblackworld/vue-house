@@ -5,8 +5,8 @@
         <div class="text-area-bg">
           <div class="text-area-container">
             <div class="text-area-title">
-              <h3>“綠的生機”</h3>
-              <h3>都市森林</h3>
+              <h3>“大基地 大森林”</h3>
+              <h3>盡情玩耍的樂園</h3>
             </div>夠大的土地，才能打造夠大的森林。「幸福大院」種下超過500棵喬木與樹苗，100種以上的植物，基地綠化量高達4500坪，高低錯落的立體森林，不僅是住戶們的自然遮陽傘。
           </div>
         </div>
@@ -29,8 +29,8 @@
         <div class="text-area-bg">
           <div class="text-area-container">
             <div class="text-area-title">
-              <h3>“綠的生機”</h3>
-              <h3>都市森林</h3>
+              <h3>“大基地 大森林”</h3>
+              <h3>盡情玩耍的樂園</h3>
             </div>夠大的土地，才能打造夠大的森林。「幸福大院」種下超過500棵喬木與樹苗，100種以上的植物，基地綠化量高達4500坪，高低錯落的立體森林，不僅是住戶們的自然遮陽傘。
           </div>
         </div>
@@ -102,7 +102,7 @@
   }
 
   .text-area-title {
-    font-size: 48px;
+    font-size: calc(100vw * (35 / 1920));
     color: #249486;
     line-height: 1.19;
     text-align: center;
@@ -113,7 +113,7 @@
 @media only screen and (min-width: 1281px) and (max-width: 1440px) {
   .text-area-bg {
     .text-area-title {
-      font-size: 42px;
+      font-size: calc(100vw * (42 / 1920));
     }
   }
 }
@@ -122,7 +122,7 @@
   .content {
     .text-area-bg {
       .text-area-title {
-        font-size: 38px;
+        font-size: calc(100vw * (42 / 1920));
       }
     }
   }
@@ -140,7 +140,8 @@
     }
 
     .text-area-title {
-      font-size: 30px;
+      font-size: 22px;
+      white-space: nowrap;
     }
   }
 
@@ -184,7 +185,7 @@
       }
 
       .text-area-title {
-        font-size: 35px;
+        font-size: calc(100vw * 28 / 375);
       }
     }
   }

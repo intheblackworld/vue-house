@@ -4,8 +4,8 @@
       <div class="textbox-img">
         <div class="textbox-text-area">
           <div class="textbox-title">
-            <h3 class="big">“住一棟別墅”</h3>
-            <h3>享一座會館 ＋ 一座森林</h3>
+            <h3 class="big">“到森林裡度假”</h3>
+            <h3>五星級獨立泳池會館</h3>
           </div>隱隱約約的淺移默化，將健康與運動的種籽落入這個溫厚的土壤，長出大樹，成一片森林花園，舒展都市擁擠的壓力，打開了閉塞心靈的一扇窗。
         </div>
       </div>

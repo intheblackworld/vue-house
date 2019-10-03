@@ -1,14 +1,16 @@
 <template>
   <div class="section2">
     <div class="bg fullscreen relative">
-      <div class="textbox-img">
+      <img v-if="!isMobile" src="./s2txtbox2.png" alt="“史博館第一排” 台南首座生態別墅莊園" class="bg-img" data-aos="fade-down" data-aos-delay="200">
+      <img v-if="isMobile" src="./s2txtbox_s2.png" alt="“史博館第一排” 台南首座生態別墅莊園" class="bg-img" data-aos="fade-down" data-aos-delay="200">
+      <!-- <div class="textbox-img">
         <div class="textbox-text-area">
           <div class="textbox-title">
             <h3>“史博館第一排”</h3>
             <h3>台南首座生態別墅莊園</h3>
           </div>引領世界建築趨勢，超乎想像的建築計畫，首度開啟台南國際新視野。
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -22,6 +24,13 @@
   background-size: cover;
   background-position: center;
   height: 100vh;
+}
+
+.bg-img {
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .textbox-img {

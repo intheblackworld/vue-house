@@ -1,7 +1,9 @@
 <template>
   <div class="section3">
     <div class="bg fullscreen relative">
-      <div class="textbox-img">
+      <img v-if="!isMobile" src="./s3txtbox.png" alt="大口呼吸！15萬坪城市綠肺就在眼前 台南史博館第一排景觀席 恆久棟距‧無限視野‧新鮮活氧" class="bg-img" data-aos="fade" data-aos-delay="200" />
+      <img v-if="isMobile" src="./s3txtbox_s.png" alt="大口呼吸！15萬坪城市綠肺就在眼前 台南史博館第一排景觀席 恆久棟距‧無限視野‧新鮮活氧" class="bg-img" data-aos="fade" data-aos-delay="200" />
+      <!-- <div class="textbox-img">
         <div class="textbox-text-area">
           <div class="textbox-title">
             <h3>
@@ -11,7 +13,7 @@
           </div>城市巨肺低碳綠園區
           <br />享用休閒遊憩及兼具教育功能生活領域
         </div>
-      </div>
+      </div>-->
     </div>
   </div>
 </template>
@@ -30,6 +32,13 @@
   // display: block;
   // left: 0;
   // top: 0;
+}
+
+.bg-img {
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .textbox-img {
@@ -119,7 +128,7 @@
     height: calc(100vw * (600 / 800));
     background-size: contain;
     .textbox-text-area {
-      margin-top: calc(100vw * (100 / 800));;
+      margin-top: calc(100vw * (100 / 800));
       margin-left: 70px;
       font-size: calc(100vw * (13 / 375));
     }

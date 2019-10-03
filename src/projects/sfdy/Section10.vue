@@ -4,8 +4,8 @@
       <div class="container">
         <div class="content-left">
           <div class="left-title">
-            <h3>台南美學首席</h3>
-            <h3>蘊綠養身寓所</h3>
+            <h3>品味‧休閒‧紓壓</h3>
+            <h3>一座隱身森林裡的會館</h3>
           </div>
           <div class="btn-group flex-jc flex-ac flex-mobile-jb">
             <div
@@ -67,7 +67,7 @@
 </template>
 <style lang="scss" scoped>
 .bg {
-  background-image: url("./s10_bg.jpg");
+  background-color: #004488;
   background-position: 100% 0%;
   background-size: cover;
   position: relative;
@@ -127,23 +127,31 @@
 
 .left-title {
   width: 306px;
-  font-size: 42px;
   font-weight: bold;
   line-height: 1.19;
   letter-spacing: 4.7px;
-  color: #3e3a39;
+  color: #ffffff;
   margin-bottom: 20%;
+
+  & h3:nth-child(1) {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+
+  & h3:nth-child(2) {
+    font-size: 24px;
+  }
 }
 
 .sofa {
-  background-image: url("./s10_icon_brown.png");
+  background-image: url('./s10_icon_brown.png');
   height: 40px;
   width: 60px;
   background-size: contain;
   position: relative;
   top: calc(50% - 20px);
   &.active {
-    background-image: url("./s10_icon_white.png");
+    background-image: url('./s10_icon_white.png');
   }
 }
 
@@ -161,7 +169,7 @@
   width: 270px;
   height: 80px;
   border-bottom: 1px solid #b38a63;
-  color: #3e3a39;
+  color: #ffc20e;
   text-align: center;
   padding: 0 10px;
   display: flex;
@@ -222,9 +230,17 @@
 
 @media only screen and (min-width: 1281px) and (max-width: 1440px) {
   .left-title {
-    font-size: 32px;
     margin-bottom: 10px;
     width: 260px;
+
+    & h3:nth-child(1) {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    & h3:nth-child(2) {
+      font-size: 20px;
+    }
   }
   .content-left {
     margin-right: 20px;
@@ -259,6 +275,14 @@
     font-size: 32px;
     margin-bottom: 10px;
     width: 260px;
+    & h3:nth-child(1) {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    & h3:nth-child(2) {
+      font-size: 18px;
+    }
   }
   .content-left {
     margin-right: 20px;
@@ -291,9 +315,17 @@
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .left-title {
-    font-size: 32px;
     margin-bottom: 10px;
     width: 260px;
+
+    & h3:nth-child(1) {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    & h3:nth-child(2) {
+      font-size: 20px;
+    }
   }
   .content-left {
     margin-right: 20px;
@@ -331,7 +363,7 @@
     width: 100%;
     display: block;
     .text-area-bg {
-      background-image: url("./box.png");
+      background-image: url('./box.png');
       background-size: 100% 100%;
       background-repeat: no-repeat;
       width: 90%;
@@ -372,45 +404,45 @@
 </style>
 
 <script>
-import slider from "@/mixins/slider.js";
-import { isMobile } from "@/utils";
+import slider from '@/mixins/slider.js'
+import { isMobile } from '@/utils'
 export default {
-  name: "section10",
+  name: 'section10',
   mixins: [slider],
 
   data() {
     return {
       slideList: [
         {
-          src: require("./s10_img_1.jpg"),
-          name: "五感交誼廳"
+          src: require('./s10_img_1.jpg'),
+          name: '五感交誼廳',
         },
         {
-          src: require("./s10_img_2.jpg"),
-          name: "大觀交誼廳"
+          src: require('./s10_img_2.jpg'),
+          name: '大觀交誼廳',
         },
         {
-          src: require("./s10_img_3.jpg"),
-          name: "綠量會館"
+          src: require('./s10_img_3.jpg'),
+          name: '綠量會館',
         },
         {
-          src: require("./s10_img_4.jpg"),
-          name: "水樣池畔"
+          src: require('./s10_img_4.jpg'),
+          name: '水樣池畔',
         },
         {
-          src: require("./s10_img_5.jpg"),
-          name: "尊榮雙門廳"
-        }
+          src: require('./s10_img_5.jpg'),
+          name: '尊榮雙門廳',
+        },
       ],
-      isMobile
-    };
+      isMobile,
+    }
   },
 
   methods: {},
   created() {
     setInterval(() => {
-      this.addIndex();
-    }, 5000);
-  }
-};
+      this.addIndex()
+    }, 5000)
+  },
+}
 </script>

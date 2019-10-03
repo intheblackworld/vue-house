@@ -22,6 +22,9 @@
     <div id="section6">
       <Section6 />
     </div>
+    <div id="section10">
+      <Section10 />
+    </div>
     <div id="section7">
       <Section7 />
     </div>
@@ -31,9 +34,7 @@
     <div id="section9">
       <Section9 />
     </div>
-    <div id="section10">
-      <Section10 />
-    </div>
+    
     <div id="section11">
       <Section11 />
     </div>

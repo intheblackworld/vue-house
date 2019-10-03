@@ -16,8 +16,8 @@
             <div class="textbox-behind"></div>
             <div class="text-area-bg">
               <div class="text-area-title">
-                <h3 class="big">“點亮大台南”</h3>
-                <h3>超強卡司創優質生活新指標</h3>
+                <h3 class="big">“國際團隊最強聯手”</h3>
+                <h3>台灣首座黃金級生態別墅</h3>
               </div>
               <div class="text-area-subTitle">國揚 ╳ 德國 ╳ 日本 ╳ 新加坡 ╳ 成大祐生團隊</div>跨國聯擘建築奧斯卡，為「幸福大院」打造一座融合綠能、環保、永續的別墅莊園，期望以領先全球的生態觀點為台南挹注永續基因，讓土地看見愛，讓國際看見台南。
             </div>
@@ -50,8 +50,8 @@
           <div class="textbox-behind"></div>
           <div class="text-area-bg">
             <div class="text-area-title">
-              <h3 class="big">“點亮大台南”</h3>
-              <h3>超強卡司創優質生活新指標</h3>
+              <h3 class="big">“國際團隊最強聯手”</h3>
+              <h3>台灣首座黃金級生態別墅</h3>
             </div>
             <div class="text-area-subTitle">國揚 ╳ 德國 ╳ 日本 ╳ 新加坡 ╳ 成大祐生團隊</div>跨國聯擘建築奧斯卡，為「幸福大院」打造一座融合綠能、環保、永續的別墅莊園，期望以領先全球的生態觀點為台南挹注永續基因，讓土地看見愛，讓國際看見台南。
           </div>
@@ -65,7 +65,7 @@
   height: 100%;
 }
 .bg {
-  background-image: url("./s7_bg.jpg");
+  background-image: url('./s7_bg.jpg');
   background-attachment: fixed;
   background-position: 99% 0%;
   background-size: cover;
@@ -91,7 +91,7 @@
 }
 
 .text-area-bg {
-  background-image: url("./box.png");
+  background-image: url('./box.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   width: 600px;
@@ -107,16 +107,15 @@
     position: relative;
     width: 540px;
     left: calc(50% - 270px);
-    font-size: 48px;
     color: #249486;
     text-align: center;
     margin-bottom: 16px;
 
     h3 {
-      font-size: 44px;
+      font-size: calc(100vw * (44 / 1920));
     }
     h3.big {
-      font-size: 56px;
+      font-size: calc(100vw * (52 / 1920));
     }
   }
 
@@ -296,10 +295,10 @@
     padding: 20px 30px;
     .text-area-title {
       h3 {
-        font-size: 24px;
+        font-size: calc(100vw * (44 / 1920));
       }
       h3.big {
-        font-size: 32px;
+        font-size: calc(100vw * (52 / 1920));
       }
     }
   }
@@ -311,7 +310,7 @@
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1280px) {
-   .container-top {
+  .container-top {
     width: 90%;
   }
   .slide {
@@ -335,21 +334,21 @@
   }
   .textbox-behind {
     width: 450px;
-    height: 220px;
+    height: 250px;
   }
 
   .text-area-bg {
     font-size: 15px;
     width: 460px;
-    height: 230px;
+    height: 260px;
     top: 0px;
     padding: 20px 30px;
     .text-area-title {
       h3 {
-        font-size: 24px;
+        font-size: calc(100vw * (44 / 1920));
       }
       h3.big {
-        font-size: 32px;
+        font-size: calc(100vw * (52 / 1920));
       }
     }
   }
@@ -393,13 +392,13 @@
   }
   .textbox-behind {
     width: 450px;
-    height: 190px;
+    height: 220px;
   }
 
   .text-area-bg {
     font-size: 15px;
     width: 460px;
-    height: 230px;
+    height: 260px;
     top: -30px;
     padding: 20px 30px;
     .text-area-title {
@@ -489,45 +488,45 @@
 </style>
 
 <script>
-import slider from "@/mixins/slider.js";
-import { isMobile } from "@/utils";
+import slider from '@/mixins/slider.js'
+import { isMobile } from '@/utils'
 export default {
-  name: "section8",
+  name: 'section8',
   mixins: [slider],
 
   data() {
     return {
       slideList: [
         {
-          src: require("./s8_img_1.jpg"),
-          srcHasTitle: require("./s8_img_1_hasTitle.png"),
-          name: "生態規劃顧問"
+          src: require('./s8_img_1.jpg'),
+          srcHasTitle: require('./s8_img_1_hasTitle.png'),
+          name: '生態規劃顧問',
         },
         {
-          src: require("./s8_img_2.jpg"),
-          srcHasTitle: require("./s8_img_2_hasTitle.png"),
-          name: "建築整合設計"
+          src: require('./s8_img_2.jpg'),
+          srcHasTitle: require('./s8_img_2_hasTitle.png'),
+          name: '建築整合設計',
         },
         {
-          src: require("./s8_img_3.jpg"),
-          srcHasTitle: require("./s8_img_3_hasTitle.png"),
-          name: "社區燈光設計"
+          src: require('./s8_img_3.jpg'),
+          srcHasTitle: require('./s8_img_3_hasTitle.png'),
+          name: '社區燈光設計',
         },
         {
-          src: require("./s8_img_4.jpg"),
-          srcHasTitle: require("./s8_img_4_hasTitle.png"),
-          name: "水景觀設計"
+          src: require('./s8_img_4.jpg'),
+          srcHasTitle: require('./s8_img_4_hasTitle.png'),
+          name: '水景觀設計',
         },
         {
-          src: require("./s8_img_5.jpg"),
-          srcHasTitle: require("./s8_img_5_hasTitle.png"),
-          name: "會館建築與室內設計"
-        }
+          src: require('./s8_img_5.jpg'),
+          srcHasTitle: require('./s8_img_5_hasTitle.png'),
+          name: '會館建築與室內設計',
+        },
       ],
-      isMobile
-    };
+      isMobile,
+    }
   },
 
-  methods: {}
-};
+  methods: {},
+}
 </script>

@@ -5,8 +5,8 @@
         <div class="text-area-bg" id="section5">
           <div class="text-area-container">
             <div class="text-area-title">
-              <h3>“24000坪大基地”</h3>
-              <h3>絕無僅有</h3>
+              <h3>2萬4千坪壯闊基地</h3>
+              <h3>無限開闊 樂活莊園</h3>
             </div>規劃採光時，須考慮到太陽行進的面向，因此透過格柵的設計，隔絕較強的刺眼光線，當陽光透過格柵，輕盈地灑在室內各角落，成就美麗的風景。「幸福大院」戶戶規劃大陽台，不僅成為自然採光的設計重點，也是打造建築立面豐富層次的元素，陽台可種植喜愛的花草盆栽，透過妝點綠意，讓每一戶都有不同的巧思與表情。
           </div>
         </div>
@@ -43,7 +43,7 @@
 }
 
 .bg {
-  background-image: url("./s4_bg.jpg");
+  background-image: url('./s4_bg.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -73,7 +73,7 @@
   // text-align: center;
 
   .text-area-bg {
-    background-image: url("./box.png");
+    background-image: url('./box.png');
     background-size: 100% 100%;
     flex: 1;
     background-repeat: no-repeat;
@@ -94,7 +94,7 @@
       width: 440px;
       position: relative;
       left: calc(50% - 220px);
-      font-size: 48px;
+      font-size: calc(100vw * 35 / 1680);
       color: #249486;
       text-align: center;
       margin-bottom: 16px;
@@ -110,10 +110,12 @@
 
     .left-btn {
       margin-left: 34px;
+      z-index: 5;
     }
 
     .right-btn {
       margin-right: 34px;
+      z-index: 5;
     }
 
     .slide-img {
@@ -133,18 +135,37 @@
     display: none;
   }
 }
+
+@media only screen and (min-width: 1281px) and (max-width: 1440px) {
+  .text-area-bg {
+    .text-area-container {
+      font-size: 18px;
+
+      .text-area-title {
+        font-size: calc(100vw * 45 / 1680);
+      }
+    }
+  }
+  .tree {
+    top: 5%;
+    width: 96%;
+  }
+}
 @media only screen and (min-width: 1025px) and (max-width: 1280px) {
   .container {
     .text-area-bg {
       .text-area-container {
         font-size: 18px;
+
+        .text-area-title {
+          font-size: calc(100vw * 48 / 1680);
+        }
       }
     }
   }
   .tree {
     margin-left: 94px;
   }
-
 }
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
@@ -160,7 +181,7 @@
       }
 
       .text-area-title {
-        font-size: 30px;
+        font-size: 26px;
       }
     }
   }
@@ -275,52 +296,43 @@
 
 <script>
 // @ is an alias to /src
-import slider from "@/mixins/slider.js";
-import { isMobile } from "@/utils";
+import slider from '@/mixins/slider.js'
+import { isMobile } from '@/utils'
 
 export default {
-  name: "section5",
+  name: 'section5',
   mixins: [slider],
   data() {
     return {
       isMobile,
       slideList: [
         {
-          src: require("./s5_item1.jpg"),
-          title: "水碓觀景公園，健康作靠山",
-          desc:
-            "出門200步就到水碓觀景公園<br />這是企業家的早餐會報，更是讓健康有靠的不二法門"
+          src: require('./s5_item0.jpg'),
         },
         {
-          src: require("./s5_item2.jpg"),
-          title: "走步道看風景，樂觀向前行",
-          desc:
-            "10.5公頃的水碓觀景公園，六條步道七座涼亭<br />山上視野好、空氣乾淨，心境自然輕鬆開朗"
+          src: require('./s5_item1.jpg'),
         },
         {
-          src: require("./s5_item3.jpg"),
-          title: "散步石德公園，每天做早操 ",
-          desc:
-            "大樹下是楚漢棋局，林蔭底是孩子的開心笑聲，<br />一片波光樹海是清幽雅緻的寧靜公園"
+          src: require('./s5_item2.jpg'),
         },
         {
-          src: require("./s5_item4.jpg"),
-          title: "散步石德公園，每天做早操 ",
-          desc:
-            "大樹下是楚漢棋局，林蔭底是孩子的開心笑聲，<br />一片波光樹海是清幽雅緻的寧靜公園"
+          src: require('./s5_item3.jpg'),
         },
         {
-          src: require("./s5_item5.jpg"),
-          title: "散步石德公園，每天做早操 ",
-          desc:
-            "大樹下是楚漢棋局，林蔭底是孩子的開心笑聲，<br />一片波光樹海是清幽雅緻的寧靜公園"
-        }
-      ]
-    };
+          src: require('./s5_item4.jpg'),
+        },
+        {
+          src: require('./s5_item5.jpg'),
+        },
+        {
+          src: require('./s5_item6.jpg'),
+        },
+      ],
+    }
   },
 
   methods: {},
 
-  created() {}
-};
+  created() {},
+}
 </script>
