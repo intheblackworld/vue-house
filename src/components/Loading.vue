@@ -1,6 +1,6 @@
 <template>
   <div :class="`loading-bg ${loading ? '' : 'hide'} ${remove ? 'none' : ''}`">
-    <ClipLoader class="loading-icon" loading="loading" :size="150" sizeUnit="px" />
+    <img src="~@/assets/img/loading.gif" alt class="loading-icon" />
   </div>
 </template>
 
@@ -21,7 +21,7 @@
 
   .loading-icon {
     width: 150px;
-    border-color: $loading_icon_color;
+    // border-color: $loading_icon_color;
   }
 
   &.hide {
@@ -54,14 +54,10 @@
 </style>
 
 <script>
-import { ClipLoader } from '@saeris/vue-spinners'
-import { setTimeout } from 'timers'
+// import { setTimeout } from 'timers'
 
 export default {
-  name: 'loading',
-  components: {
-    ClipLoader,
-  },
+  name: 'loadingComponent',
 
   props: ['loading'],
 
@@ -71,10 +67,19 @@ export default {
     }
   },
 
-  created() {
-    setTimeout(() => {
-      this.remove = true
-    }, 1000)
+  watch: {
+    loading: {
+      handler(loading) {
+        this.remove = !loading
+      },
+      // immediate: true,
+    },
   },
+
+  // created() {
+  //   setTimeout(() => {
+  //     this.remove = true
+  //   }, 1000)
+  // },
 }
 </script>
