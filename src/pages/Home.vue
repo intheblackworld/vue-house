@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div ref="gtmNoScript" />
-    <Loading :loading="loading" />
+    <Loading :loading="load" />
     <SideNavigation v-if="isSide" />
     <Navigation v-else />
     <div id="section1">
@@ -103,17 +103,13 @@ export default {
 
   data() {
     return {
-      isSide: true,
-      loading: true,
+      isSide: false,
+      load: true,
     }
   },
   created() {
-    this.$Lazyload.$on('loaded', ({ el, src }) => {
-      setTimeout(() => {
-        if (this.loading) {
-          this.loading = false
-        }
-      }, 0)
+    window.addEventListener('load', (event) => {
+      this.load = false
     })
 
     // window.location = "https://ywh.nhc888.com.tw/"
