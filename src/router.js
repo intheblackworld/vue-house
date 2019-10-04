@@ -29,7 +29,17 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: PhoneThanks,
+      component: () =>
+        import(/* webpackChunkName: "about" */ './pages/PhoneThanks.vue')
+    },
+    {
+      name: '404',
+      path: '/404',
+      component: () => import('@/pages/404.vue')
+    },
+    {
+      path: '*', // 此处需特别注意至于最底部
+      redirect: '/404'
     }
   ]
 })
