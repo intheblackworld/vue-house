@@ -1,8 +1,9 @@
 <template>
   <div class="thanks">
-    <h3>感謝您</h3>
-    <p>感謝您的來電</p>
-    <a href="/">回到首頁</a>
+    <a href="/">
+      <img src="~@/assets/img/thank-img.png" alt="" class="img">
+      <img src="~@/assets/img/thank-img-hover.png" alt="" class="img-hover">
+    </a>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -10,25 +11,40 @@
 .thanks {
   width: 100vw;
   height: 100vh;
-  background-color: $phone_thanks_bg;
+  background: $phone_thanks_bg;
+  background-size: cover;
+  background-position: center;
   // background-image: linear-gradient(to top, rgba(0, 0, 0, 0.24), rgba(156, 30, 35, 0));
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  h3 {
-    font-size: 36px;
-    color: $phone_thanks_title_color;
-  }
-
-  p {
-    font-size: 24px;
-    color: $phone_thanks_desc_color;
-  }
   a {
-    color: $phone_thanks_link_color !important;
-    width: 270px !important;
+    .img {
+      position: absolute;
+      opacity: 1;
+    }
+    .img-hover {
+      opacity: 0;
+    }
+
+    &:hover {
+      .img {
+        opacity: 0;
+      }
+      .img-hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .thanks {
+    a {
+      .img, .img-hover {
+        width: 90vw;
+      }
+    }
   }
 }
 </style>
