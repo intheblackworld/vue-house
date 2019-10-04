@@ -10,7 +10,7 @@ $nav_link_hover_color: #fff;
 $nav_link_hover_bg: #855900;
 
 /* loading */
-$loading_bg_color: #fff;
+$loading_bg_color: rgba(68, 68, 68, .7);
 $loading_bg_image: linear-gradient(
   to top,
   rgba(0, 0, 0, 0.24),
@@ -89,7 +89,7 @@ $mobile_dialog_submit_color: #fff;
 
 /* dialog */
 /* PhoneThanks.vue */
-$phone_thanks_bg: #c82514;
+$phone_thanks_bg: url('~@/assets/img/thank_bg.png');
 $phone_thanks_title_color: #fff;
 $phone_thanks_desc_color: #fff;
 $phone_thanks_link_color: #fff;
