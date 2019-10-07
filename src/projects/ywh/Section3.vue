@@ -2,14 +2,6 @@
   <div class="section3">
     <div class="bg relative">
       <div v-if="!isMobile">
-        
-
-
-
-
-
-
- 
         <img src="./s3/1.png" alt="網路預約賞屋" class="img" data-aos="fade" data-aos-delay="200" />
         <img src="./s3/2.png" alt="網路預約賞屋" class="img" data-aos="fade" data-aos-delay="400" />
         <img src="./s3/3.png" alt="來就抽7-11禮券!!" class="img" data-aos="extension" data-aos-delay="600" />
