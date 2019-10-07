@@ -7,6 +7,9 @@
     <div id="section1">
       <Section1 />
     </div>
+    <div id="section3">
+      <Section3 />
+    </div>
     <div id="section2">
       <Section2 />
     </div>
@@ -34,6 +37,7 @@ import gtm from '@/mixins/gtm.js'
 
 import Section1 from '@/projects/ywh/Section1.vue'
 import Section2 from '@/projects/ywh/Section2.vue'
+import Section3 from '@/projects/ywh/Section3.vue'
 // import SimpleOrder from '@/components/SimpleOrder.vue'
 
 export default {
@@ -47,6 +51,7 @@ export default {
     // MobileNav,
     Section1,
     Section2,
+    Section3,
     // SimpleOrder,
 
   },
