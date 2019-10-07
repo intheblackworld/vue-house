@@ -2,26 +2,34 @@
   <div class="section3">
     <div class="bg relative">
       <div v-if="!isMobile">
-        <img src="./s3/1.png" alt class="img" data-aos="fade" data-aos-delay="200" />
-        <img src="./s3/2.png" alt class="img" data-aos="fade" data-aos-delay="400" />
-        <img src="./s3/3.png" alt class="img" data-aos="extension" data-aos-delay="600" />
-        <img src="./s3/4.png" alt class="img move" data-aos="fade" data-aos-delay="800" />
-        <img src="./s3/5.png" alt class="img move" data-aos="fade" data-aos-delay="1000" />
-        <img src="./s3/6.png" alt class="img move" data-aos="fade" data-aos-delay="1100" />
-        <img src="./s3/7.png" alt class="img move" data-aos="fade" data-aos-delay="1200" />
-        <img src="./s3/8.png" alt class="img move" data-aos="fade" data-aos-delay="1300" />
-        <img src="./s3/9.png" alt class="img move" data-aos="fade" data-aos-delay="1400" />
-        <img src="./s3/10.png" alt class="img move" data-aos="fade" data-aos-delay="1400" />
+        
+
+
+
+
+
+
+ 
+        <img src="./s3/1.png" alt="網路預約賞屋" class="img" data-aos="fade" data-aos-delay="200" />
+        <img src="./s3/2.png" alt="網路預約賞屋" class="img" data-aos="fade" data-aos-delay="400" />
+        <img src="./s3/3.png" alt="來就抽7-11禮券!!" class="img" data-aos="extension" data-aos-delay="600" />
+        <img src="./s3/4.png" alt="200元禮券" class="img move" data-aos="fade" data-aos-delay="800" />
+        <img src="./s3/5.png" alt="300元禮券" class="img move" data-aos="fade" data-aos-delay="1000" />
+        <img src="./s3/6.png" alt="300元禮券" class="img move" data-aos="fade" data-aos-delay="1100" />
+        <img src="./s3/7.png" alt="500元禮券" class="img move" data-aos="fade" data-aos-delay="1200" />
+        <img src="./s3/8.png" alt="500元禮券" class="img move" data-aos="fade" data-aos-delay="1300" />
+        <img src="./s3/9.png" alt="500元禮券" class="img move" data-aos="fade" data-aos-delay="1400" />
+        <img src="./s3/10.png" alt="500元禮券" class="img move" data-aos="fade" data-aos-delay="1400" />
       </div>
       <div v-if="isMobile">
-        <img src="./s3/mo/1.png" alt class="img" data-aos="fade" data-aos-delay="200" />
-        <img src="./s3/mo/2.png" alt class="img" data-aos="fade" data-aos-delay="400" />
-        <img src="./s3/mo/3.png" alt class="img" data-aos="extension" data-aos-delay="600" />
-        <img src="./s3/mo/4.png" alt class="img move" data-aos="fade" data-aos-delay="800" />
-        <img src="./s3/mo/5.png" alt class="img move" data-aos="fade" data-aos-delay="1000" />
-        <img src="./s3/mo/6.png" alt class="img move" data-aos="fade" data-aos-delay="1100" />
-        <img src="./s3/mo/7.png" alt class="img move" data-aos="fade" data-aos-delay="1200" />
-        <img src="./s3/mo/8.png" alt class="img move" data-aos="fade" data-aos-delay="1300" />
+        <img src="./s3/mo/1.png" alt="網路預約賞屋" class="img" data-aos="fade" data-aos-delay="200" />
+        <img src="./s3/mo/2.png" alt="網路預約賞屋" class="img" data-aos="fade" data-aos-delay="400" />
+        <img src="./s3/mo/3.png" alt="來就抽7-11禮券!!" class="img" data-aos="extension" data-aos-delay="600" />
+        <img src="./s3/mo/4.png" alt="200元禮券" class="img move" data-aos="fade" data-aos-delay="800" />
+        <img src="./s3/mo/5.png" alt="300元禮券" class="img move" data-aos="fade" data-aos-delay="1000" />
+        <img src="./s3/mo/6.png" alt="300元禮券" class="img move" data-aos="fade" data-aos-delay="1100" />
+        <img src="./s3/mo/7.png" alt="500元禮券" class="img move" data-aos="fade" data-aos-delay="1200" />
+        <img src="./s3/mo/8.png" alt="500元禮券" class="img move" data-aos="fade" data-aos-delay="1300" />
       </div>
     </div>
   </div>
