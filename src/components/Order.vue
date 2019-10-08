@@ -56,8 +56,8 @@
         </el-checkbox>
       </div>
       <div class="hint">
-        *參觀前請告知現場為網路預約客戶，提供登記預約大名及電話核對資料
-        <br />賞屋完成即可抽7-11禮卷。
+        *參觀前請告知現場為網路預約客戶，提供登記預約大名及電話核對資料。
+        <br />*賞屋完成即可抽7-11禮卷。
         <br />*兌換時間即日起至108/11/30止。
         <br />*本公司保有修改活動辦法及活動日期之權利。
       </div>
@@ -90,7 +90,7 @@ export default {
     ContactInfo,
     GoogleMap,
     PolicyDialog,
-    Footer
+    Footer,
   },
 
   data() {
