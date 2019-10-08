@@ -193,7 +193,7 @@
     background-repeat: no-repeat;
     width: 90%;
     top: -50px;
-    margin-top: 50px;
+    margin-top: 40px;
     left: 5%;
     position: relative;
     z-index: 1;
