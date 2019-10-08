@@ -10,7 +10,7 @@ import '@/assets/style/global.scss'
 import config from './lib/config.js'
 
 import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
+// import 'element-ui/lib/theme-chalk/index.css'
 import VueScrollTo from 'vue-scrollto' // scroll 錨點
 import VueLazyload from 'vue-lazyload' // 圖片 lazy load
 import VueScrollReveal from 'vue-scroll-reveal'
