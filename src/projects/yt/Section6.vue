@@ -202,6 +202,9 @@
     color: #231815;
     margin-bottom: 15px;
     margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .content {
@@ -296,7 +299,7 @@ export default {
         },
         {
           src: require('./s6/mo/22.jpg'),
-          name: 'T型系統牆工法 L型系統牆工法',
+          name: '<div>T型系統牆工法</div> <div>L型系統牆工法</div>',
           content:
             '各種牆部位的轉角處、正交處及端部等，都以鋼筋加工廠所彎折的Alfa Safe 系統牆配件進行施工，其施工品質精準確實，使整體房屋建築安全更加穩固。',
         },

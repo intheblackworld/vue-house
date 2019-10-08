@@ -1,6 +1,6 @@
 <template>
-  <div :class="`loading-bg ${loading ? '' : 'hide'} ${remove ? 'none' : ''}`">
-    <img src="~@/assets/img/loading.gif" alt class="loading-icon" />
+  <div :class="`loading-bg ${loading ? '' : 'hide'} ${remove ? 'none' : ''} ${isOpacity ? 'opacity': ''}`">
+    <img src="~@/assets/img/loading_b.gif" alt class="loading-icon" />
   </div>
 </template>
 
@@ -11,6 +11,7 @@
   background-color: $loading_bg_color;
   background-image: $loading_bg_image;
   position: fixed;
+  left: 0;
   top: 0;
   z-index: 1000;
   display: flex;
@@ -22,6 +23,10 @@
   .loading-icon {
     width: 150px;
     // border-color: $loading_icon_color;
+  }
+
+  &.opacity {
+    opacity: .8;
   }
 
   &.hide {
@@ -59,7 +64,7 @@
 export default {
   name: 'loadingComponent',
 
-  props: ['loading'],
+  props: ['loading', 'isOpacity'],
 
   data() {
     return {

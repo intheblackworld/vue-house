@@ -66,6 +66,7 @@
         @click="submit"
         :loading="isSubmit"
       >立即預約</el-button>
+      <Loading :loading="isSubmit" :isOpacity="true" />
     </div>
     <ContactInfo />
     <GoogleMap />
@@ -79,6 +80,7 @@ import GoogleMap from '@/components/GoogleMap.vue'
 import PolicyDialog from '@/components/PolicyDialog.vue'
 import info from '@/info'
 import { cityList, renderAreaList } from '@/info/address'
+import Loading from '@/components/Loading.vue'
 
 export default {
   name: 'order',
@@ -86,6 +88,7 @@ export default {
     ContactInfo,
     GoogleMap,
     PolicyDialog,
+    Loading,
   },
 
   data() {
