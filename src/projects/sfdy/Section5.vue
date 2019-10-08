@@ -230,6 +230,7 @@
     .text-area-bg {
       position: absolute;
       top: 20%;
+      margin-top: 55px;
       z-index: 2;
       width: 90%;
       left: 5%;

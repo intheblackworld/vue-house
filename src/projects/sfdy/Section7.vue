@@ -172,6 +172,7 @@
     .text-area-bg {
       width: 90%;
       top: -50px;
+      margin-top: 40px;
       left: 5%;
       position: relative;
 

@@ -367,7 +367,7 @@
       background-size: 100% 100%;
       background-repeat: no-repeat;
       width: 90%;
-      top: -50px;
+      top: -10px;
       left: 5%;
       position: relative;
       z-index: 1;

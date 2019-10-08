@@ -459,6 +459,7 @@
     width: 84%;
     height: 240px;
     top: -26px;
+    margin-top: 25px;
     left: 50px;
     position: absolute;
   }
@@ -470,6 +471,7 @@
     left: 5%;
     height: 240px;
     top: -36px;
+    margin-top: 25px;
     font-size: 14px;
     .text-area-title {
       h3 {

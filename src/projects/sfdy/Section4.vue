@@ -185,6 +185,7 @@
     width: 90%;
     margin: 0 auto;
     top: -100px;
+    margin-top: 85px;
     position: relative;
 
     .text-area-container {

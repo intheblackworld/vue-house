@@ -200,6 +200,7 @@
       position: absolute;
       top: 200px;
       margin: 0;
+      margin-top: 40px;
 
       .text-area-container {
         padding: 40px 0 120px 0;
