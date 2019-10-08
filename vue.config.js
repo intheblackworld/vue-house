@@ -50,5 +50,15 @@ module.exports = {
 
       return args
     })
+    config.plugin('preload')
+      .tap(options => {
+        // for import() lazy routes use initial https://github.com/vuejs/preload-webpack-plugin
+        options.include = 'initial'
+        // or split chunks at the bottom
+        options.include = ['chunk-libs', 'chunk-elementUI', 'chunk-commons', 'chunk-date']
+        return options
+      })
+    // remove the prefetch plugin
+    config.plugins.delete('prefetch')
   }
 }
