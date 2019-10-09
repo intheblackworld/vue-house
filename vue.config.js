@@ -29,7 +29,7 @@ module.exports = {
     config.module.rules.delete('svg') // 重点:删除默认配置中处理svg,
     // const svgRule = config.module.rule('svg')
     // svgRule.uses.clear()
-    
+
     config.module
       .rule('@yzfe/vue-svgicon-loader')
       .test(/\.svg$/)
@@ -56,7 +56,7 @@ module.exports = {
         // for import() lazy routes use initial https://github.com/vuejs/preload-webpack-plugin
         options.include = 'initial'
         // or split chunks at the bottom
-        options.include = ['chunk-libs', 'chunk-elementUI', 'chunk-commons', 'chunk-date']
+        options.include = ['chunk-elementUI']
         return options
       })
     // remove the prefetch plugin
