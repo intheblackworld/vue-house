@@ -140,6 +140,9 @@
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .bg {
+    background-attachment: scroll;
+  }
   .container {
     .text-area-bg {
       width: 240px;

@@ -157,6 +157,7 @@
 
   .bg {
     height: calc(100vw * (728 / 1024));
+    background-attachment: scroll;
   }
 }
 

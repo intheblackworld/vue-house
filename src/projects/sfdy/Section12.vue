@@ -129,6 +129,9 @@
 
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .section12 {
+    background-attachment: scroll;
+  }
   .slide {
     .slide-img {
       height: calc(100vh - 60px);
