@@ -14,7 +14,7 @@
           xml:space="preserve"
         >
           <g>
-            <image overflow="visible" width="81" height="85" xlink:href="./s1/bee2.png">
+            <image overflow="visible" width="81" height="85" xlink:href="./s1/bee2.png" class="bee">
               <animateMotion
                 dur="12s"
                 keyPoints="0;0.42;0.42;1"
@@ -24,7 +24,7 @@
                 rotate="auto"
                 calcMode="linear"
               /></image>
-            <image overflow="visible" width="81" height="85" xlink:href="./s1/bee1.png">
+            <image overflow="visible" width="81" height="85" xlink:href="./s1/bee1.png" class="bee">
               <animateMotion
                 dur="12s"
                 keyPoints="0;0.47;0.47;1"
@@ -86,7 +86,7 @@
           xml:space="preserve"
         >
           <g>
-            <image overflow="visible" width="81" height="85" xlink:href="./s1/bee2.png">
+            <image overflow="visible" width="81" height="85" xlink:href="./s1/bee2.png" class="bee">
               <animateMotion
                 dur="12s"
                 keyPoints="0;0.4;0.4;1"
@@ -96,7 +96,7 @@
                 rotate="auto"
                 calcMode="linear"
               /></image>
-            <image overflow="visible" width="81" height="85" xlink:href="./s1/bee1.png">
+            <image overflow="visible" width="81" height="85" xlink:href="./s1/bee1.png" class="bee">
               <animateMotion
                 dur="12s"
                 keyPoints="0;0.5;0.5;1"
@@ -157,7 +157,7 @@
   overflow: hidden;
   position: relative;
 }
-image {
+.bee {
   animation: img 0.3s infinite alternate;
 }
 @keyframes img {
