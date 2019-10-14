@@ -7,37 +7,40 @@
     <div id="section1">
       <Section1 />
     </div>
-    <div id="section2">
-      <Section2 />
+    <div class="bg">
+      <div id="section2">
+        <Section2 />
+      </div>
+      <div id="section3">
+        <Section3 />
+      </div>
+      <div id="section4">
+        <Section4 />
+      </div>
+      <div id="section5">
+        <Section5 />
+      </div>
+      <div id="section6">
+        <Section6 />
+      </div>
+      <div id="section7">
+        <Section7 />
+      </div>
+      <div id="section8">
+        <Section8 />
+      </div>
+      <ContactSection />
     </div>
-    <div id="section3">
-      <Section3 />
-    </div>
-    <div id="section4">
-      <Section4 />
-    </div>
-    <div id="section5">
-      <Section5 />
-    </div>
-    <div id="section6">
-      <Section6 />
-    </div>
-    <div id="section7">
-      <Section7 />
-    </div>
-    <div id="section8">
-      <Section8 />
-    </div>
-    <div id="section9">
-      <Section9 />
-    </div>
-    <ContactSection />
     <MobileNav />
   </div>
 </template>
 
-<style>
+<style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Playball&display=swap');
+@import '../assets/style/variableColor.scss';
+.bg {
+  background: $bg !important;
+}
 </style>
 
 <script>
@@ -49,15 +52,14 @@ import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import gtm from '@/mixins/gtm.js'
 
-import Section1 from '@/projects/yt/Section1.vue'
-import Section2 from '@/projects/yt/Section2.vue'
-import Section3 from '@/projects/yt/Section3.vue'
-import Section4 from '@/projects/yt/Section4.vue'
-import Section5 from '@/projects/yt/Section5.vue'
-import Section6 from '@/projects/yt/Section6.vue'
-import Section7 from '@/projects/yt/Section7.vue'
-import Section8 from '@/projects/yt/Section8.vue'
-import Section9 from '@/projects/yt/Section9.vue'
+import Section1 from '@/projects/jscy/Section1.vue'
+import Section2 from '@/projects/jscy/Section2.vue'
+import Section3 from '@/projects/jscy/Section3.vue'
+import Section4 from '@/projects/jscy/Section4.vue'
+import Section5 from '@/projects/jscy/Section5.vue'
+import Section6 from '@/projects/jscy/Section6.vue'
+import Section7 from '@/projects/jscy/Section7.vue'
+import Section8 from '@/projects/jscy/Section8.vue'
 
 export default {
   name: 'home',
@@ -76,17 +78,16 @@ export default {
     Section6,
     Section7,
     Section8,
-    Section9,
   },
 
   data() {
     return {
-      isSide: false,
+      isSide: true,
       load: true,
     }
   },
   created() {
-    window.addEventListener('load', (event) => {
+    window.addEventListener('load', event => {
       this.load = false
     })
   },

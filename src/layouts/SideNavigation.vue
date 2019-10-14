@@ -87,7 +87,7 @@ export default {
   z-index: 112;
   top: 0px;
   right: 30px;
-  width: 100px;
+  width: 66px;
   cursor: pointer;
 
   img {
@@ -259,9 +259,9 @@ export default {
   .menu {
     display: block;
     position: fixed;
-    right: 0px;
+    right: 12px;
     top: 0px;
-    width: 100px;
+    width: 59px;
 
     img {
       width: 100%;

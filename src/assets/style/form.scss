@@ -35,7 +35,7 @@
     background: $order_input_bg;
 
     &::placeholder {
-      color: $order_input_placeholder;  
+      color: $order_input_placeholder;
     }
   }
 }
@@ -69,14 +69,36 @@
 
   &.is-disabled {
     background-color: $order_sumbit_disable_bg;
-    opacity: .6;
+    opacity: 0.6;
   }
 
   svg {
     margin-right: 15px;
   }
-}
 
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: '';
+    width: 40%;
+    height: 100%;
+    display: block;
+    background: #fff;
+    position: absolute;
+    transform: skewX(-20deg);
+    left: -10%;
+    opacity: 0;
+    top: 0;
+    z-index: 5;
+    transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
+  }
+
+  &:hover::before {
+    opacity: 1;
+    width: 90%;
+    left: 140%;
+  }
+}
 
 /* 螢幕尺寸標準 */
 /* 手機尺寸 */

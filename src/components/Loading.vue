@@ -30,7 +30,7 @@
   }
 
   &.hide {
-    animation: hide 1s ease 0s forwards;
+    animation: hide .3s ease 0s forwards;
   }
 
   &.none {

@@ -198,8 +198,11 @@ export default {
 @import '@/assets/style/variableColor.scss';
 .order-bg {
   background-color: $order_bg_color;
-  // background-image: url('../assets/img/order-bg.jpg');
+  background-image: $order_bg_image;
+  background-repeat: no-repeat;
+  background-size: 100%;
   position: relative;
+  margin-top: -1px;
   padding-top: 80px;
 
   .order-title {
