@@ -132,7 +132,7 @@
     background-image: url('./s6/mo/bg.jpg');
     background-size: 100%;
     background-position: 100% 100%;
-    margin-top: -1px;
+    margin-top: -3px;
 
     .title {
       width: 275px;
