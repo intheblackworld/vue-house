@@ -144,6 +144,7 @@
       letter-spacing: 1.5px;
       text-align: left;
       color: #000000;
+      height: 70px;
       margin: 0 auto;
       margin-bottom: 70px;
     }

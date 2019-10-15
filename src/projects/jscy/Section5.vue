@@ -246,10 +246,10 @@ export default {
         allowSlidePrev: isMobile ? true : true,
         allowSlideNext: isMobile ? true : true,
         // centeredSlides: true,
-        autoplay: {
-          delay: 4000,
-          disableOnInteraction: true,
-        },
+        // autoplay: {
+        //   delay: 4000,
+        //   disableOnInteraction: true,
+        // },
         loop: true,
         navigation: {
           nextEl: '.swiper-button-next',

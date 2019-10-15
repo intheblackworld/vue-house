@@ -174,6 +174,7 @@ export default {
   text-decoration: none;
   color: $contact_google_btn_color;
   background: $contact_google_btn_bg;
+  background-position: center !important;
   box-shadow: $contact_btn_border;
   transition: all 0.5s;
 
