@@ -87,7 +87,7 @@
 
 .content {
   position: absolute;
-  z-index: 2;
+  z-index: 0;
   top: calc(100vw * (400 / 1920));
 }
 
