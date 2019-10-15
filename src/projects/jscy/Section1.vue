@@ -2,16 +2,46 @@
   <div class="section1">
     <div class="bg">
       <div v-if="!isMobile">
-        <img src="./s1/bg.jpg" alt="" class="bg-img" data-aos="fade" data-aos-delay="600">
-        <img src="./s1/1.png" alt="堅山謙仰 THE UPPERHOME" class="bg-img" data-aos="fade" data-aos-delay="800">
-        <img src="./s1/2.png" alt="超越ARTDECO 奢華／坐擁高雄 美術館無價 LIFE IS ABOUT CREATING YOURSELF." class="bg-img" data-aos="fade" data-aos-delay="1000">
+        <img src="./s1/bg.jpg" alt class="bg-img" data-aos="fade" data-aos-delay="600" />
+        <img
+          src="./s1/1.png"
+          alt="堅山謙仰 THE UPPERHOME"
+          :class="['bg-img', isAbsolute ? 'absolute aos-init aos-animate' : 'aos-init aos-animate']"
+          data-aos="fade"
+          data-aos-delay="800"
+        />
+        <img
+          src="./s1/2.png"
+          alt="超越ARTDECO 奢華／坐擁高雄 美術館無價 LIFE IS ABOUT CREATING YOURSELF."
+          :class="['bg-img', isAbsolute ? 'absolute aos-init aos-animate' : 'aos-init aos-animate']"
+          data-aos="fade"
+          data-aos-delay="1000"
+        />
       </div>
       <div v-else>
-        <img src="./s1/mo/bg.jpg" alt="" class="bg-img" data-aos="fade" data-aos-delay="200">
-        <img src="./s1/mo/雲.png" alt="" class="bg-img cloud">
-        <img src="./s1/mo/2.png" alt="堅山謙仰 THE UPPERHOME" class="bg-img" data-aos="fade-down" data-aos-delay="600">
-        <img src="./s1/mo/3.png" alt="超越ARTDECO 奢華／坐擁高雄" class="bg-img" data-aos="fade-down" data-aos-delay="800">
-        <img src="./s1/mo/4.png" alt="美術館無價 LIFE IS ABOUT CREATING YOURSELF." class="bg-img" data-aos="fade-down" data-aos-delay="1000">
+        <img src="./s1/mo/bg.jpg" alt class="bg-img" data-aos="fade" data-aos-delay="200" />
+        <img src="./s1/mo/雲.png" alt class="bg-img cloud" />
+        <img
+          src="./s1/mo/2.png"
+          alt="堅山謙仰 THE UPPERHOME"
+          class="bg-img"
+          data-aos="fade-down"
+          data-aos-delay="600"
+        />
+        <img
+          src="./s1/mo/3.png"
+          alt="超越ARTDECO 奢華／坐擁高雄"
+          class="bg-img"
+          data-aos="fade-down"
+          data-aos-delay="800"
+        />
+        <img
+          src="./s1/mo/4.png"
+          alt="美術館無價 LIFE IS ABOUT CREATING YOURSELF."
+          class="bg-img"
+          data-aos="fade-down"
+          data-aos-delay="1000"
+        />
       </div>
     </div>
   </div>
@@ -31,6 +61,10 @@
   display: block;
   // height: 100%;
   object-fit: cover;
+
+  &.absolute {
+    position: absolute;
+  }
 
   &:nth-child(1) {
     position: relative;
@@ -91,9 +125,26 @@ export default {
   data() {
     return {
       isMobile,
+      isAbsolute: false,
     }
   },
 
   methods: {},
+
+  mounted() {
+    // let prevScrollpos = window.pageYOffset
+    window.onscroll = () => {
+      const currentScrollPos = window.pageYOffset
+      if (currentScrollPos > window.innerHeight) {
+        this.isAbsolute = true
+        console.log('!!!')
+      } else {
+        this.isAbsolute = false
+        // this.isAbsolute = false
+        // console.log(this.isAbsolute)
+      }
+      // prevScrollpos = currentScrollPos
+    }
+  },
 }
 </script>

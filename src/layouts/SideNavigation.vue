@@ -96,7 +96,7 @@ export default {
 
   .close {
     width: 40px;
-    margin-top: 0px;
+    margin-top: 20px;
     margin-right: 0px;
   }
 }
@@ -280,7 +280,6 @@ export default {
   .navlist {
     position: fixed;
     z-index: 111;
-    background: $nav_bg;
     width: 0%;
     right: 0;
     top: $nav_phone_height;

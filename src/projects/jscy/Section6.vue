@@ -127,7 +127,12 @@
   }
 
   .text {
-    margin-top: 52px;
+    padding-top: 52px;
+    padding-bottom: 70px;
+    background-image: url('./s6/mo/bg.jpg');
+    background-size: 100%;
+    background-position: 100% 100%;
+    margin-top: -1px;
 
     .title {
       width: 275px;
@@ -152,9 +157,8 @@
       line-height: 1.7;
       letter-spacing: 2.8px;
       text-align: left;
-      color: #000;
+      color: #fff;
       margin: 0 auto;
-      margin-bottom: 70px;
     }
   }
 
