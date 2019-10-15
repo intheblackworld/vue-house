@@ -137,7 +137,6 @@ export default {
       const currentScrollPos = window.pageYOffset
       if (currentScrollPos > window.innerHeight * 1.5) {
         this.isAbsolute = true
-        console.log('!!!')
       } else {
         this.isAbsolute = false
         // this.isAbsolute = false

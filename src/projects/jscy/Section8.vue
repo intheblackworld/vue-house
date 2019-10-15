@@ -116,11 +116,11 @@
     .title {
       width: 275px;
       font-size: 25px;
-      font-weight: bold;
+      font-weight: 600;
       font-style: normal;
       font-stretch: normal;
       line-height: 1.4;
-      letter-spacing: 5px;
+      letter-spacing: 2.5px;
       text-align: left;
       color: #000000;
       white-space: nowrap;
@@ -135,7 +135,7 @@
       font-style: normal;
       font-stretch: normal;
       line-height: 1.71;
-      letter-spacing: 2.8px;
+      letter-spacing: 1.5px;
       text-align: left;
       color: #000000;
       margin: 0 auto;
@@ -199,7 +199,7 @@ export default {
           disableOnInteraction: true,
         },
         effect: 'fade',
-        loop: false,
+        loop: true,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
@@ -233,18 +233,13 @@ export default {
   methods: {
     slideChanged(e) {
       const swiper = this.$refs.mySwiper.swiper
-      let index
-      index = swiper.activeIndex
-      console.log(index)
-      // if (index === 2) {
-      //   index = 0
-      // }
-
-      // if (index === -1) {
-      //   index = 1
-      // }
-
-      this.slideIndex = index
+      if (swiper.isEnd) {
+        this.slideIndex = 0
+      } else if (swiper.isBeginning) {
+        this.slideIndex = swiper.slides.length - 3
+      } else {
+        this.slideIndex = swiper.activeIndex - 1
+      }
     },
   },
 }

@@ -77,7 +77,7 @@
     font-style: normal;
     font-stretch: normal;
     line-height: 1.2;
-    letter-spacing: 5px;
+    letter-spacing: 2.5px;
     text-align: center;
     color: #000000;
     margin-bottom: 20px;

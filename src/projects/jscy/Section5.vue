@@ -59,8 +59,8 @@
           </div>
         </swiper>
         <div class="text">
-          <h3 class="title">{{slideList[slideIndex].title}}</h3>
-          <div class="desc">{{slideList[slideIndex].desc}}</div>
+          <h3 class="title" v-html="slideList[slideIndex].title"></h3>
+          <div class="desc" v-html="slideList[slideIndex].desc"></div>
         </div>
       </div>
     </div>
@@ -106,7 +106,7 @@
 
   .title {
     font-size: calc(100vw * (30 / 1920));
-    font-weight: bold;
+    font-weight: 600;
     font-style: normal;
     font-stretch: normal;
     line-height: 1.33;
@@ -173,7 +173,7 @@
       font-style: normal;
       font-stretch: normal;
       line-height: 1.4;
-      letter-spacing: 5px;
+      letter-spacing: 2.5px;
       text-align: left;
       color: #000000;
       margin: 0 auto;
@@ -187,7 +187,7 @@
       font-style: normal;
       font-stretch: normal;
       line-height: 1.71;
-      letter-spacing: 2.8px;
+      letter-spacing: 1.5px;
       text-align: left;
       color: #000000;
       margin: 0 auto;
@@ -250,7 +250,7 @@ export default {
           delay: 4000,
           disableOnInteraction: true,
         },
-        loop: false,
+        loop: true,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
@@ -258,20 +258,20 @@ export default {
       },
       slideList: [
         {
-          img: require('./s4/mo/c1.jpg'),
+          img: require('./s5/mo/1.jpg'),
           title: '1F交誼廳',
           desc:
             '映入眼簾的是穿透延伸出去的雕塑及充滿藝術圖的鍍鈦屏風<br />在無盡的空間裡面添加更多的視覺藝術<br />而義大利百年的Poltrana Frau家具的多樣性及頂級觸感<br />將整個入口感覺點妝成為不可取代的雅痞空間<br />透過屏風背後精緻的吧檯設計及長形用餐桌面<br />提供了一個夜晚繁星休憩的美食饗宴空間',
         },
         {
-          img: require('./s4/mo/c2.jpg'),
+          img: require('./s5/mo/2.jpg'),
           title: '2F健身空間',
           desc:
             '在廊道上利用煙燻的刻紋木皮，讓整個走廊散發出軟性的效果<br />進入到室內空間，環形設計的天花板成為整個空間的視覺主軸<br />整個空間的設計圍繞在環形架構上，搭配間接照明設計<br />讓健身同時享受著不單調的趣味性',
         },
 
         {
-          img: require('./s4/mo/c3.jpg'),
+          img: require('./s5/mo/3.jpg'),
           title: '14F的視聽會所',
           desc:
             '交錯分隔的天花板造型，搭配圖騰義大利灰石材的協面分割<br />就像在畫作上的線條與色塊的結合，藝術的價值與空間美感<br />相互呼應會所，就是一個私人典藏的空間<br />身在其中如同一個頂級奢華的俱樂部，盡情抒發內心的熱情',
@@ -283,18 +283,13 @@ export default {
   methods: {
     slideChanged(e) {
       const swiper = this.$refs.mySwiper.swiper
-      let index
-      index = swiper.activeIndex
-      // console.log(index)
-      // if (index === 2) {
-      //   index = 0
-      // }
-
-      // if (index === -1) {
-      //   index = 1
-      // }
-
-      this.slideIndex = index
+      if (swiper.isEnd) {
+        this.slideIndex = 0
+      } else if (swiper.isBeginning) {
+        this.slideIndex = swiper.slides.length - 3
+      } else {
+        this.slideIndex = swiper.activeIndex - 1
+      }
     },
   },
 }
