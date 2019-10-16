@@ -63,7 +63,7 @@ export default {
 
 .item {
   font-size: 16px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   margin-right: 160px;
   width: 260px;
   height: 30px;
