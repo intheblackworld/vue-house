@@ -41,8 +41,8 @@
         </div>
       </div>
     </div>
-    <img class="bg" v-scroll-reveal.reset="$fadeInUp(!isMobile ? 300 : 0)" src="./s6_bg1.png" alt="心天畝的圖片" />
-    <img class="bg" v-scroll-reveal.reset="$fadeInUp(!isMobile ? 300 : 0)" src="./s6_bg2.png" alt="心天畝的圖片" />
+    <img class="bg" v-scroll-reveal.reset="$fadeInUp(!isMobile ? 300 : 0)" src="./s6_bg1.jpg" alt="心天畝的圖片" />
+    <img class="bg" v-scroll-reveal.reset="$fadeInUp(!isMobile ? 300 : 0)" src="./s6_bg2.jpg" alt="心天畝的圖片" />
   </div>
 </template>
 <style lang="scss" scoped>

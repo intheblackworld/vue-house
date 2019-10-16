@@ -4,13 +4,13 @@
     <div class="container">
       <img
         v-scroll-reveal.reset="$fadeInLeft(700, 2500)"
-        src="./s2_tree_left.png"
+        src="./s2_tree_left.jpg"
         alt
         class="absolute tree-left"
       />
       <img
         v-scroll-reveal.reset="$fadeInRight(700, 2500)"
-        src="./s2_tree_right.png"
+        src="./s2_tree_right.jpg"
         alt
         class="absolute tree-right"
       />
