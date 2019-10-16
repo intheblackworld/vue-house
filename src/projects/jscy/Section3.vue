@@ -104,7 +104,7 @@
     font-stretch: normal;
     line-height: 1.71;
     letter-spacing: 1.5px;
-    text-align: left;
+    text-align: justify;
     color: #000000;
     width: 285px;
     margin: 0 auto;

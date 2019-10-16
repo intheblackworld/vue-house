@@ -296,6 +296,7 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .order-bg {
+    background-image: $order_bg_image_m;
     padding-top: 40px;
     .order-title {
       margin-top: 10px;
