@@ -236,16 +236,16 @@ export default {
             : require('./s6/s6-2.png'),
         },
 
-        {
-          img: isMobile
-            ? require('./s6/mo/s6-3.jpg')
-            : require('./s6/s6-3.png'),
-        },
-        {
-          img: isMobile
-            ? require('./s6/mo/s6-4.jpg')
-            : require('./s6/s6-4.png'),
-        },
+        // {
+        //   img: isMobile
+        //     ? require('./s6/mo/s6-3.jpg')
+        //     : require('./s6/s6-3.png'),
+        // },
+        // {
+        //   img: isMobile
+        //     ? require('./s6/mo/s6-4.jpg')
+        //     : require('./s6/s6-4.png'),
+        // },
         {
           img: isMobile
             ? require('./s6/mo/s6-5.jpg')

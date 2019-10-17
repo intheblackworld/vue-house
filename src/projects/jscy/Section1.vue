@@ -2,7 +2,10 @@
   <div class="section1">
     <div class="bg">
       <div v-if="!isMobile">
-        <img src="./s1/bg.jpg" alt class="bg-img" data-aos="fade" data-aos-delay="600" />
+        <img src="./s1/bg.png" alt class="bg-img absolute" data-aos="fade" data-aos-delay="600" />
+        <img src="./s1/cloud.png" alt class="bg-img absolute cloud" />
+        <img src="./s1/bg1.png" alt class="bg-img relative" data-aos="fade" data-aos-delay="600" />
+        <img src="./s1/bg2.jpg" alt class="bg-img relative" data-aos="fade" data-aos-delay="600" />
         <img
           src="./s1/1.png"
           alt="堅山謙仰 THE UPPERHOME"
@@ -62,12 +65,31 @@
   // height: 100%;
   object-fit: cover;
 
-  &.absolute {
-    position: absolute;
-  }
-
   &:nth-child(1) {
     position: relative;
+  }
+
+  &.relative {
+    position: relative !important;
+  }
+
+  &.absolute {
+    position: absolute !important;
+  }
+}
+
+.cloud {
+  width: 100vw;
+  animation: cloud 20s linear infinite;
+}
+
+@keyframes cloud {
+  0% {
+    transform: translate(-100%, 0%);
+  }
+
+  100% {
+    transform: translate(0%, -100%);
   }
 }
 

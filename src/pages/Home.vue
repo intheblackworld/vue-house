@@ -31,7 +31,7 @@
       </div>
       <ContactSection />
     </div>
-    <!-- <MobileNav /> -->
+    <MobileNav />
   </div>
 </template>
 
