@@ -1,10 +1,26 @@
 <template>
   <div class="section1">
     <div class="bg fullscreen">
+      <div class="fix-group">
+        <div class="button" @click="modal = true">
+          <img src="./button.png" alt />
+        </div>
+        <!-- <div class="button" v-scroll-to="{ element: `#${'section2'}`, offset: -56 }">
+        <img src="./chevron-up.png" alt />
+        </div>-->
+      </div>
       <!-- <div :class="`music-btn ${isPlay ? 'is-play' : ''}`" @click="playMusic"></div>
       <audio controls style="display: none" ref="audio" loop="loop">
         <source src="./music.mp3" type="audio/mpeg" />
       </audio>-->
+      <div class="modal" v-if="modal">
+        <div class="mask"></div>
+        <div>
+          <img src="@/projects/jh/s4/close.png" alt class="close" @click="modal = false" />
+          <img src="./w.jpg" alt v-if="!isMobile" />
+          <img src="./mo.jpg" alt v-else />
+        </div>
+      </div>
       <div class="main">
         <div class="gear">
           <div class="l">
@@ -224,6 +240,7 @@ export default {
       dog1: true,
       dog2: false,
       isPlay: false,
+      modal: true,
     }
   },
 
