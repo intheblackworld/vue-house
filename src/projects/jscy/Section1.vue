@@ -80,6 +80,7 @@
 
 .cloud {
   width: 100vw;
+  left: 50%;
   animation: cloud 20s linear infinite;
 }
 
