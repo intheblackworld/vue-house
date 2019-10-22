@@ -1,12 +1,12 @@
 export default {
   address: '高雄市鼓山區青海路490號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3682.05294856209!2d120.28106821530716!3d22.65181438514217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e04457e85ad19%3A0xc6ec24adf943a722!2z5aCF5bGx6KyZ5Luw!5e0!3m2!1szh-TW!2stw!4v1571125780323!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/X9dQ4E2vTtt7Jam3A',
-  phone: '07-5538880',
-  fbLink: 'https://www.facebook.com/堅山建設-116432019762108/',
-  fbMessage: 'https://m.me/116432019762108',
-  caseName: '堅山謙仰',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.5451434410493!2d121.44280061500659!3d25.049505883965097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a7eb24a84fb3%3A0x4deb385ab8b7622f!2z55K95ZyS!5e0!3m2!1szh-TW!2stw!4v1571729290072!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/cNWzTtwa4wvJt91i6',
+  phone: '02-8991-7555',
+  fbLink: 'https://www.facebook.com/璽園-世代團圓-109813180429618/',
+  fbMessage: 'https://m.me/109813180429618',
+  caseName: '璽園',
 
   houseInfos: [
     ['投資興建', '堅山建設股份有限公司'],
@@ -18,7 +18,7 @@ export default {
     ['坪數規劃', '四房(96坪、84坪、72坪)']
   ],
 
-  gtmCode: ['N57JXD2'], // 可放置多個
+  gtmCode: ['5TFPQVG'], // 可放置多個
   order: {
     title: '預約賞屋',
     subTitle: ''

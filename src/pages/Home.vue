@@ -52,14 +52,14 @@ import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import gtm from '@/mixins/gtm.js'
 
-import Section1 from '@/projects/jscy/Section1.vue'
-import Section2 from '@/projects/jscy/Section2.vue'
-import Section3 from '@/projects/jscy/Section3.vue'
-import Section4 from '@/projects/jscy/Section4.vue'
-import Section5 from '@/projects/jscy/Section5.vue'
-import Section6 from '@/projects/jscy/Section6.vue'
-import Section7 from '@/projects/jscy/Section7.vue'
-import Section8 from '@/projects/jscy/Section8.vue'
+import Section1 from '@/projects/sy/Section1.vue'
+import Section2 from '@/projects/sy/Section2.vue'
+import Section3 from '@/projects/sy/Section3.vue'
+import Section4 from '@/projects/sy/Section4.vue'
+import Section5 from '@/projects/sy/Section5.vue'
+import Section6 from '@/projects/sy/Section6.vue'
+import Section7 from '@/projects/sy/Section7.vue'
+import Section8 from '@/projects/sy/Section8.vue'
 
 export default {
   name: 'home',
