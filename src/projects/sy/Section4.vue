@@ -1,22 +1,24 @@
 <template>
   <div class="section4">
     <div class="bg">
+      <img src="./s4/bg1.png" alt class="bg-img" />
       <div v-if="!isMobile">
-        <img src="./s4/title.png" alt="堅持無數細節 詮釋ART DECO之美" class="bg-img" />
-        <swiper
-          :options="swiperOption"
-          ref="mySwiper"
-          data-aos="fade-down"
-          data-aos-delay="800"
-          @slideChangeTransitionEnd="slideChanged"
-        >
+        <div class="content">
+          <div>
+            <div class="title">豪宅精品美學</div>
+            <div class="subtitle">HIGH STANDARDS</div>
+            <div class="red-title">摩登亞洲風成就精品飯店宅</div>
+            <div class="desc">國際級飯店規格，挑高6米氣派門廳，規劃閱覽休憩區、時尚視聽室、交誼沙龍區到空中宴會區等，回家就像回飯店。</div>
+          </div>
+        </div>
+        <swiper :options="swiperOption" ref="mySwiper">
           <swiper-slide
             v-for="(slide, index) in slideList"
             :index="index"
             :key="slide.img"
             class="item"
           >
-            <img :src="slide.img" :class="`item-img`" />
+            <img :src="slide.src" :class="`item-img`" />
           </swiper-slide>
           <div class="swiper-button-prev" slot="button-prev">
             <img src="./arrow-left.png" alt />
@@ -25,24 +27,22 @@
             <img src="./arrow-right.png" alt />
           </div>
         </swiper>
-        <div class="content">
-          <img :src="slideList[slideIndex].desc" :alt="slideList[slideIndex].alt" :class="`bg-img`" />
-        </div>
-        <div class="relative">
-          <img src="./s4/d0.png" alt class="bg-img" />
-          <img src="./s4/d1.png" alt class="bg-img" />
-        </div>
       </div>
       <div v-else>
-        <img src="./s4/mo/title.png" alt="堅持無數細節 詮釋ART DECO之美" class="bg-img" />
-        <swiper :options="swiperOption" ref="mySwiper" @slideChangeTransitionEnd="slideChanged">
+        <div class="content">
+          <div class="title">豪宅精品美學</div>
+          <div class="subtitle">HIGH STANDARDS</div>
+          <div class="red-title">摩登亞洲風成就精品飯店宅</div>
+          <div class="desc">國際級飯店規格，挑高6米氣派門廳，規劃閱覽休憩區、時尚視聽室、交誼沙龍區到空中宴會區等，回家就像回飯店。</div>
+        </div>
+        <swiper :options="swiperOption" ref="mySwiper">
           <swiper-slide
             v-for="(slide, index) in slideList"
             :index="index"
             :key="slide.img"
             class="item"
           >
-            <img :src="slide.img" :class="`item-img`" />
+            <img :src="slide.src" :class="`item-img`" />
           </swiper-slide>
           <div class="swiper-button-prev" slot="button-prev">
             <img src="./arrow-left.png" alt />
@@ -51,12 +51,6 @@
             <img src="./arrow-right.png" alt />
           </div>
         </swiper>
-        <div class="text">
-          <h3 class="title">{{slideList[slideIndex].title}}</h3>
-          <div class="desc">{{slideList[slideIndex].desc}}</div>
-        </div>
-        <img src="./s4/mo/2.jpg" alt class="img" />
-        <img src="./s4/mo/3.jpg" alt class="img" />
       </div>
     </div>
   </div>
@@ -64,38 +58,101 @@
 
 <style lang="scss" scoped>
 .bg {
-  background-size: cover;
+  background-size: 100% 70%;
+  background-repeat: no-repeat;
+  background-position: bottom;
   position: relative;
   overflow: hidden;
-  position: relative;
+  background-image: url('./s4/bg2.png');
+
+  > div {
+    display: flex;
+  }
 }
 
 .bg-img {
   width: 100vw;
+  height: auto;
   position: absolute;
-  top: 0;
-  left: 0;
   height: auto;
   display: block;
-  object-fit: cover;
-
-  &:nth-child(1) {
-    position: relative;
-  }
+  top: 0;
 }
 
 .item-img {
   &:nth-child(1) {
     position: relative;
   }
-  width: 100vw;
+  width: 100%;
   position: absolute;
+  display: block;
+}
+
+.swiper-container {
+  width: calc(100vw * 2 / 3);
 }
 
 .content {
-  position: absolute;
-  z-index: 0;
-  top: calc(100vw * (400 / 1920));
+  width: calc(100vw * 1 / 3);
+  padding-left: 0px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  > div {
+    width: 360px;
+  }
+}
+
+.title {
+  font-size: calc(100vw * 58 / 1920);
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 0.66;
+  letter-spacing: normal;
+  text-align: left;
+  color: #507913;
+  margin-bottom: calc(100vw * 20 / 1920);
+}
+
+.subtitle {
+  font-size: calc(100vw * 22 / 1920);
+  font-family: 'Abril Fatface', cursive;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.73;
+  letter-spacing: normal;
+  text-align: left;
+  color: #91b260;
+  margin-bottom: calc(100vw * 35 / 1920);
+}
+
+.red-title {
+  font-size: calc(100vw * 26 / 1920);
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.46;
+  letter-spacing: normal;
+  text-align: left;
+  color: #d67684;
+  margin-bottom: calc(100vw * 15 / 1920);
+}
+
+.desc {
+  font-size: calc(100vw * 18 / 1920);
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.11;
+  letter-spacing: normal;
+  text-align: justify;
+  color: #656565;
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -108,84 +165,123 @@
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .bg {
+    padding: 40px 0;
+
+    > img {
+      display: block;
+    }
+  }
+
+  .bg-img {
+    top: 0;
+    bottom: 0;
+    height: auto;
+  }
+
+  .content > div {
+    width: 240px;
+  }
+
+  .desc {
+    margin-bottom: calc(100vw * 20 / 1920);
+  }
+
+  .item-desc {
+    width: 400px;
+    margin-bottom: calc(100vw * 10 / 1920);
   }
 }
 
 @media screen and (max-width: 767px) {
   .bg {
-    width: 100vw;
-    background-size: 100%;
+    background-size: 100% 100%;
+    background-image: none;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    > div {
+      display: block;
+    }
   }
 
-  .text {
-    margin-top: 52px;
+  .title {
+    font-size: 39.5px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.66;
+    letter-spacing: normal;
+    text-align: left;
+    color: #507913;
+    margin-bottom: 10px;
+  }
 
-    .title {
-      width: 275px;
-      font-size: 25px;
-      font-weight: 600;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.4;
-      letter-spacing: 2.5px;
-      text-align: left;
-      color: #000000;
-      margin: 0 auto;
-      margin-bottom: 27px;
-    }
+  .subtitle {
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.73;
+    letter-spacing: normal;
+    text-align: left;
+    color: #91b260;
+    margin-bottom: 20px;
+  }
 
-    .desc {
-      width: 275px;
-      font-size: 14px;
-      font-weight: 300;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.71;
-      letter-spacing: 1.5px;
-      text-align: justify;
-      color: #000000;
-      height: 70px;
-      margin: 0 auto;
-      margin-bottom: 70px;
-    }
+  .red-title {
+    font-size: 17.5px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.49;
+    letter-spacing: normal;
+    text-align: left;
+    color: #d67684;
+  }
+
+  .desc {
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+    text-align: justify;
+    color: #656565;
   }
 
   .swiper-container {
-    margin-top: 30px;
+    width: 100vw;
+    margin-top: 5px;
+  }
+
+  .content {
+    width: 100vw;
+    background-image: url('./mobg.jpg');
+    background-size: cover;
+    padding: 50px 20px 45px;
   }
 
   .item-img {
+    &:nth-child(1) {
+      position: relative;
+    }
     width: 100vw;
-    margin: 0 auto;
-  }
-
-  .swiper-button-prev,
-  .swiper-container-rtl .swiper-button-next {
-    // left: 5vw;
-  }
-
-  .swiper-button-next,
-  .swiper-container-rtl .swiper-button-prev {
-    // right: 5vw;
-  }
-
-  .img {
-    width: 100vw;
+    position: absolute;
   }
 }
 </style>
-
 <script>
 // @ is an alias to /src
 import { isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 import 'swiper/dist/css/swiper.css'
-
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'section4',
   mixins: [slider],
+
   components: {
     swiper,
     swiperSlide,
@@ -205,7 +301,7 @@ export default {
           delay: 4000,
           disableOnInteraction: true,
         },
-        effect: 'fade',
+        // effect: 'fade',
         loop: true,
         navigation: {
           nextEl: '.swiper-button-next',
@@ -214,61 +310,44 @@ export default {
       },
       slideList: [
         {
-          img: isMobile ? require('./s4/mo/c1.jpg') : require('./s4/c1.png'),
-          title: '精鑄原創圖騰',
-          desc: isMobile
-            ? '在入口地面與建築體原創噴泉與山的變形圖騰，做為家族特色家徽，展現綻放曙光的精神。'
-            : require('./s4/c1t.png'),
-          alt: '精鑄原創圖騰',
+          src: require('./s4/1.jpg'),
         },
         {
-          img: isMobile ? require('./s4/mo/c2.jpg') : require('./s4/c2.png'),
-          title: '打造退縮頂冠',
-          desc: isMobile
-            ? '頂樓處以退縮設計形成特色屋突，打造可遠眺壽山、愛河與美術館的休憩空間。'
-            : require('./s4/c2t.png'),
-          alt: '打造退縮頂冠',
+          src: require('./s4/2.jpg'),
         },
 
         {
-          img: isMobile ? require('./s4/mo/c3.jpg') : require('./s4/c3.png'),
-          title: '建築的力與美',
-          desc: isMobile
-            ? '一、二樓天然石材基座，搭配正面大型金屬鐵件裝置藝術搭配金屬造型燈柱，展現建築力量與壯闊氣勢！'
-            : require('./s4/c3t.png'),
-          alt: '建築的力與美',
+          src: require('./s4/3.jpg'),
         },
         {
-          img: isMobile ? require('./s4/mo/c4.jpg') : require('./s4/c4.png'),
-          title: '摩登幾何圖形',
-          desc: isMobile
-            ? '在建築外觀與室內空間巧思設計常見幾何圖型的變化意象，展現摩登時代感。'
-            : require('./s4/c4t.png'),
-          alt: '摩登幾何圖形',
+          src: require('./s4/4.jpg'),
         },
         {
-          img: isMobile ? require('./s4/mo/c5.jpg') : require('./s4/c5.png'),
-          title: '華麗低調質感',
-          desc: isMobile
-            ? '外觀以金色與米色為主色調，搭配金屬構件，公共場域與傢俱家飾則以紅、金、古銅…展現ARTDECO低調奢華感。'
-            : require('./s4/c5t.png'),
-          alt: '華麗低調質感',
+          src: require('./s4/5.jpg'),
+        },
+        {
+          src: require('./s4/6.jpg'),
+        },
+        {
+          src: require('./s4/7.jpg'),
+        },
+        {
+          src: require('./s4/8.jpg'),
+        },
+        {
+          src: require('./s4/9.jpg'),
+        },
+        {
+          src: require('./s4/10.jpg'),
+        },
+        {
+          src: require('./s4/11.jpg'),
         },
       ],
     }
   },
 
   methods: {
-    slideChanged(e) {
-      const swiper = this.$refs.mySwiper.swiper
-      if (swiper.isEnd) {
-        this.slideIndex = 0
-      } else if (swiper.isBeginning) {
-        this.slideIndex = swiper.slides.length - 3
-      } else {
-        this.slideIndex = swiper.activeIndex - 1
-      }
-    },
   },
 }
 </script>

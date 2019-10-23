@@ -1,20 +1,44 @@
 <template>
   <div class="section2">
-    <div class="bg">
+    <div class="bg fullscreen">
       <div v-if="!isMobile">
-        <img src="./s2/0.png" alt="家 就是一座美術館" class="bg-img" />
-        <img src="./s2/1.png" alt="我們以打磨一座「藝術精品」精神，創作【堅山謙仰】" class="bg-img" data-aos="zoom-in" data-aos-delay="800" />
-        <img src="./s2/2.png" alt="將所有美好事物融入建築細節，讓建築成為一座私人美術館。" class="bg-img" data-aos="zoom-in" data-aos-delay="600" />
+        <div class="left">
+          <div class="content">
+            <div class="title">新莊第一名宅</div>
+            <div class="subtitle">GRAND MANSION</div>
+            <div class="desc">
+              世代大團圓，在地指名地標建築
+              <br />新一代豪宅語彙，有著相同的建築鋒芒
+              <br />凌空拔高23層安全制震地標建築，現代俐落立面，從璽園得到見證。
+            </div>
+          </div>
+          <div class="imglist">
+            <img src="./s2/1.jpg" alt="璽園" class="img" />
+            <img src="./s2/2.jpg" alt="璽園" class="img" />
+            <img src="./s2/3.jpg" alt="璽園" class="img" />
+            <img src="./s2/4.jpg" alt="璽園" class="img" />
+          </div>
+        </div>
+        <div class="right">
+          <img src="./s2/5.jpg" alt="璽園" class="img" />
+        </div>
       </div>
       <div v-else>
-        <div class="">
-          <img src="./s2/mo/0.png" alt class="img" data-aos="zoom-in" data-aos-delay="600" />
-          <img src="./s2/mo/1.jpg" alt class="img" data-aos="zoom-in" data-aos-delay="800" />
-          <h3 class="title">家 就是一座美術館</h3>
+        <div class="m-content">
+          <div class="title">新莊第一名宅</div>
+          <div class="subtitle">GRAND MANSION</div>
           <div class="desc">
-            我們以打磨一座「藝術精品」精神，創作【堅山謙仰】
-            <br />將所有美好事物融入建築細節，讓建築成為一座私人美術館。
+            世代大團圓，在地指名地標建築
+            <br />新一代豪宅語彙，有著相同的建築鋒芒
+            <br />凌空拔高23層安全制震地標建築，現代俐落立面，從璽園得到見證。
           </div>
+        </div>
+        <img src="./s2/5.jpg" alt class="imgb" />
+        <div class="imgmlist">
+          <img src="./s2/1.jpg" alt class="img" />
+          <img src="./s2/2.jpg" alt class="img" />
+          <img src="./s2/3.jpg" alt class="img" />
+          <img src="./s2/4.jpg" alt class="img" />
         </div>
       </div>
     </div>
@@ -26,24 +50,91 @@
   background-size: cover;
   position: relative;
   overflow: hidden;
-}
-.bg-img {
-  width: 100vw;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: auto;
-  display: block;
-  object-fit: cover;
 
-  &:nth-child(1) {
-    position: relative;
+  > div {
+    display: flex;
+  }
+}
+
+.left {
+  width: 57.2vw;
+  position: relative;
+  background: #fff;
+}
+
+.content {
+  margin-top: 11%;
+  > div {
+    width: calc(100% * 790 / 1100);
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: calc(100vw * (58 / 1920));
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.66;
+    letter-spacing: normal;
+    text-align: left;
+    color: #507913;
+    margin-bottom: 10px;
+  }
+
+  .subtitle {
+    font-size: calc(100vw * (22 / 1920));
+    font-family: 'Abril Fatface', cursive;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.73;
+    letter-spacing: normal;
+    text-align: left;
+    color: #91b260;
+    margin-bottom: 30px;
+  }
+
+  .desc {
+    font-size: calc(100vw * (26 / 1920));
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.73;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+  }
+}
+
+.imglist {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+
+  img {
+    display: block;
+    width: 25%;
+    object-fit: cover;
+  }
+}
+
+.right {
+  width: 42.8vw;
+
+  img {
+    width: 100%;
+    height: 100vh;
+    // width: 100%;
   }
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
-    height: 100vh;
+    // height: 100vh;
+  }
+
+  .right {
   }
 }
 
@@ -63,36 +154,70 @@
 @media screen and (max-width: 767px) {
   .bg {
     background-size: 100% 100%;
+
+    > div {
+      display: block;
+    }
+
+    &.fullscreen {
+      height: auto !important;
+    }
+  }
+
+  .m-content {
+    background-image: url('./mobg.jpg');
+    background-size: cover;
+    padding-top: 50px;
+    padding: 50px 18px 45px;
+
+    .title {
+      font-size: 39.5px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 0.66;
+      letter-spacing: normal;
+      text-align: left;
+      color: #507913;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.73;
+      letter-spacing: normal;
+      text-align: left;
+      color: #91b260;
+      margin-bottom: 20px;
+    }
+
+    .desc {
+      font-size: 16px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.59;
+      letter-spacing: normal;
+      text-align: left;
+      color: #000000;
+    }
+  }
+
+  .imgb {
+    width: 100vw;
+    display: block;
   }
 
   .img {
-    width: 50%;
-    height: auto;
+    width: 25%;
+    display: block;
   }
 
-  .title {
-    margin-top: 67px;
-    font-size: 25px;
-    font-weight: 600;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.2;
-    letter-spacing: 2.5px;
-    text-align: center;
-    color: #000000;
-    margin-bottom: 20px;
-  }
-
-  .desc {
-    font-size: 14px;
-    font-weight: 300;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.89;
-    letter-spacing: -.4px;
-    text-align: center;
-    color: #594a42;
-    margin-bottom: 58px;
+  .imgmlist {
+    display: flex;
   }
 }
 </style>

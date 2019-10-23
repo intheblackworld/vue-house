@@ -26,9 +26,6 @@
       <div id="section7">
         <Section7 />
       </div>
-      <div id="section8">
-        <Section8 />
-      </div>
       <ContactSection />
     </div>
     <MobileNav />
@@ -38,9 +35,6 @@
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Playball&display=swap');
 @import '../assets/style/variableColor.scss';
-.bg {
-  background: $bg !important;
-}
 </style>
 
 <script>
@@ -59,7 +53,6 @@ import Section4 from '@/projects/sy/Section4.vue'
 import Section5 from '@/projects/sy/Section5.vue'
 import Section6 from '@/projects/sy/Section6.vue'
 import Section7 from '@/projects/sy/Section7.vue'
-import Section8 from '@/projects/sy/Section8.vue'
 
 export default {
   name: 'home',
@@ -77,7 +70,6 @@ export default {
     Section5,
     Section6,
     Section7,
-    Section8,
   },
 
   data() {

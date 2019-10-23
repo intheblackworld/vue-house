@@ -1,56 +1,53 @@
 <template>
   <div class="section5">
-    <div class="bg">
-      <div v-if="!isMobile" class="d-flex">
-        <div class="item" data-aos="fade-down" data-aos-delay="600">
-          <img src="./s5/1.jpg" alt class="img" />
-          <div class="mask">
-            <h3 class="title">1F交誼廳</h3>
-            <div class="desc">
-              映入眼簾的是穿透延伸出去的雕塑及充滿藝術圖的鍍鈦屏風，在無盡的空間裡面添加更多的視覺藝術，而義大利百年的Poltrana Frau家具的多樣性及頂級觸感，將整個入口感覺點妝成為不可取代的雅痞空間，透過屏風背後精緻的吧檯設計及長形用餐桌面，提供了一個夜晚繁星休憩的美食饗宴空間。
+    <div class="bg fullscreen">
+      <div v-if="!isMobile">
+        <div class="left">
+          <div class="content">
+            <div class="title">安全第一優先</div>
+            <div class="subtitle">FIRST PRIORITY</div>
+            <div class="desc">安全制震宅，打造堅若磐石城堡</div>
+            <div class="dropdown">
+              <div
+                :class="`item ${item.open ? 'open' : ''}`"
+                v-for="(item, index) in toggleList"
+                :key="item.title"
+              >
+                <h3 @click="toggle(index)" class="head flex-jb flex-ac">
+                  <div>{{item.title}}</div>
+                  <img v-if="!item.open" src="./s5/plus.png" alt class="btn" />
+                  <img v-if="item.open" src="./s5/minus.png" alt class="btn" />
+                </h3>
+                <div class="item-desc" v-html="item.desc"></div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="item" data-aos="fade-left" data-aos-delay="800">
-          <img src="./s5/2.jpg" alt class="img" />
-          <div class="mask">
-            <h3 class="title">2F健身空間</h3>
-            <div class="desc">
-              在廊道上利用煙燻的刻紋木皮，讓整個走廊散發出軟性的效果，進入到室內空間，環形設計的天花板成為整個空間的視覺主軸，整個空間的設計圍繞在環形架構上，搭配間接照明設計，讓健身同時享受著不單調的趣味性。
-            </div>
-          </div>
-        </div>
-        <div class="item" data-aos="fade-up" data-aos-delay="1000">
-          <img src="./s5/3.jpg" alt class="img" />
-          <div class="mask">
-            <h3 class="title">14F的視聽會所</h3>
-            <div class="desc">
-              交錯分隔的天花板造型，搭配圖騰義大利灰石材的協面分割，就像在畫作上的線條與色塊的結合，藝術的價值與空間美感，相互呼應會所，就是一個私人典藏的空間，身在其中如同一個頂級奢華的俱樂部，盡情抒發內心的熱情。
-            </div>
-          </div>
+        <div class="right">
+          <img src="./s5/1.png" alt class="img" />
         </div>
       </div>
       <div v-else>
-        <swiper :options="swiperOption" ref="mySwiper" @slideChangeTransitionEnd="slideChanged">
-          <swiper-slide
-            v-for="(slide, index) in slideList"
-            :index="index"
-            :key="slide.img"
-            class="item"
-          >
-            <img :src="slide.img" :class="`item-img`" />
-          </swiper-slide>
-          <div class="swiper-button-prev" slot="button-prev">
-            <img src="./arrow-left.png" alt />
-          </div>
-          <div class="swiper-button-next" slot="button-next">
-            <img src="./arrow-right.png" alt />
-          </div>
-        </swiper>
-        <div class="text">
-          <h3 class="title" v-html="slideList[slideIndex].title"></h3>
-          <div class="desc" v-html="slideList[slideIndex].desc"></div>
+        <div class="content">
+          <div class="title">繁華第一光圈</div>
+          <div class="subtitle">FOCUS SPOTLIGHT</div>
+          <div class="desc">聚富雙核心，萬中選一最佳地段</div>
         </div>
+        <div class="dropdown">
+          <div
+            :class="`item ${item.open ? 'open' : ''}`"
+            v-for="(item, index) in toggleList"
+            :key="item.title"
+          >
+            <h3 @click="toggle(index)" class="head flex-jb flex-ac">
+              <div>{{item.title}}</div>
+              <img v-if="!item.open" src="./s5/plus.png" alt class="btn" />
+              <img v-if="item.open" src="./s5/minus.png" alt class="btn" />
+            </h3>
+            <div class="item-desc" v-html="item.desc"></div>
+          </div>
+        </div>
+        <img src="./s5/m1.png" alt class="img" />
       </div>
     </div>
   </div>
@@ -59,67 +56,130 @@
 <style lang="scss" scoped>
 .bg {
   background-size: cover;
+  background-position: center;
   position: relative;
   overflow: hidden;
-  position: relative;
+  background-image: url('./s5/bg.jpg');
+
+  > div {
+    display: flex;
+    height: 100%;
+  }
 }
 
-.item {
-  width: calc(100vw / 3);
+.left,
+.right {
+  width: 50vw;
+  height: 100%;
   position: relative;
 
   .img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
-  }
-
-  .mask {
-    background: rgba(0, 0, 0, 0.7);
-    opacity: 0;
-    width: 100%;
-    height: 100%;
     position: absolute;
-    top: 0;
-    z-index: 2;
-    transition: all 0.4s;
-    padding: 60px 50px 0 50px;
+    right: 0;
+    bottom: 0;
+    width: 100%;
   }
+}
 
-  &:hover {
-    .mask {
-      opacity: 1;
+.content {
+  width: 50vw;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title {
+  width: calc(100vw * 630 / 1920);
+  font-size: calc(100vw * 58 / 1920);
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 0.66;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff06e;
+  margin-bottom: calc(100vw * 20 / 1920);
+}
+
+.subtitle {
+  width: calc(100vw * 630 / 1920);
+  font-size: calc(100vw * 22 / 1920);
+  font-family: 'Abril Fatface', cursive;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.73;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+  margin-bottom: calc(100vw * 35 / 1920);
+}
+
+.desc {
+  width: calc(100vw * 630 / 1920);
+  font-size: calc(100vw * 26 / 1920);
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.46;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
+  margin-bottom: calc(100vw * 30 / 1920);
+}
+
+.dropdown {
+  .item {
+    width: 630px;
+    height: 50px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding-left: 23px;
+    padding-right: 23px;
+    border-radius: 10px;
+    width: calc(100vw * 630 / 1920);
+    margin-bottom: 18px;
+    transition: all 0.5s;
+
+    &.open {
+      height: auto;
     }
   }
-
-  .title {
-    font-size: calc(100vw * (30 / 1920));
-    font-weight: 600;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.33;
-    letter-spacing: 3px;
-    text-align: left;
-    color: #ffffff;
-    margin-bottom: 20px;
-  }
-
-  .desc {
-    font-size: calc(100vw * (18 / 1920));
+  .head {
+    font-size: 20px;
     font-weight: normal;
     font-style: normal;
     font-stretch: normal;
-    line-height: 2.22;
-    letter-spacing: 1.8px;
+    line-height: 50px;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffdc3b;
+  }
+
+  .btn {
+    width: 24px;
+  }
+
+  .item-desc {
+    padding-top: 0px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.73;
+    letter-spacing: normal;
     text-align: justify;
-    color: #ffffff;
+    color: #dae1bd;
   }
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
-    height: 100vh;
+    min-height: 700px;
+    height: 100vh !important;
   }
 }
 
@@ -127,157 +187,225 @@
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .bg {
+    padding: 180px 0;
   }
 
-  .item {
-    .mask {
-      padding: 20px 20px;
+  .dropdown {
+    .item {
+      width: 630px;
+      height: 50px;
+      overflow: hidden;
+      background-color: rgba(0, 0, 0, 0.2);
+      padding-left: 23px;
+      padding-right: 23px;
+      border-radius: 10px;
+      width: calc(100vw * 630 / 1920);
+      margin-bottom: 18px;
+      transition: all 0.5s;
 
-      .title {
-        margin-bottom: 5px;
-        font-size: 18px;
-      }
-
-      .desc {
-        font-size: 12px;
-        line-height: 1.7;
+      &.open {
+        height: auto;
       }
     }
+    .head {
+      font-size: 16px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 50px;
+      letter-spacing: normal;
+      text-align: left;
+      color: #ffdc3b;
+    }
+
+    .btn {
+      width: 20px;
+    }
+
+    .item-desc {
+      padding-top: 0px;
+      padding-bottom: 10px;
+      font-size: 18px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.73;
+      letter-spacing: normal;
+      text-align: justify;
+      color: #dae1bd;
+    }
+  }
+
+  .desc {
+    margin-bottom: calc(100vw * 20 / 1920);
   }
 }
 
 @media screen and (max-width: 767px) {
   .bg {
-    width: 100vw;
-    background-size: 100%;
+    background-size: 100% 100%;
+    background-image: url('./s5/mbg.jpg');
+    padding-top: 0;
+    padding-bottom: 0;
+    height: auto;
+
+    > div {
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+
+
+    .fullscreen {
+      height: auto !important;
+    }
   }
 
-  .text {
-    margin-top: 52px;
+  .title {
+    font-size: 39.5px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.66;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff06e;
+    margin-bottom: 10px;
+  }
 
-    .title {
-      width: 275px;
-      font-size: 25px;
-      font-weight: 600;
+  .subtitle {
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.73;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  .desc {
+    font-size: 17.5px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.49;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+  }
+
+  .content {
+    width: 100vw;
+    padding: 50px 17px;
+    height: auto;
+    // background-image: url('./mobg.jpg');
+    display: block;
+    background-size: cover;
+    // padding: 50px 20px 45px;
+    .title,
+    .subtitle,
+    .desc {
+      width: auto;
+    }
+  }
+
+  .dropdown {
+    .item {
+      height: 40px;
+      overflow: hidden;
+      background-color: rgba(0, 0, 0, 0.2);
+      padding-left: 23px;
+      padding-right: 23px;
+      border-radius: 10px;
+      width: calc(100vw * 670 / 750);
+      margin: 0 auto;
+      margin-bottom: 18px;
+      transition: all 0.5s;
+
+      &.open {
+        height: auto;
+      }
+    }
+    .head {
+      font-size: 16.5px;
+      font-weight: normal;
       font-style: normal;
       font-stretch: normal;
-      line-height: 1.4;
-      letter-spacing: 2.5px;
+      line-height: 40px;
+      letter-spacing: normal;
       text-align: left;
-      color: #000000;
-      margin: 0 auto;
-      margin-bottom: 27px;
+      color: #ffdc3b;
+    }
+
+    .btn {
+      width: 18px;
     }
 
     .desc {
-      width: 275px;
-      font-size: 14px;
-      font-weight: 300;
+      padding-top: 0px;
+      padding-bottom: 10px;
+      font-size: 15px;
+      font-weight: normal;
       font-style: normal;
       font-stretch: normal;
-      line-height: 1.71;
-      letter-spacing: 1.5px;
+      line-height: 1.73;
+      letter-spacing: normal;
       text-align: justify;
-      color: #000000;
-      margin: 0 auto;
-      margin-bottom: 70px;
+      color: #dae1bd;
     }
   }
 
-  .swiper-container {
-    margin-top: 30px;
-  }
-
-  .item-img {
-    width: 100vw;
-    margin: 0 auto;
-  }
-
-  .swiper-button-prev,
-  .swiper-container-rtl .swiper-button-next {
-    // left: 5vw;
-  }
-
-  .swiper-button-next,
-  .swiper-container-rtl .swiper-button-prev {
-    // right: 5vw;
-  }
-
   .img {
-    width: 100vw;
+    position: relative;
+    width: 100%;
   }
 }
 </style>
-
 <script>
 // @ is an alias to /src
-import { isMobile, isTablet } from '@/utils'
+import { isMobile } from '@/utils'
 import slider from '@/mixins/slider.js'
 import 'swiper/dist/css/swiper.css'
-
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'section5',
   mixins: [slider],
-  components: {
-    swiper,
-    swiperSlide,
-  },
 
   data() {
     return {
       isMobile,
-      swiperOption: {
-        slidesPerView: isMobile ? 1 : 1,
-        spaceBetween: isTablet ? 20 : 30,
-        slidesPerColumn: isMobile ? 1 : 1,
-        allowSlidePrev: isMobile ? true : true,
-        allowSlideNext: isMobile ? true : true,
-        // centeredSlides: true,
-        // autoplay: {
-        //   delay: 4000,
-        //   disableOnInteraction: true,
-        // },
-        loop: true,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-      },
-      slideList: [
+      toggleList: [
         {
-          img: require('./s5/mo/1.jpg'),
-          title: '1F交誼廳',
+          title: '打造新莊豪宅至高的安全基準',
           desc:
-            '映入眼簾的是穿透延伸出去的雕塑及充滿藝術圖的鍍鈦屏風，在無盡的空間裡面添加更多的視覺藝術，而義大利百年的Poltrana Frau家具的多樣性及頂級觸感，將整個入口感覺點妝成為不可取代的雅痞空間，透過屏風背後精緻的吧檯設計及長形用餐桌面，提供了一個夜晚繁星休憩的美食饗宴空間。',
+            '安全是衡量豪宅第一要件，採用日本第一品牌住友GRAST制震壁，提升抗震係數至0.26G，獨家十大結構安全設計，打造新莊豪宅至高基準。',
+          open: true,
         },
         {
-          img: require('./s5/mo/2.jpg'),
-          title: '2F健身空間',
+          title: '採用日本第一品牌住友制震壁',
           desc:
-            '在廊道上利用煙燻的刻紋木皮，讓整個走廊散發出軟性的效果，進入到室內空間，環形設計的天花板成為整個空間的視覺主軸，整個空間的設計圍繞在環形架構上，搭配間接照明設計，讓健身同時享受著不單調的趣味性。',
+            '四百年歷史的住友集團橡膠工業，研發出高阻尼橡膠制震系統，提高耐震能力，獲日本國寶級古蹟京都東本願寺、姬路城、熊本城等採用。',
+          open: false,
         },
-
         {
-          img: require('./s5/mo/3.jpg'),
-          title: '14F的視聽會所',
+          title: '獨家十大結構設計與紮實施工',
           desc:
-            '交錯分隔的天花板造型，搭配圖騰義大利灰石材的協面分割，就像在畫作上的線條與色塊的結合，藝術的價值與空間美感，相互呼應會所，就是一個私人典藏的空間，身在其中如同一個頂級奢華的俱樂部，盡情抒發內心的熱情。',
+            '①全棟128組制震器安全耐震<br />②結構外審通過高標準<br />③基礎埋深筏式基礎施工<br />④採用4200kg/cm²高拉力鋼筋<br />⑤4至6千磅高強度混凝土施工<br />⑥SA級續接器加強結構強度<br />⑦水平樓板加厚至18公分<br />⑧強柱弱梁設計吸收地震能量<br />⑨防止土壤液化連續壁施工<br />⑩專業結構設計與施工監造認證',
+          open: false,
         },
       ],
     }
   },
 
   methods: {
-    slideChanged(e) {
-      const swiper = this.$refs.mySwiper.swiper
-      if (swiper.isEnd) {
-        this.slideIndex = 0
-      } else if (swiper.isBeginning) {
-        this.slideIndex = swiper.slides.length - 3
+    toggle(index) {
+      if (this.toggleList[index].open) {
+        this.toggleList[index].open = false
       } else {
-        this.slideIndex = swiper.activeIndex - 1
+        this.toggleList.forEach(item => (item.open = false))
+        this.toggleList[index].open = !this.toggleList[index].open
       }
     },
   },

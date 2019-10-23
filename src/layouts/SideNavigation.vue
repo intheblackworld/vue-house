@@ -85,7 +85,7 @@ export default {
   display: block;
   position: fixed;
   z-index: 112;
-  top: 0px;
+  top: 15px;
   right: 30px;
   width: 66px;
   cursor: pointer;
@@ -113,7 +113,6 @@ export default {
   transition: all 0.3s ease-in;
   display: block;
   transform: translateX(40%);
-  background-image: url('./nav_bg.png');
 
   li {
     height: 60px;
@@ -131,6 +130,24 @@ export default {
     justify-content: center;
     display: none;
     background-size: cover;
+    position: relative;
+
+    &::after {
+      display: block;
+      content: '';
+      width: 0%;
+      height: 1px;
+      background: #ddd75f;
+      transition: all 0.4s;
+      left: 50%;
+      bottom: 0;
+      position: absolute;
+    }
+
+    &:hover:after {
+      width: 80%;
+      left: 10%;
+    }
 
     img,
     span {
@@ -260,7 +277,7 @@ export default {
     display: block;
     position: fixed;
     right: 12px;
-    top: 0px;
+    top: 15px;
     width: 59px;
 
     img {

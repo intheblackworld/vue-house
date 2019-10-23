@@ -2,65 +2,33 @@
   <div class="section7">
     <div class="bg">
       <div v-if="!isMobile">
-        <swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="800">
-          <swiper-slide
-            v-for="(slide, index) in slideList"
-            :index="index"
-            :key="slide.img"
-            class="item"
-          >
-            <img :src="slide.img" :class="`item-img`" />
-            <!-- <img src="./s6/1.png" alt :class="`bg-img`" />
-            <img
-              src="./s6/2.png"
-              alt="站在規劃者的角度，在建築落成後導入歐洲貴族沙龍文化精神，透過公共空間籌備沙龍藝術季—舉辦國際畫展、拍賣會、品酒會… 等精彩活動，希望建築可以傳遞與分享美好生活美學。"
-              :class="`bg-img`"
-            />-->
-          </swiper-slide>
-          <!-- <div class="swiper-button-prev" slot="button-prev">
-            <img src="./arrow-left.png" alt />
-          </div>
-          <div class="swiper-button-next" slot="button-next">
-            <img src="./arrow-right.png" alt />
-          </div>-->
-        </swiper>
-        <!-- <div class="content">
-          <img src="./s6/1.png" alt :class="`bg-img`" />
+        <img src="./s7/t1.png" alt="安全高規格 日本住友制震壁" class="bg-img" />
+        <img src="./s7/t2.png" alt="新莊第一名宅 在地唯一指名" class="bg-img" />
+        <img src="./s7/t3.png" alt="新莊市中心，最後一塊千坪美地" class="bg-img" />
+        <img src="./s7/t4.png" alt="地標飯店宅 29坪．45坪．52坪" class="bg-img" />
+        <div :class="`slide relative`" data-aos="fade" data-aos-delay="0">
           <img
-            src="./s6/2.png"
-            alt="站在規劃者的角度，在建築落成後導入歐洲貴族沙龍文化精神，透過公共空間籌備沙龍藝術季—舉辦國際畫展、拍賣會、品酒會… 等精彩活動，希望建築可以傳遞與分享美好生活美學。"
-            :class="`bg-img`"
+            v-for="(slide, index) in slideList"
+            :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
+            :key="`s7-slide-${index}`"
+            :src="slide.src"
+            alt
           />
-        </div>-->
-        <img src="./s7/bg.jpg" alt class="bg-img" />
-        <img src="./s7/4.png" alt="日和 咖啡、美食 在謙仰的心靈散步" class="bg-img" data-aos="fade-down" data-aos-delay="600" />
+        </div>
       </div>
       <div v-else>
-        <swiper :options="swiperOption" ref="mySwiper" @slideChangeTransitionEnd="slideChanged">
-          <swiper-slide
+        <img src="./s7/s7t1.png" alt="安全高規格 日本住友制震壁" class="bg-img" />
+        <img src="./s7/s7t2.png" alt="新莊第一名宅 在地唯一指名" class="bg-img" />
+        <img src="./s7/s7t3.png" alt="新莊市中心，最後一塊千坪美地" class="bg-img" />
+        <img src="./s7/s7t4.png" alt="地標飯店宅 29坪．45坪．52坪" class="bg-img" />
+        <div :class="`slide relative`" data-aos="fade" data-aos-delay="0">
+          <img
             v-for="(slide, index) in slideList"
-            :index="index"
-            :key="slide.img"
-            class="item"
-          >
-            <img :src="slide.img" :class="`item-img`" />
-          </swiper-slide>
-          <div class="swiper-button-prev" slot="button-prev">
-            <img src="./arrow-left.png" alt />
-          </div>
-          <div class="swiper-button-next" slot="button-next">
-            <img src="./arrow-right.png" alt />
-          </div>
-        </swiper>
-        <div class="text">
-          <h3 class="title">
-            日和 咖啡、美食
-            <br />在謙仰的心靈散步
-          </h3>
-          <div class="desc">
-            沿青海路漫步，發掘食、衣、住、行…精彩生活樂趣，有散文般鬆散寫意的咖啡館、異國料理、風味餐廳…等著你品嚐，
-            有詩篇一樣簡潔精練的舶來雜貨、服飾商行…特色小店等著你去尋訪，生活是輕盈的，也是豐盈的，每一天都像一場心靈的小旅行。
-          </div>
+            :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
+            :key="`s7-slide-${index}`"
+            :src="slide.src"
+            alt
+          />
         </div>
       </div>
     </div>
@@ -85,16 +53,11 @@
   height: auto;
   display: block;
   object-fit: cover;
+  z-index: 5;
 
-  &:nth-child(1) {
-    position: relative;
-  }
-}
-
-.content {
-  position: absolute;
-  z-index: 2;
-  top: calc(100vw * (400 / 1920));
+  // &:nth-child(1) {
+  //   position: relative;
+  // }
 }
 
 .item-img {
@@ -164,26 +127,6 @@
     }
   }
 
-  .swiper-container {
-    margin-top: 0px;
-    margin-bottom: 45px;
-  }
-
-  .item-img {
-    width: 100vw;
-    margin: 0 auto;
-  }
-
-  .swiper-button-prev,
-  .swiper-container-rtl .swiper-button-next {
-    // left: 5vw;
-  }
-
-  .swiper-button-next,
-  .swiper-container-rtl .swiper-button-prev {
-    // right: 5vw;
-  }
-
   .img {
     width: 100vw;
   }
@@ -196,15 +139,9 @@ import { isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 import 'swiper/dist/css/swiper.css'
 
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
-
 export default {
   name: 'section7',
   mixins: [slider],
-  components: {
-    swiper,
-    swiperSlide,
-  },
 
   data() {
     return {
@@ -217,8 +154,8 @@ export default {
         allowSlideNext: isMobile ? true : true,
         // centeredSlides: true,
         autoplay: {
-          delay: 4000,
-          disableOnInteraction: true,
+          delay: 1000,
+          disableOnInteraction: false,
         },
         loop: true,
         effect: 'fade',
@@ -229,13 +166,13 @@ export default {
       },
       slideList: [
         {
-          img: isMobile ? require('./s7/mo/1.jpg') : require('./s7/1.png'),
+          src: isMobile ? require('./s7/s7bg1.jpg') : require('./s7/bg1.jpg'),
         },
         {
-          img: isMobile ? require('./s7/mo/2.jpg') : require('./s7/2.png'),
+          src: isMobile ? require('./s7/s7bg2.jpg') : require('./s7/bg2.jpg'),
         },
         {
-          img: isMobile ? require('./s7/mo/3.jpg') : require('./s7/3.png'),
+          src: isMobile ? require('./s7/s7bg3.jpg') : require('./s7/bg3.jpg'),
         },
       ],
     }
@@ -255,11 +192,26 @@ export default {
   },
 
   created() {
-    if (this.isMobile) {
-      this.slideList.push({
-        img: require('./s7/mo/4.jpg'),
-      })
-    }
+    setInterval(() => {
+      if (this.slideList) {
+        this.addIndex()
+      }
+      if (this.slideList1) {
+        this.addMultiIndex(1)
+      }
+
+      if (this.slideList2) {
+        this.addMultiIndex(2)
+      }
+
+      if (this.slideList3) {
+        this.addMultiIndex(3)
+      }
+
+      if (this.slideList4) {
+        this.addMultiIndex(4)
+      }
+    }, 4000)
   },
 }
 </script>

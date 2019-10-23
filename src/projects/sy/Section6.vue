@@ -1,22 +1,26 @@
 <template>
   <div class="section6">
     <div class="bg">
+      <img src="./s6/bg2.png" alt class="bg-img" />
       <div v-if="!isMobile">
-        <img src="./s6/title.png" alt="感動 從分享生活的美好開始" class="bg-img" data-aos="fade-down" data-aos-delay="600" />
-        <swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="800">
+        <div class="content">
+          <div>
+            <div class="title">世代第一首選</div>
+            <div class="subtitle">ONLY ONE CHOICE</div>
+            <div class="red-title">自住兼置產，富貴興旺代代相傳</div>
+            <div
+              class="desc"
+            >首購一步到位，首換全面升級！專為獨立成家、二代置產或世代共居的首購換屋族而規劃，新莊第一名宅的「璽園」，兼具自住享受、置產增值，何止是一棟好地段的豪宅，更是一座宜居好宅、世代傳承的建築。</div>
+          </div>
+        </div>
+        <swiper :options="swiperOption" ref="mySwiper">
           <swiper-slide
             v-for="(slide, index) in slideList"
             :index="index"
             :key="slide.img"
             class="item"
           >
-            <img :src="slide.img" :class="`item-img`" />
-            <!-- <img src="./s6/1.png" alt :class="`bg-img`" />
-            <img
-              src="./s6/2.png"
-              alt="站在規劃者的角度，在建築落成後導入歐洲貴族沙龍文化精神，透過公共空間籌備沙龍藝術季—舉辦國際畫展、拍賣會、品酒會… 等精彩活動，希望建築可以傳遞與分享美好生活美學。"
-              :class="`bg-img`"
-            /> -->
+            <img :src="slide.src" :class="`item-img`" />
           </swiper-slide>
           <div class="swiper-button-prev" slot="button-prev">
             <img src="./arrow-left.png" alt />
@@ -25,26 +29,24 @@
             <img src="./arrow-right.png" alt />
           </div>
         </swiper>
-        <div class="content">
-          <img src="./s6/1.png" alt :class="`bg-img`" />
-          <img
-            src="./s6/2.png"
-            alt="站在規劃者的角度，在建築落成後導入歐洲貴族沙龍文化精神，透過公共空間籌備沙龍藝術季—舉辦國際畫展、拍賣會、品酒會… 等精彩活動，希望建築可以傳遞與分享美好生活美學。"
-            :class="`bg-img`"
-            data-aos="fade-down" data-aos-delay="1000"
-          />
-        </div>
       </div>
       <div v-else>
-        <img src="./s6/mo/title.png" alt="感動 從分享生活的美好開始" class="bg-img" />
-        <swiper :options="swiperOption" ref="mySwiper" @slideChangeTransitionEnd="slideChanged">
+        <div class="content">
+          <div class="title">世代第一首選</div>
+          <div class="subtitle">ONLY ONE CHOICE</div>
+          <div class="red-title">自住兼置產，富貴興旺代代相傳</div>
+          <div
+            class="desc"
+          >首購一步到位，首換全面升級！專為獨立成家、二代置產或世代共居的首購換屋族而規劃，新莊第一名宅的「璽園」，兼具自住享受、置產增值，何止是一棟好地段的豪宅，更是一座宜居好宅、世代傳承的建築。</div>
+        </div>
+        <swiper :options="swiperOption" ref="mySwiper">
           <swiper-slide
             v-for="(slide, index) in slideList"
             :index="index"
             :key="slide.img"
             class="item"
           >
-            <img :src="slide.img" :class="`item-img`" />
+            <img :src="slide.src" :class="`item-img`" />
           </swiper-slide>
           <div class="swiper-button-prev" slot="button-prev">
             <img src="./arrow-left.png" alt />
@@ -53,11 +55,6 @@
             <img src="./arrow-right.png" alt />
           </div>
         </swiper>
-        <div class="text">
-          <div
-            class="desc"
-          >站在規劃者的角度，在建築落成後導入歐洲貴族沙龍文化精神，透過公共空間籌備沙龍藝術季—舉辦國際畫展、拍賣會、品酒會… 等精彩活動，希望建築可以傳遞與分享美好生活美學。</div>
-        </div>
       </div>
     </div>
   </div>
@@ -65,47 +62,102 @@
 
 <style lang="scss" scoped>
 .bg {
-  background-size: cover;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: bottom;
   position: relative;
   overflow: hidden;
-  position: relative;
-}
+  background-image: url('./s6/bg1.png');
 
-.bg-img {
-  width: 100vw;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: auto;
-  display: block;
-  object-fit: cover;
-
-  &:nth-child(1) {
-    position: relative;
+  > div {
+    display: flex;
   }
 }
 
-.content {
+.bg-img {
+  width: calc(100vw * (640 / 1920));
+  height: auto;
   position: absolute;
-  z-index: 0;
-  top: calc(100vw * (400 / 1920));
+  bottom: 0;
+  left: 0;
+  display: block;
 }
 
 .item-img {
   &:nth-child(1) {
     position: relative;
   }
-  width: 100vw;
+  width: 100%;
   position: absolute;
+  display: block;
 }
 
-// .swiper-container {
-//   z-index: 2;
-// }
+.swiper-container {
+  width: calc(100vw * 2 / 3);
+}
 
-// .swiper-button-prev, .swiper-container-rtl .swiper-button-next, .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
-//   z-index: 10;
-// }
+.content {
+  width: calc(100vw * 1 / 3);
+  padding-left: 0px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  > div {
+    width: 360px;
+  }
+}
+
+.title {
+  font-size: calc(100vw * 58 / 1920);
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 0.66;
+  letter-spacing: normal;
+  text-align: left;
+  color: #507913;
+  margin-bottom: calc(100vw * 20 / 1920);
+}
+
+.subtitle {
+  font-size: calc(100vw * 22 / 1920);
+  font-family: 'Abril Fatface', cursive;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.73;
+  letter-spacing: normal;
+  text-align: left;
+  color: #91b260;
+  margin-bottom: calc(100vw * 35 / 1920);
+}
+
+.red-title {
+  font-size: calc(100vw * 26 / 1920);
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.46;
+  letter-spacing: normal;
+  text-align: left;
+  color: #d67684;
+  margin-bottom: calc(100vw * 15 / 1920);
+}
+
+.desc {
+  font-size: calc(100vw * 18 / 1920);
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.11;
+  letter-spacing: normal;
+  text-align: justify;
+  color: #656565;
+}
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
@@ -117,87 +169,123 @@
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .bg {
+    padding: 40px 0;
+
+    > img {
+      display: block;
+    }
+  }
+
+  .bg-img {
+    top: 0;
+    bottom: 0;
+    height: auto;
+  }
+
+  .content > div {
+    width: 240px;
+  }
+
+  .desc {
+    margin-bottom: calc(100vw * 20 / 1920);
+  }
+
+  .item-desc {
+    width: 400px;
+    margin-bottom: calc(100vw * 10 / 1920);
   }
 }
 
 @media screen and (max-width: 767px) {
   .bg {
-    width: 100vw;
-    background-size: 100%;
+    background-size: 100% 100%;
+    background-image: none;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    > div {
+      display: block;
+    }
   }
 
-  .text {
-    padding-top: 52px;
-    padding-bottom: 70px;
-    background-image: url('./s6/mo/bg.jpg');
-    background-size: 100%;
-    background-position: 100% 100%;
-    margin-top: -3px;
+  .title {
+    font-size: 39.5px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.66;
+    letter-spacing: normal;
+    text-align: left;
+    color: #507913;
+    margin-bottom: 10px;
+  }
 
-    .title {
-      width: 275px;
-      font-size: 25px;
-      font-weight: 600;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.4;
-      letter-spacing: 2.5px;
-      text-align: left;
-      color: #000000;
-      margin: 0 auto;
-      margin-bottom: 27px;
-    }
+  .subtitle {
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.73;
+    letter-spacing: normal;
+    text-align: left;
+    color: #91b260;
+    margin-bottom: 20px;
+  }
 
-    .desc {
-      width: 283px;
-      font-size: 14px;
-      font-weight: 300;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.7;
-      letter-spacing: 1.5px;
-      text-align: left;
-      color: #fff;
-      margin: 0 auto;
-    }
+  .red-title {
+    font-size: 17.5px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.49;
+    letter-spacing: normal;
+    text-align: left;
+    color: #d67684;
+  }
+
+  .desc {
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+    text-align: justify;
+    color: #656565;
   }
 
   .swiper-container {
-    margin-top: 30px;
+    width: 100vw;
+    margin-top: 5px;
+  }
+
+  .content {
+    width: 100vw;
+    background-image: url('./mobg.jpg');
+    background-size: cover;
+    padding: 50px 20px 45px;
   }
 
   .item-img {
+    &:nth-child(1) {
+      position: relative;
+    }
     width: 100vw;
-    margin: 0 auto;
-  }
-
-  .swiper-button-prev,
-  .swiper-container-rtl .swiper-button-next {
-    // left: 5vw;
-  }
-
-  .swiper-button-next,
-  .swiper-container-rtl .swiper-button-prev {
-    // right: 5vw;
-  }
-
-  .img {
-    width: 100vw;
+    position: absolute;
   }
 }
 </style>
-
 <script>
 // @ is an alias to /src
 import { isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 import 'swiper/dist/css/swiper.css'
-
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'section6',
   mixins: [slider],
+
   components: {
     swiper,
     swiperSlide,
@@ -217,8 +305,8 @@ export default {
           delay: 4000,
           disableOnInteraction: true,
         },
+        // effect: 'fade',
         loop: true,
-        effect: 'fade',
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
@@ -226,46 +314,34 @@ export default {
       },
       slideList: [
         {
-          img: isMobile
-            ? require('./s6/mo/s6-1.jpg')
-            : require('./s6/s6-1.png'),
+          src: require('./s6/PP_02317.jpg'),
         },
         {
-          img: isMobile
-            ? require('./s6/mo/s6-2.jpg')
-            : require('./s6/s6-2.png'),
+          src: require('./s6/PP_02310.jpg'),
         },
 
-        // {
-        //   img: isMobile
-        //     ? require('./s6/mo/s6-3.jpg')
-        //     : require('./s6/s6-3.png'),
-        // },
-        // {
-        //   img: isMobile
-        //     ? require('./s6/mo/s6-4.jpg')
-        //     : require('./s6/s6-4.png'),
-        // },
         {
-          img: isMobile
-            ? require('./s6/mo/s6-5.jpg')
-            : require('./s6/s6-5.png'),
+          src: require('./s6/PP_02243.jpg'),
+        },
+        {
+          src: require('./s6/PP_02238.jpg'),
+        },
+        {
+          src: require('./s6/PP_02217.jpg'),
+        },
+        {
+          src: require('./s6/PP_02210.jpg'),
+        },
+        {
+          src: require('./s6/PP_02169.jpg'),
+        },
+        {
+          src: require('./s6/PP_02148.jpg'),
         },
       ],
     }
   },
 
-  methods: {
-    slideChanged(e) {
-      const swiper = this.$refs.mySwiper.swiper
-      if (swiper.isEnd) {
-        this.slideIndex = 0
-      } else if (swiper.isBeginning) {
-        this.slideIndex = swiper.slides.length - 3
-      } else {
-        this.slideIndex = swiper.activeIndex - 1
-      }
-    },
-  },
+  methods: {},
 }
 </script>
