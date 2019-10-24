@@ -1,6 +1,7 @@
 <template>
   <div class="sideNav">
     <div class="nav relative">
+      <img class="logo" src="@/assets/img/nav-logo.png" alt />
       <div class="menu" @click="toggleSidebar">
         <img v-if="isOpen" src="@/projects/jh/s4/close.png" class="close" alt />
         <img v-else src="@/assets/img/menu-btn.png" alt />
@@ -85,9 +86,9 @@ export default {
   display: block;
   position: fixed;
   z-index: 112;
-  top: 15px;
-  right: 30px;
-  width: 66px;
+  top: 0px;
+  right: 0px;
+  width: 140px;
   cursor: pointer;
 
   img {
@@ -99,6 +100,17 @@ export default {
     margin-top: 20px;
     margin-right: 0px;
   }
+}
+
+.logo {
+  width: $logo_pc_width;
+  z-index: 2;
+  height: auto;
+  position: absolute;
+  left: 0;
+  display: block;
+  top: 0px;
+  transform: translateY(0%);
 }
 
 .navlist {
@@ -276,8 +288,8 @@ export default {
   .menu {
     display: block;
     position: fixed;
-    right: 12px;
-    top: 15px;
+    right: 0px;
+    top: 0px;
     width: 59px;
 
     img {
