@@ -3,7 +3,7 @@
     <div class="bg">
       <img src="./s3/bg.jpg" alt="" class="bg-img">
       <div v-if="!isMobile">
-        <swiper :options="swiperOption" ref="mySwiper">
+        <swiper :options="swiperOption" ref="mySwiper" data-aos="fade-right" data-aos-delay="600">
           <swiper-slide
             v-for="(slide, index) in slideList"
             :index="index"
@@ -20,26 +20,26 @@
           </div>
         </swiper>
         <div class="content">
-          <div class="title">繁華第一光圈</div>
-          <div class="subtitle">FOCUS SPOTLIGHT</div>
-          <div class="desc">聚富雙核心，萬中選一最佳地段</div>
-          <div class="item-title">中平幸福路J-MART百貨商圈</div>
-          <div class="item-desc">中正新泰路、中平幸福路商圈繁華雙核心，「璽園」身價當然最高貴，散步即達J-MART佳瑪百貨，家樂福、麥當勞等更近在咫尺。</div>
-          <div class="item-title">雙十字交通軸線中心點與主動脈</div>
-          <div class="item-desc">雙十字軸線交通重心，台一線、65快速道路、新泰及泰林路等，速達泰山、三重、板橋等地，新北大道快速直達台北市區。</div>
-          <div class="item-title">鄰近萬坪運動公園與千米綠廊帶</div>
-          <div class="item-desc">公園生活圈房價永遠最保值，「璽園」鄰近22公頃新莊運動公園、中港綠堤公園，串聯成超過千米的綠色休閒廊帶。</div>
-          <div class="item-title">方圓之內名校藝文中心密度最高</div>
-          <div class="item-desc">讓孩子贏在起跑點，優質學區包括榮富國小、中平國中、新莊高中，以及新莊社區大學、文化藝術中心等，藝文氣息濃厚。</div>
+          <div class="title" data-aos="fade-left" data-aos-delay="400">繁華第一光圈</div>
+          <div class="subtitle" data-aos="fade-left" data-aos-delay="600">FOCUS SPOTLIGHT</div>
+          <div class="desc" data-aos="fade-left" data-aos-delay="800">聚富雙核心，萬中選一最佳地段</div>
+          <div class="item-title" data-aos="fade-left" data-aos-delay="900">中平幸福路J-MART百貨商圈</div>
+          <div class="item-desc" data-aos="fade-left" data-aos-delay="1000">中正新泰路、中平幸福路商圈繁華雙核心，「璽園」身價當然最高貴，散步即達J-MART佳瑪百貨，家樂福、麥當勞等更近在咫尺。</div>
+          <div class="item-title" data-aos="fade-left" data-aos-delay="1100">雙十字交通軸線中心點與主動脈</div>
+          <div class="item-desc" data-aos="fade-left" data-aos-delay="1200">雙十字軸線交通重心，台一線、65快速道路、新泰及泰林路等，速達泰山、三重、板橋等地，新北大道快速直達台北市區。</div>
+          <div class="item-title" data-aos="fade-left" data-aos-delay="1300">鄰近萬坪運動公園與千米綠廊帶</div>
+          <div class="item-desc" data-aos="fade-left" data-aos-delay="1400">公園生活圈房價永遠最保值，「璽園」鄰近22公頃新莊運動公園、中港綠堤公園，串聯成超過千米的綠色休閒廊帶。</div>
+          <div class="item-title" data-aos="fade-left" data-aos-delay="1500">方圓之內名校藝文中心密度最高</div>
+          <div class="item-desc" data-aos="fade-left" data-aos-delay="1600">讓孩子贏在起跑點，優質學區包括榮富國小、中平國中、新莊高中，以及新莊社區大學、文化藝術中心等，藝文氣息濃厚。</div>
         </div>
       </div>
       <div v-else>
         <div class="content">
-          <div class="title">繁華第一光圈</div>
-          <div class="subtitle">FOCUS SPOTLIGHT</div>
-          <div class="desc">聚富雙核心，萬中選一最佳地段</div>
+          <div class="title" data-aos="fade-right" data-aos-delay="600">繁華第一光圈</div>
+          <div class="subtitle" data-aos="fade-right" data-aos-delay="800">FOCUS SPOTLIGHT</div>
+          <div class="desc" data-aos="fade-right" data-aos-delay="1000">聚富雙核心，萬中選一最佳地段</div>
         </div>
-        <div class="dropdown">
+        <div class="dropdown" data-aos="fade-right" data-aos-delay="1200">
           <div
             :class="`item ${item.open ? 'open' : ''}`"
             v-for="(item, index) in toggleList"
@@ -53,7 +53,7 @@
             <div class="desc" v-html="item.desc"></div>
           </div>
         </div>
-        <swiper :options="swiperOption" ref="mySwiper">
+        <swiper :options="swiperOption" ref="mySwiper" data-aos="fade-right" data-aos-delay="1000">
           <swiper-slide
             v-for="(slide, index) in slideList"
             :index="index"
@@ -117,6 +117,8 @@
 .content {
   width: 50vw;
   padding-left: 65px;
+  position: relative;
+  z-index: 1;
 }
 
 .title {
