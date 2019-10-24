@@ -227,6 +227,11 @@
 
   .imgmlist {
     display: flex;
+    align-items: flex-end;
+    img {
+      width: 25%;
+      height: auto;
+    }
   }
 }
 </style>

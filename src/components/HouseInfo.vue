@@ -4,7 +4,7 @@
       <div class="title">建案資訊</div>
       <div class="info">
         <div class="item" :key="infos[0]" v-for="infos in houseInfos">
-          <h3 class="label">{{infos[0]}}</h3>
+          <div class="label">{{infos[0]}}</div>
           <p class="desc" v-html="infos[1]"></p>
         </div>
       </div>
