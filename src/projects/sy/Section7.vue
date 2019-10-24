@@ -2,10 +2,10 @@
   <div class="section7">
     <div class="bg">
       <div v-if="!isMobile">
-        <img src="./s7/t1.png" alt="安全高規格 日本住友制震壁" class="bg-img" />
-        <img src="./s7/t2.png" alt="新莊第一名宅 在地唯一指名" class="bg-img" />
-        <img src="./s7/t3.png" alt="新莊市中心，最後一塊千坪美地" class="bg-img" />
-        <img src="./s7/t4.png" alt="地標飯店宅 29坪．45坪．52坪" class="bg-img" />
+        <img src="./s7/t1.png" alt="安全高規格 日本住友制震壁" class="bg-img" data-aos="fade-down" data-aos-delay="600" />
+        <img src="./s7/t2.png" alt="新莊第一名宅 在地唯一指名" class="bg-img" data-aos="fade-down" data-aos-delay="800" />
+        <img src="./s7/t3.png" alt="新莊市中心，最後一塊千坪美地" class="bg-img" data-aos="fade-down" data-aos-delay="1000" />
+        <img src="./s7/t4.png" alt="地標飯店宅 29坪．45坪．52坪" class="bg-img" data-aos="fade-down" data-aos-delay="1200" />
         <div :class="`slide relative`" data-aos="fade" data-aos-delay="0">
           <img
             v-for="(slide, index) in slideList"
@@ -17,10 +17,10 @@
         </div>
       </div>
       <div v-else>
-        <img src="./s7/s7t1.png" alt="安全高規格 日本住友制震壁" class="bg-img" />
-        <img src="./s7/s7t2.png" alt="新莊第一名宅 在地唯一指名" class="bg-img" />
-        <img src="./s7/s7t3.png" alt="新莊市中心，最後一塊千坪美地" class="bg-img" />
-        <img src="./s7/s7t4.png" alt="地標飯店宅 29坪．45坪．52坪" class="bg-img" />
+        <img src="./s7/s7t1.png" alt="安全高規格 日本住友制震壁" class="bg-img" data-aos="fade-down" data-aos-delay="600" />
+        <img src="./s7/s7t2.png" alt="新莊第一名宅 在地唯一指名" class="bg-img" data-aos="fade-down" data-aos-delay="800" />
+        <img src="./s7/s7t3.png" alt="新莊市中心，最後一塊千坪美地" class="bg-img" data-aos="fade-down" data-aos-delay="1000" />
+        <img src="./s7/s7t4.png" alt="地標飯店宅 29坪．45坪．52坪" class="bg-img" data-aos="fade-down" data-aos-delay="1200" />
         <div :class="`slide relative`" data-aos="fade" data-aos-delay="0">
           <img
             v-for="(slide, index) in slideList"

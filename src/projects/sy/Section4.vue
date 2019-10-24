@@ -103,7 +103,8 @@
   flex-direction: column;
 
   > div {
-    width: 360px;
+    width: 370px;
+    max-width: 90vw;
   }
 }
 

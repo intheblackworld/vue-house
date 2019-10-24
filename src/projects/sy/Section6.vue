@@ -109,7 +109,8 @@
   flex-direction: column;
 
   > div {
-    width: 360px;
+    width: 370px;
+    max-width: 90vw;
   }
 }
 
@@ -147,6 +148,7 @@
   letter-spacing: normal;
   text-align: left;
   color: #d67684;
+  white-space: nowrap;
   margin-bottom: calc(100vw * 15 / 1920);
 }
 
