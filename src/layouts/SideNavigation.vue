@@ -277,7 +277,7 @@ export default {
 
   .logo {
     width: $logo_phone_width;
-    left: 15px;
+    left: 0px;
   }
 
   .nav {
@@ -290,7 +290,7 @@ export default {
     position: fixed;
     right: 0px;
     top: 0px;
-    width: 59px;
+    width: 80px;
 
     img {
       width: 100%;

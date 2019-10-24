@@ -1,56 +1,34 @@
 <template>
   <div class="section4">
     <div class="bg">
-      <img src="./s4/bg1.png" alt class="bg-img" />
       <div v-if="!isMobile">
+        <img src="./s4/bg.jpg" alt class="bg-img" />
         <div class="content">
-          <div>
-            <div class="title" data-aos="fade-right" data-aos-delay="600">豪宅精品美學</div>
-            <div class="subtitle" data-aos="fade-right" data-aos-delay="700">HIGH STANDARDS</div>
-            <div class="red-title" data-aos="fade-right" data-aos-delay="800">摩登亞洲風成就精品飯店宅</div>
-            <div class="desc" data-aos="fade-right" data-aos-delay="900">國際級飯店規格，挑高6米氣派門廳，規劃閱覽休憩區、時尚視聽室、交誼沙龍區到空中宴會區等，回家就像回飯店。</div>
+          <div class="title">
+            萬坪綠水畔
+            <br />悠遊桃花源
+          </div>
+          <div class="desc">
+            陽柳塘池景生活，匯聚13,945坪壯闊休閒視野
+            <br />坐享自然無價資產，擁抱純淨身心靈桃花源
           </div>
         </div>
-        <swiper :options="swiperOption" ref="mySwiper" data-aos="fade-left" data-aos-delay="600">
-          <swiper-slide
-            v-for="(slide, index) in slideList"
-            :index="index"
-            :key="slide.img"
-            class="item"
-          >
-            <img :src="slide.src" :class="`item-img`" />
-          </swiper-slide>
-          <div class="swiper-button-prev" slot="button-prev">
-            <img src="./arrow-left.png" alt />
-          </div>
-          <div class="swiper-button-next" slot="button-next">
-            <img src="./arrow-right.png" alt />
-          </div>
-        </swiper>
       </div>
       <div v-else>
-        <div class="content">
-          <div class="title" data-aos="fade-right" data-aos-delay="600">豪宅精品美學</div>
-          <div class="subtitle" data-aos="fade-right" data-aos-delay="800">HIGH STANDARDS</div>
-          <div class="red-title" data-aos="fade-right" data-aos-delay="1000">摩登亞洲風成就精品飯店宅</div>
-          <div class="desc" data-aos="fade-right" data-aos-delay="1200">國際級飯店規格，挑高6米氣派門廳，規劃閱覽休憩區、時尚視聽室、交誼沙龍區到空中宴會區等，回家就像回飯店。</div>
+        <div class>
+          <!-- <img src="./s3/mo/1.jpg" alt class="img" data-aos="zoom-in" data-aos-delay="600" /> -->
+          <img src="./s4/mo/bg.jpg" alt class="bg-img" />
+          <div class="content">
+            <div class="title">
+              萬坪綠水畔
+              <br />悠遊桃花源
+            </div>
+            <div class="desc">
+              陽柳塘池景生活，匯聚13,945坪壯闊休閒視野
+              <br />坐享自然無價資產，擁抱純淨身心靈桃花源
+            </div>
+          </div>
         </div>
-        <swiper :options="swiperOption" ref="mySwiper" data-aos="fade" data-aos-delay="1000">
-          <swiper-slide
-            v-for="(slide, index) in slideList"
-            :index="index"
-            :key="slide.img"
-            class="item"
-          >
-            <img :src="slide.src" :class="`item-img`" />
-          </swiper-slide>
-          <div class="swiper-button-prev" slot="button-prev">
-            <img src="./arrow-left.png" alt />
-          </div>
-          <div class="swiper-button-next" slot="button-next">
-            <img src="./arrow-right.png" alt />
-          </div>
-        </swiper>
       </div>
     </div>
   </div>
@@ -58,107 +36,60 @@
 
 <style lang="scss" scoped>
 .bg {
-  background-size: 100% 70%;
-  background-repeat: no-repeat;
-  background-position: bottom;
+  background-size: cover;
   position: relative;
   overflow: hidden;
-  background-image: url('./s4/bg2.png');
-
-  > div {
-    display: flex;
-  }
 }
-
 .bg-img {
   width: 100vw;
-  height: auto;
   position: absolute;
+  top: 0;
+  left: 0;
   height: auto;
   display: block;
-  top: 0;
-}
+  object-fit: cover;
 
-.item-img {
   &:nth-child(1) {
     position: relative;
   }
-  width: 100%;
-  position: absolute;
-  display: block;
-}
-
-.swiper-container {
-  width: calc(100vw * 2 / 3);
 }
 
 .content {
-  width: calc(100vw * 1 / 3);
-  padding-left: 0px;
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
-  > div {
-    width: 370px;
-    max-width: 90vw;
-  }
+  position: absolute;
+  right: calc(100vw * 108 / 1920);
+  top: calc(100vh * 500 / 940);
 }
 
 .title {
-  font-size: calc(100vw * 58 / 1920);
-  font-weight: normal;
-  font-style: normal;
+  font-size: calc(100vw * 72.5 / 1920);
+  font-weight: bold;
   font-stretch: normal;
-  line-height: 0.66;
-  letter-spacing: normal;
-  text-align: left;
-  color: #507913;
-  margin-bottom: calc(100vw * 20 / 1920);
-}
-
-.subtitle {
-  font-size: calc(100vw * 22 / 1920);
-  font-family: 'Abril Fatface', cursive;
-  font-weight: normal;
   font-style: normal;
-  font-stretch: normal;
-  line-height: 1.73;
+  line-height: 1.09;
   letter-spacing: normal;
-  text-align: left;
-  color: #91b260;
-  margin-bottom: calc(100vw * 35 / 1920);
-}
-
-.red-title {
-  font-size: calc(100vw * 26 / 1920);
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.46;
-  letter-spacing: normal;
-  text-align: left;
-  color: #d67684;
-  margin-bottom: calc(100vw * 15 / 1920);
+  text-align: right;
+  color: #ffffff;
+  margin-bottom: 20px;
 }
 
 .desc {
-  font-size: calc(100vw * 18 / 1920);
-  font-weight: normal;
-  font-style: normal;
+  font-size: calc(100vw * 27 / 1920);
+  font-weight: bold;
   font-stretch: normal;
-  line-height: 2.11;
+  font-style: normal;
+  line-height: 1.47;
   letter-spacing: normal;
-  text-align: justify;
-  color: #656565;
+  text-align: right;
+  color: #ffffff;
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
     height: 100vh;
+  }
+
+  .content {
+    top: calc(100vh * 750 / 940);
   }
 }
 
@@ -166,11 +97,6 @@
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .bg {
-    padding: 40px 0;
-
-    > img {
-      display: block;
-    }
   }
 
   .bg-img {
@@ -179,176 +105,61 @@
     height: auto;
   }
 
-  .content > div {
-    width: 240px;
-  }
-
-  .desc {
-    margin-bottom: calc(100vw * 20 / 1920);
-  }
-
-  .item-desc {
-    width: 400px;
-    margin-bottom: calc(100vw * 10 / 1920);
+  .content {
+    top: calc(100vh * 380 / 940);
   }
 }
 
 @media screen and (max-width: 767px) {
   .bg {
-    background-size: 100% 100%;
-    background-image: none;
-    padding-top: 0;
-    padding-bottom: 0;
-
-    > div {
-      display: block;
-    }
-  }
-
-  .title {
-    font-size: 39.5px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 0.66;
-    letter-spacing: normal;
-    text-align: left;
-    color: #507913;
-    margin-bottom: 10px;
-  }
-
-  .subtitle {
-    font-size: 15px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.73;
-    letter-spacing: normal;
-    text-align: left;
-    color: #91b260;
-    margin-bottom: 20px;
-  }
-
-  .red-title {
-    font-size: 17.5px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.49;
-    letter-spacing: normal;
-    text-align: left;
-    color: #d67684;
-  }
-
-  .desc {
-    font-size: 15px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.67;
-    letter-spacing: normal;
-    text-align: justify;
-    color: #656565;
-  }
-
-  .swiper-container {
-    width: 100vw;
-    margin-top: 5px;
+    // background-size: 100% 100%;
   }
 
   .content {
-    width: 100vw;
-    background-image: url('./mobg.jpg');
-    background-size: cover;
-    padding: 50px 20px 45px;
+    position: absolute;
+    left: auto;
+    right: calc(100vw * 24 / 375);
+    top: auto;
+    bottom: calc(100vh * 70 / 675);
   }
 
-  .item-img {
-    &:nth-child(1) {
-      position: relative;
-    }
-    width: 100vw;
-    position: absolute;
+  .title {
+    font-size: calc(100vw * 36 / 375);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.09;
+    letter-spacing: normal;
+    text-align: right;
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+
+  .desc {
+    font-size: calc(100vw * 14 / 375);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: normal;
+    text-align: right;
+    color: #ffffff;
   }
 }
 </style>
 <script>
 // @ is an alias to /src
-import { isMobile, isTablet } from '@/utils'
-import slider from '@/mixins/slider.js'
-import 'swiper/dist/css/swiper.css'
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import { isMobile } from '@/utils'
 
 export default {
   name: 'section4',
-  mixins: [slider],
-
-  components: {
-    swiper,
-    swiperSlide,
-  },
 
   data() {
     return {
       isMobile,
-      swiperOption: {
-        slidesPerView: isMobile ? 1 : 1,
-        spaceBetween: isTablet ? 20 : 30,
-        slidesPerColumn: isMobile ? 1 : 1,
-        allowSlidePrev: isMobile ? true : true,
-        allowSlideNext: isMobile ? true : true,
-        // centeredSlides: true,
-        autoplay: {
-          delay: 4000,
-          disableOnInteraction: true,
-        },
-        // effect: 'fade',
-        loop: true,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-      },
-      slideList: [
-        {
-          src: require('./s4/1.jpg'),
-        },
-        {
-          src: require('./s4/2.jpg'),
-        },
-
-        {
-          src: require('./s4/3.jpg'),
-        },
-        {
-          src: require('./s4/4.jpg'),
-        },
-        {
-          src: require('./s4/5.jpg'),
-        },
-        {
-          src: require('./s4/6.jpg'),
-        },
-        {
-          src: require('./s4/7.jpg'),
-        },
-        {
-          src: require('./s4/8.jpg'),
-        },
-        {
-          src: require('./s4/9.jpg'),
-        },
-        {
-          src: require('./s4/10.jpg'),
-        },
-        {
-          src: require('./s4/11.jpg'),
-        },
-      ],
     }
   },
 
-  methods: {
-  },
+  methods: {},
 }
 </script>

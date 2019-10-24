@@ -4,22 +4,38 @@
       <div v-if="!isMobile">
         <!-- <img src="./s1/bg1.png" alt class="bg-img relative" data-aos="fade" data-aos-delay="600" /> -->
         <img src="./s1/bg.jpg" alt class="bg-img" />
-        <img src="./s1/b.png" alt class="bg-img b" />
+        <img src="./s1/b.png" alt="合遠建築 OASIS CITY" class="bg-img b" />
         <img src="./s1/bear.gif" alt class="bear" />
-        <img src="./s1/t.png" alt class="bg-img t" />
-        <img src="./s1/title.png" alt class="bg-img title" />
+        <img src="./s1/t.png" alt="608萬起 市心3房含平面車位" class="bg-img t" />
+        <img src="./s1/title.png" alt="在市心 發現新綠洲 都心綠生活，坐擁悠閒與便利" class="bg-img title" />
         <div
           class="number"
           data-aos-id="ani-number"
+          data-aos="ani-number"
           data-aos-offset="50"
           data-aos-delay="0"
           data-aos-duration="500"
           data-aos-mirror="true"
           data-aos-once="false"
-        >{{animatedNumber}}
-        </div>
+        >{{animatedNumber}}</div>
       </div>
-      <div v-else></div>
+      <div v-else>
+        <img src="./s1/mo/bg.jpg" alt class="bg-img" />
+        <img src="./s1/mo/b.png" alt="合遠建築 OASIS CITY" class="bg-img b" />
+        <img src="./s1/mo/bear.gif" alt class="bear" />
+        <img src="./s1/mo/t.png" alt="608萬起 市心3房含平面車位" class="bg-img t" />
+        <img src="./s1/mo/title.png" alt="在市心 發現新綠洲 都心綠生活，坐擁悠閒與便利" class="bg-img title" />
+        <div
+          class="number"
+          data-aos-id="ani-number"
+          data-aos="ani-number"
+          data-aos-offset="50"
+          data-aos-delay="0"
+          data-aos-duration="500"
+          data-aos-mirror="true"
+          data-aos-once="false"
+        >{{animatedNumber}}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -53,6 +69,7 @@
   left: 0;
   position: absolute;
   bottom: 0;
+  width: calc(100vw * 442 / 1920);
 }
 
 .title,
@@ -92,24 +109,21 @@
   .bg {
   }
 
-  .content {
-    img {
-      display: block;
-      margin: 0 auto;
-      margin-bottom: 10px;
-    }
+  .title,
+  .t {
+    top: 0;
+  }
 
-    .img1 {
-      width: calc(100vw * 0.9 * 461 / 496);
-    }
+  .bear {
+    width: calc(100vw * 160 / 375);
+    bottom: calc(100% * 66 / 675);
+  }
 
-    .img2 {
-      width: calc(100vw * 0.9 * 496 / 496);
-    }
-
-    .img3 {
-      width: calc(100vw * 0.9 * 412 / 496);
-    }
+  .number {
+    font-size: calc(100vw * 80 / 375);
+    left: calc(100% * 20 / 375);
+    top: auto;
+    bottom: calc(100% * 270 / 675);
   }
 }
 </style>
@@ -130,8 +144,15 @@ export default {
 
   methods: {},
 
+  // created() {
+  //   if (this.isMobile) {
+      
+  //   }
+  // },
+
   mounted() {
     document.addEventListener('aos:in:ani-number', ({ detail }) => {
+      console.log(1)
       TweenLite.to(this.$data, 1.2, { tweenedNumber: 608 })
     })
 
@@ -144,6 +165,6 @@ export default {
     animatedNumber: function() {
       return this.tweenedNumber.toFixed(0)
     },
-  }
+  },
 }
 </script>
