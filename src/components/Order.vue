@@ -4,7 +4,7 @@
       <h3 class="title">{{order.title}}</h3>
       <div class="subtitle">{{order.subTitle}}</div>
     </div> -->
-    <h3 class="order-title">{{order.title}}</h3>
+    <div class="order-title">{{order.title}}</div>
     <h3 class="order-subtitle">{{order.subTitle}}</h3>
     <div class="order">
       <div class="form">
@@ -29,6 +29,7 @@
                 :key="city.value"
                 :label="city.label"
                 :value="city.value"
+                no-data-text="無數據"
               ></el-option>
             </el-select>
           </div>
@@ -40,6 +41,7 @@
                 :key="area.value"
                 :label="area.label"
                 :value="area.value"
+                no-data-text="請先選擇居住城市"
               ></el-option>
             </el-select>
           </div>
@@ -208,6 +210,7 @@ export default {
   .order-title {
     margin-top: 40px;
     margin-bottom: 8px;
+    font-weight: bold;
     font-size: 36px;
     text-align: center;
     color: $order_title_color;
