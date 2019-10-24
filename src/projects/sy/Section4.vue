@@ -8,7 +8,11 @@
             <div class="title" data-aos="fade-right" data-aos-delay="600">豪宅精品美學</div>
             <div class="subtitle" data-aos="fade-right" data-aos-delay="700">HIGH STANDARDS</div>
             <div class="red-title" data-aos="fade-right" data-aos-delay="800">摩登亞洲風成就精品飯店宅</div>
-            <div class="desc" data-aos="fade-right" data-aos-delay="900">國際級飯店規格，挑高6米氣派門廳，規劃閱覽休憩區、時尚視聽室、交誼沙龍區到空中宴會區等，回家就像回飯店。</div>
+            <div
+              class="desc"
+              data-aos="fade-right"
+              data-aos-delay="900"
+            >國際級飯店規格，挑高6米氣派門廳，規劃閱覽休憩區、時尚視聽室、交誼沙龍區到空中宴會區等，回家就像回飯店。</div>
           </div>
         </div>
         <swiper :options="swiperOption" ref="mySwiper" data-aos="fade-left" data-aos-delay="600">
@@ -33,7 +37,11 @@
           <div class="title" data-aos="fade-right" data-aos-delay="600">豪宅精品美學</div>
           <div class="subtitle" data-aos="fade-right" data-aos-delay="800">HIGH STANDARDS</div>
           <div class="red-title" data-aos="fade-right" data-aos-delay="1000">摩登亞洲風成就精品飯店宅</div>
-          <div class="desc" data-aos="fade-right" data-aos-delay="1200">國際級飯店規格，挑高6米氣派門廳，規劃閱覽休憩區、時尚視聽室、交誼沙龍區到空中宴會區等，回家就像回飯店。</div>
+          <div
+            class="desc"
+            data-aos="fade-right"
+            data-aos-delay="1200"
+          >國際級飯店規格，挑高6米氣派門廳，規劃閱覽休憩區、時尚視聽室、交誼沙龍區到空中宴會區等，回家就像回飯店。</div>
         </div>
         <swiper :options="swiperOption" ref="mySwiper" data-aos="fade" data-aos-delay="1000">
           <swiper-slide
@@ -84,6 +92,8 @@
     position: relative;
   }
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   position: absolute;
   display: block;
 }
@@ -268,6 +278,7 @@
       position: relative;
     }
     width: 100vw;
+    height: 67vw;
     position: absolute;
   }
 }
@@ -348,7 +359,6 @@ export default {
     }
   },
 
-  methods: {
-  },
+  methods: {},
 }
 </script>

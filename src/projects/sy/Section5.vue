@@ -225,7 +225,7 @@
     .item-desc {
       padding-top: 0px;
       padding-bottom: 10px;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: normal;
       font-style: normal;
       font-stretch: normal;
@@ -329,7 +329,7 @@
       }
     }
     .head {
-      font-size: 16.5px;
+      font-size: 16px !important;
       font-weight: normal;
       font-style: normal;
       font-stretch: normal;
@@ -343,10 +343,10 @@
       width: 18px;
     }
 
-    .desc {
+    .item-desc {
       padding-top: 0px;
       padding-bottom: 10px;
-      font-size: 15px;
+      font-size: 16px;
       font-weight: normal;
       font-style: normal;
       font-stretch: normal;

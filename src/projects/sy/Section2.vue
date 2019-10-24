@@ -139,6 +139,12 @@
       height: auto;
     }
   }
+
+  .imglist {
+    img {
+      max-height: 50vh;
+    }
+  }
 }
 
 /* 螢幕尺寸標準 */
