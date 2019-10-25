@@ -16,8 +16,8 @@
           <span>
             <icon :class="`icon ${load ? '' : 'img1'}`" :data="logoSvg" />
           </span>
-          <img src="./s1/2.png" alt="新莊第一名宅  熱銷限量收藏" class="img2" data-aos="fade-up" data-aos-delay="800" data-aos-duration="2000" data-aos-offset="-350" />
-          <img src="./s1/3.png" alt="市中心最後一塊千坪美地 千坪基地 x 地標建築 x 制震宅" class="img3" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="2000" data-aos-offset="-350" />
+          <img src="./s1/2.png" alt="新莊第一名宅  熱銷限量收藏" class="img2" data-aos="fade-up" data-aos-delay="800" data-aos-duration="2000" data-aos-offset="-650" />
+          <img src="./s1/3.png" alt="市中心最後一塊千坪美地 千坪基地 x 地標建築 x 制震宅" class="img3" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="2000" data-aos-offset="-650" />
         </div>
       </div>
     </div>
