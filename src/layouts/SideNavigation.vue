@@ -144,22 +144,22 @@ export default {
     background-size: cover;
     position: relative;
 
-    &::after {
-      display: block;
-      content: '';
-      width: 0%;
-      height: 1px;
-      background: #ddd75f;
-      transition: all 0.4s;
-      left: 50%;
-      bottom: 0;
-      position: absolute;
-    }
+    // &::after {
+    //   display: block;
+    //   content: '';
+    //   width: 0%;
+    //   height: 1px;
+    //   background: #ddd75f;
+    //   transition: all 0.4s;
+    //   left: 50%;
+    //   bottom: 0;
+    //   position: absolute;
+    // }
 
-    &:hover:after {
-      width: 80%;
-      left: 10%;
-    }
+    // &:hover:after {
+    //   width: 80%;
+    //   left: 10%;
+    // }
 
     img,
     span {

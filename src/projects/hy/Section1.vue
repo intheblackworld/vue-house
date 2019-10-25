@@ -11,7 +11,7 @@
         <div
           class="number"
           data-aos-id="ani-number"
-          data-aos="ani-number"
+          data-aos="fade"
           data-aos-offset="50"
           data-aos-delay="0"
           data-aos-duration="500"
@@ -28,7 +28,7 @@
         <div
           class="number"
           data-aos-id="ani-number"
-          data-aos="ani-number"
+          data-aos="fade"
           data-aos-offset="50"
           data-aos-delay="0"
           data-aos-duration="500"
