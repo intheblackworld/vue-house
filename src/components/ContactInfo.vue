@@ -23,7 +23,7 @@
           <font-awesome-icon :icon="['fab', 'facebook-f']" />前往粉絲專頁
         </span>
       </a>
-      <div class="address flex-c">{{info.address}}</div>
+      <div class="address flex-c" v-html="info.address"></div>
       <div class="btn flex-c" v-if="isMobile">
         <span class="flex-c" @click="showMapDialog">
           <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖

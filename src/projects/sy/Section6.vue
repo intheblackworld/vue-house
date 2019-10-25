@@ -33,15 +33,15 @@
       </div>
       <div v-else>
         <div class="content">
-          <div class="title" data-aos="fade-right" data-aos-delay="600">世代第一首選</div>
-          <div class="subtitle" data-aos="fade-right" data-aos-delay="800">ONLY ONE CHOICE</div>
-          <div class="red-title" data-aos="fade-right" data-aos-delay="1000">自住兼置產，富貴興旺代代相傳</div>
+          <div class="title" data-aos="fade-up" data-aos-delay="600">世代第一首選</div>
+          <div class="subtitle" data-aos="fade-up" data-aos-delay="800">ONLY ONE CHOICE</div>
+          <div class="red-title" data-aos="fade-up" data-aos-delay="1000">自住兼置產，富貴興旺代代相傳</div>
           <div
             class="desc"
-            data-aos="fade-right" data-aos-delay="1200"
+            data-aos="fade-up" data-aos-delay="1200"
           >首購一步到位，首換全面升級！專為獨立成家、二代置產或世代共居的首購換屋族而規劃，新莊第一名宅的「璽園」，兼具自住享受、置產增值，何止是一棟好地段的豪宅，更是一座宜居好宅、世代傳承的建築。</div>
         </div>
-        <swiper :options="swiperOption" ref="mySwiper" data-aos="fade-right" data-aos-delay="1200">
+        <swiper :options="swiperOption" ref="mySwiper" data-aos="fade-up" data-aos-delay="1200">
           <swiper-slide
             v-for="(slide, index) in slideList"
             :index="index"

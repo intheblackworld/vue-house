@@ -34,12 +34,12 @@
       </div>
       <div v-else>
         <div class="content">
-          <div class="title" data-aos="fade-right" data-aos-delay="600">豪宅精品美學</div>
-          <div class="subtitle" data-aos="fade-right" data-aos-delay="800">HIGH STANDARDS</div>
-          <div class="red-title" data-aos="fade-right" data-aos-delay="1000">摩登亞洲風成就精品飯店宅</div>
+          <div class="title" data-aos="fade-up" data-aos-delay="600">豪宅精品美學</div>
+          <div class="subtitle" data-aos="fade-up" data-aos-delay="800">HIGH STANDARDS</div>
+          <div class="red-title" data-aos="fade-up" data-aos-delay="1000">摩登亞洲風成就精品飯店宅</div>
           <div
             class="desc"
-            data-aos="fade-right"
+            data-aos="fade-up"
             data-aos-delay="1200"
           >國際級飯店規格，挑高6米氣派門廳，規劃閱覽休憩區、時尚視聽室、交誼沙龍區到空中宴會區等，回家就像回飯店。</div>
         </div>

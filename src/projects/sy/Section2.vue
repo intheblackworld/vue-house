@@ -25,20 +25,20 @@
       </div>
       <div v-else>
         <div class="m-content">
-          <div class="title" data-aos="fade-right" data-aos-delay="600">新莊第一名宅</div>
-          <div class="subtitle" data-aos="fade-right" data-aos-delay="800">GRAND MANSION</div>
-          <div class="desc" data-aos="fade-right" data-aos-delay="1000">
+          <div class="title" data-aos="fade-up" data-aos-delay="600">新莊第一名宅</div>
+          <div class="subtitle" data-aos="fade-up" data-aos-delay="800">GRAND MANSION</div>
+          <div class="desc" data-aos="fade-up" data-aos-delay="1000">
             世代大團圓，在地指名地標建築
             <br />新一代豪宅語彙，有著相同的建築鋒芒
             <br />凌空拔高23層安全制震地標建築，現代俐落立面，從璽園得到見證。
           </div>
         </div>
-        <img src="./s2/5.jpg" alt="璽園" class="imgb" data-aos="fade-down" data-aos-delay="400" />
+        <img src="./s2/5.jpg" alt="璽園" class="imgb" data-aos="fade-up" data-aos-delay="1000" />
         <div class="imgmlist">
-          <img src="./s2/1.jpg" alt="璽園" class="img" data-aos="fade-down" data-aos-delay="600" />
-          <img src="./s2/2.jpg" alt="璽園" class="img" data-aos="fade-down" data-aos-delay="700" />
-          <img src="./s2/3.jpg" alt="璽園" class="img" data-aos="fade-down" data-aos-delay="800" />
-          <img src="./s2/4.jpg" alt="璽園" class="img" data-aos="fade-down" data-aos-delay="900" />
+          <img src="./s2/1.jpg" alt="璽園" class="img" data-aos="fade-up" data-aos-delay="600" />
+          <img src="./s2/2.jpg" alt="璽園" class="img" data-aos="fade-up" data-aos-delay="700" />
+          <img src="./s2/3.jpg" alt="璽園" class="img" data-aos="fade-up" data-aos-delay="800" />
+          <img src="./s2/4.jpg" alt="璽園" class="img" data-aos="fade-up" data-aos-delay="900" />
         </div>
       </div>
     </div>

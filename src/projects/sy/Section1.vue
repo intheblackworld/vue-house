@@ -13,9 +13,14 @@
           data-aos-delay="800"
         />
         <div class="content">
-          <img src="./s1/1.png" alt="璽園" class="img1" />
-          <img src="./s1/2.png" alt="新莊第一名宅  熱銷限量收藏" class="img2" />
-          <img src="./s1/3.png" alt="市中心最後一塊千坪美地 千坪基地 x 地標建築 x 制震宅" class="img3" />
+          <icon class="icon img1" :data="logoSvg" />
+          <!-- <img src="./s1/1.png" alt="璽園" class="img1" /> -->
+          <img src="./s1/2.png" alt="新莊第一名宅  熱銷限量收藏" class="img2" data-aos="fade-up"
+          data-aos-duration="2000"
+          data-aos-delay="1000" />
+          <img src="./s1/3.png" alt="市中心最後一塊千坪美地 千坪基地 x 地標建築 x 制震宅" class="img3" data-aos="fade-up"
+          data-aos-duration="2000"
+          data-aos-delay="1200" />
         </div>
       </div>
     </div>
@@ -60,6 +65,50 @@
     opacity: 0.5;
   }
 }
+
+.img1 {
+      width: 461px;
+      fill: none;
+      stroke: #fff;
+      stroke-miterlimit: 10;
+      stroke-dasharray: 85;
+      filter: drop-shadow(0 0 20px rgba(50, 80, 0, 0.8));
+      stroke-dashoffset: 85;
+      animation: letterDraw 5s linear forwards;
+    }
+    .s560 {
+      stroke-dasharray: 560;
+      stroke-dashoffset: 560;
+      animation: letterDraw 5s linear forwards;
+    }
+    .s240 {
+      stroke-dasharray: 240;
+      stroke-dashoffset: 240;
+      animation: letterDraw 5s linear forwards;
+    }
+    .s132 {
+      stroke-dasharray: 132;
+      stroke-dashoffset: 132;
+      animation: letterDraw 5s linear forwards;
+    }
+    .st0 {
+      stroke-width: 5;
+    }
+    .st1 {
+      stroke-width: 4;
+    }
+    .st2 {
+      stroke-width: 2.5;
+      stroke-linejoin: bevel;
+    }
+    .st3 {
+      stroke-width: 2.5;
+    }
+    @keyframes letterDraw {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
 </style>
 <style lang="scss" scoped>
 .bg {
@@ -93,10 +142,6 @@
     display: block;
     margin: 0 auto;
     margin-bottom: 30px;
-  }
-
-  .img1 {
-    width: 461px;
   }
 
   .img2 {
@@ -149,6 +194,7 @@
 <script>
 // @ is an alias to /src
 import { isMobile } from '@/utils'
+import logoSvg from '@/assets/svg/logo.svg'
 
 export default {
   name: 'section1',
@@ -156,6 +202,7 @@ export default {
   data() {
     return {
       isMobile,
+      logoSvg,
     }
   },
 

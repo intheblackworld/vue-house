@@ -35,11 +35,11 @@
       </div>
       <div v-else>
         <div class="content">
-          <div class="title" data-aos="fade-right" data-aos-delay="600">繁華第一光圈</div>
-          <div class="subtitle" data-aos="fade-right" data-aos-delay="800">FOCUS SPOTLIGHT</div>
-          <div class="desc" data-aos="fade-right" data-aos-delay="1000">聚富雙核心，萬中選一最佳地段</div>
+          <div class="title" data-aos="fade-up" data-aos-delay="600">繁華第一光圈</div>
+          <div class="subtitle" data-aos="fade-up" data-aos-delay="800">FOCUS SPOTLIGHT</div>
+          <div class="desc" data-aos="fade-up" data-aos-delay="1000">聚富雙核心，萬中選一最佳地段</div>
         </div>
-        <div class="dropdown" data-aos="fade-right" data-aos-delay="1200">
+        <div class="dropdown" data-aos="fade-up" data-aos-delay="1200">
           <div
             :class="`item ${item.open ? 'open' : ''}`"
             v-for="(item, index) in toggleList"
@@ -53,7 +53,7 @@
             <div class="desc" v-html="item.desc"></div>
           </div>
         </div>
-        <swiper :options="swiperOption" ref="mySwiper" data-aos="fade-right" data-aos-delay="1000">
+        <swiper :options="swiperOption" ref="mySwiper" data-aos="fade-up" data-aos-delay="1000">
           <swiper-slide
             v-for="(slide, index) in slideList"
             :index="index"

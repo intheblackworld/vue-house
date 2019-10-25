@@ -29,11 +29,11 @@
       </div>
       <div v-else>
         <div class="content">
-          <div class="title" data-aos="fade-right" data-aos-delay="600">安全第一優先</div>
-          <div class="subtitle" data-aos="fade-right" data-aos-delay="800">FIRST PRIORITY</div>
-          <div class="desc" data-aos="fade-right" data-aos-delay="1000">安全制震宅，打造堅若磐石城堡</div>
+          <div class="title" data-aos="fade-up" data-aos-delay="600">安全第一優先</div>
+          <div class="subtitle" data-aos="fade-up" data-aos-delay="800">FIRST PRIORITY</div>
+          <div class="desc" data-aos="fade-up" data-aos-delay="1000">安全制震宅，打造堅若磐石城堡</div>
         </div>
-        <div class="dropdown" data-aos="fade-right" data-aos-delay="1200">
+        <div class="dropdown" data-aos="fade-up" data-aos-delay="1200">
           <div
             :class="`item ${item.open ? 'open' : ''}`"
             v-for="(item, index) in toggleList"
@@ -47,7 +47,7 @@
             <div class="item-desc" v-html="item.desc"></div>
           </div>
         </div>
-        <img src="./s5/m1.png" alt class="img" data-aos="fade-right" data-aos-delay="1000" />
+        <img src="./s5/m1.png" alt class="img" data-aos="fade-up" data-aos-delay="1000" />
       </div>
     </div>
   </div>
