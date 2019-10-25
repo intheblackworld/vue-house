@@ -13,7 +13,7 @@
           data-aos-delay="800"
         />
         <div class="content">
-          <icon class="icon img1" :data="logoSvg" />
+          <icon :class="`icon ${load ? '' : 'img1'}`" :data="logoSvg" />
           <!-- <img src="./s1/1.png" alt="璽園" class="img1" /> -->
           <img src="./s1/2.png" alt="新莊第一名宅  熱銷限量收藏" class="img2" data-aos="fade-up"
           data-aos-duration="2000"
@@ -203,10 +203,17 @@ export default {
     return {
       isMobile,
       logoSvg,
+      load: true,
     }
   },
 
   methods: {},
+
+  created() {
+    window.addEventListener('load', event => {
+      this.load = false
+    })
+  },
 
   mounted() {
     const wH = window.innerHeight
