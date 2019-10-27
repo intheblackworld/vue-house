@@ -3,7 +3,7 @@
     <div class="bg">
       <div v-if="!isMobile">
         <img src="./s3/bg.jpg" alt class="bg-img" />
-        <div class="content">
+        <div class="content" data-aos="fade-down" data-aos-delay="600">
           <div class="title">千坪大公園，就在家門口</div>
           <div class="desc">步行1分鐘，就到頭洲最大公園綠地 等同買下1,684坪大中庭</div>
         </div>
@@ -12,7 +12,7 @@
         <div class>
           <!-- <img src="./s3/mo/1.jpg" alt class="img" data-aos="zoom-in" data-aos-delay="600" /> -->
           <img src="./s3/mo/bg.jpg" alt class="bg-img" />
-          <div class="content">
+          <div class="content" data-aos="fade-down" data-aos-delay="600">
             <div class="title">
               千坪大公園
               <br />就在家門口
@@ -63,6 +63,7 @@
   letter-spacing: normal;
   text-align: left;
   color: #ffffff;
+  margin-bottom: 20px;
 }
 
 .desc {

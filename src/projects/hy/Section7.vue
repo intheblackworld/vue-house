@@ -3,7 +3,7 @@
     <div class="bg">
       <div v-if="!isMobile">
         <img src="./s7/bg.jpg" alt class="bg-img" />
-        <div class="content">
+        <div class="content" data-aos="fade-left" data-aos-delay="600">
           <div class="title">
             中央大學
             <br />學府文化圈
@@ -20,7 +20,7 @@
         <div class>
           <!-- <img src="./s3/mo/1.jpg" alt class="img" data-aos="zoom-in" data-aos-delay="600" /> -->
           <img src="./s7/mo/bg.jpg" alt class="bg-img" />
-          <div class="content">
+          <div class="content" data-aos="fade-down" data-aos-delay="600">
             <div class="title">
               中央大學
               <br />學府文化圈

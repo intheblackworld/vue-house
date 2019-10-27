@@ -4,13 +4,13 @@
       <div v-if="!isMobile">
         <!-- <img src="./s2/map.jpg" alt class="bg-img" /> -->
         <img src="./s2/bg.jpg" alt class="bg-img" />
-        <img src="./s2/title.png" alt class="bg-img" />
+        <img src="./s2/title.png" alt class="bg-img" data-aos="fade-right" data-aos-delay="600" />
       </div>
       <div v-else>
         <div class>
           <!-- <img src="./s3/mo/1.jpg" alt class="img" data-aos="zoom-in" data-aos-delay="600" /> -->
           <img src="./s2/mo/bg.jpg" alt class="bg-img" />
-          <div class="content">
+          <div class="content" data-aos="fade-down" data-aos-delay="600">
             <div class="title">
               頭洲過嶺雙重劃
               <br />四大商圈正核心

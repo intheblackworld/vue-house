@@ -5,15 +5,15 @@
         <!-- <img src="./s1/bg1.png" alt class="bg-img relative" data-aos="fade" data-aos-delay="600" /> -->
         <img src="./s1/bg.jpg" alt class="bg-img" />
         <img src="./s1/b.png" alt="合遠建築 OASIS CITY" class="bg-img b" />
-        <img src="./s1/bear.gif" alt class="bear" />
-        <img src="./s1/t.png" alt="608萬起 市心3房含平面車位" class="bg-img t" />
-        <img src="./s1/title.png" alt="在市心 發現新綠洲 都心綠生活，坐擁悠閒與便利" class="bg-img title" />
+        <img src="./s1/bear.gif" alt class="bear" data-aos="fade-right" data-aos-delay="1200" />
+        <img src="./s1/t.png" alt="608萬起 市心3房含平面車位" class="bg-img t" data-aos="fade-left" data-aos-delay="1400" />
+        <img src="./s1/title.png" alt="在市心 發現新綠洲 都心綠生活，坐擁悠閒與便利" class="bg-img title" data-aos="fade-left" data-aos-delay="1600" />
         <div
           class="number"
           data-aos-id="ani-number"
           data-aos="fade"
           data-aos-offset="50"
-          data-aos-delay="0"
+          data-aos-delay="1200"
           data-aos-duration="500"
           data-aos-mirror="true"
           data-aos-once="false"
@@ -22,9 +22,9 @@
       <div v-else>
         <img src="./s1/mo/bg.jpg" alt class="bg-img" />
         <img src="./s1/mo/b.png" alt="合遠建築 OASIS CITY" class="bg-img b" />
-        <img src="./s1/mo/bear.gif" alt class="bear" />
-        <img src="./s1/mo/t.png" alt="608萬起 市心3房含平面車位" class="bg-img t" />
-        <img src="./s1/mo/title.png" alt="在市心 發現新綠洲 都心綠生活，坐擁悠閒與便利" class="bg-img title" />
+        <img src="./s1/mo/bear.gif" alt class="bear" data-aos="fade-right" data-aos-delay="1200" />
+        <img src="./s1/mo/t.png" alt="608萬起 市心3房含平面車位" class="bg-img t" data-aos="fade-left" data-aos-delay="1400" />
+        <img src="./s1/mo/title.png" alt="在市心 發現新綠洲 都心綠生活，坐擁悠閒與便利" class="bg-img title" data-aos="fade-left" data-aos-delay="1600" />
         <div
           class="number"
           data-aos-id="ani-number"
@@ -152,12 +152,15 @@ export default {
 
   mounted() {
     document.addEventListener('aos:in:ani-number', ({ detail }) => {
-      console.log(1)
-      TweenLite.to(this.$data, 1.2, { tweenedNumber: 608 })
+      setTimeout(() => {
+        TweenLite.to(this.$data, 1.2, { tweenedNumber: 608 })
+      }, 1400)
     })
 
     document.addEventListener('aos:out:ani-number', ({ detail }) => {
-      TweenLite.to(this.$data, 1.2, { tweenedNumber: 0 })
+      setTimeout(() => {
+        TweenLite.to(this.$data, 1.2, { tweenedNumber: 0 })
+      }, 1400)
     })
   },
 

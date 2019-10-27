@@ -3,7 +3,7 @@
     <div class="bg">
       <div v-if="!isMobile">
         <img src="./s5/bg.jpg" alt class="bg-img" />
-        <div class="content">
+        <div class="content" data-aos="fade-left" data-aos-delay="600">
           <div class="title">
             全台最大Costco
             <br />置產跟著國際財團走
@@ -18,7 +18,7 @@
         <div class>
           <!-- <img src="./s3/mo/1.jpg" alt class="img" data-aos="zoom-in" data-aos-delay="600" /> -->
           <img src="./s5/mo/bg.jpg" alt class="bg-img" />
-          <div class="content">
+          <div class="content" data-aos="fade-down" data-aos-delay="600">
             <div class="title">
               全台最大Costco
               <br />置產跟著國際財團走
@@ -120,7 +120,7 @@
     left: auto;
     right: calc(100vw * 24 / 375);
     top: auto;
-    bottom: calc(100vh * 70 / 675);
+    bottom: calc(100vh * 100 / 675);
   }
 
   .title {

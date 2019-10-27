@@ -3,7 +3,7 @@
     <div class="bg">
       <div v-if="!isMobile">
         <img src="./s6/bg.jpg" alt class="bg-img" />
-        <div class="content">
+        <div class="content" data-aos="fade-right" data-aos-delay="600">
           <div class="title">競速生活，無與倫比</div>
           <div class="desc">
             2分鐘直上台66線快速道，縱橫東西無極限
@@ -15,7 +15,7 @@
         <div class>
           <!-- <img src="./s3/mo/1.jpg" alt class="img" data-aos="zoom-in" data-aos-delay="600" /> -->
           <img src="./s6/mo/bg.jpg" alt class="bg-img" />
-          <div class="content">
+          <div class="content" data-aos="fade-down" data-aos-delay="600">
             <div class="title">競速生活，無與倫比</div>
             <div class="desc">
               2分鐘直上台66線快速道，縱橫東西無極限
