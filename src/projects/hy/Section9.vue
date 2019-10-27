@@ -1,10 +1,10 @@
 <template>
-  <div class="section8">
+  <div class="section9">
     <div class="bg">
       <div v-if="!isMobile">
         <swiper :options="swiperOption" ref="mySwiper">
-          <img src="./s8/bg.png" alt class="bg-img" />
-          <img src="./s8/top.png" alt class="bg-img" />
+          <img src="./s9/bg1.png" alt class="bg-img" />
+          <img src="./s9/top.png" alt class="bg-img" />
           <swiper-slide
             v-for="(slide, index) in slideList"
             :index="index"
@@ -12,15 +12,11 @@
             class="item"
           >
             <img :src="slide.img" :class="`item-img`" />
+            <!-- <div class="item-content">
+              <div class="item-title" v-html="slide.title"></div>
+              <div class="item-desc" v-html="slide.desc"></div>
+            </div> -->
           </swiper-slide>
-          <div :class="`item-content ${ isHide ? 'hide' : ''}`">
-            <div class="item-title">
-              {{slideList[slideIndex].title}}
-              <img v-if="isHide" src="./s8/mo/箭頭上.png" alt class="btn" @click="isHide = false" />
-              <img v-else src="./s8/mo/箭頭下.png" alt class="btn" @click="isHide = true" />
-            </div>
-            <div class="item-desc">{{slideList[slideIndex].desc}}</div>
-          </div>
           <div class="swiper-button-prev" slot="button-prev">
             <img src="./arrow-left.png" alt />
           </div>
@@ -30,18 +26,17 @@
         </swiper>
         <div class="content">
           <div class="title">
-            名宅公設手筆
-            <br />滿足心之所嚮
+            過嶺夢幻格局
+            <br />私藏都心醇境
           </div>
           <div class="desc">
-            新鮮愉悅的感官體驗，心所嚮往的生活型態
-            <br />即興展演出每日的豐盈時光
+            時尚巧築生活美學，活潑演繹輕盈品味
           </div>
         </div>
       </div>
       <div v-else>
         <swiper :options="swiperOption" ref="mySwiper" @slideChangeTransitionEnd="slideChanged">
-          <img src="./s8/mo/box.png" alt class="bg-img" />
+          <img src="./s9/mo/box.png" alt class="bg-img" />
           <swiper-slide
             v-for="(slide, index) in slideList"
             :index="index"
@@ -50,14 +45,14 @@
           >
             <img :src="slide.img" :class="`item-img`" />
           </swiper-slide>
-          <div :class="`item-content ${ isHide ? 'hide' : ''}`">
+          <!-- <div :class="`item-content ${ isHide ? 'hide' : ''}`">
             <div class="item-title">
               <img v-if="isHide" src="./s8/mo/箭頭上.png" alt class="btn" @click="isHide = false" />
               <img v-else src="./s8/mo/箭頭下.png" alt class="btn" @click="isHide = true" />
               {{slideList[slideIndex].title}}
             </div>
             <div class="item-desc">{{slideList[slideIndex].desc}}</div>
-          </div>
+          </div> -->
           <div class="swiper-button-prev" slot="button-prev">
             <img src="./arrow-left.png" alt />
           </div>
@@ -67,12 +62,11 @@
         </swiper>
         <div class="content">
           <div class="title">
-            名宅公設手筆
-            <br />滿足心之所嚮
+            過嶺夢幻格局
+            <br />私藏都心醇境
           </div>
           <div class="desc">
-            新鮮愉悅的感官體驗，心所嚮往的生活型態
-            <br />即興展演出每日的豐盈時光
+            時尚巧築生活美學，活潑演繹輕盈品味
           </div>
         </div>
       </div>
@@ -105,13 +99,13 @@
 
 .content {
   position: absolute;
-  left: calc(100vw * 100 / 1920);
-  bottom: calc(100vh * 60 / 940);
+  right: calc(100vw * 90 / 1920);
+  bottom: calc(100vh * 74 / 940);
   z-index: 5;
 }
 
 .title {
-  font-size: calc(100vw * 69 / 1920);
+  font-size: calc(100vw * 72 / 1920);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -123,7 +117,7 @@
 }
 
 .desc {
-  font-size: calc(100vw * 25.5 / 1920);
+  font-size: calc(100vw * 27 / 1920);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -149,21 +143,6 @@
   bottom: calc(100vh * 40 / 940);
   z-index: 5;
   text-shadow: 0 0 5px #000;
-  transition: all 0.3s;
-
-  &.hide {
-    bottom: calc(100vh * -30 / 940);
-
-    .item-desc {
-      opacity: 0;
-    }
-  }
-
-  .btn {
-    margin-left: 30px;
-    width: calc(100vw * 50 / 1920);
-    cursor: pointer;
-  }
 }
 
 .item-title {
@@ -176,8 +155,6 @@
   text-align: left;
   color: #ffffff;
   margin-bottom: 20px;
-  display: flex;
-  align-items: center;
 }
 
 .item-desc {
@@ -189,7 +166,6 @@
   letter-spacing: normal;
   text-align: left;
   color: #ffffff;
-  transition: all 0.3s;
 }
 
 // .swiper-container {
@@ -282,7 +258,7 @@
     right: auto;
     left: calc(100vw * 24 / 375);
     top: auto;
-    bottom: calc(100vh * 70 / 675);
+    bottom: calc(100vh * 170 / 675);
   }
 
   .title {
@@ -315,7 +291,7 @@
     right: calc(100vw * 30 / 375);
     width: calc(100vw * 225 / 375);
     top: auto;
-    bottom: calc(100vh * 250 / 675);
+    bottom: calc(100vh * 300 / 675);
     transition: all 0.3s;
 
     &.hide {
@@ -339,7 +315,7 @@
     font-style: normal;
     line-height: 1.09;
     letter-spacing: normal;
-    text-align: right;
+    text-align: left;
     color: #ffffff;
     margin-bottom: 15px;
   }
@@ -382,7 +358,7 @@ import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
-  name: 'section8',
+  name: 'section9',
   mixins: [slider],
   components: {
     swiper,
@@ -413,29 +389,26 @@ export default {
       },
       slideList: [
         {
-          img: !isMobile ? require('./s8/1.jpg') : require('./s8/mo/1.jpg'),
-          title: '洲際藝術大廳',
-          desc:
-            '簡約沉穩的色調，以天然石材紋路結合皮革及金屬，設計出獨具品味的氛圍，讓出門回家多了一份沉靜自在',
+          img: !isMobile ? require('./s9/1.jpg') : require('./s9/mo/1.jpg'),
         },
         {
-          img: !isMobile ? require('./s8/2.jpg') : require('./s8/mo/2.jpg'),
-          title: '童樂書屋',
-          desc:
-            '流線型的天花板設計，開啟孩子眼中的奇妙視界；圓潤樸質的仿石椅及溫暖木質，與大片玻璃窗外的自然相互呼應，在遊樂中啟發孩子的大未來',
+          img: !isMobile ? require('./s9/2.jpg') : require('./s9/mo/2.jpg'),
         },
 
         {
-          img: !isMobile ? require('./s8/3.jpg') : require('./s8/mo/3.jpg'),
-          title: '沐光會議室',
-          desc:
-            '透過落地玻璃，欣賞生趣盎然的綠色窗景和明亮的自然光；開闊的木紋大桌，悅納天馬行空的創意，讓每一次聚首都滿載而歸',
+          img: !isMobile ? require('./s9/3.jpg') : require('./s9/mo/3.jpg'),
         },
         {
-          img: !isMobile ? require('./s8/4.jpg') : require('./s8/mo/4.jpg'),
-          title: '花水綠健身房',
-          desc:
-            '通透的落地大面玻璃，迎來天然光線與景觀，在明亮寬敞的室內空間，以舒適的溫度盡興運動，享受VIP級的健身體驗',
+          img: !isMobile ? require('./s9/4.jpg') : require('./s9/mo/4.jpg'),
+        },
+        {
+          img: !isMobile ? require('./s9/5.jpg') : require('./s9/mo/5.jpg'),
+        },
+        {
+          img: !isMobile ? require('./s9/6.jpg') : require('./s9/mo/6.jpg'),
+        },
+        {
+          img: !isMobile ? require('./s9/7.jpg') : require('./s9/mo/7.jpg'),
         },
       ],
     }
