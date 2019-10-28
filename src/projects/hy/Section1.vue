@@ -37,6 +37,17 @@
         >{{animatedNumber}}</div>
       </div>
     </div>
+    <div class="bg">
+      <div v-if="!isMobile">
+        <!-- <img src="./s1/bg1.png" alt class="bg-img relative" data-aos="fade" data-aos-delay="600" /> -->
+        <img src="./s1/bg_02.jpg" alt class="bg-img" />
+        <iframe ref="iframe" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F295304711374675%2Fvideos%2F2508860709333921%2F&show_text=0" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+      </div>
+      <div v-else>
+        <img src="./s1/mo/bg_02.jpg" alt class="bg-img" />
+        <iframe ref="iframe" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F295304711374675%2Fvideos%2F2508860709333921%2F&show_text=0" width="100%" height="auto" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+      </div>
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -46,6 +57,16 @@
   position: relative;
   overflow: hidden;
   position: relative;
+}
+
+iframe {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: calc(100vw * 1440 / 1920);
 }
 .bg-img {
   width: 100vw;
@@ -125,6 +146,10 @@
     top: auto;
     bottom: calc(100% * 270 / 675);
   }
+
+  iframe {
+    width: 100%;
+  }
 }
 </style>
 <script>
@@ -162,6 +187,11 @@ export default {
         TweenLite.to(this.$data, 1.2, { tweenedNumber: 0 })
       }, 1400)
     })
+    if (this.isMobile) {
+      this.$refs.iframe.height = window.innerWidth * (210 / 375)
+    } else {
+      this.$refs.iframe.height = window.innerWidth * (1440 / 1920) * (807 / 1440)
+    }
   },
 
   computed: {
