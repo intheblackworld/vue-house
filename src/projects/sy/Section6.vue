@@ -30,6 +30,7 @@
             <img src="./arrow-right.png" alt />
           </div>
         </swiper>
+        <div class="hint">裝潢參考示意圖</div>
       </div>
       <div v-else>
         <div class="content">
@@ -57,6 +58,7 @@
             <img src="./arrow-right.png" alt />
           </div>
         </swiper>
+        <div class="hint">裝潢參考示意圖</div>
       </div>
     </div>
   </div>
@@ -161,6 +163,21 @@
   letter-spacing: normal;
   text-align: justify;
   color: #656565;
+}
+
+.hint {
+  position: absolute;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.11;
+  letter-spacing: normal;
+  text-align: right;
+  color: #ffffff;
+  right: 30px;
+  bottom: 20px;
+  z-index: 10;
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -276,6 +293,12 @@
     }
     width: 100vw;
     position: absolute;
+  }
+
+  .hint {
+    font-size: 14px;
+    right: 10px;
+    bottom: 10px;
   }
 }
 </style>

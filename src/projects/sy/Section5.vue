@@ -176,7 +176,7 @@
   }
 }
 
-@media only screen and (max-width: 1280px) and (min-width: 1025px) {
+@media only screen and (max-width: 1440px) and (min-width: 1025px) {
   .fullscreen {
     min-height: 700px;
     height: 100vh !important;
