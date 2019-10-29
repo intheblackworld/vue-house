@@ -15,11 +15,10 @@
 <script>
 import AstrictMask from '@/components/AstrictMask'
 import gtm from '@/mixins/gtm.js'
-import recaptcha from '@/mixins/recaptcha.js'
 
 export default {
   name: 'App',
-  mixins: [gtm, recaptcha],
+  mixins: [gtm],
   components: {
     AstrictMask,
   },

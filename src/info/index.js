@@ -18,6 +18,7 @@ export default {
   ],
 
   gtmCode: ['5TFPQVG'], // 可放置多個
+  recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   order: {
     title: '預約賞屋',
     subTitle: ''

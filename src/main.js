@@ -5,6 +5,7 @@ import store from './store'
 import './registerServiceWorker'
 
 import '@/assets/style/global.scss'
+import info from '@/info'
 
 /* 全局配置 https://blog.csdn.net/FireBird_one/article/details/80295229 */
 import config from './lib/config.js'
@@ -15,6 +16,8 @@ import VueScrollTo from 'vue-scrollto' // scroll 錨點
 import VueLazyload from 'vue-lazyload' // 圖片 lazy load
 import VueScrollReveal from 'vue-scroll-reveal'
 import VuePhotoZoomPro from 'vue-photo-zoom-pro'
+
+import { VueReCaptcha } from 'vue-recaptcha-v3'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
@@ -60,11 +63,21 @@ Vue.use(VueScrollTo)
 Vue.use(VueLazyload)
 Vue.use(VueScrollReveal)
 
+Vue.use(VueReCaptcha, { siteKey: info.recaptcha_site_key })
+
 new Vue({
   router,
   store,
+  methods: {
+    recaptcha() {
+      this.$recaptchaLoaded('login').then((token) => {
+        console.log(token) // Will print the token
+      })
+    }
+  },
   created () {
     AOS.init()
+    this.recaptcha()
   },
   render: h => h(App)
 }).$mount('#app')
