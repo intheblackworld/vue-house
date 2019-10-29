@@ -28,7 +28,7 @@
             <img src="./arrow-right.png" alt />
           </div>
         </swiper>
-        <div class="content" data-aos="fade-right" data-aos-delay="600">
+        <div class="content" data-aos="fade-right" data-aos-delay="200">
           <div class="title">
             名宅公設手筆
             <br />滿足心之所嚮

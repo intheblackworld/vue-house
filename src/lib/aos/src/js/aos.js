@@ -33,7 +33,7 @@ let options = {
   duration: 400,
   disable: false,
   once: false,
-  mirror: false,
+  mirror: true,
   anchorPlacement: 'top-bottom',
   startEvent: 'DOMContentLoaded',
   animatedClassName: 'aos-animate',
@@ -191,13 +191,13 @@ const init = function init(settings) {
       refresh(true);
     });
   } else {
-    window.addEventListener('DOMContentLoaded', function() {
+    window.addEventListener('load', function() {
       refresh(true);
     });
   }
 
   if (
-    options.startEvent === 'DOMContentLoaded' &&
+    options.startEvent === 'load' &&
     ['complete', 'interactive'].indexOf(document.readyState) > -1
   ) {
     // Initialize AOS if default startEvent was already fired

@@ -24,7 +24,7 @@
             <img src="./arrow-right.png" alt />
           </div>
         </swiper>
-        <div class="content" data-aos="fade-down" data-aos-delay="600">
+        <div class="content" data-aos="fade-down" data-aos-delay="200">
           <div class="title">
             過嶺夢幻格局
             <br />私藏都心醇境
@@ -60,7 +60,7 @@
             <img src="./arrow-right.png" alt />
           </div>
         </swiper>
-        <div class="content" data-aos="fade-left" data-aos-delay="600">
+        <div class="content" data-aos="fade-left" data-aos-delay="200">
           <div class="title">
             過嶺夢幻格局
             <br />私藏都心醇境

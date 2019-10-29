@@ -3,7 +3,7 @@
     <div class="bg">
       <div v-if="!isMobile">
         <img src="./s5/bg.jpg" alt class="bg-img" />
-        <div class="content" data-aos="fade-left" data-aos-delay="600">
+        <div class="content" data-aos="fade-left" data-aos-delay="200">
           <div class="title">
             全台最大Costco
             <br />置產跟著國際財團走
@@ -16,9 +16,9 @@
       </div>
       <div v-else>
         <div class>
-          <!-- <img src="./s3/mo/1.jpg" alt class="img" data-aos="zoom-in" data-aos-delay="600" /> -->
+          <!-- <img src="./s3/mo/1.jpg" alt class="img" data-aos="zoom-in" data-aos-delay="200" /> -->
           <img src="./s5/mo/bg.jpg" alt class="bg-img" />
-          <div class="content" data-aos="fade-down" data-aos-delay="600">
+          <div class="content" data-aos="fade-down" data-aos-delay="200">
             <div class="title">
               全台最大Costco
               <br />置產跟著國際財團走

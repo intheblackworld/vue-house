@@ -3,7 +3,7 @@
     <div class="bg">
       <div v-if="!isMobile">
         <img src="./s4/bg.jpg" alt class="bg-img" />
-        <div class="content" data-aos="fade-left" data-aos-delay="600">
+        <div class="content" data-aos="fade-left" data-aos-delay="0" data-aos-duration="200">
           <div class="title">
             萬坪綠水畔
             <br />悠遊桃花源
@@ -18,7 +18,7 @@
         <div class>
           <!-- <img src="./s3/mo/1.jpg" alt class="img" data-aos="zoom-in" data-aos-delay="600" /> -->
           <img src="./s4/mo/bg.jpg" alt class="bg-img" />
-          <div class="content" data-aos="fade-down" data-aos-delay="600">
+          <div class="content" data-aos="fade-down" data-aos-delay="200">
             <div class="title">
               萬坪綠水畔
               <br />悠遊桃花源
