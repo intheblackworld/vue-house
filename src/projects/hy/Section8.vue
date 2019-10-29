@@ -14,10 +14,10 @@
             <img :src="slide.img" :class="`item-img`" />
           </swiper-slide>
           <div :class="`item-content ${ isHide ? 'hide' : ''}`">
-            <div class="item-title">
+            <div class="item-title" @click="isHide = !isHide">
               {{slideList[slideIndex].title}}
-              <img v-if="isHide" src="./s8/mo/箭頭上.png" alt class="btn" @click="isHide = false" />
-              <img v-else src="./s8/mo/箭頭下.png" alt class="btn" @click="isHide = true" />
+              <img v-if="isHide" src="./s8/mo/箭頭上.png" alt class="btn" />
+              <img v-else src="./s8/mo/箭頭下.png" alt class="btn" />
             </div>
             <div class="item-desc">{{slideList[slideIndex].desc}}</div>
           </div>
@@ -51,9 +51,9 @@
             <img :src="slide.img" :class="`item-img`" />
           </swiper-slide>
           <div :class="`item-content ${ isHide ? 'hide' : ''}`">
-            <div class="item-title">
-              <img v-if="isHide" src="./s8/mo/箭頭上.png" alt class="btn" @click="isHide = false" />
-              <img v-else src="./s8/mo/箭頭下.png" alt class="btn" @click="isHide = true" />
+            <div class="item-title"  @click="isHide = !isHide">
+              <img v-if="isHide" src="./s8/mo/箭頭上.png" alt class="btn" />
+              <img v-else src="./s8/mo/箭頭下.png" alt class="btn" />
               {{slideList[slideIndex].title}}
             </div>
             <div class="item-desc">{{slideList[slideIndex].desc}}</div>
@@ -146,7 +146,7 @@
   position: absolute;
   width: calc(100vw * 720 / 1920);
   right: calc(100vw * 100 / 1920);
-  bottom: calc(100vh * 40 / 940);
+  bottom: calc(100vh * 64 / 940);
   z-index: 5;
   text-shadow: 0 0 5px #000;
   transition: all 0.3s;
@@ -178,6 +178,7 @@
   margin-bottom: 20px;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .item-desc {
@@ -189,7 +190,7 @@
   letter-spacing: normal;
   text-align: left;
   color: #ffffff;
-  height: 64px;
+  height: calc(100vh * 64 / 940);
   transition: all 0.3s;
 }
 
