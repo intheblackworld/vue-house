@@ -2,7 +2,7 @@
   <div class="section8">
     <div class="bg">
       <div v-if="!isMobile">
-        <swiper :options="swiperOption" ref="mySwiper">
+        <swiper :options="swiperOption" ref="mySwiper" @slideChangeTransitionEnd="slideChanged">
           <img src="./s8/bg.png" alt class="bg-img" />
           <img src="./s8/top.png" alt class="bg-img" />
           <swiper-slide
@@ -189,6 +189,7 @@
   letter-spacing: normal;
   text-align: left;
   color: #ffffff;
+  height: 64px;
   transition: all 0.3s;
 }
 
@@ -446,6 +447,7 @@ export default {
   methods: {
     slideChanged(e) {
       const swiper = this.$refs.mySwiper.swiper
+      console.log(this.slideIndex)
       if (swiper.isEnd) {
         this.slideIndex = 0
       } else if (swiper.isBeginning) {
