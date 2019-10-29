@@ -51,11 +51,9 @@
 </style>
 
 <script>
-import gtm from '@/mixins/gtm.js'
 
 export default {
   name: 'formThanks',
-  mixins: [gtm],
   components: {},
 
   methods: {},

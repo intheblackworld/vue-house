@@ -1,6 +1,5 @@
 <template>
   <div class="home no-padding-top">
-    <div ref="gtmNoScript" />
     <Loading :loading="load" />
     <SideNavigation v-if="isSide" />
     <Navigation v-else />
@@ -44,7 +43,6 @@ import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
-import gtm from '@/mixins/gtm.js'
 
 import Section1 from '@/projects/sy/Section1.vue'
 import Section2 from '@/projects/sy/Section2.vue'
@@ -56,7 +54,6 @@ import Section7 from '@/projects/sy/Section7.vue'
 
 export default {
   name: 'home',
-  mixins: [gtm],
   components: {
     Loading,
     Navigation,
