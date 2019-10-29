@@ -61,11 +61,11 @@
           </p>
         </el-checkbox>
       </div>
-        <div style="margin: 0 auto">
+        <!-- <div style="margin: 0 auto 15px">
           <vue-recaptcha :sitekey="info.recaptcha_site_key_v2"
           @verify="isVerify = true"
           ></vue-recaptcha>
-        </div>
+        </div> -->
       <el-button
         class="form-submit"
         type="primary"
