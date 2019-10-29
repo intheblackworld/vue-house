@@ -65,6 +65,13 @@ Vue.use(VueScrollReveal)
 new Vue({
   router,
   store,
+  methods: {
+    recaptcha() {
+      this.$recaptchaLoaded('homepage').then((token) => {
+        console.log(token) // Will print the token
+      })
+    }
+  },
   created () {
     AOS.init()
   },
