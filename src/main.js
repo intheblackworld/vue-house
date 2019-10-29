@@ -70,7 +70,7 @@ new Vue({
   store,
   methods: {
     recaptcha() {
-      this.$recaptchaLoaded('login').then((token) => {
+      this.$recaptchaLoaded('homepage').then((token) => {
         console.log(token) // Will print the token
       })
     }
