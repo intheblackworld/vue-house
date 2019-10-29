@@ -59,10 +59,15 @@
           </p>
         </el-checkbox>
       </div>
+        <div style="margin: 0 auto">
+          <vue-recaptcha :sitekey="info.recaptcha_site_key_v2"
+          @verify="isVerify = true"
+          ></vue-recaptcha>
+        </div>
       <el-button
         class="form-submit"
         type="primary"
-        :disabled="!checked"
+        :disabled="!checked || !isVerify"
         @click="submit"
         :loading="isSubmit"
       >立即預約</el-button>
@@ -79,6 +84,8 @@ import GoogleMap from '@/components/GoogleMap.vue'
 import PolicyDialog from '@/components/PolicyDialog.vue'
 import info from '@/info'
 import { cityList, renderAreaList } from '@/info/address'
+import Loading from '@/components/Loading.vue'
+import VueRecaptcha from 'vue-recaptcha'
 
 export default {
   name: 'order',
@@ -86,11 +93,14 @@ export default {
     ContactInfo,
     GoogleMap,
     PolicyDialog,
+    Loading,
+    VueRecaptcha,
   },
 
   data() {
     return {
       cityList,
+      info,
       order: info.order,
       form: {
         name: '',
@@ -102,6 +112,7 @@ export default {
       },
       checked: false,
       isSubmit: false,
+      isVerify: false, // google 機器人驗證
       policyVisible: false,
       showValidateDialog: false,
     }
@@ -132,6 +143,7 @@ export default {
 
     submit() {
       if (this.isSubmit) return
+      if (!this.isVerify) return
       if (!this.checked) return
       this.isSubmit = true
       if (
