@@ -202,7 +202,7 @@ export default {
   background-color: $order_bg_color;
   background-image: $order_bg_image;
   background-repeat: no-repeat;
-  background-size: 100% 75%;
+  background-size: 100% auto;
   position: relative;
   margin-top: -1px;
   padding-top: 80px;

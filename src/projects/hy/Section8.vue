@@ -328,6 +328,7 @@
 
     .btn {
       width: 27px;
+      margin-right: 8px;
       cursor: pointer;
     }
   }
@@ -346,6 +347,7 @@
 
   .item-desc {
     font-size: calc(100vw * 14 / 375);
+    max-height: 57px;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
