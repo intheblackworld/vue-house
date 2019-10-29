@@ -6961,6 +6961,11 @@ readdirp@^3.0.2:
   dependencies:
     picomatch "^2.0.4"
 
+recaptcha-v3@^1.7.0:
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/recaptcha-v3/-/recaptcha-v3-1.7.2.tgz#7de77a9e2f2023a8bbffd464773de02fcdc87ea7"
+  integrity sha512-cT5mlRGHg+SX3ARVv792XcjJFJEaoHqC3A/89927sojngKntxZhk7aabwTSIOLXqwF9oO0w5Jl+HOFAh6hKwfQ==
+
 recast@~0.11.12:
   version "0.11.23"
   resolved "https://registry.yarnpkg.com/recast/-/recast-0.11.23.tgz#451fd3004ab1e4df9b4e4b66376b2a21912462d3"
@@ -8566,6 +8571,18 @@ vue-property-decorator@^7.0.0:
   integrity sha512-HarXfTQ/Nxm4s/APpAaGIGHq5ZzslApImQy8ZrtkfGamw8rUFAVgMS5C50/AQ80+wfw3Wpnf4bNzbmj75m/k2Q==
   dependencies:
     vue-class-component "^6.2.0"
+
+vue-recaptcha-v3@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/vue-recaptcha-v3/-/vue-recaptcha-v3-1.7.0.tgz#b683955597bdf53c4abd28fc70ccdf24ef5b3a7a"
+  integrity sha512-DCIrcMkThzkYKA1q50JZHuKhG6LezyBwus2xFg3WG6GDgkqf0P5WK6lpYZYtSsQ5qifyTKzIVUy9NMbZ1JzeBg==
+  dependencies:
+    recaptcha-v3 "^1.7.0"
+
+vue-recaptcha@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/vue-recaptcha/-/vue-recaptcha-1.2.0.tgz#a30ab08b4c79326d2e3ab1c1e76c367e02e6eb35"
+  integrity sha512-zgt8bAmlHbLT2XY0diwA/UgGcbp1cOYXJ8za17WM1zlOC8EiO0mpGvYzXaR1aeU0gaiv1qLO6GOUwQVVAjgwMw==
 
 vue-router@^3.0.3:
   version "3.0.6"
