@@ -206,7 +206,10 @@
   z-index: 10;
 }
 
-@media only screen and (max-width: 1280px) and (min-width: 1025px) {
+@media only screen and (max-width: 1440px) and (min-width: 1025px) {
+  .item-content {
+    bottom: calc(100vh * 124 / 940);
+  }
   .fullscreen {
     height: 100vh;
   }
@@ -317,7 +320,7 @@
     right: calc(100vw * 30 / 375);
     width: calc(100vw * 225 / 375);
     top: auto;
-    bottom: calc(100vh * 250 / 675);
+    bottom: calc(100vh * 290 / 675);
     transition: all 0.3s;
 
     &.hide {
