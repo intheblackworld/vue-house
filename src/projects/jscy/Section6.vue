@@ -251,6 +251,41 @@ export default {
             ? require('./s6/mo/s6-5.jpg')
             : require('./s6/s6-5.png'),
         },
+        {
+          img: isMobile
+            ? require('./s6/mo/s6-5.jpg')
+            : require('./s6/s6-5.png'),
+        },
+        {
+          img: isMobile
+            ? require('./s6/mo/s6-6.jpg')
+            : require('./s6/s6-6.png'),
+        },
+        {
+          img: isMobile
+            ? require('./s6/mo/s6-7.jpg')
+            : require('./s6/s6-7.png'),
+        },
+        {
+          img: isMobile
+            ? require('./s6/mo/s6-8.jpg')
+            : require('./s6/s6-8.png'),
+        },
+        {
+          img: isMobile
+            ? require('./s6/mo/s6-9.jpg')
+            : require('./s6/s6-9.png'),
+        },
+        {
+          img: isMobile
+            ? require('./s6/mo/s6-10.jpg')
+            : require('./s6/s6-10.png'),
+        },
+        {
+          img: isMobile
+            ? require('./s6/mo/s6-11.jpg')
+            : require('./s6/s6-11.png'),
+        },
       ],
     }
   },
