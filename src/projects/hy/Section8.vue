@@ -13,11 +13,11 @@
           >
             <img :src="slide.img" :class="`item-img`" />
           </swiper-slide>
-          <div :class="`item-content ${ isHide ? 'hide' : ''}`">
+          <div :class="`item-content`">
             <div class="item-title" @click="isHide = !isHide">
               {{slideList[slideIndex].title}}
-              <img v-if="isHide" src="./s8/mo/箭頭上.png" alt class="btn" />
-              <img v-else src="./s8/mo/箭頭下.png" alt class="btn" />
+              <!-- <img v-if="isHide" src="./s8/mo/箭頭上.png" alt class="btn" />
+              <img v-else src="./s8/mo/箭頭下.png" alt class="btn" /> -->
             </div>
             <div class="item-desc">{{slideList[slideIndex].desc}}</div>
           </div>
@@ -204,6 +204,20 @@
 .swiper-button-next,
 .swiper-container-rtl .swiper-button-prev {
   z-index: 10;
+}
+
+.swiper-button-next,.swiper-button-prev {
+  animation: arrow  linear 1s alternate infinite;
+}
+.swiper-button-next {
+  animation-delay:1s;
+}
+
+@keyframes arrow {
+  to {
+      -webkit-transform: translateX(8px);
+      transform: translateX(8px)
+  }
 }
 
 @media only screen and (max-width: 1440px) and (min-width: 1025px) {

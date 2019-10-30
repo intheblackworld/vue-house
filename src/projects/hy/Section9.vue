@@ -180,6 +180,20 @@
   z-index: 10;
 }
 
+.swiper-button-next,.swiper-button-prev {
+  animation: arrow  linear 1s alternate infinite;
+}
+.swiper-button-next {
+  animation-delay:1s;
+}
+
+@keyframes arrow {
+  to {
+      -webkit-transform: translateX(8px);
+      transform: translateX(8px)
+  }
+}
+
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
     height: 100vh;
