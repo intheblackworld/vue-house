@@ -14,7 +14,7 @@
             <img :src="slide.img" :class="`item-img`" />
           </swiper-slide>
           <div :class="`item-content`">
-            <div class="item-title" @click="isHide = !isHide">
+            <div class="item-title">
               {{slideList[slideIndex].title}}
               <!-- <img v-if="isHide" src="./s8/mo/箭頭上.png" alt class="btn" />
               <img v-else src="./s8/mo/箭頭下.png" alt class="btn" /> -->
@@ -50,10 +50,10 @@
           >
             <img :src="slide.img" :class="`item-img`" />
           </swiper-slide>
-          <div :class="`item-content ${ isHide ? 'hide' : ''}`">
-            <div class="item-title"  @click="isHide = !isHide">
-              <img v-if="isHide" src="./s8/mo/箭頭上.png" alt class="btn" />
-              <img v-else src="./s8/mo/箭頭下.png" alt class="btn" />
+          <div :class="`item-content`">
+            <div class="item-title">
+              <!-- <img v-if="isHide" src="./s8/mo/箭頭上.png" alt class="btn" />
+              <img v-else src="./s8/mo/箭頭下.png" alt class="btn" /> -->
               {{slideList[slideIndex].title}}
             </div>
             <div class="item-desc">{{slideList[slideIndex].desc}}</div>
@@ -162,7 +162,7 @@
   .btn {
     margin-left: 30px;
     width: calc(100vw * 50 / 1920);
-    cursor: pointer;
+    // cursor: pointer;
   }
 }
 
@@ -178,7 +178,7 @@
   margin-bottom: 20px;
   display: flex;
   align-items: center;
-  cursor: pointer;
+  // cursor: pointer;
 }
 
 .item-desc {
@@ -348,7 +348,7 @@
     .btn {
       width: 27px;
       margin-right: 8px;
-      cursor: pointer;
+      // cursor: pointer;
     }
   }
 
