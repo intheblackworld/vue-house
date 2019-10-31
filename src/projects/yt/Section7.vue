@@ -71,7 +71,7 @@
     background: url('./s7/mo/bg.jpg');
     background-size: 100%;
     &.fullscreen {
-      height: calc(100vw * 1208 / 750) !important;
+      height: calc(100vw * 840 / 750) !important;
     }
   }
 

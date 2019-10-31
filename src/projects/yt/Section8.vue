@@ -11,7 +11,9 @@
         <img src="./s8/4.png" alt="更好的 生活九大精品設備" class="bg-img" data-aos="fade-down"
           data-aos-delay="400" />
       </div>
-      <div v-else class="m-block">
+      <img v-if="isMobile" src="./s8/mo/8bg.jpg" alt="更好的 生活九大精品設備" class="bg-img-top bg-img" data-aos="fade-down"
+          data-aos-delay="400" />
+      <div v-if="isMobile" class="m-block">
         <!-- <img src="./s8/mo/img.gif" alt="耘耕美築 恆久淳萃 公園綠景第一排" class="bg-img" />
         <img src="./s8/mo/2.png" alt="耘耕美築 恆久淳萃 公園綠景第一排" class="bg-img" />
         <img src="./s8/mo/3.png" alt="耘耕美築 恆久淳萃 公園綠景第一排" class="bg-img" /> -->
@@ -120,6 +122,10 @@
     width: 90vw;
     margin: 0 auto;
     position: relative;
+
+    &.bg-img-top {
+      width: 100vw;
+    }
   }
 
   .m-block {
