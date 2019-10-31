@@ -290,7 +290,7 @@ export default {
           delay: 3000,
           disableOnInteraction: false,
         },
-        // loop: isMobile,
+        loop: true,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
@@ -313,19 +313,15 @@ export default {
 
   methods: {
     slideChanged(e) {
-      const swiper = this.$refs.methodSwiper.swiper
-      let index
-      index = swiper.activeIndex - 1
-      console.log(index)
-      if (index === 2) {
-        index = 0
+      const swiper = this.$refs.mySwiper.swiper
+      console.log(this.slideIndex)
+      if (swiper.isEnd) {
+        this.slideIndex = 0
+      } else if (swiper.isBeginning) {
+        this.slideIndex = swiper.slides.length - 3
+      } else {
+        this.slideIndex = swiper.activeIndex - 1
       }
-
-      if (index === -1) {
-        index = 1
-      }
-
-      this.methodIndex = index
     },
   },
 }
