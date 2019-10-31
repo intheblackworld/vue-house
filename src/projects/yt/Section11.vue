@@ -6,24 +6,17 @@
           src="./s11/gif.gif"
           alt="東方美學 樸質雅砌"
           class="bg-img"
-          data-aos="fade-right"
+          data-aos="fade"
           data-aos-delay="600"
         />
         <img
-          src="./s11/1t.png"
-          alt="精巧規劃別具心裁，讓家人都愛窩在一起"
+          :src="slideList[slideIndex].text"
+          :alt="slideList[slideIndex].alt"
           class="bg-img"
           data-aos="fade-right"
           data-aos-delay="600"
         />
-        <!-- <img
-          src="./s11/2t.png"
-          alt="大砌玄關，明亮廳堂，樹海窗景就在眼前"
-          class="bg-img"
-          data-aos="fade"
-          data-aos-delay="800"
-        /> -->
-        <swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="200">
+        <swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="200" @slideChangeTransitionEnd="slideChanged">
           <swiper-slide
             v-for="(slide, index) in slideList"
             :index="index"
@@ -45,17 +38,17 @@
           src="./s11/mo/bg.gif"
           alt="精巧規劃別具心裁，讓家人都愛窩在一起"
           class="bg-img"
-          data-aos="fade-right"
+          data-aos="fade"
           data-aos-delay="600"
         />
         <img
-          src="./s11/mo/t1.png"
-          alt="精巧規劃別具心裁，讓家人都愛窩在一起"
+          :src="slideList[slideIndex].text"
+          :alt="slideList[slideIndex].alt"
           class="bg-img"
           data-aos="fade-right"
-          data-aos-delay="400"
+          data-aos-delay="600"
         />
-        <swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="200">
+        <swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="200" @slideChangeTransitionEnd="slideChanged">
           <swiper-slide
             v-for="(slide, index) in slideList"
             :index="index"
@@ -242,6 +235,7 @@
     margin-bottom: 30px;
     width: 90vw;
     position: absolute;
+    z-index: 3;
   }
 
   .item-img {
@@ -284,26 +278,6 @@ export default {
   data() {
     return {
       isMobile,
-      toggleList: [
-        {
-          title: '下樓 走進一座綠色花園',
-          desc:
-            '佔地約萬坪的七號公園，就在「耘萃」社區門口，轉個彎就是截然不同的生態綠意，調整呼吸走進自然美景，呼吸可以很放鬆、視野可以很寬裕，這一切近在咫尺完美零距離。',
-          open: false,
-        },
-        {
-          title: '散步 遇見輕軌的美好距離',
-          desc:
-            '走出社區約5分鐘，漫步就抵達輕軌／濱海沙崙站，未來將銜接輕軌藍海線，成為雙輕軌站。一路跟著幾米的浪漫繪畫，從紅樹林接軌北捷，悠遊士林圓山、台北城中、大安信義。',
-          open: false,
-        },
-        {
-          title: '轉彎 公司田溪腳踏車自由行',
-          desc:
-            '公七公園對面就是公司田溪水岸綠帶，是城市優雅的一抹綠岸，也棲息了眾多生態，喜鵲、白頭翁、白鷺鷥、水鳥徜徉其中；沿著旁邊的自行車道，可以悠遊淡水單車路網，輕鬆自在。',
-          open: false,
-        },
-      ],
       swiperOption: {
         slidesPerView: isMobile ? 1 : 1,
         spaceBetween: isTablet ? 20 : 30,
@@ -325,10 +299,12 @@ export default {
       slideList: [
         {
           src: isMobile ? require('./s11/mo/1.jpg') : require('./s11/1.jpg'),
+          text: isMobile ? require('./s11/mo/t1.png') : require('./s11/1t.png'),
           alt: '耘悅圖書室'
         },
         {
           src: isMobile ? require('./s11/mo/2.jpg') : require('./s11/2.jpg'),
+          text: isMobile ? require('./s11/mo/t2.png') : require('./s11/2t.png'),
           alt: '耘享多功能教室'
         },
       ],
@@ -336,13 +312,20 @@ export default {
   },
 
   methods: {
-    toggle(index) {
-      if (this.toggleList[index].open) {
-        this.toggleList[index].open = false
-      } else {
-        this.toggleList.forEach(item => (item.open = false))
-        this.toggleList[index].open = !this.toggleList[index].open
+    slideChanged(e) {
+      const swiper = this.$refs.methodSwiper.swiper
+      let index
+      index = swiper.activeIndex - 1
+      console.log(index)
+      if (index === 2) {
+        index = 0
       }
+
+      if (index === -1) {
+        index = 1
+      }
+
+      this.methodIndex = index
     },
   },
 }
