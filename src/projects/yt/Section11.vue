@@ -32,12 +32,12 @@
           >
             <img :src="slide.src" :class="`item-img`" />
           </swiper-slide>
-          <div class="swiper-button-prev" slot="button-prev">
+          <!-- <div class="swiper-button-prev" slot="button-prev">
             <img src="./arrow-left.png" alt />
           </div>
           <div class="swiper-button-next" slot="button-next">
             <img src="./arrow-right.png" alt />
-          </div>
+          </div> -->
         </swiper>
       </div>
       <div v-else>
