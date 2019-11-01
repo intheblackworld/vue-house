@@ -105,7 +105,7 @@
   top: 0;
   left: 0;
   .item-img {
-    width: 100vw;
+    width: 100%;
     position: relative;
     top: 0;
     left: 0;
@@ -239,7 +239,7 @@
   }
 
   .item-img {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
   }
 

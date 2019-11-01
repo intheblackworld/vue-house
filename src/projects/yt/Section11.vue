@@ -4,7 +4,7 @@
       <div v-if="!isMobile">
         <img
           src="./s11/gif.gif"
-          alt="東方美學 樸質雅砌"
+          alt=""
           class="bg-img"
           data-aos="fade"
           data-aos-delay="600"
