@@ -1,7 +1,7 @@
 <template>
   <div class="sideNav">
     <div class="nav relative">
-      <img class="logo" src="@/assets/img/nav-logo.png" alt />
+      <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
       <div class="menu" @click="toggleSidebar">
         <img v-if="isOpen" src="@/projects/jh/s4/close.png" class="close" alt />
         <img v-else src="@/assets/img/menu-btn.png" alt />
@@ -135,7 +135,7 @@ export default {
   .link {
     height: 60px;
     width: 100%;
-    font-size: 17px;
+    font-size: 24px;
     margin-top: 10px;
     display: flex;
     align-items: center;
@@ -178,7 +178,7 @@ export default {
   }
 
   &.open {
-    width: 230px;
+    width: 465px;
     transform: translateX(0%);
     display: flex;
     flex-wrap: wrap;

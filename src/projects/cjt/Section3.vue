@@ -1,122 +1,91 @@
 <template>
-  <div class="section3 relative frame">
-    <img v-if="!isMobile" class="bg-img" src="./s3_bg.jpg" alt />
-    <img v-else class="bg-img-m" src="./s3_bg_m.jpg" alt />
-    <img
-      v-if="!isMobile"
-      class="bg-img absolute"
-      src="./s3_logo.png"
-      alt
-      data-aos="slide-up"
-      data-aos-duration="600"
-      data-aos-delay="300"
-      data-aos-once="false"
-    />
-
-    <img
-      v-if="isMobile"
-      class="img-txt-m"
-      src="./s3_txt_m.jpg"
-      alt
-      data-aos="fade"
-      data-aos-duration="600"
-    />
-
-    <div v-if="isMobile" class="slide absolute" data-aos="fade" data-aos-offset="50">
-      <img @click="addIndex" class="btn" src="./s3_a.png" alt />
-      <img
-        v-for="(slide, index) in slideList"
-        :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
-        :key="`s10-slide-${index}`"
-        :src="slide.src"
-        alt
-      />
-      <img @click="decIndex" src="./s3_a.png" class="btn reverse" alt />
+  <div class="section3 relative">
+    <div class="bg relative" v-if="!isMobile">
+      <img src="./s3/bg.jpg" alt="輕井澤" class="bg-img" />
+      <div class="text">
+        <h3 class="title" data-aos="fade" data-aos-delay="200">國家級綠建築標準</h3>
+        <div class="subtitle" data-aos="fade" data-aos-delay="400">台南首座低碳綠能示範社區 宜居首選</div>
+      </div>
     </div>
-    <img src="./s3_hand.png" alt class="hand" v-if="isMobile" />
+    <div class="bg relative" v-else>
+       <img src="./s3/mo/bg.jpg" alt="輕井澤" class="bg-img" />
+      <div class="text">
+        <h3 class="title" data-aos="fade" data-aos-delay="200">國家級綠建築標準</h3>
+        <div class="subtitle" data-aos="fade" data-aos-delay="400">台南首座低碳綠能示範社區 宜居首選</div>
+      </div>
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
+.bg {
+  background-position: center;
+  background-size: auto;
+}
 .bg-img {
   width: 100vw;
   height: auto;
   display: block;
+  position: absolute;
+  object-fit: cover;
   top: 0;
+
+  &:nth-child(1) {
+    position: relative;
+  }
 }
 
-@keyframes swing {
-  0% {
-    transform: translateX(20px);
+.text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: calc(100vw * (100 / 1920));
+
+  .title {
+    font-size: calc(100vw * (80 / 1920));
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 3.2px;
+    text-align: center;
+    color: #ffffff;
   }
 
-  50% {
-    transform: translateX(-20px);
-  }
-
-  100% {
-    transform: translateX(20px);
+  .subtitle {
+    font-size: calc(100vw * (40 / 1920));
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.47;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #ffffff;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .bg-img-m {
-    height: 140vh;
+  .bg {
+    background-image: url('./s2/mo/bg.jpg');
   }
 
-  .img-txt-m {
-    position: absolute;
-    width: 100vw;
-    top: 0;
-    left: 0;
-  }
-
-  .slide {
-    top: calc(100vw * (140 / 275));
-    width: 85vw;
-    left: 7.5vw;
-
-    img {
-      width: 100%;
-      display: block;
-      margin: 0 auto;
-      transition: all 0s;
-      &.active {
-        position: relative;
-      }
+  .text {
+    top: calc(100vw * (50 / 375));
+    .title {
+      font-size: 35.4px;
+      letter-spacing: 1.42px;
     }
 
-    .btn {
-      width: 13px;
-      height: 20px;
-      position: absolute;
-      cursor: pointer;
-      left: -20px;
-      top: 50%;
-      position: absolute;
-      z-index: 3;
-    }
-
-    .reverse {
-      transform: rotate(180deg);
-      left: auto;
-      right: -20px;
+    .subtitle {
+      font-size: 15px;
+      letter-spacing: 3px;
     }
   }
-  .hand {
-    position: absolute;
-    z-index: 2;
+  .img {
+    display: none;
+  }
+  .imgM {
     display: block;
-    width: 56px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    top: calc(100vw * (340 / 275));
-    display: block;
-    animation: swing 2.5s ease-in-out 0s infinite;
-  }
-
-  .frame {
-    overflow-x: scroll;
   }
 }
 </style>
@@ -125,27 +94,14 @@
 // @ is an alias to /src
 import { isMobile } from '@/utils'
 
-import slider from '@/mixins/slider.js'
 export default {
   name: 'section3',
-  mixins: [slider],
 
   methods: {},
 
   data() {
     return {
       isMobile,
-      slideList: [
-        {
-          src: require('./s3_img1.jpg'),
-        },
-        {
-          src: require('./s3_img2.jpg'),
-        },
-        {
-          src: require('./s3_img3.jpg'),
-        },
-      ],
     }
   },
 }
