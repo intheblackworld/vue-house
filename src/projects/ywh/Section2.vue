@@ -6,7 +6,7 @@
         src="./s2/title.png"
         data-aos="fade-down"
         data-aos-delay="200"
-        alt="早鳥超豪禮"
+        alt="豪禮六選一"
         class="title"
       />
       <img
@@ -14,23 +14,23 @@
         src="./s2/txt1.png"
         data-aos="fade-down"
         data-aos-delay="400"
-        alt="七大建材重量級鉅獻!"
+        alt="六大建材重量級鉅獻!"
         class="txt1"
       />
-      <img
+      <!-- <img
         v-if="!isMobile"
         src="./s2/txt2.png"
         data-aos="fade-down"
         data-aos-delay="600"
         alt="限定前50戶幸運兒"
         class="txt2"
-      />
+      /> -->
       <img
         v-if="isMobile"
         src="./s2/mo/title.png"
         data-aos="fade-down"
         data-aos-delay="200"
-        alt="早鳥超豪禮"
+        alt="豪禮六選一"
         class="title"
       />
       <img
@@ -38,17 +38,17 @@
         src="./s2/mo/txt1.png"
         data-aos="fade-down"
         data-aos-delay="400"
-        alt="七大建材重量級鉅獻"
+        alt="六大建材重量級鉅獻!"
         class="txt1"
       />
-      <img
+      <!-- <img
         v-if="isMobile"
         src="./s2/mo/txt2.png"
         data-aos="fade-down"
         data-aos-delay="600"
         alt="限定前50戶幸運兒"
         class="txt2"
-      />
+      /> -->
       <img src="./s2/框.png" alt class="frame" data-aos="fade-down" data-aos-delay="800" />
       <img src="./s2/icon1.png" alt class="icon" data-aos="fade-down" data-aos-delay="1000" />
       <carousel-3d
@@ -116,6 +116,7 @@
   width: calc(100vw * (826 / 1920));
   display: block;
   margin: 0 auto;
+  margin-top: calc(-100vw * (126 / 1920));
   position: relative;
   z-index: 3;
 }
@@ -256,10 +257,10 @@ export default {
           img: require('./s2/6.png'),
           alt: '豪禮6 全室超級馬桶'
         },
-        {
-          img: require('./s2/7.png'),
-          alt: '豪禮7 全室暖風機'
-        },
+        // {
+        //   img: require('./s2/7.png'),
+        //   alt: '豪禮7 全室暖風機'
+        // },
       ],
       currentIndex: 0,
       imgWidth: 920,
