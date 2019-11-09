@@ -1,25 +1,25 @@
 export default {
-  address: '320桃園市中壢區松信路2號',
+  address: '台南市中西區中華西路二段865號旁 (大魯閣旁)',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3617.1606759040956!2d121.1614116!3d24.9606474!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468255f16bb770f%3A0x3baa67b1c9a42262!2z5ZCI6YGg5paw57ag5rSy!5e0!3m2!1szh-TW!2stw!4v1572080517041!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/mvnT6aSuEDtR7hAP9',
-  phone: '03-420-0055',
-  fbLink: 'https://www.facebook.com/合遠新綠洲-295304711374675',
-  fbMessage: 'https://m.me/295304711374675',
-  caseName: '合遠新綠洲',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.4711926024343!2d120.1838555149674!3d23.006465284961298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e7641bf4667cd%3A0x40c8a3d577f8a8b5!2zU1RBUkJVQ0tTIOaYn-W3tOWFiyAo5rmW576O6ZaA5biCKQ!5e0!3m2!1szh-TW!2stw!4v1573290900998!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/QyiTjDwqvUqGdHWW7',
+  phone: '06-3508787',
+  fbLink: 'https://www.facebook.com/藏美建設-輕井澤-112099810143754/',
+  fbMessage: 'https://m.me/112099810143754/',
+  caseName: '輕井澤',
 
   houseInfos: [
-    ['投資興建', '合遠建設股份有限公司'],
-    ['建築設計', '拓璞聯合建築事務所'],
-    ['土地分區', '住宅區'],
-    ['建照號碼', '(107)桃市都建執照第會屋00810號'],
-    ['廣告代銷', '新浩思廣告有限公司'],
-    ['基地面積', '845.25坪'],
-    ['樓層規劃', '12F/B2'],
-    ['坪數規劃', '二房(25~27坪) 、三房(37~41坪)']
+    ['投資興建', '藏美建設股份有限公司'],
+    ['基地面積', '4380坪'],
+    ['建築設計', '原東聯合建築師事務所'],
+    ['結構工程', '築遠工程顧問'],
+    ['外觀設計', '佐為建築師事務所'],
+    ['燈光設計', '佐為建築師事務所'],
+    ['規劃戶數', '共157戶'],
+    ['特殊設計', '台灣南區低碳示範城市之低碳示範地區，<br />符合「臺南市低碳城市自治條例」綠建築相關規定，<br/ >並取得綠建築候選證書']
   ],
 
-  gtmCode: ['WNBVXX6'], // 可放置多個
+  gtmCode: ['KFVV867'], // 可放置多個
   order: {
     title: '預約賞屋',
     subTitle: ''
