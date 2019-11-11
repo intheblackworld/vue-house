@@ -71,7 +71,7 @@
   overflow: hidden;
   // padding-top: 220px;
   width: 100vw;
-  height: calc(100vw * 1080 / 1920);
+  height: calc(100vw * (1080 / 1920));
 
   > div {
     display: flex;

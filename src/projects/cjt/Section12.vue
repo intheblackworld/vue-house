@@ -48,7 +48,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: calc(100vw * 705 / 1680);
+  width: calc(100vw * (705 / 1680));
   height: 100%;
   display: flex;
   align-items: center;
@@ -86,10 +86,6 @@
 
   .text .title {
     font-size: calc(100vw * (75 / 1920));
-  }
-
-  .backg {
-    height: calc(100vw * )
   }
 }
 
