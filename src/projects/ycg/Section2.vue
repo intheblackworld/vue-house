@@ -10,10 +10,10 @@
           <img src="./s2/2.png" alt />
           <h3 class="title">鴻運當頭時，連喝水都能賺！</h3>
         </div>
-        <div class="item">
+        <!-- <div class="item">
           <img src="./s2/3.png" alt />
           <h3 class="title">一兼二顧、又賺又拿別客氣！</h3>
-        </div>
+        </div> -->
       </div>
       <div class="container" v-if="isMobile">
         <div class="item" data-aos="zoom-out-left" data-aos-duration="600"  data-aos-delay="0">
@@ -24,15 +24,15 @@
           <img src="./s2/2.png" alt />
           <h3 class="title">鴻運當頭時，連喝水都能賺！</h3>
         </div>
-        <div class="item" data-aos="zoom-out-left" data-aos-duration="600"  data-aos-delay="800">
+        <!-- <div class="item" data-aos="zoom-out-left" data-aos-duration="600"  data-aos-delay="800">
           <img src="./s2/3.png" alt />
           <h3 class="title">一兼二顧、又賺又拿別客氣！</h3>
-        </div>
+        </div> -->
       </div>
-      <div class="hint" v-if="!isMobile">＊預約賞屋＊ 鑽石筆X鑽石杯X全家禮卷兩佰元 送完為止!</div>
+      <div class="hint" v-if="!isMobile">＊預約賞屋＊ 鑽石筆X鑽石杯 送完為止!</div>
       <div class="hint" v-if="isMobile">
         ＊預約賞屋＊
-        <br />鑽石筆X鑽石杯X全家禮卷兩佰元 送完為止!
+        <br />鑽石筆X鑽石杯 送完為止!
       </div>
     </div>
   </div>
@@ -46,7 +46,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin: 0 auto;
   margin-bottom: 40px;
 }
@@ -80,18 +80,18 @@
   }
 
   &:nth-child(2) {
-    margin-top: 50px;
-    img {
-      width: calc(100vw * (625 / 1920));
-    }
-  }
-
-  &:nth-child(3) {
     margin-top: -100px;
     img {
       width: calc(100vw * (625 / 1920));
     }
   }
+
+  // &:nth-child(3) {
+  //   margin-top: -100px;
+  //   img {
+  //     width: calc(100vw * (625 / 1920));
+  //   }
+  // }
 
   .title {
     position: absolute;
