@@ -82,7 +82,7 @@
 }
 
 .carousel-3d-container {
-  margin-top: calc(100vw * (260 / 1920));
+  margin-top: calc(100vw * (260 / 1920)) !important;
 }
 // .video-slide {
 //   border: 1px solid #e6b048 !important;
