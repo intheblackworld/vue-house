@@ -31,6 +31,15 @@
       <div id="section9">
         <Section9 />
       </div>
+      <div id="section10">
+        <Section10 />
+      </div>
+      <div id="section11">
+        <Section11 />
+      </div>
+      <div id="section12">
+        <Section12 />
+      </div>
       <ContactSection />
     </div>
     <MobileNav />
@@ -40,6 +49,10 @@
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Playball&display=swap');
 @import '../assets/style/variableColor.scss';
+
+.home {
+  background: url('../projects/cjt/s10/bg.jpg');
+}
 </style>
 
 <script>
@@ -54,11 +67,14 @@ import Section1 from '@/projects/cjt/Section1.vue'
 import Section2 from '@/projects/cjt/Section2.vue'
 import Section3 from '@/projects/cjt/Section3.vue'
 import Section4 from '@/projects/cjt/Section4.vue'
-import Section5 from '@/projects/hy/Section5.vue'
-import Section6 from '@/projects/hy/Section6.vue'
-import Section7 from '@/projects/hy/Section7.vue'
-import Section8 from '@/projects/hy/Section8.vue'
-import Section9 from '@/projects/hy/Section9.vue'
+import Section5 from '@/projects/cjt/Section5.vue'
+import Section6 from '@/projects/cjt/Section6.vue'
+import Section7 from '@/projects/cjt/Section7.vue'
+import Section8 from '@/projects/cjt/Section8.vue'
+import Section9 from '@/projects/cjt/Section9.vue'
+import Section10 from '@/projects/cjt/Section10.vue'
+import Section11 from '@/projects/cjt/Section11.vue'
+import Section12 from '@/projects/cjt/Section12.vue'
 
 export default {
   name: 'home',
@@ -77,6 +93,9 @@ export default {
     Section7,
     Section8,
     Section9,
+    Section10,
+    Section11,
+    Section12,
   },
 
   data() {

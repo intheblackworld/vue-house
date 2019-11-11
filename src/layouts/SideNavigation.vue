@@ -3,8 +3,9 @@
     <div class="nav relative">
       <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
       <div class="menu" @click="toggleSidebar">
-        <img v-if="isOpen" src="@/projects/jh/s4/close.png" class="close" alt />
-        <img v-else src="@/assets/img/menu-btn.png" alt />
+        <div :class="`menu-icon ${isOpen ? 'menu-icon-active' : ''}`"></div>
+        <!-- <img v-if="isOpen" src="@/projects/jh/s4/close.png" class="close" alt />
+        <img v-else src="@/assets/img/menu-btn.png" alt />-->
       </div>
       <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
       <ul :class="`navlist ${isOpen ? 'open': ''}`">
@@ -85,21 +86,25 @@ export default {
 .menu {
   display: block;
   position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 112;
-  top: 0px;
-  right: 0px;
-  width: 140px;
+  top: 30px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
 
-  img {
-    width: 100%;
-  }
+  // img {
+  //   width: 100%;
+  // }
 
-  .close {
-    width: 40px;
-    margin-top: 20px;
-    margin-right: 0px;
-  }
+  // .close {
+  //   width: 40px;
+  //   margin-top: 20px;
+  //   margin-right: 0px;
+  // }
 }
 
 .logo {
@@ -111,6 +116,53 @@ export default {
   display: block;
   top: 0px;
   transform: translateY(0%);
+}
+
+.menu-icon {
+  position: relative;
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+}
+
+.menu-icon::before {
+  position: absolute;
+  left: 0;
+  top: -10px;
+  content: '';
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+}
+
+.menu-icon::after {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  content: '';
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+}
+
+.menu-icon.menu-icon-active {
+  background-color: transparent;
+}
+
+.menu-icon.menu-icon-active::before {
+  transform: rotate(45deg);
+  top: 0;
+  transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+}
+
+.menu-icon.menu-icon-active::after {
+  transform: rotate(-45deg);
+  top: 0;
+  transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
 }
 
 .navlist {
@@ -288,9 +340,9 @@ export default {
   .menu {
     display: block;
     position: fixed;
-    right: 0px;
-    top: 0px;
-    width: 80px;
+    right: 30px;
+    top: 30px;
+    width: 30px;
 
     img {
       width: 100%;

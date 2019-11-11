@@ -55,9 +55,10 @@
       display: block;
       width: 56px !important;
       height: auto !important;
-      left: 0;
+      left: auto;
       right: 0;
-      margin: 0 auto;
+      right: -100%;
+      // margin: 0 auto;
       top: 25% !important;
       display: block;
       animation: swing 2.5s ease-in-out 0s infinite;
