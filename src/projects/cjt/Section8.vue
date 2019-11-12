@@ -1,5 +1,5 @@
 <template>
-  <div class="section3">
+  <div class="section8">
     <div class="bg">
       <div v-if="!isMobile">
         <!-- <img src="./s8/bg.jpg" alt class="bg-img" /> -->
@@ -230,8 +230,10 @@
 
 @media screen and (max-width: 767px) {
   .bg {
-    background-size: 100% 100%;
+    background-size: 100% auto;
     background-image: url('./s8/mo/bg.jpg');
+    background-position: 0 0;
+    background-attachment: scroll;
     padding-top: 0;
     padding-bottom: 0;
     height: auto;
@@ -306,7 +308,7 @@ import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
-  name: 'section3',
+  name: 'section8',
   mixins: [slider],
 
   components: {

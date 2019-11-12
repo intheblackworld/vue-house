@@ -49,6 +49,8 @@
   background: url('./s6/bg.jpg');
   background-size: cover;
   background-attachment: fixed;
+  height: calc(100vw * (1085 / 1920));
+  min-height: 950px;
 }
 
 .text {
@@ -117,7 +119,7 @@
 @media only screen and (max-width: 1440px) and (min-width: 1025px) {
   .fullscreen {
     height: auto;
-    min-height: 750px;
+    min-height: 850px;
   }
 
   .text {
@@ -169,6 +171,7 @@
   }
 
   .bg.fullscreen {
+    min-height: auto !important;
     height: auto !important;
   }
 

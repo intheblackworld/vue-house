@@ -7,8 +7,8 @@ export default [
   { name: '五大商圈', imgSrc: '', subTitle: '', section: 'section6', svgSrc: '' },
   { name: '便利交通', imgSrc: '', subTitle: '', section: 'section7', svgSrc: '' },
   { name: '生態生活', imgSrc: '', subTitle: '', section: 'section8', svgSrc: '' },
-  { name: '建築別墅', imgSrc: '', subTitle: '', section: 'section8', svgSrc: '' },
-  { name: '樂活指標', imgSrc: '', subTitle: '', section: 'section8', svgSrc: '' },
-  { name: '職人精神', imgSrc: '', subTitle: '', section: 'section8', svgSrc: '' },
+  { name: '建築別墅', imgSrc: '', subTitle: '', section: 'section9', svgSrc: '' },
+  { name: '樂活指標', imgSrc: '', subTitle: '', section: 'section10', svgSrc: '' },
+  { name: '職人精神', imgSrc: '', subTitle: '', section: 'section11', svgSrc: '' },
   { name: '預約賞屋', imgSrc: '', subTitle: '', section: 'contact', svgSrc: '' },
 ]

@@ -19,6 +19,7 @@
   background-image: url('./s1/bg.jpg');
   background-position: center;
   background-size: auto;
+  min-height: calc(100vw * (1080 / 1920));
 }
 
 .bg-img {
@@ -74,12 +75,14 @@
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .bg {
+    height: 100vh;
   }
 }
 
 @media screen and (max-width: 767px) {
   .bg {
     background-image: url('./s1/mo/bg.jpg');
+    min-height: auto;
   }
 
   .title {

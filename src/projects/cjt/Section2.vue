@@ -48,7 +48,7 @@
 .bg {
   background-image: url('./s2/bg.jpg');
   background-position: center;
-  background-size: auto;
+  background-size: 100% auto;
 }
 .bg-img {
   width: 100vw;

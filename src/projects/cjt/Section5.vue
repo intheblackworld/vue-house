@@ -6,7 +6,7 @@
         <div class="desc">5大商圈Ⅹ雙大道Ⅹ生態休閒Ⅹ國家級綠校園</div>
       </div>
     </div>
-    <Map :tagList="tagList" :bgSrc="isMobile ? bgmSrc: bgSrc" :hand="hand" :altList="altList">
+    <Map :tagList="tagList" :bgSrc="isMobile ? bgmSrc : bgSrc" :hand="hand" :altList="altList">
       <div class="text" v-if="!isMobile">
         <h3 class="title">森活贏家 菁英聚落</h3>
         <div class="desc">5大商圈Ⅹ雙大道Ⅹ生態休閒Ⅹ國家級綠校園</div>
@@ -185,6 +185,22 @@ export default {
     }
   },
 
-  mounted() {},
+  mounted() {
+    if (this.isMobile) {
+      this.tagList = [
+        require('./s5/2.png'),
+        require('./s5/3.png'),
+        require('./s5/12.png'),
+        require('./s5/4.png'),
+        require('./s5/5.png'),
+        require('./s5/6.png'),
+        require('./s5/7.png'),
+        require('./s5/8.png'),
+        require('./s5/9.png'),
+        require('./s5/10.png'),
+        require('./s5/11.png'),
+      ]
+    }
+  },
 }
 </script>
