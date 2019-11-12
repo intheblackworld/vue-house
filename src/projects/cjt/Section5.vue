@@ -188,17 +188,17 @@ export default {
   mounted() {
     if (this.isMobile) {
       this.tagList = [
-        require('./s5/2.png'),
-        require('./s5/3.png'),
-        require('./s5/12.png'),
-        require('./s5/4.png'),
-        require('./s5/5.png'),
-        require('./s5/6.png'),
-        require('./s5/7.png'),
-        require('./s5/8.png'),
-        require('./s5/9.png'),
-        require('./s5/10.png'),
-        require('./s5/11.png'),
+        // require('./s5/2.png'),
+        // require('./s5/3.png'),
+        // require('./s5/12.png'),
+        // require('./s5/4.png'),
+        // require('./s5/5.png'),
+        // require('./s5/6.png'),
+        // require('./s5/7.png'),
+        // require('./s5/8.png'),
+        // require('./s5/9.png'),
+        // require('./s5/10.png'),
+        // require('./s5/11.png'),
       ]
     }
   },

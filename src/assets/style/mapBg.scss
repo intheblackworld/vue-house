@@ -42,19 +42,19 @@
     overflow-y: hidden;
     .map-bg {
       width: auto;
-      height: 100vh;
+      height: 75vh;
     }
 
     img {
       width: auto;
-      height: 100vh;
+      height: 75vh;
     }
 
     .hand {
       position: absolute;
       z-index: 2;
       display: block;
-      width: 130vw !important;
+      width: 100vw !important;
       height: 88px !important;
       text-align: center;
       left: auto;

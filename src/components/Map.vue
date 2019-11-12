@@ -40,7 +40,7 @@ export default {
         if (hand) {
           // hand.style.left = `${mapBg.clientWidth / 2 - 50}px` 置中
           console.log(mapBg.clientWidth, window.innerWidth)
-          hand.style.left = `${mapBg.clientWidth - window.innerWidth - 50}px`
+          hand.style.left = `${mapBg.clientWidth - window.innerWidth}px`
         }
 
         map.addEventListener('click', () => {
@@ -48,7 +48,7 @@ export default {
         })
 
         // map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2, 0) 置中
-        map.scrollTo(1200, 0)
+        map.scrollTo(mapBg.clientWidth - window.innerWidth, 0)
 
         setTimeout(() => {
           map.addEventListener('scroll', () => {
