@@ -53,15 +53,31 @@
       position: absolute;
       z-index: 2;
       display: block;
-      width: 56px !important;
-      height: auto !important;
+      width: 100vw !important;
+      height: 88px !important;
+      text-align: center;
       left: auto;
       right: 0;
       right: -100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       // margin: 0 auto;
       top: 25% !important;
-      display: block;
-      animation: swing 2.5s ease-in-out 0s infinite;
+      background: rgba(0, 87, 142, .8);
+
+      img {
+        animation: swing 2.5s ease-in-out 0s infinite;
+        display: block;
+        margin: 0 auto;
+        width: 56px;
+        height: auto;
+        position: relative;
+      }
+
+      &.hide {
+        opacity: 0;
+      }
     }
   }
 }

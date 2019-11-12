@@ -1,6 +1,8 @@
 <template>
   <div class="map" id="map">
-    <img :src="hand" alt class="hand" />
+    <div :class="`hand ${isShowHand ? '' : 'hide'}`">
+      <img :src="hand" alt />
+    </div>
     <img class="map-bg" :src="bgSrc" alt />
     <slot></slot>
     <img
@@ -21,6 +23,7 @@ export default {
   data() {
     return {
       isMobile,
+      isShowHand: true,
     }
   },
   mounted() {
@@ -36,11 +39,21 @@ export default {
 
         if (hand) {
           // hand.style.left = `${mapBg.clientWidth / 2 - 50}px` 置中
-          hand.style.left = `${mapBg.clientWidth - (window.innerWidth / 2) - 30}px`
+          hand.style.left = `${mapBg.clientWidth - window.innerWidth}px`
         }
+
+        map.addEventListener('click', () => {
+          this.isShowHand = false
+        })
 
         // map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2, 0) 置中
         map.scrollTo(1200, 0)
+
+        setTimeout(() => {
+          map.addEventListener('scroll', () => {
+            this.isShowHand = false
+          })
+        }, 500)
       }, 500)
     }
   },

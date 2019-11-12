@@ -206,7 +206,7 @@
   }
 
   .carousel-3d-container {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
   }
 
   .video-slide {
