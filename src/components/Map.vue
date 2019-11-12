@@ -39,7 +39,8 @@ export default {
 
         if (hand) {
           // hand.style.left = `${mapBg.clientWidth / 2 - 50}px` 置中
-          hand.style.left = `${mapBg.clientWidth - window.innerWidth}px`
+          console.log(mapBg.clientWidth, window.innerWidth)
+          hand.style.left = `${mapBg.clientWidth - window.innerWidth - 50}px`
         }
 
         map.addEventListener('click', () => {
