@@ -217,7 +217,8 @@
 @media screen and (max-width: 767px) {
   .bg {
     background-size: 100% 100%;
-    background-image: url('./s8/mo/bg.jpg');
+    background-image: none;
+    background-color: #00578e;
     padding-top: 0;
     padding-bottom: 0;
     height: auto;
