@@ -37,6 +37,7 @@
 
 @media screen and (max-width: 767px) {
   .map {
+    position: relative;
     overflow-x: scroll;
     overflow-y: hidden;
     .map-bg {
@@ -77,6 +78,7 @@
 
       &.hide {
         opacity: 0;
+        display: none;
       }
     }
   }
