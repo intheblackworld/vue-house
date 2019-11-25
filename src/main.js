@@ -17,8 +17,6 @@ import VueLazyload from 'vue-lazyload' // 圖片 lazy load
 import VueScrollReveal from 'vue-scroll-reveal'
 import VuePhotoZoomPro from 'vue-photo-zoom-pro'
 
-import { VueReCaptcha } from 'vue-recaptcha-v3'
-
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   faBars,
@@ -62,8 +60,6 @@ Vue.use(ElementUI)
 Vue.use(VueScrollTo)
 Vue.use(VueLazyload)
 Vue.use(VueScrollReveal)
-
-Vue.use(VueReCaptcha, { siteKey: info.recaptcha_site_key })
 
 new Vue({
   router,
