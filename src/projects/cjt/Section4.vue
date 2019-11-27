@@ -3,14 +3,17 @@
     <div class="bg relative" v-if="!isMobile">
       <img src="./s4/bg.jpg" alt="輕井澤" class="bg-img" />
       <div class="text">
-        <h3 class="title" data-aos="fade" data-aos-delay="200">九份子新都心</h3>
+        <h3 class="title" data-aos="fade" data-aos-delay="200">九份子新都心 國際水岸第一排</h3>
         <div class="subtitle" data-aos="fade" data-aos-delay="400">低密度、高綠覆 純住宅重劃區</div>
       </div>
     </div>
     <div class="bg relative" v-else>
-       <img src="./s4/mo/bg.jpg" alt="輕井澤" class="bg-img" />
+      <img src="./s4/mo/bg.jpg" alt="輕井澤" class="bg-img" />
       <div class="text">
-        <h3 class="title" data-aos="fade" data-aos-delay="200">九份子新都心</h3>
+        <h3 class="title" data-aos="fade" data-aos-delay="200">
+          <b>九份子新都心</b>
+          <br />國際水岸第一排
+        </h3>
         <div class="subtitle" data-aos="fade" data-aos-delay="400">低密度、高綠覆 純住宅重劃區</div>
       </div>
     </div>
@@ -42,12 +45,12 @@
   top: calc(100vw * (150 / 1920));
 
   .title {
-    font-size: calc(100vw * (90 / 1920));
+    font-size: 4vw;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
-    letter-spacing: 7.4px;
+    letter-spacing: 0;
     text-align: center;
     color: #ffffff;
   }
@@ -78,10 +81,14 @@
   }
 
   .text {
-    top: calc(100vw * (50 / 375));
+    top: 8vw;
     .title {
       font-size: 36px;
       letter-spacing: 1.44px;
+
+      b {
+        font-size: 1.17em;
+      }
     }
 
     .subtitle {
