@@ -1,8 +1,8 @@
 export default {
   address: '台南市中西區中華西路二段865號旁 (大魯閣旁)',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.4711926024343!2d120.1838555149674!3d23.006465284961298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e7641bf4667cd%3A0x40c8a3d577f8a8b5!2zU1RBUkJVQ0tTIOaYn-W3tOWFiyAo5rmW576O6ZaA5biCKQ!5e0!3m2!1szh-TW!2stw!4v1573290900998!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/QyiTjDwqvUqGdHWW7',
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14689.887773414743!2d120.1861744!3d23.0064377!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xbded28944b627341!2z6JeP576OwrfovJXkupXmvqQ!5e0!3m2!1szh-TW!2stw!4v1575285586200!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/AjkbQxcKqZfupfE38',
   phone: '06-3508787',
   fbLink: 'https://www.facebook.com/藏美建設-輕井澤-112099810143754/',
   fbMessage: 'https://m.me/112099810143754/',
