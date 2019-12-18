@@ -3,6 +3,7 @@
     <Loading :loading="load" />
     <SideNavigation v-if="isSide" />
     <Navigation v-else />
+    <Indigator />
     <div id="section1">
       <Section1 />
     </div>
@@ -49,6 +50,7 @@ import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
+import Indigator from '@/components/Indigator.vue'
 
 import Section1 from '@/projects/hy/Section1.vue'
 import Section2 from '@/projects/hy/Section2.vue'
@@ -64,6 +66,7 @@ export default {
   name: 'home',
   components: {
     Loading,
+    Indigator,
     Navigation,
     SideNavigation,
     ContactSection,
