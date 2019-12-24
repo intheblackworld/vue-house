@@ -1,6 +1,6 @@
 <template>
   <div class="section1">
-    <div class="bg fullscreen">
+    <div class="bg fullscreen" @click="$refs.audio.play()">
       <div class="fix-group">
         <div class="button" @click="modal = true">
           <img src="./button.png" alt />
@@ -13,6 +13,9 @@
       <audio controls style="display: none" ref="audio" loop="loop">
         <source src="./music.mp3" type="audio/mpeg" />
       </audio>-->
+      <audio controls style="display: none" ref="audio" loop="loop" @click="playMusic">
+        <source src="./s1/Christmas_Village.mp3" type="audio/mpeg" />
+      </audio>
       <div class="modal" v-if="modal">
         <div class="mask"></div>
         <div>
@@ -254,6 +257,10 @@ export default {
         this.isPlay = true
       }
     },
+  },
+
+  mounted() {
+    this.$refs.audio.play()
   },
 
   created() {
