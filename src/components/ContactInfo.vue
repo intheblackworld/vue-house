@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="contact-info">
     <img class="logo" src="@/assets/img/contact-logo.png" alt="幸福大院的圖片" />
     <div class="info">
@@ -8,47 +9,48 @@
           {{info.phone}}
         </span>
       </div>
-      <div class="btn flex-c" v-if="isMobile">
+      <div class="btn flex-c">
         <span class="flex-c" @click="showMessengerDialog">
           <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB 諮詢
         </span>
       </div>
-      <a class="btn flex-c" :href="info.fbMessage" target="_blank" v-else>
+      <!-- <a class="btn flex-c" :href="info.fbMessage" target="_blank" v-else>
         <span class="flex-c">
           <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB 諮詢
         </span>
-      </a>
+      </a> -->
       <a class="btn flex-c" :href="info.fbLink" target="_blank">
         <span class="flex-c">
           <font-awesome-icon :icon="['fab', 'facebook-f']" />前往粉絲專頁
         </span>
       </a>
       <div class="address flex-c">{{info.address}}</div>
-      <div class="btn flex-c" v-if="isMobile">
+      <div class="btn flex-c">
         <span class="flex-c" @click="showMapDialog">
           <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
         </span>
       </div>
-      <a class="google-btn flex-c" :href="info.googleLink" target="_blank" v-else>
+      <!-- <a class="google-btn flex-c" :href="info.googleLink" target="_blank" v-else>
         <span class="flex-c">
           <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
         </span>
-      </a>
-      <el-dialog title :visible.sync="isShowCallDialog" width="90%" :modal-append-to-body="false">
-        <CallDialog :phone="info.phone" />
-      </el-dialog>
-      <el-dialog
-        title
-        :visible.sync="isShowMessengerDialog"
-        width="90%"
-        :modal-append-to-body="false"
-      >
-        <MessengerDialog :messenger="info.fbMessage" />
-      </el-dialog>
-      <el-dialog title :visible.sync="isShowMapDialog" width="90%" :modal-append-to-body="false">
-        <MapDialog :link="info.googleLink" :address="info.address" />
-      </el-dialog>
+      </a> -->
     </div>
+  </div>
+  <el-dialog title :visible.sync="isShowCallDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
+    <CallDialog :phone="info.phone" />
+  </el-dialog>
+  <el-dialog
+    title
+    :visible.sync="isShowMessengerDialog"
+    :width="isMobile ? '90%' : '500px'"
+    :modal-append-to-body="false"
+  >
+    <MessengerDialog :messenger="info.fbMessage" />
+  </el-dialog>
+  <el-dialog title :visible.sync="isShowMapDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
+    <MapDialog :link="info.googleLink" :address="info.address" />
+  </el-dialog>
   </div>
 </template>
 
@@ -78,16 +80,16 @@ export default {
   },
   methods: {
     showCallDialog() {
-      if (!this.isMobile) return
+      // if (!this.isMobile) return
       this.isShowCallDialog = true
     },
     showMessengerDialog() {
-      if (!this.isMobile) return
+      // if (!this.isMobile) return
       this.isShowMessengerDialog = true
     },
 
     showMapDialog() {
-      if (!this.isMobile) return
+      // if (!this.isMobile) return
       this.isShowMapDialog = true
     },
   },
