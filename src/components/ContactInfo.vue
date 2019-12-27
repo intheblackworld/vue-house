@@ -121,7 +121,7 @@ export default {
 .logo {
   width: $contact_logo_pc_width;
   height: auto;
-  margin: 0 auto;
+  margin: 50px auto 50px;
 }
 .info {
   width: 880px;
@@ -152,8 +152,8 @@ export default {
   }
 
   &:hover {
-    // background: $contact_btn_hover_bg;
-    background-image: url("../assets/img/contact_gold_button.png");
+    background: $contact_btn_hover_bg;
+    // background-image: url("../assets/img/contact_gold_button.png");
     color: $contact_btn_hover_color;
 
     svg {
@@ -174,8 +174,8 @@ export default {
   cursor: pointer;
   text-decoration: none;
   color: $contact_google_btn_color;
-  // background: $contact_google_btn_bg;
-  background-image: url("../assets/img/contact_gold_button.png");
+  background: $contact_google_btn_bg;
+  // background-image: url("../assets/img/contact_gold_button.png");
   box-shadow: $contact_btn_border;
   transition: all 0.5s;
 

@@ -1,7 +1,7 @@
 <template>
   <div class="map" id="map">
     <img :src="hand" alt class="hand" />
-    <img class="map-bg" :src="bgSrc" alt />
+    <img class="map-bg" :src="bgSrc" alt ref="mapbg" />
     <slot></slot>
     <img
       :src="tag"

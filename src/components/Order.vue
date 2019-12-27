@@ -1,24 +1,25 @@
 <template>
   <div class="order-bg">
     <h3 class="order-title">{{order.title}}</h3>
+    <hr style="border-color: #cc0011; width: calc(100vw * (160/1920));margin: 15px auto;">
     <h3 class="order-subtitle">{{order.subTitle}}</h3>
     <div class="order">
       <div class="form">
         <div class="group">
           <div class="row">
-            <label>姓名</label>
+            <label>姓名<span>*</span></label>
             <el-input v-model="form.name" placeholder></el-input>
           </div>
           <div class="row">
-            <label>手機</label>
+            <label>手機<span>*</span></label>
             <el-input v-model="form.phone" placeholder></el-input>
           </div>
           <div class="row">
-            <label>E-mail</label>
+            <label>E-mail<span>*</span></label>
             <el-input v-model="form.email" placeholder></el-input>
           </div>
           <div class="row">
-            <label>居住城市</label>
+            <label>居住城市<span>*</span></label>
             <el-select v-model="form.city" placeholder>
               <el-option
                 v-for="city in cityList"
@@ -29,7 +30,7 @@
             </el-select>
           </div>
           <div class="row">
-            <label>居住地區</label>
+            <label>居住地區<span>*</span></label>
             <el-select v-model="form.area" placeholder>
               <el-option
                 v-for="area in areaList"
@@ -185,8 +186,8 @@ export default {
 @import '@/assets/style/variableColor.scss';
 .order-bg {
   // background-color: $order_bg_color;
-  // background-image: $order_bg_image;
-  background-image: url("../assets/img/contact_bg.jpg");
+  background-image: $order_bg_image;
+  background-size: cover;
   position: relative;
   padding-top: 80px;
 

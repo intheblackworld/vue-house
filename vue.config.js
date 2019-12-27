@@ -32,7 +32,7 @@ module.exports = {
     config.module
       .rule('@yzfe/vue-svgicon-loader')
       .test(/\.svg$/)
-      .include.add(resolve('src/assets/svg')) // 处理svg目录
+      .include.add(resolve('src/')) // 处理svg目录
       .end()
       .use('@yzfe/vue-svgicon-loader')
       .loader('@yzfe/vue-svgicon-loader')

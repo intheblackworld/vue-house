@@ -25,7 +25,7 @@ export default {
       if (this.slideList4) {
         this.addMultiIndex(4)
       }
-    }, 4000)
+    }, 20000)
   },
   methods: {
     addIndex() {

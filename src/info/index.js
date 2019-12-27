@@ -1,25 +1,23 @@
 export default {
-  address: '台南市安南區環館路358巷2號',
+  address: '台北市內湖新明路458號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14683.644421308198!2d120.2364888!3d23.0637204!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1c3a1f04f9d9984a!2z5ZyL5o-a57-h57-g5qOu5p6X!5e0!3m2!1szh-TW!2stw!4v1568684298341!5m2!1szh-TW!2stw',
-  phone: '06-7861788',
-  fbLink: 'https://www.facebook.com/jadeforestvilla/',
-  fbMessage: 'https://m.me/jadeforestvilla',
-  googleLink: 'https://goo.gl/maps/8yUfkfkP87hLqZDk7',
-  caseName: '幸福大院',
-
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.4207387968268!2d121.57681031500671!3d25.053724983963136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab9cc360dba5%3A0xf5f86a9911f033e9!2zMTE05Y-w5YyX5biC5YWn5rmW5Y2A5paw5piO6LevNDU46Jmf!5e0!3m2!1szh-TW!2stw!4v1577349330076!5m2!1szh-TW!2stw',
+  phone: '02-27945588',
+  fbLink: 'https://www.facebook.com/easttaipei/',
+  fbMessage: 'https://m.me/easttaipei/',
+  googleLink: 'https://goo.gl/maps/HUF6GsfNe8gjuNb77',
+  caseName: '大道東',
   houseInfos: [
-    ['投資興建', '威力國際開發股份有限公司'],
-    ['全案指導', '國揚實業股份有限公司'],
-    ['建築規劃', '元宏聯合建築師事務所'],
-    ['景觀規劃', '老圃造園工程股份有限公司'],
-    ['燈光設計', '日本Sirius Lighting Office'],
-    ['環控設計', '國立成功大學 祐生環控研究中心'],
-    ['結構設計', '凱巨工程顧問公司'],
-    ['會館設計', '橙田室內裝修設計工程有限公司']
+    ['接待會館', '台北市內湖新明路458號'],
+    ['投資興建', '誠群建設．君璽建設'],
+    ['建築設計', '姚嘉志建築師事務所'],
+    ['空間規劃', '磐石設計'],
+    ['樓層規劃', '13F/B3'],
+    ['坪數規劃', '28-30坪 正3房2廳2衛'],
+    ['樓層高度', '3.5米'],
   ],
 
-  gtmCode: ['N2DQP3H'], // 可放置多個
+  gtmCode: ['WCJJH2M'], // 可放置多個
   order: {
     title: '預約賞屋',
     subTitle: ''

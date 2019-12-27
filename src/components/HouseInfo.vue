@@ -1,7 +1,10 @@
 <template>
   <div class="house-info">
     <div class="content">
-      <div class="title">建案資訊</div>
+      <div class="title">
+        建案資訊
+        <hr style="border-color: #cc0011; width: calc(100vw * (160/1920));margin: 15px auto;" />
+      </div>
       <div class="info">
         <div class="item" :key="infos[0]" v-for="infos in houseInfos">
           <h3 class="label">{{infos[0]}}</h3>
