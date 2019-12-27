@@ -68,7 +68,7 @@
         @click="submit"
         :loading="isSubmit"
       >立即預約</el-button>
-      <Loading :loading="isSubmit" :isOpacity="true" />
+      <!-- <Loading :loading="isSubmit" :isOpacity="true" /> -->
     </div>
     <ContactInfo />
     <GoogleMap />

@@ -385,7 +385,7 @@
     width: calc(100vw * (672 / 750));
     position: absolute;
     right: -10%;
-    bottom: calc(100vw * (380 / 750));
+    bottom: calc(100vw * (390 / 750));
     z-index: 3;
   }
 
@@ -397,6 +397,12 @@
       transform: rotate(-20deg);
       opacity: 1;
     }
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .three-d {
+    bottom: calc(100vw * (440 / 750));
   }
 }
 </style>

@@ -86,7 +86,7 @@ export default {
   position: fixed;
   z-index: 112;
   top: 30px;
-  right: 30px;
+  left: 30px;
   width: 40px;
   cursor: pointer;
 
@@ -106,13 +106,13 @@ export default {
   z-index: 111;
   background: $nav_bg;
   width: 0%;
-  right: 0;
+  left: 0;
   top: $nav_phone_height;
   height: calc(100vh - #{$nav_phone_height});
   text-align: center;
   transition: all 0.3s ease-in;
   display: block;
-  transform: translateX(40%);
+  transform: translateX(0%);
 
   li {
     height: 60px;
@@ -152,38 +152,6 @@ export default {
     flex-wrap: wrap;
     align-content: center;
 
-    li:hover {
-      // custom style
-      &:nth-child(1),
-      &:nth-child(5) {
-        background-image: url('~@/assets/img/side/1.png');
-        background-size: 105px;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-      &:nth-child(2),
-      &:nth-child(6) {
-        background-image: url('~@/assets/img/side/2.png');
-        background-size: 105px;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-      &:nth-child(3),
-      &:nth-child(7) {
-        background-image: url('~@/assets/img/side/3.png');
-        background-size: 105px;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-      &:nth-child(4),
-      &:nth-child(8) {
-        background-image: url('~@/assets/img/side/4.png');
-        background-size: 105px;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-    }
-
     .link {
       display: flex;
       justify-content: center;
@@ -197,6 +165,8 @@ export default {
       }
 
       .subTitle {
+        font-family: 'Barlow Condensed', sans-serif;
+        margin-top: 5px;
         color: $nav_link_subtitle_color;
       }
       .divided {
@@ -204,7 +174,7 @@ export default {
       }
 
       &:hover {
-        .title {
+        .title,.subTitle {
           color: $nav_link_hover_color;
         }
       }
@@ -288,7 +258,7 @@ export default {
   .menu {
     display: block;
     position: fixed;
-    right: 30px;
+    left: 0px;
     top: 20px;
     width: 40px;
 
@@ -318,7 +288,7 @@ export default {
     text-align: center;
     transition: all 0.3s ease-in;
     display: block;
-    transform: translateX(40%);
+    transform: translateX(0%);
 
     li {
       height: 50px;
