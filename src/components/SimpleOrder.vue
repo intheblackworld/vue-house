@@ -239,7 +239,6 @@ export default {
     margin-bottom: 18px;
     text-align: center;
     color: $order_title_color;
-    font-size: 90px;
     font-weight: bold;
     font-style: normal;
     font-stretch: normal;

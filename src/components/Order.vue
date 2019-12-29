@@ -199,12 +199,13 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/style/variableColor.scss';
 .order-bg {
-  background-color: $order_bg_color;
-  // background-image: url('../assets/img/order-bg.jpg');
+  // background-color: $order_bg_color;
+  background-image: url('../assets/img/order-bg.jpg');
   position: relative;
   padding-top: 80px;
 
   .order-title {
+    font-size: calc(100vw * (75 / 1920));
     margin-top: 40px;
     margin-bottom: 8px;
     font-size: 36px;
@@ -361,7 +362,7 @@ export default {
   padding-top: 80px;
 
   .order-title {
-    font-size: calc(100vw * (135 / 1920));
+    font-size: calc(100vw * (75 / 1920));
     background-size: cover;
     display: flex;
     align-items: flex-start;
@@ -371,7 +372,6 @@ export default {
     margin-bottom: 18px;
     text-align: center;
     color: $order_title_color;
-    font-size: 90px;
     font-weight: bold;
     font-style: normal;
     font-stretch: normal;

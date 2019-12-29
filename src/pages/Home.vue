@@ -7,15 +7,18 @@
     <div id="section1">
       <Section1 />
     </div>
-    <div id="section3">
-      <Section3 />
-    </div>
     <div id="section2">
       <Section2 />
     </div>
-    <!-- <div id="section4">
+    <div id="section3">
+      <Section3 />
+    </div>
+    <div id="section4">
       <Section4 />
-    </div> -->
+    </div>
+    <div id="section5">
+      <Section5 />
+    </div>
     <ContactSection />
     <!-- <SimpleOrder /> -->
     <!-- <MobileNav /> -->
@@ -35,9 +38,11 @@ import ContactSection from '@/layouts/ContactSection.vue'
 import Loading from '@/components/Loading.vue'
 import gtm from '@/mixins/gtm.js'
 
-import Section1 from '@/projects/ywh/Section1.vue'
-import Section2 from '@/projects/ywh/Section2.vue'
-import Section3 from '@/projects/ywh/Section3.vue'
+import Section1 from '@/projects/ycfy/Section1.vue'
+import Section2 from '@/projects/ycfy/Section2.vue'
+import Section3 from '@/projects/ycfy/Section3.vue'
+import Section4 from '@/projects/ycfy/Section4.vue'
+import Section5 from '@/projects/ycfy/Section5.vue'
 // import SimpleOrder from '@/components/SimpleOrder.vue'
 
 export default {
@@ -52,6 +57,8 @@ export default {
     Section1,
     Section2,
     Section3,
+    Section4,
+    Section5,
     // SimpleOrder,
 
   },
@@ -71,7 +78,7 @@ export default {
       }, 0)
     })
 
-    window.location = "https://ywh.nhc888.com.tw/"
+    // window.location = "https://ywh.nhc888.com.tw/"
   },
 
   methods: {

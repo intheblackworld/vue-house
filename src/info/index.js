@@ -22,7 +22,7 @@ export default {
 
   gtmCode: ['WVKDXLL'], // 可放置多個
   order: {
-    title: '預約友文化 牽手去找家',
-    subTitle: '留下您的大名、電話、進行預賞屋，早鳥優惠不等人!'
+    title: '豐收大林口  岳見新生活',
+    subTitle: '請留下您的大名、電話、進行預約賞屋!'
   }
 }

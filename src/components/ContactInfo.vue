@@ -2,27 +2,28 @@
   <div class="contact-info">
     <img class="logo" src="@/assets/img/contact-logo.png" alt="心天畝的圖片" />
     <div class="info">
-      <div class="btn flex-c" @click="showCallDialog">
+      <div class="address flex-c">{{info.phone}}</div>
+      <div class="google-btn flex-c" @click="showCallDialog">
         <span class="flex-c">
           <font-awesome-icon icon="phone" />
           {{info.phone}}
         </span>
       </div>
-      <div class="btn flex-c" v-if="isMobile">
+      <!-- <div class="btn flex-c" v-if="isMobile">
         <span class="flex-c" @click="showMessengerDialog">
           <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB 諮詢
         </span>
-      </div>
-      <a class="btn flex-c" :href="info.fbMessage" target="_blank" v-else>
+      </div> -->
+      <!-- <a class="btn flex-c" :href="info.fbMessage" target="_blank" v-else>
         <span class="flex-c">
           <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB 諮詢
         </span>
-      </a>
-      <a class="btn flex-c" :href="info.fbLink" target="_blank">
+      </a> -->
+      <!-- <a class="btn flex-c" :href="info.fbLink" target="_blank">
         <span class="flex-c">
           <font-awesome-icon :icon="['fab', 'facebook-f']" />前往粉絲專頁
         </span>
-      </a>
+      </a> -->
       <div class="address flex-c">{{info.address}}</div>
       <div class="btn flex-c" v-if="isMobile">
         <span class="flex-c" @click="showMapDialog">
@@ -102,7 +103,7 @@ export default {
   background: $contact_bg;
   // background-image: url('../assets/img/contact_bg.jpg');
   background-size: cover;
-  background-position: 50% 100%;
+  background-position: top;
   box-shadow: $contact_shadow;
   display: flex;
   flex-direction: column;
@@ -165,6 +166,7 @@ export default {
   height: 60px;
   background: $contact_btn_bg;
   box-shadow: $contact_btn_border;
+  margin-bottom: 15px;
 }
 .google-btn {
   width: 280px;
