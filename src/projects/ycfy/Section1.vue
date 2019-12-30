@@ -2,17 +2,17 @@
   <div class="section1">
     <div class="bg relative">
       <div v-if="!isMobile">
-        <img src="./s1/bg.jpg" alt class="img" />
-        <img src="./s1/bg2.jpg" alt class="img fix mix" />
-        <img src="./s1/bg3.png" alt class="img" />
-        <img src="./s1/img1.png" alt class="img fix" />
-        <img src="./s1/logo.png" alt="頤昌豐岳" class="img" />
-        <img src="./s1/text1.png" alt="雙語校園｜無瑕景觀｜ 豐居久安" class="img" />
-        <img src="./s1/title.png" alt="早鳥豐收價 24.8萬起" class="img" />
+        <img src="./s1/bg.jpg" alt class="img"/>
+        <img src="./s1/bg2.jpg" alt class="img fix mix" data-aos="fade" data-aos-delay="200" />
+        <img src="./s1/bg3.png" alt class="img" data-aos="fade" data-aos-delay="400" />
+        <img src="./s1/img1.png" alt class="img fix" data-aos="fade" data-aos-delay="600" />
+        <img src="./s1/logo.png" alt="頤昌豐岳" class="img" data-aos="fade" data-aos-delay="700" />
+        <img src="./s1/text1.png" alt="雙語校園｜無瑕景觀｜ 豐居久安" class="img" data-aos="fade" data-aos-delay="900" />
+        <img src="./s1/title.png" alt="早鳥豐收價 24.8萬起" class="img" data-aos="fade" data-aos-delay="800" />
       </div>
       <div v-if="isMobile">
         <img src="./s1/mo/bg.jpg" alt class="img" />
-        <img src="./s1/mo/bg2.jpg" alt class="img" />
+        <img src="./s1/mo/bg2.jpg" alt class="img fix mix" />
         <img src="./s1/mo/bg3.png" alt class="img" />
         <img src="./s1/mo/logo.png" alt class="img" />
         <img src="./s1/mo/text1.png" alt class="img" />
@@ -72,6 +72,13 @@
 @media screen and (max-width: 767px) {
   .bg {
     background-size: cover;
+  }
+
+  .img {
+    &:nth-child(1) {
+      position: relative;
+      height: calc(100vw * (636 / 375));
+    }
   }
 }
 </style>

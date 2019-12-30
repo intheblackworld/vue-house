@@ -2,12 +2,12 @@
   <div class="section4">
     <div class="bg relative">
       <div v-if="!isMobile">
-        <img src="./s5/text.png" alt class="text" />
+        <img src="./s5/text.png" alt class="text" data-aos="fade" data-aos-delay="200" />
         <img src="./s5/bottom.png" alt class="img" />
       </div>
       <div v-if="isMobile">
+        <img src="./s5/text.png" alt class="img" data-aos="fade" data-aos-delay="200" />
         <img src="./s5/mo/bottom.png" alt class="img" />
-        <img src="./s5/text.png" alt class="text" />
       </div>
     </div>
   </div>
@@ -72,6 +72,20 @@
 @media screen and (max-width: 767px) {
   .bg {
     background-size: cover;
+  }
+
+  .img {
+    &:nth-child(1) {
+      position: relative;
+      width: calc(100vw * (242 / 375));
+      margin: 0 auto;
+      padding-top: 25px;
+    }
+
+    &:nth-child(2) {
+      position: relative;
+      margin-top: -50px;
+    }
   }
 }
 </style>

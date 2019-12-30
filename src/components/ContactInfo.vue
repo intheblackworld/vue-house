@@ -1,9 +1,15 @@
 <template>
   <div class="contact-info">
-    <img class="logo" src="@/assets/img/contact-logo.png" alt="心天畝的圖片" />
+    <img class="logo" src="@/assets/img/contact-logo.png" alt />
     <div class="info">
-      <div class="address flex-c">{{info.phone}}</div>
-      <div class="google-btn flex-c" @click="showCallDialog">
+      <div class="address flex-c" v-if="!isMobile">{{info.phone}}</div>
+      <div class="google-btn flex-c" @click="showCallDialog" v-if="!isMobile">
+        <span class="flex-c">
+          <font-awesome-icon icon="phone" />
+          {{info.phone}}
+        </span>
+      </div>
+      <div class="btn flex-c" @click="showCallDialog" v-if="isMobile">
         <span class="flex-c">
           <font-awesome-icon icon="phone" />
           {{info.phone}}
@@ -24,8 +30,9 @@
           <font-awesome-icon :icon="['fab', 'facebook-f']" />前往粉絲專頁
         </span>
       </a> -->
-      <div class="address flex-c">{{info.address}}</div>
-      <div class="btn flex-c" v-if="isMobile">
+      <div class="address flex-c" v-html="info.address" v-if="!isMobile"></div>
+      <div class="address" v-html="info.address" v-if="isMobile"></div>
+      <div class="google-btn flex-c" v-if="isMobile">
         <span class="flex-c" @click="showMapDialog">
           <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
         </span>
@@ -244,6 +251,9 @@ export default {
 
   .address {
     width: 280px;
+    padding: 10px 15px;
+    margin-bottom: 0;
+    text-align: left;
   }
 }
 </style>
