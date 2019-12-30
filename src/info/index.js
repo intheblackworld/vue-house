@@ -1,14 +1,13 @@
 export default {
-  address: '接待中心：桃園市龜山區文化一路與文桃路口',
+  address: '接待中心：桃園市龜山區樂善二路',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.595959978608!2d121.38554471500647!3d25.047782283965994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a7357888a373%3A0x722f5e46ee087c0e!2z5Y-L5paH5YyW5o6l5b6F5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1568889293433!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/mdTJAZW84cZ6XAch8',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d903.6608972404138!2d121.38686952921384!3d25.046166698997933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDAyJzQ2LjIiTiAxMjHCsDIzJzE0LjciRQ!5e0!3m2!1szh-TW!2stw!4v1577702442368!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/aKE25sLzC15gi8yB7',
   phone: '03-3765588',
   fbLink:
     'https://www.facebook.com/%E5%8F%8B%E6%96%87%E5%8C%96-100596024670205/',
   fbMessage: 'https://m.me/100596024670205',
-  caseName: '友文化',
-
+  caseName: '頤昌豐岳',
   houseInfos: [
     // ['投資興建', '築禾建設股份有限公司'],
     // ['廣告代銷', '新誠家廣告有限公司'],
@@ -20,7 +19,7 @@ export default {
     // ['坪數規劃', '2房(30~31坪) 、3房(42~46坪) 、3+1房(48坪)、4房(59~73坪)']
   ],
 
-  gtmCode: ['5TFPQVG'], // 可放置多個
+  gtmCode: ['NV2FC34'], // 可放置多個
   recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
