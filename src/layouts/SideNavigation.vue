@@ -1,9 +1,10 @@
 <template>
   <div class="sideNav">
-    <div class="nav relative">
+    <div :class="`nav relative ${isOpen ? 'open' : ''}`">
       <div class="menu" @click="toggleSidebar">
-        <img v-if="isOpen" src="@/assets/img/close.png" class="close" alt />
-        <img v-else src="@/assets/img/menu-btn.png" alt />
+        <span data-v-8ecc579a="" class="menu_icon"></span>
+        <span data-v-8ecc579a="" class="menu_text">MENU</span>
+
       </div>
       <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
       <ul :class="`navlist ${isOpen ? 'open': ''}`">
@@ -82,12 +83,13 @@ export default {
 }
 
 .menu {
+  text-align: center;
   display: block;
   position: fixed;
   z-index: 112;
-  top: 30px;
-  left: 30px;
-  width: 40px;
+  top: 0;
+  left: 0;
+  width: 80px;
   cursor: pointer;
 
   img {
@@ -100,19 +102,63 @@ export default {
     margin-right: 0px;
   }
 }
+ .menu_icon,.menu_icon::after,.menu_icon::before,{
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 1px;
+        left: 0;
+        background-color: #000;
+        content: "";
+        transition: all .3s;
+        top: 0
+ }
+ .menu_icon{
+        -webkit-transition: all .3s;
+        transition: all .3s;
+        text-indent: -9999px;
+        line-height: 0;
+        top: 40%;
+        left: 25%;width: 50%;
+        margin-top:-2px; 
+ }
 
+ .menu_icon::before {
+        -webkit-transform: translateY(1000%);
+        transform: translateY(1000%)
+ }
+
+ .menu_icon::after {
+        -webkit-transform: translateY(-1000%);
+        transform: translateY(-1000%)
+ }
+ .menu_text{display: block;font-size: 1em;
+   font-family: "Barlow Condensed";font-weight: bold;margin: 50px 0 20px 0;transition: all 0.5s;overflow: hidden
+  }
+  .open{
+     .menu_icon {width:0;
+    }
+
+    .menu_icon:before {opacity: 0
+    }
+
+     .menu_icon:after {opacity: 0
+    }
+    .menu_text{transform: translate(0) rotate(90deg);font-size: 1.5em;}
+    }
 .navlist {
   position: fixed;
   z-index: 111;
-  background: $nav_bg;
-  width: 0%;
-  left: 0;
+  width:0;overflow: hidden;
+  left:25px;
   top: $nav_phone_height;
   height: calc(100vh - #{$nav_phone_height});
   text-align: center;
-  transition: all 0.3s ease-in;
-  display: block;
+  transition: all 1s ease-in;
+    display: flex;
+    flex-wrap: wrap;
   transform: translateX(0%);
+    align-content: center;
 
   li {
     height: 60px;
@@ -128,8 +174,10 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    display: none;
     background-size: cover;
+    position: relative;
+    cursor: pointer;
+    padding: 0 50px 0 0;
 
     img,
     span {
@@ -137,38 +185,60 @@ export default {
     }
     span {
       line-height: 16px;
-    }
-
-    &:hover {
-      color: $nav_link_hover_color;
-      // background: $nav_link_hover_bg;
-    }
-  }
-
-  &.open {
-    width: 230px;
-    transform: translateX(0%);
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-
-    .link {
-      display: flex;
-      justify-content: center;
-      cursor: pointer;
-      span {
         white-space: nowrap;
-      }
-
-      .title {
-        color: $nav_link_color;
-      }
+    }
+    &::before{
+      position: absolute;
+      display: block;
+      right:205px;
+      content: "";
+      top: calc(50% - 0.5em);
+      width: 25px;height: 1px;
+      opacity:1;
+      transition: all .3s;
+      border: 1px solid #000;border-width: 1px 1px 0 0;
+    }
+    &:hover:before{
+      background:none;width: 15px;height:15px;border-color: #c00;transform:rotate(45deg);
+      animation: menu_l 0.3s infinite alternate ease-out;
+    } 
 
       .subTitle {
         font-family: 'Barlow Condensed', sans-serif;
         margin-top: 5px;
         color: $nav_link_subtitle_color;
       }
+      .title {
+        color: $nav_link_color;
+      }
+}
+@keyframes menu_l{
+    to{
+        right:200px;
+    }
+}
+
+  &::before{
+      position: absolute;
+      display: block;
+      left: 0;
+      background-color: #000;
+      content: "";
+      top: 0;
+      width: 1px;height: 0px;
+      opacity: 0;
+      transition: all 1s;
+      }
+  &.open::before{
+      height:calc(50vh + 190px);
+      opacity: 1;
+      }
+  &.open {
+    width:230px;
+    transform: translateX(0%);
+   opacity: 1;
+
+    .link {
       .divided {
         display: none;
       }
@@ -192,6 +262,11 @@ export default {
   height: calc(100vh - #{$nav_phone_height});
   opacity: 0;
   transition: all 0.3s ease-in;
+  background: -moz-linear-gradient(left,  rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+background: -webkit-linear-gradient(left,  rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.8) 50%,rgba(255,255,255,0) 100%);
+background: linear-gradient(to right,  rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.8) 50%,rgba(255,255,255,0) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccffffff', endColorstr='#00ffffff',GradientType=1 );
+
   &.open {
     display: block;
     width: 100vw;
@@ -202,7 +277,7 @@ export default {
 
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .navigation {
+ /* .navigation {
     height: $nav_tablet_height;
     justify-content: center;
   }
@@ -230,12 +305,13 @@ export default {
       margin-left: 6px;
     }
   }
+  */
 }
 
 /* 螢幕尺寸標準 */
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
-  .navigation {
+ /* .navigation {
     height: $nav_phone_height;
     z-index: 110;
   }
@@ -346,6 +422,6 @@ export default {
       opacity: 1;
       z-index: 110;
     }
-  }
+  }*/
 }
 </style>

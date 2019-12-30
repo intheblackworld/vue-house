@@ -177,7 +177,7 @@
 @media screen and (max-width: 767px) {
   .bg {
     flex-wrap: wrap;
-    background-image: url('./s3/bg_m.png');
+    background:none;
   }
 
   .slide {
@@ -189,6 +189,9 @@
 
   .content {
     width: 100vw;
+    background-image: url('./s3/bg_m.png');
+    
+    background-size: cover;
 
     > div {
       width: 90vw;

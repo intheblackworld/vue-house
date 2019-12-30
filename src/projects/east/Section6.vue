@@ -36,7 +36,7 @@
 .bg {
   background-image: url('./s6/bg.jpg');
   background-position: 100% 0%;
-  background-size: cover;
+  background-size: cover;background-attachment: fixed;
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -149,6 +149,9 @@
       color: #fff;
       text-shadow: 0 0 3px #000;
     }
+  }
+  &:hover{
+  animation-play-state:paused;
   }
 }
 

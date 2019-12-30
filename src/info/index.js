@@ -1,5 +1,5 @@
 export default {
-  address: '台北市內湖新明路458號',
+  address: '台北市內湖新明路<span>458</span>號',
   googleSrc:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.4207387968268!2d121.57681031500671!3d25.053724983963136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab9cc360dba5%3A0xf5f86a9911f033e9!2zMTE05Y-w5YyX5biC5YWn5rmW5Y2A5paw5piO6LevNDU46Jmf!5e0!3m2!1szh-TW!2stw!4v1577349330076!5m2!1szh-TW!2stw',
   phone: '02-27945588',
@@ -8,7 +8,6 @@ export default {
   googleLink: 'https://goo.gl/maps/HUF6GsfNe8gjuNb77',
   caseName: '大道東',
   houseInfos: [
-    ['接待會館', '台北市內湖新明路458號'],
     ['投資興建', '誠群建設．君璽建設'],
     ['建築設計', '姚嘉志建築師事務所'],
     ['空間規劃', '磐石設計'],

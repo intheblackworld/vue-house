@@ -270,6 +270,10 @@
 }
 
 @media screen and (max-width: 767px) {
+.bg {
+  background-image: url('./s5/mo/bg.jpg');
+  background-position: 100% 100%;
+  }
   .arrow-btn {
     display: block;
     width: calc(100vw * (60 / 750));
@@ -282,13 +286,14 @@
   }
 
   .slide {
+  height: 70vw;
     .btn-group {
       width: 100%;
     }
 
     .slide-img {
       width: 100vw;
-      max-height: auto;
+      max-height:initial;
     }
   }
 

@@ -24,7 +24,7 @@
           <font-awesome-icon :icon="['fab', 'facebook-f']" />前往粉絲專頁
         </span>
       </a>
-      <div class="address flex-c">{{info.address}}</div>
+      <div class="address flex-c" v-html="info.address"></div>
       <div class="btn flex-c">
         <span class="flex-c" @click="showMapDialog">
           <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
@@ -142,7 +142,7 @@ export default {
   text-decoration: none;
   color: $contact_btn_color;
   background: $contact_btn_bg;
-  box-shadow: $contact_btn_border;
+  border:$contact_btn_border;
   transition: all 0.5s;
 
   svg {
@@ -166,8 +166,12 @@ export default {
 .address {
   width: 600px;
   height: 60px;
-  background: $contact_btn_bg;
-  box-shadow: $contact_btn_border;
+  background: #fff;
+  border:1px solid #999;
+  color: #444;
+  span{
+    color: #c00;font-size:1.1em;font-weight: bold;
+  }
 }
 .google-btn {
   width: 280px;
@@ -178,7 +182,7 @@ export default {
   color: $contact_google_btn_color;
   background: $contact_google_btn_bg;
   // background-image: url("../assets/img/contact_gold_button.png");
-  box-shadow: $contact_btn_border;
+  border: $contact_btn_border;
   transition: all 0.5s;
 
   svg {
@@ -245,7 +249,7 @@ export default {
   }
 
   .address {
-    width: 280px;
+    width: 280px;margin-bottom: 0;
   }
 }
 </style>

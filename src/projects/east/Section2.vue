@@ -1,16 +1,14 @@
 <template>
   <div class="section2">
     <Map :tagList="tagList" :bgSrc="bgSrc" :hand="hand">
-      <img src="./s2/mo/b.png" alt="" class="mask" v-if="isMobile">
       <img src="./s2/mo/11.png" alt="" class="line" v-if="isMobile">
+       <img src="./s2/mo/箭頭.png" alt="" class="mask" v-if="isMobile">
     </Map>
   </div>
 </template>
 <style lang="scss" scoped>
 .section2 {
   position: relative;
-}
-.map {
 }
 
 .m-content {
@@ -36,16 +34,34 @@
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1280px) {
-  .map {
-  }
 }
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+
 }
 
 @media screen and (max-width: 767px) {
+  .map-bg{z-index: 1;}
+  .line{z-index: 2;}
+  img.aos-init{z-index: 3;}
+  .mask{z-index: 5;
+  animation: swing 2.5s ease-in-out 0s infinite;}
 }
+@keyframes swing {
+  0% {
+    transform: translateX(20px);
+  }
+
+  50% {
+    transform: translateX(-20px);
+  }
+
+  100% {
+    transform: translateX(20px);
+  }
+}
+
 </style>
 
 <script>
@@ -75,14 +91,12 @@ export default {
       tagList: isMobile
         ? [require('./s2/mo/10.png')]
         : [
-            require('./s2/13.png'),
             require('./s2/12.png'),
             require('./s2/11.png'),
             require('./s2/10.png'),
           ],
-
       bgSrc: isMobile ? require('./s2/mo/bg.jpg') : require('./s2/s2bg.jpg'),
-      hand: require('./s2/mo/箭頭.png'),
+      hand: require('./s2/mo/b.png'),
     }
   },
 

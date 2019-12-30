@@ -15,7 +15,7 @@
             <el-input v-model="form.phone" placeholder></el-input>
           </div>
           <div class="row">
-            <label>E-mail<span>*</span></label>
+            <label>E-mail</label>
             <el-input v-model="form.email" placeholder></el-input>
           </div>
           <div class="row">
@@ -301,6 +301,8 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .order-bg {
+  background-image: url('../assets/img/order-bg-m.jpg');
+  background-size: 100% auto;
     padding-top: 40px;
     .order-title {
       margin-top: 10px;

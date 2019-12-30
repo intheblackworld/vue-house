@@ -35,9 +35,6 @@ export default {
         }
         const hand = document.querySelector('.map .hand')
 
-        if (hand) {
-          hand.style.left = `${mapBg.clientWidth / 2 - 50}px`
-        }
 
         map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2, 0)
       }, 500)

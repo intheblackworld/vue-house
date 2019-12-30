@@ -51,13 +51,13 @@ $order_sumbit_disable_bg: rgba(49, 66, 107, .4) !important;
 $contact_bg: #fff;
 $contact_shadow: 0 0 80px 0 rgba(0, 0, 0, 0.2);
 
-$contact_btn_border: 0 0 0px 1px #999;
-$contact_btn_color: #444;
-$contact_btn_icon: #cc0000;
-$contact_btn_bg: #fff;
+$contact_btn_border:1px solid #c00;
+$contact_btn_color: #fff;
+$contact_btn_icon: #fff;
+$contact_btn_bg: #c00;
 $contact_btn_hover_color: #fff;
 $contact_btn_hover_icon: #fff;
-$contact_btn_hover_bg: #cc0000;
+$contact_btn_hover_bg: #900;
 
 $contact_google_hover_btn_color: #333;
 $contact_google_hover_btn_icon: #cc0000;

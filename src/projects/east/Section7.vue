@@ -203,6 +203,8 @@
 @media screen and (max-width: 767px) {
   .bg {
     background-image: url('./s7/bg_m.jpg');
+    background-size: 100% auto;
+    background-position:0 100%;
   }
   .arrow-btn {
     display: block;
