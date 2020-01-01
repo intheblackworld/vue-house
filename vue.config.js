@@ -34,12 +34,19 @@ module.exports = {
     config.module
       .rule('@yzfe/vue-svgicon-loader')
       .test(/\.svg$/)
-      .include.add(resolve('src/assets/svg')) // 处理svg目录
+      .include.add(resolve('src/assets/svg')).add(resolve('src/projects')) // 处理svg目录
       .end()
       .use('@yzfe/vue-svgicon-loader')
       .loader('@yzfe/vue-svgicon-loader')
       .options({
-        symbolId: 'icon-[name]'
+        symbolId: 'icon-[name]',
+        // svgo: {
+        //   plugins: [
+        //     { cleanupIDs: false },
+        //     { convertShapeToPath: false },
+        //     { convertStyleToAttrs: false, convertPathData: false },
+        //   ]
+        // },
       })
     config.plugin('html').tap(args => {
       args[0].title = meta.info.title
