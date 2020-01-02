@@ -61,6 +61,29 @@
     width: 32px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .indigator {
+    right: 0;
+
+    .list-indigator {
+      padding: 4px 0px;
+    }
+
+    .dot {
+      width: 14px;
+      height: 14px;
+      margin: 0 auto;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+
+    .contact-indigator {
+      width: 24px;
+      padding: 10px 4px;
+    }
+  }
+}
 </style>
 
 <script>

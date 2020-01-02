@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang=zh_TW>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=X-UA-Compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>test</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    vertical-align: bottom
+}
+.bbg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    mix-blend-mode: screen;
+}
+.img {
+    position: relative;
+    width: 100%;
+    z-index: 2
+}
+.mo {
+    display: none
+}
+.s1 {
+    height: 100vh;
+    position: relative;
+    z-index: 5;
+    width: 100%;
+}
+.s1bg1 {
+    mix-blend-mode: screen;
+    position: absolute;
+	top:0;
+	left: 0;
+    height: 100vh;
+    width: 100%;
+}
+.s1 img,
+.s1bg1 img {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+}
+.s2 {
+    position: relative;
+    margin-top: -23vw
+}
+
+@media screen and (max-width: 767px) {
+.pc {
+    display: none
+}
+.mo {
+    display: block
+}
+}
+</style>
+</head>
+
+<body>
+<div class="pc"><img src="bg.jpg" class="bbg" alt>
+	<div class="s1bg1"><img src="bg.jpg" class="img" alt></div>
+  <div class="s1"><img src="logo置中.png" class="img" alt></div>
+  <div class="s2"><img src="../2/bg_01.png" class="img" alt><br>
+    <img src="../2/bg_02.jpg" class="img" alt><img src="../2/text.png" class="img" alt style="position: absolute;top: 0;left: 0;"></div>
+</div>
+<div class="mo"> <img src="file:///C|/xcatx/鳳翔/新增資料夾/bgm.jpg" class="bbg" alt>
+  <div class="bg"> <img src="file:///C|/xcatx/鳳翔/新增資料夾/bg2m.jpg" class="img" alt> </div>
+  <img src="file:///C|/xcatx/鳳翔/新增資料夾/tm.png" class="img" alt></div>
+</body>
+</html>

@@ -163,7 +163,7 @@ export default {
 .address {
   width: 600px;
   height: 60px;
-  background: $contact_btn_bg;
+  background: #fff;
   box-shadow: $contact_btn_border;
 }
 .google-btn {

@@ -1,39 +1,31 @@
 <template>
   <div class="home no-padding-top">
     <Loading :loading="load" />
-    <SideNavigation v-if="isSide" />
-    <Navigation v-else />
+    <!-- <SideNavigation v-if="isSide" /> -->
+    <!-- <Navigation v-else /> -->
     <Indigator />
     <div id="section1">
       <Section1 />
     </div>
-    <div class="bg">
-      <div id="section2">
-        <Section2 />
-      </div>
-      <div id="section3">
-        <Section3 />
-      </div>
-      <div id="section4">
-        <Section4 />
-      </div>
-      <div id="section5">
-        <Section5 />
-      </div>
-      <div id="section6">
-        <Section6 />
-      </div>
-      <div id="section7">
-        <Section7 />
-      </div>
-      <div id="section8">
-        <Section8 />
-      </div>
-      <div id="section9">
-        <Section9 />
-      </div>
-      <ContactSection />
+    <div id="section2">
+      <Section2 />
     </div>
+    <div id="section3">
+      <Section3 />
+    </div>
+    <div id="section4">
+      <Section4 />
+    </div>
+    <div id="section5">
+      <Section5 />
+    </div>
+    <div id="section6">
+      <Section6 />
+    </div>
+    <div id="section7">
+      <Section7 />
+    </div>
+    <ContactSection />
     <MobileNav />
   </div>
 </template>
@@ -52,15 +44,15 @@ import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 
-import Section1 from '@/projects/hy/Section1.vue'
-import Section2 from '@/projects/hy/Section2.vue'
-import Section3 from '@/projects/hy/Section3.vue'
-import Section4 from '@/projects/hy/Section4.vue'
-import Section5 from '@/projects/hy/Section5.vue'
-import Section6 from '@/projects/hy/Section6.vue'
-import Section7 from '@/projects/hy/Section7.vue'
-import Section8 from '@/projects/hy/Section8.vue'
-import Section9 from '@/projects/hy/Section9.vue'
+import Section1 from '@/projects/fs/Section1.vue'
+import Section2 from '@/projects/fs/Section2.vue'
+import Section3 from '@/projects/fs/Section3.vue'
+import Section4 from '@/projects/fs/Section4.vue'
+import Section5 from '@/projects/fs/Section5.vue'
+import Section6 from '@/projects/fs/Section6.vue'
+import Section7 from '@/projects/fs/Section7.vue'
+// import Section8 from '@/projects/fs/Section8.vue'
+// import Section9 from '@/projects/fs/Section9.vue'
 
 export default {
   name: 'home',
@@ -78,8 +70,8 @@ export default {
     Section5,
     Section6,
     Section7,
-    Section8,
-    Section9,
+    // Section8,
+    // Section9,
   },
 
   data() {

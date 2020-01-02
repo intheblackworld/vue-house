@@ -4,7 +4,7 @@
       title="googlemap"
       :src="googleSrc"
       width="100%"
-      height="455"
+      height="555"
       frameborder="0"
       style="border: 0"
       allowfullscreen

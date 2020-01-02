@@ -4,8 +4,11 @@
       <h3 class="title">{{order.title}}</h3>
       <div class="subtitle">{{order.subTitle}}</div>
     </div> -->
-    <div class="order-title">{{order.title}}</div>
-    <h3 class="order-subtitle">{{order.subTitle}}</h3>
+    <img src="@/projects/fs/order/bg.jpg" alt="" class="bg-img" v-if="!isMobile">
+    <img src="@/projects/fs/order/bg2.png" alt="" class="bg-img no-mix" v-if="!isMobile">
+    <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile">
+    <div class="order-title" v-html="order.title"></div>
+    <div class="order-subtitle" v-html="order.subTitle"></div>
     <div class="order">
       <div class="form">
         <div class="group">
@@ -82,6 +85,7 @@ import GoogleMap from '@/components/GoogleMap.vue'
 import PolicyDialog from '@/components/PolicyDialog.vue'
 import info from '@/info'
 import { cityList, renderAreaList } from '@/info/address'
+import { isMobile } from '@/utils'
 import Loading from '@/components/Loading.vue'
 
 export default {
@@ -97,6 +101,7 @@ export default {
     return {
       cityList,
       order: info.order,
+      isMobile,
       form: {
         name: '',
         phone: '',
@@ -198,20 +203,36 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/style/variableColor.scss';
+.bg-img {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  mix-blend-mode: screen;
+
+  &.no-mix {
+    mix-blend-mode: unset;
+  }
+}
 .order-bg {
   background-color: $order_bg_color;
   background-image: $order_bg_image;
   background-repeat: no-repeat;
   background-size: 100% auto;
   position: relative;
-  margin-top: -1px;
-  padding-top: 80px;
+  margin-top: 0px;
+  padding-top: 0px;
 
   .order-title {
-    margin-top: 40px;
-    margin-bottom: 8px;
+    padding-top: 40px;
+    margin-bottom: 18px;
     font-weight: bold;
-    font-size: 36px;
+    line-height: 1.3;
+    font-size: calc(100vw * 60 / 1920);
     text-align: center;
     color: $order_title_color;
   }
@@ -304,10 +325,13 @@ export default {
     .order-title {
       margin-top: 10px;
       margin-bottom: 20px;
+      font-size: calc(100vw * 38 / 375);
+      padding-top: 0;
     }
 
     .order-subtitle {
-      display: none;
+      // display: none;
+      font-size: 12px;
     }
     .order {
       width: 95% !important;
