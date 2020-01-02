@@ -181,6 +181,7 @@
               />
 
               <image
+                class="st31"
                 style="overflow:visible;"
                 width="795"
                 height="1280"
@@ -206,9 +207,8 @@
       </svg>
     </div>
     <div class="fullscreen bg" v-if="isMobile">
-      <img class="l1" src="./s1/mo/l1.png" alt="光" />
-      <img class="l2" src="./s1/mo/l2.png" alt="光" />
-      <img class="l3" src="./s1/mo/l3.png" alt="光" />
+      <img class="l1" src="./s1/mo/l1.jpg" alt="光" />
+      <img class="l3" src="./s1/mo/l2.png" alt="光" />
       <div class="text">
         <img src="./s1/logo.png" alt class="logo" />
         <div class="desc">鋪設通往希望的康莊大道 <div>擁抱夢想 實現目標</div></div>
@@ -384,6 +384,7 @@
               />
 
               <image
+                class="st31"
                 style="overflow:visible;"
                 width="795"
                 height="1280"
@@ -424,6 +425,10 @@
 }
 .st3 {
   mix-blend-mode: screen;
+  animation: svgop 1s 8s forwards; opacity: 0;
+}
+.st31 {
+  animation: svgop 1.2s 8.5s forwards; opacity: 0;
 }
 .st4 {
   clip-path: url(#SVGID_4_);
@@ -440,6 +445,10 @@
 .st8 {
   opacity: 0.5;
 }
+@keyframes svgop {
+  to { opacity: 1;}
+}
+
 </style>
 <style lang="scss" scoped>
 .section1 {
@@ -459,12 +468,22 @@
   object-fit: contain;
   object-position: top right;
 }
+.l1,
+.l2,
+.l3{ opacity: 0;}
+.l1{animation: op 1s 8s forwards;}
+.l2{animation: op 1.2s 8.5s forwards;}
+.l3{animation: op 1.5s 9s forwards;}
 .l1 {
   mix-blend-mode: color;
 }
 .l2 {
   mix-blend-mode: overlay;
 }
+@keyframes op {
+  to { opacity: 1;}
+}
+
 .bg {
   background-image: url('./s1/s1bg.jpg');
   background-position: center;
@@ -553,6 +572,7 @@
       font-size: 17.5px;
       margin: 0 auto;
       text-align: justify;
+      padding: 0 2em 0 0;
       > div {
         font-size: 12px;
         margin-right: 5px;

@@ -201,6 +201,7 @@
 
   .m-img {
     width: 100vw;
+    height: auto;
   }
   .content {
     width: 85vw;
