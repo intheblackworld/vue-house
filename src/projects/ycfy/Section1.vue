@@ -4,7 +4,7 @@
       <div v-if="!isMobile">
         <img src="./s1/bg.jpg" alt class="img"/>
         <img src="./s1/bg2.jpg" alt class="img fix mix" />
-        <img src="./s1/bg3.png" alt class="img bottom_img" data-aos="fade" data-aos-delay="400" />
+        <img src="./s1/bg3.png" alt class="img bottom_img"/>
         <img src="./s1/img1.png" alt class="img fix" />
         <!-- <img src="./s1/logo.png" alt="頤昌豐岳" class="img" data-aos="fade" data-aos-delay="700" /> -->
         <!-- <icon class="icon logo-icon" :data="logo" /> -->
@@ -407,7 +407,7 @@
 	c0.2,0,0.3-0.1,0.3-0.3v-18.2c0-0.1-0.1-0.2-0.3-0.3H694l0-3.1h6.5V506z"/>
 </svg>
         </div>
-        <img src="./s1/text1.png" alt="雙語校園｜無瑕景觀｜ 豐居久安" class="img bottom_img text_img" data-aos="fade" data-aos-delay="900" />
+        <img src="./s1/text1.png" alt="雙語校園｜無瑕景觀｜ 豐居久安" class="img bottom_img text_img"/>
         <img src="./s1/title.png" alt="早鳥豐收價 24.8萬起" class="img titleimg" />
       </div>
       <div v-if="isMobile">
