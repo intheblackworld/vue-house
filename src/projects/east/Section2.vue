@@ -1,8 +1,16 @@
 <template>
   <div class="section2">
     <Map :tagList="tagList" :bgSrc="bgSrc" :hand="hand">
-      <img src="./s2/mo/11.png" alt="" class="line" v-if="isMobile">
-       <img src="./s2/mo/箭頭.png" alt="" class="mask" v-if="isMobile">
+      <img src="./s2/mo/11.png" alt class="line" v-if="isMobile" v-show="showMask" />
+      <img
+        src="./s2/mo/箭頭.png"
+        alt
+        class="mask"
+        v-if="isMobile"
+        v-touch="hideMask"
+        @click="hideMask"
+        v-show="showMask"
+      />
     </Map>
   </div>
 </template>
@@ -38,15 +46,23 @@
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-
 }
 
 @media screen and (max-width: 767px) {
-  .map-bg{z-index: 1;}
-  .line{z-index: 2;}
-  img.aos-init{z-index: 3;}
-  .mask{z-index: 5;
-  animation: swing 2.5s ease-in-out 0s infinite;}
+  .map-bg {
+    z-index: 1;
+  }
+  .line {
+    z-index: 2;
+  }
+  img.aos-init {
+    z-index: 3;
+  }
+  .mask {
+    z-index: 5;
+    animation: swing 2.5s ease-in-out 0s infinite;
+    background-image: url('./s2/mo/b.png');
+  }
 }
 @keyframes swing {
   0% {
@@ -61,7 +77,6 @@
     transform: translateX(20px);
   }
 }
-
 </style>
 
 <script>
@@ -78,6 +93,7 @@ export default {
     return {
       isMobile,
       mapIndex: 0,
+      showMask: isMobile,
       mapText: [
         {
           title: '',
@@ -100,6 +116,11 @@ export default {
     }
   },
 
-  methods: {},
+  methods: {
+    hideMask() {
+      console.log(123)
+      this.showMask = false
+    },
+  },
 }
 </script>

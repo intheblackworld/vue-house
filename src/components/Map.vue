@@ -1,6 +1,6 @@
 <template>
   <div class="map" id="map">
-    <img :src="hand" alt class="hand" />
+    <!-- <img :src="hand" alt class="hand" /> -->
     <img class="map-bg" :src="bgSrc" alt ref="mapbg" />
     <slot></slot>
     <img
@@ -27,14 +27,11 @@ export default {
     if (this.isMobile) {
       setTimeout(() => {
         const map = document.querySelector('.map')
-        console.log(map)
         const mapBg = document.querySelector('.map-bg')
         const text = document.querySelector('.map .text')
         if (text) {
           text.style.left = `${mapBg.clientWidth / 2 - 100}px`
         }
-        const hand = document.querySelector('.map .hand')
-
 
         map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2, 0)
       }, 500)
