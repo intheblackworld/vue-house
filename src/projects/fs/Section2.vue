@@ -8,8 +8,18 @@
         <img src="./s2/text.png" alt class="bg-img" />
       </div>
       <div v-else>
-        <img src="./s1/bg_m.jpg" alt class="bg-img" />
-        <img src="./s1/logo置中_m.png" alt class="bg-img" />
+        <Map :tagList="tagList" :bgSrcT="bgSrcT" :bgSrcB="bgSrcB" :hand="hand">
+          <img src="./s2/text.png" alt class="bg-img" />
+          <img
+            src="./s2/箭頭.png"
+            alt
+            class="mask"
+            v-if="isMobile"
+            v-touch="hideMask"
+            @click="hideMask"
+            v-show="showMask"
+          />
+        </Map>
       </div>
     </div>
   </div>
@@ -54,29 +64,81 @@
 }
 
 @media screen and (max-width: 767px) {
-  .bg {
+  .map-bg {
+    z-index: 1;
+  }
+  .line {
+    z-index: 2;
+  }
+  img.aos-init {
+    z-index: 3;
+  }
+  .mask {
+    z-index: 5;
+    animation: swing 2.5s ease-in-out 0s infinite;
+    background-image: url('./s2/bg_m.png');
+  }
+
+  .bg-img {
+    width: auto;
+    height: 100vh;
+  }
+}
+@keyframes swing {
+  0% {
+    transform: translateX(20px);
+  }
+
+  50% {
+    transform: translateX(-20px);
+  }
+
+  100% {
+    transform: translateX(20px);
   }
 }
 </style>
 <script>
 // @ is an alias to /src
+import Map from '@/components/Map.vue'
 import { isMobile } from '@/utils'
-
 export default {
   name: 'section2',
+
+  components: {
+    Map,
+  },
 
   data() {
     return {
       isMobile,
+      showMask: isMobile,
+      mapText: [
+        {
+          title: '',
+          desc: '',
+        },
+        {
+          title: '',
+          desc: '',
+        },
+      ],
+      tagList: [],
+      bgSrcT: require('./s2/bg_01.png'),
+      bgSrcB: require('./s2/bg_02.jpg'),
+      hand: '',
     }
   },
 
-  methods: {},
-
-  mounted() {
+  methods: {
+    hideMask() {
+      console.log(123)
+      this.showMask = false
+    },
   },
 
-  computed: {
-  },
+  mounted() {},
+
+  computed: {},
 }
 </script>
