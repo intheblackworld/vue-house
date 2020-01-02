@@ -3,15 +3,13 @@
     <div class="bg relative">
       <div v-if="!isMobile">
         <img src="./s1/bg.jpg" alt class="img"/>
-        <img src="./s1/bg2.jpg" alt class="img fix mix" data-aos="fade" data-aos-delay="200" />
-        <img src="./s1/bg3.png" alt class="img" data-aos="fade" data-aos-delay="400" />
-        <img src="./s1/img1.png" alt class="img fix" data-aos="fade" data-aos-delay="600" />
+        <img src="./s1/bg2.jpg" alt class="img fix mix" />
+        <img src="./s1/bg3.png" alt class="img bottom_img" data-aos="fade" data-aos-delay="400" />
+        <img src="./s1/img1.png" alt class="img fix" />
         <!-- <img src="./s1/logo.png" alt="頤昌豐岳" class="img" data-aos="fade" data-aos-delay="700" /> -->
         <!-- <icon class="icon logo-icon" :data="logo" /> -->
         <div class="logo-icon">
-          <svg version="1.1" id="圖層_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
-	
+<svg version="1.1" id="svg1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
 <pattern  width="165.3" height="231.9" patternUnits="userSpaceOnUse" id="img_3" viewBox="0 -328.9 165.3 231.9" style="overflow:visible;">
 	<g>
 		<rect x="0" y="-328.9" class="st0" width="165.3" height="231.9"/>
@@ -214,7 +212,7 @@
 	<clipPath id="SVGID_6_">
 		<use xlink:href="#SVGID_5_"  style="overflow:visible;"/>
 	</clipPath>
-	<path class="st16 ld25" d="M503,546c100-92,141,15,221.5,15.5"/>
+	<path class="op8 ld25" d="M503,546c100-92,141,15,221.5,15.5"/>
 </g>
 <path id="_x34_" class="st17 op" d="M493.4,96.2c-0.5,1.4-1.1,1.6-2.2,1.6h-16.6v5h7.9v4.4h-7.2v30.9h2.8l0,3.9l0,0
 	c-0.2,0.6-0.7,0.9-1.3,0.9h-2.5v4.8h5.8l0.1,0c1.6,0,2.9,0,2.9-2l0-7.6h3.9v7.6c0.1,1.9,1.3,2,2.9,2l0.1,0h6V143h-2.5
@@ -409,17 +407,17 @@
 	c0.2,0,0.3-0.1,0.3-0.3v-18.2c0-0.1-0.1-0.2-0.3-0.3H694l0-3.1h6.5V506z"/>
 </svg>
         </div>
-        <img src="./s1/text1.png" alt="雙語校園｜無瑕景觀｜ 豐居久安" class="img" data-aos="fade" data-aos-delay="900" />
-        <img src="./s1/title.png" alt="早鳥豐收價 24.8萬起" class="img" data-aos="fade" data-aos-delay="800" />
+        <img src="./s1/text1.png" alt="雙語校園｜無瑕景觀｜ 豐居久安" class="img bottom_img text_img" data-aos="fade" data-aos-delay="900" />
+        <img src="./s1/title.png" alt="早鳥豐收價 24.8萬起" class="img titleimg" />
       </div>
       <div v-if="isMobile">
         <img src="./s1/mo/bg.jpg" alt class="img" />
         <img src="./s1/mo/bg2.jpg" alt class="img fix mix" />
-        <img src="./s1/mo/bg3.png" alt class="img" />
+        <img src="./s1/mo/bg3.png" alt class="img bottom_img" data-aos="fade" data-aos-delay="400"  />
+        <img src="./s1/mo/img1.png" alt class="img fix" />
         <!-- <img src="./s1/mo/logo.png" alt class="img" /> -->
         <div class="logo-icon">
-          <svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 750 1271" style="enable-background:new 0 0 750 1271;" xml:space="preserve">
+<svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 750 1271" style="enable-background:new 0 0 750 1271;" xml:space="preserve">
 <pattern  x="187.5" y="302" width="165.3" height="231.9" patternUnits="userSpaceOnUse" id="img_3" viewBox="70.3 -233.8 165.3 231.9" style="overflow:visible;">
 	<g>
 		<rect x="70.3" y="-233.8" class="st0" width="165.3" height="231.9"/>
@@ -574,19 +572,19 @@
 			 M324.9,390c-3.5-3.7-5.5-8.1-6.1-13.1c-0.2-1.7-0.7-3.3-1.2-5c-1-3.6-1-7.2-0.2-10.8c0.2-0.7,1.5-1.5,2.4-1.7
 			c2.7-0.6,5.4-0.8,8.2-1.2v1.4c1-0.4,1.9-0.8,2.8-1c1.3-0.3,2.5-0.6,3.9,0.4c1,0.7,2.9,0.3,4.3,0.3c1.3,0,2.6,0,4.1,0
 			c-0.2,0.7-0.4,1.1-0.7,2c6.4-2.2,12.4-4.2,18.2-6.2C357.4,363.1,332.6,387.6,324.9,390z"/>
-	</defs>
+		</defs>
 	<clipPath id="SVGID_4_">
 		<use xlink:href="#SVGID_3_"  style="overflow:visible;"/>
 	</clipPath>
 	<g class="st11">
-		<path class="st13 ld17" d="M394.7,317.4c-12,9.6-55.7,25.7-72.4,25.7"/>
-		<path class="st12 ld18" d="M313,362.9c0,28.1,9.3,35.2,28.6,56.2"/>
-		<path class="st14 ld19" d="M390.2,352.8c-19.3,27.5-87.4,36.7-108.4,55"/>
-		<path class="st15 ld20" d="M287.6,420.8c22.7-21.2,114.5-69.7,149.9-23"/>
-		<path class="st15 ld21" d="M431.2,391c-3.9,9.7-41.5,9.4-41.5,9.4"/>
-		<path class="st17 ld22" d="M363.1,404.5c0.2,13.5,12.2,34.9-21.1,25.9c0,0-43.5-11.9-37.3,35.5"/>
-		<path class="st16 ld23" d="M304.7,465.8c0,0,68.2-8.3,92-45.7"/>
-		<path class="st18 ld24" d="M404.9,409.5c13.4,10.2,15.7,56.4,5.6,63c-6.6-6.7-18.7-12-18.7-12"/>
+		<path class="st12 ld17" d="M394.7,317.4c-12,9.6-55.7,25.7-72.4,25.7"/>
+		<path class="st3 ld18" d="M313,362.9c0,28.1,9.3,35.2,28.6,56.2"/>
+		<path class="st13 ld19" d="M390.2,352.8c-19.3,27.5-87.4,36.7-108.4,55"/>
+		<path class="st14 ld20" d="M287.6,420.8c22.7-21.2,114.5-69.7,149.9-23"/>
+		<path class="st14 ld21" d="M431.2,391c-3.9,9.7-41.5,9.4-41.5,9.4"/>
+		<path class="st6 ld22" d="M363.1,404.5c0.2,13.5,12.2,34.9-21.1,25.9c0,0-43.5-11.9-37.3,35.5"/>
+		<path class="st1 ld23" d="M304.7,465.8c0,0,68.2-8.3,92-45.7"/>
+		<path class="st15 ld24" d="M404.9,409.5c13.4,10.2,15.7,56.4,5.6,63c-6.6-6.7-18.7-12-18.7-12"/>
 	</g>
 </g>
 <g id="_x33_">
@@ -628,9 +626,9 @@
 	<clipPath id="SVGID_6_">
 		<use xlink:href="#SVGID_5_"  style="overflow:visible;"/>
 	</clipPath>
-	<path class="st19 ld25" d="M284.1,547.2c100-92,141,15,221.5,15.5"/>
+	<path class="op8 ld25" d="M284.1,547.2c100-92,141,15,221.5,15.5"/>
 </g>
-<path id="_x34_" class="st20 op" d="M274.4,97.4c-0.5,1.4-1.1,1.6-2.2,1.6h-16.6v5h7.9v4.4h-7.2v30.9h2.8l0,3.9l0,0
+<path id="_x34_" class="st17 op" d="M274.4,97.4c-0.5,1.4-1.1,1.6-2.2,1.6h-16.6v5h7.9v4.4h-7.2v30.9h2.8l0,3.9l0,0
 	c-0.2,0.6-0.7,0.9-1.3,0.9h-2.5v4.8h5.8l0.1,0c1.6,0,2.9,0,2.9-2l0-7.6h3.9v7.6c0.1,1.9,1.3,2,2.9,2l0.1,0h6v-4.8h-2.5
 	c-0.6,0-1-0.3-1.3-0.9l0,0l0-3.9l0.2,0c2.8-0.1,4-1.4,4-4v-26.8h-8v-4.4h5.6c2,0,3.2-0.4,4.1-1.5c1-1.2,1.6-2.1,1.8-5.2H274.4z
 	 M272.4,113.3v4.2h-7.2l0,4.6h7.3v3.8h-7.2v4.6h7.2v1.8c0,1.2-0.7,1.9-1.7,1.9h-9.3v-21H272.4z M249.3,104h1.7V99h-18v45.6
@@ -639,7 +637,7 @@
 	C273.7,181.1,275.5,179.4,275.5,175.9z M269.3,167.1h-23.8v5h23.8v0.9c0,1.5-0.6,3.3-1.8,3.3h-27.1v-13.4h28.9V167.1z M233,184.6
 	v22.9h38.9c3.6,0,5.3-1.7,5.3-5.2v-17.7H233z M271.3,193.8h-6.4v5h6.4v0.9c0,1.4-0.6,2.9-1.8,2.9H239v-12.9h32.3V193.8z
 	 M261.1,193.8h-17.3v5h17.3V193.8z"/>
-<path id="_x35_" class="st21 op" d="M514,362.5c-0.6,0.4-1.6,1.1-2.8,2.1l-4.2,3.2l-4,3.1c1.4,0.1,3.1,0.1,5.3,0.1c1.6,0,2.7,0,3.3-0.1
+<path id="_x35_" class="st18 op" d="M514,362.5c-0.6,0.4-1.6,1.1-2.8,2.1l-4.2,3.2l-4,3.1c1.4,0.1,3.1,0.1,5.3,0.1c1.6,0,2.7,0,3.3-0.1
 	c0.6-0.1,1-0.3,1.4-0.7c0.4-0.4,0.6-0.9,0.6-1.5c0-0.3,0.1-0.4,0.2-0.4c0.1,0,0.1,0,0.2,0.1c0,0.1,0.1,0.5,0.1,1.4
 	c0,0.9,0.1,1.6,0.1,2.2l0,1.4v0.2c0,0.2-0.1,0.3-0.2,0.3c-0.1,0-0.2-0.1-0.2-0.3c-0.1-0.7-0.3-1.2-0.6-1.5c-0.3-0.3-0.8-0.5-1.3-0.5
 	s-2.6-0.1-5.9-0.1l-6-0.1c-0.3,0-0.5-0.1-0.5-0.2c0,0,0-0.1,0-0.1c0-0.1,0.4-0.4,1.1-0.9c0.7-0.5,1.6-1.2,2.6-2
@@ -813,7 +811,7 @@
 	c1.1,0,3,0.1,5.7,0.2c0,0,0-0.4,0.1-1l0-0.6c0-0.1,0.1-0.2,0.2-0.2c0.1,0,0.2,0.1,0.2,0.3c0.1,0.3,0.4,0.7,1,1.4
 	c0.5,0.7,1.3,1,2.3,1.1c0.3,0,0.4,0.1,0.4,0.2c0,0.1-0.1,0.2-0.3,0.2c-0.1,0-0.1,0-0.2,0c-0.3,0-0.6,0-1,0l-1.8,0l0,2.2
 	c0,0.4,0,0.6-0.1,0.6c-0.3,0-0.6-0.1-0.7-0.2C486.6,459.7,486.5,458.8,486.4,457.4z"/>
-<path id="_x36_" class="st22 op" d="M468.3,481v1.9h4.9l0,3.1h-4.7c-0.1,0-0.2,0.1-0.2,0.3v18.2c0,0.2,0.1,0.3,0.2,0.3h2v2.4h-6.9v-2.8
+<path id="_x36_" class="st19 op" d="M468.3,481v1.9h4.9l0,3.1h-4.7c-0.1,0-0.2,0.1-0.2,0.3v18.2c0,0.2,0.1,0.3,0.2,0.3h2v2.4h-6.9v-2.8
 	h2.6c0.2,0,0.3-0.1,0.3-0.3v-17.8c0-0.1-0.1-0.2-0.3-0.3h-2.6v-3.2h2.9V481h-10.6c-0.4,0-0.6,0.2-0.6,0.7v26.7
 	c0,0.5,0.2,0.7,0.6,0.7h14.6h1.6h0.2v-4.3h3.5v4.3h1.4h0.4h4h0.6h1.2v-26.2v-0.6V481H468.3z M464.5,488c0.1,0,0.1,0,0.1,0.1v14.4
 	c0,0.1-0.1,0.1-0.1,0.2h-3.8c0,0,0,0-0.1-0.1V488c0,0,0,0,0.1-0.1H464.5z M461.7,507.2h-4.5c-0.2,0-0.3-0.1-0.3-0.3v-23.7
@@ -823,8 +821,8 @@
 	c0.2,0,0.3-0.1,0.3-0.3v-18.2c0-0.1-0.1-0.2-0.3-0.3h-4.7l0-3.1h6.5V507.2z"/>
 </svg>
         </div>
-        <img src="./s1/mo/text1.png" alt class="img" />
-        <img src="./s1/mo/title.png" alt class="img" />
+        <img src="./s1/mo/text1.png" alt="雙語校園｜無瑕景觀｜ 豐居久安" class="img bottom_img text_img" data-aos="fade" data-aos-delay="900" />
+        <img src="./s1/mo/title.png" alt="早鳥豐收價 24.8萬起" class="img titleimg" />
       </div>
     </div>
   </div>
@@ -840,21 +838,21 @@
   .st0 path{fill:none;stroke:url(#img_3);stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
   .st11 path{fill:none;stroke:url(#img_2);stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
   .st1{stroke-width:20;}
-  .st2{fill:none;stroke:#000000;stroke-width:16;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-  .st3{fill:none;stroke:#000000;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-  .st4{fill:none;stroke:#000000;stroke-width:11;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-  .st5{fill:none;stroke:#000000;stroke-width:18;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-  .st6{fill:none;stroke:#000000;stroke-width:29;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-  .st7{fill:none;stroke:#000000;stroke-width:14;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-  .st8{fill:none;stroke:#000000;stroke-width:22;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-  .st9{fill:none;stroke:#000000;stroke-width:19;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-  .st10{fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+  .st2{stroke-width:16;}
+  .st3{stroke-width:12;}
+  .st4{stroke-width:11;}
+  .st5{stroke-width:18;}
+  .st6{stroke-width:29;}
+  .st7{stroke-width:14;}
+  .st8{stroke-width:22;}
+  .st9{stroke-width:19;}
+  .st10{stroke-width:15;}
   .st11{clip-path:url(#SVGID_4_);}
-  .st12{fill:none;stroke:#000000;stroke-width:42;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-  .st13{fill:none;stroke:#000000;stroke-width:38;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-  .st14{fill:none;stroke:#000000;stroke-width:27;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-  .st15{fill:none;stroke:#000000;stroke-width:31;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-  .st16{opacity:0.8;clip-path:url(#SVGID_6_);fill:none;stroke:#717272;stroke-width:50;stroke-linecap:round;stroke-miterlimit:10;}
+  .st12{stroke-width:42;}
+  .st13{stroke-width:38;}
+  .st14{stroke-width:27;}
+  .st15{stroke-width:31;}
+  .op8{opacity:0.8;clip-path:url(#SVGID_6_);fill:none;stroke:#717272;stroke-width:50;stroke-linecap:round;stroke-miterlimit:10;}
   .st17{fill:#3E3A39;}
   .st18{fill:#717071;}
   .st19{fill:#BB121A;}
@@ -886,71 +884,9 @@
   .op{opacity: 0;animation: op .2s 6.1s forwards;}
   @keyframes letterDraw {
   to { stroke-dashoffset: 0;}
-}
+  }
   @keyframes op {
   to { opacity: 1;}
-}
-}
-
-@media screen and (max-width: 767px) {
-  .logo-icon {
-    .st0{clip-path:url(#SVGID_2_);}
-	.st0 path{fill:none;stroke:url(#img_3);stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st11 path{fill:none;stroke:url(#img_2);stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:none;stroke:#000000;stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st2{fill:none;stroke:#000000;stroke-width:16;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st3{fill:none;stroke:#000000;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st4{fill:none;stroke:#000000;stroke-width:11;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st5{fill:none;stroke:#000000;stroke-width:18;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st6{fill:none;stroke:#000000;stroke-width:29;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st7{fill:none;stroke:#000000;stroke-width:14;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st8{fill:none;stroke:#000000;stroke-width:22;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st9{fill:none;stroke:#000000;stroke-width:19;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st10{fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st11{clip-path:url(#SVGID_4_);}
-	.st12{fill:none;stroke:#040000;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st13{fill:none;stroke:#040000;stroke-width:42;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st14{fill:none;stroke:#040000;stroke-width:38;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st15{fill:none;stroke:#040000;stroke-width:27;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st16{fill:none;stroke:#040000;stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st17{fill:none;stroke:#040000;stroke-width:29;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st18{fill:none;stroke:#040000;stroke-width:31;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st19{opacity:0.8;clip-path:url(#SVGID_6_);fill:none;stroke:#717272;stroke-width:50;stroke-linecap:round;stroke-miterlimit:10;}
-	.st20{fill:#3E3A39;}
-	.st21{fill:#717071;}
-	.st22{fill:#BB121A;}
-	.ld1{stroke-dasharray: 85;stroke-dashoffset: 85;   animation: letterDraw .2s linear forwards;}
-	.ld2{stroke-dasharray:153;stroke-dashoffset: 153;   animation: letterDraw .6s .2s linear forwards;}
-	.ld3{stroke-dasharray: 63;stroke-dashoffset: 63;   animation: letterDraw .3s .8s linear forwards;}
-	.ld4{stroke-dasharray: 75;stroke-dashoffset: 75;   animation: letterDraw .2s 1.1s linear forwards;}
-	.ld5{stroke-dasharray: 27;stroke-dashoffset: 27;   animation: letterDraw .1s 1.3s linear forwards;}
-	.ld6{stroke-dasharray: 65;stroke-dashoffset: 65;   animation: letterDraw .3s 1.4s linear forwards;}
-	.ld7{stroke-dasharray: 73;stroke-dashoffset: 73;   animation: letterDraw .3s 1.7s linear forwards;}
-	.ld8{stroke-dasharray:185;stroke-dashoffset:185;   animation: letterDraw .5s 2s linear forwards;}
-	.ld9{stroke-dasharray: 77;stroke-dashoffset: 77;   animation: letterDraw .3s 2.5s linear forwards;}
-	.ld10{stroke-dasharray: 285;stroke-dashoffset: 285;   animation: letterDraw .5s 2.8s linear forwards;}
-	.ld11{stroke-dasharray: 20;stroke-dashoffset:20;   animation: letterDraw .1s 3.3s linear forwards;}
-	.ld12{stroke-dasharray: 42;stroke-dashoffset: 42;   animation: letterDraw .1s 3.4s linear forwards;}
-	.ld13{stroke-dasharray: 52;stroke-dashoffset: 52;   animation: letterDraw .3s 3.5s linear forwards;}
-	.ld14{stroke-dasharray: 13;stroke-dashoffset: 13;   animation: letterDraw .1s 3.8s linear forwards;}
-	.ld15{stroke-dasharray: 72;stroke-dashoffset: 72;   animation: letterDraw .1s 3.9s linear forwards;}
-	.ld16{stroke-dasharray: 185;stroke-dashoffset: 185;   animation: letterDraw .3s 4s linear forwards;}
-	.ld17{stroke-dasharray: 80;stroke-dashoffset: 80;   animation: letterDraw .3s 4.3s linear forwards;}
-	.ld18{stroke-dasharray: 70;stroke-dashoffset: 70;   animation: letterDraw .1s 4.6s linear forwards;}
-	.ld19{stroke-dasharray: 135;stroke-dashoffset: 135;   animation: letterDraw .3s 4.7s linear forwards;}
-	.ld20{stroke-dasharray: 175;stroke-dashoffset: 175;   animation: letterDraw .2s 5s linear forwards;}
-	.ld21{stroke-dasharray: 45;stroke-dashoffset: 45;   animation: letterDraw .1s 5.2s linear forwards;}
-	.ld22{stroke-dasharray: 115;stroke-dashoffset:115;   animation: letterDraw .3s 5.3s linear forwards;}
-	.ld23{stroke-dasharray: 110;stroke-dashoffset: 110;   animation: letterDraw .2s 5.6s linear forwards;}
-	.ld24{stroke-dasharray: 90;stroke-dashoffset: 90;   animation: letterDraw .3s 5.8s linear forwards;}
-	.ld25{stroke-dasharray: 260;stroke-dashoffset: 260;   animation: letterDraw .3s 6.1s linear forwards;}
-	.op{opacity: 0;animation: op .2s 6.1s forwards;}
-	@keyframes letterDraw {
-  to { stroke-dashoffset: 0;}
-}
-	@keyframes op {
-  to { opacity: 1;}
-}
   }
 }
 </style>
@@ -958,6 +894,7 @@
 .bg {
   background-size: cover;
   position: relative;
+  height: 100vh;
 }
 
 .img {
@@ -969,15 +906,37 @@
   object-fit: cover;
   display: block;
   &.fix {
-    position: fixed;
+    position: fixed;animation: imgmix 1.5s 5s forwards;opacity: 0;  top: 50%;
+  transform: translateY(-47%);
   }
 
   &.mix {
-    mix-blend-mode: multiply;
+    mix-blend-mode: multiply;opacity: 0;animation: imgmix 1.5s 3s forwards;
+  top: 50%;
+  transform: translateY(-47%);
+  }
+  &.titleimg{
+	opacity: 0;animation: imgop 1.5s 3s forwards;
+  top: 50%;
+  transform: translateY(-50%);
+  }
+  &.bottom_img{top: auto;
+	bottom: 0;}
+  &.text_img{
+	  opacity: 0;animation: imgop 1.5s 3s forwards;
   }
   &:nth-child(1) {
     position: relative;
   }
+}
+
+
+@keyframes imgop {
+  to { opacity: 1;}
+}
+@keyframes imgmix {
+  to { opacity: 1;
+  transform: translateY(-50%);}
 }
 
 .girl2 {
@@ -1006,13 +965,29 @@
   .bg {
     background-size: cover;
   }
+  
+ .section1{
+	 .bg {height: 169.3vw;overflow: hidden;}
+	 }
 
   .img {
+  &.fix {
+  top: 0;
+  transform: translateY(3%);
+  }
+	  &.mix {
+  top: 0;
+  transform: translateY(3%);
+  }
     &:nth-child(1) {
       position: relative;
       height: calc(100vw * (636 / 375));
     }
   }
+@keyframes imgmix {
+  to { opacity: 1;
+  transform: translateY(0%);}
+}
 }
 </style>
 
