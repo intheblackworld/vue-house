@@ -413,7 +413,7 @@
       <div v-if="isMobile">
         <img src="./s1/mo/bg.jpg" alt class="img" />
         <img src="./s1/mo/bg2.jpg" alt class="img fix mix" />
-        <img src="./s1/mo/bg3.png" alt class="img bottom_img" data-aos="fade" data-aos-delay="400"  />
+        <img src="./s1/mo/bg3.png" alt class="img bottom_img"/>
         <img src="./s1/mo/img1.png" alt class="img fix" />
         <!-- <img src="./s1/mo/logo.png" alt class="img" /> -->
         <div class="logo-icon">
