@@ -252,7 +252,7 @@ export default {
   }
 
   .address {
-    width: 280px;margin-bottom: 0;
+    width: 280px;margin-bottom: 0; 
   }
 }
 </style>
