@@ -5,7 +5,7 @@ export default {
   googleLink: 'https://goo.gl/maps/p7g29VTdQDmUAwhT6',
   phone: '07-7027555',
   fbLink: 'https://www.facebook.com/%E4%BA%AC%E5%9F%8E%E9%B3%B3%E7%BF%94-111948606978067/',
-  fbMessage: 'm.me/111948606978067',
+  fbMessage: 'https://m.me/111948606978067',
   caseName: '京城鳳翔',
   indigatorLength: 7,
 
