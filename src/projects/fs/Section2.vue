@@ -8,14 +8,12 @@
         <img src="./s2/text.png" alt class="bg-img" />
       </div>
       <div v-else>
-        <Map :tagList="tagList" :bgSrcT="bgSrcT" :bgSrcB="bgSrcB" :hand="hand">
-          <img src="./s2/text.png" alt class="bg-img" />
+        <Map :tagList="tagList" :bgSrcT="bgSrcT" :bgSrcB="bgSrcB" :hand="hand" :bgText="require('./s2/text.png')">
           <img
             src="./s2/bg_icon.png"
             alt
             class="mask"
             v-if="isMobile"
-            v-touch="hideMask"
             @click="hideMask"
             v-show="showMask"
           />
@@ -86,6 +84,9 @@
   .bg-img {
     width: auto;
     height: 100vh;
+    &:nth-child(1) {
+      position: absolute;
+    }
   }
 }
 @keyframes swing {
