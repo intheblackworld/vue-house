@@ -64,10 +64,10 @@
 
 @media screen and (max-width: 767px) {
   .indigator {
-    right: 0;
+    right: 3px;
 
     .list-indigator {
-      padding: 4px 0px;
+      padding: 4px 5px;
     }
 
     .dot {
@@ -80,7 +80,7 @@
 
     .contact-indigator {
       width: 24px;
-      padding: 10px 4px;
+      padding: 10px 4px;display: none;
     }
   }
 }

@@ -291,11 +291,11 @@
     text-align: left;
     color: #cccccc;
     width: 100%;
-    padding-bottom: 64px;
+    padding-bottom:31vw;
   }
 
   .item-title {
-    font-size: calc(100vw * 12 / 375);
+    font-size: calc(100vw * 14 / 375);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;

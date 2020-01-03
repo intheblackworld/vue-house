@@ -279,7 +279,7 @@
     letter-spacing: 0.48px;
     text-align: left;
     color: #cccccc;
-    padding-bottom: 164px;
+    padding-bottom:31vw;
   }
 
   .item-title {

@@ -54,7 +54,7 @@
         </swiper>
         <div class="content">
           <div class="title">落點校園首排 舞動雙站捷奏</div>
-          <div class="stitle">天天公園孵育生活美好<br />轉身接軌鳳山國中站、大寮站</div>
+          <div class="stitle">天天公園孵育生活美好，轉身接軌鳳山國中站、大寮站</div>
           <div class="subtitle">公園校園與捷運交手，譜寫生活與未來雙贏！</div>
           <div class="desc">
             <div>．享受無限棟距好視野，開窗就是天天公園&學校預定地</div>
@@ -290,7 +290,7 @@
   }
 
   .title {
-    font-size: calc(100vw * 29 / 375);
+    font-size: calc(100vw * 25 / 375);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
@@ -303,7 +303,7 @@
   }
 
   .subtitle {
-    font-size: calc(100vw * 24 / 375);
+    font-size: calc(100vw * 15 / 375);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -311,8 +311,8 @@
     letter-spacing: 0.48px;
     text-align: left;
     color: #ffffff;
-    margin-top: calc(100vw * 17 / 375);
-    margin-bottom: calc(100vw * 30 / 375);
+    margin-top: calc(100vw * 13 / 375);
+    margin-bottom: calc(100vw * 14 / 375);
   }
 
   .desc {
@@ -325,9 +325,11 @@
     text-align: left;
     color: #cccccc;
     width: 100%;
-    padding-bottom: 64px;
+    padding-bottom:31vw;
     text-indent: -.7rem;
     padding-left: .7rem;
+    div{
+    margin: 0.3em 0;}
   }
 
   .item-title {

@@ -11,7 +11,7 @@
         <Map :tagList="tagList" :bgSrcT="bgSrcT" :bgSrcB="bgSrcB" :hand="hand">
           <img src="./s2/text.png" alt class="bg-img" />
           <img
-            src="./s2/箭頭.png"
+            src="./s2/bg_icon.png"
             alt
             class="mask"
             v-if="isMobile"
@@ -25,12 +25,16 @@
   </div>
 </template>
 <style lang="scss" scoped>
+
+#section2{
+  position: relative;}
 .bg {
   background-size: cover;
   background-position: center;
   position: relative;
   position: relative;
-  margin-top: -33vw;
+  top: -24vw;
+  margin-bottom: -24vw;
 }
 .bg-img {
   width: 100vw;

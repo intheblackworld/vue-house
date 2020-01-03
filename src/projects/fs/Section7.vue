@@ -58,7 +58,7 @@
           <div class="subtitle">甜蜜2房</div>
           <div class="desc">房間都開窗，才是真正適合生活的臥室，享受每天早上把陽光當鬧鐘的小確幸，更配備有雙衛浴，客人主人分開用，掌握全家生活自主權！</div>
           <div class="subtitle">幸福３房</div>
-          <div class="desc">3間房都有窗，格局方方正正好規劃，盡情大展身手的小天地！客廳旁就是落地窗，直接連接大露臺，搭起與自然風光連結的舞台。</div>
+          <div class="desc nth2">3間房都有窗，格局方方正正好規劃，盡情大展身手的小天地！客廳旁就是落地窗，直接連接大露臺，搭起與自然風光連結的舞台。</div>
         </div>
         <img src="./s7/bg_m.jpg" alt class="bg-img" />
       </div>
@@ -268,7 +268,7 @@
   }
 
   .subtitle {
-    font-size: calc(100vw * 24 / 375);
+    font-size: calc(100vw * 15 / 375);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -276,12 +276,12 @@
     letter-spacing: 0.48px;
     text-align: left;
     color: #ffffff;
-    margin-top: calc(100vw * 17 / 375);
-    margin-bottom: calc(100vw * 30 / 375);
+    margin-top: calc(100vw * 18 / 375);
+    margin-bottom: calc(100vw * 2 / 375);
   }
 
   .desc {
-    font-size: calc(100vw * 12 / 375);
+    font-size: calc(100vw * 14 / 375);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -290,7 +290,11 @@
     text-align: left;
     color: #cccccc;
     width: 100%;
-    padding-bottom: 64px;
+    padding-bottom:1em;
+     &.nth2{
+    padding-bottom:24vw;
+
+     }
   }
 
   .item-title {
