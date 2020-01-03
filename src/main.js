@@ -15,7 +15,6 @@ import VueScrollTo from 'vue-scrollto' // scroll 錨點
 import VueLazyload from 'vue-lazyload' // 圖片 lazy load
 import VueScrollReveal from 'vue-scroll-reveal'
 import VuePhotoZoomPro from 'vue-photo-zoom-pro'
-import Vue2TouchEvents from 'vue2-touch-events'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
@@ -47,7 +46,6 @@ library.add(faFacebookF)
 library.add(faMapMarkerAlt)
 
 Vue.use(VuePhotoZoomPro)
-Vue.use(Vue2TouchEvents)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
