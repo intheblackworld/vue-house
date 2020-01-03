@@ -169,8 +169,11 @@ export default {
   background: #fff;
   border:1px solid #999;
   color: #444;
-  span{
-    color: #c00;font-size:1.1em;font-weight: bold;
+
+  &::v-deep span {
+    color: #c00;
+    font-size:1.1em;
+    font-weight: bold;
   }
 }
 .google-btn {
