@@ -350,12 +350,12 @@ export default {
       },
       slideList: [
         {
-          img: require('./s3/1大東藝文中心.jpg'),
-          title: '大東藝文中心',
+          img: require('./s3/1衛武營.jpg'),
+          title: '衛武營',
         },
         {
-          img: require('./s3/2衛武營.jpg'),
-          title: '衛武營',
+          img: require('./s3/2大東藝文中心.jpg'),
+          title: '大東藝文中心',
         },
         {
           img: require('./s3/3享溫馨.jpg'),

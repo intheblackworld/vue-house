@@ -396,8 +396,8 @@ export default {
           title: '鳳山車站',
         },
         {
-          img: require('./s4/3鳳山國中捷運站.jpg'),
-          title: '鳳山國中捷運站',
+          img: require('./s4/3鳳山國中.jpg'),
+          title: '鳳山國中',
         },
       ],
     }
