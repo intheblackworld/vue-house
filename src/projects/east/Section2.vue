@@ -1,15 +1,12 @@
 <template>
   <div class="section2">
     <Map :tagList="tagList" :bgSrc="bgSrc" :hand="hand">
-      <img src="./s2/mo/11.png" alt class="line" v-if="isMobile" v-show="showMask" />
-      <img
+      <img src="./s2/mo/11.png" alt class="line" />
+        <img
         src="./s2/mo/箭頭.png"
         alt
         class="mask"
         v-if="isMobile"
-        v-touch="hideMask"
-        @click="hideMask"
-        v-show="showMask"
       />
     </Map>
   </div>
@@ -114,13 +111,6 @@ export default {
       bgSrc: isMobile ? require('./s2/mo/bg.jpg') : require('./s2/s2bg.jpg'),
       hand: require('./s2/mo/b.png'),
     }
-  },
-
-  methods: {
-    hideMask() {
-      console.log(123)
-      this.showMask = false
-    },
   },
 }
 </script>

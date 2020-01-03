@@ -17,6 +17,8 @@ import VueScrollReveal from 'vue-scroll-reveal'
 import VuePhotoZoomPro from 'vue-photo-zoom-pro'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import Vue2TouchEvents from 'vue2-touch-events'
+import VueTouch from 'vue-touch'
+
 
 import 'swiper/dist/css/swiper.css'
 
@@ -52,6 +54,7 @@ library.add(faMapMarkerAlt)
 
 Vue.use(VuePhotoZoomPro)
 Vue.use(Vue2TouchEvents)
+Vue.use(VueTouch, { name: 'v-touch' })
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
@@ -65,7 +68,7 @@ Vue.use(ElementUI)
 Vue.use(VueScrollTo)
 Vue.use(VueLazyload)
 Vue.use(VueScrollReveal)
-Vue.use(VueAwesomeSwiper, /* { default global options } */)
+Vue.use(VueAwesomeSwiper)
 
 new Vue({
   router,
@@ -77,7 +80,7 @@ new Vue({
       })
     }
   },
-  created () {
+  created() {
     AOS.init()
   },
   render: h => h(App)

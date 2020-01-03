@@ -1,8 +1,8 @@
 <template>
-  <div class="map" id="map">
+  <div class="map" id="map" refs="map" @scroll="handleScroll">
     <!-- <img :src="hand" alt class="hand" /> -->
     <img class="map-bg" :src="bgSrc" alt ref="mapbg" />
-    <slot></slot>
+    <slot v-if="showMask"></slot>
     <img
       :src="tag"
       data-aos="fade-down"
@@ -21,9 +21,13 @@ export default {
   data() {
     return {
       isMobile,
+      map: '',
+      showMask: false,
     }
   },
   mounted() {
+    this.map = this.$refs.map
+
     if (this.isMobile) {
       setTimeout(() => {
         const map = document.querySelector('.map')
@@ -34,7 +38,17 @@ export default {
         }
 
         map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2, 0)
+        
       }, 500)
+
+      setTimeout(() => {
+        this.showMask = true
+      }, 600)
+    }
+  },
+  methods: {
+    handleScroll() {
+      this.showMask = false
     }
   },
 }
