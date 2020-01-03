@@ -1,6 +1,6 @@
 import { isMobile } from '@/utils'
 export default {
-  address: isMobile ? '接待中心：<br />桃園市龜山區樂善二路、<br />樂善一路口' : '接待中心：桃園市龜山區樂善二路、樂善一路口',
+  address: isMobile ? '接待中心：<br />桃園市龜山區樂善二路、樂善一路口' : '接待中心：桃園市龜山區樂善二路、樂善一路口',
   googleSrc:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d903.6608972404138!2d121.38686952921384!3d25.046166698997933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDAyJzQ2LjIiTiAxMjHCsDIzJzE0LjciRQ!5e0!3m2!1szh-TW!2stw!4v1577702442368!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/aKE25sLzC15gi8yB7',

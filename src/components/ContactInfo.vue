@@ -37,7 +37,7 @@
           <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
         </span>
       </div>
-      <a class="google-btn flex-c" :href="info.googleLink" target="_blank" v-else>
+      <a class="google-btn flex-c" @click="showMapDialog" v-else>
         <span class="flex-c">
           <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
         </span>
@@ -86,16 +86,16 @@ export default {
   },
   methods: {
     showCallDialog() {
-      if (!this.isMobile) return
+      // if (!this.isMobile) return
       this.isShowCallDialog = true
     },
     showMessengerDialog() {
-      if (!this.isMobile) return
+      // if (!this.isMobile) return
       this.isShowMessengerDialog = true
     },
 
     showMapDialog() {
-      if (!this.isMobile) return
+      // if (!this.isMobile) return
       this.isShowMapDialog = true
     },
   },
