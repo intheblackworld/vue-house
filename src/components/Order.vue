@@ -15,7 +15,7 @@
             <el-input v-model="form.phone" placeholder></el-input>
           </div>
           <div class="row">
-            <label>E-mail</label>
+            <label>E-mail<span>*</span></label>
             <el-input v-model="form.email" placeholder></el-input>
           </div>
           <div class="row">
