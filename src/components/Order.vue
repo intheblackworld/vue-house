@@ -66,7 +66,7 @@
       </div>
         <div style="margin: 0 auto">
           <vue-recaptcha :sitekey="info.recaptcha_site_key_v2"
-          @verify="isVerify = true"
+          @verify="isVerify = true" :loadRecaptchaScript="true"
           ></vue-recaptcha>
         </div>
       <el-button
