@@ -15,11 +15,11 @@
             <el-input v-model="form.phone" placeholder></el-input>
           </div>
           <div class="row">
-            <label>E-mail<span>*</span></label>
+            <label>E-mail</label>
             <el-input v-model="form.email" placeholder></el-input>
           </div>
           <div class="row">
-            <label>居住城市<span>*</span></label>
+            <label>居住城市</label>
             <el-select v-model="form.city" placeholder>
               <el-option
                 v-for="city in cityList"
@@ -30,7 +30,7 @@
             </el-select>
           </div>
           <div class="row">
-            <label>居住地區<span>*</span></label>
+            <label>居住地區</label>
             <el-select v-model="form.area" placeholder>
               <el-option
                 v-for="area in areaList"
@@ -134,7 +134,7 @@ export default {
         message: h(
           'i',
           { style: 'color: #82191d' },
-          '「姓名、手機、 E-mail、居住城市、居住地區」是必填欄位',
+          '「姓名、手機」是必填欄位',
         ),
       })
     },
@@ -146,10 +146,11 @@ export default {
       this.isSubmit = true
       if (
         !this.form.name ||
-        !this.form.phone ||
-        !this.form.email ||
-        !this.form.city ||
-        !this.form.area
+        !this.form.phone
+        // ||
+        // !this.form.email ||
+        // !this.form.city ||
+        // !this.form.area
       ) {
         this.alertValidate()
         this.isSubmit = false
