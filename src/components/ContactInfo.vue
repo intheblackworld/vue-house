@@ -1,62 +1,56 @@
 <template>
+<div>
   <div class="contact-info">
-    <img class="logo" src="@/assets/img/contact-logo.png" alt />
+    <img class="logo" src="@/assets/img/contact-logo.png" alt="幸福大院的圖片" />
     <div class="info">
-      <div class="address flex-c" v-if="!isMobile">{{info.phone}}</div>
-      <div class="google-btn flex-c" @click="showCallDialog" v-if="!isMobile">
+      <div class="btn flex-c" @click="showCallDialog">
         <span class="flex-c">
           <font-awesome-icon icon="phone" />
           {{info.phone}}
         </span>
       </div>
-      <div class="btn flex-c" @click="showCallDialog" v-if="isMobile">
-        <span class="flex-c">
-          <font-awesome-icon icon="phone" />
-          {{info.phone}}
-        </span>
-      </div>
-      <!-- <div class="btn flex-c" v-if="isMobile">
+      <div class="btn flex-c">
         <span class="flex-c" @click="showMessengerDialog">
           <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB 諮詢
         </span>
-      </div> -->
+      </div>
       <!-- <a class="btn flex-c" :href="info.fbMessage" target="_blank" v-else>
         <span class="flex-c">
           <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB 諮詢
         </span>
       </a> -->
-      <!-- <a class="btn flex-c" :href="info.fbLink" target="_blank">
+      <a class="btn flex-c" :href="info.fbLink" target="_blank">
         <span class="flex-c">
           <font-awesome-icon :icon="['fab', 'facebook-f']" />前往粉絲專頁
         </span>
-      </a> -->
-      <div class="address flex-c" v-html="info.address" v-if="!isMobile"></div>
-      <div class="address" v-html="info.address" v-if="isMobile"></div>
-      <div class="google-btn flex-c" v-if="isMobile">
+      </a>
+      <div class="address flex-c" v-html="info.address"></div>
+      <div class="google-btn flex-c">
         <span class="flex-c" @click="showMapDialog">
           <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
         </span>
       </div>
-      <a class="google-btn flex-c" @click="showMapDialog" v-else>
+      <!-- <a class="google-btn flex-c" :href="info.googleLink" target="_blank" v-else>
         <span class="flex-c">
           <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
         </span>
-      </a>
-      <el-dialog title :visible.sync="isShowCallDialog" width="90%" :modal-append-to-body="false">
-        <CallDialog :phone="info.phone" />
-      </el-dialog>
-      <el-dialog
-        title
-        :visible.sync="isShowMessengerDialog"
-        width="90%"
-        :modal-append-to-body="false"
-      >
-        <MessengerDialog :messenger="info.fbMessage" />
-      </el-dialog>
-      <el-dialog title :visible.sync="isShowMapDialog" width="90%" :modal-append-to-body="false">
-        <MapDialog :link="info.googleLink" :address="info.address" />
-      </el-dialog>
+      </a> -->
     </div>
+  </div>
+  <el-dialog title :visible.sync="isShowCallDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
+    <CallDialog :phone="info.phone" />
+  </el-dialog>
+  <el-dialog
+    title
+    :visible.sync="isShowMessengerDialog"
+    :width="isMobile ? '90%' : '500px'"
+    :modal-append-to-body="false"
+  >
+    <MessengerDialog :messenger="info.fbMessage" />
+  </el-dialog>
+  <el-dialog title :visible.sync="isShowMapDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
+    <MapDialog :link="info.googleLink" :address="info.address" />
+  </el-dialog>
   </div>
 </template>
 
@@ -110,12 +104,12 @@ export default {
   background: $contact_bg;
   // background-image: url('../assets/img/contact_bg.jpg');
   background-size: cover;
-  background-position: top;
+  // background-position: 50% 100%;
   box-shadow: $contact_shadow;
   display: flex;
   flex-direction: column;
   align-content: center;
-  justify-content: space-between;
+  // justify-content: space-between;
   transform: translateY(14%);
   position: relative;
   z-index: 3;
@@ -123,13 +117,13 @@ export default {
   height: 460px;
 
   margin: 0 auto;
-  padding: 60px 0 50px;
+  // padding: 60px 0 50px;
 }
 
 .logo {
   width: $contact_logo_pc_width;
   height: auto;
-  margin: 0 auto;
+  margin: 50px auto 50px;
 }
 .info {
   width: 880px;
@@ -148,7 +142,7 @@ export default {
   text-decoration: none;
   color: $contact_btn_color;
   background: $contact_btn_bg;
-  box-shadow: $contact_btn_border;
+  border:$contact_btn_border;
   transition: all 0.5s;
 
   svg {
@@ -161,6 +155,7 @@ export default {
 
   &:hover {
     background: $contact_btn_hover_bg;
+    // background-image: url("../assets/img/contact_gold_button.png");
     color: $contact_btn_hover_color;
 
     svg {
@@ -171,9 +166,15 @@ export default {
 .address {
   width: 600px;
   height: 60px;
-  background: $contact_btn_bg;
-  box-shadow: $contact_btn_border;
-  margin-bottom: 15px;
+  background: #fff;
+  // border:1px solid #999;
+  color: #444;
+
+  &::v-deep span {
+    color: #c00;
+    font-size:1.1em;
+    font-weight: bold;
+  }
 }
 .google-btn {
   width: 280px;
@@ -183,7 +184,8 @@ export default {
   text-decoration: none;
   color: $contact_google_btn_color;
   background: $contact_google_btn_bg;
-  box-shadow: $contact_btn_border;
+  // background-image: url("../assets/img/contact_gold_button.png");
+  border: $contact_btn_border;
   transition: all 0.5s;
 
   svg {
@@ -251,9 +253,10 @@ export default {
 
   .address {
     width: 280px;
-    padding: 10px 15px;
     margin-bottom: 0;
     text-align: left;
+    border: 1px solid #666;
+    border-bottom: none;
   }
 }
 </style>

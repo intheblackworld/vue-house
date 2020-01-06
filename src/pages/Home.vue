@@ -21,7 +21,7 @@
     </div>
     <ContactSection />
     <!-- <SimpleOrder /> -->
-    <!-- <MobileNav /> -->
+    <MobileNav />
   </div>
 </template>
 
@@ -34,7 +34,7 @@
 // import Navigation from '@/layouts/Navigation.vue'
 // import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
-// import MobileNav from '@/layouts/MobileNav.vue'
+import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import gtm from '@/mixins/gtm.js'
 
@@ -53,7 +53,7 @@ export default {
     // Navigation,
     // SideNavigation,
     ContactSection,
-    // MobileNav,
+    MobileNav,
     Section1,
     Section2,
     Section3,
