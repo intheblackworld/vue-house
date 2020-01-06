@@ -99,6 +99,9 @@
     width: 90%;
     left: 140%;
   }
+  &.is-disabled:hover::before {
+    opacity: 0;
+  }
 }
 
 /* 螢幕尺寸標準 */

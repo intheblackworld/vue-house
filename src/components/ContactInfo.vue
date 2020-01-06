@@ -142,7 +142,7 @@ export default {
   text-decoration: none;
   color: $contact_btn_color;
   background: $contact_btn_bg;
-  box-shadow: $contact_btn_border;
+  // box-shadow: $contact_btn_border;
   transition: all 0.5s;
 
   svg {

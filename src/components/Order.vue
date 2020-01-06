@@ -64,12 +64,12 @@
           </p>
         </el-checkbox>
       </div>
-        <div style="margin: 0 auto;background: #fff;mix-blend-mode: screen;" v-if="!isMobile">
+        <div style="margin: 0 auto;z-index:2;" v-if="!isMobile">
           <vue-recaptcha :sitekey="info.recaptcha_site_key_v2"
           @verify="isVerify = true" :loadRecaptchaScript="true"
           ></vue-recaptcha>
         </div>
-        <div style="margin: 0 auto;" v-if="isMobile">
+        <div style="margin: 0 auto;z-index:2;" v-if="isMobile">
           <vue-recaptcha :sitekey="info.recaptcha_site_key_v2"
           @verify="isVerify = true" :loadRecaptchaScript="true"
           ></vue-recaptcha>
