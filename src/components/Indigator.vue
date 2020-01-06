@@ -2,22 +2,22 @@
   <div class="indigator">
     <div class="list-indigator">
       <div
-        :class="`dot ${index === indigatorIndex ? 'active' : '' }`"
+        :class="`dot ${index == indigatorIndex ? 'active' : '' }`"
         v-for="index in info.indigatorLength"
         :key="`indigator-${index}`"
         v-scroll-to="{ element: `#section${index}` }"
         @click="setIndigator(index)"
       ></div>
-      <div
+      <!-- <div
         :class="`dot ${(info.indigatorLength + 1) === indigatorIndex ? 'active' : '' }`"
         v-scroll-to="{ element: `#contact` }"
         @click="setIndigator(info.indigatorLength + 1)"
-      ></div>
+      ></div> -->
     </div>
     <div
       :class="`contact-indigator`"
-      v-scroll-to="{ element: `#contact` }"
-      @click="setIndigator(info.indigatorLength + 1)"
+      v-scroll-to="{ element: `#section8` }"
+      @click="setIndigator(info.indigatorLength)"
     >預約賞屋</div>
   </div>
 </template>
@@ -111,14 +111,19 @@ export default {
     }
   },
 
-  watch: {},
+  props: ['viewIndex'],
+
+  watch: {
+    viewIndex(val) {
+      console.log(val)
+      this.indigatorIndex = val
+    }
+  },
 
   methods: {
     setIndigator(index) {
       this.indigatorIndex = index
     },
   },
-
-  created() {},
 }
 </script>
