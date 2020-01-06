@@ -20,11 +20,17 @@
             <label>手機</label>
             <el-input v-model="form.phone" placeholder></el-input>
           </div>
-          <div class="row">
+          <div class="row house">
+            <label>想看房型</label>
+            <el-radio v-model="form.house" label="甜蜜2房">甜蜜2房</el-radio>
+            <el-radio v-model="form.house" label="幸福3房">幸福3房</el-radio>
+            <el-radio v-model="form.house" label="都想看看">都想看看</el-radio>
+          </div>
+          <!-- <div class="row">
             <label>E-mail</label>
             <el-input v-model="form.email" placeholder></el-input>
-          </div>
-          <div class="row">
+          </div> -->
+          <!-- <div class="row">
             <label>居住城市</label>
             <el-select v-model="form.city" placeholder>
               <el-option
@@ -47,7 +53,7 @@
                 no-data-text="請先選擇居住城市"
               ></el-option>
             </el-select>
-          </div>
+          </div> -->
         </div>
         <div class="group">
           <div class="row">
@@ -122,6 +128,7 @@ export default {
         city: '',
         area: '',
         msg: '',
+        house: '都想看看',
       },
       checked: false,
       isSubmit: false,
@@ -149,7 +156,7 @@ export default {
         message: h(
           'i',
           { style: 'color: #82191d' },
-          '「姓名、手機、 E-mail、居住城市、居住地區」是必填欄位',
+          '「姓名、手機、 房型」是必填欄位',
         ),
       })
     },
@@ -161,10 +168,11 @@ export default {
       this.isSubmit = true
       if (
         !this.form.name ||
-        !this.form.phone ||
-        !this.form.email ||
-        !this.form.city ||
-        !this.form.area
+        !this.form.phone
+        // ||
+        // !this.form.email ||
+        // !this.form.city ||
+        // !this.form.area
       ) {
         this.alertValidate()
         this.isSubmit = false
@@ -180,6 +188,7 @@ export default {
       formData.append('phone', this.form.phone)
       formData.append('email', this.form.email)
       formData.append('msg', this.form.msg)
+      formData.append('house', this.form.house)
       formData.append('city', this.form.city)
       formData.append('area', this.form.area)
       formData.append('utm_source', utmSource)
@@ -195,7 +204,7 @@ export default {
       const sec = time.getSeconds()
       const date = `${year}-${month}-${day} ${hour}:${min}:${sec}`
       fetch(
-        `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&email=${this.form.email}&cityarea=${this.form.city}${this.form.area}&msg=${this.form.msg}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
+        `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&email=${this.form.email}&cityarea=${this.form.city}${this.form.area}&msg=${this.form.msg}&house=${this.form.house}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
       `,
         {
           method: 'GET',
@@ -268,14 +277,15 @@ export default {
 
   .form {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     > .group {
       flex: 1;
+      align-items: flex-start;
     }
   }
 
   .group {
-    height: 300px;
+    height: 280px;
 
     &:nth-child(1) {
       border-right: 1px solid rgba(0, 0, 0, 0.2);
@@ -294,8 +304,12 @@ export default {
 
   .row {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 15px;
+
+    &.house {
+      margin-top: 50px;
+    }
 
     &:nth-last-child(1) {
       margin-bottom: 0;
@@ -310,7 +324,7 @@ export default {
   }
 
   .control {
-    margin-top: 60px;
+    margin-top: 30px;
     margin-bottom: 20px;
   }
 }
@@ -367,6 +381,10 @@ export default {
 
     .row {
       margin-bottom: 12px !important;
+
+      &.house {
+        margin-top: 20px;
+      }
       label {
         width: 30% !important;
       }
