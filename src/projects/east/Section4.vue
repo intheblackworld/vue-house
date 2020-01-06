@@ -199,16 +199,16 @@
       margin-top: 10px;
     }
 
-    hr {
-      position: absolute;
-      width: 100%;
-      left: calc(100vw * (170 / 1680));
-      top: calc(100vw * (30 / 1680));
-      background: #999;
-      color: #999;
-      border-color: #999;
-      border-top: 1px solid #999;
-    }
+  hr {
+    position: absolute;
+    width: 100%;
+    left: calc(100vw * (170 / 1680));
+    top: calc(100vw * (30 / 1680));
+    background:none;
+    //color: #676767;
+    border: 0;
+    border-top: 2px solid rgba(0,0,0,.25);
+  }
 
     hr {
       left: calc(100vw * (340 / 750));

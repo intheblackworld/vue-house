@@ -90,13 +90,13 @@
 
   hr {
     position: absolute;
-    width: 150%;
+    width: 100%;
     left: calc(100vw * (170 / 1680));
     top: calc(100vw * (30 / 1680));
-    background: #a4a4a4;
-    color: #a4a4a4;
-    border-color: #a4a4a4;
-    border-top: 1px solid #a4a4a4;
+    background:none;
+    //color: #676767;
+    border: 0;
+    border-top: 2px solid rgba(0,0,0,.2);
   }
 
   .desc {

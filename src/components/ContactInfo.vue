@@ -110,7 +110,7 @@ export default {
   flex-direction: column;
   align-content: center;
   // justify-content: space-between;
-  transform: translateY(14%);
+  transform: translateY(14.13%);
   position: relative;
   z-index: 3;
   width: 1200px;
@@ -142,7 +142,8 @@ export default {
   text-decoration: none;
   color: $contact_btn_color;
   background: $contact_btn_bg;
-  border:$contact_btn_border;
+  background-position: 10% 10%;
+  border:0px;//$contact_btn_border;
   transition: all 0.5s;
 
   svg {
@@ -154,8 +155,9 @@ export default {
   }
 
   &:hover {
-    background: $contact_btn_hover_bg;
+    //background: $contact_btn_hover_bg;
     // background-image: url("../assets/img/contact_gold_button.png");
+  background-position: 10% 12%;
     color: $contact_btn_hover_color;
 
     svg {
