@@ -20,11 +20,17 @@
             <label>手機</label>
             <el-input v-model="form.phone" placeholder></el-input>
           </div>
-          <div class="row house">
+          <div class="row">
             <label>想看房型</label>
-            <el-radio v-model="form.house" label="甜蜜2房">甜蜜2房</el-radio>
-            <el-radio v-model="form.house" label="幸福3房">幸福3房</el-radio>
-            <el-radio v-model="form.house" label="都想看看">都想看看</el-radio>
+            <el-select v-model="form.house" placeholder>
+              <el-option
+                v-for="city in ['甜蜜2房', '幸福3房', '都想看看']"
+                :key="city"
+                :label="city"
+                :value="city"
+                no-data-text=""
+              ></el-option>
+            </el-select>
           </div>
           <!-- <div class="row">
             <label>E-mail</label>
@@ -128,7 +134,7 @@ export default {
         city: '',
         area: '',
         msg: '',
-        house: '都想看看',
+        house: '',
       },
       checked: false,
       isSubmit: false,
@@ -285,7 +291,7 @@ export default {
   }
 
   .group {
-    height: 280px;
+    height: 250px;
 
     &:nth-child(1) {
       border-right: 1px solid rgba(0, 0, 0, 0.2);
@@ -297,6 +303,7 @@ export default {
     &:nth-child(2) {
       .row {
         justify-content: flex-end;
+        align-items: flex-start;
         height: 100%;
       }
     }
@@ -304,7 +311,7 @@ export default {
 
   .row {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     margin-bottom: 15px;
 
     &.house {
@@ -324,7 +331,7 @@ export default {
   }
 
   .control {
-    margin-top: 30px;
+    margin-top: 0px;
     margin-bottom: 20px;
   }
 }
