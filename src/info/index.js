@@ -6,8 +6,8 @@ export default {
   googleLink: 'https://goo.gl/maps/aKE25sLzC15gi8yB7',
   phone: '03-3277366',
   fbLink:
-    'https://www.facebook.com/%E5%8F%8B%E6%96%87%E5%8C%96-100596024670205/',
-  fbMessage: 'https://m.me/100596024670205',
+    'https://www.facebook.com/%E9%A0%A4%E6%98%8C%E8%B1%90%E5%B2%B3-112415393610558/',
+  fbMessage: 'https://m.me/112415393610558/',
   caseName: '頤昌豐岳',
   houseInfos: [
     // ['投資興建', '築禾建設股份有限公司'],
