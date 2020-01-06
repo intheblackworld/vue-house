@@ -37,28 +37,40 @@
   }
 
   .dot {
-    width: 16px;
-    height: 16px;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    font-size:16px;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.9em;
+    margin-bottom: 0.9em;
     background: transparent;
     cursor: pointer;
-    border: 1px solid #fff;
+    border: 1px solid #ccc;
     border-radius: 999px;
     &.active {
       background: #fff;
     }
+    &:hover {
+    border: 2px solid #fff;
+    }
   }
 
   .contact-indigator {
-    background: rgba(0, 0, 0, 0.4);
+    background: rgb(239,204,125);
+background: -moz-linear-gradient(-45deg,  rgba(239,204,125,1) 0%, rgba(255,255,255,1) 50%, rgba(239,204,125,1) 100%);
+background: -webkit-linear-gradient(-45deg,  rgba(239,204,125,1) 0%,rgba(255,255,255,1) 50%,rgba(239,204,125,1) 100%);
+background: linear-gradient(135deg,  rgba(239,204,125,1) 0%,rgba(255,255,255,1) 50%,rgba(239,204,125,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efcc7d', endColorstr='#efcc7d',GradientType=1 );
     margin: 10px auto;
     padding: 8px;
-    color: #ffd200;
+    color: #640;
     border-radius: 20px;
     cursor: pointer;
     line-height: 1.5;
     width: 32px;
+    transition: all 0.3s;
+    &:hover{     
+    color: #000;
+    }
   }
 }
 
