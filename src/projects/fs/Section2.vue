@@ -137,7 +137,6 @@ export default {
 
   methods: {
     hideMask() {
-      console.log(123)
       this.showMask = false
     },
   },
