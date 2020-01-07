@@ -340,10 +340,10 @@ export default {
         allowSlidePrev: isMobile ? true : true,
         allowSlideNext: isMobile ? true : true,
         // centeredSlides: true,
-        // autoplay: {
-        //   delay: 4000,
-        //   disableOnInteraction: true,
-        // },
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: true,
+        },
         loop: true,
         effect: 'fade',
         navigation: {
