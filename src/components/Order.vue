@@ -7,6 +7,7 @@
     <img src="@/projects/fs/order/bg.jpg" alt="" class="bg-img" v-if="!isMobile">
     <img src="@/projects/fs/order/bg2.png" alt="" class="bg-img no-mix" v-if="!isMobile">
     <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile">
+    <div class="bg-img" v-if="isMobile"></div>
     <div class="order-title" v-html="order.title"></div>
     <div class="order-subtitle" v-html="order.subTitle"></div>
     <div class="order">
@@ -235,22 +236,21 @@ export default {
 @import '@/assets/style/variableColor.scss';
 .bg-img {
   width: 100vw;
-  height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
-  height: auto;
+  height:auto;
   display: block;
   object-fit: cover;
   mix-blend-mode: screen;
-
+  //background: ("~@/projects/fs/order/bg_m.jpg");
   &.no-mix {
     mix-blend-mode: unset;
   }
 }
 .order-bg {
-  background-color: $order_bg_color;
-  background-image: $order_bg_image;
+  /* background-color: $order_bg_color;
+  background-image: $order_bg_image; */
   background-repeat: no-repeat;
   background-size: 100% auto;
   position: relative;
@@ -355,6 +355,12 @@ export default {
 /* 螢幕尺寸標準 */
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
+  
+.bg-img {
+  background: url("~@/projects/fs/order/bg_m.jpg") repeat 0 0;
+  background-size: contain;
+  height: 100%;
+}
   .order-bg {
     background-image: $order_bg_image_m;
     padding-top: 40px;

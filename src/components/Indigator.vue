@@ -18,7 +18,7 @@
       :class="`contact-indigator`"
       v-scroll-to="{ element: `#section8` }"
       @click="setIndigator(info.indigatorLength)"
-    >預約賞屋</div>
+    ><img src="@/projects/fs/all/contact-indigator.png" alt=""></div>
   </div>
 </template>
 
@@ -26,7 +26,7 @@
 .indigator {
   position: fixed;
   right: 10px;
-  top: 40%;
+  top: 50%;
   transform: translateY(-50%);
   z-index: 10;
   .list-indigator {
@@ -55,22 +55,53 @@
   }
 
   .contact-indigator {
-    background: rgb(239,204,125);
+   /* background: rgb(239,204,125);
 background: -moz-linear-gradient(-45deg,  rgba(239,204,125,1) 0%, rgba(255,255,255,1) 50%, rgba(239,204,125,1) 100%);
 background: -webkit-linear-gradient(-45deg,  rgba(239,204,125,1) 0%,rgba(255,255,255,1) 50%,rgba(239,204,125,1) 100%);
 background: linear-gradient(135deg,  rgba(239,204,125,1) 0%,rgba(255,255,255,1) 50%,rgba(239,204,125,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efcc7d', endColorstr='#efcc7d',GradientType=1 );
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efcc7d', endColorstr='#efcc7d',GradientType=1 ); */
     margin: 10px auto;
     padding: 8px;
     color: #640;
     border-radius: 20px;
     cursor: pointer;
     line-height: 1.5;
-    width: 32px;
     transition: all 0.3s;
+    position: absolute;
+    right:0;
+    top:calc( 50% + 50vh - 1.3em);
+    overflow: hidden;
+    border-radius: 50%;
+    font-size: 120px;//用來調按鈕大小的
+    width:1em;
+    height:1em;
+    img{
+    position: absolute;
+    bottom: 0;right: 0;
+    width:100%;}
     &:hover{     
     color: #000;
     }
+    &::before {
+    content: '';
+    width: 40%;
+    height: 100%;
+    display: block;
+    background: #fff;
+    position: absolute;
+    transform: skewX(-20deg);
+    left: -10%;
+    opacity: 0;
+    top: 0;
+    z-index: 5;
+    transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
+  }
+
+  &:hover::before {
+    opacity: 1;
+    width: 90%;
+    left: 140%;
+  }
   }
 }
 
