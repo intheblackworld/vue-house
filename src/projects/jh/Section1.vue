@@ -17,11 +17,11 @@
         <source src="./s1/Christmas_Village.mp3" type="audio/mpeg" />
       </audio>
       <div class="modal" v-if="modal">
-        <div class="mask"></div>
+        <div class="mask" @click="modal = false"></div>
         <div>
-          <img src="@/projects/jh/s4/close.png" alt class="close" @click="modal = false" />
           <img src="./w.jpg" alt v-if="!isMobile" />
           <img src="./mo.jpg" alt v-else />
+          <img src="@/projects/jh/s4/close.png" alt class="close" @click="modal = false" />
         </div>
       </div>
       <div class="main">
