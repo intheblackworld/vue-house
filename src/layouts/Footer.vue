@@ -18,7 +18,7 @@
   vertical-align: middle;
 
   img {
-    height:1.4em;
+    height:1.2em;
     margin-right: 20px;
     vertical-align: inherit;
   }
