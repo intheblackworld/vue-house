@@ -13,10 +13,10 @@
       <font-awesome-icon :icon="['fab', 'facebook-messenger']" />
       <div class="label">FB諮詢</div>
     </a>
-    <a class="nav-item" @click="showMapDialog">
+    <!-- <a class="nav-item" @click="showMapDialog">
       <font-awesome-icon icon="map-marker-alt" />
       <div class="label">地圖導航</div>
-    </a>
+    </a> -->
     <el-dialog title :visible.sync="isShowCallDialog" width="90%" :modal-append-to-body="false">
       <CallDialog :phone="info.phone" />
     </el-dialog>
@@ -94,13 +94,7 @@ export default {
 .mobile-nav {
   width: 100%;
   height: 63px;
-  //background: $mobile_nav_background;
-  background: rgb(239,204,125);
-background: -moz-linear-gradient(-45deg,  rgba(239,204,125,1) 0%, rgba(255,255,255,1) 50%, rgba(239,204,125,1) 100%);
-background: -webkit-linear-gradient(-45deg,  rgba(239,204,125,1) 0%,rgba(255,255,255,1) 50%,rgba(239,204,125,1) 100%);
-background: linear-gradient(135deg,  rgba(239,204,125,1) 0%,rgba(255,255,255,1) 50%,rgba(239,204,125,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efcc7d', endColorstr='#efcc7d',GradientType=1 );
-
+  background: $mobile_nav_background;
   display: flex;
   position: fixed;
   bottom: 0;

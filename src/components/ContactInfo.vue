@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div class="contact-info">
+  <div class="contact-info" id="contact-info">
     <img class="logo" src="@/assets/img/contact-logo.png" alt="心天畝的圖片" />
     <div class="info">
       <div class="btn flex-c" @click="showCallDialog">
@@ -24,10 +24,20 @@
           <font-awesome-icon :icon="['fab', 'facebook-f']" />前往粉絲專頁
         </span>
       </a>
-      <div class="address flex-c">{{info.address}}</div>
+      <!-- <div class="address flex-c">{{info.address}}</div>
       <div class="btn flex-c">
         <span class="flex-c" @click="showMapDialog">
           <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
+        </span>
+      </div> -->
+      <div class="btn half flex-c">
+        <span class="flex-c" href="http://unigiants.com.tw/" target="_blank">
+          聯碩地產行銷團隊
+        </span>
+      </div>
+      <div class="btn half flex-c">
+        <span class="flex-c" href="https://www.facebook.com/unigiant/" target="_blank">
+          <font-awesome-icon :icon="['fab', 'facebook-f']" />前往聯碩粉絲專頁
         </span>
       </div>
       <!-- <a class="google-btn flex-c" :href="info.googleLink" target="_blank" v-else>
@@ -145,6 +155,11 @@ export default {
   // box-shadow: $contact_btn_border;
   transition: all 0.5s;
 
+
+  &.half {
+    width: 49%;
+  }
+
   svg {
     color: $contact_btn_icon;
     width: 24px;
@@ -225,6 +240,12 @@ export default {
 
     .logo {
       width: $contact_logo_mobile_width;
+    }
+  }
+
+  .btn {
+    &.half {
+      width: 280px;
     }
   }
 

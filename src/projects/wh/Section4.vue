@@ -1,14 +1,14 @@
 <template>
   <div class="section4">
-    <div class="bg fullscreen">
+    <div class="bg">
       <!-- <img src="./s1/bg1.png" alt class="bg-img relative" data-aos="fade" data-aos-delay="600" /> -->
       <!-- 不用一屏高
         圖片這邊寬59%
       文字區塊內容在區塊內置中-->
-      <div class="left">
+      <div class="left" data-aos="fade" data-aos-delay="400">
         <img src="./s3/img.jpg" alt class="img" />
       </div>
-      <div class="right">
+      <div class="right" data-aos="fade-up" data-aos-delay="600">
         <!-- <img class="img" src="./s1/img1.jpg" alt /> -->
         <div class="content">
           <h3 class="title">
@@ -16,7 +16,12 @@
 文華苑六星級陣容<br />
 國際級超規格鉅獻
           </h3>
-          <img src="./s3/icon.png" alt class="icon" />
+          <img src="./s4/icon.png" alt class="icon" v-if="!isMobile" />
+          <div class="flex-c" v-if="isMobile">
+            <div class="icon-line"></div>
+            <img src="./s4/icon.png" alt class="icon" />
+            <div class="icon-line"></div>
+          </div>
           <div class="desc">
             2012年「文華苑」獲得蘇富比評選為全球十大獨特豪宅<br />
             與文華苑同規格國際級團隊，超規格陣容，相襯您的格局
@@ -26,6 +31,7 @@
             </p>
           </div>
         </div>
+        <div class="line line-b" v-if="!isMobile"></div>
       </div>
     </div>
     <!-- <div class="bg"></div> -->
@@ -38,7 +44,11 @@
   position: relative;
   height: 100vh;
   display: flex;
-  overflow: hidden;
+  &.fullscreen {
+    min-height: 700px !important;
+    height: calc(100vw * 832 / 1920) !important;
+    overflow: visible;
+  }
 }
 .bg-img {
   width: 100vw;
@@ -49,6 +59,24 @@
   height: auto;
   display: block;
   object-fit: cover;
+}
+
+.line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 1px;
+  background-color: #aa804a;
+  height: calc(100vw * 245 / 1920);
+
+  &.line-t {
+    top: -5%;
+  }
+
+  &.line-b {
+    bottom: -10%;
+  }
 }
 
 .left {
@@ -122,12 +150,26 @@
   .fullscreen {
     height: 100vh;
   }
+
+  .line {
+    &.line-b {
+      height: calc(100vw * 205 / 1920);
+      bottom: -30%;
+    }
+  }
 }
 
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .bg {
+  }
+
+  .line {
+    &.line-b {
+      height: calc(100vw * 305 / 1920);
+      bottom: -10%;
+    }
   }
 }
 
@@ -136,8 +178,16 @@
     flex-wrap: wrap;
 
     &.fullscreen {
+      min-height: auto !important;
       height: auto !important;
     }
+  }
+
+  .icon-line {
+    width: 112px;
+    height: 1px;
+    background-color: #aa804a;
+    margin: 0 10px;
   }
 
   .left {
@@ -165,7 +215,14 @@
 
       .desc {
         font-size: calc(100vw * 12 / 375);
-        margin-top: 20px;
+        margin-top: 0px;
+
+        p {
+          margin-top: 10px;
+          font-weight: bold;
+          font-family: 'Noto Serif TC', serif;
+          line-height: 1.8;
+        }
       }
     }
   }

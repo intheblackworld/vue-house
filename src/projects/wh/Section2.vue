@@ -5,23 +5,29 @@
       <!-- 不用一屏高
         圖片這邊寬59%
       文字區塊內容在區塊內置中-->
-      <div class="left">
+      <div class="left" data-aos="fade" data-aos-delay="400">
         <img src="./s3/img.jpg" alt class="img" />
       </div>
-      <div class="right">
-        <!-- <img class="img" src="./s1/img1.jpg" alt /> -->
+      <div class="right" data-aos="fade-up" data-aos-delay="600">
+        <div class="line line-t" v-if="!isMobile"></div>
         <div class="content">
           <h3 class="title">
             遇見不凡
             <span>預見非凡</span>
           </h3>
-          <img src="./s3/icon.png" alt class="icon" />
+          <img src="./s2/icon.png" alt class="icon" v-if="!isMobile" />
+          <div class="flex-c" v-if="isMobile">
+            <div class="icon-line"></div>
+            <img src="./s2/icon.png" alt class="icon" />
+            <div class="icon-line"></div>
+          </div>
           <div class="desc">
             2012半世紀的品牌寫下「文華苑」經典
             <br />不凡經典至今依舊傳唱
             <br />2020達欣與經典團隊相約重逢、再鑄非凡
           </div>
         </div>
+        <div class="line line-b" v-if="!isMobile"></div>
       </div>
     </div>
     <!-- <div class="bg"></div> -->
@@ -32,9 +38,14 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  height: 100vh;
+  // height: 100vh;
   display: flex;
-  overflow: hidden;
+
+  &.fullscreen {
+    min-height: 700px !important;
+    height: calc(100vw * 832 / 1920) !important;
+    overflow: visible;
+  }
 }
 .bg-img {
   width: 100vw;
@@ -50,6 +61,25 @@
 .left {
   width: 59%;
   height: 100%;
+}
+
+.line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 1px;
+  background-color: #aa804a;
+  height: calc(100vw * 256 / 1920);
+
+  &.line-t {
+    top: -10%;
+  }
+
+  &.line-b {
+    bottom: -5%;
+    height: calc(100vw * 200 / 1920);
+  }
 }
 
 .right {
@@ -117,6 +147,17 @@
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .bg {
   }
+
+  .line {
+    &.line-t {
+      height: calc(100vw * 305 / 1920);
+      top: -5%;
+    }
+    &.line-b {
+      height: calc(100vw * 305 / 1920);
+      bottom: -10%;
+    }
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -124,6 +165,7 @@
     flex-wrap: wrap;
 
     &.fullscreen {
+      min-height: auto !important;
       height: auto !important;
     }
   }
@@ -134,6 +176,13 @@
     .img {
       height: auto;
     }
+  }
+
+  .icon-line {
+    width: 112px;
+    height: 1px;
+    background-color: #aa804a;
+    margin: 0 10px;
   }
 
   .right {

@@ -1,7 +1,6 @@
 <template>
   <div class="order-bg">
     <h3 class="order-title">{{order.title}}</h3>
-    <hr style="border-color: #cc0011; width: calc(100vw * (160/1920));margin: 15px auto;">
     <h3 class="order-subtitle">{{order.subTitle}}</h3>
     <div class="order">
       <div class="form">
@@ -214,7 +213,7 @@ export default {
   .order-title {
     margin-top: 40px;
     margin-bottom: 8px;
-    font-size: 36px;
+    font-size: calc(100vw * 60 / 1920);
     text-align: center;
     color: $order_title_color;
   }
@@ -302,10 +301,11 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .order-bg {
-  background-image: url('../assets/img/order-bg-m.jpg');
+  background-image: $order_bg_image_m;
   background-size: 100% auto;
     padding-top: 40px;
     .order-title {
+      font-size: 22px;
       margin-top: 10px;
       margin-bottom: 20px;
     }

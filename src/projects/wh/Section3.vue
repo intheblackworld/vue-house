@@ -5,10 +5,10 @@
       <!-- 不用一屏高
         圖片這邊寬59%
       文字區塊內容在區塊內置中-->
-      <div class="left">
+      <div class="left" data-aos="fade" data-aos-delay="400">
         <img src="./s3/img.jpg" alt class="img" />
       </div>
-      <div class="right">
+      <div class="right" data-aos="fade-up" data-aos-delay="600">
         <!-- <img class="img" src="./s1/img1.jpg" alt /> -->
         <div class="content">
           <h3 class="title">
@@ -16,7 +16,12 @@
             國際迎賓林蔭大道<br />
             遍佈達欣經典足跡
           </h3>
-          <img src="./s3/icon.png" alt class="icon" />
+          <img src="./s3/icon.png" alt class="icon" v-if="!isMobile" />
+          <div class="flex-c" v-if="isMobile">
+            <div class="icon-line"></div>
+            <img src="./s3/icon.png" alt class="icon" />
+            <div class="icon-line"></div>
+          </div>
           <div class="desc">
             敦化南北路林蔭大道綠浪蓊鬱傾瀉
             <br />漫步其中，不期而遇的經典，皆是達欣走過足跡
@@ -28,6 +33,7 @@
             「達欣・信義文華」即將再現傳世巨鑄
           </div>
         </div>
+        <div class="line line-b" v-if="!isMobile"></div>
       </div>
     </div>
     <!-- <div class="bg"></div> -->
@@ -40,7 +46,12 @@
   position: relative;
   height: 100vh;
   display: flex;
-  overflow: hidden;
+
+  &.fullscreen {
+    min-height: 700px !important;
+    height: calc(100vw * 832 / 1920) !important;
+    overflow: visible;
+  }
 }
 .bg-img {
   width: 100vw;
@@ -51,6 +62,24 @@
   height: auto;
   display: block;
   object-fit: cover;
+}
+
+.line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 1px;
+  background-color: #aa804a;
+  height: calc(100vw * 160 / 1920);
+
+  &.line-t {
+    top: -10%;
+  }
+
+  &.line-b {
+    bottom: -15%;
+  }
 }
 
 .left {
@@ -118,12 +147,26 @@
   .fullscreen {
     height: 100vh;
   }
+
+
+  .line {
+    &.line-b {
+      bottom: 0%;
+    }
+  }
 }
 
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .bg {
+  }
+
+  .line {
+    &.line-b {
+      height: calc(100vw * 305 / 1920);
+      bottom: -10%;
+    }
   }
 }
 
@@ -132,6 +175,7 @@
     flex-wrap: wrap;
 
     &.fullscreen {
+      min-height: auto !important;
       height: auto !important;
     }
   }
@@ -142,6 +186,13 @@
     .img {
       height: auto;
     }
+  }
+
+  .icon-line {
+    width: 112px;
+    height: 1px;
+    background-color: #aa804a;
+    margin: 0 10px;
   }
 
   .right {
