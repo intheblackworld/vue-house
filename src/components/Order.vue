@@ -1,22 +1,17 @@
 <template>
   <div class="order-bg">
-    <!-- <div class="title-block">
-      <h3 class="title">{{order.title}}</h3>
-      <div class="subtitle">{{order.subTitle}}</div>
-    </div> -->
-    <img src="@/projects/wh/order/bg.jpg" alt="" class="bg-img" v-if="!isMobile">
-    <img src="@/projects/wh/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile">
-    <div class="order-title" v-html="order.title"></div>
-    <div class="order-subtitle" v-html="order.subTitle"></div>
+    <h3 class="order-title">{{order.title}}</h3>
+    <hr style="border-color: #cc0011; width: calc(100vw * (160/1920));margin: 15px auto;">
+    <h3 class="order-subtitle">{{order.subTitle}}</h3>
     <div class="order">
       <div class="form">
         <div class="group">
           <div class="row">
-            <label>姓名</label>
+            <label>姓名<span>*</span></label>
             <el-input v-model="form.name" placeholder></el-input>
           </div>
           <div class="row">
-            <label>手機</label>
+            <label>手機<span>*</span></label>
             <el-input v-model="form.phone" placeholder></el-input>
           </div>
           <div class="row">
@@ -31,7 +26,6 @@
                 :key="city.value"
                 :label="city.label"
                 :value="city.value"
-                no-data-text="無數據"
               ></el-option>
             </el-select>
           </div>
@@ -43,7 +37,6 @@
                 :key="area.value"
                 :label="area.label"
                 :value="area.value"
-                no-data-text="請先選擇居住城市"
               ></el-option>
             </el-select>
           </div>
@@ -63,14 +56,9 @@
           </p>
         </el-checkbox>
       </div>
-        <div style="margin: 0 auto;z-index:2;" v-if="!isMobile">
+        <div style="margin: 0 auto">
           <vue-recaptcha :sitekey="info.recaptcha_site_key_v2"
-          @verify="isVerify = true" :loadRecaptchaScript="true"
-          ></vue-recaptcha>
-        </div>
-        <div style="margin: 0 auto;z-index:2;" v-if="isMobile">
-          <vue-recaptcha :sitekey="info.recaptcha_site_key_v2"
-          @verify="isVerify = true" :loadRecaptchaScript="true"
+          @verify="isVerify = true"
           ></vue-recaptcha>
         </div>
       <el-button
@@ -80,7 +68,7 @@
         @click="submit"
         :loading="isSubmit"
       >立即預約</el-button>
-      <Loading :loading="isSubmit" :isOpacity="true" />
+      <!-- <Loading :loading="isSubmit" :isOpacity="true" /> -->
     </div>
     <ContactInfo />
     <GoogleMap />
@@ -94,8 +82,7 @@ import GoogleMap from '@/components/GoogleMap.vue'
 import PolicyDialog from '@/components/PolicyDialog.vue'
 import info from '@/info'
 import { cityList, renderAreaList } from '@/info/address'
-import { isMobile } from '@/utils'
-import Loading from '@/components/Loading.vue'
+// import Loading from '@/components/Loading.vue'
 import VueRecaptcha from 'vue-recaptcha'
 
 export default {
@@ -104,7 +91,7 @@ export default {
     ContactInfo,
     GoogleMap,
     PolicyDialog,
-    Loading,
+    // Loading,
     VueRecaptcha,
   },
 
@@ -113,7 +100,6 @@ export default {
       cityList,
       info,
       order: info.order,
-      isMobile,
       form: {
         name: '',
         phone: '',
@@ -121,7 +107,6 @@ export default {
         city: '',
         area: '',
         msg: '',
-        house: '',
       },
       checked: false,
       isSubmit: false,
@@ -149,7 +134,7 @@ export default {
         message: h(
           'i',
           { style: 'color: #82191d' },
-          '「姓名、手機、 房型」是必填欄位',
+          '「姓名、手機」是必填欄位',
         ),
       })
     },
@@ -161,10 +146,11 @@ export default {
       this.isSubmit = true
       if (
         !this.form.name ||
-        !this.form.phone ||
-        !this.form.email ||
-        !this.form.city ||
-        !this.form.area
+        !this.form.phone
+        // ||
+        // !this.form.email ||
+        // !this.form.city ||
+        // !this.form.area
       ) {
         this.alertValidate()
         this.isSubmit = false
@@ -180,7 +166,6 @@ export default {
       formData.append('phone', this.form.phone)
       formData.append('email', this.form.email)
       formData.append('msg', this.form.msg)
-      formData.append('house', this.form.house)
       formData.append('city', this.form.city)
       formData.append('area', this.form.area)
       formData.append('utm_source', utmSource)
@@ -196,7 +181,7 @@ export default {
       const sec = time.getSeconds()
       const date = `${year}-${month}-${day} ${hour}:${min}:${sec}`
       fetch(
-        `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&email=${this.form.email}&cityarea=${this.form.city}${this.form.area}&msg=${this.form.msg}&house=${this.form.house}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
+        `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&email=${this.form.email}&cityarea=${this.form.city}${this.form.area}&msg=${this.form.msg}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
       `,
         {
           method: 'GET',
@@ -219,35 +204,17 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/style/variableColor.scss';
-.bg-img {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: auto;
-  display: block;
-  object-fit: cover;
-
-  &.no-mix {
-    mix-blend-mode: unset;
-  }
-}
 .order-bg {
-  background-color: $order_bg_color;
+  // background-color: $order_bg_color;
   background-image: $order_bg_image;
-  background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: cover;
   position: relative;
-  margin-top: 0px;
-  padding-top: 0px;
+  padding-top: 80px;
 
   .order-title {
-    padding-top: 40px;
-    margin-bottom: 18px;
-    font-weight: bold;
-    line-height: 1.3;
-    font-size: calc(100vw * 60 / 1920);
+    margin-top: 40px;
+    margin-bottom: 8px;
+    font-size: 36px;
     text-align: center;
     color: $order_title_color;
   }
@@ -268,15 +235,14 @@ export default {
 
   .form {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     > .group {
       flex: 1;
-      align-items: flex-start;
     }
   }
 
   .group {
-    height: 250px;
+    height: 300px;
 
     &:nth-child(1) {
       border-right: 1px solid rgba(0, 0, 0, 0.2);
@@ -288,7 +254,6 @@ export default {
     &:nth-child(2) {
       .row {
         justify-content: flex-end;
-        align-items: flex-start;
         height: 100%;
       }
     }
@@ -298,10 +263,6 @@ export default {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
-
-    &.house {
-      margin-top: 50px;
-    }
 
     &:nth-last-child(1) {
       margin-bottom: 0;
@@ -316,7 +277,7 @@ export default {
   }
 
   .control {
-    margin-top: 0px;
+    margin-top: 60px;
     margin-bottom: 20px;
   }
 }
@@ -341,18 +302,16 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .order-bg {
-    background-image: $order_bg_image_m;
+  background-image: url('../assets/img/order-bg-m.jpg');
+  background-size: 100% auto;
     padding-top: 40px;
     .order-title {
       margin-top: 10px;
       margin-bottom: 20px;
-      font-size: calc(100vw * 38 / 375);
-      padding-top: 0;
     }
 
     .order-subtitle {
-      // display: none;
-      font-size: 12px;
+      display: none;
     }
     .order {
       width: 95% !important;
@@ -373,10 +332,6 @@ export default {
 
     .row {
       margin-bottom: 12px !important;
-
-      &.house {
-        margin-top: 20px;
-      }
       label {
         width: 30% !important;
       }
