@@ -1,6 +1,6 @@
 <template>
   <div class="thanks">
-    <a href="/">
+    <a href="/event">
       <img src="~@/assets/img/thank-img.png" alt="" class="img">
       <img src="~@/assets/img/thank-img-hover.png" alt="" class="img-hover">
     </a>
