@@ -3,12 +3,11 @@ export default {
   googleSrc:
     'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1841.3753429954274!2d120.3861762!3d22.6257834!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e1b09771a9585%3A0xb7e86afd528069e5!2zODMw6auY6ZuE5biC6bOz5bGx5Y2A6bOz5o236LevICYg55Kw5rKz6KGX!5e0!3m2!1szh-TW!2stw!4v1577892786904!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/p7g29VTdQDmUAwhT6',
-  phone: '07-7027555',
+  phone: '02-23455888',
   fbLink: 'https://www.facebook.com/%E4%BA%AC%E5%9F%8E%E9%B3%B3%E7%BF%94-111948606978067/',
   fbMessage: 'https://m.me/111948606978067',
-  caseName: '京城鳳翔',
+  caseName: '達欣信義文華',
   indigatorLength: 8,
-
   houseInfos: [
     // ['建造執照', '108股建字第00042號'],
     // ['建設公司', '中德建設股份有限公司'],
