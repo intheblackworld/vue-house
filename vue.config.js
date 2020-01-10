@@ -20,7 +20,7 @@ module.exports = {
     // }
   },
 
-  publicPath: '/event',
+  // publicPath: '/event',
 
   devServer: {
     port: 9000, // CHANGE YOUR PORT HERE!

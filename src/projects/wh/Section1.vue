@@ -9,20 +9,20 @@
         <a href class="logo-link" target="_blank">
           <img src="./s1/2.png" alt />
         </a>
-        <div class="menu">
+        <!-- <div class="menu">
           <div class="item" v-scroll-to="{ element: `#contact-info` }">
             <img src="./menu/1.png" alt />
             <div>來電洽詢</div>
-          </div>
+          </div> -->
           <!-- <div class="item">
             <img src="./menu/2.png" alt />
             <div>地圖導航</div>
           </div> -->
-          <div class="item" v-scroll-to="{ element: `#contact` }">
+          <!-- <div class="item" v-scroll-to="{ element: `#contact` }">
             <img src="./menu/3.png" alt />
             <div>立即預約</div>
           </div>
-        </div>
+        </div> -->
       </div>
       <!-- 圖淡入
           立刻預約的按鈕點了連預約賞屋
@@ -32,7 +32,7 @@
       可以加上去-->
       <div class="left" data-aos="fade-up" data-aos-delay="400">
         <img class="img" src="./s1/logo.png" alt />
-        <img src="./s1/button.png" alt class="btn" v-scroll-to="{ element: `#contact` }" />
+        <a href="/event"><img src="./s1/button.png" alt class="btn" /></a>
       </div>
       <div class="right" >
         <img class="img" src="./s1/img1.jpg" alt data-aos="fade" data-aos-delay="600" />
@@ -41,7 +41,7 @@
     <div class="bg fullscreen" v-else>
       <div class="left">
         <img class="img" src="./s1/logo_m.png" alt />
-        <img src="./s1/button.png" alt class="btn" v-scroll-to="{ element: `#contact` }" />
+        <a href="/event"><img src="./s1/button.png" alt class="btn" /></a>
         <div class="logo-group">
           <a href class="logo-link" target="_blank">
             <img src="./s1/1.png" alt />

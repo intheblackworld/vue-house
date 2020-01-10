@@ -329,17 +329,17 @@ img[lazy='loaded'] {
     padding-top: 0;
 
     .fullscreen {
-      height: calc(100vh - 63px) !important;
+      // height: calc(100vh - 63px) !important;
     }
   }
   .fullscreen {
-    height: calc(100vh - #{$nav_phone_height} - 63px) !important;
+    // height: calc(100vh - #{$nav_phone_height} - 63px) !important;
     overflow: hidden;
 
     .fullscreen-container {
       width: 100vw;
       min-width: 100vw;
-      height: calc(100vh - #{$nav_phone_height} - 63px);
+      // height: calc(100vh - #{$nav_phone_height} - 63px);
       margin: 0 auto;
     }
   }
