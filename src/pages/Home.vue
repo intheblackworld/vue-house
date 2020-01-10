@@ -3,7 +3,7 @@
     <Loading :loading="load" />
     <!-- <SideNavigation v-if="isSide" /> -->
     <!-- <Navigation v-else /> -->
-    <Indigator :viewIndex="viewIndex" />
+    <!-- <Indigator :viewIndex="viewIndex" /> -->
     <div class="section" id="section1">
       <Section1 />
     </div>
@@ -19,13 +19,13 @@
     <div class="section" id="section5">
       <Section5 />
     </div>
-    <div class="section" id="section6">
+    <!-- <div class="section" id="section6">
       <Section6 />
     </div>
     <div class="section" id="section7">
       <Section7 />
-    </div>
-    <ContactSection class="section" id="section8" />
+    </div> -->
+    <ContactSection class="section" id="contact" />
     <MobileNav />
   </div>
 </template>
@@ -44,13 +44,13 @@ import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 
-import Section1 from '@/projects/fs/Section1.vue'
-import Section2 from '@/projects/fs/Section2.vue'
-import Section3 from '@/projects/fs/Section3.vue'
-import Section4 from '@/projects/fs/Section4.vue'
-import Section5 from '@/projects/fs/Section5.vue'
-import Section6 from '@/projects/fs/Section6.vue'
-import Section7 from '@/projects/fs/Section7.vue'
+import Section1 from '@/projects/wh/Section1.vue'
+import Section2 from '@/projects/wh/Section2.vue'
+import Section3 from '@/projects/wh/Section3.vue'
+import Section4 from '@/projects/wh/Section4.vue'
+import Section5 from '@/projects/wh/Section5.vue'
+import Section6 from '@/projects/wh/Section6.vue'
+import Section7 from '@/projects/wh/Section7.vue'
 // import Section8 from '@/projects/fs/Section8.vue'
 // import Section9 from '@/projects/fs/Section9.vue'
 

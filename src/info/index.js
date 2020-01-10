@@ -26,12 +26,12 @@ export default {
     // ['本案特色', '大廳挑高約4米2、百坪公設大會館<br />約二百坪景觀中庭花園、空中花園'],
   ],
 
-  gtmCode: ['WNB9V3S'], // 可放置多個
+  gtmCode: ['5CPWJJQ'], // 可放置多個
   recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
   order: {
-    title: '輕盈起飛價<br />早鳥預約中',
-    subTitle: '請留下您的大名、電話、進行預賞屋!'
+    title: '歡迎預約參觀 將有專人為您服務。',
+    subTitle: ''
   }
 }

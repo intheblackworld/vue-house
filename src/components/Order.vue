@@ -4,9 +4,8 @@
       <h3 class="title">{{order.title}}</h3>
       <div class="subtitle">{{order.subTitle}}</div>
     </div> -->
-    <img src="@/projects/fs/order/bg.jpg" alt="" class="bg-img" v-if="!isMobile">
-    <img src="@/projects/fs/order/bg2.png" alt="" class="bg-img no-mix" v-if="!isMobile">
-    <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile">
+    <img src="@/projects/wh/order/bg.jpg" alt="" class="bg-img" v-if="!isMobile">
+    <img src="@/projects/wh/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile">
     <div class="order-title" v-html="order.title"></div>
     <div class="order-subtitle" v-html="order.subTitle"></div>
     <div class="order">
@@ -21,22 +20,10 @@
             <el-input v-model="form.phone" placeholder></el-input>
           </div>
           <div class="row">
-            <label>想看房型</label>
-            <el-select v-model="form.house" placeholder>
-              <el-option
-                v-for="city in ['甜蜜2房', '幸福3房', '都想看看']"
-                :key="city"
-                :label="city"
-                :value="city"
-                no-data-text=""
-              ></el-option>
-            </el-select>
-          </div>
-          <!-- <div class="row">
             <label>E-mail</label>
             <el-input v-model="form.email" placeholder></el-input>
-          </div> -->
-          <!-- <div class="row">
+          </div>
+          <div class="row">
             <label>居住城市</label>
             <el-select v-model="form.city" placeholder>
               <el-option
@@ -59,7 +46,7 @@
                 no-data-text="請先選擇居住城市"
               ></el-option>
             </el-select>
-          </div> -->
+          </div>
         </div>
         <div class="group">
           <div class="row">
@@ -174,11 +161,10 @@ export default {
       this.isSubmit = true
       if (
         !this.form.name ||
-        !this.form.phone
-        // ||
-        // !this.form.email ||
-        // !this.form.city ||
-        // !this.form.area
+        !this.form.phone ||
+        !this.form.email ||
+        !this.form.city ||
+        !this.form.area
       ) {
         this.alertValidate()
         this.isSubmit = false
@@ -242,7 +228,6 @@ export default {
   height: auto;
   display: block;
   object-fit: cover;
-  mix-blend-mode: screen;
 
   &.no-mix {
     mix-blend-mode: unset;
