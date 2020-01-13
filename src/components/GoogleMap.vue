@@ -1,4 +1,4 @@
-<template>
+<!--template>
   <div class="google-map">
     <iframe
       title="googlemap"
@@ -10,7 +10,7 @@
       allowfullscreen
     />
   </div>
-</template>
+</template -->
 <script>
 import info from '@/info'
 import { isMobile } from '@/utils'
