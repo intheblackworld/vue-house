@@ -28,8 +28,8 @@
 </template>
 <style lang="scss" scoped>
 .bg {
-  background-color: #fff;
-  background-image: url('./s1/bg.png');
+  background:#fff url('./s4/bg.jpg') 50% 50%;
+  background-size: contain;
   position: relative;
   overflow: hidden;
   position: relative;

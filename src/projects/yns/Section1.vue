@@ -3,10 +3,13 @@
     <div class="bg fullscreen">
       <div v-if="!isMobile">
         <img src="./s1/1.png" alt class="img" data-aos="fade-down" data-aos-delay="0" />
-        <img src="./s1/2-1.png" alt :class="`img dog1 ${dog1 ? 'show' : ''}`" />
-        <img src="./s1/2-2.png" alt :class="`img dog2 ${dog2 ? 'show' : ''}`" />
-        <img src="./s1/3.png" alt class="img" data-aos="fade-down" data-aos-delay="600" />
+        <img src="./s1/2.png" alt class="img" />
+        <img src="./s1/2-1.png" alt class="img grace" />
+        <img src="./s1/3.png" alt class="img" data-aos="fade-down" data-aos-delay="600" alt="北大樂馥" />
+        <!--img src="./s1/2-1.png" alt :class="`img dog1 ${dog1 ? 'show' : ''}`" />
+        <img src="./s1/2-2.png" alt class="img" />
         <img src="./s1/4.png" alt class="img grace" data-aos="fade" data-aos-delay="900" />
+        <img src="./s1/2-2.png" alt :class="`img dog2 ${dog2 ? 'show' : ''}`" / -->
         <div class="text" data-aos="fade-down" data-aos-delay="900">
           弘華機構-和彩建設
           <br />在地深耕用心建築，值得您細心鑑賞
@@ -29,8 +32,8 @@
 
 <style lang="scss" scoped>
 .bg {
-  background-color: #fff;
-  background-image: url('./s1/bg.png');
+  background-color: #f39800;
+  //background-image: url('./s1/bg.png');
   position: relative;
   overflow: hidden;
   position: relative;
@@ -43,7 +46,7 @@
   left: 50%;
   height: 100%;
   margin-left: -960px;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .dog1,
@@ -57,28 +60,26 @@
 
 .grace {
   margin-left: -960px;
-  animation: grace 2s linear infinite alternate;
+  animation: grace 4s linear infinite alternate;
   transform-origin: bottom;
+  transform:translateX(2%);
 }
 
 @keyframes grace {
-  from {
-    transform: skewX(-5deg);
-  }
   to {
-    transform: skewX(0deg);
+  transform:translateX(-2%);
   }
 }
 
 .text {
-  text-align: center;
+  text-align: left;
   position: absolute;
-  top: 84%;
+  top: 86%;
   font-size: 2.8vh;
   line-height: 1.4;
-  left: 0;
+  left: 66.9%;
   width: 100%;
-  color: #00a398;
+  color: #fff;
   font-weight: bold;
 }
 

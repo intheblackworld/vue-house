@@ -1,7 +1,7 @@
 <template>
   <div class="section3">
     <div class="bg fullscreen">
-      <img src="./s3/img1.png" alt class="img1" data-aos="fade-right" data-aos-delay="0" />
+      <!-- img src="./s3/img1.png" alt class="img1" data-aos="fade-right" data-aos-delay="0" /-->
       <div class="text" data-aos="fade-up" data-aos-delay="400">
         <div class="title">依山面水 三峽最美</div>
         <div class="desc">

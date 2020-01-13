@@ -10,6 +10,22 @@
         data-aos-delay="0"
       />
       <img
+        src="./s2/map1.png"
+        alt
+        class="icon"
+        v-if="!isMobile"
+        data-aos="fade-down"
+        data-aos-delay="0"
+      />
+      <img
+        src="./s2/map2.png"
+        alt
+        class="icon"
+        v-if="!isMobile"
+        data-aos="fade-down"
+        data-aos-delay="0"
+      />
+      <!-- img
         src="./s2/map_icon.png"
         alt
         class="icon"
@@ -30,25 +46,25 @@
         v-if="isMobile"
         data-aos="fade-down"
         data-aos-delay="0"
-      />
+      / -->
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .bg {
-  background-color: #fff;
-  background-image: url('./s1/bg.png');
+  background-color: #006f36;
+  //background-image: url('./s1/bg.png');
   position: relative;
   overflow: hidden;
   position: relative;
 }
 
 .map {
-  height: 90vh;
+  max-height: 100vh;
+  max-width: 100vw;
   width: auto;
   margin: 0 auto;
-  margin-top: 5vh;
 }
 
 .icon, .icon2 {
@@ -56,34 +72,19 @@
   height: 90vh;
   width: auto;
   left: 0;
-  right: 0;
+  right: 0;top: 0;
   margin: 0 auto;
   margin-top: 5vh;
   z-index: 2;
 }
 
 .icon {
-  animation: heartbeat 1s infinite;
+  animation: heartbeat 1s alternate infinite;
 }
 
 @keyframes heartbeat {
-  0% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  40% {
-    opacity: 0;
-  }
-  60% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 0.75;
-  }
-  100% {
-    opacity: 0.75;
+  to{
+   top: -10px;
   }
 }
 
