@@ -120,13 +120,13 @@ export default {
   flex-direction: column;
   align-content: center;
   justify-content: space-between;
-  transform: translateY(14%);
+  //transform: translateY(14%);
   position: relative;
   z-index: 3;
   width: 1200px;
   height: 460px;
 
-  margin: 0 auto;
+  margin: 40px auto;
   padding: 60px 0 50px;
 }
 
