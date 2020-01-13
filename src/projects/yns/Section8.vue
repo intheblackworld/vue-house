@@ -264,12 +264,12 @@ export default {
         },
         {
           src: require('./s8/5.jpg'),
-          name: '情境示意圖<br />公車站實景',
+          name: '情境示意圖',
           desc: '．三鶯捷運 Ready Go<br />建設看得見！ 2023就通車',
         },
         {
           src: require('./s8/6.jpg'),
-          name: '情境示意圖<br />公車站實景',
+          name: '公車站實景',
           desc: '．三鶯捷運 Ready Go<br />建設看得見！ 2023就通車',
         },
         {
@@ -279,12 +279,12 @@ export default {
         },
         {
           src: require('./s8/8.jpg'),
-          name: '情境示意圖<br />恩主公醫院實景',
+          name: '恩主公醫院實景',
           desc: '．看顧全家 恩主公<br />恩主公醫院，守護全家無後顧之憂',
         },
         {
           src: require('./s8/9.jpg'),
-          name: '情境示意圖<br />恩主公醫院實景',
+          name: '情境示意圖',
           desc: '．看顧全家 恩主公<br />恩主公醫院，守護全家無後顧之憂',
         },
       ],

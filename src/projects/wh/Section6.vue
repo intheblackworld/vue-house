@@ -346,7 +346,7 @@ export default {
       },
       slideList: [
         {
-          img: require('./s6/1.jpg'),
+         // img: require('./s6/1.jpg'),
           title: '3Ｄ外觀示意圖',
         },
       ],

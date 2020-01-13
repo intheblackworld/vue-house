@@ -33,6 +33,7 @@
 
     if (($sCheckMsg === $_POST['msg'])) { //要三個等號, 不然 null 會等於 empty
         $bCheck = false;
+<<<<<<< HEAD
     }
     # 檢查是否時間範圍內重複留言 End
 
@@ -102,6 +103,77 @@
             $bCheck = false;
         }
     }
+=======
+    }
+    # 檢查是否時間範圍內重複留言 End
+
+    # 檢查所有關鍵字 Start
+    $sql = "SELECT * FROM `block_message`";
+    $aGetDbList = $pdo->query($sql)->fetchAll();
+
+    $aFilterKeyWordList = array(); //留言關鍵字檢查初始化
+    $aFilterNameList = array(); //檢查姓名初始化
+    $aFilterEmailList = array();
+    $aFilterPhoneList = array();
+    $aFilterIpList = array();
+
+    foreach ($aGetDbList as $sKey => $aGetDb) {
+
+        switch ($aGetDb['type']) { //switch Start
+            case '1': //留言內容
+                $aFilterKeyWordList[] = $aGetDb['content'];
+                break;
+            case '2': //用戶名稱
+                $aFilterNameList[] = $aGetDb['content'];
+                break;
+            case '3': //信箱
+                $aFilterEmailList[] = $aGetDb['content'];
+                break;
+            case '4':
+                $aFilterPhoneList[] = $aGetDb['content'];
+                break;
+            case '5':
+                $aFilterIpList[] = $aGetDb['content'];
+                break;
+            default:
+                # code...
+                break;
+        } //swutch End
+
+    }
+    # 檢查所有關鍵字 End
+
+    # 檢查留言關鍵字 Start
+    // $aFilterKeyWordList = array('game', 'casino', '測試', 'test');
+    $checkConunt = 0;
+    foreach ($aFilterKeyWordList as $key => $sFilterKeyWord) {
+        $checkConunt = explode($sFilterKeyWord, $_POST['msg']);
+        if (count($checkConunt) > 1) {
+            $bCheck = false;
+        }
+    }
+    # 檢查留言關鍵字 End
+
+    # 檢查姓名 Start
+    // $aFilterNameList = array('蔡銘聰');
+    $checkConunt = 0;
+    foreach ($aFilterNameList as $key => $sFilterName) {
+        $checkConunt = explode($sFilterName, $_POST['name']);
+        if (count($checkConunt) > 1) {
+            $bCheck = false;
+        }
+    }
+    # 檢查姓名 End
+
+    # 檢查信箱 Start
+    $checkConunt = 0;
+    foreach ($aFilterEmailList as $key => $aFilterValue) {
+        $checkConunt = explode($aFilterValue, $_POST['email']);
+        if (count($checkConunt) > 1) {
+            $bCheck = false;
+        }
+    }
+>>>>>>> 0c7b593559b8de38d05c2e0a70160deb98f1526b
     # 檢查信箱 End
 
     # 檢查電話 Start
@@ -166,14 +238,21 @@
     $city = $_POST['city'];
     $area = $_POST['area'];
     $msg = $_POST['msg'];
+<<<<<<< HEAD
     $house = $_POST['house'];
+=======
+>>>>>>> 0c7b593559b8de38d05c2e0a70160deb98f1526b
     $datetime = date ("Y-m-d H:i:s" , mktime(date('H'), date('i'), date('s'), date('m'), date('d'), date('Y'))) ;
     $utm_source = $_POST['utm_source'];
     $utm_medium = $_POST['utm_medium'];
     $utm_content = $_POST['utm_content'];
     $utm_campaign = $_POST['utm_campaign'];
 
+<<<<<<< HEAD
     $case_name = "達欣信義文華";
+=======
+    $case_name = "越那山";
+>>>>>>> 0c7b593559b8de38d05c2e0a70160deb98f1526b
 
     require_once('php-mailer/PHPMailerAutoload.php'); //引入phpMailer 記得將路徑換成您自己的path
 
@@ -191,7 +270,11 @@
     $mail->FromName = $case_name." - 官網網站"; //設定寄件者姓名
 
     $mail->Subject = $case_name." - 官網網站"; //設定郵件標題
+<<<<<<< HEAD
     $mail->Body = "網站：https://wh.h35.tw/<BR>姓名：".$name."<BR>電話：".$phone."<BR>信箱：".$user_email."<BR>城市：".$city.$area."<BR>留言：".$msg."<BR>想看房型：".$house."<BR><BR>填表日期：".$datetime."<BR>廣告來源：".$utm_source."<BR>廣告媒介：".$utm_medium."<BR>廣告名稱：".$utm_campaign."<BR>廣告內容：".$utm_content; //設定郵件內容
+=======
+    $mail->Body = "網站：https://yns.h35.tw/<BR>姓名：".$name."<BR>電話：".$phone."<BR>信箱：".$user_email."<BR>城市：".$city.$area."<BR>留言：".$msg."<BR><BR>填表日期：".$datetime."<BR>廣告來源：".$utm_source."<BR>廣告媒介：".$utm_medium."<BR>廣告名稱：".$utm_campaign."<BR>廣告內容：".$utm_content; //設定郵件內容
+>>>>>>> 0c7b593559b8de38d05c2e0a70160deb98f1526b
     $mail->IsHTML(true); //設定郵件內容為HTML
 
     $tomail_arr = explode(",",$tomail);
