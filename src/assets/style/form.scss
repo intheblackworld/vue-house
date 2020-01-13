@@ -71,12 +71,37 @@ label {
   color: $order_submit_color;
   // z-index: 10;
   border: none !important;
+  overflow: hidden;
+  position: relative;
 
   &.is-disabled {
     background: $order_sumbit_disable_bg;
     background-size: cover !important;
     opacity: .6;
   }
+  &::before {
+    content: "";
+    width: 40%;
+    height: 100%;
+    display: block;
+    background: #fff;
+    position: absolute;
+    -webkit-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+    left: -10%;
+    opacity: 0;
+    top: 0;
+    z-index: 5;
+    -webkit-transition: all .4s cubic-bezier(.2,.95,.57,.99);
+    transition: all .4s cubic-bezier(.2,.95,.57,.99)
+    }
+    &.is-disabled:hover:before {display: none;
+    }
+    &:hover:before {
+    opacity: 1;
+    width: 90%;
+    left: 140%
+    }
 
   svg {
     margin-right: 15px;
