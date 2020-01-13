@@ -175,11 +175,12 @@
     }
   }
 
+  .icon{height: 5vw; }
   .icon-line {
     width: 112px;
     height: 1px;
     background-color: #aa804a;
-    margin: 0 10px;
+    margin:8vw 10px;
   }
 
   .right {
@@ -190,16 +191,18 @@
       width: 90vw;
       margin: 0 auto;
       padding-top: 40px;
-      padding-bottom: 30px;
+      padding-bottom: 50px;
 
       .title {
         font-size: calc(100vw * 20 / 375);
-        margin-bottom: 20px;
+        letter-spacing: 0.2em;
+        margin-bottom: 0;
+        p{margin-bottom: 1.5em;}
       }
 
       .desc {
         font-size: calc(100vw * 12 / 375);
-        margin-top: 20px;
+        margin-top: 0;
       }
     }
   }

@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="contact-info" id="contact-info">
-    <img class="logo" src="@/assets/img/contact-logo.png" alt="心天畝的圖片" />
+    <img class="logo" src="@/assets/img/contact-logo.png" alt="達欣信義文華logo" />
     <div class="info">
       <div class="btn flex-c" @click="showCallDialog">
         <span class="flex-c">
@@ -154,8 +154,8 @@ export default {
   background: $contact_btn_bg;
   // box-shadow: $contact_btn_border;
   transition: all 0.5s;
-
-
+  position: relative;
+  overflow: hidden;
   &.half {
     width: 49%;
   }
@@ -176,6 +176,27 @@ export default {
       color: $contact_btn_hover_icon;
     }
   }
+   &::before {
+    content: "";
+    width: 40%;
+    height: 100%;
+    display: block;
+    background: #fff;
+    position: absolute;
+    -webkit-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+    left: -10%;
+    opacity: 0;
+    top: 0;
+    z-index: 5;
+    -webkit-transition: all .4s cubic-bezier(.2,.95,.57,.99);
+    transition: all .4s cubic-bezier(.2,.95,.57,.99)
+    }
+    &:hover:before {
+    opacity: 1;
+    width: 90%;
+    left: 140%
+    }
 }
 .address {
   width: 600px;
