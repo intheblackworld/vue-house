@@ -12,8 +12,8 @@
         <!-- <img class="img" src="./s1/img1.jpg" alt /> -->
         <div class="content">
           <h3 class="title">
-            <p>為你的生活品味調入文華苑的優雅</p>文華苑六星級陣容
-            <br />國際級超規格鉅獻
+            <p>為你的生活品味調入文華苑的優雅</p>
+            文華苑六星級陣容<br />國際級超規格鉅獻
           </h3>
           <img src="./s4/icon.png" alt class="icon" v-if="!isMobile" />
           <div class="flex-c" v-if="isMobile">
@@ -219,6 +219,11 @@
         p {
           font-size: 12px;
           margin-bottom: 1.5em;
+        }
+
+        br {
+          letter-spacing: 0;
+          font-size: 0;
         }
       }
 

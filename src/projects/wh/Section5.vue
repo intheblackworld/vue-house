@@ -12,8 +12,8 @@
         <!-- <img class="img" src="./s1/img1.jpg" alt /> -->
         <div class="content">
           <h3 class="title">
-            <p>用信義區門牌重新定義隨心所欲</p>大信義計劃生活圈
-            <br />世界櫥窗就在身邊
+            <p>用信義區門牌重新定義隨心所欲</p>
+            大信義計劃生活圈<br />世界櫥窗就在身邊
           </h3>
           <img src="./s5/icon.png" alt class="icon" v-if="!isMobile" />
           <div class="flex-c" v-if="isMobile">
@@ -203,6 +203,11 @@
         p {
           font-size: 12px;
           margin-bottom: 1.5em;
+        }
+
+        br {
+          letter-spacing: 0;
+          font-size: 0;
         }
       }
 
