@@ -209,6 +209,7 @@ export default {
   background-size: cover;
   position: relative;
   padding-top: 80px;
+  overflow: hidden;
 
   .order-title {
     margin-top: 40px;
