@@ -210,7 +210,7 @@
         font-size: calc(100vw * 20 / 375);
         letter-spacing: 0.2em;
         margin-bottom: 0;
-        p{margin-bottom: 1.5em;}
+        p{font-size: 12px; margin-bottom: 1.5em;}
       }
 
       .desc {

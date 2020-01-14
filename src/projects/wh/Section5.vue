@@ -175,12 +175,14 @@
     }
   }
 
-  .icon{height: 5vw; }
+  .icon {
+    height: 5vw;
+  }
   .icon-line {
     width: 112px;
     height: 1px;
     background-color: #aa804a;
-    margin:8vw 10px;
+    margin: 8vw 10px;
   }
 
   .right {
@@ -197,7 +199,11 @@
         font-size: calc(100vw * 20 / 375);
         letter-spacing: 0.2em;
         margin-bottom: 0;
-        p{margin-bottom: 1.5em;}
+        text-align: center;
+        p {
+          font-size: 12px;
+          margin-bottom: 1.5em;
+        }
       }
 
       .desc {

@@ -64,7 +64,7 @@ label {
   font-size: 20px !important;
   background: $order_submit_bg;
   // background-image: url("../img/contact_gold_button.png")!important;
-  background-size: cover !important;
+  background-size: 100% 100% !important;
   margin: 0 auto !important;
   margin-top: 20px !important;
   transition: all 0.3s !important;
@@ -76,7 +76,7 @@ label {
 
   &.is-disabled {
     background: $order_sumbit_disable_bg;
-    background-size: cover !important;
+    background-size: 100% 100% !important;
     opacity: .6;
   }
   &::before {
