@@ -1801,6 +1801,10 @@
     .btn {
       bottom: 12%;
       width: calc(100vw * 112 / 375);
+      animation: btn_op .6s linear alternate infinite;
+    &:hover{
+      animation-play-state:paused;
+    }
     }
 
     .logo-group {
