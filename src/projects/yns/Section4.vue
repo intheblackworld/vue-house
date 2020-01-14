@@ -2,6 +2,7 @@
   <div class="section4">
     <div class="bg relative">
       <div class="container">
+      <img src="./s4/circle.png" alt class="circle" />
         <div class="slide relative" data-aos="fade-right" data-aos-delay="0">
           <div class="name">{{slideList[slideIndex].name}}</div>
           <img
@@ -17,19 +18,17 @@
           </div>
         </div>
         <div class="content" data-aos="fade-left" data-aos-delay="500">
-          <div class="title">與山對話 與你交心</div>
+          <div class="title">與山對話<span>與你交心</span></div>
           <hr>
           <div class="desc" v-html="slideList[slideIndex].desc"></div>
         </div>
       </div>
-      <img src="./s4/circle.png" alt class="circle" />
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 .bg {
-  background:#fff url('./s4/bg.jpg') 50% 50%;
-  background-size: contain;
+  background:#fff;
   position: relative;
   overflow: hidden;
   position: relative;
@@ -38,11 +37,19 @@
 .container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   width: 1280px;
   margin: 0 auto;
   margin-top: 100px;
   margin-bottom: 50px;
+  align-items:center;    
+}
+
+.content {
+  display: flex;
+  flex-direction:row-reverse;
+  align-self:stretch;position: absolute;
+    top: 0;
+    left: 50%;margin: 0 0 0 170px;
 }
 
 .title {
@@ -50,22 +57,31 @@
   font-weight: bold;
   line-height: 1.2;
   text-align: left;
-  color: #231916;
-  margin-bottom: 25px;
+  color: #231916;margin: 170px 0 0 0;
+  writing-mode: vertical-rl;
+  overflow: hidden;
+  span{display: block;margin: 150px 0 0 0;color: #666}
 }
 
 .desc {
   font-size: 20px;
   line-height: 1.5;
-  letter-spacing: -0.1px;
+  letter-spacing:0.1px;
   text-align: left;
   color: #595857;
+  writing-mode: vertical-rl;margin: 230px 30px 0 0;
+}
+
+hr {border:0;border-left: 2px solid #f90;background:none;position: absolute;top: -8px;
+    left: 90%;
+    height: 100%;
+    width: 0;
 }
 
 .circle {
   position: absolute;
-  right: -100px;
-  top: 20%;
+  right:calc( 50% - 650px);
+  bottom: 0%;
 }
 
 .slide {
@@ -229,12 +245,12 @@ export default {
         {
           src: require('./s4/img1.jpg'),
           name: '東南側3D外觀示意',
-          desc: '建築展翅 越那山<br />向上開展的建築立框；載著夢想飛越鳶山',
+          desc: '建築展翅 越那山<br />向上開展的建築立框；<br />載著夢想飛越鳶山',
         },
         {
           src: require('./s4/img2.jpg'),
           name: '東南側3D外觀示意',
-          desc: '建築展翅 越那山<br />向上開展的建築立框；載著夢想飛越鳶山',
+          desc: '建築展翅 越那山<br />向上開展的建築立框；<br />載著夢想飛越鳶山',
         },
         {
           src: require('./s4/img3.jpg'),

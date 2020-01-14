@@ -14,16 +14,12 @@
         alt
         class="icon"
         v-if="!isMobile"
-        data-aos="fade-down"
-        data-aos-delay="0"
       />
       <img
         src="./s2/map2.png"
         alt
-        class="icon"
+        class="icon2"
         v-if="!isMobile"
-        data-aos="fade-down"
-        data-aos-delay="0"
       />
       <!-- img
         src="./s2/map_icon.png"
@@ -69,22 +65,26 @@
 
 .icon, .icon2 {
   position: absolute;
-  height: 90vh;
+  max-height: 100vh;
+  max-width: 100vw;
   width: auto;
   left: 0;
-  right: 0;top: 0;
+  right: 0;
+  top: 0;
   margin: 0 auto;
-  margin-top: 5vh;
   z-index: 2;
 }
 
-.icon {
-  animation: heartbeat 1s alternate infinite;
+.icon {transform: translateY(3%);
+  animation: heartbeat 3s linear alternate infinite;
+}
+.icon2 {transform: translateY(-1%);
+  animation: heartbeat .5s ease-in alternate infinite;
 }
 
 @keyframes heartbeat {
   to{
-   top: -10px;
+   transform: translateY(0)
   }
 }
 

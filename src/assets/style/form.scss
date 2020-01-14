@@ -71,6 +71,12 @@
     background-color: $order_sumbit_disable_bg;
     opacity: .6;
   }
+  &:hover {
+    background-color: $order_sumbit_disable_hover_bg;
+  }
+  &.is-disabled:hover {
+    background-color: $order_sumbit_disable_bg;
+  }
 
   svg {
     margin-right: 15px;

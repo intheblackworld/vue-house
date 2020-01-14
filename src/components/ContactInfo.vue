@@ -103,12 +103,12 @@ export default {
   // background-image: url('../assets/img/contact_bg.jpg');
   background-size: cover;
   background-position: 50% 100%;
-  box-shadow: $contact_shadow;
+  //box-shadow: $contact_shadow;
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: space-between;
-  transform: translateY(14%);
+  transform: translateY(15%);
   position: relative;
   z-index: 3;
   width: 1200px;
@@ -140,7 +140,7 @@ export default {
   text-decoration: none;
   color: $contact_btn_color;
   background: $contact_btn_bg;
-  box-shadow: $contact_btn_border;
+  //box-shadow: $contact_btn_border;
   transition: all 0.5s;
 
   svg {
@@ -163,8 +163,8 @@ export default {
 .address {
   width: 600px;
   height: 60px;
-  background: $contact_btn_bg;
-  box-shadow: $contact_btn_border;
+  background: #fff;
+  //box-shadow: $contact_btn_border;
 }
 .google-btn {
   width: 280px;
@@ -174,7 +174,7 @@ export default {
   text-decoration: none;
   color: $contact_google_btn_color;
   background: $contact_google_btn_bg;
-  box-shadow: $contact_btn_border;
+  //box-shadow: $contact_btn_border;
   transition: all 0.5s;
 
   svg {
@@ -242,6 +242,7 @@ export default {
 
   .address {
     width: 280px;
+    margin-bottom: 0;
   }
 }
 </style>

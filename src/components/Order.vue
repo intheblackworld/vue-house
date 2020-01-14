@@ -184,8 +184,7 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/style/variableColor.scss';
 .order-bg {
-  background-color: $order_bg_color;
-  background-image: url('../assets/img/order-bg.jpg');
+  background:$order_bg_color url('../assets/img/order-bg.png') no-repeat 100% 50%;
   position: relative;
   padding-top: 80px;
 

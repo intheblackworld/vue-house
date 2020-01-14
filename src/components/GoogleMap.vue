@@ -1,12 +1,12 @@
 <template>
   <div class="google-map">
-    <div class="map-img">
+    <!-- div class="map-img">
       <img src="~@/assets/img/map.png" alt class />
-    </div>
+    </div -->
     <iframe
       title="googlemap"
       :src="googleSrc"
-      :width="isMobile ? '100%': '50%'"
+      :width="isMobile ? '100%': '100%'"
       height="455"
       frameborder="0"
       style="border: 0"

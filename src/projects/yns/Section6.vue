@@ -29,7 +29,7 @@
 <style lang="scss" scoped>
 .bg {
   background-color: #fff;
-  background-image: url('./s1/bg.png');
+  //background-image: url('./s1/bg.png');
   position: relative;
   overflow: hidden;
   position: relative;
@@ -37,21 +37,21 @@
 
 .container {
   display: flex;
-  justify-content: space-between;
+  background-color: #f39800;
+  justify-content: center;
   align-items: center;
-  width: 1280px;
   margin: 0 auto;
   margin-top: 100px;
   margin-bottom: 50px;
 }
-
+.content{margin: 0 0 0 50px;}
 .title {
   font-size: 30px;
   font-weight: bold;
   line-height: 1.2;
-  text-align: left;
-  color: #231916;
-  margin-bottom: 25px;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 15px;
 }
 
 .desc {
@@ -59,12 +59,12 @@
   line-height: 1.5;
   letter-spacing: -0.1px;
   text-align: left;
-  color: #595857;
+  color: #fff;
   white-space: nowrap;
 }
 
 hr {
-  color: #776b39;
+  color: #fff;background: none;border: 0;border-top: 2px solid #fff;
 }
 
 .circle {

@@ -1,6 +1,7 @@
 <template>
   <div class="section5">
     <div class="bg">
+      <img src="./s5/circle.png" alt class="circle" />
       <div class="container">
         <div class="text" data-aos="fade-right" data-aos-delay="0">
           <div class="title">用心深根 放心安穩</div>
@@ -27,9 +28,8 @@
             <br />國泰信義亞緻、國泰金城、冠德美麗台北…名宅安全推手
           </li>
         </div>
-        <img src="./s5/img1.jpg" alt class="img1" data-aos="fade-left" data-aos-delay="500" />
+        <img src="./s5/img1.png" alt class="img1" data-aos="fade-left" data-aos-delay="500" />
       </div>
-      <img src="./s5/circle.png" alt class="circle" v-if="isMobile" />
     </div>
   </div>
 </template>
@@ -37,7 +37,7 @@
 <style lang="scss" scoped>
 .bg {
   background-color: #fff;
-  background-image: url('./s1/bg.png');
+  //background-image: url('./s1/bg.png');
   position: relative;
   overflow: hidden;
   position: relative;
@@ -48,11 +48,11 @@
   justify-content: center;
   align-items: center;
   padding: 50px 0;
-  width: 100vw;
+  width: 100vw;position: relative;z-index: 2;
 }
 
 .img1 {
-  margin-left: 100px;
+  margin-left:50px;
 }
 
 .text {
@@ -65,6 +65,7 @@
     color: #231916;
     margin-bottom: 20px;
   }
+  hr{border:0;border-top: 2px solid #f90;background:none;}
 
   li {
     font-size: 20px;
@@ -88,6 +89,11 @@
     }
   }
 }
+  .circle {
+    position: absolute;
+    bottom:0px;
+    right: -30px;z-index:1;
+  }
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
@@ -162,11 +168,6 @@
     }
   }
 
-  .circle {
-    position: absolute;
-    top: -40px;
-    left: -30px;
-  }
 }
 </style>
 

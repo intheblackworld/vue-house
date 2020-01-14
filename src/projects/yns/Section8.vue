@@ -22,14 +22,14 @@
           <div class="desc" v-html="slideList[slideIndex].desc"></div>
         </div>
       </div>
-      <img src="./s6/circle.png" alt class="circle" />
+      <img src="./s8/circle.png" alt class="circle" />
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 .bg {
-  background-color: #fff;
-  background-image: url('./s1/bg.png');
+  //background-color: #fff;
+  //background-image: url('./s1/bg.png');
   position: relative;
   overflow: hidden;
   position: relative;
@@ -43,22 +43,22 @@
   margin: 0 auto;
   margin-top: 50px;
   margin-bottom: 50px;
+  position: relative;z-index: 2
 }
 
-.title {
-  font-size: 30px;
-  font-weight: bold;
-  line-height: 1.2;
-  text-align: left;
-  color: #231916;
-  margin-bottom: 25px;
-}
+  .title {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1.23;
+    color: #231916;
+    margin-bottom: 20px;
+  }
+  hr{border:0;border-top: 2px solid #f90;background:none;}
 
 .desc {
   font-size: 20px;
   line-height: 1.5;
   letter-spacing: -0.1px;
-  text-align: left;
   color: #595857;
   white-space: nowrap;
 }
@@ -70,7 +70,7 @@ hr {
 .circle {
   position: absolute;
   right: -40px;
-  top: 20%;
+  bottom:0;
 }
 
 .slide {
@@ -183,7 +183,7 @@ hr {
     font-size: 24px;
     font-weight: bold;
     line-height: 1.2;
-    text-align: left;
+    text-align: center;
     color: #231916;
     margin-bottom: 25px;
   }
@@ -192,7 +192,7 @@ hr {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: -0.1px;
-    text-align: left;
+    text-align:center;
     color: #595857;
   }
 
@@ -245,47 +245,47 @@ export default {
         {
           src: require('./s8/1.jpg'),
           name: '二高實景',
-          desc: '．北二高 一下就到<br />入籍三峽，最輕近的一回',
+          desc: '北二高 一下就到<br />入籍三峽，最輕近的一回',
         },
         {
           src: require('./s8/2.jpg'),
           name: '北大實景',
-          desc: '．台北大學 學森活<br />大安公園2倍大，天龍國也讚嘆',
+          desc: '台北大學 學森活<br />大安公園2倍大，天龍國也讚嘆',
         },
         {
           src: require('./s8/3.jpg'),
           name: '北大實景',
-          desc: '．台北大學 學森活<br />大安公園2倍大，天龍國也讚嘆',
+          desc: '台北大學 學森活<br />大安公園2倍大，天龍國也讚嘆',
         },
         {
           src: require('./s8/4.jpg'),
           name: '三峽老街實景',
-          desc: '．三峽老街 品人文<br />想逛就來去，免跟遊客擠',
+          desc: '三峽老街 品人文<br />想逛就來去，免跟遊客擠',
         },
         {
           src: require('./s8/5.jpg'),
           name: '情境示意圖',
-          desc: '．三鶯捷運 Ready Go<br />建設看得見！ 2023就通車',
+          desc: '三鶯捷運 Ready Go<br />建設看得見！ 2023就通車',
         },
         {
           src: require('./s8/6.jpg'),
           name: '公車站實景',
-          desc: '．三鶯捷運 Ready Go<br />建設看得見！ 2023就通車',
+          desc: '三鶯捷運 Ready Go<br />建設看得見！ 2023就通車',
         },
         {
           src: require('./s8/7.jpg'),
           name: '公園實景',
-          desc: '．河濱公園 狗狗go<br />揮汗壘球場，河堤步道草原毛孩天堂',
+          desc: '河濱公園 狗狗go<br />揮汗壘球場，河堤步道草原毛孩天堂',
         },
         {
           src: require('./s8/8.jpg'),
           name: '恩主公醫院實景',
-          desc: '．看顧全家 恩主公<br />恩主公醫院，守護全家無後顧之憂',
+          desc: '看顧全家 恩主公<br />恩主公醫院，守護全家無後顧之憂',
         },
         {
           src: require('./s8/9.jpg'),
           name: '情境示意圖',
-          desc: '．看顧全家 恩主公<br />恩主公醫院，守護全家無後顧之憂',
+          desc: '看顧全家 恩主公<br />恩主公醫院，守護全家無後顧之憂',
         },
       ],
     }

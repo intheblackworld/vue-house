@@ -49,6 +49,7 @@
   top: 150px;
   z-index: 2;
 
+
   .title {
     font-size: 30px;
     font-weight: bold;

@@ -1,6 +1,8 @@
 <template>
   <div class="section4">
     <div class="bg relative">
+      <img src="./s7/circle.png" alt class="circle" />
+      <img src="./s7/circle2.png" alt class="circle" />
       <div class="container">
         <div class="content" data-aos="fade-right" data-aos-delay="0">
           <div class="title">時尚美學 在家展演</div>
@@ -22,37 +24,38 @@
           </div>
         </div>
       </div>
-      <img src="./s7/circle.png" alt class="circle" />
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 .bg {
-  background-color: #fff;
-  background-image: url('./s1/bg.png');
+  //background-color: #fff;
+  //background-image: url('./s1/bg.png');
   position: relative;
-  overflow: hidden;
+  overflow: initial;
   position: relative;
 }
 
 .container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items:flex-start;
   width: 1280px;
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 50px;
+  position: relative;z-index: 2;
 }
 
-.title {
-  font-size: 30px;
-  font-weight: bold;
-  line-height: 1.2;
-  text-align: left;
-  color: #231916;
-  margin-bottom: 25px;
-}
+  .title {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1.23;
+    text-align: left;
+    color: #231916;
+    margin:50px 0 20px 0;
+  }
+  hr{border:0;border-top: 2px solid #f90;background:none;}
 
 .desc {
   font-size: 20px;
@@ -63,11 +66,23 @@
   white-space: nowrap;
 }
 
-.circle {
-  position: absolute;
-  left: -80px;
-  top: 20%;
-  z-index: 2;
+  .circle {
+    position: absolute;
+    left:50%;
+    transform: translateX(-100%);
+    top:30%;z-index: 1;
+    max-height: 140%;
+    max-width: 100%;
+    &:nth-child(2){
+      animation: bear 1.25s ease-in-out infinite alternate-reverse;
+      transform:rotate(-5deg)translateX(-100%);
+      transform-origin: -51% 55%;
+    }
+  }
+@keyframes bear {
+  to {
+  transform:rotate(5deg)translateX(-100%);
+  }
 }
 
 .slide {
@@ -140,11 +155,6 @@
     color: #595857;
   }
 
-  .circle {
-    position: absolute;
-    right: -10%;
-    top: 20%;
-  }
 
   .slide {
     width: 565px;
@@ -191,12 +201,6 @@
     color: #595857;
   }
 
-  .circle {
-    position: absolute;
-    left: -70%;
-    top: -10%;
-    z-index: 1;
-  }
 
   .slide {
     width: 100vw;
