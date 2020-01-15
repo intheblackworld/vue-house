@@ -36,7 +36,7 @@
 
 <style lang="scss" scoped>
 .bg {
-  background-color: #fff;
+  //background-color: #fff;
   //background-image: url('./s1/bg.png');
   position: relative;
   overflow: hidden;
@@ -130,7 +130,7 @@
   }
   .img1 {
     margin-left: 0px;
-    width: 100vw;
+    width: 70vw;
   }
 
   .text {

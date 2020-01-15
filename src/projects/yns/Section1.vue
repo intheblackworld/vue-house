@@ -144,13 +144,19 @@
       position: relative;
     }
   }
-
-  .dog1, .dog2 {
-    z-index: 4;
-  }
+.bear{
+  transform-origin: 50% 100%;
+  .bear1{
+  transform-origin: 28% 56%;}
+  .bear2{
+  transform-origin: 31% 59%;}
+}
+.grace{width: 120vw;left: -10vw;}
 
   .text {
-    top: 90%;
+    top: 92%;
+    font-size: 12px;
+    left: 3.9%;
   }
 }
 </style>

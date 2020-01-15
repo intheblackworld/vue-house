@@ -22,13 +22,12 @@
           <div class="desc" v-html="slideList[slideIndex].desc"></div>
         </div>
       </div>
-      <img src="./s6/circle.png" alt class="circle" />
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 .bg {
-  background-color: #fff;
+  //background-color: #fff;
   //background-image: url('./s1/bg.png');
   position: relative;
   overflow: hidden;
@@ -220,7 +219,7 @@ hr {
 
   .content {
     width: 100vw;
-    padding: 40px 10% 20px 10%;
+    padding:30px 0;
   }
 }
 </style>

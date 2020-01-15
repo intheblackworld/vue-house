@@ -19,8 +19,8 @@
 
 <style lang="scss" scoped>
 .bg {
-  background-color: #fff;
-  background-image: url('./s1/bg.png');
+  //background-color: #fff;
+  //background-image: url('./s1/bg.png');
   position: relative;
   overflow: hidden;
   position: relative;
@@ -105,8 +105,7 @@
     left: 0;
     right: 0;
     top: auto;
-    margin: 0 auto;
-    margin-top: 30px;
+    margin: 30px auto;
     width: 90vw;
 
     .title {

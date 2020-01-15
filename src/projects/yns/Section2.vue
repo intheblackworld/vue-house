@@ -49,7 +49,7 @@
 
 <style lang="scss" scoped>
 .bg {
-  background-color: #006f36;
+  //background-color: #006f36;
   //background-image: url('./s1/bg.png');
   position: relative;
   overflow: hidden;
