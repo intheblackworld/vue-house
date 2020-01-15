@@ -12,9 +12,7 @@
         <!-- <img class="img" src="./s1/img1.jpg" alt /> -->
         <div class="content">
           <h3 class="title">
-            <p>用信義區門牌重新定義隨心所欲</p>大信義計劃生活圈
-            <br />世界櫥窗就在身邊
-          </h3>
+            <p>用信義區門牌重新定義隨心所欲</p>大信義計劃生活圈<br />世界櫥窗就在身邊</h3>
           <img src="./s5/icon.png" alt class="icon" v-if="!isMobile" />
           <div class="flex-c" v-if="isMobile">
             <div class="icon-line"></div>
@@ -22,8 +20,8 @@
             <div class="icon-line"></div>
           </div>
           <div class="desc">
-            信義區，台北的CBD，百貨商場密度居全球之最
-            <br />除商業氣息濃厚，更有四四南村等人文氣息處處點綴
+            信義區，台北的CBD，百貨商場密度居全球之最<br />
+            除商業氣息濃厚，更有四四南村等人文氣息處處點綴
             <br />金融、政治、時尚、科技、藝術應有盡有
             <br />生活的所有所欲，皆能在此遇見
           </div>
