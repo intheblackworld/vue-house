@@ -41,7 +41,8 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  height: 100vh;
+  align-items:stretch;
+  height: 43vw;
   display: flex;
   &.fullscreen {
     min-height: 700px !important;
@@ -67,7 +68,7 @@
   margin: 0 auto;
   width: 1px;
   background-color: #aa804a;
-  height: calc(100vw * 245 / 1920);
+  height: calc(100vw * 190 / 1920);
 
   &.line-t {
     top: -5%;
@@ -85,7 +86,7 @@
 
 .right {
   width: 41%;
-  height: 100%;
+ //height: 100%;
   display: flex;
   position: relative;
   align-items: center;
@@ -132,8 +133,9 @@
 
       p {
         color: #aa804a;
-        line-height: 2.86;
         margin-top: 45px;
+        font-family: 'Noto Serif TC', serif;
+        font-weight: bold;
       }
     }
   }
