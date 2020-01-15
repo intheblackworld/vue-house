@@ -5,7 +5,6 @@
         src="./s2/map.jpg"
         alt
         class="map"
-        v-if="!isMobile"
         data-aos="fade-down"
         data-aos-delay="0"
       />
@@ -13,16 +12,15 @@
         src="./s2/map1.png"
         alt
         class="icon"
-        v-if="!isMobile"
       />
       <img
         src="./s2/map2.png"
         alt
         class="icon2"
-        v-if="!isMobile"
       />
       <!-- img
         src="./s2/map_icon.png"
+        v-if="!isMobile"
         alt
         class="icon"
         data-aos="fade-down"
@@ -49,7 +47,7 @@
 
 <style lang="scss" scoped>
 .bg {
-  //background-color: #006f36;
+  background-color: #006f36;
   //background-image: url('./s1/bg.png');
   position: relative;
   overflow: hidden;

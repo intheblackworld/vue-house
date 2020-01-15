@@ -167,6 +167,12 @@
       }
     }
   }
+  .circle{
+    position: absolute;
+    bottom: -10px;
+    right: -130px;
+    z-index: 1;
+  }
 
 }
 </style>

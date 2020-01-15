@@ -139,12 +139,7 @@
   }
 
   .title {
-    font-size: 30px;
-    font-weight: bold;
-    line-height: 1.2;
-    text-align: left;
-    color: #231916;
-    margin-bottom: 25px;
+    margin:50px 0 25px 0;
   }
 
   .desc {
@@ -186,11 +181,7 @@
 
   .title {
     font-size: 24px;
-    font-weight: bold;
-    line-height: 1.2;
-    text-align: left;
-    color: #231916;
-    margin-bottom: 25px;
+    margin:0;
   }
 
   .desc {
@@ -223,6 +214,13 @@
   .content {
     width: 100vw;
     padding: 40px 5% 20px 0%;
+  }
+  .circle{left: 100%;top: 0px;transform: translateX(-50%);max-width: 80%;
+  &:nth-child(2){
+    left: 110%;
+    top: -17px;
+    max-width: 55%;
+  }
   }
 }
 </style>

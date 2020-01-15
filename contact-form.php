@@ -172,7 +172,7 @@
     $utm_content = $_POST['utm_content'];
     $utm_campaign = $_POST['utm_campaign'];
 
-    $case_name = "越那山";
+    $case_name = "北大樂馥";
 
     require_once('php-mailer/PHPMailerAutoload.php'); //引入phpMailer 記得將路徑換成您自己的path
 

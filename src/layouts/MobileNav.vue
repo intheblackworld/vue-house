@@ -106,7 +106,7 @@ export default {
   .nav-item {
     flex: 1;
     color: $mobile_nav_color;
-    font-size: 1rem;
+    font-size: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -121,6 +121,7 @@ export default {
   svg {
     width: 20px !important;
     height: 25px;
+    margin: 0 0 3px;
     color: $mobile_nav_icon;
   }
 

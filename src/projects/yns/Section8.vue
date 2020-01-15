@@ -128,20 +128,8 @@ hr {
   }
 
   .title {
-    font-size: 30px;
-    font-weight: bold;
     line-height: 1.2;
-    text-align: left;
-    color: #231916;
     margin-bottom: 25px;
-  }
-
-  .desc {
-    font-size: 20px;
-    line-height: 1.5;
-    letter-spacing: -0.1px;
-    text-align: left;
-    color: #595857;
   }
 
   .circle {
@@ -179,27 +167,28 @@ hr {
     flex-wrap: wrap;
   }
 
+
+
+.desc {
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: -0.1px;
+  color: #595857;
+  white-space: nowrap;
+}
   .title {
     font-size: 24px;
-    font-weight: bold;
-    line-height: 1.2;
-    text-align: center;
-    color: #231916;
-    margin-bottom: 25px;
+    margin-bottom: 0;
   }
 
   .desc {
     font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: -0.1px;
     text-align:center;
-    color: #595857;
   }
 
   .circle {
     position: absolute;
-    right: -30%;
-    top: 0%;
+    top:33%;   width: 50%;
   }
 
   .slide {
@@ -222,7 +211,7 @@ hr {
 
   .content {
     width: 100vw;
-    padding: 40px 5% 20px 10%;
+    padding: 20px 5% 40px 5%;
   }
 }
 </style>

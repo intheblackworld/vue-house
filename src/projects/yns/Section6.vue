@@ -57,7 +57,7 @@
   font-size: 20px;
   line-height: 1.5;
   letter-spacing: -0.1px;
-  text-align: left;
+  text-align: center;
   color: #fff;
   white-space: nowrap;
 }
@@ -125,20 +125,7 @@ hr {
   }
 
   .title {
-    font-size: 30px;
-    font-weight: bold;
-    line-height: 1.2;
-    text-align: left;
-    color: #231916;
     margin-bottom: 25px;
-  }
-
-  .desc {
-    font-size: 20px;
-    line-height: 1.5;
-    letter-spacing: -0.1px;
-    text-align: left;
-    color: #595857;
   }
 
   .circle {
@@ -175,24 +162,20 @@ hr {
     flex-direction: column-reverse;
     flex-wrap: wrap;
   }
-
+.content {
+    padding:0 20px;width:auto;margin: 0;
+}
   .title {
     font-size: 24px;
     font-weight: bold;
-    line-height: 1.2;
-    text-align: left;
-    color: #231916;
-    margin-bottom: 25px;
+    margin-bottom: 0;
   }
 
   .desc {
     font-size: 16px;
-    line-height: 1.5;
     letter-spacing: -0.1px;
-    text-align: left;
-    color: #595857;
   }
-
+  hr{width: 90%;margin:15px auto;}
   .circle {
     position: absolute;
     right: -30%;

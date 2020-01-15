@@ -1,9 +1,10 @@
 <template>
   <div class="sideNav">
-    <div class="nav relative">
+    <div :class="`nav relative ${isOpen ? 'open' : ''}`">
       <div class="menu" @click="toggleSidebar">
-        <img v-if="isOpen" src="@/assets/img/close.png" class="close" alt />
-        <img v-else src="@/assets/img/menu-btn.png" alt />
+        <span class="menu_icon"></span>
+        <!-- img v-if="isOpen" src="@/assets/img/close.png" class="close" alt />
+        <img v-else src="@/assets/img/menu-btn.png" alt / -->
       </div>
       <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
       <ul :class="`navlist ${isOpen ? 'open': ''}`">
@@ -85,9 +86,9 @@ export default {
   display: block;
   position: fixed;
   z-index: 112;
-  top: 30px;
-  right: 30px;
-  width: 40px;
+  top: 35px;
+  right: 35px;
+  width: 35px;
   cursor: pointer;
 
   img {
@@ -100,6 +101,52 @@ export default {
     margin-right: 0px;
   }
 }
+.menu_icon,
+  .menu_icon::before,
+  .menu_icon::after {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    left: 0;
+    background-color: #690;
+    content: '';
+    transition-duration: 0.3s, 0.3s;
+    transition-delay: 0.3s, 0s;
+    transition-property: top, transform;
+    top: 0;
+  }
+  .menu_icon {
+    transition: all 0s 0.3s;
+    text-indent: -9999px;
+    line-height: 0;
+    top: 50%;
+    left: 20%;
+    margin-top: -2px;
+  }
+  .menu_icon::before {
+    transform: translate(0, 200%);
+  }
+
+  .menu_icon::after {
+    transform: translate(0, -200%);
+  }
+  .open {
+    .logo {
+    }
+    .menu_icon {
+      background: none;
+    }
+    .menu_icon::before {
+      background-color: #690;
+      transform: translate(0, 0) rotate(45deg);
+    }
+
+    .menu_icon::after {
+      background-color: #690;
+      transform: translate(0, 0) rotate(-45deg);
+    }
+  }
 
 .navlist {
   position: fixed;
@@ -288,9 +335,9 @@ export default {
   .menu {
     display: block;
     position: fixed;
-    right: 30px;
-    top: 20px;
-    width: 40px;
+    right: 35px;
+    top: 35px;
+    width: 35px;
 
     img {
       width: 100%;
