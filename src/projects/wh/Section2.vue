@@ -22,9 +22,9 @@
             <div class="icon-line"></div>
           </div>
           <div class="desc">
-            2012半世紀的品牌寫下「文華苑」經典
-            <br />不凡經典至今依舊傳唱
-            <br />2020達欣與經典團隊相約重逢、再鑄非凡
+            2012半世紀的品牌寫下「文華苑」經典<br />
+            不凡經典至今依舊傳唱<br />
+            2020達欣與經典團隊相約重逢、再鑄非凡
           </div>
         </div>
         <div class="line line-b" v-if="!isMobile"></div>

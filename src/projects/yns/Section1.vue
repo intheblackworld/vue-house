@@ -8,8 +8,8 @@
         <img src="./s1/3.png" alt class="img" data-aos="fade-down" data-aos-delay="600" />
         <img src="./s1/4.png" alt class="img grace" data-aos="fade" data-aos-delay="900" />
         <div class="text" data-aos="fade-down" data-aos-delay="900">
-          弘華機構-和彩建設
-          <br />在地深耕用心建築，值得您細心鑑賞
+          弘華機構-和彩建設<br />
+          在地深耕用心建築，值得您細心鑑賞
         </div>
       </div>
       <div v-else>
@@ -19,8 +19,8 @@
         <img src="./s1/m3.png" alt class="img" data-aos="fade-down" data-aos-delay="600" />
         <img src="./s1/m4.png" alt class="img" data-aos="fade-down" data-aos-delay="900" />
         <div class="text" data-aos="fade-down" data-aos-delay="900">
-          弘華機構-和彩建設
-          <br />在地深耕用心建築，值得您細心鑑賞
+          弘華機構-和彩建設<br />
+          在地深耕用心建築，值得您細心鑑賞
         </div>
       </div>
     </div>

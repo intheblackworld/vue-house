@@ -12,8 +12,8 @@
         <!-- <img class="img" src="./s1/img1.jpg" alt /> -->
         <div class="content">
           <h3 class="title">
-            <p>為你的生活品味調入文華苑的優雅</p>
-            文華苑六星級陣容<br />國際級超規格鉅獻
+            <p>為你的生活品味調入文華苑的優雅</p>文華苑六星級陣容<br />
+            國際級超規格鉅獻
           </h3>
           <img src="./s4/icon.png" alt class="icon" v-if="!isMobile" />
           <div class="flex-c" v-if="isMobile">
@@ -22,11 +22,11 @@
             <div class="icon-line"></div>
           </div>
           <div class="desc">
-            2012年「文華苑」獲得蘇富比評選為全球十大獨特豪宅
-            <br />與文華苑同規格國際級團隊，超規格陣容，相襯您的格局
+            2012年「文華苑」獲得蘇富比評選為全球十大獨特豪宅<br />
+            與文華苑同規格國際級團隊，超規格陣容，相襯您的格局
             <p>
-              ☆建築設計：台北101設計大師「李祖原」
-              <br />☆景觀設計：國際酒店知名豪宅御用景觀推手「盧胤翰」
+              ☆建築設計：台北101設計大師「李祖原」<br />
+              ☆景觀設計：國際酒店知名豪宅御用景觀推手「盧胤翰」
             </p>
           </div>
         </div>
@@ -41,7 +41,8 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  height: 100vh;
+  align-items:stretch;
+  height: 43vw;
   display: flex;
   &.fullscreen {
     min-height: 700px !important;
@@ -67,7 +68,7 @@
   margin: 0 auto;
   width: 1px;
   background-color: #aa804a;
-  height: calc(100vw * 245 / 1920);
+  height: calc(100vw * 190 / 1920);
 
   &.line-t {
     top: -5%;
@@ -85,7 +86,7 @@
 
 .right {
   width: 41%;
-  height: 100%;
+ //height: 100%;
   display: flex;
   position: relative;
   align-items: center;
@@ -132,8 +133,9 @@
 
       p {
         color: #aa804a;
-        line-height: 2.86;
         margin-top: 45px;
+        font-family: 'Noto Serif TC', serif;
+        font-weight: bold;
       }
     }
   }
