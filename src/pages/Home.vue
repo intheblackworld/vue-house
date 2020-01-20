@@ -7,7 +7,7 @@
     <div class="section" id="section1">
       <Section1 />
     </div>
-    <!-- <div class="section" id="section2">
+    <div class="section" id="section2">
       <Section2 />
     </div>
     <div class="section" id="section3">
@@ -18,15 +18,15 @@
     </div>
     <div class="section" id="section5">
       <Section5 />
-    </div> -->
+    </div>
     <!-- <div class="section" id="section6">
       <Section6 />
     </div>
     <div class="section" id="section7">
       <Section7 />
     </div> -->
-    <!-- <ContactSection class="section" id="contact" />
-    <MobileNav /> -->
+    <ContactSection class="section" id="contact" />
+    <MobileNav />
   </div>
 </template>
 

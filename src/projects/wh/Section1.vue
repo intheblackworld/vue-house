@@ -776,10 +776,10 @@
             </g>
           </g>
         </svg>
-        <!-- <img src="./s1/button.png" alt class="btn" v-scroll-to="{ element: `#contact` }" /> -->
-        <a href="/event">
+        <img src="./s1/button.png" alt class="btn" v-scroll-to="{ element: `#contact` }" />
+        <!-- <a href="/event">
           <img src="./s1/button.png" alt class="btn" />
-        </a>
+        </a> -->
         
       </div>
       <div class="right" >
@@ -1617,10 +1617,10 @@
               c0-57.2-0.9-67.5-2-88.4c-2.4-41.3-11.8-52.3-65-58.8v-8.1h139.3V418.8z"/>
           </g>
         </svg>
-        <!-- <img src="./s1/button.png" alt class="btn" v-scroll-to="{ element: `#contact` }" /> -->
-        <a href="/event">
+        <img src="./s1/button.png" alt class="btn" v-scroll-to="{ element: `#contact` }" />
+        <!-- <a href="/event">
           <img src="./s1/button.png" alt class="btn" />
-        </a>
+        </a> -->
         <div class="logo-group">
           <a href class="logo-link" target="_blank">
             <img src="./s1/1.png" alt />
