@@ -775,8 +775,12 @@
                 c13.1-8.2,25-17.5,35.8-28C1404.1,16.2,1409.5,8.8,1409.5,4.2z"/>
             </g>
           </g>
-        </svg>        
-        <img src="./s1/button.png" alt class="btn" v-scroll-to="{ element: `#contact` }" />
+        </svg>
+        <!-- <img src="./s1/button.png" alt class="btn" v-scroll-to="{ element: `#contact` }" /> -->
+        <a href="/event">
+          <img src="./s1/button.png" alt class="btn" />
+        </a>
+        
       </div>
       <div class="right" >
         <img class="img" src="./s1/img1.jpg" alt data-aos="fade" data-aos-delay="600" />
@@ -1613,7 +1617,10 @@
               c0-57.2-0.9-67.5-2-88.4c-2.4-41.3-11.8-52.3-65-58.8v-8.1h139.3V418.8z"/>
           </g>
         </svg>
-        <img src="./s1/button.png" alt class="btn" v-scroll-to="{ element: `#contact` }" />
+        <!-- <img src="./s1/button.png" alt class="btn" v-scroll-to="{ element: `#contact` }" /> -->
+        <a href="/event">
+          <img src="./s1/button.png" alt class="btn" />
+        </a>
         <div class="logo-group">
           <a href class="logo-link" target="_blank">
             <img src="./s1/1.png" alt />
