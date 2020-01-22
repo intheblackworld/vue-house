@@ -7,7 +7,7 @@
     <div id="section1">
       <Section1 />
     </div>
-    <div id="section2">
+    <!-- <div id="section2">
       <Section2 />
     </div>
     <div id="section3">
@@ -18,7 +18,7 @@
     </div>
     <div id="section5">
       <Section5 />
-    </div>
+    </div> -->
     <ContactSection />
     <!-- <SimpleOrder /> -->
     <MobileNav />
