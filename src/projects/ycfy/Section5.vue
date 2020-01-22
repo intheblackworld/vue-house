@@ -14,7 +14,7 @@
 </template>
 <style lang="scss" scoped>
 .bg {
-  background-image: url('./s1/bg.jpg');
+  background-image: url('./s1/bg1.jpg');
   background-size: cover;
   position: relative;
 }

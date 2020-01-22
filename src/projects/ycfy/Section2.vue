@@ -3,29 +3,20 @@
     <div class="bg relative">
       <div v-if="!isMobile">
         <img src="./s2/bg.jpg" alt class="img" />
-        <img src="./s2/img.png" alt class="img" data-aos="fade" data-aos-delay="600" style="margin-top: 260px;" />
-        <img src="./s2/stitlew.png" alt="全結構工程 十年防水保固" class="img" />
-        <img src="./s2/t_bg1.png" alt class="img" data-aos="fade" data-aos-delay="400" />
-        <img src="./s2/titlew.png" alt="堅持" class="img" />
+        <img src="./s2/bg2.png" alt class="img" />
+        <img src="./s2/bg3.png" alt class="img" />
+        <img src="./s2/bg4.png" alt class="img" />
+        <img src="./s2/bg5.png" alt class="img" />
+        <img src="./s2/stitlea.png" alt class="img" />
+        <img src="./s2/texta.png" alt class="img" />
+        <img src="./s2/titlea.png" alt class="img" />
         <div class="text">
-            【頤昌建設】從規劃到施工秉持職人精神<br />
-            因此跟大林口地區的客戶拍胸保證<br />
-            安全結構 Alfa-Safe專利工法、10年防水<br />
-            工程品質絕對沒問題！
+          回歸建築初衷，家的本我需求
+          <br />慎選每塊土地，細膩規劃每處空間，嚴格要求工程細節
+          <br />只為珍惜每位住戶對於【頤昌】品牌的信任價值。
         </div>
       </div>
-      <div v-if="isMobile">
-        <img src="./s2/mo/img.png" alt class="img" data-aos="fade" data-aos-delay="400" />
-        <img src="./s2/mo/stitlew.png" alt="全結構工程 十年防水保固" class="img" />
-        <img src="./s2/mo/t_bg1.png" alt class="img" data-aos="fade" data-aos-delay="200" />
-        <img src="./s2/mo/titlew.png" alt="堅持" class="img" />
-        <div class="text">
-            【頤昌建設】從規劃到施工秉持職人精神<br />
-            因此跟大林口地區的客戶拍胸保證<br />
-            安全結構 Alfa-Safe專利工法、10年防水<br />
-            工程品質絕對沒問題！
-        </div>
-      </div>
+      <div v-if="isMobile"></div>
     </div>
   </div>
 </template>
@@ -53,22 +44,19 @@
 }
 
 .text {
-  width: calc(100vw * (522 / 1920));
-  height: calc(100vw * (172 / 1920));
-  font-size: calc(100vw * (29 / 1920));
+  width: calc(100vw * 515 / 1920);
+  height: calc(100vw * 120 / 1920);
+  font-size: calc(100vw * 20 / 1920);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.48;
-  letter-spacing: normal;
-  text-align: justify;
-  color: #000000;
+  line-height: 2;
+  letter-spacing: 1.2px;
+  text-align: left;
+  color: #707070;
   position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  top: 100%;
-  transform: translateY(-50%);
+  right: calc(100vw * 272 / 1920);
+  top: calc(100vw * 367 / 1920);
 }
 
 /* 平板尺寸 */
@@ -78,7 +66,7 @@
 @media screen and (max-width: 767px) {
   .bg {
     background-size: cover;
-    background-image: url('./s1/bg.jpg');
+    background-image: url('./s1/bg1.jpg');
   }
 
   .text {
@@ -114,13 +102,11 @@ export default {
     }
   },
 
-  computed: {
-  },
+  computed: {},
 
   methods: {},
 
   created() {},
-  mounted() {
-  },
+  mounted() {},
 }
 </script>

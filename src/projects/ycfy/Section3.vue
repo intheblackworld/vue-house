@@ -2,18 +2,17 @@
   <div class="section3">
     <div class="bg relative">
       <div v-if="!isMobile">
-        <img src="./s3/img.png" alt class="img" style="padding-top: 260px;" data-aos="fade" data-aos-delay="400" />
-        <img src="./s3/stitlew.png" alt="國際金獎團隊 九大全齡公設" class="img" style="padding-top: 260px;"/>
-        <img src="./s3/titlew.png" alt="美感" class="img" style="padding-top: 260px;" />
+        <img src="./s3/bg.jpg" alt="" class="img">
+        <img src="./s3/bg1.png" alt="" class="img">
+        <img src="./s3/bg2.png" alt="" class="img">
+        <img src="./s3/bg3.png" alt="" class="img">
+        <img src="./s3/linew.png" alt="" class="img">
+        <img src="./s3/stitle.png" alt="" class="img">
         <div class="text">
-            榮獲世界紅點、iF設計大獎的團隊，規劃9大完美公設<br />
-            兼具東方美感與實用空間的氣韻，打造生活細緻溫度
+          中山高速公路／林口交流道，連結南北奔馳；桃園機場捷運23分鐘，迅速直達台北都心
         </div>
       </div>
       <div v-if="isMobile">
-        <img src="./s3/mo/img.png" alt class="img" data-aos="fade" data-aos-delay="400" />
-        <img src="./s3/mo/stitlew.png" alt="國際金獎團隊 九大全齡公設" class="img" />
-        <img src="./s3/mo/titlew.png" alt="美感" class="img" />
         <div class="text">
             榮獲世界紅點、iF設計大獎的團隊，規劃9大完美公設<br />
             兼具東方美感與實用空間的氣韻，打造生活細緻溫度
@@ -24,7 +23,7 @@
 </template>
 <style lang="scss" scoped>
 .bg {
-  background-image: url('./s1/bg.jpg');
+  background-image: url('./s1/bg1.jpg');
   background-size: cover;
   position: relative;
 }
