@@ -341,29 +341,55 @@ export default {
       },
       slideList: [
         {
-          src: require('./s6/PP_02317.jpg'),
+          src: require('./s6/PP_04327.jpg'),
         },
         {
-          src: require('./s6/PP_02310.jpg'),
-        },
-
-        {
-          src: require('./s6/PP_02243.jpg'),
+          src: require('./s6/PP_04328.jpg'),
         },
         {
-          src: require('./s6/PP_02238.jpg'),
+          src: require('./s6/PP_04334.jpg'),
         },
         {
-          src: require('./s6/PP_02217.jpg'),
+          src: require('./s6/PP_04338.jpg'),
         },
         {
-          src: require('./s6/PP_02210.jpg'),
+          src: require('./s6/PP_04341.jpg'),
         },
         {
-          src: require('./s6/PP_02169.jpg'),
+          src: require('./s6/PP_04348.jpg'),
         },
         {
-          src: require('./s6/PP_02148.jpg'),
+          src: require('./s6/PP_04359.jpg'),
+        },
+        {
+          src: require('./s6/PP_04368.jpg'),
+        },
+        {
+          src: require('./s6/PP_04374.jpg'),
+        },
+        {
+          src: require('./s6/PP_04378.jpg'),
+        },
+        {
+          src: require('./s6/PP_04400.jpg'),
+        },
+        {
+          src: require('./s6/PP_04404.jpg'),
+        },
+        {
+          src: require('./s6/PP_04407.jpg'),
+        },
+        {
+          src: require('./s6/PP_04420.jpg'),
+        },
+        {
+          src: require('./s6/PP_04426.jpg'),
+        },
+        {
+          src: require('./s6/PP_04431.jpg'),
+        },
+        {
+          src: require('./s6/PP_04433.jpg'),
         },
       ],
     }
