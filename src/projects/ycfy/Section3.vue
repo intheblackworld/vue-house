@@ -2,20 +2,24 @@
   <div class="section3">
     <div class="bg relative">
       <div v-if="!isMobile">
-        <img src="./s3/bg.jpg" alt="" class="img">
-        <img src="./s3/bg1.png" alt="" class="img">
-        <img src="./s3/bg2.png" alt="" class="img">
-        <img src="./s3/bg3.png" alt="" class="img">
-        <img src="./s3/linew.png" alt="" class="img">
-        <img src="./s3/stitle.png" alt="" class="img">
-        <div class="text">
-          中山高速公路／林口交流道，連結南北奔馳；桃園機場捷運23分鐘，迅速直達台北都心
-        </div>
+        <img src="./s3/bg.jpg" alt class="img" />
+        <img src="./s3/bg1.png" alt class="img" />
+        <img src="./s3/bg2.png" alt class="img" data-aos="fade-up" data-aos-delay="200" />
+        <img src="./s3/bg3.png" alt class="img" data-aos="fade-up" data-aos-delay="400" />
+        <img src="./s3/linew1.png" alt class="img" />
+        <img src="./s3/stitle1.png" alt="國道雙匝道系統 機場捷運並肩國門" class="img" />
+        <img src="./s3/titile1.png" alt="二快交通" class="img" />
+        <div class="text">中山高速公路／林口交流道，連結南北奔馳；桃園機場捷運23分鐘，迅速直達台北都心</div>
       </div>
       <div v-if="isMobile">
+        <img src="./s3/mo/bg.jpg" alt class="img" />
+        <img src="./s3/mo/bg2.png" alt class="img" data-aos="fade-up" data-aos-delay="200" />
+        <img src="./s3/mo/bg3a.png" alt class="img" data-aos="fade-up" data-aos-delay="400" />
+        <img src="./s3/mo/linewa.png" alt class="img" />
+        <img src="./s3/mo/stitlea.png" alt="國道雙匝道系統 機場捷運並肩國門" class="img" />
+        <img src="./s3/mo/titlea.png" alt="二快交通" class="img" />
         <div class="text">
-            榮獲世界紅點、iF設計大獎的團隊，規劃9大完美公設<br />
-            兼具東方美感與實用空間的氣韻，打造生活細緻溫度
+          中山高速公路／林口交流道，連結南北奔馳；<br />桃園機場捷運23分鐘，迅速直達台北都心
         </div>
       </div>
     </div>
@@ -23,9 +27,10 @@
 </template>
 <style lang="scss" scoped>
 .bg {
-  background-image: url('./s1/bg1.jpg');
   background-size: cover;
   position: relative;
+  z-index: 2;
+  overflow: hidden;
 }
 
 .img {
@@ -45,22 +50,18 @@
 }
 
 .text {
-  width: calc(100vw * (678 / 1920));
-  height: calc(100vw * (86 / 1920));
-  font-size: calc(100vw * (28 / 1920));
+  width: calc(100vw * 828 / 1920);
+  font-size: calc(100vw * 20 / 1920);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.48;
-  letter-spacing: normal;
-  text-align: justify;
-  color: #000000;
+  line-height: 2;
+  letter-spacing: 1.2px;
+  text-align: left;
+  color: #ffffff;
+  right: calc(100vw * 228 / 1920);
+  top: calc(100vw * 448 / 1920);
   position: absolute;
-  left: 26%;
-  right: 0;
-  margin: 0 auto;
-  top: 89%;
-  transform: translateY(-50%);
 }
 
 /* 平板尺寸 */
@@ -70,25 +71,22 @@
 @media screen and (max-width: 767px) {
   .bg {
     background-size: cover;
+    background-image: url('./s1/bg1.jpg');
   }
 
   .text {
-    width: calc(100vw * (216 / 375));
-    height: calc(100vw * (80 / 375));
-    font-size: calc(100vw * (14 / 375));
+    width: calc(100vw * 254 / 375);
+    height: auto;
+    font-size: calc(100vw * 12 / 375);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.48;
-    letter-spacing: normal;
-    text-align: justify;
-    color: #000000;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    top: 74%;
-    transform: translateY(-50%);
+    line-height: 1.67;
+    letter-spacing: 0.72px;
+    text-align: left;
+    color: #ffffff;
+    left: calc(100vw * 23 / 375);
+    top: calc(100vw * 201 / 375);
   }
 }
 </style>
@@ -105,13 +103,11 @@ export default {
     }
   },
 
-  computed: {
-  },
+  computed: {},
 
   methods: {},
 
   created() {},
-  mounted() {
-  },
+  mounted() {},
 }
 </script>

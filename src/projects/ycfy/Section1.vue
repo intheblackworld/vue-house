@@ -4,15 +4,24 @@
       <div v-if="!isMobile">
         <img src="./s1/bg1.jpg" alt class="img" />
         <img src="./s1/bg2.jpg" alt class="img fix mix" />
-        <img src="./s1/bg3.png" alt class="img" />
-        <img src="./s1/text.png" alt class="img" />
-        <img src="./s1/text1.png" alt class="title" />
+        <img src="./s1/text.png" alt="懂你對家的要求 頤昌建築" class="img fix mix" />
+        <img src="./s1/bg3.png" alt="雙語校園｜無瑕景觀｜ 豐居久安" class="img" />
+        <img src="./s1/text1.png" alt="【 豐岳 】十大豐碩價值" class="title" />
         <img src="./s1/link.png" alt class="link" v-scroll-to="{ element: `#section2` }" />
         <!-- <img src="./s1/logo.png" alt="頤昌豐岳" class="img" data-aos="fade" data-aos-delay="700" /> -->
         <!-- <icon class="icon logo-icon" :data="logo" /> -->
         <div class="logo-icon"></div>
       </div>
-      <div v-else></div>
+      <div v-else>
+        <img src="./s1/mo/bg1.jpg" alt class="img" />
+        <img src="./s1/mo/bg2.jpg" alt class="img fix mix" />
+        <img src="./s1/mo/img1.png" alt class="img fix mix" />
+        <img src="./s1/mo/bg3.png" alt class="img" />
+        <img src="./s1/mo/stitlea.png" alt="雙語校園｜無瑕景觀｜ 豐居久安" class="img" />
+        <img src="./s1/mo/text1a.png" alt="懂你對家的要求 頤昌建築" class="img" />
+        <img src="./s1/mo/titlea.png" alt class="img" />
+        <img src="./s1/mo/linka.png" alt class="link" v-scroll-to="{ element: `#section2` }" />
+      </div>
     </div>
   </div>
 </template>
@@ -148,6 +157,24 @@
     to {
       opacity: 1;
       transform: translateY(0%);
+    }
+  }
+
+  .link {
+    width: 100vw;
+    bottom: -3%;
+  }
+
+  @keyframes swing {
+    0% {
+      bottom: -3%;
+    }
+
+    50% {
+      bottom: -5%;
+    }
+    100% {
+      bottom: -3%;
     }
   }
 }

@@ -3,20 +3,31 @@
     <div class="bg relative">
       <div v-if="!isMobile">
         <img src="./s2/bg.jpg" alt class="img" />
-        <img src="./s2/bg2.png" alt class="img" />
-        <img src="./s2/bg3.png" alt class="img" />
-        <img src="./s2/bg4.png" alt class="img" />
-        <img src="./s2/bg5.png" alt class="img" />
-        <img src="./s2/stitlea.png" alt class="img" />
-        <img src="./s2/texta.png" alt class="img" />
-        <img src="./s2/titlea.png" alt class="img" />
+        <img src="./s2/bg2.png" alt class="img" data-aos="fade" data-aos-delay="200" />
+        <img src="./s2/bg3.png" alt class="img" data-aos="fade" data-aos-delay="400" />
+        <img src="./s2/bg4.png" alt class="img" data-aos="fade" data-aos-delay="600" />
+        <img src="./s2/bg5.png" alt class="img" data-aos="fade" data-aos-delay="800" />
+        <img src="./s2/stitlea.png" alt="頤昌建築  最懂家的需求" class="img" />
+        <img src="./s2/texta.png" alt="豐/美/生/活  展/闊/之/岳" class="img" />
+        <img src="./s2/titlea.png" alt="一本初心" class="img" />
         <div class="text">
           回歸建築初衷，家的本我需求
           <br />慎選每塊土地，細膩規劃每處空間，嚴格要求工程細節
           <br />只為珍惜每位住戶對於【頤昌】品牌的信任價值。
         </div>
       </div>
-      <div v-if="isMobile"></div>
+      <div v-if="isMobile">
+        <img src="./s2/mo/bg.jpg" alt class="img" />
+        <img src="./s2/mo/bg2a.png" alt class="img" data-aos="fade" data-aos-delay="200" />
+        <img src="./s2/mo/stitlea.png" alt="頤昌建築  最懂家的需求" class="img" />
+        <img src="./s2/mo/texta.png" alt="豐/美/生/活  展/闊/之/岳" class="img" />
+        <img src="./s2/mo/titlea.png" alt="一本初心" class="img" />
+        <div class="text">
+          回歸建築初衷，家的本我需求
+          <br />慎選每塊土地，細膩規劃每處空間，嚴格要求工程細節
+          <br />只為珍惜每位住戶對於【頤昌】品牌的信任價值。
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -70,22 +81,20 @@
   }
 
   .text {
-    width: calc(100vw * (262 / 375));
-    height: calc(100vw * (80 / 375));
-    font-size: calc(100vw * (14 / 375));
+    width: 90vw;
+    height: auto;
+    font-size: calc(100vw * 12 / 375);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.48;
-    letter-spacing: normal;
-    text-align: justify;
-    color: #000000;
+    line-height: 1.67;
+    letter-spacing: 0.72px;
+    text-align: left;
+    color: #707070;
     position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    top: 50%;
-    transform: translateY(-50%);
+    right: auto;
+    left: calc(100vw * 19 / 375);
+    top: calc(100vw * 144 / 375);
   }
 }
 </style>

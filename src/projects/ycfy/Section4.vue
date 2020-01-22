@@ -2,33 +2,47 @@
   <div class="section4">
     <div class="bg relative">
       <div v-if="!isMobile">
-        <img src="./s4/img.jpg" alt class="img mix" />
-        <img src="./s4/t_bg.png" alt class="img" data-aos="fade" data-aos-delay="200" />
-        <img src="./s4/stitlew.png" alt="貼心暖服務 八年室內粉刷" class="img" data-aos="fade" data-aos-delay="400" />
-        <img src="./s4/titlew.png" alt="久安" class="img" />
-        <div class="text">
-          從硬功夫到軟身段，頤昌建設貼心提供8年室內粉刷服務<br />
-          常保室內空間如新，提升居家價值，讓家永遠都像新買的一樣
-        </div>
+        <img src="./s4/bg.jpg" alt class="img" />
+        <img src="./s4/bg1.png" alt class="img" />
+        <img src="./s4/img1a.png" alt class="img" data-aos="fade" data-aos-delay="200" />
+        <img src="./s4/img2a.png" alt class="img" data-aos="fade" data-aos-delay="400" />
+        <img src="./s4/img3a.png" alt class="img" data-aos="fade" data-aos-delay="600" />
+        <img src="./s4/lineba.png" alt class="img" />
+        <img src="./s4/stitlea.png" alt="文青商圈/環球商圈/三井商圈 豐享生活" class="img" />
+        <img src="./s4/titlea.png" alt="三大商圈" class="img" />
+        <div class="text">從便利商店到星巴克，簡餐到拉麵，國賓、威秀影城到三井Outlet，享受整個林口的美好豐盛</div>
       </div>
       <div v-if="isMobile">
-        <img src="./s4/mo/img.jpg" alt class="img mix" />
-        <img src="./s4/mo/t_bg.png" alt class="img" data-aos="fade" data-aos-delay="200" />
-        <img src="./s4/mo/stitlew.png" alt="貼心暖服務 八年室內粉刷" class="img" data-aos="fade" data-aos-delay="400" />
-        <img src="./s4/mo/titlew.png" alt="久安" class="img" />
-        <div class="text">
-          從硬功夫到軟身段，頤昌建設貼心提供8年室內粉刷服務<br />
-          常保室內空間如新，提升居家價值，讓家永遠都像新買的一樣
-        </div>
+        <img src="./s4/mo/bg.jpg" alt class="img" />
+        <img src="./s4/mo/bg1.png" alt class="img" />
+        <img src="./s4/mo/lineba.png" alt class="img" />
+        <img src="./s4/mo/stitlea.png" alt="文青商圈/環球商圈/三井商圈 豐享生活" class="img" />
+        <img src="./s4/mo/titlea.png" alt="三大商圈" class="img" />
+        <div class="text">從便利商店到星巴克，簡餐到拉麵<br />國賓、威秀影城到三井Outlet，享受整個林口的美好豐盛</div>
+        <div :class="`slide relative`" data-aos="fade"
+        data-aos-delay="0">
+            <div
+              v-for="(slide, index) in slideList"
+              :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
+              :key="`s4-slide-${index}`"
+            >
+              <img
+                :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
+                :src="slide.src"
+                alt
+              />
+            </div>
+          </div>
       </div>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 .bg {
-  background-image: url('./s1/bg1.jpg');
   background-size: cover;
   position: relative;
+  z-index: 2;
+  overflow: hidden;
 }
 
 .img {
@@ -39,11 +53,6 @@
   top: 0;
   object-fit: cover;
   display: block;
-
-  &.mix {
-    mix-blend-mode: multiply;
-  }
-
   &.fix {
     position: fixed;
   }
@@ -53,22 +62,18 @@
 }
 
 .text {
-  width: calc(100vw * (783 / 1920));
-  height: calc(100vw * (86 / 1920));
-  font-size: calc(100vw * (29 / 1920));
+  width: calc(100vw * 880 / 1920);
+  font-size: calc(100vw * 20 / 1920);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.48;
-  letter-spacing: normal;
-  text-align: justify;
-  color: #000000;
+  line-height: 2;
+  letter-spacing: 1.2px;
+  text-align: left;
+  color: #666;
+  right: calc(100vw * 152 / 1920);
+  top: calc(100vw * 300 / 1920);
   position: absolute;
-  left: -5%;
-  right: 0;
-  margin: 0 auto;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 /* 平板尺寸 */
@@ -78,25 +83,27 @@
 @media screen and (max-width: 767px) {
   .bg {
     background-size: cover;
+    background-image: url('./s1/bg1.jpg');
   }
 
   .text {
-    width: calc(100vw * (226 / 375));
-    height: calc(100vw * (80 / 375));
-    font-size: calc(100vw * (14 / 375));
+    width: calc(100vw * 319 / 375);
+    height: auto;
+    font-size: calc(100vw * 12 / 375);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.48;
-    letter-spacing: normal;
-    text-align: justify;
-    color: #000000;
+    line-height: 1.67;
+    letter-spacing: 0.72px;
+    text-align: left;
+    color: #666;
+    left: calc(100vw * 21 / 375);
+    top: calc(100vw * 222 / 375);
+  }
+
+  .slide {
     position: absolute;
-    left: -10%;
-    right: 0;
-    margin: 0 auto;
-    top: 55%;
-    transform: translateY(-50%);
+    bottom: 0;
   }
 }
 </style>
@@ -104,22 +111,32 @@
 <script>
 // @ is an alias to /src
 import { isMobile } from '@/utils'
+import slider from '@/mixins/slider.js'
 export default {
   name: 'section4',
-
+  mixins: [slider],
   data() {
     return {
       isMobile,
+      slideList: [
+        {
+          src: require('./s4/mo/img1.jpg'),
+        },
+        {
+          src: require('./s4/mo/img2.jpg'),
+        },
+        {
+          src: require('./s4/mo/img3.jpg'),
+        },
+      ],
     }
   },
 
-  computed: {
-  },
+  computed: {},
 
   methods: {},
 
   created() {},
-  mounted() {
-  },
+  mounted() {},
 }
 </script>

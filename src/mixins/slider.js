@@ -2,30 +2,33 @@ export default {
   data() {
     return {
       slideIndex: 0,
+      slideIndex1: 0,
+      slideIndex2: 0,
+      slideIndex3: 0,
     }
   },
 
   created() {
-    // setInterval(() => {
-    //   if (this.slideList) {
-    //     this.addIndex()
-    //   }
-    //   if (this.slideList1) {
-    //     this.addMultiIndex(1)
-    //   }
+    setInterval(() => {
+      if (this.slideList) {
+        this.addIndex()
+      }
+      if (this.slideList1) {
+        this.addMultiIndex(1)
+      }
 
-    //   if (this.slideList2) {
-    //     this.addMultiIndex(2)
-    //   }
+      if (this.slideList2) {
+        this.addMultiIndex(2)
+      }
 
-    //   if (this.slideList3) {
-    //     this.addMultiIndex(3)
-    //   }
+      if (this.slideList3) {
+        this.addMultiIndex(3)
+      }
 
-    //   if (this.slideList4) {
-    //     this.addMultiIndex(4)
-    //   }
-    // }, 3000)
+      if (this.slideList4) {
+        this.addMultiIndex(4)
+      }
+    }, 3000)
   },
   methods: {
     addIndex() {

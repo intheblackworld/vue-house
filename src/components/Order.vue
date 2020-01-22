@@ -13,10 +13,10 @@
             <label>手機</label>
             <el-input v-model="form.phone" placeholder></el-input>
           </div>
-          <!-- <div class="row">
+          <div class="row">
             <label>E-mail</label>
             <el-input v-model="form.email" placeholder></el-input>
-          </div>-->
+          </div>
           <div class="row">
             <label>居住城市</label>
             <el-select v-model="form.city" placeholder="請選擇居住城市">
@@ -40,11 +40,11 @@
             </el-select>
           </div>
         </div>
-        <!-- <div class="group">
+        <div class="group">
           <div class="row">
             <el-input type="textarea" :rows="2" placeholder="請輸入您的留言 (選填)" v-model="form.msg"></el-input>
           </div>
-        </div>-->
+        </div>
       </div>
       <div class="control">
         <el-checkbox v-model="checked">
