@@ -3,8 +3,8 @@ export default {
   googleSrc: '#',
   googleLink: '#',
   phone: '02-23455888',
-  fbLink: '#',
-  fbMessage: '#',
+  fbLink: 'https://www.facebook.com/%E9%81%94%E6%AC%A3%E4%BF%A1%E7%BE%A9%E6%96%87%E8%8F%AF-110242950514856/',
+  fbMessage: 'https://m.me/110242950514856/',
   caseName: '達欣信義文華',
   indigatorLength: 8,
   houseInfos: [

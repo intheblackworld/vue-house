@@ -30,16 +30,16 @@
           <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
         </span>
       </div> -->
-      <div class="btn half flex-c">
-        <span class="flex-c" href="http://unigiants.com.tw/" target="_blank">
+      <a href="http://unigiants.com.tw/" target="_blank" class="btn half flex-c">
+        <span class="flex-c">
           聯碩地產行銷團隊
         </span>
-      </div>
-      <div class="btn half flex-c">
-        <span class="flex-c" href="https://www.facebook.com/unigiant/" target="_blank">
+      </a>
+      <a href="https://www.facebook.com/unigiant/" target="_blank" class="btn half flex-c">
+        <span class="flex-c">
           <font-awesome-icon :icon="['fab', 'facebook-f']" />前往聯碩粉絲專頁
         </span>
-      </div>
+      </a>
       <!-- <a class="google-btn flex-c" :href="info.googleLink" target="_blank" v-else>
         <span class="flex-c">
           <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
