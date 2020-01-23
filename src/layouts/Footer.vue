@@ -1,7 +1,9 @@
 <template>
   <div class="footer">
-    <a href="https://lixin.com.tw/" target="_blank"><img src="../assets/img/footerLogo.gif" alt="立炘數位" /></a>
-    <a href="https://www.h35.tw/admin/test/login.ph" target="_blank">網頁製作</a>
+    <a href="https://www.lixin.com.tw/" target="_blank">
+      <img src="../assets/img/footerLogo.png" alt="立炘數位" />
+    </a>
+    <a href="https://www.h35.tw/admin/test/login.php" target="_blank">網頁製作</a>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -13,24 +15,28 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  line-height: 1.4;
+  font-size: 12px;
+  vertical-align: middle;
   position: relative;
 
   img {
-    width: 50px;
+    height: 1.2em;
     margin-right: 20px;
+    vertical-align: inherit;
   }
 
   p {
-    font-size: 12px;
     color: rgba(255, 255, 255, 0.6);
     margin-right: 15px;
     margin-bottom: 0;
+    vertical-align: inherit;
   }
 
   a {
-    font-size: 12px;
     color: #fff;
     text-decoration: none;
+    vertical-align: inherit;
   }
 }
 
