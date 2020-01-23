@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
-    <img src="../assets/img/footerLogo.png" alt="心天畝的圖片" />
-    <a href=" https://www.h35.tw/admin/test/login.php" target="_blank">網頁製作</a>
+    <a href="https://lixin.com.tw/" target="_blank"><img src="../assets/img/footerLogo.gif" alt="立炘數位" /></a>
+    <a href="https://www.h35.tw/admin/test/login.ph" target="_blank">網頁製作</a>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -13,6 +13,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 
   img {
     width: 50px;
@@ -35,13 +36,13 @@
 
 @media screen and (max-width: 767px) {
   .footer {
-    margin-bottom: 0px;
+    margin-bottom: 63px;
   }
 }
 
 @media only screen and (max-width: 767px) {
   .footer {
-    margin-bottom: 0px;
+    margin-bottom: 63px;
   }
 }
 </style>

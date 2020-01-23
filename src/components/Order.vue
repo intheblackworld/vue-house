@@ -310,7 +310,7 @@ export default {
   background-size: 100% auto;
     padding-top: 40px;
     .order-title {
-      font-size: 22px;
+      font-size: 40px;
       margin-top: 10px;
       margin-bottom: 20px;
     }
