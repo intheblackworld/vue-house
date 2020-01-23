@@ -61,6 +61,10 @@
 
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .text {
+    width: calc(100vw * 850 / 1920);
+    right: calc(100vw * 144 / 1920);
+  }
 }
 
 @media screen and (max-width: 767px) {

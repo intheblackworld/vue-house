@@ -55,7 +55,7 @@
 }
 
 .text {
-  width: calc(100vw * 515 / 1920);
+  width: calc(100vw * 525 / 1920);
   height: calc(100vw * 120 / 1920);
   font-size: calc(100vw * 20 / 1920);
   font-weight: normal;
@@ -72,6 +72,10 @@
 
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .text {
+    width: calc(100vw * 595 / 1920);
+    right: calc(100vw * 202 / 1920);
+  }
 }
 
 @media screen and (max-width: 767px) {

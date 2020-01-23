@@ -43,7 +43,7 @@
 }
 
 .text {
-  width: calc(100vw * 730 / 1920);
+  width: calc(100vw * 745 / 1920);
   font-size: calc(100vw * 20 / 1920);
   font-weight: normal;
   font-stretch: normal;
@@ -52,13 +52,17 @@
   letter-spacing: 1.2px;
   text-align: left;
   color: #fff;
-  right: calc(100vw * 270 / 1920);
+  right: calc(100vw * 260 / 1920);
   top: calc(100vw * 469 / 1920);
   position: absolute;
 }
 
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .text {
+    width: calc(100vw * 850 / 1920);
+    right: calc(100vw * 232 / 1920);
+  }
 }
 
 @media screen and (max-width: 767px) {
