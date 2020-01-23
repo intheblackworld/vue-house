@@ -30,7 +30,7 @@
           </div>
           <div class="row">
             <label>居住地區</label>
-            <el-select v-model="form.area" placeholder>
+            <el-select v-model="form.area" placeholder no-data-text="請先選擇居住城市">
               <el-option
                 v-for="area in areaList"
                 :key="area.value"
