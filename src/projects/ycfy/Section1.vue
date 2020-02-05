@@ -6,11 +6,6 @@
         <img src="./s1/bg2.jpg" alt class="img fix mix" />
         <img src="./s1/text.png" alt="懂你對家的要求 頤昌建築" class="img fix mix" />
         <img src="./s1/bg3.png" alt="雙語校園｜無瑕景觀｜ 豐居久安" class="img bottom_img" />
-        <img src="./s1/text1.png" alt="【 豐岳 】十大豐碩價值" class="title" />
-        <img src="./s1/link.png" alt class="link" v-scroll-to="{ element: `#section2` }" />
-        <!-- <img src="./s1/logo.png" alt="頤昌豐岳" class="img" data-aos="fade" data-aos-delay="700" /> -->
-        <!-- <icon class="icon logo-icon" :data="logo" /> -->
-        <div class="logo-icon"></div>
 <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
 	 y="0px" viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
          <g>
@@ -931,16 +926,17 @@
     </g>
   </g>
 </svg>
+        <img src="./s1/text1.png" alt="【 豐岳 】十大豐碩價值" class="title" />
+        <img src="./s1/link.png" alt class="link" v-scroll-to="{ element: `#section2` }" />
+        <!-- <img src="./s1/logo.png" alt="頤昌豐岳" class="img" data-aos="fade" data-aos-delay="700" /> -->
+        <!-- <icon class="icon logo-icon" :data="logo" /> -->
+        <div class="logo-icon"></div>
       </div>
       <div v-else>
         <img src="./s1/mo/bg1.jpg" alt class="img" />
         <img src="./s1/mo/bg2.jpg" alt class="img fix mix" />
         <img src="./s1/mo/img1.png" alt class="img fix mix" />
         <img src="./s1/mo/bg3.png" alt class="img" />
-        <img src="./s1/mo/text1a.png" alt="懂你對家的要求 頤昌建築" class="img bottom_img" />
-        <!-- img src="./s1/mo/stitlea.png" alt="雙語校園｜無瑕景觀｜ 豐居久安" class="img" />
-        <img src="./s1/mo/titlea.png" alt class="img" /-->
-        <img src="./s1/mo/linka.png" alt class="link" v-scroll-to="{ element: `#section2` }" />
 <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 750 1334" style="enable-background:new 0 0 750 1334;" xml:space="preserve">
  <pattern  x="-308" y="1051" width="340.3" height="486.6" patternUnits="userSpaceOnUse" id="img_3" viewBox="280.4 -704.3 340.3 486.6" style="overflow:visible;">
 	<g>
@@ -1451,7 +1447,7 @@
       l-0.7,2L625.2,748.6z M631,752.6h-0.2l-1.4,3.9c-0.2,0.5-0.1,0.8,0.3,0.9l2.9,1.1l0.8-1.2c0.6-1.1,1-2.2,1.3-3.5l0.3-1.7
       C633.7,752.3,632.3,752.4,631,752.6z"/>
   </g>
-  <path class="st25 " d="M454,710H640"/>
+  <path class="st25 ld26" d="M454,710H640"/>
   <g class="op1">
     <path class="st4" d="M99.9,662.2c0.2,0,0.4,0.1,0.5,0.4c0.3,0.8,0.6,1.7,0.7,2.8c0.1,1.4,0,2.9-0.3,4.6c-0.1,1.1-0.6,2.1-1.2,2.8
       c-0.5,0.6-0.9,0.7-1.3,0.1c-0.3-0.5-0.5-1.1-0.7-2c0-0.5,0-1,0.2-1.5c0.7-2.1,1.3-4.3,1.6-6.6C99.4,662.5,99.6,662.3,99.9,662.2z
@@ -1864,6 +1860,10 @@
   	</g>
   </g>
 </svg>
+        <img src="./s1/text1.png" alt="【 豐岳 】十大豐碩價值" class="title" />
+        <!-- img src="./s1/mo/stitlea.png" alt="雙語校園｜無瑕景觀｜ 豐居久安" class="img" />
+        <img src="./s1/mo/titlea.png" alt class="img" /-->
+        <img src="./s1/mo/linka.png" alt class="link" v-scroll-to="{ element: `#section2` }" />
       </div>
     </div>
   </div>
@@ -2061,6 +2061,11 @@ svg{position: absolute;top:0;left: 0;}
       height: calc(100vw * (636 / 375));
     }
   }
+.title {
+  width: calc(100vw * 1300 / 1920);
+  bottom: 70px;
+}
+
   @keyframes imgmix {
     to {
       opacity: 1;
