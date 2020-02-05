@@ -67,17 +67,17 @@ export default {
   data() {
     return {
       isMobile,
-      slideList: [
-        {
-          src: require('./s4/mo/img1.jpg'),
-        },
-        {
-          src: require('./s4/mo/img2.jpg'),
-        },
-        {
-          src: require('./s4/mo/img3.jpg'),
-        },
-      ],
+      // slideList: [
+      //   {
+      //     src: require('./s4/mo/img1.jpg'),
+      //   },
+      //   {
+      //     src: require('./s4/mo/img2.jpg'),
+      //   },
+      //   {
+      //     src: require('./s4/mo/img3.jpg'),
+      //   },
+      // ],
     }
   },
 
