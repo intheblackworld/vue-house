@@ -204,8 +204,8 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/style/variableColor.scss';
 .order-bg {
-  // background-color: $order_bg_color;
-  background-image: $order_bg_image;
+  background-color: $order_bg_color;
+  // background-image: $order_bg_image;
   background-size: cover;
   position: relative;
   padding-top: 80px;
@@ -306,7 +306,7 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .order-bg {
-  background-image: $order_bg_image_m;
+  // background-image: $order_bg_image_m;
   background-size: 100% auto;
     padding-top: 40px;
     .order-title {

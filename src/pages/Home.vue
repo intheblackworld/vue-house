@@ -2,8 +2,8 @@
   <div class="home">
     <div ref="gtmNoScript" />
     <Loading :loading="loading" />
-    <!-- <SideNavigation v-if="isSide" />
-    <Navigation v-else />-->
+    <SideNavigation v-if="isSide" />
+    <Navigation v-else />
     <div id="section1">
       <Section1 />
     </div>
@@ -25,24 +25,6 @@
     <div id="section7">
       <Section7 />
     </div>
-    <div id="section8">
-      <Section8 />
-    </div>
-    <div id="section9">
-      <Section9 />
-    </div>
-    <div id="section10">
-      <Section10 />
-    </div>
-    <div id="section11">
-      <Section11 />
-    </div>
-    <div id="section12">
-      <Section12 />
-    </div>
-    <div id="section13">
-      <Section13 />
-    </div>
     <ContactSection />
     <!-- <SimpleOrder /> -->
     <MobileNav />
@@ -56,25 +38,19 @@
 <script>
 // @ is an alias to /src
 // import Navigation from '@/layouts/Navigation.vue'
-// import SideNavigation from '@/layouts/SideNavigation.vue'
+import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import gtm from '@/mixins/gtm.js'
 
-import Section1 from '@/projects/ycfy/Section1.vue'
-import Section2 from '@/projects/ycfy/Section2.vue'
-import Section3 from '@/projects/ycfy/Section3.vue'
-import Section4 from '@/projects/ycfy/Section4.vue'
-import Section5 from '@/projects/ycfy/Section5.vue'
-import Section6 from '@/projects/ycfy/Section6.vue'
-import Section7 from '@/projects/ycfy/Section7.vue'
-import Section8 from '@/projects/ycfy/Section8.vue'
-import Section9 from '@/projects/ycfy/Section9.vue'
-import Section10 from '@/projects/ycfy/Section10.vue'
-import Section11 from '@/projects/ycfy/Section11.vue'
-import Section12 from '@/projects/ycfy/Section12.vue'
-import Section13 from '@/projects/ycfy/Section13.vue'
+import Section1 from '@/projects/lsbj/Section1.vue'
+import Section2 from '@/projects/lsbj/Section2.vue'
+import Section3 from '@/projects/lsbj/Section3.vue'
+import Section4 from '@/projects/lsbj/Section4.vue'
+import Section5 from '@/projects/lsbj/Section5.vue'
+import Section6 from '@/projects/lsbj/Section6.vue'
+import Section7 from '@/projects/lsbj/Section7.vue'
 // import SimpleOrder from '@/components/SimpleOrder.vue'
 
 export default {
@@ -83,7 +59,7 @@ export default {
   components: {
     Loading,
     // Navigation,
-    // SideNavigation,
+    SideNavigation,
     ContactSection,
     MobileNav,
     Section1,
@@ -93,12 +69,6 @@ export default {
     Section5,
     Section6,
     Section7,
-    Section8,
-    Section9,
-    Section10,
-    Section11,
-    Section12,
-    Section13, // SimpleOrder,
   },
 
   data() {
