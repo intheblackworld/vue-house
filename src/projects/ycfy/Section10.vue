@@ -2,7 +2,7 @@
   <div class="section10">
     <div class="bg relative">
       <div v-if="!isMobile">
-        <img src="./s10/bg.jpg" alt class="img" />
+        <!-- img src="./s10/bg.jpg" alt class="img" / -->
         <img src="./s10/bg2.png" alt class="img" />
         <img src="./s10/stitlea.png" alt="金獎設計團隊規劃 全齡滿意最實用空間" class="img" />
         <img src="./s10/titlea.png" alt="九大公設" class="img" />
@@ -21,7 +21,7 @@
         <div class="text">影音活動室、兒童遊戲室、健身房、瑜伽室<br />練琴室...等九大全齡公設規劃</div>
       </div>
       <div v-if="isMobile">
-        <img src="./s10/mo/bg.jpg" alt class="img" />
+        <!-- img src="./s10/mo/bg.jpg" alt class="img" / -->
         <img src="./s10/mo/bg2.png" alt class="img" />
         <img src="./s10/mo/stitlea.png" alt="金獎設計團隊規劃 全齡滿意最實用空間" class="img" />
         <img src="./s10/mo/titlea.png" alt="九大公設" class="img" />
@@ -44,6 +44,7 @@
 </template>
 <style lang="scss" scoped>
 .bg {
+  background:url(./s10/bg.jpg) fixed;
   background-size: cover;
   position: relative;
   z-index: 2;
@@ -114,7 +115,7 @@
 @media screen and (max-width: 767px) {
   .bg {
     background-size: cover;
-    background-image: url('./s1/bg1.jpg');
+    background-image: url('./s10/mo/bg.jpg');
     overflow: visible;
   }
 

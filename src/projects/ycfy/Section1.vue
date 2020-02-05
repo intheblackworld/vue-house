@@ -5,7 +5,7 @@
         <img src="./s1/bg1.jpg" alt class="img" />
         <img src="./s1/bg2.jpg" alt class="img fix mix" />
         <img src="./s1/text.png" alt="懂你對家的要求 頤昌建築" class="img fix mix" />
-        <img src="./s1/bg3.png" alt="雙語校園｜無瑕景觀｜ 豐居久安" class="img" />
+        <img src="./s1/bg3.png" alt="雙語校園｜無瑕景觀｜ 豐居久安" class="img bottom_img" />
         <img src="./s1/text1.png" alt="【 豐岳 】十大豐碩價值" class="title" />
         <img src="./s1/link.png" alt class="link" v-scroll-to="{ element: `#section2` }" />
         <!-- <img src="./s1/logo.png" alt="頤昌豐岳" class="img" data-aos="fade" data-aos-delay="700" /> -->
@@ -1939,6 +1939,7 @@ svg{position: absolute;top:0;left: 0;}
 .bg {
   background-size: cover;
   position: relative;
+  height: 100vh;
 }
 
 .img {

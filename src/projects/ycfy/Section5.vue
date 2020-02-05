@@ -2,7 +2,7 @@
   <div class="section5">
     <div class="bg relative">
       <div v-if="!isMobile">
-        <img src="./s5/bg.jpg" alt class="img" />
+        <!-- img src="./s5/bg.jpg" alt class="img" / -->
         <img src="./s5/bg1.png" alt class="img" />
         <img src="./s5/left_img1.png" alt class="img" data-aos="fade" data-aos-delay="200" />
         <img src="./s5/left_img2.png" alt class="img" data-aos="fade" data-aos-delay="400" />
@@ -40,7 +40,7 @@
         <div class="text">頤昌建築２０２０鉅作，邀請陳朝雄建築師、冠宇和瑞空間設計、戴雲發Alfa-Safe攜手合作</div>
       </div>
       <div v-if="isMobile">
-        <img src="./s5/mo/bg.jpg" alt class="img" />
+        <!-- img src="./s5/mo/bg.jpg" alt class="img" / -->
         <img src="./s5/mo/bg1.png" alt class="img" />
         <img src="./s5/mo/left_img1a.png" alt class="img" data-aos="fade" data-aos-delay="200" />
         <img src="./s5/mo/left_img2a.png" alt class="img" data-aos="fade" data-aos-delay="400" />
@@ -65,6 +65,7 @@
 </template>
 <style lang="scss" scoped>
 .bg {
+  background:url(./s5/bg.jpg) fixed;
   background-size: cover;
   position: relative;
   z-index: 2;
@@ -145,7 +146,7 @@
 @media screen and (max-width: 767px) {
   .bg {
     background-size: cover;
-    background-image: url('./s1/bg1.jpg');
+    background-image: url('./s4/mo/bg.jpg');
     overflow: visible;
   }
 

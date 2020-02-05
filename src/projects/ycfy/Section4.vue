@@ -2,7 +2,7 @@
   <div class="section4">
     <div class="bg relative">
       <div v-if="!isMobile">
-        <img src="./s4/bg.jpg" alt class="img" />
+        <!-- img src="./s4/bg.jpg" alt class="img" / -->
         <img src="./s4/bg1.png" alt class="img" />
         <img src="./s4/img1a.png" alt class="img" data-aos="fade" data-aos-delay="200" />
         <img src="./s4/img2a.png" alt class="img" data-aos="fade" data-aos-delay="400" />
@@ -13,7 +13,7 @@
         <div class="text">從便利商店到星巴克，簡餐到拉麵，國賓、威秀影城到三井Outlet，享受整個林口的美好豐盛</div>
       </div>
       <div v-if="isMobile">
-        <img src="./s4/mo/bg.jpg" alt class="img" />
+        <!-- img src="./s4/mo/bg.jpg" alt class="img" / -->
         <img src="./s4/mo/bg1.png" alt class="img" />
         <img src="./s4/mo/lineba.png" alt class="img" />
         <img src="./s4/mo/stitlea.png" alt="文青商圈/環球商圈/三井商圈 豐享生活" class="img" />
@@ -39,6 +39,7 @@
 </template>
 <style lang="scss" scoped>
 .bg {
+  background:url(./s4/bg.jpg) fixed;
   background-size: cover;
   position: relative;
   z-index: 2;
@@ -87,7 +88,7 @@
 @media screen and (max-width: 767px) {
   .bg {
     background-size: cover;
-    background-image: url('./s1/bg1.jpg');
+    background-image: url('./s4/mo/bg.jpg');
   }
 
   .text {

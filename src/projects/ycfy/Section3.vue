@@ -2,7 +2,7 @@
   <div class="section3">
     <div class="bg relative">
       <div v-if="!isMobile">
-        <img src="./s3/bg.jpg" alt class="img" />
+        <!-- img src="./s3/bg.jpg" alt class="img" / -->
         <img src="./s3/bg1.png" alt class="img" />
         <img src="./s3/bg2.png" alt class="img" data-aos="fade-up" data-aos-delay="200" />
         <img src="./s3/bg3.png" alt class="img" data-aos="fade-up" data-aos-delay="400" />
@@ -27,6 +27,7 @@
 </template>
 <style lang="scss" scoped>
 .bg {
+  background:url(./s3/bg.jpg) fixed;
   background-size: cover;
   position: relative;
   z-index: 2;

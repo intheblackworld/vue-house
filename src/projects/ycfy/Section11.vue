@@ -2,14 +2,12 @@
   <div class="section9">
     <div class="bg relative">
       <div v-if="!isMobile">
-        <img src="./s11/bg.jpg" alt class="img" />
         <img src="./s11/bg2.png" class="img" data-aos="fade-up" data-aos-delay="200" />
         <img src="./s11/stitlea.png" alt="你顧家保固我加 自信承諾防水升級" class="img" />
         <img src="./s11/titlea.png" alt="十年保固" class="img" />
         <div class="text">頤昌建築秉持匠人精神，工程細節嚴謹細膩，主張業界少見十年防水加碼保固</div>
       </div>
       <div v-if="isMobile">
-        <img src="./s11/mo/bg.jpg" alt class="img" />
         <img src="./s11/mo/bg2.png" class="img" data-aos="fade-up" data-aos-delay="200" />
         <img src="./s11/mo/stitlea.png" alt="你顧家保固我加 自信承諾防水升級" class="img" />
         <img src="./s11/mo/titlea.png" alt="十年保固" class="img" />
@@ -20,6 +18,7 @@
 </template>
 <style lang="scss" scoped>
 .bg {
+  background:url(./s11/bg.jpg) fixed;
   background-size: cover;
   position: relative;
   z-index: 2;
@@ -68,7 +67,7 @@
 @media screen and (max-width: 767px) {
   .bg {
     background-size: cover;
-    background-image: url('./s1/bg1.jpg');
+    background-image: url('./s11/mo/bg.jpg');
   }
 
   .text {

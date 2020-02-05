@@ -14,7 +14,7 @@
 </template>
 <style lang="scss" scoped>
 .bg {
-  background-image: url('./s12/bg.jpg');
+  background:url(./s12/bg.jpg) fixed;
   background-size: cover;
   position: relative;
 }
@@ -58,6 +58,7 @@
 @media screen and (max-width: 767px) {
   .bg {
     background-size: cover;
+    background-image: url('./s13/mo/bg.jpg');
   }
 
   .img {

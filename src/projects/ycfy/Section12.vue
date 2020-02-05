@@ -2,7 +2,7 @@
   <div class="section12">
     <div class="bg relative">
       <div v-if="!isMobile">
-        <img src="./s12/bg.jpg" alt class="img" />
+        <!-- img src="./s12/bg.jpg" alt class="img" / -->
         <img src="./s12/bg2.png" alt class="img" data-aos="fade" data-aos-delay="200" />
         <img src="./s12/titlea.png" alt="豐藏完美 家的極大成" class="img" />
         <div :class="`slide`" data-aos="fade" data-aos-delay="400">
@@ -20,7 +20,7 @@
         <div class="text">規劃設計蘊藏完美，尺度恰到好處，游刃有餘的起居空間<br />「頤昌豐岳」懂你對家的要求，豐美2-4房納藏精彩生活</div>
       </div>
       <div v-if="isMobile">
-        <img src="./s12/mo/bg.jpg" alt class="img" />
+        <!-- img src="./s12/mo/bg.jpg" alt class="img"  -->
         <img src="./s12/mo/bg2.png" alt class="img" data-aos="fade" data-aos-delay="200" />
         <img src="./s12/mo/titlea.png" alt="豐藏完美 家的極大成" class="img" />
         <div :class="`slide`" data-aos="fade" data-aos-delay="400">
@@ -42,6 +42,7 @@
 </template>
 <style lang="scss" scoped>
 .bg {
+  background:url(./s12/bg.jpg) fixed;
   background-size: cover;
   position: relative;
   z-index: 2;
@@ -112,7 +113,7 @@
 @media screen and (max-width: 767px) {
   .bg {
     background-size: cover;
-    background-image: url('./s1/bg1.jpg');
+    background-image: url('./s12/mo/bg.jpg');
     overflow: visible;
   }
 

@@ -2,7 +2,7 @@
   <div class="section7">
     <div class="bg relative">
       <div v-if="!isMobile">
-        <img src="./s7/bg.jpg" alt class="img" />
+        <!-- img src="./s7/bg.jpg" alt class="img" / -->
         <img src="./s7/bg2.png" alt class="img" data-aos="fade" data-aos-delay="200" />
         <img src="./s7/stitlea.png" alt="頤昌建築自主建築履歷 工程安全最放心" class="img" />
         <img src="./s7/titlea.png" alt="六項履歷" class="img" />
@@ -21,6 +21,7 @@
 </template>
 <style lang="scss" scoped>
 .bg {
+  background:url(./s7/bg.jpg) fixed;
   background-size: cover;
   position: relative;
   z-index: 2;
@@ -69,7 +70,7 @@
 @media screen and (max-width: 767px) {
   .bg {
     background-size: cover;
-    background-image: url('./s1/bg1.jpg');
+    background-image: url('./s7/mo/bg.jpg');
   }
 
   .text {
