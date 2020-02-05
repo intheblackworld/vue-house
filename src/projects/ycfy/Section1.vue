@@ -937,8 +937,8 @@
         <img src="./s1/mo/bg2.jpg" alt class="img fix mix" />
         <img src="./s1/mo/img1.png" alt class="img fix mix" />
         <img src="./s1/mo/bg3.png" alt class="img" />
+        <img src="./s1/mo/text1a.png" alt="懂你對家的要求 頤昌建築" class="img bottom_img" />
         <!-- img src="./s1/mo/stitlea.png" alt="雙語校園｜無瑕景觀｜ 豐居久安" class="img" />
-        <img src="./s1/mo/text1a.png" alt="懂你對家的要求 頤昌建築" class="img" />
         <img src="./s1/mo/titlea.png" alt class="img" /-->
         <img src="./s1/mo/linka.png" alt class="link" v-scroll-to="{ element: `#section2` }" />
 <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 750 1334" style="enable-background:new 0 0 750 1334;" xml:space="preserve">
