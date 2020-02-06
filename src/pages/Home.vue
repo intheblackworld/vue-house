@@ -2,8 +2,8 @@
   <div class="home">
     <div ref="gtmNoScript" />
     <Loading :loading="loading" />
-    <!-- <SideNavigation v-if="isSide" />
-    <Navigation v-else />-->
+    <SideNavigation v-if="isSide" />
+    <Navigation v-else />
     <div id="section1">
       <Section1 />
     </div>
@@ -56,7 +56,7 @@
 <script>
 // @ is an alias to /src
 // import Navigation from '@/layouts/Navigation.vue'
-// import SideNavigation from '@/layouts/SideNavigation.vue'
+import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
@@ -83,7 +83,7 @@ export default {
   components: {
     Loading,
     // Navigation,
-    // SideNavigation,
+    SideNavigation,
     ContactSection,
     MobileNav,
     Section1,

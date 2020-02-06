@@ -85,9 +85,9 @@ export default {
   display: block;
   position: fixed;
   z-index: 112;
-  top: 0px;
+  top: 20px;
   right: 30px;
-  width: 100px;
+  width: 40px;
   cursor: pointer;
 
   img {
@@ -142,7 +142,7 @@ export default {
 
     &:hover {
       color: $nav_link_hover_color;
-      background: $nav_link_hover_bg;
+      // background: $nav_link_hover_bg;
       background-position: center;
       background-size: cover;
     }
@@ -259,16 +259,17 @@ export default {
   .menu {
     display: block;
     position: fixed;
-    right: 0px;
-    top: 0px;
-    width: 60px;
+    right: 15px;
+    top: 20px;
+    width: 30px;
 
     img {
       width: 100%;
     }
 
     .close {
-      width: 40px;
+      width: 30px;
+      margin-right: 15px;
     }
 
     svg {
@@ -279,7 +280,7 @@ export default {
   .navlist {
     position: fixed;
     z-index: 111;
-    background: $nav_bg;
+    background-image: url('./nav_bg.png');
     width: 0%;
     right: 0;
     top: $nav_phone_height;
