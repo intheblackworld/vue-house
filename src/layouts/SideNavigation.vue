@@ -85,11 +85,31 @@ export default {
   display: block;
   position: fixed;
   z-index: 112;
-  top: 0px;
+  top: 10px;
   right: 30px;
   width: 100px;
   cursor: pointer;
-
+  overflow: hidden;
+  border-radius:20px;
+&:before {
+    content: "";
+    width: 40%;
+    height: 100%;
+    display: block;
+    background: #fff;
+    position: absolute;
+    transform: skewX(-20deg);
+    left: -10%;
+    opacity: 0;
+    top: 0;
+    z-index: 5;
+    transition: all .4s cubic-bezier(.2,.95,.57,.99)
+}
+&:hover:before {
+    opacity: 1;
+    width: 90%;
+    left: 140%
+}
   img {
     width: 100%;
   }
@@ -117,20 +137,23 @@ export default {
 
   li {
     height: 60px;
-    margin-bottom: 5px;
+    margin-bottom:0;
     width: 100%;
   }
 
   .link {
+    position: relative;overflow: hidden;
     height: 60px;
     width: 100%;
     font-size: 17px;
-    margin-top: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     display: none;
     background-size: cover;
+    border-top: 1px solid rgba(250, 250, 250, 0.6);
+    border-bottom: 1px solid rgba(60, 30, 0, 0.2);
+    transition: all 0.3s;
 
     img,
     span {
@@ -146,6 +169,25 @@ export default {
       background-position: center;
       background-size: cover;
     }
+    &:before {
+    content: "";
+    width: 40%;
+    height: 100%;
+    display: block;
+    background: #fff;
+    position: absolute;
+    transform: skewX(-20deg);
+    left: -10%;
+    opacity: 0;
+    top: 0;
+    z-index: 5;
+    transition: all .4s cubic-bezier(.2,.95,.57,.99)
+}
+&:hover:before {
+    opacity: 1;
+    width: 90%;
+    left: 140%
+}
   }
 
   &.open {

@@ -88,7 +88,9 @@
 }
 
 .slide {
-  height: 100vh;
+  min-height: 100vh;
+  height:62vw;
+  .slide-img{height: 100%;}
 }
 
 .slide-text {
@@ -98,12 +100,12 @@
   font-style: normal;
   line-height: 2;
   letter-spacing: 1.2px;
-  text-align: right;
+  text-align:left;
   color: #ffffff;
   position: absolute;
   padding: 2px 10px;
-  right: calc(100vw * 450 / 1920);
-  top: calc(100vw * 832 / 1920);
+  left:calc(100vw * 1280 / 1920);
+  top: calc(100vw * 825 / 1920);
   z-index: 3;
 }
 
@@ -155,6 +157,8 @@
     // height: calc(100vw * 250 / 375);
     position: absolute;
     top: 0;
+  height:auto;
+  .slide-img{height:auto;}
   }
 
   .text {

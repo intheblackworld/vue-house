@@ -307,14 +307,14 @@ export default {
 
     li {
       height: 50px;
-      margin-bottom: 5px;
+      margin-bottom:0;
     }
 
     .link {
       height: 50px;
       width: 100%;
       font-size: 17px;
-      margin-top: 10px;
+      margin-top:0;
       display: flex;
       align-items: center;
       justify-content: center;
