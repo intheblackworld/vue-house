@@ -4,7 +4,7 @@
       <div>
         <div class="img_bg">
         <div class="img_bg_c">
-        <img src="./s1/bg.jpg" alt="" class="img">
+        <img src="./s1/bg.jpg" alt="" class="img content">
         <img src="./s1/light1.png" alt="" class="img light1">
         <img src="./s1/light2.png" alt="" class="img light2">
         </div>
@@ -175,6 +175,16 @@ export default {
   methods: {},
 
   created() {},
-  mounted() {},
+  mounted() {
+    if (this.isMobile) {
+      setTimeout(() => {
+        const frame = document.querySelector('.img_bg')
+        const content = document.querySelector('.img_bg_c .content')
+        console.log(frame)
+        console.log(content)
+        frame.scrollTo(content.clientWidth * 20 / 100, 0)
+      }, 500)
+    }
+  }
 }
 </script>
