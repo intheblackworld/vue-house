@@ -146,7 +146,6 @@ export default {
     height: 60px;
     width: 100%;
     font-size: 17px;
-    display: flex;
     align-items: center;
     justify-content: center;
     display: none;
@@ -301,9 +300,10 @@ export default {
   .menu {
     display: block;
     position: fixed;
-    right: 0px;
-    top: 0px;
+    right: 5px;
+    top: 5px;
     width: 60px;
+    border-radius: 10px;
 
     img {
       width: 100%;
@@ -332,18 +332,9 @@ export default {
     transform: translateX(40%);
 
     li {
-      height: 50px;
-      margin-bottom: 5px;
     }
 
     .link {
-      height: 50px;
-      width: 100%;
-      font-size: 17px;
-      margin-top: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       display: none;
 
       img,
