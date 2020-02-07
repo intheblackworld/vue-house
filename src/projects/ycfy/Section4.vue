@@ -87,8 +87,8 @@
 
 @media screen and (max-width: 767px) {
   .bg {
-    background-size: cover;
-    background-image: url('./s4/mo/bg.jpg');
+    background-size:100% auto ;
+  background-image: url('./s4/mo/bg.jpg');
   }
 
   .text {

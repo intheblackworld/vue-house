@@ -258,5 +258,8 @@ export default {
     border: 1px solid #666;
     border-bottom: none;
   }
+  .btn svg {
+    position: absolute;
+    margin: 0 0 0 -70px;}
 }
 </style>

@@ -114,7 +114,7 @@
 
 @media screen and (max-width: 767px) {
   .bg {
-    background-size: cover;
+    background-size:100% auto ;
     background-image: url('./s10/mo/bg.jpg');
     overflow: visible;
   }

@@ -57,7 +57,7 @@
 
 @media screen and (max-width: 767px) {
   .bg {
-    background-size: cover;
+    background-size:100% auto ;
     background-image: url('./s13/mo/bg.jpg');
   }
 
