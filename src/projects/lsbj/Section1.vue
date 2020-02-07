@@ -7,6 +7,7 @@
         <img src="./s1/bg.jpg" alt="" class="img content">
         <img src="./s1/light1.png" alt="" class="img light1">
         <img src="./s1/light2.png" alt="" class="img light2">
+        <img src="./s1/arrow.png" alt="" class="img arrow">
         </div>
         </div>
         <div class="img light4">
@@ -56,6 +57,11 @@
     opacity: 0;
     animation: op 1s alternate infinite;
   }
+  &.arrow{
+    display: none;
+    animation: arrow 1s ease-in-out alternate infinite;
+    transform: translateX(-2%)
+  }
   &.light2{
     animation-delay:1s
   }
@@ -85,6 +91,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 @keyframes light_b {
     to {
         left:0;
+    }
+}
+@keyframes arrow {
+    to {
+        transform: translateX(2%)
     }
 }
 
@@ -134,11 +145,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
     transform: translateX(0);
     }
   &.light1,
-  &.light2{
+  &.light2,
+  &.arrow{
     left:0;
     height:100vh;
     transform: translateX(0);
     }
+  &.arrow{
+    display:block;
+  }
   &.light3{width:295%; top: 21vw;height: 30vw;}
   &.light4{height: 42%;overflow: hidden;
     img{

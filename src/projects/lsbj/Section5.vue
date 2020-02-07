@@ -15,7 +15,8 @@
             <img :class="`slide-img ${slideIndex === index ? 'active' : ''}`" :src="slide.src" alt />
             <img src="./s5/tbg.png" alt class="img" />
             <div class="slide-text">
-              <div class="title">{{slideList[slideIndex].title}}</div>
+              <h3>{{slideList[slideIndex].title}}</h3>
+              <p>{{slideList[slideIndex].p}}</p>
             </div>
           </div>
         </div>
@@ -41,7 +42,8 @@
           <img src="./s5/right.png" alt class="btn right" @click="addIndex" />
         </div>
         <div class="slide-text">
-          <div class="title">{{slideList[slideIndex].title}}</div>
+              <h3>{{slideList[slideIndex].title}}</h3>
+              <p>{{slideList[slideIndex].p}}</p>
         </div>
       </div>
     </div>
@@ -94,19 +96,21 @@
 }
 
 .slide-text {
-  font-size: calc(100vw * 30 / 1920);
+  font-size:0.92vw;line-height: 1.6;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2;
   letter-spacing: 1.2px;
   text-align:left;
   color: #ffffff;
   position: absolute;
   padding: 2px 10px;
-  left:calc(100vw * 1280 / 1920);
+  left:calc(100vw * 1180 / 1920);
   top: calc(100vw * 825 / 1920);
   z-index: 3;
+
+h3{color: #fff;font-size: 1.7em;padding: 0 0 0.8em 3em;}
+p{color: rgba(255,255,255, 0.7);width: 36em;}
 }
 
 .btn-group {
@@ -149,7 +153,7 @@
 
   .img {
     &:nth-child(1) {
-      position: relative;
+      position: relative;margin: 0 0 5em;
     }
   }
 
@@ -177,11 +181,14 @@
   }
 
   .slide-text {
-    font-size: calc(100vw * 20 / 375);
-    left: calc(100vw * 100 / 375);
+    font-size: calc(100vw * 11 / 375);
+    left: calc(100vw * 0 / 375);
     right: auto;
-    top: auto;
-    bottom: calc(100vw * 80 / 375);
+    top: 76vw;
+    bottom:auto;  
+    padding: 0 2em 0 3em;
+h3{}
+p{width: auto;}
   }
 
   .btn-group {
@@ -209,31 +216,43 @@ export default {
           src: isMobile
             ? require('./s5/mo/迎賓車道圖.jpg')
             : require('./s5/1迎賓車道圖.jpg'),
-          title: '1F 迎賓車道圖',
+          title: '飯店式迴車廣場',
+          p: '跨界飯店Private Club住宅，國際飯店行旅質感凝鍊，以低調內斂的姿態，在現代都會桃源內雕琢奢華，一樓大器規格迎賓，璞麗風華LOBBY、LOUNGE交誼廳咖啡品茗小酌、閱讀交誼區休閒商務聚會、VIP視聽室影音盛宴…同步飯店質感生活。',
         },
         {
           src: isMobile
             ? require('./s5/mo/大廳.jpg')
             : require('./s5/2大廳.jpg'),
-          title: '1F 大廳',
+          title: '挑高7米迎賓大廳 Lobby',
+          p: '',
         },
         {
           src: isMobile
             ? require('./s5/mo/沙發區.jpg')
             : require('./s5/3沙發區.jpg'),
-          title: '1F 沙發區',
+          title: '歐式午茶交誼廳 Lounge',
+          p: '跨界飯店Private Club住宅，國際飯店行旅質感凝鍊，以低調內斂的姿態，在現代都會桃源內雕琢奢華，一樓大器規格迎賓，璞麗風華LOBBY、LOUNGE交誼廳咖啡品茗小酌、閱讀交誼區休閒商務聚會、VIP視聽室影音盛宴…同步飯店質感生活。',
         },
         {
           src: isMobile
             ? require('./s5/mo/長型會客區.jpg')
             : require('./s5/4長型會客區.jpg'),
-          title: '1F 長型會客區',
+          title: '歐式尊爵饗宴廳 Ballroom',
+          p: '跨界飯店Private Club住宅，國際飯店行旅質感凝鍊，以低調內斂的姿態，在現代都會桃源內雕琢奢華，一樓大器規格迎賓，璞麗風華LOBBY、LOUNGE交誼廳咖啡品茗小酌、閱讀交誼區休閒商務聚會、VIP視聽室影音盛宴…同步飯店質感生活。',
         },
         {
           src: isMobile
             ? require('./s5/mo/視聽室.jpg')
-            : require('./s5/5視聽室.jpg'),
-          title: '1F 視聽室',
+            : require('./s5/視聽室.jpg'),
+          title: 'VIP包廂影廳',
+          p: '跨界飯店Private Club住宅，國際飯店行旅質感凝鍊，以低調內斂的姿態，在現代都會桃源內雕琢奢華，一樓大器規格迎賓，璞麗風華LOBBY、LOUNGE交誼廳咖啡品茗小酌、閱讀交誼區休閒商務聚會、VIP視聽室影音盛宴…同步飯店質感生活。',
+        },
+        {
+          src: isMobile
+            ? require('./s5/mo/SKY.jpg')
+            : require('./s5/SKY.jpg'),
+          title: 'SKY BAR',
+          p: '跨界飯店Private Club住宅，國際飯店行旅質感凝鍊，以低調內斂的姿態，在現代都會桃源內雕琢奢華，一樓大器規格迎賓，璞麗風華LOBBY、LOUNGE交誼廳咖啡品茗小酌、閱讀交誼區休閒商務聚會、VIP視聽室影音盛宴…同步飯店質感生活。',
         },
       ],
     }

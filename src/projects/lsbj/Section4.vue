@@ -4,11 +4,13 @@
     <div class="bg relative">
       <div v-if="!isMobile">
         <img src="./s4/bg.jpg" alt="灣區旁最耀眼的鑽石" class="img" data-aos="fade" data-aos-delay="400">
-        <img src="./s4/text.png" alt="摩天水岸、遊船、碼頭、咖啡、藝術、夕陽…高雄港灣的海景交織愛河畔的美景，璀璨夜色浪漫摩登、大船入港浩瀚壯闊，每扇窗、每個面向都有不同的好風景，輕鬆享受超凡景觀的世界級度假人生。" class="img" data-aos="fade" data-aos-delay="600">
-      </div>
+        <div class="text"><h3>雙大道雙商圈　縱橫天下通達八方　地產不敗黃金定律</h3><p>高雄中央核心，掌控亞洲新灣區門戶，正對高雄女中無垠開闊視野，繽紛多元的高感度時尚特區，四方環繞著名門豪宅、潮流時尚、藝術文創、傳統生機，雙大道、雙商圈，地王之王貴冑之地、富豪首選燙金地段、門牌即是您的身分表徵！</p>
+</div>
+</div>
       <div v-if="isMobile">
         <img src="./s4/mo/bg.jpg" alt="灣區旁最耀眼的鑽石" class="img" data-aos="fade" data-aos-delay="400">
-        <img src="./s4/mo/t.png" alt="摩天水岸、遊船、碼頭、咖啡、藝術、夕陽…高雄港灣的海景交織愛河畔的美景，璀璨夜色浪漫摩登、大船入港浩瀚壯闊，每扇窗、每個面向都有不同的好風景，輕鬆享受超凡景觀的世界級度假人生。" class="img" data-aos="fade" data-aos-delay="600">
+        <div class="text"><h3>雙大道雙商圈　縱橫天下通達八方　地產不敗黃金定律</h3><p>高雄中央核心，掌控亞洲新灣區門戶，正對高雄女中無垠開闊視野，繽紛多元的高感度時尚特區，四方環繞著名門豪宅、潮流時尚、藝術文創、傳統生機，雙大道、雙商圈，地王之王貴冑之地、富豪首選燙金地段、門牌即是您的身分表徵！</p>
+</div>
       </div>
     </div>
   </div>
@@ -36,6 +38,12 @@
     position: relative;
   }
 }
+.text{background: url('./s2/title.png') no-repeat;position: absolute;text-align:left;background-size: 65em auto;
+font-size:0.92vw;line-height: 1.6;top: 15vw;left: 9vw;padding: 2.7em 2em 0 3em;right: 0;
+
+h3{color: #fff;font-size: 1.7em;padding: 0 0 0.8em 3em;}
+p{color: rgba(255,255,255, 0.7);width: 46em;}
+}
 
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -49,6 +57,12 @@
   .bg {
     background-size: cover;
   }
+  .text{background-image: url('./s2/mo/titleall.png');background-size: 100% auto;font-size:3.8vw;top:10vw; left: 0;bottom: 0; padding: 0 1em 0 1.7em;
+  
+h3{font-size: 1.5em;padding: 0.3em 0 0.6em 3em;}
+p{width: 23em;}
+}
+
 
   .slide {
     position: absolute;

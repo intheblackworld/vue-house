@@ -3,12 +3,19 @@
     <div class="bg relative">
       <div v-if="!isMobile">
         <img src="./s3/bg.jpg" alt="灣區旁最耀眼的鑽石" class="img" data-aos="fade" data-aos-delay="400">
-        <img src="./s3/text.png" alt="摩天水岸、遊船、碼頭、咖啡、藝術、夕陽…高雄港灣的海景交織愛河畔的美景，璀璨夜色浪漫摩登、大船入港浩瀚壯闊，每扇窗、每個面向都有不同的好風景，輕鬆享受超凡景觀的世界級度假人生。" class="img" data-aos="fade" data-aos-delay="600">
+        <div class="text"><h3>國際同步　創造　臨海都市新傳奇</h3><p>亞洲新灣區　一如　東京港區<br>
+虎之門之丘、六本木之丘、東京中城、赤坂SAKAS <br>
+世紀豪宅、時尚頂尖，東京最惜售的鑽石地段<br>
+薈萃奢華富裕品味，創造國際級資產價值</p>
+</div>
       </div>
       <div v-if="isMobile">
         <img src="./s3/mo/bg.jpg" alt="灣區旁最耀眼的鑽石" class="img" data-aos="fade" data-aos-delay="400">
-        <img src="./s3/mo/t.png" alt="摩天水岸、遊船、碼頭、咖啡、藝術、夕陽…高雄港灣的海景交織愛河畔的美景，璀璨夜色浪漫摩登、大船入港浩瀚壯闊，每扇窗、每個面向都有不同的好風景，輕鬆享受超凡景觀的世界級度假人生。" class="img" data-aos="fade" data-aos-delay="600">
-      </div>
+         <div class="text"><h3>國際同步　創造　臨海都市新傳奇</h3><p>亞洲新灣區　一如　東京港區<br>
+虎之門之丘、六本木之丘、東京中城、赤坂SAKAS <br>
+世紀豪宅、時尚頂尖，東京最惜售的鑽石地段<br>
+薈萃奢華富裕品味，創造國際級資產價值</p>
+</div> </div>
     </div>
   </div>
 </template>
@@ -36,6 +43,12 @@
   }
 }
 
+.text{background: url('./s2/title.png') no-repeat;position: absolute;text-align:left;background-size: 65em auto;
+font-size:0.92vw;line-height: 1.6;top: 5.5vw; left: 53.8vw;padding: 2.7em 2em 0 3em;right: 0;
+
+h3{color: #fff;font-size: 1.7em;padding: 0 0 0.8em 3em;}
+p{color: rgba(255,255,255, 0.7);}
+}
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .text {
@@ -48,6 +61,8 @@
   .bg {
     background-size: cover;
   }
+  .text{background-image: url('./s2/mo/titleall.png');background-size: 100% auto;font-size:3.8vw;top:auto; left: 0;bottom: 5vw; padding: 0 1em 0 1.7em;}
+
 }
 </style>
 
