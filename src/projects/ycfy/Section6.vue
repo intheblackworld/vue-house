@@ -105,7 +105,7 @@
     background-size:100% auto ;
     background-image: url('./s1/bg1.jpg');
   }
-  .img{object-position:0 0;height:35vw;}
+  .img{object-position:0 0;height:63vw;}
   .img_bg{
     overflow: auto;width: 100vw;
     img{height: 185vw;width: auto;}
