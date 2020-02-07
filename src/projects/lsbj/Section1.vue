@@ -2,12 +2,12 @@
   <div class="section1">
     <div class="bg relative">
       <div>
-        <div class="img_bg">
+        <div class="img_bg" @scroll="hide = true">
         <div class="img_bg_c">
         <img src="./s1/bg.jpg" alt="" class="img content">
         <img src="./s1/light1.png" alt="" class="img light1">
         <img src="./s1/light2.png" alt="" class="img light2">
-        <img src="./s1/arrow.png" alt="" :class="`img arrow ${hide ? 'hide' : ''}`" @click="hide = true">
+        <img src="./s1/arrow.png" alt="" :class="`img arrow ${hide ? 'hide' : ''}`">
         </div>
         </div>
         <div class="img light4">
@@ -204,6 +204,10 @@ export default {
         console.log(content)
         frame.scrollTo(content.clientWidth * 20 / 100, 0)
       }, 500)
+
+      setTimeout(() => {
+        this.hide = false
+      }, 600)
     }
   }
 }
