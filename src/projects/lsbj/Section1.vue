@@ -7,7 +7,7 @@
         <img src="./s1/bg.jpg" alt="" class="img content">
         <img src="./s1/light1.png" alt="" class="img light1">
         <img src="./s1/light2.png" alt="" class="img light2">
-        <img src="./s1/arrow.png" alt="" class="img arrow">
+        <img src="./s1/arrow.png" alt="" :class="`img arrow ${hide ? 'hide' : ''}`" @click="hide = true">
         </div>
         </div>
         <div class="img light4">
@@ -153,6 +153,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
     }
   &.arrow{
     display:block;
+
+    &.hide {
+      display: none;
+    }
   }
   &.light3{width:295%; top: 21vw;height: 30vw;}
   &.light4{height: 42%;overflow: hidden;
@@ -182,6 +186,7 @@ export default {
   data() {
     return {
       isMobile,
+      hide: false,
     }
   },
 
