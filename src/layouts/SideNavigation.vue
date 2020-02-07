@@ -291,12 +291,12 @@ export default {
     transform: translateX(40%);
 
     li {
-      height: 50px;
+      height: 40px;
       margin-bottom: 5px;
     }
 
     .link {
-      height: 50px;
+      height: 40px;
       width: 100%;
       font-size: 17px;
       margin-top: 10px;
