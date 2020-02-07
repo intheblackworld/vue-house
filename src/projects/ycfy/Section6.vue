@@ -15,7 +15,7 @@
         </div>
         <img src="./s6/mo/lineba.png" alt="" class="img">
         <div class="map open"><img src="./s6/map.png" alt="" class="img" data-aos="fade" data-aos-delay="200"></div>
-        <div class="stitle">A7明日版圖<br>五大建設帶領崛起</div>
+        <img src="./s6/mo/stitlea.png" alt="A7明日版圖 五大建設帶領崛起" class="img">
         <img src="./s6/mo/titlea.png" alt="五大建設" class="img">
         <div class="text">樂善科技園區、郵政物流園區、工五工業區、<br />華亞園區、文青中小學重大建設</div>
       </div>
