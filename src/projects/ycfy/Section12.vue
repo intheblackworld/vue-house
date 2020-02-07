@@ -168,23 +168,23 @@ export default {
       slideList: [
         {
           src: require('./s12/img1.jpg'),
-          title: 'A6傢俱配置參考圖',
+          title: '樣品屋3D參考示意圖',
         },
         {
           src: require('./s12/img2.jpg'),
-          title: 'A6傢俱配置參考圖',
+          title: '樣品屋3D參考示意圖',
         },
         {
           src: require('./s12/img3.jpg'),
-          title: 'A6傢俱配置參考圖',
+          title: '樣品屋3D參考示意圖',
         },
         {
           src: require('./s12/img4.jpg'),
-          title: 'A6傢俱配置參考圖',
+          title: '樣品屋3D參考示意圖',
         },
         {
           src: require('./s12/img5.jpg'),
-          title: 'A6傢俱配置參考圖',
+          title: '樣品屋3D參考示意圖',
         },
       ],
     }
