@@ -1868,7 +1868,7 @@
     </div>
   </div>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 svg{position: absolute;top:0;left: 0;}
 .st0{fill:none;}
 	.st1{fill:#374248;}
