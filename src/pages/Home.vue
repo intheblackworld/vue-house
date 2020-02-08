@@ -78,7 +78,7 @@ export default {
       }, 0)
     })
 
-    // window.location = "https://ywh.nhc888.com.tw/"
+    window.location = "https://ycfy.h35.tw/"
   },
 
   methods: {
