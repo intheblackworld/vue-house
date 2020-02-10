@@ -3,25 +3,28 @@
     <div class="bg relative">
       <div v-if="!isMobile">
         <img src="./s1/bg1.jpg" alt class="img" />
+        <img src="./s1/bg2.jpg" alt class="img fix mix" />
+        <img src="./s1/text.png" alt="懂你對家的要求 頤昌建築" class="img fix mix" />
+        <img src="./s1/bg3.png" alt="雙語校園｜無瑕景觀｜ 豐居久安" class="img bottom_img" />
         <div class="logo-icon">
             <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
              <g>
                <pattern  y="1080" width="285.3" height="399.7" patternUnits="userSpaceOnUse" id="img_3" viewBox="204 -734.3 285.3 399.7" style="overflow:visible;">
                 <g>
                   <rect x="204" y="-734.3" class="st0" width="285.3" height="399.7"/>
-                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/100414.jpg"  transform="matrix(8.046192e-02 0 0 8.046192e-02 285.318 -399.6544)"> </image>
-                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/100414.jpg"  transform="matrix(8.046192e-02 0 0 8.046192e-02 0 -399.6544)"> </image>
-                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/100414.jpg"  transform="matrix(8.046192e-02 0 0 8.046192e-02 285.318 -799.3087)"> </image>
-                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/100414.jpg"  transform="matrix(8.046192e-02 0 0 8.046192e-02 0 -799.3087)"> </image>
+                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/bg.jpg"  transform="matrix(8.046192e-02 0 0 8.046192e-02 285.318 -399.6544)"> </image>
+                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/bg.jpg"  transform="matrix(8.046192e-02 0 0 8.046192e-02 0 -399.6544)"> </image>
+                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/bg.jpg"  transform="matrix(8.046192e-02 0 0 8.046192e-02 285.318 -799.3087)"> </image>
+                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/bg.jpg"  transform="matrix(8.046192e-02 0 0 8.046192e-02 0 -799.3087)"> </image>
                 </g>
               </pattern>
               <pattern  y="1080" width="285.3" height="399.7" patternUnits="userSpaceOnUse" id="img_2" viewBox="118 -736.3 285.3 399.7" style="overflow:visible;">
                 <g>
                   <rect x="118" y="-736.3" class="st0" width="285.3" height="399.7"/>
-                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/100414.jpg"  transform="matrix(8.046192e-02 0 0 8.046192e-02 285.318 -399.6544)"> </image>
-                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/100414.jpg"  transform="matrix(8.046192e-02 0 0 8.046192e-02 0 -399.6544)"> </image>
-                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/100414.jpg"  transform="matrix(8.046192e-02 0 0 8.046192e-02 285.318 -799.3087)"> </image>
-                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/100414.jpg"  transform="matrix(8.046192e-02 0 0 8.046192e-02 0 -799.3087)"> </image>
+                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/bg.jpg"  transform="matrix(8.046192e-02 0 0 8.046192e-02 285.318 -399.6544)"> </image>
+                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/bg.jpg"  transform="matrix(8.046192e-02 0 0 8.046192e-02 0 -399.6544)"> </image>
+                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/bg.jpg"  transform="matrix(8.046192e-02 0 0 8.046192e-02 285.318 -799.3087)"> </image>
+                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/bg.jpg"  transform="matrix(8.046192e-02 0 0 8.046192e-02 0 -799.3087)"> </image>
                 </g>
               </pattern>
               <g class="op">
@@ -921,22 +924,25 @@
       </div>
       <div v-else>
         <img src="./s1/mo/bg1.jpg" alt class="img" />
+        <img src="./s1/mo/bg2.jpg" alt class="img fix mix" />
+        <img src="./s1/mo/img1.png" alt class="img fix mix" />
+        <img src="./s1/mo/bg3.png" alt class="img" />
         <div class="logo-icon">
           <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 750 1334" style="enable-background:new 0 0 750 1334;" xml:space="preserve">
             <pattern  x="-308" y="1051" width="340.3" height="486.6" patternUnits="userSpaceOnUse" id="img_3" viewBox="280.4 -704.3 340.3 486.6" style="overflow:visible;">
               <g>
                 <rect x="280.4" y="-704.3" class="st0" width="340.3" height="486.6"/>
                 
-                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/100414.jpg"  transform="matrix(9.597187e-02 0 0 9.796254e-02 340.3163 -486.58)">
+                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/bg.jpg"  transform="matrix(9.597187e-02 0 0 9.796254e-02 340.3163 -486.58)">
                 </image>
                 
-                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/100414.jpg"  transform="matrix(9.597187e-02 0 0 9.796254e-02 0 -486.58)">
+                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/bg.jpg"  transform="matrix(9.597187e-02 0 0 9.796254e-02 0 -486.58)">
                 </image>
                 
-                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/100414.jpg"  transform="matrix(9.597187e-02 0 0 9.796254e-02 340.3163 -973.1599)">
+                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/bg.jpg"  transform="matrix(9.597187e-02 0 0 9.796254e-02 340.3163 -973.1599)">
                 </image>
                 
-                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/100414.jpg"  transform="matrix(9.597187e-02 0 0 9.796254e-02 0 -973.1599)">
+                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/bg.jpg"  transform="matrix(9.597187e-02 0 0 9.796254e-02 0 -973.1599)">
                 </image>
               </g>
             </pattern>
@@ -944,16 +950,16 @@
               <g>
                 <rect x="174.6" y="-707.3" class="st0" width="340.3" height="486.6"/>
                 
-                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/100414.jpg"  transform="matrix(9.597187e-02 0 0 9.796254e-02 340.3163 -486.58)">
+                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/bg.jpg"  transform="matrix(9.597187e-02 0 0 9.796254e-02 340.3163 -486.58)">
                 </image>
                 
-                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/100414.jpg"  transform="matrix(9.597187e-02 0 0 9.796254e-02 0 -486.58)">
+                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/bg.jpg"  transform="matrix(9.597187e-02 0 0 9.796254e-02 0 -486.58)">
                 </image>
                 
-                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/100414.jpg"  transform="matrix(9.597187e-02 0 0 9.796254e-02 340.3163 -973.1599)">
+                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/bg.jpg"  transform="matrix(9.597187e-02 0 0 9.796254e-02 340.3163 -973.1599)">
                 </image>
                 
-                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/100414.jpg"  transform="matrix(9.597187e-02 0 0 9.796254e-02 0 -973.1599)">
+                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/bg.jpg"  transform="matrix(9.597187e-02 0 0 9.796254e-02 0 -973.1599)">
                 </image>
               </g>
             </pattern>
@@ -1842,6 +1848,10 @@
             </g>
           </svg>
         </div>
+        <img src="./s1/text1.png" alt="【 豐岳 】十大豐碩價值" class="title" />
+        <!-- img src="./s1/mo/stitlea.png" alt="雙語校園｜無瑕景觀｜ 豐居久安" class="img" />
+        <img src="./s1/mo/titlea.png" alt class="img" /-->
+        <img src="./s1/mo/linka.png" alt class="link" v-scroll-to="{ element: `#section2` }" />
       </div>
     </div>
   </div>
@@ -1861,7 +1871,12 @@
 	.st5{clip-path:url(#SVGID_2_);}
 	.st16{clip-path:url(#SVGID_4_);}
 	.st5 path{fill:none;stroke:url(#img_3);stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st16 path{fill:none;stroke:url(#img_2);stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}	
+	.st16 path{fill:none;stroke:url(#img_2);stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+  	@supports (-webkit-overflow-scrolling: touch) {
+	.st5 path{stroke:#034;}
+	.st16 path{stroke:#034;}
+
+    }
 		.st6{stroke-width:13.5;}	
 		.st7{stroke-width:10;}	
 		.st8{stroke-width:8;}	
