@@ -2,16 +2,16 @@
   <div class="section3">
     <div class="bg relative">
       <div v-if="!isMobile">
-        <img src="./s3/bg.jpg" alt="灣區旁最耀眼的鑽石" class="img" data-aos="fade" data-aos-delay="400">
-        <div class="text"><h3>國際同步　創造　臨海都市新傳奇</h3><p>亞洲新灣區　一如　東京港區<br>
+        <img src="./s3/bg.jpg" alt="同步國際 創造臨海城市新傳奇" class="img" data-aos="fade" data-aos-delay="400">
+        <div class="text"><h3>同步國際 創造臨海城市新傳奇</h3><p>亞洲新灣區　一如　東京港區<br>
 虎之門之丘、六本木之丘、東京中城、赤坂SAKAS <br>
 世紀豪宅、時尚頂尖，東京最惜售的鑽石地段<br>
 薈萃奢華富裕品味，創造國際級資產價值</p>
 </div>
       </div>
       <div v-if="isMobile">
-        <img src="./s3/mo/bg.jpg" alt="灣區旁最耀眼的鑽石" class="img" data-aos="fade" data-aos-delay="400">
-         <div class="text"><h3>國際同步　創造　臨海都市新傳奇</h3><p>亞洲新灣區　一如　東京港區<br>
+        <img src="./s3/mo/bg.jpg" alt="同步國際 創造臨海城市新傳奇" class="img" data-aos="fade" data-aos-delay="400">
+         <div class="text"><h3>同步國際<br>創造臨海城市新傳奇</h3><p>亞洲新灣區　一如　東京港區<br>
 虎之門之丘、六本木之丘、東京中城、赤坂SAKAS <br>
 世紀豪宅、時尚頂尖，東京最惜售的鑽石地段<br>
 薈萃奢華富裕品味，創造國際級資產價值</p>
