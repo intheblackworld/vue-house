@@ -12,7 +12,8 @@
         <div class="text">樂善科技園區、郵政物流園區、工五工業區、華亞園區、文青中小學重大建設</div>
       </div>
       <div v-if="isMobile">
-        <div class="img_bg">
+        <img src="./s6/arrow.png" alt="" :class="`arrow ${isHide ? 'hide' : ''}`">
+        <div class="img_bg" @scroll="isHide = true">
           <img src="./s6/bg.jpg" alt class="img content" />
         </div>
         <img src="./s6/mo/lineba.png" alt class="img" />
@@ -149,6 +150,34 @@
       width: auto;
     }
   }
+
+  .arrow {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 50vh;
+    z-index: 2;
+    width: 33%;
+    animation: swing 2s ease infinite;
+    &.hide {
+      display: none;
+    }
+  }
+
+  @keyframes swing {
+    0% {
+      transform: translateX(-5vw);
+    }
+
+    50% {
+      transform: translateX(5vw);
+    }
+
+    100% {
+      transform: translateX(-5vw);
+    }
+  }
   .map {
     height: 38%;
     img {
@@ -201,6 +230,7 @@ export default {
     return {
       isMobile,
       isOpen: false,
+      isHide: false,
     }
   },
 
@@ -214,9 +244,11 @@ export default {
       setTimeout(() => {
         const map = document.querySelector('.img_bg')
         const mapBg = document.querySelector('.content')
-        console.log(map)
         map.scrollTo(mapBg.clientWidth * 47 / 100, 0)
       }, 500)
+      setTimeout(() => {
+        this.isHide = false
+      }, 600)
     }
   },
 }
