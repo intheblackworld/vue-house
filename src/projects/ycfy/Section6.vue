@@ -248,7 +248,7 @@ export default {
       }, 500)
       setTimeout(() => {
         this.isHide = false
-      }, 600)
+      }, 800)
     }
   },
 }
