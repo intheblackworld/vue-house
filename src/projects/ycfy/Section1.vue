@@ -3,18 +3,15 @@
     <div class="bg relative">
       <div v-if="!isMobile">
         <img src="./s1/bg1.jpg" alt class="img" />
-        <img src="./s1/bg2.jpg" alt class="img fix mix" />
-        <img src="./s1/text.png" alt="懂你對家的要求 頤昌建築" class="img fix mix" />
-        <img src="./s1/bg3.png" alt="雙語校園｜無瑕景觀｜ 豐居久安" class="img bottom_img" />
         <div class="logo-icon">
             <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
-                  <g>
-                    <pattern  y="1080" width="285.3" height="399.7" patternUnits="userSpaceOnUse" id="img_3" viewBox="204 -734.3 285.3 399.7" style="overflow:visible;">
-                  <g>
-                    <rect x="204" y="-734.3" class="st0" width="285.3" height="399.7"/>
+             <g>
+               <pattern  y="1080" width="285.3" height="399.7" patternUnits="userSpaceOnUse" id="img_3" viewBox="204 -734.3 285.3 399.7" style="overflow:visible;">
+                <g>
+                  <rect x="204" y="-734.3" class="st0" width="285.3" height="399.7"/>
                   <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/100414.jpg"  transform="matrix(8.046192e-02 0 0 8.046192e-02 285.318 -399.6544)"> </image>
                   <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/100414.jpg"  transform="matrix(8.046192e-02 0 0 8.046192e-02 0 -399.6544)"> </image>
-                    <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/100414.jpg"  transform="matrix(8.046192e-02 0 0 8.046192e-02 285.318 -799.3087)"> </image>
+                  <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/100414.jpg"  transform="matrix(8.046192e-02 0 0 8.046192e-02 285.318 -799.3087)"> </image>
                   <image style="overflow:visible;" width="3546" height="4967" xlink:href="./s1/100414.jpg"  transform="matrix(8.046192e-02 0 0 8.046192e-02 0 -799.3087)"> </image>
                 </g>
               </pattern>
@@ -29,15 +26,9 @@
               </pattern>
               <g class="op">
                 <g>
-                  <path class="st1" d="M451.4,241c-0.3,1-0.8,1.2-1.6,1.2H438v3.5h5.6v3.1h-5.2v22h2l0,2.8l0,0c-0.2,0.4-0.5,0.7-0.9,0.7h-1.8v3.4
-                h4.1l0.1,0c1.1,0,2,0,2.1-1.4l0-5.4h2.8v5.4c0,1.4,0.9,1.4,2.1,1.4l0.1,0h4.2v-3.4h-1.8c-0.4,0-0.7-0.2-0.9-0.7l0,0l0-2.8l0.1,0
-                c2-0.1,2.8-1,2.8-2.9v-19.1H448v-3.1h4c1.4,0,2.3-0.3,2.9-1c0.7-0.8,1.1-1.5,1.3-3.7H451.4z M449.9,252.3v3h-5.2l0,3.3h5.2v2.7
-                h-5.2v3.3h5.2v1.3c0,0.8-0.5,1.4-1.2,1.4h-6.6v-14.9H449.9z M433.5,245.6h1.2v-3.5h-12.8v32.4c0,2,1,3,2.9,3h9.8V274h-1.2v-2.9
-                l0.1,0c1.6-0.1,2.3-0.9,2.3-2.8v-19.4h-2.4V245.6z M430,248.9h-2.4v22.3h2.4v2.9h-3.4c-0.4,0-1.2-0.4-1.2-1.3v-27.1h4.6V248.9z
-                M433,266.4c0,0.9-0.3,1.4-0.8,1.4h-1.6V252h2.4V266.4z"/>
+                  <path class="st1" d="M451.4,241c-0.3,1-0.8,1.2-1.6,1.2H438v3.5h5.6v3.1h-5.2v22h2l0,2.8l0,0c-0.2,0.4-0.5,0.7-0.9,0.7h-1.8v3.4 c2-0.1,2.8-1,2.8-2.9v-19.1H448v-3.1h4c1.4,0,2.3-0.3,2.9-1c0.7-0.8,1.1-1.5,1.3-3.7H451.4z M449.9,252.3v3h-5.2l0,3.3h5.2v2.7 h-5.2v3.3h5.2v1.3c0,0.8-0.5,1.4-1.2,1.4h-6.6v-14.9H449.9z M433.5,245.6h1.2v-3.5h-12.8v32.4c0,2,1,3,2.9,3h9.8V274h-1.2v-2.9 l0.1,0c1.6-0.1,2.3-0.9,2.3-2.8v-19.4h-2.4V245.6z M430,248.9h-2.4v22.3h2.4v2.9h-3.4c-0.4,0-1.2-0.4-1.2-1.3v-27.1h4.6V248.9z M433,266.4c0,0.9-0.3,1.4-0.8,1.4h-1.6V252h2.4V266.4z"/>
                   <path class="st1" d="M488.2,255.1v-12.9h-29.1v16.5h25.3C487,258.8,488.2,257.6,488.2,255.1z M483.9,248.9h-16.9v3.6h16.9v0.6
-                c0,1.1-0.4,2.4-1.3,2.4h-19.3v-9.5h20.5V248.9z M458,261.3v16.3h27.7c2.5,0,3.8-1.2,3.8-3.7v-12.6H458z M485.3,267.9h-4.6v3.6h4.6
-                v0.6c0,1-0.4,2.1-1.3,2.1h-21.6V265h22.9V267.9z M478,267.9h-12.3v3.6H478V267.9z"/>
+                c0,1.1-0.4,2.4-1.3,2.4h-19.3v-9.5h20.5V248.9z M458,261.3v16.3h27.7c2.5,0,3.8-1.2,3.8-3.7v-12.6H458z M485.3,267.9h-4.6v3.6h4.6 v0.6c0,1-0.4,2.1-1.3,2.1h-21.6V265h22.9V267.9z M478,267.9h-12.3v3.6H478V267.9z"/>
                 </g>
                 <g>
                   <path class="st2" d="M506.6,374.6c0.3,0.4,0.8,1.1,1.5,2.1l2.4,3.1l2.3,2.9c0-1,0.1-2.3,0.1-3.9c0-1.2,0-2-0.1-2.4
@@ -927,17 +918,9 @@
             </g>
           </svg>
         </div>
-        <img src="./s1/text1.png" alt="【 豐岳 】十大豐碩價值" class="title" />
-        <img src="./s1/link.png" alt class="link" v-scroll-to="{ element: `#section2` }" />
-        <!-- <img src="./s1/logo.png" alt="頤昌豐岳" class="img" data-aos="fade" data-aos-delay="700" /> -->
-        <!-- <icon class="icon logo-icon" :data="logo" /> -->
-        <div class="logo-icon"></div>
       </div>
       <div v-else>
         <img src="./s1/mo/bg1.jpg" alt class="img" />
-        <img src="./s1/mo/bg2.jpg" alt class="img fix mix" />
-        <img src="./s1/mo/img1.png" alt class="img fix mix" />
-        <img src="./s1/mo/bg3.png" alt class="img" />
         <div class="logo-icon">
           <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 750 1334" style="enable-background:new 0 0 750 1334;" xml:space="preserve">
             <pattern  x="-308" y="1051" width="340.3" height="486.6" patternUnits="userSpaceOnUse" id="img_3" viewBox="280.4 -704.3 340.3 486.6" style="overflow:visible;">
@@ -1859,10 +1842,6 @@
             </g>
           </svg>
         </div>
-        <img src="./s1/text1.png" alt="【 豐岳 】十大豐碩價值" class="title" />
-        <!-- img src="./s1/mo/stitlea.png" alt="雙語校園｜無瑕景觀｜ 豐居久安" class="img" />
-        <img src="./s1/mo/titlea.png" alt class="img" /-->
-        <img src="./s1/mo/linka.png" alt class="link" v-scroll-to="{ element: `#section2` }" />
       </div>
     </div>
   </div>
