@@ -207,7 +207,7 @@ export default {
 
       setTimeout(() => {
         this.hide = false
-      }, 600)
+      }, 700)
     }
   }
 }
