@@ -3,13 +3,13 @@
   <div class="section4">
     <div class="bg relative">
       <div v-if="!isMobile">
-        <img src="./s4/bg.jpg" alt="灣區旁最耀眼的鑽石" class="img" data-aos="fade" data-aos-delay="400">
-        <div class="text"><h3>雙大道雙商圈　縱橫天下通達八方　地產不敗黃金定律</h3><p>高雄中央核心，掌控亞洲新灣區門戶，正對高雄女中無垠開闊視野，繽紛多元的高感度時尚特區，四方環繞著名門豪宅、潮流時尚、藝術文創、傳統生機，雙大道、雙商圈，地王之王貴冑之地、富豪首選燙金地段、門牌即是您的身分表徵！</p>
+        <img src="./s4/bg.jpg" alt="三標價值 舉市唯一" class="img" data-aos="fade" data-aos-delay="400">
+        <div class="text"><h3>三標價值 舉市唯一<span>國際地標＋富裕指標＋權貴商標</span></h3><p>「聯上鉑金」以雍容富麗酒店式精品豪邸，雍容尊貴的新古典品味，深長框景、古典燈飾、空中閣樓、斜屋頂格柵…宏偉聖殿造型典雅靜謐，仰之彌高、望之神往，匹配地王珍稀價值，百年不朽世紀傳奇！</p>
 </div>
 </div>
       <div v-if="isMobile">
-        <img src="./s4/mo/bg.jpg" alt="灣區旁最耀眼的鑽石" class="img" data-aos="fade" data-aos-delay="400">
-        <div class="text"><h3>雙大道雙商圈　縱橫天下通達八方　地產不敗黃金定律</h3><p>高雄中央核心，掌控亞洲新灣區門戶，正對高雄女中無垠開闊視野，繽紛多元的高感度時尚特區，四方環繞著名門豪宅、潮流時尚、藝術文創、傳統生機，雙大道、雙商圈，地王之王貴冑之地、富豪首選燙金地段、門牌即是您的身分表徵！</p>
+        <img src="./s4/mo/bg.jpg" alt="三標價值 舉市唯一" class="img" data-aos="fade" data-aos-delay="400">
+        <div class="text"><h3>三標價值 舉市唯一<span>國際地標＋富裕指標＋權貴商標</span></h3><p>「聯上鉑金」以雍容富麗酒店式精品豪邸，雍容尊貴的新古典品味，深長框景、古典燈飾、空中閣樓、斜屋頂格柵…宏偉聖殿造型典雅靜謐，仰之彌高、望之神往，匹配地王珍稀價值，百年不朽世紀傳奇！</p>
 </div>
       </div>
     </div>
@@ -41,8 +41,9 @@
 .text{background: url('./s2/title.png') no-repeat;position: absolute;text-align:left;background-size: 65em auto;
 font-size:0.92vw;line-height: 1.6;top: 15vw;left: 9vw;padding: 2.7em 2em 0 3em;right: 0;
 
-h3{color: #fff;font-size: 1.7em;padding: 0 0 0.8em 3em;}
-p{color: rgba(255,255,255, 0.7);width: 46em;}
+h3{color: #fff;font-size: 1.7em;padding: 0 0 0.8em 3em;margin: -1.2em 0 0 0;}
+span{color: #fff;font-size: 0.7em;padding: 0;font-weight: normal;display: block}
+p{color: rgba(255,255,255, 0.7);width: 30em; text-align: justify; }
 }
 
 /* 平板尺寸 */
@@ -59,7 +60,8 @@ p{color: rgba(255,255,255, 0.7);width: 46em;}
   }
   .text{background-image: url('./s2/mo/titleall.png');background-size: 100% auto;font-size:3.8vw;top:10vw; left: 0;bottom: 0; padding: 0 1em 0 1.7em;
   
-h3{font-size: 1.5em;padding: 0.3em 0 0.6em 3em;}
+h3{margin:0.1em 0 0 0;}
+span{display: block;padding:0 0 0.3em 0}
 p{width: 23em;}
 }
 
