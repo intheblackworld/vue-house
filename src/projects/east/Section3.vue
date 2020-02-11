@@ -116,10 +116,10 @@
     width: 100%;
     left: calc(100vw * (170 / 1680));
     top: calc(100vw * (30 / 1680));
-    background: #676767;
-    color: #676767;
-    border-color: #676767;
-    border-top: 1px solid #676767;
+    background:none;
+    //color: #676767;
+    border: 0;
+    border-top: 2px solid rgba(0,0,0,.25);
   }
 
   .desc {
