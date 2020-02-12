@@ -78,7 +78,7 @@ export default {
       }, 0)
     })
 
-    window.location = "https://ycfy.h35.tw/"
+    // window.location = "https://ycfy.h35.tw/"
   },
 
   methods: {
