@@ -103,7 +103,7 @@ export default {
 
   data() {
     return {
-      isSide: false,
+      isSide: true,
       load: true,
     }
   },
