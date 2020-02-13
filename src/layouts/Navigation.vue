@@ -296,6 +296,7 @@ export default {
     position: absolute;
     z-index: 111;
     background: transparent;
+    background-size: cover;
     width: 0%;
     right: 0;
     top: $nav_phone_height;
