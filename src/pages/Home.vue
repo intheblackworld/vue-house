@@ -7,6 +7,32 @@
     <div id="section1">
       <Section1 />
     </div>
+    <VideoSection1
+      :playBtn="require('@/projects/sfdy/video/play-btn.png')"
+      title="開箱系列影片"
+      :close="require('@/projects/sfdy/video/close.png')"
+      :arrows="[require('@/projects/sfdy/video/arrow-left.png'), require('@/projects/sfdy/video/arrow-right.png')]"
+      :slideList="[
+        {
+          title: '釋放壓力，回家就是享受的開始',
+          img: require('@/projects/sfdy/video/1.jpg'),
+          video: 'https://www.youtube.com/embed/9UEKBWJladU',
+          isPlay: false,
+        },
+        {
+          title: '內容街景大公開',
+          img: require('@/projects/sfdy/video/2.jpg'),
+          video: 'https://www.youtube.com/embed/-60Gqkr3TtU',
+          isPlay: false,
+        },
+        {
+          title: '屋內機密大公開',
+          img: require('@/projects/sfdy/video/3.jpg'),
+          video: 'https://www.youtube.com/embed/454jJog_1xI',
+          isPlay: false,
+        },
+      ]"
+    />
     <div id="section2">
       <Section2 />
     </div>
@@ -34,7 +60,7 @@
     <div id="section9">
       <Section9 />
     </div>
-    
+
     <div id="section11">
       <Section11 />
     </div>
@@ -68,6 +94,8 @@ import Section10 from '@/projects/sfdy/Section10.vue'
 import Section11 from '@/projects/sfdy/Section11.vue'
 import Section12 from '@/projects/sfdy/Section12.vue'
 
+import VideoSection1 from '@/components/VideoSection1.vue'
+
 export default {
   name: 'home',
   mixins: [gtm],
@@ -88,7 +116,8 @@ export default {
     Section9,
     Section10,
     Section11,
-    Section12
+    Section12,
+    VideoSection1,
   },
 
   data() {
