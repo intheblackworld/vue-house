@@ -36,6 +36,11 @@
   background-size: cover;
   position: relative;
   z-index: 2;
+  &:before{
+   content:"建商保有修改權";
+   display:block;
+   position: absolute;bottom:0.5em;right:1.5em;z-index: 3;color:rgba(120, 80, 0, 0.5);
+   }
 }
 
 .img {
@@ -82,6 +87,8 @@
   .bg {
     background-size: cover;
     background-image: url('./s1/bg1.jpg');
+  &:before{color:rgba(255, 255, 255, 0.5);
+   }
   }
 
   .text {

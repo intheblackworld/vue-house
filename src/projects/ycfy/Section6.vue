@@ -4,7 +4,7 @@
       <div v-if="!isMobile">
         <img src="./s6/bg.jpg" alt class="img" />
         <img src="./s6/lineba.png" alt class="img" />
-        <div class="map">
+        <div :class="`map ${isOpen ? 'open': ''}`" @click="isOpen = !isOpen">
           <img src="./s6/map.png" alt class="img" data-aos="fade" data-aos-delay="200" />
         </div>
         <img src="./s6/stitlea.png" alt="A7明日版圖 五大建設帶領崛起" class="img" />
@@ -42,6 +42,11 @@
   position: relative;
   z-index: 2;
   overflow: hidden;
+  &:before{
+   content:"建商保有修改權";
+   display:block;
+   position: absolute;bottom:0.5em;right:1.5em;z-index: 3;color:rgba(255, 255, 255, 0.5);
+   }
 }
 
 .img {

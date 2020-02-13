@@ -4,11 +4,18 @@
       <div v-if="!isMobile">
         <!-- img src="./s5/bg.jpg" alt class="img" / -->
         <img src="./s5/bg1.png" alt class="img" />
-        <img src="./s5/left_img1.png" alt class="img" data-aos="fade" data-aos-delay="200" />
-        <img src="./s5/left_img2.png" alt class="img" data-aos="fade" data-aos-delay="400" />
+        <!-- <img src="./s5/left_img1.png" alt class="img" data-aos="fade" data-aos-delay="200" />
+        <img src="./s5/left_img2.png" alt class="img" data-aos="fade" data-aos-delay="400" />  -->
         <img src="./s5/stitle.png" alt="建築強人/景觀大師/專利結構 攜手擘畫" class="img" />
         <img src="./s5/title.png" alt="四大團隊" class="img" />
-        <div :class="`slide slide1`" data-aos="fade" data-aos-delay="600">
+        <div class="pic">
+          <img src="./s5/1.jpg" alt="頤昌建設 張博勝 總經理"  data-aos="fade" data-aos-delay="200"/>
+          <img src="./s5/2.jpg" alt="陳朝雄 建築師"  data-aos="fade" data-aos-delay="400"/>
+          <img src="./s5/3.jpg" alt="冠宇和瑞空間設計 王俊智 總監"  data-aos="fade" data-aos-delay="600"/>
+          <img src="./s5/4.jpg" alt="戴雲發結構技師"  data-aos="fade" data-aos-delay="800"/>
+        </div>
+        <!-- 
+          <div :class="`slide slide1`" data-aos="fade" data-aos-delay="600">
           <div
             v-for="(slide, index) in slideList1"
             :class="`slide-img ${slideIndex1 === index ? 'active' : ''}`"
@@ -31,7 +38,7 @@
               <div class="title">{{slideList2[slideIndex2].title}}</div>
             </div>
           </div>
-        </div>
+        </div> -->
         <!-- <img src="./s4/img2a.png" alt class="img" data-aos="fade" data-aos-delay="400" />
         <img src="./s4/img3a.png" alt class="img" data-aos="fade" data-aos-delay="600" />
         <img src="./s4/lineba.png" alt class="img" />
@@ -42,12 +49,17 @@
       <div v-if="isMobile">
         <!-- img src="./s5/mo/bg.jpg" alt class="img" / -->
         <img src="./s5/mo/bg1.png" alt class="img" />
-        <img src="./s5/mo/left_img1a.png" alt class="img" data-aos="fade" data-aos-delay="200" />
-        <img src="./s5/mo/left_img2a.png" alt class="img" data-aos="fade" data-aos-delay="400" />
         <img src="./s5/mo/stitlea.png" alt="建築強人/景觀大師/專利結構 攜手擘畫" class="img" />
         <img src="./s5/mo/titlea.png" alt="四大團隊" class="img" />
         <div class="text">頤昌建築２０２０鉅作，邀請陳朝雄建築師、冠宇和瑞空間設計、戴雲發Alfa-Safe攜手合作</div>
-        <div :class="`slide relative`" data-aos="fade" data-aos-delay="600">
+        <div class="pic">
+          <img src="./s5/1_m.jpg" alt="頤昌建設 張博勝 總經理"  data-aos="fade" data-aos-delay="200"/>
+          <img src="./s5/2.jpg" alt="陳朝雄 建築師"  data-aos="fade" data-aos-delay="210"/>
+          <img src="./s5/3.jpg" alt="冠宇和瑞空間設計 王俊智 總監"  data-aos="fade" data-aos-delay="200"/>
+          <img src="./s5/4.jpg" alt="戴雲發結構技師"  data-aos="fade" data-aos-delay="210"/>
+        </div>
+        <!--
+          <div :class="`slide relative`" data-aos="fade" data-aos-delay="600">
           <div
             v-for="(slide, index) in slideList3"
             :class="`slide-img ${slideIndex3 === index ? 'active' : ''}`"
@@ -59,6 +71,8 @@
             <div class="title">{{slideList3[slideIndex3].title}}</div>
           </div>
         </div>
+        
+        -->
       </div>
     </div>
   </div>
@@ -70,6 +84,11 @@
   position: relative;
   z-index: 2;
   overflow: hidden;
+  &:before{
+   content:"建商保有修改權";
+   display:block;
+   position: absolute;bottom:0.5em;right:1.5em;z-index: 3;color:rgba(120, 80, 0, 0.5);
+   }
 }
 
 .img {
@@ -87,7 +106,21 @@
     position: relative;
   }
 }
-
+.pic{
+  width: 100vw;
+  height: auto;
+  position: absolute;
+  left: 0;
+  top:calc(100vw *350 / 1920);;
+  object-fit: cover;
+  display: block;
+  img{
+    width:calc(100vw * 375 / 1920);margin: 0 0 0 calc(100vw * 15 / 1920);
+  &:nth-child(1) {
+    width:calc(100vw * 455 / 1920);margin:0;
+  }
+  }
+  }
 .text {
   width: calc(100vw * 885 / 1920);
   font-size: calc(100vw * 20 / 1920);
@@ -95,11 +128,11 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 2;
-  letter-spacing: 1.2px;
+  letter-spacing: 1px;
   text-align: left;
   color: #666666;
-  right: calc(100vw * 158 / 1920);
-  bottom: calc(100vw * 142 / 1920);
+  right: calc(100vw * 135 / 1920);
+  top: calc(100vw * 270 / 1920);
   position: absolute;
 }
 
@@ -153,8 +186,18 @@
   .img {
     &:nth-child(1) {
       position: relative;
-      height: calc(100vw * 1600 / 750);
+      height: calc(100vw * 2000 / 750);
     }
+  }
+
+.pic{
+  top:calc(100vw *290 / 375);;
+  img{
+    width:calc(100vw * 350 / 750);margin: 0 0 calc(100vw * 15 / 750) calc(100vw * 15 / 750);
+  &:nth-child(1) {
+    width:calc(100vw * 350 / 750);margin: 0 0 calc(100vw * 15 / 750) calc(100vw * 15 / 750);
+  }
+  }
   }
 
   .text {

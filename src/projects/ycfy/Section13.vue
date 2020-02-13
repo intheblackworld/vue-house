@@ -16,7 +16,11 @@
 .bg {
   background:url(./s12/bg.jpg) fixed;
   background-size: cover;
-  position: relative;
+  &:before{
+   content:"未經同意，不得轉載";
+   display:block;
+   position: absolute;bottom:0.5em;right:1.5em;z-index: 3;color:rgba(120, 80, 0, 0.5);
+   }
 }
 
 .img {
@@ -59,6 +63,8 @@
   .bg {
     background-size:100% auto ;
     background-image: url('./s13/mo/bg.jpg');
+  &:before{bottom:calc(100vw * 20 / 375);
+   }
   }
 
   .img {

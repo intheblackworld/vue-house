@@ -49,6 +49,11 @@
   position: relative;
   z-index: 2;
   overflow: hidden;
+  &:before{
+   content:"建商保有修改權";
+   display:block;
+   position: absolute;bottom:0.5em;right:1.5em;z-index: 3;color:rgba(120, 80, 0, 0.5);
+   }
 }
 
 .img {
@@ -122,12 +127,12 @@
   .img {
     &:nth-child(1) {
       position: relative;
-      height: calc(100vw * 550 / 375);
+      height: calc(100vw * 570 / 375);
     }
   }
 
   .text {
-    width: calc(100vw * 241 / 375);
+    width: calc(100vw * 330 / 375);
     height: auto;
     font-size: calc(100vw * 12 / 375);
     font-weight: normal;
@@ -144,7 +149,7 @@
   }
 
   .slide {
-    bottom: 0;
+    bottom: calc(100vw * 30 / 375);
     width: 100vw;
     top: auto;
   }

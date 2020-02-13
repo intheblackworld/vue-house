@@ -256,7 +256,7 @@ export default {
     margin-bottom: 0;
     text-align: left;
     border: 1px solid #666;
-    border-bottom: none;
+    border-bottom: none;height:auto;line-height: 1.6;padding: 0.5em 0;
   }
   .btn svg {
     position: absolute;
