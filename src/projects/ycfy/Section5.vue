@@ -5,45 +5,27 @@
         <!-- img src="./s5/bg.jpg" alt class="img" / -->
         <img src="./s5/bg1.png" alt class="img" />
         <!-- <img src="./s5/left_img1.png" alt class="img" data-aos="fade" data-aos-delay="200" />
-        <img src="./s5/left_img2.png" alt class="img" data-aos="fade" data-aos-delay="400" />  -->
+        <img src="./s5/left_img2.png" alt class="img" data-aos="fade" data-aos-delay="400" />-->
         <img src="./s5/stitle.png" alt="建築強人/景觀大師/專利結構 攜手擘畫" class="img" />
         <img src="./s5/title.png" alt="四大團隊" class="img" />
         <div class="pic">
-          <img src="./s5/1.jpg" alt="頤昌建設 張博勝 總經理"  data-aos="fade" data-aos-delay="200"/>
-          <img src="./s5/2.jpg" alt="陳朝雄 建築師"  data-aos="fade" data-aos-delay="400"/>
-          <img src="./s5/3.jpg" alt="冠宇和瑞空間設計 王俊智 總監"  data-aos="fade" data-aos-delay="600"/>
-          <img src="./s5/4.jpg" alt="戴雲發結構技師"  data-aos="fade" data-aos-delay="800"/>
-        </div>
-        <!-- 
-          <div :class="`slide slide1`" data-aos="fade" data-aos-delay="600">
-          <div
-            v-for="(slide, index) in slideList1"
-            :class="`slide-img ${slideIndex1 === index ? 'active' : ''}`"
-            :key="`s51-slide-${index}`"
-          >
-            <img :class="`slide-img ${slideIndex1 === index ? 'active' : ''}`" :src="slide.src" alt />
-            <div class="slide-text">
-              <div class="title">{{slideList1[slideIndex1].title}}</div>
-            </div>
+          <div class="block" data-aos="fade" data-aos-delay="200">
+            <img :class="`${isShow ? 'show' : ''}`" src="./s5/1.jpg" alt="頤昌建設 張博勝 總經理" />
+            <img :class="`${isShow ? '' : 'show'}`" src="./s5/b1.jpg" alt="頤昌建設 張博勝 總經理" />
+          </div>
+          <div class="block" data-aos="fade" data-aos-delay="400">
+            <img :class="`${isShow ? 'show' : ''}`" src="./s5/2.jpg" alt="陳朝雄 建築師" />
+            <img :class="`${isShow ? '' : 'show'}`" src="./s5/b2.jpg" alt="陳朝雄 建築師" />
+          </div>
+          <div class="block" data-aos="fade" data-aos-delay="600">
+            <img :class="`${isShow ? 'show' : ''}`" src="./s5/3.jpg" alt="冠宇和瑞空間設計 王俊智 總監" />
+            <img :class="`${isShow ? '' : 'show'}`" src="./s5/b3.jpg" alt="冠宇和瑞空間設計 王俊智 總監" />
+          </div>
+          <div class="block" data-aos="fade" data-aos-delay="800">
+            <img :class="`${isShow ? 'show' : ''}`" src="./s5/4.jpg" alt="戴雲發結構技師" />
+            <img :class="`${isShow ? '' : 'show'}`" src="./s5/b4.jpg" alt="戴雲發結構技師" />
           </div>
         </div>
-        <div :class="`slide slide2`" data-aos="fade" data-aos-delay="0">
-          <div
-            v-for="(slide, index) in slideList2"
-            :class="`slide-img ${slideIndex2 === index ? 'active' : ''}`"
-            :key="`s52-slide-${index}`"
-          >
-            <img :class="`slide-img ${slideIndex2 === index ? 'active' : ''}`" :src="slide.src" alt />
-            <div class="slide-text">
-              <div class="title">{{slideList2[slideIndex2].title}}</div>
-            </div>
-          </div>
-        </div> -->
-        <!-- <img src="./s4/img2a.png" alt class="img" data-aos="fade" data-aos-delay="400" />
-        <img src="./s4/img3a.png" alt class="img" data-aos="fade" data-aos-delay="600" />
-        <img src="./s4/lineba.png" alt class="img" />
-        <img src="./s4/stitlea.png" alt class="img" />
-        <img src="./s4/titlea.png" alt class="img" />-->
         <div class="text">頤昌建築２０２０鉅作，邀請陳朝雄建築師、冠宇和瑞空間設計、戴雲發Alfa-Safe攜手合作</div>
       </div>
       <div v-if="isMobile">
@@ -53,42 +35,43 @@
         <img src="./s5/mo/titlea.png" alt="四大團隊" class="img" />
         <div class="text">頤昌建築２０２０鉅作，邀請陳朝雄建築師、冠宇和瑞空間設計、戴雲發Alfa-Safe攜手合作</div>
         <div class="pic">
-          <img src="./s5/1_m.jpg" alt="頤昌建設 張博勝 總經理"  data-aos="fade" data-aos-delay="200"/>
-          <img src="./s5/2.jpg" alt="陳朝雄 建築師"  data-aos="fade" data-aos-delay="210"/>
-          <img src="./s5/3.jpg" alt="冠宇和瑞空間設計 王俊智 總監"  data-aos="fade" data-aos-delay="200"/>
-          <img src="./s5/4.jpg" alt="戴雲發結構技師"  data-aos="fade" data-aos-delay="210"/>
-        </div>
-        <!--
-          <div :class="`slide relative`" data-aos="fade" data-aos-delay="600">
-          <div
-            v-for="(slide, index) in slideList3"
-            :class="`slide-img ${slideIndex3 === index ? 'active' : ''}`"
-            :key="`s5-slide-${index}`"
-          >
-            <img :class="`slide-img ${slideIndex3 === index ? 'active' : ''}`" :src="slide.src" alt />
+          <div class="block" data-aos="fade" data-aos-delay="200">
+            <img :class="`${isShow ? 'show' : ''}`" src="./s5/1_m.jpg" alt="頤昌建設 張博勝 總經理" />
+            <img :class="`${isShow ? '' : 'show'}`" src="./s5/b1_m.jpg" alt="頤昌建設 張博勝 總經理" />
           </div>
-          <div class="slide-text">
-            <div class="title">{{slideList3[slideIndex3].title}}</div>
+          <div class="block" data-aos="fade" data-aos-delay="400">
+            <img :class="`${isShow ? 'show' : ''}`" src="./s5/2.jpg" alt="陳朝雄 建築師" />
+            <img :class="`${isShow ? '' : 'show'}`" src="./s5/b2.jpg" alt="陳朝雄 建築師" />
+          </div>
+          <div class="block" data-aos="fade" data-aos-delay="600">
+            <img :class="`${isShow ? 'show' : ''}`" src="./s5/3.jpg" alt="冠宇和瑞空間設計 王俊智 總監" />
+            <img :class="`${isShow ? '' : 'show'}`" src="./s5/b3.jpg" alt="冠宇和瑞空間設計 王俊智 總監" />
+          </div>
+          <div class="block" data-aos="fade" data-aos-delay="800">
+            <img :class="`${isShow ? 'show' : ''}`" src="./s5/4.jpg" alt="戴雲發結構技師" />
+            <img :class="`${isShow ? '' : 'show'}`" src="./s5/b4.jpg" alt="戴雲發結構技師" />
           </div>
         </div>
-        
-        -->
       </div>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 .bg {
-  background:url(./s5/bg.jpg) fixed;
+  background: url(./s5/bg.jpg) fixed;
   background-size: cover;
   position: relative;
   z-index: 2;
   overflow: hidden;
-  &:before{
-   content:"建商保有修改權";
-   display:block;
-   position: absolute;bottom:0.5em;right:1.5em;z-index: 3;color:rgba(120, 80, 0, 0.5);
-   }
+  &:before {
+    content: '建商保有修改權';
+    display: block;
+    position: absolute;
+    bottom: 0.5em;
+    right: 1.5em;
+    z-index: 3;
+    color: rgba(120, 80, 0, 0.5);
+  }
 }
 
 .img {
@@ -106,21 +89,60 @@
     position: relative;
   }
 }
-.pic{
+.pic {
   width: 100vw;
   height: auto;
   position: absolute;
   left: 0;
-  top:calc(100vw *350 / 1920);;
+  top: calc(100vw * 350 / 1920);
   object-fit: cover;
   display: block;
-  img{
-    width:calc(100vw * 375 / 1920);margin: 0 0 0 calc(100vw * 15 / 1920);
-  &:nth-child(1) {
-    width:calc(100vw * 455 / 1920);margin:0;
+  .block {
+    width: calc(100vw * 375 / 1920);
+    margin: 0 0 0 calc(100vw * 15 / 1920);
+    position: relative;
+    display: inline-block;
+
+    &:nth-child(1) {
+      width: calc(100vw * 455 / 1920);
+      margin: 0;
+      img {
+        transition-delay: .1s;
+      }
+    }
+
+    &:nth-child(2) {
+      img {
+        transition-delay: .2s;
+      }
+    }
+
+    &:nth-child(3) {
+      img {
+        transition-delay: .3s;
+      }
+    }
+
+    &:nth-child(4) {
+      img {
+        transition-delay: .4s;
+      }
+    }
   }
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.8s;
+
+    &.show {
+      opacity: 1;
+      position: relative;
+    }
   }
-  }
+}
 .text {
   width: calc(100vw * 885 / 1920);
   font-size: calc(100vw * 20 / 1920);
@@ -178,7 +200,7 @@
 
 @media screen and (max-width: 767px) {
   .bg {
-    background-size:100% auto ;
+    background-size: 100% auto;
     background-image: url('./s4/mo/bg.jpg');
     overflow: visible;
   }
@@ -190,14 +212,16 @@
     }
   }
 
-.pic{
-  top:calc(100vw *290 / 375);;
-  img{
-    width:calc(100vw * 350 / 750);margin: 0 0 calc(100vw * 15 / 750) calc(100vw * 15 / 750);
-  &:nth-child(1) {
-    width:calc(100vw * 350 / 750);margin: 0 0 calc(100vw * 15 / 750) calc(100vw * 15 / 750);
-  }
-  }
+  .pic {
+    top: calc(100vw * 290 / 375);
+    .block {
+      width: calc(100vw * 350 / 750);
+      margin: 0 0 calc(100vw * 15 / 750) calc(100vw * 15 / 750);
+      &:nth-child(1) {
+        width: calc(100vw * 350 / 750);
+        margin: 0 0 calc(100vw * 15 / 750) calc(100vw * 15 / 750);
+      }
+    }
   }
 
   .text {
@@ -240,6 +264,7 @@ export default {
   data() {
     return {
       isMobile,
+      isShow: false,
       slideList1: [
         {
           src: require('./s5/img1-1.jpg'),
@@ -336,6 +361,10 @@ export default {
   methods: {},
 
   created() {},
-  mounted() {},
+  mounted() {
+    setInterval(() => {
+      this.isShow = !this.isShow
+    }, 5000)
+  },
 }
 </script>
