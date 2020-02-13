@@ -30,6 +30,10 @@
             </div>
           </div>
         </div>
+        <div :class="`dialog ${isShow ? 'show' : ''}`">
+          <img :src="dialogImg" alt="">
+          <img src="~@/assets/img/close.png" alt="" class="close">
+        </div>
       </div>
       <div v-if="isMobile"></div>
     </div>
@@ -99,6 +103,10 @@ export default {
   methods: {
     showDialog(index) {
       this.dialogImg = this.imgList[index]
+      this.isShow = true
+    },
+    closeDialog() {
+      this.isShow = false
     }
   },
 

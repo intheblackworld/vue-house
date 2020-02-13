@@ -7,6 +7,32 @@
     <div id="section1">
       <Section1 />
     </div>
+    <VideoSection1
+      :playBtn="require('@/projects/sfdy/video/play-btn.png')"
+      title="開箱系列影片"
+      :close="require('@/projects/sfdy/video/close.png')"
+      :arrows="[require('@/projects/sfdy/video/arrow-left.png'), require('@/projects/sfdy/video/arrow-right.png')]"
+      :slideList="[
+        {
+          title: '釋放壓力，回家就是享受的開始',
+          img: require('@/projects/sfdy/video/1.jpg'),
+          video: 'https://www.youtube.com/embed/9UEKBWJladU',
+          isPlay: false,
+        },
+        {
+          title: '內容街景大公開',
+          img: require('@/projects/sfdy/video/2.jpg'),
+          video: 'https://www.youtube.com/embed/-60Gqkr3TtU',
+          isPlay: false,
+        },
+        {
+          title: '屋內機密大公開',
+          img: require('@/projects/sfdy/video/3.jpg'),
+          video: 'https://www.youtube.com/embed/454jJog_1xI',
+          isPlay: false,
+        },
+      ]"
+    />
     <div id="section2">
       <Section2 />
     </div>
@@ -42,6 +68,8 @@ import Section3 from '@/projects/dunnanhowhow/Section3.vue'
 import Section6 from '@/projects/dunnanhowhow/Section6.vue'
 import Section7 from '@/projects/dunnanhowhow/Section7.vue'
 // import SimpleOrder from '@/components/SimpleOrder.vue'
+
+import VideoSection1 from '@/components/VideoSection1.vue'
 
 export default {
   name: 'home',
