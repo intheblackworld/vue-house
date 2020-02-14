@@ -1878,7 +1878,7 @@
 	.st16{clip-path:url(#SVGID_4_);}
 	.st5 path{fill:none;stroke:url(#img_3);stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 	.st16 path{fill:none;stroke:url(#img_2);stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-  	@supports (-webkit-overflow-scrolling: touch) {
+ @supports (-webkit-overflow-scrolling: touch) {
 	.st5 path{stroke:#034;}
 	.st16 path{stroke:#034;}
     }
