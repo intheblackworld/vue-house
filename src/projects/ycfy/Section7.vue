@@ -40,11 +40,6 @@
   position: relative;
   z-index: 2;
   overflow: hidden;
-  &:before{
-   content:"建商保有修改權";
-   display:block;
-   position: absolute;bottom:0.5em;right:1.5em;z-index: 3;color:rgba(120, 80, 0, 0.5);
-   }
 }
 
 .img {
