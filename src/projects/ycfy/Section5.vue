@@ -100,9 +100,8 @@
   .block {
     width: calc(100vw * 375 / 1920);
     margin: 0 0 0 calc(100vw * 15 / 1920);
-    position: relative;
+    position: relative;overflow:hidden;
     display: inline-block;
-
     &:nth-child(1) {
       width: calc(100vw * 455 / 1920);
       margin: 0;
@@ -134,13 +133,20 @@
     height: auto;
     display: block;
     position: absolute;
-    opacity: 0;
-    transition: opacity 0.8s;
+    opacity: 1;
+    //transition: opacity 0.8s;
+    transition: all 0.8s;
+      z-index: 1;
+      transform: translateX(0);
 
     &.show {
-      opacity: 1;
+      opacity:0;
       position: relative;
+      transform: translate(-80%,-10%)rotate(30deg);
+      z-index: 2;
+    transition: all 0;
     }
+
   }
 }
 .text {
