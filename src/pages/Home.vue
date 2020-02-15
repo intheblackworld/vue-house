@@ -14,12 +14,6 @@
       :arrows="[require('@/projects/sfdy/video/arrow-left.png'), require('@/projects/sfdy/video/arrow-right.png')]"
       :slideList="[
         {
-          title: '釋放壓力，回家就是享受的開始',
-          img: require('@/projects/sfdy/video/1.jpg'),
-          video: 'https://www.youtube.com/embed/9UEKBWJladU',
-          isPlay: false,
-        },
-        {
           title: '內容街景大公開',
           img: require('@/projects/sfdy/video/2.jpg'),
           video: 'https://www.youtube.com/embed/-60Gqkr3TtU',
@@ -28,7 +22,13 @@
         {
           title: '屋內機密大公開',
           img: require('@/projects/sfdy/video/3.jpg'),
-          video: 'https://www.youtube.com/embed/454jJog_1xI',
+          video: 'https://www.youtube.com/embed/d7aWvSn2tQc',
+          isPlay: false,
+        },
+        {
+          title: '回家就是享受的開始',
+          img: require('@/projects/sfdy/video/1.jpg'),
+          video: 'https://www.youtube.com/embed/9UEKBWJladU',
           isPlay: false,
         },
       ]"
