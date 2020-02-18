@@ -61,7 +61,12 @@ p{color: rgba(255,255,255, 0.7);}
   .bg {
     background-size: cover;
   }
-  .text{background-image: url('./s2/mo/titleall.png');background-size: 100% auto;font-size:3.8vw;top:auto; left: 0;bottom: 5vw; padding: 0 1em 0 1.7em;}
+  .img {
+  &:nth-child(1) {
+   height: calc(100vw * 812 / 375 - 123px) ;
+  }
+  }
+  .text{background-image: url('./s2/mo/titleall.png');background-size: 100% auto;font-size:3.8vw;top:auto; left: 0;bottom: 40vw; padding: 0 1em 0 1.7em;}
 
 }
 </style>
