@@ -7,6 +7,9 @@ export default {
 
   created() {
     setInterval(() => {
+      if (this.isShowDialog) {
+        return
+      }
       if (this.slideList) {
         this.addIndex()
       }

@@ -16,19 +16,19 @@
         {
           title: '內容街景大公開',
           img: require('@/projects/sfdy/video/2.jpg'),
-          video: 'https://www.youtube.com/embed/-60Gqkr3TtU',
+          video: 'https://www.youtube.com/embed/-60Gqkr3TtU?&enablejsapi=1&playerapiid=ytplayer',
           isPlay: false,
         },
         {
           title: '屋內機密大公開',
           img: require('@/projects/sfdy/video/3.jpg'),
-          video: 'https://www.youtube.com/embed/d7aWvSn2tQc',
+          video: 'https://www.youtube.com/embed/d7aWvSn2tQc?&enablejsapi=1&playerapiid=ytplayer',
           isPlay: false,
         },
         {
           title: '回家就是享受的開始',
           img: require('@/projects/sfdy/video/1.jpg'),
-          video: 'https://www.youtube.com/embed/9UEKBWJladU',
+          video: 'https://www.youtube.com/embed/9UEKBWJladU?&enablejsapi=1&playerapiid=ytplayer',
           isPlay: false,
         },
       ]"

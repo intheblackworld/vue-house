@@ -5,63 +5,71 @@
         <div class="content">
           <h3 class="title">{{title}}</h3>
           <div class="list">
-            <div class="item" v-for="(item, index) in slideList" :key="item.title">
-              <div class="item-content" @click="currentIndex = index">{{item.title}}</div>
+            <div :class="`item ${slideIndex == index ? 'active' : ''}`" v-for="(item, index) in slideList" :key="item.title">
+              <div class="item-content" @click="slideIndex = index">{{item.title}}</div>
             </div>
           </div>
         </div>
         <div class="video-container">
           <div
-            :class="`video-item ${currentIndex === sIndex ? 'active' : ''}`"
+            :class="`video-item ${slideIndex == sIndex ? 'active' : ''}`"
             v-for="(slide, sIndex) in slideList"
             :key="slide.img"
           >
             <img :src="slide.img" alt class="video-bg" />
-            <img :src="playBtn" alt class="video-btn" @click="isShowDialog = true" />
+            <img :src="playBtn" alt class="video-btn" @click="openDialog" />
           </div>
         </div>
       </div>
       <div :class="`video-dialog ${isShowDialog ? 'show' : ''}`">
         <iframe
-          :src="slideList[currentIndex].video"
+          ref="player"
+          :src="slideList[slideIndex].video"
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
-        <img :src="close" alt class="close" @click="isShowDialog = false" />
+        <img :src="close" alt class="close" @click="closeDialog" />
       </div>
     </div>
     <div class="bg fullscreen" v-if="isMobile">
       <h3 class="title">{{title}}</h3>
       <div class="video-container">
         <div
-          :class="`video-item ${currentIndex === sIndex ? 'active' : ''}`"
+          :class="`video-item ${slideIndex === sIndex ? 'active' : ''}`"
           v-for="(slide, sIndex) in slideList"
           :key="slide.img"
         >
           <img :src="slide.img" alt class="video-bg" />
-          <img :src="playBtn" alt class="video-btn" @click="isShowDialog = true" />
+          <img :src="playBtn" alt class="video-btn" @click="openDialog" />
         </div>
       </div>
       <div class="btn-group">
-        <div class="btn" @click="currentIndex =
-        currentIndex === 0 ? slideList.length - 1 : currentIndex - 1">
+        <div
+          class="btn"
+          @click="slideIndex =
+        slideIndex === 0 ? slideList.length - 1 : slideIndex - 1"
+        >
           <img :src="arrows[0]" alt />
         </div>
-        <div class="btn-title">{{slideList[currentIndex].title}}</div>
-        <div class="btn" @click="currentIndex =
-        currentIndex === slideList.length - 1 ? 0 : currentIndex + 1">
+        <div class="btn-title">{{slideList[slideIndex].title}}</div>
+        <div
+          class="btn"
+          @click="slideIndex =
+        slideIndex === slideList.length - 1 ? 0 : slideIndex + 1"
+        >
           <img :src="arrows[1]" alt />
         </div>
       </div>
       <div :class="`video-dialog ${isShowDialog ? 'show' : ''}`">
         <iframe
-          :src="slideList[currentIndex].video"
+          ref="player"
+          :src="slideList[slideIndex].video"
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
-        <img :src="close" alt class="close" @click="isShowDialog = false" />
+        <img :src="close" alt class="close" @click="closeDialog" />
       </div>
     </div>
   </div>
@@ -78,23 +86,22 @@
   justify-content: center;
   background: $video_section_bg;
   padding: 60px 0 0 0;
-  
 }
 .container {
   width: calc(100vw * 1300 / 1920);
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  align-items:stretch;
+  align-items: stretch;
 }
 
 .content {
   width: calc(100vw * 400 / 1920);
-    font-size: calc(100vw * 26 / 1920);
-    display: flex;
-    flex-direction:column;
+  font-size: calc(100vw * 26 / 1920);
+  display: flex;
+  flex-direction: column;
   .title {
-    font-size:1.3em;
+    font-size: 1.3em;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
@@ -103,19 +110,24 @@
     text-align: center;
     color: $video_section_title_color;
     flex: 1 1 auto;
-    display: flex;align-items:center;justify-content:center;
-  }
-  .list{flex: 3 3 auto;
     display: flex;
-    flex-direction:column;}
+    align-items: center;
+    justify-content: center;
+  }
+  .list {
+    flex: 3 3 auto;
+    display: flex;
+    flex-direction: column;
+  }
 
-  .item {flex: 1 1 auto;
+  .item {
+    flex: 1 1 auto;
     border-top: 1px solid $video_section_item_border;
-    padding:8px 0;
+    padding: 8px 0;
     cursor: pointer;
 
     .item-content {
-      font-size:1em;
+      font-size: 1em;
       line-height: 1.2;
       letter-spacing: normal;
       text-align: left;
@@ -146,9 +158,10 @@
   height: calc(100vw * 700 / 1920);
   position: relative;
   margin: 0 0 0 calc(100vw * 20 / 1920);
-  &::before{
-    content:"";
-    width: 100%;height: 100%;
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
     border: 5px solid $video_section_item_border;
     position: absolute;
     top: calc(100vw * 30 / 1920);
@@ -195,10 +208,10 @@
   }
 
   iframe {
-    width:calc(90vh * 1920 / 1080 - 80px);
-    height:calc(90vh - 70px);
+    width: calc(90vh * 1920 / 1080 - 80px);
+    height: calc(90vh - 70px);
     max-width: calc(90vw - 70px);
-    max-height:calc(90vw * 1080 / 1920 - 70px);
+    max-height: calc(90vw * 1080 / 1920 - 70px);
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -210,15 +223,15 @@
   .close {
     position: absolute;
     cursor: pointer;
-    right:35px;
-    top:25px;
+    right: 35px;
+    top: 25px;
     width: 40px;
   }
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
-.bg {
-  padding:0;
+  .bg {
+    padding: 0;
   }
   .fullscreen {
     height: calc(100vh - 0px);
@@ -243,9 +256,9 @@
   .video-container {
     width: 100vw;
     height: calc(100vw * 280 / 375);
-  &::before{
-    display: none;
-  }
+    &::before {
+      display: none;
+    }
   }
 
   .title {
@@ -267,8 +280,8 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      &:hover{
-      background: $video_section_btn_hover_bg;
+      &:hover {
+        background: $video_section_btn_hover_bg;
       }
     }
 
@@ -293,8 +306,8 @@
     iframe {
       width: 100vw;
       height: calc(90vw * 1280 / 1920);
-    max-width:100vw;
-    max-height:100vh;
+      max-width: 100vw;
+      max-height: 100vh;
     }
 
     &.show {
@@ -303,7 +316,7 @@
 
     .close {
       width: 40px;
-      top: calc( 50% - 90vw * 250/ 750 - 45px );
+      top: calc(50% - 90vw * 250 / 750 - 45px);
       right: 10px;
     }
   }
@@ -355,12 +368,20 @@ export default {
       isMobile,
       isTablet,
       isShowDialog: false,
-      currentIndex: 0,
     }
   },
 
   mounted() {},
 
-  methods: {},
+  methods: {
+    openDialog() {
+      this.isShowDialog = true
+      this.$refs.player.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*')
+    },
+    closeDialog() {
+      this.isShowDialog = false
+      this.$refs.player.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*')
+    }
+  },
 }
 </script>
