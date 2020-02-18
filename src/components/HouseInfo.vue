@@ -77,6 +77,20 @@ export default {
     margin-right: 0;
   }
 
+  &:nth-last-child(1) {
+    height: auto;
+    border-left: none;
+    align-items: flex-start;
+
+    .label {
+      height: 30px;
+      border-left: 4px solid $house_label_color;
+      padding-left: 12px;
+      padding-top: 6px;
+      margin-left: -12px;
+    }
+  }
+
   .label {
     font-size: 16px;
     color: $house_label_color;

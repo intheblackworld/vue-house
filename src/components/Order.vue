@@ -204,7 +204,7 @@ export default {
 @import '@/assets/style/variableColor.scss';
 .order-bg {
   background-color: $order_bg_color;
-  // background-image: $order_bg_image;
+  background-image: $order_bg_image;
   background-size: cover;
   position: relative;
   padding-top: 80px;

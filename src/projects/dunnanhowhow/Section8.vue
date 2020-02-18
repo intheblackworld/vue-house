@@ -13,13 +13,39 @@
               <div class="img-title">{{slideList[slideIndex].title}}</div>
             </div>
           </div>
+          <div class="btn-group flex-jb flex-ac flex-mobile-jb">
+            <img @click="decIndex" src="./s8/flag_2.png" alt />
+            <img @click="addIndex" src="./s8/flag_1.png" alt />
+          </div>
         </div>
         <div class="content">
           <div class="title">3米6自由式，雙面採光好生活</div>
           <div class="desc">高人一等的3米6空間，打破傳統框架侷限。戶戶雙面採光，坐擁高規格生活尺度，同步國際LOFT生活美學。</div>
         </div>
       </div>
-      <div v-if="isMobile"></div>
+      <div v-if="isMobile">
+        <div class="slide relative" data-aos="fade" data-aos-delay="800">
+          <div
+            v-for="(slide, index) in slideList"
+            :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
+            :key="`s8-slide-${index}`"
+          >
+            <img :class="`slide-img ${slideIndex === index ? 'active' : ''}`" :src="slide.src" alt />
+            <div class="slide-text">
+              <div class="img-title">{{slideList[slideIndex].title}}</div>
+            </div>
+          </div>
+          <div class="btn-group flex-jb flex-ac flex-mobile-jb">
+            <img @click="decIndex" src="./s8/flag_2.png" alt style="width:15px;" />
+            <img @click="addIndex" src="./s8/flag_1.png" alt style="width:15px;" />
+          </div>
+          <div class="name">{{slideList[slideIndex].name}}</div>
+        </div>
+        <div class="content">
+          <div class="title">3米6自由式<br />雙面採光好生活</div>
+          <div class="desc">高人一等的3米6空間，打破傳統框架侷限。戶戶雙面採光，坐擁高規格生活尺度，同步國際LOFT生活美學。</div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -81,6 +107,24 @@
   color: #ffffff;
 }
 
+.img-title {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 30px;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.56;
+  letter-spacing: normal;
+  color: #ffffff;
+  text-align: right;
+  padding: 5px 10px 0 0;
+  z-index: 3;
+}
+
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
 }
@@ -88,6 +132,28 @@
 @media screen and (max-width: 767px) {
   .bg {
     background-size: cover;
+  }
+
+  .content {
+    width: 100vw;
+    height: auto;
+    background-color: #cb181e;
+    padding-top: calc(100vw * 20 / 375);
+    padding-left: calc(100vw * 30 / 375);
+    padding-right: calc(100vw * 30 / 375);
+    padding-bottom: calc(100vw * 20 / 375);
+    position: relative;
+    top: auto;
+    right: 0;
+
+  }
+
+  .title {
+    font-size: calc(100vw * 36 / 375);
+  }
+
+  .desc {
+    font-size: calc(100vw * 18 / 375);
   }
 }
 </style>
@@ -104,11 +170,11 @@ export default {
       isMobile,
       slideList: [
         {
-          // title: '敦化南路綠蔭樹海',
+          title: '3D示意圖僅供參考',
           src: require('./s8/1.jpg'),
         },
         {
-          // title: '敦化南路綠蔭樹海',
+          title: '3D示意圖僅供參考',
           src: require('./s8/2.jpg'),
         },
       ],

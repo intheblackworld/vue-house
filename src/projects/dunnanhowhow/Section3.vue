@@ -137,12 +137,11 @@
           </div>
         </div>
         <div id="section5" class="relative">
-          <img src="./s5/bg.jpg" alt class="img-bg" />
           <img src="./s5/bg1.png" alt class="img-bg" />
-          <parallax breakpoint="(min-width: 68px)" :speed-factor="0.06" direction="up">
-            <img src="./s5/bg2.png" alt class="img-bg" />
-            <img src="./s5/bg3.png" alt class="img-bg" />
-          </parallax>
+          <img src="./s5/bg3.png" alt class="img-bg" />
+          <img src="./s5/bg2.png" alt class="img-bg" />
+          <!-- <parallax breakpoint="(min-width: 68px)" :speed-factor="0.06" direction="up">
+          </parallax> -->
           <div class="s5-content">
             <div class="img-block relative">
               <img src="./s5/img.jpg" alt />
@@ -444,7 +443,7 @@
 .s5-content {
   position: absolute;
   width: calc(100vw * 1300 / 1920);
-  bottom: 0;
+  bottom: 15px;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -486,7 +485,7 @@
 
 #section5 .img-bg {
   &:nth-child(1) {
-    position: absolute;
+    position: relative;
   }
 }
 /* 平板尺寸 */

@@ -7,6 +7,7 @@
         <img src="./s2/icon.png" alt="" class="img-bg" data-aos="fade-up" data-aos-delay="400">
       </div>
       <div v-if="isMobile">
+        <Map :tagList="tagList" :bgSrc="bgmSrc" :hand="hand"></Map>
       </div>
     </div>
   </div>
@@ -47,12 +48,20 @@
 <script>
 // @ is an alias to /src
 import { isMobile } from '@/utils'
+import Map from '@/components/Map.vue'
 export default {
   name: 'section2',
+
+  components: {
+    Map,
+  },
 
   data() {
     return {
       isMobile,
+      tagList: [],
+      bgmSrc: require('./s2/mo/bg.jpg'),
+      hand: require('./s2/mo/箭頭.png'),
     }
   },
 

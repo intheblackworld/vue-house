@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="contact-info">
-    <img class="logo" src="@/assets/img/contact-logo.png" alt="幸福大院的圖片" />
+    <!-- <img class="logo" src="@/assets/img/contact-logo.png" alt="" /> -->
     <div class="info">
       <div class="btn flex-c" @click="showCallDialog">
         <span class="flex-c">
@@ -25,6 +25,12 @@
         </span>
       </a>
       <div class="address flex-c" v-html="info.address"></div>
+      <div class="google-btn flex-c">
+        <span class="flex-c" @click="showMapDialog">
+          <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
+        </span>
+      </div>
+      <div class="address flex-c" v-html="info.address2"></div>
       <div class="google-btn flex-c">
         <span class="flex-c" @click="showMapDialog">
           <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
@@ -180,6 +186,7 @@ export default {
   width: 280px;
   height: 60px;
   font-size: 16px;
+  margin-bottom: 25px;
   cursor: pointer;
   text-decoration: none;
   color: $contact_google_btn_color;
@@ -257,6 +264,7 @@ export default {
     text-align: left;
     border: 1px solid #666;
     border-bottom: none;
+    padding: 10px;
   }
 .btn svg {
     position: absolute;

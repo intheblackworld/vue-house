@@ -1,6 +1,7 @@
 <template>
   <div class="section6">
     <div class="bg relative">
+      <img src="./s6/bg.png" alt class="img" />
       <div v-if="!isMobile">
         <div class="container">
           <div class="content">
@@ -23,16 +24,44 @@
                 </div>
               </div>
               <div class="imgs">
-                <img src="./s6/1/2.jpg" alt="" @click="showDialog(0)">
-                <img src="./s6/1/3.jpg" alt="" @click="showDialog(1)">
-                <img src="./s6/1/4.jpg" alt="" @click="showDialog(2)">
+                <img src="./s6/1/2.jpg" alt @click="showDialog(0)" />
+                <img src="./s6/1/3.jpg" alt @click="showDialog(1)" />
+                <img src="./s6/1/4.jpg" alt @click="showDialog(2)" />
               </div>
+            </div>
+          </div>
+          <div class="content content2">
+            <div class="items">
+              <div class="text">
+                <div class="title">
+                  兩岸高端豪宅總監-
+                  <br />珩荷空間設計-徐慈姿
+                </div>
+                <div class="desc">打造機能人文公設空間，感受裝置藝術所釋放的人文情懷，在簡潔時尚的環境流動中，感受美學公共空間的魅力</div>
+                <div class="desc">
+                  代表業績：<br />
+                  台中帝寶<br />
+                  寶舖縱橫天廈<br />
+                  大隱頤海大院<br />
+                  北京中軸國際
+                </div>
+              </div>
+              <div class="imgs">
+                <img src="./s6/2/2.jpg" alt @click="showDialog(3)" />
+                <img src="./s6/2/3.jpg" alt @click="showDialog(4)" />
+                <img src="./s6/2/4.jpg" alt @click="showDialog(5)" />
+                <img src="./s6/2/5.jpg" alt @click="showDialog(6)" />
+              </div>
+            </div>
+            <div class="avatar">
+              <img src="./s6/2/1.jpg" alt />
+              <div class="border"></div>
             </div>
           </div>
         </div>
         <div :class="`dialog ${isShow ? 'show' : ''}`">
-          <img :src="dialogImg" alt="">
-          <img src="~@/assets/img/close.png" alt="" class="close">
+          <img :src="dialogImg" alt class="dialog-img" />
+          <img src="~@/assets/img/close.png" alt class="close" @click="closeDialog" />
         </div>
       </div>
       <div v-if="isMobile"></div>
@@ -43,14 +72,13 @@
 .bg {
   background-size: cover;
   position: relative;
-  z-index: 2;
   overflow: hidden;
-  background-image: url('./s6/bg.png');
+  background-color: #cb181e;
 }
 
 .img {
   width: 100vw;
-  height: auto;
+  height: 100%;
   position: absolute;
   left: 0;
   top: 0;
@@ -60,10 +88,144 @@
     position: fixed;
   }
   &:nth-child(1) {
-    position: relative;
+    position: absolute;
   }
 }
 
+.container {
+  width: 1300px;
+  margin: 130px auto 0;
+  position: relative;
+  z-index: 1;
+}
+.content {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 65px;
+}
+
+.avatar {
+  position: relative;
+  img {
+    width: calc(100vw * 500 / 1920);
+    position: relative;
+    z-index: 1;
+  }
+  .border {
+    border: 1px solid rgba(186, 151, 116, 0.5);
+    transform: translate(-10px, 10px);
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.items {
+  width: calc(100vw * 800 / 1920);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.text {
+  width: calc(100vw * 530 / 1920);
+  .title {
+    font-size: calc(100vw * 36 / 1920);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: 6.48px;
+    text-align: left;
+    color: #b8a57e;
+  }
+
+  .desc {
+    font-size: calc(100vw * 18 / 1920);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.56;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+    margin-bottom: 25px;
+  }
+}
+
+.imgs {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 1%;
+  img {
+    width: 32.5%;
+    cursor: pointer;
+  }
+}
+
+.content2 {
+  .avatar {
+    width: calc(100vw * 410 / 1920);
+  }
+
+  .items {
+    width: calc(100vw * 890 / 1920);
+  }
+
+  .text {
+    width: calc(100vw * 530 / 1920);
+    margin-top: -80px;
+  }
+
+  .imgs {
+    padding-left: 0%;
+    padding-right: 2%;
+    img {
+      width: 24%;
+    }
+  }
+}
+
+.dialog {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s;
+  display: none;
+
+  &.show {
+    display: block;
+    z-index: 210;
+    opacity: 1;
+  }
+
+  .dialog-img {
+    width: calc(90vh * 1920 / 1080 - 80px);
+    height: calc(90vh - 70px);
+    max-width: calc(90vw - 70px);
+    max-height: calc(90vw * 1080 / 1920 - 70px);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+  }
+
+  .close {
+    position: absolute;
+    cursor: pointer;
+    right: 35px;
+    top: 25px;
+    width: 40px;
+  }
+}
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
 }
@@ -107,7 +269,7 @@ export default {
     },
     closeDialog() {
       this.isShow = false
-    }
+    },
   },
 
   created() {},
