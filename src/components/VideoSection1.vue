@@ -155,7 +155,7 @@
 
 .video-container {
   width: calc(100vw * 1080 / 1920);
-  height: calc(100vw * 700 / 1920);
+  height: calc(100vw * 525 / 1920);
   position: relative;
   margin: 0 0 0 calc(100vw * 20 / 1920);
   &::before {
@@ -247,15 +247,17 @@
 @media screen and (max-width: 767px) {
   .bg {
     display: block;
-    padding-top: calc(100vh * 155 / 750);
-    height: calc(100vw * 750 / 375) !important;
+    padding-top: calc(100vh * 180 / 750);
+    height: calc(100vh - 63px ) !important;
     background: $video_section_bg_m;
     background-size: 100% 100%;
+    background-position: 50% 50%;
   }
 
   .video-container {
     width: 100vw;
-    height: calc(100vw * 280 / 375);
+    margin: 0;
+    height: calc(100vw * 210 / 375);
     &::before {
       display: none;
     }
