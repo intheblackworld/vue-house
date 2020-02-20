@@ -55,7 +55,13 @@
           </p>
         </el-checkbox>
       </div>
-      <el-button class="form-submit" type="primary" :disabled="!checked" @click="submit" :loading="isSubmit">立即預約</el-button>
+      <el-button
+        class="form-submit"
+        type="primary"
+        :disabled="!checked"
+        @click="submit"
+        :loading="isSubmit"
+      >立即預約</el-button>
     </div>
     <ContactInfo />
     <GoogleMap />
@@ -165,16 +171,15 @@ export default {
         {
           method: 'GET',
         },
-      ).then(() => {
-        fetch('contact-form.php', {
-          method: 'POST',
-          body: formData,
-        }).then(response => {
-          this.isSubmit = false
-          if (response.status === 200) {
-            window.location.href = 'formThanks'
-          }
-        })
+      )
+      fetch('contact-form.php', {
+        method: 'POST',
+        body: formData,
+      }).then(response => {
+        this.isSubmit = false
+        if (response.status === 200) {
+          window.location.href = 'formThanks'
+        }
       })
     },
   },
