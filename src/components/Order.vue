@@ -217,16 +217,15 @@ export default {
         {
           method: 'GET',
         },
-      ).then(() => {
-        fetch('contact-form.php', {
-          method: 'POST',
-          body: formData,
-        }).then(response => {
-          this.isSubmit = false
-          if (response.status === 200) {
-            window.location.href = 'formThanks'
-          }
-        })
+      )
+      fetch('contact-form.php', {
+        method: 'POST',
+        body: formData,
+      }).then(response => {
+        this.isSubmit = false
+        if (response.status === 200) {
+          window.location.href = 'formThanks'
+        }
       })
     },
   },
