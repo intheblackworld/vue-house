@@ -3,7 +3,7 @@
     <!-- <div class="title-block">
       <h3 class="title">{{order.title}}</h3>
       <div class="subtitle">{{order.subTitle}}</div>
-    </div> -->
+    </div>-->
     <div class="order-title">{{order.title}}</div>
     <h3 class="order-subtitle">{{order.subTitle}}</h3>
     <div class="order">
@@ -180,16 +180,15 @@ export default {
         {
           method: 'GET',
         },
-      ).then(() => {
-        fetch('contact-form.php', {
-          method: 'POST',
-          body: formData,
-        }).then(response => {
-          this.isSubmit = false
-          if (response.status === 200) {
-            window.location.href = 'formThanks'
-          }
-        })
+      )
+      fetch('contact-form.php', {
+        method: 'POST',
+        body: formData,
+      }).then(response => {
+        this.isSubmit = false
+        if (response.status === 200) {
+          window.location.href = 'formThanks'
+        }
       })
     },
   },
