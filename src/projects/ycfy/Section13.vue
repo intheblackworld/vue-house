@@ -17,6 +17,7 @@
   background:url(./s12/bg.jpg) fixed;
   background-size: cover;
   &:before{
+    font-size:12px;
    content:"未經同意，不得轉載";
    display:block;
    position: absolute;bottom:0.5em;right:1.5em;z-index: 3;color:rgba(120, 80, 0, 0.5);
@@ -49,7 +50,8 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-  top: 100px;
+  top:calc(100vw * 100 / 1920);
+  width: calc(100vw * 472 / 1920);
 }
 
 /* 平板尺寸 */

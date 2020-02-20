@@ -103,6 +103,7 @@ export default {
 
 .navlist {
   position: fixed;
+  flex-direction:column;
   z-index: 111;
   background: $nav_bg;
   width: 0%;
@@ -116,21 +117,26 @@ export default {
   background-image: url('./nav_bg.png');
 
   li {
-    height: 60px;
-    margin-bottom: 5px;
+   // height: 60px;
+   // margin-bottom: 5px;
     width: 100%;
+    flex: 1 1 auto;align-items:stretch;
+    &:first-child{margin:2em 0 0 0;}
+    &:last-child{margin:0 0 2em 0;}
   }
 
   .link {
-    height: 60px;
+   // height: 60px;
     width: 100%;
     font-size: 17px;
-    margin-top: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex: 1 1 auto;
     display: none;
     background-size: cover;
+    transition: all 0.3s;
+    &:hover{background: rgba(0,0,0,0.2)}
 
     img,
     span {
@@ -297,13 +303,6 @@ export default {
 
     .link {
       height: 40px;
-      width: 100%;
-      font-size: 17px;
-      margin-top: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      display: none;
 
       img,
       span {

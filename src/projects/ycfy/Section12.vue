@@ -14,7 +14,7 @@
             <img :class="`slide-img ${slideIndex === index ? 'active' : ''}`" :src="slide.src" alt />
           </div>
           <div class="slide-text">
-              <div class="title">{{slideList[slideIndex].title}}</div>
+              <div class="title" v-html="slideList[slideIndex].title"></div>
             </div>
         </div>
         <div class="text">規劃設計蘊藏完美，尺度恰到好處，游刃有餘的起居空間<br />「頤昌豐岳」懂你對家的要求，豐美2-4房納藏精彩生活</div>
@@ -31,7 +31,7 @@
           >
             <img :class="`slide-img ${slideIndex === index ? 'active' : ''}`" :src="slide.src" alt />
             <div class="slide-text">
-              <div class="title">{{slideList[slideIndex].title}}</div>
+              <div class="title" v-html="slideList[slideIndex].title"></div>
             </div>
           </div>
         </div>  
@@ -47,11 +47,6 @@
   position: relative;
   z-index: 2;
   overflow: hidden;
-  &:before{
-   content:"建商保有修改權";
-   display:block;
-   position: absolute;bottom:0.5em;right:1.5em;z-index: 3;color:rgba(120, 80, 0, 0.5);
-   }
 }
 
 .img {
@@ -86,17 +81,17 @@
 }
 
 .slide-text {
-  font-size: calc(100vw * 20 / 1920);
+    font-size:12px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2;
+  line-height: 1.5;
   letter-spacing: 1.2px;
   text-align: right;
-  color: #ffffff;
+  color: #fff9;
   position: absolute;
-  right: 0;
-  bottom: 0;
+  right: 1em;
+  bottom: 0.5em;
   padding: 2px 10px;
 }
 
@@ -133,12 +128,11 @@
   .text {
     width: calc(100vw * 302 / 375);
     height: auto;
-    font-size: calc(100vw * 12 / 375);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.67;
-    letter-spacing: 0.72px;
+    line-height: 1.5;
+    letter-spacing:1.2px;;
     text-align: left;
     color: #666;
     left: calc(100vw * 37 / 375);
@@ -154,10 +148,6 @@
     top: auto;
   }
 
-  .slide-text {
-    font-size: calc(100vw * 20 / 375);
-    text-shadow: 0 0 1px #000;
-  }
 }
 </style>
 
@@ -174,23 +164,23 @@ export default {
       slideList: [
         {
           src: require('./s12/img1.jpg'),
-          title: '樣品屋3D參考示意圖',
+          title: '樣品屋3D參考示意圖<br>建商保有修改權',
         },
         {
           src: require('./s12/img2.jpg'),
-          title: '樣品屋3D參考示意圖',
+          title: '樣品屋3D參考示意圖<br>建商保有修改權',
         },
         {
           src: require('./s12/img3.jpg'),
-          title: '樣品屋3D參考示意圖',
+          title: '樣品屋3D參考示意圖<br>建商保有修改權',
         },
         {
           src: require('./s12/img4.jpg'),
-          title: '樣品屋3D參考示意圖',
+          title: '樣品屋3D參考示意圖<br>建商保有修改權',
         },
         {
           src: require('./s12/img5.jpg'),
-          title: '樣品屋3D參考示意圖',
+          title: '樣品屋3D參考示意圖<br>建商保有修改權',
         },
       ],
     }
