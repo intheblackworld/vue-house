@@ -5,7 +5,7 @@
       <div class="subtitle">{{order.subTitle}}</div>
     </div>
     <!-- <h3 class="order-title">{{order.title}}</h3>
-    <h3 class="order-subtitle">{{order.subTitle}}</h3> -->
+    <h3 class="order-subtitle">{{order.subTitle}}</h3>-->
     <div class="order">
       <div class="form">
         <div class="group">
@@ -59,11 +59,9 @@
           </p>
         </el-checkbox>
       </div>
-        <div style="margin: 0 auto">
-          <vue-recaptcha :sitekey="info.recaptcha_site_key_v2"
-          @verify="isVerify = true"
-          ></vue-recaptcha>
-        </div>
+      <div style="margin: 0 auto">
+        <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true"></vue-recaptcha>
+      </div>
       <el-button
         class="form-submit"
         type="primary"
@@ -187,16 +185,16 @@ export default {
         {
           method: 'GET',
         },
-      ).then(() => {
-        fetch('contact-form.php', {
-          method: 'POST',
-          body: formData,
-        }).then(response => {
-          this.isSubmit = false
-          if (response.status === 200) {
-            window.location.href = 'formThanks'
-          }
-        })
+      )
+
+      fetch('contact-form.php', {
+        method: 'POST',
+        body: formData,
+      }).then(response => {
+        this.isSubmit = false
+        if (response.status === 200) {
+          window.location.href = 'formThanks'
+        }
       })
     },
   },
