@@ -279,14 +279,16 @@ img[lazy='loaded'] {
 
   img {
     position: relative;
-    z-index: 122;
+    z-index: 122;max-width:calc(100vw - 140px);max-height:calc(100vh - 220px);
   }
 
   .close {
     position: absolute;
-    top: -80px;
-    right: -80px;
+    top:0;
+    right:0;
+    transform: translate(130%,0%);
     cursor: pointer;
+    width:30px;
   }
 }
 
