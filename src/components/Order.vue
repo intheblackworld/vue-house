@@ -165,8 +165,8 @@ export default {
         {
           method: 'GET',
         },
-      ).then(() => {
-        fetch('contact-form.php', {
+      )
+      fetch('contact-form.php', {
           method: 'POST',
           body: formData,
         }).then(response => {
@@ -175,7 +175,6 @@ export default {
             window.location.href = 'formThanks'
           }
         })
-      })
     },
   },
 }
