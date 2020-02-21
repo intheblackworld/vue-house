@@ -10,15 +10,7 @@
     <div id="section2">
       <Section2 />
     </div>
-    <div id="section3">
-      <Section3 />
-    </div>
-    <div id="section4">
-      <Section4 />
-    </div>
-    <div id="section5">
-      <Section5 />
-    </div>
+    <Section3 />
     <div id="section6">
       <Section6 />
     </div>
@@ -44,13 +36,13 @@ import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import gtm from '@/mixins/gtm.js'
 
-import Section1 from '@/projects/lsbj/Section1.vue'
-import Section2 from '@/projects/lsbj/Section2.vue'
-import Section3 from '@/projects/lsbj/Section3.vue'
-import Section4 from '@/projects/lsbj/Section4.vue'
-import Section5 from '@/projects/lsbj/Section5.vue'
-import Section6 from '@/projects/lsbj/Section6.vue'
-import Section7 from '@/projects/lsbj/Section7.vue'
+import Section1 from '@/projects/dunnanhowhow/Section1.vue'
+import Section2 from '@/projects/dunnanhowhow/Section2.vue'
+import Section3 from '@/projects/dunnanhowhow/Section3.vue'
+import Section4 from '@/projects/dunnanhowhow/Section4.vue'
+import Section5 from '@/projects/dunnanhowhow/Section5.vue'
+import Section6 from '@/projects/dunnanhowhow/Section6.vue'
+import Section7 from '@/projects/dunnanhowhow/Section7.vue'
 // import SimpleOrder from '@/components/SimpleOrder.vue'
 
 export default {
