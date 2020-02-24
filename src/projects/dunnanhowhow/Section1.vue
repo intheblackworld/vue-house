@@ -21,6 +21,9 @@
           <img src="./s1/light3a.png" class="l3_3" alt="">
           <img src="./s1/light3a.png" class="l3_4" alt="">
         </div>
+        <!-- <parallax breakpoint="(min-width: 68px)" :speed-factor="0.05" direction="up">
+              <img src="./s3/bg1.png" alt class="img-bg" />
+            </parallax> -->
         <!-- <img src="./s1/logo.png" alt="頤昌豐岳" class="img" data-aos="fade" data-aos-delay="700" /> -->
         <!-- <icon class="icon logo-icon" :data="logo" />
         <img src="./s1/light3.png" alt="" class="img light3"> -->

@@ -79,9 +79,7 @@ export default {
       const parentHeight = this.$refs.block.offsetHeight
       const parallaxHeight = this.$refs.parallax.offsetHeight
       const availableOffset = parallaxHeight - parentHeight
-      console.log(availableOffset)
-      let animationValue = window.pageYOffset * this.speedFactor
-      console.log(animationValue)
+      let animationValue = window.pageYOffset * this.speedFactor * 0.5
       if (animationValue <= availableOffset && animationValue >= 0) {
         this.el.style.transform = `translate3d(0, ${animationValue *
           this.directionValue}px ,0)`
