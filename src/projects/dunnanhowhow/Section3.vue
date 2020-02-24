@@ -141,6 +141,7 @@
           <img src="./s5/bg1.png" alt class="img-bg" />
           <parallax breakpoint="(min-width: 68px)" :speed-factor="0.06" direction="up">
             <img src="./s5/bg2.png" alt class="img-bg" />
+            <img src="./s5/bg3.png" alt class="img-bg" />
           </parallax>
           <div class="s5-content">
             <div class="img-block relative">
@@ -190,7 +191,6 @@
             <div class="img-title">六張犁捷運站</div>
           </div>
           <div class="relative">
-            <img src="./s3/mo/bg1.png" alt class="img-bg" />
             <img src="./s3/mo/bg2.png" alt class="img-bg" />
             <div class="right">
               <div class="content">
@@ -294,6 +294,31 @@
               <div class="content">
                 <div class="title">好購時尚宅</div>
                 <div class="desc">時尚名媛、都市型男必購天龍之心大安地段，敦南遠企旁俬藏珠寶盒，鄰近五光十色台北時尚基地信義商圈，逛街購物盡顯都會品味。</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="section5" class="relative">
+          <img src="./s5/bg_m.jpg" alt class="img-bg absolute" />
+          <div class="relative">
+            <img src="./s5/img.jpg" alt class="m-img" />
+            <div class="img-title">3D示意圖僅供參考</div>
+          </div>
+          <div class="relative">
+            <img src="./s5/bg3_m.png" alt class="img-bg" />
+            <div class="right">
+              <div class="content">
+                <div class="title">
+                  新跳島主義，
+                  <br />都會垂直森林新浪潮
+                </div>
+                <div class="desc">不只在陽台種樹，回歸人文角度，學習在水泥叢林與大自然有機共生。</div>
+                <div class="title">
+                  精緻奢華21-24坪時尚宅
+                  <br />3.6米挑高空間精品寓邸
+                  <br />靜巷純3併戶戶雙面採光
+                </div>
               </div>
             </div>
           </div>
@@ -516,8 +541,27 @@
     font-size: calc(100vw * 18 / 375);
   }
 
-  #section4 .content {
-    width: calc(100vw * 287 / 375);
+  #section4,
+  #section5 {
+    .content {
+      width: calc(100vw * 290 / 375);
+    }
+  }
+
+  #section5 {
+    .img-bg {
+      &:nth-child(1) {
+        position: relative;
+      }
+    }
+    .title {
+      font-size: calc(100vw * 25 / 375);
+      white-space: nowrap;
+      letter-spacing: 2.4px;
+    }
+    .desc {
+      margin-bottom: 20px;
+    }
   }
 }
 </style>

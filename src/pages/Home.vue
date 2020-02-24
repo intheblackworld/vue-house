@@ -39,8 +39,6 @@ import gtm from '@/mixins/gtm.js'
 import Section1 from '@/projects/dunnanhowhow/Section1.vue'
 import Section2 from '@/projects/dunnanhowhow/Section2.vue'
 import Section3 from '@/projects/dunnanhowhow/Section3.vue'
-import Section4 from '@/projects/dunnanhowhow/Section4.vue'
-import Section5 from '@/projects/dunnanhowhow/Section5.vue'
 import Section6 from '@/projects/dunnanhowhow/Section6.vue'
 import Section7 from '@/projects/dunnanhowhow/Section7.vue'
 // import SimpleOrder from '@/components/SimpleOrder.vue'
@@ -57,8 +55,6 @@ export default {
     Section1,
     Section2,
     Section3,
-    Section4,
-    Section5,
     Section6,
     Section7,
   },
