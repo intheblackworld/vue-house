@@ -1,11 +1,19 @@
 <template>
   <div class="section6">
     <div class="bg relative">
+      <div class="img">
       <div>
-        <img src="./s7/7.jpg" alt="" class="img" data-aos="fade" data-aos-delay="200" v-if="!isMobile">
-        <img src="./s7/7m.jpg" alt="" class="img" data-aos="fade" data-aos-delay="200" v-if="isMobile">
-         <h2 class="text"><span>上市櫃多角化經營</span><span>打造夢想生活藍圖</span></h2>
+        <img src="./s7/7-1.jpg" alt="hotel dùa" class="img1">
+        <p>Hotel dùa</p>
       </div>
+      <div>
+        <img src="./s7/7-2.jpg" alt="MLD" class="img2">
+        <p>MLD</p>
+        <img src="./s7/7-3.jpg" alt="晶綺酒店" class="img3">
+        <p>晶綺酒店</p>
+      </div>
+      </div>
+         <h2 class="text"><span>上市櫃多角化經營</span><span>打造夢想生活藍圖</span></h2>
     </div>
   </div>
 </template>
@@ -15,22 +23,24 @@
   position: relative;
   z-index: 2;
   overflow: hidden;
+  height: 100vh;
 }
 
 .img {
-  width: 100vw;
-  height: auto;
-  position: absolute;
-  left: 0;
-  top: 0;
-  object-fit: cover;
-  display: block;
-  &.fix {
-    position: fixed;
+  display: flex;width: 100vw;height:100%;
+  img{object-fit: cover;
+  & +p{position: absolute;bottom:0;right:0;margin:0 0 ; color: #FFF;z-index: 2;text-align: right;padding: 0 30px 10px 0;}
   }
-  &:nth-child(1) {
+  > div{
     position: relative;
-  }
+    width: 50%;height:100%;
+    flex: 1 1 auto;flex-direction:column;}
+    div{
+      display: flex;flex-direction:column;
+      }
+  .img1{width:100%;height:100%;}
+  .img2 + p{bottom: 50%;}
+  .img2,.img3{width:100%;height: 50%;flex: 1 1 40%;}
 }
 
 .text{
@@ -51,7 +61,26 @@
 @media screen and (max-width: 767px) {
   .bg {
     background-size: cover;
+    height:calc(100vh - 63px);
   }
+  .img{flex-direction:column;
+  > div{
+    width: 100%;height:30%;flex-direction:row;
+    div{flex-direction:row;}
+    &:nth-child(1) {height:47%;}
+    &::before{content: "";width: 100%;height:calc(100vw * 100 / 750);position: absolute;bottom: 0;left: 0;
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+}
+    }
+  .img2,.img3{width:50%;height: 100%;flex: 1 1 40%;}
+  img{
+  & +p{padding: 0 10px 10px 0;}
+  }
+  .img2 + p{bottom:0;right: 50%;}
+    }
 .text{
   display: flex; flex-direction:column;
    position: absolute;top: calc(100vw * 630 / 750);left:50%;

@@ -25,6 +25,7 @@
   position: relative;
   z-index: 2;
   overflow: hidden;
+  height: 100vh;
 }
 
 .img {
@@ -40,6 +41,7 @@
   }
   &:nth-child(1) {
     position: relative;
+    height: 100vh;
   }
 }
 
@@ -60,13 +62,14 @@ p{color: rgba(255,255,255, 0.7);}
 @media screen and (max-width: 767px) {
   .bg {
     background-size: cover;
+    height:calc(100vh - 63px);
   }
   .img {
   &:nth-child(1) {
-   height: calc(100vw * 812 / 375 - 123px) ;
+    height:calc(100vh - 63px);
   }
   }
-  .text{background-image: url('./s2/mo/titleall.png');background-size: 100% auto;font-size:3.8vw;top:auto; left: 0;bottom: 40vw; padding: 0 1em 0 1.7em;}
+  .text{background-image: url('./s2/mo/titleall.png');background-size: 100% auto;font-size:3.8vw;top:50%; left: 0; padding: 0 1em 0 1.7em;}
 
 }
 </style>

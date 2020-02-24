@@ -4,7 +4,8 @@
       <div>
         <div class="img_bg" @scroll="hide = true">
         <div class="img_bg_c">
-        <img src="./s1/bg.jpg" alt="" class="img content">
+        <img src="./s1/bg.jpg" alt="" class="img content" v-if="!isMobile">
+        <img src="./s1/mo/bg.jpg" alt="" class="img content" v-if="isMobile">
         <img src="./s1/light1.png" alt="" class="img light1">
         <img src="./s1/light2.png" alt="" class="img light2">
         <img src="./s1/arrow.png" alt="" :class="`img arrow ${hide ? 'hide' : ''}`">
@@ -21,12 +22,6 @@
           <img src="./s1/light3a.png" class="l3_3" alt="">
           <img src="./s1/light3a.png" class="l3_4" alt="">
         </div>
-        <!-- <img src="./s1/logo.png" alt="頤昌豐岳" class="img" data-aos="fade" data-aos-delay="700" /> -->
-        <!-- <icon class="icon logo-icon" :data="logo" />
-        <img src="./s1/light3.png" alt="" class="img light3"> -->
-      <!--/div>
-      <div v-else>
-        <img src="./s1/mo/bg.jpg" alt="" class="img" -->
       </div>
     </div>
   </div>
@@ -38,6 +33,8 @@
 .bg {
   background-size: cover;
   position: relative;
+  overflow: hidden;
+  height: 100vh;
 }
 .img_bg_c{position: relative;}
 .img {
@@ -51,11 +48,14 @@
   
   &:nth-child(1) {
     position: relative;
+    height: 100vh;
   }
   &.light1,
   &.light2{
     opacity: 0;
     animation: op 1s alternate infinite;
+  object-fit: cover;
+    height: 100vh;width: 100vw;
   }
   &.arrow{
     display: none;
@@ -151,6 +151,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
     height:100vh;
     transform: translateX(0);
     }
+  &.light1,
+  &.light2{
+    left:90%;}
   &.arrow{
     display:block;
 

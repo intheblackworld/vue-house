@@ -20,7 +20,7 @@
   background-size: cover;
   position: relative;
   z-index: 2;
-  overflow: hidden;
+  overflow: hidden; height: 100vh;
 }
 
 .img {
@@ -36,10 +36,11 @@
   }
   &:nth-child(1) {
     position: relative;
+    height: 100vh;
   }
 }
 .text{background: url('./s2/title.png') no-repeat;position: absolute;text-align:left;background-size: 65em auto;
-font-size:0.92vw;line-height: 1.6;top: 15vw;left: 9vw;padding: 2.7em 2em 0 3em;right: 0;
+font-size:0.92vw;line-height: 1.6;top: calc(50% - 15vw);;left: 9vw;padding: 2.7em 2em 0 3em;right: 0;
 
 h3{color: #fff;font-size: 1.7em;padding: 0 0 0.8em 3em;margin: -1.2em 0 0 0;}
 span{color: #fff;font-size: 0.7em;padding: 0;font-weight: normal;display: block}
@@ -57,7 +58,13 @@ p{color: rgba(255,255,255, 0.7);width: 30em; text-align: justify; }
 @media screen and (max-width: 767px) {
   .bg {
     background-size: cover;
+    height:calc(100vh - 63px);
   }
+.img{height:calc(100vh - 63px);
+&:nth-child(1) {
+    height:calc(100vh - 63px);
+  }}
+
   .text{background-image: url('./s2/mo/titleall.png');background-size: 100% auto;font-size:3.8vw;top:10vw; left: 0;bottom: 0; padding: 0 1em 0 1.7em;
   
 h3{margin:0.1em 0 0 0;}
