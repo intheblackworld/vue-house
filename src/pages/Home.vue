@@ -7,7 +7,7 @@
     <div id="section1">
       <Section1 />
     </div>
-    <VideoSection1
+    <!-- <VideoSection1
       :playBtn="require('@/projects/sfdy/video/play-btn.png')"
       title="開箱系列影片"
       :close="require('@/projects/sfdy/video/close.png')"
@@ -32,7 +32,7 @@
           isPlay: false,
         },
       ]"
-    />
+    /> -->
     <div id="section2">
       <Section2 />
     </div>
@@ -42,6 +42,12 @@
     </div>
     <div id="section7">
       <Section7 />
+    </div>
+    <div id="section8">
+      <Section8 />
+    </div>
+    <div id="section9">
+      <Section9 />
     </div>
     <ContactSection />
     <!-- <SimpleOrder /> -->
@@ -67,6 +73,8 @@ import Section2 from '@/projects/dunnanhowhow/Section2.vue'
 import Section3 from '@/projects/dunnanhowhow/Section3.vue'
 import Section6 from '@/projects/dunnanhowhow/Section6.vue'
 import Section7 from '@/projects/dunnanhowhow/Section7.vue'
+import Section8 from '@/projects/dunnanhowhow/Section8.vue'
+import Section9 from '@/projects/dunnanhowhow/Section9.vue'
 // import SimpleOrder from '@/components/SimpleOrder.vue'
 
 import VideoSection1 from '@/components/VideoSection1.vue'
@@ -85,6 +93,8 @@ export default {
     Section3,
     Section6,
     Section7,
+    Section8,
+    Section9,
   },
 
   data() {
