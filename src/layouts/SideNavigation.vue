@@ -109,7 +109,7 @@
                 @click="toggleSidebar"
               >
                 <div class="menu_link">
-                  <span class="menu_count">0{{i+1}}</span>
+                  <!-- span class="menu_count">0{{i+1}}</span -->
                   {{item.name}}
                 </div>
               </li>
@@ -1818,6 +1818,7 @@ body {
   width: 120px;
   height: 100%;
   display: none;
+  background-image: url("~@/assets/img/contact_mb-bg.png");
 }
 @media (min-width: 992px) {
   .sidenav {

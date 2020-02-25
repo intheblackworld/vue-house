@@ -460,7 +460,7 @@
     }
 
     .border {
-      border: 1px solid rgba(186, 151, 116, 0.5);
+      border: 3px solid rgba(186, 151, 116, 0.5);
       transform: translate(-10px, 10px);
       top: 0;
       position: absolute;

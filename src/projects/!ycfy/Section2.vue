@@ -34,6 +34,7 @@
   background-size: cover;
   position: relative;
   z-index: 2;
+  margin: 0 120px 0 0;
 }
 
 .img {
@@ -79,6 +80,7 @@
   .bg {
     background-size: cover;
     background-image: url('./s1/bg.jpg');
+  margin: 0;
   }
 
   .text {

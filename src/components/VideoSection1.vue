@@ -86,6 +86,7 @@
   justify-content: center;
   background: $video_section_bg;
   padding: 60px 0 0 0;
+  margin: 0 120px 0 0;
 }
 .container {
   width: calc(100vw * 1550 / 1920);
