@@ -9,8 +9,8 @@
           {{info.phone}}
         </span>
       </div>
-      <div class="btn flex-c">
-        <span class="flex-c" @click="showMessengerDialog">
+      <div class="btn flex-c" @click="showMessengerDialog">
+        <span class="flex-c">
           <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB 諮詢
         </span>
       </div>
@@ -25,14 +25,14 @@
         </span>
       </a>
       <div class="address flex-c" v-html="info.address"></div>
-      <div class="google-btn flex-c">
-        <span class="flex-c" @click="showMapDialog">
+      <div class="google-btn flex-c" @click="showMapDialog = true">
+        <span class="flex-c">
           <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
         </span>
       </div>
       <div class="address flex-c" v-html="info.address2"></div>
-      <div class="google-btn flex-c">
-        <span class="flex-c" @click="isShowMapDialog2 = true">
+      <div class="google-btn flex-c" @click="isShowMapDialog2 = true">
+        <span class="flex-c">
           <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
         </span>
       </div>
