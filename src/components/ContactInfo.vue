@@ -32,7 +32,7 @@
       </div>
       <div class="address flex-c" v-html="info.address2"></div>
       <div class="google-btn flex-c">
-        <span class="flex-c" @click="showMapDialog">
+        <span class="flex-c" @click="isShowMapDialog2 = true">
           <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
         </span>
       </div>
@@ -56,6 +56,10 @@
   </el-dialog>
   <el-dialog title :visible.sync="isShowMapDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
     <MapDialog :link="info.googleLink" :address="info.address" />
+  </el-dialog>
+
+  <el-dialog title :visible.sync="isShowMapDialog2" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
+    <MapDialog :link="info.googleLink2" :address="info.address2" />
   </el-dialog>
   </div>
 </template>
@@ -82,6 +86,7 @@ export default {
       isShowCallDialog: false,
       isShowMessengerDialog: false,
       isShowMapDialog: false,
+      isShowMapDialog2: false,
     }
   },
   methods: {

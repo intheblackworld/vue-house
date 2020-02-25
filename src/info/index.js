@@ -4,7 +4,7 @@ export default {
   googleSrc:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.4133154679057!2d121.54507481500598!3d25.02004388397876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa2ff4247133%3A0x798f754d4f0ebbca!2zMTA25Y-w5YyX5biC5aSn5a6J5Y2A5Z-66ZqG6Lev5LiJ5q61MjAtMeiZnw!5e0!3m2!1szh-TW!2stw!4v1582457601443!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/3ZwyNvyAcLRSsaEK9',
-  phone: '07-9555588',
+  phone: '02-2738-6776',
   fbLink:
     'https://www.facebook.com/dunnanhowhow/',
   fbMessage: 'https://m.me/dunnanhowhow/',

@@ -64,7 +64,9 @@
           <img src="~@/assets/img/close.png" alt class="close" @click="closeDialog" />
         </div>
       </div>
-      <div v-if="isMobile"></div>
+      <div v-if="isMobile">
+        
+      </div>
     </div>
   </div>
 </template>
