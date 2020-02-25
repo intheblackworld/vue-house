@@ -964,6 +964,7 @@
 @media screen and (max-width: 767px) {
   .bg {
     background-size: cover;
+  margin: 0;
   }
   
  .section1{
