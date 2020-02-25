@@ -7,7 +7,7 @@ export default {
   phone: '02-2738-6776',
   fbLink:
     'https://www.facebook.com/dunnanhowhow/',
-  fbMessage: 'https://m.me/dunnanhowhow/',
+  fbMessage: 'https://www.messenger.com/t/dunnanhowhow',
   caseName: '敦南好好',
   houseInfos: [
     ['建設公司', '捷順國際開發股份有限公司'],
