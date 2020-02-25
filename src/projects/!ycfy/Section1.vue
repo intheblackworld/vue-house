@@ -894,7 +894,7 @@
 .bg {
   background-size: cover;
   position: relative;
-  height: 100vh;
+	height: 100vh;
 }
 
 .img {

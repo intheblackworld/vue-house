@@ -17,6 +17,7 @@
   background-size: cover;
   position: relative;
   z-index: 2;
+  margin: 0 120px 0 0;
 }
 
 .img-bg {
@@ -41,6 +42,7 @@
 @media screen and (max-width: 767px) {
   .bg {
     background-size: cover;
+    margin: 0;
   }
 }
 </style>

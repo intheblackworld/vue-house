@@ -123,6 +123,7 @@
   background-image: url('./s1/kv_city_bg.jpg');
   background-position: bottom;
   background-repeat: no-repeat;
+  margin: 0 120px 0 0;
 }
 
 img {
@@ -480,6 +481,7 @@ img {
     background-size: cover;
     height: 100vh;
     position: relative;
+    margin: 0;
   }
 
   .subtitle {

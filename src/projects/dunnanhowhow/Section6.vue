@@ -144,6 +144,7 @@
   position: relative;
   overflow: hidden;
   background-color: #cb181e;
+  margin: 0 120px 0 0;
 }
 
 .img {
@@ -303,6 +304,7 @@
 @media screen and (max-width: 767px) {
   .bg {
     background-size: cover;
+    margin: 0;
   }
 
   .m-container {

@@ -55,10 +55,11 @@
   position: relative;
   z-index: 2;
   overflow: hidden;
+  margin: 0 120px 0 0;
 }
 
 .img {
-  width: 100vw;
+  width: 100%;
   height: auto;
   position: absolute;
   left: 0;
@@ -77,9 +78,9 @@
   width: calc(100vw * 700 / 1920);
   height: calc(100vw * 220 / 1920);
   background-color: rgba(0, 0, 0, 0.6);
-  padding-top: calc(100vw * 50 / 1920);
-  padding-left: calc(100vw * 67 / 1920);
-  padding-right: calc(100vw * 67 / 1920);
+  padding-top: calc(100% * 50 / 1920);
+  padding-left: calc(100% * 67 / 1920);
+  padding-right: calc(100% * 67 / 1920);
   position: absolute;
   top: calc(100vw * 170 / 1920);
   right: 0;
@@ -132,6 +133,7 @@
 @media screen and (max-width: 767px) {
   .bg {
     background-size: cover;
+    margin: 0;
   }
 
   .content {

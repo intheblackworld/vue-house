@@ -55,10 +55,11 @@
   overflow: hidden;
   display: flex;
   align-items: center;
+  margin: 0 120px 0 0;
 }
 
 .img {
-  width: 100vw;
+  width: 100%;
   height: auto;
   position: absolute;
   left: 0;
@@ -75,8 +76,8 @@
 
 .video-img {
   cursor: pointer;
-  width: calc(100vw * 850 / 1920);
-  left: calc(100vw * 890 / 1920);
+  width: calc(100% * 850 / 1920);
+  left: calc(100% * 890 / 1920);
   position: absolute;
   top: 25%;
 }
@@ -140,6 +141,7 @@
 @media screen and (max-width: 767px) {
   .bg {
     background-size: cover;
+    margin: 0;
   }
 
   .video-img {

@@ -65,10 +65,11 @@
   position: relative;
   z-index: 2;
   overflow: hidden;
+  margin: 0 120px 0 0;
 }
 
 .img {
-  width: 100vw;
+  width: 100%;
   height: auto;
   position: absolute;
   left: 0;
@@ -85,7 +86,7 @@
 
 img {
   position: absolute;
-  width: calc(100vw * 1210 / 1920);
+  width: calc(100% * 1210 / 1920);
   height: calc(100vw * 960 / 1920);
   left: 0;
   top: 0;
@@ -93,7 +94,7 @@ img {
 
 .text {
   position: absolute;
-  width: calc(100vw * 710 / 1920);
+  width: calc(100% * 710 / 1920);
   height: calc(100vw * 960 / 1920);
   right: 0;
   top: 0;
@@ -138,6 +139,7 @@ img {
 @media screen and (max-width: 767px) {
   .bg {
     background-size: cover;
+    margin: 0;
   }
 
   img {

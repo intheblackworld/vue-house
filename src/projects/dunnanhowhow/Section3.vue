@@ -48,8 +48,7 @@
         </div>
         <div id="section4">
           <div class="relative" id="section4-1">
-            <img src="./s3/bg1.png" alt class="img-bg" />
-            <img src="./s3/bg2.png" alt class="img-bg" />
+            <img src="./s3/bg3.png" alt class="img-bg" />
             <div class="left">
               <div :class="`slide slide1`" data-aos="fade" data-aos-delay="600">
                 <div
@@ -78,8 +77,7 @@
             </div>
           </div>
           <div class="relative" id="section4-2">
-            <img src="./s3/bg1.png" alt class="img-bg" />
-            <img src="./s3/bg2.png" alt class="img-bg" />
+            <img src="./s3/bg3.png" alt class="img-bg" />
             <div class="left">
               <div :class="`slide slide1`" data-aos="fade" data-aos-delay="600">
                 <div
@@ -108,8 +106,7 @@
             </div>
           </div>
           <div class="relative" id="section4-3">
-            <img src="./s3/bg1.png" alt class="img-bg" />
-            <img src="./s3/bg2.png" alt class="img-bg" />
+            <img src="./s3/bg3.png" alt class="img-bg" />
             <div class="left">
               <div :class="`slide slide1`" data-aos="fade" data-aos-delay="600">
                 <div
@@ -227,8 +224,7 @@
             </div>
           </div>
           <div class="relative">
-            <img src="./s3/mo/bg1.png" alt class="img-bg" />
-            <img src="./s3/mo/bg2.png" alt class="img-bg" />
+            <img src="./s4/mo/bg1.png" alt class="img-bg" />
             <div class="right">
               <div class="content">
                 <div class="title">好居生活宅</div>
@@ -257,8 +253,7 @@
             </div>
           </div>
           <div class="relative" id="section4-3">
-            <img src="./s3/mo/bg1.png" alt class="img-bg" />
-            <img src="./s3/mo/bg2.png" alt class="img-bg" />
+            <img src="./s4/mo/bg1.png" alt class="img-bg" />
             <div class="right">
               <div class="content">
                 <div class="title">好學人文宅</div>
@@ -287,8 +282,7 @@
             </div>
           </div>
           <div class="relative">
-            <img src="./s3/mo/bg1.png" alt class="img-bg" />
-            <img src="./s3/mo/bg2.png" alt class="img-bg" />
+            <img src="./s4/mo/bg1.png" alt class="img-bg" />
             <div class="right">
               <div class="content">
                 <div class="title">好購時尚宅</div>
@@ -335,6 +329,7 @@
   overflow: visible;
   background-image: url('./s3/bg.jpg');
   background-attachment: fixed;
+  margin: 0 120px 0 0;
 }
 
 .Masthead {
@@ -342,7 +337,7 @@
 }
 
 .img-bg {
-  width: 100vw !important;
+  width: 100% !important;
   margin: 0 auto;
   height: auto !important;
   position: absolute;
@@ -428,6 +423,18 @@
   }
 }
 
+#section4 {
+  .left {
+    img {
+      height: calc(100vw * 1080 / 1820);
+    }
+  }
+
+  .right {
+    height: calc(100vw * 810 / 1820);
+  }
+}
+
 .right {
   position: absolute;
   top: 0;
@@ -496,6 +503,7 @@
   .bg {
     background-size: cover;
     background-image: url('./s3/mo/bg.jpg');
+    margin: 0;
   }
 
   .m-img {
