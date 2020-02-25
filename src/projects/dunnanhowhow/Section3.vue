@@ -419,19 +419,20 @@
   top: 0;
   img {
     width: 100%;
-    height: calc(100vw * 810 / 1820);
+    height: calc(100vw * 801 / 1920);
   }
 }
 
 #section4 {
   .left {
     img {
-      height: calc(100vw * 1080 / 1820);
+      width: 100%;
+      height: calc(100vw * 1060 / 1920);
     }
   }
 
   .right {
-    height: calc(100vw * 810 / 1820);
+    height: calc(100vw * 801 / 1920);
   }
 }
 
