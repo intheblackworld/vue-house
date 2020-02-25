@@ -3,7 +3,14 @@
     <div class="bg relative">
       <div v-if="!isMobile">
         <img src="./s9/bg.jpg" alt class="img" />
-        <img src="./s9/yt.jpg" alt class="video-img" @click="openDialog" />
+        <img
+          src="./s9/yt.jpg"
+          alt
+          class="video-img"
+          @click="openDialog"
+          data-aos="fade"
+          data-aos-delay="500"
+        />
         <div class="title">3D示意圖僅供參考</div>
         <div :class="`video-dialog ${isShowDialog ? 'show' : ''}`">
           <iframe
@@ -18,7 +25,14 @@
       </div>
       <div v-else>
         <img src="./s9/bg_m.jpg" alt class="img" />
-        <img src="./s9/yt.jpg" alt class="video-img" @click="openDialog" />
+        <img
+          src="./s9/yt.jpg"
+          alt
+          class="video-img"
+          @click="openDialog"
+          data-aos="fade"
+          data-aos-delay="500"
+        />
         <div class="title">3D示意圖僅供參考</div>
         <div :class="`video-dialog ${isShowDialog ? 'show' : ''}`">
           <iframe
@@ -64,8 +78,7 @@
   width: calc(100vw * 850 / 1920);
   left: calc(100vw * 890 / 1920);
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 25%;
 }
 
 .title {

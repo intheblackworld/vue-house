@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="contact-info">
-    <!-- <img class="logo" src="@/assets/img/contact-logo.png" alt="" /> -->
+    <img class="logo" src="@/assets/img/contact-logo.png" alt="" />
     <div class="info">
       <div class="btn flex-c" @click="showCallDialog">
         <span class="flex-c">
@@ -125,7 +125,7 @@ export default {
   position: relative;
   z-index: 3;
   width: 1200px;
-  height: 460px;
+  height: 615px;
 
   margin: 0 auto;
   // padding: 60px 0 50px;

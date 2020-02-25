@@ -26,23 +26,25 @@ export default {
   },
   mounted() {
     if (this.isMobile) {
-      const map = document.querySelector('.map')
-      const mapBg = document.querySelector('.map-bg')
-      const text = document.querySelector('.map .text')
-      if (text) {
-        text.style.left = `${mapBg.clientWidth / 2 - 100}px`
-      }
-      const hand = document.querySelector('.map .hand')
+      setTimeout(() => {
+        const map = document.querySelector('.map')
+        const mapBg = document.querySelector('.map-bg')
+        const text = document.querySelector('.map .text')
+        if (text) {
+          text.style.left = `${mapBg.clientWidth / 2 - 100}px`
+        }
+        const hand = document.querySelector('.map .hand')
 
-      if (hand) {
-        hand.style.width = `${mapBg.clientWidth}px`
-        // hand.style.left = `${mapBg.clientWidth / 2 - 50}px`
-      }
+        if (hand) {
+          hand.style.width = `${mapBg.clientWidth}px`
+          // hand.style.left = `${mapBg.clientWidth / 2 - 50}px`
+        }
 
-      map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2, 0)
+        map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2, 0)
+      }, 400)
       setTimeout(() => {
         this.hide = false
-      }, 600)
+      }, 700)
     }
   },
 }

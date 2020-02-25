@@ -47,7 +47,7 @@
           </div>
         </div>
         <div id="section4">
-          <div class="relative">
+          <div class="relative" id="section4-1">
             <img src="./s3/bg1.png" alt class="img-bg" />
             <img src="./s3/bg2.png" alt class="img-bg" />
             <div class="left">
@@ -77,7 +77,7 @@
               </div>
             </div>
           </div>
-          <div class="relative">
+          <div class="relative" id="section4-2">
             <img src="./s3/bg1.png" alt class="img-bg" />
             <img src="./s3/bg2.png" alt class="img-bg" />
             <div class="left">
@@ -107,7 +107,7 @@
               </div>
             </div>
           </div>
-          <div class="relative">
+          <div class="relative" id="section4-3">
             <img src="./s3/bg1.png" alt class="img-bg" />
             <img src="./s3/bg2.png" alt class="img-bg" />
             <div class="left">
@@ -208,7 +208,7 @@
         </div>
 
         <div id="section4">
-          <div class="relative">
+          <div class="relative" id="section4-1">
             <div :class="`slide slide1`" data-aos="fade" data-aos-delay="600">
               <div
                 v-for="(slide, index) in slideList1"
@@ -238,7 +238,7 @@
               </div>
             </div>
           </div>
-          <div class="relative">
+          <div class="relative" id="section4-2">
             <div :class="`slide slide1`" data-aos="fade" data-aos-delay="600">
               <div
                 v-for="(slide, index) in slideList2"
@@ -256,7 +256,7 @@
               </div>
             </div>
           </div>
-          <div class="relative">
+          <div class="relative" id="section4-3">
             <img src="./s3/mo/bg1.png" alt class="img-bg" />
             <img src="./s3/mo/bg2.png" alt class="img-bg" />
             <div class="right">

@@ -5,7 +5,8 @@
       <div v-if="!isMobile">
         <div class="container">
           <div class="content">
-            <div class="avatar">
+            <div class="avatar" data-aos="fade"
+        data-aos-delay="200">
               <img src="./s6/1/1.jpg" alt />
               <div class="border"></div>
             </div>
@@ -24,9 +25,12 @@
                 </div>
               </div>
               <div class="imgs">
-                <img src="./s6/1/2.jpg" alt @click="showDialog(0)" />
-                <img src="./s6/1/3.jpg" alt @click="showDialog(1)" />
-                <img src="./s6/1/4.jpg" alt @click="showDialog(2)" />
+                <img src="./s6/1/2.jpg" alt @click="showDialog(0)" data-aos="fade"
+        data-aos-delay="300" />
+                <img src="./s6/1/3.jpg" alt @click="showDialog(1)" data-aos="fade"
+        data-aos-delay="400" />
+                <img src="./s6/1/4.jpg" alt @click="showDialog(2)" data-aos="fade"
+        data-aos-delay="500" />
               </div>
             </div>
           </div>
@@ -39,23 +43,27 @@
                 </div>
                 <div class="desc">打造機能人文公設空間，感受裝置藝術所釋放的人文情懷，在簡潔時尚的環境流動中，感受美學公共空間的魅力</div>
                 <div class="desc">
-                  代表業績：<br />
-                  台中帝寶<br />
-                  寶舖縱橫天廈<br />
-                  大隱頤海大院<br />
-                  北京中軸國際
+                  代表業績：
+                  <br />台中帝寶
+                  <br />寶舖縱橫天廈
+                  <br />大隱頤海大院
+                  <br />北京中軸國際
                 </div>
               </div>
               <div class="imgs">
-                <img src="./s6/2/2.jpg" alt @click="showDialog(3)" />
-                <img src="./s6/2/3.jpg" alt @click="showDialog(4)" />
-                <img src="./s6/2/4.jpg" alt @click="showDialog(5)" />
-                <img src="./s6/2/5.jpg" alt @click="showDialog(6)" />
+                <img src="./s6/2/2.jpg" alt @click="showDialog(3)" data-aos="fade"
+        data-aos-delay="500" />
+                <img src="./s6/2/3.jpg" alt @click="showDialog(4)" data-aos="fade"
+        data-aos-delay="600" />
+                <img src="./s6/2/4.jpg" alt @click="showDialog(5)" data-aos="fade"
+        data-aos-delay="700" />
+                <img src="./s6/2/5.jpg" alt @click="showDialog(6)" data-aos="fade"
+        data-aos-delay="800" />
               </div>
             </div>
-            <div class="avatar">
+            <div class="avatar" data-aos="fade"
+        data-aos-delay="1000">
               <img src="./s6/2/1.jpg" alt />
-              <div class="border"></div>
             </div>
           </div>
         </div>
@@ -65,7 +73,67 @@
         </div>
       </div>
       <div v-if="isMobile">
-        
+        <div class="m-container">
+          <div class="top-imgs">
+            <img src="./s6/1/1_m.jpg" alt data-aos="fade"
+        data-aos-delay="300" />
+            <div class="imgss">
+              <img src="./s6/1/2.jpg" alt @click="showDialog(0)" data-aos="fade"
+        data-aos-delay="400" />
+              <img src="./s6/1/3.jpg" alt @click="showDialog(1)" data-aos="fade"
+        data-aos-delay="500" />
+              <img src="./s6/1/4.jpg" alt @click="showDialog(2)" data-aos="fade"
+        data-aos-delay="600" />
+            </div>
+          </div>
+          <div class="text">
+            <div class="title">
+              豪邸御用名家-
+              <br />三十三景觀設計-
+              <br />鄭如珊
+            </div>
+            <div class="desc">創造人在環境中流動與呼吸的藝術，回歸人文角度，不只是在空間種樹，而是讓人與植物一起涵養共生。</div>
+            <div class="desc">
+              代表業績：
+              <br />國泰美術觀道
+              <br />吉美敦南花園
+              <br />三發景悅
+            </div>
+          </div>
+          <div class="top-imgs top-imgs2">
+            <div class="imgss">
+              <img src="./s6/2/2.jpg" alt @click="showDialog(3)" data-aos="fade"
+        data-aos-delay="500" />
+              <img src="./s6/2/3.jpg" alt @click="showDialog(4)" data-aos="fade"
+        data-aos-delay="600" />
+              <img src="./s6/2/4.jpg" alt @click="showDialog(5)" data-aos="fade"
+        data-aos-delay="700" />
+              <img src="./s6/2/5.jpg" alt @click="showDialog(6)" data-aos="fade"
+        data-aos-delay="800" />
+            </div>
+            <img src="./s6/2/1_m.png" alt data-aos="fade"
+        data-aos-delay="1000" />
+          </div>
+          <div class="text">
+            <div class="title">
+              兩岸高端豪宅總監-
+              <br />珩荷空間設計-
+              <br />徐慈姿
+            </div>
+            <div class="desc">打造機能人文公設空間，感受裝置藝術所釋放的人文情懷，在簡潔時尚的環境流動中，感受美學公共空間的魅力</div>
+            <div class="desc">
+              代表業績：
+              <br />台中帝寶
+              <br />寶舖縱橫天廈
+              <br />大隱頤海大院
+              <br />北京中軸國際
+            </div>
+          </div>
+        </div>
+        <div :class="`dialog ${isShow ? 'show' : ''}`">
+          <img :src="dialogImg" alt class="dialog-img" />
+          <img src="~@/assets/img/close.png" alt class="close" @click="closeDialog" />
+        </div>
       </div>
     </div>
   </div>
@@ -235,6 +303,77 @@
 @media screen and (max-width: 767px) {
   .bg {
     background-size: cover;
+  }
+
+  .m-container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .top-imgs {
+    width: 100vw;
+    display: flex;
+    > img {
+      width: calc(100vw * 233 / 375);
+    }
+
+    > .imgss {
+      width: calc(100vw * 142 / 375);
+      height: calc(100vw * 290 / 375);
+      padding: 0 5px;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: space-between;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .top-imgs2 {
+    > img {
+      width: calc(100vw * 235 / 375);
+    }
+    > .imgss {
+      width: calc(100vw * 130 / 375);
+      height: calc(100vw * 394 / 375);
+    }
+  }
+
+  .text {
+    width: calc(100vw * 300 / 375);
+    margin: 0 auto;
+
+    .title {
+      font-size: calc(100vw * 32 / 375);
+      letter-spacing: 2.5px;
+      line-height: 1.2;
+      margin-top: 25px;
+      margin-bottom: 15px;
+    }
+
+    .desc {
+      font-size: calc(100vw * 18 / 375);
+    }
+  }
+
+  .dialog {
+    .dialog-img {
+      width: 100vw;
+      height: calc(90vw * 1280 / 1920);
+      max-width: 100vw;
+      max-height: 100vh;
+    }
+
+    &.show {
+      z-index: 101;
+    }
+
+    .close {
+      width: 40px;
+      top: calc(50% - 90vw * 250 / 750 - 45px);
+      right: 10px;
+    }
   }
 }
 </style>

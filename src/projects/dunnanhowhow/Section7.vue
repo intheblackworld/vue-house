@@ -4,8 +4,10 @@
       <div v-if="!isMobile">
         <div class="relative">
           <img src="./s7/1/bg.jpg" alt class="img" />
-          <img src="./s7/1/img.jpg" alt />
-          <div class="text">
+          <img src="./s7/1/img.jpg" alt data-aos="fade"
+        data-aos-delay="300" />
+          <div class="text" data-aos="fade"
+        data-aos-delay="500">
             <div>
               <div class="title">精品挑高4米2飯店大廳</div>
               <div class="desc">穿上低調奢華，演繹流金歲月社交場，尊寵每個回家的主人。</div>
@@ -14,8 +16,10 @@
         </div>
 
         <div class="relative">
-          <img src="./s7/2/bg.jpg" alt class="img" />
-          <img src="./s7/2/img.jpg" alt />
+          <img src="./s7/2/bg.jpg" alt class="img" data-aos="fade"
+        data-aos-delay="300" />
+          <img src="./s7/2/img.jpg" alt data-aos="fade"
+        data-aos-delay="500" />
           <div class="text">
             <div>
               <div class="title">
@@ -30,16 +34,20 @@
       <div v-if="isMobile">
         <div class="relative">
           <img src="./s7/1/bg_m.jpg" alt class="img" />
-          <img src="./s7/1/img.jpg" alt />
-          <div class="text">
+          <img src="./s7/1/img.jpg" alt data-aos="fade"
+        data-aos-delay="300" />
+          <div class="text" data-aos="fade"
+        data-aos-delay="500">
             <div class="title">精品挑高4米2<br />飯店大廳</div>
             <div class="desc">穿上低調奢華，演繹流金歲月社交場，尊寵每個回家的主人。</div>
           </div>
         </div>
         <div class="relative">
           <img src="./s7/2/bg_m.jpg" alt class="img" />
-          <img src="./s7/2/img.jpg" alt />
-          <div class="text">
+          <img src="./s7/2/img.jpg" alt data-aos="fade"
+        data-aos-delay="300" />
+          <div class="text" data-aos="fade"
+        data-aos-delay="500">
             <div class="title">
                 空中花火微醺<br />
                 <span>Lounge Bar</span>
