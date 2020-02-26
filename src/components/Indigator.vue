@@ -48,7 +48,7 @@
     width:0.7em;
     height:0.7em;
     border: 1px solid #fff;
-    border-radius: 999px;margin: calc(50% - 0.3em) 0 0 calc(50% - 0.3em) ;
+    border-radius: 999px;margin: calc(50% - 0.3em) auto 0 auto;
     transition: all 0.3s;
       background: rgba(0, 0, 0, 0.2);
     }
