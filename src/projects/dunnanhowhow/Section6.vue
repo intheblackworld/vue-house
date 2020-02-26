@@ -394,12 +394,22 @@
       width: calc(100vw * 142 / 375);
       height: calc(100vw * 290 / 375);
     
+<<<<<<< HEAD
       display: flex; flex-direction:column;
       > *{margin:calc(100vw * 10 / 375) 0 0 0  ;
      &:nth-child(1){margin: 0;}
      }
       img {
         width: 100%;flex:1 1 auto;
+=======
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      img {
+        width: 100%;
+        display: block;
+        margin-bottom: 7px;
+>>>>>>> 30c9109d6b92864b585aa519d51013bcd664c3f3
       }
     }
   }
