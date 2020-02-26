@@ -355,7 +355,7 @@
 .img-bg {
   width: 100% !important;
   margin: 0 auto;
-  height: 100% !important;
+  height: 100%;
   position: absolute;
   right:0;
   top: 0;
@@ -512,6 +512,8 @@
 #section5 .img-bg {
   &:nth-child(1) {
     position: relative;
+    height: calc(100vw * 1060 / 1920);
+    object-fit:initial;
   }
 }
 
