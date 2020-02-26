@@ -389,7 +389,7 @@
     > .imgss {
       width: calc(100vw * 142 / 375);
       height: calc(100vw * 290 / 375);
-      padding: 0 5px;
+    
       display: flex;
       flex-wrap: wrap;
       align-content: space-between;
@@ -400,6 +400,7 @@
   }
 
   .top-imgs2 {
+    height: calc(100vw * 394 / 375);
     > img {
       width: calc(100vw * 235 / 375);
     }

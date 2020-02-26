@@ -4,9 +4,19 @@
     <div class="bg relative">
       <div v-if="!isMobile">
         <div id="section3">
-          <div class="relative">
-            <img src="./s3/bg1.png" alt class="img-bg" />
-            <img src="./s3/bg2.png" alt class="img-bg" />
+          <div class="img-bg p1">
+          <parallax breakpoint="(min-width: 68px)" :speed-factor="0.5" direction="down">
+            <img class="js-parallax" data-parallax="0" src="./s3/bg1.png" alt />
+            <img class="js-parallax" data-parallax="1" src="./s3/bg2.png" alt  />
+          </parallax>
+           </div>
+          <div class="img-bg p2">
+          <parallax breakpoint="(min-width: 10px)" :speed-factor="0.7" direction="down">
+            <img class="js-parallax" data-parallax="10" src="./s3/bg2.png" alt />
+            <img class="js-parallax" data-parallax="2" src="./s3/bg1.png" alt />
+          </parallax>
+           </div>
+          <div class="relative flex">
             <div class="left">
               <img src="./s3/信義商圈.jpg" alt class />
               <div class="img-title">信義商圈</div>
@@ -16,17 +26,15 @@
                 <div class="subtitle">Entertainment</div>
                 <div class="title">娛樂處處任你行</div>
                 <div class="desc">
-                  鄰近六大娛樂商圈
-                  <br />好逛 - 師大、永康
-                  <br />好吃 - 公館、通化
-                  <br />好玩 - 信義、忠孝
+                  鄰近六大娛樂商圈<br />
+                  好逛 - 師大、永康<br />
+                  好吃 - 公館、通化<br />
+                  好玩 - 信義、忠孝
                 </div>
               </div>
             </div>
           </div>
-          <div class="relative">
-            <img src="./s3/bg1.png" alt class="img-bg" />
-            <img src="./s3/bg2.png" alt class="img-bg" />
+          <div class="relative flex">
             <div class="left">
               <img src="./s3/六張犁捷運站.jpg" alt class />
               <div class="img-title">六張犁捷運站</div>
@@ -36,19 +44,23 @@
                 <div class="subtitle">City Center</div>
                 <div class="title">鬧中取靜真天龍</div>
                 <div class="desc">
-                  捷運步行5分鐘 環繞21條公車線
-                  <br />3捷 - 板南線、信義線、文湖線
-                  <br />4快 - 建國、基隆高架、
-                  <br />環東大道、水源快速
-                  <br />1高 - 北二高
+                  捷運步行5分鐘 環繞21條公車線<br />
+                  3捷 - 板南線、信義線、文湖線<br />
+                  4快 - 建國、基隆高架、環東大道、水源快速<br />
+                  1高 - 北二高
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div id="section4">
-          <div class="relative" id="section4-1">
-            <img src="./s3/bg3.png" alt class="img-bg" />
+          <div class="img-bg p3">
+          <parallax breakpoint="(min-width: 80px)" :speed-factor="0.6" direction="down">
+            <img class="js-parallax" data-parallax="2" src="./s3/bg3.png" alt />
+            <img class="js-parallax" data-parallax="2" src="./s3/bg3.png" alt />
+          </parallax>
+           </div>
+          <div class="relative flex" id="section4-1">
             <div class="left">
               <div :class="`slide slide1`" data-aos="fade" data-aos-delay="600">
                 <div
@@ -70,14 +82,14 @@
             <div class="right">
               <div class="content">
                 <div class="title">好居生活宅</div>
-                <div
-                  class="desc"
-                >食衣育樂一手抓，全方位生活機能，全聯、屈臣氏、康是美…藥妝超市任你逛！大安運動中心周末運動好去處！敦南綠蔭道、多處綠海公園漫步樂活步調！通化、公館、師大夜市，美食揪團滿足你的胃！</div>
+                <div class="desc" >食衣育樂一手抓，全方位生活機能，全聯、屈臣氏、康是美…藥妝超市任你逛！<br />
+                大安運動中心周末運動好去處！<br />
+                敦南綠蔭道、多處綠海公園漫步樂活步調！<br />
+                通化、公館、師大夜市，美食揪團滿足你的胃！</div>
               </div>
             </div>
           </div>
-          <div class="relative" id="section4-2">
-            <img src="./s3/bg3.png" alt class="img-bg" />
+          <div class="relative flex" id="section4-2">
             <div class="left">
               <div :class="`slide slide1`" data-aos="fade" data-aos-delay="600">
                 <div
@@ -105,8 +117,7 @@
               </div>
             </div>
           </div>
-          <div class="relative" id="section4-3">
-            <img src="./s3/bg3.png" alt class="img-bg" />
+          <div class="relative flex" id="section4-3">
             <div class="left">
               <div :class="`slide slide1`" data-aos="fade" data-aos-delay="600">
                 <div
@@ -134,6 +145,7 @@
           </div>
         </div>
         <div id="section5" class="relative">
+          <img src="./s5/bg4.png" alt class="img-bg" />
           <img src="./s5/bg1.png" alt class="img-bg" />
           <img src="./s5/bg3.png" alt class="img-bg" />
           <img src="./s5/bg2.png" alt class="img-bg" />
@@ -196,7 +208,7 @@
                   捷運步行5分鐘 環繞21條公車線
                   <br />3捷 - 板南線、信義線、文湖線
                   <br />4快 - 建國、基隆高架、
-                  <br />環東大道、水源快速
+                  <br />　 　 環東大道、水源快速
                   <br />1高 - 北二高
                 </div>
               </div>
@@ -230,7 +242,10 @@
                 <div class="title">好居生活宅</div>
                 <div
                   class="desc"
-                >食衣育樂一手抓，全方位生活機能，全聯、屈臣氏、康是美…藥妝超市任你逛！大安運動中心周末運動好去處！敦南綠蔭道、多處綠海公園漫步樂活步調！通化、公館、師大夜市，美食揪團滿足你的胃！</div>
+                >食衣育樂一手抓，全方位生活機能，全聯、屈臣氏、康是美…藥妝超市任你逛！<br/>
+                大安運動中心周末運動好去處！<br/>
+                敦南綠蔭道、多處綠海公園漫步樂活步調！<br/>
+                通化、公館、師大夜市，美食揪團滿足你的胃！</div>
               </div>
             </div>
           </div>
@@ -329,6 +344,7 @@
   overflow: visible;
   background-image: url('./s3/bg.jpg');
   background-attachment: fixed;
+  background-position:center center;
   margin: 0 120px 0 0;
 }
 
@@ -339,16 +355,24 @@
 .img-bg {
   width: 100% !important;
   margin: 0 auto;
-  height: auto !important;
+  height: 100%;
   position: absolute;
-  left: 0;
+  right:0;
   top: 0;
   object-fit: cover;
   display: block;
-
-  &:nth-child(1) {
-    position: relative;
-  }
+  &.p1{
+  top:-30vw;
+  div img:nth-child(2) {
+    opacity: 0
+  }}
+  &.p2{
+  top: -22vw;
+  div img:nth-child(2) {
+    opacity: 0
+  }}
+  &.p3{
+  top: 2vw;}
 }
 
 .img-title {
@@ -356,7 +380,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 40px;
+  height:2.3em;
   background-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 0),
@@ -412,17 +436,18 @@
   margin-bottom: 10px;
 }
 
+.img-bg{position: absolute;top: 0;right: 0;}
+.flex{display: flex;}
 .left {
   width: calc(100vw * 1213 / 1920);
-  position: absolute;
-  left: 0;
-  top: 0;
+  flex:1 1 auto;
+  overflow: hidden;
+  position: relative;
   img {
     width: 100%;
     height: calc(100vw * 801 / 1920);
   }
 }
-
 #section4 {
   .left {
     img {
@@ -431,17 +456,10 @@
     }
   }
 
-  .right {
-    height: calc(100vw * 801 / 1920);
-  }
 }
 
 .right {
-  position: absolute;
-  top: 0;
-  left: calc(100vw * 1213 / 1920);
   width: calc(100vw * 707 / 1920);
-  height: calc(100vw * 810 / 1820);
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -488,21 +506,26 @@
 }
 
 #section4 .content {
-  width: calc(100vw * 287 / 1920);
+  margin: 0 9vw 0 0;
 }
 
 #section5 .img-bg {
   &:nth-child(1) {
     position: relative;
+    height: calc(100vw * 1060 / 1920);
+    object-fit:initial;
   }
 }
+
+.is-parallax{transition: all 0.3s;}
+
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
 }
 
 @media screen and (max-width: 767px) {
   .bg {
-    background-size: cover;
+    background-size: 100% auto;
     background-image: url('./s3/mo/bg.jpg');
     margin: 0;
   }
@@ -553,6 +576,7 @@
   #section5 {
     .content {
       width: calc(100vw * 290 / 375);
+      margin: 0 auto;
     }
   }
 
@@ -571,6 +595,10 @@
       margin-bottom: 20px;
     }
   }
+
+.img-title {
+      font-size:12px;
+}
 }
 </style>
 

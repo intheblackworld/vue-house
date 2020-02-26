@@ -6,6 +6,7 @@
           <img src="./s7/1/bg.jpg" alt class="img" />
           <img src="./s7/1/img.jpg" alt data-aos="fade"
         data-aos-delay="300" />
+        <div class="img-title">3D示意圖僅供參考</div>
           <div class="text" data-aos="fade"
         data-aos-delay="500">
             <div>
@@ -18,6 +19,7 @@
         <div class="relative">
           <img src="./s7/2/bg.jpg" alt class="img" data-aos="fade"
         data-aos-delay="300" />
+        <div class="img-title">3D示意圖僅供參考</div>
           <img src="./s7/2/img.jpg" alt data-aos="fade"
         data-aos-delay="500" />
           <div class="text">
@@ -36,6 +38,7 @@
           <img src="./s7/1/bg_m.jpg" alt class="img" />
           <img src="./s7/1/img.jpg" alt data-aos="fade"
         data-aos-delay="300" />
+        <div class="img-title">3D示意圖僅供參考</div>
           <div class="text" data-aos="fade"
         data-aos-delay="500">
             <div class="title">精品挑高4米2<br />飯店大廳</div>
@@ -46,6 +49,7 @@
           <img src="./s7/2/bg_m.jpg" alt class="img" />
           <img src="./s7/2/img.jpg" alt data-aos="fade"
         data-aos-delay="300" />
+        <div class="img-title">3D示意圖僅供參考</div>
           <div class="text" data-aos="fade"
         data-aos-delay="500">
             <div class="title">
@@ -87,11 +91,10 @@
 img {
   position: absolute;
   width: calc(100% * 1210 / 1920);
-  height: calc(100vw * 960 / 1920);
+  height: 100%;
   left: 0;
   top: 0;
 }
-
 .text {
   position: absolute;
   width: calc(100% * 710 / 1920);
@@ -131,6 +134,22 @@ img {
     color: #ffffff;
   }
 }
+.img-title {
+  width: calc(100% * 1210 / 1920);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.56;
+  letter-spacing: normal;
+  color: #ffffff;
+  text-align: right;
+  padding: 5px 10px 0 0;
+  z-index: 3;
+}
 
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -166,6 +185,8 @@ img {
       font-size: calc(100vw * 18 / 375);
     }
   }
+.img-title {width: 100%;top: 68vw;opacity: 0.8;
+font-size:12px;}
 }
 </style>
 
