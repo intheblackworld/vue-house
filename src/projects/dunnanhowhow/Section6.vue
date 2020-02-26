@@ -382,6 +382,11 @@
     width: 100vw;
     display: flex;
     align-items: flex-start;
+    // height: calc(100vw * 290 / 375);
+    // > *{margin: calc(100vw * 10 / 375) 0 0  calc(100vw * 10 / 375);
+    // &:nth-child(1){margin: 0;}
+    // &:nth-child(2){margin: 0 0 0 calc(100vw * 10 / 375);}
+    // }
     > img {
       width: calc(100vw * 233 / 375);
     }
