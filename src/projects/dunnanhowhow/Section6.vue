@@ -397,9 +397,11 @@
     
       display: flex;
       flex-wrap: wrap;
-      align-content: space-between;
+      align-content: flex-start;
       img {
         width: 100%;
+        display: block;
+        margin-bottom: 7px;
       }
     }
   }
