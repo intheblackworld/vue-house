@@ -382,11 +382,10 @@
     width: 100vw;
     display: flex;
     align-items: flex-start;
-    // height: calc(100vw * 290 / 375);
-    // > *{margin: calc(100vw * 10 / 375) 0 0  calc(100vw * 10 / 375);
-    // &:nth-child(1){margin: 0;}
-    // &:nth-child(2){margin: 0 0 0 calc(100vw * 10 / 375);}
-    // }
+    height: calc(100vw * 290 / 375);
+     > *{margin:0 0 0  calc(100vw * 10 / 375);
+     &:nth-child(1){margin: 0;}
+     }
     > img {
       width: calc(100vw * 233 / 375);
     }
@@ -395,11 +394,12 @@
       width: calc(100vw * 142 / 375);
       height: calc(100vw * 290 / 375);
     
-      display: flex;
-      flex-wrap: wrap;
-      align-content: space-between;
+      display: flex; flex-direction:column;
+      > *{margin:calc(100vw * 10 / 375) 0 0 0  ;
+     &:nth-child(1){margin: 0;}
+     }
       img {
-        width: 100%;
+        width: 100%;flex:1 1 auto;
       }
     }
   }

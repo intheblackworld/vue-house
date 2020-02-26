@@ -9,11 +9,9 @@
         </div>
 
         <h1 title="敦南好好 3米6自由式｜2房好生活" class="subtitle">
-          <div class="kv_subslogan">
-            <parallax breakpoint="(min-width: 68px)" :speed-factor="1.2" direction="down">
+          <parallax breakpoint="(min-width: 68px)" :speed-factor="0.2" direction="down">
               <img src="./s1/kv_slogan.png" alt="敦南好好 就愛市中心首購住大安" />
-            </parallax>
-          </div>
+          </parallax>
         </h1>
       </div>
       <div class="kv_decoration">
@@ -138,6 +136,16 @@ img {
   max-width: 37px;
   width: 9.8666666667%;
 }
+.kv_banner {
+  position: absolute;
+  top: 22.4887556222%;
+  left: 50%;
+  transform: translateX(-50%);
+  width:calc(100vw * 426 / 1920);
+  z-index: 2;
+  opacity: 0;
+  transition: 0.7s opacity;
+}
 @media (min-width: 768px) {
   .flag-1 {
     max-width: 98px;
@@ -167,32 +175,8 @@ img {
   position: absolute;
 }
 
-.kv_banner {
-  position: absolute;
-  top: 22.4887556222%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 56.8%;
-  z-index: 2;
-  opacity: 0;
-  transition: 0.7s opacity;
-}
-@media (min-width: 768px) {
-  .kv_banner {
-    max-width: 300px;
-  }
-}
-@media (min-width: 1200px) {
-  .kv_banner {
-    max-width: 423px;
-  }
-}
-@media screen and (max-height: 800px) and (min-width: 992px) {
-  .kv_banner {
-    max-width: 212px;
-    top: 22.2222222222%;
-  }
-}
+
+
 .kv_logo {
   position: relative;
   z-index: 1;
@@ -470,7 +454,7 @@ img {
   position: absolute;
   left: 0;
   right: 0;
-  top: 130%;
+  top: calc(23% + 100vw * 426 / 1920);
   margin: 0 auto;
 }
 /* 平板尺寸 */
@@ -484,14 +468,10 @@ img {
     position: relative;
     margin: 0;
   }
-
-  .subtitle {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 130%;
-    margin: 0 auto;
-  }
+  .kv_banner{
+    width: calc(100vw * 426 / 750);
+    }
+.subtitle{top: calc(23% + 100vw * 426 / 750);}
 }
 
 @media screen and (max-width: 576px) {

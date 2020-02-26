@@ -164,9 +164,7 @@
               </div>
               <div class="desc">不只在陽台種樹，回歸人文角度，學習在水泥叢林與大自然有機共生。</div>
               <div class="title">
-                精緻奢華21-24坪時尚宅
-                <br />3.6米挑高空間精品寓邸
-                <br />靜巷純3併戶戶雙面採光
+                精緻奢華21-24坪時尚宅3.6米挑高空間精品寓邸靜巷純3併戶戶雙面採光 　
               </div>
             </div>
           </div>
@@ -323,9 +321,9 @@
                 </div>
                 <div class="desc">不只在陽台種樹，回歸人文角度，學習在水泥叢林與大自然有機共生。</div>
                 <div class="title">
-                  精緻奢華21-24坪時尚宅
-                  <br />3.6米挑高空間精品寓邸
-                  <br />靜巷純3併戶戶雙面採光
+                  <span>精緻奢華21-24坪時尚宅</span><br />
+                  3.6米挑高空間精品寓邸<br />
+                  靜巷純3併戶戶雙面採光
                 </div>
               </div>
             </div>
@@ -434,6 +432,7 @@
   text-align: left;
   color: #ffffff;
   margin-bottom: 10px;
+  width: calc(100vw * 450 / 1920);
 }
 
 .img-bg{position: absolute;top: 0;right: 0;}
@@ -496,12 +495,13 @@
   }
 
   .text {
-    width: calc(100vw * 400 / 1920);
   }
 
   .title {
     font-size: calc(100vw * 29 / 1920);
     line-height: 1.56;
+    width:15em;
+    text-align: justify;
   }
 }
 
@@ -570,6 +570,7 @@
   }
   .desc {
     font-size: calc(100vw * 18 / 375);
+  width:auto;
   }
 
   #section4,
@@ -590,6 +591,7 @@
       font-size: calc(100vw * 25 / 375);
       white-space: nowrap;
       letter-spacing: 2.4px;
+      span{letter-spacing: 1.8px;}
     }
     .desc {
       margin-bottom: 20px;
