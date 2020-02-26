@@ -5,8 +5,7 @@
       <div v-if="!isMobile">
         <div class="container">
           <div class="content">
-            <div class="avatar" data-aos="fade"
-        data-aos-delay="200">
+            <div class="avatar" data-aos="fade" data-aos-delay="200">
               <img src="./s6/1/1.jpg" alt />
               <div class="border"></div>
             </div>
@@ -25,12 +24,27 @@
                 </div>
               </div>
               <div class="imgs">
-                <img src="./s6/1/2.jpg" alt @click="showDialog(0)" data-aos="fade"
-        data-aos-delay="300" />
-                <img src="./s6/1/3.jpg" alt @click="showDialog(1)" data-aos="fade"
-        data-aos-delay="400" />
-                <img src="./s6/1/4.jpg" alt @click="showDialog(2)" data-aos="fade"
-        data-aos-delay="500" />
+                <img
+                  src="./s6/1/2.jpg"
+                  alt
+                  @click="showDialog(0)"
+                  data-aos="fade"
+                  data-aos-delay="300"
+                />
+                <img
+                  src="./s6/1/3.jpg"
+                  alt
+                  @click="showDialog(1)"
+                  data-aos="fade"
+                  data-aos-delay="400"
+                />
+                <img
+                  src="./s6/1/4.jpg"
+                  alt
+                  @click="showDialog(2)"
+                  data-aos="fade"
+                  data-aos-delay="500"
+                />
               </div>
             </div>
           </div>
@@ -51,18 +65,37 @@
                 </div>
               </div>
               <div class="imgs">
-                <img src="./s6/2/2.jpg" alt @click="showDialog(3)" data-aos="fade"
-        data-aos-delay="500" />
-                <img src="./s6/2/3.jpg" alt @click="showDialog(4)" data-aos="fade"
-        data-aos-delay="600" />
-                <img src="./s6/2/4.jpg" alt @click="showDialog(5)" data-aos="fade"
-        data-aos-delay="700" />
-                <img src="./s6/2/5.jpg" alt @click="showDialog(6)" data-aos="fade"
-        data-aos-delay="800" />
+                <img
+                  src="./s6/2/2.jpg"
+                  alt
+                  @click="showDialog(3)"
+                  data-aos="fade"
+                  data-aos-delay="500"
+                />
+                <img
+                  src="./s6/2/3.jpg"
+                  alt
+                  @click="showDialog(4)"
+                  data-aos="fade"
+                  data-aos-delay="600"
+                />
+                <img
+                  src="./s6/2/4.jpg"
+                  alt
+                  @click="showDialog(5)"
+                  data-aos="fade"
+                  data-aos-delay="700"
+                />
+                <img
+                  src="./s6/2/5.jpg"
+                  alt
+                  @click="showDialog(6)"
+                  data-aos="fade"
+                  data-aos-delay="800"
+                />
               </div>
             </div>
-            <div class="avatar" data-aos="fade"
-        data-aos-delay="1000">
+            <div class="avatar" data-aos="fade" data-aos-delay="1000">
               <img src="./s6/2/1.png" alt />
             </div>
           </div>
@@ -75,15 +108,29 @@
       <div v-if="isMobile">
         <div class="m-container">
           <div class="top-imgs">
-            <img src="./s6/1/1_m.jpg" alt data-aos="fade"
-        data-aos-delay="300" />
+            <img src="./s6/1/1_m.jpg" alt data-aos="fade" data-aos-delay="300" />
             <div class="imgss">
-              <img src="./s6/1/2.jpg" alt @click="showDialog(0)" data-aos="fade"
-        data-aos-delay="400" />
-              <img src="./s6/1/3.jpg" alt @click="showDialog(1)" data-aos="fade"
-        data-aos-delay="500" />
-              <img src="./s6/1/4.jpg" alt @click="showDialog(2)" data-aos="fade"
-        data-aos-delay="600" />
+              <img
+                src="./s6/1/2.jpg"
+                alt
+                @click="showDialog(0)"
+                data-aos="fade"
+                data-aos-delay="400"
+              />
+              <img
+                src="./s6/1/3.jpg"
+                alt
+                @click="showDialog(1)"
+                data-aos="fade"
+                data-aos-delay="500"
+              />
+              <img
+                src="./s6/1/4.jpg"
+                alt
+                @click="showDialog(2)"
+                data-aos="fade"
+                data-aos-delay="600"
+              />
             </div>
           </div>
           <div class="text">
@@ -102,17 +149,36 @@
           </div>
           <div class="top-imgs top-imgs2">
             <div class="imgss">
-              <img src="./s6/2/2.jpg" alt @click="showDialog(3)" data-aos="fade"
-        data-aos-delay="500" />
-              <img src="./s6/2/3.jpg" alt @click="showDialog(4)" data-aos="fade"
-        data-aos-delay="600" />
-              <img src="./s6/2/4.jpg" alt @click="showDialog(5)" data-aos="fade"
-        data-aos-delay="700" />
-              <img src="./s6/2/5.jpg" alt @click="showDialog(6)" data-aos="fade"
-        data-aos-delay="800" />
+              <img
+                src="./s6/2/2.jpg"
+                alt
+                @click="showDialog(3)"
+                data-aos="fade"
+                data-aos-delay="500"
+              />
+              <img
+                src="./s6/2/3.jpg"
+                alt
+                @click="showDialog(4)"
+                data-aos="fade"
+                data-aos-delay="600"
+              />
+              <img
+                src="./s6/2/4.jpg"
+                alt
+                @click="showDialog(5)"
+                data-aos="fade"
+                data-aos-delay="700"
+              />
+              <img
+                src="./s6/2/5.jpg"
+                alt
+                @click="showDialog(6)"
+                data-aos="fade"
+                data-aos-delay="800"
+              />
             </div>
-            <img src="./s6/2/1_m.png" alt data-aos="fade"
-        data-aos-delay="1000" />
+            <img src="./s6/2/1_m.png" alt data-aos="fade" data-aos-delay="1000" />
           </div>
           <div class="text">
             <div class="title">
@@ -315,6 +381,7 @@
   .top-imgs {
     width: 100vw;
     display: flex;
+    align-items: flex-start;
     > img {
       width: calc(100vw * 233 / 375);
     }
