@@ -41,6 +41,7 @@
 <script>
 // @ is an alias to /src
 // import Navigation from '@/layouts/Navigation.vue'
+import { isMobile } from '@/utils'
 import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import Indigator from '@/components/Indigator.vue'
@@ -78,9 +79,10 @@ export default {
   data() {
     return {
       isSide: true,
+      isMobile,
       load: true,
       action: {
-        moveTo: () => {}
+        moveTo: () => {},
       },
 
       indigatorIndex: 0,
@@ -89,7 +91,8 @@ export default {
         anchors: [],
         scrollBar: true,
         onLeave: this.onLeave,
-        afterLoad: this.afterLoad
+        afterLoad: this.afterLoad,
+        continuousHorizontal: true,
         // navigation: true,
         // sectionsColor: ['#41b883', '#ff5f45', '#0798ec'],
       },
@@ -104,20 +107,28 @@ export default {
 
   mounted() {
     this.action = this.$refs.fullPage.api
+    if (this.isMobile) {
+      this.$refs.fullPage.api.setResponsive(true)
+    }
   },
 
-  computed: {
-  },
+  computed: {},
 
   methods: {
     onDone() {
       console.log('done')
     },
     onLeave(origin, destination, direction) {
-      console.log("Emitted 'after load' event.")
       console.log(origin, destination, direction)
-      if (direction === 'up') {
+      if (origin.isLast === true && direction === 'up') {
         console.log('加固')
+        this.$refs.fullPage.api.setResponsive(false)
+      }
+      if (origin.isFirst === true && direction === 'down' && this.isMobile) {
+        this.$refs.fullPage.api.setResponsive(false)
+      }
+
+      if (destination.isFirst === true && direction === 'up' && this.isMobile) {
         this.$refs.fullPage.api.setResponsive(false)
       }
     },
@@ -128,7 +139,7 @@ export default {
         console.log('解除')
         this.$refs.fullPage.api.setResponsive(true)
       }
-    }
+    },
   },
 }
 </script>
