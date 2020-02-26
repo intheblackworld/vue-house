@@ -23,7 +23,7 @@
               <img class="js-parallax" data-parallax="2" src="./s1/ring.png" alt="敦南好好 就愛市中心首購住大安" />
             </parallax>
           </div>
-          <parallax breakpoint="(min-width: 68px)" :speed-factor="1.2" direction="up">
+          <parallax breakpoint="(min-width: 68px)" :speed-factor="1" direction="up">
             <img class="js-parallax" data-parallax="1" src="./s1/ball_1.png" alt="敦南好好 就愛市中心首購住大安" />
           </parallax>
         </div>
@@ -104,6 +104,7 @@
   height: auto !important;
   min-height: auto !important;
 }
+.is-parallax{transition: all 0.3s;}
 
 @media (max-width: 768px) {
   .Masthead,
@@ -312,9 +313,9 @@ img {
 }
 @media (min-width: 768px) {
   .kv .ring {
-    width: 57.6182136602%;
-    top: -56.7425569177%;
-    right: 1.9264448336%;
+    width: 58%;
+    top: -80%;
+    right: 2%;
   }
 }
 .kv .perfume {

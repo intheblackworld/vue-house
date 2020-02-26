@@ -306,7 +306,7 @@ export default {
 @media only screen and (max-width: 767px) {
   .order-bg {
   // background-image: $order_bg_image_m;
-  background-size: 100% auto;
+  background-size: auto  250vw;
     padding-top: 40px;
     .order-title {
       font-size: 40px;

@@ -109,12 +109,11 @@
 }
 
 .img-title {
-  width: 100%;
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 10px;
+  right: 20px;
   height: 30px;
-  font-size: 12px;
+  font-size:18px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
