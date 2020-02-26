@@ -208,7 +208,7 @@ export default {
             ? require('./s5/mo/大廳.jpg')
             : require('./s5/2大廳.jpg'),
           title: '挑高7米迎賓大廳 Lobby',
-          p: '',
+          p: '跨界飯店Private Club住宅，國際飯店行旅質感凝鍊，以低調內斂的姿態，在現代都會桃源內雕琢奢華，一樓大器規格迎賓，璞麗風華LOBBY、LOUNGE交誼廳咖啡品茗小酌、閱讀交誼區休閒商務聚會、VIP視聽室影音盛宴…同步飯店質感生活。',
         },
         {
           src1: isMobile
