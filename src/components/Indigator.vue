@@ -23,42 +23,63 @@
 
 <style lang="scss" scoped>
 .indigator {
+    font-size:16px;
   position: fixed;
-  right: 10px;
-  top: 40%;
+  right:0.8em;
+  top: 50%;
   transform: translateY(-50%);
   z-index: 10;
   .list-indigator {
     position: relative;
     padding: 8px;
-    background: rgba(0, 0, 0, 0.4);
     border-radius: 20px;
   }
 
   .dot {
-    width: 16px;
-    height: 16px;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    width:2em;
+    height:2em;
+    margin:0;
     background: transparent;
     cursor: pointer;
+    border-radius: 999px;overflow: hidden;
+    &::before{
+      content:"";
+      display: block;
+    width:0.7em;
+    height:0.7em;
     border: 1px solid #fff;
-    border-radius: 999px;
+    border-radius: 999px;margin: calc(50% - 0.3em) 0 0 calc(50% - 0.3em) ;
+    transition: all 0.3s;
+      background: rgba(0, 0, 0, 0.2);
+    }
     &.active {
-      background: #fff;
+    &::before{
+      background: #fff;}
+    }
+    &:hover::before{
+      background: #ffd200;
     }
   }
 
   .contact-indigator {
     background: rgba(0, 0, 0, 0.4);
-    margin: 10px auto;
-    padding: 8px;
+    margin: 1em auto 1em auto;
+    padding: 0.4em;
     color: #ffd200;
     border-radius: 20px;
     cursor: pointer;
     line-height: 1.5;
-    width: 32px;
+    width:2em;transition: all 0.3s;
+    &:hover{
+      color: #FFF;
+    }
   }
+}
+@media screen and (max-width: 767px){
+  
+.indigator {
+  right: 0;
+}
 }
 </style>
 
