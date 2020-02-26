@@ -315,6 +315,7 @@
   .top-imgs {
     width: 100vw;
     display: flex;
+    height: calc(100vw * 290 / 375);
     > *{margin: calc(100vw * 10 / 375) 0 0  calc(100vw * 10 / 375);
     &:nth-child(1){margin: 0;}
     &:nth-child(2){margin: 0 0 0 calc(100vw * 10 / 375);}
@@ -337,6 +338,7 @@
   }
 
   .top-imgs2 {
+    height: calc(100vw * 394 / 375);
     > img {
       width: calc(100vw * 235 / 375);
     }
