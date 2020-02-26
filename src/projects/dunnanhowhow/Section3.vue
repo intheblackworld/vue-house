@@ -164,7 +164,9 @@
               </div>
               <div class="desc">不只在陽台種樹，回歸人文角度，學習在水泥叢林與大自然有機共生。</div>
               <div class="title">
-                精緻奢華21-24坪時尚宅3.6米挑高空間精品寓邸靜巷純3併戶戶雙面採光 　
+                  <span>精緻奢華21-24坪時尚宅</span><br />
+                  3.6米挑高空間精品寓邸<br />
+                  靜巷純3併戶戶雙面採光 　
               </div>
             </div>
           </div>
@@ -500,8 +502,9 @@
   .title {
     font-size: calc(100vw * 29 / 1920);
     line-height: 1.56;
-    width:15em;
     text-align: justify;
+    letter-spacing:0.3em;
+      span{letter-spacing:0.255em;}
   }
 }
 
