@@ -2,30 +2,33 @@
   <div class="home">
     <div ref="gtmNoScript" />
     <Loading :loading="load" />
-    <SideNavigation v-if="isSide" />
-    <Navigation v-else />
-    <div id="section1">
-      <Section1 />
-    </div>
-    <div id="section2">
-      <Section2 />
-    </div>
-    <div id="section3">
-      <Section3 />
-    </div>
-    <div id="section4">
-      <Section4 />
-    </div>
-    <div id="section5">
-      <Section5 />
-    </div>
-    <div id="section6">
-      <Section6 />
-    </div>
-    <div id="section7">
-      <Section7 />
-    </div>
-    <ContactSection />
+    <!-- <SideNavigation v-if="isSide" /> -->
+    <!-- <Navigation v-else /> -->
+    <Indigator :action="action" :indigatorIndex="indigatorIndex" />
+    <full-page ref="fullPage" :options="options" id="fullpage">
+      <div id="section1" class="section">
+        <Section1 />
+      </div>
+      <div id="section2" class="section">
+        <Section2 />
+      </div>
+      <div id="section3" class="section">
+        <Section3 />
+      </div>
+      <div id="section4" class="section">
+        <Section4 />
+      </div>
+      <div id="section5" class="section">
+        <Section5 />
+      </div>
+      <div id="section6" class="section">
+        <Section6 />
+      </div>
+      <div id="section7" class="section">
+        <Section7 />
+      </div>
+      <ContactSection class="section" />
+    </full-page>
     <!-- <SimpleOrder /> -->
     <MobileNav />
   </div>
@@ -40,6 +43,7 @@
 // import Navigation from '@/layouts/Navigation.vue'
 import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
+import Indigator from '@/components/Indigator.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import gtm from '@/mixins/gtm.js'
@@ -58,8 +62,8 @@ export default {
   mixins: [gtm],
   components: {
     Loading,
-    // Navigation,
-    SideNavigation,
+    Indigator,
+    // SideNavigation,
     ContactSection,
     MobileNav,
     Section1,
@@ -75,20 +79,56 @@ export default {
     return {
       isSide: true,
       load: true,
+      action: {
+        moveTo: () => {}
+      },
+
+      indigatorIndex: 0,
+      options: {
+        menu: '#menu',
+        anchors: [],
+        scrollBar: true,
+        onLeave: this.onLeave,
+        afterLoad: this.afterLoad
+        // navigation: true,
+        // sectionsColor: ['#41b883', '#ff5f45', '#0798ec'],
+      },
     }
   },
   created() {
-    window.addEventListener('load', (event) => {
+    window.addEventListener('load', event => {
       this.load = false
     })
-
     // window.location = "https://ywh.nhc888.com.tw/"
+  },
+
+  mounted() {
+    this.action = this.$refs.fullPage.api
+  },
+
+  computed: {
   },
 
   methods: {
     onDone() {
       console.log('done')
     },
+    onLeave(origin, destination, direction) {
+      console.log("Emitted 'after load' event.")
+      console.log(origin, destination, direction)
+      if (direction === 'up') {
+        console.log('加固')
+        this.$refs.fullPage.api.setResponsive(false)
+      }
+    },
+
+    afterLoad(origin, destination, direction) {
+      this.indigatorIndex = destination.index
+      if (destination.isLast === true && direction === 'down') {
+        console.log('解除')
+        this.$refs.fullPage.api.setResponsive(true)
+      }
+    }
   },
 }
 </script>

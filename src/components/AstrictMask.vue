@@ -1,9 +1,9 @@
 <template>
   <div class="mask">
-    <section v-scroll-reveal.reset="$fadeInUp()">
+    <section>
       <icon class="icon" :data="vueIcon" />
     </section>
-    <section v-scroll-reveal.reset="$fadeInUp()">
+    <section>
       <p>
         請將裝置轉至橫式
         <br />體驗最佳瀏覽方式

@@ -13,8 +13,9 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import VueScrollTo from 'vue-scrollto' // scroll 錨點
 import VueLazyload from 'vue-lazyload' // 圖片 lazy load
-import VueScrollReveal from 'vue-scroll-reveal'
-import VuePhotoZoomPro from 'vue-photo-zoom-pro'
+// import VueScrollReveal from 'vue-scroll-reveal'
+// import VuePhotoZoomPro from 'vue-photo-zoom-pro'
+import VueFullPage from 'vue-fullpage.js'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
@@ -45,7 +46,7 @@ library.add(faFacebookMessenger)
 library.add(faFacebookF)
 library.add(faMapMarkerAlt)
 
-Vue.use(VuePhotoZoomPro)
+// Vue.use(VuePhotoZoomPro)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
@@ -58,7 +59,8 @@ Vue.use(config)
 Vue.use(ElementUI)
 Vue.use(VueScrollTo)
 Vue.use(VueLazyload)
-Vue.use(VueScrollReveal)
+Vue.use(VueFullPage)
+// Vue.use(VueScrollReveal)
 
 new Vue({
   router,
