@@ -88,6 +88,7 @@
 
 .title {
   font-size: calc(100vw * 36 / 1920);
+  white-space: nowrap;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
