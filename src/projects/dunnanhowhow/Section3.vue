@@ -113,7 +113,7 @@
                 <div class="title">好學人文宅</div>
                 <div
                   class="desc"
-                >鬧中取靜書卷香，大安國小、芳和國中、和平高中、台科大，頂尖學區，直至全台最高學府－台灣大學，穿梭巷弄咖啡香，一杯咖啡一本書，度過優閒下午時光。</div>
+                >鬧中取靜書卷香，大安國小、芳和實中、和平高中、台科大，頂尖學區，直至全台最高學府－台灣大學，穿梭巷弄咖啡香，一杯咖啡一本書，度過優閒下午時光。</div>
               </div>
             </div>
           </div>
@@ -274,7 +274,7 @@
                 <div class="title">好學人文宅</div>
                 <div
                   class="desc"
-                >鬧中取靜書卷香，大安國小、芳和國中、和平高中、台科大，頂尖學區，直至全台最高學府－台灣大學，穿梭巷弄咖啡香，一杯咖啡一本書，度過優閒下午時光。</div>
+                >鬧中取靜書卷香，大安國小、芳和實中、和平高中、台科大，頂尖學區，直至全台最高學府－台灣大學，穿梭巷弄咖啡香，一杯咖啡一本書，度過優閒下午時光。</div>
               </div>
             </div>
           </div>
@@ -520,7 +520,7 @@
 
 @media screen and (max-width: 767px) {
   .bg {
-    background-size: 100% auto;
+    background-size: 100% calc(100vh - 63px);
     background-image: url('./s3/mo/bg.jpg');
     margin: 0;
   }
@@ -643,8 +643,8 @@ export default {
       ],
       slideList2: [
         {
-          title: '芳和國中',
-          src: require('./s4/2/芳和國中1.jpg'),
+          title: '芳和實中',
+          src: require('./s4/2/芳和實中1.jpg'),
         },
         {
           title: '和平實驗小學',

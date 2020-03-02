@@ -143,7 +143,7 @@
     padding-top: calc(100vw * 20 / 375);
     padding-left: calc(100vw * 30 / 375);
     padding-right: calc(100vw * 30 / 375);
-    padding-bottom: calc(100vw * 20 / 375);
+    padding-bottom: calc(100vw * 50 / 375);
     position: relative;
     top: auto;
     right: 0;

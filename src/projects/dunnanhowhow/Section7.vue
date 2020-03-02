@@ -25,8 +25,7 @@
           <div class="text">
             <div>
               <div class="title">
-                空中花火微醺
-                <span>Lounge Bar</span>
+                空中花火微醺<span>Lounge Bar</span>
               </div>
               <div class="desc">鳥瞰整座城市，101跨年煙火獨家包廂，擺上桌椅三五好友聚會微醺，建築中最性感的華麗休閒帶。</div>
             </div>
@@ -41,7 +40,7 @@
         <div class="img-title">3D示意圖僅供參考</div>
           <div class="text" data-aos="fade"
         data-aos-delay="500">
-            <div class="title">精品挑高4米2<br />飯店大廳</div>
+            <div class="title">精品挑高4米2飯店大廳</div>
             <div class="desc">穿上低調奢華，演繹流金歲月社交場，尊寵每個回家的主人。</div>
           </div>
         </div>
@@ -53,8 +52,7 @@
           <div class="text" data-aos="fade"
         data-aos-delay="500">
             <div class="title">
-                空中花火微醺<br />
-                <span>Lounge Bar</span>
+                空中花火微醺 <span>Lounge Bar</span>
               </div>
               <div class="desc">鳥瞰整座城市，101跨年煙火獨家包廂，擺上桌椅三五好友聚會微醺，建築中最性感的華麗休閒帶。</div>
           </div>
@@ -177,12 +175,17 @@ img {
 
     .title {
       width: calc(100vw * 310 / 375);
-      font-size: calc(100vw * 36 / 375);
+      font-size: calc(100vw * 28 / 375);
+      letter-spacing:0;
+    span {
+      letter-spacing:calc(100vw * -2 / 375);
+    }
     }
 
     .desc {
       width: calc(100vw * 310 / 375);
       font-size: calc(100vw * 18 / 375);
+      margin-bottom: 1em;
     }
   }
 .img-title {width: 100%;top: 68vw;opacity: 0.8;
