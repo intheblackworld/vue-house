@@ -23,7 +23,7 @@ export default {
     ['樓層規劃', '10F/B2'],
 
     ['建材說明',
-      'Hansgrohe衛浴<br />KOHLER免治馬桶<br />內嵌式洗脫烘<br />林內廚具<br />五合一暖風機<br />耶魯三合一電子鎖<br />WAFERLOCK對講機<br />不二太天氣密窗<br />PANASONIC冷氣室外機'],
+      '德國Hansgrohe衛浴五金<br />美國KOHLER衛浴設備<br />義大利INDESIT內嵌式洗脫烘<br />林內系列廚具<br />五合一暖風機<br />美國YALE三合一電子鎖<br />WAFERLOCK對講機<br />日本不二太天氣密窗<br />PANASONIC冷氣室外機'],
   ],
 
   gtmCode: ['TDQRFKC'], // 可放置多個
