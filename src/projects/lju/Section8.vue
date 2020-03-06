@@ -6,7 +6,6 @@
       data-aos-offset="50"
       data-aos-delay="600"
       data-aos-duration="1500"
-      data-aos-mirror="true"
       data-aos-once="false"
       src="./s8_tree.png"
       class="tree absolute"
@@ -19,7 +18,6 @@
         data-aos-offset="50"
         data-aos-delay="0"
         data-aos-duration="1500"
-        data-aos-mirror="true"
         data-aos-once="false"
         v-html="isMobile ? '雋永雅緻<br />讓回家成為最期望的事' : '雋永雅緻，讓回家成為最期望的事'"
       ></h3>
@@ -29,7 +27,6 @@
         data-aos-offset="50"
         data-aos-delay="300"
         data-aos-duration="1500"
-        data-aos-mirror="true"
         data-aos-once="false"
       >
         <img
