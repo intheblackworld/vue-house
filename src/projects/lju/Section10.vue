@@ -18,7 +18,6 @@
         data-aos-offset="50"
         data-aos-delay="300"
         data-aos-duration="1500"
-        data-aos-mirror="true"
         data-aos-once="false"
       />
       <div class="head flex" v-if="isTablet">
@@ -29,7 +28,6 @@
           data-aos-offset="50"
           data-aos-delay="0"
           data-aos-duration="1500"
-          data-aos-mirror="true"
           data-aos-once="false"
         >
           <h3 class="title">放大幸福 加倍感動 大一點好室會發生!</h3>
@@ -43,7 +41,6 @@
         data-aos-offset="50"
         data-aos-delay="0"
         data-aos-duration="1500"
-        data-aos-mirror="true"
         data-aos-once="false"
       >
         <h3 class="title">
@@ -59,7 +56,6 @@
           data-aos-offset="50"
           data-aos-delay="300"
           data-aos-duration="1500"
-          data-aos-mirror="true"
           data-aos-once="false"
         >
           <img
@@ -81,7 +77,6 @@
           data-aos-offset="50"
           data-aos-delay="300"
           data-aos-duration="1500"
-          data-aos-mirror="true"
           data-aos-once="false"
         >
           <h3 class="title" v-if="!(isMobile || isTablet)">
@@ -121,7 +116,6 @@
           data-aos-offset="50"
           data-aos-delay="0"
           data-aos-duration="1500"
-          data-aos-mirror="true"
           data-aos-once="false"
         />
       </div>
@@ -139,7 +133,6 @@
           data-aos-offset="50"
           data-aos-delay="300"
           data-aos-duration="1500"
-          data-aos-mirror="true"
           data-aos-once="false"
         >
           <h3 class="border flex-c" v-if="isMobile">兩房</h3>
@@ -170,7 +163,6 @@
           data-aos-offset="50"
           data-aos-delay="0"
           data-aos-duration="1500"
-          data-aos-mirror="true"
           data-aos-once="false"
         >
           <img
