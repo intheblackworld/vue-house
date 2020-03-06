@@ -10,7 +10,6 @@
         data-aos-offset="50"
         data-aos-delay="1000"
         data-aos-duration="1500"
-        data-aos-mirror="true"
         data-aos-once="false"
       />
       <div class="flex-jb flex-at wrap bottom custom">
@@ -20,7 +19,6 @@
           data-aos-offset="50"
           data-aos-delay="300"
           data-aos-duration="1500"
-          data-aos-mirror="true"
           data-aos-once="false"
         >
           <img
@@ -42,7 +40,6 @@
           data-aos-offset="50"
           data-aos-delay="600"
           data-aos-duration="1500"
-          data-aos-mirror="true"
           data-aos-once="false"
         >
           <h3 class="border flex-c" v-if="isMobile">兩房</h3>
@@ -72,7 +69,6 @@
         data-aos-offset="50"
         data-aos-delay="300"
         data-aos-duration="1500"
-        data-aos-mirror="true"
         data-aos-once="false"
       />-->
     </div>

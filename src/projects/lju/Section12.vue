@@ -7,7 +7,6 @@
           data-aos-offset="50"
           data-aos-delay="0"
           data-aos-duration="1500"
-          data-aos-mirror="true"
           data-aos-once="false"
           class="absolute icon-1"
         >
@@ -18,7 +17,6 @@
           data-aos-offset="50"
           data-aos-delay="300"
           data-aos-duration="1500"
-          data-aos-mirror="true"
           data-aos-once="false"
           class="absolute desc-1"
         >
@@ -29,7 +27,6 @@
           data-aos-offset="50"
           data-aos-delay="600"
           data-aos-duration="1500"
-          data-aos-mirror="true"
           data-aos-once="false"
           class="center absolute-c"
         >
@@ -41,7 +38,6 @@
           data-aos-offset="50"
           data-aos-delay="900"
           data-aos-duration="1500"
-          data-aos-mirror="true"
           data-aos-once="false"
           class="absolute icon-2"
         >
@@ -52,7 +48,6 @@
           data-aos-offset="50"
           data-aos-delay="1200"
           data-aos-duration="1500"
-          data-aos-mirror="true"
           data-aos-once="false"
           class="absolute desc-2"
         >
