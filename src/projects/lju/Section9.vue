@@ -18,7 +18,6 @@
             data-aos-offset="50"
             data-aos-delay="0"
             data-aos-duration="500"
-            data-aos-mirror="true"
             data-aos-once="false"
           >
             <icon class="icon txt2" :data="txt2" />
@@ -29,7 +28,6 @@
             data-aos-offset="50"
             data-aos-delay="0"
             data-aos-duration="1500"
-            data-aos-mirror="true"
             data-aos-once="false"
           >
             <txt3 />
@@ -40,7 +38,6 @@
             data-aos-offset="50"
             data-aos-delay="0"
             data-aos-duration="1500"
-            data-aos-mirror="true"
             data-aos-once="false"
           >
             <txt3 />

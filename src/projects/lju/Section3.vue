@@ -8,7 +8,6 @@
           data-aos-offset="50"
           data-aos-delay="0"
           data-aos-duration="1500"
-          data-aos-mirror="true"
           data-aos-once="false"
         >【 醞釀翻轉 】</div>
         <div class="flex-ab flex-jb">
@@ -18,7 +17,6 @@
             data-aos-offset="50"
             data-aos-delay="300"
             data-aos-duration="1500"
-            data-aos-mirror="true"
             data-aos-once="false"
           >
             聚焦三重2.0時代
@@ -30,7 +28,6 @@
             data-aos-offset="50"
             data-aos-delay="300"
             data-aos-duration="1500"
-            data-aos-mirror="true"
             data-aos-once="false"
           >
             北市西區復興計劃，掀起城市經濟紅利

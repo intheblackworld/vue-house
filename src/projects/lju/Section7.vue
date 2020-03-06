@@ -6,7 +6,6 @@
       data-aos-offset="50"
       data-aos-delay="0"
       data-aos-duration="1500"
-      data-aos-mirror="true"
       data-aos-once="false"
     ></div>
     <div class="content absolute">
@@ -16,7 +15,6 @@
         data-aos-offset="50"
         data-aos-delay="300"
         data-aos-duration="1500"
-        data-aos-mirror="true"
         data-aos-once="false"
       >穩若泰山，抗震達國家標準</h3>
       <p
@@ -25,7 +23,6 @@
         data-aos-offset="50"
         data-aos-delay="600"
         data-aos-duration="1500"
-        data-aos-mirror="true"
         data-aos-once="false"
       >建築基礎工程採用筏式基礎與連續壁工法</p>
       <p
@@ -34,7 +31,6 @@
         data-aos-offset="50"
         data-aos-delay="900"
         data-aos-duration="1500"
-        data-aos-mirror="true"
         data-aos-once="false"
       >連續壁工法可預防土壤液化發生傾斜</p>
       <p
@@ -43,7 +39,6 @@
         data-aos-offset="50"
         data-aos-delay="1200"
         data-aos-duration="1500"
-        data-aos-mirror="true"
         data-aos-once="false"
       >
         連續壁深度19米，厚度50公分，鋼性更強

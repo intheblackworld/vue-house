@@ -9,7 +9,6 @@
             data-aos-offset="50"
             data-aos-delay="0"
             data-aos-duration="1500"
-            data-aos-mirror="true"
             data-aos-once="false"
           >【 韻致建築 】</div>
           <div class="flex-ab flex-jb">
@@ -19,7 +18,6 @@
               data-aos-offset="50"
               data-aos-delay="300"
               data-aos-duration="1500"
-              data-aos-mirror="true"
               data-aos-once="false"
             >
               三重水畔最美留白
@@ -33,7 +31,6 @@
           data-aos-offset="50"
           data-aos-delay="600"
           data-aos-duration="1500"
-          data-aos-mirror="true"
           data-aos-once="false"
         >
           <div

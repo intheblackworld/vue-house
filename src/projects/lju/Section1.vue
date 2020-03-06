@@ -12,7 +12,6 @@
         data-aos-offset="50"
         data-aos-delay="0"
         data-aos-duration="1500"
-        data-aos-mirror="true"
         data-aos-once="false"
       >
         <img src="./s1_title.png" alt class="title absolute" />
@@ -22,7 +21,6 @@
         data-aos-offset="50"
         data-aos-delay="600"
         data-aos-duration="1500"
-        data-aos-mirror="true"
         data-aos-once="false"
         class="absolute tree-1"
       >
@@ -33,7 +31,6 @@
         data-aos-offset="50"
         data-aos-delay="600"
         data-aos-duration="1500"
-        data-aos-mirror="true"
         data-aos-once="false"
         class="absolute tree-2"
       >

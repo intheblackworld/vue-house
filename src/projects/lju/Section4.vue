@@ -7,7 +7,6 @@
         data-aos-offset="50"
         data-aos-delay="0"
         data-aos-duration="1500"
-        data-aos-mirror="true"
         data-aos-once="false"
       >
         <div class="mask absolute bg-cover" />
@@ -24,7 +23,6 @@
         data-aos-offset="50"
         data-aos-delay="300"
         data-aos-duration="1500"
-        data-aos-mirror="true"
         data-aos-once="false"
       >
         <div class="mask absolute bg-cover" />
@@ -41,7 +39,6 @@
         data-aos-offset="50"
         data-aos-delay="600"
         data-aos-duration="1500"
-        data-aos-mirror="true"
         data-aos-once="false"
       >
         <div class="mask absolute bg-cover" />
@@ -60,7 +57,6 @@
       data-aos-offset="50"
       data-aos-delay="900"
       data-aos-duration="1500"
-      data-aos-mirror="true"
       data-aos-once="false"
     >
       <img

@@ -11,7 +11,6 @@
         data-aos-offset="50"
         data-aos-delay="0"
         data-aos-duration="500"
-        data-aos-mirror="true"
         data-aos-once="false"
       >
         <!-- <icon class="icon" :data="txt1" />
@@ -32,7 +31,6 @@
         data-aos-offset="50"
         data-aos-delay="1200"
         data-aos-duration="500"
-        data-aos-mirror="true"
         data-aos-once="false"
         src="./bubble1.png"
         alt
@@ -43,7 +41,6 @@
         data-aos-offset="50"
         data-aos-delay="1200"
         data-aos-duration="500"
-        data-aos-mirror="true"
         data-aos-once="false"
         src="./bubble2.png"
       />

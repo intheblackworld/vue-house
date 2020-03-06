@@ -8,7 +8,6 @@
           data-aos-offset="50"
           data-aos-delay="0"
           data-aos-duration="1500"
-          data-aos-mirror="true"
           data-aos-once="false"
         >【 蘊藏生活 】</div>
         <h3
@@ -17,7 +16,6 @@
           data-aos-offset="50"
           data-aos-delay="300"
           data-aos-duration="1500"
-          data-aos-mirror="true"
           data-aos-once="false"
         >水岸優雅綻放，蘊藏生活絢美</h3>
         <div
@@ -26,7 +24,6 @@
           data-aos-offset="50"
           data-aos-delay="600"
           data-aos-duration="1500"
-          data-aos-mirror="true"
           data-aos-once="false"
         >
           校園第一排融合水岸雙景觀優勢，
@@ -41,7 +38,6 @@
             data-aos-offset="50"
             data-aos-delay="0"
             data-aos-duration="1500"
-            data-aos-mirror="true"
             data-aos-once="false"
           >【 蘊藏生活 】</div>
           <h3
@@ -50,7 +46,6 @@
             data-aos-offset="50"
             data-aos-delay="300"
             data-aos-duration="1500"
-            data-aos-mirror="true"
             data-aos-once="false"
           >
             水岸優雅綻放
@@ -62,7 +57,6 @@
             data-aos-offset="50"
             data-aos-delay="600"
             data-aos-duration="1500"
-            data-aos-mirror="true"
             data-aos-once="false"
           >
             校園第一排融合水岸雙景觀優勢，
@@ -79,7 +73,6 @@
               data-aos-offset="50"
               data-aos-delay="0"
               data-aos-duration="1500"
-              data-aos-mirror="true"
               data-aos-once="false"
             >【 蘊藏生活 】</div>
             <h3
@@ -88,7 +81,6 @@
               data-aos-offset="50"
               data-aos-delay="300"
               data-aos-duration="1500"
-              data-aos-mirror="true"
               data-aos-once="false"
             >水岸優雅綻放，蘊藏生活絢美</h3>
             <div
@@ -97,7 +89,6 @@
               data-aos-offset="50"
               data-aos-delay="600"
               data-aos-duration="1500"
-              data-aos-mirror="true"
               data-aos-once="false"
             >
               校園第一排融合水岸雙景觀優勢，
@@ -110,7 +101,6 @@
             data-aos-offset="50"
             data-aos-delay="900"
             data-aos-duration="1500"
-            data-aos-mirror="true"
             data-aos-once="false"
           >
             <div>
@@ -139,7 +129,6 @@
             data-aos-offset="50"
             :data-aos-delay="index * 200"
             data-aos-duration="1500"
-            data-aos-mirror="true"
             data-aos-once="false"
           >
             <h3 class="title">{{slide.title}}</h3>
