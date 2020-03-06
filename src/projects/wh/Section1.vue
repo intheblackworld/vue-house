@@ -1738,7 +1738,7 @@
 }
 
 .left {
-  width: 59%;
+  width: 53.2%;
   height: 100%;
   display: flex;
   position: relative;
@@ -1771,7 +1771,7 @@
   }
 
 .right {
-  width: 41%;
+  width: 36.8%;
   height: 100%;
 }
 
