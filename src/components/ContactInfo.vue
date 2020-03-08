@@ -24,12 +24,6 @@
           <font-awesome-icon :icon="['fab', 'facebook-f']" />前往粉絲專頁
         </span>
       </a>
-      <!-- <div class="address flex-c">{{info.address}}</div>
-      <div class="btn flex-c">
-        <span class="flex-c" @click="showMapDialog">
-          <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
-        </span>
-      </div> -->
       <a href="http://unigiants.com.tw/" target="_blank" class="btn half flex-c">
         <span class="flex-c">
           聯碩地產行銷團隊
@@ -40,7 +34,14 @@
           <font-awesome-icon :icon="['fab', 'facebook-f']" />前往聯碩粉絲專頁
         </span>
       </a>
-      <!-- <a class="google-btn flex-c" :href="info.googleLink" target="_blank" v-else>
+
+      <div class="address flex-c">{{info.address}}</div>
+      <div class="btn flex-c">
+        <span class="flex-c" @click="showMapDialog">
+          <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
+        </span>
+      </div>
+      <!-- <a class="google-btn flex-c" :href="info.googleLink" target="_blank">
         <span class="flex-c">
           <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
         </span>
@@ -124,7 +125,7 @@ export default {
   position: relative;
   z-index: 3;
   width: 1200px;
-  height: 460px;
+  height: 660px;
 
   margin: 40px auto;
   padding: 60px 0 50px;

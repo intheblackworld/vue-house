@@ -13,11 +13,26 @@
     <div class="section" id="section3">
       <Section3 />
     </div>
+    <div class="section" id="section3-5">
+      <Section35 />
+    </div>
     <div class="section" id="section4">
       <Section4 />
     </div>
     <div class="section" id="section5">
       <Section5 />
+    </div>
+    <div class="section" id="section6">
+      <Section6 />
+    </div>
+    <div class="section" id="section7">
+      <Section7 />
+    </div>
+    <div class="section" id="section8">
+      <Section8 />
+    </div>
+    <div class="section" id="section9">
+      <Section9 />
     </div>
     <!-- <div class="section" id="section6">
       <Section6 />
@@ -47,12 +62,13 @@ import Indigator from '@/components/Indigator.vue'
 import Section1 from '@/projects/wh/Section1.vue'
 import Section2 from '@/projects/wh/Section2.vue'
 import Section3 from '@/projects/wh/Section3.vue'
+import Section35 from '@/projects/wh/Section3-5.vue'
 import Section4 from '@/projects/wh/Section4.vue'
 import Section5 from '@/projects/wh/Section5.vue'
 import Section6 from '@/projects/wh/Section6.vue'
 import Section7 from '@/projects/wh/Section7.vue'
-// import Section8 from '@/projects/fs/Section8.vue'
-// import Section9 from '@/projects/fs/Section9.vue'
+import Section8 from '@/projects/wh/Section8.vue'
+import Section9 from '@/projects/wh/Section9.vue'
 
 export default {
   name: 'home',
@@ -66,12 +82,13 @@ export default {
     Section1,
     Section2,
     Section3,
+    Section35,
     Section4,
     Section5,
     Section6,
     Section7,
-    // Section8,
-    // Section9,
+    Section8,
+    Section9,
   },
 
   data() {

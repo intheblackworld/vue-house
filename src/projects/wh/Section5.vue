@@ -15,9 +15,7 @@
             <p>用信義區門牌重新定義隨心所欲</p>大信義計劃生活圈<br />世界櫥窗就在身邊</h3>
           <img src="./s5/icon.png" alt class="icon" v-if="!isMobile" />
           <div class="flex-c" v-if="isMobile">
-            <div class="icon-line"></div>
-            <img src="./s5/icon.png" alt class="icon" />
-            <div class="icon-line"></div>
+            <img src="./mo/5/icon.png" alt class="icon" />
           </div>
           <div class="desc">
             信義區，台北的CBD，百貨商場密度居全球之最<br />
@@ -39,6 +37,9 @@
   position: relative;
   height: 100vh;
   display: flex;
+  background: #fff;
+  width: 90%;
+  margin: 0 auto;
   &.fullscreen {
     min-height: 700px !important;
     height: calc(100vw * 832 / 1920) !important;
@@ -158,6 +159,7 @@
 @media screen and (max-width: 767px) {
   .bg {
     flex-wrap: wrap;
+    width: 100%;
 
     &.fullscreen {
       min-height: auto !important;
@@ -174,7 +176,12 @@
   }
 
   .icon {
-    height: 5vw;
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 0;
   }
   .icon-line {
     width: 112px;
@@ -196,7 +203,8 @@
       .title {
         font-size: calc(100vw * 20 / 375);
         letter-spacing: 0.2em;
-        margin-bottom: 0;
+        margin-top: -10px;
+        margin-bottom: 50px;
         text-align: center;
         p {
           font-size: 12px;

@@ -1,25 +1,19 @@
 <template>
-  <div class="section1">
+  <div class="section2">
     <div class="bg fullscreen">
-      <!-- <img src="./s1/bg1.png" alt class="bg-img relative" data-aos="fade" data-aos-delay="600" /> -->
-      <!-- 不用一屏高
-        圖片這邊寬59%
-      文字區塊內容在區塊內置中-->
       <div class="left" data-aos="fade" data-aos-delay="400">
         <img src="./s2/img.jpg" alt class="img" />
       </div>
-      <div class="right" data-aos="fade-up" data-aos-delay="600">
-        <div class="line line-t" v-if="!isMobile"></div>
+      <div class="right">
         <div class="content">
           <h3 class="title">
             遇見不凡
             <span>預見非凡</span>
           </h3>
-          <img src="./s2/icon.png" alt class="icon" v-if="!isMobile" />
+          <img src="./s2/icon.png" alt class="bg-img" v-if="!isMobile" />
+          <img src="./s2/line.png" alt class="bg-img" v-if="!isMobile" />
           <div class="flex-c" v-if="isMobile">
-            <div class="icon-line"></div>
-            <img src="./s2/icon.png" alt class="icon" />
-            <div class="icon-line"></div>
+            <img src="./mo/2/icon.png" alt class="icon" />
           </div>
           <div class="desc">
             2012半世紀的品牌寫下「文華苑」經典<br />
@@ -27,7 +21,6 @@
             2020達欣與經典團隊相約重逢、再鑄非凡
           </div>
         </div>
-        <div class="line line-b" v-if="!isMobile"></div>
       </div>
     </div>
     <!-- <div class="bg"></div> -->
@@ -40,46 +33,32 @@
   position: relative;
   // height: 100vh;
   display: flex;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #fff;
 
   &.fullscreen {
-    min-height: 700px !important;
-    height: calc(100vw * 832 / 1920) !important;
-    overflow: visible;
+    height: calc(100vw * 750 / 1920) !important;
+    overflow: hidden;
   }
 }
 .bg-img {
-  width: 100vw;
+  width: 100%;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 0;
-  height: auto;
+  top: 0;
+  height: calc(100vw * 750 / 1920) !important;
   display: block;
   object-fit: cover;
+  
+  &:nth-child(1) {
+    position: relative;
+  }
 }
 
 .left {
   width: 59%;
   height: 100%;
-}
-
-.line {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  width: 1px;
-  background-color: #aa804a;
-  height: calc(100vw * 256 / 1920);
-
-  &.line-t {
-    top: -10%;
-  }
-
-  &.line-b {
-    bottom: -5%;
-    height: calc(100vw * 200 / 1920);
-  }
+  position: relative;
 }
 
 .right {
@@ -91,7 +70,7 @@
   justify-content: center;
 
   .content {
-    width: calc(100vw * 540 / 1920);
+    width: calc(100vw * 707 / 1728);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -107,6 +86,7 @@
       text-align: center;
       color: #231815;
       margin-bottom: 35px;
+      margin-top: -50px;
       width: 100%;
 
       span {
@@ -162,6 +142,7 @@
 
 @media screen and (max-width: 767px) {
   .bg {
+    width: 100vw;
     flex-wrap: wrap;
 
     &.fullscreen {
@@ -178,7 +159,14 @@
     }
   }
 
-  .icon{height: 5vw; }
+  .icon {
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 0;
+  }
 
   .icon-line {
     width: 112px;
@@ -194,19 +182,20 @@
     .content {
       width: 90vw;
       margin: 0 auto;
-      padding-top: 40px;
-      padding-bottom: 50px;
+      padding-top: 50px;
+      padding-bottom: 20px;
 
       .title {
         font-size: calc(100vw * 20 / 375);
         letter-spacing: 0.2em;
         margin-bottom: 0;
+        margin-top: 0;
         p{margin-bottom: 1.5em;}
       }
 
       .desc {
         font-size: calc(100vw * 12 / 375);
-        margin-top: 0;
+        margin-top: 35px;
       }
     }
   }
@@ -217,7 +206,7 @@
 import { isMobile } from '@/utils'
 
 export default {
-  name: 'section1',
+  name: 'section2',
 
   data() {
     return {

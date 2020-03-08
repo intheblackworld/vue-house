@@ -6,29 +6,27 @@
         圖片這邊寬59%
       文字區塊內容在區塊內置中-->
       <div class="left" data-aos="fade" data-aos-delay="400">
-        <img src="./s3/img.jpg" alt class="img" />
+        <img src="./s3/達欣開發-台北高峰會.jpg" alt class="img" />
       </div>
       <div class="right" data-aos="fade-up" data-aos-delay="600">
         <!-- <img class="img" src="./s1/img1.jpg" alt /> -->
         <div class="content">
           <h3 class="title">
-            <p>讓城市藝術家為你的低調增添奢華</p>
-            國際迎賓林蔭大道<br />
-            遍佈達欣經典足跡
+            <p>經典讓我們無須動口就說明了我們是誰</p>半世紀達欣企業集團
+            <br />台灣豪宅界的領航者
           </h3>
-          <img src="./s3/icon.png" alt class="icon" v-if="!isMobile" />
+          <img src="./s3/icon.png" alt class="bg-img" v-if="!isMobile" />
+          <img src="./s3/line.png" alt class="bg-img" v-if="!isMobile" />
           <div class="flex-c" v-if="isMobile">
-            <div class="icon-line"></div>
-            <img src="./s3/icon.png" alt class="icon" />
-            <div class="icon-line"></div>
+            <img src="./mo/3/icon.png" alt class="icon" />
           </div>
           <div class="desc">
-            敦化南北路林蔭大道綠浪蓊鬱傾瀉<br />
-            漫步其中，不期而遇的經典，皆是達欣走過足跡<br />
-            北起文華東方酒店，南至遠東香格里拉等<br />
-            逾10幢商辦酒店雕鎸敦化大道<br />
-            從雕琢城市到建立住家<br />
-            「達欣・信義文華」即將再現傳世巨鑄
+            達欣半世紀引領豪宅界，總以未來視野締造當代經典
+            <br />信義區名宅「台北高峰會」至今依舊前衛
+            <br />全亞洲首座文華東方酒店簽約管理的「文華苑」
+            <br />開擘酒店式寓所風潮
+            <br />而今，達欣以鑄造豪宅的底蘊
+            <br />專為信義菁英量身打造「達欣・信義文華」
           </div>
         </div>
         <div class="line line-b" v-if="!isMobile"></div>
@@ -42,41 +40,26 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  height: 100vh;
   display: flex;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #fff;
 
   &.fullscreen {
-    min-height: 700px !important;
-    height: calc(100vw * 832 / 1920) !important;
-    overflow: visible;
+    height: calc(100vw * 750 / 1920) !important;
+    overflow: hidden;
   }
 }
 .bg-img {
-  width: 100vw;
+  width: 100%;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 0;
+  top: 0;
   height: auto;
   display: block;
   object-fit: cover;
-}
-
-.line {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  width: 1px;
-  background-color: #aa804a;
-  height: calc(100vw * 160 / 1920);
-
-  &.line-t {
-    top: -10%;
-  }
-
-  &.line-b {
-    bottom: -15%;
+  
+  &:nth-child(1) {
+    position: relative;
   }
 }
 
@@ -94,7 +77,7 @@
   justify-content: center;
 
   .content {
-    width: calc(100vw * 540 / 1920);
+    width: calc(100vw * 707 / 1728);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -109,7 +92,7 @@
       letter-spacing: 4.5px;
       text-align: center;
       color: #231815;
-      margin-bottom: 35px;
+      margin-bottom: 65px;
       width: 100%;
 
       p {
@@ -146,7 +129,6 @@
     height: 100vh;
   }
 
-
   .line {
     &.line-b {
       bottom: 0%;
@@ -171,6 +153,7 @@
 @media screen and (max-width: 767px) {
   .bg {
     flex-wrap: wrap;
+    width: 100vw;
 
     &.fullscreen {
       min-height: auto !important;
@@ -185,13 +168,20 @@
       height: auto;
     }
   }
-  .icon{height: 5vw; }
+  .icon {
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 0;
+  }
 
   .icon-line {
     width: 112px;
     height: 1px;
     background-color: #aa804a;
-    margin:8vw 10px;
+    margin: 8vw 10px;
   }
 
   .right {
@@ -201,19 +191,22 @@
     .content {
       width: 90vw;
       margin: 0 auto;
-      padding-top: 40px;
+      padding-top: 30px;
       padding-bottom: 50px;
 
       .title {
         font-size: calc(100vw * 20 / 375);
         letter-spacing: 0.2em;
         margin-bottom: 0;
-        p{font-size: 12px; margin-bottom: 1.5em;}
+        p {
+          font-size: 12px;
+          margin-bottom: 1.5em;
+        }
       }
 
       .desc {
         font-size: calc(100vw * 12 / 375);
-        margin-top: 0;
+        margin-top: 30px;
       }
     }
   }

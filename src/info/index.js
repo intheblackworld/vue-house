@@ -1,27 +1,20 @@
 export default {
-  address: '#',
-  googleSrc: '#',
-  googleLink: '#',
+  address: '接待中心： 台北市信義區吳興街600巷20號',
+  googleSrc: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7230.737949643077!2d121.5655864!3d25.0215494!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa4db80ba0d5%3A0x770f6becdaf7f7a4!2zMTEw5Y-w5YyX5biC5L-h576p5Y2A5ZCz6IiI6KGXNjAw5be3MjAtMeiZnw!5e0!3m2!1szh-TW!2stw!4v1583661533968!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/qQYKFtHS9KSknH4DA',
   phone: '02-23455888',
   fbLink: 'https://www.facebook.com/%E9%81%94%E6%AC%A3%E4%BF%A1%E7%BE%A9%E6%96%87%E8%8F%AF-110242950514856/',
   fbMessage: 'https://m.me/110242950514856/',
   caseName: '達欣信義文華',
   indigatorLength: 8,
   houseInfos: [
-    // ['建造執照', '108股建字第00042號'],
-    // ['建設公司', '中德建設股份有限公司'],
-    // ['建築師', '呂建勳建築師'],
-    // ['公設比', '32.5%'],
-    // ['容積率', '299.99%'],
-    // ['建蔽率', '36.99%'],
-    // ['基地坪數', '832.37坪'],
-    // ['基地位置', '新北市五股區新五路三段2號旁'],
-    // ['企劃銷售', '海沃創意行銷'],
-    // ['銷售坪數', '18-33坪'],
-    // ['樓層規劃', 'A棟地上14樓、B棟地上14樓，地下6層'],
-    // ['可售戶數', '182戶'],
-    // ['汽車車位', '205車位'],
-    // ['本案特色', '大廳挑高約4米2、百坪公設大會館<br />約二百坪景觀中庭花園、空中花園'],
+    ['投資興建', '達欣開發股份有限公司'],
+    ['建照號碼', '108建字第0228號'],
+    ['建築設計', '李祖原聯合建築師事務所'],
+    ['公設規劃', '原堂室內裝修工程股份有限公司'],
+    ['景觀規劃', '瀚翔景觀國際股份有限公司'],
+    ['建築代銷', '聯碩行銷股份有限公司'],
+    ['經紀人', '戴子順  (96)竹縣地經字第00150號'],
   ],
 
   gtmCode: ['5CPWJJQ'], // 可放置多個
@@ -29,7 +22,7 @@ export default {
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
   order: {
-    title: '歡迎預約參觀 將有專人為您服務。',
+    title: '預約賞屋',
     subTitle: ''
   }
 }
