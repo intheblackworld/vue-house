@@ -31,11 +31,11 @@
       </div>
       <div class="left">
         <!-- img class="img" src="./s1/logo.png" alt /  data-aos="fade-up" data-aos-delay="400"-->
-        <img src="./s1/logo.png" alt class="img" />
-        <img src="./s1/t1.png" alt class="img" />
-        <img src="./s1/t2.png" alt class="img" />
-        <img src="./s1/t3.png" alt class="img" />
-        <img src="./s1/button.png" alt class="btn" v-scroll-to="{ element: `#contact` }" />
+        <img src="./s1/logo.png" alt class="img" data-aos="fade" data-aos-delay="400" />
+        <img src="./s1/t1.png" alt class="img" data-aos="fade" data-aos-delay="600" />
+        <img src="./s1/t2.png" alt class="img" data-aos="fade" data-aos-delay="800" />
+        <img src="./s1/t3.png" alt class="img" data-aos="fade" data-aos-delay="1000" />
+        <img src="./s1/button.png" alt class="btn" v-scroll-to="{ element: `#contact` }" data-aos="fade" data-aos-delay="1200" />
       </div>
       <div class="right">
         <img src="./s1/bg.png" alt class="img" />
@@ -149,7 +149,7 @@ svg {
   min-height: 700px !important;
   width: 90%;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: #fffffb;
 }
 // .bg-img {
 //   width: 100vw;
@@ -165,7 +165,7 @@ svg {
 .nav {
   position: fixed;
   width: 100vw;
-  height: 100px;
+  height:calc(100vw * 1 / 20);;
   left: 0;
   background-color: rgba(0, 0, 0, 0.9);
   top: 0;
@@ -177,6 +177,7 @@ svg {
   .logo-link {
     height: 100%;
     margin-right: 15px;
+    img{height: 100%;width:auto;}
   }
 }
 
@@ -211,7 +212,6 @@ svg {
     }
   }
 }
-
 .left {
   width: 59%;
   height: 100%;
@@ -224,6 +224,7 @@ svg {
     display: block;
     width: 100%;
     position: absolute;
+    object-fit: contain;
     top: 0;
 
     &:nth-child(1) {
@@ -237,7 +238,7 @@ svg {
     left: 0;
     right: 0;
     margin: 0 auto;
-    bottom: 15%;
+    top: calc(50% + 15vw);
     width: calc(100vw * 399 / 1920);
     cursor: pointer;
     opacity: 0.7;
@@ -262,10 +263,12 @@ svg {
     display: block;
     width: 100%;
     position: absolute;
+    object-fit: contain;
     top: 0;
 
     &:nth-child(1) {
       position: relative;
+    object-fit: cover;
     }
   }
 }

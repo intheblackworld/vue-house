@@ -5,22 +5,22 @@
       <!-- 不用一屏高
         圖片這邊寬59%
       文字區塊內容在區塊內置中-->
-      <div class="left" data-aos="fade" data-aos-delay="400">
+      <div class="left">
         <img src="./s3/達欣開發-台北高峰會.jpg" alt class="img" />
       </div>
-      <div class="right" data-aos="fade-up" data-aos-delay="600">
+      <div class="right">
         <!-- <img class="img" src="./s1/img1.jpg" alt /> -->
         <div class="content">
-          <h3 class="title">
+          <h3 class="title" data-aos="fade-up" data-aos-delay="400">
             <p>經典讓我們無須動口就說明了我們是誰</p>半世紀達欣企業集團
             <br />台灣豪宅界的領航者
           </h3>
-          <img src="./s3/icon.png" alt class="bg-img" v-if="!isMobile" />
+          <img src="./s3/icon.png" alt class="bg-img" v-if="!isMobile"  data-aos="fade-up" data-aos-delay="600"/>
           <img src="./s3/line.png" alt class="bg-img" v-if="!isMobile" />
           <div class="flex-c" v-if="isMobile">
             <img src="./mo/3/icon.png" alt class="icon" />
           </div>
-          <div class="desc">
+          <div class="desc" data-aos="fade-up" data-aos-delay="800">
             達欣半世紀引領豪宅界，總以未來視野締造當代經典
             <br />信義區名宅「台北高峰會」至今依舊前衛
             <br />全亞洲首座文華東方酒店簽約管理的「文華苑」
@@ -43,7 +43,7 @@
   display: flex;
   width: 90%;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: #fffffb;
 
   &.fullscreen {
     height: calc(100vw * 750 / 1920) !important;

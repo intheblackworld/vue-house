@@ -5,7 +5,7 @@
       <!-- 不用一屏高
         圖片這邊寬59%
       文字區塊內容在區塊內置中-->
-      <div class="left" data-aos="fade" data-aos-delay="400">
+      <div class="left">
         <img src="./s8/1健身房.jpg" alt class="img" v-if="!isMobile" />
         <img src="./s8/2交誼廳.jpg" alt class="img" v-if="!isMobile" />
         <!-- <img src="./s8/3多功能室.jpg" alt class="img" v-if="!isMobile" />
@@ -17,18 +17,18 @@
         <!-- <img src="./mo/8/3多功能室.jpg" alt class="img" v-if="isMobile" />
         <img src="./mo/8/4沙發會客區.jpg" alt class="img" v-if="isMobile" /> -->
       </div>
-      <div class="right" data-aos="fade-up" data-aos-delay="600">
+      <div class="right">
         <!-- <img class="img" src="./s1/img1.jpg" alt /> -->
         <div class="content">
-          <h3 class="title">
+          <h3 class="title" data-aos="fade-up" data-aos-delay="400">
             酒店式精緻公共空間
           </h3>
-          <img src="./s8/icon.png" alt class="bg-img" v-if="!isMobile" />
+          <img src="./s8/icon.png" alt class="bg-img" v-if="!isMobile" data-aos="fade-up" data-aos-delay="600" />
           <img src="./s8/line.png" alt class="bg-img" v-if="!isMobile" />
           <div class="flex-c" v-if="isMobile">
             <img src="./mo/7/icon.png" alt class="icon" />
           </div>
-          <div class="desc">
+          <div class="desc" data-aos="fade-up" data-aos-delay="800">
             大廳會客區由北京盤古七星酒店室內設計「原堂」所規劃，融合古典與現代，大器簡約、精緻雋永。另更有以半穿透格柵設計串連的交誼廳、多功能室、多功能健身房，一氣呵成卻又互不干擾。
           </div>
         </div>
@@ -44,7 +44,7 @@
         <img src="./s8/3多功能室.jpg" alt class="img" />
         <img src="./s8/4沙發會客區.jpg" alt class="img" />
       </div>
-      <div class="right" data-aos="fade-up" data-aos-delay="600">
+      <div class="right">
         <!-- <img class="img" src="./s1/img1.jpg" alt /> -->
         <div class="all-line"></div>
       </div>
@@ -59,7 +59,7 @@
   position: relative;
   align-items: stretch;
   display: flex;
-  background: #fff;
+  background: #fffffb;
   width: 90%;
   margin: 0 auto;
   &.fullscreen {

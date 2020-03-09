@@ -5,19 +5,20 @@
       <!-- 不用一屏高
         圖片這邊寬59%
       文字區塊內容在區塊內置中-->
-      <div class="left" data-aos="fade" data-aos-delay="400">
+      <div class="left">
         <img src="./s5/img.jpg" alt class="img" />
       </div>
-      <div class="right" data-aos="fade-up" data-aos-delay="600">
+      <div class="right">
         <!-- <img class="img" src="./s1/img1.jpg" alt /> -->
         <div class="content">
-          <h3 class="title">
+          <h3 class="title" data-aos="fade-up" data-aos-delay="400">
             <p>用信義區門牌重新定義隨心所欲</p>大信義計劃生活圈<br />世界櫥窗就在身邊</h3>
-          <img src="./s5/icon.png" alt class="icon" v-if="!isMobile" />
+          <img src="./s5/icon.png" alt class="icon" v-if="!isMobile" data-aos="fade-up" data-aos-delay="600" />
+          <img src="./s5/line.png" alt class="bg-img" v-if="!isMobile" />
           <div class="flex-c" v-if="isMobile">
             <img src="./mo/5/icon.png" alt class="icon" />
           </div>
-          <div class="desc">
+          <div class="desc" data-aos="fade-up" data-aos-delay="800">
             信義區，台北的CBD，百貨商場密度居全球之最<br />
             除商業氣息濃厚，更有四四南村等人文氣息處處點綴<br />
             金融、政治、時尚、科技、藝術應有盡有<br />
@@ -35,61 +36,48 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  height: 100vh;
+  align-items:stretch;
   display: flex;
-  background: #fff;
+  background: #fffffb;
   width: 90%;
   margin: 0 auto;
   &.fullscreen {
-    min-height: 700px !important;
-    height: calc(100vw * 832 / 1920) !important;
-    overflow: hidden;
+    // height: calc(100vw * 832 / 1920) !important;
+    overflow: visible;
   }
 }
 .bg-img {
-  width: 100vw;
+  width: 100%;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 0;
+  top: 0;
   height: auto;
   display: block;
   object-fit: cover;
+
+  &:nth-child(1) {
+    position: relative;
+  }
 }
 
 .left {
   width: 59%;
   height: 100%;
-}
 
-.line {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  width: 1px;
-  background-color: #aa804a;
-  height: calc(100vw * 245 / 1920);
-
-  &.line-t {
-    top: -5%;
-  }
-
-  &.line-b {
-    bottom: -15%;
+  img {
+    display: block;
   }
 }
 
 .right {
   width: 41%;
-  height: 100%;
+ //height: 100%;
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
 
   .content {
-    width: calc(100vw * 640 / 1920);
+    width: calc(100vw * 707 / 1728);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -105,12 +93,13 @@
       text-align: center;
       color: #231815;
       margin-bottom: 35px;
+      margin-top: calc(100vw * -20 / 1920);
       width: 100%;
 
       p {
-        font-size: calc(100vw * 22 / 1920);
-        font-family: 'Noto Serif TC', serif;
         color: #aa804a;
+        font-size: calc(100vw * 23.8 / 1920);
+        font-family: 'Noto Serif TC', serif;
         letter-spacing: 2.2px;
       }
     }
@@ -126,6 +115,17 @@
       text-align: center;
       color: #231815;
       margin-top: 35px;
+
+      p {
+        margin-top: 45px;
+        font-family: 'Noto Serif TC', serif;
+        font-weight: bold;
+
+        span {
+          font-family: 'Noto Serif TC', serif;
+          color: #aa804a;
+        }
+      }
     }
   }
 }

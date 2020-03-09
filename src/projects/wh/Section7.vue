@@ -5,25 +5,25 @@
       <!-- 不用一屏高
         圖片這邊寬59%
       文字區塊內容在區塊內置中-->
-      <div class="left" data-aos="fade" data-aos-delay="400">
+      <div class="left">
         <img src="./s7/1空中花園.jpg" alt class="img" v-if="!isMobile" />
         <img src="./s7/2頂樓公設.jpg" alt class="img" v-if="!isMobile" />
         <img src="./mo/7/1空中花園.jpg" alt class="img" v-if="isMobile" />
         <img src="./mo/7/2頂樓公設.jpg" alt class="img" v-if="isMobile" />
       </div>
-      <div class="right" data-aos="fade-up" data-aos-delay="600">
+      <div class="right">
         <!-- <img class="img" src="./s1/img1.jpg" alt /> -->
         <div class="content">
-          <h3 class="title">
+          <h3 class="title" data-aos="fade-up" data-aos-delay="400">
             徜徉空中花園
             <br />台北101收眼底
           </h3>
-          <img src="./s7/icon.png" alt class="bg-img" v-if="!isMobile" />
+          <img src="./s7/icon.png" alt class="bg-img" v-if="!isMobile" data-aos="fade-up" data-aos-delay="600" />
           <img src="./s7/line.png" alt class="bg-img" v-if="!isMobile" />
           <div class="flex-c" v-if="isMobile">
             <img src="./mo/7/icon.png" alt class="icon" />
           </div>
-          <div class="desc">
+          <div class="desc" data-aos="fade-up" data-aos-delay="800">
             頂樓室外區有空中小花園，觀看台北101煙火秀不再人擠人，秘境花園就在自家樓上；頂樓室內區為雙面採光休憩區，與親朋好友聚餐聊天，享受開闊空間。
           </div>
         </div>
@@ -40,7 +40,7 @@
   position: relative;
   align-items: stretch;
   display: flex;
-  background: #fff;
+  background: #fffffb;
   width: 90%;
   margin: 0 auto;
   &.fullscreen {

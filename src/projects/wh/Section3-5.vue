@@ -5,22 +5,22 @@
       <!-- 不用一屏高
         圖片這邊寬59%
       文字區塊內容在區塊內置中-->
-      <div class="left" data-aos="fade" data-aos-delay="400">
+      <div class="left">
         <img src="./s35/敦化林蔭大道.jpg" alt class="img" />
       </div>
-      <div class="right" data-aos="fade-up" data-aos-delay="600">
+      <div class="right">
         <!-- <img class="img" src="./s1/img1.jpg" alt /> -->
         <div class="content">
-          <h3 class="title">
+          <h3 class="title" data-aos="fade-up" data-aos-delay="400">
             <p>為你的低調增添奢華</p>國際迎賓林蔭大道
             <br />遍佈達欣經典足跡
           </h3>
-          <img src="./s35/icon.png" alt class="bg-img" v-if="!isMobile" />
+          <img src="./s35/icon.png" alt class="bg-img" v-if="!isMobile"  data-aos="fade-up" data-aos-delay="600"/>
           <img src="./s35/line.png" alt class="bg-img" v-if="!isMobile" />
           <div class="flex-c" v-if="isMobile">
             <img src="./mo/35/icon.png" alt class="icon" />
           </div>
-          <div class="desc">
+          <div class="desc" data-aos="fade-up" data-aos-delay="800">
             敦化南北路林蔭大道綠浪蓊鬱傾瀉
             <br />漫步其中，不期而遇的經典，皆是達欣走過足跡
             <br />北起文華東方酒店，南至香格里拉遠東飯店等
@@ -43,7 +43,7 @@
   display: flex;
   width: 90%;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: #fffffb;
 
   &.fullscreen {
     height: calc(100vw * 750 / 1920) !important;

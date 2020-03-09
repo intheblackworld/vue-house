@@ -5,23 +5,23 @@
       <!-- 不用一屏高
         圖片這邊寬59%
       文字區塊內容在區塊內置中-->
-      <div class="left" data-aos="fade" data-aos-delay="400">
+      <div class="left">
         <img src="./s4/東方文華.jpg" alt class="img" />
         <img src="./s4/img2.jpg" alt="" class="img">
       </div>
-      <div class="right" data-aos="fade-up" data-aos-delay="600">
+      <div class="right">
         <!-- <img class="img" src="./s1/img1.jpg" alt /> -->
         <div class="content">
-          <h3 class="title">
+          <h3 class="title" data-aos="fade-up" data-aos-delay="400">
             <p>為你的生活品味調入文華苑的優雅</p>文華苑六星級陣容<br />
             國際級超規格鉅獻
           </h3>
-          <img src="./s4/icon.png" alt class="bg-img" v-if="!isMobile" />
+          <img src="./s4/icon.png" alt class="bg-img" v-if="!isMobile" data-aos="fade-up" data-aos-delay="600" />
           <img src="./s4/line.png" alt class="bg-img" v-if="!isMobile" />
           <div class="flex-c" v-if="isMobile">
             <img src="./mo/4/icon.png" alt class="icon" />
           </div>
-          <div class="desc">
+          <div class="desc" data-aos="fade-up" data-aos-delay="800">
             2012年「文華苑」獲得蘇富比評選為全球十大獨特豪宅<br />
             與文華苑同規格國際級團隊，超規格陣容，相襯您的格局
             <p>
@@ -47,7 +47,7 @@
   position: relative;
   align-items:stretch;
   display: flex;
-  background: #fff;
+  background: #fffffb;
   width: 90%;
   margin: 0 auto;
   &.fullscreen {

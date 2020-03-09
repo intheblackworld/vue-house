@@ -27,7 +27,7 @@
 </template>
 <style lang="scss" scoped>
 .bg {
-  background-color: #fff;
+  background-color: #fffffb;
   background-size: cover;
   position: relative;
   background-image: url('./s8_bg.jpg');

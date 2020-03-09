@@ -5,25 +5,25 @@
       <!-- 不用一屏高
         圖片這邊寬59%
       文字區塊內容在區塊內置中-->
-      <div class="left" data-aos="fade" data-aos-delay="400">
+      <div class="left">
         <img src="./s6/img1.jpg" alt class="img" v-if="!isMobile" />
         <img src="./s6/img2.jpg" alt class="img" v-if="!isMobile" />
         <img src="./mo/6/img1.jpg" alt class="img" v-if="isMobile" />
         <img src="./mo/6/img2.jpg" alt class="img" v-if="isMobile" />
       </div>
-      <div class="right" data-aos="fade-up" data-aos-delay="600">
+      <div class="right">
         <!-- <img class="img" src="./s1/img1.jpg" alt /> -->
         <div class="content">
-          <h3 class="title">
+          <h3 class="title" data-aos="fade-up" data-aos-delay="400">
             <p>繁華轉身盡顯你的無二風格</p>百坪綠意在身邊
             <br />徜徉自然擁抱寧靜
           </h3>
-          <img src="./s6/icon.png" alt class="bg-img" v-if="!isMobile" />
+          <img src="./s6/icon.png" alt class="bg-img" v-if="!isMobile" data-aos="fade-up" data-aos-delay="600" />
           <img src="./s6/line.png" alt class="bg-img" v-if="!isMobile" />
           <div class="flex-c" v-if="isMobile">
             <img src="./mo/6/icon.png" alt class="icon" />
           </div>
-          <div class="desc">
+          <div class="desc" data-aos="fade-up" data-aos-delay="800">
             看重此處的離塵不離城
             <br />一代佳人湯蘭花、綜藝大姐大張小燕
             <br />皆選擇挹翠山莊做為心的港灣
@@ -47,7 +47,7 @@
   position: relative;
   align-items: stretch;
   display: flex;
-  background: #fff;
+  background: #fffffb;
   width: 90%;
   margin: 0 auto;
   &.fullscreen {

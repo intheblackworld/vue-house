@@ -5,20 +5,20 @@
       <!-- 不用一屏高
         圖片這邊寬59%
       文字區塊內容在區塊內置中-->
-      <div class="left" data-aos="fade" data-aos-delay="400">
+      <div class="left">
         <img src="./s9/外觀.jpg" alt class="img" v-if="!isMobile" />
         <img src="./mo/9/外觀.jpg" alt class="img" v-if="isMobile" />
       </div>
-      <div class="right" data-aos="fade-up" data-aos-delay="600">
+      <div class="right" data-aos="fade-up">
         <!-- <img class="img" src="./s1/img1.jpg" alt /> -->
         <div class="content">
-          <h3 class="title">信義菁英輕奢宅</h3>
-          <img src="./s9/icon.png" alt class="bg-img" v-if="!isMobile" />
+          <h3 class="title" data-aos="fade-up" data-aos-delay="400">信義菁英輕奢宅</h3>
+          <img src="./s9/icon.png" alt class="bg-img" v-if="!isMobile"  data-aos="fade-up" data-aos-delay="600"/>
           <img src="./s9/line.png" alt class="bg-img" v-if="!isMobile" />
           <div class="flex-c" v-if="isMobile">
             <img src="./mo/9/icon.png" alt class="icon" />
           </div>
-          <div class="desc">
+          <div class="desc" data-aos="fade-up" data-aos-delay="800">
             融合東方的圓融與西方的簡約
             <br />石材與木紋的溫潤肌理詮釋居所的寧靜致遠
             <br />典雅而創新的設計
@@ -39,7 +39,7 @@
   display: flex;
   width: 90%;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: #fffffb;
 
   &.fullscreen {
     height: calc(100vw * 750 / 1920) !important;

@@ -53,7 +53,7 @@
 </template>
 <style lang="scss" scoped>
 .bg {
-  background-color: #fff;
+  background-color: #fffffb;
   background-position: 100% 0%;
   background-size: cover;
   position: relative;

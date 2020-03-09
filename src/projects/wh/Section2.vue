@@ -1,21 +1,21 @@
 <template>
   <div class="section2">
     <div class="bg fullscreen">
-      <div class="left" data-aos="fade" data-aos-delay="400">
+      <div class="left">
         <img src="./s2/img.jpg" alt class="img" />
       </div>
       <div class="right">
         <div class="content">
-          <h3 class="title">
+          <h3 class="title" data-aos="fade-up" data-aos-delay="400">
             遇見不凡
             <span>預見非凡</span>
           </h3>
-          <img src="./s2/icon.png" alt class="bg-img" v-if="!isMobile" />
+          <img src="./s2/icon.png" alt class="bg-img" v-if="!isMobile" data-aos="fade-up" data-aos-delay="500" />
           <img src="./s2/line.png" alt class="bg-img" v-if="!isMobile" />
           <div class="flex-c" v-if="isMobile">
             <img src="./mo/2/icon.png" alt class="icon" />
           </div>
-          <div class="desc">
+          <div class="desc" data-aos="fade-up" data-aos-delay="600">
             2012半世紀的品牌寫下「文華苑」經典<br />
             不凡經典至今依舊傳唱<br />
             2020達欣與經典團隊相約重逢、再鑄非凡
@@ -35,7 +35,7 @@
   display: flex;
   width: 90%;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: #fffffb;
 
   &.fullscreen {
     height: calc(100vw * 750 / 1920) !important;
