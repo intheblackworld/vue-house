@@ -35,7 +35,7 @@
         </span>
       </a>
 
-      <div class="address flex-c">{{info.address}}</div>
+      <div class="address flex-c" v-html="info.address"></div>
       <div class="btn flex-c">
         <span class="flex-c" @click="showMapDialog">
           <font-awesome-icon icon="map-marker-alt" /><span>導航 Google 地圖</span>
