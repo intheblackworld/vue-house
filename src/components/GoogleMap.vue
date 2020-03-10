@@ -29,11 +29,14 @@ export default {
 .google-map {
   display: flex;
   position: relative;
+  margin: auto;
+  width: 90%;
 }
 
 @media screen and (max-width: 767px) {
   .google-map {
     flex-wrap: wrap;
+  width: 100%;
   }
 }
 </style>

@@ -125,9 +125,8 @@ export default {
   position: relative;
   z-index: 3;
   width: 1200px;
-  height: 660px;
-
-  margin: 40px auto;
+  max-width:90%;
+  margin: 40px auto -20px auto;
   padding: 60px 0 50px;
 }
 

@@ -13,7 +13,7 @@
         <!-- <img class="img" src="./s1/img1.jpg" alt /> -->
         <div class="content">
           <h3 class="title" data-aos="fade-up" data-aos-delay="400">
-            <p>繁華轉身盡顯你的無二風格</p>百坪綠意在身邊<br />
+            <p>繁華轉身盡顯你的無二風格</p>自然綠意在身邊<br />
             徜徉自然擁抱寧靜
           </h3>
           <img src="./s6/icon.png" alt class="bg-img" v-if="!isMobile" data-aos="fade-up" data-aos-delay="600" />
@@ -26,7 +26,7 @@
             一代佳人湯蘭花、綜藝大姐大張小燕<br />
             皆選擇挹翠山莊做為心的港灣<br />
             與名流齊聚的挹翠山莊當鄰居<br />
-            享受百坪綠意在身旁<br />
+            享受自然綠意在身旁<br />
             步行即可到象山<br />
             徜徉繁華與的恬淡<br />
             每個轉角，都能遇見最好的自己

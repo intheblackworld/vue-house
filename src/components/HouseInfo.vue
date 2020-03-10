@@ -33,10 +33,11 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/style/variableColor.scss';
 .house-info {
-  width: 100vw;
+  width: 90%;
   background: $house_bg;
   position: relative;
   z-index: 1;
+  margin: 0 auto;
 }
 .content {
   width: 686px;
@@ -118,6 +119,9 @@ export default {
   .info {
     width: 100%;
   }
+.house-info {
+  width: 100%;
+}
 }
 
 /* 平板尺寸 */

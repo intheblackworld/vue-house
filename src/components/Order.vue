@@ -205,7 +205,7 @@ export default {
 .order-bg {
   // background-color: $order_bg_color;
   background-image: $order_bg_image;
-  background-size: 100% 100%;
+  background-size: 100% auto;
   position: relative;
   padding-top: 80px;
   overflow: hidden;
