@@ -258,7 +258,7 @@ export default {
     padding: 40px;
     transform: none;
     position: static;
-    margin-top: 60px;
+    margin: 40px auto 0 auto ;
 
     .logo {
       width: $contact_logo_mobile_width;
@@ -279,6 +279,8 @@ export default {
 
     > * {
       margin-bottom: 12px;
+      &.address{
+      margin-bottom: 0;}
     }
   }
 
@@ -288,6 +290,8 @@ export default {
 
   .address {
     width: 280px;
+    padding: 0 1em;
+    text-align: justify;
   }
 }
 

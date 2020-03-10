@@ -6,7 +6,8 @@
         圖片這邊寬59%
       文字區塊內容在區塊內置中-->
       <div class="left">
-        <img src="./s35/敦化林蔭大道.jpg" alt class="img" />
+        <img src="./s35/敦化林蔭大道.jpg" alt="敦化林蔭大道" v-if="!isMobile" class="img" />
+        <img src="./mo/35/敦化林蔭大道.jpg" alt="敦化林蔭大道" v-if="isMobile" class="img" />
       </div>
       <div class="right">
         <!-- <img class="img" src="./s1/img1.jpg" alt /> -->
@@ -46,7 +47,7 @@
   background-color: #fffffb;
 
   &.fullscreen {
-    height: calc(100vw * 750 / 1920) !important;
+    height: calc(100vw * 778 / 2000) !important;
     overflow: hidden;
   }
 }
@@ -54,7 +55,6 @@
   width: 100%;
   position: absolute;
   top: 0;
-  height: auto;
   display: block;
   object-fit: cover;
 
@@ -77,14 +77,15 @@
   justify-content: center;
 
   .content {
-    width: calc(100vw * 707 / 1728);
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    font-size: calc(100vw * 23 / 1920);
 
     .title {
-      font-size: calc(100vw * 45 / 1920);
+      font-size:1.8em;
       font-weight: bold;
       font-stretch: normal;
       font-style: normal;
@@ -92,11 +93,12 @@
       letter-spacing: 4.5px;
       text-align: center;
       color: #231815;
-      margin-bottom: 65px;
+      margin-bottom: 0;
+      margin-top: calc(100vw * -16/ 1920);
       width: 100%;
 
       p {
-        font-size: calc(100vw * 22 / 1920);
+        font-size:0.49em;
         font-family: 'Noto Serif TC', serif;
         color: #aa804a;
         letter-spacing: 2.2px;
@@ -105,15 +107,14 @@
 
     .desc {
       width: 100%;
-      font-size: calc(100vw * 24 / 1920);
       font-weight: normal;
       font-stretch: normal;
       font-style: normal;
       line-height: 1.86;
-      letter-spacing: 0.52px;
+      letter-spacing: 0.022em;
       text-align: center;
       color: #231815;
-      margin-top: 35px;
+      margin-top: calc(100vw * 105 / 1920);
     }
   }
 }
@@ -169,19 +170,7 @@
     }
   }
   .icon {
-    width: 100vw;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    top: 0;
-  }
-
-  .icon-line {
-    width: 112px;
-    height: 1px;
-    background-color: #aa804a;
-    margin: 8vw 10px;
+    width: 100%;
   }
 
   .right {
@@ -191,22 +180,26 @@
     .content {
       width: 90vw;
       margin: 0 auto;
-      padding-top: 30px;
-      padding-bottom: 50px;
+      font-size: calc(100vw * 12 / 375);
+      height: calc(100vw * 838 / 910);
+      flex-direction:column;
 
       .title {
-        font-size: calc(100vw * 20 / 375);
-        letter-spacing: 0.2em;
+        font-size: 1.6em;
+        letter-spacing: 0.15em;
         margin-bottom: 0;
+        margin-top: 0;
         p {
-          font-size: 12px;
-          margin-bottom: 1.5em;
+          font-size:calc(100vw * 12 / 375);
+          margin-bottom: 0.3em;
+          letter-spacing: 0.1em;
+          font-weight: 400;
+          transform: scale(0.86);
         }
       }
 
       .desc {
-        font-size: calc(100vw * 12 / 375);
-        margin-top: 45px;
+        margin-top:0;
       }
     }
   }

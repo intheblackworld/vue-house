@@ -1,19 +1,19 @@
 <template>
   <div class="section3">
-    <div class="bg fullscreen">
+    <div class="bg">
       <!-- <img src="./s1/bg1.png" alt class="bg-img relative" data-aos="fade" data-aos-delay="600" /> -->
       <!-- 不用一屏高
         圖片這邊寬59%
       文字區塊內容在區塊內置中-->
       <div class="left">
-        <img src="./s5/img.jpg" alt class="img" />
+        <img src="./s5/img.jpg" alt="信義區" class="img" />
       </div>
       <div class="right">
         <!-- <img class="img" src="./s1/img1.jpg" alt /> -->
         <div class="content">
           <h3 class="title" data-aos="fade-up" data-aos-delay="400">
-            <p>用信義區門牌重新定義隨心所欲</p>大信義計劃生活圈<br />世界櫥窗就在身邊</h3>
-          <img src="./s5/icon.png" alt class="icon" v-if="!isMobile" data-aos="fade-up" data-aos-delay="600" />
+            <p>用信義區門牌重新定義隨心所欲</p>信義計劃生活圈<br />世界櫥窗就在身邊</h3>
+          <img src="./s5/icon.png" alt class="bg-img" v-if="!isMobile" data-aos="fade-up" data-aos-delay="600" />
           <img src="./s5/line.png" alt class="bg-img" v-if="!isMobile" />
           <div class="flex-c" v-if="isMobile">
             <img src="./mo/5/icon.png" alt class="icon" />
@@ -82,9 +82,10 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    font-size: calc(100vw * 23 / 1920);
 
     .title {
-      font-size: calc(100vw * 45 / 1920);
+      font-size:1.8em;
       font-weight: bold;
       font-stretch: normal;
       font-style: normal;
@@ -92,13 +93,12 @@
       letter-spacing: 4.5px;
       text-align: center;
       color: #231815;
-      margin-bottom: 35px;
-      margin-top: calc(100vw * -20 / 1920);
+      margin-top: calc(100vw * 5 / 1920);
       width: 100%;
 
       p {
+        font-size:0.49em;
         color: #aa804a;
-        font-size: calc(100vw * 23.8 / 1920);
         font-family: 'Noto Serif TC', serif;
         letter-spacing: 2.2px;
       }
@@ -106,33 +106,20 @@
 
     .desc {
       width: 100%;
-      font-size: calc(100vw * 24 / 1920);
       font-weight: normal;
       font-stretch: normal;
       font-style: normal;
       line-height: 1.86;
-      letter-spacing: 0.52px;
+      letter-spacing: 0.022em;
       text-align: center;
       color: #231815;
-      margin-top: 35px;
-
-      p {
-        margin-top: 45px;
-        font-family: 'Noto Serif TC', serif;
-        font-weight: bold;
-
-        span {
-          font-family: 'Noto Serif TC', serif;
-          color: #aa804a;
-        }
-      }
+      margin-top: calc(100vw * 110 / 1920);
     }
   }
 }
 
 .img {
   width: 100%;
-  height: 100%;
   object-fit: cover;
 }
 
@@ -174,20 +161,8 @@
       height: auto;
     }
   }
-
   .icon {
-    width: 100vw;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    top: 0;
-  }
-  .icon-line {
-    width: 112px;
-    height: 1px;
-    background-color: #aa804a;
-    margin: 8vw 10px;
+    width: 100%;
   }
 
   .right {
@@ -197,20 +172,22 @@
     .content {
       width: 90vw;
       margin: 0 auto;
-      padding-top: 40px;
-      padding-bottom: 50px;
+      font-size: calc(100vw * 12 / 375);
+      height: calc(100vw * 727 / 910);
+      flex-direction:column;
 
       .title {
-        font-size: calc(100vw * 20 / 375);
-        letter-spacing: 0.2em;
-        margin-top: -10px;
-        margin-bottom: 50px;
-        text-align: center;
+        font-size: 1.6em;
+        letter-spacing: 0.15em;
+        margin-bottom: 0;
+        margin-top: calc(100vw * 0 / 910);
         p {
-          font-size: 12px;
-          margin-bottom: 1.5em;
+          font-size:calc(100vw * 12 / 375);
+          margin-bottom: 0.3em;
+          letter-spacing: 0.1em;
+          font-weight: 400;
+          transform: scale(0.86);
         }
-
         br {
           letter-spacing: 0;
           font-size: 0;
@@ -218,8 +195,7 @@
       }
 
       .desc {
-        font-size: calc(100vw * 12 / 375);
-        margin-top: 0;
+        margin-top:0;
       }
     }
   }

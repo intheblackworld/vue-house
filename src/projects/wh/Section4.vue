@@ -6,8 +6,9 @@
         圖片這邊寬59%
       文字區塊內容在區塊內置中-->
       <div class="left">
-        <img src="./s4/東方文華.jpg" alt class="img" />
-        <img src="./s4/img2.jpg" alt="" class="img">
+        <img src="./s4/東方文華.jpg" v-if="!isMobile" alt="東方文華" class="img" />
+        <img src="./s4/img2.jpg" v-if="!isMobile" alt="「李祖原」設計團隊，景觀推手「盧胤翰」" class="img">
+        <img src="./mo/4/東方文華.jpg" v-if="isMobile" alt="東方文華" class="img"  />
       </div>
       <div class="right">
         <!-- <img class="img" src="./s1/img1.jpg" alt /> -->
@@ -26,7 +27,7 @@
             與文華苑同規格國際級團隊，超規格陣容，相襯您的格局
             <p>
               <span>☆建築設計：</span><br />
-              台北101設計大師「李祖原」<br />
+              台北101設計大師「李祖原」設計團隊<br />
               <span>☆景觀設計：</span><br />
               國際酒店知名豪宅御用景觀推手「盧胤翰」<br />
               <span>☆室內設計：</span><br />
@@ -62,10 +63,6 @@
   height: auto;
   display: block;
   object-fit: cover;
-
-  &:nth-child(1) {
-    position: relative;
-  }
 }
 
 .left {
@@ -91,9 +88,10 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+      font-size: calc(100vw * 23 / 1920);
 
     .title {
-      font-size: calc(100vw * 45 / 1920);
+      font-size:1.8em;
       font-weight: bold;
       font-stretch: normal;
       font-style: normal;
@@ -101,13 +99,12 @@
       letter-spacing: 4.5px;
       text-align: center;
       color: #231815;
-      margin-bottom: 35px;
-      margin-top: calc(100vw * -20 / 1920);
+      margin-top: calc(100vw * 8 / 1920);
       width: 100%;
 
       p {
         color: #aa804a;
-        font-size: calc(100vw * 23.8 / 1920);
+        font-size:0.49em;
         font-family: 'Noto Serif TC', serif;
         letter-spacing: 2.2px;
       }
@@ -115,22 +112,24 @@
 
     .desc {
       width: 100%;
-      font-size: calc(100vw * 24 / 1920);
       font-weight: normal;
       font-stretch: normal;
       font-style: normal;
       line-height: 1.86;
-      letter-spacing: 0.52px;
+      letter-spacing: 0.022em;
       text-align: center;
       color: #231815;
-      margin-top: 35px;
+      margin-top: calc(100vw * 110 / 1920);
 
       p {
-        margin-top: 45px;
+        margin-top: 0.3em;
+        font-size:1.04em;
         font-family: 'Noto Serif TC', serif;
         font-weight: bold;
 
         span {
+          display:inline-block;
+        margin-top: 0.7em;
           font-family: 'Noto Serif TC', serif;
           color: #aa804a;
         }
@@ -183,20 +182,8 @@
       height: auto !important;
     }
   }
-
   .icon {
     width: 100%;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    top: 0;
-  }
-  .icon-line {
-    width: 112px;
-    height: 1px;
-    background-color: #aa804a;
-    margin: 8vw 10px;
   }
 
   .left {
@@ -214,18 +201,21 @@
     .content {
       width: 90vw;
       margin: 0 auto;
-      padding-top: 40px;
-      padding-bottom: 50px;
+      font-size: calc(100vw * 12 / 375);
+      height: calc(100vw * 1007 / 910);
+      flex-direction:column;
 
       .title {
-        font-size: calc(100vw * 20 / 375);
-        letter-spacing: 0.2em;
-        margin-top: -10px;
-        margin-bottom: 50px;
-        text-align: center;
+        font-size: 1.6em;
+        letter-spacing: 0.15em;
+        margin-bottom: 0;
+        margin-top: calc(100vw * 0 / 910);
         p {
-          font-size: 12px;
-          margin-bottom: 1.5em;
+          font-size:calc(100vw * 12 / 375);
+          margin-bottom: 0.3em;
+          letter-spacing: 0.1em;
+          font-weight: 400;
+          transform: scale(0.86);
         }
 
         br {
@@ -235,15 +225,8 @@
       }
 
       .desc {
-        font-size: calc(100vw * 12 / 375);
-        margin-top: 0px;
-
-        p {
-          margin-top: 10px;
-          font-weight: bold;
-          font-family: 'Noto Serif TC', serif;
-          line-height: 1.8;
-        }
+        margin-top:0;
+        letter-spacing:-0.047em;
       }
     }
   }

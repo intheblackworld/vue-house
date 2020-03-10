@@ -6,10 +6,10 @@
         圖片這邊寬59%
       文字區塊內容在區塊內置中-->
       <div class="left">
-        <img src="./s9/外觀.jpg" alt class="img" v-if="!isMobile" />
-        <img src="./mo/9/外觀.jpg" alt class="img" v-if="isMobile" />
+        <img src="./s9/外觀.jpg" alt="外觀" class="img" v-if="!isMobile" />
+        <img src="./mo/9/外觀.jpg" alt="外觀" class="img" v-if="isMobile" />
       </div>
-      <div class="right" data-aos="fade-up">
+      <div class="right">
         <!-- <img class="img" src="./s1/img1.jpg" alt /> -->
         <div class="content">
           <h3 class="title" data-aos="fade-up" data-aos-delay="400">信義菁英輕奢宅</h3>
@@ -73,14 +73,15 @@
   justify-content: center;
 
   .content {
-    width: calc(100vw * 707 / 1728);
+    width:100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    font-size: calc(100vw * 23 / 1920);
 
     .title {
-      font-size: calc(100vw * 45 / 1920);
+      font-size:1.8em;
       font-weight: bold;
       font-stretch: normal;
       font-style: normal;
@@ -88,11 +89,12 @@
       letter-spacing: 4.5px;
       text-align: center;
       color: #231815;
-      margin-bottom: 65px;
+      margin-bottom:0;      
+      margin-top: calc(100vw * -51 / 1920);
       width: 100%;
 
       p {
-        font-size: calc(100vw * 22 / 1920);
+        font-size:0.49em;
         font-family: 'Noto Serif TC', serif;
         color: #aa804a;
         letter-spacing: 2.2px;
@@ -101,15 +103,14 @@
 
     .desc {
       width: 100%;
-      font-size: calc(100vw * 24 / 1920);
       font-weight: normal;
       font-stretch: normal;
       font-style: normal;
       line-height: 1.86;
-      letter-spacing: 0.52px;
+      letter-spacing: 0.022em;
       text-align: center;
       color: #231815;
-      margin-top: 35px;
+      margin-top: calc(100vw * 110 / 1920);
     }
   }
 }
@@ -165,19 +166,7 @@
     }
   }
   .icon {
-    width: 100vw;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    top: 0;
-  }
-
-  .icon-line {
-    width: 112px;
-    height: 1px;
-    background-color: #aa804a;
-    margin: 8vw 10px;
+    width: 100%;
   }
 
   .right {
@@ -187,23 +176,26 @@
     .content {
       width: 90vw;
       margin: 0 auto;
-      padding-top: 30px;
-      padding-bottom: 50px;
+      font-size: calc(100vw * 12 / 375);
+      height: calc(100vw * 609 / 910);
+      flex-direction:column;
 
       .title {
-        font-size: calc(100vw * 20 / 375);
-        letter-spacing: 0.2em;
-        margin-bottom: 25px;
-        margin-top: 10px;
+        font-size: 1.6em;
+        letter-spacing: 0.15em;
+        margin-bottom: 0;
+        margin-top: calc(100vw * 0 / 910);
         p {
-          font-size: 12px;
-          margin-bottom: 1.5em;
+          font-size:calc(100vw * 12 / 375);
+          margin-bottom: 0.3em;
+          letter-spacing: 0.1em;
+          font-weight: 400;
+          transform: scale(0.86);
         }
       }
 
       .desc {
-        font-size: calc(100vw * 12 / 375);
-        margin-top: 30px;
+        margin-top:0;
       }
     }
   }

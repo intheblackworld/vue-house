@@ -6,10 +6,10 @@
         圖片這邊寬59%
       文字區塊內容在區塊內置中-->
       <div class="left">
-        <img src="./s7/1空中花園.jpg" alt class="img" v-if="!isMobile" />
-        <img src="./s7/2頂樓公設.jpg" alt class="img" v-if="!isMobile" />
-        <img src="./mo/7/1空中花園.jpg" alt class="img" v-if="isMobile" />
-        <img src="./mo/7/2頂樓公設.jpg" alt class="img" v-if="isMobile" />
+        <img src="./s7/1空中花園.jpg" alt="空中花園" class="img" v-if="!isMobile" />
+        <img src="./s7/2頂樓公設.jpg" alt="頂樓公設" class="img" v-if="!isMobile" />
+        <img src="./mo/7/1空中花園.jpg" alt="空中花園" class="img" v-if="isMobile" />
+        <img src="./mo/7/2頂樓公設.jpg" alt="頂樓公設" class="img" v-if="isMobile" />
       </div>
       <div class="right">
         <!-- <img class="img" src="./s1/img1.jpg" alt /> -->
@@ -18,7 +18,7 @@
             徜徉空中花園
             <br />台北101收眼底
           </h3>
-          <img src="./s7/icon.png" alt class="bg-img" v-if="!isMobile" data-aos="fade-up" data-aos-delay="600" />
+          <img src="./s7/icon.png" alt="" class="bg-img" v-if="!isMobile" data-aos="fade-up" data-aos-delay="600" />
           <img src="./s7/line.png" alt class="bg-img" v-if="!isMobile" />
           <div class="flex-c" v-if="isMobile">
             <img src="./mo/7/icon.png" alt class="icon" />
@@ -80,14 +80,15 @@
   right: -1px;
 
   .content {
-    width: calc(100vw * 587 / 1920);
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    font-size: calc(100vw * 23 / 1920);
 
     .title {
-      font-size: calc(100vw * 45 / 1920);
+      font-size:1.8em;
       font-weight: bold;
       font-stretch: normal;
       font-style: normal;
@@ -95,29 +96,28 @@
       letter-spacing: 4.5px;
       text-align: center;
       color: #231815;
-      margin-bottom: 55px;
-      margin-top: calc(100vw * 100 / 1920);
+      margin-bottom: 0;
+      margin-top: calc(100vw * 80 / 1920);
       width: 100%;
 
       p {
         color: #aa804a;
-        font-size: calc(100vw * 23.8 / 1920);
+        font-size:0.49em;
         font-family: 'Noto Serif TC', serif;
         letter-spacing: 2.2px;
       }
     }
 
     .desc {
-      width: 100%;
-      font-size: calc(100vw * 24 / 1920);
+      width: 80%;
       font-weight: normal;
       font-stretch: normal;
       font-style: normal;
       line-height: 1.86;
-      letter-spacing: 0.52px;
+      letter-spacing: 0.022em;
       text-align: center;
       color: #231815;
-      margin-top: 35px;
+      margin-top: calc(100vw * 110 / 1920);
 
       p {
         margin-top: 45px;
@@ -177,20 +177,8 @@
       height: auto !important;
     }
   }
-
   .icon {
     width: 100%;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    top: 0;
-  }
-  .icon-line {
-    width: 112px;
-    height: 1px;
-    background-color: #aa804a;
-    margin: 8vw 10px;
   }
 
   .left {
@@ -208,36 +196,28 @@
     .content {
       width: 90vw;
       margin: 0 auto;
-      padding-top: 40px;
-      padding-bottom: 50px;
+      font-size: calc(100vw * 12 / 375);
+      height: calc(100vw * 616 / 910);
+      flex-direction:column;
 
       .title {
-        font-size: calc(100vw * 20 / 375);
-        letter-spacing: 0.2em;
-        margin-top: -10px;
-        margin-bottom: 50px;
-        text-align: center;
+        font-size: 1.6em;
+        letter-spacing: 0.15em;
+        margin-bottom: 0;
+        margin-top: calc(100vw * 0 / 910);
         p {
-          font-size: 12px;
-          margin-bottom: 1.5em;
-        }
-
-        br {
-          letter-spacing: 0;
-          font-size: 0;
+          font-size:calc(100vw * 12 / 375);
+          margin-bottom: 0.3em;
+          letter-spacing: 0.1em;
+          font-weight: 400;
+          transform: scale(0.86);
         }
       }
 
       .desc {
-        font-size: calc(100vw * 12 / 375);
-        margin-top: 0px;
-
-        p {
-          margin-top: 10px;
-          font-weight: bold;
-          font-family: 'Noto Serif TC', serif;
-          line-height: 1.8;
-        }
+        margin:0;
+        width: 86%;
+        text-align: justify;
       }
     }
   }

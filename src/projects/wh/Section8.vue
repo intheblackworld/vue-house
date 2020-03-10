@@ -6,14 +6,14 @@
         圖片這邊寬59%
       文字區塊內容在區塊內置中-->
       <div class="left">
-        <img src="./s8/1健身房.jpg" alt class="img" v-if="!isMobile" />
-        <img src="./s8/2交誼廳.jpg" alt class="img" v-if="!isMobile" />
+        <img src="./s8/1健身房.jpg" alt="健身房" class="img" v-if="!isMobile" />
+        <img src="./s8/2交誼廳.jpg" alt="交誼廳" class="img" v-if="!isMobile" />
         <!-- <img src="./s8/3多功能室.jpg" alt class="img" v-if="!isMobile" />
         <img src="./s8/4沙發會客區.jpg" alt class="img" v-if="!isMobile" /> -->
-        <img src="./mo/8/1健身房.jpg" alt class="img" v-if="isMobile" />
-        <img src="./mo/8/2交誼廳.jpg" alt class="img" v-if="isMobile" />
-        <img src="./mo/8/3多功能室.jpg" alt class="img" v-if="isMobile" />
-        <img src="./mo/8/4沙發會客區.jpg" alt class="img" v-if="isMobile" />
+        <img src="./mo/8/1健身房.jpg" alt="健身房" class="img" v-if="isMobile" />
+        <img src="./mo/8/2交誼廳.jpg" alt="交誼廳" class="img" v-if="isMobile" />
+        <img src="./mo/8/3多功能室.jpg" alt="多功能室" class="img" v-if="isMobile" />
+        <img src="./mo/8/4沙發會客區.jpg" alt="沙發會客區" class="img" v-if="isMobile" />
         <!-- <img src="./mo/8/3多功能室.jpg" alt class="img" v-if="isMobile" />
         <img src="./mo/8/4沙發會客區.jpg" alt class="img" v-if="isMobile" /> -->
       </div>
@@ -26,7 +26,7 @@
           <img src="./s8/icon.png" alt class="bg-img" v-if="!isMobile" data-aos="fade-up" data-aos-delay="600" />
           <img src="./s8/line.png" alt class="bg-img" v-if="!isMobile" />
           <div class="flex-c" v-if="isMobile">
-            <img src="./mo/7/icon.png" alt class="icon" />
+            <img src="./mo/8/icon.png" alt class="icon" />
           </div>
           <div class="desc" data-aos="fade-up" data-aos-delay="800">
             大廳會客區由北京盤古七星酒店室內設計「原堂」所規劃，融合古典與現代，大器簡約、精緻雋永。另更有以半穿透格柵設計串連的交誼廳、多功能室、多功能健身房，一氣呵成卻又互不干擾。
@@ -40,9 +40,9 @@
       <!-- 不用一屏高
         圖片這邊寬59%
       文字區塊內容在區塊內置中-->
-      <div class="left" data-aos="fade" data-aos-delay="400">
-        <img src="./s8/3多功能室.jpg" alt class="img" />
-        <img src="./s8/4沙發會客區.jpg" alt class="img" />
+      <div class="left">
+        <img src="./s8/3多功能室.jpg" alt="多功能室" class="img" />
+        <img src="./s8/4沙發會客區.jpg" alt="沙發會客區" class="img" />
       </div>
       <div class="right">
         <!-- <img class="img" src="./s1/img1.jpg" alt /> -->
@@ -96,7 +96,7 @@
   position: relative;
   align-items: center;
   justify-content: center;
-  right: -1px;
+  font-size: calc(100vw * 23 / 1920);
 
   .content {
     width: calc(100vw * 587 / 1920);
@@ -106,7 +106,7 @@
     flex-wrap: wrap;
 
     .title {
-      font-size: calc(100vw * 45 / 1920);
+      font-size:1.8em;
       font-weight: bold;
       font-stretch: normal;
       font-style: normal;
@@ -114,13 +114,13 @@
       letter-spacing: 4.5px;
       text-align: center;
       color: #231815;
-      margin-bottom: 55px;
-      margin-top: calc(100vw * 50 / 1920);
+      margin-bottom: 0;
+      margin-top: calc(100vw * 27 / 1920);
       width: 100%;
 
       p {
         color: #aa804a;
-        font-size: calc(100vw * 23.8 / 1920);
+        font-size:0.49em;
         font-family: 'Noto Serif TC', serif;
         letter-spacing: 2.2px;
       }
@@ -128,15 +128,14 @@
 
     .desc {
       width: 100%;
-      font-size: calc(100vw * 24 / 1920);
       font-weight: normal;
       font-stretch: normal;
       font-style: normal;
       line-height: 1.86;
-      letter-spacing: 0.52px;
+      letter-spacing: 0.022em;
       text-align: center;
       color: #231815;
-      margin-top: 35px;
+      margin-top: calc(100vw * 122 / 1920);
 
       p {
         margin-top: 45px;
@@ -206,20 +205,8 @@
       height: auto !important;
     }
   }
-
   .icon {
     width: 100%;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    top: 0;
-  }
-  .icon-line {
-    width: 112px;
-    height: 1px;
-    background-color: #aa804a;
-    margin: 8vw 10px;
   }
 
   .left {
@@ -237,36 +224,28 @@
     .content {
       width: 90vw;
       margin: 0 auto;
-      padding-top: 40px;
-      padding-bottom: 50px;
+      font-size: calc(100vw * 12 / 375);
+      height: calc(100vw * 610 / 910);
+      flex-direction:column;
 
       .title {
-        font-size: calc(100vw * 20 / 375);
-        letter-spacing: 0.2em;
-        margin-top: 20px;
-        margin-bottom: 60px;
-        text-align: center;
+        font-size: 1.6em;
+        letter-spacing: 0.15em;
+        margin-bottom: 0;
+        margin-top: calc(100vw * 0 / 910);
         p {
-          font-size: 12px;
-          margin-bottom: 1.5em;
-        }
-
-        br {
-          letter-spacing: 0;
-          font-size: 0;
+          font-size:calc(100vw * 12 / 375);
+          margin-bottom: 0.3em;
+          letter-spacing: 0.1em;
+          font-weight: 400;
+          transform: scale(0.86);
         }
       }
 
       .desc {
-        font-size: calc(100vw * 12 / 375);
-        margin-top: 0px;
-
-        p {
-          margin-top: 10px;
-          font-weight: bold;
-          font-family: 'Noto Serif TC', serif;
-          line-height: 1.8;
-        }
+        margin-top:0;
+        width: 86%;
+        text-align: justify;
       }
     }
   }

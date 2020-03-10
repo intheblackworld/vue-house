@@ -6,14 +6,15 @@
         圖片這邊寬59%
       文字區塊內容在區塊內置中-->
       <div class="left">
-        <img src="./s3/達欣開發-台北高峰會.jpg" alt class="img" />
+        <img src="./s3/達欣開發-台北高峰會.jpg" alt="達欣開發-台北高峰會" v-if="!isMobile" class="img" />
+        <img src="./mo/3/達欣開發-台北高峰會.jpg" alt="達欣開發-台北高峰會" v-if="isMobile" class="img" />
       </div>
       <div class="right">
         <!-- <img class="img" src="./s1/img1.jpg" alt /> -->
         <div class="content">
           <h3 class="title" data-aos="fade-up" data-aos-delay="400">
-            <p>經典讓我們無須動口就說明了我們是誰</p>半世紀達欣企業集團
-            <br />台灣豪宅界的領航者
+            <p>經典讓我們無須動口就說明了我們是誰</p>半世紀達欣企業集團<br />
+            台灣豪宅界的領航者
           </h3>
           <img src="./s3/icon.png" alt class="bg-img" v-if="!isMobile"  data-aos="fade-up" data-aos-delay="600"/>
           <img src="./s3/line.png" alt class="bg-img" v-if="!isMobile" />
@@ -21,12 +22,12 @@
             <img src="./mo/3/icon.png" alt class="icon" />
           </div>
           <div class="desc" data-aos="fade-up" data-aos-delay="800">
-            達欣半世紀引領豪宅界，總以未來視野締造當代經典
-            <br />信義區名宅「台北高峰會」至今依舊前衛
-            <br />全亞洲首座文華東方酒店簽約管理的「文華苑」
-            <br />開擘酒店式寓所風潮
-            <br />而今，達欣以鑄造豪宅的底蘊
-            <br />專為信義菁英量身打造「達欣・信義文華」
+            達欣半世紀引領豪宅界，總以未來視野締造當代經典<br />
+            信義區名宅「台北高峰會」至今依舊前衛<br />
+            全亞洲首座文華東方酒店簽約管理的「文華苑」<br />
+            開擘酒店式寓所風潮<br />
+            而今，達欣以鑄造豪宅的底蘊<br />
+            專為信義菁英量身打造「達欣・信義文華」
           </div>
         </div>
         <div class="line line-b" v-if="!isMobile"></div>
@@ -46,7 +47,7 @@
   background-color: #fffffb;
 
   &.fullscreen {
-    height: calc(100vw * 750 / 1920) !important;
+    height: calc(100vw * 782 / 2000) !important;
     overflow: hidden;
   }
 }
@@ -77,14 +78,15 @@
   justify-content: center;
 
   .content {
-    width: calc(100vw * 707 / 1728);
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    font-size: calc(100vw * 23 / 1920);
 
     .title {
-      font-size: calc(100vw * 45 / 1920);
+      font-size:1.8em;
       font-weight: bold;
       font-stretch: normal;
       font-style: normal;
@@ -92,11 +94,12 @@
       letter-spacing: 4.5px;
       text-align: center;
       color: #231815;
-      margin-bottom: 65px;
+      margin-bottom:0;      
+      margin-top: calc(100vw * -14 / 1920);
       width: 100%;
 
       p {
-        font-size: calc(100vw * 22 / 1920);
+        font-size:0.49em;
         font-family: 'Noto Serif TC', serif;
         color: #aa804a;
         letter-spacing: 2.2px;
@@ -105,15 +108,14 @@
 
     .desc {
       width: 100%;
-      font-size: calc(100vw * 24 / 1920);
       font-weight: normal;
       font-stretch: normal;
       font-style: normal;
       line-height: 1.86;
-      letter-spacing: 0.52px;
+      letter-spacing: 0.022em;
       text-align: center;
       color: #231815;
-      margin-top: 35px;
+      margin-top: calc(100vw * 110 / 1920);
     }
   }
 }
@@ -169,19 +171,7 @@
     }
   }
   .icon {
-    width: 100vw;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    top: 0;
-  }
-
-  .icon-line {
-    width: 112px;
-    height: 1px;
-    background-color: #aa804a;
-    margin: 8vw 10px;
+    width: 100%;
   }
 
   .right {
@@ -191,22 +181,26 @@
     .content {
       width: 90vw;
       margin: 0 auto;
-      padding-top: 30px;
-      padding-bottom: 50px;
+      font-size: calc(100vw * 12 / 375);
+      height: calc(100vw * 800 / 910);
+      flex-direction:column;
 
       .title {
-        font-size: calc(100vw * 20 / 375);
-        letter-spacing: 0.2em;
+        font-size: 1.6em;
+        letter-spacing: 0.15em;
         margin-bottom: 0;
+        margin-top: calc(100vw * -10 / 910);
         p {
-          font-size: 12px;
-          margin-bottom: 1.5em;
+          font-size:calc(100vw * 12 / 375);
+          margin-bottom: 0.3em;
+          letter-spacing: 0.1em;
+          font-weight: 400;
+          transform: scale(0.86);
         }
       }
 
       .desc {
-        font-size: calc(100vw * 12 / 375);
-        margin-top: 30px;
+        margin-top:0;
       }
     }
   }
