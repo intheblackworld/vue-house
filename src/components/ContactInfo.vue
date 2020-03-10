@@ -6,12 +6,12 @@
       <div class="btn flex-c" @click="showCallDialog">
         <span class="flex-c">
           <font-awesome-icon icon="phone" />
-          {{info.phone}}
+           <span>{{info.phone}}</span>
         </span>
       </div>
-      <div class="btn flex-c">
-        <span class="flex-c" @click="showMessengerDialog">
-          <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB 諮詢
+      <div class="btn flex-c" @click="showMessengerDialog">
+        <span class="flex-c">
+          <font-awesome-icon :icon="['fab', 'facebook-messenger']" /><span>FB 諮詢</span>
         </span>
       </div>
       <!-- <a class="btn flex-c" :href="info.fbMessage" target="_blank" v-else>
@@ -21,7 +21,7 @@
       </a> -->
       <a class="btn flex-c" :href="info.fbLink" target="_blank">
         <span class="flex-c">
-          <font-awesome-icon :icon="['fab', 'facebook-f']" />前往粉絲專頁
+          <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
         </span>
       </a>
       <a href="http://unigiants.com.tw/" target="_blank" class="btn half flex-c">
@@ -31,14 +31,14 @@
       </a>
       <a href="https://www.facebook.com/unigiant/" target="_blank" class="btn half flex-c">
         <span class="flex-c">
-          <font-awesome-icon :icon="['fab', 'facebook-f']" />前往聯碩粉絲專頁
+          <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往聯碩粉絲專頁</span>
         </span>
       </a>
 
       <div class="address flex-c">{{info.address}}</div>
       <div class="btn flex-c">
         <span class="flex-c" @click="showMapDialog">
-          <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
+          <font-awesome-icon icon="map-marker-alt" /><span>導航 Google 地圖</span>
         </span>
       </div>
       <!-- <a class="google-btn flex-c" :href="info.googleLink" target="_blank">
@@ -268,6 +268,16 @@ export default {
   .btn {
     &.half {
       width: 280px;
+    }
+    svg{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left:  calc(50% - 5em);
+      margin-right:0;
+      + span{
+        margin-left: 1.5em;
+      }
     }
   }
 
