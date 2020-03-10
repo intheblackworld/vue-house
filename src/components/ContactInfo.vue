@@ -295,6 +295,9 @@ export default {
 
   .logo {
     margin-bottom: 20px;
+    margin: 0 -140px 20px -140px;
+    left: 50%;
+    position: relative;
   }
 
   .address {
