@@ -1,5 +1,7 @@
+import { isMobile } from '@/utils'
+
 export default {
-  address: '接待中心：台北市信義區吳興街600巷20號',
+  address: isMobile ? '接待中心：<br />台北市信義區吳興街600巷20號' : '接待中心：台北市信義區吳興街600巷20號',
   googleSrc: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7230.737949643077!2d121.5655864!3d25.0215494!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa4db80ba0d5%3A0x770f6becdaf7f7a4!2zMTEw5Y-w5YyX5biC5L-h576p5Y2A5ZCz6IiI6KGXNjAw5be3MjAtMeiZnw!5e0!3m2!1szh-TW!2stw!4v1583661533968!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/qQYKFtHS9KSknH4DA',
   phone: '02-23455888',
