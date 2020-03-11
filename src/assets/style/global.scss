@@ -544,16 +544,16 @@ img[lazy='loaded'] {
     }
 
     img {
-      width: 80%;
       position: relative;
       z-index: 122;
+      max-width: calc(100vw - 20px);
     }
 
     .close {
-      width: 50px;
+      width: 40px;
       position: absolute;
       top: -50px;
-      right: 20px;
+      right: 50px;
       cursor: pointer;
     }
   }
