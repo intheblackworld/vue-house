@@ -82,9 +82,12 @@ export default {
     }
   },
   created() {
-    window.addEventListener('load', event => {
+    setTimeout(() => {
       this.load = false
-    })
+    }, 500)
+    // window.addEventListener('load', event => {
+    //   this.load = false
+    // })
   },
 
   mounted() {

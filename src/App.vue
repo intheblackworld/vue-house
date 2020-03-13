@@ -16,6 +16,7 @@
 import AstrictMask from '@/components/AstrictMask'
 import gtm from '@/mixins/gtm.js'
 
+
 export default {
   name: 'App',
   mixins: [gtm],
