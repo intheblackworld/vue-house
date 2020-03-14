@@ -28,7 +28,7 @@
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 10;
+  z-index: 11;
   .list-indigator {
     position: relative;
     padding: 8px;

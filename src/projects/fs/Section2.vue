@@ -3,9 +3,8 @@
     <div class="bg">
       <div v-if="!isMobile">
         <!-- <img src="./s1/bg1.png" alt class="bg-img relative" data-aos="fade" data-aos-delay="600" /> -->
-        <img src="./s2/bg_01.png" alt class="bg-img img-1" />
-        <img src="./s2/bg_02.jpg" alt class="bg-img img-2" />
-        <img src="./s2/text.png" alt class="bg-img" />
+        <img src="./s1/bg2.png" alt class="bg-img img-1" />
+        <img src="./s1/bg3.jpg" alt class="bg-img img-2" />
       </div>
       <div v-else>
         <Map :tagList="tagList" :bgSrcT="bgSrcT" :bgSrcB="bgSrcB" :hand="hand" :bgText="require('./s2/text.png')">
@@ -31,8 +30,8 @@
   background-position: center;
   position: relative;
   position: relative;
-  top: -24vw;
-  margin-bottom: -24vw;
+  // top: -24vw;
+  // margin-bottom: -24vw;
 }
 .bg-img {
   width: 100vw;

@@ -2,63 +2,44 @@
   <div class="section3">
     <div class="bg">
       <div v-if="!isMobile">
-        <swiper :options="swiperOption" ref="mySwiper" data-aos="fade" data-aos-delay="200">
-          <swiper-slide
-            v-for="(slide, index) in slideList"
-            :index="index"
-            :key="slide.img"
-            class="item"
-          >
-            <img :src="slide.img" :class="`item-img`" />
-            <div class="item-title" v-html="slide.title"></div>
-          </swiper-slide>
-          <div class="swiper-button-prev" slot="button-prev">
-            <img src="./all/箭頭.png" alt />
-          </div>
-          <div class="swiper-button-next" slot="button-next">
-            <img src="./all/箭頭2.png" alt />
-          </div>
-        </swiper>
-        <div class="content">
-          <div class="stitle">增值起步走！起漲向東看！</div>
-          <div class="title">再造高雄新東區</div>
-          <div class="desc">
-            紐約、新加坡等國際城市都呈現「向東發展」趨勢，鳳山位高雄都會核心東側，同時也是高雄行政區人口數第一名，不僅人口潛力持續攀升，建設實力也不容小覷。
-            <br />
-            <br />南台灣最大兩座藝術殿堂衛武營國家文化藝術中心、大東藝術中心座落於此，曹公圳親水計畫、環城自行車道、國道7號計畫等共10大建設共投入超過千億資金，有效提升了居住機能品質，連帶帶動鳳山身價，大大推動城市位階，高雄新東區未來可看性無可限量！
+        <img v-lazy="require('./s3/bg.png')" alt class="bg-img" data-aos="fade" data-aos-delay="300" />
+        <div class="relative">
+          <img v-lazy="require('./s3/img2.png')" alt class="img" data-aos="fade" data-aos-delay="300" />
+          <img v-lazy="require('./s3/img1.jpg')" alt class="l-img" data-aos="fade" data-aos-delay="300" />
+          <div class="content-t">
+            <div class="title">落點校園首排 舞動雙站捷奏</div>
+            <div class="subtitle">天天公園孵育生活美好，轉身接軌鳳山國中站、大寮站</div>
+            <div class="desc">
+              ■ 享受無限棟距好視野，開窗就是天天公園&學校預定地
+              <br />■ 跟著捷運經濟走，散步5分鐘，連接鳳山國中、大寮捷運站
+              <br />■ 學區完整，以單車的距離，遇見中正國小、鳳山國中、新光高中
+              <br />■ 生活機能齊全，與後庄中庄、鳳林、輔英商圈為鄰
+              <br />■ 車行即串聯台1線、台25線，快速連通大高雄
+              <br />■ 10分鐘內，與鳳山火車站接軌，精采生活無往不利
+            </div>
           </div>
         </div>
-        <img src="./s3/bg_01.jpg" alt class="bg-img" />
-      </div>
-      <div v-else>
-        <swiper :options="swiperOption" ref="mySwiper" data-aos="fade" data-aos-delay="200">
-          <swiper-slide
-            v-for="(slide, index) in slideList"
-            :index="index"
-            :key="slide.img"
-            class="item"
-          >
-            <img :src="slide.img" :class="`item-img`" />
-            <div class="item-title" v-html="slide.title"></div>
-          </swiper-slide>
-          <div class="swiper-button-prev" slot="button-prev">
-            <img src="./all/箭頭.png" alt />
-          </div>
-          <div class="swiper-button-next" slot="button-next">
-            <img src="./all/箭頭2.png" alt />
-          </div>
-        </swiper>
-        <div class="content" data-aos="fade-down" data-aos-delay="200">
-          <div class="stitle">增值起步走！起漲向東看！</div>
-          <div class="title">再造高雄新東區</div>
-          <div class="desc">
-            紐約、新加坡等國際城市都呈現「向東發展」趨勢，鳳山位高雄都會核心東側，同時也是高雄行政區人口數第一名，不僅人口潛力持續攀升，建設實力也不容小覷。
-            <br />
-            <br />南台灣最大兩座藝術殿堂衛武營國家文化藝術中心、大東藝術中心座落於此，曹公圳親水計畫、環城自行車道、國道7號計畫等共10大建設共投入超過千億資金，有效提升了居住機能品質，連帶帶動鳳山身價，大大推動城市位階，高雄新東區未來可看性無可限量！
+        <div class="relative">
+          <img v-lazy="require('./s3/img3.jpg')" alt class="r-img" data-aos="fade" data-aos-delay="300" />
+          <div class="content-b">
+            <div class="subtitle">增值起步走！起漲向東看！</div>
+            <div class="title">再造高雄新東區</div>
+            <div class="desc">
+              紐約、新加坡等國際城市都呈現「向東發展」趨勢，鳳山位高雄都會核心東側，同時也是高雄行政區人口數第一名，不僅人口潛力持續攀升，建設實力也不容小覷。
+              <br />
+              <br />南台灣最大兩座藝術殿堂衛武營國家文化藝術中心、大東藝術中心座落於此，曹公圳親水計畫、環城自行車道、國道7號計畫等共10大建設共投入超過千億資金，有效提升了居住機能品質，連帶帶動鳳山身價，大大推動城市位階，高雄新東區未來可看性無可限量！
+            </div>
           </div>
         </div>
-        <img src="./s3/bg_m.jpg" alt class="bg-img" />
+        <div class="bottom">
+          <div class="blue"></div>
+          <img v-lazy="require('./s3/4-1.jpg')" alt data-aos="fade" data-aos-delay="300" />
+          <img v-lazy="require('./s3/4-2.jpg')" alt data-aos="fade" data-aos-delay="300" />
+          <img v-lazy="require('./s3/4-3.jpg')" alt data-aos="fade" data-aos-delay="300" />
+          <div class="blue"></div>
+        </div>
       </div>
+      <div v-else></div>
     </div>
   </div>
 </template>
@@ -69,95 +50,96 @@
   position: relative;
   overflow: hidden;
   position: relative;
-  height: calc(100vw * 800 / 1920);
-  display: flex;
-  align-items: center;
-
-  > div {
-    display: flex;
-    align-items: center;
-  }
+  height: calc(100vw * 1750 / 1920);
 }
-
 .bg-img {
   width: 100vw;
-  height: calc(100vw * 800 / 1920);
+  height: auto;
   position: absolute;
   top: 0;
   left: 0;
-  height: auto;
   display: block;
   object-fit: cover;
-  mix-blend-mode: screen;
+}
+.img {
+  width: 100vw;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  object-fit: cover;
   z-index: 2;
 
   &:nth-child(1) {
     position: relative;
+    z-index: 2;
   }
 }
 
-.swiper-container {
-  width: 50vw;
-  position: relative;
-  z-index: 5;
-
-  .item-img {
-    &:nth-child(1) {
-      position: relative;
-    }
-    width: 100%;
-    position: absolute;
-    display: block;
-  }
+.l-img {
+  position: absolute;
+  width: calc(100vw * 1130 / 1920);
+  height: auto;
+  left: calc(100vw * 32 / 1920);
+  top: calc(100vw * 80 / 1920);
 }
 
-.content {
-  width: 50vw;
-  padding-left: calc(100vw * (100 / 1920));
+.r-img {
+  position: absolute;
+  width: calc(100vw * 960 / 1920);
+  height: auto;
+  right: calc(100vw * 0 / 1920);
+  top: calc(100vw * -100 / 1920);
+  z-index: 1;
 }
 
-.stitle {
-  background-image: url('./all/stitle.jpg');
-  background-size: cover;
-  background-position: center;
-  width: calc(100vw * (430 / 1920));
-  height: calc(100vw * (54 / 1920));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(100vw * 30 / 1920);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: 0.6px;
-  text-align: center;
-  color: #5d4400;
+.content-t {
+  position: absolute;
+  top: calc(100vw * 150 / 1920);
+  right: calc(100vw * 111 / 1920);
+}
+
+.content-b {
+  position: absolute;
+  top: calc(100vw * 40 / 1920);
+  left: calc(100vw * 130 / 1920);
+  width: calc(100vw * 635 / 1920);
 }
 
 .title {
-  font-size: calc(100vw * 60 / 1920);
+  font-size: calc(100vw * 40 / 1920);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.48;
-  letter-spacing: 2.4px;
+  line-height: 1.5;
+  letter-spacing: normal;
   text-align: left;
-  color: #ffffff;
-  margin-top: calc(100vw * 17 / 1920);
-  margin-bottom: calc(100vw * 30 / 1920);
+  color: #000000;
+  margin-bottom: calc(100vw * 15 / 1920);
+}
+
+.subtitle {
+  font-size: calc(100vw * 23 / 1920);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.48;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+  margin-bottom: calc(100vw * 20 / 1920);
 }
 
 .desc {
-  font-size: calc(100vw * 24 / 1920);
+  font-size: calc(100vw * 16 / 1920);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.58;
-  letter-spacing: 0.48px;
+  line-height: 2.25;
+  letter-spacing: normal;
   text-align: left;
-  color: #cccccc;
-  width: calc(100vw * (741 / 1920));
+  color: #666666;
 }
 
 .item-title {
@@ -171,35 +153,30 @@
   color: #ffffff;
   position: absolute;
   right: 20px;
-  bottom: 20px;
+  bottom: 10px;
 }
 
-.swiper-button-prev,
-.swiper-container-rtl .swiper-button-next,
-.swiper-button-next,
-.swiper-container-rtl .swiper-button-prev {
-  z-index: 10;
-}
+.bottom {
+  width: 100vw;
+  position: absolute;
+  height: calc(100vw * 330 / 1920);
+  display: flex;
+  justify-content: space-between;
+  bottom: 0;
 
-.swiper-button-next,
-.swiper-button-prev {
-  // animation: arrow  linear 1s alternate infinite;
-}
-.swiper-button-next {
-  // animation-delay:1s;
-}
+  img {
+    width: calc(100vw * 550 / 1920);
+  }
 
-@keyframes arrow {
-  to {
-    -webkit-transform: translateX(8px);
-    transform: translateX(8px);
+  .blue {
+    width: calc(100vw * 90 / 1920);
+    height: 100%;
+    background-color: #20969b;
+
   }
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
-  .fullscreen {
-    height: 100vh;
-  }
 }
 
 /* 螢幕尺寸標準 */
@@ -251,49 +228,6 @@
     margin: 0 auto;
   }
 
-  .stitle {
-    background-image: url('./all/stitle.jpg');
-    background-size: cover;
-    background-position: center;
-    width: calc(100vw * (215 / 375));
-    height: calc(100vw * (27 / 375));
-    font-size: calc(100vw * 15 / 375);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: 0.6px;
-    text-align: center;
-    color: #5d4400;
-    margin-top: 33px;
-  }
-
-  .title {
-    font-size: calc(100vw * 29 / 375);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.48;
-    letter-spacing: 2.32px;
-    text-align: left;
-    color: #ffffff;
-    margin-top: calc(100vw * 17 / 375);
-    margin-bottom: calc(100vw * 17 / 375);
-  }
-
-  .desc {
-    font-size: calc(100vw * 14 / 375);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.58;
-    letter-spacing: 0.48px;
-    text-align: left;
-    color: #cccccc;
-    width: 100%;
-    padding-bottom:31vw;
-  }
-
   .item-title {
     font-size: calc(100vw * 14 / 375);
     font-weight: normal;
@@ -305,7 +239,7 @@
     color: #ffffff;
     position: absolute;
     right: 20px;
-    bottom: 20px;
+    bottom: 10px;
   }
 }
 </style>
@@ -313,69 +247,29 @@
 <script>
 // @ is an alias to /src
 import { isMobile, isTablet } from '@/utils'
-import slider from '@/mixins/slider.js'
-import 'swiper/dist/css/swiper.css'
-
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'section3',
-  mixins: [slider],
-  components: {
-    swiper,
-    swiperSlide,
-  },
+  components: {},
 
   data() {
     return {
       isMobile,
-      isHide: true,
-      swiperOption: {
-        slidesPerView: isMobile ? 1 : 1,
-        spaceBetween: isTablet ? 20 : 30,
-        slidesPerColumn: isMobile ? 1 : 1,
-        allowSlidePrev: isMobile ? true : true,
-        allowSlideNext: isMobile ? true : true,
-        // centeredSlides: true,
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: true,
-        },
-        loop: true,
-        effect: 'fade',
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-      },
-      slideList: [
-        {
-          img: require('./s3/1衛武營.jpg'),
-          title: '衛武營',
-        },
-        {
-          img: require('./s3/2大東藝文中心.jpg'),
-          title: '大東藝文中心',
-        },
-        {
-          img: require('./s3/3享溫馨.jpg'),
-          title: '享溫馨',
-        },
-      ],
+      isTablet,
     }
   },
 
   methods: {
-    slideChanged(e) {
-      const swiper = this.$refs.mySwiper.swiper
-      if (swiper.isEnd) {
-        this.slideIndex = 0
-      } else if (swiper.isBeginning) {
-        this.slideIndex = swiper.slides.length - 3
-      } else {
-        this.slideIndex = swiper.activeIndex - 1
-      }
-    },
+    // slideChanged(e) {
+    //   const swiper = this.$refs.mySwiper.swiper
+    //   if (swiper.isEnd) {
+    //     this.slideIndex = 0
+    //   } else if (swiper.isBeginning) {
+    //     this.slideIndex = swiper.slides.length - 3
+    //   } else {
+    //     this.slideIndex = swiper.activeIndex - 1
+    //   }
+    // },
   },
 }
 </script>

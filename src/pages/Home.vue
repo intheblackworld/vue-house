@@ -7,9 +7,9 @@
     <div class="section" id="section1">
       <Section1 />
     </div>
-    <div class="section" id="section2">
+    <!-- <div class="section" id="section2">
       <Section2 />
-    </div>
+    </div> -->
     <div class="section" id="section3">
       <Section3 />
     </div>
@@ -25,7 +25,16 @@
     <div class="section" id="section7">
       <Section7 />
     </div>
-    <ContactSection class="section" id="section8" />
+    <div class="section" id="section8">
+      <Section8 />
+    </div>
+    <div class="section" id="section9">
+      <Section9 />
+    </div>
+    <div class="section" id="section10">
+      <Section10 />
+    </div>
+    <ContactSection class="section" id="section11" />
     <MobileNav />
   </div>
 </template>
@@ -51,8 +60,9 @@ import Section4 from '@/projects/fs/Section4.vue'
 import Section5 from '@/projects/fs/Section5.vue'
 import Section6 from '@/projects/fs/Section6.vue'
 import Section7 from '@/projects/fs/Section7.vue'
-// import Section8 from '@/projects/fs/Section8.vue'
-// import Section9 from '@/projects/fs/Section9.vue'
+import Section8 from '@/projects/fs/Section8.vue'
+import Section9 from '@/projects/fs/Section9.vue'
+import Section10 from '@/projects/fs/Section10.vue'
 
 export default {
   name: 'home',
@@ -70,8 +80,9 @@ export default {
     Section5,
     Section6,
     Section7,
-    // Section8,
-    // Section9,
+    Section8,
+    Section9,
+    Section10,
   },
 
   data() {

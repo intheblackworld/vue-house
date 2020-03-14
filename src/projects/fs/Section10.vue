@@ -1,61 +1,43 @@
 <template>
-  <div class="section5">
+  <div class="section10">
     <div class="bg">
       <div v-if="!isMobile">
-        <img v-lazy="require('./s5/bg.png')" alt class="bg-img" />
-        <img v-lazy="require('./s5/logo.png')" alt class="bg-img" />
+        <img v-lazy="require('./s10/bg.png')" alt class="bg-img" />
         <div class="swiper-button-prev" slot="button-prev">
           <img src="./all/箭頭2.png" alt />
         </div>
         <div class="swiper-button-next" slot="button-next">
           <img src="./all/箭頭1.png" alt />
         </div>
-        <transition-group name="slide-fade" mode="out-in">
-          <div
-            class="content"
-            v-for="(slide, index) in slideList"
-            v-show="index === slideIndex"
-            :key="slide.img1"
-          >
-            <div class="title" v-html="slideList[slideIndex].title"></div>
-            <div class="desc" v-html="slideList[slideIndex].desc"></div>
-          </div>
-        </transition-group>
-        <swiper
-          :options="swiperOption"
-          ref="mySwiper"
-          data-aos="fade"
-          data-aos-delay="200"
-          class="swiper-r"
-          @slideChangeTransitionEnd="slideChanged"
-        >
-          <swiper-slide
-            v-for="(slide, index) in slideList"
-            :index="index"
-            :key="slide.img1"
-            class="item"
-          >
-            <img :src="slide.img1" :class="`item-img`" />
-            <div class="item-title" v-html="slide.name"></div>
-          </swiper-slide>
-        </swiper>
         <swiper
           :options="swiperOption"
           ref="mySwiper"
           data-aos="fade"
           data-aos-delay="200"
           class="swiper-l"
+          @slideChangeTransitionEnd="slideChanged"
         >
           <swiper-slide
             v-for="(slide, index) in slideList"
             :index="index"
-            :key="slide.img2"
+            :key="slide.img"
             class="item"
           >
-            <img :src="slide.img2" :class="`item-img`" />
+            <img :src="slide.img" :class="`item-img`" />
             <div class="item-title" v-html="slide.name"></div>
           </swiper-slide>
         </swiper>
+        <transition-group name="slide-fade" mode="out-in">
+          <div
+            class="content"
+            v-for="(slide, index) in slideList"
+            v-show="index === slideIndex"
+            :key="slide.img"
+          >
+            <div class="title" v-html="slideList[slideIndex].title"></div>
+            <div class="desc" v-html="slideList[slideIndex].desc"></div>
+          </div>
+        </transition-group>
       </div>
       <div v-else></div>
     </div>
@@ -69,11 +51,11 @@
   position: relative;
   overflow: hidden;
   position: relative;
-  height: calc(100vw * 960 / 1920);
-  display: flex;
-  align-items: center;
+  height: size(740);
 }
-
+// .swiper-button-prev, .swiper-button-next {
+//   top: 63%;
+// }
 .bg-img {
   width: 100vw;
   position: absolute;
@@ -90,15 +72,15 @@
 }
 
 .content {
-  width: calc(100vw * 690 / 1920);
-  z-index: 1;
-  left: calc(100vw * 200 / 1920);
-  top: calc(100vw * 290 / 1920);
+  width: size(620);
+  z-index: 3;
+  top: size(270);
+  left: size(1128);
   position: absolute;
 }
 
 .title {
-  font-size: calc(100vw * 40 / 1920);
+  font-size: size(40);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -109,30 +91,32 @@
   margin-bottom: calc(100vw * 15 / 1920);
 }
 
+.subtitle {
+  font-size: size(24);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+}
+
 .desc {
-  font-size: calc(100vw * 16 / 1920);
-  font-size: 16px;
-  font-weight: normal;
+  font-size: size(16);
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 2.25;
   letter-spacing: normal;
   text-align: left;
-  color: #b7d5d6;
-}
-
-.swiper-r {
-  width: calc(100vw * 740 / 1920);
-  right: calc(100vw * 100 / 1920);
-  top: 0;
-  left: auto;
-  position: absolute;
+  color: #fff;
 }
 
 .swiper-l {
-  width: calc(100vw * 682 / 1920);
-  left: calc(100vw * 203 / 1920);
-  bottom: 0;
+  width: size(1100);
+  left: size(0);
+  top: size(37);
   position: absolute;
 }
 
@@ -297,7 +281,7 @@ import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
-  name: 'section5',
+  name: 'section10',
   mixins: [slider],
   components: {
     swiper,
@@ -328,28 +312,40 @@ export default {
       },
       slideList: [
         {
-          img1: require('./s5/img1-1.jpg'),
-          img2: require('./s5/img1-2.jpg'),
-          name: 'H2O水京棧國際酒店',
-          title: '京城集團邁步卓越<br />金獎冠冕 實力之作',
+          img: require('./s10/img1.jpg'),
+          title: '衛浴面盆',
+          subtitle: '德國國寶品牌 歐洲各國、皇室愛用',
           desc:
-            '京城集團創立於1982年，為目前台灣數一數二的企業集團，跨足建設、營造、飯店產業：京城建設、京城飯店、H2O水京棧國際酒店，整合了近40年經驗，以堅強實力造就每件精彩作品，其中「京城京城」、「京城美術皇居」更開啟了高雄豪宅的新眼界，同時也是國際建築獎項常勝軍，包含「京城樂活、「京城鉅誕」、「京城凱悅」等案，業績閃耀南台灣！',
+            '■ 輕盈堅固，以俐落線條來表現時尚優雅之美<br />■ 簡潔設計能完美融入各種風格的浴室設計<br />■ 使用特殊的塗層更耐用持久，打掃清潔更輕鬆',
         },
         {
-          img1: require('./s5/img2-1.jpg'),
-          img2: require('./s5/img2-2.jpg'),
-          name: '京城鉅誕',
-          title: '建築安全新突破<br />勇於挑戰 精益求精',
+          img: require('./s10/img2.png'),
+          title: '阿拉斯加HEPA 全熱交換器',
+          subtitle: '供應新鮮氧氣　兼具除蟎殺菌',
           desc:
-            '京城的房子不只在生活美學上求新求變，更在建築結構安全上，更投入了龐大的人力、物力，在南台灣建築業界無人能及，陸續導入SRC鋼骨混凝土結構、BRB斜撐制震、美國EPS制震壁、中空樓板、耐震系統工法及建築安全履歷、甚至更嚴格的國家級耐震標章認證。',
+            '■ 具排氣、進氣功能，不開窗也有自然通風效果<br />■ 配備HEPA過濾網、奈米光觸媒殺菌燈<br />■ 醫療級空氣清淨效果，將過敏原排除屋外',
+        },
+
+        {
+          img: require('./s10/img3.jpg'),
+          title: '隔音地墊',
+          subtitle: '豪宅建案御用 隔音公法首選',
+          desc:
+            '■ 最先進技術與製程打造MIT無毒環保隔音墊<br/>■ 不含甲醛，不會逸散對人體有害物質<br/>■ 接縫面積少、施工速度更快，貼合面也更平整',
         },
         {
-          img1: require('./s5/img3-1.jpg'),
-          img2: require('./s5/img3-2.jpg'),
-          name: '京城King park',
-          title: '豪宅資歷 無懈可擊<br />高雄奢華傳奇－京城KING PARK',
+          img: require('./s10/img4.jpg'),
+          title: '全智能馬桶',
+          subtitle: '全球衛浴領導 喜來登酒店選用',
           desc:
-            '京城集團深耕高雄，一路走來以穩健實力建立建築王國。位農16特區綠海首排的「京城KING PARK」，以東方版Art Deco建築，為高雄天際線添上一筆世界級奢華！做工繁複的竹節立面，以萬噸岡石精工打造總裁級居邸，建材更是遍尋五大洲的萬中選一，在空間設計寫下了輝煌鎏金歲月，由內到外的尊榮珍貴，見證京城品牌深厚能量。',
+            '■ 西班牙百年品牌，銷售遍及135國，深受使用者愛戴<br/>■ 全球唯一全瓷化無死角一體成形馬桶，易清潔又時尚<br/>■ 源自歐洲的強勁沖水技術，極少量水即可帶走髒汙',
+        },
+        {
+          img: require('./s10/img5.jpg'),
+          title: '大雅廚具',
+          subtitle: '聖瑪格麗特石英石　100%產自義大利',
+          desc:
+            '■ 吸水率只有0.07%，有極高的抗腐蝕能力<br/>■ 接觸高溫不易形成凹痕和焦斑，最高達莫氏硬度7<br/>■ 檯面無需打磨，日常只需用清水及肥皂沖洗清潔',
         },
       ],
     }

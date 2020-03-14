@@ -1,61 +1,51 @@
 <template>
-  <div class="section5">
+  <div class="section9">
     <div class="bg">
       <div v-if="!isMobile">
-        <img v-lazy="require('./s5/bg.png')" alt class="bg-img" />
-        <img v-lazy="require('./s5/logo.png')" alt class="bg-img" />
+        <img v-lazy="require('./s9/bg.png')" alt class="bg-img" />
+        <img v-lazy="require('./s9/1.jpg')" alt class="img-t" />
         <div class="swiper-button-prev" slot="button-prev">
           <img src="./all/箭頭2.png" alt />
         </div>
         <div class="swiper-button-next" slot="button-next">
           <img src="./all/箭頭1.png" alt />
         </div>
-        <transition-group name="slide-fade" mode="out-in">
+        <div class="content-t">
+          <div class="title">職人工藝 品質至上</div>
           <div
-            class="content"
-            v-for="(slide, index) in slideList"
-            v-show="index === slideIndex"
-            :key="slide.img1"
-          >
-            <div class="title" v-html="slideList[slideIndex].title"></div>
-            <div class="desc" v-html="slideList[slideIndex].desc"></div>
-          </div>
-        </transition-group>
-        <swiper
-          :options="swiperOption"
-          ref="mySwiper"
-          data-aos="fade"
-          data-aos-delay="200"
-          class="swiper-r"
-          @slideChangeTransitionEnd="slideChanged"
-        >
-          <swiper-slide
-            v-for="(slide, index) in slideList"
-            :index="index"
-            :key="slide.img1"
-            class="item"
-          >
-            <img :src="slide.img1" :class="`item-img`" />
-            <div class="item-title" v-html="slide.name"></div>
-          </swiper-slide>
-        </swiper>
+            class="desc"
+          >京城建設的建築工法，皆經過建築師與構技師專業的計算評估，堅持按圖施工，嚴格落實鋼筋數量、鋼筋數號，確實做到鋼筋綁紮、混凝土密度強度，以確保建物安全穩固。</div>
+        </div>
+        <div class="container"></div>
         <swiper
           :options="swiperOption"
           ref="mySwiper"
           data-aos="fade"
           data-aos-delay="200"
           class="swiper-l"
+          @slideChangeTransitionEnd="slideChanged"
         >
           <swiper-slide
             v-for="(slide, index) in slideList"
             :index="index"
-            :key="slide.img2"
+            :key="slide.img"
             class="item"
           >
-            <img :src="slide.img2" :class="`item-img`" />
+            <img :src="slide.img" :class="`item-img`" />
             <div class="item-title" v-html="slide.name"></div>
           </swiper-slide>
         </swiper>
+        <transition-group name="slide-fade" mode="out-in">
+          <div
+            class="content"
+            v-for="(slide, index) in slideList"
+            v-show="index === slideIndex"
+            :key="slide.img"
+          >
+            <div class="title" v-html="slideList[slideIndex].title"></div>
+            <div class="desc" v-html="slideList[slideIndex].desc"></div>
+          </div>
+        </transition-group>
       </div>
       <div v-else></div>
     </div>
@@ -69,11 +59,11 @@
   position: relative;
   overflow: hidden;
   position: relative;
-  height: calc(100vw * 960 / 1920);
-  display: flex;
-  align-items: center;
+  height: size(1226);
 }
-
+.swiper-button-prev, .swiper-button-next {
+  top: 63%;
+}
 .bg-img {
   width: 100vw;
   position: absolute;
@@ -89,50 +79,89 @@
   }
 }
 
-.content {
-  width: calc(100vw * 690 / 1920);
+.img-t {
+  width: size(865);
+  top: size(85);
+  left: 0;
+  position: absolute;
+}
+
+.content-t {
+  width: size(716);
+  top: size(139);
+  right: size(244);
+  position: absolute;
+  .title {
+    font-size: size(40);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+    margin-bottom: size(20);
+  }
+
+  .desc {
+    font-size: size(16);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.25;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+  }
+}
+
+.container {
+  width: size(1550);
+  height: size(730);
   z-index: 1;
-  left: calc(100vw * 200 / 1920);
-  top: calc(100vw * 290 / 1920);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: size(419);
+  position: absolute;
+  background-color: #fff;
+}
+
+.content {
+  width: size(620);
+  z-index: 3;
+  top: size(690);
+  right: size(275);
   position: absolute;
 }
 
 .title {
-  font-size: calc(100vw * 40 / 1920);
-  font-weight: bold;
+  font-size: size(40);
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.5;
+  line-height: 1.48;
   letter-spacing: normal;
   text-align: left;
-  color: #ffffff;
+  color: #20969b;
   margin-bottom: calc(100vw * 15 / 1920);
 }
 
 .desc {
-  font-size: calc(100vw * 16 / 1920);
-  font-size: 16px;
-  font-weight: normal;
+  font-size: size(16);
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 2.25;
   letter-spacing: normal;
   text-align: left;
-  color: #b7d5d6;
-}
-
-.swiper-r {
-  width: calc(100vw * 740 / 1920);
-  right: calc(100vw * 100 / 1920);
-  top: 0;
-  left: auto;
-  position: absolute;
+  color: #000000;
 }
 
 .swiper-l {
-  width: calc(100vw * 682 / 1920);
-  left: calc(100vw * 203 / 1920);
-  bottom: 0;
+  width: size(775);
+  left: size(185);
+  bottom: size(77);
   position: absolute;
 }
 
@@ -297,7 +326,7 @@ import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
-  name: 'section5',
+  name: 'section9',
   mixins: [slider],
   components: {
     swiper,
@@ -328,28 +357,22 @@ export default {
       },
       slideList: [
         {
-          img1: require('./s5/img1-1.jpg'),
-          img2: require('./s5/img1-2.jpg'),
-          name: 'H2O水京棧國際酒店',
-          title: '京城集團邁步卓越<br />金獎冠冕 實力之作',
+          img: require('./s9/img1.jpg'),
+          title: '升級結構安全－捆筋與梁柱接續',
           desc:
-            '京城集團創立於1982年，為目前台灣數一數二的企業集團，跨足建設、營造、飯店產業：京城建設、京城飯店、H2O水京棧國際酒店，整合了近40年經驗，以堅強實力造就每件精彩作品，其中「京城京城」、「京城美術皇居」更開啟了高雄豪宅的新眼界，同時也是國際建築獎項常勝軍，包含「京城樂活、「京城鉅誕」、「京城凱悅」等案，業績閃耀南台灣！',
+            '鋼筋特別選用成本較高的熱軋鋼筋，落實緊密箍筋135度的要求，使用SA級套筒壓接鋼筋續接器，讓結構安全滴水不漏！',
         },
         {
-          img1: require('./s5/img2-1.jpg'),
-          img2: require('./s5/img2-2.jpg'),
-          name: '京城鉅誕',
-          title: '建築安全新突破<br />勇於挑戰 精益求精',
+          img: require('./s9/img2.jpg'),
+          title: '結構體更穩固－筏式基礎',
           desc:
-            '京城的房子不只在生活美學上求新求變，更在建築結構安全上，更投入了龐大的人力、物力，在南台灣建築業界無人能及，陸續導入SRC鋼骨混凝土結構、BRB斜撐制震、美國EPS制震壁、中空樓板、耐震系統工法及建築安全履歷、甚至更嚴格的國家級耐震標章認證。',
+            '筏式基礎的承載面積大，能減小基底壓力，增加基礎剛度，當發生天災時，基礎之間的相互支援性較強，可大大降低房子地基的撕裂危機。',
         },
         {
-          img1: require('./s5/img3-1.jpg'),
-          img2: require('./s5/img3-2.jpg'),
-          name: '京城King park',
-          title: '豪宅資歷 無懈可擊<br />高雄奢華傳奇－京城KING PARK',
+          img: require('./s9/img3.jpg'),
+          title: '確實紮穩根基－連續壁',
           desc:
-            '京城集團深耕高雄，一路走來以穩健實力建立建築王國。位農16特區綠海首排的「京城KING PARK」，以東方版Art Deco建築，為高雄天際線添上一筆世界級奢華！做工繁複的竹節立面，以萬噸岡石精工打造總裁級居邸，建材更是遍尋五大洲的萬中選一，在空間設計寫下了輝煌鎏金歲月，由內到外的尊榮珍貴，見證京城品牌深厚能量。',
+            '在地下室施作一道周圍閉合的擋土牆，外側的土壤及地下水不會崩坍或滲入基地內，同時也能夠作為地下室的外牆，成為主要結構體的一部分。京城鳳翔連續壁厚度50ＣＭ，連續壁深度19米，深入地底穩定層，確保施工品質與安全。',
         },
       ],
     }
