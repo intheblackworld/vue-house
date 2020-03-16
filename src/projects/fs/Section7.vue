@@ -25,22 +25,50 @@
         </div>
         <div class="content-t">
           <div class="title" data-aos="fade-right" data-aos-delay="500">
-            家的延伸<br />
-            翻轉想像無限可能
+            家的延伸
+            <br />翻轉想像無限可能
           </div>
         </div>
         <img v-lazy="require('./s7/img3-1.jpg')" alt class="bg-img bottom" />
         <img v-lazy="require('./s7/box2.png')" alt class="bg-img bottom" />
         <div class="content" data-aos="fade-left" data-aos-delay="500">
-          <div class="title">
-            動靜皆宜 交誼廳、吧檯多功用途
-          </div>
-          <div class="desc">
-            在家登入放鬆時區，親友相聚、遠迎賓客不必出門，在家就有不失面子的交流空間，有簡易的烹飪區規劃，並擁大面落地窗引入中庭綠意，同時也能是一人靜思小酌的小天地，在溫徐燈光的照拂下，釋放壓力，恣意歡笑。
+          <div class="title">動靜皆宜 交誼廳、吧檯多功用途</div>
+          <div
+            class="desc"
+          >在家登入放鬆時區，親友相聚、遠迎賓客不必出門，在家就有不失面子的交流空間，有簡易的烹飪區規劃，並擁大面落地窗引入中庭綠意，同時也能是一人靜思小酌的小天地，在溫徐燈光的照拂下，釋放壓力，恣意歡笑。</div>
+        </div>
+      </div>
+      <div v-else>
+        <swiper
+          :options="swiperOption"
+          ref="mySwiper"
+          data-aos="fade"
+          data-aos-delay="200"
+          class="swiper-m"
+          @slideChangeTransitionEnd="slideChanged"
+        >
+          <swiper-slide
+            v-for="(slide, index) in slideList"
+            :index="index"
+            :key="slide.img"
+            class="item"
+          >
+            <img :src="slide.img" :class="`item-img`" />
+          </swiper-slide>
+        </swiper>
+        <img v-lazy="require('./mo/7/title.jpg')" alt class="img" />
+        <img v-lazy="require('./mo/7/img2-1.jpg')" alt class="img" data-aos="fade" data-aos-delay="300" />
+        <img v-lazy="require('./mo/7/img3-1.jpg')" alt class="img" data-aos="fade" data-aos-delay="300" />
+        <div class="relative">
+          <img v-lazy="require('./mo/7/bg2.png')" alt class="img" />
+          <div class="content" data-aos="fade-left" data-aos-delay="500">
+          <div class="title">動靜皆宜 交誼廳、吧檯多功用途</div>
+          <div
+            class="desc"
+          >在家登入放鬆時區，親友相聚、遠迎賓客不必出門，在家就有不失面子的交流空間，有簡易的烹飪區規劃，並擁大面落地窗引入中庭綠意，同時也能是一人靜思小酌的小天地，在溫徐燈光的照拂下，釋放壓力，恣意歡笑。</div>
           </div>
         </div>
       </div>
-      <div v-else></div>
     </div>
   </div>
 </template>
@@ -185,17 +213,23 @@
     overflow: hidden;
     position: relative;
     height: auto;
-    display: flex;
-    align-items: center;
+    display: block;
+
+    img {
+      display: block;
+    }
 
     > div {
       display: block;
     }
   }
 
-  .swiper-container {
+  .swiper-m {
     width: 100vw;
-    position: relative;
+
+    .item-img {
+      width: 100%;
+    }
   }
 
   .bg-img {
@@ -214,10 +248,23 @@
     // }
   }
 
+  .img {
+    width: 100vw;
+    position: relative;
+  }
+
   .content {
-    width: 90vw;
-    padding-left: 0;
+    width: size-m(300);
     margin: 0 auto;
+    top: size-m(50);
+  }
+
+  .title {
+    font-size: size-m(20);
+  }
+
+  .desc {
+    font-size: size-m(12);
   }
 
   .item-title {
@@ -239,17 +286,63 @@
 <script>
 // @ is an alias to /src
 import { isMobile, isTablet } from '@/utils'
+import slider from '@/mixins/slider.js'
+import 'swiper/dist/css/swiper.css'
+
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'section7',
+  mixins: [slider],
+  components: {
+    swiper,
+    swiperSlide,
+  },
 
   data() {
     return {
       isMobile,
       isTablet,
+      swiperOption: {
+        slidesPerView: isMobile ? 1 : 1,
+        spaceBetween: isTablet ? 20 : 30,
+        slidesPerColumn: isMobile ? 1 : 1,
+        allowSlidePrev: isMobile ? true : true,
+        allowSlideNext: isMobile ? true : true,
+        // centeredSlides: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: true,
+        },
+        loop: true,
+        effect: 'fade',
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      },
+      slideList: [
+        {
+          img: require('./mo/7/img1-1.jpg'),
+        },
+        {
+          img: require('./mo/7/img1-2.jpg'),
+        },
+      ],
     }
   },
 
-  methods: {},
+  methods: {
+    slideChanged(e) {
+      const swiper = this.$refs.mySwiper.swiper
+      if (swiper.isEnd) {
+        this.slideIndex = 0
+      } else if (swiper.isBeginning) {
+        this.slideIndex = swiper.slides.length - 3
+      } else {
+        this.slideIndex = swiper.activeIndex - 1
+      }
+    },
+  },
 }
 </script>

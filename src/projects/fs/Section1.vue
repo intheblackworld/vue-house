@@ -1,17 +1,59 @@
 <template>
-  <div class="section1">
+  <div>
     <div class="bg">
       <div v-if="!isMobile">
         <img v-lazy="require('./s1/bg1.png')" alt class="bg-img" />
-        <img :src="require('./s1/toplogo.png')" alt class="top-logo" data-aos="fade" data-aos-delay="300" />
+        <img
+          :src="require('./s1/toplogo.png')"
+          alt
+          class="top-logo"
+          data-aos="fade"
+          data-aos-delay="300"
+        />
         <img :src="require('./s1/logo.gif')" alt class="logo" data-aos="fade" data-aos-delay="300" />
-        <img :src="require('./s1/text.png')" alt class="title-img" data-aos="fade" data-aos-delay="300" />
-        <div class="relative" id="section2">
-          <img v-lazy="require('./s1/bg2.png')" alt class="bg-img img-1" />
-          <img v-lazy="require('./s1/bg3.jpg')" alt class="bg-img img-2" />
-        </div>
+        <img
+          :src="require('./s1/text.png')"
+          alt
+          class="title-img"
+          data-aos="fade"
+          data-aos-delay="300"
+        />
       </div>
-      <div v-else></div>
+      <div class="relative section" id="section2" v-if="!isMobile">
+        <img v-lazy="require('./s1/bg2.png')" alt class="bg-img img-1" />
+        <img v-lazy="require('./s1/bg3.jpg')" alt class="bg-img img-2" />
+      </div>
+      <div v-if="isMobile">
+        <img :src="require('./s1/logo.gif')" alt class="logo" data-aos="fade" data-aos-delay="300" />
+        <img :src="require('./mo/12/bg1.png')" alt class="bg-img" />
+        <img :src="require('./mo/12/text.png')" alt class="bg-img" />
+      </div>
+      <div class="section" id="section2" v-if="isMobile">
+        <Map
+          :tagList="tagList"
+          :bgSrcT="bgSrcT"
+          :bgSrcB="bgSrcB"
+          :hand="hand"
+          :bgText="''"
+        >
+          <img
+            src="./mo/12/bg_m.png"
+            alt
+            class="mask"
+            v-if="isMobile"
+            @click="hideMask"
+            v-show="showMask"
+          />
+          <img
+            src="./mo/12/bg_icon.png"
+            alt
+            class="mask"
+            v-if="isMobile"
+            @click="hideMask"
+            v-show="showMask"
+          />
+        </Map>
+      </div>
     </div>
   </div>
 </template>
@@ -21,6 +63,7 @@
   background-size: cover;
   background-position: center;
   position: relative;
+  overflow: hidden;
   height: size(2100);
   background-image: linear-gradient(
     136deg,
@@ -32,10 +75,12 @@
     #064849 40%,
     #064849 53%
   );
+  z-index: 1;
 }
 .bg-img {
   width: 100vw;
   position: absolute;
+  top: 0;
   left: 0;
   height: auto;
   display: block;
@@ -106,30 +151,67 @@
 
 @media screen and (max-width: 767px) {
   .bg {
-    max-height: 177.5vw;
+    height: size_m(1161);
   }
-  .st02 {
-    transform: translateX(200%);
+  .logo {
+    width: size-m(185);
+    top: size-m(240);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    position: absolute;
+    z-index: 1;
   }
-  .light {
-    transform: translateX(1000%);
+  .bg-img {
+    // &:nth-child(1) {
+    //   position: absolute;
+    //   z-index: 2;
+    //   // mix-blend-mode: screen;
+    //   // opacity: 0;
+    // }
+  }
+  #section2 {
+    position: absolute;
+    top: size-m(581);
   }
 }
 </style>
 <script>
 // @ is an alias to /src
+import Map from '@/components/Map.vue'
 import { isMobile } from '@/utils'
 
 export default {
   name: 'section1',
-
+  components: {
+    Map,
+  },
   data() {
     return {
       isMobile,
+      showMask: isMobile,
+      mapText: [
+        {
+          title: '',
+          desc: '',
+        },
+        {
+          title: '',
+          desc: '',
+        },
+      ],
+      tagList: [],
+      bgSrcT: require('./mo/12/bg2.png'),
+      bgSrcB: require('./mo/12/bg3.jpg'),
+      hand: '',
     }
   },
 
-  methods: {},
+  methods: {
+    hideMask() {
+      this.showMask = false
+    },
+  },
 
   mounted() {},
 

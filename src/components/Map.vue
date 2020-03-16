@@ -1,6 +1,6 @@
 <template>
   <div class="map" id="map" refs="map" @scroll="handleScroll">
-    <!-- <img :src="hand" alt class="hand" /> -->
+    <img :src="hand" alt class="hand" />
     <img class="map-bg" :src="bgSrcT" alt ref="mapbg" />
     <img class="map-bg" :src="bgSrcB" alt ref="mapbg" />
     <img class="map-text" :src="bgText" alt />

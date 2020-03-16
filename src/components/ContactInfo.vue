@@ -101,20 +101,24 @@ export default {
 @import '@/assets/style/variableDefault.scss';
 
 .contact-info {
-  background: $contact_bg;
+  background-image: $contact_bg;
   // background-image: url('../assets/img/contact_bg.jpg');
+  background-attachment: fixed;
   background-size: cover;
-  background-position: 50% 100%;
   box-shadow: $contact_shadow;
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: space-between;
-  transform: translateY(14%);
   position: relative;
   z-index: 3;
   width: 1200px;
   height: 460px;
+  background-size: 100vw auto;
+  background-attachment: fixed;
+  background-position: 0% 50%;
+  transform: translateY(0);
+  margin: 3vw auto -3vw;
 
   margin: 0 auto;
   padding: 60px 0 50px;
@@ -222,6 +226,7 @@ export default {
     transform: none;
     position: static;
     margin-top: 60px;
+    background-image: $contact_bg_m;
 
     .logo {
       width: $contact_logo_mobile_width;

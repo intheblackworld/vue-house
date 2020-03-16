@@ -6,7 +6,7 @@
         <img
           v-lazy="require('./s6/bgimg.png')"
           alt
-          class="bg-img"
+          class="bg-img fix"
           data-aos="fade"
           data-aos-delay="300"
         />
@@ -42,7 +42,46 @@
           </div>
         </div>
       </div>
-      <div v-else></div>
+      <div v-else>
+        <img v-lazy="require('./mo/6/bg.png')" alt class="bg-img" />
+        <img
+          v-lazy="require('./mo/6/bgimg.png')"
+          alt
+          class="bg-img fix"
+          data-aos="fade"
+          data-aos-delay="300"
+        />
+        <div class="block-img" data-aos="fade" data-aos-delay="300">
+          <div class="relative">
+            <img v-lazy="require('./mo/6/img.png')" alt />
+          </div>
+        </div>
+        <div class="content">
+          <div class="title">金獎冠冕加身 堅強厚實力</div>
+          <div
+            class="desc"
+          >京城建設於2016年推出的【京城京城】，不僅為高雄指標豪宅，更榮獲內政部耐震、綠建築雙標章認證，以及第24屆中華建築金石獎施工品質類住宅超高層組的金石首獎！經國際級獎項與背書，品牌實力有目共睹</div>
+          <div class="subtitle">京城集團近年沿革</div>
+          <div class="desc">
+            <div class="text">
+              2016－工期長達6年的農十六案【京城京城】完工<br />
+              獲內政部耐震建築、綠建築標章認證，並<br />
+              榮獲建築金石獎首獎<br />
+              2016－京城總部大樓遷移至博愛二路150號<br />
+              2016－與「台灣建築安全履歷協會」簽約<br />
+              為中南部首家導入「建築安全履歷」建商
+            </div>
+            <div class="text">
+              2017－京城博愛路新企業總部落成、喬遷<br />
+              2017－京城建設100%轉投資H20水京機國際酒店開幕<br />
+              2018－【圓山大院】榮獲南台灣建築園冶獎等六大獎項<br />
+              2019－【時尚京城】榮獲2019南台灣建築園治獎<br />
+              2019－【京城美術皇居】、【時尚京城】、【閱河堤】<br />
+              與【圓山天墅】共獲得高雄厝、綠建築等五座獎項
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -57,6 +96,7 @@
   height: size(1150);
   display: flex;
   align-items: center;
+  z-index: 0;
 
   > div {
     display: flex;
@@ -177,26 +217,22 @@
     position: relative;
     overflow: hidden;
     position: relative;
-    height: auto;
-    display: flex;
-    align-items: center;
+    height: size-m(957);
+    display: block;
+    img {
+      display: block;
+    }
 
     > div {
       display: block;
     }
   }
 
-  .swiper-container {
-    width: 100vw;
-    position: relative;
-  }
-
   .bg-img {
     width: 100vw;
     position: absolute;
-    top: auto;
+    top: 0;
     left: 0;
-    bottom: 0;
     height: auto;
     display: block;
     object-fit: cover;
@@ -207,10 +243,33 @@
     // }
   }
 
-  .content {
-    width: 90vw;
-    padding-left: 0;
+  .block-img {
+    width: 100vw;
+    top: 0;
+    left: 0;
+    right: 0;
     margin: 0 auto;
+  }
+
+  .content {
+    width: size-m(313);
+    left: 0;
+    right: 0;
+    top: size-m(350);
+    margin: 0 auto;
+    z-index: 5;
+  }
+
+  .title {
+    font-size: size-m(22);
+  }
+
+  .desc {
+    font-size: size-m(12);
+  }
+
+  .subtitle {
+    font-size: size-m(13);
   }
 
   .item-title {

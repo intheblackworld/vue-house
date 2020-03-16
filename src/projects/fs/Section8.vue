@@ -11,8 +11,20 @@
             <br />配備雙衛浴 / 客人主人分開用，家人間也不用排隊，掌握全家生活自主權。
           </div>
         </div>
-        <img v-lazy="require('./s8/img1-1.png')" alt class="img img-rt" data-aos="fade" data-aos-delay="300" />
-        <img v-lazy="require('./s8/img1-2.jpg')" alt class="img img-lt" data-aos="fade" data-aos-delay="300" />
+        <img
+          v-lazy="require('./s8/img1-1.png')"
+          alt
+          class="img img-rt"
+          data-aos="fade"
+          data-aos-delay="300"
+        />
+        <img
+          v-lazy="require('./s8/img1-2.jpg')"
+          alt
+          class="img img-lt"
+          data-aos="fade"
+          data-aos-delay="300"
+        />
         <div class="content-b">
           <div class="title">有型又有款 幸福3房</div>
           <div class="desc">
@@ -20,10 +32,63 @@
             <br />露臺大格局 / 客廳旁落地窗，直接連接大露臺，搭起與自然風光平行舞台。
           </div>
         </div>
-        <img v-lazy="require('./s8/img2-1.png')" alt class="img img-lb" data-aos="fade" data-aos-delay="300" />
-        <img v-lazy="require('./s8/img2-2.jpg')" alt class="img img-rb" data-aos="fade" data-aos-delay="300" />
+        <img
+          v-lazy="require('./s8/img2-1.png')"
+          alt
+          class="img img-lb"
+          data-aos="fade"
+          data-aos-delay="300"
+        />
+        <img
+          v-lazy="require('./s8/img2-2.jpg')"
+          alt
+          class="img img-rb"
+          data-aos="fade"
+          data-aos-delay="300"
+        />
       </div>
-      <div v-else></div>
+      <div v-else>
+        <div class="relative">
+          <img v-lazy="require('./mo/8/bg1.png')" alt class="bg-img" />
+          <img
+            :src="require('./mo/8/img1.jpg')"
+            alt
+            class="bg-img"
+            data-aos="fade"
+            data-aos-delay="300"
+          />
+          <div class="content-t">
+            <div class="title">小資正當道 甜蜜2房</div>
+            <div class="desc">
+              房間都開窗 / 真正適合生活的臥室，享受每天早上把陽光當鬧鐘的小確幸。
+              <br />配備雙衛浴 / 客人主人分開用，家人間也不用排隊，掌握全家生活自主權。
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <img v-lazy="require('./mo/8/img1-2.jpg')" alt class="bg-img" />
+        </div>
+        <div class="relative">
+          <img v-lazy="require('./mo/8/bg1.png')" alt class="bg-img" />
+          <img
+            v-lazy="require('./mo/8/img2.jpg')"
+            alt
+            class="bg-img"
+            data-aos="fade"
+            data-aos-delay="300"
+          />
+          <div class="content-t">
+            <div class="title">有型又有款 幸福3房</div>
+            <div class="desc">
+              方正又有窗 / 3間房都開窗，格局方方正正好規劃，盡情大展身手的小天地。
+              <br />露臺大格局 / 客廳旁落地窗，直接連接大露臺，搭起與自然風光平行舞台。
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <img v-lazy="require('./mo/8/img1-2.jpg')" alt class="bg-img" />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -128,7 +193,8 @@
   position: absolute;
   z-index: 3;
 
-  .title, .desc {
+  .title,
+  .desc {
     text-align: right;
   }
 }
@@ -169,23 +235,33 @@
   .bg-img {
     width: 100vw;
     position: absolute;
-    top: auto;
     left: 0;
-    bottom: 0;
+    top: 0;
     height: auto;
     display: block;
     object-fit: cover;
     z-index: 3;
 
-    // &:nth-child(1) {
-    //   position: relative;
-    // }
+    &:nth-child(1) {
+      position: relative;
+    }
   }
 
-  .content {
-    width: 90vw;
-    padding-left: 0;
+  .content-t {
+    width: size-m(310);
+    top: size-m(397);
+    left: 0;
+    right: 0;
     margin: 0 auto;
+  }
+
+  .title {
+    font-size: size-m(22);
+    margin-bottom: size-m(30);
+  }
+
+  .desc {
+    font-size: size-m(12);
   }
 
   .item-title {

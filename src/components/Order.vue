@@ -1,8 +1,8 @@
 <template>
   <div class="order-bg">
-      <img src="@/projects/fs/order/bg.jpg" alt="" class="bg-img" v-if="!isMobile">
-      <img src="@/projects/fs/order/bg2.png" alt="" class="bg-img no-mix" v-if="!isMobile">
-      <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile">
+      <!-- <img src="@/projects/fs/order/bg.png" alt="" class="bg-img"> -->
+      <!-- <img src="@/projects/fs/order/bg1.png" alt="" class="bg-img no-mix"> -->
+      <!-- <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile"> -->
     <div class="order-top">
       <!-- <div class="title-block">
         <h3 class="title">{{order.title}}</h3>
@@ -242,21 +242,24 @@ export default {
   height:auto;
   display: block;
   object-fit: cover;
-  mix-blend-mode: screen;
+  // mix-blend-mode: screen;
   //background: ("~@/projects/fs/order/bg_m.jpg");
   &.no-mix {
     mix-blend-mode:normal ;
-  height:100%;
+    height:100%;
   }
 }
 .order-bg {
-  /* background-color: $order_bg_color;
-  background-image: $order_bg_image; */
+  background-color: $order_bg_color;
+  background-image: $order_bg_image;
   background-repeat: no-repeat;
-  background-size: 100% auto;
   position: relative;
-  margin-top: 0px;
   padding-top: 0px;
+  background-size: 100vw auto;
+  background-attachment: fixed;
+  background-position: 0% 50%;
+  transform: translateY(0);
+  margin: 3vw auto -3vw;
   .order-top{
     position: relative;overflow:hidden
   }
@@ -282,6 +285,7 @@ export default {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    margin-bottom: 3rem;
   }
 
   .form {
@@ -361,6 +365,13 @@ export default {
   .order-bg {
     background-image: $order_bg_image_m;
     padding-top: 40px;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+
+    > img {
+      display: block;
+    }
     .order-title {
       margin-top: 10px;
       margin-bottom: 20px;

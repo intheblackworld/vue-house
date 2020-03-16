@@ -9,7 +9,6 @@ import '@/assets/style/global.scss'
 /* 全局配置 https://blog.csdn.net/FireBird_one/article/details/80295229 */
 import config from './lib/config.js'
 
-import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import VueScrollTo from 'vue-scrollto' // scroll 錨點
 import VueLazyload from 'vue-lazyload' // 圖片 lazy load
@@ -51,8 +50,6 @@ Vue.use(VueSvgIcon, {
 })
 
 Vue.use(config)
-
-Vue.use(ElementUI)
 Vue.use(VueScrollTo)
 Vue.use(VueLazyload)
 

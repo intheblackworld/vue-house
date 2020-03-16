@@ -2,16 +2,37 @@
   <div class="section4">
     <div class="bg">
       <div v-if="!isMobile">
-        <img v-lazy="require('./s4/bg.png')" alt="" class="bg-img">
-        <img v-lazy="require('./s4/title.png')" alt="" class="bg-img" data-aos="fade" data-aos-delay="300">
+        <img v-lazy="require('./s4/bg.png')" alt class="bg-img" />
+        <img
+          v-lazy="require('./s4/title.png')"
+          alt
+          class="bg-img"
+          data-aos="fade"
+          data-aos-delay="300"
+        />
         <div class="block-img" data-aos="fade" data-aos-delay="300">
           <div class="relative">
-            <img v-lazy="require('./s4/img.jpg')" alt="">
+            <img v-lazy="require('./s4/img.jpg')" alt />
             <div class="block-title">外觀3D示意圖</div>
           </div>
         </div>
+        <div class="content">
+          <div
+            class="desc"
+          >天天公園前，一座動感又童趣的建築坐地而生。【京城鳳翔】使用深灰及白色的線條與方格，搭配植栽陽台來營造出建築立面層次感，輕快而不沉重，加上半透光的玻璃，引進自然風光，讓窗外自然環境和建築內的生活搭起對話橋梁。</div>
+        </div>
       </div>
       <div v-else>
+        <img v-lazy="require('./mo/4/bg.png')" alt class="bg-img" />
+        <img v-lazy="require('./mo/4/img.jpg')" alt class="bg-img" data-aos="fade"
+          data-aos-delay="300" />
+        <img v-lazy="require('./mo/4/title.png')" alt class="bg-img"  data-aos="fade"
+          data-aos-delay="400" />
+        <div class="content">
+          <div
+            class="desc"
+          >天天公園前，一座動感又童趣的建築坐地而生。【京城鳳翔】使用深灰及白色的線條與方格，搭配植栽陽台來營造出建築立面層次感，輕快而不沉重，加上半透光的玻璃，引進自然風光，讓窗外自然環境和建築內的生活搭起對話橋梁。</div>
+        </div>
       </div>
     </div>
   </div>
@@ -75,6 +96,25 @@
   bottom: size(10);
 }
 
+.content {
+  position: absolute;
+  width: size(490);
+  right: size(159);
+  top: size(696);
+  z-index: 2;
+}
+
+.desc {
+  font-size: size(16);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #b7d5d6;
+}
+
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
     height: 100vh;
@@ -94,26 +134,19 @@
     position: relative;
     overflow: hidden;
     position: relative;
-    height: auto;
-    display: flex;
-    align-items: center;
+    display: block;
+    height: size-m(647);
 
     > div {
       display: block;
     }
   }
 
-  .swiper-container {
-    width: 100vw;
-    position: relative;
-  }
-
   .bg-img {
     width: 100vw;
     position: absolute;
-    top: auto;
     left: 0;
-    bottom: 0;
+    top: 0;
     height: auto;
     display: block;
     object-fit: cover;
@@ -125,9 +158,15 @@
   }
 
   .content {
-    width: 90vw;
-    padding-left: 0;
+    width: size-m(283);
+    left: size-m(20);
     margin: 0 auto;
+    top: size-m(416);
+    z-index: 4;
+  }
+
+  .desc {
+    font-size: size-m(12);
   }
 
   .item-title {
@@ -156,11 +195,10 @@ export default {
   data() {
     return {
       isMobile,
-      isTablet
+      isTablet,
     }
   },
 
-  methods: {
-  },
+  methods: {},
 }
 </script>

@@ -1,45 +1,43 @@
 <template>
   <div class="section10">
     <div class="bg">
-      <div v-if="!isMobile">
-        <img v-lazy="require('./s10/bg.png')" alt class="bg-img" />
-        <div class="swiper-button-prev" slot="button-prev">
-          <img src="./all/箭頭2.png" alt />
-        </div>
-        <div class="swiper-button-next" slot="button-next">
-          <img src="./all/箭頭1.png" alt />
-        </div>
-        <swiper
-          :options="swiperOption"
-          ref="mySwiper"
-          data-aos="fade"
-          data-aos-delay="200"
-          class="swiper-l"
-          @slideChangeTransitionEnd="slideChanged"
-        >
-          <swiper-slide
-            v-for="(slide, index) in slideList"
-            :index="index"
-            :key="slide.img"
-            class="item"
-          >
-            <img :src="slide.img" :class="`item-img`" />
-            <div class="item-title" v-html="slide.name"></div>
-          </swiper-slide>
-        </swiper>
-        <transition-group name="slide-fade" mode="out-in">
-          <div
-            class="content"
-            v-for="(slide, index) in slideList"
-            v-show="index === slideIndex"
-            :key="slide.img"
-          >
-            <div class="title" v-html="slideList[slideIndex].title"></div>
-            <div class="desc" v-html="slideList[slideIndex].desc"></div>
-          </div>
-        </transition-group>
+      <img v-lazy="require('./s10/bg.png')" alt class="bg-img" v-if="!isMobile" />
+      <img v-lazy="require('./mo/10/bg.png')" alt class="bg-img" v-if="isMobile" />
+      <div class="swiper-button-prev" slot="button-prev">
+        <img src="./all/箭頭2.png" alt />
       </div>
-      <div v-else></div>
+      <div class="swiper-button-next" slot="button-next">
+        <img src="./all/箭頭1.png" alt />
+      </div>
+      <swiper
+        :options="swiperOption"
+        ref="mySwiper"
+        data-aos="fade"
+        data-aos-delay="200"
+        class="swiper-l"
+        @slideChangeTransitionEnd="slideChanged"
+      >
+        <swiper-slide
+          v-for="(slide, index) in slideList"
+          :index="index"
+          :key="slide.img"
+          class="item"
+        >
+          <img :src="slide.img" :class="`item-img`" />
+          <div class="item-title" v-html="slide.name"></div>
+        </swiper-slide>
+      </swiper>
+      <transition-group name="slide-fade" mode="out-in">
+        <div
+          class="content"
+          v-for="(slide, index) in slideList"
+          v-show="index === slideIndex"
+          :key="slide.img"
+        >
+          <div class="title" v-html="slideList[slideIndex].title"></div>
+          <div class="desc" v-html="slideList[slideIndex].desc"></div>
+        </div>
+      </transition-group>
     </div>
   </div>
 </template>
@@ -52,6 +50,7 @@
   overflow: hidden;
   position: relative;
   height: size(740);
+  z-index: 2;
 }
 // .swiper-button-prev, .swiper-button-next {
 //   top: 63%;
@@ -152,7 +151,7 @@
 }
 
 .slide-fade-enter-active {
-  transition: all 0.5s ease;
+  transition: all 0.5s ease-in-out;
 }
 
 .slide-fade-leave-active {
@@ -178,10 +177,13 @@
     position: relative;
     overflow: hidden;
     position: relative;
-    height: auto;
-    display: flex;
-    align-items: center;
-    border: none;
+    height: size-m(455);
+    display: block;
+    z-index: 1;
+
+    > img {
+      display: block;
+    }
 
     > div {
       display: block;
@@ -191,35 +193,28 @@
   .bg-img {
     width: 100vw;
     position: absolute;
-    top: auto;
+    top: 0;
     left: 0;
-    bottom: 0;
     height: auto;
     display: block;
     object-fit: cover;
     z-index: 0;
-    mix-blend-mode: screen;
 
     // &:nth-child(1) {
     //   position: relative;
     // }
   }
 
-  .img-container {
+  .swiper-l {
     width: 100vw;
-  }
-
-  .img-list {
-    margin-top: 0;
-    margin-left: 0;
-    z-index: 5;
-    position: relative;
+    left: 0;
+    top: 0;
   }
 
   .content {
     width: 90vw;
-    padding-left: 0;
-    margin: 0 auto;
+    top: size-m(282);
+    left: size-m(30);
   }
 
   .title-logo {
@@ -228,46 +223,13 @@
   }
 
   .title {
-    font-size: calc(100vw * 29 / 375);
-    width: 90vw;
-    margin: 0 auto;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.48;
-    letter-spacing: 2.32px;
-    text-align: left;
-    color: #ffffff;
-    margin-top: calc(100vw * 45 / 375);
-    margin-bottom: calc(100vw * 17 / 375);
+    font-size: calc(100vw * 22 / 375);
+    width: 100%;
   }
 
   .desc {
     font-size: calc(100vw * 12 / 375);
-    width: 90vw;
-    margin: 0 auto;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.58;
-    letter-spacing: 0.48px;
-    text-align: left;
-    color: #cccccc;
-    padding-bottom: 31vw;
-  }
-
-  .item-title {
-    font-size: calc(100vw * 12 / 375);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.58;
-    letter-spacing: 0.48px;
-    text-align: right;
-    color: #ffffff;
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
+    width: 100%;
   }
 }
 </style>
@@ -301,7 +263,7 @@ export default {
         // centeredSlides: true,
         autoplay: {
           delay: 4000,
-          // disableOnInteraction: true,
+          disableOnInteraction: true,
         },
         loop: true,
         effect: 'fade',

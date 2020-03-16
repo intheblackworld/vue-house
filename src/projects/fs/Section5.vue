@@ -57,7 +57,62 @@
           </swiper-slide>
         </swiper>
       </div>
-      <div v-else></div>
+      <div v-else>
+        <img v-lazy="require('./mo/5/bg.png')" alt class="bg-img" />
+        <img v-lazy="require('./mo/5/logo.png')" alt class="bg-img" />
+        <div class="swiper-button-prev" slot="button-prev">
+          <img src="./all/箭頭2.png" alt />
+        </div>
+        <div class="swiper-button-next" slot="button-next">
+          <img src="./all/箭頭1.png" alt />
+        </div>
+        <transition-group name="slide-fade" mode="out-in">
+          <div
+            class="content"
+            v-for="(slide, index) in slideList"
+            v-show="index === slideIndex"
+            :key="slide.img1"
+          >
+            <div class="title" v-html="slideList[slideIndex].title"></div>
+            <div class="desc" v-html="slideList[slideIndex].desc"></div>
+          </div>
+        </transition-group>
+        <swiper
+          :options="swiperOption"
+          ref="mySwiper"
+          data-aos="fade"
+          data-aos-delay="200"
+          class="swiper-r"
+          @slideChangeTransitionEnd="slideChanged"
+        >
+          <swiper-slide
+            v-for="(slide, index) in slideList"
+            :index="index"
+            :key="slide.img1"
+            class="item"
+          >
+            <img :src="slide.img1" :class="`item-img`" />
+            <!-- <div class="item-title" v-html="slide.name"></div> -->
+          </swiper-slide>
+        </swiper>
+        <swiper
+          :options="swiperOption"
+          ref="mySwiper"
+          data-aos="fade"
+          data-aos-delay="200"
+          class="swiper-l"
+        >
+          <swiper-slide
+            v-for="(slide, index) in slideList"
+            :index="index"
+            :key="slide.img2"
+            class="item"
+          >
+            <img :src="slide.img2" :class="`item-img`" />
+            <!-- <div class="item-title" v-html="slide.name"></div> -->
+          </swiper-slide>
+        </swiper>
+      </div>
     </div>
   </div>
 </template>
@@ -72,6 +127,7 @@
   height: calc(100vw * 960 / 1920);
   display: flex;
   align-items: center;
+  z-index: 1;
 }
 
 .bg-img {
@@ -194,10 +250,12 @@
     position: relative;
     overflow: hidden;
     position: relative;
-    height: auto;
-    display: flex;
-    align-items: center;
-    border: none;
+    height: size-m(550);
+    display: block;
+
+    img {
+      display: block;
+    }
 
     > div {
       display: block;
@@ -207,45 +265,30 @@
   .bg-img {
     width: 100vw;
     position: absolute;
-    top: auto;
+    top: 0;
     left: 0;
-    bottom: 0;
     height: auto;
     display: block;
     object-fit: cover;
     z-index: 0;
-    mix-blend-mode: screen;
+    // mix-blend-mode: screen;
 
     // &:nth-child(1) {
     //   position: relative;
     // }
   }
 
-  .img-container {
-    width: 100vw;
-  }
-
-  .img-list {
-    margin-top: 0;
-    margin-left: 0;
-    z-index: 5;
-    position: relative;
-  }
-
   .content {
-    width: 90vw;
-    padding-left: 0;
+    width: size-m(315);
+    position: absolute;
+    left: 0;
+    right: 0;
     margin: 0 auto;
-  }
-
-  .title-logo {
-    width: 100vw;
-    z-index: 10;
+    top: size-m(220);
   }
 
   .title {
-    font-size: calc(100vw * 29 / 375);
-    width: 90vw;
+    font-size: size-m(22);
     margin: 0 auto;
     font-weight: bold;
     font-stretch: normal;
@@ -254,13 +297,11 @@
     letter-spacing: 2.32px;
     text-align: left;
     color: #ffffff;
-    margin-top: calc(100vw * 45 / 375);
-    margin-bottom: calc(100vw * 17 / 375);
+    margin-bottom: size-m(17);
   }
 
   .desc {
-    font-size: calc(100vw * 12 / 375);
-    width: 90vw;
+    font-size: size-m(12);
     margin: 0 auto;
     font-weight: normal;
     font-stretch: normal;
@@ -269,11 +310,26 @@
     letter-spacing: 0.48px;
     text-align: left;
     color: #cccccc;
-    padding-bottom: 31vw;
+  }
+
+  .swiper-r {
+    width: 100vw;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 0;
+  }
+
+  .swiper-l {
+    width: 100vw;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 0;
   }
 
   .item-title {
-    font-size: calc(100vw * 12 / 375);
+    font-size: size-m(12);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -282,8 +338,8 @@
     text-align: right;
     color: #ffffff;
     position: absolute;
-    right: 20px;
-    bottom: 20px;
+    right: size(10);
+    bottom: size(10);
   }
 }
 </style>
@@ -317,7 +373,7 @@ export default {
         // centeredSlides: true,
         autoplay: {
           delay: 4000,
-          // disableOnInteraction: true,
+          disableOnInteraction: true,
         },
         loop: true,
         effect: 'fade',
@@ -328,24 +384,24 @@ export default {
       },
       slideList: [
         {
-          img1: require('./s5/img1-1.jpg'),
-          img2: require('./s5/img1-2.jpg'),
+          img1: isMobile ? require('./mo/5/img1-1.png') : require('./s5/img1-1.jpg'),
+          img2: isMobile ? require('./mo/5/img1-2.png') : require('./s5/img1-2.jpg'),
           name: 'H2O水京棧國際酒店',
           title: '京城集團邁步卓越<br />金獎冠冕 實力之作',
           desc:
             '京城集團創立於1982年，為目前台灣數一數二的企業集團，跨足建設、營造、飯店產業：京城建設、京城飯店、H2O水京棧國際酒店，整合了近40年經驗，以堅強實力造就每件精彩作品，其中「京城京城」、「京城美術皇居」更開啟了高雄豪宅的新眼界，同時也是國際建築獎項常勝軍，包含「京城樂活、「京城鉅誕」、「京城凱悅」等案，業績閃耀南台灣！',
         },
         {
-          img1: require('./s5/img2-1.jpg'),
-          img2: require('./s5/img2-2.jpg'),
+          img1: isMobile ? require('./mo/5/img2-1.png') : require('./s5/img2-1.jpg'),
+          img2: isMobile ? require('./mo/5/img2-2.png') : require('./s5/img2-2.jpg'),
           name: '京城鉅誕',
           title: '建築安全新突破<br />勇於挑戰 精益求精',
           desc:
             '京城的房子不只在生活美學上求新求變，更在建築結構安全上，更投入了龐大的人力、物力，在南台灣建築業界無人能及，陸續導入SRC鋼骨混凝土結構、BRB斜撐制震、美國EPS制震壁、中空樓板、耐震系統工法及建築安全履歷、甚至更嚴格的國家級耐震標章認證。',
         },
         {
-          img1: require('./s5/img3-1.jpg'),
-          img2: require('./s5/img3-2.jpg'),
+          img1: isMobile ? require('./mo/5/img3-1.png') : require('./s5/img3-1.jpg'),
+          img2: isMobile ? require('./mo/5/img3-2.png') : require('./s5/img3-2.jpg'),
           name: '京城King park',
           title: '豪宅資歷 無懈可擊<br />高雄奢華傳奇－京城KING PARK',
           desc:

@@ -47,7 +47,52 @@
           </div>
         </transition-group>
       </div>
-      <div v-else></div>
+      <div v-else>
+        <img v-lazy="require('./mo/9/bg.png')" alt class="bg-img" />
+        <img v-lazy="require('./mo/9/bg2.png')" alt class="bg-img fix" />
+        <img
+          v-lazy="require('./mo/9/1.png')"
+          alt
+          class="bg-img"
+          data-aos="fade"
+          data-aos-delay="300"
+        />
+        <div class="content-t">
+          <div class="title">職人工藝 品質至上</div>
+          <div
+            class="desc"
+          >京城建設的建築工法，皆經過建築師與構技師專業的計算評估，堅持按圖施工，嚴格落實鋼筋數量、鋼筋數號，確實做到鋼筋綁紮、混凝土密度強度，以確保建物安全穩固。</div>
+        </div>
+        <swiper
+          :options="swiperOption"
+          ref="mySwiper"
+          data-aos="fade"
+          data-aos-delay="200"
+          class="swiper-l"
+          @slideChangeTransitionEnd="slideChanged"
+        >
+          <swiper-slide
+            v-for="(slide, index) in slideList"
+            :index="index"
+            :key="slide.img"
+            class="item"
+          >
+            <img :src="slide.img" :class="`item-img`" />
+            <div class="item-title" v-html="slide.name"></div>
+          </swiper-slide>
+        </swiper>
+        <transition-group name="slide-fade" mode="out-in">
+          <div
+            class="content"
+            v-for="(slide, index) in slideList"
+            v-show="index === slideIndex"
+            :key="slide.img"
+          >
+            <div class="title" v-html="slideList[slideIndex].title"></div>
+            <div class="desc" v-html="slideList[slideIndex].desc"></div>
+          </div>
+        </transition-group>
+      </div>
     </div>
   </div>
 </template>
@@ -61,7 +106,8 @@
   position: relative;
   height: size(1226);
 }
-.swiper-button-prev, .swiper-button-next {
+.swiper-button-prev,
+.swiper-button-next {
   top: 63%;
 }
 .bg-img {
@@ -224,9 +270,11 @@
     overflow: hidden;
     position: relative;
     height: auto;
-    display: flex;
-    align-items: center;
-    border: none;
+    display: block;
+
+    > img {
+      display: block;
+    }
 
     > div {
       display: block;
@@ -236,35 +284,39 @@
   .bg-img {
     width: 100vw;
     position: absolute;
-    top: auto;
+    top: 0;
     left: 0;
-    bottom: 0;
+    bottom: auto;
     height: auto;
     display: block;
     object-fit: cover;
-    z-index: 0;
-    mix-blend-mode: screen;
+    z-index: 1;
 
-    // &:nth-child(1) {
-    //   position: relative;
-    // }
+    &.fix {
+      position: fixed;
+    }
+
+    &:nth-child(1) {
+      position: relative;
+    }
   }
 
-  .img-container {
-    width: 100vw;
-  }
-
-  .img-list {
-    margin-top: 0;
-    margin-left: 0;
-    z-index: 5;
-    position: relative;
-  }
-
-  .content {
-    width: 90vw;
-    padding-left: 0;
+  .content-t {
+    width: size-m(295);
+    left: 0;
+    right: 0;
     margin: 0 auto;
+    top: size-m(263);
+    z-index: 3;
+    .title {
+      width: 100%;
+      font-size: size-m(22);
+    }
+
+    .desc {
+      width: 100%;
+      font-size: size-m(12);
+    }
   }
 
   .title-logo {
@@ -299,6 +351,37 @@
     text-align: left;
     color: #cccccc;
     padding-bottom: 31vw;
+  }
+
+  .swiper-l {
+    width: 200vw;
+    left: -50vw;
+    top: size-m(516);
+    right: 0;
+    z-index: 3;
+
+    .item-img {
+      // width: size-m(220);
+    }
+  }
+
+  .content {
+    width: size-m(320);
+    top: size-m(756);
+    left: size-m(31);
+    right: 0;
+  }
+
+  .title {
+    font-size: size-m(20);
+    color: #2a8e93;
+    width: 100%;
+  }
+
+  .desc {
+    font-size: size-m(12);
+    color: #070303;
+    width: 100%;
   }
 
   .item-title {
@@ -338,18 +421,18 @@ export default {
       isMobile,
       isHide: true,
       swiperOption: {
-        slidesPerView: isMobile ? 1 : 1,
-        spaceBetween: isTablet ? 20 : 30,
+        slidesPerView: isMobile ? 3 : 1,
+        spaceBetween: isTablet ? 10 : 30,
         slidesPerColumn: isMobile ? 1 : 1,
         allowSlidePrev: isMobile ? true : true,
         allowSlideNext: isMobile ? true : true,
         // centeredSlides: true,
         autoplay: {
           delay: 4000,
-          // disableOnInteraction: true,
+          disableOnInteraction: true,
         },
         loop: true,
-        effect: 'fade',
+        // effect: 'fade',
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
