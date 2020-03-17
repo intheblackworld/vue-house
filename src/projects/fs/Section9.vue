@@ -2,19 +2,37 @@
   <div class="section9">
     <div class="bg">
       <div v-if="!isMobile">
-        <img v-lazy="require('./s9/bg.png')" alt class="bg-img" />
-        <img v-lazy="require('./s9/1.jpg')" alt class="img-t" />
-        <div class="swiper-button-prev" slot="button-prev">
-          <img src="./all/箭頭2.png" alt />
+        <img
+          v-lazy="require('./s9/bg.png')"
+          alt
+          class="bg-img"
+        />
+        <img
+          v-lazy="require('./s9/1.jpg')"
+          alt
+          class="img-t"
+        />
+        <div
+          class="swiper-button-prev"
+          slot="button-prev"
+        >
+          <img
+            src="./all/箭頭2.png"
+            alt
+          />
         </div>
-        <div class="swiper-button-next" slot="button-next">
-          <img src="./all/箭頭1.png" alt />
+        <div
+          class="swiper-button-next"
+          slot="button-next"
+        >
+          <img
+            src="./all/箭頭1.png"
+            alt
+          />
         </div>
         <div class="content-t">
           <div class="title">職人工藝 品質至上</div>
-          <div
-            class="desc"
-          >京城建設的建築工法，皆經過建築師與構技師專業的計算評估，堅持按圖施工，嚴格落實鋼筋數量、鋼筋數號，確實做到鋼筋綁紮、混凝土密度強度，以確保建物安全穩固。</div>
+          <div class="desc">京城建設的建築工法，皆經過建築師與構技師專業的計算評估，堅持按圖施工，嚴格落實鋼筋數量、鋼筋數號，確實做到鋼筋綁紮、混凝土密度強度，以確保建物安全穩固。</div>
         </div>
         <div class="container"></div>
         <swiper
@@ -31,25 +49,48 @@
             :key="slide.img"
             class="item"
           >
-            <img :src="slide.img" :class="`item-img`" />
-            <div class="item-title" v-html="slide.name"></div>
+            <img
+              :src="slide.img"
+              :class="`item-img`"
+            />
+            <div
+              class="item-title"
+              v-html="slide.name"
+            ></div>
           </swiper-slide>
         </swiper>
-        <transition-group name="slide-fade" mode="out-in">
+        <transition-group
+          name="slide-fade"
+          mode="out-in"
+        >
           <div
             class="content"
             v-for="(slide, index) in slideList"
             v-show="index === slideIndex"
             :key="slide.img"
           >
-            <div class="title" v-html="slideList[slideIndex].title"></div>
-            <div class="desc" v-html="slideList[slideIndex].desc"></div>
+            <div
+              class="title"
+              v-html="slideList[slideIndex].title"
+            ></div>
+            <div
+              class="desc"
+              v-html="slideList[slideIndex].desc"
+            ></div>
           </div>
         </transition-group>
       </div>
       <div v-else>
-        <img v-lazy="require('./mo/9/bg.png')" alt class="bg-img" />
-        <img v-lazy="require('./mo/9/bg2.png')" alt class="bg-img fix" />
+        <img
+          v-lazy="require('./mo/9/bg.png')"
+          alt
+          class="bg-img"
+        />
+        <img
+          v-lazy="require('./mo/9/bg2.png')"
+          alt
+          class="bg-img fix"
+        />
         <img
           v-lazy="require('./mo/9/1.png')"
           alt
@@ -59,9 +100,7 @@
         />
         <div class="content-t">
           <div class="title">職人工藝 品質至上</div>
-          <div
-            class="desc"
-          >京城建設的建築工法，皆經過建築師與構技師專業的計算評估，堅持按圖施工，嚴格落實鋼筋數量、鋼筋數號，確實做到鋼筋綁紮、混凝土密度強度，以確保建物安全穩固。</div>
+          <div class="desc">京城建設的建築工法，皆經過建築師與構技師專業的計算評估，堅持按圖施工，嚴格落實鋼筋數量、鋼筋數號，確實做到鋼筋綁紮、混凝土密度強度，以確保建物安全穩固。</div>
         </div>
         <swiper
           :options="swiperOption"
@@ -77,19 +116,34 @@
             :key="slide.img"
             class="item"
           >
-            <img :src="slide.img" :class="`item-img`" />
-            <div class="item-title" v-html="slide.name"></div>
+            <img
+              :src="slide.img"
+              :class="`item-img`"
+            />
+            <div
+              class="item-title"
+              v-html="slide.name"
+            ></div>
           </swiper-slide>
         </swiper>
-        <transition-group name="slide-fade" mode="out-in">
+        <transition-group
+          name="slide-fade"
+          mode="out-in"
+        >
           <div
             class="content"
             v-for="(slide, index) in slideList"
             v-show="index === slideIndex"
             :key="slide.img"
           >
-            <div class="title" v-html="slideList[slideIndex].title"></div>
-            <div class="desc" v-html="slideList[slideIndex].desc"></div>
+            <div
+              class="title"
+              v-html="slideList[slideIndex].title"
+            ></div>
+            <div
+              class="desc"
+              v-html="slideList[slideIndex].desc"
+            ></div>
           </div>
         </transition-group>
       </div>
@@ -464,12 +518,22 @@ export default {
   methods: {
     slideChanged(e) {
       const swiper = this.$refs.mySwiper.swiper
-      if (swiper.isEnd) {
-        this.slideIndex = 0
-      } else if (swiper.isBeginning) {
-        this.slideIndex = swiper.slides.length - 3
+      if (this.isMobile) {
+        if (swiper.activeIndex === 5) {
+          this.slideIndex = 0
+        } else if (swiper.activeIndex === 4) {
+          this.slideIndex = 2
+        } else {
+          this.slideIndex = 1
+        }
       } else {
-        this.slideIndex = swiper.activeIndex - 1
+        if (swiper.isEnd) {
+          this.slideIndex = 0
+        } else if (swiper.isBeginning) {
+          this.slideIndex = swiper.slides.length - 3
+        } else {
+          this.slideIndex = swiper.activeIndex - 1
+        }
       }
     },
   },

@@ -2,40 +2,86 @@
   <div class="section7">
     <div class="bg">
       <div v-if="!isMobile">
-        <img v-lazy="require('./s7/bg.png')" alt class="bg-img" />
-        <img v-lazy="require('./s7/box.png')" alt class="bg-img" />
-        <img v-lazy="require('./s7/box1.png')" alt class="bg-img" />
-        <div class="block-img block-img-1" data-aos="fade" data-aos-delay="300">
+        <img
+          v-lazy="require('./s7/bg.png')"
+          alt
+          class="bg-img"
+        />
+        <img
+          v-lazy="require('./s7/box.png')"
+          alt
+          class="bg-img"
+        />
+        <img
+          v-lazy="require('./s7/box1.png')"
+          alt
+          class="bg-img"
+        />
+        <div
+          class="block-img block-img-1"
+          data-aos="fade"
+          data-aos-delay="300"
+        >
           <div class="relative">
-            <img v-lazy="require('./s7/img1-1.jpg')" alt />
+            <img
+              v-lazy="require('./s7/img1-1.jpg')"
+              alt
+            />
             <div class="block-title">業績實景</div>
           </div>
         </div>
-        <div class="block-img block-img-2" data-aos="fade" data-aos-delay="300">
+        <div
+          class="block-img block-img-2"
+          data-aos="fade"
+          data-aos-delay="300"
+        >
           <div class="relative">
-            <img v-lazy="require('./s7/img1-2.jpg')" alt />
+            <img
+              v-lazy="require('./s7/img1-2.jpg')"
+              alt
+            />
             <div class="block-title">健身房3D示意圖</div>
           </div>
         </div>
-        <div class="block-img block-img-3" data-aos="fade" data-aos-delay="300">
+        <div
+          class="block-img block-img-3"
+          data-aos="fade"
+          data-aos-delay="300"
+        >
           <div class="relative">
-            <img v-lazy="require('./s7/img2-1.jpg')" alt />
+            <img
+              v-lazy="require('./s7/img2-1.jpg')"
+              alt
+            />
             <div class="block-title">業績實景</div>
           </div>
         </div>
         <div class="content-t">
-          <div class="title" data-aos="fade-right" data-aos-delay="500">
-            家的延伸
-            <br />翻轉想像無限可能
+          <div
+            class="title"
+            data-aos="fade-right"
+            data-aos-delay="500"
+          >
+            家的延伸<br />翻轉想像無限可能
           </div>
         </div>
-        <img v-lazy="require('./s7/img3-1.jpg')" alt class="bg-img bottom" />
-        <img v-lazy="require('./s7/box2.png')" alt class="bg-img bottom" />
-        <div class="content" data-aos="fade-left" data-aos-delay="500">
+        <img
+          v-lazy="require('./s7/img3-1.jpg')"
+          alt
+          class="bg-img bottom"
+        />
+        <img
+          v-lazy="require('./s7/box2.png')"
+          alt
+          class="bg-img bottom"
+        />
+        <div
+          class="content"
+          data-aos="fade-left"
+          data-aos-delay="500"
+        >
           <div class="title">動靜皆宜 交誼廳、吧檯多功用途</div>
-          <div
-            class="desc"
-          >在家登入放鬆時區，親友相聚、遠迎賓客不必出門，在家就有不失面子的交流空間，有簡易的烹飪區規劃，並擁大面落地窗引入中庭綠意，同時也能是一人靜思小酌的小天地，在溫徐燈光的照拂下，釋放壓力，恣意歡笑。</div>
+          <div class="desc">在家登入放鬆時區，親友相聚、遠迎賓客不必出門，在家就有不失面子的交流空間，有簡易的烹飪區規劃，並擁大面落地窗引入中庭綠意，同時也能是一人靜思小酌的小天地，在溫徐燈光的照拂下，釋放壓力，恣意歡笑。</div>
         </div>
       </div>
       <div v-else>
@@ -53,19 +99,44 @@
             :key="slide.img"
             class="item"
           >
-            <img :src="slide.img" :class="`item-img`" />
+            <img
+              :src="slide.img"
+              :class="`item-img`"
+            />
           </swiper-slide>
         </swiper>
-        <img v-lazy="require('./mo/7/title.jpg')" alt class="img" />
-        <img v-lazy="require('./mo/7/img2-1.jpg')" alt class="img" data-aos="fade" data-aos-delay="300" />
-        <img v-lazy="require('./mo/7/img3-1.jpg')" alt class="img" data-aos="fade" data-aos-delay="300" />
+        <img
+          v-lazy="require('./mo/7/title.jpg')"
+          alt
+          class="img"
+        />
+        <img
+          v-lazy="require('./mo/7/img2-1.jpg')"
+          alt
+          class="img"
+          data-aos="fade"
+          data-aos-delay="300"
+        />
+        <img
+          v-lazy="require('./mo/7/img3-1.jpg')"
+          alt
+          class="img"
+          data-aos="fade"
+          data-aos-delay="300"
+        />
         <div class="relative">
-          <img v-lazy="require('./mo/7/bg2.png')" alt class="img" />
-          <div class="content" data-aos="fade-left" data-aos-delay="500">
-          <div class="title">動靜皆宜 交誼廳、吧檯多功用途</div>
+          <img
+            v-lazy="require('./mo/7/bg2.png')"
+            alt
+            class="img"
+          />
           <div
-            class="desc"
-          >在家登入放鬆時區，親友相聚、遠迎賓客不必出門，在家就有不失面子的交流空間，有簡易的烹飪區規劃，並擁大面落地窗引入中庭綠意，同時也能是一人靜思小酌的小天地，在溫徐燈光的照拂下，釋放壓力，恣意歡笑。</div>
+            class="content"
+            data-aos="fade-left"
+            data-aos-delay="500"
+          >
+            <div class="title">動靜皆宜 交誼廳、吧檯多功用途</div>
+            <div class="desc">在家登入放鬆時區，親友相聚、遠迎賓客不必出門，在家就有不失面子的交流空間，有簡易的烹飪區規劃，並擁大面落地窗引入中庭綠意，同時也能是一人靜思小酌的小天地，在溫徐燈光的照拂下，釋放壓力，恣意歡笑。</div>
           </div>
         </div>
       </div>

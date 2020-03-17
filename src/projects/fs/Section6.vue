@@ -219,6 +219,7 @@
     position: relative;
     height: size-m(957);
     display: block;
+    z-index: 2;
     img {
       display: block;
     }
@@ -266,6 +267,8 @@
 
   .desc {
     font-size: size-m(12);
+    width: 100%;
+    display: block;
   }
 
   .subtitle {

@@ -3,7 +3,8 @@ import {
   Button, Dialog,
   Select,
   Input,
-  Option
+  Option,
+  Checkbox,
 } from 'element-ui'
 import lang from 'element-ui/lib/locale/lang/zh-TW'
 import locale from 'element-ui/lib/locale'
@@ -15,3 +16,4 @@ Vue.use(Dialog)
 Vue.use(Select)
 Vue.use(Input)
 Vue.use(Option)
+Vue.use(Checkbox)

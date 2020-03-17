@@ -146,7 +146,7 @@ export default {
 
   watch: {
     viewIndex(val) {
-      console.log(val)
+      // console.log(val)
       this.indigatorIndex = val
     }
   },
