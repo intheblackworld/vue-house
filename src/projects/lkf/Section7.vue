@@ -268,7 +268,7 @@
       line-height: 1.71;
   .item-title {
     flex:5 5 100%;
-      font-size:87px;
+      font-size:4.5vw;
       letter-spacing: normal;
       color: #c08d4e;
       margin-bottom: 10px;
@@ -281,9 +281,9 @@
   align-items: center;
   background: url("./s7_item.png");
   background-size: 100% auto;
-  flex: 1 1 18%;
-  height:246px;
-  padding:0 0 45px 0;
+  flex:0 0 183px;
+  height:188px;
+  padding:0 0 25px 0;
 /*
     img {
       width: 185px;
@@ -291,7 +291,7 @@
 */
 
     .item-desc {    
-      font-size: 38px;
+      font-size: 30px;
       font-weight: 500;
       font-style: normal;
       font-stretch: normal;
@@ -520,10 +520,10 @@
     justify-content:space-around;
   .item-title {
     margin: 430px 0 0 0;
-    font-size: 27px;
+    font-size:7.5vw;
   }
   .item {
-    flex:0 0 49%;height: 47vw;padding: 0 0 6vw 0;
+    flex:0 0 145px;height: 150px;padding: 0 0 6vw 0;
     .item-desc {   font-size: 8vw; 
     }
   }
