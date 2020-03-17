@@ -2,10 +2,12 @@
   <div class="section3">
     <div class="fullscreen bg">
       <div class="container">
-        <div class="title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">國際都心 精裝風潮</div>
+        <div class="title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">高額投報 飯店房產</div>
         <hr data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500" />
         <div class="desc" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1500">International City</div>
-        <div class="slide relative" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1500">
+        <div class="bg-bottom"></div>
+          <img class="img" src="./s3.jpg" alt="月付 8,000 元起，收租20,000元起，輕鬆付賺很大!"  data-aos="fade-up" data-aos-delay="600" data-aos-duration="1500"/>
+        <!-- div class="slide relative" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1500">
           <img
             v-for="(slide, index) in (isMobile ? slideListM : slideList)"
             :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
@@ -23,8 +25,7 @@
             <img @click="decIndex" src="./small_left_btn.png" alt class="arrow-btn" />
             <img @click="addIndex" src="./small_right_btn.png" alt class="arrow-btn" />
           </div>
-        </div>
-        <div class="bg-bottom"></div>
+        </div -->
       </div>
     </div>
   </div>
@@ -35,6 +36,7 @@
   background-position: 100% 0%;
   background-size: cover;
   position: relative;
+  height:auto;
 }
 
 .bg-bottom {
@@ -46,7 +48,7 @@
   left: 0;
 }
 .container {
-  width: 1380px;
+  width: 90%;
   margin: 0 auto;
   padding-top: 20px;
   padding-bottom: 40px;
@@ -90,6 +92,12 @@ hr {
   margin: 0 auto;
   margin-bottom: 30px;
 }
+  .img {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
 
 .slide {
   width: 100%;

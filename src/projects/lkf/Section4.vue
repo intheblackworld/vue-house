@@ -2,7 +2,7 @@
   <div class="section4">
     <Map :tagList="tagList" :bgSrc="bgSrc" :hand="hand">
       <div class="text">
-        <div class="title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">國際線上 雙北暢遊</div>
+        <div class="title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">國際線上 便利路網</div>
         <hr data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500" />
         <div
           class="desc"
@@ -14,22 +14,15 @@
     </Map>
     <div class="fluid">
       <div class="foot-container">
-        <div class="content" v-if="!isMobile">
+        <div class="content" v-if="isMobile">
           <div class="text" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
             <div class="title">A9捷運站30秒漫步行</div>
             <div class="desc">
-              一路之隔，就到捷運林口A9站，3站直達國際機場，出境入境輕鬆掌握；連結桃園機場
-              與捷運藍線。與台北市緊密連結，到達桃園機場僅需3站，更可迅速接軌台北車站捷運
-              藍線，大台北捷運生活圈就是你的生活任意門！
-            </div>
-
-            <div class="title">轉個彎交流道通勤零距</div>
-            <div class="desc">
-              『蘭桂.坊』轉個彎即光速接軌林口交流道，進出台北市僅需15分鐘，內科18分鐘，上
-              班通勤暢快便捷。
+              3站直達國際機場，出境入境輕鬆掌握；連結桃園機場與捷運藍線。與台北市緊密連結，到達桃園機場僅需3站，更可迅速接軌台北車站捷運藍線，超便利交通成為觀光商務必經的交通要道！
             </div>
           </div>
         </div>
+        <!--
         <div v-else class="m-content">
           <div
             class="title"
@@ -54,6 +47,7 @@
             {{mapText[mapIndex === 0 ? 1 : 0].title}}
           </div>
         </div>
+        -->
       </div>
     </div>
   </div>
@@ -88,12 +82,15 @@
     border: solid 1px #c08d4e;
     margin: 0 auto;
     margin-bottom: 5px;
+   + .desc {
+    font-family: TimesNewRomanPSMT;
   }
+  }
+
 
   .desc {
     width: 145px;
     height: 20px;
-    font-family: TimesNewRomanPSMT;
     font-size: 18px;
     font-weight: normal;
     font-style: normal;
@@ -115,7 +112,7 @@
 }
 .foot-container {
   width: 1380px;
-  height: 160px;
+  height:80px;
   margin: 0 auto;
   padding-top: 20px;
   padding-bottom: 40px;
@@ -125,7 +122,7 @@
   .content {
     width: 45%;
     min-width: 620px;
-    height: 320px;
+    height: 240px;
     position: absolute;
     left: 0;
     bottom: 0;
@@ -236,66 +233,17 @@
   }
   .foot-container {
     width: 100vw;
-    height: 85px;
-    border-bottom: none;
-    .m-content {
-      width: 90vw;
-      height: 190px;
-      position: absolute;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      bottom: 10px;
-      background-color: #f5ede0;
-      padding-top: 20px;
-
-      .title {
-        width: 200px;
-        height: 19px;
-        font-size: 19px;
-        font-weight: normal;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        text-align: center;
-        color: #231f20;
-        margin: 0 auto;
-        margin-bottom: 20px;
+    height:auto;
+    border-bottom: none; 
+    .content {
+min-width:90%;width:90%;
+    position: relative; top: -120px;
+    margin: auto auto -120px auto;height:auto;
+      .text,.title {width:auto;height:auto;
       }
-
-      .desc {
-        width: 90%;
-        margin: 0 auto;
-        height: auto;
-        margin-bottom: 10px;
-        font-size: 14px;
-        font-weight: normal;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: 1.36;
-        letter-spacing: normal;
-        text-align: justify;
-        color: #231f20;
-      }
-
-      .button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 35px;
-        background-color: #c8a063;
-        font-size: 16px;
-        color: #fff;
-        .triangle {
-          width: 0;
-          height: 0;
-          border-style: solid;
-          border-width: 0 4px 7px 4px;
-          border-color: transparent transparent #fff transparent;
-          margin-right: 15px;
-        }
+      .text{padding:30px 15px;border-bottom: 1px solid #c49a6c;}
+      .title {text-align: center;}
+      .desc {height:auto;
       }
     }
   }
@@ -316,18 +264,6 @@ export default {
     return {
       isMobile,
       mapIndex: 0,
-      mapText: [
-        {
-          title: 'A9捷運站30秒漫步行',
-          desc:
-            '一路之隔，就到捷運林口A9站，3站直達國際機場，出境入境輕鬆掌握；連結桃園機場與捷運藍線。與台北市緊密連結，到達桃園機場僅需3站，更可迅速接軌台北車站捷運藍線，大台北捷運生活圈就是你的生活任意門！',
-        },
-        {
-          title: '轉個彎交流道通勤零距',
-          desc:
-            '『蘭桂.坊』轉個彎即光速接軌林口交流道，進出台北市僅需15分鐘，內科18分鐘，上班通勤暢快便捷。',
-        },
-      ],
       tagList: [
         require('./s4/1.png'),
         require('./s4/2.png'),

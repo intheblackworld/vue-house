@@ -8,7 +8,7 @@
             data-aos="fade-up"
             data-aos-delay="0"
             data-aos-duration="1500"
-          >奢華精裝 精品居住</div>
+          >國際飯店 由你做主</div>
           <hr data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500" />
           <div
             class="desc"
@@ -19,8 +19,10 @@
         </div>
         <div class="slide relative" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
           <div v-if="!isMobile">
-            <div class="slide-title">英國爵士風格 經典品味</div>
-            <div class="slide-desc">承襲英國貴族風格，『蘭桂‧坊』大氣開展80米的建築面寬，加上歐式建築美學細膩雕琢，優雅的紳士品味，無論近觀或遠望，都是讚嘆的焦點</div>
+            <div class="slide-title">1972HOTEL，買下復古年代主題飯店</div>
+            <div class="slide-title2">鎖定商務、觀光強大商機!國際設計主題飯店風潮帶動龐大住房率!</div>
+            <div class="slide-title3">英倫美學外觀氣韻，80米豪奢尺度非凡視野</div>
+            <div class="slide-desc">「蘭桂.坊」結合1972主題飯店風格設計，整體外觀以英式風尚體現優雅的紳士品味，開展80米的大氣度建築，無論近觀遠望，1972HOTEL都將寫下大台北設計飯店的全新風潮!</div>
           </div>
           <img
             v-for="(slide, index) in slideList1"
@@ -42,10 +44,13 @@
           <div class="slide-footer">建築外觀3D示意圖(實際依完工現況為準)</div>
         </div>
         <div v-if="isMobile" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
-          <div class="slide-title">英國爵士風格 經典品味</div>
-          <div class="slide-desc">承襲英國貴族風格，『蘭桂‧坊』大氣開展80米的建築面寬，加上歐式建築美學細膩雕琢，優雅的紳士品味，無論近觀或遠望，都是讚嘆的焦點</div>
-        </div>
+          <div class="slide-title">1972HOTEL，買下復古年代主題飯店</div>
+            <div class="slide-title2">鎖定商務、觀光強大商機!國際設計主題飯店風潮帶動龐大住房率!</div>
+            <div class="slide-title3">英倫美學外觀氣韻，80米豪奢尺度非凡視野</div>
+            <div class="slide-desc">「蘭桂.坊」結合1972主題飯店風格設計，整體外觀以英式風尚體現優雅的紳士品味，開展80米的大氣度建築，無論近觀遠望，1972HOTEL都將寫下大台北設計飯店的全新風潮!</div>
+          </div>
 
+        <!-- 
         <div
           class="slide relative"
           style="margin-bottom: 50px;"
@@ -53,13 +58,13 @@
           data-aos-delay="0"
           data-aos-duration="1500"
         >
-          <div v-if="!isMobile">
+        <div v-if="!isMobile">
             <div class="slide-title">新東方時尚 雅緻盛宴</div>
             <div
               class="slide-desc"
             >宛如頂級上海外灘超星級飯店門廳，優雅的窗櫺融入現代簡約的細膩雅緻，從迎賓門廳、LOUNGE交誼、多功能健身房等，一場極致的中式優雅品味，在回家的每一刻都是享受</div>
-          </div>
-          <img
+          </div> -->
+          <!-- <img
             v-for="(slide, index) in slideList2"
             :class="`slide-img ${slideIndex2 === index ? 'active' : ''}`"
             :key="`s6-slide-${index}`"
@@ -79,13 +84,6 @@
           <div class="slide-footer">{{slideList2[slideIndex2].title}}</div>
         </div>
         <div class="slide relative" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
-          <!-- <div class="slide-video">
-            <video-bg
-              autoplay="autoplay"
-              :sources="[require('./s6_videovr.mp4')]"
-              img="./s6_img3-1.jpg"
-            ></video-bg>
-          </div> -->
           <iframe width="100%" height="100%" v-if="isShowVR" src="https://www.youtube.com/embed/CUi8vTFA0eM?rel=0&autoplay=1"></iframe>
           <img v-else src="./s6_720.jpg" alt="" class="slide-img active" style="cursor: pointer;" @click="isShowVR = true">
           <div class="slide-footer">公設3D示意圖(實際依完工現況為準)</div>
@@ -95,34 +93,29 @@
           <div
             class="slide-desc"
           >宛如頂級上海外灘超星級飯店門廳，優雅的窗櫺融入現代簡約的細膩雅緻，從迎賓門廳、LOUNGE交誼、多功能健身房等，一場極致的中式優雅品味，在回家的每一刻都是享受</div>
-        </div>
+        </div> -->
 
         <div class="slide relative" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
           <div v-if="!isMobile">
-            <div class="slide-title">國際級精裝修 頂級享受</div>
-            <div class="slide-desc">林口首座精裝修飯店風潮，18~22坪完美格局，絕無僅有的品味時尚，拎包入住的便利生活，無論自住或出租，家都是飯店人生得完美展現</div>
+            <div class="slide-title">飯店房東 一次買進</div>
+            <div class="slide-title3">國際精裝頂規空間，無須整理直接出租
+</div>
+            <div class="slide-desc">「蘭桂.坊」以五星級飯店為規畫藍圖，國際質感設計，每一個空間都細心規劃，符合國際商旅觀光需求，無論是短期商務會議或是旅遊休閒；蛋形設計浴缸與室內高達10-15坪的行政套房規格，空間的寬敞與高格調的藝術風格，讓訪客入住的開始，就是一場難忘之旅!</div>
           </div>
           <iframe width="100%" v-if="isShow3D" height="100%" src="https://www.youtube.com/embed/c87k-PzSKHg?rel=0&autoplay=1"></iframe>
           <img v-else src="./s6_3d.jpg" alt="" class="slide-img active" style="cursor: pointer;" @click="isShow3D = true">
           <div class="slide-footer">樣品屋3D示意圖(實際依完工現況為準)</div>
         </div>
         <div v-if="isMobile" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
-          <div class="slide-title">國際級精裝修 頂級享受</div>
-          <div class="slide-desc">林口首座精裝修飯店風潮，18~22坪完美格局，絕無僅有的品味時尚，拎包入住的便利生活，無論自住或出租，家都是飯店人生得完美展現</div>
+          <div class="slide-title">飯店房東 一次買進</div>
+          <div class="slide-desc">「蘭桂.坊」以五星級飯店為規畫藍圖，國際質感設計，每一個空間都細心規劃，符合國際商旅觀光需求，無論是短期商務會議或是旅遊休閒；蛋形設計浴缸與室內高達10-15坪的行政套房規格，空間的寬敞與高格調的藝術風格，讓訪客入住的開始，就是一場難忘之旅!</div>
         </div>
 
         <div class="slide relative" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
           <div v-if="!isMobile">
-            <div class="slide-title">全套代租代管 尊榮禮遇</div>
-            <div class="slide-desc">『蘭桂‧坊』以頂級生活服務，禮遇每位尊客，從飯店門廳服務、到生活服務與管理服務一應俱全，專屬為您打造您的生活禮遇</div>
+            <div class="slide-title">一條龍包套投資  財富一路通</div>
+            <img class="ss4 slide-img" src="./s6_img4-1.jpg" />
           </div>
-          <img
-            v-for="(slide, index) in slideList4"
-            :class="`slide-img ${slideIndex4 === index ? 'active' : ''}`"
-            :key="`s6-slide-${index}`"
-            :src="slide"
-            alt
-          />
           <!-- <div class="btn-group flex-jc flex-ac flex-mobile-jb">
             <div
               class="dot"
@@ -133,11 +126,11 @@
             <img @click="addMultiIndex(4)" src="./small_left_btn.png" alt class="arrow-btn" />
             <img @click="decMultiIndex(4)" src="./small_right_btn.png" alt class="arrow-btn" />
           </div>-->
-          <div class="slide-footer">飯店式服務示意圖</div>
         </div>
         <div v-if="isMobile" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
-          <div class="slide-title">全套代租代管 尊榮禮遇</div>
-          <div class="slide-desc">『蘭桂‧坊』以頂級生活服務，禮遇每位尊客，從飯店門廳服務、到生活服務與管理服務一應俱全，專屬為您打造您的生活禮遇</div>
+          <div class="slide-title">一條龍包套投資  財富一路通</div>
+          <img class="ss4 slide-img" src="./s6_img4-1_m.jpg" />
+          <!-- div class="slide-desc">『蘭桂‧坊』以頂級生活服務，禮遇每位尊客，從飯店門廳服務、到生活服務與管理服務一應俱全，專屬為您打造您的生活禮遇</div -->
         </div>
       </div>
     </div>
@@ -160,6 +153,7 @@
   padding-top: 70px;
   padding-bottom: 40px;
   background-color: rgba(30, 31, 31, 0.88);
+  line-height: 1.6;
 }
 .container-title {
   .title {
@@ -183,12 +177,14 @@
     border: solid 1px #c08d4e;
     margin: 0 auto;
     margin-bottom: 5px;
+   + .desc {
+    font-family: TimesNewRomanPSMT;
+  }
   }
 
   .desc {
     width: 128px;
     height: 20px;
-    font-family: TimesNewRomanPSMT;
     font-size: 18px;
     font-weight: normal;
     font-style: normal;
@@ -219,6 +215,9 @@
     object-fit: cover;
     left: 0;
     right: 0;
+    &.ss4{      
+    max-height:initial;
+    }
   }
 
   iframe {
@@ -251,13 +250,20 @@
 
 .slide-title {
   font-size: 26px;
-  color: #c08d4e;
-  margin-bottom: 15px;
+  color: #eb6;
+    }
+.slide-title2{
+  font-size: 20px;
+  color: #ccc;
 }
+.slide-title3{
+  margin-top: 0.8em;
+  font-size: 18px;
+  color: #c08d4e;
+ }
 
 .slide-desc {
   font-size: 13px;
-  line-height: 1.5;
   color: #fff;
   margin-bottom: 20px;
   text-align: center;
@@ -364,9 +370,6 @@
       height: calc(94.5vw * 184 / 328);
     }
 
-    .slide-img {
-      width: 95%;
-      max-height: auto;
     }
 
     .slide-footer {
@@ -377,6 +380,12 @@
     }
   }
 
+    .slide-img {
+      width: 95%;
+      max-height: auto;
+    &.ss4{      
+      width: 100%;
+    }
   .slide-title {
     padding-top: 15px;
     margin-bottom: 10px;
@@ -436,7 +445,6 @@ export default {
           title: '信箱區3D示意圖(實際依完工現況為準)',
         },
       ],
-      slideList4: [require('./s6_img4-1.jpg')],
       isMobile,
       isShowVR: false,
       isShow3D: false,

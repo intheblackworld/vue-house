@@ -8,19 +8,19 @@
       </div>
       <img src="./s7_gold.png" alt class="gold" data-aos="fade" data-aos-delay="0" data-aos-duration="1500" />
       <div class="container" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
-        <div class="content-title" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500">高投報 出租自用雙贏</div>
+        <div class="content-title" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500">前進飯店 唯一機會</div>
         <div class="content">
           <div class="description" data-aos="fade" data-aos-delay="600" data-aos-duration="1500">
-            <div class="title">磁吸六大特區 產業商業醫療齊聚</div>
+            <div class="title">月月固定奉上現金，穩健資產最好的保障!</div>
             <div class="desc">
-              一次全擁華亞科技園區、長庚醫療特區、國際媒體園區、新創園區以及
-              未來郵政物流特區、林口產業專區，龐大產業醫療群聚大量就業機會與
-              未來產值，更是奠定未來租金高收益的絕佳保證！
+              『蘭桂.坊』月月固定租金收入，與其將錢放在銀行，錢愈來愈薄，還不如買下一間飯店型房產，富養您的下半場人生。</div>
+            <div class="title">不動產化現金流，你的未來財富在這裡!</div>
+            <div class="desc">
+              「蘭桂.坊」一次達到史上房產最長租約的穩定保障，擁有高達15年的飯店租約，更享有租滿7年以上階段調漲租金的幅度，讓投資越久越增值!
             </div>
-            <div class="title">自有資金高投報 建築鍊金術</div>
+            <div class="title">飯店型投資房產，一次租滿零空窗財富不打折!</div>
             <div class="desc">
-              『蘭桂‧坊』超低總價輕坪規劃，減擔入手價，捷運站前稀罕臻品，現
-              在入手保值，未來更想增值利多！
+              全套國際精裝修飯店設計，總價購買一次打包所有大小事宜，免管理費、免去租房空窗期租金損失，一次租好租滿等優勢，加上享有每年兩次的免費住宿；讓資金穩定高投報變大，現在不買更等何時!
             </div>
           </div>
           <div class="slide relative" data-aos="fade" data-aos-delay="800" data-aos-duration="1500">
@@ -45,33 +45,21 @@
           </div>
         </div>
         <div class="items">
+          <div class="item-title">五大優點  讓您輕鬆當房東</div>
           <div class="item" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1500">
-            <img src="./s7_item1.png" alt />
-            <div class="item-title">房東養成 小錢變大錢</div>
-            <div class="item-desc">
-              小坪數地段佳易出租，你買房別人付租
-              金，小錢換大錢，房東養成術，人人都
-              是“租”隊友！
-            </div>
+            <div class="item-desc">保證<br>收租</div>
+          </div>
+          <div class="item" data-aos="fade-up" data-aos-delay="700" data-aos-duration="1500">
+            <div class="item-desc">輕鬆<br>月付</div>
           </div>
           <div class="item" data-aos="fade-up" data-aos-delay="800" data-aos-duration="1500">
-            <img src="./s7_item2.png" alt />
-            <div class="item-title">有房有金 房客變房東</div>
-            <div class="item-desc">
-              買一間會自己賺錢的房金，捷運站前增
-              值，購物中心再增值，飯店服務再增值
-              低總價高收益高投報，當然再增值！
-            </div>
+            <div class="item-desc">長租<br>15年</div>
+          </div>
+          <div class="item" data-aos="fade-up" data-aos-delay="900" data-aos-duration="1500">
+            <div class="item-desc">免<br>管理費</div>
           </div>
           <div class="item" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1500">
-            <img src="./s7_item3.png" alt />
-            <div class="item-title">買房養老 年金變成房</div>
-            <div class="item-desc">
-              沒有股票基金高風險，更沒有銀行定存
-              的低利率打破通貨膨脹現金越存越小，
-              樂退人生，更應該擁有一個房兒子，定
-              時收益轉手再賺一筆！
-            </div>
+            <div class="item-desc">無<br>空窗期</div>
           </div>
         </div>
       </div>
@@ -105,15 +93,37 @@
           </div>
         </div>
         <div class="description">
-          <div class="title">{{content[contentIndex].title}}</div>
-          <div class="desc">{{content[contentIndex].desc}}</div>
-          <div class="button" @click="contentIndex = contentIndex === 0 ? 1 : 0">
-            <div class="triangle"></div>
-            {{content[contentIndex === 0 ? 1 : 0].title}}
-          </div>
+            <div class="title">月月固定奉上現金，穩健資產最好的保障!</div>
+            <div class="desc">
+              『蘭桂.坊』月月固定租金收入，與其將錢放在銀行，錢愈來愈薄，還不如買下一間飯店型房產，富養您的下半場人生。</div>
+            <div class="title">不動產化現金流，你的未來財富在這裡!</div>
+            <div class="desc">
+              「蘭桂.坊」一次達到史上房產最長租約的穩定保障，擁有高達15年的飯店租約，更享有租滿7年以上階段調漲租金的幅度，讓投資越久越增值!
+            </div>
+            <div class="title">飯店型投資房產，一次租滿零空窗財富不打折!</div>
+            <div class="desc">
+              全套國際精裝修飯店設計，總價購買一次打包所有大小事宜，免管理費、免去租房空窗期租金損失，一次租好租滿等優勢，加上享有每年兩次的免費住宿；讓資金穩定高投報變大，現在不買更等何時!
+            </div>
         </div>
       </div>
-      <img src="./s7m/bottom.jpg" alt />
+        <div class="items">
+          <div class="item-title">五大優點  讓您輕鬆當房東</div>
+          <div class="item" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1500">
+            <div class="item-desc">保證<br>收租</div>
+          </div>
+          <div class="item" data-aos="fade-up" data-aos-delay="700" data-aos-duration="1500">
+            <div class="item-desc">輕鬆<br>月付</div>
+          </div>
+          <div class="item" data-aos="fade-up" data-aos-delay="800" data-aos-duration="1500">
+            <div class="item-desc">長租<br>15年</div>
+          </div>
+          <div class="item" data-aos="fade-up" data-aos-delay="900" data-aos-duration="1500">
+            <div class="item-desc">免<br>管理費</div>
+          </div>
+          <div class="item" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1500">
+            <div class="item-desc">無<br>空窗期</div>
+          </div>
+        </div>
     </div>
   </div>
 </template>
@@ -145,23 +155,20 @@
       width: 50%;
       background-color: #c08d4e;
       color: #1a1311;
-      padding-top: 80px;
+      padding:40px 30px 0 30px;
+        line-height: 1.5;
+        font-size: 14px;
 
       .title {
-        width: 430px;
-        font-size: 26px;
+        font-size: 1.7em;
         margin: 0 auto;
         text-align: left;
-        margin-bottom: 10px;
       }
 
       .desc {
-        width: 430px;
-        font-size: 14px;
         text-align: justify;
-        line-height: 1.5;
         margin: 0 auto;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
       }
     }
   }
@@ -204,12 +211,14 @@
     border: solid 1px #c08d4e;
     margin: 0 auto;
     margin-bottom: 5px;
+   + .desc {
+    font-family: TimesNewRomanPSMT;
+  }
   }
 
   .desc {
     width: 140px;
     height: 20px;
-    font-family: TimesNewRomanPSMT;
     font-size: 18px;
     font-weight: normal;
     font-style: normal;
@@ -252,33 +261,43 @@
 }
 
 .items {
+  justify-content: space-around;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-
-  .item {
-    img {
-      width: 185px;
-    }
-
-    .item-title {
-      font-size: 26px;
+  flex-wrap: wrap;
+      line-height: 1.71;
+  .item-title {
+    flex:5 5 100%;
+      font-size:87px;
       letter-spacing: normal;
       color: #c08d4e;
       margin-bottom: 10px;
       width: 100%;
+      font-weight: bolder;
+  }
+  .item {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  background: url("./s7_item.png");
+  background-size: 100% auto;
+  flex: 1 1 18%;
+  height:246px;
+  padding:0 0 45px 0;
+/*
+    img {
+      width: 185px;
     }
+*/
 
-    .item-desc {
-      width: 245px;
-      height: 104px;
-      font-size: 14px;
-      font-weight: normal;
+    .item-desc {    
+      font-size: 38px;
+      font-weight: 500;
       font-style: normal;
       font-stretch: normal;
-      line-height: 1.71;
+      line-height: 1.3;
       letter-spacing: 0.42px;
-      text-align: justify;
+      text-align: center;
       color: #ffffff;
     }
   }
@@ -345,11 +364,11 @@
     width: 84.4vw;
     margin: 0 auto;
     margin-top: -30px;
-    padding-top: 20px;
+    padding: 30px 5% 0;
     left: 0;
     right: 0;
     z-index: 3;
-    height: 170px;
+    height: auto;
     color: #000;
     background: #c9a063;
     position: absolute;
@@ -357,15 +376,14 @@
     .title {
       margin-bottom: 10px;
       font-size: 17px;
+      text-align: left;
     }
 
     .desc {
-      margin-bottom: 20px;
       text-align: justify;
       font-size: 14px;
-      width: 90%;
       margin: 0 auto;
-      margin-bottom: 15px;
+      margin-bottom: 30px;
     }
 
     .button {
@@ -494,6 +512,22 @@
       margin-top: -1px;
     }
   }
+  .items {
+    width: 95%;
+    margin: auto auto 15px auto;
+    background: #000;
+    border: 2px solid #c9a063;
+    justify-content:space-around;
+  .item-title {
+    margin: 430px 0 0 0;
+    font-size: 27px;
+  }
+  .item {
+    flex:0 0 49%;height: 47vw;padding: 0 0 6vw 0;
+    .item-desc {   font-size: 8vw; 
+    }
+  }
+}
 }
 </style>
 
@@ -529,18 +563,6 @@ export default {
         },
       ],
       contentIndex: 0,
-      content: [
-        {
-          title: '磁吸六大特區 產業商業醫療齊聚',
-          desc:
-            '一次全擁華亞科技園區、長庚醫療特區、國際媒體園區、新創園區以及未來郵政物流特區、林口產業專區，龐大產業醫療群聚大量就業機會與未來產值，更是奠定未來租金高收益的絕佳保證！',
-        },
-        {
-          title: '自有資金高投報 建築鍊金術',
-          desc:
-            '『蘭桂‧坊』超低總價輕坪規劃，減擔入手價，捷運站前稀罕臻品，現在入手保值，未來更想增值利多！',
-        },
-      ],
       isMobile,
     }
   },

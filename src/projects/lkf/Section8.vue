@@ -26,6 +26,32 @@
             營造事業品牌。
           </div>
         </div>
+        <div class="desc_img"
+        v-if="!isMobile"
+          data-aos="fade-up"
+          data-aos-delay="1200"
+          data-aos-duration="1500">
+          <div>
+            <h3>創心 </h3>
+            <p>邁向頂尖住居風潮，與世界同步脈動</p>
+          </div>
+          <div>
+            <h3>量心</h3>
+            <p>首創全國唯一長租型房產，享受同步增值</p>
+          </div>
+          <div>
+            <h3>安心</h3>
+            <p>科技聯防安全管理，未來趨勢一次整合</p>
+          </div>
+          <div>
+            <h3>用心</h3>
+            <p>嚴謹建築工藝，打造精工完美典範</p>
+          </div>
+          <div>
+            <h3>精心</h3>
+            <p>主題設計酒店全新引領時尚風格</p>
+          </div>
+          </div>
         <img
           v-if="!isMobile"
           src="./s8_img2.png"
@@ -36,12 +62,29 @@
           data-aos-duration="1500"
         />
         <img v-else src="./s8_img2_m.png" alt :class="`img2 ${imgIndex === 0 ? 'show' : ''}`" />
-        <img
-          v-if="isMobile"
-          src="./s8_txt_m.png"
-          alt
-          :class="`txt ${imgIndex === 1 ? 'show' : ''}`"
-        />
+        <div v-if="isMobile"
+          :class="`desc_img ${imgIndex === 1 ? 'show' : ''}`">
+          <div>
+            <h3>創心 </h3>
+            <p>邁向頂尖住居風潮，與世界同步脈動</p>
+          </div>
+          <div>
+            <h3>量心</h3>
+            <p>首創全國唯一長租型房產，享受同步增值</p>
+          </div>
+          <div>
+            <h3>安心</h3>
+            <p>科技聯防安全管理，未來趨勢一次整合</p>
+          </div>
+          <div>
+            <h3>用心</h3>
+            <p>嚴謹建築工藝，打造精工完美典範</p>
+          </div>
+          <div>
+            <h3>精心</h3>
+            <p>主題設計酒店全新引領時尚風格</p>
+          </div>
+          </div>
       </div>
     </div>
   </div>
@@ -82,12 +125,14 @@
     border: solid 1px #c08d4e;
     margin: 0 auto;
     margin-bottom: 5px;
+   + .desc {
+    font-family: TimesNewRomanPSMT;
+  }
   }
 
   > .desc {
     width: 170px;
     height: 20px;
-    font-family: TimesNewRomanPSMT;
     font-size: 18px;
     font-weight: normal;
     font-style: normal;
@@ -100,7 +145,22 @@
     margin-bottom: 30px;
   }
 }
-
+.desc_img{
+  color: #40220F;
+    font-size: 14px;
+    line-height: 1.6;
+    position:relative;
+    margin: auto;
+    width: 950px;font-weight:500;
+    > div{position: absolute;text-align: left;
+    &:nth-child(1){left:30px;top:80px}
+    &:nth-child(2){left:30px;top:160px}
+    &:nth-child(3){left:30px;top:240px}
+    &:nth-child(4){left:700px;top:200px}
+    &:nth-child(5){left:700px;top:120px}
+    }
+    h3{font-size:2em;font-weight: bold;}
+}
 .img1 {
   margin-top: 50px;
   margin-bottom: 15px;
@@ -220,9 +280,9 @@
     }
   }
 
-  .txt {
+  .desc_img {
     position: relative;
-    top: 0;
+    top:10px;
     left: 0;
     width: 100%;
     opacity: 0;
@@ -231,6 +291,14 @@
     &.show {
       margin-top: 0px;
       opacity: 1;
+    }
+
+    > div{position: relative;text-align: left;margin: 10px 15px;
+    &:nth-child(1){left:0;top:0}
+    &:nth-child(2){left:0;top:0}
+    &:nth-child(3){left:0;top:0}
+    &:nth-child(4){left:0;top:0}
+    &:nth-child(5){left:0;top:0}
     }
   }
 }

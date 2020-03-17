@@ -1,21 +1,21 @@
 <template>
   <div class="section2">
     <div class="fix-group">
-      <div class="button" @click="modal = true">
+      <!-- div class="button" @click="modal = true">
         <img src="./gold_btn.png" alt />
-      </div>
+      </div -->
       <!-- <div class="button" v-scroll-to="{ element: `#${'section2'}`, offset: -56 }">
         <img src="./chevron-up.png" alt />
       </div>-->
     </div>
-    <div class="modal" v-if="modal">
+    <!-- div class="modal" v-if="modal">
       <div class="mask"></div>
       <div>
         <img src="@/assets/img/close.png" alt class="close" @click="modal = false" />
         <img src="./act.jpg" alt v-if="!isMobile" />
         <img src="./act_m.jpg" alt v-else />
       </div>
-    </div>
+    </div-->
     <video-bg autoplay="autoplay" :sources="['https://www.h35.banner.tw/lkf/lkf.mp4']" img="./s2_bg.jpg" isFix>
       <!-- <iframe
         id="ytplayer"
@@ -44,10 +44,10 @@
       >Luxury Life</div>
       <div class="content" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1500">
         <div>
-          <p class="sub-title">A9捷運正對面 首座國際精裝寓所</p>
+          <p class="sub-title">全台唯一  長租15年</p>
           <p class="text">
-            低總價 X 高投報
-            <br />18~22坪 奢華質感機能住宅
+            月收2萬，小額投資換主題飯店房東<br />
+            18-22坪 入主飯店唯一機會!
           </p>
         </div>
       </div>
@@ -126,13 +126,13 @@
   }
 
   .text {
-    width: 350px;
+    width: 400px;
     height: 71px;
-    font-size: 28px;
+    font-size: 25px;
     font-weight: normal;
     font-style: normal;
     font-stretch: normal;
-    line-height: 1.2;
+    line-height: 1.5;
     letter-spacing: normal;
     text-align: left;
     color: #ffffff;

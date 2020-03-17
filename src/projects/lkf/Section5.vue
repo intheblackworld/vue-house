@@ -2,7 +2,7 @@
   <div class="section5">
     <div class="fullscreen bg">
       <div class="container">
-        <div class="title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">超強生機 娛樂休閒</div>
+        <div class="title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">購物商圈 娛樂休閒</div>
         <hr data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500" />
         <div class="desc" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1500">Highly Fashionable</div>
         <div class="slide relative" data-aos="fade" data-aos-delay="400" data-aos-duration="1500">
@@ -79,12 +79,13 @@ hr {
   border: solid 1px #c08d4e;
   margin: 0 auto;
   margin-bottom: 5px;
+   + .desc {
+    font-family: TimesNewRomanPSMT;
+  }
 }
 
 .desc {
-  width: 142px;
   height: 20px;
-  font-family: TimesNewRomanPSMT;
   font-size: 18px;
   font-weight: normal;
   font-style: normal;
@@ -152,11 +153,9 @@ hr {
     right: 0;
     right: -329px;
     top: -75px;
-    padding-left: 130px;
-    padding-top: 110px;
+    padding:110px 70px 0 120px ;
 
     .title {
-      width: 211px;
       height: auto;
       font-size: 26px;
       font-weight: normal;
@@ -171,9 +170,8 @@ hr {
     }
 
     .desc {
-      width: 211px;
       height: 128px;
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: normal;
       font-style: normal;
       font-stretch: normal;
@@ -351,63 +349,35 @@ export default {
           name: '三井Outlet Park',
           title: '三大購物商圈核心',
           desc:
-            '正對A9環球購物中心，三井Outlet僅需5分鐘，還有昕境廣場，3購物中心匯聚，超強生活機能，食衣住行一次滿足。',
+            '正對A9環球購物中心，三井Outlet僅需5分鐘，還有昕境廣場，3購物中心匯聚，超強購物機能。',
         },
         {
           src: require('./s5_img1-2.jpg'),
           name: '昕境廣場',
           title: '三大購物商圈核心',
           desc:
-            '正對A9環球購物中心，三井Outlet僅需5分鐘，還有昕境廣場，3購物中心匯聚，超強生活機能，食衣住行一次滿足。',
+            '正對A9環球購物中心，三井Outlet僅需5分鐘，還有昕境廣場，3購物中心匯聚，超強購物機能。',
         },
         {
           src: require('./s5_img1-3.jpg'),
           name: '環球購物中心',
           title: '三大購物商圈核心',
           desc:
-            '正對A9環球購物中心，三井Outlet僅需5分鐘，還有昕境廣場，3購物中心匯聚，超強生活機能，食衣住行一次滿足。',
+            '正對A9環球購物中心，三井Outlet僅需5分鐘，還有昕境廣場，3購物中心匯聚，超強購物機能。',
         },
         {
           src: require('./s5_img2-1.jpg'),
           name: '三井 Outlet Park 威秀影城',
           title: '兩大影城影視最新',
           desc:
-            '威秀、國賓兩大影城進駐商城，隨時觀賞熱門院線影劇，無論是假日小休閒，或是平日愜意行，不用舟車勞頓，走路即能抵達。',
+            '威秀、國賓兩大影城進駐商城，隨時觀賞熱門院線影劇，不用舟車勞頓，走路即能抵達。',
         },
         {
           src: require('./s5_img2-2.jpg'),
           name: '昕境廣場 國賓影城',
           title: '兩大影城影視最新',
           desc:
-            '威秀、國賓兩大影城進駐商城，隨時觀賞熱門院線影劇，無論是假日小休閒，或是平日愜意行，不用舟車勞頓，走路即能抵達。',
-        },
-        {
-          src: require('./s5_img3-1.jpg'),
-          name: '行政文化園區',
-          title: '行政園區便捷安心',
-          desc:
-            '林口行政園區步行約3分鐘，政府耗資將近9億打造，消防局、警察局、衛生局、社會局、稅捐處、圖書館等六大機關，便利又安心。',
-        },
-        {
-          src: require('./s5_img3-2.jpg'),
-          name: '行政文化園區',
-          title: '行政園區便捷安心',
-          desc:
-            '林口行政園區步行約3分鐘，政府耗資將近9億打造，消防局、警察局、衛生局、社會局、稅捐處、圖書館等六大機關，便利又安心。',
-        },
-        {
-          src: require('./s5_img4-1.jpg'),
-          name: '第一運動公園',
-          title: '擁抱綠意遼闊寬心',
-          desc:
-            '享受林口60%高綠覆率國際城市，無論是假日的扶輪公園、或是6.6公頃的運動公園，猶如搬進超大植物園，徜徉於大自然的懷抱。',
-        },
-        {
-          src: require('./s5_img4-2.jpg'),
-          name: '扶輪公園',
-          title: '擁抱綠意遼闊寬心',
-          desc:
-            '享受林口60%高綠覆率國際城市，無論是假日的扶輪公園、或是6.6公頃的運動公園，猶如搬進超大植物園，徜徉於大自然的懷抱。',
+            '威秀、國賓兩大影城進駐商城，隨時觀賞熱門院線影劇，不用舟車勞頓，走路即能抵達。',
         },
       ],
       isMobile,
