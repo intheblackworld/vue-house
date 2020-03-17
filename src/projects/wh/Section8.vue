@@ -245,7 +245,7 @@
       .desc {
         margin-top:0;
         width: 86%;
-        text-align: justify;
+        text-align: center;
       }
     }
   }

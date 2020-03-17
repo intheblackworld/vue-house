@@ -13,8 +13,8 @@
         <!-- <img class="img" src="./s1/img1.jpg" alt /> -->
         <div class="content">
           <h3 class="title" data-aos="fade-up" data-aos-delay="400">
-            <p>為你的低調增添奢華</p>國際迎賓林蔭大道
-            <br />遍佈達欣經典足跡
+            <p>為你的低調增添奢華</p>國際迎賓林蔭大道<br />
+            遍佈達欣經典足跡
           </h3>
           <img src="./s35/icon.png" alt class="bg-img" v-if="!isMobile"  data-aos="fade-up" data-aos-delay="600"/>
           <img src="./s35/line.png" alt class="bg-img" v-if="!isMobile" />
@@ -22,12 +22,12 @@
             <img src="./mo/35/icon.png" alt class="icon" />
           </div>
           <div class="desc" data-aos="fade-up" data-aos-delay="800">
-            敦化南北路林蔭大道綠浪蓊鬱傾瀉
-            <br />漫步其中，不期而遇的經典，皆是達欣走過足跡
-            <br />北起文華東方酒店，南至香格里拉遠東飯店等
-            <br />逾10幢商辦酒店雕鎸敦化大道
-            <br />從雕琢城市到建立住家
-            <br />「達欣・信義文華」即將再現傳世代表作
+            敦化南北路林蔭大道綠浪蓊鬱傾瀉<br />
+            漫步其中，不期而遇的經典，皆是達欣走過足跡<br />
+            北起文華東方酒店，南至香格里拉遠東飯店等<br />
+            逾10幢商辦酒店雕鎸敦化大道<br />
+            從雕琢城市到建立住家<br />
+            「達欣・信義文華」即將再現傳世代表作
           </div>
         </div>
         <div class="line line-b" v-if="!isMobile"></div>

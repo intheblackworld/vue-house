@@ -19,10 +19,10 @@
             <img src="./mo/9/icon.png" alt class="icon" />
           </div>
           <div class="desc" data-aos="fade-up" data-aos-delay="800">
-            融合東方的圓融與西方的簡約
-            <br />石材與木紋的溫潤肌理詮釋居所的寧靜致遠
-            <br />典雅而創新的設計
-            <br />在這裡擁抱對生活的無限想像
+            融合東方的圓融與西方的簡約<br />
+            石材與木紋的溫潤肌理詮釋居所的寧靜致遠<br />
+            典雅而創新的設計<br />
+            在這裡擁抱對生活的無限想像
           </div>
         </div>
         <div class="line line-b" v-if="!isMobile"></div>

@@ -15,8 +15,8 @@
         <!-- <img class="img" src="./s1/img1.jpg" alt /> -->
         <div class="content">
           <h3 class="title" data-aos="fade-up" data-aos-delay="400">
-            徜徉空中花園
-            <br />台北101收眼底
+            徜徉空中花園<br />
+            台北101收眼底
           </h3>
           <img src="./s7/icon.png" alt="" class="bg-img" v-if="!isMobile" data-aos="fade-up" data-aos-delay="600" />
           <img src="./s7/line.png" alt class="bg-img" v-if="!isMobile" />
@@ -217,7 +217,7 @@
       .desc {
         margin:0;
         width: 86%;
-        text-align: justify;
+        text-align: center;
       }
     }
   }
