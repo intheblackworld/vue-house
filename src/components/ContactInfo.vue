@@ -126,8 +126,8 @@ export default {
   z-index: 3;
   width: 1200px;
   max-width:90%;
-  margin: 40px auto -20px auto;
-  padding: 60px 0 50px;
+  margin: 40px auto 50px auto;
+  padding: 60px 0 30px;
 }
 
 .logo {

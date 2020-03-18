@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="google-map">
     <iframe
       title="googlemap"
@@ -39,4 +39,4 @@ export default {
   width: 100%;
   }
 }
-</style>
+</style> -->
