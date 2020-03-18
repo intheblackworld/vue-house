@@ -147,8 +147,8 @@
         <div id="section5" class="relative">
           <img src="./s5/bg4.png" alt class="img-bg" />
           <img src="./s5/bg1.png" alt class="img-bg" />
-          <img src="./s5/bg3.png" alt class="img-bg" />
-          <img src="./s5/bg2.png" alt class="img-bg" />
+          <img src="./s5/bg3.png" alt class="img-bg img-s5-3" />
+          <img src="./s5/bg2.png" alt class="img-bg img-s5-4" />
           <!-- <parallax breakpoint="(min-width: 68px)" :speed-factor="0.06" direction="up">
           </parallax> -->
           <div class="s5-content">
@@ -314,7 +314,7 @@
             <div class="img-title">3D示意圖僅供參考</div>
           </div>
           <div class="relative">
-            <img src="./s5/bg3_m.png" alt class="img-bg" />
+            <img src="./s5/bg3_m.png" alt class="img-bg img-s5-3" />
             <div class="right">
               <div class="content">
                 <div class="title">
@@ -344,7 +344,7 @@
   overflow: visible;
   background-image: url('./s3/bg.jpg');
   background-attachment: fixed;
-  background-position:center center;
+  background-position:center top;
   margin: 0 120px 0 0;
 }
 
@@ -373,6 +373,17 @@
   }}
   &.p3{
   top: 2vw;}
+  &.img-s5-3{
+  animation: an 2s infinite alternate;
+  transform: translateY(-1.5%);}
+  &.img-s5-4{
+  animation: an 2s infinite alternate;
+  transform: translateY(-3%);}
+}
+@keyframes an{
+    to {
+      transform: translateY(0);
+    }
 }
 
 .img-title {

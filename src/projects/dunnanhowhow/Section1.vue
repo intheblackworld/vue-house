@@ -1,106 +1,71 @@
 <template>
   <div class="section1">
-    <div class="bg relative section-kv kv animated">
+    <div class="bg kv">
       <div class="kv_banner">
         <div class="kv_logo">
           <parallax breakpoint="(min-width: 68px)" :speed-factor="0.1" direction="up">
-            <img src="./s1/logo.png" alt="敦南好好 3米6自由式｜2房好生活" />
+            <img src="./s1/logo.png" alt="敦南好好" />
           </parallax>
         </div>
 
-        <h1 title="敦南好好 3米6自由式｜2房好生活" class="subtitle">
-          <parallax breakpoint="(min-width: 68px)" :speed-factor="0.2" direction="down">
-              <img src="./s1/kv_slogan.png" alt="敦南好好 就愛市中心首購住大安" />
+        <h1 title="就愛市中心首購住大安 3米6自由式｜2房好生活" class="subtitle">
+          <parallax breakpoint="(min-width: 68px)" :speed-factor="0.1" direction="up">
+              <img src="./s1/kv_slogan.png" alt="就愛市中心首購住大安 3米6自由式｜2房好生活" />
           </parallax>
         </h1>
       </div>
       <div class="kv_decoration">
         <div class="ball ball-1">
           <div class="ring">
-            <parallax breakpoint="(min-width: 68px)" :speed-factor="1" direction="up">
-              <img class="js-parallax" data-parallax="2" src="./s1/ring.png" alt="敦南好好 就愛市中心首購住大安" />
-            </parallax>
+              <img class="js-parallax" src="./s1/ring.png" alt="3米6自由式" />
           </div>
-          <parallax breakpoint="(min-width: 68px)" :speed-factor="1" direction="up">
-            <img class="js-parallax" data-parallax="1" src="./s1/ball_1.png" alt="敦南好好 就愛市中心首購住大安" />
-          </parallax>
+            <img class="js-parallax" src="./s1/ball_1.png" alt="2房好生活" />
         </div>
         <div class="ball ball-2">
-          <parallax breakpoint="(min-width: 68px)" :speed-factor="1.2" direction="up">
-            <img class="js-parallax" data-parallax="1" src="./s1/ball_2.png" alt="敦南好好 就愛市中心首購住大安" />
-          </parallax>
+            <img class="js-parallax" src="./s1/ball_2.png" alt=" 敦南好好" />
         </div>
         <div class="ball ball-3">
-          <parallax breakpoint="(min-width: 68px)" :speed-factor="1.2" direction="up">
-            <img class="js-parallax" data-parallax="1" src="./s1/ball_3.png" alt="敦南好好 就愛市中心首購住大安" />
-          </parallax>
+            <img class="js-parallax" src="./s1/ball_3.png" alt="就愛市中心首購住大安" />
         </div>
         <div class="ball ball-5">
           <div class="perfume perfume-1">
-            <parallax breakpoint="(min-width: 68px)" :speed-factor="1.2" direction="up">
-              <img
-                class="js-parallax"
-                data-parallax="2"
-                src="./s1/perfume_1.png"
-                alt="敦南好好 就愛市中心首購住大安"
-              />
-            </parallax>
+              <img class="js-parallax" src="./s1/perfume_1.png" alt="敦南好好" />
           </div>
-          <parallax breakpoint="(min-width: 68px)" :speed-factor="1.2" direction="up">
-            <img class="js-parallax" data-parallax="1" src="./s1/ball_5.png" alt="敦南好好 就愛市中心首購住大安" />
-          </parallax>
+            <img class="js-parallax" src="./s1/ball_5.png" alt="3米6自由式" />
         </div>
         <div class="perfume perfume-2">
-          <parallax breakpoint="(min-width: 68px)" :speed-factor="1.2" direction="up">
-            <img
-              class="js-parallax"
-              data-parallax="2"
-              src="./s1/perfume_2.png"
-              alt="敦南好好 就愛市中心首購住大安"
-            />
-          </parallax>
+            <img class="js-parallax" src="./s1/perfume_2.png" alt="2房好生活" />
         </div>
 
         <div class="flag flag-1">
-          <parallax breakpoint="(min-width: 68px)" :speed-factor="1.2" direction="up">
-            <img class="js-parallax" data-parallax="3" src="./s1/flag_1.png" alt="敦南好好 就愛市中心首購住大安" />
-          </parallax>
+            <img class="js-parallax" src="./s1/flag_1.png" alt="敦南好好 就愛市中心首購住大安" />
         </div>
         <div class="flag flag-2">
-          <parallax breakpoint="(min-width: 68px)" :speed-factor="1.2" direction="up">
-            <img class="js-parallax" data-parallax="3" src="./s1/flag_2.png" alt="敦南好好 就愛市中心首購住大安" />
-          </parallax>
+            <img class="js-parallax" src="./s1/flag_2.png" alt="敦南好好 就愛市中心首購住大安" />
         </div>
       </div>
       <div class="scroll-down" v-scroll-to="{ element: `#section2`, offset: offset }">
         <div class="scroll-text">scroll down</div>
         <img src="./s1/arrow-down.png" alt class="after" />
       </div>
-      <!--    <img src="./s3/bg1.png" alt class="img-bg" />
-      </parallax>-->
-      <!-- <img src="./s1/logo.png" alt="頤昌豐岳" class="img" data-aos="fade" data-aos-delay="700" /> -->
-      <!-- <icon class="icon logo-icon" :data="logo" />
-      <img src="./s1/light3.png" alt="" class="img light3">-->
-      <!--/div>
-      <div v-else>
-      <img src="./s1/mo/bg.jpg" alt="" class="img"-->
     </div>
   </div>
 </template>
 <style lang="scss">
 .Masthead,
 .Masthead__image {
-  height: auto !important;
+  height: auto ;
   min-height: 23.875rem;
 }
 .Masthead__image > img {
-  height: auto !important;
-  min-height: auto !important;
+  height: auto ;
+  min-height: auto ;
+  object-fit: contain;
 }
 
 .Masthead__image.is-parallax > img {
-  height: auto !important;
-  min-height: auto !important;
+  height: auto ;
+  min-height: auto ;
 }
 .is-parallax{transition: all 0.3s;}
 
@@ -129,58 +94,64 @@ img {
   width: 100%;
 }
 
-.flag {
-  position: absolute;
-}
-.flag-1 {
-  max-width: 37px;
-  width: 9.8666666667%;
-}
 .kv_banner {
   position: absolute;
-  top: 22.4887556222%;
+  top: 22.5%;
   left: 50%;
   transform: translateX(-50%);
-  width:calc(100vw * 426 / 1920);
+  width: calc(100vw * 426 / 1920);
   z-index: 2;
-  opacity: 0;
+  opacity: 1;
   transition: 0.7s opacity;
 }
-@media (min-width: 768px) {
-  .flag-1 {
-    max-width: 98px;
-    width: 5.1041666667%;
-  }
-}
-.flag-2 {
-  max-width: 43px;
-  width: 11.4666666667%;
-}
-@media (min-width: 768px) {
-  .flag-2 {
-    max-width: 112px;
-    width: 5.8333333333%;
-  }
-}
 
-@media screen and (max-height: 800px) and (min-width: 992px) and (max-width: 1199px) {
-  .flag-1 {
-    max-width: 49px;
-  }
-  .flag-2 {
-    max-width: 46px;
-  }
-}
-.ball {
+.flag {
   position: absolute;
+  z-index: 2;
 }
 
+.flag-1 {
+  max-width: 98px;
+  min-width: 37px;
+  width: 5.1%;
+  top: 31.6%;
+  left: 21%;
+  animation: an 2s infinite alternate;
+    transform: translateY(-15%);
+}
+
+.flag-2 {
+  max-width: 112px;
+  min-width: 43px;
+  width: 5.8%;
+  top: 38%;
+  right: 25.3%;
+  animation: an 2s infinite alternate;
+    transform: translateY(15%);
+}
 
 
 .kv_logo {
   position: relative;
   z-index: 1;
-  margin-bottom: 13px;
+
+  img {
+    height: 49.4vh;
+    object-fit: contain;
+  }
+}
+
+.subtitle {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% - 10vh - 41px);
+  margin: 0 auto;
+
+  img {
+    height: 10vh;
+    object-fit: contain;
+  }
 }
 
 .kv_decoration {
@@ -210,253 +181,84 @@ img {
   position: absolute;
   display: block;
   z-index: 2;
-  bottom: 40px;
+  bottom: 4.4vh;
   left: 50%;
   transform: translateX(-50%);
   cursor: pointer;
 }
-@media screen and (max-height: 800px) and (min-width: 992px) {
-  .scroll-down {
-    bottom: 20px;
-  }
-}
 
-.kv .ball-1 {
-  width: 214px;
-  bottom: -100%;
-  left: -100%;
-  z-index: 2;
-}
-@media (min-width: 768px) {
-  .kv .ball-1 {
-    max-width: 571px;
-    width: 29.7395833333%;
-  }
-}
-.kv .ball-2 {
-  width: 160px;
-  top: -100%;
-  left: -100%;
-}
-@media (min-width: 1440px) {
-  .kv .ball-2 {
-    max-width: 321px;
-    width: 16.71875%;
-  }
-}
-.kv .ball-3 {
-  width: 192px;
-  top: -100%;
-  right: -100%;
-}
-@media (min-width: 768px) {
-  .kv .ball-3 {
-    max-width: 571px;
-    width: 29.7395833333%;
-  }
-}
-.kv .ball-4 {
-  width: 32.8638497653%;
-  top: -10.6666666667%;
-  left: -16.4319248826%;
-  opacity: 0;
-}
-@media (min-width: 768px) {
-  .kv .ball-4 {
-    max-width: 185px;
-  }
-}
-.kv .ball-5 {
-  width: 150px;
-  right: -100%;
-  bottom: -100%;
-}
-@media (min-width: 768px) {
-  .kv .ball-5 {
-    max-width: 389px;
-    width: 20.2604166667%;
-  }
-}
-.kv .ball-1,
-.kv .ball-3 {
-  transition-delay: 0.49s;
-}
-.kv .ball-4 {
-  transition-delay: 0.9s;
-}
-.kv .ball-2,
-.kv .ball-5 {
-  transition-delay: 0.21s;
-}
-.kv .ring {
+.ball {
   position: absolute;
-  z-index: 2;
-  width: 57.476635514%;
-  top: -59.3457943925%;
-  right: 7.476635514%;
+  animation: an 2s infinite alternate;
 }
-@media (min-width: 768px) {
-  .kv .ring {
+.ball-1 {
+  bottom: -14%;
+  left: -9%;
+  max-width: 571px;
+  width: 30%;
+  transform: translateY(-8%);
+
+  .ring {
+    position: absolute;
     width: 58%;
-    top: -80%;
-    right: 2%;
+    top: -50%;
+    right: 1%;
+    z-index: 2;
+    animation: an 2s infinite alternate;
+    transform: translateY(15%);
   }
-}
-.kv .perfume {
-  position: absolute;
-  z-index: 2;
-}
-.kv .perfume-1 {
-  width: 88%;
-  right: 18%;
-  top: -73.3333333333%;
-}
-@media (min-width: 768px) {
-  .kv .perfume-1 {
-    width: 117.9948586118%;
-    right: 2.5706940874%;
-    top: -104.1131105398%;
-  }
-}
-.kv .perfume-2 {
-  width: 13.8666666667%;
-  bottom: 13.1934032984%;
-  left: 30.6666666667%;
-}
-@media screen and (max-height: 800px) and (min-width: 992px) and (max-width: 1199px) {
-  .kv .perfume-2 {
-    max-width: 120px;
-  }
-}
-@media (min-width: 768px) {
-  .kv .perfume-2 {
-    width: 12.5%;
-    bottom: 7.037037037%;
-    left: 23.75%;
-  }
-}
-.kv .flag {
-  z-index: 2;
-}
-.kv .flag-1 {
-  top: 44.0779610195%;
-  left: 5.8666666667%;
-}
-@media (min-width: 768px) {
-  .kv .flag-1 {
-    top: 31.5740740741%;
-    left: 20.9375%;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .kv .flag-1 {
-    left: 15%;
-  }
-}
-.kv .flag-2 {
-  top: 27.5862068966%;
-  right: 5.8666666667%;
-}
-@media (min-width: 768px) {
-  .kv .flag-2 {
-    top: 37.962962963%;
-    right: 25.3125%;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .kv .flag-2 {
-    right: 15%;
-  }
-}
-.kv .ring,
-.kv .perfume,
-.kv .flag-1,
-.kv .flag-2 {
-  opacity: 0;
-  transition-property: all;
-  transition-duration: 0.7s;
-  transition-delay: 1.2s;
-}
-.section-kv.animated .kv_banner {
-  opacity: 1;
-}
-.section-kv.animated .ball {
-  z-index: 1;
-}
-.section-kv.animated .ball-2 {
-  top: -80px;
-  left: -74px;
-}
-@media (min-width: 768px) {
-  .section-kv.animated .ball-2 {
-    top: -5.2777777778%;
-    left: -2.3958333333%;
-  }
-}
-.section-kv.animated .ball-5 {
-  bottom: -46px;
-  right: -43px;
-}
-@media (min-width: 768px) {
-  .section-kv.animated .ball-5 {
-    bottom: -11.4814814815%;
-    right: 4.375%;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .section-kv.animated .ball-5 {
-    bottom: -5%;
-  }
-}
-.section-kv.animated .ball-1 {
-  bottom: -42px;
-  left: -116px;
-  z-index: 2;
-}
-@media (min-width: 768px) {
-  .section-kv.animated .ball-1 {
-    bottom: -14.4444444444%;
-    left: -8.90625%;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .section-kv.animated .ball-1 {
-    bottom: -5%;
-  }
-}
-.section-kv.animated .ball-3 {
-  top: -57px;
-  right: -56px;
-}
-@media (min-width: 768px) {
-  .section-kv.animated .ball-3 {
-    top: -13.5185185185%;
-    right: -4.1145833333%;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .section-kv.animated .ball-3 {
-    top: -5%;
-    right: -4%;
-  }
-}
-.section-kv.animated .ball-4 {
-  opacity: 1;
-}
-.section-kv.animated .ring,
-.section-kv.animated .perfume,
-.section-kv.animated .flag-1,
-.section-kv.animated .flag-2 {
-  opacity: 1;
 }
 
-.subtitle {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: calc(23% + 100vw * 426 / 1920);
-  margin: 0 auto;
+.ball-2 {
+  top: -5.3%;
+  left: -2.4%;
+  max-width: 321px;
+  width: 16.71875%;
+  transform: translateY(-12%);
 }
+
+.ball-3 {
+  top: -26%;
+  right: -4.1%;
+  max-width: 571px;
+  width: 29%;
+  transform: translateY(5%);
+}
+
+.ball-5 {
+  bottom: -3%;
+  right: 4.375%;
+  max-width: 389px;
+  width: 20.3%;
+  transform: translateY(-10%);
+}
+
+.perfume {
+  position: absolute;
+  z-index: 2;
+  animation: an 2s infinite alternate;
+}
+
+.perfume-1 {
+  width: 118%;
+  left:-22%;
+  top: -90%;
+  transform: translateY(3%);
+}
+
+.perfume-2 {
+  width: 12.5%;
+  bottom: 20%;
+  left: 23.7%;
+  transform: translateY(6%);
+}
+@keyframes an{
+    to {
+      transform: translateY(0);
+    }
+}
+
+
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
 }
@@ -472,13 +274,62 @@ img {
     width: calc(100vw * 426 / 750);
     }
 .subtitle{top: calc(23% + 100vw * 426 / 750);}
+.scroll-down{bottom:calc(4.4vh + 63px);}
+
+.flag-1 {
+  top: 30%;
+  left: 7%;
 }
 
-@media screen and (max-width: 576px) {
-  html.android.mobile .kv {
-    height: 93vh;
+.flag-2 {
+  top: 50%;
+  right: 5%;
+}
+.ball-1 {
+  bottom: calc(-20% + 63px);
+  left: -40%;
+  width: 60%;
+  transform: translateY(-8%);
+
+  .ring {
+    width: 51%;
   }
 }
+
+.ball-2 {
+  top: -12%;
+  left: -10%;
+  width: 40%;
+}
+
+.ball-3 {
+  top: -7%;
+  right:-12%;
+  width: 51%;
+}
+
+.ball-5 {
+  bottom:calc(-8% + 63px);
+  right:-5%;
+  width:37%;
+}
+
+
+.perfume-1 {
+  width: 80%;
+  left: 10%;
+  top: -85%;
+}
+
+.perfume-2 {
+  bottom:calc(8% + 63px);
+  left: 23%;
+  transform: translateY(9%);
+}
+
+
+}
+
 </style>
 
 <script>
