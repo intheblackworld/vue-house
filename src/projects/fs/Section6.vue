@@ -48,8 +48,6 @@
           v-lazy="require('./mo/6/bgimg.png')"
           alt
           class="bg-img fix"
-          data-aos="fade"
-          data-aos-delay="300"
         />
         <div class="block-img" data-aos="fade" data-aos-delay="300">
           <div class="relative">

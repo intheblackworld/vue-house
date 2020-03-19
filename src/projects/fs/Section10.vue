@@ -179,7 +179,7 @@
     position: relative;
     height: size-m(455);
     display: block;
-    z-index: 1;
+    z-index: 3;
 
     > img {
       display: block;
@@ -230,7 +230,8 @@
   .desc {
     font-size: calc(100vw * 12 / 375);
     width: 100%;
-  }
+  } .item{text-align:left;}
+  .item-img{width: auto;height:calc(100vw * 667 / 1100 );margin: 0 auto 0 0;}
 }
 </style>
 

@@ -285,6 +285,7 @@
     position: relative;
     height: auto;
     display: block;
+  z-index: 2;
 
     img {
       display: block;

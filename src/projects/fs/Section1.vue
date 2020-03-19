@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="bg">
+        <div class="bg-color" ></div>
       <div v-if="!isMobile">
         <img v-lazy="require('./s1/bg1.png')" alt class="bg-img" />
         <img
@@ -10,7 +11,7 @@
           data-aos="fade"
           data-aos-delay="300"
         />
-        <img :src="require('./s1/logo.gif')" alt class="logo" data-aos="fade" data-aos-delay="300" />
+        <img :src="require('./s1/logo.gif')" alt="京城鳳翔" class="logo" data-aos="fade" data-aos-delay="300" />
         <img
           :src="require('./s1/text.png')"
           alt
@@ -26,7 +27,12 @@
       <div v-if="isMobile">
         <img :src="require('./s1/logo.gif')" alt class="logo" data-aos="fade" data-aos-delay="300" />
         <img :src="require('./mo/12/bg1.png')" alt class="bg-img" />
-        <img :src="require('./mo/12/text.png')" alt class="bg-img" />
+        <img
+          :src="require('./s1/toplogo.png')"
+          alt
+          class="top-logo"
+        />
+        <img :src="require('./mo/12/text.png')" alt="鳳山新東區．絕版雙捷運｜天天公園第一排" class="bg-img" />
       </div>
       <div class="section" id="section2" v-if="isMobile">
         <Map
@@ -65,18 +71,36 @@
   position: relative;
   overflow: hidden;
   height: size(2100);
+  z-index: 1;
+}
+.bg-color{
+  width: 300%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -200%;
+  animation: oxxo 5s infinite ease-in-out;
   background-image: linear-gradient(
     136deg,
     #064849,
-    #064849 13%,
-    #628963 20%,
-    #87a6a2 27%,
-    #628963 33%,
-    #064849 40%,
-    #064849 53%
-  );
-  z-index: 1;
-}
+    #064849 35%,
+    #628963 38%,
+    #87a6a2 40%,
+    #628963 43%,
+    #064849 50%,
+    #064849 100%
+  );}
+  @keyframes oxxo{
+    0%{
+  left: -200%;
+    }
+    70%{
+  left: -200%;
+    }
+    100%{
+  left: 0%;
+    }
+  }
 .bg-img {
   width: 100vw;
   position: absolute;
@@ -152,7 +176,19 @@
 @media screen and (max-width: 767px) {
   .bg {
     height: size_m(1161);
+    z-index: 3;
   }
+.bg-color{
+  background-image: linear-gradient(
+    110deg,
+    #064849,
+    #064849 35%,
+    #628963 38%,
+    #87a6a2 40%,
+    #628963 43%,
+    #064849 50%,
+    #064849 100%
+  );}
   .logo {
     width: size-m(185);
     top: size-m(240);
@@ -162,6 +198,13 @@
     position: absolute;
     z-index: 1;
   }
+
+.top-logo {
+  width: size-m(130);
+  left: 0;
+  top: 0;
+  position: absolute;
+}
   .bg-img {
     // &:nth-child(1) {
     //   position: absolute;

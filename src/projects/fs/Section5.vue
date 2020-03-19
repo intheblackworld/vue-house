@@ -252,6 +252,7 @@
     position: relative;
     height: size-m(550);
     display: block;
+  z-index: 3;
 
     img {
       display: block;

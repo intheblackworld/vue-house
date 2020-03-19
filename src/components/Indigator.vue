@@ -32,24 +32,30 @@
   .list-indigator {
     position: relative;
     padding: 8px;
-    background: rgba(0, 0, 0, 0.4);
     border-radius: 20px;
   }
 
   .dot {
-    font-size:16px;
-    width: 1em;
-    height: 1em;
-    margin-top: 0.9em;
-    margin-bottom: 0.9em;
+    font-size:13px;
+    width: 2em;
+    height: 2.5em;
+    margin:0 auto;
     background: transparent;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &::before{content:"";
+    display: block;
+    width: 1em;
+    height: 1em;
     border: 1px solid #ccc;
     border-radius: 999px;
-    &.active {
+    background: #00000033;}
+    &.active::before {
       background: #fff;
     }
-    &:hover {
+    &:hover:before {
     border: 2px solid #fff;
     }
   }

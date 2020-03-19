@@ -6,8 +6,6 @@
           v-lazy="require('./s3/bg.png')"
           alt
           class="bg-img"
-          data-aos="fade"
-          data-aos-delay="300"
         />
         <div class="relative">
           <img
@@ -276,6 +274,7 @@
     position: relative;
     display: block;
     height: size-m(1365);
+    z-index: 3;
 
     > div {
       display: block;

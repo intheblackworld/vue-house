@@ -34,13 +34,15 @@
           <div class="title">職人工藝 品質至上</div>
           <div class="desc">京城建設的建築工法，皆經過建築師與構技師專業的計算評估，堅持按圖施工，嚴格落實鋼筋數量、鋼筋數號，確實做到鋼筋綁紮、混凝土密度強度，以確保建物安全穩固。</div>
         </div>
-        <div class="container"></div>
+        <div class="container"
+          data-aos="fade"
+          data-aos-delay="200"></div>
         <swiper
           :options="swiperOption"
           ref="mySwiper"
+          class="swiper-l"
           data-aos="fade"
           data-aos-delay="200"
-          class="swiper-l"
           @slideChangeTransitionEnd="slideChanged"
         >
           <swiper-slide
@@ -184,6 +186,7 @@
   top: size(85);
   left: 0;
   position: absolute;
+  z-index: 2;
 }
 
 .content-t {
@@ -303,6 +306,14 @@
 .slide-fade-leave-active {
   transition: all 0s cubic-bezier(1, 0.5, 0.8, 1);
 }
+.swiper-button-prev{
+  left: 4.8vw;margin-left: -12.5px;
+
+}
+.swiper-button-next{
+  right:4.8vw;margin-right: -5px;
+
+}
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
@@ -325,6 +336,7 @@
     position: relative;
     height: auto;
     display: block;
+  z-index: 2;
 
     > img {
       display: block;
