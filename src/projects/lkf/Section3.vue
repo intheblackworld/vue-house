@@ -6,7 +6,8 @@
         <hr data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500" />
         <div class="desc" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1500">International City</div>
         <div class="bg-bottom"></div>
-          <img class="img" src="./s3.jpg" alt="月付 8,000 元起，收租20,000元起，輕鬆付賺很大!"  data-aos="fade-up" data-aos-delay="600" data-aos-duration="1500"/>
+          <img v-if="!isMobile" class="img" src="./s3.jpg" alt="月付 8,000 元起，收租20,000元起，輕鬆付賺很大!"  data-aos="fade-up" data-aos-delay="600" data-aos-duration="1500"/>
+          <img v-if="isMobile" class="img" src="./s3_m.jpg" alt="月付 8,000 元起，收租20,000元起，輕鬆付賺很大!"  data-aos="fade-up" data-aos-delay="600" data-aos-duration="1500"/>
         <!-- div class="slide relative" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1500">
           <img
             v-for="(slide, index) in (isMobile ? slideListM : slideList)"

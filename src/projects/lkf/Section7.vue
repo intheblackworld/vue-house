@@ -524,7 +524,7 @@
   }
   .item {
     flex:0 0 145px;height: 150px;padding: 0 0 6vw 0;
-    .item-desc {   font-size: 8vw; 
+    .item-desc {   font-size: 6vw; 
     }
   }
 }
