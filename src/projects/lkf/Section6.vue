@@ -217,6 +217,8 @@
     right: 0;
     &.ss4{      
     max-height:initial;
+    position: relative;
+    opacity:1;
     }
   }
 
