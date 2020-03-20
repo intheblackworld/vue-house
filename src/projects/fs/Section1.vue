@@ -71,7 +71,7 @@
   position: relative;
   overflow: hidden;
   height: size(2100);
-  z-index: 1;
+  z-index: 3;
 }
 .bg-color{
   width: 300%;
@@ -176,7 +176,6 @@
 @media screen and (max-width: 767px) {
   .bg {
     height: size_m(1161);
-    z-index: 3;
   }
 .bg-color{
   background-image: linear-gradient(

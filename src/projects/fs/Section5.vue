@@ -2,7 +2,10 @@
   <div class="section5">
     <div class="bg">
       <div v-if="!isMobile">
-        <img v-lazy="require('./s5/bg.png')" alt class="bg-img" />
+        <div class="box box1"></div>
+        <div class="box box2"
+            data-aos="fade-up"
+            data-aos-delay="300"></div>
         <img v-lazy="require('./s5/logo.png')" alt class="bg-img" />
         <div class="swiper-button-prev" slot="button-prev">
           <img src="./all/箭頭2.png" alt />
@@ -25,7 +28,7 @@
           :options="swiperOption"
           ref="mySwiper"
           data-aos="fade"
-          data-aos-delay="200"
+          data-aos-delay="600"
           class="swiper-r"
           @slideChangeTransitionEnd="slideChanged"
         >
@@ -120,15 +123,27 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .bg {
-  background-size: cover;
   position: relative;
   overflow: hidden;
   position: relative;
   height: calc(100vw * 960 / 1920);
   display: flex;
   align-items: center;
-  z-index: 1;
+  z-index: 3;
+  background: #0e585b url('./s6/bgimg.png') fixed;
+  background-size: cover;
 }
+.box{position: absolute;}
+.box1{background: #fff;
+    top:0;
+    left: 0;
+    width:90%;
+    height: size(340);}
+.box2{background:#20969b;
+    bottom:size(55);
+    left: 4%;
+    width: 80%;
+    height: size(840);}
 
 .bg-img {
   width: 100vw;
@@ -210,7 +225,14 @@
   right: size(10);
   bottom: size(10);
 }
+.swiper-button-prev {
+  left: size(80);
 
+}
+.swiper-button-next {
+  right: size(80);
+
+}
 // begin
 .slide-fade-leave-to
 /* .slide-fade-leave-active for below version 2.1.8 */ {
@@ -252,7 +274,6 @@
     position: relative;
     height: size-m(550);
     display: block;
-  z-index: 3;
 
     img {
       display: block;

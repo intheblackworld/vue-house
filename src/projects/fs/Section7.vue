@@ -154,6 +154,7 @@
   height: size(2275);
   display: flex;
   align-items: center;
+  z-index: 3;
 
   > div {
     display: flex;
@@ -285,7 +286,6 @@
     position: relative;
     height: auto;
     display: block;
-  z-index: 2;
 
     img {
       display: block;

@@ -30,6 +30,7 @@
   background-position: center;
   position: relative;
   position: relative;
+  z-index: 3;
   // top: -24vw;
   // margin-bottom: -24vw;
 }

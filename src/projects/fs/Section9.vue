@@ -84,16 +84,6 @@
       </div>
       <div v-else>
         <img
-          v-lazy="require('./mo/9/bg.png')"
-          alt
-          class="bg-img"
-        />
-        <img
-          v-lazy="require('./mo/9/bg2.png')"
-          alt
-          class="bg-img fix"
-        />
-        <img
           v-lazy="require('./mo/9/1.png')"
           alt
           class="bg-img"
@@ -330,14 +320,14 @@
 
 @media screen and (max-width: 767px) {
   .bg {
-    background-size: cover;
     position: relative;
     overflow: hidden;
     position: relative;
     height: auto;
     display: block;
-  z-index: 2;
-
+  z-index: 1;
+  background:  url('./mo/9/bg2.png') fixed 0 0, url('./mo/9/bg.png') 0 0;
+    background-size: 100% auto, 100% auto;
     > img {
       display: block;
     }

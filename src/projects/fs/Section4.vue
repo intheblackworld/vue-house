@@ -2,15 +2,24 @@
   <div class="section4">
     <div class="bg">
       <div v-if="!isMobile">
-        <img v-lazy="require('./s4/bg.png')" alt class="bg-img" />
+        <div class="box box1"></div>
+        <div class="box box2"
+            data-aos="fade-right"
+            data-aos-delay="300"></div>
+        <div class="box box3"
+            data-aos="fade-left"
+            data-aos-delay="500"></div>
+        <div class="box box4"
+            data-aos="fade"
+            data-aos-delay="1200"></div>
         <img
           v-lazy="require('./s4/title.png')"
           alt
           class="bg-img"
           data-aos="fade"
-          data-aos-delay="300"
+          data-aos-delay="800"
         />
-        <div class="block-img" data-aos="fade" data-aos-delay="300">
+        <div class="block-img" data-aos="fade" data-aos-delay="1000">
           <div class="relative">
             <img v-lazy="require('./s4/img.jpg')" alt />
             <div class="block-title">外觀3D示意圖</div>
@@ -41,13 +50,15 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .bg {
-  background-size: cover;
   position: relative;
   overflow: hidden;
   position: relative;
   height: calc(100vw * 1320 / 1920);
   display: flex;
   align-items: center;
+  z-index: 3;
+  background: #0e585b url('./s6/bgimg.png') fixed;
+  background-size: cover;
 
   > div {
     display: flex;
@@ -55,6 +66,27 @@
   }
 }
 
+.box{position: absolute;}
+.box1{background: #fff;
+    top:0;
+    left: 0;
+    width:90%;
+    height: size(1700);}
+.box2{background:#0e585b;
+    bottom:0;
+    left: 0;
+    width: 39%;
+    height: size(320);}
+.box3{background: #20969b ;
+    bottom:size(190);
+    right: 0;
+    width: 50%;
+    height: size(840);}
+.box4{background: #fff;
+    bottom:size(270);
+    right: size(190);
+    width:size(60);
+    height: size(60);}
 .bg-img {
   width: 100vw;
   height: auto;

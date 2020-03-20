@@ -2,14 +2,6 @@
   <div class="section6">
     <div class="bg">
       <div v-if="!isMobile">
-        <img v-lazy="require('./s6/bg.png')" alt class="bg-img" />
-        <img
-          v-lazy="require('./s6/bgimg.png')"
-          alt
-          class="bg-img fix"
-          data-aos="fade"
-          data-aos-delay="300"
-        />
         <div class="block-img" data-aos="fade" data-aos-delay="300">
           <div class="relative">
             <img v-lazy="require('./s6/img.jpg')" alt />
@@ -24,31 +16,21 @@
           <div class="subtitle">京城集團近年沿革</div>
           <div class="desc">
             <div class="text">
-              2016－工期長達6年的農十六案【京城京城】完工<br />
-              獲內政部耐震建築、綠建築標章認證，並<br />
-              榮獲建築金石獎首獎<br />
-              2016－京城總部大樓遷移至博愛二路150號<br />
-              2016－與「台灣建築安全履歷協會」簽約<br />
-              為中南部首家導入「建築安全履歷」建商
+              <span><span>2016－</span>工期長達6年的農十六案【京城京城】完工獲內政部耐震建築、綠建築標章認證，並榮獲建築金石獎首獎</span>
+              <span><span>2016－</span>京城總部大樓遷移至博愛二路150號</span>
+              <span><span>2016－</span>與「台灣建築安全履歷協會」簽約為中南部首家導入「建築安全履歷」建商</span>
             </div>
             <div class="text">
-              2017－京城博愛路新企業總部落成、喬遷<br />
-              2017－京城建設100%轉投資H20水京機國際酒店開幕<br />
-              2018－【圓山大院】榮獲南台灣建築園冶獎等六大獎項<br />
-              2019－【時尚京城】榮獲2019南台灣建築園治獎<br />
-              2019－【京城美術皇居】、【時尚京城】、【閱河堤】<br />
-              與【圓山天墅】共獲得高雄厝、綠建築等五座獎項
+              <span><span>2017－</span>京城博愛路新企業總部落成、喬遷</span>
+              <span><span>2017－</span>京城建設100%轉投資H20水京機國際酒店開幕</span>
+              <span><span>2018－</span>【圓山大院】榮獲南台灣建築園冶獎等六大獎項</span>
+              <span><span>2019－</span>【時尚京城】榮獲2019南台灣建築園治獎</span>
+              <span><span>2019－</span>【京城美術皇居】、【時尚京城】、【閱河堤】與【圓山天墅】共獲得高雄厝、綠建築等五座獎項</span>
             </div>
           </div>
         </div>
       </div>
       <div v-else>
-        <img v-lazy="require('./mo/6/bg.png')" alt class="bg-img" />
-        <img
-          v-lazy="require('./mo/6/bgimg.png')"
-          alt
-          class="bg-img fix"
-        />
         <div class="block-img" data-aos="fade" data-aos-delay="300">
           <div class="relative">
             <img v-lazy="require('./mo/6/img.png')" alt />
@@ -62,20 +44,14 @@
           <div class="subtitle">京城集團近年沿革</div>
           <div class="desc">
             <div class="text">
-              2016－工期長達6年的農十六案【京城京城】完工<br />
-              獲內政部耐震建築、綠建築標章認證，並<br />
-              榮獲建築金石獎首獎<br />
-              2016－京城總部大樓遷移至博愛二路150號<br />
-              2016－與「台灣建築安全履歷協會」簽約<br />
-              為中南部首家導入「建築安全履歷」建商
-            </div>
-            <div class="text">
-              2017－京城博愛路新企業總部落成、喬遷<br />
-              2017－京城建設100%轉投資H20水京機國際酒店開幕<br />
-              2018－【圓山大院】榮獲南台灣建築園冶獎等六大獎項<br />
-              2019－【時尚京城】榮獲2019南台灣建築園治獎<br />
-              2019－【京城美術皇居】、【時尚京城】、【閱河堤】<br />
-              與【圓山天墅】共獲得高雄厝、綠建築等五座獎項
+              <span><span>2016－</span>工期長達6年的農十六案【京城京城】完工獲內政部耐震建築、綠建築標章認證，並榮獲建築金石獎首獎</span>
+              <span><span>2016－</span>京城總部大樓遷移至博愛二路150號</span>
+              <span><span>2016－</span>與「台灣建築安全履歷協會」簽約為中南部首家導入「建築安全履歷」建商</span>
+              <span><span>2017－</span>京城博愛路新企業總部落成、喬遷</span>
+              <span><span>2017－</span>京城建設100%轉投資H20水京機國際酒店開幕</span>
+              <span><span>2018－</span>【圓山大院】榮獲南台灣建築園冶獎等六大獎項</span>
+              <span><span>2019－</span>【時尚京城】榮獲2019南台灣建築園治獎</span>
+              <span><span>2019－</span>【京城美術皇居】、【時尚京城】、【閱河堤】與【圓山天墅】共獲得高雄厝、綠建築等五座獎項</span>
             </div>
           </div>
         </div>
@@ -87,14 +63,14 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .bg {
-  background-size: cover;
   position: relative;
   overflow: hidden;
   position: relative;
   height: size(1150);
   display: flex;
   align-items: center;
-  z-index: 0;
+  background:  url('./s6/bgimg.png') fixed, url('./s6/bg.png');
+  background-size: cover,cover;
 
   > div {
     display: flex;
@@ -172,11 +148,11 @@
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.4;
+  line-height: 1.7;
   letter-spacing: normal;
-  text-align: left;
   color: #000000;
-  margin-bottom: size(20);
+  margin-bottom: size(50);
+  text-align: justify;
 }
 
 .subtitle {
@@ -192,8 +168,21 @@
 }
 
 .text {
-  width: 50%;
+  width: 45%;
   display: inline-block;
+  margin: 0 3% 0 0;
+  vertical-align: top;
+  line-height: 1.7;
+  span{flex: 0 0 auto;
+  text-align: justify;
+  }  
+  > span{
+    display: flex;
+    margin: 0 0 0.7em;
+  }
+  &:last-child{ 
+  width: 52%;margin: 0;}
+  
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -211,13 +200,13 @@
 
 @media screen and (max-width: 767px) {
   .bg {
-    background-size: cover;
     position: relative;
     overflow: hidden;
     position: relative;
     height: size-m(957);
     display: block;
-    z-index: 2;
+  background:  url('./mo/6/bgimg.png') fixed 0 0, url('./mo/6/bg.png') 0 0;
+    background-size: 100% auto, 100% auto;
     img {
       display: block;
     }
@@ -235,7 +224,7 @@
     height: auto;
     display: block;
     object-fit: cover;
-    z-index: 3;
+    z-index: 2;
 
     // &:nth-child(1) {
     //   position: relative;
@@ -264,13 +253,13 @@
   }
 
   .desc {
-    font-size: size-m(12);
+    font-size: size-m(13);
     width: 100%;
     display: block;
   }
 
   .subtitle {
-    font-size: size-m(13);
+    font-size: size-m(14);
   }
 
   .item-title {
@@ -286,6 +275,11 @@
     right: 20px;
     bottom: 20px;
   }
+.text {
+  width: 100%;
+  &:last-child{ 
+  width: 100%;margin: 0;}
+}
 }
 </style>
 

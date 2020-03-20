@@ -70,7 +70,7 @@
             class="bg-img"
           />
           <img
-            :src="require('./mo/8/img1.jpg')"
+            :src="require('./s8/img1-2.jpg')"
             alt
             class="bg-img"
             data-aos="fade"
@@ -125,7 +125,7 @@
             class="bg-img"
           />
           <img
-            v-lazy="require('./mo/8/img2.jpg')"
+            v-lazy="require('./s8/img2-2.jpg')"
             alt
             class="bg-img"
             data-aos="fade"
@@ -219,6 +219,7 @@
   overflow: hidden;
   position: relative;
   height: size(2560);
+  z-index: 3;
 }
 
 .bg-img {
@@ -363,6 +364,8 @@
     &:nth-child(1) {
       position: relative;
     }
+    &:nth-child(2) {margin-top: size-m(10);
+    }
   }
 
   .content-t {
@@ -491,6 +494,7 @@
     height: size-m(90);
     top: size-m(275);
     left: size-m(80);
+    background: #b904;
   }
 
   .block-14 {
@@ -525,7 +529,7 @@ export default {
       contentList: [
         '廚房選用大雅廚具，配有Glem蒸烤箱、林內抽油煙機等國際廚具。',
         '客餐廳採開放式規劃，走道無虛坪，打破格局限制想像。',
-        '主浴、客浴配備ROCA馬桶，採乾溼分離設計，並配暖風機或換氣扇，皆有開窗。',
+        '主浴、客浴配備ROCA馬桶，採乾溼分離設計，並配暖風機或換氣扇。',
         '客餐廳、房間皆鋪設高級地磚，易清潔好保養。',
         '主臥室超大格局，給您足夠空間訂製系統衣櫃。',
         '臥房皆開窗，讓室內空氣流通，採光明亮好生活。',
@@ -535,7 +539,7 @@ export default {
         '廚房選用大雅廚具，配有Glem蒸烤箱、林內抽油煙機等國際廚具。',
         '景觀陽台就是自家的小花園，並鋪設木紋磚，質感大大提升。',
         '開放式客餐廳設計，大面寬尺度，家族團聚絕不失面子。',
-        '主臥大面窗採光佳，大空間可做梳妝台、系統櫃，並可推窗連接到陽台。',
+        '主臥採套房設計，大面窗採光佳，大空間可做梳妝台、系統衣櫃。',
         '衛浴採乾溼分離，配有ROCA馬桶、換氣扇等，給您乾爽舒適生活。',
         '主浴乾濕分離，配備ROCA智慧馬桶、V&B面盆、暖風機等。',
       ],

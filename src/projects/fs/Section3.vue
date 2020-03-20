@@ -2,25 +2,27 @@
   <div class="section3">
     <div class="bg">
       <div v-if="!isMobile">
-        <img
-          v-lazy="require('./s3/bg.png')"
-          alt
-          class="bg-img"
-        />
+        <div class="box box1"></div>
+        <div class="box box2"
+            data-aos="fade-left"
+            data-aos-delay="400"></div>
+        <div class="box box3"
+            data-aos="fade-left"
+            data-aos-delay="300"></div>
         <div class="relative">
           <img
             v-lazy="require('./s3/img2.png')"
             alt
             class="img"
             data-aos="fade"
-            data-aos-delay="300"
+            data-aos-delay="1000"
           />
           <img
             v-lazy="require('./s3/img1.jpg')"
             alt
             class="l-img"
-            data-aos="fade"
-            data-aos-delay="300"
+            data-aos="fade-right"
+            data-aos-delay="700"
           />
           <div class="content-t">
             <div class="title">落點校園首排 舞動雙站捷奏</div>
@@ -41,7 +43,7 @@
             alt
             class="r-img"
             data-aos="fade"
-            data-aos-delay="300"
+            data-aos-delay="1200"
           />
           <div class="content-b">
             <div class="subtitle">增值起步走！起漲向東看！</div>
@@ -131,8 +133,25 @@
   overflow: hidden;
   position: relative;
   height: calc(100vw * 1750 / 1920);
-  z-index: 1;
+  z-index: 3;
+  background: #0e585b url('./s6/bgimg.png') fixed;
 }
+.box{position: absolute;}
+.box1{background: #fff;
+    top:size(680);
+    left: 0;
+    width:90%;
+    height: size(1080);}
+.box2{background: #20969b;
+    top:size(312);
+    right: 0;
+    width: 52%;
+    height: size(525);}
+.box3{background: #fff;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: size(590);}
 .bg-img {
   width: 100vw;
   height: auto;
@@ -183,7 +202,7 @@
 
 .content-b {
   position: absolute;
-  top: calc(100vw * 40 / 1920);
+  top:0;
   left: calc(100vw * 130 / 1920);
   width: calc(100vw * 635 / 1920);
 }
@@ -268,13 +287,13 @@
 
 @media screen and (max-width: 767px) {
   .bg {
-    background-size: cover;
     position: relative;
     overflow: hidden;
     position: relative;
     display: block;
     height: size-m(1365);
-    z-index: 3;
+  background: #FFF;
+    background-size: cover;
 
     > div {
       display: block;
