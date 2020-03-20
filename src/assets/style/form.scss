@@ -1,7 +1,15 @@
-@import './variableColor.scss';
+@import "./variableColor.scss";
 
 .el-select {
   margin-left: 21px;
+}
+
+.el-date-editor.el-input {
+  position: relative !important;
+  font-size: 14px;
+  display: inline-block !important;
+  width: 100% !important;
+  margin-left: 44px;
 }
 
 .el-input__inner {
@@ -10,7 +18,7 @@
   line-height: 48px !important;
   font-size: 16px !important;
   border-radius: 0 !important;
-  border: $order_input_border;
+  border: $order_input_border !important;
   background: $order_input_bg;
   color: $order_input_color;
 
@@ -24,7 +32,7 @@
 
 .el-textarea {
   width: 420px !important;
-  height: 70% !important;
+  height: 95% !important;
   .el-textarea__inner {
     height: 100% !important;
     border-radius: 0 !important;
@@ -80,7 +88,7 @@
   position: relative;
   overflow: hidden;
   &::before {
-    content: '';
+    content: "";
     width: 40%;
     height: 100%;
     display: block;
@@ -135,5 +143,9 @@
     width: 90% !important;
     font-size: 16px !important;
     margin: 10px auto !important;
+  }
+
+  .el-date-editor.el-input {
+    margin-left: 0px;
   }
 }

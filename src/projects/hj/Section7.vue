@@ -1,267 +1,190 @@
 <template>
   <div class="section7">
-    <div class="bg">
-      <div v-if="!isMobile">
+    <div
+      v-if="!isMobile"
+      class="full-bg"
+    >
+      <img
+        v-lazy="require('./s7/img.jpg')"
+        alt=""
+        class="left"
+      >
+      <div
+        data-aos="fade"
+        data-aos-delay="300"
+      >
         <img
-          v-lazy="require('./s7/bg.png')"
-          alt
-          class="bg-img"
-        />
-        <img
-          v-lazy="require('./s7/box.png')"
-          alt
-          class="bg-img"
-        />
-        <img
-          v-lazy="require('./s7/box1.png')"
-          alt
-          class="bg-img"
-        />
-        <div
-          class="block-img block-img-1"
-          data-aos="fade"
-          data-aos-delay="300"
+          v-lazy="require('./s7/timg.png')"
+          alt=""
+          class="right-img"
         >
-          <div class="relative">
-            <img
-              v-lazy="require('./s7/img1-1.jpg')"
-              alt
-            />
-            <div class="block-title">業績實景</div>
-          </div>
+      </div>
+      <div class="content">
+        <div class="title">
+          BEST<span>永泰祥機構</span><br />ARCHITECTURE
         </div>
-        <div
-          class="block-img block-img-2"
-          data-aos="fade"
-          data-aos-delay="300"
-        >
-          <div class="relative">
-            <img
-              v-lazy="require('./s7/img1-2.jpg')"
-              alt
-            />
-            <div class="block-title">健身房3D示意圖</div>
-          </div>
+        <div class="subtitle">
+          焠鍊經典 打造永恆
         </div>
-        <div
-          class="block-img block-img-3"
-          data-aos="fade"
-          data-aos-delay="300"
-        >
-          <div class="relative">
-            <img
-              v-lazy="require('./s7/img2-1.jpg')"
-              alt
-            />
-            <div class="block-title">業績實景</div>
-          </div>
-        </div>
-        <div class="content-t">
-          <div
-            class="title"
-            data-aos="fade-right"
-            data-aos-delay="500"
-          >
-            家的延伸<br />翻轉想像無限可能
-          </div>
-        </div>
-        <img
-          v-lazy="require('./s7/img3-1.jpg')"
-          alt
-          class="bg-img bottom"
-        />
-        <img
-          v-lazy="require('./s7/box2.png')"
-          alt
-          class="bg-img bottom"
-        />
-        <div
-          class="content"
-          data-aos="fade-left"
-          data-aos-delay="500"
-        >
-          <div class="title">動靜皆宜 交誼廳、吧檯多功用途</div>
-          <div class="desc">在家登入放鬆時區，親友相聚、遠迎賓客不必出門，在家就有不失面子的交流空間，有簡易的烹飪區規劃，並擁大面落地窗引入中庭綠意，同時也能是一人靜思小酌的小天地，在溫徐燈光的照拂下，釋放壓力，恣意歡笑。</div>
+        <div class="desc">
+          永泰祥開發秉承前瞻膽識與誠信態度，不惜成本、專注為菁英層峰在精華地段鑄造精品豪宅，讓家不僅是遮風擋雨的溫暖居所，更是一種珍藏、一份至寶，代表主人無可取代的風格品味。
         </div>
       </div>
-      <div v-else>
-        <swiper
-          :options="swiperOption"
-          ref="mySwiper"
-          data-aos="fade"
-          data-aos-delay="200"
-          class="swiper-m"
-          @slideChangeTransitionEnd="slideChanged"
-        >
-          <swiper-slide
-            v-for="(slide, index) in slideList"
-            :index="index"
-            :key="slide.img"
-            class="item"
-          >
-            <img
-              :src="slide.img"
-              :class="`item-img`"
-            />
-          </swiper-slide>
-        </swiper>
-        <img
-          v-lazy="require('./mo/7/title.jpg')"
-          alt
-          class="img"
-        />
-        <img
-          v-lazy="require('./mo/7/img2-1.jpg')"
-          alt
-          class="img"
-          data-aos="fade"
-          data-aos-delay="300"
-        />
-        <img
-          v-lazy="require('./mo/7/img3-1.jpg')"
-          alt
-          class="img"
-          data-aos="fade"
-          data-aos-delay="300"
-        />
-        <div class="relative">
-          <img
-            v-lazy="require('./mo/7/bg2.png')"
-            alt
-            class="img"
-          />
-          <div
-            class="content"
-            data-aos="fade-left"
-            data-aos-delay="500"
-          >
-            <div class="title">動靜皆宜 交誼廳、吧檯多功用途</div>
-            <div class="desc">在家登入放鬆時區，親友相聚、遠迎賓客不必出門，在家就有不失面子的交流空間，有簡易的烹飪區規劃，並擁大面落地窗引入中庭綠意，同時也能是一人靜思小酌的小天地，在溫徐燈光的照拂下，釋放壓力，恣意歡笑。</div>
+      <img
+        v-lazy="require('./s7/logo.png')"
+        alt=""
+        class="logo"
+      >
+    </div>
+    <div
+      v-else
+      class="m-bg"
+    >
+      <img
+        v-lazy="require('./s7/mo/img.jpg')"
+        alt=""
+        class="top"
+      >
+      <div class="bottom">
+        <div class="m-content">
+          <div class="title">
+            BEST<span>永泰祥機構</span><br />ARCHITECTURE
+          </div>
+          <div class="subtitle">
+            焠鍊經典 打造永恆
+          </div>
+          <div class="desc">
+            永泰祥開發秉承前瞻膽識與誠信態度，專注為菁英層峰在精華地段鑄造精品豪宅，讓家成為一種珍藏、一份至寶。
           </div>
         </div>
       </div>
+      <img
+        v-lazy="require('./s7/mo/timg.png')"
+        alt=""
+        class="m-img"
+        data-aos="fade-right"
+        data-aos-delay="300"
+      >
+      <img
+        v-lazy="require('./s7/mo/bglogo.png')"
+        alt=""
+        class="logo"
+        data-aos="fade"
+        data-aos-delay="400"
+      >
     </div>
   </div>
 </template>
-
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
-.bg {
-  background-size: cover;
-  position: relative;
-  overflow: hidden;
-  position: relative;
-  height: size(2275);
-  display: flex;
-  align-items: center;
 
-  > div {
-    display: flex;
-    align-items: center;
-  }
+.full-bg {
+  background-color: #112d81;
 }
 
-.bg-img {
-  width: 100vw;
-  height: auto;
-  position: absolute;
-  top: 0;
+.left {
+  width: auto;
+  height: 100vh;
   left: 0;
-  display: block;
-  object-fit: cover;
-  z-index: 1;
-
-  &.fix {
-    position: fixed;
-  }
-
-  &:nth-child(1) {
-    position: relative;
-  }
-
-  &.bottom {
-    top: size(1141);
-  }
-}
-
-.block-img {
-  position: absolute;
-  z-index: 3;
-
-  img {
-    width: 100%;
-  }
-}
-
-.block-img-1 {
-  width: size(810);
-  top: 0;
-  right: size(810);
-}
-
-.block-img-2 {
-  width: size(810);
-  top: 0;
   right: 0;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.block-img-3 {
-  width: size(1740);
+.right-img {
+  width: auto;
+  height: 100vh;
   left: 0;
-  top: size(682);
+  right: 0;
+  margin: 0 auto;
+  position: absolute;
+  transform: translateX(50%);
 }
 
-.block-title {
-  font-size: size(16);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.58;
-  letter-spacing: 0.48px;
-  text-align: right;
-  color: #ffffff;
-  position: absolute;
-  right: size(10);
-  bottom: size(10);
-}
-
-.content-t {
-  position: absolute;
-  width: size(320);
-  top: size(513);
-  left: size(335);
-  z-index: 2;
+.swiper-fullscreen {
+  width: auto;
+  height: 100vh;
+  img {
+    width: auto;
+    height: 100%;
+  }
 }
 
 .content {
   position: absolute;
-  width: size(670);
-  bottom: size(780);
-  right: size(156);
-  z-index: 2;
+  width: size(520);
+  height: 100vh;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transform: translateX(65%);
+  top: 25%;
+  > div {
+    width: 100%;
+  }
 }
 
 .title {
-  font-size: size(40);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: normal;
-  text-align: left;
-  color: #000000;
-  margin-bottom: size(10);
-}
-
-.desc {
-  font-size: size(16);
+  opacity: 0.8;
+  font-family: Impact;
+  font-size: size(111);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.25;
-  letter-spacing: normal;
+  line-height: 0.99;
+  letter-spacing: 6.67px;
   text-align: left;
-  color: #666666;
+  color: #db364a;
+  margin-bottom: size(30);
+
+  span {
+    opacity: 0.5;
+    font-family: GenShinGothic;
+    font-size: size(32);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 5.47px;
+    text-align: left;
+    color: #ffffff;
+    transform: translateY(-5px);
+    display: inline-block;
+  }
+}
+
+.subtitle {
+  font-size: size(35);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.04;
+  letter-spacing: 5.67px;
+  text-align: left;
+  color: #db364a;
+  white-space: nowrap;
+  margin-bottom: size(30);
+}
+
+.desc {
+  width: size(520);
+  font-size: size(15);
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: 1.19px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.logo {
+  position: absolute;
+  width: auto;
+  height: 100vh;
+  right: 5%;
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -278,142 +201,88 @@
 }
 
 @media screen and (max-width: 767px) {
-  .bg {
-    background-size: cover;
+  .m-bg {
+    background-color: #112d81;
+    height: size-m(667);
     position: relative;
-    overflow: hidden;
+  }
+  .logo {
+    width: size-m(185);
+    top: size-m(240);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    position: absolute;
+    z-index: 1;
+  }
+  .top {
+    width: size-m(330);
+    margin: 0 auto;
+  }
+  .bottom {
+    width: size-m(330);
+    margin: size-m(40) auto;
+    display: flex;
     position: relative;
-    height: auto;
-    display: block;
-
-    img {
-      display: block;
-    }
-
-    > div {
-      display: block;
-    }
+    bottom: 20px;
   }
 
-  .swiper-m {
-    width: 100vw;
-
-    .item-img {
-      width: 100%;
-    }
-  }
-
-  .bg-img {
+  .m-img {
     width: 100vw;
     position: absolute;
-    top: auto;
-    left: 0;
-    bottom: 0;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    z-index: 3;
-
-    // &:nth-child(1) {
-    //   position: relative;
-    // }
+    right: 0;
+    bottom: 0px;
   }
-
-  .img {
-    width: 100vw;
-    position: relative;
-  }
-
-  .content {
-    width: size-m(300);
-    margin: 0 auto;
-    top: size-m(50);
+  .m-content {
+    width: size-m(317);
   }
 
   .title {
-    font-size: size-m(20);
+    font-size: size-m(47);
+    letter-spacing: 2.23px;
+    span {
+      font-size: size-m(14);
+    }
+  }
+
+  .subtitle {
+    font-size: size-m(15);
+    margin-bottom: size-m(20);
   }
 
   .desc {
+    width: size-m(230);
     font-size: size-m(12);
   }
 
-  .item-title {
-    font-size: calc(100vw * 12 / 375);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.58;
-    letter-spacing: 0.48px;
-    text-align: right;
-    color: #ffffff;
+  .logo {
+    width: 100vw;
+    height: auto;
     position: absolute;
-    right: 20px;
-    bottom: 20px;
+    top: auto;
+    bottom: 0;
+    right: auto;
+    left: 0;
+    transform: none;
   }
 }
 </style>
-
 <script>
 // @ is an alias to /src
-import { isMobile, isTablet } from '@/utils'
-import slider from '@/mixins/slider.js'
-import 'swiper/dist/css/swiper.css'
-
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import { isMobile } from '@/utils'
 
 export default {
   name: 'section7',
-  mixins: [slider],
-  components: {
-    swiper,
-    swiperSlide,
-  },
-
   data() {
     return {
       isMobile,
-      isTablet,
-      swiperOption: {
-        slidesPerView: isMobile ? 1 : 1,
-        spaceBetween: isTablet ? 20 : 30,
-        slidesPerColumn: isMobile ? 1 : 1,
-        allowSlidePrev: isMobile ? true : true,
-        allowSlideNext: isMobile ? true : true,
-        // centeredSlides: true,
-        autoplay: {
-          delay: 4000,
-          disableOnInteraction: true,
-        },
-        loop: true,
-        effect: 'fade',
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-      },
-      slideList: [
-        {
-          img: require('./mo/7/img1-1.jpg'),
-        },
-        {
-          img: require('./mo/7/img1-2.jpg'),
-        },
-      ],
     }
   },
 
-  methods: {
-    slideChanged(e) {
-      const swiper = this.$refs.mySwiper.swiper
-      if (swiper.isEnd) {
-        this.slideIndex = 0
-      } else if (swiper.isBeginning) {
-        this.slideIndex = swiper.slides.length - 3
-      } else {
-        this.slideIndex = swiper.activeIndex - 1
-      }
-    },
-  },
+  methods: {},
+
+  mounted() {},
+
+  computed: {},
 }
 </script>

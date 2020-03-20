@@ -101,7 +101,7 @@ export default {
 @import '@/assets/style/variableDefault.scss';
 
 .contact-info {
-  background-image: $contact_bg;
+  background-color: $contact_bg;
   // background-image: url('../assets/img/contact_bg.jpg');
   background-attachment: fixed;
   background-size: cover;
@@ -226,7 +226,7 @@ export default {
     transform: none;
     position: static;
     margin-top: 60px;
-    background-image: $contact_bg_m;
+    background-color: $contact_bg_m;
 
     .logo {
       width: $contact_logo_mobile_width;

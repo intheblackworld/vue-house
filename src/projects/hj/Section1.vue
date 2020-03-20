@@ -51,6 +51,53 @@
       </swiper>
     </div>
     <div v-else>
+      <div
+        class="full-img"
+        v-lazy:background-image="require('./s1/mo/bg1.png')"
+      ></div>
+      <div
+        class="full-img"
+        v-lazy:background-image="require('./s1/mo/bg2.png')"
+        data-aos="fade-right"
+        data-aos-delay="300"
+      ></div>
+      <div
+        class="full-img"
+        v-lazy:background-image="require('./s1/mo/bg3.png')"
+      ></div>
+      <swiper
+        :options="swiperOption"
+        ref="mySwiper"
+        class="swiper-fullscreen logo-swiper"
+        @slideChangeTransitionStart="slideChanged"
+      >
+        <swiper-slide
+          v-for="(slide, index) in slideListM"
+          :index="index"
+          :key="slide.img"
+          class="item"
+        >
+          <img
+            :src="slide.img"
+            :class="`item-img`"
+          />
+          <img
+            src="./s1/mo/t3button.png"
+            alt=""
+            class="item-img btn"
+            v-show="slideIndex === 2"
+            v-scroll-to="{ element: `#contact` }"
+          >
+        </swiper-slide>
+      </swiper>
+      <img
+        src="./s1/mo/t23logo.png"
+        alt=""
+        class="logo"
+        data-aos="fade"
+        data-aos-delay="500"
+        v-show="slideIndex !== 0"
+      >
     </div>
   </div>
 </template>
@@ -119,6 +166,42 @@
     //   // opacity: 0;
     // }
   }
+
+  .swiper-fullscreen {
+    width: auto;
+    height: calc(100vh - 63px);
+    img {
+      width: auto;
+      height: 100%;
+    }
+
+    .btn {
+      width: size-m(183);
+      height: auto;
+      top: 47vh;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+  }
+
+  .logo-swiper {
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    right: 0;
+    transform: none;
+  }
+
+  .logo {
+    position: absolute;
+    width: 100vw;
+    left: 0;
+    top: auto;
+    height: auto;
+    bottom: 0px;
+  }
 }
 </style>
 <script>
@@ -149,7 +232,7 @@ export default {
         // centeredSlides: true,
         autoplay: {
           delay: 4000,
-          // disableOnInteraction: true,
+          disableOnInteraction: true,
         },
         loop: true,
         direction: 'vertical',
@@ -168,6 +251,18 @@ export default {
         },
         {
           img: require('./s1/t3.png'),
+        },
+      ],
+
+      slideListM: [
+        {
+          img: require('./s1/mo/t1.png'),
+        },
+        {
+          img: require('./s1/mo/t2.png'),
+        },
+        {
+          img: require('./s1/mo/t3.png'),
         },
       ],
     }

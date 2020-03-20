@@ -1,27 +1,63 @@
 <template>
   <div class="order-bg">
-      <!-- <img src="@/projects/fs/order/bg.png" alt="" class="bg-img"> -->
-      <!-- <img src="@/projects/fs/order/bg1.png" alt="" class="bg-img no-mix"> -->
-      <!-- <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile"> -->
+    <!-- <img src="@/projects/fs/order/bg.png" alt="" class="bg-img"> -->
+    <!-- <img src="@/projects/fs/order/bg1.png" alt="" class="bg-img no-mix"> -->
+    <!-- <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile"> -->
     <div class="order-top">
       <!-- <div class="title-block">
         <h3 class="title">{{order.title}}</h3>
         <div class="subtitle">{{order.subTitle}}</div>
       </div> -->
-      <div class="order-title" v-html="order.title"></div>
-      <div class="order-subtitle" v-html="order.subTitle"></div>
+      <div
+        class="order-title"
+        v-html="order.title"
+      ></div>
+      <div
+        class="order-subtitle"
+        v-html="order.subTitle"
+      ></div>
       <div class="order">
         <div class="form">
           <div class="group">
             <div class="row">
               <label>姓名</label>
-              <el-input v-model="form.name" placeholder></el-input>
+              <el-input
+                v-model="form.name"
+                placeholder
+              ></el-input>
             </div>
             <div class="row">
               <label>手機</label>
-              <el-input v-model="form.phone" placeholder></el-input>
+              <el-input
+                v-model="form.phone"
+                placeholder
+              ></el-input>
             </div>
             <div class="row">
+              <label>聯絡時間(起)</label>
+              <el-time-select
+                v-model="form.time_start"
+                :editable="false"
+                :picker-options="{
+                  start: '08:00',
+                  step: '01:00',
+                  end: '22:00',
+                }"
+              ></el-time-select>
+            </div>
+            <div class="row">
+              <label>聯絡時間(迄)</label>
+              <el-time-select
+                v-model="form.time_end"
+                :editable="false"
+                :picker-options="{
+                  start: '08:00',
+                  step: '01:00',
+                  end: '22:00',
+                }"
+              ></el-time-select>
+            </div>
+            <!-- <div class="row">
               <label>想看房型</label>
               <el-select v-model="form.house" placeholder>
                 <el-option
@@ -32,7 +68,7 @@
                   no-data-text=""
                 ></el-option>
               </el-select>
-            </div>
+            </div> -->
             <!-- <div class="row">
               <label>E-mail</label>
               <el-input v-model="form.email" placeholder></el-input>
@@ -64,7 +100,12 @@
           </div>
           <div class="group">
             <div class="row">
-              <el-input type="textarea" :rows="2" placeholder="請輸入您的留言 (選填)" v-model="form.msg"></el-input>
+              <el-input
+                type="textarea"
+                :rows="2"
+                placeholder="請輸入您的留言 (選填)"
+                v-model="form.msg"
+              ></el-input>
             </div>
           </div>
         </div>
@@ -77,16 +118,37 @@
             </p>
           </el-checkbox>
         </div>
-          <div style="margin: 0 auto;z-index:2;" v-if="!isMobile">
-            <vue-recaptcha :sitekey="info.recaptcha_site_key_v2"
-            @verify="isVerify = true" :loadRecaptchaScript="true"
-            ></vue-recaptcha>
-          </div>
-          <div style="margin: 0 auto;z-index:2;" v-if="isMobile">
-            <vue-recaptcha :sitekey="info.recaptcha_site_key_v2"
-            @verify="isVerify = true" :loadRecaptchaScript="true"
-            ></vue-recaptcha>
-          </div>
+        <div class="hint">
+          注意事項：<br />
+          1.本網站所載之相關事項通知。<br />
+          2.客戶管理與服務。<br />
+          3. 本公司行銷業務之推廣。<br />
+          4. 即刻預約至109.5.30截止，需填寫完整個人資料，並至接待中心完成參觀，即可獲得抽獎券一張。<br />
+          5. 獎品分別為蘋果i Phone 11 128G（不選色）乙台、任天堂SWITCH（不選色）乙台、蘋果Air Pods Pro乙台，中獎者需出示身分證供接待中心檢核，並依法繳扣所需稅金後始領取獎品。<br />
+          6. 抽獎活動時間為109.7.5（日）、109.8.2（日）、109.9.6（日），每月各抽出一個獎項，本接待中心保有獎項優先順序抽出的權利。會以直播錄影方式播出，中獎者本人需於五日內憑身分證、抽獎券至接待中心領取逾期不候。<br />
+          7. 抽獎時間本接待中心保有調整或延後之權利。<br />
+          8. 本公司保有活動取消、終止或修改本活動相關內容之權利，如有未盡事宜，悉應本接待中心相關規定或解釋辦理。
+        </div>
+        <div
+          style="margin: 0 auto;z-index:2;"
+          v-if="!isMobile"
+        >
+          <vue-recaptcha
+            :sitekey="info.recaptcha_site_key_v2"
+            @verify="isVerify = true"
+            :loadRecaptchaScript="true"
+          ></vue-recaptcha>
+        </div>
+        <div
+          style="margin: 0 auto;z-index:2;"
+          v-if="isMobile"
+        >
+          <vue-recaptcha
+            :sitekey="info.recaptcha_site_key_v2"
+            @verify="isVerify = true"
+            :loadRecaptchaScript="true"
+          ></vue-recaptcha>
+        </div>
         <el-button
           class="form-submit"
           type="primary"
@@ -94,7 +156,10 @@
           @click="submit"
           :loading="isSubmit"
         >立即預約</el-button>
-        <Loading :loading="isSubmit" :isOpacity="true" />
+        <Loading
+          :loading="isSubmit"
+          :isOpacity="true"
+        />
       </div>
     </div>
     <ContactInfo />
@@ -136,7 +201,8 @@ export default {
         city: '',
         area: '',
         msg: '',
-        house: '',
+        time_start: '',
+        time_end: '',
       },
       checked: false,
       isSubmit: false,
@@ -164,7 +230,7 @@ export default {
         message: h(
           'i',
           { style: 'color: #82191d' },
-          '「姓名、手機、 房型」是必填欄位',
+          '「姓名、手機、 聯絡時間」是必填欄位',
         ),
       })
     },
@@ -176,7 +242,9 @@ export default {
       this.isSubmit = true
       if (
         !this.form.name ||
-        !this.form.phone
+        !this.form.phone ||
+        !this.form.time_start ||
+        !this.form.time_end
         // ||
         // !this.form.email ||
         // !this.form.city ||
@@ -196,7 +264,8 @@ export default {
       formData.append('phone', this.form.phone)
       formData.append('email', this.form.email)
       formData.append('msg', this.form.msg)
-      formData.append('house', this.form.house)
+      // formData.append('time_start', this.form.time_start)
+      // formData.append('time_end', this.form.time_end)
       formData.append('city', this.form.city)
       formData.append('area', this.form.area)
       formData.append('utm_source', utmSource)
@@ -212,7 +281,7 @@ export default {
       const sec = time.getSeconds()
       const date = `${year}-${month}-${day} ${hour}:${min}:${sec}`
       fetch(
-        `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&email=${this.form.email}&cityarea=${this.form.city}${this.form.area}&msg=${this.form.msg}&house=${this.form.house}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
+        `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&email=${this.form.email}&cityarea=${this.form.city}${this.form.area}&msg=${this.form.msg}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
       `,
         {
           method: 'GET',
@@ -239,14 +308,14 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  height:auto;
+  height: auto;
   display: block;
   object-fit: cover;
   // mix-blend-mode: screen;
   //background: ("~@/projects/fs/order/bg_m.jpg");
   &.no-mix {
-    mix-blend-mode:normal ;
-    height:100%;
+    mix-blend-mode: normal;
+    height: 100%;
   }
 }
 .order-bg {
@@ -254,30 +323,35 @@ export default {
   background-image: $order_bg_image;
   background-repeat: no-repeat;
   position: relative;
-  padding-top: 0px;
+  padding-top: 130px;
   background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%;
   transform: translateY(0);
-  margin: 3vw auto -3vw;
-  .order-top{
-    position: relative;overflow:hidden
+  .order-top {
+    position: relative;
+    overflow: hidden;
   }
   .order-title {
-    padding-top: 40px;
-    margin-bottom: 18px;
+    width: 100vw;
+    background-color: #112d81;
+    padding-top: 20px;
+    padding-bottom: 8px;
     font-weight: bold;
     line-height: 1.3;
-    font-size: calc(100vw * 60 / 1920);
+    font-size: calc(100vw * 36 / 1920);
     text-align: center;
     color: $order_title_color;
   }
 
   .order-subtitle {
+    width: 100vw;
+    background-color: #112d81;
     font-size: 20px;
     text-align: center;
     color: $order_subtitle_color;
     margin-bottom: 40px;
+    padding-bottom: 18px;
   }
 
   .order {
@@ -299,6 +373,7 @@ export default {
 
   .group {
     height: 250px;
+    margin-bottom: 40px;
 
     &:nth-child(1) {
       border-right: 1px solid rgba(0, 0, 0, 0.2);
@@ -341,6 +416,21 @@ export default {
     margin-top: 0px;
     margin-bottom: 20px;
   }
+
+  .hint {
+    width: 920px;
+    margin: 20px auto;
+    padding: 15px;
+    font-size: 12px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+    background: #112d81;
+  }
 }
 
 /* 平板尺寸 */
@@ -373,15 +463,14 @@ export default {
       display: block;
     }
     .order-title {
-      margin-top: 10px;
-      margin-bottom: 20px;
+      padding-top: 10px;
+      padding-bottom: 5px;
       font-size: calc(100vw * 38 / 375);
-      padding-top: 0;
     }
 
     .order-subtitle {
       // display: none;
-      font-size: 12px;
+      font-size: 21px;
     }
     .order {
       width: 95% !important;
@@ -414,6 +503,18 @@ export default {
     .control {
       margin-top: 10px;
       margin-bottom: 10px;
+    }
+
+    .hint {
+      width: calc(100vw * 334 / 375);
+      font-size: 12px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.2;
+      letter-spacing: normal;
+      text-align: left;
+      color: #ffffff;
     }
   }
 }
