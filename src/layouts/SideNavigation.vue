@@ -1,6 +1,6 @@
 <template>
   <div class="sideNav">
-    <div class="nav relative">
+    <div :class="`nav relative ${isShowMenu ? 'show' : ''}`">
       <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
       <div :class="`menu`" @click="toggleSidebar">
         <img v-if="isOpen" src="@/projects/jh/s4/close.png" class="close" alt />
@@ -35,12 +35,14 @@ import navList from '@/info/navList'
 export default {
   name: 'sideNavigation',
   components: {},
+  props: ['viewIndex'],
   data() {
     return {
       isOpen: false,
       isMobile,
       isTablet,
       list: navList,
+      isShowMenu: false,
     }
   },
 
@@ -55,6 +57,16 @@ export default {
       this.isOpen = !this.isOpen
     },
   },
+
+  watch: {
+    viewIndex(val) {
+      if (val >= 2) {
+        this.isShowMenu = true
+      } else {
+        this.isShowMenu = false
+      }
+    }
+  }
 }
 </script>
 
@@ -80,6 +92,12 @@ export default {
 .nav {
   position: static;
   height: $nav_phone_height;
+  opacity: 0;
+  transition: opacity .5s;
+
+  &.show {
+    opacity: 1;
+  }
 }
 
 .menu {
@@ -298,6 +316,8 @@ export default {
   .menu {
     display: block;
     position: fixed;
+    width: 140px;
+    height: 55px;
     // right: 0px;
     // top: 0px;
     // width: 80px;
@@ -309,6 +329,7 @@ export default {
     .close {
       // width: 40px;
       // margin-top: 20px;
+      left: 115px;
     }
 
     svg {
@@ -321,7 +342,7 @@ export default {
     z-index: 111;
     width: 0%;
     // right: 0;
-    top: 145px;
+    top: 90px;
     // height: calc(100vh - #{$nav_phone_height});
     text-align: center;
     transition: all 0.3s ease-in;
@@ -354,6 +375,7 @@ export default {
 
     &.open {
       // width: 100%;
+      width: 140px;
       transform: translateX(0%);
 
       .link {
