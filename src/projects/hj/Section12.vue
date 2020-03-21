@@ -26,17 +26,17 @@
         <img
           v-lazy="require('./s12/img2.png')"
           alt=""
-          class="right-img"
+          class="right-img move"
         >
         <img
           v-lazy="require('./s12/img3.png')"
           alt=""
-          class="right-img"
+          class="right-img move"
         >
         <img
           v-lazy="require('./s12/img4.png')"
           alt=""
-          class="right-img"
+          class="right-img move"
         >
       </div>
     </div>
@@ -66,17 +66,17 @@
         <img
           v-lazy="require('./s12/mo/img2.png')"
           alt=""
-          class="img img-b"
+          class="img img-b move"
         >
         <img
           v-lazy="require('./s12/mo/img3.png')"
           alt=""
-          class="img img-b"
+          class="img img-b move"
         >
         <img
           v-lazy="require('./s12/mo/img4.png')"
           alt=""
-          class="img img-b"
+          class="img img-b move"
         >
       </div>
     </div>
@@ -204,6 +204,29 @@
   right: 5%;
 }
 
+.move {
+  animation: updown 1.5s .2s ease-in-out infinite alternate;
+  &:nth-child(2) {
+    animation: updown 1.5s .2s ease-in-out infinite alternate;
+  }
+
+  &:nth-child(3) {
+    animation: updown 1.5s .5s ease-in-out infinite alternate;
+  }
+
+  &:nth-child(4) {
+    animation: updown 1.5s .3s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes updown {
+  from {
+    margin-top: -30px;
+  }
+  to {
+    margin-top: 0px;
+  }
+}
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
     height: 100vh;
@@ -235,6 +258,15 @@
   .img-b {
     top: size-m(185);
   }
+
+  @keyframes updown {
+  from {
+    margin-top: -15px;
+  }
+  to {
+    margin-top: 0px;
+  }
+}
 }
 </style>
 <script>

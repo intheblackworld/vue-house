@@ -1,10 +1,10 @@
 <template>
   <div class="sideNav">
     <div class="nav relative">
-      <img class="logo" src="@/assets/img/nav-logo.png" alt />
-      <div class="menu" @click="toggleSidebar">
+      <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
+      <div :class="`menu`" @click="toggleSidebar">
         <img v-if="isOpen" src="@/projects/jh/s4/close.png" class="close" alt />
-        <img v-else src="@/assets/img/menu-btn.png" alt />
+        <img src="@/assets/img/menu-btn.png" alt />
       </div>
       <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
       <ul :class="`navlist ${isOpen ? 'open': ''}`">
@@ -86,19 +86,29 @@ export default {
   display: block;
   position: fixed;
   z-index: 112;
-  top: 0px;
-  right: 0px;
-  width: 140px;
+  top: calc(100vh * 60 / 1080);
+  left: 0px;
+  width: 180px;
+  height: 110px;
+  background-image: linear-gradient(to right, #e7380d -27%, #e4006e 236%);
   cursor: pointer;
 
   img {
-    width: 100%;
+    width: auto;
+    height: 100%;
   }
 
   .close {
-    width: 40px;
-    margin-top: 20px;
+    width: 20px;
+    height: auto;
     margin-right: 0px;
+    position: absolute;
+    left: 150px;
+    top: 10px;
+  }
+
+  &.opened {
+    background-image: none;
   }
 }
 
@@ -118,13 +128,13 @@ export default {
   z-index: 111;
   background: $nav_bg;
   width: 0%;
-  right: 0;
-  top: $nav_phone_height;
-  height: calc(100vh - #{$nav_phone_height});
+  left: 0;
+  top: 155px;
+  height: auto;
   text-align: center;
   transition: all 0.3s ease-in;
   display: block;
-  transform: translateX(40%);
+  transform: translateX(-40%);
 
   li {
     height: 60px;
@@ -178,7 +188,7 @@ export default {
   }
 
   &.open {
-    width: 230px;
+    width: 180px;
     transform: translateX(0%);
     display: flex;
     flex-wrap: wrap;
@@ -288,17 +298,17 @@ export default {
   .menu {
     display: block;
     position: fixed;
-    right: 0px;
-    top: 0px;
-    width: 80px;
+    // right: 0px;
+    // top: 0px;
+    // width: 80px;
 
     img {
       width: 100%;
     }
 
     .close {
-      width: 40px;
-      margin-top: 20px;
+      // width: 40px;
+      // margin-top: 20px;
     }
 
     svg {
@@ -310,13 +320,13 @@ export default {
     position: fixed;
     z-index: 111;
     width: 0%;
-    right: 0;
-    top: $nav_phone_height;
-    height: calc(100vh - #{$nav_phone_height});
+    // right: 0;
+    top: 145px;
+    // height: calc(100vh - #{$nav_phone_height});
     text-align: center;
     transition: all 0.3s ease-in;
     display: block;
-    transform: translateX(40%);
+    // transform: translateX(40%);
 
     li {
       height: 50px;
@@ -343,7 +353,7 @@ export default {
     }
 
     &.open {
-      width: 100%;
+      // width: 100%;
       transform: translateX(0%);
 
       .link {

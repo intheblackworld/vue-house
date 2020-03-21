@@ -1,5 +1,5 @@
 <template>
-  <div class="house-info">
+  <div class="house-info" id="house-info">
     <div class="content">
       <div class="title">建案資訊</div>
       <div class="info">
