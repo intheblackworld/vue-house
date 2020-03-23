@@ -26,7 +26,7 @@ export default {
       '德國Hansgrohe衛浴五金<br />美國KOHLER衛浴設備<br />義大利INDESIT內嵌式洗脫烘<br />林內系列廚具<br />五合一暖風機<br />美國YALE三合一電子鎖<br />WAFERLOCK對講機<br />日本不二太天氣密窗<br />PANASONIC冷氣室外機'],
   ],
 
-  gtmCode: ['TDQRFKC'], // 可放置多個
+  gtmCode: ['NNX6PHZ'], // 可放置多個
   recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',

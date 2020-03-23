@@ -10,7 +10,7 @@
           <div class="text" data-aos="fade"
         data-aos-delay="500">
             <div>
-              <div class="title">精品挑高4米2飯店大廳</div>
+              <div class="title">精品挑高4米飯店大廳</div>
               <div class="desc">穿上低調奢華，演繹流金歲月社交場，尊寵每個回家的主人。</div>
             </div>
           </div>
@@ -40,7 +40,7 @@
         <div class="img-title">3D示意圖僅供參考</div>
           <div class="text" data-aos="fade"
         data-aos-delay="500">
-            <div class="title">精品挑高4米2飯店大廳</div>
+            <div class="title">精品挑高4米飯店大廳</div>
             <div class="desc">穿上低調奢華，演繹流金歲月社交場，尊寵每個回家的主人。</div>
           </div>
         </div>
