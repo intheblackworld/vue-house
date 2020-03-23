@@ -9,7 +9,7 @@ export default {
       const n = document.createElement('noscript')
       n.type = 'text/javascript'
       n.async = true
-      n.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-${gtm}"height="0" width="0" style="display:none;visibility:hidden"></iframe>`
+      n.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-${gtm}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`
       const obj = {
         s,
         n
