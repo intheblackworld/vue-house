@@ -122,29 +122,23 @@
 	.st8{font-family:"Noto Sans TC", serif;}
 	.st9{font-size:23.73px;}
   .line1 {animation: an01 1s linear forwards;}
-  .line1-1 {animation: an01-1 1s 0.5s linear forwards;opacity:0;}
-  .line1-2 {animation: an01-1 1s 1s linear forwards;opacity:0;}
-  .line2 {animation: an02 1s 1s linear forwards;}
-  .line2-1 {animation: an01-1 1s 1.5s linear forwards;opacity:0;}
-  .line2-2 {animation: an01-1 1s 2s linear forwards;opacity:0;}
-  .line3 {animation: an03 1s 2s linear forwards;}
-  .line3-1 {animation: an01-1 1s 2s linear forwards;opacity:0;}
-  .line3-2 {animation: an01-1 1s 2.5s linear forwards;opacity:0;}
+  .line1-1 {animation: an02 1s 0.5s linear forwards;opacity:0;}
+  .line1-2 {animation: an02 1s 1s linear forwards;opacity:0;}
+  .line2 {animation: an01 1s 1s linear forwards;}
+  .line2-1 {animation: an02 1s 1.5s linear forwards;opacity:0;}
+  .line2-2 {animation: an02 1s 2s linear forwards;opacity:0;}
+  .line3 {animation: an01 1s 2s linear forwards;}
+  .line3-1 {animation: an02 1s 2s linear forwards;opacity:0;}
+  .line3-2 {animation: an02 1s 2.5s linear forwards;opacity:0;}
   .line4 {animation: an04 1s 3s linear forwards;}
-  .line4-1 {animation: an01-1 1s 3.5s linear forwards;opacity:0;}
+  .line4-1 {animation: an02 1s 3.5s linear forwards;opacity:0;}
   .line5 {animation: an05 1s 4s linear forwards;}
   .line6 {animation: an06 1s 5s linear forwards;}
   @keyframes an01 {
-  to { stroke-dashoffset: 0;fill:#112D81FF;}
-}
-  @keyframes an01-1 {
-  to {  opacity:1;}
+  to { stroke-dashoffset: 0;fill:#112D81;}
 }
   @keyframes an02 {
-  to { stroke-dashoffset: 0;fill:#112D81FF;}
-}
-  @keyframes an03 {
-  to { stroke-dashoffset: 0;fill:#112D81FF;}
+  to {  opacity:1;}
 }
   @keyframes an04 {
   to { stroke-dashoffset: 0;fill:#D33645FF;}

@@ -136,17 +136,17 @@
 	.st1{fill:url(#SVGID_1_);}
 	.st2{fill:#112D81;}
 	.st3{fill:#FFFFFF;}
-	.st4{font-family:"Noto Sans TC", serif;opacity:0;stroke-dashoffset:420;animation: an02 1s 2.5s linear forwards;}
+	.st4{font-family:"Noto Sans TC", serif;opacity:0;stroke-dashoffset:420;animation: an52 1s 2.5s linear forwards;}
 	.st5{font-size:25.89px;}
-	.an00{opacity:0;stroke-dashoffset:420;animation: an02 1s 1s linear forwards;}
+	.an00{opacity:0;stroke-dashoffset:420;animation: an52 1s 1s linear forwards;}
 	.an01{stroke-dasharray:212;
-    stroke-dashoffset:212;animation: an01 0.5s 2s linear forwards;}
+    stroke-dashoffset:212;animation: an51 0.5s 2s linear forwards;}
 	.an02{stroke-dasharray:520;
-    stroke-dashoffset:520;animation: an01 1s 2.5s linear forwards;}
-  @keyframes an01 {
+    stroke-dashoffset:520;animation: an51 1s 2.5s linear forwards;}
+  @keyframes an51 {
   to { stroke-dashoffset: 0;}
   }
-  @keyframes an02 {
+  @keyframes an52 {
   to{opacity:1;}
   }
 }

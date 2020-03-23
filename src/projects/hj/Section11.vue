@@ -32,6 +32,13 @@
       v-else
       class="m-bg"
     >
+      <div
+      
+          class="box"
+        data-aos="fade"
+        data-aos-delay="200"
+      >
+      </div>
       <img
         v-lazy="require('./s11/mo/img1.png')"
         alt=""
@@ -194,9 +201,9 @@
 
 @media screen and (max-width: 767px) {
   .m-bg {
-    background-color: #112d81;
     height: size-m(400);
     position: relative;
+  background-image: linear-gradient(to left, #e7380d 0%, #e4006e);
   }
 
   .img {

@@ -97,31 +97,31 @@
 	.st8{letter-spacing:4;}
 	.an01{stroke-dasharray:683;
     stroke-dashoffset:683;
-    animation: an01 1s 1.5s linear forwards;
+    animation: an61 1s 1.5s linear forwards;
   }
 	.an02{stroke-dasharray:240;
     stroke-dashoffset:240;
-    animation: an01 0.5s 2s linear forwards;
+    animation: an61 0.5s 2s linear forwards;
   }
 	.an03{stroke-dasharray:240;
     stroke-dashoffset:240;
-    animation: an01 0.5s 2.5s linear forwards;
+    animation: an61 0.5s 2.5s linear forwards;
   }
 	.an04{stroke-dasharray:425;
     stroke-dashoffset:425;
-    animation: an01 0.5s 3s linear forwards;
+    animation: an61 0.5s 3s linear forwards;
   }
-  .an05{opacity:0;animation: an02 0.5s 1.5s linear forwards;}
-  .an06{opacity:0;animation: an02 0.5s 2s linear forwards;}
-  .an07{opacity:0;animation: an02 0.5s 2.5s linear forwards;}
-  .an08{opacity:0;animation: an03 0.5s 3s linear forwards;}
-  @keyframes an01 {
+  .an05{opacity:0;animation: an62 0.5s 1.5s linear forwards;}
+  .an06{opacity:0;animation: an62 0.5s 2s linear forwards;}
+  .an07{opacity:0;animation: an62 0.5s 2.5s linear forwards;}
+  .an08{opacity:0;animation: an63 0.5s 3s linear forwards;}
+  @keyframes an61 {
   to { stroke-dashoffset: 0;}
   }
-  @keyframes an02 {
+  @keyframes an62 {
   to{opacity:0.6;}
   }
-  @keyframes an03 {
+  @keyframes an63 {
   to{opacity:1;}
   }
 }

@@ -267,7 +267,7 @@ export default {
   right: 0;
   background: transparent;
   position: fixed;
-  z-index: 110;
+  z-index: -1;
   height: calc(100vh - #{$nav_phone_height});
   opacity: 0;
   transition: all 0.3s ease-in;
@@ -275,6 +275,7 @@ export default {
     display: block;
     width: 100vw;
     opacity: 1;
+  z-index: 110;
   }
 }
 

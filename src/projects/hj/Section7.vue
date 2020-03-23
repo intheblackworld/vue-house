@@ -77,13 +77,13 @@
 	.st0{fill:none;stroke:#D33645;stroke-width:10;stroke-miterlimit:10;}
 	.an01{stroke-dasharray:810;
     stroke-dashoffset:810;
-   animation: an01 1.5s 1.5s linear forwards;
+   animation: an71 1.5s 1.5s linear forwards;
   }
 	.an02{stroke-dasharray:550;
     stroke-dashoffset:550;
-  animation: an01 1s 1.5s linear forwards;
+  animation: an71 1s 1.5s linear forwards;
   }
-  @keyframes an01 {
+  @keyframes an71 {
   to { stroke-dashoffset: 0;}
   }
 }
