@@ -141,9 +141,8 @@
 
   span {
     opacity: 0.5;
-    font-family: GenShinGothic;
     font-size: size(22);
-    font-weight: bold;
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
     line-height: 1;

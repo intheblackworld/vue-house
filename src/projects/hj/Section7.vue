@@ -9,16 +9,13 @@
         alt=""
         class="left"
       >
-      <div
-        data-aos="fade"
-        data-aos-delay="300"
-      >
-        <img
-          v-lazy="require('./s7/timg.png')"
-          alt=""
-          class="right-img"
-        >
-      </div>
+<svg class="timg" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 149.5 261.4" style="enable-background:new 0 0 149.5 261.4;" xml:space="preserve">
+<polyline class="st0 an01" points="129.9,5 5.1,5 5.1,256.4 48,256.4 48,185.8 73.6,185.8 73.6,144.9 48,144.9 48,47.9 124.9,47.9 
+	124.9,5 "/>
+<polyline class="st0 an02" points="70.4,256.4 144.5,256.4 144.5,77.7 78.7,77.7 78.7,120.6 101.6,120.6 101.6,215.4 75.4,215.4 
+	75.4,256.4 "/>
+</svg>
       <div class="content">
         <div class="title">
           BEST<span>永泰祥機構</span><br />ARCHITECTURE
@@ -58,13 +55,13 @@
           </div>
         </div>
       </div>
-      <img
-        v-lazy="require('./s7/mo/timg.png')"
-        alt=""
-        class="m-img"
-        data-aos="fade-right"
-        data-aos-delay="300"
-      >
+<svg class="timg" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 149.5 261.4" style="enable-background:new 0 0 149.5 261.4;" xml:space="preserve">
+<polygon class="st0" points="124.9,47.9 124.9,5 5.1,5 5.1,144.9 5,144.9 5,185.8 5.1,185.8 5.1,255.5 48,255.5 48,185.8 
+	73.6,185.8 73.6,144.9 48,144.9 48,47.9 "/>
+<polygon class="st0" points="78.7,77.7 78.7,120.6 101.6,120.6 101.6,215.4 75.4,215.4 75.4,256.3 101.6,256.3 101.6,256.4 
+	144.5,256.4 144.5,77.7 "/>
+</svg>
       <img
         v-lazy="require('./s7/mo/bglogo.png')"
         alt=""
@@ -75,6 +72,22 @@
     </div>
   </div>
 </template>
+<style lang="scss">
+.section7{
+	.st0{fill:none;stroke:#D33645;stroke-width:10;stroke-miterlimit:10;}
+	.an01{stroke-dasharray:810;
+    stroke-dashoffset:810;
+   animation: an01 1.5s 1.5s linear forwards;
+  }
+	.an02{stroke-dasharray:550;
+    stroke-dashoffset:550;
+  animation: an01 1s 1.5s linear forwards;
+  }
+  @keyframes an01 {
+  to { stroke-dashoffset: 0;}
+  }
+}
+</style>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
@@ -141,9 +154,8 @@
 
   span {
     opacity: 0.5;
-    font-family: GenShinGothic;
     font-size: size(32);
-    font-weight: bold;
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
     line-height: 1;
@@ -187,6 +199,12 @@
   right: 5%;
 }
 
+.timg{width:size(150);
+  position: absolute;
+  top: size(560);
+  left:50%;
+  margin: 0 0 0 size(680);
+  }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
     height: 100vh;
@@ -264,6 +282,12 @@
     right: auto;
     left: 0;
     transform: none;
+  }
+.timg{width:size-m(60);
+  position: absolute;
+  top: size-m(505);
+  left:72%;
+  margin: 0;
   }
 }
 </style>

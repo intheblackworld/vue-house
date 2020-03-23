@@ -4,6 +4,13 @@
       v-if="!isMobile"
       class="full-bg"
     >
+      <div
+      
+          class="box"
+        data-aos="fade"
+        data-aos-delay="200"
+      >
+      </div>
       <img
         v-lazy="require('./s11/img1.png')"
         alt=""
@@ -53,7 +60,14 @@
 @import '@/assets/style/function.scss';
 
 .full-bg {
+  background-image: linear-gradient(to right, #e7380d 0%, #e4006e);
+}
+.box{
+  position: absolute;
   background-color: #112d81;
+  width: 100%;
+  height: 80%;top: 10%;
+  left: 0;
   // background-image: linear-gradient(to right, #e7380d 0%, #e4006e);
 }
 

@@ -24,7 +24,7 @@
         </swiper-slide>
       </swiper>
       <div
-        data-aos="fade-right"
+        data-aos="fade-left"
         data-aos-delay="300"
       >
         <img

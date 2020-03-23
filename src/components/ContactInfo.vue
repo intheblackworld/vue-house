@@ -118,9 +118,7 @@ export default {
   background-attachment: fixed;
   background-position: 0% 50%;
   transform: translateY(0);
-  margin: 3vw auto -3vw;
-
-  margin: 0 auto;
+  margin: 2vw auto -3vw;
   padding: 60px 0 50px;
 }
 

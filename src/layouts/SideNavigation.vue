@@ -2,7 +2,8 @@
   <div class="sideNav">
     <div :class="`nav relative ${isShowMenu ? 'show' : ''}`">
       <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
-      <div :class="`menu`" @click="toggleSidebar">
+      <div :class="`menubg ${isOpen ? 'open' : ''}`" />
+      <div :class="`menu ${isOpen ? 'open' : ''}`" @click="toggleSidebar">
         <img v-if="isOpen" src="@/projects/jh/s4/close.png" class="close" alt />
         <img src="@/assets/img/menu-btn.png" alt />
       </div>
@@ -94,26 +95,50 @@ export default {
   height: $nav_phone_height;
   opacity: 0;
   transition: opacity .5s;
+  z-index: 110;
 
   &.show {
     opacity: 1;
   }
 }
 
-.menu {
-  display: block;
+.menubg {
+  display: flex;
+  background-image: linear-gradient(to right, #e7380d -27%, #e4006e 236%);
+  border-radius: 0 8px 8px 0;
+  display: flex;
   position: fixed;
-  z-index: 112;
   top: calc(100vh * 60 / 1080);
   left: 0px;
-  width: 180px;
-  height: 110px;
-  background-image: linear-gradient(to right, #e7380d -27%, #e4006e 236%);
+  width: 140px;
+  height:70px;
+  transition: all 0.5s;
   cursor: pointer;
+  z-index: 120;
+  &.open {
+  width: 180px;
+  height:480px;
+  }
+}
 
+.menu {
+  display: flex;
+  position: fixed;
+  top: calc(100vh * 60 / 1080);
+  left: 0px;
+  width: 140px;
+  height:auto;
+  cursor: pointer;
+  z-index:140;
+  transition: all 0.5s;
+
+  &.open {
+  width: 180px;
+  }
   img {
-    width: auto;
-    height: 100%;
+    width:auto;
+    height: 57px;
+    margin: 5% auto 5%  auto;
   }
 
   .close {
@@ -124,15 +149,11 @@ export default {
     left: 150px;
     top: 10px;
   }
-
-  &.opened {
-    background-image: none;
-  }
 }
 
 .logo {
   width: $logo_pc_width;
-  z-index: 2;
+  z-index: 140;
   height: auto;
   position: absolute;
   left: 0;
@@ -143,11 +164,11 @@ export default {
 
 .navlist {
   position: fixed;
-  z-index: 111;
-  background: $nav_bg;
+  z-index:140;
+  //background: $nav_bg;
   width: 0%;
   left: 0;
-  top: 155px;
+  top: calc(100vh * 150 / 1080);
   height: auto;
   text-align: center;
   transition: all 0.3s ease-in;
@@ -241,12 +262,12 @@ export default {
 }
 
 .mask {
-  width: 100vw;
+  width: 0;
   top: $nav_phone_height;
   right: 0;
   background: transparent;
   position: fixed;
-  z-index: -1;
+  z-index: 110;
   height: calc(100vh - #{$nav_phone_height});
   opacity: 0;
   transition: all 0.3s ease-in;
@@ -254,7 +275,6 @@ export default {
     display: block;
     width: 100vw;
     opacity: 1;
-    z-index: 110;
   }
 }
 
@@ -295,7 +315,7 @@ export default {
 @media only screen and (max-width: 767px) {
   .navigation {
     height: $nav_phone_height;
-    z-index: 110;
+    z-index: 120;
   }
 
   .nav-container {
@@ -316,21 +336,9 @@ export default {
   .menu {
     display: block;
     position: fixed;
-    width: 140px;
-    height: 55px;
-    // right: 0px;
-    // top: 0px;
-    // width: 80px;
+    height:auto;
 
-    img {
-      width: 100%;
-    }
 
-    .close {
-      // width: 40px;
-      // margin-top: 20px;
-      left: 115px;
-    }
 
     svg {
       color: $nav_btn_color;
@@ -339,10 +347,9 @@ export default {
 
   .navlist {
     position: fixed;
-    z-index: 111;
     width: 0%;
     // right: 0;
-    top: 90px;
+    top:130px;
     // height: calc(100vh - #{$nav_phone_height});
     text-align: center;
     transition: all 0.3s ease-in;
@@ -375,7 +382,6 @@ export default {
 
     &.open {
       // width: 100%;
-      width: 140px;
       transform: translateX(0%);
 
       .link {
@@ -404,7 +410,7 @@ export default {
       display: block;
       width: 100vw;
       opacity: 1;
-      z-index: 110;
+      z-index:110;
     }
   }
 }
