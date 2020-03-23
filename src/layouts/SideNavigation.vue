@@ -137,7 +137,7 @@
                   class="menu_social_item"
                   data-mct-method="facebook"
                   rel="noopener noreferrer"
-                  href="https://www.facebook.com/dunnanhowhow"
+                  :href="info.fbLink"
                   target="_blank"
                   title="敦南好好facebook"
                 >
@@ -147,7 +147,7 @@
                   class="menu_social_item"
                   data-mct-method="messenger"
                   rel="noopener noreferrer"
-                  href="https://www.messenger.com/t/dunnanhowhow"
+                  :href="info.fbMessage"
                   target="_blank"
                   title="敦南好好messenger"
                 >
@@ -157,7 +157,7 @@
                   class="menu_social_item"
                   data-mct-method="googlemap"
                   rel="noopener noreferrer"
-                  href="https://owo.bz/9FYpb"
+                  :href="info.googleLink"
                   target="_blank"
                   title="敦南好好map"
                 >
@@ -176,6 +176,7 @@
 <script>
 import { isMobile, isTablet } from '@/utils'
 import navList from '@/info/navList'
+import info from '@/info'
 
 export default {
   name: 'sideNavigation',
@@ -186,6 +187,7 @@ export default {
       isMobile,
       isTablet,
       list: navList,
+      info,
     }
   },
 
