@@ -58,7 +58,7 @@
           <a
             class="social_item"
             data-mct-method="facebook"
-            href="https://www.facebook.com/dunnanhowhow"
+            :href="info.fbLink"
             target="_blank"
             title="敦南好好facebook"
             rel="noopener noreferrer"
@@ -68,7 +68,7 @@
           <a
             class="social_item"
             data-mct-method="messenger"
-            href="https://www.messenger.com/t/dunnanhowhow"
+            :href="info.fbMessage"
             target="_blank"
             title="敦南好好messenger"
             rel="noopener noreferrer"
@@ -78,7 +78,7 @@
           <a
             class="social_item"
             data-mct-method="googlemap"
-            href="https://owo.bz/9FYpb"
+            :href="info.googleLink"
             target="_blank"
             title="敦南好好map"
             rel="noopener noreferrer"
