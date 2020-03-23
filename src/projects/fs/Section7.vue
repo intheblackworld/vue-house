@@ -75,6 +75,7 @@
           alt
           class="bg-img bottom"
         />
+            <div>業績實景</div>
         <div
           class="content"
           data-aos="fade-left"
@@ -103,6 +104,7 @@
               :src="slide.img"
               :class="`item-img`"
             />
+              <div class="item-title" v-html="slide.name"></div>
           </swiper-slide>
         </swiper>
         <img
@@ -117,6 +119,7 @@
           data-aos="fade"
           data-aos-delay="300"
         />
+        <div class="t1">業績實景</div>
         <img
           v-lazy="require('./mo/7/img3-1.jpg')"
           alt
@@ -124,6 +127,7 @@
           data-aos="fade"
           data-aos-delay="300"
         />
+        <div class="t1">業績實景</div>
         <div class="relative">
           <img
             v-lazy="require('./mo/7/bg2.png')"
@@ -182,6 +186,14 @@
 
   &.bottom {
     top: size(1141);
+  + div{
+  position: absolute;
+  color: #fffc;
+  left: calc(100vw * 1900 / 1920 - 4.5em - 20px);
+  top: calc(100vw * 2270 / 1920 - 1.5em);
+  font-size: 13px;
+  z-index: 2;
+  }
   }
 }
 
@@ -347,11 +359,14 @@
     line-height: 1.58;
     letter-spacing: 0.48px;
     text-align: right;
-    color: #ffffff;
+    color: #fffC;
     position: absolute;
     right: 20px;
-    bottom: 20px;
+    bottom: 5px;
   }
+  .t1{
+    font-size: size-m(12);text-align: right;
+    color: #fffC;margin: -1.5em 1.5em 0.5em 0 ;z-index: 2;position: relative;}
 }
 </style>
 
@@ -396,9 +411,11 @@ export default {
       slideList: [
         {
           img: require('./mo/7/img1-1.jpg'),
+          name:"業績實景",
         },
         {
           img: require('./mo/7/img1-2.jpg'),
+          name:"健身房3D示意圖",
         },
       ],
     }

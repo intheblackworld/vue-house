@@ -35,6 +35,7 @@
         <img v-lazy="require('./mo/4/bg.png')" alt class="bg-img" />
         <img v-lazy="require('./mo/4/img.jpg')" alt class="bg-img" data-aos="fade"
           data-aos-delay="300" />
+            <div class="block-title">外觀3D示意圖</div>
         <img v-lazy="require('./mo/4/title.png')" alt class="bg-img"  data-aos="fade"
           data-aos-delay="400" />
         <div class="content">
@@ -122,7 +123,7 @@
   line-height: 1.58;
   letter-spacing: 0.48px;
   text-align: right;
-  color: #ffffff;
+  color: #FFFC;
   position: absolute;
   right: size(10);
   bottom: size(10);
@@ -214,7 +215,13 @@
     right: 20px;
     bottom: 20px;
   }
+.block-title {
+    font-size: size-m(12);
+  position: absolute;
+  right: size-m(10);
+  top: size-m(270);z-index: 5;
 }
+  }
 </style>
 
 <script>

@@ -118,10 +118,10 @@
   top: size(37);
   position: absolute;
 }
-
+.item{text-align:left;}
 .item-img {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: size(667);
 }
 
 .item-title {
@@ -230,7 +230,7 @@
   .desc {
     font-size: calc(100vw * 12 / 375);
     width: 100%;
-  } .item{text-align:left;}
+  } 
   .item-img{width: auto;height:calc(100vw * 667 / 1100 );margin: 0 auto 0 0;}
 }
 </style>

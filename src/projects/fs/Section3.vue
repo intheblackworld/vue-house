@@ -12,18 +12,24 @@
         <div class="relative">
           <img
             v-lazy="require('./s3/img2.png')"
-            alt
+            alt="鳳山國中站"
             class="img"
             data-aos="fade"
             data-aos-delay="1000"
           />
+          <div
+            data-aos="fade"
+            data-aos-delay="1000">鳳山國中站</div>
           <img
             v-lazy="require('./s3/img1.jpg')"
-            alt
+            alt="大寮站"
             class="l-img"
             data-aos="fade-right"
             data-aos-delay="700"
           />
+          <div
+            data-aos="fade-right"
+            data-aos-delay="700">大寮站</div>
           <div class="content-t">
             <div class="title">落點校園首排 舞動雙站捷奏</div>
             <div class="subtitle">天天公園孵育生活美好，轉身接軌鳳山國中站、大寮站</div>
@@ -40,11 +46,14 @@
         <div class="relative">
           <img
             :src="require('./s3/img3.jpg')"
-            alt
+            alt="大東藝文中心"
             class="r-img"
             data-aos="fade"
             data-aos-delay="1200"
           />
+          <div
+            data-aos="fade"
+            data-aos-delay="1200">大東藝文中心</div>
           <div class="content-b">
             <div class="subtitle">增值起步走！起漲向東看！</div>
             <div class="title">再造高雄新東區</div>
@@ -57,9 +66,24 @@
         </div>
         <div class="bottom">
           <div class="blue"></div>
-          <img v-lazy="require('./s3/4-1.jpg')" alt data-aos="fade" data-aos-delay="300" />
-          <img v-lazy="require('./s3/4-2.jpg')" alt data-aos="fade" data-aos-delay="300" />
-          <img v-lazy="require('./s3/4-3.jpg')" alt data-aos="fade" data-aos-delay="300" />
+           <div>
+             <img v-lazy="require('./s3/4-1.jpg')" alt data-aos="fade" data-aos-delay="300" />
+          <div
+            data-aos="fade-right"
+            data-aos-delay="400">衛武營</div>
+            </div>
+           <div>
+          <img v-lazy="require('./s3/4-2.jpg')" alt data-aos="fade" data-aos-delay="500" />
+          <div
+            data-aos="fade-right"
+            data-aos-delay="500">鳳山車站</div>
+            </div>
+           <div>
+          <img v-lazy="require('./s3/4-3.jpg')" alt data-aos="fade" data-aos-delay="700" />
+          <div
+            data-aos="fade-right"
+            data-aos-delay="700">鳳山中正國民小學</div>
+            </div>
           <div class="blue"></div>
         </div>
       </div>
@@ -71,6 +95,10 @@
           data-aos="fade"
           data-aos-delay="300"
         />
+          <div
+          class="t2"
+            data-aos="fade-right"
+            data-aos-delay="300">鳳山國中站</div>
         <img
           v-lazy="require('./mo/3/img1.jpg')"
           alt
@@ -78,6 +106,10 @@
           data-aos="fade"
           data-aos-delay="300"
         />
+          <div
+          class="t1"
+            data-aos="fade-right"
+            data-aos-delay="300">大寮站</div>
         <div class="content-t">
           <div class="title">落點校園首排 舞動雙站捷奏</div>
           <div class="subtitle">天天公園孵育生活美好，轉身接軌鳳山國中站、大寮站</div>
@@ -175,6 +207,14 @@
     position: relative;
     z-index: 2;
   }
+  + div{
+  position: absolute;
+  color: #fffc;
+  left: calc(100vw * 1900 / 1920 - 5.5em - 20px);
+  top: calc(100vw * 785 / 1920 - 1.5em);
+  z-index: 3;
+  font-size: 13px;
+  }
 }
 
 .l-img {
@@ -183,6 +223,13 @@
   height: auto;
   left: calc(100vw * 32 / 1920);
   top: calc(100vw * 80 / 1920);
+  + div{
+  position: absolute;
+  color: #fffc;
+  left: calc(100vw * 1162 / 1920 - 4em);
+  top: calc(100vw * 714 / 1920 - 1.5em);
+  font-size: 13px;
+  }
 }
 
 .r-img {
@@ -192,6 +239,14 @@
   right: calc(100vw * 0 / 1920);
   top: calc(100vw * -100 / 1920);
   z-index: 1;
+  + div{
+  position: absolute;
+  color: #fffc;
+  left: calc(100vw * 1900 / 1920 - 5.5em - 20px);
+  top: calc(100vw * 520 / 1920 - 1.5em);
+  font-size: 13px;
+  z-index: 2;
+  }
 }
 
 .content-t {
@@ -250,7 +305,7 @@
   line-height: 1.58;
   letter-spacing: 0.48px;
   text-align: right;
-  color: #ffffff;
+  color: #fffC;
   position: absolute;
   right: 20px;
   bottom: 10px;
@@ -263,9 +318,17 @@
   display: flex;
   justify-content: space-between;
   bottom: 0;
+  > div{position: relative;}
 
   img {
     width: calc(100vw * 550 / 1920);
+  + div{
+  position: absolute;
+  right: .5em;
+  bottom:.5em;
+  color: #fffc;
+  font-size: 13px;
+  }
   }
 
   .blue {
@@ -320,6 +383,22 @@
       position: relative;
     }
   }
+  .t1{
+  position: absolute;
+  color: #fffc;
+  right: 5px;
+  top: size-m(190);
+  font-size: 12px;
+    z-index: 4;
+  }
+  .t2{
+  position: absolute;
+  color: #fffc;
+  right:size-m(25);
+  top: size-m(690);
+  font-size: 12px;
+    z-index: 4;
+  }
 
   .content-t {
     width: 90vw;
@@ -370,7 +449,6 @@
     line-height: 1.58;
     letter-spacing: 0.48px;
     text-align: right;
-    color: #ffffff;
     position: absolute;
     right: 20px;
     bottom: 10px;
@@ -420,15 +498,19 @@ export default {
       slideList: [
         {
           img: require('./mo/3/img3.jpg'),
+          name:"大東藝文中心",
         },
         {
           img: require('./mo/3/4-1.jpg'),
+          name:"衛武營",
         },
         {
           img: require('./mo/3/4-2.jpg'),
+          name:"鳳山車站",
         },
         {
           img: require('./mo/3/4-3.jpg'),
+          name:"鳳山中正國民小學",
         },
       ],
     }
