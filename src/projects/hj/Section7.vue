@@ -9,7 +9,7 @@
         alt=""
         class="left"
       >
-<svg class="timg" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg v-if="showIcon" class="timg" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 149.5 261.4" style="enable-background:new 0 0 149.5 261.4;" xml:space="preserve">
 <polyline class="st0 an01" points="129.9,5 5.1,5 5.1,256.4 48,256.4 48,185.8 73.6,185.8 73.6,144.9 48,144.9 48,47.9 124.9,47.9 
 	124.9,5 "/>
@@ -55,7 +55,7 @@
           </div>
         </div>
       </div>
-<svg class="timg" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg v-if="showIcon" class="timg" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 149.5 261.4" style="enable-background:new 0 0 149.5 261.4;" xml:space="preserve">
 <polygon class="st0" points="124.9,47.9 124.9,5 5.1,5 5.1,144.9 5,144.9 5,185.8 5.1,185.8 5.1,255.5 48,255.5 48,185.8 
 	73.6,185.8 73.6,144.9 48,144.9 48,47.9 "/>
@@ -297,6 +297,7 @@ import { isMobile } from '@/utils'
 
 export default {
   name: 'section7',
+  props: ['showIcon'],
   data() {
     return {
       isMobile,

@@ -9,7 +9,7 @@
         alt=""
         class="left"
       >
-<svg class="timg" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg v-if="showIcon" class="timg" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 544.9 474.8" style="enable-background:new 0 0 544.9 474.8;" xml:space="preserve">
   <path class="st0 an04" d="M399.2,319.5c-41.5,0-75.2,33.6-75.2,75.1s33.6,75.2,75.1,75.2s75.2-33.6,75.2-75.1c0,0,0,0,0,0h70.6"/>
   <path class="st0 an03" d="M403.5,218.1c41.5,0.5,74.8,34.5,74.3,76c-0.5,40.8-33.5,73.8-74.3,74.3"/>
@@ -62,7 +62,7 @@
           </div>
         </div>
       </div>
-<svg class="timg" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg v-if="showIcon" class="timg" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 544.9 474.8" style="enable-background:new 0 0 544.9 474.8;" xml:space="preserve">
   <path class="st0 an04" d="M399.2,319.5c-41.5,0-75.2,33.6-75.2,75.1s33.6,75.2,75.1,75.2s75.2-33.6,75.2-75.1c0,0,0,0,0,0h70.6"/>
   <path class="st0 an03" d="M403.5,218.1c41.5,0.5,74.8,34.5,74.3,76c-0.5,40.8-33.5,73.8-74.3,74.3"/>
@@ -316,6 +316,7 @@ import { isMobile } from '@/utils'
 
 export default {
   name: 'section6',
+  props: ['showIcon'],
   data() {
     return {
       isMobile,

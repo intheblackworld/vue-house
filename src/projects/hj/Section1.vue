@@ -281,6 +281,14 @@ export default {
     },
   },
 
+  created() {
+    if (this.isMobile) {
+      this.swiperOption.direction = 'horizontal'
+    } else {
+      this.swiperOption.direction = 'vertical'
+    }
+  },
+
   mounted() {},
 
   computed: {},

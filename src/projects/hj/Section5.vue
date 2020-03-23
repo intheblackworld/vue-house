@@ -9,7 +9,7 @@
         alt=""
         class="left"
       >
-<svg class="timg" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg v-if="showIcon" class="timg" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 352.9 362.3" style="enable-background:new 0 0 352.9 362.3;" xml:space="preserve">
     <g>
     <path class="st0 an01" d="M87.8,28.5c54.9-34,126.3-29.3,174.6,2.6"/>
@@ -84,7 +84,7 @@
           </div>
         </div>
       </div>
-<svg class="timg" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg v-if="showIcon" class="timg" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 352.9 362.3" style="enable-background:new 0 0 352.9 362.3;" xml:space="preserve">
     <g>
     <path class="st0 an01" d="M87.8,28.5c54.9-34,126.3-29.3,174.6,2.6"/>
@@ -340,6 +340,7 @@ import { isMobile } from '@/utils'
 
 export default {
   name: 'section5',
+  props: ['showIcon'],
   data() {
     return {
       isMobile,

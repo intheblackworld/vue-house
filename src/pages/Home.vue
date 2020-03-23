@@ -11,19 +11,19 @@
       <Section2 />
     </div>
     <div class="section" id="section3">
-      <Section3 />
+      <Section3 :showIcon="viewIndex >= 2" />
     </div>
     <div class="section" id="section4">
       <Section4 />
     </div>
     <div class="section" id="section5">
-      <Section5 />
+      <Section5 :showIcon="viewIndex >= 4" />
     </div>
     <div class="section" id="section6">
-      <Section6 />
+      <Section6 :showIcon="viewIndex >= 6" />
     </div>
     <div class="section" id="section7">
-      <Section7 />
+      <Section7 :showIcon="viewIndex >= 7" />
     </div>
     <div class="section" id="section8">
       <Section8 />
@@ -134,11 +134,12 @@ export default {
       for (let n = 0; n < offsetTopArr.length; n++) {
         // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
         // 那么此时导航索引就应该是n了
-        if (scrollTop >= offsetTopArr[n]) {
+        if (scrollTop >= (offsetTopArr[n] - 100)) {
           navIndex = n
         }
       }
       this.viewIndex = navIndex + 1
+      console.log(this.viewIndex)
     },
   },
 }
