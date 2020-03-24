@@ -34,13 +34,13 @@
           <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往聯碩粉絲專頁</span>
         </span>
       </a>
-
+<!--
       <div class="address flex-c" v-html="info.address"></div>
       <div class="btn flex-c">
         <span class="flex-c" @click="showMapDialog">
           <font-awesome-icon icon="map-marker-alt" /><span>導航 Google 地圖</span>
         </span>
-      </div>
+      </div> -->
       <!-- <a class="google-btn flex-c" :href="info.googleLink" target="_blank">
         <span class="flex-c">
           <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
@@ -257,7 +257,7 @@ export default {
     padding: 40px;
     transform: none;
     position: static;
-    margin: 40px auto 0 auto ;
+    margin: 40px auto 40px auto;
 
     .logo {
       width: $contact_logo_mobile_width;
@@ -284,7 +284,7 @@ export default {
     width: 100%;
     justify-content: center;
     text-align: center;
-    margin-bottom: 40px;
+    //margin-bottom: 40px;
 
     > * {
       margin-bottom: 12px;
