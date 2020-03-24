@@ -280,11 +280,11 @@
   }
 
   .subtitle {
-    font-size: size(15);
+    font-size: size-m(15);
   }
 
   .desc {
-    font-size: size(12);
+    font-size: size-m(12);
   }
 
   .logo {
@@ -331,7 +331,7 @@ export default {
         allowSlideNext: isMobile ? true : true,
         // centeredSlides: true,
         autoplay: {
-          delay: 400000,
+          delay: 4000,
           // disableOnInteraction: true,
         },
         loop: true,
@@ -383,7 +383,6 @@ export default {
       } else {
         this.slideIndex = swiper.activeIndex - 1
       }
-      console.log(this.slideIndex)
     },
   },
 

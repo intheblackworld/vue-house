@@ -139,7 +139,6 @@ export default {
         }
       }
       this.viewIndex = navIndex + 1
-      console.log(this.viewIndex)
     },
   },
 }
