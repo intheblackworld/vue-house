@@ -4,11 +4,13 @@
       v-if="!isMobile"
       class="full-bg"
     >
-      <img
-        v-lazy="require('./s5/img.jpg')"
-        alt=""
-        class="left"
-      >
+      <div class="left">
+        <img
+          v-lazy="require('./s5/img.jpg')"
+          alt=""
+        >
+        <div>※交通情境⽰意圖</div>
+      </div>
 <svg v-if="showIcon" class="timg" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 352.9 362.3" style="enable-background:new 0 0 352.9 362.3;" xml:space="preserve">
     <g>
@@ -66,11 +68,13 @@
       v-else
       class="m-bg"
     >
+      <div class="left">
       <img
         v-lazy="require('./s5/mo/img.jpg')"
         alt=""
-        class="top"
       >
+      <div>※交通情境⽰意圖</div>
+      </div>
       <div class="bottom">
         <div class="m-content">
           <div class="title">
@@ -158,16 +162,24 @@
   background-color: #112d81;
 }
 
-.left {
-  width: auto;
+.left{
+  width:50%;
   height: size(889);
   left: 0;
-  right: 0;
   margin: 0 auto;
   position: absolute;
   top: 50%;
-  transform: translate(-50%, -50%);
-}
+  transform: translate(0, -50%);
+  img{
+   width: 100%;
+   height: 100%;
+   object-fit: cover; 
+  }
+>div{
+  position: absolute;font-size: size(14);font-weight: lighter;
+  letter-spacing: 0.09em;
+  bottom:-1.3em;right:0;color: #FFF;opacity: 0.4;}
+  }
 
 .right-img {
   width: auto;
@@ -281,9 +293,17 @@
     position: absolute;
     z-index: 1;
   }
-  .top {
-    width: size-m(330);
-    margin: 0 auto;
+.left{
+  width: size-m(330);
+  height: auto;
+  position: relative;
+  top: 0;
+  transform: translate(0, 0);
+  img{
+   height: auto;
+  }
+>div{
+  font-size:size-m(12);}
   }
   .bottom {
     width: size-m(330);

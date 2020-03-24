@@ -61,13 +61,13 @@
 }
 
 .content {
-  width: size(780);
+  width: size(690);
   position: absolute;
   margin: 0 auto;
   left: 0;
   right: 0;
   top: 50%;
-  transform: translate(60%, -60%);
+  transform: translate(70%, -60%);
 }
 
 .title {
@@ -77,15 +77,16 @@
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.1;
-  letter-spacing: 15px;
+  line-height: 1.2;
+  letter-spacing: size(10);
   text-align: left;
   color: #112d81;
   margin-bottom: size(60);
+  white-space: nowrap;
 }
 
 .desc {
-  font-size: size(18);
+  font-size: size(20);
   font-weight: 300;
   font-stretch: normal;
   font-style: normal;

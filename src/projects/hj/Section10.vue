@@ -4,11 +4,13 @@
       v-if="!isMobile"
       class="full-bg"
     >
-      <img
-        v-lazy="require('./s10/img.jpg')"
-        alt=""
-        class="left"
-      >
+      <div class="left">
+        <img
+          v-lazy="require('./s10/img.jpg')"
+          alt=""
+        >
+        <div>※3D建築外觀合成⽰意圖</div>
+      </div>
       <div
         data-aos="fade"
         data-aos-delay="300"
@@ -29,6 +31,7 @@
         alt=""
         class="img"
       >
+        <div class="img-t">※3D建築外觀合成⽰意圖</div>
       <div
         data-aos="fade"
         data-aos-delay="300"
@@ -48,18 +51,24 @@
 .full-bg {
   background-color: #112d81;
 }
-
-.left {
-  width: auto;
-  height: 100vh;
-  left: 0;
-  right: 0;
+.left{
+  width:auto;
+  height:100vh;
+  right: 50%;
   margin: 0 auto;
   position: absolute;
   top: 50%;
-  display: block;
-  transform: translate(-50%, -50%);
-}
+  transform: translate(0, -50%);font-size: size(14);
+  img{
+   width: auto;
+   height:calc(100% - 1.8em);
+   object-fit: cover; 
+  }
+>div{
+  position: absolute;font-size: size(14);font-weight: lighter;
+  letter-spacing: 0.09em;
+  bottom:0.5em;right:0;color: #FFF;opacity: 0.4;}
+  }
 
 .right-img {
   width: auto;
@@ -182,6 +191,12 @@
     position: absolute;
     top: 0;
     left: 0;
+  }
+  .img-t {font-size: size(14);
+    position: absolute;
+    bottom:0;font-weight: lighter;
+    right:0;color: #FFF;
+    padding: 0.5em 1em;background:#112d81CC;
   }
 }
 </style>

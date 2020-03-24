@@ -4,11 +4,13 @@
       v-if="!isMobile"
       class="full-bg"
     >
-      <img
-        v-lazy="require('./s7/img.jpg')"
-        alt=""
-        class="left"
-      >
+      <div class="left">
+        <img
+          v-lazy="require('./s7/img.jpg')"
+          alt=""
+        >
+        <div>仁愛翡翠</div>
+      </div>
 <svg v-if="showIcon" class="timg" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 149.5 261.4" style="enable-background:new 0 0 149.5 261.4;" xml:space="preserve">
 <polyline class="st0 an01" points="129.9,5 5.1,5 5.1,256.4 48,256.4 48,185.8 73.6,185.8 73.6,144.9 48,144.9 48,47.9 124.9,47.9 
@@ -37,11 +39,13 @@
       v-else
       class="m-bg"
     >
+      <div class="left">
       <img
         v-lazy="require('./s7/mo/img.jpg')"
         alt=""
-        class="top"
       >
+      <div>仁愛翡翠</div>
+      </div>
       <div class="bottom">
         <div class="m-content">
           <div class="title">
@@ -95,16 +99,24 @@
   background-color: #112d81;
 }
 
-.left {
-  width: auto;
-  height: 100vh;
-  left: 0;
-  right: 0;
+.left{
+  width:auto;
+  height:100vh;
+  right: 50%;
   margin: 0 auto;
   position: absolute;
   top: 50%;
-  transform: translate(-50%, -50%);
-}
+  transform: translate(0, -50%);font-size: size(14);
+  img{
+   width: auto;
+   height:calc(100% - 1.8em);
+   object-fit: cover; 
+  }
+>div{
+  position: absolute;font-size: size(14);font-weight: lighter;
+  letter-spacing: 0.09em;
+  bottom:0.5em;right:0;color: #FFF;opacity: 0.4;}
+  }
 
 .right-img {
   width: auto;
@@ -232,9 +244,19 @@
     position: absolute;
     z-index: 1;
   }
-  .top {
-    width: size-m(330);
-    margin: 0 auto;
+.left{
+  width: size-m(330);
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  transform: translate(0, 0);
+  img{
+    width: 100%;
+   height: auto;
+  }
+>div{
+  font-size:size-m(12);bottom:-1.3em;}
   }
   .bottom {
     width: size-m(330);

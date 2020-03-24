@@ -4,11 +4,18 @@
       v-if="!isMobile"
       class="full-bg"
     >
-      <img
-        v-lazy="require('./s2/img.jpg')"
-        alt=""
-        class="left"
-      >
+      <div class="left">
+        <img
+          v-lazy="require('./s2/img.jpg')"
+          alt=""
+        >
+        <img
+          v-lazy="require('./s2/imgtopright.png')"
+          alt=""
+          class="left-img"
+        >
+        <div>※捷運交通情境⽰意圖</div>
+      </div>
       <div
         data-aos="fade"
         data-aos-delay="300"
@@ -41,11 +48,18 @@
       v-else
       class="m-bg"
     >
+      <div class="left">
       <img
         v-lazy="require('./s2/mo/img.jpg')"
         alt=""
-        class="top"
       >
+      <img
+        v-lazy="require('./s2/mo/imgtopright.png')"
+        alt=""
+        class="left-img"
+      >
+      <div>※捷運交通情境⽰意圖</div>
+      </div>
       <div class="bottom">
         <div class="m-content">
           <div class="title">
@@ -85,17 +99,27 @@
   left: 0;
   height: 100vh;
 }
-
-.left {
-  width: auto;
+.left{
+  width:50%;
   height: size(889);
   left: 0;
-  right: 0;
   margin: 0 auto;
   position: absolute;
   top: 50%;
-  transform: translate(-50%, -50%);
-}
+  transform: translate(0, -50%);
+  img{
+   width: 100%;
+   height: 100%;
+   object-fit: cover; 
+  &.left-img{width:size(249);height: auto;
+  position: absolute;
+  top: 0;right:0;}
+  }
+>div{
+  position: absolute;font-size: size(14);font-weight: lighter;
+  letter-spacing: 0.09em;
+  bottom:-1.3em;right:0;color: #FFF;opacity: 0.4;}
+  }
 
 .right-img {
   width: auto;
@@ -206,9 +230,18 @@
     position: absolute;
     z-index: 1;
   }
-  .top {
+.left{
     width: size-m(330);
-    margin: 0 auto;
+  height: auto;
+  position: relative;
+  top: 0;
+  transform: translate(0, 0);
+  img{
+   height: auto;
+  &.left-img{width:size-m(87);}
+  }
+>div{
+  font-size:size-m(12);}
   }
   .bottom {
     width: size-m(330);

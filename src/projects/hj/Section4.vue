@@ -21,6 +21,7 @@
             :src="slide.img"
             :class="`item-img`"
           />
+        <div v-html="slide.name"></div>
         </swiper-slide>
       </swiper>
       <div
@@ -57,7 +58,7 @@
       <swiper
         :options="swiperOption"
         ref="mySwiper"
-        class="top"
+        class="left"
         @slideChangeTransitionStart="slideChanged"
       >
         <swiper-slide
@@ -70,6 +71,7 @@
             :src="slide.img"
             :class="`item-img`"
           />
+        <div v-html="slide.name"></div>
         </swiper-slide>
       </swiper>
       <div class="bottom">
@@ -109,16 +111,26 @@
   background-color: #112d81;
 }
 
-.left {
-  width: auto;
+
+.left{
+  width:50%;
   height: size(889);
   left: 0;
-  right: 0;
   margin: 0 auto;
   position: absolute;
   top: 50%;
-  transform: translate(-50%, -50%);
-}
+  transform: translate(0, -50%);
+  img{
+   width: 100%;
+   height: 100%;
+   object-fit: cover; 
+  + div{
+  position: absolute;font-size: size(14);font-weight: lighter;
+  letter-spacing: 0.09em;
+  bottom:-1.3em;right:0;color: #FFF;opacity: 0.4;}
+  }
+  }
+
 
 .right-img {
   width: auto;
@@ -200,14 +212,11 @@
   margin: 0 auto;
   transform: translateX(75%);
 }
-
-.item-img {
-  right: 0;
-  position: absolute;
-  height: size(889);
-  width: auto;
+.swiper-container{
+  overflow:initial;
 }
-
+.swiper-slide{overflow: hidden;}
+.swiper-slide-active{overflow:initial;}
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
     height: 100vh;
@@ -236,10 +245,17 @@
     position: absolute;
     z-index: 1;
   }
-  .top {
-    width: size-m(330);
-    height: size-m(360);
-    margin: 0 auto;
+.left{
+  width: size-m(330);
+  height: auto;
+  position: relative;
+  top: 0;
+  transform: translate(0, 0);
+  img{
+   height: auto;
+  + div{
+  font-size:size-m(12);}
+  }
   }
   .bottom {
     width: size-m(330);
@@ -329,23 +345,29 @@ export default {
       slideList: [
         {
           img: require('./s4/img1.jpg'),
+          name: '※中正紀念堂',
         },
         {
           img: require('./s4/img2.jpg'),
+          name: '※公園示意圖',
         },
         {
           img: require('./s4/img3.jpg'),
+          name: '※台灣⼤學',
         },
       ],
       slideListM: [
         {
           img: require('./s4/mo/img1.jpg'),
+          name: '※中正紀念堂',
         },
         {
           img: require('./s4/mo/img2.jpg'),
+          name: '※公園示意圖',
         },
         {
           img: require('./s4/mo/img3.jpg'),
+          name: '※台灣⼤學',
         },
       ],
     }
