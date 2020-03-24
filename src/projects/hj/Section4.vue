@@ -141,7 +141,7 @@
 
 .content {
   position: absolute;
-  width: size(332);
+  width: size(350);
   height: 100vh;
   left: 0;
   right: 0;
@@ -181,13 +181,13 @@
 }
 
 .desc {
-  font-size: size(15);
+  font-size: size(17);
   font-weight: 300;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.6;
-  letter-spacing: 1.19px;
-  text-align: left;
+  line-height: 1.7;
+  letter-spacing: 0.09em;
+  text-align:justify;
   color: #ffffff;
 }
 

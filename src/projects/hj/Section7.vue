@@ -158,11 +158,11 @@
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1;
-    letter-spacing: 5.47px;
+    line-height: 1.3;
+    letter-spacing: 0.3em;
     text-align: left;
     color: #ffffff;
-    transform: translateY(-5px);
+    transform: translateY(-10%);
     display: inline-block;
   }
 }
@@ -181,14 +181,13 @@
 }
 
 .desc {
-  width: size(520);
-  font-size: size(15);
+  font-size: size(17);
   font-weight: 300;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.6;
-  letter-spacing: 1.19px;
-  text-align: left;
+  line-height: 1.7;
+  letter-spacing: 0.09em;
+  text-align:justify;
   color: #ffffff;
 }
 

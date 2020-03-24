@@ -61,7 +61,7 @@
 }
 
 .content {
-  width: size(760);
+  width: size(780);
   position: absolute;
   margin: 0 auto;
   left: 0;
@@ -85,14 +85,13 @@
 }
 
 .desc {
-  width: 100%;
   font-size: size(18);
   font-weight: 300;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.6;
-  letter-spacing: 1.44px;
-  text-align: left;
+  line-height: 1.7;
+  letter-spacing: 0.09em;
+  text-align:justify;
   color: #ffffff;
 }
 
