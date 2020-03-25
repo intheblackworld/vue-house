@@ -4,13 +4,47 @@
       v-if="!isMobile"
       class="full-bg"
     >
-      <div class="left">
-        <img
-          v-lazy="require('./s7/img.jpg')"
-          alt=""
+      <swiper
+        :options="swiperOption"
+        ref="mySwiper"
+        class="left"
+        @slideChangeTransitionStart="slideChanged"
+      >
+        <div
+          class="swiper-button-prev"
+          slot="button-prev"
         >
-        <div>仁愛翡翠</div>
-      </div>
+          <img
+            src="./all/l.png"
+            alt
+          />
+        </div>
+        <div
+          class="swiper-button-next"
+          slot="button-next"
+        >
+          <img
+            src="./all/r.png"
+            alt
+          />
+        </div>
+        <swiper-slide
+          v-for="(slide, index) in slideList"
+          :index="index"
+          :key="slide.img"
+          class="item"
+        >
+          <img
+            :src="slide.img"
+            :class="`item-img`"
+          />
+          <div v-html="slide.name"></div>
+        </swiper-slide>
+        <div
+          class="swiper-pagination"
+          slot="pagination"
+        ></div>
+      </swiper>
       <svg
         v-if="showIcon"
         class="timg"
@@ -57,13 +91,47 @@
       v-else
       class="m-bg"
     >
-      <div class="left">
-        <img
-          v-lazy="require('./s7/mo/img.jpg')"
-          alt=""
+      <swiper
+        :options="swiperOption"
+        ref="mySwiper"
+        class="left"
+        @slideChangeTransitionStart="slideChanged"
+      >
+        <div
+          class="swiper-button-prev"
+          slot="button-prev"
         >
-        <div>仁愛翡翠</div>
-      </div>
+          <img
+            src="./all/l.png"
+            alt
+          />
+        </div>
+        <div
+          class="swiper-button-next"
+          slot="button-next"
+        >
+          <img
+            src="./all/r.png"
+            alt
+          />
+        </div>
+        <swiper-slide
+          v-for="(slide, index) in slideListM"
+          :index="index"
+          :key="slide.img"
+          class="item"
+        >
+          <img
+            :src="slide.img"
+            :class="`item-img`"
+          />
+          <div v-html="slide.name"></div>
+        </swiper-slide>
+        <div
+          class="swiper-pagination"
+          slot="pagination"
+        ></div>
+      </swiper>
       <div class="bottom">
         <div class="m-content">
           <div class="title">
@@ -143,21 +211,40 @@
   background-color: #112d81;
 }
 
+.swiper-button-prev,
+.swiper-button-next {
+  width: size(50);
+}
+
+.swiper-container {
+  position: absolute;
+  z-index: 2;
+}
+
+.swiper-pagination {
+  transform: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: auto;
+  bottom: 3%;
+}
+
 .left {
-  width: auto;
+  width: 50%;
   height: 100vh;
-  right: 50%;
+  left: 0;
   margin: 0 auto;
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
-  font-size: size(14);
   img {
-    width: auto;
-    height: calc(100% - 1.8em);
+    width: 100%;
+    height: 100%;
     object-fit: cover;
   }
-  > div {
+  + div {
     position: absolute;
     font-size: size(18);
     font-weight: bold;
@@ -365,22 +452,116 @@
     left: 72%;
     margin: 0;
   }
+
+  .swiper-pagination {
+    // transform: none;
+    // width: 100%;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // top: auto;
+    bottom: 5%;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: size-m(20) !important;
+  }
 }
 </style>
 <script>
 // @ is an alias to /src
-import { isMobile } from '@/utils'
+import { isMobile, isTablet } from '@/utils'
+import slider from '@/mixins/slider.js'
+import 'swiper/dist/css/swiper.css'
+
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'section7',
   props: ['showIcon'],
+  mixins: [slider],
+  components: {
+    swiper,
+    swiperSlide,
+  },
   data() {
     return {
       isMobile,
+      swiperOption: {
+        slidesPerView: isMobile ? 1 : 1,
+        spaceBetween: isTablet ? 20 : 30,
+        slidesPerColumn: isMobile ? 1 : 1,
+        allowSlidePrev: isMobile ? true : true,
+        allowSlideNext: isMobile ? true : true,
+        // centeredSlides: true,
+        autoplay: {
+          delay: 4000,
+          // disableOnInteraction: true,
+        },
+        loop: true,
+        // direction: 'vertical',
+        effect: 'fade',
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      },
+      slideList: [
+        {
+          img: require('./s7/img1.jpg'),
+          name: '仁愛翡翠',
+        },
+        {
+          img: require('./s7/img2.jpg'),
+          name: '仁愛御林園',
+        },
+        {
+          img: require('./s7/img3.jpg'),
+          name: '圓山凡登',
+        },
+        {
+          img: require('./s7/img4.jpg'),
+          name: '翡翠大道',
+        },
+      ],
+      slideListM: [
+        {
+          img: require('./s7/mo/img1.jpg'),
+          name: '仁愛翡翠',
+        },
+        {
+          img: require('./s7/mo/img2.jpg'),
+          name: '仁愛御林園',
+        },
+        {
+          img: require('./s7/mo/img3.jpg'),
+          name: '圓山凡登',
+        },
+        {
+          img: require('./s7/mo/img4.jpg'),
+          name: '翡翠大道',
+        },
+      ],
     }
   },
 
-  methods: {},
+  methods: {
+    slideChanged(e) {
+      const swiper = this.$refs.mySwiper.swiper
+      if (swiper.isEnd) {
+        this.slideIndex = 0
+      } else if (swiper.isBeginning) {
+        this.slideIndex = swiper.slides.length - 3
+      } else {
+        this.slideIndex = swiper.activeIndex - 1
+      }
+    },
+  },
 
   mounted() {},
 
