@@ -39,7 +39,7 @@
             class="item"
           >
             <img :src="slide.img1" :class="`item-img`" />
-            <div class="item-title" v-html="slide.name"></div>
+            <div class="item-title" v-html="slide.name1"></div>
           </swiper-slide>
         </swiper>
         <swiper
@@ -56,7 +56,7 @@
             class="item"
           >
             <img :src="slide.img2" :class="`item-img`" />
-            <div class="item-title" v-html="slide.name"></div>
+            <div class="item-title" v-html="slide.name2"></div>
           </swiper-slide>
         </swiper>
       </div>
@@ -408,7 +408,8 @@ export default {
         {
           img1: isMobile ? require('./mo/5/img1-1.png') : require('./s5/img1-1.jpg'),
           img2: isMobile ? require('./mo/5/img1-2.png') : require('./s5/img1-2.jpg'),
-          name: 'H2O水京棧國際酒店',
+          name1: 'H2O水京棧國際酒店',
+          name2: 'H2O水京棧國際酒店',
           title: '京城集團邁步卓越<br />金獎冠冕 實力之作',
           desc:
             '京城集團創立於1982年，為目前台灣數一數二的企業集團，跨足建設、營造、飯店產業：京城建設、京城飯店、H2O水京棧國際酒店，整合了近40年經驗，以堅強實力造就每件精彩作品，其中「京城京城」、「京城美術皇居」更開啟了高雄豪宅的新眼界，同時也是國際建築獎項常勝軍，包含「京城樂活、「京城鉅誕」、「京城凱悅」等案，業績閃耀南台灣！',
@@ -416,7 +417,8 @@ export default {
         {
           img1: isMobile ? require('./mo/5/img2-1.png') : require('./s5/img2-1.jpg'),
           img2: isMobile ? require('./mo/5/img2-2.png') : require('./s5/img2-2.jpg'),
-          name: '京城鉅誕',
+          name1: '美術皇居',
+          name2: '',
           title: '建築安全新突破<br />勇於挑戰 精益求精',
           desc:
             '京城的房子不只在生活美學上求新求變，更在建築結構安全上，更投入了龐大的人力、物力，在南台灣建築業界無人能及，陸續導入SRC鋼骨混凝土結構、BRB斜撐制震、美國EPS制震壁、中空樓板、耐震系統工法及建築安全履歷、甚至更嚴格的國家級耐震標章認證。',
@@ -424,7 +426,8 @@ export default {
         {
           img1: isMobile ? require('./mo/5/img3-1.png') : require('./s5/img3-1.jpg'),
           img2: isMobile ? require('./mo/5/img3-2.png') : require('./s5/img3-2.jpg'),
-          name: '京城King park',
+          name1: '京城King park',
+          name2: '京城King park',
           title: '豪宅資歷 無懈可擊<br />高雄奢華傳奇－京城KING PARK',
           desc:
             '京城集團深耕高雄，一路走來以穩健實力建立建築王國。位農16特區綠海首排的「京城KING PARK」，以東方版Art Deco建築，為高雄天際線添上一筆世界級奢華！做工繁複的竹節立面，以萬噸岡石精工打造總裁級居邸，建材更是遍尋五大洲的萬中選一，在空間設計寫下了輝煌鎏金歲月，由內到外的尊榮珍貴，見證京城品牌深厚能量。',

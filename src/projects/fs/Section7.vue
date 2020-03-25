@@ -75,7 +75,7 @@
           alt
           class="bg-img bottom"
         />
-            <div>業績實景</div>
+            <div>交誼廳3D示意圖</div>
         <div
           class="content"
           data-aos="fade-left"
@@ -127,7 +127,7 @@
           data-aos="fade"
           data-aos-delay="300"
         />
-        <div class="t1">業績實景</div>
+        <div class="t1">交誼廳3D示意圖</div>
         <div class="relative">
           <img
             v-lazy="require('./mo/7/bg2.png')"
@@ -189,7 +189,7 @@
   + div{
   position: absolute;
   color: #fffc;
-  left: calc(100vw * 1900 / 1920 - 4.5em - 20px);
+  right:calc(100vw * 0 / 1920 + 4.5em + 20px);
   top: calc(100vw * 2270 / 1920 - 1.5em);
   font-size: 13px;
   z-index: 2;
@@ -234,7 +234,7 @@
   text-align: right;
   color: #ffffff;
   position: absolute;
-  right: size(10);
+  right: size(30);
   bottom: size(10);
 }
 
