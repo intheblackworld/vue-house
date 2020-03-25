@@ -2,6 +2,12 @@
   <div class="section6">
     <div class="bg">
       <div v-if="!isMobile">
+        <div class="box box1"
+            data-aos="fade-left"
+            data-aos-delay="300"></div>
+        <div class="box box2"
+            data-aos="fade-left"
+            data-aos-delay="600"></div>
         <div class="block-img" data-aos="fade" data-aos-delay="300">
           <div class="relative">
             <img v-lazy="require('./s6/img.jpg')" alt />
@@ -69,14 +75,28 @@
   height: size(1150);
   display: flex;
   align-items: center;
-  background:  url('./s6/bgimg.png') fixed, url('./s6/bg.png');
-  background-size: cover,cover;
+  background: #0e585a url('./s6/bgimg.png') fixed;
+  background-size: cover;
 
   > div {
     display: flex;
     align-items: center;
   }
 }
+.box{position: absolute;}
+.box1{background: #c9caca url('./s6/bgimg.png') fixed;
+  background-size: cover;
+    bottom:0;
+    right: 0;
+    width:size(1438);
+    height: size(955);}
+.box2{background:#20969b url('./s6/bgimg2.png') fixed;
+  background-size: cover;
+    top:size(242);
+    right:0;
+    width: size(94);
+    height: size(754);}
+
 
 .bg-img {
   width: 100vw;

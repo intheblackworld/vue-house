@@ -160,13 +160,13 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .bg {
-  background-size: cover;
   position: relative;
   overflow: hidden;
   position: relative;
   height: calc(100vw * 1750 / 1920);
   z-index: 3;
   background: #0e585b url('./s6/bgimg.png') fixed;
+  background-size: cover;
 }
 .box{position: absolute;}
 .box1{background: #fff;
