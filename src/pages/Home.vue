@@ -3,7 +3,7 @@
     <Loading :loading="load" />
     <SideNavigation v-if="isSide" :viewIndex="viewIndex" />
     <!-- <Navigation v-else /> -->
-    <Indigator :viewIndex="viewIndex" />
+    <!-- <Indigator :viewIndex="viewIndex" /> -->
     <div class="section" id="section1">
       <Section1 />
     </div>
@@ -76,7 +76,7 @@ export default {
   name: 'home',
   components: {
     Loading,
-    Indigator,
+    // Indigator,
     // Navigation,
     SideNavigation,
     ContactSection,
