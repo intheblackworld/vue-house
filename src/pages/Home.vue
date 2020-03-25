@@ -180,9 +180,9 @@ export default {
   mounted() {
     window.addEventListener('scroll', this.onScroll, false)
     this.action = this.$refs.fullPage.api
-    // if (this.isMobile) {
-    //   this.$refs.fullPage.api.setResponsive(true)
-    // }
+    if (this.isMobile) {
+      this.$refs.fullPage.api.setResponsive(true)
+    }
   },
 
   methods: {
@@ -213,16 +213,22 @@ export default {
     },
 
     onLeave(origin, destination, direction) {
-      if (origin.isLast === true && direction === 'up') {
-        console.log('加固')
-        this.$refs.fullPage.api.setResponsive(false)
-      }
-      if (origin.isFirst === true && direction === 'down' && this.isMobile) {
-        this.$refs.fullPage.api.setResponsive(false)
-      }
+      if (!this.isMobile) {
+        if (origin.isLast === true && direction === 'up') {
+          console.log('加固')
+          this.$refs.fullPage.api.setResponsive(false)
+        }
+        if (origin.isFirst === true && direction === 'down' && this.isMobile) {
+          this.$refs.fullPage.api.setResponsive(false)
+        }
 
-      if (destination.isFirst === true && direction === 'up' && this.isMobile) {
-        this.$refs.fullPage.api.setResponsive(false)
+        if (
+          destination.isFirst === true &&
+          direction === 'up' &&
+          this.isMobile
+        ) {
+          this.$refs.fullPage.api.setResponsive(false)
+        }
       }
     },
 
