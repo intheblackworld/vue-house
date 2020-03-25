@@ -12,6 +12,8 @@ import config from './lib/config.js'
 import 'element-ui/lib/theme-chalk/index.css'
 import VueScrollTo from 'vue-scrollto' // scroll 錨點
 import VueLazyload from 'vue-lazyload' // 圖片 lazy load
+import VueFullPage from 'vue-fullpage.js'
+
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
@@ -48,6 +50,8 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.use(VueSvgIcon, {
   tagName: 'icon'
 })
+
+Vue.use(VueFullPage)
 
 Vue.use(config)
 Vue.use(VueScrollTo)

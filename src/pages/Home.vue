@@ -1,46 +1,94 @@
 <template>
   <div class="home no-padding-top">
     <Loading :loading="load" />
-    <SideNavigation v-if="isSide" :viewIndex="viewIndex" />
+    <SideNavigation
+      v-if="isSide"
+      :viewIndex="viewIndex"
+    />
     <!-- <Navigation v-else /> -->
     <!-- <Indigator :viewIndex="viewIndex" /> -->
-    <div class="section" id="section1">
-      <Section1 />
-    </div>
-    <div class="section" id="section2">
-      <Section2 />
-    </div>
-    <div class="section" id="section3">
-      <Section3 :showIcon="viewIndex >= 2" />
-    </div>
-    <div class="section" id="section4">
-      <Section4 />
-    </div>
-    <div class="section" id="section5">
-      <Section5 :showIcon="viewIndex >= 4" />
-    </div>
-    <div class="section" id="section6">
-      <Section6 :showIcon="viewIndex >= 6" />
-    </div>
-    <div class="section" id="section7">
-      <Section7 :showIcon="viewIndex >= 7" />
-    </div>
-    <div class="section" id="section8">
-      <Section8 />
-    </div>
-    <div class="section" id="section9">
-      <Section9 />
-    </div>
-    <div class="section" id="section10">
-      <Section10 />
-    </div>
-    <div class="section" id="section11">
-      <Section11 />
-    </div>
-    <div class="section" id="section12">
-      <Section12 />
-    </div>
-    <ContactSection class="section" id="contact" />
+    <full-page
+      ref="fullPage"
+      :options="options"
+      id="fullpage"
+    >
+      <div
+        class="section"
+        id="section1"
+      >
+        <Section1 />
+      </div>
+      <div
+        class="section"
+        id="section2"
+      >
+        <Section2 />
+      </div>
+      <div
+        class="section"
+        id="section3"
+      >
+        <Section3 :showIcon="viewIndex == 3" />
+      </div>
+      <div
+        class="section"
+        id="section4"
+      >
+        <Section4 />
+      </div>
+      <div
+        class="section"
+        id="section5"
+      >
+        <Section5 :showIcon="viewIndex == 5" />
+      </div>
+      <div
+        class="section"
+        id="section6"
+      >
+        <Section6 :showIcon="viewIndex == 6" />
+      </div>
+      <div
+        class="section"
+        id="section7"
+      >
+        <Section7 :showIcon="viewIndex == 7" />
+      </div>
+      <div
+        class="section"
+        id="section8"
+      >
+        <Section8 />
+      </div>
+      <div
+        class="section"
+        id="section9"
+      >
+        <Section9 />
+      </div>
+      <div
+        class="section"
+        id="section10"
+      >
+        <Section10 />
+      </div>
+      <div
+        class="section"
+        id="section11"
+      >
+        <Section11 />
+      </div>
+      <div
+        class="section"
+        id="section12"
+      >
+        <Section12 />
+      </div>
+    </full-page>
+    <ContactSection
+      class="section"
+      id="contact"
+    />
     <MobileNav />
   </div>
 </template>
@@ -100,6 +148,22 @@ export default {
       isSide: true,
       load: true,
       viewIndex: 0,
+      action: {
+        moveTo: () => {},
+      },
+
+      indigatorIndex: 0,
+      options: {
+        menu: '#menu',
+        anchors: [],
+        scrollBar: true,
+        onLeave: this.onLeave,
+        afterLoad: this.afterLoad,
+        continuousHorizontal: true,
+
+        // navigation: true,
+        // sectionsColor: ['#41b883', '#ff5f45', '#0798ec'],
+      },
     }
   },
   created() {
@@ -113,6 +177,10 @@ export default {
 
   mounted() {
     window.addEventListener('scroll', this.onScroll, false)
+    this.action = this.$refs.fullPage.api
+    if (this.isMobile) {
+      this.$refs.fullPage.api.setResponsive(true)
+    }
   },
 
   methods: {
@@ -128,17 +196,40 @@ export default {
         offsetTopArr.push(item.offsetTop)
       })
       // 获取当前文档流的 scrollTop
-      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+      const scrollTop =
+        document.documentElement.scrollTop || document.body.scrollTop
       // 定义当前点亮的导航下标
       let navIndex = 0
       for (let n = 0; n < offsetTopArr.length; n++) {
         // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
         // 那么此时导航索引就应该是n了
-        if (scrollTop >= (offsetTopArr[n] - 100)) {
+        if (scrollTop >= offsetTopArr[n] - 100) {
           navIndex = n
         }
       }
       this.viewIndex = navIndex + 1
+    },
+
+    onLeave(origin, destination, direction) {
+      if (origin.isLast === true && direction === 'up') {
+        console.log('加固')
+        this.$refs.fullPage.api.setResponsive(false)
+      }
+      if (origin.isFirst === true && direction === 'down' && this.isMobile) {
+        this.$refs.fullPage.api.setResponsive(false)
+      }
+
+      if (destination.isFirst === true && direction === 'up' && this.isMobile) {
+        this.$refs.fullPage.api.setResponsive(false)
+      }
+    },
+
+    afterLoad(origin, destination, direction) {
+      this.indigatorIndex = destination.index
+      if (destination.isLast === true && direction === 'down') {
+        console.log('解除')
+        this.$refs.fullPage.api.setResponsive(true)
+      }
     },
   },
 }
