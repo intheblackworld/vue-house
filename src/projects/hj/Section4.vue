@@ -11,6 +11,24 @@
         class="left"
         @slideChangeTransitionStart="slideChanged"
       >
+        <div
+          class="swiper-button-prev"
+          slot="button-prev"
+        >
+          <img
+            src="./all/l.png"
+            alt
+          />
+        </div>
+        <div
+          class="swiper-button-next"
+          slot="button-next"
+        >
+          <img
+            src="./all/r.png"
+            alt
+          />
+        </div>
         <swiper-slide
           v-for="(slide, index) in slideList"
           :index="index"
@@ -23,6 +41,10 @@
           />
           <div v-html="slide.name"></div>
         </swiper-slide>
+        <div
+          class="swiper-pagination"
+          slot="pagination"
+        ></div>
       </swiper>
       <div
         data-aos="fade-left"
@@ -61,6 +83,24 @@
         class="left"
         @slideChangeTransitionStart="slideChanged"
       >
+        <div
+          class="swiper-button-prev"
+          slot="button-prev"
+        >
+          <img
+            src="./all/l.png"
+            alt
+          />
+        </div>
+        <div
+          class="swiper-button-next"
+          slot="button-next"
+        >
+          <img
+            src="./all/r.png"
+            alt
+          />
+        </div>
         <swiper-slide
           v-for="(slide, index) in slideListM"
           :index="index"
@@ -73,6 +113,10 @@
           />
           <div v-html="slide.name"></div>
         </swiper-slide>
+        <div
+          class="swiper-pagination"
+          slot="pagination"
+        ></div>
       </swiper>
       <div class="bottom">
         <div class="m-content">
@@ -109,6 +153,26 @@
 
 .full-bg {
   background-color: #112d81;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: size(50);
+}
+
+.swiper-container {
+  position: absolute;
+  z-index: 2;
+}
+
+.swiper-pagination {
+  transform: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: auto;
+  bottom: -5%;
 }
 
 .left {
@@ -311,6 +375,21 @@
     width: 100%;
     height: auto;
   }
+
+  .swiper-pagination {
+    // transform: none;
+    // width: 100%;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // top: auto;
+    bottom: 5%;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: size-m(20) !important;
+  }
 }
 </style>
 <script>
@@ -340,7 +419,7 @@ export default {
         allowSlideNext: isMobile ? true : true,
         // centeredSlides: true,
         autoplay: {
-          delay: 4000,
+          delay: 400000,
           // disableOnInteraction: true,
         },
         loop: true,
@@ -349,6 +428,10 @@ export default {
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
         },
       },
       slideList: [

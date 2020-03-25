@@ -1,5 +1,5 @@
 <template>
-  <div :class="`loading-bg ${loading ? '' : 'hide'} ${isOpacity ? 'opacity': ''}`">
+  <div :class="`loading-bg ${loading ? '' : 'none'} ${isOpacity ? 'opacity': ''}`">
     <img src="~@/assets/img/loading_b.gif" alt class="loading-icon" />
   </div>
 </template>

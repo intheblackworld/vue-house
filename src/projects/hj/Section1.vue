@@ -48,6 +48,10 @@
             v-scroll-to="{ element: `#contact` }"
           >
         </swiper-slide>
+        <div
+          class="swiper-pagination"
+          slot="pagination"
+        ></div>
       </swiper>
     </div>
     <div v-else>
@@ -89,6 +93,10 @@
             v-scroll-to="{ element: `#contact` }"
           >
         </swiper-slide>
+        <div
+          class="swiper-pagination"
+          slot="pagination"
+        ></div>
       </swiper>
       <img
         src="./s1/mo/t23logo.png"
@@ -101,12 +109,41 @@
     </div>
   </div>
 </template>
+<style lang="scss">
+.swiper-container-vertical > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+  width: 15px;
+  height: 15px;
+  margin: 0 10px;
+  background: rgba(255, 255, 255, 0.8);
+  position: relative;
+  z-index: 2;
+
+  &.swiper-pagination-bullet-active {
+    background: #fff;
+  }
+}
+</style>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .logo {
   position: absolute;
   left: 0;
   height: 100vh;
+}
+
+.swiper-container {
+  position: absolute;
+  z-index: 2;
+}
+
+.swiper-pagination {
+  transform: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: auto;
+  bottom: 10%;
 }
 
 .swiper-fullscreen {
@@ -240,6 +277,10 @@ export default {
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
         },
       },
       slideList: [
