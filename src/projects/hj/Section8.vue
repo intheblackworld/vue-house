@@ -9,7 +9,7 @@
           v-lazy="require('./s8/img.jpg')"
           alt=""
         >
-        <div>※施⼯情境⽰意圖</div>
+        <div>施⼯情境示意圖</div>
       </div>
       <div
         data-aos="fade"
@@ -48,7 +48,7 @@
           v-lazy="require('./s8/mo/img.jpg')"
           alt=""
         >
-        <div>※施⼯情境⽰意圖</div>
+        <div>施⼯情境示意圖</div>
       </div>
       <div class="bottom">
         <div class="m-content">
@@ -102,13 +102,13 @@
   }
   > div {
     position: absolute;
-    font-size: size(14);
-    font-weight: lighter;
+    font-size: size(18);
+    font-weight: bold;
     letter-spacing: 0.09em;
-    bottom: -1.3em;
-    right: 0;
+    bottom: size(20);
+    right: size(20);
     color: #fff;
-    opacity: 0.4;
+    text-shadow: 0 0 2px #000;
   }
 }
 

@@ -9,20 +9,58 @@
           v-lazy="require('./s6/img.jpg')"
           alt=""
         >
-        <div>※捷運交通情境⽰意圖</div>
+        <div>捷運交通情境示意圖</div>
       </div>
-<svg v-if="showIcon" class="timg" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 544.9 474.8" style="enable-background:new 0 0 544.9 474.8;" xml:space="preserve">
-  <path class="st0 an04" d="M399.2,319.5c-41.5,0-75.2,33.6-75.2,75.1s33.6,75.2,75.1,75.2s75.2-33.6,75.2-75.1c0,0,0,0,0,0h70.6"/>
-  <path class="st0 an03" d="M403.5,218.1c41.5,0.5,74.8,34.5,74.3,76c-0.5,40.8-33.5,73.8-74.3,74.3"/>
-  <path class="st0 an02" d="M403.2,105.1c-0.6,0-1.2,0-1.7,0c-41.5,0.5-74.8,34.5-74.3,76s34.5,74.8,76,74.3"/>
-  <path class="st0 an01" d="M0,80.2h327.5c0,0,0,0,0,0c0-41.5,33.7-75.2,75.2-75.2s75.2,33.7,75.2,75.2s-33.7,75.2-75.2,75.2"/>
-  <text transform="matrix(1 0 0 1 374.24 403.6802)" class="st1 st2 st3 st4 an08">BEST</text>
-  <text transform="matrix(1 0 0 1 355.06 427.3301)" class="st1 st2 st3 st4 an08">STATION</text>
-  <text transform="matrix(1 0 0 1 371.38 299.7002)" class="st5 st6 st7 st8 an07">生活</text>
-  <text transform="matrix(1 0 0 1 371.38 194.73)" class="st5 st6 st7 st8 an06">娛樂</text>
-  <text transform="matrix(1 0 0 1 371.38 79.6499)" class="st5 st6 st7 st8 an05">休憩</text>
-</svg>
+      <svg
+        v-if="showIcon"
+        class="timg"
+        version="1.1"
+        id="圖層_1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        viewBox="0 0 544.9 474.8"
+        style="enable-background:new 0 0 544.9 474.8;"
+        xml:space="preserve"
+      >
+        <path
+          class="st0 an04"
+          d="M399.2,319.5c-41.5,0-75.2,33.6-75.2,75.1s33.6,75.2,75.1,75.2s75.2-33.6,75.2-75.1c0,0,0,0,0,0h70.6"
+        />
+        <path
+          class="st0 an03"
+          d="M403.5,218.1c41.5,0.5,74.8,34.5,74.3,76c-0.5,40.8-33.5,73.8-74.3,74.3"
+        />
+        <path
+          class="st0 an02"
+          d="M403.2,105.1c-0.6,0-1.2,0-1.7,0c-41.5,0.5-74.8,34.5-74.3,76s34.5,74.8,76,74.3"
+        />
+        <path
+          class="st0 an01"
+          d="M0,80.2h327.5c0,0,0,0,0,0c0-41.5,33.7-75.2,75.2-75.2s75.2,33.7,75.2,75.2s-33.7,75.2-75.2,75.2"
+        />
+        <text
+          transform="matrix(1 0 0 1 374.24 403.6802)"
+          class="st1 st2 st3 st4 an08"
+        >BEST</text>
+        <text
+          transform="matrix(1 0 0 1 355.06 427.3301)"
+          class="st1 st2 st3 st4 an08"
+        >STATION</text>
+        <text
+          transform="matrix(1 0 0 1 371.38 299.7002)"
+          class="st5 st6 st7 st8 an07"
+        >生活</text>
+        <text
+          transform="matrix(1 0 0 1 371.38 194.73)"
+          class="st5 st6 st7 st8 an06"
+        >娛樂</text>
+        <text
+          transform="matrix(1 0 0 1 371.38 79.6499)"
+          class="st5 st6 st7 st8 an05"
+        >休憩</text>
+      </svg>
       <div class="content">
         <div class="title">
           BEST<br />VACATION
@@ -45,11 +83,11 @@
       class="m-bg"
     >
       <div class="left">
-      <img
-        v-lazy="require('./s6/mo/img.jpg')"
-        alt=""
-      >
-      <div>※捷運交通情境⽰意圖</div>
+        <img
+          v-lazy="require('./s6/mo/img.jpg')"
+          alt=""
+        >
+        <div>捷運交通情境示意圖</div>
       </div>
       <div class="bottom">
         <div class="m-content">
@@ -64,18 +102,56 @@
           </div>
         </div>
       </div>
-<svg v-if="showIcon" class="timg" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 544.9 474.8" style="enable-background:new 0 0 544.9 474.8;" xml:space="preserve">
-  <path class="st0 an04" d="M399.2,319.5c-41.5,0-75.2,33.6-75.2,75.1s33.6,75.2,75.1,75.2s75.2-33.6,75.2-75.1c0,0,0,0,0,0h70.6"/>
-  <path class="st0 an03" d="M403.5,218.1c41.5,0.5,74.8,34.5,74.3,76c-0.5,40.8-33.5,73.8-74.3,74.3"/>
-  <path class="st0 an02" d="M403.2,105.1c-0.6,0-1.2,0-1.7,0c-41.5,0.5-74.8,34.5-74.3,76s34.5,74.8,76,74.3"/>
-  <path class="st0 an01" d="M0,80.2h327.5c0,0,0,0,0,0c0-41.5,33.7-75.2,75.2-75.2s75.2,33.7,75.2,75.2s-33.7,75.2-75.2,75.2"/>
-  <text transform="matrix(1 0 0 1 374.24 403.6802)" class="st1 st2 st3 st4 an08">BEST</text>
-  <text transform="matrix(1 0 0 1 355.06 427.3301)" class="st1 st2 st3 st4 an08">STATION</text>
-  <text transform="matrix(1 0 0 1 371.38 299.7002)" class="st5 st6 st7 st8 an07">生活</text>
-  <text transform="matrix(1 0 0 1 371.38 194.73)" class="st5 st6 st7 st8 an06">娛樂</text>
-  <text transform="matrix(1 0 0 1 371.38 79.6499)" class="st5 st6 st7 st8 an05">休憩</text>
-</svg>
+      <svg
+        v-if="showIcon"
+        class="timg"
+        version="1.1"
+        id="圖層_1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        viewBox="0 0 544.9 474.8"
+        style="enable-background:new 0 0 544.9 474.8;"
+        xml:space="preserve"
+      >
+        <path
+          class="st0 an04"
+          d="M399.2,319.5c-41.5,0-75.2,33.6-75.2,75.1s33.6,75.2,75.1,75.2s75.2-33.6,75.2-75.1c0,0,0,0,0,0h70.6"
+        />
+        <path
+          class="st0 an03"
+          d="M403.5,218.1c41.5,0.5,74.8,34.5,74.3,76c-0.5,40.8-33.5,73.8-74.3,74.3"
+        />
+        <path
+          class="st0 an02"
+          d="M403.2,105.1c-0.6,0-1.2,0-1.7,0c-41.5,0.5-74.8,34.5-74.3,76s34.5,74.8,76,74.3"
+        />
+        <path
+          class="st0 an01"
+          d="M0,80.2h327.5c0,0,0,0,0,0c0-41.5,33.7-75.2,75.2-75.2s75.2,33.7,75.2,75.2s-33.7,75.2-75.2,75.2"
+        />
+        <text
+          transform="matrix(1 0 0 1 374.24 403.6802)"
+          class="st1 st2 st3 st4 an08"
+        >BEST</text>
+        <text
+          transform="matrix(1 0 0 1 355.06 427.3301)"
+          class="st1 st2 st3 st4 an08"
+        >STATION</text>
+        <text
+          transform="matrix(1 0 0 1 371.38 299.7002)"
+          class="st5 st6 st7 st8 an07"
+        >生活</text>
+        <text
+          transform="matrix(1 0 0 1 371.38 194.73)"
+          class="st5 st6 st7 st8 an06"
+        >娛樂</text>
+        <text
+          transform="matrix(1 0 0 1 371.38 79.6499)"
+          class="st5 st6 st7 st8 an05"
+        >休憩</text>
+      </svg>
       <img
         v-lazy="require('./s6/mo/bglogo.png')"
         alt=""
@@ -87,44 +163,89 @@
   </div>
 </template>
 <style lang="scss">
-.section6{
-	.st0{fill:none;stroke:#D33645;stroke-width:10;stroke-miterlimit:10;}
-	.st1{fill:#FFFFFF;}
-	.st2{font-family:'Impact';}
-	.st3{font-size:24.26px;}
-	.st4{letter-spacing:2;}
-	.st5{opacity:0.6;fill:#FFFFFF;enable-background:new    ;}
-	.st6{font-family:"Noto Sans TC", serif;}
-	.st7{font-size:28.45px;}
-	.st8{letter-spacing:4;}
-	.an01{stroke-dasharray:683;
-    stroke-dashoffset:683;
+.section6 {
+  .st0 {
+    fill: none;
+    stroke: #d33645;
+    stroke-width: 10;
+    stroke-miterlimit: 10;
+  }
+  .st1 {
+    fill: #ffffff;
+  }
+  .st2 {
+    font-family: 'Impact';
+  }
+  .st3 {
+    font-size: 24.26px;
+  }
+  .st4 {
+    letter-spacing: 2;
+  }
+  .st5 {
+    opacity: 0.6;
+    fill: #ffffff;
+    enable-background: new;
+  }
+  .st6 {
+    font-family: 'Noto Sans TC', serif;
+  }
+  .st7 {
+    font-size: 28.45px;
+  }
+  .st8 {
+    letter-spacing: 4;
+  }
+  .an01 {
+    stroke-dasharray: 683;
+    stroke-dashoffset: 683;
     animation: an61 1s 1.5s linear forwards;
   }
-	.an02{stroke-dasharray:240;
-    stroke-dashoffset:240;
+  .an02 {
+    stroke-dasharray: 240;
+    stroke-dashoffset: 240;
     animation: an61 0.5s 2s linear forwards;
   }
-	.an03{stroke-dasharray:240;
-    stroke-dashoffset:240;
+  .an03 {
+    stroke-dasharray: 240;
+    stroke-dashoffset: 240;
     animation: an61 0.5s 2.5s linear forwards;
   }
-	.an04{stroke-dasharray:425;
-    stroke-dashoffset:425;
+  .an04 {
+    stroke-dasharray: 425;
+    stroke-dashoffset: 425;
     animation: an61 0.5s 3s linear forwards;
   }
-  .an05{opacity:0;animation: an62 0.5s 1.5s linear forwards;}
-  .an06{opacity:0;animation: an62 0.5s 2s linear forwards;}
-  .an07{opacity:0;animation: an62 0.5s 2.5s linear forwards;}
-  .an08{opacity:0;animation: an63 0.5s 3s linear forwards;}
+  .an05 {
+    opacity: 0;
+    animation: an62 0.5s 1.5s linear forwards;
+  }
+  .an06 {
+    opacity: 0;
+    animation: an62 0.5s 2s linear forwards;
+  }
+  .an07 {
+    opacity: 0;
+    animation: an62 0.5s 2.5s linear forwards;
+  }
+  .an08 {
+    opacity: 0;
+    animation: an63 0.5s 3s linear forwards;
+  }
   @keyframes an61 {
-  to { stroke-dashoffset: 0;}
+    to {
+      stroke-dashoffset: 0;
+    }
   }
   @keyframes an62 {
-  to{opacity:0.6;}
+    to {
+      opacity: 0.6;
+    }
   }
   @keyframes an63 {
-  to{opacity:1;}
+    to {
+      opacity: 1;
+    }
   }
 }
 </style>
@@ -134,24 +255,30 @@
 .full-bg {
   background-color: #112d81;
 }
-.left{
-  width:50%;
+.left {
+  width: 50%;
   height: size(889);
   left: 0;
   margin: 0 auto;
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
-  img{
-   width: 100%;
-   height: 100%;
-   object-fit: cover; 
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
->div{
-  position: absolute;font-size: size(14);font-weight: lighter;
-  letter-spacing: 0.09em;
-  bottom:-1.3em;right:0;color: #FFF;opacity: 0.4;}
+  > div {
+    position: absolute;
+    font-size: size(18);
+    font-weight: bold;
+    letter-spacing: 0.09em;
+    bottom: size(20);
+    right: size(20);
+    color: #fff;
+    text-shadow: 0 0 2px #000;
   }
+}
 
 .right-img {
   width: auto;
@@ -220,7 +347,7 @@
   font-style: normal;
   line-height: 1.7;
   letter-spacing: 0.09em;
-  text-align:justify;
+  text-align: justify;
   color: #ffffff;
 }
 
@@ -230,12 +357,13 @@
   height: 100vh;
   right: 5%;
 }
-.timg{width:size(550);
+.timg {
+  width: size(550);
   position: absolute;
   top: size(280);
-  left:50%;
+  left: 50%;
   margin: 0 0 0 size(335);
-  }
+}
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
@@ -265,17 +393,18 @@
     position: absolute;
     z-index: 1;
   }
-.left{
-  width: size-m(330);
-  height: auto;
-  position: relative;
-  top: 0;
-  transform: translate(0, 0);
-  img{
-   height: auto;
-  }
->div{
-  font-size:size-m(12);}
+  .left {
+    width: size-m(330);
+    height: auto;
+    position: relative;
+    top: 0;
+    transform: translate(0, 0);
+    img {
+      height: auto;
+    }
+    > div {
+      font-size: size-m(12);
+    }
   }
   .bottom {
     width: size-m(330);
@@ -319,11 +448,12 @@
     left: 0;
     transform: none;
   }
-.timg{width:size-m(230);
-  position: absolute;
-  top: size-m(385);
-  left:34%;
-  margin: 0;
+  .timg {
+    width: size-m(230);
+    position: absolute;
+    top: size-m(385);
+    left: 34%;
+    margin: 0;
   }
 }
 </style>

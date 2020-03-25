@@ -14,7 +14,7 @@
           alt=""
           class="left-img"
         >
-        <div>※捷運交通情境⽰意圖</div>
+        <div>捷運交通情境示意圖</div>
       </div>
       <div
         data-aos="fade"
@@ -49,16 +49,16 @@
       class="m-bg"
     >
       <div class="left">
-      <img
-        v-lazy="require('./s2/mo/img.jpg')"
-        alt=""
-      >
-      <img
-        v-lazy="require('./s2/mo/imgtopright.png')"
-        alt=""
-        class="left-img"
-      >
-      <div>※捷運交通情境⽰意圖</div>
+        <img
+          v-lazy="require('./s2/mo/img.jpg')"
+          alt=""
+        >
+        <img
+          v-lazy="require('./s2/mo/imgtopright.png')"
+          alt=""
+          class="left-img"
+        >
+        <div>捷運交通情境示意圖</div>
       </div>
       <div class="bottom">
         <div class="m-content">
@@ -99,27 +99,37 @@
   left: 0;
   height: 100vh;
 }
-.left{
-  width:50%;
+.left {
+  width: 50%;
   height: size(889);
   left: 0;
   margin: 0 auto;
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
-  img{
-   width: 100%;
-   height: 100%;
-   object-fit: cover; 
-  &.left-img{width:size(249);height: auto;
-  position: absolute;
-  top: 0;right:0;}
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    &.left-img {
+      width: size(249);
+      height: auto;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   }
->div{
-  position: absolute;font-size: size(14);font-weight: lighter;
-  letter-spacing: 0.09em;
-  bottom:-1.3em;right:0;color: #FFF;opacity: 0.4;}
+  > div {
+    position: absolute;
+    font-size: size(18);
+    font-weight: bold;
+    letter-spacing: 0.09em;
+    bottom: size(20);
+    right: size(20);
+    color: #fff;
+    text-shadow: 0 0 2px #000;
   }
+}
 
 .right-img {
   width: auto;
@@ -230,18 +240,21 @@
     position: absolute;
     z-index: 1;
   }
-.left{
+  .left {
     width: size-m(330);
-  height: auto;
-  position: relative;
-  top: 0;
-  transform: translate(0, 0);
-  img{
-   height: auto;
-  &.left-img{width:size-m(87);}
-  }
->div{
-  font-size:size-m(12);}
+    height: auto;
+    position: relative;
+    top: 0;
+    transform: translate(0, 0);
+    img {
+      height: auto;
+      &.left-img {
+        width: size-m(87);
+      }
+    }
+    > div {
+      font-size: size-m(12);
+    }
   }
   .bottom {
     width: size-m(330);

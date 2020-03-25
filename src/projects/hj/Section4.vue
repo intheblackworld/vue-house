@@ -21,7 +21,7 @@
             :src="slide.img"
             :class="`item-img`"
           />
-        <div v-html="slide.name"></div>
+          <div v-html="slide.name"></div>
         </swiper-slide>
       </swiper>
       <div
@@ -71,7 +71,7 @@
             :src="slide.img"
             :class="`item-img`"
           />
-        <div v-html="slide.name"></div>
+          <div v-html="slide.name"></div>
         </swiper-slide>
       </swiper>
       <div class="bottom">
@@ -111,26 +111,30 @@
   background-color: #112d81;
 }
 
-
-.left{
-  width:50%;
+.left {
+  width: 50%;
   height: size(889);
   left: 0;
   margin: 0 auto;
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
-  img{
-   width: 100%;
-   height: 100%;
-   object-fit: cover; 
-  + div{
-  position: absolute;font-size: size(14);font-weight: lighter;
-  letter-spacing: 0.09em;
-  bottom:-1.3em;right:0;color: #FFF;opacity: 0.4;}
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    + div {
+      position: absolute;
+      font-size: size(18);
+      font-weight: bold;
+      letter-spacing: 0.09em;
+      bottom: size(20);
+      right: size(20);
+      color: #fff;
+      text-shadow: 0 0 2px #000;
+    }
   }
-  }
-
+}
 
 .right-img {
   width: auto;
@@ -199,7 +203,7 @@
   font-style: normal;
   line-height: 1.7;
   letter-spacing: 0.09em;
-  text-align:justify;
+  text-align: justify;
   color: #ffffff;
 }
 
@@ -212,11 +216,15 @@
   margin: 0 auto;
   transform: translateX(75%);
 }
-.swiper-container{
-  overflow:initial;
+.swiper-container {
+  overflow: initial;
 }
-.swiper-slide{overflow: hidden;}
-.swiper-slide-active{overflow:initial;}
+.swiper-slide {
+  overflow: hidden;
+}
+.swiper-slide-active {
+  overflow: initial;
+}
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
     height: 100vh;
@@ -245,17 +253,18 @@
     position: absolute;
     z-index: 1;
   }
-.left{
-  width: size-m(330);
-  height: auto;
-  position: relative;
-  top: 0;
-  transform: translate(0, 0);
-  img{
-   height: auto;
-  + div{
-  font-size:size-m(12);}
-  }
+  .left {
+    width: size-m(330);
+    height: auto;
+    position: relative;
+    top: 0;
+    transform: translate(0, 0);
+    img {
+      height: auto;
+      + div {
+        font-size: size-m(12);
+      }
+    }
   }
   .bottom {
     width: size-m(330);
@@ -345,29 +354,29 @@ export default {
       slideList: [
         {
           img: require('./s4/img1.jpg'),
-          name: '※中正紀念堂',
+          name: '中正紀念堂',
         },
         {
           img: require('./s4/img2.jpg'),
-          name: '※公園示意圖',
+          name: '公園示意圖',
         },
         {
           img: require('./s4/img3.jpg'),
-          name: '※台灣⼤學',
+          name: '台灣⼤學',
         },
       ],
       slideListM: [
         {
           img: require('./s4/mo/img1.jpg'),
-          name: '※中正紀念堂',
+          name: '中正紀念堂',
         },
         {
           img: require('./s4/mo/img2.jpg'),
-          name: '※公園示意圖',
+          name: '公園示意圖',
         },
         {
           img: require('./s4/mo/img3.jpg'),
-          name: '※台灣⼤學',
+          name: '台灣⼤學',
         },
       ],
     }

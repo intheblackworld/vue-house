@@ -11,13 +11,30 @@
         >
         <div>仁愛翡翠</div>
       </div>
-<svg v-if="showIcon" class="timg" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 149.5 261.4" style="enable-background:new 0 0 149.5 261.4;" xml:space="preserve">
-<polyline class="st0 an01" points="129.9,5 5.1,5 5.1,256.4 48,256.4 48,185.8 73.6,185.8 73.6,144.9 48,144.9 48,47.9 124.9,47.9 
-	124.9,5 "/>
-<polyline class="st0 an02" points="70.4,256.4 144.5,256.4 144.5,77.7 78.7,77.7 78.7,120.6 101.6,120.6 101.6,215.4 75.4,215.4 
-	75.4,256.4 "/>
-</svg>
+      <svg
+        v-if="showIcon"
+        class="timg"
+        version="1.1"
+        id="圖層_1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        viewBox="0 0 149.5 261.4"
+        style="enable-background:new 0 0 149.5 261.4;"
+        xml:space="preserve"
+      >
+        <polyline
+          class="st0 an01"
+          points="129.9,5 5.1,5 5.1,256.4 48,256.4 48,185.8 73.6,185.8 73.6,144.9 48,144.9 48,47.9 124.9,47.9 
+	124.9,5 "
+        />
+        <polyline
+          class="st0 an02"
+          points="70.4,256.4 144.5,256.4 144.5,77.7 78.7,77.7 78.7,120.6 101.6,120.6 101.6,215.4 75.4,215.4 
+	75.4,256.4 "
+        />
+      </svg>
       <div class="content">
         <div class="title">
           BEST<span>永泰祥機構</span><br />ARCHITECTURE
@@ -41,11 +58,11 @@
       class="m-bg"
     >
       <div class="left">
-      <img
-        v-lazy="require('./s7/mo/img.jpg')"
-        alt=""
-      >
-      <div>仁愛翡翠</div>
+        <img
+          v-lazy="require('./s7/mo/img.jpg')"
+          alt=""
+        >
+        <div>仁愛翡翠</div>
       </div>
       <div class="bottom">
         <div class="m-content">
@@ -60,13 +77,30 @@
           </div>
         </div>
       </div>
-<svg v-if="showIcon" class="timg" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 149.5 261.4" style="enable-background:new 0 0 149.5 261.4;" xml:space="preserve">
-<polygon class="st0" points="124.9,47.9 124.9,5 5.1,5 5.1,144.9 5,144.9 5,185.8 5.1,185.8 5.1,255.5 48,255.5 48,185.8 
-	73.6,185.8 73.6,144.9 48,144.9 48,47.9 "/>
-<polygon class="st0" points="78.7,77.7 78.7,120.6 101.6,120.6 101.6,215.4 75.4,215.4 75.4,256.3 101.6,256.3 101.6,256.4 
-	144.5,256.4 144.5,77.7 "/>
-</svg>
+      <svg
+        v-if="showIcon"
+        class="timg"
+        version="1.1"
+        id="圖層_1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        viewBox="0 0 149.5 261.4"
+        style="enable-background:new 0 0 149.5 261.4;"
+        xml:space="preserve"
+      >
+        <polygon
+          class="st0"
+          points="124.9,47.9 124.9,5 5.1,5 5.1,144.9 5,144.9 5,185.8 5.1,185.8 5.1,255.5 48,255.5 48,185.8 
+	73.6,185.8 73.6,144.9 48,144.9 48,47.9 "
+        />
+        <polygon
+          class="st0"
+          points="78.7,77.7 78.7,120.6 101.6,120.6 101.6,215.4 75.4,215.4 75.4,256.3 101.6,256.3 101.6,256.4 
+	144.5,256.4 144.5,77.7 "
+        />
+      </svg>
       <img
         v-lazy="require('./s7/mo/bglogo.png')"
         alt=""
@@ -78,18 +112,27 @@
   </div>
 </template>
 <style lang="scss">
-.section7{
-	.st0{fill:none;stroke:#D33645;stroke-width:10;stroke-miterlimit:10;}
-	.an01{stroke-dasharray:810;
-    stroke-dashoffset:810;
-   animation: an71 1.5s 1.5s linear forwards;
+.section7 {
+  .st0 {
+    fill: none;
+    stroke: #d33645;
+    stroke-width: 10;
+    stroke-miterlimit: 10;
   }
-	.an02{stroke-dasharray:550;
-    stroke-dashoffset:550;
-  animation: an71 1s 1.5s linear forwards;
+  .an01 {
+    stroke-dasharray: 810;
+    stroke-dashoffset: 810;
+    animation: an71 1.5s 1.5s linear forwards;
+  }
+  .an02 {
+    stroke-dasharray: 550;
+    stroke-dashoffset: 550;
+    animation: an71 1s 1.5s linear forwards;
   }
   @keyframes an71 {
-  to { stroke-dashoffset: 0;}
+    to {
+      stroke-dashoffset: 0;
+    }
   }
 }
 </style>
@@ -100,24 +143,31 @@
   background-color: #112d81;
 }
 
-.left{
-  width:auto;
-  height:100vh;
+.left {
+  width: auto;
+  height: 100vh;
   right: 50%;
   margin: 0 auto;
   position: absolute;
   top: 50%;
-  transform: translate(0, -50%);font-size: size(14);
-  img{
-   width: auto;
-   height:calc(100% - 1.8em);
-   object-fit: cover; 
+  transform: translate(0, -50%);
+  font-size: size(14);
+  img {
+    width: auto;
+    height: calc(100% - 1.8em);
+    object-fit: cover;
   }
->div{
-  position: absolute;font-size: size(14);font-weight: lighter;
-  letter-spacing: 0.09em;
-  bottom:0.5em;right:0;color: #FFF;opacity: 0.4;}
+  > div {
+    position: absolute;
+    font-size: size(18);
+    font-weight: bold;
+    letter-spacing: 0.09em;
+    bottom: size(40);
+    right: size(20);
+    color: #fff;
+    text-shadow: 0 0 2px #000;
   }
+}
 
 .right-img {
   width: auto;
@@ -200,7 +250,7 @@
   font-style: normal;
   line-height: 1.7;
   letter-spacing: 0.09em;
-  text-align:justify;
+  text-align: justify;
   color: #ffffff;
 }
 
@@ -211,12 +261,13 @@
   right: 5%;
 }
 
-.timg{width:size(150);
+.timg {
+  width: size(150);
   position: absolute;
   top: size(560);
-  left:50%;
+  left: 50%;
   margin: 0 0 0 size(680);
-  }
+}
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
     height: 100vh;
@@ -245,19 +296,21 @@
     position: absolute;
     z-index: 1;
   }
-.left{
-  width: size-m(330);
-  height: auto;
-  position: relative;
-  top: 0;
-  left: 0;
-  transform: translate(0, 0);
-  img{
-    width: 100%;
-   height: auto;
-  }
->div{
-  font-size:size-m(12);bottom:-1.3em;}
+  .left {
+    width: size-m(330);
+    height: auto;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    img {
+      width: 100%;
+      height: auto;
+    }
+    > div {
+      font-size: size-m(12);
+      bottom: size-m(10);
+    }
   }
   .bottom {
     width: size-m(330);
@@ -305,11 +358,12 @@
     left: 0;
     transform: none;
   }
-.timg{width:size-m(60);
-  position: absolute;
-  top: size-m(505);
-  left:72%;
-  margin: 0;
+  .timg {
+    width: size-m(60);
+    position: absolute;
+    top: size-m(505);
+    left: 72%;
+    margin: 0;
   }
 }
 </style>
