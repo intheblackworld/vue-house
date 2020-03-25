@@ -101,6 +101,7 @@
 <script>
 // @ is an alias to /src
 // import Navigation from '@/layouts/Navigation.vue'
+import { isMobile } from '@/utils'
 import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
@@ -145,6 +146,7 @@ export default {
 
   data() {
     return {
+      isMobile,
       isSide: true,
       load: true,
       viewIndex: 0,
@@ -178,9 +180,9 @@ export default {
   mounted() {
     window.addEventListener('scroll', this.onScroll, false)
     this.action = this.$refs.fullPage.api
-    if (this.isMobile) {
-      this.$refs.fullPage.api.setResponsive(true)
-    }
+    // if (this.isMobile) {
+    //   this.$refs.fullPage.api.setResponsive(true)
+    // }
   },
 
   methods: {

@@ -4,7 +4,6 @@
       v-if="!isMobile"
       class="full-bg"
     >
-
       <swiper
         :options="swiperOption"
         ref="mySwiper"
@@ -419,7 +418,7 @@ export default {
         allowSlideNext: isMobile ? true : true,
         // centeredSlides: true,
         autoplay: {
-          delay: 400000,
+          delay: 4000,
           // disableOnInteraction: true,
         },
         loop: true,
