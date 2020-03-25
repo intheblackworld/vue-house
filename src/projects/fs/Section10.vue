@@ -138,6 +138,11 @@
   bottom: size(10);
 }
 
+.swiper-slide {
+  background: url('./s10/swiper_bg.png');
+  background-size: cover;
+}
+
 // begin
 .slide-fade-leave-to
 /* .slide-fade-leave-active for below version 2.1.8 */ {
