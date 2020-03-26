@@ -258,7 +258,7 @@ export default {
   background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%;
-  transform: translateY(0);
+  // transform: translateY(0);
   margin: 3vw auto -3vw;
   .order-top{
     position: relative;overflow:hidden
