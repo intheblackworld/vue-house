@@ -110,9 +110,8 @@
 }
 
 @media screen and (max-width: 767px) {
-  .bg {
-    // height: size_m(1161);
-  }
+  .full-bg{height: 100vh;}
+  .full-img{height:100%;}
   .logo {
     width: size-m(185);
     top: size-m(240);

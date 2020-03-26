@@ -457,26 +457,20 @@
 @media screen and (max-width: 767px) {
   .m-bg {
     background-color: #112d81;
-    height: size-m(716);
+    height:100vh;
     position: relative;
-  }
-  .logo {
-    width: size-m(185);
-    top: size-m(240);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    position: absolute;
-    z-index: 1;
   }
   .left {
     width: size-m(330);
-    height: auto;
+    height:calc(100vh - 63px - 100vw * 650 / 750 );
     position: relative;
     top: 0;
     transform: translate(0, 0);
     img {
-      height: auto;
+      height: 100%;
+      &.left-img {
+        width: size-m(87);
+      }
     }
     > div {
       font-size: size-m(12);
@@ -484,7 +478,7 @@
   }
   .bottom {
     width: size-m(330);
-    margin: size-m(40) auto;
+    margin: size-m(30) auto;
     display: flex;
     position: relative;
   }
@@ -512,13 +506,12 @@
   .desc {
     font-size: size-m(12);
   }
-
   .logo {
     width: 100vw;
     height: auto;
     position: absolute;
     top: auto;
-    bottom: 0;
+    bottom: 63px;
     right: auto;
     left: 0;
     transform: none;
@@ -526,7 +519,8 @@
   .timg {
     width: size-m(150);
     position: absolute;
-    top: size-m(389);
+    top:auto;
+    bottom:calc(63px + 43vw);
     left: 53.2%;
     margin: 0;
   }

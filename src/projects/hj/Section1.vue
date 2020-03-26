@@ -186,27 +186,23 @@
   .bg {
     // height: size_m(1161);
   }
+  .full-bg{height: 100vh;}
+  .full-img{height:100%;}
   .logo {
-    width: size-m(185);
-    top: size-m(240);
+    width: 80%;
+    bottom: 63px;
+    top: auto;
     left: 0;
-    right: 0;
+    right: auto;
     margin: 0 auto;
     position: absolute;
     z-index: 1;
-  }
-  .full-img {
-    // &:nth-child(1) {
-    //   position: absolute;
-    //   z-index: 2;
-    //   // mix-blend-mode: screen;
-    //   // opacity: 0;
-    // }
+    height: auto;
   }
 
   .swiper-fullscreen {
     width: auto;
-    height: calc(100vh - 63px);
+    height:100%;/* calc(100vh - 63px)*/
     img {
       width: auto;
       height: 100%;
@@ -229,15 +225,6 @@
     left: 0;
     right: 0;
     transform: none;
-  }
-
-  .logo {
-    position: absolute;
-    width: 100vw;
-    left: 0;
-    top: auto;
-    height: auto;
-    bottom: 0px;
   }
 }
 </style>

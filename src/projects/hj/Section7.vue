@@ -371,28 +371,19 @@
 @media screen and (max-width: 767px) {
   .m-bg {
     background-color: #112d81;
-    height: size-m(667);
+    height:100vh;
     position: relative;
-  }
-  .logo {
-    width: size-m(185);
-    top: size-m(240);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    position: absolute;
-    z-index: 1;
   }
 .swiper-container {
     width: size-m(330);
-    height: auto;
+    height:calc(100vh - 63px - 100vw * 615 / 750 );
     position: relative;
     top: 0;
     left: 0;
     transform: translate(0, 0);
     img {
       width: 100%;
-      height: auto;
+      height: 100%;
     + div {
       font-size: size-m(12);
       bottom: size-m(10);
@@ -440,7 +431,7 @@
     height: auto;
     position: absolute;
     top: auto;
-    bottom: 0;
+    bottom: 63px;
     right: auto;
     left: 0;
     transform: none;
@@ -448,7 +439,8 @@
   .timg {
     width: size-m(60);
     position: absolute;
-    top: size-m(505);
+    top:auto;
+    bottom:calc(63px + 19vw);
     left: 72%;
     margin: 0;
   }

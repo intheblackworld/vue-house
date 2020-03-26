@@ -304,7 +304,7 @@
 @media screen and (max-width: 767px) {
   .m-bg {
     background-color: #112d81;
-    height: size-m(706);
+    height:100vh;
     position: relative;
   }
   .logo {
@@ -318,20 +318,23 @@
   }
   .left {
     width: size-m(330);
-    height: auto;
+    height:calc(100vh - 63px - 100vw * 670 / 750 );
     position: relative;
     top: 0;
     transform: translate(0, 0);
     img {
-      height: auto;
-      + div {
-        font-size: size-m(12);
+      height: 100%;
+      &.left-img {
+        width: size-m(87);
       }
+    }
+    > div {
+      font-size: size-m(12);
     }
   }
   .bottom {
     width: size-m(330);
-    margin: size-m(40) auto;
+    margin: size-m(35) auto size-m(80) auto;
     display: flex;
     position: relative;
   }
@@ -364,7 +367,7 @@
     height: auto;
     position: absolute;
     top: auto;
-    bottom: 0;
+    bottom: 63px;
     right: auto;
     left: 0;
     transform: none;

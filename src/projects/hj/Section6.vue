@@ -98,7 +98,7 @@
             把各種美好串連在一起
           </div>
           <div class="desc">
-            搭捷運去旅行，從兩廳院到大安森林公園、新板特區到台大校園。你想得到的，都有
+            搭捷運去旅行，從兩廳院到大安森林公園、新板特區到台大校園。你想得到的，都有。
           </div>
         </div>
       </div>
@@ -381,26 +381,20 @@
 @media screen and (max-width: 767px) {
   .m-bg {
     background-color: #112d81;
-    height: size-m(667);
+    height:100vh;
     position: relative;
-  }
-  .logo {
-    width: size-m(185);
-    top: size-m(240);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    position: absolute;
-    z-index: 1;
   }
   .left {
     width: size-m(330);
-    height: auto;
+    height:calc(100vh - 63px - 100vw * 600 / 750 );
     position: relative;
     top: 0;
     transform: translate(0, 0);
     img {
-      height: auto;
+      height: 100%;
+      &.left-img {
+        width: size-m(87);
+      }
     }
     > div {
       font-size: size-m(12);
@@ -443,7 +437,7 @@
     height: auto;
     position: absolute;
     top: auto;
-    bottom: 0;
+    bottom: 63px;
     right: auto;
     left: 0;
     transform: none;
@@ -451,7 +445,8 @@
   .timg {
     width: size-m(230);
     position: absolute;
-    top: size-m(385);
+    top:auto;
+    bottom:calc(63px + 21vw);
     left: 34%;
     margin: 0;
   }
