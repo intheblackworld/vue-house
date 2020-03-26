@@ -44,7 +44,7 @@
             <img class="js-parallax" src="./s1/flag_2.png" alt="敦南好好 就愛市中心首購住大安" />
         </div>
       </div>
-      <div class="scroll-down" v-scroll-to="{ element: `#section2`, offset: offset }">
+      <div class="scroll-down" v-scroll-to="{ element: `#section2` }">
         <div class="scroll-text">scroll down</div>
         <img src="./s1/arrow-down.png" alt class="after" />
       </div>
