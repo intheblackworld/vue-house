@@ -9,8 +9,8 @@
       <div>
         <img src="./s7/7-2.jpg" alt="MLD" class="img2">
         <p>MLD</p>
-        <img src="./s7/7-3.jpg" alt="晶綺酒店" class="img3">
-        <p>晶綺酒店</p>
+        <img src="./s7/7-3.jpg" alt="晶綺盛宴" class="img3">
+        <p>晶綺盛宴</p>
       </div>
       </div>
          <h2 class="text"><span>上市櫃多角化經營</span><span>打造夢想生活藍圖</span></h2>
