@@ -62,7 +62,7 @@
   font-size: size(14);
   img {
     width: auto;
-    height: calc(100% - 1.8em);
+    height:100%;
     object-fit: cover;
   }
   > div {
