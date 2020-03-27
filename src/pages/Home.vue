@@ -34,7 +34,7 @@
         class="section"
         id="section4"
       >
-        <Section4 />
+        <Section4 :showSlide="viewIndex === 4" />
       </div>
       <div
         class="section"
@@ -52,7 +52,7 @@
         class="section"
         id="section7"
       >
-        <Section7 :showIcon="viewIndex == 7" />
+        <Section7 :showIcon="viewIndex == 7" :showSlide="viewIndex === 7" />
       </div>
       <div
         class="section"

@@ -18,6 +18,10 @@ body {
   *::-webkit-scrollbar {
     // display: none;
   }
+
+  * {
+    outline: none !important;
+  }
 }
 
 #app {

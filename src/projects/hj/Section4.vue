@@ -8,6 +8,7 @@
         :options="swiperOption"
         ref="mySwiper"
         class="left"
+        v-if="showSlide"
         @slideChangeTransitionStart="slideChanged"
       >
         <div
@@ -402,6 +403,7 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
   name: 'section1',
   mixins: [slider],
+  props: ['showSlide'],
 
   components: {
     swiper,
