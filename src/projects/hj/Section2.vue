@@ -171,11 +171,11 @@
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 0.99;
-  letter-spacing: 6.67px;
+  line-height: 1;
+  letter-spacing: 0.06em;
   text-align: left;
   color: #db364a;
-  margin-bottom: size(30);
+  margin-bottom:0.14em;
 }
 
 .subtitle {
@@ -183,12 +183,12 @@
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.04;
-  letter-spacing: 5.67px;
+  line-height: 1.6;
+  letter-spacing: 0.16em;
   text-align: left;
   color: #db364a;
   white-space: nowrap;
-  margin-bottom: size(30);
+  margin-bottom: 0.6em;
 }
 
 .desc {
@@ -221,33 +221,21 @@
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .bg {
-  }
 }
 
 @media screen and (max-width: 767px) {
   .m-bg {
     background-color: #112d81;
-    height: size-m(706);
-    position: relative;
-  }
-  .logo {
-    width: size-m(185);
-    top: size-m(240);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    position: absolute;
-    z-index: 1;
+    position: relative;overflow: hidden;
   }
   .left {
     width: size-m(330);
-    height: auto;
+    height:auto;
     position: relative;
     top: 0;
     transform: translate(0, 0);
     img {
-      height: auto;
+      height: 100%;
       &.left-img {
         width: size-m(87);
       }
@@ -258,7 +246,7 @@
   }
   .bottom {
     width: size-m(330);
-    margin: size-m(40) auto;
+    margin: size-m(30) auto size-m(110) auto;
     display: flex;
     position: relative;
   }
@@ -267,7 +255,7 @@
     width: 100vw;
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom:0;
   }
 
   .m-content {
@@ -276,7 +264,6 @@
 
   .title {
     font-size: size-m(47);
-    letter-spacing: 2.23px;
   }
 
   .subtitle {

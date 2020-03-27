@@ -113,10 +113,10 @@
           />
           <div v-html="slide.name"></div>
         </swiper-slide>
-        <div
+        <!-- div
           class="swiper-pagination"
           slot="pagination"
-        ></div>
+        ></div -->
       </swiper>
       <div class="bottom">
         <div class="m-content">
@@ -153,11 +153,6 @@
 
 .full-bg {
   background-color: #112d81;
-}
-
-.swiper-button-prev,
-.swiper-button-next {
-  width: size(50);
 }
 
 .swiper-container {
@@ -209,6 +204,16 @@
   position: absolute;
   transform: translateX(50%);
 }
+.swiper-button-prev,
+.swiper-button-next {
+  border: 0px none #0000 !important;
+  width: size(50);
+  height: 100%;top: 0;padding: 0 size(10);display: flex;margin: 0;
+  img{object-fit: contain;height: auto;}
+}
+
+.swiper-button-prev {left:0;}
+.swiper-button-next {right:0;}
 
 .swiper-fullscreen {
   width: auto;
@@ -240,11 +245,11 @@
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 0.99;
-  letter-spacing: 6.67px;
+  line-height: 1;
+  letter-spacing: 0.06em;
   text-align: left;
   color: #db364a;
-  margin-bottom: size(30);
+  margin-bottom:0.14em;
 }
 
 .subtitle {
@@ -252,12 +257,12 @@
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.04;
-  letter-spacing: 5.67px;
+  line-height: 1.6;
+  letter-spacing: 0.16em;
   text-align: left;
   color: #db364a;
   white-space: nowrap;
-  margin-bottom: size(30);
+  margin-bottom: 0.6em;
 }
 
 .desc {
@@ -281,7 +286,7 @@
   transform: translateX(75%);
 }
 .swiper-container {
-  overflow: initial;
+  overflow:hidden;
 }
 .swiper-slide {
   overflow: hidden;
@@ -305,43 +310,46 @@
 @media screen and (max-width: 767px) {
   .m-bg {
     background-color: #112d81;
-    height: size-m(706);
-    position: relative;
-  }
-  .logo {
-    width: size-m(185);
-    top: size-m(240);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    position: absolute;
-    z-index: 1;
+    position: relative;overflow: hidden;
   }
   .left {
     width: size-m(330);
-    height: auto;
+    height:auto;
     position: relative;
     top: 0;
     transform: translate(0, 0);
     img {
-      height: auto;
-      + div {
-        font-size: size-m(12);
+      height: 100%;
+      &.left-img {
+        width: size-m(87);
       }
+    }
+    > div {
+      font-size: size-m(12);
     }
   }
   .bottom {
     width: size-m(330);
-    margin: size-m(40) auto;
+    margin: size-m(30) auto size-m(90) auto;
     display: flex;
     position: relative;
   }
+
+
+.swiper-fullscreen {
+  width: auto;
+  height: 100vh;
+  img {
+    width: auto;
+    height: 100%;
+  }
+}
 
   .m-img {
     width: 100vw;
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 0;z-index: 2;
   }
   .m-content {
     width: size-m(145);
@@ -349,7 +357,6 @@
 
   .title {
     font-size: size-m(47);
-    letter-spacing: 2.23px;
   }
 
   .subtitle {
@@ -386,10 +393,11 @@
     bottom: 5%;
   }
 
-  .swiper-button-prev,
-  .swiper-button-next {
-    width: size-m(20) !important;
-  }
+.swiper-button-prev,
+.swiper-button-next {
+  width: size-m(30);
+  padding:0 size-m(5);cursor: none;
+}
 }
 </style>
 <script>

@@ -396,11 +396,11 @@
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 0.99;
-  letter-spacing: 6.67px;
+  line-height: 1;
+  letter-spacing: 0.06em;
   text-align: left;
   color: #db364a;
-  margin-bottom: size(30);
+  margin-bottom:0.14em;
 }
 
 .subtitle {
@@ -408,12 +408,12 @@
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.04;
-  letter-spacing: 5.67px;
+  line-height: 1.6;
+  letter-spacing: 0.16em;
   text-align: left;
   color: #db364a;
   white-space: nowrap;
-  margin-bottom: size(80);
+  margin-bottom: 1.6em;
 }
 
 .desc {
@@ -457,26 +457,19 @@
 @media screen and (max-width: 767px) {
   .m-bg {
     background-color: #112d81;
-    height: size-m(716);
-    position: relative;
-  }
-  .logo {
-    width: size-m(185);
-    top: size-m(240);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    position: absolute;
-    z-index: 1;
+    position: relative;overflow: hidden;
   }
   .left {
     width: size-m(330);
-    height: auto;
+    height:auto;
     position: relative;
     top: 0;
     transform: translate(0, 0);
     img {
-      height: auto;
+      height: 100%;
+      &.left-img {
+        width: size-m(87);
+      }
     }
     > div {
       font-size: size-m(12);
@@ -484,7 +477,7 @@
   }
   .bottom {
     width: size-m(330);
-    margin: size-m(40) auto;
+    margin: size-m(30) auto size-m(90) auto;
     display: flex;
     position: relative;
   }
@@ -501,18 +494,15 @@
 
   .title {
     font-size: size-m(47);
-    letter-spacing: 2.23px;
   }
 
   .subtitle {
     font-size: size-m(15);
-    margin-bottom: size-m(20);
   }
 
   .desc {
     font-size: size-m(12);
   }
-
   .logo {
     width: 100vw;
     height: auto;
@@ -526,7 +516,7 @@
   .timg {
     width: size-m(150);
     position: absolute;
-    top: size-m(389);
+    top:size-m(380);
     left: 53.2%;
     margin: 0;
   }

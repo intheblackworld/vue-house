@@ -40,13 +40,16 @@
             :src="slide.img"
             :class="`item-img`"
           />
-          <img
+          <!-- img
             src="./s1/t3button.png"
             alt=""
             class="item-img btn"
             v-show="slideIndex === 2"
             v-scroll-to="{ element: `#contact` }"
-          >
+           -->
+          <div class="btn"
+            v-show="slideIndex === 2"
+            v-scroll-to="{ element: `#contact` }"><span>預約鑑賞</span></div>
         </swiper-slide>
         <div
           class="swiper-pagination"
@@ -93,10 +96,10 @@
             v-scroll-to="{ element: `#contact` }"
           >
         </swiper-slide>
-        <div
+        <!-- div
           class="swiper-pagination"
           slot="pagination"
-        ></div>
+        ></div -->
       </swiper>
       <img
         src="./s1/mo/t23logo.png"
@@ -156,17 +159,33 @@
 }
 
 .logo-swiper {
-  width: size(692);
+  width: 100%;
   position: absolute;
   left: 0;
   right: 0;
-  transform: translateX(50%);
+  //transform: translateX(50%);
+  .item{display: flex;
+  &::before{
+    content:"";
+    width: 35%;height: 100%;
+  }
+  .item-img{width: 65%;object-fit: contain;}
+  }
 }
 
 .btn {
-  position: relative;
+  position: absolute;
+  left: 35%;width: 65%;
   z-index: 2;
   cursor: pointer;
+  top:55.5%;color: #fff;transition: all 0.2s;
+  span{width:11em;height:2em;display: block;
+  background:linear-gradient(to left, #e7380d 0%, #e4006e);
+  box-shadow: 0 size(1) size(15) #112d8199;transition: all 0.2s;
+  border-radius: size(5);line-height:2;margin: auto;font-size: size(55);
+  }
+  &:hover{top:55%;  span{
+  box-shadow: 0 size(3) size(15) #112d81cc; }}
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -178,41 +197,31 @@
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .bg {
-  }
 }
 
 @media screen and (max-width: 767px) {
-  .bg {
-    // height: size_m(1161);
-  }
   .logo {
-    width: size-m(185);
-    top: size-m(240);
+    width: 80%;
+    top: auto;
     left: 0;
-    right: 0;
+    bottom: 0;
+    right: auto;
     margin: 0 auto;
     position: absolute;
     z-index: 1;
-  }
-  .full-img {
-    // &:nth-child(1) {
-    //   position: absolute;
-    //   z-index: 2;
-    //   // mix-blend-mode: screen;
-    //   // opacity: 0;
-    // }
+    height: auto;
   }
 
   .swiper-fullscreen {
     width: auto;
-    height: calc(100vh - 63px);
+    height:100%;
     img {
-      width: auto;
+      width: 100%;
       height: 100%;
     }
+  .item .item-img{width: 100%;height: 100%;object-fit: cover;}
 
-    .btn {
+    .item-img.btn {
       width: size-m(183);
       height: auto;
       top: 47vh;
@@ -222,6 +231,14 @@
       margin: 0 auto;
     }
   }
+.swiper-fullscreen {
+    height: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
 
   .logo-swiper {
     width: 100vw;
@@ -229,15 +246,8 @@
     left: 0;
     right: 0;
     transform: none;
+  .item::before{display:none;
   }
-
-  .logo {
-    position: absolute;
-    width: 100vw;
-    left: 0;
-    top: auto;
-    height: auto;
-    bottom: 0px;
   }
 }
 </style>
@@ -326,7 +336,7 @@ export default {
     if (this.isMobile) {
       this.swiperOption.direction = 'horizontal'
     } else {
-      this.swiperOption.direction = 'vertical'
+      this.swiperOption.direction = 'horizontal'
     }
   },
 

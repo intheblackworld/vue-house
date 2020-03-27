@@ -96,6 +96,12 @@
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Playball&display=swap');
 @import '../assets/style/variableColor.scss';
+
+.section,
+.section .fp-slide,
+.section .fp-tableCell{
+    height: auto !important;
+}
 </style>
 
 <script>
@@ -176,7 +182,6 @@ export default {
       this.load = false
     })
   },
-
   mounted() {
     window.addEventListener('scroll', this.onScroll, false)
     this.action = this.$refs.fullPage.api
@@ -184,7 +189,6 @@ export default {
       this.$refs.fullPage.api.setResponsive(true)
     }
   },
-
   methods: {
     onDone() {
       console.log('done')

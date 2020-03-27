@@ -59,7 +59,7 @@
             仁愛帝寶 豪宅建築團隊
           </div>
           <div class="desc">
-            三大聯合建築師事務所成立四十六年，躍升國內數一數二的建築團隊，作品涵蓋全台北重要的公共建設（ex. 市府轉運站、W Hotel、阪急百貨大樓），在全國競賽中屢獲首獎
+            三大聯合建築師事務所成立四十六年，躍升國內數一數二的建築團隊，作品涵蓋全台北重要的公共建設（ex. 市府轉運站、W Hotel、阪急百貨大樓），在全國競賽中屢獲首獎。
           </div>
         </div>
       </div>
@@ -152,11 +152,11 @@
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 0.99;
-  letter-spacing: 6.67px;
+  line-height: 1;
+  letter-spacing: 0.06em;
   text-align: left;
   color: #db364a;
-  margin-bottom: size(30);
+  margin-bottom:0.14em;
 
   span {
     opacity: 0.5;
@@ -172,18 +172,17 @@
     display: inline-block;
   }
 }
-
 .subtitle {
   font-size: size(35);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.04;
-  letter-spacing: 5.67px;
+  line-height: 1.6;
+  letter-spacing: 0.16em;
   text-align: left;
   color: #db364a;
   white-space: nowrap;
-  margin-bottom: size(30);
+  margin-bottom: 0.6em;
 }
 
 .desc {
@@ -223,26 +222,16 @@
 @media screen and (max-width: 767px) {
   .m-bg {
     background-color: #112d81;
-    height: size-m(667);
-    position: relative;
-  }
-  .logo {
-    width: size-m(185);
-    top: size-m(240);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    position: absolute;
-    z-index: 1;
+    position: relative;overflow: hidden;
   }
   .left {
     width: size-m(330);
-    height: auto;
+    height:auto;
     position: relative;
     top: 0;
     transform: translate(0, 0);
     img {
-      height: auto;
+      height: 100%;
     }
     > div {
       font-size: size-m(12);
@@ -250,17 +239,16 @@
   }
   .bottom {
     width: size-m(330);
-    margin: size-m(40) auto;
+    margin: size-m(30) auto size-m(70) auto;
     display: flex;
     position: relative;
-    bottom: 20px;
   }
 
   .m-img {
     width: 100vw;
     position: absolute;
     right: 0;
-    bottom: 0px;
+    top:size-m(375);
   }
   .m-content {
     width: size-m(317);
@@ -268,7 +256,6 @@
 
   .title {
     font-size: size-m(47);
-    letter-spacing: 2.23px;
     span {
       font-size: size-m(14);
     }
@@ -276,7 +263,6 @@
 
   .subtitle {
     font-size: size-m(15);
-    margin-bottom: size-m(20);
   }
 
   .desc {

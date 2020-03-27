@@ -128,10 +128,6 @@
           />
           <div v-html="slide.name"></div>
         </swiper-slide>
-        <div
-          class="swiper-pagination"
-          slot="pagination"
-        ></div>
       </swiper>
       <div class="bottom">
         <div class="m-content">
@@ -211,17 +207,6 @@
 .full-bg {
   background-color: #112d81;
 }
-
-.swiper-button-prev,
-.swiper-button-next {
-  width: size(50);
-}
-
-.swiper-container {
-  position: absolute;
-  z-index: 2;
-}
-
 .swiper-pagination {
   transform: none;
   width: 100%;
@@ -232,19 +217,18 @@
   bottom: 3%;
 }
 
-.left {
-  width: 50%;
+.swiper-container{
+  width: size(961);
   height: 100vh;
-  left: 0;
+  right:50%;;
   margin: 0 auto;
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
   img {
-    width: 100%;
+    width: auto;
     height: 100%;
     object-fit: cover;
-  }
   + div {
     position: absolute;
     font-size: size(18);
@@ -254,6 +238,7 @@
     right: size(20);
     color: #fff;
     text-shadow: 0 0 2px #000;
+  }
   }
 }
 
@@ -276,6 +261,25 @@
   }
 }
 
+.swiper-button-prev,
+.swiper-button-next {
+  border: 0px none #0000 !important;
+  width: size(50);
+  height: 100%;top: 0;padding: 0 size(10);display: flex;margin: 0;
+  img{object-fit: contain;height: auto;}
+}
+
+.swiper-button-prev {left:0;}
+.swiper-button-next {right:0;}
+
+.swiper-fullscreen {
+  width: auto;
+  height: 100vh;
+  img {
+    width: auto;
+    height: 100%;
+  }
+}
 .content {
   position: absolute;
   width: size(520);
@@ -297,11 +301,11 @@
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 0.99;
-  letter-spacing: 6.67px;
+  line-height: 1;
+  letter-spacing: 0.06em;
   text-align: left;
   color: #db364a;
-  margin-bottom: size(30);
+  margin-bottom:0.14em;
 
   span {
     opacity: 0.5;
@@ -323,12 +327,12 @@
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.04;
-  letter-spacing: 5.67px;
+  line-height: 1.6;
+  letter-spacing: 0.16em;
   text-align: left;
   color: #db364a;
   white-space: nowrap;
-  margin-bottom: size(30);
+  margin-bottom: 0.6em;
 }
 
 .desc {
@@ -372,37 +376,27 @@
 @media screen and (max-width: 767px) {
   .m-bg {
     background-color: #112d81;
-    height: size-m(667);
-    position: relative;
+    position: relative;overflow: hidden;
   }
-  .logo {
-    width: size-m(185);
-    top: size-m(240);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    position: absolute;
-    z-index: 1;
-  }
-  .left {
+.swiper-container {
     width: size-m(330);
-    height: auto;
+    height:auto;
     position: relative;
     top: 0;
     left: 0;
     transform: translate(0, 0);
     img {
       width: 100%;
-      height: auto;
-    }
-    > div {
+      height: 100%;
+    + div {
       font-size: size-m(12);
       bottom: size-m(10);
+    }
     }
   }
   .bottom {
     width: size-m(330);
-    margin: size-m(40) auto;
+    margin: size-m(30) auto size-m(60) auto;
     display: flex;
     position: relative;
     bottom: 20px;
@@ -420,7 +414,6 @@
 
   .title {
     font-size: size-m(47);
-    letter-spacing: 2.23px;
     span {
       font-size: size-m(14);
     }
@@ -428,12 +421,10 @@
 
   .subtitle {
     font-size: size-m(15);
-    margin-bottom: size-m(20);
   }
 
   .desc {
     width: size-m(230);
-    font-size: size-m(12);
   }
 
   .logo {
@@ -449,7 +440,7 @@
   .timg {
     width: size-m(60);
     position: absolute;
-    top: size-m(505);
+    top:size-m(500);
     left: 72%;
     margin: 0;
   }
@@ -464,10 +455,12 @@
     bottom: 5%;
   }
 
-  .swiper-button-prev,
-  .swiper-button-next {
-    width: size-m(20) !important;
-  }
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: size-m(30);
+  padding:0 size-m(5);cursor: none;
+}
 }
 </style>
 <script>

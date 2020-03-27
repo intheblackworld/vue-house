@@ -54,12 +54,6 @@
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
-.logo {
-  position: absolute;
-  left: 0;
-  height: 100vh;
-}
-
 .content {
   width: size(690);
   position: absolute;
@@ -72,16 +66,15 @@
 
 .title {
   width: 100%;
-  // font-family: GenShinGothic;
   font-size: size(107);
-  font-weight: bold;
+  font-weight:700;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(10);
+  letter-spacing:0.1em;
   text-align: left;
   color: #112d81;
-  margin-bottom: size(60);
+  margin-bottom:0.56em;
   white-space: nowrap;
 }
 
@@ -91,7 +84,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.7;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.1em;
   text-align:justify;
   color: #ffffff;
 }
@@ -105,37 +98,18 @@
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .bg {
-  }
 }
 
 @media screen and (max-width: 767px) {
-  .bg {
-    // height: size_m(1161);
-  }
-  .logo {
-    width: size-m(185);
-    top: size-m(240);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    position: absolute;
-    z-index: 1;
-  }
-
   .content {
     width: size-m(240);
-    position: absolute;
-    left: 0;
-    right: 0;
     transform: translate(0, -65%);
   }
 
   .title {
     text-align: center;
     font-size: size-m(25);
-    letter-spacing: 10px;
-    margin-bottom: size-m(10);
+    letter-spacing:0.4em;
   }
 
   .desc {
