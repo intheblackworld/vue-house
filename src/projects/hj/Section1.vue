@@ -216,11 +216,12 @@
     width: auto;
     height:100%;
     img {
-      width: auto;
+      width: 100%;
       height: 100%;
     }
+  .item .item-img{width: 100%;height: 100%;object-fit: cover;}
 
-    .btn {
+    .item-img.btn {
       width: size-m(183);
       height: auto;
       top: 47vh;
@@ -245,6 +246,8 @@
     left: 0;
     right: 0;
     transform: none;
+  .item::before{display:none;
+  }
   }
 }
 </style>
