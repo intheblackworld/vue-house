@@ -30,6 +30,10 @@ body {
 
 .home {
   padding-top: $nav_pc_height;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  overflow: hidden;//試底下多的那塊哪來的
 
   &.no-padding-top {
     padding-top: 0;
@@ -39,10 +43,6 @@ body {
     }
   }
   
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center center;
-  overflow: hidden;//試底下多的那塊哪來的
 }
 
 .fullscreen {
@@ -273,6 +273,12 @@ img[lazy='loaded'] {
 
   .home {
     padding-top: $nav_tablet_height;
+    background-color: $order_bg_color;
+    background-image: $order_bg_image;
+    background-repeat: no-repeat;
+    background-size: 100vw auto;
+    background-attachment: fixed;
+    background-position: 0% 50%;
 
     &.no-padding-top {
       padding-top: 0;
@@ -361,6 +367,12 @@ img[lazy='loaded'] {
 
   .home {
     padding-top: $nav_phone_height;
+    background-color: $order_bg_color;
+    background-image: $order_bg_image_m;
+    background-repeat: no-repeat;
+    background-size: 100vw auto;
+    background-attachment: fixed;
+    background-position: 0% 50%;
 
     &.no-padding-top {
       padding-top: 0;

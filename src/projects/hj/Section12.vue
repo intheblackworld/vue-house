@@ -242,7 +242,6 @@
 
 @media screen and (max-width: 767px) {
   .m-bg {
-  background-image: linear-gradient(to top, #e7380d 0%, #e4006e);
     height: size-m(603);
     position: relative;
   }

@@ -152,11 +152,11 @@
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 0.99;
-  letter-spacing: 6.67px;
+  line-height: 1;
+  letter-spacing: 0.06em;
   text-align: left;
   color: #db364a;
-  margin-bottom: size(30);
+  margin-bottom:0.14em;
 
   span {
     opacity: 0.5;
@@ -172,18 +172,17 @@
     display: inline-block;
   }
 }
-
 .subtitle {
   font-size: size(35);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.04;
-  letter-spacing: 5.67px;
+  line-height: 1.6;
+  letter-spacing: 0.16em;
   text-align: left;
   color: #db364a;
   white-space: nowrap;
-  margin-bottom: size(30);
+  margin-bottom: 0.6em;
 }
 
 .desc {
@@ -223,12 +222,11 @@
 @media screen and (max-width: 767px) {
   .m-bg {
     background-color: #112d81;
-    height:100vh;
-    position: relative;
+    position: relative;overflow: hidden;
   }
   .left {
     width: size-m(330);
-    height:calc(100vh - 63px - 100vw * 645 / 750 );
+    height:auto;
     position: relative;
     top: 0;
     transform: translate(0, 0);
@@ -241,17 +239,16 @@
   }
   .bottom {
     width: size-m(330);
-    margin: size-m(40) auto;
+    margin: size-m(30) auto size-m(70) auto;
     display: flex;
     position: relative;
-    bottom: 20px;
   }
 
   .m-img {
     width: 100vw;
     position: absolute;
     right: 0;
-    bottom: 63px;
+    top:size-m(375);
   }
   .m-content {
     width: size-m(317);
@@ -259,7 +256,6 @@
 
   .title {
     font-size: size-m(47);
-    letter-spacing: 2.23px;
     span {
       font-size: size-m(14);
     }
@@ -267,7 +263,6 @@
 
   .subtitle {
     font-size: size-m(15);
-    margin-bottom: size-m(20);
   }
 
   .desc {
@@ -280,7 +275,7 @@
     height: auto;
     position: absolute;
     top: auto;
-    bottom: 63px;
+    bottom: 0;
     right: auto;
     left: 0;
     transform: none;

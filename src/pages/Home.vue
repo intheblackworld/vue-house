@@ -186,7 +186,7 @@ export default {
     window.addEventListener('scroll', this.onScroll, false)
     this.action = this.$refs.fullPage.api
     if (this.isMobile) {
-      this.$refs.fullPage.api.setResponsive(false)
+      this.$refs.fullPage.api.setResponsive(true)
     }
   },
   methods: {

@@ -42,7 +42,7 @@
       <img
         v-lazy="require('./s11/mo/img1.png')"
         alt=""
-        class="img"
+        class="img img2"
       >
       <div
         data-aos="fade"
@@ -203,15 +203,16 @@
   .m-bg {
     height: size-m(400);
     position: relative;
-  background-image: linear-gradient(to left, #e7380d 0%, #e4006e);
+  background-image: initial;
   }
 
   .img {
-    width: 100vw;
-    height: auto;
+    width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
+    object-fit: cover;
   }
 
   .btn {

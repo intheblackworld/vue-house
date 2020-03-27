@@ -112,10 +112,10 @@
           />
           <div v-html="slide.name"></div>
         </swiper-slide>
-        <div
+        <!-- div
           class="swiper-pagination"
           slot="pagination"
-        ></div>
+        ></div -->
       </swiper>
       <div class="bottom">
         <div class="m-content">
@@ -239,11 +239,11 @@
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 0.99;
-  letter-spacing: 6.67px;
+  line-height: 1;
+  letter-spacing: 0.06em;
   text-align: left;
   color: #db364a;
-  margin-bottom: size(30);
+  margin-bottom:0.14em;
 }
 
 .subtitle {
@@ -251,12 +251,12 @@
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.04;
-  letter-spacing: 5.67px;
+  line-height: 1.6;
+  letter-spacing: 0.16em;
   text-align: left;
   color: #db364a;
   white-space: nowrap;
-  margin-bottom: size(30);
+  margin-bottom: 0.6em;
 }
 
 .desc {
@@ -304,21 +304,11 @@
 @media screen and (max-width: 767px) {
   .m-bg {
     background-color: #112d81;
-    height:100vh;
-    position: relative;
-  }
-  .logo {
-    width: size-m(185);
-    top: size-m(240);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    position: absolute;
-    z-index: 1;
+    position: relative;overflow: hidden;
   }
   .left {
     width: size-m(330);
-    height:calc(100vh - 63px - 100vw * 670 / 750 );
+    height:auto;
     position: relative;
     top: 0;
     transform: translate(0, 0);
@@ -334,7 +324,7 @@
   }
   .bottom {
     width: size-m(330);
-    margin: size-m(35) auto size-m(80) auto;
+    margin: size-m(30) auto size-m(90) auto;
     display: flex;
     position: relative;
   }
@@ -343,7 +333,7 @@
     width: 100vw;
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 0;z-index: 2;
   }
   .m-content {
     width: size-m(145);
@@ -351,7 +341,6 @@
 
   .title {
     font-size: size-m(47);
-    letter-spacing: 2.23px;
   }
 
   .subtitle {
@@ -367,7 +356,7 @@
     height: auto;
     position: absolute;
     top: auto;
-    bottom: 63px;
+    bottom: 0;
     right: auto;
     left: 0;
     transform: none;
