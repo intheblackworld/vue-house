@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="contact-info">
-    <img class="logo" src="@/assets/img/contact-logo.png" alt="心天畝的圖片" />
+    <img class="logo" src="@/assets/img/contact-logo.png" alt="好站" />
     <div class="info">
       <div class="btn flex-c" @click="showCallDialog">
         <span class="flex-c">
@@ -11,30 +11,20 @@
       </div>
       <div class="btn flex-c" @click="showMessengerDialog">
         <span class="flex-c">
-          <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB 諮詢
+          <font-awesome-icon :icon="['fab', 'facebook-messenger']" /><span>FB 諮詢</span>
         </span>
       </div>
-      <!-- <a class="btn flex-c" :href="info.fbMessage" target="_blank" v-else>
-        <span class="flex-c">
-          <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB 諮詢
-        </span>
-      </a> -->
       <a class="btn flex-c" :href="info.fbLink" target="_blank">
         <span class="flex-c">
-          <font-awesome-icon :icon="['fab', 'facebook-f']" />前往粉絲專頁
+          <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
         </span>
       </a>
       <div class="address flex-c">{{info.address}}</div>
       <div class="btn flex-c" @click="showMapDialog">
         <span class="flex-c">
-          <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
+          <font-awesome-icon icon="map-marker-alt" /><span>導航 Google 地圖</span>
         </span>
       </div>
-      <!-- <a class="google-btn flex-c" :href="info.googleLink" target="_blank" v-else>
-        <span class="flex-c">
-          <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
-        </span>
-      </a> -->
     </div>
   </div>
   <el-dialog title :visible.sync="isShowCallDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
@@ -146,7 +136,12 @@ export default {
   background: $contact_btn_bg;
   // box-shadow: $contact_btn_border;
   transition: all 0.5s;
+  position: relative;
+  overflow: hidden;
 
+  &.half {
+    width: 49%;
+  }
   svg {
     color: $contact_btn_icon;
     width: 24px;
@@ -163,6 +158,27 @@ export default {
       color: $contact_btn_hover_icon;
     }
   }
+   &::before {
+    content: "";
+    width: 40%;
+    height: 100%;
+    display: block;
+    background: #fff;
+    position: absolute;
+    -webkit-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+    left: -10%;
+    opacity: 0;
+    top: 0;
+    z-index: 5;
+    -webkit-transition: all .4s cubic-bezier(.2,.95,.57,.99);
+    transition: all .4s cubic-bezier(.2,.95,.57,.99)
+    }
+    &:hover:before {
+    opacity: 1;
+    width: 90%;
+    left: 140%
+    }
 }
 .address {
   width: 600px;
@@ -223,11 +239,26 @@ export default {
     padding: 40px;
     transform: none;
     position: static;
-    margin-top: 60px;
-    background-color: $contact_bg_m;
+    margin: 40px auto 40px auto;
 
     .logo {
       width: $contact_logo_mobile_width;
+    }
+  }
+
+  .btn {
+    &.half {
+      width: 280px;
+    }
+    svg{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left:  calc(50% - 5em);
+      margin-right:0;
+      + span{
+        margin-left: 1.5em;
+      }
     }
   }
 
@@ -235,19 +266,26 @@ export default {
     width: 100%;
     justify-content: center;
     text-align: center;
-    margin-bottom: 40px;
+    //margin-bottom: 40px;
 
     > * {
       margin-bottom: 12px;
+      &.address{
+      margin-bottom: 0;}
     }
   }
 
   .logo {
     margin-bottom: 20px;
+    margin: 0 -140px 20px -140px;
+    left: 50%;
+    position: relative;
   }
 
   .address {
     width: 280px;
+    padding: 0 1em;
+    text-align: justify;
   }
 }
 
