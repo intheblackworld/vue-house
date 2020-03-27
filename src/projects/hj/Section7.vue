@@ -226,7 +226,7 @@
   top: 50%;
   transform: translate(0, -50%);
   img {
-    width: auto;
+    width: 100%;
     height: 100%;
     object-fit: cover;
   + div {
