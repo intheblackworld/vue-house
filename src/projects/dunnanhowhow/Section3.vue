@@ -2,6 +2,7 @@
   <!-- 區塊3, 4, 5 合併 -->
   <div class="section3">
     <div class="bg relative">
+      <div></div>
       <div v-if="!isMobile">
         <div id="section3">
           <div class="img-bg p1">
