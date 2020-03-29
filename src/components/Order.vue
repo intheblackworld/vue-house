@@ -118,19 +118,6 @@
             </p>
           </el-checkbox>
         </div>
-        <div class="hint">
-          注意事項：
-          <ol>
-            <li>本網站所載之相關事項通知。</li>
-            <li>客戶管理與服務。</li>
-            <li>本公司行銷業務之推廣。</li>
-            <li>即刻預約至109.5.30截止，需填寫完整個人資料，並至接待中心完成參觀，即可獲得抽獎券一張。</li>
-            <li>獎品分別為蘋果i Phone 11 128G（不選色）乙台、任天堂SWITCH（不選色）乙台、蘋果Air Pods Pro乙台，中獎者需出示身分證供接待中心檢核，並依法繳扣所需稅金後始領取獎品。</li>
-            <li>抽獎活動時間為109.7.5（日）、109.8.2（日）、109.9.6（日），每月各抽出一個獎項，本接待中心保有獎項優先順序抽出的權利。會以直播錄影方式播出，中獎者本人需於五日內憑身分證、抽獎券至接待中心領取逾期不候。</li>
-            <li>抽獎時間本接待中心保有調整或延後之權利。</li>
-            <li>本公司保有活動取消、終止或修改本活動相關內容之權利，如有未盡事宜，悉應本接待中心相關規定或解釋辦理。</li>
-          </ol>
-        </div>
         <div
           style="margin: 0 auto;z-index:2;"
           v-if="!isMobile"
@@ -335,7 +322,6 @@ export default {
   }
   .order-title {
     width: 100vw;
-    background-color: #112d81;
     padding-top: 20px;
     padding-bottom: 8px;
     font-weight: bold;
@@ -347,7 +333,6 @@ export default {
 
   .order-subtitle {
     width: 100vw;
-    background-color: #112d81;
     font-size: 20px;
     text-align: center;
     color: $order_subtitle_color;
@@ -420,23 +405,6 @@ export default {
   .control {
     margin-top: 0px;
     margin-bottom: 20px;
-  }
-
-  .hint {
-    width: 100%;
-    margin: 20px auto;
-    padding: 1.1em;
-    font-size: 0.9em;
-    font-weight:lighter;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.7;
-    letter-spacing: 0.05em;
-    text-align: left;
-    color: #ffffff;
-    background: #112d81;
-    ol{list-style-type: decimal;margin: 0 0 0 1.3em;}
-    li{list-style:inherit;margin: 0.4em 0;}
   }
 }
 

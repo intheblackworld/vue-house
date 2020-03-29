@@ -3,15 +3,14 @@
     <Loading :loading="load" />
     <SideNavigation
       v-if="isSide"
-      :viewIndex="viewIndex"
     />
-    <!-- <Navigation v-else /> -->
+    <Navigation v-else />
     <!-- <Indigator :viewIndex="viewIndex" /> -->
-    <full-page
+    <!-- <full-page
       ref="fullPage"
       :options="options"
       id="fullpage"
-    >
+    > -->
       <div
         class="section"
         id="section1"
@@ -28,63 +27,27 @@
         class="section"
         id="section3"
       >
-        <Section3 :showIcon="viewIndex == 3" />
+        <Section3 />
       </div>
       <div
         class="section"
         id="section4"
       >
-        <Section4 :showSlide="viewIndex === 4" />
+        <Section4 />
       </div>
       <div
         class="section"
         id="section5"
       >
-        <Section5 :showIcon="viewIndex == 5" />
+        <Section5 />
       </div>
       <div
         class="section"
         id="section6"
       >
-        <Section6 :showIcon="viewIndex == 6" />
+        <Section6 />
       </div>
-      <div
-        class="section"
-        id="section7"
-      >
-        <Section7 :showIcon="viewIndex == 7" :showSlide="viewIndex === 7" />
-      </div>
-      <div
-        class="section"
-        id="section8"
-      >
-        <Section8 />
-      </div>
-      <div
-        class="section"
-        id="section9"
-      >
-        <Section9 />
-      </div>
-      <div
-        class="section"
-        id="section10"
-      >
-        <Section10 />
-      </div>
-      <div
-        class="section"
-        id="section11"
-      >
-        <Section11 />
-      </div>
-      <div
-        class="section"
-        id="section12"
-      >
-        <Section12 />
-      </div>
-    </full-page>
+    <!-- </full-page> -->
     <ContactSection
       class="section"
       id="contact"
@@ -106,33 +69,27 @@
 
 <script>
 // @ is an alias to /src
-// import Navigation from '@/layouts/Navigation.vue'
+import Navigation from '@/layouts/Navigation.vue'
 import { isMobile } from '@/utils'
 import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
-import Indigator from '@/components/Indigator.vue'
+// import Indigator from '@/components/Indigator.vue'
 
-import Section1 from '@/projects/hj/Section1.vue'
-import Section2 from '@/projects/hj/Section2.vue'
-import Section3 from '@/projects/hj/Section3.vue'
-import Section4 from '@/projects/hj/Section4.vue'
-import Section5 from '@/projects/hj/Section5.vue'
-import Section6 from '@/projects/hj/Section6.vue'
-import Section7 from '@/projects/hj/Section7.vue'
-import Section8 from '@/projects/hj/Section8.vue'
-import Section9 from '@/projects/hj/Section9.vue'
-import Section10 from '@/projects/hj/Section10.vue'
-import Section11 from '@/projects/hj/Section11.vue'
-import Section12 from '@/projects/hj/Section12.vue'
+import Section1 from '@/projects/win/Section1.vue'
+import Section2 from '@/projects/win/Section2.vue'
+import Section3 from '@/projects/win/Section3.vue'
+import Section4 from '@/projects/win/Section4.vue'
+import Section5 from '@/projects/win/Section5.vue'
+import Section6 from '@/projects/win/Section6.vue'
 
 export default {
   name: 'home',
   components: {
     Loading,
     // Indigator,
-    // Navigation,
+    Navigation,
     SideNavigation,
     ContactSection,
     MobileNav,
@@ -142,36 +99,30 @@ export default {
     Section4,
     Section5,
     Section6,
-    Section7,
-    Section8,
-    Section9,
-    Section10,
-    Section11,
-    Section12,
   },
 
   data() {
     return {
       isMobile,
-      isSide: true,
+      isSide: false,
       load: true,
-      viewIndex: 0,
-      action: {
-        moveTo: () => {},
-      },
+      // viewIndex: 0,
+      // action: {
+      //   moveTo: () => {},
+      // },
 
-      indigatorIndex: 0,
-      options: {
-        menu: '#menu',
-        anchors: [],
-        scrollBar: true,
-        onLeave: this.onLeave,
-        afterLoad: this.afterLoad,
-        continuousHorizontal: true,
+      // indigatorIndex: 0,
+      // options: {
+      //   menu: '#menu',
+      //   anchors: [],
+      //   scrollBar: true,
+      //   onLeave: this.onLeave,
+      //   afterLoad: this.afterLoad,
+      //   continuousHorizontal: true,
 
-        // navigation: true,
-        // sectionsColor: ['#41b883', '#ff5f45', '#0798ec'],
-      },
+      //   // navigation: true,
+      //   // sectionsColor: ['#41b883', '#ff5f45', '#0798ec'],
+      // },
     }
   },
   created() {
@@ -183,66 +134,66 @@ export default {
     })
   },
   mounted() {
-    window.addEventListener('scroll', this.onScroll, false)
-    this.action = this.$refs.fullPage.api
-    if (this.isMobile) {
-      this.$refs.fullPage.api.setResponsive(true)
-    }
+    // window.addEventListener('scroll', this.onScroll, false)
+    // this.action = this.$refs.fullPage.api
+    // if (this.isMobile) {
+    //   this.$refs.fullPage.api.setResponsive(true)
+    // }
   },
   methods: {
     onDone() {
       console.log('done')
     },
-    onScroll() {
-      // 获取所有锚点元素
-      const navContents = document.querySelectorAll('.section')
-      // 所有锚点元素的 offsetTop
-      const offsetTopArr = []
-      navContents.forEach(item => {
-        offsetTopArr.push(item.offsetTop)
-      })
-      // 获取当前文档流的 scrollTop
-      const scrollTop =
-        document.documentElement.scrollTop || document.body.scrollTop
-      // 定义当前点亮的导航下标
-      let navIndex = 0
-      for (let n = 0; n < offsetTopArr.length; n++) {
-        // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
-        // 那么此时导航索引就应该是n了
-        if (scrollTop >= offsetTopArr[n] - 100) {
-          navIndex = n
-        }
-      }
-      this.viewIndex = navIndex + 1
-    },
+    // onScroll() {
+    //   // 获取所有锚点元素
+    //   const navContents = document.querySelectorAll('.section')
+    //   // 所有锚点元素的 offsetTop
+    //   const offsetTopArr = []
+    //   navContents.forEach(item => {
+    //     offsetTopArr.push(item.offsetTop)
+    //   })
+    //   // 获取当前文档流的 scrollTop
+    //   const scrollTop =
+    //     document.documentElement.scrollTop || document.body.scrollTop
+    //   // 定义当前点亮的导航下标
+    //   let navIndex = 0
+    //   for (let n = 0; n < offsetTopArr.length; n++) {
+    //     // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
+    //     // 那么此时导航索引就应该是n了
+    //     if (scrollTop >= offsetTopArr[n] - 100) {
+    //       navIndex = n
+    //     }
+    //   }
+    //   this.viewIndex = navIndex + 1
+    // },
 
-    onLeave(origin, destination, direction) {
-      if (!this.isMobile) {
-        if (origin.isLast === true && direction === 'up') {
-          console.log('加固')
-          this.$refs.fullPage.api.setResponsive(false)
-        }
-        if (origin.isFirst === true && direction === 'down' && this.isMobile) {
-          this.$refs.fullPage.api.setResponsive(false)
-        }
+    // onLeave(origin, destination, direction) {
+    //   if (!this.isMobile) {
+    //     if (origin.isLast === true && direction === 'up') {
+    //       console.log('加固')
+    //       this.$refs.fullPage.api.setResponsive(false)
+    //     }
+    //     if (origin.isFirst === true && direction === 'down' && this.isMobile) {
+    //       this.$refs.fullPage.api.setResponsive(false)
+    //     }
 
-        if (
-          destination.isFirst === true &&
-          direction === 'up' &&
-          this.isMobile
-        ) {
-          this.$refs.fullPage.api.setResponsive(false)
-        }
-      }
-    },
+    //     if (
+    //       destination.isFirst === true &&
+    //       direction === 'up' &&
+    //       this.isMobile
+    //     ) {
+    //       this.$refs.fullPage.api.setResponsive(false)
+    //     }
+    //   }
+    // },
 
-    afterLoad(origin, destination, direction) {
-      this.indigatorIndex = destination.index
-      if (destination.isLast === true && direction === 'down') {
-        console.log('解除')
-        this.$refs.fullPage.api.setResponsive(true)
-      }
-    },
+    // afterLoad(origin, destination, direction) {
+    //   this.indigatorIndex = destination.index
+    //   if (destination.isLast === true && direction === 'down') {
+    //     console.log('解除')
+    //     this.$refs.fullPage.api.setResponsive(true)
+    //   }
+    // },
   },
 }
 </script>
