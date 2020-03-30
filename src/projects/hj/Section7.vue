@@ -525,20 +525,20 @@ export default {
       ],
       slideListM: [
         {
-          img: require('./s7/mo/img1.jpg'),
-          name: '仁愛翡翠',
-        },
-        {
-          img: require('./s7/mo/img2.jpg'),
-          name: '仁愛御林園',
-        },
-        {
           img: require('./s7/mo/img3.jpg'),
           name: '圓山凡登',
         },
         {
           img: require('./s7/mo/img4.jpg'),
           name: '翡翠大道',
+        },
+        {
+          img: require('./s7/mo/img1.jpg'),
+          name: '仁愛翡翠',
+        },
+        {
+          img: require('./s7/mo/img2.jpg'),
+          name: '仁愛御林園',
         },
       ],
     }
