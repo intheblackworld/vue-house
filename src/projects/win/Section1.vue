@@ -137,29 +137,29 @@ export default {
           clickable: true,
         },
       },
-      slideList: [
-        {
-          img: require('./s1/t1.png'),
-        },
-        {
-          img: require('./s1/t2.png'),
-        },
-        {
-          img: require('./s1/t3.png'),
-        },
-      ],
+      // slideList: [
+      //   {
+      //     img: require('./s1/t1.png'),
+      //   },
+      //   {
+      //     img: require('./s1/t2.png'),
+      //   },
+      //   {
+      //     img: require('./s1/t3.png'),
+      //   },
+      // ],
 
-      slideListM: [
-        {
-          img: require('./s1/mo/t1.png'),
-        },
-        {
-          img: require('./s1/mo/t2.png'),
-        },
-        {
-          img: require('./s1/mo/t3.png'),
-        },
-      ],
+      // slideListM: [
+      //   {
+      //     img: require('./s1/mo/t1.png'),
+      //   },
+      //   {
+      //     img: require('./s1/mo/t2.png'),
+      //   },
+      //   {
+      //     img: require('./s1/mo/t3.png'),
+      //   },
+      // ],
     }
   },
 
