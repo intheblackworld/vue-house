@@ -249,7 +249,7 @@
 
 	    # 添加到 Googlde 資料DB Start
         try {
-            $url = "http://35.221.147.147/send.php";
+            $url = "http://104.155.235.21/send.php";
             $url .= "?token=".$token;
             $url .= "&name=".$name;
             $url .= "&phone=".$phone;
