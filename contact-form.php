@@ -15,7 +15,7 @@
     $datetime     = date ("Y-m-d H:i:s" , mktime(date('H'), date('i'), date('s'), date('m'), date('d'), date('Y'))) ;
     
     # 鳳翔 fs 客製資料：房型
-    //$house        = isset($_POST['house']) ? $_POST['house'] : '';
+    $house        = isset($_POST['house']) ? $_POST['house'] : '';
     
     # 好站 hj 客製資料：可聯絡時間
     $time_start        = isset($_POST['time_start']) ? $_POST['time_start'] : '';
