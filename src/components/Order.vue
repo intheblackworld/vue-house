@@ -7,11 +7,17 @@
         <div class="group">
           <div class="row">
             <label>姓名<span>*</span></label>
-            <el-input v-model="form.name" placeholder></el-input>
+            <el-input
+              v-model="form.name"
+              placeholder
+            ></el-input>
           </div>
           <div class="row">
             <label>手機<span>*</span></label>
-            <el-input v-model="form.phone" placeholder></el-input>
+            <el-input
+              v-model="form.phone"
+              placeholder
+            ></el-input>
           </div>
           <!-- <div class="row">
             <label>E-mail</label>
@@ -19,7 +25,10 @@
           </div> -->
           <div class="row">
             <label>居住城市</label>
-            <el-select v-model="form.city" placeholder>
+            <el-select
+              v-model="form.city"
+              placeholder
+            >
               <el-option
                 v-for="city in cityList"
                 :key="city.value"
@@ -30,7 +39,11 @@
           </div>
           <div class="row">
             <label>居住地區</label>
-            <el-select v-model="form.area" placeholder no-data-text="請先選擇居住城市">
+            <el-select
+              v-model="form.area"
+              placeholder
+              no-data-text="請先選擇居住城市"
+            >
               <el-option
                 v-for="area in areaList"
                 :key="area.value"
@@ -42,7 +55,12 @@
         </div>
         <div class="group">
           <div class="row">
-            <el-input type="textarea" :rows="2" placeholder="請輸入您的留言 (選填)" v-model="form.msg"></el-input>
+            <el-input
+              type="textarea"
+              :rows="2"
+              placeholder="請輸入您的留言 (選填)"
+              v-model="form.msg"
+            ></el-input>
           </div>
         </div>
       </div>
@@ -55,11 +73,12 @@
           </p>
         </el-checkbox>
       </div>
-        <div style="margin: 0 auto">
-          <vue-recaptcha :sitekey="info.recaptcha_site_key_v2"
+      <div style="margin: 0 auto">
+        <vue-recaptcha
+          :sitekey="info.recaptcha_site_key_v2"
           @verify="isVerify = true"
-          ></vue-recaptcha>
-        </div>
+        ></vue-recaptcha>
+      </div>
       <el-button
         class="form-submit"
         type="primary"
@@ -112,6 +131,7 @@ export default {
       isVerify: false, // google 機器人驗證
       policyVisible: false,
       showValidateDialog: false,
+      window,
     }
   },
 
@@ -194,6 +214,21 @@ export default {
         if (response.status === 200) {
           window.location.href = 'formThanks'
         }
+      })
+      window.dotq = window.dotq || []
+
+      window.dotq.push({
+        projectId: '10000',
+
+        properties: {
+          pixelId: '10101258',
+
+          qstrings: {
+            et: 'custom',
+
+            ea: 'lead10101258',
+          },
+        },
       })
     },
   },
@@ -305,8 +340,8 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .order-bg {
-  // background-image: $order_bg_image_m;
-  background-size: auto  250vw;
+    // background-image: $order_bg_image_m;
+    background-size: auto 250vw;
     padding-top: 40px;
     .order-title {
       font-size: 40px;
