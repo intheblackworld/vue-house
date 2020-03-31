@@ -15,7 +15,7 @@
     $datetime     = date ("Y-m-d H:i:s" , mktime(date('H'), date('i'), date('s'), date('m'), date('d'), date('Y'))) ;
     
     # 鳳翔 fs 客製資料：房型
-    $house        = isset($_POST['house']) ? $_POST['house'] : '';
+    //$house        = isset($_POST['house']) ? $_POST['house'] : '';
     
     # 好站 hj 客製資料：可聯絡時間
     $time_start        = isset($_POST['time_start']) ? $_POST['time_start'] : '';
@@ -238,7 +238,7 @@
     $mail->FromName = $case_name." - 官網網站"; //設定寄件者姓名
 
     $mail->Subject = $case_name." - 官網網站"; //設定郵件標題
-    $mail->Body = "網站：https://fs.h35.tw/<BR>姓名：".$name."<BR>電話：".$phone."<BR>信箱：".$user_email."<BR>城市：".$city.$area."<BR>留言：".$msg."<BR>可聯絡時間：".$time_start."-".$time_end."<BR><BR>填表日期：".$datetime."<BR>廣告來源：".$utm_source."<BR>廣告媒介：".$utm_medium."<BR>廣告名稱：".$utm_campaign."<BR>廣告內容：".$utm_content; //設定郵件內容
+    $mail->Body = "網站：https://hj.h35.tw/<BR>姓名：".$name."<BR>電話：".$phone."<BR>信箱：".$user_email."<BR>城市：".$city.$area."<BR>留言：".$msg."<BR>可聯絡時間：".$time_start."-".$time_end."<BR><BR>填表日期：".$datetime."<BR>廣告來源：".$utm_source."<BR>廣告媒介：".$utm_medium."<BR>廣告名稱：".$utm_campaign."<BR>廣告內容：".$utm_content; //設定郵件內容
     $mail->IsHTML(true); //設定郵件內容為HTML
 
     $tomail_arr = explode(",",$tomail);
@@ -445,7 +445,7 @@ document.location.replace('formThanks');
     mysql_query("SET NAMES UTF8");
     mysql_select_db($db_name, $con);
 
-    $query = "SELECT tomail FROM susers WHERE email = 'fs'";
+    $query = "SELECT tomail FROM susers WHERE email = 'hj'";
     $result = mysql_query($query, $con);
     $row = mysql_fetch_row($result);
 
