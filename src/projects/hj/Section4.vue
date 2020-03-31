@@ -449,22 +449,22 @@ export default {
           name: '中正紀念堂',
         },
         {
-          img: require('./s4/img2.jpg'),
-          name: '公園示意圖',
-        },
-        {
           img: require('./s4/img3.jpg'),
           name: '台灣⼤學',
+        },
+        {
+          img: require('./s4/img2.jpg'),
+          name: '公園示意圖',
         },
       ],
       slideListM: [
         {
-          img: require('./s4/mo/img1.jpg'),
-          name: '中正紀念堂',
-        },
-        {
           img: require('./s4/mo/img2.jpg'),
           name: '公園示意圖',
+        },
+        {
+          img: require('./s4/mo/img1.jpg'),
+          name: '中正紀念堂',
         },
         {
           img: require('./s4/mo/img3.jpg'),
@@ -484,6 +484,7 @@ export default {
       } else {
         this.slideIndex = swiper.activeIndex - 1
       }
+      console.log(1);
     },
   },
 

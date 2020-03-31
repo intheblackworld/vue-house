@@ -5,8 +5,7 @@
     <div class="info">
       <div class="btn flex-c" @click="showCallDialog">
         <span class="flex-c">
-          <font-awesome-icon icon="phone" />
-          {{info.phone}}
+          <font-awesome-icon icon="phone" /><span>{{info.phone}}</span>
         </span>
       </div>
       <div class="btn flex-c" @click="showMessengerDialog">
