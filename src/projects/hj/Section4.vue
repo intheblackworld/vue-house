@@ -484,6 +484,7 @@ export default {
       } else {
         this.slideIndex = swiper.activeIndex - 1
       }
+      console.log(1);
     },
   },
 

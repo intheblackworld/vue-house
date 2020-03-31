@@ -1,6 +1,6 @@
 <?php
-    $case_name = "京城鳳翔";
-    $case_code = 'fs';
+    $case_name = "好站";
+    $case_code = 'hj';
 
     $name         = isset($_POST['name']) ? $_POST['name'] : '';
     $phone        = isset($_POST['phone']) ? $_POST['phone'] : '';
