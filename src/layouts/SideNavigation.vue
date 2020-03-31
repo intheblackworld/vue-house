@@ -24,6 +24,7 @@
           </span>
         </li>
       </ul>
+      <img src="https://bcp.crwdcntrl.net/5/c=13578/b=76396791" width="1" height="1"/>
     </div>
   </div>
 </template>
