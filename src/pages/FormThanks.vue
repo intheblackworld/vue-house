@@ -1,5 +1,6 @@
 <template>
   <div class="thanks">
+    <img src="https://bcp.crwdcntrl.net/5/c=13578/b=76396835" width="1" height="1"/>
     <a href="/event">
       <img src="~@/assets/img/thank-img.png" alt="" class="img">
       <img src="~@/assets/img/thank-img-hover.png" alt="" class="img-hover">
