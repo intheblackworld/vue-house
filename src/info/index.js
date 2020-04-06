@@ -19,7 +19,7 @@ export default {
     ['特殊設計', '台灣南區低碳示範城市之低碳示範地區，<br />符合「臺南市低碳城市自治條例」綠建築相關規定，<br/ >並取得綠建築候選證書']
   ],
 
-  gtmCode: ['KFVV867'], // 可放置多個
+  gtmCode: ['NLZ7V8B'], // 可放置多個
   order: {
     title: '預約賞屋',
     subTitle: ''
