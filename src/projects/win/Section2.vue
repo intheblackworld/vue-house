@@ -154,7 +154,6 @@
           :options="swiperOption2"
           ref="mySwiper"
           class="slide-b"
-          @slideChangeTransitionStart="slideChanged"
         >
           <swiper-slide
             v-for="(slide, index) in slideListM2"

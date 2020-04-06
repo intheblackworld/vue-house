@@ -15,34 +15,42 @@
           <div class="title">新店城市美學新定義</div>
           <div class="right-border"></div>
         </div>
-        <!-- <div class="desc">太子建設蓋房子，秉持集團「三好一公道」的企業精神，講求地段好、設計好、施工好、價格公道。</div> -->
-        <div class="block">
-          <img src="./s4/img.png" alt="" class="img">
-          <div class="t-content">
-            <div class="t-title">建築大師第一 重塑南區天際線</div>
-            <div class="t-subtitle">
-              CHL ARCHITECT＆ASSOCIATES
-            </div>
-            <div class="t-name">
-              呂建勳 建築師
-            </div>
-            <div class="t-desc1">
-              「從發現的原點出發，傳遞自然、簡約的精神，保留城市人文最單純的精粹。」
-            </div>
-            <div class="t-desc2">
-              美國哈佛大學Harvard University建築及都市設計碩士、呂建勳建築師事務所首席建築師、淡江大學建築系兼任講師、東海大學建築學士。
-            </div>
+      </div>
+      <!-- <div class="desc">太子建設蓋房子，秉持集團「三好一公道」的企業精神，講求地段好、設計好、施工好、價格公道。</div> -->
+      <div class="block">
+        <img
+          src="./s4/img.png"
+          alt=""
+          class="img"
+        >
+        <div class="t-content">
+          <div class="t-title">建築大師第一 重塑南區天際線</div>
+          <div class="t-subtitle">
+            CHL ARCHITECT＆ASSOCIATES
+          </div>
+          <div class="t-name">
+            呂建勳 建築師
+          </div>
+          <div class="t-desc1">
+            「從發現的原點出發，傳遞自然、簡約的精神，保留城市人文最單純的精粹。」
+          </div>
+          <div class="t-desc2">
+            美國哈佛大學Harvard University建築及都市設計碩士、呂建勳建築師事務所首席建築師、淡江大學建築系兼任講師、東海大學建築學士。
           </div>
         </div>
-        <div class="b-block">
-          <img src="./s4/img2.jpg" alt="" class="b-img">
-          <div class="b-content">
-            <div class="b-title">
-              建築美學<br />再創經典
-            </div>
-            <div class="b-desc">
-              建築是細節的層疊與累加，唯有經典的風格才能耐久、耐看。本案從建築設計之初，便期望在核心地段上展現經典風景。移植豪宅細節，以簡練線條構築、以醇厚石材內斂相襯，透過隔柵相映整棟建築物向上崢嶸的小節不拘。這是一座體現美學的現代建築，也是南區天際線上最優雅、永恆的建築身影。
-            </div>
+      </div>
+      <div class="b-block">
+        <img
+          src="./s4/img2.jpg"
+          alt=""
+          class="b-img"
+        >
+        <div class="b-content">
+          <div class="b-title">
+            建築美學<br />再創經典
+          </div>
+          <div class="b-desc">
+            建築是細節的層疊與累加，唯有經典的風格才能耐久、耐看。本案從建築設計之初，便期望在核心地段上展現經典風景。移植豪宅細節，以簡練線條構築、以醇厚石材內斂相襯，透過隔柵相映整棟建築物向上崢嶸的小節不拘。這是一座體現美學的現代建築，也是南區天際線上最優雅、永恆的建築身影。
           </div>
         </div>
       </div>
@@ -51,6 +59,56 @@
       v-else
       class="container"
     >
+      <div class="title-block">
+        <img
+          v-lazy="require('./s2/logo.png')"
+          alt=""
+          class="logo"
+        >
+        <div class="flex-ac flex-jb t-block">
+          <div class="left-border"></div>
+          <div class="title">新店城市美學新定義</div>
+          <div class="right-border"></div>
+        </div>
+      </div>
+      <div class="block">
+        <img
+          src="./s4/mo/img.png"
+          alt=""
+          class="img"
+        >
+        <div class="t-content">
+          <div class="t-title">建築大師第一 重塑南區天際線</div>
+          <div class="t-subtitle">
+            CHL ARCHITECT＆ASSOCIATES
+          </div>
+          <div class="t-name">
+            呂建勳 建築師
+          </div>
+          <div class="t-desc1">
+            「從發現的原點出發，傳遞自然、簡約的精神，保留城市人文最單純的精粹。」
+          </div>
+          <div class="t-desc2">
+            美國哈佛大學Harvard University建築及都市設計碩士、呂建勳建築師事務所首席建築師、淡江大學建築系兼任講師、東海大學建築學士。
+          </div>
+        </div>
+      </div>
+
+      <div class="b-block">
+        <img
+          src="./s4/img2.jpg"
+          alt=""
+          class="b-img"
+        >
+        <div class="b-content">
+          <div class="b-title">
+            建築美學<br />再創經典
+          </div>
+          <div class="b-desc">
+            建築是細節的層疊與累加，唯有經典的風格才能耐久、耐看。本案從建築設計之初，便期望在核心地段上展現經典風景。移植豪宅細節，以簡練線條構築、以醇厚石材內斂相襯，透過隔柵相映整棟建築物向上崢嶸的小節不拘。這是一座體現美學的現代建築，也是南區天際線上最優雅、永恆的建築身影。
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -106,7 +164,6 @@
     text-align: center;
   }
 }
-
 
 .block {
   width: 100%;
@@ -184,7 +241,6 @@
   color: #808080;
 }
 
-
 .b-block {
   position: relative;
   display: flex;
@@ -222,7 +278,6 @@
   text-align: justify;
   color: #808080;
 }
-
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
@@ -262,75 +317,160 @@
 }
 
 @media screen and (max-width: 767px) {
-  .m-bg {
-    background-color: #112d81;
-    position: relative;
-    overflow: hidden;
-  }
-  .left {
-    width: size-m(330);
-    height: auto;
-    position: relative;
-    top: 0;
-    transform: translate(0, 0);
-    img {
-      height: 100%;
-      &.left-img {
-        width: size-m(87);
-      }
-    }
-    > div {
-      font-size: size-m(12);
-    }
-  }
-  .bottom {
-    width: size-m(330);
-    margin: size-m(30) auto size-m(90) auto;
-    display: flex;
-    position: relative;
-  }
-
-  .swiper-fullscreen {
-    width: auto;
-    height: 100vh;
-    img {
-      width: auto;
-      height: 100%;
-    }
-  }
-
-  .m-img {
+  .container {
     width: 100vw;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
   }
-  .m-content {
-    width: size-m(145);
+  .title-block {
+    margin-top: 60px;
+    .logo {
+      width: 72px;
+      height: auto;
+      margin-bottom: 15px;
+    }
+
+    .left-border,
+    .right-border {
+      width: 14px;
+      height: 6px;
+      background: #d8007c;
+      opacity: 0.5;
+    }
+    .t-block {
+      width: 100vw;
+      margin: 0 auto;
+    }
+    .title {
+      font-size: size-m(21);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.21;
+      letter-spacing: 0.76px;
+      text-align: center;
+      color: #da007f;
+    }
+
+    .desc {
+      font-size: size-m(13);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.7;
+      letter-spacing: 0.46px;
+      text-align: left;
+      color: #808080;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
   }
 
-  .title {
-    font-size: size-m(47);
-  }
-
-  .subtitle {
-    font-size: size-m(15);
-  }
-
-  .desc {
-    font-size: size-m(12);
-  }
-
-  .logo {
-    width: 100vw;
-    height: auto;
-    position: absolute;
+  .t-content {
+    position: relative;
+    width: size-m(313);
     top: auto;
-    bottom: 0;
-    right: auto;
-    left: 0;
-    transform: none;
+    left: auto;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+
+  .t-title {
+    font-size: size-m(19);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.19;
+    letter-spacing: 0.64px;
+    text-align: left;
+    color: #595757;
+    margin-bottom: 20px;
+  }
+
+  .t-subtitle {
+    font-size: size-m(16);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.19;
+    letter-spacing: 1.35px;
+    text-align: left;
+    color: #595757;
+  }
+
+  .t-name {
+    font-size: size-m(15);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.31;
+    letter-spacing: 1.04px;
+    text-align: left;
+    color: #595757;
+    margin-bottom: 20px;
+  }
+
+  .t-desc1 {
+    font-size: size-m(12);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: 0.4px;
+    text-align: left;
+    color: #808080;
+    margin-bottom: 15px;
+  }
+
+  .t-desc2 {
+    font-size: size-m(12);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.51;
+    letter-spacing: 0.63px;
+    text-align: left;
+    color: #808080;
+    margin-bottom: 45px;
+  }
+
+  .b-block {
+    position: relative;
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .b-img {
+    width: 100vw;
+  }
+
+  .b-content {
+    width: size-m(298);
+    margin: 30px auto;
+  }
+
+  .b-title {
+    font-size: size-m(25);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.42;
+    letter-spacing: 0.86px;
+    text-align: center;
+    color: #da007f;
+    margin-bottom: 20px;
+  }
+
+  .b-desc {
+    font-size: size-m(12);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.71;
+    letter-spacing: 0.42px;
+    text-align: justify;
+    color: #808080;
   }
 
   .swiper-pagination {
@@ -364,8 +504,7 @@ export default {
     }
   },
 
-  methods: {
-  },
+  methods: {},
 
   mounted() {},
 

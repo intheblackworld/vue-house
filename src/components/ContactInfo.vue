@@ -277,8 +277,8 @@ export default {
 
   .logo {
     margin-bottom: 20px;
-    margin: 0 -140px 20px -140px;
-    left: 50%;
+    margin: 0 auto 30px;
+    left: auto;
     position: relative;
   }
 

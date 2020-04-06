@@ -116,6 +116,29 @@
       <div class="content">
         位於北新重劃區首排「Win太子」面萬坪綠帶公園，臨近新店區公所捷運站2號出口，同時具備優越的現代化機能及純粹自然的綠意環境，行政、商業、交通、休閒一應俱全，珍稀價值不言而喻。<br />在生活機能方面，捷運新店區公所站近在咫尺，鄰近中正路商圈及傳統市場，已是企業主、醫生等金字塔頂端住戶之首選，歡迎親臨樹海豪宅的臨場實境感受！
       </div>
+
+      <div class="animate-slide">
+        <div
+          class="item"
+          v-for="(item, index) in slideListM2"
+          :key="`slide1-${index}`"
+        >
+          <img
+            :src="item.img"
+            alt
+          />
+        </div>
+        <div
+          class="item"
+          v-for="(item, index) in slideListM2"
+          :key="`slide2-${index}`"
+        >
+          <img
+            :src="item.img"
+            alt
+          />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -375,6 +398,49 @@
     letter-spacing: normal;
     text-align: left;
     color: #808080;
+    margin-bottom: 30px;
+  }
+
+  .animate-slide {
+    display: flex;
+    position: relative;
+    width: 200vw;
+    z-index: 4;
+    // height: size-m(125);
+    left: 0;
+    animation: moving 20s linear infinite;
+    margin-bottom: 30px;
+    .item {
+      min-width: calc(100vw / 2.5);
+      padding: 0 1px;
+      position: relative;
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      .item-title {
+        font-size: calc(100vw * (19 / 1920));
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        color: #fff;
+        text-shadow: 0 0 3px #000;
+      }
+    }
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  @keyframes moving {
+    0% {
+      transform: translateX(0vw);
+    }
+
+    100% {
+      transform: translateX(-100vw);
+    }
   }
 
   .swiper-pagination {
@@ -451,11 +517,14 @@ export default {
       slideListM: [
         {
           img: require('./s3/mo/1-1.png'),
-          name: '中正紀念堂',
         },
         {
           img: require('./s3/mo/1-2.png'),
-          name: '公園示意圖',
+        },
+      ],
+      slideListM2: [
+        {
+          img: require('./s3/mo/2.jpg'),
         },
       ],
     }
