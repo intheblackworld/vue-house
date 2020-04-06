@@ -5,7 +5,10 @@
       <img v-lazy="require('./s1/logo.png')" alt="" class="bg-img" data-aos="fade" data-aos-delay="200">
       <img src="./s1/bottom.png" alt="" class="b-img" data-aos="fade" data-aos-delay="400">
     </div>
-    <div v-else>
+    <div v-else class="fullscreen">
+      <img src="./s1/mo/bg.jpg" alt="" class="bg-img">
+      <img v-lazy="require('./s1/mo/logo.png')" alt="" class="bg-img" data-aos="fade" data-aos-delay="200">
+      <img src="./s1/bottom.png" alt="" class="b-img" data-aos="fade" data-aos-delay="400">
     </div>
   </div>
 </template>

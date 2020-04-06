@@ -24,9 +24,7 @@
       >
       <div class="slide">
         <div class="slide-content">
-          <div class="slide-title">
-            公設規劃<br />專業物管 盡享飯店體驗
-          </div>
+          <div class="slide-title" v-html="slideList[slideIndex].title"></div>
         </div>
         <swiper
           :options="swiperOption"
@@ -494,15 +492,15 @@ export default {
       slideList: [
         {
           img: require('./s5/img2-1.jpg'),
-          name: '中正紀念堂',
+          title: '公設規劃<br />專業物管 盡享飯店體驗',
         },
         {
           img: require('./s5/img2-2.jpg'),
-          name: '公園示意圖',
+          title: '公設規劃<br />花園健身 百萬美景盡收眼底',
         },
         {
           img: require('./s5/img2-3.jpg'),
-          name: '公園示意圖',
+          title: '公設規劃<br />華美空間 也是專屬私人招待所',
         },
       ],
       slideListM: [

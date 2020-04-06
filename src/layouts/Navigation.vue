@@ -285,6 +285,7 @@ export default {
   .logo {
     width: $logo_phone_width;
     left: 15px;
+    top: 15px;
   }
 
   .nav {
@@ -296,9 +297,11 @@ export default {
     display: block;
     position: absolute;
     right: 15px;
-    width: 18px;
+    width: 30px;
 
     svg {
+      width: 100%;
+      height: 100%;
       color: $nav_btn_color;
     }
   }
