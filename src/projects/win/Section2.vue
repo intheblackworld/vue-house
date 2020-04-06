@@ -22,7 +22,10 @@
           <div class="slide-subtitle">
             {{slideList[slideIndex].subtitle}}
           </div>
-          <div class="slide-title" v-html="slideList[slideIndex].title">
+          <div
+            class="slide-title"
+            v-html="slideList[slideIndex].title"
+          >
           </div>
         </div>
         <swiper
@@ -100,29 +103,80 @@
       v-else
       class="container"
     >
-      <swiper
-        :options="swiperOption"
-        ref="mySwiper"
-        class="left"
-        @slideChangeTransitionStart="slideChanged"
-      >
-        <swiper-slide
-          v-for="(slide, index) in slideListM"
-          :index="index"
-          :key="slide.img"
-          class="item"
+      <div class="title-block">
+        <img
+          v-lazy="require('./s2/logo.png')"
+          alt=""
+          class="logo"
         >
-          <img
-            :src="slide.img"
-            :class="`item-img`"
-          />
-          <div v-html="slide.name"></div>
-        </swiper-slide>
-        <div
-          class="swiper-pagination"
-          slot="pagination"
-        ></div>
-      </swiper>
+        <div class="flex-ac flex-jb t-block">
+          <div class="left-border"></div>
+          <div class="title">磐石陣容 來自超越半甲子的累積</div>
+          <div class="right-border"></div>
+        </div>
+        <div class="desc">太子建設蓋房子，秉持集團「三好一公道」的企業精神，講求地段好、設計好、施工好、價格公道。</div>
+      </div>
+      <div class="slide">
+        <div class="slide-content">
+          <div class="slide-subtitle">
+            {{slideListM[slideIndex].subtitle}}
+          </div>
+          <div
+            class="slide-title"
+            v-html="slideListM[slideIndex].title"
+          >
+          </div>
+        </div>
+        <swiper
+          :options="swiperOption"
+          ref="mySwiper"
+          class=""
+          @slideChangeTransitionStart="slideChanged"
+        >
+          <swiper-slide
+            v-for="(slide, index) in slideListM"
+            :index="index"
+            :key="slide.img"
+            class="item"
+          >
+            <img
+              :src="slide.img"
+              :class="`item-img`"
+            />
+            <!-- <div v-html="slide.name"></div> -->
+          </swiper-slide>
+          <!-- <div
+            class="swiper-pagination"
+            slot="pagination"
+          ></div> -->
+        </swiper>
+        <swiper
+          :options="swiperOption2"
+          ref="mySwiper"
+          class="slide-b"
+          @slideChangeTransitionStart="slideChanged"
+        >
+          <swiper-slide
+            v-for="(slide, index) in slideListM2"
+            :index="index"
+            :key="slide.img"
+            class="item"
+          >
+            <img
+              :src="slide.img"
+              :class="`item-img-b`"
+            />
+            <div
+              class="slide-b-title"
+              v-html="slide.title"
+            ></div>
+            <div
+              class="slide-b-desc"
+              v-html="slide.desc"
+            ></div>
+          </swiper-slide>
+        </swiper>
+      </div>
     </div>
   </div>
 </template>
@@ -371,75 +425,138 @@
 }
 
 @media screen and (max-width: 767px) {
-  .m-bg {
-    background-color: #112d81;
-    position: relative;
-    overflow: hidden;
-  }
-  .left {
-    width: size-m(330);
-    height: auto;
-    position: relative;
-    top: 0;
-    transform: translate(0, 0);
-    img {
-      height: 100%;
-      &.left-img {
-        width: size-m(87);
-      }
-    }
-    > div {
-      font-size: size-m(12);
-    }
-  }
-  .bottom {
-    width: size-m(330);
-    margin: size-m(30) auto size-m(90) auto;
-    display: flex;
-    position: relative;
-  }
-
-  .swiper-fullscreen {
-    width: auto;
-    height: 100vh;
-    img {
-      width: auto;
-      height: 100%;
-    }
-  }
-
-  .m-img {
+  .container {
     width: 100vw;
+  }
+
+  .title-block {
+    margin-top: 60px;
+    .logo {
+      width: 72px;
+      height: auto;
+      margin-bottom: 15px;
+    }
+
+    .left-border,
+    .right-border {
+      width: 14px;
+      height: 6px;
+      background: #d8007c;
+      opacity: 0.5;
+    }
+    .t-block {
+      width: 100vw;
+      margin: 0 auto;
+    }
+    .title {
+      font-size: size-m(21);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.21;
+      letter-spacing: 0.76px;
+      text-align: center;
+      color: #da007f;
+    }
+
+    .desc {
+      font-size: size-m(13);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.7;
+      letter-spacing: 0.46px;
+      text-align: left;
+      color: #808080;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+  }
+
+  .slide-content {
+    background-color: #da007f;
+    width: size-m(330);
+    height: size-m(127);
     position: absolute;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
-  }
-  .m-content {
-    width: size-m(145);
-  }
-
-  .title {
-    font-size: size-m(47);
-  }
-
-  .subtitle {
-    font-size: size-m(15);
-  }
-
-  .desc {
-    font-size: size-m(12);
-  }
-
-  .logo {
-    width: 100vw;
-    height: auto;
-    position: absolute;
-    top: auto;
-    bottom: 0;
-    right: auto;
+    top: size-m(280);
     left: 0;
-    transform: none;
+    right: 0;
+    margin: 0 auto;
+    z-index: 2;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .slide-subtitle {
+      font-size: size-m(12.5);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.24;
+      letter-spacing: 0.42px;
+      text-align: center;
+      color: #ffffff;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .slide-title {
+      font-size: size-m(17);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.19;
+      letter-spacing: 0.64px;
+      text-align: center;
+      color: #ffffff;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .item-img {
+    width: 100vw;
+    height: auto;
+    position: relative;
+    left: 0px;
+  }
+  .slide {
+    overflow: visible;
+  }
+
+  .slide-b {
+    margin-top: 150px;
+    width: 150vw;
+    margin-left: -25vw;
+  }
+
+  .item-img-b {
+    width: 100%;
+  }
+
+  .slide-b-title {
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: 0.24px;
+    text-align: center;
+    color: #595757;
+  }
+
+  .slide-b-desc {
+    font-size: size-m(10);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.98;
+    letter-spacing: 0.18px;
+    text-align: center;
+    color: #595757;
   }
 
   .swiper-pagination {
@@ -488,7 +605,7 @@ export default {
         allowSlideNext: isMobile ? true : true,
         // centeredSlides: true,
         autoplay: {
-          delay: 400000,
+          delay: 4000,
           // disableOnInteraction: true,
         },
         loop: true,
@@ -507,24 +624,66 @@ export default {
         {
           img: require('./s2/img1-1.jpg'),
           subtitle: '蟬聯台灣新十大豪宅',
-          title: '2012<br />信義計劃區<br />台北信義'
+          title: '2012<br />信義計劃區<br />台北信義',
         },
         {
           img: require('./s2/img1-2.jpg'),
           subtitle: '移植台北信義團隊擘劃',
-          title: '2017<br />新莊副都心<br />太子信義'
+          title: '2017<br />新莊副都心<br />太子信義',
         },
       ],
       slideListM: [
         {
-          img: require('./s2/img1-1.jpg'),
-          name: '中正紀念堂',
+          img: require('./s2/mo/img1-1.jpg'),
+          subtitle: '蟬聯台灣新十大豪宅',
+          title: '2012<br />信義計劃區<br />台北信義',
         },
         {
-          img: require('./s2/img1-2.jpg'),
-          name: '公園示意圖',
+          img: require('./s2/mo/img1-2.jpg'),
+          subtitle: '移植台北信義團隊擘劃',
+          title: '2017<br />新莊副都心<br />太子信義',
         },
       ],
+      slideListM2: [
+        {
+          img: require('./s2/2-1.jpg'),
+          title: '統一國際大樓',
+          desc: '（太子建設實績）',
+        },
+        {
+          img: require('./s2/2-2.jpg'),
+          title: '台北W飯店',
+          desc: '（太子建設實績）',
+        },
+        {
+          img: require('./s2/2-3.jpg'),
+          title: '統一時代百貨',
+          desc: '（太子建設實績）',
+        },
+      ],
+      swiperOption2: {
+        slidesPerView: isMobile ? 3 : 1,
+        spaceBetween: isTablet ? 20 : 30,
+        slidesPerColumn: isMobile ? 1 : 1,
+        allowSlidePrev: isMobile ? true : true,
+        allowSlideNext: isMobile ? true : true,
+        // centeredSlides: true,
+        // autoplay: {
+          // delay: 4000,
+          // disableOnInteraction: true,
+        // },
+        loop: true,
+        // direction: 'vertical',
+        // effect: 'fade',
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      },
     }
   },
 

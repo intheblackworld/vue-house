@@ -67,12 +67,29 @@
         </div>
       </div>
 
-      <img src="./s3/2.jpg" alt="" class="img">
+      <img
+        src="./s3/2.jpg"
+        alt=""
+        class="img"
+      >
     </div>
     <div
       v-else
       class="container"
     >
+      <div class="title-block">
+        <img
+          v-lazy="require('./s2/logo.png')"
+          alt=""
+          class="logo"
+        >
+        <div class="flex-ac flex-jb t-block">
+          <div class="left-border"></div>
+          <div class="title">北新路重畫區 現代完美住宅典範</div>
+          <div class="right-border"></div>
+        </div>
+        <!-- <div class="desc">太子建設蓋房子，秉持集團「三好一公道」的企業精神，講求地段好、設計好、施工好、價格公道。</div> -->
+      </div>
       <swiper
         :options="swiperOption"
         ref="mySwiper"
@@ -89,13 +106,16 @@
             :src="slide.img"
             :class="`item-img`"
           />
-          <div v-html="slide.name"></div>
+          <!-- <div v-html="slide.name"></div> -->
         </swiper-slide>
-        <div
+        <!-- <div
           class="swiper-pagination"
           slot="pagination"
-        ></div>
+        ></div> -->
       </swiper>
+      <div class="content">
+        位於北新重劃區首排「Win太子」面萬坪綠帶公園，臨近新店區公所捷運站2號出口，同時具備優越的現代化機能及純粹自然的綠意環境，行政、商業、交通、休閒一應俱全，珍稀價值不言而喻。<br />在生活機能方面，捷運新店區公所站近在咫尺，鄰近中正路商圈及傳統市場，已是企業主、醫生等金字塔頂端住戶之首選，歡迎親臨樹海豪宅的臨場實境感受！
+      </div>
     </div>
   </div>
 </template>
@@ -284,75 +304,77 @@
 }
 
 @media screen and (max-width: 767px) {
-  .m-bg {
-    background-color: #112d81;
+  .container {
+    width: 100vw;
+  }
+  .title-block {
+    margin-top: 60px;
+    .logo {
+      width: 72px;
+      height: auto;
+      margin-bottom: 15px;
+    }
+
+    .left-border,
+    .right-border {
+      width: 14px;
+      height: 6px;
+      background: #d8007c;
+      opacity: 0.5;
+    }
+    .t-block {
+      width: 100vw;
+      margin: 0 auto;
+    }
+    .title {
+      font-size: size-m(21);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.21;
+      letter-spacing: 0.76px;
+      text-align: center;
+      color: #da007f;
+    }
+
+    .desc {
+      font-size: size-m(13);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.7;
+      letter-spacing: 0.46px;
+      text-align: left;
+      color: #808080;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+  }
+
+  .swiper-container {
     position: relative;
+    left: 0;
+    width: size-m(318);
+    margin: 20px auto;
     overflow: hidden;
   }
-  .left {
-    width: size-m(330);
-    height: auto;
-    position: relative;
-    top: 0;
-    transform: translate(0, 0);
-    img {
-      height: 100%;
-      &.left-img {
-        width: size-m(87);
-      }
-    }
-    > div {
-      font-size: size-m(12);
-    }
-  }
-  .bottom {
-    width: size-m(330);
-    margin: size-m(30) auto size-m(90) auto;
-    display: flex;
-    position: relative;
-  }
 
-  .swiper-fullscreen {
-    width: auto;
-    height: 100vh;
-    img {
-      width: auto;
-      height: 100%;
-    }
-  }
-
-  .m-img {
-    width: 100vw;
-    position: absolute;
+  .content {
+    width: size-m(318);
+    margin: 0 auto;
+    position: relative;
     right: 0;
-    bottom: 0;
-    z-index: 2;
-  }
-  .m-content {
-    width: size-m(145);
-  }
-
-  .title {
-    font-size: size-m(47);
-  }
-
-  .subtitle {
-    font-size: size-m(15);
-  }
-
-  .desc {
-    font-size: size-m(12);
-  }
-
-  .logo {
-    width: 100vw;
-    height: auto;
-    position: absolute;
     top: auto;
-    bottom: 0;
-    right: auto;
-    left: 0;
     transform: none;
+    font-size: size-m(12);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.86;
+    letter-spacing: normal;
+    text-align: left;
+    color: #808080;
   }
 
   .swiper-pagination {
@@ -401,7 +423,7 @@ export default {
         allowSlideNext: isMobile ? true : true,
         // centeredSlides: true,
         autoplay: {
-          delay: 400000,
+          delay: 4000,
           // disableOnInteraction: true,
         },
         loop: true,
@@ -428,11 +450,11 @@ export default {
       ],
       slideListM: [
         {
-          img: require('./s2/img1-1.jpg'),
+          img: require('./s3/mo/1-1.png'),
           name: '中正紀念堂',
         },
         {
-          img: require('./s2/img1-2.jpg'),
+          img: require('./s3/mo/1-2.png'),
           name: '公園示意圖',
         },
       ],
