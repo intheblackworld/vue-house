@@ -23,7 +23,7 @@ export default {
 
     ['坪數規劃', '26-36坪']
   ],
-  gtmCode: ['TPSRGDL'], // 可放置多個
+  gtmCode: ['5M5NXNR'], // 可放置多個
   order: {
     title: '預約賞屋',
     subTitle: ''
