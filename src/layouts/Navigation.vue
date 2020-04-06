@@ -113,7 +113,7 @@ export default {
   position: absolute;
   left: 0;
   display: block;
-  top: 0px;
+  top: 20px;
   transform: translateY(0%);
 }
 

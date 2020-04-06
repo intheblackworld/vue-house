@@ -20,12 +20,9 @@
       <div class="slide">
         <div class="slide-content">
           <div class="slide-subtitle">
-            蟬聯台灣新十大豪宅
+            {{slideList[slideIndex].subtitle}}
           </div>
-          <div class="slide-title">
-            2012<br />
-            信義計劃區<br />
-            台北信義
+          <div class="slide-title" v-html="slideList[slideIndex].title">
           </div>
         </div>
         <swiper
@@ -509,11 +506,13 @@ export default {
       slideList: [
         {
           img: require('./s2/img1-1.jpg'),
-          name: '中正紀念堂',
+          subtitle: '蟬聯台灣新十大豪宅',
+          title: '2012<br />信義計劃區<br />台北信義'
         },
         {
           img: require('./s2/img1-2.jpg'),
-          name: '公園示意圖',
+          subtitle: '移植台北信義團隊擘劃',
+          title: '2017<br />新莊副都心<br />太子信義'
         },
       ],
       slideListM: [
