@@ -1,24 +1,28 @@
 <template>
   <div class="section1">
     <div class="bg fullscreen relative" v-if="!isMobile">
-      <img src="./s1/h1.png" alt class="bg-img" data-aos="fade-right" data-aos-delay="400" />
-      <img src="./s1/h2.png" alt class="bg-img" data-aos="fade-left" data-aos-delay="600" />
-      <img src="./s1/logo.png" alt class="bg-img" data-aos="fade" data-aos-delay="800" />
-      <div :class="`title ${this.isShow ? 'typing' : 'hide'}`">輕取別墅 預約財富</div>
+      <img src="./s1/logo.png" alt class="bg-img" data-aos="fade" data-aos-delay="400" />
+      <img src="./s1/h1.png" alt class="bg-img" data-aos="fade" data-aos-delay="600" />
+      <img src="./s1/h2.png" alt class="bg-img" data-aos="fade" data-aos-delay="800" />
+      <img src="./s1/img1.png" alt class="windmill wind1" />
+      <img src="./s1/img2.png" alt class="windmill wind2" />
+      <!-- div :class="`title ${this.isShow ? 'typing' : 'hide'}`">輕取別墅 預約財富</div -->
     </div>
     <div class="bg fullscreen relative" v-else>
-      <img src="./s1/mo/h1.png" alt class="bg-img" data-aos="fade-right" data-aos-delay="400" />
-      <img src="./s1/mo/h2.png" alt class="bg-img" data-aos="fade-left" data-aos-delay="600" />
-      <img src="./s1/mo/logo.png" alt class="bg-img" data-aos="fade" data-aos-delay="800" />
-      <div :class="`title ${this.isShow ? 'typing' : 'hide'}`">輕取別墅 預約財富</div>
+      <img src="./s1/mo/logo.png" alt class="bg-img" data-aos="fade" data-aos-delay="400" />
+      <img src="./s1/mo/h1.png" alt class="bg-img" data-aos="fade" data-aos-delay="600" />
+      <img src="./s1/mo/h2.png" alt class="bg-img" data-aos="fade" data-aos-delay="800" />
+      <img src="./s1/img1.png" alt class="windmill wind1" />
+      <img src="./s1/img2.png" alt class="windmill wind2" />
+      <!-- div :class="`title ${this.isShow ? 'typing' : 'hide'}`">輕取別墅 預約財富</div -->
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 .bg {
   background-image: url('./s1/bg.jpg');
-  background-position: center;
-  background-size: auto;
+  background-position:top center;
+  background-size:cover;
   min-height: calc(100vw * (1080 / 1920));
 }
 
@@ -30,6 +34,24 @@
   position: absolute;
   &:nth-child(1) {
     position: relative;
+  }
+}
+.windmill {
+  width:calc(100vw * (270 / 1920));
+  height: auto;
+  display: block;
+  top: 0;
+  position: absolute;
+  transform: rotate(0);
+  animation: wind 3s 1s infinite linear;
+  &.wind1 {
+  top:calc(100vw * (100 / 1920));
+  left:calc(100vw * (1070 / 1920));
+  animation-duration:2.3s;
+  }
+  &.wind2 {
+  top:calc(100vw * (90 / 1920));
+  left:calc(100vw * (1640 / 1920));
   }
 }
 
@@ -66,6 +88,11 @@
   animation: typing 2s steps(9) forwards, caret 1s steps(1) infinite;
 }
 
+@keyframes wind {
+  to {
+    transform: rotate(360deg);
+  }
+}
 @keyframes typing {
   from {
     height: 0;
@@ -88,6 +115,18 @@
   .title {
     font-size: calc(100vw * (32 / 375));
   }
+.windmill {
+  width:calc(100vw * (210 / 750));
+  &.wind1 {
+  top:calc(100vw * (585 / 750));
+  left:calc(100vw * (245 / 750));
+  animation-duration:2.3s;
+  }
+  &.wind2 {
+  top:calc(100vw * (580 / 750));
+  left:calc(100vw * (680 / 750));
+  }
+}
 
   .typing {
     width: calc(100vw * (64 / 375));
