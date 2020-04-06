@@ -19,7 +19,7 @@ export default {
     ['會館設計', '橙田室內裝修設計工程有限公司']
   ],
 
-  gtmCode: ['N2DQP3H'], // 可放置多個
+  gtmCode: ['5RXWK3R'], // 可放置多個
   order: {
     title: '預約賞屋',
     subTitle: ''
