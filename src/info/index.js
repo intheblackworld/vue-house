@@ -26,7 +26,7 @@ export default {
     ['本案特色', '大廳挑高約4米2、百坪公設大會館<br />約二百坪景觀中庭花園、空中花園'],
   ],
 
-  gtmCode: ['W6Z9NXS'], // 可放置多個
+  gtmCode: ['WN5W6J2'], // 可放置多個
   order: {
     title: '預約賞屋',
     subTitle: ''
