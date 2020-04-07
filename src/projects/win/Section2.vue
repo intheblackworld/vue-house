@@ -238,8 +238,7 @@
     letter-spacing: 0.46px;
     text-align: left;
     color: #808080;
-    margin-top: 38px;
-    margin-bottom: 66px;
+    margin: 38px 5% 66px 5%;
     text-align: center;
   }
 }
@@ -429,7 +428,7 @@
   }
 
   .title-block {
-    margin-top: 60px;
+    margin-top:size-m(40);
     .logo {
       width: 72px;
       height: auto;
@@ -528,8 +527,8 @@
 
   .slide-b {
     margin-top: 150px;
-    width: 150vw;
-    margin-left: -25vw;
+    width: 200vw;
+    margin-left: -50vw;
   }
 
   .item-img-b {

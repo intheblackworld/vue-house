@@ -19,10 +19,12 @@
       <!-- <div class="desc">太子建設蓋房子，秉持集團「三好一公道」的企業精神，講求地段好、設計好、施工好、價格公道。</div> -->
       <div class="block">
         <img
-          src="./s4/img.png"
+          src="./s4/img1.jpg"
           alt=""
-          class="img"
+          class="img1" data-aos="fade" data-aos-delay="100"
         >
+        <div class="box1" data-aos="fade-right" data-aos-delay="400"></div>
+        <div class="box2" data-aos="fade-left" data-aos-delay="700"></div>
         <div class="t-content">
           <div class="t-title">建築大師第一 重塑南區天際線</div>
           <div class="t-subtitle">
@@ -45,6 +47,7 @@
           alt=""
           class="b-img"
         >
+        <div>建築外觀</div>
         <div class="b-content">
           <div class="b-title">
             建築美學<br />再創經典
@@ -73,10 +76,13 @@
       </div>
       <div class="block">
         <img
-          src="./s4/mo/img.png"
+          src="./s4/img1.jpg"
           alt=""
-          class="img"
+          class="img1" data-aos="fade" data-aos-delay="100"
         >
+        <div class="box1" data-aos="fade-right" data-aos-delay="400"></div>
+        <div class="box2" data-aos="fade-left" data-aos-delay="700"></div>
+      </div>
         <div class="t-content">
           <div class="t-title">建築大師第一 重塑南區天際線</div>
           <div class="t-subtitle">
@@ -86,20 +92,20 @@
             呂建勳 建築師
           </div>
           <div class="t-desc1">
-            「從發現的原點出發，傳遞自然、簡約的精神，保留城市人文最單純的精粹。」
+            「從發現的原點出發，傳遞自然、簡約的精神，<br>保留城市人文最單純的精粹。」
           </div>
           <div class="t-desc2">
             美國哈佛大學Harvard University建築及都市設計碩士、呂建勳建築師事務所首席建築師、淡江大學建築系兼任講師、東海大學建築學士。
           </div>
         </div>
-      </div>
 
       <div class="b-block">
         <img
           src="./s4/img2.jpg"
-          alt=""
+          alt="建築外觀"
           class="b-img"
         >
+        <div>建築外觀</div>
         <div class="b-content">
           <div class="b-title">
             建築美學<br />再創經典
@@ -168,12 +174,19 @@
 .block {
   width: 100%;
   position: relative;
-  margin-top: 30px;
+  margin-top: 30px;text-align: left;
 }
-
+.box1{
+  position: absolute;background: #da007f66;width:66px;height:66px;top:115px;left:63px;}
+.box2{
+  position: absolute;background: #da007f;width:227px;height:53px;bottom:0;left:323px;}
 .img {
   width: 100%;
   position: relative;
+}
+.img1 {
+  width: 24%;
+  position: relative;margin:140px 0 30px 7%;
 }
 
 .t-content {
@@ -227,6 +240,7 @@
   letter-spacing: 0.4px;
   text-align: left;
   color: #808080;
+  text-indent: -1em;
   margin-bottom: 15px;
 }
 
@@ -251,7 +265,13 @@
 
 .b-img {
   width: 657px;
+  + div{
+    align-self: flex-end;
+    margin: 0 -100px 10px -400px;
+    color: #fff;
+  }
 }
+
 
 .b-content {
   width: 552px;
@@ -266,6 +286,7 @@
   letter-spacing: 0.86px;
   text-align: center;
   color: #da007f;
+  margin: 0 0 60px 0;
 }
 
 .b-desc {
@@ -307,6 +328,11 @@
   .b-title {
     margin-bottom: 30px;
   }
+  
+.box1{
+ width:51px;height:51px;top:90px;left:49px;}
+.box2{
+ width:179px;height:42px;left:252px;}
 }
 
 /* 螢幕尺寸標準 */
@@ -321,7 +347,7 @@
     width: 100vw;
   }
   .title-block {
-    margin-top: 60px;
+    margin-top:size-m(100);
     .logo {
       width: 72px;
       height: auto;
@@ -364,6 +390,11 @@
       text-align: center;
     }
   }
+
+.img1 {
+  width: 45%;
+  position: relative;margin:9% 0 5% 14%;
+}
 
   .t-content {
     position: relative;
@@ -443,6 +474,10 @@
 
   .b-img {
     width: 100vw;
+  + div{
+    margin:-1.5em 0.5em 2.5em 0;
+    text-align: right;
+  }
   }
 
   .b-content {
@@ -489,6 +524,8 @@
     padding: 0 size-m(5);
     cursor: none;
   }
+.box1{width:size-m(35);height:size-m(35);top:size-m(20);left:size-m(29);}
+.box2{width:size-m(120);height:size-m(30);bottom:size-m(40);left:size-m(206);}
 }
 </style>
 <script>

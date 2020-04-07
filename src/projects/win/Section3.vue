@@ -12,7 +12,7 @@
         >
         <div class="flex-ac flex-jb t-block">
           <div class="left-border"></div>
-          <div class="title">北新路重畫區 現代完美住宅典範</div>
+          <div class="title">北新路重劃區 現代完美住宅典範</div>
           <div class="right-border"></div>
         </div>
         <!-- <div class="desc">太子建設蓋房子，秉持集團「三好一公道」的企業精神，講求地段好、設計好、施工好、價格公道。</div> -->
@@ -85,7 +85,7 @@
         >
         <div class="flex-ac flex-jb t-block">
           <div class="left-border"></div>
-          <div class="title">北新路重畫區 現代完美住宅典範</div>
+          <div class="title">北新路重劃區 現代完美住宅典範</div>
           <div class="right-border"></div>
         </div>
         <!-- <div class="desc">太子建設蓋房子，秉持集團「三好一公道」的企業精神，講求地段好、設計好、施工好、價格公道。</div> -->
@@ -284,6 +284,10 @@
   letter-spacing: normal;
   text-align: left;
   color: #808080;
+  &::before{content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7.07 8.16'%3E%3Cpolygon fill='%23da007f' class='cls-1' points='7.07 4.08 0 8.16 0 0 7.07 4.08'/%3E%3C/svg%3E");
+  width: 0.8em;height: 0.8em;
+  display:block;margin: 0 0 -0.9em -1.2em;
+  }
 }
 
 .img {
@@ -331,7 +335,7 @@
     width: 100vw;
   }
   .title-block {
-    margin-top: 60px;
+    margin-top:size-m(100);
     .logo {
       width: 72px;
       height: auto;
@@ -399,17 +403,20 @@
     text-align: left;
     color: #808080;
     margin-bottom: 30px;
+  &::before{width: 0.75em;height: 0.75em;margin: 0 0 0.2em 0.75em;transform:rotate(90deg)
+  }
   }
 
   .animate-slide {
     display: flex;
     position: relative;
-    width: 200vw;
+    width: 400vw;
     z-index: 4;
     // height: size-m(125);
     left: 0;
-    animation: moving 20s linear infinite;
+    animation: moving 15s linear infinite;
     margin-bottom: 30px;
+      transform: translateX(0vw);
     .item {
       min-width: calc(100vw / 2.5);
       padding: 0 1px;
@@ -434,12 +441,8 @@
   }
 
   @keyframes moving {
-    0% {
-      transform: translateX(0vw);
-    }
-
-    100% {
-      transform: translateX(-100vw);
+    to {
+      transform: translateX(-50%);
     }
   }
 

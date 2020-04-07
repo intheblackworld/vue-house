@@ -521,8 +521,8 @@
 
   .slide-b {
     margin-top: 120px;
-    width: 150vw;
-    margin-left: -25vw;
+    width: 200vw;
+    margin-left: -50vw;
     margin-bottom: 50px;
   }
 

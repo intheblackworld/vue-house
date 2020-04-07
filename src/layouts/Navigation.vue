@@ -108,12 +108,12 @@ export default {
 }
 
 .logo {
-  width: $logo_pc_width;
-  height: auto;
+  width:auto;
+  height: 66%;
   position: absolute;
   left: 0;
   display: block;
-  top: 20px;
+  top: 16%;
   transform: translateY(0%);
 }
 
@@ -144,12 +144,12 @@ export default {
     position: relative;
     overflow: hidden;
     // border-right: 1px solid $nav_link_hover_bg;
-
+    > span{z-index: 3;}
     &:hover {
-      color: $nav_link_hover_color;
+      background-color: $nav_link_hover_bg;
       img {
-        animation: r5 0.5s infinite alternate;
       }
+    
     }
 
     @keyframes r5 {
@@ -161,47 +161,44 @@ export default {
       }
     }
 
-    // &::before {
-    //   content: '';
-    //   width: 0%;
-    //   height: 100%;
-    //   display: block;
-    //   background: $nav_link_hover_bg; // second bg
-    //   position: absolute;
-    //   transform: skewX(-20deg);
-    //   left: -10%;
-    //   opacity: 1;
-    //   top: 0;
-    //   z-index: 2;
-    //   transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
-    //   // box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
-    // }
+     &::before {
+       content: '';
+       width: 0%;
+       height: 100%;
+       display: block;
+       background: $nav_link_hover_bg; // second bg
+       position: absolute;
+       transform: skewX(-20deg);
+       left: -10%;
+       opacity: 1;
+       top: 0;
+       z-index: 2;
+       transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+     }
 
-    // &::after {
-    //   content: '';
-    //   width: 0%;
-    //   height: 100%;
-    //   display: block;
-    //   background: #fff; // first bg
-    //   position: absolute;
-    //   transform: skewX(-20deg);
-    //   left: -10%;
-    //   opacity: 0;
-    //   top: 0;
-    //   z-index: 1;
-    //   transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
-    //   // box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
-    // }
-    // &:hover::before,
-    // &:hover::before {
-    //   opacity: 1;
-    //   width: 116%;
-    // }
-    // &:hover::after,
-    // &:hover::after {
-    //   opacity: 1;
-    //   width: 120%;
-    // }
+     &::after {
+       content: '';
+       width: 0%;
+       height: 100%;
+       display: block;
+       background: #fff9; // first bg
+       position: absolute;
+       transform: skewX(-20deg);
+       left: -10%;
+       opacity: 0;
+       top: 0;
+       z-index: 1;
+       transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
+       // box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
+     }
+     &:hover::before {
+       opacity: 1;
+       width: 150%;
+     }
+     &:hover::after {
+       opacity: 1;
+       width: 150%;
+     }
 
     .title {
       font-size: 16px !important;
@@ -212,6 +209,7 @@ export default {
     .subTitle {
       color: $nav_link_subtitle_color;
       font-size: 12px;
+      z-index: 3;
     }
 
     img {
@@ -283,9 +281,9 @@ export default {
   }
 
   .logo {
-    width: $logo_phone_width;
+    //width: $logo_phone_width;
     left: 15px;
-    top: 15px;
+    //top: 15px;
   }
 
   .nav {

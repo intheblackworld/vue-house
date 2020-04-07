@@ -91,11 +91,10 @@ export default {
 @import '@/assets/style/variableDefault.scss';
 
 .contact-info {
-  background-color: $contact_bg;
-  // background-image: url('../assets/img/contact_bg.jpg');
-  background-attachment: fixed;
+  background: $contact_bg;
+  // background-image: url('../assets/img/contact_bg.jpg');/
   background-size: cover;
-  box-shadow: $contact_shadow;
+  //box-shadow: $contact_shadow;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -104,17 +103,17 @@ export default {
   z-index: 3;
   width: 1200px;
   height: 460px;
-  background-size: 100vw auto;
+  /* background-size: 100vw auto;
   background-attachment: fixed;
-  background-position: 0% 50%;
+  background-position: 0% 50%; */
   transform: translateY(0);
   margin: 2vw auto -3vw;
-  padding: 60px 0 50px;
+  padding: 70px 0 50px;
 }
 
 .logo {
-  width: $contact_logo_pc_width;
-  height: auto;
+  width:auto;
+  height: $contact_logo_pc_width;
   margin: 0 auto;
 }
 .info {
@@ -171,7 +170,6 @@ export default {
     opacity: 0;
     top: 0;
     z-index: 5;
-    -webkit-transition: all .4s cubic-bezier(.2,.95,.57,.99);
     transition: all .4s cubic-bezier(.2,.95,.57,.99)
     }
     &:hover:before {
@@ -184,7 +182,8 @@ export default {
   width: 600px;
   height: 60px;
   background: #fff;
-  box-shadow: $contact_btn_border;
+  //box-shadow: $contact_btn_border;
+  border:1px solid #da007f;
 }
 .google-btn {
   width: 280px;
