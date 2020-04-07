@@ -3,7 +3,7 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
-          <img class="logo" src="@/assets/img/nav-logo.png" alt />
+          <img class="logo" src="@/assets/img/nav-logo.png" alt v-scroll-to="{ element: `#section1` }" />
           <div class="menu" @click="toggleSidebar">
             <font-awesome-icon icon="bars" />
           </div>
@@ -110,6 +110,7 @@ export default {
 .logo {
   width:auto;
   height: 66%;
+  cursor: pointer;
   position: absolute;
   left: 0;
   display: block;

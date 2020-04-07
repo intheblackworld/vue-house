@@ -1,8 +1,8 @@
 export default [
-  { name: '品牌價值', imgSrc: '', subTitle: 'BRAND', section: 'section2', svgSrc: '' },
-  { name: '核心地段', imgSrc: '', subTitle: 'LOCATION', section: 'section3', svgSrc: '' },
+  { name: '品牌價值', imgSrc: '', subTitle: 'BRAND', section: 'section2', svgSrc: '', offset: -100 },
+  { name: '核心地段', imgSrc: '', subTitle: 'LOCATION', section: 'section3', svgSrc: '', offset: -100 },
   { name: '建築美學', imgSrc: '', subTitle: 'ARCHITECTURE', section: 'section4', svgSrc: '', offset: -100 },
-  { name: '規劃設計', imgSrc: '', subTitle: 'DESIGN', section: 'section7', svgSrc: '' },
+  { name: '規劃設計', imgSrc: '', subTitle: 'DESIGN', section: 'section6', svgSrc: '', offset: -100 },
   { name: '預約賞屋', imgSrc: '', subTitle: 'RESERVE', section: 'contact', svgSrc: '', mobileOffset: 0 },
 ]
 
