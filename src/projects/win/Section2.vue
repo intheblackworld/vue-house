@@ -133,6 +133,24 @@
           class=""
           @slideChangeTransitionStart="slideChanged"
         >
+        <div
+            class="swiper-button-prev"
+            slot="button-prev"
+          >
+            <img
+              src="./all/l.png"
+              alt
+            />
+          </div>
+          <div
+            class="swiper-button-next"
+            slot="button-next"
+          >
+            <img
+              src="./all/r.png"
+              alt
+            />
+          </div>
           <swiper-slide
             v-for="(slide, index) in slideListM"
             :index="index"
@@ -152,7 +170,7 @@
         </swiper>
         <swiper
           :options="swiperOption2"
-          ref="mySwiper"
+          ref="mySwiper2"
           class="slide-b"
         >
           <swiper-slide
@@ -569,7 +587,8 @@
 
   .swiper-button-prev,
   .swiper-button-next {
-    width: size-m(30);
+    width: auto;
+    height: size-m(300);
     padding: 0 size-m(5);
     cursor: none;
   }
@@ -584,7 +603,7 @@ import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
-  name: 'section1',
+  name: 'section2',
   mixins: [slider],
   props: ['showSlide'],
 
@@ -673,14 +692,14 @@ export default {
         loop: true,
         // direction: 'vertical',
         // effect: 'fade',
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
+        // navigation: {
+        //   nextEl: '.swiper-button-next',
+        //   prevEl: '.swiper-button-prev',
+        // },
+        // pagination: {
+        //   el: '.swiper-pagination',
+        //   clickable: true,
+        // },
       },
     }
   },

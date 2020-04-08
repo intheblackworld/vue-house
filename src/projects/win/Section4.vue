@@ -18,27 +18,82 @@
       </div>
       <!-- <div class="desc">太子建設蓋房子，秉持集團「三好一公道」的企業精神，講求地段好、設計好、施工好、價格公道。</div> -->
       <div class="block">
-        <img
-          src="./s4/img1.jpg"
-          alt=""
-          class="img1" data-aos="fade" data-aos-delay="100"
+        <swiper
+          :options="swiperOption"
+          ref="mySwiper"
+          data-aos="fade"
+          data-aos-delay="100"
+          class=""
+          @slideChangeTransitionStart="slideChanged"
         >
-        <div class="box1" data-aos="fade-right" data-aos-delay="400"></div>
-        <div class="box2" data-aos="fade-left" data-aos-delay="700"></div>
+          <div
+            class="swiper-button-prev"
+            slot="button-prev"
+          >
+            <img
+              src="./all/l.png"
+              alt
+            />
+          </div>
+          <div
+            class="swiper-button-next"
+            slot="button-next"
+          >
+            <img
+              src="./all/r.png"
+              alt
+            />
+          </div>
+
+          <swiper-slide
+            v-for="(slide, index) in slideList"
+            :index="index"
+            :key="slide.img"
+            class="item"
+          >
+            <img
+              :src="slide.img"
+              :class="`img1`"
+              v-show="slideIndex == index"
+            />
+            <!-- <div v-html="slide.name"></div> -->
+          </swiper-slide>
+          <!-- <div
+            class="swiper-pagination"
+            slot="pagination"
+          ></div> -->
+        </swiper>
+        <div
+          class="box1"
+          data-aos="fade-right"
+          data-aos-delay="400"
+        ></div>
+        <div
+          :class="`box2 aos-init aos-animate ${slideIndex == 1 ? 'small' : ''}`"
+          data-aos="fade-left"
+          data-aos-delay="700"
+        ></div>
         <div class="t-content">
-          <div class="t-title">建築大師第一 重塑南區天際線</div>
-          <div class="t-subtitle">
-            CHL ARCHITECT＆ASSOCIATES
-          </div>
-          <div class="t-name">
-            呂建勳 建築師
-          </div>
-          <div class="t-desc1">
-            「從發現的原點出發，傳遞自然、簡約的精神，保留城市人文最單純的精粹。」
-          </div>
-          <div class="t-desc2">
-            美國哈佛大學Harvard University建築及都市設計碩士、呂建勳建築師事務所首席建築師、淡江大學建築系兼任講師、東海大學建築學士。
-          </div>
+          <div
+            class="t-title"
+            v-html="slideList[slideIndex].title"
+          ></div>
+          <div
+            class="t-subtitle"
+            v-html="slideList[slideIndex].subtitle"
+          ></div>
+          <div
+            class="t-name"
+            v-html="slideList[slideIndex].name"
+          ></div>
+          <div
+            class="t-desc1"
+            v-html="slideList[slideIndex].desc1"
+          ></div>
+          <div
+            class="t-desc2"
+            v-html="slideList[slideIndex].desc2"
+          ></div>
         </div>
       </div>
       <div class="b-block">
@@ -75,29 +130,84 @@
         </div>
       </div>
       <div class="block">
-        <img
-          src="./s4/img1.jpg"
-          alt=""
-          class="img1" data-aos="fade" data-aos-delay="100"
+        <swiper
+          :options="swiperOption"
+          ref="mySwiper"
+          data-aos="fade"
+          data-aos-delay="100"
+          class=""
+          @slideChangeTransitionStart="slideChanged"
         >
-        <div class="box1" data-aos="fade-right" data-aos-delay="400"></div>
-        <div class="box2" data-aos="fade-left" data-aos-delay="700"></div>
+          <div
+            class="swiper-button-prev"
+            slot="button-prev"
+          >
+            <img
+              src="./all/l.png"
+              alt
+            />
+          </div>
+          <div
+            class="swiper-button-next"
+            slot="button-next"
+          >
+            <img
+              src="./all/r.png"
+              alt
+            />
+          </div>
+
+          <swiper-slide
+            v-for="(slide, index) in slideList"
+            :index="index"
+            :key="slide.img"
+            class="item"
+          >
+            <img
+              :src="slide.img"
+              :class="`img1`"
+              v-show="slideIndex == index"
+            />
+            <!-- <div v-html="slide.name"></div> -->
+          </swiper-slide>
+          <!-- <div
+            class="swiper-pagination"
+            slot="pagination"
+          ></div> -->
+        </swiper>
+        <div
+          class="box1"
+          data-aos="fade-right"
+          data-aos-delay="400"
+        ></div>
+        <div
+          :class="`box2 aos-init aos-animate ${slideIndex == 1 ? 'small' : ''}`"
+          data-aos="fade-left"
+          data-aos-delay="700"
+        ></div>
       </div>
-        <div class="t-content">
-          <div class="t-title">建築大師第一 重塑南區天際線</div>
-          <div class="t-subtitle">
-            CHL ARCHITECT＆ASSOCIATES
-          </div>
-          <div class="t-name">
-            呂建勳 建築師
-          </div>
-          <div class="t-desc1">
-            「從發現的原點出發，傳遞自然、簡約的精神，<br>保留城市人文最單純的精粹。」
-          </div>
-          <div class="t-desc2">
-            美國哈佛大學Harvard University建築及都市設計碩士、呂建勳建築師事務所首席建築師、淡江大學建築系兼任講師、東海大學建築學士。
-          </div>
-        </div>
+      <div class="t-content">
+        <div
+            class="t-title"
+            v-html="slideList[slideIndex].title"
+          ></div>
+          <div
+            class="t-subtitle"
+            v-html="slideList[slideIndex].subtitle"
+          ></div>
+          <div
+            class="t-name"
+            v-html="slideList[slideIndex].name"
+          ></div>
+          <div
+            class="t-desc1"
+            v-html="slideList[slideIndex].desc1"
+          ></div>
+          <div
+            class="t-desc2"
+            v-html="slideList[slideIndex].desc2"
+          ></div>
+      </div>
 
       <div class="b-block">
         <img
@@ -174,19 +284,43 @@
 .block {
   width: 100%;
   position: relative;
-  margin-top: 30px;text-align: left;
+  margin-top: 30px;
+  text-align: left;
 }
-.box1{
-  position: absolute;background: #da007f66;width:66px;height:66px;top:115px;left:63px;}
-.box2{
-  position: absolute;background: #da007f;width:227px;height:53px;bottom:0;left:323px;}
+.box1 {
+  position: absolute;
+  background: #da007f66;
+  width: 66px;
+  height: 66px;
+  top: 115px;
+  left: 63px;
+  z-index: 7;
+}
+.box2 {
+  position: absolute;
+  background: #da007f;
+  width: 227px;
+  height: 53px;
+  bottom: 0;
+  left: 323px;
+  z-index: 7;
+  transition: all .5s;
+
+  &.small {
+    height: 20px;
+    width: 150px;
+    left: 230px;
+    bottom: 230px;
+  }
+}
 .img {
   width: 100%;
   position: relative;
 }
 .img1 {
   width: 24%;
-  position: relative;margin:140px 0 30px 7%;
+  position: relative;
+  margin: 140px 0 30px 7%;
 }
 
 .t-content {
@@ -240,7 +374,7 @@
   letter-spacing: 0.4px;
   text-align: left;
   color: #808080;
-  text-indent: -1em;
+  text-indent: -.5em;
   margin-bottom: 15px;
 }
 
@@ -265,13 +399,12 @@
 
 .b-img {
   width: 657px;
-  + div{
+  + div {
     align-self: flex-end;
     margin: 0 -100px 10px -400px;
     color: #fff;
   }
 }
-
 
 .b-content {
   width: 552px;
@@ -328,11 +461,18 @@
   .b-title {
     margin-bottom: 30px;
   }
-  
-.box1{
- width:51px;height:51px;top:90px;left:49px;}
-.box2{
- width:179px;height:42px;left:252px;}
+
+  .box1 {
+    width: 51px;
+    height: 51px;
+    top: 90px;
+    left: 49px;
+  }
+  .box2 {
+    width: 179px;
+    height: 42px;
+    left: 252px;
+  }
 }
 
 /* 螢幕尺寸標準 */
@@ -347,7 +487,7 @@
     width: 100vw;
   }
   .title-block {
-    margin-top:size-m(100);
+    margin-top: size-m(100);
     .logo {
       width: 72px;
       height: auto;
@@ -391,10 +531,11 @@
     }
   }
 
-.img1 {
-  width: 45%;
-  position: relative;margin:9% 0 5% 14%;
-}
+  .img1 {
+    width: 45%;
+    position: relative;
+    margin: 9% 0 5% 14%;
+  }
 
   .t-content {
     position: relative;
@@ -474,10 +615,10 @@
 
   .b-img {
     width: 100vw;
-  + div{
-    margin:-1.5em 0.5em 2.5em 0;
-    text-align: right;
-  }
+    + div {
+      margin: -1.5em 0.5em 2.5em 0;
+      text-align: right;
+    }
   }
 
   .b-content {
@@ -524,24 +665,106 @@
     padding: 0 size-m(5);
     cursor: none;
   }
-.box1{width:size-m(35);height:size-m(35);top:size-m(20);left:size-m(29);}
-.box2{width:size-m(120);height:size-m(30);bottom:size-m(40);left:size-m(206);}
+  .box1 {
+    width: size-m(35);
+    height: size-m(35);
+    top: size-m(20);
+    left: size-m(29);
+  }
+  .box2 {
+    width: size-m(120);
+    height: size-m(30);
+    bottom: size-m(40);
+    left: size-m(206);
+
+    &.small {
+      width: size-m(100);
+      height: size-m(20);
+      left: size-m(206);
+      bottom: size-m(80);
+    }
+  }
 }
 </style>
 <script>
 // @ is an alias to /src
 import { isMobile, isTablet } from '@/utils'
+import slider from '@/mixins/slider.js'
+import 'swiper/dist/css/swiper.css'
+
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'section4',
+  mixins: [slider],
+
+  components: {
+    swiper,
+    swiperSlide,
+  },
 
   data() {
     return {
       isMobile,
+      swiperOption: {
+        slidesPerView: isMobile ? 1 : 1,
+        spaceBetween: isTablet ? 20 : 30,
+        slidesPerColumn: isMobile ? 1 : 1,
+        allowSlidePrev: isMobile ? true : true,
+        allowSlideNext: isMobile ? true : true,
+        // centeredSlides: true,
+        autoplay: {
+          delay: 6000,
+          // disableOnInteraction: true,
+        },
+        loop: true,
+        // direction: 'vertical',
+        effect: 'fade',
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      },
+      slideList: [
+        {
+          img: require('./s4/img1.jpg'),
+          title: '建築大師第一 重塑南區天際線',
+          subtitle: 'CHL ARCHITECT＆ASSOCIATES',
+          name: '呂建勳 建築師',
+          desc1:
+            '「從發現的原點出發，傳遞自然、簡約的精神，保留城市人文最單純的精粹。」',
+          desc2:
+            '美國哈佛大學Harvard University建築及都市設計碩士、呂建勳建築師事務所首席建築師、淡江大學建築系兼任講師、東海大學建築學士。',
+        },
+        {
+          img: require('./s4/img1-2.jpg'),
+          title: '燈光計劃第一 新店建築新地標',
+          subtitle: 'LIGHTING DESIGN & CONSTRUCTION',
+          name: '蘭克斯照明',
+          desc1: '&nbsp;&nbsp;成立於1975年，先後設計規劃無數海內外照明工程，如：台北101大樓建築燈光及室內公共區域燈光設計及施工、控制；與日本伊東豊雄建築設計事務所共同參與備有45,000座位的高雄世運主場館燈光設計及承攬照明工程完成；以及無數位於台灣的五星級旅館之燈光設計及照明工程承攬。',
+          desc2:
+            'About獲獎紀錄<br />1998 榮獲台北市建築夜間照明金質獎－新光三越信義店(A11)<br />1999 榮獲高雄市建築夜間照明最優獎－高雄85國際廣場大樓(T&C Tower)<br />2003 榮獲台北101金融大樓最優秀專業指定協力廠商<br />2009 榮獲高雄市運主場館優良燈光設計獎',
+        },
+      ],
     }
   },
 
-  methods: {},
+  methods: {
+    slideChanged(e) {
+      const swiper = this.$refs.mySwiper.swiper
+      if (swiper.isEnd) {
+        this.slideIndex = 0
+      } else if (swiper.isBeginning) {
+        this.slideIndex = swiper.slides.length - 3
+      } else {
+        this.slideIndex = swiper.activeIndex - 1
+      }
+    },
+  },
 
   mounted() {},
 

@@ -61,9 +61,7 @@
           ></div>
         </swiper>
 
-        <div class="content">
-          位於北新重劃區首排「Win太子」面萬坪綠帶公園，臨近新店區公所捷運站2號出口，同時具備優越的現代化機能及純粹自然的綠意環境，行政、商業、交通、休閒一應俱全，珍稀價值不言而喻。
-          在生活機能方面，捷運新店區公所站近在咫尺，鄰近中正路商圈及傳統市場，已是企業主、醫生等金字塔頂端住戶之首選，歡迎親臨樹海豪宅的臨場實境感受！
+        <div class="content" v-html="slideList[slideIndex].desc">
         </div>
       </div>
 
@@ -96,6 +94,24 @@
         class="left"
         @slideChangeTransitionStart="slideChanged"
       >
+      <div
+            class="swiper-button-prev"
+            slot="button-prev"
+          >
+            <img
+              src="./all/l.png"
+              alt
+            />
+          </div>
+          <div
+            class="swiper-button-next"
+            slot="button-next"
+          >
+            <img
+              src="./all/r.png"
+              alt
+            />
+          </div>
         <swiper-slide
           v-for="(slide, index) in slideListM"
           :index="index"
@@ -113,8 +129,7 @@
           slot="pagination"
         ></div> -->
       </swiper>
-      <div class="content">
-        位於北新重劃區首排「Win太子」面萬坪綠帶公園，臨近新店區公所捷運站2號出口，同時具備優越的現代化機能及純粹自然的綠意環境，行政、商業、交通、休閒一應俱全，珍稀價值不言而喻。<br />在生活機能方面，捷運新店區公所站近在咫尺，鄰近中正路商圈及傳統市場，已是企業主、醫生等金字塔頂端住戶之首選，歡迎親臨樹海豪宅的臨場實境感受！
+      <div class="content" v-html="slideList[slideIndex].desc">
       </div>
 
       <div class="animate-slide">
@@ -511,18 +526,22 @@ export default {
         {
           img: require('./s3/1-1.png'),
           name: '中正紀念堂',
+          desc: '位於北新重劃區首排「Win太子」面萬坪綠帶公園，臨近新店區公所捷運站2號出口，同時具備優越的現代化機能及純粹自然的綠意環境，行政、商業、交通、休閒一應俱全，珍稀價值不言而喻。<br />在生活機能方面，捷運新店區公所站近在咫尺，鄰近中正路商圈及傳統市場，已是企業主、醫生等金字塔頂端住戶之首選，歡迎親臨樹海豪宅的臨場實境感受！'
         },
         {
           img: require('./s3/1-2.png'),
           name: '公園示意圖',
+          desc: '北新路、中正路交會區塊，是新店行政單位匯集之處，包括了區公所等行政機關均設立於此。具備黃金核心的現代化機能、擁有便捷交通、充足的生活便利性及純粹自然綠意環境，是大台北南區最精鍊出色、最有未來性的國王軸心。'
         },
       ],
       slideListM: [
         {
           img: require('./s3/mo/1-1.png'),
+          desc: '位於北新重劃區首排「Win太子」面萬坪綠帶公園，臨近新店區公所捷運站2號出口，同時具備優越的現代化機能及純粹自然的綠意環境，行政、商業、交通、休閒一應俱全，珍稀價值不言而喻。<br />在生活機能方面，捷運新店區公所站近在咫尺，鄰近中正路商圈及傳統市場，已是企業主、醫生等金字塔頂端住戶之首選，歡迎親臨樹海豪宅的臨場實境感受！'
         },
         {
           img: require('./s3/mo/1-2.png'),
+          desc: '北新路、中正路交會區塊，是新店行政單位匯集之處，包括了區公所等行政機關均設立於此。具備黃金核心的現代化機能、擁有便捷交通、充足的生活便利性及純粹自然綠意環境，是大台北南區最精鍊出色、最有未來性的國王軸心。'
         },
       ],
       slideListM2: [
