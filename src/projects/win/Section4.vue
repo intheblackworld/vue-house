@@ -53,7 +53,7 @@
           >
             <img
               :src="slide.img"
-              :class="`img1`"
+              :class="`img1 ${slideIndex == 1 ? 'small' : ''}`"
               v-show="slideIndex == index"
             />
             <!-- <div v-html="slide.name"></div> -->
@@ -165,7 +165,7 @@
           >
             <img
               :src="slide.img"
-              :class="`img1`"
+              :class="`img1 ${slideIndex == 1 ? 'small' : ''}`"
               v-show="slideIndex == index"
             />
             <!-- <div v-html="slide.name"></div> -->
@@ -310,7 +310,7 @@
     height: 20px;
     width: 150px;
     left: 230px;
-    bottom: 230px;
+    bottom: 200px;
   }
 }
 .img {
@@ -321,6 +321,10 @@
   width: 24%;
   position: relative;
   margin: 140px 0 30px 7%;
+  &.small {
+  margin: 165px 0 30px 6%;
+  width: 26%;
+  }
 }
 
 .t-content {
@@ -461,6 +465,12 @@
   .b-title {
     margin-bottom: 30px;
   }
+.img1 {
+  &.small {
+  margin: 165px 0 30px 6%;
+  width: 33%;
+  }
+}
 
   .box1 {
     width: 51px;
@@ -472,6 +482,9 @@
     width: 179px;
     height: 42px;
     left: 252px;
+  &.small {
+    bottom: 100px;
+  }
   }
 }
 
@@ -535,6 +548,10 @@
     width: 45%;
     position: relative;
     margin: 9% 0 5% 14%;
+  &.small {
+    margin: 9% 0 5% 14%;
+  width: 70%;
+}
   }
 
   .t-content {
@@ -681,7 +698,7 @@
       width: size-m(100);
       height: size-m(20);
       left: size-m(206);
-      bottom: size-m(80);
+      bottom: size-m(40);
     }
   }
 }

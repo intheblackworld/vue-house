@@ -1,9 +1,12 @@
 <template>
   <div class="relative">
     <div v-if="!isMobile">
-      <img src="./s1/bg.jpg" alt="" class="bg-img">
-      <img src="./s1/bg1.png" alt="" class="bg-img balloon">
-      <img src="./s1/bg2.png" alt="" class="bg-img">
+      <img src="./s1/bg.png" alt="" class="bg-img">
+      <div class="g">
+      <img src="./s1/bg00.png" alt="" class="img">
+      <img src="./s1/bg11.png" alt="" class="img balloon">
+      <img src="./s1/bg21.png" alt="" class="img">
+      </div>
       <svg version="1.1" id="s1svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         viewBox="0 0 300.1 271.6" style="enable-background:new 0 0 300.1 271.6;" xml:space="preserve">
         <path class="st0" d="M136.9,246.8h-18.3v-3.2l3.3-3.2c5.5-5.3,8.8-8.7,8.8-12.3c0-2.3-1.4-4.3-4.6-4.3c-2,0.1-3.9,0.8-5.4,1.9
@@ -99,8 +102,11 @@
     </div>
     <div v-else class="fullscreen">
       <img src="./s1/mo/bg.jpg" alt="" class="bg-img">
-      <img src="./s1/bg1.png" alt="" class="bg-img balloon">
-      <img src="./s1/mo/bg2.png" alt="" class="bg-img">
+      <div class="g">
+      <img src="./s1/mo/bg0.png" alt="" class="img">
+      <img src="./s1/mo/bg1.png" alt="" class="img balloon">
+      <img src="./s1/mo/bg2.png" alt="" class="img">
+      </div>
       <svg version="1.1" id="s1svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         viewBox="0 0 300.1 271.6" style="enable-background:new 0 0 300.1 271.6;" xml:space="preserve">
         <path class="st0" d="M136.9,246.8h-18.3v-3.2l3.3-3.2c5.5-5.3,8.8-8.7,8.8-12.3c0-2.3-1.4-4.3-4.6-4.3c-2,0.1-3.9,0.8-5.4,1.9
@@ -243,25 +249,41 @@
 </style>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
-.relative{height: 100vh;}
+.relative{height: 100vh;overflow: hidden;}
 .bg-img {
   width: 100vw;
   height: 100vh;
   position: absolute;
+  display: block;
   top: 0;
   left: 0;
-  display: block;
   object-fit: cover;
 
   &:nth-child(1) {
     position: relative;
   }
-  &.balloon{width: size(1155);height: auto;top: size(-427);left:37%;
-   animation: balloon 3s linear infinite alternate-reverse;transform:translateX(-50%) rotate(0deg);
-   transform-origin:50% 100%;
+}
+.g{
+  top: 50%;
+  left: 50%;transform:translate(-76%,-48%);
+    position: absolute;
+  img{
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  &:nth-child(1) {
+    width: size(1155);
+    position: relative;
+  }
+
+  &.balloon{top: size(-0);left:0;
+  animation: balloon 3s linear infinite alternate-reverse;transform:rotate(0deg);
+   transform-origin:50% 50%;;
     }
 }
-
+}
 .b-img {
   width: 100%;height: 7vh;
   object-fit: cover;
@@ -271,7 +293,7 @@
 }
 @keyframes balloon {
     to {
-        transform:translateX(-50%) rotate(-8deg)
+        transform:rotate(-8deg)
     }
 }
 @media only screen and (max-width: 1440px){
@@ -304,19 +326,18 @@
     z-index: 1;
     height: auto;
   }
-
-.bg-img {
-  &.balloon{width:120vw;height:auto;top:auto;bottom:58%;left:28%;
-    }
-    }
+.g{
+  top: 50%;
+  left: 50%;transform:translate(-69%,-56.5%);
+    position: absolute;
+  img{
+  &:nth-child(1) {
+    width: size-m(400);
+  }
+}
+}
 }
 
-@media screen and (max-height: 700px) {
-.bg-img {
-  &.balloon{left:30%;bottom:60%;
-    }
-    }
-}
 </style>
 <script>
 // @ is an alias to /src
