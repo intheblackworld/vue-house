@@ -1,9 +1,9 @@
 <template>
   <div class="section13">
     <div class="bg relative" v-if="isMobile">
-      <img src="./s13/bg1_m.png" alt="" class="bg-img">
+      <img src="./s13/bg1_m.png" alt="" class="bg-img img1">
       <img src="./s13/bg2_m.png" alt="" class="bg-img" data-aos="fade" data-aos-delay="300">
-      <img src="./s13/bg3_m.png" alt="" class="bg-img" data-aos="fade" data-aos-delay="500">
+      <img src="./s13/bg3_m.png" alt="" class="bg-img img2" data-aos="fade" data-aos-delay="500">
     </div>
     <div class="bg relative" v-else>
       <img src="./s13/bg1.png" alt="" class="bg-img">
@@ -22,14 +22,24 @@
 }
 
 .bg-img {
-  width: 100vw;
+  width: 100%;
+  height: 100%;
   display: block;
   position: absolute;
+  object-fit: cover;
   top: 0;
   left: 0;
   &:nth-child(1) {
-    position: relative;
+  width: 100%;
+  object-fit: initial;
   }
+  &:nth-child(3) {
+  position: relative;
+  height: auto;
+  width: 100%;
+  max-width:1520px;
+  }
+
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {

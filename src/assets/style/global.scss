@@ -233,7 +233,9 @@ img[lazy='loaded'] {
 
   img {
     position: relative;
-    z-index: 122;max-width:calc(100vw - 140px);max-height:calc(100vh - 220px);
+    z-index: 122;
+    max-width:calc(100vw - 140px);
+    max-height:90vh;
   }
 
   .close {
@@ -439,17 +441,16 @@ img[lazy='loaded'] {
     }
 
     img {
-      width: 80%;
-      position: relative;
-      z-index: 122;
+width: 90vw;
+max-width:90vw;
+max-height:calc(100vh - 220px);
     }
 
     .close {
-      width: 50px;
-      position: absolute;
-      top: -50px;
-      right: 20px;
-      cursor: pointer;
+      width: 30px;
+      top: -40px;
+      right: 10px;
+      transform: translate(0,0%);
     }
   }
 }
