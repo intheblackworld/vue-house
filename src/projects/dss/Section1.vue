@@ -1,6 +1,22 @@
 <template>
   <div class="section1">
     <div class="fullscreen bg">
+      <div class="fix-group">
+        <div class="button" @click="modal = true">
+          <!-- <img src="./button.png" alt /> -->
+        </div>
+        <!-- <div class="button" v-scroll-to="{ element: `#${'section2'}`, offset: -56 }">
+        <img src="./chevron-up.png" alt />
+        </div>-->
+      </div>
+      <div class="modal" v-if="modal">
+        <div class="mask" @click="modal = false"></div>
+        <div>
+          <!-- <img src="./w.jpg" alt v-if="!isMobile" />
+          <img src="./mo.jpg" alt v-else /> -->
+          <img src="@/assets/img/close.png" alt class="close" @click="modal = false" />
+        </div>
+      </div>
       <div class="star comet"></div>
       <img src="./s1_logo.png" alt class="logo" data-aos="fade-down" data-aos-delay="0" />
     </div>
