@@ -34,6 +34,7 @@
           v-show="index === slideIndex"
           :key="slide.img"
         >
+        <img :src="slideList[slideIndex].title" :class="`item-img`" />
           <div class="title" v-html="slideList[slideIndex].title"></div>
           <div class="desc" v-html="slideList[slideIndex].desc"></div>
         </div>
@@ -134,8 +135,9 @@
   text-align: right;
   color: #ffffff;
   position: absolute;
-  right: size(10);
+  right: size(160);
   bottom: size(10);
+  text-shadow: 0 0 5px 0px #000;
 }
 
 .swiper-slide {
@@ -281,6 +283,7 @@ export default {
       slideList: [
         {
           img: require('./s10/img1.jpg'),
+          name: '情境示意',
           title: '衛浴面盆',
           subtitle: '德國國寶品牌 歐洲各國、皇室愛用',
           desc:
@@ -288,6 +291,7 @@ export default {
         },
         {
           img: require('./s10/img2.png'),
+          name: '全熱交換器示意圖',
           title: '阿拉斯加HEPA 全熱交換器',
           subtitle: '供應新鮮氧氣　兼具除蟎殺菌',
           desc:
@@ -296,6 +300,7 @@ export default {
 
         {
           img: require('./s10/img3.jpg'),
+          name: '隔音地墊示意圖',
           title: '隔音地墊',
           subtitle: '豪宅建案御用 隔音公法首選',
           desc:
@@ -303,6 +308,7 @@ export default {
         },
         {
           img: require('./s10/img4.jpg'),
+          name: '全智能馬桶示意圖',
           title: '全智能馬桶',
           subtitle: '全球衛浴領導 喜來登酒店選用',
           desc:
@@ -310,6 +316,7 @@ export default {
         },
         {
           img: require('./s10/img5.jpg'),
+          name: '情境示意',
           title: '大雅廚具',
           subtitle: '聖瑪格麗特石英石　100%產自義大利',
           desc:
