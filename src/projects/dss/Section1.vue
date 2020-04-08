@@ -3,7 +3,7 @@
     <div class="fullscreen bg">
       <div class="fix-group">
         <div class="button" @click="modal = true">
-          <!-- <img src="./button.png" alt /> -->
+          <img src="./dialog/button.png" alt />
         </div>
         <!-- <div class="button" v-scroll-to="{ element: `#${'section2'}`, offset: -56 }">
         <img src="./chevron-up.png" alt />
@@ -12,8 +12,8 @@
       <div class="modal" v-if="modal">
         <div class="mask" @click="modal = false"></div>
         <div>
-          <!-- <img src="./w.jpg" alt v-if="!isMobile" />
-          <img src="./mo.jpg" alt v-else /> -->
+          <img src="./dialog/web.jpg" alt v-if="!isMobile" />
+          <img src="./dialog/mo.jpg" alt v-else />
           <img src="@/assets/img/close.png" alt class="close" @click="modal = false" />
         </div>
       </div>
@@ -125,6 +125,7 @@ export default {
   data() {
     return {
       isMobile,
+      modal: true,
     }
   },
 

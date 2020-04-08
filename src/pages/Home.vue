@@ -22,6 +22,9 @@
     <div id="section6">
       <Section6 />
     </div>
+    <div id="section13">
+      <Section13 />
+    </div>
     <div id="section7">
       <Section7 />
     </div>
@@ -66,6 +69,7 @@ import Section9 from '@/projects/dss/Section9.vue'
 import Section10 from '@/projects/dss/Section10.vue'
 import Section11 from '@/projects/dss/Section11.vue'
 import Section12 from '@/projects/dss/Section12.vue'
+import Section13 from '@/projects/dss/Section13.vue'
 
 export default {
   name: 'home',
@@ -88,6 +92,7 @@ export default {
     Section10,
     Section11,
     Section12,
+    Section13,
   },
 
   data() {
