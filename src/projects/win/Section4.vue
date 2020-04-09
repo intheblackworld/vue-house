@@ -30,19 +30,11 @@
             class="swiper-button-prev"
             slot="button-prev"
           >
-            <img
-              src="./all/l.png"
-              alt
-            />
           </div>
           <div
             class="swiper-button-next"
             slot="button-next"
           >
-            <img
-              src="./all/r.png"
-              alt
-            />
           </div>
 
           <swiper-slide
@@ -58,10 +50,10 @@
             />
             <!-- <div v-html="slide.name"></div> -->
           </swiper-slide>
-          <!-- <div
+          <div
             class="swiper-pagination"
             slot="pagination"
-          ></div> -->
+          ></div>
         </swiper>
         <div
           class="box1"
@@ -98,11 +90,11 @@
       </div>
       <div class="b-block">
         <img
-          src="./s4/img2.jpg"
+          src="./s4/img2-1.jpg"
           alt=""
           class="b-img"
         >
-        <div>建築外觀</div>
+        <div>實際外觀與環境合成輔予修飾</div>
         <div class="b-content">
           <div class="b-title">
             建築美學<br />再創經典
@@ -142,19 +134,11 @@
             class="swiper-button-prev"
             slot="button-prev"
           >
-            <img
-              src="./all/l.png"
-              alt
-            />
           </div>
           <div
             class="swiper-button-next"
             slot="button-next"
           >
-            <img
-              src="./all/r.png"
-              alt
-            />
           </div>
 
           <swiper-slide
@@ -170,10 +154,10 @@
             />
             <!-- <div v-html="slide.name"></div> -->
           </swiper-slide>
-          <!-- <div
+          <div
             class="swiper-pagination"
             slot="pagination"
-          ></div> -->
+          ></div>
         </swiper>
         <div
           class="box1"
@@ -211,11 +195,11 @@
 
       <div class="b-block">
         <img
-          src="./s4/img2.jpg"
+          src="./s4/img2-1.jpg"
           alt="建築外觀"
           class="b-img"
         >
-        <div>建築外觀</div>
+        <div>建築實際外觀與環境合成輔予修飾外觀</div>
         <div class="b-content">
           <div class="b-title">
             建築美學<br />再創經典
@@ -306,12 +290,12 @@
   z-index: 7;
   transition: all .5s;
 
-  &.small {
+ /* &.small {
     height: 20px;
     width: 150px;
     left: 230px;
     bottom: 200px;
-  }
+  }*/
 }
 .img {
   width: 100%;
@@ -321,17 +305,17 @@
   width: 24%;
   position: relative;
   margin: 140px 0 30px 7%;
-  &.small {
+  /*&.small {
   margin: 165px 0 30px 6%;
   width: 26%;
-  }
+  }*/
 }
 
 .t-content {
   position: absolute;
   width: 794px;
   top: 150px;
-  left: 480px;
+  left: 580px;
 }
 
 .t-title {
@@ -422,7 +406,7 @@
   line-height: 1.42;
   letter-spacing: 0.86px;
   text-align: center;
-  color: #da007f;
+  color: #595757;
   margin: 0 0 60px 0;
 }
 
@@ -436,6 +420,48 @@
   text-align: justify;
   color: #808080;
 }
+
+.swiper-container {
+  position: static;
+}
+
+.swiper-pagination {
+  transform: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: auto;
+  bottom: -20px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  border: 0px none #0000 !important;
+  width: 2em;
+  font-size: size(25);
+  height: 100%;
+  top:2em;
+  padding: 0 size(10);
+  display: flex;
+  margin: 0;align-items: center;
+  z-index: 3;
+  &::before{
+    width: 1em;
+    height: 1em;
+    display: block;
+    content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16.28 28.67' fill='%230006'%3E%3Cpolygon points='14.33 28.67 16.28 26.72 3.79 14.23 16.18 1.84 14.33 0 0 14.33 14.33 28.67'/%3E%3C/svg%3E");}
+
+}
+
+.swiper-button-prev {
+  left: 0;
+}
+.swiper-button-next {
+  transform: rotate(180deg);
+  right: 0;
+}
+
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
@@ -465,12 +491,13 @@
   .b-title {
     margin-bottom: 30px;
   }
+  /*
 .img1 {
   &.small {
   margin: 165px 0 30px 6%;
   width: 33%;
   }
-}
+}*/
 
   .box1 {
     width: 51px;
@@ -482,9 +509,9 @@
     width: 179px;
     height: 42px;
     left: 252px;
-  &.small {
+ /* &.small {
     bottom: 100px;
-  }
+  }*/
   }
 }
 
@@ -548,10 +575,10 @@
     width: 45%;
     position: relative;
     margin: 9% 0 5% 14%;
-  &.small {
+  /*&.small {
     margin: 9% 0 5% 14%;
   width: 70%;
-}
+}*/
   }
 
   .t-content {
@@ -651,7 +678,6 @@
     line-height: 1.42;
     letter-spacing: 0.86px;
     text-align: center;
-    color: #da007f;
     margin-bottom: 20px;
   }
 
@@ -665,23 +691,13 @@
     text-align: justify;
     color: #808080;
   }
+  
 
-  .swiper-pagination {
-    // transform: none;
-    // width: 100%;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
-    // top: auto;
-    bottom: 5%;
-  }
+.swiper-button-prev,
+.swiper-button-next {
+  top:0;
+}
 
-  .swiper-button-prev,
-  .swiper-button-next {
-    width: size-m(30);
-    padding: 0 size-m(5);
-    cursor: none;
-  }
   .box1 {
     width: size-m(35);
     height: size-m(35);
@@ -694,12 +710,12 @@
     bottom: size-m(40);
     left: size-m(206);
 
-    &.small {
+   /* &.small {
       width: size-m(100);
       height: size-m(20);
       left: size-m(206);
       bottom: size-m(40);
-    }
+    }*/
   }
 }
 </style>

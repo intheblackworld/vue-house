@@ -12,7 +12,7 @@
         >
         <div class="flex-ac flex-jb t-block">
           <div class="left-border"></div>
-          <div class="title">磐石陣容 來自超越半甲子的累積</div>
+          <div class="title">凝聚幸福生活最佳場域</div>
           <div class="right-border"></div>
         </div>
         <div class="desc">太子建設蓋房子，秉持集團「三好一公道」的企業精神，講求地段好、設計好、施工好、價格公道。</div>
@@ -39,19 +39,11 @@
             class="swiper-button-prev"
             slot="button-prev"
           >
-            <img
-              src="./all/l.png"
-              alt
-            />
           </div>
           <div
             class="swiper-button-next"
             slot="button-next"
           >
-            <img
-              src="./all/r.png"
-              alt
-            />
           </div>
 
           <swiper-slide
@@ -109,7 +101,7 @@
         >
         <div class="flex-ac flex-jb t-block">
           <div class="left-border"></div>
-          <div class="title">磐石陣容 來自超越半甲子的累積</div>
+          <div class="title">凝聚幸福生活最佳場域</div>
           <div class="right-border"></div>
         </div>
         <div class="desc">太子建設蓋房子，秉持集團「三好一公道」的企業精神，講求地段好、設計好、施工好、價格公道。</div>
@@ -140,19 +132,11 @@
             class="swiper-button-prev"
             slot="button-prev"
           >
-            <img
-              src="./all/l.png"
-              alt
-            />
           </div>
           <div
             class="swiper-button-next"
             slot="button-next"
           >
-            <img
-              src="./all/r.png"
-              alt
-            />
           </div>
           <swiper-slide
             v-for="(slide, index) in slideListM"
@@ -230,7 +214,7 @@
 
   .left-border,
   .right-border {
-    width: 127px;
+    width: 200px;
     height: 6px;
     background: #d8007c;
     opacity: 0.5;
@@ -276,7 +260,7 @@
   align-items: center;
   justify-content: center;
   top: auto;
-  bottom: 10px;
+  bottom: -20px;
 }
 
 .swiper-button-prev,
@@ -289,23 +273,26 @@
   display: flex;
   margin: 0;
   z-index: 3;
-  img {
-    object-fit: contain;
-    height: auto;
-  }
+  &::before{width: 1em;
+    height: 1em;
+    display: block;
+    content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16.28 28.67' fill='%23fff'%3E%3Cpolygon points='14.33 28.67 16.28 26.72 3.79 14.23 16.18 1.84 14.33 0 0 14.33 14.33 28.67'/%3E%3C/svg%3E");}
+
 }
 
 .swiper-button-prev {
   left: 0;
 }
 .swiper-button-next {
+  transform: rotate(180deg);
   right: 0;
 }
 
 .swiper-container {
   overflow: visible;
 }
-.swiper-slide {
+
+.swiper-container {
   overflow: hidden;
 }
 .swiper-slide-active {
@@ -354,8 +341,7 @@
 }
 
 .slide {
-  overflow-x: hidden;
-  overflow-y: visible;
+  overflow:initial;
 }
 
 .block-img {

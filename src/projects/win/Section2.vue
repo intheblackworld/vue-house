@@ -38,19 +38,11 @@
             class="swiper-button-prev"
             slot="button-prev"
           >
-            <img
-              src="./all/l.png"
-              alt
-            />
           </div>
           <div
             class="swiper-button-next"
             slot="button-next"
           >
-            <img
-              src="./all/r.png"
-              alt
-            />
           </div>
 
           <swiper-slide
@@ -137,19 +129,11 @@
             class="swiper-button-prev"
             slot="button-prev"
           >
-            <img
-              src="./all/l.png"
-              alt
-            />
           </div>
           <div
             class="swiper-button-next"
             slot="button-next"
           >
-            <img
-              src="./all/r.png"
-              alt
-            />
           </div>
           <swiper-slide
             v-for="(slide, index) in slideListM"
@@ -272,36 +256,36 @@
   align-items: center;
   justify-content: center;
   top: auto;
-  bottom: 10px;
+  bottom: -20px;
 }
 
 .swiper-button-prev,
 .swiper-button-next {
   border: 0px none #0000 !important;
-  width: size(50);
+  width: 2em;
+  font-size: size(25);
   height: 100%;
   top: 0;
   padding: 0 size(10);
   display: flex;
-  margin: 0;
+  margin: 0;align-items: center;
   z-index: 3;
-  img {
-    object-fit: contain;
-    height: auto;
-  }
+  &::before{width: 1em;
+    height: 1em;
+    display: block;
+    content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16.28 28.67' fill='%23fff'%3E%3Cpolygon points='14.33 28.67 16.28 26.72 3.79 14.23 16.18 1.84 14.33 0 0 14.33 14.33 28.67'/%3E%3C/svg%3E");}
+
 }
 
 .swiper-button-prev {
   left: 0;
 }
 .swiper-button-next {
+  transform: rotate(180deg);
   right: 0;
 }
 
 .swiper-container {
-  overflow: visible;
-}
-.swiper-slide {
   overflow: hidden;
 }
 .swiper-slide-active {
@@ -361,8 +345,10 @@
 }
 
 .slide {
+  overflow:initial;
+  /*
   overflow-x: hidden;
-  overflow-y: visible;
+  overflow-y: visible; */
 }
 
 .block-img {
@@ -616,7 +602,7 @@ export default {
       isMobile,
       swiperOption: {
         slidesPerView: isMobile ? 1 : 1,
-        spaceBetween: isTablet ? 20 : 30,
+        spaceBetween: isMobile ? 20 : -30,
         slidesPerColumn: isMobile ? 1 : 1,
         allowSlidePrev: isMobile ? true : true,
         allowSlideNext: isMobile ? true : true,
@@ -645,6 +631,11 @@ export default {
         },
         {
           img: require('./s2/img1-2.jpg'),
+          subtitle: '移植台北信義團隊擘劃',
+          title: '2017<br />新莊副都心<br />太子信義',
+        },
+        {
+          img: require('./s2/img1-3.jpg'),
           subtitle: '移植台北信義團隊擘劃',
           title: '2017<br />新莊副都心<br />太子信義',
         },

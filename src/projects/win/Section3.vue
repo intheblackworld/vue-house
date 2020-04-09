@@ -28,19 +28,11 @@
             class="swiper-button-prev"
             slot="button-prev"
           >
-            <img
-              src="./all/l.png"
-              alt
-            />
           </div>
           <div
             class="swiper-button-next"
             slot="button-next"
           >
-            <img
-              src="./all/r.png"
-              alt
-            />
           </div>
 
           <swiper-slide
@@ -98,19 +90,11 @@
             class="swiper-button-prev"
             slot="button-prev"
           >
-            <img
-              src="./all/l.png"
-              alt
-            />
           </div>
           <div
             class="swiper-button-next"
             slot="button-next"
           >
-            <img
-              src="./all/r.png"
-              alt
-            />
           </div>
         <swiper-slide
           v-for="(slide, index) in slideListM"
@@ -227,6 +211,7 @@
   left: 0;
   width: 623px;
   overflow: hidden;
+  padding-bottom: 20px;
 }
 
 .swiper-pagination {
@@ -242,23 +227,26 @@
 .swiper-button-prev,
 .swiper-button-next {
   border: 0px none #0000 !important;
-  width: size(50);
+  width: 2em;
+  font-size: size(25);
   height: 100%;
   top: 0;
   padding: 0 size(10);
   display: flex;
-  margin: 0;
+  margin: 0;align-items: center;
   z-index: 3;
-  img {
-    object-fit: contain;
-    height: auto;
-  }
+  &::before{width: 1em;
+    height: 1em;
+    display: block;
+    content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16.28 28.67' fill='%23fff'%3E%3Cpolygon class='cls-1' points='14.33 28.67 16.28 26.72 3.79 14.23 16.18 1.84 14.33 0 0 14.33 14.33 28.67'/%3E%3C/svg%3E");}
+
 }
 
 .swiper-button-prev {
   left: 0;
 }
 .swiper-button-next {
+  transform: rotate(180deg);
   right: 0;
 }
 
@@ -299,7 +287,7 @@
   letter-spacing: normal;
   text-align: left;
   color: #808080;
-  &::before{content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7.07 8.16'%3E%3Cpolygon fill='%23da007f' class='cls-1' points='7.07 4.08 0 8.16 0 0 7.07 4.08'/%3E%3C/svg%3E");
+  &::before{content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7.07 8.16'%3E%3Cpolygon fill='%23da007f' points='7.07 4.08 0 8.16 0 0 7.07 4.08'/%3E%3C/svg%3E");
   width: 0.8em;height: 0.8em;
   display:block;margin: 0 0 -0.9em -1.2em;
   }
@@ -400,6 +388,7 @@
     width: size-m(318);
     margin: 20px auto;
     overflow: hidden;
+  padding-bottom: 0;
   }
 
   .content {
@@ -526,7 +515,7 @@ export default {
         {
           img: require('./s3/1-1.png'),
           name: '中正紀念堂',
-          desc: '位於北新重劃區首排「Win太子」面萬坪綠帶公園，臨近新店區公所捷運站2號出口，同時具備優越的現代化機能及純粹自然的綠意環境，行政、商業、交通、休閒一應俱全，珍稀價值不言而喻。<br />在生活機能方面，捷運新店區公所站近在咫尺，鄰近中正路商圈及傳統市場，已是企業主、醫生等金字塔頂端住戶之首選，歡迎親臨樹海豪宅的臨場實境感受！'
+          desc: '位於北新路重劃區首排「Win太子」面萬坪綠帶公園，臨近新店區公所捷運站2號出口，同時具備優越的現代化機能及純粹自然的綠意環境，行政、商業、交通、休閒一應俱全，珍稀價值不言而喻。<br />在生活機能方面，捷運新店區公所站近在咫尺，鄰近中正路商圈及傳統市場，已是企業主、醫生等金字塔頂端住戶之首選，歡迎親臨樹海豪宅的臨場實境感受！'
         },
         {
           img: require('./s3/1-2.png'),
@@ -537,7 +526,7 @@ export default {
       slideListM: [
         {
           img: require('./s3/mo/1-1.png'),
-          desc: '位於北新重劃區首排「Win太子」面萬坪綠帶公園，臨近新店區公所捷運站2號出口，同時具備優越的現代化機能及純粹自然的綠意環境，行政、商業、交通、休閒一應俱全，珍稀價值不言而喻。<br />在生活機能方面，捷運新店區公所站近在咫尺，鄰近中正路商圈及傳統市場，已是企業主、醫生等金字塔頂端住戶之首選，歡迎親臨樹海豪宅的臨場實境感受！'
+          desc: '位於北新路重劃區首排「Win太子」面萬坪綠帶公園，臨近新店區公所捷運站2號出口，同時具備優越的現代化機能及純粹自然的綠意環境，行政、商業、交通、休閒一應俱全，珍稀價值不言而喻。<br />在生活機能方面，捷運新店區公所站近在咫尺，鄰近中正路商圈及傳統市場，已是企業主、醫生等金字塔頂端住戶之首選，歡迎親臨樹海豪宅的臨場實境感受！'
         },
         {
           img: require('./s3/mo/1-2.png'),
