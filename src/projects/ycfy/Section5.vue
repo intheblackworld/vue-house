@@ -124,18 +124,17 @@
     height: auto;
     display: block;
     position: absolute;
-    opacity: 1;
-    //transition: opacity 0.8s;
+    opacity: 0;
     transition: all 0.8s;
-      z-index: 1;
-      transform: translateX(0);
+    z-index: 1;
+    transform: translate(-80%,-10%) rotate(30deg);
 
     &.show {
-      opacity:0;
+      opacity:1;
       position: relative;
-      transform: translate(-80%,-10%)rotate(30deg);
+      transform: translateX(0);
       z-index: 2;
-    transition: all 0;
+      transition: all 0;
     }
 
   }
