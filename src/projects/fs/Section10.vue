@@ -34,8 +34,8 @@
           v-show="index === slideIndex"
           :key="slide.img"
         >
-        <img :src="slideList[slideIndex].title" :class="`item-img`" />
-          <div class="title" v-html="slideList[slideIndex].title"></div>
+        <img :src="slideList[slideIndex].titleimg" :class="`title-img`" :alt="slideList[slideIndex].title" />
+          <!-- div class="title" v-html="slideList[slideIndex].title"></div -->
           <div class="desc" v-html="slideList[slideIndex].desc"></div>
         </div>
       </transition-group>
@@ -75,10 +75,19 @@
   width: size(620);
   z-index: 3;
   top: size(270);
+  text-align: left;
   left: size(1128);
   position: absolute;
 }
-
+.title-img{
+  font-size: size(40);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #ffffff;
+  margin-bottom: calc(100vw * 15 / 1920);}
 .title {
   font-size: size(40);
   font-weight: bold;
@@ -284,6 +293,7 @@ export default {
         {
           img: require('./s10/img1.jpg'),
           name: '情境示意',
+          titleimg: require('./s10/title1.png'),
           title: '衛浴面盆',
           subtitle: '德國國寶品牌 歐洲各國、皇室愛用',
           desc:
@@ -292,6 +302,7 @@ export default {
         {
           img: require('./s10/img2.png'),
           name: '全熱交換器示意圖',
+          titleimg: require('./s10/title2.png'),
           title: '阿拉斯加HEPA 全熱交換器',
           subtitle: '供應新鮮氧氣　兼具除蟎殺菌',
           desc:
@@ -301,6 +312,7 @@ export default {
         {
           img: require('./s10/img3.jpg'),
           name: '隔音地墊示意圖',
+          titleimg: require('./s10/title3.png'),
           title: '隔音地墊',
           subtitle: '豪宅建案御用 隔音公法首選',
           desc:
@@ -309,6 +321,7 @@ export default {
         {
           img: require('./s10/img4.jpg'),
           name: '全智能馬桶示意圖',
+          titleimg: require('./s10/title4.png'),
           title: '全智能馬桶',
           subtitle: '全球衛浴領導 喜來登酒店選用',
           desc:
@@ -317,6 +330,7 @@ export default {
         {
           img: require('./s10/img5.jpg'),
           name: '情境示意',
+          titleimg: require('./s10/title5.png'),
           title: '大雅廚具',
           subtitle: '聖瑪格麗特石英石　100%產自義大利',
           desc:
