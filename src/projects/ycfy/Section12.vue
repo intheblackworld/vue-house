@@ -3,9 +3,11 @@
     <div class="bg relative">
       <div v-if="!isMobile">
         <!-- img src="./s12/bg.jpg" alt class="img" / -->
-        <img src="./s12/bg2.png" alt class="img" data-aos="fade" data-aos-delay="200" />
+        <div class="box" data-aos="fade-left" data-aos-delay="400"></div>
+        <img src="./s12/bg3.png" alt="B2傢具配置參考圖" class="img3" data-aos="fade" data-aos-delay="200" />
+        <div>B2傢具配置參考圖</div>
         <img src="./s12/titlea.png" alt="豐藏完美 家的極大成" class="img" />
-        <div :class="`slide`" data-aos="fade" data-aos-delay="400">
+        <div :class="`slide`" data-aos="fade" data-aos-delay="600">
           <div
             v-for="(slide, index) in slideList"
             :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
@@ -46,9 +48,10 @@
   background-size: cover;
   position: relative;
   z-index: 2;
-  overflow: hidden;
+  overflow: hidden;height:calc(100vw * 1080 / 1920);
 }
-
+.box{
+  position: absolute;background-color: rgba(28, 15, 3, 0.35);width: calc(100vw * 970 / 1920);right: 0;top: 0;height:calc(100vw * 1004 / 1920);}
 .img {
   width: 100vw;
   height: auto;
@@ -62,7 +65,17 @@
   }
   &:nth-child(1) {
     position: relative;
-  }
+  }}
+.img3{
+  width: 50vw;
+  height: auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  + div {
+  color: #666c;font-weight:300;
+  position: absolute;font-size: 1.5vw;
+  bottom:3em;right: calc( 50% + 2.5em);}
 }
 
 .text {
