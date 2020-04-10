@@ -258,6 +258,7 @@
   .t-block {
     width: 946px;
     margin: 0 auto;
+    margin-bottom: 50px;
   }
   .title {
     font-size: 38px;
@@ -510,6 +511,7 @@
     .t-block {
       width: 100vw;
       margin: 0 auto;
+      margin-bottom: 20px;
     }
     .title {
       font-size: size-m(21);
