@@ -41,11 +41,11 @@
             v-for="(slide, index) in slideList"
             :index="index"
             :key="slide.img"
-            class="item"
+            :class="`item ${slideIndex == 1 ? 'small' : ''}`"
           >
             <img
               :src="slide.img"
-              :class="`img1 ${slideIndex == 1 ? 'small' : ''}`"
+              :class="`img1`"
               v-show="slideIndex == index"
             />
             <!-- <div v-html="slide.name"></div> -->
@@ -145,11 +145,11 @@
             v-for="(slide, index) in slideList"
             :index="index"
             :key="slide.img"
-            class="item"
+            :class="`item ${slideIndex == 1 ? 'small' : ''}`"
           >
             <img
               :src="slide.img"
-              :class="`img1 ${slideIndex == 1 ? 'small' : ''}`"
+              class="img1"
               v-show="slideIndex == index"
             />
             <!-- <div v-html="slide.name"></div> -->
@@ -304,18 +304,24 @@
 .img1 {
   width: 24%;
   position: relative;
-  margin: 140px 0 30px 7%;
-  /*&.small {
-  margin: 165px 0 30px 6%;
-  width: 26%;
-  }*/
+  margin: 140px 0 30px 7%;z-index: 1;
+}
+.item{
+  display: block;
+  &.small{
+    &::before,
+    &::after{content:"";display:block;position: absolute;width: 24%;margin: 140px 0 30px 7%;height: 100%;z-index: 2;top: 0;left: 0;}
+    &::before{background: url("./s4/img_lll.png");}
+    &::after{background: url("./s4/img1-21.png") repeat 0 0 ;background-size: 100% auto;}
+  }
 }
 
 .t-content {
   position: absolute;
-  width: 794px;
+  width: 750px;
   top: 150px;
   left: 580px;
+  text-align: justify;
 }
 
 .t-title {
@@ -376,7 +382,6 @@
   text-align: left;
   color: #808080;
 }
-
 .b-block {
   position: relative;
   display: flex;
@@ -575,11 +580,11 @@
     width: 45%;
     position: relative;
     margin: 9% 0 5% 14%;
-  /*&.small {
-    margin: 9% 0 5% 14%;
-  width: 70%;
-}*/
   }
+.item.small{
+    &::before,
+    &::after{width: 45%;margin: 9% 0 5% 14%;}
+}
 
   .t-content {
     position: relative;
