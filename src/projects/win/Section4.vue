@@ -89,12 +89,43 @@
         </div>
       </div>
       <div class="b-block">
-        <img
-          src="./s4/img2-1.jpg"
-          alt=""
-          class="b-img"
+        <swiper
+          :options="swiperOption"
+          ref="mySwiper2"
+          data-aos="fade"
+          data-aos-delay="100"
+          class="swiper-container-b"
         >
-        <div>實際外觀與環境合成輔予修飾</div>
+          <div
+            class="swiper-button-prev b-prev"
+            slot="button-prev"
+          >
+          </div>
+          <div
+            class="swiper-button-next b-next"
+            slot="button-next"
+          >
+          </div>
+
+          <swiper-slide
+            v-for="(slide, index) in slideList2"
+            :index="index"
+            :key="slide.img"
+            :class="`item`"
+          >
+            <img
+              :src="slide.img"
+              alt=""
+              class="b-img"
+            >
+            <div class="swiper-b-desc">{{slide.desc}}</div>
+            <!-- <div v-html="slide.name"></div> -->
+          </swiper-slide>
+          <div
+            class="swiper-pagination"
+            slot="pagination"
+          ></div>
+        </swiper>
         <div class="b-content">
           <div class="b-title">
             建築美學<br />再創經典
@@ -172,34 +203,66 @@
       </div>
       <div class="t-content">
         <div
-            class="t-title"
-            v-html="slideList[slideIndex].title"
-          ></div>
-          <div
-            class="t-subtitle"
-            v-html="slideList[slideIndex].subtitle"
-          ></div>
-          <div
-            class="t-name"
-            v-html="slideList[slideIndex].name"
-          ></div>
-          <div
-            class="t-desc1"
-            v-html="slideList[slideIndex].desc1"
-          ></div>
-          <div
-            class="t-desc2"
-            v-html="slideList[slideIndex].desc2"
-          ></div>
+          class="t-title"
+          v-html="slideList[slideIndex].title"
+        ></div>
+        <div
+          class="t-subtitle"
+          v-html="slideList[slideIndex].subtitle"
+        ></div>
+        <div
+          class="t-name"
+          v-html="slideList[slideIndex].name"
+        ></div>
+        <div
+          class="t-desc1"
+          v-html="slideList[slideIndex].desc1"
+        ></div>
+        <div
+          class="t-desc2"
+          v-html="slideList[slideIndex].desc2"
+        ></div>
       </div>
 
       <div class="b-block">
-        <img
-          src="./s4/img2-1.jpg"
-          alt="建築外觀"
-          class="b-img"
+        <swiper
+          :options="swiperOption"
+          ref="mySwiper2"
+          data-aos="fade"
+          data-aos-delay="100"
+          class="swiper-container-b"
+          @slideChangeTransitionStart="slideChanged2"
         >
-        <div>建築實際外觀與環境合成輔予修飾外觀</div>
+          <div
+            class="swiper-button-prev b-prev"
+            slot="button-prev"
+          >
+          </div>
+          <div
+            class="swiper-button-next b-next"
+            slot="button-next"
+          >
+          </div>
+
+          <swiper-slide
+            v-for="(slide, index) in slideList2"
+            :index="index"
+            :key="slide.img"
+            :class="`item`"
+          >
+            <img
+              :src="slide.img"
+              alt=""
+              class="b-img"
+            >
+            <div class="swiper-b-desc">{{slide.desc}}</div>
+            <!-- <div v-html="slide.name"></div> -->
+          </swiper-slide>
+          <div
+            class="swiper-pagination"
+            slot="pagination"
+          ></div>
+        </swiper>
         <div class="b-content">
           <div class="b-title">
             建築美學<br />再創經典
@@ -288,9 +351,9 @@
   bottom: 0;
   left: 323px;
   z-index: 7;
-  transition: all .5s;
+  transition: all 0.5s;
 
- /* &.small {
+  /* &.small {
     height: 20px;
     width: 150px;
     left: 230px;
@@ -304,15 +367,31 @@
 .img1 {
   width: 24%;
   position: relative;
-  margin: 140px 0 30px 7%;z-index: 1;
+  margin: 140px 0 30px 7%;
+  z-index: 1;
 }
-.item{
+.item {
   display: block;
-  &.small{
+  &.small {
     &::before,
-    &::after{content:"";display:block;position: absolute;width: 24%;margin: 140px 0 30px 7%;height: 100%;z-index: 2;top: 0;left: 0;}
-    &::before{background: url("./s4/img_lll.png");}
-    &::after{background: url("./s4/img1-21.png") repeat 0 0 ;background-size: 100% auto;}
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 24%;
+      margin: 140px 0 30px 7%;
+      height: 100%;
+      z-index: 2;
+      top: 0;
+      left: 0;
+    }
+    &::before {
+      background: url('./s4/img_lll.png');
+    }
+    &::after {
+      background: url('./s4/img1-21.png') repeat 0 0;
+      background-size: 100% auto;
+    }
   }
 }
 
@@ -368,7 +447,7 @@
   letter-spacing: 0.4px;
   text-align: left;
   color: #808080;
-  text-indent: -.5em;
+  text-indent: -0.5em;
   margin-bottom: 15px;
 }
 
@@ -389,14 +468,20 @@
   align-items: center;
   margin: 116px 0 145px 0;
 }
-
-.b-img {
+.swiper-container-b {
   width: 657px;
-  + div {
-    align-self: flex-end;
-    margin: 0 -100px 10px -400px;
-    color: #fff;
-  }
+  position: relative !important;
+  overflow: visible;
+}
+.b-img {
+  width: 100%;
+}
+
+.swiper-b-desc {
+  position: absolute;
+  right: 10px;
+  bottom: 15px;
+  color: #fff;
 }
 
 .b-content {
@@ -446,17 +531,26 @@
   width: 2em;
   font-size: size(25);
   height: 100%;
-  top:2em;
+  top: 2em;
   padding: 0 size(10);
   display: flex;
-  margin: 0;align-items: center;
+  margin: 0;
+  align-items: center;
   z-index: 3;
-  &::before{
+  &::before {
     width: 1em;
     height: 1em;
     display: block;
-    content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16.28 28.67' fill='%230006'%3E%3Cpolygon points='14.33 28.67 16.28 26.72 3.79 14.23 16.18 1.84 14.33 0 0 14.33 14.33 28.67'/%3E%3C/svg%3E");}
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16.28 28.67' fill='%230006'%3E%3Cpolygon points='14.33 28.67 16.28 26.72 3.79 14.23 16.18 1.84 14.33 0 0 14.33 14.33 28.67'/%3E%3C/svg%3E");
+  }
 
+  &.b-prev {
+    left: -40px;
+  }
+
+  &.b-next {
+    right: -40px;
+  }
 }
 
 .swiper-button-prev {
@@ -466,7 +560,6 @@
   transform: rotate(180deg);
   right: 0;
 }
-
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
@@ -514,7 +607,7 @@
     width: 179px;
     height: 42px;
     left: 252px;
- /* &.small {
+    /* &.small {
     bottom: 100px;
   }*/
   }
@@ -581,10 +674,13 @@
     position: relative;
     margin: 9% 0 5% 14%;
   }
-.item.small{
+  .item.small {
     &::before,
-    &::after{width: 45%;margin: 9% 0 5% 14%;}
-}
+    &::after {
+      width: 45%;
+      margin: 9% 0 5% 14%;
+    }
+  }
 
   .t-content {
     position: relative;
@@ -662,13 +758,10 @@
     margin: 0 auto;
   }
 
-  .b-img {
+  .swiper-container-b {
     width: 100vw;
-    + div {
-      margin: -1.5em 0.5em 2.5em 0;
-      text-align: right;
-    }
   }
+
 
   .b-content {
     width: size-m(298);
@@ -696,12 +789,19 @@
     text-align: justify;
     color: #808080;
   }
-  
 
-.swiper-button-prev,
-.swiper-button-next {
-  top:0;
-}
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 0;
+
+    &.b-prev {
+      left: 0;
+    }
+
+    &.b-next {
+      right: 0;
+    }
+  }
 
   .box1 {
     width: size-m(35);
@@ -715,7 +815,7 @@
     bottom: size-m(40);
     left: size-m(206);
 
-   /* &.small {
+    /* &.small {
       width: size-m(100);
       height: size-m(20);
       left: size-m(206);
@@ -783,9 +883,25 @@ export default {
           title: '燈光計劃第一 新店建築新地標',
           subtitle: 'LIGHTING DESIGN & CONSTRUCTION',
           name: '蘭克斯照明',
-          desc1: '&nbsp;&nbsp;成立於1975年，先後設計規劃無數海內外照明工程，如：台北101大樓建築燈光及室內公共區域燈光設計及施工、控制；與日本伊東豊雄建築設計事務所共同參與備有45,000座位的高雄世運主場館燈光設計及承攬照明工程完成；以及無數位於台灣的五星級旅館之燈光設計及照明工程承攬。',
+          desc1:
+            '&nbsp;&nbsp;成立於1975年，先後設計規劃無數海內外照明工程，如：台北101大樓建築燈光及室內公共區域燈光設計及施工、控制；與日本伊東豊雄建築設計事務所共同參與備有45,000座位的高雄世運主場館燈光設計及承攬照明工程完成；以及無數位於台灣的五星級旅館之燈光設計及照明工程承攬。',
           desc2:
             'About獲獎紀錄<br />1998 榮獲台北市建築夜間照明金質獎－新光三越信義店(A11)<br />1999 榮獲高雄市建築夜間照明最優獎－高雄85國際廣場大樓(T&C Tower)<br />2003 榮獲台北101金融大樓最優秀專業指定協力廠商<br />2009 榮獲高雄市運主場館優良燈光設計獎',
+        },
+      ],
+
+      slideList2: [
+        {
+          img: require('./s4/img2-1.jpg'),
+          desc: '建築實際外觀與環境合成輔予修飾外觀',
+        },
+        {
+          img: require('./s4/img2-2.jpg'),
+          desc: '外觀實景拍攝',
+        },
+        {
+          img: require('./s4/img2-3.jpg'),
+          desc: '外觀實景拍攝',
         },
       ],
     }
