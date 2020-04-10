@@ -15,7 +15,7 @@
           <div class="title">凝聚幸福生活最佳場域</div>
           <div class="right-border"></div>
         </div>
-        <div class="desc">太子建設蓋房子，秉持集團「三好一公道」的企業精神，講求地段好、設計好、施工好、價格公道。</div>
+        <!-- div class="desc">太子建設蓋房子，秉持集團「三好一公道」的企業精神，講求地段好、設計好、施工好、價格公道。</div -->
       </div>
       <img
         src="./s5/img1.jpg"
@@ -104,7 +104,7 @@
           <div class="title">凝聚幸福生活最佳場域</div>
           <div class="right-border"></div>
         </div>
-        <div class="desc">太子建設蓋房子，秉持集團「三好一公道」的企業精神，講求地段好、設計好、施工好、價格公道。</div>
+        <!-- div class="desc">太子建設蓋房子，秉持集團「三好一公道」的企業精神，講求地段好、設計好、施工好、價格公道。</div -->
       </div>
       <img
         src="./s5/mo/img1.jpg"
