@@ -19,11 +19,13 @@
               <div class="title" v-html="slideList[slideIndex].title"></div>
             </div>
         </div>
-        <div class="text">規劃設計蘊藏完美，尺度恰到好處，游刃有餘的起居空間<br />「頤昌豐岳」懂你對家的要求，豐美2-4房納藏精彩生活</div>
+        <div class="text">2+1房完美動線佈局，機能配置妥善運用，主臥寬裕大器，女王級專屬更衣間寵愛老婆，「頤昌豐岳」懂您對家的要求，豐享空間之美</div>
       </div>
       <div v-if="isMobile">
         <!-- img src="./s12/mo/bg.jpg" alt class="img"  -->
-        <img src="./s12/mo/bg2.png" alt class="img" data-aos="fade" data-aos-delay="200" />
+        <div class="box" data-aos="fade-left" data-aos-delay="400"></div>
+        <img src="./s12/mo/bg2.png" alt="B2傢具配置參考圖" class="img3" data-aos="fade" data-aos-delay="200" />
+        <div>B2傢具配置參考圖</div>
         <img src="./s12/mo/titlea.png" alt="豐藏完美 家的極大成" class="img" />
         <div :class="`slide`" data-aos="fade" data-aos-delay="400">
           <div
@@ -37,7 +39,7 @@
             </div>
           </div>
         </div>  
-        <div class="text">規劃設計蘊藏完美，尺度恰到好處，<br />游刃有餘的起居空間「頤昌豐岳」懂你對家的要求，<br />豐美2-4房納藏精彩生活</div>
+        <div class="text">2+1房完美動線佈局，機能配置妥善運用，主臥寬裕大器，女王級專屬更衣間寵愛老婆，「頤昌豐岳」懂您對家的要求，豐享空間之美</div>
       </div>
     </div>
   </div>
@@ -128,14 +130,14 @@
     background-size:100% auto ;
     background-image: url('./s12/mo/bg.jpg');
     overflow: visible;
+    height:calc(100vw * 1818 / 750);
   &:before{bottom:calc(100vw * 250 / 375);color:rgba(255, 255, 255, 0.8);
    }
   }
 
-  .img {
-    &:nth-child(1) {
-      position: relative;
-    }
+  .img3 {width: 100vw;
+  + div {
+  top:calc(100vw * 1184 / 750);}
   }
 
   .text {
@@ -155,12 +157,14 @@
   }
 
   .slide {
-    position: relative;
+    position: absolute;
     bottom: 0;
     width: 100vw;
     top: auto;
   }
-
+.box{
+    top: auto;
+    bottom:calc(100vw * 90 / 375);}
 }
 </style>
 
