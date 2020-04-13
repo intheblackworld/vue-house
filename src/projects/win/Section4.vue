@@ -154,10 +154,10 @@
             />
             <!-- <div v-html="slide.name"></div> -->
           </swiper-slide>
-          <div
+      <!--     <div
             class="swiper-pagination"
             slot="pagination"
-          ></div>
+          ></div> -->
         </swiper>
         <div
           class="box1"
@@ -593,6 +593,7 @@
     left: auto;
     margin: 0 auto;
     margin-top: 30px;
+    height:size-m(400);
   }
 
   .t-title {
@@ -635,9 +636,9 @@
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.3;
+    line-height: 1.6;
     letter-spacing: 0.4px;
-    text-align: left;
+    text-align: justify;
     color: #808080;
     margin-bottom: 15px;
   }
@@ -649,7 +650,7 @@
     font-style: normal;
     line-height: 1.51;
     letter-spacing: 0.63px;
-    text-align: left;
+    text-align: justify;
     color: #808080;
     margin-bottom: 45px;
   }
@@ -783,7 +784,7 @@ export default {
           title: '燈光計劃第一 新店建築新地標',
           subtitle: 'LIGHTING DESIGN & CONSTRUCTION',
           name: '蘭克斯照明',
-          desc1: '&nbsp;&nbsp;成立於1975年，先後設計規劃無數海內外照明工程，如：台北101大樓建築燈光及室內公共區域燈光設計及施工、控制；與日本伊東豊雄建築設計事務所共同參與備有45,000座位的高雄世運主場館燈光設計及承攬照明工程完成；以及無數位於台灣的五星級旅館之燈光設計及照明工程承攬。',
+          desc1: '成立於1975年，先後設計規劃無數海內外照明工程，如：台北101大樓建築燈光及室內公共區域燈光設計及施工、控制；與日本伊東豊雄建築設計事務所共同參與備有45,000座位的高雄世運主場館燈光設計及承攬照明工程完成；以及無數位於台灣的五星級旅館之燈光設計及照明工程承攬。',
           desc2:
             'About獲獎紀錄<br />1998 榮獲台北市建築夜間照明金質獎－新光三越信義店(A11)<br />1999 榮獲高雄市建築夜間照明最優獎－高雄85國際廣場大樓(T&C Tower)<br />2003 榮獲台北101金融大樓最優秀專業指定協力廠商<br />2009 榮獲高雄市運主場館優良燈光設計獎',
         },

@@ -205,7 +205,6 @@
 .bg-img {
   width: 100vw;
   height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
   position: absolute;
   display: block;
   top: 0;
@@ -385,7 +384,4 @@ export default {
 
   computed: {},
 }
-// 除一屏高彈動BUG
-let vh = window.innerHeight * 0.01;
-document.documentElement.style.setProperty('--vh', `${vh}px`);
 </script>

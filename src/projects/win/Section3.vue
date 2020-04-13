@@ -393,6 +393,7 @@
 
   .content {
     width: size-m(318);
+    height: size-m(170);
     margin: 0 auto;
     position: relative;
     right: 0;
