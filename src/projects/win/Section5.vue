@@ -66,27 +66,49 @@
       </div>
 
       <div class="block-img">
-        <div class="block-item">
+        <div
+          class="block-item"
+          @click="showDialog(0)"
+        >
           <img
             src="./s5/img3-1.jpg"
             alt=""
           >
           <div class="item-title">實品屋實景</div>
         </div>
-        <div class="block-item">
+        <div
+          class="block-item"
+          @click="showDialog(1)"
+        >
           <img
             src="./s5/img3-2.jpg"
             alt=""
           >
           <div class="item-title">實品屋實景</div>
         </div>
-        <div class="block-item">
+        <div
+          class="block-item"
+          @click="showDialog(2)"
+        >
           <img
             src="./s5/img3-3.jpg"
             alt=""
           >
           <div class="item-title">實品屋實景</div>
         </div>
+      </div>
+      <div :class="`dialog ${isShowDialog ? 'show' : ''}`">
+        <img
+          :src="dialogImg"
+          alt=""
+          class="dialog-content"
+        >
+        <img
+          src="@/projects/jh/s4/close.png"
+          class="close"
+          alt
+          @click="isShowDialog = false"
+        />
       </div>
     </div>
     <div
@@ -128,7 +150,7 @@
           class=""
           @slideChangeTransitionStart="slideChanged"
         >
-        <div
+          <div
             class="swiper-button-prev"
             slot="button-prev"
           >
@@ -169,6 +191,7 @@
             <img
               :src="slide.img"
               :class="`item-img-b`"
+              @click="showDialog(index)"
             />
             <div
               class="slide-b-title"
@@ -180,6 +203,19 @@
             ></div>
           </swiper-slide>
         </swiper>
+        <div :class="`dialog ${isShowDialog ? 'show' : ''}`">
+          <img
+            :src="dialogImg"
+            alt=""
+            class="dialog-content"
+          >
+          <img
+            src="@/projects/jh/s4/close.png"
+            class="close"
+            alt
+            @click="isShowDialog = false"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -222,6 +258,7 @@
   .t-block {
     width: 946px;
     margin: 0 auto;
+    margin-bottom: 50px;
   }
   .title {
     font-size: 38px;
@@ -271,13 +308,15 @@
   top: 0;
   padding: 0 size(10);
   display: flex;
+  align-items: center;
   margin: 0;
   z-index: 3;
-  &::before{width: 1em;
+  &::before {
+    width: 1em;
     height: 1em;
     display: block;
-    content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16.28 28.67' fill='%23fff'%3E%3Cpolygon points='14.33 28.67 16.28 26.72 3.79 14.23 16.18 1.84 14.33 0 0 14.33 14.33 28.67'/%3E%3C/svg%3E");}
-
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16.28 28.67' fill='%23fff'%3E%3Cpolygon points='14.33 28.67 16.28 26.72 3.79 14.23 16.18 1.84 14.33 0 0 14.33 14.33 28.67'/%3E%3C/svg%3E");
+  }
 }
 
 .swiper-button-prev {
@@ -341,7 +380,7 @@
 }
 
 .slide {
-  overflow:initial;
+  overflow: initial;
 }
 
 .block-img {
@@ -355,6 +394,7 @@
 
 .block-item {
   width: 30%;
+  cursor: pointer;
   img {
     width: 100%;
   }
@@ -380,6 +420,35 @@
   letter-spacing: 0.3px;
   text-align: center;
   color: #595757;
+}
+
+.dialog {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+
+  .dialog-content {
+    width: 1080px;
+    height: auto;
+  }
+
+  &.show {
+    display: flex;
+  }
+
+  .close {
+    position: absolute;
+    right: 10vw;
+    top: 10vh;
+    cursor: pointer;
+  }
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
@@ -442,6 +511,7 @@
     .t-block {
       width: 100vw;
       margin: 0 auto;
+      margin-bottom: 20px;
     }
     .title {
       font-size: size-m(21);
@@ -573,6 +643,36 @@
     padding: 0 size-m(5);
     cursor: none;
   }
+
+  .dialog {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+
+    .dialog-content {
+      width: 100vw;
+      height: auto;
+    }
+
+    &.show {
+      display: flex;
+    }
+
+    .close {
+      position: absolute;
+      width: 40px;
+      right: 10px;
+      top: 20vh;
+      cursor: pointer;
+    }
+  }
 }
 </style>
 <script>
@@ -594,6 +694,13 @@ export default {
   data() {
     return {
       isMobile,
+      isShowDialog: false,
+      dialogImg: '',
+      dialogImgList: [
+        require('./s5/img3-1.jpg'),
+        require('./s5/img3-2.jpg'),
+        require('./s5/img3-3.jpg'),
+      ],
       swiperOption: {
         slidesPerView: isMobile ? 1 : 1,
         spaceBetween: isTablet ? 20 : 30,
@@ -695,6 +802,11 @@ export default {
       } else {
         this.slideIndex = swiper.activeIndex - 1
       }
+    },
+
+    showDialog(index) {
+      this.isShowDialog = true
+      this.dialogImg = this.dialogImgList[index]
     },
   },
 
