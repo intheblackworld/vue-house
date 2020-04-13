@@ -137,19 +137,15 @@
 
   .img3 {width: 100vw;
   + div {
-  top:calc(100vw * 1184 / 750);}
+  top:calc(100vw * 1184 / 750);
+    font-size: calc(100vw * 13 / 375);}
   }
 
   .text {
+    font-size: calc(100vw * 13 / 375);
     width: calc(100vw * 302 / 375);
     height: auto;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing:1.2px;;
-    text-align: left;
-    color: #666;
+    line-height: 1.6;
     left: calc(100vw * 37 / 375);
     top: calc(100vw * 185 / 375);
     bottom: auto;
