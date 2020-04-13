@@ -80,14 +80,8 @@
   position: absolute;
 }
 .title-img{
-  font-size: size(40);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: normal;
-  color: #ffffff;
-  margin-bottom: calc(100vw * 15 / 1920);}
+  width:size(511);  
+  margin-bottom: size(15);}
 .title {
   font-size: size(40);
   font-weight: bold;
@@ -97,7 +91,7 @@
   letter-spacing: normal;
   text-align: left;
   color: #ffffff;
-  margin-bottom: calc(100vw * 15 / 1920);
+  margin-bottom:size(15);
 }
 
 .subtitle {
@@ -146,7 +140,7 @@
   position: absolute;
   right: size(160);
   bottom: size(10);
-  text-shadow: 0 0 5px 0px #000;
+  text-shadow: 0 0 5px#000;
 }
 
 .swiper-slide {
@@ -205,7 +199,11 @@
       display: block;
     }
   }
+.title-img{
+  
+  width:size-m(320);}
 
+.bg span:last-child .content:last-child  .title-img{margin-left:size-m(-30);}
   .bg-img {
     width: 100vw;
     position: absolute;
@@ -229,7 +227,8 @@
 
   .content {
     width: 90vw;
-    top: size-m(282);
+    top: auto;
+    bottom: size-m(50);
     left: size-m(30);
   }
 
@@ -246,8 +245,15 @@
   .desc {
     font-size: calc(100vw * 12 / 375);
     width: 100%;
-  } 
+  }
+  .item-title{
+    right:size-m(55);}
+
   .item-img{width: auto;height:calc(100vw * 667 / 1100 );margin: 0 auto 0 0;}
+.swiper-slide {
+  background: url('./mo/10/swiper_bg.png');
+  background-size: cover;
+}
 }
 </style>
 

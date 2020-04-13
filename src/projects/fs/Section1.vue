@@ -23,6 +23,7 @@
       <div class="relative section" id="section2" v-if="!isMobile">
         <img v-lazy="require('./s1/bg2.png')" alt class="bg-img img-1" />
         <img v-lazy="require('./s1/bg3.jpg')" alt class="bg-img img-2" />
+        <div class="button">720度 環景</div>
       </div>
       <div v-if="isMobile">
         <img :src="require('./s1/logo.gif')" alt class="logo" data-aos="fade" data-aos-delay="300" />
@@ -59,6 +60,7 @@
             v-show="showMask"
           />
         </Map>
+        <div class="button">720度 環景</div>
       </div>
     </div>
   </div>
@@ -159,6 +161,41 @@
   margin: 0 auto;
   position: absolute;
 }
+.button{
+  position: absolute;
+  background: #0007;
+  color: #FFF;
+  align-items: center;
+  justify-content:center;
+  transition: all 0.3s;
+  font-size:size(20);
+  display: flex;
+  border: 1px solid #FA0;
+  border-radius:size(20);letter-spacing: 0.1em;
+  bottom: size(20);
+  right: size(100);
+  width: size(200);
+  height: size(100);
+  animation: button 1s infinite ease-in-out;
+  &:hover{
+  background: #000C;
+  bottom: size(30);}
+  }
+  
+  @keyframes button{
+    0%{
+  border-color:#fb56;
+    }
+    80%{
+  border-color:#fb56;
+    }
+    90%{
+  border-color:#FFF;
+    }
+    100%{
+  border-color:#fb56;
+    }
+  }
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
@@ -175,7 +212,7 @@
 
 @media screen and (max-width: 767px) {
   .bg {
-    height: size_m(1161);
+    height:calc(100vh + 100vw * 581 / 375);
   }
 .bg-color{
   background-image: linear-gradient(
@@ -215,6 +252,18 @@
   #section2 {
     position: absolute;
     top: size-m(581);
+  }
+  .button{
+  font-size:size-m(20);
+  border-radius:1em;
+  bottom: size-m(10);
+  right: size-m(88);
+  width: size-m(200);
+  height: size-m(70);
+  z-index: 4;
+  &:hover{
+  background: #000C;
+  bottom: size-m(10);}
   }
 }
 </style>
