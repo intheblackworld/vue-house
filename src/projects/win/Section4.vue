@@ -258,10 +258,10 @@
             <div class="swiper-b-desc">{{slide.desc}}</div>
             <!-- <div v-html="slide.name"></div> -->
           </swiper-slide>
-          <div
+         <!-- <div
             class="swiper-pagination"
             slot="pagination"
-          ></div>
+          ></div> -->
         </swiper>
         <div class="b-content">
           <div class="b-title">
@@ -539,9 +539,11 @@
   z-index: 3;
   &::before {
     width: 1em;
-    height: 1em;
+    height: 2em;
     display: block;
-    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16.28 28.67' fill='%230006'%3E%3Cpolygon points='14.33 28.67 16.28 26.72 3.79 14.23 16.18 1.84 14.33 0 0 14.33 14.33 28.67'/%3E%3C/svg%3E");
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16.28 28.67' preserveAspectRatio='xMidyMid' fill='%230006'%3E%3Cpolygon points='14.33 28.67 16.28 26.72 3.79 14.23 16.18 1.84 14.33 0 0 14.33 14.33 28.67'/%3E%3C/svg%3E") no-repeat center center;
+    content:"";
+    background-size: contain;
   }
 
   &.b-prev {
@@ -552,7 +554,15 @@
     right: -40px;
   }
 }
+.b-block{
+  .swiper-button-prev,
+.swiper-button-next {
+  &::before {
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16.28 28.67' preserveAspectRatio='xMidyMid' fill='%23fff'%3E%3Cpolygon points='14.33 28.67 16.28 26.72 3.79 14.23 16.18 1.84 14.33 0 0 14.33 14.33 28.67'/%3E%3C/svg%3E") no-repeat center center;
 
+  }
+  }
+  }
 .swiper-button-prev {
   left: 0;
 }

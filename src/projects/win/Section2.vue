@@ -270,10 +270,13 @@
   display: flex;
   margin: 0;align-items: center;
   z-index: 3;
-  &::before{width: 1em;
-    height: 1em;
+  &::before{
+    width: 1em;
+    height: 2em;
     display: block;
-    content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16.28 28.67' fill='%23fff'%3E%3Cpolygon points='14.33 28.67 16.28 26.72 3.79 14.23 16.18 1.84 14.33 0 0 14.33 14.33 28.67'/%3E%3C/svg%3E");}
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16.28 28.67' preserveAspectRatio='xMidyMid' fill='%23fff'%3E%3Cpolygon points='14.33 28.67 16.28 26.72 3.79 14.23 16.18 1.84 14.33 0 0 14.33 14.33 28.67'/%3E%3C/svg%3E") no-repeat center center;
+    content:"";
+    background-size: contain;}
 
 }
 
