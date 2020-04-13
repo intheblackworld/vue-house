@@ -5,7 +5,7 @@
         <img src="./s6/bg.jpg" alt class="img" />
         <img src="./s6/lineba.png" alt class="img" />
         <div :class="`map ${isOpen ? 'open': ''}`" @click="isOpen = !isOpen">
-          <img src="./s6/map.png" alt class="img" data-aos="fade" data-aos-delay="200" />
+          <img src="./s6/map.png" alt class="img" />
         </div>
         <img src="./s6/stitlea.png" alt="A7明日版圖 五大建設帶領崛起" class="img" />
         <img src="./s6/titlea.png" alt="五大建設" class="img" />
@@ -22,8 +22,6 @@
             src="./s6/map.png"
             alt
             class="img"
-            data-aos="fade"
-            data-aos-delay="200"
           />
         </div>
         <img src="./s6/mo/stitlea.png" alt="A7明日版圖 五大建設帶領崛起" class="img" />
@@ -69,18 +67,16 @@
   width: 100%;
   top: 0;
   left: 0;
-  background: url(./s6/mbg.png) repeat-x 0 100%;
   position: absolute;
   height: 100%;
-  background-size: auto 0;
   transition: all 0.5s;
 
   img {
     width: 22vw;
     top: 20.9vw;
     left: 69.4vw;
-    background: rgba(0, 40, 80, 0.5);
     transition: all 0.5s;
+    background: rgba(0, 40, 80, 0.5);
   }
   &::after {
     content: '區域地圖點擊放大';
@@ -92,9 +88,13 @@
     left: 90.4vw;
   }
   &.open {
-    background-size: auto 100%;
+  background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0) 34%, rgba(0,0,0,0.65) 100%);
+background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 34%,rgba(0,0,0,0.65) 100%);
+background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 34%,rgba(0,0,0,0.65) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+z-index: 3;
     &::after {
-      content: '';
+      opacity: 0;
     }
     img {
       width: 51vw;
@@ -191,20 +191,18 @@
       top: 32vw;
       left: 74vw;
       object-position: 50% 50%;
-      opacity: 0.5;
+      //opacity: 0.5;
     }
     &::after {
-      top: 62.3vw;
+      top: 56vw;
       left: 94.4vw;
       width: 4.2em;
+      text-shadow: 0 0 10px #285078;
     }
 
     &.open {
       height: 100%;
       background-size: auto 100%;
-      &::after {
-        content: '';
-      }
       img {
         width: 100vw;
         height: auto;

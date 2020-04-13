@@ -86,12 +86,12 @@
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2;
+  line-height:1.6;
   letter-spacing: 1.2px;
-  text-align: left;
+  text-align: justify;
   color: #666666;
   left: calc(100vw * 138 / 1920);
-  top: calc(100vw * 339 / 1920);
+  top: calc(100vw * 310 / 1920);
   position: absolute;
 }
 
@@ -114,7 +114,7 @@
   width: calc(100vw * 1085 / 1920);
   position: absolute;
   right: 0;
-  top: calc(100vw * 110 / 1920);
+  top: calc(100vw * 200 / 1920);
 }
 
 /* 平板尺寸 */
@@ -129,7 +129,7 @@
   .bg {
     background-size:100% auto ;
     background-image: url('./s12/mo/bg.jpg');
-    overflow: visible;
+    overflow: visible;      
     height:calc(100vw * 1818 / 750);
   &:before{bottom:calc(100vw * 250 / 375);color:rgba(255, 255, 255, 0.8);
    }
@@ -150,6 +150,7 @@
     top: calc(100vw * 185 / 375);
     bottom: auto;
     right: auto;
+    text-align: justify;
   }
 
   .slide {
