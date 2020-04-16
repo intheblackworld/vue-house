@@ -1,9 +1,13 @@
 <template>
   <div>
     <div class="bg">
-        <div class="bg-color" ></div>
+      <div class="bg-color"></div>
       <div v-if="!isMobile">
-        <img v-lazy="require('./s1/bg1.png')" alt class="bg-img" />
+        <img
+          v-lazy="require('./s1/bg1.png')"
+          alt
+          class="bg-img"
+        />
         <img
           :src="require('./s1/toplogo.png')"
           alt
@@ -11,7 +15,13 @@
           data-aos="fade"
           data-aos-delay="300"
         />
-        <img :src="require('./s1/logo.gif')" alt="京城鳳翔" class="logo" data-aos="fade" data-aos-delay="300" />
+        <img
+          :src="require('./s1/logo.gif')"
+          alt="京城鳳翔"
+          class="logo"
+          data-aos="fade"
+          data-aos-delay="300"
+        />
         <img
           :src="require('./s1/text.png')"
           alt
@@ -20,22 +30,72 @@
           data-aos-delay="300"
         />
       </div>
-      <div class="relative section" id="section2" v-if="!isMobile">
-        <img v-lazy="require('./s1/bg2.png')" alt class="bg-img img-1" />
-        <img v-lazy="require('./s1/bg3.jpg')" alt class="bg-img img-2" />
-        <div class="button">720度 環景</div>
+      <div :class="`dialog ${isShowDialog ? '' : 'hide'}`">
+        <div
+          class="close"
+          @click="closeDialog"
+        >
+          <img
+            src="../jh/s4/close.png"
+            alt
+          />
+        </div>
+        <div class="dialog-content">
+          <iframe
+            width="560"
+            height="315"
+            :src="link"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+      <div
+        class="relative section"
+        id="section2"
+        v-if="!isMobile"
+      >
+        <img
+          v-lazy="require('./s1/bg2.png')"
+          alt
+          class="bg-img img-1"
+        />
+        <img
+          v-lazy="require('./s1/bg3.jpg')"
+          alt
+          class="bg-img img-2"
+        />
+        <div class="button" @click="showDialog('http://localhost:9000/output/index.html')">720度 環景</div>
       </div>
       <div v-if="isMobile">
-        <img :src="require('./s1/logo.gif')" alt class="logo" data-aos="fade" data-aos-delay="300" />
-        <img :src="require('./mo/12/bg1.png')" alt class="bg-img" />
+        <img
+          :src="require('./s1/logo.gif')"
+          alt
+          class="logo"
+          data-aos="fade"
+          data-aos-delay="300"
+        />
+        <img
+          :src="require('./mo/12/bg1.png')"
+          alt
+          class="bg-img"
+        />
         <img
           :src="require('./s1/toplogo.png')"
           alt
           class="top-logo"
         />
-        <img :src="require('./mo/12/text.png')" alt="鳳山新東區．絕版雙捷運｜天天公園第一排" class="bg-img" />
+        <img
+          :src="require('./mo/12/text.png')"
+          alt="鳳山新東區．絕版雙捷運｜天天公園第一排"
+          class="bg-img"
+        />
       </div>
-      <div class="section" id="section2" v-if="isMobile">
+      <div
+        class="section"
+        id="section2"
+        v-if="isMobile"
+      >
         <Map
           :tagList="tagList"
           :bgSrcT="bgSrcT"
@@ -60,7 +120,8 @@
             v-show="showMask"
           />
         </Map>
-        <div class="button">720度 環景</div>
+        <!-- fs.h35.tw -->
+        <div class="button" @click="showDialog('http://localhost:9000/output/index.html')">720度 環景</div>
       </div>
     </div>
   </div>
@@ -73,9 +134,9 @@
   position: relative;
   overflow: hidden;
   height: size(2100);
-  z-index: 3;
+  z-index: 5;
 }
-.bg-color{
+.bg-color {
   width: 300%;
   height: 100%;
   position: absolute;
@@ -91,18 +152,19 @@
     #628963 43%,
     #064849 50%,
     #064849 100%
-  );}
-  @keyframes oxxo{
-    0%{
-  left: -200%;
-    }
-    70%{
-  left: -200%;
-    }
-    100%{
-  left: 0%;
-    }
+  );
+}
+@keyframes oxxo {
+  0% {
+    left: -200%;
   }
+  70% {
+    left: -200%;
+  }
+  100% {
+    left: 0%;
+  }
+}
 .bg-img {
   width: 100vw;
   position: absolute;
@@ -161,41 +223,89 @@
   margin: 0 auto;
   position: absolute;
 }
-.button{
+.button {
   position: absolute;
   background: #0007;
-  color: #FFF;
+  color: #fff;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   transition: all 0.3s;
-  font-size:size(20);
+  font-size: size(20);
   display: flex;
-  border: 1px solid #FA0;
-  border-radius:size(20);letter-spacing: 0.1em;
+  border: 1px solid #fa0;
+  border-radius: size(20);
+  letter-spacing: 0.1em;
   bottom: size(20);
   right: size(100);
   width: size(200);
   height: size(100);
   animation: button 1s infinite ease-in-out;
-  &:hover{
-  background: #000C;
-  bottom: size(30);}
+  &:hover {
+    background: #000c;
+    bottom: size(30);
   }
-  
-  @keyframes button{
-    0%{
-  border-color:#fb56;
+}
+
+@keyframes button {
+  0% {
+    border-color: #fb56;
+  }
+  80% {
+    border-color: #fb56;
+  }
+  90% {
+    border-color: #fff;
+  }
+  100% {
+    border-color: #fb56;
+  }
+}
+
+.dialog {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  z-index: 150;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+
+  .close {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    img {
+      width: 100%;
     }
-    80%{
-  border-color:#fb56;
-    }
-    90%{
-  border-color:#FFF;
-    }
-    100%{
-  border-color:#fb56;
+
+    position: fixed;
+    z-index: 10;
+    top: 30px;
+    right: 30px;
+  }
+
+  &.hide {
+    display: none;
+  }
+
+  .dialog-content {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) !important;
+    background: transparent;
+
+    iframe {
+      width: 100%;
+      height: 100%;
     }
   }
+}
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
@@ -212,19 +322,21 @@
 
 @media screen and (max-width: 767px) {
   .bg {
-    height:calc(100vh + 100vw * 581 / 375);
+    height: calc(100vh + 100vw * 581 / 375);
+    // z-index: 150;
   }
-.bg-color{
-  background-image: linear-gradient(
-    110deg,
-    #064849,
-    #064849 35%,
-    #628963 38%,
-    #87a6a2 40%,
-    #628963 43%,
-    #064849 50%,
-    #064849 100%
-  );}
+  .bg-color {
+    background-image: linear-gradient(
+      110deg,
+      #064849,
+      #064849 35%,
+      #628963 38%,
+      #87a6a2 40%,
+      #628963 43%,
+      #064849 50%,
+      #064849 100%
+    );
+  }
   .logo {
     width: size-m(185);
     top: size-m(240);
@@ -235,12 +347,12 @@
     z-index: 1;
   }
 
-.top-logo {
-  width: size-m(130);
-  left: 0;
-  top: 0;
-  position: absolute;
-}
+  .top-logo {
+    width: size-m(130);
+    left: 0;
+    top: 0;
+    position: absolute;
+  }
   .bg-img {
     // &:nth-child(1) {
     //   position: absolute;
@@ -253,17 +365,18 @@
     position: absolute;
     top: size-m(581);
   }
-  .button{
-  font-size:size-m(20);
-  border-radius:1em;
-  bottom: size-m(10);
-  right: size-m(88);
-  width: size-m(200);
-  height: size-m(70);
-  z-index: 4;
-  &:hover{
-  background: #000C;
-  bottom: size-m(10);}
+  .button {
+    font-size: size-m(20);
+    border-radius: 1em;
+    bottom: size-m(10);
+    right: size-m(88);
+    width: size-m(200);
+    height: size-m(70);
+    z-index: 4;
+    &:hover {
+      background: #000c;
+      bottom: size-m(10);
+    }
   }
 }
 </style>
@@ -281,6 +394,7 @@ export default {
     return {
       isMobile,
       showMask: isMobile,
+      isShowDialog: false,
       mapText: [
         {
           title: '',
@@ -301,6 +415,16 @@ export default {
   methods: {
     hideMask() {
       this.showMask = false
+    },
+
+    showDialog(link) {
+      this.link = link
+      this.isShowDialog = true
+    },
+
+    closeDialog() {
+      this.isShowDialog = false
+      // this.$refs[`dialogVideo${index}`].pause()
     },
   },
 
