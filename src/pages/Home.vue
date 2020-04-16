@@ -29,24 +29,6 @@
       >
         <Section3 />
       </div>
-      <div
-        class="section"
-        id="section4"
-      >
-        <Section4 />
-      </div>
-      <div
-        class="section"
-        id="section5"
-      >
-        <Section5 />
-      </div>
-      <div
-        class="section"
-        id="section6"
-      >
-        <Section6 />
-      </div>
     <!-- </full-page> -->
     <ContactSection
       class="section"
@@ -77,12 +59,9 @@ import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 // import Indigator from '@/components/Indigator.vue'
 
-import Section1 from '@/projects/win/Section1.vue'
-import Section2 from '@/projects/win/Section2.vue'
-import Section3 from '@/projects/win/Section3.vue'
-import Section4 from '@/projects/win/Section4.vue'
-import Section5 from '@/projects/win/Section5.vue'
-import Section6 from '@/projects/win/Section6.vue'
+import Section1 from '@/projects/jyly/Section1.vue'
+import Section2 from '@/projects/jyly/Section2.vue'
+import Section3 from '@/projects/jyly/Section3.vue'
 
 export default {
   name: 'home',
@@ -96,9 +75,6 @@ export default {
     Section1,
     Section2,
     Section3,
-    Section4,
-    Section5,
-    Section6,
   },
 
   data() {

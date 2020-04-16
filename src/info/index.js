@@ -10,14 +10,17 @@ export default {
   indigatorLength: 10,
 
   houseInfos: [
-    ['投資興建', '太子建設'],
-    ['建築規劃', '呂建勳建築師事務所'],
-    ['經紀人', '許惠娟（98）北縣字第001948號'],
-    ['建築代銷', 'Z.A 政安廣告'],
-    ['使用執照', '108店使字第00294號'],
+    ['投資興建', '佳元聯合建設股份有限公司'],
+    ['建築設計', '陳克聚建築師事務所'],
+    ['景觀設計', 'HHC Design Solution禾禧設計'],
+    ['結構力學', '聯邦工程顧問公司'],
+    ['建築代銷', '聯碩行銷股份有限公司'],
+    ['建案位置', '台北市中正區臨沂街25巷3號'],
+    ['建照號碼', '109建字第0006號'],
+    ['經紀人', '李濟強(100)北市經證字第01732號'],
   ],
 
-  gtmCode: ['TSSWDJT'], // 可放置多個
+  gtmCode: ['575QKB8'], // 可放置多個
   recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',

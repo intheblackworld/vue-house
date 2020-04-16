@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div class="contact-info">
+  <div class="contact-info" id="contact-info">
     <img class="logo" src="@/assets/img/contact-logo.png" alt="好站" />
     <div class="info">
       <div class="btn flex-c" @click="showCallDialog">
@@ -133,7 +133,7 @@ export default {
   text-decoration: none;
   color: $contact_btn_color;
   background: $contact_btn_bg;
-  // box-shadow: $contact_btn_border;
+  box-shadow: $contact_btn_border;
   transition: all 0.5s;
   position: relative;
   overflow: hidden;
@@ -182,8 +182,8 @@ export default {
   width: 600px;
   height: 60px;
   background: #fff;
-  //box-shadow: $contact_btn_border;
-  border:1px solid #da007f;
+  box-shadow: $contact_btn_border;
+  // border:1px solid $contact_btn_bg;
 }
 .google-btn {
   width: 280px;
@@ -242,6 +242,7 @@ export default {
 
     .logo {
       width: $contact_logo_mobile_width;
+      height: auto;
     }
   }
 

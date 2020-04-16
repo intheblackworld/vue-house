@@ -8,10 +8,10 @@
         <h3 class="title">{{order.title}}</h3>
         <div class="subtitle">{{order.subTitle}}</div>
       </div> -->
-      <div
+      <h3
         class="order-title"
         v-html="order.title"
-      ></div>
+      ></h3>
       <div
         class="order-subtitle"
         v-html="order.subTitle"
@@ -329,6 +329,7 @@ export default {
     font-size: calc(100vw * 36 / 1920);
     text-align: center;
     color: $order_title_color;
+    font-family: youmin;
   }
 
   .order-subtitle {

@@ -17,7 +17,7 @@
   height: 48px !important;
   line-height: 48px !important;
   font-size: 16px !important;
-  border-radius: 0 !important;
+  border-radius: 10px !important;
   border: $order_input_border !important;
   background: $order_input_bg;
   color: $order_input_color;
@@ -39,11 +39,16 @@
     color: #333;
     padding-top: 10px !important;
     font-size: 16px !important;
-    border: $order_input_border;
+    border: $order_input_border !important;
+    border-radius: 10px !important;
     background:#FFF;
 
     &::placeholder {
       color: $order_input_placeholder;
+    }
+
+    &:focus {
+      border: $order_input_focus_border !important;
     }
   }
 }

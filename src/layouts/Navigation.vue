@@ -108,13 +108,13 @@ export default {
 }
 
 .logo {
-  width:auto;
-  height: 66%;
+  width: $logo_pc_width;
+  height: auto;
   cursor: pointer;
   position: absolute;
   left: 0;
   display: block;
-  top: 16%;
+  top: 6%;
   transform: translateY(0%);
 }
 
@@ -369,7 +369,7 @@ export default {
     width: 100vw;
     top: $nav_phone_height;
     right: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: $nav_bg;
     position: fixed;
     z-index:-1;
     height: calc(100vh - #{$nav_phone_height});
