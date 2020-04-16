@@ -65,7 +65,7 @@
           alt
           class="bg-img img-2"
         />
-        <div class="button" @click="showDialog('http://localhost:9000/output/index.html')">720度 環景</div>
+        <div class="button" @click="showDialog('http://fs.h35.tw/output/index.html')">720度 環景</div>
       </div>
       <div v-if="isMobile">
         <img
@@ -121,7 +121,7 @@
           />
         </Map>
         <!-- fs.h35.tw -->
-        <div class="button" @click="showDialog('http://localhost:9000/output/index.html')">720度 環景</div>
+        <div class="button" @click="showDialog('http://fs.h35.tw/output/index.html')">720度 環景</div>
       </div>
     </div>
   </div>
