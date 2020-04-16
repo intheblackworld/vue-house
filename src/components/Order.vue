@@ -368,7 +368,7 @@ export default {
     padding-top: 40px;
     margin: 0;
     position: relative;
-    z-index: 2;
+    z-index:1;
 
     > img {
       display: block;
