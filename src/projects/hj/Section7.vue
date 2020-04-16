@@ -79,7 +79,7 @@
         </div>
         <div class="desc">
           永泰祥開發擁有三十年的悠久歷史，成為國內知名的仁愛路豪宅推手，專注為菁英層峰在精華地段鑄造精品豪宅，更擁有擘畫三千多戶大型建案的建築經驗。<br />
-          作品集：仁愛御林園、仁愛翡翠、台北比佛利、翡翠大道、圓山凡登
+          作品集：台北比佛利、仁愛翡翠、仁愛御林園、圓山凡登、林口翡翠、華城翡翠
         </div>
       </div>
       <img
@@ -520,7 +520,7 @@ export default {
         },
         {
           img: require('./s7/img4.jpg'),
-          name: '翡翠大道',
+          name: '林口翡翠',
         },
       ],
       slideListM: [
@@ -530,7 +530,7 @@ export default {
         },
         {
           img: require('./s7/mo/img4.jpg'),
-          name: '翡翠大道',
+          name: '林口翡翠',
         },
         {
           img: require('./s7/mo/img1.jpg'),
