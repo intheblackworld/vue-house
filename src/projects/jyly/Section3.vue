@@ -13,18 +13,18 @@
           <ul class="poetry-title">
             <li
               data-aos="fade"
-              data-aos-delay="400"
+              data-aos-delay="200" data-aos-duration="1000"
             >台北城心聚富版圖</li>
             <li
               data-aos="fade"
-              data-aos-delay="600"
+              data-aos-delay="600" data-aos-duration="1000"
             >京畿首善名門聚落</li>
           </ul>
           <ul class="poetry-desc">
             <li
               v-for="(text, index) in poetry_list_1"
               data-aos="fade"
-              :data-aos-delay="700 + (index + 1) * 100"
+              :data-aos-delay="100 + (index + 1) * 200" data-aos-duration="1000"
               :key="text"
             >{{text}}</li>
           </ul>
@@ -36,7 +36,7 @@
             <li
               v-for="(text, index) in poetry_list_2"
               data-aos="fade"
-              :data-aos-delay="700 + (index + 1) * 100"
+              :data-aos-delay="700 + (index + 1) * 200"  data-aos-duration="1000"
               :key="text"
               :class="`${(index > poetry_list_2.length - 3) ? 'red' : ''}`"
             >{{text}}</li>
@@ -50,18 +50,18 @@
           <ul class="poetry-title">
             <li
               data-aos="fade"
-              data-aos-delay="400"
+              data-aos-delay="400" data-aos-duration="1000"
             >台北城心聚富版圖</li>
             <li
               data-aos="fade"
-              data-aos-delay="600"
+              data-aos-delay="600" data-aos-duration="1000"
             >京畿首善名門聚落</li>
           </ul>
           <ul class="poetry-desc">
             <li
               v-for="(text, index) in poetry_list_1"
               data-aos="fade"
-              :data-aos-delay="700 + (index + 1) * 100"
+              :data-aos-delay="700 + (index + 1) * 200"  data-aos-duration="1000"
               :key="text"
             >{{text}}</li>
           </ul>
@@ -80,7 +80,7 @@
             <li
               v-for="(text, index) in poetry_list_2"
               data-aos="fade"
-              :data-aos-delay="700 + (index + 1) * 100"
+              :data-aos-delay="700 + (index + 1) * 300" data-aos-duration="1000"
               :key="text"
               :class="`${(index > poetry_list_2.length - 3) ? 'red' : ''}`"
             >{{text}}</li>
@@ -203,7 +203,6 @@
     left: auto;
     right: auto;
     margin: 0 auto;
-  }
   .poetry-title,
   .poetry-desc {
     writing-mode: vertical-rl;
@@ -233,6 +232,12 @@
     margin: 0 auto;
     margin-top: size-m(47);
     margin-bottom: size-m(50) !important;
+  }
+  &.poetry-b {
+    .poetry-desc {
+      font-size: size-m(17);
+    }
+  }
   }
   li {
     // font-size: size(27);

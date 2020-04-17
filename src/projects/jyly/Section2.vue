@@ -20,18 +20,18 @@
           <ul class="poetry-title">
             <li
               data-aos="fade"
-              data-aos-delay="400"
+              data-aos-delay="600" data-aos-duration="1000"
             >幸町官邸特區百年一遇</li>
             <li
               data-aos="fade"
-              data-aos-delay="600"
+              data-aos-delay="1000" data-aos-duration="1000"
             >難得釋出 才謂無價</li>
           </ul>
           <ul class="poetry-desc">
             <li
               v-for="(text, index) in poetry_list_1"
               data-aos="fade"
-              :data-aos-delay="600 + (index + 1) * 100"
+              :data-aos-delay="600 + (index + 1) * 200" data-aos-duration="1000"
               :key="text"
             >{{text}}</li>
           </ul>
@@ -56,19 +56,19 @@
           <ul class="poetry-title">
             <li
               data-aos="fade"
-              data-aos-delay="400"
+              data-aos-delay="400" data-aos-duration="1000"
             >仕紳文哲 靜巷富隱</li>
 
             <li
               data-aos="fade"
-              data-aos-delay="600"
+              data-aos-delay="800" data-aos-duration="1000"
             >將相豪賈的名人戲廂</li>
           </ul>
           <ul class="poetry-desc">
             <li
               v-for="(text, index) in poetry_list_2"
               data-aos="fade"
-              :data-aos-delay="600 + (index + 1) * 100"
+              :data-aos-delay="600 + (index + 1) * 200" data-aos-duration="1000"
               :key="text"
             >{{text}}</li>
           </ul>
@@ -82,16 +82,16 @@
           alt=""
           class="bg-img"
           data-aos="fade"
-          data-aos-delay="800"
+          data-aos-delay="800" data-aos-duration="1000"
         >
         <ul class="poetry-title">
           <li
             data-aos="fade"
-            data-aos-delay="400"
+            data-aos-delay="300" data-aos-duration="1000"
           >幸町官邸特區百年一遇</li>
           <li
             data-aos="fade"
-            data-aos-delay="600"
+            data-aos-delay="600" data-aos-duration="1000"
           >難得釋出 才謂無價</li>
         </ul>
         <img
@@ -105,7 +105,7 @@
           <li
             v-for="(text, index) in poetry_list_1"
             data-aos="fade"
-            :data-aos-delay="400 + (index + 1) * 100"
+            :data-aos-delay="400 + (index + 1) * 200" data-aos-duration="1000"
             :key="text"
           >{{text}}</li>
         </ul>
@@ -121,11 +121,11 @@
         <ul class="poetry-title poetry-title-b">
           <li
             data-aos="fade"
-            data-aos-delay="400"
+            data-aos-delay="400" data-aos-duration="1000"
           >仕紳文哲 靜巷富隱</li>
           <li
             data-aos="fade"
-            data-aos-delay="600"
+            data-aos-delay="800" data-aos-duration="1000"
           >將相豪賈的名人戲廂</li>
         </ul>
         <img
@@ -139,7 +139,7 @@
           <li
             v-for="(text, index) in poetry_list_2"
             data-aos="fade"
-            :data-aos-delay="400 + (index + 1) * 100"
+            :data-aos-delay="100 + (index + 1) * 200" data-aos-duration="1000"
             :key="text"
           >{{text}}</li>
         </ul>
