@@ -13,18 +13,21 @@
           <ul class="poetry-title">
             <li
               data-aos="fade"
-              data-aos-delay="200" data-aos-duration="1000"
+              data-aos-delay="200"
+              data-aos-duration="1000"
             >台北城心聚富版圖</li>
             <li
               data-aos="fade"
-              data-aos-delay="600" data-aos-duration="1000"
+              data-aos-delay="600"
+              data-aos-duration="1000"
             >京畿首善名門聚落</li>
           </ul>
           <ul class="poetry-desc">
             <li
               v-for="(text, index) in poetry_list_1"
               data-aos="fade"
-              :data-aos-delay="100 + (index + 1) * 200" data-aos-duration="1000"
+              :data-aos-delay="100 + (index + 1) * 200"
+              data-aos-duration="1000"
               :key="text"
             >{{text}}</li>
           </ul>
@@ -36,7 +39,8 @@
             <li
               v-for="(text, index) in poetry_list_2"
               data-aos="fade"
-              :data-aos-delay="700 + (index + 1) * 200"  data-aos-duration="1000"
+              :data-aos-delay="700 + (index + 1) * 200"
+              data-aos-duration="1000"
               :key="text"
               :class="`${(index > poetry_list_2.length - 3) ? 'red' : ''}`"
             >{{text}}</li>
@@ -50,18 +54,21 @@
           <ul class="poetry-title">
             <li
               data-aos="fade"
-              data-aos-delay="400" data-aos-duration="1000"
+              data-aos-delay="400"
+              data-aos-duration="1000"
             >台北城心聚富版圖</li>
             <li
               data-aos="fade"
-              data-aos-delay="600" data-aos-duration="1000"
+              data-aos-delay="600"
+              data-aos-duration="1000"
             >京畿首善名門聚落</li>
           </ul>
           <ul class="poetry-desc">
             <li
               v-for="(text, index) in poetry_list_1"
               data-aos="fade"
-              :data-aos-delay="700 + (index + 1) * 200"  data-aos-duration="1000"
+              :data-aos-delay="700 + (index + 1) * 200"
+              data-aos-duration="1000"
               :key="text"
             >{{text}}</li>
           </ul>
@@ -73,6 +80,25 @@
           data-aos="fade"
           data-aos-delay="200"
         >
+        <img
+          src="./s3/mo/scale.png"
+          alt=""
+          class="scale"
+          @click="isShowDialog = true"
+        >
+      </div>
+      <div :class="`dialog ${isShowDialog ? 'show' : ''}`">
+        <img
+          src="./s3/mo/map.jpg"
+          alt=""
+          class="dialog-content"
+        >
+        <img
+          src="@/projects/jh/s4/close.png"
+          class="close"
+          alt
+          @click="isShowDialog = false"
+        />
       </div>
       <div class="text-block">
         <div class="poetry poetry-b">
@@ -80,7 +106,8 @@
             <li
               v-for="(text, index) in poetry_list_2"
               data-aos="fade"
-              :data-aos-delay="700 + (index + 1) * 300" data-aos-duration="1000"
+              :data-aos-delay="700 + (index + 1) * 300"
+              data-aos-duration="1000"
               :key="text"
               :class="`${(index > poetry_list_2.length - 3) ? 'red' : ''}`"
             >{{text}}</li>
@@ -203,41 +230,41 @@
     left: auto;
     right: auto;
     margin: 0 auto;
-  .poetry-title,
-  .poetry-desc {
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    font-family: youmin;
-  }
-
-  .poetry-title {
-    font-size: size-m(19);
-    font-weight: 400;
-    color: #231815;
-    position: relative;
-    width: size-m(60);
-    height: auto;
-    margin: 0 auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding-right: 0;
-    padding-top: size-m(35);
-  }
-
-  .poetry-desc {
-    font-size: size-m(15);
-    font-weight: normal;
-    color: #595757;
-    margin: 0 auto;
-    margin-top: size-m(47);
-    margin-bottom: size-m(50) !important;
-  }
-  &.poetry-b {
+    .poetry-title,
     .poetry-desc {
-      font-size: size-m(17);
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      font-family: youmin;
     }
-  }
+
+    .poetry-title {
+      font-size: size-m(19);
+      font-weight: 400;
+      color: #231815;
+      position: relative;
+      width: size-m(60);
+      height: auto;
+      margin: 0 auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding-right: 0;
+      padding-top: size-m(35);
+    }
+
+    .poetry-desc {
+      font-size: size-m(15);
+      font-weight: normal;
+      color: #595757;
+      margin: 0 auto;
+      margin-top: size-m(47);
+      margin-bottom: size-m(50) !important;
+    }
+    &.poetry-b {
+      .poetry-desc {
+        font-size: size-m(17);
+      }
+    }
   }
   li {
     // font-size: size(27);
@@ -260,6 +287,44 @@
     left: auto;
   }
 
+  .scale {
+    position: absolute;
+    cursor: pointer;
+    bottom: 10vh;
+    right: 0;
+  }
+
+  .dialog {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 120;
+    overflow: scroll;
+
+    .dialog-content {
+      width: auto;
+      height: 100vh;
+    }
+
+    &.show {
+      display: block;
+    }
+
+    .close {
+      position: fixed;
+      background:rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      width: 15vw;
+      right: 5vw;
+      top: 5vh;
+      cursor: pointer;
+    }
+  }
+
   .text-block {
     width: 100vw;
     border: none;
@@ -278,6 +343,7 @@ export default {
     return {
       isMobile,
       isTablet,
+      isShowDialog: false,
       poetry_list_1: [
         '往左繁華命脈忠孝東路二段，',
         '往右是仁愛綠蔭大道，',
