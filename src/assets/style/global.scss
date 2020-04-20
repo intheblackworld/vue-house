@@ -33,12 +33,12 @@ body {
 }
 
 .home {
+  background: $bg;
   padding-top: $nav_pc_height;
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;
   overflow: hidden;//試底下多的那塊哪來的
-  background: $bg;
 
   &.no-padding-top {
     padding-top: 0;

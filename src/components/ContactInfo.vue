@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="contact-info" id="contact-info">
-    <img class="logo" src="@/assets/img/contact-logo.png" alt="好站" />
+    <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" />
     <div class="info">
       <div class="btn flex-c" @click="showCallDialog">
         <span class="flex-c">
@@ -101,14 +101,14 @@ export default {
   justify-content: space-between;
   position: relative;
   z-index: 3;
-  width: 1200px;
-  height: 460px;
+  width: 100%;
+  height: 480px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
   transform: translateY(0);
-  margin: 2vw auto -3vw;
-  padding: 70px 0 50px;
+  margin: 2vw auto 0;
+  padding: 70px 0 30px;
 }
 
 .logo {
@@ -137,6 +137,7 @@ export default {
   transition: all 0.5s;
   position: relative;
   overflow: hidden;
+  border-radius: 10px;
 
   &.half {
     width: 49%;
@@ -183,7 +184,10 @@ export default {
   height: 60px;
   background: #fff;
   box-shadow: $contact_btn_border;
+  border-radius: 10px 0 0 10px;
   // border:1px solid $contact_btn_bg;
+  + .btn{
+  border-radius: 0 10px 10px 0;}
 }
 .google-btn {
   width: 280px;
@@ -286,6 +290,9 @@ export default {
     width: 280px;
     padding: 0 1em;
     text-align: justify;
+  border-radius: 10px 10px 0  0;
+  + .btn{
+  border-radius: 0 0 10px 10px;}
   }
 }
 

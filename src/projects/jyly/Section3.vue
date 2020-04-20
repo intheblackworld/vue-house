@@ -8,7 +8,21 @@
           class="img"
           data-aos="fade"
           data-aos-delay="200"
+          @click="isShowDialog = true"
         >
+        <div :class="`dialog ${isShowDialog ? 'show' : ''}`">
+        <img
+          src="./s3/mo/map.jpg"
+          alt=""
+          class="dialog-content"
+        >
+        <img
+          src="@/projects/jh/s4/close.png"
+          class="close"
+          alt
+          @click="isShowDialog = false"
+        />
+      </div>
         <div class="poetry">
           <ul class="poetry-title">
             <li
@@ -206,6 +220,36 @@
   align-items: center;
   justify-content: center;
 }
+.dialog {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 120;
+    overflow: scroll;
+
+    .dialog-content {
+      width: auto;
+      height: 100vh;
+    }
+
+    &.show {
+      display: block;
+    }
+
+    .close {
+      position: fixed;
+      background:rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      width: 50px;
+      right: 10px;
+      top: 10px;
+      cursor: pointer;
+    }
+  }
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -294,36 +338,7 @@
     right: 0;
   }
 
-  .dialog {
-    display: none;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 120;
-    overflow: scroll;
-
-    .dialog-content {
-      width: auto;
-      height: 100vh;
-    }
-
-    &.show {
-      display: block;
-    }
-
-    .close {
-      position: fixed;
-      background:rgba(0, 0, 0, 0.5);
-      padding: 10px;
-      width: 15vw;
-      right: 5vw;
-      top: 5vh;
-      cursor: pointer;
-    }
-  }
+  
 
   .text-block {
     width: 100vw;

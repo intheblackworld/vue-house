@@ -83,6 +83,7 @@
 
   &.is-disabled {
     background-color: $order_sumbit_disable_bg;
+  border-radius: 10px !important;
     opacity: 0.6;
   }
 
