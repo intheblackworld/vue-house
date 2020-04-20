@@ -11,11 +11,11 @@
           @click="isShowDialog = true"
         >
         <div :class="`dialog ${isShowDialog ? 'show' : ''}`">
-        <img
+        <div><img
           src="./s3/mo/map.jpg"
           alt=""
           class="dialog-content"
-        >
+        ></div>
         <img
           src="@/projects/jh/s4/close.png"
           class="close"
@@ -102,11 +102,11 @@
         >
       </div>
       <div :class="`dialog ${isShowDialog ? 'show' : ''}`">
-        <img
+        <div><img
           src="./s3/mo/map.jpg"
           alt=""
           class="dialog-content"
-        >
+        ></div>
         <img
           src="@/projects/jh/s4/close.png"
           class="close"
@@ -222,18 +222,27 @@
 }
 .dialog {
     display: none;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height:100vh;
     background: rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0;
     left: 0;
     z-index: 120;
-    overflow: scroll;
-
+> div{
+    width: calc(100vw - 40px);
+    height: calc(100vh - 20px);
+    background: rgba(0, 0, 0, 0.5);
+    overflow:auto;
+    position: absolute;
+    margin:10px 0 0 10px;
+    }
     .dialog-content {
-      width: auto;
-      height: 100vh;
+      width: 100%;
+      height:auto;
+      min-width:1800px;
+      min-height: 700px;
+      margin: 0;
     }
 
     &.show {
@@ -245,9 +254,10 @@
       background:rgba(0, 0, 0, 0.5);
       padding: 10px;
       width: 50px;
-      right: 10px;
-      top: 10px;
+      right: 30px;
+      top: 20px;
       cursor: pointer;
+      z-index: 5;
     }
   }
 @media only screen and (max-width: 1440px) {
@@ -323,6 +333,10 @@
     height: auto;
   }
 
+.dialog {
+> div{
+  width: calc(100vw - 20px);
+}}
   .img {
     width: 100vw;
     position: relative;
