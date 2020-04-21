@@ -20,12 +20,13 @@ body {
   }
 
   * {
+    font-family:$family1;
     outline: none !important;
   }
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family:$family1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

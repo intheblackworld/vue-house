@@ -154,7 +154,6 @@
 }
 
 .poetry {
-  font-family: youmin !important;
   position: absolute;
   width: size(353);
   border-top: 0.5px solid #ccc;
@@ -282,12 +281,6 @@
     left: auto;
     right: auto;
     margin: 0 auto;
-    .poetry-title,
-    .poetry-desc {
-      writing-mode: vertical-rl;
-      text-orientation: upright;
-      font-family: youmin;
-    }
 
     .poetry-title {
       font-size: size-m(19);

@@ -329,7 +329,6 @@ export default {
     font-size: calc(100vw * 36 / 1920);
     text-align: center;
     color: $order_title_color;
-    font-family: youmin;
   }
 
   .order-subtitle {

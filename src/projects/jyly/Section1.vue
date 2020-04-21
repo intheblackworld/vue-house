@@ -1569,7 +1569,6 @@
   height: size(85);
   color: #fff;
   font-size: size(30);
-  font-family: youmin;
   background: #c00d23;
   border-radius: 10px;
   display: flex;
@@ -1582,7 +1581,6 @@
 }
 
 .poetry {
-  font-family: youmin;
   position: absolute;
   top: size(1255);
   left: size(1030);
@@ -1637,11 +1635,10 @@
   }
 
   .poetry {
-    font-family: youmin;
     position: absolute;
     z-index: 5;
     top: size-m(855);
-    left: auto;
+    left: size-m(100);
     right: auto;
     li {
       font-size: size-m(18);

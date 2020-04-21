@@ -221,7 +221,7 @@ export default {
     .title {
       position: relative;
       z-index: 3;
-      font-family: "Noto Serif TC", serif;
+      font-family:$family2;
     }
 
     .subTitle {
