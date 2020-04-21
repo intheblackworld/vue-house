@@ -257,8 +257,8 @@
     height: size-m(251);
     margin: 0 auto !important;
     top: 0;
-    left: -30px;
-    right: auto;
+   left:50%;
+   // right: auto;
     border-top: 0.5px solid #ccc;
     padding-right: size-m(120) !important;
     padding-top: size-m(23);

@@ -1642,9 +1642,7 @@
     z-index: 5;
     top: size-m(855);
     left: auto;
-    right: size-m(20);
-    writing-mode: vertical-rl;
-    text-orientation: upright;
+    right: auto;
     li {
       font-size: size-m(18);
       margin: 0 15px;
