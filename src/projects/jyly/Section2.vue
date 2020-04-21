@@ -239,6 +239,14 @@
 }
 
 @media screen and (max-width: 767px) {
+  .poetry-title {
+    font-size: size-m(18);
+    font-weight: 400;
+    color: #231815;
+    position: absolute;
+    width: size-m(193);
+    top: 0;
+    left: 0;}
 /* .block{
    .poetry-title-a{
     writing-mode:initial;width: 1em;
