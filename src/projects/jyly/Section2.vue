@@ -252,10 +252,10 @@
     padding-top: size-m(23);
     
    &.poetry-title-a{
-     padding-right: size-m(120);
+    // padding-right: size-m(120);
    }
    &.poetry-title-b{
-     padding-right: size-m(30);
+    // padding-right: size-m(30);
    }
     }
 /* .block{
