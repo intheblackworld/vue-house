@@ -183,8 +183,8 @@
 
   .poetry-title,
   .poetry-desc {
-    writing-mode: vertical-rl;
-    text-orientation: upright;
+  //  writing-mode: vertical-rl;
+  //  text-orientation: upright;
   }
 .poetry {
   position: absolute;
