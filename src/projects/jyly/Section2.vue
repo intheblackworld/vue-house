@@ -252,6 +252,7 @@
     padding-top: size-m(23);
     
    &.poetry-title-a{
+    left: size-m(60);
   li {
     &:nth-child(1) {
      margin-right: size-m(120);
@@ -259,6 +260,7 @@
   }
    }
    &.poetry-title-b{
+    left: size-m(130);
   li {
     &:nth-child(1) {
      margin-right: size-m(30);
