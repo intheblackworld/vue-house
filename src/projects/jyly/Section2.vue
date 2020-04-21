@@ -252,6 +252,7 @@
     font-weight: 400;
     color: #231815;
     position: absolute;
+    z-index: 5;
     width: size-m(193);
     height: size-m(251);
     margin: 0 auto !important;

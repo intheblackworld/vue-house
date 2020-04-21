@@ -1448,7 +1448,7 @@
         data-aos="fade"
         data-aos-delay="3000"
       >立即預約</div>
-      <ul class="poetry" data-aos-delay="100" data-aos-duration="100">
+      <ul class="poetry">
         <li
           data-aos="fade"
           data-aos-delay="300" data-aos-duration="1000"
@@ -1639,8 +1639,10 @@
   .poetry {
     font-family: youmin;
     position: absolute;
+    z-index: 5;
     top: size-m(855);
-    left: size-m(150);
+    left: auto;
+    right: size-m(20);
     writing-mode: vertical-rl;
     text-orientation: upright;
     li {
