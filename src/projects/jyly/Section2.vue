@@ -88,10 +88,12 @@
           <li
             data-aos="fade"
             data-aos-delay="300"
+            data-aos-duration="1000"
           >幸町官邸特區百年一遇</li>
           <li
             data-aos="fade"
-            data-aos-delay="600"
+            data-aos-delay="500"
+            data-aos-duration="1000"
           >難得釋出 才謂無價</li>
         </ul>
         <img

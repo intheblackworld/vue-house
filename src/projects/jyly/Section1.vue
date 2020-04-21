@@ -1455,15 +1455,15 @@
         >在水墨之間藝文行旅</li>
         <li
           data-aos="fade"
-          data-aos-delay="700" data-aos-duration="1000"
+          data-aos-delay="500" data-aos-duration="1000"
         >在新舊之間味蕾散步</li>
         <li
           data-aos="fade"
-          data-aos-delay="1100" data-aos-duration="1000"
+          data-aos-delay="700" data-aos-duration="1000"
         >臨沂街 靜邀</li>
         <li
           data-aos="fade"
-          data-aos-delay="1500" data-aos-duration="800"
+          data-aos-delay="900" data-aos-duration="800"
         >難得一遇的美好</li>
       </ul>
     </div>
