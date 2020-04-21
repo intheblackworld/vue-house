@@ -239,7 +239,7 @@
 }
 
 @media screen and (max-width: 767px) {
-.block{
+/* .block{
    .poetry-title-a{
     writing-mode:initial;width: 1em;
     text-orientation: upright;}
@@ -277,6 +277,7 @@
     }
   }
   }
+  */
 
   .poetry-desc {
     font-size: size-m(15);
