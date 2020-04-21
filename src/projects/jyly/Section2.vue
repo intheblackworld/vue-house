@@ -246,7 +246,18 @@
     position: absolute;
     width: size-m(193);
     top: 0;
-    left: 0;}
+    width: size-m(193);
+    left: 0;
+    border-top: 0.5px solid #ccc;
+    padding-top: size-m(23);
+    
+   &.poetry-title-a{
+     padding-right: size-m(120);
+   }
+   &.poetry-title-b{
+     padding-right: size-m(30);
+   }
+    }
 /* .block{
    .poetry-title-a{
     writing-mode:initial;width: 1em;
