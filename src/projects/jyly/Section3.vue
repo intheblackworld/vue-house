@@ -11,18 +11,18 @@
           @click="isShowDialog = true"
         >
         <div :class="`dialog ${isShowDialog ? 'show' : ''}`">
-        <div><img
-          src="./s3/mo/map.jpg"
-          alt=""
-          class="dialog-content"
-        ></div>
-        <img
-          src="@/projects/jh/s4/close.png"
-          class="close"
-          alt
-          @click="isShowDialog = false"
-        />
-      </div>
+          <div><img
+              src="./s3/mo/map.jpg"
+              alt=""
+              class="dialog-content"
+            ></div>
+          <img
+            src="@/projects/jh/s4/close.png"
+            class="close"
+            alt
+            @click="isShowDialog = false"
+          />
+        </div>
         <div class="poetry">
           <ul class="poetry-title">
             <li
@@ -103,10 +103,10 @@
       </div>
       <div :class="`dialog ${isShowDialog ? 'show' : ''}`">
         <div><img
-          src="./s3/mo/map.jpg"
-          alt=""
-          class="dialog-content"
-        ></div>
+            src="./s3/mo/map.jpg"
+            alt=""
+            class="dialog-content"
+          ></div>
         <img
           src="@/projects/jh/s4/close.png"
           class="close"
@@ -114,19 +114,17 @@
           @click="isShowDialog = false"
         />
       </div>
-      <div class="text-block">
-        <div class="poetry poetry-b">
-          <ul class="poetry-desc">
-            <li
-              v-for="(text, index) in poetry_list_2"
-              data-aos="fade"
-              :data-aos-delay="700 + (index + 1) * 300"
-              data-aos-duration="1000"
-              :key="text"
-              :class="`${(index > poetry_list_2.length - 3) ? 'red' : ''}`"
-            >{{text}}</li>
-          </ul>
-        </div>
+      <div class="poetry poetry-b">
+        <ul class="poetry-desc">
+          <li
+            v-for="(text, index) in poetry_list_2"
+            data-aos="fade"
+            :data-aos-delay="700 + (index + 1) * 300"
+            data-aos-duration="1000"
+            :key="text"
+            :class="`${(index > poetry_list_2.length - 3) ? 'red' : ''}`"
+          >{{text}}</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -221,45 +219,45 @@
   justify-content: center;
 }
 .dialog {
-    display: none;
-    width: 100%;
-    height:100vh;
-    background: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 120;
-> div{
+  display: none;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 120;
+  > div {
     width: calc(100vw - 40px);
     height: calc(100vh - 20px);
     background: rgba(0, 0, 0, 0.5);
-    overflow:auto;
+    overflow: auto;
     position: absolute;
-    margin:10px 0 0 10px;
-    }
-    .dialog-content {
-      width: 100%;
-      height:auto;
-      min-width:1800px;
-      min-height: 700px;
-      margin: 0;
-    }
-
-    &.show {
-      display: block;
-    }
-
-    .close {
-      position: fixed;
-      background:rgba(0, 0, 0, 0.5);
-      padding: 10px;
-      width: 50px;
-      right: 30px;
-      top: 20px;
-      cursor: pointer;
-      z-index: 5;
-    }
+    margin: 10px 0 0 10px;
   }
+  .dialog-content {
+    width: 100%;
+    height: auto;
+    min-width: 1800px;
+    min-height: 700px;
+    margin: 0;
+  }
+
+  &.show {
+    display: block;
+  }
+
+  .close {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    width: 50px;
+    right: 30px;
+    top: 20px;
+    cursor: pointer;
+    z-index: 5;
+  }
+}
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -307,22 +305,29 @@
     }
 
     .poetry-desc {
+      width: size-m(188);
       font-size: size-m(15);
       font-weight: normal;
       color: #595757;
       margin: 0 auto;
       margin-top: size-m(47);
       margin-bottom: size-m(50) !important;
+      display: block !important;
+
+      li {
+        width: size-m(20);
+      }
     }
     &.poetry-b {
       .poetry-desc {
+        width: size-m(148);
         font-size: size-m(17);
       }
     }
   }
   li {
     // font-size: size(27);
-    margin: 0 8px !important;
+    margin: 0 4px !important;
     text-align: left;
   }
 
@@ -333,10 +338,11 @@
     height: auto;
   }
 
-.dialog {
-> div{
-  width: calc(100vw - 20px);
-}}
+  .dialog {
+    > div {
+      width: calc(100vw - 20px);
+    }
+  }
   .img {
     width: 100vw;
     position: relative;
@@ -351,9 +357,6 @@
     bottom: 10vh;
     right: 0;
   }
-
-  
-
   .text-block {
     width: 100vw;
     border: none;

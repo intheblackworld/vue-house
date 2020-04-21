@@ -1448,7 +1448,7 @@
         data-aos="fade"
         data-aos-delay="3000"
       >立即預約</div>
-      <ul class="poetry">
+      <ul class="poetry" data-aos-delay="100" data-aos-duration="100">
         <li
           data-aos="fade"
           data-aos-delay="300" data-aos-duration="1000"
@@ -1463,7 +1463,7 @@
         >臨沂街 靜邀</li>
         <li
           data-aos="fade"
-          data-aos-delay="1500" data-aos-duration="1000"
+          data-aos-delay="1500" data-aos-duration="800"
         >難得一遇的美好</li>
       </ul>
     </div>
@@ -1640,13 +1640,14 @@
     font-family: youmin;
     position: absolute;
     top: size-m(855);
-    left: size-m(120);
+    left: size-m(150);
     writing-mode: vertical-rl;
     text-orientation: upright;
     li {
       font-size: size-m(18);
       margin: 0 15px;
       text-align: left;
+      width: 20px;
       color: #000;
     }
   }

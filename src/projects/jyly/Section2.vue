@@ -87,11 +87,11 @@
         <ul class="poetry-title">
           <li
             data-aos="fade"
-            data-aos-delay="300" data-aos-duration="1000"
+            data-aos-delay="300"
           >幸町官邸特區百年一遇</li>
           <li
             data-aos="fade"
-            data-aos-delay="600" data-aos-duration="1000"
+            data-aos-delay="600"
           >難得釋出 才謂無價</li>
         </ul>
         <img
@@ -252,16 +252,18 @@
     position: absolute;
     width: size-m(193);
     height: size-m(251);
-    margin: 0 auto;
+    margin: 0 auto !important;
     top: 0;
-    left: 0;
-    right: 0;
+    left: -30px;
+    right: auto;
     border-top: 0.5px solid #ccc;
-    padding-right: size-m(120);
+    padding-right: size-m(120) !important;
     padding-top: size-m(23);
 
     &.poetry-title-b {
       padding-right: size-m(0);
+      left: 0 !important;
+      right: 0 !important;
     }
   }
 
