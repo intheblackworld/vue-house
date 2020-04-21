@@ -260,8 +260,8 @@
     left: 0;
     right: 0;
     border-top: 0.5px solid #ccc;
-    padding-right: 120px !important;
-    padding-top: 30px;
+    // padding-right: size-m(120) !important;
+    padding-top: size-m(23);
 
     &.poetry-title-b {
       padding-right: size-m(0);
@@ -281,6 +281,9 @@
     // font-size: size(27);
     margin: 0 10px;
     text-align: left;
+    &:nth-child(1) {
+      margin-right: size-m(120);
+    }
   }
 
   .block {
