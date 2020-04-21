@@ -257,11 +257,11 @@
     height: size-m(251);
     margin: 0 auto !important;
     top: 0;
-    left: -30px;
-    right: auto;
+    left: 0;
+    right: 0;
     border-top: 0.5px solid #ccc;
-    padding-right: size-m(120) !important;
-    padding-top: size-m(23);
+    padding-right: 120px !important;
+    padding-top: 30px;
 
     &.poetry-title-b {
       padding-right: size-m(0);
