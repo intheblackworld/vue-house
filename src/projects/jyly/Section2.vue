@@ -181,6 +181,11 @@
   right: size(180);
 }
 
+  .poetry-title,
+  .poetry-desc {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
 .poetry {
   position: absolute;
   width: size(500);
@@ -202,11 +207,6 @@
     padding-right: size(40);
   }
 
-  .poetry-title,
-  .poetry-desc {
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-  }
 
   .poetry-title {
     font-size: size(29);
@@ -248,9 +248,9 @@
     z-index: 5;
     width: size-m(193);
     height: size-m(251);
-    margin: 0 auto !important;
+    margin: 0 0 !important;
     top: 0;
-    left: 0;
+    left: size-m(60);
     right: 0;
     border-top: 0.5px solid #ccc;
     // padding-right: size-m(120) !important;
@@ -258,9 +258,19 @@
 
     &.poetry-title-b {
       padding-right: size-m(0);
-      left: 0 !important;
-      right: 0 !important;
+    left: size-m(130);
+     // right: 0 !important;
+  li {
+    &:nth-child(1) {
+     margin-right: size-m(30);
     }
+    }
+    }
+  li {
+    &:nth-child(1) {
+     margin-right: size-m(120);
+    }
+  }
   }
 
   .poetry-desc {
@@ -275,7 +285,7 @@
     margin: 0 10px;
     text-align: left;
     &:nth-child(1) {
-      margin-right: size-m(120);
+     // margin-right: size-m(120);
     }
   }
 
