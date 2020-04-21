@@ -84,7 +84,7 @@
           data-aos="fade"
           data-aos-delay="800" data-aos-duration="1000"
         >
-        <ul class="poetry-title">
+        <ul class="poetry-title poetry-title-a">
           <li
             data-aos="fade"
             data-aos-delay="300"
@@ -183,8 +183,8 @@
 
   .poetry-title,
   .poetry-desc {
-  //  writing-mode: vertical-rl;
-  //  text-orientation: upright;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
   }
 .poetry {
   position: absolute;
@@ -239,6 +239,11 @@
 }
 
 @media screen and (max-width: 767px) {
+.block{
+   .poetry-title-a{
+    writing-mode:initial;width: 1em;
+    text-orientation: upright;}
+}
 
   .poetry-title {
     font-size: size-m(18);
