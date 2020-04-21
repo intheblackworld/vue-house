@@ -250,13 +250,8 @@
     height: size-m(251);
     margin: 0 auto !important;
     top: 0;
-<<<<<<< HEAD
-   left:50% !important;
-   // right: auto;
-=======
     left: 0;
     right: 0;
->>>>>>> 112b644a58ad186058e6a45b4169d95e83750ac5
     border-top: 0.5px solid #ccc;
     // padding-right: size-m(120) !important;
     padding-top: size-m(23);
