@@ -236,8 +236,8 @@ export default {
         // !this.form.time_end
         // ||
         // !this.form.email ||
-        //!this.form.city ||
-        //!this.form.area
+        !this.form.city ||
+        !this.form.area
       ) {
         this.alertValidate()
         this.isSubmit = false
