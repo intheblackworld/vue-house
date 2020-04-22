@@ -318,7 +318,8 @@ export default {
   background-position: 0% 50%;
   font-family:$family3;
   input,
-  textarea{font-family:$family3;}
+  textarea,
+  button{font-family:$family3;}
   .order-top {
     position: relative;
     overflow: hidden;
