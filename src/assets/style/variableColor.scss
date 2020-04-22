@@ -2,9 +2,10 @@
 $bg: url('~@/projects/jyly/all/bg.jpg');
 
 /* font-family */
-$family1:'Avenir', Helvetica, Arial, 'youmin', 'Noto Serif TC', 'Noto Sans TC',sans-serif;
-$family2:'Avenir', Helvetica, Arial, 'Noto Serif TC', 'Noto Sans TC',sans-serif;
-$family3:'Avenir', Helvetica, Arial, 'Noto Sans TC',sans-serif;
+/* 1主要字體  2次要字體  3表單字體 */
+$family1: Arial, 'youmin', 'Noto Serif TC', 'Noto Sans TC',sans-serif;
+$family2: Arial, 'Noto Serif TC', 'Noto Sans TC',sans-serif;
+$family3: Arial, 'Noto Sans TC',sans-serif;
 
 /* navigation */
 $nav_bg: #fff;

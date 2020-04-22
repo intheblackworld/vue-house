@@ -6,19 +6,21 @@ h3,
 h4,
 h5,
 p {
-  font-family: 'Noto Sans TC', serif;
+  font-family:inherit;
+  margin: 0;
+  // font-family: 'Noto Sans TC', serif;
 }
-
+/*
 h2 {
   font-family: 'DFPingJuStd';
   margin: 0;
   font-weight: normal;
 }
 h3 {
-  font-family: 'Noto Sans TC', serif;
+  font-family:$family1;
   // font-family: 'Noto Sans TC', serif;
   margin: 0;
-  font-weight: bold;
+  //font-weight: bold;
 }
 
 p {
@@ -27,7 +29,7 @@ p {
   //   Arial;
   margin: 0;
 }
-
+*/
 /* animate css */
 
 /* font */
@@ -48,13 +50,6 @@ p {
 @font-face {
   font-family: Impact;
   src: url('~@/assets/font/Impact.ttf') format('truetype'), url('~@/assets/font/Impact.ttf');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: youmin;
-  src: url('~@/projects/jyly/all/YouMingChaoTi-Medium-2.otf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

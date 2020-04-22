@@ -2,7 +2,9 @@
 
 .el-select {
   margin-left: 21px;
+  font-family:$family3;
 }
+.el-scrollbar{font-family:$family3;}
 
 .el-date-editor.el-input {
   position: relative !important;
@@ -21,6 +23,7 @@
   border: $order_input_border !important;
   background: $order_input_bg;
   color: $order_input_color;
+  font-family:$family3;
 
   &:focus {
     border: $order_input_focus_border;
@@ -42,6 +45,7 @@
     border: $order_input_border !important;
     border-radius: 10px !important;
     background:#FFF;
+  font-family:$family3;
 
     &::placeholder {
       color: $order_input_placeholder;
