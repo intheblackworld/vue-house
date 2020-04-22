@@ -219,7 +219,7 @@ export default {
         message: h(
           'i',
           { style: 'color: #82191d' },
-          '「姓名、手機、 聯絡時間」是必填欄位',
+          '「姓名、手機」是必填欄位',
         ),
       })
     },
@@ -236,8 +236,8 @@ export default {
         // !this.form.time_end
         // ||
         // !this.form.email ||
-        !this.form.city ||
-        !this.form.area
+        //!this.form.city ||
+        //!this.form.area
       ) {
         this.alertValidate()
         this.isSubmit = false
