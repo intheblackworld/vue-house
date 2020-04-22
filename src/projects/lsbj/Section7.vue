@@ -13,7 +13,7 @@
         <p>晶綺盛宴</p>
       </div>
       </div>
-         <h2 class="text"><span>上市櫃多角化經營</span><span>打造夢想生活藍圖</span></h2>
+         <h2 class="text"><span>聯上集團多角化經營</span><span>打造夢想生活藍圖</span></h2>
     </div>
   </div>
 </template>
