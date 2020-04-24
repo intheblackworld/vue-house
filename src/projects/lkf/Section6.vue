@@ -49,8 +49,6 @@
             <div class="slide-title3">英倫美學外觀氣韻，80米豪奢尺度非凡視野</div>
             <div class="slide-desc">「蘭桂.坊」結合1972主題飯店風格設計，整體外觀以英式風尚體現優雅的紳士品味，開展80米的大氣度建築，無論近觀遠望，1972HOTEL都將寫下大台北設計飯店的全新風潮!</div>
           </div>
-
-        <!-- 
         <div
           class="slide relative"
           style="margin-bottom: 50px;"
@@ -59,12 +57,12 @@
           data-aos-duration="1500"
         >
         <div v-if="!isMobile">
-            <div class="slide-title">新東方時尚 雅緻盛宴</div>
+            <div class="slide-title">60年代的懷舊藝術 空間時尚的另類展演</div>
             <div
               class="slide-desc"
-            >宛如頂級上海外灘超星級飯店門廳，優雅的窗櫺融入現代簡約的細膩雅緻，從迎賓門廳、LOUNGE交誼、多功能健身房等，一場極致的中式優雅品味，在回家的每一刻都是享受</div>
-          </div> -->
-          <!-- <img
+            >以60、70年代歐亞風潮為主題，1972 HOTEL從大廳的新東方奢華開始，猶如走進時光隧道，隨著Beetle金龜車帶領穿越美好年代的藝術之旅， 復古主題廊道、咖啡廳、足療中心、健身中心、古董車藝廊、夢露酒吧、歐陸花園自助餐廳等；飯店內並規劃有95間套房，預計2021年盛大開幕， 勢必成為林口A9捷運站前最響亮的風格飯店。</div>
+          </div>
+          <img
             v-for="(slide, index) in slideList2"
             :class="`slide-img ${slideIndex2 === index ? 'active' : ''}`"
             :key="`s6-slide-${index}`"
@@ -83,18 +81,18 @@
           </div>
           <div class="slide-footer">{{slideList2[slideIndex2].title}}</div>
         </div>
-        <div class="slide relative" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
+      <!--  <div class="slide relative" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
           <iframe width="100%" height="100%" v-if="isShowVR" src="https://www.youtube.com/embed/CUi8vTFA0eM?rel=0&autoplay=1"></iframe>
           <img v-else src="./s6_720.jpg" alt="" class="slide-img active" style="cursor: pointer;" @click="isShowVR = true">
           <div class="slide-footer">公設3D示意圖(實際依完工現況為準)</div>
-        </div>
+        </div>  -->
         <div v-if="isMobile" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
-          <div class="slide-title">新東方時尚 雅緻盛宴</div>
+          <div class="slide-title">60年代的懷舊藝術 空間時尚的另類展演</div>
           <div
             class="slide-desc"
-          >宛如頂級上海外灘超星級飯店門廳，優雅的窗櫺融入現代簡約的細膩雅緻，從迎賓門廳、LOUNGE交誼、多功能健身房等，一場極致的中式優雅品味，在回家的每一刻都是享受</div>
-        </div> -->
-
+          >以60、70年代歐亞風潮為主題，1972 HOTEL從大廳的新東方奢華開始，猶如走進時光隧道，隨著Beetle金龜車帶領穿越美好年代的藝術之旅， 復古主題廊道、咖啡廳、足療中心、健身中心、古董車藝廊、夢露酒吧、歐陸花園自助餐廳等；飯店內並規劃有95間套房，預計2021年盛大開幕， 勢必成為林口A9捷運站前最響亮的風格飯店。</div>
+        </div>
+<!--
         <div class="slide relative" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
           <div v-if="!isMobile">
             <div class="slide-title">飯店房東 一次買進</div>
@@ -105,7 +103,7 @@
           <iframe width="100%" v-if="isShow3D" height="100%" src="https://www.youtube.com/embed/c87k-PzSKHg?rel=0&autoplay=1"></iframe>
           <img v-else src="./s6_3d.jpg" alt="" class="slide-img active" style="cursor: pointer;" @click="isShow3D = true">
           <div class="slide-footer">樣品屋3D示意圖(實際依完工現況為準)</div>
-        </div>
+        </div> -->
         <div v-if="isMobile" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
           <div class="slide-title">飯店房東 一次買進</div>
           <div class="slide-desc">「蘭桂.坊」以五星級飯店為規畫藍圖，國際質感設計，每一個空間都細心規劃，符合國際商旅觀光需求，無論是短期商務會議或是旅遊休閒；蛋形設計浴缸與室內高達10-15坪的行政套房規格，空間的寬敞與高格調的藝術風格，讓訪客入住的開始，就是一場難忘之旅!</div>
@@ -234,10 +232,11 @@
   }
 
   .btn-group {
-    bottom: 50px;
+   // bottom: 50px;
   }
 
   .slide-footer {
+    font-size: 0.9em;
     position: absolute;
     bottom: -27px;
     width: 100%;
@@ -357,7 +356,7 @@
     width: 100%;
     .btn-group {
       width: 92%;
-      bottom: 40%;
+     // bottom: 20%;
     }
 
     .VideoBg {
@@ -396,7 +395,7 @@
   .slide-desc {
     width: 90%;
     margin: 0 auto;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
     text-align: justify;
   }
 }
@@ -424,28 +423,28 @@ export default {
       slideList2: [
         {
           src: require('./s6_img2-1.jpg'),
-          title: '迎賓大廳3D示意圖(實際依完工現況為準)',
+          title: '主題廊道3D示意圖(實際依完工現況為準)',
         },
         {
           src: require('./s6_img2-2.jpg'),
-          title: '迎賓廊道3D示意圖(實際依完工現況為準)',
+          title: '歐陸花園自助餐廳3D示意圖(實際依完工現況為準)',
         },
         {
           src: require('./s6_img2-3.jpg'),
-          title: '交誼廳3D示意圖(實際依完工現況為準)',
+          title: '夢露酒吧3D示意圖(實際依完工現況為準)',
         },
         {
           src: require('./s6_img2-4.jpg'),
-          title: '洗衣中心3D示意圖(實際依完工現況為準)',
+          title: '古董車藝廊3D示意圖(實際依完工現況為準)',
         },
-        {
+        /* {
           src: require('./s6_img2-5.jpg'),
           title: '健身房3D示意圖(實際依完工現況為準)',
         },
         {
           src: require('./s6_img2-6.jpg'),
           title: '信箱區3D示意圖(實際依完工現況為準)',
-        },
+        }, */
       ],
       isMobile,
       isShowVR: false,
