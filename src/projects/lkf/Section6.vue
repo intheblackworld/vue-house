@@ -51,7 +51,6 @@
           </div>
         <div
           class="slide relative"
-          style="margin-bottom: 50px;"
           data-aos="fade-up"
           data-aos-delay="0"
           data-aos-duration="1500"
@@ -92,7 +91,7 @@
             class="slide-desc"
           >以60、70年代歐亞風潮為主題，1972 HOTEL從大廳的新東方奢華開始，猶如走進時光隧道，隨著Beetle金龜車帶領穿越美好年代的藝術之旅， 復古主題廊道、咖啡廳、足療中心、健身中心、古董車藝廊、夢露酒吧、歐陸花園自助餐廳等；飯店內並規劃有95間套房，預計2021年盛大開幕， 勢必成為林口A9捷運站前最響亮的風格飯店。</div>
         </div>
-<!--
+
         <div class="slide relative" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
           <div v-if="!isMobile">
             <div class="slide-title">飯店房東 一次買進</div>
@@ -103,7 +102,7 @@
           <iframe width="100%" v-if="isShow3D" height="100%" src="https://www.youtube.com/embed/c87k-PzSKHg?rel=0&autoplay=1"></iframe>
           <img v-else src="./s6_3d.jpg" alt="" class="slide-img active" style="cursor: pointer;" @click="isShow3D = true">
           <div class="slide-footer">樣品屋3D示意圖(實際依完工現況為準)</div>
-        </div> -->
+        </div>
         <div v-if="isMobile" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">
           <div class="slide-title">飯店房東 一次買進</div>
           <div class="slide-desc">「蘭桂.坊」以五星級飯店為規畫藍圖，國際質感設計，每一個空間都細心規劃，符合國際商旅觀光需求，無論是短期商務會議或是旅遊休閒；蛋形設計浴缸與室內高達10-15坪的行政套房規格，空間的寬敞與高格調的藝術風格，讓訪客入住的開始，就是一場難忘之旅!</div>
