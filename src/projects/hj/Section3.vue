@@ -71,35 +71,35 @@
           />
         </g>
         <text
-          transform="matrix(1 0 0 1 204.36 364.3501)"
-          class="st7 st8 st9 line3-2"
-        >10min</text>
+          transform="matrix(1 0 0 1 207 364)"
+          class="st7 st8-1 line3-2"
+        >約10min</text>
         <text
-          transform="matrix(1 0 0 1 206.89 234.3398)"
-          class="st7 st8 st9 line2-2"
-        >5min</text>
+          transform="matrix(1 0 0 1 207 234)"
+          class="st7 st8-1 line2-2"
+        >約3min</text>
         <text
-          transform="matrix(1 0 0 1 206.89 116.0698)"
-          class="st7 st8 st9 line1-2"
-        >2min</text>
+          transform="matrix(1 0 0 1 207 116)"
+          class="st7 st8-1 line1-2"
+        >約2min</text>
         <text
-          transform="matrix(1 0 0 1 133.13 434.3101)"
+          transform="matrix(1 0 0 1 133 434)"
           class="st7 st8 st3 line4-1"
         >南勢角</text>
         <text
-          transform="matrix(1 0 0 1 146.18 302.8599)"
+          transform="matrix(1 0 0 1 146 303)"
           class="st7 st8 st3 line3-1"
         >古亭</text>
         <text
-          transform="matrix(1 0 0 1 146.18 178.9399)"
+          transform="matrix(1 0 0 1 146 179)"
           class="st7 st8 st3 line2-1"
         >東門</text>
         <text
-          transform="matrix(1 0 0 1 146.18 49.1802)"
+          transform="matrix(1 0 0 1 146 49)"
           class="st7 st8 st3 line1-1"
         >忠孝</text>
         <text
-          transform="matrix(1 0 0 1 146.18 80.0298)"
+          transform="matrix(1 0 0 1 146 80)"
           class="st7 st8 st3 line1-1"
         >新生</text>
       </svg>
@@ -204,35 +204,35 @@
           />
         </g>
         <text
-          transform="matrix(1 0 0 1 204.36 364.3501)"
-          class="st7 st8 st9 line3-2"
-        >10min</text>
+          transform="matrix(1 0 0 1 207 364)"
+          class="st7 st8-1 line3-2"
+        >約10min</text>
         <text
-          transform="matrix(1 0 0 1 206.89 234.3398)"
-          class="st7 st8 st9 line2-2"
-        >5min</text>
+          transform="matrix(1 0 0 1 207 234)"
+          class="st7 st8-1 line2-2"
+        >約3min</text>
         <text
-          transform="matrix(1 0 0 1 206.89 116.0698)"
-          class="st7 st8 st9 line1-2"
-        >2min</text>
+          transform="matrix(1 0 0 1 207 116)"
+          class="st7 st8-1 line1-2"
+        >約2min</text>
         <text
-          transform="matrix(1 0 0 1 133.13 434.3101)"
+          transform="matrix(1 0 0 1 133 434)"
           class="st7 st8 st3 line4-1"
         >南勢角</text>
         <text
-          transform="matrix(1 0 0 1 146.18 302.8599)"
+          transform="matrix(1 0 0 1 146 303)"
           class="st7 st8 st3 line3-1"
         >古亭</text>
         <text
-          transform="matrix(1 0 0 1 146.18 178.9399)"
+          transform="matrix(1 0 0 1 146 179)"
           class="st7 st8 st3 line2-1"
         >東門</text>
         <text
-          transform="matrix(1 0 0 1 146.18 49.1802)"
+          transform="matrix(1 0 0 1 146 49)"
           class="st7 st8 st3 line1-1"
         >忠孝</text>
         <text
-          transform="matrix(1 0 0 1 146.18 80.0298)"
+          transform="matrix(1 0 0 1 146 80)"
           class="st7 st8 st3 line1-1"
         >新生</text>
       </svg>
@@ -261,7 +261,7 @@
     font-family: 'Noto Sans TC', serif;
   }
   .st3 {
-    font-size: 26.1px;
+    font-size: 26px;
   }
   .st4 {
     fill: none;
@@ -293,8 +293,14 @@
   .st8 {
     font-family: 'Noto Sans TC', serif;
   }
+  .st8-1 {
+    font-family: 'Noto Sans TC', serif;
+    font-weight: lighter;
+    letter-spacing: 0.1em;
+    font-size: 17px;
+  }
   .st9 {
-    font-size: 23.73px;
+    font-size: 23px;
   }
   .line1 {
     animation: an01 1s linear forwards;
@@ -369,6 +375,15 @@
       opacity: 0.2;
     }
   }
+}
+
+@media screen and (max-width: 767px) {
+  
+.section3 {
+  .st8-1 {
+    font-size: 23px;
+  }
+}
 }
 </style>
 <style lang="scss" scoped>
