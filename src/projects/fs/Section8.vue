@@ -17,6 +17,7 @@
           <div class="desc">
             房間都開窗 / 真正適合生活的臥室，享受每天早上把陽光當鬧鐘的小確幸。<br />配備雙衛浴 / 客人主人分開用，家人間也不用排隊，掌握全家生活自主權。
           </div>
+        <div class="button" @click="showDialog('https://fs.h35.tw/output/index.html')">360度 環景</div>
         </div>
         <img
           v-lazy="require('./s8/img1-1.png')"
@@ -37,6 +38,7 @@
           <div class="desc">
             方正又有窗 / 3間房都開窗，格局方方正正好規劃，盡情大展身手的小天地。<br />露臺大格局 / 客廳旁落地窗，直接連接大露臺，搭起與自然風光平行舞台。
           </div>
+        <div class="button" @click="showDialog('https://fs.h35.tw/output/index.html')">360度 環景</div>
         </div>
         <img
           v-lazy="require('./s8/img2-1.png')"
@@ -81,6 +83,7 @@
             <div class="desc">
               房間都開窗 / 真正適合生活的臥室，享受每天早上把陽光當鬧鐘的小確幸。<br />配備雙衛浴 / 客人主人分開用，家人間也不用排隊，掌握全家生活自主權。
             </div>
+        <div class="button" @click="showDialog('https://fs.h35.tw/output/index.html')">360度 環景</div>
           </div>
         </div>
         <div class="relative">
@@ -146,6 +149,7 @@
             <div class="desc">
               方正又有窗 / 3間房都開窗，格局方方正正好規劃，盡情大展身手的小天地。<br />露臺大格局 / 客廳旁落地窗，直接連接大露臺，搭起與自然風光平行舞台。
             </div>
+        <div class="button" @click="showDialog('https://fs.h35.tw/output/index.html')">360度 環景</div>
           </div>
         </div>
         <div class="relative">
@@ -237,7 +241,6 @@
   background-size: cover;
   position: relative;
   overflow: hidden;
-  position: relative;
   height: size(2560);
   z-index: 3;
 }
@@ -295,7 +298,7 @@
 }
 
 .content-t {
-  width: size(735);
+  width: size(760);
   top: size(150);
   left: size(100);
   position: absolute;
@@ -337,7 +340,27 @@
     text-align: right;
   }
 }
-
+.button {
+  position: relative;
+  background: #0003;
+  color: #fff;
+  float: right;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  font-size: size(20);
+  display: flex;
+  border-radius:1em;
+  letter-spacing: 0.1em;
+    bottom:-0.75em;
+  width:10em;
+  height:3em;
+  transition: all 0.3;
+  &:hover {
+    background: #0007;
+    bottom:-0.5em;
+  }
+}
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
     height: 100vh;
@@ -360,6 +383,7 @@
     height: auto;
     display: flex;
     align-items: center;
+    background: #20969b;
 
     > div {
       display: block;
@@ -373,7 +397,7 @@
 
   .bg-img {
     width: 100vw;
-    position: absolute;
+    position: relative;
     left: 0;
     top: 0;
     height: auto;
@@ -382,7 +406,7 @@
     z-index: 3;
 
     &:nth-child(1) {
-      position: relative;
+      position: absolute;
     }
     &:nth-child(2) {margin-top: size-m(10);
     }
@@ -492,11 +516,14 @@
     to{opacity: 0; transform: scale(1.5);}
   }
   .content-t {
+    position: relative;
     width: size-m(310);
-    top: size-m(397);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
+    //top: size-m(397);
+   left:  size-m(-3);
+   // right: 0;
+   top: 0;
+    margin: 7vw auto;
+    overflow: hidden;
   }
 
   .title {
@@ -632,6 +659,12 @@
     top: size-m(270);
     right: size-m(30);
   }
+.button {
+  font-size:size-m(15);
+  bottom: 0;
+  &:hover {
+  }
+}
 }
 </style>
 

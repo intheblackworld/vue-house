@@ -27,7 +27,7 @@
           <div class="item-title" v-html="slide.name"></div>
         </swiper-slide>
       </swiper>
-      <transition-group name="slide-fade" mode="out-in">
+      <transition-group name="slide-fade" class="content_all" mode="out-in">
         <div
           class="content"
           v-for="(slide, index) in slideList"
@@ -35,7 +35,7 @@
           :key="slide.img"
         >
         <img :src="slideList[slideIndex].titleimg" :class="`title-img`" :alt="slideList[slideIndex].title" />
-          <!-- div class="title" v-html="slideList[slideIndex].title"></div -->
+          <div class="subtitle" v-html="slideList[slideIndex].subtitle"></div>
           <div class="desc" v-html="slideList[slideIndex].desc"></div>
         </div>
       </transition-group>
@@ -70,57 +70,42 @@
     // position: relative;
   }
 }
-
+.content_all{height: 100%;display:flex;align-items: center;flex:1;//width: size(780);
+}
 .content {
   width: size(620);
   z-index: 3;
-  top: size(270);
+  //top: size(0);
   text-align: left;
-  left: size(1128);
-  position: absolute;
+  //left: size(1128);
+  //position: absolute;
+  font-size: size(16);
+  line-height: 2.25;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: left;
+  font-weight: 500;
+  color: #ffffff;
 }
 .title-img{
   width:size(511);  
-  margin-bottom: size(15);}
+  margin-bottom:0em;}
 .title {
-  font-size: size(40);
+  font-size: 2.5em;
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: normal;
-  text-align: left;
-  color: #ffffff;
-  margin-bottom:size(15);
 }
 
 .subtitle {
-  font-size: size(24);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: normal;
-  text-align: left;
-  color: #ffffff;
+  font-size: 1.5em;
 }
 
 .desc {
-  font-size: size(16);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2.25;
-  letter-spacing: normal;
-  text-align: left;
-  color: #fff;
+  font-size: 1em;
 }
 
-.swiper-l {
-  width: size(1100);
-  left: size(0);
-  top: size(37);
-  position: absolute;
+.swiper-l {flex:2;float: left;width: size(1100);height: size(667);margin:36px 0 0 0;display:flex;align-items: center;
 }
 .item{text-align:left;}
 .item-img {
@@ -200,8 +185,7 @@
     }
   }
 .title-img{
-  
-  width:size-m(320);}
+  width:100%;}
 
 .bg span:last-child .content:last-child  .title-img{margin-left:size-m(-30);}
   .bg-img {
@@ -221,15 +205,21 @@
 
   .swiper-l {
     width: 100vw;
-    left: 0;
-    top: 0;
+    height:auto;
+    margin: 0;
+    float: none;
   }
 
+  .content_all{
+     height:size-m(220);
+     width: 85vw;margin: auto;
+
+  }
   .content {
-    width: 90vw;
-    top: auto;
-    bottom: size-m(50);
-    left: size-m(30);
+    width:100%;
+    //top: auto;
+    //bottom: size-m(50);
+    font-size: size-m(12);
   }
 
   .title-logo {
@@ -238,18 +228,17 @@
   }
 
   .title {
-    font-size: calc(100vw * 22 / 375);
     width: 100%;
   }
 
   .desc {
-    font-size: calc(100vw * 12 / 375);
     width: 100%;
   }
   .item-title{
     right:size-m(55);}
 
-  .item-img{width: auto;height:calc(100vw * 667 / 1100 );margin: 0 auto 0 0;}
+  .item-img{width: auto;
+  height:calc(100vw * 667 / 1100 );margin: 0 auto 0 0;}
 .swiper-slide {
   background: url('./mo/10/swiper_bg.png');
   background-size: cover;
@@ -332,6 +321,15 @@ export default {
           subtitle: '全球衛浴領導 喜來登酒店選用',
           desc:
             '■ 西班牙百年品牌，銷售遍及135國，深受使用者愛戴<br/>■ 全球唯一全瓷化無死角一體成形馬桶，易清潔又時尚<br/>■ 源自歐洲的強勁沖水技術，極少量水即可帶走髒汙',
+        },
+        {
+          img: require('./s10/img6.jpg'),
+          name: '情境示意',
+          titleimg: require('./s10/title6.png'),
+          title: 'INAX',
+          subtitle: '',
+          desc:
+            '■ 起源於日本六大古窯之一從燒製磁磚起家，用心於改良產品創造廁所文化至今<br/>■ 2in1閥芯及便利的置放平台與引流設計<br/>■ 側向手持花灑使小孩與年長者方便使用',
         },
         {
           img: require('./s10/img5.jpg'),
