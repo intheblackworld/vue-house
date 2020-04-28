@@ -69,7 +69,7 @@
           <img
             v-lazy="require('./mo/8/bg1.png')"
             alt
-            class="bg-img"
+            class="bg-img1"
           />
           <img
             :src="require('./s8/img1-2.jpg')"
@@ -135,7 +135,7 @@
           <img
             v-lazy="require('./mo/8/bg1.png')"
             alt
-            class="bg-img"
+            class="bg-img1"
           />
           <img
             v-lazy="require('./s8/img2-2.jpg')"
@@ -397,6 +397,11 @@
     position: relative;
   }
 
+  .bg-img1 {
+    position: absolute;
+    width: 100vw;
+    left: 0;
+    top: 0;}
   .bg-img {
     width: 100vw;
     position: relative;
@@ -408,7 +413,7 @@
     z-index: 3;
 
     &:nth-child(1) {
-      position: absolute;
+      position: relative;
     }
     &:nth-child(2) {margin-top: size-m(10);
     }
