@@ -41,6 +41,7 @@
           />
         </div>
         <div class="dialog-content">
+          <!-- <pano title="The Title" width="720" height="480" :bundle="bundleLink" format="jpg"></pano> -->
           <iframe
             width="560"
             height="315"
@@ -395,6 +396,7 @@ export default {
       isMobile,
       showMask: isMobile,
       isShowDialog: false,
+      link: '',
       mapText: [
         {
           title: '',

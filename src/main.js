@@ -33,6 +33,8 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueSvgIcon from 'vue-svgicon'
 import './plugins/element.js'
 
+import VuePannellum from 'vue-pannellum'
+
 // AOS.init()
 
 library.add(faBars)
@@ -44,6 +46,8 @@ library.add(faFacebookF)
 library.add(faMapMarkerAlt)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
+
+Vue.component('VPannellumn', VuePannellum)
 
 Vue.use(VueSvgIcon, {
   tagName: 'icon'

@@ -6530,6 +6530,11 @@ pako@~1.0.5:
   resolved "https://registry.yarnpkg.com/pako/-/pako-1.0.10.tgz#4328badb5086a426aa90f541977d4955da5c9732"
   integrity sha512-0DTvPVU3ed8+HNXOu5Bs+o//Mbdj9VNQMUOe9oKCwh8l0GNwpTDMKCWbRjgtD291AWnkAgkqA/LOnQS8AmS1tw==
 
+pannellum@^2.5.2:
+  version "2.5.6"
+  resolved "https://registry.yarnpkg.com/pannellum/-/pannellum-2.5.6.tgz#13bfec43ec272a70b729f20f70f9c34d05b25264"
+  integrity sha512-R4kSPpj36wQPlyIi9ZftxPfVYF11DEbNBATUEI+pkMGZDFYBV5Jxi6tYFVDdmxA2xaTeKZQHMIuIIj7njVSTQQ==
+
 parallel-transform@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/parallel-transform/-/parallel-transform-1.1.0.tgz#d410f065b05da23081fcd10f28854c29bda33b06"
@@ -8993,6 +8998,14 @@ vue-loader@^15.7.0:
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
+
+vue-pannellum@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/vue-pannellum/-/vue-pannellum-0.5.0.tgz#9f867c8c449ad3ba2fb5e7336fc321660c8c20f6"
+  integrity sha512-huS47gVwdjG/hVMHkHoxl89lxEIce6yMOkeEvbOH4/ZbXIao3IYC77/d/H8Jds+zVaG4Fo+F97Dr9MR4EjhQfA==
+  dependencies:
+    lodash.debounce "^4.0.8"
+    pannellum "^2.5.2"
 
 vue-photo-zoom-pro@^1.2.12:
   version "1.2.12"

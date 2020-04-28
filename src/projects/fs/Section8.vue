@@ -1,6 +1,25 @@
 <template>
   <div class="section8">
     <div class="bg">
+      <div :class="`dialog ${isShow360Dialog ? '' : 'hide'}`">
+        <div
+          class="close"
+          @click="close360Dialog"
+        >
+          <img
+            src="../jh/s4/close.png"
+            alt
+          />
+        </div>
+        <div class="dialog-content">
+          <v-pannellumn
+            :src="link"
+            :autoLoad="false"
+            showZoom
+            showFullscreen
+          ></v-pannellumn>
+        </div>
+      </div>
       <div v-if="!isMobile">
         <img
           v-lazy="require('./s8/bg.jpg')"
@@ -17,7 +36,10 @@
           <div class="desc">
             房間都開窗 / 真正適合生活的臥室，享受每天早上把陽光當鬧鐘的小確幸。<br />配備雙衛浴 / 客人主人分開用，家人間也不用排隊，掌握全家生活自主權。
           </div>
-        <div class="button" @click="showDialog('https://fs.h35.tw/output/index.html')">360度 環景</div>
+          <div
+            class="button"
+            @click="show360Dialog(require('./s8/360-1.jpg'))"
+          >360度 環景</div>
         </div>
         <img
           v-lazy="require('./s8/img1-1.png')"
@@ -38,7 +60,10 @@
           <div class="desc">
             方正又有窗 / 3間房都開窗，格局方方正正好規劃，盡情大展身手的小天地。<br />露臺大格局 / 客廳旁落地窗，直接連接大露臺，搭起與自然風光平行舞台。
           </div>
-        <div class="button" @click="showDialog('https://fs.h35.tw/output/index.html')">360度 環景</div>
+          <div
+            class="button"
+            @click="show360Dialog(require('./s8/360-2.jpg'))"
+          >360度 環景</div>
         </div>
         <img
           v-lazy="require('./s8/img2-1.png')"
@@ -83,7 +108,10 @@
             <div class="desc">
               房間都開窗 / 真正適合生活的臥室，享受每天早上把陽光當鬧鐘的小確幸。<br />配備雙衛浴 / 客人主人分開用，家人間也不用排隊，掌握全家生活自主權。
             </div>
-        <div class="button" @click="showDialog('https://fs.h35.tw/output/index.html')">360度 環景</div>
+            <div
+              class="button"
+              @click="show360Dialog(require('./s8/360-1.jpg'))"
+            >360度 環景</div>
           </div>
         </div>
         <div class="relative">
@@ -149,7 +177,10 @@
             <div class="desc">
               方正又有窗 / 3間房都開窗，格局方方正正好規劃，盡情大展身手的小天地。<br />露臺大格局 / 客廳旁落地窗，直接連接大露臺，搭起與自然風光平行舞台。
             </div>
-        <div class="button" @click="showDialog('https://fs.h35.tw/output/index.html')">360度 環景</div>
+            <div
+              class="button"
+              @click="show360Dialog(require('./s8/360-2.jpg'))"
+            >360度 環景</div>
           </div>
         </div>
         <div class="relative">
@@ -350,19 +381,73 @@
   transition: all 0.3s;
   font-size: size(20);
   display: flex;
-  border-radius:1em;
+  border-radius: 1em;
   letter-spacing: 0.1em;
-    bottom:-0.75em;
-  width:10em;
-  height:3em;
+  bottom: -0.75em;
+  width: 10em;
+  height: 3em;
   transition: all 0.3;
   box-shadow: 0px 3px 0 #0007;
+  cursor: pointer;
   &:hover {
     background: #0007;
-    bottom:-0.5em;
-  box-shadow: 0px 7px 0 #000c;
+    bottom: -0.5em;
+    box-shadow: 0px 7px 0 #000c;
   }
 }
+
+.dialog {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  z-index: 150;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+
+  .close {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    img {
+      width: 100%;
+    }
+
+    position: fixed;
+    z-index: 10;
+    top: 30px;
+    right: 30px;
+  }
+
+  &.hide {
+    display: none;
+  }
+
+  .dialog-content {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) !important;
+    background: transparent;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+#viewer {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
     height: 100vh;
@@ -401,7 +486,8 @@
     position: absolute;
     width: 100vw;
     left: 0;
-    top: 0;}
+    top: 0;
+  }
   .bg-img {
     width: 100vw;
     position: relative;
@@ -415,121 +501,130 @@
     &:nth-child(1) {
       position: relative;
     }
-    &:nth-child(2) {margin-top: size-m(10);
+    &:nth-child(2) {
+      margin-top: size-m(10);
     }
   }
-.circle{
+  .circle {
     z-index: 3;
-  .circle0{
-    position: absolute;
-    left: 0;
-    top: 0;
-    border: 3px solid #0006;
-    border-radius: 50%;
-    font-size:size-m(18);
-    width: 1em;height: 1em;
-    z-index: 3;
-    opacity: 0;
-    animation: circlee 8s infinite ease-out;
-  }
-  .circle1{
-    left: size-m(60);
-    top: size-m(110);
-    animation-delay:0s;
-  }
-  .circle2{
-    left: size-m(130);
-    top: size-m(135);
-    animation-delay:1s;
-  }
-  .circle3-1{
-    left: size-m(250);
-    top: size-m(90);
-    animation-delay:2s;
-  }
-  .circle3-2{
-    left: size-m(250);
-    top: size-m(170);
-    animation-delay:3s;
-  }
-  .circle4{
-    left: size-m(115);
-    top: size-m(280);
-    animation-delay:4s;
-  }
-  .circle5{
-    left: size-m(250);
-    top: size-m(320);
-    animation-delay:5s;
-  }
-  .circle6{
-    left: size-m(244);
-    top: size-m(432);
-    animation-delay:6s;
-  }
+    .circle0 {
+      position: absolute;
+      left: 0;
+      top: 0;
+      border: 3px solid #0006;
+      border-radius: 50%;
+      font-size: size-m(18);
+      width: 1em;
+      height: 1em;
+      z-index: 3;
+      opacity: 0;
+      animation: circlee 8s infinite ease-out;
+    }
+    .circle1 {
+      left: size-m(60);
+      top: size-m(110);
+      animation-delay: 0s;
+    }
+    .circle2 {
+      left: size-m(130);
+      top: size-m(135);
+      animation-delay: 1s;
+    }
+    .circle3-1 {
+      left: size-m(250);
+      top: size-m(90);
+      animation-delay: 2s;
+    }
+    .circle3-2 {
+      left: size-m(250);
+      top: size-m(170);
+      animation-delay: 3s;
+    }
+    .circle4 {
+      left: size-m(115);
+      top: size-m(280);
+      animation-delay: 4s;
+    }
+    .circle5 {
+      left: size-m(250);
+      top: size-m(320);
+      animation-delay: 5s;
+    }
+    .circle6 {
+      left: size-m(244);
+      top: size-m(432);
+      animation-delay: 6s;
+    }
 
-  .circle7{
-    left: size-m(129);
-    top: size-m(455);
-    animation-delay:7s;
-  }
-  .circle8{
-    left: size-m(270);
-    top: size-m(56);
-    animation-delay:0s;
-  }
-  .circle9{
-    left: size-m(170);
-    top: size-m(115);
-    animation-delay:1s;
-  }
-  .circle10{
-    left: size-m(300);
-    top: size-m(155);
-    animation-delay:2s;
-  }
-  .circle11{
-    left: size-m(45);
-    top: size-m(210);
-    animation-delay:3s;
-  }
-  .circle12{
-    left: size-m(170);
-    top: size-m(210);
-    animation-delay:4s;
-  }
+    .circle7 {
+      left: size-m(129);
+      top: size-m(455);
+      animation-delay: 7s;
+    }
+    .circle8 {
+      left: size-m(270);
+      top: size-m(56);
+      animation-delay: 0s;
+    }
+    .circle9 {
+      left: size-m(170);
+      top: size-m(115);
+      animation-delay: 1s;
+    }
+    .circle10 {
+      left: size-m(300);
+      top: size-m(155);
+      animation-delay: 2s;
+    }
+    .circle11 {
+      left: size-m(45);
+      top: size-m(210);
+      animation-delay: 3s;
+    }
+    .circle12 {
+      left: size-m(170);
+      top: size-m(210);
+      animation-delay: 4s;
+    }
 
-  .circle13{
-    left: size-m(145);
-    top: size-m(315);
-    animation-delay:5s;
+    .circle13 {
+      left: size-m(145);
+      top: size-m(315);
+      animation-delay: 5s;
+    }
+    .circle14 {
+      left: size-m(245);
+      top: size-m(315);
+      animation-delay: 6s;
+    }
+    .circle15 {
+      left: size-m(305);
+      top: size-m(315);
+      animation-delay: 7s;
+    }
   }
-  .circle14{
-    left: size-m(245);
-    top: size-m(315);
-    animation-delay:6s;
-  }
-  .circle15{
-    left: size-m(305);
-    top: size-m(315);
-    animation-delay:7s;
-  }
-
-
-}
-  @keyframes circlee{
-    from{opacity: 1;transform: scale(1);}
-    10%{opacity: 0; transform: scale(1.5);}
-    to{opacity: 0; transform: scale(1.5);}
+  @keyframes circlee {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    10% {
+      opacity: 0;
+      transform: scale(1.5);
+    }
+    to {
+      opacity: 0;
+      transform: scale(1.5);
+    }
   }
   .content-t {
     position: relative;
     width: size-m(310);
     //top: size-m(397);
-   left:  size-m(-3);
-   // right: 0;
-   top: 0;
-    margin:auto;
+    left: size-m(-3);
+    // right: 0;
+    top: 0;
+    margin: auto;
     padding: 7vw 0;
     overflow: hidden;
   }
@@ -667,11 +762,11 @@
     top: size-m(270);
     right: size-m(30);
   }
-.button {
-  font-size:size-m(15);
-  &:hover {
+  .button {
+    font-size: size-m(15);
+    &:hover {
+    }
   }
-}
 }
 </style>
 
@@ -688,6 +783,9 @@ export default {
       isTablet,
       isShowDialog: false,
       dialogIndex: 0,
+      link: require('./s8/360-1.jpg'),
+      isShow360Dialog: false,
+      psv: null,
       contentList: [
         '廚房選用大雅廚具，配有Glem蒸烤箱、林內抽油煙機等國際廚具。',
         '客餐廳採開放式規劃，走道無虛坪，打破格局限制想像。',
@@ -718,6 +816,16 @@ export default {
     showDialog(index) {
       this.dialogIndex = index
       this.isShowDialog = true
+    },
+
+    show360Dialog(link) {
+      this.link = link
+      this.isShow360Dialog = true
+    },
+
+    close360Dialog() {
+      this.isShow360Dialog = false
+      // this.$refs[`dialogVideo${index}`].pause()
     },
   },
 }
