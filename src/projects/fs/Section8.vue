@@ -356,9 +356,11 @@
   width:10em;
   height:3em;
   transition: all 0.3;
+  box-shadow: 0px 3px 0 #0007;
   &:hover {
     background: #0007;
     bottom:-0.5em;
+  box-shadow: 0px 7px 0 #000c;
   }
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -522,7 +524,8 @@
    left:  size-m(-3);
    // right: 0;
    top: 0;
-    margin: 7vw auto;
+    margin:auto;
+    padding: 7vw 0;
     overflow: hidden;
   }
 
@@ -661,7 +664,6 @@
   }
 .button {
   font-size:size-m(15);
-  bottom: 0;
   &:hover {
   }
 }
