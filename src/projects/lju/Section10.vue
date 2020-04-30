@@ -1,8 +1,7 @@
 <template>
   <div class="section10">
     <div class="bg relative">
-      <img v-if="!isMobile" src="./s10_footer.png" alt class="footer" />
-      <img v-else src="./s10_footer_m.png" alt class="footer" />
+<div class="footer">改一層4戶2~3房   38~44坪大尺碼</div>
       <img
         v-if="!isMobile"
         src="./s10_tree.png"
@@ -135,15 +134,18 @@
           data-aos-duration="1500"
           data-aos-once="false"
         >
-          <h3 class="border flex-c" v-if="isMobile">兩房</h3>
+          <h3 class="border flex-c" v-if="isMobile">3+1房</h3>
           <h3 class="small-title" v-if="!(isMobile || isTablet)">面寬三米五，靈活彈性好運用</h3>
           <h3 class="small-title" v-else>
             面寬三米五
             <br />靈活彈性好運用
           </h3>
           <p class="desc" v-if="!(isMobile || isTablet)">
-            大面窗寬裕舒適的空間，是家人起居生活的好地方
-            <br />可自由調整的+1變化，讓家裡安排更有彈性更加溫馨
+            3+1房 加大空間尺度，放大生活想像<br>
+大器空間身段，高效能多元使用規劃<br>
+孩子的音樂教室、爸爸的獨立工作室<br>
+更多運用方式，讓家的價值up to the Max
+
           </p>
           <p class="desc" v-if="isTablet">
             大面窗寬裕舒適的空間，是家人起居
@@ -152,10 +154,12 @@
             <br />有彈性更加溫馨
           </p>
           <p class="desc" v-if="isMobile">
-            大面窗寬裕舒適的空間，是家人起居生活的好地方
-            <br />可自由調整的+1變化，讓家裡安排更有彈性更加溫馨
+            3+1房 加大空間尺度，放大生活想像<br>
+大器空間身段，高效能多元使用規劃<br>
+孩子的音樂教室、爸爸的獨立工作室<br>
+更多運用方式，讓家的價值up to the Max
           </p>
-          <h3 class="border flex-c" v-if="!isMobile">兩房</h3>
+          <h3 class="border flex-c" v-if="!isMobile">3+1房</h3>
         </div>
         <div
           class="slide relative"
@@ -191,6 +195,12 @@
 
   .footer {
     width: 100vw;
+    background: #D00;
+    color:#FFF;
+    font-weight: bold;
+    font-size: 55px;
+    padding: 0.5em;
+    vertical-align: middle;
   }
 
   .tree-1 {
@@ -278,8 +288,11 @@
     }
 
     .border {
-      width: 103px;
+      width: auto;
+      display: inline-flex;
       height: 103px;
+      padding: 0.2em;
+      align-items: center;
       margin-top: 40px;
       border: 1px solid #231815;
       font-size: 45px;
@@ -357,9 +370,11 @@
       }
     }
 
-    .footer {
-      width: 100vw;
-    }
+
+  .footer {
+    width: 100vw;
+    font-size: 22px;
+  }
 
     .tree-1 {
       top: 20vh;
@@ -450,7 +465,6 @@
       }
 
       .border {
-        width: 63px;
         height: 63px;
         margin-top: 0px;
         margin-right: 20px;
@@ -528,16 +542,18 @@ export default {
       slideList2: [
         {
           src: require('./s10/2_1.jpg'),
+          txt:"3D示意圖",
         },
         {
           src: require('./s10/2_2.jpg'),
+          txt:"傢俱配置參考圖",
         },
-        {
-          src: require('./s10/2_3.jpg'),
-        },
-        {
-          src: require('./s10/2_4.jpg'),
-        },
+  //      {
+  //        src: require('./s10/2_3.jpg'),
+  //      },
+  //      {
+  //        src: require('./s10/2_4.jpg'),
+  //      },
 
       ],
     }
