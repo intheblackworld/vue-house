@@ -1,7 +1,7 @@
 <template>
   <div class="section10">
     <div class="bg relative">
-<div class="footer">改一層4戶2~3房   38~44坪大尺碼</div>
+      <div class="footer">改一層4戶2~3房 38~44坪大尺碼</div>
       <img
         v-if="!isMobile"
         src="./s10_tree.png"
@@ -19,8 +19,14 @@
         data-aos-duration="1500"
         data-aos-once="false"
       />
-      <div class="head flex" v-if="isTablet">
-        <img src="./s10_icon_1.png" alt />
+      <div
+        class="head flex"
+        v-if="isTablet"
+      >
+        <img
+          src="./s10_icon_1.png"
+          alt
+        />
         <div
           class="flex-ac wrap"
           data-aos="fade"
@@ -66,8 +72,16 @@
           />
 
           <div class="btn-group flex-jb flex-ac">
-            <img @click="addIndex" src="./small_left_btn.png" alt />
-            <img @click="decIndex" src="./small_right_btn.png" alt />
+            <img
+              @click="addIndex"
+              src="./small_left_btn.png"
+              alt
+            />
+            <img
+              @click="decIndex"
+              src="./small_right_btn.png"
+              alt
+            />
           </div>
         </div>
         <div
@@ -78,29 +92,50 @@
           data-aos-duration="1500"
           data-aos-once="false"
         >
-          <h3 class="title" v-if="!(isMobile || isTablet)">
+          <h3
+            class="title"
+            v-if="!(isMobile || isTablet)"
+          >
             放大幸福 加倍感動
             <br />大一點好室會發生!
           </h3>
-          <p class="desc" v-if="!(isMobile || isTablet)">空間大一點，驚喜多一點，想不到的細節都藏在這裡</p>
+          <p
+            class="desc"
+            v-if="!(isMobile || isTablet)"
+          >空間大一點，驚喜多一點，想不到的細節都藏在這裡</p>
           <h3 class="border flex-c">三房</h3>
-          <h3 class="small-title" v-if="!(isMobile || isTablet)">寬裕客餐廳，主臥加碼更衣室</h3>
-          <h3 class="small-title" v-else>
+          <h3
+            class="small-title"
+            v-if="!(isMobile || isTablet)"
+          >寬裕客餐廳，主臥加碼更衣室</h3>
+          <h3
+            class="small-title"
+            v-else
+          >
             寬裕客餐廳
             <br />主臥加碼更衣室
           </h3>
 
-          <p class="desc" v-if="!(isMobile || isTablet)">
+          <p
+            class="desc"
+            v-if="!(isMobile || isTablet)"
+          >
             大尺碼客餐廳，是親朋來訪好友相聚小酌的完美場域
             <br />主臥室升級更衣室雙排儲櫃，老婆閨密講悄悄話的完美空間
           </p>
-          <p class="desc" v-if="isTablet">
+          <p
+            class="desc"
+            v-if="isTablet"
+          >
             大尺碼客餐廳，是親朋來訪好友相聚
             <br />小酌的完美場域
             <br />主臥室升級更衣室雙排儲櫃，老婆閨
             <br />密講悄悄話的完美空間
           </p>
-          <p class="desc" v-if="isMobile">
+          <p
+            class="desc"
+            v-if="isMobile"
+          >
             大尺碼客餐廳，是親朋來訪好友相聚
             小酌的完美場域
             <br />主臥室升級更衣室雙排儲櫃，老婆閨密講悄悄話的完美空間
@@ -134,32 +169,53 @@
           data-aos-duration="1500"
           data-aos-once="false"
         >
-          <h3 class="border flex-c" v-if="isMobile">3+1房</h3>
-          <h3 class="small-title" v-if="!(isMobile || isTablet)">面寬三米五，靈活彈性好運用</h3>
-          <h3 class="small-title" v-else>
+          <h3
+            class="border flex-c"
+            v-if="isMobile"
+          >3+1房</h3>
+          <h3
+            class="small-title"
+            v-if="!(isMobile || isTablet)"
+          >面寬三米五，靈活彈性好運用</h3>
+          <h3
+            class="small-title"
+            v-else
+          >
             面寬三米五
             <br />靈活彈性好運用
           </h3>
-          <p class="desc" v-if="!(isMobile || isTablet)">
+          <p
+            class="desc"
+            v-if="!(isMobile || isTablet)"
+          >
             3+1房 加大空間尺度，放大生活想像<br>
-大器空間身段，高效能多元使用規劃<br>
-孩子的音樂教室、爸爸的獨立工作室<br>
-更多運用方式，讓家的價值up to the Max
+            大器空間身段，高效能多元使用規劃<br>
+            孩子的音樂教室、爸爸的獨立工作室<br>
+            更多運用方式，讓家的價值up to the Max
 
           </p>
-          <p class="desc" v-if="isTablet">
+          <p
+            class="desc"
+            v-if="isTablet"
+          >
             大面窗寬裕舒適的空間，是家人起居
             <br />生活的好地方
             <br />可自由調整的+1變化，讓家裡安排更
             <br />有彈性更加溫馨
           </p>
-          <p class="desc" v-if="isMobile">
+          <p
+            class="desc"
+            v-if="isMobile"
+          >
             3+1房 加大空間尺度，放大生活想像<br>
-大器空間身段，高效能多元使用規劃<br>
-孩子的音樂教室、爸爸的獨立工作室<br>
-更多運用方式，讓家的價值up to the Max
+            大器空間身段，高效能多元使用規劃<br>
+            孩子的音樂教室、爸爸的獨立工作室<br>
+            更多運用方式，讓家的價值up to the Max
           </p>
-          <h3 class="border flex-c" v-if="!isMobile">3+1房</h3>
+          <h3
+            class="border flex-c"
+            v-if="!isMobile"
+          >3+1房</h3>
         </div>
         <div
           class="slide relative"
@@ -169,17 +225,25 @@
           data-aos-duration="1500"
           data-aos-once="false"
         >
-          <img
-            v-for="(slide, index) in slideList2"
-            :class="`slide-img ${slide2Index === index ? 'active' : ''}`"
-            :key="`s11-slide-${index}`"
-            :src="slide.src"
-            alt
-          />
+          <div v-for="(slide, index) in slideList2" :key="`s11-slide-${index}`" :class="`slide-img ${slide2Index === index ? 'active' : ''}`">
+            <img
+              :src="slide.src"
+              alt
+            />
+            <div class="slide-title">{{slideList2[slideIndex].txt}}</div>
+          </div>
 
           <div class="btn-group flex-jb flex-ac">
-            <img @click="addIndex2" src="./small_left_btn.png" alt />
-            <img @click="decIndex2" src="./small_right_btn.png" alt />
+            <img
+              @click="addIndex2"
+              src="./small_left_btn.png"
+              alt
+            />
+            <img
+              @click="decIndex2"
+              src="./small_right_btn.png"
+              alt
+            />
           </div>
         </div>
       </div>
@@ -195,8 +259,8 @@
 
   .footer {
     width: 100vw;
-    background: #D00;
-    color:#FFF;
+    background: #d00;
+    color: #fff;
     font-weight: bold;
     font-size: 55px;
     padding: 0.5em;
@@ -229,9 +293,12 @@
     width: 62%;
     height: auto;
     position: relative;
+    overflow: hidden;
 
     .slide-img {
-      width: 100%;
+      img {
+        width: 100%;
+      }
 
       &.active {
         position: relative;
@@ -243,6 +310,15 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
+    }
+
+    .slide-title {
+      position: absolute;
+      right: 0;
+      bottom: 1px;
+      padding: 15px;
+      color: #fff;
+      background-color: rgba(0, 0, 0, .5);
     }
   }
 
@@ -370,11 +446,10 @@
       }
     }
 
-
-  .footer {
-    width: 100vw;
-    font-size: 22px;
-  }
+    .footer {
+      width: 100vw;
+      font-size: 22px;
+    }
 
     .tree-1 {
       top: 20vh;
@@ -542,19 +617,18 @@ export default {
       slideList2: [
         {
           src: require('./s10/2_1.jpg'),
-          txt:"3D示意圖",
+          txt: '3D示意圖',
         },
         {
           src: require('./s10/2_2.jpg'),
-          txt:"傢俱配置參考圖",
+          txt: '傢俱配置參考圖',
         },
-  //      {
-  //        src: require('./s10/2_3.jpg'),
-  //      },
-  //      {
-  //        src: require('./s10/2_4.jpg'),
-  //      },
-
+        //      {
+        //        src: require('./s10/2_3.jpg'),
+        //      },
+        //      {
+        //        src: require('./s10/2_4.jpg'),
+        //      },
       ],
     }
   },
