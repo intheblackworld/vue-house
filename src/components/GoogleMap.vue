@@ -1,4 +1,4 @@
-<!-- template>
+<template>
   <div class="google-map" id="google-map">
     <iframe
       title="googlemap"
@@ -40,4 +40,4 @@ export default {
     flex-wrap: wrap;
   }
 }
-</style> -->
+</style>

@@ -152,7 +152,7 @@
       </div>
     </div>
     <ContactInfo />
-    <GoogleMap />
+    <!-- <GoogleMap /> -->
     <PolicyDialog :policyVisible="policyVisible" />
   </div>
 </template>

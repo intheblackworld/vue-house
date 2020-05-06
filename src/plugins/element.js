@@ -20,5 +20,5 @@ Vue.use(Input)
 Vue.use(Option)
 Vue.use(Checkbox)
 Vue.use(TimeSelect)
-Vue.use(Notification)
+
 Vue.prototype.$notify = Notification
