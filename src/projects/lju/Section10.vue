@@ -1,7 +1,7 @@
 <template>
   <div class="section10">
     <div class="bg relative">
-      <div class="footer">改一層4戶2~3房 38~44坪大尺碼</div>
+      <div class="footer">一層4戶2~3房 38~44坪大尺碼</div>
       <img
         v-if="!isMobile"
         src="./s10_tree.png"
@@ -230,7 +230,7 @@
               :src="slide.src"
               alt
             />
-            <div class="slide-title">{{slideList2[slideIndex].txt}}</div>
+            <div class="slide-title">{{slide.txt}}</div>
           </div>
 
           <div class="btn-group flex-jb flex-ac">
