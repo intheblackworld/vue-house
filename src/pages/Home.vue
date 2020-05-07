@@ -1,6 +1,7 @@
 <template>
   <div class="home no-padding-top">
     <img src="https://bcp.crwdcntrl.net/5/c=13578/b=76396791" width="1" height="1"/>
+    <img src="https://bcp.crwdcntrl.net/5/c=13578/b=78113388" width="1" height="1"/>
     <Loading :loading="load" />
     <!-- <SideNavigation v-if="isSide" /> -->
     <!-- <Navigation v-else /> -->
