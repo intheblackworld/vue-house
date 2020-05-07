@@ -4,7 +4,7 @@
       <div class="container flex-c wrap">
         <div class="relative desc">
 <svg version="1.1" id="s9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-	 y="0px" viewBox="0 0 282.6 110" style="enable-background:new 0 0 282.6 110;" xml:space="preserve">
+	 y="0px" viewBox="0 0 282.6 130" style="enable-background:new 0 0 282.6 130;" xml:space="preserve">
   <g class="jump">
     <g class="st0">
       <path d="M32.2,22.5c0,0.8-0.1,1.4-0.3,2s-0.5,1.2-0.8,1.6c-0.3,0.5-0.8,0.9-1.2,1.2c-0.5,0.3-1,0.6-1.6,0.8
@@ -1255,10 +1255,11 @@
   </g>
   <text class="op1" transform="matrix(1 0 0 1 152.8796 30.3895)"><tspan x="0" y="0" class="st5 st6">揭開偽居住正義的鳥籠</tspan><tspan x="0" y="13" class="st5 st6">真正夠住的　大兩房　大三房</tspan></text>
   <g class="op2">
-    <path class="st7" d="M208.3,35.4l-1.5-6.8l7,5.5L216,32l1.7,2.3l7.1-3.4l0,5.9l6,2.1l-5.4,2l5.2,3.6l-5.1,1.7l1.7,4.5l-5.6-1.3
-      l0,7.2l-6.6-5.9l-8.5,4.6l3.5-7.9l-11.3,1.8L206,44l-9.6-3.7l9.1-0.9l-2.8-4.6L208.3,35.4z"/>
-    <text transform="matrix(1 0 0 1 207.3395 44.4649)" class="st8 st9 st10">完售</text>
+		<path class="st7" d="M208.3,55.4l-1.5-6.8l7,5.5L216,52l1.7,2.3l7.1-3.4v5.9l6,2.1l-5.4,2l5.2,3.6l-5.1,1.7l1.7,4.5l-5.6-1.3v7.2l-6.6-5.9
+			l-8.5,4.6l3.5-7.9l-11.3,1.8L206,64l-9.6-3.7l9.1-0.9l-2.8-4.6L208.3,55.4z"/>
+		<text transform="matrix(1 0 0 1 207.3395 64.4648)" class="st8 st9 st10">完售</text>
   </g>
+	<line class="st11" x1="202" y1="33.5" x2="233.5" y2="45.6"/>
   </g>
 </svg>
         </div>
@@ -1275,18 +1276,21 @@ width:55vw ;
 	.st2{fill:#595757;}
 	
 		.st3{clip-path:url(#SVGID_2_);fill:none;stroke:#D33828;stroke-width:2.7675;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;
-    animation: dash 3s linear forwards 2.2s;
-    stroke-dasharray: 70;
-    stroke-dashoffset: 70;}
+   // animation: dash 3s linear forwards 2.2s;
+    //stroke-dasharray: 70;
+  //  stroke-dashoffset: 70;
+  }
 	
 		.st4{clip-path:url(#SVGID_4_);fill:none;stroke:#D33828;stroke-width:2.7675;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;
-    animation: dash 3s linear forwards 2.7s;
-    stroke-dasharray: 70;
-    stroke-dashoffset: 70;}
+   // animation: dash 3s linear forwards 2.7s;
+   // stroke-dasharray: 70;
+   // stroke-dashoffset: 70;
+    }
 	.st6{font-size:8.7px;font-family:""\5FAE\8EDF\6B63\9ED1\9AD4", "Microsoft JhengHei", "Helvetica Neue", Helvetica, Arial";}
 	.st7{fill-rule:evenodd;clip-rule:evenodd;fill:#D10000;}
 	.st8{fill:#FFFFFF;}
 	.st10{font-size:8.7px;font-family:""\5FAE\8EDF\6B63\9ED1\9AD4", "Microsoft JhengHei", "Helvetica Neue", Helvetica, Arial";}
+  .st11{fill:none;stroke:#D10000;stroke-miterlimit:10;}
   .op1{
    opacity:0;
    animation: op1 0.5s ease-in-out forwards 2s;
@@ -1299,11 +1303,6 @@ width:55vw ;
   .jump{
     animation: jump 2.3s ease-in-out forwards;}
   }
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
 @keyframes jump {
   0% {
     opacity: 0;
