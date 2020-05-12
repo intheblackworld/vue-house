@@ -73,7 +73,7 @@
         <text
           transform="matrix(1 0 0 1 207 364)"
           class="st7 st8-1 line3-2"
-        >約10min</text>
+        >約9min</text>
         <text
           transform="matrix(1 0 0 1 207 234)"
           class="st7 st8-1 line2-2"
@@ -206,7 +206,7 @@
         <text
           transform="matrix(1 0 0 1 207 364)"
           class="st7 st8-1 line3-2"
-        >約10min</text>
+        >約9min</text>
         <text
           transform="matrix(1 0 0 1 207 234)"
           class="st7 st8-1 line2-2"
