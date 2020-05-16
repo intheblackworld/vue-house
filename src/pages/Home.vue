@@ -2,8 +2,8 @@
   <div class="home">
     <div ref="gtmNoScript" />
     <Loading :loading="load" />
-    <SideNavigation v-if="isSide" />
-    <Navigation v-else />
+    <!-- <SideNavigation v-if="isSide" /> -->
+    <!-- <Navigation v-else /> -->
     <div id="section1">
       <Section1 />
     </div>
@@ -68,39 +68,26 @@
 <script>
 // @ is an alias to /src
 // import Navigation from '@/layouts/Navigation.vue'
-import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import gtm from '@/mixins/gtm.js'
 
-import Section1 from '@/projects/dunnanhowhow/Section1.vue'
-import Section2 from '@/projects/dunnanhowhow/Section2.vue'
-import Section3 from '@/projects/dunnanhowhow/Section3.vue'
-import Section6 from '@/projects/dunnanhowhow/Section6.vue'
-import Section7 from '@/projects/dunnanhowhow/Section7.vue'
-import Section8 from '@/projects/dunnanhowhow/Section8.vue'
-import Section9 from '@/projects/dunnanhowhow/Section9.vue'
+import Section1 from '@/projects/hoh/Section1.vue'
+import Section2 from '@/projects/hoh/Section2.vue'
+import Section3 from '@/projects/hoh/Section3.vue'
 // import SimpleOrder from '@/components/SimpleOrder.vue'
-
-import VideoSection1 from '@/components/VideoSection1.vue'
 
 export default {
   name: 'home',
   mixins: [gtm],
   components: {
     Loading,
-    // Navigation,
-    SideNavigation,
     ContactSection,
     MobileNav,
     Section1,
     Section2,
     Section3,
-    Section6,
-    Section7,
-    Section8,
-    Section9,
   },
 
   data() {
