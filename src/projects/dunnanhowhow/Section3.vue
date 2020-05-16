@@ -146,15 +146,10 @@
           </div>
         </div>
         <div id="section5" class="relative">
-          <img src="./s5/bg4.png" alt class="img-bg" />
-          <img src="./s5/bg1.png" alt class="img-bg" />
-          <img src="./s5/bg3.png" alt class="img-bg img-s5-3" />
-          <img src="./s5/bg2.png" alt class="img-bg img-s5-4" />
           <!-- <parallax breakpoint="(min-width: 68px)" :speed-factor="0.06" direction="up">
           </parallax> -->
           <div class="s5-content">
             <div class="img-block relative">
-              <img src="./s5/img.jpg" alt />
               <div class="border"></div>
               <div class="img-title">3D示意圖僅供參考</div>
             </div>
@@ -309,13 +304,10 @@
         </div>
 
         <div id="section5" class="relative">
-          <img src="./s5/bg_m.jpg" alt class="img-bg absolute" />
           <div class="relative">
-            <img src="./s5/img.jpg" alt class="m-img" />
             <div class="img-title">3D示意圖僅供參考</div>
           </div>
           <div class="relative">
-            <img src="./s5/bg3_m.png" alt class="img-bg img-s5-3" />
             <div class="right">
               <div class="content">
                 <div class="title">

@@ -42,19 +42,6 @@
     <div id="section2">
       <Section2 />
     </div>
-    <Section3 />
-    <div id="section6">
-      <Section6 />
-    </div>
-    <div id="section7">
-      <Section7 />
-    </div>
-    <div id="section8">
-      <Section8 />
-    </div>
-    <div id="section9">
-      <Section9 />
-    </div>
     <ContactSection />
     <!-- <SimpleOrder /> -->
     <MobileNav />
@@ -75,7 +62,6 @@ import gtm from '@/mixins/gtm.js'
 
 import Section1 from '@/projects/hoh/Section1.vue'
 import Section2 from '@/projects/hoh/Section2.vue'
-import Section3 from '@/projects/hoh/Section3.vue'
 // import SimpleOrder from '@/components/SimpleOrder.vue'
 
 export default {
@@ -87,7 +73,6 @@ export default {
     MobileNav,
     Section1,
     Section2,
-    Section3,
   },
 
   data() {

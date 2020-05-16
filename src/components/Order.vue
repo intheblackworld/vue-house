@@ -1,6 +1,6 @@
 <template>
   <div class="order-bg">
-    <h3 class="order-title">{{order.title}}</h3>
+    <div class="order-title">{{order.title}}</div>
     <h3 class="order-subtitle">{{order.subTitle}}</h3>
     <div class="order">
       <div class="form">
@@ -248,9 +248,18 @@ export default {
   .order-title {
     margin-top: 40px;
     margin-bottom: 8px;
-    font-size: calc(100vw * 60 / 1920);
+    font-size: calc(100vw * 38 / 1920);
     text-align: center;
     color: $order_title_color;
+    width: 573px;
+    background-color: #3d2824;
+    border-radius: 60px / 60px;
+    display: block;
+    margin: 40px auto 8px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .order-subtitle {
@@ -341,12 +350,17 @@ export default {
 @media only screen and (max-width: 767px) {
   .order-bg {
     // background-image: $order_bg_image_m;
+    background-color: transparent;
     background-size: auto 250vw;
     padding-top: 40px;
     .order-title {
-      font-size: 40px;
+      font-size: 18px;
       margin-top: 10px;
       margin-bottom: 20px;
+      width: 90vw;
+      height: 30px;
+      position: relative;
+      z-index: 2;
     }
 
     .order-subtitle {
@@ -356,6 +370,8 @@ export default {
       width: 95% !important;
       margin: 0 auto;
       padding: 0;
+      position: relative;
+      z-index: 2;
     }
 
     .form {

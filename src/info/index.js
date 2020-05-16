@@ -1,7 +1,7 @@
 // import { isMobile } from '@/utils'
 
 export default {
-  address: '',
+  address: '新北市五股區新城五路',
   // isMobile ? '接待中心：<br />106台北市大安區基隆路三段20-1號' : '接待中心：106台北市大安區基隆路三段20-1號',
   googleSrc:
     '',

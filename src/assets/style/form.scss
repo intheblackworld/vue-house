@@ -13,6 +13,7 @@
   border: $order_input_border;
   background: $order_input_bg;
   color: $order_input_color;
+  border-radius: 10px !important;
 
   &:focus {
     border: $order_input_focus_border;
@@ -33,6 +34,7 @@
     font-size: 16px !important;
     border: $order_input_border;
     background: $order_input_bg;
+    border-radius: 10px !important;
 
     &::placeholder {
       color: $order_input_placeholder;  
@@ -66,6 +68,7 @@
   color: $order_submit_color;
   // z-index: 10;
   border: none !important;
+  border-radius: 10px !important;
 
   &.is-disabled {
     background-color: $order_sumbit_disable_bg;

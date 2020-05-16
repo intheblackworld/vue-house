@@ -114,7 +114,9 @@ export default {
   position: relative;
   z-index: 3;
   width: 1200px;
-  height: 615px;
+  height: 515px;
+  padding: 30px;
+  border-radius: 20px;
 
   margin: 0 auto;
   // padding: 60px 0 50px;
@@ -167,7 +169,7 @@ export default {
   width: 600px;
   height: 60px;
   background: #fff;
-  // border:1px solid #999;
+  box-shadow: inset 0 0 0 1px #999;
   color: #444;
 
   &::v-deep span {
