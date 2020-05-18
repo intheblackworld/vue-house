@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="contact-info">
-    <img class="logo" src="@/assets/img/contact-logo.png" alt="" />
+    <img class="logo" :src="isMobile ? '@/assets/img/contact-logo.png' : '@/assets/img/contact-logo_m.png'" alt="" />
     <div class="info">
       <div class="btn flex-c" @click="showCallDialog">
         <span class="flex-c">
@@ -136,7 +136,7 @@ export default {
 }
 
 .btn {
-  width: 280px;
+  width: 300px;
   height: 60px;
   font-size: 16px;
   margin-bottom: 20px;
@@ -182,7 +182,7 @@ export default {
 }
 .google-btn {
   border-radius:0 10px 10px 0;
-  width: 280px;
+  width: 300px;
   height: 60px;
   font-size: 16px;
   margin-bottom: 25px;
@@ -236,6 +236,7 @@ export default {
     transform: none;
     position: static;
     margin-top: 60px;
+    border-radius:0;
 
     .logo {
       width: $contact_logo_mobile_width;
@@ -258,17 +259,20 @@ export default {
   }
 
   .address {
-    width: 280px;
+    width: 300px;
     margin-bottom: 0;
     text-align: left;
-    border: 1px solid #666;
+    //@debugborder: 1px solid #666;
     border-bottom: none;
     padding: 10px;
+    border-radius:10px 10px 0 0;
   }
 .btn svg {
     position: absolute;
     margin: 0 0 0 -70px;
   }
-
+.google-btn {
+  border-radius: 0 0 10px 10px;
+}
 }
 </style>

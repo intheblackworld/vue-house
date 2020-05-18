@@ -338,7 +338,9 @@
   }
 
   .logo {
-    width: calc(100vw * 160 / 375);
+    width: calc(30vh - 63px);
+    max-width:size-m(160);
+    transform: translateY(-60%);
   }
 
   .ball1 {
@@ -431,14 +433,14 @@
 
   .bubble3 {
     height: size-m(154);
-    bottom: size-m(40);
+    bottom: size-m(20);
     margin-bottom: 63px;
     left: size-m(20);
   }
 
   .bubble4 {
     height: size-m(137);
-    bottom: size-m(40);
+    bottom: size-m(50);
     margin-bottom: 63px;
     right: size-m(20);
   }
@@ -457,14 +459,14 @@
 
   .bubble7 {
     height: size-m(134);
-    bottom: size-m(40);
+    bottom: size-m(20);
     margin-bottom: 63px;
     left: size-m(40);
   }
 
   .bubble8 {
     height: size-m(140);
-    bottom: size-m(50);
+    bottom: size-m(30);
     margin-bottom: 63px;
     right: size-m(20);
   }
