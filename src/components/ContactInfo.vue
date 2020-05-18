@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="contact-info">
-    <img class="logo" :src="isMobile ? '@/assets/img/contact-logo.png' : '@/assets/img/contact-logo_m.png'" alt="" />
+    <img class="logo" :src="!isMobile ? require('@/assets/img/contact-logo.png') : require('@/assets/img/contact-logo_m.png')" alt="" />
     <div class="info">
       <div class="btn flex-c" @click="showCallDialog">
         <span class="flex-c">
@@ -136,7 +136,7 @@ export default {
 }
 
 .btn {
-  width: 300px;
+  width: 280px;
   height: 60px;
   font-size: 16px;
   margin-bottom: 20px;
@@ -182,7 +182,7 @@ export default {
 }
 .google-btn {
   border-radius:0 10px 10px 0;
-  width: 300px;
+  width: 280px;
   height: 60px;
   font-size: 16px;
   margin-bottom: 25px;
@@ -267,12 +267,16 @@ export default {
     padding: 10px;
     border-radius:10px 10px 0 0;
   }
+.btn {
+  width: 300px;
+}
 .btn svg {
     position: absolute;
     margin: 0 0 0 -70px;
   }
 .google-btn {
   border-radius: 0 0 10px 10px;
+  width: 300px;
 }
 }
 </style>
