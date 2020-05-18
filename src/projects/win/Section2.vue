@@ -654,6 +654,11 @@ export default {
           subtitle: '移植台北信義團隊擘劃',
           title: '2017<br />新莊副都心<br />太子信義',
         },
+        {
+          img: require('./s2/mo/img1-3.jpg'),
+          subtitle: '移植台北信義團隊擘劃',
+          title: '2017<br />新莊副都心<br />太子信義',
+        },
       ],
       slideListM2: [
         {
