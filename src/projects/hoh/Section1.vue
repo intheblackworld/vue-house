@@ -22,7 +22,8 @@
       <div
         class="bright ball7"
       ></div>
-      <div class="bright ball8"></div>
+      <div class="bright ball8"
+      ></div>
       <img
         :src="`${isMobile ? require('./s1/logo_m.png') : require('./s1/logo.png')}`"
         alt=""
@@ -35,42 +36,42 @@
       <img
         :src="isMobile ? require('./s1/bubble-mo/1.png'): require('./s1/bubble/1.png')"
         alt=""
-        :class="`bubble bubble1 ${bubble1 ? 'show' : ''}`"
+        class="bubble bubble1"
       >
       <img
         :src="isMobile ? require('./s1/bubble-mo/2.png'): require('./s1/bubble/2.png')"
         alt=""
-        :class="`bubble bubble2 ${bubble2 ? 'show' : ''}`"
+        class="bubble bubble2"
       >
       <img
         :src="isMobile ? require('./s1/bubble-mo/3.png'): require('./s1/bubble/3.png')"
         alt=""
-        :class="`bubble bubble3 ${bubble3 ? 'show' : ''}`"
+        class="bubble bubble3"
       >
       <img
         :src="isMobile ? require('./s1/bubble-mo/4.png'): require('./s1/bubble/4.png')"
         alt=""
-        :class="`bubble bubble4 ${bubble4 ? 'show' : ''}`"
+        class="bubble bubble4"
       >
       <img
         :src="isMobile ? require('./s1/bubble-mo/5.png'): require('./s1/bubble/5.png')"
         alt=""
-        :class="`bubble bubble5 ${bubble5 ? 'show' : ''}`"
+        class="bubble bubble5"
       >
       <img
         :src="isMobile ? require('./s1/bubble-mo/6.png'): require('./s1/bubble/6.png')"
         alt=""
-        :class="`bubble bubble6 ${bubble6 ? 'show' : ''}`"
+        class="bubble bubble6"
       >
       <img
         :src="isMobile ? require('./s1/bubble-mo/7.png'): require('./s1/bubble/7.png')"
         alt=""
-        :class="`bubble bubble7 ${bubble7 ? 'show' : ''}`"
+        class="bubble bubble7"
       >
       <img
         :src="isMobile ? require('./s1/bubble-mo/8.png'): require('./s1/bubble/8.png')"
         alt=""
-        :class="`bubble bubble8 ${bubble8 ? 'show' : ''}`"
+        class="bubble bubble8"
       >
     </div>
   </div>
@@ -379,6 +380,7 @@
     right: size-m(20);
     left: auto;
     transform: translateY(-12%);
+  transform-origin:0 90%;
   }
 
   .ball6 {
@@ -387,6 +389,7 @@
     top: size-m(430);
     right: size-m(30);
     transform: translateY(-15%);
+  transform-origin:95% 100%;
   }
 
   .ball7 {
@@ -395,6 +398,7 @@
     width: size-m(159);
     height: size-m(159);
     transform: translateY(-15%) rotate(180deg);
+  transform-origin:0 60%;
   }
 
   .ball8 {
@@ -403,6 +407,7 @@
     top: size-m(512);
     right: size-m(20);
     transform: translateY(-8%);
+  transform-origin:100% 0%;
   }
 
   .smile1 {
@@ -427,12 +432,14 @@
   .bubble3 {
     height: size-m(154);
     bottom: size-m(40);
+    margin-bottom: 63px;
     left: size-m(20);
   }
 
   .bubble4 {
     height: size-m(137);
     bottom: size-m(40);
+    margin-bottom: 63px;
     right: size-m(20);
   }
 
@@ -451,12 +458,14 @@
   .bubble7 {
     height: size-m(134);
     bottom: size-m(40);
+    margin-bottom: 63px;
     left: size-m(40);
   }
 
   .bubble8 {
     height: size-m(140);
     bottom: size-m(50);
+    margin-bottom: 63px;
     right: size-m(20);
   }
 }
@@ -473,7 +482,6 @@ export default {
   components: {
     // Parallax,
   },
-/*
   data() {
     return {
       isMobile,
@@ -488,7 +496,6 @@ export default {
       bubble8: false,
     }
   },
-*/
   computed: {},
 
   watch: {
@@ -511,7 +518,6 @@ export default {
       this[`bubble${index}`] = false
     },
   },
-
   created() {
     setInterval(() => {
       if (this.bubbleIndex === 8) {

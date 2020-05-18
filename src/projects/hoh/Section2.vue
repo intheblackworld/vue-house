@@ -130,7 +130,7 @@
   height: size(222);
   left:size(365);
   top: size(15);
-    transform:translateY(-5%) rotate(-5deg);
+  transform:translateY(-5%) rotate(-5deg);
   animation: an2 1.5s infinite alternate;
 }
 .ball-container {
@@ -193,6 +193,7 @@
     top: size-m(-40);
     height: size-m(90);
     transform: translateY(-5%);
+    z-index: 0;
   }
 
   .ball4 {
@@ -200,6 +201,7 @@
     top: size-m(-50);
     height: size-m(130);
     transform: translateY(-15%);
+    z-index: 0;
   }
 
   .ball5 {
@@ -208,6 +210,14 @@
     height: size-m(180);
     transform: translateY(-8%);
     z-index: 0;
+}
+
+.ball6 {
+   left: size-m(73);
+    top: size-m(0);
+    height: size-m(45);
+    z-index:5;
+  transform:translateY(-10%) rotate(-5deg);
   }
 }
 </style>
