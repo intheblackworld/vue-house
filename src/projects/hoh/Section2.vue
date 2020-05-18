@@ -121,7 +121,7 @@
 }
 .swiper {
   width: size(1200);
-  margin: size(100) auto 0;
+  margin: size(100) auto 0;   border-radius: 9vw;
 }
 .item-img {
   width: size(330);
@@ -145,7 +145,7 @@
 
   .swiper {
     width: 90vw;
-    margin: size-m(30) auto 0;
+    margin: size-m(30) auto 0; 
   }
 
   .item-img {

@@ -1,12 +1,12 @@
 // import { isMobile } from '@/utils'
 
 export default {
-  address: '新北市五股區新城五路',
+  address: '新北市五股區新城五路與新城八路交叉',
   // isMobile ? '接待中心：<br />106台北市大安區基隆路三段20-1號' : '接待中心：106台北市大安區基隆路三段20-1號',
   googleSrc:
     '',
   googleLink: '',
-  phone: '',
+  phone: '02-82951777',
   fbLink:
     '',
   fbMessage: '',
