@@ -1,11 +1,6 @@
 <template>
   <div class="section1">
     <div class="bg">
-      <img
-        :src="`${isMobile ? require('./s1/logo_m.png') : require('./s1/logo.png')}`"
-        alt=""
-        class="logo"
-      >
       <div
         class="bright ball1"
       ></div>
@@ -28,6 +23,11 @@
         class="bright ball7"
       ></div>
       <div class="bright ball8"></div>
+      <img
+        :src="`${isMobile ? require('./s1/logo_m.png') : require('./s1/logo.png')}`"
+        alt=""
+        class="logo"
+      >
       <img
         src="./s1/ball/l.png"
         class="smile smile1"
@@ -130,19 +130,19 @@
   background-image: url(./s1/ball/ball.png);
   background-size: cover;
   position: absolute;
-  animation: an 2s infinite alternate;
+  animation: an 2s 1s infinite alternate;
 }
 
 .bright {
   background-image: url(./s1/ball/bright.png);
   background-size: cover;
   position: absolute;
-  animation: an 2s infinite alternate;
+  animation: an 2s 2s infinite alternate;
 }
 
 .smile {
   position: absolute;
-  animation: an 2s infinite alternate;
+  animation: an 2s 3s infinite alternate;
 }
 
 .ball1 {
@@ -178,18 +178,17 @@
 }
 
 .ball5 {
-  width: size(125);
-  height: size(125);
-  top: size(117);
-  left: size(550);
-  transform: translateY(-12%);
-}
-
-.ball6 {
   width: size(250);
   height: size(250);
   top: size(53);
   right: size(500);
+  transform: translateY(-12%);
+}
+.ball6 {
+  width: size(125);
+  height: size(125);
+  top: size(117);
+  left: size(550);
   transform: translateY(-12%);
 }
 
@@ -199,7 +198,7 @@
   width: size(700);
   height: size(700);
   transform: translateY(-5%) rotate(180deg);
-  animation: an1 2s infinite alternate !important;
+  animation: an1 2s 2s infinite alternate !important;
 }
 
 .ball8 {
@@ -235,10 +234,29 @@
   transform: scale(0);
   opacity: 0;
   transition: all 0.3s;
+  animation: an2 20s infinite;
 
-  &.show {
+ /* &.show {
     transform: scale(1);
     opacity: 1;
+  }*/
+}
+@keyframes an2 {
+  0% {
+  transform: scale(0);
+  opacity: 0;
+  }
+  5% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  30% {
+  transform: scale(0);
+  opacity: 0;
   }
 }
 
@@ -246,48 +264,64 @@
   height: size(265);
   top: size(145);
   left: size(270);
+  animation-delay:0s;
+  transform-origin:0 10%;
 }
 
 .bubble2 {
   height: size(365);
   top: size(243);
   right: size(220);
+  animation-delay:2.5s;
+  transform-origin:100% 0;
 }
 
 .bubble3 {
   height: size(314);
   bottom: size(100);
   left: size(220);
+  animation-delay:5s;
+  transform-origin:0 90%;
 }
 
 .bubble4 {
   height: size(300);
   bottom: size(80);
   right: size(250);
+  animation-delay:7.5s;
+  transform-origin:100% 90%;
 }
 
 .bubble5 {
   height: size(350);
   top: size(176);
   left: size(220);
+  animation-delay:10s;
+  transform-origin:100% 0%;
 }
 
 .bubble6 {
   height: size(290);
   top: size(234);
   right: size(230);
+  animation-delay:12.5s;
+  transform-origin:0% 0%;
 }
 
 .bubble7 {
   height: size(300);
   bottom: size(150);
   left: size(170);
+  animation-delay:15s;
+  transform-origin:0% 0%;
 }
 
 .bubble8 {
   height: size(335);
   bottom: size(320);
   right: size(240);
+  animation-delay:17.5s;
+  transform-origin:100% 80%;
 }
 
 /* 平板尺寸 */
@@ -439,7 +473,7 @@ export default {
   components: {
     // Parallax,
   },
-
+/*
   data() {
     return {
       isMobile,
@@ -454,7 +488,7 @@ export default {
       bubble8: false,
     }
   },
-
+*/
   computed: {},
 
   watch: {

@@ -8,6 +8,12 @@
         data-aos="fade"
         data-aos-delay="300"
       >
+      <img
+        src="./s1/ball/r.png"
+        class="ball6"s
+        data-aos="fade"
+        data-aos-delay="600"
+      >
       <div class="relative ball-container">
         <img
           src="./s1/ball/bright.png"
@@ -92,6 +98,7 @@
   left: size(20);
   top: size(430);
   height: size(240);
+  animation-delay:1s;
   transform: translateY(-15%);
 }
 
@@ -99,13 +106,15 @@
   right: size(80);
   top: size(-310);
   height: size(730);
-  transform: translateY(-5%);
+  animation-delay:2s;
+  transform: translateY(-5%);opacity: 0.6;
 }
 
 .ball4 {
   right: size(580);
   top: size(410);
   height: size(95);
+  animation-delay:1s;
   transform: translateY(-15%);
 }
 
@@ -116,6 +125,14 @@
   transform: translateY(-8%);
 }
 
+.ball6 {
+  position: absolute;
+  height: size(222);
+  left:size(365);
+  top: size(15);
+    transform:translateY(-5%) rotate(-5deg);
+  animation: an2 1.5s infinite alternate;
+}
 .ball-container {
   min-height: size(400);
 }
@@ -129,7 +146,12 @@
 
 @keyframes an {
   to {
-    transform: translateY(0);
+    transform:translateY(0);
+  }
+}
+@keyframes an2 {
+  to {
+    transform:translateY(0)rotate(5deg);
   }
 }
 /* 平板尺寸 */

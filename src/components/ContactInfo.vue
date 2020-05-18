@@ -146,6 +146,7 @@ export default {
   background: $contact_btn_bg;
   border:$contact_btn_border;
   transition: all 0.5s;
+  border-radius: 10px;
 
   svg {
     color: $contact_btn_icon;
@@ -168,9 +169,10 @@ export default {
 .address {
   width: 600px;
   height: 60px;
-  background: #fff;
-  box-shadow: inset 0 0 0 1px #999;
+  background: #EEE;
+  //box-shadow: inset 0 0 0 1px #999;
   color: #444;
+  border-radius: 10px 0 0  10px;
 
   &::v-deep span {
     color: #c00;
@@ -179,6 +181,7 @@ export default {
   }
 }
 .google-btn {
+  border-radius:0 10px 10px 0;
   width: 280px;
   height: 60px;
   font-size: 16px;
