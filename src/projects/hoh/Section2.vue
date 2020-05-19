@@ -14,6 +14,8 @@
         data-aos="fade"
         data-aos-delay="600"
       >
+      <div class="txt1">飛越洲子洋　看見最精彩</div>
+      <div class="txt2">用台北蛋白的便利，享受洲子洋蛋黃的勝利</div>
       <div class="relative ball-container">
         <img
           src="./s1/ball/bright.png"
@@ -80,6 +82,25 @@
   width: size(1580);
   margin: 0 auto;
   z-index: 2;
+}
+.txt1{
+  position: relative;
+  margin: 0 auto;
+  z-index: 2;
+  margin: 1em 0 1em 0.2em;
+  color:#000;
+  font-size:  size(49);
+  letter-spacing:0.4em;
+  font-weight:900;
+}
+.txt2{
+  position: relative;
+  margin: 0 auto;
+  z-index: 2;
+  margin: 1em 0;
+  color:#333;
+  font-size:  size(30);
+  letter-spacing:0.3em;
 }
 
 .ball {
@@ -219,6 +240,13 @@
     z-index:5;
   transform:translateY(-10%) rotate(-5deg);
   }
+.txt1{
+  font-size:  size-m(18);
+}
+.txt2{
+  font-size:  size-m(12);
+  letter-spacing:0.2em;
+}
 }
 </style>
 
