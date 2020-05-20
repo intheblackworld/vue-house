@@ -7,9 +7,9 @@
     <div class="section" id="section1">
       <Section1 />
     </div>
-    <!-- <div class="section" id="section2">
-      <Section2 />
-    </div> -->
+    <div class="section" id="section11">
+      <Section11 />
+    </div>
     <div class="section" id="section3">
       <Section3 />
     </div>
@@ -63,6 +63,7 @@ import Section7 from '@/projects/fs/Section7.vue'
 import Section8 from '@/projects/fs/Section8.vue'
 import Section9 from '@/projects/fs/Section9.vue'
 import Section10 from '@/projects/fs/Section10.vue'
+import Section11 from '@/projects/fs/Section11.vue'
 
 export default {
   name: 'home',
@@ -83,6 +84,7 @@ export default {
     Section8,
     Section9,
     Section10,
+    Section11,
   },
 
   data() {
