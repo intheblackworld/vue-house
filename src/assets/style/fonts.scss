@@ -15,7 +15,7 @@ h2 {
   font-weight: normal;
 }
 h3 {
-  font-family: 'Noto Sans TC', serif;
+  font-family: 'Noto Serif TC';
   // font-family: 'Noto Sans TC', serif;
   margin: 0;
   font-weight: bold;
@@ -48,6 +48,13 @@ p {
 @font-face {
   font-family: Impact;
   src: url('~@/assets/font/Impact.ttf') format('truetype'), url('~@/assets/font/Impact.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: TrajanPro;
+  src: url('~@/assets/font/Trajan Pro Regular.ttf') format('truetype'), url('~@/assets/font/Trajan Pro Regular.ttf');
   font-weight: normal;
   font-style: normal;
 }
