@@ -2,6 +2,11 @@
   <div class="relative">
     <div v-if="!isMobile">
       <img
+        src="./s7/3.png"
+        alt=""
+        class="bg-img"
+      >
+      <img
         src="./s7/1.png"
         alt=""
         class="bg-img cloud"
@@ -10,11 +15,6 @@
         src="./s7/2.png"
         alt=""
         class="bg-img cloud cloud1"
-      >
-      <img
-        src="./s7/3.png"
-        alt=""
-        class="bg-img"
       >
       <div
         class="title absolute"
