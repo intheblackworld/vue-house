@@ -313,9 +313,9 @@ export default {
   background-repeat: no-repeat;
   position: relative;
   padding-top: 130px;
-  background-size: 100vw auto;
-  background-attachment: fixed;
-  background-position: 0% 50%;
+  background-position: 0% 43%;
+  background-size: 1920px;
+
   .order-top {
     position: relative;
     overflow: hidden;
@@ -346,7 +346,7 @@ export default {
     display: flex;
     flex-direction: column;
     margin-bottom: 3rem;
-    justify-content:space-between;
+    justify-content: space-between;
   }
 
   .form {
@@ -354,7 +354,7 @@ export default {
     display: flex;
     align-items: flex-start;
     margin: 0 auto;
-    justify-content:space-between;
+    justify-content: space-between;
     > .group {
       flex: 1;
       align-items: flex-start;

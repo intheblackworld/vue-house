@@ -1,9 +1,8 @@
 export default [
-  { name: '品牌價值', imgSrc: '', subTitle: 'BRAND', section: 'section2', svgSrc: '', offset: -100 },
-  { name: '核心地段', imgSrc: '', subTitle: 'LOCATION', section: 'section3', svgSrc: '', offset: -100 },
-  { name: '建築美學', imgSrc: '', subTitle: 'ARCHITECTURE', section: 'section4', svgSrc: '', offset: -100 },
-  { name: '規劃設計', imgSrc: '', subTitle: 'DESIGN', section: 'section5', svgSrc: '', offset: -100 },
-  { name: '預約賞屋', imgSrc: '', subTitle: 'RESERVE', section: 'contact', svgSrc: '', mobileOffset: 0 },
+  { name: '享大城', imgSrc: require('@/assets/img/nav/icon1.png'), subTitle: '', section: 'section2', svgSrc: '', offset: -100 },
+  { name: '擁大景', imgSrc: require('@/assets/img/nav/icon2.png'), subTitle: '', section: 'section3', svgSrc: '', offset: -100 },
+  { name: '成大室', imgSrc: require('@/assets/img/nav/icon3.png'), subTitle: '', section: 'section4', svgSrc: '', offset: -100 },
+  // { name: '預約賞屋', imgSrc: '', subTitle: '', section: 'contact', svgSrc: '', mobileOffset: 0 },
 ]
 
 // 黃金地段：location

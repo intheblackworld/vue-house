@@ -114,7 +114,7 @@ export default {
 .logo {
   width:auto;
   height: $contact_logo_pc_width;
-  margin: 0 auto;
+  margin: 0 auto 40px;
 }
 .info {
   width: 880px;
@@ -183,7 +183,6 @@ export default {
   height: 60px;
   background: #fff;
   //box-shadow: $contact_btn_border;
-  border:1px solid #da007f;
 }
 .google-btn {
   width: 280px;
