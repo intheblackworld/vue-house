@@ -1,11 +1,11 @@
 <template>
   <div class="section2">
-    <div :class="`dialog ${isShowDialog ? 'show' : ''}`">
+    <div :class="`dialog ${isShowDialog ? 'show' : ''}`"
+        @click="closeDialog">
       <img
         src="../../assets/img/close.png"
         alt=""
         class="close"
-        @click="closeDialog"
       >
       <img
         :src="slideList[imgIndex]"
@@ -407,7 +407,7 @@
   }
 
   .dialog-img {
-    width: 50vw;
+    //width: 50vw;
     height: auto;
     left: 0;
     right: 0;
