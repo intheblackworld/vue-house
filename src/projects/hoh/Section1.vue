@@ -1,6 +1,6 @@
 <template>
   <div class="section1">
-    <div class="bg">
+    <v-touch class="bg" @swipeleft="decIndex" @swiperight="addIndex">
       <div class="bright ball1"></div>
       <div class="bright ball2"></div>
       <div class="bright ball3"></div>
@@ -63,7 +63,7 @@
         <div @click="bubbleIndex = 2" :class="`item ${bubbleIndex === 2 ? 'active' : ''}`"></div>
         <div @click="bubbleIndex = 3" :class="`item ${bubbleIndex === 3 ? 'active' : ''}`"></div>
       </div>
-    </div>
+    </v-touch>
   </div>
 </template>
 <style lang="scss">
@@ -501,11 +501,11 @@ export default {
   watch: {
     bubbleIndex(val) {
       if (val === 1) {
+        this.hideBubble()
         this.showBubble(val)
-        this.hideBubble(3)
       } else {
+        this.hideBubble()
         this.showBubble(val)
-        this.hideBubble(val - 1)
       }
     },
   },
@@ -515,7 +515,24 @@ export default {
       this[`slide${index}`] = true
     },
     hideBubble(index) {
-      this[`slide${index}`] = false
+      this[`slide1`] = false
+      this[`slide2`] = false
+      this[`slide3`] = false
+    },
+    decIndex() {
+      if (this.bubbleIndex === 1) {
+        this.bubbleIndex = 3
+      } else {
+        this.bubbleIndex = this.bubbleIndex - 1
+      }
+    },
+
+    addIndex() {
+      if (this.bubbleIndex === 3) {
+        this.bubbleIndex = 1
+      } else {
+        this.bubbleIndex++
+      }
     },
   },
   created() {
