@@ -106,6 +106,7 @@
   background-position: bottom;
   background-repeat: no-repeat;
   z-index: 3;
+  pointer-events: none;
 }
 
 .logo {

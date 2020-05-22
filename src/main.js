@@ -47,6 +47,10 @@ library.add(faFacebookF)
 library.add(faMapMarkerAlt)
 
 Vue.use(VuePhotoZoomPro)
+
+VueTouch.config.swipe = {
+  direction: 'horizontal'
+}
 Vue.use(VueTouch)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
