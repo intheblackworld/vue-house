@@ -10,13 +10,13 @@
       >
       <img
         src="./s1/ball/r.png"
-        class="ball6"s
+        class="ball6"
         data-aos="fade"
         data-aos-delay="600"
       >
-      <div class="txt1">飛越洲子洋　看見最精彩</div>
+      <div class="txt1">飛越洲子洋 看見最精彩</div>
       <div class="txt2">用台北蛋白的便利，享受洲子洋蛋黃的勝利</div>
-      <div class="relative ball-container">
+      <div class="ball-container">
         <img
           src="./s1/ball/bright.png"
           alt=""
@@ -46,23 +46,70 @@
           alt=""
           class="ball ball5"
         >
-        <swiper
-          :options="swiperOption"
-          ref="mySwiper"
-          class="swiper"
+      </div>
+      <swiper
+        :options="swiperOption"
+        ref="mySwiper"
+        class="swiper"
+      >
+        <swiper-slide
+          v-for="(slide, index) in slideList"
+          :index="index"
+          :key="slide"
+          class="item"
         >
-          <swiper-slide
-            v-for="(slide, index) in slideList"
-            :index="index"
-            :key="slide"
-            class="item"
-          >
-            <img
-              :src="slide"
-              :class="`item-img`"
-            />
-          </swiper-slide>
-        </swiper>
+          <img
+            :src="slide"
+            :class="`item-img`"
+          />
+        </swiper-slide>
+      </swiper>
+      <div
+        class="relative"
+        v-if="!isMobile"
+      >
+        <img
+          src="./event/event1.png"
+          alt=""
+          class="bg-img"
+        >
+        <img
+          src="./event/event2.png"
+          alt=""
+          class="bg-img"
+        >
+        <img
+          src="./event/30.png"
+          alt=""
+          class="red-bubble absolute"
+          data-aos="zoom-in-down"
+          data-aos-delay="300"
+        >
+        <img
+          src="./event/l.png"
+          alt=""
+          class="big-smile absolute"
+        >
+      </div>
+      <div
+        class="relative"
+        v-else
+      >
+        <img
+          src="./event_mo/event1.png"
+          alt=""
+          class="bg-img"
+        >
+        <img
+          src="./event_mo/event2.png"
+          alt=""
+          class="bg-img"
+        >
+        <img
+          src="./event_mo/l.png"
+          alt=""
+          class="big-smile absolute"
+        >
       </div>
     </div>
   </div>
@@ -81,26 +128,26 @@
   position: relative;
   width: size(1580);
   margin: 0 auto;
-  z-index: 2;
+  z-index: 3;
 }
-.txt1{
+.txt1 {
   position: relative;
   margin: 0 auto;
   z-index: 2;
   margin: 1em 0 1em 0.2em;
-  color:#000;
-  font-size:  size(49);
-  letter-spacing:0.4em;
-  font-weight:900;
+  color: #000;
+  font-size: size(49);
+  letter-spacing: 0.4em;
+  font-weight: 900;
 }
-.txt2{
+.txt2 {
   position: relative;
   margin: 0 auto;
   z-index: 2;
   margin: 1em 0;
-  color:#333;
-  font-size:  size(30);
-  letter-spacing:0.3em;
+  color: #333;
+  font-size: size(30);
+  letter-spacing: 0.3em;
 }
 
 .ball {
@@ -119,7 +166,7 @@
   left: size(20);
   top: size(430);
   height: size(240);
-  animation-delay:1s;
+  animation-delay: 1s;
   transform: translateY(-15%);
 }
 
@@ -127,15 +174,16 @@
   right: size(80);
   top: size(-310);
   height: size(730);
-  animation-delay:2s;
-  transform: translateY(-5%);opacity: 0.6;
+  animation-delay: 2s;
+  transform: translateY(-5%);
+  opacity: 0.6;
 }
 
 .ball4 {
   right: size(580);
   top: size(410);
   height: size(95);
-  animation-delay:1s;
+  animation-delay: 1s;
   transform: translateY(-15%);
 }
 
@@ -149,30 +197,65 @@
 .ball6 {
   position: absolute;
   height: size(222);
-  left:size(365);
+  left: size(365);
   top: size(15);
-  transform:translateY(-5%) rotate(-5deg);
+  transform: translateY(-5%) rotate(-5deg);
   animation: an2 1.5s infinite alternate;
+  z-index: 3;
 }
 .ball-container {
-  min-height: size(400);
+  width: 100vw;
+  height: 100vh;
+  // min-height: size(400);
+  top: 0;
+  z-index: 1;
+  position: fixed !important;
 }
 .swiper {
   width: size(1200);
-  margin: size(100) auto 0;   border-radius: 9vw;
+  margin: size(100) auto 0;
+  border-radius: 9vw;
 }
 .item-img {
   width: size(330);
 }
 
+.bg-img {
+  width: 100vw;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  &:nth-child(1) {
+    position: relative;
+  }
+}
+
+.red-bubble {
+  top: size(484);
+  right: size(384);
+  width: size(323);
+  z-index: 2;
+}
+
+.big-smile {
+  top: size(874);
+  right: size(382);
+  width: size(390);
+  animation: an 2s 1s infinite alternate;
+  transform: translateY(-8%);
+  z-index: 2;
+}
+
 @keyframes an {
   to {
-    transform:translateY(0);
+    transform: translateY(0);
   }
 }
 @keyframes an2 {
   to {
-    transform:translateY(0)rotate(5deg);
+    transform: translateY(0) rotate(5deg);
   }
 }
 /* 平板尺寸 */
@@ -188,7 +271,7 @@
 
   .swiper {
     width: 90vw;
-    margin: size-m(30) auto 0; 
+    margin: size-m(30) auto 0;
   }
 
   .item-img {
@@ -231,22 +314,29 @@
     height: size-m(180);
     transform: translateY(-8%);
     z-index: 0;
-}
+  }
 
-.ball6 {
-   left: size-m(73);
+  .ball6 {
+    left: size-m(73);
     top: size-m(0);
     height: size-m(45);
-    z-index:5;
-  transform:translateY(-10%) rotate(-5deg);
+    z-index: 5;
+    transform: translateY(-10%) rotate(-5deg);
   }
-.txt1{
-  font-size:  size-m(18);
-}
-.txt2{
-  font-size:  size-m(12);
-  letter-spacing:0.2em;
-}
+  .txt1 {
+    font-size: size-m(18);
+  }
+  .txt2 {
+    font-size: size-m(12);
+    letter-spacing: 0.2em;
+  }
+
+  .big-smile {
+    top: size-m(366);
+    right: size-m(-20);
+    width: size-m(140);
+    z-index: 2;
+  }
 }
 </style>
 

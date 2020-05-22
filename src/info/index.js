@@ -8,8 +8,8 @@ export default {
   googleLink: 'https://goo.gl/maps/J6UmoxPdPdtkjcaP8',
   phone: '02-82951777',
   fbLink:
-    '',
-  fbMessage: '',
+    'https://www.facebook.com/神采飛洋-101802774887170',
+  fbMessage: 'https://m.me/101802774887170',
   caseName: '神采飛洋',
   houseInfos: [
     // ['建設公司', '捷順國際開發股份有限公司'],

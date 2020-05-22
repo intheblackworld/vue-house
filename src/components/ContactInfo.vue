@@ -112,7 +112,7 @@ export default {
   // justify-content: space-between;
   transform: translateY(14%);
   position: relative;
-  z-index: 3;
+  z-index: 4;
   width: 1200px;
   height: 515px;
   padding: 30px;

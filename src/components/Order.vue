@@ -261,6 +261,8 @@ export default {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    position: relative;
+    z-index: 3;
   }
 
   .order-subtitle {
@@ -268,6 +270,8 @@ export default {
     text-align: center;
     color: $order_subtitle_color;
     margin-bottom: 40px;
+    position: relative;
+    z-index: 3;
   }
 
   .order {
@@ -275,6 +279,8 @@ export default {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 3;
   }
 
   .form {

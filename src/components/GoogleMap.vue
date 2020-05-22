@@ -29,6 +29,7 @@ export default {
 .google-map {
   display: flex;
   position: relative;
+  z-index: 3;
 }
 
 @media screen and (max-width: 767px) {
