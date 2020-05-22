@@ -343,6 +343,7 @@
   margin: size(100) auto 0;
   border-radius: 9vw;
 }
+.swiper-slide{width:calc(33.33% - 10px);}
 .item-img {
   width: size(330);
   cursor: pointer;
@@ -439,12 +440,14 @@
   }
 
   .swiper {
-    width: 90vw;
-    margin: size-m(30) auto 0;
+    width: 100%;
+    margin:size-m(20) 0 0 0 ;
+    border-radius: 0;
   }
 
+.swiper-slide{width:size-m(200);}
   .item-img {
-    width: size-m(100);
+    width: size-m(180);
   }
 
   .ball1 {
@@ -586,7 +589,7 @@ export default {
     return {
       isMobile,
       swiperOption: {
-        slidesPerView: 3,
+        slidesPerView:"auto",
         centeredSlides: true,
         spaceBetween: isTablet ? 20 : 10,
         slidesPerColumn: isMobile ? 1 : 1,
