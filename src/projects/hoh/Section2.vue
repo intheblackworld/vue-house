@@ -413,13 +413,47 @@
   }
 
   .ball5 {
-    right: size-m(100);
-    top: size-m(110);
-    height: size-m(180);
-    transform: translateY(-8%);
-    z-index: 0;
+    right:size-m(-30);
+    top: size-m(310);
+    height: size-m(100);
   }
 
+
+.ball7 {
+    left:size-m(-45);
+    top: size-m(340);
+    height: size-m(70);
+}
+.ball8 {
+    right:size-m(130);
+    top: size-m(150);
+    height: size-m(220);
+}
+.ball9 {
+    left:size-m(-40);
+    top: size-m(400);
+    height: size-m(100);
+}
+.ball10 {
+    right:size-m(-40);
+    top: size-m(650);
+    height: size-m(150);
+}
+.ball11 {
+    right:size-m(-100);
+    top: size-m(500);
+    height: size-m(200);
+}
+.ball12 {
+    right:size-m(-80);
+    top: size-m(850);
+    height: size-m(150);
+}
+.ball13 {
+    left:size-m(-40);
+    top: size-m(1000);
+    height: size-m(200);
+}
   .ball6 {
     left: size-m(73);
     top: size-m(0);
@@ -432,7 +466,7 @@
   }
   .txt2 {
     font-size: size-m(12);
-    letter-spacing: 0.2em;
+    letter-spacing: 0em;
   }
 
   .big-smile {
