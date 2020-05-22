@@ -592,7 +592,7 @@ export default {
         slidesPerColumn: isMobile ? 1 : 1,
 
         autoplay: {
-          delay: 2500,
+          delay: 5000,
           disableOnInteraction: true,
         },
         loop: true,
