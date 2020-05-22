@@ -1,5 +1,18 @@
 <template>
   <div class="section2">
+    <div :class="`dialog ${isShowDialog ? 'show' : ''}`">
+      <img
+        src="../../assets/img/close.png"
+        alt=""
+        class="close"
+        @click="closeDialog"
+      >
+      <img
+        :src="slideList[imgIndex]"
+        alt=""
+        class="dialog-img"
+      >
+    </div>
     <div class="bg relative">
       <img
         :src="`${isMobile ? require('./s2/txt_m.png') : require('./s2/txt.png')}`"
@@ -15,12 +28,16 @@
         data-aos-delay="300"
       >
 
-      <div class="txt1"
+      <div
+        class="txt1"
         data-aos="fade"
-        data-aos-delay="600">飛越洲子洋 看見最精彩</div>
-      <div class="txt2"
+        data-aos-delay="600"
+      >飛越洲子洋 看見最精彩</div>
+      <div
+        class="txt2"
         data-aos="fade"
-        data-aos-delay="1200">用台北蛋白的便利，享受洲子洋蛋黃的勝利</div>
+        data-aos-delay="1200"
+      >用台北蛋白的便利，享受洲子洋蛋黃的勝利</div>
       <div class="ball-container">
         <img
           src="./s1/ball/bright.png"
@@ -105,10 +122,6 @@
           />
         </swiper-slide>
       </swiper>
-      <div :class="`dialog ${isShowDialog ? 'show' : ''}`">
-        <img src="../../assets/img/close.png" alt="" class="close" @click="closeDialog">
-        <img :src="slideList[imgIndex]" alt="" class="dialog-img">
-      </div>
       <div
         class="relative"
         v-if="!isMobile"
@@ -164,7 +177,7 @@
 .bg {
   background-size: cover;
   position: relative;
-  z-index: 2;
+  z-index: 5;
   min-height: 100vh;
   background-color: #fddb3e;
 }
@@ -192,15 +205,23 @@
   margin: 0em auto;
   color: #333;
   font-size: size(23);
-  display:inline-flex;
+  display: inline-flex;
   letter-spacing: 0.3em;
   &::after,
-  &::before{content:"";
-  display:inline-block;
-  width:2em;height: 0.6em;
-  border: 1px solid #333;margin: 0.3em 0.5em 0  0.5em ;}
-  &::after{border-left: 0px;}
-  &::before{border-right: 0px;}
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 2em;
+    height: 0.6em;
+    border: 1px solid #333;
+    margin: 0.3em 0.5em 0 0.5em;
+  }
+  &::after {
+    border-left: 0px;
+  }
+  &::before {
+    border-right: 0px;
+  }
 }
 
 .ball {
@@ -213,7 +234,7 @@
   top: size(380);
   height: size(513);
   transform: translateY(-15%);
-  animation-delay:1s;
+  animation-delay: 1s;
 }
 
 .ball2 {
@@ -230,7 +251,7 @@
   height: size(730);
   animation-delay: 2s;
   transform: translateY(-5%);
-  animation-delay:1s;
+  animation-delay: 1s;
   opacity: 0.6;
 }
 
@@ -240,7 +261,7 @@
   height: size(95);
   animation-delay: 1s;
   transform: translateY(-15%);
-  animation-delay:1s;
+  animation-delay: 1s;
 }
 
 .ball5 {
@@ -249,55 +270,54 @@
   height: size(400);
   transform: translateY(-8%);
   z-index: 2;
-  animation-delay:1s;
+  animation-delay: 1s;
 }
 
-
 .ball7 {
-  left:size(80);
+  left: size(80);
   top: size(1150);
   height: size(300);
   transform: translateY(-13%);
   z-index: 2;
 }
 .ball8 {
-  right:size(-550);
+  right: size(-550);
   top: size(1550);
   height: size(850);
   transform: translateY(-5%);
-  animation-delay:1s;
+  animation-delay: 1s;
 }
 .ball9 {
-  left:size(-500);
+  left: size(-500);
   top: size(1800);
   height: size(900);
-  transform:translateY(-9%);
+  transform: translateY(-9%);
 }
 .ball10 {
-  left:size(150);
+  left: size(150);
   top: size(1800);
   height: size(100);
   transform: translateY(-16%);
-  animation-delay:1s;
+  animation-delay: 1s;
 }
 .ball11 {
-  left:size(1450);
+  left: size(1450);
   top: size(2200);
   height: size(200);
   transform: translateY(-8%);
 }
 .ball12 {
-  right:size(-550);
+  right: size(-550);
   top: size(2850);
   height: size(1000);
   transform: translateY(-5%);
-  animation-delay:1s;
+  animation-delay: 1s;
 }
 .ball13 {
-  right:size(500);
+  right: size(500);
   top: size(2500);
   height: size(500);
-  transform:translateY(-9%);
+  transform: translateY(-9%);
 }
 
 .ball6 {
@@ -315,7 +335,7 @@
   // min-height: size(400);
   top: 0;
   //z-index: 1;
-  position:absolute;
+  position: absolute;
   //position: fixed !important;
 }
 .swiper {
@@ -337,8 +357,8 @@
   z-index: 2;
   &:nth-child(1) {
     position: relative;
-  z-index: 1;
-  margin-bottom: size(-300);;
+    z-index: 1;
+    margin-bottom: size(-300);
   }
 }
 
@@ -456,47 +476,46 @@
   }
 
   .ball5 {
-    right:size-m(-30);
+    right: size-m(-30);
     top: size-m(310);
     height: size-m(100);
   }
 
-
-.ball7 {
-    left:size-m(-45);
+  .ball7 {
+    left: size-m(-45);
     top: size-m(340);
     height: size-m(70);
-}
-.ball8 {
-    right:size-m(130);
+  }
+  .ball8 {
+    right: size-m(130);
     top: size-m(150);
     height: size-m(220);
-}
-.ball9 {
-    left:size-m(-40);
+  }
+  .ball9 {
+    left: size-m(-40);
     top: size-m(400);
     height: size-m(100);
-}
-.ball10 {
-    right:size-m(-40);
+  }
+  .ball10 {
+    right: size-m(-40);
     top: size-m(650);
     height: size-m(150);
-}
-.ball11 {
-    right:size-m(-100);
+  }
+  .ball11 {
+    right: size-m(-100);
     top: size-m(500);
     height: size-m(200);
-}
-.ball12 {
-    right:size-m(-80);
+  }
+  .ball12 {
+    right: size-m(-80);
     top: size-m(850);
     height: size-m(150);
-}
-.ball13 {
-    left:size-m(-40);
+  }
+  .ball13 {
+    left: size-m(-40);
     top: size-m(1000);
     height: size-m(200);
-}
+  }
   .ball6 {
     left: size-m(73);
     top: size-m(0);
@@ -604,7 +623,7 @@ export default {
     },
     closeDialog() {
       this.isShowDialog = false
-    }
+    },
   },
 
   created() {},
