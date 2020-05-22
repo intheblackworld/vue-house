@@ -409,6 +409,8 @@
   .dialog-img {
     //width: 50vw;
     height: auto;
+    width: auto;
+    max-height: 96vh;
     left: 0;
     right: 0;
     margin: 0 auto;
