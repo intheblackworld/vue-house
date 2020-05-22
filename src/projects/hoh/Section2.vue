@@ -128,17 +128,17 @@
       >
         <img
           src="./event/event1.png"
-          alt=""
+          alt="DYSON TP00 氣流倍增器，DYSON V7 無線吸塵器，簽約在送神秘大禮"
           class="bg-img"
         >
         <img
           src="./event/event2.png"
-          alt=""
+          alt="早鳥預約神助攻 贈神秘大禮"
           class="bg-img"
         >
         <img
           src="./event/30.png"
-          alt=""
+          alt="限量前30戶"
           class="red-bubble absolute"
           data-aos="zoom-in-down"
           data-aos-delay="300"

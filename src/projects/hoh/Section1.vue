@@ -551,7 +551,7 @@ export default {
       } else {
         this.bubbleIndex++
       }
-    }, 4000)
+    }, 3000)
   },
 }
 </script>
