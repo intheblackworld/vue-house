@@ -100,10 +100,15 @@
         >
           <img
             :src="slide"
+            @click="showDialog(index)"
             :class="`item-img`"
           />
         </swiper-slide>
       </swiper>
+      <div :class="`dialog ${isShowDialog ? 'show' : ''}`">
+        <img src="../../assets/img/close.png" alt="" class="close" @click="closeDialog">
+        <img :src="slideList[imgIndex]" alt="" class="dialog-img">
+      </div>
       <div
         class="relative"
         v-if="!isMobile"
@@ -320,6 +325,7 @@
 }
 .item-img {
   width: size(330);
+  cursor: pointer;
 }
 
 .bg-img {
@@ -360,6 +366,43 @@
 @keyframes an2 {
   to {
     transform: translateY(0) rotate(5deg);
+  }
+}
+
+.dialog {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s;
+  display: none;
+
+  &.show {
+    display: block;
+    z-index: 210;
+    opacity: 1;
+  }
+
+  .dialog-img {
+    width: 50vw;
+    height: auto;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+  }
+
+  .close {
+    position: absolute;
+    cursor: pointer;
+    right: 35px;
+    top: 25px;
+    width: 40px;
   }
 }
 /* 平板尺寸 */
@@ -476,13 +519,34 @@
     z-index: 2;
   }
 }
+
+.dialog {
+  .dialog-img {
+    width: 95vw;
+    height: auto;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+  }
+
+  .close {
+    position: absolute;
+    cursor: pointer;
+    right: 35px;
+    top: 25px;
+    width: 40px;
+  }
+}
 </style>
 
 <script>
 // @ is an alias to /src
 import { isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
-import Parallax from '@/components/Parallax.vue'
+// import Parallax from '@/components/Parallax.vue'
 import 'swiper/dist/css/swiper.css'
 
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
@@ -494,7 +558,7 @@ export default {
   components: {
     swiper,
     swiperSlide,
-    Parallax,
+    // Parallax,
   },
 
   data() {
@@ -508,7 +572,7 @@ export default {
 
         autoplay: {
           delay: 2500,
-          disableOnInteraction: false,
+          disableOnInteraction: true,
         },
         loop: true,
         navigation: {
@@ -525,12 +589,23 @@ export default {
         require('./s2/5.png'),
         require('./s2/6.png'),
       ],
+
+      imgIndex: 0,
+      isShowDialog: false,
     }
   },
 
   computed: {},
 
-  methods: {},
+  methods: {
+    showDialog(index) {
+      this.imgIndex = index
+      this.isShowDialog = true
+    },
+    closeDialog() {
+      this.isShowDialog = false
+    }
+  },
 
   created() {},
   mounted() {},
