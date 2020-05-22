@@ -534,7 +534,7 @@
   }
 
   .big-smile {
-    top: size-m(366);
+    top: size-m(405);
     right: size-m(-20);
     width: size-m(140);
     z-index: 2;
