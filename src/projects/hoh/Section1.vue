@@ -109,6 +109,10 @@
   // pointer-events: none;
 }
 
+img {
+  pointer-events: none;
+}
+
 .logo {
   position: absolute;
   width: calc(100vw * 540 / 1920);
