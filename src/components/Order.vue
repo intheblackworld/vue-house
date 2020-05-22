@@ -251,7 +251,7 @@ export default {
     font-size: calc(100vw * 38 / 1920);
     text-align: center;
     color: $order_title_color;
-    width: 573px;
+    width:calc(100vw * 500 / 1920);
     background-color: #3d2824;
     border-radius: 60px / 60px;
     display: block;
@@ -263,6 +263,16 @@ export default {
     cursor: pointer;
     position: relative;
     z-index: 3;
+    &::before{
+     content: "";
+     position: absolute;
+     width: 1200px;
+     max-width: 95vw;
+     height: 1px;
+    background-color: #3d2824;
+    z-index: -1;
+
+    }
   }
 
   .order-subtitle {

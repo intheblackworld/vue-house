@@ -101,7 +101,7 @@
   position: relative;
   height: 100vh;
   max-height: 1080px;
-  background-color: #fddb3e;
+ // background-color: #fddb3e;
   // background-image: url('./s1/kv_city_bg.jpg');
   background-position: bottom;
   background-repeat: no-repeat;
@@ -110,7 +110,7 @@
 
 .logo {
   position: absolute;
-  width: calc(100vw * 570 / 1920);
+  width: calc(100vw * 540 / 1920);
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -314,7 +314,7 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-  top: size(910);
+  top: size(810);
   cursor: pointer;
   .item {
     width: size(48);
@@ -525,7 +525,7 @@ export default {
       } else {
         this.bubbleIndex++
       }
-    }, 6000)
+    }, 10000)
   },
 }
 </script>

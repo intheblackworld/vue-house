@@ -12,10 +12,15 @@
         src="./s1/ball/r.png"
         class="ball6"
         data-aos="fade"
-        data-aos-delay="600"
+        data-aos-delay="300"
       >
-      <div class="txt1">飛越洲子洋 看見最精彩</div>
-      <div class="txt2">用台北蛋白的便利，享受洲子洋蛋黃的勝利</div>
+
+      <div class="txt1"
+        data-aos="fade"
+        data-aos-delay="600">飛越洲子洋 看見最精彩</div>
+      <div class="txt2"
+        data-aos="fade"
+        data-aos-delay="1200">用台北蛋白的便利，享受洲子洋蛋黃的勝利</div>
       <div class="ball-container">
         <img
           src="./s1/ball/bright.png"
@@ -45,6 +50,41 @@
           src="./s1/ball/bright.png"
           alt=""
           class="ball ball5"
+        >
+        <img
+          src="./s1/ball/bright.png"
+          alt=""
+          class="ball ball7"
+        >
+        <img
+          src="./s1/ball/bright.png"
+          alt=""
+          class="ball ball8"
+        >
+        <img
+          src="./s1/ball/ball.png"
+          alt=""
+          class="ball ball9"
+        >
+        <img
+          src="./s1/ball/bright.png"
+          alt=""
+          class="ball ball10"
+        >
+        <img
+          src="./s1/ball/bright.png"
+          alt=""
+          class="ball ball11"
+        >
+        <img
+          src="./s1/ball/bright.png"
+          alt=""
+          class="ball ball12"
+        >
+        <img
+          src="./s1/ball/bright.png"
+          alt=""
+          class="ball ball13"
         >
       </div>
       <swiper
@@ -144,10 +184,18 @@
   position: relative;
   margin: 0 auto;
   z-index: 2;
-  margin: 1em 0;
+  margin: 0em auto;
   color: #333;
-  font-size: size(30);
+  font-size: size(23);
+  display:inline-flex;
   letter-spacing: 0.3em;
+  &::after,
+  &::before{content:"";
+  display:inline-block;
+  width:2em;height: 0.6em;
+  border: 1px solid #333;margin: 0.3em 0.5em 0  0.5em ;}
+  &::after{border-left: 0px;}
+  &::before{border-right: 0px;}
 }
 
 .ball {
@@ -157,14 +205,15 @@
 
 .ball1 {
   left: size(80);
-  top: size(-180);
+  top: size(380);
   height: size(513);
   transform: translateY(-15%);
+  animation-delay:1s;
 }
 
 .ball2 {
   left: size(20);
-  top: size(430);
+  top: size(830);
   height: size(240);
   animation-delay: 1s;
   transform: translateY(-15%);
@@ -172,26 +221,78 @@
 
 .ball3 {
   right: size(80);
-  top: size(-310);
+  top: size(250);
   height: size(730);
   animation-delay: 2s;
   transform: translateY(-5%);
+  animation-delay:1s;
   opacity: 0.6;
 }
 
 .ball4 {
-  right: size(580);
-  top: size(410);
+  right: size(780);
+  top: size(1050);
   height: size(95);
   animation-delay: 1s;
   transform: translateY(-15%);
+  animation-delay:1s;
 }
 
 .ball5 {
   right: size(80);
-  top: size(510);
-  height: size(280);
+  top: size(1010);
+  height: size(400);
   transform: translateY(-8%);
+  z-index: 2;
+  animation-delay:1s;
+}
+
+
+.ball7 {
+  left:size(80);
+  top: size(1150);
+  height: size(300);
+  transform: translateY(-13%);
+  z-index: 2;
+}
+.ball8 {
+  right:size(-550);
+  top: size(1550);
+  height: size(850);
+  transform: translateY(-5%);
+  animation-delay:1s;
+}
+.ball9 {
+  left:size(-500);
+  top: size(1800);
+  height: size(900);
+  transform:translateY(-9%);
+}
+.ball10 {
+  left:size(150);
+  top: size(1800);
+  height: size(100);
+  transform: translateY(-16%);
+  animation-delay:1s;
+}
+.ball11 {
+  left:size(1450);
+  top: size(2200);
+  height: size(200);
+  transform: translateY(-8%);
+}
+.ball12 {
+  right:size(-550);
+  top: size(2850);
+  height: size(1000);
+  transform: translateY(-5%);
+  animation-delay:1s;
+}
+.ball13 {
+  right:size(500);
+  top: size(2500);
+  height: size(500);
+  transform:translateY(-9%);
 }
 
 .ball6 {
@@ -208,8 +309,9 @@
   height: 100vh;
   // min-height: size(400);
   top: 0;
-  z-index: 1;
-  position: fixed !important;
+  //z-index: 1;
+  position:absolute;
+  //position: fixed !important;
 }
 .swiper {
   width: size(1200);
@@ -229,6 +331,8 @@
   z-index: 2;
   &:nth-child(1) {
     position: relative;
+  z-index: 1;
+  margin-bottom: size(-300);;
   }
 }
 
@@ -240,11 +344,11 @@
 }
 
 .big-smile {
-  top: size(874);
+  top: size(834);
   right: size(382);
   width: size(390);
-  animation: an 2s 1s infinite alternate;
-  transform: translateY(-8%);
+  animation: an2 2s 1s infinite alternate;
+  transform: translateY(5%) rotate(-5deg);
   z-index: 2;
 }
 
