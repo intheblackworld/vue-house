@@ -105,7 +105,7 @@
   // background-image: url('./s1/kv_city_bg.jpg');
   background-position: bottom;
   background-repeat: no-repeat;
-  z-index: 3;
+  z-index: 6;
   // pointer-events: none;
 }
 
