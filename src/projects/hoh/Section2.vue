@@ -482,13 +482,13 @@
 
   .ball5 {
     right: size-m(-30);
-    top: size-m(310);
+    top: size-m(380);
     height: size-m(100);
   }
 
   .ball7 {
     left: size-m(-45);
-    top: size-m(340);
+    top: size-m(420);
     height: size-m(70);
   }
   .ball8 {
@@ -498,27 +498,27 @@
   }
   .ball9 {
     left: size-m(-40);
-    top: size-m(400);
+    top: size-m(480);
     height: size-m(100);
   }
   .ball10 {
     right: size-m(-40);
-    top: size-m(650);
+    top: size-m(730);
     height: size-m(150);
   }
   .ball11 {
     right: size-m(-100);
-    top: size-m(500);
+    top: size-m(580);
     height: size-m(200);
   }
   .ball12 {
     right: size-m(-80);
-    top: size-m(850);
+    top: size-m(930);
     height: size-m(150);
   }
   .ball13 {
     left: size-m(-40);
-    top: size-m(1000);
+    top: size-m(1080);
     height: size-m(200);
   }
   .ball6 {
