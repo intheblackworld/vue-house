@@ -176,8 +176,8 @@
 @import '~@/assets/style/function.scss';
 .bg {
   background-size: cover;
-  position: relative;
-  z-index: 5;
+  // position: relative;
+  // z-index: 5;
   min-height: 100vh;
   background-color: #fddb3e;
 }
@@ -537,26 +537,26 @@
     width: size-m(140);
     z-index: 2;
   }
-}
 
-.dialog {
-  .dialog-img {
-    width: 95vw;
-    height: auto;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    top: 50%;
-    transform: translateY(-50%);
-    position: absolute;
-  }
+  .dialog {
+    .dialog-img {
+      width: 95vw;
+      height: auto;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      top: 50%;
+      transform: translateY(-50%);
+      position: absolute;
+    }
 
-  .close {
-    position: absolute;
-    cursor: pointer;
-    right: 35px;
-    top: 25px;
-    width: 40px;
+    .close {
+      position: absolute;
+      cursor: pointer;
+      right: 35px;
+      top: 25px;
+      width: 40px;
+    }
   }
 }
 </style>
