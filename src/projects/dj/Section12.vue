@@ -38,8 +38,42 @@
     </div>
     <div
       v-else
-      class="fullscreen"
+      class="relative"
     >
+      <img
+        src="./mo/12/bg.jpg"
+        alt=""
+        class="bg-img"
+      >
+      <div
+        class="title absolute"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        Human scale
+      </div>
+      <div
+        class="desc absolute"
+        data-aos="fade-up"
+        data-aos-delay="500"
+      >
+        - 人性尺度 -
+      </div>
+      <div
+        class="img-title absolute"
+        data-aos="fade"
+        data-aos-delay="700"
+      >
+
+        空間大一點 用心多一點<br />生活不止好一點點
+      </div>
+      <div
+        class="img-desc absolute"
+        data-aos="fade-up"
+        data-aos-delay="900"
+      >
+        豐郡建設回歸人性尺度，拒絕因應市場潮流，限縮生活空間，只為多隔一房，無論兩房、三房均規劃獨立廚房，大展廚藝不必擔心油煙問題；<br /><br />貼心規劃前後陽台，客廳前陽台可作為蒔花弄草的空間，另有獨立工作陽台，洗曬衣物，不必擔心隱私的困擾。
+      </div>
     </div>
   </div>
 </template>
@@ -133,16 +167,37 @@
 }
 
 @media screen and (max-width: 767px) {
-  .logo {
-    width: 80%;
-    top: auto;
-    left: 0;
-    bottom: 0;
-    right: auto;
-    margin: 0 auto;
-    position: absolute;
-    z-index: 1;
+  .bg-img {
     height: auto;
+    object-fit: cover;
+  }
+
+  .title {
+    font-size: size-m(37);
+    top: size-m(36);
+    left: size-m(30);
+  }
+
+  .desc {
+    font-size: size-m(17);
+    top: size-m(93);
+    left: size-m(30);
+  }
+
+  .img-title {
+    width: size-m(236);
+    font-size: size-m(18);
+    top: size-m(125);
+    left: size-m(30);
+  }
+
+  .img-desc {
+    width: size-m(278);
+    font-size: size-m(13);
+    top: size-m(190);
+    left: size-m(30);
+    border: none;
+    padding: 0;
   }
 }
 </style>

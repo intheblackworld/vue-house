@@ -16,6 +16,11 @@
       v-else
       class="fullscreen"
     >
+      <img src="./mo/1/1.png" alt="" class="bg-img mt cloud" data-aos="fade" data-aos-delay="400">
+      <img src="./mo/1/2.png" alt="" class="bg-img mt" data-aos="fade" data-aos-delay="300">
+      <img src="./mo/1/3.png" alt="" class="bg-img" data-aos="fade" data-aos-delay="500">
+      <img src="./mo/1/4.png" alt="" class="bg-img" data-aos="fade" data-aos-delay="600">
+      <img src="./mo/1/logo.png" alt="" class="absolute title" data-aos="zoom-in-up" data-aos-delay="1200">
     </div>
   </div>
 </template>
@@ -109,16 +114,17 @@
 }
 
 @media screen and (max-width: 767px) {
-  .logo {
-    width: 80%;
-    top: auto;
-    left: 0;
-    bottom: 0;
-    right: auto;
-    margin: 0 auto;
-    position: absolute;
-    z-index: 1;
+  .bg-img {
     height: auto;
+  }
+  .title {
+    width: size-m(289);
+    right: size-m(43);
+    top: size-m(123);
+  }
+
+  .mt {
+    margin-top: 60px;
   }
 }
 </style>

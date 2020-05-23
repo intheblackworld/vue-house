@@ -50,8 +50,54 @@
     </div>
     <div
       v-else
-      class="fullscreen"
+      class="relative"
     >
+      <img
+        src="./mo/7/3.png"
+        alt=""
+        class="bg-img"
+      >
+      <img
+        src="./mo/7/1.png"
+        alt=""
+        class="bg-img cloud"
+      >
+      <img
+        src="./mo/7/2.png"
+        alt=""
+        class="bg-img cloud cloud1"
+      >
+      <div
+        class="title absolute"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        BUILDING DISTANCE
+      </div>
+      <div
+        class="desc absolute"
+        data-aos="fade-up"
+        data-aos-delay="500"
+      >
+        - 永久棟距 -
+      </div>
+      <div
+        class="img-title absolute"
+        data-aos="fade"
+        data-aos-delay="700"
+      >
+
+        基地臨20米大興路＋埔心溪<br />
+        坐擁超廣角綠意
+      </div>
+      <div
+        class="img-desc absolute"
+        data-aos="fade-up"
+        data-aos-delay="900"
+      >
+        「豐郡大景」基地三面臨路，坐擁大興路＋埔心溪永久棟距，<br />
+        景觀視野寬闊，區域內總計有14座公園，繁華與自然，同時兼得。
+      </div>
     </div>
   </div>
 </template>
@@ -165,16 +211,35 @@
 }
 
 @media screen and (max-width: 767px) {
-  .logo {
-    width: 80%;
-    top: auto;
-    left: 0;
-    bottom: 0;
-    right: auto;
-    margin: 0 auto;
-    position: absolute;
-    z-index: 1;
+  .bg-img {
     height: auto;
+    object-fit: cover;
+  }
+
+  .title {
+    font-size: size-m(26);
+    top: size-m(36);
+    left: size-m(30);
+  }
+
+  .desc {
+    font-size: size-m(17);
+    top: size-m(69);
+    left: size-m(30);
+  }
+
+  .img-title {
+    width: size-m(236);
+    font-size: size-m(18);
+    top: size-m(125);
+    left: size-m(30);
+  }
+
+  .img-desc {
+    width: size-m(236);
+    font-size: size-m(13);
+    top: size-m(190);
+    left: size-m(30);
   }
 }
 </style>

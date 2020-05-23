@@ -1,10 +1,11 @@
 <template>
   <div class="map" id="map" refs="map" @scroll="handleScroll">
-    <img :src="hand" alt class="hand" />
-    <img class="map-bg" :src="bgSrcT" alt ref="mapbg" />
-    <img class="map-bg" :src="bgSrcB" alt ref="mapbg" />
+    <img class="map-bg" :src="bgSrc" alt ref="mapbg" />
     <img class="map-text" :src="bgText" alt />
-    <slot v-if="showMask"></slot>
+    <div v-show="showMask" class="mask">
+      <img :src="hand" alt class="hand" />
+    </div>
+    <slot name="main"></slot>
     <img
       :src="tag"
       data-aos="fade-down"
@@ -19,7 +20,7 @@
 import { isMobile } from '@/utils'
 export default {
   name: 'map',
-  props: ['tagList', 'bgSrcT', 'bgSrcB', 'hand', 'bgText'],
+  props: ['tagList', 'bgSrc', 'bgSrcT', 'bgSrcB', 'hand', 'bgText'],
   data() {
     return {
       isMobile,

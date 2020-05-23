@@ -11,8 +11,15 @@
     </div>
     <div
       v-else
-      class="fullscreen"
+      class="relative"
     >
+      <img src="./mo/9/bg.jpg" alt="" class="bg-img">
+      <div class="title absolute" data-aos="fade-up" data-aos-delay="300">
+        Space
+      </div>
+      <h3 class="desc absolute" data-aos="fade-up" data-aos-delay="500">
+        空間大一點 生活大不同
+      </h3>
     </div>
   </div>
 </template>
@@ -78,16 +85,21 @@
 }
 
 @media screen and (max-width: 767px) {
-  .logo {
-    width: 80%;
-    top: auto;
-    left: 0;
-    bottom: 0;
-    right: auto;
-    margin: 0 auto;
-    position: absolute;
-    z-index: 1;
+  .bg-img {
     height: auto;
+    object-fit: cover;
+  }
+
+  .title {
+    font-size: size-m(85);
+    top: size-m(30);
+    left: size-m(31);
+  }
+
+  .desc {
+    font-size: size-m(21);
+    top: size-m(143);
+    left: size-m(31);
   }
 }
 </style>

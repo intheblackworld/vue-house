@@ -33,6 +33,18 @@
     top: 0;
     left: 0;
   }
+
+  .mask {
+    width: 300vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .4);
+    z-index: 2;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -42,7 +54,7 @@
     width: 100vw;
     .map-bg {
       width: auto;
-      height: 50vh;
+      height: 100vh;
     }
 
     .map-text {
@@ -57,14 +69,14 @@
 
     .mask {
       animation: swing 2.5s ease-in-out 0s infinite;
-      left: 35vw;
+      left: 100vw;
     }
 
     .hand {
       position: absolute;
       z-index: 2;
       display: block;
-      width: 100vw !important;
+      width: 112px !important;
       height: auto !important;
       left: 0;
       right: 0;

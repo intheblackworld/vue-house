@@ -52,8 +52,56 @@
     </div>
     <div
       v-else
-      class="fullscreen"
+      class="relative m-bg"
     >
+      <div
+        class="title absolute"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        American Street
+      </div>
+      <div
+        class="desc absolute"
+        data-aos="fade-up"
+        data-aos-delay="400"
+      >
+        - 美式街廓 -
+      </div>
+      <div
+        class="img-title absolute"
+        data-aos="fade"
+        data-aos-delay="600"
+      >
+        低密度開發重劃區 衣食育樂<br />機能一次到位
+      </div>
+      <div
+        class="img-desc absolute"
+        data-aos="fade-up"
+        data-aos-delay="800"
+      >
+        大竹重劃區因交通優勢，發展迅速，商家林立<br />
+        有麥當勞、康是美、全聯等知名連鎖店進駐<br />
+        亦有郵局、圖書館、市民運動中心…<br />
+        7-11便利商店近在咫尺，生活機能優越。
+      </div>
+      <img
+        src="./s5/img1.jpg"
+        alt=""
+        class="img absolute"
+        data-aos="fade"
+        data-aos-delay="1000"
+      >
+      <div class="img-slide" data-aos="fade"
+        data-aos-delay="800">
+        <img
+          v-for="(src, index) in img_list"
+          :key="src"
+          :src="src"
+          alt=""
+          :class="`slide-img ${index === slideIndex ? 'show' : ''}`"
+        >
+      </div>
     </div>
   </div>
 </template>
@@ -151,7 +199,7 @@
   top: 0;
   left: 0;
   opacity: 0;
-  transition: all .3s;
+  transition: all 0.3s;
   &.show {
     opacity: 1;
   }
@@ -178,16 +226,57 @@
 }
 
 @media screen and (max-width: 767px) {
-  .logo {
-    width: 80%;
-    top: auto;
+  .relative {
+    height: auto;
+  }
+  .m-bg {
+    height: size-m(772);
+  }
+  .bg-img {
+    height: auto;
+    object-fit: cover;
+  }
+
+  .title {
+    font-size: size-m(26);
+    top: size-m(36);
+    left: size-m(30);
+  }
+
+  .desc {
+    font-size: size-m(17);
+    top: size-m(69);
+    left: size-m(30);
+  }
+
+  .img-title {
+    width: size-m(270);
+    font-size: size-m(18);
+    top: size-m(125);
+    left: size-m(30);
+  }
+
+  .img-desc {
+    width: size-m(321);
+    font-size: size-m(13);
+    top: size-m(190);
+    left: size-m(30);
+  }
+
+  .img-slide {
+    position: absolute;
+    width: size-m(313);
+    height: size-m(213);
+    top: size-m(280);
+    left: size-m(30);
+  }
+
+  .img {
+    width: 100vw;
+    height: size-m(243);
+    position: absolute;
     left: 0;
     bottom: 0;
-    right: auto;
-    margin: 0 auto;
-    position: absolute;
-    z-index: 1;
-    height: auto;
   }
 }
 </style>

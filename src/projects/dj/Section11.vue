@@ -42,8 +42,54 @@
     </div>
     <div
       v-else
-      class="fullscreen"
+      class="relative m-bg"
     >
+      <img
+        src="./mo/10/2bg.jpg"
+        alt=""
+        class="bg-img"
+      >
+      <div
+        class="title absolute"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        Beautiful pattern
+      </div>
+      <div
+        class="desc absolute"
+        data-aos="fade-up"
+        data-aos-delay="500"
+      >
+        - 豐美格局 -
+      </div>
+      <div
+        class="img-title absolute"
+        data-aos="fade"
+        data-aos-delay="700"
+      >
+
+        採光通風 大面開窗<br />讓您住一輩子的好房子
+      </div>
+      <div
+        class="img-desc absolute"
+        data-aos="fade-up"
+        data-aos-delay="900"
+      >
+        戶戶雙面採光、無暗房，客廳大面開窗，<br />
+        享有空氣流通、自然光線流瀉；<br />
+        室內無柱、格局開闊，空間自由揮灑，<br />
+        可依人生不同階段彈性規劃，不必頻頻換屋。
+      </div>
+      <div class="img-slide">
+        <img
+          v-for="(src, index) in img_list"
+          :key="src"
+          :src="src"
+          alt=""
+          :class="`slide-img ${index === slideIndex ? 'show' : ''}`"
+        >
+      </div>
     </div>
   </div>
 </template>
@@ -149,16 +195,66 @@
 }
 
 @media screen and (max-width: 767px) {
-  .logo {
-    width: 80%;
-    top: auto;
+  .m-bg {
+    height: size-m(615);
+  }
+  .bg-img {
+    height: auto;
+    object-fit: cover;
+  }
+
+  .title {
+    font-size: size-m(26);
+    top: size-m(36);
+    left: size-m(30);
+  }
+
+  .desc {
+    font-size: size-m(17);
+    top: size-m(69);
+    left: size-m(30);
+  }
+
+  .img-title {
+    width: size-m(270);
+    font-size: size-m(18);
+    top: size-m(125);
+    left: size-m(30);
+  }
+
+  .img-desc {
+    width: size-m(321);
+    font-size: size-m(13);
+    font-weight: 500;
+    top: size-m(190);
+    left: size-m(30);
+  }
+  .slide-img {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.3s;
+    &.show {
+      opacity: 1;
+    }
+  }
+
+  .img-slide {
+    position: absolute;
+    width: 100vw;
+    height: size-m(282);
+    bottom: 0;
+    left: 0;
+  }
+
+  .img {
+    width: 100vw;
+    height: size-m(243);
+    position: absolute;
     left: 0;
     bottom: 0;
-    right: auto;
-    margin: 0 auto;
-    position: absolute;
-    z-index: 1;
-    height: auto;
   }
 }
 </style>
@@ -173,6 +269,14 @@ export default {
   data() {
     return {
       isMobile,
+      slideIndex: 1,
+      img_list: [
+        require('./mo/10/2-1.jpg'),
+        require('./mo/10/2-2.jpg'),
+        require('./mo/10/2-3.jpg'),
+        require('./mo/10/2-4.jpg'),
+        require('./mo/10/2-5.jpg'),
+      ],
     }
   },
 
@@ -180,7 +284,17 @@ export default {
 
   created() {},
 
-  mounted() {},
+  mounted() {
+    if (this.isMobile) {
+      setInterval(() => {
+        if (this.slideIndex === 5) {
+          this.slideIndex = 0
+        } else {
+          this.slideIndex = this.slideIndex + 1
+        }
+      }, 3000)
+    }
+  },
 
   computed: {},
 }

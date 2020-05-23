@@ -46,8 +46,46 @@
     </div>
     <div
       v-else
-      class="fullscreen"
+      class="relative"
     >
+    <div
+        class="title absolute"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        Strongest plug-in
+      </div>
+      <div
+        class="desc absolute"
+        data-aos="fade-up"
+        data-aos-delay="400"
+      >
+        - 最強外掛 -
+      </div>
+      <div
+        class="img-title absolute"
+        data-aos="fade"
+        data-aos-delay="600"
+      >
+        亞洲.矽谷＋航空城千億開發計畫<br />世界都在看！
+      </div>
+      <div
+        class="img-desc absolute"
+        data-aos="fade-up"
+        data-aos-delay="800"
+      >
+        台灣兩大國家級建設皆位於桃園，包含「桃園航空城」、「亞洲.矽谷」、「前瞻基礎建設」，桃園不僅升格六都，更將躍升為國際級規格城市。
+      </div>
+      <img
+        src="./mo/4/bg.png"
+        alt=""
+        class="bg-img"
+      >
+      <img
+        src="./mo/4/img.jpg"
+        alt=""
+        class="img"
+      >
     </div>
   </div>
 </template>
@@ -153,16 +191,42 @@
 }
 
 @media screen and (max-width: 767px) {
-  .logo {
-    width: 80%;
-    top: auto;
+  .bg-img {
+    height: auto;
+    object-fit: cover;
+  }
+
+  .title {
+    font-size: size-m(26);
+    top: size-m(36);
+    left: size-m(30);
+  }
+
+  .desc {
+    font-size: size-m(17);
+    top: size-m(69);
+    left: size-m(30);
+  }
+
+  .img-title {
+    width: size-m(270);
+    font-size: size-m(18);
+    top: size-m(125);
+    left: size-m(30);
+  }
+
+  .img-desc {
+    width: size-m(321);
+    font-size: size-m(13);
+    top: size-m(190);
+    left: size-m(30);
+  }
+
+  .img {
+    width: 100vw;
+    position: absolute;
     left: 0;
     bottom: 0;
-    right: auto;
-    margin: 0 auto;
-    position: absolute;
-    z-index: 1;
-    height: auto;
   }
 }
 </style>

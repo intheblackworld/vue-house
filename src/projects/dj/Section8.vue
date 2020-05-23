@@ -39,8 +39,43 @@
     </div>
     <div
       v-else
-      class="fullscreen"
+      class="relative"
     >
+      <img
+        src="./mo/8/bg.jpg"
+        alt=""
+        class="bg-img"
+      >
+      <div
+        class="title absolute"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        Sea of trees
+      </div>
+      <div
+        class="desc absolute"
+        data-aos="fade-up"
+        data-aos-delay="500"
+      >
+        - 無敵綠海 -
+      </div>
+      <div
+        class="img-title absolute"
+        data-aos="fade"
+        data-aos-delay="700"
+      >
+        開窗即享 無價壯闊視野<br />舒心美景近在眼前
+      </div>
+      <div
+        class="img-desc absolute"
+        data-aos="fade-up"
+        data-aos-delay="900"
+      >
+        家，不僅是讓身體居住的容器<br />
+        還必須能讓人的內心安穩、豐富…在「豐郡大景」<br />
+        窗外是極目遠眺的自然之美，窗內則是各自精彩的生活之美！
+      </div>
     </div>
   </div>
 </template>
@@ -149,16 +184,37 @@
 }
 
 @media screen and (max-width: 767px) {
-  .logo {
-    width: 80%;
-    top: auto;
-    left: 0;
-    bottom: 0;
-    right: auto;
-    margin: 0 auto;
-    position: absolute;
-    z-index: 1;
+  .bg-img {
     height: auto;
+    object-fit: cover;
+  }
+
+  .title {
+    font-size: size-m(37);
+    top: size-m(36);
+    left: size-m(30);
+  }
+
+  .desc {
+    font-size: size-m(17);
+    top: size-m(93);
+    left: size-m(30);
+  }
+
+  .img-title {
+    width: size-m(236);
+    font-size: size-m(18);
+    top: size-m(125);
+    left: size-m(30);
+  }
+
+  .img-desc {
+    width: size-m(236);
+    font-size: size-m(13);
+    top: size-m(190);
+    left: size-m(30);
+    border: none;
+    padding: 0;
   }
 }
 </style>

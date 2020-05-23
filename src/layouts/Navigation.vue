@@ -320,7 +320,7 @@ export default {
     transform: translateX(40%);
 
     li {
-      height: 50px;
+      height: 70px;
       margin-bottom: 5px;
     }
 
@@ -328,7 +328,7 @@ export default {
       height: 50px;
       width: 100%;
       font-size: 17px;
-      margin-top: 10px;
+      margin-top: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -346,6 +346,10 @@ export default {
         width: calc(100vw * 200 / 1920);
         height: auto;
         margin-right: 10px;
+      }
+
+      .title {
+        font-size: size-m(24) !important;
       }
     }
 
@@ -370,7 +374,7 @@ export default {
     width: 100vw;
     top: $nav_phone_height;
     right: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.8);
     position: fixed;
     z-index:-1;
     height: calc(100vh - #{$nav_phone_height});
