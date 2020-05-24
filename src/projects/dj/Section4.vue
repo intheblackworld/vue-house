@@ -32,12 +32,12 @@
         桃園不僅升格六都，更將躍升為國際級規格城市。
       </div>
       <img
-        src="./s4/img1.png"
+        v-lazy="require('./s4/img1.png')"
         alt=""
         class="img1 absolute"
       >
       <img
-        src="./s4/img2.jpg"
+        v-lazy="require('./s4/img2.jpg')"
         alt=""
         class="img2 absolute"
         data-aos="fade-left"
@@ -77,12 +77,12 @@
         台灣兩大國家級建設皆位於桃園，包含「桃園航空城」、「亞洲.矽谷」、「前瞻基礎建設」，桃園不僅升格六都，更將躍升為國際級規格城市。
       </div>
       <img
-        src="./mo/4/bg.png"
+        v-lazy="require('./mo/4/bg.png')"
         alt=""
         class="bg-img"
       >
       <img
-        src="./mo/4/img.jpg"
+        v-lazy="require('./mo/4/img.jpg')"
         alt=""
         class="img"
       >
@@ -122,6 +122,32 @@
   color: #808080;
   top: size(72);
   left: size(256);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+
+  &::before {
+    content: '';
+    display: block;
+    width: size(256);
+    left: size(-276);
+    position: absolute;
+    height: 3px;
+    margin-top: -5px;
+    background-color: #312219;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 2000px;
+    height: 3px;
+    margin-top: -5px;
+    margin-left: size(20);
+    background-color: #312219;
+  }
 }
 
 .desc {
@@ -200,6 +226,25 @@
     font-size: size-m(26);
     top: size-m(36);
     left: size-m(30);
+
+    &::before {
+      content: '';
+      display: block;
+      width: size-m(50);
+      left: size-m(-60);
+      position: absolute;
+      height: 2px;
+      background-color: #312219;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 2000px;
+      height: 2px;
+      margin-left: size-m(20);
+      background-color: #312219;
+    }
   }
 
   .desc {

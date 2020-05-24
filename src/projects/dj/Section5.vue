@@ -33,7 +33,7 @@
         7-11便利商店近在咫尺，生活機能優越。
       </div>
       <img
-        src="./s5/img1.jpg"
+        v-lazy="require('./s5/img1.jpg')"
         alt=""
         class="img1 absolute"
         data-aos="fade-right"
@@ -86,14 +86,17 @@
         7-11便利商店近在咫尺，生活機能優越。
       </div>
       <img
-        src="./s5/img1.jpg"
+        v-lazy="require('./s5/img1.jpg')"
         alt=""
         class="img absolute"
         data-aos="fade"
         data-aos-delay="1000"
       >
-      <div class="img-slide" data-aos="fade"
-        data-aos-delay="800">
+      <div
+        class="img-slide"
+        data-aos="fade"
+        data-aos-delay="800"
+      >
         <img
           v-for="(src, index) in img_list"
           :key="src"
@@ -137,7 +140,21 @@
   text-align: left;
   color: #808080;
   top: size(72);
-  right: size(291);
+  left: size(1100);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 2000px;
+    height: 3px;
+    margin-left: size(20);
+    margin-top: -10px;
+    background-color: #312219;
+  }
 }
 
 .desc {
@@ -241,6 +258,25 @@
     font-size: size-m(26);
     top: size-m(36);
     left: size-m(30);
+
+    &::before {
+      content: '';
+      display: block;
+      width: size-m(51);
+      left: size-m(-61);
+      position: absolute;
+      height: 2px;
+      background-color: #312219;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 2000px;
+      height: 2px;
+      margin-left: size-m(20);
+      background-color: #312219;
+    }
   }
 
   .desc {

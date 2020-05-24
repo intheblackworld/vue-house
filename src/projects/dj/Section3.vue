@@ -2,12 +2,12 @@
   <div class="relative">
     <div v-if="!isMobile">
       <img
-        src="./s3/bg.jpg"
+        v-lazy="require('./s3/bg.jpg')"
         alt=""
         class="bg-img"
       >
       <img
-        src="./s3/txt.png"
+        v-lazy="require('./s3/txt.png')"
         alt=""
         class="bg-img"
       >
@@ -40,14 +40,14 @@
         「豐郡大景」位居交通中心—大竹重劃區，<br />鄰近一高、二高、機場支線，將通便捷，房價親民。
       </div>
       <img
-        src="./s3/img1.jpg"
+        v-lazy="require('./s3/img1.jpg')"
         alt=""
         class="img1 absolute"
         data-aos="fade-left"
         data-aos-delay="700"
       >
       <img
-        src="./s3/img2.jpg"
+        v-lazy="require('./s3/img2.jpg')"
         alt=""
         class="img2 absolute"
         data-aos="fade-left"
@@ -130,6 +130,31 @@
   color: #808080;
   top: size(72);
   left: size(248);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+
+  &::before {
+    content: '';
+    display: block;
+    width: size(248);
+    left: size(-268);
+    position: absolute;
+    height: 3px;
+    margin-top: -5px;
+    background-color: #312219;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 2000px;
+    height: 3px;
+    margin-left: size(20);
+    margin-top: -15px;
+    background-color: #312219;
+  }
 }
 
 .desc {
@@ -204,8 +229,27 @@
     left: auto;
     margin-left: size-m(31);
     margin-top: size-m(37);
-    width: size-m(295);
+    // width: size-m(295);
     white-space: nowrap;
+
+    &::before {
+      content: '';
+      display: block;
+      width: size-m(51);
+      left: size-m(-31);
+      position: absolute;
+      height: 2px;
+      background-color: #312219;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 2000px;
+      height: 2px;
+      margin-left: size-m(20);
+      background-color: #312219;
+    }
   }
 
   .desc {

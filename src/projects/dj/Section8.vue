@@ -2,7 +2,7 @@
   <div class="relative">
     <div v-if="!isMobile">
       <img
-        src="./s8/bg.jpg"
+        v-lazy="require('./s8/bg.jpg')"
         alt=""
         class="bg-img"
       >
@@ -42,7 +42,7 @@
       class="relative"
     >
       <img
-        src="./mo/8/bg.jpg"
+        v-lazy="require('./mo/8/bg.jpg')"
         alt=""
         class="bg-img"
       >
@@ -111,6 +111,31 @@
   color: #fff;
   top: size(72);
   left: size(248);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+
+  &::before {
+    content: '';
+    display: block;
+    width: size(248);
+    left: size(-268);
+    position: absolute;
+    height: 3px;
+    margin-top: -5px;
+    background-color: #fff;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 2000px;
+    height: 3px;
+    margin-left: size(20);
+    margin-top: -15px;
+    background-color: #fff;
+  }
 }
 
 .desc {
@@ -193,6 +218,27 @@
     font-size: size-m(37);
     top: size-m(36);
     left: size-m(30);
+
+    &::before {
+      content: '';
+      display: block;
+      width: size-m(51);
+      left: size-m(-61);
+      position: absolute;
+      margin-top: -5px;
+      height: 2px;
+      background-color: #fff;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 2000px;
+      height: 2px;
+      margin-top: -5px;
+      margin-left: size-m(20);
+      background-color: #fff;
+    }
   }
 
   .desc {

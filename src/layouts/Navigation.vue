@@ -3,11 +3,22 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
-          <img class="logo" src="@/assets/img/nav-logo.png" alt v-scroll-to="{ element: `#section1` }" />
-          <div class="menu" @click="toggleSidebar">
+          <img
+            class="logo"
+            src="@/assets/img/nav-logo.png"
+            alt
+            v-scroll-to="{ element: `#section1` }"
+          />
+          <div
+            class="menu"
+            @click="toggleSidebar"
+          >
             <font-awesome-icon icon="bars" />
           </div>
-          <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
+          <div
+            :class="`mask ${isOpen ? 'open' : ''}`"
+            @click="toggleSidebar"
+          />
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
             <li
               :key="item.name"
@@ -17,7 +28,11 @@
               @click="toggleSidebar"
             >
               <span class="link">
-                <img v-if="item.imgSrc" :src="item.imgSrc" alt />
+                <img
+                  v-if="item.imgSrc"
+                  :src="item.imgSrc"
+                  alt
+                />
                 <span>
                   <div class="title">{{item.name}}</div>
                   <span class="subTitle">{{item.subTitle}}</span>
@@ -109,7 +124,7 @@ export default {
 }
 
 .logo {
-  width:auto;
+  width: auto;
   height: 66%;
   cursor: pointer;
   position: absolute;
@@ -146,12 +161,13 @@ export default {
     position: relative;
     overflow: hidden;
     // border-right: 1px solid $nav_link_hover_bg;
-    > span{z-index: 3;}
+    > span {
+      z-index: 3;
+    }
     &:hover {
       background-color: $nav_link_hover_bg;
       img {
       }
-    
     }
 
     @keyframes r5 {
@@ -376,7 +392,7 @@ export default {
     right: 0;
     background: rgba(255, 255, 255, 0.8);
     position: fixed;
-    z-index:-1;
+    z-index: -1;
     height: calc(100vh - #{$nav_phone_height});
     opacity: 0;
     transition: all 0.3s ease-in;
@@ -384,7 +400,7 @@ export default {
       display: block;
       width: 100vw;
       opacity: 1;
-    z-index: 110;
+      z-index: 110;
     }
   }
 }

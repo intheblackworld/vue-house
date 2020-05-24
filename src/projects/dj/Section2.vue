@@ -1,7 +1,7 @@
 <template>
   <div class="relative">
     <div v-if="!isMobile">
-      <img src="./s2/6332.jpg" alt="" class="bg-img cloud">
+      <img v-lazy="require('./s2/6332.jpg')" alt="" class="bg-img cloud">
       <div class="title absolute" data-aos="fade-up" data-aos-delay="300">
         Location
       </div>
@@ -13,7 +13,7 @@
       v-else
       class="relative"
     >
-      <img src="./mo/2/bg.jpg" alt="" class="bg-img cloud">
+      <img v-lazy="require('./mo/2/bg.jpg')" alt="" class="bg-img cloud">
       <div class="title absolute" data-aos="fade-up" data-aos-delay="300">
         Location
       </div>
