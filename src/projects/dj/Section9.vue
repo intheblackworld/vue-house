@@ -2,10 +2,10 @@
   <div class="relative">
     <div v-if="!isMobile">
       <img v-lazy="require('./s9/bg.jpg')" alt="" class="bg-img">
-      <div class="title absolute" data-aos="fade-up" data-aos-delay="300">
+      <div class="title absolute" data-aos="fade-up" data-aos-delay="300" data-aos-offset="0">
         Space
       </div>
-      <h3 class="desc absolute" data-aos="fade-up" data-aos-delay="500">
+      <h3 class="desc absolute" data-aos="fade-up" data-aos-delay="500" data-aos-offset="0">
         空間大一點 生活大不同
       </h3>
     </div>

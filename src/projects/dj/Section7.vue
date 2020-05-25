@@ -34,6 +34,7 @@
         class="img-title absolute"
         data-aos="fade"
         data-aos-delay="700"
+        data-aos-offset="0"
       >
 
         基地臨20米大興路＋埔心溪<br />
@@ -43,6 +44,7 @@
         class="img-desc absolute"
         data-aos="fade-up"
         data-aos-delay="900"
+        data-aos-offset="0"
       >
         「豐郡大景」基地三面臨路，坐擁大興路＋埔心溪永久棟距，<br />
         景觀視野寬闊，區域內總計有14座公園，繁華與自然，同時兼得。

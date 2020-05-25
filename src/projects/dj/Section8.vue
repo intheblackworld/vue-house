@@ -24,6 +24,7 @@
         class="img-title absolute"
         data-aos="fade"
         data-aos-delay="700"
+        data-aos-offset="0"
       >
         開窗即享 無價壯闊視野<br />舒心美景近在眼前
       </div>
@@ -31,6 +32,7 @@
         class="img-desc absolute"
         data-aos="fade-up"
         data-aos-delay="900"
+        data-aos-offset="0"
       >
         家，不僅是讓身體居住的容器<br />
         還必須能讓人的內心安穩、豐富…在「豐郡大景」<br />

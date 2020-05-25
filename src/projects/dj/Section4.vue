@@ -19,6 +19,7 @@
         class="img-title absolute"
         data-aos="fade"
         data-aos-delay="600"
+        data-aos-offset="100"
       >
         亞洲.矽谷＋航空城千億開發計畫<br />世界都在看！
       </div>
