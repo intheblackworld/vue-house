@@ -19,7 +19,7 @@
         class="img-title absolute"
         data-aos="fade"
         data-aos-delay="600"
-        data-aos-offset="100"
+        data-aos-offset="-500"
       >
         亞洲.矽谷＋航空城千億開發計畫<br />世界都在看！
       </div>
@@ -27,6 +27,7 @@
         class="img-desc absolute"
         data-aos="fade-up"
         data-aos-delay="800"
+        data-aos-offset="-500"
       >
         台灣兩大國家級建設皆位於桃園，<br />
         包含「桃園航空城」、「亞洲.矽谷」、「前瞻基礎建設」，<br />

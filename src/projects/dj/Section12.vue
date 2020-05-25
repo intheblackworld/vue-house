@@ -24,7 +24,7 @@
         class="img-title absolute"
         data-aos="fade"
         data-aos-delay="700"
-        data-aos-offset="0"
+        data-aos-offset="-500"
       >
 
         空間大一點 用心多一點<br />生活不止好一點點
@@ -33,7 +33,7 @@
         class="img-desc absolute"
         data-aos="fade-up"
         data-aos-delay="900"
-        data-aos-offset="0"
+        data-aos-offset="-500"
       >
         豐郡建設回歸人性尺度，拒絕因應市場潮流，限縮生活空間，只為多隔一房，無論兩房、三房均規劃獨立廚房，大展廚藝不必擔心油煙問題；<br /><br />貼心規劃前後陽台，客廳前陽台可作為蒔花弄草的空間，另有獨立工作陽台，洗曬衣物，不必擔心隱私的困擾。
       </div>
