@@ -41,8 +41,6 @@
         v-lazy="require('./s4/img2.jpg')"
         alt=""
         class="img2 absolute"
-        data-aos="fade-left"
-        data-aos-delay="1000"
       >
     </div>
     <div
@@ -93,7 +91,7 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .relative {
-  height: calc(100vh - 80px);
+  height:  size(1080);
   overflow: hidden;
   background-color: #fff;
 }
@@ -196,8 +194,8 @@
 }
 
 .img2 {
-  width: size(880);
-  height:100vh;
+  width: 45%;
+  height:100%;
   object-fit: cover;
   top: 0;
   right: 0;

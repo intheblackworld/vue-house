@@ -85,6 +85,7 @@
 }
 
 @media screen and (max-width: 767px) {
+  .relative{height:calc(100vh - 123px);}
   .bg-img {
     height: auto;
     object-fit: cover;
@@ -98,7 +99,7 @@
 
   .desc {
     font-size: size-m(21);
-    top: size-m(182);
+    top: size-m(200);
     left: size-m(31);
   }
 }

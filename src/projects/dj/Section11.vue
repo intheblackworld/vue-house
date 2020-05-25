@@ -101,7 +101,7 @@
 }
 .bg-img {
   width: 100vw;
-  height: 100vh;
+  height: size(1080);
   position: absolute;
   display: block;
   top: 0;
@@ -183,7 +183,7 @@
 
 .img-desc {
   font-size: size(20);
-  font-weight: 400;
+  font-weight: 200;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.41;
@@ -198,7 +198,7 @@
 .mask {
   width: size(772);
   height: size(440);
-  background: linear-gradient(to right bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  background: linear-gradient(to left top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   z-index: 1;
   right: 0;
   bottom: 0;
@@ -271,7 +271,6 @@
   .img-desc {
     width: size-m(321);
     font-size: size-m(13);
-    font-weight: 500;
     top: size-m(190);
     left: size-m(30);
   }

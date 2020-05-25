@@ -2,11 +2,6 @@
   <div class="relative">
     <div v-if="!isMobile">
       <img
-        v-lazy="require('./s7/3.png')"
-        alt=""
-        class="bg-img"
-      >
-      <img
         v-lazy="require('./s7/1.png')"
         alt=""
         class="bg-img cloud"
@@ -15,6 +10,11 @@
         v-lazy="require('./s7/2.png')"
         alt=""
         class="bg-img cloud cloud1"
+      >
+      <img
+        v-lazy="require('./s7/3.png')"
+        alt=""
+        class="bg-img"
       >
       <div
         class="title absolute"
@@ -55,11 +55,6 @@
       class="relative"
     >
       <img
-        v-lazy="require('./mo/7/3.png')"
-        alt=""
-        class="bg-img"
-      >
-      <img
         v-lazy="require('./mo/7/1.png')"
         alt=""
         class="bg-img cloud"
@@ -68,6 +63,11 @@
         v-lazy="require('./mo/7/2.png')"
         alt=""
         class="bg-img cloud cloud1"
+      >
+      <img
+        v-lazy="require('./mo/7/3.png')"
+        alt=""
+        class="bg-img"
       >
       <div
         class="title absolute"
@@ -108,17 +108,18 @@
 .relative {
   // height: 100vh;
   overflow: hidden;
+  background: #FFF;
 }
 .bg-img {
   width: 100vw;
-  height: 100vh;
+  height:size(1080);
   position: absolute;
   display: block;
   top: 0;
   left: 0;
   object-fit: cover;
 
-  &:nth-child(1) {
+  &:nth-child(3) {
     position: relative;
   }
 }
@@ -203,25 +204,21 @@
 }
 
 .cloud {
-  animation: clouda 2.5s ease-in-out infinite;
+  animation: clouda 4s ease-in-out alternate infinite;
+    transform: translateX(-5%);left:size(-50);
 }
 
 .cloud1 {
-  animation: clouda 2.5s 1s ease-in-out infinite;
+  animation: clouda 4s 1s ease-in-out alternate infinite;
+    transform: translateX(-10%);left:size(50);
 }
 
 @keyframes clouda {
-  0% {
-    left: 0px;
+
+ to {
+    transform: translateX(0);
   }
 
-  50% {
-    left: 15px;
-  }
-
-  100% {
-    left: 0px;
-  }
 }
 @media only screen and (max-width: 1440px) {
   .bg-img {
@@ -278,14 +275,14 @@
   .img-title {
     width: size-m(236);
     font-size: size-m(18);
-    top: size-m(125);
+    top: size-m(120);
     left: size-m(30);
   }
 
   .img-desc {
     width: size-m(236);
     font-size: size-m(13);
-    top: size-m(190);
+    top: size-m(185);
     left: size-m(30);
   }
 }

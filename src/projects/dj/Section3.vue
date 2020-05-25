@@ -39,20 +39,26 @@
       >
         「豐郡大景」位居交通中心—大竹重劃區，<br />鄰近一高、二高、機場支線，將通便捷，房價親民。
       </div>
+      <div
+        class="img1 absolute"
+        data-aos="fade-left"
+        data-aos-delay="700">
       <img
         v-lazy="require('./s3/img1.jpg')"
         alt=""
-        class="img1 absolute"
-        data-aos="fade-left"
-        data-aos-delay="700"
       >
+      <p>大竹交流道</p>
+      </div>
+      <div
+        class="img2 absolute"
+        data-aos="fade-left"
+        data-aos-delay="900">
       <img
         v-lazy="require('./s3/img2.jpg')"
         alt=""
-        class="img2 absolute"
-        data-aos="fade-left"
-        data-aos-delay="900"
       >
+      <p>中壢休息區</p>
+      </div>
     </div>
     <div
       class="relative"
@@ -103,6 +109,7 @@
 .relative {
   // height: 100vh;
   overflow: hidden;
+  background: #FFF;
 }
 .bg-img {
   width: 100vw;
@@ -196,15 +203,33 @@
 }
 
 .img1 {
-  width: size(435);
   top: size(240);
   left: size(1050);
+  img{
+  width: size(435);}
+  p{
+    position: absolute;
+    right: 0;bottom: 0;
+    color:#fff;
+    background: rgba($color: #000000, $alpha: 0.4);
+    padding: 0.3em 0.8em;
+    font-size: 0.7em;
+  }
 }
 
 .img2 {
-  width: size(277);
   top: size(240);
   left: size(1495);
+  img{
+  width: size(277);}
+  p{
+    position: absolute;
+    right: 0;bottom: 0;
+    color:#fff;
+    background: rgba($color: #000000, $alpha: 0.4);
+    padding: 0.3em 0.8em;
+    font-size: 0.7em;
+  }
 }
 @media only screen and (max-width: 1440px) {
   .bg-img {

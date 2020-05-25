@@ -53,7 +53,7 @@
   letter-spacing: -3.78px;
   text-align: left;
   color: #b0b1b1;
-  top: size(245);
+  top: size(240);
   left: size(249);
 }
 
@@ -66,7 +66,7 @@
   letter-spacing: 5.46px;
   text-align: left;
   color: #595757;
-  top: size(369);
+  top: size(390);
   left: size(254);
 }
 @media only screen and (max-width: 1440px) {
@@ -90,15 +90,16 @@
     object-fit: cover;
   }
 
+
   .title {
-    font-size: size-m(85);
-    top: size-m(30);
+    font-size: size-m(50);
+    top: size-m(100);
     left: size-m(31);
   }
 
   .desc {
     font-size: size-m(21);
-    top: size-m(143);
+    top: size-m(182);
     left: size-m(31);
   }
 }
