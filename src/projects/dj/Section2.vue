@@ -45,7 +45,7 @@
 
 .title {
   font-family: TrajanPro;
-  font-size: size(94.6);
+  font-size: size(95);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -53,7 +53,7 @@
   letter-spacing: -3.78px;
   text-align: left;
   color: #ffffff;
-  top: size(245);
+  top: size(225);
   left: size(249);
 }
 
@@ -66,7 +66,7 @@
   letter-spacing: 5.46px;
   text-align: left;
   color: #231815;
-  top: size(369);
+  top: size(380);
   left: size(254);
 }
 @media only screen and (max-width: 1440px) {

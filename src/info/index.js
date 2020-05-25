@@ -1,20 +1,20 @@
 export default {
-  address: '新北市新店區北新路一段110號',
+  address: '桃園市蘆竹區大興路271號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.8925090794046!2d121.5400699154461!3d24.969771547016155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346801f49b6b1155%3A0x9e06fa553dddb8f9!2zMjMx5paw5YyX5biC5paw5bqX5Y2A5YyX5paw6Lev5LiA5q61MTEw6Jmf!5e0!3m2!1szh-TW!2stw!4v1586257522850!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/m5yB2m8hxTh9jhzo7',
-  phone: '02-29156111',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7230.9960651246065!2d121.25284363490806!3d25.017167214282612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468202b8c0d6a65%3A0xbeba6a66370564d3!2zMzM45qGD5ZyS5biC6JiG56u55Y2A5aSn6IiI6LevMjcx6Jmf!5e0!3m2!1szh-TW!2stw!4v1590377353061!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/Bn6zU3ZA32NUT7oY7',
+  phone: '03-3135533',
   fbLink: 'https://www.facebook.com/w25prince/',
   fbMessage: 'https://m.me/w25prince',
-  caseName: 'W太子',
+  caseName: '豐郡大景',
   indigatorLength: 10,
 
   houseInfos: [
-    ['投資興建', '太子建設'],
-    ['建築規劃', '呂建勳建築師事務所'],
-    ['經紀人', '許惠娟（98）北縣字第001948號'],
-    ['建築代銷', 'Z.A 政安廣告'],
-    ['使用執照', '108店使字第00294號'],
+  //  ['投資興建', '太子建設'],
+  //  ['建築規劃', '呂建勳建築師事務所'],
+  //  ['經紀人', '許惠娟（98）北縣字第001948號'],
+   // ['建築代銷', 'Z.A 政安廣告'],
+   // ['使用執照', '108店使字第00294號'],
   ],
 
   gtmCode: ['TSSWDJT'], // 可放置多個

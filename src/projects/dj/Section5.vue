@@ -117,7 +117,7 @@
 }
 .bg-img {
   width: 100vw;
-  height: 100vh;
+ // height: 100vh;
   position: absolute;
   display: block;
   top: 0;

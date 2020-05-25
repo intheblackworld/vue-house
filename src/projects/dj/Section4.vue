@@ -196,7 +196,7 @@
 
 .img2 {
   width: size(880);
-  height: size(1080);
+  height:100vh;
   object-fit: cover;
   top: 0;
   right: 0;

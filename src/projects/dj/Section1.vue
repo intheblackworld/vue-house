@@ -1,10 +1,10 @@
 <template>
   <div class="relative">
     <div v-if="!isMobile">
-      <img src="./s1/1.png" alt="" class="bg-img cloud" data-aos="fade" data-aos-delay="400">
-      <img src="./s1/2.png" alt="" class="bg-img" data-aos="fade" data-aos-delay="300">
+      <img src="./s1/1.png" alt="" class="bg-img cloud">
+      <img src="./s1/2.png" alt="" class="bg-img cloud">
       <img src="./s1/3.png" alt="" class="bg-img" data-aos="fade" data-aos-delay="500">
-      <img src="./s1/4.png" alt="" class="bg-img" data-aos="fade" data-aos-delay="600">
+      <img src="./s1/4.png" alt="" class="bg-img" data-aos="fade-right" data-aos-delay="600">
       <img src="./s1/空間大寬敞.png" alt="" class="absolute left1" data-aos="zoom-in-up" data-aos-delay="700">
       <img src="./s1/生活大悠閒.png" alt="" class="absolute left2" data-aos="zoom-in-up" data-aos-delay="800">
       <img src="./s1/房價大輕鬆.png" alt="" class="absolute left3" data-aos="zoom-in-up" data-aos-delay="900">
@@ -29,6 +29,7 @@
 .relative {
   // height: 100vh;
   overflow: hidden;
+  background: #eee4cb;
 }
 .bg-img {
   width: 100vw;
@@ -45,56 +46,49 @@
 }
 
 .left1 {
-  left: size(96);
-  top: size(434);
+  left: size(100);
+  bottom:40vh;
   width: size(198);
 }
 
 .left2 {
   left: size(325);
-  top: size(530);
+  bottom:39vh;
   width: size(142);
 }
 
 .left3 {
   left: size(492);
-  top: size(337);
+  bottom:53vh;
   width: size(154);
 }
 
 .left4 {
   left: size(635);
-  top: size(431);
+  bottom:43vh;
   width: size(230);
 }
 
 .left5 {
   left: size(854);
-  top: size(222);
+  bottom:56vh;
   width: size(209);
 }
 
 .title {
   right: size(118);
-  top: size(242);
+  bottom:56vh;
   width: size(607);
 }
 
 .cloud {
-  animation: clouda 2.5s ease-in-out infinite;
+  animation: clouda 2.5s ease-in-out alternate infinite;
 }
 
 @keyframes clouda {
-  0% {
-    left: 0px;
-  }
 
-  50% {
-    left: 15px;
-  }
-
-  100% {
-    left: 0px;
+  to{
+    left: 20px;
   }
 }
 
