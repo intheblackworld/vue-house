@@ -1,8 +1,8 @@
 <template>
   <div class="relative">
     <div v-if="!isMobile">
-      <img src="./s1/1.png" alt="" class="bg-img cloud">
-      <img src="./s1/2.png" alt="" class="bg-img cloud">
+      <img src="./s1/1.png" alt="" class="bg-img cloud1">
+      <img src="./s1/2.png" alt="" class="bg-img cloud2">
       <img src="./s1/3.png" alt="" class="bg-img" data-aos="fade" data-aos-delay="500">
       <img src="./s1/4.png" alt="" class="bg-img" data-aos="fade-right" data-aos-delay="600">
       <img src="./s1/空間大寬敞.png" alt="" class="absolute left1" data-aos="zoom-in-up" data-aos-delay="700">
@@ -46,33 +46,33 @@
 }
 
 .left1 {
-  left: size(100);
-  bottom:40vh;
-  width: size(198);
+  left:calc(50% - 78vmin);
+  bottom:38vh;
+  width: 18vmin;
 }
 
 .left2 {
-  left: size(325);
-  bottom:39vh;
-  width: size(142);
+  left:calc(50% - 57vmin);
+  bottom:37vh;
+  width: 13vmin;
 }
 
 .left3 {
-  left: size(492);
+  left:calc(50% - 43vmin);
   bottom:53vh;
-  width: size(154);
+  width: 14vmin;
 }
 
 .left4 {
-  left: size(635);
+  left:calc(50% - 29vmin);
   bottom:43vh;
-  width: size(230);
+  width: 21vmin;
 }
 
 .left5 {
-  left: size(854);
+  left:calc(50% - 9vmin);
   bottom:56vh;
-  width: size(209);
+  width: 19vmin;
 }
 
 .title {
@@ -81,14 +81,19 @@
   width: size(607);
 }
 
-.cloud {
-  animation: clouda 2.5s ease-in-out alternate infinite;
+.cloud1 {
+  animation: clouda 5s ease-in-out alternate infinite;
+    left: 60px;
+}
+.cloud2 {
+  animation: clouda 5s 0.5s ease-in-out alternate infinite;
+    left: 30px;
 }
 
 @keyframes clouda {
 
   to{
-    left: 20px;
+    left: 0;
   }
 }
 

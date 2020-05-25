@@ -153,13 +153,14 @@ export default {
     text-align: center;
     display: block;
     cursor: pointer;
-    padding: 0 20px;
+    padding: 0 1em;
     transition: all 0.8s;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
+      font-size:20px !important;
     // border-right: 1px solid $nav_link_hover_bg;
     > span {
       z-index: 3;
@@ -219,9 +220,9 @@ export default {
     //  }
 
     .title {
-      font-size: size(39) !important;
       position: relative;
       z-index: 3;
+      margin:0.8em 0 0 0 ;
     }
 
     .subTitle {
@@ -233,7 +234,7 @@ export default {
     img {
       width: calc(100vw * 50 / 1920);
       height: auto;
-      margin-right: 10px;
+      margin-right: 10px;vertical-align: text-bottom;
     }
   }
 }
