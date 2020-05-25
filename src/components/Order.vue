@@ -1,6 +1,8 @@
 <template>
   <div class="order-bg">
-    <!-- <img src="@/projects/fs/order/bg.png" alt="" class="bg-img"> -->
+    <img src="@/projects/dj/s13/1.png" alt="" class="bg-img cloud1" v-if="!isMobile">
+    <img src="@/projects/dj/s13/2.png" alt="" class="bg-img cloud2" v-if="!isMobile">
+    <img src="@/projects/dj/s13/1_m.png" alt="" class="bg-img cloud3" v-if="isMobile">
     <!-- <img src="@/projects/fs/order/bg1.png" alt="" class="bg-img no-mix"> -->
     <!-- <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile"> -->
     <div class="order-top">
@@ -309,16 +311,19 @@ export default {
 }
 .order-bg {
   background-color: $order_bg_color;
-  background-image: $order_bg_image;
+  //background-image: $order_bg_image;
   background-repeat: no-repeat;
   position: relative;
   padding-top: 130px;
-  background-position: 0% 43%;
-  background-size: 1920px;
+  background-position:center calc(100% - 555px);
+  background-size:auto;
+  background-image: $order_bg_image;
 
   .order-top {
     position: relative;
     overflow: hidden;
+  background:no-repeat center bottom;
+  background-size:contain;
   }
   .order-title {
     width: 100vw;
@@ -407,6 +412,30 @@ export default {
     margin-bottom: 20px;
   }
 }
+.cloud1 {
+  top:10vw;
+  animation: clouda 8s ease-in-out alternate infinite;
+    transform: translateX(-3%);
+}
+.cloud2 {
+  top:25vw;
+  left: 20vw;
+  animation: clouda 8s 1.5s ease-in-out alternate infinite;
+    transform: translateX(-6%);
+}
+.cloud3 {
+  width:calc(100vw * 1600 / 750);
+  top:0vw;
+  left:calc(50% - 107vw);
+  animation: clouda 8s 1.5s ease-in-out alternate infinite;
+    transform: translateX(-10%);
+}
+@keyframes clouda {
+
+  to{
+    transform: translateX(0);
+  }
+}
 
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -428,7 +457,6 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .order-bg {
-    background-image: $order_bg_image_m;
     padding-top: 40px;
     margin: 0;
     position: relative;
@@ -442,7 +470,10 @@ export default {
       padding-bottom: 5px;
       font-size: calc(100vw * 38 / 375);
     }
-
+.order-top{
+    background-image: $order_bg_image_m;
+    padding-bottom: 40px;
+    }
     .order-subtitle {
       // display: none;
       font-size: 21px;

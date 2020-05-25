@@ -53,7 +53,7 @@
   letter-spacing: -3.78px;
   text-align: left;
   color: #ffffff;
-  top: size(96);
+  top: size(70);
   left: size(249);
 }
 
@@ -66,7 +66,7 @@
   letter-spacing: 5.46px;
   text-align: left;
   color: #ffffff;
-  top: size(215);
+  top: size(220);
   left: size(254);
 }
 @media only screen and (max-width: 1440px) {
@@ -85,14 +85,17 @@
 }
 
 @media screen and (max-width: 767px) {
+  .relative{
+    height: calc(100vh - 123px);
+  }
   .bg-img {
-    height: size-m(490);
+    height:100%;
     object-fit: cover;
   }
 
   .title {
     font-size: size-m(50);
-    top: size-m(119);
+    top: size-m(100);
     left: size-m(31);
   }
 

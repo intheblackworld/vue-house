@@ -168,61 +168,28 @@ export default {
     &:hover {
       background-color: $nav_link_hover_bg;
       img {
+        animation: r5 0.3s alternate infinite;
+        transform-origin: 50% 100%;
       }
+    .title {
+      margin:0.5em 0 0 0 ;
+    }
     }
 
     @keyframes r5 {
       0% {
-        transform: rotate(0deg);
+        transform: skewX(-2deg);
       }
       100% {
-        transform: rotate(5deg);
+        transform:skewX(2deg);
       }
     }
-
-    //  &::before {
-    //    content: '';
-    //    width: 0%;
-    //    height: 100%;
-    //    display: block;
-    //    background: $nav_link_hover_bg; // second bg
-    //    position: absolute;
-    //    transform: skewX(-20deg);
-    //    left: -10%;
-    //    opacity: 1;
-    //    top: 0;
-    //    z-index: 2;
-    //    transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
-    //  }
-
-    //  &::after {
-    //    content: '';
-    //    width: 0%;
-    //    height: 100%;
-    //    display: block;
-    //    background: #fff9; // first bg
-    //    position: absolute;
-    //    transform: skewX(-20deg);
-    //    left: -10%;
-    //    opacity: 0;
-    //    top: 0;
-    //    z-index: 1;
-    //    transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
-    //    // box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
-    //  }
-    //  &:hover::before {
-    //    opacity: 1;
-    //    width: 150%;
-    //  }
-    //  &:hover::after {
-    //    opacity: 1;
-    //    width: 150%;
-    //  }
 
     .title {
       position: relative;
       z-index: 3;
       margin:0.8em 0 0 0 ;
+      transition: all 0.3s;
     }
 
     .subTitle {

@@ -1,14 +1,7 @@
 @keyframes swing {
-  0% {
-    transform: translateX(20px);
-  }
 
-  50% {
-    transform: translateX(-20px);
-  }
-
-  100% {
-    transform: translateX(20px);
+ to {
+    transform: translateX(-15%);
   }
 }
 
@@ -54,7 +47,7 @@
     width: 100vw;
     .map-bg {
       width: auto;
-      height: 100vh;
+      height: calc(100vh - 123px - 31vw);
     }
 
     .map-text {
@@ -68,22 +61,21 @@
     }
 
     .mask {
-      animation: swing 2.5s ease-in-out 0s infinite;
-      left: 100vw;
+    //  animation: swing 2.5s ease-in-out 0s infinite;
+      left: 50%;
     }
 
     .hand {
       position: absolute;
       z-index: 2;
       display: block;
-      width: 112px !important;
+      width:calc(100vw * 112/375) !important;
       height: auto !important;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
+      left: 50%;
       top: 25% !important;
       display: block;
-      animation: swing 2.5s ease-in-out 0s infinite;
+      animation: swing 1s linear 0s alternate infinite;
+      transform: translateX(5%);
     }
   }
 }

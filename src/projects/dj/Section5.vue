@@ -36,8 +36,6 @@
         v-lazy="require('./s5/img1.jpg')"
         alt=""
         class="img1 absolute"
-        data-aos="fade-right"
-        data-aos-delay="1000"
       >
       <div class="img-slide">
         <img
@@ -111,7 +109,7 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .relative {
-  height: calc(100vh - 80px);
+  height:  size(1080);
   overflow: hidden;
   background-color: #fff;
 }
@@ -196,7 +194,7 @@
   right: size(310);
 }
 .img1 {
-  width: size(1040);
+  width:55%;
   height: size(1080);
   object-fit: cover;
   top: 0;

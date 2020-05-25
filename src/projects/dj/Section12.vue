@@ -169,11 +169,11 @@
   font-style: normal;
   line-height: 1.41;
   letter-spacing: 1.2px;
-  text-align: left;
+  text-align:justify;
   color: #231815;
   top: size(417);
   left: size(258);
-  width: size(366);
+  width: size(390);
 }
 
 @media only screen and (max-width: 1440px) {
@@ -198,7 +198,7 @@
   }
 
   .title {
-    font-size: size-m(37);
+    font-size: size-m(26);
     top: size-m(36);
     left: size-m(30);
     
@@ -226,24 +226,22 @@
 
   .desc {
     font-size: size-m(17);
-    top: size-m(93);
+    top: size-m(69);
     left: size-m(30);
   }
 
   .img-title {
     width: size-m(236);
     font-size: size-m(18);
-    top: size-m(125);
+    top: size-m(120);
     left: size-m(30);
   }
 
   .img-desc {
-    width: size-m(278);
+    width: size-m(300);
     font-size: size-m(13);
-    top: size-m(190);
+    top: size-m(185);
     left: size-m(30);
-    border: none;
-    padding: 0;
   }
 }
 </style>

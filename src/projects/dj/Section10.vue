@@ -98,7 +98,7 @@
 }
 .bg-img {
   width: 100vw;
-  height: 100vh;
+  height: size(1080);
   position: absolute;
   display: block;
   top: 0;
@@ -167,7 +167,7 @@
 
 .img-title {
   font-size: size(35);
-  font-weight: 500;
+  font-weight: 400;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.39;
@@ -181,7 +181,7 @@
 
 .img-desc {
   font-size: size(20);
-  font-weight: 400;
+  font-weight: 100;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.41;
@@ -272,7 +272,6 @@
   .img-desc {
     width: size-m(321);
     font-size: size-m(13);
-    font-weight: 500;
     top: size-m(190);
     left: size-m(30);
   }

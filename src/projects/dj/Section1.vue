@@ -16,8 +16,8 @@
       v-else
       class="fullscreen"
     >
-      <img src="./mo/1/1.png" alt="" class="bg-img mt cloud" data-aos="fade" data-aos-delay="400">
-      <img src="./mo/1/2.png" alt="" class="bg-img mt" data-aos="fade" data-aos-delay="300">
+      <img src="./mo/1/1.png" alt="" class="bg-img cloud1">
+      <img src="./mo/1/2.png" alt="" class="bg-img cloud2">
       <img src="./mo/1/3.png" alt="" class="bg-img" data-aos="fade" data-aos-delay="500">
       <img src="./mo/1/4.png" alt="" class="bg-img" data-aos="fade" data-aos-delay="600">
       <img src="./mo/1/logo.png" alt="" class="absolute title" data-aos="zoom-in-up" data-aos-delay="1200">
@@ -83,17 +83,17 @@
 
 .cloud1 {
   animation: clouda 5s ease-in-out alternate infinite;
-    left: 60px;
+    transform: translateX(-3%);
 }
 .cloud2 {
   animation: clouda 5s 0.5s ease-in-out alternate infinite;
-    left: 30px;
+    transform: translateX(-6%);
 }
 
 @keyframes clouda {
 
   to{
-    left: 0;
+    transform: translateX(0);
   }
 }
 
@@ -114,17 +114,45 @@
 
 @media screen and (max-width: 767px) {
   .bg-img {
-    height: auto;
+    height:auto;
+    top:auto;
+    bottom: 0;
+  &:nth-child(1) {
+    position: absolute;
+  }
   }
   .title {
     width: size-m(289);
     right: size-m(43);
-    top: size-m(123);
+    top:calc(32vh - 20vw);
   }
 
   .mt {
     margin-top: 60px;
   }
+.cloud1 {
+  height: size-m(604);
+  left: 50%;
+    top:auto;
+    bottom: 0;
+  width:auto;
+    transform: translateX(-55%);
+}
+.cloud2 {
+  height: size-m(604);
+  left: 50%;
+    top:auto;
+    bottom: 0;
+  width:auto;
+    transform: translateX(-60%);
+}
+
+@keyframes clouda {
+
+  to{
+    transform: translateX(-45%);
+  }
+}
 }
 </style>
 <script>
