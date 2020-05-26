@@ -1,10 +1,16 @@
 <template>
-  <div class="relative">
+  <div
+    class="relative"
+    v-touch:swipe.left="decIndex"
+    v-touch:swipe.right="addIndex"
+  >
     <div v-if="!isMobile">
       <img
-        v-lazy="require('./s11/1.jpg')"
+        v-for="(src, index) in img_list"
+        :key="src"
+        :src="src"
         alt=""
-        class="bg-img"
+        :class="`slide-img ${index === slideIndex ? 'show' : ''}`"
       >
       <div
         class="title absolute"
@@ -81,7 +87,11 @@
         室內無柱、格局開闊，空間自由揮灑，<br />
         可依人生不同階段彈性規劃，不必頻頻換屋。
       </div>
-      <div class="img-slide">
+      <div
+        class="img-slide"
+        v-touch:swipe.left="decIndex"
+        v-touch:swipe.right="addIndex"
+      >
         <img
           v-for="(src, index) in img_list"
           :key="src"
@@ -99,6 +109,9 @@
   // height: 100vh;
   overflow: hidden;
 }
+img {
+  pointer-events: none;
+}
 .bg-img {
   width: 100vw;
   height: size(1080);
@@ -112,7 +125,19 @@
     position: relative;
   }
 }
-
+.slide-img {
+  width: 100vw;
+  height: size(1080);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all 0.3s;
+  &.show {
+    position: relative;
+    opacity: 1;
+  }
+}
 .title {
   font-family: TrajanPro;
   font-size: size(60);
@@ -123,6 +148,7 @@
   letter-spacing: -2.37px;
   text-align: left;
   color: #fff;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
   top: size(72);
   left: size(1081);
   z-index: 2;
@@ -162,6 +188,7 @@
   letter-spacing: 1.76px;
   text-align: left;
   color: #fff;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
   top: size(145);
   left: size(1084);
   z-index: 2;
@@ -275,16 +302,8 @@
     left: size-m(30);
   }
   .slide-img {
-    position: absolute;
     width: 100%;
-    height:size-m(283);
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: all 0.3s;
-    &.show {
-      opacity: 1;
-    }
+    height: size-m(283);
   }
 
   .img-slide {
@@ -315,31 +334,47 @@ export default {
   data() {
     return {
       isMobile,
-      slideIndex: 1,
+      slideIndex: 0,
       img_list: [
         require('./s11/1.jpg'),
         require('./s11/2.jpg'),
         require('./s11/3.jpg'),
         require('./s11/4.jpg'),
         require('./s11/5.jpg'),
+        require('./s11/6.jpg'),
+        require('./s11/7.jpg'),
       ],
     }
   },
 
-  methods: {},
+  methods: {
+    decIndex() {
+      if (this.slideIndex === 0) {
+        this.slideIndex = this.img_list.length - 1
+      } else {
+        this.slideIndex = this.slideIndex - 1
+      }
+    },
+
+    addIndex() {
+      if (this.slideIndex === this.img_list.length - 1) {
+        this.slideIndex = 1
+      } else {
+        this.slideIndex++
+      }
+    },
+  },
 
   created() {},
 
   mounted() {
-    if (this.isMobile) {
-      setInterval(() => {
-        if (this.slideIndex === 5) {
-          this.slideIndex = 0
-        } else {
-          this.slideIndex = this.slideIndex + 1
-        }
-      }, 3000)
-    }
+    setInterval(() => {
+      if (this.slideIndex === 5) {
+        this.slideIndex = 0
+      } else {
+        this.slideIndex = this.slideIndex + 1
+      }
+    }, 3000)
   },
 
   computed: {},

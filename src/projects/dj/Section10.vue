@@ -1,10 +1,16 @@
 <template>
-  <div class="relative">
+  <div
+    class="relative"
+    v-touch:swipe.left="decIndex"
+    v-touch:swipe.right="addIndex"
+  >
     <div v-if="!isMobile">
       <img
-        v-lazy="require('./s10/1.jpg')"
+        v-for="(src, index) in img_list"
+        :key="src"
+        :src="src"
         alt=""
-        class="bg-img"
+        :class="`slide-img ${index === slideIndex ? 'show' : ''}`"
       >
       <div
         class="title absolute"
@@ -276,13 +282,15 @@
     left: size-m(30);
   }
   .slide-img {
+    width: 100vw;
+    height: size(1080);
     position: absolute;
-    width: 100%;
     top: 0;
     left: 0;
     opacity: 0;
     transition: all 0.3s;
     &.show {
+      position: relative;
       opacity: 1;
     }
   }
@@ -326,20 +334,34 @@ export default {
     }
   },
 
-  methods: {},
+  methods: {
+    decIndex() {
+      if (this.slideIndex === 0) {
+        this.slideIndex = this.img_list.length - 1
+      } else {
+        this.slideIndex = this.slideIndex - 1
+      }
+    },
+
+    addIndex() {
+      if (this.slideIndex === this.img_list.length - 1) {
+        this.slideIndex = 1
+      } else {
+        this.slideIndex++
+      }
+    },
+  },
 
   created() {},
 
   mounted() {
-    if (this.isMobile) {
-      setInterval(() => {
-        if (this.slideIndex === 5) {
-          this.slideIndex = 0
-        } else {
-          this.slideIndex = this.slideIndex + 1
-        }
-      }, 3000)
-    }
+    setInterval(() => {
+      if (this.slideIndex === 5) {
+        this.slideIndex = 0
+      } else {
+        this.slideIndex = this.slideIndex + 1
+      }
+    }, 3000)
   },
 
   computed: {},

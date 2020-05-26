@@ -13,7 +13,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import VueScrollTo from 'vue-scrollto' // scroll 錨點
 import VueLazyload from 'vue-lazyload' // 圖片 lazy load
 import VueFullPage from 'vue-fullpage.js'
-
+import Vue2TouchEvents from 'vue2-touch-events'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
@@ -56,6 +56,7 @@ Vue.use(VueFullPage)
 Vue.use(config)
 Vue.use(VueScrollTo)
 Vue.use(VueLazyload)
+Vue.use(Vue2TouchEvents)
 
 new Vue({
   router,
