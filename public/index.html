@@ -14,13 +14,13 @@
       src="https://www.googletagmanager.com/gtag/js?id=AW-741945426"
     ></script>
     <script>
-      window.dataLayer = window.dataLayer || []
+      window.dataLayer = window.dataLayer || [];
       function gtag() {
-        dataLayer.push(arguments)
+        dataLayer.push(arguments);
       }
-      gtag('js', new Date())
+      gtag("js", new Date());
 
-      gtag('config', 'AW-741945426')
+      gtag("config", "AW-741945426");
     </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
@@ -28,40 +28,40 @@
       src="https://www.googletagmanager.com/gtag/js?id=UA-147268639-1"
     ></script>
     <script>
-      window.dataLayer = window.dataLayer || []
+      window.dataLayer = window.dataLayer || [];
       function gtag() {
-        dataLayer.push(arguments)
+        dataLayer.push(arguments);
       }
-      gtag('js', new Date())
+      gtag("js", new Date());
 
-      gtag('config', 'UA-147268639-1')
+      gtag("config", "UA-147268639-1");
     </script>
     <script>
       !(function(f, b, e, v, n, t, s) {
-        if (f.fbq) return
+        if (f.fbq) return;
         n = f.fbq = function() {
           n.callMethod
             ? n.callMethod.apply(n, arguments)
-            : n.queue.push(arguments)
-        }
-        if (!f._fbq) f._fbq = n
-        n.push = n
-        n.loaded = !0
-        n.version = '2.0'
-        n.queue = []
-        t = b.createElement(e)
-        t.async = !0
-        t.src = v
-        s = b.getElementsByTagName(e)[0]
-        s.parentNode.insertBefore(t, s)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
       })(
         window,
         document,
-        'script',
-        'https://connect.facebook.net/en_US/fbevents.js'
-      )
-      fbq('init', '2321433564797478')
-      fbq('track', 'PageView')
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+      fbq("init", "2321433564797478");
+      fbq("track", "PageView");
     </script>
     <noscript>
       <img
@@ -95,6 +95,86 @@
       property="og:description"
       content="<%= htmlWebpackPlugin.options.ogMetaDescription %>"
     />
+    <!-- Event snippet for 07-366-3888 conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function() {
+          if (typeof url != "undefined") {
+            window.location = url;
+          }
+        };
+        gtag("event", "conversion", {
+          send_to: "AW-741945426/qagrCLLhw9EBENLg5OEC",
+          event_callback: callback,
+        });
+        return false;
+      }
+    </script>
+    <!-- Event snippet for FB諮詢 conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function() {
+          if (typeof url != "undefined") {
+            window.location = url;
+          }
+        };
+        gtag("event", "conversion", {
+          send_to: "AW-741945426/Xa9FCIi1ttEBENLg5OEC",
+          event_callback: callback,
+        });
+        return false;
+      }
+    </script>
+    <!-- Event snippet for 立即預約 conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function() {
+          if (typeof url != "undefined") {
+            window.location = url;
+          }
+        };
+        gtag("event", "conversion", {
+          send_to: "AW-741945426/Z--rCO_fw9EBENLg5OEC",
+          event_callback: callback,
+        });
+        return false;
+      }
+    </script>
+    <!-- Event snippet for 前往粉絲專頁 conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function() {
+          if (typeof url != "undefined") {
+            window.location = url;
+          }
+        };
+        gtag("event", "conversion", {
+          send_to: "AW-741945426/GgSTCP7RxNEBENLg5OEC",
+          event_callback: callback,
+        });
+        return false;
+      }
+    </script>
+    <!-- Event snippet for 導航Google地圖 conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function() {
+          if (typeof url != "undefined") {
+            window.location = url;
+          }
+        };
+        gtag("event", "conversion", {
+          send_to: "AW-741945426/YJ8FCK6ottEBENLg5OEC",
+          event_callback: callback,
+        });
+        return false;
+      }
+    </script>
   </head>
   <body>
     <noscript>
