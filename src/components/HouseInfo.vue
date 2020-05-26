@@ -113,6 +113,10 @@ export default {
     height: auto;
     margin-left: 20px;
     white-space: normal;
+    &:last-child{
+  .desc{
+    font-size: 14px;
+  }}
   }
 
   .info {

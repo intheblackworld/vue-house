@@ -2,7 +2,7 @@
   <div class="relative">
     <div v-if="!isMobile">
       <img
-        v-lazy="require('./s10/2.jpg')"
+        v-lazy="require('./s11/1.jpg')"
         alt=""
         class="bg-img"
       >
@@ -277,6 +277,7 @@
   .slide-img {
     position: absolute;
     width: 100%;
+    height:size-m(283);
     top: 0;
     left: 0;
     opacity: 0;
@@ -316,11 +317,11 @@ export default {
       isMobile,
       slideIndex: 1,
       img_list: [
-        require('./mo/10/2-1.jpg'),
-        require('./mo/10/2-2.jpg'),
-        require('./mo/10/2-3.jpg'),
-        require('./mo/10/2-4.jpg'),
-        require('./mo/10/2-5.jpg'),
+        require('./s11/1.jpg'),
+        require('./s11/2.jpg'),
+        require('./s11/3.jpg'),
+        require('./s11/4.jpg'),
+        require('./s11/5.jpg'),
       ],
     }
   },

@@ -85,21 +85,24 @@
 }
 
 @media screen and (max-width: 767px) {
+  .relative{
+    height: calc(100vh - 123px);
+  }
   .bg-img {
-    height: auto;
+    height:100%;
     object-fit: cover;
   }
 
 
   .title {
     font-size: size-m(50);
-    top: size-m(100);
+    top: calc(20% - 1.5em);
     left: size-m(31);
   }
 
   .desc {
     font-size: size-m(21);
-    top: size-m(182);
+    top: calc(20% + 0.5em);
     left: size-m(31);
   }
 }
