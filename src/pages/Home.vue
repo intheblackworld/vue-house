@@ -81,13 +81,13 @@ import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 // import Indigator from '@/components/Indigator.vue'
 
-import Section1 from '@/projects/tcc/Section1.vue'
-import Section2 from '@/projects/tcc/Section2.vue'
-import Section3 from '@/projects/tcc/Section3.vue'
-import Section4 from '@/projects/tcc/Section4.vue'
-import Section5 from '@/projects/tcc/Section5.vue'
-import Section6 from '@/projects/tcc/Section6.vue'
-import Section7 from '@/projects/tcc/Section7.vue'
+import Section1 from '@/projects/ssj/Section1.vue'
+import Section2 from '@/projects/ssj/Section2.vue'
+import Section3 from '@/projects/ssj/Section3.vue'
+import Section4 from '@/projects/ssj/Section4.vue'
+import Section5 from '@/projects/ssj/Section5.vue'
+import Section6 from '@/projects/ssj/Section6.vue'
+import Section7 from '@/projects/ssj/Section7.vue'
 
 export default {
   name: 'home',

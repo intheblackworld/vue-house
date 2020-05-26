@@ -22,25 +22,31 @@
       <div class="desc">
         【樺輝建設，偉康機構】廿年磨一劍，專注完美盡乎苛求。樺輝建設一脈傳承，締造不斐成績。秉持對建築之熱情，對細節之堅持，不畏市場景氣更迭，專註一次只推一案，名宅作品遍及雙北大城，以客為尊。專寵主人家使之稀珍收藏，口碑佳評多年來不曾間歇。
       </div>
-      <div class="slide relative">
-        <div class="slide-text">{{slideList[slideIndex].text}}</div>
+      <div class="slide relative flex-ac flex-jb">
+        <!-- <div class="slide-text">{{slideList[slideIndex].text}}</div> -->
         <img
           :src="slide.src"
           v-for="(slide, index) in slideList"
           :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
           :key="`s2-1-slide-${index}`"
         />
-        <div
-          class="arrows absolute"
-        >
+        <div class="content">
+          <div class="title">三十有成，精選傳奇之作</div>
+          <div class="text">北市大直水岸特區-煙波巴洛克 (1998年)<br />北市南京復興商圈-華爾街之心(2001年)
+            新北市新板特區-權世界 (2008年)<br />
+            新北市新莊副都心-閱世界 (2013年)<br />
+            新北市三重之心富貴段-樺輝心世界 (2020年)
+          </div>
+        </div>
+        <div class="arrows absolute">
           <img
-            src="./s4/arrow.png"
+            src="./s2/arrow.png"
             alt=""
             class="arrow-l"
             @click="addIndex"
           >
           <img
-            src="./s4/arrow.png"
+            src="./s2/arrow.png"
             alt=""
             class="arrow-r"
             @click="decIndex"
@@ -80,8 +86,10 @@
 .title-block {
   margin: 0 auto;
   margin-top: size(252);
-  width: size(820);
-  z-index: 2;
+  width: size(920);
+  position: relative;
+  z-index: 1;
+  margin-bottom: size(78);
   .title {
     font-size: size(59);
     font-weight: bold;
@@ -107,21 +115,20 @@
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2;
+  line-height: 1.9;
   letter-spacing: 0.9px;
   text-align: left;
-  color: #3b5662;
-  width: size(600);
-  position: absolute;
-  z-index: 3;
-  left: size(72);
-  bottom: size(40);
+  color: #595757;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  width: size(575);
+  margin-bottom: size(40);
 }
 
 .img-list {
   right: 0;
   bottom: size(70);
-  z-index: 3;
   img {
     width: size(200);
     height: size(133);
@@ -133,18 +140,19 @@
 }
 
 .slide {
-  width: size(494);
+  width: size(1040);
   height: size(590);
+  margin: 0 auto;
+  margin-bottom: size(113);
   height: auto;
   overflow: visible;
 
   & .slide-img {
-    width: 100%;
+    width: size(494);
   }
 
   .slide-text {
     position: absolute;
-    z-index: 4;
     background-color: #3b5662;
     right: size(0);
     bottom: size(290);
@@ -176,6 +184,34 @@
     position: absolute;
     right: size(-55);
     cursor: pointer;
+  }
+}
+
+.content {
+  width: size(490);
+  .title {
+    width: 100%;
+    font-size: size(28);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.45;
+    letter-spacing: 1.4px;
+    text-align: left;
+    color: #3b5662;
+    margin-bottom: size(30);
+  }
+
+  .text {
+    width: 100%;
+    font-size: size(18);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: 0.9px;
+    text-align: left;
+    color: #595757;
   }
 }
 
@@ -251,11 +287,10 @@ export default {
       isMobile,
       slideIndex: 0,
       slideList: [
-        { text: '立面大景', src: require('./s4/1.jpg') },
-        { text: '立面大景', src: require('./s4/2.jpg') },
-        { text: '立面大景', src: require('./s4/3.jpg') },
-        { text: '立面大景', src: require('./s4/4.jpg') },
-        { text: '立面大景', src: require('./s4/5.jpg') },
+        { text: '立面大景', src: require('./s6/權世界 (2008年).jpg') },
+        { text: '立面大景', src: require('./s6/煙波巴洛克 (1998年).jpg') },
+        { text: '立面大景', src: require('./s6/華爾街之心(2001年).jpg') },
+        { text: '立面大景', src: require('./s6/閱世界 (2013年).jpg') },
       ],
     }
   },

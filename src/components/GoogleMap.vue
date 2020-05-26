@@ -1,9 +1,12 @@
 <template>
   <div class="google-map">
+    <div class="map-img flex-ac">
+      <img src="~@/projects/ssj/map-left.png" alt="">
+    </div>
     <iframe
       title="googlemap"
       :src="googleSrc"
-      width="100%"
+      width="50%"
       height="555"
       frameborder="0"
       style="border: 0"
@@ -32,6 +35,18 @@ export default {
   iframe {
     flex: 1;
     order: 2;
+  }
+}
+
+.map-img {
+  width: 50%;
+  justify-content: flex-end;
+
+
+  > img {
+    width: 311px;
+    float: right;
+    margin-right: 150px;
   }
 }
 
