@@ -1,0 +1,297 @@
+<template>
+  <div class="relative">
+    <div v-if="!isMobile">
+      <img
+        src="./s4/bg.png"
+        alt=""
+        class="bg-img"
+      >
+      <div class="title-block flex-ac flex-jb">
+        <img
+          src="./s4/l.png"
+          alt=""
+          class="title-l"
+        >
+        <h3 class="title">匠心精工，藝術名邸</h3>
+        <img
+          src="./s4/l.png"
+          alt=""
+          class="title-r"
+        >
+      </div>
+      <div class="desc">
+        宛若精品，細直方的建築立面，精緻如珠寶盒一般，完美的黃金比例。
+        縱向的格柵線條，動感跳耀。與窗欄穿插編織而成，工匠級磅礴旋律。
+      </div>
+      <div class="img-list absolute flex-c">
+        <img
+          :src="slide.src"
+          v-for="(slide, index) in slideList"
+          @click="setIndex(index)"
+          :class="`img ${slideIndex === index ? 'active' : ''}`"
+          :key="`s4-1-img-${index}`"
+        />
+      </div>
+      <div class="slide relative">
+        <div class="slide-text">{{slideList[slideIndex].text}}</div>
+        <img
+          :src="slide.src"
+          v-for="(slide, index) in slideList"
+          :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
+          :key="`s2-1-slide-${index}`"
+        />
+        <div
+          class="arrows absolute"
+          v-if="isMobile"
+        >
+          <img
+            src="./s4/arrow.png"
+            alt=""
+            class="arrow-l"
+            @click="addIndex"
+          >
+          <img
+            src="./s4/arrow.png"
+            alt=""
+            class="arrow-r"
+            @click="decIndex"
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      v-else
+      class="fullscreen"
+    >
+    </div>
+  </div>
+</template>
+<style lang="scss" scoped>
+@import '@/assets/style/function.scss';
+.relative {
+  // height: 100vh;
+  overflow: hidden;
+  background: #d9d7d2;
+}
+
+.bg-img {
+  width: 100vw;
+  height: auto;
+  position: absolute;
+  z-index: 2;
+  display: block;
+  bottom: 0;
+  left: 0;
+  object-fit: cover;
+
+  // &:nth-child(1) {
+  //   position: relative;
+  // }
+}
+
+.title-block {
+  position: absolute;
+  z-index: 3;
+  left: size(36);
+  bottom: size(144);
+  .title {
+    font-size: size(59);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.61;
+    letter-spacing: normal;
+    text-align: center;
+    color: #3b5662;
+  }
+  .title-l {
+    width: size(77);
+  }
+
+  .title-r {
+    width: size(77);
+    transform: rotate(180deg);
+  }
+}
+
+.desc {
+  font-size: size(18);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2;
+  letter-spacing: 0.9px;
+  text-align: left;
+  color: #3b5662;
+  width: size(600);
+  position: absolute;
+  z-index: 3;
+  left: size(72);
+  bottom: size(40);
+}
+
+.img-list {
+  right: 0;
+  bottom: size(70);
+  z-index: 3;
+  img {
+    width: size(200);
+    height: size(133);
+    display: block;
+    object-fit: cover;
+    margin: 0 size(10);
+    cursor: pointer;
+  }
+}
+
+.slide {
+  width: 100vw;
+  height: size(1080);
+  height: auto;
+  overflow: visible;
+
+  & .slide-img {
+    width: 100%;
+  }
+
+  .border {
+    border: 1px solid #3b5662;
+    width: size(990);
+    height: size(680);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .slide-text {
+    position: absolute;
+    z-index: 4;
+    background-color: #3b5662;
+    right: size(0);
+    bottom: size(290);
+    color: #fff;
+    font-size: size(28);
+    padding: 8px 30px;
+  }
+}
+
+.arrows {
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .arrow-l {
+    width: size(35);
+    position: absolute;
+    left: size(-55);
+    cursor: pointer;
+  }
+
+  .arrow-r {
+    width: size(35);
+    transform: rotate(180deg);
+    position: absolute;
+    right: size(-55);
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .bg-img {
+  }
+}
+@media only screen and (max-width: 1280px) and (min-width: 1025px) {
+  .fullscreen {
+    height: 100vh;
+  }
+}
+
+/* 螢幕尺寸標準 */
+/* 平板尺寸 */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+}
+
+@media screen and (max-width: 767px) {
+  .bg-img {
+    height: auto;
+    top: auto;
+    bottom: 0;
+    &:nth-child(1) {
+      position: absolute;
+    }
+  }
+  .title {
+    width: size-m(289);
+    right: size-m(43);
+    top: calc(32vh - 20vw);
+  }
+
+  .mt {
+    margin-top: 60px;
+  }
+  .cloud1 {
+    height: size-m(604);
+    left: 50%;
+    top: auto;
+    bottom: 0;
+    width: auto;
+    transform: translateX(-55%);
+  }
+  .cloud2 {
+    height: size-m(604);
+    left: 50%;
+    top: auto;
+    bottom: 0;
+    width: auto;
+    transform: translateX(-60%);
+  }
+
+  @keyframes clouda {
+    to {
+      transform: translateX(-45%);
+    }
+  }
+}
+</style>
+<script>
+// @ is an alias to /src
+import { isMobile } from '@/utils'
+import slider from '@/mixins/slider.js'
+
+export default {
+  name: 'section2',
+
+  mixins: [slider],
+  components: {},
+  data() {
+    return {
+      isMobile,
+      slideIndex: 0,
+      slideList: [
+        { text: '立面大景', src: require('./s4/1.jpg') },
+        { text: '立面大景', src: require('./s4/2.jpg') },
+        { text: '立面大景', src: require('./s4/3.jpg') },
+        { text: '立面大景', src: require('./s4/4.jpg') },
+        { text: '立面大景', src: require('./s4/5.jpg') },
+      ],
+    }
+  },
+
+  methods: {
+    setIndex(current) {
+      this[`slideIndex`] = current
+    },
+  },
+
+  created() {},
+
+  mounted() {},
+
+  computed: {},
+}
+</script>

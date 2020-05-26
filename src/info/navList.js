@@ -1,7 +1,7 @@
 export default [
-  { name: '享大城', imgSrc: require('@/assets/img/nav/icon1.png'), subTitle: '', section: 'section2', svgSrc: '', offset: -100 },
-  { name: '擁大景', imgSrc: require('@/assets/img/nav/icon2.png'), subTitle: '', section: 'section6', svgSrc: '', offset: -100 },
-  { name: '成大室', imgSrc: require('@/assets/img/nav/icon3.png'), subTitle: '', section: 'section9', svgSrc: '', offset: -100 },
+  { name: '', imgSrc: '', subTitle: '', section: 'section2', svgSrc: '', offset: -100 },
+  { name: '', imgSrc: '', subTitle: '', section: 'section6', svgSrc: '', offset: -100 },
+  { name: '', imgSrc: '', subTitle: '', section: 'section9', svgSrc: '', offset: -100 },
   // { name: '預約賞屋', imgSrc: '', subTitle: '', section: 'contact', svgSrc: '', mobileOffset: 0 },
 ]
 
