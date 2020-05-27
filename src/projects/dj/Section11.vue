@@ -16,6 +16,7 @@
         class="title absolute"
         data-aos="fade-up"
         data-aos-delay="300"
+        data-aos-offset="-600"
       >
         Beautiful pattern
       </div>
@@ -23,6 +24,7 @@
         class="desc absolute"
         data-aos="fade-up"
         data-aos-delay="500"
+        data-aos-offset="-600"
       >
         - 豐美格局 -
       </div>
@@ -30,6 +32,7 @@
         class="img-title absolute"
         data-aos="fade"
         data-aos-delay="700"
+        data-aos-offset="-600"
       >
 
         採光通風 大面開窗<br />讓您住一輩子的好房子
@@ -38,6 +41,7 @@
         class="img-desc absolute"
         data-aos="fade-up"
         data-aos-delay="900"
+        data-aos-offset="-600"
       >
         戶戶雙面採光、無暗房，客廳大面開窗，<br />
         享有空氣流通、自然光線流瀉；<br />
