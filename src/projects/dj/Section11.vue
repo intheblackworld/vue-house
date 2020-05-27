@@ -137,6 +137,7 @@ img {
   left: 0;
   opacity: 0;
   transition: all 0.3s;
+  object-fit: cover;
   &.show {
     position: relative;
     opacity: 1;

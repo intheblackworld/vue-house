@@ -130,6 +130,7 @@ img {
   left: 0;
   opacity: 0;
   transition: all 0.3s;
+  object-fit: cover;
   &.show {
     position: relative;
     opacity: 1;
@@ -337,8 +338,8 @@ export default {
       isMobile,
       slideIndex: 0,
       img_list: [
-       // require('./s10/1.jpg'),
-      //  require('./s10/2.jpg'),
+        require('./s10/1.jpg'),
+        require('./s10/2.jpg'),
         require('./s10/3.jpg'),
         require('./s10/4.jpg'),
         require('./s10/5.jpg'),
@@ -368,7 +369,7 @@ export default {
 
   mounted() {
     setInterval(() => {
-      if (this.slideIndex === 3) {
+      if (this.slideIndex === 5) {
         this.slideIndex = 0
       } else {
         this.slideIndex = this.slideIndex + 1
