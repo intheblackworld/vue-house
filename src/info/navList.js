@@ -1,7 +1,12 @@
 export default [
-  { name: '', imgSrc: '', subTitle: '', section: 'section2', svgSrc: '', offset: -100 },
-  { name: '', imgSrc: '', subTitle: '', section: 'section6', svgSrc: '', offset: -100 },
-  { name: '', imgSrc: '', subTitle: '', section: 'section9', svgSrc: '', offset: -100 },
+  { name: '首頁', imgSrc: '', subTitle: '', section: 'section1', svgSrc: '', offset: 0 },
+  { name: '區域環境', imgSrc: '', subTitle: '', section: 'section2', svgSrc: '', offset: 0 },
+  { name: '3大優勢', imgSrc: '', subTitle: '', section: 'section3', svgSrc: '', offset: 0 },
+  { name: '外觀', imgSrc: '', subTitle: '', section: 'section4', svgSrc: '', offset: 0 },
+  { name: '規劃', imgSrc: '', subTitle: '', section: 'section5', svgSrc: '', offset: 0 },
+  { name: '品牌', imgSrc: '', subTitle: '', section: 'section6', svgSrc: '', offset: 0 },
+  // { name: '團隊', imgSrc: '', subTitle: '', section: 'section', svgSrc: '', offset: 0 },
+  { name: '預約賞屋', imgSrc: '', subTitle: '', section: 'section9', svgSrc: '', offset: 0 },
   // { name: '預約賞屋', imgSrc: '', subTitle: '', section: 'contact', svgSrc: '', mobileOffset: 0 },
 ]
 

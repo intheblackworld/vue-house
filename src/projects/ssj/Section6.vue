@@ -5,6 +5,7 @@
         src="./s6/bg.jpg"
         alt=""
         class="bg-img"
+        data-aos="fade" data-aos-delay="400"
       >
       <div class="title-block flex-ac flex-jb">
         <img
@@ -22,7 +23,7 @@
       <div class="desc">
         【樺輝建設，偉康機構】廿年磨一劍，專注完美盡乎苛求。樺輝建設一脈傳承，締造不斐成績。秉持對建築之熱情，對細節之堅持，不畏市場景氣更迭，專註一次只推一案，名宅作品遍及雙北大城，以客為尊。專寵主人家使之稀珍收藏，口碑佳評多年來不曾間歇。
       </div>
-      <div class="slide relative flex-ac flex-jb">
+      <div class="slide relative flex-ac flex-jb" data-aos="fade" data-aos-delay="400">
         <!-- <div class="slide-text">{{slideList[slideIndex].text}}</div> -->
         <img
           :src="slide.src"
@@ -31,7 +32,7 @@
           :key="`s2-1-slide-${index}`"
         />
         <div class="content">
-          <div class="title">三十有成，精選傳奇之作</div>
+          <h3 class="title">三十有成，精選傳奇之作</h3>
           <div class="text">北市大直水岸特區-煙波巴洛克 (1998年)<br />北市南京復興商圈-華爾街之心(2001年)
             新北市新板特區-權世界 (2008年)<br />
             新北市新莊副都心-閱世界 (2013年)<br />
@@ -56,8 +57,77 @@
     </div>
     <div
       v-else
-      class="fullscreen"
+      class="relative"
     >
+      <div class="title-block flex-ac flex-jb">
+        <img
+          src="./s4/l.png"
+          alt=""
+          class="title-l"
+        >
+        <h3 class="title">慢工釀細活<br />成就極致工藝</h3>
+        <img
+          src="./s4/l.png"
+          alt=""
+          class="title-r"
+        >
+      </div>
+      <div class="content relative">
+        <div class="text">
+          【樺輝建設，偉康機構】廿年磨一劍，專注完美盡乎苛求。樺輝建設一脈傳承，締造不斐成績。秉持對建築之熱情，對細節之堅持，不畏市場景氣更迭，專註一次只推一案，名宅作品遍及雙北大城，以客為尊。專寵主人家使之稀珍收藏，口碑佳評多年來不曾間歇。
+        </div>
+        <img
+          src="./mo/4/bg.png"
+          alt=""
+          class="bg1"
+        >
+      </div>
+
+      <div class="slide relative">
+        <!-- <div class="border"></div> -->
+        <!-- <div class="slide-text">{{slideList1[slideIndex1].text}}</div> -->
+        <img
+          :src="slide.src"
+          v-for="(slide, index) in slideList"
+          :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
+          :key="`s5-2-slide-${index}`"
+        />
+        <div class="arrows absolute">
+          <img
+            src="./s5/arrow.png"
+            alt=""
+            class="arrow-l"
+            @click="addIndex"
+          >
+          <img
+            src="./s5/arrow.png"
+            alt=""
+            class="arrow-r"
+            @click="decIndex"
+          >
+        </div>
+        <!-- <div class="indigator-list flex-c">
+            <div
+              @click="setIndex(1, index)"
+              :class="`indigator ${slideIndex1 === index ? 'active' : ''}`"
+              v-for="(item, index) in slideList1"
+              :key="`indigator-1-${index}`"
+            ></div>
+          </div> -->
+      </div>
+      <div class="content relative">
+        <h3 class="title">三十有成，精選傳奇之作</h3>
+        <div class="text">北市大直水岸特區-煙波巴洛克 (1998年)<br />北市南京復興商圈-華爾街之心(2001年)
+          新北市新板特區-權世界 (2008年)<br />
+          新北市新莊副都心-閱世界 (2013年)<br />
+          新北市三重之心富貴段-樺輝心世界 (2020年)
+        </div>
+        <img
+          src="./mo/4/bg.png"
+          alt=""
+          class="bg1"
+        >
+      </div>
     </div>
   </div>
 </template>
@@ -231,43 +301,107 @@
 }
 
 @media screen and (max-width: 767px) {
-  .bg-img {
-    height: auto;
-    top: auto;
-    bottom: 0;
-    &:nth-child(1) {
-      position: absolute;
+  .title-block {
+    width: 95vw;
+    margin: 0 auto;
+    margin-top: size-m(40);
+    margin-bottom: size-m(22);
+    top: 0;
+    left: 0;
+    right: 0;
+    position: relative;
+
+    .title {
+      font-size: size-m(30);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.3;
+      letter-spacing: normal;
+      text-align: center;
+      color: #3b5662;
+    }
+
+    .title-l {
+      width: size-m(33);
+    }
+
+    .title-r {
+      width: size-m(33);
+      transform: rotate(180deg);
     }
   }
-  .title {
-    width: size-m(289);
-    right: size-m(43);
-    top: calc(32vh - 20vw);
+
+  .slide {
+    width: 100vw;
+    height: size-m(447);
+
+    & .slide-img {
+      width: 100%;
+    }
   }
 
-  .mt {
-    margin-top: 60px;
-  }
-  .cloud1 {
-    height: size-m(604);
-    left: 50%;
-    top: auto;
-    bottom: 0;
-    width: auto;
-    transform: translateX(-55%);
-  }
-  .cloud2 {
-    height: size-m(604);
-    left: 50%;
-    top: auto;
-    bottom: 0;
-    width: auto;
-    transform: translateX(-60%);
+  .content {
+    width: size-m(318);
+    margin: 0 auto;
+    margin-top: size-m(40);
+    overflow: visible;
+
+    .title {
+      font-size: size-m(18);
+      font-weight: 900;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 2.26;
+      letter-spacing: 0.9px;
+      text-align: left;
+      color: #3b5662;
+      margin-bottom: size-m(20);
+    }
+
+    .text {
+      font-size: size-m(15);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.92;
+      letter-spacing: 0.75px;
+      text-align: left;
+      color: #595757;
+      margin-bottom: size-m(150);
+    }
+
+    .bg1 {
+      width: 100vw;
+      position: absolute;
+      bottom: size-m(-150);
+      left: size-m(-28);
+      z-index: 2;
+    }
   }
 
-  @keyframes clouda {
-    to {
-      transform: translateX(-45%);
+  .arrows {
+    width: 100%;
+    transform: translateY(0%);
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3;
+
+    .arrow-l {
+      width: size-m(14);
+      position: absolute;
+      left: size-m(5);
+      cursor: pointer;
+    }
+
+    .arrow-r {
+      width: size-m(14);
+      transform: rotate(180deg);
+      position: absolute;
+      right: size-m(5);
+      cursor: pointer;
     }
   }
 }

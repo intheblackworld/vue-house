@@ -45,12 +45,12 @@
     >
       <Section6 />
     </div>
-    <div
+    <!-- <div
       class="section"
       id="section7"
     >
       <Section7 />
-    </div>
+    </div> -->
     <!-- </full-page> -->
     <ContactSection
       class="section"
@@ -87,7 +87,7 @@ import Section3 from '@/projects/ssj/Section3.vue'
 import Section4 from '@/projects/ssj/Section4.vue'
 import Section5 from '@/projects/ssj/Section5.vue'
 import Section6 from '@/projects/ssj/Section6.vue'
-import Section7 from '@/projects/ssj/Section7.vue'
+// import Section7 from '@/projects/ssj/Section7.vue'
 
 export default {
   name: 'home',
@@ -104,7 +104,7 @@ export default {
     Section4,
     Section5,
     Section6,
-    Section7,
+    // Section7,
   },
 
   data() {

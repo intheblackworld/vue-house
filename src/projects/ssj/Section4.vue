@@ -5,6 +5,7 @@
         src="./s4/bg.png"
         alt=""
         class="bg-img"
+         data-aos="fade" data-aos-delay="400"
       >
       <div class="title-block flex-ac flex-jb">
         <img
@@ -61,8 +62,49 @@
     </div>
     <div
       v-else
-      class="fullscreen"
+      class="relative section4"
     >
+      <div class="title-block flex-ac flex-jb">
+        <img
+          src="./s4/l.png"
+          alt=""
+          class="title-l"
+        >
+        <h3 class="title">匠心精工，藝術名邸</h3>
+        <img
+          src="./s4/l.png"
+          alt=""
+          class="title-r"
+        >
+      </div>
+      <img src="./mo/4/bg.png" alt="" class="bg1">
+      <div class="arrows absolute">
+        <img
+          src="./s2/arrow.png"
+          alt=""
+          class="arrow-l"
+          @click="addIndex"
+        >
+        <img
+          src="./s2/arrow.png"
+          alt=""
+          class="arrow-r"
+          @click="decIndex"
+        >
+      </div>
+      <div class="slide relative">
+        <div class="slide-text">{{slideList[slideIndex].text}}</div>
+        <img
+          :src="slide.src"
+          v-for="(slide, index) in slideList"
+          :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
+          :key="`s2-1-slide-${index}`"
+        />
+      </div>
+      <div class="m-desc">
+        宛若精品，細直方的建築立面，精緻如珠寶盒一般，完美的黃金比例。<br />
+        縱向的格柵線條，動感跳耀。與窗欄穿插編織而成，工匠級磅礴旋律。
+      </div>
     </div>
   </div>
 </template>
@@ -217,44 +259,93 @@
 }
 
 @media screen and (max-width: 767px) {
-  .bg-img {
-    height: auto;
-    top: auto;
-    bottom: 0;
-    &:nth-child(1) {
+  .section4 {
+    width: 100vw;
+    height: size-m(661);
+  }
+
+  .title-block {
+    width: 95vw;
+    margin: 0 auto;
+    margin-top: size-m(40);
+    margin-bottom: size-m(22);
+    top: 0;
+    left: 0;
+    right: 0;
+    position: relative;
+
+    .title {
+      font-size: size-m(30);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.3;
+      letter-spacing: normal;
+      text-align: center;
+      color: #3b5662;
+    }
+
+    .title-l {
+      width: size-m(33);
+    }
+
+    .title-r {
+      width: size-m(33);
+      transform: rotate(180deg);
+    }
+  }
+
+  .m-desc {
+    width: size-m(305);
+    font-size: size-m(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.92;
+    letter-spacing: 0.75px;
+    text-align: left;
+    color: #3b5662;
+    margin: 0 auto;
+    margin-top: size-m(40);
+  }
+
+  .slide {
+    .slide-text {
+      font-size: size-m(12);
+    }
+  }
+
+  .arrows {
+    width: 100%;
+    top: size-m(215);
+    transform: translateY(0%);
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3;
+
+    .arrow-l {
+      width: size-m(14);
       position: absolute;
+      left: size-m(5);
+      cursor: pointer;
+    }
+
+    .arrow-r {
+      width: size-m(14);
+      transform: rotate(180deg);
+      position: absolute;
+      right: size-m(5);
+      cursor: pointer;
     }
   }
-  .title {
-    width: size-m(289);
-    right: size-m(43);
-    top: calc(32vh - 20vw);
-  }
 
-  .mt {
-    margin-top: 60px;
-  }
-  .cloud1 {
-    height: size-m(604);
-    left: 50%;
-    top: auto;
+  .bg1 {
+    width: 100vw;
+    position: absolute;
+    left: 0;
     bottom: 0;
-    width: auto;
-    transform: translateX(-55%);
-  }
-  .cloud2 {
-    height: size-m(604);
-    left: 50%;
-    top: auto;
-    bottom: 0;
-    width: auto;
-    transform: translateX(-60%);
-  }
-
-  @keyframes clouda {
-    to {
-      transform: translateX(-45%);
-    }
   }
 }
 </style>

@@ -1,7 +1,8 @@
 <template>
 <div>
   <div class="contact-info">
-    <img class="logo" src="@/assets/img/contact-logo.png" alt="好站" />
+    <img class="logo" src="@/assets/img/contact-logo.png" alt="" v-if="!isMobile" />
+    <img class="logo" src="@/projects/ssj/mo/7/contact-logo-m.png" alt="" v-if="isMobile" />
     <div class="info">
       <div class="btn flex-c" @click="showCallDialog">
         <span class="flex-c">
@@ -241,6 +242,7 @@ export default {
 
     .logo {
       width: $contact_logo_mobile_width;
+      height: auto;
     }
   }
 

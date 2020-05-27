@@ -1,14 +1,37 @@
 <template>
   <div class="relative">
     <div v-if="!isMobile">
-      <img src="./s1/bg.png" alt="" class="bg-img">
-      <img src="./s1/logo.png" alt="" class="logo absolute">
-      <img src="./s1/re.png" alt="" class="img absolute">
+      <img
+        src="./s1/bg.png"
+        alt=""
+        class="bg-img"
+      >
+      <img
+        src="./s1/logo.png"
+        alt=""
+        class="logo absolute"
+      >
+      <img
+        src="./s1/re.png"
+        alt=""
+        class="img absolute"
+        v-scroll-to="{ element: `#contact` }"
+      >
     </div>
     <div
       v-else
       class="fullscreen"
     >
+      <img
+        src="./mo/1/bg.png"
+        alt=""
+        class="bg-img"
+      >
+      <img
+        src="./mo/1/logo.png"
+        alt=""
+        class="logo absolute"
+      >
     </div>
   </div>
 </template>
@@ -17,7 +40,7 @@
 .relative {
   // height: 100vh;
   overflow: hidden;
-  background: #3B5662;
+  background: #3b5662;
 }
 
 .bg-img {
@@ -49,6 +72,7 @@
   top: size(915);
   left: 0;
   right: 0;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -68,45 +92,17 @@
 
 @media screen and (max-width: 767px) {
   .bg-img {
-    height:auto;
-    top:auto;
+    height: auto;
+    top: 0;
     bottom: 0;
-  &:nth-child(1) {
-    position: absolute;
-  }
-  }
-  .title {
-    width: size-m(289);
-    right: size-m(43);
-    top:calc(32vh - 20vw);
+    &:nth-child(1) {
+      position: absolute;
+    }
   }
 
-  .mt {
-    margin-top: 60px;
+  .logo {
+    top: size-m(197);
   }
-.cloud1 {
-  height: size-m(604);
-  left: 50%;
-    top:auto;
-    bottom: 0;
-  width:auto;
-    transform: translateX(-55%);
-}
-.cloud2 {
-  height: size-m(604);
-  left: 50%;
-    top:auto;
-    bottom: 0;
-  width:auto;
-    transform: translateX(-60%);
-}
-
-@keyframes clouda {
-
-  to{
-    transform: translateX(-45%);
-  }
-}
 }
 </style>
 <script>
@@ -116,19 +112,16 @@ import { isMobile } from '@/utils'
 export default {
   name: 'section1',
 
-  components: {
-  },
+  components: {},
   data() {
     return {
       isMobile,
     }
   },
 
-  methods: {
-  },
+  methods: {},
 
-  created() {
-  },
+  created() {},
 
   mounted() {},
 

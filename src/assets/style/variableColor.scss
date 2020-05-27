@@ -3,7 +3,7 @@ $bg: url('~@/projects/jscy/bg.jpg');
 
 /* navigation */
 $nav_bg: #dad7d2;
-$nav_btn_color: #3a5662;
+$nav_btn_color: #fff;
 $nav_link_color: #3a5662;
 $nav_link_subtitle_color: #fff;
 $nav_link_hover_color: #fff;
@@ -73,15 +73,15 @@ $house_label_color: #3b5662;
 $house_desc_color: #000;
 
 // mobileNav
-$mobile_nav_background: #3b5662;
+$mobile_nav_background: linear-gradient(to right, #a27f45 0%, #e1c7a6 94%, #e1c7a6);
 $mobile_nav_color: #fff;
-$mobile_nav_border: #3b5662;
+$mobile_nav_border: transparent;
 $mobile_nav_icon: #fff;
 
 $mobile_dialog_bg: #fff;
-$mobile_dialog_icon: #3b5662;
+$mobile_dialog_icon: #a27f45;
 $mobile_dialog_desc: #000;
-$mobile_dialog_submit_bg: #3b5662;
+$mobile_dialog_submit_bg: #a27f45;
 $mobile_dialog_submit_color: #fff;
 
 

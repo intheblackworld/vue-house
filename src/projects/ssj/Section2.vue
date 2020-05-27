@@ -6,9 +6,19 @@
         alt=""
         class="bg1"
       >
+      <img
+        src="./s2/bg2.png"
+        alt=""
+        class="bg2"
+      >
+      <img
+        src="./s2/bg3.png"
+        alt=""
+        class="bg3"
+      >
       <div class="container flex-jb ">
         <div>
-          <div class="title-block flex-ac flex-jb">
+          <h3 class="title-block flex-ac flex-jb">
             <img
               src="./s2/l.png"
               alt=""
@@ -20,14 +30,14 @@
               alt=""
               class="title-r"
             >
-          </div>
+          </h3>
           <div class="content">
             <h3 class="title">完全學區</h3>
             <h3 class="desc">明星雙語學區，全齡優生</h3>
             <div class="text">完整十二年國教一應俱全，除了五育俱全明星新北高中之外，碧華國中，碧華國小以及五華國小皆為區域內口碑名校！ 四座全能國中小及高中加持，另有新北最大雙語幼兒園《加州森林國際》都選擇在此駐點，讓孩子精緻就學，學區步行距離5分鐘，小孩安全，爸媽放心</div>
           </div>
         </div>
-        <div class="slide relative">
+        <div class="slide relative" data-aos="fade" data-aos-delay="400">
           <div class="border"></div>
           <div class="slide-text">{{slideList1[slideIndex1].text}}</div>
           <img
@@ -61,7 +71,7 @@
         </div>
       </div>
       <div class="container flex-ac flex-jb">
-        <div class="slide wide relative">
+        <div class="slide wide relative" data-aos="fade" data-aos-delay="400">
           <div class="border"></div>
           <div class="slide-text">{{slideList2[slideIndex2].text}}</div>
           <img
@@ -105,7 +115,7 @@
           <h3 class="desc">淡水重陽公園，水岸美地</h3>
           <div class="text">萬坪淡水河畔，懂生活的人最想追求的沃美之地。傍水岸，享清新的新鮮空氣無限暢飲，重陽橋重劃區陽光公園，集智綠地集賢環保公園，淡水河畔公園等..共8900多坪綠地。小散步，大渡假，自由切換生活節奏。</div>
         </div>
-        <div class="slide relative">
+        <div class="slide relative" data-aos="fade" data-aos-delay="400">
           <div class="border"></div>
           <div class="slide-text">{{slideList3[slideIndex3].text}}</div>
           <img
@@ -139,7 +149,7 @@
         </div>
       </div>
       <div class="container flex-ac flex-jb">
-        <div class="slide wide relative">
+        <div class="slide wide relative" data-aos="fade" data-aos-delay="400">
           <div class="border"></div>
           <div class="slide-text">{{slideList4[slideIndex4].text}}</div>
           <img
@@ -178,11 +188,192 @@
           </div>
         </div>
       </div>
+      <div class="bottom"></div>
     </div>
     <div
       v-else
-      class="fullscreen"
+      class="relative"
     >
+      <img
+        src="./mo/2/bg1.png"
+        alt=""
+        class="bg1"
+      >
+      <h3 class="title-block flex-ac flex-jb">
+        <img
+          src="./s2/l.png"
+          alt=""
+          class="title-l"
+        >
+        <div class="title">區域環境</div>
+        <img
+          src="./s2/l.png"
+          alt=""
+          class="title-r"
+        >
+      </h3>
+      <div class="slide relative" data-aos="fade" data-aos-delay="400">
+        <div class="slide-text">{{slideList1[slideIndex1].text}}</div>
+        <img
+          :src="slide.src"
+          v-for="(slide, index) in slideList1"
+          :class="`slide-img ${slideIndex1 === index ? 'active' : ''}`"
+          :key="`s2-1-slide-${index}`"
+        />
+        <div class="arrows absolute">
+          <img
+            src="./s4/arrow.png"
+            alt=""
+            class="arrow-l"
+            @click="addMultiIndex(1)"
+          >
+          <img
+            src="./s4/arrow.png"
+            alt=""
+            class="arrow-r"
+            @click="decMultiIndex(1)"
+          >
+        </div>
+        <div class="indigator-list flex-c">
+          <div
+            @click="setIndex(1, index)"
+            :class="`indigator ${slideIndex1 === index ? 'active' : ''}`"
+            v-for="(item, index) in slideList1"
+            :key="`indigator-1-${index}`"
+          ></div>
+        </div>
+      </div>
+      <div class="content">
+        <h3 class="title">完全學區</h3>
+        <h3 class="desc">明星雙語學區，全齡優生</h3>
+        <div class="text">完整十二年國教一應俱全，除了五育俱全明星新北高中之外，碧華國中，碧華國小以及五華國小皆為區域內口碑名校！ 四座全能國中小及高中加持，另有新北最大雙語幼兒園《加州森林國際》都選擇在此駐點，讓孩子精緻就學，學區步行距離5分鐘，小孩安全，爸媽放心</div>
+        <img
+          src="./mo/2/bg2.png"
+          alt=""
+          class="bg2"
+        >
+      </div>
+
+      <div class="slide relative" data-aos="fade" data-aos-delay="400">
+        <div class="slide-text">{{slideList2[slideIndex2].text}}</div>
+        <img
+          :src="slide.src"
+          v-for="(slide, index) in slideList2"
+          :class="`slide-img ${slideIndex2 === index ? 'active' : ''}`"
+          :key="`s2-1-slide-${index}`"
+        />
+        <div class="arrows absolute">
+          <img
+            src="./s4/arrow.png"
+            alt=""
+            class="arrow-l"
+            @click="addMultiIndex(2)"
+          >
+          <img
+            src="./s4/arrow.png"
+            alt=""
+            class="arrow-r"
+            @click="decMultiIndex(2)"
+          >
+        </div>
+        <div class="indigator-list flex-c">
+          <div
+            @click="setIndex(2, index)"
+            :class="`indigator ${slideIndex2 === index ? 'active' : ''}`"
+            v-for="(item, index) in slideList2"
+            :key="`indigator-1-${index}`"
+          ></div>
+        </div>
+      </div>
+
+      <div class="content short">
+        <h3 class="title">燙金雙捷，漲幅無限</h3>
+        <h3 class="desc">一橋牽雙北，效率交通</h3>
+        <div class="text">環狀線X新莊蘆洲線燙金雙捷。未來捷運一站横跨淡水河，一橋重陽即達士林，天母，悠遊雙首都零距離。菁華交通匯集集賢路，三信街，五華街;行經環環河快速道路與64號快速道路高速接軌，距離中山交流道，重慶北路交流道及三重交流道皆5分鐘車程。直達繁華，效率無與倫比。</div>
+        <img
+          src="./mo/2/bg2.png"
+          alt=""
+          class="bg2"
+        >
+      </div>
+      <div class="slide relative" data-aos="fade" data-aos-delay="400">
+        <div class="slide-text">{{slideList3[slideIndex3].text}}</div>
+        <img
+          :src="slide.src"
+          v-for="(slide, index) in slideList3"
+          :class="`slide-img ${slideIndex3 === index ? 'active' : ''}`"
+          :key="`s2-1-slide-${index}`"
+        />
+        <div class="arrows absolute">
+          <img
+            src="./s4/arrow.png"
+            alt=""
+            class="arrow-l"
+            @click="addMultiIndex(3)"
+          >
+          <img
+            src="./s4/arrow.png"
+            alt=""
+            class="arrow-r"
+            @click="decMultiIndex(3)"
+          >
+        </div>
+        <div class="indigator-list flex-c">
+          <div
+            @click="setIndex(3, index)"
+            :class="`indigator ${slideIndex3 === index ? 'active' : ''}`"
+            v-for="(item, index) in slideList3"
+            :key="`indigator-1-${index}`"
+          ></div>
+        </div>
+      </div>
+      <div class="content">
+        <h3 class="title">水岸綠地</h3>
+        <h3 class="desc">淡水重陽公園，水岸美地</h3>
+        <div class="text">萬坪淡水河畔，懂生活的人最想追求的沃美之地。傍水岸，享清新的新鮮空氣無限暢飲，重陽橋重劃區陽光公園，集智綠地集賢環保公園，淡水河畔公園等..共8900多坪綠地。小散步，大渡假，自由切換生活節奏。</div>
+        <img
+          src="./mo/2/bg2.png"
+          alt=""
+          class="bg2"
+        >
+      </div>
+      <div class="slide relative" data-aos="fade" data-aos-delay="400">
+        <div class="slide-text">{{slideList4[slideIndex4].text}}</div>
+        <img
+          :src="slide.src"
+          v-for="(slide, index) in slideList4"
+          :class="`slide-img ${slideIndex4 === index ? 'active' : ''}`"
+          :key="`s2-1-slide-${index}`"
+        />
+        <div class="arrows absolute">
+          <img
+            src="./s4/arrow.png"
+            alt=""
+            class="arrow-l"
+            @click="addMultiIndex(4)"
+          >
+          <img
+            src="./s4/arrow.png"
+            alt=""
+            class="arrow-r"
+            @click="decMultiIndex(4)"
+          >
+        </div>
+        <div class="indigator-list flex-c">
+          <div
+            @click="setIndex(4, index)"
+            :class="`indigator ${slideIndex4 === index ? 'active' : ''}`"
+            v-for="(item, index) in slideList4"
+            :key="`indigator-1-${index}`"
+          ></div>
+        </div>
+      </div>
+      <div class="content">
+        <h3 class="title">繁華商圈</h3>
+        <h3 class="desc">滾滾長江家樂福五華街，繁華商圈東逝水</h3>
+        <div class="text">前有24小時家樂福，後有五華街傳統商圈，現代與傳統一併俱全。整齊蒼綠的街廓，綠化公園及開放空間，重劃區超低建蔽率，市容之美無話可說，離囂不離塵，這才是真正的俱生活機能的「現代化重劃區」，是您宜居移居的新選擇。
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -194,14 +385,33 @@
   background: #d9d7d2;
 }
 
-.bg1 {
+.bg1,
+.bg2,.bg3 {
   width: 100vw;
   height: auto;
   position: absolute;
   display: block;
+  object-fit: cover;
+}
+
+.bg1 {
   top: 0;
   left: 0;
-  object-fit: cover;
+}
+
+.bg2 {
+  left: 0;
+  top: size(1400);
+}
+
+.bg3 {
+  bottom: 0;
+  right: 0;
+}
+
+.bottom {
+  width: 100vw;
+  height: size(122);
 }
 
 .container {
@@ -292,6 +502,7 @@
 
   & .slide-img {
     width: 100%;
+    height: size(680);
     transform: translate(5px, 5px);
   }
 
@@ -375,43 +586,120 @@
 }
 
 @media screen and (max-width: 767px) {
-  .bg-img {
-    height: auto;
-    top: auto;
-    bottom: 0;
-    &:nth-child(1) {
-      position: absolute;
+  .title-block {
+    width: 60vw;
+    margin: 0 auto;
+    margin-top: size-m(106);
+    margin-bottom: size-m(22);
+    .title {
+      font-size: size-m(30);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.3;
+      letter-spacing: normal;
+      text-align: center;
+      color: #3b5662;
+    }
+    .title-l {
+      width: size-m(33);
+    }
+
+    .title-r {
+      width: size-m(33);
+      transform: rotate(180deg);
     }
   }
-  .title {
+
+  .slide {
+    width: 100vw !important;
+    height: size-m(257);
+    margin-bottom: size-m(30);
+
+    & .slide-img {
+      object-fit: cover;
+      height: 100%;
+      transform: none;
+    }
+  }
+
+  .content {
     width: size-m(289);
-    right: size-m(43);
-    top: calc(32vh - 20vw);
+    margin: 0 auto size-m(100);
+    position: relative;
+
+    &.short {
+      width: size-m(289);
+    }
+
+    > .title {
+      font-size: size-m(25);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.77;
+      letter-spacing: 1.2px;
+      text-align: left;
+      color: #3b5662;
+      margin-bottom: size-m(20);
+    }
+
+    .desc {
+      font-size: size-m(18);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.77;
+      letter-spacing: 1.2px;
+      text-align: left;
+      color: #3b5662;
+      margin-bottom: size-m(25);
+    }
+
+    .text {
+      font-size: size-m(15);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.6;
+      letter-spacing: 0.9px;
+      text-align: left;
+      color: #3b5662;
+    }
   }
 
-  .mt {
-    margin-top: 60px;
-  }
-  .cloud1 {
-    height: size-m(604);
-    left: 50%;
-    top: auto;
-    bottom: 0;
-    width: auto;
-    transform: translateX(-55%);
-  }
-  .cloud2 {
-    height: size-m(604);
-    left: 50%;
-    top: auto;
-    bottom: 0;
-    width: auto;
-    transform: translateX(-60%);
+  .indigator-list {
+    display: none;
   }
 
-  @keyframes clouda {
-    to {
-      transform: translateX(-45%);
+  .bg2 {
+    top: auto;
+    bottom: size-m(-100);
+    left: size-m(-43);
+  }
+
+  .arrows {
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .arrow-l {
+      width: size-m(14);
+      position: absolute;
+      left: size-m(5);
+      cursor: pointer;
+    }
+
+    .arrow-r {
+      width: size-m(14);
+      transform: rotate(180deg);
+      position: absolute;
+      right: size-m(5);
+      cursor: pointer;
     }
   }
 }
@@ -450,7 +738,10 @@ export default {
         { text: '高速公路', src: require('./s2/2-5.jpg') },
       ],
       slideList3: [
-        { text: '淡水河畔重陽公園', src: require('./s2/3-1淡水河畔重陽公園.jpg') },
+        {
+          text: '淡水河畔重陽公園',
+          src: require('./s2/3-1淡水河畔重陽公園.jpg'),
+        },
         { text: '淡水河畔重陽公園', src: require('./s2/3-2.jpg') },
         { text: '淡水河畔重陽公園', src: require('./s2/3-3.jpg') },
         { text: '淡水河畔重陽公園', src: require('./s2/3-4.jpg') },

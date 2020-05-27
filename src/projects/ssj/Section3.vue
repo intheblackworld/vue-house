@@ -5,6 +5,7 @@
         src="./s3/bg.jpg"
         alt=""
         class="bg-img"
+        data-aos="fade" data-aos-delay="400"
       >
       <div class="title-block flex-ac flex-jb absolute">
         <img
@@ -26,6 +27,7 @@
             src="./s3/1.jpg"
             alt=""
             class="img"
+             data-aos="fade" data-aos-delay="600"
           >
         </div>
         <div class="block">
@@ -34,6 +36,7 @@
             src="./s3/2.jpg"
             alt=""
             class="img"
+             data-aos="fade" data-aos-delay="700"
           >
         </div>
         <div class="block">
@@ -42,14 +45,81 @@
             src="./s3/3.jpg"
             alt=""
             class="img"
+             data-aos="fade" data-aos-delay="800"
           >
         </div>
       </div>
     </div>
     <div
       v-else
-      class="fullscreen"
+      class="relative"
     >
+      <div class="title-block flex-ac flex-jb">
+        <img
+          src="./s3/l.png"
+          alt=""
+          class="title-l"
+        >
+        <h3 class="title">重劃區<br />3大優勢</h3>
+        <img
+          src="./s3/l.png"
+          alt=""
+          class="title-r"
+        >
+      </div>
+      <img
+        src="./mo/3/map_s.jpg"
+        alt=""
+        class="img"
+        data-aos="fade" data-aos-delay="400"
+      >
+
+      <img
+        src="./mo/3/btn.png"
+        alt=""
+        class="btn absolute"
+        @click="isShowDialog = true"
+      >
+
+      <div :class="`dialog ${isShowDialog ? 'show' : ''}`">
+        <img
+          src="./mo/3/map.jpg"
+          alt=""
+          class="dialog-content"
+        >
+        <img
+          src="@/projects/jh/s4/close.png"
+          class="close"
+          alt
+          @click="isShowDialog = false"
+        />
+      </div>
+
+      <h3 class="m-title">
+        捷運未來式，大臺北山手線世代
+      </h3>
+      <div class="slide relative" data-aos="fade" data-aos-delay="400">
+        <img
+          :src="slide.src"
+          v-for="(slide, index) in slideList"
+          :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
+          :key="`s3-1-slide-${index}`"
+        />
+        <div class="arrows absolute">
+          <img
+            src="./s4/arrow.png"
+            alt=""
+            class="arrow-l"
+            @click="addIndex"
+          >
+          <img
+            src="./s4/arrow.png"
+            alt=""
+            class="arrow-r"
+            @click="decIndex"
+          >
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -137,43 +207,123 @@
 }
 
 @media screen and (max-width: 767px) {
-  .bg-img {
-    height: auto;
-    top: auto;
-    bottom: 0;
-    &:nth-child(1) {
-      position: absolute;
+  .title-block {
+    width: 60vw;
+    margin: 0 auto;
+    margin-top: size-m(40);
+    margin-bottom: size-m(22);
+    top: 0;
+    left: 0;
+    right: 0;
+    .title {
+      font-size: size-m(30);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.3;
+      letter-spacing: normal;
+      text-align: center;
+      color: #fff;
+    }
+    .title-l {
+      width: size-m(33);
+    }
+
+    .title-r {
+      width: size-m(33);
+      transform: rotate(180deg);
     }
   }
-  .title {
-    width: size-m(289);
-    right: size-m(43);
-    top: calc(32vh - 20vw);
+
+  .img {
+    width: 100vw;
   }
 
-  .mt {
-    margin-top: 60px;
-  }
-  .cloud1 {
-    height: size-m(604);
-    left: 50%;
-    top: auto;
-    bottom: 0;
-    width: auto;
-    transform: translateX(-55%);
-  }
-  .cloud2 {
-    height: size-m(604);
-    left: 50%;
-    top: auto;
-    bottom: 0;
-    width: auto;
-    transform: translateX(-60%);
+  .btn {
+    width: size-m(155);
+    top: size-m(252);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
   }
 
-  @keyframes clouda {
-    to {
-      transform: translateX(-45%);
+  .m-title {
+    font-size: size-m(15);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    margin-top: size-m(30);
+    margin-bottom: size-m(5);
+  }
+
+  .slide {
+    width: size-m(316) !important;
+    height: size-m(175) !important;
+    height: auto;
+    margin: 0 auto size-m(95);
+    overflow: visible;
+
+    & .slide-img {
+      width: 100%;
+    }
+  }
+
+  .arrows {
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .arrow-l {
+      width: size-m(15);
+      position: absolute;
+      left: size-m(-25);
+      cursor: pointer;
+    }
+
+    .arrow-r {
+      width: size-m(15);
+      transform: rotate(180deg);
+      position: absolute;
+      right: size-m(-25);
+      cursor: pointer;
+    }
+  }
+
+  .dialog {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+
+    .dialog-content {
+      width: 100vw;
+      height: auto;
+    }
+
+    &.show {
+      display: flex;
+    }
+
+    .close {
+      position: absolute;
+      width: 40px;
+      right: 10px;
+      top: 20vh;
+      cursor: pointer;
     }
   }
 }
@@ -181,14 +331,23 @@
 <script>
 // @ is an alias to /src
 import { isMobile } from '@/utils'
+import slider from '@/mixins/slider.js'
 
 export default {
   name: 'section3',
+
+  mixins: [slider],
 
   components: {},
   data() {
     return {
       isMobile,
+      isShowDialog: false,
+      slideList: [
+        { text: '', src: require('./s3/1.jpg') },
+        { text: '', src: require('./s3/2.jpg') },
+        { text: '', src: require('./s3/3.jpg') },
+      ],
     }
   },
 

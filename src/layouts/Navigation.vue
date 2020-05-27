@@ -160,10 +160,13 @@ export default {
     justify-content: center;
     position: relative;
     overflow: hidden;
-      font-size:20px !important;
+    font-size: 22px !important;
     // border-right: 1px solid $nav_link_hover_bg;
     > span {
       z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     &:hover {
       background-color: $nav_link_hover_bg;
@@ -171,9 +174,9 @@ export default {
         animation: r5 0.3s alternate infinite;
         transform-origin: 50% 100%;
       }
-    .title {
-      margin:0.5em 0 0 0 ;
-    }
+      .title {
+        // margin: 0.5em 0 0 0;
+      }
     }
 
     @keyframes r5 {
@@ -181,14 +184,14 @@ export default {
         transform: skewX(-2deg);
       }
       100% {
-        transform:skewX(2deg);
+        transform: skewX(2deg);
       }
     }
 
     .title {
       position: relative;
       z-index: 3;
-      margin:0.8em 0 0 0 ;
+      // margin: 0.8em 0 0 0;
       transition: all 0.3s;
     }
 
@@ -201,7 +204,8 @@ export default {
     img {
       width: calc(100vw * 50 / 1920);
       height: auto;
-      margin-right: 10px;vertical-align: text-bottom;
+      margin-right: 10px;
+      vertical-align: text-bottom;
     }
   }
 }
@@ -257,6 +261,8 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .navigation {
+    background-color: transparent;
+    box-shadow: none;
     height: $nav_phone_height;
     z-index: 110;
   }

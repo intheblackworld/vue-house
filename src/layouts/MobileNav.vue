@@ -94,7 +94,6 @@ export default {
 .mobile-nav {
   width: 100%;
   height: 63px;
-  background: $mobile_nav_background;
 
   display: flex;
   position: fixed;
@@ -113,6 +112,7 @@ export default {
     justify-content: center;
     align-items: center;
     border-right: 1px solid $mobile_nav_border;
+    background: $mobile_nav_background;
 
     &:nth-child(4) {
       border-right: none;
