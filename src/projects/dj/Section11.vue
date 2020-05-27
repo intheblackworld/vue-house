@@ -332,7 +332,7 @@ img {
 import { isMobile } from '@/utils'
 
 export default {
-  name: 'section10',
+  name: 'section11',
 
   components: {},
   data() {

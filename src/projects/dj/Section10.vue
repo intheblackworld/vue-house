@@ -45,10 +45,10 @@
     </div>
     <div
       v-else
-      class="m-bg"
+      class="relative m-bg"
     >
       <img
-        v-lazy="require('./mo/10/1bg.jpg')"
+        v-lazy="require('./mo/10/2bg.jpg')"
         alt=""
         class="bg-img"
       >
@@ -57,14 +57,14 @@
         data-aos="fade-up"
         data-aos-delay="300"
       >
-        Large scale
+        Beautiful pattern
       </div>
       <div
         class="desc absolute"
         data-aos="fade-up"
         data-aos-delay="500"
       >
-        - 大器尺度 -
+         - 大器尺度 -
       </div>
       <div
         class="img-title absolute"
@@ -84,7 +84,11 @@
         打造咖啡吧、閱覽室、健身房，<br />
         透過動靜美學，展現生活品味。
       </div>
-      <div class="img-slide">
+      <div
+        class="img-slide"
+        v-touch:swipe.left="decIndex"
+        v-touch:swipe.right="addIndex"
+      >
         <img
           v-for="(src, index) in img_list"
           :key="src"
@@ -102,6 +106,9 @@
   // height: 100vh;
   overflow: hidden;
 }
+img {
+  pointer-events: none;
+}
 .bg-img {
   width: 100vw;
   height: size(1080);
@@ -115,7 +122,19 @@
     position: relative;
   }
 }
-
+.slide-img {
+  width: 100vw;
+  height: size(1080);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all 0.3s;
+  &.show {
+    position: relative;
+    opacity: 1;
+  }
+}
 .title {
   font-family: TrajanPro;
   font-size: size(60);
@@ -126,10 +145,10 @@
   letter-spacing: -2.37px;
   text-align: left;
   color: #fff;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
   top: size(72);
   left: size(248);
   z-index: 2;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -166,6 +185,7 @@
   letter-spacing: 1.76px;
   text-align: left;
   color: #fff;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
   top: size(145);
   left: size(251);
   z-index: 2;
@@ -173,7 +193,7 @@
 
 .img-title {
   font-size: size(35);
-  font-weight: 400;
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.39;
@@ -187,7 +207,7 @@
 
 .img-desc {
   font-size: size(20);
-  font-weight: 100;
+  font-weight: 200;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.41;
@@ -211,6 +231,7 @@
   top: 0;
   left: 0;
 }
+
 @media only screen and (max-width: 1440px) {
   .bg-img {
   }
@@ -282,17 +303,8 @@
     left: size-m(30);
   }
   .slide-img {
-    width: 100vw;
-    height: size(1080);
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: all 0.3s;
-    &.show {
-      position: relative;
-      opacity: 1;
-    }
+    width: 100%;
+    height: size-m(283);
   }
 
   .img-slide {
@@ -323,13 +335,13 @@ export default {
   data() {
     return {
       isMobile,
-      slideIndex: 1,
+      slideIndex: 0,
       img_list: [
-        require('./mo/10/1-1.jpg'),
-        require('./mo/10/1-2.jpg'),
-        require('./mo/10/1-3.jpg'),
-        require('./mo/10/1-4.jpg'),
-        require('./mo/10/1-5.jpg'),
+       // require('./s10/1.jpg'),
+      //  require('./s10/2.jpg'),
+        require('./s10/3.jpg'),
+        require('./s10/4.jpg'),
+        require('./s10/5.jpg'),
       ],
     }
   },
@@ -356,7 +368,7 @@ export default {
 
   mounted() {
     setInterval(() => {
-      if (this.slideIndex === 5) {
+      if (this.slideIndex === 3) {
         this.slideIndex = 0
       } else {
         this.slideIndex = this.slideIndex + 1

@@ -217,9 +217,13 @@
 }
 
 @media screen and (max-width: 767px) {
+  .relative[data-v-3c18513c] {
+    height:size-m(730);
+}
   .bg-img {
     height: auto;
     object-fit: cover;
+    top: size-m(30);
   }
 
   .title {
