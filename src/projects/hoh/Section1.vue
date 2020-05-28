@@ -258,6 +258,7 @@ img {
 
 .bubble1 {
   height: size(265);
+  max-height: calc(45vh - 7.4vw);
   top: size(145);
   left: size(270);
   transform-origin: 0 10%;
@@ -272,6 +273,7 @@ img {
 
 .bubble3 {
   height: size(314);
+  max-height: calc(55vh - 5.7vw);
   bottom: size(100);
   left: size(220);
   transform-origin: 0 90%;
@@ -279,6 +281,7 @@ img {
 
 .bubble4 {
   height: size(300);
+  max-height: calc(50vh - 4.1vw);
   bottom: size(80);
   right: size(250);
   transform-origin: 100% 90%;
@@ -293,7 +296,8 @@ img {
 
 .bubble6 {
   height: size(290);
-  top: size(234);
+  max-height: calc(50vh - 8.5vw);
+  top: size(160);
   right: size(230);
   transform-origin: 0% 0%;
 }
@@ -547,7 +551,7 @@ export default {
       } else {
         this.bubbleIndex++
       }
-    }, 10000)
+    }, 3000)
   },
 }
 </script>

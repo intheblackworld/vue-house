@@ -1,11 +1,11 @@
 <template>
   <div class="section2">
-    <div :class="`dialog ${isShowDialog ? 'show' : ''}`">
+    <div :class="`dialog ${isShowDialog ? 'show' : ''}`"
+        @click="closeDialog">
       <img
         src="../../assets/img/close.png"
         alt=""
         class="close"
-        @click="closeDialog"
       >
       <img
         :src="slideList[imgIndex]"
@@ -128,17 +128,17 @@
       >
         <img
           src="./event/event1.png"
-          alt=""
+          alt="DYSON TP00 氣流倍增器，DYSON V7 無線吸塵器，簽約在送神秘大禮"
           class="bg-img"
         >
         <img
           src="./event/event2.png"
-          alt=""
+          alt="早鳥預約神助攻 贈神秘大禮"
           class="bg-img"
         >
         <img
           src="./event/30.png"
-          alt=""
+          alt="限量前30戶"
           class="red-bubble absolute"
           data-aos="zoom-in-down"
           data-aos-delay="300"
@@ -343,6 +343,7 @@
   margin: size(100) auto 0;
   border-radius: 9vw;
 }
+.swiper-slide{width:calc(33.33% - 10px);}
 .item-img {
   width: size(330);
   cursor: pointer;
@@ -407,8 +408,10 @@
   }
 
   .dialog-img {
-    width: 50vw;
+    //width: 50vw;
     height: auto;
+    width: auto;
+    max-height: 96vh;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -437,12 +440,14 @@
   }
 
   .swiper {
-    width: 90vw;
-    margin: size-m(30) auto 0;
+    width: 100%;
+    margin:size-m(20) 0 0 0 ;
+    border-radius: 0;
   }
 
+.swiper-slide{width:size-m(200);}
   .item-img {
-    width: size-m(100);
+    width: size-m(180);
   }
 
   .ball1 {
@@ -477,13 +482,13 @@
 
   .ball5 {
     right: size-m(-30);
-    top: size-m(310);
+    top: size-m(380);
     height: size-m(100);
   }
 
   .ball7 {
     left: size-m(-45);
-    top: size-m(340);
+    top: size-m(420);
     height: size-m(70);
   }
   .ball8 {
@@ -493,27 +498,27 @@
   }
   .ball9 {
     left: size-m(-40);
-    top: size-m(400);
+    top: size-m(480);
     height: size-m(100);
   }
   .ball10 {
     right: size-m(-40);
-    top: size-m(650);
+    top: size-m(730);
     height: size-m(150);
   }
   .ball11 {
     right: size-m(-100);
-    top: size-m(500);
+    top: size-m(580);
     height: size-m(200);
   }
   .ball12 {
     right: size-m(-80);
-    top: size-m(850);
+    top: size-m(930);
     height: size-m(150);
   }
   .ball13 {
     left: size-m(-40);
-    top: size-m(1000);
+    top: size-m(1080);
     height: size-m(200);
   }
   .ball6 {
@@ -532,7 +537,7 @@
   }
 
   .big-smile {
-    top: size-m(366);
+    top: size-m(405);
     right: size-m(-20);
     width: size-m(140);
     z-index: 2;
@@ -584,13 +589,13 @@ export default {
     return {
       isMobile,
       swiperOption: {
-        slidesPerView: 3,
+        slidesPerView:"auto",
         centeredSlides: true,
         spaceBetween: isTablet ? 20 : 10,
         slidesPerColumn: isMobile ? 1 : 1,
 
         autoplay: {
-          delay: 2500,
+          delay: 5000,
           disableOnInteraction: true,
         },
         loop: true,
