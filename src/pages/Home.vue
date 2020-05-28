@@ -21,30 +21,6 @@
     >
       <Section2 />
     </div>
-    <div
-      class="section"
-      id="section3"
-    >
-      <Section3 />
-    </div>
-    <div
-      class="section"
-      id="section4"
-    >
-      <Section4 />
-    </div>
-    <div
-      class="section"
-      id="section5"
-    >
-      <Section5 />
-    </div>
-    <div
-      class="section"
-      id="section6"
-    >
-      <Section6 />
-    </div>
     <!-- <div
       class="section"
       id="section7"
@@ -81,13 +57,13 @@ import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 // import Indigator from '@/components/Indigator.vue'
 
-import Section1 from '@/projects/ssj/Section1.vue'
-import Section2 from '@/projects/ssj/Section2.vue'
-import Section3 from '@/projects/ssj/Section3.vue'
-import Section4 from '@/projects/ssj/Section4.vue'
-import Section5 from '@/projects/ssj/Section5.vue'
-import Section6 from '@/projects/ssj/Section6.vue'
-// import Section7 from '@/projects/ssj/Section7.vue'
+import Section1 from '@/projects/cjl/Section1.vue'
+import Section2 from '@/projects/cjl/Section2.vue'
+// import Section3 from '@/projects/cjl/Section3.vue'
+// import Section4 from '@/projects/cjl/Section4.vue'
+// import Section5 from '@/projects/cjl/Section5.vue'
+// import Section6 from '@/projects/cjl/Section6.vue'
+// import Section7 from '@/projects/cjl/Section7.vue'
 
 export default {
   name: 'home',
@@ -100,10 +76,10 @@ export default {
     MobileNav,
     Section1,
     Section2,
-    Section3,
-    Section4,
-    Section5,
-    Section6,
+    // Section3,
+    // Section4,
+    // Section5,
+    // Section6,
     // Section7,
   },
 
