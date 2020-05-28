@@ -469,7 +469,7 @@ export default {
       font-size: calc(100vw * 38 / 375);
     }
 .order-top{
-    background-image: $order_bg_image_m;
+   // background-image: $order_bg_image_m;
     padding-bottom: 40px;
     }
     .order-subtitle {

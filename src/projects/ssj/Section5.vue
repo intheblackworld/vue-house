@@ -59,7 +59,7 @@
         </div>
       </div>
       <div class="container">
-        <div class="content">
+        <div class="content b">
           <div class="text">家是乘載家家戶戶故事的容器，家代表一個人的個人品味，和他如何書寫生命的故事。依照季節挑選窗簾、選擇喜歡的木椅木桌，一個好的格局，足夠讓你充分揮灑自己的想望……格局方正，採光極優，超強坪效規劃！【樺輝心世界】讓人驚嘆，原來生活可以這樣過，在空間內變魔術，樣樣俱備，讓您感動過人生，生活更動
           </div>
         </div>
@@ -240,13 +240,14 @@
 }
 
 .content {
-  width: size(860);
+  width: size(1350);
   margin: 0 auto;
-  margin-top: size(25);
+  padding:size(30) size(245) 0 size(245);
 
   &.short {
     width: size(472);
   }
+&.b{border-top: 1px solid #fff;}
 
   .desc {
     font-size: size(24);
@@ -380,6 +381,7 @@
     width: size-m(304);
     margin: 0 auto;
     margin-top: size-m(40);
+    padding: 0;
 
     .text {
       font-size: size-m(15);

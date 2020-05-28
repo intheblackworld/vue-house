@@ -217,7 +217,6 @@
     padding: 8px 30px;
   }
 }
-
 .arrows {
   width: 100%;
   top: 50%;
@@ -261,7 +260,7 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-    height: size-m(661);
+    height: size-m(700);
   }
 
   .title-block {
@@ -310,11 +309,25 @@
   }
 
   .slide {
+    overflow: hidden;
+  border-radius: 50% 60% 40% 80%;
+  margin: auto;
+    width: size-m(300) !important;
+    height: size-m(350);
+    animation: radius 3s alternate infinite;
     .slide-text {
       font-size: size-m(12);
+    bottom:  size-m(1);
     }
+    img{width: 100%;
+    height: 100%;}
   }
 
+@keyframes radius{
+    to {
+  border-radius: 80% 50% 80% 60%;
+    }
+}
   .arrows {
     width: 100%;
     top: size-m(215);
