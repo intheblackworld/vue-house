@@ -1,20 +1,22 @@
 export default {
-  address: '桃園市蘆竹區大興路271號',
+  address: '新北市三重區三信路27號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7230.9960651246065!2d121.25284363490806!3d25.017167214282612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468202b8c0d6a65%3A0xbeba6a66370564d3!2zMzM45qGD5ZyS5biC6JiG56u55Y2A5aSn6IiI6LevMjcx6Jmf!5e0!3m2!1szh-TW!2stw!4v1590377353061!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/Bn6zU3ZA32NUT7oY7',
-  phone: '03-3135533',
-  fbLink: 'https://www.facebook.com/豐郡大景-108654404191724',
-  fbMessage: 'https://m.me/108654404191724',
-  caseName: '豐郡大景',
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1806.7320377350147!2d121.4873779!3d25.0861474!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442af2ac1adc48b%3A0x349ac043e688ce40!2zMjQx5paw5YyX5biC5LiJ6YeN5Y2A5LiJ5L-h6Lev!5e0!3m2!1szh-TW!2stw!4v1590633821772!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/W18i8dseKLwno4677',
+  phone: '02-28576999',
+  fbLink: 'https://www.facebook.com/樺輝心世界-103235034587425/',
+  fbMessage: 'https://m.me/103235034587425',
+  caseName: '樺輝心世界',
   indigatorLength: 10,
 
   houseInfos: [
-  //  ['投資興建', '太子建設'],
-  //  ['建築規劃', '呂建勳建築師事務所'],
-  //  ['經紀人', '許惠娟（98）北縣字第001948號'],
-   // ['建築代銷', 'Z.A 政安廣告'],
-   // ['使用執照', '108店使字第00294號'],
+    ['投資興建', '樺輝建設'],
+    ['責任施工', '呂建勳柏威營造(甲級) 建築師事務所'],
+    ['建築規劃', '葛介南建築事務所<br>王德生建築事務所'],
+    ['結構設計', '國興結構技師事務所'],
+    ['門廳設計', '奧迪設計'],
+    ['企劃銷售', '大元廣告'],
+    ['建照號碼', '新北市104重建字第00100號'],
   ],
 
   gtmCode: ['K97QDJM'], // 可放置多個
