@@ -45,8 +45,8 @@ $order_submit_color: #fff !important;
 $order_sumbit_disable_bg: rgba(55, 118, 24, .4) !important;
 
 // contactInfo
-$contact_bg: #d9d7d2;
-$contact_bg_m: #d9d7d2;
+$contact_bg: url('~@/assets/img/contact-bg.png');
+$contact_bg_m: url('~@/assets/img/contact-bg-m.png');
 $contact_shadow: 0 0 80px 0 rgba(0, 0, 0, 0.2);
 
 $contact_btn_border: 0 0 0px 1px #333;
