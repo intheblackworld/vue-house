@@ -44,6 +44,7 @@
         class="img-desc absolute"
         data-aos="fade-up"
         data-aos-delay="900"
+        data-aos-offset="-150"
       >
         經典雋永的建築外觀，搭配挑高迎賓大廳，精緻且實用的公共空間規劃，<br />打造咖啡吧、閱覽室、健身房，透過動靜美學，展現生活品味。
       </div>
@@ -251,6 +252,7 @@ img {
   width: 100vw;
   height: 100%;
   left: 0;
+  padding-right: 15px;
   .arrow-left,
   .arrow-right {
     border: 0px none #0000 !important;
@@ -375,6 +377,7 @@ img {
   }
 
   .arrows {
+    padding-right: 0;
     .arrow-left,
     .arrow-right {
       width: auto;
@@ -385,10 +388,6 @@ img {
         background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16.28 28.67' preserveAspectRatio='xMidyMid' fill='%23666'%3E%3Cpolygon points='14.33 28.67 16.28 26.72 3.79 14.23 16.18 1.84 14.33 0 0 14.33 14.33 28.67'/%3E%3C/svg%3E")
           no-repeat center center;
       }
-    }
-
-    .arrow-right {
-      right: 0;
     }
   }
 }
