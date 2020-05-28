@@ -1,8 +1,8 @@
 <template>
   <div class="home no-padding-top">
     <Loading :loading="load" />
-    <SideNavigation v-if="isSide" />
-    <Navigation v-else />
+    <!-- <SideNavigation v-if="isSide" />
+    <Navigation v-else /> -->
     <!-- <Indigator :viewIndex="viewIndex" /> -->
     <!-- <full-page
       ref="fullPage"
@@ -15,12 +15,12 @@
     >
       <Section1 />
     </div>
-    <div
+    <!-- <div
       class="section"
       id="section2"
     >
       <Section2 />
-    </div>
+    </div> -->
     <!-- <div
       class="section"
       id="section7"
@@ -58,7 +58,7 @@ import Loading from '@/components/Loading.vue'
 // import Indigator from '@/components/Indigator.vue'
 
 import Section1 from '@/projects/cjl/Section1.vue'
-import Section2 from '@/projects/cjl/Section2.vue'
+// import Section2 from '@/projects/cjl/Section2.vue'
 // import Section3 from '@/projects/cjl/Section3.vue'
 // import Section4 from '@/projects/cjl/Section4.vue'
 // import Section5 from '@/projects/cjl/Section5.vue'
@@ -75,7 +75,7 @@ export default {
     ContactSection,
     MobileNav,
     Section1,
-    Section2,
+    // Section2,
     // Section3,
     // Section4,
     // Section5,

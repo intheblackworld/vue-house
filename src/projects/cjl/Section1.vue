@@ -1,34 +1,34 @@
 <template>
   <div class="relative">
-    <div v-if="!isMobile" class="flex-c">
-      <img
-        src="./img/bg.jpg"
-        alt=""
-        class="bg-img"
-      >
-      <img
-        src="./img/logo.png"
-        alt=""
-        class="logo"
-      >
-      <div class="txt">
-        即將登場
+    <div
+      v-if="!isMobile"
+      class="flex-c section1"
+    >
+      <div>
+        <img
+          src="./img/logo.png"
+          alt=""
+          class="logo"
+        >
+        <h3 class="txt flex-c">
+          即將登場
+        </h3>
       </div>
     </div>
     <div
       v-else
-      class="fullscreen"
+      class="flex-c section1"
     >
-      <img
-        src="./img/bg_m.jpg"
-        alt=""
-        class="bg-img"
-      >
-      <img
-        src="./img/logo.png"
-        alt=""
-        class="logo absolute"
-      >
+      <div>
+        <img
+          src="./img/logo.png"
+          alt=""
+          class="logo"
+        >
+        <h3 class="txt flex-c">
+          即將登場
+        </h3>
+      </div>
     </div>
   </div>
 </template>
@@ -37,7 +37,15 @@
 .relative {
   // height: 100vh;
   overflow: hidden;
-  background: #3b5662;
+  // background: #3b5662;
+}
+
+.section1 {
+  width: 100vw;
+  height: size(1080);
+  // background-image: url('./img/bg.jpg');
+  // background-attachment: fixed;
+  // position: fixed;
 }
 
 .bg-img {
@@ -49,19 +57,33 @@
   left: 0;
   object-fit: cover;
 
-  &:nth-child(1) {
-    position: absolute;
-  }
+  // &:nth-child(1) {
+  //   position: absolute;
+  // }
 }
 
 .logo {
   width: size(559);
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .txt {
   width: size(527);
   height: size(79);
+  position: relative;
+  z-index: 1;
+  font-size: size(48);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.44;
+  letter-spacing: 3.84px;
+  text-align: left;
+  color: #ffffff;
+  background-image: url('./img/txtbg.png');
+  background-size: cover;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -80,17 +102,19 @@
 }
 
 @media screen and (max-width: 767px) {
-  .bg-img {
-    height: auto;
-    top: 0;
-    bottom: 0;
-    &:nth-child(1) {
-      position: absolute;
-    }
+  .section1 {
+    width: 100vw;
+    height: size-m(667);
   }
 
   .logo {
-    top: size-m(197);
+    width: size-m(265);
+  }
+
+  .txt {
+    width: size-m(249);
+    height: size-m(37);
+    font-size: size-m(22);
   }
 }
 </style>

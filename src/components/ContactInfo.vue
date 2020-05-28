@@ -1,8 +1,8 @@
 <template>
 <div>
   <div class="contact-info">
-    <img class="logo" src="@/assets/img/contact-logo.png" alt="" v-if="!isMobile" />
-    <img class="logo" src="@/projects/ssj/mo/7/contact-logo-m.png" alt="" v-if="isMobile" />
+    <!-- <img class="logo" src="@/assets/img/contact-logo.png" alt="" v-if="!isMobile" />
+    <img class="logo" src="@/projects/ssj/mo/7/contact-logo-m.png" alt="" v-if="isMobile" /> -->
     <div class="info">
       <div class="btn flex-c" @click="showCallDialog">
         <span class="flex-c">
@@ -103,7 +103,7 @@ export default {
   position: relative;
   z-index: 3;
   width: 1200px;
-  height: 460px;
+  height: 260px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */

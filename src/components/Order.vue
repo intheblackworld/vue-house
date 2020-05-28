@@ -1,8 +1,5 @@
 <template>
   <div class="order-bg">
-    <img src="../assets/img/contact-bg.png" alt="" class="bg-img">
-    <!-- <img src="@/projects/fs/order/bg1.png" alt="" class="bg-img no-mix"> -->
-    <!-- <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile"> -->
     <div class="order-top">
       <!-- <div class="title-block">
         <h3 class="title">{{order.title}}</h3>

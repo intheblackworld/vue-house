@@ -26,9 +26,9 @@ $mask_icon_color: #c82514;
 
 /* contactSection */
 // order
-$order_bg_color:#3B5662;
-$order_bg_image: url('~@/assets/img/contact-bg.png');
-$order_bg_image_m: url('~@/projects/dj/s13/3_m.png');
+$order_bg_color: transparent;
+$order_bg_image: transparent;
+$order_bg_image_m: transparent;
 $order_title_color: #fff;
 $order_subtitle_color: #cc2617;
 $order_input_label_color: #fff;
@@ -40,7 +40,7 @@ $order_input_focus_border: solid 1px #377618 !important;
 $order_input_selected_color: solid 1px #377618 !important;
 $order_check_desc_color: #fff !important;
 $order_check_span_color: #fff !important;
-$order_submit_bg: linear-gradient(to right, #a27f45 0%, #e1c7a6 94%, #e1c7a6 100%) !important;
+$order_submit_bg: linear-gradient(120deg, #c39228 0%, #f1d472 22%, #f8de7b 24%, #9a5b00 74%, #9e6005 83%, #aa7014 95%, #b17a1d 100%) !important;
 $order_submit_color: #fff !important;
 $order_sumbit_disable_bg: rgba(55, 118, 24, .4) !important;
 
@@ -52,16 +52,16 @@ $contact_shadow: 0 0 80px 0 rgba(0, 0, 0, 0.2);
 $contact_btn_border: 0 0 0px 1px #333;
 $contact_btn_color: #fff;
 $contact_btn_icon: #fff;
-$contact_btn_bg: linear-gradient(to right, #a27f45 0%, #e1c7a6 94%, #e1c7a6 100%);
-$contact_btn_hover_color: #a27f45;
-$contact_btn_hover_icon: #a27f45;
+$contact_btn_bg: linear-gradient(120deg, #c39228 0%, #f1d472 22%, #f8de7b 24%, #9a5b00 74%, #9e6005 83%, #aa7014 95%, #b17a1d 100%);;
+$contact_btn_hover_color: #9a5b00;
+$contact_btn_hover_icon: #9a5b00;
 $contact_btn_hover_bg: #fff;
 
 $contact_google_btn_color: #fff;
 $contact_google_btn_icon: #fff;
-$contact_google_btn_bg: #ac762f;
-$contact_google_hover_btn_color: #ac762f;
-$contact_google_hover_btn_icon: #ac762f;
+$contact_google_btn_bg: #9a5b00;
+$contact_google_hover_btn_color: #9a5b00;
+$contact_google_hover_btn_icon: #9a5b00;
 $contact_google_hover_btn_bg: #ccc;
 
 
@@ -73,15 +73,15 @@ $house_label_color: #3b5662;
 $house_desc_color: #000;
 
 // mobileNav
-$mobile_nav_background: linear-gradient(to right, #a27f45 0%, #e1c7a6 94%, #e1c7a6);
+$mobile_nav_background: linear-gradient(120deg, #c39228 0%, #f1d472 22%, #f8de7b 24%, #9a5b00 74%, #9e6005 83%, #aa7014 95%, #b17a1d 100%);
 $mobile_nav_color: #fff;
 $mobile_nav_border: transparent;
 $mobile_nav_icon: #fff;
 
 $mobile_dialog_bg: #fff;
-$mobile_dialog_icon: #a27f45;
+$mobile_dialog_icon: #9a5b00;
 $mobile_dialog_desc: #000;
-$mobile_dialog_submit_bg: #a27f45;
+$mobile_dialog_submit_bg: #9a5b00;
 $mobile_dialog_submit_color: #fff;
 
 

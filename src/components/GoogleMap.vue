@@ -1,11 +1,11 @@
 <template>
   <div class="google-map">
-    <div class="map-img flex-ac">
+    <!-- <div class="map-img flex-ac">
       <img
         src="~@/projects/ssj/map-left.png"
         alt=""
       >
-    </div>
+    </div> -->
     <iframe
       title="googlemap"
       :src="googleSrc"
@@ -41,33 +41,33 @@ export default {
   }
 }
 
-.map-img {
-  width: 50%;
-  justify-content: flex-end;
+// .map-img {
+//   width: 50%;
+//   justify-content: flex-end;
 
-  > img {
-    width: 311px;
-    float: right;
-    margin-right: 150px;
-  }
-}
+//   > img {
+//     width: 311px;
+//     float: right;
+//     margin-right: 150px;
+//   }
+// }
 
 @media screen and (max-width: 767px) {
   .google-map {
     flex-wrap: wrap;
   }
 
-  .map-img {
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    height: 350px;
+  // .map-img {
+  //   width: 100%;
+  //   justify-content: center;
+  //   align-items: center;
+  //   height: 350px;
 
-    > img {
-      width: 251px;
-      margin-right: 150px;
-      margin: 0 auto;
-    }
-  }
+  //   > img {
+  //     width: 251px;
+  //     margin-right: 150px;
+  //     margin: 0 auto;
+  //   }
+  // }
 }
 </style>
