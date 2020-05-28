@@ -1,10 +1,18 @@
 <template>
   <div
     class="relative"
-    v-touch:swipe.left="decIndex"
-    v-touch:swipe.right="addIndex"
   >
     <div v-if="!isMobile">
+      <div class="arrows flex flex-jb">
+        <div
+          class="arrow-left"
+          @click="decIndex"
+        ></div>
+        <div
+          class="arrow-right"
+          @click="addIndex"
+        ></div>
+      </div>
       <img
         v-for="(src, index) in img_list"
         :key="src"
@@ -93,9 +101,17 @@
       </div>
       <div
         class="img-slide"
-        v-touch:swipe.left="decIndex"
-        v-touch:swipe.right="addIndex"
       >
+        <div class="arrows flex flex-jb">
+          <div
+            class="arrow-left"
+            @click="decIndex"
+          ></div>
+          <div
+            class="arrow-right"
+            @click="addIndex"
+          ></div>
+        </div>
         <img
           v-for="(src, index) in img_list"
           :key="src"
@@ -236,6 +252,44 @@ img {
   bottom: 0;
 }
 
+.arrows {
+  position: absolute;
+  z-index: 3;
+  width: 100vw;
+  height: 100%;
+  left: 0;
+  .arrow-left,
+  .arrow-right {
+    border: 0px none #0000 !important;
+    width: size(50);
+    height: 100%;
+    top: 0;
+    padding: 0 size(10);
+    display: flex;
+    align-items: center;
+    margin: 0;
+    z-index: 3;
+    cursor: pointer;
+    &::before {
+      width: 1em;
+      height: 2em;
+      display: block;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16.28 28.67' preserveAspectRatio='xMidyMid' fill='%23fff'%3E%3Cpolygon points='14.33 28.67 16.28 26.72 3.79 14.23 16.18 1.84 14.33 0 0 14.33 14.33 28.67'/%3E%3C/svg%3E")
+        no-repeat center center;
+      content: '';
+      background-size: contain;
+    }
+  }
+
+  .arrow-left {
+    left: 0;
+  }
+  .arrow-right {
+    transform: rotate(180deg);
+    right: 0;
+  }
+}
+
 @media only screen and (max-width: 1440px) {
   .bg-img {
   }
@@ -326,6 +380,20 @@ img {
     left: 0;
     bottom: 0;
   }
+
+  .arrows {
+    .arrow-left,
+    .arrow-right {
+      width: auto;
+      height: 100%;
+      padding: 0 size-m(5);
+      cursor: none;
+      &::before {
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16.28 28.67' preserveAspectRatio='xMidyMid' fill='%23666'%3E%3Cpolygon points='14.33 28.67 16.28 26.72 3.79 14.23 16.18 1.84 14.33 0 0 14.33 14.33 28.67'/%3E%3C/svg%3E")
+          no-repeat center center;
+      }
+    }
+  }
 }
 </style>
 <script>
@@ -348,6 +416,7 @@ export default {
         require('./s11/5.jpg'),
         require('./s11/6.jpg'),
         require('./s11/7.jpg'),
+        require('./s11/8.png'),
       ],
     }
   },
@@ -373,13 +442,13 @@ export default {
   created() {},
 
   mounted() {
-    setInterval(() => {
-      if (this.slideIndex === 5) {
-        this.slideIndex = 0
-      } else {
-        this.slideIndex = this.slideIndex + 1
-      }
-    }, 3000)
+    // setInterval(() => {
+    //   if (this.slideIndex === 5) {
+    //     this.slideIndex = 0
+    //   } else {
+    //     this.slideIndex = this.slideIndex + 1
+    //   }
+    // }, 3000)
   },
 
   computed: {},
