@@ -77,8 +77,8 @@
     <div class="newbox">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 980.73 257.1"
         data-aos="fade-right"
-        data-aos-delay="1000"
-        data-aos-offset="-500">
+        data-aos-delay="800"
+        data-aos-offset="0">
         <defs>
           <linearGradient id="svgtxt" x1="266.15" y1="188.98" x2="980.73" y2="188.98" gradientTransform="matrix(1, 0, 0, -1, 0, 237.58)" gradientUnits="userSpaceOnUse">
             <stop offset="0.07" stop-color="#97c420"/>
@@ -104,8 +104,8 @@
         alt=""
         class="bg-img"
         data-aos="fade-left"
-        data-aos-delay="1200"
-        data-aos-offset="-500"
+        data-aos-delay="1000"
+        data-aos-offset="0"
       >
     </div>
   </div>
