@@ -7,19 +7,31 @@
         <div class="group">
           <div class="row">
             <label>姓名</label>
-            <el-input v-model="form.name" placeholder></el-input>
+            <el-input
+              v-model="form.name"
+              placeholder
+            ></el-input>
           </div>
           <div class="row">
             <label>手機</label>
-            <el-input v-model="form.phone" placeholder></el-input>
+            <el-input
+              v-model="form.phone"
+              placeholder
+            ></el-input>
           </div>
           <div class="row">
             <label>E-mail</label>
-            <el-input v-model="form.email" placeholder></el-input>
+            <el-input
+              v-model="form.email"
+              placeholder
+            ></el-input>
           </div>
           <div class="row">
             <label>居住城市</label>
-            <el-select v-model="form.city" placeholder>
+            <el-select
+              v-model="form.city"
+              placeholder
+            >
               <el-option
                 v-for="city in cityList"
                 :key="city.value"
@@ -30,7 +42,10 @@
           </div>
           <div class="row">
             <label>居住地區</label>
-            <el-select v-model="form.area" placeholder>
+            <el-select
+              v-model="form.area"
+              placeholder
+            >
               <el-option
                 v-for="area in areaList"
                 :key="area.value"
@@ -42,7 +57,12 @@
         </div>
         <div class="group">
           <div class="row">
-            <el-input type="textarea" :rows="2" placeholder="請輸入您的留言 (選填)" v-model="form.msg"></el-input>
+            <el-input
+              type="textarea"
+              :rows="2"
+              placeholder="請輸入您的留言 (選填)"
+              v-model="form.msg"
+            ></el-input>
           </div>
         </div>
       </div>
@@ -55,7 +75,13 @@
           </p>
         </el-checkbox>
       </div>
-      <el-button class="form-submit" type="primary" :disabled="!checked" @click="submit" :loading="isSubmit">立即預約</el-button>
+      <el-button
+        class="form-submit"
+        type="primary"
+        :disabled="!checked"
+        @click="submit"
+        :loading="isSubmit"
+      >立即預約</el-button>
     </div>
     <ContactInfo />
     <GoogleMap />
@@ -135,6 +161,14 @@ export default {
         this.isSubmit = false
         return
       }
+
+      function gtag() {
+        window.dataLayer.push(arguments)
+      }
+      gtag('event', 'conversion', {
+        send_to: 'AW-741945426/Z--rCO_fw9EBENLg5OEC',
+        // event_callback: callback,
+      })
       const urlParams = new URLSearchParams(window.location.search)
       const utmSource = urlParams.get('utm_source')
       const utmMedium = urlParams.get('utm_medium')
