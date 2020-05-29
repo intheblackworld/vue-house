@@ -1,6 +1,6 @@
 <template>
   <div class="order-bg">
-    <img src="../assets/img/contact-bg.png" alt="" class="bg-img">
+   <!-- <img src="../assets/img/contact-bg.png" alt="" class="bg-img"> -->
     <!-- <img src="@/projects/fs/order/bg1.png" alt="" class="bg-img no-mix"> -->
     <!-- <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile"> -->
     <div class="order-top">
@@ -309,13 +309,12 @@ export default {
 }
 .order-bg {
   background-color: $order_bg_color;
-  //background-image: $order_bg_image;
+  background-image: $order_bg_image;
   background-repeat: no-repeat;
   position: relative;
   padding-top: 130px;
-  background-position:0;
-  background-size:auto;
-  // background-image: $order_bg_image;
+  background-position: 0 0;
+background-size: 100vw auto;
 
   .order-top {
     position: relative;
@@ -455,6 +454,7 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .order-bg {
+  background-image: $order_bg_image_m;
     padding-top: 40px;
     margin: 0;
     position: relative;

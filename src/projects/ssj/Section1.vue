@@ -948,7 +948,7 @@
 @import '@/assets/style/function.scss';
 #svg1{transform: translate(0 , -7%) rotate(180deg);}
 .relative {
-  height:calc(100vh - 63px);
+  height:100vh;
   overflow: hidden;
   background: #3b5662;
 }
@@ -1015,8 +1015,12 @@ transform: translateY(-10%);
 
 @media screen and (max-width: 767px) {
 #svg1{transform:translate(27%, 131%) rotate(90deg) scale(1.6);transform-origin:50% 11%;width:178vw;height: 100vw;top:0;left: 0;}
-#svg2{transform:translate(-35%, -27%) rotate(-90deg) scale(1.8);transform-origin:50% 11%;width:178vw;height: 100vw;top:auto;bottom:0;left: 0;}
-  .bg-img {
+#svg2{transform:translate(-40%, -47%) rotate(-90deg) scale(1.55);transform-origin:50% 11%;width:178vw;height: 100vw;top:auto;bottom:0;left: 0;}
+ 
+.relative {
+  height:calc(100vh - 63px);
+}
+   .bg-img {
     height: auto;
     top: 0;
     bottom: 0;
@@ -1026,7 +1030,8 @@ transform: translateY(-10%);
   }
 
   .logo {
-    top: size-m(197);
+    //top: size-m(197);
+     margin-top: size-m(-120);
   }
   .img {
   width: size-m(120);

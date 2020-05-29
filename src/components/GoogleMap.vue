@@ -44,6 +44,7 @@ export default {
 .map-img {
   width: 50%;
   justify-content: flex-end;
+  background-color: rgba(0,0,0,0.2);
 
   > img {
     width: 311px;

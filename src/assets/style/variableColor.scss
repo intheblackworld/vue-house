@@ -28,7 +28,7 @@ $mask_icon_color: #c82514;
 // order
 $order_bg_color:#3B5662;
 $order_bg_image: url('~@/assets/img/contact-bg.png');
-$order_bg_image_m: url('~@/projects/dj/s13/3_m.png');
+$order_bg_image_m: url('~@/projects/ssj/mo/7/bg.png');
 $order_title_color: #fff;
 $order_subtitle_color: #cc2617;
 $order_input_label_color: #fff;
@@ -73,10 +73,10 @@ $house_label_color: #3b5662;
 $house_desc_color: #000;
 
 // mobileNav
-$mobile_nav_background: linear-gradient(to right, #a27f45 0%, #e1c7a6 94%, #e1c7a6);
-$mobile_nav_color: #fff;
-$mobile_nav_border: transparent;
-$mobile_nav_icon: #fff;
+$mobile_nav_background: #d9d7d2;
+$mobile_nav_color: #3b5662;
+$mobile_nav_border:#fff;
+$mobile_nav_icon: #3b5662;
 
 $mobile_dialog_bg: #fff;
 $mobile_dialog_icon: #a27f45;
