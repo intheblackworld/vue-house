@@ -256,7 +256,7 @@
             $url .= "&email=".$user_email;
             $url .= "&city=".$city;
             $url .= "&area=".$area;
-            $url .= "&message=".$msg;
+            $url .= "&message="."預約時間:".$time_start."-".$time_end.",".$msg;
             $url .= "&utm_source=".$utm_source;
             $url .= "&utm_medium=".$utm_medium;
             $url .= "&utm_content=".$utm_content;
