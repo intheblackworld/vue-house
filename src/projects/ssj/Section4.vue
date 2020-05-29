@@ -5,7 +5,6 @@
         src="./s4/bg.png"
         alt=""
         class="bg-img"
-         data-aos="fade" data-aos-delay="400"
       >
       <div class="title-block flex-ac flex-jb">
         <img
@@ -122,6 +121,7 @@
   position: absolute;
   z-index: 2;
   display: block;
+  top:size(250);
   bottom: 0;
   left: 0;
   object-fit: cover;
@@ -189,11 +189,13 @@
 .slide {
   width: 100vw;
   height: size(1080);
-  height: auto;
   overflow: visible;
+  margin:0 0 size(250) 0;
 
   & .slide-img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .border {

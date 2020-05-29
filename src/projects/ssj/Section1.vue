@@ -1014,8 +1014,8 @@ transform: translateY(-10%);
 }
 
 @media screen and (max-width: 767px) {
-#svg1{transform: translate(15%, 104%) rotate(90deg) scale(1.3);transform-origin:50% 11%;width: 100vh;height: 100vw;top:0;left: 0;}
-#svg2{transform: translate(-59%, 43%) rotate(-90deg) scale(1.3);transform-origin:50% 11%;width: 100vh;height: 100vw;top:0;left: 0;}
+#svg1{transform:translate(27%, 131%) rotate(90deg) scale(1.6);transform-origin:50% 11%;width:178vw;height: 100vw;top:0;left: 0;}
+#svg2{transform:translate(-35%, -27%) rotate(-90deg) scale(1.8);transform-origin:50% 11%;width:178vw;height: 100vw;top:auto;bottom:0;left: 0;}
   .bg-img {
     height: auto;
     top: 0;
