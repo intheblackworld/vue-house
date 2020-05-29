@@ -339,10 +339,10 @@ img[lazy="loaded"] {
     background-color: transparent;
     background-image: $order_bg_image_m;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% auto;
     background-attachment: fixed;
     background-position: 0% 50%;
-    background-image: url("~@/projects/cjl/img/bg.jpg");
+    background-image: url("~@/projects/cjl/img/bg_m.jpg");
     background-attachment: fixed;
 
     &.no-padding-top {
