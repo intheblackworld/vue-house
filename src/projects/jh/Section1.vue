@@ -14,7 +14,7 @@
         <source src="./music.mp3" type="audio/mpeg" />
       </audio>-->
       <audio controls style="display: none" ref="audio" loop="loop" @click="playMusic">
-        <source src="./s1/MotionElements_classical.wav" type="audio/mpeg" />
+        <source src="./music.wav" type="audio/mpeg" />
       </audio>
       <div class="modal" v-if="modal">
         <div class="mask" @click="modal = false"></div>
