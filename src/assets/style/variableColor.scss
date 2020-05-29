@@ -52,10 +52,10 @@ $contact_shadow: 0 0 80px 0 rgba(0, 0, 0, 0.2);
 $contact_btn_border: 0 0 0px 1px #333;
 $contact_btn_color: #fff;
 $contact_btn_icon: #fff;
-$contact_btn_bg: linear-gradient(120deg, #c39228 0%, #f1d472 22%, #f8de7b 24%, #9a5b00 74%, #9e6005 83%, #aa7014 95%, #b17a1d 100%);;
-$contact_btn_hover_color: #9a5b00;
-$contact_btn_hover_icon: #9a5b00;
-$contact_btn_hover_bg: #fff;
+$contact_btn_bg: linear-gradient(120deg, #c39228 0%, #f1d472 22%, #f8de7b 24%, #9a5b00 74%, #9e6005 83%, #aa7014 95%, #b17a1d 100%);
+$contact_btn_hover_color: #FFF;
+$contact_btn_hover_icon: #FFF;
+$contact_btn_hover_bg: linear-gradient(120deg, #9a5b00 0%, #dbb538 22%, #f8de7b 24%, #9a5b00 74%, #754600 83%, #6e4708 95%, #885b0e 100%);;
 
 $contact_google_btn_color: #fff;
 $contact_google_btn_icon: #fff;
@@ -73,9 +73,9 @@ $house_label_color: #3b5662;
 $house_desc_color: #000;
 
 // mobileNav
-$mobile_nav_background: linear-gradient(120deg, #c39228 0%, #f1d472 22%, #f8de7b 24%, #9a5b00 74%, #9e6005 83%, #aa7014 95%, #b17a1d 100%);
+$mobile_nav_background: #9a5b00;
 $mobile_nav_color: #fff;
-$mobile_nav_border: transparent;
+$mobile_nav_border: #c39228;
 $mobile_nav_icon: #fff;
 
 $mobile_dialog_bg: #fff;
