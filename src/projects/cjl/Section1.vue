@@ -1046,13 +1046,23 @@
 
   .logo {
     width: size-m(265);
+  height:size-m(131);
+  filter:drop-shadow(size-m(3) size-m(3) size-m(5) rgba(0,0,0,0.7));
   }
 
   .txt {
     width: size-m(249);
     height: size-m(37);
     font-size: size-m(22);
+  img{position:absolute;
+    width: size-m(0);
+    height: size-m(37);
   }
+  }
+  @keyframes txtW {
+    to {width: size-m(249);opacity: 1;
+    }
+}
 }
 </style>
 <script>
