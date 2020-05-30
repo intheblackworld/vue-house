@@ -2,28 +2,36 @@
   <div class="section2">
     <div class="bg relative">
       <div v-if="!isMobile">
-        <img src="./s2/bg.jpg" alt="山河海匯 世界極景總和" class="img" data-aos="fade" data-aos-delay="400">
-        <div class="text"><h3>亞灣之心　海洋之都　轉動高雄 黃金十年</h3><p>政府與企業聯手重金建設，展現高度的重視與信心<br>
-海洋之都、南向起點、新創基地、改變地貌<br>
-亞洲新灣區國際城市之門，成就全球水岸建築新場域<br>
-一一見證邁向世界級的海洋之都新時代！</p>
-</div>
         <!--<img src="./s1/logo.png" alt="頤昌豐岳" class="img" data-aos="fade" data-aos-delay="700" /> -->
+        <div
+          class="slide relative"
+          data-aos="fade"
+          data-aos-delay="400"
+        >
+          <div class="slide-text">{{slideList[slideIndex].text}}</div>
+          <img
+            :src="slide.src"
+            v-for="(slide, index) in slideList"
+            :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
+            :key="`s2-1-slide-${index}`"
+          />
+          <div class="indigator-list flex-c">
+            <div
+              @click="setIndex(1, index)"
+              :class="`indigator ${slideIndex === index ? 'active' : ''}`"
+              v-for="(item, index) in slideList"
+              :key="`indigator-1-${index}`"
+            ></div>
+          </div>
+        </div>
       </div>
       <div v-if="isMobile">
-        <img src="./s2/mo/bg.jpg" alt="山河海匯 世界極景總和" class="img" data-aos="fade" data-aos-delay="400">
-        <!-- <img src="./s2/mo/t.png" alt="放眼世界頂級豪宅，能夠成就非凡獨特珍稀價值，唯有無法複製的景觀，港灣海景調色、壽山濃綠寫意、雄女青青校園，永恆無垠山河海景觀，一如東京港區，國際同步創造臨海都市新傳奇。" class="img" data-aos="fade" data-aos-delay="600">
-        -->
-        <div class="text"><h3>亞灣之心 海洋之都<br>轉動高雄 黃金十年</h3><p>政府與企業聯手重金建設，展現高度的重視與信心<br>
-海洋之都、南向起點、新創基地、改變地貌<br>
-亞洲新灣區國際城市之門，成就全球水岸建築新場域<br>
-一一見證邁向世界級的海洋之都新時代！</p>
-</div>
       </div>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
+@import '@/assets/style/function.scss';
 .bg {
   background-size: cover;
   position: relative;
@@ -79,8 +87,11 @@ p{color: rgba(255,255,255, 0.7);}
 <script>
 // @ is an alias to /src
 import { isMobile } from '@/utils'
+import slider from '@/mixins/slider.js'
+
 export default {
   name: 'section2',
+  mixins: [slider],
 
   data() {
     return {
