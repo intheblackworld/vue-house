@@ -30,42 +30,42 @@ $mask_icon_color: #c82514;
 
 /* contactSection */
 // order
-$order_bg_color: #00294b;
+$order_bg_color: transparent;
 $order_bg_image: url('~@/assets/img/order-bg.jpg');
 $order_bg_image_m: url('~@/assets/img/order-bg.jpg');
-$order_title_color: #fff;
+$order_title_color: #a58046;
 $order_subtitle_color: #545454;
-$order_input_label_color: #fff;
-$order_input_color: #fff !important;
-$order_input_placeholder: #fff !important;
-$order_input_bg: rgba(255, 255, 255, 0.1) !important;
+$order_input_label_color: #a58046;
+$order_input_color: #333 !important;
+$order_input_placeholder: #666 !important;
+$order_input_bg: #ccb89e !important;
 $order_input_border: solid 1px rgba(255, 255, 255, 0.4) !important; 
 $order_input_focus_border: solid 1px #a09c13 !important;
 $order_input_selected_color: solid 1px #a09c13 !important;
-$order_check_desc_color: #fff !important;
-$order_check_span_color: #ffc41f !important;
-$order_submit_bg: linear-gradient(to right, #e9b73a, #f2dd6a 33%, #f9efb5 55%, #f7eb94 74%, #f2dd6a) !important;
-$order_submit_color: #633b00 !important;
+$order_check_desc_color: #a58046 !important;
+$order_check_span_color: #cc0000 !important;
+$order_submit_bg: linear-gradient(to right, #985f0e 0%, #e1c7a6 94%, #e1c7a6) !important;
+$order_submit_color: #fff !important;
 $order_sumbit_disable_bg: rgba(157, 31, 40, .4) !important;
 
 // contactInfo
-$contact_bg: url('~@/assets/img/contact-bg.jpg');
+$contact_bg: #a58046;
 $contact_shadow: 0 0 80px 0 rgba(0, 0, 0, 0.2);
 
 $contact_btn_border: 0 0 0px 1px transparent;
-$contact_btn_color: #633b00;
-$contact_btn_icon: #633b00;
-$contact_btn_bg: linear-gradient(to right, #e9b73a 0%, #f2dd6a 33%, #f9efb5 55%, #f7eb94 74%, #f2dd6a 100%);
-$contact_btn_hover_color: #633b00;
-$contact_btn_hover_icon: #633b00;
-$contact_btn_hover_bg: linear-gradient(to right, #e9b73a 0%, #f2dd6a 33%, #f9efb5 55%, #f7eb94 74%, #f2dd6a 100%) !important;
+$contact_btn_color: #fff;
+$contact_btn_icon: #fff;
+$contact_btn_bg: linear-gradient(to right, #985f0e 0%, #e1c7a6 94%, #e1c7a6);
+$contact_btn_hover_color: #fff;
+$contact_btn_hover_icon: #fff;
+$contact_btn_hover_bg: linear-gradient(to right, #985f0e 0%, #e1c7a6 94%, #e1c7a6) !important;
 
-$contact_google_hover_btn_color: #633b00;
-$contact_google_hover_btn_icon: #633b00;
-$contact_google_hover_btn_bg: linear-gradient(to right, #e9b73a 0%, #f2dd6a 33%, #f9efb5 55%, #f7eb94 74%, #f2dd6a 100%) !important;
-$contact_google_btn_color: #633b00;
-$contact_google_btn_icon: #633b00;
-$contact_google_btn_bg: linear-gradient(to right, #e9b73a 0%, #f2dd6a 33%, #f9efb5 55%, #f7eb94 74%, #f2dd6a 100%) !important;
+$contact_google_hover_btn_color: #fff;
+$contact_google_hover_btn_icon: #fff;
+$contact_google_hover_btn_bg: linear-gradient(to right, #985f0e 0%, #e1c7a6 94%, #e1c7a6) !important;
+$contact_google_btn_color: #fff;
+$contact_google_btn_icon: #fff;
+$contact_google_btn_bg: linear-gradient(to right, #985f0e 0%, #e1c7a6 94%, #e1c7a6) !important;
 
 
 // houseInfo
@@ -75,10 +75,10 @@ $house_label_color: #0089c2;
 $house_desc_color: #000;
 
 // mobileNav
-$mobile_nav_background: #333;
+$mobile_nav_background: linear-gradient(to right, #985f0e 0%, #e1c7a6 94%, #e1c7a6);
 $mobile_nav_color: #fff;
 $mobile_nav_border: #fff;
-$mobile_nav_icon: #f2dd6a;
+$mobile_nav_icon: #fff;
 
 $mobile_dialog_bg: #fff;
 $mobile_dialog_icon: #633b00;

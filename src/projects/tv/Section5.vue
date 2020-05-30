@@ -1,179 +1,321 @@
 <template>
-  <div class="section5">
+  <div>
     <div class="bg relative">
-      <div v-if="!isMobile">
-        <div class="btn-group">
-          <img src="./s5/left.png" alt class="btn left" @click="decIndex" />
-          <img src="./s5/right.png" alt class="btn right" @click="addIndex" />
+      <img
+        src="./s5/o.png"
+        alt=""
+        class="img absolute"
+      >
+      <div
+        v-if="!isMobile"
+        class="container flex-ac flex-jb relative right"
+      >
+        <div class="content">
+          <h3
+            class="title"
+            data-aos="fade"
+            data-aos-delay="400"
+          >飯店管理</h3>
+          <h3
+            class="subtitle"
+            data-aos="fade"
+            data-aos-delay="600"
+            v-html="slideList[slideIndex].subtitle"
+          ></h3>
+          <ul class="desc-list">
+            <h3
+              v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]"
+              data-aos="fade"
+              :data-aos-delay="600 + (index + 1) * 200"
+              data-aos-duration="1000"
+              :key="text"
+            >{{text}}</h3>
+          </ul>
         </div>
-        <div :class="`slide`" data-aos="fade" data-aos-delay="600">
-          <div
+        <div
+          class="slides relative"
+          data-aos="fade"
+          data-aos-delay="400"
+        >
+          <div class="slide-text">{{slideList[slideIndex].text}}</div>
+          <img
+            :src="slide.src"
             v-for="(slide, index) in slideList"
             :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
-            :key="`s5-slide-${index}`"
-          >
-            <img :class="`slide-img1 ${slideIndex === index ? 'active' : ''}`" :src="slide.src1" alt />
-            <img :class="`slide-img2 ${slideIndex === index ? 'active' : ''}`" :src="slide.src2" alt />
-            <div class="slide-text">
-              <h3>{{slideList[slideIndex].title}}</h3>
-              <p>{{slideList[slideIndex].p}}</p>
-            </div>
-          </div>
+            :key="`s2-1-slide-${index}`"
+          />
         </div>
-        <!-- <img src="./s4/img2a.png" alt class="img" data-aos="fade" data-aos-delay="400" />
-        <img src="./s4/img3a.png" alt class="img" data-aos="fade" data-aos-delay="600" />
-        <img src="./s4/lineba.png" alt class="img" />
-        <img src="./s4/stitlea.png" alt class="img" />
-        <img src="./s4/titlea.png" alt class="img" />-->
       </div>
       <div v-if="isMobile">
-        <!--<img src="./s5/mo/title.png" alt class="img" /> -->
-        <div :class="`slide`" data-aos="fade" data-aos-delay="600">
-          <div
+        <div
+          class="slides relative"
+          data-aos="fade"
+          data-aos-delay="400"
+        >
+          <div class="slide-text">{{slideList[slideIndex].text}}</div>
+          <img
+            :src="slide.src"
             v-for="(slide, index) in slideList"
             :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
-            :key="`s5-slide-${index}`"
-          >
-            <img :class="`slide-img1 ${slideIndex === index ? 'active' : ''}`" :src="slide.src1" alt />
-            <img :class="`slide-img2 ${slideIndex === index ? 'active' : ''}`" :src="slide.src2" alt />
+            :key="`s2-1-slide-${index}`"
+          />
+          <div class="arrows absolute">
+            <img
+              src="./arrow-left.png"
+              alt=""
+              class="arrow-l"
+              @click="decIndex"
+            >
+            <img
+              src="./arrow-right.png"
+              alt=""
+              class="arrow-r"
+              @click="addIndex"
+            >
           </div>
         </div>
-        <div class="btn-group">
-          <img src="./s5/left.png" alt class="btn left" @click="decIndex" />
-          <img src="./s5/right.png" alt class="btn right" @click="addIndex" />
+        <div class="content">
+          <h3
+            class="title"
+            data-aos="fade"
+            data-aos-delay="400"
+          >飯店管理</h3>
+          <h3
+            class="subtitle"
+            data-aos="fade"
+            data-aos-delay="600"
+            v-html="slideList[slideIndex].subtitle"
+          ></h3>
+          <ul class="desc-list">
+            <h3
+              v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]"
+              data-aos="fade"
+              :data-aos-delay="600 + (index + 1) * 200"
+              data-aos-duration="1000"
+              :key="text"
+            >{{text}}</h3>
+          </ul>
         </div>
-        <div class="slide-text">
-              <h3>{{slideList[slideIndex].title}}</h3>
-              <p>{{slideList[slideIndex].p}}</p>
-        </div>
+      </div>
+      <div class="indigator-list flex-c">
+        <div
+          @click="setIndex(index)"
+          :class="`indigator ${slideList[slideIndex].contentIndex === index ? 'active' : ''}`"
+          v-for="index in [0, 1, 2]"
+          :key="`indigator-1-${index}`"
+        ></div>
       </div>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
+@import '@/assets/style/function.scss';
 .bg {
   background-size: cover;
   position: relative;
   z-index: 2;
-  overflow: hidden;height: 100vh;
+  overflow: hidden;
+  height: 100vh;
 }
 
 .img {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  left: 0;
-  top: 0;
-  object-fit: contain;
-  display: block;
-  z-index: 1;
-  &.fix {
-    position: fixed;
-  }
-  // &:nth-child(1) {
-  //   position: relative;
-  // }
+  left: size(195);
+  width: size(266);
+  top: auto;
+  bottom: size(40);
 }
 
-
-.slide {
+.container {
+  width: size(1460);
   height: 100%;
-  .slide-img1{
-  width: 100vw;height: 100vh;filter: blur(10px);opacity: 0.6;}
-  .slide-img2{
-  position: absolute;top:0;left:50%;height: 100vh;object-fit: contain;transform: translate(-50%)}
+
+  &.left {
+    margin-left: size(70);
+  }
+
+  &.right {
+    margin-left: size(370);
+  }
 }
 
-.slide-text {
-  font-size:0.92vw;line-height: 1.6;
-  font-weight: normal;
+.slides {
+  width: size(890);
+}
+
+.content {
+  width: size(438);
+  height: size(710);
+  padding-top: size(200);
+}
+
+.title {
+  font-size: size(50);
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  letter-spacing: 1.2px;
-  text-align:left;
-  color: #ffffff;
-  position: absolute;
-  padding: 3.1vw  5vw 2px 60vw;
-  right:0;min-height: 15vw;
-  bottom: 0;
-  z-index: 5;
-    background: url('./s5/tbg.png') no-repeat;
-    background-position: top right;
-    background-size: 100vw auto;
-
-h3{color: #fff;font-size: 1.7em;padding: 0 0 0.8em 3em;}
-p{color: rgba(255,255,255, 0.7);width: 36em;}
+  line-height: 0.65;
+  letter-spacing: 2.5px;
+  text-align: left;
+  color: #606060;
+  margin-bottom: size(25);
+  margin-left: size(-5);
 }
 
-.btn-group {
-  width: 100vw;
+.subtitle {
+  font-size: size(21);
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.55;
+  letter-spacing: 0.63px;
+  text-align: left;
+  color: #aa8356;
+  margin-bottom: size(15);
+}
+
+.desc-list {
+  > h3 {
+    font-size: size(15);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: 3.75px;
+    text-align: left;
+    color: #727272;
+  }
+}
+
+.indigator-list {
+  width: 100%;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   left: 0;
-  margin: 0 auto;
   right: 0;
-  z-index: 3;
-
-  .btn {
+  margin: 0 auto;
+  bottom: size(80);
+  .indigator {
+    width: size(19);
+    height: size(19);
+    border-radius: size(19);
+    margin: 0 20px;
+    background-color: rgba(186, 146, 98, 0.4);
     cursor: pointer;
-    position: absolute;
 
-    &.left {
-      left: 0;
-    }
-
-    &.right {
-      right: 0;
+    &.active {
+      background-color: rgba(186, 146, 98, 1);
     }
   }
+}
+
+.arrows {
+  display: none;
 }
 
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .text {
-    width: calc(100vw * 1050 / 1920);
-    right: calc(100vw * 139 / 1920);
-  }
 }
 
 @media screen and (max-width: 767px) {
   .bg {
-    background-size: cover;
-    overflow: visible;
-    height:calc(100vh - 63px);
+    height: auto;
+  }
+  .img {
+    left: auto;
+    right: size-m(37);
+    width: size-m(124);
+    top: auto;
+    bottom: size-m(10);
   }
 
-  .img {
-    &:nth-child(1) {
-      position: relative;margin: 0 0 5em;
+  .container {
+    width: 100vw;
+    height: 100%;
+    flex-wrap: wrap;
+
+    &.left {
+      margin-left: 0;
+    }
+
+    &.right {
+      margin-left: 0;
     }
   }
 
-  .slide {
-  .slide-img1{height:calc(100vh - 63px);}
-  .slide-img2{height:50%;object-fit: cover;width: 100%;}
-
+  .slides {
+    width: 100vw;
   }
 
-  .slide-text {
-    background-image:url('./s2/mo/titleall.png');
-    font-size: calc(100vw * 11 / 375);
-    left: calc(100vw * 0 / 375);
-    right: auto;
-    top: 50%;
-    bottom:auto;  
-    padding: 4em 2em 0 3em;
+  .content {
+    width: 100vw;
+    height: size-m(550);
+    padding-top: size-m(31);
+    padding-left: size-m(27);
+    padding-bottom: size-m(200);
+  }
+
+  .title {
+    font-size: size-m(39);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.65;
+    letter-spacing: 2.5px;
+    text-align: left;
+    color: #606060;
+    margin-bottom: size-m(25);
+    margin-left: size-m(-5);
+  }
+
+  .subtitle {
+    font-size: size-m(16);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.55;
+    letter-spacing: 0.63px;
+    text-align: left;
+    color: #aa8356;
+    margin-bottom: size-m(15);
+  }
+
+  .desc-list {
+    > h3 {
+      font-size: size-m(14);
+      font-weight: 600;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 2.14;
+      letter-spacing: 0.14px;
+      text-align: left;
+      color: #727272;
+    }
+  }
+
+  .indigator-list {
+    display: none;
+  }
+
+  .arrows {
     width: 100%;
-h3{}
-p{width: auto;}
-  }
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-  .btn-group {
-    top: 25%;
+    .arrow-l {
+      width: size-m(14);
+      position: absolute;
+      left: size-m(5);
+      cursor: pointer;
+    }
 
-    > img {
-      width: 30px;
+    .arrow-r {
+      width: size-m(14);
+      position: absolute;
+      right: size-m(5);
+      cursor: pointer;
     }
   }
 }
@@ -183,80 +325,62 @@ p{width: auto;}
 // @ is an alias to /src
 import { isMobile } from '@/utils'
 import slider from '@/mixins/slider.js'
+
 export default {
   name: 'section5',
   mixins: [slider],
+
   data() {
     return {
       isMobile,
       slideList: [
         {
-          src1: isMobile
-            ? require('./s5/mo/迎賓車道圖.jpg')
-            : require('./s5/1迎賓車道圖.jpg'),
-          src2: isMobile
-            ? require('./s5/mo/迎賓車道圖.jpg')
-            : require('./s5/1迎賓車道圖.jpg'),
-          title: '飯店式迴車廣場',
-          p: '跨界飯店Private Club住宅，國際飯店行旅質感凝鍊，以低調內斂的姿態，在現代都會桃源內雕琢奢華，一樓大器規格迎賓，璞麗風華LOBBY、LOUNGE交誼廳咖啡品茗小酌、閱讀交誼區休閒商務聚會、VIP視聽室影音盛宴…同步飯店質感生活。',
+          src: require('./s5/1.jpg'),
+          contentIndex: 0,
+          subtitle: '當散步變成旅行，在家就是假期<br />奢華與悠遊同行',
         },
         {
-          src1: isMobile
-            ? require('./s5/mo/大廳.jpg')
-            : require('./s5/2大廳.jpg'),
-          src2: isMobile
-            ? require('./s5/mo/大廳.jpg')
-            : require('./s5/2大廳.jpg'),
-          title: '挑高7米迎賓大廳 Lobby',
-          p: '跨界飯店Private Club住宅，國際飯店行旅質感凝鍊，以低調內斂的姿態，在現代都會桃源內雕琢奢華，一樓大器規格迎賓，璞麗風華LOBBY、LOUNGE交誼廳咖啡品茗小酌、閱讀交誼區休閒商務聚會、VIP視聽室影音盛宴…同步飯店質感生活。',
+          src: require('./s5/2.jpg'),
+          contentIndex: 1,
+          subtitle: '從台北的安杰、兩岸的安杰<br />到國際的安杰',
         },
         {
-          src1: isMobile
-            ? require('./s5/mo/沙發區.jpg')
-            : require('./s5/3沙發區.jpg'),
-          src2: isMobile
-            ? require('./s5/mo/沙發區.jpg')
-            : require('./s5/3沙發區.jpg'),
-          title: '歐式午茶交誼廳 Lounge',
-          p: '跨界飯店Private Club住宅，國際飯店行旅質感凝鍊，以低調內斂的姿態，在現代都會桃源內雕琢奢華，一樓大器規格迎賓，璞麗風華LOBBY、LOUNGE交誼廳咖啡品茗小酌、閱讀交誼區休閒商務聚會、VIP視聽室影音盛宴…同步飯店質感生活。',
+          src: require('./s5/3.jpg'),
+          contentIndex: 2,
+          subtitle: '從台北的安杰、兩岸的安杰<br />到國際的安杰',
         },
-        {
-          src1: isMobile
-            ? require('./s5/mo/長型會客區.jpg')
-            : require('./s5/4長型會客區.jpg'),
-          src2: isMobile
-            ? require('./s5/mo/長型會客區.jpg')
-            : require('./s5/4長型會客區.jpg'),
-          title: '歐式尊爵饗宴廳 Ballroom',
-          p: '跨界飯店Private Club住宅，國際飯店行旅質感凝鍊，以低調內斂的姿態，在現代都會桃源內雕琢奢華，一樓大器規格迎賓，璞麗風華LOBBY、LOUNGE交誼廳咖啡品茗小酌、閱讀交誼區休閒商務聚會、VIP視聽室影音盛宴…同步飯店質感生活。',
-        },
-        {
-          src1: isMobile
-            ? require('./s5/mo/視聽室.jpg')
-            : require('./s5/視聽室.jpg'),
-          src2: isMobile
-            ? require('./s5/mo/視聽室.jpg')
-            : require('./s5/視聽室.jpg'),
-          title: 'VIP包廂影廳',
-          p: '跨界飯店Private Club住宅，國際飯店行旅質感凝鍊，以低調內斂的姿態，在現代都會桃源內雕琢奢華，一樓大器規格迎賓，璞麗風華LOBBY、LOUNGE交誼廳咖啡品茗小酌、閱讀交誼區休閒商務聚會、VIP視聽室影音盛宴…同步飯店質感生活。',
-        },
-        {
-          src1: isMobile
-            ? require('./s5/mo/SKY.jpg')
-            : require('./s5/SKY.jpg'),
-          src2: isMobile
-            ? require('./s5/mo/SKY.jpg')
-            : require('./s5/SKY.jpg'),
-          title: 'SKY BAR',
-          p: '跨界飯店Private Club住宅，國際飯店行旅質感凝鍊，以低調內斂的姿態，在現代都會桃源內雕琢奢華，一樓大器規格迎賓，璞麗風華LOBBY、LOUNGE交誼廳咖啡品茗小酌、閱讀交誼區休閒商務聚會、VIP視聽室影音盛宴…同步飯店質感生活。',
-        },
+      ],
+      desc_list: [
+        [
+          '一眼瞬間的華麗，圓最美的人生風景',
+          '最適合妳的顏色，才是世界上最美的顏色',
+          '時間好像靜止，相遇最初的感動',
+          '每扇窗都像櫥窗，每顆心都閃耀光芒',
+          'THE VIEW 妳的專屬飯店寓所',
+        ],
+        [
+          '服務的景深，成就服務時尚',
+          '致力探尋社區每方空間與環境風貌的相契',
+          '人文內涵的融合',
+          '期盼與住戶一起發現驚喜、享受生活',
+        ],
+        [
+          '服務的景深，成就服務時尚',
+          '致力探尋社區每方空間與環境風貌的相契',
+          '人文內涵的融合',
+          '期盼與住戶一起發現驚喜、享受生活',
+        ],
       ],
     }
   },
 
   computed: {},
 
-  methods: {},
+  methods: {
+    setIndex(index) {
+      this.slideIndex = index * 2
+    },
+  },
 
   created() {},
   mounted() {},

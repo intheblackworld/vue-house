@@ -1,10 +1,53 @@
 <template>
-  <div class="section2">
+  <div>
     <div class="bg relative">
-      <div v-if="!isMobile">
-        <!--<img src="./s1/logo.png" alt="頤昌豐岳" class="img" data-aos="fade" data-aos-delay="700" /> -->
+      <img
+        src="./s2/hair.gif"
+        alt=""
+        class="img absolute"
+      >
+      <div
+        v-if="!isMobile"
+        class="container flex-ac flex-jb relative left"
+      >
         <div
-          class="slide relative"
+          class="slides relative"
+          data-aos="fade"
+          data-aos-delay="400"
+        >
+          <img
+            :src="slide.src"
+            v-for="(slide, index) in slideList"
+            :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
+            :key="`s2-1-slide-${index}`"
+          />
+        </div>
+        <div class="content">
+          <h3
+            class="title"
+            data-aos="fade"
+            data-aos-delay="400"
+          >日光散策</h3>
+          <h3
+            class="subtitle"
+            data-aos="fade"
+            data-aos-delay="600"
+            v-html="slideList[slideIndex].subtitle"
+          ></h3>
+          <ul class="desc-list">
+            <h3
+              v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]"
+              data-aos="fade"
+              :data-aos-delay="600 + (index + 1) * 200"
+              data-aos-duration="1000"
+              :key="text"
+            >{{text}}</h3>
+          </ul>
+        </div>
+      </div>
+      <div v-if="isMobile">
+        <div
+          class="slides relative"
           data-aos="fade"
           data-aos-delay="400"
         >
@@ -15,17 +58,51 @@
             :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
             :key="`s2-1-slide-${index}`"
           />
-          <div class="indigator-list flex-c">
-            <div
-              @click="setIndex(1, index)"
-              :class="`indigator ${slideIndex === index ? 'active' : ''}`"
-              v-for="(item, index) in slideList"
-              :key="`indigator-1-${index}`"
-            ></div>
+          <div class="arrows absolute">
+            <img
+              src="./arrow-left.png"
+              alt=""
+              class="arrow-l"
+              @click="decIndex"
+            >
+            <img
+              src="./arrow-right.png"
+              alt=""
+              class="arrow-r"
+              @click="addIndex"
+            >
           </div>
         </div>
+        <div class="content">
+          <h3
+            class="title"
+            data-aos="fade"
+            data-aos-delay="400"
+          >日光散策</h3>
+          <h3
+            class="subtitle"
+            data-aos="fade"
+            data-aos-delay="600"
+            v-html="slideList[slideIndex].subtitle"
+          ></h3>
+          <ul class="desc-list">
+            <h3
+              v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]"
+              data-aos="fade"
+              :data-aos-delay="600 + (index + 1) * 200"
+              data-aos-duration="1000"
+              :key="text"
+            >{{text}}</h3>
+          </ul>
+        </div>
       </div>
-      <div v-if="isMobile">
+      <div class="indigator-list flex-c">
+        <div
+          @click="setIndex(index)"
+          :class="`indigator ${slideList[slideIndex].contentIndex === index ? 'active' : ''}`"
+          v-for="index in [0, 1, 2]"
+          :key="`indigator-1-${index}`"
+        ></div>
       </div>
     </div>
   </div>
@@ -41,46 +118,203 @@
 }
 
 .img {
-  width: 100vw;
-  height: auto;
+  right: size(215);
+  width: size(264);
+  top: size(326);
+}
+
+.container {
+  width: size(1460);
+  height: 100%;
+
+  &.left {
+    margin-left: size(70);
+  }
+
+  &.right {
+    margin-right: size(70);
+  }
+}
+
+.slides {
+  width: size(890);
+}
+
+.content {
+  width: size(438);
+  height: size(710);
+  padding-top: size(200);
+}
+
+.title {
+  font-size: size(50);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.65;
+  letter-spacing: 2.5px;
+  text-align: left;
+  color: #606060;
+  margin-bottom: size(25);
+  margin-left: size(-5);
+}
+
+.subtitle {
+  font-size: size(21);
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.55;
+  letter-spacing: 0.63px;
+  text-align: left;
+  color: #aa8356;
+  margin-bottom: size(15);
+}
+
+.desc-list {
+  > h3 {
+    font-size: size(15);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: 3.75px;
+    text-align: left;
+    color: #727272;
+  }
+}
+
+.indigator-list {
+  width: 100%;
   position: absolute;
   left: 0;
-  top: 0;
-  object-fit: cover;
-  display: block;
-  &.fix {
-    position: fixed;
-  }
-  &:nth-child(1) {
-    position: relative;
-    height: 100vh;
-  }
-}
-.text{background: url('./s2/title.png') no-repeat;position: absolute;text-align:left;
-font-size:0.92vw;line-height: 1.6;top:calc(50% + 7vw); left: 33vw;padding: 2.7em 2em 0 3em;right: 0;background-size: 65em auto;
+  right: 0;
+  margin: 0 auto;
+  bottom: size(80);
+  .indigator {
+    width: size(19);
+    height: size(19);
+    border-radius: size(19);
+    margin: 0 20px;
+    background-color: rgba(186, 146, 98, 0.4);
+    cursor: pointer;
 
-h3{color: #fff;font-size: 1.7em;padding: 0 0 0.8em 3em;}
-p{color: rgba(255,255,255, 0.7);}
+    &.active {
+      background-color: rgba(186, 146, 98, 1);
+    }
+  }
 }
+
+.arrows {
+  display: none;
+}
+
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .text {
-    width: calc(100vw * 595 / 1920);
-    right: calc(100vw * 202 / 1920);
-  }
 }
 
 @media screen and (max-width: 767px) {
   .bg {
-    background-size: cover;
-    height:calc(100vh - 63px);
+    height: auto;
   }
   .img {
-  &:nth-child(1) {
-    height:calc(100vh - 63px);
+    right: size-m(37);
+    width: size-m(124);
+    top: auto;
+    bottom: size-m(10);
   }
+
+  .container {
+    width: 100vw;
+    height: 100%;
+    flex-wrap: wrap;
+
+    &.left {
+      margin-left: 0;
+    }
+
+    &.right {
+      margin-right: 0;
+    }
   }
-.text{background-image: url('./s2/mo/titleall.png');background-size: 100% auto;font-size:3.8vw;top:50%; left: 0;padding: 0 1em 0 1.7em;}
+
+  .slides {
+    width: 100vw;
+  }
+
+  .content {
+    width: 100vw;
+    height: size-m(550);
+    padding-top: size-m(31);
+    padding-left: size-m(27);
+    padding-bottom: size-m(200);
+  }
+
+  .title {
+    font-size: size-m(39);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.65;
+    letter-spacing: 2.5px;
+    text-align: left;
+    color: #606060;
+    margin-bottom: size-m(25);
+    margin-left: size-m(-5);
+  }
+
+  .subtitle {
+    font-size: size-m(16);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.55;
+    letter-spacing: 0.63px;
+    text-align: left;
+    color: #aa8356;
+    margin-bottom: size-m(15);
+  }
+
+  .desc-list {
+    > h3 {
+      font-size: size-m(14);
+      font-weight: 600;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 2.14;
+      letter-spacing: 0.14px;
+      text-align: left;
+      color: #727272;
+    }
+  }
+
+  .indigator-list {
+    display: none;
+  }
+
+  .arrows {
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .arrow-l {
+      width: size-m(14);
+      position: absolute;
+      left: size-m(5);
+      cursor: pointer;
+    }
+
+    .arrow-r {
+      width: size-m(14);
+      position: absolute;
+      right: size-m(5);
+      cursor: pointer;
+    }
+  }
 }
 </style>
 
@@ -96,12 +330,68 @@ export default {
   data() {
     return {
       isMobile,
+      slideList: [
+        {
+          src: require('./s2/1-1.jpg'),
+          contentIndex: 0,
+          subtitle: '百種新板散策，千種時尚氛圍<br />妳喜歡的理由只要ㄧ個',
+        },
+        {
+          src: require('./s2/1-2.jpg'),
+          contentIndex: 0,
+          subtitle: '百種新板散策，千種時尚氛圍<br />妳喜歡的理由只要ㄧ個',
+        },
+        {
+          src: require('./s2/2-1.jpg'),
+          contentIndex: 1,
+          subtitle: '如果愛一個人，你要帶她去<br />看看THE VIEW好在哪裡',
+        },
+        {
+          src: require('./s2/2-2.jpg'),
+          contentIndex: 1,
+          subtitle: '如果愛一個人，你要帶她去<br />看看THE VIEW好在哪裡',
+        },
+        {
+          src: require('./s2/3-1.jpg'),
+          contentIndex: 2,
+          subtitle: '全國日運量200萬人次前5大站<br />亮點在這裡！',
+        },
+        {
+          src: require('./s2/3-2.jpg'),
+          contentIndex: 2,
+          subtitle: '全國日運量200萬人次前5大站<br />亮點在這裡！',
+        },
+      ],
+      desc_list: [
+        [
+          '友達以上，戀人未滿，女人做自己的直覺永遠第一',
+          '小宅也有豪宅闊砌，新板也能小薪限定',
+          '人生不做隱形冠軍，優雅和品味的縮時攝影',
+          '妳值得THE VIEW寵愛妳',
+        ],
+        [
+          '可以遠離塞車的馬路，5分鐘投入府中站的快速',
+          '捷運直達北車雙子星，忠孝敦南，國際信義101',
+          '可達、可遊、可居、可望的地段美境',
+        ],
+        [
+          '板南線勇奪捷運日運量200萬人次前5大站',
+          '北車（占7.6%）西門站（占3.6%）',
+          '市政府站（占2.9%）、忠孝復興站（占2.3%）',
+          '板橋站（占2.0%）',
+          '雙北最有價值捷運金脈',
+        ],
+      ],
     }
   },
 
   computed: {},
 
-  methods: {},
+  methods: {
+    setIndex(index) {
+      this.slideIndex = index * 2
+    },
+  },
 
   created() {},
   mounted() {},

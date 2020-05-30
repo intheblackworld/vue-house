@@ -1,4 +1,4 @@
-.slide {
+.slides {
   overflow: hidden;
   .slide-img {
     width: 100%;
@@ -54,7 +54,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .slide {
+  .slides {
     width: 100% !important;
     .slide-img {
       width: 100%;

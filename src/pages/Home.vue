@@ -6,27 +6,27 @@
     <!-- <Navigation v-else /> -->
     <Indigator :action="action" :indigatorIndex="indigatorIndex" />
     <full-page ref="fullPage" :options="options" id="fullpage">
-      <div id="section1" class="section">
+      <div id="section1" :class="`${isMobile ? '' : 'section'}`">
         <Section1 />
       </div>
-      <div id="section2" class="section">
+      <div id="section2" :class="`${isMobile ? '' : 'section'}`">
         <Section2 />
       </div>
-      <div id="section3" class="section">
+      <div id="section3" :class="`${isMobile ? '' : 'section'}`">
         <Section3 />
       </div>
-      <div id="section4" class="section">
+      <div id="section4" :class="`${isMobile ? '' : 'section'}`">
         <Section4 />
       </div>
-      <div id="section5" class="section">
+      <div id="section5" :class="`${isMobile ? '' : 'section'}`">
         <Section5 />
       </div>
-      <div id="section6" class="section">
+      <div id="section6" :class="`${isMobile ? '' : 'section'}`">
         <Section6 />
       </div>
-      <div id="section7" class="section">
+      <!-- <div id="section7" :class="`${isMobile ? '' : 'section'}`">
         <Section7 />
-      </div>
+      </div> -->
       <ContactSection class="section" />
     </full-page>
     <!-- <SimpleOrder /> -->
@@ -55,7 +55,7 @@ import Section3 from '@/projects/tv/Section3.vue'
 import Section4 from '@/projects/tv/Section4.vue'
 import Section5 from '@/projects/tv/Section5.vue'
 import Section6 from '@/projects/tv/Section6.vue'
-import Section7 from '@/projects/tv/Section7.vue'
+// import Section7 from '@/projects/tv/Section7.vue'
 // import SimpleOrder from '@/components/SimpleOrder.vue'
 
 export default {
@@ -73,7 +73,7 @@ export default {
     Section4,
     Section5,
     Section6,
-    Section7,
+    // Section7,
   },
 
   data() {

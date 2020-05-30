@@ -1,99 +1,320 @@
 <template>
-  <div class="section6">
+  <div>
     <div class="bg relative">
-      <div>
-        <img src="./s6/6.jpg" alt="" class="img" v-if="!isMobile">
-        <img src="./s6/6.jpg" alt="" class="img" v-if="!isMobile">
-        <img src="./s6/6m.jpg" alt="" class="img" v-if="isMobile">
-        <h2>VVVVV 聯上建築</h2>
-        <div class="text">
-        <h3>《 5Value 》核心新價值</h3>
-          <ul>
-            <li>V1.地段價值</li> 
-            <li>V2.美學價值</li> 
-            <li>V3.收藏價值</li> 
-            <li>V4.實用價值</li> 
-            <li>V5.安全價值</li>
+      <img
+        src="./s6/head.gif"
+        alt=""
+        class="img absolute"
+      >
+      <div
+        v-if="!isMobile"
+        class="container flex-ac flex-jb relative left"
+      >
+        <div
+          class="slides relative"
+          data-aos="fade"
+          data-aos-delay="400"
+        >
+          <div class="slide-text">{{slideList[slideIndex].text}}</div>
+          <img
+            :src="slide.src"
+            v-for="(slide, index) in slideList"
+            :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
+            :key="`s2-1-slide-${index}`"
+          />
+        </div>
+        <div class="content">
+          <h3
+            class="title"
+            data-aos="fade"
+            data-aos-delay="400"
+          >有感精裝</h3>
+          <h3
+            class="subtitle"
+            data-aos="fade"
+            data-aos-delay="600"
+            v-html="slideList[slideIndex].subtitle"
+          ></h3>
+          <ul class="desc-list">
+            <h3
+              v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]"
+              data-aos="fade"
+              :data-aos-delay="600 + (index + 1) * 200"
+              data-aos-duration="1000"
+              :key="text"
+            >{{text}}</h3>
           </ul>
         </div>
+      </div>
+      <div v-if="isMobile">
+        <div
+          class="slides relative"
+          data-aos="fade"
+          data-aos-delay="400"
+        >
+          <div class="slide-text">{{slideList[slideIndex].text}}</div>
+          <img
+            :src="slide.src"
+            v-for="(slide, index) in slideList"
+            :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
+            :key="`s2-1-slide-${index}`"
+          />
+          <div class="arrows absolute">
+            <img
+              src="./arrow-left.png"
+              alt=""
+              class="arrow-l"
+              @click="decIndex"
+            >
+            <img
+              src="./arrow-right.png"
+              alt=""
+              class="arrow-r"
+              @click="addIndex"
+            >
+          </div>
+        </div>
+        <div class="content">
+          <h3
+            class="title"
+            data-aos="fade"
+            data-aos-delay="400"
+          >有感精裝</h3>
+          <h3
+            class="subtitle"
+            data-aos="fade"
+            data-aos-delay="600"
+            v-html="slideList[slideIndex].subtitle"
+          ></h3>
+          <ul class="desc-list">
+            <h3
+              v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]"
+              data-aos="fade"
+              :data-aos-delay="600 + (index + 1) * 200"
+              data-aos-duration="1000"
+              :key="text"
+            >{{text}}</h3>
+          </ul>
+        </div>
+      </div>
+      <div class="indigator-list flex-c">
+        <div
+          @click="setIndex(index)"
+          :class="`indigator ${slideList[slideIndex].contentIndex === index ? 'active' : ''}`"
+          v-for="index in [0, 1, 2]"
+          :key="`indigator-1-${index}`"
+        ></div>
       </div>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
+@import '@/assets/style/function.scss';
 .bg {
   background-size: cover;
   position: relative;
-  z-index: 2;overflow: hidden;height: 100vh;
+  z-index: 2;
+  overflow: hidden;
+  height: 100vh;
 }
 
 .img {
-  width: 100vw;
-  height: auto;
+  right: size(215);
+  width: size(264);
+  top: size(326);
+}
+
+.container {
+  width: size(1460);
+  height: 100%;
+
+  &.left {
+    margin-left: size(70);
+  }
+
+  &.right {
+    margin-right: size(70);
+  }
+}
+
+.slides {
+  width: size(890);
+}
+
+.content {
+  width: size(438);
+  height: size(710);
+  padding-top: size(200);
+}
+
+.title {
+  font-size: size(50);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.65;
+  letter-spacing: 2.5px;
+  text-align: left;
+  color: #606060;
+  margin-bottom: size(25);
+  margin-left: size(-5);
+}
+
+.subtitle {
+  font-size: size(21);
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.55;
+  letter-spacing: 0.63px;
+  text-align: left;
+  color: #aa8356;
+  margin-bottom: size(15);
+}
+
+.desc-list {
+  > h3 {
+    font-size: size(15);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: 3.75px;
+    text-align: left;
+    color: #727272;
+  }
+}
+
+.indigator-list {
+  width: 100%;
   position: absolute;
   left: 0;
-  top: 0;
-  object-fit: cover;
-  display: block;
-  &.fix {
-    position: fixed;
-  }
-  &:nth-child(1) {
-    position: absolute;
-    height: 100vh;
-  left: 0;
-  top: 0;
-  object-fit: contain;
-  z-index: 2;
-  }
-  &:nth-child(2) {
-    position: relative;
-    height: 100vh;
-  width: 100vw;
-  object-fit:inherit;filter: blur(10px);
-  z-index: 1;
+  right: 0;
+  margin: 0 auto;
+  bottom: size(80);
+  .indigator {
+    width: size(19);
+    height: size(19);
+    border-radius: size(19);
+    margin: 0 20px;
+    background-color: rgba(186, 146, 98, 0.4);
+    cursor: pointer;
+
+    &.active {
+      background-color: rgba(186, 146, 98, 1);
+    }
   }
 }
-h2{
-  position: absolute;top: calc(100vw * 52 / 1920);left:50%;background-color:rgba(255,255,255,0.8);
-  font-weight: bold;color: #000;width: 11em;margin-left:-5.5em;line-height: 1.7;
-  font-size:calc(100vw * 49 / 1920);
-  z-index: 3;
+
+.arrows {
+  display: none;
 }
-.text{
-  position: absolute;
-  top: calc(100vw * 260 / 1920);font-size:calc(100vmin * 34 / 1080);
-  right:calc(100vw * 70 / 1920);color: #fff;width: 13em;line-height:2;padding:1.5em 0;
-  background-color:rgba(12,42,74,0.6);
-  z-index: 3;
-  &::before{content:"";position:absolute;width: 100%;height: 100%;top:-0.4em;left:0.4em;border: 1px solid #fff;}
-  li{font-weight:lighter;}
-}
+
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
 }
 
 @media screen and (max-width: 767px) {
   .bg {
-    background-size: cover;
-    height:calc(100vh - 63px);
-}
-
-
-.img {
-  &:nth-child(1) {
-    position: absolute;
-    height: 100vh;
-  left: 0;
-  top: 0;
-  object-fit: cover;
-  z-index: 2;
+    height: auto;
   }
-}
-h2{font-size:calc(100vw * 31 / 750);top: calc(50vh - 30vw);
-}
-.text{ top:50vh;font-size:calc(100vw * 34 / 750);
-  left:50%;margin-left:-6.5em;padding:0.8em 0;
+  .img {
+    right: size-m(37);
+    width: size-m(124);
+    top: auto;
+    bottom: size-m(10);
+  }
+
+  .container {
+    width: 100vw;
+    height: 100%;
+    flex-wrap: wrap;
+
+    &.left {
+      margin-left: 0;
+    }
+
+    &.right {
+      margin-right: 0;
+    }
+  }
+
+  .slides {
+    width: 100vw;
+  }
+
+  .content {
+    width: 100vw;
+    height: size-m(550);
+    padding-top: size-m(31);
+    padding-left: size-m(27);
+    padding-bottom: size-m(200);
+  }
+
+  .title {
+    font-size: size-m(39);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.65;
+    letter-spacing: 2.5px;
+    text-align: left;
+    color: #606060;
+    margin-bottom: size-m(25);
+    margin-left: size-m(-5);
+  }
+
+  .subtitle {
+    font-size: size-m(16);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.55;
+    letter-spacing: 0.63px;
+    text-align: left;
+    color: #aa8356;
+    margin-bottom: size-m(15);
+  }
+
+  .desc-list {
+    > h3 {
+      font-size: size-m(14);
+      font-weight: 600;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 2.14;
+      letter-spacing: 0.14px;
+      text-align: left;
+      color: #727272;
+    }
+  }
+
+  .indigator-list {
+    display: none;
+  }
+
+  .arrows {
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .arrow-l {
+      width: size-m(14);
+      position: absolute;
+      left: size-m(5);
+      cursor: pointer;
+    }
+
+    .arrow-r {
+      width: size-m(14);
+      position: absolute;
+      right: size-m(5);
+      cursor: pointer;
+    }
   }
 }
 </style>
@@ -101,18 +322,79 @@ h2{font-size:calc(100vw * 31 / 750);top: calc(50vh - 30vw);
 <script>
 // @ is an alias to /src
 import { isMobile } from '@/utils'
+import slider from '@/mixins/slider.js'
+
 export default {
   name: 'section6',
+  mixins: [slider],
 
   data() {
     return {
       isMobile,
+      slideList: [
+        {
+          src: require('./s6/1.jpg'),
+          contentIndex: 0,
+          subtitle: '時尚小豪宅強勢回歸，收藏新板獨一無二',
+        },
+        {
+          src: require('./s6/2.jpg'),
+          contentIndex: 0,
+          subtitle: '時尚小豪宅強勢回歸，收藏新板獨一無二',
+        },
+        {
+          src: require('./s6/3.jpg'),
+          contentIndex: 1,
+          subtitle: '高層景觀飯店寓所，降板湯缸特仕版',
+        },
+        {
+          src: require('./s6/4.jpg'),
+          contentIndex: 1,
+          subtitle: '高層景觀飯店寓所，降板湯缸特仕版',
+        },
+        {
+          src: require('./s6/5.jpg'),
+          contentIndex: 2,
+          subtitle: '高層景觀飯店寓所，降板湯缸特仕版',
+        },
+      ],
+      desc_list: [
+        [
+          '新板最美小資宅，與特區豪門齊賞落櫻之繽',
+          '小宅也有豪宅靈魂',
+          'A New Wave of Living',
+          '渴望與擁有，只差一步',
+          '如此輕取，新人生已經來臨',
+        ],
+        [
+          '以極具國際飯店質感的遊創手法',
+          '令收藏家驚艷不已',
+          '戶戶降版大湯缸',
+          '在新板寸土寸金的天秤前',
+          '泡湯享受成為生活幸福圖騰',
+          '創造人生中最美好時光',
+          '妳值得THE VIEW寵愛妳',
+        ],
+        [
+          '以極具國際飯店質感的遊創手法',
+          '令收藏家驚艷不已',
+          '戶戶降版大湯缸',
+          '在新板寸土寸金的天秤前',
+          '泡湯享受成為生活幸福圖騰',
+          '創造人生中最美好時光',
+          '妳值得THE VIEW寵愛妳',
+        ],
+      ],
     }
   },
 
   computed: {},
 
-  methods: {},
+  methods: {
+    setIndex(index) {
+      this.slideIndex = index * 2
+    },
+  },
 
   created() {},
   mounted() {},
