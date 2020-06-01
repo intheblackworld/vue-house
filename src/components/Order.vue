@@ -20,21 +20,21 @@
         <div class="form">
           <div class="group">
             <div class="row">
-              <label>姓名</label>
+              <label>姓名<i>*</i></label>
               <el-input
                 v-model="form.name"
                 placeholder
               ></el-input>
             </div>
             <div class="row">
-              <label>手機</label>
+              <label>手機<i>*</i></label>
               <el-input
                 v-model="form.phone"
                 placeholder
               ></el-input>
             </div>
             <div class="row">
-              <label>聯絡時間(起)</label>
+              <label>聯絡時間<i>*</i>(起)</label>
               <el-time-select
                 v-model="form.time_start"
                 :editable="false"
@@ -46,7 +46,7 @@
               ></el-time-select>
             </div>
             <div class="row">
-              <label>聯絡時間(迄)</label>
+              <label>聯絡時間<i>*</i>(迄)</label>
               <el-time-select
                 v-model="form.time_end"
                 :editable="false"
@@ -395,10 +395,11 @@ export default {
     }
 
     label {
-      width: 92px;
+      width: 96px;
       font-size: 16px;
       opacity: 0.8;
       color: $order_input_label_color;
+      i{color: #c00;}
     }
   }
 
