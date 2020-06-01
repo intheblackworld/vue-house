@@ -1,12 +1,12 @@
 export default {
   address: '台南市東區崇吉六街＆崇元二街',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d918.4049703034406!2d120.22492502919008!3d22.964222199061414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDU3JzUxLjIiTiAxMjDCsDEzJzMxLjciRQ!5e0!3m2!1szh-TW!2stw!4v1590652547681!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/h2pga8NusLNTCiXh9',
-  phone: '03-3135533',
-  fbLink: 'https://www.facebook.com/豐郡大景-108654404191724',
-  fbMessage: 'https://m.me/108654404191724',
-  caseName: '清景麟',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7347.2397624275245!2d120.221094835133!3d22.964222199061425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDU3JzUxLjIiTiAxMjDCsDEzJzMxLjciRQ!5e0!3m2!1szh-TW!2stw!4v1590729662083!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/mxvGn8wayCpnDRPt5',
+  phone: '0800-759888',
+  fbLink: 'https://www.facebook.com/清景麟巴克禮-104707561144151/',
+  fbMessage: 'https://m.me/104707561144151',
+  caseName: '清景麟巴克禮',
   indigatorLength: 10,
 
   houseInfos: [
