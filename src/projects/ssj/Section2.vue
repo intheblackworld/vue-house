@@ -1,18 +1,6 @@
 <template>
   <div class="relative">
-    <svg
-      v-if="showIcon"
-      version="1.1"
-      id="svg3"
-      class="svg"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-      x="0px"
-      y="0px"
-      viewBox="0 0 799.5 523.3"
-      style="enable-background:new 0 0 799.5 523.3;"
-      xml:space="preserve"
-    >
+    <svg v-if="showIcon" preserveAspectRatio="xMinYMid meet" version="1.1" id="svg3" class="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 799.5 523.3" style="enable-background:new 0 0 799.5 523.3;" xml:space="preserve">
       <path
         class="st0 ops op10"
         d="M248.6,351.2c4.4-3.7,0.8-7,0.8-7c-1.1-0.9-1.5-2.3-1.1-3.6c0.7-1.6,1.6-3,2.8-4.2c3.6-3.1,7.6-5.6,11.9-7.5
@@ -647,9 +635,7 @@
 
         <path
           class="st3 an3-1"
-          d="M493.6,141.7C480.7,62.1,408.6,4.3,322.3,4.3c-10.3,0-20.6,0.8-30.7,2.5c-46.9,7.6-88.2,31.8-116.3,68
-		s-39.7,80.2-32.6,123.9c12.9,79.6,84.9,137.4,171.2,137.4v0c10.3,0,20.6-0.9,30.7-2.5c46.9-7.6,88.2-31.8,116.3-68
-		S500.7,185.4,493.6,141.7"
+          d="M493.6,141.7C480.7,62.1,408.6,4.3,322.3,4.3c-10.3,0-20.6,0.8-30.7,2.5c-46.9,7.6-88.2,31.8-116.3,68 s-39.7,80.2-32.6,123.9c12.9,79.6,84.9,137.4,171.2,137.4v0c10.3,0,20.6-0.9,30.7-2.5c46.9-7.6,88.2-31.8,116.3-68 S500.7,185.4,493.6,141.7"
         />
         <path
           class="st3 an6"
@@ -664,19 +650,7 @@
         y2="410.1"
       />
     </svg>
-    <svg
-      v-if="showIcon"
-      version="1.1"
-      id="svg4"
-      class="svg"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-      x="0px"
-      y="0px"
-      viewBox="0 0 799.5 523.3"
-      style="enable-background:new 0 0 799.5 523.3;"
-      xml:space="preserve"
-    >
+    <svg  v-if="showIcon" version="1.1" id="svg4" class="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 799.5 523.3" preserveAspectRatio="xMinYMid meet" style="enable-background:new 0 0 799.5 523.3;" xml:space="preserve"    >
       <path
         class="st0 ops op10"
         d="M248.6,351.2c4.4-3.7,0.8-7,0.8-7c-1.1-0.9-1.5-2.3-1.1-3.6c0.7-1.6,1.6-3,2.8-4.2c3.6-3.1,7.6-5.6,11.9-7.5
@@ -1311,9 +1285,7 @@
 
         <path
           class="st3 an3-1"
-          d="M493.6,141.7C480.7,62.1,408.6,4.3,322.3,4.3c-10.3,0-20.6,0.8-30.7,2.5c-46.9,7.6-88.2,31.8-116.3,68
-		s-39.7,80.2-32.6,123.9c12.9,79.6,84.9,137.4,171.2,137.4v0c10.3,0,20.6-0.9,30.7-2.5c46.9-7.6,88.2-31.8,116.3-68
-		S500.7,185.4,493.6,141.7"
+          d="M493.6,141.7C480.7,62.1,408.6,4.3,322.3,4.3c-10.3,0-20.6,0.8-30.7,2.5c-46.9,7.6-88.2,31.8-116.3,68 s-39.7,80.2-32.6,123.9c12.9,79.6,84.9,137.4,171.2,137.4v0c10.3,0,20.6-0.9,30.7-2.5c46.9-7.6,88.2-31.8,116.3-68 S500.7,185.4,493.6,141.7"
         />
         <path
           class="st3 an6"
@@ -1328,8 +1300,7 @@
         y2="410.1"
       />
     </svg>
-    <svg
-      version="1.1"
+    <svg version="1.1"
       id="svg5"
       class="svg"
       xmlns="http://www.w3.org/2000/svg"
@@ -1339,6 +1310,7 @@
       viewBox="0 0 799.5 523.3"
       style="enable-background:new 0 0 799.5 523.3;"
       xml:space="preserve"
+      preserveAspectRatio="xMinYMid meet"
     >
       <path
         class="st0 ops op10"
@@ -1974,9 +1946,7 @@
 
         <path
           class="st3 an3-1"
-          d="M493.6,141.7C480.7,62.1,408.6,4.3,322.3,4.3c-10.3,0-20.6,0.8-30.7,2.5c-46.9,7.6-88.2,31.8-116.3,68
-		s-39.7,80.2-32.6,123.9c12.9,79.6,84.9,137.4,171.2,137.4v0c10.3,0,20.6-0.9,30.7-2.5c46.9-7.6,88.2-31.8,116.3-68
-		S500.7,185.4,493.6,141.7"
+          d="M493.6,141.7C480.7,62.1,408.6,4.3,322.3,4.3c-10.3,0-20.6,0.8-30.7,2.5c-46.9,7.6-88.2,31.8-116.3,68 s-39.7,80.2-32.6,123.9c12.9,79.6,84.9,137.4,171.2,137.4v0c10.3,0,20.6-0.9,30.7-2.5c46.9-7.6,88.2-31.8,116.3-68S500.7,185.4,493.6,141.7"
         />
         <path
           class="st3 an6"
@@ -2638,9 +2608,7 @@
 
         <path
           class="st3 an3-1"
-          d="M493.6,141.7C480.7,62.1,408.6,4.3,322.3,4.3c-10.3,0-20.6,0.8-30.7,2.5c-46.9,7.6-88.2,31.8-116.3,68
-		s-39.7,80.2-32.6,123.9c12.9,79.6,84.9,137.4,171.2,137.4v0c10.3,0,20.6-0.9,30.7-2.5c46.9-7.6,88.2-31.8,116.3-68
-		S500.7,185.4,493.6,141.7"
+          d="M493.6,141.7C480.7,62.1,408.6,4.3,322.3,4.3c-10.3,0-20.6,0.8-30.7,2.5c-46.9,7.6-88.2,31.8-116.3,68	s-39.7,80.2-32.6,123.9c12.9,79.6,84.9,137.4,171.2,137.4v0c10.3,0,20.6-0.9,30.7-2.5c46.9-7.6,88.2-31.8,116.3-68	S500.7,185.4,493.6,141.7"
         />
         <path
           class="st3 an6"
@@ -3684,7 +3652,7 @@
           ></div>
         </div>
       </div>
-      <div class="content">
+      <div class="content bot">
         <h3 class="title">繁華商圈</h3>
         <h3 class="desc">家樂福五華街，繁華商圈東逝水</h3>
         <div class="text">前有24小時家樂福，後有五華街傳統商圈，現代與傳統一併俱全。整齊蒼綠的街廓，綠化公園及開放空間，重劃區超低建蔽率，市容之美無話可說，離囂不離塵，這才是真正的俱生活機能的「現代化重劃區」，是您宜居移居的新選擇。
@@ -3731,22 +3699,24 @@
 }
 
 #svg3 {
-  top: size(-410);
+  top: 0;
   left: auto;
-  right: size(-200);
-  transform: scaleX(-1);
+  right:0;
+  transform:translate(9%, -50%) scaleX(-1);
   width: size(840);
 }
 #svg4 {
-  top: size(1250);
-  left: size(-130);
+  top: size(1700);
+  left:0;
+  transform:translate(-10%, -50%);
   width: size(840);
 }
 #svg5 {
-  top: size(2970);
+  top:auto;
+  bottom: 0;
   left: auto;
   right: size(-30);
-  transform: scale(-1, -1);
+  transform:translate(0%, 25%) scale(-1, -1);
   width: size(840);
 }
 .bg1,
@@ -3776,7 +3746,7 @@
 
 .bottom {
   width: 100vw;
-  height: size(122);
+  height: size(470);
 }
 
 .container {
@@ -4031,7 +4001,8 @@
     &.short {
       width: size-m(289);
     }
-
+&.bot{
+      margin-bottom: size-m(300);}
     > .title {
       font-size: size-m(25);
       font-weight: bold;

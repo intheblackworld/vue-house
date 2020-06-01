@@ -2,23 +2,13 @@
   <div class="relative">
     <div v-if="!isMobile">
       <img
-        src="./s3/bg.png"
+        src="./s3/bg.jpg"
         alt=""
         class="bg-img"
       >
-      <svg
-        v-if="showIcon"
-        version="1.1"
-        id="svg6"
-        class="svg"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        x="0px"
-        y="0px"
-        viewBox="0 0 421.8 564.3"
-        style="enable-background:new 0 0 421.8 564.3;"
-        xml:space="preserve"
-      >
+
+      
+<svg v-if="showIcon" version="1.1" id="svg6" class="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 421.8 564.3" style="enable-background:new 0 0 421.8 564.3;" xml:space="preserve">
 
         <g class="op op2">
           <path
@@ -322,17 +312,22 @@
             d="M367.4,250.4l-14.5,4.5c0.2,0.7,0.4,1.5,0.7,2.2l14.5-4.5c0.6-0.2,1-0.8,0.8-1.5S368,250.3,367.4,250.4z"
           />
         </g>
-      </svg>
+</svg>
+      <img
+        src="./s3/bg2.png"
+        alt=""
+        class="bg-img rel"
+      >
 
       <div class="title-block flex-ac flex-jb absolute">
         <img
-          src="./s3/l.png"
+          src="./s2/l.png"
           alt=""
           class="title-l"
         >
         <h3 class="title">重劃區<br />3大優勢</h3>
         <img
-          src="./s3/l.png"
+          src="./s2/l.png"
           alt=""
           class="title-r"
         >
@@ -372,27 +367,33 @@
     </div>
     <div
       v-else
-      class="relative"
     >
+
       <div class="title-block flex-ac flex-jb">
         <img
-          src="./s3/l.png"
+          src="./s2/l.png"
           alt=""
           class="title-l"
         >
         <h3 class="title">重劃區<br />3大優勢</h3>
         <img
-          src="./s3/l.png"
+          src="./s2/l.png"
           alt=""
           class="title-r"
         >
       </div>
       <img
-        src="./mo/3/map_s.jpg"
+        src="./mo/3/map.jpg"
         alt=""
         class="img"
         data-aos="fade"
         data-aos-delay="400"
+        @click="isShowDialog = true"
+      >
+      <img
+        src="./s3/bg2.png"
+        alt=""
+        class="bg-img rel"
       >
 
       <img
@@ -415,6 +416,7 @@
           @click="isShowDialog = false"
         />
       </div>
+      <div  class="slide-box">
 
       <h3 class="m-title">
         捷運未來式，大臺北山手線世代
@@ -445,20 +447,55 @@
           >
         </div>
       </div>
+      </div>
     </div>
   </div>
 </template>
+<style lang="scss" scoped>
+#section3 .svg {
+  .st0 {
+    fill: #3b5662;
+  }
+  .st1 {
+    opacity: 0.45;
+  }
+  .st2 {
+    fill: #ffffff;
+  }
+  .st3 {
+    stroke: #3b5662;
+    stroke-width: 3;
+  }
+}
+
+@media screen and (max-width: 767px) {
+/*  .svg {
+    .pc {
+      display: none;
+    }
+    .r30 {
+      transform: rotate(-30deg);
+      transform-origin: 68% 54%;
+    }
+  }
+  */
+}
+</style>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .relative {
   // height: 100vh;
   overflow: hidden;
-  background: #3b5662;
+  position: relative;
+  margin: size(-280) 0 0 0;
+  background: linear-gradient(to bottom, rgba(217,215,210,0) 0%,rgba(217,215,210,1) 5%,rgba(217,215,210,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00d9d7d2', endColorstr='#d9d7d2',GradientType=0 );
 }
 #svg6 {
   top: size(380);
-  left: size(105);
+  left: size(-250);
   width: size(425);
+  transform:rotate(-30deg) scaleX(-1);
   z-index: 1;
 }
 
@@ -470,9 +507,11 @@
   top: 0;
   left: 0;
   object-fit: cover;
-  z-index: 2;
 
   &:nth-child(1) {
+  top:size(220);
+  }
+  &.rel {
     position: relative;
   }
 }
@@ -489,7 +528,7 @@
     line-height: 1.3;
     letter-spacing: normal;
     text-align: center;
-    color: #fff;
+    color: #3b5662;
   }
   .title-l {
     width: size(77);
@@ -502,7 +541,7 @@
 }
 
 .block-list {
-  margin-bottom: size(84);
+  padding-bottom: size(84);background: #3b5662;
   .block {
     width: size(560);
     margin: 0 size(16);
@@ -539,6 +578,20 @@
 }
 
 @media screen and (max-width: 767px) {
+.relative {
+  // height: 100vh;
+  overflow: hidden;
+  position: relative;
+  margin: size-m(-220) 0 0 0;
+}
+.bg-img {
+  &:nth-child(1) {
+  top:0;
+  }
+  &.rel {
+    position: absolute;top: size-m(120);
+  }
+}
   .title-block {
     width: 60vw;
     margin: 0 auto;
@@ -555,7 +608,7 @@
       line-height: 1.3;
       letter-spacing: normal;
       text-align: center;
-      color: #fff;
+      color: #3b5662;
     }
     .title-l {
       width: size-m(33);
@@ -578,7 +631,7 @@
     right: 0;
     margin: 0 auto;
   }
-
+.slide-box{background: #3b5662;padding: 0 0 size-m(95) 0;}
   .m-title {
     font-size: size-m(15);
     font-weight: bold;
@@ -588,15 +641,14 @@
     letter-spacing: normal;
     text-align: center;
     color: #ffffff;
-    margin-top: size-m(30);
-    margin-bottom: size-m(5);
+    padding-top: size-m(30);
+    padding-bottom: size-m(5);
   }
 
   .slide {
     width: size-m(316) !important;
     height: size-m(175) !important;
-    height: auto;
-    margin: 0 auto size-m(95);
+    margin: 0 auto 0;
     overflow: visible;
 
     & .slide-img {
@@ -645,6 +697,8 @@
     .dialog-content {
       height: 100vh;
       margin: 0;
+    border-radius: 0;position: relative;
+        left: 50vh;
     }
 
     &.show {
