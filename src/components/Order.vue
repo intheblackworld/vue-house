@@ -22,14 +22,14 @@
         <div class="form">
           <div class="group">
             <div class="row">
-              <label>姓名</label>
+              <label>姓名<span>*</span></label>
               <el-input
                 v-model="form.name"
                 placeholder
               ></el-input>
             </div>
             <div class="row">
-              <label>手機</label>
+              <label>手機<span>*</span></label>
               <el-input
                 v-model="form.phone"
                 placeholder
@@ -221,7 +221,7 @@ export default {
         message: h(
           'i',
           { style: 'color: #82191d' },
-          '「姓名、手機、 聯絡時間」是必填欄位',
+          '「姓名、手機」是必填欄位',
         ),
       })
     },
@@ -233,13 +233,13 @@ export default {
       this.isSubmit = true
       if (
         !this.form.name ||
-        !this.form.phone ||
+        !this.form.phone 
         // !this.form.time_start ||
         // !this.form.time_end
         // ||
         // !this.form.email ||
-        !this.form.city ||
-        !this.form.area
+       // !this.form.city ||
+       // !this.form.area
       ) {
         this.alertValidate()
         this.isSubmit = false
@@ -404,6 +404,7 @@ export default {
       font-size: 16px;
       opacity: 0.8;
       color: $order_input_label_color;
+      span{color: #C00;}
     }
   }
 
