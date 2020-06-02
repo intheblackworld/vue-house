@@ -4114,13 +4114,10 @@ export default {
         { text: '高速公路', src: require('./s2/2-5.jpg') },
       ],
       slideList3: [
-        {
-          text: '淡水河畔重陽公園',
-          src: require('./s2/3-1淡水河畔重陽公園.jpg'),
-        },
-        { text: '淡水河畔重陽公園', src: require('./s2/3-2.jpg') },
-        { text: '淡水河畔重陽公園', src: require('./s2/3-3.jpg') },
-        { text: '淡水河畔重陽公園', src: require('./s2/3-4.jpg') },
+        { text: '集賢環保公園',src: require('./s2/3-1.jpg') },
+        { text: '太陽公園', src: require('./s2/3-2.jpg') },
+      //  { text: '淡水河畔重陽公園', src: require('./s2/3-3.jpg') },
+      //  { text: '淡水河畔重陽公園', src: require('./s2/3-4.jpg') },
         { text: '淡水河畔重陽公園', src: require('./s2/3-5.jpg') },
       ],
       slideList4: [
