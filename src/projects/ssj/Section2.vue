@@ -3790,7 +3790,7 @@
     font-style: normal;
     line-height: 1.77;
     letter-spacing: 1.2px;
-    text-align: left;
+    text-align: justify;
     color: #3b5662;
     margin-bottom: size(20);
   }
@@ -3802,7 +3802,7 @@
     font-style: normal;
     line-height: 1.77;
     letter-spacing: 1.2px;
-    text-align: left;
+    text-align: justify;
     color: #3b5662;
     margin-bottom: size(25);
   }
@@ -3814,7 +3814,7 @@
     font-style: normal;
     line-height: 1.6;
     letter-spacing: 0.9px;
-    text-align: left;
+    text-align: justify;
     color: #3b5662;
   }
 }
@@ -4012,7 +4012,7 @@
       font-style: normal;
       line-height: 1.77;
       letter-spacing: 1.2px;
-      text-align: left;
+      text-align: justify;
       color: #3b5662;
       margin-bottom: size-m(20);
     }
@@ -4024,7 +4024,7 @@
       font-style: normal;
       line-height: 1.77;
       letter-spacing: 1.2px;
-      text-align: left;
+      text-align: justify;
       color: #3b5662;
       margin-bottom: size-m(25);
     }
@@ -4036,7 +4036,7 @@
       font-style: normal;
       line-height: 1.6;
       letter-spacing: 0.9px;
-      text-align: left;
+      text-align: justify;
       color: #3b5662;
     }
   }

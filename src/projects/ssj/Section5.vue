@@ -390,7 +390,7 @@
       font-style: normal;
       line-height: 1.6;
       letter-spacing: 0.9px;
-      text-align: left;
+      text-align: justify;
       color: #fff;
       margin-bottom: size-m(50);
     }
