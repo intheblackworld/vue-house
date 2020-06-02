@@ -166,7 +166,7 @@ export default {
       for (let n = 0; n < offsetTopArr.length; n++) {
         // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
         // 那么此时导航索引就应该是n了
-        if (scrollTop >= offsetTopArr[n] - 100) {
+        if (scrollTop >= offsetTopArr[n] - 200) {
           navIndex = n
         }
       }
