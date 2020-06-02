@@ -6,7 +6,7 @@ h3,
 h4,
 h5,
 p {
-  font-family: 'Noto Sans TC', serif;
+  font-family: 'Noto Sans TC', 'Noto Sans CJK tc',  serif;
 }
 
 h2 {
@@ -31,6 +31,32 @@ p {
 /* animate css */
 
 /* font */
+
+@font-face {
+  font-family: 'Noto Sans CJK tc';
+  src: url('~@/assets/font/NotoSansCJKtc-Bold.otf')
+      format('opentype'),
+    url('~@/assets/font/NotoSansCJKtc-Bold.otf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Noto Sans CJK tc';
+  src: url('~@/assets/font/NotoSansCJKtc-Light.otf')
+      format('opentype'),
+    url('~@/assets/font/NotoSansCJKtc-Light.otf');
+    font-weight: normal;
+    font-weight: 300;
+}
+@font-face {
+  font-family: 'Noto Sans CJK tc';
+  src: url('~@/assets/font/NotoSansCJKtc-Regular.otf')
+      format('opentype'),
+    url('~@/assets/font/NotoSansCJKtc-Regular.otf');
+    font-weight: normal;
+    font-weight: 400;
+}
+/*
 @font-face {
   font-family: DFPingJuStd;
   src: url('~@/assets/font/DFPingJuStd-W7.otf?#iefix')
@@ -57,4 +83,4 @@ p {
   src: url('~@/assets/font/Trajan Pro Regular.ttf') format('truetype'), url('~@/assets/font/Trajan Pro Regular.ttf');
   font-weight: normal;
   font-style: normal;
-}
+}*/
