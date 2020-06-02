@@ -6,6 +6,7 @@
         alt=""
         class="bg-img"
       >
+      <div class="txt-block">
       <div class="title-block flex-ac flex-jb">
         <img
           src="./s4/l.png"
@@ -22,6 +23,7 @@
       <div class="desc">
         宛若精品，細直方的建築立面，精緻如珠寶盒一般，完美的黃金比例。
         縱向的格柵線條，動感跳耀。與窗欄穿插編織而成，工匠級磅礴旋律。
+      </div>
       </div>
       <div class="img-list absolute flex-c">
         <img
@@ -823,11 +825,12 @@
   // }
 }
 
-.title-block {
+.txt-block {
   position: absolute;
   z-index: 3;
   left: size(36);
-  bottom: size(144);
+  bottom: size(30);
+.title-block {
   .title {
     font-size: size(59);
     font-weight: bold;
@@ -857,11 +860,10 @@
   letter-spacing: 0.9px;
   text-align: left;
   color: #3b5662;
-  width: size(600);
-  position: absolute;
+  width: size(660);
+  padding:0.5em 0 0 5em;
   z-index: 3;
-  left: size(72);
-  bottom: size(40);
+}
 }
 
 .img-list {
