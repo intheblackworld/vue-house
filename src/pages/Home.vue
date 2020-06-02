@@ -112,7 +112,7 @@ export default {
       isMobile,
       isSide: false,
       load: true,
-      viewIndex: 0,
+      viewIndex: 1,
       // action: {
       //   moveTo: () => {},
       // },
