@@ -35,7 +35,7 @@
         />
       </div>
       <div class="slide relative">
-        <div class="slide-text">{{slideList[slideIndex].text}}</div>
+        <!-- <div class="slide-text">{{slideList[slideIndex].text}}</div>  -->
         <img
           :src="slide.src"
           v-for="(slide, index) in slideList"
@@ -757,7 +757,7 @@
         >
       </div>
       <div class="slide relative">
-        <div class="slide-text">{{slideList[slideIndex].text}}</div>
+       <!-- <div class="slide-text">{{slideList[slideIndex].text}}</div>  -->
         <img
           :src="slide.src"
           v-for="(slide, index) in slideList"
@@ -907,10 +907,10 @@
     z-index: 4;
     background-color: #3b5662;
     right: size(0);
-    bottom: size(290);
+    bottom: size(100);
     color: #fff;
-    font-size: size(28);
-    padding: 8px 30px;
+    font-size: size(17);
+    padding: 8px 50px 8px 30px;
   }
 }
 .arrows {
@@ -1084,11 +1084,11 @@ export default {
       isMobile,
       slideIndex: 0,
       slideList: [
-        { text: '立面大景', src: require('./s4/1.jpg') },
-        { text: '立面大景', src: require('./s4/2.jpg') },
-        { text: '立面大景', src: require('./s4/3.jpg') },
         { text: '立面大景', src: require('./s4/4.jpg') },
         { text: '立面大景', src: require('./s4/5.jpg') },
+        { text: '立面大景', src: require('./s4/3.jpg') },
+        { text: '立面大景', src: require('./s4/1.jpg') },
+        { text: '立面大景', src: require('./s4/2.jpg') },
       ],
     }
   },

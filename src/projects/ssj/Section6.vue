@@ -29,13 +29,13 @@
         data-aos="fade"
         data-aos-delay="400"
       >
-        <!-- <div class="slide-text">{{slideList[slideIndex].text}}</div> -->
         <img
           :src="slide.src"
           v-for="(slide, index) in slideList"
           :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
           :key="`s2-1-slide-${index}`"
         />
+        <div class="slide-text">{{slideList[slideIndex].text}}</div>
         <div class="content">
           <h3 class="title">三十有成，精選傳奇之作</h3>
           <div class="text">北市大直水岸特區-煙波巴洛克 (1998年)<br />
@@ -1413,7 +1413,6 @@
       </div>
 
       <div class="slide relative">
-        <!-- <div class="border"></div> -->
         <!-- <div class="slide-text">{{slideList1[slideIndex1].text}}</div> -->
         <img
           :src="slide.src"
@@ -1421,6 +1420,7 @@
           :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
           :key="`s5-2-slide-${index}`"
         />
+        <div class="slide-text">{{slideList[slideIndex].text}}</div>
         <div class="arrows absolute">
           <img
             src="./s5/arrow.png"
@@ -1577,10 +1577,10 @@
   .slide-text {
     position: absolute;
     background-color: #3b5662;
-    right: size(0);
-    bottom: size(290);
+    right:52.5%;
+    bottom: 0;
     color: #fff;
-    font-size: size(28);
+    font-size: size(17);
     padding: 8px 30px;
   }
 }
@@ -1707,6 +1707,10 @@
     & .slide-img {
       width: 100%;
     }
+  .slide-text {
+    font-size: size-m(13);
+    bottom: 0;left: auto;right: 0;
+  }
   }
 
   .content {
@@ -1790,10 +1794,10 @@ export default {
       isMobile,
       slideIndex: 0,
       slideList: [
-        { text: '立面大景', src: require('./s6/權世界 (2008年).jpg') },
-        { text: '立面大景', src: require('./s6/煙波巴洛克 (1998年).jpg') },
-        { text: '立面大景', src: require('./s6/華爾街之心(2001年).jpg') },
-        { text: '立面大景', src: require('./s6/閱世界 (2013年).jpg') },
+        { text: '權世界 (2008年)', src: require('./s6/權世界 (2008年).jpg') },
+        { text: '煙波巴洛克 (1998年)', src: require('./s6/煙波巴洛克 (1998年).jpg') },
+        { text: '華爾街之心(2001年)', src: require('./s6/華爾街之心(2001年).jpg') },
+        { text: '閱世界 (2013年)', src: require('./s6/閱世界 (2013年).jpg') },
       ],
     }
   },

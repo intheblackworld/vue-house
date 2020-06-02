@@ -589,13 +589,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00d9d7d2', e
   top:0;
   }
   &.rel {
-    position: absolute;top: size-m(120);
+    position: absolute;top: size-m(160);
   }
 }
   .title-block {
     width: 60vw;
     margin: 0 auto;
-    margin-top: size-m(40);
+    margin-top: size-m(80);
     margin-bottom: size-m(22);
     top: 0;
     left: 0;

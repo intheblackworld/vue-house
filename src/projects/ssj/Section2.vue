@@ -3270,9 +3270,7 @@
 
         <path
           class="st3 an3-1"
-          d="M493.6,141.7C480.7,62.1,408.6,4.3,322.3,4.3c-10.3,0-20.6,0.8-30.7,2.5c-46.9,7.6-88.2,31.8-116.3,68
-		s-39.7,80.2-32.6,123.9c12.9,79.6,84.9,137.4,171.2,137.4v0c10.3,0,20.6-0.9,30.7-2.5c46.9-7.6,88.2-31.8,116.3-68
-		S500.7,185.4,493.6,141.7"
+          d="M493.6,141.7C480.7,62.1,408.6,4.3,322.3,4.3c-10.3,0-20.6,0.8-30.7,2.5c-46.9,7.6-88.2,31.8-116.3,68 s-39.7,80.2-32.6,123.9c12.9,79.6,84.9,137.4,171.2,137.4v0c10.3,0,20.6-0.9,30.7-2.5c46.9-7.6,88.2-31.8,116.3-68 S500.7,185.4,493.6,141.7"
         />
         <path
           class="st3 an6"
@@ -3931,28 +3929,28 @@
   #svg4 {
     width: 120vw;
     height: size-m(336);
-    top: size-m(800);
+    top: size-m(830);
     left: 0;
     transform: translate(-47%, -44%) scale(1, -1);
   }
   #svg5 {
     width: 120vw;
     height: size-m(336);
-    top: size-m(1470);
+    top: size-m(1530);
     left: 0;
     transform: translate(23%, -44%) scale(-1, -1);
   }
   #svg5-1 {
     width: 120vw;
     height: size-m(336);
-    top: size-m(2110);
+    top: size-m(2200);
     left: 0;
     transform: translate(-47%, -44%) scale(1, -1);
   }
   #svg5-2 {
     width: 120vw;
     height: size-m(336);
-    top: size-m(2760);
+    top: size-m(2880);
     left: 0;
     transform: translate(20%, -44%) scale(-1, -1);
   }
@@ -3991,11 +3989,15 @@
       height: 100%;
       transform: none;
     }
+  .slide-text {
+    font-size: size-m(13);
+    bottom: 0;
+  }
   }
 
   .content {
     width: size-m(289);
-    margin: 0 auto size-m(100);
+    margin: 0 auto size-m(130);
     position: relative;
 
     &.short {
@@ -4038,6 +4040,7 @@
       color: #3b5662;
     }
   }
+
 
   .indigator-list {
     display: none;

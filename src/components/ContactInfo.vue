@@ -113,8 +113,8 @@ export default {
 }
 
 .logo {
-  width:auto;
-  height: $contact_logo_pc_width;
+  width: $contact_logo_pc_width;
+//height: $contact_logo_pc_width;
   margin: 0 auto 40px;
 }
 .info {
