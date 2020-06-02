@@ -6,7 +6,7 @@ export default [
   { name: '規劃', imgSrc: '', subTitle: '', section: 'section5', svgSrc: '', offset: 0 },
   { name: '品牌', imgSrc: '', subTitle: '', section: 'section6', svgSrc: '', offset: 0 },
   // { name: '團隊', imgSrc: '', subTitle: '', section: 'section', svgSrc: '', offset: 0 },
-  { name: '預約賞屋', imgSrc: '', subTitle: '', section: 'section9', svgSrc: '', offset: 0 },
+  { name: '預約賞屋', imgSrc: '', subTitle: '', section: 'contact', svgSrc: '', offset: 0 },
   // { name: '預約賞屋', imgSrc: '', subTitle: '', section: 'contact', svgSrc: '', mobileOffset: 0 },
 ]
 
