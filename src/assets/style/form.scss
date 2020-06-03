@@ -74,7 +74,7 @@
   transition: all 0.3s !important;
   color: $order_submit_color;
   // z-index: 10;
-  border: none !important;
+  border: 2px solid #bf1b12 !important;
 
   &.is-disabled {
     background-color: $order_sumbit_disable_bg;

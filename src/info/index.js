@@ -7,7 +7,7 @@ export default {
   fbLink: 'https://www.facebook.com/豐郡大景-108654404191724',
   fbMessage: 'https://m.me/108654404191724',
   caseName: '豐郡大景',
-  indigatorLength: 10,
+  indigatorLength: 7,
 
   houseInfos: [
     ['投資興建', '豐郡建設股份有限公司'],
