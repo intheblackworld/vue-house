@@ -32,6 +32,35 @@
       v-else
       class="relative"
     >
+      <div class="slide absolute">
+        <img
+          v-for="(slide, index) in slideList"
+          :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
+          :key="`s7-slide-${index}`"
+          :src="slide.src"
+          alt
+        />
+      </div>
+      <div class="indigator absolute flex-c">
+        <div
+          v-for="(slide, index) in slideList"
+          @click="setIndex(index)"
+          :class="`item ${slideIndex === index ? 'active' : ''}`"
+          :key="`indi-${index}`"
+        ></div>
+      </div>
+      <div class="line-top absolute"></div>
+      <div class="line-top2 absolute"></div>
+      <div class="hint absolute">
+        樣品屋裝潢風格參考示意圖，實際依合約書為準
+      </div>
+      <div class="title absolute">
+        這麼小又高坪效 真的很少見！ 戶數不多 入席信義商圈別錯過
+      </div>
+      <div class="desc absolute">
+        搶先預約 留下資料由專人為您服務
+      </div>
+      <div class="line-bottom absolute"></div>
     </div>
   </div>
 </template>
@@ -148,23 +177,103 @@
 
 @media screen and (max-width: 767px) {
   .relative {
-    height: calc(100vh - 123px);
+    height: size-m(314.5);
   }
-  .bg-img {
-    height: auto;
-    object-fit: cover;
+
+  .slide {
+    width: 100vw;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 0;
+  }
+
+  .line-top {
+    background-color: #bf1b12;
+    z-index: 1;
+    width: 100vw;
+    height: 1px;
+    top: size-m(184.5);
+  }
+
+  .line-top2 {
+    background-color: #bf1b12;
+    z-index: 1;
+    width: 100vw;
+    height: 1px;
+    top: size-m(205.5);
+  }
+
+  .hint {
+    top: size-m(187);
+    font-size: size-m(10.4);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.83;
+    letter-spacing: normal;
+    text-align: center;
+    color: #1a1311;
+    right: size-m(5.6);
   }
 
   .title {
-    font-size: size-m(50);
-    top: size-m(119);
-    left: size-m(31);
+    width: size-m(186);
+    top: size-m(226);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-size: size-m(14);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.64;
+    letter-spacing: normal;
+    text-align: center;
+    color: #bb1a12;
   }
 
   .desc {
-    font-size: size-m(21);
-    top: size-m(200);
-    left: size-m(31);
+    width: size-m(190);
+    top: size-m(278);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-size: size-m(11.4);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #1a1311;
+  }
+
+  .indigator {
+    top: size-m(192);
+    left: size-m(10);
+    > div {
+      border: 1px solid #bb1a12;
+      background: transparent;
+      width: size-m(9.9);
+      height: size-m(9.9);
+      margin-right: 10px;
+
+      &.active {
+        background: #bb1a12;
+      }
+    }
+  }
+
+  .line-bottom {
+    background-color: #bf1b12;
+    z-index: 1;
+    width: 100vw;
+    height: 1px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    bottom: 0;
   }
 }
 </style>
@@ -173,7 +282,7 @@
 import { isMobile } from '@/utils'
 import slider from '@/mixins/slider.js'
 export default {
-  name: 'section5',
+  name: 'section7',
   mixins: [slider],
 
   components: {},
@@ -183,22 +292,26 @@ export default {
       slideIndex: 0,
       slideList: [
         {
-          src: require('./s7/1.jpg'),
+          src: isMobile ? require('./s7/1_m.jpg') : require('./s7/1.jpg'),
         },
         {
-          src: require('./s7/2.jpg'),
+          src: isMobile ? require('./s7/2_m.jpg') : require('./s7/2.jpg'),
         },
         {
-          src: require('./s7/3.jpg'),
+          src: isMobile ? require('./s7/3_m.jpg') : require('./s7/3.jpg'),
         },
         {
-          src: require('./s7/4.jpg'),
+          src: isMobile ? require('./s7/4_m.jpg') : require('./s7/4.jpg'),
         },
       ],
     }
   },
 
-  methods: {},
+  methods: {
+    setIndex(index) {
+      this.slideIndex = index
+    },
+  },
 
   created() {},
 

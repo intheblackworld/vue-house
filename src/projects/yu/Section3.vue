@@ -28,6 +28,34 @@
       v-else
       class="relative"
     >
+      <img
+        src="./s3/1_m.jpg"
+        alt=""
+        class="img absolute"
+      >
+      <img
+        src="./s3/2_m.jpg"
+        alt=""
+        class="img2 absolute"
+      >
+      <div class="white-line absolute"></div>
+      <div class="line-top absolute"></div>
+      <div class="line-left absolute"></div>
+      <div class="line-center absolute"></div>
+      <div class="line-top2 absolute"></div>
+      <div class="line-bottom absolute"></div>
+      <div class="title absolute">
+        板南線永春站5mins<br />輕擁台北5大精華商圈
+      </div>
+      <div class="desc absolute">
+        本案近距板南線永春站450米<br />
+        沿線貫穿台北市中心核心地段<br />
+        台北車站商圈、忠孝復興SOGO商圈<br />
+        忠孝敦化東區商圈、市政府信義101商圈<br />
+        國⽗父紀念館大巨蛋松菸商圈<br />
+        永春站位於規劃環狀線東環段Y37站<br />
+        未來雙軸動能交會，雙捷樞紐置產增值
+      </div>
     </div>
   </div>
 </template>
@@ -129,23 +157,110 @@
 
 @media screen and (max-width: 767px) {
   .relative {
-    height: calc(100vh - 123px);
-  }
-  .bg-img {
-    height: auto;
-    object-fit: cover;
+    height: size-m(489);
   }
 
   .title {
-    font-size: size-m(50);
-    top: size-m(119);
-    left: size-m(31);
+    width: size-m(140);
+    font-size: size-m(14);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.64;
+    letter-spacing: normal;
+    text-align: left;
+    color: #bb1a12;
+    top: size-m(244);
+    right: size-m(64);
+    left: auto;
+  }
+  .img {
+    top: 0;
+    right: 0;
+    width: size-m(352);
+    z-index: 1;
+  }
+
+  .img2 {
+    top: size-m(300);
+    left: 0;
+    width: size-m(158);
+    z-index: 1;
+  }
+
+  .white-line {
+    width: 100vw;
+    height: size(20);
+    background-color: #fff;
+    top: size(108);
+  }
+
+  .line-top {
+    background-color: #bf1b12;
+    z-index: 1;
+    width: 100vw;
+    height: 1px;
+    top: size-m(232);
+  }
+
+  .line-bottom {
+    background-color: #bf1b12;
+    z-index: 1;
+    width: 100vw;
+    height: 1px;
+    bottom: 0;
+  }
+
+  .line-center {
+    background-color: #bf1b12;
+    z-index: 1;
+    left: size-m(158);
+    right: auto;
+    top: size-m(232);
+    width: 1px;
+    height: size-m(257);
+  }
+
+  .line-right {
+    right: size-m(22);
+    width: 1px;
+    height: size-m(318);
+  }
+
+  .line-left {
+    background-color: #bf1b12;
+    left: size-m(22);
+    width: 1px;
+    height: size-m(232);
+    top: 0;
+    z-index: 1;
+  }
+
+  .line-top2 {
+    background-color: #bf1b12;
+    z-index: 1;
+    left: 0;
+    top: size-m(299);
+    width: 100vw;
+    height: 1px;
   }
 
   .desc {
-    font-size: size-m(21);
-    top: size-m(200);
-    left: size-m(31);
+    width: size-m(190);
+    top: size-m(314);
+    left: auto;
+    right: size-m(10);
+    font-size: size-m(11.4);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-align: left;
+    color: #1a1311;
+    span {
+      color: #bf1b12;
+    }
   }
 }
 </style>

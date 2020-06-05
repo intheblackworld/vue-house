@@ -24,6 +24,21 @@
       v-else
       class="relative"
     >
+      <img
+        src="./s2/1_m.jpg"
+        alt=""
+        class="img absolute"
+      >
+      <div class="white-line absolute"></div>
+      <div class="line-center absolute"></div>
+      <div class="line-left absolute"></div>
+      <div class="line-right absolute"></div>
+      <div class="line-bottom absolute"></div>
+      <div class="desc absolute">
+        像村上春樹的南青山裏原宿，慾望城市的曼哈頓SOHO<br />
+        安靜地若隱在信義商圈裡，坐享繁華與生活的雙好<br />
+        <span>沿著忠孝東路一巷進，城心最美好的，等您來上座</span>
+      </div>
     </div>
   </div>
 </template>
@@ -87,7 +102,6 @@
   letter-spacing: normal;
   text-align: center;
   color: #1a1311;
-
 }
 @media only screen and (max-width: 1440px) {
   .bg-img {
@@ -103,23 +117,72 @@
 
 @media screen and (max-width: 767px) {
   .relative {
-    height: calc(100vh - 123px);
+    height: size-m(318);
   }
-  .bg-img {
-    height: auto;
-    object-fit: cover;
+  .img {
+    top: 0;
+    left: 0;
+    width: size-m(352);
+    z-index: 1;
   }
 
-  .title {
-    font-size: size-m(50);
-    top: size-m(119);
-    left: size-m(31);
+  .white-line {
+    width: 100vw;
+    height: size-m(20);
+    background-color: #fff;
+    top: auto;
+    bottom: size-m(10);
+  }
+
+  .line-bottom {
+    background-color: #bf1b12;
+    z-index: 1;
+    width: 100vw;
+    height: 1px;
+    bottom: 0;
+  }
+
+  .line-center {
+    background-color: #bf1b12;
+    z-index: 1;
+    left: 0;
+    right: auto;
+    top: size-m(183);
+    width: size-m(352);
+    height: 1px;
+  }
+
+  .line-right {
+    right: size-m(22);
+    width: 1px;
+    height: size-m(318);
+  }
+
+  .line-left {
+    background-color: #bf1b12;
+    left: size-m(22);
+    width: 1px;
+    height: size-m(134);
+    top: size-m(183);
+    z-index: 1;
   }
 
   .desc {
-    font-size: size-m(21);
-    top: size-m(200);
-    left: size-m(31);
+    width: size-m(268);
+    top: size-m(217);
+    right: size-m(60.5);
+    font-size: size-m(11.4);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-align: center;
+    color: #1a1311;
+    white-space: nowrap;
+    span {
+      color: #bf1b12;
+    }
   }
 }
 </style>

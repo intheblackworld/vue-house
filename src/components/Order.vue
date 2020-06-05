@@ -149,7 +149,7 @@
           :disabled="!checked || !isVerify"
           @click="submit"
           :loading="isSubmit"
-        >立即預約</el-button>
+        >預約最錢線</el-button>
         <Loading
           :loading="isSubmit"
           :isOpacity="true"
@@ -459,8 +459,12 @@ export default {
       font-size: calc(100vw * 38 / 375);
     }
     .order-top {
+      width: 100vw;
       background-image: $order_bg_image_m;
       padding-bottom: 40px;
+      border-left: none;
+      border-right: none;
+      border-bottom: 1px solid #bf1b12;
     }
     .order-subtitle {
       // display: none;

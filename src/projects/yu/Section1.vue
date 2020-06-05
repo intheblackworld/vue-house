@@ -2,19 +2,57 @@
   <div class="relative">
     <div v-if="!isMobile">
       <div class="c-content"></div>
-      <img src="./s1/logo.png" alt="" class="img">
-      <img src="./s1/tl.png" alt="" class="logo">
-      <img src="./s1/tl2.png" alt="" class="desc">
+      <img
+        src="./s1/logo.png"
+        alt=""
+        class="img"
+      >
+      <img
+        src="./s1/tl.png"
+        alt=""
+        class="logo"
+      >
+      <img
+        src="./s1/tl2.png"
+        alt=""
+        class="desc"
+      >
+
+      <div
+        class="btn absolute flex-c"
+        v-scroll-to="{ element: `#contact` }"
+      >預約最錢線</div>
       <div class="line-in"></div>
       <div class="line-top"></div>
       <div class="line-bottom"></div>
       <div class="line-left"></div>
       <div class="line-right"></div>
     </div>
-    <div
-      v-else
-      class="fullscreen"
-    >
+    <div v-else>
+      <img
+        src="./s1/logo_m.png"
+        alt=""
+        class="img"
+      >
+      <img
+        src="./s1/tl.png"
+        alt=""
+        class="logo"
+      >
+      <img
+        src="./s1/tl2_m.png"
+        alt=""
+        class="desc"
+      >
+      <div
+        class="btn absolute flex-c"
+        v-scroll-to="{ element: `#contact` }"
+      >預約最錢線</div>
+      <div class="line-top"></div>
+      <div class="line-top line-top2"></div>
+      <div class="line-left"></div>
+      <div class="line-right"></div>
+      <div class="line-bottom"></div>
     </div>
     <!--
       <img src="./s1/視野大寬闊.png" alt="" class="absolute left4" data-aos="zoom-in-up" data-aos-delay="1000">
@@ -35,6 +73,7 @@
   top: size(115);
   left: size(115);
   object-fit: cover;
+  background-color: #fff;
 }
 
 .logo {
@@ -101,6 +140,37 @@
   height: size(965);
 }
 
+.logo {
+  width: size(130);
+  top: size(115);
+  left: size(115);
+}
+
+.desc {
+  width: size(400);
+  left: size(245);
+  top: size(115);
+}
+
+.btn {
+  width: size(337);
+  height: size(78);
+  cursor: pointer;
+  top: size(705);
+  left: size(631);
+  background-image: url('./button.png');
+  background-size: contain;
+
+  font-size: size(25);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.44;
+  letter-spacing: 20px;
+  padding-left: 20px;
+  text-align: center;
+  color: #ffffff;
+}
 @media only screen and (max-width: 1440px) {
   .bg-img {
   }
@@ -117,13 +187,76 @@
 }
 
 @media screen and (max-width: 767px) {
+  .relative {
+    height: size-m(512);
+  }
+
   .img {
+    width: size-m(332);
     height: auto;
-    top: auto;
+    top: size-m(24);
+    left: size-m(22);
+    bottom: auto;
+  }
+
+  .line-left {
+    top: 0;
+    height: size-m(512);
+    left: size-m(22);
+  }
+
+  .line-right {
+    top: 0;
+    height: size-m(512);
+    right: size-m(21);
+  }
+
+  .line-top {
+    width: size-m(375 - 22);
+    left: size-m(22);
+  }
+
+  .line-top2 {
+    width: size-m(75);
+    left: 0;
+    top: size-m(76);
+  }
+
+  .line-bottom {
+    width: 100vw;
     bottom: 0;
-    &:nth-child(1) {
-      position: absolute;
-    }
+  }
+
+  .logo {
+    width: size-m(53);
+    top: size-m(23);
+    left: size-m(22);
+  }
+
+  .desc {
+    width: size-m(98);
+    left: size-m(89);
+    top: size-m(23);
+  }
+
+  .btn {
+    width: size-m(146);
+    height: size-m(33);
+    cursor: pointer;
+    top: size-m(452);
+    left: size-m(49);
+    background-image: url('./button.png');
+    background-size: contain;
+
+    font-size: size-m(10.8);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.44;
+    letter-spacing: 8.64px;
+    padding-left: 8.64px;
+    text-align: center;
+    color: #ffffff;
   }
 }
 </style>

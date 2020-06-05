@@ -56,6 +56,44 @@
       v-else
       class="relative"
     >
+      <div class="title absolute">
+        <span>市中心的建築哲人</span> 展宜建築 X創研空間
+      </div>
+      <img
+        src="./s5/1_m.jpg"
+        alt=""
+        class="img absolute"
+      >
+      <img
+        src="./s5/2_m.jpg"
+        alt=""
+        class="img img2 absolute"
+      >
+      <div class="desc absolute">
+        2005年來，展宜建築攜手創研空間<br />
+        堅持建築不在複製，而在創作<br />
+        把蓋房子，當成是一種藝術創作<br />
+        拒絕規格化和複製品，不做產品，只做作品<br />
+        繼展宜建築〔拿雲〕、〔摘月〕人文美學系列<br />
+        精選忠孝東路、信義商圈雙王者地段<br />
+        在2020吟詠都會輕盈的建築新篇章
+      </div>
+      <div class="m-list1 absolute">
+        <span>2007</span>展宜麗水 /<b>大安區麗水街</b><br />
+        <span>2008</span>展宜浦城 /<b>大安區浦城街</b><br />
+        <span>2009</span>展宜臨沂 /<b>中正區臨沂街</b><br />
+        <span>2010</span>展宜仁愛 /<b>中正區仁愛路</b><br />
+        <span>2011</span>展宜仁沂蜂巢的房子 /<b>中正區仁愛路</b><br />
+        <span>2012</span>展宜有一個圓 /<b>中正區同安街</b>
+      </div>
+      <div class="m-list2 absolute">
+        <span>2013</span>展宜時間之外 /<b>內湖區內湖路</b><br />
+        <span>2014</span>展宜拿雲 /<b>中正區新生南路</b><br />
+        <span>2015</span>阿都蘭A’tolan house /<b>台東</b><br />
+        <span>2018</span>展宜摘月 /<b>中正區臨沂街</b><br />
+        <span>2019</span>元氣御守 /<b>中正區福州街</b>
+      </div>
+      <div class="line-bottom absolute"></div>
     </div>
   </div>
 </template>
@@ -210,23 +248,127 @@
 
 @media screen and (max-width: 767px) {
   .relative {
-    height: calc(100vh - 123px);
+    height: size-m(682);
   }
-  .bg-img {
-    height: auto;
-    object-fit: cover;
-  }
+  .img {
+    top: size-m(11.7);
+    left: 0;
+    width: 100vw;
+    z-index: 1;
 
+    &.img2 {
+      width: 100vw;
+      top: size-m(345);
+      left: 0;
+    }
+  }
+  .white-line {
+    width: 100vw;
+    height: size-m(20);
+    background-color: #fff;
+    top: size-m(800);
+  }
   .title {
-    font-size: size-m(50);
-    top: size-m(119);
-    left: size-m(31);
+    width: size-m(240);
+    top: size-m(173);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-size: size-m(14);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.64;
+    letter-spacing: normal;
+    text-align: center;
+    color: #bb1a12;
+    span {
+      font-weight: 300;
+      color: #1a1311;
+    }
   }
 
   .desc {
-    font-size: size-m(21);
+    width: size-m(240);
     top: size-m(200);
-    left: size-m(31);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-size: size-m(11.4);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+    text-align: center;
+    color: #1a1311;
+  }
+
+  .m-list1 {
+    top: size-m(480);
+    left: size-m(15);
+    width: size-m(165);
+    font-size: size-m(9);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: normal;
+    text-align: left;
+    color: #1a1311;
+    b {
+      font-size: size-m(5.7);
+    }
+    span {
+      font-size: size-m(12.8);
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.36;
+      letter-spacing: normal;
+      text-align: left;
+      color: #dc3f1f;
+      display: inline-block;
+      margin-right: 5px;
+    }
+  }
+
+  .m-list2 {
+    top: size-m(480);
+    left: size-m(190);
+    width: size-m(175);
+    font-size: size-m(9);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: normal;
+    text-align: left;
+    color: #1a1311;
+    b {
+      font-size: size-m(5.7);
+    }
+    span {
+      font-size: size-m(12.8);
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.36;
+      letter-spacing: normal;
+      text-align: left;
+      color: #dc3f1f;
+      display: inline-block;
+      margin-right: 5px;
+    }
+  }
+
+  .line-bottom {
+    background-color: #bf1b12;
+    z-index: 1;
+    width: 100vw;
+    height: 1px;
+    left: 0;
+    bottom: 0;
   }
 }
 </style>

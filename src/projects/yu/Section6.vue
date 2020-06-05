@@ -34,6 +34,28 @@
       v-else
       class="relative"
     >
+      <div class="title absolute">
+        德國RedDotAward金獎團隊<br />
+        高質感+高坪效 國際住宅風景
+      </div>
+      <div class="desc absolute">
+        展宜建築醇釀十五年，誠意手工精品〔詠喆〕，以Young & Urban時尚建築概念構思，創造的不只是一個居住容器，而是一種細緻的都會生活美學，在市中心好好、靜靜地享受生活的愉悅與感動。<br /><br />
+        忠孝東路一巷進 若隱於繁華城心，散步遊走信義計劃生活圈之間，永春站轉身 走入展宜用心蓋的小洋樓，三米六挑高都會空間，七層25戶單純住宅，動如脫兔擁繁華，靜若處子守靜寂，低調隱身在繁華裡的靜謐時尚。
+      </div>
+      <div class="line-top absolute"></div>
+      <div class="line-center absolute"></div>
+      <div class="line-top2 absolute"></div>
+      <img
+        src="./s6/logoall_m.png"
+        alt=""
+        class="logoall absolute"
+      >
+      <img
+        src="./s6/1_m.jpg"
+        alt=""
+        class="img absolute"
+      >
+      <div class="line-bottom absolute"></div>
     </div>
   </div>
 </template>
@@ -146,23 +168,78 @@
 
 @media screen and (max-width: 767px) {
   .relative {
-    height: calc(100vh - 123px);
-  }
-  .bg-img {
-    height: auto;
-    object-fit: cover;
+    height: size-m(858);
   }
 
+  .logoall {
+    width: size-m(187);
+    top: size-m(80.6);
+    right: 0;
+  }
+
+  .img {
+    top: size-m(467);
+    left: 0;
+    width: 100vw;
+    z-index: 1;
+  }
   .title {
-    font-size: size-m(50);
-    top: size-m(119);
-    left: size-m(31);
+    width: size-m(180);
+    font-size: size-m(14);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.64;
+    letter-spacing: normal;
+    text-align: left;
+    color: #bb1a12;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    top: size-m(19);
+  }
+  .desc {
+    width: size-m(145);
+    top: size-m(100);
+    right: auto;
+    left: size-m(30);
+    font-size: size-m(11.4);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+    text-align: left;
+    color: #1a1311;
   }
 
-  .desc {
-    font-size: size-m(21);
-    top: size-m(200);
-    left: size-m(31);
+  .line-top {
+    background-color: #bf1b12;
+    z-index: 1;
+    width: 100vw;
+    height: 1px;
+    top: size-m(80.5);
+    right: 0;
+  }
+
+  .line-center {
+    background-color: #bf1b12;
+    z-index: 1;
+    left: 0;
+    width: 1px;
+    top: size-m(80.5);
+    height: size-m(387);
+    right: 0;
+    margin: 0 auto;
+  }
+
+  .line-top2 {
+    background-color: #bf1b12;
+    z-index: 1;
+    width: 100vw;
+    height: 1px;
+    top: size-m(467);
+    right: 0;
   }
 }
 </style>
