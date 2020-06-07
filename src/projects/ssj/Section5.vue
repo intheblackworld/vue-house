@@ -27,7 +27,7 @@
         </div>
         <div class="slide relative" data-aos="fade" data-aos-delay="600">
           <!-- <div class="border"></div> -->
-          <!-- <div class="slide-text">{{slideList1[slideIndex1].text}}</div> -->
+          <div class="slide-text">{{slideList1[slideIndex1].text}}</div>
           <img
             :src="slide.src"
             v-for="(slide, index) in slideList1"
@@ -116,7 +116,7 @@
       </div>
       <div class="slide relative">
         <!-- <div class="border"></div> -->
-        <!-- <div class="slide-text">{{slideList1[slideIndex1].text}}</div> -->
+        <div class="slide-text">{{slideList1[slideIndex1].text}}</div>
         <img
           :src="slide.src"
           v-for="(slide, index) in slideList1"
@@ -282,6 +282,7 @@
   & .slide-img {
     width: 100%;
   }
+  .slide-text{z-index: 2;position: absolute;bottom: 0; right: 0;padding:0 0.3em;color:#FFf9 ;background-color:#0006;display:block;line-height: 1.6;}
 }
 
 .indigator-list {
@@ -446,11 +447,11 @@ export default {
       slideIndex1: 0,
       slideIndex2: 0,
       slideList1: [
-        { text: '', src: require('./s5/1-1.jpg') },
-        { text: '', src: require('./s5/1-2.jpg') },
-        { text: '', src: require('./s5/1-3.jpg') },
-        { text: '', src: require('./s5/1-4.jpg') },
-        { text: '', src: require('./s5/1-5.jpg') },
+      //  { text: '', src: require('./s5/1-1.jpg') },
+        { text: '公設示意圖', src: require('./s5/1-2.jpg') },
+        { text: '公設示意圖', src: require('./s5/1-3.jpg') },
+        { text: '公設示意圖', src: require('./s5/1-4.jpg') },
+        { text: '公設示意圖', src: require('./s5/1-5.jpg') },
       ],
       slideList2: [
         { text: '', src: require('./s5/2-1.jpg') },
@@ -462,6 +463,7 @@ export default {
         { text: '', src: require('./s5/2-7.jpg') },
         { text: '', src: require('./s5/2-8.jpg') },
         { text: '', src: require('./s5/2-9.jpg') },
+        { text: '', src: require('./s5/2-10.jpg') },
       ],
     }
   },

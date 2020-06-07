@@ -1084,8 +1084,8 @@ export default {
       isMobile,
       slideIndex: 0,
       slideList: [
-        { text: '立面大景', src: require('./s4/4.jpg') },
         { text: '立面大景', src: require('./s4/5.jpg') },
+        { text: '立面大景', src: require('./s4/4.jpg') },
         { text: '立面大景', src: require('./s4/3.jpg') },
         { text: '立面大景', src: require('./s4/1.jpg') },
         { text: '立面大景', src: require('./s4/2.jpg') },
