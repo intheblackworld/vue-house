@@ -804,7 +804,6 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .relative {
-  // height: 100vh;
   overflow: hidden;
   background: #d9d7d2;
 }
@@ -1097,6 +1096,15 @@ export default {
     setIndex(current) {
       this[`slideIndex`] = current
     },
+  },
+
+  watch: {
+    showIcon(val) {
+      console.log(val)
+      if (val) {
+        this.setIndex(0)
+      }
+    }
   },
 
   created() {},
