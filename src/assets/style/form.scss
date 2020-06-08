@@ -66,16 +66,19 @@
   // opacity: 0 !important;
   border-radius: 0 !important;
   font-size: 20px !important;
-  background-position: center !important;
-  background-color: $order_submit_bg;
+  //background-position: center !important;
+  //background-color: $order_submit_color;
+  background-color:#0000 !important;
   background-image: $order_submit_bg;
+  background-size: auto;
+  background-position: 100% 100%  !important;
   margin: 0 auto !important;
   margin-top: 20px !important;
   transition: all 0.3s !important;
   color: $order_submit_color;
   // z-index: 10;
-  border: 2px solid #bf1b12 !important;
-
+  border: 1px solid #bf1b12 !important;
+  border-width: 1px 0 0 1px !important;
   &.is-disabled {
     background-color: $order_sumbit_disable_bg;
     opacity: 0.6;
@@ -85,6 +88,10 @@
     margin-right: 15px;
   }
 
+  &:hover {
+    background-image: $contact_btn_hover_bg;
+    color: $contact_btn_hover_color  !important;
+  }
   position: relative;
   overflow: hidden;
   &::before {

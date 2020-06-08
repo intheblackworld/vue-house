@@ -1,6 +1,6 @@
 <template>
   <div class="relative">
-    <div v-if="!isMobile">
+    <div v-if="!isMobile" class="c-content">
       <img
         src="./s4/1.jpg"
         alt=""
@@ -11,7 +11,6 @@
         alt=""
         class="img2 absolute"
       >
-      <div class="white-line absolute"></div>
       <div class="line-top1 absolute"></div>
       <div class="line-top2 absolute"></div>
       <div class="line-top3 absolute"></div>
@@ -50,8 +49,7 @@
     </div>
     <div
       v-else
-      class="relative"
-    >
+      class="c-content">
       <img
         src="./s4/1_m.jpg"
         alt=""
@@ -90,18 +88,26 @@
   // height: 100vh;
   height: size(1600);
   overflow: hidden;
+  top: size(115);
+  position: relative;
+}
+.c-content {
+  width: size(1690);
+  height: size(1600);
+  margin:0 0 0 size(115);
+  position: relative;
 }
 
 .img1 {
   top: 0;
-  left: size(115);
+  left: 0;
   width: size(845);
   z-index: 1;
 }
 
 .img2 {
   bottom: 0;
-  right: size(115);
+  right:0;
   width: size(845);
   z-index: 1;
 }
@@ -119,6 +125,7 @@
   width: 100vw;
   height: 1px;
   bottom: 0;
+  left:calc(50% - 50vw);
 }
 
 .line-top1 {
@@ -126,7 +133,7 @@
   z-index: 1;
   width: size(960);
   height: 1px;
-  left: 0;
+ right: 50%;
   top: size(723);
 }
 
@@ -135,7 +142,7 @@
   z-index: 1;
   width: size(960);
   height: 1px;
-  right: 0;
+  left:50%;
   top: size(285);
 }
 
@@ -144,14 +151,14 @@
   z-index: 1;
   width: size(960);
   height: 1px;
-  left: 0;
+  right:50%;
   top: size(1001);
 }
 
 .line-left {
   background-color: #bf1b12;
   z-index: 1;
-  left: size(115);
+  left:0;
   width: 1px;
   height: size(723);
 }
@@ -169,14 +176,13 @@
 .line-right {
   background-color: #bf1b12;
   z-index: 1;
-  right: size(115);
+  right: 0;
   top: size(285);
   width: 1px;
   height: size(1600 - 285);
 }
 
 .title1 {
-  width: size(573);
   font-size: size(41);
   font-weight: 500;
   font-stretch: normal;
@@ -185,14 +191,17 @@
   letter-spacing: normal;
   text-align: left;
   color: #bb1a12;
-  right: size(295);
-  top: size(76);
+  left: 50%;
+  padding: 0 0 0 size(61);
+  top:0;
+  align-items: center;
+  height: size(285);
+  display: flex;
 }
 
 .desc1 {
-  width: size(602);
-  top: size(378);
-  right: size(264);
+  //width: size(602);
+  top: size(285);
   font-size: size(30);
   font-weight: 300;
   font-stretch: normal;
@@ -201,10 +210,15 @@
   letter-spacing: normal;
   text-align: left;
   color: #1a1311;
+  left: 50%;
+  padding: 0 0 0 size(61);
+  align-items: center;
+  height: size(850);
+  display: flex;
 }
 
 .title2 {
-  width: size(414);
+  //width: size(414);
   font-size: size(41);
   font-weight: 500;
   font-stretch: normal;
@@ -213,21 +227,23 @@
   letter-spacing: normal;
   text-align: left;
   color: #bb1a12;
-  left: size(215);
+  left:0;
+  padding: 0 0 0 size(61);
   top: size(793);
 }
 
 .desc2 {
-  width: size(650);
+  //width: size(650);
   top: size(363 + 723);
-  left: size(216);
+  left:0;
+  padding: 0 0 0 size(61);
   font-size: size(30);
   font-weight: 300;
   font-stretch: normal;
   font-style: normal;
   line-height: 2;
   letter-spacing: normal;
-  text-align: left;
+  text-align:justify;
   color: #1a1311;
 }
 @media only screen and (max-width: 1440px) {
@@ -246,9 +262,10 @@
   .relative {
     height: size-m(589);
   }
+  .c-content{height:100%;}
   .img1 {
     top: 0;
-    right: 0;
+    right:size-m(-22);
     left: auto;
     width: size-m(137);
     z-index: 1;
@@ -256,7 +273,7 @@
 
   .img2 {
     bottom: 0;
-    left: 0;
+    left:size-m(-22);
     right: auto;
     width: size-m(158);
     z-index: 1;
@@ -267,7 +284,7 @@
     z-index: 1;
     width: size-m(237);
     height: 1px;
-    left: 0;
+    left:size-m(-22);
     top: size-m(69);
   }
 
@@ -277,6 +294,7 @@
     width: 100vw;
     height: 1px;
     right: 0;
+    left:size-m(-22);
     top: size-m(310);
   }
 
@@ -285,14 +303,14 @@
     z-index: 1;
     width: 100vw;
     height: 1px;
-    left: 0;
+    left:size-m(-22);
     top: size-m(382);
   }
 
   .line-center {
     background-color: #bf1b12;
     z-index: 1;
-    left: size-m(236.5);
+    left: size-m(215);
     width: 1px;
     height: size-m(311);
     right: auto;
@@ -302,7 +320,7 @@
   .line-center2 {
     background-color: #bf1b12;
     z-index: 1;
-    left: size-m(158);
+    left: size-m(136);
     width: 1px;
     height: size-m(278);
     right: auto;
@@ -315,7 +333,7 @@
   }
 
   .title1 {
-    width: size-m(200);
+    width: size-m(250);
     font-size: size-m(14);
     font-size: 14px;
     font-weight: 500;
@@ -325,15 +343,17 @@
     letter-spacing: normal;
     text-align: left;
     color: #bb1a12;
-    left: size-m(23);
+    left:0;
     right: auto;
-    top: size-m(14);
+    padding: 0;
+    top: size-m(0);
+    height: size-m(70);
   }
 
   .desc1 {
     width: size-m(200);
     top: size-m(85);
-    left: size-m(23);
+    left: 0;
     right: auto;
     font-size: size-m(11.4);
     font-weight: 300;
@@ -343,6 +363,8 @@
     letter-spacing: normal;
     text-align: left;
     color: #1a1311;
+    height: size-m(210);
+    padding: 0;
   }
 
   .title2 {
@@ -356,23 +378,25 @@
     letter-spacing: normal;
     text-align: left;
     color: #bb1a12;
-    left: size-m(173);
+    left: size-m(151);
     right: auto;
     top: size-m(323);
+    padding: 0;
   }
 
   .desc2 {
-    width: size-m(180);
-    top: size-m(390);
-    left: size-m(170);
+    width: size-m(175);
+    top: size-m(400);
+    left: size-m(151);
     font-size: size-m(11.4);
     font-weight: 300;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.5;
     letter-spacing: normal;
-    text-align: left;
+    text-align:justify;
     color: #1a1311;
+    padding: 0;
   }
 }
 </style>

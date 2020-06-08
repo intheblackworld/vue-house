@@ -51,35 +51,40 @@
     border: 1px solid #fff;
     border-radius: 999px;margin: calc(50% - 0.3em) auto 0 auto;
     transition: all 0.3s;
-      background: rgba(0, 0, 0, 0.2);
+      background:#bf1b12;
     }
     &.active {
     &::before{
-      background: #fff;}
+      background: #000}
     }
     &:hover::before{
-      background: #ffd200;
+      background: #900;
     }
   }
 
   .contact-indigator {
-    background: rgba(0, 0, 0, 0.4);
+    background:#bf1b12;
     margin: 1em auto 1em auto;
     padding: 0.4em;
-    color: #ffd200;
+    color:#fff;
     border-radius: 20px;
     cursor: pointer;
     line-height: 1.5;
     width:2em;transition: all 0.3s;
     &:hover{
-      color: #FFF;
+    background:#900;
     }
   }
 }
 @media screen and (max-width: 767px){
   
 .indigator {
-  right: 0;
+  right: -3.5vw;
+.contact-indigator{display:none;} 
+.dot {
+    width:2em;
+    height:3em;
+    }
 }
 }
 </style>

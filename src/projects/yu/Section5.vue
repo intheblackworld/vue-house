@@ -1,6 +1,6 @@
 <template>
   <div class="relative">
-    <div v-if="!isMobile">
+    <div v-if="!isMobile" class="c-content">
       <div class="title absolute">
         <span>市中心的建築哲人</span> 展宜建築 X創研空間
       </div>
@@ -9,7 +9,6 @@
         alt=""
         class="img absolute"
       >
-      <div class="white-line absolute"></div>
       <div class="line-top1 absolute"></div>
       <div class="line-top2 absolute"></div>
       <div class="line-left absolute"></div>
@@ -103,13 +102,23 @@
   // height: 100vh;
   height: size(1320);
   overflow: hidden;
+  top: size(115);
+  position: relative;
+}
+.c-content {
+  //background-color: #fff;
+  width: size(1690);
+  height:100%;
+  margin:0 0 0 size(115);
+  position: relative;
 }
 
 .img {
   top: size(197);
-  left: size(115);
+  left: 0;
   width: size(1690);
   z-index: 1;
+  mix-blend-mode:multiply;
 }
 
 .white-line {
@@ -125,23 +134,26 @@
   width: 100vw;
   height: 1px;
   top: size(195);
+  left:calc(50% - 50vw);
 }
 
 .line-top2 {
   background-color: #bf1b12;
   z-index: 1;
-  width: 100vw;
+  width: calc(100vw - 5.9895833333vw);
   height: 1px;
   top: size(595);
+  left:calc(50% - 50vw);
 }
 
 .line-bottom {
   background-color: #bf1b12;
   z-index: 1;
-  width: size(1804);
+  width: 100vw;
   height: 1px;
   right: 0;
   bottom: 0;
+  left:0;
 }
 
 .line-center {
@@ -159,7 +171,7 @@
   background-color: #bf1b12;
   z-index: 1;
   top: 0;
-  right: size(115);
+  right: 0;
   width: 1px;
   height: size(1320);
 }
@@ -167,7 +179,7 @@
 .line-left {
   background-color: #bf1b12;
   z-index: 1;
-  left: size(115);
+  left:0;
   top: size(195);
   width: 1px;
   height: size(1164);
@@ -195,8 +207,8 @@
 
 .desc {
   width: size(602);
-  top: size(743);
-  left: size(216);
+  top: size(595);
+  left: size(61);
   font-size: size(30);
   font-weight: 300;
   font-stretch: normal;
@@ -205,12 +217,15 @@
   letter-spacing: normal;
   text-align: left;
   color: #1a1311;
+  display: flex;
+  height: size(720);
+  align-items: center;
 }
 
 .years {
   width: size(71);
-  right: size(812);
-  top: size(662);
+  left: 50%;
+  top: size(595);
   font-size: size(26);
   font-weight: normal;
   font-stretch: normal;
@@ -219,13 +234,15 @@
   letter-spacing: normal;
   text-align: left;
   color: #dc3f1f;
+  display: flex;
+  height: size(720);
+  align-items: center;
+  padding: 0 0 0 size(61);
 }
-
 .list {
-  width: size(456);
   font-size: size(26);
-  right: size(338);
-  top: size(659);
+  left: 50%;
+  top: size(595);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -233,6 +250,10 @@
   letter-spacing: normal;
   text-align: left;
   color: #1a1311;
+  display: flex;
+  height: size(720);
+  align-items: center;
+  padding: 0 0 0 size(150);
 }
 @media only screen and (max-width: 1440px) {
   .bg-img {
@@ -248,7 +269,7 @@
 
 @media screen and (max-width: 767px) {
   .relative {
-    height: size-m(682);
+    height: size-m(650);
   }
   .img {
     top: size-m(11.7);
@@ -305,7 +326,7 @@
   }
 
   .m-list1 {
-    top: size-m(480);
+    top: size-m(490);
     left: size-m(15);
     width: size-m(165);
     font-size: size-m(9);
@@ -334,7 +355,7 @@
   }
 
   .m-list2 {
-    top: size-m(480);
+    top: size-m(490);
     left: size-m(190);
     width: size-m(175);
     font-size: size-m(9);
@@ -368,7 +389,7 @@
     width: 100vw;
     height: 1px;
     left: 0;
-    bottom: 0;
+    bottom: size-m(23);
   }
 }
 </style>

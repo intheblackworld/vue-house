@@ -1,16 +1,12 @@
 <template>
   <div class="relative">
-    <div v-if="!isMobile">
-      <img
+    <div v-if="!isMobile" class="c-content">
+     <div class="flex"> <img
         src="./s2/1.jpg"
         alt=""
-        class="img absolute"
+        class="img" data-aos="fade" data-aos-delay="400"
       >
-      <div class="white-line absolute"></div>
-      <div class="line-center absolute"></div>
-      <div class="line-right absolute"></div>
-      <div class="line-bottom absolute"></div>
-      <div class="desc absolute">
+      <div class="desc flex">
         像村上春樹的南青山裏原宿<br />
         慾望城市的曼哈頓SOHO<br />
         安靜地若隱在信義商圈裡<br />
@@ -19,17 +15,19 @@
         沿著忠孝東路一巷進<br />
         城心最美好的，等您來上座
       </div>
+      </div>
+      <div class="line-center absolute"></div>
+      <div class="line-right absolute"></div>
+      <div class="line-bottom absolute"></div>
     </div>
     <div
       v-else
-      class="relative"
-    >
+      class="c-content">
       <img
         src="./s2/1_m.jpg"
         alt=""
-        class="img absolute"
+        class="img absolute" data-aos="fade" data-aos-delay="1200"
       >
-      <div class="white-line absolute"></div>
       <div class="line-center absolute"></div>
       <div class="line-left absolute"></div>
       <div class="line-right absolute"></div>
@@ -46,22 +44,24 @@
 @import '@/assets/style/function.scss';
 .relative {
   // height: 100vh;
-  height: size(765);
   overflow: hidden;
+  top: size(115);
+  position: relative;
+  
 }
-
+.c-content {
+  //background-color: #fff;
+  width: size(1690);
+  height:auto;
+  margin:0 0 0 size(115);
+  position: relative;
+}
+.flex{width: 100%;}
 .img {
   top: 0;
   left: size(115);
   width: size(845);
   z-index: 1;
-}
-
-.white-line {
-  width: 100vw;
-  height: size(20);
-  background-color: #fff;
-  top: size(108);
 }
 
 .line-bottom {
@@ -70,31 +70,34 @@
   width: 100vw;
   height: 1px;
   bottom: 0;
+  left:calc(50% - 50vw);
+  animation: anX 1s 2s reverse both;
 }
 
 .line-center {
   background-color: #bf1b12;
   z-index: 1;
-  left: 0;
+  top: 0;
+  left:size(845);
   width: 1px;
-  height: size(765);
-  right: 0;
-  margin: 0 auto;
+  height:100%;
+  animation: anY 1s 2s reverse both;
 }
 
 .line-right {
   background-color: #bf1b12;
   z-index: 1;
-  right: size(115);
+  top: 0;
+  right: 0;
   width: 1px;
-  height: size(765);
+  height:100vh;
+  animation: anY 1s 2s reverse both;
 }
 
-.desc {
-  width: size(410);
-  top: size(150);
+.desc {flex: 1 1 size(410);
+  top: 0;
   right: size(334);
-  font-size: size(34);
+  font-size: size(33);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -102,6 +105,28 @@
   letter-spacing: normal;
   text-align: center;
   color: #1a1311;
+  align-items: center;
+  justify-content: center;
+}
+@keyframes anY {
+    to {
+  height: 0;
+    }
+}
+@keyframes anX  {
+    to {
+      width: 0;
+    }
+}
+@keyframes anop  {
+    to {
+      opacity: 0;
+    }
+}
+@keyframes anba  {
+    to {
+     background-color: #fff0;
+    }
 }
 @media only screen and (max-width: 1440px) {
   .bg-img {
@@ -118,10 +143,13 @@
 @media screen and (max-width: 767px) {
   .relative {
     height: size-m(318);
+  top: size-m(22);
   }
+  .c-content{height:100%;}
   .img {
     top: 0;
-    left: 0;
+    right:0;
+    left: auto;
     width: size-m(352);
     z-index: 1;
   }
@@ -140,27 +168,26 @@
     width: 100vw;
     height: 1px;
     bottom: 0;
+  left:calc(50% - 50vw);
   }
 
   .line-center {
     background-color: #bf1b12;
     z-index: 1;
-    left: 0;
-    right: auto;
+    right: 0;
+    left: auto;
     top: size-m(183);
     width: size-m(352);
     height: 1px;
   }
 
   .line-right {
-    right: size-m(22);
     width: 1px;
     height: size-m(318);
   }
 
   .line-left {
     background-color: #bf1b12;
-    left: size-m(22);
     width: 1px;
     height: size-m(134);
     top: size-m(183);
@@ -168,9 +195,9 @@
   }
 
   .desc {
-    width: size-m(268);
+    width: size-m(330);
     top: size-m(217);
-    right: size-m(60.5);
+    right: 0;
     font-size: size-m(11.4);
     font-weight: 300;
     font-stretch: normal;

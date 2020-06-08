@@ -1,6 +1,6 @@
 <template>
   <div class="relative">
-    <div v-if="!isMobile">
+    <div v-if="!isMobile" class="c-content">
       <div class="title absolute">
         這麼小又高坪效 真的很少見！ 戶數不多 入席信義商圈別錯過
       </div>
@@ -9,7 +9,6 @@
         alt=""
         class="img absolute"
       >
-      <div class="white-line absolute"></div>
       <div class="line-top absolute"></div>
       <div class="line-left absolute"></div>
       <div class="line-right absolute"></div>
@@ -70,11 +69,19 @@
   // height: 100vh;
   height: size(1594);
   overflow: hidden;
+  top: size(115);
 }
 
+.c-content {
+  //background-color: #fff;
+  width: size(1690);
+  height:100%;
+  margin:0 0 0 size(115);
+  position: relative;
+}
 .img {
   top: 0;
-  left: size(115);
+  left: 0;
   width: size(1690);
   z-index: 1;
 }
@@ -92,6 +99,7 @@
   width: 100vw;
   height: 1px;
   top: size(383);
+  left:calc(50% - 50vw);
 }
 
 .line-bottom {
@@ -109,7 +117,7 @@
   background-color: #bf1b12;
   z-index: 1;
   top: 0;
-  right: size(115);
+  right:0;
   width: 1px;
   height: size(1592);
 }
@@ -117,7 +125,7 @@
 .line-left {
   background-color: #bf1b12;
   z-index: 1;
-  left: size(115);
+  left:0;
   top: size(383);
   width: 1px;
   height: size(1210);
@@ -178,7 +186,9 @@
 @media screen and (max-width: 767px) {
   .relative {
     height: size-m(314.5);
+  top:0;
   }
+  .c-content{height:100%;}
 
   .slide {
     width: 100vw;

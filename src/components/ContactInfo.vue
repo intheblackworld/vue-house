@@ -2,9 +2,14 @@
   <div>
     <div class="contact-info">
       <img
-        class="logo"
+        class="logo" v-if="!isMobile"
         src="@/assets/img/contact-logo.png"
-        alt="好站"
+        alt="詠喆"
+      />
+      <img
+        class="logo" v-if="isMobile"
+        src="@/assets/img/contact-logo_m.png"
+        alt="詠喆"
       />
       <div class="info">
         <div
@@ -13,7 +18,7 @@
         >
           <span class="flex-c">
             <font-awesome-icon icon="phone" />
-            {{info.phone}}
+            <span>{{info.phone}}</span>
           </span>
         </div>
         <div
@@ -164,12 +169,16 @@ export default {
   cursor: pointer;
   text-decoration: none;
   color: $contact_btn_color;
-  background: $contact_btn_bg;
   // box-shadow: $contact_btn_border;
   transition: all 0.5s;
   position: relative;
   overflow: hidden;
-  border: 1px solid #bf1b12;
+  border: 1px solid #bf1b12 !important;
+  border-width: 1px 0 0 1px !important;
+  background-color:#0000 !important;
+  background-image: $order_submit_bg;
+  background-size: auto;
+  background-position: 100% 100%  !important;
 
   &.half {
     width: 49%;
@@ -183,7 +192,7 @@ export default {
   }
 
   &:hover {
-    background: $contact_btn_hover_bg;
+    background-image: $contact_btn_hover_bg;
     color: $contact_btn_hover_color;
 
     svg {
@@ -226,9 +235,11 @@ export default {
   cursor: pointer;
   text-decoration: none;
   color: $contact_google_btn_color;
-  background: $contact_google_btn_bg;
-  background-position: center !important;
-  box-shadow: $contact_btn_border;
+  background-image: $contact_btn_hover_bg;
+  background-position: 100% 100%;
+  border: 1px solid #bf1b12;
+  border-width: 1px 0 0 1px;
+  //box-shadow: $contact_btn_border;
   transition: all 0.5s;
 
   svg {
@@ -240,7 +251,7 @@ export default {
   }
 
   &:hover {
-    background: $contact_google_hover_btn_bg;
+  background-image: $order_submit_bg;
     color: $contact_google_hover_btn_color;
 
     svg {
@@ -327,7 +338,7 @@ export default {
   .address {
     width: 280px;
     padding: 0 1em;
-    text-align: justify;
+    text-align: justify;border-right:1px solid #bf1b12;
   }
 }
 

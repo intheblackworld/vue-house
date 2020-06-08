@@ -1,12 +1,11 @@
 <template>
   <div class="relative">
-    <div v-if="!isMobile">
+    <div v-if="!isMobile" class="c-content">
       <img
         src="./s6/1.jpg"
         alt=""
         class="img absolute"
       >
-      <div class="white-line absolute"></div>
       <div class="line-top absolute"></div>
       <div class="line-left absolute"></div>
       <div class="line-center absolute"></div>
@@ -32,8 +31,7 @@
     </div>
     <div
       v-else
-      class="relative"
-    >
+       class="c-content">
       <div class="title absolute">
         德國RedDotAward金獎團隊<br />
         高質感+高坪效 國際住宅風景
@@ -64,18 +62,26 @@
 .relative {
   // height: 100vh;
   height: size(1165);
+  top: size(115);
   overflow: hidden;
+  position: relative;
+}
+.c-content {
+  //background-color: #fff;
+  width: size(1690);
+  height:100%;
+  margin:0 0 0 size(115);
+  position: relative;
 }
 
 .img {
   top: 0;
-  left: size(115);
+  left: 0;
   width: size(845);
   z-index: 1;
 }
 
 .title {
-  width: size(529);
   font-size: size(41);
   font-weight: 500;
   font-stretch: normal;
@@ -84,8 +90,29 @@
   letter-spacing: normal;
   text-align: left;
   color: #bb1a12;
-  right: size(340);
-  top: size(72);
+  left:50%;
+  padding: 0 0 0 size(61);
+  top:0;
+  display: flex;
+  height: size(223);
+  align-items: center;
+}
+
+.desc {
+  top: size(223);
+  font-size: size(30);
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1a1311;
+  left:50%;
+  padding: 0 0 0 size(61);
+  display: flex;
+  height: size(1165 - 223);
+  align-items: center;
 }
 
 .white-line {
@@ -101,14 +128,14 @@
   width: size(960);
   height: 1px;
   top: size(223);
-  right: 0;
+  left:50%;
 }
 
 .line-bottom {
   background-color: #bf1b12;
   z-index: 1;
   width: size(1805);
-  left: 0;
+  right: 0;
   height: 1px;
   bottom: 0;
 }
@@ -126,7 +153,7 @@
 .line-left {
   background-color: #bf1b12;
   z-index: 1;
-  left: size(115);
+  left:0;
   top: 0;
   width: 1px;
   height: size(1165);
@@ -135,24 +162,10 @@
 .line-right {
   background-color: #bf1b12;
   z-index: 1;
-  right: size(115);
+  right:0;
   top: size(223);
   width: 1px;
   height: size(941);
-}
-
-.desc {
-  width: size(602);
-  top: size(363);
-  right: size(281);
-  font-size: size(30);
-  font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2;
-  letter-spacing: normal;
-  text-align: left;
-  color: #1a1311;
 }
 @media only screen and (max-width: 1440px) {
   .bg-img {
@@ -170,39 +183,42 @@
   .relative {
     height: size-m(858);
   }
+  .c-content{height:100%;}
 
   .logoall {
     width: size-m(187);
     top: size-m(80.6);
-    right: 0;
+    left:50%;
   }
 
   .img {
     top: size-m(467);
-    left: 0;
+    left:size-m(-22);
     width: 100vw;
     z-index: 1;
   }
   .title {
-    width: size-m(180);
+    width: 100%;
     font-size: size-m(14);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.64;
     letter-spacing: normal;
-    text-align: left;
+    text-align:center;
     color: #bb1a12;
     right: 0;
     left: 0;
     margin: 0 auto;
     top: size-m(19);
+    padding: 0;
+    justify-content: center;
   }
   .desc {
     width: size-m(145);
-    top: size-m(100);
+    top:size-m(80.5);
     right: auto;
-    left: size-m(30);
+    left: 0;
     font-size: size-m(11.4);
     font-weight: 300;
     font-stretch: normal;
@@ -211,6 +227,8 @@
     letter-spacing: normal;
     text-align: left;
     color: #1a1311;
+    height:size-m(386);
+    padding: 0;
   }
 
   .line-top {
@@ -220,7 +238,8 @@
     height: 1px;
     top: size-m(80.5);
     right: 0;
-  }
+    left:size-m(-22);
+    }
 
   .line-center {
     background-color: #bf1b12;

@@ -83,6 +83,7 @@ export default {
     margin-bottom: 0;
     margin-right: 20px;
     white-space: nowrap;
+    font-family: "Noto Sans TC";font-weight:500;
   }
 
   .desc {

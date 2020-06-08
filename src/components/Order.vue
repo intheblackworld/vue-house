@@ -322,6 +322,8 @@ export default {
   background-position: center calc(100% - 555px);
   background-size: auto;
   background-image: $order_bg_image;
+  width: 100vw;
+  top: size(100);
 
   .order-top {
     position: relative;
@@ -379,11 +381,16 @@ export default {
   .group {
     height: 250px;
     margin-bottom: 40px;
+    position: relative;
 
     &:nth-child(1) {
-      border-right: 1px solid rgba(0, 0, 0, 0.2);
+     
       .row {
         justify-content: flex-start;
+      }
+      &::before{
+        content: "";position:absolute;right: -1px;top: 0;
+        height: calc(100% - 13px);width: 1px; background-color:#bf1b12;
       }
     }
 
@@ -449,6 +456,7 @@ export default {
     margin: 0;
     position: relative;
     z-index: 2;
+  top:0;
 
     > img {
       display: block;
@@ -464,6 +472,7 @@ export default {
       padding-bottom: 40px;
       border-left: none;
       border-right: none;
+      padding-top: 10px;
       border-bottom: 1px solid #bf1b12;
     }
     .order-subtitle {
