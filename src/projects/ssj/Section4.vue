@@ -1100,7 +1100,6 @@ export default {
 
   watch: {
     showIcon(val) {
-      console.log(val)
       if (val) {
         this.setIndex(0)
       }
