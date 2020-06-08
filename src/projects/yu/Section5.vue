@@ -327,7 +327,7 @@
 
   .m-list1 {
     top: size-m(490);
-    left: size-m(15);
+    left: size-m(22);
     width: size-m(165);
     font-size: size-m(9);
     font-weight: normal;

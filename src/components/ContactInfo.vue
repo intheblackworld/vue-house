@@ -295,6 +295,7 @@ export default {
 
     .logo {
       width: $contact_logo_mobile_width;
+      height: auto;
     }
   }
 
