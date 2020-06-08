@@ -276,7 +276,7 @@
     height: size-m(33);
     cursor: pointer;
     bottom:calc(50% - 57vw);
-    left: size-m(49);
+    left: size-m(30);
     background-image: url('./button.png');
     //background-size: contain;
 
