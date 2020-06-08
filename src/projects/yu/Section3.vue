@@ -50,13 +50,7 @@
         板南線永春站5mins<br />輕擁台北5大精華商圈
       </div>
       <div class="desc absolute" data-aos="fade" data-aos-offset="-1000" data-aos-delay="1800">
-        本案近距板南線永春站450米<br />
-        沿線貫穿台北市中心核心地段<br />
-        台北車站商圈、忠孝復興SOGO商圈<br />
-        忠孝敦化東區商圈、市政府信義101商圈<br />
-        國父紀念館、大巨蛋松菸商圈<br />
-        永春站位於規劃環狀線東環段Y37站<br />
-        未來雙軸動能交會，雙捷樞紐置產增值
+        本案近距板南線永春站450米，沿線貫穿台北市中心核心地段，台北車站商圈、忠孝復興SOGO商圈、忠孝敦化東區商圈、市政府信義101商圈、國父紀念館、大巨蛋、松菸商圈，永春站位於規劃環狀線東環段Y37站，未來雙軸動能交會，雙捷樞紐置產增值。
       </div>
     </div>
   </div>
@@ -257,8 +251,8 @@
   }
 
   .desc {
-    width:18em;
-    top: size-m(325);
+    width: size-m(170);
+    top: size-m(300);
     left:size-m(155);
     right: 0;
     font-size: size-m(10.1);
@@ -269,8 +263,10 @@
     letter-spacing: normal;
     text-align: justify;
     color: #1a1311;
-    transform: scale(0.8);
     transform-origin: 0 50%;
+    display: flex;
+    height:size-m(190);
+
     span {
       color: #bf1b12;
     }

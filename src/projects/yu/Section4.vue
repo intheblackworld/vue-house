@@ -208,7 +208,7 @@
   font-style: normal;
   line-height: 2;
   letter-spacing: normal;
-  text-align: left;
+    text-align: justify;
   color: #1a1311;
   left: 50%;
   padding: 0 0 0 size(61);
@@ -225,7 +225,7 @@
   font-style: normal;
   line-height: 1.64;
   letter-spacing: normal;
-  text-align: left;
+    text-align: justify;
   color: #bb1a12;
   left:0;
   padding: 0 0 0 size(61);
@@ -361,7 +361,6 @@
     font-style: normal;
     line-height: 1.67;
     letter-spacing: normal;
-    text-align: left;
     color: #1a1311;
     height: size-m(210);
     padding: 0;
@@ -386,7 +385,7 @@
 
   .desc2 {
     width: size-m(175);
-    top: size-m(400);
+    top: size-m(382);
     left: size-m(151);
     font-size: size-m(11.4);
     font-weight: 300;
@@ -397,6 +396,9 @@
     text-align:justify;
     color: #1a1311;
     padding: 0;
+    height:size-m(207);
+    display: flex;
+    align-items: center;
   }
 }
 </style>
