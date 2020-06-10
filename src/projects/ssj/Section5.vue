@@ -13,20 +13,20 @@
           alt=""
           class="title-l"
         >
-        <h3 class="title">精品公設，心奢品味</h3>
+        <h3 class="title">心奢品味</h3>
+        <!-- 精品公設， -->
         <img
           src="./s5/l.png"
           alt=""
           class="title-r"
         >
       </div>
-      <div class="container">
+      <!-- <div class="container">
         <div class="content">
           <div class="text">輝煌氣派門廳，超越全區水平之上的規劃。閱覽休憩區，多功能交誼沙發區，活力健身會館視聽KTV，棋藝室等多樣設備，回家就像入住星級飯店，舒適養心。 菁英物業服務，日日享受賓至如歸。<br /><br />北市知名豪宅公設指定擔網「社康生」細膩感性，是仁愛帝寶，文華苑等豪宅公設推手，獨特的觀點與敏銳的觀察，凡經過杜康生大師設計團隊打造，您將親眼見證住的極致饗宴，視覺享受登上不凡境界
           </div>
         </div>
         <div class="slide relative" data-aos="fade" data-aos-delay="600">
-          <!-- <div class="border"></div> -->
           <div class="slide-text">{{slideList1[slideIndex1].text}}</div>
           <img
             :src="slide.src"
@@ -48,16 +48,8 @@
               @click="decMultiIndex(1)"
             >
           </div>
-          <!-- <div class="indigator-list flex-c">
-            <div
-              @click="setIndex(1, index)"
-              :class="`indigator ${slideIndex1 === index ? 'active' : ''}`"
-              v-for="(item, index) in slideList1"
-              :key="`indigator-1-${index}`"
-            ></div>
-          </div> -->
         </div>
-      </div>
+      </div> -->
       <div class="container">
         <div class="content b">
           <div class="text">家是乘載家家戶戶故事的容器，家代表一個人的個人品味，和他如何書寫生命的故事。依照季節挑選窗簾、選擇喜歡的木椅木桌，一個好的格局，足夠讓你充分揮灑自己的想望……格局方正，採光極優，超強坪效規劃！【樺輝心世界】讓人驚嘆，原來生活可以這樣過，在空間內變魔術，樣樣俱備，讓您感動過人生，生活更動容
@@ -107,15 +99,15 @@
           alt=""
           class="title-l"
         >
-        <h3 class="title">精品公設，心奢品味</h3>
+        <h3 class="title">心奢品味</h3>
+        <!-- 精品公設， -->
         <img
           src="./s5/l.png"
           alt=""
           class="title-r"
         >
       </div>
-      <div class="slide relative">
-        <!-- <div class="border"></div> -->
+      <!-- <div class="slide relative">
         <div class="slide-text">{{slideList1[slideIndex1].text}}</div>
         <img
           :src="slide.src"
@@ -137,20 +129,12 @@
             @click="decMultiIndex(1)"
           >
         </div>
-        <!-- <div class="indigator-list flex-c">
-            <div
-              @click="setIndex(1, index)"
-              :class="`indigator ${slideIndex1 === index ? 'active' : ''}`"
-              v-for="(item, index) in slideList1"
-              :key="`indigator-1-${index}`"
-            ></div>
-          </div> -->
-      </div>
-      <div class="content">
+      </div> -->
+      <!-- <div class="content">
         <div class="text">輝煌氣派門廳，超越全區水平之上的規劃。閱覽休憩區，多功能交誼沙發區，活力健身會館視聽KTV，棋藝室等多樣設備，回家就像入住星級飯店，舒適養心。 菁英物業服務，日日享受賓至如歸。<br /><br />北市知名豪宅公設指定擔網「社康生」細膩感性，是仁愛帝寶，文華苑等豪宅公設推手，獨特的觀點與敏銳的觀察，凡經過杜康生大師設計團隊打造，您將親眼見證住的極致饗宴，視覺享受登上不凡境界
 
         </div>
-      </div>
+      </div> -->
 
       <div class="slide relative">
         <!-- <div class="border"></div> -->
@@ -247,7 +231,7 @@
   &.short {
     width: size(472);
   }
-&.b{border-top: 1px solid #fff;}
+// &.b{border-top: 1px solid #fff;}
 
   .desc {
     font-size: size(24);
