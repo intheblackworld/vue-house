@@ -54,7 +54,7 @@
         樣品屋裝潢風格參考示意圖，實際依合約書為準
       </div>
       <div class="title absolute">
-        這麼精質又高坪效真的很少見！限量席次，入主信義商圈別錯過
+        這麼精質又高坪效真的很少見！<br>限量席次，入主信義商圈別錯過
       </div>
       <div class="desc absolute">
         搶先預約 留下資料由專人為您服務
@@ -140,7 +140,7 @@
 }
 
 .title {
-  width: size(1104);
+  width: 100%;
   top: size(1402);
   left: 0;
   right: 0;
@@ -228,7 +228,7 @@
   }
 
   .title {
-    width: size-m(186);
+    width: 100%;
     top: size-m(226);
     left: 0;
     right: 0;
