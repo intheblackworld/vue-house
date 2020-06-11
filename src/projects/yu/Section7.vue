@@ -2,7 +2,7 @@
   <div class="relative">
     <div v-if="!isMobile" class="c-content">
       <div class="title absolute">
-        這麼小又高坪效 真的很少見！ 戶數不多 入席信義商圈別錯過
+        這麼精質又高坪效真的很少見！限量席次，入主信義商圈別錯過
       </div>
       <img
         src="./s7/logoall.png"
@@ -54,7 +54,7 @@
         樣品屋裝潢風格參考示意圖，實際依合約書為準
       </div>
       <div class="title absolute">
-        這麼小又高坪效 真的很少見！ 戶數不多 入席信義商圈別錯過
+        這麼精質又高坪效真的很少見！限量席次，入主信義商圈別錯過
       </div>
       <div class="desc absolute">
         搶先預約 留下資料由專人為您服務
