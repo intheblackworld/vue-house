@@ -52,9 +52,7 @@
       </div>
     </div>
     <div
-      v-else
-      class="relative"
-    >
+      v-else class="c-content">
       <div class="title absolute">
         <span>市中心的建築哲人</span> 展宜建築 X創研空間
       </div>
@@ -111,6 +109,7 @@
   height:100%;
   margin:0 0 0 size(115);
   position: relative;
+  font-size: size(30);
 }
 
 .img {
@@ -186,12 +185,12 @@
 }
 
 .title {
-  width: size(706);
+  width:100%;
   top: size(66);
   left: 0;
   right: 0;
   margin: 0 auto;
-  font-size: size(41);
+  font-size:1.36em;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -209,7 +208,6 @@
   width: size(602);
   top: size(595);
   left: size(61);
-  font-size: size(30);
   font-weight: 300;
   font-stretch: normal;
   font-style: normal;
@@ -226,7 +224,7 @@
   width: size(71);
   left: 50%;
   top: size(595);
-  font-size: size(26);
+  font-size:0.86em;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -240,7 +238,7 @@
   padding: 0 0 0 size(61);
 }
 .list {
-  font-size: size(26);
+   font-size:0.86em;
   left: 50%;
   top: size(595);
   font-weight: normal;
@@ -270,6 +268,11 @@
 @media screen and (max-width: 767px) {
   .relative {
     height: size-m(650);
+  .c-content{
+    width:100vw;margin: 0;
+    
+    font-size: size-m(10);
+  }
   }
   .img {
     top: size-m(11.7);
@@ -278,7 +281,6 @@
     z-index: 1;
 
     &.img2 {
-      width: 100vw;
       top: size-m(345);
       left: 0;
     }
@@ -290,12 +292,11 @@
     top: size-m(800);
   }
   .title {
-    width: size-m(240);
+    width:100%;
     top: size-m(173);
     left: 0;
     right: 0;
     margin: 0 auto;
-    font-size: size-m(14);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
@@ -303,6 +304,7 @@
     letter-spacing: normal;
     text-align: center;
     color: #bb1a12;
+    justify-content: center;
     span {
       font-weight: 300;
       color: #1a1311;
@@ -310,26 +312,25 @@
   }
 
   .desc {
-    width: size-m(240);
+    width:100%;
     top: size-m(200);
     left: 0;
     right: 0;
     margin: 0 auto;
-    font-size: size-m(11.4);
     font-weight: 300;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.67;
     letter-spacing: normal;
     text-align: center;
+    justify-content: center;
     color: #1a1311;
+    height:auto;
   }
 
   .m-list1 {
     top: size-m(490);
-    left: size-m(22);
-    width: size-m(165);
-    font-size: size-m(9);
+    left: 1.8em;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -337,11 +338,13 @@
     letter-spacing: normal;
     text-align: left;
     color: #1a1311;
+    transform: scale(0.5) translate(-50% , -50%);
+    font-size: 2.1em;
     b {
-      font-size: size-m(5.7);
+      font-size: 0.5em;
     }
     span {
-      font-size: size-m(12.8);
+      font-size:1.16em;
       font-weight: 500;
       font-stretch: normal;
       font-style: normal;
@@ -357,8 +360,7 @@
   .m-list2 {
     top: size-m(490);
     left: size-m(190);
-    width: size-m(175);
-    font-size: size-m(9);
+    width: size-m(175 * 3);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -366,11 +368,13 @@
     letter-spacing: normal;
     text-align: left;
     color: #1a1311;
+    transform: scale(0.5) translate(-50% , -50%);
+    font-size: 2.1em;
     b {
-      font-size: size-m(5.7);
+      font-size: 0.5em;
     }
     span {
-      font-size: size-m(12.8);
+      font-size:1.16em;
       font-weight: 500;
       font-stretch: normal;
       font-style: normal;
@@ -392,6 +396,7 @@
     bottom: size-m(23);
   }
 }
+
 </style>
 <script>
 // @ is an alias to /src

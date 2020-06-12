@@ -29,8 +29,8 @@
     </div>
     <div
       v-else
-       class="c-content">
-    >
+       class="c-content"
+     >
       <img
         src="./s3/1_m.jpg"
         alt=""
