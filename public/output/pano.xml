@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<panorama id="node1" hideabout="1">
-  <input leveltileurl="tiles/PANO0001 Panorama2-01S/cf_%c/l_%l/c_%x/tile_%y.jpg" levelbias="0.400" levelbiashidpi="0.400" levelingroll="0" levelingpitch="0" height="2500" width="2500" overlap="1" leveltilesize="510">
-    <level height="2500" width="2500" predecode="0" preload="0"/>
-    <level height="1250" width="1250" predecode="0" preload="0"/>
-    <level height="625" width="625" predecode="0" preload="0"/>
-    <level height="312" width="312" predecode="1" preload="1"/>
-    <preview strip="1" color="0x808080"/>
+<panorama hideabout="1" id="node1">
+  <input width="2500" leveltileurl="tiles/PANO0001 Panorama3-01S/cf_%c/l_%l/c_%x/tile_%y.jpg" leveltilesize="510" height="2500" levelbiashidpi="0.400" levelingroll="0" levelbias="0.400" overlap="1" levelingpitch="0">
+    <level width="2500" preload="0" height="2500" predecode="0"/>
+    <level width="1250" preload="0" height="1250" predecode="0"/>
+    <level width="625" preload="0" height="625" predecode="0"/>
+    <level width="312" preload="1" height="312" predecode="1"/>
+    <preview color="0x808080" strip="1"/>
   </input>
-  <view pannorth="0" fovmode="0">
-    <start tilt="0" fov="70" pan="2"/>
-    <min tilt="-90" fov="5" pan="0"/>
-    <max tilt="90" fov="120" pan="360"/>
+  <view fovmode="0" pannorth="0">
+    <start fov="70" pan="-81" tilt="0"/>
+    <min fov="5" pan="0" tilt="-90"/>
+    <max fov="120" pan="360" tilt="90"/>
   </view>
-  <userdata comment="" datetime="2020:03:25 16:33:32" author="" info="" latitude="22.625376" longitude="120.382429" description="" tags="100_0752" source="" title="" copyright=""/>
-  <hotspots height="20" wordwrap="1" width="180">
-    <label textalpha="1" height="20" wordwrap="1" width="180" textcolor="0x000000" enabled="1" bordercolor="0x000000" background="1" borderradius="1" backgroundalpha="1" backgroundcolor="0xffffff" border="1" borderalpha="1"/>
-    <polystyle mode="0" bordercolor="0x0000ff" backgroundalpha="0.2509803921568627" backgroundcolor="0x0000ff" handcursor="1" borderalpha="1"/>
+  <userdata info="" tags="100_0752" author="" datetime="2020:06:05 15:40:51" latitude="22.625376" copyright="" source="" longitude="120.382429" comment="" description="" title=""/>
+  <hotspots wordwrap="1" width="180" height="20">
+    <label wordwrap="1" width="180" background="1" height="20" border="1" textcolor="0x000000" borderalpha="1" backgroundcolor="0xffffff" borderradius="1" enabled="1" bordercolor="0x000000" textalpha="1" backgroundalpha="1"/>
+    <polystyle handcursor="1" borderalpha="1" mode="0" backgroundcolor="0x0000ff" bordercolor="0x0000ff" backgroundalpha="0.2509803921568627"/>
   </hotspots>
   <media/>
-  <transition zoomin="0" zoomout="0" blendtime="1" blendcolor="0x000000" softedge="0" zoomspeed="2" enabled="0" zoomoutpause="1" zoomfov="20" type="crossdissolve"/>
-  <control speedwheel="1" lockedkeyboard="0" lockedwheel="0" dblclickfullscreen="1" simulatemass="1" lockedkeyboardzoom="0" invertwheel="0" hideabout="1" lockedmouse="0" invertcontrol="1" contextfullscreen="1" sensitivity="8"/>
+  <transition zoomin="0" type="crossdissolve" softedge="0" blendcolor="0x000000" zoomfov="20" zoomoutpause="1" blendtime="1" zoomspeed="2" enabled="0" zoomout="0"/>
+  <control simulatemass="1" lockedwheel="0" speedwheel="1" invertcontrol="1" contextfullscreen="1" sensitivity="8" hideabout="1" dblclickfullscreen="1" lockedmouse="0" lockedkeyboardzoom="0" lockedkeyboard="0" invertwheel="0"/>
 </panorama>

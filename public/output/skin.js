@@ -1,7 +1,7 @@
 // Garden Gnome Software - Skin
 // Pano2VR 5.0.2/15080
 // Filename: flytiger01 -buttom .ggsk
-// Generated 週三 三月 25 16:34:29 2020
+// Generated 週六 六月 6 11:16:00 2020
 
 function pano2vrSkin(player,base) {
 	var ggSkinVars = [];
