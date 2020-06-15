@@ -1,7 +1,7 @@
 <template>
   <div class="section1">
     <div class="bg relative">
-    <img src="./s1/bgv.gif" alt="" class="img">
+    <img src="./s1/bgv.gif" alt="" class="img img_bg">
     <img src="./s1/g.png" alt="" class="img g">
     <img src="./s1/f.png" alt="" class="img f">
     <img src="./s1/logo.png" alt="THE VIEW 新板特區2.0" class="img logo"
@@ -232,19 +232,19 @@ export default {
 
   created() {},
   mounted() {
-    if (this.isMobile) {
-      setTimeout(() => {
-        const frame = document.querySelector('.img_bg')
-        const content = document.querySelector('.img_bg_c .content')
-        console.log(frame)
-        console.log(content)
-        frame.scrollTo(content.clientWidth * 20 / 100, 0)
-      }, 500)
+    // if (this.isMobile) {
+    //   setTimeout(() => {
+    //     const frame = document.querySelector('.img_bg')
+    //     const content = document.querySelector('.img_bg_c .content')
+    //     console.log(frame)
+    //     console.log(content)
+    //     frame.scrollTo(content.clientWidth * 20 / 100, 0)
+    //   }, 500)
 
-      setTimeout(() => {
-        this.hide = false
-      }, 700)
-    }
+    //   setTimeout(() => {
+    //     this.hide = false
+    //   }, 700)
+    // }
   }
 }
 </script>

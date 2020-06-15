@@ -24,10 +24,7 @@
       <div id="section6" :class="`${isMobile ? '' : 'section'}`">
         <Section6 />
       </div>
-      <!-- <div id="section7" :class="`${isMobile ? '' : 'section'}`">
-        <Section7 />
-      </div> -->
-      <ContactSection class="section" />
+      <ContactSection :class="`${isMobile ? '' : 'section'}`" />
     </full-page>
     <!-- <SimpleOrder /> -->
     <MobileNav />
@@ -119,7 +116,7 @@ export default {
       console.log('done')
     },
     onLeave(origin, destination, direction) {
-      console.log(origin, destination, direction)
+      // console.log(origin, destination, direction)
       if (origin.isLast === true && direction === 'up') {
         console.log('加固')
         this.$refs.fullPage.api.setResponsive(false)

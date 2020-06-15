@@ -3,15 +3,16 @@
     <div class="list-indigator">
       <div
         :class="`dot ${index === indigatorIndex + 1 ? 'active' : '' }`"
-        v-for="index in navList.length - 1"
-        :key="`indigator-${index}`"
-        @click="setIndigator(index)"
-      ><span>午後文創</span></div>
-      <div
+        v-for="(nav, index) in navList"
+        :key="`indigator-${index + 1}`"
+        v-scroll-to="{ element: isMobile ? `#${nav.section}` : '' }"
+        @click="setIndigator(index + 1)"
+      ><span>{{nav.name}}</span></div>
+      <!-- <div
         :class="`dot ${(navList.length - 1 + 1) === indigatorIndex + 1 ? 'active' : '' }`"
         v-scroll-to="{ element: `#contact` }"
         @click="setIndigator(navList.length - 1 + 1)"
-      ></div>
+      ></div> -->
     </div>
     <div
       :class="`contact-indigator`"
@@ -109,17 +110,24 @@
    
   }
 }
+
+.dot {
+  position: relative;
+  z-index: 2;
+}
 }
 </style>
 
 <script>
 import navList from '@/info/navList'
+import { isMobile } from '@/utils'
 
 export default {
   name: 'Indigator',
   props: ['action', 'indigatorIndex'],
   data() {
     return {
+      isMobile,
       navList,
     }
   },
@@ -128,6 +136,9 @@ export default {
 
   methods: {
     setIndigator(index) {
+      if (this.isMobile) {
+        return
+      }
       this.action.moveTo(index)
     },
   },
