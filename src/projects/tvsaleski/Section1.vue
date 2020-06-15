@@ -25,14 +25,15 @@
   position: relative;
   overflow: hidden;
   background-color: #ab977f;
+  height: 100vh;
 }
 .img {
   width: 100vw;
-  height: auto;
+  height:100vh;
   position: absolute;
   left: 0;
   top: 0;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 
   &:nth-child(1) {

@@ -435,7 +435,8 @@
 }
 
 .container {
-  width: 1280px;
+  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
 }
 .title-img1 {
@@ -455,6 +456,7 @@
   text-align: center;
   color: #000000;
   margin-bottom: 26px;
+  font-family:'Noto Serif TC',serif;
 }
 
 .desc {
