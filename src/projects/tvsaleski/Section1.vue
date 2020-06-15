@@ -51,6 +51,9 @@
     background-size: cover;
     position: relative;
   }
+.img {
+  object-fit: cover;
+}
 }
 </style>
 

@@ -236,7 +236,7 @@
           今年聖誕節，要在THE VIEW<br />與妳一起閃亮
         </div>
         <div class="desc">
-          全國最大聖誕活動，最密集百貨商圈慶典，國際旅人必訪景點，<br />世界知名雷射光雕秀，視覺驚艷歡樂無限，商城中軸優勢空前！
+          全國最大聖誕活動，最密集百貨商圈慶典，國際旅人必訪景點，世界知名雷射光雕秀，視覺驚艷歡樂無限，商城中軸優勢空前！
         </div>
         <img
           src="./2/img.jpg"
@@ -254,9 +254,7 @@
           傳奇地段難以被超越<br />200米就是府中商圈
         </div>
         <div class="desc">
-          府中商圈，範圍涵蓋中山路一段、四川路、館前東西路、重慶路、國慶路，<br />
-          過去是板橋最熱鬧的地段，也是全新北市唯一從舊商圈，<br />
-          街邊店，特色名店，與流行文化，接軌國際時尚精品的超級夢幻地段！
+          府中商圈，範圍涵蓋中山路一段、四川路、館前東西路、重慶路、國慶路，過去是板橋最熱鬧的地段，也是全新北市唯一從舊商圈，街邊店，特色名店，與流行文化，接軌國際時尚精品的超級夢幻地段！
         </div>
         <div class="overscroll">
           <img
@@ -293,9 +291,7 @@
             捷運那麼近，百貨這麼多<br />五星飯店多耀眼
           </div>
           <div class="desc">
-            地段決勝權，眼界即世界，步行5分鐘府中捷運站，<br />
-            區內Mega City大遠百，環球購物，誠品生活，<br />
-            新板希爾頓，凱薩5星級酒店，新北信義大新板特區。
+            地段決勝權，眼界即世界，步行5分鐘府中捷運站，區內Mega City大遠百，環球購物，誠品生活，新板希爾頓，凱薩5星級酒店，新北信義大新板特區。
           </div>
           <div class="overscroll">
             <img
@@ -332,7 +328,7 @@
           近500坪核心基地，75米雙塔地標<br />新板特區稀有無雙
         </div>
         <div class="desc">
-          時尚小豪宅強勢回歸，首購唯一立可入主，超大門廳氣勢驚人，<br />崗石巨擎迴旋樓梯，巨盞水晶絕美高挑，與特區豪門齊賞落櫻之繽，小宅也潛藏豪宅靈魂！
+          時尚小豪宅強勢回歸，首購唯一立可入主，超大門廳氣勢驚人，崗石巨擎迴旋樓梯，巨盞水晶絕美高挑，與特區豪門齊賞落櫻之繽，小宅也潛藏豪宅靈魂！
         </div>
         <swiper
           :options="swiperOption"
@@ -362,9 +358,7 @@
           降板湯缸特仕版
         </div>
         <div class="desc">
-          以極具國際飯店質感的遊創手法，令收藏家驚艷不已，<br />
-          戶戶降版大湯缸，在新板吋土吋金的天秤前，泡湯享受成為生活幸福圖騰，<br />
-          創造人生中最美好時光，妳值得THE VIEW寵愛妳
+          以極具國際飯店質感的遊創手法，令收藏家驚艷不已，戶戶降版大湯缸，在新板吋土吋金的天秤前，泡湯享受成為生活幸福圖騰，創造人生中最美好時光，妳值得THE VIEW寵愛妳
         </div>
         <img
           src="./6/img1.jpg"
@@ -399,12 +393,10 @@
           重拾生活幸福細節
         </div>
         <div class="desc">
-          那些生活中的幸福，藏在每一天的細節裡，在社區門廳、在迴旋樓梯，<br />
-          在主臥、在雙人共舞的客廳…這些生活體會的小事，慢慢凝聚成幸福的版圖，<br />
-          對於土地，國宸看得見新價值，超越人生更大的版圖，是我們不斷追求的目標。
+          那些生活中的幸福，藏在每一天的細節裡，在社區門廳、在迴旋樓梯，在主臥、在雙人共舞的客廳…這些生活體會的小事，慢慢凝聚成幸福的版圖，對於土地，國宸看得見新價值，超越人生更大的版圖，是我們不斷追求的目標。
         </div>
         <img
-          src="./7/img.jpg"
+          src="./7/img_m.jpg"
           alt=""
           class="img7"
         >
@@ -473,24 +465,29 @@
 }
   .color {
     background-color: #ddd4cf;
-    padding-top: 75px;
+    padding-top:120px;
     padding-bottom: 15px;
+    margin-bottom:120px;
+    width: 100vw;
+    left: calc(50% - 50vw);
+    position: relative;
+  
   }
 
 .img1 {
-  width: 1167px;
+  width:91%;
   margin: 60px auto 120px;
   display: block;
 }
 
 .img6 {
-  width: 1168px;
+  width:91%;
   display: block;
   margin: 46px auto 22px;
 }
 
 .img7 {
-  width: 1164px;
+  width:91%;
   display: block;
   margin: 53px auto 95px;
 }
@@ -537,13 +534,13 @@
 }
 
 .imgs-six {
-  width: 1164px;
+  width: 1165px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 0 auto;
-  margin-bottom: 236px;
+ margin-bottom:102.5px;
 
   img {
     display: block;
@@ -553,13 +550,13 @@
 }
 
 .imgs-three {
-  width: 1167px;
+  width:91%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
   margin-top: 60px;
-  margin-bottom: 107px;
+  margin-bottom: 120px;
   img {
     width: 389px;
   }
@@ -608,7 +605,7 @@
 
   .title-img1 {
     width: 188px;
-    margin-bottom: 17px;
+    margin:66px auto 22px;
   }
 
   .title-img2 {
@@ -630,7 +627,7 @@
     display: block;
     margin: 0 auto;
     margin-bottom: 15px;
-    margin-top: 68px;
+    margin-top: 0;
   }
 
   .title-img5 {
@@ -644,8 +641,7 @@
   .title-img6 {
     width: 183px;
     display: block;
-    margin: 0 auto;
-    margin-bottom: 20px;
+    margin: 66px auto 20px;
   }
 
   .title {
@@ -668,17 +664,21 @@
     font-style: normal;
     line-height: 1.6;
     letter-spacing: 0.75px;
-    text-align: left;
+    text-align: justify;
     color: #000000;
     margin-bottom: 40px;
   }
-
+.color{
+  padding-top: 66px;
+  margin-bottom:66px;
+}
+ .img1{margin-bottom:66px;}
+ .img2{margin: 6px auto 30px;}
   .img1,
   .img6,
   .img7 {
     width: 100vw;
   }
-
   .img7 {
     margin-bottom: 40px;
   }
@@ -694,7 +694,8 @@
   }
 
   .item-img {
-    height: 214px;
+  //  height: 214px;
+    width: 100%;
 
     &.height {
       height: size-m(459);
@@ -757,9 +758,9 @@ export default {
     return {
       isMobile,
       swiperOption: {
-        slidesPerView: isMobile ? 1 : 1,
+        slidesPerView: isMobile ? 1.2 : 1,
         centeredSlides: true,
-        spaceBetween: isMobile ? 0 : 30,
+        spaceBetween: isMobile ? 15 : 30,
         slidesPerColumn: isMobile ? 1 : 2,
 
         autoplay: {
