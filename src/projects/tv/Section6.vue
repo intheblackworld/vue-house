@@ -120,7 +120,7 @@
 
 .img {
   right: size(215);
-  width: size(264);
+  width: size(187);
   top: size(326);
 }
 

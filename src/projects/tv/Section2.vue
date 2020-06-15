@@ -116,11 +116,11 @@
   overflow: hidden;
   height: 100vh;
 }
-
+//.mode{mix-blend-mode:hard-light;display: block;}
 .img {
   right: size(215);
   width: size(264);
-  top: size(326);
+  top: size(326);mix-blend-mode:hard-light;
 }
 
 .container {

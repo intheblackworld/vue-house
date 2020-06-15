@@ -1,10 +1,25 @@
 <template>
   <div class="section1">
     <div class="bg relative">
-      <!-- <div>
+    <img src="./s1/bgv.gif" alt="" class="img">
+    <img src="./s1/g.png" alt="" class="img g">
+    <img src="./s1/f.png" alt="" class="img f">
+    <img src="./s1/logo.png" alt="THE VIEW 新板特區2.0" class="img logo"
+            data-aos="fade"
+            data-aos-delay="300">
+
+    <div class="txt t1"
+            data-aos="fade"
+            data-aos-delay="600">新板城中多儷人</div>
+    <div class="txt t2"
+            data-aos="fade"
+            data-aos-delay="900">高層景觀飯店寓所</div>
+    <div class="txt t3"
+            data-aos="fade"
+            data-aos-delay="1200">妳值得  THE VIEW  寵愛妳</div>
+    <!--    <div>
         <div class="img_bg" @scroll="hide = true">
         <div class="img_bg_c">
-        <img src="./s1/bg.jpg" alt="" class="img content" v-if="!isMobile">
         <img src="./s1/mo/bg.jpg" alt="" class="img content" v-if="isMobile">
         <img src="./s1/light1.png" alt="" class="img light1">
         <img src="./s1/light2.png" alt="" class="img light2">
@@ -22,7 +37,7 @@
           <img src="./s1/light3a.png" class="l3_3" alt="">
           <img src="./s1/light3a.png" class="l3_4" alt="">
         </div>
-      </div> -->
+      </div>  -->
     </div>
   </div>
 </template>
@@ -33,12 +48,12 @@
 .bg {
   background-size: cover;
   position: relative;
-  overflow: hidden;
   height: 100vh;
+  font-size: calc(100vw * 23 / 1920);
 }
-.img_bg_c{position: relative;}
+.img_bg_c{position: relative;} 
 .img {
-  width: 100vw;
+  width: 100%;
   height: auto;
   position: absolute;
   left: 0;
@@ -48,20 +63,46 @@
   
   &:nth-child(1) {
     position: relative;
-    height: 100vh;
+   // height: 100vh;
   }
-  &.light1,
-  &.light2{
-    opacity: 0;
-    animation: op 1s alternate infinite;
-  object-fit: cover;
-    height: 100vh;width: 100vw;
+  &.g{
+    height:auto;width:calc(100vw * 759 / 1920);left:9.8vw;
   }
-  &.arrow{
-    display: none;
-    animation: arrow 1s ease-in-out alternate infinite;
-    transform: translateX(-2%)
+  &.f{
+    height:auto;width:calc(100vw * 484 / 1920);left:8.5vw;
+  top:19.5vw;mix-blend-mode:hard-light;
+    animation: ro 7s linear infinite;
   }
+  &.logo{
+    height:auto;width:calc(100vw * 540 / 1920);left:56.6vw;
+  top:50%;margin-top:calc(100vw * -175 / 1920);
+  }
+}
+.txt{font-family: "Noto Serif TC", serif;font-weight: bold;
+  position: absolute;
+  color: #666;
+  left:70.6%;
+  bottom: 5%;
+  line-height: 1.7;
+   &.t1{
+  font-size: 1.6em;
+    margin: 0 0 2.7em -4em;
+  letter-spacing: 0.27em;
+  font-weight: 600;
+   }
+   &.t2{
+     background-color:#ba9262;width: 11.5em;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 400;
+    margin: 2.3em 0 1.8em -5.3em;letter-spacing: 0.2em;
+   }
+   &.t3{
+  font-size: 1em;
+    margin: 5em 0 0 -6.2em;letter-spacing: 0.1em;
+   }
+  }
+  /*
   &.light2{
     animation-delay:1s
   }
@@ -75,14 +116,13 @@
     .l3_4{top: 8.5vw;left: 63%;animation-delay:1.5s}
   }
   &.light4{mix-blend-mode:screen;width: 100%;height: 100%;}
-}
 .light_b{
   width:300%;height: 100%;position: absolute;left:-200%;animation: light_b 5s  infinite;
   background: -moz-linear-gradient(-45deg,  rgba(0,0,0,1) 0%, rgba(0,0,0,1) 34%, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 66%, rgba(0,0,0,1) 100%);
 background: -webkit-linear-gradient(-45deg,  rgba(0,0,0,1) 0%,rgba(0,0,0,1) 34%,rgba(0,0,0,0) 50%,rgba(0,0,0,1) 66%,rgba(0,0,0,1) 100%);
 background: linear-gradient(135deg,  rgba(0,0,0,1) 0%,rgba(0,0,0,1) 34%,rgba(0,0,0,0) 50%,rgba(0,0,0,1) 66%,rgba(0,0,0,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000',GradientType=1 );
-}
+}*//*
 @keyframes op {
     to {
         opacity: 1;
@@ -97,20 +137,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
     to {
         transform: translateX(2%)
     }
-}
+}*/
 
 @keyframes ro {
-    30% {
-        transform:translate(-50%,-50%) rotate(90deg);
-        width:5em;height: 5em;opacity: 1;
-    }
-    50% {
-        transform:translate(-50%,-50%) rotate(180deg);
-        width:10em;height: 10em;opacity: 0;
-    }
-    100% {
-        transform:translate(-50%,-50%) rotate(180deg);
-        width:10em;height: 10em;opacity: 0;
+    to {
+        transform:rotate(360deg);
     }
 }
 
@@ -122,8 +153,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 @media screen and (max-width: 767px) {
   .bg {
     background-size: cover;
-    height:100vh;
+    height:calc(100vh - 63px);
       position: relative;
+  font-size: calc(100vw * 24 / 750);
   }
 
   .section1 {
@@ -133,49 +165,50 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
   }
 
   .img {
-    width: 280vw;
-    height: 60vw;
-    left:50%;
-    transform: translateX(-50%);
-    object-position: 50% 0%;
     &:nth-child(1) {
-      position: relative;
-      height:100vh;
-    left:0;
-    transform: translateX(0);
+      height: 100%;left:0vw;object-position: 15% 50%;
     }
-  &.light1,
-  &.light2,
-  &.arrow{
-    left:0;
-    height:100vh;
-    transform: translateX(0);
+    &.g{
+      height:auto;width:46vh;left:calc(50% - 23vh - 52px);
+      top: auto;bottom:-15vh;
     }
-  &.light1,
-  &.light2{
-    left:90%;}
-  &.arrow{
-    display:block;
+    &.f{
+      height:auto;width:30vh;left:calc(30% - 15vh - 52px);
+    top:19.5vw;
+      top: auto;bottom:3vh;
+    }
+    &.logo{
+      height:auto;width:30vh;left:calc(50% - 15vh);
+    top:10%;margin-top:0;
+    }
+  }
+.txt{
+  left:50%;
+  bottom:auto;
+  top: calc(10% + 23vh);
 
-    &.hide {
-      display: none;
-    }
+  /*
+  bottom: 5%;
+  line-height: 1.7;
+   &.t1{
+  font-size: 1.6em;
+    margin: 0 0 2.7em -4em;
+  letter-spacing: 0.27em;
+  font-weight: 600;
+   }
+   &.t2{
+     background-color:#ba9262;width: 11.5em;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 400;
+    margin: 0 0 1.8em -5.3em;letter-spacing: 0.2em;
+   }
+   &.t3{
+  font-size: 1em;
+    margin: 0em 0 0 -6.2em;letter-spacing: 0.1em;
+   }
+   */
   }
-  &.light3{width:295%; top: 21vw;height: 30vw;}
-  &.light4{height: 42%;overflow: hidden;
-    img{
-    height:calc(100vh - 63px);
-    width: 100%;
-    object-fit: cover;}
-  }
-  }
-.img_bg{overflow:auto;}
-.light_b{background: -moz-linear-gradient(left,  rgba(0,0,0,1) 0%, rgba(0,0,0,1) 34%, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 66%, rgba(0,0,0,1) 100%);
-background: -webkit-linear-gradient(left,  rgba(0,0,0,1) 0%,rgba(0,0,0,1) 34%,rgba(0,0,0,0) 50%,rgba(0,0,0,1) 66%,rgba(0,0,0,1) 100%);
-background: linear-gradient(to right,  rgba(0,0,0,1) 0%,rgba(0,0,0,1) 34%,rgba(0,0,0,0) 50%,rgba(0,0,0,1) 66%,rgba(0,0,0,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000',GradientType=1 );
-
-}
 }
 </style>
 

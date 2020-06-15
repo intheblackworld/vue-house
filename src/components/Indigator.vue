@@ -6,7 +6,7 @@
         v-for="index in navList.length - 1"
         :key="`indigator-${index}`"
         @click="setIndigator(index)"
-      ></div>
+      ><span>午後文創</span></div>
       <div
         :class="`dot ${(navList.length - 1 + 1) === indigatorIndex + 1 ? 'active' : '' }`"
         v-scroll-to="{ element: `#contact` }"
@@ -23,62 +23,91 @@
 
 <style lang="scss" scoped>
 .indigator {
-    font-size:16px;
+    font-size:18px;
   position: fixed;
-  right:0.8em;
+  right:0em;
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
   .list-indigator {
     position: relative;
     padding: 8px;
+  margin-right:1em;
     border-radius: 20px;
   }
 
   .dot {
     width:2em;
-    height:2em;
+    height:3em;
+    line-height: 2;
     margin:0;
     background: transparent;
-    cursor: pointer;
-    border-radius: 999px;overflow: hidden;
+    cursor: pointer;position: relative;
+    border-radius: 999px;//overflow: hidden;
     &::before{
       content:"";
       display: block;
-    width:0.7em;
-    height:0.7em;
-    border: 1px solid #fff;
-    border-radius: 999px;margin: calc(50% - 0.3em) auto 0 auto;
+    width:0.8em;
+    height:0.8em;
+    //border: 1px solid #fff;
+    border-radius: 999px;margin: 0 auto 0 auto;
     transition: all 0.3s;
-      background: rgba(0, 0, 0, 0.2);
+      background: #ba926299;
+      top:calc(50% - 0.4em);position:absolute;
+      left:calc(50% - 0.4em);
     }
     &.active {
     &::before{
-      background: #fff;}
+      background: #ba9262FF;}
     }
     &:hover::before{
-      background: #ffd200;
+      background: #ba9262FF;
+    }
+    span{color:#FFF;font-family: "Noto Serif TC", serif;letter-spacing: 0.1em;
+    display: block;
+    width: 7em;position:absolute;right: 0;top:calc(50% - 1em);
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 1em;
+      overflow: hidden;transition: all 0.3s;opacity: 0;
+      }
+    &:hover{
+       span{right: 2em;opacity: 1;}
     }
   }
 
   .contact-indigator {
-    background: rgba(0, 0, 0, 0.4);
+    position: absolute;;
+    background:url('../projects/tv/s1/icon.png');
+    background-size: contain;
     margin: 1em auto 1em auto;
-    padding: 0.4em;
-    color: #ffd200;
-    border-radius: 20px;
+    padding: 0.6em 1em 0 1.3em;
+    color: #666;top: auto;
+    right: 0;
+    top:calc(50% + 50vh - 5em);
+    border-radius:0;
     cursor: pointer;
-    line-height: 1.5;
-    width:2em;transition: all 0.3s;
+    line-height: 1.4;
+  font-size: 1.3em;
+    width:5em;
+    height: 5em;
+    transition: all 0.3s;font-family: "Noto Serif TC", serif;letter-spacing: 0.1em;font-weight: 700;
+
     &:hover{
-      color: #FFF;
+      color: #000;
     }
   }
 }
 @media screen and (max-width: 767px){
   
 .indigator {
-  right: 0;
+  right: -0.5em;
+  .list-indigator {
+  margin-right:0;
+  }
+  .contact-indigator {
+    display: none;
+   
+  }
 }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="contact-info">
-    <img class="logo" src="@/assets/img/contact-logo.png" alt="幸福大院的圖片" />
+    <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" />
     <div class="info">
       <div class="btn flex-c" @click="showCallDialog">
         <span class="flex-c">
@@ -121,9 +121,9 @@ export default {
 }
 
 .logo {
-  width: $contact_logo_pc_width;
-  height: auto;
-  margin: 50px auto 50px;
+  width: auto;
+  height:45%;
+  margin: 40px auto 40px;
 }
 .info {
   width: 880px;
