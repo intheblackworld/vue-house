@@ -71,6 +71,7 @@
           </div>
 
           <!-- 區塊3 -->
+        <div class="color">
           <img
             src="./4/tit.png"
             alt=""
@@ -115,7 +116,7 @@
               alt=""
             >
           </div>
-
+ </div>
           <!-- 區塊4 -->
           <img
             src="./5/tit.png"
@@ -470,6 +471,11 @@
   color: #000000;
   margin: 0 auto;
 }
+  .color {
+    background-color: #ddd4cf;
+    padding-top: 75px;
+    padding-bottom: 15px;
+  }
 
 .img1 {
   width: 1167px;
@@ -699,11 +705,6 @@
     margin-bottom: 16px;
   }
 
-  .color {
-    background-color: #ddd4cf;
-    padding-top: 75px;
-    padding-bottom: 15px;
-  }
 
   .contact-title {
     display: inline-block;
