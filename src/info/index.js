@@ -10,17 +10,17 @@ export default {
   fbMessage: 'https://m.me/110815740621987',
   caseName: '新板The View',
   houseInfos: [
-    // ['', '高層景觀飯店寓所 府中商圈200米'],
-    // ['投資興建', '國宸建設'],
-    // ['基地面積', '494坪'],
-    // ['建築設計', '蔡錦勝建築師事務所'],
-    // ['坪數規劃', '15-21坪'],
-    // ['貴賓專線', '02-29516688'],
-    // ['接待會館', '新北市板橋區四川路1段67號'],
-    // ['個案官網', 'tv.h35.tw']
+     ['', '高層景觀飯店寓所 府中商圈200米'],
+     ['投資興建', '國宸建設'],
+     ['基地面積', '494坪'],
+     ['建築設計', '蔡錦勝建築師事務所'],
+     ['坪數規劃', '15-21坪'],
+     ['貴賓專線', '02-29516688'],
+     ['接待會館', '新北市板橋區四川路1段67號'],
+     ['個案官網', 'tv.h35.tw']
   ],
 
-  gtmCode: [' '], // 可放置多個
+  gtmCode: [''], // 可放置多個
   recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
