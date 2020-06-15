@@ -155,7 +155,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
     background-size: cover;
     height:calc(100vh - 63px);
       position: relative;
-  font-size: calc(100vw * 24 / 750);
+  font-size:1.4vh;
   }
 
   .section1 {
