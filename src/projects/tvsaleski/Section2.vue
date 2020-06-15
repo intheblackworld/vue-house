@@ -664,7 +664,7 @@
     font-style: normal;
     line-height: 1.6;
     letter-spacing: 0.75px;
-    text-align: justify;
+    text-align: center;
     color: #000000;
     margin-bottom: 40px;
   }
