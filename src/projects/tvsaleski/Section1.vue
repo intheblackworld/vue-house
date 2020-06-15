@@ -28,12 +28,12 @@
   height: 100vh;
 }
 .img {
-  width: 100vw;
+  width: auto;
   height:100vh;
   position: absolute;
-  left: 0;
+  left:50%;transform: translateX(-50%);
   top: 0;
-  object-fit: contain;
+  object-fit:auto 100%;
   display: block;
 
   &:nth-child(1) {
