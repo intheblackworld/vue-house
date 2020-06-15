@@ -20,7 +20,7 @@ module.exports = {
     // }
   },
 
-  publicPath: '/saleski',
+  publicPath: '/saleskit',
 
   devServer: {
     port: 9000, // CHANGE YOUR PORT HERE!
