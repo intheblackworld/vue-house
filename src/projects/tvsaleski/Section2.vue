@@ -71,52 +71,52 @@
           </div>
 
           <!-- 區塊3 -->
-        <div class="color">
-          <img
-            src="./4/tit.png"
-            alt=""
-            class="title-img3"
-          >
-          <div class="title">
-            捷運那麼近，百貨這麼多<br />五星飯店多耀眼
+          <div class="color">
+            <img
+              src="./4/tit.png"
+              alt=""
+              class="title-img3"
+            >
+            <div class="title">
+              捷運那麼近，百貨這麼多<br />五星飯店多耀眼
+            </div>
+            <div class="desc">
+              地段決勝權，眼界即世界，步行5分鐘府中捷運站，<br />
+              區內Mega City大遠百，環球購物，誠品生活，<br />
+              新板希爾頓，凱薩5星級酒店，新北信義大新板特區。
+            </div>
+            <img
+              src="./4/img1.jpg"
+              alt=""
+              class="img2"
+            >
+            <div class="imgs-six">
+              <img
+                src="./4/2-1.jpg"
+                alt=""
+              >
+              <img
+                src="./4/2-2.jpg"
+                alt=""
+              >
+              <img
+                src="./4/2-3.jpg"
+                alt=""
+              >
+              <img
+                src="./4/2-4.jpg"
+                alt=""
+              >
+              <img
+                src="./4/2-5.jpg"
+                alt=""
+              >
+              <img
+                src="./4/2-6.jpg"
+                alt=""
+              >
+            </div>
           </div>
-          <div class="desc">
-            地段決勝權，眼界即世界，步行5分鐘府中捷運站，<br />
-            區內Mega City大遠百，環球購物，誠品生活，<br />
-            新板希爾頓，凱薩5星級酒店，新北信義大新板特區。
-          </div>
-          <img
-            src="./4/img1.jpg"
-            alt=""
-            class="img2"
-          >
-          <div class="imgs-six">
-            <img
-              src="./4/2-1.jpg"
-              alt=""
-            >
-            <img
-              src="./4/2-2.jpg"
-              alt=""
-            >
-            <img
-              src="./4/2-3.jpg"
-              alt=""
-            >
-            <img
-              src="./4/2-4.jpg"
-              alt=""
-            >
-            <img
-              src="./4/2-5.jpg"
-              alt=""
-            >
-            <img
-              src="./4/2-6.jpg"
-              alt=""
-            >
-          </div>
- </div>
           <!-- 區塊4 -->
           <img
             src="./5/tit.png"
@@ -257,6 +257,7 @@
           府中商圈，範圍涵蓋中山路一段、四川路、館前東西路、重慶路、國慶路，過去是板橋最熱鬧的地段，也是全新北市唯一從舊商圈，街邊店，特色名店，與流行文化，接軌國際時尚精品的超級夢幻地段！
         </div>
         <div class="overscroll">
+          <div class="mask"></div>
           <img
             src="./3/img1.jpg"
             alt=""
@@ -449,7 +450,7 @@
   text-align: center;
   color: #000000;
   margin-bottom: 26px;
-  font-family:'Noto Serif TC',serif;
+  font-family: 'Noto Serif TC', serif;
 }
 
 .desc {
@@ -463,31 +464,30 @@
   color: #000000;
   margin: 0 auto;
 }
-  .color {
-    background-color: #ddd4cf;
-    padding-top:120px;
-    padding-bottom: 15px;
-    margin-bottom:120px;
-    width: 100vw;
-    left: calc(50% - 50vw);
-    position: relative;
-  
-  }
+.color {
+  background-color: #ddd4cf;
+  padding-top: 120px;
+  padding-bottom: 15px;
+  margin-bottom: 120px;
+  width: 100vw;
+  left: calc(50% - 50vw);
+  position: relative;
+}
 
 .img1 {
-  width:91%;
+  width: 91%;
   margin: 60px auto 120px;
   display: block;
 }
 
 .img6 {
-  width:91%;
+  width: 91%;
   display: block;
   margin: 46px auto 22px;
 }
 
 .img7 {
-  width:91%;
+  width: 91%;
   display: block;
   margin: 53px auto 95px;
 }
@@ -540,7 +540,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 0 auto;
- margin-bottom:102.5px;
+  margin-bottom: 102.5px;
 
   img {
     display: block;
@@ -550,7 +550,7 @@
 }
 
 .imgs-three {
-  width:91%;
+  width: 91%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -605,7 +605,7 @@
 
   .title-img1 {
     width: 188px;
-    margin:66px auto 22px;
+    margin: 66px auto 22px;
   }
 
   .title-img2 {
@@ -668,12 +668,16 @@
     color: #000000;
     margin-bottom: 40px;
   }
-.color{
-  padding-top: 66px;
-  margin-bottom:66px;
-}
- .img1{margin-bottom:66px;}
- .img2{margin: 6px auto 30px;}
+  .color {
+    padding-top: 66px;
+    margin-bottom: 66px;
+  }
+  .img1 {
+    margin-bottom: 66px;
+  }
+  .img2 {
+    margin: 6px auto 30px;
+  }
   .img1,
   .img6,
   .img7 {
@@ -690,11 +694,23 @@
 
   .overscroll {
     width: 100vw;
+    overflow-y: hidden;
     overflow-x: scroll;
+    position: relative;
+
+    .mask {
+      width: 200vw;
+      height: size-m(626);
+      position: absolute;
+      top: 6px;
+      left: 0;
+      z-index: 1;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
   }
 
   .item-img {
-  //  height: 214px;
+    //  height: 214px;
     width: 100%;
 
     &.height {
@@ -705,7 +721,6 @@
   .swiper-container {
     margin-bottom: 16px;
   }
-
 
   .contact-title {
     display: inline-block;
@@ -833,6 +848,25 @@ export default {
   methods: {},
 
   created() {},
-  mounted() {},
+  mounted() {
+    if (this.isMobile) {
+      setTimeout(() => {
+        const map = document.querySelector('.overscroll')
+        console.log(map)
+        const mapBg = document.querySelector('.img2')
+        const text = document.querySelector('.map .text')
+        if (text) {
+          text.style.left = `${mapBg.clientWidth / 2 - 100}px`
+        }
+        const hand = document.querySelector('.map .hand')
+
+        if (hand) {
+          hand.style.left = `${mapBg.clientWidth / 2 - 50}px`
+        }
+
+        map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2, 0)
+      }, 500)
+    }
+  },
 }
 </script>
