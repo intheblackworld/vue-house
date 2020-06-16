@@ -1,12 +1,14 @@
 <template>
   <div class="house-info">
     <div class="content">
+      <div class="flex">
+        <div class="img"><img src="../projects/tv/s1/exterior.jpg" :alt="info.caseName"></div>
+        <div class="info">
       <div class="title">建案資訊</div>
-      <div class="img">建案資訊</div>
-      <div class="info">
-        <div class="item" :key="infos[0]" v-for="infos in houseInfos">
-          <h3 class="label">{{infos[0]}}</h3>
-          <p class="desc" v-html="infos[1]"></p>
+          <div class="item" :key="infos[0]" v-for="infos in houseInfos">
+            <h3 class="label">{{infos[0]}}</h3>
+            <p class="desc" v-html="infos[1]"></p>
+          </div>
         </div>
       </div>
     </div>
@@ -24,6 +26,7 @@ export default {
   },
   data() {
     return {
+      info,
       houseInfos: info.houseInfos,
     }
   },
@@ -40,42 +43,52 @@ export default {
   z-index: 1;
 }
 .content {
-  width: 686px;
-  margin: 0 auto;
+ width: 1440px;
+ max-width: 95%;
+  margin:30px auto;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  .flex{
+    width: 100%;
+    .img{flex: 1;
+      display: flex;justify-content: center;align-items: center;
+      img{max-width:90%;}
+    }
+    .info{flex: 1;justify-content: left;/*
+  display: flex;
+  flex-wrap: wrap;justify-content: center;align-items: center;*/}
+  }
 }
 
-.title {
+.title {text-align: left;
   font-size: 36px;
   line-height: 36px;
-  margin: 60px 0;
+  margin: 20px 0  30px 0 ;
   font-family: 'Noto Serif TC', serif;
   font-weight: bold;
   color: $house_title_color;
 }
 
 .info {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .item {
   font-size: 16px;
-  margin-bottom: 40px;
+  margin-bottom:0;
   margin-right: 160px;
-  width: 260px;
-  height: 30px;
-  border-left: 4px solid $house_label_color;
-  padding-left: 12px;
+  //width: 260px;
+  height: 45px;
+  border-top: 1px solid #ccc;
+ // border-left: 4px solid $house_label_color;
+  padding-left: 0;
   display: flex;
   align-items: center;
   white-space: nowrap;
 
   &:nth-of-type(even) {
-    margin-right: 0;
+  //  margin-right: 0;
   }
 
   .label {

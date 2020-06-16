@@ -21,6 +21,8 @@ export default {
      ['接待會館', '新北市板橋區四川路1段67號'],
      ['個案官網', 'tv.h35.tw']
   ],
+  //新板The View 建案資訊 外觀圖
+  exterior: '../projects/tv/s1/exterior.jpg',
 
   gtmCode: [''], // 可放置多個
   recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',

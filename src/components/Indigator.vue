@@ -86,7 +86,7 @@
 }
 
   .contact-indigator {
-    position: absolute;;
+    position: absolute;
     background:url('../projects/tv/s1/icon.png');
     background-size: contain;
     margin: 1em auto 1em auto;
