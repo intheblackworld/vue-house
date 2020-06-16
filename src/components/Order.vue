@@ -109,7 +109,7 @@ export default {
       },
       checked: false,
       isSubmit: false,
-      isVerify: false, // google 機器人驗證
+      isVerify: true, // google 機器人驗證
       policyVisible: false,
       showValidateDialog: false,
     }

@@ -9,19 +9,31 @@
       <div
         v-if="!isMobile"
         class="container flex-ac flex-jb relative left"
+        @mouseover="stopSwipe" @mouseleave="startSwipe"
       >
-        <div
-          class="slides relative"
-          data-aos="fade"
-          data-aos-delay="400"
+        <swiper
+          :options="swiperOption"
+          ref="mySwiper"
+          class="slides"
+          @slideChangeTransitionStart="slideChanged"
         >
-          <img
-            :src="slide.src"
+          <swiper-slide
             v-for="(slide, index) in slideList"
-            :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
-            :key="`s2-1-slide-${index}`"
-          />
-        </div>
+            :index="index"
+            :key="slide.src"
+            class="item"
+          >
+            <img
+              :src="slide.src"
+              :class="`item-img ${slideIndex === index ? 'active' : ''}`"
+            />
+            <div v-html="slide.name"></div>
+          </swiper-slide>
+          <!-- <div
+            class="swiper-pagination"
+            slot="pagination"
+          ></div> -->
+        </swiper>
         <div class="content">
           <h3
             class="title"
@@ -45,34 +57,53 @@
           </ul>
         </div>
       </div>
-      <div v-if="isMobile">
-        <div
+      <div v-if="isMobile" @mouseover="stopSwipe" @mouseleave="startSwipe">
+        <swiper
+          :options="swiperOption"
+          ref="mySwiper"
+          class="slides"
+          @slideChangeTransitionStart="slideChanged"
+        >
+          <div
+            class="swiper-button-prev"
+            slot="button-prev"
+          >
+            <img
+              class="arrow-l"
+              src="./arrow-left.png"
+              alt
+            />
+          </div>
+          <div
+            class="swiper-button-next"
+            slot="button-next"
+          >
+            <img
+              class="arrow-r"
+              src="./arrow-right.png"
+              alt
+            />
+          </div>
+          <div class="slide-text">{{slideList[slideIndex].text}}</div>
+          <swiper-slide
+            v-for="(slide, index) in slideList"
+            :index="index"
+            :key="slide.src"
+            class="item"
+          >
+            <img
+              :src="slide.src"
+              :class="`item-img ${slideIndex === index ? 'active' : ''}`"
+            />
+            <div v-html="slide.name"></div>
+          </swiper-slide>
+        </swiper>
+        <!-- <div
           class="slides relative"
           data-aos="fade"
           data-aos-delay="400"
         >
-          <div class="slide-text">{{slideList[slideIndex].text}}</div>
-          <img
-            :src="slide.src"
-            v-for="(slide, index) in slideList"
-            :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
-            :key="`s2-1-slide-${index}`"
-          />
-          <div class="arrows absolute">
-            <img
-              src="./arrow-left.png"
-              alt=""
-              class="arrow-l"
-              @click="decIndex"
-            >
-            <img
-              src="./arrow-right.png"
-              alt=""
-              class="arrow-r"
-              @click="addIndex"
-            >
-          </div>
-        </div>
+        </div> -->
         <div class="content">
           <h3
             class="title"
@@ -120,7 +151,8 @@
 .img {
   right: size(215);
   width: size(264);
-  top: size(326);mix-blend-mode:hard-light;
+  top: size(326);
+  mix-blend-mode: hard-light;
 }
 
 .container {
@@ -190,7 +222,7 @@
   left: 0;
   right: 0;
   margin: size(370) auto 0 auto;
-  top:50%;
+  top: 50%;
   .indigator {
     width: size(19);
     height: size(19);
@@ -215,15 +247,15 @@
 
 @media screen and (max-width: 767px) {
   .bg {
-   // height: auto;
-    height:100vh;
+    // height: auto;
+    height: 100vh;
   }
   .img {
     right: size-m(0);
     width: size-m(150);
-  //  top: auto;
+    //  top: auto;
     top: size-m(310);
-  //  bottom: size-m(10);
+    //  bottom: size-m(10);
   }
 
   .container {
@@ -246,7 +278,7 @@
 
   .content {
     width: 100vw;
-    height:auto;
+    height: auto;
     padding-top: size-m(31);
     padding-left: size-m(27);
     padding-bottom: size-m(200);
@@ -294,44 +326,63 @@
     display: none;
   }
 
-  .arrows {
-    width: 100%;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .arrow-l {
+    width: size-m(20);
+    position: absolute;
+    left: size-m(5);
+    cursor: pointer;
+  }
 
-    .arrow-l {
-      width: size-m(14);
-      position: absolute;
-      left: size-m(5);
-      cursor: pointer;
-    }
-
-    .arrow-r {
-      width: size-m(14);
-      position: absolute;
-      right: size-m(5);
-      cursor: pointer;
-    }
+  .arrow-r {
+    width: size-m(20);
+    position: absolute;
+    right: size-m(5);
+    cursor: pointer;
   }
 }
 </style>
 
 <script>
 // @ is an alias to /src
-import { isMobile } from '@/utils'
+import { isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
+import 'swiper/dist/css/swiper.css'
+
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'section2',
   mixins: [slider],
-
+  components: {
+    swiper,
+    swiperSlide,
+  },
   data() {
     return {
       isMobile,
+      swiperOption: {
+        slidesPerView: isMobile ? 1 : 1,
+        spaceBetween: isTablet ? 20 : 30,
+        slidesPerColumn: isMobile ? 1 : 1,
+        allowSlidePrev: isMobile ? true : true,
+        allowSlideNext: isMobile ? true : true,
+        // centeredSlides: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: true,
+        },
+        loop: true,
+        // direction: 'vertical',
+        effect: 'fade',
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      },
       slideList: [
         {
           src: require('./s2/1-1.jpg'),
@@ -389,11 +440,35 @@ export default {
     }
   },
 
-  computed: {},
+  computed: {
+    swiper() {
+      return this.$refs.mySwiper.swiper
+    },
+  },
 
   methods: {
     setIndex(index) {
       this.slideIndex = index * 2
+      this.swiper.slideTo(index * 2, 1000, false)
+    },
+
+    slideChanged(e) {
+      const swiper = this.$refs.mySwiper.swiper
+      if (swiper.isEnd) {
+        this.slideIndex = 0
+      } else if (swiper.isBeginning) {
+        this.slideIndex = swiper.slides.length - 3
+      } else {
+        this.slideIndex = swiper.activeIndex - 1
+      }
+    },
+
+    startSwipe() {
+      this.swiper.autoplay.start()
+    },
+
+    stopSwipe() {
+      this.swiper.autoplay.stop()
     },
   },
 

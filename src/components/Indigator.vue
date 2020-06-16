@@ -2,7 +2,7 @@
   <div class="indigator">
     <div class="list-indigator">
       <div
-        :class="`dot ${index === indigatorIndex + 1 ? 'active' : '' }`"
+        :class="`dot ${index === indigatorIndex ? 'active' : '' }`"
         v-for="(nav, index) in navList"
         :key="`indigator-${index + 1}`"
         @click="setIndigator(index + 1)"
@@ -144,9 +144,9 @@ export default {
 
   methods: {
     setIndigator(index) {
-      if (this.isMobile) {
-        return
-      }
+      // if (this.isMobile) {
+      //   return
+      // }
       this.action.moveTo(index)
     },
   },

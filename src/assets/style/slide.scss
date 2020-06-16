@@ -53,6 +53,20 @@
   }
 }
 
+.item-img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  left: 0;
+}
+
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next,
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+  background: none !important;
+}
+
 @media screen and (max-width: 767px) {
   .slides {
     width: 100% !important;
