@@ -256,12 +256,19 @@
         <div class="desc">
           府中商圈，範圍涵蓋中山路一段、四川路、館前東西路、重慶路、國慶路，過去是板橋最熱鬧的地段，也是全新北市唯一從舊商圈，街邊店，特色名店，與流行文化，接軌國際時尚精品的超級夢幻地段！
         </div>
-        <div class="overscroll">
-          <div class="mask"></div>
+        <div
+          class="overscroll"
+          @scroll="handleScroll1"
+        >
+          <div
+            class="mask"
+            v-show="showMask1"
+          ></div>
           <img
             src="./箭頭.png"
             alt
             class="hand"
+            v-show="showMask1"
           />
           <img
             src="./3/img1.jpg"
@@ -299,7 +306,20 @@
           <div class="desc">
             地段決勝權，眼界即世界，步行5分鐘府中捷運站，區內Mega City大遠百，環球購物，誠品生活，新板希爾頓，凱薩5星級酒店，新北信義大新板特區。
           </div>
-          <div class="overscroll">
+          <div
+            class="overscroll"
+            @scroll="handleScroll2"
+          >
+            <div
+              class="mask"
+              v-show="showMask2"
+            ></div>
+            <img
+              src="./箭頭.png"
+              alt
+              class="hand"
+              v-show="showMask2"
+            />
             <img
               src="./4/img1.jpg"
               alt=""
@@ -804,6 +824,8 @@ export default {
   data() {
     return {
       isMobile,
+      showMask1: false,
+      showMask2: false,
       swiperOption: {
         slidesPerView: isMobile ? 1.2 : 1,
         centeredSlides: true,
@@ -877,7 +899,14 @@ export default {
 
   computed: {},
 
-  methods: {},
+  methods: {
+    handleScroll1() {
+      this.showMask1 = false
+    },
+    handleScroll2() {
+      this.showMask2 = false
+    },
+  },
 
   created() {},
   mounted() {
@@ -898,6 +927,11 @@ export default {
 
         map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2, 0)
       }, 500)
+
+      setTimeout(() => {
+        this.showMask1 = true
+        this.showMask2 = true
+      }, 1500)
     }
   },
 }
