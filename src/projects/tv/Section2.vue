@@ -189,8 +189,8 @@
   position: absolute;
   left: 0;
   right: 0;
-  margin: 0 auto;
-  bottom: size(80);
+  margin: size(370) auto 0 auto;
+  top:50%;
   .indigator {
     width: size(19);
     height: size(19);
@@ -215,13 +215,15 @@
 
 @media screen and (max-width: 767px) {
   .bg {
-    height: auto;
+   // height: auto;
+    height:100vh;
   }
   .img {
-    right: size-m(37);
-    width: size-m(124);
-    top: auto;
-    bottom: size-m(10);
+    right: size-m(-20);
+    width: size-m(150);
+  //  top: auto;
+    top: size-m(320);
+  //  bottom: size-m(10);
   }
 
   .container {
@@ -244,7 +246,7 @@
 
   .content {
     width: 100vw;
-    height: size-m(550);
+    height:auto;
     padding-top: size-m(31);
     padding-left: size-m(27);
     padding-bottom: size-m(200);
@@ -277,7 +279,7 @@
 
   .desc-list {
     > h3 {
-      font-size: size-m(14);
+      font-size: size-m(12);
       font-weight: 600;
       font-stretch: normal;
       font-style: normal;

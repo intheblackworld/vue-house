@@ -2,6 +2,7 @@
   <div class="house-info">
     <div class="content">
       <div class="title">建案資訊</div>
+      <div class="img">建案資訊</div>
       <div class="info">
         <div class="item" :key="infos[0]" v-for="infos in houseInfos">
           <h3 class="label">{{infos[0]}}</h3>

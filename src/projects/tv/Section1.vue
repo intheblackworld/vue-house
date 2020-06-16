@@ -166,26 +166,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 
   .img {
     &:nth-child(1) {
-      height: 100%;left:0vw;object-position: 15% 50%;
+      height: 100%;left:0vw;object-position: 12% 50%;
     }
     &.g{
-      height:auto;width:46vh;left:calc(50% - 23vh - 52px);
-      top: auto;bottom:-15vh;
+      height:auto;width:40vh;left:calc(55% - 20vh - 52px);
+      top: auto;bottom:-5vh;
     }
     &.f{
-      height:auto;width:30vh;left:calc(30% - 15vh - 52px);
+      height:auto;width:28vh;left:calc(31% - 14vh - 52px);
     top:19.5vw;
-      top: auto;bottom:3vh;
+      top: auto;bottom:12vh;
     }
     &.logo{
       height:auto;width:30vh;left:calc(50% - 15vh);
-    top:10%;margin-top:0;
+    top:7%;margin-top:0;
     }
   }
 .txt{
   left:50%;
   bottom:auto;
-  top: calc(10% + 23vh);
+  top: calc(7% + 22.5vh);
 
   /*
   bottom: 5%;

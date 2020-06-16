@@ -84,7 +84,7 @@
             class="subtitle"
             data-aos="fade"
             data-aos-delay="600"
-            v-html="slideList[slideIndex].subtitle"
+            v-html="slideList[slideIndex].subtitle_m"
           ></h3>
           <ul class="desc-list">
             <h3
@@ -190,8 +190,8 @@
   position: absolute;
   left: 0;
   right: 0;
-  margin: 0 auto;
-  bottom: size(80);
+  margin: size(370) auto 0 auto;
+  top:50%;
   .indigator {
     width: size(19);
     height: size(19);
@@ -216,14 +216,15 @@
 
 @media screen and (max-width: 767px) {
   .bg {
-    height: auto;
+   // height: auto;
+    height:100vh;
   }
   .img {
     left: auto;
-    right: size-m(37);
+    right: size-m(0);
     width: size-m(124);
-    top: auto;
-    bottom: size-m(10);
+    top: size-m(320);
+   // bottom: size-m(10);
   }
 
   .container {
@@ -246,7 +247,7 @@
 
   .content {
     width: 100vw;
-    height: size-m(550);
+    height:auto;
     padding-top: size-m(31);
     padding-left: size-m(27);
     padding-bottom: size-m(200);
@@ -279,7 +280,7 @@
 
   .desc-list {
     > h3 {
-      font-size: size-m(14);
+      font-size: size-m(12);
       font-weight: 600;
       font-stretch: normal;
       font-style: normal;
@@ -337,36 +338,43 @@ export default {
           src: require('./s3/1-1.jpg'),
           contentIndex: 0,
           subtitle: '眼光中有山水湛藍，舉止裡有磅礡優雅',
+          subtitle_m: '眼光中有山水湛藍<br>舉止裡有磅礡優雅',
         },
         {
           src: require('./s3/1-2.jpg'),
           contentIndex: 0,
           subtitle: '眼光中有山水湛藍，舉止裡有磅礡優雅',
+          subtitle_m: '眼光中有山水湛藍<br>舉止裡有磅礡優雅',
         },
         {
           src: require('./s3/2-1.jpg'),
           contentIndex: 1,
           subtitle: '聞名於外，珍藏於內，林家花園，黃石市場',
+          subtitle_m: '聞名於外，珍藏於內<br>林家花園，黃石市場',
         },
         {
           src: require('./s3/2-2.jpg'),
           contentIndex: 1,
           subtitle: '聞名於外，珍藏於內，林家花園，黃石市場',
+          subtitle_m: '聞名於外，珍藏於內<br>林家花園，黃石市場',
         },
         {
           src: require('./s3/2-3.jpg'),
           contentIndex: 1,
           subtitle: '聞名於外，珍藏於內，林家花園，黃石市場',
+          subtitle_m: '聞名於外，珍藏於內<br>林家花園，黃石市場',
         },
         {
           src: require('./s3/3-1.jpg'),
           contentIndex: 2,
           subtitle: '新板藏美，信義藏峰，青春力量藏心胸',
+          subtitle_m: '新板藏美，信義藏峰<br>青春力量藏心胸',
         },
         {
           src: require('./s3/3-2.jpg'),
           contentIndex: 2,
           subtitle: '新板藏美，信義藏峰，青春力量藏心胸',
+          subtitle_m: '新板藏美，信義藏峰<br>青春力量藏心胸',
         },
       ],
       desc_list: [

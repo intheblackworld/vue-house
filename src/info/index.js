@@ -9,6 +9,8 @@ export default {
     'https://www.facebook.com/%E6%96%B0%E6%9D%BFThe-View-110815740621987/',
   fbMessage: 'https://m.me/110815740621987',
   caseName: '新板The View',
+
+  //新板The View 建案資訊有調整版型
   houseInfos: [
      ['投資興建', '高層景觀飯店寓所 府中商圈200米'],
      ['投資興建', '國宸建設'],

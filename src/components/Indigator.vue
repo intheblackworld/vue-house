@@ -72,9 +72,18 @@
       overflow: hidden;transition: all 0.3s;opacity: 0;
       }
     &:hover{
-       span{right: 2em;opacity: 1;}
+       span{right: 2em;opacity: 1;
+       animation: dot_span_an .2s 1s forwards;
+       }
     }
+    //&:first-child{display:none;}
   }
+  
+@keyframes dot_span_an {
+    to {
+        right: 0;opacity: 0;
+    }
+}
 
   .contact-indigator {
     position: absolute;;

@@ -84,7 +84,7 @@
             class="subtitle"
             data-aos="fade"
             data-aos-delay="600"
-            v-html="slideList[slideIndex].subtitle"
+            v-html="slideList[slideIndex].subtitle_m"
           ></h3>
           <ul class="desc-list">
             <h3
@@ -190,8 +190,8 @@
   position: absolute;
   left: 0;
   right: 0;
-  margin: 0 auto;
-  bottom: size(80);
+  margin: size(370) auto 0 auto;
+  top:50%;
   .indigator {
     width: size(19);
     height: size(19);
@@ -216,13 +216,13 @@
 
 @media screen and (max-width: 767px) {
   .bg {
-    height: auto;
+    height:100vh;
   }
   .img {
-    right: size-m(37);
-    width: size-m(124);
-    top: auto;
-    bottom: size-m(10);
+    right: size-m(10);
+    width: size-m(144);
+   // top: auto;
+    top: size-m(320);
   }
 
   .container {
@@ -245,7 +245,7 @@
 
   .content {
     width: 100vw;
-    height: size-m(550);
+    height:auto;
     padding-top: size-m(31);
     padding-left: size-m(27);
     padding-bottom: size-m(200);
@@ -278,7 +278,7 @@
 
   .desc-list {
     > h3 {
-      font-size: size-m(14);
+      font-size: size-m(12);
       font-weight: 600;
       font-stretch: normal;
       font-style: normal;
@@ -336,36 +336,43 @@ export default {
           src: require('./s4/1-1.jpg'),
           contentIndex: 0,
           subtitle: '讓時尚為我啟蒙，新板為我加冕',
+          subtitle_m: '讓時尚為我啟蒙<br>新板為我加冕',
         },
         {
           src: require('./s4/1-2.jpg'),
           contentIndex: 0,
           subtitle: '讓時尚為我啟蒙，新板為我加冕',
+          subtitle_m: '讓時尚為我啟蒙<br>新板為我加冕',
         },
         {
           src: require('./s4/2-1.jpg'),
           contentIndex: 1,
           subtitle: '新板像打翻的珠寶盒，生活絢麗無比',
+          subtitle_m: '新板像打翻的珠寶盒<br>生活絢麗無比',
         },
         {
           src: require('./s4/2-2.jpg'),
           contentIndex: 1,
           subtitle: '新板像打翻的珠寶盒，生活絢麗無比',
+          subtitle_m: '新板像打翻的珠寶盒<br>生活絢麗無比',
         },
         {
           src: require('./s4/2-3.jpg'),
           contentIndex: 1,
           subtitle: '新板像打翻的珠寶盒，生活絢麗無比',
+          subtitle_m: '新板像打翻的珠寶盒<br>生活絢麗無比',
         },
         {
           src: require('./s4/3-1.jpg'),
           contentIndex: 2,
           subtitle: '新北信義大新板特區，最大歡樂耶誕城',
+          subtitle_m: '新北信義大新板特區<br>最大歡樂耶誕城',
         },
         {
           src: require('./s4/3-2.jpg'),
           contentIndex: 2,
           subtitle: '新北信義大新板特區，最大歡樂耶誕城',
+          subtitle_m: '新北信義大新板特區<br>最大歡樂耶誕城',
         },
       ],
       desc_list: [

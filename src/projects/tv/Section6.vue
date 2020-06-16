@@ -84,7 +84,7 @@
             class="subtitle"
             data-aos="fade"
             data-aos-delay="600"
-            v-html="slideList[slideIndex].subtitle"
+            v-html="slideList[slideIndex].subtitle_m"
           ></h3>
           <ul class="desc-list">
             <h3
@@ -190,8 +190,8 @@
   position: absolute;
   left: 0;
   right: 0;
-  margin: 0 auto;
-  bottom: size(80);
+  margin: size(370) auto 0 auto;
+  top:50%;
   .indigator {
     width: size(19);
     height: size(19);
@@ -216,13 +216,13 @@
 
 @media screen and (max-width: 767px) {
   .bg {
-    height: auto;
+    height:100vh;
   }
   .img {
-    right: size-m(37);
-    width: size-m(124);
-    top: auto;
-    bottom: size-m(10);
+    right: size-m(20);
+    width: size-m(110);
+    //top: auto;
+    top: size-m(300);
   }
 
   .container {
@@ -245,7 +245,7 @@
 
   .content {
     width: 100vw;
-    height: size-m(550);
+    height:auto;
     padding-top: size-m(31);
     padding-left: size-m(27);
     padding-bottom: size-m(200);
@@ -278,11 +278,11 @@
 
   .desc-list {
     > h3 {
-      font-size: size-m(14);
+      font-size: size-m(12);
       font-weight: 600;
       font-stretch: normal;
       font-style: normal;
-      line-height: 2.14;
+      line-height: 1.8;
       letter-spacing: 0.14px;
       text-align: left;
       color: #727272;
@@ -335,27 +335,32 @@ export default {
         {
           src: require('./s6/1.jpg'),
           contentIndex: 0,
-          subtitle: '時尚小豪宅強勢回歸，收藏新板獨一無二',
+          subtitle: '高層景觀飯店寓所，降板湯缸特仕版',
+          subtitle_m: '高層景觀飯店寓所<br>降板湯缸特仕版',
         },
         {
           src: require('./s6/2.jpg'),
           contentIndex: 0,
-          subtitle: '時尚小豪宅強勢回歸，收藏新板獨一無二',
+          subtitle: '高層景觀飯店寓所，降板湯缸特仕版',
+          subtitle_m: '高層景觀飯店寓所<br>降板湯缸特仕版',
         },
         {
           src: require('./s6/3.jpg'),
           contentIndex: 1,
           subtitle: '高層景觀飯店寓所，降板湯缸特仕版',
+          subtitle_m: '高層景觀飯店寓所<br>降板湯缸特仕版',
         },
         {
           src: require('./s6/4.jpg'),
           contentIndex: 1,
           subtitle: '高層景觀飯店寓所，降板湯缸特仕版',
+          subtitle_m: '高層景觀飯店寓所<br>降板湯缸特仕版',
         },
         {
           src: require('./s6/5.jpg'),
           contentIndex: 2,
           subtitle: '高層景觀飯店寓所，降板湯缸特仕版',
+          subtitle_m: '高層景觀飯店寓所<br>降板湯缸特仕版',
         },
       ],
       desc_list: [
