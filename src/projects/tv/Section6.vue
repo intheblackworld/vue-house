@@ -1,11 +1,11 @@
 <template>
   <div>
     <div class="bg relative">
-      <img
+      <!-- <img
         src="./s6/head.gif"
         alt=""
         class="img absolute"
-      >
+      > -->
       <div
         v-if="!isMobile"
         class="container flex-ac flex-jb relative left"

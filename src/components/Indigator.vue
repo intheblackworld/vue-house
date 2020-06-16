@@ -5,7 +5,6 @@
         :class="`dot ${index === indigatorIndex + 1 ? 'active' : '' }`"
         v-for="(nav, index) in navList"
         :key="`indigator-${index + 1}`"
-        v-scroll-to="{ element: isMobile ? `#${nav.section}` : '' }"
         @click="setIndigator(index + 1)"
       ><span>{{nav.name}}</span></div>
       <!-- <div
