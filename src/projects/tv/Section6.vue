@@ -362,6 +362,12 @@ export default {
           subtitle: '高層景觀飯店寓所，降板湯缸特仕版',
           subtitle_m: '高層景觀飯店寓所<br>降板湯缸特仕版',
         },
+        {
+          src: require('./s6/6.jpg'),
+          contentIndex: 2,
+          subtitle: '高層景觀飯店寓所，降板湯缸特仕版',
+          subtitle_m: '高層景觀飯店寓所<br>降板湯缸特仕版',
+        },
       ],
       desc_list: [
         [
