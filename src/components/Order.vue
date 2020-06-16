@@ -33,7 +33,7 @@
                 placeholder
               ></el-input>
             </div>
-            <div class="row">
+            <!-- <div class="row">
               <label>聯絡時間(起)</label>
               <el-time-select
                 v-model="form.time_start"
@@ -44,8 +44,8 @@
                   end: '18:00',
                 }"
               ></el-time-select>
-            </div>
-            <div class="row">
+            </div> -->
+            <!-- <div class="row">
               <label>聯絡時間(迄)</label>
               <el-time-select
                 v-model="form.time_end"
@@ -56,7 +56,7 @@
                   end: '18:00',
                 }"
               ></el-time-select>
-            </div>
+            </div> -->
             <!-- <div class="row">
               <label>想看房型</label>
               <el-select v-model="form.house" placeholder>
@@ -73,7 +73,7 @@
               <label>E-mail</label>
               <el-input v-model="form.email" placeholder></el-input>
             </div> -->
-            <!-- <div class="row">
+            <div class="row">
               <label>居住城市</label>
               <el-select v-model="form.city" placeholder>
                 <el-option
@@ -96,7 +96,7 @@
                   no-data-text="請先選擇居住城市"
                 ></el-option>
               </el-select>
-            </div> -->
+            </div>
           </div>
           <div class="group">
             <div class="row">
@@ -245,12 +245,12 @@ export default {
       if (
         !this.form.name ||
         !this.form.phone ||
-        !this.form.time_start ||
-        !this.form.time_end
+        // !this.form.time_start ||
+        // !this.form.time_end
         // ||
         // !this.form.email ||
-        // !this.form.city ||
-        // !this.form.area
+        !this.form.city ||
+        !this.form.area
       ) {
         this.alertValidate()
         this.isSubmit = false
