@@ -259,6 +259,11 @@
         <div class="overscroll">
           <div class="mask"></div>
           <img
+            src="./箭頭.png"
+            alt
+            class="hand"
+          />
+          <img
             src="./3/img1.jpg"
             alt=""
             class="img2"
@@ -750,6 +755,33 @@
       color: #4a2969;
     }
   }
+
+  .hand {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 102px !important;
+    height: auto !important;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 40% !important;
+    display: block;
+    animation: swing 2.5s ease-in-out 0s infinite;
+  }
+  @keyframes swing {
+    0% {
+      transform: translateX(20px);
+    }
+
+    50% {
+      transform: translateX(-20px);
+    }
+
+    100% {
+      transform: translateX(20px);
+    }
+  }
 }
 </style>
 
@@ -858,10 +890,10 @@ export default {
         if (text) {
           text.style.left = `${mapBg.clientWidth / 2 - 100}px`
         }
-        const hand = document.querySelector('.map .hand')
+        const hand = document.querySelector('.hand')
 
         if (hand) {
-          hand.style.left = `${mapBg.clientWidth / 2 - 50}px`
+          hand.style.left = `${mapBg.clientWidth / 2 - 75}px`
         }
 
         map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2, 0)
