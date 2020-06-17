@@ -245,7 +245,7 @@ img[lazy='loaded'] {
 
   .home {
     padding-top: $nav_tablet_height;
-
+    background-size: auto auto;
     &.no-padding-top {
       padding-top: 0;
     }
@@ -329,8 +329,9 @@ img[lazy='loaded'] {
   }
 
   .home {
+    background-image: url('../../projects/tv/bg_m.jpg');
     padding-top: $nav_phone_height;
-
+    background-size: 100vh auto;
     &.no-padding-top {
       padding-top: 0;
     }
