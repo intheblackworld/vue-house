@@ -225,14 +225,16 @@ export default {
   .contact-info {
     display: flex;
     width: 100%;
+  //  max-width: 95%;
     height: auto;
-    padding: 40px;
+    padding:5%;
     transform: none;
     position: static;
     margin-top: 60px;
 
+
     .logo {
-      width: $contact_logo_mobile_width;
+      width: $contact_logo_mobile_width;margin: 5% auto 10%;
     }
   }
 
@@ -240,7 +242,8 @@ export default {
     width: 100%;
     justify-content: center;
     text-align: center;
-    margin-bottom: 40px;
+  //  margin-bottom: 40px;
+      margin-bottom:-12px;
 
     > * {
       margin-bottom: 12px;
@@ -250,9 +253,13 @@ export default {
   .logo {
     margin-bottom: 20px;
   }
+.btn,
+  .address,
+  .google-btn {
+    width:100%;
+    }
 
   .address {
-    width: 280px;
     margin-bottom: 0;
     text-align: left;
     border: 1px solid #666;

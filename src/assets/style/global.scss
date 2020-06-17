@@ -312,6 +312,10 @@ img[lazy='loaded'] {
 
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
+  html,
+  body {
+    overflow: auto !important;;
+  }
   .fullscreen {
     height: calc(100vh - #{$nav_phone_height} - 63px) !important;
     overflow: hidden;

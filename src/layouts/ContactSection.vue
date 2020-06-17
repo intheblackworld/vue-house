@@ -4,9 +4,9 @@
     <HouseInfo />
   </div>
 </template>
-<style lang="scss" scoped>
-.contact{height: auto !important;
-.fp-tableCell{height: auto !important;}
+<style lang="scss">
+#contact{height: auto !important;
+  .fp-tableCell{height: auto !important;}
 }
 </style>
 <script>

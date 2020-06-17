@@ -45,7 +45,8 @@ export default {
 .content {
  width: 1440px;
  max-width: 95%;
-  margin:30px auto;
+  margin:0 auto;
+  padding: 30px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -112,26 +113,28 @@ export default {
 @media only screen and (max-width: 767px) {
   .content {
     width: 100%;
-    margin-bottom: 20px;
+    max-width:100%;
+    padding: 20px 0;
   }
 
   .title {
-    font-size: 32px;
-    margin: 40px 0 24px;
+  //  font-size: 32px;
+   margin: 40px 0 24px;
   }
 
-  .item {
-    margin-bottom: 20px;
-    margin-right: 0;
-    width: 100%;
-    height: auto;
-    margin-left: 20px;
-    white-space: normal;
+  .item {width: 100%;
+   // margin-bottom: 20px;
+  //  margin-right: 0;
+  //  
+  //  height: auto;
+  //  margin-left: 20px;
+  //  white-space: normal;
   }
 
   .info {
-    width: 100%;
+   padding: 0 5%;
   }
+  .content .flex{flex-direction:column;}
 }
 
 /* 平板尺寸 */

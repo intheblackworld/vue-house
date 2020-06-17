@@ -6,20 +6,20 @@
       <div class="form">
         <div class="group">
           <div class="row">
-            <label>姓名<span>*</span></label>
-            <el-input v-model="form.name" placeholder></el-input>
+            <label for="el-name">姓名<span>*</span></label>
+            <el-input id="el-name" v-model="form.name" placeholder></el-input>
           </div>
           <div class="row">
-            <label>手機<span>*</span></label>
-            <el-input v-model="form.phone" placeholder></el-input>
+            <label for="el-phone">手機<span>*</span></label>
+            <el-input id="el-phone" v-model="form.phone" placeholder></el-input>
           </div>
           <!-- <div class="row">
             <label>E-mail</label>
             <el-input v-model="form.email" placeholder></el-input>
           </div> -->
           <div class="row">
-            <label>居住城市</label>
-            <el-select v-model="form.city" placeholder>
+            <label for="el-city">居住城市</label>
+            <el-select id="el-city" v-model="form.city" placeholder>
               <el-option
                 v-for="city in cityList"
                 :key="city.value"
@@ -29,8 +29,8 @@
             </el-select>
           </div>
           <div class="row">
-            <label>居住地區</label>
-            <el-select v-model="form.area" placeholder no-data-text="請先選擇居住城市">
+            <label for="el-area">居住地區</label>
+            <el-select id="el-area" v-model="form.area" placeholder no-data-text="請先選擇居住城市">
               <el-option
                 v-for="area in areaList"
                 :key="area.value"
@@ -280,8 +280,16 @@ export default {
   }
 
   .control {
-    margin-top: 60px;
+    .el-checkbox{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      margin:20px auto;
+    }
+  /*  margin-top: 60px;
     margin-bottom: 20px;
+    */
   }
 }
 
@@ -318,13 +326,14 @@ export default {
       display: none;
     }
     .order {
-      width: 95% !important;
+      width: 84%;
       margin: 0 auto;
       padding: 0;
     }
 
     .form {
       flex-direction: column;
+    margin-bottom: -12px ;
     }
 
     .group {
@@ -342,8 +351,12 @@ export default {
     }
 
     .control {
-      margin-top: 10px;
+    .el-checkbox{
+      margin:10px auto;
+    }
+     /* margin-top: 10px;
       margin-bottom: 10px;
+      */
     }
   }
 }
