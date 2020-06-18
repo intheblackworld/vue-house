@@ -66,7 +66,7 @@ export default {
 .title {text-align: left;
   font-size: 36px;
   line-height: 36px;
-  margin: 20px 0  30px 0 ;
+  margin: 20px 0  10px 0 ;
   font-family: 'Noto Serif TC', serif;
   font-weight: bold;
   color: $house_title_color;
@@ -87,7 +87,6 @@ export default {
   display: flex;
   align-items: center;
   white-space: nowrap;
-
   &:nth-of-type(even) {
   //  margin-right: 0;
   }
@@ -100,6 +99,10 @@ export default {
     white-space: nowrap;
   }
 
+&:nth-child(2){
+  border-top: 0px solid #ccc;
+   .label{display: none;}
+}
   .desc {
     font-size: 15px;
     text-align: left;
