@@ -131,7 +131,7 @@
         <div
           @click="setIndex(index)"
           :class="`indigator ${slideList[slideIndex].contentIndex === index ? 'active' : ''}`"
-          v-for="index in [0, 1, 2, 3, 4, 5]"
+          v-for="index in [0, 1, 2]"
           :key="`indigator-1-${index}`"
         ></div>
       </div>
