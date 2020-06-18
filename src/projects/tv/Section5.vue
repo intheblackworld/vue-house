@@ -410,11 +410,16 @@ export default {
         },
         {
           src: require('./s5/2.jpg'),
-          contentIndex: 1,
+          contentIndex: 0,
           subtitle: '從台北的安杰、兩岸的安杰<br />到國際的安杰',
         },
         {
           src: require('./s5/3.jpg'),
+          contentIndex: 1,
+          subtitle: '從台北的安杰、兩岸的安杰<br />到國際的安杰',
+        },
+        {
+          src: require('./s5/4.jpg'),
           contentIndex: 2,
           subtitle: '從台北的安杰、兩岸的安杰<br />到國際的安杰',
         },

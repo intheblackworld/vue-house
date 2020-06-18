@@ -405,12 +405,12 @@ export default {
           subtitle: '如果愛一個人，你要帶她去<br />看看THE VIEW好在哪裡',
         },
         {
-          src: require('./s2/3-1.jpg'),
+          src: require('./s2/3-2.jpg'),
           contentIndex: 2,
           subtitle: '全國日運量200萬人次前5大站<br />亮點在這裡！',
         },
         {
-          src: require('./s2/3-2.jpg'),
+          src: require('./s2/3-1.jpg'),
           contentIndex: 2,
           subtitle: '全國日運量200萬人次前5大站<br />亮點在這裡！',
         },
