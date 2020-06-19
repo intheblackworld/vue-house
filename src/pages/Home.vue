@@ -23,31 +23,31 @@
         id="section2"
         class="section"
       >
-        <Section2 />
+        <Section2 :show="indigatorIndex === 1"/>
       </div>
       <div
         id="section3"
         class="section"
       >
-        <Section3 />
+        <Section3 :show="indigatorIndex === 2" />
       </div>
       <div
         id="section4"
         class="section"
       >
-        <Section4 />
+        <Section4 :show="indigatorIndex === 3" />
       </div>
       <div
         id="section5"
         class="section"
       >
-        <Section5 />
+        <Section5 :show="indigatorIndex === 4" />
       </div>
       <div
         id="section6"
         class="section"
       >
-        <Section6 />
+        <Section6 :show="indigatorIndex === 5" />
       </div>
       <ContactSection class="section" />
     </full-page>

@@ -12,6 +12,7 @@
         @mouseover="stopSwipe" @mouseleave="startSwipe"
       >
         <swiper
+          v-if="show"
           :options="swiperOption"
           ref="mySwiper"
           class="slides"
@@ -59,6 +60,7 @@
       </div>
       <div v-if="isMobile" @mouseover="stopSwipe" @mouseleave="startSwipe">
         <swiper
+          v-if="show"
           :options="swiperOption"
           ref="mySwiper"
           class="slides"
@@ -357,6 +359,8 @@ export default {
     swiper,
     swiperSlide,
   },
+
+  props: ['show'],
   data() {
     return {
       isMobile,
