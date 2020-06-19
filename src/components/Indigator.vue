@@ -16,7 +16,7 @@
     </div>
     <div
       :class="`contact-indigator`"
-      v-scroll-to="{ element: `#section11` }"
+      v-scroll-to="{ element: `#contact` }"
       @click="setIndigator(info.indigatorLength)"
     ><img src="@/projects/fs/all/contact-indigator.png" alt=""></div>
   </div>

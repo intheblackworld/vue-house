@@ -114,6 +114,7 @@
   z-index: 3;
   background: #0e585b url('./s6/bgimg.png') fixed;
   background-size: cover;
+  margin: 0 0 size(-200) 0;
 }
 .box {
   position: absolute;
@@ -121,7 +122,7 @@
 .box1 {
   background: #fff;
   top: size(0);
-  left: 0;
+  right: 0;
   width: 100%;
   height: size(1080);
 }

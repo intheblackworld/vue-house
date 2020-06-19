@@ -34,7 +34,7 @@
     <div class="section" id="section10">
       <Section10 />
     </div>
-    <ContactSection class="section" id="section11" />
+    <ContactSection class="section" id="contact" />
     <MobileNav />
   </div>
 </template>
