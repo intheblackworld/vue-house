@@ -390,6 +390,7 @@ export default {
     show(val) {
       if (val) {
         this.slideIndex = 0
+        this.swiper.slideTo(1, 1000, false)
       }
     },
   },
