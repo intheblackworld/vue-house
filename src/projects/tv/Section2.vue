@@ -63,7 +63,9 @@
         v-if="isMobile"
         @mouseover="stopSwipe"
         @mouseleave="startSwipe"
+         
       >
+      <div class="slides_box">
         <swiper
           v-show="show"
           :options="swiperOption"
@@ -105,6 +107,7 @@
             <div v-html="slide.name"></div>
           </swiper-slide>
         </swiper>
+          </div>
         <!-- <div
           class="slides relative"
           data-aos="fade"
@@ -145,6 +148,24 @@
     </div>
   </div>
 </template>
+<style lang="scss">
+.slides {
+  opacity: 0;
+    animation: op .3s 0s   forwards;
+}
+
+@keyframes op {
+    to {
+  opacity: 1;
+    }
+}
+
+@media screen and (max-width: 767px) {
+.slides_box{ width: 100vw;
+  height: 80vw;
+}
+}
+</style>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .bg {
@@ -278,7 +299,6 @@
       margin-right: 0;
     }
   }
-
   .slides {
     width: 100vw;
   }

@@ -76,6 +76,8 @@
         </div>
       </div>
       <div v-if="isMobile" @mouseover="stopSwipe" @mouseleave="startSwipe">
+        
+      <div class="slides_box">
         <swiper
           v-show="show"
           :options="swiperOption"
@@ -117,6 +119,7 @@
             <div v-html="slide.name"></div>
           </swiper-slide>
         </swiper>
+          </div>
         <div class="content">
           <h3
             class="title"
@@ -183,6 +186,7 @@
 .slides {
   width: size(890);
 }
+
 
 .content {
   width: size(438);
