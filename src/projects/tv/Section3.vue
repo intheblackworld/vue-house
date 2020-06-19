@@ -9,7 +9,8 @@
       <div
         v-if="!isMobile"
         class="container flex-ac flex-jb relative right"
-        @mouseover="stopSwipe" @mouseleave="startSwipe"
+        @mouseover="stopSwipe"
+        @mouseleave="startSwipe"
       >
         <div class="content">
           <h3
@@ -74,7 +75,11 @@
           </swiper-slide>
         </swiper>
       </div>
-      <div v-if="isMobile" @mouseover="stopSwipe" @mouseleave="startSwipe">
+      <div
+        v-if="isMobile"
+        @mouseover="stopSwipe"
+        @mouseleave="startSwipe"
+      >
         <swiper
           :options="swiperOption"
           ref="mySwiper"
@@ -141,8 +146,8 @@
       <div class="indigator-list flex-c">
         <div
           @click="setIndex(index)"
-          :class="`indigator ${slideList[slideIndex].contentIndex === index ? 'active' : ''}`"
-          v-for="index in [0, 1, 2]"
+          :class="`indigator ${slideIndex === index ? 'active' : ''}`"
+          v-for="(item, index) in slideList"
           :key="`indigator-1-${index}`"
         ></div>
       </div>
@@ -494,13 +499,8 @@ export default {
 
   methods: {
     setIndex(index) {
-      if (index === 2) {
-        this.slideIndex = index * 2 + 1
-        this.swiper.slideTo(index * 2 + 1, 1000, false)
-      } else {
-        this.slideIndex = index * 2
-        this.swiper.slideTo(index * 2, 1000, false)
-      }
+      this.slideIndex = index
+      this.swiper.slideTo(index, 1000, false)
     },
 
     slideChanged(e) {

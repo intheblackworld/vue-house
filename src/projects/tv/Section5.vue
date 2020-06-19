@@ -141,8 +141,8 @@
       <div class="indigator-list flex-c">
         <div
           @click="setIndex(index)"
-          :class="`indigator ${slideList[slideIndex].contentIndex === index ? 'active' : ''}`"
-          v-for="index in [0, 1, 2]"
+          :class="`indigator ${slideIndex === index ? 'active' : ''}`"
+          v-for="(item, index) in slideList"
           :key="`indigator-1-${index}`"
         ></div>
       </div>
@@ -456,13 +456,8 @@ export default {
 
   methods: {
     setIndex(index) {
-      if (index === 2) {
-        this.slideIndex = index
-        this.swiper.slideTo(index, 1000, false)
-      } else {
-        this.slideIndex = index
-        this.swiper.slideTo(index, 1000, false)
-      }
+      this.slideIndex = index
+      this.swiper.slideTo(index, 1000, false)
     },
 
     slideChanged(e) {
