@@ -1,7 +1,7 @@
 export default [
   { name: '首頁', imgSrc: '', subTitle: '', section: 'section1', svgSrc: '' },
   { name: '商圈正核心', imgSrc: '', subTitle: '', section: 'section2', svgSrc: '' },
-  { name: '2-3房雙捷校園宅', imgSrc: '', subTitle: '', section: 'section11', svgSrc: '' },
+ // { name: '2-3房雙捷校園宅', imgSrc: '', subTitle: '', section: 'section11', svgSrc: '' },
   { name: '千坪大公園', imgSrc: '', subTitle: '', section: 'section3', svgSrc: '', offset: -100 },
   { name: '萬坪綠水畔', imgSrc: '', subTitle: '', section: 'section4', svgSrc: '' },
   { name: '最大Costco', imgSrc: '', subTitle: '', section: 'section5', svgSrc: '' },

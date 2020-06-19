@@ -13,7 +13,7 @@
           data-aos="fade-left"
           data-aos-delay="300"
         ></div>
-        <div class="relative">
+        <div class="relative z">
           <img
             v-lazy="require('./s11/鳥.png')"
             alt="大寮站"
@@ -111,10 +111,9 @@
   overflow: hidden;
   position: relative;
   height: size(1080);
-  z-index: 3;
+  //z-index: 3;
   background: #0e585b url('./s6/bgimg.png') fixed;
   background-size: cover;
-  margin: 0 0 size(-200) 0;
 }
 .box {
   position: absolute;
@@ -124,7 +123,7 @@
   top: size(0);
   right: 0;
   width: 100%;
-  height: size(1080);
+  height: size(900);
 }
 .box2 {
   background: #20969b;
@@ -132,9 +131,10 @@
   left: size(37);
   width: size(1513);
   height: size(980);
-  z-index: 2;
+  z-index: 4;
   position: absolute;
 }
+.z{z-index: 4;}
 .box3 {
   background: #fff;
   top: 0;
@@ -225,51 +225,45 @@
   .block {
     width: 100%;
     border-top: 1px solid rgba(255, 255, 255, 0.5);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     padding: 8px 0;
     cursor: pointer;
-
-    .black {
-      height: size(166);
-      background: rgba(0, 0, 0, 0.45);
+    font-size: size(22);
+      line-height: 2;
+      letter-spacing:0.2em;
       color: #fff;
-      font-size: size(40);
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.2;
-      letter-spacing: normal;
+&:last-child{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);}
+    .black {
+      height: size(150);
+      background: rgba(0, 0, 0, 0.45);
       text-align: center;
       color: #ffffff;
+      transition:background 0.3s;
     }
 
     .white {
-      height: size(166);
+      height: size(150);
       background: rgba(0, 0, 0, 0);
-      color: #ccc;
-      font-size: size(40);
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.2;
-      letter-spacing: normal;
       text-align: center;
+      transition:background 0.3s;
     }
   }
 }
 
 .title {
   width: 100%;
-  height: 70px;
-  font-size: size(52);
+  height: size(150);
+  display: flex;
+  align-items: center;justify-content: center;
+  font-size: size(40);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
   letter-spacing: normal;
-  text-align: justify;
+  text-align: center;
   color: #ffe09f;
-  margin-bottom: size(70);
+  //margin-bottom: size(70);
 }
 
 .video {

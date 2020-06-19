@@ -1,13 +1,21 @@
 <template>
   <div class="indigator">
     <div class="list-indigator">
-      <div
+    <div
         :class="`dot ${index == indigatorIndex ? 'active' : '' }`"
         v-for="index in info.indigatorLength"
         :key="`indigator-${index}`"
         v-scroll-to="{ element: `#section${index}` }"
         @click="setIndigator(index)"
-      ></div>
+      ></div> 
+
+<!-- 
+ <div
+             :class="`dot ${index === indigatorIndex ? 'active' : '' }`"
+        v-for="(nav, index) in navList"
+        :key="`indigator-${index + 1}`"
+        @click="setIndigator(index + 1)"
+      ><span>{{nav.name}}</span></div> -->
       <!-- <div
         :class="`dot ${(info.indigatorLength + 1) === indigatorIndex ? 'active' : '' }`"
         v-scroll-to="{ element: `#contact` }"

@@ -161,7 +161,7 @@
 @import '@/assets/style/function.scss';
 .bg {
   position: relative;
-  overflow: hidden;
+  //overflow: hidden;
   position: relative;
   height: calc(100vw * 1750 / 1920);
   z-index: 3;
@@ -180,10 +180,10 @@
     width: 52%;
     height: size(525);}
 .box3{background: #fff;
-    top: 0;
+    top: size(-200);
     right: 0;
     width: 50%;
-    height: size(590);}
+    height: size(790);}
 .bg-img {
   width: 100vw;
   height: auto;
