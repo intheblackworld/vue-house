@@ -34,7 +34,7 @@
           </ul>
         </div>
         <swiper
-          v-if="show"
+          v-show="show"
           :options="swiperOption"
           ref="mySwiper"
           class="slides"
@@ -77,7 +77,7 @@
       </div>
       <div v-if="isMobile" @mouseover="stopSwipe" @mouseleave="startSwipe">
         <swiper
-          v-if="show"
+          v-show="show"
           :options="swiperOption"
           ref="mySwiper"
           class="slides"
@@ -380,6 +380,13 @@ export default {
   },
 
   props: ['show'],
+  watch: {
+    show(val) {
+      if (val) {
+        this.slideIndex = 0
+      }
+    },
+  },
   data() {
     return {
       isMobile,
