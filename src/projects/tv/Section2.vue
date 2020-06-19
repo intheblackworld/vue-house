@@ -453,7 +453,7 @@ export default {
   methods: {
     setIndex(index) {
       this.slideIndex = index
-      this.swiper.slideTo(index, 1000, false)
+      this.swiper.slideTo(index + 1, 1000, false)
     },
 
     slideChanged(e) {
@@ -461,7 +461,7 @@ export default {
       if (swiper.isEnd) {
         this.slideIndex = 0
       } else if (swiper.isBeginning) {
-        this.slideIndex = swiper.slides.length - 3
+        this.slideIndex = 1
       } else {
         this.slideIndex = swiper.activeIndex - 1
       }
