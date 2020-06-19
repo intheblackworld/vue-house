@@ -1,5 +1,5 @@
 <?php
-    $case_name = "心世界";
+    $case_name = "樺輝心世界";
     $case_code = 'ssj';
 
     $name         = isset($_POST['name']) ? $_POST['name'] : '';
