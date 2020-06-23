@@ -24,9 +24,9 @@
 
 <style lang="scss" scoped>
 .indigator {
-    font-size:16px;
+  font-size: 16px;
   position: fixed;
-  right:0.8em;
+  right: 0.8em;
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
@@ -37,55 +37,61 @@
   }
 
   .dot {
-    width:2em;
-    height:2em;
-    margin:0;
+    width: 2em;
+    height: 2em;
+    margin: 0;
     background: transparent;
     cursor: pointer;
-    border-radius: 999px;overflow: hidden;
-    &::before{
-      content:"";
+    border-radius: 999px;
+    overflow: hidden;
+    &::before {
+      content: '';
       display: block;
-    width:0.7em;
-    height:0.7em;
-    border: 1px solid #fff;
-    border-radius: 999px;margin: calc(50% - 0.3em) auto 0 auto;
-    transition: all 0.3s;
-      background:#bf1b12;
+      width: 0.7em;
+      height: 0.7em;
+      border: 1px solid #fff;
+      border-radius: 999px;
+      margin: calc(50% - 0.3em) auto 0 auto;
+      transition: all 0.3s;
+      background: rgba(0, 0, 0, 0.4);
+      // background: #fff;
     }
     &.active {
-    &::before{
-      background: #000}
+      &::before {
+        background: #000;
+      }
     }
-    &:hover::before{
-      background: #900;
+    &:hover::before {
+      background: #ffd200;
     }
   }
 
   .contact-indigator {
-    background:#bf1b12;
+    background: rgba(0, 0, 0, 0.4);
     margin: 1em auto 1em auto;
     padding: 0.4em;
-    color:#fff;
+    color: #ffd200;
     border-radius: 20px;
     cursor: pointer;
     line-height: 1.5;
-    width:2em;transition: all 0.3s;
-    &:hover{
-    background:#900;
+    width: 2em;
+    transition: all 0.3s;
+    &:hover {
+      color: #fff;
     }
   }
 }
-@media screen and (max-width: 767px){
-  
-.indigator {
-  right: -3.5vw;
-.contact-indigator{display:none;} 
-.dot {
-    width:2em;
-    height:3em;
+@media screen and (max-width: 767px) {
+  .indigator {
+    right: -3.5vw;
+    .contact-indigator {
+      display: none;
     }
-}
+    .dot {
+      width: 2em;
+      height: 3em;
+    }
+  }
 }
 </style>
 
@@ -108,7 +114,7 @@ export default {
     viewIndex(val) {
       // console.log(val)
       this.indigatorIndex = val
-    }
+    },
   },
 
   methods: {

@@ -51,6 +51,12 @@
     >
       <Section7 />
     </div>
+    <div
+      class="section"
+      id="section8"
+    >
+      <Section8 />
+    </div>
     <!-- </full-page> -->
     <ContactSection
       class="section"
@@ -81,13 +87,14 @@ import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 
-import Section1 from '@/projects/yu/Section1.vue'
-import Section2 from '@/projects/yu/Section2.vue'
-import Section3 from '@/projects/yu/Section3.vue'
-import Section4 from '@/projects/yu/Section4.vue'
-import Section5 from '@/projects/yu/Section5.vue'
-import Section6 from '@/projects/yu/Section6.vue'
-import Section7 from '@/projects/yu/Section7.vue'
+import Section1 from '@/projects/tsht/Section1.vue'
+import Section2 from '@/projects/tsht/Section2.vue'
+import Section3 from '@/projects/tsht/Section3.vue'
+import Section4 from '@/projects/tsht/Section4.vue'
+import Section5 from '@/projects/tsht/Section5.vue'
+import Section6 from '@/projects/tsht/Section6.vue'
+import Section7 from '@/projects/tsht/Section7.vue'
+import Section8 from '@/projects/tsht/Section8.vue'
 
 export default {
   name: 'home',
@@ -105,6 +112,7 @@ export default {
     Section5,
     Section6,
     Section7,
+    Section8,
   },
 
   data() {
@@ -170,7 +178,7 @@ export default {
           navIndex = n
         }
       }
-      console.log(navIndex)
+      // console.log(navIndex)
       this.viewIndex = navIndex + 1
     },
 

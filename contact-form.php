@@ -1,6 +1,6 @@
 <?php
-    $case_name = "詠喆";
-    $case_code = 'yu';
+    $case_name = "聯上海棠";
+    $case_code = 'tsht';
 
     $name         = isset($_POST['name']) ? $_POST['name'] : '';
     $phone        = isset($_POST['phone']) ? $_POST['phone'] : '';
