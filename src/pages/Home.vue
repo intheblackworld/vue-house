@@ -57,6 +57,18 @@
     >
       <Section8 />
     </div>
+    <div
+      class="section"
+      id="section9"
+    >
+      <Section9 />
+    </div>
+    <div
+      class="section"
+      id="section10"
+    >
+      <Section10 />
+    </div>
     <!-- </full-page> -->
     <ContactSection
       class="section"
@@ -87,14 +99,16 @@ import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 
-import Section1 from '@/projects/tsht/Section1.vue'
-import Section2 from '@/projects/tsht/Section2.vue'
-import Section3 from '@/projects/tsht/Section3.vue'
-import Section4 from '@/projects/tsht/Section4.vue'
-import Section5 from '@/projects/tsht/Section5.vue'
-import Section6 from '@/projects/tsht/Section6.vue'
-import Section7 from '@/projects/tsht/Section7.vue'
-import Section8 from '@/projects/tsht/Section8.vue'
+import Section1 from '@/projects/lsht/Section1.vue'
+import Section2 from '@/projects/lsht/Section2.vue'
+import Section3 from '@/projects/lsht/Section3.vue'
+import Section4 from '@/projects/lsht/Section4.vue'
+import Section5 from '@/projects/lsht/Section5.vue'
+import Section6 from '@/projects/lsht/Section6.vue'
+import Section7 from '@/projects/lsht/Section7.vue'
+import Section8 from '@/projects/lsht/Section8.vue'
+import Section9 from '@/projects/lsht/Section9.vue'
+import Section10 from '@/projects/lsht/Section10.vue'
 
 export default {
   name: 'home',
@@ -113,6 +127,8 @@ export default {
     Section6,
     Section7,
     Section8,
+    Section9,
+    Section10,
   },
 
   data() {

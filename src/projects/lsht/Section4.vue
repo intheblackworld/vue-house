@@ -14,34 +14,37 @@
       class="slide-container absolute"
       @slideChangeTransitionEnd="slideChanged1"
     >
-      <transition-group
-        name="slide-fade"
-        mode="out-in"
-      >
-        <swiper-slide
-          v-for="(slide, index) in slideList1"
-          v-show="slideIndex1 === index"
-          :index="index"
-          :key="slide.desc + index"
-          class="absolute"
+
+      <div class="slide-content absolute">
+        <transition-group
+          name="slide-fade"
+          mode="out-in"
         >
-          <div class="slide-content absolute">
-            <h3
-              class="item-title"
-              v-html="slide.title"
-            ></h3>
-            <h3
-              class="item-subtitle"
-              v-html="slide.subtitle"
-            ></h3>
-            <h3
-              class="item-desc"
-              v-html="slide.desc"
-            ></h3>
+          <swiper-slide
+            v-for="(slide, index) in slideList1"
+            v-show="slideIndex1 === index"
+            :index="index"
+            :key="slide.desc + index"
+            class="absolute"
+          >
+            <div class="item">
+              <h3
+                class="item-title"
+                v-html="slide.title"
+              ></h3>
+              <h3
+                class="item-subtitle"
+                v-html="slide.subtitle"
+              ></h3>
+              <h3
+                class="item-desc"
+                v-html="slide.desc"
+              ></h3>
+            </div>
             <div class="border"></div>
-          </div>
-        </swiper-slide>
-      </transition-group>
+          </swiper-slide>
+        </transition-group>
+      </div>
     </swiper>
     <swiper
       :options="swiperOption"
@@ -59,7 +62,7 @@
       >
         <img
           :src="slide.img"
-          :class="`item-img absolute`"
+          :class="`item-img absolute ${slideIndex2 === index ? 'active' : ''}`"
         />
       </swiper-slide>
     </swiper>
@@ -119,7 +122,6 @@
   height: size(294);
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 25px;
-  padding: size(30) size(35) 0 size(70);
 
   .border {
     width: 100%;
@@ -130,6 +132,10 @@
     border-radius: 25px;
     border: 1px solid #fff;
     transform: translate(-10px, 10px);
+  }
+
+  .item {
+    padding: size(30) size(35) 0 size(70);
   }
 }
 
@@ -183,6 +189,11 @@
   width: size(566);
   left: size(188);
   top: size(102);
+  opacity: 0;
+  transition: all .3s;
+  &.active {
+    opacity: 1;
+  }
 }
 
 // begin
@@ -321,31 +332,33 @@ export default {
           delay: 4000,
           disableOnInteraction: true,
         },
-        loop: true,
+        loop: false,
         effect: 'fade',
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         },
       },
-      slideList2: isMobile ? [
-        {
-          img: require('./mo/4/1.jpg'),
-        },
-        {
-          img: require('./mo/4/2.jpg'),
-        },
-        {
-          img: require('./mo/4/3.jpg'),
-        },
-      ] : [
-        {
-          img: require('./s4/img1.png'),
-        },
-        {
-          img: require('./s4/img1.png'),
-        },
-      ],
+      slideList2: isMobile
+        ? [
+            {
+              img: require('./mo/4/1.jpg'),
+            },
+            {
+              img: require('./mo/4/2.jpg'),
+            },
+            {
+              img: require('./mo/4/3.jpg'),
+            },
+          ]
+        : [
+            {
+              img: require('./s4/img1.png'),
+            },
+            {
+              img: require('./s4/img1.png'),
+            },
+          ],
       slideList1: [
         {
           title: '臺南<span>最適合移居</span>的地方-市政新灣區',

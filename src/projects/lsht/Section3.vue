@@ -2,84 +2,71 @@
   <div class="relative">
     <div v-if="!isMobile">
       <img
-        src="./s8/8pic.png"
-        :class="`item-img absolute`"
-      />
-      <div class="content absolute">
-        <h3 class="subtitle">【城堡，要用最好的打造】</h3>
-        <h3 class="title">日本制震第一品牌 住友橡膠GRAST制震</h3>
-        <h3 class="desc">為了讓居住者更舒適、更愜意，聯上一心一意打造最頂級的建材，特別使用氣密窗，讓人可以寧靜地俯瞰最美的海景，層層保障結構物的安全，當地唯一使用制震器，並申請結構外審等等，卓越超越卓越，永遠追求更完美。</h3>
-        <div
-          class="dropdown"
-          data-aos="fade"
-          data-aos-delay="600"
+        src="./s3/bg.jpg"
+        alt=""
+        class="bg-img"
+      >
+      <swiper
+        :options="swiperOption"
+        ref="mySwiper"
+        data-aos="fade"
+        data-aos-delay="200"
+        class="slide-container absolute"
+        @slideChangeTransitionEnd="slideChanged"
+      >
+        <swiper-slide
+          v-for="(slide, index) in slideList"
+          :index="index"
+          :key="slide.img"
+          class="absolute"
         >
-          <div
-            :class="`item ${item.open ? 'open' : ''}`"
-            v-for="(item, index) in toggleList"
-            :key="item.title"
+          <img
+            :src="slide.img"
+            :class="`item-img absolute ${slideIndex === index ? 'active' : ''}`"
+          />
+        </swiper-slide>
+
+        <div class="slide-content absolute">
+          <transition-group
+            name="slide-fade"
+            mode="out-in"
           >
-              <!-- @click="toggle(index)" -->
-            <h3
-              class="head flex-jb flex-ac"
-            >
-              <div>{{item.title}}</div>
-              <img
-                v-if="!item.open"
-                src="./mo/plus.png"
-                alt
-                class="btn"
-              />
-              <img
-                v-if="item.open"
-                src="./mo/minus.png"
-                alt
-                class="btn"
-              />
-            </h3>
             <div
-              class="item-desc"
-              v-html="item.desc"
-            ></div>
-          </div>
+              v-show="slideIndex === index"
+              v-for="(slide, index) in slideList"
+              :key="slide.img +index + 'content'"
+            >
+              <h3
+                class="item-title"
+                v-html="slide.title"
+              ></h3>
+              <h3
+                class="item-subtitle"
+                v-html="slide.subtitle"
+              ></h3>
+              <h3
+                class="item-desc"
+                v-html="slide.desc"
+              ></h3>
+            </div>
+          </transition-group>
         </div>
-      </div>
-      <div class="item-border absolute"></div>
+      </swiper>
       <div class="flex animate-row">
         <img
-          src="./s8/wave.png"
+          src="./s3/wave.png"
           alt=""
           class="wave"
         >
         <img
-          src="./s8/wave.png"
-          alt=""
-          class="wave"
-        >
-      </div>
-      <div class="flex animate-row animate-row1">
-        <img
-          src="./s8/wave.png"
-          alt=""
-          class="wave"
-        >
-        <img
-          src="./s8/wave.png"
+          src="./s3/wave.png"
           alt=""
           class="wave"
         >
       </div>
       <div class="flex animate-row animate-row2">
-        <img
-          src="./s2/wave_l.png"
-          alt=""
-          class="wave"
-        >
-        <img
-          src="./s2/wave_l.png"
-          alt=""
-          class="wave"
-        >
+        <img src="./s2/wave_l.png" alt="" class="wave">
+        <img src="./s2/wave_l.png" alt="" class="wave">
       </div>
     </div>
     <div v-if="isMobile">
@@ -104,7 +91,7 @@
         >
           <img
             :src="slide.img"
-            :class="`item-img absolute`"
+            :class="`item-img absolute ${slideIndex === index ? 'active' : ''}`"
           />
         </swiper-slide>
       </swiper>
@@ -130,6 +117,7 @@
               class="item-desc"
               v-html="slide.desc"
             ></h3>
+            <img src="./mo/plus.png" alt="" class="add" @click="isDialog = true">
           </div>
         </transition-group>
       </div>
@@ -203,8 +191,21 @@
   // height: 100vh;
   overflow: hidden;
   position: relative;
-  height: size(850);
-  background: #fff;
+  height: 100vh;
+}
+
+.bg-img {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+
+  // &:nth-child(1) {
+  //   position: relative;
+  // }
 }
 
 .animate-row {
@@ -215,14 +216,11 @@
 
   img {
     width: 100%;
-    height: size(379);
+    height: size(413);
 
     &:nth-child(2) {
-      // margin-left: -0.1%;
+      margin-left: -0.1%;
     }
-  }
-  &.animate-row1 {
-    animation: moving 15s linear infinite;
   }
 
   &.animate-row2 {
@@ -236,116 +234,70 @@
   }
 }
 
-.content {
-  width: size(675);
-  left: size(270);
-  top: size(127);
-
-  .title {
-    font-size: size(38);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.42;
-    letter-spacing: normal;
-    text-align: left;
-    color: #595757;
-    white-space: nowrap;
-    transform: scaleX(0.95);
-    margin-bottom: size(20);
-  }
-
-  .subtitle {
-    font-size: size(24);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.42;
-    letter-spacing: normal;
-    text-align: left;
-    color: #595757;
-    transform: scaleX(0.95);
-    margin-bottom: size(25);
-  }
-
-  .desc {
-    font-size: 12px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.1;
-    letter-spacing: 0.12px;
-    text-align: left;
-    color: #595757;
-    transform: scaleX(0.95);
-  }
+.slide-container {
+  width: 100vw;
+  height: 100vh;
 }
 
-.dropdown {
-  margin-left: size(15);
-  .item {
-    width: 100%;
-    height: 38px;
-    overflow: hidden;
-    padding-left: 0;
-    padding-right: 0;
-    border-radius: 0;
-    margin-bottom: 3px;
-    transition: height 0.5s;
-    // cursor: pointer;
+.item-title {
+  font-size: size(41);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.27;
+  letter-spacing: normal;
+  text-align: left;
+  color: #595757;
+  transform: scaleX(0.95);
+  white-space: nowrap;
+  margin-bottom: size(30);
+}
 
-    &.open {
-      height: auto;
-    }
-  }
-  .head {
-    font-size: 20px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 38px;
-    letter-spacing: normal;
-    text-align: left;
-    color: #00a29a;
-  }
+.item-subtitle {
+  font-size: size(21);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 1.05px;
+  text-align: left;
+  color: #007eca;
+  transform: scaleX(0.95);
+  white-space: nowrap;
+  margin-bottom: size(15);
+}
 
-  .btn {
-    width: 22px;
-  }
+.item-desc {
+  font-size: size(12);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.1;
+  letter-spacing: 0.36px;
+  text-align: justify;
+  color: #595757;
+  transform: scaleX(0.95);
+}
 
-  .item-desc {
-    font-size: size(10);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2;
-    letter-spacing: 0.5px;
-    text-align: left;
-    color: #595757;
-    padding-bottom: 15px;
-  }
+.slide-content {
+  left: size(314);
+  top: size(52);
+  width: size(525);
 }
 
 .item-img {
   width: size(626);
-  right: size(192);
+  right: size(188);
   left: auto;
-  top: size(32);
+  top: 0;
   border-radius: 60% 40% 45% 55% / 50% 45% 55% 50%;
   overflow: hidden;
   animation: border-radius 8s ease infinite;
-}
-
-.item-border {
-  width: size(650);
-  height: size(650);
-  right: size(180);
-  left: auto;
-  top: size(32);
-  border-radius: 60% 40% 45% 55% / 50% 45% 55% 50%;
-  overflow: hidden;
-  animation: border-radius 20s ease infinite;
-  border: 1px solid #d0a100;
+  opacity: 0;
+  transition: all .3s;
+  &.active {
+    opacity: 1;
+  }
 }
 
 @keyframes border-radius {
@@ -525,66 +477,82 @@
 </style>
 <script>
 // @ is an alias to /src
-import { isMobile } from '@/utils'
+import { isMobile, isTablet } from '@/utils'
+import slider from '@/mixins/slider.js'
+import 'swiper/dist/css/swiper.css'
+
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
-  name: 'section8',
+  name: 'section3',
+  mixins: [slider],
+
+  components: {
+    swiper,
+    swiperSlide,
+  },
   data() {
     return {
       isMobile,
-      toggleIndex: 0,
-      toggleList: [
+      isDialog: false,
+      swiperOption: {
+        slidesPerView: isMobile ? 1 : 1,
+        spaceBetween: isTablet ? 20 : 30,
+        slidesPerColumn: isMobile ? 1 : 1,
+        allowSlidePrev: isMobile ? true : true,
+        allowSlideNext: isMobile ? true : true,
+        // centeredSlides: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        loop: false,
+        effect: 'fade',
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      },
+      slideList: [
         {
-          title: '隔震與制震的差別',
+          title: '億萬打造南臺灣的「市政新灣區」',
+          subtitle: '',
           desc:
-            '隔震建築與地面之間隔著一層特殊材料，藉由建物與地面隔離，進而達到近乎免除搖晃震動的效果。<br />制震則是在建物各樓層間加類似的吸震材料或裝置，將地震產生的能量吸收並轉換成其他的能量，進而舒緩地震發生當下，對建築物結構的破壞，及適度保護建築物內的生命與財產安全，降低建物內人員可能感到的不舒適與恐懼情況。',
-          open: true,
+            '「市政新灣區」是臺南市現階段發展的重點，近年臺南的重大建設幾乎集中在這裡，隨著政治、經濟、生活、觀光等建設的移轉，「市政新灣區」無疑是南臺灣最適合移居的地方，它不但有國際的遠景，更有地方的加持，和民間的持續投入，所以「市政新灣區」是南臺灣最閃亮的未來。',
+          img: require('./s3/img1.jpg'),
         },
         {
-          title: '制震可應用在各式各樣的建築構造',
+          title: '億萬打造南臺灣的「市政新灣區」',
+          subtitle: '「市政新灣區」─安平自由貿易港區，南臺灣的黃金灣區',
           desc:
-            '．大樓用制震壁─不僅超高層大樓，中小規模或既有大樓的修復工程也可以使用，GRAST可提升高層大樓舒適度。<br />．住宅用制震壁─MIRAIE能減輕對房屋損害。<br />．橋樑鋼纜用阻尼器─橋樑鋼纜用阻尼器能防止強風及地震造成的搖晃，使橋樑更加安全。',
-          open: false,
+            '安平港歷史風貌園區觀光發展以及漁光大橋落成通車，健康路成為安平港區與市中心間重要的活動軸線，凝聚該區域內部商業氛圍，國際遊憩碼頭、濱海遊憩園區、郵輪碼頭區等，形塑南臺灣的黃金灣區。安平港鄰近安平工業區、南部科學園區及臺南科工區；且雲嘉南地區是農漁產業重鎮，後續可透過示範區的連線運作，與周邊產業供應鏈整合，並與對岸相關產業發展跨境合作。目前安平港已與潛在業者接洽，涵蓋業別包括石化產品、非鐵金屬、體育休閒用品、空調設備、汽車零組件、農產品、中藥食材加工等農工產業。',
+          img: require('./s3/img2.jpg'),
         },
         {
-          title: '制震的優勢',
+          title: '億萬打造南臺灣的「市政新灣區」',
+          subtitle: '「市政新灣區」─漁光島灘岸旅遊區，開發國際渡假村',
           desc:
-            '．降低地震和風引起的搖晃提升使用者舒適度<br />．衰減重複的搖晃頻率，縮短振幅的時程．不須保養<br />．制震壁不佔面積，可增加使用空間',
-          open: false,
-        },
-        {
-          title: '安全是聯上的基礎  安心是聯上的本質',
-          desc:
-            '住友橡膠GRAST制震壁通過與實物同等大小之試驗確認有關阻尼器之各種性能，並與2012年3月取得有關阻尼器的性能、分析性之「建築技術性能證明」。<br />．大小地震和風引起的搖晃，皆有效．免除維修的困擾<br />．優越的耐候及耐久特性<br />．日本國寶級古蹟採用，榮獲日經雜誌肯定',
-          open: false,
+            '將以國際渡假村模式引入國際休閒住宿會議中心、濱海商店街、生態展示、海濱遊樂、休閒商業購物中心與海景旅館等。',
+          img: require('./s3/img3.jpg'),
         },
       ],
     }
   },
 
   methods: {
-    toggle(index) {
-      if (this.toggleList[index].open) {
-        this.toggleList[index].open = false
+    slideChanged(e) {
+      const swiper = this.$refs.mySwiper.swiper
+      if (swiper.isEnd) {
+        this.slideIndex = 0
       } else {
-        this.toggleList.forEach(item => (item.open = false))
-        this.toggleList[index].open = !this.toggleList[index].open
+        this.slideIndex = swiper.activeIndex - 1
       }
     },
   },
 
   created() {},
 
-  mounted() {
-    setInterval(() => {
-      if (this.toggleIndex >= this.toggleList.length - 1) {
-        this.toggleIndex = 0
-      } else {
-        this.toggleIndex = this.toggleIndex + 1
-      }
-      this.toggle(this.toggleIndex)
-    }, 5000)
-  },
+  mounted() {},
 
   computed: {},
 }

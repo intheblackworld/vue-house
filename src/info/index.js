@@ -7,7 +7,7 @@ export default {
   fbLink: 'https://www.facebook.com/',
   fbMessage: 'https://m.me/',
   caseName: '聯上海棠',
-  indigatorLength: 11,
+  indigatorLength: 10,
 
   houseInfos: [
     ['地址', '台南安平區健康路三段VS.國平路'],

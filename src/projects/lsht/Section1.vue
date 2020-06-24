@@ -1,0 +1,599 @@
+<template>
+  <div class="relative">
+    <div v-if="!isMobile">
+      <img
+        src="./s1/bg.jpg"
+        alt=""
+        class="bg-img"
+      >
+
+      <div class="flex animate-row">
+        <img
+          src="./s1/wave1.png"
+          alt=""
+          class="wave"
+        >
+        <img
+          src="./s1/wave1.png"
+          alt=""
+          class="wave"
+        >
+      </div>
+      <div class="flex animate-row animate-row2">
+        <img
+          src="./s1/wave2.png"
+          alt=""
+          class="wave"
+        >
+        <img
+          src="./s1/wave2.png"
+          alt=""
+          class="wave"
+        >
+      </div>
+      <div class="flex animate-row animate-row3">
+        <img
+          src="./s1/wave2.png"
+          alt=""
+          class="wave"
+        >
+        <img
+          src="./s1/wave2.png"
+          alt=""
+          class="wave"
+        >
+      </div>
+      <img
+        src="./s1/logo1.png"
+        alt=""
+        class="nav-logo absolute"
+      >
+      <img
+        src="./s1/logo.png"
+        alt=""
+        class="logo absolute"
+      >
+
+      <img
+        src="./s1/img.jpg"
+        class="item-img absolute"
+      />
+
+      <div class="item-border absolute"></div>
+
+      <div class="slide-content absolute">
+        <h3 class="subtitle">
+          大海傳說
+        </h3>
+        <h3 class="title">聽美人魚唱歌</h3>
+        <div class="desc">
+          <h3 class="words">
+            傳說在海裡有一座城堡，美人魚住在裡面，日夜歌唱著，<br />
+            一期一會，聽見美人魚唱歌，<br />
+            看見她那宛如海棠盛開的魚尾，隨著日出日落搖擺著，<br />
+            這樣的傳說，不必等待珍珠的眼淚，<br />
+            只要傳說價就可以擁有…….<br /><br />
+            制震景觀名宅<br />
+            上市上櫃品牌<br />
+            國際海灣地段<br />
+            時尚優質建材<br /><br />
+            因為擁有，讓生活，不再是傳說<br />
+            陸地上的夢想家，終於住在海洋旁的飯店宅<br /><br /><br /><br />
+            傳說在海裡有一座城堡，美人魚住在裡面，日夜歌唱著，<br />
+            一期一會，聽見美人魚唱歌，<br />
+            看見她那宛如海棠盛開的魚尾，隨著日出日落搖擺著，<br />
+            這樣的傳說，不必等待珍珠的眼淚，<br />
+            只要傳說價就可以擁有…….<br /><br />
+            制震景觀名宅<br />
+            上市上櫃品牌<br />
+            國際海灣地段<br />
+            時尚優質建材<br /><br />
+            因為擁有，讓生活，不再是傳說<br />
+            陸地上的夢想家，終於住在海洋旁的飯店宅<br /><br /><br /><br />
+          </h3>
+          <img
+            src="./s1/imgs.png"
+            alt=""
+            class="mask"
+          >
+        </div>
+      </div>
+    </div>
+    <div v-if="isMobile">
+      <img
+        src="./s1/bg.jpg"
+        alt=""
+        class="bg-img"
+      >
+
+      <div class="flex animate-row">
+        <img
+          src="./s1/wave1.png"
+          alt=""
+          class="wave"
+        >
+        <img
+          src="./s1/wave1.png"
+          alt=""
+          class="wave"
+        >
+        <img
+          src="./s1/wave1.png"
+          alt=""
+          class="wave"
+        >
+        <img
+          src="./s1/wave1.png"
+          alt=""
+          class="wave"
+        >
+        <img
+          src="./s1/wave1.png"
+          alt=""
+          class="wave"
+        >
+        <img
+          src="./s1/wave1.png"
+          alt=""
+          class="wave"
+        >
+      </div>
+      <div class="flex animate-row animate-row2">
+        <img
+          src="./s1/wave2.png"
+          alt=""
+          class="wave"
+        >
+        <img
+          src="./s1/wave2.png"
+          alt=""
+          class="wave"
+        >
+        <img
+          src="./s1/wave2.png"
+          alt=""
+          class="wave"
+        >
+        <img
+          src="./s1/wave2.png"
+          alt=""
+          class="wave"
+        >
+        <img
+          src="./s1/wave2.png"
+          alt=""
+          class="wave"
+        >
+        <img
+          src="./s1/wave2.png"
+          alt=""
+          class="wave"
+        >
+      </div>
+      <div class="flex animate-row animate-row3">
+        <img
+          src="./s1/wave2.png"
+          alt=""
+          class="wave"
+        >
+        <img
+          src="./s1/wave2.png"
+          alt=""
+          class="wave"
+        >
+        <img
+          src="./s1/wave2.png"
+          alt=""
+          class="wave"
+        >
+        <img
+          src="./s1/wave2.png"
+          alt=""
+          class="wave"
+        >
+        <img
+          src="./s1/wave2.png"
+          alt=""
+          class="wave"
+        >
+        <img
+          src="./s1/wave2.png"
+          alt=""
+          class="wave"
+        >
+      </div>
+
+      <img
+        src="./s1/logo1.png"
+        alt=""
+        class="nav-logo absolute"
+      >
+      <img
+        src="./s1/logo.png"
+        alt=""
+        class="logo absolute"
+      >
+
+      <img
+        src="./mo/1/img.jpg"
+        class="item-img absolute"
+      />
+      <div class="item-border absolute"></div>
+
+      <div class="slide-content absolute">
+        <h3 class="subtitle">
+          大海傳說
+        </h3>
+        <h3 class="title">聽美人魚唱歌</h3>
+        <div class="desc">
+          <h3 class="words">
+            傳說在海裡有一座城堡，美人魚住在裡面，日夜歌唱著，<br />
+            一期一會，聽見美人魚唱歌，<br />
+            看見她那宛如海棠盛開的魚尾，隨著日出日落搖擺著，<br />
+            這樣的傳說，不必等待珍珠的眼淚，<br />
+            只要傳說價就可以擁有…….<br /><br />
+            制震景觀名宅<br />
+            上市上櫃品牌<br />
+            國際海灣地段<br />
+            時尚優質建材<br /><br />
+            因為擁有，讓生活，不再是傳說<br />
+            陸地上的夢想家，終於住在海洋旁的飯店宅<br /><br /><br /><br />
+            傳說在海裡有一座城堡，美人魚住在裡面，日夜歌唱著，<br />
+            一期一會，聽見美人魚唱歌，<br />
+            看見她那宛如海棠盛開的魚尾，隨著日出日落搖擺著，<br />
+            這樣的傳說，不必等待珍珠的眼淚，<br />
+            只要傳說價就可以擁有…….<br /><br />
+            制震景觀名宅<br />
+            上市上櫃品牌<br />
+            國際海灣地段<br />
+            時尚優質建材<br /><br />
+            因為擁有，讓生活，不再是傳說<br />
+            陸地上的夢想家，終於住在海洋旁的飯店宅<br /><br /><br /><br />
+          </h3>
+          <img
+            src="./mo/1/imgs.png"
+            alt=""
+            class="mask"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<style lang="scss" scoped>
+@import '@/assets/style/function.scss';
+.relative {
+  // height: 100vh;
+  // overflow: hidden;
+  position: relative;
+  height: 100vh;
+}
+
+.bg-img {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.animate-row {
+  width: 200vw;
+  animation: moving 30s linear infinite;
+  position: absolute;
+  // bottom: size(-200);
+  top: -33vh;
+
+  img {
+    width: 50%;
+    height: auto;
+    // height: size(413);
+
+    &:nth-child(2) {
+      margin-left: -0.03%;
+    }
+  }
+
+  &.animate-row2 {
+    // bottom: size(100);
+    animation: moving 20s linear infinite;
+
+    // img {
+    //   height: size(79);
+    // }
+    // animation-delay: 5s;
+  }
+
+  &.animate-row3 {
+    animation: moving 25s linear infinite;
+  }
+}
+
+.slide-content {
+  width: size(758);
+  height: size(884);
+  right: size(188);
+  left: auto;
+  top: 0;
+  overflow: hidden;
+  border-radius: 60% 40% 45% 55% / 50% 45% 55% 50%;
+  overflow: hidden;
+  animation: border-radius 8s ease infinite;
+  padding-top: size(176);
+}
+
+.item-img {
+  width: size(758);
+  height: size(884);
+  right: size(188);
+  left: auto;
+  top: 0;
+  border-radius: 60% 40% 45% 55% / 50% 45% 55% 50%;
+  overflow: hidden;
+  animation: border-radius 8s ease infinite;
+}
+
+.item-border {
+  width: size(788);
+  height: size(904);
+  right: size(180);
+  left: auto;
+  top: 0;
+  border-radius: 60% 40% 45% 55% / 50% 45% 55% 50%;
+  overflow: hidden;
+  animation: border-radius 20s ease infinite;
+  border: 1px solid #d0a100;
+}
+
+.title {
+  font-size: size(44);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.23;
+  letter-spacing: 6.16px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.subtitle {
+  font-size: size(24);
+  letter-spacing: 3.36px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.23;
+  letter-spacing: 6.16px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.desc {
+  font-size: size(14);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  width: size(758);
+  height: size(242);
+  position: relative;
+  overflow: hidden;
+
+  .mask {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+  }
+
+  .words {
+    animation: scroll-top 30s linear infinite;
+  }
+}
+
+.nav-logo {
+  width: size(101);
+  top: size(30);
+  left: size(52);
+}
+
+.logo {
+  width: size(190);
+  top: size(278);
+  left: size(378);
+}
+
+@keyframes scroll-top {
+  0% {
+    margin-top: 0%;
+  }
+
+  50% {
+    border-radius: 40% 55% 60% 45% / 45% 50% 50% 55%;
+  }
+
+  100% {
+    margin-top: -50%;
+  }
+}
+
+@keyframes border-radius {
+  0% {
+    border-radius: 60% 40% 45% 55% / 50% 45% 55% 50%;
+  }
+
+  50% {
+    border-radius: 40% 55% 60% 45% / 45% 50% 50% 55%;
+  }
+
+  100% {
+    border-radius: 60% 40% 45% 55% / 50% 45% 55% 50%;
+  }
+}
+
+@keyframes moving {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0) scaleY(1);
+  }
+  50% {
+    -webkit-transform: translateX(0);
+    transform: translateX(-25%) scaleY(0.5);
+  }
+
+  to {
+    -webkit-transform: translateX(-100vw);
+    transform: translateX(-50%) scaleY(1);
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .bg-img {
+  }
+}
+@media only screen and (max-width: 1280px) and (min-width: 1025px) {
+}
+
+/* 螢幕尺寸標準 */
+/* 平板尺寸 */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+}
+
+@media screen and (max-width: 767px) {
+  .animate-row {
+    width: 600vw;
+  }
+
+  .nav-logo {
+    width: size-m(52);
+    top: size-m(18);
+    left: size-m(11);
+  }
+
+  .logo {
+    width: size-m(95);
+    top: size-m(52);
+    left: size-m(132);
+  }
+
+  .item-img {
+    width: size-m(343);
+    height: size-m(343);
+    right: size-m(12);
+    left: auto;
+    top: size-m(204);
+    border-radius: 60% 40% 45% 55% / 50% 45% 55% 50%;
+    overflow: hidden;
+    animation: border-radius 8s ease infinite;
+  }
+
+  .slide-content {
+    width: size-m(343);
+    height: size-m(343);
+    right: size-m(12);
+    left: auto;
+    top: size-m(204);
+    overflow: hidden;
+    border-radius: 60% 40% 45% 55% / 50% 45% 55% 50%;
+    overflow: hidden;
+    animation: border-radius 8s ease infinite;
+    padding-top: size-m(40);
+  }
+
+  .item-border {
+    width: size-m(353);
+    height: size-m(363);
+    right: size-m(12);
+    left: auto;
+    top: size-m(204);
+    border-radius: 60% 40% 45% 55% / 50% 45% 55% 50%;
+    overflow: hidden;
+    animation: border-radius 20s ease infinite;
+    border: 1px solid #d0a100;
+  }
+
+  .title {
+    font-size: size-m(19);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.23;
+    letter-spacing: 6.16px;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    z-index: 2;
+  }
+
+  .subtitle {
+    font-size: size-m(12);
+    letter-spacing: 3.36px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.23;
+    letter-spacing: 6.16px;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    z-index: 2;
+  }
+
+  .desc {
+    font-size: size(14);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    width: size-m(343);
+    height: size-m(343);
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+
+    .mask {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+    }
+
+    .words {
+      animation: scroll-top 30s linear infinite;
+    }
+  }
+}
+</style>
+<script>
+// @ is an alias to /src
+import { isMobile } from '@/utils'
+
+export default {
+  name: 'section1',
+  data() {
+    return {
+      isMobile,
+    }
+  },
+
+  methods: {},
+
+  created() {},
+
+  mounted() {},
+
+  computed: {},
+}
+</script>

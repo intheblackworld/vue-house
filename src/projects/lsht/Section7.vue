@@ -126,7 +126,7 @@
         >
           <img
             :src="slide.img"
-            :class="`item-img absolute`"
+            :class="`item-img absolute ${slideIndex === index ? 'active' : ''}`"
           />
         </swiper-slide>
       </swiper>
@@ -242,6 +242,11 @@
   right: 0;
   margin: 0 auto;
   top: 0;
+  opacity: 0;
+  transition: all .3s;
+  &.active {
+    opacity: 1;
+  }
 }
 
 // begin
@@ -383,7 +388,7 @@ export default {
           delay: 4000,
           disableOnInteraction: true,
         },
-        loop: true,
+        loop: false,
         effect: 'fade',
         navigation: {
           nextEl: '.swiper-button-next',

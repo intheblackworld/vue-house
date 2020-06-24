@@ -1,3 +1,4 @@
+@import '@/assets/style/function.scss';
 @keyframes swing {
 
  to {
@@ -47,7 +48,7 @@
     width: 100vw;
     .map-bg {
       width: auto;
-      height: calc(100vh - 123px - 31vw);
+      height: size-m(609);
     }
 
     .map-text {
@@ -71,7 +72,7 @@
       display: block;
       width:calc(100vw * 112/375) !important;
       height: auto !important;
-      left: 33.33%;
+      left: 30%;
       top: 25% !important;
       display: block;
       animation: swing 1s linear 0s alternate infinite;

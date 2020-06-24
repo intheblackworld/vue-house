@@ -48,7 +48,6 @@
           </span>
         </div>
       </div>
-      <div class="border absolute"></div>
     </div>
     <el-dialog
       title
@@ -138,10 +137,8 @@ export default {
   justify-content: space-between;
   position: relative;
   z-index: 3;
-  width: size(1690);
+  width: size(1020);
   margin: 0 auto;
-  border-left: 1px solid #bf1b12;
-  border-right: 1px solid #bf1b12;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
@@ -173,10 +170,9 @@ export default {
   transition: all 0.5s;
   position: relative;
   overflow: hidden;
-  border: 1px solid #bf1b12 !important;
   border-width: 1px 0 0 1px !important;
   background-color:#0000 !important;
-  background-image: $order_submit_bg;
+  background-image: $contact_btn_bg;
   background-size: auto;
   background-position: 100% 100%  !important;
 
@@ -224,7 +220,6 @@ export default {
   width: 600px;
   height: 60px;
   background: #fff;
-  border: 1px solid #bf1b12;
   border-right: none;
   //box-shadow: $contact_btn_border;
 }
@@ -235,9 +230,8 @@ export default {
   cursor: pointer;
   text-decoration: none;
   color: $contact_google_btn_color;
-  background-image: $contact_btn_hover_bg;
+  background-image: $contact_google_btn_bg;
   background-position: 100% 100%;
-  border: 1px solid #bf1b12;
   border-width: 1px 0 0 1px;
   //box-shadow: $contact_btn_border;
   transition: all 0.5s;
@@ -258,14 +252,6 @@ export default {
       color: $contact_google_hover_btn_icon;
     }
   }
-}
-
-.border {
-  width: 100vw;
-  height: 1px;
-  background-color: #bf1b12;
-  left: size(-115);
-  bottom: 0;
 }
 
 /* 平板尺寸 */
@@ -339,7 +325,6 @@ export default {
   .address {
     width: 280px;
     padding: 0 1em;
-    text-align: justify;border-right:1px solid #bf1b12;
   }
 }
 

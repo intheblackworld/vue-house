@@ -6,27 +6,58 @@
         alt=""
         class="bg-img"
       >
-      <div class="subtitle absolute">
+      <h3 class="subtitle absolute">
         【傲然‧天生麗質】
-      </div>
-      <div class="title absolute">
+      </h3>
+      <h3 class="title absolute">
         傲視市政新灣區 開啟臺南生活新傳奇
-      </div>
-      <div class="desc absolute">
+      </h3>
+      <h3 class="desc absolute">
         臺南的市政新灣區<br />
         不僅重大建設齊聚、知名建商更接連在此擁地、打造經典名宅<br />
         高樓層可遠眺綠海景觀，市政新灣區到底有多夯？
-      </div>
+      </h3>
       <div class="flex animate-row">
-        <img src="./s2/wave.png" alt="" class="wave">
-        <img src="./s2/wave.png" alt="" class="wave">
+        <img
+          src="./s2/wave.png"
+          alt=""
+          class="wave"
+        >
+        <img
+          src="./s2/wave.png"
+          alt=""
+          class="wave"
+        >
       </div>
       <div class="flex animate-row animate-row2">
-        <img src="./s2/wave_l.png" alt="" class="wave">
-        <img src="./s2/wave_l.png" alt="" class="wave">
+        <img
+          src="./s2/wave_l.png"
+          alt=""
+          class="wave"
+        >
+        <img
+          src="./s2/wave_l.png"
+          alt=""
+          class="wave"
+        >
       </div>
     </div>
     <div v-if="isMobile">
+      <Map
+        :bgSrc="bgSrc"
+        :hand="hand"
+      ></Map>
+      <h3 class="subtitle absolute">
+        【傲然‧天生麗質】
+      </h3>
+      <h3 class="title absolute">
+        傲視市政新灣區<br />開啟臺南生活新傳奇
+      </h3>
+      <h3 class="desc absolute">
+        臺南的市政新灣區<br />
+        不僅重大建設齊聚、知名建商更接連在此擁地、打造經典名宅<br />
+        高樓層可遠眺綠海景觀，市政新灣區到底有多夯？
+      </h3>
     </div>
   </div>
 </template>
@@ -111,7 +142,7 @@
     height: size(413);
 
     &:nth-child(2) {
-      margin-left: -.1%;
+      margin-left: -0.1%;
     }
   }
 
@@ -155,19 +186,77 @@
 }
 
 @media screen and (max-width: 767px) {
+  .relative {
+    height: size-m(609);
+  }
+
+  .subtitle {
+    font-size: size-m(13);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    transform: scaleX(0.95);
+    top: size-m(56);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 10;
+  }
+
+  .title {
+    font-size: size-m(24);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.79;
+    letter-spacing: 1.15px;
+    text-align: center;
+    color: #ffffff;
+    transform: scaleX(0.95);
+    top: size-m(74);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 10;
+  }
+
+  .desc {
+    font-size: size-m(12);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    transform: scaleX(0.95);
+    top: size-m(387);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 10;
+  }
 }
 </style>
 <script>
 // @ is an alias to /src
 import { isMobile } from '@/utils'
-
+import Map from '@/components/Map.vue'
 export default {
   name: 'section2',
 
-  components: {},
+  components: {
+    Map,
+  },
   data() {
     return {
       isMobile,
+      bgSrc: require('./s2/bg.jpg'),
+      hand: require('./mo/2/箭頭.png'),
     }
   },
 

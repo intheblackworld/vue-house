@@ -149,7 +149,7 @@
           :disabled="!checked || !isVerify"
           @click="submit"
           :loading="isSubmit"
-        >預約最錢線</el-button>
+        >立即預約</el-button>
         <Loading
           :loading="isSubmit"
           :isOpacity="true"
@@ -333,9 +333,6 @@ export default {
     padding-top: 90px;
     width: size(1690);
     margin: 0 auto;
-    border-left: 1px solid #bf1b12;
-    border-right: 1px solid #bf1b12;
-    border-bottom: 1px solid #bf1b12;
   }
   .order-title {
     width: 100%;
@@ -387,10 +384,6 @@ export default {
      
       .row {
         justify-content: flex-start;
-      }
-      &::before{
-        content: "";position:absolute;right: -1px;top: 0;
-        height: calc(100% - 13px);width: 1px; background-color:#bf1b12;
       }
     }
 
@@ -473,7 +466,6 @@ export default {
       border-left: none;
       border-right: none;
       padding-top: 10px;
-      border-bottom: 1px solid #bf1b12;
     }
     .order-subtitle {
       // display: none;
