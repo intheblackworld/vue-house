@@ -2,42 +2,42 @@
   <div class="relative">
     <div v-if="!isMobile">
       <img
-        src="./s2/bg.jpg"
-        alt=""
+        v-lazy="require('./s2/bg.jpg')"
+        alt="聯上海棠"
         class="bg-img"
       >
-      <h3 class="subtitle absolute">
+      <h3 class="subtitle absolute" data-aos="fade" data-aos-delay="400">
         【傲然‧天生麗質】
       </h3>
-      <h3 class="title absolute">
+      <h3 class="title absolute" data-aos="fade" data-aos-delay="600">
         傲視市政新灣區 開啟臺南生活新傳奇
       </h3>
-      <h3 class="desc absolute">
+      <h3 class="desc absolute" data-aos="fade" data-aos-delay="800">
         臺南的市政新灣區<br />
         不僅重大建設齊聚、知名建商更接連在此擁地、打造經典名宅<br />
         高樓層可遠眺綠海景觀，市政新灣區到底有多夯？
       </h3>
       <div class="flex animate-row">
         <img
-          src="./s2/wave.png"
-          alt=""
+          v-lazy="require('./s2/wave.png')"
+          alt="聯上海棠"
           class="wave"
         >
         <img
-          src="./s2/wave.png"
-          alt=""
+          v-lazy="require('./s2/wave.png')"
+          alt="聯上海棠"
           class="wave"
         >
       </div>
       <div class="flex animate-row animate-row2">
         <img
-          src="./s2/wave_l.png"
-          alt=""
+          v-lazy="require('./s2/wave_l.png')"
+          alt="聯上海棠"
           class="wave"
         >
         <img
-          src="./s2/wave_l.png"
-          alt=""
+          v-lazy="require('./s2/wave_l.png')"
+          alt="聯上海棠"
           class="wave"
         >
       </div>
@@ -47,13 +47,13 @@
         :bgSrc="bgSrc"
         :hand="hand"
       ></Map>
-      <h3 class="subtitle absolute">
+      <h3 class="subtitle absolute" data-aos="fade" data-aos-delay="200">
         【傲然‧天生麗質】
       </h3>
-      <h3 class="title absolute">
+      <h3 class="title absolute" data-aos="fade" data-aos-delay="400">
         傲視市政新灣區<br />開啟臺南生活新傳奇
       </h3>
-      <h3 class="desc absolute">
+      <h3 class="desc absolute" data-aos="fade" data-aos-delay="600">
         臺南的市政新灣區<br />
         不僅重大建設齊聚、知名建商更接連在此擁地、打造經典名宅<br />
         高樓層可遠眺綠海景觀，市政新灣區到底有多夯？

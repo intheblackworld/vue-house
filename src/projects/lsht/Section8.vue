@@ -2,17 +2,17 @@
   <div class="relative">
     <div v-if="!isMobile">
       <img
-        src="./s8/8pic.png"
+        v-lazy="require('./s8/8pic.png')"
         :class="`item-img absolute`"
       />
       <div class="content absolute">
-        <h3 class="subtitle">【城堡，要用最好的打造】</h3>
-        <h3 class="title">日本制震第一品牌 住友橡膠GRAST制震</h3>
-        <h3 class="desc">為了讓居住者更舒適、更愜意，聯上一心一意打造最頂級的建材，特別使用氣密窗，讓人可以寧靜地俯瞰最美的海景，層層保障結構物的安全，當地唯一使用制震器，並申請結構外審等等，卓越超越卓越，永遠追求更完美。</h3>
+        <h3 class="subtitle" data-aos="fade" data-aos-delay="400">【城堡，要用最好的打造】</h3>
+        <h3 class="title" data-aos="fade" data-aos-delay="600">日本制震第一品牌 住友橡膠GRAST制震</h3>
+        <h3 class="desc" data-aos="fade" data-aos-delay="800">為了讓居住者更舒適、更愜意，聯上一心一意打造最頂級的建材，特別使用氣密窗，讓人可以寧靜地俯瞰最美的海景，層層保障結構物的安全，當地唯一使用制震器，並申請結構外審等等，卓越超越卓越，永遠追求更完美。</h3>
         <div
           class="dropdown"
           data-aos="fade"
-          data-aos-delay="600"
+          data-aos-delay="1000"
         >
           <div
             :class="`item ${item.open ? 'open' : ''}`"
@@ -27,13 +27,13 @@
               <h3>{{item.title}}</h3>
               <img
                 v-if="!item.open"
-                src="./mo/plus.png"
+                v-lazy="require('./mo/plus.png')"
                 alt
                 class="btn"
               />
               <img
                 v-if="item.open"
-                src="./mo/minus.png"
+                v-lazy="require('./mo/minus.png')"
                 alt
                 class="btn"
               />
@@ -55,8 +55,8 @@
           <h3 class="desc">為了讓居住者更舒適、更愜意，聯上一心一意打造最頂級的建材，特別使用氣密窗，讓人可以寧靜地俯瞰最美的海景，層層保障結構物的安全，當地唯一使用制震器，並申請結構外審等等，卓越超越卓越，永遠追求更完美。</h3>
         </div>
         <img
-          src="./mo/8/8pic.jpg"
-          alt=""
+          v-lazy="require('./mo/8/8pic.jpg')"
+          alt="聯上海棠"
           class="m-img"
         >
       </div>
@@ -78,13 +78,13 @@
             <h3>{{item.title}}</h3>
             <img
               v-if="!item.open"
-              src="./mo/plus.png"
+              v-lazy="require('./mo/plus.png')"
               alt
               class="btn"
             />
             <img
               v-if="item.open"
-              src="./mo/minus.png"
+              v-lazy="require('./mo/minus.png')"
               alt
               class="btn"
             />
@@ -98,37 +98,37 @@
     </div>
     <div class="flex animate-row">
       <img
-        src="./s8/wave.png"
-        alt=""
+        v-lazy="require('./s8/wave.png')"
+        alt="聯上海棠"
         class="wave"
       >
       <img
-        src="./s8/wave.png"
-        alt=""
+        v-lazy="require('./s8/wave.png')"
+        alt="聯上海棠"
         class="wave"
       >
     </div>
     <div class="flex animate-row animate-row1">
       <img
-        src="./s8/wave.png"
-        alt=""
+        v-lazy="require('./s8/wave.png')"
+        alt="聯上海棠"
         class="wave"
       >
       <img
-        src="./s8/wave.png"
-        alt=""
+        v-lazy="require('./s8/wave.png')"
+        alt="聯上海棠"
         class="wave"
       >
     </div>
     <div class="flex animate-row animate-row2">
       <img
-        src="./s2/wave_l.png"
-        alt=""
+        v-lazy="require('./s2/wave_l.png')"
+        alt="聯上海棠"
         class="wave"
       >
       <img
-        src="./s2/wave_l.png"
-        alt=""
+        v-lazy="require('./s2/wave_l.png')"
+        alt="聯上海棠"
         class="wave"
       >
     </div>

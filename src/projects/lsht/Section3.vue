@@ -2,8 +2,8 @@
   <div class="relative">
     <div v-if="!isMobile">
       <img
-        src="./s3/bg.jpg"
-        alt=""
+        v-lazy="require('./s3/bg.jpg')"
+        alt="聯上海棠"
         class="bg-img"
       >
       <swiper
@@ -26,7 +26,7 @@
           />
         </swiper-slide>
 
-        <div class="slide-content absolute">
+        <div class="slide-content absolute" data-aos="fade" data-aos-delay="400">
           <transition-group
             name="slide-fade"
             mode="out-in"
@@ -54,25 +54,25 @@
       </swiper>
       <div class="flex animate-row">
         <img
-          src="./s3/wave.png"
-          alt=""
+          v-lazy="require('./s3/wave.png')"
+          alt="聯上海棠"
           class="wave"
         >
         <img
-          src="./s3/wave.png"
-          alt=""
+          v-lazy="require('./s3/wave.png')"
+          alt="聯上海棠"
           class="wave"
         >
       </div>
       <div class="flex animate-row animate-row2">
-        <img src="./s2/wave_l.png" alt="" class="wave">
-        <img src="./s2/wave_l.png" alt="" class="wave">
+        <img v-lazy="require('./s2/wave_l.png')" alt="聯上海棠" class="wave">
+        <img v-lazy="require('./s2/wave_l.png')" alt="聯上海棠" class="wave">
       </div>
     </div>
     <div v-if="isMobile">
       <img
-        src="./mo/3/bg.jpg"
-        alt=""
+        v-lazy="require('./mo/3/bg.jpg')"
+        alt="聯上海棠"
         class="bg-img"
       >
       <swiper
@@ -95,7 +95,7 @@
           />
         </swiper-slide>
       </swiper>
-      <div class="slide-content absolute">
+      <div class="slide-content absolute" data-aos="fade" data-aos-delay="400">
         <transition-group
           name="slide-fade"
           mode="out-in"
@@ -117,7 +117,7 @@
               class="item-desc"
               v-html="slide.desc"
             ></h3>
-            <img src="./mo/plus.png" alt="" class="add" @click="isDialog = true">
+            <img src="./mo/plus.png" alt="聯上海棠" class="add" @click="isDialog = true">
           </div>
         </transition-group>
       </div>
@@ -130,7 +130,7 @@
             class="close"
             @click="isDialog = false"
             src="./mo/close.png"
-            alt=""
+            alt="聯上海棠"
           >
           <transition-group
             name="slide-fade"
@@ -160,25 +160,25 @@
       </div>
       <div class="flex animate-row">
         <img
-          src="./s2/wave.png"
-          alt=""
+          v-lazy="require('./s2/wave.png')"
+          alt="聯上海棠"
           class="wave"
         >
         <img
-          src="./s2/wave.png"
-          alt=""
+          v-lazy="require('./s2/wave.png')"
+          alt="聯上海棠"
           class="wave"
         >
       </div>
       <div class="flex animate-row animate-row2">
         <img
-          src="./s2/wave_l.png"
-          alt=""
+          v-lazy="require('./s2/wave_l.png')"
+          alt="聯上海棠"
           class="wave"
         >
         <img
-          src="./s2/wave_l.png"
-          alt=""
+          v-lazy="require('./s2/wave_l.png')"
+          alt="聯上海棠"
           class="wave"
         >
       </div>

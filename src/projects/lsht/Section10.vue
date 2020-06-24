@@ -4,27 +4,27 @@
       <div class="flex-jc flex-ab">
         <img
           :src="imgList[imgIndex].img"
-          alt=""
+          alt="聯上海棠"
           class="highlight-img"
         >
         <div class="content relative">
           <div class="text">
-            <h3 class="subtitle">【品牌‧上市上櫃】</h3>
-            <h3 class="title">聯上建築，即將為您開啟<br />無價海洋新視野</h3>
-            <div class="info">
+            <h3 class="subtitle" data-aos="fade" data-aos-delay="400">【品牌‧上市上櫃】</h3>
+            <h3 class="title" data-aos="fade" data-aos-delay="600">聯上建築，即將為您開啟<br />無價海洋新視野</h3>
+            <div class="info" data-aos="fade" data-aos-delay="800">
               聯上建築為全台唯一同時擁有<br />上市(代號：2537)上櫃(代號：4113)的建設品牌
             </div>
-            <h3 class="desc">聯上作品優質榮獲國內外大獎肯定：連續3年獲中華民國建築金石首獎，是全國少數的白金石首獎得主；2010年在天母推出豪宅案「聯上聽瀑」，一推出即獲得亮麗成績，在台北市房市成功插旗，讓高雄出發的聯上建築團隊，品牌能見度擴及至大台北地區，甚至於是全台。</h3>
+            <h3 class="desc" data-aos="fade" data-aos-delay="1000">聯上作品優質榮獲國內外大獎肯定：連續3年獲中華民國建築金石首獎，是全國少數的白金石首獎得主；2010年在天母推出豪宅案「聯上聽瀑」，一推出即獲得亮麗成績，在台北市房市成功插旗，讓高雄出發的聯上建築團隊，品牌能見度擴及至大台北地區，甚至於是全台。</h3>
           </div>
           <img
-            src="./s10/img.png"
-            alt=""
+            v-lazy="require('./s10/img.png')"
+            alt="聯上海棠"
             class="painting absolute"
           >
 
           <img
-            src="./s10/lo.png"
-            alt=""
+            v-lazy="require('./s10/lo.png')"
+            alt="聯上海棠"
             class="logo absolute"
           >
 
@@ -36,7 +36,7 @@
             >
               <div class="img">
                 <img
-                  alt=""
+                  alt="聯上海棠"
                   :src="img.img"
                 >
               </div>
@@ -85,7 +85,7 @@
       </div>
       <img
         src="./mo/plus.png"
-        alt=""
+        alt="聯上海棠"
         class="add"
         @click="isDialog = true"
       >
@@ -93,12 +93,12 @@
       <div class="flex-c bottom-p">
         <img
           src="./s10/lo.png"
-          alt=""
+          alt="聯上海棠"
           class="logo"
         >
         <img
           src="./s10/img.png"
-          alt=""
+          alt="聯上海棠"
           class="painting"
         >
       </div>
@@ -112,7 +112,7 @@
           class="close"
           @click="isDialog = false"
           src="./mo/close.png"
-          alt=""
+          alt="聯上海棠"
         >
         <h3 class="subtitle">【品牌‧上市上櫃】</h3>
         <h3 class="title">聯上建築，即將為您開啟<br />無價海洋新視野</h3>
@@ -124,37 +124,37 @@
     </div>
     <div class="flex animate-row">
       <img
-        src="./s8/wave.png"
-        alt=""
+        v-lazy="require('./s8/wave.png')"
+        alt="聯上海棠"
         class="wave"
       >
       <img
-        src="./s8/wave.png"
-        alt=""
+        v-lazy="require('./s8/wave.png')"
+        alt="聯上海棠"
         class="wave"
       >
     </div>
     <div class="flex animate-row animate-row1">
       <img
-        src="./s8/wave.png"
-        alt=""
+        v-lazy="require('./s8/wave.png')"
+        alt="聯上海棠"
         class="wave"
       >
       <img
-        src="./s8/wave.png"
-        alt=""
+        v-lazy="require('./s8/wave.png')"
+        alt="聯上海棠"
         class="wave"
       >
     </div>
     <div class="flex animate-row animate-row2">
       <img
-        src="./s2/wave_l.png"
-        alt=""
+        v-lazy="require('./s2/wave_l.png')"
+        alt="聯上海棠"
         class="wave"
       >
       <img
-        src="./s2/wave_l.png"
-        alt=""
+        v-lazy="require('./s2/wave_l.png')"
+        alt="聯上海棠"
         class="wave"
       >
     </div>

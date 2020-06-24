@@ -45,21 +45,21 @@ $order_submit_color: #fff !important;
 $order_sumbit_disable_bg: transparent !important;
 
 // contactInfo
-$contact_bg: transparent;
+$contact_bg: url('~@/assets/img/contact-bg.jpg');
 $contact_bg_m: transparent;
 $contact_shadow: none;
 
 $contact_btn_border: none;
 $contact_btn_color: #fff;
 $contact_btn_icon: #fff;
-$contact_btn_bg: linear-gradient(to right, #2e5cb1, #d9f3ff, #ffffff);
+$contact_btn_bg: linear-gradient(90deg, rgba(46,92,177,1) 44%, rgba(217,243,255,1) 100%);
 $contact_btn_hover_color: #2e5cb1;
 $contact_btn_hover_icon: #2e5cb1;
 $contact_btn_hover_bg: #fff !important;
 
 $contact_google_btn_color: #fff;
 $contact_google_btn_icon: #fff;
-$contact_google_btn_bg: linear-gradient(to right, #2e5cb1, #d9f3ff, #ffffff);
+$contact_google_btn_bg: linear-gradient(90deg, rgba(46,92,177,1) 44%, rgba(217,243,255,1) 100%);
 $contact_google_hover_btn_color: #2e5cb1;
 $contact_google_hover_btn_icon: #2e5cb1;
 $contact_google_hover_btn_bg: #fff;

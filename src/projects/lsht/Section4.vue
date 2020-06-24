@@ -2,8 +2,8 @@
   <div class="relative">
     <img
       v-if="!isMobile"
-      src="./s4/bg.jpg"
-      alt=""
+      v-lazy="require('./s4/bg.jpg')"
+      alt="聯上海棠"
       class="bg-img"
     >
     <swiper

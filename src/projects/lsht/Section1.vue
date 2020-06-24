@@ -3,54 +3,55 @@
     <div v-if="!isMobile">
       <img
         src="./s1/bg.jpg"
-        alt=""
+        alt="聯上海棠"
         class="bg-img"
       >
 
       <div class="flex animate-row">
         <img
           src="./s1/wave1.png"
-          alt=""
+          alt="聯上海棠"
           class="wave"
         >
         <img
           src="./s1/wave1.png"
-          alt=""
+          alt="聯上海棠"
           class="wave"
         >
       </div>
       <div class="flex animate-row animate-row2">
         <img
           src="./s1/wave2.png"
-          alt=""
+          alt="聯上海棠"
           class="wave"
         >
         <img
           src="./s1/wave2.png"
-          alt=""
+          alt="聯上海棠"
           class="wave"
         >
       </div>
       <div class="flex animate-row animate-row3">
         <img
           src="./s1/wave2.png"
-          alt=""
+          alt="聯上海棠"
           class="wave"
         >
         <img
           src="./s1/wave2.png"
-          alt=""
+          alt="聯上海棠"
           class="wave"
         >
       </div>
       <img
         src="./s1/logo1.png"
-        alt=""
+        alt="聯上海棠"
         class="nav-logo absolute"
       >
       <img
         src="./s1/logo.png"
-        alt=""
+        alt="聯上海棠"
+        data-aos="fade" data-aos-delay="400"
         class="logo absolute"
       >
 
@@ -62,10 +63,10 @@
       <div class="item-border absolute"></div>
 
       <div class="slide-content absolute">
-        <h3 class="subtitle">
+        <h3 data-aos="fade" data-aos-delay="400" class="subtitle">
           大海傳說
         </h3>
-        <h3 class="title">聽美人魚唱歌</h3>
+        <h3 data-aos="fade" data-aos-delay="700" class="title">聽美人魚唱歌</h3>
         <div class="desc">
           <h3 class="words">
             傳說在海裡有一座城堡，美人魚住在裡面，日夜歌唱著，<br />
@@ -93,7 +94,7 @@
           </h3>
           <img
             src="./s1/imgs.png"
-            alt=""
+            alt="聯上海棠"
             class="mask"
           >
         </div>
@@ -102,120 +103,120 @@
     <div v-if="isMobile">
       <img
         src="./s1/bg.jpg"
-        alt=""
+        alt="聯上海棠"
         class="bg-img"
       >
 
       <div class="flex animate-row">
         <img
-          src="./s1/wave1.png"
-          alt=""
+          v-lazy="require('./s1/wave1.png')"
+          alt="聯上海棠"
           class="wave"
         >
         <img
-          src="./s1/wave1.png"
-          alt=""
+          v-lazy="require('./s1/wave1.png')"
+          alt="聯上海棠"
           class="wave"
         >
         <img
-          src="./s1/wave1.png"
-          alt=""
+          v-lazy="require('./s1/wave1.png')"
+          alt="聯上海棠"
           class="wave"
         >
         <img
-          src="./s1/wave1.png"
-          alt=""
+          v-lazy="require('./s1/wave1.png')"
+          alt="聯上海棠"
           class="wave"
         >
         <img
-          src="./s1/wave1.png"
-          alt=""
+          v-lazy="require('./s1/wave1.png')"
+          alt="聯上海棠"
           class="wave"
         >
         <img
-          src="./s1/wave1.png"
-          alt=""
+          v-lazy="require('./s1/wave1.png')"
+          alt="聯上海棠"
           class="wave"
         >
       </div>
       <div class="flex animate-row animate-row2">
         <img
-          src="./s1/wave2.png"
-          alt=""
+          v-lazy="require('./s1/wave2.png')"
+          alt="聯上海棠"
           class="wave"
         >
         <img
-          src="./s1/wave2.png"
-          alt=""
+          v-lazy="require('./s1/wave2.png')"
+          alt="聯上海棠"
           class="wave"
         >
         <img
-          src="./s1/wave2.png"
-          alt=""
+          v-lazy="require('./s1/wave2.png')"
+          alt="聯上海棠"
           class="wave"
         >
         <img
-          src="./s1/wave2.png"
-          alt=""
+          v-lazy="require('./s1/wave2.png')"
+          alt="聯上海棠"
           class="wave"
         >
         <img
-          src="./s1/wave2.png"
-          alt=""
+          v-lazy="require('./s1/wave2.png')"
+          alt="聯上海棠"
           class="wave"
         >
         <img
-          src="./s1/wave2.png"
-          alt=""
+          v-lazy="require('./s1/wave2.png')"
+          alt="聯上海棠"
           class="wave"
         >
       </div>
       <div class="flex animate-row animate-row3">
         <img
-          src="./s1/wave2.png"
-          alt=""
+          v-lazy="require('./s1/wave2.png')"
+          alt="聯上海棠"
           class="wave"
         >
         <img
-          src="./s1/wave2.png"
-          alt=""
+          v-lazy="require('./s1/wave2.png')"
+          alt="聯上海棠"
           class="wave"
         >
         <img
-          src="./s1/wave2.png"
-          alt=""
+          v-lazy="require('./s1/wave2.png')"
+          alt="聯上海棠"
           class="wave"
         >
         <img
-          src="./s1/wave2.png"
-          alt=""
+          v-lazy="require('./s1/wave2.png')"
+          alt="聯上海棠"
           class="wave"
         >
         <img
-          src="./s1/wave2.png"
-          alt=""
+          v-lazy="require('./s1/wave2.png')"
+          alt="聯上海棠"
           class="wave"
         >
         <img
-          src="./s1/wave2.png"
-          alt=""
+          v-lazy="require('./s1/wave2.png')"
+          alt="聯上海棠"
           class="wave"
         >
       </div>
 
       <img
-        src="./s1/logo1.png"
-        alt=""
+        v-lazy="require('./s1/logo1.png')"
+        alt="聯上海棠"
         class="nav-logo absolute"
       >
       <img
-        src="./s1/logo.png"
-        alt=""
+        v-lazy="require('./s1/logo.png')"
+        alt="聯上海棠"
         class="logo absolute"
       >
 
       <img
-        src="./mo/1/img.jpg"
+        v-lazy="require('./mo/1/img.jpg')"
         class="item-img absolute"
       />
       <div class="item-border absolute"></div>
@@ -252,7 +253,7 @@
           </h3>
           <img
             src="./mo/1/imgs.png"
-            alt=""
+            alt="聯上海棠"
             class="mask"
           >
         </div>

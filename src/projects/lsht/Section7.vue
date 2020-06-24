@@ -2,8 +2,8 @@
   <div class="relative">
     <div v-if="!isMobile">
       <img
-        src="./s7/1.jpg"
-        alt=""
+        v-lazy="require('./s7/1.jpg')"
+        alt="聯上海棠"
         class="bg-img"
       >
       <swiper
@@ -19,7 +19,7 @@
           slot="button-prev"
         >
           <img
-            src="./箭頭1.png"
+            v-lazy="require('./箭頭1.png')"
             alt
           />
         </div>
@@ -28,7 +28,7 @@
           slot="button-next"
         >
           <img
-            src="./箭頭2.png"
+            v-lazy="require('./箭頭2.png')"
             alt
           />
         </div>
@@ -40,7 +40,7 @@
         >
           <img
             :src="slide.img"
-            :class="`item-img absolute`"
+            :class="`item-img absolute ${slideIndex === index ? 'active' : ''}`"
           />
         </swiper-slide>
         <div class="slide-content absolute">
@@ -72,24 +72,24 @@
       <!-- <div class="flex animate-row">
         <img
           src="./s3/wave.png"
-          alt=""
+          alt="聯上海棠"
           class="wave"
         >
         <img
           src="./s3/wave.png"
-          alt=""
+          alt="聯上海棠"
           class="wave"
         >
       </div> -->
       <!-- <div class="flex animate-row animate-row2">
-        <img src="./s2/wave_l.png" alt="" class="wave">
-        <img src="./s2/wave_l.png" alt="" class="wave">
+        <img src="./s2/wave_l.png" alt="聯上海棠" class="wave">
+        <img src="./s2/wave_l.png" alt="聯上海棠" class="wave">
       </div> -->
     </div>
     <div v-if="isMobile">
       <img
-        src="./s7/1.jpg"
-        alt=""
+        v-lazy="require('./s7/1.jpg')"
+        alt="聯上海棠"
         class="bg-img"
       >
       <swiper
@@ -105,7 +105,7 @@
           slot="button-prev"
         >
           <img
-            src="./箭頭1.png"
+            v-lazy="require('./箭頭1.png')"
             alt
           />
         </div>
@@ -114,7 +114,7 @@
           slot="button-next"
         >
           <img
-            src="./箭頭2.png"
+            v-lazy="require('./箭頭2.png')"
             alt
           />
         </div>

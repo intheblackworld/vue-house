@@ -2,27 +2,27 @@
   <div class="relative">
     <img
       v-if="!isMobile"
-      src="./s6/bg.jpg"
-      alt=""
+      v-lazy="require('./s6/bg.jpg')"
+      alt="聯上海棠"
       class="bg-img"
     >
     <img
       v-if="isMobile"
-      src="./mo/6/bgimg.jpg"
-      alt=""
+      v-lazy="require('./mo/6/bgimg.jpg')"
+      alt="聯上海棠"
       class="bg-img"
     >
     <img
       v-if="isMobile"
-      src="./mo/6/bg.png"
-      alt=""
+      v-lazy="require('./mo/6/bg.png')"
+      alt="聯上海棠"
       class="bg-img"
       style="margin-top: -30px;"
     >
-    <h3 class="title absolute">
+    <h3 class="title absolute" data-aos="fade" data-aos-delay="400">
       海灣新地標 宛若海棠盛開之姿
     </h3>
-    <h3 class="desc absolute">
+    <h3 class="desc absolute" data-aos="fade" data-aos-delay="700">
       流線造型的量體搭配局部材質轉換與立面陰影律動線條，呈現多面性的建築表情，<br />
       面向海景宛如海棠花盛開，初如胭脂點點燃，開則漸成纈暈，堪當國艷之名。
     </h3>

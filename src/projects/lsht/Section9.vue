@@ -24,25 +24,25 @@
     </div>
     <div class="flex animate-row">
       <img
-        src="./s2/wave_l.png"
-        alt=""
+        v-lazy="require('./s2/wave_l.png')"
+        alt="聯上海棠"
         class="wave"
       >
       <img
-        src="./s2/wave_l.png"
-        alt=""
+        v-lazy="require('./s2/wave_l.png')"
+        alt="聯上海棠"
         class="wave"
       >
     </div>
     <div class="flex animate-row animate-row1">
       <img
-        src="./s2/wave_l.png"
-        alt=""
+        v-lazy="require('./s2/wave_l.png')"
+        alt="聯上海棠"
         class="wave"
       >
       <img
-        src="./s2/wave_l.png"
-        alt=""
+        v-lazy="require('./s2/wave_l.png')"
+        alt="聯上海棠"
         class="wave"
       >
     </div>
