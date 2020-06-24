@@ -74,10 +74,7 @@
             </div> -->
             <div class="row">
               <label>居住城市</label>
-              <el-select
-                v-model="form.city"
-                placeholder
-              >
+              <el-select v-model="form.city" placeholder>
                 <el-option
                   v-for="city in cityList"
                   :key="city.value"
@@ -89,10 +86,7 @@
             </div>
             <div class="row">
               <label>居住地區</label>
-              <el-select
-                v-model="form.area"
-                placeholder
-              >
+              <el-select v-model="form.area" placeholder>
                 <el-option
                   v-for="area in areaList"
                   :key="area.value"
@@ -236,13 +230,13 @@ export default {
       this.isSubmit = true
       if (
         !this.form.name ||
-        !this.form.phone
+        !this.form.phone 
         // !this.form.time_start ||
         // !this.form.time_end
         // ||
         // !this.form.email ||
-        // !this.form.city ||
-        // !this.form.area
+       // !this.form.city ||
+       // !this.form.area
       ) {
         this.alertValidate()
         this.isSubmit = false
@@ -297,7 +291,6 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/style/variableColor.scss';
-@import '@/assets/style/function.scss';
 .bg-img {
   width: 100vw;
   position: absolute;
@@ -318,24 +311,19 @@ export default {
   //background-image: $order_bg_image;
   background-repeat: no-repeat;
   position: relative;
-  padding-top: 0px;
-  background-position: center calc(100% - 555px);
-  background-size: auto;
+  padding-top: 130px;
+  background-position:center calc(100% - 555px);
+  background-size:auto;
   background-image: $order_bg_image;
-  width: 100vw;
-  top: size(100);
 
   .order-top {
     position: relative;
     overflow: hidden;
-    background: no-repeat center bottom;
-    background-size: contain;
-    padding-top: 90px;
-    width: size(1690);
-    margin: 0 auto;
+  background:no-repeat center bottom;
+  background-size:contain;
   }
   .order-title {
-    width: 100%;
+    width: 100vw;
     padding-top: 20px;
     padding-bottom: 8px;
     font-weight: bold;
@@ -378,10 +366,9 @@ export default {
   .group {
     height: 250px;
     margin-bottom: 40px;
-    position: relative;
 
     &:nth-child(1) {
-     
+      border-right: 1px solid rgba(0, 0, 0, 0.2);
       .row {
         justify-content: flex-start;
       }
@@ -414,9 +401,7 @@ export default {
       font-size: 16px;
       opacity: 0.8;
       color: $order_input_label_color;
-      span {
-        color: #c00;
-      }
+      span{color: #C00;}
     }
   }
 
@@ -425,6 +410,31 @@ export default {
     margin-bottom: 20px;
   }
 }
+.cloud1 {
+  top:10vw;
+  animation: clouda 8s ease-in-out alternate infinite;
+    transform: translateX(-3%);
+}
+.cloud2 {
+  top:25vw;
+  left: 20vw;
+  animation: clouda 8s 1.5s ease-in-out alternate infinite;
+    transform: translateX(-6%);
+}
+.cloud3 {
+  width:calc(100vw * 1600 / 750);
+  top:0vw;
+  left:calc(50% - 107vw);
+  animation: clouda 8s 1.5s ease-in-out alternate infinite;
+    transform: translateX(-10%);
+}
+@keyframes clouda {
+
+  to{
+    transform: translateX(0);
+  }
+}
+
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .order-title {
@@ -449,7 +459,6 @@ export default {
     margin: 0;
     position: relative;
     z-index: 2;
-  top:0;
 
     > img {
       display: block;
@@ -459,13 +468,9 @@ export default {
       padding-bottom: 5px;
       font-size: calc(100vw * 38 / 375);
     }
-    .order-top {
-      width: 100vw;
-      background-image: $order_bg_image_m;
-      padding-bottom: 40px;
-      border-left: none;
-      border-right: none;
-      padding-top: 10px;
+.order-top{
+    background-image: $order_bg_image_m;
+    padding-bottom: 40px;
     }
     .order-subtitle {
       // display: none;
