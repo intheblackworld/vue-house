@@ -300,12 +300,22 @@ export default {
         {
           src: isMobile ? require('./s11/mo/1.jpg') : require('./s11/1.jpg'),
           text: isMobile ? require('./s11/mo/t1.png') : require('./s11/1t.png'),
-          alt: '耘悅圖書室'
+          alt: '樣品屋拍攝實景'
         },
         {
           src: isMobile ? require('./s11/mo/2.jpg') : require('./s11/2.jpg'),
           text: isMobile ? require('./s11/mo/t2.png') : require('./s11/2t.png'),
-          alt: '耘享多功能教室'
+          alt: '樣品屋拍攝實景'
+        },
+        {
+          src: isMobile ? require('./s11/mo/3.jpg') : require('./s11/3.jpg'),
+          text: isMobile ? require('./s11/mo/t1.png') : require('./s11/1t.png'),
+          alt: '樣品屋拍攝實景'
+        },
+        {
+          src: isMobile ? require('./s11/mo/4.jpg') : require('./s11/4.jpg'),
+          text: isMobile ? require('./s11/mo/t2.png') : require('./s11/2t.png'),
+          alt: '樣品屋拍攝實景'
         },
       ],
     }
@@ -318,7 +328,7 @@ export default {
       if (swiper.isEnd) {
         this.slideIndex = 0
       } else if (swiper.isBeginning) {
-        this.slideIndex = swiper.slides.length - 3
+        this.slideIndex = swiper.slides.length - 5
       } else {
         this.slideIndex = swiper.activeIndex - 1
       }
