@@ -162,8 +162,12 @@
 
 @media screen and (max-width: 767px) {
 .slides_box{ width: 100vw;
-  height: 80vw;
+  height: 80vw;max-height:calc(100vh - 115vw);
+  overflow: hidden;
 }
+  .slides {
+  height: 100%;
+  }
 }
 </style>
 <style lang="scss" scoped>
