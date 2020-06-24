@@ -350,7 +350,7 @@
           alt=""
           class="title-img4"
         >
-        <div class="title">
+        <div class="title title5">
           近500坪核心基地，75米雙塔地標<br />新板特區稀有無雙
         </div>
         <div class="desc">
@@ -682,7 +682,7 @@
   }
 
   .desc {
-    width: 322px;
+    width:90%;
     font-size: 15px;
     font-weight: normal;
     font-stretch: normal;
@@ -802,6 +802,15 @@
       transform: translateX(20px);
     }
   }
+}
+
+@media screen and (max-width: 330px) {
+
+    .title5{
+      left: 50%;
+      position: relative;
+      width: 104%;transform:translateX(-50%) scaleX(0.9);
+    }
 }
 </style>
 
