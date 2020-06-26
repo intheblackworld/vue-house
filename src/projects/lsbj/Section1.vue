@@ -6,22 +6,22 @@
         <div class="img_bg_c">
         <img src="./s1/bg.jpg" alt="" class="img content" v-if="!isMobile">
         <img src="./s1/mo/bg.jpg" alt="" class="img content" v-if="isMobile">
-        <img src="./s1/light1.png" alt="" class="img light1">
-        <img src="./s1/light2.png" alt="" class="img light2">
+        <!-- <img src="./s1/light1.png" alt="" class="img light1">
+        <img src="./s1/light2.png" alt="" class="img light2"> -->
         <img src="./s1/arrow.png" alt="" :class="`img arrow ${hide ? 'hide' : ''}`">
         </div>
         </div>
-        <div class="img light4">
+        <!-- <div class="img light4">
           <div class="light_b"></div>
           <img src="./s1/light4.jpg" alt="">
-        </div>
+        </div> -->
         <img src="./s1/logo.png" alt="" class="img logo">
-        <div class="img light3">
+        <!-- <div class="img light3">
           <img src="./s1/light3a.png" class="l3_1" alt="">
           <img src="./s1/light3a.png" class="l3_2" alt="">
           <img src="./s1/light3a.png" class="l3_3" alt="">
           <img src="./s1/light3a.png" class="l3_4" alt="">
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
