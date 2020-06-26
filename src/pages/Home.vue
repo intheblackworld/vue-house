@@ -4,8 +4,8 @@
     <Loading :loading="load" />
     <!-- <SideNavigation v-if="isSide" /> -->
     <!-- <Navigation v-else /> -->
-    <Indigator :action="action" :indigatorIndex="indigatorIndex" />
-    <full-page ref="fullPage" :options="options" id="fullpage">
+    <!-- <Indigator :action="action" :indigatorIndex="indigatorIndex" /> -->
+    <!-- <full-page ref="fullPage" :options="options" id="fullpage"> -->
       <div id="section1" class="section">
         <Section1 />
       </div>
@@ -28,7 +28,7 @@
         <Section7 />
       </div>
       <ContactSection class="section" />
-    </full-page>
+    <!-- </full-page> -->
     <!-- <SimpleOrder /> -->
     <MobileNav />
   </div>
@@ -42,9 +42,9 @@
 // @ is an alias to /src
 // import Navigation from '@/layouts/Navigation.vue'
 import { isMobile } from '@/utils'
-import SideNavigation from '@/layouts/SideNavigation.vue'
+// import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
-import Indigator from '@/components/Indigator.vue'
+// import Indigator from '@/components/Indigator.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import gtm from '@/mixins/gtm.js'
@@ -63,7 +63,7 @@ export default {
   mixins: [gtm],
   components: {
     Loading,
-    Indigator,
+    // Indigator,
     // SideNavigation,
     ContactSection,
     MobileNav,
@@ -106,10 +106,10 @@ export default {
   },
 
   mounted() {
-    this.action = this.$refs.fullPage.api
-    if (this.isMobile) {
-      this.$refs.fullPage.api.setResponsive(true)
-    }
+    // this.action = this.$refs.fullPage.api
+    // if (this.isMobile) {
+    //   this.$refs.fullPage.api.setResponsive(true)
+    // }
   },
 
   computed: {},
@@ -118,28 +118,28 @@ export default {
     onDone() {
       console.log('done')
     },
-    onLeave(origin, destination, direction) {
-      console.log(origin, destination, direction)
-      if (origin.isLast === true && direction === 'up') {
-        console.log('加固')
-        this.$refs.fullPage.api.setResponsive(false)
-      }
-      if (origin.isFirst === true && direction === 'down' && this.isMobile) {
-        this.$refs.fullPage.api.setResponsive(false)
-      }
+    // onLeave(origin, destination, direction) {
+    //   console.log(origin, destination, direction)
+    //   if (origin.isLast === true && direction === 'up') {
+    //     console.log('加固')
+    //     this.$refs.fullPage.api.setResponsive(false)
+    //   }
+    //   if (origin.isFirst === true && direction === 'down' && this.isMobile) {
+    //     this.$refs.fullPage.api.setResponsive(false)
+    //   }
 
-      if (destination.isFirst === true && direction === 'up' && this.isMobile) {
-        this.$refs.fullPage.api.setResponsive(false)
-      }
-    },
+    //   if (destination.isFirst === true && direction === 'up' && this.isMobile) {
+    //     this.$refs.fullPage.api.setResponsive(false)
+    //   }
+    // },
 
-    afterLoad(origin, destination, direction) {
-      this.indigatorIndex = destination.index
-      if (destination.isLast === true && direction === 'down') {
-        console.log('解除')
-        this.$refs.fullPage.api.setResponsive(true)
-      }
-    },
+    // afterLoad(origin, destination, direction) {
+    //   this.indigatorIndex = destination.index
+    //   if (destination.isLast === true && direction === 'down') {
+    //     console.log('解除')
+    //     this.$refs.fullPage.api.setResponsive(true)
+    //   }
+    // },
   },
 }
 </script>
