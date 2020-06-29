@@ -85,13 +85,18 @@
 .section,
 .section .fp-slide,
 .section .fp-tableCell {
-  height: auto !important;overflow: hidden;
+  height: auto !important;
 }
+#section3,
+#section6,
+#section8,
+#section9{overflow: hidden;}
 #section8{margin: 0 0 -25vh;}
 #section10{margin: 0 0 -18vw;}
 #contact{z-index: 2;}
 @media screen and (max-width: 767px) {
 #section1{margin: 0 0 -28.8vw;}
+#section2{overflow: hidden;}
 }
 </style>
 

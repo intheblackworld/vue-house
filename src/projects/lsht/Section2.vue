@@ -67,8 +67,8 @@
   // height: 100vh;
   overflow: hidden;
   position: relative;
-  height: size(1080);
-  margin: 0 0 -8vw;
+  height: size(1014);
+  margin: 0 0 0vw;
 }
 
 .bg-img {
