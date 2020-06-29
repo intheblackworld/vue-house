@@ -67,7 +67,8 @@
   // height: 100vh;
   overflow: hidden;
   position: relative;
-  height: 100vh;
+  height: size(1080);
+  margin: 0 0 -8vw;
 }
 
 .bg-img {
@@ -79,9 +80,9 @@
   left: 0;
   object-fit: cover;
 
-  // &:nth-child(1) {
-  //   position: relative;
-  // }
+ &:nth-child(1) {
+  height: size(1080);
+ }
 }
 
 .subtitle {
@@ -93,7 +94,7 @@
   letter-spacing: normal;
   text-align: center;
   color: #ffffff;
-  transform: scaleX(0.95);
+  transform: scaleX(0.93);
   top: size(69);
   left: 0;
   right: 0;
@@ -109,7 +110,7 @@
   letter-spacing: 1.49px;
   text-align: center;
   color: #ffffff;
-  transform: scaleX(0.95);
+  transform: scaleX(0.93);
   top: size(108);
   left: 0;
   right: 0;
@@ -125,7 +126,7 @@
   letter-spacing: normal;
   text-align: center;
   color: #ffffff;
-  transform: scaleX(0.95);
+  transform: scaleX(0.93);
   top: size(620);
   left: 0;
   right: 0;
@@ -188,8 +189,9 @@
 @media screen and (max-width: 767px) {
   .relative {
     height: size-m(609);
+    margin:14.4vw 0 0 0;
   }
-
+.map{margin:14.4vw 0 0 0;}
   .subtitle {
     font-size: size-m(13);
     font-weight: normal;
@@ -199,8 +201,8 @@
     letter-spacing: normal;
     text-align: center;
     color: #ffffff;
-    transform: scaleX(0.95);
-    top: size-m(56);
+    transform: scaleX(0.93);
+    top: size-m(0);
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -216,8 +218,8 @@
     letter-spacing: 1.15px;
     text-align: center;
     color: #ffffff;
-    transform: scaleX(0.95);
-    top: size-m(74);
+    transform: scaleX(0.93);
+    top: size-m(20);
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -233,7 +235,7 @@
     letter-spacing: normal;
     text-align: center;
     color: #ffffff;
-    transform: scaleX(0.95);
+    transform: scaleX(0.93);
     top: size-m(387);
     left: 0;
     right: 0;

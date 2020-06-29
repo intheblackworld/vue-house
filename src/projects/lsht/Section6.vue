@@ -35,6 +35,7 @@
   overflow: hidden;
   position: relative;
   height: size(924);
+  margin: 7vh 0 0 0;
 }
 
 .bg-img {
@@ -62,7 +63,7 @@
   color: #595757;
   left: size(419);
   top: size(257);
-  transform: scaleX(0.95);
+  transform: scaleX(0.93);
 }
 
 .desc {
@@ -74,7 +75,7 @@
   letter-spacing: 0.6px;
   text-align: left;
   color: #595757;
-  transform: scaleX(0.95);
+  transform: scaleX(0.93);
   left: size(425);
   top: size(327);
 }

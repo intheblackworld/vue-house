@@ -41,7 +41,6 @@
                 v-html="slide.desc"
               ></h3>
             </div>
-            <div class="border"></div>
           </swiper-slide>
         </transition-group>
       </div>
@@ -70,9 +69,10 @@
 </template>
 <style lang="scss">
 .item-title {
+    font-size: size(55);
   span {
     color: #0c3e7b !important;
-    font-size: size(55);
+    font-size:1.4em;
     font-family: 'Noto Serif TC' !important;
   }
 }
@@ -135,7 +135,7 @@
   }
 
   .item {
-    padding: size(30) size(35) 0 size(70);
+    padding: size(30) size(50) 0 size(45);
   }
 }
 
@@ -148,7 +148,7 @@
   letter-spacing: normal;
   text-align: left;
   color: #595757;
-  transform: scaleX(0.95);
+  transform: scaleX(0.93);
   white-space: nowrap;
   margin-bottom: size(18);
 
@@ -168,7 +168,7 @@
   letter-spacing: 1.05px;
   text-align: left;
   color: #007eca;
-  transform: scaleX(0.95);
+  transform: scaleX(0.93);
   white-space: nowrap;
   margin-bottom: size(15);
 }
@@ -182,7 +182,7 @@
   letter-spacing: 0.36px;
   text-align: justify;
   color: #595757;
-  transform: scaleX(0.95);
+  transform: scaleX(0.93);
 }
 
 .item-img {
@@ -231,6 +231,7 @@
 @media screen and (max-width: 767px) {
   .relative {
     background: #fff;
+  height: size-m(750);
   }
   .slide-content {
     left: 0;
@@ -239,7 +240,7 @@
     top: size-m(40);
     width: 90vw;
   }
-
+.slide-container{    height:size-m(750);}
   // .relative {
   //   > div {
   //     display: flex;
@@ -256,7 +257,7 @@
     letter-spacing: normal;
     text-align: left;
     color: #595757;
-    transform: scaleX(0.95);
+    transform: scaleX(0.93);
     white-space: normal;
     margin-bottom: size-m(11);
   }
@@ -270,14 +271,14 @@
     letter-spacing: 1.05px;
     text-align: left;
     color: #007eca;
-    transform: scaleX(0.95);
+    transform: scaleX(0.93);
     white-space: normal;
     margin-bottom: size-m(5);
   }
 
   .item-desc {
     font-size: size-m(12);
-    height: size-m(100);
+    height: auto;
     overflow: hidden;
     font-weight: 500;
     font-stretch: normal;
@@ -286,7 +287,7 @@
     letter-spacing: 0.36px;
     text-align: justify;
     color: #595757;
-    transform: scaleX(0.95);
+    transform: scaleX(0.93);
   }
 
   .item-img {
@@ -356,7 +357,7 @@ export default {
               img: require('./s4/img1.png'),
             },
             {
-              img: require('./s4/img1.png'),
+              img: require('./s4/img2.png'),
             },
           ],
       slideList1: [

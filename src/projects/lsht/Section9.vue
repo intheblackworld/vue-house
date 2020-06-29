@@ -54,7 +54,8 @@
   // height: 100vh;
   // overflow: hidden;
   position: relative;
-  height: size(915);
+  height: 100vh;
+  margin:0;
 }
 .img-row {
   width: 100vw;
@@ -69,7 +70,7 @@
   width: 200vw;
   animation: moving 30s linear infinite;
   position: absolute;
-  bottom: size(0);
+  bottom:25vh;
   img {
     height: size(79);
   }
@@ -127,7 +128,8 @@
 
 @media screen and (max-width: 767px) {
   .relative {
-    height: size-m(360);
+    height: size-m(400);
+    margin:50vw 0;
   }
 
   .img-row {
@@ -136,7 +138,7 @@
   }
 
   .img {
-    width: size-m(170);
+    width: size-m(300);
   }
 
   @keyframes moveImg {

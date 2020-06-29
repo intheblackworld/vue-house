@@ -49,7 +49,7 @@
       display: block;
       width: 0.7em;
       height: 0.7em;
-      border: 1px solid #fff;
+     //@function border: 1px solid #0000;
       border-radius: 999px;
       margin: calc(50% - 0.3em) auto 0 auto;
       transition: all 0.3s;
@@ -70,7 +70,7 @@
     background: rgba(0, 0, 0, 0.4);
     margin: 1em auto 1em auto;
     padding: 0.4em;
-    color: #ffd200;
+    color: #fff;
     border-radius: 20px;
     cursor: pointer;
     line-height: 1.5;
@@ -78,6 +78,7 @@
     transition: all 0.3s;
     &:hover {
       color: #fff;
+    background: rgba(0, 40, 130, 0.4);
     }
   }
 }

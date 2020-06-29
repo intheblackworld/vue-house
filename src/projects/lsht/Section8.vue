@@ -140,16 +140,17 @@
   // height: 100vh;
   // overflow: hidden;
   position: relative;
-  height: size(850);
+  height:size(1150);
   background: #fff;
   z-index: 1;
+  margin:8vh 0 0 0;
 }
 
 .animate-row {
   width: 200vw;
   animation: moving 30s linear infinite;
   position: absolute;
-  bottom: size(-200);
+  bottom:0;
 
   img {
     width: 100%;
@@ -164,7 +165,7 @@
   }
 
   &.animate-row2 {
-    bottom: size(100);
+    bottom: size(300);
     animation: moving 20s linear infinite;
 
     img {
@@ -178,6 +179,8 @@
   width: size(675);
   left: size(270);
   top: size(127);
+    transform: scaleX(0.93);
+  z-index: 3;
 
   .title {
     font-size: size(38);
@@ -189,7 +192,6 @@
     text-align: left;
     color: #595757;
     white-space: nowrap;
-    transform: scaleX(0.95);
     margin-bottom: size(20);
   }
 
@@ -202,41 +204,43 @@
     letter-spacing: normal;
     text-align: left;
     color: #595757;
-    transform: scaleX(0.95);
-    margin-bottom: size(25);
+    margin:0 0 size(25) -0.8em;
   }
 
   .desc {
     font-size: 12px;
-    font-weight: bold;
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
     line-height: 2.1;
     letter-spacing: 0.12px;
     text-align: left;
     color: #595757;
-    transform: scaleX(0.95);
+    margin:0 0 2em 0.2em;
   }
 }
 
 .dropdown {
-  margin-left: size(15);
+  margin-left:0;
   .item {
     width: 100%;
-    height: 38px;
+    max-height: 38px;
     overflow: hidden;
     padding-left: 0;
     padding-right: 0;
     border-radius: 0;
+    border-bottom: 1px solid #CCC;
     margin-bottom: 3px;
-    transition: height 0.5s;
+    transition:max-height 0.5s;
     cursor: pointer;
 
     &.open {
-      height: auto;
+    max-height:15em;
     }
   }
   .head {
+    h3{font-family: 'Noto Sans TC' !important;
+    font-weight: normal;}
     font-size: 20px;
     font-weight: normal;
     font-style: normal;
@@ -350,7 +354,7 @@
 
 @media screen and (max-width: 767px) {
   .relative {
-    height: size-m(705);
+    height: size-m(900);
   }
   .slide-content {
     left: 3vw;
@@ -360,8 +364,11 @@
     width: 90vw;
   }
   .m-content {
-    width: size-m(265);
-    padding: size-m(24) size-m(8) 0 size-m(28);
+    width: size-m(290);
+    padding: size-m(24) size-m(0) 0 size-m(23);
+    transform: scaleX(0.93);
+    transform-origin: 0 0;
+      text-align: justify;
     .subtitle {
       font-size: size-m(15);
       font-weight: bold;
@@ -369,7 +376,7 @@
       font-style: normal;
       line-height: 1.46;
       letter-spacing: normal;
-      text-align: left;
+      text-align: justify;
       color: #595757;
     }
     .title {
@@ -379,7 +386,7 @@
       font-style: normal;
       line-height: 1.46;
       letter-spacing: normal;
-      text-align: left;
+      text-align: justify;
       color: #595757;
     }
     .desc {
@@ -389,8 +396,9 @@
       font-style: normal;
       line-height: 2.1;
       letter-spacing: 0.12px;
-      text-align: left;
+      text-align: justify;
       color: #595757;
+      margin: 0 0 1em;
     }
   }
   .m-img {

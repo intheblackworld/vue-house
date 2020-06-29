@@ -166,9 +166,10 @@
   // height: 100vh;
   // overflow: hidden;
   position: relative;
-  height: size(1080);
+  height:calc(100vh + 18vw);
   background: #fff;
   z-index: 1;
+ // margin: 0 0 -18vw 0;
 }
 
 .highlight-img {
@@ -198,7 +199,7 @@
   letter-spacing: 2.46px;
   text-align: left;
   color: #595757;
-  transform: scaleX(0.95);
+  transform: scaleX(0.93);
 }
 
 .subtitle {
@@ -210,7 +211,7 @@
   letter-spacing: 2.88px;
   text-align: left;
   color: #595757;
-  transform: scaleX(0.95);
+  transform: scaleX(0.93);
 }
 
 .info {
@@ -222,7 +223,7 @@
   letter-spacing: 1.45px;
   text-align: left;
   color: #595757;
-  transform: scaleX(0.95);
+  transform: scaleX(0.93);
 }
 
 .desc {
@@ -234,7 +235,7 @@
   letter-spacing: 1.08px;
   text-align: left;
   color: #595757;
-  transform: scaleX(0.95);
+  transform: scaleX(0.93);
 }
 
 .logo {
@@ -287,7 +288,7 @@
     letter-spacing: 0.23px;
     text-align: center;
     color: #595757;
-    transform: scaleX(0.95);
+    transform: scaleX(0.93);
   }
 
   .img-desc {
@@ -299,7 +300,7 @@
     letter-spacing: 0.23px;
     text-align: center;
     color: #595757;
-    transform: scaleX(0.95);
+    transform: scaleX(0.93);
   }
 }
 
@@ -307,7 +308,7 @@
   width: 200vw;
   animation: moving 30s linear infinite;
   position: absolute;
-  bottom: size(-200);
+  bottom: size(0);
 
   img {
     width: 100%;
@@ -322,7 +323,7 @@
   }
 
   &.animate-row2 {
-    bottom: size(100);
+    bottom: size(260);
     animation: moving 20s linear infinite;
 
     img {
@@ -457,15 +458,15 @@
     }
   }
   .img-title {
-    font-size: size-m(15);
+    font-size: size-m(30);
     font-weight: 300;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.36;
+    line-height: 1.6;
     letter-spacing: 0.24px;
     text-align: center;
     color: #595757;
-    transform: scaleX(0.95);
+    transform: scaleX(0.93);
   }
 
   .img-desc {
@@ -473,11 +474,11 @@
     font-weight: 300;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.36;
+    line-height: 3;
     letter-spacing: 0.24px;
     text-align: center;
     color: #595757;
-    transform: scaleX(0.95);
+    transform: scaleX(0.93);
   }
 }
 </style>

@@ -7,14 +7,14 @@
         class="bg-img"
       >
 
-      <div class="flex animate-row">
+      <div class="flex animate-row animate-row3">
         <img
-          src="./s1/wave1.png"
+          src="./s1/wave2.png"
           alt="聯上海棠"
           class="wave"
         >
         <img
-          src="./s1/wave1.png"
+          src="./s1/wave2.png"
           alt="聯上海棠"
           class="wave"
         >
@@ -31,14 +31,14 @@
           class="wave"
         >
       </div>
-      <div class="flex animate-row animate-row3">
+      <div class="flex animate-row">
         <img
-          src="./s1/wave2.png"
+          src="./s1/wave1.png"
           alt="聯上海棠"
           class="wave"
         >
         <img
-          src="./s1/wave2.png"
+          src="./s1/wave1.png"
           alt="聯上海棠"
           class="wave"
         >
@@ -60,7 +60,6 @@
         class="item-img absolute"
       />
 
-      <div class="item-border absolute"></div>
 
       <div class="slide-content absolute">
         <h3 data-aos="fade" data-aos-delay="400" class="subtitle">
@@ -99,6 +98,7 @@
           >
         </div>
       </div>
+      <div class="item-border absolute"></div>
     </div>
     <div v-if="isMobile">
       <img
@@ -267,7 +267,8 @@
   // height: 100vh;
   // overflow: hidden;
   position: relative;
-  height: 100vh;
+  height: size(1080);
+  //height: 100vh;
 }
 
 .bg-img {
@@ -278,6 +279,9 @@
   top: 0;
   left: 0;
   object-fit: cover;
+  &:first-child{
+  height: size(1080);
+  }
 }
 
 .animate-row {
@@ -285,11 +289,11 @@
   animation: moving 30s linear infinite;
   position: absolute;
   // bottom: size(-200);
-  top: -33vh;
+  top: -45vh;
 
   img {
     width: 50%;
-    height: auto;
+    height: size(1337);
     // height: size(413);
 
     &:nth-child(2) {
@@ -299,7 +303,8 @@
 
   &.animate-row2 {
     // bottom: size(100);
-    animation: moving 20s linear infinite;
+    animation: moving 20s -5s linear infinite;
+  top: -43vh;
 
     // img {
     //   height: size(79);
@@ -308,7 +313,8 @@
   }
 
   &.animate-row3 {
-    animation: moving 25s linear infinite;
+    animation: moving 25s -10s linear infinite;
+  top: -40vh;
   }
 }
 
@@ -321,7 +327,7 @@
   overflow: hidden;
   border-radius: 60% 40% 45% 55% / 50% 45% 55% 50%;
   overflow: hidden;
-  animation: border-radius 8s ease infinite;
+  animation: border-radius 4s ease alternate infinite;
   padding-top: size(176);
 }
 
@@ -333,7 +339,7 @@
   top: 0;
   border-radius: 60% 40% 45% 55% / 50% 45% 55% 50%;
   overflow: hidden;
-  animation: border-radius 8s ease infinite;
+  animation: border-radius 4s ease alternate infinite;
 }
 
 .item-border {
@@ -344,7 +350,7 @@
   top: 0;
   border-radius: 60% 40% 45% 55% / 50% 45% 55% 50%;
   overflow: hidden;
-  animation: border-radius 20s ease infinite;
+  animation: border-radius 5s 2s ease alternate infinite;
   border: 1px solid #d0a100;
 }
 
@@ -395,7 +401,8 @@
   }
 
   .words {
-    animation: scroll-top 30s linear infinite;
+  font-weight: 200;
+  animation: scroll-top 10s linear infinite;
   }
 }
 
@@ -415,28 +422,16 @@
   0% {
     margin-top: 0%;
   }
-
-  50% {
-    border-radius: 40% 55% 60% 45% / 45% 50% 50% 55%;
-  }
-
   100% {
     margin-top: -50%;
   }
-}
+} 
 
 @keyframes border-radius {
-  0% {
-    border-radius: 60% 40% 45% 55% / 50% 45% 55% 50%;
-  }
-
-  50% {
+  to{
     border-radius: 40% 55% 60% 45% / 45% 50% 50% 55%;
   }
 
-  100% {
-    border-radius: 60% 40% 45% 55% / 50% 45% 55% 50%;
-  }
 }
 
 @keyframes moving {
@@ -446,7 +441,7 @@
   }
   50% {
     -webkit-transform: translateX(0);
-    transform: translateX(-25%) scaleY(0.5);
+    transform: translateX(-25%) scaleY(0.6);
   }
 
   to {
@@ -468,6 +463,14 @@
 }
 
 @media screen and (max-width: 767px) {
+  .relative{
+  margin:0 0 0 0;
+
+  }
+  .relative,
+  .bg-img:first-child{
+    height: 120vh;
+  }
   .animate-row {
     width: 600vw;
   }
@@ -492,7 +495,7 @@
     top: size-m(204);
     border-radius: 60% 40% 45% 55% / 50% 45% 55% 50%;
     overflow: hidden;
-    animation: border-radius 8s ease infinite;
+    animation: border-radius 4s ease alternate infinite;
   }
 
   .slide-content {
@@ -504,7 +507,7 @@
     overflow: hidden;
     border-radius: 60% 40% 45% 55% / 50% 45% 55% 50%;
     overflow: hidden;
-    animation: border-radius 8s ease infinite;
+    animation: border-radius 4s ease alternate infinite;
     padding-top: size-m(40);
   }
 
@@ -516,7 +519,7 @@
     top: size-m(204);
     border-radius: 60% 40% 45% 55% / 50% 45% 55% 50%;
     overflow: hidden;
-    animation: border-radius 20s ease infinite;
+    animation: border-radius 10s ease alternate infinite;
     border: 1px solid #d0a100;
   }
 
@@ -548,7 +551,7 @@
   }
 
   .desc {
-    font-size: size(14);
+    font-size: size-m(14);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
@@ -571,9 +574,9 @@
       top: 0;
     }
 
-    .words {
-      animation: scroll-top 30s linear infinite;
-    }
+    //.words {
+   //   animation: scroll-top 30s linear infinite;
+   // }
   }
 }
 </style>

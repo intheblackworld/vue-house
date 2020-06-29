@@ -3,7 +3,7 @@
     <div v-if="!isMobile">
       <img
         v-lazy="require('./s3/bg.jpg')"
-        alt="聯上海棠"
+        alt="bg"
         class="bg-img"
       >
       <swiper
@@ -55,18 +55,18 @@
       <div class="flex animate-row">
         <img
           v-lazy="require('./s3/wave.png')"
-          alt="聯上海棠"
+          alt="wave"
           class="wave"
         >
         <img
           v-lazy="require('./s3/wave.png')"
-          alt="聯上海棠"
+          alt="wave"
           class="wave"
         >
       </div>
       <div class="flex animate-row animate-row2">
-        <img v-lazy="require('./s2/wave_l.png')" alt="聯上海棠" class="wave">
-        <img v-lazy="require('./s2/wave_l.png')" alt="聯上海棠" class="wave">
+        <img v-lazy="require('./s2/wave_l.png')" alt="wave" class="wave">
+        <img v-lazy="require('./s2/wave_l.png')" alt="wave" class="wave">
       </div>
     </div>
     <div v-if="isMobile">
@@ -117,7 +117,7 @@
               class="item-desc"
               v-html="slide.desc"
             ></h3>
-            <img src="./mo/plus.png" alt="聯上海棠" class="add" @click="isDialog = true">
+           <div class="add" @click="isDialog = true"><img src="./mo/plus.png" alt="plus"></div>
           </div>
         </transition-group>
       </div>
@@ -130,7 +130,7 @@
             class="close"
             @click="isDialog = false"
             src="./mo/close.png"
-            alt="聯上海棠"
+            alt="close"
           >
           <transition-group
             name="slide-fade"
@@ -192,6 +192,7 @@
   overflow: hidden;
   position: relative;
   height: 100vh;
+  margin: 8vw 0 0 0;
 }
 
 .bg-img {
@@ -248,9 +249,11 @@
   letter-spacing: normal;
   text-align: left;
   color: #595757;
-  transform: scaleX(0.95);
+  transform: scaleX(0.93);
   white-space: nowrap;
   margin-bottom: size(30);
+  transform: scaleX(0.93);
+  transform-origin: 0 0;
 }
 
 .item-subtitle {
@@ -262,7 +265,7 @@
   letter-spacing: 1.05px;
   text-align: left;
   color: #007eca;
-  transform: scaleX(0.95);
+  transform: scaleX(0.93);
   white-space: nowrap;
   margin-bottom: size(15);
 }
@@ -276,7 +279,7 @@
   letter-spacing: 0.36px;
   text-align: justify;
   color: #595757;
-  transform: scaleX(0.95);
+  transform: scaleX(0.93);
 }
 
 .slide-content {
@@ -363,12 +366,16 @@
 }
 
 @media screen and (max-width: 767px) {
+  .relative{
+    margin: 0;
+}
   .slide-content {
     left: 3vw;
     right: auto;
     margin: 0 auto;
     top: size-m(40);
     width: 90vw;
+    transform: scaleX(0.93);
   }
 
   // .relative {
@@ -387,9 +394,8 @@
     letter-spacing: normal;
     text-align: left;
     color: #595757;
-    transform: scaleX(0.95);
     white-space: nowrap;
-    margin-bottom: size-m(11);
+    margin:0 0 size-m(11) size-m(8);
   }
 
   .item-subtitle {
@@ -398,17 +404,17 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.2;
-    letter-spacing: 1.05px;
+    letter-spacing:0;
     text-align: left;
     color: #007eca;
-    transform: scaleX(0.95);
     white-space: nowrap;
-    margin-bottom: size-m(5);
+    margin:0 0 size-m(5) size-m(-9);
+
   }
 
   .item-desc {
     font-size: size-m(12);
-    height: size-m(100);
+    height: size-m(112);
     overflow: hidden;
     font-weight: 500;
     font-stretch: normal;
@@ -417,15 +423,17 @@
     letter-spacing: 0.36px;
     text-align: justify;
     color: #595757;
-    transform: scaleX(0.95);
+    margin:0 0 size-m(5) size-m(-3);
   }
 
   .add {
-    width: size-m(20);
+    width: 100%;text-align: center;
     // padding: 20px;
-    margin-top: 10px;
-    position: relative;
-    z-index: 10;
+    margin-top:0;
+    position: absolute;
+    z-index: 3;bottom: 0;
+background: linear-gradient(to bottom,#fff0 0%,#ffff 100%);
+    img{height: size-m(20);margin: size-m(50) 0 0 0;}
   }
 
   .dialog {

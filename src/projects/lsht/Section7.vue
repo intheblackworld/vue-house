@@ -41,6 +41,7 @@
           <img
             :src="slide.img"
             :class="`item-img absolute ${slideIndex === index ? 'active' : ''}`"
+            :alt="slide.title"
           />
         </swiper-slide>
         <div class="slide-content absolute">
@@ -127,6 +128,7 @@
           <img
             :src="slide.img"
             :class="`item-img absolute ${slideIndex === index ? 'active' : ''}`"
+            :alt="slide.title"
           />
         </swiper-slide>
       </swiper>
@@ -164,12 +166,12 @@
   // height: 100vh;
   overflow: hidden;
   position: relative;
-  height: size(919);
+  height:100vh;
 }
 
 .bg-img {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   position: absolute;
   display: block;
   top: 0;
@@ -188,11 +190,11 @@
 }
 
 .slide-content {
-  width: size(390);
+  width: size(500);
   // height: size(201);
   background-color: rgba(0, 0, 0, 0.65);
-  right: size(285);
-  top: size(680);
+  left:60%;
+  bottom: size(10);
   z-index: 5;
   padding: size(20) 0 size(20) size(20);
 }
@@ -206,7 +208,7 @@
   letter-spacing: normal;
   text-align: left;
   color: #fff;
-  transform: scaleX(0.95);
+  transform: scaleX(0.93);
   margin-bottom: size(15);
 }
 
@@ -219,25 +221,26 @@
 //   letter-spacing: 1.05px;
 //   text-align: left;
 //   color: #007eca;
-//   transform: scaleX(0.95);
+//   transform: scaleX(0.93);
 //   white-space: nowrap;
 //   margin-bottom: size(15);
 // }
 
 .item-desc {
   font-size: size(12);
-  font-weight: bold;
+  font-weight: 300;
   font-stretch: normal;
   font-style: normal;
   line-height: 2.25;
   letter-spacing: 0.6px;
   text-align: left;
   color: #fff;
-  transform: scaleX(0.95);
+  transform: scaleX(0.93);
 }
 
 .item-img {
-  width: size(1378);
+ max-width: 100vw;
+  max-height: 100vh;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -327,14 +330,14 @@
     letter-spacing: normal;
     text-align: left;
     color: #fff;
-    transform: scaleX(0.95);
+    transform: scaleX(0.93);
     margin-left: size-m(5);
     margin-bottom: size-m(15);
   }
 
   .item-desc {
     font-size: size-m(12);
-    height: size-m(100);
+    height: auto;
     overflow: hidden;
     font-weight: 500;
     font-stretch: normal;
@@ -344,7 +347,7 @@
     text-align: justify;
     color: #fff;
     width: size-m(292);
-    transform: scaleX(0.95);
+    transform: scaleX(0.93);
     margin-left: size-m(15);
   }
 
@@ -404,18 +407,53 @@ export default {
           img: require('./s7/1.jpg'),
         },
         {
-          title: '【大廳‧似水年華】',
+          title: '【服務台‧尊榮迎賓】',
           subtitle: '',
           desc:
-            '華人講究天圓地方的宇宙觀，也同時代表動與靜，大廳頂天立柱的兩根柱子，特別採用兩種不同方式的材質表達裡外，以藝術家徐永旭的藝術作品表現海棠為構想的藝術品，宛如在這就看到一幅山水畫。',
-          img: require('./s7/1.jpg'),
+            '大廳為核心，A、B、D三棟各設置專屬的迎賓服務台，並擁有廣大的宅配室及衣物掛置區，即使衣服送洗回來也不會有絲毫的皺褶，服務藏在最細節裡。',
+          img: require('./s7/2.jpg'),
         },
         {
-          title: '【大廳‧似水年華】',
+          title: '【交誼廳‧萬卷藏景】',
           subtitle: '',
           desc:
-            '華人講究天圓地方的宇宙觀，也同時代表動與靜，大廳頂天立柱的兩根柱子，特別採用兩種不同方式的材質表達裡外，以藝術家徐永旭的藝術作品表現海棠為構想的藝術品，宛如在這就看到一幅山水畫。',
-          img: require('./s7/1.jpg'),
+            '一面為交誼廳，一面為會議室，以傢俱視野的高低作為空間的區別，在兩個空間其中，再以兩米高的柚木為圓心，作為可關可開的大門，除了可以區別空間之外，也可以融合空間，化作第三種用途使用，同時與框景相映。',
+          img: require('./s7/3.jpg'),
+        },
+        {
+          title: '【會議室‧浮光影藏】',
+          subtitle: '',
+          desc:
+            '柚木為圓心的浮影，與山水借景的寬闊，以石材的大器，展現空間的氣度與器度，同時也表現菁英的才能與高度。',
+          img: require('./s7/4.jpg'),
+        },
+        {
+          title: '【視聽室‧歡聚場域】',
+          subtitle: '',
+          desc:
+            '視聽室、小酒吧、KTV，是可以同時進行的歡聚場域，也可以一個人偶寄閒情，在這觀賞電影，或兩個人夜話綿綿酌杯小酒，每一個位置都可以有不同的功能，小吧台椅也可以當成歡唱椅，靈活運用是最迷人之處。',
+          img: require('./s7/5.jpg'),
+        },
+        {
+          title: '【信箱區‧人文寄閒】',
+          subtitle: '',
+          desc:
+            '上層為木頭，下層為鐵件，圍塑出質感之外，特別設置拆信區與碎紙機，方便當下閱覽和處理廣告信件，擁有一個私密的空間。',
+          img: require('./s7/6.jpg'),
+        },
+        {
+          title: '【健身房‧健康泉源】',
+          subtitle: '',
+          desc:
+            '當優雅遇上時尚，以兩大種材質為主要，表現溫暖感的柚木，及代表時尚感的鐵件，這不但是一個身心靈的保健空間，一片玻璃之隔的水瀑為景色，也代表美好風景由心而生，令人悅然。',
+          img: require('./s7/7.jpg'),
+        },
+        {
+          title: '【陽光泳池‧湛藍詩篇】',
+          subtitle: '',
+          desc:
+            '將森海的美共收於這座戶外泳池，健身、賞景，還有真正屬於休閒的小情趣，可以在岸邊享受日光浴的愜意，夜幕下小啜飲品的休息，在池畔邊，人的想像與心情，就如同在飯店裡優游自在。',
+          img: require('./s7/8.jpg'),
         },
       ],
     }

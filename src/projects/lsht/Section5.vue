@@ -3,16 +3,17 @@
     <div v-if="!isMobile">
       <img
         v-lazy="require('./s5/img.jpg')"
-        alt="聯上海棠"
+        alt="30米雙綠園道  自然即是奢華 與美人魚為鄰最時尚"
         class="img absolute"
       >
       <img
         v-lazy="require('./s5/title.png')"
-        alt="聯上海棠"
+        alt="30米雙綠園道  自然即是奢華 與美人魚為鄰最時尚"
         data-aos="fade"
         data-aos-delay="400"
         class="title-img absolute"
       >
+      <div class="desc_b">
       <h3
         class="desc absolute"
         data-aos="fade"
@@ -20,27 +21,28 @@
       >
         臺北仁愛路園道、臺中美術館園道、到臺南健康路園道，住在有園道的地方，本身就是一種享受，兩排林蔭風景為您開道，將身心靈的疲憊卸下，一面是森海之美，一面是園道生活，「聯上海棠」得天獨厚，居者即是榮耀！
       </h3>
+      </div>
       <div class="flex animate-row">
         <img
           v-lazy="require('./s5/wave2.png')"
-          alt="聯上海棠"
+          alt="wave"
           class="wave"
         >
         <img
           v-lazy="require('./s5/wave2.png')"
-          alt="聯上海棠"
+          alt="wave"
           class="wave"
         >
       </div>
       <div class="flex animate-row animate-row2">
         <img
           v-lazy="require('./s2/wave_l.png')"
-          alt="聯上海棠"
+          alt="wave"
           class="wave"
         >
         <img
           v-lazy="require('./s2/wave_l.png')"
-          alt="聯上海棠"
+          alt="wave"
           class="wave"
         >
       </div>
@@ -52,7 +54,7 @@
         >
         <img
           v-lazy="require('./s5/wave.png')"
-          alt="聯上海棠"
+          alt="wave"
           class="wave"
         >
       </div>
@@ -60,12 +62,12 @@
     <div v-if="isMobile">
       <img
         v-lazy="require('./mo/5/img.jpg')"
-        alt="聯上海棠"
+        alt="30米雙綠園道  自然即是奢華 與美人魚為鄰最時尚"
         class="img absolute"
       >
       <img
         v-lazy="require('./s5/title.png')"
-        alt="聯上海棠"
+        alt="30米雙綠園道  自然即是奢華 與美人魚為鄰最時尚"
         class="title-img absolute"
       >
       <h3 class="desc absolute">
@@ -74,24 +76,24 @@
       <div class="flex animate-row">
         <img
           v-lazy="require('./s5/wave2.png')"
-          alt="聯上海棠"
+          alt="wave"
           class="wave"
         >
         <img
           v-lazy="require('./s5/wave2.png')"
-          alt="聯上海棠"
+          alt="wave"
           class="wave"
         >
       </div>
       <div class="flex animate-row animate-row2">
         <img
           v-lazy="require('./s2/wave_l.png')"
-          alt="聯上海棠"
+          alt="wave"
           class="wave"
         >
         <img
           v-lazy="require('./s2/wave_l.png')"
-          alt="聯上海棠"
+          alt="wave"
           class="wave"
         >
       </div>
@@ -101,12 +103,12 @@
       >
         <img
           v-lazy="require('./s5/wave.png')"
-          alt="聯上海棠"
+          alt="wave"
           class="wave"
         >
         <img
           v-lazy="require('./s5/wave.png')"
-          alt="聯上海棠"
+          alt="wave"
           class="wave"
         >
       </div>
@@ -119,8 +121,9 @@
   // height: 100vh;
   overflow: hidden;
   position: relative;
-  height: 100vh;
+  height: calc(100vh + 4vw);
   background-color: #fff;
+  margin: 0 0 -7vh 0;
 }
 
 .bg-img {
@@ -139,22 +142,25 @@
 
 .img {
   width: size(857);
+  height: 85vh;
+  object-fit: cover;
   left: size(244);
-  top: size(16);
+  top:5vh;
+  z-index: 5;
 }
 
 .title-img {
   width: size(74);
-  top: size(58);
+  top: calc(5vh + 1vw);
   right: size(614);
 }
-
+.desc_b{transform: scaleX(0.93);}
 .desc {
   width: size(260);
   height: auto;
-  font-family: NotoSerifCJKtc;
+  font-family: "Noto Serif CJK tc";
   font-size: size(12);
-  font-weight: bold;
+  font-weight: 300;
   font-stretch: normal;
   font-style: normal;
   line-height: 2.1;
@@ -162,8 +168,7 @@
   text-align: justify;
   color: #595757;
   right: size(503);
-  top: size(582);
-  transform: scaleX(0.95);
+  top:calc(5vh + 30.3vw);
 }
 .animate-row {
   width: 200vw;
@@ -174,6 +179,7 @@
   img {
     width: 100%;
     height: size(379);
+    object-fit: cover;
   }
 
   &.animate-row2 {
@@ -237,7 +243,7 @@
     width: size-m(229);
     left: auto;
     right: size-m(5);
-    top: size-m(7.5);
+    top: size-m(7.5);height: auto;
   }
 
   .title-img {
@@ -261,6 +267,8 @@
     right: 0;
     left: 0;
     margin: 0 auto;
+  transform: scaleX(0.93);
+  transform-origin: 0 0 ;
     top: size-m(494);
   }
 
