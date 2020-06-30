@@ -51,7 +51,7 @@ export default {
   font-size: 36px;
   line-height: 36px;
   margin: 60px 0;
-  font-family: 'Noto Sans TC', serif;
+  //font-family: 'Noto Sans TC', serif;
   font-weight: bold;
   color: $house_title_color;
 }
@@ -83,11 +83,13 @@ export default {
     margin-bottom: 0;
     margin-right: 20px;
     white-space: nowrap;
-    font-family: "Noto Sans TC";font-weight:500;
+    //font-family: "Noto Sans TC";
+    font-weight:800;
   }
 
   .desc {
     font-size: 15px;
+    font-weight:500;
     text-align: left;
     line-height: 1.4;
     color: $house_desc_color;

@@ -6,7 +6,7 @@
       <div class="btn flex-c" @click="showCallDialog">
         <span class="flex-c">
           <font-awesome-icon icon="phone" />
-          {{info.phone}}
+          <span>{{info.phone}}</span>
         </span>
       </div>
       <div class="btn flex-c" @click="showMessengerDialog">
@@ -113,6 +113,7 @@ export default {
 
 .logo {
   width: $contact_logo_pc_width;
+  height:auto;
  // height:;
   margin: 0 auto 40px;
 }
@@ -137,7 +138,7 @@ export default {
   transition: all 0.5s;
   position: relative;
   overflow: hidden;
-
+font-weight: 600;
   &.half {
     width: 49%;
   }
