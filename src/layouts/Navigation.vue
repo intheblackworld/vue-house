@@ -3,11 +3,22 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
-          <img class="logo" src="@/assets/img/nav-logo.png" alt />
-          <div class="menu" @click="toggleSidebar">
+          <img src="@/projects/hoh1/ball/ball.png" alt="" class="ball-logo">
+          <img
+            class="logo"
+            src="@/assets/img/nav-logo.png"
+            alt
+          />
+          <div
+            class="menu"
+            @click="toggleSidebar"
+          >
             <font-awesome-icon icon="bars" />
           </div>
-          <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
+          <div
+            :class="`mask ${isOpen ? 'open' : ''}`"
+            @click="toggleSidebar"
+          />
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
             <li
               :key="item.name"
@@ -17,9 +28,17 @@
               @click="toggleSidebar"
             >
               <span class="link">
-                <img v-if="item.imgSrc" :src="item.imgSrc" alt />
+                <img
+                  class="ball"
+                  v-if="item.imgSrc"
+                  :src="item.imgSrc"
+                  alt
+                />
                 <span>
-                  <p class="title">{{item.name}}</p>
+                  <p
+                    class="title"
+                    v-html="item.name"
+                  ></p>
                   <span class="subTitle">{{item.subTitle}}</span>
                 </span>
               </span>
@@ -68,10 +87,22 @@ export default {
   },
 }
 </script>
-
+<style lang="scss">
+.navigation {
+  .title {
+    font-size: 15px !important;
+    position: relative;
+    z-index: 3;
+    > span {
+      font-size: 24px !important;
+    }
+  }
+}
+</style>
 <style lang="scss" scoped>
 @import '../assets/style/variableColor.scss';
 @import '../assets/style/variableDefault.scss';
+@import '../assets/style/function.scss';
 
 .navigation {
   background-color: $nav_bg;
@@ -84,7 +115,7 @@ export default {
   width: 100vw;
   display: flex !important;
   align-items: center;
-  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+  // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 .nav-container {
@@ -117,6 +148,15 @@ export default {
   transform: translateY(-50%);
 }
 
+.ball-logo {
+  width: size(400);
+  height: auto;
+  position: absolute;
+  left: size(-120);
+  display: block;
+  top: size(-250);
+}
+
 .mask {
   display: none;
 }
@@ -126,6 +166,8 @@ export default {
   align-items: center;
   justify-content: center;
   height: 100%;
+  overflow: hidden;
+  padding-left: 30px;
   li {
     height: 100%;
   }
@@ -136,18 +178,32 @@ export default {
     text-align: center;
     display: block;
     cursor: pointer;
-    padding: 0 20px;
-    transition: all .8s;
+    padding: 0 30px;
+    margin: 0 10px;
+    transition: all 0.8s;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    overflow: hidden;
+    // overflow: hidden;
     // border-right: 1px solid $nav_link_hover_bg;
+
+    .ball {
+      width: 18px;
+      position: absolute;
+      left: 0;
+      transition: all .3s;
+    }
 
     &:hover {
       color: $nav_link_hover_color;
       // background: $nav_link_hover_bg;
+
+      .ball {
+        transform: scale(8);
+        margin-left: 40px;
+        margin-top: 30px;
+      }
     }
 
     // &::before {
@@ -193,9 +249,12 @@ export default {
     // }
 
     .title {
-      font-size: 16px !important;
+      font-size: 15px !important;
       position: relative;
       z-index: 3;
+      > span {
+        font-size: 24px !important;
+      }
     }
 
     .subTitle {
@@ -307,14 +366,14 @@ export default {
 
     li {
       height: 50px;
-      margin-bottom:0;
+      margin-bottom: 0;
     }
 
     .link {
       height: 50px;
       width: 100%;
       font-size: 17px;
-      margin-top:0;
+      margin-top: 0;
       display: flex;
       align-items: center;
       justify-content: center;

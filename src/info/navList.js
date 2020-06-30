@@ -1,10 +1,7 @@
 export default [
-  { name: '敦南好好', imgSrc: '', subTitle: '', section: 'section1', svgSrc: '' },
-  { name: '好行交通宅', imgSrc: '', subTitle: '', section: 'section3', svgSrc: '' },
-  { name: '好居生活宅', imgSrc: '', subTitle: '', section: 'section4-1', svgSrc: '' },
-  { name: '好學人文宅', imgSrc: '', subTitle: '', section: 'section4-2', svgSrc: '' },
-  { name: '好購時尚宅', imgSrc: '', subTitle: '', section: 'section4-3', svgSrc: '' },
-  { name: '新跳島主義', imgSrc: '', subTitle: '', section: 'section5', svgSrc: '' },
-  { name: '御用團隊', imgSrc: '', subTitle: '', section: 'section6', svgSrc: '' },
-  { name: '預約賞屋', imgSrc: '', subTitle: '', section: 'contact', svgSrc: '' },
+  { name: '<span>神</span>之領域', imgSrc: require('../projects/hoh1/ball/bright.png'), subTitle: '', section: 'section2', svgSrc: '' },
+  { name: '<span>采</span>采生活', imgSrc: require('../projects/hoh1/ball/bright.png'), subTitle: '', section: 'section3', svgSrc: '' },
+  { name: '<span>飛</span>速交通', imgSrc: require('../projects/hoh1/ball/bright.png'), subTitle: '', section: 'section4', svgSrc: '' },
+  { name: '<span>洋</span>溢幸福', imgSrc: require('../projects/hoh1/ball/bright.png'), subTitle: '', section: 'section5', svgSrc: '' },
+  { name: '<span>預</span>約賞屋', imgSrc: require('../projects/hoh1/ball/bright.png'), subTitle: '', section: 'contact', svgSrc: '' },
 ]

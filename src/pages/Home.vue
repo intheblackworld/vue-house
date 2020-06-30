@@ -1,9 +1,9 @@
 <template>
-  <div class="home">
+  <div class="home no-padding-top">
     <div ref="gtmNoScript" />
     <Loading :loading="load" />
     <!-- <SideNavigation v-if="isSide" /> -->
-    <!-- <Navigation v-else /> -->
+    <Navigation />
     <div id="section1">
       <Section1 />
     </div>
@@ -54,20 +54,21 @@
 
 <script>
 // @ is an alias to /src
-// import Navigation from '@/layouts/Navigation.vue'
+import Navigation from '@/layouts/Navigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import gtm from '@/mixins/gtm.js'
 
-import Section1 from '@/projects/hoh/Section1.vue'
-import Section2 from '@/projects/hoh/Section2.vue'
+import Section1 from '@/projects/hoh1/Section1.vue'
+import Section2 from '@/projects/hoh1/Section2.vue'
 // import SimpleOrder from '@/components/SimpleOrder.vue'
 
 export default {
   name: 'home',
   mixins: [gtm],
   components: {
+    Navigation,
     Loading,
     ContactSection,
     MobileNav,

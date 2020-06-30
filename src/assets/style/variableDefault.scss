@@ -1,7 +1,8 @@
+@import './function.scss';
 /* navigation */
-$nav_pc_height: 0px;
-$nav_tablet_height: 0px;
-$nav_phone_height: 0px;
+$nav_pc_height: size(100);
+$nav_tablet_height: 100px;
+$nav_phone_height: 60px;
 $logo_pc_width: 120px;
 $logo_tablet_width: 120px;
 $logo_phone_width: 80px;
