@@ -142,9 +142,13 @@
     // height: 100vh;
     overflow: visible;
     position: relative;
-    height: 100vh;
+    height:calc(100vh - 63px);
   }
 
+
+.bg-img {
+  &:first-child{height: 100%;}
+}
   .img {
     width: size-m(229);
     left: auto;
@@ -165,7 +169,7 @@
   .desc {
     font-size: size-m(12);
     width: size-m(333);
-    font-weight: bold;
+    font-weight: 300;
     font-stretch: normal;
     font-style: normal;
     line-height: 2.08;
@@ -179,31 +183,25 @@
   }
 
   .animate-row {
-    width: 200vw;
-    animation: moving 30s linear infinite;
-    position: absolute;
-    bottom: size(-200);
+    bottom: size-m(-130);
+
 
     img {
-      width: 100%;
-      height: size(379);
+      height: size-m(200);
     }
 
     &.animate-row2 {
-      bottom: size(100);
-      animation: moving 20s linear infinite;
+      bottom: size-m(0);
 
       img {
-        height: size(79);
+        height: size-m(40);
       }
       // animation-delay: 5s;
     }
 
     &.no-animation {
-      animation: none;
-      bottom: 0;
       img {
-        height: size(164);
+        height: size-m(80);
       }
     }
   }

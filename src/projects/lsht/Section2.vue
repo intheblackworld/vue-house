@@ -6,40 +6,18 @@
         alt="聯上海棠"
         class="bg-img"
       >
-      <h3 class="subtitle absolute" data-aos="fade" data-aos-delay="400">
+      <div class="txt absolute">
+      <h3 class="subtitle" data-aos="fade" data-aos-delay="400">
         【傲然‧天生麗質】
       </h3>
-      <h3 class="title absolute" data-aos="fade" data-aos-delay="600">
+      <h4 class="title" data-aos="fade" data-aos-delay="600">
         傲視市政新灣區 開啟臺南生活新傳奇
-      </h3>
-      <h3 class="desc absolute" data-aos="fade" data-aos-delay="800">
+      </h4>
+      <p class="desc" data-aos="fade" data-aos-delay="800">
         臺南的市政新灣區<br />
         不僅重大建設齊聚、知名建商更接連在此擁地、打造經典名宅<br />
         高樓層可遠眺綠海景觀，市政新灣區到底有多夯？
-      </h3>
-      <div class="flex animate-row">
-        <img
-          v-lazy="require('./s2/wave.png')"
-          alt="聯上海棠"
-          class="wave"
-        >
-        <img
-          v-lazy="require('./s2/wave.png')"
-          alt="聯上海棠"
-          class="wave"
-        >
-      </div>
-      <div class="flex animate-row animate-row2">
-        <img
-          v-lazy="require('./s2/wave_l.png')"
-          alt="聯上海棠"
-          class="wave"
-        >
-        <img
-          v-lazy="require('./s2/wave_l.png')"
-          alt="聯上海棠"
-          class="wave"
-        >
+      </p>
       </div>
     </div>
     <div v-if="isMobile">
@@ -47,18 +25,44 @@
         :bgSrc="bgSrc"
         :hand="hand"
       ></Map>
-      <h3 class="subtitle absolute" data-aos="fade" data-aos-delay="200">
+      <div class="txt absolute">
+      <h3 class="subtitle" data-aos="fade" data-aos-delay="200">
         【傲然‧天生麗質】
       </h3>
-      <h3 class="title absolute" data-aos="fade" data-aos-delay="400">
+      <h4 class="title" data-aos="fade" data-aos-delay="400">
         傲視市政新灣區<br />開啟臺南生活新傳奇
-      </h3>
-      <h3 class="desc absolute" data-aos="fade" data-aos-delay="600">
+      </h4>
+      <p class="desc" data-aos="fade" data-aos-delay="600">
         臺南的市政新灣區<br />
         不僅重大建設齊聚、知名建商更接連在此擁地、打造經典名宅<br />
         高樓層可遠眺綠海景觀，市政新灣區到底有多夯？
-      </h3>
+      </p>
     </div>
+    </div>
+      <div class="flex animate-row">
+        <img
+          v-lazy="require('./s2/wave.png')"
+          alt="wave"
+          class="wave"
+        >
+        <img
+          v-lazy="require('./s2/wave.png')"
+          alt="wave"
+          class="wave"
+        >
+      </div>
+      <div class="flex animate-row animate-row2">
+        <img
+          v-lazy="require('./s2/wave_l.png')"
+          alt="wave"
+          class="wave"
+        >
+        <img
+          v-lazy="require('./s2/wave_l.png')"
+          alt="wave"
+          class="wave"
+        >
+      </div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -85,52 +89,30 @@
  }
 }
 
-.subtitle {
-  font-size: size(21);
+.txt{transform:scaleX(0.93);
+  top: size(69);
+  left: 0;right: 0;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.43;
-  letter-spacing: normal;
+  letter-spacing:0.1em;
+  line-height: 1.6;
   text-align: center;
   color: #ffffff;
-  transform: scaleX(0.93);
-  top: size(69);
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+  z-index: 5;}
+.subtitle {
+  font-size: size(21);
 }
 
 .title {
   font-size: size(31);
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.45;
-  letter-spacing: 1.49px;
-  text-align: center;
-  color: #ffffff;
-  transform: scaleX(0.93);
-  top: size(108);
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+  margin: 0 0 0.4em;
 }
 
 .desc {
   font-size: size(15);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.6;
-  letter-spacing: normal;
-  text-align: center;
-  color: #ffffff;
-  transform: scaleX(0.93);
-  top: size(620);
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+  font-weight: 300;
 }
 .animate-row {
   width: 200vw;
@@ -192,56 +174,35 @@
     margin:14.4vw 0 0 0;
   }
 .map{margin:14.4vw 0 0 0;}
-  .subtitle {
+.txt{
+  top: 0;}
+.subtitle {
     font-size: size-m(13);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.43;
-    letter-spacing: normal;
-    text-align: center;
-    color: #ffffff;
-    transform: scaleX(0.93);
-    top: size-m(0);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    z-index: 10;
-  }
+}
 
-  .title {
+.title {
     font-size: size-m(24);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.79;
-    letter-spacing: 1.15px;
-    text-align: center;
-    color: #ffffff;
-    transform: scaleX(0.93);
-    top: size-m(20);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    z-index: 10;
+}
+
+.desc {
+    font-size: size-m(12);
+}
+.animate-row {
+  bottom: size-m(-100);
+  z-index: 10;
+  img {
+    height: size-m(200);
+
   }
 
-  .desc {
-    font-size: size-m(12);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.6;
-    letter-spacing: normal;
-    text-align: center;
-    color: #ffffff;
-    transform: scaleX(0.93);
-    top: size-m(387);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    z-index: 10;
-  }
+  &.animate-row2 {
+    bottom: size-m(30);
+
+    img {
+      height: size-m(40);
+    }
+    }
+    }
 }
 </style>
 <script>

@@ -190,52 +190,35 @@
 }
 
 .slide-content {
-  width: size(500);
+  width: size(540);
+  transform: scaleX(0.93);
+  transform-origin: center center;
   // height: size(201);
   background-color: rgba(0, 0, 0, 0.65);
   left:60%;
   bottom: size(10);
   z-index: 5;
-  padding: size(20) 0 size(20) size(20);
+  padding: size(20);
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing:0.1em;
+  text-align: justify;
+  color: #fff;
+  line-height:1.6;
+  font-size: size(24);
 }
 
 .item-title {
   font-size: size(24);
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.27;
-  letter-spacing: normal;
-  text-align: left;
-  color: #fff;
-  transform: scaleX(0.93);
-  margin-bottom: size(15);
+  margin-bottom: size(5);
+  margin-left: -0.5em;
+  letter-spacing:0.2em;
 }
-
-// .item-subtitle {
-//   font-size: size(21);
-//   font-weight: bold;
-//   font-stretch: normal;
-//   font-style: normal;
-//   line-height: 1.2;
-//   letter-spacing: 1.05px;
-//   text-align: left;
-//   color: #007eca;
-//   transform: scaleX(0.93);
-//   white-space: nowrap;
-//   margin-bottom: size(15);
-// }
-
 .item-desc {
   font-size: size(12);
   font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2.25;
-  letter-spacing: 0.6px;
-  text-align: left;
-  color: #fff;
-  transform: scaleX(0.93);
+  margin-bottom: size(10);
 }
 
 .item-img {
@@ -301,54 +284,21 @@
     z-index: 2;
   }
   .slide-content {
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    top: auto;
-    bottom: 0;
-    width: 100vw;
+  width:108vw;
+    left:0;
+    transform-origin: 0 0 ;
     height: size-m(356);
     display: flex;
     align-content: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap;padding: 1em;
+  font-size:size-m(24);
   }
-
-  // .relative {
-  //   > div {
-  //     display: flex;
-  //     justify-content: center;
-  //   }
-  // }
-
   .item-title {
-    width: 100vw;
     font-size: size-m(24);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.27;
-    letter-spacing: normal;
-    text-align: left;
-    color: #fff;
-    transform: scaleX(0.93);
-    margin-left: size-m(5);
-    margin-bottom: size-m(15);
   }
 
   .item-desc {
     font-size: size-m(12);
-    height: auto;
-    overflow: hidden;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.1;
-    letter-spacing: 0.36px;
-    text-align: justify;
-    color: #fff;
-    width: size-m(292);
-    transform: scaleX(0.93);
-    margin-left: size-m(15);
   }
 
   .item-img {

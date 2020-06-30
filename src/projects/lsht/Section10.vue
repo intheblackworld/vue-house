@@ -49,7 +49,43 @@
       </div>
 
     </div>
-    <div v-if="isMobile">
+    <div class="flex animate-row">
+      <img
+        v-lazy="require('./s8/wave.png')"
+        alt="聯上海棠"
+        class="wave"
+      >
+      <img
+        v-lazy="require('./s8/wave.png')"
+        alt="聯上海棠"
+        class="wave"
+      >
+    </div>
+    <div class="flex animate-row animate-row1">
+      <img
+        v-lazy="require('./s8/wave.png')"
+        alt="聯上海棠"
+        class="wave"
+      >
+      <img
+        v-lazy="require('./s8/wave.png')"
+        alt="聯上海棠"
+        class="wave"
+      >
+    </div>
+    <div class="flex animate-row animate-row2">
+      <img
+        v-lazy="require('./s2/wave_l.png')"
+        alt="聯上海棠"
+        class="wave"
+      >
+      <img
+        v-lazy="require('./s2/wave_l.png')"
+        alt="聯上海棠"
+        class="wave"
+      >
+    </div>
+    <div v-if="isMobile" class="index_z">
       <carousel-3d
         ref="mycarousel"
         :width="imgWidth"
@@ -106,6 +142,7 @@
     <div
       class="dialog"
       v-show="isDialog"
+          @click="isDialog = false"
     >
       <div class="dialog-content">
         <img
@@ -122,42 +159,6 @@
         <h3 class="desc">聯上作品優質榮獲國內外大獎肯定：連續3年獲中華民國建築金石首獎，是全國少數的白金石首獎得主；2010年在天母推出豪宅案「聯上聽瀑」，一推出即獲得亮麗成績，在台北市房市成功插旗，讓高雄出發的聯上建築團隊，品牌能見度擴及至大台北地區，甚至於是全台。</h3>
       </div>
     </div>
-    <div class="flex animate-row">
-      <img
-        v-lazy="require('./s8/wave.png')"
-        alt="聯上海棠"
-        class="wave"
-      >
-      <img
-        v-lazy="require('./s8/wave.png')"
-        alt="聯上海棠"
-        class="wave"
-      >
-    </div>
-    <div class="flex animate-row animate-row1">
-      <img
-        v-lazy="require('./s8/wave.png')"
-        alt="聯上海棠"
-        class="wave"
-      >
-      <img
-        v-lazy="require('./s8/wave.png')"
-        alt="聯上海棠"
-        class="wave"
-      >
-    </div>
-    <div class="flex animate-row animate-row2">
-      <img
-        v-lazy="require('./s2/wave_l.png')"
-        alt="聯上海棠"
-        class="wave"
-      >
-      <img
-        v-lazy="require('./s2/wave_l.png')"
-        alt="聯上海棠"
-        class="wave"
-      >
-    </div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -168,7 +169,7 @@
   position: relative;
   height:calc(100vh + 18vw);
   background: #fff;
-  z-index: 1;
+//  z-index: 1;
  // margin: 0 0 -18vw 0;
 }
 
@@ -309,6 +310,7 @@
   animation: moving 30s linear infinite;
   position: absolute;
   bottom: size(0);
+  z-index: 1;
 
   img {
     width: 100%;
@@ -365,7 +367,7 @@
   .section10 {
     height: auto;
   }
-
+.index_z{z-index: 2;position: relative;}
   .text {
     width: size-m(298);
     margin: 0 auto;
@@ -411,9 +413,9 @@
     .dialog-content {
       background-color: #fff;
       width: size-m(313);
-      height: size-m(516);
+      height:auto;
       position: relative;
-      padding: 20px;
+      padding: size-m(15);
 
       .title,
       .subtitle,
@@ -421,21 +423,6 @@
       .desc {
         white-space: normal;
         text-align: left;
-      }
-      .subtitle {
-        font-size: size-m(12);
-      }
-      .title {
-        font-size: size-m(18);
-        margin-bottom: 15px;
-      }
-
-      .info {
-        font-size: size-m(13);
-      }
-
-      .desc {
-        font-size: size-m(12);
       }
     }
 
@@ -446,6 +433,21 @@
       top: 10px;
     }
   }
+      .subtitle {
+        font-size: size-m(13);
+      }
+      .title {
+        font-size: size-m(20);
+        margin-bottom: 15px;
+      }
+
+      .info {
+        font-size: size-m(13);
+      }
+
+      .desc {
+        font-size: size-m(13);
+      }
 
   .img-slide {
     &.current {
@@ -459,7 +461,7 @@
   }
   .img-title {
     font-size: size-m(30);
-    font-weight: 300;
+    font-weight: 900;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.6;
@@ -470,15 +472,39 @@
   }
 
   .img-desc {
-    font-size: size-m(9.6);
+    font-size: size-m(12);
     font-weight: 300;
     font-stretch: normal;
     font-style: normal;
-    line-height: 3;
+    line-height:1.6;
     letter-spacing: 0.24px;
     text-align: center;
     color: #595757;
     transform: scaleX(0.93);
+    margin-bottom: 1em;
+  }
+
+  .animate-row {
+    bottom: size-m(-130);
+
+    img {
+      height: size-m(200);
+    }
+
+    &.animate-row2 {
+      bottom: size-m(0);
+
+      img {
+        height: size-m(40);
+      }
+      // animation-delay: 5s;
+    }
+
+    &.no-animation {
+      img {
+        height: size-m(80);
+      }
+    }
   }
 }
 </style>

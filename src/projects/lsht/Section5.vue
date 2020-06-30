@@ -254,7 +254,7 @@
   }
 
   .desc {
-    width: size-m(320);
+    width:94%;
     height: auto;
     font-size: size-m(12);
     font-weight: bold;
@@ -268,36 +268,28 @@
     left: 0;
     margin: 0 auto;
   transform: scaleX(0.93);
-  transform-origin: 0 0 ;
-    top: size-m(494);
+    top: size-m(494);z-index: 5;
   }
 
   .animate-row {
-    width: 200vw;
-    animation: moving 30s linear infinite;
-    position: absolute;
-    bottom: size(-200);
+    bottom: size-m(-130);
 
     img {
-      width: 100%;
-      height: size(379);
+      height: size-m(200);
     }
 
     &.animate-row2 {
-      bottom: size(100);
-      animation: moving 20s linear infinite;
+      bottom: size-m(0);
 
       img {
-        height: size(79);
+        height: size-m(40);
       }
       // animation-delay: 5s;
     }
 
     &.no-animation {
-      animation: none;
-      bottom: 0;
       img {
-        height: size(164);
+        height: size-m(80);
       }
     }
   }

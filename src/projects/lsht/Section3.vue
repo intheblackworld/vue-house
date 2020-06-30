@@ -124,6 +124,7 @@
       <div
         class="dialog"
         v-show="isDialog"
+            @click="isDialog = false"
       >
         <div class="dialog-content">
           <img

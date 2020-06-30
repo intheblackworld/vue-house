@@ -97,6 +97,7 @@
 @media screen and (max-width: 767px) {
 #section1{margin: 0 0 -28.8vw;}
 #section2{overflow: hidden;}
+#section10{margin: 0 0 -3vw;}
 }
 </style>
 

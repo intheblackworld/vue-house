@@ -234,11 +234,11 @@
   height: size-m(750);
   }
   .slide-content {
-    left: 0;
+    left:auto;
     right: auto;
     margin: 0 auto;
     top: size-m(40);
-    width: 90vw;
+    width: 100vw;
   }
 .slide-container{    height:size-m(750);}
   // .relative {

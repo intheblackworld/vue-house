@@ -47,7 +47,7 @@
       </div>
       <div class="item-border absolute"></div>
     </div>
-    <div v-if="isMobile">
+    <div v-if="isMobile" class="content">
       <div class="flex">
         <div class="m-content">
           <h3 class="subtitle">【城堡，要用最好的打造】</h3>
@@ -62,8 +62,6 @@
       </div>
       <div
         class="dropdown"
-        data-aos="fade"
-        data-aos-delay="600"
       >
         <div
           :class="`item ${item.open ? 'open' : ''}`"
@@ -181,41 +179,28 @@
   top: size(127);
     transform: scaleX(0.93);
   z-index: 3;
-
-  .title {
-    font-size: size(38);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.42;
-    letter-spacing: normal;
-    text-align: left;
+    line-height: 1.6;
+    letter-spacing: 0.1em;
+    text-align: justify;
     color: #595757;
+
+  .title {
+    font-size: size(38);
     white-space: nowrap;
-    margin-bottom: size(20);
+    margin-bottom: 0.1em;
   }
 
   .subtitle {
     font-size: size(24);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.42;
-    letter-spacing: normal;
-    text-align: left;
-    color: #595757;
-    margin:0 0 size(25) -0.8em;
+    margin:0 0 size(0) -0.8em;
   }
 
   .desc {
-    font-size: 12px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.1;
-    letter-spacing: 0.12px;
-    text-align: left;
-    color: #595757;
+    font-size:size(12);
+    font-weight: 300;
     margin:0 0 2em 0.2em;
   }
 }
@@ -223,14 +208,15 @@
 .dropdown {
   margin-left:0;
   .item {
+    font-size:size(20);
     width: 100%;
-    max-height: 38px;
+    max-height: 1.8em;
     overflow: hidden;
     padding-left: 0;
     padding-right: 0;
     border-radius: 0;
     border-bottom: 1px solid #CCC;
-    margin-bottom: 3px;
+    margin-bottom:0.15em;
     transition:max-height 0.5s;
     cursor: pointer;
 
@@ -239,32 +225,21 @@
     }
   }
   .head {
-    h3{font-family: 'Noto Sans TC' !important;
-    font-weight: normal;}
-    font-size: 20px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 38px;
-    letter-spacing: normal;
-    text-align: left;
+     font-size:size(20);
     color: #00a29a;
+   h3{font-family: 'Noto Sans TC' !important;
+    font-weight: normal;
+    }
   }
 
   .btn {
-    width: 22px;
+    width:1em
   }
 
   .item-desc {
-    font-size: size(10);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2;
-    letter-spacing: 0.5px;
-    text-align: left;
-    color: #595757;
-    padding-bottom: 15px;
+    font-size: size(12);
+    font-weight: 300;
+    padding-bottom:size(15);
   }
 }
 
@@ -363,42 +338,25 @@
     top: size-m(40);
     width: 90vw;
   }
+  .content{
+  width:100%;
+  left:0;
+  top:0;
+  transform: scaleX(1);}
   .m-content {
     width: size-m(290);
-    padding: size-m(24) size-m(0) 0 size-m(23);
+    padding: size-m(10) size-m(0) 0 size-m(23);
     transform: scaleX(0.93);
     transform-origin: 0 0;
       text-align: justify;
     .subtitle {
       font-size: size-m(15);
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.46;
-      letter-spacing: normal;
-      text-align: justify;
-      color: #595757;
     }
     .title {
       font-size: size-m(24);
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.46;
-      letter-spacing: normal;
-      text-align: justify;
-      color: #595757;
     }
     .desc {
       font-size: size-m(12);
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 2.1;
-      letter-spacing: 0.12px;
-      text-align: justify;
-      color: #595757;
-      margin: 0 0 1em;
     }
   }
   .m-img {
@@ -406,48 +364,44 @@
   }
 
   .dropdown {
+    width:94%;
+    transform: scaleX(0.93);
+    transform-origin: 50% 50%;
+    margin: size-m(10) auto;
     .item {
-      height: 40px;
-      overflow: hidden;
-      // padding-left: 23px;
-      // padding-right: 23px;
-      // border-radius: 10px;
-      width: calc(100vw * 670 / 750);
-      margin: 0 auto;
-      margin-bottom: 18px;
-      transition: all 0.5s;
+    font-size:size-m(25);
       border-bottom: 1px solid #999;
 
-      &.open {
-        height: auto;
-        border-bottom: none;
-      }
     }
     .head {
-      font-size: 16.5px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 40px;
-      letter-spacing: normal;
-      text-align: left;
-      border-bottom: 1px solid #999;
+      font-size:size-m(16.5);
+      padding: 0.5em 0;
+    }
+  .item-desc {
+    font-size: size-m(12);
+    padding-bottom:size-m(15);
+  }
+  }
+  .animate-row {
+    bottom: size-m(0);
+
+    img {
+      height: size-m(200);
     }
 
-    .btn {
-      width: 18px;
+    &.animate-row2 {
+      bottom: size-m(130);
+
+      img {
+        height: size-m(40);
+      }
+      // animation-delay: 5s;
     }
 
-    .desc {
-      padding-top: 0px;
-      padding-bottom: 10px;
-      font-size: 15px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.73;
-      letter-spacing: normal;
-      text-align: justify;
+    &.no-animation {
+      img {
+        height: size-m(80);
+      }
     }
   }
 }
