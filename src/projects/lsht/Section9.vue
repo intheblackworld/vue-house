@@ -13,6 +13,20 @@
       </div>
     </div>
     <div v-if="isMobile">
+       <!--
+        <slide
+          v-for="(img, index) in imgList"
+          :index="index"
+          :key="img.img"
+          class="img-slide"
+        >
+          <img
+            :src="img.img"
+            :class="`img absolute`"
+          />
+        </slide>
+       
+      -->
       <div class="img-row flex-ac flex-jc">
         <img
           :src="img"
@@ -21,6 +35,7 @@
           class="img"
         >
       </div>
+
     </div>
     <div class="flex animate-row">
       <img
