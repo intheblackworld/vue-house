@@ -14,13 +14,13 @@
         class="title-img absolute"
       >
       <div class="desc_b">
-      <h3
+      <p
         class="desc absolute"
         data-aos="fade"
         data-aos-delay="700"
       >
         臺北仁愛路園道、臺中美術館園道、到臺南健康路園道，住在有園道的地方，本身就是一種享受，兩排林蔭風景為您開道，將身心靈的疲憊卸下，一面是森海之美，一面是園道生活，「聯上海棠」得天獨厚，居者即是榮耀！
-      </h3>
+      </p>
       </div>
       <div class="flex animate-row">
         <img
@@ -70,9 +70,9 @@
         alt="30米雙綠園道  自然即是奢華 與美人魚為鄰最時尚"
         class="title-img absolute"
       >
-      <h3 class="desc absolute">
+      <p class="desc absolute">
         臺北仁愛路園道、臺中美術館園道、到臺南健康路園道，住在有園道的地方，本身就是一種享受，兩排林蔭風景為您開道，將身心靈的疲憊卸下，一面是森海之美，一面是園道生活，「聯上海棠」得天獨厚，居者即是榮耀！
-      </h3>
+      </p>
       <div class="flex animate-row">
         <img
           v-lazy="require('./s5/wave2.png')"

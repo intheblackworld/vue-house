@@ -361,6 +361,7 @@
   }
   .m-img {
     width: size-m(110);
+    height: size-m(248);
   }
 
   .dropdown {
