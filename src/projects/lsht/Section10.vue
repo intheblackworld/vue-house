@@ -281,23 +281,24 @@
   }
 
   .img-title {
-    font-size: size(18);
+    font-size: size(20);
     font-weight: 300;
     font-stretch: normal;
     font-style: normal;
-    line-height: 3.4;
+    line-height:1.6;
     letter-spacing: 0.23px;
     text-align: center;
     color: #595757;
     transform: scaleX(0.93);
+    margin: 0.5em 0 0 0;
   }
 
   .img-desc {
-    font-size: size(9);
+    font-size: size(12);
     font-weight: 300;
     font-stretch: normal;
     font-style: normal;
-    line-height: 3.4;
+    line-height:1.6;
     letter-spacing: 0.23px;
     text-align: center;
     color: #595757;
