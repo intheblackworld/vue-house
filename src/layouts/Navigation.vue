@@ -16,19 +16,37 @@
           <div
             class="menu"
             @click="toggleSidebar"
+            v-show="!isOpen"
           >
             <font-awesome-icon icon="bars" />
           </div>
-          <div
-            :class="`mask ${isOpen ? 'open' : ''}`"
-            @click="toggleSidebar"
-          />
+          <div :class="`mask ${isOpen ? 'open' : ''}`">
+            <img
+              src="@/projects/hoh1/ball/ball.png"
+              alt=""
+              class="ball-logo"
+            >
+            <img
+              class="mask-logo"
+              src="@/assets/img/nav-logo.png"
+              alt
+            />
+            <div
+              class="close"
+              @click="isOpen = false"
+            >
+              <img
+                src="../assets/img/close.png"
+                alt=""
+              >
+            </div>
+          </div>
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
             <li
               :key="item.name"
               v-scroll-to="{ element: `#${item.section}`, offset: offset }"
               v-for="item in list"
-              class="flex-ac"
+              class="flex-c"
               @click="toggleSidebar"
             >
               <span class="link">
@@ -356,11 +374,24 @@ export default {
   .menu {
     display: block;
     position: absolute;
+    z-index: 3;
+    top: 15px;
     right: 15px;
-    width: 18px;
 
     svg {
       color: $nav_btn_color;
+    }
+  }
+
+  .close {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    img {
+      width: 100%;
     }
   }
 
@@ -376,8 +407,10 @@ export default {
     transition: all 0.3s ease-in;
     display: block;
     transform: translateX(40%);
+    padding-left: 0;
 
     li {
+      width: 100%;
       height: 50px;
       margin-bottom: 0;
     }
@@ -391,6 +424,10 @@ export default {
       align-items: center;
       justify-content: center;
       display: none;
+
+      .ball {
+        position: relative;
+      }
 
       img,
       span {
@@ -420,12 +457,12 @@ export default {
 
   .mask {
     width: 100vw;
-    top: $nav_phone_height;
+    top: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: #f3d847;
     position: fixed;
     z-index: 110;
-    height: calc(100vh - #{$nav_phone_height});
+    height: 100vh;
     opacity: 0;
     transition: all 0.3s ease-in;
     &.open {
@@ -433,6 +470,15 @@ export default {
       width: 100vw;
       opacity: 1;
     }
+  }
+
+  .mask-logo {
+    width: $logo_phone_width;
+    height: auto;
+    position: absolute;
+    left: 45px;
+    display: block;
+    top: 17px;
   }
 }
 </style>

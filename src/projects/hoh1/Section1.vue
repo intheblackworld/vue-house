@@ -6,11 +6,26 @@
       @swiperight="addIndex"
     >
       <div class="indigator flex absolute">
-        <div :class="`${bubbleIndex === 0 ? 'active' : ''}`" @click="bubbleIndex = 0"></div>
-        <div :class="`${bubbleIndex === 1 ? 'active' : ''}`" @click="bubbleIndex = 1"></div>
-        <div :class="`${bubbleIndex === 2 ? 'active' : ''}`" @click="bubbleIndex = 2"></div>
-        <div :class="`${bubbleIndex === 3 ? 'active' : ''}`" @click="bubbleIndex = 3"></div>
-        <div :class="`${bubbleIndex === 4 ? 'active' : ''}`" @click="bubbleIndex = 4"></div>
+        <div
+          :class="`${bubbleIndex === 0 ? 'active' : ''}`"
+          @click="bubbleIndex = 0"
+        ></div>
+        <div
+          :class="`${bubbleIndex === 1 ? 'active' : ''}`"
+          @click="bubbleIndex = 1"
+        ></div>
+        <div
+          :class="`${bubbleIndex === 2 ? 'active' : ''}`"
+          @click="bubbleIndex = 2"
+        ></div>
+        <div
+          :class="`${bubbleIndex === 3 ? 'active' : ''}`"
+          @click="bubbleIndex = 3"
+        ></div>
+        <div
+          :class="`${bubbleIndex === 4 ? 'active' : ''}`"
+          @click="bubbleIndex = 4"
+        ></div>
       </div>
       <div :class="`animate-slide slide1 ${bubbleIndex === 0 ? 'active' : ''}`">
         <div class="balls">
@@ -172,6 +187,7 @@
   background-position: bottom;
   background-repeat: no-repeat;
   z-index: 6;
+  overflow: hidden;
   // pointer-events: none;
 
   > .animate-slide {
@@ -201,12 +217,12 @@ img {
     height: 15px;
     background-color: #fff;
     margin: 0 5px;
-    opacity: .4;
+    opacity: 0.4;
     border-radius: 20px;
     cursor: pointer;
     &.active {
       background-color: #3c2723;
-      opacity: .7;
+      opacity: 0.7;
     }
   }
 }
@@ -246,14 +262,14 @@ img {
     color: #231815;
     opacity: 0;
     transition: opacity 1s;
-    transition-delay: .5s;
+    transition-delay: 0.5s;
   }
 
   .timg {
     width: size(91);
     opacity: 0;
     transition: opacity 1s;
-    transition-delay: .5s;
+    transition-delay: 0.5s;
   }
 
   .title {
@@ -268,7 +284,7 @@ img {
     transform: translateY(50px);
     opacity: 0;
     transition: transform 1s, opacity 0.3s;
-    transition-delay: .3s;
+    transition-delay: 0.3s;
   }
 
   .subtitle {
@@ -285,7 +301,7 @@ img {
     transform: translateY(50px);
     opacity: 0;
     transition: transform 1s, opacity 0.3s;
-    transition-delay: .5s;
+    transition-delay: 0.5s;
   }
 
   &.active {
@@ -694,7 +710,7 @@ img {
   .ball4 {
     width: size(172);
     top: size(354);
-    right: size(755)
+    right: size(755);
   }
 
   .ball5 {
@@ -738,143 +754,577 @@ img {
 @media screen and (max-width: 767px) {
   .bg {
     background-size: cover;
-    height: 100vh;
+    height: calc(100vh - 60px);
     position: relative;
     margin: 0;
   }
 
-  .logo {
-    width: calc(30vh - 63px);
-    max-width: size-m(160);
-    transform: translateY(-60%);
+  .indigator {
+    position: absolute;
+    width: size-m(145);
+    left: 0;
+    margin: 0 auto;
+    right: 0;
+    bottom: size-m(13);
+    z-index: 2;
+    > div {
+      width: 15px;
+      height: 15px;
+      background-color: #fff;
+      margin: 0 5px;
+      opacity: 0.4;
+      border-radius: 20px;
+      cursor: pointer;
+      &.active {
+        background-color: #3c2723;
+        opacity: 0.7;
+      }
+    }
   }
 
-  .ball1 {
-    width: size-m(85);
-    height: size-m(85);
-    top: size-m(-20);
-    left: size-m(-20);
-    transform: translateY(5%);
+  .animate-slide {
+    transition: all 0.5s;
+    .balls {
+      @for $i from 1 through 10 {
+        $randomNum: random(4) + 2;
+        > img:nth-child(#{$i}) {
+          transform: translateY((random(5) - 20) + px);
+          animation: an ($randomNum + s) 3s infinite alternate;
+        }
+      }
+    }
+    .bubble {
+      transform: scale(0);
+      // transform-origin: bottom left;
+      opacity: 0;
+      transition: transform 1s, opacity 0.3s;
+    }
+
+    .img {
+      transform: translateY(50px);
+      opacity: 0;
+      transition: transform 1s, opacity 0.3s;
+    }
+
+    .img-title {
+      font-size: size-m(16);
+      font-weight: 900;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.24;
+      letter-spacing: 2.51px;
+      text-align: center;
+      color: #231815;
+      opacity: 0;
+      transition: opacity 1s;
+      transition-delay: 0.5s;
+    }
+
+    .timg {
+      width: size-m(25);
+      opacity: 0;
+      transition: opacity 1s;
+      transition-delay: 0.5s;
+    }
+
+    .title {
+      font-size: size-m(29);
+      font-weight: 300;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.25;
+      letter-spacing: normal;
+      text-align: left;
+      color: #ffffff;
+      transform: translateY(50px);
+      opacity: 0;
+      transition: transform 1s, opacity 0.3s;
+      transition-delay: 0.3s;
+    }
+
+    .subtitle {
+      opacity: 0.53;
+      font-family: 'khmer';
+      font-size: size-m(35);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 0.84;
+      letter-spacing: normal;
+      text-align: left;
+      color: #ffffff;
+      transform: translateY(50px);
+      opacity: 0;
+      transition: transform 1s, opacity 0.3s;
+      transition-delay: 0.5s;
+    }
+
+    &.active {
+      .bubble {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      .img {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .img-title {
+        opacity: 1;
+      }
+
+      .timg {
+        opacity: 1;
+      }
+
+      .title {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .subtitle {
+        transform: translateY(0);
+        opacity: 0.53;
+      }
+    }
   }
 
-  .ball2 {
-    width: size-m(250);
-    height: size-m(250);
-    top: size-m(-100);
-    right: size-m(-100);
-    transform: translateY(-12%);
+  .slide1 {
+    background-color: #3ca4d5;
+
+    .bubble {
+      width: size-m(111);
+      top: size-m(307);
+      right: size-m(21);
+    }
+
+    .img {
+      width: size-m(350);
+      right: size-m(0);
+      bottom: 0;
+    }
+
+    .img-title {
+      top: size-m(333);
+      right: size-m(30);
+    }
+
+    .timg {
+      top: size-m(380);
+      right: size-m(64);
+    }
+
+    .title {
+      top: size-m(194);
+      left: size-m(21);
+    }
+
+    .subtitle {
+      top: size-m(277);
+      left: size-m(21);
+    }
+
+    .ball1 {
+      height: size-m(237);
+      left: auto;
+      right: size-m(-70);
+      top: size-m(-30);
+    }
+
+    .ball2 {
+      width: size-m(60);
+      top: size-m(84);
+      left: size-m(73);
+    }
+
+    .ball3 {
+      width: auto;
+      height: size-m(206);
+      right: auto;
+      left: size-m(-90);
+      bottom: size-m(55);
+    }
+
+    .ball4 {
+      width: size-m(80);
+      top: size-m(420);
+      right: size-m(183);
+    }
+
+    .ball5 {
+      height: size-m(95);
+      right: size-m(-40);
+      top: size-m(428);
+    }
   }
 
-  .ball3 {
-    width: size-m(62);
-    height: size-m(62);
-    top: size-m(220);
-    left: size-m(30);
-    transform: translateY(-12%);
+  .slide2 {
+    background-color: #f3d847;
+
+    .bubble {
+      width: size-m(122);
+      top: size-m(378);
+      right: size-m(183);
+    }
+
+    .img {
+      width: size-m(375);
+      right: size-m(0);
+      bottom: 0;
+    }
+
+    .img-title {
+      top: size-m(405);
+      right: size-m(200);
+    }
+
+    .timg {
+      top: size-m(451);
+      right: size-m(234);
+    }
+
+    .title {
+      top: size-m(194);
+      left: size-m(21);
+      color: #492923;
+    }
+
+    .subtitle {
+      top: size-m(277);
+      left: size-m(21);
+    }
+
+    .ball1 {
+      height: size-m(237);
+      left: auto;
+      right: size-m(-70);
+      top: size-m(-30);
+    }
+
+    .ball2 {
+      width: size-m(49);
+      top: size-m(164);
+      left: size-m(154);
+    }
+
+    .ball3 {
+      width: auto;
+      height: size-m(30);
+      right: auto;
+      left: size-m(315);
+      top: size-m(288);
+      bottom: auto;
+    }
+
+    .ball4 {
+      width: size-m(99);
+      top: size-m(382);
+      right: size-m(-20);
+      left: auto;
+    }
+
+    .ball5 {
+      height: size-m(19);
+      right: size-m(154);
+      top: size-m(406);
+    }
+
+    .ball6 {
+      height: size-m(109);
+      right: size-m(572);
+      top: size-m(62);
+    }
+
+    .ball7 {
+      width: size-m(91);
+      top: size-m(416);
+      right: size-m(315);
+    }
+
+    .ball8 {
+      width: size-m(53);
+      top: size-m(525);
+      right: size-m(262);
+    }
   }
 
-  .ball4 {
-    width: size-m(40);
-    height: size-m(40);
-    top: size-m(456);
-    left: size-m(10);
-    transform: translateY(-12%);
+  .slide3 {
+    background-color: #d7177c;
+
+    .bubble {
+      width: size-m(144);
+      top: size-m(365);
+      right: size-m(55);
+    }
+
+    .img {
+      width: size-m(375);
+      right: size-m(0);
+      bottom: 0;
+    }
+
+    .img-title {
+      top: size-m(400);
+      right: size-m(62);
+    }
+
+    .timg {
+      top: size-m(451);
+      right: size-m(108);
+    }
+
+    .title {
+      top: size-m(194);
+      left: size-m(21);
+      color: #fff;
+      text-align: right;
+    }
+
+    .subtitle {
+      top: size-m(277);
+      left: auto;
+      right: size-m(23);
+    }
+
+    .ball1 {
+      height: size-m(149);
+      left: size-m(24);
+      right: auto;
+      top: size-m(67);
+    }
+
+    .ball2 {
+      width: size-m(26);
+      top: size-m(222);
+      left: size-m(35);
+    }
+
+    .ball3 {
+      width: auto;
+      height: size-m(230);
+      right: auto;
+      left: size-m(-100);
+      top: size-m(248);
+      bottom: auto;
+    }
+
+    .ball4 {
+      width: size-m(99);
+      top: size-m(382);
+      right: size-m(-20);
+      left: auto;
+    }
+
+    .ball5 {
+      height: size-m(51);
+      left: 0;
+      right: auto;
+      top: size-m(573);
+    }
+
+    .ball6 {
+      width: size-m(47);
+      top: size-m(518);
+      right: size-m(133);
+    }
+
+    .ball7 {
+      width: size-m(41);
+      top: size-m(495);
+      right: size-m(21);
+    }
+
+    .ball8 {
+      width: size-m(214);
+      top: size-m(483);
+      right: size-m(-100);
+    }
   }
 
-  .ball5 {
-    width: size-m(74);
-    height: size-m(74);
-    top: size-m(190);
-    right: size-m(20);
-    left: auto;
-    transform: translateY(-12%);
-    transform-origin: 0 90%;
+  .slide4 {
+    background-color: #a3ca0f;
+
+    .bubble {
+      width: size-m(125);
+      top: size-m(452);
+      right: size-m(28);
+      left: auto;
+    }
+
+    .img {
+      width: size-m(231);
+      right: auto;
+      left: size-m(8);
+      bottom: 0;
+    }
+
+    .img-title {
+      top: size-m(487);
+      right: size-m(40);
+    }
+
+    .timg {
+      top: size-m(532);
+      right: size-m(73);
+    }
+
+    .title {
+      top: size-m(194);
+      left: size-m(21);
+      color: #fff;
+      text-align: right;
+    }
+
+    .subtitle {
+      top: size-m(277);
+      left: auto;
+      right: size-m(23);
+    }
+
+    .ball1 {
+      width: size-m(220);
+      height: auto;
+      left: size-m(-30);
+      right: auto;
+      top: size-m(-20);
+    }
+
+    .ball2 {
+      width: size-m(24);
+      top: size-m(257);
+      left: size-m(143);
+    }
+
+    .ball3 {
+      width: auto;
+      height: size-m(29);
+      right: auto;
+      left: size-m(17);
+      top: size-m(301);
+      bottom: auto;
+    }
+
+    .ball4 {
+      width: size-m(73);
+      top: size-m(415);
+      right: size-m(18);
+      left: auto;
+    }
+
+    .ball5 {
+      height: size-m(66);
+      left: 0;
+      right: auto;
+      top: size-m(523);
+    }
+
+    .ball6 {
+      width: size-m(73);
+      height: auto;
+      top: size-m(416);
+      right: size-m(18);
+    }
+
+    .ball7 {
+      width: size-m(175);
+      top: size-m(508);
+      right: size-m(121);
+    }
   }
 
-  .ball6 {
-    width: size-m(63);
-    height: size-m(63);
-    top: size-m(430);
-    right: size-m(30);
-    transform: translateY(-15%);
-    transform-origin: 95% 100%;
-  }
+  .slide5 {
+    background-color: #eb5a1e;
 
-  .ball7 {
-    left: -30%;
-    top: size-m(260);
-    width: size-m(159);
-    height: size-m(159);
-    transform: translateY(-15%) rotate(180deg);
-    transform-origin: 0 60%;
-  }
+    .bubble {
+      width: size-m(148);
+      top: size-m(428);
+      right: size-m(206);
+    }
 
-  .ball8 {
-    width: size-m(21);
-    height: size-m(21);
-    top: size-m(512);
-    right: size-m(20);
-    transform: translateY(-8%);
-    transform-origin: 100% 0%;
-  }
+    .img {
+      width: size-m(256);
+      right: size-m(0);
+      bottom: 0;
+    }
 
-  .smile1 {
-    height: size-m(108);
-    top: size-m(280);
-    right: size-m(-20);
-    transform: translateY(-8%);
-  }
+    .img-title {
+      top: size-m(445);
+      right: size-m(250);
+    }
 
-  .bubble1 {
-    height: size-m(130);
-    top: size-m(35);
-    left: size-m(20);
-  }
+    .timg {
+      top: size-m(535);
+      right: size-m(272);
+    }
 
-  .bubble2 {
-    height: size-m(141);
-    top: size-m(24);
-    right: size-m(22);
-  }
+    .title {
+      top: size-m(190);
+      left: size-m(14);
+      color: #fff;
+      text-align: left;
+    }
 
-  .bubble3 {
-    height: size-m(154);
-    bottom: size-m(20);
-    margin-bottom: 63px;
-    left: size-m(20);
-  }
+    .subtitle {
+      top: size-m(273);
+      left: size-m(14);
+      right: auto;
+    }
 
-  .bubble4 {
-    height: size-m(137);
-    bottom: size-m(50);
-    margin-bottom: 63px;
-    right: size-m(20);
-  }
+    .ball1 {
+      width: size-m(212);
+      height: auto;
+      left: auto;
+      right: size-m(20);
+      top: size-m(-10);
+    }
 
-  .bubble5 {
-    height: size-m(137);
-    top: size-m(20);
-    left: size-m(22);
-  }
+    .ball2 {
+      width: size-m(66);
+      top: size-m(121);
+      left: size-m(165);
+    }
 
-  .bubble6 {
-    height: size-m(130);
-    top: size-m(50);
-    right: size-m(22);
-  }
+    .ball3 {
+      width: auto;
+      height: size-m(161);
+      right: auto;
+      left: size-m(-60);
+      top: size-m(360);
+      bottom: auto;
+    }
 
-  .bubble7 {
-    height: size-m(134);
-    bottom: size-m(20);
-    margin-bottom: 63px;
-    left: size-m(40);
-  }
+    .ball4 {
+      width: size-m(99);
+      top: size-m(382);
+      right: size-m(-20);
+      left: auto;
+    }
 
-  .bubble8 {
-    height: size-m(140);
-    bottom: size-m(30);
-    margin-bottom: 63px;
-    right: size-m(20);
+    .ball5 {
+      height: size-m(31);
+      left: size-m(165);
+      right: auto;
+      top: size-m(415);
+    }
+
+    .ball6 {
+      width: size-m(47);
+      top: size-m(518);
+      right: size-m(133);
+    }
+
+    .ball7 {
+      width: size-m(41);
+      top: size-m(495);
+      right: size-m(21);
+    }
+
+    .ball8 {
+      width: size-m(214);
+      top: size-m(483);
+      right: size-m(-100);
+    }
   }
 }
 </style>
@@ -898,8 +1348,7 @@ export default {
   },
   computed: {},
 
-  watch: {
-  },
+  watch: {},
 
   methods: {
     decIndex() {
