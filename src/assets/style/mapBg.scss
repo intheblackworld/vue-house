@@ -1,3 +1,4 @@
+@import '../style/function.scss';
 @keyframes swing {
   0% {
     transform: translateX(20px);
@@ -41,30 +42,42 @@
     overflow-y: hidden;
     .map-bg {
       width: auto;
-      height: 100vh;
+      height: size-m(1404);
     }
 
     img {
       width: auto;
-      height: 100vh;
+      height: size-m(1404);
     }
 
     .hand {
       position: absolute;
       z-index: 2;
       display: block;
-      width: 56px;
+      width: 133px;
       height: auto !important;
       left: 0;
       right: 0;
       margin: 0 auto;
-      top: 0;
+      top: size-m(663);
       display: block;
+      z-index: 10;
       animation: swing 2.5s ease-in-out 0s infinite;
 
       &.hide {
         display: none;
       }
+    }
+
+    .mask {
+      width: 300vw;
+      height: size-m(505);
+      position: absolute;
+      top: size-m(420);
+      left: 0;
+      background-color: #004880;
+      opacity: .6;
+      z-index: 1;
     }
   }
 }

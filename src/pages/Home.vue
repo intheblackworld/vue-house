@@ -7,40 +7,17 @@
     <div id="section1">
       <Section1 />
     </div>
-    <!-- <VideoSection1
-      :playBtn="require('@/projects/sfdy/video/play-btn.png')"
-      title="開箱系列影片"
-      :close="require('@/projects/sfdy/video/close.png')"
-      :arrows="[require('@/projects/sfdy/video/arrow-left.png'), require('@/projects/sfdy/video/arrow-right.png')]"
-      :slideList="[
-        {
-          title: '釋放壓力，回家就是享受的開始',
-          img: require('@/projects/sfdy/video/1.jpg'),
-          video: 'https://www.youtube.com/embed/9UEKBWJladU',
-          isPlay: false,
-        },
-        {
-          title: '內容街景大公開',
-          img: require('@/projects/sfdy/video/2.jpg'),
-          video: 'https://www.youtube.com/embed/-60Gqkr3TtU?&enablejsapi=1&playerapiid=ytplayer',
-          isPlay: false,
-        },
-        {
-          title: '屋內機密大公開',
-          img: require('@/projects/sfdy/video/3.jpg'),
-          video: 'https://www.youtube.com/embed/d7aWvSn2tQc?&enablejsapi=1&playerapiid=ytplayer',
-          isPlay: false,
-        },
-        {
-          title: '回家就是享受的開始',
-          img: require('@/projects/sfdy/video/1.jpg'),
-          video: 'https://www.youtube.com/embed/9UEKBWJladU?&enablejsapi=1&playerapiid=ytplayer',
-          isPlay: false,
-        },
-      ]"
-    /> -->
     <div id="section2">
       <Section2 />
+    </div>
+    <div id="section3">
+      <Section3 />
+    </div>
+    <div id="section4">
+      <Section4 />
+    </div>
+    <div id="section5">
+      <Section5 />
     </div>
     <ContactSection />
     <!-- <SimpleOrder /> -->
@@ -62,6 +39,9 @@ import gtm from '@/mixins/gtm.js'
 
 import Section1 from '@/projects/hoh1/Section1.vue'
 import Section2 from '@/projects/hoh1/Section2.vue'
+import Section3 from '@/projects/hoh1/Section3.vue'
+import Section4 from '@/projects/hoh1/Section4.vue'
+import Section5 from '@/projects/hoh1/Section5.vue'
 // import SimpleOrder from '@/components/SimpleOrder.vue'
 
 export default {
@@ -74,6 +54,9 @@ export default {
     MobileNav,
     Section1,
     Section2,
+    Section3,
+    Section4,
+    Section5,
   },
 
   data() {

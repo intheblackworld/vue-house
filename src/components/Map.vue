@@ -1,6 +1,7 @@
 <template>
   <div class="map" id="map" @scroll="hide = true">
     <img :src="hand" alt :class="`hand ${hide ? 'hide' : ''}`" />
+    <div class="mask" v-show="!hide"></div>
     <img class="map-bg" :src="bgSrc" alt />
     <slot></slot>
     <img
@@ -36,11 +37,11 @@ export default {
         const hand = document.querySelector('.map .hand')
 
         if (hand) {
-          hand.style.width = `${mapBg.clientWidth}px`
-          // hand.style.left = `${mapBg.clientWidth / 2 - 50}px`
+          // hand.style.width = `${mapBg.clientWidth}px`
+          hand.style.left = `${mapBg.clientWidth / 2 - 200}px`
         }
 
-        map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2, 0)
+        map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2 - 120, 0)
       }, 400)
       setTimeout(() => {
         this.hide = false

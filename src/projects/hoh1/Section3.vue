@@ -1,14 +1,9 @@
 <template>
-  <div class="section2">
+  <div class="section3">
     <div v-if="!isMobile">
-      <div class="container relative flex">
+      <div class="container relative">
         <img
-          src="./s2/1-1.jpg"
-          alt=""
-          class="thumb"
-        >
-        <img
-          src="./s2/title1.png"
+          src="./s3/title2.png"
           alt=""
           class="label absolute"
         >
@@ -18,89 +13,82 @@
               src="./ball/bright.png"
               alt=""
               :class="`ball${index} absolute`"
-              v-for="index in 8"
+              v-for="index in 6"
               :key="`slide1-ball${index}`"
+            >
+            <img
+              src="./ball/l.png"
+              alt=""
+              class="smile absolute"
             >
           </div>
         </div>
-        <div class="content">
+        <div class="content flex">
           <div class="title">
-            公園 校園 花園<br />誠徵有園人
+            愛情與麵包 我家全包
           </div>
-          <div class="desc">
-            踏出家門就在公園裡！15萬坪高綠覆洲子洋重劃區<br />
-            擁抱128萬坪大台北都會公園，家就在樹海鮮氧裡無限延伸<br />
-            公園裡的家，健康佳、保值佳，「健康就是財富」在這裡你會得到驗證
-          </div>
-          <div class="flex-jb wrap imgs">
-            <img
-              src="./s2/2-1.jpg"
-              alt=""
-              class="img"
-            >
-            <img
-              src="./s2/2-2.jpg"
-              alt=""
-              class="img"
-            >
-            <img
-              src="./s2/2-3.jpg"
-              alt=""
-              class="img"
-            >
-            <div class="context">
-              <div class="context-item">
-                <div class="context-title">
-                  PARK公園
-                </div>
-                <div class="context-desc">
-                  <img
-                    src="./ball/bright.png"
-                    alt=""
-                  >
-                  128萬坪大台北都會公園，數十座水岸主題運動場，萬噸有氧盡情暢飲
-                </div>
-                <div class="context-desc">
-                  <img
-                    src="./ball/bright.png"
-                    alt=""
-                  >
-                  4500坪洲子洋公園+1200坪國民運動中心，泳池健身房隨時鍛鍊誘人曲線
-                </div>
+          <div class="context">
+            <div class="desc">
+              機能雙商圈，生鮮蔬果新鮮現購<br />
+              頂好、全聯散步就到，再晚下班也不擔心<br />
+              柴米油鹽零食飲料隨時買齊<br />
+              今天懶得煮，雙商圈滿街美食餐廳隨你挑<br />
+              幸福生活2.0，愛情與麵包一次通包
+            </div>
+            <div class="context-item flex-ac">
+              <img
+                src="./ball/bright.png"
+                alt=""
+              >
+              <div class="context-title">
+                工商路商圈
               </div>
-              <div class="context-item">
-                <div class="context-title">
-                  SCHOOL校園
-                </div>
-                <div class="context-desc">
-                  <img
-                    src="./ball/bright.png"
-                    alt=""
-                  >
-                  轉個彎到成州國小，上學好近孩子天天睡飽飽
-                </div>
-                <div class="context-desc">
-                  <img
-                    src="./ball/bright.png"
-                    alt=""
-                  >
-                  下樓就到公托中心，新手爸媽也不手忙腳亂
-                </div>
+              <div class="context-desc">
+                寶雅、屈臣氏、燦坤、家樂福、麥當勞、銀行郵局排排站
               </div>
-              <div class="context-item">
-                <div class="context-title">
-                  GARDEN花園
-                </div>
-                <div class="context-desc">
-                  <img
-                    src="./ball/bright.png"
-                    alt=""
-                  >
-                  15萬坪洲子洋重劃區，超高綠覆+超大棟距樂森活
-                </div>
+            </div>
+            <div class="context-item flex-ac">
+              <img
+                src="./ball/bright.png"
+                alt=""
+              >
+              <div class="context-title">
+                成泰路商圈
+              </div>
+              <div class="context-desc">
+                傳統市場、全聯福利中心、頂好生鮮超市、早午餐
+              </div>
+            </div>
+            <div class="context-item flex-ac">
+              <img
+                src="./ball/bright.png"
+                alt=""
+              >
+              <div class="context-title">
+                傳統市場
+              </div>
+              <div class="context-desc">
+                成洲市場、五股黃昏市場，晨型人或夜貓族早晚都好買
               </div>
             </div>
           </div>
+        </div>
+        <div class="flex-jb imgs">
+          <img
+            src="./s3/3-1.jpg"
+            alt=""
+            class="img"
+          >
+          <img
+            src="./s3/3-2.jpg"
+            alt=""
+            class="img"
+          >
+          <img
+            src="./s3/3-3.jpg"
+            alt=""
+            class="img"
+          >
         </div>
       </div>
     </div>
@@ -111,7 +99,7 @@
     >
       <div class="m-content">
         <img
-          src="./s2/title1.png"
+          src="./s3/title2.png"
           alt=""
           class="label absolute"
         >
@@ -121,65 +109,67 @@
               src="./ball/bright.png"
               alt=""
               :class="`ball${index} absolute`"
-              v-for="index in 1"
+              v-for="index in 4"
               :key="`slide1-ball${index}`"
+            >
+            <img
+              src="./ball/l.png"
+              alt=""
+              class="smile absolute"
             >
           </div>
         </div>
         <div class="title">
-          公園 校園 花園<br />誠徵有園人
+          愛情與麵包 我家全包
         </div>
         <div class="desc">
-          踏出家門就在公園裡！15萬坪高綠覆洲子洋重劃區，擁抱128萬坪大台北都會公園，家就在樹海鮮氧裡無限延伸，公園裡的家，健康佳、保值佳，「健康就是財富」在這裡你會得到驗證
+          機能雙商圈，生鮮蔬果新鮮現購<br />
+          頂好、全聯散步就到，再晚下班也不擔心<br />
+          柴米油鹽零食飲料隨時買齊<br />
+          今天懶得煮，雙商圈滿街美食餐廳隨你挑<br />
+          幸福生活2.0，愛情與麵包一次通包
         </div>
-        <div class="context-item">
-          <div class="context-title">
-            PARK公園
-          </div>
-          <div class="context-desc">
+        <div class="context-item ">
+          <div class="flex-ac">
             <img
               src="./ball/bright.png"
               alt=""
             >
-            128萬坪大台北都會公園，數十座水岸主題運動場，萬噸有氧盡情暢飲
+            <div class="context-title">
+              工商路商圈
+            </div>
           </div>
+
           <div class="context-desc">
-            <img
-              src="./ball/bright.png"
-              alt=""
-            >
-            4500坪洲子洋公園+1200坪國民運動中心，泳池健身房隨時鍛鍊誘人曲線
-          </div>
-        </div>
-        <div class="context-item">
-          <div class="context-title">
-            SCHOOL校園
-          </div>
-          <div class="context-desc">
-            <img
-              src="./ball/bright.png"
-              alt=""
-            >
-            轉個彎到成州國小，上學好近孩子天天睡飽飽
-          </div>
-          <div class="context-desc">
-            <img
-              src="./ball/bright.png"
-              alt=""
-            >
-            下樓就到公托中心，新手爸媽也不手忙腳亂
+            寶雅、屈臣氏、燦坤、家樂福<br />麥當勞、銀行郵局排排站
           </div>
         </div>
         <div class="context-item">
-          <div class="context-title">
-            GARDEN花園
-          </div>
-          <div class="context-desc">
+          <div class="flex-ac">
             <img
               src="./ball/bright.png"
               alt=""
             >
-            15萬坪洲子洋重劃區，超高綠覆+超大棟距樂森活
+            <div class="context-title">
+              成泰路商圈
+            </div>
+          </div>
+          <div class="context-desc">
+            傳統市場、全聯福利中心<br />頂好生鮮超市、早午餐
+          </div>
+        </div>
+        <div class="context-item">
+          <div class="flex-ac">
+            <img
+              src="./ball/bright.png"
+              alt=""
+            >
+            <div class="context-title">
+              傳統市場
+            </div>
+          </div>
+          <div class="context-desc">
+            成洲市場、五股黃昏市場<br />晨型人或夜貓族早晚都好買
           </div>
         </div>
       </div>
@@ -213,6 +203,8 @@
 }
 
 .container {
+  padding-top: size(150);
+  padding-bottom: size(62);
 }
 
 .thumb {
@@ -223,13 +215,14 @@
 }
 
 .label {
-  width: size(118);
-  top: size(55);
-  left: size(719);
+  width: size(113);
+  top: size(40);
+  left: size(199);
 }
 
 .content {
-  width: size(950);
+  width: size(1094);
+  margin-left: size(280);
 }
 
 .title {
@@ -241,8 +234,7 @@
   letter-spacing: normal;
   text-align: left;
   color: #3d2824;
-  margin-bottom: size(15);
-  margin-top: size(166);
+  margin-right: size(34);
 }
 
 .desc {
@@ -254,24 +246,37 @@
   letter-spacing: normal;
   text-align: left;
   color: #000000;
-  margin-bottom: size(42);
+  margin-bottom: size(20);
+}
+
+.imgs {
+  width: size(1094);
+  margin-left: size(280);
 }
 
 .img {
-  width: size(470);
-  margin: size(6) 0;
+  width: size(362);
 }
 
 .context {
-  width: size(470);
+  // width: size(470);
   margin: size(6) 0;
   text-align: left;
+  margin-bottom: 30px;
   // padding-top: 10px;
 }
 
 .context-item {
   width: 100%;
   padding: 0 10px;
+  margin-right: -5px;
+  margin-bottom: 5px;
+
+  img {
+    width: 12px;
+    margin-right: 5px;
+    display: inline-block;
+  }
 }
 
 .context-title {
@@ -286,9 +291,10 @@
   letter-spacing: normal;
   text-align: left;
   color: #3d2824;
-  margin-top: size(15);
   margin-bottom: size(5);
+  margin-right: size(10);
   display: inline-block;
+  white-space: nowrap;
 }
 
 .context-desc {
@@ -301,12 +307,7 @@
   text-align: left;
   color: #3d2824;
   margin-bottom: size(5);
-
-  img {
-    width: 12px;
-    margin-right: 5px;
-    display: inline-block;
-  }
+  white-space: nowrap;
 }
 
 .animate-slide {
@@ -327,51 +328,45 @@
   }
 
   .ball1 {
-    height: size(83);
-    left: size(116);
-    top: size(77);
+    height: size(107);
+    left: size(75);
+    top: size(461);
   }
 
   .ball2 {
-    width: size(270);
-    top: size(113);
-    left: size(486);
+    width: size(209);
+    top: size(292);
+    left: size(382);
   }
 
   .ball3 {
-    width: size(93);
-    right: size(567);
-    top: size(53);
+    width: size(42);
+    left: size(636);
+    top: size(305);
   }
 
   .ball4 {
-    height: size(404);
-    top: size(22);
-    right: size(-118);
+    height: size(171);
+    top: size(506);
+    right: size(427);
   }
 
   .ball5 {
-    height: size(204);
-    left: size(80);
-    top: size(899);
+    height: size(323);
+    right: size(105);
+    top: size(135);
   }
 
   .ball6 {
-    height: size(83);
-    left: size(574);
-    top: size(890);
+    height: size(65);
+    right: size(279);
+    top: size(589);
   }
 
-  .ball7 {
-    width: size(134);
-    top: size(652);
-    right: size(45);
-  }
-
-  .ball8 {
-    width: size(42);
-    top: size(1000);
-    right: size(160);
+  .smile {
+    width: size(297);
+    top: size(57);
+    right: size(312);
   }
 }
 
@@ -396,17 +391,22 @@
     min-height: auto;
   }
 
+  .relative {
+    padding-bottom: size-m(62);
+  }
+
   .m-content {
     width: 85%;
     margin: 0 auto;
-    padding-top: size-m(130);
+    padding-top: size-m(140);
     margin-bottom: 30px;
   }
 
   .label {
-    width: size-m(97);
-    top: size-m(27);
-    left: size-m(30);
+    width: size-m(93);
+    top: size-m(39);
+    right: size-m(33);
+    left: auto;
   }
 
   .title {
@@ -420,6 +420,7 @@
     color: #3d2824;
     margin-bottom: size-m(15);
     margin-top: 0;
+    white-space: nowrap;
   }
 
   .desc {
@@ -467,6 +468,7 @@
     text-align: left;
     color: #3d2824;
     margin-bottom: size-m(5);
+    padding-left: 20px;
 
     img {
       width: 12px;
@@ -486,12 +488,52 @@
   }
 
   .animate-slide {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
+    .balls {
+      @for $i from 1 through 10 {
+        $randomNum: random(4) + 3;
+        > img:nth-child(#{$i}) {
+          transform: translateY((random(10) - 50) + px);
+          animation: an ($randomNum + s) 3s infinite alternate;
+        }
+      }
+    }
+
     .ball1 {
-      width: size-m(138);
-      height: auto;
+      height: size-m(157);
+      left: size-m(-35);
       top: size-m(-20);
+    }
+
+    .ball2 {
+      width: size-m(42);
+      top: size-m(356);
       left: auto;
-      right: size-m(28);
+      right: size-m(16);
+    }
+
+    .ball3 {
+      width: size-m(72);
+      left: auto;
+      right: size-m(39);
+      top: size-m(424);
+    }
+
+    .ball4 {
+      height: size-m(117);
+      top: size-m(454);
+      right: size-m(-20);
+    }
+
+    .smile {
+      width: size-m(165);
+      top: size-m(518);
+      right: size-m(-20);
     }
   }
 }
@@ -507,7 +549,7 @@ import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
-  name: 'section2',
+  name: 'section3',
 
   mixins: [slider],
   components: {
@@ -537,10 +579,9 @@ export default {
       },
 
       slideList: [
-        { src: require('./mo/2/1.jpg') },
-        { src: require('./mo/2/2.jpg') },
-        { src: require('./mo/2/3.jpg') },
-        { src: require('./mo/2/4.jpg') },
+        { src: require('./mo/3/1.jpg') },
+        { src: require('./mo/3/2.jpg') },
+        { src: require('./mo/3/3.jpg') },
       ],
 
       imgIndex: 0,
@@ -550,8 +591,7 @@ export default {
 
   computed: {},
 
-  methods: {
-  },
+  methods: {},
 
   created() {},
   mounted() {},
