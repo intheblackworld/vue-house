@@ -3,7 +3,11 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
-          <img src="@/projects/hoh1/ball/ball.png" alt="" class="ball-logo">
+          <img
+            src="@/projects/hoh1/ball/ball.png"
+            alt=""
+            class="ball-logo"
+          >
           <img
             class="logo"
             src="@/assets/img/nav-logo.png"
@@ -192,7 +196,7 @@ export default {
       width: 18px;
       position: absolute;
       left: 0;
-      transition: all .3s;
+      transition: all 0.3s;
     }
 
     &:hover {
@@ -332,7 +336,16 @@ export default {
 
   .logo {
     width: $logo_phone_width;
-    left: 15px;
+    left: 45px;
+  }
+
+  .ball-logo {
+    width: size-m(201);
+    height: auto;
+    position: absolute;
+    left: size-m(-10);
+    display: block;
+    top: size-m(-120);
   }
 
   .nav {
