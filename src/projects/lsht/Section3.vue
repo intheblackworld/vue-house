@@ -26,7 +26,11 @@
           />
         </swiper-slide>
 
-        <div class="slide-content absolute" data-aos="fade" data-aos-delay="400">
+        <div
+          class="slide-content absolute"
+          data-aos="fade"
+          data-aos-delay="400"
+        >
           <transition-group
             name="slide-fade"
             mode="out-in"
@@ -65,8 +69,16 @@
         >
       </div>
       <div class="flex animate-row animate-row2">
-        <img v-lazy="require('./s2/wave_l.png')" alt="wave" class="wave">
-        <img v-lazy="require('./s2/wave_l.png')" alt="wave" class="wave">
+        <img
+          v-lazy="require('./s2/wave_l.png')"
+          alt="wave"
+          class="wave"
+        >
+        <img
+          v-lazy="require('./s2/wave_l.png')"
+          alt="wave"
+          class="wave"
+        >
       </div>
     </div>
     <div v-if="isMobile">
@@ -95,7 +107,11 @@
           />
         </swiper-slide>
       </swiper>
-      <div class="slide-content absolute" data-aos="fade" data-aos-delay="400">
+      <div
+        class="slide-content absolute"
+        data-aos="fade"
+        data-aos-delay="400"
+      >
         <transition-group
           name="slide-fade"
           mode="out-in"
@@ -117,14 +133,20 @@
               class="item-desc"
               v-html="slide.desc"
             ></h3>
-           <div class="add" @click="isDialog = true"><img src="./mo/plus.png" alt="plus"></div>
+            <div
+              class="add"
+              @click="isDialog = true"
+            ><img
+                src="./mo/plus.png"
+                alt="plus"
+              ></div>
           </div>
         </transition-group>
       </div>
       <div
         class="dialog"
         v-show="isDialog"
-            @click="isDialog = false"
+        @click="isDialog = false"
       >
         <div class="dialog-content">
           <img
@@ -298,7 +320,7 @@
   overflow: hidden;
   animation: border-radius 8s ease infinite;
   opacity: 0;
-  transition: all .3s;
+  transition: all 0.3s;
   &.active {
     opacity: 1;
   }
@@ -367,9 +389,9 @@
 }
 
 @media screen and (max-width: 767px) {
-  .relative{
+  .relative {
     margin: 0;
-}
+  }
   .slide-content {
     left: 3vw;
     right: auto;
@@ -396,7 +418,7 @@
     text-align: left;
     color: #595757;
     white-space: nowrap;
-    margin:0 0 size-m(11) size-m(8);
+    margin: 0 0 size-m(11) size-m(8);
   }
 
   .item-subtitle {
@@ -405,12 +427,11 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.2;
-    letter-spacing:0;
+    letter-spacing: 0;
     text-align: left;
     color: #007eca;
     white-space: nowrap;
-    margin:0 0 size-m(5) size-m(-9);
-
+    margin: 0 0 size-m(5) size-m(-9);
   }
 
   .item-desc {
@@ -424,17 +445,22 @@
     letter-spacing: 0.36px;
     text-align: justify;
     color: #595757;
-    margin:0 0 size-m(5) size-m(-3);
+    margin: 0 0 size-m(5) size-m(-3);
   }
 
   .add {
-    width: 100%;text-align: center;
+    width: 100%;
+    text-align: center;
     // padding: 20px;
-    margin-top:0;
+    margin-top: 0;
     position: absolute;
-    z-index: 3;bottom: 0;
-background: linear-gradient(to bottom,#fff0 0%,#ffff 100%);
-    img{height: size-m(20);margin: size-m(50) 0 0 0;}
+    z-index: 3;
+    bottom: 0;
+    background: linear-gradient(to bottom, #fff0 0%, #ffff 100%);
+    img {
+      height: size-m(20);
+      margin: size-m(50) 0 0 0;
+    }
   }
 
   .dialog {

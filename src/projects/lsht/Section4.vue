@@ -6,6 +6,14 @@
       alt="聯上海棠"
       class="bg-img"
     >
+    <div
+      v-if="isMobile"
+      class="add"
+      @click="isDialog = true"
+    ><img
+        src="./mo/plus.png"
+        alt="plus"
+      ></div>
     <swiper
       :options="swiperOption"
       ref="mySwiper"
@@ -45,6 +53,44 @@
         </transition-group>
       </div>
     </swiper>
+    <div
+      class="dialog"
+      v-show="isDialog"
+      @click="isDialog = false"
+    >
+      <div class="dialog-content">
+        <img
+          class="close"
+          @click="isDialog = false"
+          src="./mo/close.png"
+          alt="close"
+        >
+        <transition-group
+          name="slide-fade"
+          mode="out-in"
+        >
+          <div
+            class="slide-content absolute"
+            v-show="slideIndex1 === index"
+            v-for="(slide, index) in slideList1"
+            :key="slide.desc"
+          >
+            <div
+              class="item-title"
+              v-html="slide.title"
+            ></div>
+            <div
+              class="item-subtitle"
+              v-html="slide.subtitle"
+            ></div>
+            <div
+              class="item-desc"
+              v-html="slide.desc"
+            ></div>
+          </div>
+        </transition-group>
+      </div>
+    </div>
     <swiper
       :options="swiperOption"
       ref="mySwiper"
@@ -69,10 +115,10 @@
 </template>
 <style lang="scss">
 .item-title {
-    font-size: size(55);
+  font-size: size(55);
   span {
     color: #0c3e7b !important;
-    font-size:1.4em;
+    font-size: 1.4em;
     font-family: 'Noto Serif TC' !important;
   }
 }
@@ -190,7 +236,7 @@
   left: size(188);
   top: size(102);
   opacity: 0;
-  transition: all .3s;
+  transition: all 0.3s;
   &.active {
     opacity: 1;
   }
@@ -216,6 +262,21 @@
   transition: all 0s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
+.add {
+  width: 100%;
+  text-align: center;
+  // padding: 20px;
+  margin-top: 0;
+  position: absolute;
+  z-index: 10;
+  top: size-m(200);
+  background: linear-gradient(to bottom, #fff0 0%, #ffff 100%);
+  img {
+    height: size-m(20);
+    margin: size-m(50) 0 0 0;
+  }
+}
+
 @media only screen and (max-width: 1440px) {
   .bg-img {
   }
@@ -231,16 +292,19 @@
 @media screen and (max-width: 767px) {
   .relative {
     background: #fff;
-  height: size-m(750);
+    height: size-m(600);
   }
   .slide-content {
-    left:auto;
+    left: auto;
     right: auto;
     margin: 0 auto;
     top: size-m(40);
-    width: 100vw;
+    width: 100%;
   }
-.slide-container{    height:size-m(750);}
+  .slide-container {
+    height: size-m(600);
+    z-index: 5;
+  }
   // .relative {
   //   > div {
   //     display: flex;
@@ -278,7 +342,7 @@
 
   .item-desc {
     font-size: size-m(12);
-    height: auto;
+    max-height: 100px;
     overflow: hidden;
     font-weight: 500;
     font-stretch: normal;
@@ -297,6 +361,44 @@
     margin: 0 auto;
     top: auto;
     bottom: 0;
+  }
+
+  .dialog {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .slide-content {
+      left: 0;
+    }
+
+    .dialog-content {
+      background-color: #fff;
+      width: size-m(313);
+      height: size-m(516);
+      position: relative;
+
+      .item-title,
+      .item-subtitle,
+      .item-desc {
+        white-space: normal;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .close {
+      width: 16px;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
   }
 }
 </style>
