@@ -6,11 +6,15 @@
           src="./s2/1-1.jpg"
           alt=""
           class="thumb"
+          data-aos="fade"
+          data-aos-delay="200"
         >
         <img
           src="./s2/title1.png"
           alt=""
           class="label absolute"
+          data-aos="fade"
+          data-aos-delay="1000"
         >
         <div :class="`animate-slide`">
           <div class="balls">
@@ -24,10 +28,18 @@
           </div>
         </div>
         <div class="content">
-          <div class="title">
+          <div
+            class="title"
+            data-aos="fade"
+            data-aos-delay="400"
+          >
             公園 校園 花園<br />誠徵有園人
           </div>
-          <div class="desc">
+          <div
+            class="desc"
+            data-aos="fade"
+            data-aos-delay="500"
+          >
             踏出家門就在公園裡！15萬坪高綠覆洲子洋重劃區<br />
             擁抱128萬坪大台北都會公園，家就在樹海鮮氧裡無限延伸<br />
             公園裡的家，健康佳、保值佳，「健康就是財富」在這裡你會得到驗證
@@ -37,19 +49,29 @@
               src="./s2/2-1.jpg"
               alt=""
               class="img"
+              data-aos="fade"
+              data-aos-delay="600"
             >
             <img
               src="./s2/2-2.jpg"
               alt=""
               class="img"
+              data-aos="fade"
+              data-aos-delay="700"
             >
             <img
               src="./s2/2-3.jpg"
               alt=""
               class="img"
+              data-aos="fade"
+              data-aos-delay="800"
             >
             <div class="context">
-              <div class="context-item">
+              <div
+                class="context-item"
+                data-aos="fade"
+                data-aos-delay="900"
+              >
                 <div class="context-title">
                   PARK公園
                 </div>
@@ -114,6 +136,8 @@
           src="./s2/title1.png"
           alt=""
           class="label absolute"
+          data-aos="fade"
+          data-aos-delay="1000"
         >
         <div :class="`animate-slide`">
           <div class="balls">
@@ -126,17 +150,33 @@
             >
           </div>
         </div>
-        <div class="title">
+        <div
+          class="title"
+          data-aos="fade"
+          data-aos-delay="400"
+        >
           公園 校園 花園<br />誠徵有園人
         </div>
-        <div class="desc">
+        <div
+          class="desc"
+          data-aos="fade"
+          data-aos-delay="500"
+        >
           踏出家門就在公園裡！15萬坪高綠覆洲子洋重劃區，擁抱128萬坪大台北都會公園，家就在樹海鮮氧裡無限延伸，公園裡的家，健康佳、保值佳，「健康就是財富」在這裡你會得到驗證
         </div>
-        <div class="context-item">
+        <div
+          class="context-item"
+          data-aos="fade"
+          data-aos-delay="600"
+        >
           <div class="context-title">
             PARK公園
           </div>
-          <div class="context-desc">
+          <div
+            class="context-desc"
+            data-aos="fade"
+            data-aos-delay="700"
+          >
             <img
               src="./ball/bright.png"
               alt=""
@@ -151,7 +191,11 @@
             4500坪洲子洋公園+1200坪國民運動中心，泳池健身房隨時鍛鍊誘人曲線
           </div>
         </div>
-        <div class="context-item">
+        <div
+          class="context-item"
+          data-aos="fade"
+          data-aos-delay="700"
+        >
           <div class="context-title">
             SCHOOL校園
           </div>
@@ -170,7 +214,11 @@
             下樓就到公托中心，新手爸媽也不手忙腳亂
           </div>
         </div>
-        <div class="context-item">
+        <div
+          class="context-item"
+          data-aos="fade"
+          data-aos-delay="800"
+        >
           <div class="context-title">
             GARDEN花園
           </div>
@@ -186,6 +234,8 @@
       <swiper
         :options="swiperOption"
         ref="mySwiper"
+        data-aos="fade"
+        data-aos-delay="1000"
       >
         <swiper-slide
           v-for="(slide, index) in slideList"
@@ -550,8 +600,7 @@ export default {
 
   computed: {},
 
-  methods: {
-  },
+  methods: {},
 
   created() {},
   mounted() {},

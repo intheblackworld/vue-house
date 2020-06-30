@@ -2,102 +2,70 @@
   <div class="section5">
     <div v-if="!isMobile">
       <div class="container relative">
-        <img
+        <!-- <img
           src="./s5/title.png"
           alt=""
           class="label absolute"
-          data-aos="fade"
-          data-aos-delay="1000"
-        >
+        > -->
         <div :class="`animate-slide`">
           <div class="balls">
             <img
               src="./ball/bright.png"
               alt=""
               :class="`ball${index} absolute`"
-              v-for="index in 2"
+              v-for="index in 6"
               :key="`slide1-ball${index}`"
             >
           </div>
         </div>
-        <div class="content flex">
+        <div class="content flex-c">
           <div
             class="title"
             data-aos="fade"
             data-aos-delay="400"
           >
-            別人的是房 自己的才是家
+            國際設計金獎<br />建築神手強強聯手
           </div>
           <div class="context">
             <div
               class="desc"
               data-aos="fade"
-              data-aos-delay="500"
-            >
-              自己的最好！換裝潢、開伙上菜、養寵物‥<br />
-              租房子不能做的，在這裡都由你<br />
-              精品飯店式休閒會館<br />
-              不用出門就能健身、高歌、交朋友<br />
-              在家玩樂有裏子，親友來訪有面子<br />
-              有自己的家每一天都神采飛揚
-            </div>
-            <div
-              class="context-item flex-ac"
-              data-aos="fade"
               data-aos-delay="600"
             >
-              <img
-                src="./ball/bright.png"
-                alt=""
-              >
-              <div class="context-title">
-                精品飯店式休閒會館
-              </div>
-              <div class="context-desc">
-                在家玩樂有裏子，親友來訪有面子
-              </div>
-            </div>
-            <div
-              class="context-item flex-ac"
-              data-aos="fade"
-              data-aos-delay="700"
-            >
-              <img
-                src="./ball/bright.png"
-                alt=""
-              >
-              <div class="context-title">
-                元氣滿滿 15-25坪
-              </div>
-              <div class="context-desc">
-                2房精巧小飯店、3房自由式空間
-              </div>
+              美國Muse、義大利A’Design設計金獎等四大國際級建築團隊領銜<br />以世界級都市計劃宏觀角度，合奏大台北水岸建築世紀絕唱
             </div>
           </div>
         </div>
-      </div>
-      <swiper
-        :options="swiperOption"
-        ref="mySwiper"
-        data-aos="fade"
-        data-aos-delay="900"
-      >
-        <swiper-slide
-          v-for="(slide, index) in slideList"
-          :index="index"
-          :key="slide.img"
-          class="item"
-        >
-          <img
-            :src="slide.src"
-            :class="`item-img`"
-          />
-        </swiper-slide>
         <div
-          class="swiper-pagination"
-          slot="pagination"
-        ></div>
-      </swiper>
+          class="person-list flex-c"
+          data-aos="fade"
+          data-aos-delay="800"
+        >
+          <div
+            class="person flex-c wrap"
+            v-for="(slide, index) in slideList"
+            :index="index"
+            :key="slide.src"
+          >
+            <img
+              :src="slide.src"
+              alt=""
+            >
+            <div
+              class="person-title"
+              v-html="slide.title"
+            ></div>
+            <div
+              class="person-subtitle"
+              v-html="slide.subtitle"
+            ></div>
+            <div
+              class="person-desc"
+              v-html="slide.desc"
+            ></div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div
@@ -105,13 +73,11 @@
       class="relative"
     >
       <div class="m-content">
-        <img
-          src="./s5/title.png"
+        <!-- <img
+          src="./s3/title2.png"
           alt=""
           class="label absolute"
-          data-aos="fade"
-          data-aos-delay="1000"
-        >
+        > -->
         <div :class="`animate-slide`">
           <div class="balls">
             <img
@@ -128,63 +94,21 @@
           data-aos="fade"
           data-aos-delay="400"
         >
-          別人的是房<br />自己的才是家
+          國際設計金獎<br />建築神手強強聯手
         </div>
         <div
           class="desc"
           data-aos="fade"
           data-aos-delay="600"
         >
-          自己的最好！換裝潢、開伙上菜、養寵物‥<br />
-          租房子不能做的，在這裡都由你<br />
-          精品飯店式休閒會館<br />
-          不用出門就能健身、高歌、交朋友<br />
-          在家玩樂有裏子，親友來訪有面子<br />
-          有自己的家每一天都神采飛揚
-        </div>
-        <div
-          class="context-item"
-          data-aos="fade"
-          data-aos-delay="700"
-        >
-          <div class="flex-ac">
-            <img
-              src="./ball/bright.png"
-              alt=""
-            >
-            <div class="context-title">
-              精品飯店式休閒會館
-            </div>
-          </div>
-
-          <div class="context-desc">
-            在家玩樂有裏子，親友來訪有面子
-          </div>
-        </div>
-        <div
-          class="context-item"
-          data-aos="fade"
-          data-aos-delay="800"
-        >
-          <div class="flex-ac">
-            <img
-              src="./ball/bright.png"
-              alt=""
-            >
-            <div class="context-title">
-              元氣滿滿 15-25坪
-            </div>
-          </div>
-          <div class="context-desc">
-            2房精巧小飯店、3房自由式空間
-          </div>
+          美國Muse、義大利A’Design設計金獎等四大國際級建築團隊領銜，以世界級都市計劃宏觀角度，合奏大台北水岸建築世紀絕唱
         </div>
       </div>
       <swiper
         :options="swiperOption"
         ref="mySwiper"
         data-aos="fade"
-        data-aos-delay="1000"
+        data-aos-delay="800"
       >
         <swiper-slide
           v-for="(slide, index) in slideList"
@@ -196,6 +120,20 @@
             :src="slide.src"
             :class="`item-img`"
           />
+          <div class="person">
+            <div
+              class="person-title"
+              v-html="slide.title"
+            ></div>
+            <div
+              class="person-subtitle"
+              v-html="slide.subtitle"
+            ></div>
+            <div
+              class="person-desc"
+              v-html="slide.desc"
+            ></div>
+          </div>
         </swiper-slide>
       </swiper>
     </div>
@@ -226,14 +164,12 @@
   background-size: cover;
   // position: relative;
   // z-index: 5;
-  min-height: 100vh;
   background-color: #fddb3e;
 }
 
 .container {
   padding-top: size(150);
-  padding-bottom: size(42);
-  overflow: hidden;
+  padding-bottom: size(142);
 }
 
 .label {
@@ -243,8 +179,8 @@
 }
 
 .content {
-  width: size(1094);
-  margin-left: size(364);
+  width: size(1200);
+  margin-left: size(280);
 }
 
 .title {
@@ -254,7 +190,7 @@
   font-style: normal;
   line-height: 1.26;
   letter-spacing: normal;
-  text-align: left;
+  text-align: right;
   color: #3d2824;
   margin-right: size(34);
 }
@@ -280,46 +216,35 @@
   width: size(362);
 }
 
-.context {
-  // width: size(470);
-  margin: size(6) 0;
-  text-align: left;
-  margin-bottom: 30px;
-  // padding-top: 10px;
+.person-list {
+  width: size(1662);
+  margin: 0 auto;
 }
 
-.context-item {
-  width: 100%;
-  padding: 0 10px;
-  margin-right: -5px;
-  margin-bottom: 5px;
-
+.person {
+  width: size(554);
   img {
-    width: 12px;
-    margin-right: 5px;
-    display: inline-block;
+    width: 100%;
+    margin-bottom: size(26);
+  }
+  > div {
+    width: size(280);
   }
 }
 
-.context-title {
-  background-color: #fff;
-  border-radius: 20px / 20px;
-  padding: 5px 15px;
+.person-title {
+  font-family: Arial;
   font-size: size(20);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
-  letter-spacing: normal;
+  line-height: 1.4;
+  letter-spacing: 2px;
   text-align: left;
   color: #3d2824;
-  margin-bottom: size(5);
-  margin-right: size(10);
-  display: inline-block;
-  white-space: nowrap;
 }
 
-.context-desc {
+.person-subtitle {
   font-size: size(15);
   font-weight: 300;
   font-stretch: normal;
@@ -328,7 +253,17 @@
   letter-spacing: normal;
   text-align: left;
   color: #3d2824;
-  margin-bottom: size(5);
+}
+
+.person-desc {
+  font-size: size(15);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.87;
+  letter-spacing: normal;
+  text-align: left;
+  color: #3d2824;
   white-space: nowrap;
 }
 
@@ -350,15 +285,35 @@
   }
 
   .ball1 {
-    height: size(76);
-    right: size(385);
-    top: size(180);
+    height: size(137);
+    left: size(528);
+    top: size(-50);
   }
 
   .ball2 {
-    width: size(496);
-    bottom: size(-300);
-    left: size(60);
+    width: size(73);
+    top: size(65);
+    left: size(1166);
+  }
+  .ball3 {
+    width: size(422);
+    top: size(-200);
+    right: size(30);
+  }
+  .ball4 {
+    width: size(149);
+    top: size(184);
+    right: size(35);
+  }
+  .ball5 {
+    width: size(117);
+    top: size(768);
+    right: size(610);
+  }
+  .ball6 {
+    height: size(234);
+    bottom: size(-80);
+    left: size(-60);
   }
 }
 
@@ -384,21 +339,23 @@
   }
 
   .relative {
-    padding-bottom: 0;
+    padding-top: size-m(42);
+    padding-bottom: size-m(134);
+    overflow: hidden;
   }
 
   .m-content {
     width: 85%;
     margin: 0 auto;
-    padding-top: size-m(140);
+    // padding-top: size-m(140);
     margin-bottom: 30px;
   }
 
   .label {
-    width: size-m(95);
-    top: size-m(109);
-    right: auto;
-    left: size-m(24);
+    width: size-m(93);
+    top: size-m(39);
+    right: size-m(33);
+    left: auto;
   }
 
   .title {
@@ -408,11 +365,10 @@
     font-style: normal;
     line-height: 1.25;
     letter-spacing: normal;
-    text-align: left;
+    text-align: right;
     color: #3d2824;
     margin-bottom: size-m(15);
-    margin-top: size-m(-20);
-    margin-left: size-m(110);
+    margin-top: 0;
     white-space: nowrap;
   }
 
@@ -428,56 +384,52 @@
     margin-bottom: size-m(20);
   }
 
-  .context-item {
+  .item-img {
+    height: auto;
     width: 100%;
-    padding: 0 0;
-    text-align: left;
+    object-fit: cover;
   }
 
-  .context-title {
-    background-color: #fff;
-    border-radius: 20px / 20px;
-    padding: 5px 15px;
-    font-size: size-m(20);
+  .person {
+    width: 100%;
+    margin-top: 20px;
+    > div {
+      width: size-m(211);
+      margin: 0 auto;
+    }
+  }
+
+  .person-title {
+    font-size: 12px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: normal;
+    line-height: 1.33;
+    letter-spacing: 1.2px;
     text-align: left;
     color: #3d2824;
-    margin-top: size-m(15);
-    margin-bottom: size-m(5);
-    display: inline-block;
   }
 
-  .context-desc {
-    font-size: size-m(14);
+  .person-subtitle {
+    font-size: 12px;
     font-weight: 300;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.64;
+    line-height: 1.17;
     letter-spacing: normal;
     text-align: left;
     color: #3d2824;
-    margin-bottom: size-m(5);
-    padding-left: 20px;
-
-    img {
-      width: 12px;
-      margin-right: 5px;
-      display: inline-block;
-    }
   }
 
-  .item-img {
-    height: size-m(221);
-    width: 100%;
-    object-fit: cover;
-
-    &.height {
-      height: size-m(459);
-    }
+  .person-desc {
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.42;
+    letter-spacing: normal;
+    text-align: left;
+    color: #3d2824;
   }
 
   .animate-slide {
@@ -498,36 +450,17 @@
     }
 
     .ball1 {
-      height: size-m(157);
+      height: size-m(165);
       left: size-m(-55);
-      top: size-m(-60);
+      top: size-m(-80);
     }
 
     .ball2 {
       width: auto;
-      height: size-m(422);
-      top: size-m(271);
-      left: auto;
-      right: size-m(-320);
-    }
-
-    .ball3 {
-      width: size-m(72);
-      left: auto;
-      right: size-m(39);
-      top: size-m(424);
-    }
-
-    .ball4 {
-      height: size-m(117);
-      top: size-m(454);
-      right: size-m(-20);
-    }
-
-    .smile {
-      width: size-m(165);
-      top: size-m(518);
-      right: size-m(-20);
+      height: size-m(234);
+      top: size-m(630);
+      left: size-m(-100);
+      right: auto;
     }
   }
 }
@@ -558,7 +491,7 @@ export default {
       swiperOption: {
         slidesPerView: isMobile ? 1.2 : 1,
         centeredSlides: true,
-        spaceBetween: isMobile ? 15 : 30,
+        spaceBetween: isMobile ? -20 : 30,
         slidesPerColumn: isMobile ? 1 : 1,
         effect: isMobile ? '' : 'fade',
 
@@ -579,16 +512,22 @@ export default {
 
       slideList: [
         {
-          src: this.isMobile ? require('./mo/5/1.jpg') : require('./s5/1.jpg'),
+          src: require('./s6/1.png'),
+          title: 'INTERIOR SPACE',
+          subtitle: '國際一線美學，名門傲氣優雅',
+          desc: '代表作品∣頤海大院．台中帝寶．開璽吾界． SKY1',
         },
         {
-          src: this.isMobile ? require('./mo/5/2.jpg') : require('./s5/2.jpg'),
+          src: require('./s6/2.png'),
+          title: 'ARCHITECTURE',
+          subtitle: '動感琴鍵協奏，定義奢華高度',
+          desc: '代表作品∣波爾多．江翠ONE．金城舞2',
         },
         {
-          src: this.isMobile ? require('./mo/5/3.jpg') : require('./s5/3.jpg'),
-        },
-        {
-          src: this.isMobile ? require('./mo/5/4.jpg') : require('./s5/4.jpg'),
+          src: require('./s6/3.png'),
+          title: 'LANDSCAPE',
+          subtitle: '環境人文思考，都會繁花盛放',
+          desc: '代表作品∣陶朱隱園．維多利亞酒店．碧波白',
         },
       ],
 

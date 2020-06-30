@@ -6,6 +6,8 @@
           src="./s3/title2.png"
           alt=""
           class="label absolute"
+          data-aos="fade"
+          data-aos-delay="1000"
         >
         <div :class="`animate-slide`">
           <div class="balls">
@@ -24,18 +26,30 @@
           </div>
         </div>
         <div class="content flex">
-          <div class="title">
+          <div
+            class="title"
+            data-aos="fade"
+            data-aos-delay="400"
+          >
             愛情與麵包 我家全包
           </div>
           <div class="context">
-            <div class="desc">
+            <div
+              class="desc"
+              data-aos="fade"
+              data-aos-delay="500"
+            >
               機能雙商圈，生鮮蔬果新鮮現購<br />
               頂好、全聯散步就到，再晚下班也不擔心<br />
               柴米油鹽零食飲料隨時買齊<br />
               今天懶得煮，雙商圈滿街美食餐廳隨你挑<br />
               幸福生活2.0，愛情與麵包一次通包
             </div>
-            <div class="context-item flex-ac">
+            <div
+              class="context-item flex-ac"
+              data-aos="fade"
+              data-aos-delay="600"
+            >
               <img
                 src="./ball/bright.png"
                 alt=""
@@ -47,7 +61,11 @@
                 寶雅、屈臣氏、燦坤、家樂福、麥當勞、銀行郵局排排站
               </div>
             </div>
-            <div class="context-item flex-ac">
+            <div
+              class="context-item flex-ac"
+              data-aos="fade"
+              data-aos-delay="700"
+            >
               <img
                 src="./ball/bright.png"
                 alt=""
@@ -59,7 +77,11 @@
                 傳統市場、全聯福利中心、頂好生鮮超市、早午餐
               </div>
             </div>
-            <div class="context-item flex-ac">
+            <div
+              class="context-item flex-ac"
+              data-aos="fade"
+              data-aos-delay="800"
+            >
               <img
                 src="./ball/bright.png"
                 alt=""
@@ -78,16 +100,22 @@
             src="./s3/3-1.jpg"
             alt=""
             class="img"
+            data-aos="fade"
+            data-aos-delay="900"
           >
           <img
             src="./s3/3-2.jpg"
             alt=""
             class="img"
+            data-aos="fade"
+            data-aos-delay="1000"
           >
           <img
             src="./s3/3-3.jpg"
             alt=""
             class="img"
+            data-aos="fade"
+            data-aos-delay="1100"
           >
         </div>
       </div>
@@ -102,6 +130,8 @@
           src="./s3/title2.png"
           alt=""
           class="label absolute"
+          data-aos="fade"
+          data-aos-delay="1000"
         >
         <div :class="`animate-slide`">
           <div class="balls">
@@ -119,17 +149,29 @@
             >
           </div>
         </div>
-        <div class="title">
+        <div
+          class="title"
+          data-aos="fade"
+          data-aos-delay="400"
+        >
           愛情與麵包 我家全包
         </div>
-        <div class="desc">
+        <div
+          class="desc"
+          data-aos="fade"
+          data-aos-delay="500"
+        >
           機能雙商圈，生鮮蔬果新鮮現購<br />
           頂好、全聯散步就到，再晚下班也不擔心<br />
           柴米油鹽零食飲料隨時買齊<br />
           今天懶得煮，雙商圈滿街美食餐廳隨你挑<br />
           幸福生活2.0，愛情與麵包一次通包
         </div>
-        <div class="context-item ">
+        <div
+          class="context-item"
+          data-aos="fade"
+          data-aos-delay="600"
+        >
           <div class="flex-ac">
             <img
               src="./ball/bright.png"
@@ -144,7 +186,11 @@
             寶雅、屈臣氏、燦坤、家樂福<br />麥當勞、銀行郵局排排站
           </div>
         </div>
-        <div class="context-item">
+        <div
+          class="context-item"
+          data-aos="fade"
+          data-aos-delay="700"
+        >
           <div class="flex-ac">
             <img
               src="./ball/bright.png"
@@ -158,7 +204,11 @@
             傳統市場、全聯福利中心<br />頂好生鮮超市、早午餐
           </div>
         </div>
-        <div class="context-item">
+        <div
+          class="context-item"
+          data-aos="fade"
+          data-aos-delay="800"
+        >
           <div class="flex-ac">
             <img
               src="./ball/bright.png"
@@ -176,6 +226,8 @@
       <swiper
         :options="swiperOption"
         ref="mySwiper"
+        data-aos="fade"
+        data-aos-delay="1000"
       >
         <swiper-slide
           v-for="(slide, index) in slideList"

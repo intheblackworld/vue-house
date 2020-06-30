@@ -6,6 +6,8 @@
           src="./s4/title.png"
           alt=""
           class="label absolute"
+          data-aos="fade"
+          data-aos-delay="1000"
         >
         <div :class="`animate-slide`">
           <div class="balls">
@@ -19,10 +21,18 @@
           </div>
         </div>
         <div class="title-block absolute flex">
-          <div class="title">
+          <div
+            class="title"
+            data-aos="fade"
+            data-aos-delay="400"
+          >
             1分鐘前在家耍廢<br />10分鐘後台北開會
           </div>
-          <div class="desc">
+          <div
+            class="desc"
+            data-aos="fade"
+            data-aos-delay="600"
+          >
             快速路網大集合<br />
             5分鐘直上中山高、10分鐘快速直達台北市<br />
             南來北往隨時正常發揮<br />
@@ -40,19 +50,29 @@
             src="./s4/1.jpg"
             alt=""
             class="img"
+            data-aos="fade"
+            data-aos-delay="600"
           >
           <img
             src="./s4/2.jpg"
             alt=""
             class="img"
+            data-aos="fade"
+            data-aos-delay="700"
           >
           <img
             src="./s4/3.jpg"
             alt=""
             class="img"
+            data-aos="fade"
+            data-aos-delay="800"
           >
         </div>
-        <div class="context absolute">
+        <div
+          class="context absolute"
+          data-aos="fade"
+          data-aos-delay="900"
+        >
           <div class="context-item flex-ac">
             <img
               src="./ball/bright.png"
@@ -128,12 +148,22 @@
         src="./s4/title.png"
         alt=""
         class="label absolute"
+        data-aos="fade"
+        data-aos-delay="1000"
       >
       <div class="title-block absolute">
-        <div class="title">
+        <div
+          class="title"
+          data-aos="fade"
+          data-aos-delay="400"
+        >
           1分鐘前在家耍廢<br />10分鐘後台北開會
         </div>
-        <div class="desc">
+        <div
+          class="desc"
+          data-aos="fade"
+          data-aos-delay="500"
+        >
           快速路網大集合<br />
           5分鐘直上中山高、10分鐘快速直達台北市<br />
           南來北往隨時正常發揮<br />
@@ -142,7 +172,11 @@
         </div>
       </div>
       <div class="context absolute">
-        <div class="context-item flex-ac">
+        <div
+          class="context-item flex-ac"
+          data-aos="fade"
+          data-aos-delay="600"
+        >
           <img
             src="./ball/bright.png"
             alt=""
@@ -154,7 +188,11 @@
             中山高+汐五高+五楊高
           </div>
         </div>
-        <div class="context-item flex-ac">
+        <div
+          class="context-item flex-ac"
+          data-aos="fade"
+          data-aos-delay="700"
+        >
           <img
             src="./ball/bright.png"
             alt=""
@@ -166,7 +204,11 @@
             機捷+蘆洲線+五泰輕軌
           </div>
         </div>
-        <div class="context-item flex-ac">
+        <div
+          class="context-item flex-ac"
+          data-aos="fade"
+          data-aos-delay="800"
+        >
           <img
             src="./ball/bright.png"
             alt=""
@@ -178,7 +220,11 @@
             台64線+台65線+台1線+新北環快
           </div>
         </div>
-        <div class="context-item flex-ac">
+        <div
+          class="context-item flex-ac"
+          data-aos="fade"
+          data-aos-delay="900"
+        >
           <img
             src="./ball/bright.png"
             alt=""
@@ -194,6 +240,8 @@
       <swiper
         :options="swiperOption"
         ref="mySwiper"
+        data-aos="fade"
+        data-aos-delay="1000"
       >
         <swiper-slide
           v-for="(slide, index) in slideList"

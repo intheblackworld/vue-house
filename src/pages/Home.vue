@@ -19,6 +19,12 @@
     <div id="section5">
       <Section5 />
     </div>
+    <div id="section6">
+      <Section6 />
+    </div>
+    <div id="section7">
+      <Section7 />
+    </div>
     <ContactSection />
     <!-- <SimpleOrder /> -->
     <MobileNav />
@@ -42,6 +48,8 @@ import Section2 from '@/projects/hoh1/Section2.vue'
 import Section3 from '@/projects/hoh1/Section3.vue'
 import Section4 from '@/projects/hoh1/Section4.vue'
 import Section5 from '@/projects/hoh1/Section5.vue'
+import Section6 from '@/projects/hoh1/Section6.vue'
+import Section7 from '@/projects/hoh1/Section7.vue'
 // import SimpleOrder from '@/components/SimpleOrder.vue'
 
 export default {
@@ -57,6 +65,8 @@ export default {
     Section3,
     Section4,
     Section5,
+    Section6,
+    Section7,
   },
 
   data() {

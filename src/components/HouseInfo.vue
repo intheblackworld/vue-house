@@ -1,6 +1,6 @@
 <template>
   <div class="house-info">
-<!--     <div class="content">
+    <div class="content">
       <div class="title">建案資訊</div>
       <div class="info">
         <div class="item" :key="infos[0]" v-for="infos in houseInfos">
@@ -8,7 +8,7 @@
           <p class="desc" v-html="infos[1]"></p>
         </div>
       </div>
-    </div> -->
+    </div>
     <Footer />
   </div>
 </template>
