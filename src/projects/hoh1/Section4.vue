@@ -306,7 +306,7 @@
   }
 }
 
-.map-img {
+.map-bg {
   width: 100vw;
   object-fit: cover;
 }
@@ -336,8 +336,8 @@
 }
 
 .context {
-  top: size(2028);
-  right: size(383);
+  top: size(1820);
+  left: size(1160);
 }
 
 .context-item {
@@ -345,15 +345,26 @@
   padding: 0 10px;
   margin-right: -5px;
   margin-bottom: 5px;
+justify-content: flex-start;
 
   img {
     width: 12px;
     margin-right: 5px;
     display: inline-block;
   }
+    &:nth-child(1) .context-title,
+    &:nth-child(2) .context-title{
+  letter-spacing: 1.5em;
+
+    }
+    &:nth-child(3) .context-title{
+
+  letter-spacing: 0.25em;
+    }
 }
 
 .context-title {
+  flex:0 0 auto ;
   background-color: #fff;
   border-radius: 20px / 20px;
   padding: 3px 15px;
@@ -369,6 +380,7 @@
   margin-right: size(10);
   display: inline-block;
   white-space: nowrap;
+  width: 4.7em;overflow: hidden;
 }
 
 .context-desc {

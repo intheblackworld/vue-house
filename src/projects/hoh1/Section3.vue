@@ -6,7 +6,7 @@
           src="./s3/title2.png"
           alt=""
           class="label absolute"
-          data-aos="fade"
+          data-aos="zoom-in-right"
           data-aos-delay="1000"
         >
         <div :class="`animate-slide`">
@@ -86,7 +86,7 @@
                 src="./ball/bright.png"
                 alt=""
               >
-              <div class="context-title">
+              <div class="context-title context-title3">
                 傳統市場
               </div>
               <div class="context-desc">
@@ -214,7 +214,7 @@
               src="./ball/bright.png"
               alt=""
             >
-            <div class="context-title">
+            <div class="context-title context-title3">
               傳統市場
             </div>
           </div>
@@ -304,6 +304,8 @@
 .imgs {
   width: size(1094);
   margin-left: size(280);
+  z-index: 3;
+  position: relative;
 }
 
 .img {
@@ -347,6 +349,9 @@
   margin-right: size(10);
   display: inline-block;
   white-space: nowrap;
+  width:6.7em;
+  &.context-title3{
+  letter-spacing:0.32em;}
 }
 
 .context-desc {
@@ -368,7 +373,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  transition: all 0.5s;
   .balls {
     @for $i from 1 through 10 {
       $randomNum: random(4) + 3;
@@ -401,6 +405,7 @@
     height: size(171);
     top: size(506);
     right: size(427);
+    z-index: 1;
   }
 
   .ball5 {
@@ -508,6 +513,7 @@
     margin-top: size-m(15);
     margin-bottom: size-m(5);
     display: inline-block;
+    position: relative;
   }
 
   .context-desc {
@@ -574,6 +580,7 @@
       left: auto;
       right: size-m(39);
       top: size-m(424);
+      z-index: 2;
     }
 
     .ball4 {
@@ -586,6 +593,7 @@
       width: size-m(165);
       top: size-m(518);
       right: size-m(-20);
+      z-index: 2;
     }
   }
 }

@@ -38,6 +38,11 @@
           >
         </div>
         <img
+          src="./s1/img1.png"
+          alt=""
+          class="img absolute"
+        >
+        <img
           src="./s1/b1.png"
           alt=""
           class="bubble absolute"
@@ -46,11 +51,6 @@
           src="./s1/timg.png"
           alt=""
           class="timg absolute"
-        >
-        <img
-          src="./s1/img1.png"
-          alt=""
-          class="img absolute"
         >
         <div class="title absolute">別人的是房<br />自己的才是家</div>
         <div class="subtitle absolute">HOUSE OF<br />HAPPINESS</div>
@@ -67,6 +67,11 @@
           >
         </div>
         <img
+          src="./s1/img2.png"
+          alt=""
+          class="img absolute"
+        >
+        <img
           src="./s1/b2.png"
           alt=""
           class="bubble absolute"
@@ -75,11 +80,6 @@
           src="./s1/timg.png"
           alt=""
           class="timg absolute"
-        >
-        <img
-          src="./s1/img2.png"
-          alt=""
-          class="img absolute"
         >
         <div class="title absolute">做牛做馬<br />更要當家做自己</div>
         <div class="subtitle absolute">HOUSE OF<br />HAPPINESS</div>
@@ -96,6 +96,11 @@
           >
         </div>
         <img
+          src="./s1/img3.png"
+          alt=""
+          class="img absolute"
+        >
+        <img
           src="./s1/b3.png"
           alt=""
           class="bubble absolute"
@@ -104,11 +109,6 @@
           src="./s1/timg.png"
           alt=""
           class="timg absolute"
-        >
-        <img
-          src="./s1/img3.png"
-          alt=""
-          class="img absolute"
         >
         <div class="title absolute">養兒防老OUT<br />養房抗老IN</div>
         <div class="subtitle absolute">HOUSE OF<br />HAPPINESS</div>
@@ -125,6 +125,11 @@
           >
         </div>
         <img
+          src="./s1/img4.png"
+          alt=""
+          class="img absolute"
+        >
+        <img
           src="./s1/b4.png"
           alt=""
           class="bubble absolute"
@@ -133,11 +138,6 @@
           src="./s1/timg.png"
           alt=""
           class="timg absolute"
-        >
-        <img
-          src="./s1/img4.png"
-          alt=""
-          class="img absolute"
         >
         <div class="title absolute">公園 校園 花園<br />誠徵有園人</div>
         <div class="subtitle absolute">HOUSE OF<br />HAPPINESS</div>
@@ -154,6 +154,11 @@
           >
         </div>
         <img
+          src="./s1/img5.png"
+          alt=""
+          class="img absolute"
+        >
+        <img
           src="./s1/b5.png"
           alt=""
           class="bubble absolute"
@@ -162,11 +167,6 @@
           src="./s1/timg.png"
           alt=""
           class="timg absolute"
-        >
-        <img
-          src="./s1/img5.png"
-          alt=""
-          class="img absolute"
         >
         <div class="title absolute">愛情與麵包<br />我家全包</div>
         <div class="subtitle absolute">HOUSE OF<br />HAPPINESS</div>
@@ -556,13 +556,13 @@ img {
   .ball6 {
     height: size(253);
     right: size(485);
-    bottom: size(119);
+    top:size(670);
   }
 
   .ball7 {
     width: size(784);
     right: size(-285);
-    bottom: size(-350);
+    top: size(650);
   }
 }
 
@@ -578,7 +578,8 @@ img {
   .img {
     width: size(762);
     left: size(79);
-    bottom: 0;
+    top: 50%;
+    margin-top:size(-300);
   }
 
   .img-title {
@@ -642,13 +643,13 @@ img {
   .ball7 {
     width: size(388);
     right: size(283);
-    bottom: size(17);
+    top: size(700);
   }
 
   .ball8 {
     width: size(104);
     right: size(95);
-    bottom: size(255);
+    top: size(670);
   }
 }
 
@@ -664,7 +665,8 @@ img {
   .img {
     width: size(960);
     right: 0;
-    bottom: 0;
+    top:50%;
+    margin-top:size(-560);
   }
 
   .img-title {
@@ -876,6 +878,7 @@ img {
 
       .timg {
         opacity: 1;
+        width: size-m(30);
       }
 
       .title {
@@ -895,8 +898,9 @@ img {
 
     .bubble {
       width: size-m(111);
-      top: size-m(307);
+      top:auto;
       right: size-m(21);
+      bottom:size-m(150);
     }
 
     .img {
@@ -906,22 +910,24 @@ img {
     }
 
     .img-title {
-      top: size-m(333);
+      top:auto;
+      bottom:size-m(195);
       right: size-m(30);
     }
 
     .timg {
-      top: size-m(380);
-      right: size-m(64);
+      right: size-m(63);
+      top:auto;
+      bottom:size-m(170);
     }
 
     .title {
-      top: size-m(194);
+      top: calc(50% - 30vw);
       left: size-m(21);
     }
 
     .subtitle {
-      top: size-m(277);
+      top: calc(50% - 6vw);
       left: size-m(21);
     }
 
@@ -929,7 +935,7 @@ img {
       height: size-m(237);
       left: auto;
       right: size-m(-70);
-      top: size-m(-30);
+      top:calc(50% - 82vw);
     }
 
     .ball2 {
@@ -943,19 +949,20 @@ img {
       height: size-m(206);
       right: auto;
       left: size-m(-90);
-      bottom: size-m(55);
+      top:calc(50% + 8vw);
     }
 
     .ball4 {
       width: size-m(80);
-      top: size-m(420);
+      top:auto;
       right: size-m(183);
+      bottom: size-m(100);
     }
 
     .ball5 {
       height: size-m(95);
       right: size-m(-40);
-      top: size-m(428);
+      top:calc(50% + 30vw);
     }
   }
 
@@ -964,7 +971,8 @@ img {
 
     .bubble {
       width: size-m(122);
-      top: size-m(378);
+      top:auto;
+      bottom:size-m(90);
       right: size-m(183);
     }
 
@@ -975,23 +983,25 @@ img {
     }
 
     .img-title {
-      top: size-m(405);
+      top:auto;
+      bottom:size-m(135);
       right: size-m(200);
     }
 
     .timg {
-      top: size-m(451);
+      top:auto;
+      bottom:size-m(110);
       right: size-m(234);
     }
 
     .title {
-      top: size-m(194);
+      top: calc(50% - 30vw);
       left: size-m(21);
       color: #492923;
     }
 
     .subtitle {
-      top: size-m(277);
+      top: calc(50% - 6vw);
       left: size-m(21);
     }
 
@@ -999,7 +1009,7 @@ img {
       height: size-m(237);
       left: auto;
       right: size-m(-70);
-      top: size-m(-30);
+      top:calc(50% - 70vw);
     }
 
     .ball2 {
@@ -1013,13 +1023,13 @@ img {
       height: size-m(30);
       right: auto;
       left: size-m(315);
-      top: size-m(288);
-      bottom: auto;
+      top: auto;
+      bottom: size-m(250);
     }
 
     .ball4 {
       width: size-m(99);
-      top: size-m(382);
+      top:calc(50% + 30vw);
       right: size-m(-20);
       left: auto;
     }
@@ -1027,7 +1037,7 @@ img {
     .ball5 {
       height: size-m(19);
       right: size-m(154);
-      top: size-m(406);
+      top:calc(50% + 30vw);
     }
 
     .ball6 {
@@ -1038,14 +1048,15 @@ img {
 
     .ball7 {
       width: size-m(91);
-      top: size-m(416);
+      top:calc(50% + 40vw);
       right: size-m(315);
     }
 
     .ball8 {
       width: size-m(53);
-      top: size-m(525);
+      top:auto;
       right: size-m(262);
+      bottom: size-m(10);
     }
   }
 
@@ -1054,7 +1065,8 @@ img {
 
     .bubble {
       width: size-m(144);
-      top: size-m(365);
+      top:auto;
+      bottom:size-m(130);
       right: size-m(55);
     }
 
@@ -1065,24 +1077,26 @@ img {
     }
 
     .img-title {
-      top: size-m(400);
+      top:auto;
+      bottom:size-m(185);
       right: size-m(62);
     }
 
     .timg {
-      top: size-m(451);
+      top:auto;
+      bottom:size-m(160);
       right: size-m(108);
     }
 
     .title {
-      top: size-m(194);
+      top: calc(50% - 30vw);
       left: size-m(21);
       color: #fff;
       text-align: right;
     }
 
     .subtitle {
-      top: size-m(277);
+      top: calc(50% - 6vw);
       left: auto;
       right: size-m(23);
     }
@@ -1110,9 +1124,10 @@ img {
     }
 
     .ball4 {
-      width: size-m(99);
-      top: size-m(382);
-      right: size-m(-20);
+      width: size-m(200);
+      top: auto;
+      bottom:size-m(-100);
+      right: size-m(-100);
       left: auto;
     }
 
@@ -1121,6 +1136,7 @@ img {
       left: 0;
       right: auto;
       top: size-m(573);
+      z-index: 2;
     }
 
     .ball6 {
@@ -1147,7 +1163,8 @@ img {
 
     .bubble {
       width: size-m(125);
-      top: size-m(452);
+      top:auto;
+      bottom:size-m(170);
       right: size-m(28);
       left: auto;
     }
@@ -1157,27 +1174,30 @@ img {
       right: auto;
       left: size-m(8);
       bottom: 0;
+      top: auto;
     }
 
     .img-title {
-      top: size-m(487);
+      top:auto;
+      bottom:size-m(215);
       right: size-m(40);
     }
 
     .timg {
-      top: size-m(532);
+      top:auto;
+      bottom:size-m(190);
       right: size-m(73);
     }
 
     .title {
-      top: size-m(194);
+      top: calc(50% - 30vw);
       left: size-m(21);
       color: #fff;
       text-align: right;
     }
 
     .subtitle {
-      top: size-m(277);
+      top: calc(50% - 6vw);
       left: auto;
       right: size-m(23);
     }
@@ -1222,7 +1242,7 @@ img {
     .ball6 {
       width: size-m(73);
       height: auto;
-      top: size-m(416);
+      top: size-m(30);
       right: size-m(18);
     }
 
@@ -1230,6 +1250,7 @@ img {
       width: size-m(175);
       top: size-m(508);
       right: size-m(121);
+      z-index: 2;
     }
   }
 
@@ -1238,7 +1259,8 @@ img {
 
     .bubble {
       width: size-m(148);
-      top: size-m(428);
+      top:auto;
+      bottom:size-m(50);
       right: size-m(206);
     }
 
@@ -1246,27 +1268,30 @@ img {
       width: size-m(256);
       right: size-m(0);
       bottom: 0;
+      top: auto;
     }
 
     .img-title {
-      top: size-m(445);
+      top:auto;
+      bottom:size-m(95);
       right: size-m(250);
     }
 
     .timg {
-      top: size-m(535);
+      top:auto;
+      bottom:size-m(70);
       right: size-m(272);
     }
 
     .title {
-      top: size-m(190);
+      top: calc(50% - 30vw);
       left: size-m(14);
       color: #fff;
       text-align: left;
     }
 
     .subtitle {
-      top: size-m(273);
+      top: calc(50% - 6vw);
       left: size-m(14);
       right: auto;
     }
@@ -1310,7 +1335,8 @@ img {
 
     .ball6 {
       width: size-m(47);
-      top: size-m(518);
+      top: auto;
+      bottom: size-m(10);
       right: size-m(133);
     }
 

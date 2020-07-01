@@ -66,7 +66,7 @@
                 src="./ball/bright.png"
                 alt=""
               >
-              <div class="context-title">
+              <div class="context-title context-title1">
                 元氣滿滿 15-25坪
               </div>
               <div class="context-desc">
@@ -171,7 +171,7 @@
               src="./ball/bright.png"
               alt=""
             >
-            <div class="context-title">
+            <div class="context-title context-title1">
               元氣滿滿 15-25坪
             </div>
           </div>
@@ -240,11 +240,14 @@
   width: size(113);
   top: size(140);
   left: size(221);
+  z-index:3;
 }
 
 .content {
   width: size(1094);
   margin-left: size(364);
+  z-index: 3;
+  position: relative;
 }
 
 .title {
@@ -317,6 +320,8 @@
   margin-right: size(10);
   display: inline-block;
   white-space: nowrap;
+  &.context-title1{
+  letter-spacing:0.12em;}
 }
 
 .context-desc {

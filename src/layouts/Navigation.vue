@@ -4,7 +4,7 @@
       <div class="layout-container nav-container">
         <div class="nav">
           <img
-            src="@/projects/hoh1/ball/ball.png"
+            src="@/projects/hoh1/ball/ball_logo.png"
             alt=""
             class="ball-logo"
           >
@@ -22,7 +22,7 @@
           </div>
           <div :class="`mask ${isOpen ? 'open' : ''}`">
             <img
-              src="@/projects/hoh1/ball/ball.png"
+              src="@/projects/hoh1/ball/ball_logo.png"
               alt=""
               class="ball-logo"
             >
@@ -164,17 +164,17 @@ export default {
   width: $logo_pc_width;
   height: auto;
   position: absolute;
-  left: 0;
+  left:size(100);
   display: block;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translate(-50%,-50%);
 }
 
 .ball-logo {
   width: size(400);
   height: auto;
   position: absolute;
-  left: size(-120);
+  left:size(-100);
   display: block;
   top: size(-250);
 }
@@ -211,10 +211,13 @@ export default {
     // border-right: 1px solid $nav_link_hover_bg;
 
     .ball {
-      width: 18px;
+      font-size: 18px;
+      width:1em;
       position: absolute;
-      left: 0;
+      left: 50%;top: 50%;
       transition: all 0.3s;
+      margin-left: -3.2em;
+      margin-top: -0.5em;
     }
 
     &:hover {
@@ -223,8 +226,9 @@ export default {
 
       .ball {
         transform: scale(8);
-        margin-left: 40px;
-        margin-top: 30px;
+        transform-origin:center  center;
+      margin-left:-0.5em;
+      margin-top: 1em;
       }
     }
 
@@ -352,18 +356,16 @@ export default {
     height: auto;
   }
 
-  .logo {
-    width: $logo_phone_width;
-    left: 45px;
+  .logo { 
+  width: $logo_phone_width;
+  left:size-m(100);
+   // left: 45px;
   }
 
   .ball-logo {
-    width: size-m(201);
-    height: auto;
-    position: absolute;
-    left: size-m(-10);
-    display: block;
-    top: size-m(-120);
+  width: size-m(200);
+  left:size-m(0);
+  top: size-m(-125);
   }
 
   .nav {
@@ -377,6 +379,7 @@ export default {
     z-index: 3;
     top: 15px;
     right: 15px;
+    font-size: 30px;
 
     svg {
       color: $nav_btn_color;
@@ -411,14 +414,15 @@ export default {
 
     li {
       width: 100%;
-      height: 50px;
+      height:auto;
       margin-bottom: 0;
     }
 
-    .link {
-      height: 50px;
+    .link {top:25px;
+      height: 7em;
+      max-height:calc(100vh * 0.2 - #{$nav_phone_height} * 0.2);
       width: 100%;
-      font-size: 17px;
+      //font-size: 17px;
       margin-top: 0;
       display: flex;
       align-items: center;
@@ -426,7 +430,6 @@ export default {
       display: none;
 
       .ball {
-        position: relative;
       }
 
       img,
@@ -436,8 +439,11 @@ export default {
       span {
         line-height: 16px;
       }
+    &:hover .ball{
+      //  position: relative;
+    margin-top: -0.5em;
+      }
     }
-
     &.open {
       width: 100%;
       transform: translateX(0%);

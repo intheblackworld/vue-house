@@ -516,6 +516,7 @@ export default {
           title: 'INTERIOR SPACE',
           subtitle: '國際一線美學，名門傲氣優雅',
           desc: '代表作品∣頤海大院．台中帝寶．開璽吾界． SKY1',
+          icon: require('./s6/icon1.png'),
         },
         {
           src: require('./s6/2.png'),

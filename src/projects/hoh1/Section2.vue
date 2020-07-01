@@ -13,7 +13,7 @@
           src="./s2/title1.png"
           alt=""
           class="label absolute"
-          data-aos="fade"
+          data-aos="zoom-in-left"
           data-aos-delay="1000"
         >
         <div :class="`animate-slide`">
