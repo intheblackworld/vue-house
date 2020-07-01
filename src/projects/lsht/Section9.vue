@@ -27,14 +27,32 @@
         </slide>
        
       -->
-      <div class="img-row flex-ac flex-jc">
+      <!-- <div class="img-row flex-ac flex-jc">
         <img
           :src="img"
           v-for="(img, index) in [...imgList, ...imgList]"
           :key="img + index"
           class="img"
         >
-      </div>
+      </div> -->
+      <swiper
+        :options="swiperOption"
+        ref="mySwiper"
+        data-aos="fade"
+        data-aos-delay="1000"
+      >
+        <swiper-slide
+          v-for="(slide, index) in imgList"
+          :index="index"
+          :key="slide"
+          class="item-img"
+        >
+          <img
+            :src="slide"
+            :class="`item-img`"
+          />
+        </swiper-slide>
+      </swiper>
 
     </div>
     <div class="flex animate-row">
@@ -144,12 +162,21 @@
 @media screen and (max-width: 767px) {
   .relative {
     height: size-m(400);
-    margin:50vw 0;
+    margin: 30vw 0 10vw;
   }
 
-  .img-row {
-    width: size-m(904 * 2);
-    animation: moveImg 30s linear infinite;
+  .animate-row, .animate-row1 {
+    bottom: 10vh;
+  }
+
+  .item-img {
+    height: size-m(267);
+    width: 100%;
+    object-fit: cover;
+
+    &.height {
+      height: size-m(459);
+    }
   }
 
   .img {
@@ -175,12 +202,43 @@
 <script>
 // @ is an alias to /src
 import { isMobile } from '@/utils'
+import slider from '@/mixins/slider.js'
+// import Parallax from '@/components/Parallax.vue'
+import 'swiper/dist/css/swiper.css'
 
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
   name: 'section9',
+  mixins: [slider],
+  components: {
+    swiper,
+    swiperSlide,
+    // Parallax,
+  },
   data() {
     return {
       isMobile,
+      swiperOption: {
+        slidesPerView: isMobile ? 2.2 : 1,
+        centeredSlides: true,
+        spaceBetween: isMobile ? 10 : 30,
+        slidesPerColumn: isMobile ? 1 : 1,
+        effect: isMobile ? '' : 'fade',
+
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: true,
+        },
+        loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      },
       imgList: [
         require('./s9/1.png'),
         require('./s9/2.png'),
