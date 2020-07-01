@@ -1,40 +1,101 @@
 <template>
   <div class="contact-info">
-    <img class="logo" src="@/assets/img/contact-logo.png" alt="心天畝的圖片" />
+    <img
+      class="logo"
+      src="@/assets/img/contact-logo.png"
+      alt="心天畝的圖片"
+    />
     <div class="info">
-      <div class="btn flex-c" @click="showCallDialog">
+      <div
+        class="btn flex-c"
+        @click="showCallDialog"
+      >
         <span class="flex-c">
           <font-awesome-icon icon="phone" />
           {{info.phone}}
         </span>
       </div>
-      <div class="btn flex-c" v-if="isMobile">
-        <span class="flex-c" @click="showMessengerDialog">
+      <div
+        class="btn flex-c"
+        v-if="isMobile"
+      >
+        <span
+          class="flex-c"
+          @click="showMessengerDialog"
+        >
           <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB 諮詢
         </span>
       </div>
-      <a class="btn flex-c" :href="info.fbMessage" target="_blank" v-else>
+      <a
+        class="btn flex-c"
+        :href="info.fbMessage"
+        target="_blank"
+        v-else
+        @click=" window.dotq = window.dotq || [];
+ window.dotq.push(
+ {
+   'projectId': '10000',
+   'properties': {
+     'pixelId': '10113125',
+     'qstrings': {
+       'et': 'custom',
+       'ea': 'FB10113125'
+     }
+ } } ); 
+"
+      >
         <span class="flex-c">
           <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB 諮詢
         </span>
       </a>
-      <a class="btn flex-c" :href="info.fbLink" target="_blank">
+      <a
+        class="btn flex-c"
+        :href="info.fbLink"
+        target="_blank"
+      >
         <span class="flex-c">
           <font-awesome-icon :icon="['fab', 'facebook-f']" />前往粉絲專頁
         </span>
       </a>
       <div class="address flex-c">{{info.address}}</div>
-      <div class="btn flex-c" v-if="isMobile">
-        <span class="flex-c" @click="showMapDialog">
+      <div
+        class="btn flex-c"
+        v-if="isMobile"
+      >
+        <span
+          class="flex-c"
+          @click="showMapDialog"
+        >
           <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
         </span>
       </div>
-      <a class="google-btn flex-c" :href="info.googleLink" target="_blank" v-else>
+      <a
+        class="google-btn flex-c"
+        :href="info.googleLink"
+        target="_blank"
+        @click="window.dotq = window.dotq || [];
+ window.dotq.push(
+ {
+   'projectId': '10000',
+   'properties': {
+     'pixelId': '10113125',
+     'qstrings': {
+       'et': 'custom',
+       'ea': 'map10113125'
+     }
+ } } ); "
+        v-else
+      >
         <span class="flex-c">
           <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
         </span>
       </a>
-      <el-dialog title :visible.sync="isShowCallDialog" width="90%" :modal-append-to-body="false">
+      <el-dialog
+        title
+        :visible.sync="isShowCallDialog"
+        width="90%"
+        :modal-append-to-body="false"
+      >
         <CallDialog :phone="info.phone" />
       </el-dialog>
       <el-dialog
@@ -45,8 +106,16 @@
       >
         <MessengerDialog :messenger="info.fbMessage" />
       </el-dialog>
-      <el-dialog title :visible.sync="isShowMapDialog" width="90%" :modal-append-to-body="false">
-        <MapDialog :link="info.googleLink" :address="info.address" />
+      <el-dialog
+        title
+        :visible.sync="isShowMapDialog"
+        width="90%"
+        :modal-append-to-body="false"
+      >
+        <MapDialog
+          :link="info.googleLink"
+          :address="info.address"
+        />
       </el-dialog>
     </div>
   </div>
@@ -74,6 +143,8 @@ export default {
       isShowCallDialog: false,
       isShowMessengerDialog: false,
       isShowMapDialog: false,
+
+      window,
     }
   },
   methods: {

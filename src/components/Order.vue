@@ -11,19 +11,31 @@
         <div class="group">
           <div class="row">
             <label>姓名</label>
-            <el-input v-model="form.name" placeholder></el-input>
+            <el-input
+              v-model="form.name"
+              placeholder
+            ></el-input>
           </div>
           <div class="row">
             <label>手機</label>
-            <el-input v-model="form.phone" placeholder></el-input>
+            <el-input
+              v-model="form.phone"
+              placeholder
+            ></el-input>
           </div>
           <div class="row">
             <label>E-mail</label>
-            <el-input v-model="form.email" placeholder></el-input>
+            <el-input
+              v-model="form.email"
+              placeholder
+            ></el-input>
           </div>
           <div class="row">
             <label>居住城市</label>
-            <el-select v-model="form.city" placeholder>
+            <el-select
+              v-model="form.city"
+              placeholder
+            >
               <el-option
                 v-for="city in cityList"
                 :key="city.value"
@@ -34,7 +46,10 @@
           </div>
           <div class="row">
             <label>居住地區</label>
-            <el-select v-model="form.area" placeholder>
+            <el-select
+              v-model="form.area"
+              placeholder
+            >
               <el-option
                 v-for="area in areaList"
                 :key="area.value"
@@ -46,7 +61,12 @@
         </div>
         <div class="group">
           <div class="row">
-            <el-input type="textarea" :rows="2" placeholder="請輸入您的留言 (選填)" v-model="form.msg"></el-input>
+            <el-input
+              type="textarea"
+              :rows="2"
+              placeholder="請輸入您的留言 (選填)"
+              v-model="form.msg"
+            ></el-input>
           </div>
         </div>
       </div>
@@ -60,7 +80,10 @@
         </el-checkbox>
       </div>
       <div style="margin: 0 auto">
-        <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true"></vue-recaptcha>
+        <vue-recaptcha
+          :sitekey="info.recaptcha_site_key_v2"
+          @verify="isVerify = true"
+        ></vue-recaptcha>
       </div>
       <el-button
         class="form-submit"
@@ -155,6 +178,18 @@ export default {
         this.isSubmit = false
         return
       }
+      window.dotq = window.dotq || []
+      window.dotq.push({
+        projectId: '10000',
+        properties: {
+          pixelId: '10113125',
+          qstrings: {
+            et: 'custom',
+            ea: 'lead10113125',
+          },
+        },
+      })
+
       const urlParams = new URLSearchParams(window.location.search)
       const utmSource = urlParams.get('utm_source')
       const utmMedium = urlParams.get('utm_medium')
