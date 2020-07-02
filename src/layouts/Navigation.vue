@@ -365,7 +365,7 @@ export default {
   .ball-logo {
   width: size-m(200);
   left:size-m(0);
-  top: size-m(-125);
+  top: size-m(-110);
   }
 
   .nav {
