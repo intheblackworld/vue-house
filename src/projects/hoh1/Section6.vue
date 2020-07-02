@@ -48,6 +48,12 @@
             :key="slide.src"
           >
             <img
+              :src="slide.icon"
+              alt=""
+              class="icon"
+              v-if="slide.icon"
+            >
+            <img
               :src="slide.src"
               alt=""
             >
@@ -116,6 +122,12 @@
           :key="slide.img"
           class="item"
         >
+          <img
+            :src="slide.icon"
+            alt=""
+            class="icon"
+            v-if="slide.icon"
+          >
           <img
             :src="slide.src"
             :class="`item-img`"
@@ -223,9 +235,16 @@
 
 .person {
   width: size(554);
+  position: relative;
   img {
     width: 100%;
     margin-bottom: size(26);
+  }
+  .icon {
+    width: size(123);
+    position: absolute;
+    top: size(586);
+    left: 0;
   }
   > div {
     width: size(280);
@@ -390,12 +409,29 @@
     object-fit: cover;
   }
 
+  .item {
+    position: relative;
+    .icon {
+      width: size-m(43);
+      position: absolute;
+      top: size-m(340);
+      left: 0;
+    }
+  }
+
   .person {
     width: 100%;
     margin-top: 20px;
     > div {
       width: size-m(211);
       margin: 0 auto;
+    }
+
+    .icon {
+      width: size(123);
+      position: absolute;
+      top: size(586);
+      left: 0;
     }
   }
 
