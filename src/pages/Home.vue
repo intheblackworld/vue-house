@@ -3,7 +3,7 @@
     <Loading :loading="load" />
     <!-- <SideNavigation v-if="isSide" />
     <Navigation v-else /> -->
-    <Indigator :viewIndex="viewIndex" />
+    <Indigator :viewIndex="viewIndex" @showCallDialog="showCallDialog" />
     <!-- <full-page
       ref="fullPage"
       :options="options"
@@ -56,6 +56,14 @@
       class="section"
       id="contact"
     />
+    <el-dialog
+      title
+      :visible.sync="isShowCallDialog"
+      :width="isMobile ? '90%' : '500px'"
+      :modal-append-to-body="false"
+    >
+      <CallDialog :phone="info.phone" />
+    </el-dialog>
     <MobileNav />
   </div>
 </template>
@@ -75,11 +83,14 @@
 // @ is an alias to /src
 // import Navigation from '@/layouts/Navigation.vue'
 import { isMobile } from '@/utils'
+import info from '@/info'
 // import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
+
+import CallDialog from '@/components/Dialog/Call'
 
 import Section1 from '@/projects/yu/Section1.vue'
 import Section2 from '@/projects/yu/Section2.vue'
@@ -105,14 +116,18 @@ export default {
     Section5,
     Section6,
     Section7,
+    CallDialog,
   },
 
   data() {
     return {
       isMobile,
+      info,
       isSide: false,
       load: true,
       viewIndex: 0,
+
+      isShowCallDialog: false,
       // action: {
       //   moveTo: () => {},
       // },
@@ -150,6 +165,12 @@ export default {
     onDone() {
       console.log('done')
     },
+
+    showCallDialog() {
+      // if (!this.isMobile) return
+      this.isShowCallDialog = true
+    },
+
     onScroll() {
       // 获取所有锚点元素
       const navContents = document.querySelectorAll('.section')
