@@ -21,7 +21,7 @@
     >預約賞屋</div>
     <div
       :class="`contact-indigator`"
-        @click="showCallDialog"
+          @click="showCallDialog"
     >立即來電</div>
   </div>
 </template>
