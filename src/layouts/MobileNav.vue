@@ -99,7 +99,7 @@ export default {
   position: fixed;
   bottom: 0;
   z-index: 100;
-  box-shadow: 0 -2px 5px 0 #000;
+  box-shadow: 0 -2px 8px 0 #0006;
   display: none;
   transition: all .5s;
 
