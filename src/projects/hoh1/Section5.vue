@@ -67,7 +67,7 @@
                 alt=""
               >
               <div class="context-title context-title1">
-                元氣滿滿 15-25坪
+                元氣滿滿 16-33坪
               </div>
               <div class="context-desc">
                 2房精巧小飯店、3房自由式空間
@@ -172,7 +172,7 @@
               alt=""
             >
             <div class="context-title context-title1">
-              元氣滿滿 15-25坪
+              元氣滿滿 16-33坪
             </div>
           </div>
           <div class="context-desc">
