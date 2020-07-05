@@ -1,5 +1,5 @@
 <template>
-  <div class="navigation">
+  <div :class="`navigation ${isNavMin ? 'min' : ''}`">
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
@@ -88,6 +88,8 @@ export default {
     }
   },
 
+  props: ['isNavMin'],
+
   computed: {
     offset() {
       if (this.isMobile) {
@@ -164,17 +166,17 @@ export default {
   width: $logo_pc_width;
   height: auto;
   position: absolute;
-  left:size(100);
+  left: size(100);
   display: block;
   top: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 
 .ball-logo {
   width: size(400);
   height: auto;
   position: absolute;
-  left:size(-100);
+  left: size(-100);
   display: block;
   top: size(-250);
 }
@@ -212,9 +214,10 @@ export default {
 
     .ball {
       font-size: 18px;
-      width:1em;
+      width: 1em;
       position: absolute;
-      left: 50%;top: 50%;
+      left: 50%;
+      top: 50%;
       transition: all 0.3s;
       margin-left: -3.2em;
       margin-top: -0.5em;
@@ -226,9 +229,9 @@ export default {
 
       .ball {
         transform: scale(8);
-        transform-origin:center  center;
-      margin-left:-0.5em;
-      margin-top: 1em;
+        transform-origin: center center;
+        margin-left: -0.5em;
+        margin-top: 1em;
       }
     }
 
@@ -356,16 +359,16 @@ export default {
     height: auto;
   }
 
-  .logo { 
-  width: $logo_phone_width;
-  left:size-m(100);
-   // left: 45px;
+  .logo {
+    width: $logo_phone_width;
+    left: size-m(100);
+    // left: 45px;
   }
 
   .ball-logo {
-  width: size-m(200);
-  left:size-m(0);
-  top: size-m(-110);
+    width: size-m(200);
+    left: size-m(0);
+    top: size-m(-110);
   }
 
   .nav {
@@ -414,13 +417,14 @@ export default {
 
     li {
       width: 100%;
-      height:auto;
+      height: auto;
       margin-bottom: 0;
     }
 
-    .link {top:25px;
+    .link {
+      top: 25px;
       height: 7em;
-      max-height:calc(100vh * 0.2 - #{$nav_phone_height} * 0.2);
+      max-height: calc(100vh * 0.2 - #{$nav_phone_height} * 0.2);
       width: 100%;
       //font-size: 17px;
       margin-top: 0;
@@ -439,9 +443,9 @@ export default {
       span {
         line-height: 16px;
       }
-    &:hover .ball{
-      //  position: relative;
-    margin-top: -0.5em;
+      &:hover .ball {
+        //  position: relative;
+        margin-top: -0.5em;
       }
     }
     &.open {

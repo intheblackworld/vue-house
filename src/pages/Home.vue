@@ -3,7 +3,7 @@
     <div ref="gtmNoScript" />
     <Loading :loading="load" />
     <!-- <SideNavigation v-if="isSide" /> -->
-    <Navigation />
+    <Navigation :min="isNavMin" />
     <div id="section1">
       <Section1 />
     </div>
@@ -43,13 +43,13 @@ import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import gtm from '@/mixins/gtm.js'
 
-import Section1 from '@/projects/hoh1/Section1.vue'
-import Section2 from '@/projects/hoh1/Section2.vue'
-import Section3 from '@/projects/hoh1/Section3.vue'
-import Section4 from '@/projects/hoh1/Section4.vue'
-import Section5 from '@/projects/hoh1/Section5.vue'
-import Section6 from '@/projects/hoh1/Section6.vue'
-import Section7 from '@/projects/hoh1/Section7.vue'
+import Section1 from '@/projects/yb/Section1.vue'
+import Section2 from '@/projects/yb/Section2.vue'
+import Section3 from '@/projects/yb/Section3.vue'
+import Section4 from '@/projects/yb/Section4.vue'
+import Section5 from '@/projects/yb/Section5.vue'
+import Section6 from '@/projects/yb/Section6.vue'
+import Section7 from '@/projects/yb/Section7.vue'
 // import SimpleOrder from '@/components/SimpleOrder.vue'
 
 export default {
@@ -72,6 +72,7 @@ export default {
   data() {
     return {
       isSide: true,
+      isNavMin: false,
       load: true,
     }
   },
@@ -83,10 +84,80 @@ export default {
     // window.location = "https://ywh.nhc888.com.tw/"
   },
 
+  mounted() {
+    window.addEventListener('scroll', this.onScroll, false)
+    // this.action = this.$refs.fullPage.api
+    // if (this.isMobile) {
+    //   this.$refs.fullPage.api.setResponsive(true)
+    // }
+  },
   methods: {
     onDone() {
       console.log('done')
     },
+
+    showCallDialog() {
+      // if (!this.isMobile) return
+      this.isShowCallDialog = true
+    },
+
+    onScroll() {
+      // // 获取所有锚点元素
+      // const navContents = document.querySelectorAll('.section')
+      // // 所有锚点元素的 offsetTop
+      // const offsetTopArr = []
+      // navContents.forEach(item => {
+      //   offsetTopArr.push(item.offsetTop)
+      // })
+      // 获取当前文档流的 scrollTop
+      const scrollTop =
+        document.documentElement.scrollTop || document.body.scrollTop
+      // 定义当前点亮的导航下标
+      // let navIndex = 0
+      console.log(scrollTop)
+      if (scrollTop > 200) {
+        this.isNavMin = true
+      } else {
+        this.isNavMin = false
+      }
+      // for (let n = 0; n < offsetTopArr.length; n++) {
+      //   // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
+      //   // 那么此时导航索引就应该是n了
+      //   if (scrollTop >= offsetTopArr[n] - 100) {
+      //     navIndex = n
+      //   }
+      // }
+      // console.log(navIndex)
+      // this.viewIndex = navIndex + 1
+    },
+
+    // onLeave(origin, destination, direction) {
+    //   if (!this.isMobile) {
+    //     if (origin.isLast === true && direction === 'up') {
+    //       console.log('加固')
+    //       this.$refs.fullPage.api.setResponsive(false)
+    //     }
+    //     if (origin.isFirst === true && direction === 'down' && this.isMobile) {
+    //       this.$refs.fullPage.api.setResponsive(false)
+    //     }
+
+    //     if (
+    //       destination.isFirst === true &&
+    //       direction === 'up' &&
+    //       this.isMobile
+    //     ) {
+    //       this.$refs.fullPage.api.setResponsive(false)
+    //     }
+    //   }
+    // },
+
+    // afterLoad(origin, destination, direction) {
+    //   this.indigatorIndex = destination.index
+    //   if (destination.isLast === true && direction === 'down') {
+    //     console.log('解除')
+    //     this.$refs.fullPage.api.setResponsive(true)
+    //   }
+    // },
   },
 }
 </script>
