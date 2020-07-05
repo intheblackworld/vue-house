@@ -1,9 +1,11 @@
 <template>
-  <div class="map" id="map" @scroll="hide = true">
-    <img :src="hand" alt :class="`hand ${hide ? 'hide' : ''}`" />
-    <div class="mask" v-show="!hide"></div>
-    <img class="map-bg" :src="bgSrc" alt />
-    <slot></slot>
+  <div class="map" id="map" refs="map" @scroll="handleScroll">
+    <img class="map-bg" :src="bgSrc" alt ref="mapbg" />
+    <img class="map-text" :src="bgText" alt />
+    <div v-show="showMask" class="mask">
+      <img :src="hand" alt class="hand" />
+    </div>
+    <slot name="main"></slot>
     <img
       :src="tag"
       data-aos="fade-down"
@@ -18,34 +20,37 @@
 import { isMobile } from '@/utils'
 export default {
   name: 'map',
-  props: ['tagList', 'bgSrc', 'hand'],
+  props: ['tagList', 'bgSrc', 'bgSrcT', 'bgSrcB', 'hand', 'bgText'],
   data() {
     return {
       isMobile,
-      hide: false,
+      map: '',
+      showMask: false,
     }
   },
   mounted() {
+    this.map = this.$refs.map
+
     if (this.isMobile) {
       setTimeout(() => {
         const map = document.querySelector('.map')
         const mapBg = document.querySelector('.map-bg')
         const text = document.querySelector('.map .text')
         if (text) {
-          text.style.left = `${mapBg.clientWidth / 2 - 100}px`
-        }
-        const hand = document.querySelector('.map .hand')
-
-        if (hand) {
-          // hand.style.width = `${mapBg.clientWidth}px`
-          hand.style.left = `${mapBg.clientWidth / 2 - 200}px`
+          text.style.left = `${mapBg.clientWidth / 2 - 70}px`
         }
 
-        map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2 - 120, 0)
-      }, 400)
+        map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2, 0)
+      }, 1200)
+
       setTimeout(() => {
-        this.hide = false
-      }, 700)
+        this.showMask = true
+      }, 1500)
+    }
+  },
+  methods: {
+    handleScroll() {
+      this.showMask = false
     }
   },
 }

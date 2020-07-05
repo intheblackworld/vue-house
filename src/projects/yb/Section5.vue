@@ -254,7 +254,7 @@
 
   .content {
     width: 100vw;
-    height: size-m(647);
+    height: size-m(222);
     top: 0;
     left: 0;
     padding-top: size-m(35);

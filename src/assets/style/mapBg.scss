@@ -48,7 +48,7 @@
     width: 100vw;
     .map-bg {
       width: auto;
-      height: size-m(609);
+      height: size-m(805);
     }
 
     .map-text {
@@ -58,7 +58,7 @@
 
     img {
       width: auto;
-      height: 100vh;
+      height: size-m(805);
     }
 
     .mask {
@@ -70,9 +70,9 @@
       position: absolute;
       z-index: 2;
       display: block;
-      width:calc(100vw * 112/375) !important;
+      width:calc(100vw * 140/375) !important;
       height: auto !important;
-      left: 30%;
+      left: 40%;
       top: 25% !important;
       display: block;
       animation: swing 1s linear 0s alternate infinite;
