@@ -212,6 +212,7 @@
   text-align: left;
   color: #f6f6f6;
   margin-bottom: size(40);
+  font-family: futurabq;
 }
 
 .content-desc {
