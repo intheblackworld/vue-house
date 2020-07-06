@@ -1,11 +1,48 @@
 <template>
   <div class="house-info">
     <div class="content">
-      <div class="title">建案資訊</div>
-      <div class="info">
-        <div class="item" :key="infos[0]" v-for="infos in houseInfos">
-          <h3 class="label">{{infos[0]}}</h3>
-          <p class="desc" v-html="infos[1]"></p>
+      <div class="flex">
+        <div class="img relative">
+          <div class="subtitle">聯碩地產行銷團隊</div>
+          <a
+            href="http://unigiants.com.tw/"
+            target="_blank"
+          >
+            <img
+              src="../projects/yb/bottom/banner1.png"
+              alt=""
+              class="banner"
+            >
+          </a>
+          <a
+            href="https://www.facebook.com/unigiant/"
+            target="_blank"
+          >
+            <img
+              src="../projects/yb/bottom/banner2.png"
+              alt=""
+              class="banner"
+            >
+          </a>
+          <img
+            src="../projects/yb/bottom/logo.png"
+            alt=""
+            class="logo"
+          >
+        </div>
+        <div class="info">
+          <div class="title">建案資訊</div>
+          <div
+            class="item"
+            :key="infos[0]"
+            v-for="infos in houseInfos"
+          >
+            <h3 class="label">{{infos[0]}}</h3>
+            <p
+              class="desc"
+              v-html="infos[1]"
+            ></p>
+          </div>
         </div>
       </div>
     </div>
@@ -23,6 +60,7 @@ export default {
   },
   data() {
     return {
+      info,
       houseInfos: info.houseInfos,
     }
   },
@@ -31,6 +69,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/style/function.scss';
 @import '@/assets/style/variableColor.scss';
 .house-info {
   width: 100vw;
@@ -39,56 +78,88 @@ export default {
   z-index: 1;
 }
 .content {
-  width: 686px;
+  width: 1260px;
+  max-width: 95%;
   margin: 0 auto;
+  padding: 30px 0;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  .flex {
+    width: 100%;
+    .info {
+      flex: 1;
+      justify-content: left;
+    }
+  }
 }
 
 .title {
+  text-align: left;
   font-size: 36px;
   line-height: 36px;
-  margin: 60px 0;
+  margin: 20px 0 10px 0;
   font-family: 'Noto Serif TC', serif;
   font-weight: bold;
   color: $house_title_color;
 }
 
+.img {
+  width: 50%;
+  text-align: left;
+  img {
+    max-width: 90%;
+  }
+
+  a {
+    display: block;
+  }
+}
+
+.subtitle {
+  font-size: size(28);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 3.25;
+  letter-spacing: 2.8px;
+  text-align: left;
+  color: #f6f6f6;
+  margin-bottom: size(50);
+}
+
+.banner {
+  width: auto;
+  height: size(47);
+  margin-bottom: size(30);
+}
+
+.logo {
+  width: size(217);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  // margin-top: size(190);
+}
+
 .info {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .item {
   font-size: 16px;
-  margin-bottom: 40px;
+  margin-bottom: 0;
   margin-right: 160px;
-  width: 260px;
-  height: 30px;
-  border-left: 4px solid $house_label_color;
-  padding-left: 12px;
+  //width: 260px;
+  height: 45px;
+  border-top: 1px solid #ccc;
+  // border-left: 4px solid $house_label_color;
+  padding-left: 0;
   display: flex;
   align-items: center;
   white-space: nowrap;
-
   &:nth-of-type(even) {
-    margin-right: 0;
-  }
-
-  &:nth-last-child(1) {
-    height: auto;
-    border-left: none;
-    align-items: flex-start;
-
-    .label {
-      height: 30px;
-      border-left: 4px solid $house_label_color;
-      padding-left: 12px;
-      padding-top: 6px;
-      margin-left: -12px;
-    }
+    //  margin-right: 0;
   }
 
   .label {
@@ -99,6 +170,12 @@ export default {
     white-space: nowrap;
   }
 
+  &:nth-child(2) {
+    border-top: 0px solid #ccc;
+    .label {
+      display: none;
+    }
+  }
   .desc {
     font-size: 15px;
     text-align: left;
@@ -112,25 +189,63 @@ export default {
 @media only screen and (max-width: 767px) {
   .content {
     width: 100%;
-    margin-bottom: 20px;
+    max-width: 100%;
+    padding: 20px 0;
   }
 
   .title {
-    font-size: 32px;
+    //  font-size: 32px;
     margin: 40px 0 24px;
   }
 
   .item {
-    margin-bottom: 20px;
-    margin-right: 0;
     width: 100%;
-    height: auto;
-    margin-left: 20px;
-    white-space: normal;
+    // margin-bottom: 20px;
+    //  margin-right: 0;
+    //
+    //  height: auto;
+    //  margin-left: 20px;
+    //  white-space: normal;
   }
 
   .info {
+    padding: 0 5%;
+  }
+  .content .flex {
+    flex-direction: column;
+  }
+
+  .img {
     width: 100%;
+    padding: 24px;
+  }
+
+  .subtitle {
+    font-size: size-m(14);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 3.25;
+    letter-spacing: 2.8px;
+    text-align: left;
+    color: #f6f6f6;
+    margin-bottom: size-m(15);
+  }
+
+  .banner {
+    width: auto;
+    height: size-m(30);
+    margin-bottom: size-m(20);
+  }
+
+  .logo {
+    width: size-m(159);
+    position: relative;
+    bottom: auto;
+    left: auto;
+    margin: 50px auto 30px;
+    display: block;
+    // margin-top: size(190);
   }
 }
 

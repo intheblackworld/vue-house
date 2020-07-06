@@ -1,34 +1,25 @@
 <template>
   <div class="order-bg">
-    <div class="order-title" v-scroll-to="{ element: `#contact` }">{{order.title}}</div>
-    <h3 class="order-subtitle">{{order.subTitle}}</h3>
+    <!-- <h3 class="order-title">{{order.title}}</h3>
+    <h3 class="order-subtitle">{{order.subTitle}}</h3> -->
     <div class="order">
       <div class="form">
         <div class="group">
           <div class="row">
-            <label>姓名<span>*</span></label>
-            <el-input
-              v-model="form.name"
-              placeholder
-            ></el-input>
+            <label for="el-name">姓名<span>*</span></label>
+            <el-input id="el-name" v-model="form.name" placeholder></el-input>
           </div>
           <div class="row">
-            <label>手機<span>*</span></label>
-            <el-input
-              v-model="form.phone"
-              placeholder
-            ></el-input>
+            <label for="el-phone">手機<span>*</span></label>
+            <el-input id="el-phone" v-model="form.phone" placeholder></el-input>
           </div>
           <!-- <div class="row">
             <label>E-mail</label>
             <el-input v-model="form.email" placeholder></el-input>
           </div> -->
           <div class="row">
-            <label>居住城市</label>
-            <el-select
-              v-model="form.city"
-              placeholder
-            >
+            <label for="el-city">居住城市</label>
+            <el-select id="el-city" v-model="form.city" placeholder>
               <el-option
                 v-for="city in cityList"
                 :key="city.value"
@@ -38,12 +29,8 @@
             </el-select>
           </div>
           <div class="row">
-            <label>居住地區</label>
-            <el-select
-              v-model="form.area"
-              placeholder
-              no-data-text="請先選擇居住城市"
-            >
+            <label for="el-area">居住地區</label>
+            <el-select id="el-area" v-model="form.area" placeholder no-data-text="請先選擇居住城市">
               <el-option
                 v-for="area in areaList"
                 :key="area.value"
@@ -55,12 +42,7 @@
         </div>
         <div class="group">
           <div class="row">
-            <el-input
-              type="textarea"
-              :rows="2"
-              placeholder="請輸入您的留言 (選填)"
-              v-model="form.msg"
-            ></el-input>
+            <el-input type="textarea" :rows="2" placeholder="請輸入您的留言 (選填)" v-model="form.msg"></el-input>
           </div>
         </div>
       </div>
@@ -73,12 +55,11 @@
           </p>
         </el-checkbox>
       </div>
-      <div style="margin: 0 auto">
-        <vue-recaptcha
-          :sitekey="info.recaptcha_site_key_v2"
+        <!-- <div style="margin: 0 auto">
+          <vue-recaptcha :sitekey="info.recaptcha_site_key_v2"
           @verify="isVerify = true"
-        ></vue-recaptcha>
-      </div>
+          ></vue-recaptcha>
+        </div> -->
       <el-button
         class="form-submit"
         type="primary"
@@ -128,10 +109,9 @@ export default {
       },
       checked: false,
       isSubmit: false,
-      isVerify: false, // google 機器人驗證
+      isVerify: true, // google 機器人驗證
       policyVisible: false,
       showValidateDialog: false,
-      window,
     }
   },
 
@@ -215,21 +195,6 @@ export default {
           window.location.href = 'formThanks'
         }
       })
-      window.dotq = window.dotq || []
-
-      window.dotq.push({
-        projectId: '10000',
-
-        properties: {
-          pixelId: '10101258',
-
-          qstrings: {
-            et: 'custom',
-
-            ea: 'lead10101258',
-          },
-        },
-      })
     },
   },
 }
@@ -238,9 +203,8 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/style/variableColor.scss';
 .order-bg {
- // background-color: $order_bg_color;transparent
-  background-color: transparent;
-  background-image: $order_bg_image;
+  background-color: $order_bg_color;
+  // background-image: $order_bg_image;
   background-size: cover;
   position: relative;
   padding-top: 80px;
@@ -249,31 +213,9 @@ export default {
   .order-title {
     margin-top: 40px;
     margin-bottom: 8px;
-    font-size: calc(100vw * 38 / 1920);
+    font-size: calc(100vw * 60 / 1920);
     text-align: center;
     color: $order_title_color;
-    width:calc(100vw * 500 / 1920);
-    background-color: #3d2824;
-    border-radius: 60px / 60px;
-    display: block;
-    margin: 40px auto 8px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    position: relative;
-    z-index: 3;
-    &::before{
-     content: "";
-     position: absolute;
-     width: 1200px;
-     max-width: 95vw;
-     height: 1px;
-    background-color: #3d2824;
-    z-index: -1;
-
-    }
   }
 
   .order-subtitle {
@@ -281,8 +223,6 @@ export default {
     text-align: center;
     color: $order_subtitle_color;
     margin-bottom: 40px;
-    position: relative;
-    z-index: 3;
   }
 
   .order {
@@ -290,8 +230,6 @@ export default {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    position: relative;
-    z-index: 3;
   }
 
   .form {
@@ -342,8 +280,16 @@ export default {
   }
 
   .control {
-    margin-top: 60px;
+    .el-checkbox{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      margin:20px auto;
+    }
+  /*  margin-top: 60px;
     margin-bottom: 20px;
+    */
   }
 }
 
@@ -367,33 +313,27 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .order-bg {
-    // background-image: $order_bg_image_m;
-    background-color: transparent;
-    background-size: auto 250vw;
+  // background-image: $order_bg_image_m;
+  background-size: 100% auto;
     padding-top: 40px;
     .order-title {
-      font-size: 18px;
+      font-size: 40px;
       margin-top: 10px;
       margin-bottom: 20px;
-      width: 90vw;
-      height: 30px;
-      position: relative;
-      z-index: 2;
     }
 
     .order-subtitle {
       display: none;
     }
     .order {
-      width: 95% !important;
+      width: 84%;
       margin: 0 auto;
       padding: 0;
-      position: relative;
-      z-index: 2;
     }
 
     .form {
       flex-direction: column;
+    margin-bottom: -12px ;
     }
 
     .group {
@@ -411,8 +351,12 @@ export default {
     }
 
     .control {
-      margin-top: 10px;
+    .el-checkbox{
+      margin:10px auto;
+    }
+     /* margin-top: 10px;
       margin-bottom: 10px;
+      */
     }
   }
 }

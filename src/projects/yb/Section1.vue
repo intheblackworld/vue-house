@@ -3,7 +3,7 @@
     <div class="bg" v-if="!isMobile">
       <img src="./s1/img1.jpg" alt="" class="absolute img1">
       <img src="./s1/img2.jpg" alt="" class="absolute img2">
-      <img src="./s1/button.png" alt="" class="absolute button">
+      <img src="./s1/button.png" alt="" class="absolute button" v-scroll-to="{ element: `#contact`, offset: -100}">
       <img src="./s1/txt.png" alt="" class="absolute txt">
       <img src="./s1/title.png" alt="" class="absolute title">
       <img src="./s1/nexttofuture.png" alt="" class="absolute slogan">

@@ -33,11 +33,16 @@
           <div class="content-desc">
             鑫建築團隊珍視和努力保留每一片土地上既有的人文財富，以純粹與國際觀點的審美趣味引領時代潮流，讓我們深信不移和堅持守則的仍是【建築是道德良心事業】的座右銘，以人性關懷為出發點的本意傳遞屬於鑫建築團隊的起心動念，正等待您親眼所見。
           </div>
-          <img
-            src="./s2/fb.png"
-            alt=""
-            class="fb-link"
+          <a
+            href="https://www.facebook.com/ShinYiCostructionCo/"
+            target="_blank"
           >
+            <img
+              src="./s2/fb.png"
+              alt=""
+              class="fb-link"
+            >
+          </a>
         </div>
         <swiper
           :options="swiperOption"
@@ -88,11 +93,17 @@
           <div class="content-desc">
             鑫建築團隊珍視和努力保留每一片土地上既有的人文財富，以純粹與國際觀點的審美趣味引領時代潮流，讓我們深信不移和堅持守則的仍是【建築是道德良心事業】的座右銘，以人性關懷為出發點的本意傳遞屬於鑫建築團隊的起心動念，正等待您親眼所見。
           </div>
-          <img
-            src="./s2/fb.png"
-            alt=""
-            class="fb-link"
+          <a
+            href="https://www.facebook.com/ShinYiCostructionCo/"
+            target="_blank"
           >
+            <img
+              src="./s2/fb.png"
+              alt=""
+              class="fb-link"
+            >
+          </a>
+
         </div>
         <swiper
           :options="swiperOption"

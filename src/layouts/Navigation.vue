@@ -1,36 +1,21 @@
 <template>
-  <div :class="`navigation ${isNavMin ? 'min' : ''}`">
+  <div :class="`navigation ${min ? 'min' : ''}`">
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
-          <img
-            src="@/projects/hoh1/ball/ball_logo.png"
-            alt=""
-            class="ball-logo"
-          >
           <img
             class="logo"
             src="@/assets/img/nav-logo.png"
             alt
           />
-          <div
+          <!-- <div
             class="menu"
             @click="toggleSidebar"
             v-show="!isOpen"
           >
             <font-awesome-icon icon="bars" />
-          </div>
+          </div> -->
           <div :class="`mask ${isOpen ? 'open' : ''}`">
-            <img
-              src="@/projects/hoh1/ball/ball_logo.png"
-              alt=""
-              class="ball-logo"
-            >
-            <img
-              class="mask-logo"
-              src="@/assets/img/nav-logo.png"
-              alt
-            />
             <div
               class="close"
               @click="isOpen = false"
@@ -50,12 +35,6 @@
               @click="toggleSidebar"
             >
               <span class="link">
-                <img
-                  class="ball"
-                  v-if="item.imgSrc"
-                  :src="item.imgSrc"
-                  alt
-                />
                 <span>
                   <p
                     class="title"
@@ -88,7 +67,7 @@ export default {
     }
   },
 
-  props: ['isNavMin'],
+  props: ['min'],
 
   computed: {
     offset() {
@@ -130,7 +109,7 @@ export default {
 
 .navigation {
   background-color: $nav_bg;
-  background-image: $nav_bg;
+  // background-image: $nav_bg;
   background-size: cover;
   height: $nav_pc_height;
   z-index: 10;
@@ -139,7 +118,16 @@ export default {
   width: 100vw;
   display: flex !important;
   align-items: center;
+  transition: all .3s;
   // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+
+  &.min {
+    height: 50px;
+
+    .logo {
+      width: 150px;
+    }
+  }
 }
 
 .nav-container {
@@ -170,15 +158,7 @@ export default {
   display: block;
   top: 50%;
   transform: translate(-50%, -50%);
-}
-
-.ball-logo {
-  width: size(400);
-  height: auto;
-  position: absolute;
-  left: size(-100);
-  display: block;
-  top: size(-250);
+  transition: all .3s;
 }
 
 .mask {
@@ -202,7 +182,7 @@ export default {
     text-align: center;
     display: block;
     cursor: pointer;
-    padding: 0 30px;
+    padding: 0 0px;
     margin: 0 10px;
     transition: all 0.8s;
     display: flex;
@@ -212,27 +192,9 @@ export default {
     // overflow: hidden;
     // border-right: 1px solid $nav_link_hover_bg;
 
-    .ball {
-      font-size: 18px;
-      width: 1em;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transition: all 0.3s;
-      margin-left: -3.2em;
-      margin-top: -0.5em;
-    }
-
     &:hover {
       color: $nav_link_hover_color;
       // background: $nav_link_hover_bg;
-
-      .ball {
-        transform: scale(8);
-        transform-origin: center center;
-        margin-left: -0.5em;
-        margin-top: 1em;
-      }
     }
 
     // &::before {
@@ -278,7 +240,7 @@ export default {
     // }
 
     .title {
-      font-size: 15px !important;
+      font-size: 24px;
       position: relative;
       z-index: 3;
       > span {
@@ -352,23 +314,22 @@ export default {
   .navigation {
     height: $nav_phone_height;
     z-index: 110;
+    background-color: #fff;
   }
 
   .nav-container {
     display: block;
     height: auto;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
   .logo {
     width: $logo_phone_width;
-    left: size-m(100);
+    left: size-m(20);
+    top: size-m(20);
+    transform: none;
     // left: 45px;
-  }
-
-  .ball-logo {
-    width: size-m(200);
-    left: size-m(0);
-    top: size-m(-110);
   }
 
   .nav {
@@ -401,87 +362,6 @@ export default {
     }
   }
 
-  .navlist {
-    position: absolute;
-    z-index: 111;
-    background: transparent;
-    width: 0%;
-    right: 0;
-    top: $nav_phone_height;
-    height: calc(100vh - #{$nav_phone_height});
-    text-align: center;
-    transition: all 0.3s ease-in;
-    display: block;
-    transform: translateX(40%);
-    padding-left: 0;
-
-    li {
-      width: 100%;
-      height: auto;
-      margin-bottom: 0;
-    }
-
-    .link {
-      top: 25px;
-      height: 7em;
-      max-height: calc(100vh * 0.2 - #{$nav_phone_height} * 0.2);
-      width: 100%;
-      //font-size: 17px;
-      margin-top: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      display: none;
-
-      .ball {
-      }
-
-      img,
-      span {
-        display: block;
-      }
-      span {
-        line-height: 16px;
-      }
-      &:hover .ball {
-        //  position: relative;
-        margin-top: -0.5em;
-      }
-    }
-    &.open {
-      width: 100%;
-      transform: translateX(0%);
-
-      .link {
-        display: flex;
-        justify-content: center;
-        span {
-          white-space: nowrap;
-        }
-        .divided {
-          display: none;
-        }
-      }
-    }
-  }
-
-  .mask {
-    width: 100vw;
-    top: 0;
-    right: 0;
-    background: #f3d847;
-    position: fixed;
-    z-index: 110;
-    height: 100vh;
-    opacity: 0;
-    transition: all 0.3s ease-in;
-    &.open {
-      display: block;
-      width: 100vw;
-      opacity: 1;
-    }
-  }
-
   .mask-logo {
     width: $logo_phone_width;
     height: auto;
@@ -489,6 +369,16 @@ export default {
     left: 45px;
     display: block;
     top: 17px;
+  }
+
+  .navlist {
+    .link {
+      width: auto;
+      padding: 0;
+      .title {
+        font-size: 12px !important;
+      }
+    }
   }
 }
 </style>
