@@ -727,6 +727,10 @@ export default {
       },
       slideList: [
         {
+          img: require('./s5/img2-0.jpg'),
+          title: '公設規劃<br />專業物管 盡享飯店體驗',
+        },
+        {
           img: require('./s5/img2-1.jpg'),
           title: '公設規劃<br />專業物管 盡享飯店體驗',
         },
@@ -740,6 +744,10 @@ export default {
         },
       ],
       slideListM: [
+        {
+          img: require('./s5/img2-0.jpg'),
+          title: '公設規劃<br />專業物管 盡享飯店體驗',
+        },
         {
           img: require('./s5/img2-1.jpg'),
           title: '公設規劃<br />專業物管 盡享飯店體驗',
