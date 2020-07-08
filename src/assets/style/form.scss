@@ -68,7 +68,8 @@
   font-size: 20px !important;
   //background-position: center !important;
   //background-color: $order_submit_color;
-  background-color:#0000 !important;
+  border-radius: 18px !important;
+  background-color:$order_submit_bg;
   background-image: $order_submit_bg;
   background-size: auto;
   background-position: 100% 100%  !important;
@@ -88,8 +89,8 @@
   }
 
   &:hover {
-    background-image: $contact_btn_hover_bg;
-    color: $contact_btn_hover_color  !important;
+    background-image: $order_submit_bg;
+    color: $order_submit_color;
   }
   position: relative;
   overflow: hidden;

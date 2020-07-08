@@ -124,8 +124,8 @@ export default {
 }
 
 .logo {
-  width: auto;
-  height: 66%;
+  width: $logo_pc_width;
+  height: auto;
   cursor: pointer;
   position: absolute;
   left: 0;

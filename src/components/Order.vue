@@ -7,10 +7,11 @@
         <h3 class="title">{{order.title}}</h3>
         <div class="subtitle">{{order.subTitle}}</div>
       </div> -->
-      <div
+      <h3
         class="order-title"
         v-html="order.title"
-      ></div>
+      ></h3>
+      <hr class="divide">
       <div
         class="order-subtitle"
         v-html="order.subTitle"
@@ -74,7 +75,10 @@
             </div> -->
             <div class="row">
               <label>居住城市</label>
-              <el-select v-model="form.city" placeholder>
+              <el-select
+                v-model="form.city"
+                placeholder
+              >
                 <el-option
                   v-for="city in cityList"
                   :key="city.value"
@@ -86,7 +90,10 @@
             </div>
             <div class="row">
               <label>居住地區</label>
-              <el-select v-model="form.area" placeholder>
+              <el-select
+                v-model="form.area"
+                placeholder
+              >
                 <el-option
                   v-for="area in areaList"
                   :key="area.value"
@@ -230,13 +237,13 @@ export default {
       this.isSubmit = true
       if (
         !this.form.name ||
-        !this.form.phone 
+        !this.form.phone
         // !this.form.time_start ||
         // !this.form.time_end
         // ||
         // !this.form.email ||
-       // !this.form.city ||
-       // !this.form.area
+        // !this.form.city ||
+        // !this.form.area
       ) {
         this.alertValidate()
         this.isSubmit = false
@@ -291,6 +298,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/style/variableColor.scss';
+@import '@/assets/style/function.scss';
 .bg-img {
   width: 100vw;
   position: absolute;
@@ -308,30 +316,37 @@ export default {
 }
 .order-bg {
   //background-color: $order_bg_color;
-  //background-image: $order_bg_image;
+  background-image: $order_bg_image;
   background-repeat: no-repeat;
   position: relative;
   padding-top: 130px;
-  background-position:center calc(100% - 555px);
-  background-size:auto;
+  // background-position:center calc(100% - 555px);
+  background-size: auto;
   z-index: 3;
   //background-image: $order_bg_image;
 
   .order-top {
     position: relative;
     overflow: hidden;
-  background:no-repeat center bottom;
-  background-size:contain;
+    background: no-repeat center bottom;
+    background-size: contain;
   }
   .order-title {
     width: 100vw;
     padding-top: 20px;
     padding-bottom: 8px;
-    font-weight: bold;
     line-height: 1.3;
-    font-size: calc(100vw * 36 / 1920);
+    letter-spacing: 36.02px;
+    font-size: calc(100vw * 32 / 1920);
     text-align: center;
     color: $order_title_color;
+  }
+
+  .divide {
+    width: size(1063);
+    margin: 15px auto 0;
+    height: 4px;
+    background-color: #fff;
   }
 
   .order-subtitle {
@@ -402,7 +417,9 @@ export default {
       font-size: 16px;
       opacity: 0.8;
       color: $order_input_label_color;
-      span{color: #C00;}
+      span {
+        color: #c00;
+      }
     }
   }
 
@@ -412,26 +429,25 @@ export default {
   }
 }
 .cloud1 {
-  top:10vw;
+  top: 10vw;
   animation: clouda 8s ease-in-out alternate infinite;
-    transform: translateX(-3%);
+  transform: translateX(-3%);
 }
 .cloud2 {
-  top:25vw;
+  top: 25vw;
   left: 20vw;
   animation: clouda 8s 1.5s ease-in-out alternate infinite;
-    transform: translateX(-6%);
+  transform: translateX(-6%);
 }
 .cloud3 {
-  width:calc(100vw * 1600 / 750);
-  top:0vw;
-  left:calc(50% - 107vw);
+  width: calc(100vw * 1600 / 750);
+  top: 0vw;
+  left: calc(50% - 107vw);
   animation: clouda 8s 1.5s ease-in-out alternate infinite;
-    transform: translateX(-10%);
+  transform: translateX(-10%);
 }
 @keyframes clouda {
-
-  to{
+  to {
     transform: translateX(0);
   }
 }
@@ -469,9 +485,9 @@ export default {
       padding-bottom: 5px;
       font-size: calc(100vw * 38 / 375);
     }
-.order-top{
-    background-image: $order_bg_image_m;
-    padding-bottom: 40px;
+    .order-top {
+      background-image: $order_bg_image_m;
+      padding-bottom: 40px;
     }
     .order-subtitle {
       // display: none;

@@ -3,7 +3,8 @@
     <Loading :loading="load" />
     <!-- <SideNavigation v-if="isSide" />
     <Navigation v-else /> -->
-    <Indigator :viewIndex="viewIndex" />
+    <!-- <Indigator :viewIndex="viewIndex" /> -->
+    <TopIndigator :viewIndex="viewIndex" />
     <!-- <full-page
       ref="fullPage"
       :options="options"
@@ -21,7 +22,7 @@
     >
       <Section2 />
     </div>
-    <div
+    <!-- <div
       class="section"
       id="section3"
     >
@@ -32,19 +33,19 @@
       id="section4"
     >
       <Section4 />
-    </div>
+    </div> -->
     <div
       class="section"
       id="section5"
     >
       <Section5 />
     </div>
-    <div
+    <!-- <div
       class="section"
       id="section6"
     >
       <Section6 />
-    </div>
+    </div> -->
     <div
       class="section"
       id="section7"
@@ -57,7 +58,7 @@
     >
       <Section8 />
     </div>
-    <div
+    <!-- <div
       class="section"
       id="section9"
     >
@@ -68,7 +69,7 @@
       id="section10"
     >
       <Section10 />
-    </div>
+    </div> -->
     <!-- </full-page> -->
     <ContactSection
       class="section"
@@ -110,37 +111,39 @@ import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
+import TopIndigator from '@/components/TopIndigator.vue'
 
-import Section1 from '@/projects/lsht/Section1.vue'
-import Section2 from '@/projects/lsht/Section2.vue'
-import Section3 from '@/projects/lsht/Section3.vue'
-import Section4 from '@/projects/lsht/Section4.vue'
-import Section5 from '@/projects/lsht/Section5.vue'
-import Section6 from '@/projects/lsht/Section6.vue'
-import Section7 from '@/projects/lsht/Section7.vue'
-import Section8 from '@/projects/lsht/Section8.vue'
-import Section9 from '@/projects/lsht/Section9.vue'
-import Section10 from '@/projects/lsht/Section10.vue'
+import Section1 from '@/projects/cyfh/Section1.vue'
+import Section2 from '@/projects/cyfh/Section2.vue'
+// import Section3 from '@/projects/cyfh/Section3.vue'
+// import Section4 from '@/projects/cyfh/Section4.vue'
+import Section5 from '@/projects/cyfh/Section5.vue'
+// import Section6 from '@/projects/cyfh/Section6.vue'
+import Section7 from '@/projects/cyfh/Section7.vue'
+import Section8 from '@/projects/cyfh/Section8.vue'
+// import Section9 from '@/projects/cyfh/Section9.vue'
+// import Section10 from '@/projects/cyfh/Section10.vue'
 
 export default {
   name: 'home',
   components: {
     Loading,
     Indigator,
+    TopIndigator,
     // Navigation,
     // SideNavigation,
     ContactSection,
     MobileNav,
     Section1,
     Section2,
-    Section3,
-    Section4,
+    // Section3,
+    // Section4,
     Section5,
-    Section6,
+    // Section6,
     Section7,
     Section8,
-    Section9,
-    Section10,
+    // Section9,
+    // Section10,
   },
 
   data() {

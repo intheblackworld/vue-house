@@ -1,11 +1,11 @@
 <template>
   <div class="house-info" id="house-info">
     <div class="content">
-      <div class="title">建案資訊</div>
+      <h3 class="title">建案資訊</h3>
       <div class="info">
         <div class="item" :key="infos[0]" v-for="infos in houseInfos">
           <h3 class="label">{{infos[0]}}</h3>
-          <p class="desc" v-html="infos[1]"></p>
+          <h3 class="desc" v-html="infos[1]"></h3>
         </div>
       </div>
     </div>
