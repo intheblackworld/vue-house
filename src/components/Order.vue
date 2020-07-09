@@ -455,7 +455,7 @@ export default {
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .order-title {
-    font-size: 32px;
+    font-size: 25px;
   }
 
   .order-subtitle {
@@ -476,17 +476,33 @@ export default {
     margin: 0;
     position: relative;
     z-index: 2;
+    background-image: $order_bg_image_m;
+    background-size: contain;
 
     > img {
       display: block;
     }
     .order-title {
+      width: size-m(320);
       padding-top: 10px;
       padding-bottom: 5px;
-      font-size: calc(100vw * 38 / 375);
+      font-size: calc(100vw * 25 / 375);
+      margin: 0 auto;
+      line-height: 1.68;
+      letter-spacing: 27.5px;
+      text-align: center;
+      margin-left: size-m(40);
     }
+
+    .divide {
+      width: size-m(300);
+      margin: 15px auto 0;
+      height: 4px;
+      background-color: #fff;
+    }
+
     .order-top {
-      background-image: $order_bg_image_m;
+      // background-image: $order_bg_image_m;
       padding-bottom: 40px;
     }
     .order-subtitle {

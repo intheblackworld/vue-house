@@ -7,7 +7,10 @@
       <img src="./s1/logo.png" alt="" class="logo absolute">
     </div>
     <div v-if="isMobile">
-
+      <img src="./mo/1/1.png" alt="" class="bg-img bg1">
+      <img src="./s1/title.png" alt="" class="title absolute">
+      <img src="./mo/1/2.png" alt="" class="bg-img bg2">
+      <img src="./s1/logo.png" alt="" class="logo absolute">
     </div>
   </div>
 </template>
@@ -15,7 +18,7 @@
 @import '@/assets/style/function.scss';
 .relative {
   // height: 100vh;
-  // overflow: hidden;
+  overflow: hidden;
   position: relative;
   //height: 100vh;
 }
@@ -126,6 +129,17 @@
 @media screen and (max-width: 767px) {
   .relative {
     margin: 0 0 0 0;
+    overflow: hidden;
+  }
+
+  .title {
+    width: size-m(354);
+    top: size-m(220);
+  }
+
+  .logo {
+    width: size-m(214);
+    top: size-m(210);
   }
 }
 </style>

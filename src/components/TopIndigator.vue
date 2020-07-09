@@ -136,10 +136,10 @@
 }
 @media screen and (max-width: 767px) {
   .indigator {
-    display: none;
+    // display: none;
     right: -3.5vw;
     .contact-indigator {
-      display: none;
+      // display: none;
     }
     .dot {
       width: 2em;

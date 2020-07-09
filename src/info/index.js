@@ -1,3 +1,4 @@
+import { isMobile } from '@/utils'
 export default {
   address: '台南安平區健康路三段VS.國平路',
   googleSrc:
@@ -30,7 +31,7 @@ export default {
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
   order: {
-    title: '立即預約 構築人生豐會',
+    title: isMobile ? '立即預約<br />構築人生豐會' : '立即預約 構築人生豐會',
     subTitle: ''
   }
 } 

@@ -4,7 +4,7 @@ $nav_tablet_height: 80px;
 $nav_phone_height: 60px;
 $logo_pc_width: calc(100vw * 526 / 1920);
 $logo_tablet_width: calc(100vw * 500 / 1920);
-$logo_phone_width: 60px;
+$logo_phone_width: calc(100vw * 298 / 375);;
 
 /* contactInfo */
 $contact_logo_pc_width:152px;
