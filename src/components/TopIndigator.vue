@@ -137,6 +137,7 @@
 @media screen and (max-width: 767px) {
   .indigator {
     // display: none;
+    padding: 0 size-m(20);
     right: -3.5vw;
     .contact-indigator {
       // display: none;
