@@ -6,7 +6,7 @@
         alt=""
         class="bg-img"
       >
-      <h3 class="title absolute">全陽深耕40載</h3>
+      <h3 class="title absolute" id="section5">全陽深耕40載</h3>
       <h3 class="subtitle absolute">打造更值得您引以為傲的士林</h3>
       <hr class="divide absolute">
       <div class="desc absolute">全陽建設榮耀故土鄉里，重磅回歸士林天母，沿著中山北路樹海，<br />

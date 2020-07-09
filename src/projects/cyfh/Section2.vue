@@ -48,13 +48,36 @@
         </div>
       </div>
 
-      <div class="row4">
+      <div class="row4" id="section4">
         <div class="flex-ac flex-jb">
-          <img
+          <!-- <img
             src="./s2/img.jpg"
             alt=""
             class="img1"
+          > -->
+          <swiper
+            class="img1"
+            :options="swiperOption"
+            ref="mySwiper"
+            data-aos="fade"
+            data-aos-delay="1000"
           >
+            <swiper-slide
+              v-for="(slide, index) in imgList"
+              :index="index"
+              :key="slide"
+              class="item-img"
+            >
+              <img
+                :src="slide"
+                :class="`item-img`"
+              />
+            </swiper-slide>
+            <div
+              class="swiper-pagination"
+              slot="pagination"
+            ></div>
+          </swiper>
         </div>
         <div class="text-row flex-ac flex-jb">
           <div class="title-block">
@@ -81,10 +104,22 @@
 }
 
 .section2 {
-  background-image: url('./s2/bg.jpg');
   background-size: cover;
   background-attachment: fixed;
   background-position: center center;
+
+  &::v-deep .swiper-pagination-bullet {
+    width: 18px;
+    height: 18px;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px #fff;
+    opacity: 1;
+    margin: 0 15px !important;
+
+    &.swiper-pagination-bullet-active {
+      background-color: #fff;
+    }
+  }
 }
 
 // .bg-img {
@@ -176,7 +211,8 @@
   width: size(1561);
   margin: 0 auto;
 
-  .img1, .text-row {
+  .img1,
+  .text-row {
     width: 100%;
   }
 }
@@ -202,12 +238,48 @@
 <script>
 // @ is an alias to /src
 import { isMobile } from '@/utils'
+import slider from '@/mixins/slider.js'
+// import Parallax from '@/components/Parallax.vue'
+import 'swiper/dist/css/swiper.css'
 
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
-  name: 'section2',
+  name: 'section9',
+  mixins: [slider],
+  components: {
+    swiper,
+    swiperSlide,
+    // Parallax,
+  },
   data() {
     return {
       isMobile,
+      swiperOption: {
+        slidesPerView: isMobile ? 2.2 : 1,
+        centeredSlides: true,
+        spaceBetween: isMobile ? 10 : 30,
+        slidesPerColumn: isMobile ? 1 : 1,
+        effect: isMobile ? '' : 'fade',
+
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: true,
+        },
+        loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      },
+      imgList: [
+        require('./s4/1.jpg'),
+        require('./s4/2.jpg'),
+        require('./s4/3.jpg'),
+      ],
     }
   },
 

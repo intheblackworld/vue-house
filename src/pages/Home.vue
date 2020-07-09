@@ -36,7 +36,6 @@
     </div> -->
     <div
       class="section"
-      id="section5"
     >
       <Section5 />
     </div>
@@ -48,7 +47,6 @@
     </div> -->
     <div
       class="section"
-      id="section7"
     >
       <Section7 />
     </div>
@@ -110,7 +108,7 @@ import { isMobile } from '@/utils'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
-import Indigator from '@/components/Indigator.vue'
+// import Indigator from '@/components/Indigator.vue'
 import TopIndigator from '@/components/TopIndigator.vue'
 
 import Section1 from '@/projects/cyfh/Section1.vue'
@@ -128,7 +126,7 @@ export default {
   name: 'home',
   components: {
     Loading,
-    Indigator,
+    // Indigator,
     TopIndigator,
     // Navigation,
     // SideNavigation,
@@ -205,9 +203,13 @@ export default {
       for (let n = 0; n < offsetTopArr.length; n++) {
         // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
         // 那么此时导航索引就应该是n了
-        if (scrollTop >= offsetTopArr[n] - 100) {
+        if (scrollTop >= offsetTopArr[n] - 800) {
           navIndex = n
         }
+
+        // if (n > 4) {
+        //   navIndex = 5
+        // }
       }
       // console.log(navIndex)
       this.viewIndex = navIndex + 1

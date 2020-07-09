@@ -6,7 +6,7 @@
         alt=""
         class="bg-img"
       >
-      <h3 class="title absolute">巨匠聯手擘劃</h3>
+      <h3 class="title absolute" id="section7">巨匠聯手擘劃</h3>
       <h3 class="subtitle absolute">最好的居住環境，是城市資源與生態資源兼容並存的地方</h3>
       <hr class="divide absolute">
       <div class="desc absolute">全陽建設攜手豪宅團隊，<br />

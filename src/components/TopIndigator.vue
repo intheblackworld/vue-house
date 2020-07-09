@@ -1,17 +1,25 @@
 <template>
-  <div class="indigator flex-ac flex-jb">
+  <div :class="`indigator flex-ac flex-jb ${viewIndex > 1 ? 'white' : ''}`">
     <img
       class="logo"
       src="@/assets/img/nav-logo.png"
       alt
       v-scroll-to="{ element: `#section1` }"
     />
-    <div class="list-indigator flex">
+    <div class="list-indigator active" v-if="!isExtend">
       <div
-        :class="`dot ${index == indigatorIndex ? 'active' : '' }`"
-        v-for="index in info.indigatorLength"
+        :class="`dot`"
+        @click="isExtend = true"
+      ></div>
+    </div>
+    <div
+      :class="`list-indigator flex ${isExtend ? 'active' : ''}`"
+    >
+      <div
+        :class="`dot ${index == (indigatorIndex - 1) ? 'active' : '' }`"
+        v-for="(nav, index) in navList"
         :key="`indigator-${index}`"
-        v-scroll-to="{ element: `#section${index}` }"
+        v-scroll-to="{ element: `#${nav.section}`, offset: nav.offset }"
         @click="setIndigator(index)"
       ></div>
       <!-- <div
@@ -40,10 +48,35 @@
   top: 0;
   z-index: 10;
   padding: size(24) size(88);
+  transition: all .3s;
+
+  &.white {
+    background-color: #ccc;
+  }
   .list-indigator {
     position: relative;
     padding: 8px;
     border-radius: 20px;
+    width: 0;
+    display: none;
+    transition: all .3s;
+
+    .dot {
+      margin: 0;
+      opacity: 0;
+      transition: all 1s;
+    }
+
+    &.active {
+      display: flex;
+      width: auto;
+      opacity: 1;
+
+      .dot {
+        margin: 0 size(20);
+        opacity: 1;
+      }
+    }
   }
 
   .dot {
@@ -54,6 +87,7 @@
     cursor: pointer;
     border-radius: 999px;
     overflow: hidden;
+    transition: all .3s;
     &::before {
       content: '';
       display: block;
@@ -110,6 +144,7 @@
     .dot {
       width: 2em;
       height: 3em;
+      margin: 0 size-m(10);
     }
   }
 
@@ -123,14 +158,17 @@
 
 <script>
 import info from '@/info'
+import navList from '@/info/navList'
 
 export default {
   name: 'Indigator',
 
   data() {
     return {
+      navList,
       info,
       indigatorIndex: 1,
+      isExtend: false,
     }
   },
 

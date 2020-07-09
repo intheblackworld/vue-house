@@ -1,11 +1,13 @@
 <template>
   <div class="relative">
     <div v-if="!isMobile">
-      <img src="./s1/bg.jpg" alt="" class="bg-img">
+      <img src="./s1/bg1.png" alt="" class="bg-img bg1">
       <img src="./s1/title.png" alt="" class="title absolute">
+      <img src="./s1/bg2.png" alt="" class="bg-img bg2">
+      <img src="./s1/logo.png" alt="" class="logo absolute">
     </div>
     <div v-if="isMobile">
-      
+
     </div>
   </div>
 </template>
@@ -33,10 +35,80 @@
 
 .title {
   width: size(866);
-  top: size(180);
+  top: size(270);
   left: 0;
   right: 0;
   margin: 0 auto;
+  opacity: 0;
+  animation: an2 10s 6s ease-in-out infinite;
+}
+
+.logo {
+  width: size(426);
+  top: size(280);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  opacity: 0;
+  animation: an2 10s .5s ease-in-out infinite;
+}
+
+.bg2 {
+  animation: an1 10s 0s ease-in-out infinite;
+  opacity: 0;
+}
+
+// .bg1 {
+//   animation: an1 8s 4s ease-in-out infinite;
+//   opacity: 0;
+// }
+
+@keyframes an2 {
+  0% {
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  55% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes an1 {
+  0% {
+    opacity: 0;
+    transform: scaleY(2);
+  }
+
+  5% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+
+  55% {
+    opacity: 0;
+    transform: scaleY(2);
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 @media only screen and (max-width: 1440px) {
