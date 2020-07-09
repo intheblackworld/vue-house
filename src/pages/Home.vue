@@ -34,9 +34,7 @@
     >
       <Section4 />
     </div> -->
-    <div
-      class="section"
-    >
+    <div class="section">
       <Section5 />
     </div>
     <!-- <div
@@ -45,9 +43,7 @@
     >
       <Section6 />
     </div> -->
-    <div
-      class="section"
-    >
+    <div class="section">
       <Section7 />
     </div>
     <div
@@ -89,14 +85,28 @@
 #section3,
 #section6,
 #section8,
-#section9{overflow: hidden;}
-#section8{margin: 0 0 -25vh;}
-#section10{margin: 0 0 -18vw;}
-#contact{z-index: 2;}
+#section9 {
+  overflow: hidden;
+}
+#section8 {
+  margin: 0 0 -25vh;
+}
+#section10 {
+  margin: 0 0 -18vw;
+}
+#contact {
+  z-index: 2;
+}
 @media screen and (max-width: 767px) {
-#section1{margin: 0 0 -28.8vw;}
-#section2{overflow: hidden;}
-#section10{margin: 0 0 -3vw;}
+  #section1 {
+    margin: 0 0 -28.8vw;
+  }
+  #section2 {
+    overflow: hidden;
+  }
+  #section10 {
+    margin: 0 0 -3vw;
+  }
 }
 </style>
 
@@ -203,7 +213,8 @@ export default {
       for (let n = 0; n < offsetTopArr.length; n++) {
         // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
         // 那么此时导航索引就应该是n了
-        if (scrollTop >= offsetTopArr[n] - 800) {
+        let height = this.isMobile ? 200 : 800
+        if (scrollTop >= offsetTopArr[n] - height) {
           navIndex = n
         }
 
