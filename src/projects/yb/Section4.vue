@@ -343,7 +343,7 @@
   .swiper-container {
     position: relative;
     width: 100vw;
-    height: size-m(355);
+    height: size-m(390);
     top: 0;
     left: 0;
     margin-left: 0;
