@@ -412,11 +412,11 @@ export default {
 
       slideList: [
         { src: require('./s4/1.jpg'), text: '建築師 | <span>張維哲</span>' },
-        { src: require('./s4/2.jpg'), text: '建築師 | <span>張維哲</span>' },
-        { src: require('./s4/3.jpg'), text: '建築師 | <span>張維哲</span>' },
-        { src: require('./s4/4.jpg'), text: '建築師 | <span>張維哲</span>' },
-        { src: require('./s4/5.jpg'), text: '建築師 | <span>張維哲</span>' },
-        { src: require('./s4/6.jpg'), text: '建築師 | <span>張維哲</span>' },
+        { src: require('./s4/2.jpg'), text: '景觀設計 | <span>吳書原</span>' },
+        { src: require('./s4/3.jpg'), text: '燈光設計 | <span>朱文英</span>' },
+        { src: require('./s4/4.jpg'), text: '結構師設計 | <span>陳村林</span>' },
+        { src: require('./s4/5.jpg'), text: '綠建築顧問 | <span>楊謙柔</span>' },
+        { src: require('./s4/6.jpg'), text: '' },
       ],
 
       imgIndex: 0,
