@@ -65,7 +65,7 @@
         </swiper>
       </div>
 
-      <div class="block-img">
+      <!-- <div class="block-img">
         <div
           class="block-item"
           @click="showDialog(0)"
@@ -96,8 +96,8 @@
           >
           <div class="item-title">實品屋實景</div>
         </div>
-      </div>
-      <div :class="`dialog ${isShowDialog ? 'show' : ''}`">
+      </div> -->
+      <!-- <div :class="`dialog ${isShowDialog ? 'show' : ''}`">
         <img
           :src="dialogImg"
           alt=""
@@ -109,7 +109,7 @@
           alt
           @click="isShowDialog = false"
         />
-      </div>
+      </div> -->
     </div>
     <div
       v-else
@@ -177,7 +177,7 @@
             slot="pagination"
           ></div> -->
         </swiper>
-        <swiper
+        <!-- <swiper
           :options="swiperOption2"
           ref="mySwiper2"
           class="slide-b"
@@ -202,8 +202,8 @@
               v-html="slide.desc"
             ></div>
           </swiper-slide>
-        </swiper>
-        <div :class="`dialog ${isShowDialog ? 'show' : ''}`">
+        </swiper> -->
+        <!-- <div :class="`dialog ${isShowDialog ? 'show' : ''}`">
           <img
             :src="dialogImg"
             alt=""
@@ -215,7 +215,7 @@
             alt
             @click="isShowDialog = false"
           />
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

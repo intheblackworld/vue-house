@@ -1,16 +1,91 @@
 <template>
   <div class="relative">
     <div v-if="!isMobile">
-      <img src="./s1/1.jpg" alt="" class="bg-img">
-      <img src="./s1/2.png" alt="" class="bg-img">
-      <img src="./s1/3.png" alt="" class="bg-img">
-      <img src="./s1/4.png" alt="" class="bg-img">
-      <img src="./s1/5.png" alt="" class="bg-img">
+      <img
+        src="./s1/1.jpg"
+        alt=""
+        class="bg-img"
+      >
+      <img
+        src="./s1/2.png"
+        alt=""
+        class="bg-img"
+        data-aos="fade"
+        data-aos-delay="400"
+      >
+      <img
+        src="./s1/3.png"
+        alt=""
+        class="bg-img"
+        data-aos="fade"
+        data-aos-delay="600"
+      >
+      <img
+        src="./s1/4.png"
+        alt=""
+        class="bg-img"
+        data-aos="fade"
+        data-aos-delay="800"
+      >
+      <img
+        src="./s1/5.png"
+        alt=""
+        class="bg-img"
+        data-aos="fade"
+        data-aos-delay="1000"
+      >
+      <img
+        src="./s1/bottom.png"
+        alt=""
+        class="b-img"
+        data-aos="fade"
+        data-aos-delay="1000"
+      >
+
     </div>
-    <div
-      v-else
-      class="fullscreen"
-    >
+    <div v-else>
+      <img
+        src="./s1/m/1.jpg"
+        alt=""
+        class="bg-img"
+        
+      >
+      <img
+        src="./s1/m/2.png"
+        alt=""
+        class="bg-img"
+        data-aos="fade"
+        data-aos-delay="400"
+      >
+      <img
+        src="./s1/m/3.png"
+        alt=""
+        class="bg-img"
+        data-aos="fade"
+        data-aos-delay="600"
+      >
+      <img
+        src="./s1/m/4.png"
+        alt=""
+        class="bg-img"
+        data-aos="fade"
+        data-aos-delay="800"
+      >
+      <img
+        src="./s1/m/5.png"
+        alt=""
+        class="bg-img"
+        data-aos="fade"
+        data-aos-delay="1000"
+      >
+
+      <!-- <img
+        src="./s1/bottom.png"
+        alt=""
+        class="b-img"
+        data-aos="fade"
+        data-aos-delay="400"
+      > -->
     </div>
   </div>
 </template>
@@ -33,6 +108,15 @@
     position: relative;
   }
 }
+
+.b-img {
+  width: 100%;height: 7vh;
+  object-fit: cover;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
     height: 100vh;
@@ -45,6 +129,12 @@
 }
 
 @media screen and (max-width: 767px) {
+  .relative {
+    height: auto;
+  }
+  .bg-img {
+    height: auto;
+  }
 }
 </style>
 <script>
