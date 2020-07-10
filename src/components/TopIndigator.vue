@@ -15,6 +15,7 @@
     <div
       :class="`list-indigator flex ${isExtend ? 'active' : ''}`"
     >
+      <img src="@/projects/jh/s4/close.png" alt="" class="close" @click="isExtend = false">
       <div
         :class="`dot ${index == (indigatorIndex - 1) ? 'active' : '' }`"
         v-for="(nav, index) in navList"
@@ -78,6 +79,12 @@
       }
     }
   }
+  .close {
+    width: 18px;
+    height: 18px;
+    margin: size(15) size(20);
+    cursor: pointer;
+  }
 
   .dot {
     width: 36px;
@@ -136,11 +143,25 @@
 }
 @media screen and (max-width: 767px) {
   .indigator {
-    // display: none;
-    padding: 0 size-m(20);
+    padding: size-m(20);
     right: -3.5vw;
-    .contact-indigator {
-      // display: none;
+
+    .list-indigator {
+      width: 30px;
+      flex-wrap: wrap;
+      position: absolute;
+      top: size-m(10);
+      right: 0;
+
+      &.active {
+        width: 45px;
+      }
+    }
+
+    .close {
+      width: 1.5em;
+      height: 1.5em;
+      margin: 0px size-m(3) 10px;
     }
     .dot {
       width: 2em;

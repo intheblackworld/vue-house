@@ -2,12 +2,12 @@ import { isMobile } from '@/utils'
 export default {
   address: '台南安平區健康路三段VS.國平路',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14692.350182374417!2d120.1703851!3d22.983808!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5824013f2fb46bbf!2z6IGv5LiK5rW35qOg!5e0!3m2!1szh-TW!2stw!4v1593007312077!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/YkMPpXwgPeh3kNke6',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d903.2681895669509!2d121.52663452919262!3d25.099398298996373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab208cadf49d%3A0xf992041a57899e4a!2z5YWo6Zm96LGQ5pyD!5e0!3m2!1szh-TW!2stw!4v1594369387469!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/5gLCi4wywrzaCVMn7',
   phone: '02-2832-3288',
-  fbLink: 'https://www.facebook.com/VVVVV.HAI.TANG/',
-  fbMessage: 'http://m.me/VVVVV.HAI.TANG/',
-  caseName: '聯上海棠',
+  fbLink: 'https://www.facebook.com/全陽豐會-104138187891229/',
+  fbMessage: 'http://m.me/全陽豐會-104138187891229/',
+  caseName: '全陽豐會',
   indigatorLength: 10,
 
   houseInfos: [
