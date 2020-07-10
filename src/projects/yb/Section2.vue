@@ -170,7 +170,7 @@
   letter-spacing: 1.44px;
   text-align: left;
   color: #242424;
-  top: size(293);
+  top: size(350);
   left: size(846);
 
   span {
@@ -275,7 +275,7 @@
     letter-spacing: 1.44px;
     text-align: left;
     color: #242424;
-    top: size-m(125);
+    top: size-m(135);
     left: size-m(189);
 
     span {

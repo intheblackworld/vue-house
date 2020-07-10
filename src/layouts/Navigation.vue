@@ -7,6 +7,7 @@
             class="logo"
             src="@/assets/img/nav-logo.png"
             alt
+             v-scroll-to="{ element: `#section1`, offset: offset }"
           />
           <!-- <div
             class="menu"
@@ -123,11 +124,10 @@ export default {
 
   &.min {
     height: 50px;
-
+  }
     .logo {
       width: 150px;
     }
-  }
 }
 
 .nav-container {
@@ -313,8 +313,7 @@ export default {
 @media only screen and (max-width: 767px) {
   .navigation {
     height: $nav_phone_height;
-    z-index: 110;
-    background-color: #fff;
+  //  background-color: #fff;
   }
 
   .nav-container {
@@ -372,6 +371,7 @@ export default {
   }
 
   .navlist {
+    display: none;
     .link {
       width: auto;
       padding: 0;

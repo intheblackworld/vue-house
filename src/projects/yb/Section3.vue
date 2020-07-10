@@ -68,7 +68,7 @@
         class="bg-img"
       >
       <div class="title absolute">是誰？</div>
-      <div class="subtitle absolute">在央北用<span>超規格</span>標準，展現國際視野</div>
+      <div class="subtitle absolute">在央北用<span>超規格</span>標準<br>展現國際視野</div>
       <div class="relative">
         <div class="content">
           <div class="content-label">Our Brand</div>
@@ -145,8 +145,8 @@
   letter-spacing: 1.44px;
   text-align: left;
   color: #242424;
-  top: size(293);
-  left: size(886);
+  top: size(400);
+  left: size(846);
 
   span {
     color: #eb5500;
@@ -250,8 +250,10 @@
     letter-spacing: 1.44px;
     text-align: left;
     color: #242424;
-    top: size-m(125);
+    top: size-m(155);
     left: size-m(189);
+    transform: scaleX(0.95);
+    transform-origin: 0 0;
 
     span {
       color: #eb5500;

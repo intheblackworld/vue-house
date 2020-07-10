@@ -47,7 +47,7 @@
         class="bg-img"
       >
       <div class="title absolute">是誰？</div>
-      <div class="subtitle absolute">以近未來思維，重現大直重劃<span>都會綠洲</span></div>
+      <div class="subtitle absolute">以近未來思維重現<br>大直重劃<span>都會綠洲</span></div>
       <div class="relative">
         <div class="content">
           <div class="content-label">Our Location</div>
@@ -118,8 +118,8 @@
   letter-spacing: 1.44px;
   text-align: left;
   color: #242424;
-  top: size(293);
-  left: size(886);
+  top: size(400);
+  left: size(846);
 
   span {
     color: #eb5500;
@@ -239,8 +239,10 @@
     letter-spacing: 1.44px;
     text-align: left;
     color: #242424;
-    top: size-m(125);
+    top: size-m(155);
     left: size-m(189);
+    transform: scaleX(0.95);
+    transform-origin: 0 0;
 
     span {
       color: #eb5500;

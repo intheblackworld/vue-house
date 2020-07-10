@@ -1,14 +1,25 @@
 <template>
   <div class="section1">
     <div class="bg" v-if="!isMobile">
-      <img src="./s1/img1.jpg" alt="" class="absolute img1">
-      <img src="./s1/img2.jpg" alt="" class="absolute img2">
-      <img src="./s1/button.png" alt="" class="absolute button" v-scroll-to="{ element: `#contact`, offset: -100}">
-      <img src="./s1/txt.png" alt="" class="absolute txt">
-      <img src="./s1/title.png" alt="" class="absolute title">
+      <div class="vh1">
+      <button class="absolute button" v-scroll-to="{ element: `#contact`, offset: -100}">立即預約</button>
+      <img src="./s1/txt.png" alt="有我們在幸福的未來就在現在" class="absolute txt">
+      <img src="./s1/title.png" alt="超規格暖心價" class="absolute title">
       <img src="./s1/nexttofuture.png" alt="" class="absolute slogan">
     </div>
+      <div class="vh2">
+      <img src="./s1/img1.jpg" alt="img1" class="img1">
+      <img src="./s1/img2.jpg" alt="img2" class="img2">
+    </div>
+    </div>
     <div class="bg" v-if="isMobile">
+      <div class="vh1">
+      <img src="./mo/1/txt.png" alt="有我們在幸福的未來就在現在" class="txt_mo">
+    </div>
+      <div class="vh2">
+      <img src="./mo/1/1.jpg" alt="img1" class="img1_mo">
+      <img src="./mo/1/2.jpg" alt="img2" class="img2_mo">
+    </div>
     </div>
   </div>
 </template>
@@ -22,44 +33,60 @@
   background-position: bottom;
   background-repeat: no-repeat;
   overflow: hidden;
-  height: size(2260);
+  //height: size(2260);
   // pointer-events: none;
 }
 
 .img1 {
   width: size(900);
-  top: size(1060);
-  left: size(180);
 }
 
 .img2 {
-  width: size(900);
-  top: size(1060);
-  left: size(1155);
+  width: size(765);
+  margin-left:size(80);
 }
-
+.vh1{height:calc(100vh - 3vw);position: relative; overflow: hidden;}
+.vh2{position: relative; overflow: hidden;text-align: right;}
 .button {
   cursor: pointer;
-  width: size(213);
-  top: size(778);
-  right: size(357);
+  width:6.2em;
+  top:calc(73%);
+  left:68%;
+  border: 2px solid;
+  border-color: #eb5500 #d70032 #d70032  #eb5500;
+  border-radius: 1.2em;
+  color: #e50;
+  font-size:calc(100vh * 34 / 1000);
+  font-weight: 500;
+  line-height: 2;
+  letter-spacing: 0.08em;
+  font-family: "Noto Sans TC", serif;
+  background:  linear-gradient(to right, #f6f6f6 0%, #f6f6f6 100%);
+  transition: all 0.3s;
+  &:hover{
+background: linear-gradient(to right, rgba(235,85,0,1) 0%,rgba(215,0,50,1) 100%);
+  color: #fff;
+  }
 }
 
 .txt {
-  width: size(320);
-  top: size(522);
-  right: size(250);
+  height:calc(100vh * 178 / 1000);
+  top:calc(50%);
+ //top: size(522);
+  left:68%;
 }
 
 .title {
-  width: size(706);
-  top: size(709);
+  height:calc(100vh * 142 / 1000);
+  top:calc(50% + 15vh);
+ // top: size(709);
   left: size(170);
 }
 
 .slogan {
-  width: size(830);
-  top: size(312);
+  height:calc(100vh * 394 / 1000);
+  bottom:calc(50% - 16vh);
+ // top: size(312);
   left: size(158);
 }
 
@@ -73,6 +100,19 @@
     position: relative;
     margin: 0;
   }
+  .vh1{height:auto;}
+  .txt_mo{
+  width: 100%;
+}
+.img1_mo{
+  width: size_m(267);
+}
+
+.img2_mo{
+  width: size_m(68.5);
+  margin-left:size_m(18);
+}
+
 }
 </style>
 
