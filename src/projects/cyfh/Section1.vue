@@ -44,7 +44,7 @@
   right: 0;
   margin: 0 auto;
   opacity: 0;
-  animation: title 20s 8s ease-in-out  forwards;
+  animation: an1 2s 8s ease-in-out  forwards;
 }
 
 .logo {
@@ -187,7 +187,7 @@
 
   .title {
     width: size-m(354);
-    top: size-m(220);
+    top: size-m(180);
   }
 
   .logo {
