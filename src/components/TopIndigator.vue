@@ -1,8 +1,8 @@
 <template>
   <div :class="`indigator flex-ac flex-jb ${viewIndex > 1 ? 'white' : ''}`">
     <img
-      class="logo"
-      src="@/assets/img/nav-logo.png"
+      :class="`logo ${viewIndex > 1 ? 'visible' : ''}`"
+      src="@/projects/moma/s1/logo.png"
       alt
       v-scroll-to="{ element: `#section1` }"
     />
@@ -52,7 +52,7 @@
   transition: all .3s;
 
   &.white {
-    background-color: #ccc;
+    background-color: #000;
   }
   .list-indigator {
     position: relative;
@@ -140,6 +140,10 @@
   height: auto;
   cursor: pointer;
   display: block;
+  visibility: hidden;
+  &.visible {
+    visibility: initial;
+  }
 }
 @media screen and (max-width: 767px) {
   .indigator {

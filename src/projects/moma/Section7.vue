@@ -1,36 +1,5 @@
 <template>
   <div class="relative">
-    <div>
-      <img
-        v-if="!isMobile"
-        src="./s7/bg.jpg"
-        alt=""
-        class="bg-img"
-      >
-
-      <img
-        v-if="isMobile"
-        src="./mo/7/bg.jpg"
-        alt=""
-        class="bg-img"
-      >
-
-      <h3
-        class="title absolute"
-        id="section7"
-        data-aos="fade" data-aos-delay="400"
-      >巨匠聯手擘劃</h3>
-      <h3 class="subtitle absolute" data-aos="fade" data-aos-delay="500">最好的居住環境，是城市資源與生態資源兼容並存的地方</h3>
-      <hr class="divide absolute" data-aos="fade" data-aos-delay="600">
-      <div class="desc absolute" data-aos="fade" data-aos-delay="700">全陽建設攜手豪宅團隊，<br />
-        建築首席「江培珩」、哈佛名家「沈中怡」、景觀巨匠「胡聰寶」、美學大師「郭陞弘」、制震權威「張耀鴻」…<br />
-        如同藝術家在作品上刻入印記般，以職人精神打造零誤差的完美哲學。
-      </div>
-      <h3 class="s-title absolute" data-aos="fade" data-aos-delay="400">全棟SRC鋼骨+制震</h3>
-      <h3 class="s-subtitle absolute" data-aos="fade" data-aos-delay="600">水岸宏偉雙塔地標</h3>
-      <hr class="s-divide absolute" data-aos="fade" data-aos-delay="700">
-      <div class="s-desc absolute" data-aos="fade" data-aos-delay="800">「全陽豐會」18層SRC鋼骨制震雙塔式飯店宅，抗震係數0.28g可抗6級強震；建築臨雙溪面芝山岩，以大自然為師，行雲流水、層疊錯落，框架構築、完美比例，絕佳視野、八方賞景…為士林天際線勾勒出永恆之美！</div>
-    </div>
   </div>
 </template>
 <style lang="scss" scoped>

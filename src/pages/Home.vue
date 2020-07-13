@@ -28,12 +28,12 @@
     >
       <Section3 />
     </div>
-    <!-- <div
+    <div
       class="section"
       id="section4"
     >
       <Section4 />
-    </div> -->
+    </div>
     <div class="section">
       <Section5 />
     </div>
@@ -43,7 +43,7 @@
     >
       <Section6 />
     </div>
-    <div class="section">
+    <!-- <div class="section">
       <Section7 />
     </div>
     <div
@@ -51,7 +51,7 @@
       id="section8"
     >
       <Section8 />
-    </div>
+    </div> -->
     <!-- <div
       class="section"
       id="section9"
@@ -124,11 +124,11 @@ import TopIndigator from '@/components/TopIndigator.vue'
 import Section1 from '@/projects/moma/Section1.vue'
 import Section2 from '@/projects/moma/Section2.vue'
 import Section3 from '@/projects/moma/Section3.vue'
-// import Section4 from '@/projects/moma/Section4.vue'
+import Section4 from '@/projects/moma/Section4.vue'
 import Section5 from '@/projects/moma/Section5.vue'
 import Section6 from '@/projects/moma/Section6.vue'
-import Section7 from '@/projects/moma/Section7.vue'
-import Section8 from '@/projects/moma/Section8.vue'
+// import Section7 from '@/projects/moma/Section7.vue'
+// import Section8 from '@/projects/moma/Section8.vue'
 // import Section9 from '@/projects/moma/Section9.vue'
 // import Section10 from '@/projects/moma/Section10.vue'
 
@@ -145,11 +145,11 @@ export default {
     Section1,
     Section2,
     Section3,
-    // Section4,
+    Section4,
     Section5,
     Section6,
-    Section7,
-    Section8,
+    // Section7,
+    // Section8,
     // Section9,
     // Section10,
   },

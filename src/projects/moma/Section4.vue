@@ -5,22 +5,21 @@
     <div v-if="!isMobile">
       <iframe
         class="video-bg"
-        src="https://www.youtube.com/embed/eflYegCFh4M?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=eflYegCFh4M"
+        src="https://www.youtube.com/embed/pagQjsWtntM?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=pagQjsWtntM"
         frameborder="0"
         allowfullscreen
       ></iframe>
-      <img src="./s1/logo.png" alt="" class="logo absolute">
-      <img src="./s1/txt.png" alt="" class="txt absolute">
+      <h3 class="title absolute">俯瞰萬家燈光 高空視覺饗宴！</h3>
+      <h3 class="item flex-c absolute item1">全台最長50米空中泳池會館</h3>
+      <h3 class="item flex-c absolute item2">擎天29層美國EPS制震系統</h3>
     </div>
     <div v-if="isMobile">
       <iframe
         class="video-bg"
-        src="https://www.youtube.com/embed/eflYegCFh4M?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=eflYegCFh4M"
+        src="https://www.youtube.com/embed/pagQjsWtntM?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=pagQjsWtntM"
         frameborder="0"
         allowfullscreen
       ></iframe>
-      <img src="./s1/logo.png" alt="" class="logo absolute">
-      <img src="./s1/txt.png" alt="" class="txt absolute">
     </div>
   </div>
 </template>
@@ -42,18 +41,45 @@
   pointer-events: none;
 }
 
-.logo {
-  width: size(318);
-  left: size(58);
-  top: size(64);
+.title {
+  text-shadow: 3px 3px 2px rgba(26, 19, 17, 0.75);
+  font-size: size(44);
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 5.23px;
+  text-align: left;
+  color: #ffffff;
+  top: size(110);
+  right: size(90);
 }
 
-.txt {
-  width: size(525);
-  top: size(396);
-  right: size(113);
+.item {
+  width: size(443);
+  height: size(73);
+  opacity: 0.92;
+  border-radius: 36.5px;
+  background-color: #1a1311;
+  font-size: size(24);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 2.88px;
+  text-align: left;
+  color: #9c7244;
 }
 
+.item1 {
+  top: size(190);
+  right: size(315);
+}
+
+.item2 {
+  top: size(287);
+  right: size(315);
+}
 @media only screen and (max-width: 1440px) {
   .bg-img {
   }
@@ -86,7 +112,6 @@
 <script>
 // @ is an alias to /src
 import { isMobile } from '@/utils'
-import VideoBg from '@/components/VideoBg.vue'
 
 export default {
   name: 'section1',
@@ -94,10 +119,6 @@ export default {
     return {
       isMobile,
     }
-  },
-
-  components: {
-    VideoBg,
   },
 
   //   影片1

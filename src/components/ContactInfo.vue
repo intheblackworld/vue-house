@@ -1,46 +1,76 @@
 <template>
-<div>
-  <div class="contact-info">
-    <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" />
-    <div class="info">
-      <div class="btn flex-c" @click="showCallDialog">
-        <span class="flex-c">
-          <font-awesome-icon icon="phone" />
-          <span>{{info.phone}}</span>
-        </span>
-      </div>
-      <div class="btn flex-c" @click="showMessengerDialog">
-        <span class="flex-c">
-          <font-awesome-icon :icon="['fab', 'facebook-messenger']" /><span>FB 諮詢</span>
-        </span>
-      </div>
-      <a class="btn flex-c" :href="info.fbLink" target="_blank">
-        <span class="flex-c">
-          <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
-        </span>
-      </a>
-      <div class="address flex-c">{{info.address}}</div>
-      <div class="btn flex-c" @click="showMapDialog">
-        <span class="flex-c">
-          <font-awesome-icon icon="map-marker-alt" /><span>導航 Google 地圖</span>
-        </span>
+  <div>
+    <div class="contact-info">
+      <img
+        class="logo"
+        src="@/assets/img/contact-logo.png"
+        :alt="info.caseName"
+      />
+      <div class="info">
+        <div
+          class="btn flex-c"
+          @click="showCallDialog"
+        >
+          <span class="flex-c">
+            <font-awesome-icon icon="phone" />
+            <span>{{info.phone}}</span>
+          </span>
+        </div>
+        <div
+          class="btn flex-c"
+          @click="showMessengerDialog"
+        >
+          <span class="flex-c">
+            <font-awesome-icon :icon="['fab', 'facebook-messenger']" /><span>FB 諮詢</span>
+          </span>
+        </div>
+        <a
+          class="btn flex-c"
+          :href="info.fbLink"
+          target="_blank"
+        >
+          <span class="flex-c">
+            <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
+          </span>
+        </a>
+        <div class="address flex-c">{{info.address}}</div>
+        <div
+          class="btn flex-c"
+          @click="showMapDialog"
+        >
+          <span class="flex-c">
+            <font-awesome-icon icon="map-marker-alt" /><span>導航 Google 地圖</span>
+          </span>
+        </div>
       </div>
     </div>
-  </div>
-  <el-dialog title :visible.sync="isShowCallDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
-    <CallDialog :phone="info.phone" />
-  </el-dialog>
-  <el-dialog
-    title
-    :visible.sync="isShowMessengerDialog"
-    :width="isMobile ? '90%' : '500px'"
-    :modal-append-to-body="false"
-  >
-    <MessengerDialog :messenger="info.fbMessage" />
-  </el-dialog>
-  <el-dialog title :visible.sync="isShowMapDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
-    <MapDialog :link="info.googleLink" :address="info.address" />
-  </el-dialog>
+    <el-dialog
+      title
+      :visible.sync="isShowCallDialog"
+      :width="isMobile ? '90%' : '500px'"
+      :modal-append-to-body="false"
+    >
+      <CallDialog :phone="info.phone" />
+    </el-dialog>
+    <el-dialog
+      title
+      :visible.sync="isShowMessengerDialog"
+      :width="isMobile ? '90%' : '500px'"
+      :modal-append-to-body="false"
+    >
+      <MessengerDialog :messenger="info.fbMessage" />
+    </el-dialog>
+    <el-dialog
+      title
+      :visible.sync="isShowMapDialog"
+      :width="isMobile ? '90%' : '500px'"
+      :modal-append-to-body="false"
+    >
+      <MapDialog
+        :link="info.googleLink"
+        :address="info.address"
+      />
+    </el-dialog>
   </div>
 </template>
 
@@ -102,19 +132,19 @@ export default {
   position: relative;
   z-index: 3;
   width: 1200px;
-  height: 460px;
+  height: 480px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
   transform: translateY(0);
   margin: 2vw auto -3vw;
-  padding: 70px 0 50px;
+  padding: 40px 0 20px;
 }
 
 .logo {
   width: $contact_logo_pc_width;
-  height:auto;
- // height:;
+  height: auto;
+  // height:;
   margin: 0 auto 40px;
 }
 .info {
@@ -134,11 +164,11 @@ export default {
   text-decoration: none;
   color: $contact_btn_color;
   background: $contact_btn_bg;
-  // box-shadow: $contact_btn_border;
+  box-shadow: $contact_btn_border;
   transition: all 0.5s;
   position: relative;
   overflow: hidden;
-font-weight: 600;
+  font-weight: 600;
   &.half {
     width: 49%;
   }
@@ -153,13 +183,33 @@ font-weight: 600;
   &:hover {
     background: $contact_btn_hover_bg;
     color: $contact_btn_hover_color;
+    box-shadow: none;
+
+    span {
+      background: linear-gradient(
+        to top,
+        #daa236 54%,
+        #e9c05d 41%,
+        #f5d97d 29%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
     svg {
-      color: $contact_btn_hover_icon;
+      // color: $contact_btn_hover_icon;
+      background: linear-gradient(
+        to top,
+        #daa236 54%,
+        #e9c05d 41%,
+        #f5d97d 29%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
-   &::before {
-    content: "";
+  &::before {
+    content: '';
     width: 40%;
     height: 100%;
     display: block;
@@ -171,13 +221,13 @@ font-weight: 600;
     opacity: 0;
     top: 0;
     z-index: 5;
-    transition: all .4s cubic-bezier(.2,.95,.57,.99)
-    }
-    &:hover:before {
+    transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
+  }
+  &:hover:before {
     opacity: 1;
     width: 90%;
-    left: 140%
-    }
+    left: 140%;
+  }
 }
 .address {
   width: 600px;
@@ -249,13 +299,13 @@ font-weight: 600;
     &.half {
       width: 280px;
     }
-    svg{
+    svg {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      left:  calc(50% - 5em);
-      margin-right:0;
-      + span{
+      left: calc(50% - 5em);
+      margin-right: 0;
+      + span {
         margin-left: 1.5em;
       }
     }
@@ -269,8 +319,9 @@ font-weight: 600;
 
     > * {
       margin-bottom: 12px;
-      &.address{
-      margin-bottom: 0;}
+      &.address {
+        margin-bottom: 0;
+      }
     }
   }
 

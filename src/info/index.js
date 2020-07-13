@@ -1,6 +1,6 @@
 import { isMobile } from '@/utils'
 export default {
-  address: '台南安平區健康路三段VS.國平路',
+  address: '高雄市鼓山區美術東二路592號',
   googleSrc:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d903.2681895669509!2d121.52663452919262!3d25.099398298996373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab208cadf49d%3A0xf992041a57899e4a!2z5YWo6Zm96LGQ5pyD!5e0!3m2!1szh-TW!2stw!4v1594369387469!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/5gLCi4wywrzaCVMn7',
@@ -31,7 +31,7 @@ export default {
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
   order: {
-    title: isMobile ? '立即預約<br />構築人生豐會' : '立即預約 構築人生豐會',
+    title: '預約賞屋',
     subTitle: ''
   }
-} 
+}

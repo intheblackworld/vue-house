@@ -11,7 +11,6 @@
         class="order-title"
         v-html="order.title"
       ></h3>
-      <hr class="divide">
       <div
         class="order-subtitle"
         v-html="order.subTitle"
@@ -335,10 +334,14 @@ export default {
     width: 100vw;
     padding-top: 20px;
     padding-bottom: 8px;
-    line-height: 1.3;
-    letter-spacing: 36.02px;
-    font-size: calc(100vw * 32 / 1920);
+    font-size: 48.3px;
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: 4.83px;
     text-align: center;
+    color: #ffffff;
     color: $order_title_color;
   }
 

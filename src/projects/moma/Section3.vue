@@ -87,14 +87,14 @@
 }
 
 .title {
-  width: 98%;
+  width: 95%;
   margin: 0 auto;
   font-size: size(50);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   text-align: center;
   color: #ffffff;
   top: size(263);
