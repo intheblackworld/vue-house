@@ -319,9 +319,9 @@ export default {
   background-image: $order_bg_image;
   background-repeat: no-repeat;
   position: relative;
-  padding-top: 130px;
+  padding-top: 150px;
   // background-position:center calc(100% - 555px);
-  background-size: auto;
+  background-size: cover;
   z-index: 3;
   //background-image: $order_bg_image;
 
