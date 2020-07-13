@@ -2,6 +2,7 @@
   <div class="relative">
     <div v-if="!isMobile">
       <img src="./s1/bg1.png" alt="" class="bg-img bg1">
+      <img src="./s1/bg1.gif" alt="" class="bg-img bg1 gif">
       <img src="./s1/title.png" alt="" class="title absolute">
       <img src="./s1/bg2.png" alt="" class="bg-img bg2">
       <img src="./s1/logo.png" alt="" class="logo absolute">
@@ -63,6 +64,8 @@
     transform: scaleY(0.8);
   transform-origin: 50% 0;
   transform: scaleY(0.8);
+  &.gif{
+  top: size(290);}
 }
 .bg2 {
   animation: an2 20s 1s ease-in-out  forwards;
