@@ -22,13 +22,13 @@
     >
       <Section2 />
     </div>
-    <!-- <div
+    <div
       class="section"
       id="section3"
     >
       <Section3 />
     </div>
-    <div
+    <!-- <div
       class="section"
       id="section4"
     >
@@ -37,12 +37,12 @@
     <div class="section">
       <Section5 />
     </div>
-    <!-- <div
+    <div
       class="section"
       id="section6"
     >
       <Section6 />
-    </div> -->
+    </div>
     <div class="section">
       <Section7 />
     </div>
@@ -121,16 +121,16 @@ import Loading from '@/components/Loading.vue'
 // import Indigator from '@/components/Indigator.vue'
 import TopIndigator from '@/components/TopIndigator.vue'
 
-import Section1 from '@/projects/cyfh/Section1.vue'
-import Section2 from '@/projects/cyfh/Section2.vue'
-// import Section3 from '@/projects/cyfh/Section3.vue'
-// import Section4 from '@/projects/cyfh/Section4.vue'
-import Section5 from '@/projects/cyfh/Section5.vue'
-// import Section6 from '@/projects/cyfh/Section6.vue'
-import Section7 from '@/projects/cyfh/Section7.vue'
-import Section8 from '@/projects/cyfh/Section8.vue'
-// import Section9 from '@/projects/cyfh/Section9.vue'
-// import Section10 from '@/projects/cyfh/Section10.vue'
+import Section1 from '@/projects/moma/Section1.vue'
+import Section2 from '@/projects/moma/Section2.vue'
+import Section3 from '@/projects/moma/Section3.vue'
+// import Section4 from '@/projects/moma/Section4.vue'
+import Section5 from '@/projects/moma/Section5.vue'
+import Section6 from '@/projects/moma/Section6.vue'
+import Section7 from '@/projects/moma/Section7.vue'
+import Section8 from '@/projects/moma/Section8.vue'
+// import Section9 from '@/projects/moma/Section9.vue'
+// import Section10 from '@/projects/moma/Section10.vue'
 
 export default {
   name: 'home',
@@ -144,10 +144,10 @@ export default {
     MobileNav,
     Section1,
     Section2,
-    // Section3,
+    Section3,
     // Section4,
     Section5,
-    // Section6,
+    Section6,
     Section7,
     Section8,
     // Section9,
