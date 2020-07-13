@@ -34,6 +34,7 @@
   &:first-child {
     position: relative;
   }
+  opacity: 0;
 }
 
 .title {
@@ -43,7 +44,7 @@
   right: 0;
   margin: 0 auto;
   opacity: 0;
-  animation: an2 10s 6s ease-in-out infinite;
+  animation: title 20s 8s ease-in-out  forwards;
 }
 
 .logo {
@@ -53,12 +54,67 @@
   right: 0;
   margin: 0 auto;
   opacity: 0;
-  animation: an2 10s .5s ease-in-out infinite;
+  animation: logo 20s 2s ease-in-out  forwards;
 }
 
+.bg1 {
+  animation: an1 2s 7s ease-in-out  forwards;
+    opacity: 0;
+    transform: scaleY(0.8);
+  transform-origin: 50% 0;
+  transform: scaleY(0.8);
+}
 .bg2 {
-  animation: an1 10s 0s ease-in-out infinite;
+  animation: an2 20s 1s ease-in-out  forwards;
   opacity: 0;
+  transform-origin: 50% 0;
+  transform: scaleY(0.8);
+}
+@keyframes an1 {
+ /* 0% {
+    opacity: 0;
+    transform: scaleY(0.8);
+  }*/
+
+  to {
+    opacity: 1;
+    transform:  scaleY(1);
+  }
+
+/*
+  60% {
+    opacity: 0;
+    transform: scaleY(1);
+  }
+
+  100% {
+    opacity: 0;
+  }*/
+}
+@keyframes an2 {
+  0% {
+    opacity: 0;
+    transform: scaleY(0.7);
+  }
+
+  5% {
+    opacity: 1;
+    transform:  scaleY(0.8);
+  }
+
+  30% {
+    opacity: 1;
+    transform:  scaleY(0.8);
+  }
+
+  35% {
+    opacity: 0;
+    transform: scaleY(1);
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 // .bg1 {
@@ -66,7 +122,7 @@
 //   opacity: 0;
 // }
 
-@keyframes an2 {
+@keyframes logo {
   0% {
     opacity: 0;
   }
@@ -75,11 +131,11 @@
     opacity: 1;
   }
 
-  50% {
+  20% {
     opacity: 1;
   }
 
-  55% {
+  25% {
     opacity: 0;
   }
 
@@ -88,31 +144,28 @@
   }
 }
 
-@keyframes an1 {
+@keyframes title {
   0% {
     opacity: 0;
-    transform: scaleY(2);
   }
 
   5% {
     opacity: 1;
-    transform: scaleY(1);
   }
 
-  50% {
+  40% {
     opacity: 1;
-    transform: scaleY(1);
   }
 
-  55% {
+  45% {
     opacity: 0;
-    transform: scaleY(2);
   }
 
   100% {
     opacity: 0;
   }
 }
+
 
 @media only screen and (max-width: 1440px) {
   .bg-img {

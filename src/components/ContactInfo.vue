@@ -139,6 +139,7 @@ export default {
   position: relative;
   overflow: hidden;
 font-weight: 600;
+border-radius: 15px;
   &.half {
     width: 49%;
   }
@@ -178,11 +179,26 @@ font-weight: 600;
     width: 90%;
     left: 140%
     }
+    &:last-child{
+    border-radius:0 15px 15px 0;
+  color: $contact_btn_bg;
+  background:$contact_btn_color;
+
+  &:hover {
+    background:$contact_btn_bg;
+    color: $contact_btn_color;
+  svg {
+    color: $contact_btn_color;}
+    }
+  svg {
+    color: $contact_btn_bg;}
+    }
 }
 .address {
   width: 600px;
   height: 60px;
-  background: #fff;
+  background: #eee;
+    border-radius:15px 0 0 15px;
   //box-shadow: $contact_btn_border;
 }
 .google-btn {
@@ -259,6 +275,8 @@ font-weight: 600;
         margin-left: 1.5em;
       }
     }
+    &:last-child{
+    border-radius:0 0 15px 15px;}
   }
 
   .info {
@@ -285,6 +303,7 @@ font-weight: 600;
     width: 280px;
     padding: 0 1em;
     text-align: justify;
+    border-radius: 15px 15px 0 0;
   }
 }
 

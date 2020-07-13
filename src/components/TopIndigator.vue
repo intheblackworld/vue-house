@@ -52,7 +52,7 @@
   transition: all .3s;
 
   &.white {
-    background-color: #ccc;
+    background-color: #0f1e3ccc;
   }
   .list-indigator {
     position: relative;

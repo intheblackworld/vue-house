@@ -62,7 +62,7 @@ export default {
 }
 
 .item {
-  font-size: 16px;
+  font-size: 15px;
   margin-bottom: 30px;
   margin-right: 160px;
   width: 260px;
@@ -78,17 +78,15 @@ export default {
   }
 
   .label {
-    font-size: 16px;
     color: $house_label_color;
     margin-bottom: 0;
-    margin-right: 20px;
+    margin-right: 1.1em;
     white-space: nowrap;
     //font-family: "Noto Sans TC";
     font-weight:800;
   }
 
   .desc {
-    font-size: 15px;
     font-weight:500;
     text-align: left;
     line-height: 1.4;
@@ -116,6 +114,8 @@ export default {
     height: auto;
     margin-left: 20px;
     white-space: normal;
+    &:nth-child(10){transform: scaleX(0.95);transform-origin: 0 0;
+  }
     &:last-child{
   .desc{
     font-size: 14px;

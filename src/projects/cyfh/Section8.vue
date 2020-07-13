@@ -86,12 +86,15 @@
 }
 
 .swiper-container {
-  width: size(961);
+  width:916px;
+  max-width: 90%;
   margin: 0 auto;
+  img{width: 100%;}
 }
 
 .text-row {
-  width: size(970);
+  width:916px;
+  max-width: 90%; align-items:stretch;
   margin: 30px auto 0;
 }
 
@@ -105,10 +108,11 @@
   text-align: left;
   color: #000000;
   white-space: nowrap;
+  margin:size(-3) 0  size(10) 0;
 }
 
 .subtitle {
-  font-size: size(30);
+  font-size: size(28);
   font-weight: bold;
   letter-spacing: 8.28px;
   font-stretch: normal;
@@ -119,7 +123,7 @@
 }
 
 .desc {
-  width: size(520);
+  max-width: 520px;
   font-size: size(17);
   font-weight: normal;
   font-stretch: normal;
@@ -128,6 +132,7 @@
   letter-spacing: 1.36px;
   text-align: left;
   color: #4d4d4d;
+  margin-left: 30px;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -195,9 +200,9 @@
     font-style: normal;
     line-height: 2.02;
     letter-spacing: 1.36px;
-    text-align: left;
+    text-align: justify;
     color: #4d4d4d;
-    margin-bottom: 25px;
+    margin:0 0 25px 0;
   }
 }
 </style>

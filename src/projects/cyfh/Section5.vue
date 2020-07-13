@@ -17,7 +17,7 @@
         class="title absolute"
         id="section5"
         data-aos="fade" data-aos-delay="400"
-      >全陽深耕40載</h3>
+      >全陽深耕<span>40</span>載</h3>
       <h3 class="subtitle absolute" data-aos="fade" data-aos-delay="400">打造更值得您引以為傲的士林</h3>
       <hr class="divide absolute" data-aos="fade" data-aos-delay="400">
       <div
@@ -97,7 +97,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: normal;
+  letter-spacing: 0.05em;
   color: #ffffff;
   left: 0;
   right: 0;
@@ -105,11 +105,13 @@
   display: block;
   text-align: center;
   top: size(700 + 400);
+ span{font-family:serif; font-size:1.1em;
+  font-weight: 600;}
 }
 
 .subtitle {
   font-size: size(30);
-  font-weight: bold;
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.46;
@@ -137,11 +139,11 @@
 
 .desc {
   font-size: size(19);
-  font-weight: normal;
+  font-weight: 300;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.75;
-  letter-spacing: 2.39px;
+  line-height: 1.8;
+  letter-spacing: 0.3em;
   text-align: center;
   color: #ffffff;
   left: 0;
@@ -149,7 +151,7 @@
   margin: 0 auto;
   display: block;
   text-align: center;
-  top: size(880 + 400);
+  top: size(880 + 390);
 }
 
 .img {
@@ -239,20 +241,19 @@
   }
 
   .desc {
-    font-size: size-m(15);
+    font-size: size-m(14.5);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.73;
-    letter-spacing: 1.5px;
+    letter-spacing:0.1em;
     text-align: center;
     color: #ffffff;
     left: 0;
     right: 0;
     margin: 0 auto;
     display: block;
-    text-align: center;
-    width: size-m(300);
+    width: size-m(310);
     top: size-m(450 + 250);
   }
 

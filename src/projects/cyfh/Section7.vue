@@ -63,7 +63,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: normal;
+  letter-spacing: 0.05em;
   color: #ffffff;
   left: 0;
   right: 0;
@@ -75,7 +75,7 @@
 
 .subtitle {
   font-size: size(27);
-  font-weight: bold;
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.46;
@@ -103,11 +103,11 @@
 
 .desc {
   font-size: size(19);
-  font-weight: normal;
+  font-weight: 300;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.75;
-  letter-spacing: 2.39px;
+  line-height: 1.8;
+  letter-spacing: 0.3em;
   text-align: center;
   color: #ffffff;
   left: 0;
@@ -115,7 +115,7 @@
   margin: 0 auto;
   display: block;
   text-align: center;
-  top: size(180 + 0);
+  top: size(170 + 0);
 }
 
 .s-title {
@@ -132,7 +132,7 @@
   letter-spacing: 5.89px;
   left: size(424);
   top: size(180 + 450);
-  text-shadow: 0 1px 5px #000;
+  text-shadow: 0 1px 5px #0369;
 }
 
 .s-subtitle {
@@ -146,7 +146,7 @@
   color: #ffffff;
   left: size(424);
   top: size(180 + 550);
-  text-shadow: 0 1px 5px #000;
+  text-shadow: 0 1px 5px #0369;
 }
 
 .s-divide {
@@ -155,7 +155,7 @@
   background-color: #fff;
   left: size(404);
   top: size(180 + 630);
-  box-shadow: 0 1px 3px 0px #000;
+  box-shadow: 0 1px 5px 0px #0369;
 }
 
 .s-desc {
@@ -166,10 +166,11 @@
   font-style: normal;
   line-height: 2.07;
   letter-spacing: 2.96px;
-  text-align: left;
+  text-align: justify;
   color: #ffffff;
   left: size(424);
   top: size(180 + 680);
+  text-shadow: 0 1px 5px #0369;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -322,7 +323,7 @@
     font-style: normal;
     line-height: 1.73;
     letter-spacing: 2.4px;
-    text-align: left;
+    text-align: justify;
     left: 0;
     right: 0;
     margin: 0 auto;
