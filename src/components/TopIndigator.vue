@@ -151,7 +151,7 @@
       flex-wrap: wrap;
       position: absolute;
       top: size-m(10);
-      right: 0;
+      right: -5px;
 
       &.active {
         width: 45px;
@@ -161,7 +161,7 @@
     .close {
       width: 1.5em;
       height: 1.5em;
-      margin: 0px size-m(3) 10px;
+      margin: 0px size-m(3) 30px;
     }
     .dot {
       width: 2em;
