@@ -4,7 +4,7 @@
       :class="`logo ${viewIndex > 1 ? 'visible' : ''}`"
       src="@/projects/moma/s1/logo.png"
       alt
-      v-scroll-to="{ element: `#section1` }"
+      v-scroll-to="{ element: `#section1`}"
     />
     <div class="list-indigator active" v-if="!isExtend">
       <div
@@ -155,7 +155,7 @@
       flex-wrap: wrap;
       position: absolute;
       top: size-m(10);
-      right: 0;
+      right: -5px;
 
       &.active {
         width: 45px;
@@ -165,7 +165,7 @@
     .close {
       width: 1.5em;
       height: 1.5em;
-      margin: 0px size-m(3) 10px;
+      margin: 10px size-m(3) 30px;
     }
     .dot {
       width: 2em;

@@ -43,9 +43,6 @@
         </swiper-slide>
       </swiper>
     </div>
-    <div v-if="isMobile">
-
-    </div>
   </div>
 </template>
 <style lang="scss" scoped>
