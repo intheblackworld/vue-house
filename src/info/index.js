@@ -7,7 +7,7 @@ export default {
   phone: '02-2832-3288',
   fbLink: 'https://www.facebook.com/全陽豐會-104138187891229/',
   fbMessage: 'http://m.me/全陽豐會-104138187891229/',
-  caseName: '全陽豐會',
+  caseName: '美術皇居',
   indigatorLength: 10,
 
   houseInfos: [
