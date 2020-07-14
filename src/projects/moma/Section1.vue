@@ -2,14 +2,14 @@
   <div class="relative">
     <!-- https://codepen.io/ciprian/pen/WqLwvE -->
     <!-- https://codepen.io/dudleystorey/pen/PZyMrd -->
-    <iframe
+    <!-- <iframe
       v-if="!isMobile"
       ref
       class="video-bg"
       src="https://www.youtube.com/embed/eflYegCFh4M?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=eflYegCFh4M"
       frameborder="0"
       allowfullscreen
-    ></iframe>
+    ></iframe> -->
     <!-- <img
         src="./s1/bg_video.jpg"
         alt=""
@@ -28,7 +28,7 @@
     >
     <div
       :id="`youtube-player-${id}`"
-      v-if="isMobile"
+      ref="player"
     ></div>
     <div class="video-bg"></div>
   </div>
@@ -130,6 +130,7 @@ export default {
 
   methods: {
     onPlayerReady(event) {
+      console.log('load')
       event.target.playVideo()
     },
     loadVideo() {
@@ -152,6 +153,7 @@ export default {
           onStateChange: this.onPlayerStateChange,
         },
       })
+      this.$refs.player.click()
     },
 
     onPlayerStateChange(e) {
@@ -161,23 +163,21 @@ export default {
     },
   },
 
-  created() {},
+  created() {
+    const tag = document.createElement('script')
+    tag.src = 'https://www.youtube.com/iframe_api'
+    const firstScriptTag = document.getElementsByTagName('script')[0]
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
+  },
 
   mounted() {
-    if (this.isMobile) {
+    setTimeout(() => {
       if (!window.YT) {
-        const tag = document.createElement('script')
-        tag.src = 'https://www.youtube.com/iframe_api'
-
-        // onYouTubeIframeAPIReady will load the video after the script is loaded
         window.onYouTubeIframeAPIReady = this.loadVideo
-
-        const firstScriptTag = document.getElementsByTagName('script')[0]
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
       } else {
         this.loadVideo()
       }
-    }
+    }, 500)
   },
 
   computed: {},

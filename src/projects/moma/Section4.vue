@@ -210,23 +210,23 @@ export default {
     },
   },
 
-  created() {},
+  created() {
+    // const tag = document.createElement('script')
+    // tag.src = 'https://www.youtube.com/iframe_api'
+    // const firstScriptTag = document.getElementsByTagName('script')[0]
+    // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
+  },
 
   mounted() {
-    if (this.isMobile) {
-      if (!window.YT) {
-        const tag = document.createElement('script')
-        tag.src = 'https://www.youtube.com/iframe_api'
-
-        // onYouTubeIframeAPIReady will load the video after the script is loaded
-        window.onYouTubeIframeAPIReady = this.loadVideo
-
-        const firstScriptTag = document.getElementsByTagName('script')[0]
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
-      } else {
-        this.loadVideo()
+    setTimeout(() => {
+      if (this.isMobile) {
+        if (!window.YT) {
+          window.onYouTubeIframeAPIReady = this.loadVideo
+        } else {
+          this.loadVideo()
+        }
       }
-    }
+    }, 500)
   },
 
   computed: {},
