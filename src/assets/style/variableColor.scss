@@ -24,11 +24,16 @@ $mask_bg_image: linear-gradient(
 $mask_color: #333;
 $mask_icon_color: #c82514;
 
+/* VideoSection */
 $video_section_bg: url('~@/projects/sdj/s2/area2_bg.jpg');
 $video_section_bg_m: url('~@/projects/sdj/s2/area2_bg_mobile@2x.jpg');
-$video_section_title_color: #fff;
+$video_section_title_color: #ffee99;
 $video_section_item_border: #ccc;
 $video_section_item_color: #fff;
+$video_section_item_hover_color: #fff;
+$video_section_item_bg_hover: rgba(255, 255, 255, 0.1);
+$video_section_btn_bg: rgba(255, 255, 255, 0.1);
+$video_section_btn_hover_bg: rgba(255, 255, 255, 0.5);
 
 /* contactSection */
 // order

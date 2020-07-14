@@ -1,234 +1,130 @@
 <template>
-  <div class="relative">
-    <div v-if="!isMobile">
-      <div
-        class="title absolute"
-        data-aos="fade-up"
-        data-aos-delay="300"
+  <div class="section5">
+    <div class="bg">
+      <swiper
+        :options="swiperOption"
+        ref="mySwiper"
+        swiper-no-swiping
       >
-        American Street
-      </div>
-      <div
-        class="desc absolute"
-        data-aos="fade-up"
-        data-aos-delay="400"
-      >
-        - 美式街廓 -
-      </div>
-      <div
-        class="img-title absolute"
-        data-aos="fade"
-        data-aos-delay="600"
-      >
-        低密度開發重劃區 衣食育樂<br />機能一次到位
-      </div>
-      <div
-        class="img-desc absolute"
-        data-aos="fade-up"
-        data-aos-delay="800"
-      >
-        大竹重劃區因交通優勢，發展迅速，商家林立<br />
-        有麥當勞、康是美、全聯等知名連鎖店進駐<br />
-        亦有郵局、圖書館、市民運動中心…<br />
-        7-11便利商店近在咫尺，生活機能優越。
-      </div>
-      <img
-        v-lazy="require('./s5/img1.jpg')"
-        alt=""
-        class="img1 absolute"
-      >
-      <div class="img-slide">
-        <img
-          v-for="(src, index) in img_list"
-          :key="src"
-          :src="src"
-          alt=""
-          :class="`slide-img ${index === slideIndex ? 'show' : ''}`"
+        <swiper-slide
+          v-for="(slide, index) in slideList"
+          :index="index"
+          :key="slide.img"
+          class="item"
         >
-      </div>
-
-    </div>
-    <div
-      v-else
-      class="relative m-bg"
-    >
-      <div
-        class="title absolute"
-        data-aos="fade-up"
-        data-aos-delay="300"
-      >
-        American Street
-      </div>
-      <div
-        class="desc absolute"
-        data-aos="fade-up"
-        data-aos-delay="400"
-      >
-        - 美式街廓 -
-      </div>
-      <div
-        class="img-title absolute"
-        data-aos="fade"
-        data-aos-delay="600"
-      >
-        低密度開發重劃區 衣食育樂<br />機能一次到位
-      </div>
-      <div
-        class="img-desc absolute"
-        data-aos="fade-up"
-        data-aos-delay="800"
-      >
-        大竹重劃區因交通優勢，發展迅速，商家林立<br />
-        有麥當勞、康是美、全聯等知名連鎖店進駐<br />
-        亦有郵局、圖書館、市民運動中心…<br />
-        7-11便利商店近在咫尺，生活機能優越。
-      </div>
-      <img
-        v-lazy="require('./s5/img1.jpg')"
-        alt=""
-        class="img absolute"
-        data-aos="fade"
-        data-aos-delay="1000"
-      >
-      <div
-        class="img-slide"
-        data-aos="fade"
-        data-aos-delay="800"
-      >
-        <img
-          v-for="(src, index) in img_list"
-          :key="src"
-          :src="src"
-          alt=""
-          :class="`slide-img ${index === slideIndex ? 'show' : ''}`"
-        >
+          <img
+            :src="slide.src"
+            :class="`item-img`"
+          />
+        </swiper-slide>
+        <div
+          class="swiper-pagination"
+          slot="pagination"
+        ></div>
+      </swiper>
+      <div class="title absolute">大師剪裁，致敬百貨時代！<br />
+        迎接北高新百貨時代<br />
+        百年時尚精品就是「上東京」</div>
+      <div class="hr absolute"></div>
+      <div class="desc absolute">恰恰好的立體感線條，讓你想起CHANEL經典手拿包<br />
+        同樣精心計算的弧度與隔柵俐落感<br />
+        流露出高雅品味，又彷彿看見東京阿曼酒店<br />
+        那繁複卻迷人的線條演出…
       </div>
     </div>
   </div>
 </template>
-<style lang="scss" scoped>
-@import '@/assets/style/function.scss';
-.relative {
-  height:  size(1080);
-  overflow: hidden;
-  background-color: #fff;
-}
-.bg-img {
-  width: 100vw;
- // height: 100vh;
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  object-fit: cover;
 
-  &:nth-child(1) {
-    position: relative;
+<style lang="scss" scoped>
+@import '~@/assets/style/function.scss';
+
+.bg {
+  position: relative;
+  height: size(1080);
+  overflow: hidden;
+
+
+  &::v-deep {
+    .swiper-pagination {
+      width: 140px;
+      left: auto;
+      bottom: 20px;
+      right: 20px;
+    }
+    .swiper-pagination-bullet {
+      width: 21px;
+      height: 21px;
+      box-shadow: 0 0 0 1px #fff;
+      margin: 0 8px;
+      background-color: transparent;
+      opacity: 1 !important;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: #000;
+    }
   }
 }
+
+// .content {
+//   position: absolute;
+//   z-index: 10;
+// }
 
 .title {
-  font-family: TrajanPro;
-  font-size: size(60);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.85;
-  letter-spacing: -2.37px;
-  text-align: left;
-  color: #808080;
-  top: size(72);
-  left: size(1100);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  white-space: nowrap;
-
-  &::after {
-    content: '';
-    display: block;
-    width: 2000px;
-    height: 3px;
-    margin-left: size(20);
-    margin-top: -10px;
-    background-color: #312219;
-  }
-}
-
-.desc {
-  font-size: size(44);
+  font-size: size(50);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.85;
-  letter-spacing: 1.76px;
-  text-align: left;
-  color: #231815;
-  top: size(145);
-  right: size(570);
+  line-height: 1.5;
+  letter-spacing: 5px;
+  text-align: center;
+  color: #ffffff;
+  width: size(710);
+  top: size(274);
+  right: size(144);
+  white-space: nowrap;
+  z-index: 10;
 }
 
-.img-title {
-  font-size: size(35);
-  font-weight: 500;
+.hr {
+  width: size(589);
+  top: size(515);
+  right: size(205);
+  height: 1px;
+  background-color: #fff;
+  z-index: 10;
+}
+
+.desc {
+  font-size: size(28);
+  font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.39;
+  line-height: 1.81;
   letter-spacing: normal;
-  text-align: left;
-  color: #231815;
-  top: size(281);
-  right: size(314);
+  text-align: center;
+  color: #ffffff;
+  z-index: 10;
+  width: size(730);
+  white-space: nowrap;
+  top: size(550);
+  right: size(135);
 }
 
-.img-desc {
-  font-size: size(20);
-  font-weight: 400;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.41;
-  letter-spacing: 1.2px;
-  text-align: left;
-  color: #231815;
-  top: size(413);
-  right: size(310);
-}
-.img1 {
-  width:55%;
+.swiper-container {
+  width: 100vw;
   height: size(1080);
-  object-fit: cover;
-  top: 0;
+  overflow: hidden;
+  position: absolute;
   left: 0;
-}
+  top: 0;
 
-.img-slide {
-  position: absolute;
-  width: size(545);
-  height: size(370);
-  top: size(606);
-  right: size(213);
-}
-.slide-img {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: all 0.3s;
-  &.show {
-    opacity: 1;
+  img {
+    display: block;
   }
 }
 
-// .img2 {
-//   height: size(1080);
-//   top: 0;
-//   right: 0;
-// }
-@media only screen and (max-width: 1440px) {
-  .bg-img {
-  }
-}
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
     height: 100vh;
@@ -238,116 +134,80 @@
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .bg {
+  }
 }
 
 @media screen and (max-width: 767px) {
-  .relative {
-    height: auto;
-  }
-  .m-bg {
-    height: size-m(772);
-  }
-  .bg-img {
-    height: auto;
-    object-fit: cover;
-  }
-
-  .title {
-    font-size: size-m(26);
-    top: size-m(36);
-    left: size-m(30);
-
-    &::before {
-      content: '';
-      display: block;
-      width: size-m(51);
-      left: size-m(-61);
-      position: absolute;
-      height: 2px;
-      background-color: #312219;
-    }
-
-    &::after {
-      content: '';
-      display: block;
-      width: 2000px;
-      height: 2px;
-      margin-left: size-m(20);
-      background-color: #312219;
-    }
-  }
-
-  .desc {
-    font-size: size-m(17);
-    top: size-m(69);
-    left: size-m(30);
-  }
-
-  .img-title {
-    width: size-m(270);
-    font-size: size-m(18);
-    top: size-m(125);
-    left: size-m(30);
-  }
-
-  .img-desc {
-    width: size-m(321);
-    font-size: size-m(13);
-    top: size-m(190);
-    left: size-m(30);
-  }
-
-  .img-slide {
-    position: absolute;
-    width: size-m(313);
-    height: size-m(213);
-    top: size-m(280);
-    left: size-m(30);
-  }
-
-  .img {
-    width: 100vw;
-    height: size-m(243);
-    position: absolute;
-    left: 0;
-    bottom: 0;
+  .bg {
   }
 }
 </style>
+
 <script>
 // @ is an alias to /src
-import { isMobile } from '@/utils'
+import { isMobile, isTablet } from '@/utils'
+import slider from '@/mixins/slider.js'
+import 'swiper/dist/css/swiper.css'
+
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'section5',
+  mixins: [slider],
 
-  components: {},
+  components: {
+    swiper,
+    swiperSlide,
+  },
+
   data() {
     return {
       isMobile,
-      slideIndex: 1,
-      img_list: [
-        require('./s5/img2-1.jpg'),
-        require('./s5/img2-2.jpg'),
-        require('./s5/img2-3.jpg'),
+      swiperOption: {
+        slidesPerView: isMobile ? 1 : 3,
+        spaceBetween: isTablet ? 20 : 30,
+        slidesPerColumn: isMobile ? 1 : 2,
+        // allowSlidePrev: isMobile ? true : false,
+        // allowSlideNext: isMobile ? true : false,
+        // centeredSlides: true,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
+        effect: 'fade',
+        // loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      },
+      slideList: [
+        {
+          src: isMobile
+            ? require('./s5/area5_day_mobile.png')
+            : require('./s5/area5_day.jpg'),
+          // title: '橫空出世',
+          // subtitle: 'Romanesque Style',
+          // desc:
+          //   '4座羅馬神殿式拱穹＋1座富麗輝煌的圓形穹頂<br />如同偉大作家歌德所說的<br />騰空而起，像崇高壯觀、濃蔭廣覆的建築之樹',
+        },
+        {
+          src: isMobile
+            ? require('./s5/area5_night_mobile.png')
+            : require('./s5/area5_night.jpg'),
+          // title: '向榮冠冕的萬丈城市力',
+          // subtitle: 'Crown City',
+          // desc:
+          //   '高仰度28F摩天視界、4棟口字型高樓層地標式建築，可眺望台北城市無敵豪景，北美館、圓山飯店、台北101…爭藏地標、盡收眼底，壯麗開卷般的生活尺度，成就景觀無敵的眼界奢華，更能放心追逐您心之所向的視界巔峰。',
+        },
       ],
     }
   },
-
   methods: {},
 
-  created() {},
-
-  mounted() {
-    setInterval(() => {
-      if (this.slideIndex === 2) {
-        this.slideIndex = 0
-      } else {
-        this.slideIndex = this.slideIndex + 1
-      }
-    }, 3000)
+  created() {
+    // @click="showIframeDialog(slide.link)"
   },
-
-  computed: {},
 }
 </script>

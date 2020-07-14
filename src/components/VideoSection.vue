@@ -2,14 +2,6 @@
   <div class="section3">
     <div class="bg fullscreen" v-if="!isMobile">
       <div class="container">
-        <div class="content">
-          <h3 class="title">{{title}}</h3>
-          <div class="list">
-            <div :class="`item ${slideIndex == index ? 'active' : ''}`" v-for="(item, index) in slideList" :key="item.title">
-              <div class="item-content" @click="slideIndex = index">{{item.title}}</div>
-            </div>
-          </div>
-        </div>
         <div class="video-container">
           <div
             :class="`video-item ${slideIndex == sIndex ? 'active' : ''}`"
@@ -18,6 +10,14 @@
           >
             <img :src="slide.img" alt class="video-bg" />
             <img :src="playBtn" alt class="video-btn" @click="openDialog" />
+          </div>
+        </div>
+        <div class="content">
+          <h3 class="title">{{title}}</h3>
+          <div class="list">
+            <div :class="`item ${slideIndex == index ? 'active' : ''}`" v-for="(item, index) in slideList" :key="item.title">
+              <div class="item-content" @click="slideIndex = index">{{item.title}}</div>
+            </div>
           </div>
         </div>
       </div>
@@ -88,7 +88,7 @@
   padding: 60px 0 0 0;
 }
 .container {
-  width: calc(100vw * 1300 / 1920);
+  width: calc(100vw * 1500 / 1920);
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -96,7 +96,7 @@
 }
 
 .content {
-  width: calc(100vw * 400 / 1920);
+  width: calc(100vw * 380 / 1920);
   font-size: calc(100vw * 26 / 1920);
   display: flex;
   flex-direction: column;
@@ -134,6 +134,7 @@
       color: $video_section_item_color;
       width: 100%;
       height: 100%;
+      height: calc(100vw * 166 / 1920);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -154,21 +155,23 @@
 }
 
 .video-container {
-  width: calc(100vw * 1080 / 1920);
-  height: calc(100vw * 525 / 1920);
+  width: calc(100vw * 1040 / 1920);
+  height: calc(100vw * 810 / 1920);
   position: relative;
-  margin: 0 0 0 calc(100vw * 20 / 1920);
+  // margin: 0 0 0 calc(100vw * 40 / 1920);
   &::before {
     content: '';
     width: 100%;
     height: 100%;
-    border: 5px solid $video_section_item_border;
+    border: 1px solid $video_section_item_border;
     position: absolute;
-    top: calc(100vw * 30 / 1920);
-    left: calc(100vw * 30 / 1920);
+    top: calc(100vw * 20 / 1920);
+    left: calc(100vw * 20 / 1920);
   }
   .video-item {
     width: 100%;
+    height: 100%;
+    background-color: #000;
     position: absolute;
     top: 0;
     left: 0;
@@ -186,6 +189,14 @@
     }
 
     .video-btn {
+      width: 100px;
+      left: 0;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      position: absolute;
+      margin: 0 auto;
+      display: block;
       cursor: pointer;
       z-index: 2;
     }
