@@ -1,14 +1,17 @@
 <template>
   <div class="relative">
     <div v-if="!isMobile">
-      <img src="./s1/bg1.png" alt="" class="bg-img bg1">
-      <img src="./s1/bg1.gif" alt="" class="bg-img bg1 gif">
+      <div class="bg1"><img src="./s1/bg1.png" alt="" class="bg-img">
+      <img src="./s1/bg1.gif" alt="" class="bg-img gif"></div>
       <img src="./s1/title.png" alt="" class="title absolute">
       <img src="./s1/bg2.png" alt="" class="bg-img bg2">
       <img src="./s1/logo.png" alt="" class="logo absolute">
     </div>
     <div v-if="isMobile">
-      <img src="./mo/1/1.png" alt="" class="bg-img bg1">
+      <div class="bg1">
+      <img src="./mo/1/1.png" alt="" class="bg-img">
+      <img src="./mo/1/bg1.gif" alt="" class="bg-img gif">
+      </div>
       <img src="./s1/title.png" alt="" class="title absolute">
       <img src="./mo/1/2.png" alt="" class="bg-img bg2">
       <img src="./s1/logo.png" alt="" class="logo absolute">
@@ -32,15 +35,15 @@
   top: 0;
   left: 0;
   object-fit: cover;
-  &:first-child {
-    position: relative;
-  }
+ // &:first-child {
+//   position: relative;
+ // }
   opacity: 0;
 }
 
 .title {
   width: size(866);
-  top: size(270);
+  top: size(230);
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -59,16 +62,19 @@
 }
 
 .bg1 {
-  animation: an1 2s 7s ease-in-out  forwards;
+  animation: an1 1s 7s linear  forwards;
     opacity: 0;
+    position: relative;
     transform: scaleY(0.8);
   transform-origin: 50% 0;
   transform: scaleY(0.8);
-  &.gif{
-  top: size(290);}
+  .bg-img:first-child{position: relative;
+    opacity: 1;}
+  .gif{
+  top: size(290); opacity: 1;}
 }
 .bg2 {
-  animation: an2 20s 1s ease-in-out  forwards;
+  animation: an2 20s 1s linear  forwards;
   opacity: 0;
   transform-origin: 50% 0;
   transform: scaleY(0.8);
@@ -188,6 +194,10 @@
     overflow: hidden;
   }
 
+.bg1 {
+  .gif{
+  top:0;}
+}
   .title {
     width: size-m(354);
     top: size-m(180);
