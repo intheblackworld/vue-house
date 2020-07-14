@@ -6,7 +6,7 @@ export default {
   phone: '03-3135533',
   fbLink: 'https://www.facebook.com/豐郡大景-108654404191724',
   fbMessage: 'https://m.me/108654404191724',
-  caseName: '豐郡大景',
+  caseName: '上東京',
   indigatorLength: 10,
 
   houseInfos: [
@@ -20,7 +20,7 @@ export default {
     ['建照號碼', '(103)桃縣工建執照字第會蘆00779-02號'],
   ],
 
-  gtmCode: ['K97QDJM'], // 可放置多個
+  gtmCode: ['NTKG2VP'], // 可放置多個
   recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
