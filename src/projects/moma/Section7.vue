@@ -250,7 +250,7 @@
     right: 0;
     margin: 0 auto;
     display: block;
-    top: size-m(-100 + 160);
+    bottom: size-m(-100 + 160);
     text-shadow: 0 1px 5px #000;
   }
 

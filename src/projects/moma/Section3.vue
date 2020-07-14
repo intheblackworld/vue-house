@@ -81,13 +81,13 @@
 .hr-img {
   width: size(509);
   top: size(419);
-  left: size(92);
+  left:50%;transform: translateX(-50%);
 }
 
 .title {
-  width: 95%;
+  width:100%;
   margin: 0 auto;
-  font-size: size(50);
+  font-size: size(40);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -97,10 +97,12 @@
   color: #ffffff;
   top: size(263);
   white-space: nowrap;
+  transform: scaleX(0.9);
+  transform-origin: center;
 }
 
 .desc {
-  width: size(410);
+  width: size(510);
   font-size: size(24);
   font-weight: normal;
   font-stretch: normal;
@@ -110,7 +112,7 @@
   text-align: left;
   color: #ffffff;
   top: size(459);
-  left: size(152);
+  left: size(82);
 }
 
 .item-img {
@@ -164,7 +166,7 @@
   .hr-img {
     width: 100vw;
     top: size-m(203);
-    left: size-m(0);
+    //left: size-m(0);
   }
 
   .title {
@@ -193,7 +195,7 @@
     text-align: left;
     color: #ffffff;
     top: size-m(232);
-    left: size-m(30);
+    left: 50%;transform: translateX(-50%);
   }
 
   .item-img {

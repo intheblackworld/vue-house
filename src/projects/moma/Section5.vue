@@ -196,7 +196,8 @@
     text-align: left;
     color: #ffffff;
     top: size-m(106);
-    left: size-m(30);
+    //left: size-m(30);
+  left:50%;transform: translateX(-50%);
   }
 
   .item-img {

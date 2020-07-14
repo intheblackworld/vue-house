@@ -413,8 +413,9 @@
     letter-spacing: 12.15px;
     text-align: left;
     color: #1a1311;
-    left: size-m(136);
+   // left: size-m(136);
     top: size-m(144);
+  left:50%;transform: translateX(-50%);
   }
 
   .hr-img {
@@ -425,7 +426,7 @@
   }
 
   .desc {
-    width: size-m(257);
+    width: size-m(300);
     font-size: size-m(15);
     font-weight: normal;
     font-stretch: normal;
@@ -435,7 +436,8 @@
     text-align: left;
     color: #1a1311;
     top: size-m(209);
-    left: size-m(58);
+    //left: size-m(58);
+  left:50%;transform: translateX(-50%);
   }
 
   .item-img {
@@ -513,8 +515,9 @@
     text-align: left;
     color: #ffffff;
     padding: 5px 10px 5px 20px;
-    top: size-m(126);
+    top: auto;
     left: 0;
+    bottom:0;
   }
 
   .section6 {
