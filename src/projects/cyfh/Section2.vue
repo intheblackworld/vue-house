@@ -100,16 +100,16 @@
           </div>
           <div class="desc" data-aos="fade" data-aos-delay="600">孕育士林的口袋之河—雙溪，千百年來潺潺流淌，不舍晝夜，靜靜流動的歲月裡，無數人在這塊土地上留下生命的印記！「全陽豐會」在這條中山北路與雙溪十字交會的地段，一期一會、知音相遇。</div>
         </div>
-        <div class="flex-ac flex-jb" data-aos="fade" data-aos-delay="700">
-          <img
-            src="./mo/2/img.jpg"
-            alt=""
-            class="img1"
-          >
           <img
             src="./s2/road.png"
             alt=""
             class="road"
+          >
+        <div class="flex-ac flex-jb" data-aos="fade" data-aos-delay="700">
+          <img
+            src="./s2/img.jpg"
+            alt=""
+            class="img1"
           >
         </div>
       </div>
@@ -207,7 +207,7 @@
 }
 .swiper-pagination{
     font-size: 18px;
-    top:0.4em;text-align: right;padding: 0 2.2em 0 0;
+    bottom:0.4em;text-align: center;padding: 0;
     left: 0;}
 
 // .bg-img {
@@ -328,10 +328,11 @@
   
 
 .swiper-pagination{
+    top:size_m(5);
     font-size:size_m(13)}
 
   .row {
-    padding-top: 100px;
+    padding-top:size_m(60);
     padding-bottom: 0;
     width: 100vw;
   }
@@ -383,15 +384,16 @@
   }
 
   .img1 {
-    width: size-m(170);
-    height: size-m(227);
+    width:100%;
+    height:size-m(200);
     object-fit: cover;
     object-position: center;
+    margin:size-m(50) 0 0 0;
   }
 
   .road {
-    width: size-m(375 - 190);
-    height: size-m(227);
+    width: size-m(250);
+   // height: size-m(227);
     object-fit: contain;
     object-position: center;
   }
