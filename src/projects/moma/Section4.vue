@@ -2,19 +2,19 @@
   <div class="relative">
     <!-- https://codepen.io/ciprian/pen/WqLwvE -->
     <!-- https://codepen.io/dudleystorey/pen/PZyMrd -->
-    <iframe
+    <!-- <iframe
       v-if="!isMobile"
       class="video-bg"
       src="https://www.youtube.com/embed/pagQjsWtntM?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=pagQjsWtntM"
       frameborder="0"
       allowfullscreen
-    ></iframe>
+    ></iframe> -->
     <h3 class="title absolute">俯瞰萬家燈光 高空視覺饗宴！</h3>
     <h3 class="item flex-c absolute item1">全台最長50米空中泳池會館</h3>
     <h3 class="item flex-c absolute item2">擎天29層美國EPS制震系統</h3>
     <div
       :id="`youtube-player-${id}`"
-      v-if="isMobile"
+      ref="player"
     ></div>
     <div class="video-bg"></div>
   </div>
@@ -211,20 +211,18 @@ export default {
   },
 
   created() {
-    // const tag = document.createElement('script')
-    // tag.src = 'https://www.youtube.com/iframe_api'
-    // const firstScriptTag = document.getElementsByTagName('script')[0]
-    // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
+    const tag = document.createElement('script')
+    tag.src = 'https://www.youtube.com/iframe_api'
+    const firstScriptTag = document.getElementsByTagName('script')[0]
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
   },
 
   mounted() {
     setTimeout(() => {
-      if (this.isMobile) {
-        if (!window.YT) {
-          window.onYouTubeIframeAPIReady = this.loadVideo
-        } else {
-          this.loadVideo()
-        }
+      if (!window.YT) {
+        window.onYouTubeIframeAPIReady = this.loadVideo
+      } else {
+        this.loadVideo()
       }
     }, 500)
   },

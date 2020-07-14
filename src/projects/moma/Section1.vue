@@ -10,12 +10,12 @@
       frameborder="0"
       allowfullscreen
     ></iframe> -->
-    <!-- <img
-        src="./s1/bg_video.jpg"
-        alt=""
-        class="video-bg"
-        v-if="isMobile"
-      > -->
+    <img
+      src="./s1/bg_video.jpg"
+      alt=""
+      class="video-bg"
+      v-if="isMobile"
+    >
     <img
       src="./s1/logo.png"
       alt=""
@@ -27,10 +27,27 @@
       class="txt absolute"
     >
     <div
+      class="play-btn"
+      @click="isDialog = true"
+    >PLAY FULL MOVIE</div>
+    <div
+      v-if="!isMobile"
       :id="`youtube-player-${id}`"
       ref="player"
     ></div>
-    <div class="video-bg"></div>
+    <div
+      class="video"
+      v-if="isDialog && isMobile"
+    >
+      <iframe
+        title="youtube"
+        src="https://www.youtube.com/embed/eflYegCFh4M"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen=""
+      ></iframe>
+      <img class="close" @click="isDialog = false" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABABAMAAABYR2ztAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAhUExURUdwTP////Pw8PLx8fLw8PLw8PPx8fHx8fLy8vLw8PXr6/Zeio0AAAALdFJOUwADRMS156s3KfgaAiHMOAAAAXtJREFUSMeFlr9qwzAQxnVZajoVLRLZTEMfoBAadywIt11t/AAGETqGhOzGoS/g0r20D1qRxLYsS/oy5Y/uk+/ud/eFnRoWecmcfTzdhX+n/Tf763bhAyJ7Z4l+DErQfdkw+izS0AGutiZY6JeABK2q8/XHMo0JhCXooUqvb/wSXNfXwIVXwjxBOmj5JLiqhzCh5+WkQzVG0bGYlVOscytIvG0cCWq/JjGn7md6YJlNQ5LsefKZfjsHA+cL6QQwdpvZidDevZKx1uZCZJtZ3okauaBVOQeRDmM5uco9tR+b2nPgSgxcjG1023uRGDiYA3KRCAn0EkGBXkKoOjgHC8OFna6nFsVOrvPILBou2tgoGkw6TxemXHTRdWA4iB+AV6CHNGk2UkXS5DqPFgqWGjULthsBA5GzoS19tUDYSzA4Zpzjo7dEw4vGX4IFYjiIryC0xHxr8MbGHy1SuIo5WObQDjgwFApZEnF9tiRkatAWobFCa4bmDv4evP4DsmNwZSA8CfQAAAAASUVORK5CYII=" />
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -85,7 +102,7 @@
   }
 
   .video-bg {
-    width: 100vw;
+    width: size-m(1190);
     height: size-m(667);
     position: absolute;
     top: 0;
@@ -93,7 +110,6 @@
     pointer-events: none;
     object-fit: cover;
     object-position: center;
-    z-index: 2;
   }
 
   .logo {
@@ -112,6 +128,55 @@
     margin: 0 auto;
     bottom: size-m(47);
   }
+
+  .play-btn {
+    position: absolute;
+    top: size-m(309);
+    left: size-m(475);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: size-m(245);
+    height: size-m(50);
+    border-radius: 25px / 25px;
+    border: 1px solid #fff;
+    cursor: pointer;
+    color: #fff;
+    text-shadow: 0 0 1px #000;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
+
+  .video {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: size-m(0);
+    top: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+    transition: opacity 0.5s;
+
+    iframe {
+      width: 100vw;
+      height: size-m(275);
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      top: 50%;
+      transform: translateY(-50%);
+      position: absolute;
+    }
+
+    .close {
+      position: absolute;
+      cursor: pointer;
+      right: 15px;
+      top: 50px;
+      width: size-m(30);
+    }
+  }
 }
 </style>
 <script>
@@ -125,6 +190,7 @@ export default {
       isMobile,
       player: '',
       id: 'eflYegCFh4M',
+      isDialog: false,
     }
   },
 
@@ -153,7 +219,6 @@ export default {
           onStateChange: this.onPlayerStateChange,
         },
       })
-      this.$refs.player.click()
     },
 
     onPlayerStateChange(e) {
@@ -172,10 +237,12 @@ export default {
 
   mounted() {
     setTimeout(() => {
-      if (!window.YT) {
-        window.onYouTubeIframeAPIReady = this.loadVideo
-      } else {
-        this.loadVideo()
+      if (!this.isMobile) {
+        if (!window.YT) {
+          window.onYouTubeIframeAPIReady = this.loadVideo
+        } else {
+          this.loadVideo()
+        }
       }
     }, 500)
   },
