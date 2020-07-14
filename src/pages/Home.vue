@@ -15,11 +15,25 @@
     >
       <Section1 />
     </div>
+
     <div
       class="section"
       id="section2"
     >
-      <Section2 />
+      <VideoSection
+        :playBtn="require('@/projects/sdj/area2_playBtn.png')"
+        title="開箱系列影片"
+        :close="require('@/projects/jh/s4/close.png')"
+        :arrows="[require('@/projects/gydy/arrow-left.png'), require('@/projects/gydy/arrow-right.png')]"
+        :slideList="[
+        {
+          title: '萬眾矚目北高雄百貨版圖新時代',
+          img: require('@/projects/sfdy/video/2.jpg'),
+          video: 'https://www.facebook.com/dalitokyo888/videos/738616443631077/',
+          isPlay: false,
+        },
+      ]"
+      />
     </div>
     <div
       class="section"
@@ -109,6 +123,7 @@ import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
+import VideoSection from '@/components/VideoSection.vue'
 // import Indigator from '@/components/Indigator.vue'
 
 import Section1 from '@/projects/sdj/Section1.vue'
@@ -129,6 +144,7 @@ export default {
   components: {
     Loading,
     // Indigator,
+    VideoSection,
     Navigation,
     SideNavigation,
     ContactSection,
