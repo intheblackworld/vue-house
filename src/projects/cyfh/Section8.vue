@@ -31,6 +31,7 @@
             :src="slide"
             :class="`item-img`"
           />
+          <h3>樣品屋實景</h3>
         </swiper-slide>
         <div
           class="swiper-button-prev"
@@ -135,6 +136,7 @@
   margin-left: 30px;
 }
 
+.swiper-container h3{position:absolute;right: 0.5em;bottom:0.5em ;color:#FFF;font-size: size(12);}
 @media only screen and (max-width: 1440px) {
   .bg-img {
   }
@@ -204,6 +206,7 @@
     color: #4d4d4d;
     margin:0 0 25px 0;
   }
+.swiper-container h3{position:absolute;right: 0.5em;bottom:0.5em ;color:#FFF;font-size: size-m(12);}
 }
 </style>
 <script>
@@ -246,7 +249,13 @@ export default {
           clickable: true,
         },
       },
-      imgList: [require('./s8/img1.jpg')],
+      imgList: [require('./s8/1.jpg')],
+      imgList: [require('./s8/2.jpg')],
+      imgList: [require('./s8/3.jpg')],
+      imgList: [require('./s8/4.jpg')],
+      imgList: [require('./s8/5.jpg')],
+      imgList: [require('./s8/6.jpg')],
+      imgList: [require('./s8/7.jpg')],
     }
   },
 
