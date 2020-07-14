@@ -188,6 +188,7 @@ export default {
 
   data() {
     return {
+      isMobile,
       navList,
       info,
       indigatorIndex: 1,

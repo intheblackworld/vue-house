@@ -244,10 +244,10 @@ export default {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
+        // pagination: {
+        //   el: '.swiper-pagination',
+        //   clickable: true,
+        // },
       },
       imgList: [require('./s8/1.jpg'),
                 require('./s8/2.jpg'),

@@ -3,13 +3,25 @@
     <div v-if="!isMobile">
       <div class="row">
         <div class="text-row flex-ac flex-jb">
-          <div class="title-block" data-aos="fade" data-aos-delay="400">
+          <div
+            class="title-block"
+            data-aos="fade"
+            data-aos-delay="400"
+          >
             <h3 class="subtitle">中山北路第一排</h3>
             <h3 class="title">與雙溪河畔 奇蹟相遇</h3>
           </div>
-          <div class="desc" data-aos="fade" data-aos-delay="600">孕育士林的口袋之河—雙溪，千百年來潺潺流淌，不舍晝夜，靜靜流動的歲月裡，無數人在這塊土地上留下生命的印記！「全陽豐會」在這條中山北路與雙溪十字交會的地段，一期一會、知音相遇。</div>
+          <div
+            class="desc"
+            data-aos="fade"
+            data-aos-delay="600"
+          >孕育士林的口袋之河—雙溪，千百年來潺潺流淌，不舍晝夜，靜靜流動的歲月裡，無數人在這塊土地上留下生命的印記！「全陽豐會」在這條中山北路與雙溪十字交會的地段，一期一會、知音相遇。</div>
         </div>
-        <div class="flex-ac flex-jb" data-aos="fade" data-aos-delay="800">
+        <div
+          class="flex-ac flex-jb"
+          data-aos="fade"
+          data-aos-delay="800"
+        >
           <img
             src="./s2/img.jpg"
             alt=""
@@ -23,7 +35,11 @@
         </div>
       </div>
       <div class="row flex-ab flex-jb">
-        <div class="flex-ac flex-jb" data-aos="fade" data-aos-delay="200">
+        <div
+          class="flex-ac flex-jb"
+          data-aos="fade"
+          data-aos-delay="200"
+        >
           <img
             src="./s3/img.jpg"
             alt=""
@@ -31,11 +47,19 @@
           >
         </div>
         <div class="text-block">
-          <div class="title-block" data-aos="fade" data-aos-delay="400">
+          <div
+            class="title-block"
+            data-aos="fade"
+            data-aos-delay="400"
+          >
             <h3 class="title">吳念真導演 深情執導</h3>
             <h3 class="subtitle">真情上映：</h3>
           </div>
-          <div class="desc" data-aos="fade" data-aos-delay="600">《全陽豐會》緊鄰水岸，<br />
+          <div
+            class="desc"
+            data-aos="fade"
+            data-aos-delay="600"
+          >《全陽豐會》緊鄰水岸，<br />
             這條士林碩果僅存的河水，<br />
             千百年來潺潺流淌，<br />
             河面曾經浮現的天光山色，<br />
@@ -83,29 +107,49 @@
           </swiper>
         </div>
         <div class="text-row flex-ac flex-jb">
-          <div class="title-block" data-aos="fade" data-aos-delay="400">
+          <div
+            class="title-block"
+            data-aos="fade"
+            data-aos-delay="400"
+          >
             <h3 class="subtitle">優雅生活美學</h3>
             <h3 class="title">台北人的集體記憶</h3>
           </div>
-          <div class="desc" data-aos="fade" data-aos-delay="600">中山北路五段跨界天母福林橋一帶，圓山、士林官邸、雙溪、故宮…貴族血統人文薈萃，漫遊傳奇老舖郭元益、士林夜市、文青風格士東市場、華榮市場…所有的豐盛美好都在這裡相聚！</div>
+          <div
+            class="desc"
+            data-aos="fade"
+            data-aos-delay="600"
+          >中山北路五段跨界天母福林橋一帶，圓山、士林官邸、雙溪、故宮…貴族血統人文薈萃，漫遊傳奇老舖郭元益、士林夜市、文青風格士東市場、華榮市場…所有的豐盛美好都在這裡相聚！</div>
         </div>
       </div>
     </div>
     <div v-if="isMobile">
       <div class="row">
         <div class="text-block">
-          <div class="title-block" data-aos="fade" data-aos-delay="400">
+          <div
+            class="title-block"
+            data-aos="fade"
+            data-aos-delay="400"
+          >
             <h3 class="subtitle">中山北路第一排</h3>
             <h3 class="title">與雙溪河畔 奇蹟相遇</h3>
           </div>
-          <div class="desc" data-aos="fade" data-aos-delay="600">孕育士林的口袋之河—雙溪，千百年來潺潺流淌，不舍晝夜，靜靜流動的歲月裡，無數人在這塊土地上留下生命的印記！「全陽豐會」在這條中山北路與雙溪十字交會的地段，一期一會、知音相遇。</div>
+          <div
+            class="desc"
+            data-aos="fade"
+            data-aos-delay="600"
+          >孕育士林的口袋之河—雙溪，千百年來潺潺流淌，不舍晝夜，靜靜流動的歲月裡，無數人在這塊土地上留下生命的印記！「全陽豐會」在這條中山北路與雙溪十字交會的地段，一期一會、知音相遇。</div>
         </div>
-          <img
-            src="./s2/road.png"
-            alt=""
-            class="road"
-          >
-        <div class="flex-ac flex-jb" data-aos="fade" data-aos-delay="700">
+        <img
+          src="./s2/road.png"
+          alt=""
+          class="road"
+        >
+        <div
+          class="flex-ac flex-jb"
+          data-aos="fade"
+          data-aos-delay="700"
+        >
           <img
             src="./s2/img.jpg"
             alt=""
@@ -115,11 +159,19 @@
       </div>
       <div class="row">
         <div class="text-block">
-          <div class="title-block" data-aos="fade" data-aos-delay="400">
+          <div
+            class="title-block"
+            data-aos="fade"
+            data-aos-delay="400"
+          >
             <h3 class="title">吳念真導演 深情執導</h3>
             <h3 class="subtitle">真情上映：</h3>
           </div>
-          <div class="desc" data-aos="fade" data-aos-delay="600">《全陽豐會》緊鄰水岸，<br />
+          <div
+            class="desc"
+            data-aos="fade"
+            data-aos-delay="600"
+          >《全陽豐會》緊鄰水岸，<br />
             這條士林碩果僅存的河水，<br />
             千百年來潺潺流淌，<br />
             河面曾經浮現的天光山色，<br />
@@ -130,7 +182,11 @@
             都將成為這片河岸風景的一部分。
           </div>
         </div>
-        <div class="flex-ac flex-jb" data-aos="fade" data-aos-delay="700">
+        <div
+          class="flex-ac flex-jb"
+          data-aos="fade"
+          data-aos-delay="700"
+        >
           <img
             src="./s3/img.jpg"
             alt=""
@@ -167,11 +223,19 @@
         </swiper>
 
         <div class="text-block">
-          <div class="title-block" data-aos="fade" data-aos-delay="400">
+          <div
+            class="title-block"
+            data-aos="fade"
+            data-aos-delay="400"
+          >
             <h3 class="subtitle">優雅生活美學</h3>
             <h3 class="title">台北人的集體記憶</h3>
           </div>
-          <div class="desc" data-aos="fade" data-aos-delay="600">中山北路五段跨界天母福林橋一帶，圓山、士林官邸、雙溪、故宮…貴族血統人文薈萃，漫遊傳奇老舖郭元益、士林夜市、文青風格士東市場、華榮市場…所有的豐盛美好都在這裡相聚！</div>
+          <div
+            class="desc"
+            data-aos="fade"
+            data-aos-delay="600"
+          >中山北路五段跨界天母福林橋一帶，圓山、士林官邸、雙溪、故宮…貴族血統人文薈萃，漫遊傳奇老舖郭元益、士林夜市、文青風格士東市場、華榮市場…所有的豐盛美好都在這裡相聚！</div>
         </div>
       </div>
     </div>
@@ -194,7 +258,7 @@
 
   &::v-deep .swiper-pagination-bullet {
     width: 1em;
-    height:  1em;
+    height: 1em;
     background-color: transparent;
     box-shadow: inset 0 0 0 1px #fff;
     opacity: 1;
@@ -205,10 +269,13 @@
     }
   }
 }
-.swiper-pagination{
-    font-size: 18px;
-    bottom:0.4em;text-align: center;padding: 0;
-    left: 0;}
+.swiper-pagination {
+  font-size: 18px;
+  bottom: 0.4em;
+  text-align: center;
+  padding: 0;
+  left: 0;
+}
 
 // .bg-img {
 //   width: 100vw;
@@ -234,8 +301,10 @@
 .text-row {
   width: size(1138);
   min-height: size(112);
-  margin:size(20) 0 0 0;
-.desc { width: size(820);}
+  margin: size(20) 0 0 0;
+  .desc {
+    width: size(820);
+  }
 }
 
 .text-block {
@@ -259,15 +328,23 @@
   top: 0;
   padding-left: size(20);
   margin: 0 0 size(36.5) 0;
-    position: relative;
-    letter-spacing:0.2em;
-    line-height: 1.4;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    text-align: left;
-    color: #000000;
-&::after{content: "";height: 83%;width:size(3);background: #000;position:absolute;top: 10%;left: 0;}
+  position: relative;
+  letter-spacing: 0.2em;
+  line-height: 1.4;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  text-align: left;
+  color: #000000;
+  &::after {
+    content: '';
+    height: 83%;
+    width: size(3);
+    background: #000;
+    position: absolute;
+    top: 10%;
+    left: 0;
+  }
   .title {
     font-size: size(37);
     font-weight: bold;
@@ -280,7 +357,7 @@
 }
 
 .desc {
- // width: size(1100);
+  // width: size(1100);
   font-size: size(20);
   line-height: 1.8;
   text-align: left;
@@ -303,10 +380,9 @@
     width: 100%;
   }
 }
-  .item-img {
-    width: 100%;
-  }
-
+.item-img {
+  width: 100%;
+}
 
 @media only screen and (max-width: 1440px) {
   .bg-img {
@@ -325,14 +401,13 @@
     margin: 0 0 0 0;
   }
 
-  
-
-.swiper-pagination{
-    top:size_m(5);
-    font-size:size_m(13)}
+  .swiper-pagination {
+    top: size_m(5);
+    font-size: size_m(13);
+  }
 
   .row {
-    padding-top:size_m(60);
+    padding-top: size_m(60);
     padding-bottom: 0;
     width: 100vw;
   }
@@ -345,20 +420,25 @@
   .title-block {
     width: 100%;
     padding-left: 15px;
-&::after{width:size_m(3);height: 90%;top:5%}
+    &::after {
+      width: size_m(3);
+      height: 90%;
+      top: 5%;
+    }
   }
 
   .desc {
     width: 100%;
-      font-size: size-m(14.6);    margin: 0 0 1em 0;
-   // margin-bottom: 40px;
+    font-size: size-m(14.6);
+    margin: 0 0 1em 0;
+    // margin-bottom: 40px;
   }
 
   .text-block {
-      margin-bottom:size-m(40);
+    margin-bottom: size-m(40);
     .title-block {
       height: auto;
-      margin-bottom:size-m(15);
+      margin-bottom: size-m(15);
     }
     .title {
       font-size: size-m(25);
@@ -384,16 +464,16 @@
   }
 
   .img1 {
-    width:100%;
-    height:size-m(200);
+    width: 100%;
+    height: size-m(200);
     object-fit: cover;
     object-position: center;
-    margin:size-m(50) 0 0 0;
+    margin: size-m(50) 0 0 0;
   }
 
   .road {
     width: size-m(250);
-   // height: size-m(227);
+    // height: size-m(227);
     object-fit: contain;
     object-position: center;
   }
@@ -430,7 +510,7 @@ import 'swiper/dist/css/swiper.css'
 
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
-  name: 'section9',
+  name: 'section2',
   mixins: [slider],
   components: {
     swiper,
@@ -445,13 +525,13 @@ export default {
         centeredSlides: true,
         spaceBetween: isMobile ? 10 : 30,
         slidesPerColumn: isMobile ? 1 : 1,
-        effect: isMobile ? '' : 'fade',
+        effect: 'fade',
 
         autoplay: {
           delay: 3000,
           disableOnInteraction: true,
         },
-        loop: true,
+        loop: false,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
