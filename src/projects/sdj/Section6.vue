@@ -35,7 +35,6 @@
   height: size(1080);
   overflow: hidden;
 
-
   &::v-deep {
     .swiper-pagination {
       width: 360px;
@@ -73,7 +72,7 @@
 
 .slide-title {
   padding: 3px 25px;
-  background-color: rgba(0, 0, 0, .4);
+  background-color: rgba(0, 0, 0, 0.4);
   color: #fff;
   font-size: size(28);
   font-weight: normal;
@@ -110,6 +109,65 @@
 
 @media screen and (max-width: 767px) {
   .bg {
+    height: size-m((422 + 57) / 2);
+
+    &::v-deep {
+      .swiper-pagination {
+        width: 280px;
+        left: auto;
+        bottom: 10px;
+        right: 0px;
+        left: 0;
+        margin: 0 auto;
+      }
+      .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+        box-shadow: 0 0 0 1px #fff;
+        margin: 0 5px;
+        background-color: transparent;
+        opacity: 1 !important;
+      }
+
+      .swiper-pagination-bullet-active {
+        background-color: #000;
+      }
+    }
+  }
+
+  .swiper-container {
+    width: 100vw;
+    height: size-m(422 / 2);
+    overflow: visible;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    img {
+      display: block;
+    }
+  }
+
+  .slide-title {
+    width: 100vw;
+    height: size-m(57 / 2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background-color: #999;
+    color: #fff;
+    font-size: size-m(16);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.81;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+    z-index: 10;
+    right: 0;
+    bottom: size-m((-57) / 2);
   }
 }
 </style>

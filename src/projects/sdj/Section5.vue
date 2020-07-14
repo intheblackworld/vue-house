@@ -43,7 +43,6 @@
   height: size(1080);
   overflow: hidden;
 
-
   &::v-deep {
     .swiper-pagination {
       width: 140px;
@@ -114,13 +113,15 @@
 
 .swiper-container {
   width: 100vw;
-  height: size(1080);
+  height: size-m(421 / 2);
   overflow: hidden;
   position: absolute;
   left: 0;
   top: 0;
 
   img {
+    width: 100vw;
+    height: size-m(421 / 2);
     display: block;
   }
 }
@@ -140,6 +141,69 @@
 
 @media screen and (max-width: 767px) {
   .bg {
+    height: size-m((635 + 421) / 2);
+
+    &::v-deep {
+      .swiper-pagination {
+        width: 80px;
+        left: auto;
+        bottom: 10px;
+        right: 10px;
+      }
+      .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+        box-shadow: 0 0 0 1px #fff;
+        margin: 0 5px;
+        background-color: transparent;
+        opacity: 1 !important;
+      }
+
+      .swiper-pagination-bullet-active {
+        background-color: #000;
+      }
+    }
+  }
+
+  .title {
+    font-size: size-m(25);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 2.5px;
+    text-align: center;
+    color: #444;
+    width: size-m(710 / 2);
+    top: size-m(470 / 2);
+    right: size-m(20 / 2);
+    white-space: nowrap;
+    z-index: 10;
+  }
+
+  .hr {
+    width: size-m(589 / 2);
+    top: size-m((421 + 292) / 2);
+    right: size-m(80 / 2);
+    height: 1px;
+    background-color: #444;
+    z-index: 10;
+  }
+
+  .desc {
+    font-size: size-m(28 / 2);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.81;
+    letter-spacing: normal;
+    text-align: center;
+    color: #444;
+    z-index: 10;
+    width: size-m(730 / 2);
+    white-space: nowrap;
+    top: size-m((327 + 421) / 2);
+    right: size-m(10 / 2);
   }
 }
 </style>

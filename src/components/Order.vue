@@ -1,8 +1,8 @@
 <template>
   <div class="order-bg">
-    <img src="@/projects/dj/s13/1.png" alt="" class="bg-img cloud1" v-if="!isMobile">
+    <!-- <img src="@/projects/dj/s13/1.png" alt="" class="bg-img cloud1" v-if="!isMobile">
     <img src="@/projects/dj/s13/2.png" alt="" class="bg-img cloud2" v-if="!isMobile">
-    <img src="@/projects/dj/s13/1_m.png" alt="" class="bg-img cloud3" v-if="isMobile">
+    <img src="@/projects/dj/s13/1_m.png" alt="" class="bg-img cloud3" v-if="isMobile"> -->
     <!-- <img src="@/projects/fs/order/bg1.png" alt="" class="bg-img no-mix"> -->
     <!-- <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile"> -->
     <div class="order-top">

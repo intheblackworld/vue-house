@@ -6,12 +6,12 @@
       class="bg-img"
     >
     <img
-      src="./s7/area7_doll.png"
+      :src="isMobile ? require('./s7/area7_doll_mobile.png') : require('./s7/area7_doll.png')"
       alt=""
       class="doll absolute"
     >
     <img
-      src="./s7/area7_info.png"
+      :src="isMobile ? require('./s7/area7_info_mobile.png') : require('./s7/area7_info.png')"
       alt=""
       class="info absolute"
     >
@@ -81,7 +81,7 @@
 }
 
 .desc {
-   font-size: size(28);
+  font-size: size(28);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -110,54 +110,74 @@
 }
 
 @media screen and (max-width: 767px) {
+  .relative {
+    // height: 100vh;
+    overflow: hidden;
+    background: #fff;
+  }
   .bg-img {
-    height: auto;
+    width: 100vw;
+    height: size-m(1300 / 2);
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
     object-fit: cover;
+    object-position: center;
+
+    &:nth-child(1) {
+      position: relative;
+    }
+  }
+
+  .doll {
+    width: size-m(210 / 2);
+    top: size-m(922 /2);
+    left: size-m(258 / 2);
+  }
+
+  .info {
+    width: size-m(300);
+    top: size-m(47 /2);
+    left: size-m(62);
   }
 
   .title {
-    font-size: size-m(26);
-    top: size-m(36);
-    left: size-m(30);
+    font-size: size-m(50 / 2);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 2.5px;
+    text-align: center;
+    color: #ffffff;
+    white-space: nowrap;
+    width: size-m(380/ 2);
+    top: size-m(563 / 2);
+    left: size-m(173 / 2);
+  }
 
-    &::before {
-      content: '';
-      display: block;
-      width: size-m(51);
-      left: size-m(-61);
-      position: absolute;
-      height: 2px;
-      background-color: #312219;
-    }
-
-    &::after {
-      content: '';
-      display: block;
-      width: 2000px;
-      height: 2px;
-      margin-left: size-m(20);
-      background-color: #312219;
-    }
+  .hr {
+    width: size-m(590 / 2);
+    height: 1px;
+    background-color: #fff;
+    top: size-m(730 / 2);
+    left: size-m(69 / 2);
   }
 
   .desc {
-    font-size: size-m(17);
-    top: size-m(69);
-    left: size-m(30);
-  }
-
-  .img-title {
-    width: size-m(236);
-    font-size: size-m(18);
-    top: size-m(120);
-    left: size-m(30);
-  }
-
-  .img-desc {
-    width: size-m(236);
-    font-size: size-m(13);
-    top: size-m(185);
-    left: size-m(30);
+    font-size: size-m(28 / 2);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.81;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    white-space: nowrap;
+    width: size-m(634 / 2);
+    top: size-m(755 / 2);
+    left: size-m(45 / 2);
   }
 }
 </style>

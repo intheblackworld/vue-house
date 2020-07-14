@@ -304,12 +304,12 @@ export default {
     transform: translateX(40%);
 
     li {
-      height: 70px;
+      height: 40px;
       margin-bottom: 5px;
     }
 
     .link {
-      height: 50px;
+      height: 30px;
       width: 100%;
       font-size: 17px;
       margin-top: 20px;
@@ -333,7 +333,7 @@ export default {
       }
 
       .title {
-        font-size: size-m(24) !important;
+        font-size: size-m(15) !important;
       }
     }
 
@@ -358,7 +358,7 @@ export default {
     width: 100vw;
     top: $nav_phone_height;
     right: 0;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(0, 0, 0, 0.8);
     position: fixed;
     z-index: -1;
     height: calc(100vh - #{$nav_phone_height});

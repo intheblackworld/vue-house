@@ -1,8 +1,13 @@
 export default [
-  { name: '享大城', imgSrc: require('@/assets/img/nav/icon1.png'), subTitle: '', section: 'section2', svgSrc: '', offset: -60 },
-  { name: '擁大景', imgSrc: require('@/assets/img/nav/icon2.png'), subTitle: '', section: 'section6', svgSrc: '', offset: -60 },
-  { name: '成大室', imgSrc: require('@/assets/img/nav/icon3.png'), subTitle: '', section: 'section9', svgSrc: '', offset: -60 },
-  // { name: '預約賞屋', imgSrc: '', subTitle: '', section: 'contact', svgSrc: '', mobileOffset: 0 },
+  { name: '精華地段', imgSrc: '', subTitle: '', section: 'section1', svgSrc: '', offset: -60 },
+  { name: '系列影片', imgSrc: '', subTitle: '', section: 'section2', svgSrc: '', offset: -60 },
+  { name: '收藏達麗', imgSrc: '', subTitle: '', section: 'section3', svgSrc: '', offset: -60 },
+  { name: '巨蛋生活圈', imgSrc: '', subTitle: '', section: 'section4', svgSrc: '', offset: -60 },
+  { name: '建築風尚', imgSrc: '', subTitle: '', section: 'section5', svgSrc: '', offset: -60 },
+  { name: '活力公設', imgSrc: '', subTitle: '', section: 'section6', svgSrc: '', offset: -60 },
+  { name: '智能好宅', imgSrc: '', subTitle: '', section: 'section7', svgSrc: '', offset: -60 },
+  // { name: '實品屋', imgSrc: '', subTitle: '', section: 'section8', svgSrc: '', offset: -60 },
+  { name: '預約賞屋', imgSrc: '', subTitle: '', section: 'contact', svgSrc: '', mobileOffset: 0 },
 ]
 
 // 黃金地段：location
