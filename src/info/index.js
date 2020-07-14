@@ -2,11 +2,11 @@ import { isMobile } from '@/utils'
 export default {
   address: '高雄市鼓山區美術東二路592號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d903.2681895669509!2d121.52663452919262!3d25.099398298996373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab208cadf49d%3A0xf992041a57899e4a!2z5YWo6Zm96LGQ5pyD!5e0!3m2!1szh-TW!2stw!4v1594369387469!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/5gLCi4wywrzaCVMn7',
-  phone: '02-2832-3288',
-  fbLink: 'https://www.facebook.com/全陽豐會-104138187891229/',
-  fbMessage: 'http://m.me/全陽豐會-104138187891229/',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3681.7131137718425!2d120.28663631538993!3d22.664482585135616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e051da8dd6a9f%3A0x303565ca3b3e6c56!2z576O6KGT55qH5bGF!5e0!3m2!1szh-TW!2stw!4v1594724565155!5m2!1szh-TW!2stw',
+  googleLink: 'https://g.page/palace-of-modern-arts',
+  phone: '07 554 6333',
+  fbLink: 'https://www.facebook.com/palace.of.modern.arts/',
+  fbMessage: 'http://m.me/palace.of.modern.arts/',
   caseName: '美術皇居',
   indigatorLength: 10,
 
