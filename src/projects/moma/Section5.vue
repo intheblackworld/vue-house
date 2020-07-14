@@ -1,11 +1,26 @@
 <template>
   <div class="relative">
-    <div
-      v-if="!isMobile"
-      class="flex"
-    >
+    <div class="flex wrap">
+      <div class="content" v-if="isMobile">
+        <img
+          src="./s3/bg.png"
+          alt=""
+          class="bg-img absolute"
+        >
+        <h3 class="title absolute">
+          大師藝術彩繪日常生活時光
+        </h3>
+        <img
+          src="./s3/hr.png"
+          alt=""
+          class="hr-img absolute"
+        >
+        <div class="desc absolute">
+          以「藝術」貫穿全棟會館設計風格，從17.18世紀的古典主義與印象主義，到19世紀的超現實主義，結合現代的藝術設計，形成「京城美術皇居」全棟公設會館的一致風格，成為台灣獨一無二、硬體與軟體同步到位的藝術建築。
+        </div>
+      </div>
       <swiper
-        class="swiper-container absolute"
+        class="swiper-container"
         :options="swiperOption"
         ref="mySwiper"
         data-aos="fade"
@@ -22,7 +37,10 @@
           />
         </swiper-slide>
       </swiper>
-      <div class="content">
+      <div
+        class="content"
+        v-if="!isMobile"
+      >
         <h3 class="title absolute">
           大師藝術彩繪日常生活時光
         </h3>
@@ -31,9 +49,6 @@
           以「藝術」貫穿全棟會館設計風格，從17.18世紀的古典主義與印象主義，到19世紀的超現實主義，結合現代的藝術設計，形成「京城美術皇居」全棟公設會館的一致風格，成為台灣獨一無二、硬體與軟體同步到位的藝術建築。
         </div>
       </div>
-    </div>
-    <div v-if="isMobile">
-
     </div>
   </div>
 </template>
@@ -49,6 +64,7 @@
   height: size(1080);
   top: 0;
   left: 0;
+  position: absolute;
 }
 
 .content {
@@ -113,70 +129,74 @@
 }
 
 @media screen and (max-width: 767px) {
+  .relative {
+    position: relative;
+    height: auto;
+  }
   .swiper-container {
     width: 100vw;
     margin: 0 auto;
+    position: relative !important;
 
     .item-img {
       width: 100%;
     }
   }
 
-  .swiper-container {
-    width: size(1235);
-    right: 0;
-    top: 0;
-  }
-
   .content {
-    width: size(689);
+    width: 100vw;
+    height: size-m(330);
     position: relative;
+    overflow: hidden;
   }
 
   .bg-img {
     width: 100%;
     left: 0;
+    height: auto;
+    object-fit: contain;
   }
 
   .logo {
-    width: size(356);
-    top: size(111);
-    left: size(169);
+    width: size-m(180);
+    top: size-m(30);
+    left: size-m(88);
   }
 
   .hr-img {
-    width: size(509);
-    top: size(419);
-    left: size(92);
+    width: 100vw;
+    top: size-m(81);
+    left: size-m(0);
   }
 
   .title {
-    width: 98%;
+    width: 100vw;
     margin: 0 auto;
-    font-size: size(50);
+    font-size: size-m(23);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: 3px;
+    line-height: 1.35;
+    letter-spacing: 1.38px;
     text-align: center;
     color: #ffffff;
-    top: size(263);
+    top: size-m(25);
+    left: 0;
     white-space: nowrap;
   }
 
   .desc {
-    width: size(410);
-    font-size: size(24);
+    width: size-m(305);
+    font-size: size-m(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.17;
-    letter-spacing: 0.72px;
+    line-height: 2;
+    letter-spacing: 0.45px;
     text-align: left;
     color: #ffffff;
-    top: size(459);
-    left: size(152);
+    top: size-m(106);
+    left: size-m(30);
   }
 
   .item-img {

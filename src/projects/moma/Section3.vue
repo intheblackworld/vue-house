@@ -1,9 +1,6 @@
 <template>
   <div class="relative">
-    <div
-      v-if="!isMobile"
-      class="flex"
-    >
+    <div class="flex wrap">
       <div class="content">
         <img
           src="./s3/bg.png"
@@ -28,7 +25,7 @@
         </div>
       </div>
       <swiper
-        class="swiper-container absolute"
+        class="swiper-container"
         :options="swiperOption"
         ref="mySwiper"
         data-aos="fade"
@@ -62,6 +59,7 @@
   width: size(1235);
   right: 0;
   top: 0;
+  position: absolute;
 }
 
 .content {
@@ -132,23 +130,23 @@
 }
 
 @media screen and (max-width: 767px) {
+  .relative {
+    position: relative;
+    height: auto;
+  }
   .swiper-container {
     width: 100vw;
     margin: 0 auto;
+    position: relative !important;
 
     .item-img {
       width: 100%;
     }
   }
 
-  .swiper-container {
-    width: size(1235);
-    right: 0;
-    top: 0;
-  }
-
   .content {
-    width: size(689);
+    width: 100vw;
+    height: size-m(500);
     position: relative;
   }
 
@@ -158,44 +156,44 @@
   }
 
   .logo {
-    width: size(356);
-    top: size(111);
-    left: size(169);
+    width: size-m(180);
+    top: size-m(30);
+    left: size-m(88);
   }
 
   .hr-img {
-    width: size(509);
-    top: size(419);
-    left: size(92);
+    width: 100vw;
+    top: size-m(203);
+    left: size-m(0);
   }
 
   .title {
-    width: 98%;
+    width: 100vw;
     margin: 0 auto;
-    font-size: size(50);
+    font-size: size-m(23);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: 3px;
+    line-height: 1.35;
+    letter-spacing: 1.38px;
     text-align: center;
     color: #ffffff;
-    top: size(263);
+    top: size-m(116);
     white-space: nowrap;
   }
 
   .desc {
-    width: size(410);
-    font-size: size(24);
+    width: size-m(305);
+    font-size: size-m(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.17;
-    letter-spacing: 0.72px;
+    line-height: 2;
+    letter-spacing: 0.45px;
     text-align: left;
     color: #ffffff;
-    top: size(459);
-    left: size(152);
+    top: size-m(232);
+    left: size-m(30);
   }
 
   .item-img {

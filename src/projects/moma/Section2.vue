@@ -1,8 +1,8 @@
 <template>
   <div class="section2">
     <div class="relative">
-      <img src="./s2/bg.jpg" alt="" class="bg-img">
-      <Map :bgSrc="bgSrc" v-if="isMobile">
+      <img src="./s2/bg.jpg" alt="" class="bg-img" v-if="!isMobile">
+      <Map :bgSrc="bgSrc" :hand="require('./箭頭.png')" v-if="isMobile">
       </Map>
     </div>
   </div>

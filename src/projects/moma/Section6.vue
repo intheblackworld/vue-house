@@ -1,7 +1,7 @@
 <template>
   <div class="relative section6">
-    <div v-if="!isMobile">
-      <div class="top-container relative flex">
+    <div>
+      <div class="top-container relative flex wrap">
         <div>
           <img
             src="./s6/logo.png"
@@ -129,6 +129,17 @@
         ></div>
       </swiper>
 
+      <div
+        class="content-title"
+        v-if="isMobile"
+      >
+        <h3>頂級公設</h3>
+        <img
+          src="./s3/hr.png"
+          alt=""
+          class="hr-img"
+        >
+      </div>
       <swiper
         class="swiper-container full"
         :options="swiperOption"
@@ -145,16 +156,13 @@
             :src="slide.src"
             :class="`item-img`"
           />
-          <h3 class="slide-title absolute">{{slide.title}}</h3>
+          <h3 class="slide-title absolute" v-if="!isMobile">{{slide.title}}</h3>
         </swiper-slide>
         <div
           class="swiper-pagination"
           slot="pagination"
         ></div>
       </swiper>
-    </div>
-    <div v-if="isMobile">
-
     </div>
   </div>
 </template>
@@ -362,74 +370,204 @@
 }
 
 @media screen and (max-width: 767px) {
-  .swiper-container {
-    width: 100vw;
-    margin: 0 auto;
+  .logo {
+    width: size-m(180);
+    left: size-m(98);
+    top: size-m(30);
+  }
 
-    .item-img {
-      width: 100%;
+  .top {
+    width: size-m(375);
+    height: size-m(211);
+    right: 0;
+    top: size-m(390);
+  }
+
+  .top-container {
+    height: size-m(600);
+    border-bottom: 3px solid #977750;
+
+    > div {
+      width: 100vw;
     }
   }
 
   .swiper-container {
-    width: size(1235);
-    right: 0;
-    top: 0;
-  }
+    width: size(1794);
+    height: size(955);
+    margin-top: size(40);
 
-  .content {
-    width: size(689);
-    position: relative;
-  }
-
-  .bg-img {
-    width: 100%;
-    left: 0;
-  }
-
-  .logo {
-    width: size(356);
-    top: size(111);
-    left: size(169);
-  }
-
-  .hr-img {
-    width: size(509);
-    top: size(419);
-    left: size(92);
+    &.full {
+      width: 100vw;
+      height: size(1080);
+      margin-top: size(100);
+    }
   }
 
   .title {
-    width: 98%;
-    margin: 0 auto;
-    font-size: size(50);
-    font-weight: bold;
+    font-size: size-m(23);
+    font-weight: 900;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.2;
-    letter-spacing: 3px;
-    text-align: center;
-    color: #ffffff;
-    top: size(263);
-    white-space: nowrap;
+    letter-spacing: 12.15px;
+    text-align: left;
+    color: #1a1311;
+    left: size-m(136);
+    top: size-m(144);
+  }
+
+  .hr-img {
+    width: size-m(375);
+    height: 4px;
+    top: size-m(191);
+    left: size-m(0);
   }
 
   .desc {
-    width: size(410);
-    font-size: size(24);
+    width: size-m(257);
+    font-size: size-m(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.17;
-    letter-spacing: 0.72px;
+    line-height: 2.27;
+    letter-spacing: 1.1px;
     text-align: left;
-    color: #ffffff;
-    top: size(459);
-    left: size(152);
+    color: #1a1311;
+    top: size-m(209);
+    left: size-m(58);
   }
 
   .item-img {
     width: 100%;
+  }
+
+  .tabs {
+    width: size-m(375);
+    margin: size-m(31) auto 0;
+
+    .tab-item {
+      width: 33.33%;
+      height: size-m(35);
+      padding: 0 size-m(5);
+      cursor: pointer;
+
+      &:hover,
+      &.active {
+        background-color: #9b754e;
+        .tab-desc {
+          color: #fff;
+        }
+        .tab-icon-w {
+          display: block;
+        }
+        .tab-icon-b {
+          display: none;
+        }
+      }
+
+      .tab-icon-w {
+        display: none;
+      }
+      .tab-icon-b {
+        display: block;
+      }
+    }
+
+    .tab-icon-w,
+    .tab-icon-b {
+      width: size-m(17);
+      height: auto;
+    }
+
+    .tab-desc {
+      font-size: size-m(14);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 2.68;
+      letter-spacing: 0.5px;
+      text-align: left;
+      color: #000000;
+      white-space: nowrap;
+    }
+
+    .divide {
+      width: 1.2px;
+      height: size-m(30);
+      background-color: #1a1311;
+      margin: 0 size-m(12);
+    }
+  }
+
+  .slide-title {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    font-size: size-m(13);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.41;
+    letter-spacing: 5.5px;
+    text-align: left;
+    color: #ffffff;
+    padding: 5px 10px 5px 20px;
+    top: size-m(126);
+    left: 0;
+  }
+
+  .section6 {
+    &::v-deep .swiper-container-horizontal > .swiper-pagination-bullets {
+      width: auto !important;
+      right: 10px;
+      bottom: 10px;
+      left: auto;
+    }
+    &::v-deep .swiper-pagination-bullet {
+      width: 14px;
+      height: 14px;
+      background-color: transparent;
+      box-shadow: inset 0 0 0 1px #fff;
+      opacity: 1;
+      margin: 0 5px !important;
+      border-radius: 0 !important;
+
+      &.swiper-pagination-bullet-active {
+        background-color: #88633f;
+      }
+    }
+  }
+
+  .container-title {
+    margin: size-m(46) auto 20px;
+
+    .tab-icon-b {
+      width: size-m(17);
+    }
+    h3 {
+      margin-left: 15px;
+      font-size: size-m(16);
+      font-weight: 900;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.2;
+      letter-spacing: 2.97px;
+      text-align: left;
+      color: #1a1311;
+    }
+  }
+
+  .content-title {
+    font-size: size-m(23);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.09;
+    letter-spacing: 2.53px;
+    text-align: center;
+    color: #1a1311;
+    margin: size-m(66) auto 0px;
   }
 }
 </style>
@@ -547,8 +685,8 @@ export default {
         {
           src: require('./s7/1.jpg'),
           title: '28樓實品屋',
-        }
-      ]
+        },
+      ],
     }
   },
 

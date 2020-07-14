@@ -15,7 +15,7 @@
     <div
       :class="`list-indigator flex ${isExtend ? 'active' : ''}`"
     >
-      <img src="@/projects/jh/s4/close.png" alt="" class="close" @click="isExtend = false">
+      <img src="@/projects/jh/s4/close.png" alt="" v-if="isMobile" class="close" @click="isExtend = false">
       <div
         :class="`dot ${index == (indigatorIndex - 1) ? 'active' : '' }`"
         v-for="(nav, index) in navList"
@@ -185,6 +185,7 @@
 <script>
 import info from '@/info'
 import navList from '@/info/navList'
+import { isMobile } from '@/utils'
 
 export default {
   name: 'Indigator',
@@ -194,7 +195,8 @@ export default {
       navList,
       info,
       indigatorIndex: 1,
-      isExtend: false,
+      isMobile,
+      isExtend: !isMobile,
     }
   },
 

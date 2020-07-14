@@ -480,7 +480,7 @@ export default {
     position: relative;
     z-index: 2;
     background-image: $order_bg_image_m;
-    background-size: contain;
+    background-size: cover;
 
     > img {
       display: block;
