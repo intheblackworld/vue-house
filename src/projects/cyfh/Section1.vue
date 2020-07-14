@@ -48,7 +48,7 @@
   right: 0;
   margin: 0 auto;
   opacity: 0;
-  animation: an1 2s 8s ease-in-out  forwards;
+  animation: an1 2s 4s ease-in-out  forwards;
 }
 
 .logo {
@@ -58,11 +58,11 @@
   right: 0;
   margin: 0 auto;
   opacity: 0;
-  animation: logo 20s 2s ease-in-out  forwards;
+  animation: logo 6s 2s ease-in-out  forwards;
 }
 
 .bg1 {
-  animation: an1 1s 7s linear  forwards;
+  animation: an1 1s 3s linear  forwards;
     opacity: 0;
     position: relative;
     transform: scaleY(0.8);
@@ -74,7 +74,7 @@
   top: size(290); opacity: 1;}
 }
 .bg2 {
-  animation: an2 20s 1s linear  forwards;
+  animation: an2 10s 1s linear  forwards;
   opacity: 0;
   transform-origin: 50% 0;
   transform: scaleY(0.8);
@@ -111,12 +111,12 @@
     transform:  scaleY(0.8);
   }
 
-  30% {
+  20% {
     opacity: 1;
     transform:  scaleY(0.8);
   }
 
-  35% {
+  30% {
     opacity: 0;
     transform: scaleY(1);
   }
