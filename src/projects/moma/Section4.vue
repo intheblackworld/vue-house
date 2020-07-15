@@ -224,7 +224,7 @@ export default {
       } else {
         this.loadVideo()
       }
-    }, 500)
+    }, 2500)
   },
 
   computed: {},

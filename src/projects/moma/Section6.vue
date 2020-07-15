@@ -156,7 +156,10 @@
             :src="slide.src"
             :class="`item-img`"
           />
-          <h3 class="slide-title absolute" v-if="!isMobile">{{slide.title}}</h3>
+          <h3
+            class="slide-title absolute"
+            v-if="!isMobile"
+          >{{slide.title}}</h3>
         </swiper-slide>
         <div
           class="swiper-pagination"
@@ -413,9 +416,10 @@
     letter-spacing: 12.15px;
     text-align: left;
     color: #1a1311;
-   // left: size-m(136);
+    // left: size-m(136);
     top: size-m(144);
-  left:50%;transform: translateX(-50%);
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .hr-img {
@@ -437,7 +441,8 @@
     color: #1a1311;
     top: size-m(209);
     //left: size-m(58);
-  left:50%;transform: translateX(-50%);
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .item-img {
@@ -517,7 +522,7 @@
     padding: 5px 10px 5px 20px;
     top: auto;
     left: 0;
-    bottom:0;
+    bottom: 0;
   }
 
   .section6 {
@@ -685,10 +690,18 @@ export default {
         },
       ],
       slideList3: [
-        {
-          src: require('./s7/1.jpg'),
-          title: '28樓實品屋',
-        },
+        { src: require('./s8/1.jpg'), title: '28樓實品屋' },
+        { src: require('./s8/2.jpg'), title: '28樓實品屋' },
+        { src: require('./s8/3.jpg'), title: '28樓實品屋' },
+        { src: require('./s8/4.jpg'), title: '28樓實品屋' },
+        { src: require('./s8/5.jpg'), title: '28樓實品屋' },
+        { src: require('./s8/6.jpg'), title: '28樓實品屋' },
+        { src: require('./s8/7.jpg'), title: '28樓實品屋' },
+        { src: require('./s8/8.jpg'), title: '28樓實品屋' },
+        { src: require('./s8/9.jpg'), title: '28樓實品屋' },
+        { src: require('./s8/10.jpg'), title: '28樓實品屋' },
+        { src: require('./s8/11.jpg'), title: '28樓實品屋' },
+        { src: require('./s8/12.jpg'), title: '28樓實品屋' },
       ],
     }
   },
