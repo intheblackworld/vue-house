@@ -1,7 +1,54 @@
 <template>
   <div class="relative">
-    <div>
+    <div class="s1">
       <img
+        src="./s1/1.jpg"
+        alt="bg"
+        class="bg-img"
+      >
+      <img
+        src="./s1/2.jpg"
+        alt="bg"
+        class="bg-img light"
+      >
+      <img
+        src="./s1/o.png"
+        alt="bg"
+        class="bg-img light"
+      >
+      <img
+        src="./s1/3.png"
+        alt="bg"
+        class="bg-img a"
+      >
+      <div class="bg-img cloud">
+      <img
+        src="./s1/cloud.png"
+        alt="bg"
+      >
+      <img
+        src="./s1/cloud.png"
+        alt="bg"
+      >
+      </div>
+      <img
+        src="./s1/cloud2.png"
+        alt="bg"
+        class="bg-img"
+      >
+      <img
+        src="./s1/g.png"
+        alt="bg"
+        class="bg-img g"
+      >
+      <img
+        src="./s1/b.png"
+        alt="bg"
+        class="bg-img b"
+      >
+      <img src="./s1/logo.png" alt=""
+        class="bg-img logo">
+      <!--<img
         src="./s1/area1_bg.png"
         alt=""
         class="bg-img city"
@@ -24,7 +71,7 @@
         class="location absolute"
         data-aos="fade"
         data-aos-delay="600"
-      >
+      > -->
       <!-- <img src="./s1/menu_logo.png" alt="" class="menu"> -->
     </div>
   </div>
@@ -36,9 +83,10 @@
   overflow: hidden;
   background: #eee4cb;
 }
+.s1{position: relative;height: 100vh;}
 .bg-img {
   width: 100vw;
-  height: auto;
+  height:100vh;
   position: absolute;
   display: block;
   top: 0;
@@ -48,6 +96,9 @@
   &:nth-child(1) {
     position: relative;
   }
+  &.light{animation: light 5s alternate infinite;opacity: 1;}
+  &.logo{width:size(300);left:size(960 - 120);top: size(150);
+  height:auto;}
 }
 .city {
   margin-top: size(700);
@@ -62,6 +113,12 @@
   width: size(560);
   top: size(351);
   left: size(243);
+}
+@keyframes light {
+    to {
+        opacity: 0;
+      //  transform: rotate(5deg);
+    }
 }
 
 @media only screen and (max-width: 1440px) {
