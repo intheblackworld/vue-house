@@ -91,7 +91,7 @@ export default {
 
 .navigation {
   background-color: $nav_bg;
-  background-image: $nav_bg;
+ // background-image: $nav_bg;
   background-size: cover;
   height: $nav_pc_height;
   z-index: 10;
@@ -100,7 +100,7 @@ export default {
   width: 100vw;
   display: flex !important;
   align-items: center;
-  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+  //box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 .nav-container {

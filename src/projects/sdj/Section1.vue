@@ -20,6 +20,8 @@
         src="./s1/3.png"
         alt="bg"
         class="bg-img a"
+        data-aos="fade-up"
+        data-aos-delay="600"
       >
       <div class="bg-img cloud">
       <img
@@ -96,9 +98,20 @@
   &:nth-child(1) {
     position: relative;
   }
-  &.light{animation: light 5s alternate infinite;opacity: 1;}
-  &.logo{width:size(300);left:size(960 - 120);top: size(150);
-  height:auto;}
+  &.light{animation: light 2s alternate infinite;opacity: 1;}
+  &.logo{height:size(250);max-height:calc(100vh - 33vw);width:auto;left:51.5%;top:20%;transform: translate(-50% , -35%);
+  //height:auto;
+  }
+  &.b{height:auto;top:auto;bottom: 0;animation: xx 3s 3s ease-in-out alternate infinite;
+      transform: translateX(-2%);}
+  &.g{height:auto;animation: xx 3s ease-in-out alternate infinite;
+      transform: translateX(-2%);}
+  &.a{top:auto;bottom: 0;min-height:size(900)}
+  &.cloud{width: 200vw;animation: cloud 30s linear infinite;
+  img{width: 100vw;
+  object-fit: cover;
+  height:100vh;}
+  }
 }
 .city {
   margin-top: size(700);
@@ -121,6 +134,18 @@
     }
 }
 
+@keyframes xx {
+    to {
+      transform: translateX(2%);
+      //  transform: rotate(5deg);
+    }
+}
+@keyframes cloud {
+    to {
+      transform: translateX(-50%);
+      //  transform: rotate(5deg);
+    }
+}
 @media only screen and (max-width: 1440px) {
   .bg-img {
   }
