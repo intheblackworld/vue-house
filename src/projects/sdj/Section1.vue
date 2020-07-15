@@ -194,7 +194,7 @@
   &:nth-child(1) {
   }
   &.light{}
-  &.logo{height:size-m(200);max-height:calc(100vh - 33vw);width:auto;left:51.5%;top:20%;transform: translate(-50% , -20%);
+  &.logo{height:size-m(200);max-height:calc(100vh - 140vw);width:auto;left:51.5%;top:15%;transform: translate(-50% , -20%);
   //height:auto;
   }
   &.b{width: 140vw;right:-18vw;left: auto;}
