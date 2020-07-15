@@ -1,7 +1,7 @@
 export default {
   address: '高雄市三民區明誠一路491號隔壁',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7230.9960651246065!2d121.25284363490806!3d25.017167214282612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468202b8c0d6a65%3A0xbeba6a66370564d3!2zMzM45qGD5ZyS5biC6JiG56u55Y2A5aSn6IiI6LevMjcx6Jmf!5e0!3m2!1szh-TW!2stw!4v1590377353061!5m2!1szh-TW!2stw',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3681.8314561513253!2d120.31828251541931!3d22.660071835463828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e05cbf12b1aad%3A0x36423055d973658!2z6YGU6bqX5LiK5p2x5LqsIOaOpeW-heS4reW_gw!5e0!3m2!1szh-TW!2stw!4v1594785888137!5m2!1szh-TW!2stw',
   googleLink: 'https://maps.app.goo.gl/vxYmSUdgnYF4EEiL6',
   phone: '07-3925188',
   fbLink: 'https://www.facebook.com/dalitokyo888/',
