@@ -14,7 +14,11 @@
         >
           <img
             :src="slide.src"
-            :class="`item-img`"
+            :class="`item-img1`"
+          />
+          <img
+            :src="slide.src"
+            :class="`item-img2`"
           />
         </swiper-slide>
         <div
@@ -40,7 +44,7 @@
 
 .bg {
   position: relative;
-  height: size(1080);
+  height:100vh;
   overflow: hidden;
 
   &::v-deep {
@@ -113,16 +117,18 @@
 
 .swiper-container {
   width: 100vw;
-  height: size-m(421 / 2);
+  height:100%;
   overflow: hidden;
   position: absolute;
   left: 0;
   top: 0;
-
   img {
-    width: 100vw;
-    height: size-m(421 / 2);
-    display: block;
+    width: auto;
+    height: 100%;
+  position: absolute;top: 0;right: 0;
+    display: block;object-fit: contain;
+    object-position: 0 0 ;
+    &.item-img2{left: 0;}
   }
 }
 
@@ -141,7 +147,7 @@
 
 @media screen and (max-width: 767px) {
   .bg {
-    height: size-m((635 + 421) / 2);
+    height:size-m(750);
 
     &::v-deep {
       .swiper-pagination {
@@ -166,45 +172,64 @@
   }
 
   .title {
-    font-size: size-m(25);
+    font-size: size-m(23);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.5;
     letter-spacing: 2.5px;
     text-align: center;
-    color: #444;
+    color: #fff;
     width: size-m(710 / 2);
-    top: size-m(470 / 2);
+    top: size-m(60);
     right: size-m(20 / 2);
     white-space: nowrap;
-    z-index: 10;
+    z-index: 10;transform: scaleX(0.95);
   }
 
   .hr {
     width: size-m(589 / 2);
-    top: size-m((421 + 292) / 2);
+    top: size-m(190);
     right: size-m(80 / 2);
     height: 1px;
-    background-color: #444;
+    background-color: #fff;
     z-index: 10;
   }
 
   .desc {
-    font-size: size-m(28 / 2);
-    font-weight: normal;
+    font-size: size-m(13);
+    font-weight: normal;ransform: scaleX(0.95);
     font-stretch: normal;
     font-style: normal;
     line-height: 1.81;
     letter-spacing: normal;
     text-align: center;
-    color: #444;
+    color: #FFFC;
     z-index: 10;
     width: size-m(730 / 2);
     white-space: nowrap;
-    top: size-m((327 + 421) / 2);
+    top: size-m(210);
     right: size-m(10 / 2);
   }
+.swiper-container {
+  width: 100vw;
+  height:100%;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  .item{background: rgb(3, 110, 182);
+  &:last-child{background:#020e1f;
+
+  }}
+  img {width:200vw;
+    height:auto;
+  position: absolute;top: 0;right: 0;object-fit: contain;
+   display: none; 
+    object-position: 0 0 ;
+    &.item-img2{display: block; top: auto;bottom: 0;}
+  }
+}
 }
 </style>
 
@@ -258,7 +283,7 @@ export default {
         },
         {
           src: isMobile
-            ? require('./s5/area5_night_mobile.png')
+            ? require('./s5/area5_night_mobile.jpg')
             : require('./s5/area5_night.jpg'),
           // title: '向榮冠冕的萬丈城市力',
           // subtitle: 'Crown City',

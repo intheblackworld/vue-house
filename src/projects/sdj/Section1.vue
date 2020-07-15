@@ -76,6 +76,13 @@
       > -->
       <!-- <img src="./s1/menu_logo.png" alt="" class="menu"> -->
     </div>
+    <div class="s2">
+      <img
+        src="./s1/map.jpg"
+        alt="bg"
+        class="bg-img map"
+      >
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -86,6 +93,7 @@
   background: #eee4cb;
 }
 .s1{position: relative;height: 100vh;}
+.s2{position: relative;height: 100vh;}
 .bg-img {
   width: 100vw;
   height:100vh;
@@ -107,11 +115,13 @@
   &.g{height:auto;animation: xx 3s ease-in-out alternate infinite;
       transform: translateX(-2%);}
   &.a{top:auto;bottom: 0;min-height:size(900)}
-  &.cloud{width: 200vw;animation: cloud 30s linear infinite;
+  &.cloud{width: 200vw;animation: cloud 35s linear infinite;
   img{width: 100vw;
   object-fit: cover;
   height:100vh;}
   }
+  &.map{width:calc(100vh * 2846 / 1080);animation: map 20s linear alternate infinite;left: 50%;transition: all 0.3s;
+      }
 }
 .city {
   margin-top: size(700);
@@ -146,6 +156,16 @@
       //  transform: rotate(5deg);
     }
 }
+@keyframes map{
+    0% {left: 0;
+      transform: translateX(0);
+      //  transform: rotate(5deg);
+    }
+    100% {left: 100%;
+      transform: translateX(-100%);
+      //  transform: rotate(5deg);
+    }
+}
 @media only screen and (max-width: 1440px) {
   .bg-img {
   }
@@ -168,6 +188,24 @@
     background: #eee4cb;
     margin-top: 60px;
   }
+  
+.bg-img {
+
+  &:nth-child(1) {
+  }
+  &.light{}
+  &.logo{height:size-m(200);max-height:calc(100vh - 33vw);width:auto;left:51.5%;top:20%;transform: translate(-50% , -20%);
+  //height:auto;
+  }
+  &.b{width: 140vw;right:-18vw;left: auto;}
+  &.g{width: 140vw;left:-18vw;top:auto;bottom:0}
+  &.a{min-height:size-m(800)}
+  &.cloud{width: 400vw;
+  img{width: 200vw;}
+  }
+  &.map{width:calc(100vh - 63px);animation: map 10s linear alternate infinite;}
+}
+  /*
   .bg-img {
     width: 100vw;
     height: auto;
@@ -194,7 +232,7 @@
     width: size-m(150);
     top: size(351);
     left: size-m(23);
-  }
+  }*/
 }
 </style>
 <script>

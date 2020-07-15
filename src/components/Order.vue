@@ -310,14 +310,15 @@ export default {
   }
 }
 .order-bg {
-  background-color: $order_bg_color;
+  //background-color: $order_bg_color;
   //background-image: $order_bg_image;
   background-repeat: no-repeat;
   position: relative;
   padding-top: 130px;
-  background-position:center calc(100% - 555px);
+  background-position:center;
   background-size:auto;
   background-image: $order_bg_image;
+  background-attachment: fixed;
 
   .order-top {
     position: relative;

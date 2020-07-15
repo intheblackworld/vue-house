@@ -97,9 +97,10 @@
 
 .content {
   width: calc(100vw * 380 / 1920);
-  font-size: calc(100vw * 26 / 1920);
+  font-size: calc(100vw * 23 / 1920);
   display: flex;
   flex-direction: column;
+    align-self: center;
   .title {
     font-size: 1.3em;
     font-weight: bold;
@@ -113,6 +114,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 4em;
   }
   .list {
     flex: 3 3 auto;
@@ -156,7 +158,7 @@
 
 .video-container {
   width: calc(100vw * 1040 / 1920);
-  height: calc(100vw * 810 / 1920);
+  height: calc(100vw * 700 / 1920);
   position: relative;
   // margin: 0 0 0 calc(100vw * 40 / 1920);
   &::before {
@@ -171,7 +173,7 @@
   .video-item {
     width: 100%;
     height: 100%;
-    background-color: #000;
+    background-color: #000;background-image:$video_section_item;
     position: absolute;
     top: 0;
     left: 0;

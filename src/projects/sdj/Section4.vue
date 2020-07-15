@@ -13,9 +13,10 @@
         class="scale absolute"
         @click="isDialog = true"
       >
-      <div class="title absolute">6分鐘<br />新百貨時代大進擊</div>
-      <div class="hr absolute"></div>
-      <div class="desc absolute">巨蛋生活圈，百貨密度高雄最高<br />
+      <div class="txt absolute">
+      <div class="title">6分鐘<br />新百貨時代大進擊</div>
+      <div class="hr"></div>
+      <div class="desc ">巨蛋生活圈，百貨密度高雄最高<br />
         6分鐘時尚全攻略。<br />
         漢神巨蛋、悦誠廣場、大樂購物中心<br />
         好市多聯手，再版台北信義<br />
@@ -73,14 +74,15 @@
           class="close"
           @click="isDialog = false"
         >
-      </div>
+      </div></div>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .relative {
-  height: size(1080);
+  height:100vh;
+  max-height:958px;
   overflow: hidden;
   background-color: #fff;
 }
@@ -99,13 +101,19 @@
 }
 
 .map-img {
-  width: size(1312);
+  height: 100%;
+  
   top: 0;
   left: 0;
 }
 
+.txt {height: 90%;
+  width: size(525);
+  top:10%;
+  right:size(130);}
 .title {
-  font-size: size(60);
+  font-size: size(40);
+  margin: size(40) 0 size(14) 0 ; 
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -120,19 +128,19 @@
 }
 
 .hr {
-  height: 1px;
+  width: size(310);
+  height: 2px;
   background-color: #036eb6;
-  top: size(308);
-  right: size(155);
-  width: size(299);
+  margin:auto;
 }
 
 .desc {
-  font-size: size(28);
+  margin: size(26) auto size(100) auto ; 
+  font-size: size(18);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.74;
+  line-height: 1.8;
   letter-spacing: normal;
   text-align: center;
   color: #231815;
@@ -145,8 +153,8 @@
 .swiper-container {
   width: size(525);
   height: size(338);
-  top: size(697);
-  right: size(40);
+  right:0;
+  bottom: size(40);
   overflow: visible;
 
   .item-img {
@@ -189,17 +197,19 @@
 
 @media screen and (max-width: 767px) {
   .relative {
-    height: size-m((1080 + 617) / 2);
+    height: size-m(667);
     overflow: hidden;
     background-color: #fff;
   }
   .map-img {
-    width: 100vw;
+    width: 100vw;height: auto;
     top: 0;
     left: 0;
   }
-
+.txt{height: auto;width: 100%;top: size-m(334);right: 0;}
   .title {
+    margin: size-m(40) 0 size-m(14) 0 ; 
+  
     font-size: size-m(60 / 2);
     font-weight: bold;
     font-stretch: normal;
@@ -209,17 +219,19 @@
     text-align: center;
     color: #036eb6;
     white-space: nowrap;
-    top: size-m((50 + 617) / 2);
-    right: size-m(50);
-    width: size-m(522 / 2);
+    width: 100%;
+   // top: size-m((50 + 617) / 2);
+    //right: size-m(50);
+   // width: size-m(522 / 2);
   }
 
-  .hr {
-    display: none;
+  .hr {width: size-m(310);
+   // display: none;
   }
 
   .desc {
     font-size: size-m(28 / 2);
+    margin: size-m(14) auto size-m(100) auto ;   
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -228,9 +240,10 @@
     text-align: center;
     color: #231815;
     white-space: nowrap;
-    top: size-m((263 + 617) / 2);
-    right: size-m(138 / 2);
-    width: size-m(440 / 2);
+    width: 100%;
+  //  top: size-m((263 + 617) / 2);
+   // right: size-m(138 / 2);
+   // width: size-m(440 / 2);
   }
 
   .swiper-container {

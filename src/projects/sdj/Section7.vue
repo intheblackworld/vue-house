@@ -4,7 +4,7 @@
       src="./s7/area7_bg.png"
       alt=""
       class="bg-img"
-    >
+    ><div class="box"></div>
     <img
       :src="isMobile ? require('./s7/area7_doll_mobile.png') : require('./s7/area7_doll.png')"
       alt=""
@@ -29,7 +29,7 @@
 .relative {
   // height: 100vh;
   overflow: hidden;
-  background: #fff;
+  background: #004a7f;
 }
 .bg-img {
   width: 100vw;
@@ -39,25 +39,42 @@
   top: 0;
   left: 0;
   object-fit: cover;
+  z-index: 2;
 
   &:nth-child(1) {
     position: relative;
   }
 }
-
+.box{background: #fff7;width:  size(50);height: 100%;position: absolute;top:0;left: 0;
+transform: skewX(-35deg)scaleX(4)translateX(-300%);animation: b 2s 3s ease-in-out infinite;
+&::before{content: "";background: #fff3;width:  size(80);height: 100%;position: absolute;top:0;left: size(-15);}
+&::after{content: "";background: #fff3;width:  size(100);height: 100%;position: absolute;top:0;left:  size(-25);}
+}
+@keyframes b{
+    to {
+transform: skewX(-35deg)scaleX(4)translateX(5000%);
+      //  transform: rotate(5deg);
+    }
+}
 .doll {
+  z-index: 2;
+
   width: size(420);
   top: size(397);
   left: size(469);
 }
 
 .info {
+  z-index: 2;
+
   width: size(455);
   top: size(47);
   right: size(445);
 }
 
 .title {
+  z-index: 2;
+
   font-size: size(50);
   font-weight: bold;
   font-stretch: normal;
@@ -73,6 +90,8 @@
 }
 
 .hr {
+  z-index: 2;
+
   width: size(590);
   height: 1px;
   background-color: #fff;
@@ -81,6 +100,8 @@
 }
 
 .desc {
+  z-index: 2;
+
   font-size: size(28);
   font-weight: normal;
   font-stretch: normal;
@@ -137,9 +158,9 @@
   }
 
   .info {
-    width: size-m(300);
+    width: size-m(375);
     top: size-m(47 /2);
-    left: size-m(62);
+    left: size-m(35);
   }
 
   .title {

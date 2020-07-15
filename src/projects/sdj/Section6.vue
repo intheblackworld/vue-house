@@ -16,6 +16,10 @@
             :src="slide.src"
             :class="`item-img`"
           />
+          <img
+            :src="slide.src"
+            :class="`item-img2`"
+          />
           <div class="slide-title absolute">{{slide.title}}</div>
         </swiper-slide>
         <div
@@ -32,7 +36,7 @@
 
 .bg {
   position: relative;
-  height: size(1080);
+  height:100vh;
   overflow: hidden;
 
   &::v-deep {
@@ -87,11 +91,19 @@
   bottom: size(80);
 }
 
-.item-img {
+.item-img {top: 0;left: 0;
   width: 100vw;
-  height: size(1080);
+  height:100vh;
   object-fit: cover;
   object-position: center;
+  -webkit-filter:blur(5px)brightness(.5);
+}
+.item-img2 {top: 0;left: 0;
+  position: absolute;
+  width: 100vw;
+  height:100vh;
+  object-fit: contain;
+  object-position: center;z-index: 2;
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -109,7 +121,7 @@
 
 @media screen and (max-width: 767px) {
   .bg {
-    height: size-m((422 + 57) / 2);
+  height:calc(177.8666666667vw - 63px);
 
     &::v-deep {
       .swiper-pagination {
@@ -137,7 +149,7 @@
 
   .swiper-container {
     width: 100vw;
-    height: size-m(422 / 2);
+    height: 100%;
     overflow: visible;
     position: absolute;
     left: 0;
@@ -155,7 +167,7 @@
     align-items: center;
     justify-content: center;
     padding: 0;
-    background-color: #999;
+    background-color: #0000;
     color: #fff;
     font-size: size-m(16);
     font-weight: normal;
@@ -167,8 +179,22 @@
     color: #ffffff;
     z-index: 10;
     right: 0;
-    bottom: size-m((-57) / 2);
+    bottom: size-m(50);
   }
+.item-img {top: 0;left: 0;
+  width: 100vw;
+  height:calc(177.8666666667vw - 63px);
+  object-fit: cover;
+  object-position: center;
+  -webkit-filter:blur(5px)brightness(.5);
+}
+.item-img2 {top:50%;left: 0;transform: translateY(-50% );
+  position: absolute;
+  width: 100vw;
+  height:auto;
+  object-fit: contain;
+  object-position: center;z-index: 2;
+}
 }
 </style>
 
@@ -212,40 +238,48 @@ export default {
       },
       slideList: [
         {
-          src: require('./s6/上揚實業_達麗_上東京(鼎力案)_RF觀星午茶區_1090103_.jpg'),
-          title: 'RF觀星午茶區',
+          src: require('./s6/上揚實業_達麗_上東京(鼎力案)_角度1大廳_1090117_.jpg'),
+          title: '大廳',
         },
         {
-          src: require('./s6/上揚實業_達麗_上東京(鼎力案)_中庭景觀_1090206_.jpg'),
-          title: '中庭景觀',
+          src: require('./s6/大廳2.jpg'),
+          title: '大廳',
         },
         {
-          src: require('./s6/上揚實業_達麗_上東京(鼎力案)_中庭泳池_1090219_.jpg'),
-          title: '中庭泳池',
+          src: require('./s6/上揚實業_達麗_上東京(鼎力案)_多功能教室_1090203_.jpg'),
+          title: '媽媽教室',
         },
         {
           src: require('./s6/上揚實業_達麗_上東京(鼎力案)_交誼廳_1090206_.jpg'),
           title: '交誼廳',
         },
         {
-          src: require('./s6/上揚實業_達麗_上東京(鼎力案)_健身房_1090203_.jpg'),
-          title: '健身房',
+          src: require('./s6/上揚實業_達麗_上東京(鼎力案)_水景步道_1090206_.jpg'),
+          title: '水景步道',
+        },
+        {
+          src: require('./s6/上揚實業_達麗_上東京(鼎力案)_中庭景觀_1090206_.jpg'),
+          title: '中庭景觀',
         },
         {
           src: require('./s6/上揚實業_達麗_上東京(鼎力案)_兒童室_1090203_.jpg'),
           title: '兒童室',
         },
         {
-          src: require('./s6/上揚實業_達麗_上東京(鼎力案)_多功能教室_1090203_.jpg'),
-          title: '多功能教室',
+          src: require('./s6/8運動休閒區.jpg'),
+          title: '運動休閒區',
         },
         {
-          src: require('./s6/上揚實業_達麗_上東京(鼎力案)_水景步道_1090206_.jpg'),
-          title: '水景步道',
+          src: require('./s6/上揚實業_達麗_上東京(鼎力案)_健身房_1090203_.jpg'),
+          title: '健身房',
         },
         {
-          src: require('./s6/上揚實業_達麗_上東京(鼎力案)_角度1大廳_1090117_.jpg'),
-          title: '角度1大廳',
+          src: require('./s6/上揚實業_達麗_上東京(鼎力案)_中庭泳池_1090219_.jpg'),
+          title: '中庭泳池',
+        },
+        {
+          src: require('./s6/上揚實業_達麗_上東京(鼎力案)_RF觀星午茶區_1090103_.jpg'),
+          title: 'RF觀星午茶區',
         },
       ],
     }

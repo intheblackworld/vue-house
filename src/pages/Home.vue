@@ -22,7 +22,7 @@
     >
       <VideoSection
         :playBtn="require('@/projects/sdj/s2/area2_playBtn.png')"
-        title="開箱系列影片"
+        title="系列影片"
         :close="require('@/projects/jh/s4/close.png')"
         :arrows="[require('@/projects/gydy/arrow-left.png'), require('@/projects/gydy/arrow-right.png')]"
         :slideList="[

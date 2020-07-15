@@ -28,6 +28,7 @@ $mask_icon_color: #c82514;
 $video_section_bg: url('~@/projects/sdj/s2/area2_bg.jpg');
 $video_section_bg_m: url('~@/projects/sdj/s2/area2_bg_mobile@2x.jpg');
 $video_section_title_color: #ffee99;
+$video_section_item:url('~@/projects/sdj/s2/1.jpg');
 $video_section_item_border: #ccc;
 $video_section_item_color: #fff;
 $video_section_item_hover_color: #fff;
@@ -38,8 +39,8 @@ $video_section_btn_hover_bg: rgba(255, 255, 255, 0.5);
 /* contactSection */
 // order
 $order_bg_color:#231815;
-$order_bg_image: #231815;
-$order_bg_image_m: #231815;
+$order_bg_image:url('~@/projects/sdj/s2/area2_bg.jpg');
+$order_bg_image_m:url('~@/projects/sdj/s2/area2_bg.jpg');
 $order_title_color: #fff;
 $order_subtitle_color: #cc2617;
 $order_input_label_color: #fff;
