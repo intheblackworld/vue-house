@@ -8,6 +8,7 @@
       <img src="./s1/nexttofuture.png" alt="" class="absolute slogan">
     </div>
       <div class="vh2">
+        <div>
       <img src="./s1/img1.jpg" alt="img1" class="img1">
       <img src="./s1/img2.jpg" alt="img2" class="img2">
     </div>
@@ -39,13 +40,18 @@
 
 .img1 {
   width: size(900);
+  height:calc(100vh - 60px);
+  object-fit: cover;
 }
 
 .img2 {
   width: size(765);
+  height:calc(100vh - 60px);
   margin-left:size(80);
+  object-fit: cover;
 }
-.vh1{height:calc(100vh - 3vw);position: relative; overflow: hidden;}
+.vh1{height:calc(100vh - 3vw);
+  width: size(1368);position: relative; overflow: hidden;margin: auto;}
 .vh2{position: relative; overflow: hidden;text-align: right;}
 .button {
   cursor: pointer;
@@ -80,14 +86,14 @@ background: linear-gradient(to right, rgba(235,85,0,1) 0%,rgba(215,0,50,1) 100%)
   height:calc(100vh * 142 / 1000);
   top:calc(50% + 15vh);
  // top: size(709);
-  left: size(170);
+  left: size(0);
 }
 
 .slogan {
   height:calc(100vh * 394 / 1000);
   bottom:calc(50% - 16vh);
  // top: size(312);
-  left: size(158);
+  left: size(0);
 }
 
 /* 平板尺寸 */
