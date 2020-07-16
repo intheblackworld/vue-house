@@ -1,6 +1,7 @@
-@keyframes swing {
+@import "~@/assets/style/function.scss";
 
- to {
+@keyframes swing {
+  to {
     transform: translateX(-15%);
   }
 }
@@ -35,7 +36,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 0, 0, .4);
+    background-color: rgba(0, 0, 0, 0.4);
     z-index: 2;
   }
 }
@@ -46,8 +47,8 @@
     overflow-y: hidden;
     width: 100vw;
     .map-bg {
-      width: auto;
-      height: calc(100vh - 123px - 31vw);
+      width: size-m(1920);
+      height: size-m(1129);
     }
 
     .map-text {
@@ -61,18 +62,20 @@
     }
 
     .mask {
-    //  animation: swing 2.5s ease-in-out 0s infinite;
-      left: 50%;
+      width: size-m(1920);
+      height: size-m(1129);
+      //  animation: swing 2.5s ease-in-out 0s infinite;
+      left: 0;
     }
 
     .hand {
       position: absolute;
       z-index: 2;
       display: block;
-      width:calc(100vw * 112/375) !important;
+      width: calc(100vw * 112 / 375) !important;
       height: auto !important;
-      left: 33.33%;
-      top: 25% !important;
+      left: 50%;
+      top: 5% !important;
       display: block;
       animation: swing 1s linear 0s alternate infinite;
       transform: translateX(5%);

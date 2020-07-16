@@ -24,14 +24,14 @@
         data-aos-delay="600"
       >
       <div class="bg-img cloud">
-      <img
-        src="./s1/cloud.png"
-        alt="bg"
-      >
-      <img
-        src="./s1/cloud.png"
-        alt="bg"
-      >
+        <img
+          src="./s1/cloud.png"
+          alt="bg"
+        >
+        <img
+          src="./s1/cloud.png"
+          alt="bg"
+        >
       </div>
       <img
         src="./s1/cloud2.png"
@@ -48,8 +48,11 @@
         alt="bg"
         class="bg-img b"
       >
-      <img src="./s1/logo.png" alt=""
-        class="bg-img logo">
+      <img
+        src="./s1/logo.png"
+        alt=""
+        class="bg-img logo"
+      >
       <!--<img
         src="./s1/area1_bg.png"
         alt=""
@@ -77,28 +80,25 @@
       <!-- <img src="./s1/menu_logo.png" alt="" class="menu"> -->
     </div>
     <div class="s2">
-      <div class="mapbox">
-      <img
-        src="./s1/map.jpg"
-        alt="bg"
-        class="bg-img map"
-      >
-      <img
-        src="./s1/l1.png"
-        alt="bg"
-        class="bg-img light2"
-      >
-      <img
-        src="./s1/l2.png"
-        alt="bg"
-        class="bg-img light2 l2"
-      >
-      <img
-        src="./s1/area1_loocation.png"
-        alt="bg"
-        class="bg-img location"
-      >
-      </div>
+      <Map :bgSrc="require('./s1/map.jpg')">
+        <div slot="main">
+          <img
+            src="./s1/l1.png"
+            alt="bg"
+            class="bg-img light2"
+          >
+          <img
+            src="./s1/l2.png"
+            alt="bg"
+            class="bg-img light2 l2"
+          >
+          <img
+            src="./s1/area1_loocation.png"
+            alt="bg"
+            class="bg-img location"
+          >
+        </div>
+      </Map>
     </div>
   </div>
 </template>
@@ -109,11 +109,18 @@
   overflow: hidden;
   background: #eee4cb;
 }
-.s1{position: relative;height: 100vh;}
-.s2{position: relative;height:100vh;min-height:size(1000);}
+.s1 {
+  position: relative;
+  height: 100vh;
+}
+.s2 {
+  position: relative;
+  height: 100vh;
+  min-height: size(1000);
+}
 .bg-img {
   width: 100vw;
-  height:100vh;
+  height: 100vh;
   position: absolute;
   display: block;
   top: 0;
@@ -123,32 +130,72 @@
   &:nth-child(1) {
     position: relative;
   }
-  &.light{animation: light 2s alternate infinite;opacity: 1;}
-  &.logo{height:size(250);max-height:calc(100vh - 33vw);width:auto;left:51.5%;top:20%;transform: translate(-50% , -35%);
-  //height:auto;
+  &.light {
+    animation: light 2s alternate infinite;
+    opacity: 1;
   }
-  &.b{height:auto;top:auto;bottom: 0;animation: xx 3s 3s ease-in-out alternate infinite;
-      transform: translateX(-2%);}
-  &.g{height:auto;animation: xx 3s ease-in-out alternate infinite;
-      transform: translateX(-2%);}
-  &.a{top:auto;bottom: 0;min-height:size(900)}
-  &.cloud{width: 200vw;animation: cloud 35s linear infinite;
-  img{width: 100vw;
-  object-fit: cover;
-  height:100vh;}
+  &.logo {
+    height: size(250);
+    max-height: calc(100vh - 33vw);
+    width: auto;
+    left: 51.5%;
+    top: 20%;
+    transform: translate(-50%, -35%);
+    //height:auto;
   }
-  &.map{width:100%;height: auto;
-  //animation: map 20s linear alternate infinite;left: 50%;transition: all 0.3s;
-      }
-  &.light2{top:0;left:0;z-index: 2;width:100%;height: auto;animation: light 1s alternate infinite;opacity: 1;
+  &.b {
+    height: auto;
+    top: auto;
+    bottom: 0;
+    animation: xx 3s 3s ease-in-out alternate infinite;
+    transform: translateX(-2%);
   }
-  &.light2.l2{animation-delay: 1s;
+  &.g {
+    height: auto;
+    animation: xx 3s ease-in-out alternate infinite;
+    transform: translateX(-2%);
   }
-&.location {
-  width: size(130);height: auto;z-index: 2;left: 52%;top:size(250);transform: translateX(-50%);
-  animation: location 1s ease-in-out alternate infinite;
-  transform-origin: 50% 100%;
-}
+  &.a {
+    top: auto;
+    bottom: 0;
+    min-height: size(900);
+  }
+  &.cloud {
+    width: 200vw;
+    animation: cloud 35s linear infinite;
+    img {
+      width: 100vw;
+      object-fit: cover;
+      height: 100vh;
+    }
+  }
+  &.map {
+    width: 100%;
+    height: auto;
+    //animation: map 20s linear alternate infinite;left: 50%;transition: all 0.3s;
+  }
+  &.light2 {
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: auto;
+    animation: light 1s alternate infinite;
+    opacity: 1;
+  }
+  &.light2.l2 {
+    animation-delay: 1s;
+  }
+  &.location {
+    width: size(130);
+    height: auto;
+    z-index: 2;
+    left: 52%;
+    top: size(250);
+    transform: translateX(-50%);
+    animation: location 1s ease-in-out alternate infinite;
+    transform-origin: 50% 100%;
+  }
 }
 .city {
   margin-top: size(700);
@@ -160,39 +207,41 @@
   left: size(243);
 }
 @keyframes light {
-    to {
-        opacity: 0;
-      //  transform: rotate(5deg);
-    }
+  to {
+    opacity: 0;
+    //  transform: rotate(5deg);
+  }
 }
 
 @keyframes xx {
-    to {
-      transform: translateX(2%);
-      //  transform: rotate(5deg);
-    }
+  to {
+    transform: translateX(2%);
+    //  transform: rotate(5deg);
+  }
 }
 @keyframes cloud {
-    to {
-      transform: translateX(-50%);
-      //  transform: rotate(5deg);
-    }
+  to {
+    transform: translateX(-50%);
+    //  transform: rotate(5deg);
+  }
 }
-@keyframes location{
-    to {
-     transform: translateX(-50%) scale(1.2);
-      //  transform: rotate(5deg);
-    }
+@keyframes location {
+  to {
+    transform: translateX(-50%) scale(1.2);
+    //  transform: rotate(5deg);
+  }
 }
-@keyframes map{
-    0% {left: 0;
-      transform: translateX(0);
-      //  transform: rotate(5deg);
-    }
-    100% {left: 100%;
-      transform: translateX(-100%);
-      //  transform: rotate(5deg);
-    }
+@keyframes map {
+  0% {
+    left: 0;
+    transform: translateX(0);
+    //  transform: rotate(5deg);
+  }
+  100% {
+    left: 100%;
+    transform: translateX(-100%);
+    //  transform: rotate(5deg);
+  }
 }
 @media only screen and (max-width: 1440px) {
   .bg-img {
@@ -216,30 +265,69 @@
     background: #eee4cb;
     //margin-top: 60px;
   }
-  
-.s2{height:auto;min-height:size-m(0);overflow: auto;}
-.bg-img {
 
-  &:nth-child(1) {
+  .s2 {
+    height: auto;
+    min-height: size-m(0);
+    overflow: auto;
   }
-  &.light{}
-  &.logo{height:size-m(200);max-height:calc(100vh - 140vw);width:auto;left:51.5%;top:15%;transform: translate(-50% , -20%);
-  //height:auto;
+  .bg-img {
+    &:nth-child(1) {
+      position: absolute;
+    }
+    &.light {
+    }
+    &.logo {
+      height: size-m(200);
+      max-height: calc(100vh - 140vw);
+      width: auto;
+      left: 51.5%;
+      top: 15%;
+      transform: translate(-50%, -20%);
+      //height:auto;
+    }
+    &.b {
+      width: 140vw;
+      right: -18vw;
+      left: auto;
+      bottom: 63px;
+    }
+    &.g {
+      width: 140vw;
+      left: -18vw;
+      top: auto;
+      bottom: 63px;
+    }
+    &.a {
+      min-height: size-m(800);
+    }
+    &.cloud {
+      width: 400vw;
+      img {
+        width: 200vw;
+      }
+    }
+    &.map {
+      width: 100%;
+    }
+    &.light2 {
+      width: auto;
+      height: 100%;
+    }
+    &.location {
+      width: size-m(130);
+      height: auto;
+      z-index: 2;
+      left: size-m(1000);
+      top: size-m(230);
+      transform: translateX(-50%);
+    }
   }
-  &.b{width: 140vw;right:-18vw;left: auto;}
-  &.g{width: 140vw;left:-18vw;top:auto;bottom:0}
-  &.a{min-height:size-m(800)}
-  &.cloud{width: 400vw;
-  img{width: 200vw;}
+  .mapbox {
+    height: auto;
+    position: relative;
+    width: size-m(1920);
   }
-  &.map{width:100%;}
-  &.light2{width:auto;height: 100%;
-  }
-&.location {
-  width: size-m(130);height: auto;z-index: 2;left: 52%;top:size-m(250);transform: translateX(-50%);
-}
-}
-.mapbox{height:auto;position: relative;width: size-m(1920);}
   /*
   .bg-img {
     width: 100vw;
@@ -273,11 +361,14 @@
 <script>
 // @ is an alias to /src
 import { isMobile } from '@/utils'
+import Map from '@/components/Map.vue'
 
 export default {
   name: 'section1',
 
-  components: {},
+  components: {
+    Map,
+  },
   data() {
     return {
       isMobile,
