@@ -173,6 +173,7 @@
   .video-item {
     width: 100%;
     height: 100%;
+    background-size: cover;
     background-color: #000;background-image:$video_section_item;
     position: absolute;
     top: 0;
