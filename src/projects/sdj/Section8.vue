@@ -21,6 +21,7 @@
             :class="`item-img2`"
           />
           <div class="slide-title absolute">{{slide.title}}</div>
+          <div class="absolute txt">樣品屋圖片僅供示意參考，依實際合約附圖為準。</div>
         </swiper-slide>
         <div
           class="swiper-pagination"
@@ -63,7 +64,7 @@
 
 .swiper-container {
   width: 100vw;
-  height: size(1080);
+  //height: size(1080);
   overflow: hidden;
   position: absolute;
   left: 0;
@@ -88,11 +89,15 @@
   color: #ffffff;
   z-index: 10;
   right: 0;
-  bottom: size(80);
+  bottom: size(30);
 }
 
+.txt{
+  color: #ffffff;z-index:2;
+  right:  size(30);opacity: .8;
+  bottom: size(10);}
 .item-img {top: 0;left: 0;
-  width: 100vw;
+  width: 100%;
   height:100vh;
   object-fit: cover;
   object-position: center;
@@ -127,7 +132,7 @@
       .swiper-pagination {
         width: 100vw;
         left: auto;
-        bottom: 10px;
+        bottom: size-m(20);
         right: 0px;
         left: 0;
         margin: 0 auto;
@@ -160,6 +165,7 @@
     }
   }
 
+.txt{font-size: size-m(12);top: calc(50% + 30vw);}
   .slide-title {
     width: 100vw;
     height: size-m(57 / 2);
@@ -265,7 +271,7 @@ export default {
           src: require('./s8/7.jpg'),
           title: '樣品屋示意'
         },
-        {
+       /* {
           src: require('./s8/8.jpg'),
           title: '樣品屋示意'
         },
@@ -292,7 +298,7 @@ export default {
         {
           src: require('./s8/14.jpg'),
           title: '樣品屋示意'
-        },
+        },*/
       ],
     }
   },

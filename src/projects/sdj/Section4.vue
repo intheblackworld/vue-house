@@ -1,10 +1,10 @@
 <template>
   <div class="relative">
-    <div>
+    <div class="flex box1">
       <img
         src="./s4/area4_map.png"
         alt=""
-        class="map-img absolute"
+        class="map-img"
       >
       <img
         v-if="isMobile"
@@ -13,18 +13,18 @@
         class="scale absolute"
         @click="isDialog = true"
       >
-      <div class="txt absolute">
+      <div class="txt">
       <div class="title">6分鐘<br />新百貨時代大進擊</div>
       <div class="hr"></div>
       <div class="desc ">巨蛋生活圈，百貨密度高雄最高<br />
         6分鐘時尚全攻略。<br />
-        漢神巨蛋、悦誠廣場、大樂購物中心<br />
+        漢神巨蛋、悅誠廣場、大樂購物中心<br />
         好市多聯手，再版台北信義<br />
         台中台灣大道一條街盛況！<br />
         北高雄新百貨時代登場，先佔先贏！
       </div>
       <swiper
-        class="absolute"
+        class=""
         :options="swiperOption"
         ref="mySwiper"
         swiper-no-swiping
@@ -81,7 +81,7 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .relative {
-  height:100vh;
+  height:auto;
   max-height:958px;
   overflow: hidden;
   background-color: #fff;
@@ -99,7 +99,8 @@
     position: relative;
   }
 }
-
+.box1{padding: size(54) 0;margin: auto; width: size(1700);position: relative;
+  height: size(1000);justify-content:space-between;align-items:stretch;}
 .map-img {
   height: 100%;
   
@@ -107,13 +108,11 @@
   left: 0;
 }
 
-.txt {height: 90%;
-  width: size(525);
-  top:10%;
-  right:size(130);}
+.txt {border: 1px solid #036eb6;position: relative;
+  margin: 0 0 0 size(25);flex: 1;padding: 0 0 size(121) 0;}
 .title {
   font-size: size(40);
-  margin: size(40) 0 size(14) 0 ; 
+  margin: size(40) auto size(14) auto; 
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -123,8 +122,6 @@
   color: #036eb6;
   white-space: nowrap;
   top: size(121);
-  right: size(46);
-  width: size(522);
 }
 
 .hr {
@@ -135,7 +132,7 @@
 }
 
 .desc {
-  margin: size(26) auto size(100) auto ; 
+  margin: size(26) auto size(50) auto ; 
   font-size: size(18);
   font-weight: normal;
   font-stretch: normal;
@@ -153,9 +150,8 @@
 .swiper-container {
   width: size(525);
   height: size(338);
-  right:0;
-  bottom: size(40);
   overflow: visible;
+  margin: auto auto size(80) auto ;
 
   .item-img {
     width: 100%;
@@ -197,7 +193,7 @@
 
 @media screen and (max-width: 767px) {
   .relative {
-    height: size-m(667);
+  // height: size-m(667);
     overflow: hidden;
     background-color: #fff;
   }
@@ -206,7 +202,10 @@
     top: 0;
     left: 0;
   }
-.txt{height: auto;width: 100%;top: size-m(334);right: 0;}
+.box1{flex-wrap: wrap;padding: 0 0;width:100%;
+  height:auto;}
+
+.txt{height:size-m(550);margin:size-m(20);}
   .title {
     margin: size-m(40) 0 size-m(14) 0 ; 
   
@@ -231,7 +230,7 @@
 
   .desc {
     font-size: size-m(28 / 2);
-    margin: size-m(14) auto size-m(100) auto ;   
+    margin: size-m(14) auto size-m(30) auto ;   
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -249,8 +248,9 @@
   .swiper-container {
     width: size-m(525 / 2);
     height: size-m(338 / 2);
-    top: size-m((617 + 625) / 2);
-    right: size-m(96 / 2);
+    transform: scale(1.2);
+   // top: size-m((617 + 625) / 2);
+  //  right: size-m(96 / 2);
     overflow: visible;
 
     .item-img {
@@ -392,7 +392,7 @@ export default {
         },
         {
           src: require('./s4/悦誠廣場.jpg'),
-          title: '悦誠廣場',
+          title: '悅誠廣場',
         },
         {
           src: require('./s4/文藻大學外語最高學府.jpg'),

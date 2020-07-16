@@ -21,7 +21,7 @@
             :class="`item-img2`"
           />
           <div class="slide-title absolute">{{slide.title}}</div>
-          <div class="txt">3D示意圖僅供參考</div>
+          <div class="absolute txt">3D示意圖僅供參考</div>
         </swiper-slide>
         <div
           class="swiper-pagination"
@@ -89,11 +89,11 @@
   color: #ffffff;
   z-index: 10;
   right: 0;
-  bottom: size(10);
+  bottom: size(30);
 }
 .txt{
-  color: #ffffff;
-  right: 0;
+  color: #ffffff;z-index:2;
+  right:  size(30);opacity: 0.8;
   bottom: size(10);}
 .item-img {top: 0;left: 0;
   width: 100vw;
@@ -131,7 +131,7 @@
       .swiper-pagination {
         width: 280px;
         left: auto;
-        bottom: 10px;
+        bottom: size-m(20);
         right: 0px;
         left: 0;
         margin: 0 auto;
@@ -163,7 +163,7 @@
       display: block;
     }
   }
-
+.txt{font-size: size-m(12);top: calc(50% + 30vw);}
   .slide-title {
     width: 100vw;
     height: size-m(57 / 2);
