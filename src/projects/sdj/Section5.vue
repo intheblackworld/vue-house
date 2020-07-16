@@ -22,6 +22,7 @@
           />
         </swiper-slide>
         <div
+          v-if="!isMobile"
           class="swiper-pagination"
           slot="pagination"
         ></div>

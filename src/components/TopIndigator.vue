@@ -206,6 +206,16 @@ export default {
       // console.log(val)
       this.indigatorIndex = val
     },
+
+    isExtend(val) {
+      if (this.isMobile) {
+        if (val) {
+          setTimeout(() => {
+            this.isExtend = false
+          }, 5000)
+        }
+      }
+    }
   },
 
   methods: {

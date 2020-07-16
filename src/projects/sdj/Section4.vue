@@ -202,7 +202,7 @@
     background-color: #fff;
   }
   .map-img {
-    width: 100vw;height: auto;
+    width: 100vw;height: size-m(310);
     top: 0;
     left: 0;
   }

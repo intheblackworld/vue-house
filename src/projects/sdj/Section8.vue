@@ -239,59 +239,59 @@ export default {
       slideList: [
         {
           src: require('./s8/1.jpg'),
-          title: '樣品屋示意'
+          title: '空間饗宴'
         },
         {
           src: require('./s8/2.jpg'),
-          title: '樣品屋示意'
+          title: '空間饗宴'
         },
         {
           src: require('./s8/3.jpg'),
-          title: '樣品屋示意'
+          title: '空間饗宴'
         },
         {
           src: require('./s8/4.jpg'),
-          title: '樣品屋示意'
+          title: '空間饗宴'
         },
         {
           src: require('./s8/5.jpg'),
-          title: '樣品屋示意'
+          title: '空間饗宴'
         },
         {
           src: require('./s8/6.jpg'),
-          title: '樣品屋示意'
+          title: '空間饗宴'
         },
         {
           src: require('./s8/7.jpg'),
-          title: '樣品屋示意'
+          title: '空間饗宴'
         },
         {
           src: require('./s8/8.jpg'),
-          title: '樣品屋示意'
+          title: '空間饗宴'
         },
         {
           src: require('./s8/9.jpg'),
-          title: '樣品屋示意'
+          title: '空間饗宴'
         },
         {
           src: require('./s8/10.jpg'),
-          title: '樣品屋示意'
+          title: '空間饗宴'
         },
         {
           src: require('./s8/11.jpg'),
-          title: '樣品屋示意'
+          title: '空間饗宴'
         },
         {
           src: require('./s8/12.jpg'),
-          title: '樣品屋示意'
+          title: '空間饗宴'
         },
         {
           src: require('./s8/13.jpg'),
-          title: '樣品屋示意'
+          title: '空間饗宴'
         },
         {
           src: require('./s8/14.jpg'),
-          title: '樣品屋示意'
+          title: '空間饗宴'
         },
       ],
     }
