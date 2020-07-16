@@ -49,6 +49,7 @@
 
   &::v-deep {
     .swiper-pagination {
+      display: none;
       width: 140px;
       left: auto;
       bottom: 20px;
