@@ -48,25 +48,25 @@ $order_input_color: #000 !important;
 $order_input_placeholder: #666 !important;
 $order_input_bg: #fff !important;
 $order_input_border: solid 1px #fff; 
-$order_input_focus_border: solid 1px 377618 !important;
-$order_input_selected_color: solid 1px 377618 !important;
+$order_input_focus_border: solid 1px #377618 !important;
+$order_input_selected_color: solid 1px #377618 !important;
 $order_check_desc_color: #fff !important;
 $order_check_span_color: #db0000 !important;
-$order_submit_bg: #f5e50c !important;
-$order_submit_color: #333 !important;
+$order_submit_bg: #036 !important;
+$order_submit_color: #fff !important;
 $order_sumbit_disable_bg: rgba(255, 229, 46, .4) !important;
 
 // contactInfo
-$contact_bg: #8b5129;
-$contact_bg_m: #8b5129;
+$contact_bg: #036;
+$contact_bg_m: #036;
 $contact_shadow: 0 0 80px 0 rgba(0, 0, 0, 0.2);
 
 $contact_btn_border: 0 0 0px 1px #333;
 $contact_btn_color: #fff;
 $contact_btn_icon: #fff;
-$contact_btn_bg: #231815;
-$contact_btn_hover_color: #231815;
-$contact_btn_hover_icon: #231815;
+$contact_btn_bg: #0000;
+$contact_btn_hover_color: #036;
+$contact_btn_hover_icon: #036;
 $contact_btn_hover_bg: #fff;
 
 $contact_google_btn_color: #fff;
@@ -85,15 +85,15 @@ $house_label_color: #231815;
 $house_desc_color: #000;
 
 // mobileNav
-$mobile_nav_background: #231815;
+$mobile_nav_background: #069;
 $mobile_nav_color: #fff;
-$mobile_nav_border: #5d4400;
+$mobile_nav_border: #fff6;
 $mobile_nav_icon: #fff;
 
 $mobile_dialog_bg: #fff;
-$mobile_dialog_icon: #231815;
-$mobile_dialog_desc: #000;
-$mobile_dialog_submit_bg: #231815;
+$mobile_dialog_icon: #036;
+$mobile_dialog_desc: #036;
+$mobile_dialog_submit_bg: #036;
 $mobile_dialog_submit_color: #fff;
 
 

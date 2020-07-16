@@ -77,11 +77,28 @@
       <!-- <img src="./s1/menu_logo.png" alt="" class="menu"> -->
     </div>
     <div class="s2">
+      <div class="mapbox">
       <img
         src="./s1/map.jpg"
         alt="bg"
         class="bg-img map"
       >
+      <img
+        src="./s1/l1.png"
+        alt="bg"
+        class="bg-img light2"
+      >
+      <img
+        src="./s1/l2.png"
+        alt="bg"
+        class="bg-img light2 l2"
+      >
+      <img
+        src="./s1/area1_loocation.png"
+        alt="bg"
+        class="bg-img location"
+      >
+      </div>
     </div>
   </div>
 </template>
@@ -93,7 +110,7 @@
   background: #eee4cb;
 }
 .s1{position: relative;height: 100vh;}
-.s2{position: relative;height: 100vh;}
+.s2{position: relative;height:100vh;min-height:size(1000);}
 .bg-img {
   width: 100vw;
   height:100vh;
@@ -120,16 +137,21 @@
   object-fit: cover;
   height:100vh;}
   }
-  &.map{width:calc(100vh * 2846 / 1080);animation: map 20s linear alternate infinite;left: 50%;transition: all 0.3s;
+  &.map{width:100%;height: auto;
+  //animation: map 20s linear alternate infinite;left: 50%;transition: all 0.3s;
       }
+  &.light2{top:0;left:0;z-index: 2;width:100%;height: auto;animation: light 1s alternate infinite;opacity: 1;
+  }
+  &.light2.l2{animation-delay: 1s;
+  }
+&.location {
+  width: size(130);height: auto;z-index: 2;left: 52%;top:size(250);transform: translateX(-50%);
+  animation: location 1s ease-in-out alternate infinite;
+  transform-origin: 50% 100%;
+}
 }
 .city {
   margin-top: size(700);
-}
-.location {
-  width: size(200);
-  top: size(1050);
-  left: size(750);
 }
 
 .title {
@@ -153,6 +175,12 @@
 @keyframes cloud {
     to {
       transform: translateX(-50%);
+      //  transform: rotate(5deg);
+    }
+}
+@keyframes location{
+    to {
+     transform: translateX(-50%) scale(1.2);
       //  transform: rotate(5deg);
     }
 }
@@ -189,6 +217,7 @@
     margin-top: 60px;
   }
   
+.s2{height:auto;min-height:size-m(0);overflow: auto;}
 .bg-img {
 
   &:nth-child(1) {
@@ -203,8 +232,14 @@
   &.cloud{width: 400vw;
   img{width: 200vw;}
   }
-  &.map{width:calc(100vh - 63px);animation: map 10s linear alternate infinite;}
+  &.map{width:100%;}
+  &.light2{width:auto;height: 100%;
+  }
+&.location {
+  width: size-m(130);height: auto;z-index: 2;left: 52%;top:size-m(250);transform: translateX(-50%);
 }
+}
+.mapbox{height:auto;position: relative;width: size-m(1920);}
   /*
   .bg-img {
     width: 100vw;

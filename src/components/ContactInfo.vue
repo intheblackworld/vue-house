@@ -133,6 +133,7 @@ export default {
   text-decoration: none;
   color: $contact_btn_color;
   background: $contact_btn_bg;
+  border: 1px solid #fff;
   // box-shadow: $contact_btn_border;
   transition: all 0.5s;
   position: relative;
