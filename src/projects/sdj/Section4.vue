@@ -14,75 +14,76 @@
         @click="isDialog = true"
       >
       <div class="txt">
-      <div class="title">6分鐘<br />新百貨時代大進擊</div>
-      <div class="hr"></div>
-      <div class="desc ">巨蛋生活圈，百貨密度高雄最高<br />
-        6分鐘時尚全攻略。<br />
-        漢神巨蛋、悅誠廣場、大樂購物中心<br />
-        好市多聯手，再版台北信義<br />
-        台中台灣大道一條街盛況！<br />
-        北高雄新百貨時代登場，先佔先贏！
-      </div>
-      <swiper
-        class=""
-        :options="swiperOption"
-        ref="mySwiper"
-        swiper-no-swiping
-      >
-        <swiper-slide
-          v-for="(slide, index) in slideList"
-          :index="index"
-          :key="slide.img"
-          class="item"
-        >
-          <img
-            :src="slide.src"
-            :class="`item-img`"
-          />
-          <div class="slide-title absolute">{{slide.title}}</div>
-        </swiper-slide>
-        <div
-          class="swiper-button-prev"
-          slot="button-prev"
-        >
-          <img
-            src="./s4/area4_preBtn.png"
-            alt
-          />
+        <div class="title">6分鐘<br />新百貨時代大進擊</div>
+        <div class="hr"></div>
+        <div class="desc ">巨蛋生活圈，百貨密度高雄最高<br />
+          6分鐘時尚全攻略。<br />
+          漢神巨蛋、悅誠廣場、大樂購物中心<br />
+          好市多聯手，再版台北信義<br />
+          台中台灣大道一條街盛況！<br />
+          北高雄新百貨時代登場，先佔先贏！
         </div>
-        <div
-          class="swiper-button-next"
-          slot="button-next"
+        <swiper
+          class=""
+          :options="swiperOption"
+          ref="mySwiper"
+          swiper-no-swiping
         >
-          <img
-            src="./s4/area4_nextBtn.png"
-            alt
-          />
-        </div>
-      </swiper>
-      <div
-        class="dialog"
-        v-if="isDialog"
-      >
-        <div><img
-            src="./s4/area4_map.png"
+          <swiper-slide
+            v-for="(slide, index) in slideList"
+            :index="index"
+            :key="slide.img"
+            class="item"
+          >
+            <img
+              :src="slide.src"
+              :class="`item-img`"
+            />
+            <div class="slide-title absolute">{{slide.title}}</div>
+          </swiper-slide>
+          <div
+            class="swiper-button-prev"
+            slot="button-prev"
+          >
+            <img
+              src="./s4/area4_preBtn.png"
+              alt
+            />
+          </div>
+          <div
+            class="swiper-button-next"
+            slot="button-next"
+          >
+            <img
+              src="./s4/area4_nextBtn.png"
+              alt
+            />
+          </div>
+        </swiper>
+        <div
+          class="dialog"
+          v-if="isDialog"
+        >
+          <div><img
+              src="./s4/area4_map.png"
+              alt=""
+              class="dialog-content"
+            ></div><img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAKlBMVEVHcEz////z8fHz8fH////z8fHz8fHz8fHz8fHz8fHz8fHz8fHx7u708fEdE1r4AAAADnRSTlMAA0S1Bec3v6z4KcoaoNqzfoQAAAF6SURBVHjapZfLksMgDAQZwOLl/P/vboBydPAaXCPdkkq3TWBAuBoqHFmoQdynNIkcH6WVjztDSRI5PpVwOlfzkTxhgE/HGD44Q/ThyIKhknwEHzl+lnzUwPAuquEtn4/soV/Aq4Hge/mshj0fbryDGih+zsWrFQWZ/F08DNjz6QiCB3VpFbv8tHLx96pfw4klf7aSFg+pqRuW/OYlz9R/sHr/1B+wMQgeeGn6gqtRPMwmJOn4V4bwf7rhQ8//u4US7obYednzuj8s8ksYNH/70mQR/N2gfP9IGqA8Y5j5JTZ+P9J9TStx/HUwCVCv/DOGkupY2nBUoadb88/U11CagYdREE1DsP+JsU9jBeovxsRSZBaS8hMbBjoK9jBSBvuGEo1bGpSnNmVn3NbxdLDEdwcLTtvRBsvhuj/e3e54B91gKM+3OPYmC+/aPKdtnrXRtLa6FD8LaqB4zeadJwzcpQnDIN1gv3TZr30EPw3z4mm++pov39brf/0DkT4QydVQXNwAAAAASUVORK5CYII="
             alt=""
-            class="dialog-content"
-          ></div><img
-          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAKlBMVEVHcEz////z8fHz8fH////z8fHz8fHz8fHz8fHz8fHz8fHz8fHx7u708fEdE1r4AAAADnRSTlMAA0S1Bec3v6z4KcoaoNqzfoQAAAF6SURBVHjapZfLksMgDAQZwOLl/P/vboBydPAaXCPdkkq3TWBAuBoqHFmoQdynNIkcH6WVjztDSRI5PpVwOlfzkTxhgE/HGD44Q/ThyIKhknwEHzl+lnzUwPAuquEtn4/soV/Aq4Hge/mshj0fbryDGih+zsWrFQWZ/F08DNjz6QiCB3VpFbv8tHLx96pfw4klf7aSFg+pqRuW/OYlz9R/sHr/1B+wMQgeeGn6gqtRPMwmJOn4V4bwf7rhQ8//u4US7obYednzuj8s8ksYNH/70mQR/N2gfP9IGqA8Y5j5JTZ+P9J9TStx/HUwCVCv/DOGkupY2nBUoadb88/U11CagYdREE1DsP+JsU9jBeovxsRSZBaS8hMbBjoK9jBSBvuGEo1bGpSnNmVn3NbxdLDEdwcLTtvRBsvhuj/e3e54B91gKM+3OPYmC+/aPKdtnrXRtLa6FD8LaqB4zeadJwzcpQnDIN1gv3TZr30EPw3z4mm++pov39brf/0DkT4QydVQXNwAAAAASUVORK5CYII="
-          alt=""
-          class="close"
-          @click="isDialog = false"
-        >
-      </div></div>
+            class="close"
+            @click="isDialog = false"
+          >
+        </div>
+      </div>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .relative {
-  height:auto;
-  max-height:958px;
+  height: auto;
+  max-height: 958px;
   overflow: hidden;
   background-color: #fff;
 }
@@ -99,20 +100,32 @@
     position: relative;
   }
 }
-.box1{padding: size(54) 0;margin: auto; width: size(1700);position: relative;
-  height: size(1000);justify-content:space-between;align-items:stretch;}
+.box1 {
+  padding: size(54) 0;
+  margin: auto;
+  width: size(1700);
+  position: relative;
+  height: size(1000);
+  justify-content: space-between;
+  align-items: stretch;
+}
 .map-img {
   height: 100%;
-  
+
   top: 0;
   left: 0;
 }
 
-.txt {border: 1px solid #036eb6;position: relative;
-  margin: 0 0 0 size(25);flex: 1;padding: 0 0 size(121) 0;}
+.txt {
+  border: 1px solid #036eb6;
+  position: relative;
+  margin: 0 0 0 size(25);
+  flex: 1;
+  padding: 0 0 size(121) 0;
+}
 .title {
   font-size: size(40);
-  margin: size(40) auto size(14) auto; 
+  margin: size(40) auto size(14) auto;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -128,11 +141,11 @@
   width: size(310);
   height: 2px;
   background-color: #036eb6;
-  margin:auto;
+  margin: auto;
 }
 
 .desc {
-  margin: size(26) auto size(50) auto ; 
+  margin: size(26) auto size(50) auto;
   font-size: size(18);
   font-weight: normal;
   font-stretch: normal;
@@ -151,7 +164,7 @@
   width: size(525);
   height: size(338);
   overflow: visible;
-  margin: auto auto size(80) auto ;
+  margin: auto auto size(80) auto;
 
   .item-img {
     width: 100%;
@@ -193,22 +206,30 @@
 
 @media screen and (max-width: 767px) {
   .relative {
-  // height: size-m(667);
+    // height: size-m(667);
     overflow: hidden;
     background-color: #fff;
   }
   .map-img {
-    width: 100vw;height: size-m(310);
+    width: 100vw;
+    height: size-m(310);
     top: 0;
     left: 0;
   }
-.box1{flex-wrap: wrap;padding: 0 0;width:100%;
-  height:auto;}
+  .box1 {
+    flex-wrap: wrap;
+    padding: 0 0;
+    width: 100%;
+    height: auto;
+  }
 
-.txt{height:size-m(550);margin:size-m(20);}
+  .txt {
+    height: size-m(550);
+    margin: size-m(20);
+  }
   .title {
-    margin: size-m(40) 0 size-m(14) 0 ; 
-  
+    margin: size-m(40) 0 size-m(14) 0;
+
     font-size: size-m(60 / 2);
     font-weight: bold;
     font-stretch: normal;
@@ -219,18 +240,19 @@
     color: #036eb6;
     white-space: nowrap;
     width: 100%;
-   // top: size-m((50 + 617) / 2);
+    // top: size-m((50 + 617) / 2);
     //right: size-m(50);
-   // width: size-m(522 / 2);
+    // width: size-m(522 / 2);
   }
 
-  .hr {width: size-m(310);
-   // display: none;
+  .hr {
+    width: size-m(310);
+    // display: none;
   }
 
   .desc {
     font-size: size-m(28 / 2);
-    margin: size-m(14) auto size-m(30) auto ;   
+    margin: size-m(14) auto size-m(30) auto;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -240,17 +262,17 @@
     color: #231815;
     white-space: nowrap;
     width: 100%;
-  //  top: size-m((263 + 617) / 2);
-   // right: size-m(138 / 2);
-   // width: size-m(440 / 2);
+    //  top: size-m((263 + 617) / 2);
+    // right: size-m(138 / 2);
+    // width: size-m(440 / 2);
   }
 
   .swiper-container {
     width: size-m(525 / 2);
     height: size-m(338 / 2);
     transform: scale(1.2);
-   // top: size-m((617 + 625) / 2);
-  //  right: size-m(96 / 2);
+    // top: size-m((617 + 625) / 2);
+    //  right: size-m(96 / 2);
     overflow: visible;
 
     .item-img {
@@ -366,42 +388,10 @@ export default {
       isDialog: false,
 
       slideList: [
-        {
-          src: require('./s4/MLD台鋁生活商場.jpg'),
-          title: 'MLD台鋁生活商場',
-        },
-        {
-          src: require('./s4/三民高中.jpg'),
-          title: '三民高中',
-        },
-        {
-          src: require('./s4/大樂購物中心.jpg'),
-          title: '大樂購物中心',
-        },
-        {
-          src: require('./s4/天天新黃昏市場.jpg'),
-          title: '天天新黃昏市場',
-        },
-        {
-          src: require('./s4/好市多.jpg'),
-          title: '好市多',
-        },
-        {
-          src: require('./s4/家樂福.jpg'),
-          title: '家樂福',
-        },
-        {
-          src: require('./s4/悦誠廣場.jpg'),
-          title: '悅誠廣場',
-        },
-        {
-          src: require('./s4/文藻大學外語最高學府.jpg'),
-          title: '文藻大學外語最高學府',
-        },
-        {
-          src: require('./s4/本和里滯洪池公園.jpg'),
-          title: '本和里滯洪池公園',
-        },
+        // {
+        //   src: require('./s4/MLD台鋁生活商場.jpg'),
+        //   title: 'MLD台鋁生活商場',
+        // },
         {
           src: require('./s4/漢神巨蛋.jpg'),
           title: '漢神巨蛋',
@@ -411,13 +401,46 @@ export default {
           title: '義享天地',
         },
         {
-          src: require('./s4/高雄榮民總醫院.jpg'),
-          title: '高雄榮民總醫院',
+          src: require('./s4/好市多.jpg'),
+          title: '好市多',
         },
         {
-          src: require('./s4/鼎金國中.jpg'),
-          title: '鼎金國中',
+          src: require('./s4/悦誠廣場.jpg'),
+          title: '悅誠廣場',
         },
+        {
+          src: require('./s4/大樂購物中心.jpg'),
+          title: '大樂購物中心',
+        },
+        {
+          src: require('./s4/家樂福.jpg'),
+          title: '家樂福',
+        },
+        {
+          src: require('./s4/天天新黃昏市場.jpg'),
+          title: '天天新黃昏市場',
+        },
+        {
+          src: require('./s4/本和里滯洪池公園.jpg'),
+          title: '本和里滯洪池公園',
+        },
+        {
+          src: require('./s4/文藻大學外語最高學府.jpg'),
+          title: '文藻大學外語最高學府',
+        },
+        // {
+        //   src: require('./s4/三民高中.jpg'),
+        //   title: '三民高中',
+        // },
+
+        // {
+        //   src: require('./s4/高雄榮民總醫院.jpg'),
+        //   title: '高雄榮民總醫院',
+        // },
+        // {
+        //   src: require('./s4/鼎金國中.jpg'),
+        //   title: '鼎金國中',
+        // },
       ],
     }
   },
