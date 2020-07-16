@@ -1,9 +1,9 @@
 <template>
   <div class="home no-padding-top">
     <Loading :loading="load" />
-    <SideNavigation v-if="isSide" />
-    <Navigation v-else />
-    <!-- <Indigator :viewIndex="viewIndex" /> -->
+    <!-- <SideNavigation v-if="isSide" />
+    <Navigation v-else /> -->
+    <TopIndigator :viewIndex="viewIndex" />
     <!-- <full-page
       ref="fullPage"
       :options="options"
@@ -100,7 +100,7 @@ import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import VideoSection from '@/components/VideoSection.vue'
-// import Indigator from '@/components/Indigator.vue'
+import TopIndigator from '@/components/TopIndigator.vue'
 
 import Section1 from '@/projects/sdj/Section1.vue'
 // import Section2 from '@/projects/sdj/Section2.vue'
@@ -119,7 +119,7 @@ export default {
   name: 'home',
   components: {
     Loading,
-    // Indigator,
+    TopIndigator,
     VideoSection,
     Navigation,
     SideNavigation,
@@ -144,7 +144,7 @@ export default {
       isMobile,
       isSide: false,
       load: true,
-      // viewIndex: 0,
+      viewIndex: 1,
       // action: {
       //   moveTo: () => {},
       // },
@@ -172,7 +172,7 @@ export default {
     })
   },
   mounted() {
-    // window.addEventListener('scroll', this.onScroll, false)
+    window.addEventListener('scroll', this.onScroll, false)
     // this.action = this.$refs.fullPage.api
     // if (this.isMobile) {
     //   this.$refs.fullPage.api.setResponsive(true)
@@ -182,28 +182,34 @@ export default {
     onDone() {
       console.log('done')
     },
-    // onScroll() {
-    //   // 获取所有锚点元素
-    //   const navContents = document.querySelectorAll('.section')
-    //   // 所有锚点元素的 offsetTop
-    //   const offsetTopArr = []
-    //   navContents.forEach(item => {
-    //     offsetTopArr.push(item.offsetTop)
-    //   })
-    //   // 获取当前文档流的 scrollTop
-    //   const scrollTop =
-    //     document.documentElement.scrollTop || document.body.scrollTop
-    //   // 定义当前点亮的导航下标
-    //   let navIndex = 0
-    //   for (let n = 0; n < offsetTopArr.length; n++) {
-    //     // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
-    //     // 那么此时导航索引就应该是n了
-    //     if (scrollTop >= offsetTopArr[n] - 100) {
-    //       navIndex = n
-    //     }
-    //   }
-    //   this.viewIndex = navIndex + 1
-    // },
+    onScroll() {
+      // 获取所有锚点元素
+      const navContents = document.querySelectorAll('.section')
+      // 所有锚点元素的 offsetTop
+      const offsetTopArr = []
+      navContents.forEach(item => {
+        offsetTopArr.push(item.offsetTop)
+      })
+      // 获取当前文档流的 scrollTop
+      const scrollTop =
+        document.documentElement.scrollTop || document.body.scrollTop
+      // 定义当前点亮的导航下标
+      let navIndex = 0
+      for (let n = 0; n < offsetTopArr.length; n++) {
+        // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
+        // 那么此时导航索引就应该是n了
+        let height = this.isMobile ? 200 : 800
+        if (scrollTop >= offsetTopArr[n] - height) {
+          navIndex = n
+        }
+
+        // if (n > 4) {
+        //   navIndex = 5
+        // }
+      }
+      // console.log(navIndex)
+      this.viewIndex = navIndex + 1
+    },
 
     // onLeave(origin, destination, direction) {
     //   if (!this.isMobile) {

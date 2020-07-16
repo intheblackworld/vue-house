@@ -1,11 +1,12 @@
+import { isMobile } from '@/utils'
 export default [
-  { name: '精華地段', imgSrc: '', subTitle: '', section: 'section1', svgSrc: '', offset: 0 },
-  { name: '系列影片', imgSrc: '', subTitle: '', section: 'section2', svgSrc: '', offset: 1 },
-  { name: '收藏達麗', imgSrc: '', subTitle: '', section: 'section3', svgSrc: '', offset: 1 },
-  { name: '巨蛋生活圈', imgSrc: '', subTitle: '', section: 'section4', svgSrc: '', offset:1 },
-  { name: '建築風尚', imgSrc: '', subTitle: '', section: 'section5', svgSrc: '', offset: 1 },
-  { name: '活力公設', imgSrc: '', subTitle: '', section: 'section6', svgSrc: '', offset:1 },
-  { name: '智能好宅', imgSrc: '', subTitle: '', section: 'section7', svgSrc: '', offset:1 },
+  { name: '精華地段', imgSrc: '', subTitle: '', section: 'section1', svgSrc: '', offset: isMobile ? -65 : -94 },
+  { name: '系列影片', imgSrc: '', subTitle: '', section: 'section2', svgSrc: '', offset: isMobile ? -65 : -94 },
+  { name: '收藏達麗', imgSrc: '', subTitle: '', section: 'section3', svgSrc: '', offset: isMobile ? -65 : -94 },
+  { name: '巨蛋生活圈', imgSrc: '', subTitle: '', section: 'section4', svgSrc: '', offset: isMobile ? -65 : -94 },
+  { name: '建築風尚', imgSrc: '', subTitle: '', section: 'section5', svgSrc: '', offset: isMobile ? -65 : -94 },
+  { name: '活力公設', imgSrc: '', subTitle: '', section: 'section6', svgSrc: '', offset: isMobile ? -65 : -94 },
+  { name: '智能好宅', imgSrc: '', subTitle: '', section: 'section7', svgSrc: '', offset: isMobile ? -65 : -94 },
   // { name: '實品屋', imgSrc: '', subTitle: '', section: 'section8', svgSrc: '', offset: -60 },
   { name: '預約賞屋', imgSrc: '', subTitle: '', section: 'contact', svgSrc: '', mobileOffset: 0 },
 ]
