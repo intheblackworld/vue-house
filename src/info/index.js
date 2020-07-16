@@ -21,7 +21,7 @@ export default {
     ['使用執照', '(107)高市工建築使字第02299號'],
   ],
 
-  gtmCode: ['WKQQSBK'], // 可放置多個
+  gtmCode: ['NTW9BQH'], // 可放置多個
   recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
