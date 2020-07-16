@@ -1,204 +1,111 @@
 <template>
-  <div class="relative">
-    <div v-if="!isMobile">
-      <img
-        v-lazy="require('./s8/bg.jpg')"
-        alt=""
-        class="bg-img"
+  <div class="section5">
+    <div class="bg">
+      <swiper
+        :options="swiperOption"
+        ref="mySwiper"
+        swiper-no-swiping
       >
-      <div
-        class="title absolute"
-        data-aos="fade-up"
-        data-aos-delay="300"
-      >
-        Sea of trees
-      </div>
-      <div
-        class="desc absolute"
-        data-aos="fade-up"
-        data-aos-delay="500"
-      >
-        - 無敵綠海 -
-      </div>
-      <div
-        class="img-title absolute"
-        data-aos="fade"
-        data-aos-delay="700"
-        data-aos-offset="-500"
-      >
-        開窗即享 無價壯闊視野<br />舒心美景近在眼前
-      </div>
-      <div
-        class="img-desc absolute"
-        data-aos="fade-up"
-        data-aos-delay="900"
-        data-aos-offset="-500"
-      >
-        家，不僅是讓身體居住的容器<br />
-        還必須能讓人的內心安穩、豐富…在「豐郡大景」<br />
-        窗外是極目遠眺的自然之美，窗內則是各自精彩的生活之美！
-      </div>
-    </div>
-    <div
-      v-else
-      class="relative"
-    >
-      <img
-        v-lazy="require('./mo/8/bg.jpg')"
-        alt=""
-        class="bg-img"
-      >
-      <div
-        class="title absolute"
-        data-aos="fade-up"
-        data-aos-delay="300"
-      >
-        Sea of trees
-      </div>
-      <div
-        class="desc absolute"
-        data-aos="fade-up"
-        data-aos-delay="500"
-      >
-        - 無敵綠海 -
-      </div>
-      <div
-        class="img-title absolute"
-        data-aos="fade"
-        data-aos-delay="700"
-      >
-        開窗即享 無價壯闊視野<br />舒心美景近在眼前
-      </div>
-      <div
-        class="img-desc absolute"
-        data-aos="fade-up"
-        data-aos-delay="900"
-      >
-        家，不僅是讓身體居住的容器<br />
-        還必須能讓人的內心安穩、豐富…在「豐郡大景」<br />
-        窗外是極目遠眺的自然之美，窗內則是各自精彩的生活之美！
-      </div>
+        <swiper-slide
+          v-for="(slide, index) in slideList"
+          :index="index"
+          :key="slide.img"
+          class="item"
+        >
+          <img
+            :src="slide.src"
+            :class="`item-img`"
+          />
+          <img
+            :src="slide.src"
+            :class="`item-img2`"
+          />
+          <div class="slide-title absolute">{{slide.title}}</div>
+        </swiper-slide>
+        <div
+          class="swiper-pagination"
+          slot="pagination"
+        ></div>
+      </swiper>
     </div>
   </div>
 </template>
-<style lang="scss" scoped>
-@import '@/assets/style/function.scss';
-.relative {
-  // height: 100vh;
-  overflow: hidden;
-}
-.bg-img {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  object-fit: cover;
 
-  &:nth-child(1) {
-    position: relative;
+<style lang="scss" scoped>
+@import '~@/assets/style/function.scss';
+
+.bg {
+  position: relative;
+  height:100vh;
+  overflow: hidden;
+
+  &::v-deep {
+    .swiper-pagination {
+      width: 100vw;
+      left: auto;
+      bottom: 20px;
+      right: 20px;
+    }
+    .swiper-pagination-bullet {
+      width: 21px;
+      height: 21px;
+      box-shadow: 0 0 0 1px #fff;
+      background-color: transparent;
+      opacity: 1 !important;
+      margin: 0 8px;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: #000;
+    }
   }
 }
 
-.title {
-  font-family: TrajanPro;
-  font-size: size(60);
+.swiper-container {
+  width: 100vw;
+  height: size(1080);
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  img {
+    display: block;
+  }
+}
+
+.slide-title {
+  padding: 3px 25px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: size(28);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.85;
-  letter-spacing: -2.37px;
-  text-align: left;
-  color: #fff;
-  top: size(72);
-  left: size(248);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  white-space: nowrap;
-
-  &::before {
-    content: '';
-    display: block;
-    width: size(248);
-    left: size(-268);
-    position: absolute;
-    height: 3px;
-    margin-top: -5px;
-    background-color: #fff;
-  }
-
-  &::after {
-    content: '';
-    display: block;
-    width: 2000px;
-    height: 3px;
-    margin-left: size(20);
-    margin-top: -15px;
-    background-color: #fff;
-  }
-}
-
-.desc {
-  font-size: size(44);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.85;
-  letter-spacing: 1.76px;
-  text-align: left;
-  color: #fff;
-  top: size(145);
-  left: size(251);
-}
-
-.img-title {
-  font-size: size(35);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.39;
+  line-height: 1.81;
   letter-spacing: normal;
   text-align: left;
-  color: #fff;
-  top: size(280);
-  left: size(254);
+  color: #ffffff;
+  z-index: 10;
+  right: 0;
+  bottom: size(80);
 }
 
-.img-desc {
-  font-size: size(20);
-  font-weight: 400;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.41;
-  letter-spacing: 1.2px;
-  text-align: left;
-  color: #fff;
-  top: size(291);
-  left: size(689);
-  border-left: 6px solid #fff;
-  border-right: 6px solid #fff;
-  padding: 0 size(38);
+.item-img {top: 0;left: 0;
+  width: 100vw;
+  height:100vh;
+  object-fit: cover;
+  object-position: center;
+  -webkit-filter:blur(5px)brightness(.5);
+}
+.item-img2 {top: 0;left: 0;
+  position: absolute;
+  width: 100vw;
+  height:100vh;
+  object-fit: contain;
+  object-position: center;z-index: 2;
 }
 
-@keyframes clouda {
-  0% {
-    left: 0px;
-  }
-
-  50% {
-    left: 15px;
-  }
-
-  100% {
-    left: 0px;
-  }
-}
-@media only screen and (max-width: 1440px) {
-  .bg-img {
-  }
-}
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
     height: 100vh;
@@ -208,84 +115,191 @@
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .bg {
+  }
 }
 
 @media screen and (max-width: 767px) {
-  .bg-img {
-    height: auto;
-    object-fit: cover;
-  }
+  .bg {
+  height:calc(177.8666666667vw - 63px);
 
-  .title {
-    font-size: size-m(26);
-    top: size-m(36);
-    left: size-m(30);
+    &::v-deep {
+      .swiper-pagination {
+        width: 100vw;
+        left: auto;
+        bottom: 10px;
+        right: 0px;
+        left: 0;
+        margin: 0 auto;
+      }
+      .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+        box-shadow: 0 0 0 1px #fff;
+        margin: 0 5px;
+        background-color: transparent;
+        opacity: 1 !important;
+      }
 
-    &::before {
-      content: '';
-      display: block;
-      width: size-m(51);
-      left: size-m(-61);
-      position: absolute;
-      margin-top: -5px;
-      height: 2px;
-      background-color: #fff;
-    }
-
-    &::after {
-      content: '';
-      display: block;
-      width: 2000px;
-      height: 2px;
-      margin-top: -5px;
-      margin-left: size-m(20);
-      background-color: #fff;
+      .swiper-pagination-bullet-active {
+        background-color: #000;
+      }
     }
   }
 
-  .desc {
-    font-size: size-m(17);
-    top: size-m(69);
-    left: size-m(30);
+  .swiper-container {
+    width: 100vw;
+    height: 100%;
+    overflow: visible;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    img {
+      display: block;
+    }
   }
 
-  .img-title {
-    width: size-m(236);
-    font-size: size-m(18);
-    top: size-m(120);
-    left: size-m(30);
-  }
-
-  .img-desc {
-    width: size-m(236);
-    font-size: size-m(13);
-    top: size-m(185);
-    left: size-m(30);
-    border: none;
+  .slide-title {
+    width: 100vw;
+    height: size-m(57 / 2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 0;
+    background-color: #0000;
+    color: #fff;
+    font-size: size-m(16);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.81;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+    z-index: 10;
+    right: 0;
+    bottom: size-m(50);
   }
+.item-img {top: 0;left: 0;
+  width: 100vw;
+  height:calc(177.8666666667vw - 63px);
+  object-fit: cover;
+  object-position: center;
+  -webkit-filter:blur(5px)brightness(.5);
+}
+.item-img2 {top:50%;left: 0;transform: translateY(-50% );
+  position: absolute;
+  width: 100vw;
+  height:auto;
+  object-fit: contain;
+  object-position: center;z-index: 2;
+}
 }
 </style>
+
 <script>
 // @ is an alias to /src
-import { isMobile } from '@/utils'
+import { isMobile, isTablet } from '@/utils'
+import slider from '@/mixins/slider.js'
+import 'swiper/dist/css/swiper.css'
+
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
-  name: 'section8',
+  name: 'section5',
+  mixins: [slider],
 
-  components: {},
+  components: {
+    swiper,
+    swiperSlide,
+  },
+
   data() {
     return {
       isMobile,
+      swiperOption: {
+        slidesPerView: isMobile ? 1 : 3,
+        spaceBetween: isTablet ? 20 : 30,
+        slidesPerColumn: isMobile ? 1 : 2,
+        // allowSlidePrev: isMobile ? true : false,
+        // allowSlideNext: isMobile ? true : false,
+        // centeredSlides: true,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
+        effect: 'fade',
+        // loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      },
+      slideList: [
+        {
+          src: require('./s8/1.jpg'),
+          title: '樣品屋示意'
+        },
+        {
+          src: require('./s8/2.jpg'),
+          title: '樣品屋示意'
+        },
+        {
+          src: require('./s8/3.jpg'),
+          title: '樣品屋示意'
+        },
+        {
+          src: require('./s8/4.jpg'),
+          title: '樣品屋示意'
+        },
+        {
+          src: require('./s8/5.jpg'),
+          title: '樣品屋示意'
+        },
+        {
+          src: require('./s8/6.jpg'),
+          title: '樣品屋示意'
+        },
+        {
+          src: require('./s8/7.jpg'),
+          title: '樣品屋示意'
+        },
+        {
+          src: require('./s8/8.jpg'),
+          title: '樣品屋示意'
+        },
+        {
+          src: require('./s8/9.jpg'),
+          title: '樣品屋示意'
+        },
+        {
+          src: require('./s8/10.jpg'),
+          title: '樣品屋示意'
+        },
+        {
+          src: require('./s8/11.jpg'),
+          title: '樣品屋示意'
+        },
+        {
+          src: require('./s8/12.jpg'),
+          title: '樣品屋示意'
+        },
+        {
+          src: require('./s8/13.jpg'),
+          title: '樣品屋示意'
+        },
+        {
+          src: require('./s8/14.jpg'),
+          title: '樣品屋示意'
+        },
+      ],
     }
   },
-
   methods: {},
 
-  created() {},
-
-  mounted() {},
-
-  computed: {},
+  created() {
+    // @click="showIframeDialog(slide.link)"
+  },
 }
 </script>

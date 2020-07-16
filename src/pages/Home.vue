@@ -65,6 +65,12 @@
     >
       <Section7 />
     </div>
+    <div
+      class="section"
+      id="section8"
+    >
+      <Section8 />
+    </div>
     <!-- </full-page> -->
     <ContactSection
       class="section"
@@ -126,7 +132,7 @@ export default {
     Section5,
     Section6,
     Section7,
-    // Section8,
+    Section8,
     // Section9,
     // Section10,
     // Section11,
