@@ -21,6 +21,7 @@
             :class="`item-img2`"
           />
           <div class="slide-title absolute">{{slide.title}}</div>
+          <div class="txt">3D示意圖僅供參考</div>
         </swiper-slide>
         <div
           class="swiper-pagination"
@@ -41,7 +42,7 @@
 
   &::v-deep {
     .swiper-pagination {
-      width: 360px;
+      width:100%;
       left: auto;
       bottom: 20px;
       right: 20px;
@@ -75,7 +76,7 @@
 }
 
 .slide-title {
-  padding: 3px 25px;
+  padding: 3px 50px 3px 25px;
   background-color: rgba(0, 0, 0, 0.4);
   color: #fff;
   font-size: size(28);
@@ -88,9 +89,12 @@
   color: #ffffff;
   z-index: 10;
   right: 0;
-  bottom: size(80);
+  bottom: size(10);
 }
-
+.txt{
+  color: #ffffff;
+  right: 0;
+  bottom: size(10);}
 .item-img {top: 0;left: 0;
   width: 100vw;
   height:100vh;
