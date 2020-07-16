@@ -50,6 +50,7 @@
 
   &::v-deep {
     .swiper-pagination {
+      display: none;
       width: 140px;
       left: auto;
       bottom: 20px;
@@ -219,16 +220,16 @@
   position: absolute;
   left: 0;
   top: 0;
-  .item{background: rgb(3, 110, 182);
+  .item{background: #0082b4;
   &:last-child{background:#020e1f;
 
   }}
-  img {width:200vw;
-    height:auto;
-  position: absolute;top: 0;right: 0;object-fit: contain;
+  img {width:auto;object-fit: cover;
+    height:100%;
+  position: absolute; top: auto;bottom: 0;left:50%;transform: translateX(-50%);;object-fit: contain;
    display: none; 
     object-position: 0 0 ;
-    &.item-img2{display: block; top: auto;bottom: 0;}
+    &.item-img2{display: block; top: auto;bottom: 0;left:50%;}
   }
 }
 }
@@ -275,7 +276,7 @@ export default {
       slideList: [
         {
           src: isMobile
-            ? require('./s5/area5_day_mobile.png')
+            ? require('./s5/day_mobile.jpg')
             : require('./s5/area5_day.jpg'),
           // title: '橫空出世',
           // subtitle: 'Romanesque Style',
@@ -284,7 +285,7 @@ export default {
         },
         {
           src: isMobile
-            ? require('./s5/area5_night_mobile.jpg')
+            ? require('./s5/night_mobile.jpg')
             : require('./s5/area5_night.jpg'),
           // title: '向榮冠冕的萬丈城市力',
           // subtitle: 'Crown City',

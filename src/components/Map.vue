@@ -40,7 +40,7 @@ export default {
           text.style.left = `${mapBg.clientWidth / 2 - 100}px`
         }
 
-        map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2.6, 0)
+        map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2.4, 0)
       }, 1200)
 
       setTimeout(() => {

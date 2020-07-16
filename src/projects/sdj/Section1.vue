@@ -318,8 +318,8 @@
       width: size-m(130);
       height: auto;
       z-index: 2;
-      left: size-m(1000);
-      top: size-m(230);
+      left: size-m(660);
+      top: size-m(120);
       transform: translateX(-50%);
     }
   }

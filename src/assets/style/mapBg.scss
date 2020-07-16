@@ -47,8 +47,8 @@
     overflow-y: hidden;
     width: 100vw;
     .map-bg {
-      width: size-m(1920);
-      height: size-m(1129);
+      width: size-m(1275);
+      height: size-m(750);
     }
 
     .map-text {
@@ -62,8 +62,8 @@
     }
 
     .mask {
-      width: size-m(1920);
-      height: size-m(1129);
+      width: size-m(1275);
+      height: size-m(750);
       //  animation: swing 2.5s ease-in-out 0s infinite;
       left: 0;
     }
@@ -74,7 +74,7 @@
       display: block;
       width: calc(100vw * 112 / 375) !important;
       height: auto !important;
-      left: 50%;
+      left: 48%;
       top: 5% !important;
       display: block;
       animation: swing 1s linear 0s alternate infinite;

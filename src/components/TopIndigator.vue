@@ -51,7 +51,7 @@
   transition: all .3s;
 
   &.white {
-    background-color: #000a;
+    background-color: #0000;
   }
   .list-indigator {
     position: relative;
@@ -104,16 +104,16 @@
       margin: calc(50% - 0.3em) auto 0 auto;
       transition: all 0.3s;
       background: transparent;
-      border: 1px solid #fff;
+      border: 1px solid #ccc;
       // background: #fff;
     }
     &.active {
       &::before {
-        background: #fff;
+        background: #fffc;
       }
     }
     &:hover::before {
-      background: #ccc;
+      background: #fff6;
     }
   }
 

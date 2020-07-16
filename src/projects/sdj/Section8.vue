@@ -21,6 +21,7 @@
             :class="`item-img2`"
           />
           <div class="slide-title absolute">{{slide.title}}</div>
+          <div class="absolute txt">樣品屋圖片僅供示意參考，依實際合約附圖為準。</div>
         </swiper-slide>
         <div
           class="swiper-pagination"
@@ -36,7 +37,7 @@
 
 .bg {
   position: relative;
-  height:100vh;
+  height: 100vh;
   overflow: hidden;
 
   &::v-deep {
@@ -63,7 +64,7 @@
 
 .swiper-container {
   width: 100vw;
-  height: size(1080);
+  //height: size(1080);
   overflow: hidden;
   position: absolute;
   left: 0;
@@ -88,22 +89,34 @@
   color: #ffffff;
   z-index: 10;
   right: 0;
-  bottom: size(80);
+  bottom: size(30);
 }
 
-.item-img {top: 0;left: 0;
-  width: 100vw;
-  height:100vh;
+.txt {
+  color: #ffffff;
+  z-index: 2;
+  right: size(30);
+  opacity: 0.8;
+  bottom: size(10);
+}
+.item-img {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
   object-fit: cover;
   object-position: center;
-  -webkit-filter:blur(5px)brightness(.5);
+  -webkit-filter: blur(5px) brightness(0.5);
 }
-.item-img2 {top: 0;left: 0;
+.item-img2 {
+  top: 0;
+  left: 0;
   position: absolute;
   width: 100vw;
-  height:100vh;
+  height: 100vh;
   object-fit: contain;
-  object-position: center;z-index: 2;
+  object-position: center;
+  z-index: 2;
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -121,13 +134,13 @@
 
 @media screen and (max-width: 767px) {
   .bg {
-  height:calc(177.8666666667vw - 63px);
+    height: calc(177.8666666667vw - 63px);
 
     &::v-deep {
       .swiper-pagination {
         width: 100vw;
         left: auto;
-        bottom: 10px;
+        bottom: size-m(20);
         right: 0px;
         left: 0;
         margin: 0 auto;
@@ -160,6 +173,10 @@
     }
   }
 
+  .txt {
+    font-size: size-m(12);
+    top: calc(50% + 30vw);
+  }
   .slide-title {
     width: 100vw;
     height: size-m(57 / 2);
@@ -181,20 +198,26 @@
     right: 0;
     bottom: size-m(50);
   }
-.item-img {top: 0;left: 0;
-  width: 100vw;
-  height:calc(177.8666666667vw - 63px);
-  object-fit: cover;
-  object-position: center;
-  -webkit-filter:blur(5px)brightness(.5);
-}
-.item-img2 {top:50%;left: 0;transform: translateY(-50% );
-  position: absolute;
-  width: 100vw;
-  height:auto;
-  object-fit: contain;
-  object-position: center;z-index: 2;
-}
+  .item-img {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: calc(177.8666666667vw - 63px);
+    object-fit: cover;
+    object-position: center;
+    -webkit-filter: blur(5px) brightness(0.5);
+  }
+  .item-img2 {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    position: absolute;
+    width: 100vw;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    z-index: 2;
+  }
 }
 </style>
 
@@ -239,59 +262,59 @@ export default {
       slideList: [
         {
           src: require('./s8/1.jpg'),
-          title: '空間饗宴'
+          title: '空間饗宴',
         },
         {
           src: require('./s8/2.jpg'),
-          title: '空間饗宴'
+          title: '空間饗宴',
         },
         {
           src: require('./s8/3.jpg'),
-          title: '空間饗宴'
+          title: '空間饗宴',
         },
         {
           src: require('./s8/4.jpg'),
-          title: '空間饗宴'
+          title: '空間饗宴',
         },
         {
           src: require('./s8/5.jpg'),
-          title: '空間饗宴'
+          title: '空間饗宴',
         },
         {
           src: require('./s8/6.jpg'),
-          title: '空間饗宴'
+          title: '空間饗宴',
         },
         {
           src: require('./s8/7.jpg'),
-          title: '空間饗宴'
+          title: '空間饗宴',
         },
         {
           src: require('./s8/8.jpg'),
-          title: '空間饗宴'
+          title: '空間饗宴',
         },
         {
           src: require('./s8/9.jpg'),
-          title: '空間饗宴'
+          title: '空間饗宴',
         },
         {
           src: require('./s8/10.jpg'),
-          title: '空間饗宴'
+          title: '空間饗宴',
         },
         {
           src: require('./s8/11.jpg'),
-          title: '空間饗宴'
+          title: '空間饗宴',
         },
         {
           src: require('./s8/12.jpg'),
-          title: '空間饗宴'
+          title: '空間饗宴',
         },
         {
           src: require('./s8/13.jpg'),
-          title: '空間饗宴'
+          title: '空間饗宴',
         },
         {
           src: require('./s8/14.jpg'),
-          title: '空間饗宴'
+          title: '空間饗宴',
         },
       ],
     }
