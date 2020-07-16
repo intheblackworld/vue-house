@@ -290,6 +290,7 @@ content: "";background: #fff0;width: 1.3em;height:1px;display: block;position: a
   }
 
   .nav {
+    width: 100%;
     position: static;
     height: $nav_phone_height;
   }
@@ -297,7 +298,7 @@ content: "";background: #fff0;width: 1.3em;height:1px;display: block;position: a
   .menu {
     display: block;
     position: absolute;
-    width: 2em;
+    width: 100%;
     //right: 15px;
 
     svg {
