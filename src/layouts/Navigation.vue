@@ -3,17 +3,18 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
-          <img
+        <!--   <img
             class="logo"
             src="@/assets/img/nav-logo.png"
             alt
             v-scroll-to="{ element: `#section1` }"
-          />
+          />  -->
           <div
-            class="menu"
+            :class="`menu ${isOpen ? 'open' : ''}`"
             @click="toggleSidebar"
           >
-            <font-awesome-icon icon="bars" />
+          <span></span>
+          <!--<font-awesome-icon icon="bars" />-->
           </div>
           <div
             :class="`mask ${isOpen ? 'open' : ''}`"
@@ -34,8 +35,8 @@
                   alt
                 />
                 <span>
-                  <div class="title">{{item.name}}</div>
-                  <span class="subTitle">{{item.subTitle}}</span>
+                <!--  <div class="title">{{item.name}}</div>
+                  <span class="subTitle">{{item.subTitle}}</span> -->
                 </span>
               </span>
             </li>
@@ -90,6 +91,7 @@ export default {
 @import '@/assets/style/function.scss';
 
 .navigation {
+  font-size: 20px;//圈圈大小
   background-color: $nav_bg;
  // background-image: $nav_bg;
   background-size: cover;
@@ -160,13 +162,14 @@ export default {
     justify-content: center;
     position: relative;
     overflow: hidden;
-      font-size:20px !important;
+      font-size:inherit !important;
     // border-right: 1px solid $nav_link_hover_bg;
     > span {
       z-index: 3;
     }
+    &::after{content: "";width: 1em;height: 1em;border: 1px solid #ccc;border-radius: 50%;}
     &:hover {
-      background-color: $nav_link_hover_bg;
+     // background-color: $nav_link_hover_bg;
       img {
         animation: r5 0.3s alternate infinite;
         transform-origin: 50% 100%;
@@ -208,6 +211,20 @@ export default {
 
 .menu {
   display: none;
+  span{display: block;width: 1em;transition: all 0.3s;height: 1em;border: 1px solid #ccc;border-radius: 50%;
+  &::before,
+  &::after{transition: all 0.3s;
+content: "";background: #fff0;width: 1.3em;height:1px;display: block;position: absolute;top: 50%;left: -0.15em;
+  }}
+  &.open{
+    
+  span{border: 1px solid #fff0;
+  &::before{transform: rotate(45deg);background: #fff;
+  }
+  &::after{transform: rotate(-45deg);background: #fff;
+}
+  }
+  }
 }
 
 .link {
@@ -221,7 +238,6 @@ export default {
     height: $nav_tablet_height;
     justify-content: center;
   }
-
   .logo {
     width: $logo_tablet_width;
     // left: -240px;
@@ -259,6 +275,7 @@ export default {
   .navigation {
     height: $nav_phone_height;
     z-index: 110;
+    width:3em;right: 0;
   }
 
   .nav-container {
@@ -280,8 +297,8 @@ export default {
   .menu {
     display: block;
     position: absolute;
-    right: 15px;
-    width: 30px;
+    width: 2em;
+    //right: 15px;
 
     svg {
       width: 100%;
@@ -355,18 +372,20 @@ export default {
   }
 
   .mask {
-    width: 100vw;
+    width: 2em;
     top: $nav_phone_height;
     right: 0;
-    background: rgba(0, 0, 0, 0.8);
+    //background: rgba(0, 0, 0, 0.8);
     position: fixed;
     z-index: -1;
     height: calc(100vh - #{$nav_phone_height});
     opacity: 0;
     transition: all 0.3s ease-in;
+    position: relative;
     &.open {
       display: block;
-      width: 100vw;
+    //  width: 100vw;
+    width: 2em;
       opacity: 1;
       z-index: 110;
     }
