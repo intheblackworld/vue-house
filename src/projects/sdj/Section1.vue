@@ -26,16 +26,16 @@
       <div class="bg-img cloud">
         <img
           src="./s1/cloud.png"
-          alt="bg"
+          alt="cloud"
         >
         <img
           src="./s1/cloud.png"
-          alt="bg"
+          alt="cloud"
         >
       </div>
       <img
         src="./s1/cloud2.png"
-        alt="bg"
+        alt="cloud"
         class="bg-img"
       >
       <img
