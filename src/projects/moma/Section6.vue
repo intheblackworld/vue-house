@@ -8,7 +8,7 @@
             alt=""
             class="logo absolute"
           >
-          <h3 class="title absolute">28樓實品屋</h3>
+          <h3 class="title absolute">頂級公設</h3>
           <img
             src="./s3/hr.png"
             alt=""
