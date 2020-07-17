@@ -15,10 +15,12 @@
           <img
             :src="slide.src"
             :class="`item-img1`"
+            alt="item-img"
           />
           <img
             :src="slide.src"
             :class="`item-img2`"
+            alt="item-img"
           />
         </swiper-slide>
         <div

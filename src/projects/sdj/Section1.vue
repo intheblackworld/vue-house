@@ -40,17 +40,17 @@
       >
       <img
         src="./s1/g.png"
-        alt="bg"
+        alt="icon"
         class="bg-img g"
       >
       <img
         src="./s1/b.png"
-        alt="bg"
+        alt="icon"
         class="bg-img b"
       >
       <img
         src="./s1/logo.png"
-        alt=""
+        alt="logo"
         class="bg-img logo"
       >
       <!--<img
@@ -84,17 +84,17 @@
         <div slot="main">
           <img
             src="./s1/l1.png"
-            alt="bg"
+            alt="map"
             class="bg-img light2"
           >
           <img
             src="./s1/l2.png"
-            alt="bg"
+            alt="map"
             class="bg-img light2 l2"
           >
           <img
             src="./s1/area1_loocation.png"
-            alt="bg"
+            alt="map"
             class="bg-img location"
           >
         </div>

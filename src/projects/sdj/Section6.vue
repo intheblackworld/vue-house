@@ -15,10 +15,12 @@
           <img
             :src="slide.src"
             :class="`item-img`"
+            :alt="slide.title"
           />
           <img
             :src="slide.src"
             :class="`item-img2`"
+            :alt="slide.title"
           />
           <div class="slide-title absolute">{{slide.title}}</div>
           <div class="absolute txt">3D示意圖僅供參考</div>
