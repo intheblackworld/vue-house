@@ -1,6 +1,7 @@
 <template>
   <div class="section5">
     <div class="bg">
+      <img src="./s6/上揚實業_達麗_上東京(鼎力案)_角度1大廳_1090117_.jpg" alt="" class="item-img">
       <swiper
         :options="swiperOption"
         ref="mySwiper"
@@ -13,11 +14,11 @@
           class="item"
         >
           <img
-            :src="slide.src"
+            v-lazy="slide.src"
             :class="`item-img`"
           />
           <img
-            :src="slide.src"
+            v-lazy="slide.src"
             :class="`item-img2`"
           />
           <div class="slide-title absolute">{{slide.title}}</div>

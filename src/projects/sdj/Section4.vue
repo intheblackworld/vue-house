@@ -2,7 +2,7 @@
   <div class="relative">
     <div class="flex box1">
       <img
-        src="./s4/area4_map.png"
+        v-lazy="require('./s4/area4_map.png')"
         alt=""
         class="map-img"
       >
@@ -65,7 +65,7 @@
           v-if="isDialog"
         >
           <div><img
-              src="./s4/area4_map.png"
+              v-lazy="require('./s4/area4_map.png')"
               alt=""
               class="dialog-content"
             ></div><img

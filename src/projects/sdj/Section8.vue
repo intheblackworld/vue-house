@@ -1,6 +1,7 @@
 <template>
   <div class="section5">
     <div class="bg">
+      <img src="./s8/1.jpg" alt="" class="item-img">
       <swiper
         :options="swiperOption"
         ref="mySwiper"

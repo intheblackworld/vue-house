@@ -13,11 +13,11 @@
           class="item"
         >
           <img
-            :src="slide.src"
+            v-lazy="slide.src"
             :class="`item-img1`"
           />
           <img
-            :src="slide.src"
+            v-lazy="slide.src"
             :class="`item-img2`"
           />
         </swiper-slide>

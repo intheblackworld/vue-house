@@ -2,22 +2,22 @@
   <div class="relative">
     <div class="s1">
       <img
-        src="./s1/1.jpg"
+        v-lazy="require('./s1/1.jpg')"
         alt="bg"
         class="bg-img"
       >
       <img
-        src="./s1/2.jpg"
+        v-lazy="require('./s1/2.jpg')"
         alt="bg"
         class="bg-img light"
       >
       <img
-        src="./s1/o.png"
+        v-lazy="require('./s1/o.png')"
         alt="bg"
         class="bg-img light"
       >
       <img
-        src="./s1/3.png"
+        v-lazy="require('./s1/3.png')"
         alt="bg"
         class="bg-img a"
         data-aos="fade-up"
@@ -25,31 +25,31 @@
       >
       <div class="bg-img cloud">
         <img
-          src="./s1/cloud.png"
+          v-lazy="require('./s1/cloud.png')"
           alt="bg"
         >
         <img
-          src="./s1/cloud.png"
+          v-lazy="require('./s1/cloud.png')"
           alt="bg"
         >
       </div>
       <img
-        src="./s1/cloud2.png"
+        v-lazy="require('./s1/cloud2.png')"
         alt="bg"
         class="bg-img"
       >
       <img
-        src="./s1/g.png"
+        v-lazy="require('./s1/g.png')"
         alt="bg"
         class="bg-img g"
       >
       <img
-        src="./s1/b.png"
+        v-lazy="require('./s1/b.png')"
         alt="bg"
         class="bg-img b"
       >
       <img
-        src="./s1/logo.png"
+        v-lazy="require('./s1/logo.png')"
         alt=""
         class="bg-img logo"
       >

@@ -4,7 +4,7 @@
       <div class="flex box2">
         <div class="txt">
         <img
-          src="./s3/tm_dali_logo.png"
+          v-lazy="require('./s3/tm_dali_logo.png')"
           alt=""
           class="logo"
         >
@@ -18,32 +18,32 @@
         </div>
         </div>
         <img
-          src="./s3/area3_decoration.png"
+          v-lazy="require('./s3/area3_decoration.png')"
           alt=""
           class="decoration absolute"
         >
     </div>
     <div class="box3">
     <img
-      src="./s3/area3_img2.png"
+      v-lazy="require('./s3/area3_img2.png')"
       alt=""
       class="img2"
     >
     <div class="flex box4">
     <img
-      src="./s3/area3_img4.png"
+      v-lazy="require('./s3/area3_img4.png')"
       alt=""
       class="img4"
     >
     <img
-      src="./s3/area3_img3.png"
+      v-lazy="require('./s3/area3_img3.png')"
       alt=""
       class="img3"
     >
     </div>
     </div>
     <img
-      src="./s3/area3_img1.png"
+      v-lazy="require('./s3/area3_img1.png')"
       alt=""
       class="img1"
     >
