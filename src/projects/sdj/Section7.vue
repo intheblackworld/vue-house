@@ -7,19 +7,25 @@
     >
     <div class="box"></div>
     <img
-      v-if="isMobile"
       src="./s7/area7_doll_mobile.png"
       alt="doll"
-      class="doll absolute"
+      class="doll doll-m absolute"
     >
-    <img v-else src="./s7/area7_doll.png" alt="" class="doll absolute">
     <img
-      v-if="isMobile"
+      src="./s7/area7_doll.png"
+      alt=""
+      class="doll doll-pc absolute"
+    >
+    <img
       src="./s7/area7_info_mobile.png"
       alt="info"
-      class="info absolute"
+      class="info info-m absolute"
     >
-    <img v-else src="./s7/area7_info.png" alt="" class="info absolute">
+    <img
+      src="./s7/area7_info.png"
+      alt=""
+      class="info info-pc absolute"
+    >
     <div class="title absolute">銀級智能候選<br />最嚴審查耐震宅</div>
     <div class="hr absolute"></div>
     <div class="desc absolute">
@@ -143,6 +149,11 @@
   top: size(239);
   left: size(358);
 }
+
+.doll-m,
+.info-m {
+  display: none;
+}
 @media only screen and (max-width: 1440px) {
   .bg-img {
   }
@@ -227,6 +238,16 @@
     width: size-m(634 / 2);
     top: size-m(755 / 2);
     left: size-m(45 / 2);
+  }
+
+  .doll-m,
+  .info-m {
+    display: block;
+  }
+
+  .doll-pc,
+  .info-pc {
+    display: none;
   }
 }
 </style>
