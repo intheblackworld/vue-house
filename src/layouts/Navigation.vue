@@ -94,7 +94,7 @@ export default {
 <style lang="scss">
 .navigation {
   .title {
-    font-size: 15px !important;
+    font-size: 19px !important;
     position: relative;
     z-index: 3;
     > span {
@@ -124,10 +124,10 @@ export default {
 
   &.min {
     height: 50px;
-  }
     .logo {
-      width: 150px;
+      width: 180px;
     }
+  }
 }
 
 .nav-container {
@@ -157,7 +157,7 @@ export default {
   left: size(0);
   display: block;
   top: 50%;
-  transform: translate(5%, -50%);
+  transform: translate(3%, -50%);
   transition: all .3s;
 }
 
@@ -275,7 +275,12 @@ export default {
   .navigation {
     height: 50px;
     justify-content: center;
+  &.min {
+    .logo {
+    width: $logo_tablet_width;
+    }
   }
+}
 
   .logo {
     width: $logo_tablet_width;
@@ -314,7 +319,15 @@ export default {
   .navigation {
     height: $nav_phone_height;
   //  background-color: #fff;
+    height: 50px;
+    justify-content: center;
+  &.min {
+    .logo {
+    width: $logo_phone_width;
+    }
   }
+}
+
 
   .nav-container {
     display: block;
@@ -333,7 +346,7 @@ export default {
 
   .nav {
     position: static;
-    height:50px;
+    height:60px;
   }
 
   .menu {

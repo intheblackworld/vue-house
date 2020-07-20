@@ -176,7 +176,7 @@
 
   .number {
     font-size: size(100);
-    letter-spacing: -5.4px;
+  letter-spacing: -0.02em;
   }
 }
 
@@ -279,7 +279,6 @@
 
     .number {
       font-size: size-m(38);
-      letter-spacing: -2.4px;
     }
   }
 

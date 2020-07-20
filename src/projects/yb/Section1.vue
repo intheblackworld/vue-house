@@ -102,7 +102,7 @@ background: linear-gradient(to right, rgba(235,85,0,1) 0%,rgba(215,0,50,1) 100%)
   height:calc(100vh * 394 / 1000);
   bottom:calc(50% - 16vh);
  // top: size(312);
-  left: size(0);
+  left: size(-9);
 }
 
 /* 平板尺寸 */
