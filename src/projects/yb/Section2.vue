@@ -213,7 +213,7 @@
 }
 
 .content-desc {
-  font-size: size(18);
+  font-size: size(22);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
