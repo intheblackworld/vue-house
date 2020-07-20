@@ -253,6 +253,7 @@ export default {
         // allowSlideNext: isMobile ? true : false,
         // centeredSlides: true,
         preloadImages: false,
+        cssMode: true,
         autoplay: {
           delay: 3500,
           disableOnInteraction: false,

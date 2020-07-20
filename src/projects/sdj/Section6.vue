@@ -253,7 +253,9 @@ export default {
         slidesPerColumn: isMobile ? 1 : 2,
         // allowSlidePrev: isMobile ? true : false,
         // allowSlideNext: isMobile ? true : false,
-        // centeredSlides: true,
+        centeredSlides: true,
+        preloadImages: false,
+        cssMode: true,
         autoplay: {
           delay: 3500,
           disableOnInteraction: false,
