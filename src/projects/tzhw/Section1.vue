@@ -1,16 +1,16 @@
 <template>
   <div class="section1">
-    <div class="bg relative">
-      <img src="./s1/bg.png" alt="" class="bg-img">
+    <div class="full-bg relative">
+      <img src="./s1/bg.png" alt="" class="full-img">
       <div class="river">
-        <img src="./s1/an_01.png" alt="">
-        <img src="./s1/an_02.png" alt="">
-        <img src="./s1/an_03.png" alt="">
-        <img src="./s1/an_04.png" alt="">
-        <img src="./s1/an_05.png" alt="">
-        <img src="./s1/an_06.png" alt="">
-        <img src="./s1/an_07.png" alt="">
-        <img src="./s1/an_08.png" alt="">
+        <img class="full-img" src="./s1/an_01.png" alt="">
+        <img class="full-img" src="./s1/an_02.png" alt="">
+        <img class="full-img" src="./s1/an_03.png" alt="">
+        <img class="full-img" src="./s1/an_04.png" alt="">
+        <img class="full-img" src="./s1/an_05.png" alt="">
+        <img class="full-img" src="./s1/an_06.png" alt="">
+        <img class="full-img" src="./s1/an_07.png" alt="">
+        <img class="full-img" src="./s1/an_08.png" alt="">
       </div>
     </div>
   </div>
@@ -47,8 +47,6 @@
 }
 
 .river {
-
-  
   position: absolute;
   right: 0;
   bottom: 0;
