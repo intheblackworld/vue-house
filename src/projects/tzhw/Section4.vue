@@ -1,260 +1,227 @@
 <template>
-  <div>
-    <div class="bg relative">
-      <img
-        src="./s4/walk.gif"
-        alt=""
-        class="img absolute"
-      >
+  <div class="section3 relative">
+    <div class="full-bg">
+      <!-- <div
+        class="full-img"
+        v-lazy:background-image="require('./s3/bg.jpg')"
+      ></div> -->
       <div
-        v-if="!isMobile"
-        class="container flex-ac flex-jb relative left"
-        @mouseover="stopSwipe" @mouseleave="startSwipe"
+        class="full-img bg-img"
+        v-lazy:background-image="require('./s3/bg.jpg')"
+      ></div>
+      <img
+        src="./s3/1.jpg"
+        alt=""
+        class="img1 absolute"
       >
-        <swiper
-          v-show="show"
-          :options="swiperOption"
-          ref="mySwiper"
-          class="slides"
-          @slideChangeTransitionStart="slideChanged"
-        >
-          <!-- <div
-            class="swiper-button-prev"
-            slot="button-prev"
-          >
-            <img
-              class="arrow-l"
-              src="./arrow-left.png"
-              alt
-            />
-          </div>
-          <div
-            class="swiper-button-next"
-            slot="button-next"
-          >
-            <img
-              class="arrow-r"
-              src="./arrow-right.png"
-              alt
-            />
-          </div> -->
-          <div class="slide-text">{{slideList[slideIndex].text}}</div>
-          <swiper-slide
-            v-for="(slide, index) in slideList"
-            :index="index"
-            :key="slide.src"
-            class="item"
-          >
-            <img
-              :src="slide.src"
-              :class="`item-img ${slideIndex === index ? 'active' : ''}`"
-            />
-            <div v-html="slide.name"></div>
-          </swiper-slide>
-        </swiper>
-        <div class="content">
-          <h3
-            class="title"
-            data-aos="fade"
-            data-aos-delay="400"
-          >夜際繁華</h3>
-          <h3
-            class="subtitle"
-            data-aos="fade"
-            data-aos-delay="600"
-            v-html="slideList[slideIndex].subtitle"
-          ></h3>
-          <ul class="desc-list">
-            <h3
-              v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]"
-              data-aos="fade"
-              :data-aos-delay="600 + (index + 1) * 200"
-              data-aos-duration="1000"
-              :key="text"
-            >{{text}}</h3>
-          </ul>
-        </div>
+      <img
+        src="./s3/2.jpg"
+        alt=""
+        class="img2 absolute"
+      >
+      <img
+        src="./s3/3.jpg"
+        alt=""
+        class="img3 absolute"
+      >
+      <div class="content absolute">
+        <div class="border"></div>
       </div>
-      <div v-if="isMobile" @mouseover="stopSwipe" @mouseleave="startSwipe">
-        
-      <div class="slides_box">
-        <swiper
-          v-show="show"
-          :options="swiperOption"
-          ref="mySwiper"
-          class="slides"
-          @slideChangeTransitionStart="slideChanged"
+      <img src="./s3/logo.png" alt="" class="logo absolute">
+      <img
+        src="./s3/hr.png"
+        alt=""
+        class="hr absolute"
+      >
+
+      <h3 class="desc absolute">
+        「太子華威」享陽明山、外雙溪與故宮國際地標等人文絕美景致靜謐私密的尊貴環境，相較於信義仁愛等豪宅更顯國際價值優勢。環境天生優越、富貴渾然天成！台北市最與眾不同的富豪特區，投資教父、電子業董事長共同的置產選擇。
+      </h3>
+      
+      <img src="./s3/float4.png" alt="" class="flower absolute">
+
+      <div class="float absolute">
+        <img
+          src="./s1/float.png"
+          class="float1"
         >
-          <div
-            class="swiper-button-prev"
-            slot="button-prev"
-          >
-            <img
-              class="arrow-l"
-              src="./arrow-left.png"
-              alt
-            />
-          </div>
-          <div
-            class="swiper-button-next"
-            slot="button-next"
-          >
-            <img
-              class="arrow-r"
-              src="./arrow-right.png"
-              alt
-            />
-          </div>
-          <div class="slide-text">{{slideList[slideIndex].text}}</div>
-          <swiper-slide
-            v-for="(slide, index) in slideList"
-            :index="index"
-            :key="slide.src"
-            class="item"
-          >
-            <img
-              :src="slide.src"
-              :class="`item-img ${slideIndex === index ? 'active' : ''}`"
-            />
-            <div v-html="slide.name"></div>
-          </swiper-slide>
-        </swiper>
-          </div>
-        <div class="content">
-          <h3
-            class="title"
-            data-aos="fade"
-            data-aos-delay="400"
-          >夜際繁華</h3>
-          <h3
-            class="subtitle"
-            data-aos="fade"
-            data-aos-delay="600"
-            v-html="slideList[slideIndex].subtitle_m"
-          ></h3>
-          <ul class="desc-list">
-            <h3
-              v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]"
-              data-aos="fade"
-              :data-aos-delay="600 + (index + 1) * 200"
-              data-aos-duration="1000"
-              :key="text"
-            >{{text}}</h3>
-          </ul>
-        </div>
-      </div>
-      <div class="indigator-list flex-c">
-        <div
-          @click="setIndex(index)"
-          :class="`indigator ${slideIndex === index ? 'active' : ''}`"
-          v-for="(item, index) in slideList"
-          :key="`indigator-1-${index}`"
-        ></div>
+        <img
+          src="./s1/float2.png"
+          class="float2"
+        >
+        <img
+          src="./s1/float.png"
+          class="float3"
+        >
+        <img
+          src="./s1/float2.png"
+          class="float4"
+        >
       </div>
     </div>
   </div>
 </template>
+
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .bg {
   background-size: cover;
   position: relative;
-  z-index: 2;
-  overflow: hidden;
-  height: 100vh;
+  height: size(1080);
 }
 
-.img {
-  right: size(215);
-  width: size(310);
-  top: size(326);
+.section3 {
+  z-index: 4;
 }
 
-.container {
-  width: size(1460);
-  height: 100%;
-
-  &.left {
-    margin-left: size(70);
-  }
-
-  &.right {
-    margin-right: size(70);
-  }
+.bg-img {
+  background-attachment: fixed;
 }
 
-.slides {
-  width: size(890);
+.bg-img {
+  position: absolute;
+  // &:first-child {
+  //   position: relative;
+  // }
 }
 
+.img1 {
+  width: size(575);
+  top: size(54);
+  left: size(89);
+}
+
+.img2 {
+  width: size(575);
+  top: size(540);
+  left: size(89);
+}
+
+.img3 {
+  width: size(575);
+  top: size(54);
+  left: size(693);
+}
 
 .content {
-  width: size(438);
-  height: size(710);
-  padding-top: size(200);
-}
+  width: size(535);
+  height: size(974);
+  top: size(54);
+  right: size(89);
+  padding: size(18);
+  background-color: #fff;
 
-.title {
-  font-size: size(50);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 0.65;
-  letter-spacing: 2.5px;
-  text-align: left;
-  color: #606060;
-  margin-bottom: size(25);
-  margin-left: size(-5);
-}
-
-.subtitle {
-  font-size: size(21);
-  font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.55;
-  letter-spacing: 0.63px;
-  text-align: left;
-  color: #aa8356;
-  margin-bottom: size(15);
-}
-
-.desc-list {
-  > h3 {
-    font-size: size(15);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2;
-    letter-spacing: 3.75px;
-    text-align: left;
-    color: #727272;
+  .border {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #004ea2;
   }
 }
 
-.indigator-list {
-  width: 100%;
-  position: absolute;
+.logo {
+  width: size(409);
+  height: size(152);
+  top: size(217);
+  right: size(152);
+}
+
+.hr {
+  width: size(475);
+  height: size(16);
+  top: size(392);
+  right: size(118);
+}
+
+.desc {
+  width: size(373);
+  font-size: size(24);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.05;
+  letter-spacing: -0.49px;
+  text-align: left;
+  color: #04040c;
+  top: size(434);
+  right: size(170);
+}
+
+@keyframes flower {
+  from {
+    transform: skewX(5deg);
+  }
+  to {
+    transform: skewX(-5deg);
+  }
+}
+
+.flower {
+  width: size(495);
+  top: size(715);
+  right: size(12);
+  transform-origin: bottom;
+  animation: flower 5s linear 0s infinite alternate;
+}
+
+@keyframes float1 {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(size(938), size(253));
+  }
+}
+
+@keyframes float2 {
+  from {
+    transform: translate(100vw, 0);
+  }
+  to {
+    transform: translate(size(918), size(293)) rotate(30deg);
+  }
+}
+
+@keyframes float3 {
+  from {
+    transform: translate(100vw, 100vw);
+  }
+  to {
+    transform: translate(size(1683), size(155));
+  }
+}
+
+@keyframes float4 {
+  from {
+    transform: translate(100vw, 100vw);
+  }
+  to {
+    transform: translate(size(1700), size(124)) rotate(30deg);
+  }
+}
+
+.float {
+  top: 0;
   left: 0;
-  right: 0;
-  margin: size(370) auto 0 auto;
-  top:50%;
-  .indigator {
-    width: size(19);
-    height: size(19);
-    border-radius: size(19);
-    margin: 0 20px;
-    background-color: rgba(186, 146, 98, 0.4);
-    cursor: pointer;
-
-    &.active {
-      background-color: rgba(186, 146, 98, 1);
-    }
+  z-index: 4;
+  .float1 {
+    width: size(23);
+    animation: float1 2s ease-in-out 1s forwards;
   }
-}
 
-.arrows {
-  display: none;
+  .float2 {
+    width: size(78);
+    animation: float2 2s ease-in-out 1s forwards;
+  }
+
+  .float3 {
+    width: size(23);
+    animation: float3 2s ease-in-out 1s forwards;
+  }
+
+  .float4 {
+    width: size(78);
+    animation: float4 2s ease-in-out 1s forwards;
+  }
 }
 
 /* 平板尺寸 */
@@ -262,273 +229,25 @@
 }
 
 @media screen and (max-width: 767px) {
-  .bg {
-    height:100vh;
-  }
-  .img {
-    right: size-m(10);
-    width: size-m(144);
-   // top: auto;
-    top: size-m(320);
-  }
-
-  .container {
-    width: 100vw;
-    height: 100%;
-    flex-wrap: wrap;
-
-    &.left {
-      margin-left: 0;
-    }
-
-    &.right {
-      margin-right: 0;
-    }
-  }
-
-  .slides {
-    width: 100vw;
-  }
-
-  .content {
-    width: 100vw;
-    height:auto;
-    padding-top: size-m(31);
-    padding-left: size-m(27);
-    padding-bottom: size-m(200);
-  }
-
-  .title {
-    font-size: size-m(39);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 0.65;
-    letter-spacing: 2.5px;
-    text-align: left;
-    color: #606060;
-    margin-bottom: size-m(25);
-    margin-left: size-m(-5);
-  }
-
-  .subtitle {
-    font-size: size-m(16);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.55;
-    letter-spacing: 0.63px;
-    text-align: left;
-    color: #aa8356;
-    margin-bottom: size-m(15);
-  }
-
-  .desc-list {
-    > h3 {
-      font-size: size-m(12);
-      font-weight: 600;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 2.14;
-      letter-spacing: 0.14px;
-      text-align: left;
-      color: #727272;
-    }
-  }
-
-  .indigator-list {
-    display: none;
-  }
-
-  .arrows {
-    width: 100%;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .arrow-l {
-      width: size-m(14);
-      position: absolute;
-      left: size-m(5);
-      cursor: pointer;
-    }
-
-    .arrow-r {
-      width: size-m(14);
-      position: absolute;
-      right: size-m(5);
-      cursor: pointer;
-    }
-  }
-
-  .arrow-l {
-    width: size-m(20);
-    position: absolute;
-    left: size-m(5);
-    cursor: pointer;
-  }
-
-  .arrow-r {
-    width: size-m(20);
-    position: absolute;
-    right: size-m(5);
-    cursor: pointer;
-  }
 }
 </style>
 
 <script>
 // @ is an alias to /src
-import { isMobile, isTablet } from '@/utils'
-import slider from '@/mixins/slider.js'
-import 'swiper/dist/css/swiper.css'
-
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import { isMobile } from '@/utils'
 
 export default {
-  name: 'section4',
-  mixins: [slider],
-  components: {
-    swiper,
-    swiperSlide,
-  },
+  name: 'section3',
 
-  props: ['show'],
-  watch: {
-    show(val) {
-      if (val) {
-        this.slideIndex = 0
-        this.swiper.slideTo(1, 1000, false)
-      }
-    },
-  },
   data() {
     return {
       isMobile,
-      swiperOption: {
-        slidesPerView: isMobile ? 1 : 1,
-        spaceBetween: isTablet ? 20 : 30,
-        slidesPerColumn: isMobile ? 1 : 1,
-        allowSlidePrev: isMobile ? true : true,
-        allowSlideNext: isMobile ? true : true,
-        // centeredSlides: true,
-        autoplay: {
-          delay: 4000,
-          disableOnInteraction: true,
-        },
-        loop: true,
-        // direction: 'vertical',
-        effect: 'fade',
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-      },
-      slideList: [
-        {
-          src: require('./s4/1-1.jpg'),
-          contentIndex: 0,
-          subtitle: '讓時尚為我啟蒙，新板為我加冕',
-          subtitle_m: '讓時尚為我啟蒙<br>新板為我加冕',
-        },
-        {
-          src: require('./s4/1-2.jpg'),
-          contentIndex: 0,
-          subtitle: '讓時尚為我啟蒙，新板為我加冕',
-          subtitle_m: '讓時尚為我啟蒙<br>新板為我加冕',
-        },
-        {
-          src: require('./s4/2-1.jpg'),
-          contentIndex: 1,
-          subtitle: '新板像打翻的珠寶盒，生活絢麗無比',
-          subtitle_m: '新板像打翻的珠寶盒<br>生活絢麗無比',
-        },
-        {
-          src: require('./s4/2-2.jpg'),
-          contentIndex: 1,
-          subtitle: '新板像打翻的珠寶盒，生活絢麗無比',
-          subtitle_m: '新板像打翻的珠寶盒<br>生活絢麗無比',
-        },
-        {
-          src: require('./s4/2-3.jpg'),
-          contentIndex: 1,
-          subtitle: '新板像打翻的珠寶盒，生活絢麗無比',
-          subtitle_m: '新板像打翻的珠寶盒<br>生活絢麗無比',
-        },
-        {
-          src: require('./s4/3-1.jpg'),
-          contentIndex: 2,
-          subtitle: '新北信義大新板特區，最大歡樂耶誕城',
-          subtitle_m: '新北信義大新板特區<br>最大歡樂耶誕城',
-        },
-        {
-          src: require('./s4/3-2.jpg'),
-          contentIndex: 2,
-          subtitle: '新北信義大新板特區，最大歡樂耶誕城',
-          subtitle_m: '新北信義大新板特區<br>最大歡樂耶誕城',
-        },
-      ],
-      desc_list: [
-        [
-          '時尚精靈背後的天使長',
-          '輕取新板的機會只有一次',
-          '時尚的華麗，豪宅的佈局，人文的靜謐',
-          '平凡貴氣自有細膩紋理',
-        ],
-        [
-          '飯店百貨CBD，大遠百Mega City',
-          '誠品生活、環球購物、威秀影城',
-          '凱薩飯店，新板希爾頓酒店',
-          '絢爛熙來攘往，儷人繽紛來去',
-        ],
-        [
-          '年度盛會，冬日慶典，全國最大',
-          '結合府中商圈，開城光雕秀',
-          '孩子的魔法小鎮，情侶的甜蜜森林',
-          '家庭繽紛聖誕夢',
-        ],
-      ],
     }
   },
 
-  computed: {
-    swiper() {
-      return this.$refs.mySwiper.swiper
-    },
-  },
+  computed: {},
 
-  methods: {
-    setIndex(index) {
-      this.slideIndex = index
-      this.swiper.slideTo(index + 1, 1000, false)
-    },
-
-    slideChanged(e) {
-      const swiper = this.$refs.mySwiper.swiper
-      if (swiper.isEnd) {
-        this.slideIndex = 0
-      } else if (swiper.isBeginning) {
-        this.slideIndex = 1
-      } else {
-        this.slideIndex = swiper.activeIndex - 1
-      }
-    },
-
-    startSwipe() {
-      this.swiper.autoplay.start()
-    },
-
-    stopSwipe() {
-      this.swiper.autoplay.stop()
-    },
-  },
+  methods: {},
 
   created() {},
   mounted() {},

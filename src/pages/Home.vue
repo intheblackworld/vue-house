@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home no-padding-top">
     <div ref="gtmNoScript" />
     <Loading :loading="load" />
     <SideNavigation v-if="isSide" />
@@ -56,7 +56,7 @@
 
 <script>
 // @ is an alias to /src
-// import Navigation from '@/layouts/Navigation.vue'
+import Navigation from '@/layouts/Navigation.vue'
 import { isMobile } from '@/utils'
 import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
@@ -80,6 +80,7 @@ export default {
   components: {
     Loading,
     // Indigator,
+    Navigation,
     SideNavigation,
     ContactSection,
     MobileNav,
