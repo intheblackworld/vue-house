@@ -16,10 +16,12 @@
           <img
             :src="slide.src"
             :class="`item-img`"
+              :alt="slide.title"
           />
           <img
             :src="slide.src"
             :class="`item-img2`"
+              :alt="slide.title"
           />
           <div class="slide-title absolute">{{slide.title}}</div>
           <div class="absolute txt">樣品屋圖片僅供示意參考，依實際合約附圖為準。</div>

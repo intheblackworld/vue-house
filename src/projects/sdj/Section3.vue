@@ -5,7 +5,7 @@
         <div class="txt">
         <img
           v-lazy="require('./s3/tm_dali_logo.png')"
-          alt=""
+          alt="logo"
           class="logo"
         >
         <div class="title">達麗要和高雄一起<br />被世界看見！</div>
@@ -19,32 +19,32 @@
         </div>
         <img
           v-lazy="require('./s3/area3_decoration.png')"
-          alt=""
+          alt="decoration"
           class="decoration absolute"
         >
     </div>
     <div class="box3">
     <img
       v-lazy="require('./s3/area3_img2.png')"
-      alt=""
+      alt="img2"
       class="img2"
     >
     <div class="flex box4">
     <img
       v-lazy="require('./s3/area3_img4.png')"
-      alt=""
+      alt="img4"
       class="img4"
     >
     <img
       v-lazy="require('./s3/area3_img3.png')"
-      alt=""
+      alt="img3"
       class="img3"
     >
     </div>
     </div>
     <img
       v-lazy="require('./s3/area3_img1.png')"
-      alt=""
+      alt="img1"
       class="img1"
     >
     </div>

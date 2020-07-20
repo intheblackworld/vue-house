@@ -26,35 +26,35 @@
       <div class="bg-img cloud">
         <img
           v-lazy="require('./s1/cloud.png')"
-          alt="bg"
+          alt="cloud"
         >
         <img
           v-lazy="require('./s1/cloud.png')"
-          alt="bg"
+          alt="cloud"
         >
       </div>
       <img
         v-lazy="require('./s1/cloud2.png')"
-        alt="bg"
+        alt="cloud"
         class="bg-img"
       >
       <img
         v-lazy="require('./s1/g.png')"
-        alt="bg"
+        alt="icon"
         class="bg-img g"
       >
       <img
         v-lazy="require('./s1/b.png')"
-        alt="bg"
+        alt="icon"
         class="bg-img b"
       >
       <img
         v-lazy="require('./s1/logo.png')"
-        alt=""
+        alt="logo"
         class="bg-img logo"
       >
       <!--<img
-        src="./s1/area1_bg.png"
+        v-lazy="require('./s1/area1_bg.png')"
         alt=""
         class="bg-img city"
       >
@@ -84,17 +84,17 @@
         <div slot="main">
           <img
             src="./s1/l1.png"
-            alt="bg"
+            alt="map"
             class="bg-img light2"
           >
           <img
             src="./s1/l2.png"
-            alt="bg"
+            alt="map"
             class="bg-img light2 l2"
           >
           <img
             src="./s1/area1_loocation.png"
-            alt="bg"
+            alt="map"
             class="bg-img location"
           >
         </div>
