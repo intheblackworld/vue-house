@@ -282,24 +282,14 @@
   }
 
   .content-title {
-    font-size: size-m(35);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
+    font-size: size-m(34);
     line-height: 0.94;
-    text-align: left;
-    color: #f6f6f6;
     margin-bottom: size-m(15);
   }
 
   .content-desc {
     font-size: size-m(13);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.56;
-    text-align: left;
-    color: #f6f6f6;
     margin-bottom: size-m(15);
   }
 

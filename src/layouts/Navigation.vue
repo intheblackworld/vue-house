@@ -326,8 +326,8 @@ export default {
   .logo {
     width: $logo_phone_width;
     left: size-m(20);
-    top: size-m(20);
-    transform: none;
+    top: 50%;
+  transform: translate(0, -40%);
     // left: 45px;
   }
 
