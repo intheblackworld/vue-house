@@ -1,7 +1,11 @@
 <template>
   <div class="section5">
     <div class="bg">
-      <img src="./s6/上揚實業_達麗_上東京(鼎力案)_角度1大廳_1090117_.jpg" alt="" class="item-img">
+      <img
+        src="./s6/上揚實業_達麗_上東京(鼎力案)_角度1大廳_1090117_.jpg"
+        alt=""
+        class="item-img"
+      >
       <swiper
         :options="swiperOption"
         ref="mySwiper"
@@ -40,12 +44,12 @@
 
 .bg {
   position: relative;
-  height:100vh;
+  height: 100vh;
   overflow: hidden;
 
   &::v-deep {
     .swiper-pagination {
-      width:100%;
+      width: 100%;
       left: auto;
       bottom: 20px;
       right: 20px;
@@ -67,7 +71,7 @@
 
 .swiper-container {
   width: 100vw;
-  height:100vh;
+  height: 100vh;
   overflow: hidden;
   position: absolute;
   left: 0;
@@ -94,23 +98,31 @@
   right: 0;
   bottom: size(30);
 }
-.txt{
-  color: #ffffff;z-index:2;
-  right:  size(30);opacity: 0.8;
-  bottom: size(10);}
-.item-img {top: 0;left: 0;
+.txt {
+  color: #ffffff;
+  z-index: 2;
+  right: size(30);
+  opacity: 0.8;
+  bottom: size(10);
+}
+.item-img {
+  top: 0;
+  left: 0;
   width: 100vw;
-  height:100vh;
+  height: 100vh;
   object-fit: cover;
   object-position: center;
-  -webkit-filter:blur(5px)brightness(.5);
+  -webkit-filter: blur(5px) brightness(0.5);
 }
-.item-img2 {top: 0;left: 0;
+.item-img2 {
+  top: 0;
+  left: 0;
   position: absolute;
   width: 100vw;
-  height:100vh;
+  height: 100vh;
   object-fit: contain;
-  object-position: center;z-index: 2;
+  object-position: center;
+  z-index: 2;
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -128,7 +140,8 @@
 
 @media screen and (max-width: 767px) {
   .bg {
-  height:calc(177.8666666667vw - 63px);
+    height: calc(177.8666666667vw - 63px);
+    background-color: #004a7f;
 
     &::v-deep {
       .swiper-pagination {
@@ -166,7 +179,10 @@
       display: block;
     }
   }
-.txt{font-size: size-m(12);top: calc(50% + 30vw);}
+  .txt {
+    font-size: size-m(12);
+    top: calc(50% + 30vw);
+  }
   .slide-title {
     width: 100vw;
     height: size-m(57 / 2);
@@ -188,20 +204,26 @@
     right: 0;
     bottom: size-m(50);
   }
-.item-img {top: 0;left: 0;
-  width: 100vw;
-  height:calc(177.8666666667vw - 63px);
-  object-fit: cover;
-  object-position: center;
-  -webkit-filter:blur(5px)brightness(.5);
-}
-.item-img2 {top:50%;left: 0;transform: translateY(-50% );
-  position: absolute;
-  width: 100vw;
-  height:auto;
-  object-fit: contain;
-  object-position: center;z-index: 2;
-}
+  .item-img {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: calc(177.8666666667vw - 63px);
+    object-fit: cover;
+    object-position: center;
+    -webkit-filter: blur(5px) brightness(0.5);
+  }
+  .item-img2 {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    position: absolute;
+    width: 100vw;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    z-index: 2;
+  }
 }
 </style>
 
@@ -236,7 +258,7 @@ export default {
           delay: 3500,
           disableOnInteraction: false,
         },
-        // effect: 'fade',
+        effect: 'fade',
         loop: true,
         pagination: {
           el: '.swiper-pagination',

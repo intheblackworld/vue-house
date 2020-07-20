@@ -4,7 +4,8 @@
       src="./s7/area7_bg.png"
       alt="bg-img"
       class="bg-img"
-    ><div class="box"></div>
+    >
+    <div class="box"></div>
     <img
       :src="isMobile ? require('./s7/area7_doll_mobile.png') : require('./s7/area7_doll.png')"
       alt="doll"
@@ -45,16 +46,39 @@
     position: relative;
   }
 }
-.box{background: #fff7;width:  size(50);height: 100%;position: absolute;top:0;left: 0;
-transform: skewX(-35deg)scaleX(4)translateX(-300%);animation: b 2s 3s ease-in-out infinite;
-&::before{content: "";background: #fff3;width:  size(80);height: 100%;position: absolute;top:0;left: size(-15);}
-&::after{content: "";background: #fff3;width:  size(100);height: 100%;position: absolute;top:0;left:  size(-25);}
+.box {
+  background: #fff7;
+  width: size(50);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: skewX(-35deg) scaleX(4) translateX(-300%);
+  animation: b 2s 3s ease-in-out infinite;
+  &::before {
+    content: '';
+    background: #fff3;
+    width: size(80);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: size(-15);
+  }
+  &::after {
+    content: '';
+    background: #fff3;
+    width: size(100);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: size(-25);
+  }
 }
-@keyframes b{
-    to {
-transform: skewX(-35deg)scaleX(4)translateX(5000%);
-      //  transform: rotate(5deg);
-    }
+@keyframes b {
+  to {
+    transform: skewX(-35deg) scaleX(4) translateX(5000%);
+    //  transform: rotate(5deg);
+  }
 }
 .doll {
   z-index: 2;
@@ -134,7 +158,7 @@ transform: skewX(-35deg)scaleX(4)translateX(5000%);
   .relative {
     // height: 100vh;
     overflow: hidden;
-    background: #fff;
+    background: #004a7f;
   }
   .bg-img {
     width: 100vw;

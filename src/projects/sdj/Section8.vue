@@ -138,6 +138,7 @@
 @media screen and (max-width: 767px) {
   .bg {
     height: calc(177.8666666667vw - 63px);
+    background-color: #004a7f;
 
     &::v-deep {
       .swiper-pagination {
@@ -255,7 +256,7 @@ export default {
           delay: 3500,
           disableOnInteraction: false,
         },
-        // effect: 'fade',
+        effect: 'fade',
         loop: true,
         pagination: {
           el: '.swiper-pagination',
