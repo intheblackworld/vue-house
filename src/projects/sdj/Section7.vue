@@ -7,15 +7,19 @@
     >
     <div class="box"></div>
     <img
-      :src="isMobile ? require('./s7/area7_doll_mobile.png') : require('./s7/area7_doll.png')"
+      v-if="isMobile"
+      src="./s7/area7_doll_mobile.png"
       alt="doll"
       class="doll absolute"
     >
+    <img v-else src="./s7/area7_doll.png" alt="" class="doll absolute">
     <img
-      :src="isMobile ? require('./s7/area7_info_mobile.png') : require('./s7/area7_info.png')"
+      v-if="isMobile"
+      src="./s7/area7_info_mobile.png"
       alt="info"
       class="info absolute"
     >
+    <img v-else src="./s7/area7_info.png" alt="" class="info absolute">
     <div class="title absolute">銀級智能候選<br />最嚴審查耐震宅</div>
     <div class="hr absolute"></div>
     <div class="desc absolute">

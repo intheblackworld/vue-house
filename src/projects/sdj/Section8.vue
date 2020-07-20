@@ -252,6 +252,7 @@ export default {
         // allowSlidePrev: isMobile ? true : false,
         // allowSlideNext: isMobile ? true : false,
         // centeredSlides: true,
+        preloadImages: false,
         autoplay: {
           delay: 3500,
           disableOnInteraction: false,
