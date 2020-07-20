@@ -333,7 +333,7 @@ export default {
 
   .nav {
     position: static;
-    height: $nav_phone_height;
+    height:50px;
   }
 
   .menu {
