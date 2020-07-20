@@ -154,10 +154,10 @@ export default {
   width: $logo_pc_width;
   height: auto;
   position: absolute;
-  left: size(100);
+  left: size(0);
   display: block;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(0, -50%);
   transition: all .3s;
 }
 

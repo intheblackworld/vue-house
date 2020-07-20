@@ -17,11 +17,7 @@
       <div class="title absolute">是誰？</div>
       <div class="subtitle absolute">心念著建築本心，以<span>創新觀點</span>思考人居領域</div>
       <div class="relative">
-        <img
-          src="./s4/bg.png"
-          alt=""
-          class="bg-img"
-        >
+        <div class="bg-color"></div>
         <div class="content absolute flex flex-as flex-jb">
           <div class="content-label">Our Team</div>
           <div class="content-desc">
@@ -132,9 +128,10 @@
     position: relative;
   }
 }
+.bg-color{margin:size(120) 0 0 0;width: 100%;height:size(950);background:linear-gradient(to right, rgba(215,0,50,1) 0%,rgba(235,85,0,1) 100%);}
 
 .title {
-  font-size: size(114);
+  font-size: size(110);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -147,7 +144,7 @@
 }
 
 .subtitle {
-  font-size: size(48);
+  font-size: size(45);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -163,7 +160,7 @@
   }
 
   .number {
-    font-size: size(108);
+    font-size: size(100);
     letter-spacing: -5.4px;
   }
 }
@@ -190,12 +187,12 @@
 
 .content-desc {
   width: size(975);
-  font-size: size(27);
+  font-size: size(18);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.56;
-  letter-spacing: 1.35px;
+  line-height: 1.6;
+  letter-spacing: 0.1em;
   text-align: left;
   color: #f6f6f6;
   margin-bottom: size(40);
@@ -208,24 +205,24 @@
 
 .swiper-frame {
   position: absolute;
-  width: size(1741);
-  height: size(1300);
-  top: size(0);
-  left: size(179);
+  width:100%;
+  height: size(1000);
+  top: size(-150);
+  left: size(0);
   overflow: hidden;
 }
 
 .swiper-container {
   position: absolute;
-  width: size(2381);
-  height: size(1300);
+  width: size(2600);
+  height: size(1000);
   top: size(50);
   left: size(179);
   margin-left: size(-790);
 
   img,
   .text {
-    width: size(900);
+    width: size(550);
   }
 
   .text {
@@ -343,7 +340,7 @@
   .swiper-container {
     position: relative;
     width: 100vw;
-    height: size-m(390);
+    height: size-m(380);
     top: 0;
     left: 0;
     margin-left: 0;
@@ -394,7 +391,7 @@ export default {
     return {
       isMobile,
       swiperOption: {
-        slidesPerView: isMobile ? 1.4 : 2.3,
+        slidesPerView: isMobile ? 1.4 : 3.7,
         centeredSlides: true,
         spaceBetween: isMobile ? 15 : 0,
         slidesPerColumn: isMobile ? 1 : 1,

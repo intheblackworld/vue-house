@@ -97,7 +97,7 @@
 }
 
 .title {
-  font-size: size(114);
+  font-size: size(110);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -110,7 +110,7 @@
 }
 
 .subtitle {
-  font-size: size(48);
+  font-size: size(45);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -126,7 +126,7 @@
   }
 
   .number {
-    font-size: size(108);
+    font-size: size(100);
     letter-spacing: -5.4px;
   }
 }
@@ -153,7 +153,7 @@
 
 .content-desc {
   width: size(975);
-  font-size: size(27);
+  font-size: size(18);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;

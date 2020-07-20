@@ -17,11 +17,7 @@
       <div class="title absolute">是誰？</div>
       <div class="subtitle absolute">在央北用<span>超規格</span>標準，展現國際視野</div>
       <div class="relative">
-        <img
-          src="./s3/bg.png"
-          alt=""
-          class="bg-img"
-        >
+        <div class="bg-color"></div>
         <div class="content absolute">
           <div class="content-label">Our Way</div>
           <div class="content-title">
@@ -122,9 +118,10 @@
     position: relative;
   }
 }
+.bg-color{margin: 0 0 0 auto;width: size(1020);height:size(1056);background:linear-gradient(to right, rgba(235,85,0,1) 0%,rgba(215,0,50,1) 100%);}
 
 .title {
-  font-size: size(114);
+  font-size: size(110);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -137,7 +134,7 @@
 }
 
 .subtitle {
-  font-size: size(48);
+  font-size: size(45);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -153,15 +150,15 @@
   }
 
   .number {
-    font-size: size(108);
+    font-size: size(100);
     letter-spacing: -5.4px;
   }
 }
 
 .content {
-  width: size(600);
+  width: size(580);
   top: size(161);
-  right: size(213);
+  right: size(240);
   text-align: center;
 }
 
@@ -178,7 +175,7 @@
 }
 
 .content-title {
-  font-size: size(72);
+  font-size: size(75);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -191,13 +188,13 @@
 }
 
 .content-desc {
-  font-size: size(27);
+  font-size: size(18);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.56;
   letter-spacing: 1.35px;
-  text-align: left;
+  text-align: justify;
   color: #f6f6f6;
   margin-bottom: size(40);
 }
@@ -209,8 +206,8 @@
 
 .swiper-container {
   position: absolute;
-  width: size(1023);
-  height: size(1200);
+  width: size(900);
+  height: size(1056);
   top: 0;
   left: 0;
   img {

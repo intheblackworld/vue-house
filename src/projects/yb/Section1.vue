@@ -2,8 +2,11 @@
   <div class="section1">
     <div class="bg" v-if="!isMobile">
       <div class="vh1">
-      <button class="absolute button" v-scroll-to="{ element: `#contact`, offset: -100}">立即預約</button>
-      <img src="./s1/txt.png" alt="有我們在幸福的未來就在現在" class="absolute txt">
+      <div class="absolute right">
+        <img src="./s1/txt.png" alt="有我們在幸福的未來就在現在" class="txt"><br>
+        <button class="button" v-scroll-to="{ element: `#contact`, offset: -100}">立即預約</button>
+      </div>
+     
       <img src="./s1/title.png" alt="超規格暖心價" class="absolute title">
       <img src="./s1/nexttofuture.png" alt="" class="absolute slogan">
     </div>
@@ -11,6 +14,7 @@
         <div>
       <img src="./s1/img1.jpg" alt="img1" class="img1">
       <img src="./s1/img2.jpg" alt="img2" class="img2">
+    </div>
     </div>
     </div>
     <div class="bg" v-if="isMobile">
@@ -40,24 +44,24 @@
 
 .img1 {
   width: size(900);
-  height:calc(100vh - 60px);
+  height:calc(100vh);
   object-fit: cover;
+  background: url("./s1/img1.jpg") fixed;
+  
 }
 
 .img2 {
   width: size(765);
-  height:calc(100vh - 60px);
+  height:calc(100vh);
   margin-left:size(80);
   object-fit: cover;
 }
 .vh1{height:calc(100vh - 3vw);
-  width: size(1368);position: relative; overflow: hidden;margin: auto;}
+      width: 1368px;max-width:75%;position: relative; overflow: hidden;margin: auto;}
 .vh2{position: relative; overflow: hidden;text-align: right;}
 .button {
   cursor: pointer;
   width:6.2em;
-  top:calc(73%);
-  left:68%;
   border: 2px solid;
   border-color: #eb5500 #d70032 #d70032  #eb5500;
   border-radius: 1.2em;
@@ -67,19 +71,20 @@
   line-height: 2;
   letter-spacing: 0.08em;
   font-family: "Noto Sans TC", serif;
-  background:  linear-gradient(to right, #f6f6f6 0%, #f6f6f6 100%);
+  background:  #fff;
   transition: all 0.3s;
   &:hover{
 background: linear-gradient(to right, rgba(235,85,0,1) 0%,rgba(215,0,50,1) 100%);
   color: #fff;
   }
 }
+.right{
+  top:calc(50%);
+  right: 0;text-align: left;
+}
 
 .txt {
   height:calc(100vh * 178 / 1000);
-  top:calc(50%);
- //top: size(522);
-  left:68%;
 }
 
 .title {

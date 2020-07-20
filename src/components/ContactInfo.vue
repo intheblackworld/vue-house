@@ -130,9 +130,10 @@ export default {
 @import '@/assets/style/variableDefault.scss';
 
 .contact-info {
-  background: $contact_bg;
+ // background: $contact_bg;
   // background-image: url('../assets/img/contact_bg.jpg');
   background-size: cover;
+ // border-top: 1px solid #4446;
   // background-position: 50% 100%;
   box-shadow: $contact_shadow;
   display: flex;
@@ -144,9 +145,9 @@ export default {
   z-index: 3;
   width: 1200px;
   height: 360px;
-  padding-top: 100px;
+  padding-top: 50px;
 
-  margin: 0 auto;
+  margin: 50px auto 0 auto;
   // padding: 60px 0 50px;
 }
 
