@@ -136,7 +136,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 0.55;
-  letter-spacing: 3.42px;
+  letter-spacing: 0.02em;
   text-align: right;
   color: #242424;
   top: size(236);
@@ -149,7 +149,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.31;
-  letter-spacing: 1.44px;
+  letter-spacing: 0.02em;
   text-align: left;
   color: #242424;
   top: size(400);
@@ -257,7 +257,6 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 0.55;
-    letter-spacing: 3.42px;
     text-align: right;
     color: #242424;
     top: size-m(98);
@@ -270,7 +269,6 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.31;
-    letter-spacing: 1.44px;
     text-align: left;
     color: #242424;
     top: size-m(155);
@@ -316,7 +314,6 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 0.94;
-    letter-spacing: 3.24px;
     text-align: left;
     color: #f6f6f6;
     margin-bottom: size-m(15);
@@ -330,7 +327,6 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.56;
-    letter-spacing: 1.35px;
     text-align: left;
     color: #f6f6f6;
     margin: 0 auto;
@@ -413,7 +409,7 @@ export default {
         { src: require('./s4/3.jpg'), text: '燈光設計 | <span>朱文英</span>' },
         { src: require('./s4/4.jpg'), text: '結構師設計 | <span>陳村林</span>' },
         { src: require('./s4/5.jpg'), text: '綠建築顧問 | <span>楊謙柔</span>' },
-        { src: require('./s4/6.jpg'), text: '' },
+        { src: require('./s4/6.jpg'), text: '公設規劃 | <span>林馬克</span>' },
       ],
 
       imgIndex: 0,

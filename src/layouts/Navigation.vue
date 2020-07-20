@@ -157,7 +157,7 @@ export default {
   left: size(0);
   display: block;
   top: 50%;
-  transform: translate(0, -50%);
+  transform: translate(5%, -50%);
   transition: all .3s;
 }
 
@@ -273,7 +273,7 @@ export default {
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .navigation {
-    height: $nav_tablet_height;
+    height: 50px;
     justify-content: center;
   }
 

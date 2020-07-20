@@ -61,7 +61,7 @@
   object-fit: cover;
 }
 .vh1{height:calc(100vh - 3vw);
-      width: 1368px;max-width:75%;position: relative; overflow: hidden;margin: auto;}
+      width: 1800px;max-width:81%;position: relative; overflow: hidden;margin: auto;}
 .vh2{position: relative; overflow: hidden;text-align: right;}
 .button {
   cursor: pointer;
@@ -75,7 +75,7 @@
   line-height: 2;
   letter-spacing: 0.08em;
   font-family: "Noto Sans TC", serif;
-  background:  #fff;
+  background:  #f6f6f6;
   transition: all 0.3s;
   &:hover{
 background: linear-gradient(to right, rgba(235,85,0,1) 0%,rgba(215,0,50,1) 100%);

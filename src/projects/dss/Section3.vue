@@ -72,7 +72,7 @@
   font-style: normal;
   font-stretch: normal;
   line-height: 1.81;
-  letter-spacing: 3.1px;
+  letter-spacing: 0.1em;
   text-align: center;
   color: #ffffff;
 }

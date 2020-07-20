@@ -126,7 +126,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 0.55;
-  letter-spacing: 3.42px;
+  letter-spacing: 0.02em;
   text-align: right;
   color: #242424;
   top: size(236);
@@ -139,7 +139,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.31;
-  letter-spacing: 1.44px;
+  letter-spacing: 0.02em;
   text-align: left;
   color: #242424;
   top: size(400);
@@ -180,7 +180,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.04;
-  letter-spacing: 2.02px;
+  letter-spacing: 0.05em;
   text-align: left;
   color: #f6f6f6;
   margin-bottom: size(40);
@@ -193,7 +193,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.56;
-  letter-spacing: 1.35px;
+  letter-spacing: 0.1em;
   text-align: justify;
   color: #f6f6f6;
   margin-bottom: size(40);
@@ -231,7 +231,6 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 0.55;
-    letter-spacing: 3.42px;
     text-align: right;
     color: #242424;
     top: size-m(98);
@@ -244,7 +243,6 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.31;
-    letter-spacing: 1.44px;
     text-align: left;
     color: #242424;
     top: size-m(155);
@@ -289,7 +287,6 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 0.94;
-    letter-spacing: 3.24px;
     text-align: left;
     color: #f6f6f6;
     margin-bottom: size-m(15);
@@ -301,7 +298,6 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.56;
-    letter-spacing: 1.35px;
     text-align: left;
     color: #f6f6f6;
     margin-bottom: size-m(15);

@@ -137,7 +137,7 @@ export default {
 }
 
 .logo {
-  width: size(217);
+  height: size(151);
   position: absolute;
   bottom: 0;
   left: 0;
@@ -241,7 +241,7 @@ export default {
   }
 
   .logo {
-    width: size-m(159);
+    height:size-m(120);
     position: relative;
     bottom: auto;
     left: auto;
