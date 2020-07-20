@@ -77,13 +77,14 @@
   font-family: "Noto Sans TC", serif;
   background:  #f6f6f6;
   transition: all 0.3s;
+  margin:0 0 0 0;
   &:hover{
 background: linear-gradient(to right, rgba(235,85,0,1) 0%,rgba(215,0,50,1) 100%);
   color: #fff;
   }
 }
 .right{
-  top:calc(50%);
+  top:calc(53.5%);
   right: 0;text-align: left;
 }
 
