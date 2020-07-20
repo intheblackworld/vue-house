@@ -176,7 +176,7 @@
 
   .number {
     font-size: size(100);
-  letter-spacing: -0.03em;margin: 0 0.1em 0 0.01em;
+  letter-spacing: -0.03em;margin: 0 0.1em 0 0.09em;
   }
 }
 
