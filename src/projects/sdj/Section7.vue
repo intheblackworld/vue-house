@@ -1,7 +1,7 @@
 <template>
   <div class="relative">
     <img
-      src="'./s7/area7_bg.png'"
+      src="./s7/area7_bg.png"
       alt="bg-img"
       class="bg-img"
     ><div class="box"></div>
