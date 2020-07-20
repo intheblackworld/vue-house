@@ -4,8 +4,8 @@ export default {
   address: '新北市新店央北重劃區斯馨一路',
   // isMobile ? '接待中心：<br />106台北市大安區基隆路三段20-1號' : '接待中心：106台北市大安區基隆路三段20-1號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.6615014279905!2d121.5284838154263!3d24.977628883998797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468021c99e12edb%3A0x2bd39f5ee4c8d9cd!2zMjMx5paw5YyX5biC5paw5bqX5Y2A5pav6aao5LiA6Lev!5e0!3m2!1szh-TW!2stw!4v1594203653578!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/UfyLX5Rm7sxoe1XZ8',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.620331001724!2d121.52801231542625!3d24.97902898399802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDU4JzQ0LjUiTiAxMjHCsDMxJzQ4LjciRQ!5e0!3m2!1szh-TW!2stw!4v1595244656378!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/ayko5ADkWsRhTzFfA',
   phone: '02-86676688',
   fbLink:
     'https://www.facebook.com/央北鑫建築-107215314395480/',

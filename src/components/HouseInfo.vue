@@ -133,6 +133,7 @@ export default {
   width: auto;
   height: size(47);
   margin-bottom: size(30);
+  max-height: 47px;
 }
 
 .logo {
@@ -140,6 +141,7 @@ export default {
   position: absolute;
   bottom: 0;
   left: 0;
+  max-height: 151px;
   // margin-top: size(190);
 }
 
@@ -247,6 +249,11 @@ export default {
     display: block;
     // margin-top: size(190);
   }
+.item {
+  .desc {
+    font-size: 13px;
+  }
+}
 }
 
 /* 平板尺寸 */
