@@ -172,7 +172,7 @@
 
   span {
     color: #eb5500;
-  }
+    }
 
   .number {
     font-size: size(100);

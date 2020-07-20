@@ -44,7 +44,9 @@
 
 .img1 {
   width: size(900);
-  height:calc(100vh);
+  height:calc(100vh + 60px);
+ min-height:size(800);
+ max-height:size(1100);
   object-fit: cover;
   background: url("./s1/img1.jpg") fixed;
   
@@ -52,7 +54,9 @@
 
 .img2 {
   width: size(765);
-  height:calc(100vh);
+  height:calc(100vh + 60px);
+ min-height:size(800);
+ max-height:size(1100);
   margin-left:size(80);
   object-fit: cover;
 }
