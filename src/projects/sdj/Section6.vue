@@ -236,8 +236,8 @@ export default {
           delay: 3500,
           disableOnInteraction: false,
         },
-        effect: 'fade',
-        // loop: true,
+        // effect: 'fade',
+        loop: true,
         pagination: {
           el: '.swiper-pagination',
           clickable: true,

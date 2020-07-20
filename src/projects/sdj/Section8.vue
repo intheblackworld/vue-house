@@ -245,7 +245,7 @@ export default {
     return {
       isMobile,
       swiperOption: {
-        slidesPerView: isMobile ? 1 : 3,
+        slidesPerView: isMobile ? 1 : 1,
         spaceBetween: isTablet ? 20 : 30,
         slidesPerColumn: isMobile ? 1 : 2,
         // allowSlidePrev: isMobile ? true : false,
@@ -255,8 +255,8 @@ export default {
           delay: 3500,
           disableOnInteraction: false,
         },
-        effect: 'fade',
-        // loop: true,
+        // effect: 'fade',
+        loop: true,
         pagination: {
           el: '.swiper-pagination',
           clickable: true,

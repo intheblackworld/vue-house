@@ -1,17 +1,17 @@
 <template>
   <div class="relative">
     <img
-      v-lazy="require('./s7/area7_bg.png')"
+      src="require('./s7/area7_bg.png')"
       alt="bg-img"
       class="bg-img"
     ><div class="box"></div>
     <img
-      v-lazy="isMobile ? require('./s7/area7_doll_mobile.png') : require('./s7/area7_doll.png')"
+      :src="isMobile ? require('./s7/area7_doll_mobile.png') : require('./s7/area7_doll.png')"
       alt="doll"
       class="doll absolute"
     >
     <img
-      v-lazy="isMobile ? require('./s7/area7_info_mobile.png') : require('./s7/area7_info.png')"
+      :src="isMobile ? require('./s7/area7_info_mobile.png') : require('./s7/area7_info.png')"
       alt="info"
       class="info absolute"
     >
