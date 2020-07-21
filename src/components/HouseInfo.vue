@@ -108,6 +108,8 @@ export default {
 .img {
   width: 50%;
   text-align: left;
+  font-size: size(30);
+  line-height: 1.6;
   img {
     max-width: 90%;
   }
@@ -118,22 +120,21 @@ export default {
 }
 
 .subtitle {
-  font-size: size(28);
+  font-size:0.95em;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 3.25;
   letter-spacing: 2.8px;
   text-align: left;
   color: #f6f6f6;
-  margin-bottom: size(20);
+  margin: 0 0 0.8em 0;
 }
 
 .banner {
   width: auto;
-  height: size(47);
-  margin-bottom: size(30);
+  height: 1.6em;
   max-height: 47px;
+  margin: 0 0 0.1em 0;
 }
 
 .logo {
@@ -220,24 +221,20 @@ export default {
   .img {
     width: 100%;
     padding: 24px;
+    font-size: size-m(23);
   }
 
   .subtitle {
-    font-size: size-m(14);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 3.25;
-    letter-spacing: 2.8px;
     text-align: left;
     color: #f6f6f6;
-    margin-bottom: size-m(15);
   }
 
   .banner {
     width: auto;
-    height: size-m(30);
-    margin-bottom: size-m(20);
+   // height: size-m(30);
   }
 
   .logo {
