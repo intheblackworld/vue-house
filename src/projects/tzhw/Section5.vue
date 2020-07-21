@@ -1,196 +1,156 @@
 <template>
-  <div>
-    <div class="bg relative">
-      <img
-        src="./s5/o.png"
-        alt=""
-        class="img absolute"
-      >
+  <div class="section5">
+    <div class="full-bg relative">
       <div
-        v-if="!isMobile"
-        class="container flex-ac flex-jb relative right"
-        @mouseover="stopSwipe" @mouseleave="startSwipe"
-      >
-        <div class="content">
-          <h3
-            class="title"
-            data-aos="fade"
-            data-aos-delay="400"
-          >飯店管理</h3>
-          <h3
-            class="subtitle"
-            data-aos="fade"
-            data-aos-delay="600"
-            v-html="slideList[slideIndex].subtitle"
-          ></h3>
-          <ul class="desc-list">
-            <h3
-              v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]"
-              data-aos="fade"
-              :data-aos-delay="600 + (index + 1) * 200"
-              data-aos-duration="1000"
-              :key="text"
-            >{{text}}</h3>
-          </ul>
-        </div>
-        <swiper
-          v-show="show"
-          :options="swiperOption"
-          ref="mySwiper"
-          class="slides"
-          @slideChangeTransitionStart="slideChanged"
-        >
-          <!-- <div
-            class="swiper-button-prev"
-            slot="button-prev"
-          >
-            <img
-              class="arrow-l"
-              src="./arrow-left.png"
-              alt
-            />
-          </div>
-          <div
-            class="swiper-button-next"
-            slot="button-next"
-          >
-            <img
-              class="arrow-r"
-              src="./arrow-right.png"
-              alt
-            />
-          </div> -->
-          <div class="slide-text">{{slideList[slideIndex].text}}</div>
-          <swiper-slide
-            v-for="(slide, index) in slideList"
-            :index="index"
-            :key="slide.src"
-            class="item"
-          >
-            <img
-              :src="slide.src"
-              :class="`item-img ${slideIndex === index ? 'active' : ''}`"
-            />
-            <div v-html="slide.name"></div>
-          </swiper-slide>
-        </swiper>
-      </div>
-      <div v-if="isMobile" @mouseover="stopSwipe" @mouseleave="startSwipe">
-      <div class="slides_box">
-        <swiper
-          v-show="show"
-          :options="swiperOption"
-          ref="mySwiper"
-          class="slides"
-          @slideChangeTransitionStart="slideChanged"
-        >
-          <div
-            class="swiper-button-prev"
-            slot="button-prev"
-          >
-            <img
-              class="arrow-l"
-              src="./arrow-left.png"
-              alt
-            />
-          </div>
-          <div
-            class="swiper-button-next"
-            slot="button-next"
-          >
-            <img
-              class="arrow-r"
-              src="./arrow-right.png"
-              alt
-            />
-          </div>
-          <div class="slide-text">{{slideList[slideIndex].text}}</div>
-          <swiper-slide
-            v-for="(slide, index) in slideList"
-            :index="index"
-            :key="slide.src"
-            class="item"
-          >
-            <img
-              :src="slide.src"
-              :class="`item-img ${slideIndex === index ? 'active' : ''}`"
-            />
-            <div v-html="slide.name"></div>
-          </swiper-slide>
-        </swiper>
-        </div>
-        <div class="content">
-          <h3
-            class="title"
-            data-aos="fade"
-            data-aos-delay="400"
-          >飯店管理</h3>
-          <h3
-            class="subtitle"
-            data-aos="fade"
-            data-aos-delay="600"
-            v-html="slideList[slideIndex].subtitle"
-          ></h3>
-          <ul class="desc-list">
-            <h3
-              v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]"
-              data-aos="fade"
-              :data-aos-delay="600 + (index + 1) * 200"
-              data-aos-duration="1000"
-              :key="text"
-            >{{text}}</h3>
-          </ul>
-        </div>
-      </div>
-      <div class="indigator-list flex-c">
+        class="full-img"
+        v-lazy:background-image="require('./s5/bg.jpg')"
+      ></div>
+      <div
+        class="full-img bg-img"
+        v-lazy:background-image="require('./s5/bg.png')"
+      ></div>
+      <div class="river">
         <div
-          @click="setIndex(index)"
-          :class="`indigator ${slideIndex === index ? 'active' : ''}`"
-          v-for="(item, index) in slideList"
-          :key="`indigator-1-${index}`"
+          v-for="item in riverList"
+          :key="item"
+          v-lazy:background-image="item"
         ></div>
       </div>
+      <div class="mask absolute"></div>
+      <h3 class="title absolute">雙溪之美 悉心典藏<br />浪漫RESORT水花園</h3>
+      <img
+        src="./s2/hr.png"
+        alt=""
+        class="hr absolute"
+        data-aos="grow"
+        data-aos-delay="400"
+        data-aos-duration="600"
+      >
+      <h3 class="desc absolute">恰前有雙溪環腰、內有波光瀲灩<br />
+        兩棟環景鉅座間以水花園串聯，水幕森林、綠蔭滿懷<br />
+        如同置身頂級渡假飯店中步步皆美。</h3>
+
+      <!-- <div class="float absolute">
+        <img
+          src="./s1/float.png"
+          alt=""
+          class="float1"
+        >
+        <img
+          src="./s1/float2.png"
+          alt=""
+          class="float2"
+        >
+        <img
+          src="./s1/float.png"
+          alt=""
+          class="float3"
+        >
+        <img
+          src="./s1/float2.png"
+          alt=""
+          class="float4"
+        >
+      </div> -->
     </div>
   </div>
 </template>
+
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .bg {
   background-size: cover;
   position: relative;
+  height: size(1080);
+}
+
+// .bg-img {
+//   background-attachment: fixed;
+// }
+
+.bg-img {
+  position: absolute;
   z-index: 2;
-  overflow: hidden;
-  height: 100vh;
+  // &:first-child {
+  //   position: relative;
+  // }
 }
 
-.img {
-  left: size(195);
-  width: size(266);
-  top: auto;
-  bottom: size(40);
-}
-
-.container {
-  width: size(1460);
-  height: 100%;
-
-  &.left {
-    margin-left: size(70);
+@keyframes water {
+  from {
+    transform: skewX(50deg);
   }
-
-  &.right {
-    margin-left: size(370);
+  to {
+    transform: skewX(-50deg);
   }
 }
 
-.slides {
-  width: size(890);
-}
+.river {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  z-index: 1;
+  div {
+    width: 100%;
+    height: 27px;
+    // margin-left: calc((1920px - 2600px) / 2);
+    // position: absolute;
+    background-size: cover;
+    background-position: 100%;
+  }
 
-.content {
-  width: size(438);
-  height: size(710);
-  padding-top: size(200);
+  & div:nth-child(1) {
+    animation: water 5s ease-in-out 0s infinite alternate;
+  }
+
+  & div:nth-child(2) {
+    animation: water 5s ease-in-out 0s infinite alternate-reverse;
+  }
+
+  & div:nth-child(3) {
+    animation: water 5s ease-in-out 0s infinite alternate;
+  }
+
+  & div:nth-child(4) {
+    animation: water 5s ease-in-out 0s infinite alternate-reverse;
+  }
+
+  & div:nth-child(5) {
+    animation: water 5s ease-in-out 0s infinite alternate;
+  }
+
+  & div:nth-child(6) {
+    animation: water 5s ease-in-out 0s infinite alternate-reverse;
+  }
+  & div:nth-child(7) {
+    animation: water 5s ease-in-out 0s infinite alternate;
+  }
+  & div:nth-child(8) {
+    animation: water 5s ease-in-out 0s infinite alternate-reverse;
+  }
+  & div:nth-child(9) {
+    animation: water 5s ease-in-out 0s infinite alternate;
+  }
+  & div:nth-child(10) {
+    animation: water 5s ease-in-out 0s infinite alternate-reverse;
+  }
+  & div:nth-child(11) {
+    animation: water 5s ease-in-out 0s infinite alternate-reverse;
+  }
+  & div:nth-child(12) {
+    animation: water 5s ease-in-out 0s infinite alternate-reverse;
+  }
+  & div:nth-child(13) {
+    animation: water 5s ease-in-out 0s infinite alternate-reverse;
+  }
+  & div:nth-child(14) {
+    animation: water 5s ease-in-out 0s infinite alternate-reverse;
+  }
+
+  & div:nth-child(15) {
+    animation: water 5s ease-in-out 0s infinite alternate-reverse;
+  }
 }
 
 .title {
@@ -198,62 +158,44 @@
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 0.65;
-  letter-spacing: 2.5px;
-  text-align: left;
-  color: #606060;
-  margin-bottom: size(25);
-  margin-left: size(-5);
+  line-height: 1.5;
+  letter-spacing: 5px;
+  text-align: center;
+  color: #ffffff;
+  top: size(162);
+  right: size(171);
+  z-index: 3;
 }
 
-.subtitle {
-  font-size: size(21);
-  font-weight: 600;
+.desc {
+  font-size: size(28);
+  font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.55;
-  letter-spacing: 0.63px;
-  text-align: left;
-  color: #aa8356;
-  margin-bottom: size(15);
+  line-height: 1.81;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  top: size(380);
+  right: size(108);
+  z-index: 3;
 }
 
-.desc-list {
-  > h3 {
-    font-size: size(15);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2;
-    letter-spacing: 3.75px;
-    text-align: left;
-    color: #727272;
-  }
+.hr {
+  width: size(539);
+  height: size(30);
+  top: size(326);
+  right: size(156);
+  z-index: 3;
 }
 
-.indigator-list {
-  width: 100%;
-  position: absolute;
-  left: 0;
+.mask {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: size(846);
+  height: size(453);
+  top: size(128);
   right: 0;
-  margin: size(370) auto 0 auto;
-  top: 50%;
-  .indigator {
-    width: size(19);
-    height: size(19);
-    border-radius: size(19);
-    margin: 0 20px;
-    background-color: rgba(186, 146, 98, 0.4);
-    cursor: pointer;
-
-    &.active {
-      background-color: rgba(186, 146, 98, 1);
-    }
-  }
-}
-
-.arrows {
-  display: none;
+  z-index: 2;
 }
 
 /* 平板尺寸 */
@@ -261,238 +203,112 @@
 }
 
 @media screen and (max-width: 767px) {
-  .bg {
-    height: 100vh;
-  }
-  .img {
-    left: auto;
-    right: size-m(0);
-    width: size-m(180);
-    //top: auto;
-    top: size-m(470);
-  }
-
-  .container {
+  .full-bg {
     width: 100vw;
-    height: 100%;
-    flex-wrap: wrap;
-
-    &.left {
-      margin-left: 0;
+    height: size-m(287 + 317);
+    background-color: #fff;
+  }
+  .full-img {
+    width: 100vw;
+    height: size-m(317);
+  }
+  .river {
+    position: absolute;
+    right: 0;
+    bottom: size-m(287);
+    width: 100vw;
+    z-index: 1;
+    div {
+      width: 100%;
+      height: 13px;
+      // margin-left: calc((1920px - 2600px) / 2);
+      // position: absolute;
+      background-size: cover;
+      background-position: 100%;
     }
-
-    &.right {
-      margin-left: 0;
-    }
-  }
-
-  .slides {
-    width: 100vw;
-  }
-
-  .content {
-    width: 100vw;
-    height: auto;
-    padding-top: size-m(31);
-    padding-left: size-m(27);
-    padding-bottom: size-m(200);
   }
 
   .title {
-    font-size: size-m(39);
+    width: size-m(260);
+    font-size: size-m(25);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 0.65;
+    line-height: 1.52;
     letter-spacing: 2.5px;
-    text-align: left;
-    color: #606060;
-    margin-bottom: size-m(25);
-    margin-left: size-m(-5);
+    text-align: center;
+    color: #ffffff;
+    top: size-m(349);
+    right: size-m(60);
+    z-index: 3;
   }
 
-  .subtitle {
-    font-size: size-m(16);
-    font-weight: 600;
+  .desc {
+    font-size: size-m(14);
+    font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.55;
-    letter-spacing: 0.63px;
-    text-align: left;
-    color: #aa8356;
-    margin-bottom: size-m(15);
+    line-height: 2.57;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    top: size-m(472);
+    right: size-m(18);
+    z-index: 3;
   }
 
-  .desc-list {
-    > h3 {
-      font-size: size-m(12);
-      font-weight: 600;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 2.14;
-      letter-spacing: 0.14px;
-      text-align: left;
-      color: #727272;
-    }
+  .hr {
+    width: size-m(323);
+    height: size-m(13);
+    top: size-m(438);
+    right: size-m(26);
+    z-index: 3;
   }
 
-  .indigator-list {
-    display: none;
-  }
-
-  .arrows {
-    width: 100%;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .arrow-l {
-    width: size-m(20);
-    position: absolute;
-    left: size-m(5);
-    cursor: pointer;
-  }
-
-  .arrow-r {
-    width: size-m(20);
-    position: absolute;
-    right: size-m(5);
-    cursor: pointer;
+  .mask {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: size-m(287);
+    top: size-m(317);
+    right: 0;
+    z-index: 2;
   }
 }
 </style>
 
 <script>
 // @ is an alias to /src
-import { isMobile, isTablet } from '@/utils'
-import slider from '@/mixins/slider.js'
-import 'swiper/dist/css/swiper.css'
-
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import { isMobile } from '@/utils'
 
 export default {
   name: 'section5',
-  mixins: [slider],
-  components: {
-    swiper,
-    swiperSlide,
-  },
 
-  props: ['show'],
-  watch: {
-    show(val) {
-      if (val) {
-        this.slideIndex = 0
-        this.swiper.slideTo(1, 1000, false)
-      }
-    },
-  },
   data() {
     return {
       isMobile,
-      swiperOption: {
-        slidesPerView: isMobile ? 1 : 1,
-        spaceBetween: isTablet ? 20 : 30,
-        slidesPerColumn: isMobile ? 1 : 1,
-        allowSlidePrev: isMobile ? true : true,
-        allowSlideNext: isMobile ? true : true,
-        // centeredSlides: true,
-        autoplay: {
-          delay: 4000,
-          disableOnInteraction: true,
-        },
-        loop: true,
-        // direction: 'vertical',
-        effect: 'fade',
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-      },
-      slideList: [
-        {
-          src: require('./s5/1.jpg'),
-          contentIndex: 0,
-          subtitle: '當散步變成旅行，在家就是假期<br />奢華與悠遊同行',
-        },
-        {
-          src: require('./s5/2.jpg'),
-          contentIndex: 0,
-          subtitle: '從台北的安杰、兩岸的安杰<br />到國際的安杰',
-        },
-        {
-          src: require('./s5/3.jpg'),
-          contentIndex: 1,
-          subtitle: '從台北的安杰、兩岸的安杰<br />到國際的安杰',
-        },
-        {
-          src: require('./s5/4.jpg'),
-          contentIndex: 2,
-          subtitle: '從台北的安杰、兩岸的安杰<br />到國際的安杰',
-        },
-      ],
-      desc_list: [
-        [
-          '一眼瞬間的華麗，圓最美的人生風景',
-          '最適合妳的顏色，才是世界上最美的顏色',
-          '時間好像靜止，相遇最初的感動',
-          '每扇窗都像櫥窗，每顆心都閃耀光芒',
-          'THE VIEW 妳的專屬飯店寓所',
-        ],
-        [
-          '服務的景深，成就服務時尚',
-          '致力探尋社區每方空間與環境風貌的相契',
-          '人文內涵的融合',
-          '期盼與住戶一起發現驚喜、享受生活',
-        ],
-        [
-          '服務的景深，成就服務時尚',
-          '致力探尋社區每方空間與環境風貌的相契',
-          '人文內涵的融合',
-          '期盼與住戶一起發現驚喜、享受生活',
-        ],
+      riverList: [
+        require('./s5/an (1).png'),
+        require('./s5/an (2).png'),
+        require('./s5/an (3).png'),
+        require('./s5/an (4).png'),
+        require('./s5/an (5).png'),
+        require('./s5/an (6).png'),
+        require('./s5/an (7).png'),
+        require('./s5/an (8).png'),
+        require('./s5/an (9).png'),
+        require('./s5/an (10).png'),
+        require('./s5/an (11).png'),
+        require('./s5/an (12).png'),
+        require('./s5/an (13).png'),
+        require('./s5/an (14).png'),
+        require('./s5/an (15).png'),
       ],
     }
   },
 
-  computed: {
-    swiper() {
-      return this.$refs.mySwiper.swiper
-    },
-  },
+  computed: {},
 
-  methods: {
-    setIndex(index) {
-      this.slideIndex = index
-      this.swiper.slideTo(index + 1, 1000, false)
-    },
-
-    slideChanged(e) {
-      const swiper = this.$refs.mySwiper.swiper
-      if (swiper.isEnd) {
-        this.slideIndex = 0
-      } else if (swiper.isBeginning) {
-        this.slideIndex = 1
-      } else {
-        this.slideIndex = swiper.activeIndex - 1
-      }
-    },
-
-    startSwipe() {
-      this.swiper.autoplay.start()
-    },
-
-    stopSwipe() {
-      this.swiper.autoplay.stop()
-    },
-  },
+  methods: {},
 
   created() {},
   mounted() {},

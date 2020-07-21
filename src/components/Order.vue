@@ -48,25 +48,25 @@
       </div>
       <div class="control">
         <el-checkbox v-model="checked">
-          <p>
+          <h3>
             本人知悉並同意
             <span @click="showPolicyDialog">「個資告知事項聲明」</span>
             內容
-          </p>
+          </h3>
         </el-checkbox>
       </div>
-        <!-- <div style="margin: 0 auto">
+        <div style="margin: 0 auto">
           <vue-recaptcha :sitekey="info.recaptcha_site_key_v2"
           @verify="isVerify = true"
           ></vue-recaptcha>
-        </div> -->
+        </div>
       <el-button
         class="form-submit"
         type="primary"
         :disabled="!checked || !isVerify"
         @click="submit"
         :loading="isSubmit"
-      >立即預約</el-button>
+      ><h3>立即預約</h3></el-button>
       <!-- <Loading :loading="isSubmit" :isOpacity="true" /> -->
     </div>
     <ContactInfo />
@@ -213,7 +213,8 @@ export default {
   .order-title {
     margin-top: 40px;
     margin-bottom: 8px;
-    font-size: calc(100vw * 60 / 1920);
+    font-size: calc(100vw * 48 / 1920);
+    letter-spacing: 8.69px;
     text-align: center;
     color: $order_title_color;
   }

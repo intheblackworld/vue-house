@@ -1,30 +1,26 @@
 import { isMobile } from '@/utils'
 export default {
-  address: isMobile ? '接待中心：<br />新北市板橋區四川路1段67號' : '接待中心：新北市板橋區四川路1段67號',
+  address: isMobile ? '接待中心：<br />111台北市士林區至誠路一段138號' : '接待中心：111台北市士林區至誠路一段138號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.827395987948!2d121.4574644154466!3d25.00598034556714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346802a7ab132eb1%3A0xba251ab14efef2ed!2zMjIw5paw5YyX5biC5p2_5qmL5Y2A5Zub5bed6Lev5LiA5q61NjfomZ8!5e0!3m2!1szh-TW!2stw!4v1592186782931!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/DLpgBj4Bp3xDxpt76',
-  phone: '02-29516688',
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3613.0092505244456!2d121.5325418!3d25.1015482!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442affb2b813fe5%3A0x2b6e5fe12ac71db2!2z5aSq5a2Q6I-v5aiB!5e0!3m2!1szh-TW!2stw!4v1595324694704!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/cDhuzh9GKooBmQcR8',
+  phone: '02-2838-2188',
   fbLink:
-    'https://www.facebook.com/%E6%96%B0%E6%9D%BFThe-View-110815740621987/',
-  fbMessage: 'https://m.me/110815740621987',
-  caseName: '新板The View',
-
-  //新板The View 建案資訊有調整版型
+    'https://www.facebook.com/home2188/',
+  fbMessage: 'https://m.me/home2188/',
+  caseName: '太子華威',
   houseInfos: [
-     ['', '高層景觀飯店寓所 府中商圈200米'],
-     ['投資興建', '國宸建設'],
-     ['基地面積', '494坪'],
-     ['建築設計', '蔡錦勝建築師事務所'],
-     ['坪數規劃', '15-21坪'],
-     ['貴賓專線', '02-29516688'],
-     ['接待會館', '新北市板橋區四川路1段67號'],
-     ['個案官網', 'tv.h35.tw']
+    ['', ''],
+    ['投資興建', '太子建設、華威聯合'],
+    ['建築設計', 'PGA團隊-周夢龍建築師'],
+    ['企劃銷售', '梁茂廣告有限公司'],
+    ['使用執照', '107使字0131號'],
+    ['營造公司', '大成工程股份有限公司'],
+    ['座落位置', '至誠路一段138號'],
   ],
-  //新板The View 建案資訊 外觀圖
   exterior: '../projects/tv/s1/exterior.jpg',
 
-  gtmCode: [''], // 可放置多個
+  gtmCode: ['TBJR8C6'], // 可放置多個
   recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',

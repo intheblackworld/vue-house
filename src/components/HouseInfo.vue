@@ -7,12 +7,12 @@
       <div class="title">建案資訊</div>
           <div class="item" :key="infos[0]" v-for="infos in houseInfos">
             <h3 class="label">{{infos[0]}}</h3>
-            <p class="desc" v-html="infos[1]"></p>
+            <h3 class="desc" v-html="infos[1]"></h3>
           </div>
         </div>
       </div>
     </div>
-    <Footer />
+    <!-- <Footer /> -->
   </div>
 </template>
 
@@ -106,7 +106,7 @@ export default {
   .desc {
     font-size: 15px;
     text-align: left;
-    line-height: 1.4;
+    margin-top: -2px;
     color: $house_desc_color;
   }
 }
@@ -117,7 +117,7 @@ export default {
   .content {
     width: 100%;
     max-width:100%;
-    padding: 20px 0;
+    padding: 20px 0 63px;
   }
 
   .title {

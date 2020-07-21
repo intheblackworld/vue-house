@@ -27,37 +27,54 @@
       <div class="content absolute">
         <div class="border"></div>
       </div>
-      <img src="./s3/logo.png" alt="" class="logo absolute">
+      <img
+        src="./s3/logo.png"
+        alt=""
+        class="logo absolute"
+      >
       <img
         src="./s3/hr.png"
         alt=""
         class="hr absolute"
+        data-aos="grow"
+        data-aos-delay="400"
+        data-aos-duration="600"
       >
 
       <h3 class="desc absolute">
         「太子華威」享陽明山、外雙溪與故宮國際地標等人文絕美景致靜謐私密的尊貴環境，相較於信義仁愛等豪宅更顯國際價值優勢。環境天生優越、富貴渾然天成！台北市最與眾不同的富豪特區，投資教父、電子業董事長共同的置產選擇。
       </h3>
-      
-      <img src="./s3/float4.png" alt="" class="flower absolute">
 
-      <div class="float absolute">
-        <img
-          src="./s1/float.png"
-          class="float1"
-        >
-        <img
-          src="./s1/float2.png"
-          class="float2"
-        >
-        <img
-          src="./s1/float.png"
-          class="float3"
-        >
-        <img
-          src="./s1/float2.png"
-          class="float4"
-        >
-      </div>
+      <img
+        src="./s3/float4.png"
+        alt=""
+        class="flower absolute"
+      >
+
+      <img
+        src="./s1/float.png"
+        alt=""
+        data-aos="fade-down-left"
+        data-aos-delay="400"
+        data-aos-duration="1000"
+        class="float1 absolute"
+      >
+      <img
+        src="./s1/float.png"
+        alt=""
+        data-aos="fade-down-left"
+        data-aos-delay="400"
+        data-aos-duration="1000"
+        class="float2 absolute"
+      >
+      <img
+        src="./s1/float2.png"
+        alt=""
+        data-aos="float3"
+        data-aos-delay="500"
+        data-aos-duration="1100"
+        class="float3 absolute"
+      >
     </div>
   </div>
 </template>
@@ -160,68 +177,28 @@
   top: size(715);
   right: size(12);
   transform-origin: bottom;
-  animation: flower 5s linear 0s infinite alternate;
+  animation: flower 3s ease-in-out 0s infinite alternate;
 }
 
-@keyframes float1 {
-  from {
-    transform: translate(0, 0);
-  }
-  to {
-    transform: translate(size(938), size(253));
-  }
-}
-
-@keyframes float2 {
-  from {
-    transform: translate(100vw, 0);
-  }
-  to {
-    transform: translate(size(918), size(293)) rotate(30deg);
-  }
-}
-
-@keyframes float3 {
-  from {
-    transform: translate(100vw, 100vw);
-  }
-  to {
-    transform: translate(size(1683), size(155));
-  }
-}
-
-@keyframes float4 {
-  from {
-    transform: translate(100vw, 100vw);
-  }
-  to {
-    transform: translate(size(1700), size(124)) rotate(30deg);
-  }
-}
-
-.float {
-  top: 0;
-  left: 0;
+.float1 {
+  width: size(57);
+  top: size(30);
+  right: size(110);
   z-index: 4;
-  .float1 {
-    width: size(23);
-    animation: float1 2s ease-in-out 1s forwards;
-  }
+}
 
-  .float2 {
-    width: size(78);
-    animation: float2 2s ease-in-out 1s forwards;
-  }
+.float2 {
+  width: size(49);
+  top: size(86);
+  right: size(100);
+  z-index: 4;
+}
 
-  .float3 {
-    width: size(23);
-    animation: float3 2s ease-in-out 1s forwards;
-  }
-
-  .float4 {
-    width: size(78);
-    animation: float4 2s ease-in-out 1s forwards;
-  }
+.float3 {
+  width: size(43);
+  top: size(117);
+  right: size(181);
+  z-index: 4;
 }
 
 /* 平板尺寸 */
@@ -229,6 +206,105 @@
 }
 
 @media screen and (max-width: 767px) {
+  .full-bg,
+  .bg-img {
+    height: size-m(835);
+  }
+  .bg-img {
+    background: #fff !important;
+  }
+  .img1 {
+    width: size-m(169);
+    top: size-m(71);
+    left: size-m(13);
+  }
+
+  .img2 {
+    width: size-m(171);
+    top: size-m(216);
+    left: size-m(13);
+  }
+
+  .img3 {
+    width: size-m(171);
+    top: size-m(71);
+    left: size-m(192);
+  }
+
+  .content {
+    width: size-m(535);
+    height: size-m(974);
+    top: size-m(54);
+    right: size-m(89);
+    padding: size-m(18);
+    background-color: #fff;
+    display: none;
+
+    .border {
+      width: 100%;
+      height: 100%;
+      border: 1px solid #004ea2;
+      display: none;
+    }
+  }
+
+  .logo {
+    width: size-m(257);
+    height: size-m(81);
+    top: size-m(391);
+    right: size-m(59);
+  }
+
+  .hr {
+    width: size-m(305);
+    height: size-m(11);
+    top: size-m(482);
+    right: size-m(32);
+  }
+
+  .desc {
+    width: size-m(312);
+    font-size: size-m(14);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.57;
+    letter-spacing: normal;
+    text-align: left;
+    color: #04040c;
+    top: size-m(509);
+    right: size-m(32);
+  }
+
+  .flower {
+    width: 100vw;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    transform-origin: bottom;
+    animation: flower 3s ease-in-out 0s infinite alternate;
+  }
+
+  .float1 {
+    width: size-m(43);
+    top: size-m(0);
+    right: size-m(19);
+    z-index: 4;
+  }
+
+  .float2 {
+    width: size-m(37);
+    top: size-m(42);
+    right: size-m(11);
+    z-index: 4;
+  }
+
+  .float3 {
+    width: size-m(32);
+    top: size-m(65);
+    right: size-m(71);
+    z-index: 4;
+  }
 }
 </style>
 

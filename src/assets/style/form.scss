@@ -49,6 +49,7 @@
   span {
     color: $order_check_span_color;
     text-decoration: underline;
+    font-family: 'Noto Serif TC', serif;
   }
 }
 
@@ -65,7 +66,7 @@
   transition: all 0.3s !important;
   color: $order_submit_color;
   // z-index: 10;
-  border: none !important;
+  border: $order_input_border;
 
   &.is-disabled {
     background-color: $order_sumbit_disable_bg;

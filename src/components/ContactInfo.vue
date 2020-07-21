@@ -121,9 +121,9 @@ export default {
 }
 
 .logo {
-  width: auto;
-  height:45%;
-  margin: 40px auto 40px;
+  width: $contact_logo_pc_width;
+  height: auto;
+  margin: 40px auto 80px;
 }
 .info {
   width: 880px;
@@ -142,7 +142,7 @@ export default {
   text-decoration: none;
   color: $contact_btn_color;
   background: $contact_btn_bg;
-  border:$contact_btn_border;
+  box-shadow:$contact_btn_border;
   transition: all 0.5s;
 
   svg {
@@ -185,7 +185,7 @@ export default {
   color: $contact_google_btn_color;
   background: $contact_google_btn_bg;
   // background-image: url("../assets/img/contact_gold_button.png");
-  border: $contact_btn_border;
+  // box-shadow: $contact_btn_border;
   transition: all 0.5s;
 
   svg {

@@ -66,6 +66,10 @@
 .swiper-button-next,
 .swiper-container-rtl .swiper-button-prev {
   background: none !important;
+
+  img {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 767px) {
