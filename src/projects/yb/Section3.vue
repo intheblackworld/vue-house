@@ -67,7 +67,7 @@
       <div class="subtitle absolute">在央北用<span>超規格</span>標準<br>展現國際視野</div>
       <div class="relative">
         <div class="content">
-          <div class="content-label">Our Brand</div>
+          <div class="content-label">Our Way</div>
           <div class="content-title">
             WORLD VISION,<br />LOCAL HEARTS.
           </div>
@@ -175,7 +175,7 @@
 }
 
 .content-title {
-  font-size: size(75);
+  font-size: size(73);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -185,6 +185,7 @@
   color: #f6f6f6;
   margin-bottom: size(40);
   font-family: futurabq;
+    white-space: nowrap;
 }
 
 .content-desc {

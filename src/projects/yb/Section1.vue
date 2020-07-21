@@ -116,7 +116,8 @@ background: linear-gradient(to right, rgba(235,85,0,1) 0%,rgba(215,0,50,1) 100%)
     position: relative;
     margin: 0;
   }
-  .vh1{height:auto;}
+  .vh1{height:auto;
+    max-width: 99%;}
   .txt_mo{
   width: 100%;
 }
