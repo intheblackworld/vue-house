@@ -126,7 +126,7 @@ export default {
   letter-spacing: 2.8px;
   text-align: left;
   color: #f6f6f6;
-  margin-bottom: size(50);
+  margin-bottom: size(20);
 }
 
 .banner {

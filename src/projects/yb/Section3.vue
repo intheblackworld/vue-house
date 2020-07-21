@@ -282,9 +282,10 @@
   }
 
   .content-title {
-    font-size: size-m(34);
+    font-size: size-m(37);
     line-height: 0.94;
     margin-bottom: size-m(15);
+    white-space: nowrap;
   }
 
   .content-desc {

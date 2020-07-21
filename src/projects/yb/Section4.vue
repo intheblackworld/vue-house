@@ -342,7 +342,7 @@
     margin-left: 0;
 
     .text {
-      font-size: size(10);
+      font-size: size-m(12);
       font-weight: normal;
       font-stretch: normal;
       font-style: normal;
