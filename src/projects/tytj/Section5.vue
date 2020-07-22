@@ -34,30 +34,6 @@
           class="wave"
         >
       </div>
-      <div class="flex animate-row animate-row2">
-        <img
-          v-lazy="require('./s2/wave_l.png')"
-          alt="wave"
-          class="wave"
-        >
-        <img
-          v-lazy="require('./s2/wave_l.png')"
-          alt="wave"
-          class="wave"
-        >
-      </div>
-      <div class="flex animate-row no-animation">
-        <img
-          v-lazy="require('./s5/wave.png')"
-          alt="聯上海棠"
-          class="wave"
-        >
-        <img
-          v-lazy="require('./s5/wave.png')"
-          alt="wave"
-          class="wave"
-        >
-      </div>
     </div>
     <div v-if="isMobile">
       <img
@@ -81,18 +57,6 @@
         >
         <img
           v-lazy="require('./s5/wave2.png')"
-          alt="wave"
-          class="wave"
-        >
-      </div>
-      <div class="flex animate-row animate-row2">
-        <img
-          v-lazy="require('./s2/wave_l.png')"
-          alt="wave"
-          class="wave"
-        >
-        <img
-          v-lazy="require('./s2/wave_l.png')"
           alt="wave"
           class="wave"
         >

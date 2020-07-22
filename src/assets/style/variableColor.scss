@@ -27,61 +27,61 @@ $mask_icon_color: #c82514;
 /* contactSection */
 // order
 $order_bg_color: #fff;
-$order_bg_image: transparent;
+$order_bg_image: url('~@/projects/tytj/s9/bg.jpg');
 $order_bg_image_m: transparent;
-$order_title_color: #2f5db2;
+$order_title_color: #855826;
 $order_subtitle_color: #cc2617;
-$order_input_label_color: #2f5db2;
-$order_input_color: #fff !important;
+$order_input_label_color: #231815;
+$order_input_color: #231815 !important;
 $order_input_placeholder: #666 !important;
-$order_input_bg: #7b98ce !important;
-$order_input_border: 0px solid #ccc; 
-$order_input_focus_border: solid 1px #2f5db2 !important;
-$order_input_selected_color: solid 1px #2f5db2 !important;
-$order_check_desc_color: #000 !important;
-$order_check_span_color: #db0000 !important;
-$order_submit_bg:linear-gradient(to bottom, #2f5db2, #182f59) !important;
-$order_submit_color: #fff !important;
-$order_sumbit_disable_bg: transparent !important;
+$order_input_bg: #fff !important;
+$order_input_border: 1px solid #855826; 
+$order_input_focus_border: solid 1px #333 !important;
+$order_input_selected_color: solid 1px #333 !important;
+$order_check_desc_color: #855826 !important;
+$order_check_span_color: #855826 !important;
+$order_submit_bg: transparent !important;
+$order_submit_color: #855826 !important;
+$order_sumbit_disable_bg: #999 !important;
 
 // contactInfo
-$contact_bg: url('~@/assets/img/contact-bg.jpg') 50% 50%;
+$contact_bg: linear-gradient(to right, #edbd5b, #edbc5b 29%, #d6a045 66%, #bf842e);
 $contact_bg_m: transparent;
 $contact_shadow: none;
 
-$contact_btn_border: none;
-$contact_btn_color: #2e5cb1;
-$contact_btn_icon: #2e5cb1;
-$contact_btn_bg: linear-gradient(135deg, #FFF 0%, #5b9bcf 100%);
-$contact_btn_hover_color: #2e5cb1;
-$contact_btn_hover_icon: #2e5cb1;
-$contact_btn_hover_bg: linear-gradient(135deg, #5b9bcf 0%, #FFF 100%) !important;
+$contact_btn_border: inset 0 0 0 1px #fff !important;
+$contact_btn_color: #fff;
+$contact_btn_icon: #fff;
+$contact_btn_bg: transparent;
+$contact_btn_hover_color: #ead98a;
+$contact_btn_hover_icon: #ead98a;
+$contact_btn_hover_bg: #231815 !important;
 
-$contact_google_btn_color: #fff;
-$contact_google_btn_icon: #fff;
-$contact_google_btn_bg: linear-gradient(90deg, rgba(46,92,177,1) 44%, rgba(217,243,255,1) 100%);
-$contact_google_hover_btn_color: #2e5cb1;
-$contact_google_hover_btn_icon: #2e5cb1;
-$contact_google_hover_btn_bg: #fff;
+$contact_google_btn_color: #ead98a;
+$contact_google_btn_icon: #ead98a;
+$contact_google_btn_bg: #231815;
+$contact_google_hover_btn_color: #ead98a;
+$contact_google_hover_btn_icon: #ead98a;
+$contact_google_hover_btn_bg: #231815;
 
 
 // houseInfo
 $house_bg: #fff;
-$house_title_color: #2f5db2;
-$house_border_color: #ccc;
-$house_label_color: #2f5db2;
+$house_title_color: #040000;
+$house_border_color: #395561;
+$house_label_color: #395561;
 $house_desc_color: #000;
 
 // mobileNav
-$mobile_nav_background: #2f5db2;
+$mobile_nav_background: #395561;
 $mobile_nav_color: #fff;
 $mobile_nav_border: #FFF;
 $mobile_nav_icon: #fff;
 
 $mobile_dialog_bg: #fff;
-$mobile_dialog_icon: #2f5db2;
+$mobile_dialog_icon: #395561;
 $mobile_dialog_desc: #000;
-$mobile_dialog_submit_bg: #2f5db2;
+$mobile_dialog_submit_bg: #395561;
 $mobile_dialog_submit_color: #fff;
 
 

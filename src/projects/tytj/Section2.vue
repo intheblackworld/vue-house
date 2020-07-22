@@ -248,8 +248,8 @@ export default {
   data() {
     return {
       isMobile,
-      bgSrc: require('./s2/bg.jpg'),
-      hand: require('./mo/2/箭頭.png'),
+      // bgSrc: require('./s2/bg.jpg'),
+      // hand: require('./mo/2/箭頭.png'),
     }
   },
 

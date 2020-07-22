@@ -1,21 +1,22 @@
-@import './reset.scss';
-@import './animate.scss';
-@import './aos.scss';
-@import './variableDefault.scss';
-@import './variableColor.scss';
-@import './form.scss';
-@import './dialog.scss';
-@import './fonts.scss';
-@import './customClass.scss';
-@import './slide.scss';
-@import './swiper.scss'; // vue awesome swiper
-@import './mapBg.scss';
+@import "./reset.scss";
+@import "./animate.scss";
+@import "./aos.scss";
+@import "./variableDefault.scss";
+@import "./variableColor.scss";
+@import "./form.scss";
+@import "./dialog.scss";
+@import "./fonts.scss";
+@import "./customClass.scss";
+@import "./slide.scss";
+@import "./swiper.scss"; // vue awesome swiper
+@import "./mapBg.scss";
 
 html,
 body {
   background: $bg !important;
   overflow-x: hidden;
-  -webkit-text-size-adjust: 100%;-webkit-text-size-adjust: none; 
+  -webkit-text-size-adjust: 100%;
+  -webkit-text-size-adjust: none;
   *::-webkit-scrollbar {
     // display: none;
   }
@@ -26,7 +27,7 @@ body {
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -38,8 +39,8 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;
-  overflow: hidden;//試底下多的那塊哪來的
-  background-image: #fff;
+  overflow: hidden; //試底下多的那塊哪來的
+  background-image: $order_bg_image;
 
   &.no-padding-top {
     padding-top: 0;
@@ -48,7 +49,6 @@ body {
       height: 100vh;
     }
   }
-  
 }
 
 .fullscreen {
@@ -185,17 +185,17 @@ body {
 }
 
 /* lazy load */
-img[lazy='loading'] {
+img[lazy="loading"] {
   opacity: 0;
   transition: opacity 1s;
 }
-img[lazy='error'] {
+img[lazy="error"] {
   /*your style here*/
   opacity: 0;
   transition: opacity 1s;
 }
 
-img[lazy='loaded'] {
+img[lazy="loaded"] {
   /*your style here*/
   opacity: 1;
   transition: opacity 1s;
@@ -205,14 +205,14 @@ img[lazy='loaded'] {
   transition: opacity 1s;
   opacity: 0;
 }
-.lazy-bg[lazy='loading'] {
+.lazy-bg[lazy="loading"] {
   opacity: 0;
 }
-.lazy-bg[lazy='error'] {
+.lazy-bg[lazy="error"] {
   /*your style here*/
   opacity: 0;
 }
-.lazy-bg[lazy='loaded'] {
+.lazy-bg[lazy="loaded"] {
   opacity: 1;
 }
 
@@ -242,8 +242,8 @@ img[lazy='loaded'] {
 
   .home {
     padding-top: $nav_tablet_height;
-   // background-color: $order_bg_color;
-   // background-image: $order_bg_image;
+    // background-color: $order_bg_color;
+    background-image: $order_bg_image;
     background-repeat: no-repeat;
     background-size: 100vw auto;
     background-attachment: fixed;
@@ -336,10 +336,10 @@ img[lazy='loaded'] {
 
   .home {
     padding-top: $nav_phone_height;
-    background-color: $order_bg_color;
-   //background-image: $order_bg_image_m;
-   // background-image: url('~@/projects/yu/all/bg_m.jpg');
-    background-repeat:repeat;
+    // background-color: $order_bg_color;
+    background-image: $order_bg_image;
+    // background-image: url('~@/projects/yu/all/bg_m.jpg');
+    background-repeat: repeat;
     background-size: 100vw auto;
     background-attachment: fixed;
     background-position: 0% 50%;
@@ -347,10 +347,8 @@ img[lazy='loaded'] {
     &.no-padding-top {
       padding-top: 0;
     }
-
-    background-color: #fff;
   }
-  
+
   .full-bg {
     height: calc(100vh - 63px);
   }

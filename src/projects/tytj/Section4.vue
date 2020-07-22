@@ -1,5 +1,5 @@
 <template>
-  <div class="relative">
+  <div class="relative section4">
     <swiper
       :options="swiperOption"
       ref="mySwiper"
@@ -12,7 +12,11 @@
         :index="index"
         :key="slide.desc + index"
       >
-        <img :src="slide.img" alt="" class="item-img">
+        <img
+          :src="slide.img"
+          alt=""
+          class="item-img"
+        >
         <h3
           class="absolute item-title"
           v-html="slide.title"
@@ -22,6 +26,10 @@
           v-html="slide.subtitle"
         ></h3>
       </swiper-slide>
+      <div
+        class="swiper-pagination"
+        slot="pagination"
+      ></div>
     </swiper>
   </div>
 </template>
@@ -48,6 +56,30 @@
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.section4 {
+  &::v-deep {
+    .swiper-pagination {
+      // display: none;
+      width: 200px;
+      left: auto;
+      bottom: 20px;
+      right: 20px;
+    }
+    .swiper-pagination-bullet {
+      width: 21px;
+      height: 21px;
+      box-shadow: 0 0 0 1px #fff;
+      margin: 0 6px !important;
+      background-color: transparent;
+      opacity: 1 !important;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: #190000;
+    }
+  }
 }
 
 .item-title {
@@ -116,9 +148,6 @@ export default {
   data() {
     return {
       isMobile,
-      isDialog: false,
-      slideIndex1: 0,
-      slideIndex2: 1,
       swiperOption: {
         slidesPerView: isMobile ? 1 : 1,
         spaceBetween: isTablet ? 20 : 30,
@@ -135,6 +164,10 @@ export default {
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
         },
       },
       slideList: [

@@ -76,6 +76,7 @@
   margin-top: 20px !important;
   transition: all 0.3s !important;
   color: $order_submit_color;
+  box-shadow: inset 0 0 0 2px #855826;
   // z-index: 10;
   border-width: 0px !important;
   &.is-disabled {
@@ -88,8 +89,8 @@
   }
 
   &:hover {
-    background-image: $contact_btn_hover_bg;
-    color: $contact_btn_hover_color  !important;
+    background: #fff !important; 
+    color: #855826 !important;
   }
   position: relative;
   overflow: hidden;

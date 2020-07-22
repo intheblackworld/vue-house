@@ -63,12 +63,6 @@
     >
       <Section9 />
     </div>
-    <div
-      class="section"
-      id="section10"
-    >
-      <Section10 />
-    </div>
     <!-- </full-page> -->
     <ContactSection
       class="section"
@@ -81,24 +75,6 @@
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Playball&display=swap');
 @import '../assets/style/variableColor.scss';
-
-.section,
-.section .fp-slide,
-.section .fp-tableCell {
-  height: auto !important;
-}
-#section3,
-#section6,
-#section8,
-#section9{overflow: hidden;}
-#section8{margin: 0 0 -25vh;}
-#section10{margin: 0 0 -18vw;}
-#contact{z-index: 2;}
-@media screen and (max-width: 767px) {
-#section1{margin: 0 0 -28.8vw;}
-#section2{overflow: hidden;}
-#section10{margin: 0 0 -3vw;}
-}
 </style>
 
 <script>
@@ -120,7 +96,6 @@ import Section6 from '@/projects/tytj/Section6.vue'
 import Section7 from '@/projects/tytj/Section7.vue'
 import Section8 from '@/projects/tytj/Section8.vue'
 import Section9 from '@/projects/tytj/Section9.vue'
-import Section10 from '@/projects/tytj/Section10.vue'
 
 export default {
   name: 'home',
@@ -140,7 +115,6 @@ export default {
     Section7,
     Section8,
     Section9,
-    Section10,
   },
 
   data() {

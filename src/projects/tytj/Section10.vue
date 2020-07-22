@@ -73,18 +73,6 @@
         class="wave"
       >
     </div>
-    <div class="flex animate-row animate-row2">
-      <img
-        v-lazy="require('./s2/wave_l.png')"
-        alt="聯上海棠"
-        class="wave"
-      >
-      <img
-        v-lazy="require('./s2/wave_l.png')"
-        alt="聯上海棠"
-        class="wave"
-      >
-    </div>
     <div v-if="isMobile" class="index_z">
       <carousel-3d
         ref="mycarousel"
