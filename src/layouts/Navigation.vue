@@ -93,11 +93,19 @@ export default {
 <style lang="scss">
 .navigation {
   .title {
-    font-size: 15px !important;
+    font-size: 20px !important;
+    width: 140px;
+    height: 40px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to right, #d70032 0%, #eb5500 100%);
+    border-radius: 20px / 20px;
     position: relative;
     z-index: 3;
-    > span {
-      font-size: 24px !important;
+    &:hover {
+      background-image: linear-gradient(to left, #d70032 0%, #eb5500 100%);
     }
   }
 }
@@ -118,7 +126,7 @@ export default {
   width: 100vw;
   display: flex !important;
   align-items: center;
-  transition: all .3s;
+  transition: all 0.3s;
   // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
 
   &.min {
@@ -158,7 +166,7 @@ export default {
   display: block;
   top: 50%;
   transform: translate(-50%, -50%);
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .mask {
@@ -377,6 +385,20 @@ export default {
       padding: 0;
       .title {
         font-size: 12px !important;
+        margin-top: 14px;
+        width: auto;
+        height: auto;
+        color: #333;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        background-image: none;
+        border-radius: 0;
+        position: relative;
+        z-index: 3;
+        &:hover {
+          background-image: none;
+        }
       }
     }
   }

@@ -96,8 +96,8 @@ const refreshHard = function refreshHard() {
  * Disable AOS
  * Remove all attributes to reset applied styles
  */
-const disable = function() {
-  $aosElements.forEach(function(el, i) {
+const disable = function () {
+  $aosElements.forEach(function (el, i) {
     el.node.removeAttribute('data-aos')
     el.node.removeAttribute('data-aos-easing')
     el.node.removeAttribute('data-aos-duration')
@@ -116,7 +116,7 @@ const disable = function() {
 /**
  * Check if AOS should be disabled based on provided setting
  */
-const isDisabled = function(optionDisable) {
+const isDisabled = function (optionDisable) {
   return (
     optionDisable === true ||
     (optionDisable === 'mobile' && detect.mobile()) ||
@@ -185,7 +185,7 @@ const init = function init(settings) {
   /**
    * Handle initializing
    */
-  window.addEventListener(options.startEvent, function() {
+  window.addEventListener(options.startEvent, function () {
     refresh(true)
   })
 

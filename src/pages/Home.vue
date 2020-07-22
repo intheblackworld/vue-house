@@ -109,7 +109,6 @@ export default {
         document.documentElement.scrollTop || document.body.scrollTop
       // 定义当前点亮的导航下标
       // let navIndex = 0
-      console.log(scrollTop)
       if (scrollTop > 200) {
         this.isNavMin = true
       } else {

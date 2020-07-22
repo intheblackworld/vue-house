@@ -36,13 +36,16 @@
           <a
             href="https://www.facebook.com/ShinYiCostructionCo/"
             target="_blank"
+            class="flex-ac link-g"
           >
             <img
               src="./s2/fb.png"
               alt=""
               class="fb-link"
             >
+            <p>鑫建築團隊粉絲專頁</p>
           </a>
+
         </div>
         <swiper
           :options="swiperOption"
@@ -60,6 +63,7 @@
               :src="slide.src"
               :class="`item-img`"
             />
+            <div class="item-title">{{slide.title}}</div>
           </swiper-slide>
         </swiper>
       </div>
@@ -96,12 +100,14 @@
           <a
             href="https://www.facebook.com/ShinYiCostructionCo/"
             target="_blank"
+            class="flex-ac link-g"
           >
             <img
               src="./s2/fb.png"
               alt=""
               class="fb-link"
             >
+            <p>鑫建築團隊粉絲專頁</p>
           </a>
 
         </div>
@@ -121,6 +127,7 @@
               :src="slide.src"
               :class="`item-img`"
             />
+            <div class="item-title">{{slide.title}}</div>
           </swiper-slide>
         </swiper>
       </div>
@@ -227,6 +234,15 @@
   margin-bottom: size(40);
 }
 
+.link-g {
+  text-decoration: none;
+  p {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+  }
+}
+
 .fb-link {
   width: size(60);
   cursor: pointer;
@@ -241,6 +257,14 @@
   img {
     width: 100%;
   }
+}
+
+.item-title {
+  font-size: 24px;
+  color: #333;
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
 }
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -348,6 +372,16 @@
     width: size-m(29);
     cursor: pointer;
   }
+
+  .item-title {
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0 0 4px #000;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+  }
 }
 </style>
 
@@ -391,9 +425,12 @@ export default {
       },
 
       slideList: [
-        { src: require('./s2/1.jpg') },
-        { src: require('./s2/2.jpg') },
-        { src: require('./s2/3.jpg') },
+        {
+          src: require('./s2/2.jpg'),
+          title: '鑫建築團隊 許峻豪執行長與各部門同仁',
+        },
+        { src: require('./s2/3.jpg'), title: '鑫建築團隊各部門同仁' },
+        { src: require('./s2/1.jpg'), title: '鑫建築團隊 許慶鐘董事長' },
       ],
 
       imgIndex: 0,
