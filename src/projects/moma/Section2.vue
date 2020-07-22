@@ -14,6 +14,7 @@
   overflow: hidden;
   position: relative;
   height: size(1080);
+  border-bottom: 1px solid #fff;
 }
 
 .bg-img {
@@ -43,6 +44,10 @@
     // background-image: url('./s1/s1_bg_m.jpg');
     background-size: cover;
   }
+.relative {
+  height:auto;
+}
+
 }
 </style>
 

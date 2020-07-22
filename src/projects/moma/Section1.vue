@@ -66,6 +66,7 @@
   height:100vh;
   min-height: size(900);
   max-height: size(1080);
+  border-bottom: 1px solid #fff;
   &::after{
     content: "";display: block;position:absolute;top: 0;left: 0;width: 100%;
     height: 100%;z-index: 1;

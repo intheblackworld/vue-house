@@ -50,6 +50,7 @@
 .relative {
   position: relative;
   height: size(1080);
+  border-bottom: 1px solid #fff;
 }
 
 .swiper-container {

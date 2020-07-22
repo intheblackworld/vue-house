@@ -37,7 +37,7 @@
             alt=""
             class="tab-icon-w"
           >
-          <div class="tab-desc">1樓公設</div>
+          <div class="tab-desc">壯闊藝術廊道</div>
         </div>
         <div class="divide"></div>
         <div
@@ -54,7 +54,7 @@
             alt=""
             class="tab-icon-w"
           >
-          <div class="tab-desc">29樓公設</div>
+          <div class="tab-desc">寰宇藝術殿堂</div>
         </div>
         <div class="divide"></div>
         <div
@@ -71,7 +71,24 @@
             alt=""
             class="tab-icon-w"
           >
-          <div class="tab-desc">頂樓公設</div>
+          <div class="tab-desc">梵谷星空泳池</div>
+        </div>
+        <div class="divide"></div>
+        <div
+          :class="`tab-item flex-ac flex-ja ${tabIndex === 3 ? 'active' : ''}`"
+          @click="setTab(3)"
+        >
+          <img
+            src="./s6/icon_b.png"
+            alt=""
+            class="tab-icon-b"
+          >
+          <img
+            src="./s6/icon_w.png"
+            alt=""
+            class="tab-icon-w"
+          >
+          <div class="tab-desc">頂級工藝美學</div>
         </div>
       </div>
       <swiper
@@ -96,15 +113,15 @@
           class="swiper-pagination"
           slot="pagination"
         ></div>
-      </swiper>
-      <div class="container-title flex-c">
+      </swiper> 
+ <!--    <div class="container-title flex-c">
         <img
           src="./s6/icon_b.png"
           alt=""
           class="tab-icon-b"
         >
         <h3>星空泳池</h3>
-      </div>
+      </div> 
       <swiper
         class="swiper-container"
         :options="swiperOption"
@@ -121,13 +138,13 @@
             :src="slide.src"
             :class="`item-img`"
           />
-          <!-- <h3 class="slide-title absolute">{{slide.title}}</h3> -->
+        <h3 class="slide-title absolute">{{slide.title}}</h3> 
         </swiper-slide>
         <div
           class="swiper-pagination"
           slot="pagination"
         ></div>
-      </swiper>
+      </swiper> -->
 
       <div
         class="content-title"
@@ -139,6 +156,41 @@
           alt=""
           class="hr-img"
         >
+      </div>
+      <div class="tabs flex">
+        <div
+          :class="`tab-item flex-ac flex-ja ${tabIndex === 0 ? 'active' : ''}`"
+          @click="setTab(0)"
+        >
+          <img
+            src="./s6/icon_b.png"
+            alt=""
+            class="tab-icon-b"
+          >
+          <img
+            src="./s6/icon_w.png"
+            alt=""
+            class="tab-icon-w"
+          >
+          <div class="tab-desc">70坪幸福居所</div>
+        </div>
+        <div class="divide"></div>
+        <div
+          :class="`tab-item flex-ac flex-ja ${tabIndex === 1 ? 'active' : ''}`"
+          @click="setTab(1)"
+        >
+          <img
+            src="./s6/icon_b.png"
+            alt=""
+            class="tab-icon-b"
+          >
+          <img
+            src="./s6/icon_w.png"
+            alt=""
+            class="tab-icon-w"
+          >
+          <div class="tab-desc">120坪舒適空間</div>
+        </div>
       </div>
       <swiper
         class="swiper-container full"
@@ -157,7 +209,7 @@
             :class="`item-img`"
           />
           <h3
-            class="slide-title absolute"
+            class="slide-title2 absolute"
             v-if="!isMobile"
           >{{slide.title}}</h3>
         </swiper-slide>
@@ -197,6 +249,7 @@
 
 .top-container {
   height: size(706);
+  border-top: 3px solid #977750;
   border-bottom: 3px solid #977750;
 }
 
@@ -251,12 +304,22 @@
 }
 
 .tabs {
-  width: size(1050);
+  width: 100%;
+  justify-content: center;
   margin: size(105) auto 0;
 
+    font-size: size(35);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.68;
+    letter-spacing: 1.5px;
+    text-align: left;
+    color: #000000;
+
   .tab-item {
-    width: 33.33%;
-    height: size(74);
+    width: 9em;
+    height:2em;
     padding: 0 size(15);
     cursor: pointer;
 
@@ -284,19 +347,11 @@
 
   .tab-icon-w,
   .tab-icon-b {
-    width: size(50);
+    width: 1em;
     height: auto;
   }
 
   .tab-desc {
-    font-size: size(50);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.68;
-    letter-spacing: 1.5px;
-    text-align: left;
-    color: #000000;
   }
 
   .divide {
@@ -324,6 +379,22 @@
   left: 0;
 }
 
+.slide-title2 {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: size(20);
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.41;
+  letter-spacing:0.1em;
+  text-align: left;
+  color: #ffffff;
+  padding: 15px 30px 15px 60px;
+  bottom: size(0);
+  left: 0;
+}
 .section6 {
   &::v-deep .swiper-container-horizontal > .swiper-pagination-bullets {
     width: auto !important;
@@ -663,15 +734,62 @@ export default {
             title: '池畔賞景休憩區',
           },
           {
-            src: require('./s6/2/3-2星空泳池.jpg'),
-            title: '星空泳池',
-          },
-          {
             src: require('./s6/2/3-3高空賞景Lounge-Bar.jpg'),
             title: '高空賞景Lounge-Bar',
           },
+          {
+            src: require('./s6/2/3-2星空泳池.jpg'),
+            title: '星空泳池',
+          },
+        {
+          src: require('./s6/3-1.jpg'),
+            title: '星空泳池',
+        },
+        {
+          src: require('./s6/3-2.jpg'),
+            title: '星空泳池',
+        },
+        {
+          src: require('./s6/3-3.jpg'),
+            title: '星空泳池',
+        },
+        {
+          src: require('./s6/3-4.jpg'),
+            title: '星空泳池',
+        },
+        {
+          src: require('./s6/3-5.jpg'),
+            title: '星空泳池',
+        },
+        ],
+        [
+          {
+            src: require('./s6/2/4-1.jpg'),
+            title: '',
+          },
+          {
+            src: require('./s6/2/4-2.jpg'),
+            title: '',
+          },
+          {
+            src: require('./s6/2/4-3.jpg'),
+            title: '',
+          },
+          {
+            src: require('./s6/2/4-4.jpg'),
+            title: '',
+          },
+          {
+            src: require('./s6/2/4-5.jpg'),
+            title: '',
+          },
+          {
+            src: require('./s6/2/4-6.jpg'),
+            title: '',
+          },
         ],
       ],
+      /*
       slideList2: [
         {
           src: require('./s6/3-1.jpg'),
@@ -688,20 +806,20 @@ export default {
         {
           src: require('./s6/3-5.jpg'),
         },
-      ],
+      ],*/
       slideList3: [
-        { src: require('./s8/1.jpg'), title: '28樓實品屋' },
-        { src: require('./s8/2.jpg'), title: '28樓實品屋' },
-        { src: require('./s8/3.jpg'), title: '28樓實品屋' },
-        { src: require('./s8/4.jpg'), title: '28樓實品屋' },
-        { src: require('./s8/5.jpg'), title: '28樓實品屋' },
-        { src: require('./s8/6.jpg'), title: '28樓實品屋' },
-        { src: require('./s8/7.jpg'), title: '28樓實品屋' },
-        { src: require('./s8/8.jpg'), title: '28樓實品屋' },
-        { src: require('./s8/9.jpg'), title: '28樓實品屋' },
-        { src: require('./s8/10.jpg'), title: '28樓實品屋' },
-        { src: require('./s8/11.jpg'), title: '28樓實品屋' },
-        { src: require('./s8/12.jpg'), title: '28樓實品屋' },
+        { src: require('./s8/70-1.jpg'), title: '樣品屋實景' },
+        { src: require('./s8/70-2.jpg'), title: '樣品屋實景' },
+        { src: require('./s8/70-3.jpg'), title: '樣品屋實景' },
+        { src: require('./s8/70-4.jpg'), title: '樣品屋實景' },
+        { src: require('./s8/70-5.jpg'), title: '樣品屋實景' },
+        { src: require('./s8/70-6.jpg'), title: '樣品屋實景' },
+        { src: require('./s8/120-1.jpg'), title: '樣品屋實景' },
+        { src: require('./s8/120-2.jpg'), title: '樣品屋實景' },
+        { src: require('./s8/120-3.jpg'), title: '樣品屋實景' },
+        { src: require('./s8/120-4.jpg'), title: '樣品屋實景' },
+        { src: require('./s8/120-5.jpg'), title: '樣品屋實景' },
+        { src: require('./s8/120-6.jpg'), title: '樣品屋實景' },
       ],
     }
   },

@@ -17,6 +17,7 @@
       ref="player"
     ></div>
     <div class="video-bg"></div>
+    <div class="line-bg" data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAQAAADYv8WvAAAADUlEQVQIHWNkSGOAAAADRABoDg6qmwAAAABJRU5ErkJggg=="></div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -26,6 +27,8 @@
   overflow: hidden;
   position: relative;
   height: size(1080);
+  background: #000;
+  border-bottom: 1px solid #fff;
 }
 
 .video-bg {
@@ -35,6 +38,14 @@
   top: 0;
   left: 0;
   pointer-events: none;
+}
+.line-bg{
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAQAAADYv8WvAAAADUlEQVQIHWNkSGOAAAADRABoDg6qmwAAAABJRU5ErkJggg==");
 }
 
 .title {
@@ -49,6 +60,7 @@
   color: #ffffff;
   top: size(110);
   right: size(90);
+  z-index: 3;
 }
 
 .item {
@@ -65,6 +77,7 @@
   letter-spacing: 2.88px;
   text-align: left;
   color: #9c7244;
+  z-index: 3;
 }
 
 .item1 {
@@ -92,14 +105,9 @@
   .relative {
     margin: 0 0 0 0;
     overflow: hidden;
-  }
-
-  .relative {
-    margin: 0 0 0 0;
-    overflow: hidden;
     width: size-m(1190);
     margin-left: size-m(-415);
-    height: size-m(667);
+    height: size-m(604);
   }
 
   .video-bg {
