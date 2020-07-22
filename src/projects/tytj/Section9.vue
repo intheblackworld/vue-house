@@ -1,0 +1,259 @@
+<template>
+  <div class="relative">
+    <div v-if="!isMobile">
+      <div class="img-row flex-ac flex-jc">
+        <img
+          :src="img"
+          v-for="(img, index) in imgList"
+          :key="img"
+          data-aos="flip-left"
+          :data-aos-delay="200 + index * 100"
+          class="img"
+        >
+      </div>
+    </div>
+    <div v-if="isMobile">
+       <!--
+        <slide
+          v-for="(img, index) in imgList"
+          :index="index"
+          :key="img.img"
+          class="img-slide"
+        >
+          <img
+            :src="img.img"
+            :class="`img absolute`"
+          />
+        </slide>
+       
+      -->
+      <!-- <div class="img-row flex-ac flex-jc">
+        <img
+          :src="img"
+          v-for="(img, index) in [...imgList, ...imgList]"
+          :key="img + index"
+          class="img"
+        >
+      </div> -->
+      <swiper
+        :options="swiperOption"
+        ref="mySwiper"
+        data-aos="fade"
+        data-aos-delay="1000"
+      >
+        <swiper-slide
+          v-for="(slide, index) in imgList"
+          :index="index"
+          :key="slide"
+          class="item-img"
+        >
+          <img
+            :src="slide"
+            :class="`item-img`"
+          />
+        </swiper-slide>
+      </swiper>
+
+    </div>
+    <div class="flex animate-row">
+      <img
+        v-lazy="require('./s2/wave_l.png')"
+        alt="聯上海棠"
+        class="wave"
+      >
+      <img
+        v-lazy="require('./s2/wave_l.png')"
+        alt="聯上海棠"
+        class="wave"
+      >
+    </div>
+    <div class="flex animate-row animate-row1">
+      <img
+        v-lazy="require('./s2/wave_l.png')"
+        alt="聯上海棠"
+        class="wave"
+      >
+      <img
+        v-lazy="require('./s2/wave_l.png')"
+        alt="聯上海棠"
+        class="wave"
+      >
+    </div>
+  </div>
+</template>
+<style lang="scss" scoped>
+@import '@/assets/style/function.scss';
+.relative {
+  // height: 100vh;
+  // overflow: hidden;
+  position: relative;
+  height: 100vh;
+  margin:0;
+}
+.img-row {
+  width: 100vw;
+  margin-top: size(251);
+}
+.img {
+  width: size(326);
+  margin: 0 6px;
+}
+
+.animate-row {
+  width: 200vw;
+  animation: moving 30s linear infinite;
+  position: absolute;
+  bottom:25vh;
+  img {
+    height: size(79);
+  }
+
+  img {
+    width: 100%;
+    height: size(79);
+
+    &:nth-child(2) {
+      // margin-left: -0.1%;
+    }
+  }
+  &.animate-row1 {
+    animation: moving 15s linear infinite;
+  }
+
+  &.animate-row2 {
+    bottom: size(100);
+    animation: moving 20s linear infinite;
+
+    img {
+      height: size(79);
+    }
+    // animation-delay: 5s;
+  }
+}
+
+@keyframes moving {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0) scaleY(1);
+  }
+  50% {
+    -webkit-transform: translateX(0);
+    transform: translateX(-25%) scaleY(0.5);
+  }
+
+  to {
+    -webkit-transform: translateX(-100vw);
+    transform: translateX(-50%) scaleY(1);
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .bg-img {
+  }
+}
+@media only screen and (max-width: 1280px) and (min-width: 1025px) {
+}
+
+/* 螢幕尺寸標準 */
+/* 平板尺寸 */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+}
+
+@media screen and (max-width: 767px) {
+  .relative {
+    height: size-m(400);
+    margin: 30vw 0 10vw;
+  }
+
+  .animate-row, .animate-row1 {
+    bottom: 10vh;
+  }
+
+  .item-img {
+    height: size-m(267);
+    width: 100%;
+    object-fit: cover;
+
+    &.height {
+      height: size-m(459);
+    }
+  }
+
+  .img {
+    width: size-m(300);
+  }
+
+  @keyframes moveImg {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      -webkit-transform: translateX(0);
+      transform: translateX(-25%);
+    }
+
+    to {
+      -webkit-transform: translateX(-100vw);
+      transform: translateX(-50%);
+    }
+  }
+}
+</style>
+<script>
+// @ is an alias to /src
+import { isMobile } from '@/utils'
+import slider from '@/mixins/slider.js'
+// import Parallax from '@/components/Parallax.vue'
+import 'swiper/dist/css/swiper.css'
+
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
+export default {
+  name: 'section9',
+  mixins: [slider],
+  components: {
+    swiper,
+    swiperSlide,
+    // Parallax,
+  },
+  data() {
+    return {
+      isMobile,
+      swiperOption: {
+        slidesPerView: isMobile ? 2.2 : 1,
+        centeredSlides: true,
+        spaceBetween: isMobile ? 10 : 30,
+        slidesPerColumn: isMobile ? 1 : 1,
+        effect: isMobile ? '' : 'fade',
+
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: true,
+        },
+        loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      },
+      imgList: [
+        require('./s9/1.png'),
+        require('./s9/2.png'),
+        require('./s9/3.png'),
+        require('./s9/4.png'),
+        require('./s9/5.png'),
+      ],
+    }
+  },
+
+  methods: {},
+  created() {},
+
+  mounted() {},
+
+  computed: {},
+}
+</script>

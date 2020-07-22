@@ -6,8 +6,8 @@ export default {
   phone: '06-299-2788',
   fbLink: 'https://www.facebook.com/VVVVV.HAI.TANG/',
   fbMessage: 'http://m.me/VVVVV.HAI.TANG/',
-  caseName: '聯上海棠',
-  indigatorLength: 10,
+  caseName: '泰御天鑄',
+  indigatorLength: 9,
 
   houseInfos: [
     ['地址', '台南安平區健康路三段VS.國平路'],
