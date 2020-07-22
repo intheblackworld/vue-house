@@ -47,7 +47,7 @@
         class="bg-img"
       >
       <div class="title absolute">是誰？</div>
-      <div class="subtitle absolute">以近未來思維，重現大直重劃<span>都會綠洲</span></div>
+      <div class="subtitle absolute">以近未來思維重現<br>大直重劃<span>都會綠洲</span></div>
       <div class="relative">
         <div class="content">
           <div class="content-label">Our Location</div>
@@ -97,12 +97,12 @@
 }
 
 .title {
-  font-size: size(114);
+  font-size: size(110);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 0.55;
-  letter-spacing: 3.42px;
+  letter-spacing: 0.02em;
   text-align: right;
   color: #242424;
   top: size(236);
@@ -110,23 +110,23 @@
 }
 
 .subtitle {
-  font-size: size(48);
+  font-size: size(45);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.31;
-  letter-spacing: 1.44px;
+  letter-spacing: 0.02em;
   text-align: left;
   color: #242424;
-  top: size(293);
-  left: size(886);
+  top: size(400);
+  left: size(846);
 
   span {
     color: #eb5500;
   }
 
   .number {
-    font-size: size(108);
+    font-size: size(100);
     letter-spacing: -5.4px;
   }
 }
@@ -153,12 +153,12 @@
 
 .content-desc {
   width: size(975);
-  font-size: size(27);
+  font-size: size(22);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.56;
-  letter-spacing: 1.35px;
+  letter-spacing: 0.1em;
   text-align: left;
   color: #f6f6f6;
   margin-bottom: size(40);
@@ -197,7 +197,7 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 2;
-    letter-spacing: 0.63px;
+  letter-spacing: 0.01em;
     text-align: left;
     color: #ffffff;
     margin: 0 auto;
@@ -223,7 +223,6 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 0.55;
-    letter-spacing: 3.42px;
     text-align: right;
     color: #242424;
     top: size-m(98);
@@ -236,11 +235,12 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.31;
-    letter-spacing: 1.44px;
     text-align: left;
     color: #242424;
-    top: size-m(125);
+    top: size-m(155);
     left: size-m(189);
+    transform: scaleX(0.95);
+    transform-origin: 0 0;
 
     span {
       color: #eb5500;
@@ -280,7 +280,6 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 0.94;
-    letter-spacing: 3.24px;
     text-align: left;
     color: #f6f6f6;
     margin-bottom: size-m(15);
@@ -294,7 +293,6 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.56;
-    letter-spacing: 1.35px;
     text-align: left;
     color: #f6f6f6;
     margin: 0 auto;
@@ -315,7 +313,6 @@
       font-stretch: normal;
       font-style: normal;
       line-height: 1.4;
-      letter-spacing: 0.3px;
       text-align: left;
       color: #ffffff;
       margin: 0 auto;

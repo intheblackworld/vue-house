@@ -7,6 +7,7 @@
             class="logo"
             src="@/assets/img/nav-logo.png"
             alt
+             v-scroll-to="{ element: `#section1`, offset: offset }"
           />
           <!-- <div
             class="menu"
@@ -93,7 +94,7 @@ export default {
 <style lang="scss">
 .navigation {
   .title {
-    font-size: 20px !important;
+    font-size: 19px !important;
     width: 140px;
     height: 40px;
     color: #fff;
@@ -131,9 +132,8 @@ export default {
 
   &.min {
     height: 50px;
-
     .logo {
-      width: 150px;
+      width: 180px;
     }
   }
 }
@@ -162,11 +162,11 @@ export default {
   width: $logo_pc_width;
   height: auto;
   position: absolute;
-  left: size(100);
+  left: size(0);
   display: block;
   top: 50%;
-  transform: translate(-50%, -50%);
-  transition: all 0.3s;
+  transform: translate(3%, -50%);
+  transition: all .3s;
 }
 
 .mask {
@@ -281,9 +281,14 @@ export default {
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .navigation {
-    height: $nav_tablet_height;
+    height: 50px;
     justify-content: center;
+  &.min {
+    .logo {
+    width: $logo_tablet_width;
+    }
   }
+}
 
   .logo {
     width: $logo_tablet_width;
@@ -321,9 +326,16 @@ export default {
 @media only screen and (max-width: 767px) {
   .navigation {
     height: $nav_phone_height;
-    z-index: 110;
-    background-color: #fff;
+  //  background-color: #fff;
+    height: 50px;
+    justify-content: center;
+  &.min {
+    .logo {
+    width: $logo_phone_width;
+    }
   }
+}
+
 
   .nav-container {
     display: block;
@@ -335,14 +347,14 @@ export default {
   .logo {
     width: $logo_phone_width;
     left: size-m(20);
-    top: size-m(20);
-    transform: none;
+    top: 50%;
+  transform: translate(0, -40%);
     // left: 45px;
   }
 
   .nav {
     position: static;
-    height: $nav_phone_height;
+    height:60px;
   }
 
   .menu {
@@ -380,6 +392,7 @@ export default {
   }
 
   .navlist {
+    display: none;
     .link {
       width: auto;
       padding: 0;

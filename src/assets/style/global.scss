@@ -61,7 +61,7 @@ body {
 
 .layout-container {
   display: block;
-  max-width: 100% !important;
+  max-width: 100%;
 }
 
 .col-pc-1 {
@@ -129,7 +129,8 @@ body {
 }
 @media only screen and (min-width: 1441px) {
   .layout-container {
-    width: 1368px;
+    width: 1800px;
+    max-width:81%;
     margin-left: auto !important;
     margin-right: auto !important;
   }

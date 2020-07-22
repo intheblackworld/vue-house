@@ -17,11 +17,7 @@
       <div class="title absolute">是誰？</div>
       <div class="subtitle absolute">深耕中永和<span class="number">43</span>年，幾近<span>零負評</span></div>
       <div class="relative">
-        <img
-          src="./s2/bg.png"
-          alt=""
-          class="bg-img"
-        >
+        <div class="bg-color"></div>
         <div class="content absolute">
           <div class="content-label">Our Brand</div>
           <div class="content-title">
@@ -155,13 +151,14 @@
   }
 }
 
+.bg-color{width: size(1120);height:size(1067);background:linear-gradient(to right, rgba(215,0,50,1) 0%,rgba(235,85,0,1) 100%);}
 .title {
-  font-size: size(114);
+  font-size: size(110);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 0.55;
-  letter-spacing: 3.42px;
+  letter-spacing: 0.02em;
   text-align: right;
   color: #242424;
   top: size(236);
@@ -169,31 +166,31 @@
 }
 
 .subtitle {
-  font-size: size(48);
+  font-size: size(45);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.31;
-  letter-spacing: 1.44px;
+  letter-spacing: 0.02em;
   text-align: left;
   color: #242424;
-  top: size(293);
+  top: size(350);
   left: size(846);
 
   span {
     color: #eb5500;
-  }
+    }
 
   .number {
-    font-size: size(108);
-    letter-spacing: -5.4px;
+    font-size: size(100);
+  letter-spacing: -0.03em;margin: 0 0.1em 0 0.09em;
   }
 }
 
 .content {
   width: size(600);
   top: size(150);
-  left: size(180);
+  left: size(220);
   text-align: left;
 }
 
@@ -210,12 +207,12 @@
 }
 
 .content-title {
-  font-size: size(108);
+  font-size: size(90);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 0.94;
-  letter-spacing: 3.24px;
+  letter-spacing: 0.05em;
   text-align: left;
   color: #f6f6f6;
   margin-bottom: size(40);
@@ -223,12 +220,12 @@
 }
 
 .content-desc {
-  font-size: size(27);
+  font-size: size(22);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.56;
-  letter-spacing: 1.35px;
+  line-height: 1.6;
+  letter-spacing: 0.1em;
   text-align: left;
   color: #f6f6f6;
   margin-bottom: size(40);
@@ -250,8 +247,8 @@
 
 .swiper-container {
   position: absolute;
-  width: size(900);
-  height: size(1200);
+  width: size(800);
+  height: size(1067);
   top: 0;
   right: 0;
   img {
@@ -283,7 +280,6 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 0.55;
-    letter-spacing: 3.42px;
     text-align: right;
     color: #242424;
     top: size-m(98);
@@ -296,10 +292,9 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.31;
-    letter-spacing: 1.44px;
     text-align: left;
     color: #242424;
-    top: size-m(125);
+    top: size-m(135);
     left: size-m(189);
 
     span {
@@ -308,7 +303,6 @@
 
     .number {
       font-size: size-m(38);
-      letter-spacing: -2.4px;
     }
   }
 
@@ -339,7 +333,6 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 0.94;
-    letter-spacing: 3.24px;
     text-align: left;
     color: #f6f6f6;
     margin-bottom: size-m(15);
@@ -351,7 +344,6 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.56;
-    letter-spacing: 1.35px;
     text-align: left;
     color: #f6f6f6;
     margin-bottom: size-m(15);

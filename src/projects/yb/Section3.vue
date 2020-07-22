@@ -17,11 +17,7 @@
       <div class="title absolute">是誰？</div>
       <div class="subtitle absolute">在央北用<span>超規格</span>標準，展現國際視野</div>
       <div class="relative">
-        <img
-          src="./s3/bg.png"
-          alt=""
-          class="bg-img"
-        >
+        <div class="bg-color"></div>
         <div class="content absolute">
           <div class="content-label">Our Way</div>
           <div class="content-title">
@@ -68,10 +64,10 @@
         class="bg-img"
       >
       <div class="title absolute">是誰？</div>
-      <div class="subtitle absolute">在央北用<span>超規格</span>標準，展現國際視野</div>
+      <div class="subtitle absolute">在央北用<span>超規格</span>標準<br>展現國際視野</div>
       <div class="relative">
         <div class="content">
-          <div class="content-label">Our Brand</div>
+          <div class="content-label">Our Way</div>
           <div class="content-title">
             WORLD VISION,<br />LOCAL HEARTS.
           </div>
@@ -122,14 +118,15 @@
     position: relative;
   }
 }
+.bg-color{margin: 0 0 0 auto;width: size(1020);height:size(1056);background:linear-gradient(to right, rgba(235,85,0,1) 0%,rgba(215,0,50,1) 100%);}
 
 .title {
-  font-size: size(114);
+  font-size: size(110);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 0.55;
-  letter-spacing: 3.42px;
+  letter-spacing: 0.02em;
   text-align: right;
   color: #242424;
   top: size(236);
@@ -137,31 +134,31 @@
 }
 
 .subtitle {
-  font-size: size(48);
+  font-size: size(45);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.31;
-  letter-spacing: 1.44px;
+  letter-spacing: 0.02em;
   text-align: left;
   color: #242424;
-  top: size(293);
-  left: size(886);
+  top: size(400);
+  left: size(846);
 
   span {
     color: #eb5500;
   }
 
   .number {
-    font-size: size(108);
+    font-size: size(100);
     letter-spacing: -5.4px;
   }
 }
 
 .content {
-  width: size(600);
+  width: size(580);
   top: size(161);
-  right: size(213);
+  right: size(240);
   text-align: center;
 }
 
@@ -178,26 +175,27 @@
 }
 
 .content-title {
-  font-size: size(72);
+  font-size: size(73);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.04;
-  letter-spacing: 2.02px;
+  letter-spacing: 0.05em;
   text-align: left;
   color: #f6f6f6;
   margin-bottom: size(40);
   font-family: futurabq;
+    white-space: nowrap;
 }
 
 .content-desc {
-  font-size: size(27);
+  font-size: size(22);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.56;
-  letter-spacing: 1.35px;
-  text-align: left;
+  letter-spacing: 0.1em;
+  text-align: justify;
   color: #f6f6f6;
   margin-bottom: size(40);
 }
@@ -209,8 +207,8 @@
 
 .swiper-container {
   position: absolute;
-  width: size(1023);
-  height: size(1200);
+  width: size(900);
+  height: size(1056);
   top: 0;
   left: 0;
   img {
@@ -234,7 +232,6 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 0.55;
-    letter-spacing: 3.42px;
     text-align: right;
     color: #242424;
     top: size-m(98);
@@ -247,11 +244,12 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.31;
-    letter-spacing: 1.44px;
     text-align: left;
     color: #242424;
-    top: size-m(125);
+    top: size-m(155);
     left: size-m(189);
+    transform: scaleX(0.95);
+    transform-origin: 0 0;
 
     span {
       color: #eb5500;
@@ -285,26 +283,15 @@
   }
 
   .content-title {
-    font-size: size-m(35);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
+    font-size: size-m(37);
     line-height: 0.94;
-    letter-spacing: 3.24px;
-    text-align: left;
-    color: #f6f6f6;
     margin-bottom: size-m(15);
+    white-space: nowrap;
   }
 
   .content-desc {
     font-size: size-m(13);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.56;
-    letter-spacing: 1.35px;
-    text-align: left;
-    color: #f6f6f6;
     margin-bottom: size-m(15);
   }
 

@@ -1,14 +1,8 @@
 <template>
   <div class="section5">
-    <div v-if="!isMobile" class="bg">
+    <div class="bg">
       <img src="./s6/txt1.png" alt="" class="img1">
       <img src="./s6/txt2.png" alt="" class="img2">
-    </div>
-
-    <div
-      v-if="isMobile"
-      class="relative"
-    >
     </div>
   </div>
 </template>
@@ -18,20 +12,20 @@
   background-size: cover;
   // position: relative;
   // z-index: 5;
-  background-color: #fff;
-  height: size(1420);
-  padding: size(400) 0 size(80);
+  //background-color: #fff;
+  //height: size(1420);
+  padding:0;
 }
 
 .img1 {
   width: size(826);
-  margin: 0 auto;
+  margin:size(400) auto 0 auto;
   display: block;
 }
 
 .img2 {
   width: size(706);
-  margin: 0 auto;
+  margin: 0 auto  size(80) auto ;
   display: block;
 }
 /* 平板尺寸 */
@@ -43,7 +37,19 @@
     background-size: cover;
     margin: 0;
     min-height: auto;
+  //height: size(1420);
   }
+.img1 {
+  width: size_m(313);
+  margin:size_m(99) auto 0  auto;
+  display: block;
+}
+
+.img2 {
+  width: size_m(262);
+  margin: size_m(77) auto size_m(25) ;
+  display: block;
+}
 }
 </style>
 

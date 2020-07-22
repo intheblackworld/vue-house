@@ -17,11 +17,7 @@
       <div class="title absolute">是誰？</div>
       <div class="subtitle absolute">心念著建築本心，以<span>創新觀點</span>思考人居領域</div>
       <div class="relative">
-        <img
-          src="./s4/bg.png"
-          alt=""
-          class="bg-img"
-        >
+        <div class="bg-color"></div>
         <div class="content absolute flex flex-as flex-jb">
           <div class="content-label">Our Team</div>
           <div class="content-desc">
@@ -70,7 +66,7 @@
         class="bg-img"
       >
       <div class="title absolute">是誰？</div>
-      <div class="subtitle absolute">心念著建築本心，以<span>創新觀點</span>思考人居領域</div>
+      <div class="subtitle absolute">心念著建築本心<br>以<span>創新觀點</span><br>思考人居領域</div>
       <div class="relative">
         <div class="content">
           <div class="content-label">Our Team</div>
@@ -132,14 +128,15 @@
     position: relative;
   }
 }
+.bg-color{margin:size(120) 0 0 0;width: 100%;height:size(950);background:linear-gradient(to right, rgba(215,0,50,1) 0%,rgba(235,85,0,1) 100%);}
 
 .title {
-  font-size: size(114);
+  font-size: size(110);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 0.55;
-  letter-spacing: 3.42px;
+  letter-spacing: 0.02em;
   text-align: right;
   color: #242424;
   top: size(236);
@@ -147,23 +144,23 @@
 }
 
 .subtitle {
-  font-size: size(48);
+  font-size: size(45);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.31;
-  letter-spacing: 1.44px;
+  letter-spacing: 0.02em;
   text-align: left;
   color: #242424;
-  top: size(293);
-  left: size(886);
+  top: size(400);
+  left: size(846);
 
   span {
     color: #eb5500;
   }
 
   .number {
-    font-size: size(108);
+    font-size: size(100);
     letter-spacing: -5.4px;
   }
 }
@@ -190,12 +187,12 @@
 
 .content-desc {
   width: size(975);
-  font-size: size(27);
+  font-size: size(22);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.56;
-  letter-spacing: 1.35px;
+  line-height: 1.6;
+  letter-spacing: 0.1em;
   text-align: left;
   color: #f6f6f6;
   margin-bottom: size(40);
@@ -208,24 +205,24 @@
 
 .swiper-frame {
   position: absolute;
-  width: size(1741);
-  height: size(1300);
-  top: size(0);
-  left: size(179);
+  width:100%;
+  height: size(1000);
+  top: size(-150);
+  left: size(0);
   overflow: hidden;
 }
 
 .swiper-container {
   position: absolute;
-  width: size(2381);
-  height: size(1300);
+  width: size(2600);
+  height: size(1000);
   top: size(50);
   left: size(179);
   margin-left: size(-790);
 
   img,
   .text {
-    width: size(900);
+    width: size(550);
   }
 
   .text {
@@ -260,7 +257,6 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 0.55;
-    letter-spacing: 3.42px;
     text-align: right;
     color: #242424;
     top: size-m(98);
@@ -273,11 +269,12 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.31;
-    letter-spacing: 1.44px;
     text-align: left;
     color: #242424;
-    top: size-m(125);
+    top: size-m(155);
     left: size-m(189);
+    transform: scaleX(0.95);
+    transform-origin: 0 0;
 
     span {
       color: #eb5500;
@@ -317,7 +314,6 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 0.94;
-    letter-spacing: 3.24px;
     text-align: left;
     color: #f6f6f6;
     margin-bottom: size-m(15);
@@ -331,7 +327,6 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.56;
-    letter-spacing: 1.35px;
     text-align: left;
     color: #f6f6f6;
     margin: 0 auto;
@@ -341,13 +336,13 @@
   .swiper-container {
     position: relative;
     width: 100vw;
-    height: size-m(355);
+    height: size-m(380);
     top: 0;
     left: 0;
     margin-left: 0;
 
     .text {
-      font-size: size(10);
+      font-size: size-m(12);
       font-weight: normal;
       font-stretch: normal;
       font-style: normal;
@@ -392,7 +387,7 @@ export default {
     return {
       isMobile,
       swiperOption: {
-        slidesPerView: isMobile ? 1.4 : 2.3,
+        slidesPerView: isMobile ? 1.4 : 3.7,
         centeredSlides: true,
         spaceBetween: isMobile ? 15 : 0,
         slidesPerColumn: isMobile ? 1 : 1,
@@ -409,12 +404,12 @@ export default {
       },
 
       slideList: [
-        { src: require('./s4/1.jpg'), text: '建築師 | <span>張維哲</span>' },
-        { src: require('./s4/2.jpg'), text: '建築師 | <span>張維哲</span>' },
-        { src: require('./s4/3.jpg'), text: '建築師 | <span>張維哲</span>' },
-        { src: require('./s4/4.jpg'), text: '建築師 | <span>張維哲</span>' },
-        { src: require('./s4/5.jpg'), text: '建築師 | <span>張維哲</span>' },
-        { src: require('./s4/6.jpg'), text: '建築師 | <span>張維哲</span>' },
+        { src: require('./s4/1.jpg'), text: '建築規劃 | <span>張維哲</span>' },
+        { src: require('./s4/2.jpg'), text: '景觀設計 | <span>吳書原</span>' },
+        { src: require('./s4/3.jpg'), text: '燈光設計 | <span>朱文英</span>' },
+        { src: require('./s4/6.jpg'), text: '公設規劃 | <span>林馬克</span>' },
+        { src: require('./s4/4.jpg'), text: '結構設計 | <span>陳村林</span>' },
+        { src: require('./s4/5.jpg'), text: '綠建築顧問 | <span>楊謙柔</span>' },
       ],
 
       imgIndex: 0,
