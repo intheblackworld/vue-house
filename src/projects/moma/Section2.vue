@@ -1,13 +1,15 @@
 <template>
   <div class="section2">
     <div class="relative">
-      <img src="./s2/bg.jpg" alt="" class="bg-img" v-if="!isMobile">
+      <img src="./s2/bg.jpg" alt="bg" class="bg-img" v-if="!isMobile">
+      <img src="./s2/bg.gif" alt="bg" class="bg-img imgc" v-if="!isMobile">
       <Map :bgSrc="bgSrc" :hand="require('./箭頭.png')" v-if="isMobile">
       </Map>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
+@import '@/assets/style/function.scss';
 .relative {
   overflow: hidden;
   position: relative;
@@ -24,6 +26,9 @@
   object-fit: cover;
   &:first-child {
     position: relative;
+  }
+  &.imgc{
+    width:size(150);left: 50%;transform: translateX(-50%);
   }
 }
 
