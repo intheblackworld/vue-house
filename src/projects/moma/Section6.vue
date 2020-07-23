@@ -358,7 +358,7 @@
 
 .tabs {
   width: 100%;
-  justify-content: space-between;
+  justify-content: center;
   margin: size(105) auto 0;
 
   font-size: size(35);
@@ -584,6 +584,7 @@
     width: size-m(375);
     margin: size-m(31) auto 0;
     overflow-x: scroll;
+    justify-content: space-between;
 
     .tab-item {
       width: 33.33%;
