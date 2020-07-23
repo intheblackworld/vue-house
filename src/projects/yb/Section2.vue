@@ -362,6 +362,11 @@
       width: 100%;
     }
   }
+.link-g {
+  p {
+    font-size:size-m(14);
+  }
+}
   .fb-link {
     width: size-m(29);
     cursor: pointer;
@@ -373,8 +378,9 @@
     font-weight: bold;
     text-shadow: 0 0 4px #000;
     position: absolute;
-    right: 15px;
-    bottom: 15px;
+    left: 0;right: 0;text-align: center;
+    bottom: 10px;
+    line-height: 1.6;
   }
 }
 </style>
