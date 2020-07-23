@@ -1,12 +1,12 @@
 <template>
   <div class="section1">
-    <div
+     <!--<div
       class="bg fullscreen relative"
       v-if="!isMobile"
     >
       <img
         src="./s1/logo.png"
-        alt=""
+        alt="logo"
         class="logo absolute"
       >
       <img
@@ -14,20 +14,19 @@
         alt=""
         class="bg-cover absolute"
       >
-      <!-- <img src="./s1/logo.png" alt class="bg-img" data-aos="fade" data-aos-delay="400" />
+      <img src="./s1/logo.png" alt class="bg-img" data-aos="fade" data-aos-delay="400" />
       <img src="./s1/h1.png" alt class="bg-img" data-aos="fade" data-aos-delay="600" />
       <img src="./s1/h2.png" alt class="bg-img" data-aos="fade" data-aos-delay="800" />
       <img src="./s1/img1.png" alt class="windmill wind1" />
-      <img src="./s1/img2.png" alt class="windmill wind2" /> -->
-      <!-- div :class="`title ${this.isShow ? 'typing' : 'hide'}`">輕取別墅 預約財富</div -->
-    </div>
+      <img src="./s1/img2.png" alt class="windmill wind2" /> 
+      <!-- div :class="`title ${this.isShow ? 'typing' : 'hide'}`">輕取別墅 預約財富</div 
+    </div> -->
     <div
       class="bg fullscreen relative"
-      v-else
     >
       <img
         src="./s1/logo.png"
-        alt=""
+        alt="logo"
         class="logo absolute"
       >
       <img
@@ -50,7 +49,7 @@
   // background-image: url('./s1/bg.jpg');
   background-position: top center;
   background-size: cover;
-  min-height: calc(100vw * (1080 / 1920));
+  min-height: 100vh;
 }
 
 .bg-cover {
