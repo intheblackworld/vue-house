@@ -4,8 +4,11 @@
       <div v-if="!isMobile">
         <!-- <img src="./s10/bg.jpg" alt class="bg-img" /> -->
         <div :class="`text`">
-          <div class="subtitle">台南首座抗空汙別墅造鎮</div>
-          <h3 class="title">樂活新指標</h3>
+        <h3 class="title">健康第一</h3>
+        <h4 class="subtitle">大台南首座抗空污別墅社區</h4>
+        <p>裝置抗空污VAF智慧淨流設備，為居家生活做好防護<br>
+加上太陽能光電系統、BWT豪宅級淨水設備<br>
+時時刻刻守護全家人健康</p>
         </div>
         <swiper
           :options="swiperOption"
@@ -71,7 +74,8 @@
   overflow: hidden;
   // padding-top: 220px;
   width: 100vw;
-  height: calc(100vw * (1080 / 1920));
+  height: calc(100vw * (1250 / 1920));
+  background-color: #fcf8f2;// url('./s6/bg.jpg');
 
   > div {
     display: flex;
@@ -112,7 +116,7 @@
   .item-img {
     margin: 0 auto;
     width: calc(100vw * (1192 / 1920));
-    height: calc(100vw * (700 / 1920));
+    height: calc(100vw * (800 / 1920));
     // object-fit: cover;
   }
 }
@@ -132,33 +136,31 @@
   right: 0;
   margin: 0 auto;
   top: calc(100vw * (100 / 1920));
+    color: #40220f;
+    line-height: 1.6;
+    width:100%;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing:0.1em;
+    text-align: center;
+    font-size: calc(100vw * (18 / 1920));
 
   &.hide {
     opacity: 0;
   }
 
   .title {
-    font-size: calc(100vw * (80 / 1920));
+    font-size:4.44em;
     font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
     line-height: normal;
-    letter-spacing: 22px;
-    margin-left: 15px;
-    text-align: center;
-    color: #ffffff;
   }
 
-  .subtitle {
-    font-size: calc(100vw * (40 / 1920));
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.47;
-    letter-spacing: 4px;
-    text-align: center;
-    color: #ffffff;
+  .subtitle {margin: 0.1em 0 0 0;
+    font-size:1.67em;
+    font-weight: 600;transform: scaleX(0.9);
   }
+  p{margin: 0.5em 0 0 0;
+    font-size:1em;}
 }
 
 .special {
@@ -218,7 +220,7 @@
   .bg {
     background-size: 100% 100%;
     background-image: none;
-    background-color: #00578e;
+    //background-color: #00578e;
     padding-top: 0;
     padding-bottom: 0;
     height: auto;
@@ -331,6 +333,9 @@ export default {
         },
         {
           src: require('./s10/2.jpg'),
+        },
+        {
+          src: require('./s10/3.jpg'),
         },
       ],
     }

@@ -8,8 +8,11 @@
       <img src="./s12/4.png" alt="藏美一品" data-aos="fade" data-aos-delay="1000" class="bg-img" />
       <img src="./s12/5.png" alt="富邦大無疆 外觀示意" class="bg-img" />
       <div class="text">
-        <div class="subtitle" data-aos="fade" data-aos-delay="200">國揚、富邦建築團隊合作</div>
-        <h3 class="title" data-aos="fade" data-aos-delay="400">專業營建管理</h3>
+        <h3 class="subtitle">美學極現</h3>
+        <h4 class="title">日本建築職人精神<br>藏美實現</h4>
+        <p>以建築演繹「新日本建築美學」著重美感與機能兼具<br>
+名宅建築團隊精心打造沿街式透天產品．戶戶臨路<br>
+以品牌實力打造水岸別墅社區成功典範</p>
       </div>
     </div>
     <div class="bg relative" v-else>
@@ -20,8 +23,11 @@
       <img src="./s12/mo/4.png" alt="藏美一品" data-aos="fade" data-aos-delay="1000" class="bg-img" />
       <img src="./s12/mo/5.png" alt="富邦大無疆 外觀示意" class="bg-img" />
       <div class="text">
-        <div class="subtitle" data-aos="fade" data-aos-delay="200">國揚、富邦建築團隊合作</div>
-        <h3 class="title" data-aos="fade" data-aos-delay="400">專業營建管理</h3>
+        <h3 class="subtitle">美學極現</h3>
+        <h4 class="title">日本建築職人精神<br>藏美實現</h4>
+        <p>以建築演繹「新日本建築美學」著重美感與機能兼具<br>
+名宅建築團隊精心打造沿街式透天產品．戶戶臨路<br>
+以品牌實力打造水岸別墅社區成功典範</p>
       </div>
     </div>
   </div>
@@ -54,29 +60,27 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+    color: #40220f;
+    line-height: 1.6;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing:0.1em;
+    font-size: calc(100vw * (18 / 1920));
   // margin-top: -7%;
 
+
   .title {
-    font-size: calc(100vw * (80 / 1920));
+    font-size:4.44em;
     font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
     line-height: normal;
-    letter-spacing: 3.2px;
-    text-align: center;
-    color: #ffffff;
   }
 
-  .subtitle {
-    font-size: calc(100vw * (40 / 1920));
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.47;
-    letter-spacing: 4.2px;
-    text-align: center;
-    color: #ffffff;
+  .subtitle {margin: 0.1em 0 0 0;
+    font-size:1.67em;
+    font-weight: 600;transform: scaleX(0.9);
   }
+  p{margin: 0.5em 0 0 0;
+    font-size:1em;}
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -91,7 +95,8 @@
 
 @media screen and (max-width: 767px) {
   .bg {
-    background-image: url('./s2/mo/bg.jpg');
+   // background-image: url('./s2/mo/bg.jpg');
+  height:calc(100vw * (620 / 375));
   }
 
   .text {

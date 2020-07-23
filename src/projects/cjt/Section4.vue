@@ -3,18 +3,19 @@
     <div class="bg relative" v-if="!isMobile">
       <img src="./s4/bg.jpg" alt="輕井澤" class="bg-img" />
       <div class="text">
-        <h3 class="title" data-aos="fade" data-aos-delay="200">九份子新都心 國際水岸第一排</h3>
-        <div class="subtitle" data-aos="fade" data-aos-delay="400">低密度、高綠覆 純住宅重劃區</div>
+        <h3 class="title" data-aos="fade" data-aos-delay="200">
+          <img src="./s4/logo.png" alt="藏美輕井澤">
+        </h3>
+        <div class="subtitle" data-aos="fade" data-aos-delay="400">市心水岸 雙車別墅</div>
       </div>
     </div>
     <div class="bg relative" v-else>
       <img src="./s4/mo/bg.jpg" alt="輕井澤" class="bg-img" />
       <div class="text">
         <h3 class="title" data-aos="fade" data-aos-delay="200">
-          <b>九份子新都心</b>
-          <br />國際水岸第一排
+          <img src="./s4/logo.png" alt="藏美輕井澤">
         </h3>
-        <div class="subtitle" data-aos="fade" data-aos-delay="400">低密度、高綠覆 純住宅重劃區</div>
+        <div class="subtitle" data-aos="fade" data-aos-delay="400">市心水岸 雙車別墅</div>
       </div>
     </div>
   </div>
@@ -43,6 +44,7 @@
   right: 0;
   margin: 0 auto;
   top: calc(100vw * (150 / 1920));
+  width: 25vw;
 
   .title {
     font-size: 4vw;
@@ -53,6 +55,7 @@
     letter-spacing: 0;
     text-align: center;
     color: #ffffff;
+    img{width:100%;}
   }
 
   .subtitle {
@@ -60,10 +63,13 @@
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.47;
+    line-height: 1;
     letter-spacing: 4.4px;
     text-align: center;
+    margin: 0.3em 0;
     color: #ffffff;
+    border: 1px solid #fff;
+    border-width: 0 1px 0 1px;
   }
 }
 
@@ -81,7 +87,8 @@
   }
 
   .text {
-    top: 8vw;
+    top: 10vw;
+  width: 60vw;
     .title {
       font-size: 36px;
       letter-spacing: 1.44px;
@@ -92,7 +99,7 @@
     }
 
     .subtitle {
-      font-size: 15px;
+        font-size: 1.17em;
       letter-spacing: 2px;
     }
   }

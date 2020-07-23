@@ -4,25 +4,39 @@
       <img src="./s11/bg1.jpg" alt="輕井澤" class="bg-img" />
       <img src="./s11/bg2.jpg" alt="輕井澤" class="bg-img" />
       <div class="text">
-        <div class="subtitle" data-aos="fade" data-aos-delay="200">PC基樁＋全區筏式基礎規劃</div>
-        <h3 class="title" data-aos="fade" data-aos-delay="400">建築安全堡壘</h3>
+        <h3 class="subtitle">精工至上</h3>
+        <h4 class="title">20年結構保固+5年防水保固</h4>
+        <p>以筏式基礎穩定打底，搭配PC基樁強化安全性<br>
+從工程材料、結構、機電、<br>
+防水施工…等皆有建物生產履歷<br>
+交屋後提供完善客戶服務，住得安心，買得更放心</p>
       </div>
       <div class="text-bottom">
-        <div class="subtitle" data-aos="fade" data-aos-delay="200">取經日本建築大師 打造當代美感建築 </div>
-        <h3 class="title" data-aos="fade" data-aos-delay="400">職人精神 藏美實現</h3>
+        <h3 class="subtitle">美學極現</h3>
+        <h4 class="title">日本建築職人精神藏美實現</h4>
+        <p>以建築演繹「新日本建築美學」著重美感與機能兼具<br>
+名宅建築團隊精心打造沿街式透天產品．戶戶臨路<br>
+以品牌實力打造水岸別墅社區成功典範</p>
       </div>
     </div>
     <div class="bg relative" v-else>
-       <img src="./s11/mo/bg1.jpg" alt="輕井澤" class="bg-img" />
-        <img src="./s11/mo/bg2.jpg" alt="輕井澤" class="bg-img" />
+       <img src="./s11/mo/bg1_01.jpg" alt="輕井澤" class="bg-img" />
+        <img src="./s11/mo/bg1_02.jpg" alt="輕井澤" class="bg-img" />
       <div class="text">
-        <div class="subtitle" data-aos="fade" data-aos-delay="200">PC基樁＋全區筏式基礎規劃</div>
-        <h3 class="title" data-aos="fade" data-aos-delay="400">建築安全堡壘</h3>
+        <h3 class="subtitle">精工至上</h3>
+        <h4 class="title">20年結構保固+5年防水保固</h4>
+        <p>以筏式基礎穩定打底，搭配PC基樁強化安全性<br>
+從工程材料、結構、機電、<br>
+防水施工…等皆有建物生產履歷<br>
+交屋後提供完善客戶服務，住得安心，買得更放心</p>
       </div>
-      <div class="text-bottom">
-        <div class="subtitle" data-aos="fade" data-aos-delay="200">取經日本建築大師 打造當代美感建築 </div>
-        <h3 class="title" data-aos="fade" data-aos-delay="400">職人精神 藏美實現</h3>
-      </div>
+     <!--  <div class="text-bottom">
+        <h3 class="subtitle">美學極現</h3>
+        <h4 class="title">日本建築職人精神藏美實現</h4>
+        <p>以建築演繹「新日本建築美學」著重美感與機能兼具<br>
+名宅建築團隊精心打造沿街式透天產品．戶戶臨路<br>
+以品牌實力打造水岸別墅社區成功典範</p>
+      </div> -->
     </div>
   </div>
 </template>
@@ -50,29 +64,26 @@
   right: 0;
   margin: 0 auto;
   top: calc(100vw * (100 / 1920));
-
+    color: #ffffff;
+    line-height: 1.6;
+    width:100%;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing:0.1em;
+    text-align: center;
+    font-size: calc(100vw * (18 / 1920));
   .title {
-    font-size: calc(100vw * (80 / 1920));
+    font-size:2.5em;
     font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
     line-height: normal;
-    letter-spacing: 32.2px;
-    margin-left: 25px;
-    text-align: center;
-    color: #ffffff;
   }
 
-  .subtitle {
-    font-size: calc(100vw * (40 / 1920));
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.47;
-    letter-spacing: 12.4px;
-    text-align: center;
-    color: #ffffff;
+  .subtitle {margin: 0.1em 0 0 0;
+    font-size:1.67em;
+    font-weight: 600;transform: scaleX(0.9);
   }
+  p{margin: 0.5em 0 0 0;
+    font-size:1em;}
 }
 
 .text-bottom {
@@ -82,27 +93,26 @@
   margin: 0 auto;
   top: auto;
   bottom: calc(100vw * (100 / 1920));
-  .title {
-    font-size: calc(100vw * (80 / 1920));
-    font-weight: bold;
+    color: #40220f;
+    line-height: 1.6;
+    width:100%;
     font-stretch: normal;
     font-style: normal;
-    line-height: normal;
-    letter-spacing: 3.2px;
+    letter-spacing:0.1em;
     text-align: center;
-    color: #ffffff;
+    font-size: calc(100vw * (18 / 1920));
+  .title {
+    font-size:2.5em;
+    font-weight: bold;
+    line-height: normal;
   }
 
-  .subtitle {
-    font-size: calc(100vw * (40 / 1920));
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.47;
-    letter-spacing: 2px;
-    text-align: center;
-    color: #ffffff;
+  .subtitle {margin: 0.1em 0 0 0;
+    font-size:1.67em;
+    font-weight: 600;transform: scaleX(0.9);
   }
+  p{margin: 0.5em 0 0 0;
+    font-size:1em;}
 }
 
 @media screen and (max-width: 767px) {
@@ -111,16 +121,14 @@
   }
 
   .text {
-    top: calc(100vw * (50 / 375));
+    top: calc(100vw * (30 / 375));
+    font-size: calc(100vw * (13 / 375));
     .title {
-      font-size: 35.4px;
-      letter-spacing: 3px;
-      margin-left: 0;
+    font-size:2em;
     }
 
     .subtitle {
-      font-size: 15px;
-      letter-spacing: 3px;
+    font-size:1.56em;
     }
   }
   

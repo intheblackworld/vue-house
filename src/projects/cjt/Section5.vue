@@ -124,7 +124,8 @@
   .title-bg {
     background-size: auto;
     height: 138px;
-    background-image: url('./s5/mo/titlebg.jpg');
+   // background-image: url('./s5/mo/titlebg.jpg');
+  background-color: #086ea9;
     background-size: contain;
     display: flex;
     align-items: center;
@@ -150,7 +151,8 @@ export default {
     return {
       isMobile,
       tagList: [
-        require('./s5/1.png'),
+         require('./s5/bg.png'),
+       /* require('./s5/1.png'),
         require('./s5/2.png'),
         require('./s5/3.png'),
         require('./s5/12.png'),
@@ -161,12 +163,12 @@ export default {
         require('./s5/8.png'),
         require('./s5/9.png'),
         require('./s5/10.png'),
-        require('./s5/11.png'),
+        require('./s5/11.png'),*/
       ],
 
       altList: [
         '輕井澤',
-        '嘉南大圳',
+   /*     '嘉南大圳',
         '中央水路景觀公園',
         '九份子國中小學基地',
         '台17線',
@@ -176,11 +178,11 @@ export default {
         '國安商圈',
         '好市多商圈',
         '海佃商圈',
-        '文賢商圈',
+        '文賢商圈',*/
       ],
 
       bgSrc: require('./s5/bg.jpg'),
-      bgmSrc: require('./s5/mo/map.jpg'),
+      bgmSrc: require('./s5/bg.jpg'),
       hand: require('./s5/mo/hand.png'),
     }
   },
@@ -188,6 +190,7 @@ export default {
   mounted() {
     if (this.isMobile) {
       this.tagList = [
+         require('./s5/bg.png'),
         // require('./s5/2.png'),
         // require('./s5/3.png'),
         // require('./s5/12.png'),

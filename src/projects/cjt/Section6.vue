@@ -46,7 +46,7 @@
   overflow: hidden;
   display: flex;
   align-items: center;
-  background: url('./s6/bg.jpg');
+  background-color: #fcf8f2;// url('./s6/bg.jpg');
   background-size: cover;
   background-attachment: fixed;
   height: calc(100vw * (1085 / 1920));
@@ -68,7 +68,7 @@
     line-height: normal;
     letter-spacing: 9.2px;
     text-align: center;
-    color: #ffffff;
+    color: #40220f;
   }
 
   .subtitle {
@@ -79,7 +79,7 @@
     line-height: 1.5;
     letter-spacing: 1.2px;
     text-align: center;
-    color: #ffffff;
+    color: #40220f;
   }
 }
 
@@ -167,7 +167,7 @@
   .bg {
     background-position: center;
     display: block;
-    background: #00578e;
+  //  background: #00578e;
   }
 
   .bg.fullscreen {

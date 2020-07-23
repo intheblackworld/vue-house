@@ -22,9 +22,9 @@
       <div id="section6">
         <Section6 />
       </div>
-      <div id="section7">
+     <!--  <div id="section7">
         <Section7 />
-      </div>
+      </div> -->
       <div id="section8">
         <Section8 />
       </div>
@@ -51,7 +51,8 @@
 @import '../assets/style/variableColor.scss';
 
 .home {
-  background: url('../projects/cjt/s10/bg.jpg');
+  background: #fcf8f2;
+ // background: url('../projects/cjt/s10/bg.jpg');
 }
 </style>
 

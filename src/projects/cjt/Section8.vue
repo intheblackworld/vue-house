@@ -3,13 +3,13 @@
     <div class="bg">
       <div v-if="!isMobile">
         <!-- <img src="./s8/bg.jpg" alt class="bg-img" /> -->
-        <div :class="`text ${slideIndex === 3 ? 'hide': ''}`">
+        <div :class="`text ${slideIndex === 2 ? 'hide': ''}`">
           <div class="subtitle">紅樹林保留地、景觀公園 水岸廊帶</div>
           <h3 class="title">生態休閒 加值健康</h3>
         </div>
-        <div :class="`text ${slideIndex === 3 ? 'special': 'hide'}`">
+        <div :class="`text ${slideIndex === 2 ? 'special': 'hide'}`">
           <div class="subtitle">九份子國中小生態學校 預計2021年招生</div>
-          <h3 class="title">國家級綠校園 視界更大</h3>
+          <h3 class="title">國家級綠校園陪孩子長大</h3>
         </div>
         <swiper
           :options="swiperOption"
@@ -35,11 +35,11 @@
         </swiper>
       </div>
       <div v-else>
-        <div :class="`text ${slideIndex === 3 ? 'hide': ''}`">
+        <div :class="`text ${slideIndex === 2 ? 'hide': ''}`">
           <div class="subtitle">紅樹林保留地、景觀公園 水岸廊帶</div>
           <h3 class="title">生態休閒 加值健康</h3>
         </div>
-        <div :class="`text ${slideIndex === 3 ? 'special': 'hide'}`">
+        <div :class="`text ${slideIndex === 2 ? 'special': 'hide'}`">
           <div class="subtitle">九份子國中小生態學校 預計2021年招生</div>
           <h3 class="title">國家級綠校園 視界更大</h3>
         </div>
@@ -72,7 +72,8 @@
 
 <style lang="scss" scoped>
 .bg {
-  background: url('./s10/bg.jpg');
+  
+  background-color: #fcf8f2;// url('./s10/bg.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
@@ -152,7 +153,7 @@
     line-height: normal;
     letter-spacing: 4px;
     text-align: center;
-    color: #ffffff;
+    color: #40220f;
   }
 
   .subtitle {
@@ -163,7 +164,7 @@
     line-height: 1.47;
     letter-spacing: 4.4px;
     text-align: center;
-    color: #ffffff;
+    color: #40220f;
   }
 }
 
@@ -231,7 +232,7 @@
 @media screen and (max-width: 767px) {
   .bg {
     background-size: 100% auto;
-    background-image: url('./s8/mo/bg.jpg');
+  //  background-image: url('./s8/mo/bg.jpg');
     background-position: 0 0;
     background-attachment: scroll;
     padding-top: 0;
@@ -341,13 +342,13 @@ export default {
         {
           src: require('./s8/1.jpg'),
         },
-        {
+      {
           src: require('./s8/2.jpg'),
         },
 
-        {
+        /*  {
           src: require('./s8/3.jpg'),
-        },
+        },*/
         {
           src: require('./s8/4.jpg'),
         },
@@ -362,7 +363,7 @@ export default {
       if (swiper.isEnd) {
         this.slideIndex = 0
       } else if (swiper.isBeginning) {
-        this.slideIndex = swiper.slides.length - 3
+        this.slideIndex = swiper.slides.length - 2
       } else {
         this.slideIndex = swiper.activeIndex - 1
       }

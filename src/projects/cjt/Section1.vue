@@ -19,7 +19,7 @@
       <img src="./s1/h2.png" alt class="bg-img" data-aos="fade" data-aos-delay="800" />
       <img src="./s1/img1.png" alt class="windmill wind1" />
       <img src="./s1/img2.png" alt class="windmill wind2" /> 
-      <!-- div :class="`title ${this.isShow ? 'typing' : 'hide'}`">輕取別墅 預約財富</div 
+      <div :class="`title ${this.isShow ? 'typing' : 'hide'}`">輕取別墅 預約財富</div 
     </div> -->
     <div
       class="bg fullscreen relative"

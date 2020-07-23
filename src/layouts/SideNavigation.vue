@@ -122,7 +122,7 @@ export default {
   position: relative;
   width: 30px;
   height: 3px;
-  background-color: #fff;
+  background-color: #40220f;
 }
 
 .menu-icon::before {
@@ -133,7 +133,7 @@ export default {
   display: block;
   width: 30px;
   height: 3px;
-  background-color: #fff;
+  background-color: #40220f;
   transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
 }
 
@@ -145,7 +145,7 @@ export default {
   display: block;
   width: 30px;
   height: 3px;
-  background-color: #fff;
+  background-color: #40220f;
   transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
 }
 
