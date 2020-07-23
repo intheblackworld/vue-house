@@ -157,7 +157,7 @@
           class="hr-img"
         >
       </div> -->
-      <div class="tabs flex">
+      <div class="tabs tabs2 flex">
         <div
           :class="`tab-item flex-ac flex-ja ${tabIndex2 === 0 ? 'active' : ''}`"
           @click="setTab2(0)"
@@ -578,6 +578,10 @@
 
   .item-img {
     width: 100%;
+  }
+
+  .tabs2 {
+    justify-content: center !important;
   }
 
   .tabs {
