@@ -131,9 +131,9 @@ export default {
   // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
 
   &.min {
-    height: 50px;
+    height: 70px;
     .logo {
-      width: 180px;
+      width: 250px;
     }
   }
 }
@@ -281,7 +281,7 @@ export default {
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .navigation {
-    height: 50px;
+    height: 70px;
     justify-content: center;
   &.min {
     .logo {
@@ -327,7 +327,7 @@ export default {
   .navigation {
     height: $nav_phone_height;
   //  background-color: #fff;
-    height: 50px;
+    height: 70px;
     justify-content: center;
   &.min {
     .logo {
