@@ -9,12 +9,16 @@
           alt=""
           class="close"
           @click="isDialog = false"
-        ><iframe
+        >
+        <div class="iframe">
+        <iframe
           src="https://www.youtube.com/embed/0VXHd50CyJQ"
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
-        ></iframe></div>
+        ></iframe>
+        </div>
+        </div>
     </div>
     <div class="relative section2">
 
@@ -425,10 +429,13 @@
     right: -70px;
     z-index: 2;
   }
-  iframe {
+  .iframe{
     width: size(1280);
-    height: size(750);
-  }
+    height: size(750);overflow: hidden;
+  iframe {position: relative;top: size(-200);
+    width: size(1280);
+    height: size(1150);
+  }}
 }
 
 @media only screen and (max-width: 1440px) {
@@ -562,13 +569,16 @@
       cursor: pointer;
       position: absolute;
       top: -70px;
-      right: 0px;
+      right:  size-m(10);
       z-index: 2;
     }
-    iframe {
-      width: 100vw;
-      height: size-m(345);
-    }
+  .iframe{
+    width: 100vw;
+    height: size-m(230);
+  iframe {top: size-m(-100);
+    width:  100vw;
+    height: size-m(430);
+  }}
   }
 }
 </style>
