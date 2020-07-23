@@ -223,7 +223,7 @@
   }
 
   .title {
-    width: 100vw;
+    width: auto;
     margin: 1.5em auto 0em auto;
     font-size: size-m(23);
     text-align: center;
