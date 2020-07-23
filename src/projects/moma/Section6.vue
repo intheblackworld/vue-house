@@ -113,8 +113,8 @@
           class="swiper-pagination"
           slot="pagination"
         ></div>
-      </swiper> 
- <!--    <div class="container-title flex-c">
+      </swiper>
+      <!--    <div class="container-title flex-c">
         <img
           src="./s6/icon_b.png"
           alt=""
@@ -146,7 +146,7 @@
         ></div>
       </swiper> -->
 
-      <div
+      <!-- <div
         class="content-title"
         v-if="isMobile"
       >
@@ -156,11 +156,11 @@
           alt=""
           class="hr-img"
         >
-      </div>
+      </div> -->
       <div class="tabs flex">
         <div
-          :class="`tab-item flex-ac flex-ja ${tabIndex === 0 ? 'active' : ''}`"
-          @click="setTab(0)"
+          :class="`tab-item flex-ac flex-ja ${tabIndex2 === 0 ? 'active' : ''}`"
+          @click="setTab2(0)"
         >
           <img
             src="./s6/icon_b.png"
@@ -176,8 +176,8 @@
         </div>
         <div class="divide"></div>
         <div
-          :class="`tab-item flex-ac flex-ja ${tabIndex === 1 ? 'active' : ''}`"
-          @click="setTab(1)"
+          :class="`tab-item flex-ac flex-ja ${tabIndex2 === 1 ? 'active' : ''}`"
+          @click="setTab2(1)"
         >
           <img
             src="./s6/icon_b.png"
@@ -192,32 +192,65 @@
           <div class="tab-desc">120坪舒適空間</div>
         </div>
       </div>
-      <swiper
-        class="swiper-container full"
-        :options="swiperOption"
-        ref="mySwiper"
-        data-aos="fade"
-        data-aos-delay="400"
-      >
-        <swiper-slide
-          v-for="(slide, index) in slideList3"
-          :index="index"
-          :key="slide.src"
-        >
-          <img
-            :src="slide.src"
-            :class="`item-img`"
-          />
-          <h3
-            class="slide-title2 absolute"
-            v-if="!isMobile"
-          >{{slide.title}}</h3>
-        </swiper-slide>
-        <div
-          class="swiper-pagination"
-          slot="pagination"
-        ></div>
-      </swiper>
+      <div class="frame">
+        <div :class="`switch-container ${tabIndex2 == 0 ? 'active' : ''}`">
+          <swiper
+            class="swiper-container full"
+            :options="swiperOption3"
+            ref="mySwiper"
+            data-aos="fade"
+            data-aos-delay="400"
+          >
+            <swiper-slide
+              v-for="(slide, index) in slideList3"
+              :index="index"
+              :key="slide.src"
+            >
+              <img
+                :src="slide.src"
+                :class="`item-img`"
+              />
+              <h3
+                class="slide-title2 absolute"
+                v-if="!isMobile"
+              >{{slide.title}}</h3>
+            </swiper-slide>
+            <div
+              class="swiper-pagination3"
+              slot="pagination"
+            ></div>
+          </swiper>
+        </div>
+        <div :class="`switch-container ${tabIndex2 == 1 ? 'active' : ''}`">
+          <swiper
+            class="swiper-container full"
+            :options="swiperOption4"
+            ref="mySwiper"
+            data-aos="fade"
+            data-aos-delay="400"
+          >
+            <swiper-slide
+              v-for="(slide, index) in slideList4"
+              :index="index"
+              :key="slide.src"
+            >
+              <img
+                :src="slide.src"
+                :class="`item-img`"
+              />
+              <h3
+                class="slide-title2 absolute"
+                v-if="!isMobile"
+              >{{slide.title}}</h3>
+            </swiper-slide>
+            <div
+              class="swiper-pagination4"
+              slot="pagination"
+            ></div>
+          </swiper>
+        </div>
+
+      </div>
     </div>
   </div>
 </template>
@@ -252,6 +285,19 @@
   border-top: 3px solid #977750;
   border-bottom: 3px solid #977750;
 }
+.frame {
+  width: 100vw;
+  height: size(1200);
+  position: relative;
+  // margin-top: size(100);
+}
+.switch-container {
+  opacity: 0;
+  transition: opacity 0.5s;
+  &.active {
+    opacity: 1;
+  }
+}
 
 .swiper-container {
   width: size(1794);
@@ -261,7 +307,14 @@
   &.full {
     width: 100vw;
     height: size(1080);
-    margin-top: size(100);
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    .item-img {
+      width: 100%;
+      height: size(1080);
+    }
   }
 }
 
@@ -305,21 +358,21 @@
 
 .tabs {
   width: 100%;
-  justify-content: center;
+  justify-content: space-between;
   margin: size(105) auto 0;
 
-    font-size: size(35);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.68;
-    letter-spacing: 1.5px;
-    text-align: left;
-    color: #000000;
+  font-size: size(35);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.68;
+  letter-spacing: 1.5px;
+  text-align: left;
+  color: #000000;
 
   .tab-item {
     width: 9em;
-    height:2em;
+    height: 2em;
     padding: 0 size(15);
     cursor: pointer;
 
@@ -388,7 +441,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.41;
-  letter-spacing:0.1em;
+  letter-spacing: 0.1em;
   text-align: left;
   color: #ffffff;
   padding: 15px 30px 15px 60px;
@@ -396,6 +449,13 @@
   left: 0;
 }
 .section6 {
+  .swiper-pagination3, .swiper-pagination4 {
+    position: absolute;
+    text-align: center;
+    transition: 300ms opacity;
+    transform: translate3d(0, 0, 0);
+    z-index: 10;
+  }
   &::v-deep .swiper-container-horizontal > .swiper-pagination-bullets {
     width: auto !important;
     right: 30px;
@@ -523,6 +583,7 @@
   .tabs {
     width: size-m(375);
     margin: size-m(31) auto 0;
+    overflow-x: scroll;
 
     .tab-item {
       width: 33.33%;
@@ -690,7 +751,51 @@ export default {
           clickable: true,
         },
       },
+      swiperOption3: {
+        slidesPerView: isMobile ? 1 : 1,
+        centeredSlides: true,
+        spaceBetween: isMobile ? 10 : 30,
+        slidesPerColumn: isMobile ? 1 : 1,
+        effect: isMobile ? '' : 'fade',
+
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination3',
+          clickable: true,
+        },
+      },
+
+      swiperOption4: {
+        slidesPerView: isMobile ? 1 : 1,
+        centeredSlides: true,
+        spaceBetween: isMobile ? 10 : 30,
+        slidesPerColumn: isMobile ? 1 : 1,
+        effect: isMobile ? '' : 'fade',
+
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination4',
+          clickable: true,
+        },
+      },
       tabIndex: 0,
+      tabIndex2: 0,
       multipleSlideList: [
         [
           {
@@ -741,26 +846,26 @@ export default {
             src: require('./s6/2/3-2星空泳池.jpg'),
             title: '星空泳池',
           },
-        {
-          src: require('./s6/3-1.jpg'),
+          {
+            src: require('./s6/3-1.jpg'),
             title: '星空泳池',
-        },
-        {
-          src: require('./s6/3-2.jpg'),
+          },
+          {
+            src: require('./s6/3-2.jpg'),
             title: '星空泳池',
-        },
-        {
-          src: require('./s6/3-3.jpg'),
+          },
+          {
+            src: require('./s6/3-3.jpg'),
             title: '星空泳池',
-        },
-        {
-          src: require('./s6/3-4.jpg'),
+          },
+          {
+            src: require('./s6/3-4.jpg'),
             title: '星空泳池',
-        },
-        {
-          src: require('./s6/3-5.jpg'),
+          },
+          {
+            src: require('./s6/3-5.jpg'),
             title: '星空泳池',
-        },
+          },
         ],
         [
           {
@@ -789,24 +894,6 @@ export default {
           },
         ],
       ],
-      /*
-      slideList2: [
-        {
-          src: require('./s6/3-1.jpg'),
-        },
-        {
-          src: require('./s6/3-2.jpg'),
-        },
-        {
-          src: require('./s6/3-3.jpg'),
-        },
-        {
-          src: require('./s6/3-4.jpg'),
-        },
-        {
-          src: require('./s6/3-5.jpg'),
-        },
-      ],*/
       slideList3: [
         { src: require('./s8/70-1.jpg'), title: '樣品屋實景' },
         { src: require('./s8/70-2.jpg'), title: '樣品屋實景' },
@@ -814,6 +901,9 @@ export default {
         { src: require('./s8/70-4.jpg'), title: '樣品屋實景' },
         { src: require('./s8/70-5.jpg'), title: '樣品屋實景' },
         { src: require('./s8/70-6.jpg'), title: '樣品屋實景' },
+      ],
+
+      slideList4: [
         { src: require('./s8/120-1.jpg'), title: '樣品屋實景' },
         { src: require('./s8/120-2.jpg'), title: '樣品屋實景' },
         { src: require('./s8/120-3.jpg'), title: '樣品屋實景' },
@@ -828,8 +918,14 @@ export default {
     setTab(index) {
       this.tabIndex = index
     },
+
+    setTab2(index) {
+      this.tabIndex2 = index
+    },
   },
   created() {},
+
+  watch: {},
 
   mounted() {},
 
