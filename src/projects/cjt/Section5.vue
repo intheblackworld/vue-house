@@ -3,13 +3,13 @@
     <div class="title-bg">
       <div class="text" v-if="isMobile">
         <h3 class="title">森活贏家 菁英聚落</h3>
-        <div class="desc">5大商圈Ⅹ雙大道Ⅹ生態休閒Ⅹ國家級綠校園</div>
+        <div class="subtitle">5大商圈Ⅹ雙大道Ⅹ生態休閒Ⅹ國家級綠校園</div>
       </div>
     </div>
     <Map :tagList="tagList" :bgSrc="isMobile ? bgmSrc : bgSrc" :hand="hand" :altList="altList">
       <div class="text" v-if="!isMobile">
         <h3 class="title">森活贏家 菁英聚落</h3>
-        <div class="desc">5大商圈Ⅹ雙大道Ⅹ生態休閒Ⅹ國家級綠校園</div>
+        <div class="subtitle">5大商圈Ⅹ雙大道Ⅹ生態休閒Ⅹ國家級綠校園</div>
       </div>
     </Map>
   </div>
@@ -37,28 +37,28 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-}
+    color: #ffffff;
+    line-height: 1.6;
+    width:100%;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing:0.1em;
+    text-align: center;
+    font-size: calc(100vw * (18 / 1920));
 
-.title {
-  font-size: calc(100vw * (80 / 1920));
-  font-weight: 900;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.14;
-  letter-spacing: 1.3px;
-  text-align: center;
-  color: #ffffff;
-}
+  .title {
+    font-size:4.44em;
+    font-weight: bold;
+    line-height: normal;
+  }
 
-.desc {
-  font-size: calc(100vw * (34 / 1920));
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.81;
-  letter-spacing: normal;
-  text-align: center;
-  color: #ffffff;
+  .subtitle {margin: 0.1em 0 0 0;
+    font-size:1.67em;
+    letter-spacing:0.17em;
+    font-weight: 400;
+  }
+  p{margin: 0.5em 0 0 0;
+    font-size:1em;}
 }
 @media only screen and (max-width: 1440px) and (min-width: 1025px) {
   .fullscreen {
@@ -101,6 +101,7 @@
 }
 
 @media screen and (max-width: 767px) {
+  .section5{position: relative;}
   .bg {
     background-position: 55%;
     // background-image: url('./s3_bg_m.jpg');
@@ -123,15 +124,24 @@
 
   .title-bg {
     background-size: auto;
+    position:absolute;top:0;left: 0;z-index: 5;width: 100%;
     height: 138px;
    // background-image: url('./s5/mo/titlebg.jpg');
-  background-color: #086ea9;
+  //background-color: #086ea9;
     background-size: contain;
     display: flex;
     align-items: center;
 
     .text {
       position: relative;
+    font-size: calc(100vw * (13 / 375));
+    .title {
+    font-size:2.9em;
+    }
+
+    .subtitle {
+    font-size:1.1em;
+    }
     }
   }
 }

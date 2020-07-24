@@ -59,28 +59,28 @@
   right: 0;
   margin: 0 auto;
   text-align: center;
+  color: #40220f;
+    line-height: 1.6;
+    width:100%;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing:0.1em;
+    text-align: center;
+    font-size: calc(100vw * (18 / 1920));
 
   .title {
-    font-size: calc(100vw * (80 / 1920));
+    font-size:4.44em;
     font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
     line-height: normal;
-    letter-spacing: 9.2px;
-    text-align: center;
-    color: #40220f;
   }
 
-  .subtitle {
-    font-size: calc(100vw * (40 / 1920));
+  .subtitle {margin: 0.1em 0 0 0;
+    font-size:1.7em;
+    letter-spacing:0.2em;
     font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: 1.2px;
-    text-align: center;
-    color: #40220f;
   }
+  p{margin: 0.5em 0 0 0;
+    font-size:1em;}
 }
 
 .carousel-3d-container {
@@ -193,15 +193,14 @@
     margin: 0 auto;
     margin-top: 30px;
     width: 90vw;
+    font-size: calc(100vw * (13 / 375));
 
     .title {
-      font-size: 36px;
-      letter-spacing: 1.44px;
+    font-size:3em;
     }
 
     .subtitle {
-      font-size: 15px;
-      letter-spacing: 2px;
+    font-size:1.19em;
     }
   }
 

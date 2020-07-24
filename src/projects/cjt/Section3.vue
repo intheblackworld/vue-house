@@ -98,14 +98,13 @@
 
   .text {
     top: calc(100vw * (80 / 375));
+    font-size: calc(100vw * (13 / 375));
     .title {
-      font-size: 35.4px;
-      letter-spacing: 1.42px;
+    font-size:3em;
     }
 
     .subtitle {
-      font-size: 15px;
-      letter-spacing: 3px;
+    font-size:1.56em;
     }
   }
   .img {

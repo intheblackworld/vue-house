@@ -87,8 +87,8 @@
   }
 
   .text {
-    top: 10vw;
-  width: 60vw;
+    top: 20vw;
+  width: 55vw;
     .title {
       font-size: 36px;
       letter-spacing: 1.44px;
