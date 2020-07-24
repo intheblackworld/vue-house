@@ -205,11 +205,13 @@
 @media screen and (max-width: 767px) {
   .full-bg {
     width: 100vw;
+    min-height: auto;
     height: size-m(287 + 317);
     background-color: #fff;
   }
   .full-img {
     width: 100vw;
+    min-height: auto;
     height: size-m(317);
   }
   .river {

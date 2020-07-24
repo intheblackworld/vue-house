@@ -1,6 +1,6 @@
 <template>
   <div class="section6">
-    <div class="full-bg relative">
+    <div class="bg">
       <swiper
         class="full-img bg-img"
         :options="swiperOption"
@@ -177,13 +177,14 @@
 }
 
 @media screen and (max-width: 767px) {
-  .full-bg {
+  .bg {
     width: 100vw;
     height: size-m(353 + 317);
     background-color: #fff;
   }
   .full-img {
     width: 100vw;
+    min-height: auto;
     height: size-m(317);
   }
   .river {

@@ -4,6 +4,7 @@
 @import './variableDefault.scss';
 @import './variableColor.scss';
 @import './form.scss';
+@import './function.scss';
 @import './dialog.scss';
 @import './fonts.scss';
 @import './customClass.scss';
@@ -60,14 +61,16 @@ html{
 
 .full-bg {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  height: size(1080);
   position: relative;
   overflow: hidden;
 }
 
 .full-img {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  height: size(1080);
   position: absolute;
   background-size: cover;
   background-position: center;
@@ -341,6 +344,23 @@ img[lazy='loaded'] {
       height: calc(100vh - #{$nav_phone_height} - 63px);
       margin: 0 auto;
     }
+  }
+
+  .full-bg {
+    width: 100%;
+    min-height: 100vh;
+    height: size-m(604);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .full-img {
+    width: 100%;
+    min-height: 100vh;
+    height: size-m(604);
+    position: absolute;
+    background-size: cover;
+    background-position: center;
   }
 
   .home {

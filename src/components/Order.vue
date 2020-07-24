@@ -55,15 +55,15 @@
           </h3>
         </el-checkbox>
       </div>
-        <div style="margin: 0 auto">
+        <!-- <div style="margin: 0 auto">
           <vue-recaptcha :sitekey="info.recaptcha_site_key_v2"
           @verify="isVerify = true"
           ></vue-recaptcha>
-        </div>
+        </div> -->
       <el-button
         class="form-submit"
         type="primary"
-        :disabled="!checked || !isVerify"
+        :disabled="!checked"
         @click="submit"
         :loading="isSubmit"
       ><h3>立即預約</h3></el-button>
@@ -140,7 +140,7 @@ export default {
 
     submit() {
       if (this.isSubmit) return
-      if (!this.isVerify) return
+      // if (!this.isVerify) return
       if (!this.checked) return
       this.isSubmit = true
       if (

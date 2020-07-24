@@ -1,8 +1,8 @@
 <template>
   <div class="section8">
-    <div class="full-bg relative">
+    <div class="bg relative">
       <swiper
-        class="full-img bg-img"
+        class="bg-img"
         :options="swiperOption"
         ref="mySwiper"
       >
@@ -84,17 +84,23 @@
   z-index: 2;
 }
 
+.full-img {
+  width: 100vw;
+  height: size(1080);
+}
+
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
 }
 
 @media screen and (max-width: 767px) {
-  .full-bg {
+  .bg {
     height: size-m(281);
   }
-  .full-img, .bg-img {
+  .full-img,
+  .bg-img {
     width: 100vw;
-    height: auto;
+    height: size-m(281);
   }
 }
 </style>

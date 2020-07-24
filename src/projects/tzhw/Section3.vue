@@ -1,6 +1,6 @@
 <template>
   <div class="section3 relative">
-    <div class="full-bg">
+    <div class="bg">
       <!-- <div
         class="full-img"
         v-lazy:background-image="require('./s3/bg.jpg')"
@@ -206,7 +206,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .full-bg,
+  .bg,
   .bg-img {
     height: size-m(835);
   }
