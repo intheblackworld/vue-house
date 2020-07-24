@@ -10,12 +10,13 @@
       frameborder="0"
       allowfullscreen
     ></iframe> -->
-    <div
+    <div class="video_box">
+      <div
       v-if="!isMobile"
       :id="`youtube-player-${id}`"
       ref="player"
         class="video-ifame"
-    ></div>
+    ></div></div>
     <img
       src="./s1/bg_video.jpg"
       alt=""
@@ -55,7 +56,7 @@
 </template>
 <style lang="scss">
 .video-ifame{
-  width: 100vw;height: 56.25vw;position:absolute;top:50%;transform: translateY(-50%);left: 0;}
+  width: 100vw;height: 80vw;position:absolute;top:50%;transform: translateY(-50%);left: 0;}
  </style>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
@@ -64,15 +65,28 @@
   overflow: hidden;
   position: relative;
   height:100vh;
-  min-height: size(900);
+  min-height: size(800);
   max-height: size(1080);
+  background: #000 url("./s1/bg_videoload.jpg") no-repeat center;
+  background-size: 100% auto;
   border-bottom: 1px solid #fff;
   &::after{
     content: "";display: block;position:absolute;top: 0;left: 0;width: 100%;
     height: 100%;z-index: 1;
   }
 }
-
+.video_box{
+  width: 100%;
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  left: 0;
+  overflow: hidden;
+  height:size(910);opacity: 0;
+  animation: op 1s 5s ease-out forwards;}
+ @keyframes op {
+      to { opacity: 1;
+        }
+    }
 .video-bg {
   width: 100vw;
   height:100%;
