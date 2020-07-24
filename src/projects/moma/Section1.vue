@@ -18,7 +18,7 @@
         class="video-ifame"
     ></div></div>
     <img
-      src="./s1/bg_video.jpg"
+      src="./s1/bg_videoload.jpg"
       alt=""
       class="video-bg"
       v-if="isMobile"
@@ -42,13 +42,14 @@
       class="video"
       v-if="isDialog && isMobile"
     >
+    <div class="video_box">
       <iframe
         title="youtube"
         src="https://www.youtube.com/embed/Hz4iHkWcJd0"
         frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
-      ></iframe>
+      ></iframe>   </div>
       <img class="close" @click="isDialog = false" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABABAMAAABYR2ztAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAhUExURUdwTP////Pw8PLx8fLw8PLw8PPx8fHx8fLy8vLw8PXr6/Zeio0AAAALdFJOUwADRMS156s3KfgaAiHMOAAAAXtJREFUSMeFlr9qwzAQxnVZajoVLRLZTEMfoBAadywIt11t/AAGETqGhOzGoS/g0r20D1qRxLYsS/oy5Y/uk+/ud/eFnRoWecmcfTzdhX+n/Tf763bhAyJ7Z4l+DErQfdkw+izS0AGutiZY6JeABK2q8/XHMo0JhCXooUqvb/wSXNfXwIVXwjxBOmj5JLiqhzCh5+WkQzVG0bGYlVOscytIvG0cCWq/JjGn7md6YJlNQ5LsefKZfjsHA+cL6QQwdpvZidDevZKx1uZCZJtZ3okauaBVOQeRDmM5uco9tR+b2nPgSgxcjG1023uRGDiYA3KRCAn0EkGBXkKoOjgHC8OFna6nFsVOrvPILBou2tgoGkw6TxemXHTRdWA4iB+AV6CHNGk2UkXS5DqPFgqWGjULthsBA5GzoS19tUDYSzA4Zpzjo7dEw4vGX4IFYjiIryC0xHxr8MbGHy1SuIo5WObQDjgwFApZEnF9tiRkatAWobFCa4bmDv4evP4DsmNwZSA8CfQAAAAASUVORK5CYII=" />
     </div>
     <!-- div class="line-bg" data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAQAAADYv8WvAAAADUlEQVQIHWNkSGOAAAADRABoDg6qmwAAAABJRU5ErkJggg=="></div -->
@@ -142,6 +143,14 @@
   max-height: size(812);
   }
 
+.video_box{
+  width: 100%;
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  left: 0;
+  overflow: hidden;
+  height:size(910);opacity: 1;
+  animation:none;}
   .video-bg {
     width: size-m(1190);
     height: size-m(667);
@@ -200,7 +209,7 @@
 
     iframe {
       width: 100vw;
-      height: size-m(275);
+      height: size-m(300);
       left: 0;
       right: 0;
       margin: 0 auto;
