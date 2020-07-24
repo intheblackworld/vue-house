@@ -52,7 +52,9 @@
 .bg {
   background-size: cover;
   position: relative;
-  height: size(1080);
+  height: 100vh;
+  min-height: size(1080);
+  overflow: hidden;
 }
 
 .section8 {
@@ -84,6 +86,12 @@
   z-index: 2;
 }
 
+.item-img {
+  width: 100vw;
+  height: size(1080);
+  object-fit: cover;
+}
+
 .full-img {
   width: 100vw;
   height: size(1080);
@@ -99,6 +107,11 @@
   }
   .full-img,
   .bg-img {
+    width: 100vw;
+    height: size-m(281);
+  }
+
+  .item-img {
     width: 100vw;
     height: size-m(281);
   }
