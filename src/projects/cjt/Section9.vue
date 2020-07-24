@@ -116,16 +116,13 @@
     width: 100vw;
     top: calc(100vw * (50 / 375));
     position: relative;
+    font-size: calc(100vw * (13 / 375));
     .title {
-      text-align: center;
-      font-size: 35.4px;
-      letter-spacing: 8.42px;
+    font-size:2.9em;
     }
 
     .subtitle {
-      text-align: center;
-      font-size: 15px;
-      letter-spacing: 5.5px;
+    font-size:1.1em;
     }
   }
   .item-img {

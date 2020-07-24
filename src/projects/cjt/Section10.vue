@@ -35,8 +35,11 @@
       </div>
       <div v-else>
         <div :class="`text`">
-          <div class="subtitle">台南首座抗空汙別墅造鎮</div>
-          <h3 class="title">樂活新指標</h3>
+        <h3 class="title">健康第一</h3>
+        <h4 class="subtitle">大台南首座抗空污別墅社區</h4>
+        <p>裝置抗空污VAF智慧淨流設備，為居家生活做好防護<br>
+加上太陽能光電系統、BWT豪宅級淨水設備<br>
+時時刻刻守護全家人健康</p>
         </div>
         <swiper
           :options="swiperOption"
@@ -238,18 +241,16 @@
 
   .text {
     top: calc(100vw * (50 / 375));
+    font-size: calc(100vw * (13 / 375));
     &.hide {
       display: none;
     }
     .title {
-      font-size: 34.4px;
-      letter-spacing: 7.42px;
-      margin-left: 0;
+    font-size:3em;
     }
 
     .subtitle {
-      font-size: 13px;
-      letter-spacing: 5.5px;
+    font-size:1.56em;
     }
   }
 

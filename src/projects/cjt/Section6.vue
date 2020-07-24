@@ -201,6 +201,7 @@
 
     .subtitle {
     font-size:1.19em;
+    letter-spacing:0.23em;
     }
   }
 

@@ -107,14 +107,13 @@
     height: auto;
     display: block;
     bottom: calc(100vw * (40 / 375));
+    font-size: calc(100vw * (13 / 375));
     .title {
-      font-size: 35.4px;
-      letter-spacing: 1.42px;
+    font-size:2.9em;
     }
 
     .subtitle {
-      font-size: 15px;
-      letter-spacing: 4.8px;
+    font-size:1.5em;
     }
   }
 }
