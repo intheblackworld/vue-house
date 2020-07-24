@@ -238,7 +238,7 @@
   letter-spacing: 0.1em;
     color: #fff;
     text-decoration: none;
-    margin-left: size(10);
+    margin-left: 0.5em;
   }
 }
 
