@@ -66,7 +66,7 @@
         <swiper-slide
           v-for="(slide, index) in slideList"
           :index="index"
-          :key="slide"
+          :key="slide.src"
           class="item-img"
         >
           <img
