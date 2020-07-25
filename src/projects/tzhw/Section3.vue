@@ -233,7 +233,7 @@ height: 94%;margin: 2% auto 0 auto;
 .box{width: 96%;
 height: auto;}
 .img3{width: 100%;
-  height: auto;
+      height:size-m(297);
 }
 .content{
     width: 100%;margin:size-m(10) 0 size-m(10) 0;}
@@ -244,6 +244,13 @@ height: auto;}
     bottom: 0;
     transform-origin: bottom;
     animation: flower 3s ease-in-out 0s infinite alternate;
+  }
+ .flower5,
+.flower6,
+.flower7 {
+    width: 100vw;
+    right: 0;
+    bottom: 0;
   }
 .desc {
   font-size:calc(12px + 0.3vh);

@@ -284,10 +284,10 @@ height: auto;}
   .main-img {
       order:1;
       width: 100%;
-      height:auto;
+      height:size-m(297);
     .item-img {
       width: 100%;
-      height:auto;
+      height:size-m(297);
      // height: size-m(310);
     }
   }
@@ -300,6 +300,13 @@ height: auto;}
     bottom: 0;
     transform-origin: bottom;
     animation: flower 3s ease-in-out 0s infinite alternate;
+  }
+ .flower5,
+.flower6,
+.flower7 {
+    width: 100vw;
+    right: 0;
+    bottom: 0;
   }
 }
 </style>
