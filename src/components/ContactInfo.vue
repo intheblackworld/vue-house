@@ -1,56 +1,89 @@
 <template>
-<div>
-  <div class="contact-info">
-    <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" />
-    <div class="info">
-      <div class="btn flex-c" @click="showCallDialog">
-        <span class="flex-c">
-          <font-awesome-icon icon="phone" />
-          <span>{{info.phone}} </span>
-        </span>
-      </div>
-      <div class="btn flex-c" @click="showMessengerDialog">
-        <span class="flex-c">
-          <font-awesome-icon :icon="['fab', 'facebook-messenger']" /><span>FB 諮詢 </span>
-        </span>
-      </div>
-      <!-- <a class="btn flex-c" :href="info.fbMessage" target="_blank" v-else>
+  <div>
+    <div class="contact-info">
+      <img
+        class="logo"
+        src="@/assets/img/contact-logo.png"
+        :alt="info.caseName"
+      />
+      <div class="info">
+        <div
+          class="btn flex-c"
+          @click="showCallDialog"
+        >
+          <span class="flex-c">
+            <font-awesome-icon icon="phone" />
+            <span>{{info.phone}} </span>
+          </span>
+        </div>
+        <div
+          class="btn flex-c"
+          @click="showMessengerDialog"
+        >
+          <span class="flex-c">
+            <font-awesome-icon :icon="['fab', 'facebook-messenger']" /><span>FB 諮詢 </span>
+          </span>
+        </div>
+        <!-- <a class="btn flex-c" :href="info.fbMessage" target="_blank" v-else>
         <span class="flex-c">
           <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB 諮詢
         </span>
       </a> -->
-      <a class="btn flex-c" :href="info.fbLink" target="_blank">
-        <span class="flex-c">
-          <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁 </span>
-        </span>
-      </a>
-      <div class="address flex-c" v-html="info.address"></div>
-      <div class="google-btn flex-c" @click="showMapDialog">
-        <span class="flex-c">
-          <font-awesome-icon icon="map-marker-alt" /><span>導航 Google 地圖</div>
-        </span>
-      </div>
-      <!-- <a class="google-btn flex-c" :href="info.googleLink" target="_blank" v-else>
+        <a
+          class="btn flex-c"
+          :href="info.fbLink"
+          target="_blank"
+        >
+          <span class="flex-c">
+            <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁 </span>
+          </span>
+        </a>
+        <div
+          class="address flex-c"
+          v-html="info.address"
+        ></div>
+        <div
+          class="google-btn flex-c"
+          @click="showMapDialog"
+        >
+          <span class="flex-c">
+            <font-awesome-icon icon="map-marker-alt" /><span>導航 Google 地圖</span>
+          </span>
+        </div>
+        <!-- <a class="google-btn flex-c" :href="info.googleLink" target="_blank" v-else>
         <span class="flex-c">
           <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
         </span>
       </a> -->
+      </div>
     </div>
-  </div>
-  <el-dialog title :visible.sync="isShowCallDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
-    <CallDialog :phone="info.phone" />
-  </el-dialog>
-  <el-dialog
-    title
-    :visible.sync="isShowMessengerDialog"
-    :width="isMobile ? '90%' : '500px'"
-    :modal-append-to-body="false"
-  >
-    <MessengerDialog :messenger="info.fbMessage" />
-  </el-dialog>
-  <el-dialog title :visible.sync="isShowMapDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
-    <MapDialog :link="info.googleLink" :address="info.address" />
-  </el-dialog>
+    <el-dialog
+      title
+      :visible.sync="isShowCallDialog"
+      :width="isMobile ? '90%' : '500px'"
+      :modal-append-to-body="false"
+    >
+      <CallDialog :phone="info.phone" />
+    </el-dialog>
+    <el-dialog
+      title
+      :visible.sync="isShowMessengerDialog"
+      :width="isMobile ? '90%' : '500px'"
+      :modal-append-to-body="false"
+    >
+      <MessengerDialog :messenger="info.fbMessage" />
+    </el-dialog>
+    <el-dialog
+      title
+      :visible.sync="isShowMapDialog"
+      :width="isMobile ? '90%' : '500px'"
+      :modal-append-to-body="false"
+    >
+      <MapDialog
+        :link="info.googleLink"
+        :address="info.address"
+      />
+    </el-dialog>
   </div>
 </template>
 
@@ -142,7 +175,7 @@ export default {
   text-decoration: none;
   color: $contact_btn_color;
   background: $contact_btn_bg;
-  box-shadow:$contact_btn_border;
+  box-shadow: $contact_btn_border;
   transition: all 0.5s;
 
   svg {
@@ -172,7 +205,7 @@ export default {
 
   &::v-deep span {
     color: #c00;
-    font-size:1.1em;
+    font-size: 1.1em;
     font-weight: bold;
   }
 }
@@ -225,16 +258,16 @@ export default {
   .contact-info {
     display: flex;
     width: 100%;
-  //  max-width: 95%;
+    //  max-width: 95%;
     height: auto;
-    padding:5%;
+    padding: 5%;
     transform: none;
     position: static;
     margin-top: 60px;
 
-
     .logo {
-      width: $contact_logo_mobile_width;margin: 5% auto 10%;
+      width: $contact_logo_mobile_width;
+      margin: 5% auto 10%;
     }
   }
 
@@ -242,8 +275,8 @@ export default {
     width: 100%;
     justify-content: center;
     text-align: center;
-  //  margin-bottom: 40px;
-      margin-bottom:-12px;
+    //  margin-bottom: 40px;
+    margin-bottom: -12px;
 
     > * {
       margin-bottom: 12px;
@@ -253,11 +286,12 @@ export default {
   .logo {
     margin-bottom: 20px;
   }
-.btn,
+  .btn,
   .address,
   .google-btn {
-    width:100%;
-    }
+    width: 100%;
+    position: relative;
+  }
 
   .address {
     margin-bottom: 0;
@@ -265,16 +299,15 @@ export default {
     border: 1px solid #666;
     border-bottom: none;
   }
-.btn svg {
+  .btn svg {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: calc(50% - 5em);
     margin-right: 0;
   }
-  svg+span{
-        margin-left: 1.5em
+  svg + span {
+    margin-left: 1.5em;
   }
-
 }
 </style>
