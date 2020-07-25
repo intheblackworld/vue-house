@@ -197,8 +197,8 @@ height:94%;margin: 1% auto  auto;
 
 .flower {
   width: size(495);
-  top: size(715);
-  left: size(206);
+  bottom: 0;
+  right: 0;
   z-index: 5;
   transform-origin: bottom;
   animation: flower 5s linear 0s infinite alternate;
