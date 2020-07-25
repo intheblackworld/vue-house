@@ -1,9 +1,33 @@
 <template>
   <div class="relative">
     <div
-      class="line-bg"
-      data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAQAAADYv8WvAAAADUlEQVQIHWNkSGOAAAADRABoDg6qmwAAAABJRU5ErkJggg=="
-    ></div>
+      class="modal"
+      v-if="modal"
+    >
+      <div
+        class="mask"
+        @click="modal = false"
+      ></div>
+      <div>
+        <img
+          src="./s1/w.jpg"
+          alt
+          v-if="!isMobile"
+        />
+
+        <img
+          src="./s1/mo.jpg"
+          alt
+          v-else
+        />
+        <img
+          src="@/projects/jh/s4/close.png"
+          alt
+          class="close"
+          @click="modal = false"
+        />
+      </div>
+    </div>
     <div v-if="!isMobile">
       <img
         src="./s1/1.jpg"
@@ -146,6 +170,70 @@
   cursor: pointer;
 }
 
+.fix-group {
+  position: fixed;
+  z-index: 10;
+  right: 20px;
+  bottom: 63px;
+
+  .button {
+    font-size: 18px;
+    color: #fff;
+    width: 150px;
+    height: 150px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .mask {
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    position: absolute;
+  }
+
+  > div {
+    position: relative;
+  }
+
+  img {
+    position: relative;
+    z-index: 122;
+    max-width: calc(100vw - 140px);
+    max-height: calc(100vh - 220px);
+  }
+
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(130%, 0%);
+    cursor: pointer;
+    width: 30px;
+  }
+}
+
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
     height: 100vh;
@@ -162,10 +250,52 @@
     height: auto;
   }
   .bg-img {
-    height: calc(100vh - 63px) !important;
+    height: calc(100vh - 63px - 60px) !important;
 
     &.bottom {
       object-position: bottom;
+    }
+  }
+
+  .btn {
+    top: 50%;
+  }
+
+  .modal {
+    width: 100vw;
+    height: 100vh;
+    z-index: 200;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .mask {
+      background: rgba(0, 0, 0, 0.4);
+      width: 100%;
+      height: 100vh !important;
+      position: absolute;
+      z-index: 110;
+    }
+
+    > div {
+      position: relative;
+    }
+
+    img {
+      position: relative;
+      z-index: 122;
+      max-width: calc(100vw - 20px);
+    }
+
+    .close {
+      width: 40px;
+      position: absolute;
+      top: -50px;
+      right: 50px;
+      cursor: pointer;
     }
   }
 }
@@ -189,6 +319,7 @@ export default {
   data() {
     return {
       isMobile,
+      modal: true,
       swiperOption: {
         slidesPerView: isMobile ? 1 : 1,
         spaceBetween: isTablet ? 20 : 30,
@@ -251,11 +382,11 @@ export default {
     },
 
     showDialog() {
-      this.isDialog = true
+      this.modal = true
     },
 
     closeDialog() {
-      this.isDialog = false
+      this.modal = false
     },
   },
 
