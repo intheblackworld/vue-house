@@ -6,16 +6,22 @@
         v-lazy:background-image="require('./s5/bg.jpg')"
       ></div>
       <div
+        v-if="!isMobile"
+        class="water-img bg-img"
+        v-lazy:background-image="require('./s1/ezgif3.gif')"
+      ></div>
+      <div
         class="full-img bg-img"
         v-lazy:background-image="require('./s5/bg.png')"
       ></div>
-      <div class="river">
+    <!--    <div class="river">
         <div
           v-for="item in riverList"
           :key="item"
           v-lazy:background-image="item"
         ></div>
       </div>
+      -->
       <div class="mask absolute"></div>
       <h3 class="title absolute">雙溪之美 悉心典藏<br />浪漫RESORT水花園</h3>
       <img
@@ -74,6 +80,12 @@
   // &:first-child {
   //   position: relative;
   // }
+&.water-img{bottom: 0;right: 0;opacity: 0.3;
+    width: 80%;
+    height: 18vw;
+    position: absolute;
+    background-size:100% 100%;
+    background-position: center;}
 }
 
 @keyframes water {
