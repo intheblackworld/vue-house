@@ -8,6 +8,11 @@
       ></div>
       <div
         v-if="!isMobile"
+        class="water-img bg-img"
+        v-lazy:background-image="require('./s1/ezgif.gif')"
+      ></div>
+      <div
+        v-if="!isMobile"
         class="full-img bg-img"
         v-lazy:background-image="require('./s2/bg.png')"
       ></div>
@@ -21,6 +26,7 @@
         class="full-img bg-img"
         v-lazy:background-image="require('./mo/2/bg.png')"
       ></div>
+      <!--
       <div
         class="river"
         v-if="!isMobile"
@@ -47,8 +53,8 @@
         <div v-lazy:background-image="require('./mo/2/an_07.png')"></div>
         <div v-lazy:background-image="require('./mo/2/an_08.png')"></div>
         <div v-lazy:background-image="require('./mo/2/an_09.png')"></div>
-        <!-- <div v-lazy:background-image="require('./mo/2/an_10.png')"></div> -->
       </div>
+      -->
       <h3
         class="title absolute"
         data-aos="fade"
@@ -121,14 +127,20 @@
   // &:first-child {
   //   position: relative;
   // }
+&.water-img{bottom: 0;right: 0;opacity: 0.4;
+    width: 80%;
+    height: 17vw;
+    position: absolute;
+    background-size:100% 100%;
+    background-position: center;}
 }
 
 @keyframes water {
   from {
-    transform: skewX(50deg);
+    transform:translateX(-1%);
   }
   to {
-    transform: skewX(-50deg);
+    transform:translateX(1%);
   }
 }
 

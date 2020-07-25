@@ -62,7 +62,9 @@ html{
 .full-bg {
   width: 100%;
   min-height: 100vh;
-  height: size(1080);
+  height:100vh;  
+  max-height: size(1080);
+  object-fit: cover;
   position: relative;
   overflow: hidden;
 }
@@ -70,7 +72,8 @@ html{
 .full-img {
   width: 100%;
   min-height: 100vh;
-  height: size(1080);
+  height:100vh;  
+  max-height: size(1080);
   position: absolute;
   background-size: cover;
   background-position: center;
