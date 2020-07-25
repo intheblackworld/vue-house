@@ -6,7 +6,6 @@
         v-lazy:background-image="require('./s5/bg.jpg')"
       ></div>
       <div
-        v-if="!isMobile"
         class="water-img bg-img"
         v-lazy:background-image="require('./s1/ezgif3.gif')"
       ></div>
@@ -79,7 +78,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   width: size(846);
   height:40%;
-  top: 15%;
+  top: 13%;
   right: 0;
   z-index: 2;
   font-size:calc(12px + 1vh);
@@ -121,6 +120,11 @@
 }
 
 @media screen and (max-width: 767px) {
+.bg-img {
+&.water-img{top:45.5333333333vw;
+    width: 100%;
+    height: 39vw;}
+}
   .full-bg {
     width: 100vw;
     min-height: auto;
