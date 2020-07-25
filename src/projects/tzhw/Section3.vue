@@ -36,6 +36,21 @@
         alt=""
         class="flower absolute"
       >
+      <img
+        src="./s3/float5.png"
+        alt=""
+        class="flower5 absolute"
+      >
+      <img
+        src="./s3/float6.png"
+        alt=""
+        class="flower6 absolute"
+      >
+      <img
+        src="./s3/float7.png"
+        alt=""
+        class="flower7 absolute"
+      >
 
       <img
         src="./s1/float.png"
@@ -158,6 +173,11 @@ height: 94%;margin: 2% auto 0 auto;
     transform: skewX(-5deg);
   }
 }
+@keyframes flower5 {
+  to {
+    transform: rotate(0deg);
+  }
+}
 
 .flower {
   width: 50vh;
@@ -169,24 +189,37 @@ height: 94%;margin: 2% auto 0 auto;
 
 .float1 {
   width: size(57);
-  top: size(30);
-  right: size(110);
+  top: size(10);
+  right: size(10);
   z-index: 4;
 }
 
 .float2 {
   width: size(49);
-  top: size(86);
-  right: size(100);
+  top: size(66);
+  right: size(0);
   z-index: 4;
 }
 
 .float3 {
   width: size(43);
-  top: size(117);
-  right: size(181);
+  top: size(97);
+  right: size(81);
   z-index: 4;
 }
+.flower5,
+.flower6,
+.flower7 {
+  width: 50vh;
+  bottom: 0;
+  right: -7vh;
+    transform: rotate(-10deg);
+  transform-origin: bottom;
+  animation: flower5 3s ease-in-out 0s infinite alternate;
+}
+.flower6 {transform: rotate(-15deg);animation-delay: .5s;}
+.flower7 {transform: rotate(-12deg);animation-delay: 1s;}
+
 
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {

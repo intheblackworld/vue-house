@@ -28,11 +28,26 @@
               精鑄絕美雙鉅著磅礡落成。
             </h3>
           </div>
-          <img
-            src="./s3/float4.png"
-            alt=""
-            class="flower absolute"
-          >
+      <img
+        src="./s3/float4.png"
+        alt=""
+        class="flower absolute"
+      >
+      <img
+        src="./s3/float5.png"
+        alt=""
+        class="flower5 absolute"
+      >
+      <img
+        src="./s3/float6.png"
+        alt=""
+        class="flower6 absolute"
+      >
+      <img
+        src="./s3/float7.png"
+        alt=""
+        class="flower7 absolute"
+      >
 
           <img
             src="./s1/float.png"
@@ -185,7 +200,6 @@ height:94%;margin: 1% auto  auto;
     height: size(974);
   }
 }
-
 @keyframes flower {
   from {
     transform: skewX(5deg);
@@ -194,36 +208,52 @@ height:94%;margin: 1% auto  auto;
     transform: skewX(-5deg);
   }
 }
+@keyframes flower5 {
+  to {
+    transform: rotate(0deg);
+  }
+}
 
 .flower {
-  width: size(495);
+  width: 50vh;
   bottom: 0;
-  right: 0;
-  z-index: 5;
+  right: -7vh;
   transform-origin: bottom;
-  animation: flower 5s linear 0s infinite alternate;
+  animation: flower 3s ease-in-out 0s infinite alternate;
 }
 
 .float1 {
   width: size(57);
-  top: size(82);
-  left: size(545);
+  top: size(10);
+  right: size(10);
   z-index: 4;
 }
 
 .float2 {
   width: size(49);
-  top: size(139);
-  left: size(564);
+  top: size(66);
+  right: size(0);
   z-index: 4;
 }
 
 .float3 {
   width: size(43);
-  top: size(170);
-  left: size(488);
+  top: size(97);
+  right: size(81);
   z-index: 4;
 }
+.flower5,
+.flower6,
+.flower7 {
+  width: 50vh;
+  bottom: 0;
+  right: -7vh;
+    transform: rotate(-10deg);
+  transform-origin: bottom;
+  animation: flower5 3s ease-in-out 0s infinite alternate;
+}
+.flower6 {transform: rotate(-15deg);animation-delay: .5s;}
+.flower7 {transform: rotate(-12deg);animation-delay: 1s;}
 
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {

@@ -22,42 +22,20 @@
         ></div>
       </div>
       -->
-      <div class="mask absolute"></div>
-      <h3 class="title absolute">雙溪之美 悉心典藏<br />浪漫RESORT水花園</h3>
+      <div class="mask absolute">
+      <h3 class="title">雙溪之美 悉心典藏<br />浪漫RESORT水花園</h3>
       <img
         src="./s2/hr.png"
         alt=""
-        class="hr absolute"
+        class="hr"
         data-aos="grow"
         data-aos-delay="400"
         data-aos-duration="600"
       >
-      <h3 class="desc absolute">恰前有雙溪環腰、內有波光瀲灩<br />
+      <h3 class="desc">恰前有雙溪環腰、內有波光瀲灩<br />
         兩棟環景鉅座間以水花園串聯，水幕森林、綠蔭滿懷<br />
         如同置身頂級渡假飯店中步步皆美。</h3>
-
-      <!-- <div class="float absolute">
-        <img
-          src="./s1/float.png"
-          alt=""
-          class="float1"
-        >
-        <img
-          src="./s1/float2.png"
-          alt=""
-          class="float2"
-        >
-        <img
-          src="./s1/float.png"
-          alt=""
-          class="float3"
-        >
-        <img
-          src="./s1/float2.png"
-          alt=""
-          class="float4"
-        >
-      </div> -->
+</div>
     </div>
   </div>
 </template>
@@ -97,118 +75,46 @@
   }
 }
 
-.river {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 100vw;
-  z-index: 1;
-  div {
-    width: 100%;
-    height: 27px;
-    // margin-left: calc((1920px - 2600px) / 2);
-    // position: absolute;
-    background-size: cover;
-    background-position: 100%;
-  }
-
-  & div:nth-child(1) {
-    animation: water 5s ease-in-out 0s infinite alternate;
-  }
-
-  & div:nth-child(2) {
-    animation: water 5s ease-in-out 0s infinite alternate-reverse;
-  }
-
-  & div:nth-child(3) {
-    animation: water 5s ease-in-out 0s infinite alternate;
-  }
-
-  & div:nth-child(4) {
-    animation: water 5s ease-in-out 0s infinite alternate-reverse;
-  }
-
-  & div:nth-child(5) {
-    animation: water 5s ease-in-out 0s infinite alternate;
-  }
-
-  & div:nth-child(6) {
-    animation: water 5s ease-in-out 0s infinite alternate-reverse;
-  }
-  & div:nth-child(7) {
-    animation: water 5s ease-in-out 0s infinite alternate;
-  }
-  & div:nth-child(8) {
-    animation: water 5s ease-in-out 0s infinite alternate-reverse;
-  }
-  & div:nth-child(9) {
-    animation: water 5s ease-in-out 0s infinite alternate;
-  }
-  & div:nth-child(10) {
-    animation: water 5s ease-in-out 0s infinite alternate-reverse;
-  }
-  & div:nth-child(11) {
-    animation: water 5s ease-in-out 0s infinite alternate-reverse;
-  }
-  & div:nth-child(12) {
-    animation: water 5s ease-in-out 0s infinite alternate-reverse;
-  }
-  & div:nth-child(13) {
-    animation: water 5s ease-in-out 0s infinite alternate-reverse;
-  }
-  & div:nth-child(14) {
-    animation: water 5s ease-in-out 0s infinite alternate-reverse;
-  }
-
-  & div:nth-child(15) {
-    animation: water 5s ease-in-out 0s infinite alternate-reverse;
-  }
-}
-
-.title {
-  font-size: size(50);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: 5px;
-  text-align: center;
-  color: #ffffff;
-  top: size(162);
-  right: size(171);
-  z-index: 3;
-}
-
-.desc {
-  font-size: size(28);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.81;
-  letter-spacing: normal;
-  text-align: center;
-  color: #ffffff;
-  top: size(380);
-  right: size(108);
-  z-index: 3;
-}
-
-.hr {
-  width: size(539);
-  height: size(30);
-  top: size(326);
-  right: size(156);
-  z-index: 3;
-}
-
 .mask {
   background-color: rgba(0, 0, 0, 0.5);
   width: size(846);
-  height: size(453);
-  top: size(128);
+  height:40%;
+  top: 15%;
   right: 0;
   z-index: 2;
+  font-size:calc(12px + 1vh);
+  color: #ffffff;
+  font-weight:initial;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+    align-content:center;
+
 }
+.title {
+  font-size:2.1em;
+  font-weight: bold;
+  letter-spacing:0.1em;
+}
+
+.desc {
+  font-size:1em;
+  font-weight: normal;
+  line-height: 1.81;
+}
+
+.hr {
+    width: 25em;
+    margin: 0.5em auto;
+    height: auto;
+}
+
 
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
