@@ -295,6 +295,7 @@
 @media screen and (max-width: 767px) {
   .container {
     width: 100vw;
+    margin-top: size-m(140);
   }
 
   .title-block {
@@ -467,7 +468,7 @@ export default {
         },
         {
           img: require('./s7/3.jpg'),
-          title: '雙面探光,讓陽光瀟進來',
+          title: '雙面採光,讓陽光瀟進來',
         },
       ],
       slideListM: [

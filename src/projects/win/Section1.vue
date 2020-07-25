@@ -1,5 +1,9 @@
 <template>
   <div class="relative">
+    <div
+      class="line-bg"
+      data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAQAAADYv8WvAAAADUlEQVQIHWNkSGOAAAADRABoDg6qmwAAAABJRU5ErkJggg=="
+    ></div>
     <div v-if="!isMobile">
       <img
         src="./s1/1.jpg"
@@ -41,42 +45,57 @@
         data-aos="fade"
         data-aos-delay="1000"
       >
-
+      <img
+        src="./s1/right.png"
+        alt=""
+        class="btn absolute"
+        data-aos="fade"
+        data-aos-delay="1000"
+        @click="showDialog"
+      >
     </div>
     <div v-else>
       <img
         src="./s1/m/1.jpg"
         alt=""
         class="bg-img"
-        
       >
       <img
         src="./s1/m/2.png"
         alt=""
-        class="bg-img"
+        class="bg-img bottom"
         data-aos="fade"
         data-aos-delay="400"
       >
       <img
         src="./s1/m/3.png"
         alt=""
-        class="bg-img"
+        class="bg-img bottom"
         data-aos="fade"
         data-aos-delay="600"
       >
       <img
         src="./s1/m/4.png"
         alt=""
-        class="bg-img"
+        class="bg-img bottom"
         data-aos="fade"
         data-aos-delay="800"
       >
       <img
         src="./s1/m/5.png"
         alt=""
-        class="bg-img"
+        class="bg-img bottom"
         data-aos="fade"
         data-aos-delay="1000"
+      >
+
+      <img
+        src="./s1/right.png"
+        alt=""
+        class="btn absolute"
+        data-aos="fade"
+        data-aos-delay="1000"
+        @click="showDialog"
       >
 
       <!-- <img
@@ -92,17 +111,19 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .relative {
-  height: 100vh;
+  height: auto;
   overflow: hidden;
 }
 .bg-img {
   width: 100vw;
-  height: 100vh;
+  height: auto;
+  // height: auto;
   position: absolute;
   display: block;
   top: 0;
   left: 0;
   object-fit: cover;
+  object-position: center;
 
   &:nth-child(1) {
     position: relative;
@@ -110,11 +131,19 @@
 }
 
 .b-img {
-  width: 100%;height: 7vh;
+  width: 100%;
+  height: 7vh;
   object-fit: cover;
   position: absolute;
   bottom: 0;
   left: 0;
+}
+
+.btn {
+  width: size(200);
+  top: 70%;
+  right: 0;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -133,7 +162,11 @@
     height: auto;
   }
   .bg-img {
-    height: auto;
+    height: calc(100vh - 63px) !important;
+
+    &.bottom {
+      object-position: bottom;
+    }
   }
 }
 </style>
@@ -215,6 +248,14 @@ export default {
       } else {
         this.slideIndex = swiper.activeIndex - 1
       }
+    },
+
+    showDialog() {
+      this.isDialog = true
+    },
+
+    closeDialog() {
+      this.isDialog = false
     },
   },
 

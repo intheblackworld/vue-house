@@ -1,5 +1,5 @@
 <template>
-  <div class="home no-padding-top">
+  <div class="home">
     <Loading :loading="load" />
     <SideNavigation
       v-if="isSide"
