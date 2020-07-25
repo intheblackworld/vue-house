@@ -61,7 +61,7 @@ html{
 
 .full-bg {
   width: 100%;
-  min-height: 100vh;
+ // min-height: 100vh;
   height:100vh;  
   max-height: size(1080);
   object-fit: cover;
@@ -71,7 +71,7 @@ html{
 
 .full-img {
   width: 100%;
-  min-height: 100vh;
+//  min-height: 100vh;
   height:100vh;  
   max-height: size(1080);
   position: absolute;
@@ -351,16 +351,18 @@ img[lazy='loaded'] {
 
   .full-bg {
     width: 100%;
-    min-height: 100vh;
-    height: size-m(604);
+   // min-height: 100vh;
+   // height: size-m(604);
+    max-height: size-m(1080);
     position: relative;
     overflow: hidden;
   }
   
   .full-img {
     width: 100%;
-    min-height: 100vh;
-    height: size-m(604);
+  //  min-height: 100vh;
+   // height: size-m(604);
+    max-height: size-m(1080);
     position: absolute;
     background-size: cover;
     background-position: center;

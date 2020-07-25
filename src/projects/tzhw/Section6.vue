@@ -89,7 +89,7 @@
 .bg {
   background-size: cover;
   position: relative;
-  height: size(1080);
+  height: calc(100vh - 50px);overflow: hidden;
 }
 
 .section6 {

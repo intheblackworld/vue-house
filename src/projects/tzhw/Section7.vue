@@ -5,60 +5,64 @@
         class="full-img bg-img"
         v-lazy:background-image="require('./s3/bg.jpg')"
       ></div>
-      <div class="content absolute">
-        <div class="border"></div>
+      <div class="box">
+      <div class="content">
+        <div class="border flex">
+          <div class="txt">
+            <h3 class="title">
+              稀世尊藏無價山水<br />頂尖團隊聯手雙鉅著
+            </h3>
+            <img
+              src="./s3/hr.png"
+              alt=""
+              class="hr"
+              data-aos="grow"
+              data-aos-delay="400"
+              data-aos-duration="600"
+            >
+
+            <h3 class="desc">
+              因為土地難得，堅持盡善盡美！<br />
+              太子華威兩大建築龍頭攜手<br />
+              PGA周夢龍、聯邦結構、大成工程境業設計、瀚翔景觀、藍克思燈光太子物業，頂尖建築團隊匯聚<br />
+              精鑄絕美雙鉅著磅礡落成。
+            </h3>
+          </div>
+          <img
+            src="./s3/float4.png"
+            alt=""
+            class="flower absolute"
+          >
+
+          <img
+            src="./s1/float.png"
+            v-if="!isMobile"
+            alt=""
+            data-aos="fade-down-left"
+            data-aos-delay="400"
+            data-aos-duration="1000"
+            class="float1 absolute"
+          >
+          <img
+            src="./s1/float.png"
+            v-if="!isMobile"
+            alt=""
+            data-aos="fade-down-left"
+            data-aos-delay="400"
+            data-aos-duration="1000"
+            class="float2 absolute"
+          >
+          <img
+            src="./s1/float2.png"
+            v-if="!isMobile"
+            alt=""
+            data-aos="float3"
+            data-aos-delay="500"
+            data-aos-duration="1100"
+            class="float3 absolute"
+          >
+        </div>
       </div>
-      <h3 class="title absolute">
-        稀世尊藏無價山水<br />頂尖團隊聯手雙鉅著
-      </h3>
-      <img
-        src="./s3/hr.png"
-        alt=""
-        class="hr absolute"
-        data-aos="grow"
-        data-aos-delay="400"
-        data-aos-duration="600"
-      >
-
-      <h3 class="desc absolute">
-        因為土地難得，堅持盡善盡美！<br />
-        太子華威兩大建築龍頭攜手<br />
-        PGA周夢龍、聯邦結構、大成工程境業設計、瀚翔景觀、藍克思燈光太子物業，頂尖建築團隊匯聚<br />
-        精鑄絕美雙鉅著磅礡落成。
-      </h3>
-      <img
-        src="./s3/float4.png"
-        alt=""
-        class="flower absolute"
-      >
-
-      <img
-        src="./s1/float.png"
-        v-if="!isMobile"
-        alt=""
-        data-aos="fade-down-left"
-        data-aos-delay="400"
-        data-aos-duration="1000"
-        class="float1 absolute"
-      >
-      <img
-        src="./s1/float.png"
-        v-if="!isMobile"
-        alt=""
-        data-aos="fade-down-left"
-        data-aos-delay="400"
-        data-aos-duration="1000"
-        class="float2 absolute"
-      >
-      <img
-        src="./s1/float2.png"
-        v-if="!isMobile"
-        alt=""
-        data-aos="float3"
-        data-aos-delay="500"
-        data-aos-duration="1100"
-        class="float3 absolute"
-      >
       <img
         src="./s7/img.png"
         alt=""
@@ -86,6 +90,7 @@
         ></div>
       </swiper> -->
     </div>
+    </div>
   </div>
 </template>
 
@@ -94,7 +99,7 @@
 .bg {
   background-size: cover;
   position: relative;
-  height: size(1080);
+  height: calc(100vh - 50px);overflow: hidden;
 }
 
 .section3 {
@@ -124,72 +129,57 @@
 }
 
 .bg-img {
+  position: absolute;
   background-attachment: fixed;
 }
+.box{width: calc((100vh - 50px) * 1920 / 1080);
+height:94%;margin: 1% auto  auto;
+  position: relative;z-index: 6;}
 
-.bg-img {
-  position: absolute;
-  // &:first-child {
-  //   position: relative;
-  // }
-}
-
-.content {
-  width: size(535);
-  height: size(974);
-  top: size(54);
-  left: size(89);
-  padding: size(18);
+.content {width: 32%;display:inline-block;height: 100%;margin: 0 1.5% 0 0;
+  padding: size(18);float: left;position: relative;
   background-color: #fff;
 
   .border {
     width: 100%;
     height: 100%;
     border: 1px solid #004ea2;
+    justify-content: center;
+    align-items: center;
   }
 }
-
-.title {
-  font-size: size(43);
-  font-weight: bold;
+.txt{
+  font-size:calc(12px + 1vh);
+  font-weight: normal;
   font-stretch: normal;
-  font-style: normal;
+  font-style: normal;}
+.title {
+  font-size:1.65em;
+  font-weight: bold;
   line-height: 1.5;
-  letter-spacing: 4.33px;
+  letter-spacing: 0.15em;
   text-align: center;
   color: #004ea2;
-  top: size(240);
-  left: size(168);
 }
 
 .hr {
-  width: size(475);
-  height: size(16);
-  top: size(392);
-  left: size(120);
+  width:44vh;
+  height:auto;
+  margin: 1.1vh auto;
 }
 
 .desc {
-  width: size(373);
-  font-size: size(24);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
+  width: 80%;
+  margin: auto;
+  text-align: justify;
   line-height: 2.05;
-  letter-spacing: -0.49px;
-  text-align: left;
+  font-weight: normal;
   color: #04040c;
-  top: size(434);
-  left: size(185);
 }
 
-.main-img {
-  width: size(1180);
-  height: size(974);
-  top: size(54);
-  right: size(88);
+.main-img {width: auto;margin: 0 1.5% 0 0;
+  height:100%;
   left: auto;
-  position: absolute;
   .item-img {
     width: size(1180);
     height: size(974);
@@ -240,64 +230,36 @@
 }
 
 @media screen and (max-width: 767px) {
-  .bg,
+  .bg{height:auto;}
   .bg-img {
     height: size-m(835);
   }
-  .bg-img {
-    background: #fff !important;
-  }
+.box{width: 96%;display:flex;
+    flex-wrap:wrap;
+height: auto;}
+.img3{width: 100%;
+  height: auto;
+}
+ .content{
+      order:2;
+    width: 100%;margin:size-m(10) 0 size-m(10) 0;float:none;}
+
+.txt{
+  margin:  size-m(30) auto  size-m(150);
+} 
+.desc {
+  font-size:calc(12px + 0.3vh);
+}
 
   .main-img {
-    width: 100vw;
-    height: size-m(310);
-    top: 0;
-    right: 0;
-    left: auto;
-    position: absolute;
-  }
-
-  .title {
-    font-size: size-m(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.52;
-    letter-spacing: 2.5px;
-    text-align: center;
-    color: #004ea2;
-    top: size-m(371);
-    left: size-m(66);
-  }
-
-  .content {
-    background-color: #fff;
-    display: none;
-
-    .border {
-      display: none;
+      order:1;
+      width: 100%;
+      height:auto;
+    .item-img {
+      width: 100%;
+      height:auto;
+     // height: size-m(310);
     }
-  }
-
-  .hr {
-    width: size-m(305);
-    height: size-m(11);
-    top: size-m(482);
-    right: size-m(32);
-  }
-
-  .desc {
-    width: size-m(312);
-    font-size: size-m(14);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.57;
-    letter-spacing: normal;
-    text-align: center;
-    color: #04040c;
-    top: size-m(509);
-    right: size-m(32);
   }
 
   .flower {

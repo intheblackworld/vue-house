@@ -5,58 +5,61 @@
         class="full-img bg-img"
         v-lazy:background-image="require('./s3/bg.jpg')"
       ></div>
-      <div class="content absolute">
-        <div class="border"></div>
+      <div class="box">
+        <div class="content">
+        <div class="border flex">
+      <div class="txt">
+        <h3 class="title">
+          四方層峰畔水而居<br />
+          雙溪首席富詠山河
+        </h3>
+        <img
+          src="./s3/hr.png"
+          alt=""
+          class="hr"
+          data-aos="grow"
+          data-aos-delay="400"
+          data-aos-duration="600"
+        >
+
+        <h3 class="desc">
+          不只景觀傲人，源源不絕的自然綠蔭環繞更具收藏價值。3400萬坪陽明山國家公園與九座公園提供市區最難得的天然綠景，健行踏青，隨性出發；忠誠路、文林商圈與天母SOGO讓繁華便利生活垂手可得。
+        </h3>
       </div>
-      <h3 class="title absolute">
-        四方層峰畔水而居<br />
-        雙溪首席富詠山河
-      </h3>
-      <img
-        src="./s3/hr.png"
-        alt=""
-        class="hr absolute"
-        data-aos="grow"
-        data-aos-delay="400"
-        data-aos-duration="600"
-      >
+        <img
+          src="./s3/float4.png"
+          alt=""
+          class="flower absolute"
+        >
 
-      <h3 class="desc absolute">
-        不只景觀傲人，源源不絕的自然綠蔭環繞更具收藏價值。3400萬坪陽明山國家公園與九座公園提供市區最難得的天然綠景，健行踏青，隨性出發；忠誠路、文林商圈與天母SOGO讓繁華便利生活垂手可得。
-      </h3>
-      <img
-        src="./s3/float4.png"
-        alt=""
-        class="flower absolute"
-      >
-
-      <img
-        src="./s1/float.png"
-        v-if="!isMobile"
-        alt=""
-        data-aos="fade-down-left"
-        data-aos-delay="400"
-        data-aos-duration="1000"
-        class="float1 absolute"
-      >
-      <img
-        src="./s1/float.png"
-        v-if="!isMobile"
-        alt=""
-        data-aos="fade-down-left"
-        data-aos-delay="400"
-        data-aos-duration="1000"
-        class="float2 absolute"
-      >
-      <img
-        src="./s1/float2.png"
-        v-if="!isMobile"
-        alt=""
-        data-aos="float3"
-        data-aos-delay="500"
-        data-aos-duration="1100"
-        class="float3 absolute"
-      >
+        <img
+          src="./s1/float.png"
+          v-if="!isMobile"
+          alt=""
+          data-aos="fade-down-left"
+          data-aos-delay="400"
+          data-aos-duration="1000"
+          class="float1 absolute"
+        >
+        <img
+          src="./s1/float.png"
+          v-if="!isMobile"
+          alt=""
+          data-aos="fade-down-left"
+          data-aos-delay="400"
+          data-aos-duration="1000"
+          class="float2 absolute"
+        >
+        <img
+          src="./s1/float2.png"
+          v-if="!isMobile"
+          alt=""
+          data-aos="float3"
+          data-aos-delay="500"
+          data-aos-duration="1100"
+          class="float3 absolute"
+        ></div>
+      </div>
 
       <swiper
         class="main-img"
@@ -101,6 +104,7 @@
         </div>
       </swiper>
     </div>
+    </div>
   </div>
 </template>
 
@@ -109,7 +113,7 @@
 .bg {
   background-size: cover;
   position: relative;
-  height: size(1080);
+  height: calc(100vh - 50px);overflow: hidden;
 }
 
 .section4 {
@@ -139,72 +143,58 @@
 }
 
 .bg-img {
+  position: absolute;
   background-attachment: fixed;
 }
+.box{width: calc((100vh - 50px) * 1920 / 1080);
+height:94%;margin: 1% auto  auto;
+  position: relative;z-index: 6;}
 
-.bg-img {
-  position: absolute;
-  // &:first-child {
-  //   position: relative;
-  // }
-}
 
-.content {
-  width: size(535);
-  height: size(974);
-  top: size(54);
-  left: size(89);
-  padding: size(18);
+.content {width: 32%;display:inline-block;height: 100%;margin: 0 1.5% 0 0;
+  padding: size(18);float: left;position: relative;
   background-color: #fff;
 
   .border {
     width: 100%;
     height: 100%;
     border: 1px solid #004ea2;
+    justify-content: center;
+    align-items: center;
   }
 }
-
-.title {
-  font-size: size(43);
-  font-weight: bold;
+.txt{
+  font-size:calc(12px + 1vh);
+  font-weight: normal;
   font-stretch: normal;
-  font-style: normal;
+  font-style: normal;}
+.title {
+  font-size:1.65em;
+  font-weight: bold;
   line-height: 1.5;
-  letter-spacing: 4.33px;
+  letter-spacing: 0.15em;
   text-align: center;
   color: #004ea2;
-  top: size(240);
-  left: size(168);
 }
 
 .hr {
-  width: size(475);
-  height: size(16);
-  top: size(392);
-  left: size(120);
+  width:44vh;
+  height:auto;
+  margin: 1.1vh auto;
 }
 
 .desc {
-  width: size(373);
-  font-size: size(24);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
+  width: 80%;
+  margin: auto;
+  text-align: justify;
   line-height: 2.05;
-  letter-spacing: -0.49px;
-  text-align: left;
+  font-weight: normal;
   color: #04040c;
-  top: size(434);
-  left: size(185);
 }
 
-.main-img {
-  width: size(1180);
-  height: size(974);
-  top: size(54);
-  right: size(88);
+.main-img {width: auto;margin: 0 1.5% 0 0;
+  height:100%;
   left: auto;
-  position: absolute;
   .item-img {
     width: size(1180);
     height: size(974);
@@ -213,20 +203,19 @@
 
 @keyframes flower {
   from {
-    transform: skewX(5deg);
+    transform: skewX(3deg);
   }
   to {
-    transform: skewX(-5deg);
+    transform: skewX(-3deg);
   }
 }
 
 .flower {
-  width: size(495);
-  top: size(715);
-  left: size(206);
-  z-index: 5;
+  width: 50vh;
+  bottom: 0;
+  right: -7vh;
   transform-origin: bottom;
-  animation: flower 5s linear 0s infinite alternate;
+  animation: flower 3s linear 0s infinite alternate;
 }
 
 .float1 {
@@ -255,65 +244,40 @@
 }
 
 @media screen and (max-width: 767px) {
-  .bg,
+  .bg{height:auto;}
   .bg-img {
-    height: size-m(779);
+    height: size-m(835);
   }
   .bg-img {
-    background: #fff !important;
+   // background: #fff !important;
   }
 
-  .content {
-    display: none;
+.box{width: 96%;display:flex;
+    flex-wrap:wrap;
+height: auto;}
+.img3{width: 100%;
+  height: auto;
+}
 
-    .border {
-      display: none;
-    }
-  }
+.content{
+      order:2;
+    width: 100%;margin:size-m(10) 0 size-m(10) 0;float:none;}
 
-  .title {
-    font-size: size-m(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.52;
-    letter-spacing: 2.5px;
-    text-align: center;
-    color: #004ea2;
-    top: size-m(346);
-    left: size-m(80);
-  }
-
-  .hr {
-    width: size-m(305);
-    height: size-m(11);
-    top: size-m(431);
-    left: size-m(38);
-  }
-
-  .desc {
-    width: size-m(313);
-    font-size: size-m(14);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.57;
-    letter-spacing: 0.84px;
-    text-align: left;
-    color: #04040c;
-    top: size-m(460);
-    left: size-m(30);
-  }
+.txt{
+  margin:  size-m(30) auto  size-m(150);
+} 
+.desc {
+  font-size:calc(12px + 0.3vh);
+}
 
   .main-img {
-    width: 100vw;
-    height: size-m(310);
-    top: size-m(0);
-    right: size-m(0);
-    position: absolute;
+      order:1;
+      width: 100%;
+      height:auto;
     .item-img {
-      width: 100vw;
-      height: size-m(310);
+      width: 100%;
+      height:auto;
+     // height: size-m(310);
     }
   }
 

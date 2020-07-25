@@ -6,16 +6,12 @@
         class="full-img"
         v-lazy:background-image="require('./s2/bg.jpg')"
       ></div>
-      <div
-        v-if="!isMobile"
-        class="water-img bg-img"
-        v-lazy:background-image="require('./s1/ezgif.gif')"
-      ></div>
-      <div
+     <!--  <div
         v-if="!isMobile"
         class="full-img bg-img"
         v-lazy:background-image="require('./s2/bg.png')"
       ></div>
+      -->
       <div
         v-if="isMobile"
         class="full-img"
@@ -55,15 +51,15 @@
         <div v-lazy:background-image="require('./mo/2/an_09.png')"></div>
       </div>
       -->
-      <h3
-        class="title absolute"
+      <div class="txt absolute"> <h3
+        class="title"
         data-aos="fade"
         data-aos-delay="400"
       >台北市望族將領發跡地<br />極致風水 無可挑惕</h3>
       <img
         src="./s2/hr.png"
         alt=""
-        class="hr absolute"
+        class="hr"
         data-aos="grow"
         data-aos-delay="500"
         data-aos-duration="800"
@@ -102,15 +98,17 @@
         class="float4 absolute"
       >
     </div>
+     
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
-.bg {
+.full-bg {
   background-size: cover;
   position: relative;
-  height: size(1080);
+  height: calc(100vh - 50px);
 }
 
 .section2 {
@@ -134,7 +132,7 @@
     background-size:100% 100%;
     background-position: center;}
 }
-
+/*
 @keyframes water {
   from {
     transform:translateX(-1%);
@@ -195,55 +193,52 @@
     animation: water 5s ease-in-out 0s infinite alternate-reverse;
   }
 }
-
-.title {
-  font-size: size(66);
-  font-weight: bold;
+*/
+.txt{font-size:calc(12px + 2.1vh);
+  top: 21%;
+  right:50%;
+  transform: translate(50% , -50%);
+  z-index: 3;
+  font-weight:initial;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.5;
-  letter-spacing: 6.63px;
+  letter-spacing: normal;
   text-align: center;
-  color: #ffffff;
-  top: size(103);
-  right: size(599);
-  z-index: 3;
-}
+  color: #fff;filter: drop-shadow(0 0.1em 0.3em #0466);
 
+.title{font-size:2.1em;
+  letter-spacing: 0.11em;
+  font-weight: 9800;}
 .hr {
-  width: size(746);
-  height: size(30);
-  top: size(310);
-  left: size(587);
-  z-index: 3;
+    width: 23.82em;
+    height: auto;
 }
 
 .float1 {
-  width: size(27);
-  top: size(315);
-  left: size(461);
-  z-index: 4;
+    width: 0.9em;
+    top: 6.7em;
+    left: -3.8em;
 }
 
 .float2 {
-  width: size(111);
-  top: size(322);
-  left: size(451);
-  z-index: 4;
+    width: 3.6em;
+    top: 7.0em;
+    left: -4.2em;
 }
 
 .float3 {
-  width: size(27);
-  top: size(114);
-  right: size(490);
-  z-index: 4;
+    width: 0.85em;
+    top: 0.35em;
+    right: -2.8em;
 }
 
 .float4 {
-  width: size(90);
-  top: size(70);
-  right: size(371);
-  z-index: 4;
+  width: 2.81em;
+    top: -1em;
+    right: -6.5em;
+}
+
 }
 
 /* 平板尺寸 */
@@ -251,6 +246,43 @@
 }
 
 @media screen and (max-width: 767px) {
+.full-bg {
+  height: calc(100vh - 123px);
+}
+.bg-img {
+
+&.water-img{
+    width: 100%;
+    height: 45vw;}
+}
+.txt{
+  font-size:size-m(14);
+  top: 26%;
+  right:50%;
+  width:size-m(323);
+  transform: translateX(50% , -50%);
+.title{font-size:1.9em;margin: 0 0 0.5em;}
+.float1 {
+    top: 8.5em;
+    left: -1em;//transform: rotate(10deg);
+}
+
+.float2 {
+    top: 9em;
+    left: -1em;
+}
+
+.float3 {
+    top: -1.5em;
+    right: 2em;
+}
+
+.float4 {
+    top: -2em;
+    right: -1em;
+}
+  }
+/*
   @keyframes water {
     from {
       transform: skewX(50deg);
@@ -321,6 +353,7 @@
     right: size-m(13);
     z-index: 4;
   }
+  */
 }
 </style>
 

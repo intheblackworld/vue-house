@@ -7,19 +7,18 @@
         v-lazy:background-image="require('./s1/bg.jpg')"
       ></div>
       <div
-        v-if="!isMobile"
+        v-if="isMobile"
+        class="full-img"
+        v-lazy:background-image="require('./mo/1/bg.jpg')"
+      ></div>
+      <div
         class="water-img bg-img"
-        v-lazy:background-image="require('./s1/ezgif2.gif')"
+        v-lazy:background-image="require('./s1/ezgif3.gif')"
       ></div>
       <div
         v-if="!isMobile"
         class="full-img bg-img"
         v-lazy:background-image="require('./s1/bg.png')"
-      ></div>
-      <div
-        v-if="isMobile"
-        class="full-img"
-        v-lazy:background-image="require('./mo/1/bg.jpg')"
       ></div>
       <div
         v-if="isMobile"
@@ -70,7 +69,7 @@
         <img
           src="./s1/float.png"
           v-if="!isMobile"
-          alt=""
+          alt="float"
           data-aos="fade-down-right"
           data-aos-delay="400"
           data-aos-duration="1000"
@@ -78,8 +77,7 @@
         >
         <img
           src="./s1/float2.png"
-          v-if="!isMobile"
-          alt=""
+          alt="float"
           data-aos="float1"
           data-aos-delay="500"
           data-aos-duration="1100"
@@ -87,8 +85,7 @@
         >
         <img
           src="./s1/float.png"
-          v-if="!isMobile"
-          alt=""
+          alt="float"
           data-aos="fade-down-left"
           data-aos-delay="400"
           data-aos-duration="1000"
@@ -97,7 +94,7 @@
         <img
           src="./s1/float2.png"
           v-if="!isMobile"
-          alt=""
+          alt="float"
           data-aos="float3"
           data-aos-delay="500"
           data-aos-duration="1100"
@@ -134,7 +131,7 @@
     background-size:100% 100%;
     background-position: center;}
 }
-
+/*
 @keyframes water {
   from {
     transform: skewX(50deg);
@@ -195,6 +192,7 @@
     animation: water 5s ease-in-out 0s infinite alternate-reverse;
   }
 }
+*/
 .txt{font-size:calc(12px + 2.1vh);
 
   top: 14%;
@@ -252,7 +250,40 @@ width: 0.64em;
 }
 
 @media screen and (max-width: 767px) {
-  @keyframes water {
+.bg-img {
+
+&.water-img{
+    width: 100%;
+    height: 45vw;}
+}
+.txt{
+  font-size:size-m(19);
+  top: 18%;
+  right:50%;
+  width:size-m(323);
+  transform: translateX(50%);
+.title{font-size:2em;}
+.subtitle {font-size:1.32em;margin: 0 0 0 0.2em;}
+.desc {font-size:1.2em;
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  margin: 0.44em auto;
+  width:size-m(323);
+  line-height: 1.7;
+}
+.float2 {
+    top:9em;
+    left: 0.5em;
+}
+
+.float3 {
+    top: 0em;
+    right:1em;
+}
+  }
+  
+
+/*  @keyframes water {
     from {
       transform: skewX(20deg);
     }
@@ -314,7 +345,7 @@ width: 0.64em;
     border-top: 1px solid #004ea2;
     border-bottom: 1px solid #004ea2;
     z-index: 3;
-  }
+  }*/
 }
 </style>
 

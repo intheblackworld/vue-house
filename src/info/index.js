@@ -10,7 +10,7 @@ export default {
   fbMessage: 'https://m.me/home2188/',
   caseName: '太子華威',
   houseInfos: [
-    ['', ''],
+    //['', ''],
     ['投資興建', '太子建設、華威聯合'],
     ['建築設計', 'PGA團隊-周夢龍建築師'],
     ['企劃銷售', '梁茂廣告有限公司'],

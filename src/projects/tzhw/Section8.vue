@@ -53,7 +53,7 @@
   background-size: cover;
   position: relative;
   height: 100vh;
-  min-height: size(1080);
+  height: calc(100vh - 50px);overflow: hidden;
   overflow: hidden;
 }
 
@@ -61,10 +61,12 @@
   &::v-deep {
     .swiper-pagination {
       // display: none;
-      width: 200px;
-      left: auto;
-      bottom: 20px;
-      right: 20px;
+      width: 100vw;
+      text-align: right;
+      left: 0;
+      bottom: size(20);
+      right:0;
+      padding: 0 size(60) 0 0;
     }
     .swiper-pagination-bullet {
       width: 21px;
@@ -84,17 +86,18 @@
 .bg-img {
   position: absolute;
   z-index: 2;
+  height:100%;
 }
 
 .item-img {
   width: 100vw;
-  height: size(1080);
+  height:100%;
   object-fit: cover;
 }
 
 .full-img {
   width: 100vw;
-  height: size(1080);
+  height:100%;
 }
 
 /* 平板尺寸 */

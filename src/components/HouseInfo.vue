@@ -2,7 +2,7 @@
   <div class="house-info">
     <div class="content">
       <div class="flex">
-        <div class="img"><img src="../projects/tv/s1/exterior.jpg" :alt="info.caseName"></div>
+        <div class="img"><img src="../projects/tzhw/s1/exterior.jpg" :alt="info.caseName"></div>
         <div class="info">
       <div class="title">建案資訊</div>
           <div class="item" :key="infos[0]" v-for="infos in houseInfos">
@@ -101,7 +101,7 @@ export default {
 
 &:nth-child(2){
   border-top: 0px solid #ccc;
-   .label{display: none;}
+  // .label{display: none;}
 }
   .desc {
     font-size: 15px;

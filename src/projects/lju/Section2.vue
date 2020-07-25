@@ -53,7 +53,7 @@
 <style lang="scss" scoped>
 .bg {
   width: 100vw;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 50px);
 }
 .hand {
   display: none;

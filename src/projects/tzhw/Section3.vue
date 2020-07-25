@@ -9,42 +9,28 @@
         class="full-img bg-img"
         v-lazy:background-image="require('./s3/bg.jpg')"
       ></div>
+      <div class="box">
+        <img
+        src="./s3/img.png"
+        alt="圓山大飯店 故宮 sogo"
+        class="img3"
+      >
+      <!--  <div class="flex img_box">
+        <div class="img1">
       <img
         src="./s3/1.jpg"
-        alt=""
-        class="img1 absolute"
-      >
+        alt="圓山大飯店"
+      ><br>
       <img
         src="./s3/2.jpg"
-        alt=""
-        class="img2 absolute"
-      >
+        alt="故宮"
+      ></div>
       <img
         src="./s3/3.jpg"
-        alt=""
-        class="img3 absolute"
-      >
-      <div class="content absolute">
-        <div class="border"></div>
-      </div>
-      <img
-        src="./s3/logo.png"
-        alt=""
-        class="logo absolute"
-      >
-      <img
-        src="./s3/hr.png"
-        alt=""
-        class="hr absolute"
-        data-aos="grow"
-        data-aos-delay="400"
-        data-aos-duration="600"
-      >
-
-      <h3 class="desc absolute">
-        「太子華威」享陽明山、外雙溪與故宮國際地標等人文絕美景致靜謐私密的尊貴環境，相較於信義仁愛等豪宅更顯國際價值優勢。環境天生優越、富貴渾然天成！台北市最與眾不同的富豪特區，投資教父、電子業董事長共同的置產選擇。
-      </h3>
-
+        alt="sogo" class="img2"
+      ></div> -->
+      <div class="content">
+        <div class="border flex">
       <img
         src="./s3/float4.png"
         alt=""
@@ -75,6 +61,27 @@
         data-aos-duration="1100"
         class="float3 absolute"
       >
+      <div class="txt">
+      <img
+        src="./s3/logo.png"
+        alt=""
+        class="logo"
+      >
+      <img
+        src="./s3/hr.png"
+        alt=""
+        class="hr"
+        data-aos="grow"
+        data-aos-delay="400"
+        data-aos-duration="600"
+      >
+
+      <h3 class="desc">
+        「太子華威」享陽明山、外雙溪與故宮國際地標等人文絕美景致靜謐私密的尊貴環境，相較於信義仁愛等豪宅更顯國際價值優勢。環境天生優越、富貴渾然天成！台北市最與眾不同的富豪特區，投資教父、電子業董事長共同的置產選擇。
+      </h3></div>
+      </div>
+      </div>
+      </div>
     </div>
   </div>
 </template>
@@ -82,9 +89,9 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .bg {
-  background-size: cover;
+  background-size: cover;overflow: hidden;
   position: relative;
-  height: size(1080);
+  height: calc(100vh - 50px);
 }
 
 .section3 {
@@ -97,70 +104,50 @@
 
 .bg-img {
   position: absolute;
-  // &:first-child {
-  //   position: relative;
-  // }
 }
-
-.img1 {
-  width: size(575);
-  top: size(54);
-  left: size(89);
-}
-
-.img2 {
-  width: size(575);
-  top: size(540);
-  left: size(89);
-}
+.box{width: calc((100vh - 50px) * 1920 / 1080);
+height: 94%;margin: 2% auto 0 auto;
+  position: relative;z-index: 6;}
 
 .img3 {
-  width: size(575);
-  top: size(54);
-  left: size(693);
+  width: auto;margin: 0 1.5% 0 0;float: left;
+  height:100%;
 }
 
-.content {
-  width: size(535);
-  height: size(974);
-  top: size(54);
-  right: size(89);
-  padding: size(18);
+.content {width: 32%;display:inline-block;height: 100%;
+  padding: size(18);position: relative;
   background-color: #fff;
 
   .border {
     width: 100%;
     height: 100%;
     border: 1px solid #004ea2;
+    justify-content: center;
+    align-items: center;
   }
 }
 
 .logo {
-  width: size(409);
-  height: size(152);
-  top: size(217);
-  right: size(152);
+  width:38vh;
+  height:auto;
 }
 
 .hr {
-  width: size(475);
-  height: size(16);
-  top: size(392);
-  right: size(118);
+  width:44vh;
+  height:auto;
+  margin: 1.1vh auto;
 }
 
 .desc {
-  width: size(373);
-  font-size: size(24);
+  width: 80%;
+  margin: auto;
+  font-size:calc(12px + 1vh);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 2.05;
-  letter-spacing: -0.49px;
-  text-align: left;
+  text-align: justify;
   color: #04040c;
-  top: size(434);
-  right: size(170);
 }
 
 @keyframes flower {
@@ -173,9 +160,9 @@
 }
 
 .flower {
-  width: size(495);
-  top: size(715);
-  right: size(12);
+  width: 50vh;
+  bottom: 0;
+  right: -7vh;
   transform-origin: bottom;
   animation: flower 3s ease-in-out 0s infinite alternate;
 }
@@ -206,76 +193,17 @@
 }
 
 @media screen and (max-width: 767px) {
-  .bg,
+  .bg{height:auto;}
   .bg-img {
     height: size-m(835);
   }
-  .bg-img {
-    background: #fff !important;
-  }
-  .img1 {
-    width: size-m(169);
-    top: size-m(71);
-    left: size-m(13);
-  }
-
-  .img2 {
-    width: size-m(171);
-    top: size-m(216);
-    left: size-m(13);
-  }
-
-  .img3 {
-    width: size-m(171);
-    top: size-m(71);
-    left: size-m(192);
-  }
-
-  .content {
-    width: size-m(535);
-    height: size-m(974);
-    top: size-m(54);
-    right: size-m(89);
-    padding: size-m(18);
-    background-color: #fff;
-    display: none;
-
-    .border {
-      width: 100%;
-      height: 100%;
-      border: 1px solid #004ea2;
-      display: none;
-    }
-  }
-
-  .logo {
-    width: size-m(257);
-    height: size-m(81);
-    top: size-m(391);
-    right: size-m(59);
-  }
-
-  .hr {
-    width: size-m(305);
-    height: size-m(11);
-    top: size-m(482);
-    right: size-m(32);
-  }
-
-  .desc {
-    width: size-m(312);
-    font-size: size-m(14);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.57;
-    letter-spacing: normal;
-    text-align: left;
-    color: #04040c;
-    top: size-m(509);
-    right: size-m(32);
-  }
-
+.box{width: 96%;
+height: auto;}
+.img3{width: 100%;
+  height: auto;
+}
+.content{
+    width: 100%;margin:size-m(10) 0 size-m(10) 0;}
   .flower {
     width: 100vw;
     top: auto;
@@ -284,6 +212,9 @@
     transform-origin: bottom;
     animation: flower 3s ease-in-out 0s infinite alternate;
   }
+.desc {
+  font-size:calc(12px + 0.3vh);
+}
 
   .float1 {
     width: size-m(43);
@@ -305,7 +236,10 @@
     right: size-m(71);
     z-index: 4;
   }
-}
+.txt{
+  margin:  size-m(30) auto  size-m(150);
+} 
+} 
 </style>
 
 <script>
