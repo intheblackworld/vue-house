@@ -13,7 +13,7 @@
       ></div>
       <div
         class="water-img bg-img"
-        v-lazy:background-image="require('./s1/ezgif3.gif')"
+        v-lazy:background-image="require('./s1/e1.gif')"
       ></div>
       <div
         v-if="!isMobile"

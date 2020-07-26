@@ -7,7 +7,7 @@
       ></div>
       <div
         class="water-img bg-img"
-        v-lazy:background-image="require('./s1/ezgif3.gif')"
+        v-lazy:background-image="require('./s1/e3.gif')"
       ></div>
       <div
         class="full-img bg-img"
