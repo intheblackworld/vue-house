@@ -37,16 +37,17 @@
     </div>
     <div
       class="section"
-      id="section3"
-    >
-      <Section3 />
-    </div>
-    <div
-      class="section"
       id="section4"
     >
       <Section4 />
     </div>
+    <div
+      class="section"
+      id="section3"
+    >
+      <Section3 />
+    </div>
+    
     <div
       class="section"
       id="section5"
@@ -102,14 +103,14 @@ import Loading from '@/components/Loading.vue'
 import VideoSection from '@/components/VideoSection.vue'
 import TopIndigator from '@/components/TopIndigator.vue'
 
-import Section1 from '@/projects/sdj/Section1.vue'
-// import Section2 from '@/projects/sdj/Section2.vue'
-import Section3 from '@/projects/sdj/Section3.vue'
-import Section4 from '@/projects/sdj/Section4.vue'
-import Section5 from '@/projects/sdj/Section5.vue'
-import Section6 from '@/projects/sdj/Section6.vue'
-import Section7 from '@/projects/sdj/Section7.vue'
-import Section8 from '@/projects/sdj/Section8.vue'
+import Section1 from '@/projects/sdj1/Section1.vue'
+// import Section2 from '@/projects/sdj1/Section2.vue'
+import Section3 from '@/projects/sdj1/Section3.vue'
+import Section4 from '@/projects/sdj1/Section4.vue'
+import Section5 from '@/projects/sdj1/Section5.vue'
+import Section6 from '@/projects/sdj1/Section6.vue'
+import Section7 from '@/projects/sdj1/Section7.vue'
+import Section8 from '@/projects/sdj1/Section8.vue'
 // import Section9 from '@/projects/sdj/Section9.vue'
 // import Section10 from '@/projects/sdj/Section10.vue'
 // import Section11 from '@/projects/sdj/Section11.vue'
