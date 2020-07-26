@@ -20,7 +20,7 @@
         </span>
       </a>
       <div class="address flex-c">{{info.address}}</div>
-      <div class="btn flex-c" @click="showMapDialog">
+      <div class="google-btn flex-c" @click="showMapDialog">
         <span class="flex-c">
           <font-awesome-icon icon="map-marker-alt" /><span>導航 Google 地圖</span>
         </span>
@@ -194,7 +194,7 @@ export default {
   color: $contact_google_btn_color;
   background: $contact_google_btn_bg;
   background-position: center !important;
-  box-shadow: $contact_btn_border;
+  // box-shadow: $contact_btn_border;
   transition: all 0.5s;
 
   svg {

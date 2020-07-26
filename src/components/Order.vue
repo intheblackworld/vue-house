@@ -146,7 +146,7 @@
           :disabled="!checked || !isVerify"
           @click="submit"
           :loading="isSubmit"
-        >立即預約</el-button>
+        >預約賞屋</el-button>
         <Loading
           :loading="isSubmit"
           :isOpacity="true"

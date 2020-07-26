@@ -10,20 +10,20 @@
         <swiper-slide
           v-for="(slide, index) in slideList"
           :index="index"
-          :key="slide.img"
+          :key="slide.src"
           class="item"
         >
           <img
             :src="slide.src"
             :class="`item-img`"
-              :alt="slide.title"
+              :alt="slide.src"
           />
           <img
             :src="slide.src"
             :class="`item-img2`"
-              :alt="slide.title"
+              :alt="slide.src"
           />
-          <div class="slide-title absolute">{{slide.title}}</div>
+          <div class="slide-title flex-ac absolute">{{slide.title}}</div>
           <div class="absolute txt">樣品屋圖片僅供示意參考，依實際合約附圖為準。</div>
         </swiper-slide>
         <div
@@ -40,6 +40,7 @@
 
 .bg {
   position: relative;
+  min-height: size(1080);
   height: 100vh;
   overflow: hidden;
 
@@ -49,18 +50,21 @@
       left: auto;
       bottom: 20px;
       right: 20px;
+      padding-right: size(180);
     }
     .swiper-pagination-bullet {
-      width: 21px;
-      height: 21px;
+      width: size(16);
+      height: size(16);
       box-shadow: 0 0 0 1px #fff;
       background-color: transparent;
       opacity: 1 !important;
       margin: 0 8px;
+      background-color: #fff;
+      float: right;
     }
 
     .swiper-pagination-bullet-active {
-      background-color: #000;
+      background-color: #b70049;
     }
   }
 }
@@ -79,7 +83,10 @@
 }
 
 .slide-title {
+  width: 100vw;
+  height: size(78);
   padding: 3px 25px;
+  padding-left: size(212);
   background-color: rgba(0, 0, 0, 0.4);
   color: #fff;
   font-size: size(28);
@@ -92,15 +99,15 @@
   color: #ffffff;
   z-index: 10;
   right: 0;
-  bottom: size(30);
+  bottom: size(0);
 }
 
 .txt {
   color: #ffffff;
-  z-index: 2;
-  right: size(30);
-  opacity: 0.8;
-  bottom: size(10);
+  z-index: 14;
+  left: size(380);
+  opacity: 1;
+  bottom: size(27);
 }
 .item-img {
   top: 0;
@@ -292,34 +299,6 @@ export default {
         },
         {
           src: require('./s8/7.jpg'),
-          title: '空間饗宴',
-        },
-        {
-          src: require('./s8/8.jpg'),
-          title: '空間饗宴',
-        },
-        {
-          src: require('./s8/9.jpg'),
-          title: '空間饗宴',
-        },
-        {
-          src: require('./s8/10.jpg'),
-          title: '空間饗宴',
-        },
-        {
-          src: require('./s8/11.jpg'),
-          title: '空間饗宴',
-        },
-        {
-          src: require('./s8/12.jpg'),
-          title: '空間饗宴',
-        },
-        {
-          src: require('./s8/13.jpg'),
-          title: '空間饗宴',
-        },
-        {
-          src: require('./s8/14.jpg'),
           title: '空間饗宴',
         },
       ],

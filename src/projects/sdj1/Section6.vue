@@ -1,11 +1,6 @@
 <template>
-  <div class="section5">
+  <div class="section6">
     <div class="bg">
-      <img
-        src="./s6/上揚實業_達麗_上東京(鼎力案)_角度1大廳_1090117_.jpg"
-        alt=""
-        class="item-img"
-      >
       <swiper
         :options="swiperOption"
         ref="mySwiper"
@@ -22,13 +17,13 @@
             :class="`item-img`"
             :alt="slide.title"
           />
-          <img
+          <!-- <img
             v-lazy="slide.src"
             :class="`item-img2`"
             :alt="slide.title"
-          />
-          <div class="slide-title absolute">{{slide.title}}</div>
-          <div class="absolute txt">3D示意圖僅供參考</div>
+          /> -->
+          <!-- <div class="slide-title absolute">{{slide.title}}</div> -->
+          <!-- <div class="absolute txt">3D示意圖僅供參考</div> -->
         </swiper-slide>
         <div
           class="swiper-pagination"
@@ -44,23 +39,25 @@
 
 .bg {
   position: relative;
-  height: 100vh;
+  height: size(828);
   overflow: hidden;
 
   &::v-deep {
     .swiper-pagination {
       width: 100%;
       left: auto;
-      bottom: 20px;
+      bottom: 0px;
       right: 20px;
     }
     .swiper-pagination-bullet {
-      width: 21px;
-      height: 21px;
+      width: size(18);
+      height: size(18);
       box-shadow: 0 0 0 1px #fff;
       background-color: transparent;
       opacity: 1 !important;
       margin: 0 8px;
+      float: right;
+      background-color: #9e9e9e;
     }
 
     .swiper-pagination-bullet-active {
@@ -70,59 +67,28 @@
 }
 
 .swiper-container {
-  width: 100vw;
-  height: 100vh;
+  width: size(1569);
+  height: size(779);
   overflow: hidden;
   position: absolute;
   left: 0;
   top: 0;
+  right: 0;
+  margin: 0 auto;
 
   img {
     display: block;
   }
 }
 
-.slide-title {
-  padding: 3px 50px 3px 25px;
-  background-color: rgba(0, 0, 0, 0.4);
-  color: #fff;
-  font-size: size(28);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.81;
-  letter-spacing: normal;
-  text-align: left;
-  color: #ffffff;
-  z-index: 10;
-  right: 0;
-  bottom: size(30);
-}
-.txt {
-  color: #ffffff;
-  z-index: 2;
-  right: size(30);
-  opacity: 0.8;
-  bottom: size(10);
-}
 .item-img {
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: size(1569);
+  height: size(739);
   object-fit: cover;
   object-position: center;
-  -webkit-filter: blur(5px) brightness(0.5);
-}
-.item-img2 {
   top: 0;
   left: 0;
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  object-fit: contain;
-  object-position: center;
-  z-index: 2;
+  background-color: #fff;
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -211,7 +177,6 @@
     height: calc(177.8666666667vw - 63px);
     object-fit: cover;
     object-position: center;
-    -webkit-filter: blur(5px) brightness(0.5);
   }
   .item-img2 {
     top: 50%;
@@ -236,7 +201,7 @@ import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
-  name: 'section5',
+  name: 'section6',
   mixins: [slider],
 
   components: {
@@ -269,48 +234,37 @@ export default {
       },
       slideList: [
         {
-          src: require('./s6/上揚實業_達麗_上東京(鼎力案)_角度1大廳_1090117_.jpg'),
-          title: '大廳',
+          src: require('./s6/1.png'),
         },
         {
-          src: require('./s6/大廳2.jpg'),
-          title: '大廳',
+          src: require('./s6/2.png'),
         },
         {
-          src: require('./s6/上揚實業_達麗_上東京(鼎力案)_多功能教室_1090203_.jpg'),
-          title: '媽媽教室',
+          src: require('./s6/3.png'),
         },
         {
-          src: require('./s6/上揚實業_達麗_上東京(鼎力案)_交誼廳_1090206_.jpg'),
-          title: '交誼廳',
+          src: require('./s6/4.png'),
         },
         {
-          src: require('./s6/上揚實業_達麗_上東京(鼎力案)_水景步道_1090206_.jpg'),
-          title: '水景步道',
+          src: require('./s6/5.png'),
         },
         {
-          src: require('./s6/上揚實業_達麗_上東京(鼎力案)_中庭景觀_1090206_.jpg'),
-          title: '中庭景觀',
+          src: require('./s6/6.png'),
         },
         {
-          src: require('./s6/上揚實業_達麗_上東京(鼎力案)_兒童室_1090203_.jpg'),
-          title: '兒童室',
+          src: require('./s6/7.png'),
         },
         {
-          src: require('./s6/8運動休閒區.jpg'),
-          title: '運動休閒區',
+          src: require('./s6/8.png'),
         },
         {
-          src: require('./s6/上揚實業_達麗_上東京(鼎力案)_健身房_1090203_.jpg'),
-          title: '健身房',
+          src: require('./s6/9.png'),
         },
         {
-          src: require('./s6/上揚實業_達麗_上東京(鼎力案)_中庭泳池_1090219_.jpg'),
-          title: '中庭泳池',
+          src: require('./s6/10.png'),
         },
         {
-          src: require('./s6/上揚實業_達麗_上東京(鼎力案)_RF觀星午茶區_1090103_.jpg'),
-          title: 'RF觀星午茶區',
+          src: require('./s6/11.png'),
         },
       ],
     }

@@ -35,8 +35,26 @@
     <div class="s2 relative">
       <Map :bgSrc="require('./s1/bg_02.jpg')">
         <div slot="main">
-          <img src="./s1/line.png" alt="" class="line1 absolute">
-          <img src="./s1/line.png" alt="" class="line2 absolute">
+          <img
+            v-lazy="require('./s1/cloud1.png')"
+            alt=""
+            class="cloud2-1 absolute"
+          >
+          <img
+            v-lazy="require('./s1/cloud2.png')"
+            alt=""
+            class="cloud2-2 absolute"
+          >
+          <img
+            src="./s1/line.png"
+            alt=""
+            class="line1 absolute"
+          >
+          <img
+            src="./s1/line.png"
+            alt=""
+            class="line2 absolute"
+          >
           <img
             src="./s1/ball1.png"
             alt="map"
@@ -99,20 +117,6 @@
   animation: cloud 25s linear infinite alternate-reverse;
 }
 
-.cloud2-1 {
-  width: size(394);
-  top: size(767);
-  left: size(300);
-  animation: cloud 35s linear infinite alternate-reverse;
-}
-
-.cloud2-2 {
-  width: size(394);
-  top: size(767);
-  left: size(300);
-  animation: cloud 35s linear infinite alternate-reverse;
-}
-
 .logo {
   width: size(334);
   top: size(345);
@@ -159,6 +163,22 @@
   left: auto !important;
   transform-origin: bottom;
   animation: line2 12s alternate infinite;
+}
+
+.cloud2-1 {
+  width: size(495);
+  top: size(0);
+  right: size(-220);
+  left: auto !important;
+  animation: cloud 35s linear infinite alternate-reverse;
+}
+
+.cloud2-2 {
+  width: size(394);
+  top: size(150);
+  right: auto !important;
+  left: size(150);
+  animation: cloud 35s linear infinite alternate-reverse;
 }
 
 .map {
@@ -241,7 +261,7 @@
 
 @keyframes location {
   to {
-    opacity: .8;
+    opacity: 0.8;
     //  transform: rotate(5deg);
   }
 }
@@ -276,101 +296,127 @@
 @media screen and (max-width: 767px) {
   .relative {
     // height: 100vh;
-    overflow: hidden;
+    // overflow: hidden;
     background: #eee4cb;
     //margin-top: 60px;
   }
 
-  .s2 {
-    height: auto;
-    min-height: size-m(0);
-    overflow: auto;
-  }
   .bg-img {
-    &:nth-child(1) {
-      position: absolute;
-    }
-    &.light {
-    }
-    &.logo {
-      height: size-m(200);
-      max-height: calc(100vh - 140vw);
-      width: auto;
-      left: 51.5%;
-      top: 15%;
-      transform: translate(-50%, -20%);
-      //height:auto;
-    }
-    &.b {
-      width: 140vw;
-      right: -18vw;
-      left: auto;
-      bottom: 63px;
-    }
-    &.g {
-      width: 140vw;
-      left: -18vw;
-      top: auto;
-      bottom: 63px;
-    }
-    &.a {
-      min-height: size-m(800);
-    }
-    &.cloud {
-      width: 400vw;
-      img {
-        width: 200vw;
-      }
-    }
-    &.map {
-      width: 100%;
-    }
-    &.light2 {
-      width: auto;
-      height: 100%;
-    }
-    &.location {
-      width: size-m(130);
-      height: auto;
-      z-index: 2;
-      left: size-m(660);
-      top: size-m(120);
-      transform: translateX(-50%);
-    }
-  }
-  .mapbox {
-    height: auto;
-    position: relative;
-    width: size-m(1920);
-  }
-  /*
-  .bg-img {
-    width: 100vw;
-    height: auto;
-    position: absolute;
-    display: block;
+    width: auto;
     top: 0;
+    height: size-m(929);
+    margin-left: size-m(-550);
+  }
+
+  // s1
+  .doll1 {
+    width: size-m(189);
+    top: size-m(405);
     left: 0;
-    object-fit: cover;
+  }
 
-    &:nth-child(1) {
-      position: relative;
-    }
+  .doll2 {
+    width: size-m(264);
+    top: size-m(483);
+    right: 0;
   }
-  .city {
-    margin-top: size-m(160);
+
+  .cloud1-2 {
+    // width: size-m(394);
+    // top: size-m(767);
+    // left: size-m(300);
+    // animation: cloud 25s linear infinite alternate-reverse;
+    display: none;
   }
+
+  .logo {
+    width: size-m(228);
+    top: size-m(145);
+    left: size-m(61);
+  }
+
+  .light {
+    // width: size-m(750);
+    // top: size-m(536);
+    // left: size-m(254);
+    // animation: light 2s alternate infinite;
+    display: none;
+  }
+
+  .s2 {
+    // height: auto;
+    // min-height: size-m(0);
+    // overflow: auto;
+    top: size-m(-200);
+    margin-bottom: size-m(-205);
+    background: transparent;
+    z-index: 13;
+    position: relative;
+  }
+
+  // s2
+  .ball1 {
+    width: size-m(164);
+    height: auto;
+    top: size-m(0);
+    right: auto !important;
+    left: size-m(930) !important;
+    animation: ball 12s alternate infinite;
+  }
+
+  .ball2 {
+    width: size-m(84);
+    top: size-m(130);
+    right: auto !important;
+    left: size-m(750) !important;
+    animation: ball 12s alternate infinite;
+  }
+
+  .line1 {
+    width: size-m(78);
+    top: size-m(150);
+    right: auto !important;
+    left: size-m(980) !important;
+    transform-origin: bottom;
+    animation: line1 12s alternate infinite;
+  }
+
+  .line2 {
+    width: size-m(42);
+    top: size-m(240);
+    right: auto !important;
+    left: size-m(778) !important;
+    transform-origin: bottom;
+    animation: line2 12s alternate infinite;
+  }
+
+  .cloud2-1 {
+    // width: size-m(495);
+    // top: size-m(0);
+    // right: size-m(-220);
+    // left: auto !important;
+    // animation: cloud 35s linear infinite alternate-reverse;
+    display: none;
+  }
+
+  .cloud2-2 {
+    // width: size-m(394);
+    // top: size-m(150);
+    // right: auto !important;
+    // left: size-m(150);
+    // animation: cloud 35s linear infinite alternate-reverse;
+    display: none;
+  }
+
   .location {
-    width: size-m(52);
-    top: size-m(180);
-    left: size(750);
+    width: size-m(1500);
+    height: auto;
+    z-index: 2;
+    left: 0;
+    top: size-m(-375 * 2.49 + 200);
+    animation: location 1s ease-in-out alternate infinite;
+    // transform-origin: 50% 100%;
   }
-
-  .title {
-    width: size-m(150);
-    top: size(351);
-    left: size-m(23);
-  }*/
 }
 </style>
 <script>

@@ -66,10 +66,9 @@
       class="bg fullscreen"
       v-if="isMobile"
     >
-      <div class="border absolute"></div>
-      <h3 class="title">{{title}}</h3>
+      <!-- <div class="border absolute"></div> -->
+      <!-- <h3 class="title">{{title}}</h3> -->
       <div class="video-container">
-
         <div
           :class="`video-item ${slideIndex === sIndex ? 'active' : ''}`"
           v-for="(slide, sIndex) in slideList"
@@ -99,7 +98,7 @@
             alt
           />
         </div>
-        <div class="btn-title">{{slideList[slideIndex].title}}</div>
+        <div class="btn-title" v-html="slideList[slideIndex].title"></div>
         <div
           class="btn"
           @click="slideIndex =
@@ -342,18 +341,32 @@
   .bg {
     display: block;
     padding-top: calc(100vh * 180 / 750);
-    height: calc(100vh - 63px) !important;
+    height: size-m(750) !important;
     background: $video_section_bg_m;
     background-size: 100% 100%;
     background-position: 50% 50%;
+
+    &.fullscreen {
+      height: size-m(750) !important;
+    }
   }
+
+  // .border{
+  //   width: 90vw;
+  // }
 
   .video-container {
     width: 100vw;
+    height: size-m(286);
     margin: 0;
-    height: calc(100vw * 210 / 375);
+    margin-top: size-m(70);
+    left: 0;
     &::before {
       display: none;
+    }
+
+    .video-btn {
+      width: 40px !important;
     }
   }
 
@@ -365,20 +378,25 @@
 
   .btn-group {
     display: flex;
-    width: 100vw;
-    background: $video_section_btn_bg;
+    width: 80vw;
+    background: transparent;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: size-m(375);
 
     .btn {
       width: calc(100vw * 55 / 375);
       height: 70px;
-      background: $video_section_btn_bg;
+      background: transparent;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      &:hover {
-        background: $video_section_btn_hover_bg;
-      }
+      // &:hover {
+      //   background: $video_section_btn_hover_bg;
+      // }
     }
 
     .btn-title {
@@ -387,13 +405,15 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 18px;
+      font-size: size-m(21);
       font-weight: normal;
       font-stretch: normal;
       font-style: normal;
-      line-height: 1.5;
-      letter-spacing: normal;
+      line-height: 1.46;
+      letter-spacing: 1.26px;
+      text-shadow: 0 1px 3px #000;
       text-align: center;
+      color: #ffffff;
       color: $video_section_item_hover_color;
     }
   }

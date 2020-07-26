@@ -21,13 +21,13 @@
       id="section2"
     >
       <VideoSection
-        :playBtn="require('@/projects/sdj/s2/area2_playBtn.png')"
+        :playBtn="require('@/projects/sdj1/s2/youtube.png')"
         title="系列影片"
         :close="require('@/projects/jh/s4/close.png')"
         :arrows="[require('@/projects/gydy/arrow-left.png'), require('@/projects/gydy/arrow-right.png')]"
         :slideList="[
         {
-          title: '萬眾矚目北高雄百貨版圖新時代',
+          title: '萬眾矚目北高雄<br />百貨版圖新時代',
           img: '',
           video: 'https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fdalitokyo888%2Fvideos%2F738616443631077%2F&show_text=0',
           isPlay: false,
@@ -47,7 +47,7 @@
     >
       <Section3 />
     </div>
-    
+
     <div
       class="section"
       id="section5"
@@ -56,15 +56,15 @@
     </div>
     <div
       class="section"
-      id="section6"
-    >
-      <Section6 />
-    </div>
-    <div
-      class="section"
       id="section7"
     >
       <Section7 />
+    </div>
+    <div
+      class="section"
+      id="section6"
+    >
+      <Section6 />
     </div>
     <div
       class="section"

@@ -46,9 +46,10 @@
     overflow-x: scroll;
     overflow-y: hidden;
     width: 100vw;
+    padding-top: size-m(200);
     .map-bg {
-      width: size-m(1275);
-      height: size-m(750);
+      width: size-m(1500);
+      height: size-m(571);
     }
 
     .map-text {
@@ -58,14 +59,16 @@
 
     img {
       width: auto;
-      height: 100vh;
+      // height: 100vh;
     }
 
     .mask {
-      width: size-m(1275);
-      height: size-m(750);
+      width: size-m(1500);
+      height: size-m(571);
+      top: size-m(200);
       //  animation: swing 2.5s ease-in-out 0s infinite;
       left: 0;
+      background-color: transparent;
     }
 
     .hand {
@@ -74,8 +77,9 @@
       display: block;
       width: calc(100vw * 112 / 375) !important;
       height: auto !important;
-      left: 48%;
-      top: 5% !important;
+      left: 59%;
+      top: auto;
+      bottom: 5% !important;
       display: block;
       animation: swing 1s linear 0s alternate infinite;
       transform: translateX(5%);
