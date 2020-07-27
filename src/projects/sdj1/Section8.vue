@@ -1,7 +1,11 @@
 <template>
-  <div class="section5">
+  <div class="section8">
     <div class="bg">
-      <img src="./s8/1.jpg" alt="" class="item-img">
+      <img
+        src="./s8/1.jpg"
+        alt=""
+        class="item-img"
+      >
       <swiper
         :options="swiperOption"
         ref="mySwiper"
@@ -16,12 +20,12 @@
           <img
             :src="slide.src"
             :class="`item-img`"
-              :alt="slide.src"
+            :alt="slide.src"
           />
           <img
             :src="slide.src"
             :class="`item-img2`"
-              :alt="slide.src"
+            :alt="slide.src"
           />
           <div class="slide-title flex-ac absolute">{{slide.title}}</div>
           <div class="absolute txt">樣品屋圖片僅供示意參考，依實際合約附圖為準。</div>
@@ -151,7 +155,7 @@
       .swiper-pagination {
         width: 100vw;
         left: auto;
-        bottom: size-m(20);
+        bottom: size-m(32);
         right: 0px;
         left: 0;
         margin: 0 auto;
@@ -184,21 +188,15 @@
     }
   }
 
-  .txt {
-    font-size: size-m(12);
-    top: calc(50% + 30vw);
-  }
   .slide-title {
     width: 100vw;
-    height: size-m(57 / 2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    background-color: #0000;
+    height: size-m(85);
+    padding: 3px 25px;
+    padding-left: size-m(30);
+    background-color: rgba(0, 0, 0, 0.4);
     color: #fff;
-    font-size: size-m(16);
-    font-weight: normal;
+    font-size: size-m(25);
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.81;
@@ -207,8 +205,39 @@
     color: #ffffff;
     z-index: 10;
     right: 0;
-    bottom: size-m(50);
+    bottom: size(0);
   }
+
+  .txt {
+    color: #ffffff;
+    z-index: 14;
+    left: size-m(31);
+    right: auto;
+    opacity: 1;
+    bottom: size-m(8);
+    font-size: size(10);
+  }
+  // .slide-title {
+  //   width: 100vw;
+  //   height: size-m(57 / 2);
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   padding: 0;
+  //   background-color: #0000;
+  //   color: #ccc;
+  //   font-size: size-m(16);
+  //   font-weight: normal;
+  //   font-stretch: normal;
+  //   font-style: normal;
+  //   line-height: 1.81;
+  //   letter-spacing: normal;
+  //   text-align: left;
+  //   color: #ffffff;
+  //   z-index: 10;
+  //   right: 0;
+  //   bottom: size-m(50);
+  // }
   .item-img {
     top: 0;
     left: 0;
@@ -241,7 +270,7 @@ import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
-  name: 'section5',
+  name: 'section8',
   mixins: [slider],
 
   components: {

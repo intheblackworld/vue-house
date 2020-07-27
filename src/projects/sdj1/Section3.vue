@@ -117,7 +117,7 @@
 
 @media screen and (max-width: 767px) {
   .relative {
-    height: size-m(1738 / 2);
+    height: size-m(1600 / 2);
     overflow: hidden;
     background: #fff;
 

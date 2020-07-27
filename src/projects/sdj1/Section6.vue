@@ -106,36 +106,39 @@
 
 @media screen and (max-width: 767px) {
   .bg {
-    height: calc(177.8666666667vw - 63px);
-    background-color: #004a7f;
+    height: size-m(700);
+    background-color: #fff;
+    padding-top: size-m(50);
 
     &::v-deep {
       .swiper-pagination {
-        width: 280px;
+        width: 100%;
         left: auto;
-        bottom: size-m(20);
+        bottom: 0;
         right: 0px;
         left: 0;
         margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
       }
       .swiper-pagination-bullet {
         width: 12px;
         height: 12px;
         box-shadow: 0 0 0 1px #fff;
         margin: 0 5px;
-        background-color: transparent;
+        background-color: #666666;
         opacity: 1 !important;
       }
 
       .swiper-pagination-bullet-active {
-        background-color: #000;
+        background-color: #b70049;
       }
     }
   }
 
   .swiper-container {
-    width: 100vw;
-    height: 100%;
+    width: size-m(326);
+    height: size-m(646);
     overflow: visible;
     position: absolute;
     left: 0;
@@ -173,8 +176,8 @@
   .item-img {
     top: 0;
     left: 0;
-    width: 100vw;
-    height: calc(177.8666666667vw - 63px);
+    width: size-m(326);
+    height: size-m(626);
     object-fit: cover;
     object-position: center;
   }
@@ -232,7 +235,41 @@ export default {
           clickable: true,
         },
       },
-      slideList: [
+      slideList: isMobile ? [
+        {
+          src: require('./mo/6/a1.png')
+        },
+        {
+          src: require('./mo/6/a2.png')
+        },
+        {
+          src: require('./mo/6/a3.png')
+        },
+        {
+          src: require('./mo/6/a4.png')
+        },
+        {
+          src: require('./mo/6/a5.png')
+        },
+        {
+          src: require('./mo/6/a6.png')
+        },
+        {
+          src: require('./mo/6/a7.png')
+        },
+        {
+          src: require('./mo/6/a8.png')
+        },
+        {
+          src: require('./mo/6/a9.png')
+        },
+        {
+          src: require('./mo/6/a10.png')
+        },
+        {
+          src: require('./mo/6/a11.png')
+        },
+      ] :[
         {
           src: require('./s6/1.png'),
         },

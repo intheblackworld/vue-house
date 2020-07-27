@@ -46,10 +46,33 @@
       </div>
       <div class="frame2">
         <img
-          src="./mo/7/1.png"
+          src="./mo/7/title.png"
           alt=""
-          class="bg-img"
+          class="title-img"
         >
+
+        <swiper
+          :options="swiperOption"
+          ref="mySwiper"
+          swiper-no-swiping
+        >
+          <swiper-slide
+            v-for="(slide, index) in slideList"
+            :index="index"
+            :key="slide.src"
+            class="item"
+          >
+            <img
+              :src="slide.src"
+              :class="`item-img`"
+              :alt="slide.src"
+            />
+          </swiper-slide>
+          <div
+            class="swiper-pagination"
+            slot="pagination"
+          ></div>
+        </swiper>
       </div>
     </div>
   </div>
@@ -112,7 +135,30 @@
   .relative {
     // height: 100vh;
     overflow: hidden;
-    background: #004a7f;
+    background: #fff;
+
+    &::v-deep {
+      .swiper-pagination {
+        width: 100vw;
+        left: auto;
+        bottom: 0px;
+        right: 0px;
+      }
+      .swiper-pagination-bullet {
+        width: size-m(16);
+        height: size-m(16);
+        box-shadow: 0 0 0 1px #fff;
+        background-color: transparent;
+        opacity: 1 !important;
+        margin: 0 8px;
+        background-color: #036ea7;
+        float: right;
+      }
+
+      .swiper-pagination-bullet-active {
+        background-color: #b70049;
+      }
+    }
   }
   .frame1 {
     position: relative;
@@ -126,23 +172,82 @@
   .frame2 {
     position: relative;
     width: size-m(324);
-    height: auto;
+    height: size-m(780);
     margin: 0 auto;
-    margin-bottom: size-m(50);
+    margin-bottom: size-m(30);
+  }
+
+  .title-img {
+    width: 100%;
+    height: auto;
+    margin-bottom: size-m(20);
+  }
+
+  .swiper-container {
+    width: 100%;
+    height: size-m(630);
+
+    .item-img {
+      width: 100%;
+      background-color: #fff;
+      display: block;
+    }
   }
 }
 </style>
 <script>
 // @ is an alias to /src
 import { isMobile } from '@/utils'
+import slider from '@/mixins/slider.js'
+import 'swiper/dist/css/swiper.css'
+
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'section7',
+  mixins: [slider],
 
-  components: {},
+  components: {
+    swiper,
+    swiperSlide,
+  },
   data() {
     return {
       isMobile,
+      swiperOption: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        slidesPerColumn: 1,
+        preloadImages: false,
+        cssMode: true,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
+        effect: 'fade',
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      },
+      slideList: [
+        {
+          src: require('./mo/7/1.png'),
+        },
+        {
+          src: require('./mo/7/2.png'),
+        },
+        {
+          src: require('./mo/7/3.png'),
+        },
+        {
+          src: require('./mo/7/4.png'),
+        },
+        {
+          src: require('./mo/7/5.png'),
+        },
+      ],
     }
   },
 
