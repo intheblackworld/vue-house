@@ -43,20 +43,20 @@
           />
         </div>
       </swiper>
-      <div class="mask absolute"></div>
-      <h3 class="title absolute">龍隱沉潛 千坪莊園<br />質擘內斂 壯闊盡收</h3>
+      <div class="mask absolute">
+      <h3 class="title">龍隱沉潛 千坪莊園<br />質擘內斂 壯闊盡收</h3>
       <img
         v-lazy="require('./s2/hr.png')"
         alt=""
-        class="hr absolute"
+        class="hr"
         data-aos="grow"
         data-aos-delay="400"
         data-aos-duration="600"
       >
-      <h3 class="desc absolute">真正的富裕，不高調卻堅持品味格調！<br />
+      <h3 class="desc">真正的富裕，不高調卻堅持品味格調！<br />
         「太子華威」以私秘莊園為主軸，將喧囂隔絕於外<br />
         生活細節禮遇倍至，禮賓大廳、宴會廳、交誼廳、健身房<br />
-        無論尺度與陳列，美輪美奐精采迷人。</h3>
+        無論尺度與陳列，美輪美奐精采迷人。</h3></div>
 
       <!-- <div class="float absolute">
         <img
@@ -128,50 +128,46 @@
   // }
 }
 
-.title {
-  font-size: size(50);
-  font-weight: bold;
+.mask {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: size(846);
+  height:45%;
+  top: 13%;
+  right: 0;
+  z-index: 2;
+  font-size:calc(12px + 1vh);
+  color: #ffffff;
+  font-weight:initial;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.5;
-  letter-spacing: 5px;
+  letter-spacing: normal;
   text-align: center;
-  color: #ffffff;
-  top: size(164);
-  right: size(282);
-  z-index: 3;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+    align-content:center;
+
+}
+.title {
+  font-size:2.1em;
+  font-weight: bold;
+  letter-spacing:0.1em;
 }
 
 .desc {
-  font-size: size(28);
+  font-size:1em;
   font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.81;
-  letter-spacing: normal;
-  text-align: center;
-  color: #ffffff;
-  top: size(400);
-  right: size(158);
-  z-index: 3;
 }
 
 .hr {
-  width: size(539);
-  height: size(30);
-  top: size(326);
-  right: size(246);
-  z-index: 3;
+    width: 25em;
+    margin: 0.5em auto;
+    height: auto;
 }
 
-.mask {
-  background-color: rgba(0, 0, 0, 0.5);
-  width: size(1016);
-  height: size(491);
-  top: size(128);
-  right: 0;
-  z-index: 2;
-}
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
 }

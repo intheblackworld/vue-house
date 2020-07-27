@@ -6,69 +6,82 @@
         v-lazy:background-image="require('./s3/bg.jpg')"
       ></div>
       <div class="box">
-      <div class="content">
-        <div class="border flex">
-          <div class="txt">
-            <h3 class="title">
-              稀世尊藏無價山水<br />頂尖團隊聯手雙鉅著
-            </h3>
+        <div class="content">
+          <div class="border flex">
+            <div class="txt">
+              <h3 class="title">
+                稀世尊藏無價山水<br />頂尖團隊聯手雙鉅著
+              </h3>
+              <img
+                v-lazy="require('./s3/hr.png')"
+                alt=""
+                class="hr"
+                data-aos="grow"
+                data-aos-delay="400"
+                data-aos-duration="600"
+              >
+              <h3 class="desc">
+                因為土地難得，堅持盡善盡美！<br />
+                太子華威兩大建築龍頭攜手<br />
+                PGA周夢龍、聯邦結構、大成工程境業設計、瀚翔景觀、藍克思燈光太子物業，頂尖建築團隊匯聚，精鑄絕美雙鉅著磅礡落成。
+              </h3>
+            </div>
             <img
-              v-lazy="require('./s3/hr.png')"
+              v-lazy="require('./s3/float4.png')"
               alt=""
-              class="hr"
-              data-aos="grow"
-              data-aos-delay="400"
-              data-aos-duration="600"
+              class="flower absolute"
+            >
+            <img
+              v-lazy="require('./s3/float5.png')"
+              alt=""
+              class="flower5 absolute"
+            >
+            <img
+              v-lazy="require('./s3/float6.png')"
+              alt=""
+              class="flower6 absolute"
+            >
+            <img
+              v-lazy="require('./s3/float7.png')"
+              alt=""
+              class="flower7 absolute"
             >
 
-            <h3 class="desc">
-              因為土地難得，堅持盡善盡美！<br />
-              太子華威兩大建築龍頭攜手<br />
-              PGA周夢龍、聯邦結構、大成工程境業設計、瀚翔景觀、藍克思燈光太子物業，頂尖建築團隊匯聚<br />
-              精鑄絕美雙鉅著磅礡落成。
-            </h3>
+            <img
+              v-lazy="require('./s1/float.png')"
+              v-if="!isMobile"
+              alt=""
+              data-aos="fade-down-left"
+              data-aos-delay="400"
+              data-aos-duration="1000"
+              class="float1 absolute"
+            >
+            <img
+              v-lazy="require('./s1/float.png')"
+              v-if="!isMobile"
+              alt=""
+              data-aos="fade-down-left"
+              data-aos-delay="400"
+              data-aos-duration="1000"
+              class="float2 absolute"
+            >
+            <img
+              v-lazy="require('./s1/float2.png')"
+              v-if="!isMobile"
+              alt=""
+              data-aos="float3"
+              data-aos-delay="500"
+              data-aos-duration="1100"
+              class="float3 absolute"
+            >
           </div>
-          <img
-            v-lazy="require('./s3/float4.png')"
-            alt=""
-            class="flower absolute"
-          >
-
-          <img
-            v-lazy="require('./s1/float.png')"
-            v-if="!isMobile"
-            alt=""
-            data-aos="fade-down-left"
-            data-aos-delay="400"
-            data-aos-duration="1000"
-            class="float1 absolute"
-          >
-          <img
-            v-lazy="require('./s1/float.png')"
-            v-if="!isMobile"
-            alt=""
-            data-aos="fade-down-left"
-            data-aos-delay="400"
-            data-aos-duration="1000"
-            class="float2 absolute"
-          >
-          <img
-            v-lazy="require('./s1/float2.png')"
-            v-if="!isMobile"
-            alt=""
-            data-aos="float3"
-            data-aos-delay="500"
-            data-aos-duration="1100"
-            class="float3 absolute"
-          >
         </div>
-      </div>
-      <img
-        v-lazy="require('./s7/img.png')"
-        alt=""
-        class="main-img"
-      >
-      <!-- <swiper
+        <img
+          v-lazy="require('./s7/img.png')"
+          alt=""
+          class="main-img"
+        >
+        <!-- <swiper
         class="main-img"
         :options="swiperOption"
         ref="mySwiper"
@@ -89,7 +102,7 @@
           slot="pagination"
         ></div>
       </swiper> -->
-    </div>
+      </div>
     </div>
   </div>
 </template>
@@ -99,7 +112,8 @@
 .bg {
   background-size: cover;
   position: relative;
-  height: calc(100vh - 50px);overflow: hidden;
+  height: calc(100vh - 50px);
+  overflow: hidden;
 }
 
 .section3 {
@@ -132,12 +146,22 @@
   position: absolute;
   background-attachment: fixed;
 }
-.box{width: calc((100vh - 50px) * 1920 / 1080);
-height:94%;margin: 1% auto  auto;
-  position: relative;z-index: 6;}
+.box {
+  width: calc((100vh - 50px) * 1920 / 1080);
+  height: 94%;
+  margin: 1% auto auto;
+  position: relative;
+  z-index: 6;
+}
 
-.content {width: 32%;display:inline-block;height: 100%;margin: 0 1.5% 0 0;
-  padding: size(18);float: left;position: relative;
+.content {
+  width: 32%;
+  display: inline-block;
+  height: 100%;
+  margin: 0 1.5% 0 0;
+  padding: size(18);
+  float: left;
+  position: relative;
   background-color: #fff;
 
   .border {
@@ -148,13 +172,14 @@ height:94%;margin: 1% auto  auto;
     align-items: center;
   }
 }
-.txt{
-  font-size:calc(12px + 1vh);
+.txt {
+  font-size: calc(12px + 1vh);
   font-weight: normal;
   font-stretch: normal;
-  font-style: normal;}
+  font-style: normal;
+}
 .title {
-  font-size:1.65em;
+  font-size: 1.65em;
   font-weight: bold;
   line-height: 1.5;
   letter-spacing: 0.15em;
@@ -163,8 +188,8 @@ height:94%;margin: 1% auto  auto;
 }
 
 .hr {
-  width:44vh;
-  height:auto;
+  width: 44vh;
+  height: auto;
   margin: 1.1vh auto;
 }
 
@@ -177,15 +202,16 @@ height:94%;margin: 1% auto  auto;
   color: #04040c;
 }
 
-.main-img {width: auto;margin: 0 1.5% 0 0;
-  height:100%;
+.main-img {
+  width: auto;
+  margin: 0 1.5% 0 0;
+  height: 100%;
   left: auto;
   .item-img {
     width: size(1180);
     height: size(974);
   }
 }
-
 @keyframes flower {
   from {
     transform: skewX(5deg);
@@ -194,35 +220,57 @@ height:94%;margin: 1% auto  auto;
     transform: skewX(-5deg);
   }
 }
+@keyframes flower5 {
+  to {
+    transform: rotate(0deg);
+  }
+}
 
 .flower {
-  width: size(495);
+  width: 50vh;
   bottom: 0;
-  right: 0;
-  z-index: 5;
+  right: -7vh;
   transform-origin: bottom;
-  animation: flower 5s linear 0s infinite alternate;
+  animation: flower 3s ease-in-out 0s infinite alternate;
 }
 
 .float1 {
   width: size(57);
-  top: size(82);
-  left: size(545);
+  top: size(10);
+  right: size(10);
   z-index: 4;
 }
 
 .float2 {
   width: size(49);
-  top: size(139);
-  left: size(564);
+  top: size(66);
+  right: size(0);
   z-index: 4;
 }
 
 .float3 {
   width: size(43);
-  top: size(170);
-  left: size(488);
+  top: size(97);
+  right: size(81);
   z-index: 4;
+}
+.flower5,
+.flower6,
+.flower7 {
+  width: 50vh;
+  bottom: 0;
+  right: -7vh;
+  transform: rotate(-10deg);
+  transform-origin: bottom;
+  animation: flower5 3s ease-in-out 0s infinite alternate;
+}
+.flower6 {
+  transform: rotate(-15deg);
+  animation-delay: 0.5s;
+}
+.flower7 {
+  transform: rotate(-12deg);
+  animation-delay: 1s;
 }
 
 /* 平板尺寸 */
@@ -230,35 +278,44 @@ height:94%;margin: 1% auto  auto;
 }
 
 @media screen and (max-width: 767px) {
-  .bg{height:auto;}
+  .bg {
+    height: auto;
+  }
   .bg-img {
     height: size-m(835);
   }
-.box{width: 96%;display:flex;
-    flex-wrap:wrap;
-height: auto;}
-.img3{width: 100%;
-  height: auto;
-}
- .content{
-      order:2;
-    width: 100%;margin:size-m(10) 0 size-m(10) 0;float:none;}
+  .box {
+    width: 96%;
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+  }
+  .img3 {
+    width: 100%;
+    height: auto;
+  }
+  .content {
+    order: 2;
+    width: 100%;
+    margin: size-m(10) 0 size-m(10) 0;
+    float: none;
+  }
 
-.txt{
-  margin:  size-m(30) auto  size-m(150);
-} 
-.desc {
-  font-size:calc(12px + 0.3vh);
-}
+  .txt {
+    margin: size-m(30) auto size-m(150);
+  }
+  .desc {
+    font-size: calc(12px + 0.3vh);
+  }
 
   .main-img {
-      order:1;
-      width: 100%;
-      height:auto;
+    order: 1;
+    width: 100%;
+    height: size-m(297);
     .item-img {
       width: 100%;
-      height:auto;
-     // height: size-m(310);
+      height: size-m(297);
+      // height: size-m(310);
     }
   }
 
@@ -270,6 +327,13 @@ height: auto;}
     bottom: 0;
     transform-origin: bottom;
     animation: flower 3s ease-in-out 0s infinite alternate;
+  }
+  .flower5,
+  .flower6,
+  .flower7 {
+    width: 100vw;
+    right: 0;
+    bottom: 0;
   }
 }
 </style>
