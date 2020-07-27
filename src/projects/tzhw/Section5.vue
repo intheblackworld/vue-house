@@ -5,14 +5,16 @@
         class="full-img"
         v-lazy:background-image="require('./s5/bg.jpg')"
       ></div>
+      <div class="water">
       <div
         class="water-img bg-img"
         v-lazy:background-image="require('./s1/e3.gif')"
       ></div>
       <div
-        class="full-img bg-img"
-        v-lazy:background-image="require('./s5/bg.png')"
+        class="waterpng-img bg-img"
+        v-lazy:background-image="require('./s5/bg21.png')"
       ></div>
+      </div>
     <!--    <div class="river">
         <div
           v-for="item in riverList"
@@ -54,17 +56,22 @@
 .bg-img {
   position: absolute;
   z-index: 2;
+    height: 100%;
+    background-position: center;bottom: 0;right: 0;
   // &:first-child {
   //   position: relative;
   // }
-&.water-img{bottom: 0;right: 0;opacity: 0.3;
+&.water-img{opacity: 0.3;
     width: 80%;
-    height: 18vw;
-    position: absolute;
-    background-size:100% 100%;
-    background-position: center;}
+    background-size:100% 100%;}
+&.waterpng-img{
+    width:100%;background-position:center top;
+    background-size:cover;}
 }
-
+.water{top: 50%;right: 0;
+    width: 100%;
+    height:50%;
+    position: absolute;}
 @keyframes water {
   from {
     transform: skewX(50deg);
@@ -121,9 +128,8 @@
 
 @media screen and (max-width: 767px) {
 .bg-img {
-&.water-img{top:45.5333333333vw;
-    width: 100%;
-    height: 39vw;}
+&.water-img{
+    width: 100%;}
 }
   .full-bg {
     width: 100vw;
@@ -135,7 +141,10 @@
     width: 100vw;
     min-height: auto;
     height: size-m(317);
+    background-size: cover;
   }
+.water{top:size-m(317 * 0.5);
+    height: size-m(317 * 0.5);}
   .river {
     position: absolute;
     right: 0;
