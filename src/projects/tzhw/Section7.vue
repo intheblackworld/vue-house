@@ -13,7 +13,7 @@
               稀世尊藏無價山水<br />頂尖團隊聯手雙鉅著
             </h3>
             <img
-              src="./s3/hr.png"
+              v-lazy="require('./s3/hr.png')"
               alt=""
               class="hr"
               data-aos="grow"
@@ -29,13 +29,13 @@
             </h3>
           </div>
           <img
-            src="./s3/float4.png"
+            v-lazy="require('./s3/float4.png')"
             alt=""
             class="flower absolute"
           >
 
           <img
-            src="./s1/float.png"
+            v-lazy="require('./s1/float.png')"
             v-if="!isMobile"
             alt=""
             data-aos="fade-down-left"
@@ -44,7 +44,7 @@
             class="float1 absolute"
           >
           <img
-            src="./s1/float.png"
+            v-lazy="require('./s1/float.png')"
             v-if="!isMobile"
             alt=""
             data-aos="fade-down-left"
@@ -53,7 +53,7 @@
             class="float2 absolute"
           >
           <img
-            src="./s1/float2.png"
+            v-lazy="require('./s1/float2.png')"
             v-if="!isMobile"
             alt=""
             data-aos="float3"
@@ -64,7 +64,7 @@
         </div>
       </div>
       <img
-        src="./s7/img.png"
+        v-lazy="require('./s7/img.png')"
         alt=""
         class="main-img"
       >

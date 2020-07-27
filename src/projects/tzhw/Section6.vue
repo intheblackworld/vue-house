@@ -46,7 +46,7 @@
       <div class="mask absolute"></div>
       <h3 class="title absolute">龍隱沉潛 千坪莊園<br />質擘內斂 壯闊盡收</h3>
       <img
-        src="./s2/hr.png"
+        v-lazy="require('./s2/hr.png')"
         alt=""
         class="hr absolute"
         data-aos="grow"

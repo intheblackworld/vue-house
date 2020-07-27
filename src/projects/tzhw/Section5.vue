@@ -25,7 +25,7 @@
       <div class="mask absolute"></div>
       <h3 class="title absolute">雙溪之美 悉心典藏<br />浪漫RESORT水花園</h3>
       <img
-        src="./s2/hr.png"
+        v-lazy="require('./s2/hr.png')"
         alt=""
         class="hr absolute"
         data-aos="grow"

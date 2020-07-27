@@ -2,8 +2,8 @@
   <div class="home no-padding-top">
     <div ref="gtmNoScript" />
     <Loading :loading="load" />
-    <SideNavigation v-if="isSide" />
-    <Navigation v-else />
+    <!-- <SideNavigation v-if="isSide" /> -->
+    <Navigation />
     <!-- <Indigator
       :action="action"
       :indigatorIndex="indigatorIndex"
@@ -70,7 +70,7 @@
 // @ is an alias to /src
 import Navigation from '@/layouts/Navigation.vue'
 import { isMobile } from '@/utils'
-import SideNavigation from '@/layouts/SideNavigation.vue'
+// import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 // import Indigator from '@/components/Indigator.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
@@ -94,7 +94,7 @@ export default {
     Loading,
     // Indigator,
     Navigation,
-    SideNavigation,
+    // SideNavigation,
     ContactSection,
     MobileNav,
     Section1,
@@ -116,17 +116,17 @@ export default {
         moveTo: () => {},
       },
 
-      indigatorIndex: 0,
-      options: {
-        menu: '#menu',
-        anchors: [],
-        scrollBar: true,
-        onLeave: this.onLeave,
-        afterLoad: this.afterLoad,
-        continuousHorizontal: true,
-        // navigation: true,
-        // sectionsColor: ['#41b883', '#ff5f45', '#0798ec'],
-      },
+      // indigatorIndex: 0,
+      // options: {
+      //   menu: '#menu',
+      //   anchors: [],
+      //   scrollBar: true,
+      //   onLeave: this.onLeave,
+      //   afterLoad: this.afterLoad,
+      //   continuousHorizontal: true,
+      //   // navigation: true,
+      //   // sectionsColor: ['#41b883', '#ff5f45', '#0798ec'],
+      // },
     }
   },
   created() {

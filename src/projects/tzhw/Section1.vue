@@ -67,7 +67,7 @@
         >83-115坪&nbsp;&nbsp;&nbsp;&nbsp;02-2838-2188</h3>
 
         <img
-          src="./s1/float.png"
+          v-lazy="require('./s1/float.png')"
           v-if="!isMobile"
           alt="float"
           data-aos="fade-down-right"
@@ -76,7 +76,7 @@
           class="float1 absolute"
         >
         <img
-          src="./s1/float2.png"
+          v-lazy="require('./s1/float2.png')"
           alt="float"
           data-aos="float1"
           data-aos-delay="500"
@@ -84,7 +84,7 @@
           class="float2 absolute"
         >
         <img
-          src="./s1/float.png"
+          v-lazy="require('./s1/float.png')"
           alt="float"
           data-aos="fade-down-left"
           data-aos-delay="400"
@@ -92,7 +92,7 @@
           class="float3 absolute"
         >
         <img
-          src="./s1/float2.png"
+          v-lazy="require('./s1/float2.png')"
           v-if="!isMobile"
           alt="float"
           data-aos="float3"

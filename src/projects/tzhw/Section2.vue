@@ -66,7 +66,7 @@
       >
 
       <img
-        src="./s1/float.png"
+        v-lazy="require('./s1/float.png')"
         alt=""
         data-aos="fade-down-right"
         data-aos-delay="400"
@@ -74,7 +74,7 @@
         class="float1 absolute"
       >
       <img
-        src="./s1/float2.png"
+        v-lazy="require('./s1/float2.png')"
         alt=""
         data-aos="float1"
         data-aos-delay="500"
@@ -82,7 +82,7 @@
         class="float2 absolute"
       >
       <img
-        src="./s1/float.png"
+        v-lazy="require('./s1/float.png')"
         alt=""
         data-aos="fade-down-left"
         data-aos-delay="400"
@@ -90,7 +90,7 @@
         class="float3 absolute"
       >
       <img
-        src="./s1/float2.png"
+        v-lazy="require('./s1/float2.png')"
         alt=""
         data-aos="float3"
         data-aos-delay="500"

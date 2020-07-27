@@ -11,7 +11,7 @@
       ></div>
       <div class="box">
         <img
-        src="./s3/img.png"
+        v-lazy="require('./s3/img.png')"
         alt="圓山大飯店 故宮 sogo"
         class="img3"
       >
@@ -32,13 +32,13 @@
       <div class="content">
         <div class="border flex">
       <img
-        src="./s3/float4.png"
+        v-lazy="require('./s3/float4.png')"
         alt=""
         class="flower absolute"
       >
 
       <img
-        src="./s1/float.png"
+        v-lazy="require('./s1/float.png')"
         alt=""
         data-aos="fade-down-left"
         data-aos-delay="400"
@@ -46,7 +46,7 @@
         class="float1 absolute"
       >
       <img
-        src="./s1/float.png"
+        v-lazy="require('./s1/float.png')"
         alt=""
         data-aos="fade-down-left"
         data-aos-delay="400"
@@ -54,7 +54,7 @@
         class="float2 absolute"
       >
       <img
-        src="./s1/float2.png"
+        v-lazy="require('./s1/float2.png')"
         alt=""
         data-aos="float3"
         data-aos-delay="500"
@@ -63,12 +63,12 @@
       >
       <div class="txt">
       <img
-        src="./s3/logo.png"
+        v-lazy="require('./s3/logo.png')"
         alt=""
         class="logo"
       >
       <img
-        src="./s3/hr.png"
+        v-lazy="require('./s3/hr.png')"
         alt=""
         class="hr"
         data-aos="grow"
