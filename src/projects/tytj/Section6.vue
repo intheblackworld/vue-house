@@ -1,10 +1,26 @@
 <template>
   <div class="section6">
     <div class="bg absolute"></div>
-    <img src="./s6/g-banner.png" alt="" class="g-banner absolute">
-    <img src="./s6/w-banner.png" alt="" class="w-banner absolute">
-    <img src="./s6/logo.png" alt="" class="logo-b absolute">
-    <img src="./s1/logo.png" alt="" class="logo absolute">
+    <img
+      src="./s6/g-banner.png"
+      alt=""
+      class="g-banner absolute"
+    >
+    <img
+      src="./s6/w-banner.png"
+      alt=""
+      class="w-banner absolute"
+    >
+    <img
+      src="./s6/logo.png"
+      alt=""
+      class="logo-b absolute"
+    >
+    <img
+      src="./s1/logo.png"
+      alt=""
+      class="logo absolute"
+    >
     <div class="hr absolute"></div>
     <div class="desc absolute">
       特聘知名建築師團隊以現代造型為設計發展架構，精心規劃整體垂直分段設計並結合都市景觀，展現新穎兼具人文特質之藝 建築，外觀採用丁 掛磚加石材搭配造型，線條創造出整體建築細膩感，提升大樓外觀價值。
@@ -104,7 +120,53 @@
     // height: 100vh;
     overflow: visible;
     position: relative;
-    height:calc(100vh - 63px);
+    height: size-m(453 + 355);
+    background-image: url('./mo/6/bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .bg {
+    width: 100vw;
+    height: size-m(907 / 2);
+    top: size-m(355);
+    background-image: url('./mo/6/img.jpg');
+    background-size: cover;
+    background-attachment: initial !important;
+  }
+
+  .g-banner,
+  .w-banner,
+  logo-b {
+    display: none;
+  }
+
+  .logo {
+    width: size-m(138);
+    top: size-m(32);
+    left: size-m(117);
+  }
+
+  .hr {
+    width: size-m(316);
+    height: 1px;
+    background-color: #68361a;
+    top: size-m(177);
+    left: size-m(28);
+  }
+
+  .desc {
+    width: size-m(316);
+    top: size-m(193);
+    left: size-m(28);
+    font-size: size-m(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.7;
+    letter-spacing: 1.5px;
+    text-align: left;
+    color: #3e3a39;
   }
 }
 </style>

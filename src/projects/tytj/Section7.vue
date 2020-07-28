@@ -19,9 +19,30 @@
         >
       </swiper-slide>
       <div
-          class="swiper-pagination"
-          slot="pagination"
-        ></div>
+        v-if="isMobile"
+        class="swiper-button-prev"
+        slot="button-prev"
+      >
+        <img
+          src="./mo/arrow-left.png"
+          alt
+        />
+      </div>
+      <div
+        v-if="isMobile"
+        class="swiper-button-next"
+        slot="button-next"
+      >
+        <img
+          src="./mo/arrow-right.png"
+          alt
+        />
+      </div>
+      <div
+        v-if="!isMobile"
+        class="swiper-pagination"
+        slot="pagination"
+      ></div>
     </swiper>
     <div class="desc absolute">
       特聘知名建築師團隊以現代造型為設計發展架構，精心規劃整體垂直分段設計並結合都市景觀，展現新穎兼具人文特質之藝 建築，外觀採用丁掛磚加石材搭配造型，線條創造出整體建築細膩感，提升大樓外觀價值。
@@ -135,8 +156,39 @@
 
 @media screen and (max-width: 767px) {
   .relative {
-    background: #fff;
-    height: size-m(600);
+    background-image: url('./mo/6/bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    height: size-m(375 + 304);
+  }
+
+  .swiper-container {
+    width: 100vw;
+    height: size-m(375);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .item-img {
+    width: 100vw;
+    height: size-m(375);
+  }
+
+  .desc {
+    text-shadow: none;
+    top: size-m(42 + 375);
+    right: size-m(31);
+    width: size-m(316);
+    font-size: size-m(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.73;
+    letter-spacing: 1.5px;
+    text-align: left;
+    color: #000000;
+    z-index: 3;
   }
 }
 </style>
@@ -181,20 +233,26 @@ export default {
           clickable: true,
         },
       },
-      slideList: [
-        {
-          img: require('./s7/p1_1.jpg'),
-        },
-        {
-          img: require('./s7/p2_1.jpg'),
-        },
-        {
-          img: require('./s7/p3_1.jpg'),
-        },
-        {
-          img: require('./s7/p4_1.jpg'),
-        },
-      ],
+      slideList: isMobile
+        ? [
+            {
+              img: require('./mo/7/1.jpg'),
+            },
+          ]
+        : [
+            {
+              img: require('./s7/p1_1.jpg'),
+            },
+            {
+              img: require('./s7/p2_1.jpg'),
+            },
+            {
+              img: require('./s7/p3_1.jpg'),
+            },
+            {
+              img: require('./s7/p4_1.jpg'),
+            },
+          ],
     }
   },
 

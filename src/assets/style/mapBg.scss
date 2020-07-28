@@ -46,9 +46,10 @@
     overflow-x: scroll;
     overflow-y: hidden;
     width: 100vw;
+    height: size-m(604) !important;
     .map-bg {
       width: auto;
-      height: size-m(609);
+      height: size-m(604) !important;
     }
 
     .map-text {

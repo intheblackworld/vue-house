@@ -193,8 +193,8 @@
 
 @media screen and (max-width: 767px) {
   .relative {
-    height: size-m(400);
-    margin: 30vw 0 10vw;
+    height: auto;
+    margin: 0;
   }
 }
 </style>

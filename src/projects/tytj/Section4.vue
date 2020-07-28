@@ -1,5 +1,12 @@
 <template>
   <div class="relative section4">
+    <img
+      src="./s1/wlogo.png"
+      alt=""
+      class="logo absolute"
+    >
+    <h3 class="title absolute">繁華生活圈</h3>
+    <div class="subtitle absolute">公益路商圈</div>
     <swiper
       :options="swiperOption"
       ref="mySwiper"
@@ -27,6 +34,27 @@
         ></h3>
       </swiper-slide>
       <div
+        v-if="isMobile"
+        class="swiper-button-prev"
+        slot="button-prev"
+      >
+        <img
+          src="./mo/arrow-left.png"
+          alt
+        />
+      </div>
+      <div
+        v-if="isMobile"
+        class="swiper-button-next"
+        slot="button-next"
+      >
+        <img
+          src="./mo/arrow-right.png"
+          alt
+        />
+      </div>
+      <div
+        v-if="!isMobile"
         class="swiper-pagination"
         slot="pagination"
       ></div>
@@ -110,6 +138,12 @@
   right: size(102);
 }
 
+.logo,
+.title,
+.subtitle {
+  display: none;
+}
+
 @media only screen and (max-width: 1440px) {
   .bg-img {
   }
@@ -124,8 +158,72 @@
 
 @media screen and (max-width: 767px) {
   .relative {
-    background: #fff;
-    height: size-m(600);
+    height: size-m(375 + 229);
+  }
+
+  .logo,
+  .title,
+  .subtitle {
+    display: block;
+  }
+
+  .logo {
+    width: size-m(212);
+    top: size-m(-(212 / 2));
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    opacity: 0.5;
+  }
+
+  .title {
+    text-shadow: 0 3px 12px rgba(35, 24, 21, 0.4);
+    font-size: size-m(27);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.44;
+    letter-spacing: 3.78px;
+    text-align: center;
+    color: #ffffff;
+    top: size-m(125);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  .subtitle {
+    text-shadow: 2px 3px 12px rgba(35, 24, 21, 0.4);
+    font-size: size-m(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.67;
+    letter-spacing: 2.4px;
+    text-align: center;
+    color: #ffffff;
+    top: size-m(173);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  .swiper-container {
+    width: 100vw;
+    height: size-m(375);
+    position: absolute;
+    top: size-m(229);
+    left: 0;
+  }
+
+  .item-img {
+    width: 100vw;
+    height: size-m(375);
+  }
+
+  .item-title,
+  .item-subtitle {
+    display: none;
   }
 }
 </style>

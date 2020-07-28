@@ -1,9 +1,49 @@
 <template>
   <div class="relative">
-    <img src="./s3/bg.jpg" alt="泰御天鑄" class="absolute map">
-    <img src="./s3/m.png" alt="泰御天鑄" class="absolute tag" data-aos="fade-down" data-aos-delay="400">
-    <img src="./s3/b1[5].png" alt="泰御天鑄" class="absolute cloud1" data-aos="fade" data-aos-delay="600" data-aos-duration="1600">
-    <img src="./s3/b1[7].png" alt="泰御天鑄" class="absolute cloud2" data-aos="fade" data-aos-delay="600" data-aos-duration="1600">
+    <div v-if="!isMobile">
+      <img
+        src="./s3/bg.jpg"
+        alt="泰御天鑄"
+        class="absolute map"
+      >
+      <img
+        src="./s3/m.png"
+        alt="泰御天鑄"
+        class="absolute tag"
+        data-aos="fade-down"
+        data-aos-delay="400"
+      >
+      <img
+        src="./s3/b1[5].png"
+        alt="泰御天鑄"
+        class="absolute cloud1"
+        data-aos="fade"
+        data-aos-delay="600"
+        data-aos-duration="1600"
+      >
+      <img
+        src="./s3/b1[7].png"
+        alt="泰御天鑄"
+        class="absolute cloud2"
+        data-aos="fade"
+        data-aos-delay="600"
+        data-aos-duration="1600"
+      >
+    </div>
+    <Map
+      :bgSrc="require('./s3/bg.jpg')"
+      v-if="isMobile"
+    >
+      <div slot="main">
+        <img
+          src="./s3/m.png"
+          alt="泰御天鑄"
+          class="absolute tag"
+          data-aos="fade-down"
+          data-aos-delay="400"
+        >
+      </div>
+    </Map>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -15,7 +55,8 @@
   height: size(1080);
 }
 
-.map, .tag {
+.map,
+.tag {
   width: auto;
   height: size(1080);
   top: 0;
@@ -48,7 +89,6 @@
   animation: cloud 30s ease-in-out 0s infinite;
 }
 
-
 @keyframes cloud {
   0% {
     transform: translateX(0) scale(1);
@@ -62,7 +102,6 @@
     transform: translateX(0) scale(1);
   }
 }
-
 
 @media only screen and (max-width: 1440px) {
   .bg-img {
@@ -78,17 +117,28 @@
 
 @media screen and (max-width: 767px) {
   .relative {
+    height: size-m(604);
     margin: 0;
+  }
+
+  .tag {
+    width: auto;
+    height: size-m(604);
+    top: 0;
+    left: 0;
   }
 }
 </style>
 <script>
 // @ is an alias to /src
 import { isMobile } from '@/utils'
+import Map from '@/components/Map.vue'
 
 export default {
   name: 'section3',
-
+  components: {
+    Map,
+  },
   data() {
     return {
       isMobile,
@@ -96,8 +146,7 @@ export default {
     }
   },
 
-  methods: {
-  },
+  methods: {},
 
   created() {},
 

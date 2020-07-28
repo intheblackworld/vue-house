@@ -96,6 +96,34 @@
       data-aos="fade"
       data-aos-delay="600"
     >「泰新系統」長期耕耘專業水電領域，全台北、中、南都有知名代表作，曾打造公共工程、廠辦、商辦、商場、學校、住宅等多元建築作品，歷經多次國際高標考驗，曾與無數業界頂尖設計菁英合作，奠定完整而難得的跨領域水電經驗，更以32年專業作為實踐建築理念的新起點，成立「泰御建設」，多年經驗累積100% 的施工品質，2006年導入國外預製工法，由Victaulic原廠協助成立專業預製廠，開創國內第一家使用預製工法及防震工法之先創，「泰御建設」從開發、規劃、設計、施工，實踐力行精神，一步一腳印，每一細節皆嚴格把關、精準要求，完成智慧建築。</div>
+
+    <swiper
+      :options="swiperOption"
+      ref="mySwiper"
+      data-aos="fade"
+      data-aos-delay="200"
+      v-if="isMobile"
+    >
+      <swiper-slide
+        v-for="(slide, index) in slideList"
+        :index="index"
+        :key="slide.img"
+      >
+        <img
+          :src="slide.img"
+          alt=""
+          class="item-img"
+        >
+        <h3
+          class="absolute item-title"
+          v-html="slide.title"
+        ></h3>
+      </swiper-slide>
+      <!-- <div
+        class="swiper-pagination"
+        slot="pagination"
+      ></div> -->
+    </swiper>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -198,58 +226,135 @@
 
 @media screen and (max-width: 767px) {
   .relative {
-    height: size-m(609);
-    margin: 14.4vw 0 0 0;
+    height: size-m(75 + 634 + 140);
   }
-  .map {
-    margin: 14.4vw 0 0 0;
-  }
-  .txt {
-    top: 0;
-  }
-  .subtitle {
-    font-size: size-m(13);
+  .logo-b {
+    display: none;
   }
 
   .title {
-    font-size: size-m(24);
+    top: size-m(0);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-size: size-m(27);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: 1.62px;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .hr {
+    width: size-m(315);
+    height: 1px;
+    background-color: #fff;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: size-m(87);
   }
 
   .desc {
-    font-size: size-m(12);
+    width: size-m(316);
+    font-size: size-m(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.73;
+    letter-spacing: 1.5px;
+    text-align: left;
+    color: #ffffff;
+    top: size-m(104);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
   }
-  .animate-row {
-    bottom: size-m(-100);
-    z-index: 10;
-    img {
-      height: size-m(200);
-    }
 
-    &.animate-row2 {
-      bottom: size-m(30);
+  .imgs {
+    display: none;
+  }
 
-      img {
-        height: size-m(40);
-      }
-    }
+  .swiper-container {
+    // width: size-m(251);
+    height: size-m(281);
+    top: size-m(323 + 180);
+    // left: 0;
+  }
+  .item-img {
+    width: size-m(251);
+    height: size-m(251);
+    object-fit: cover;
+  }
+
+  .item-title {
+    width: 100%;
+    text-align: center;
+    color: #68361a;
+    margin-top: 5px;
   }
 }
 </style>
 <script>
 // @ is an alias to /src
-import { isMobile } from '@/utils'
-import Map from '@/components/Map.vue'
+import { isMobile, isTablet } from '@/utils'
+import slider from '@/mixins/slider.js'
+import 'swiper/dist/css/swiper.css'
+
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
+
 export default {
   name: 'section2',
+  mixins: [slider],
 
   components: {
-    Map,
+    swiper,
+    swiperSlide,
   },
   data() {
     return {
       isMobile,
-      // bgSrc: require('./s2/bg.jpg'),
-      // hand: require('./mo/2/箭頭.png'),
+      swiperOption: {
+        slidesPerView: isMobile ? 1.4 : 1,
+        centeredSlides: true,
+        spaceBetween: isMobile ? 10 : 30,
+        slidesPerColumn: isMobile ? 1 : 1,
+        effect: isMobile ? '' : 'fade',
+
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: true,
+        },
+        loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      },
+      slideList: [
+        {
+          img: require('./s2/1.jpg'),
+          title: '泰御花園',
+        },
+        {
+          img: require('./s2/2.jpg'),
+          title: '印象太和',
+        },
+        {
+          img: require('./s2/3.jpg'),
+          title: '新北南海段',
+        },
+        {
+          img: require('./s2/4.jpg'),
+          title: '親家雲硯',
+        },
+      ],
     }
   },
 

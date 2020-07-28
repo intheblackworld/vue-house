@@ -1,6 +1,10 @@
 <template>
   <div class="relative section5">
-    <div class="frame absolute" data-aos="fade-down-right" data-aos-delay="400"></div>
+    <div
+      class="frame absolute"
+      data-aos="fade-down-right"
+      data-aos-delay="400"
+    ></div>
     <swiper
       :options="swiperOption"
       ref="mySwiper"
@@ -20,9 +24,25 @@
         >
       </swiper-slide>
       <div
-        class="swiper-pagination"
-        slot="pagination"
-      ></div>
+        v-if="isMobile"
+        class="swiper-button-prev"
+        slot="button-prev"
+      >
+        <img
+          src="./mo/arrow-left.png"
+          alt
+        />
+      </div>
+      <div
+        v-if="isMobile"
+        class="swiper-button-next"
+        slot="button-next"
+      >
+        <img
+          src="./mo/arrow-right.png"
+          alt
+        />
+      </div>
     </swiper>
   </div>
 </template>
@@ -93,7 +113,51 @@
 @media screen and (max-width: 767px) {
   .relative {
     background: #fff;
-    height: size-m(600);
+    height: size-m(750);
+  }
+
+  .frame {
+    width: size-m(375);
+    height: size-m(750);
+    background-color: #c88f36;
+    top: 0;
+    left: 0;
+  }
+  .swiper-container {
+    width: size-m(375);
+    height: size-m(750);
+    top: 0;
+    left: 0;
+  }
+
+  .item-img {
+    width: size-m(375);
+    height: size-m(750);
+  }
+
+  .section5 {
+    &::v-deep {
+      .swiper-pagination {
+        // display: none;
+        width: 200px;
+        left: 0;
+        bottom: 20px;
+        right: 0;
+        margin: 0 auto;
+      }
+      .swiper-pagination-bullet {
+        width: 21px;
+        height: 21px;
+        box-shadow: 0 0 0 1px #fff;
+        margin: 0 6px !important;
+        background-color: transparent;
+        opacity: 1 !important;
+      }
+
+      .swiper-pagination-bullet-active {
+        background-color: #fff;
+      }
+    }
   }
 }
 </style>
@@ -140,16 +204,16 @@ export default {
       },
       slideList: [
         {
-          img: require('./s5/1.jpg'),
+          img: require('./mo/5/1.jpg'),
         },
         {
-          img: require('./s5/2.jpg'),
+          img: require('./mo/5/2.jpg'),
         },
         {
-          img: require('./s5/3.jpg'),
+          img: require('./mo/5/3.jpg'),
         },
         {
-          img: require('./s5/4.jpg'),
+          img: require('./mo/5/4.jpg'),
         },
       ],
     }

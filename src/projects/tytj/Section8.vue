@@ -19,9 +19,30 @@
         >
       </swiper-slide>
       <div
-          class="swiper-pagination"
-          slot="pagination"
-        ></div>
+        v-if="isMobile"
+        class="swiper-button-prev"
+        slot="button-prev"
+      >
+        <img
+          src="./mo/arrow-left.png"
+          alt
+        />
+      </div>
+      <div
+        v-if="isMobile"
+        class="swiper-button-next"
+        slot="button-next"
+      >
+        <img
+          src="./mo/arrow-right.png"
+          alt
+        />
+      </div>
+      <div
+        v-if="!isMobile"
+        class="swiper-pagination"
+        slot="pagination"
+      ></div>
     </swiper>
   </div>
 </template>
@@ -132,8 +153,23 @@
 
 @media screen and (max-width: 767px) {
   .relative {
-    background: #fff;
-    height: size-m(600);
+    background-image: url('./mo/6/bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    height: size-m(375);
+  }
+
+  .swiper-container {
+    width: 100vw;
+    height: size-m(375);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .item-img {
+    width: 100vw;
+    height: size-m(375);
   }
 }
 </style>
@@ -178,17 +214,29 @@ export default {
           clickable: true,
         },
       },
-      slideList: [
-        {
-          img: require('./s8/SLL_5930.jpg'),
-        },
-        {
-          img: require('./s8/SLL_5957.jpg'),
-        },
-        {
-          img: require('./s8/SLL_6024.jpg'),
-        },
-      ],
+      slideList: isMobile
+        ? [
+            {
+              img: require('./s8/SLL_5930.jpg'),
+            },
+            {
+              img: require('./s8/SLL_5957.jpg'),
+            },
+            {
+              img: require('./s8/SLL_6024.jpg'),
+            },
+          ]
+        : [
+            {
+              img: require('./s8/SLL_5930.jpg'),
+            },
+            {
+              img: require('./s8/SLL_5957.jpg'),
+            },
+            {
+              img: require('./s8/SLL_6024.jpg'),
+            },
+          ],
     }
   },
 

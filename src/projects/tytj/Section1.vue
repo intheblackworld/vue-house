@@ -94,8 +94,47 @@
 
 @media screen and (max-width: 767px) {
   .relative {
-    height: size-m(609);
-    margin: 14.4vw 0 0 0;
+    height: size-m(441 + 244);
+  }
+
+  .logo {
+    width: size-m(179);
+    top: size-m(164);
+    left: size-m(98);
+    right: auto;
+    margin: 0 auto;
+  }
+
+  .logo-t {
+    width: size-m(375);
+    right: 0;
+    top: size-m(129 - 375);
+    opacity: .5 !important;
+  }
+
+  .logo-b {
+    width: size-m(244);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: size-m(441);
+    opacity: .5 !important;
+  }
+
+  .title {
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+    font-size: size-m(20);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: 4.4px;
+    text-align: center;
+    color: #ffffff;
+    top: size-m(351);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
   }
 }
 </style>
