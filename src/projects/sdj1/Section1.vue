@@ -85,47 +85,56 @@
 
 .bg-img {
   width: 100vw;
-  height: size(1192);
+  height:auto;
+  max-height: 200vh;
   position: absolute;
   display: block;
-  top: 0;
+  top: auto;
+  bottom: 0;
   left: 0;
   object-fit: cover;
 
   &:nth-child(1) {
-    position: relative;
+  //  position: relative;
   }
 }
 
 // s1
+.s1{height: 100vh;overflow:initial;}
 .doll1 {
   width: size(466);
-  top: size(398);
+  top: size(200);
   left: 0;
+  transform: translateX(20%);
+  animation: ball 12s ease-in-out -2s alternate infinite;
 }
 
 .doll2 {
   width: size(714);
-  top: size(474);
+  top: size(300);
   right: 0;
+  transform: translateX(20%);
+  animation: ball 12s ease-in-out -1s alternate infinite;
 }
 
 .cloud1-2 {
-  width: size(394);
-  top: size(767);
-  left: size(300);
-  animation: cloud 25s linear infinite alternate-reverse;
+  width: size(300);
+  top: size(500);
+  left: size(200);
+  transform: translateX(40%);
+  animation: ball 12s ease-in-out alternate infinite;
 }
 
 .logo {
-  width: size(334);
-  top: size(345);
-  left: size(703);
+  height:size(317);
+  top:calc(40% - 16.5104166667vw * 0.5);
+  left:calc(50% - 17.3958333333vw * 0.5);
 }
 
 .light {
   width: size(750);
-  top: size(536);
+  top:auto;
+  bottom: size(-10);
   left: size(254);
   animation: light 2s alternate infinite;
 }
@@ -136,7 +145,8 @@
   top: size(-402);
   right: size(511) !important;
   left: auto !important;
-  animation: ball 12s alternate infinite;
+  transform: translateX(30%);
+  animation: ball 12s ease-in-out -3s alternate infinite;
 }
 
 .ball2 {
@@ -144,7 +154,8 @@
   top: size(-100);
   right: size(846) !important;
   left: auto !important;
-  animation: ball 12s alternate infinite;
+  transform: translateX(70%);
+  animation: ball 12s ease-in-out -2s alternate infinite;
 }
 
 .line1 {
@@ -153,7 +164,8 @@
   right: size(558) !important;
   left: auto !important;
   transform-origin: bottom;
-  animation: line1 12s alternate infinite;
+  transform: skew(-6.8deg);
+  animation: line 12s ease-in-out -3s alternate infinite;
 }
 
 .line2 {
@@ -162,23 +174,26 @@
   right: size(867) !important;
   left: auto !important;
   transform-origin: bottom;
-  animation: line2 12s alternate infinite;
+  transform: skew(-15deg);
+  animation: line 12s ease-in-out -2s alternate infinite;
 }
 
 .cloud2-1 {
   width: size(495);
   top: size(0);
-  right: size(-220);
+  right: size(-70);
   left: auto !important;
-  animation: cloud 35s linear infinite alternate-reverse;
+  transform: translateX(40%);
+  animation: ball 12s ease-in-out -2s alternate infinite;
 }
 
 .cloud2-2 {
   width: size(394);
   top: size(150);
   right: auto !important;
-  left: size(150);
-  animation: cloud 35s linear infinite alternate-reverse;
+  left: size(0);
+  transform: translateX(40%);
+  animation: ball 12s ease-in-out -1s alternate infinite;
 }
 
 .map {
@@ -203,58 +218,14 @@
   }
 }
 
-@keyframes cloud {
-  0% {
-    transform: translateX(0%);
-  }
-
-  50% {
-    transform: translateX(-50%);
-  }
-
-  100% {
-    transform: translateX(0%);
-  }
-}
-
 @keyframes ball {
-  0% {
-    transform: translateX(0);
-  }
-
   50% {
-    transform: translateX(30px);
-  }
-
-  100% {
     transform: translateX(0);
   }
 }
 
-@keyframes line1 {
-  0% {
-    transform: skew(0);
-  }
-
+@keyframes line {
   50% {
-    transform: skew(-4.2deg);
-  }
-
-  100% {
-    transform: skew(0);
-  }
-}
-
-@keyframes line2 {
-  0% {
-    transform: skew(0);
-  }
-
-  50% {
-    transform: skew(-6.4deg);
-  }
-
-  100% {
     transform: skew(0);
   }
 }
@@ -304,21 +275,23 @@
   .bg-img {
     width: auto;
     top: 0;
-    height: size-m(929);
-    margin-left: size-m(-550);
+    height: size-m(820);
+    transform: translateX(-50%);
+    left: 50%;
   }
 
   // s1
+.s1{height: size-m(820);overflow:initial;}
   .doll1 {
     width: size-m(189);
-    top: size-m(405);
-    left: 0;
+    top: size-m(390);
+    left:size-m(-70);
   }
 
   .doll2 {
     width: size-m(264);
-    top: size-m(483);
-    right: 0;
+    top: size-m(470);
+    right:size-m(-50);
   }
 
   .cloud1-2 {
@@ -330,9 +303,12 @@
   }
 
   .logo {
-    width: size-m(228);
+    height: size-m(200);
+    top: calc(25% - 60.8vw * 0.5);
+    left: calc(50% - 63vw * 0.5);
+   /* width: size-m(228);
     top: size-m(145);
-    left: size-m(61);
+    left: size-m(61);*/
   }
 
   .light {
@@ -361,7 +337,6 @@
     top: size-m(0);
     right: auto !important;
     left: size-m(930) !important;
-    animation: ball 12s alternate infinite;
   }
 
   .ball2 {
@@ -369,7 +344,6 @@
     top: size-m(130);
     right: auto !important;
     left: size-m(750) !important;
-    animation: ball 12s alternate infinite;
   }
 
   .line1 {
@@ -378,7 +352,6 @@
     right: auto !important;
     left: size-m(980) !important;
     transform-origin: bottom;
-    animation: line1 12s alternate infinite;
   }
 
   .line2 {
@@ -387,7 +360,6 @@
     right: auto !important;
     left: size-m(778) !important;
     transform-origin: bottom;
-    animation: line2 12s alternate infinite;
   }
 
   .cloud2-1 {

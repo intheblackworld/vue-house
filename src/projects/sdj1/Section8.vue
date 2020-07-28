@@ -128,7 +128,7 @@
   position: absolute;
   width: 100vw;
   height: 100vh;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   z-index: 2;
 }
@@ -148,12 +148,13 @@
 
 @media screen and (max-width: 767px) {
   .bg {
-    height: calc(177.8666666667vw - 63px);
+    height: size-m(467);
     background-color: #004a7f;
 
     &::v-deep {
       .swiper-pagination {
         width: 100vw;
+        display: none;
         left: auto;
         bottom: size-m(32);
         right: 0px;
@@ -190,8 +191,8 @@
 
   .slide-title {
     width: 100vw;
-    height: size-m(85);
-    padding: 3px 25px;
+    height: size-m(92);
+    padding: size-m(5) size-m(25) size-m(5) size-m(30);
     padding-left: size-m(30);
     background-color: rgba(0, 0, 0, 0.4);
     color: #fff;
@@ -211,11 +212,15 @@
   .txt {
     color: #ffffff;
     z-index: 14;
-    left: size-m(31);
-    right: auto;
+    left:auto;
+    right:size-m(10);
     opacity: 1;
-    bottom: size-m(8);
-    font-size: size(10);
+    bottom: size-m(27);
+    font-size: size-m(12);
+    width:17em;
+    text-align: left;
+    line-height: 1.6;
+    letter-spacing:0.15em;
   }
   // .slide-title {
   //   width: 100vw;
@@ -245,16 +250,15 @@
     height: calc(177.8666666667vw - 63px);
     object-fit: cover;
     object-position: center;
-    -webkit-filter: blur(5px) brightness(0.5);
+    //-webkit-filter: blur(5px) brightness(0.5);
   }
   .item-img2 {
-    top: 50%;
+    top: 0;
     left: 0;
-    transform: translateY(-50%);
+    transform: translateY(0%);
     position: absolute;
     width: 100vw;
-    height: auto;
-    object-fit: contain;
+    height:size-m(375);
     object-position: center;
     z-index: 2;
   }
