@@ -5,6 +5,7 @@
         class="full-img"
         v-lazy:background-image="require('./s5/bg.jpg')"
       ></div>
+      <!--
       <div class="water">
       <div
         class="water-img bg-img"
@@ -14,7 +15,7 @@
         class="waterpng-img bg-img"
         v-lazy:background-image="require('./s5/bg21.png')"
       ></div>
-      </div>
+      </div>-->
     <!--    <div class="river">
         <div
           v-for="item in riverList"

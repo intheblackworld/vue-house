@@ -11,7 +11,7 @@
         class="full-img"
         v-lazy:background-image="require('./mo/1/bg.jpg')"
       ></div>
-      <div class="water">
+     <!--  <div class="water">
       <div
         class="water-img bg-img"
         v-lazy:background-image="require('./s1/e1.gif')"
@@ -25,8 +25,8 @@
         v-if="isMobile"
         class="waterpng-img bg-img"
         v-lazy:background-image="require('./mo/1/bg2.png')"
-      ></div>
-      </div>
+      ></div> 
+      </div> -->
 
       <div class="txt absolute">
         <h3
