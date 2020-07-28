@@ -83,7 +83,8 @@
   }
 }
 @media screen and (max-width: 767px) {
-  .indigator {display: none;
+  .indigator {
+    // display: none;
     right: -3.5vw;
     .contact-indigator {
       display: none;
