@@ -10,7 +10,7 @@
       <swiper-slide
         v-for="(slide, index) in slideList"
         :index="index"
-        :key="slide.desc + index"
+        :key="slide.img"
       >
         <img
           :src="slide.img"

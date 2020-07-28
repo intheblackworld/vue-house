@@ -1,82 +1,29 @@
 <template>
-  <div class="relative">
-    <div v-if="!isMobile">
-      <img
-        v-lazy="require('./s5/img.jpg')"
-        alt="30米雙綠園道  自然即是奢華 與美人魚為鄰最時尚"
-        class="img absolute"
+  <div class="relative section5">
+    <div class="frame absolute" data-aos="fade-down-right" data-aos-delay="400"></div>
+    <swiper
+      :options="swiperOption"
+      ref="mySwiper"
+      data-aos="fade"
+      data-aos-delay="200"
+      class="slide-container absolute"
+    >
+      <swiper-slide
+        v-for="(slide, index) in slideList"
+        :index="index"
+        :key="slide.img"
       >
-      <img
-        v-lazy="require('./s5/title.png')"
-        alt="30米雙綠園道  自然即是奢華 與美人魚為鄰最時尚"
-        data-aos="fade"
-        data-aos-delay="400"
-        class="title-img absolute"
-      >
-      <div class="desc_b">
-      <h3
-        class="desc absolute"
-        data-aos="fade"
-        data-aos-delay="700"
-      >
-        臺北仁愛路園道、臺中美術館園道、到臺南健康路園道，住在有園道的地方，本身就是一種享受，兩排林蔭風景為您開道，將身心靈的疲憊卸下，一面是森海之美，一面是園道生活，「聯上海棠」得天獨厚，居者即是榮耀！
-      </h3>
-      </div>
-      <div class="flex animate-row">
         <img
-          v-lazy="require('./s5/wave2.png')"
-          alt="wave"
-          class="wave"
+          :src="slide.img"
+          alt=""
+          class="item-img"
         >
-        <img
-          v-lazy="require('./s5/wave2.png')"
-          alt="wave"
-          class="wave"
-        >
-      </div>
-    </div>
-    <div v-if="isMobile">
-      <img
-        v-lazy="require('./mo/5/img.jpg')"
-        alt="30米雙綠園道  自然即是奢華 與美人魚為鄰最時尚"
-        class="img absolute"
-      >
-      <img
-        v-lazy="require('./s5/title.png')"
-        alt="30米雙綠園道  自然即是奢華 與美人魚為鄰最時尚"
-        class="title-img absolute"
-      >
-      <h3 class="desc absolute">
-        臺北仁愛路園道、臺中美術館園道、到臺南健康路園道，住在有園道的地方，本身就是一種享受，兩排林蔭風景為您開道，將身心靈的疲憊卸下，一面是森海之美，一面是園道生活，「聯上海棠」得天獨厚，居者即是榮耀！
-      </h3>
-      <div class="flex animate-row">
-        <img
-          v-lazy="require('./s5/wave2.png')"
-          alt="wave"
-          class="wave"
-        >
-        <img
-          v-lazy="require('./s5/wave2.png')"
-          alt="wave"
-          class="wave"
-        >
-      </div>
+      </swiper-slide>
       <div
-        class="flex animate-row no-animation"
-        v-if="!isMobile"
-      >
-        <img
-          v-lazy="require('./s5/wave.png')"
-          alt="wave"
-          class="wave"
-        >
-        <img
-          v-lazy="require('./s5/wave.png')"
-          alt="wave"
-          class="wave"
-        >
-      </div>
-    </div>
+        class="swiper-pagination"
+        slot="pagination"
+      ></div>
+    </swiper>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -85,100 +32,49 @@
   // height: 100vh;
   overflow: hidden;
   position: relative;
-  height: calc(100vh + 4vw);
-  background-color: #fff;
-  margin: 0 0 -7vh 0;
+  height: size(1080);
+}
+.frame {
+  width: size(1413);
+  height: size(788);
+  background-color: #c88f36;
+  top: size(169);
+  left: size(276);
+}
+.swiper-container {
+  width: size(1410);
+  height: size(792);
+  top: size(131);
+  left: size(230);
 }
 
-.bg-img {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  object-fit: cover;
-
-  // &:nth-child(1) {
-  //   position: relative;
-  // }
+.item-img {
+  width: size(1410);
+  height: size(792);
 }
 
-.img {
-  width: size(857);
-  height: 85vh;
-  object-fit: cover;
-  left: size(244);
-  top:5vh;
-  z-index: 5;
-}
-
-.title-img {
-  width: size(74);
-  top: calc(5vh + 1vw);
-  right: size(614);
-}
-.desc_b{transform: scaleX(0.93);}
-.desc {
-  width: size(260);
-  height: auto;
-  font-size: size(12);
-  font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2.1;
-  letter-spacing: 0.6px;
-  text-align: justify;
-  color: #595757;
-  right: size(503);
-  top:calc(5vh + 30.3vw);
-}
-.animate-row {
-  width: 200vw;
-  animation: moving 30s linear infinite;
-  position: absolute;
-  bottom: size(-200);
-
-  img {
-    width: 100%;
-    height: size(379);
-    object-fit: cover;
-  }
-
-  &.animate-row2 {
-    bottom: size(100);
-    animation: moving 20s linear infinite;
-
-    img {
-      height: size(79);
+.section5 {
+  &::v-deep {
+    .swiper-pagination {
+      // display: none;
+      width: 200px;
+      left: 0;
+      bottom: 20px;
+      right: 0;
+      margin: 0 auto;
     }
-    // animation-delay: 5s;
-  }
-
-  &.no-animation {
-    width: 100vw;
-    animation: none;
-    bottom: 0;
-    img {
-      width: 100vw;
-      height: size(164);
+    .swiper-pagination-bullet {
+      width: 21px;
+      height: 21px;
+      box-shadow: 0 0 0 1px #fff;
+      margin: 0 6px !important;
+      background-color: transparent;
+      opacity: 1 !important;
     }
-  }
-}
 
-@keyframes moving {
-  0% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0) scaleY(1);
-  }
-  50% {
-    -webkit-transform: translateX(0);
-    transform: translateX(-25%) scaleY(0.5);
-  }
-
-  to {
-    -webkit-transform: translateX(-100vw);
-    transform: translateX(-50%) scaleY(1);
+    .swiper-pagination-bullet-active {
+      background-color: #fff;
+    }
   }
 }
 
@@ -196,79 +92,66 @@
 
 @media screen and (max-width: 767px) {
   .relative {
-    // height: 100vh;
-    overflow: hidden;
-    position: relative;
-    height: 100vh;
-  }
-
-  .img {
-    width: size-m(229);
-    left: auto;
-    right: size-m(5);
-    top: size-m(7.5);height: auto;
-  }
-
-  .title-img {
-    width: size-m(59);
-    top: size-m(40);
-    left: size-m(40);
-    right: auto;
-  }
-
-  .desc {
-    width:94%;
-    height: auto;
-    font-size: size-m(12);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.1;
-    letter-spacing: 0.6px;
-    text-align: justify;
-    color: #595757;
-    right: 0;
-    left: 0;
-    margin: 0 auto;
-  transform: scaleX(0.93);
-    top: size-m(494);z-index: 5;
-  }
-
-  .animate-row {
-    bottom: size-m(-130);
-
-    img {
-      height: size-m(200);
-    }
-
-    &.animate-row2 {
-      bottom: size-m(0);
-
-      img {
-        height: size-m(40);
-      }
-      // animation-delay: 5s;
-    }
-
-    &.no-animation {
-      img {
-        height: size-m(80);
-      }
-    }
+    background: #fff;
+    height: size-m(600);
   }
 }
 </style>
 <script>
 // @ is an alias to /src
-import { isMobile } from '@/utils'
+import { isMobile, isTablet } from '@/utils'
+import slider from '@/mixins/slider.js'
+import 'swiper/dist/css/swiper.css'
+
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'section5',
+  mixins: [slider],
 
-  components: {},
+  components: {
+    swiper,
+    swiperSlide,
+  },
   data() {
     return {
       isMobile,
+      swiperOption: {
+        slidesPerView: isMobile ? 1 : 1,
+        spaceBetween: isTablet ? 20 : 30,
+        slidesPerColumn: isMobile ? 1 : 1,
+        allowSlidePrev: isMobile ? true : true,
+        allowSlideNext: isMobile ? true : true,
+        // centeredSlides: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: true,
+        },
+        loop: false,
+        effect: 'fade',
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      },
+      slideList: [
+        {
+          img: require('./s5/1.jpg'),
+        },
+        {
+          img: require('./s5/2.jpg'),
+        },
+        {
+          img: require('./s5/3.jpg'),
+        },
+        {
+          img: require('./s5/4.jpg'),
+        },
+      ],
     }
   },
 
