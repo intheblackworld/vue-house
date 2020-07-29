@@ -6,7 +6,7 @@ export default {
   phone: '07-3925188',
   fbLink: 'https://www.facebook.com/dalitokyo888/',
   fbMessage: 'https://m.me/dalitokyo888/',
-  caseName: '上東京',
+  caseName: '朗朗城心',
   indigatorLength: 10,
 
   houseInfos: [

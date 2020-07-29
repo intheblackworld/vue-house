@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="contact-info">
-    <img class="logo" src="@/assets/img/contact-logo.png" alt="好站" />
+    <!-- <img class="logo" src="@/assets/img/contact-logo.png" alt="好站" /> -->
     <div class="info">
       <div class="btn flex-c" @click="showCallDialog">
         <span class="flex-c">
@@ -102,13 +102,13 @@ export default {
   position: relative;
   z-index: 3;
   width: 1200px;
-  height: 460px;
+  height: 314px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
   transform: translateY(0);
   margin: 2vw auto -3vw;
-  padding: 70px 0 50px;
+  padding: 78px 0 50px;
 }
 
 .logo {

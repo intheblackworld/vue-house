@@ -92,33 +92,47 @@
       ></div>
       <div
         class="full-img swing"
+        data-aos="fade"
+        data-aos-delay="400"
         v-lazy:background-image="require('./s1/1.png')"
       ></div>
       <div
         class="full-img"
+        data-aos="fade"
+        data-aos-delay="600"
         v-lazy:background-image="require('./s1/2.png')"
       ></div>
       <div
         class="full-img swing"
+        data-aos="fade"
+        data-aos-delay="800"
         v-lazy:background-image="require('./s1/3.png')"
       ></div>
       <div
         class="full-img"
+        data-aos="fade"
+        data-aos-delay="1000"
         v-lazy:background-image="require('./s1/butterfly.gif')"
       ></div>
       <img
         src="./s1/用誠心 造城心.png"
-        alt=""
+        data-aos="fade-up"
+        data-aos-delay="400"
+        alt="朗朗城心"
         class="title1 absolute"
       >
       <img
         src="./s1/國門新都心 5A新生活.png"
-        alt=""
+        data-aos="fade-up"
+        data-aos-delay="600"
+        alt="朗朗城心"
         class="title2 absolute"
       >
       <img
         src="./s1/2-3房 29097555.png"
-        alt=""
+        data-aos="fade-up"
+        data-aos-delay="800"
+        alt="朗朗城心"
         class="title3 absolute"
       >
       <h3 class="txt absolute">萬騰廣告</h3>
@@ -128,36 +142,56 @@
         class="full-img"
         v-lazy:background-image="require('./s1/mo/')"
       ></div> -->
-      <img class="absolute commingsoon" src="./s1/mo/comingsoon_.png" alt="">
+      <img
+        class="absolute commingsoon"
+        data-aos="fade-up"
+        data-aos-delay="400"
+        src="./s1/mo/comingsoon_.png"
+        alt="朗朗城心"
+      >
       <div
         class="full-img img3 swing"
+        data-aos="fade"
+        data-aos-delay="400"
         v-lazy:background-image="require('./s1/mo/3.png')"
       ></div>
       <div
         class="full-img img1 swing"
+        data-aos="fade"
+        data-aos-delay="600"
         v-lazy:background-image="require('./s1/mo/1.png')"
       ></div>
       <div
         class="full-img img2"
+        data-aos="fade"
+        data-aos-delay="800"
         v-lazy:background-image="require('./s1/mo/2.png')"
       ></div>
       <div
         class="full-img butterfly"
+        data-aos="fade"
+        data-aos-delay="1000"
         v-lazy:background-image="require('./s1/mo/butterfly.gif')"
       ></div>
       <img
         src="./s1/mo/用誠心 造城心_.png"
-        alt=""
+        alt="朗朗城心"
+        data-aos="fade-up"
+        data-aos-delay="400"
         class="title1 absolute"
       >
       <img
         src="./s1/mo/國門新都心 5A新生活_.png"
-        alt=""
+        alt="朗朗城心"
+        data-aos="fade-up"
+        data-aos-delay="600"
         class="title2 absolute"
       >
       <img
         src="./s1/mo/2-3房 29097555_.png"
-        alt=""
+        alt="朗朗城心"
+        data-aos="fade-up"
+        data-aos-delay="800"
         class="title3 absolute"
       >
       <h3 class="txt absolute">萬騰廣告</h3>
@@ -194,6 +228,14 @@
   margin-top: size(-15);
   margin-left: size((1920 - 2000) / 2);
   animation: swing 5s 0s ease-in infinite;
+}
+
+.commingsoon {
+  width: size(850 * 2);
+  top: size(80);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
 
 .title1 {
