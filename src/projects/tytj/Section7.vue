@@ -52,10 +52,10 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .relative {
-  // height: 100vh;
+  height: 100vh;
   overflow: hidden;
   position: relative;
-  height: size(1080);
+  //height: size(1080);
   background-image: linear-gradient(
     to right,
     #edbd5b,
@@ -68,7 +68,7 @@
 
 .swiper-container {
   width: 100vw;
-  height: size(1080);
+  height:100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -126,6 +126,11 @@
   right: size(102);
 }
 
+  .item-img {
+    width: 100vw;
+    height:100%;
+    object-fit: cover;
+  }
 .desc {
   text-shadow: 2px 3px 5px rgba(35, 24, 21, 0.4);
   top: size(82);
@@ -170,10 +175,6 @@
     left: 0;
   }
 
-  .item-img {
-    width: 100vw;
-    height: size-m(375);
-  }
 
   .desc {
     text-shadow: none;
@@ -233,13 +234,13 @@ export default {
           clickable: true,
         },
       },
-      slideList: isMobile
+      slideList:/* isMobile
         ? [
             {
               img: require('./mo/7/1.jpg'),
             },
           ]
-        : [
+        : */[
             {
               img: require('./s7/p1_1.jpg'),
             },

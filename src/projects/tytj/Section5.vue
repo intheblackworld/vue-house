@@ -8,8 +8,6 @@
     <swiper
       :options="swiperOption"
       ref="mySwiper"
-      data-aos="fade"
-      data-aos-delay="200"
       class="slide-container absolute"
     >
       <swiper-slide
@@ -49,23 +47,24 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .relative {
-  // height: 100vh;
+  height: 100vh;
   overflow: hidden;
   position: relative;
-  height: size(1080);
+  //height: size(1080);
 }
 .frame {
   width: size(1413);
   height: size(788);
   background-color: #c88f36;
-  top: size(169);
+  top:calc(50% - 38vw * 0.5);
   left: size(276);
 }
 .swiper-container {
   width: size(1410);
   height: size(792);
-  top: size(131);
   left: size(230);
+  top:50%;
+  transform: translateY(-50%);
 }
 
 .item-img {
@@ -128,6 +127,7 @@
     height: size-m(750);
     top: 0;
     left: 0;
+    transform: translateY(-0%);
   }
 
   .item-img {
@@ -204,16 +204,16 @@ export default {
       },
       slideList: [
         {
-          img: require('./mo/5/1.jpg'),
+          img: isMobile ? require('./mo/5/1.jpg' ): require('./s5/1.jpg'),
         },
         {
-          img: require('./mo/5/2.jpg'),
+          img: isMobile ? require('./mo/5/2.jpg' ): require('./s5/2.jpg'),
         },
         {
-          img: require('./mo/5/3.jpg'),
+          img: isMobile ? require('./mo/5/3.jpg' ): require('./s5/3.jpg'),
         },
         {
-          img: require('./mo/5/4.jpg'),
+          img: isMobile ? require('./mo/5/4.jpg' ): require('./s5/4.jpg'),
         },
       ],
     }

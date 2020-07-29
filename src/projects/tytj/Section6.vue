@@ -30,15 +30,15 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .section6 {
-  // height: 100vh;
+  height: 100vh;
   // overflow: hidden;
   position: relative;
-  height: size(1080);
+  //height: size(1080);
   z-index: 2;
 }
 .bg {
   width: 100vw;
-  height: size(1080);
+  height: 100%;
   background-image: url('./s6/bg1.jpg');
   background-size: cover;
   background-attachment: fixed;
@@ -59,14 +59,18 @@
 
 .g-banner {
   width: size(824);
+  height: 100%;
   top: 0;
   left: 0;
+  object-fit: cover;
 }
-
 .w-banner {
+  width: size(824);
+  height: 100%;
   width: size(792);
   top: 0;
   left: 0;
+  object-fit: cover;
 }
 
 .logo-b {

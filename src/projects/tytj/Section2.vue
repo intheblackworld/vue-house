@@ -81,22 +81,23 @@
       data-aos="fade"
       data-aos-delay="400"
     >
+    <div class="absolute txt">
     <h3
-      class="absolute title"
+      class="title"
       data-aos="fade"
       data-aos-delay="400"
     >泰新<br />水電消防工程 精選業績</h3>
     <div
-      class="absolute hr"
+      class="hr"
       data-aos="fade"
       data-aos-delay="500"
     ></div>
     <div
-      class="absolute desc"
+      class="desc"
       data-aos="fade"
       data-aos-delay="600"
     >「泰新系統」長期耕耘專業水電領域，全台北、中、南都有知名代表作，曾打造公共工程、廠辦、商辦、商場、學校、住宅等多元建築作品，歷經多次國際高標考驗，曾與無數業界頂尖設計菁英合作，奠定完整而難得的跨領域水電經驗，更以32年專業作為實踐建築理念的新起點，成立「泰御建設」，多年經驗累積100% 的施工品質，2006年導入國外預製工法，由Victaulic原廠協助成立專業預製廠，開創國內第一家使用預製工法及防震工法之先創，「泰御建設」從開發、規劃、設計、施工，實踐力行精神，一步一腳印，每一細節皆嚴格把關、精準要求，完成智慧建築。</div>
-
+</div>
     <swiper
       :options="swiperOption"
       ref="mySwiper"
@@ -129,10 +130,10 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .relative {
-  // height: 100vh;
+  height: 100vh;
   // overflow: hidden;
   position: relative;
-  height: size(1080);
+  //height: size(1080);
   background-attachment: fixed;
   background-image: linear-gradient(
     to right,
@@ -146,8 +147,8 @@
 .imgs {
   width: size(326 * 3 + 13 * 6);
   left: size(810);
-  top: size(144);
-
+  top:50%;
+  transform: translateY(-46%);
   .item {
     width: size(326);
     margin: 0 size(13) size(45);
@@ -167,7 +168,7 @@
     text-align: center;
     color: #68361a;
     margin-top: 4px;
-    white-space: nowrap;
+    white-space: nowrap;font-family: "Noto Serif TC", serif;
   }
 }
 
@@ -176,7 +177,12 @@
   left: size(275 - 472);
   top: size(846);
 }
-
+.txt{
+  width: size(650);
+  font-size: size(18);
+  left: size(117);
+  top:50%;
+  transform: translateY(-50%);}
 .title {
   top: size(250);
   left: size(117);
@@ -186,30 +192,31 @@
   font-style: normal;
   line-height: 1.2;
   letter-spacing: 3.3px;
+  transform: scaleX(0.95);
   text-align: center;
-  color: #ffffff;
+  color: #ffffff;filter: drop-shadow(0 size(5) size(5) #78531d99)
 }
 
 .hr {
   width: size(597);
   height: 1px;
   background-color: #fff;
-  left: size(118);
-  top: size(400);
+  margin: 1em auto;
+  filter: drop-shadow(0 size(5) size(5) #78531d99)
+
 }
 
 .desc {
-  width: size(532);
+  width: size(597);
   font-size: size(18);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 2;
   letter-spacing: 1.8px;
-  text-align: left;
-  color: #ffffff;
-  top: size(450);
-  left: size(150);
+  text-align: justify;
+  margin: auto;
+  color: #ffffff;filter: drop-shadow(0 size(5) size(5) #78531d99)
 }
 
 @media only screen and (max-width: 1440px) {
@@ -231,12 +238,18 @@
   .logo-b {
     display: none;
   }
+.txt{
+  width:100vw;
+  left:0;
+  top:0;
+  font-size: size-m(18);
+  transform: translateY(0);}
 
   .title {
     top: size-m(0);
     left: 0;
     right: 0;
-    margin: 0 auto;
+    margin: 1em auto;
     font-size: size-m(27);
     font-weight: bold;
     font-stretch: normal;
@@ -249,12 +262,6 @@
 
   .hr {
     width: size-m(315);
-    height: 1px;
-    background-color: #fff;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    top: size-m(87);
   }
 
   .desc {
