@@ -37,17 +37,16 @@
 
 <script>
 // @ is an alias to /src
-import _ from 'lodash'
-import Navigation from '@/layouts/Navigation.vue'
+// import _ from 'lodash'
+// import Navigation from '@/layouts/Navigation.vue'
 import { isMobile } from '@/utils'
-import SideNavigation from '@/layouts/SideNavigation.vue'
+// import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
-import VideoSection from '@/components/VideoSection.vue'
-import TopIndigator from '@/components/TopIndigator.vue'
+// import TopIndigator from '@/components/TopIndigator.vue'
 
-import Section1 from '@/projects/sdj1/Section1.vue'
+import Section1 from '@/projects/llcs/Section1.vue'
 // import Section2 from '@/projects/sdj1/Section2.vue'
 // import Section3 from '@/projects/sdj1/Section3.vue'
 // import Section4 from '@/projects/sdj1/Section4.vue'
@@ -87,10 +86,10 @@ export default {
   data() {
     return {
       isMobile,
-      isSide: false,
+      // isSide: false,
       load: true,
-      viewIndex: 1,
-      offsetTopArr: [],
+      // viewIndex: 1,
+      // offsetTopArr: [],
       // action: {
       //   moveTo: () => {},
       // },
@@ -125,27 +124,27 @@ export default {
   },
 
   methods: {
-    onScroll() {
-      // 获取当前文档流的 scrollTop
-      const scrollTop =
-        document.documentElement.scrollTop || document.body.scrollTop
-      // 定义当前点亮的导航下标
-      let navIndex = 0
-      for (let n = 0; n < this.offsetTopArr.length; n++) {
-        // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
-        // 那么此时导航索引就应该是n了
-        let height = this.isMobile ? 200 : 800
-        if (scrollTop >= this.offsetTopArr[n] - height) {
-          navIndex = n
-        }
+    // onScroll() {
+    //   // 获取当前文档流的 scrollTop
+    //   const scrollTop =
+    //     document.documentElement.scrollTop || document.body.scrollTop
+    //   // 定义当前点亮的导航下标
+    //   let navIndex = 0
+    //   for (let n = 0; n < this.offsetTopArr.length; n++) {
+    //     // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
+    //     // 那么此时导航索引就应该是n了
+    //     let height = this.isMobile ? 200 : 800
+    //     if (scrollTop >= this.offsetTopArr[n] - height) {
+    //       navIndex = n
+    //     }
 
-        // if (n > 4) {
-        //   navIndex = 5
-        // }
-      }
-      // console.log(navIndex)
-      this.viewIndex = navIndex + 1
-    },
+    //     // if (n > 4) {
+    //     //   navIndex = 5
+    //     // }
+    //   }
+    //   // console.log(navIndex)
+    //   this.viewIndex = navIndex + 1
+    // },
 
     // onLeave(origin, destination, direction) {
     //   if (!this.isMobile) {
