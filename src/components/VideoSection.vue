@@ -1,7 +1,7 @@
 <template>
   <div class="section3">
     <div
-      class="bg fullscreen"
+      class="bg"
       v-if="!isMobile"
     >
       <div class="container">
@@ -175,7 +175,7 @@
     cursor: pointer;
 
     .item-content {
-      font-size: 1.4em;
+      font-size: size(23);
       font-weight: 300;
       line-height: 1.7;
       letter-spacing:0.1em;
@@ -394,6 +394,10 @@
     font-size: calc(100vw * 38 / 375);
     color: $video_section_title_color;
     margin-bottom: 40px;
+  }
+
+  .item-content {
+    font-size: size-m(18);
   }
 
   .btn-group {
