@@ -152,7 +152,7 @@
           :disabled="!checked || !isVerify"
           @click="submit"
           :loading="isSubmit"
-        >預約賞屋ㄡ</el-button>
+        >預約賞屋</el-button>
         <Loading
           :loading="isSubmit"
           :isOpacity="true"
