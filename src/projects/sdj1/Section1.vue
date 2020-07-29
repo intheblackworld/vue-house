@@ -134,16 +134,16 @@
 .light {
   width: size(750);
   top:auto;
-  bottom: size(-10);
-  left: size(254);
+  bottom: size(-120);
+  left: size(254);transform:translateX(-2%) rotate(-10deg);
   animation: light 2s alternate infinite;
 }
 
 // s2
 .ball1 {
   width: size(209);
-  top: size(-402);
-  right: size(511) !important;
+  top: size(-382);
+  right: size(513) !important;
   left: auto !important;
   transform: translateX(30%);
   animation: ball 12s ease-in-out -3s alternate infinite;
@@ -152,7 +152,7 @@
 .ball2 {
   width: size(108);
   top: size(-100);
-  right: size(846) !important;
+  right: size(828) !important;
   left: auto !important;
   transform: translateX(70%);
   animation: ball 12s ease-in-out -2s alternate infinite;
@@ -160,7 +160,7 @@
 
 .line1 {
   width: size(100);
-  top: size(-130);
+  top: size(-100);
   right: size(558) !important;
   left: auto !important;
   transform-origin: bottom;
@@ -170,8 +170,8 @@
 
 .line2 {
   width: size(54);
-  top: size(40);
-  right: size(867) !important;
+  top: size(45);
+  right: size(850) !important;
   left: auto !important;
   transform-origin: bottom;
   transform: skew(-15deg);
@@ -214,7 +214,7 @@
 @keyframes light {
   to {
     opacity: 0;
-    //  transform: rotate(5deg);
+    transform: rotate(0deg);
   }
 }
 
