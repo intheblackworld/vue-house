@@ -74,7 +74,7 @@ body {
 
 .full-img {
   width: 100%;
-  height: 100vh;
+  height: size(2160);
   position: absolute;
   background-size: cover;
   background-position: center;
@@ -353,7 +353,7 @@ img[lazy='loaded'] {
     height: calc(100vh - 63px);
   }
   .full-img {
-    height: calc(100vh - 63px);
+    height: auto;
   }
 
   .col-mobile-1 {

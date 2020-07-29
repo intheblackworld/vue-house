@@ -10,10 +10,10 @@
         <h3 class="title">{{order.title}}</h3>
         <div class="subtitle">{{order.subTitle}}</div>
       </div> -->
-      <div
+      <h3
         class="order-title"
         v-html="order.title"
-      ></div>
+      ></h3>
       <div
         class="order-subtitle"
         v-html="order.subTitle"
@@ -152,7 +152,7 @@
           :disabled="!checked || !isVerify"
           @click="submit"
           :loading="isSubmit"
-        >預約賞屋ㄡ</el-button>
+        >預約賞屋</el-button>
         <Loading
           :loading="isSubmit"
           :isOpacity="true"
@@ -323,7 +323,7 @@ export default {
   padding-top: 130px;
   background-position: center;
   background-size: cover;
-  background-image: $order_bg_image;
+  background-color: $order_bg_image;
   background-attachment: fixed;
 
   .order-top {
@@ -359,6 +359,8 @@ export default {
     flex-direction: column;
     margin-bottom: 3rem;
     justify-content: space-between;
+    position: relative;
+    z-index: 3;
   }
 
   .form {
