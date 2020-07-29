@@ -3,7 +3,7 @@
     <Loading :loading="load" />
     <!-- <SideNavigation v-if="isSide" />
     <Navigation v-else /> -->
-    <TopIndigator :viewIndex="viewIndex" />
+    <!-- <TopIndigator :viewIndex="viewIndex" /> -->
     <!-- <full-page
       ref="fullPage"
       :options="options"
@@ -15,69 +15,6 @@
     >
       <Section1 />
     </div>
-
-    <div
-      class="section"
-      id="section2"
-    >
-      <VideoSection
-        :playBtn="require('@/projects/sdj1/s2/youtube.png')"
-        title="系列影片"
-        :close="require('@/projects/jh/s4/close.png')"
-        :arrows="[require('@/projects/gydy/arrow-left.png'), require('@/projects/gydy/arrow-right.png')]"
-        :slideList="[
-        {
-          title: '萬眾矚目北高雄<br />百貨版圖新時代',
-          img: require('@/projects/sdj1/s2/1.jpg'),
-          video: 'https://www.youtube.com/embed/IhnVmiohnUQ',
-          isPlay: false,
-        },
-        {
-          title: '明誠文藻雙商圈<br />河堤綠帶散步到',
-          img: require('@/projects/sdj1/s2/2.jpg'),
-          video: 'https://www.youtube.com/embed/V0LnGR7p-CE',
-          isPlay: false,
-        },
-      ]"
-      />
-    </div>
-    <div
-      class="section"
-      id="section4"
-    >
-      <Section4 />
-    </div>
-    <div
-      class="section"
-      id="section3"
-    >
-      <Section3 />
-    </div>
-
-    <div
-      class="section"
-      id="section5"
-    >
-      <Section5 />
-    </div>
-    <div
-      class="section"
-      id="section7"
-    >
-      <Section7 />
-    </div>
-    <div
-      class="section"
-      id="section6"
-    >
-      <Section6 />
-    </div>
-    <div
-      class="section"
-      id="section8"
-    >
-      <Section8 />
-    </div>
     <!-- </full-page> -->
     <ContactSection
       class="section"
@@ -88,7 +25,7 @@
 </template>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css?family=Playball&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Playball&display=swap');
 @import '../assets/style/variableColor.scss';
 
 .section,
@@ -112,12 +49,12 @@ import TopIndigator from '@/components/TopIndigator.vue'
 
 import Section1 from '@/projects/sdj1/Section1.vue'
 // import Section2 from '@/projects/sdj1/Section2.vue'
-import Section3 from '@/projects/sdj1/Section3.vue'
-import Section4 from '@/projects/sdj1/Section4.vue'
-import Section5 from '@/projects/sdj1/Section5.vue'
-import Section6 from '@/projects/sdj1/Section6.vue'
-import Section7 from '@/projects/sdj1/Section7.vue'
-import Section8 from '@/projects/sdj1/Section8.vue'
+// import Section3 from '@/projects/sdj1/Section3.vue'
+// import Section4 from '@/projects/sdj1/Section4.vue'
+// import Section5 from '@/projects/sdj1/Section5.vue'
+// import Section6 from '@/projects/sdj1/Section6.vue'
+// import Section7 from '@/projects/sdj1/Section7.vue'
+// import Section8 from '@/projects/sdj1/Section8.vue'
 // import Section9 from '@/projects/sdj/Section9.vue'
 // import Section10 from '@/projects/sdj/Section10.vue'
 // import Section11 from '@/projects/sdj/Section11.vue'
@@ -127,20 +64,20 @@ export default {
   name: 'home',
   components: {
     Loading,
-    TopIndigator,
-    VideoSection,
-    Navigation,
-    SideNavigation,
+    // TopIndigator,
+    // VideoSection,
+    // Navigation,
+    // SideNavigation,
     ContactSection,
     MobileNav,
     Section1,
     // Section2,
-    Section3,
-    Section4,
-    Section5,
-    Section6,
-    Section7,
-    Section8,
+    // Section3,
+    // Section4,
+    // Section5,
+    // Section6,
+    // Section7,
+    // Section8,
     // Section9,
     // Section10,
     // Section11,
@@ -178,19 +115,18 @@ export default {
     })
   },
   mounted() {
-    window.addEventListener('scroll', _.throttle(this.onScroll, 500), false)
+    // window.addEventListener('scroll', _.throttle(this.onScroll, 500), false)
     // 获取所有锚点元素
-    const navContents = document.querySelectorAll('.section')
+    // const navContents = document.querySelectorAll('.section')
     // 所有锚点元素的 offsetTop
-    navContents.forEach(item => {
-      this.offsetTopArr.push(item.offsetTop)
-    })
+    // navContents.forEach(item => {
+    //   this.offsetTopArr.push(item.offsetTop)
+    // })
   },
 
   methods: {
     onScroll() {
       // 获取当前文档流的 scrollTop
-      console.log(document.documentElement.scrollTop)
       const scrollTop =
         document.documentElement.scrollTop || document.body.scrollTop
       // 定义当前点亮的导航下标
