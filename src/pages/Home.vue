@@ -28,13 +28,13 @@
         :slideList="[
         {
           title: '萬眾矚目北高雄<br />百貨版圖新時代',
-          img: '',
+          img: require('@/projects/sdj1/s2/1.jpg'),
           video: 'https://www.youtube.com/embed/IhnVmiohnUQ',
           isPlay: false,
         },
         {
           title: '明誠文藻雙商圈<br />河堤綠帶散步到',
-          img: '',
+          img: require('@/projects/sdj1/s2/2.jpg'),
           video: 'https://www.youtube.com/embed/V0LnGR7p-CE',
           isPlay: false,
         },
@@ -100,6 +100,7 @@
 
 <script>
 // @ is an alias to /src
+import _ from 'lodash'
 import Navigation from '@/layouts/Navigation.vue'
 import { isMobile } from '@/utils'
 import SideNavigation from '@/layouts/SideNavigation.vue'
@@ -152,6 +153,7 @@ export default {
       isSide: false,
       load: true,
       viewIndex: 1,
+      offsetTopArr: [],
       // action: {
       //   moveTo: () => {},
       // },
@@ -171,42 +173,33 @@ export default {
     }
   },
   created() {
-    // setTimeout(() => {
-    //   this.load = false
-    // }, 500)
     window.addEventListener('load', event => {
       this.load = false
     })
   },
   mounted() {
-    window.addEventListener('scroll', this.onScroll, false)
-    // this.action = this.$refs.fullPage.api
-    // if (this.isMobile) {
-    //   this.$refs.fullPage.api.setResponsive(true)
-    // }
+    window.addEventListener('scroll', _.throttle(this.onScroll, 500), false)
+    // 获取所有锚点元素
+    const navContents = document.querySelectorAll('.section')
+    // 所有锚点元素的 offsetTop
+    navContents.forEach(item => {
+      this.offsetTopArr.push(item.offsetTop)
+    })
   },
+
   methods: {
-    onDone() {
-      console.log('done')
-    },
     onScroll() {
-      // 获取所有锚点元素
-      const navContents = document.querySelectorAll('.section')
-      // 所有锚点元素的 offsetTop
-      const offsetTopArr = []
-      navContents.forEach(item => {
-        offsetTopArr.push(item.offsetTop)
-      })
       // 获取当前文档流的 scrollTop
+      console.log(document.documentElement.scrollTop)
       const scrollTop =
         document.documentElement.scrollTop || document.body.scrollTop
       // 定义当前点亮的导航下标
       let navIndex = 0
-      for (let n = 0; n < offsetTopArr.length; n++) {
+      for (let n = 0; n < this.offsetTopArr.length; n++) {
         // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
         // 那么此时导航索引就应该是n了
         let height = this.isMobile ? 200 : 800
-        if (scrollTop >= offsetTopArr[n] - height) {
+        if (scrollTop >= this.offsetTopArr[n] - height) {
           navIndex = n
         }
 

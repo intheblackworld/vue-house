@@ -384,6 +384,10 @@
     }
   }
 
+  .video-bg {
+    height: size-m(286);
+  }
+
   .title {
     font-size: calc(100vw * 38 / 375);
     color: $video_section_title_color;

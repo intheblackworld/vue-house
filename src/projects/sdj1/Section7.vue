@@ -6,16 +6,22 @@
           src="./s7/1.png"
           alt=""
           class="bg-img"
+          data-aos="fade-left"
+          data-aos-delay="400"
         >
         <img
           src="./s7/2.png"
           alt=""
           class="bg-img"
+          data-aos="fade-left"
+          data-aos-delay="600"
         >
         <img
           src="./s7/3.png"
           alt=""
           class="bg-img"
+          data-aos="fade-left"
+          data-aos-delay="800"
         >
       </div>
       <div class="frame2">
@@ -23,16 +29,22 @@
           src="./s7/4.png"
           alt=""
           class="bg-img"
+          data-aos="fade-left"
+          data-aos-delay="400"
         >
         <img
           src="./s7/5.png"
           alt=""
           class="bg-img"
+          data-aos="fade-left"
+          data-aos-delay="600"
         >
         <img
           src="./s7/6.png"
           alt=""
           class="bg-img"
+          data-aos="fade-left"
+          data-aos-delay="800"
         >
       </div>
     </div>
@@ -42,6 +54,8 @@
           src="./mo/6/img.png"
           alt=""
           class="bg-img"
+          data-aos="fade"
+          data-aos-delay="400"
         >
       </div>
       <div class="frame2">
@@ -49,12 +63,15 @@
           src="./mo/7/title.png"
           alt=""
           class="title-img"
+          data-aos="fade"
+          data-aos-delay="400"
         >
 
         <swiper
           :options="swiperOption"
           ref="mySwiper"
-          swiper-no-swiping
+          data-aos="fade"
+          data-aos-delay="600"
         >
           <swiper-slide
             v-for="(slide, index) in slideList"
@@ -198,14 +215,14 @@
 <script>
 // @ is an alias to /src
 import { isMobile } from '@/utils'
-import slider from '@/mixins/slider.js'
+// import slider from '@/mixins/slider.js'
 import 'swiper/dist/css/swiper.css'
 
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'section7',
-  mixins: [slider],
+  // mixins: [slider],
 
   components: {
     swiper,
@@ -218,13 +235,12 @@ export default {
         slidesPerView: 1,
         spaceBetween: 20,
         slidesPerColumn: 1,
-        preloadImages: false,
-        cssMode: true,
+        lazy: true,
         autoplay: {
           delay: 3500,
           disableOnInteraction: false,
         },
-        effect: 'fade',
+        // effect: 'slide',
         loop: true,
         pagination: {
           el: '.swiper-pagination',

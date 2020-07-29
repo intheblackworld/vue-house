@@ -9,7 +9,8 @@
       <swiper
         :options="swiperOption"
         ref="mySwiper"
-        swiper-no-swiping
+        data-aos="fade"
+        data-aos-delay="400"
       >
         <swiper-slide
           v-for="(slide, index) in slideList"
@@ -27,13 +28,42 @@
             :class="`item-img2`"
             :alt="slide.src"
           />
-          <div class="slide-title flex-ac absolute">{{slide.title}}</div>
-          <div class="absolute txt">樣品屋圖片僅供示意參考，依實際合約附圖為準。</div>
+          <div
+            class="slide-title flex-ac absolute"
+            data-aos="fade-right"
+            data-aos-delay="600"
+          >{{slide.title}}</div>
+          <div
+            class="absolute txt"
+            data-aos="fade-right"
+            data-aos-delay="800"
+          >樣品屋圖片僅供示意參考，依實際合約附圖為準。</div>
         </swiper-slide>
         <div
+          v-if="!isMobile"
           class="swiper-pagination"
           slot="pagination"
         ></div>
+        <div
+          class="swiper-button-prev"
+          slot="button-prev"
+          v-if="isMobile"
+        >
+          <img
+            src="./all/箭頭2.png"
+            alt
+          />
+        </div>
+        <div
+          class="swiper-button-next"
+          slot="button-next"
+          v-if="isMobile"
+        >
+          <img
+            src="./all/箭頭1.png"
+            alt
+          />
+        </div>
       </swiper>
     </div>
   </div>
@@ -212,15 +242,15 @@
   .txt {
     color: #ffffff;
     z-index: 14;
-    left:auto;
-    right:size-m(10);
+    left: auto;
+    right: size-m(10);
     opacity: 1;
     bottom: size-m(27);
     font-size: size-m(12);
-    width:17em;
+    width: 17em;
     text-align: left;
     line-height: 1.6;
-    letter-spacing:0.15em;
+    letter-spacing: 0.15em;
   }
   // .slide-title {
   //   width: 100vw;
@@ -258,7 +288,7 @@
     transform: translateY(0%);
     position: absolute;
     width: 100vw;
-    height:size-m(375);
+    height: size-m(375);
     object-position: center;
     z-index: 2;
   }
@@ -268,14 +298,14 @@
 <script>
 // @ is an alias to /src
 import { isMobile, isTablet } from '@/utils'
-import slider from '@/mixins/slider.js'
+// import slider from '@/mixins/slider.js'
 import 'swiper/dist/css/swiper.css'
 
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'section8',
-  mixins: [slider],
+  // mixins: [slider],
 
   components: {
     swiper,
@@ -286,20 +316,25 @@ export default {
     return {
       isMobile,
       swiperOption: {
-        slidesPerView: isMobile ? 1 : 1,
-        spaceBetween: isTablet ? 20 : 30,
+        slidesPerView: 1,
+        spaceBetween: 20,
         slidesPerColumn: isMobile ? 1 : 2,
         // allowSlidePrev: isMobile ? true : false,
         // allowSlideNext: isMobile ? true : false,
         // centeredSlides: true,
-        preloadImages: false,
-        cssMode: true,
+        // preloadImages: true,
+        // cssMode: true,
+        lazy: true,
         autoplay: {
-          delay: 3500,
+          delay: 35000,
           disableOnInteraction: false,
         },
         effect: 'fade',
         loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
         pagination: {
           el: '.swiper-pagination',
           clickable: true,

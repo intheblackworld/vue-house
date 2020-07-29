@@ -4,6 +4,8 @@
       <swiper
         :options="swiperOption"
         ref="mySwiper"
+        data-aos="fade"
+        data-aos-delay="400"
         swiper-no-swiping
       >
         <swiper-slide

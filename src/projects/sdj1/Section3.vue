@@ -4,12 +4,15 @@
       src="./s3/txt.png"
       alt=""
       class="content absolute"
+      data-aos="fade"
+      data-aos-delay="400"
     >
     <swiper
       class="absolute"
       :options="swiperOption"
+      data-aos="fade"
+      data-aos-delay="600"
       ref="mySwiper"
-      swiper-no-swiping
     >
       <swiper-slide
         v-for="(slide, index) in slideList"
@@ -53,6 +56,8 @@
       src="./mo/3/txt.png"
       alt=""
       class="txt-img absolute"
+      data-aos="fade"
+      data-aos-delay="400"
     >
   </div>
 </template>
@@ -192,6 +197,7 @@ export default {
         // allowSlidePrev: isMobile ? true : false,
         // allowSlideNext: isMobile ? true : false,
         // centeredSlides: true,
+        lazy: true,
         loop: true,
         autoplay: {
           delay: 3500,

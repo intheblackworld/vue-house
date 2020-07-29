@@ -23,11 +23,15 @@
       >
       <img
         v-lazy="require('./s1/logo.png')"
+        data-aos="fade"
+        data-aos-delay="400"
         alt=""
         class="logo absolute"
       >
       <img
         v-lazy="require('./s1/light.png')"
+        data-aos="fade"
+        data-aos-delay="800"
         alt="bg"
         class="absolute light"
       >
@@ -85,7 +89,7 @@
 
 .bg-img {
   width: 100vw;
-  height:auto;
+  height: auto;
   max-height: 200vh;
   position: absolute;
   display: block;
@@ -95,12 +99,15 @@
   object-fit: cover;
 
   &:nth-child(1) {
-  //  position: relative;
+    //  position: relative;
   }
 }
 
 // s1
-.s1{height: 100vh;overflow:initial;}
+.s1 {
+  height: 100vh;
+  overflow: initial;
+}
 .doll1 {
   width: size(466);
   top: size(200);
@@ -126,16 +133,17 @@
 }
 
 .logo {
-  height:size(317);
-  top:calc(40% - 16.5104166667vw * 0.5);
-  left:calc(50% - 17.3958333333vw * 0.5);
+  height: size(317);
+  top: calc(40% - 16.5104166667vw * 0.5);
+  left: calc(50% - 17.3958333333vw * 0.5);
 }
 
 .light {
   width: size(750);
-  top:auto;
+  top: auto;
   bottom: size(-120);
-  left: size(254);transform:translateX(-2%) rotate(-10deg);
+  left: size(254);
+  transform: translateX(-2%) rotate(-10deg);
   animation: light 2s alternate infinite;
 }
 
@@ -281,17 +289,20 @@
   }
 
   // s1
-.s1{height: size-m(820);overflow:initial;}
+  .s1 {
+    height: size-m(820);
+    overflow: initial;
+  }
   .doll1 {
     width: size-m(189);
     top: size-m(390);
-    left:size-m(-70);
+    left: size-m(-70);
   }
 
   .doll2 {
     width: size-m(264);
     top: size-m(470);
-    right:size-m(-50);
+    right: size-m(-50);
   }
 
   .cloud1-2 {
@@ -306,7 +317,7 @@
     height: size-m(200);
     top: calc(25% - 60.8vw * 0.5);
     left: calc(50% - 63vw * 0.5);
-   /* width: size-m(228);
+    /* width: size-m(228);
     top: size-m(145);
     left: size-m(61);*/
   }

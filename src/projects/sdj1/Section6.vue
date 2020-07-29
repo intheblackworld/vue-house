@@ -4,16 +4,17 @@
       <swiper
         :options="swiperOption"
         ref="mySwiper"
-        swiper-no-swiping
+        data-aos="fade"
+        data-aos-delay="400"
       >
         <swiper-slide
           v-for="(slide, index) in slideList"
           :index="index"
-          :key="slide.img"
+          :key="slide.src"
           class="item"
         >
           <img
-            v-lazy="slide.src"
+            :src="slide.src"
             :class="`item-img`"
             :alt="slide.title"
           />
@@ -198,14 +199,14 @@
 <script>
 // @ is an alias to /src
 import { isMobile, isTablet } from '@/utils'
-import slider from '@/mixins/slider.js'
+// import slider from '@/mixins/slider.js'
 import 'swiper/dist/css/swiper.css'
 
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'section6',
-  mixins: [slider],
+  // mixins: [slider],
 
   components: {
     swiper,
@@ -216,14 +217,15 @@ export default {
     return {
       isMobile,
       swiperOption: {
-        slidesPerView: isMobile ? 1 : 3,
-        spaceBetween: isTablet ? 20 : 30,
-        slidesPerColumn: isMobile ? 1 : 2,
+        slidesPerView: 1,
+        spaceBetween: 20,
+        slidesPerColumn: 1,
         // allowSlidePrev: isMobile ? true : false,
         // allowSlideNext: isMobile ? true : false,
         centeredSlides: true,
-        preloadImages: false,
-        cssMode: true,
+        lazy: true,
+        // preloadImages: true,
+        // cssMode: false,
         autoplay: {
           delay: 3500,
           disableOnInteraction: false,
@@ -235,75 +237,77 @@ export default {
           clickable: true,
         },
       },
-      slideList: isMobile ? [
-        {
-          src: require('./mo/6/a1.png')
-        },
-        {
-          src: require('./mo/6/a2.png')
-        },
-        {
-          src: require('./mo/6/a3.png')
-        },
-        {
-          src: require('./mo/6/a4.png')
-        },
-        {
-          src: require('./mo/6/a5.png')
-        },
-        {
-          src: require('./mo/6/a6.png')
-        },
-        {
-          src: require('./mo/6/a7.png')
-        },
-        {
-          src: require('./mo/6/a8.png')
-        },
-        {
-          src: require('./mo/6/a9.png')
-        },
-        {
-          src: require('./mo/6/a10.png')
-        },
-        {
-          src: require('./mo/6/a11.png')
-        },
-      ] :[
-        {
-          src: require('./s6/1.png'),
-        },
-        {
-          src: require('./s6/2.png'),
-        },
-        {
-          src: require('./s6/3.png'),
-        },
-        {
-          src: require('./s6/4.png'),
-        },
-        {
-          src: require('./s6/5.png'),
-        },
-        {
-          src: require('./s6/6.png'),
-        },
-        {
-          src: require('./s6/7.png'),
-        },
-        {
-          src: require('./s6/8.png'),
-        },
-        {
-          src: require('./s6/9.png'),
-        },
-        {
-          src: require('./s6/10.png'),
-        },
-        {
-          src: require('./s6/11.png'),
-        },
-      ],
+      slideList: isMobile
+        ? [
+            {
+              src: require('./mo/6/a1.png'),
+            },
+            {
+              src: require('./mo/6/a2.png'),
+            },
+            {
+              src: require('./mo/6/a3.png'),
+            },
+            {
+              src: require('./mo/6/a4.png'),
+            },
+            {
+              src: require('./mo/6/a5.png'),
+            },
+            {
+              src: require('./mo/6/a6.png'),
+            },
+            {
+              src: require('./mo/6/a7.png'),
+            },
+            {
+              src: require('./mo/6/a8.png'),
+            },
+            {
+              src: require('./mo/6/a9.png'),
+            },
+            {
+              src: require('./mo/6/a10.png'),
+            },
+            {
+              src: require('./mo/6/a11.png'),
+            },
+          ]
+        : [
+            {
+              src: require('./s6/1.png'),
+            },
+            {
+              src: require('./s6/2.png'),
+            },
+            {
+              src: require('./s6/3.png'),
+            },
+            {
+              src: require('./s6/4.png'),
+            },
+            {
+              src: require('./s6/5.png'),
+            },
+            {
+              src: require('./s6/6.png'),
+            },
+            {
+              src: require('./s6/7.png'),
+            },
+            {
+              src: require('./s6/8.png'),
+            },
+            {
+              src: require('./s6/9.png'),
+            },
+            {
+              src: require('./s6/10.png'),
+            },
+            {
+              src: require('./s6/11.png'),
+            },
+          ],
     }
   },
   methods: {},
