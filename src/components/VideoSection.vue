@@ -21,6 +21,7 @@
               :src="slide.img"
               alt
               class="video-bg"
+              @click="openDialog"
             />
             <img
               :src="playBtn"
@@ -79,6 +80,7 @@
             :src="slide.img"
             alt
             class="video-bg"
+            @click="openDialog"
           />
           <img
             :src="playBtn"

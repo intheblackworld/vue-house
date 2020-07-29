@@ -466,7 +466,7 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .order-bg {
-    background-size: 100% 200%;
+    background-size: cover;
     padding-top: 40px;
     margin: 0;
     position: relative;
