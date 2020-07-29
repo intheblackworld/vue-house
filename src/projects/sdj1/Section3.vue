@@ -1,6 +1,6 @@
 <template>
   <div class="relative">
-    <img
+    <img v-if="!isMobile"
       src="./s3/txt.png"
       alt=""
       class="content absolute"
@@ -49,7 +49,7 @@
         />
       </div>
     </swiper>
-    <img
+   <img v-if="isMobile"
       src="./mo/3/txt.png"
       alt=""
       class="txt-img absolute"

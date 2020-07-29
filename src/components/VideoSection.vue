@@ -5,7 +5,12 @@
       v-if="!isMobile"
     >
       <div class="container">
-        <div class="border absolute"></div>
+        <div class="border absolute">
+        <img
+          src="../projects/sdj1/s2/img.png"
+          alt=""
+          class="doll absolute" 
+        ></div>
         <div class="video-container">
           <div
             :class="`video-item ${slideIndex == sIndex ? 'active' : ''}`"
@@ -35,16 +40,12 @@
               <div
                 class="item-content"
                 @click="slideIndex = index"
-              >{{item.title}}</div>
+                v-html="item.title"
+              ></div>
             </div>
           </div>
         </div>
         <div class="title absolute">{{title}}</div>
-        <img
-          src="../projects/sdj1/s2/img.png"
-          alt=""
-          class="doll absolute"
-        >
       </div>
       <div :class="`video-dialog ${isShowDialog ? 'show' : ''}`">
         <iframe
@@ -172,9 +173,10 @@
     cursor: pointer;
 
     .item-content {
-      font-size: 1em;
-      line-height: 1.2;
-      letter-spacing: normal;
+      font-size: 1.4em;
+      font-weight: 300;
+      line-height: 1.7;
+      letter-spacing:0.1em;
       text-align: left;
       color: #fff;
       width: size(300);
@@ -206,6 +208,7 @@
   border: 6px solid #fff;
   top: size(174);
   right: size(173);
+  overflow: hidden;
 }
 
 .title {
@@ -228,9 +231,20 @@
 
 .doll {
   width: size(227);
-  top: size(564);
-  right: size(179);
+  bottom: size(0);
+  right: size(0);
+  transform: translateX(20%);
+  animation: doll 5s ease-out alternate infinite;
 }
+@keyframes doll {
+  80% {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 
 .video-container {
   width: size(1166);
@@ -384,7 +398,7 @@
     left: 0;
     right: 0;
     margin: 0 auto;
-    top: size-m(375);
+    top: size-m(390);
 
     .btn {
       width: calc(100vw * 55 / 375);
