@@ -2,7 +2,7 @@
   <div class="relative section7">
     <swiper
       :options="swiperOption"
-      ref="mySwiper"
+      ref="mySwiper7"
       data-aos="fade"
       data-aos-delay="200"
       class="slide-container absolute"
@@ -196,14 +196,14 @@
 <script>
 // @ is an alias to /src
 import { isMobile, isTablet } from '@/utils'
-import slider from '@/mixins/slider.js'
+// import slider from '@/mixins/slider.js'
 import 'swiper/dist/css/swiper.css'
 
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'section7',
-  mixins: [slider],
+  // mixins: [slider],
 
   components: {
     swiper,
@@ -218,12 +218,12 @@ export default {
         slidesPerColumn: isMobile ? 1 : 1,
         allowSlidePrev: isMobile ? true : true,
         allowSlideNext: isMobile ? true : true,
-        // centeredSlides: true,
+        centeredSlides: true,
         autoplay: {
           delay: 4000,
           disableOnInteraction: true,
         },
-        loop: false,
+        loop: true,
         effect: 'fade',
         navigation: {
           nextEl: '.swiper-button-next',
@@ -262,7 +262,9 @@ export default {
   created() {},
 
   mounted() {
-    this.$forceUpdate() // Notice we have to use a $ here
+    setTimeout(() => {
+      this.$forceUpdate() // Notice we have to use a $ here
+    }, 300);
   },
 
   computed: {},

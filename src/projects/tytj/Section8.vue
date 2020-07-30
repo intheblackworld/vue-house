@@ -2,9 +2,7 @@
   <div class="relative section8">
     <swiper
       :options="swiperOption"
-      ref="mySwiper"
-      data-aos="fade"
-      data-aos-delay="400"
+      ref="mySwiper8"
       class="absolute"
     >
       <swiper-slide
@@ -209,7 +207,7 @@ export default {
           disableOnInteraction: false,
         },
         loop: true,
-        lazy: true,
+        // lazy: false,
         effect: 'fade',
         navigation: {
           nextEl: '.swiper-button-next',
@@ -251,7 +249,9 @@ export default {
   created() {},
 
   mounted() {
-    this.$forceUpdate() // Notice we have to use a $ here
+    setTimeout(() => {
+      this.$forceUpdate() // Notice we have to use a $ here
+    }, 300);
   },
 
   computed: {},
