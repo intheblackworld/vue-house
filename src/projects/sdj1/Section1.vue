@@ -295,13 +295,13 @@
   }
   .doll1 {
     width: size-m(189);
-    top: size-m(390);
+    top: size-m(320);
     left: size-m(-70);
   }
 
   .doll2 {
     width: size-m(264);
-    top: size-m(470);
+    top: size-m(400);
     right: size-m(-50);
   }
 

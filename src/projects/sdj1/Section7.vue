@@ -86,9 +86,23 @@
             />
           </swiper-slide>
           <div
-            class="swiper-pagination"
-            slot="pagination"
-          ></div>
+            class="swiper-button-prev"
+            slot="button-prev"
+          >
+            <img
+              src="./all/箭頭2.png"
+              alt
+            />
+          </div>
+          <div
+            class="swiper-button-next"
+            slot="button-next"
+          >
+            <img
+              src="./all/箭頭1.png"
+              alt
+            />
+          </div>
         </swiper>
       </div>
     </div>
@@ -242,6 +256,10 @@ export default {
         },
         // effect: 'slide',
         loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
         pagination: {
           el: '.swiper-pagination',
           clickable: true,

@@ -39,15 +39,14 @@
             data-aos-delay="800"
           >樣品屋圖片僅供示意參考，依實際合約附圖為準。</div>
         </swiper-slide>
-        <div
+        <!-- <div
           v-if="!isMobile"
           class="swiper-pagination"
           slot="pagination"
-        ></div>
+        ></div> -->
         <div
           class="swiper-button-prev"
           slot="button-prev"
-          v-if="isMobile"
         >
           <img
             src="./all/箭頭2.png"
@@ -57,7 +56,6 @@
         <div
           class="swiper-button-next"
           slot="button-next"
-          v-if="isMobile"
         >
           <img
             src="./all/箭頭1.png"
@@ -74,8 +72,8 @@
 
 .bg {
   position: relative;
-  min-height: size(1080);
-  height: 100vh;
+  // min-height: size(1080);
+  height: auto;
   overflow: hidden;
 
   &::v-deep {
