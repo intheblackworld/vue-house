@@ -115,6 +115,7 @@
   top: 0;
   left: 0;
   object-fit: cover;
+  z-index: 1;
 }
 .w-banner {
   width: size(824);
@@ -123,18 +124,21 @@
   top: 0;
   left: 0;
   object-fit: cover;
+  z-index: 1;
 }
 
 .logo-b {
   width: size(423);
   left: size(231 - 423);
   bottom: size(-(423 / 2));
+  z-index: 1;
 }
 
 .logo {
   width: size(251);
   top: size(275);
   left: size(274);
+  z-index: 1;
 }
 
 .hr {
