@@ -235,14 +235,14 @@
 <script>
 // @ is an alias to /src
 import { isMobile, isTablet } from '@/utils'
-import slider from '@/mixins/slider.js'
+// import slider from '@/mixins/slider.js'
 import 'swiper/dist/css/swiper.css'
 
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'section4',
-  mixins: [slider],
+  // mixins: [slider],
 
   components: {
     swiper,

@@ -248,11 +248,7 @@ export default {
 
   created() {},
 
-  mounted() {
-    setTimeout(() => {
-      this.$forceUpdate() // Notice we have to use a $ here
-    }, 300);
-  },
+  mounted() {},
 
   computed: {},
 }
