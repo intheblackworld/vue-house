@@ -209,7 +209,7 @@ export default {
           delay: 4000,
           disableOnInteraction: true,
         },
-        loop: false,
+        loop: true,
         effect: 'fade',
         navigation: {
           nextEl: '.swiper-button-next',
