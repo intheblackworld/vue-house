@@ -52,7 +52,7 @@
   height: 100vh;
   overflow: hidden;
   position: relative;
- // height: size(1080);
+  // height: size(1080);
   background-image: linear-gradient(
     to right,
     #edbd5b,
@@ -65,7 +65,7 @@
 
 .swiper-container {
   width: 100vw;
-  height:100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -87,6 +87,10 @@
       margin: 0 6px !important;
       background-color: transparent;
       opacity: 1 !important;
+
+      &:nth-child(4), &:nth-child(5) {
+        display: none;
+      }
     }
 
     .swiper-pagination-bullet-active {
@@ -139,11 +143,11 @@
   z-index: 3;
 }
 
-  .item-img {
-    width: 100vw;
-    height:100%;
-    object-fit: cover;
-  }
+.item-img {
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+}
 
 @media only screen and (max-width: 1440px) {
   .bg-img {
@@ -199,18 +203,19 @@ export default {
     return {
       isMobile,
       swiperOption: {
-        slidesPerView: isMobile ? 1 : 1,
-        spaceBetween: isTablet ? 20 : 30,
-        slidesPerColumn: isMobile ? 1 : 1,
-        allowSlidePrev: isMobile ? true : true,
-        allowSlideNext: isMobile ? true : true,
+        slidesPerView: 1,
+        // spaceBetween: 20,
+        slidesPerColumn: 1,
+        // allowSlidePrev: isMobile ? true : true,
+        // allowSlideNext: isMobile ? true : true,
         // centeredSlides: true,
         autoplay: {
           delay: 4000,
           disableOnInteraction: true,
         },
         loop: true,
-        effect: 'fade',
+        lazy: true,
+        // effect: 'slide',
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
@@ -220,29 +225,17 @@ export default {
           clickable: true,
         },
       },
-      slideList: isMobile
-        ? [
-            {
-              img: require('./s8/SLL_5930.jpg'),
-            },
-            {
-              img: require('./s8/SLL_5957.jpg'),
-            },
-            {
-              img: require('./s8/SLL_6024.jpg'),
-            },
-          ]
-        : [
-            {
-              img: require('./s8/SLL_5930.jpg'),
-            },
-            {
-              img: require('./s8/SLL_5957.jpg'),
-            },
-            {
-              img: require('./s8/SLL_6024.jpg'),
-            },
-          ],
+      slideList: [
+        {
+          img: require('./s8/SLL_5930.jpg'),
+        },
+        {
+          img: require('./s8/SLL_5957.jpg'),
+        },
+        {
+          img: require('./s8/SLL_6024.jpg'),
+        },
+      ],
     }
   },
 
@@ -250,7 +243,21 @@ export default {
 
   created() {},
 
-  mounted() {},
+  mounted() {
+    if (this.isMobile) {
+      this.slideList = [
+        {
+          img: require('./s8/SLL_5930.jpg'),
+        },
+        {
+          img: require('./s8/SLL_5957.jpg'),
+        },
+        {
+          img: require('./s8/SLL_6024.jpg'),
+        },
+      ]
+    }
+  },
 
   computed: {},
 }
