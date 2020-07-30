@@ -191,6 +191,7 @@ export default {
           delay: 4000,
           disableOnInteraction: true,
         },
+        lazy: true,
         loop: false,
         effect: 'fade',
         navigation: {

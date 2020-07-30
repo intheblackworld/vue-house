@@ -1,6 +1,43 @@
 <template>
   <div class="section6">
-    <div class="bg absolute"></div>
+    <!-- <div :class="`bg absolute`"></div> -->
+    <swiper
+      :options="swiperOption"
+      ref="mySwiper"
+      class="bg absolute"
+    >
+      <swiper-slide
+        v-for="(slide, index) in slideList"
+        :index="index"
+        :key="slide.img"
+      >
+        <img
+          :src="slide.img"
+          alt=""
+          class="item-img"
+        >
+      </swiper-slide>
+      <div
+        v-if="isMobile"
+        class="swiper-button-prev"
+        slot="button-prev"
+      >
+        <img
+          src="./mo/arrow-left.png"
+          alt
+        />
+      </div>
+      <div
+        v-if="isMobile"
+        class="swiper-button-next"
+        slot="button-next"
+      >
+        <img
+          src="./mo/arrow-right.png"
+          alt
+        />
+      </div>
+    </swiper>
     <img
       src="./s6/g-banner.png"
       alt=""
@@ -30,7 +67,7 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .section6 {
-  height: 100vh;
+  height: size(1080);
   // overflow: hidden;
   position: relative;
   //height: size(1080);
@@ -38,10 +75,25 @@
 }
 .bg {
   width: 100vw;
-  height: 100%;
-  background-image: url('./s6/bg1.jpg');
+  height: size(1080);
+  // background-image: url('./s6/bg1.jpg');
   background-size: cover;
   background-attachment: fixed;
+  // opacity: 0;
+  // transition: all 0.3s;
+
+  // &.active {
+  //   opacity: 1;
+  // }
+
+  &.day {
+    background-image: url('./s6/bg2.jpg');
+  }
+}
+
+.item-img {
+  width: 100vw;
+  height: size(1080);
 }
 .bg-img {
   width: 100vw;
@@ -134,9 +186,14 @@
     width: 100vw;
     height: size-m(907 / 2);
     top: size-m(355);
-    background-image: url('./mo/6/img.jpg');
+    // background-image: url('./mo/6/img.jpg');
     background-size: cover;
     background-attachment: initial !important;
+  }
+
+  .item-img {
+    width: 100vw;
+    height: size-m(453);
   }
 
   .g-banner,
@@ -177,14 +234,51 @@
 <script>
 // @ is an alias to /src
 import { isMobile } from '@/utils'
+import 'swiper/dist/css/swiper.css'
+
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'section6',
 
-  components: {},
+  components: {
+    swiper,
+    swiperSlide,
+  },
   data() {
     return {
       isMobile,
+      swiperOption: {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        slidesPerColumn: 1,
+        allowSlidePrev: true,
+        allowSlideNext: true,
+        // centeredSlides: true,
+        lazy: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: true,
+        },
+        loop: false,
+        effect: 'fade',
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      },
+      slideList: [
+        {
+          img: isMobile ? require('./mo/6/img.jpg') : require('./s6/bg1.jpg'),
+        },
+        {
+          img: isMobile ? require('./mo/6/img2.jpg') : require('./s6/bg2.jpg'),
+        },
+      ],
     }
   },
 

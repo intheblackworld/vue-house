@@ -32,6 +32,7 @@
     </div>
     <Map
       :bgSrc="require('./s3/bg.jpg')"
+      :hand="require('./箭頭.png')"
       v-if="isMobile"
     >
       <div slot="main">

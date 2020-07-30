@@ -64,7 +64,7 @@
       ></h3>
       <div class="hr absolute"></div>
       <div
-        class="desc absolute"
+        :class="`desc absolute desc${slideIndex + 1}`"
         v-html="slideList[slideIndex].desc"
       ></div>
     </div>
@@ -74,9 +74,11 @@
   </div>
 </template>
 <style lang="scss">
-.desc{
-  span{color: #68361a;
-  font-weight: bold;}
+.desc {
+  span {
+    color: #68361a;
+    font-weight: bold;
+  }
 }
 </style>
 <style lang="scss" scoped>
@@ -113,7 +115,7 @@
 
 .icon {
   top: size(174);
-  height:size(220);
+  height: size(220);
   left: size(420);
   transform: translateX(-50%);
 }
@@ -145,10 +147,23 @@
   top: size(597);
   left: size(420);
   transform: translateX(-50%);
-  span{color: #68361a;
-  font-weight: bold;}
-  &:nth-child(3){
-  //  width: size(300);
+  span {
+    color: #68361a;
+    font-weight: bold;
+  }
+  &.desc1 {
+    font-size: 18px;
+  }
+
+  &.desc2, &.desc3, &.desc4 {
+    font-size: 17px;
+  }
+
+  &.desc3 {
+    width: size(640);
+    margin-left: size(50);
+    line-height: 1.8;
+    font-size: 17px;
   }
 }
 
@@ -241,10 +256,10 @@ export default {
         effect: isMobile ? '' : 'fade',
 
         autoplay: {
-          delay: 3000,
+          delay: 30000,
           disableOnInteraction: true,
         },
-        loop: true,
+        loop: false,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
@@ -293,7 +308,7 @@ export default {
           title: '過濾系統<br />確保用水品質',
           subtitle: '專業科技 優質好水',
           desc:
-            '<span>BWT Infinity A全自動反洗過濾器</span><br />全自動時間控制滿足最高的舒適性要求,高科技材料製作,保護水管道與連接的水循環系統免受外來雜質顆粒。<br /><span>軟水系統</span><br />用離子交換(lon-exchange)技術,將水中的鈣鎂離子與鈉離子進行轉換,達到降低水中鈣鎂離子濃度,防止水垢生成。免受外來雜質顆粒。<br /><span>殺菌系統</span><br />不只能殺死水中有害的細菌病毒,有效濾除100%<br />病毒及細菌幫您層層把關,買的放心用安心!'
+            '<span>BWT Infinity A全自動反洗過濾器</span><br />全自動時間控制滿足最高的舒適性要求,高科技材料製作,保護水管道與連接的水循環系統免受外來雜質顆粒。<br /><span>軟水系統</span><br />用離子交換(lon-exchange)技術,將水中的鈣鎂離子與鈉離子進行轉換,達到降低水中鈣鎂離子濃度,防止水垢生成。免受外來雜質顆粒。<br /><span>殺菌系統</span><br />不只能殺死水中有害的細菌病毒,有效濾除100%<br />病毒及細菌幫您層層把關,買的放心用安心!',
         },
       ],
     }
@@ -304,10 +319,8 @@ export default {
       const swiper = this.$refs.mySwiper.swiper
       if (swiper.isEnd) {
         this.slideIndex = 0
-      } else if (swiper.isBeginning) {
-        this.slideIndex = swiper.slides.length - 3
       } else {
-        this.slideIndex = swiper.activeIndex - 1
+        this.slideIndex = swiper.activeIndex
       }
     },
   },
