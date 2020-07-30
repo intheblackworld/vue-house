@@ -1,6 +1,6 @@
 <template>
   <div class="relative">
-    <div v-if="!isMobile">
+    <div v-if="!isMobile" class="c">
       <div class="border absolute"></div>
       <img
         src="./s9/資產 16-801.png"
@@ -133,10 +133,11 @@
   left: size(420);
   transform: translateX(-50%);
 }
-
+.c{
+  font-size:size(19);}
 .desc {
   width: size(560);
-  font-size: 19px;
+  font-size:1em;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -152,18 +153,22 @@
     font-weight: bold;
   }
   &.desc1 {
-    font-size: 18px;
+    font-size: 0.95em;
   }
 
   &.desc2, &.desc3, &.desc4 {
-    font-size: 17px;
+    font-size: 0.9em;
   }
 
   &.desc3 {
     width: size(640);
     margin-left: size(50);
     line-height: 1.8;
-    font-size: 17px;
+  }
+  &.desc5 {
+    width: size(640);
+    margin-left: size(50);
+    line-height: 1.8;
   }
 }
 
