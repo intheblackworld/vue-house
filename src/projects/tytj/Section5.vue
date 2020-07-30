@@ -6,8 +6,8 @@
       data-aos-delay="400"
     ></div>
     <swiper
-      :options="swiperOption"
-      ref="mySwiper"
+      :options="swiperOption5"
+      ref="mySwiper5"
       class="slide-container absolute"
     >
       <swiper-slide
@@ -56,14 +56,14 @@
   width: size(1413);
   height: size(788);
   background-color: #c88f36;
-  top:calc(50% - 38vw * 0.5);
+  top: calc(50% - 38vw * 0.5);
   left: size(276);
 }
 .swiper-container {
   width: size(1410);
   height: size(792);
   left: size(230);
-  top:50%;
+  top: 50%;
   transform: translateY(-50%);
 }
 
@@ -180,7 +180,7 @@ export default {
   data() {
     return {
       isMobile,
-      swiperOption: {
+      swiperOption5: {
         slidesPerView: isMobile ? 1 : 1,
         spaceBetween: isTablet ? 20 : 30,
         slidesPerColumn: isMobile ? 1 : 1,
@@ -198,25 +198,32 @@ export default {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
+        // pagination: {
+        //   el: '.swiper-pagination',
+        //   clickable: true,
+        // },
       },
-      slideList: [
-        {
-          img: isMobile ? require('./mo/5/1.jpg' ): require('./s5/1.jpg'),
-        },
-        {
-          img: isMobile ? require('./mo/5/2.jpg' ): require('./s5/2.jpg'),
-        },
-        {
-          img: isMobile ? require('./mo/5/3.jpg' ): require('./s5/3.jpg'),
-        },
-        {
-          img: isMobile ? require('./mo/5/4.jpg' ): require('./s5/4.jpg'),
-        },
-      ],
+      slideList: isMobile
+        ? [
+            {
+              img: require('./mo/5/1.jpg'),
+            },
+            {
+              img: require('./mo/5/2.jpg'),
+            },
+            {
+              img: require('./mo/5/3.jpg'),
+            },
+            {
+              img: require('./mo/5/4.jpg'),
+            },
+          ]
+        : [
+            { img: require('./s5/1.jpg') },
+            { img: require('./s5/2.jpg') },
+            { img: require('./s5/3.jpg') },
+            { img: require('./s5/4.jpg') },
+          ],
     }
   },
 

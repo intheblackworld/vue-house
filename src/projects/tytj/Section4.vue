@@ -8,21 +8,22 @@
     <h3 class="title absolute">繁華生活圈</h3>
     <div class="subtitle absolute">公益路商圈</div>
     <swiper
-      :options="swiperOption"
-      ref="mySwiper"
+      class="absolute"
+      :options="swiperOption4"
       data-aos="fade"
-      data-aos-delay="200"
-      class="slide-container absolute"
+      data-aos-delay="600"
+      ref="mySwiper4"
     >
       <swiper-slide
         v-for="(slide, index) in slideList"
         :index="index"
-        :key="slide.img + index"
+        :key="slide.img"
+        class="item"
       >
         <img
-          :src="slide.img"
           alt=""
           class="item-img"
+          :src="slide.img"
         >
         <h3
           class="absolute item-title"
@@ -33,6 +34,11 @@
           v-html="slide.subtitle"
         ></h3>
       </swiper-slide>
+      <div
+        v-if="!isMobile"
+        class="swiper-pagination"
+        slot="pagination"
+      ></div>
       <div
         v-if="isMobile"
         class="swiper-button-prev"
@@ -53,11 +59,6 @@
           alt
         />
       </div>
-      <div
-        v-if="!isMobile"
-        class="swiper-pagination"
-        slot="pagination"
-      ></div>
     </swiper>
   </div>
 </template>
@@ -93,7 +94,7 @@
       width: 200px;
       left: auto;
       bottom: 20px;
-      right: 20px;
+      right: 40px;
     }
     .swiper-pagination-bullet {
       width: 21px;
@@ -237,7 +238,6 @@
 import { isMobile, isTablet } from '@/utils'
 // import slider from '@/mixins/slider.js'
 import 'swiper/dist/css/swiper.css'
-
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
@@ -251,18 +251,19 @@ export default {
   data() {
     return {
       isMobile,
-      swiperOption: {
+      swiperOption4: {
         slidesPerView: isMobile ? 1 : 1,
-        spaceBetween: isTablet ? 20 : 30,
-        slidesPerColumn: isMobile ? 1 : 1,
-        allowSlidePrev: isMobile ? true : true,
-        allowSlideNext: isMobile ? true : true,
+        spaceBetween: isMobile ? 20 : 30,
+        slidesPerColumn: isMobile ? 1 : 2,
+        // allowSlidePrev: isMobile ? true : false,
+        // allowSlideNext: isMobile ? true : false,
         // centeredSlides: true,
+        lazy: true,
+        loop: true,
         autoplay: {
-          delay: 4000,
-          disableOnInteraction: true,
+          delay: 3500,
+          disableOnInteraction: false,
         },
-        loop: false,
         effect: 'fade',
         navigation: {
           nextEl: '.swiper-button-next',
@@ -293,11 +294,6 @@ export default {
           img: require('./s4/4.jpg'),
           title: '繁華生活圈',
           subtitle: '台中市政府',
-        },
-        {
-          img: require('./s4/5.jpg'),
-          title: '繁華生活圈',
-          subtitle: '文心森林公園',
         },
         {
           img: require('./s4/5.jpg'),

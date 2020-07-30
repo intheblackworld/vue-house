@@ -233,13 +233,7 @@ export default {
           clickable: true,
         },
       },
-      slideList: /* isMobile
-        ? [
-            {
-              img: require('./mo/7/1.jpg'),
-            },
-          ]
-        : */ [
+      slideList: [
         {
           img: require('./s7/p1_1.jpg'),
         },

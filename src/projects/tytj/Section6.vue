@@ -2,12 +2,14 @@
   <div class="section6">
     <!-- <div :class="`bg absolute`"></div> -->
     <swiper
-      :options="swiperOption"
-      ref="mySwiper"
-      class="bg absolute"
+      :options="swiperOption6"
+      ref="mySwiper6"
+      class="slide-container absolute"
+      data-aos="fade"
+      data-aos-delay="200"
     >
       <swiper-slide
-        v-for="(slide, index) in slideList"
+        v-for="(slide, index) in slideList6"
         :index="index"
         :key="slide.img"
       >
@@ -37,6 +39,11 @@
           alt
         />
       </div>
+      <div
+        v-if="!isMobile"
+        class="swiper-pagination"
+        slot="pagination"
+      ></div>
     </swiper>
     <img
       src="./s6/g-banner.png"
@@ -74,8 +81,6 @@
   z-index: 2;
 }
 .bg {
-  width: 100vw;
-  height: size(1080);
   // background-image: url('./s6/bg1.jpg');
   background-size: cover;
   background-attachment: fixed;
@@ -89,6 +94,11 @@
   &.day {
     background-image: url('./s6/bg2.jpg');
   }
+}
+
+.swiper-container {
+  width: 100vw;
+  height: size(1080);
 }
 
 .item-img {
@@ -187,12 +197,15 @@
   }
 
   .bg {
-    width: 100vw;
-    height: size-m(907 / 2);
-    top: size-m(355);
     // background-image: url('./mo/6/img.jpg');
     background-size: cover;
     background-attachment: initial !important;
+  }
+
+  .swiper-container {
+    width: 100vw;
+    height: size-m(907 / 2);
+    top: size-m(355);
   }
 
   .item-img {
@@ -237,7 +250,7 @@
 </style>
 <script>
 // @ is an alias to /src
-import { isMobile } from '@/utils'
+import { isMobile, isTablet } from '@/utils'
 import 'swiper/dist/css/swiper.css'
 
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
@@ -252,37 +265,38 @@ export default {
   data() {
     return {
       isMobile,
-      swiperOption: {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        slidesPerColumn: 1,
-        allowSlidePrev: true,
-        allowSlideNext: true,
-        // centeredSlides: true,
-        lazy: true,
+      swiperOption6: {
+        slidesPerView: isMobile ? 1 : 1,
+        spaceBetween: isTablet ? 20 : 30,
+        slidesPerColumn: isMobile ? 1 : 1,
+        allowSlidePrev: isMobile ? true : true,
+        allowSlideNext: isMobile ? true : true,
+        centeredSlides: true,
         autoplay: {
           delay: 4000,
           disableOnInteraction: true,
         },
-        loop: false,
+        loop: true,
         effect: 'fade',
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
+        // pagination: {
+        //   el: '.swiper-pagination',
+        //   clickable: true,
+        // },
       },
-      slideList: [
-        {
-          img: isMobile ? require('./mo/6/img.jpg') : require('./s6/bg1.jpg'),
-        },
-        {
-          img: isMobile ? require('./mo/6/img2.jpg') : require('./s6/bg2.jpg'),
-        },
-      ],
+      slideList6: isMobile
+        ? [
+            {
+              img: require('./mo/6/img.jpg'),
+            },
+            {
+              img: require('./mo/6/img2.jpg'),
+            },
+          ]
+        : [{ img: require('./s6/bg1.jpg') }, { img: require('./s6/bg2.jpg') }],
     }
   },
 

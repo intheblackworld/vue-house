@@ -99,8 +99,8 @@
       >「泰新系統」長期耕耘專業水電領域，全台北、中、南都有知名代表作，曾打造公共工程、廠辦、商辦、商場、學校、住宅等多元建築作品，歷經多次國際高標考驗，曾與無數業界頂尖設計菁英合作，奠定完整而難得的跨領域水電經驗，更以32年專業作為實踐建築理念的新起點，成立「泰御建設」，多年經驗累積100% 的施工品質，2006年導入國外預製工法，由Victaulic原廠協助成立專業預製廠，開創國內第一家使用預製工法及防震工法之先創，「泰御建設」從開發、規劃、設計、施工，實踐力行精神，一步一腳印，每一細節皆嚴格把關、精準要求，完成智慧建築。</div>
     </div>
     <swiper
-      :options="swiperOption"
-      ref="mySwiper"
+      :options="swiperOption2"
+      ref="mySwiper2"
       data-aos="fade"
       data-aos-delay="200"
       v-if="isMobile"
@@ -378,14 +378,14 @@
 <script>
 // @ is an alias to /src
 import { isMobile, isTablet } from '@/utils'
-import slider from '@/mixins/slider.js'
+// import slider from '@/mixins/slider.js'
 import 'swiper/dist/css/swiper.css'
 
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'section2',
-  mixins: [slider],
+  // mixins: [slider],
 
   components: {
     swiper,
@@ -396,7 +396,7 @@ export default {
       isMobile,
       dialogIndex: 0,
       isDialog: false,
-      swiperOption: {
+      swiperOption2: {
         slidesPerView: isMobile ? 1.4 : 1,
         centeredSlides: true,
         spaceBetween: isMobile ? 10 : 30,
