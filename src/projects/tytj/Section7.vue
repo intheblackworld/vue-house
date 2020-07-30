@@ -90,10 +90,6 @@
       margin: 0 6px !important;
       background-color: transparent;
       opacity: 1 !important;
-
-      &:nth-child(5) {
-        display: none;
-      }
     }
 
     .swiper-pagination-bullet-active {
@@ -265,7 +261,9 @@ export default {
 
   created() {},
 
-  mounted() {},
+  mounted() {
+    this.$forceUpdate() // Notice we have to use a $ here
+  },
 
   computed: {},
 }

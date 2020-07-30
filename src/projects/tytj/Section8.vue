@@ -1,15 +1,14 @@
 <template>
-  <div class="relative section7">
+  <div class="relative section8">
     <swiper
       :options="swiperOption"
       ref="mySwiper"
       data-aos="fade"
-      data-aos-delay="200"
-      class="slide-container absolute"
+      data-aos-delay="400"
+      class="absolute"
     >
       <swiper-slide
-        v-for="(slide, index) in slideList"
-        :index="index"
+        v-for="(slide) in slideList"
         :key="slide.img"
       >
         <img
@@ -71,7 +70,7 @@
   left: 0;
 }
 
-.section7 {
+.section8 {
   &::v-deep {
     .swiper-pagination {
       // display: none;
@@ -87,10 +86,6 @@
       margin: 0 6px !important;
       background-color: transparent;
       opacity: 1 !important;
-
-      &:nth-child(4), &:nth-child(5) {
-        display: none;
-      }
     }
 
     .swiper-pagination-bullet-active {
@@ -186,36 +181,36 @@
 <script>
 // @ is an alias to /src
 import { isMobile, isTablet } from '@/utils'
-import slider from '@/mixins/slider.js'
+// import slider from '@/mixins/slider.js'
 import 'swiper/dist/css/swiper.css'
 
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
-  name: 'section7',
-  mixins: [slider],
+  name: 'section8',
+  // mixins: [slider],
 
   components: {
     swiper,
     swiperSlide,
   },
+
   data() {
     return {
       isMobile,
       swiperOption: {
         slidesPerView: 1,
-        // spaceBetween: 20,
+        spaceBetween: 20,
         slidesPerColumn: 1,
-        // allowSlidePrev: isMobile ? true : true,
-        // allowSlideNext: isMobile ? true : true,
-        // centeredSlides: true,
+        allowSlidePrev: true,
+        allowSlideNext: true,
         autoplay: {
           delay: 4000,
-          disableOnInteraction: true,
+          disableOnInteraction: false,
         },
         loop: true,
         lazy: true,
-        // effect: 'slide',
+        effect: 'fade',
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
@@ -225,17 +220,29 @@ export default {
           clickable: true,
         },
       },
-      slideList: [
-        {
-          img: require('./s8/SLL_5930.jpg'),
-        },
-        {
-          img: require('./s8/SLL_5957.jpg'),
-        },
-        {
-          img: require('./s8/SLL_6024.jpg'),
-        },
-      ],
+      slideList: isMobile
+        ? [
+            {
+              img: require('./s8/SLL_5930.jpg'),
+            },
+            {
+              img: require('./s8/SLL_5957.jpg'),
+            },
+            {
+              img: require('./s8/SLL_6024.jpg'),
+            },
+          ]
+        : [
+            {
+              img: require('./s8/SLL_5930.jpg'),
+            },
+            {
+              img: require('./s8/SLL_5957.jpg'),
+            },
+            {
+              img: require('./s8/SLL_6024.jpg'),
+            },
+          ],
     }
   },
 
@@ -244,19 +251,7 @@ export default {
   created() {},
 
   mounted() {
-    if (this.isMobile) {
-      this.slideList = [
-        {
-          img: require('./s8/SLL_5930.jpg'),
-        },
-        {
-          img: require('./s8/SLL_5957.jpg'),
-        },
-        {
-          img: require('./s8/SLL_6024.jpg'),
-        },
-      ]
-    }
+    this.$forceUpdate() // Notice we have to use a $ here
   },
 
   computed: {},
