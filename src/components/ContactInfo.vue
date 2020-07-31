@@ -1,12 +1,14 @@
 <template>
 <div>
   <div class="contact-info">
-    <!-- <img class="logo" src="@/assets/img/contact-logo.png" alt="好站" /> -->
+    <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" />
     <div class="info">
       <div class="btn flex-c" @click="showCallDialog">
         <span class="flex-c">
           <font-awesome-icon icon="phone" />
-          {{info.phone}}
+          <span>
+           {{info.phone}}
+          </span>
         </span>
       </div>
       <div class="btn flex-c" @click="showMessengerDialog">
@@ -102,7 +104,7 @@ export default {
   position: relative;
   z-index: 3;
   width: 1200px;
-  height: 314px;
+  //height: 314px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */

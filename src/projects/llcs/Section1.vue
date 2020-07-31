@@ -1,7 +1,7 @@
 <template>
   <div class="section1">
     <div v-if="!isMobile">
-      <svg
+     <!-- <svg
         class="absolute move_butter_fly"
         version="1.1"
         id="圖層_1"
@@ -26,7 +26,7 @@
           d="M2629.5,329.5c-162-73-508-19-703,230c-168.9,215.7-488.6,384.6-776,364c-390-28-287-462-665-418
 	c-197.2,23-508-459-403-564"
         />
-      </svg>
+      </svg>  -->
       <div class="commingsoon absolute flex-ac flex-jb">
         <span>c</span>
         <span>o</span>
@@ -41,7 +41,7 @@
         <span>n</span>
       </div>
       <div
-        class="full-img"
+        class="bg-img absolute"
         v-lazy:background-image="require('./s1/bg.png')"
       ></div>
       <div
@@ -49,12 +49,6 @@
         data-aos="fade"
         data-aos-delay="400"
         v-lazy:background-image="require('./s1/1.png')"
-      ></div>
-      <div
-        class="full-img"
-        data-aos="fade"
-        data-aos-delay="600"
-        v-lazy:background-image="require('./s1/2.png')"
       ></div>
       <div
         class="full-img swing"
@@ -65,28 +59,41 @@
       <div
         class="full-img"
         data-aos="fade"
+        data-aos-delay="600"
+        v-lazy:background-image="require('./s1/2.png')"
+      ></div>
+      <div
+        class="full-img"
+        data-aos="fade"
         data-aos-delay="1000"
         v-lazy:background-image="require('./s1/butterfly.gif')"
       ></div>
       <img
+        src="./s1/butterfly_an.gif"
+        data-aos="fade-up"
+        data-aos-delay="400"
+        alt="butterfly"
+        class="move_butter_fly absolute"
+      >
+      <img
         src="./s1/用誠心 造城心.png"
         data-aos="fade-up"
         data-aos-delay="400"
-        alt="朗朗城心"
+        alt="用誠心 造城心"
         class="title1 absolute"
       >
       <img
         src="./s1/國門新都心 5A新生活.png"
         data-aos="fade-up"
         data-aos-delay="600"
-        alt="朗朗城心"
+        alt="國門新都心 5A新生活"
         class="title2 absolute"
       >
       <img
-        src="./s1/2-3房 29097555.png"
+        src="./s1/早鳥優惠限量25戶建材升級免加價.png"
         data-aos="fade-up"
-        data-aos-delay="800"
-        alt="朗朗城心"
+        data-aos-delay="600"
+        alt="早鳥優惠限量25戶建材升級免加價"
         class="title3 absolute"
       >
       <h3 class="txt absolute">萬騰廣告</h3>
@@ -117,8 +124,6 @@
       ></div>
       <div
         class="full-img butterfly"
-        data-aos="fade"
-        data-aos-delay="1000"
         v-lazy:background-image="require('./s1/mo/butterfly.gif')"
       ></div>
       <img
@@ -129,14 +134,14 @@
         class="title1 absolute"
       >
       <img
-        src="./s1/mo/國門新都心 5A新生活_.png"
+        src="./s1/國門新都心 5A新生活.png"
         alt="朗朗城心"
         data-aos="fade-up"
         data-aos-delay="600"
         class="title2 absolute"
       >
       <img
-        src="./s1/mo/2-3房 29097555_.png"
+        src="./s1/早鳥優惠限量25戶建材升級免加價.png"
         alt="朗朗城心"
         data-aos="fade-up"
         data-aos-delay="800"
@@ -179,28 +184,30 @@
 @import '@/assets/style/function.scss';
 .section1 {
   position: relative;
-  height: size(1080);
+  height:100vh;
   background-color: #ea5414;
   z-index: 2;
 }
 
 .swing {
-  width: size(2000);
-  height: size(2200);
-  margin-top: size(-15);
-  margin-left: size((1920 - 2000) / 2);
+  width:100%;
+  height: 200vh;
+  margin-top:0;
+  margin-left:auto;
+  object-fit: cover;
+  background-size: cover;
   animation: swing 5s 0s ease-in infinite;
 }
 
 .commingsoon {
   width: size(850 * 2);
-  top: size(80);
+  top:5vh;
   left: 0;
-  right: 0;
+  right: 0;opacity: 0.6;
   margin: 0 auto;
   color: #eee;
   > span {
-    font-size: size-m(14);
+    font-size: 5vh;
     font-family: TrajanPro;
     display: block;
     opacity: 0;
@@ -229,26 +236,49 @@
     opacity: 1;
   }
 }
+@keyframes butter_fly {
+  0% {
+    transform: translate(0);
+  }
+  10% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(60% , -60%);
+  }
+  to {
+    transform: translate(120% , 0%);
+  }
 
+}
+.move_butter_fly{
+ height: 15vh;right:calc(50% - 56vh);
+  animation: butter_fly 5s infinite alternate;
+  top: 38vh;}
+.bg-img{
+  left: 0;top: 100vh;
+  width: 100%;height: calc(100vh * 102 / 1080);
+  background-size: cover;object-fit: cover;}
 .title1 {
-  width: size(1222);
-  top: size(224);
+ // width: size(1222);
+ height: 13vh;
+  top: 15vh;
   left: 0;
   right: 0;
   margin: 0 auto;
 }
 
 .title2 {
-  width: size(453 * 2);
-  top: size(461);
+ height: 5.8vh;
+  top: 33vh;
   left: 0;
   right: 0;
   margin: 0 auto;
 }
 
 .title3 {
-  width: size(443 * 2);
-  top: size(582);
+ height:26vh;
+  top: 40vh;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -296,7 +326,7 @@
 @media screen and (max-width: 767px) {
   .section1 {
     position: relative;
-    height: size-m(750);
+   height:108vh;
     background-color: #ea5414;
     z-index: 2;
   }
@@ -332,43 +362,46 @@
   }
 
   .title1 {
-    width: size-m(240);
-    top: size-m(97);
+ height:auto;
+ width: 70%;
+  top: calc(35vh - 41vw);
   }
 
   .title2 {
-    width: size-m(236);
-    top: size-m(286);
+ height:auto;
+ width: 80%;
+  top: calc(35vh + 15vw);
   }
 
   .title3 {
-    width: size-m(235);
-    top: size-m(325);
+ height:auto;
+ width: 80%;
+  top: calc(35vh + 22vw);
   }
 
   .img1 {
     width: 108vw;
     margin-left: -4vw;
-    height: size-m(625);
+    height: calc(100vh - 63px);
   }
 
   .img2 {
     width: 100vw;
-    height: size-m(750);
+    height: calc(124vh - 63px);
   }
 
   .img3 {
     width: 100vw;
-    height: size-m(625);
+    height: calc(100vh - 63px);
   }
   .butterfly {
     width: 100vw;
-    height: size-m(625);
+    height: calc(100vh - 63px);
   }
 
   .txt {
-    top: size-m(429);
-    bottom: auto;
+    top: auto;
+    bottom: 0;
     right: size-m(8);
     font-size: size-m(12);
     font-weight: bold;
