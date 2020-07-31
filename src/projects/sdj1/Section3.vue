@@ -52,13 +52,24 @@
         />
       </div>
     </swiper>
-   <img v-if="isMobile"
+    <div v-if="isMobile" class="txt-img absolute"><h3>達麗要和高雄一起<br>被世界看見！</h3><p>達麗上市實力品牌，跨國揚名西雅圖<br>
+獲得多項國家級榮耀，學建估地萬坪「達麗米樂」<br>
+成就高雄最北百貨<br>
+同時聯手秀泰影城，打造頂級商場影城。<br>
+未來百貨影城、國際飯店、A級商辦大連線!<br>
+「上東京」迎向高雄新百貨時代!</p> <img v-if="isMobile"
+      src="./s3/img.png"
+      alt=""
+      class="timg"
+      data-aos="fade"
+      data-aos-delay="400"></div>
+   <!-- img v-if="isMobile"
       src="./mo/3/txt.png"
       alt=""
       class="txt-img absolute"
       data-aos="fade"
       data-aos-delay="400"
-    >
+     -->
   </div>
 </template>
 <style lang="scss" scoped>
@@ -122,7 +133,7 @@
 
 @media screen and (max-width: 767px) {
   .relative {
-    height: size-m(1600 / 2);
+    height: size-m(940);
     overflow: hidden;
     background: #fff;
 
@@ -152,22 +163,27 @@
   }
 
   .swiper-container {
-    width: size-m(313);
-    height: size-m(370);
-    top: size-m(68);
-    right: size-m(31);
+    width: size-m(375);
+    height: size-m(400);
+    top: size-m(30);
+    right: size-m(0);
 
     .item-img {
-      width: size-m(313);
-      height: size-m(370);
+      width: size-m(375);
+      height: size-m(400);
     }
   }
 
   .txt-img {
-    width: 100vw;
+    width: 90vw;
     height: auto;
-    top: size-m(450);
-    left: 0;
+    top: size-m(440);
+    left:5vw;
+    border: 2px solid #036ea8;
+    font-size:size-m(15);line-height: 1.6;padding:size-m(30) 0 0 0;
+    h3{font-size: 2em;color:#036ea8 ;font-weight: 800;font-family: "Noto Sans TC";letter-spacing: 0.15em;}
+    p{font-size: 1em;font-weight: 400;font-family: "Noto Sans TC";transform: scaleX(0.95);}
+    img{}
   }
 }
 </style>

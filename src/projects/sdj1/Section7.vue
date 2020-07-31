@@ -193,8 +193,8 @@
   }
   .frame1 {
     position: relative;
-    width: size-m(317);
-    height: size-m(678);
+    width: 90vw;
+    height: size-m(950);
     margin: 0 auto;
     margin-top: size-m(40);
     margin-bottom: size-m(28);
@@ -202,8 +202,8 @@
 
   .frame2 {
     position: relative;
-    width: size-m(324);
-    height: size-m(780);
+    width: 90vw;
+    height: size-m(800);
     margin: 0 auto;
     margin-bottom: size-m(30);
   }
@@ -216,7 +216,7 @@
 
   .swiper-container {
     width: 100%;
-    height: size-m(630);
+    height: size-m(820);
 
     .item-img {
       width: 100%;

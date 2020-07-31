@@ -26,7 +26,25 @@
           <!-- <div class="slide-title absolute">{{slide.title}}</div> -->
           <!-- <div class="absolute txt">3D示意圖僅供參考</div> -->
         </swiper-slide>
-        <div
+          <div v-if="isMobile"
+            class="swiper-button-prev"
+            slot="button-prev"
+          >
+            <img
+              src="./all/箭頭2.png"
+              alt
+            />
+          </div>
+          <div v-if="isMobile"
+            class="swiper-button-next"
+            slot="button-next"
+          >
+            <img
+              src="./all/箭頭1.png"
+              alt
+            />
+          </div>
+        <div v-if="!isMobile"
           class="swiper-pagination"
           slot="pagination"
         ></div>
@@ -107,7 +125,7 @@
 
 @media screen and (max-width: 767px) {
   .bg {
-    height: size-m(700);
+    height: size-m(650);
     background-color: #fff;
     padding-top: size-m(50);
 
@@ -138,7 +156,7 @@
   }
 
   .swiper-container {
-    width: size-m(326);
+    width: size-m(375);
     height: size-m(646);
     overflow: visible;
     position: absolute;
@@ -177,7 +195,7 @@
   .item-img {
     top: 0;
     left: 0;
-    width: size-m(326);
+    width: size-m(375);
     height: size-m(626);
     object-fit: cover;
     object-position: center;
@@ -232,6 +250,10 @@ export default {
         },
         effect: 'fade',
         loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
         pagination: {
           el: '.swiper-pagination',
           clickable: true,

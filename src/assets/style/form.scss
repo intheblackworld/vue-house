@@ -86,7 +86,8 @@
 
   &.is-disabled {
     background-color: $order_sumbit_disable_bg;
-    opacity: 0.6;
+    border:$order_sumbit_disable_borde;
+    //opacity: 0.6;
   }
 
   svg {
