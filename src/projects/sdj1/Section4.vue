@@ -202,14 +202,14 @@
 
   .slide-title {
     width: size(370);
-    font-size: size(19);
+    font-size: size(13);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.2;
-    letter-spacing: 3.07px;
+    letter-spacing: 0.1em;
     text-align: right;
-    color: #231815;
+    color: #fff;
     bottom: size(-20);
     left: 0;
     right: 0;

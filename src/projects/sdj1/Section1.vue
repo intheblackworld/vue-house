@@ -29,6 +29,13 @@
         class="logo absolute"
       >
       <img
+        v-lazy="require('./s1/logo.gif')"
+        data-aos="fade"
+        data-aos-delay="400"
+        alt=""
+        class="logo absolute"
+      >
+      <img
         v-lazy="require('./s1/light.png')"
         data-aos="fade"
         data-aos-delay="800"
