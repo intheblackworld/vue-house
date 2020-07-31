@@ -4,8 +4,8 @@ export default {
     'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3614.618250589732!2d121.43872576085205!3d25.04702619395632!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x51f286eecefc542e!2z5pyX5pyX5Z-O5b-D!5e0!3m2!1szh-TW!2stw!4v1596182028751!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/G5DXHFiSqZfCWnhm6',
   phone: '02-29092233',
-  fbLink: 'https://www.facebook.com/dalitokyo888/',
-  fbMessage: 'https://m.me/dalitokyo888/',
+  fbLink: 'https://www.facebook.com/lala0229092233/',
+  fbMessage: 'https://m.me/lala0229092233/',
   caseName: '朗朗城心',
   indigatorLength: 10,
 
