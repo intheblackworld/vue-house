@@ -326,14 +326,14 @@
 @media screen and (max-width: 767px) {
   .section1 {
     position: relative;
-   height:108vh;
+   height:size-m(750);
     background-color: #ea5414;
     z-index: 2;
   }
 
   .commingsoon {
     width: size-m(300);
-    top: size-m(30);
+    top: size-m(25);
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -364,44 +364,43 @@
   .title1 {
  height:auto;
  width: 70%;
-  top: calc(35vh - 41vw);
+  top: size-m(63);
   }
 
   .title2 {
  height:auto;
  width: 80%;
-  top: calc(35vh + 15vw);
+  top: size-m(275);
   }
 
   .title3 {
  height:auto;
  width: 80%;
-  top: calc(35vh + 22vw);
+  top: size-m(300);
   }
 
   .img1 {
     width: 108vw;
     margin-left: -4vw;
-    height: calc(100vh - 63px);
+    height: size-m(604);
   }
 
   .img2 {
     width: 100vw;
-    height: calc(124vh - 63px);
+    height: size-m(750);
   }
 
   .img3 {
     width: 100vw;
-    height: calc(100vh - 63px);
+    height: size-m(604);
   }
   .butterfly {
     width: 100vw;
-    height: calc(100vh - 63px);
+    height: size-m(604);
   }
 
   .txt {
-    top: auto;
-    bottom: 0;
+    top: size-m(430);
     right: size-m(8);
     font-size: size-m(12);
     font-weight: bold;
