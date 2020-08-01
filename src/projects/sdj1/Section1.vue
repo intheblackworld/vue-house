@@ -283,8 +283,9 @@
   .relative {
     // height: 100vh;
     // overflow: hidden;
-    background: #eee4cb;
+    // background: #eee4cb;
     //margin-top: 60px;
+    background: #05123C;
   }
 
   .bg-img {

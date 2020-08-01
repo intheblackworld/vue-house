@@ -173,11 +173,12 @@ export default {
     }
   },
   created() {
-    window.addEventListener('load', event => {
-      this.load = false
-    })
   },
   mounted() {
+    window.addEventListener('load', event => {
+      console.log('loaded')
+      this.load = false
+    })
     window.addEventListener('scroll', _.throttle(this.onScroll, 500), false)
     // 获取所有锚点元素
     const navContents = document.querySelectorAll('.section')
@@ -190,7 +191,6 @@ export default {
   methods: {
     onScroll() {
       // 获取当前文档流的 scrollTop
-      console.log(document.documentElement.scrollTop)
       const scrollTop =
         document.documentElement.scrollTop || document.body.scrollTop
       // 定义当前点亮的导航下标

@@ -1,7 +1,7 @@
 <template>
   <div class="relative">
     <img v-if="!isMobile"
-      src="./s3/txt.png"
+      v-lazy="require('./s3/txt.png')"
       alt=""
       class="content absolute"
       data-aos="fade"
@@ -26,15 +26,14 @@
           :alt="slide.title"
         />
       </swiper-slide>
-      <div
+      <!-- <div
         v-if="!isMobile"
         class="swiper-pagination"
         slot="pagination"
-      ></div>
+      ></div> -->
       <div
         class="swiper-button-prev"
         slot="button-prev"
-        v-if="isMobile"
       >
         <img
           src="./all/箭頭2.png"
@@ -44,7 +43,6 @@
       <div
         class="swiper-button-next"
         slot="button-next"
-        v-if="isMobile"
       >
         <img
           src="./all/箭頭1.png"
@@ -224,10 +222,10 @@ export default {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
+        // pagination: {
+        //   el: '.swiper-pagination',
+        //   clickable: true,
+        // },
       },
       slideList: isMobile
         ? [

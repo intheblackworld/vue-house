@@ -26,33 +26,39 @@
           <!-- <div class="slide-title absolute">{{slide.title}}</div> -->
           <!-- <div class="absolute txt">3D示意圖僅供參考</div> -->
         </swiper-slide>
-          <div v-if="isMobile"
-            class="swiper-button-prev"
-            slot="button-prev"
-          >
-            <img
-              src="./all/箭頭2.png"
-              alt
-            />
-          </div>
-          <div v-if="isMobile"
-            class="swiper-button-next"
-            slot="button-next"
-          >
-            <img
-              src="./all/箭頭1.png"
-              alt
-            />
-          </div>
-        <div v-if="!isMobile"
+        <div
+          class="swiper-button-prev"
+          slot="button-prev"
+        >
+          <img
+            src="./all/箭頭2.png"
+            class="arrows"
+            alt
+          />
+        </div>
+        <div
+          class="swiper-button-next"
+          slot="button-next"
+        >
+          <img
+            src="./all/箭頭1.png"
+            class="arrows"
+            alt
+          />
+        </div>
+        <!-- <div v-if="!isMobile"
           class="swiper-pagination"
           slot="pagination"
-        ></div>
+        ></div> -->
       </swiper>
     </div>
   </div>
 </template>
-
+<style lang="scss">
+.arrows {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+</style>
 <style lang="scss" scoped>
 @import '~@/assets/style/function.scss';
 
@@ -245,7 +251,7 @@ export default {
         // preloadImages: true,
         // cssMode: false,
         autoplay: {
-          delay: 3500,
+          delay: 5500,
           disableOnInteraction: false,
         },
         effect: 'fade',
@@ -254,10 +260,10 @@ export default {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
+        // pagination: {
+        //   el: '.swiper-pagination',
+        //   clickable: true,
+        // },
       },
       slideList: isMobile
         ? [
