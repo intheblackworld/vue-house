@@ -89,6 +89,7 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .relative {
+    background: #05123C;
   // height: 100vh;
   // overflow: hidden;
   // background: #eee4cb;
