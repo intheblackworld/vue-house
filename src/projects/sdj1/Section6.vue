@@ -56,7 +56,7 @@
 </template>
 <style lang="scss">
 .arrows {
-  background-color: rgba(0, 0, 0, 0.4);
+  //background-color: rgba(0, 0, 0, 0.4);
 }
 </style>
 <style lang="scss" scoped>
@@ -126,6 +126,7 @@
     display: block;
   }
 }
+.swiper-button-prev, .swiper-button-next{top:25%;}
   .txt {
     font-size: size(12);
     top: calc(50% + 30vw);

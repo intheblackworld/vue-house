@@ -25,13 +25,9 @@
         >
       </div>
       <div class="frame2">
-        <img
-          src="./s7/4.png"
-          alt=""
-          class="bg-img"
+        <h3 class="title"
           data-aos="fade-left"
-          data-aos-delay="400"
-        >
+          data-aos-delay="400">邁向5G 家的新生活版本！</h3>
         <img
           src="./s7/5.png"
           alt=""
@@ -59,13 +55,9 @@
         >
       </div>
       <div class="frame2">
-        <img
-          src="./mo/7/title.png"
-          alt=""
-          class="title-img"
-          data-aos="fade"
-          data-aos-delay="400"
-        >
+        <h3 class="title"
+          data-aos="fade-left"
+          data-aos-delay="400">邁向5G<br>家的新生活版本!</h3>
 
         <swiper
           :options="swiperOption"
@@ -131,6 +123,12 @@
   height: size(791);
   margin: 0 auto;
   margin-bottom: size(184);
+  font-size:size(15);
+  text-align: justify;
+  .title{
+    border-left: size(190) solid currentColor;
+padding:1.4em 0 0 0.6em;letter-spacing: 0.05em;margin: 0 0 0.8em 0;
+    color:#036ea8;font-size:size(51);font-weight: 800;}
 }
 .bg-img {
   width: 100%;
@@ -206,6 +204,11 @@
     height: size-m(800);
     margin: 0 auto;
     margin-bottom: size-m(30);
+  .title{
+    border-left: size-m(96) solid currentColor;
+padding:1em 0 0 1em;letter-spacing: -0.01em;
+line-height: 1.3;
+    color:#036ea8;font-size:size-m(29);font-weight: 800;}
   }
 
   .title-img {

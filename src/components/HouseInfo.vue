@@ -51,7 +51,7 @@ export default {
   font-size: 36px;
   line-height: 36px;
   margin: 60px 0;
-  font-family: 'Noto Serif TC', serif;
+ // font-family: 'Noto Serif TC', serif;
   font-weight: bold;
   color: $house_title_color;
 }
