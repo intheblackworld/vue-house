@@ -2,7 +2,7 @@
   <div class="relative">
     <div class="s1 relative">
       <img
-        v-lazy="require('./s1/bg_01.jpg')"
+        src="./s1/bg_01.jpg"
         alt="bg"
         class="bg-img"
       >
@@ -89,6 +89,7 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .relative {
+    background: #05123C;
   // height: 100vh;
   // overflow: hidden;
   // background: #eee4cb;
