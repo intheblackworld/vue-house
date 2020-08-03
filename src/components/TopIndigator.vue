@@ -147,27 +147,27 @@
 @media screen and (max-width: 767px) {
   .indigator {
     padding: size-m(20) size-m(20) size-m(50);
-    right: -3.5vw;
+    right: 0;
 
     .list-indigator {
-      width: 30px;
-      flex-wrap: wrap;
+      width:size-m(60);
+      flex-wrap:wrap;
       position: absolute;
       top: size-m(10);
-      right: -5px;
+      right:size-m(5); //background: #0003;
 
       &.active {
-        width: 45px;
+        width:size-m(60)
       }
     }
 
     .close {
       width: 1.5em;
       height: 1.5em;
-      margin: 10px size-m(3) 30px;
+      margin: 10px size-m(10) 30px;
     }
     .dot {
-      width: 2em;
+      width: 2.5em;
       height: 3em;
       margin: 0 size-m(10);
     }
