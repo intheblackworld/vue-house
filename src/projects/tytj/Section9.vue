@@ -198,18 +198,20 @@
 }
 
 .swiper-button-next {
-  right: 0 !important;
+  right: 20px !important;
   bottom: 0 !important;
   top: auto !important;
   height: auto !important;
+  opacity: .4;
 }
 
 .swiper-button-prev {
   left: auto !important;
-  right: 28px !important;
+  right: 50px !important;
   bottom: 0 !important;
   top: auto !important;
   height: auto !important;
+  opacity: .4;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -327,7 +329,7 @@ export default {
           delay: 30000,
           disableOnInteraction: true,
         },
-        loop: false,
+        loop: true,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
