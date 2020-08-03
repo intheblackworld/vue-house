@@ -276,13 +276,13 @@ export default {
           src: require('./mo/7/2.png'),
         },
         {
-          src: require('./mo/7/3.png'),
+          src: require('./mo/7/5.png'),
         },
         {
           src: require('./mo/7/4.png'),
         },
         {
-          src: require('./mo/7/5.png'),
+          src: require('./mo/7/3.png'),
         },
       ],
     }

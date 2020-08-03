@@ -303,7 +303,7 @@
   }
   .desc {
     width: size-m(275);
-    top: size-m(490);
+    top: size-m(470);
     bottom: auto;
     left: size-m(50);
     right: size-m(50);
