@@ -4,6 +4,7 @@
       v-lazy="require('./s4/map.png')"
       alt="map"
       class="map-img absolute"
+      @click="isDialog = true"
     >
     <!-- img
       v-lazy="require('./mo/4/img.png')"
@@ -47,6 +48,7 @@
           v-lazy="require('./s4/map.png')"
           alt="map"
           class="dialog-content"
+        @click="isDialog = false"
         ></div><img
         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAKlBMVEVHcEz////z8fHz8fH////z8fHz8fHz8fHz8fHz8fHz8fHz8fHx7u708fEdE1r4AAAADnRSTlMAA0S1Bec3v6z4KcoaoNqzfoQAAAF6SURBVHjapZfLksMgDAQZwOLl/P/vboBydPAaXCPdkkq3TWBAuBoqHFmoQdynNIkcH6WVjztDSRI5PpVwOlfzkTxhgE/HGD44Q/ThyIKhknwEHzl+lnzUwPAuquEtn4/soV/Aq4Hge/mshj0fbryDGih+zsWrFQWZ/F08DNjz6QiCB3VpFbv8tHLx96pfw4klf7aSFg+pqRuW/OYlz9R/sHr/1B+wMQgeeGn6gqtRPMwmJOn4V4bwf7rhQ8//u4US7obYednzuj8s8ksYNH/70mQR/N2gfP9IGqA8Y5j5JTZ+P9J9TStx/HUwCVCv/DOGkupY2nBUoadb88/U11CagYdREE1DsP+JsU9jBeovxsRSZBaS8hMbBjoK9jBSBvuGEo1bGpSnNmVn3NbxdLDEdwcLTtvRBsvhuj/e3e54B91gKM+3OPYmC+/aPKdtnrXRtLa6FD8LaqB4zeadJwzcpQnDIN1gv3TZr30EPw3z4mm++pov39brf/0DkT4QydVQXNwAAAAASUVORK5CYII="
         alt=""
