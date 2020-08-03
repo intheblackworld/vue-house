@@ -238,8 +238,8 @@
 }
 
 .scale {
-  width: size(150);
-  top: size(633);
+  width: size(55);
+  top: size(728);
   right: size(816);
   cursor: pointer;
   z-index: 5;
