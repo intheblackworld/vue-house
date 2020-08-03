@@ -50,11 +50,16 @@
       alt=""
       class="g-banner absolute"
     >
-    <img
-      src="./s6/w-banner.png"
-      alt=""
-      class="w-banner absolute"
-    >
+<div class="w-banner_bg absolute"></div>
+ <svg class="clipping-mask" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 800 1080" style="enable-background:new 0 0 800 1080;" xml:space="preserve">
+ <defs>
+ <clipPath id="clipping">
+ <polygon class="st0" points="791.3,759.6 791.3,320.4 513.5,0 0,0 0,1080 513.5,1080 	"/>
+ </clipPath>
+ </defs>
+ </svg>
+
     <img
       src="./s6/logo.png"
       alt=""
@@ -71,6 +76,14 @@
     </div>
   </div>
 </template>
+<style lang="scss">
+.clipping-mask {
+ width: 100%;
+ height: 100%;
+}
+.w-banner{
+}
+</style>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .section6 {
@@ -128,13 +141,29 @@
   z-index: 1;
 }
 .w-banner {
-  width: size(824);
+  width: size(800);
   height: 100%;
-  width: size(792);
   top: 0;
   left: 0;
   object-fit: cover;
   z-index: 1;
+}
+
+.w-banner_bg {
+ top: 0;
+ left: 0;
+  width: size(800);
+  height: size(1080);
+ background: url("./s9/bg.jpg") fixed center;
+ background-size: cover;
+ z-index: 1;
+ clip-path: url(#clipping);
+}
+.clipping-mask {
+ width: 100%;
+ height: 100%;
+ position: absolute;
+ top: 0;left: 0;z-index: 5;
 }
 
 .logo-b {
@@ -156,7 +185,7 @@
   height: 1px;
   background-color: #68361a;
   top: size(541);
-  left: size(110);
+  left: size(110);z-index:3;
 }
 
 .desc {
@@ -168,9 +197,9 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 2;
-  letter-spacing: 1.8px;
+  letter-spacing: 0.1em;
   text-align: left;
-  color: #3e3a39;
+  color: #3e3a39;z-index:3;
 }
 
 @media only screen and (max-width: 1440px) {

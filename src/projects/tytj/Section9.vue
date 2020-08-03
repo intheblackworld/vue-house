@@ -1,6 +1,6 @@
 <template>
   <div class="relative">
-    <div v-if="!isMobile" class="c">
+    <div  class="c">
       <div class="border absolute"></div>
       <img
         src="./s9/資產 16-801.png"
@@ -68,9 +68,6 @@
         v-html="slideList[slideIndex].desc"
       ></div>
     </div>
-    <div v-if="isMobile">
-
-    </div>
   </div>
 </template>
 <style lang="scss">
@@ -126,7 +123,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.4;
-  letter-spacing: 12.1px;
+  letter-spacing:0.22em;
   text-align: center;
   color: #68361a;
   top: size(396);
@@ -142,7 +139,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 2.42;
-  letter-spacing: 1.52px;
+  letter-spacing:0.08em;
   text-align: justify;
   color: #3e3a39;
   top: size(597);
@@ -187,7 +184,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: 8.28px;
+  letter-spacing: 0.14em;
   text-align: left;
   color: #68361a;
   top: size(158);
@@ -229,9 +226,75 @@
 
 @media screen and (max-width: 767px) {
   .relative {
-    height: auto;
+    height: size-m(1000);
     margin: 0;
   }
+  .subtitle{
+  font-size: size-m(30);
+  text-align: center;
+  top: size-m(30);
+  right: size-m(0);
+  left: size-m(0);
+  }
+  .icon {
+  top: size-m(90);
+  height: size-m(100);
+  left: 50%;
+  transform: translateX(-50%);
+}
+.title {
+  font-size:size-m(25);
+  top:size-m(200);
+  left:50%;width: 100vw;
+  transform: translateX(-50%);
+}
+.swiper-container {
+  width: size-m(375);
+  height: size-m(225);
+  top: size-m(280);
+  right: size-m(0);
+  border: 0px solid #68361a;
+}
+.hr{display: none;}
+.border{display: none;}
+.c{
+  font-size:size-m(15);}
+.desc{
+  width: size-m(335);
+  top: size-m(520);
+  left:size-m(20);
+  transform: translateX(0%);
+  span {
+    color: #68361a;
+    font-weight: bold;
+  }
+  &.desc1 {
+    font-size: 0.95em;
+  }
+
+  &.desc2, &.desc3, &.desc4 {
+    font-size: 0.9em;
+  }
+
+  &.desc3 {
+    width: size-m(335);
+    margin-left: size(0);
+    line-height: 1.6;
+  }
+  &.desc5 {
+    width:size-m(335);
+    margin-left: size(0);
+    line-height: 1.6;
+    letter-spacing: 0.05em;
+  }
+
+}
+.logo-b{
+  height: size-m(235);
+  top: size-m(790);
+  left:size-m(70);
+  }
+
 }
 </style>
 <script>
@@ -254,11 +317,11 @@ export default {
     return {
       isMobile,
       swiperOption: {
-        slidesPerView: isMobile ? 2.2 : 1,
+        slidesPerView: isMobile ? 1 : 1,
         centeredSlides: true,
         spaceBetween: isMobile ? 10 : 30,
         slidesPerColumn: isMobile ? 1 : 1,
-        effect: isMobile ? '' : 'fade',
+        effect: isMobile ? '' : '',
 
         autoplay: {
           delay: 30000,
@@ -313,7 +376,7 @@ export default {
           title: '過濾系統<br />確保用水品質',
           subtitle: '專業科技 優質好水',
           desc:
-            '<span>BWT Infinity A全自動反洗過濾器</span><br />全自動時間控制滿足最高的舒適性要求,高科技材料製作,保護水管道與連接的水循環系統免受外來雜質顆粒。<br /><span>軟水系統</span><br />用離子交換(lon-exchange)技術,將水中的鈣鎂離子與鈉離子進行轉換,達到降低水中鈣鎂離子濃度,防止水垢生成。免受外來雜質顆粒。<br /><span>殺菌系統</span><br />不只能殺死水中有害的細菌病毒,有效濾除100%<br />病毒及細菌幫您層層把關,買的放心用安心!',
+            '<span>BWT Infinity A全自動反洗過濾器</span><br />全自動時間控制滿足最高的舒適性要求,高科技材料製作,保護水管道與連接的水循環系統免受外來雜質顆粒。<br /><span>軟水系統</span><br />用離子交換(lon-exchange)技術,將水中的鈣鎂離子與鈉離子進行轉換,達到降低水中鈣鎂離子濃度,防止水垢生成。免受外來雜質顆粒。<br /><span>殺菌系統</span><br />不只能殺死水中有害的細菌病毒,有效濾除100%病毒及細菌幫您層層把關,買的放心用安心!',
         },
       ],
     }
