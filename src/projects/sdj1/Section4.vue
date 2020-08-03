@@ -44,7 +44,7 @@
       v-if="isDialog"
     >
       <div><img
-          v-lazy="require('./s4/area4_map.png')"
+          v-lazy="require('./s4/map.png')"
           alt="map"
           class="dialog-content"
         ></div><img
