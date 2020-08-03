@@ -387,10 +387,13 @@ export default {
   methods: {
     slideChanged(e) {
       const swiper = this.$refs.mySwiper.swiper
+      // console.log(this.slideIndex, swiper.activeIndex, swiper.isEnd, swiper.isBeginning)
       if (swiper.isEnd) {
         this.slideIndex = 0
+      } else if (swiper.isBeginning) {
+        this.slideIndex = swiper.slides.length - 3
       } else {
-        this.slideIndex = swiper.activeIndex
+        this.slideIndex = swiper.activeIndex - 1
       }
     },
   },
