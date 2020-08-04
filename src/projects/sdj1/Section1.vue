@@ -57,6 +57,11 @@
             class="cloud2-2 absolute"
           >
           <img
+            src="./s1/bg.png"
+            alt="map"
+            class="location absolute"
+          >
+          <img
             src="./s1/line.png"
             alt=""
             class="line1 absolute"
@@ -75,11 +80,6 @@
             src="./s1/ball2.png"
             alt="map"
             class="ball2 absolute"
-          >
-          <img
-            src="./s1/bg.png"
-            alt="map"
-            class="location absolute"
           >
         </div>
       </Map>
@@ -221,7 +221,7 @@
 .location {
   width: 100vw;
   height: auto;
-  z-index: 2;
+ // z-index: 2;
   left: 0;
   top: size(-1192);
   animation: location 1s ease-in-out alternate infinite;
