@@ -1,5 +1,6 @@
-const meta = require('./src/info/meta')
+const webpack = require('webpack')
 const path = require('path')
+const meta = require('./src/info/meta')
 
 function resolve(dir) {
   return path.join(__dirname, '.', dir)
@@ -61,5 +62,14 @@ module.exports = {
       })
     // remove the prefetch plugin
     config.plugins.delete('prefetch')
-  }
+  },
+  configureWebpack: {
+    plugins: [
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'windows.jQuery': 'jquery',
+      }),
+    ],
+  },
 }

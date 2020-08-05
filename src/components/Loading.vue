@@ -1,5 +1,5 @@
 <template>
-  <div :class="`loading-bg ${loading ? '' : 'none'} ${isOpacity ? 'opacity': ''}`">
+  <div :class="`loading-bg ${loading ? '' : 'hide'} ${isOpacity ? 'opacity': ''}`">
     <img src="~@/assets/img/loading_b.gif" alt class="loading-icon" />
   </div>
 </template>
@@ -30,7 +30,7 @@
   }
 
   &.hide {
-    animation: hide .3s ease 0s forwards;
+    animation: hide 1s ease-in 0s forwards;
   }
 
   &.none {
@@ -40,11 +40,13 @@
   @keyframes hide {
     0% {
       oacity: 1;
+      left: 0;
       display: block;
     }
 
     99% {
       opacity: 0;
+      // left: -100vw;
       display: block;
       z-index: 1000;
     }

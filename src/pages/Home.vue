@@ -1,9 +1,7 @@
 <template>
   <div class="home no-padding-top">
     <Loading :loading="load" />
-    <SideNavigation
-      v-if="isSide"
-    />
+    <SideNavigation v-if="isSide" />
     <Navigation v-else />
     <!-- <Indigator :viewIndex="viewIndex" /> -->
     <!-- <full-page
@@ -11,29 +9,32 @@
       :options="options"
       id="fullpage"
     > -->
-      <div
-        class="section"
-        id="section1"
-      >
-        <Section1 />
-      </div>
-      <div
-        class="section"
-        id="section2"
-      >
-        <Section2 />
-      </div>
-      <div
-        class="section"
-        id="section3"
-      >
-        <Section3 />
-      </div>
-    <!-- </full-page> -->
-    <ContactSection
+    <vue-lazy-component
+      class="section"
+      id="section1"
+      @init="init"
+    >
+      <Section1 />
+    </vue-lazy-component>
+
+    <vue-lazy-component
+      class="section"
+      id="section2"
+    >
+      <Section2 />
+    </vue-lazy-component>
+    <vue-lazy-component
+      class="section"
+      id="section3"
+    >
+      <Section3 />
+    </vue-lazy-component>
+    <vue-lazy-component
       class="section"
       id="contact"
-    />
+    >
+      <ContactSection />
+    </vue-lazy-component>
     <MobileNav />
   </div>
 </template>
@@ -44,13 +45,14 @@
 
 .section,
 .section .fp-slide,
-.section .fp-tableCell{
-    height: auto !important;
+.section .fp-tableCell {
+  height: auto !important;
 }
 </style>
 
 <script>
 // @ is an alias to /src
+import $ from 'jquery'
 import Navigation from '@/layouts/Navigation.vue'
 import { isMobile } from '@/utils'
 import SideNavigation from '@/layouts/SideNavigation.vue'
@@ -59,9 +61,9 @@ import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 // import Indigator from '@/components/Indigator.vue'
 
-import Section1 from '@/projects/jyly/Section1.vue'
-import Section2 from '@/projects/jyly/Section2.vue'
-import Section3 from '@/projects/jyly/Section3.vue'
+import Section1 from '@/projects/sc/Section1.vue'
+import Section2 from '@/projects/sc/Section2.vue'
+import Section3 from '@/projects/sc/Section3.vue'
 
 export default {
   name: 'home',
@@ -105,8 +107,32 @@ export default {
     // setTimeout(() => {
     //   this.load = false
     // }, 500)
-    window.addEventListener('load', event => {
-      this.load = false
+    // window.addEventListener('load', event => {
+
+    // })
+
+    $(document).ready(() => {
+      // Images loaded is zero because we're going to process a new set of images.
+      var imagesLoaded = 0
+      // Total images is still the total number of <img> elements on the page.
+      var totalImages = $('img').length
+
+      const allImagesLoaded = () => {
+        console.log('All Image Done')
+        console.log(this)
+        this.load = false
+      }
+      const imageLoaded = () => {
+        imagesLoaded++
+        if (imagesLoaded == totalImages) {
+          allImagesLoaded()
+        }
+      }
+      $('img').each(function(idx, img) {
+        $('<img>')
+          .on('load', imageLoaded)
+          .attr('src', $(img).attr('src'))
+      })
     })
   },
   mounted() {
@@ -117,9 +143,7 @@ export default {
     // }
   },
   methods: {
-    onDone() {
-      console.log('done')
-    },
+    init() {},
     // onScroll() {
     //   // 获取所有锚点元素
     //   const navContents = document.querySelectorAll('.section')
