@@ -50,7 +50,7 @@
       alt=""
       class="g-banner absolute"
     >
-<div class="w-banner_bg absolute"></div>
+<div class="w-banner_bg absolute" v-if="!isMobile"></div>
 
     <img
       src="./s6/logo.png"
