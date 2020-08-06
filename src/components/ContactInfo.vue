@@ -6,12 +6,13 @@
       <div class="btn flex-c" @click="showCallDialog">
         <span class="flex-c">
           <font-awesome-icon icon="phone" />
-          {{info.phone}}
+          <span>{{info.phone}}</span>
         </span>
       </div>
       <div class="btn flex-c" @click="showMessengerDialog">
         <span class="flex-c">
-          <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB 諮詢
+          <font-awesome-icon :icon="['fab', 'facebook-messenger']" />
+          <span>FB 諮詢</span>
         </span>
       </div>
       <!-- <a class="btn flex-c" :href="info.fbMessage" target="_blank" v-else>
@@ -21,13 +22,15 @@
       </a> -->
       <a class="btn flex-c" :href="info.fbLink" target="_blank">
         <span class="flex-c">
-          <font-awesome-icon :icon="['fab', 'facebook-f']" />前往粉絲專頁
+          <font-awesome-icon :icon="['fab', 'facebook-f']" />
+          <span>前往粉絲專頁</span>
         </span>
       </a>
       <div class="address flex-c" v-html="info.address"></div>
       <div class="google-btn flex-c" @click="showMapDialog">
         <span class="flex-c">
-          <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
+          <font-awesome-icon icon="map-marker-alt" />
+          <span>導航 Google 地圖</span>
         </span>
       </div>
       <!-- <a class="google-btn flex-c" :href="info.googleLink" target="_blank" v-else>
@@ -144,6 +147,8 @@ export default {
   background: $contact_btn_bg;
   border:$contact_btn_border;
   transition: all 0.5s;
+  position: relative;
+  overflow: hidden;
 
   svg {
     color: $contact_btn_icon;
@@ -152,7 +157,6 @@ export default {
     margin-right: 12px;
     transition: all 0.5s;
   }
-
   &:hover {
     background: $contact_btn_hover_bg;
     // background-image: url("../assets/img/contact_gold_button.png");
@@ -265,10 +269,15 @@ export default {
     border: 1px solid #666;
     border-bottom: none;
   }
-.btn svg {
+.btn {
+  svg {
     position: absolute;
-    margin: 0 0 0 -70px;
-  }
+    top: 50%;
+    transform: translateY(-50%);
+    left: calc(50% - 5em);
+    margin-right: 0;}
 
+svg+span{margin-left: 1.5em;}
+}
 }
 </style>
