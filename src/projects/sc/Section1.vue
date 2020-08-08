@@ -56,7 +56,7 @@
       >
       <div
         class="btn absolute"
-        v-scroll-to="{ element: `#contact` }"
+        v-scroll-to="{ element: `#contact`, offset: -50 }"
         data-aos="fade"
         data-aos-delay="1000"
       >
@@ -189,7 +189,7 @@
     height: size-m(667);
     background-image: url('./mo/1/bg.jpg');
     background-size: cover;
-    background-attachment: auto;
+    background-attachment: scroll;
   }
 
   .bg-img {

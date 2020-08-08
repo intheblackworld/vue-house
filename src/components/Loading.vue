@@ -1,6 +1,10 @@
 <template>
   <div :class="`loading-bg ${loading ? '' : 'hide'} ${isOpacity ? 'opacity': ''}`">
-    <img src="~@/assets/img/loading_b.gif" alt class="loading-icon" />
+    <img
+      src="~@/assets/img/loading_b.gif"
+      alt
+      class="loading-icon"
+    />
   </div>
 </template>
 
@@ -26,7 +30,7 @@
   }
 
   &.opacity {
-    opacity: .8;
+    opacity: 0.8;
   }
 
   &.hide {
@@ -53,8 +57,16 @@
 
     100% {
       opacity: 0;
+      display: none !important;
+      z-index: -1000 !important;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .loading-bg {
+    &.hide {
       display: none;
-      z-index: -1000;
     }
   }
 }
