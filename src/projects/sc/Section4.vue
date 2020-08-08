@@ -1,8 +1,6 @@
 <template>
   <div>
-    <div
-      class="section4"
-    >
+    <div class="section4">
       <div
         class="float-block flex-c absolute"
         v-rellax="{
@@ -20,7 +18,18 @@
           <h3 class="block-title">拾秋散步地圖</h3>
         </div>
       </div>
-      <img src="./s4/map.jpg" alt="" class="map-bg absolute">
+      <img
+        src="./s4/map.jpg"
+        alt=""
+        class="map-bg absolute"
+        v-if="!isMobile"
+      >
+      <img
+        src="./mo/4/map_s.jpg"
+        alt=""
+        class="map-bg absolute"
+        v-if="isMobile"
+      >
     </div>
   </div>
 </template>
@@ -79,6 +88,42 @@
 }
 
 @media screen and (max-width: 767px) {
+  .section4 {
+    width: 100vw;
+    height: size-m(610 + 83);
+    // background-image: url('./s1/bg.jpg');
+    // background-size: cover;
+    // background-attachment: fixed;
+  }
+
+  .float-block {
+    width: size-m(50);
+    height: size-m(168);
+    top: size-m(-440);
+    left: size-m(42);
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
+    background-color: #ffffff;
+    z-index: 3;
+    .block-icon {
+      width: size-m(15);
+      margin-bottom: size-m(5);
+    }
+    .block-title {
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      font-size: size-m(13);
+      font-weight: normal;
+      color: #c1724b;
+    }
+  }
+
+  .map-bg {
+    width: 100vw;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 0;
+  }
 }
 </style>
 <script>

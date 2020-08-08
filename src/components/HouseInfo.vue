@@ -1,7 +1,7 @@
 <template>
   <div class="house-info" id="house-info">
     <div class="content">
-      <div class="title">建案資訊</div>
+      <h3 class="title">建案資訊</h3>
       <div class="info">
         <div class="item" :key="infos[0]" v-for="infos in houseInfos">
           <h3 class="label">{{infos[0]}}</h3>
@@ -48,12 +48,12 @@ export default {
 }
 
 .title {
-  font-size: 36px;
+  font-size: 32px;
   line-height: 36px;
   margin: 60px 0;
-  font-family: 'Noto Sans TC', serif;
-  font-weight: bold;
+  font-weight: 500;
   color: $house_title_color;
+  font-family: $family3;
 }
 
 .info {
@@ -83,6 +83,7 @@ export default {
     margin-bottom: 0;
     margin-right: 20px;
     white-space: nowrap;
+    font-family: $family3;
   }
 
   .desc {
@@ -90,6 +91,7 @@ export default {
     text-align: left;
     line-height: 1.4;
     color: $house_desc_color;
+    font-family: $family3;
   }
 }
 

@@ -73,6 +73,7 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/style/variableColor.scss';
 @import '../assets/style/variableDefault.scss';
+@import '../assets/style/function.scss';
 .navigation {
   background-color: $nav_bg;
   background-image: $nav_bg;
@@ -109,14 +110,15 @@ export default {
 }
 
 .logo {
-  //width: $logo_pc_width;
-  width:auto;
-  height: 100%;
+  width: $logo_pc_width;
+  // width:auto;
+  // height: 100%;
   cursor: pointer;
   position: absolute;
-  left: 0;
+  left: size(38);
+  right: auto;
   display: block;
-  top: 0;
+  top: 20%;
   transform: translateY(0%);
 }
 

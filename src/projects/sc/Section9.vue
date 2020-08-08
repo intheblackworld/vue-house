@@ -1,53 +1,25 @@
 <template>
   <div>
-    <div
-      v-if="!isMobile"
-      class="section1"
-    >
-      <!-- <img
-        src="./s1/bg.jpg"
-        alt=""
-        class="bg-img"
-        data-aos="fade"
-        data-aos-delay="0"
-      > -->
-      <img
-        src="./s1/logo_img.png"
-        alt=""
-        class="logo-img absolute"
-        data-aos="fade-up"
-        data-aos-delay="100"
-      >
-      <img
-        src="./s1/logo.png"
-        alt=""
-        class="logo absolute"
-        data-aos="fade-up"
-        data-aos-delay="300"
-      >
-      <!-- <img src="./s1/slogo.png" alt="" class="slogo"> -->
-      <img
-        src="./s1/txt.png"
-        alt=""
-        class="txt absolute"
-        data-aos="fade-up"
-        data-aos-delay="400"
-      >
-      <div
-        class="btn absolute"
-        v-scroll-to="{ element: `#contact` }"
-        data-aos="fade"
-        data-aos-delay="1000"
-      >
-        <h3>立即預約</h3>
-      </div>
-    </div>
     <div class="short flex-c">
       <div class="poetry">
+        <h3
+          class="poetry-title"
+          data-aos="fade-up"
+          data-aos-delay="200"
+          data-aos-duration="1000"
+          v-if="!isMobile"
+        >人生最好的時光，就是要用來慢慢品味</h3>
+        <h3
+          class="poetry-title"
+          data-aos="fade-up"
+          data-aos-delay="200"
+          data-aos-duration="1000"
+          v-if="isMobile"
+        >人生最好的時光<br />就是要用來慢慢品味</h3>
         <ul class="poetry-desc">
           <li
-            v-for="(text, index) in poetry_list_1"
-            data-aos="fade-up"
+            v-for="(text, index) in poetry_list"
+            data-aos="fade-right"
             :data-aos-delay="200 + (index + 1) * 200"
             data-aos-duration="1000"
             :key="text"
@@ -55,80 +27,27 @@
         </ul>
       </div>
     </div>
+
   </div>
 </template>
 
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
-
-.section1 {
-  width: size(1920);
-  height: size(1080);
-  background-image: url('./s1/bg.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-}
-
-.bg-img {
-  width: 100vw;
-  height: auto;
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  object-fit: cover;
-
-  &:nth-child(1) {
-    position: relative;
-  }
-}
-
-.logo {
-  width: size(888);
-  top: size(380);
-  right: size(239);
-}
-
-.logo-img {
-  width: size(428);
-  top: size(259);
-  left: size(210);
-}
-
-.txt {
-  width: size(886);
-  top: size(648);
-  right: size(241);
-}
-
-.btn {
-  width: size(335);
-  height: size(80);
-  color: #fff;
-  font-size: size(30);
-  background: #004980;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: size(735);
-  right: size(397);
-  cursor: pointer;
-}
-
 .short {
-  width: 100vw;
-  height: size(905);
+  width: size(1555);
+  height: size(550);
+  border-top: 1px solid #004980;
+  border-bottom: 1px solid #004980;
+  margin: 0 auto;
 }
 
 .poetry {
   // position: absolute;
-  width: size(287 + 68);
+  // width: size(360);
   // border-top: 0.5px solid #ccc;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row-reverse;
+  // display: flex;
+  // justify-content: center;
+  // flex-direction: row-reverse;
   // padding-top: size(40);
   // padding-right: size(20);
 
@@ -137,52 +56,28 @@
   }
 }
 
-.poetry-desc {
-  width: size(287 + 68);
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  font-size: size(32);
-  font-weight: normal;
+.poetry-title {
+  font-size: size(35);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: left;
   color: #004980;
+  margin-bottom: size(40);
 }
 
-// .tree1 {
-//   animation: skew1 5s 0s ease-in-out infinite;
-//   transform-origin: bottom;
-// }
-
-// .tree2 {
-//   animation: skew2 3s 1s ease-in-out infinite;
-//   transform-origin: bottom;
-// }
-
-// @keyframes skew1 {
-//   0% {
-//     transform: skew(-2deg);
-//   }
-
-//   50% {
-//     transform: skew(-1deg);
-//   }
-
-//   100% {
-//     transform: skew(-2deg);
-//   }
-// }
-
-// @keyframes skew2 {
-//   0% {
-//     transform: skew(2deg);
-//   }
-
-//   50% {
-//     transform: skew(1deg);
-//   }
-
-//   100% {
-//     transform: skew(2deg);
-//   }
-// }
+.poetry-desc {
+  font-size: size(24);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2;
+  letter-spacing: normal;
+  text-align: center;
+  color: #000000;
+}
 
 @media only screen and (max-width: 1440px) {
 }
@@ -198,26 +93,50 @@
 }
 
 @media screen and (max-width: 767px) {
-  .bg-img {
-    width: 100vw;
-    height: auto;
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    object-fit: cover;
+  .short {
+    width: size-m(292);
+    height: size-m(365);
+    border-top: 1px solid #004980;
+    border-bottom: 1px solid #004980;
+    margin: 0 auto;
+  }
 
-    &:nth-child(1) {
-      position: relative;
+  .poetry {
+    // position: absolute;
+    // width: size(360);
+    // border-top: 0.5px solid #ccc;
+    // display: flex;
+    // justify-content: center;
+    // flex-direction: row-reverse;
+    // padding-top: size(40);
+    // padding-right: size(20);
+
+    li {
+      margin: 0 size(30);
     }
   }
 
-  .btn {
-    width: size-m(132);
-    height: size-m(42);
+  .poetry-title {
+    font-size: size-m(20);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    text-align: center;
+    color: #004980;
+    margin-bottom: size-m(16);
+  }
+
+  .poetry-desc {
     font-size: size-m(15);
-    top: size-m(582);
-    left: size-m(62);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000000;
   }
 }
 </style>
@@ -232,12 +151,12 @@ export default {
     return {
       isMobile,
       isTablet,
-      poetry_list_1: [
-        '一條有故事的街道',
-        '一棟有學問的房子',
-        '職人手工限量十九席',
-        '書墨浦城  靜邀',
-        '拾藏百年城南歲月閑好',
+      poetry_title: '人生最好的時光，就是要用來慢慢品味',
+      poetry_list: [
+        '住進來捨不得離開的浦城街',
+        '十年來第一次稀有靜獻',
+        '限量十九席 盛夏即將公開',
+        '歡迎提前預約品賞',
       ],
     }
   },

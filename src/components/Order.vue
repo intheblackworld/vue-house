@@ -111,11 +111,11 @@
         </div>
         <div class="control">
           <el-checkbox v-model="checked">
-            <p>
+            <h3>
               本人知悉並同意
               <span @click="showPolicyDialog">「個資告知事項聲明」</span>
               內容
-            </p>
+            </h3>
           </el-checkbox>
         </div>
         <div
@@ -152,7 +152,7 @@
       </div>
     </div>
     <ContactInfo />
-    <!-- <GoogleMap /> -->
+    <GoogleMap />
     <PolicyDialog :policyVisible="policyVisible" />
   </div>
 </template>

@@ -1,12 +1,33 @@
 <template>
   <div>
-    <div
-      class="section3"
-    >
-      <h3 class="slogan absolute" data-aos="fade-top" data-aos-delay="600">漫步城南溫羅汀、康青龍藝文品味街廓，緣牆裡有迷人故事，空氣裡有書香、美味香、咖啡香…</h3>
-      <h3 class="title absolute" data-aos="fade-top" data-aos-delay="200">倚師大百年學識書香<br />浦城靜謐街區門牌難得珍稀</h3>
-      <h3 class="desc absolute" data-aos="fade-top" data-aos-delay="400">師範大學成立於1926年，是培育台灣影響力的教育種子，大師輩出、碩彥鴻儒世代傳承。近倚師大的浦城靜巷，街廓整齊慢活步調，鄰近文學大師梁實秋故居雅舍，人文靜巷幾近於零遷出率，極少推出新案，土地珍稀難得 。</h3>
-      <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+    <div class="section3">
+      <h3
+        class="slogan absolute"
+        data-aos="fade-top"
+        data-aos-delay="600"
+        v-if="!isMobile"
+      >漫步城南溫羅汀、康青龍藝文品味街廓，緣牆裡有迷人故事，空氣裡有書香、美味香、咖啡香…</h3>
+      <h3
+        class="slogan absolute"
+        data-aos="fade-top"
+        data-aos-delay="600"
+        v-if="isMobile"
+      >漫步城南溫羅汀、康青龍藝文品味街廓，<br />緣牆裡有迷人故事，<br />空氣裡有書香、美味香、咖啡香…</h3>
+      <h3
+        class="title absolute"
+        data-aos="fade-top"
+        data-aos-delay="200"
+      >倚師大百年學識書香<br />浦城靜謐街區門牌難得珍稀</h3>
+      <h3
+        class="desc absolute"
+        data-aos="fade-top"
+        data-aos-delay="400"
+      >師範大學成立於1926年，是培育台灣影響力的教育種子，大師輩出、碩彥鴻儒世代傳承。近倚師大的浦城靜巷，街廓整齊慢活步調，鄰近文學大師梁實秋故居雅舍，人文靜巷幾近於零遷出率，極少推出新案，土地珍稀難得 。</h3>
+      <div
+        class="swipe absolute"
+        @mouseenter.stop="toggleTimer = false"
+        @mouseleave.stop="toggleTimer = true"
+      >
         <div class="swipe-wrap relative">
           <img
             v-for="(slide, i) in slideList"
@@ -190,7 +211,7 @@
       top: 20%;
       // transform: translateY(-50%);
       left: 20%;
-      transition: all .3s;
+      transition: all 0.3s;
       transform-origin: center;
       transform: scale(0);
     }
@@ -219,7 +240,8 @@
   padding: 0 15px;
   z-index: 3;
 
-  .prev-btn, .next-btn {
+  .prev-btn,
+  .next-btn {
     width: size(20);
     cursor: pointer;
   }
@@ -253,6 +275,184 @@
 }
 
 @media screen and (max-width: 767px) {
+  .section3 {
+    width: 100vw;
+    height: size-m(340 + 503);
+    // background-image: url('./s1/bg.jpg');
+    // background-size: cover;
+    // background-attachment: fixed;
+  }
+
+  .float-block {
+    width: size-m(50);
+    height: size-m(131);
+    top: size-m(-300);
+    left: auto;
+    right: size-m(42);
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
+    background-color: #ffffff;
+    z-index: 3;
+    .block-icon {
+      width: size-m(15);
+      margin-bottom: size-m(5);
+    }
+    .block-title {
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      font-size: size-m(13);
+      font-weight: normal;
+      color: #c1724b;
+    }
+  }
+
+  .title {
+    top: size-m(364);
+    right: auto;
+    left: size-m(40);
+    font-size: size-m(20);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+    text-align: left;
+    color: #004980;
+  }
+
+  .desc {
+    width: size-m(295);
+    top: size-m(445);
+    right: auto;
+    left: size-m(41);
+    font-size: size-m(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.14;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+  }
+
+  .swipe {
+    width: 100vw;
+    height: size-m(340);
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+
+  .swipe-wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .swipe-item {
+    width: 100%;
+    height: 100%;
+    left: 100%;
+    transition: left 1s ease-in-out;
+    z-index: 0;
+
+    &.base {
+      z-index: 1;
+      left: 0;
+    }
+    &.active {
+      z-index: 2;
+      left: 0;
+    }
+  }
+
+  .pagination {
+    width: auto;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .pagination-dot {
+    padding: 5px;
+    cursor: pointer;
+    z-index: 4;
+
+    span {
+      display: block;
+      width: 14px;
+      height: 14px;
+      border-radius: 14px;
+      box-shadow: 0 0 0 1px #fff;
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.01);
+      transition: all 0.5s;
+
+      &::before {
+        content: '';
+        width: 60%;
+        height: 60%;
+        display: block;
+        background: #fff;
+        border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 20%;
+        // transform: translateY(-50%);
+        left: 20%;
+        transition: all 0.3s;
+        transform-origin: center;
+        transform: scale(0);
+      }
+      &.active {
+        &::before {
+          content: '';
+          width: 60%;
+          height: 60%;
+          display: block;
+          background: #fff;
+          border-radius: 20px;
+          opacity: 1;
+          position: absolute;
+          top: 20%;
+          // transform: translateY(-50%);
+          left: 23%;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  .swipe-btns {
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    z-index: 3;
+
+    .prev-btn,
+    .next-btn {
+      width: size-m(15);
+      cursor: pointer;
+    }
+  }
+
+  .slogan {
+    width: size-m(300);
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    bottom: size-m(80);
+    left: 0;
+    font-size: size-m(16);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.85;
+    letter-spacing: normal;
+    text-align: center;
+    color: #004980;
+  }
 }
 </style>
 <script>

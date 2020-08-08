@@ -4,13 +4,6 @@
       v-if="!isMobile"
       class="section1"
     >
-      <!-- <img
-        src="./s1/bg.jpg"
-        alt=""
-        class="bg-img"
-        data-aos="fade"
-        data-aos-delay="0"
-      > -->
       <img
         src="./s1/logo_img.png"
         alt=""
@@ -42,6 +35,36 @@
         <h3>立即預約</h3>
       </div>
     </div>
+
+    <div
+      v-if="isMobile"
+      class="section1"
+    >
+      <img
+        src="./mo/1/logo_m.png"
+        alt=""
+        class="logo-img absolute"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+      <img
+        src="./mo/1/txt_m.png"
+        alt=""
+        class="txt absolute"
+        data-aos="fade-up"
+        data-aos-delay="400"
+      >
+      <div
+        class="btn absolute"
+        v-scroll-to="{ element: `#contact` }"
+        data-aos="fade"
+        data-aos-delay="1000"
+      >
+        <h3>立即預約</h3>
+      </div>
+    </div>
+
+
     <div class="short flex-c">
       <div class="poetry">
         <ul class="poetry-desc">
@@ -146,44 +169,6 @@
   color: #004980;
 }
 
-// .tree1 {
-//   animation: skew1 5s 0s ease-in-out infinite;
-//   transform-origin: bottom;
-// }
-
-// .tree2 {
-//   animation: skew2 3s 1s ease-in-out infinite;
-//   transform-origin: bottom;
-// }
-
-// @keyframes skew1 {
-//   0% {
-//     transform: skew(-2deg);
-//   }
-
-//   50% {
-//     transform: skew(-1deg);
-//   }
-
-//   100% {
-//     transform: skew(-2deg);
-//   }
-// }
-
-// @keyframes skew2 {
-//   0% {
-//     transform: skew(2deg);
-//   }
-
-//   50% {
-//     transform: skew(1deg);
-//   }
-
-//   100% {
-//     transform: skew(2deg);
-//   }
-// }
-
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -198,6 +183,14 @@
 }
 
 @media screen and (max-width: 767px) {
+  .section1 {
+    width: 100vw;
+    height: size-m(667);
+    background-image: url('./mo/1/bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
   .bg-img {
     width: 100vw;
     height: auto;
@@ -212,12 +205,68 @@
     }
   }
 
+  // .logo {
+  //   width: size-m(241);
+  //   top: size-m(88);
+  //   right: size-m(67);
+  // }
+
+  .logo-img {
+    width: size-m(241);
+    top: size-m(88);
+    right: size-m(67);
+    left: auto;
+  }
+
+  .txt {
+    width: size-m(241);
+    top: size-m(388);
+    right: size-m(67);
+  }
+
   .btn {
-    width: size-m(132);
-    height: size-m(42);
+    width: size-m(140);
+    height: size-m(38);
+    color: #fff;
     font-size: size-m(15);
-    top: size-m(582);
-    left: size-m(62);
+    background: #004980;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: size-m(538);
+    right: size-m(168);
+    cursor: pointer;
+  }
+
+  .short {
+    width: 100vw;
+    height: size-m(395);
+  }
+
+  .poetry {
+    // position: absolute;
+    width: size-m(170);
+    // border-top: 0.5px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    // padding-top: size(40);
+    // padding-right: size(20);
+
+    li {
+      margin: 0 size-m(13);
+    }
+  }
+
+  .poetry-desc {
+    width: size-m(170);
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: size-m(17);
+    font-weight: normal;
+    color: #004980;
   }
 }
 </style>
