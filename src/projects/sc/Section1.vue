@@ -54,6 +54,7 @@
         data-aos="fade-up"
         data-aos-delay="400"
       >
+      
       <div
         class="btn absolute"
         v-scroll-to="{ element: `#contact`, offset: -50 }"
