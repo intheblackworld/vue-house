@@ -3,12 +3,22 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
-          <img class="logo pc" src="@/assets/img/nav-logo.png" alt v-scroll-to="{ element: `#section1` }" />
-          <img class="logo mo" src="@/assets/img/nav-logo_m.png" alt v-scroll-to="{ element: `#section1` }" />
-          <div class="menu" @click="toggleSidebar">
+          <img
+            class="logo"
+            src="@/assets/img/nav-logo.png"
+            alt
+            v-scroll-to="{ element: `#section1` }"
+          />
+          <div
+            class="menu"
+            @click="toggleSidebar"
+          >
             <!-- font-awesome-icon icon="bars" / -->
           </div>
-          <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
+          <div
+            :class="`mask ${isOpen ? 'open' : ''}`"
+            @click="toggleSidebar"
+          />
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
             <li
               :key="item.name"
@@ -18,7 +28,11 @@
               @click="toggleSidebar"
             >
               <span class="link">
-                <img v-if="item.imgSrc" :src="item.imgSrc" alt />
+                <img
+                  v-if="item.imgSrc"
+                  :src="item.imgSrc"
+                  alt
+                />
                 <span>
                   <h3 class="title">{{item.name}}</h3>
                   <span class="subTitle">{{item.subTitle}}</span>
@@ -122,7 +136,9 @@ export default {
   transform: translateY(0%);
 }
 
-.mo{display: none;}
+.mo {
+  display: none;
+}
 .mask {
   display: none;
 }
@@ -132,7 +148,7 @@ export default {
   align-items: center;
   justify-content: center;
   height: 100%;
-  margin-right:3vw;
+  margin-right: 3vw;
   li {
     height: 100%;
   }
@@ -152,25 +168,26 @@ export default {
     position: relative;
     overflow: hidden;
     // border-right: 1px solid $nav_link_hover_bg;
-    > span{z-index: 3;}
+    > span {
+      z-index: 3;
+    }
     &:hover {
-      color:$nav_link_hover_color ;
-     // background-color: $nav_link_hover_bg;
+      color: $nav_link_hover_color;
+      // background-color: $nav_link_hover_bg;
       img {
       }
-    
     }
-     &::before {
+    &::before {
       content: '';
-       width: 1px;
-       height: 40%;
-       display: block;
-       background: $nav_link_hover_bg;
-       position: absolute;
-       left:0;
-       top: 30%;
-     }
-  /* 
+      width: 1px;
+      height: 40%;
+      display: block;
+      background: $nav_link_hover_bg;
+      position: absolute;
+      left: 0;
+      top: 30%;
+    }
+    /* 
 
     @keyframes r5 {
       0% {
@@ -223,7 +240,7 @@ export default {
     .title {
       position: relative;
       z-index: 3;
-      font-family:$family2;
+      font-family: $family2;
     }
 
     .subTitle {
@@ -238,7 +255,9 @@ export default {
       margin-right: 10px;
     }
   }
-  .flex-ac:first-child .link::before{display: none;}
+  .flex-ac:first-child .link::before {
+    display: none;
+  }
 }
 
 .menu {
@@ -256,7 +275,7 @@ export default {
     height: $nav_tablet_height;
     justify-content: center;
   }
-/*
+  /*
   .logo {
   }
 
@@ -290,7 +309,6 @@ export default {
 /* 螢幕尺寸標準 */
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
-  
   .navigation {
     height: $nav_phone_height;
     z-index: 110;
@@ -302,13 +320,17 @@ export default {
   }
 
   .logo {
-    //width: $logo_phone_width;
-   // left: 15px;
-    //top: 15px;
+    width: $logo_phone_width;
+    left: 15px;
+    top: 15px;
   }
 
-.mo{display:block;}
-.pc{display: none;}
+  .mo {
+    display: block;
+  }
+  .pc {
+    display: none;
+  }
   .nav {
     position: static;
     height: $nav_phone_height;
@@ -326,13 +348,13 @@ export default {
       color: $nav_btn_color;
     }
   }
-  .navlist{
+  .navlist {
     .link {
-     width: 5em;
-     font-size:15px;
+      width: 5em;
+      font-size: 15px;
     }
   }
-/*
+  /*
   .navlist {
     position: absolute;
     z-index: 111;
@@ -412,10 +434,9 @@ export default {
 */
 }
 @media only screen and (max-width: 374px) {
-
-  .navlist{
+  .navlist {
     .link {
-     font-size:4vw;
+      font-size: 4vw;
     }
   }
 }

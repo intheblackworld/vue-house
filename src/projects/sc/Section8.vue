@@ -450,7 +450,7 @@ export default {
       isTablet,
       slideList: [
         {
-          img: require('./s8/1.jpg'),
+          img: isMobile ? require('./mo/7/1.jpg') : require('./s8/1.jpg'),
         },
       ],
     }
