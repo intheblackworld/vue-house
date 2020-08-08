@@ -73,7 +73,7 @@
             alt=""
             class="block-icon"
           >
-          <h3 class="block-title">城南豐穰</h3>
+          <h3 class="block-title">建築哲人</h3>
         </div>
       </div>
       <div class="text absolute">{{slideList[slideIndex].text}}</div>
@@ -295,7 +295,7 @@
   .float-block {
     width: size-m(50);
     height: size-m(131);
-    top: size-m(-400);
+    top: size-m(-700);
     left: size-m(42);
     box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
     background-color: #ffffff;
