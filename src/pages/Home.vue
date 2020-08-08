@@ -31,6 +31,42 @@
     </vue-lazy-component>
     <vue-lazy-component
       class="section"
+      id="section4"
+    >
+      <Section4 />
+    </vue-lazy-component>
+    <vue-lazy-component
+      class="section"
+      id="section5"
+    >
+      <Section5 />
+    </vue-lazy-component>
+    <vue-lazy-component
+      class="section"
+      id="section6"
+    >
+      <Section6 />
+    </vue-lazy-component>
+    <vue-lazy-component
+      class="section"
+      id="section7"
+    >
+      <Section7 />
+    </vue-lazy-component>
+    <vue-lazy-component
+      class="section"
+      id="section8"
+    >
+      <Section8 />
+    </vue-lazy-component>
+    <vue-lazy-component
+      class="section"
+      id="section9"
+    >
+      <Section9 />
+    </vue-lazy-component>
+    <vue-lazy-component
+      class="section"
       id="contact"
     >
       <ContactSection />
@@ -64,6 +100,12 @@ import Loading from '@/components/Loading.vue'
 import Section1 from '@/projects/sc/Section1.vue'
 import Section2 from '@/projects/sc/Section2.vue'
 import Section3 from '@/projects/sc/Section3.vue'
+import Section4 from '@/projects/sc/Section4.vue'
+import Section5 from '@/projects/sc/Section5.vue'
+import Section6 from '@/projects/sc/Section6.vue'
+import Section7 from '@/projects/sc/Section7.vue'
+import Section8 from '@/projects/sc/Section8.vue'
+import Section9 from '@/projects/sc/Section9.vue'
 
 export default {
   name: 'home',
@@ -77,6 +119,12 @@ export default {
     Section1,
     Section2,
     Section3,
+    Section4,
+    Section5,
+    Section6,
+    Section7,
+    Section8,
+    Section9,
   },
 
   data() {
@@ -118,8 +166,6 @@ export default {
       var totalImages = $('img').length
 
       const allImagesLoaded = () => {
-        console.log('All Image Done')
-        console.log(this)
         this.load = false
       }
       const imageLoaded = () => {

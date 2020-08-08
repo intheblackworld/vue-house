@@ -14,6 +14,7 @@ import VueScrollTo from 'vue-scrollto' // scroll 錨點
 import VueLazyload from 'vue-lazyload' // 圖片 lazy load
 import VueFullPage from 'vue-fullpage.js'
 import VueLazyComponent from '@xunlei/vue-lazy-component'
+import VueRellax from 'vue-rellax'
 
 
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -58,6 +59,7 @@ Vue.use(config)
 Vue.use(VueScrollTo)
 Vue.use(VueLazyload)
 Vue.use(VueLazyComponent)
+Vue.use(VueRellax)
 
 new Vue({
   router,

@@ -23,6 +23,11 @@ body {
    // font-family:$family1;
     outline: none !important;
   }
+
+  ::selection {
+    background-color: #745399;
+    color: #fff;
+  }
 }
 
 #app {
