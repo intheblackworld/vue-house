@@ -293,7 +293,7 @@
   .float-block {
     width: size-m(50);
     height: size-m(131);
-    top: size-m(-600);
+    top: size-m(-500);
     left: auto;
     right: size-m(42);
     box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);

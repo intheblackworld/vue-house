@@ -138,6 +138,7 @@
   top: size(735);
   right: size(397);
   cursor: pointer;
+  z-index: 2;
 }
 
 .short {
@@ -188,7 +189,7 @@
     height: size-m(667);
     background-image: url('./mo/1/bg.jpg');
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment: auto;
   }
 
   .bg-img {
