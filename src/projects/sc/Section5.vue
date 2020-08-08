@@ -89,6 +89,7 @@
 @media screen and (max-width: 767px) {
   .year {
     line-height: 0.2;
+    font-size: size-m(13)
   }
 }
 </style>
