@@ -97,7 +97,7 @@ export default {
   position: fixed;
   top: 0;
   width: 100vw;
-  display: flex !important;
+  display: flex;
   align-items: center;
   box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
 }
@@ -312,11 +312,13 @@ export default {
   .navigation {
     height: $nav_phone_height;
     z-index: 110;
+    display: none;
   }
 
   .nav-container {
-    display: block;
+ //   display: block;
     height: auto;
+    display: none;
   }
 
   .logo {

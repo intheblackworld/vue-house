@@ -164,6 +164,7 @@
   // padding-right: size(20);
 
   li {
+ flex: 1;
   margin: 0 0 0 size(30);
   width: 1em;writing-mode: vertical-rl;text-align: left;
   display: flex; flex-direction:column;
@@ -173,7 +174,7 @@
 .poetry-desc {
   display: flex;
   flex-direction:row-reverse;
-  width: size(287 + 68);
+  width:100%;
  // writing-mode: vertical-rl;
  // text-orientation: upright;
   font-size: size(32);
@@ -197,10 +198,11 @@
 @media screen and (max-width: 767px) {
   .section1 {
     width: 100vw;
-    height: size-m(667);
+    height:calc(100vh - 63px);
     background-image: url('./mo/1/bg.jpg');
     background-size: cover;
     background-attachment: scroll;
+  background-position: center;
   }
 
   .bg-img {
@@ -225,14 +227,14 @@
 
   .logo-img {
     width: size-m(241);
-    top: size-m(88);
+    top:calc(50% - 65vw);
     right: size-m(67);
     left: auto;
   }
 
   .txt {
     width: size-m(241);
-    top: size-m(388);
+    top:calc(50% + 16vw);
     right: size-m(67);
   }
 
@@ -247,7 +249,7 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: size-m(538);
+    top:calc(50% + 57vw);
     right: size-m(168);
     cursor: pointer;
   }
@@ -258,27 +260,18 @@
   }
 
   .poetry {
-    // position: absolute;
-    width: size-m(170);
-    // border-top: 0.5px solid #ccc;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row-reverse;
-    // padding-top: size(40);
-    // padding-right: size(20);
+    width: size-m(200);
 
     li {
-      margin: 0 size-m(13);
+      flex: 1;
+      margin:0 size-m(10);
     }
   }
 
   .poetry-desc {
-    width: size-m(170);
-   // writing-mode: vertical-rl;
-    text-orientation: upright;
-    font-size: size-m(17);
-    font-weight: normal;
-    color: #004980;
+    //width: size-m(190);
+    width: 100%;
+    font-size: size-m(19);
   }
 }
 </style>

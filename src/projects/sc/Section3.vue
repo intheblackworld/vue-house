@@ -151,6 +151,9 @@
   z-index: 3;
   top: size(10);
   left: size(10);
+  font-size: size(15);
+  text-align: left;
+  line-height: 1.5;
 }
 .swipe {
   width: size(1040);
@@ -299,19 +302,10 @@
     top: size-m(-300);
     left: auto;
     right: size-m(42);
-    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
-    background-color: #ffffff;
-    z-index: 3;
+  font-size: size-m(14);
     .block-icon {
-      width: size-m(15);
-      margin-bottom: size-m(5);
     }
     .block-title {
-      writing-mode: vertical-rl;
-      text-orientation: upright;
-      font-size: size-m(13);
-      font-weight: normal;
-      color: #c1724b;
     }
   }
 
@@ -343,6 +337,13 @@
     text-align: left;
     color: #000000;
   }
+.txt{
+  top: size-m(10);
+  left: size-m(10);
+  font-size: size-m(13);
+  width:size-m(260);
+
+}
 
   .swipe {
     width: 100vw;

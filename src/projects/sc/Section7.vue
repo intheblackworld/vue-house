@@ -277,16 +277,10 @@
     box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
     background-color: #ffffff;
     z-index: 3;
+  font-size: size-m(14);
     .block-icon {
-      width: size-m(15);
-      margin-bottom: size-m(5);
     }
     .block-title {
-      writing-mode: vertical-rl;
-      text-orientation: upright;
-      font-size: size-m(13);
-      font-weight: normal;
-      color: #c1724b;
     }
   }
 
