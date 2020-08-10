@@ -14,116 +14,84 @@
         @click="setIndigator(info.indigatorLength + 1)"
       ></div> -->
     </div>
-    <!-- <div
+    <div
       :class="`contact-indigator`"
-      v-scroll-to="{ element: `#section8` }"
-      @click="setIndigator(info.indigatorLength)"
-    ><img src="@/projects/fs/all/contact-indigator.png" alt=""></div> -->
+      v-scroll-to="{ element: `#contact` }"
+      @click="setIndigator(navList.length - 1 + 1)"
+    >預約賞屋</div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .indigator {
+  font-size: 16px;
   position: fixed;
-  right: 10px;
+  right: 0.8em;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 11;
+  z-index: 10;
   .list-indigator {
     position: relative;
     padding: 8px;
-    background: rgba(0, 0, 0, 0.4);
     border-radius: 20px;
   }
 
   .dot {
-    font-size:16px;
-    width: 1em;
-    height: 1em;
-    margin-top: 0.9em;
-    margin-bottom: 0.9em;
+    width: 2em;
+    height: 2em;
+    margin: 0;
     background: transparent;
     cursor: pointer;
-    border: 1px solid #ccc;
     border-radius: 999px;
-    &.active {
-      background: #fff;
+    overflow: hidden;
+    &::before {
+      content: '';
+      display: block;
+      width: 0.7em;
+      height: 0.7em;
+     //@function border: 1px solid #0000;
+      border-radius: 999px;
+      margin: calc(50% - 0.3em) auto 0 auto;
+      transition: all 0.3s;
+      background: rgba(0, 0, 0, 0.4);
+      // background: #fff;
     }
-    &:hover {
-    border: 2px solid #fff;
+    &.active {
+      &::before {
+        background: #000;
+      }
+    }
+    &:hover::before {
+      background: #ffd200;
     }
   }
 
   .contact-indigator {
-   /* background: rgb(239,204,125);
-background: -moz-linear-gradient(-45deg,  rgba(239,204,125,1) 0%, rgba(255,255,255,1) 50%, rgba(239,204,125,1) 100%);
-background: -webkit-linear-gradient(-45deg,  rgba(239,204,125,1) 0%,rgba(255,255,255,1) 50%,rgba(239,204,125,1) 100%);
-background: linear-gradient(135deg,  rgba(239,204,125,1) 0%,rgba(255,255,255,1) 50%,rgba(239,204,125,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efcc7d', endColorstr='#efcc7d',GradientType=1 ); */
-    margin: 10px auto;
-    padding: 8px;
-    color: #640;
+    background: rgba(0, 0, 0, 0.4);
+    margin: 1em auto 1em auto;
+    padding: 0.4em;
+    color: #fff;
     border-radius: 20px;
     cursor: pointer;
     line-height: 1.5;
+    width: 2em;
     transition: all 0.3s;
-    position: absolute;
-    right:0;
-    top:calc( 50% + 50vh - 1.3em);
-    overflow: hidden;
-    border-radius: 50%;
-    font-size: 120px;//用來調按鈕大小的
-    width:1em;
-    height:1em;
-    img{
-    position: absolute;
-    bottom: 0;right: 0;
-    width:100%;}
-    &:hover{     
-    color: #000;
+    &:hover {
+      color: #fff;
+    background: rgba(0, 40, 130, 0.4);
     }
-    &::before {
-    content: '';
-    width: 40%;
-    height: 100%;
-    display: block;
-    background: #fff;
-    position: absolute;
-    transform: skewX(-20deg);
-    left: -10%;
-    opacity: 0;
-    top: 0;
-    z-index: 5;
-    transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
-  }
-
-  &:hover::before {
-    opacity: 1;
-    width: 90%;
-    left: 140%;
-  }
   }
 }
-
 @media screen and (max-width: 767px) {
   .indigator {
-    right: 3px;
-
-    .list-indigator {
-      padding: 4px 5px;
-    }
-
-    .dot {
-      width: 14px;
-      height: 14px;
-      margin: 0 auto;
-      margin-top: 15px;
-      margin-bottom: 15px;
-    }
-
+    // display: none;
+    right: -3.5vw;
     .contact-indigator {
-      width: 24px;
-      padding: 10px 4px;display: none;
+      display: none;
+    }
+    .dot {
+      width: 2em;
+      height: 3em;
     }
   }
 }
@@ -148,7 +116,7 @@ export default {
     viewIndex(val) {
       // console.log(val)
       this.indigatorIndex = val
-    }
+    },
   },
 
   methods: {
