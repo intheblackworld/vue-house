@@ -28,11 +28,13 @@
         @mouseenter.stop="toggleTimer = false"
         @mouseleave.stop="toggleTimer = true"
       >
+      <div class="txt absolute" v-html="slideList[slideIndex].txt"></div>
         <div class="swipe-wrap relative">
           <img
             v-for="(slide, i) in slideList"
             :src="slide.img"
             :key="slide.img"
+            :alt="slide.alt"
             :class="`swipe-item absolute ${slideIndex === i ? 'active' : ''} ${(slideIndex === (i + 1) || slideIndex === (i - slideList.length + 1)) ? 'base' : ''}`"
           >
           <div class="pagination absolute flex-ac">
@@ -73,7 +75,7 @@
             alt=""
             class="block-icon"
           >
-          <h3 class="block-title">師大賦境</h3>
+          <h3 class="block-title" v-html="slideList[slideIndex].btitle"></h3>
         </div>
       </div>
     </div>
@@ -91,6 +93,7 @@
 .section3 {
   width: 100vw;
   height: size(490 + 720);
+   margin: 0 0 size(80) 0;
   // background-image: url('./s1/bg.jpg');
   // background-size: cover;
   // background-attachment: fixed;
@@ -104,16 +107,16 @@
   box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
   background-color: #ffffff;
   z-index: 3;
+  font-size: size(40);
+  color: #c1724b;
   .block-icon {
-    width: size(40);
-    margin-bottom: size(28);
+    width:1em;
+    margin-bottom: 0.7em;
   }
   .block-title {
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    font-size: size(36);
+    width:1em;
+    line-height: 1.25;
     font-weight: normal;
-    color: #c1724b;
   }
 }
 
@@ -143,7 +146,12 @@
   text-align: left;
   color: #000000;
 }
-
+.txt{
+  color: #fff;
+  z-index: 3;
+  top: size(10);
+  left: size(10);
+}
 .swipe {
   width: size(1040);
   height: size(720);
@@ -156,6 +164,8 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  z-index: 2;
+  position: relative;
 }
 
 .swipe-item {
@@ -477,24 +487,45 @@ export default {
       slideList: [
         {
           img: require('./s3/1.jpg'),
+          btitle:"師大賦境",
+          alt:"師大賦境",
+          txt:""
         },
         {
           img: require('./s3/2.jpg'),
+          btitle:"大安富域",
+          alt:"大安富域-古亭雙捷",
+          txt:"古亭雙捷-松山新店線及中和新蘆線雙線交會，出站5分鐘輕鬆到家"
         },
         {
           img: require('./s3/3.jpg'),
+          btitle:"大安富域",
+          alt:"大安富域-金融大道",
+          txt:"金融大道-羅斯福路匯集各大銀行機構，接壤博愛特區"
         },
         {
           img: require('./s3/4.jpg'),
+          btitle:"大安富域",
+          alt:"大安富域-繁華商圈",
+          txt:"繁華商圈-師大、公館、永康三大商圈核心，地段願景蓬勃發展"
         },
         {
           img: require('./s3/5.jpg'),
+          btitle:"大安富域",
+          alt:"大安富域-人文流域",
+          txt:"人文流域-台師大人文流域底蘊，幅跨中正紀念堂、國家兩廳院"
         },
         {
           img: require('./s3/6.jpg'),
+          btitle:"大安富域",
+          alt:"大安富域-藝文地景",
+          txt:"藝文地景-全國書店密集度最高的溫羅汀街區，漫步康青龍藝文品味"
         },
         {
           img: require('./s3/7.jpg'),
+          btitle:"大安富域",
+          alt:"大安富域-明星學園",
+          txt:"明星學園-金華國中、古亭國小明星學區，緊鄰師大綠園地"
         },
       ],
     }

@@ -105,16 +105,16 @@
   box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
   background-color: #ffffff;
   z-index: 3;
+  font-size: size(40);
+  color: #c1724b;
   .block-icon {
-    width: size(40);
-    margin-bottom: size(28);
+    width:1em;
+    margin-bottom: 0.7em;
   }
   .block-title {
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    font-size: size(36);
+    width:1em;
+    line-height: 1.25;
     font-weight: normal;
-    color: #c1724b;
   }
 }
 

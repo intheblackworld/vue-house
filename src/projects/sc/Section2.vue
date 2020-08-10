@@ -21,6 +21,7 @@
             v-for="(slide, i) in slideList"
             :src="slide.img"
             :key="slide.img"
+            alt="城南豐穰"
             :class="`swipe-item absolute ${slideIndex === i ? 'active' : ''} ${(slideIndex === (i + 1) || slideIndex === (i - slideList.length + 1)) ? 'base' : ''}`"
           >
           <div class="pagination absolute flex-ac">
@@ -92,21 +93,21 @@
   box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
   background-color: #ffffff;
   z-index: 3;
+  font-size: size(40);
+  color: #c1724b;
   .block-icon {
-    width: size(40);
-    margin-bottom: size(28);
+    width:1em;
+    margin-bottom: 0.7em;
   }
   .block-title {
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    font-size: size(36);
+    width:1em;
+    line-height: 1.25;
     font-weight: normal;
-    color: #c1724b;
   }
 }
 
 .title {
-  top: size(150);
+  top: size(160);
   right: size(323);
   font-size: size(30);
   font-weight: 500;
@@ -120,7 +121,7 @@
 
 .desc {
   width: size(442);
-  top: size(340);
+  top: size(330);
   right: size(182);
   font-size: size(21);
   font-weight: normal;
@@ -128,7 +129,7 @@
   font-style: normal;
   line-height: 2.14;
   letter-spacing: normal;
-  text-align: left;
+  text-align: justify;
   color: #000000;
 }
 

@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="relative">
     <div
       v-if="!isMobile"
-      class="section1"
+      class="section1 relative"
     >
       <img
         src="./s1/logo_img.png"
@@ -38,7 +38,7 @@
 
     <div
       v-if="isMobile"
-      class="section1"
+      class="section1 relative"
     >
       <img
         src="./mo/1/logo_m.png"
@@ -87,10 +87,11 @@
 
 .section1 {
   width: size(1920);
-  height: size(1080);
+  height:100vh;
   background-image: url('./s1/bg.jpg');
   background-size: cover;
-  background-attachment: fixed;
+  background-position: center;
+ // background-attachment: fixed;
 }
 
 .bg-img {
@@ -109,20 +110,20 @@
 
 .logo {
   width: size(888);
-  top: size(380);
-  right: size(239);
+  top:calc(50% - 8.1vw);
+  right: size(245);
 }
 
 .logo-img {
   width: size(428);
-  top: size(259);
+  top: calc(50% - 14.3vw);
   left: size(210);
 }
 
 .txt {
   width: size(886);
-  top: size(648);
-  right: size(241);
+  top:calc(50% + 6.5vw);
+  right: size(245);
 }
 
 .btn {
@@ -130,21 +131,26 @@
   height: size(80);
   color: #fff;
   font-size: size(30);
-  background: #004980;
+  background-color: #004980;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: size(735);
-  right: size(397);
+  top:calc(50% + 11.2vw);
+  right: size(410);
   cursor: pointer;
   z-index: 2;
+  transition: all 0.3s;
+  &:hover{
+     background-color : #c1724b;
+  }
 }
 
 .short {
   width: 100vw;
-  height: size(905);
+  height:size(800);
+  margin: 0 0 size(280) 0;
 }
 
 .poetry {
@@ -158,14 +164,18 @@
   // padding-right: size(20);
 
   li {
-    margin: 0 size(30);
+  margin: 0 0 0 size(30);
+  width: 1em;writing-mode: vertical-rl;text-align: left;
+  display: flex; flex-direction:column;
   }
 }
 
 .poetry-desc {
+  display: flex;
+  flex-direction:row-reverse;
   width: size(287 + 68);
-  writing-mode: vertical-rl;
-  text-orientation: upright;
+ // writing-mode: vertical-rl;
+ // text-orientation: upright;
   font-size: size(32);
   font-weight: normal;
   color: #004980;
@@ -264,7 +274,7 @@
 
   .poetry-desc {
     width: size-m(170);
-    writing-mode: vertical-rl;
+   // writing-mode: vertical-rl;
     text-orientation: upright;
     font-size: size-m(17);
     font-weight: normal;
@@ -287,7 +297,7 @@ export default {
         '一條有故事的街道',
         '一棟有學問的房子',
         '職人手工限量十九席',
-        '書墨浦城  靜邀',
+        '書墨浦城　靜邀',
         '拾藏百年城南歲月閑好',
       ],
     }

@@ -23,6 +23,7 @@
             v-for="(slide, i) in slideList"
             :src="slide.img"
             :key="slide.img"
+            :alt="slide.btitle"
             :class="`swipe-item absolute ${slideIndex === i ? 'active' : ''} ${(slideIndex === (i + 1) || slideIndex === (i - slideList.length + 1)) ? 'base' : ''}`"
           >
           <div class="pagination absolute flex-ac">
@@ -63,7 +64,7 @@
             alt=""
             class="block-icon"
           >
-          <h3 class="block-title">展宜建築</h3>
+          <h3 class="block-title" v-html="slideList[slideIndex].btitle"></h3>
         </div>
       </div>
     </div>
@@ -106,22 +107,23 @@
 
 .float-block {
   width: size(150);
-  height: size(393);
-  top: size(-920);
+ // height: size(393);
+  top: size(-900);
   right: size(289);
   box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
   background-color: #ffffff;
   z-index: 3;
+  font-size: size(40);
+  color: #c1724b;
+  padding: 1.1em 0;
   .block-icon {
-    width: size(40);
-    margin-bottom: size(28);
+    width:1em;
+    margin-bottom: 0.7em;
   }
   .block-title {
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    font-size: size(36);
+    width:1em;
+    line-height: 1.25;
     font-weight: normal;
-    color: #c1724b;
   }
 }
 
@@ -293,7 +295,7 @@
 
   .float-block {
     width: size-m(50);
-    height: size-m(131);
+   // height: size-m(131);
     top: size-m(-520);
     left: auto;
     right: size-m(42);
@@ -468,25 +470,29 @@ export default {
       slideList: [
         {
           img: isMobile ? require('./mo/5/1.jpg') : require('./s5/1.jpg'),
+          btitle:"展宜Ｘ真實建築",
           title: '有故事的土地<br />志同道合的建築人',
           desc:
             '〔拾秋〕土地原名〈志立樓〉公寓，五十多年來出租給師大學生，小小的石刻樓牌，蘊涵大大的冀望。展宜建築攜手真實建築誠摯開發，福澤深厚的暖巷，創作靜享生活的理想建築。',
         },
         {
           img: isMobile ? require('./mo/5/2.jpg') : require('./s5/2.jpg'),
+          btitle:"展宜建築",
           title: '從訂製豪宅到微型小宅<br />十五年專注精品始終如一',
           desc:
             '2005年創立以來，堅持建築不在複製，而在創作，以把房子當Handmade聞名業界。秉持建築藝術化的理念，以設計為本質、藝術為靈魂、品質為骨幹，在千篇一律的建築中，讓城市有著不一樣的美麗表情。',
         },
         {
           img: isMobile ? require('./mo/5/3.jpg') : require('./s5/3.jpg'),
+          btitle:"真實建築",
           title: '在城市新與舊的縫隙之間<br />填滿無限可能',
-          desc: `重新定義都市更新，也走出更多都市再生的可能。在城市的新與舊之間，偕手以建築延續記憶，成就溫柔的建築。攜手展宜建築共同開發，創作浦城街區理想住宅。<br /><br /><h3 class="year"><span>2020</span> 南港興中路案 許國勝建築師&nbsp;&nbsp;平原英樹建築師  </h3><br /><h3 class="year"><span>2020</span> 大安金華街案 李文勝建築師&nbsp;&nbsp;吳書原景觀設計師</h3>`,
+          desc: `重新定義都市更新，也走出更多都市再生的可能。在城市的新與舊之間，偕手以建築延續記憶，成就溫柔的建築。攜手展宜建築共同開發，創作浦城街區理想住宅。<br /><br /><h3 class="year"><span>2020</span> 南港興中路案 許國勝建築師&nbsp;&nbsp;平原英樹建築師  </h3><h3 class="year"><span>2020</span> 大安金華街案 李文勝建築師&nbsp;&nbsp;吳書原景觀設計師</h3>`,
         },
         {
           img: isMobile ? require('./mo/5/4.jpg') : require('./s5/4.jpg'),
+          btitle:"創研空間",
           title: '與國際質感對位<br />全台首獲德國紅點設計金獎團隊',
-          desc: `<h3>把建築與空間設計當成是一種藝術創作，不做大量產品，只做精緻作品，創造的不是居住容器，而是一種細緻的生活美學，十五年來屢獲國內外建築及空間設計大獎肯定。</h3>`,
+          desc: `<h3>把建築與空間設計當成是一種藝術創作，不做大量產品，只做精緻作品，創造的不是居住容器，而是一種細緻的生活美學，十五年來屢獲國內外建築及空間設計大獎肯定。</h3><img src='./s5/txt.png' alt=''>`,
         },
       ],
     }
