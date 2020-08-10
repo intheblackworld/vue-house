@@ -50,14 +50,16 @@
 
     99% {
       opacity: 0;
+      height: 100vh;
       // left: -100vw;
-      display: block;
+      // display: block !important; not work
       z-index: 1000;
     }
 
     100% {
+      height: 0;
       opacity: 0;
-      display: none !important;
+      // display: none !important; not work
       z-index: -1000 !important;
     }
   }
