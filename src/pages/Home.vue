@@ -1,9 +1,9 @@
 <template>
   <div class="home no-padding-top">
     <Loading :loading="load" />
-    <SideNavigation v-if="isSide" />
-    <Navigation v-else />
-    <!-- <Indigator :viewIndex="viewIndex" /> -->
+    <!-- <SideNavigation v-if="isSide" />
+    <Navigation v-else /> -->
+    <Indigator :viewIndex="viewIndex" />
     <!-- <full-page
       ref="fullPage"
       :options="options"
@@ -95,23 +95,23 @@ import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
-// import Indigator from '@/components/Indigator.vue'
+import Indigator from '@/components/Indigator.vue'
 
-import Section1 from '@/projects/sc/Section1.vue'
-import Section2 from '@/projects/sc/Section2.vue'
-import Section3 from '@/projects/sc/Section3.vue'
-import Section4 from '@/projects/sc/Section4.vue'
-import Section5 from '@/projects/sc/Section5.vue'
-import Section6 from '@/projects/sc/Section6.vue'
-import Section7 from '@/projects/sc/Section7.vue'
-import Section8 from '@/projects/sc/Section8.vue'
-import Section9 from '@/projects/sc/Section9.vue'
+import Section1 from '@/projects/ra/Section1.vue'
+import Section2 from '@/projects/ra/Section2.vue'
+import Section3 from '@/projects/ra/Section3.vue'
+import Section4 from '@/projects/ra/Section4.vue'
+import Section5 from '@/projects/ra/Section5.vue'
+import Section6 from '@/projects/ra/Section6.vue'
+import Section7 from '@/projects/ra/Section7.vue'
+import Section8 from '@/projects/ra/Section8.vue'
+import Section9 from '@/projects/ra/Section9.vue'
 
 export default {
   name: 'home',
   components: {
     Loading,
-    // Indigator,
+    Indigator,
     Navigation,
     SideNavigation,
     ContactSection,
@@ -132,12 +132,10 @@ export default {
       isMobile,
       isSide: false,
       load: true,
-      // viewIndex: 0,
+      viewIndex: 0,
       // action: {
       //   moveTo: () => {},
       // },
-
-      // indigatorIndex: 0,
       // options: {
       //   menu: '#menu',
       //   anchors: [],
@@ -152,13 +150,6 @@ export default {
     }
   },
   created() {
-    // setTimeout(() => {
-    //   this.load = false
-    // }, 500)
-    // window.addEventListener('load', event => {
-
-    // })
-
     $(document).ready(() => {
       // Images loaded is zero because we're going to process a new set of images.
       var imagesLoaded = 0
@@ -182,7 +173,7 @@ export default {
     })
   },
   mounted() {
-    // window.addEventListener('scroll', this.onScroll, false)
+    window.addEventListener('scroll', this.onScroll, false)
     // this.action = this.$refs.fullPage.api
     // if (this.isMobile) {
     //   this.$refs.fullPage.api.setResponsive(true)
@@ -190,28 +181,28 @@ export default {
   },
   methods: {
     init() {},
-    // onScroll() {
-    //   // 获取所有锚点元素
-    //   const navContents = document.querySelectorAll('.section')
-    //   // 所有锚点元素的 offsetTop
-    //   const offsetTopArr = []
-    //   navContents.forEach(item => {
-    //     offsetTopArr.push(item.offsetTop)
-    //   })
-    //   // 获取当前文档流的 scrollTop
-    //   const scrollTop =
-    //     document.documentElement.scrollTop || document.body.scrollTop
-    //   // 定义当前点亮的导航下标
-    //   let navIndex = 0
-    //   for (let n = 0; n < offsetTopArr.length; n++) {
-    //     // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
-    //     // 那么此时导航索引就应该是n了
-    //     if (scrollTop >= offsetTopArr[n] - 100) {
-    //       navIndex = n
-    //     }
-    //   }
-    //   this.viewIndex = navIndex + 1
-    // },
+    onScroll() {
+      // 获取所有锚点元素
+      const navContents = document.querySelectorAll('.section')
+      // 所有锚点元素的 offsetTop
+      const offsetTopArr = []
+      navContents.forEach(item => {
+        offsetTopArr.push(item.offsetTop)
+      })
+      // 获取当前文档流的 scrollTop
+      const scrollTop =
+        document.documentElement.scrollTop || document.body.scrollTop
+      // 定义当前点亮的导航下标
+      let navIndex = 0
+      for (let n = 0; n < offsetTopArr.length; n++) {
+        // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
+        // 那么此时导航索引就应该是n了
+        if (scrollTop >= offsetTopArr[n] - 100) {
+          navIndex = n
+        }
+      }
+      this.viewIndex = navIndex + 1
+    },
 
     // onLeave(origin, destination, direction) {
     //   if (!this.isMobile) {
