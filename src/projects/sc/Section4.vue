@@ -26,7 +26,21 @@
         alt=""
         class="map-bg absolute"
         v-if="isMobile"
+        @click="isShowDialog = true"
       >
+      <div :class="`dialog ${isShowDialog ? 'show' : ''}`">
+        <div><img
+            src="./s4/map.jpg"
+            alt=""
+            class="dialog-content"
+          ></div>
+        <img
+          src="@/projects/jh/s4/close.png"
+          class="close"
+          alt
+          @click="isShowDialog = false"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -71,6 +85,46 @@
   top: 0;
 }
 
+.dialog {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 120;
+  > div {
+    width: calc(100vw - 40px);
+    height: calc(100vh - 20px);
+    background: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    position: absolute;
+    margin: 10px 0 0 10px;
+  }
+  .dialog-content {
+    width: 100%;
+    height: auto;
+    min-width: 1800px;
+    min-height: 700px;
+    margin: 0;
+  }
+
+  &.show {
+    display: block;
+  }
+
+  .close {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    width: 50px;
+    right: 30px;
+    top: 20px;
+    cursor: pointer;
+    z-index: 5;
+  }
+}
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -112,6 +166,11 @@
     margin: 0 auto;
     top: 0;
   }
+.dialog {
+    > div {
+      width: calc(100vw - 20px);
+    }
+  }
 }
 </style>
 <script>
@@ -133,6 +192,7 @@ export default {
     return {
       isMobile,
       isTablet,
+      isShowDialog: false,
       slideList: [
         {
           img: require('./s3/1.jpg'),
