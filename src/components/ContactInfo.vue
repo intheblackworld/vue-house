@@ -1,9 +1,6 @@
 <template>
   <div>
-    <div
-      class="contact-info"
-      id="contact-info"
-    >
+    <div class="contact-info">
       <img
         class="logo"
         src="@/assets/img/contact-logo.png"
@@ -16,7 +13,7 @@
         >
           <span class="flex-c">
             <font-awesome-icon icon="phone" />
-            {{info.phone}}
+            <span>{{info.phone}}</span>
           </span>
         </div>
         <div
@@ -134,21 +131,21 @@ export default {
   justify-content: space-between;
   position: relative;
   z-index: 3;
-  width: 100%;
-  // height: 480px;
+  width: 1200px;
+  height: 500px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
   transform: translateY(0);
-  margin: 2vw auto 5vw;
-  padding: 70px 0 30px;
+  margin: 2vw auto -3vw;
+  padding: 30px 0 40px;
 }
 
 .logo {
-  width: auto;
-  height: $contact_logo_pc_width;
-  margin: 0 auto;
-  margin-bottom: 60px;
+  width: $contact_logo_pc_width;
+  height: auto;
+  // height:;
+  margin: 0 auto 20px;
 }
 .info {
   width: 880px;
@@ -171,9 +168,7 @@ export default {
   transition: all 0.5s;
   position: relative;
   overflow: hidden;
-  border-radius: 10px;
-  font-family: $family3;
-
+  font-weight: 600;
   &.half {
     width: 49%;
   }
@@ -188,6 +183,7 @@ export default {
   &:hover {
     background: $contact_btn_hover_bg;
     color: $contact_btn_hover_color;
+    box-shadow: none !important;
 
     svg {
       color: $contact_btn_hover_icon;
@@ -218,14 +214,7 @@ export default {
   width: 600px;
   height: 60px;
   background: #fff;
-  box-shadow: $contact_btn_border;
-  border-radius: 10px 0 0 10px;
-  // border:1px solid $contact_btn_bg;
-  font-family: $family3;
-  + .google-btn {
-    border-radius: 0 10px 10px 0;
-    font-family: $family3;
-  }
+  //box-shadow: $contact_btn_border;
 }
 .google-btn {
   width: 280px;
@@ -236,7 +225,7 @@ export default {
   color: $contact_google_btn_color;
   background: $contact_google_btn_bg;
   background-position: center !important;
-  box-shadow: $contact_btn_border;
+  // box-shadow: $contact_btn_border;
   transition: all 0.5s;
 
   svg {
@@ -280,11 +269,10 @@ export default {
     padding: 40px;
     transform: none;
     position: static;
-    margin: 40px auto 40px auto;
+    margin: 0;
 
     .logo {
       width: $contact_logo_mobile_width;
-      height: auto;
     }
   }
 
@@ -329,10 +317,6 @@ export default {
     width: 280px;
     padding: 0 1em;
     text-align: justify;
-    border-radius: 10px 10px 0 0;
-    + .btn {
-      border-radius: 0 0 10px 10px;
-    }
   }
 }
 

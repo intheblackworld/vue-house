@@ -5,34 +5,63 @@
       class="section1"
     >
       <img
-        src="./s1/logo_img.png"
+        src="./s1/1.png"
         alt=""
-        class="logo-img absolute"
+        class="bg-img"
         data-aos="fade-up"
-        data-aos-delay="100"
+        data-aos-delay="200"
+        data-aos-duration="1000"
       >
+      <div
+        class="tree absolute"
+        data-aos="fade-right"
+        data-aos-delay="400"
+        data-aos-duration="600"
+      >
+        <img
+          class="tree-img"
+          src="./s1/img.png"
+          alt=""
+        >
+      </div>
       <img
         src="./s1/logo.png"
         alt=""
         class="logo absolute"
-        data-aos="fade-up"
-        data-aos-delay="300"
-      >
-      <!-- <img src="./s1/slogo.png" alt="" class="slogo"> -->
-      <img
-        src="./s1/txt.png"
-        alt=""
-        class="txt absolute"
-        data-aos="fade-up"
-        data-aos-delay="400"
+        data-aos="fade-down"
+        data-aos-delay="800"
+        data-aos-duration="1000"
       >
       <div
-        class="btn absolute"
-        v-scroll-to="{ element: `#contact` }"
-        data-aos="fade"
+        class="btn flex-c absolute"
+        data-aos="fade-down"
         data-aos-delay="1000"
+        data-aos-duration="1000"
+        v-scroll-to="{ element: `#contact` }"
       >
         <h3>立即預約</h3>
+      </div>
+      <div class="cloud-box absolute">
+        <img
+          src="./s1/雲 (1).png"
+          alt=""
+          class="cloud cloud1 absolute"
+        >
+        <img
+          src="./s1/雲2 (1).png"
+          alt=""
+          class="cloud cloud2 absolute"
+        >
+        <img
+          src="./s1/雲 (1).png"
+          alt=""
+          class="cloud cloud3 absolute"
+        >
+        <img
+          src="./s1/雲2 (1).png"
+          alt=""
+          class="cloud cloud4 absolute"
+        >
       </div>
     </div>
 
@@ -40,44 +69,7 @@
       v-if="isMobile"
       class="section1"
     >
-      <img
-        src="./mo/1/logo_m.png"
-        alt=""
-        class="logo-img absolute"
-        data-aos="fade-up"
-        data-aos-delay="100"
-      >
-      <img
-        src="./mo/1/txt_m.png"
-        alt=""
-        class="txt absolute"
-        data-aos="fade-up"
-        data-aos-delay="400"
-      >
-      
-      <div
-        class="btn absolute"
-        v-scroll-to="{ element: `#contact`, offset: -50 }"
-        data-aos="fade"
-        data-aos-delay="1000"
-      >
-        <h3>立即預約</h3>
-      </div>
-    </div>
 
-
-    <div class="short flex-c">
-      <div class="poetry">
-        <ul class="poetry-desc">
-          <li
-            v-for="(text, index) in poetry_list_1"
-            data-aos="fade-up"
-            :data-aos-delay="200 + (index + 1) * 200"
-            data-aos-duration="1000"
-            :key="text"
-          >{{text}}</li>
-        </ul>
-      </div>
     </div>
   </div>
 </template>
@@ -87,88 +79,162 @@
 
 .section1 {
   width: size(1920);
-  height: size(1080);
-  background-image: url('./s1/bg.jpg');
+  height: 100vh;
+  min-height: 900px;
+  background-image: url('./s1/bg.png');
   background-size: cover;
   background-attachment: fixed;
+  overflow: hidden;
 }
 
 .bg-img {
   width: 100vw;
-  height: auto;
+  height: 100vh;
+  min-height: 900px;
   position: absolute;
   display: block;
   top: 0;
   left: 0;
   object-fit: cover;
+  z-index: 2;
 
   &:nth-child(1) {
     position: relative;
   }
 }
 
-.logo {
-  width: size(888);
-  top: size(380);
-  right: size(239);
-}
-
-.logo-img {
-  width: size(428);
-  top: size(259);
-  left: size(210);
-}
-
-.txt {
-  width: size(886);
-  top: size(648);
-  right: size(241);
-}
-
-.btn {
-  width: size(335);
-  height: size(80);
-  color: #fff;
-  font-size: size(30);
-  background: #004980;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: size(735);
-  right: size(397);
-  cursor: pointer;
+.tree {
+  width: size(441);
+  top: size(50);
+  left: size(0);
   z-index: 2;
-}
-
-.short {
-  width: 100vw;
-  height: size(905);
-}
-
-.poetry {
-  // position: absolute;
-  width: size(287 + 68);
-  // border-top: 0.5px solid #ccc;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row-reverse;
-  // padding-top: size(40);
-  // padding-right: size(20);
-
-  li {
-    margin: 0 size(30);
+  .tree-img {
+    width: 100%;
+    position: absolute;
+    top: size(50);
+    left: size(0);
+    height: auto;
+    animation: tree 2.5s 0s ease infinite alternate-reverse;
   }
 }
 
-.poetry-desc {
-  width: size(287 + 68);
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  font-size: size(32);
-  font-weight: normal;
-  color: #004980;
+@keyframes tree {
+  to {
+    top: size(80);
+    transform: skew(0, 3deg);
+  }
+}
+
+.logo {
+  width: size(298);
+  top: size(69);
+  left: size(811);
+  z-index: 2;
+}
+
+.btn {
+  width: size(200);
+  height: size(66);
+  top: size(300);
+  left: size(862);
+  background-color: #a68367;
+  font-size: size(35);
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.22;
+  letter-spacing: 7px;
+  text-align: left;
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 3;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: size(200);
+    height: size(66);
+    top: size(0);
+    left: size(0);
+    background-color: transparent;
+    box-shadow: 0 0 0 1px #a68367;
+    animation: trans 0.5s 3s ease-in-out forwards;
+  }
+}
+
+@keyframes trans {
+  to {
+    top: size(10);
+    left: size(10);
+  }
+}
+
+.cloud-box {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  perspective: 200px;
+}
+
+.cloud {
+  width: auto;
+  height: 100%;
+  z-index: 0;
+  height: 100%;
+  bottom: 0;
+  opacity: 0;
+  transform: translateZ(0);
+  transform-style: preserve-3d;
+}
+
+.cloud1 {
+  left: -50%;
+  animation: cloudInfinite 8s linear infinite forwards;
+}
+
+.cloud2 {
+  left: -100px;
+  animation: cloudInfinite 8s linear 4s infinite forwards;
+}
+
+.cloud3 {
+  bottom: -20%;
+  right: -50%;
+  left: auto;
+  animation: cloudInfinite 8s linear 4s infinite forwards;
+}
+
+.cloud4 {
+  bottom: -50%;
+  right: -50%;
+  left: auto;
+  animation: cloudInfinite 8s linear 4s infinite forwards;
+}
+
+@keyframes cloudInfinite {
+  0% {
+    transform: translateZ(0);
+    opacity: 0;
+  }
+  20% {
+    transform: translateZ(10px);
+    opacity: 1;
+  }
+  80% {
+    transform: translateZ(90px);
+    opacity: 1;
+  }
+  99% {
+    transform: translateZ(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateZ(0);
+    opacity: 0;
+  }
 }
 
 @media only screen and (max-width: 1440px) {
@@ -206,70 +272,6 @@
       position: relative;
     }
   }
-
-  // .logo {
-  //   width: size-m(241);
-  //   top: size-m(88);
-  //   right: size-m(67);
-  // }
-
-  .logo-img {
-    width: size-m(241);
-    top: size-m(88);
-    right: size-m(67);
-    left: auto;
-  }
-
-  .txt {
-    width: size-m(241);
-    top: size-m(388);
-    right: size-m(67);
-  }
-
-  .btn {
-    width: size-m(140);
-    height: size-m(38);
-    color: #fff;
-    font-size: size-m(15);
-    background: #004980;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: size-m(538);
-    right: size-m(168);
-    cursor: pointer;
-  }
-
-  .short {
-    width: 100vw;
-    height: size-m(395);
-  }
-
-  .poetry {
-    // position: absolute;
-    width: size-m(170);
-    // border-top: 0.5px solid #ccc;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row-reverse;
-    // padding-top: size(40);
-    // padding-right: size(20);
-
-    li {
-      margin: 0 size-m(13);
-    }
-  }
-
-  .poetry-desc {
-    width: size-m(170);
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    font-size: size-m(17);
-    font-weight: normal;
-    color: #004980;
-  }
 }
 </style>
 <script>
@@ -283,13 +285,6 @@ export default {
     return {
       isMobile,
       isTablet,
-      poetry_list_1: [
-        '一條有故事的街道',
-        '一棟有學問的房子',
-        '職人手工限量十九席',
-        '書墨浦城  靜邀',
-        '拾藏百年城南歲月閑好',
-      ],
     }
   },
 

@@ -1,77 +1,118 @@
 <template>
   <div>
-    <div class="section4">
-      <div
-        class="float-block flex-c absolute"
-        v-rellax="{
-          // Rellax Options
-          // See: https://github.com/dixonandmoe/rellax#features
-          speed: -1.5,
-        }"
-      >
-        <div>
-          <img
-            src="./s2/icon.png"
-            alt=""
-            class="block-icon"
-          >
-          <h3 class="block-title">拾秋散步地圖</h3>
-        </div>
-      </div>
+    <div
+      v-if="!isMobile"
+      class="section4"
+    >
       <img
-        src="./s4/map.jpg"
+        src="./s4/bg1_01.png"
         alt=""
-        class="map-bg absolute"
-        v-if="!isMobile"
+        class="bg-img"
+        data-aos="fade"
+        data-aos-delay="100"
+        data-aos-duration="1000"
       >
       <img
-        src="./mo/4/map_s.jpg"
-        alt=""
-        class="map-bg absolute"
-        v-if="isMobile"
+        src="./s4/map.png"
+        data-aos="zoom-in"
+        data-aos-delay="200"
+        data-aos-duration="1000"
+        class="map-img absolute"
       >
+      <img
+        src="./s4/bg2.png"
+        data-aos="zoom-in"
+        data-aos-delay="400"
+        data-aos-duration="1000"
+        class="bubble absolute"
+      >
+      <h3 class="title absolute" data-aos="fade-down"
+        data-aos-delay="600"
+        data-aos-duration="1000">
+        尊貴第一街 瑞安街<br />
+        價值萬中選一 北市保值之珠
+      </h3>
+      <h3 class="desc absolute" data-aos="fade-down"
+        data-aos-delay="700"
+        data-aos-duration="1000">
+        瑞安街土地釋出少,百年濃郁的高官文人聚落,一且取得便深具珍藏價值,成為北市房產界，保值之珠。【瑞安自在】以最貼大安森林公園、取地難度最高的「尊貴第一街：瑞安街」不僅未來珍藏性超越同區「水牛書店豪宅群」更以滿定頂級客「人住城心、隱密自在」的尊榮感享有大安森林大道旁,得不到的居住等級。
+      </h3>
+    </div>
+
+    <div
+      v-if="isMobile"
+      class="section4"
+    >
+      <!-- <Map :bgSrc="bgSrc" v-if="isMobile">
+      </Map> -->
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
-
 .section4 {
+  width: size(1920);
+  height: 100vh;
+  min-height: size(900);
+  overflow: hidden;
+}
+
+.map-img {
+  width: size(967);
+  top: size(118);
+  left: size(79);
+  object-fit: cover;
+}
+
+.bg-img {
   width: 100vw;
-  height: size(1550 + 357);
-  // background-image: url('./s1/bg.jpg');
-  // background-size: cover;
-  // background-attachment: fixed;
-}
-
-.float-block {
-  width: size(150);
-  height: size(451);
-  top: size(-580);
-  left: size(289);
-  box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
-  background-color: #ffffff;
-  z-index: 3;
-  .block-icon {
-    width: size(40);
-    margin-bottom: size(28);
-  }
-  .block-title {
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    font-size: size(36);
-    font-weight: normal;
-    color: #c1724b;
-  }
-}
-
-.map-bg {
-  width: size(1770);
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+  height: 100vh;
+  min-height: size(900);
+  position: absolute;
+  display: block;
   top: 0;
+  left: 0;
+  object-fit: cover;
+
+  &:nth-child(1) {
+    position: relative;
+  }
+}
+
+.title {
+  width: size(568);
+  top: size(287);
+  right: size(133);
+  font-size: size(43);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.34;
+  letter-spacing: 3.44px;
+  text-align: center;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.desc {
+  top: size(452);
+  right: size(116);
+  width: size(601);
+  font-size: size(24);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.05;
+  letter-spacing: 1px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.bubble {
+  width: size(760);
+  top: size(160);
+  right: size(36);
 }
 
 @media only screen and (max-width: 1440px) {
@@ -90,83 +131,46 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-    height: size-m(610 + 83);
-    // background-image: url('./s1/bg.jpg');
-    // background-size: cover;
-    // background-attachment: fixed;
+    height: size-m(667);
+    background-image: url('./mo/1/bg.jpg');
+    background-size: cover;
+    background-attachment: scroll;
   }
 
-  .float-block {
-    width: size-m(50);
-    height: size-m(168);
-    top: size-m(-400);
-    left: size-m(42);
-    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
-    background-color: #ffffff;
-    z-index: 3;
-    .block-icon {
-      width: size-m(15);
-      margin-bottom: size-m(5);
-    }
-    .block-title {
-      writing-mode: vertical-rl;
-      text-orientation: upright;
-      font-size: size-m(13);
-      font-weight: normal;
-      color: #c1724b;
-    }
-  }
-
-  .map-bg {
+  .bg-img {
     width: 100vw;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
+    height: auto;
+    position: absolute;
+    display: block;
     top: 0;
+    left: 0;
+    object-fit: cover;
+
+    &:nth-child(1) {
+      position: relative;
+    }
   }
 }
 </style>
 <script>
 // @ is an alias to /src
 import { isMobile, isTablet } from '@/utils'
-import Parallax from 'vue-parallaxy'
-import slider from '@/mixins/slider.js'
+import Map from '@/components/Map.vue'
 
 export default {
   name: 'section4',
 
-  mixins: [slider],
-
   components: {
-    Parallax,
+    Map,
   },
 
   data() {
     return {
       isMobile,
       isTablet,
-      slideList: [
-        {
-          img: require('./s3/1.jpg'),
-        },
-        {
-          img: require('./s3/2.jpg'),
-        },
-        {
-          img: require('./s3/3.jpg'),
-        },
-        {
-          img: require('./s3/4.jpg'),
-        },
-        {
-          img: require('./s3/5.jpg'),
-        },
-        {
-          img: require('./s3/6.jpg'),
-        },
-        {
-          img: require('./s3/7.jpg'),
-        },
+      title_list: [
+        '找不到理由投反對票⋯',
+        '當世界擁有一座森林 價值也找到永恆的晴空',
       ],
     }
   },

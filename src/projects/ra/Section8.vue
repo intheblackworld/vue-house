@@ -1,18 +1,28 @@
 <template>
   <div>
     <div class="section8">
+      <img
+        src="./s8/bg.png"
+        alt=""
+        class="img absolute"
+        data-aos="fade"
+        data-aos-delay="200"
+      >
       <h3
         class="title absolute"
-        data-aos="fade-top"
-        data-aos-delay="200"
-      >好的房子<br />蓋給懂的生活的人</h3>
-      <h3
+        data-aos="fade-down"
+        data-aos-delay="600"
+      >無虛坪公設 質勝於量<br />英國藝術家 獨家創作</h3>
+      <p
         class="desc absolute"
-        data-aos="fade-top"
-        data-aos-delay="400"
-      >坪數不過量，高坪效美學新品種，挑本喜歡的書，坐上舒服的沙發，享受閱讀時光，LOFT美學3米6自由空間，落地大面開窗好採光，燦燦陽光曬進生活，這就是理想中的家!</h3>
+        data-aos="fade-down"
+        data-aos-delay="700"
+      >揮別飯店式浮誇排場<br />以功能與風雅合一,此顯<br />
+        「人,才是突間的高貴主體」並盛邀作品榮登「英國蘇富比、佳士得拍賣藝術品」等級的旅台英國藝術家貝馬丁Martyn Barratt，特為大廳、公設，獨家創作木雕藝術(白在樹)、(一生一世)茶几木椅、(美麗時光)等燒窯玻璃藝術,由於每一幅作品皆未經事先繪圖塑模,全憑靈光乍現，更顯珍稀。</p>
       <div
         class="swipe absolute"
+        data-aos="fade-right"
+        data-aos-delay="200"
         @mouseenter.stop="toggleTimer = false"
         @mouseleave.stop="toggleTimer = true"
       >
@@ -47,96 +57,84 @@
           </div>
         </div>
       </div>
-      <!-- <div
-        class="float-block flex-c absolute"
-        v-rellax="{
-          // Rellax Options
-          // See: https://github.com/dixonandmoe/rellax#features
-          speed: -1.5,
-        }"
-      >
-        <div>
-          <img
-            src="./s2/icon.png"
-            alt=""
-            class="block-icon"
-          >
-          <h3 class="block-title">城南豐穰</h3>
-        </div>
-      </div> -->
     </div>
   </div>
 </template>
-<style lang="scss">
-.Masthead {
-  overflow: visible !important;
-  z-index: 1 !important;
-}
-</style>
+
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
 .section8 {
-  width: 100vw;
-  height: size(720 + 194);
-  // background-image: url('./s1/bg.jpg');
-  // background-size: cover;
-  // background-attachment: fixed;
+  width: size(1920);
+  height: 100vh;
+  min-height: size(900);
+  overflow: hidden;
 }
 
-// .float-block {
-//   width: size(150);
-//   height: size(393);
-//   top: size(-1180);
-//   left: size(289);
-//   box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
-//   background-color: #ffffff;
-//   z-index: 3;
-//   .block-icon {
-//     width: size(40);
-//     margin-bottom: size(28);
-//   }
-//   .block-title {
-//     writing-mode: vertical-rl;
-//     text-orientation: upright;
-//     font-size: size(36);
-//     font-weight: normal;
-//     color: #c1724b;
-//   }
-// }
+.bg-img {
+  width: 100vw;
+  height: 100vh;
+  min-height: size(900);
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+
+  &:nth-child(1) {
+    position: relative;
+  }
+}
+
+.img {
+  width: 100vw;
+  object-fit: cover;
+  left: 0;
+  bottom: 0;
+}
+
+@keyframes trans {
+  to {
+    top: size(10);
+    left: size(10);
+  }
+}
 
 .title {
-  top: size(150);
-  right: size(338);
-  font-size: size(30);
-  font-weight: 500;
+  width: size(381);
+  top: size(220);
+  right: size(185);
+  font-size: size(43);
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.67;
-  letter-spacing: normal;
-  text-align: left;
-  color: #004980;
+  line-height: 1.34;
+  letter-spacing: 5.16px;
+  text-align: center;
+  color: #a38057;
+  white-space: nowrap;
 }
 
 .desc {
-  width: size(389);
-  top: size(340);
-  right: size(188);
-  font-size: size(21);
+  width: size(484);
+  top: size(380);
+  right: size(83);
+  font-size: size(24);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.14;
-  letter-spacing: normal;
+  line-height: 2.05;
+  letter-spacing: 0.97px;
   text-align: left;
-  color: #000000;
+  color: #04040c;
 }
 
 .swipe {
-  width: size(1040);
-  height: size(720);
+  width: size(1312);
+  height: 100vh;
+  min-height: size(900);
   top: 0;
-  left: size(183);
+  left: 0;
   object-fit: cover;
 }
 
@@ -152,6 +150,11 @@
   left: 100%;
   transition: left 1s ease-in-out;
   z-index: 0;
+
+  &:nth-child(1) {
+    z-index: 1;
+    left: 0;
+  }
 
   &.base {
     z-index: 1;
@@ -251,36 +254,36 @@
 @media screen and (max-width: 767px) {
   .section8 {
     width: 100vw;
-    height: size-m(340 + 305);
+    height: size-m(340 + 400);
     // background-image: url('./s1/bg.jpg');
     // background-size: cover;
     // background-attachment: fixed;
   }
 
-  // .float-block {
-  //   width: size-m(50);
-  //   height: size-m(131);
-  //   top: size-m(-950);
-  //   right: size-m(42);
-  //   left: auto;
-  //   box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
-  //   background-color: #ffffff;
-  //   z-index: 3;
-  //   .block-icon {
-  //     width: size-m(15);
-  //     margin-bottom: size-m(5);
-  //   }
-  //   .block-title {
-  //     writing-mode: vertical-rl;
-  //     text-orientation: upright;
-  //     font-size: size-m(13);
-  //     font-weight: normal;
-  //     color: #c1724b;
-  //   }
-  // }
+  .float-block {
+    width: size-m(50);
+    height: size-m(131);
+    top: size-m(-520);
+    left: auto;
+    right: size-m(42);
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
+    background-color: #ffffff;
+    z-index: 3;
+    .block-icon {
+      width: size-m(15);
+      margin-bottom: size-m(5);
+    }
+    .block-title {
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      font-size: size-m(13);
+      font-weight: normal;
+      color: #c1724b;
+    }
+  }
 
   .title {
-    top: size-m(340 + 30);
+    top: size-m(364);
     right: auto;
     left: size-m(40);
     font-size: size-m(20);
@@ -295,7 +298,7 @@
 
   .desc {
     width: size-m(295);
-    top: size-m(340 + 110);
+    top: size-m(445);
     right: auto;
     left: size-m(41);
     font-size: size-m(15);
@@ -410,23 +413,6 @@
       cursor: pointer;
     }
   }
-
-  .text {
-    width: size-m(50);
-    top: size-m(20);
-    right: auto;
-    left: size-m(10);
-    font-size: size-m(12);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.33;
-    letter-spacing: normal;
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
-    z-index: 5;
-  }
 }
 </style>
 <script>
@@ -450,7 +436,16 @@ export default {
       isTablet,
       slideList: [
         {
-          img: isMobile ? require('./mo/7/1.jpg') : require('./s8/1.jpg'),
+          img: isMobile ? require('./mo/5/1.jpg') : require('./s8/1.jpg'),
+        },
+        {
+          img: isMobile ? require('./mo/5/2.jpg') : require('./s8/2.jpg'),
+        },
+        {
+          img: isMobile ? require('./mo/5/3.jpg') : require('./s8/3.jpg'),
+        },
+        {
+          img: isMobile ? require('./mo/5/4.jpg') : require('./s8/4.jpg'),
         },
       ],
     }

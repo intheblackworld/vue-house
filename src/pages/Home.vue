@@ -67,6 +67,18 @@
     </vue-lazy-component>
     <vue-lazy-component
       class="section"
+      id="section10"
+    >
+      <Section10 />
+    </vue-lazy-component>
+    <vue-lazy-component
+      class="section"
+      id="section11"
+    >
+      <Section11 />
+    </vue-lazy-component>
+    <vue-lazy-component
+      class="section"
       id="contact"
     >
       <ContactSection />
@@ -76,7 +88,7 @@
 </template>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css?family=Playball&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Playball&display=swap');
 @import '../assets/style/variableColor.scss';
 
 .section,
@@ -106,6 +118,8 @@ import Section6 from '@/projects/ra/Section6.vue'
 import Section7 from '@/projects/ra/Section7.vue'
 import Section8 from '@/projects/ra/Section8.vue'
 import Section9 from '@/projects/ra/Section9.vue'
+import Section10 from '@/projects/ra/Section10.vue'
+import Section11 from '@/projects/ra/Section11.vue'
 
 export default {
   name: 'home',
@@ -125,6 +139,8 @@ export default {
     Section7,
     Section8,
     Section9,
+    Section10,
+    Section11,
   },
 
   data() {
