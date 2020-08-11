@@ -286,13 +286,6 @@
     right: auto;
     left: size-m(40);
     font-size: size-m(20);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.67;
-    letter-spacing: normal;
-    text-align: left;
-    color: #004980;
   }
 
   .desc {
@@ -301,13 +294,7 @@
     right: auto;
     left: size-m(41);
     font-size: size-m(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.14;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000000;
+    line-height:1.8;
   }
 
   .swipe {

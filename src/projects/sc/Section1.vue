@@ -940,6 +940,7 @@
   .short {
     width: 100vw;
     height: size-m(395);
+    margin: 0 0 size-m(20) 0;
   }
 
   .poetry {
