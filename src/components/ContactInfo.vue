@@ -222,7 +222,8 @@ export default {
   border-radius: 10px 0 0 10px;
   // border:1px solid $contact_btn_bg;
   font-family: $family3;
-  + .google-btn {
+  + .google-btn,
+  + .btn {
     border-radius: 0 10px 10px 0;
     font-family: $family3;
   }
@@ -330,6 +331,7 @@ export default {
     padding: 0 1em;
     text-align: justify;
     border-radius: 10px 10px 0 0;
+    + .google-btn,
     + .btn {
       border-radius: 0 0 10px 10px;
     }
