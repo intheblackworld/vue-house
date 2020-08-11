@@ -3,12 +3,12 @@
     <div class="section6">
       <h3
         class="title absolute"
-        data-aos="fade-top"
+        data-aos="fade-up"
         data-aos-delay="200"
       >精耕台北市中心精品建築<br />堅持不做產品 只做作品</h3>
       <h3
         class="desc absolute"
-        data-aos="fade-top"
+        data-aos="fade-up"
         data-aos-delay="400"
       >
         <span>2007</span> 展宜麗水 / 大安區麗水街<br />
@@ -61,11 +61,8 @@
       </div>
       <div
         class="float-block flex-c absolute"
-        v-rellax="{
-          // Rellax Options
-          // See: https://github.com/dixonandmoe/rellax#features
-          speed: -1.5,
-        }"
+        data-aos="fade-down"
+        data-aos-delay="800"
       >
         <div>
           <img
@@ -100,7 +97,7 @@
 .float-block {
   width: size(150);
   height: size(393);
-  top: size(-1020);
+  top: size(-185);
   left: size(289);
   box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
   background-color: #ffffff;
@@ -158,7 +155,7 @@
   left: size(183);
   object-fit: cover;
 }
-
+/*
 .swipe-wrap {
   width: 100%;
   height: 100%;
@@ -253,7 +250,7 @@
     cursor: pointer;
   }
 }
-
+*/
 .text {
   width: size(84);
   top: size(643);
@@ -295,7 +292,7 @@
   .float-block {
     width: size-m(50);
     height: size-m(131);
-    top: size-m(-600);
+    top: size-m(-45);
     left: size-m(42);
   font-size: size-m(14);
     .block-icon {
@@ -340,7 +337,7 @@
     left: 0;
     object-fit: cover;
   }
-
+/*
   .swipe-wrap {
     width: 100%;
     height: 100%;
@@ -435,21 +432,24 @@
       cursor: pointer;
     }
   }
-
+*/
   .text {
-    width: size-m(50);
-    top: size-m(30);
-    right: size-m(30);
+  width:auto;
+  left: auto;
+    top: size-m(10);
+    right: size-m(10);
     font-size: size-m(12);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.33;
     letter-spacing: normal;
-    text-align: left;
+    text-align: right;
     color: #ffffff;
     white-space: nowrap;
     z-index: 5;
+    text-shadow: 0 0.1em 0.25em #000;
+
   }
 }
 </style>

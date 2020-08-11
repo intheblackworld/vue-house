@@ -3,13 +3,13 @@
     <div class="section5">
       <h3
         class="title absolute"
-        data-aos="fade-top"
+        data-aos="fade-up"
         data-aos-delay="200"
         v-html="slideList[slideIndex].title"
       ></h3>
       <h3
         class="desc absolute"
-        data-aos="fade-top"
+        data-aos="fade-up"
         data-aos-delay="400"
         v-html="slideList[slideIndex].desc"
       ></h3>
@@ -52,11 +52,8 @@
       </div>
       <div
         class="float-block flex-c absolute"
-        v-rellax="{
-      // Rellax Options
-      // See: https://github.com/dixonandmoe/rellax#features
-      speed: -1.5,
-    }"
+        data-aos="fade-down"
+        data-aos-delay="800"
       >
         <div>
           <img
@@ -121,7 +118,7 @@
 .float-block {
   width: size(150);
   // height: size(393);
-  top: size(-900);
+  top: size(-185);
   right: size(289);
   box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
   background-color: #ffffff;
@@ -166,7 +163,6 @@
   text-align: left;
   color: #000000;
 }
-
 .swipe {
   width: size(1040);
   height: size(720);
@@ -174,6 +170,7 @@
   right: size(183);
   object-fit: cover;
 }
+/*
 
 .swipe-wrap {
   width: 100%;
@@ -283,6 +280,7 @@
   text-align: center;
   color: #004980;
 }
+*/
 
 @media only screen and (max-width: 1440px) {
 }
@@ -309,7 +307,7 @@
   .float-block {
     width: size-m(50);
     // height: size-m(131);
-    top: size-m(-520);
+    top: size-m(-45);
     left: auto;
     right: size-m(42);
     font-size: size-m(14);
@@ -355,7 +353,7 @@
     left: 0;
     object-fit: cover;
   }
-
+/*
   .swipe-wrap {
     width: 100%;
     height: 100%;
@@ -450,6 +448,7 @@
       cursor: pointer;
     }
   }
+  */
 }
 </style>
 <script>

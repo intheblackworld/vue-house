@@ -3,11 +3,8 @@
     <div class="section4">
       <div
         class="float-block flex-c absolute"
-        v-rellax="{
-          // Rellax Options
-          // See: https://github.com/dixonandmoe/rellax#features
-          speed: -1.5,
-        }"
+        data-aos="fade-down"
+        data-aos-delay="200"
       >
         <div>
           <img
@@ -48,7 +45,7 @@
 .float-block {
   width: size(150);
   height: size(451);
-  top: size(-580);
+  top: size(-185);
   left: size(289);
   box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
   background-color: #ffffff;
@@ -99,7 +96,7 @@
   .float-block {
     width: size-m(50);
     height: size-m(168);
-    top: size-m(-400);
+    top: size-m(-45);
     left: size-m(42);
   font-size: size-m(14);
     .block-icon {

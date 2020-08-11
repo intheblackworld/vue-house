@@ -3,12 +3,12 @@
     <div class="section2">
       <h3
         class="title absolute"
-        data-aos="fade-top"
+        data-aos="fade-up"
         data-aos-delay="200"
       >百年本鄉町仕哲官邸<br />堆疊城南豐厚人文底蘊</h3>
       <h3
         class="desc absolute"
-        data-aos="fade-top"
+        data-aos="fade-up"
         data-aos-delay="400"
       >1920年日治政府在台北城南規劃高級住宅區「本鄉町」，作為台北高等學校(師大)和帝國大學(台大)教授文員官舍，範圍在今日師大路、浦城街一帶，環境優質寧靜，吸引當時仕紳富賈、知識份子落籍於此，百年歲月更迭，蘊藏深厚人文足跡。</h3>
       <div
@@ -50,12 +50,15 @@
       </div>
       <div
         class="float-block flex-c absolute"
-        v-rellax="{
+        data-aos="fade-down"
+        data-aos-delay="800"
+      >
+      <!-- 
+      v-rellax="{
       // Rellax Options
       // See: https://github.com/dixonandmoe/rellax#features
-      speed: -1.5,
-    }"
-      >
+    //  speed: -1.5,
+    }" -->
         <div>
           <img
             src="./s2/icon.png"
@@ -73,6 +76,126 @@
   overflow: visible !important;
   z-index: 1 !important;
 }
+.swipe-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-size: 1.04vw;
+}
+
+.swipe-item {
+  width: 100%;
+  height: 100%;
+  left: 100%;
+  transition: left 1s ease-in-out;
+  z-index: 0;
+
+  &.base {
+    z-index: 1;
+    left: 0;
+  }
+  &.active {
+    z-index: 2;
+    left: 0;
+  }
+}
+.pagination {
+  width: auto;
+  bottom:1em;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.pagination-dot {
+  padding: 0.25em;
+  cursor: pointer;
+  z-index: 4;
+
+  span {
+    display: block;
+    width: 1em;
+    height: 1em;
+    border-radius: 1em;
+    box-shadow: 0 0 0 1px #fff;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.01);
+    transition: all 0.5s;
+
+    &::before {
+      content: '';
+      width: 60%;
+      height: 60%;
+      display: block;
+      background: #fff;
+      border-radius:50%;
+      opacity: 1;
+      position: absolute;
+      top: 20%;
+      // transform: translateY(-50%);
+      left: 20%;
+      transition: all 0.3s;
+      transform-origin: center;
+      transform: scale(0);
+    }
+    &.active {
+      &::before {
+        content: '';
+        width: 60%;
+        height: 60%;
+        display: block;
+        background: #fff;
+        border-radius:50%;
+        opacity: 1;
+        position: absolute;
+        top: 20%;
+        // transform: translateY(-50%);
+        left: 20%;
+        transform: scale(1);
+      }
+    }
+  }
+}
+.swipe-btns {
+  width: 100%;
+  height: 100%;
+  padding: 0 0.75em;
+  z-index: 3;
+
+  .prev-btn,
+  .next-btn {
+    width: 1em;
+    cursor: pointer;
+  }
+}
+@media screen and (max-width: 767px) {
+
+.swipe-wrap {
+  font-size: 5.3333333333vw
+}
+  
+  .pagination {
+    bottom: 0.5em;
+  }
+
+  .pagination-dot {
+
+    span {
+      width: 0.75em;
+      height: 0.75em;
+    }
+  }
+  .swipe-btns {
+    padding: 0 0.5em;
+
+    .prev-btn,
+    .next-btn {
+      width: 0.75em;
+    }
+  }
+
+}
 </style>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
@@ -88,7 +211,7 @@
 .float-block {
   width: size(150);
   height: size(393);
-  top: size(-380);
+  top: size(-185);
   left: size(289);
   box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
   background-color: #ffffff;
@@ -141,100 +264,6 @@
   object-fit: cover;
 }
 
-.swipe-wrap {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.swipe-item {
-  width: 100%;
-  height: 100%;
-  left: 100%;
-  transition: left 1s ease-in-out;
-  z-index: 0;
-
-  &.base {
-    z-index: 1;
-    left: 0;
-  }
-  &.active {
-    z-index: 2;
-    left: 0;
-  }
-}
-
-.pagination {
-  width: auto;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  justify-content: center;
-}
-
-.pagination-dot {
-  padding: 5px;
-  cursor: pointer;
-  z-index: 4;
-
-  span {
-    display: block;
-    width: 20px;
-    height: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 0 1px #fff;
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.01);
-    transition: all 0.5s;
-
-    &::before {
-      content: '';
-      width: 60%;
-      height: 60%;
-      display: block;
-      background: #fff;
-      border-radius: 20px;
-      opacity: 1;
-      position: absolute;
-      top: 20%;
-      // transform: translateY(-50%);
-      left: 20%;
-      transition: all 0.3s;
-      transform-origin: center;
-      transform: scale(0);
-    }
-    &.active {
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #fff;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transform: scale(1);
-      }
-    }
-  }
-}
-
-.swipe-btns {
-  width: 100%;
-  height: 100%;
-  padding: 0 15px;
-  z-index: 3;
-
-  .prev-btn,
-  .next-btn {
-    width: size(20);
-    cursor: pointer;
-  }
-}
 
 @media only screen and (max-width: 1440px) {
 }
@@ -261,7 +290,7 @@
   .float-block {
     width: size-m(50);
     height: size-m(131);
-    top: size-m(-220);
+    top: size-m(-45);
     left: size-m(42);
       font-size: size-m(14);
     .block-icon {
@@ -305,101 +334,6 @@
     top: 0;
     left: 0;
     object-fit: cover;
-  }
-
-  .swipe-wrap {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .swipe-item {
-    width: 100%;
-    height: 100%;
-    left: 100%;
-    transition: left 1s ease-in-out;
-    z-index: 0;
-
-    &.base {
-      z-index: 1;
-      left: 0;
-    }
-    &.active {
-      z-index: 2;
-      left: 0;
-    }
-  }
-
-  .pagination {
-    width: auto;
-    bottom: 10px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    justify-content: center;
-  }
-
-  .pagination-dot {
-    padding: 5px;
-    cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width: 14px;
-      height: 14px;
-      border-radius: 14px;
-      box-shadow: 0 0 0 1px #fff;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
-      transition: all 0.5s;
-
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #fff;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transition: all 0.3s;
-        transform-origin: center;
-        transform: scale(0);
-      }
-      &.active {
-        &::before {
-          content: '';
-          width: 60%;
-          height: 60%;
-          display: block;
-          background: #fff;
-          border-radius: 20px;
-          opacity: 1;
-          position: absolute;
-          top: 20%;
-          // transform: translateY(-50%);
-          left: 23%;
-          transform: scale(1);
-        }
-      }
-    }
-  }
-
-  .swipe-btns {
-    width: 100%;
-    height: 100%;
-    padding: 0 10px;
-    z-index: 3;
-
-    .prev-btn,
-    .next-btn {
-      width: size-m(15);
-      cursor: pointer;
-    }
   }
 }
 </style>

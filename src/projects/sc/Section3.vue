@@ -3,24 +3,24 @@
     <div class="section3">
       <h3
         class="slogan absolute"
-        data-aos="fade-top"
+        data-aos="fade-up"
         data-aos-delay="600"
         v-if="!isMobile"
       >漫步城南溫羅汀、康青龍藝文品味街廓，緣牆裡有迷人故事，空氣裡有書香、美味香、咖啡香…</h3>
       <h3
         class="slogan absolute"
-        data-aos="fade-top"
+        data-aos="fade-up"
         data-aos-delay="600"
         v-if="isMobile"
       >漫步城南溫羅汀、康青龍藝文品味街廓，<br />緣牆裡有迷人故事，<br />空氣裡有書香、美味香、咖啡香…</h3>
       <h3
         class="title absolute"
-        data-aos="fade-top"
+        data-aos="fade-up"
         data-aos-delay="200"
       >倚師大百年學識書香<br />浦城靜謐街區門牌難得珍稀</h3>
       <h3
         class="desc absolute"
-        data-aos="fade-top"
+        data-aos="fade-up"
         data-aos-delay="400"
       >師範大學成立於1926年，是培育台灣影響力的教育種子，大師輩出、碩彥鴻儒世代傳承。近倚師大的浦城靜巷，街廓整齊慢活步調，鄰近文學大師梁實秋故居雅舍，人文靜巷幾近於零遷出率，極少推出新案，土地珍稀難得 。</h3>
       <div
@@ -63,11 +63,8 @@
       </div>
       <div
         class="float-block flex-c absolute"
-        v-rellax="{
-      // Rellax Options
-      // See: https://github.com/dixonandmoe/rellax#features
-      speed: -1.5,
-    }"
+        data-aos="fade-down"
+        data-aos-delay="800"
       >
         <div>
           <img
@@ -102,7 +99,7 @@
 .float-block {
   width: size(150);
   height: size(393);
-  top: size(-520);
+  top: size(-185);
   right: size(289);
   box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
   background-color: #ffffff;
@@ -162,7 +159,7 @@
   right: size(183);
   object-fit: cover;
 }
-
+/*
 .swipe-wrap {
   width: 100%;
   height: 100%;
@@ -259,7 +256,7 @@
     cursor: pointer;
   }
 }
-
+*/
 .slogan {
   width: 100vw;
   bottom: size(274);
@@ -299,7 +296,7 @@
   .float-block {
     width: size-m(50);
     height: size-m(131);
-    top: size-m(-300);
+    top: size-m(-45);
     left: auto;
     right: size-m(42);
   font-size: size-m(14);
@@ -352,7 +349,7 @@
     left: 0;
     object-fit: cover;
   }
-
+/*
   .swipe-wrap {
     width: 100%;
     height: 100%;
@@ -447,7 +444,7 @@
       cursor: pointer;
     }
   }
-
+*/
   .slogan {
     width: size-m(300);
     margin: 0 auto;

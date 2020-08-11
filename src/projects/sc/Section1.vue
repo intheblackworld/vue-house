@@ -649,7 +649,7 @@
       
       <div
         class="btn absolute"
-        v-scroll-to="{ element: `#contact`, offset: -50 }"
+        v-scroll-to="{ element: `#contact`, offset:!isMobile?-50: 0 }"
         data-aos="fade"
         data-aos-delay="1000"
       >

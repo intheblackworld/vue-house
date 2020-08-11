@@ -3,12 +3,12 @@
     <div class="section8">
       <h3
         class="title absolute"
-        data-aos="fade-top"
+        data-aos="fade-up"
         data-aos-delay="200"
       >好的房子<br />蓋給懂的生活的人</h3>
       <h3
         class="desc absolute"
-        data-aos="fade-top"
+        data-aos="fade-up"
         data-aos-delay="400"
       >坪數不過量，高坪效美學新品種，挑本喜歡的書，坐上舒服的沙發，享受閱讀時光，LOFT美學3米6自由空間，落地大面開窗好採光，燦燦陽光曬進生活，這就是理想中的家!</h3>
       <div
@@ -139,7 +139,7 @@
   left: size(183);
   object-fit: cover;
 }
-
+/*
 .swipe-wrap {
   width: 100%;
   height: 100%;
@@ -234,7 +234,7 @@
     cursor: pointer;
   }
 }
-
+*/
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -315,7 +315,7 @@
     left: 0;
     object-fit: cover;
   }
-
+/*
   .swipe-wrap {
     width: 100%;
     height: 100%;
@@ -410,7 +410,7 @@
       cursor: pointer;
     }
   }
-
+*/
   .text {
     width: size-m(50);
     top: size-m(20);

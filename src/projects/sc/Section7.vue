@@ -3,12 +3,12 @@
     <div class="section7">
       <h3
         class="title absolute"
-        data-aos="fade-top"
+        data-aos="fade-up"
         data-aos-delay="200"
       >3米6高坪效精品建築<br />人文新落款</h3>
       <h3
         class="desc absolute"
-        data-aos="fade-top"
+        data-aos="fade-up"
         data-aos-delay="400"
       >外觀設計以木紋框架Mix垂直堆疊，職人手工書墨底蘊為建築上舍，七彩玉綠色石材妝點出屬於百年官舍特區的品味與自信，現代時尚美感與內在涵養的靜巷建築，量體精緻而細膩優雅。</h3>
       <div
@@ -49,11 +49,8 @@
       </div>
       <div
         class="float-block flex-c absolute"
-        v-rellax="{
-          // Rellax Options
-          // See: https://github.com/dixonandmoe/rellax#features
-          speed: -1.5,
-        }"
+        data-aos="fade-down"
+        data-aos-delay="800"
       >
         <div>
           <img
@@ -82,7 +79,7 @@
 .float-block {
   width: size(150);
   height: size(393);
-  top: size(-1120);
+  top: size(-185);
   right: size(289);
   box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
   background-color: #ffffff;
@@ -134,7 +131,7 @@
   right: size(183);
   object-fit: cover;
 }
-
+/*
 .swipe-wrap {
   width: 100%;
   height: 100%;
@@ -229,7 +226,7 @@
     cursor: pointer;
   }
 }
-
+*/
 .text {
   width: size(294);
   top: size(29);
@@ -271,7 +268,7 @@
   .float-block {
     width: size-m(50);
     height: size-m(131);
-    top: size-m(-750);
+    top: size-m(-45);
     right: size-m(42);
     left: auto;
     box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
@@ -320,7 +317,7 @@
     left: 0;
     object-fit: cover;
   }
-
+/*
   .swipe-wrap {
     width: 100%;
     height: 100%;
@@ -415,7 +412,7 @@
       cursor: pointer;
     }
   }
-
+*/
   .text {
     width: size-m(50);
     top: size-m(20);
@@ -431,6 +428,7 @@
     color: #ffffff;
     white-space: nowrap;
     z-index: 5;
+    text-shadow: 0 0.1em 0.25em #000;
   }
 }
 </style>
