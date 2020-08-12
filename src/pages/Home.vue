@@ -29,7 +29,7 @@
         {
           title: '萬眾矚目北高雄<br />百貨版圖新時代',
           img: require('@/projects/sdj1/s2/1.jpg'),
-          video: 'https://www.youtube.com/embed/IhnVmiohnUQ',
+          video: 'https://www.youtube.com/embed/OQGl13tdBe4',
           isPlay: false,
         },
         {
