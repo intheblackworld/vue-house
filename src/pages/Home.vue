@@ -29,13 +29,13 @@
         {
           title: '萬眾矚目北高雄<br />百貨版圖新時代',
           img: require('@/projects/sdj1/s2/1.jpg'),
-          video: 'https://www.youtube.com/embed/OQGl13tdBe4',
+          video: 'https://www.youtube.com/embed/8sbUAwaPYJY',
           isPlay: false,
         },
         {
           title: '明誠文藻雙商圈<br />河堤綠帶散步到',
           img: require('@/projects/sdj1/s2/2.jpg'),
-          video: 'https://www.youtube.com/embed/V0LnGR7p-CE',
+          video: 'https://www.youtube.com/embed/g1u3UUro2VU',
           isPlay: false,
         },
       ]"
