@@ -89,7 +89,7 @@
   .section2 {
     width: 100vw;
     height: size-m(804);
-    background-image: url('./mo/1/bg.jpg');
+    // background-image: url('./mo/1/bg.jpg');
     background-size: cover;
     background-attachment: scroll;
   }
