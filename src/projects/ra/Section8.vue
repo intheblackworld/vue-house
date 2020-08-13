@@ -17,8 +17,15 @@
         class="desc absolute"
         data-aos="fade-down"
         data-aos-delay="700"
+        v-if="!isMobile"
       >揮別飯店式浮誇排場<br />以功能與風雅合一,此顯<br />
         「人,才是突間的高貴主體」並盛邀作品榮登「英國蘇富比、佳士得拍賣藝術品」等級的旅台英國藝術家貝馬丁Martyn Barratt，特為大廳、公設，獨家創作木雕藝術(白在樹)、(一生一世)茶几木椅、(美麗時光)等燒窯玻璃藝術,由於每一幅作品皆未經事先繪圖塑模,全憑靈光乍現，更顯珍稀。</p>
+      <p
+        class="desc absolute"
+        data-aos="fade-down"
+        data-aos-delay="700"
+        v-if="isMobile"
+      >揮別飯店式浮誇排場,以功能與風雅合一,此顯「人,才是突間的高貴主體」並盛邀作品榮登「英國蘇富比、佳士得拍賣藝術品」等級的旅台英國藝術家貝馬丁Martyn Barratt，特為大廳、公設，獨家創作木雕藝術(白在樹)、(一生一世)茶几木椅、(美麗時光)等燒窯玻璃藝術,由於每一幅作品皆未經事先繪圖塑模,全憑靈光乍現，更顯珍稀。</p>
       <div
         class="swipe absolute"
         data-aos="fade-right"
@@ -254,67 +261,41 @@
 @media screen and (max-width: 767px) {
   .section8 {
     width: 100vw;
-    height: size-m(340 + 400);
-    // background-image: url('./s1/bg.jpg');
-    // background-size: cover;
-    // background-attachment: fixed;
-  }
-
-  .float-block {
-    width: size-m(50);
-    height: size-m(131);
-    top: size-m(-520);
-    left: auto;
-    right: size-m(42);
-    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
-    background-color: #ffffff;
-    z-index: 3;
-    .block-icon {
-      width: size-m(15);
-      margin-bottom: size-m(5);
-    }
-    .block-title {
-      writing-mode: vertical-rl;
-      text-orientation: upright;
-      font-size: size-m(13);
-      font-weight: normal;
-      color: #c1724b;
-    }
+    height: sizem(685);
+    min-height: auto;
   }
 
   .title {
-    top: size-m(364);
-    right: auto;
-    left: size-m(40);
-    font-size: size-m(20);
-    font-weight: 500;
+    top: size-m(38);
+    left: size-m(63);
+    font-size: sizem(25);
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.67;
-    letter-spacing: normal;
-    text-align: left;
-    color: #004980;
+    line-height: 1.44;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #a38057;
   }
 
   .desc {
-    width: size-m(295);
-    top: size-m(445);
-    right: auto;
-    left: size-m(41);
-    font-size: size-m(15);
+    width: size-m(310);
+    top: size-m(137);
+    left: size-m(33);
+    font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.14;
-    letter-spacing: normal;
+    line-height: 1.73;
+    letter-spacing: 0.9px;
     text-align: left;
-    color: #000000;
+    color: #04040c;
   }
 
   .swipe {
     width: 100vw;
-    height: size-m(340);
-    top: 0;
+    height: size-m(310);
+    top: sizem(374);
     left: 0;
     object-fit: cover;
   }
@@ -406,6 +387,7 @@
     height: 100%;
     padding: 0 10px;
     z-index: 3;
+    display: none;
 
     .prev-btn,
     .next-btn {
@@ -436,16 +418,16 @@ export default {
       isTablet,
       slideList: [
         {
-          img: isMobile ? require('./mo/5/1.jpg') : require('./s8/1.jpg'),
+          img: require('./s8/1.jpg'),
         },
         {
-          img: isMobile ? require('./mo/5/2.jpg') : require('./s8/2.jpg'),
+          img: require('./s8/2.jpg'),
         },
         {
-          img: isMobile ? require('./mo/5/3.jpg') : require('./s8/3.jpg'),
+          img: require('./s8/3.jpg'),
         },
         {
-          img: isMobile ? require('./mo/5/4.jpg') : require('./s8/4.jpg'),
+          img: require('./s8/4.jpg'),
         },
       ],
     }

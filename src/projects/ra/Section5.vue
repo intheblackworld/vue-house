@@ -307,7 +307,8 @@
 @media screen and (max-width: 767px) {
   .section5 {
     width: 100vw;
-    height: size-m(340 + 400);
+    height: calc(100vh - 63px);
+    min-height: auto;
     // background-image: url('./s1/bg.jpg');
     // background-size: cover;
     // background-attachment: fixed;
@@ -360,32 +361,32 @@
   }
 
   .title {
-    top: size-m(364);
+    top: size-m(122);
     right: auto;
-    left: size-m(40);
-    font-size: size-m(20);
-    font-weight: 500;
+    left: size-m(86);
+    font-size: size-m(25);
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.67;
-    letter-spacing: normal;
-    text-align: left;
-    color: #004980;
+    line-height: 1.44;
+    letter-spacing: 3px;
+    text-align: center;
+    color: #a38057;
   }
 
   .desc {
-    width: size-m(295);
-    top: size-m(445);
+    width: size-m(310);
+    top: size-m(218);
     right: auto;
-    left: size-m(41);
-    font-size: size-m(15);
+    left: size-m(33);
+    font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.14;
-    letter-spacing: normal;
+    line-height: 1.73;
+    letter-spacing: 0.6px;
     text-align: left;
-    color: #000000;
+    color: #04040c;
   }
 
   .swipe {
@@ -483,6 +484,7 @@
     height: 100%;
     padding: 0 10px;
     z-index: 3;
+    display: none;
 
     .prev-btn,
     .next-btn {

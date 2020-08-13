@@ -1,8 +1,11 @@
 <template>
   <div class="section6">
-    <div v-if="!isMobile">
-      <div class="sidebar absolute">
-        <div class="title-item sidebar-item flex-c">影片</div>
+    <div>
+      <div
+        class="sidebar absolute"
+        v-if="!isMobile"
+      >
+        <div class="title-item sidebar-item flex-c">頤昌建築・影音分享區</div>
         <div
           class="sidebar-item flex-c wrap"
           @click="goTo(index)"
@@ -11,11 +14,40 @@
         >{{slide.title}}</div>
       </div>
       <div
+        class="title absolute"
+        v-if="isMobile"
+      >頤昌建築・影音分享區</div>
+      <div class="swipe-bottom-btns absolute flex-ac flex-jb" v-if="isMobile">
+        <div
+          class="prev-btn flex-c"
+          @click="decIndex"
+        >
+          <img
+            src="./all/prev-btn.png"
+            alt=""
+          >
+        </div>
+
+        <div class="swipe-title">{{slideList[slideIndex].title}}</div>
+        <div
+          class="next-btn flex-c"
+          @click="addIndex"
+        >
+          <img
+            src="./all/next-btn.png"
+            alt=""
+          >
+        </div>
+      </div>
+      <div
         class="swipe absolute"
         data-aos="fade-right"
         data-aos-delay="200"
       >
-        <div class="swipe-wrap relative" v-show="!showIframe">
+        <div
+          class="swipe-wrap relative"
+          v-show="!showIframe"
+        >
           <div
             @click="playVideo"
             v-for="(slide, i) in slideList"
@@ -53,8 +85,18 @@
             >
           </div> -->
         </div>
-        <div class="swipe-wrap relative" v-show="showIframe">
-          <iframe :src="slideList[slideIndex].link" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+        <div
+          class="swipe-wrap relative"
+          v-show="showIframe"
+        >
+          <iframe
+            :src="slideList[slideIndex].link"
+            style="border:none;overflow:hidden"
+            scrolling="no"
+            frameborder="0"
+            allowTransparency="true"
+            allowFullScreen="true"
+          ></iframe>
         </div>
       </div>
     </div>
@@ -95,12 +137,13 @@
   height: size(170);
   border-bottom: 1px solid rgba(35, 24, 21, 0.5);
   color: #000;
-  font-size: size(40);
+  font-size: size(30);
   cursor: pointer;
 }
 .title-item {
   color: #a58157;
-  font-size: size(60);
+  font-weight: bold;
+  font-size: size(35);
 }
 
 .swipe {
@@ -278,67 +321,32 @@
 @media screen and (max-width: 767px) {
   .section6 {
     width: 100vw;
-    height: size-m(340 + 400);
+    height: calc(100vh - 63px);
+    min-height: auto;
     // background-image: url('./s1/bg.jpg');
     // background-size: cover;
     // background-attachment: fixed;
   }
 
-  .float-block {
-    width: size-m(50);
-    height: size-m(131);
-    top: size-m(-520);
-    left: auto;
-    right: size-m(42);
-    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
-    background-color: #ffffff;
-    z-index: 3;
-    .block-icon {
-      width: size-m(15);
-      margin-bottom: size-m(5);
-    }
-    .block-title {
-      writing-mode: vertical-rl;
-      text-orientation: upright;
-      font-size: size-m(13);
-      font-weight: normal;
-      color: #c1724b;
-    }
-  }
-
   .title {
-    top: size-m(364);
-    right: auto;
-    left: size-m(40);
-    font-size: size-m(20);
-    font-weight: 500;
+    width: sizem(277);
+    top: sizem(84);
+    left: sizem(56);
+    font-size: sizem(25);
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.67;
-    letter-spacing: normal;
-    text-align: left;
-    color: #004980;
-  }
-
-  .desc {
-    width: size-m(295);
-    top: size-m(445);
-    right: auto;
-    left: size-m(41);
-    font-size: size-m(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.14;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000000;
+    line-height: 1.78;
+    letter-spacing: 3px;
+    text-align: center;
+    color: #a68367;
+    white-space: nowrap;
   }
 
   .swipe {
     width: 100vw;
-    height: size-m(340);
-    top: 0;
+    height: size-m(280);
+    top: sizem(168);
     left: 0;
     object-fit: cover;
   }
@@ -437,6 +445,90 @@
       cursor: pointer;
     }
   }
+
+  .swipe-bottom-btns {
+    width: 100vw;
+    height: sizem(70);
+    // padding: 0 10px;
+    z-index: 3;
+    top: sizem(447);
+    left: 0;
+    background-color: rgba(166, 131, 103, 0.2);
+    .swipe-title {
+      font-size: sizem(18);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.5;
+      letter-spacing: normal;
+      text-align: center;
+      color: #000000;
+    }
+
+    .prev-btn,
+    .next-btn {
+      width: sizem(55);
+      height: sizem(70);
+      background-color: rgba(166, 131, 103, 0.3);
+      cursor: pointer;
+
+      img {
+        width: sizem(10);
+      }
+    }
+  }
+
+  .video-cover {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      display: block;
+      margin: auto;
+      width: 30px;
+      height: 30px;
+      background: #ac1919;
+      border-radius: 50%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 5px;
+      display: block;
+      margin: auto;
+      width: 0;
+      height: 0;
+      border-color: transparent transparent transparent #fff;
+      border-style: solid;
+      border-width: 6px 0 6px 10px;
+      z-index: 10;
+    }
+  }
+
+  .swipe-wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      margin-top: sizem((279 - 157) / 2);
+    }
+  }
 }
 </style>
 <script>
@@ -457,7 +549,7 @@ export default {
   watch: {
     slideIndex(val) {
       this.showIframe = false
-    }
+    },
   },
 
   data() {
@@ -466,8 +558,9 @@ export default {
       isTablet,
       slideList: [
         {
-          title: '標題1',
-          link: 'https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fforevercollect%2Fvideos%2F312820629270130%2F&show_text=0',
+          title: '頤昌璞岳 嶄新登場',
+          link:
+            'https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fforevercollect%2Fvideos%2F312820629270130%2F&show_text=0',
           img: isMobile ? require('./mo/5/1.jpg') : require('./s6/1.jpg'),
         },
         // {
@@ -488,7 +581,7 @@ export default {
   methods: {
     playVideo() {
       this.showIframe = true
-    }
+    },
   },
 
   created() {

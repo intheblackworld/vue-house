@@ -1,12 +1,18 @@
 <template>
   <div class="section11">
     <div v-if="!isMobile">
-      <h3 class="title absolute" data-aos="fade-down"
-        data-aos-delay="400">
+      <h3
+        class="title absolute"
+        data-aos="fade-down"
+        data-aos-delay="400"
+      >
         集建築與藝術發想 文學派的大師陣容
       </h3>
-      <div class="border absolute" data-aos="fade-right"
-        data-aos-delay="600">
+      <div
+        class="border absolute"
+        data-aos="fade-right"
+        data-aos-delay="600"
+      >
         <h3 class="subtitle">
           國家金質獎 常勝軍/邱垂睿
         </h3>
@@ -43,55 +49,63 @@
         </div>
       </div>
     </div>
-    <div
-      v-else
-      class="container"
-    >
-      <div class="slide">
-        <div class="slide-content">
-          <div class="slide-subtitle">
-            {{slideList1[slideIndex].subtitle}}
-          </div>
-          <div
-            class="slide-title"
-            v-html="slideList1[slideIndex].title"
-          >
-          </div>
-        </div>
-        <swiper
-          :options="swiperOption"
-          ref="mySwiper"
-          class=""
-          @slideChangeTransitionStart="slideChanged"
+    <div v-else>
+      <h3
+        class="title absolute"
+        data-aos="fade-down"
+        data-aos-delay="400"
+      >
+        集建築與藝術發想<br />文學派的大師陣容
+      </h3>
+      <div
+        class="border absolute"
+        data-aos="fade-right"
+        data-aos-delay="600"
+      >
+        <h3 class="subtitle">
+          國家金質獎 常勝軍/邱垂睿
+        </h3>
+        <p class="desc">
+          視家為內心停泊的港灣。以美學到機能再三推敲，細細梳理住宅的高感動<br />
+          代表作 台大敦品、東騰千里、麗水白在、東煒泰和
+        </p>
+      </div>
+      <swiper
+        :options="swiperOption"
+        ref="mySwiper"
+        class=""
+        @slideChangeTransitionStart="slideChanged"
+      >
+        <div
+          class="swiper-button-prev"
+          slot="button-prev"
         >
+        </div>
+        <div
+          class="swiper-button-next"
+          slot="button-next"
+        >
+        </div>
+        <swiper-slide
+          v-for="(slide, index) in slideList1"
+          :index="index"
+          :key="slide.img"
+          class="item"
+        >
+          <img
+            :src="slide.img"
+            :class="`item-img`"
+          />
           <div
-            class="swiper-button-prev"
-            slot="button-prev"
-          >
-          </div>
-          <div
-            class="swiper-button-next"
-            slot="button-next"
-          >
-          </div>
-          <swiper-slide
-            v-for="(slide, index) in slideList2"
-            :index="index"
-            :key="slide.img"
-            class="item"
-          >
-            <img
-              :src="slide.img"
-              :class="`item-img`"
-            />
-            <!-- <div v-html="slide.name"></div> -->
-          </swiper-slide>
-          <!-- <div
+            class="img-title"
+            v-html="slide.title"
+          ></div>
+        </swiper-slide>
+        <!-- <div
             class="swiper-pagination"
             slot="pagination"
           ></div> -->
-        </swiper>
-      </div>
+      </swiper>
     </div>
   </div>
 </template>
@@ -211,56 +225,95 @@
 }
 
 @media screen and (max-width: 767px) {
-  .container {
-    width: 100vw;
+  .section11 {
+    height: size-m(745);
+    min-height: auto;
   }
 
-  .swiper-pagination {
-    // transform: none;
-    // width: 100%;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
-    // top: auto;
-    bottom: 5%;
-  }
-
-  .swiper-button-prev,
-  .swiper-button-next {
-    width: auto;
-    height: size-m(300);
-    padding: 0 size-m(5);
-    cursor: none;
-  }
-
-  .dialog {
-    display: none;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
+  .title {
+    width: sizem(214);
+    top: sizem(85);
     left: 0;
-    z-index: 20;
+    right: 0;
+    margin: 0 auto;
+    font-size: sizem(25);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.44;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #a38057;
+    white-space: nowrap;
+  }
 
-    .dialog-content {
-      width: 100vw;
-      height: auto;
-    }
+  .main-img {
+    width: size(536);
+    top: size(180);
+    left: size(311);
+    display: none;
+  }
 
-    &.show {
-      display: flex;
-    }
+  .border {
+    width: sizem(310);
+    height: auto;
+    top: sizem(605);
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    border: none;
+    padding: 0;
+  }
 
-    .close {
-      position: absolute;
-      width: 40px;
-      right: 10px;
-      top: 20vh;
-      cursor: pointer;
-    }
+  .subtitle {
+    color: #000;
+    font-size: sizem(20);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: 1.6px;
+    text-align: center;
+    color: #000000;
+  }
+
+  .desc {
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.73;
+    letter-spacing: 1.2px;
+    text-align: left;
+    color: #000000;
+  }
+  .swiper-container {
+    top: sizem(230);
+    overflow: visible;
+  }
+  .item-img {
+    width: sizem(250);
+  }
+
+  .img-item {
+    width: size(220);
+  }
+
+  .img-title {
+    font-size: size-m(31);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.06;
+    letter-spacing: 2.24px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: size(15);
+    position: absolute;
+    top: sizem(-61);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
   }
 }
 </style>
@@ -284,7 +337,7 @@ export default {
     return {
       isMobile,
       swiperOption: {
-        slidesPerView: isMobile ? 2.2 : 1,
+        slidesPerView: isMobile ? 1.5 : 1,
         spaceBetween: isTablet ? 20 : 30,
         slidesPerColumn: isMobile ? 1 : 1,
         allowSlidePrev: isMobile ? true : true,

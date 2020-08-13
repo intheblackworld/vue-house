@@ -5,6 +5,7 @@
         class="text-block absolute"
         data-aos="fade-left"
         data-aos-delay="400"
+        v-if="!isMobile"
       >
         <h3
           class="title"
@@ -19,6 +20,20 @@
           v-html="slideList[slideIndex].desc"
         ></p>
       </div>
+      <h3
+        class="title absolute"
+        data-aos="fade-left"
+        data-aos-delay="600"
+        v-html="slideList[slideIndex].title"
+        v-if="isMobile"
+      ></h3>
+      <p
+        class="desc absolute"
+        data-aos="fade-left"
+        data-aos-delay="700"
+        v-html="slideList[slideIndex].desc"
+        v-if="isMobile"
+      ></p>
       <div
         class="swipe absolute"
         data-aos="fade-right"
@@ -248,67 +263,44 @@
 @media screen and (max-width: 767px) {
   .section9 {
     width: 100vw;
-    height: size-m(340 + 400);
-    // background-image: url('./s1/bg.jpg');
-    // background-size: cover;
-    // background-attachment: fixed;
-  }
-
-  .float-block {
-    width: size-m(50);
-    height: size-m(131);
-    top: size-m(-520);
-    left: auto;
-    right: size-m(42);
-    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
-    background-color: #ffffff;
-    z-index: 3;
-    .block-icon {
-      width: size-m(15);
-      margin-bottom: size-m(5);
-    }
-    .block-title {
-      writing-mode: vertical-rl;
-      text-orientation: upright;
-      font-size: size-m(13);
-      font-weight: normal;
-      color: #c1724b;
-    }
+    height: sizem(685);
+    min-height: auto;
   }
 
   .title {
-    top: size-m(364);
-    right: auto;
-    left: size-m(40);
-    font-size: size-m(20);
-    font-weight: 500;
+    text-shadow: none;
+    width: sizem(224);
+    top: size-m(43);
+    left: size-m(63);
+    font-size: sizem(25);
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.67;
-    letter-spacing: normal;
-    text-align: left;
-    color: #004980;
+    line-height: 1.44;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #a38057;
   }
 
   .desc {
-    width: size-m(295);
-    top: size-m(445);
-    right: auto;
-    left: size-m(41);
-    font-size: size-m(15);
+    text-shadow: none;
+    width: size-m(310);
+    top: size-m(142);
+    left: size-m(33);
+    font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.14;
-    letter-spacing: normal;
+    line-height: 1.73;
+    letter-spacing: 1.5px;
     text-align: left;
-    color: #000000;
+    color: #04040c;
   }
 
   .swipe {
     width: 100vw;
-    height: size-m(340);
-    top: 0;
+    height: size-m(352);
+    top: sizem(333);
     left: 0;
     object-fit: cover;
   }
@@ -400,6 +392,7 @@
     height: 100%;
     padding: 0 10px;
     z-index: 3;
+    display: none;
 
     .prev-btn,
     .next-btn {
@@ -430,31 +423,31 @@ export default {
       isTablet,
       slideList: [
         {
-          img: isMobile ? require('./mo/5/1.jpg') : require('./s9/0.jpg'),
+          img: require('./s9/0.jpg'),
           title: '三面6.5米深凹窗  身心徜徉綠意藍天',
           desc:
             '．室內減少小樑、大器動線、放大空間效果。領略貴氣舒張於氣流中<br />．享客廳，境與景的豐藏，大隱於市景觀露台。每個房間，櫃體與床白在無拘<br />．尊榮21戶、單層雙户雙電梯、全坡平車位，更顯好人家的尊榮氣度',
         },
         {
-          img: isMobile ? require('./mo/5/2.jpg') : require('./s9/1.jpg'),
+          img: require('./s9/1.jpg'),
           title: '三面6.5米深凹窗  身心徜徉綠意藍天',
           desc:
             '．室內減少小樑、大器動線、放大空間效果。領略貴氣舒張於氣流中<br />．享客廳，境與景的豐藏，大隱於市景觀露台。每個房間，櫃體與床白在無拘<br />．尊榮21戶、單層雙户雙電梯、全坡平車位，更顯好人家的尊榮氣度',
         },
         {
-          img: isMobile ? require('./mo/5/3.jpg') : require('./s9/2.jpg'),
+          img: require('./s9/2.jpg'),
           title: '三面6.5米深凹窗  身心徜徉綠意藍天',
           desc:
             '．室內減少小樑、大器動線、放大空間效果。領略貴氣舒張於氣流中<br />．享客廳，境與景的豐藏，大隱於市景觀露台。每個房間，櫃體與床白在無拘<br />．尊榮21戶、單層雙户雙電梯、全坡平車位，更顯好人家的尊榮氣度',
         },
         {
-          img: isMobile ? require('./mo/5/4.jpg') : require('./s9/3.jpg'),
+          img: require('./s9/3.jpg'),
           title: '三面6.5米深凹窗  身心徜徉綠意藍天',
           desc:
             '．室內減少小樑、大器動線、放大空間效果。領略貴氣舒張於氣流中<br />．享客廳，境與景的豐藏，大隱於市景觀露台。每個房間，櫃體與床白在無拘<br />．尊榮21戶、單層雙户雙電梯、全坡平車位，更顯好人家的尊榮氣度',
         },
         {
-          img: isMobile ? require('./mo/5/1.jpg') : require('./s9/4.jpg'),
+          img: require('./s9/4.jpg'),
           title: '三面6.5米深凹窗  身心徜徉綠意藍天',
           desc:
             '．室內減少小樑、大器動線、放大空間效果。領略貴氣舒張於氣流中<br />．享客廳，境與景的豐藏，大隱於市景觀露台。每個房間，櫃體與床白在無拘<br />．尊榮21戶、單層雙户雙電梯、全坡平車位，更顯好人家的尊榮氣度',

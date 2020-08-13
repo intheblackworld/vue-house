@@ -1,11 +1,16 @@
 <template>
   <div>
-    <div
-      v-if="!isMobile"
-      class="section7"
-    >
+    <div class="section7">
       <img
+        v-if="!isMobile"
         src="./s7/1.jpg"
+        alt=""
+        class="bg-img"
+      >
+
+      <img
+        v-if="isMobile"
+        src="./mo/7/bg.jpg"
         alt=""
         class="bg-img"
       >
@@ -26,14 +31,6 @@
       >
         【瑞安自在】總戶數為21戶,地上12樓、地下3樓,全棟承襲首鋼機機構細緻精工、深厚人文底蘊,聯手豪宅推手邱垂睿大師,以「綠、舞、墨、樹」靈感,為座落瑞安權貴靜巷誕生墨曜玉石意象之美。搭配垂直木紋鋁格柵,精雕光影層次,引領建築成為收藏風雅的容器。為瑞安風景,示現風格化的富貴寫照,也為上流世家,刻畫難掩雍容的風情。
       </h3>
-    </div>
-
-    <div
-      v-if="isMobile"
-      class="section7"
-    >
-      <!-- <Map :bgSrc="bgSrc" v-if="isMobile">
-      </Map> -->
     </div>
   </div>
 </template>
@@ -97,7 +94,6 @@
   letter-spacing: normal;
   text-align: left;
   color: #ffffff;
-
 }
 
 @media only screen and (max-width: 1440px) {
@@ -116,10 +112,8 @@
 @media screen and (max-width: 767px) {
   .section7 {
     width: 100vw;
-    height: size-m(667);
-    background-image: url('./mo/1/bg.jpg');
-    background-size: cover;
-    background-attachment: scroll;
+    height: calc(100vh - 63px);
+    min-height: auto;
   }
 
   .bg-img {
@@ -134,6 +128,39 @@
     &:nth-child(1) {
       position: relative;
     }
+  }
+
+  .title {
+    width: sizem(214);
+    top: sizem(62);
+    left: sizem(80);
+
+    li {
+      font-size: sizem(25);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.44;
+      letter-spacing: 2px;
+      text-align: center;
+      color: #ffffff;
+      color: #ffffff;
+      white-space: nowrap;
+    }
+  }
+
+  .desc {
+    width: sizem(310);
+    top: sizem(151);
+    left: sizem(33);
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.73;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
   }
 }
 </style>
