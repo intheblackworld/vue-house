@@ -313,26 +313,50 @@
     // background-attachment: fixed;
   }
 
-  .float-block {
-    width: size-m(50);
-    height: size-m(131);
-    top: size-m(-520);
-    left: auto;
-    right: size-m(42);
-    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
-    background-color: #ffffff;
+  .label1 {
+    width: size-m(147);
+    height: size-m(40);
+    top: size-m(54);
+    left: size-m(33);
+    background-color: #a68367;
+    font-size: size-m(20);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.15;
+    letter-spacing: 4.8px;
+    text-align: center;
+    color: #ffffff;
+    cursor: pointer;
     z-index: 3;
-    .block-icon {
-      width: size-m(15);
-      margin-bottom: size-m(5);
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: size-m(147);
+      height: size-m(40);
+      top: size(0);
+      left: size(0);
+      background-color: transparent;
+      box-shadow: 0 0 0 1px #a68367;
+      animation: trans 0.5s 2s ease-in-out forwards;
     }
-    .block-title {
-      writing-mode: vertical-rl;
-      text-orientation: upright;
-      font-size: size-m(13);
-      font-weight: normal;
-      color: #c1724b;
-    }
+  }
+
+  .label2 {
+    width: size-m(147);
+    height: size-m(40);
+    top: size-m(54);
+    right: size-m(34);
+    font-size: size-m(20);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.15;
+    letter-spacing: 4.8px;
+    text-align: center;
+    color: #a68367;
+    background-color: #ffffff;
   }
 
   .title {
@@ -366,8 +390,8 @@
 
   .swipe {
     width: 100vw;
-    height: size-m(340);
-    top: 0;
+    height: size-m(205);
+    top: size-m(402);
     left: 0;
     object-fit: cover;
   }
@@ -489,16 +513,16 @@ export default {
       isTablet,
       slideList: [
         {
-          img: isMobile ? require('./mo/5/1.jpg') : require('./s5/1.jpg'),
+          img: require('./s5/1.jpg'),
         },
         {
-          img: isMobile ? require('./mo/5/2.jpg') : require('./s5/2.jpg'),
+          img: require('./s5/2.jpg'),
         },
         {
-          img: isMobile ? require('./mo/5/3.jpg') : require('./s5/3.jpg'),
+          img: require('./s5/3.jpg'),
         },
         {
-          img: isMobile ? require('./mo/5/4.jpg') : require('./s5/4.jpg'),
+          img: require('./s5/4.jpg'),
         },
       ],
     }

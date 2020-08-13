@@ -1,11 +1,15 @@
 <template>
   <div>
-    <div
-      v-if="!isMobile"
-      class="section3"
-    >
+    <div class="section3">
       <img
+        v-if="!isMobile"
         src="./s3/bg.jpg"
+        alt=""
+        class="bg-img"
+      >
+      <img
+        v-if="isMobile"
+        src="./mo/3/bg.jpg"
         alt=""
         class="bg-img"
       >
@@ -26,12 +30,6 @@
       >
         無敵的大安森林,視野秒秒都在踏青。不必婉美紐約中央公園、不必遙想倫敦海德公園、不必儕身「高持有稅」的大安森林大道,隱忍百户紛擾，這裡才是富貴人家高端置產的秘境！以「低持有税、人文精工、頂級到位」超越大道地產學,為入主大安森林第一環名宅群,開創珍稀入手的優勢,預見未來財高追漲的自由。
       </h3>
-    </div>
-
-    <div
-      v-if="isMobile"
-      class="section3"
-    >
     </div>
   </div>
 </template>
@@ -114,15 +112,19 @@
 @media screen and (max-width: 767px) {
   .section3 {
     width: 100vw;
-    height: size-m(667);
-    background-image: url('./mo/1/bg.jpg');
-    background-size: cover;
-    background-attachment: scroll;
+    height: calc(100vh - 63px);
+    min-height: auto;
+    // background-image: url('./s2/bg.jpg');
+    // background-size: 100% 100%;
+    // background-position: 0 0;
+    // background-attachment: fixed;
+    overflow: hidden;
   }
 
   .bg-img {
     width: 100vw;
-    height: auto;
+    height: calc(100vh - 63px);
+    min-height: auto;
     position: absolute;
     display: block;
     top: 0;
@@ -132,6 +134,41 @@
     &:nth-child(1) {
       position: relative;
     }
+  }
+
+  .title {
+    width: size-m(268);
+    top: size-m(34);
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    li {
+      font-size: size-m(25);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.44;
+      letter-spacing: 2px;
+      text-align: center;
+      color: #231815;
+      white-space: nowrap;
+    }
+  }
+
+  .desc {
+    bottom: size-m(26);
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    width: size-m(310);
+    font-size: size-m(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.73;
+    letter-spacing: 0.3px;
+    text-align: left;
+    color: #ffffff;
   }
 }
 </style>
@@ -146,7 +183,11 @@ export default {
     return {
       isMobile,
       isTablet,
-      title_list: [
+      title_list: isMobile ? [
+        '找不到理由投反對票⋯',
+        '當世界擁有一座森林',
+        '價值也找到永恆的晴空',
+      ] : [
         '找不到理由投反對票⋯',
         '當世界擁有一座森林 價值也找到永恆的晴空',
       ],

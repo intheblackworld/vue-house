@@ -20,8 +20,8 @@
       v-if="isMobile"
       class="section2"
     >
-      <!-- <Map :bgSrc="bgSrc" v-if="isMobile">
-      </Map> -->
+      <Map :bgSrc="require('./s2/bg.jpg')" v-if="isMobile" :hand="require('./mo/2/小手.png')">
+      </Map>
     </div>
   </div>
 </template>
@@ -88,7 +88,7 @@
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    height: size-m(667);
+    height: size-m(804);
     background-image: url('./mo/1/bg.jpg');
     background-size: cover;
     background-attachment: scroll;

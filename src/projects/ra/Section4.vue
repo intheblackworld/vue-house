@@ -1,9 +1,6 @@
 <template>
   <div>
-    <div
-      v-if="!isMobile"
-      class="section4"
-    >
+    <div class="section4">
       <img
         src="./s4/bg1_01.png"
         alt=""
@@ -26,25 +23,23 @@
         data-aos-duration="1000"
         class="bubble absolute"
       >
-      <h3 class="title absolute" data-aos="fade-down"
+      <h3
+        class="title absolute"
+        data-aos="fade-down"
         data-aos-delay="600"
-        data-aos-duration="1000">
+        data-aos-duration="1000"
+      >
         尊貴第一街 瑞安街<br />
         價值萬中選一 北市保值之珠
       </h3>
-      <h3 class="desc absolute" data-aos="fade-down"
+      <h3
+        class="desc absolute"
+        data-aos="fade-down"
         data-aos-delay="700"
-        data-aos-duration="1000">
+        data-aos-duration="1000"
+      >
         瑞安街土地釋出少,百年濃郁的高官文人聚落,一且取得便深具珍藏價值,成為北市房產界，保值之珠。【瑞安自在】以最貼大安森林公園、取地難度最高的「尊貴第一街：瑞安街」不僅未來珍藏性超越同區「水牛書店豪宅群」更以滿定頂級客「人住城心、隱密自在」的尊榮感享有大安森林大道旁,得不到的居住等級。
       </h3>
-    </div>
-
-    <div
-      v-if="isMobile"
-      class="section4"
-    >
-      <!-- <Map :bgSrc="bgSrc" v-if="isMobile">
-      </Map> -->
     </div>
   </div>
 </template>
@@ -131,15 +126,19 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-    height: size-m(667);
-    background-image: url('./mo/1/bg.jpg');
-    background-size: cover;
-    background-attachment: scroll;
+    height: calc(100vh - 63px);
+    min-height: auto;
+    // background-image: url('./s2/bg.jpg');
+    // background-size: 100% 100%;
+    // background-position: 0 0;
+    // background-attachment: fixed;
+    overflow: hidden;
   }
 
   .bg-img {
     width: 100vw;
-    height: auto;
+    height: calc(100vh - 63px);
+    min-height: auto;
     position: absolute;
     display: block;
     top: 0;
@@ -149,6 +148,46 @@
     &:nth-child(1) {
       position: relative;
     }
+  }
+
+  .map-img {
+    width: 100vw;
+    top: size-m(251);
+    left: size-m(0);
+    object-fit: cover;
+  }
+
+  .title {
+    width: size-m(330);
+    top: size-m(24);
+    right: size-m(22);
+    font-size: size-m(25);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.44;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #a38057;
+    white-space: nowrap;
+  }
+
+  .desc {
+    top: size-m(110);
+    right: size-m(32);
+    width: size-m(310);
+    font-size: size-m(13);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.73;
+    letter-spacing: 0.9px;
+    text-align: left;
+    color: #000000;
+  }
+
+  .bubble {
+    display: none;
   }
 }
 </style>

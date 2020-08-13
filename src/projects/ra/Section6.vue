@@ -54,7 +54,7 @@
           </div> -->
         </div>
         <div class="swipe-wrap relative" v-show="showIframe">
-          <iframe :src="slideList[slideIndex].link" frameborder="0"></iframe>
+          <iframe :src="slideList[slideIndex].link" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
         </div>
       </div>
     </div>
@@ -115,6 +115,12 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    margin-top: size((800 - 388) / 2);
+  }
 }
 
 .swipe-item {
@@ -461,19 +467,19 @@ export default {
       slideList: [
         {
           title: '標題1',
-          link: '',
+          link: 'https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fforevercollect%2Fvideos%2F312820629270130%2F&show_text=0',
           img: isMobile ? require('./mo/5/1.jpg') : require('./s6/1.jpg'),
         },
-        {
-          title: '標題2',
-          link: '',
-          img: isMobile ? require('./mo/5/2.jpg') : require('./s6/1.jpg'),
-        },
-        {
-          title: '標題3',
-          link: '',
-          img: isMobile ? require('./mo/5/3.jpg') : require('./s6/1.jpg'),
-        },
+        // {
+        //   title: '標題2',
+        //   link: '',
+        //   img: isMobile ? require('./mo/5/2.jpg') : require('./s6/1.jpg'),
+        // },
+        // {
+        //   title: '標題3',
+        //   link: '',
+        //   img: isMobile ? require('./mo/5/3.jpg') : require('./s6/1.jpg'),
+        // },
       ],
       showIframe: false,
     }

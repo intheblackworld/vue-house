@@ -30,7 +30,7 @@
           <img
             v-for="(slide, i) in slideList"
             :src="slide.img"
-            :key="slide.img"
+            :key="slide.img + i + 'slide'"
             :class="`swipe-item absolute ${slideIndex === i ? 'active' : ''} ${(slideIndex === (i + 1) || slideIndex === (i - slideList.length + 1)) ? 'base' : ''}`"
           >
           <div class="pagination absolute flex-ac">

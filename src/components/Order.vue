@@ -144,7 +144,7 @@
           :disabled="!checked || !isVerify"
           @click="submit"
           :loading="isSubmit"
-        >立即預約</el-button>
+        >預約賞屋</el-button>
         <Loading
           :loading="isSubmit"
           :isOpacity="true"
@@ -315,8 +315,8 @@ export default {
   position: relative;
   padding-top: 130px;
   background-size: 100vw auto;
-  background-attachment: fixed;
-  background-position: 0% 50%;
+  // background-attachment: fixed;
+  background-position: 0% 0%;
   font-family:$family3;
   input,
   textarea,

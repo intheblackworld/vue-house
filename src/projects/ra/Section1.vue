@@ -1,11 +1,20 @@
 <template>
   <div>
     <div
-      v-if="!isMobile"
       class="section1"
     >
       <img
+        v-if="!isMobile"
         src="./s1/1.png"
+        alt=""
+        class="bg-img"
+        data-aos="fade-up"
+        data-aos-delay="200"
+        data-aos-duration="1000"
+      >
+      <img
+        v-if="isMobile"
+        src="./mo/1/bg.png"
         alt=""
         class="bg-img"
         data-aos="fade-up"
@@ -63,13 +72,6 @@
           class="cloud cloud4 absolute"
         >
       </div>
-    </div>
-
-    <div
-      v-if="isMobile"
-      class="section1"
-    >
-
     </div>
   </div>
 </template>
@@ -253,14 +255,16 @@
 @media screen and (max-width: 767px) {
   .section1 {
     width: 100vw;
-    height: size-m(667);
-    background-image: url('./mo/1/bg.jpg');
+    min-height: auto;
+    height: calc(100vh - 63px);
+    // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
   }
 
   .bg-img {
     width: 100vw;
+    min-height: auto;
     height: auto;
     position: absolute;
     display: block;
@@ -270,6 +274,65 @@
 
     &:nth-child(1) {
       position: relative;
+    }
+  }
+
+  .tree {
+  width: size(441);
+  top: size(50);
+  left: size(0);
+  z-index: 2;
+  .tree-img {
+    width: 100%;
+    position: absolute;
+    top: size(50);
+    left: size(0);
+    height: auto;
+    animation: tree 2.5s 0s ease infinite alternate-reverse;
+  }
+}
+
+@keyframes tree {
+  to {
+    top: size(80);
+    transform: skew(0, 3deg);
+  }
+}
+
+.logo {
+  width: size-m(200);
+  top: size-m(46);
+  left: size-m(88);
+  z-index: 2;
+}
+
+.btn {
+    width: size-m(134);
+    height: size-m(45);
+    top: size-m(201);
+    left: size-m(122);
+    background-color: #a68367;
+    font-size: size-m(23);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.22;
+    letter-spacing: 7px;
+    text-align: left;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 3;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: size-m(134);
+      height: size-m(45);
+      top: size(0);
+      left: size(0);
+      background-color: transparent;
+      box-shadow: 0 0 0 1px #a68367;
+      animation: trans 0.5s 2s ease-in-out forwards;
     }
   }
 }
