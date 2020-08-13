@@ -5,34 +5,28 @@
         src="./s5/bg1_02.png"
         alt=""
         class="bg-img"
-        data-aos="fade"
-        data-aos-delay="200"
-        data-aos-duration="1000"
       >
-      <div
-        class="label1 flex-c absolute"
-        data-aos="fade-down"
-        data-aos-delay="200"
-      >
-        <h3>人文區</h3>
-      </div>
+      <div class="txt absolute">
       <h3
-        class="label2 absolute"
-        data-aos="fade-down"
-        data-aos-delay="400"
+        class="label1 active"
+      >人文區
+      </h3>
+      <h3
+        class="label2"
       >大台北交通</h3>
       <h3
-        class="title absolute"
+        class="title"
         data-aos="fade-down"
         data-aos-delay="600"
       >享大安森林第一環<br />
         學府搖籃的正軸心</h3>
       <p
-        class="desc absolute"
+        class="desc"
         data-aos="fade-down"
         data-aos-delay="700"
       >【瑞安自在】緊鄰台北市立圖書館、文大城區部；兩大師範名校「師大、台北教育大學」等距抵達;台大近在心尺,加上知名中小學林立,所累積的文教風氣,不僅堪稱大安森林之首,放眼北市核心,也鮮少精華之地能像「瑞安街」如此奢侈、一次凝聚高等學府的雅量。
       </p>
+      </div>
       <div
         class="swipe absolute"
         data-aos="fade-right"
@@ -81,7 +75,7 @@
 .section5 {
   width: size(1920);
   height: 100vh;
-  min-height: size(900);
+  min-height: size(800);
   overflow: hidden;
 }
 
@@ -96,94 +90,79 @@
   object-fit: cover;
 
   &:nth-child(1) {
-    position: relative;
+  top: 0;
+  left: auto;
+  right: 0;
+  height: auto;
   }
 }
 
-.label1 {
-  width: size(302);
-  height: size(81);
-  top: size(140);
-  right: size(190);
-  background-color: #a68367;
-  font-size: size(35);
-  font-weight: 900;
+.label1,
+.label2{font-size: size(43);letter-spacing: 0.25em;text-indent: 0.125em;
+  line-height: 1.6;position: relative;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.22;
-  letter-spacing: 7px;
-  text-align: left;
-  color: #ffffff;
-  cursor: pointer;
-  z-index: 3;
-
+  background-color: #ffffff;
+  color: #a68367;
+  width: 8em;cursor: pointer;
+ transition: all 0.3s;
+ margin: 0 0 0.5em;
   &::after {
     content: '';
     position: absolute;
-    width: size(302);
-    height: size(81);
+    width:100%;
+    height:100%;
     top: size(0);
     left: size(0);
-    background-color: transparent;
-    box-shadow: 0 0 0 1px #a68367;
-    animation: trans 0.5s 2s ease-in-out forwards;
+    border: 1px solid #fff;
+ transition: all 0.3s;
+    //animation: trans 0.5s 2s ease-in-out forwards;
   }
-}
-
-.label2 {
-  width: size(302);
-  height: size(81);
-  top: size(280);
-  right: size(180);
-  font-size: size(44);
-  font-weight: 900;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2.13;
-  letter-spacing: 10.55px;
-  text-align: center;
-  color: #a68367;
-  background-color: #ffffff;
-}
-
-@keyframes trans {
-  to {
-    top: size(10);
-    left: size(10);
+ &.active,&:hover{  
+  background-color: #a68367;
+  color: #ffffff;
+  transform: translate(-0.2em, -0.2em);
+  &::after {
+  transform: translate(0.2em, 0.2em);
+    border: 1px solid #a68367;
   }
-}
 
-.title {
-  width: size(381);
-  top: size(420);
-  right: size(145);
-  font-size: size(43);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.34;
-  letter-spacing: 5.16px;
-  text-align: center;
-  color: #a38057;
-  white-space: nowrap;
-}
+  }
+  }  
 
-.desc {
-  width: size(484);
-  top: size(580);
-  right: size(83);
+
+.txt {
+  width: 26%;
+  height:100%;
+  top:0;
+  right:calc(3.5% + 50px);
   font-size: size(24);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
+  color: #000;z-index: 2;
+  display: flex;align-items:center;flex-direction:column;justify-content:center;
+}
+.title {
+  font-size:1.8em;
+  font-weight: bold;
+  line-height: 1.34;
+  letter-spacing: 0.08em;
+  text-align: center;
+  color: #a68367;
+  white-space: nowrap;
+  margin: 0.5em 0 0.5em 0;
+}
+
+.desc {
   line-height: 2.05;
-  letter-spacing: 0.97px;
-  text-align: left;
-  color: #04040c;
+  letter-spacing: 0.04em;
+  text-align: justify;
+  margin:0 0 3em 0;
 }
 
 .swipe {
-  width: size(1312);
+  width:calc(66vw - 50px);
   height: 100vh;
   min-height: size(900);
   top: 0;
@@ -201,6 +180,7 @@
   width: 100%;
   height: 100%;
   left: 100%;
+  object-fit: cover;
   transition: left 1s ease-in-out;
   z-index: 0;
 

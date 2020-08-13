@@ -8,24 +8,26 @@
         data-aos="fade"
         data-aos-delay="200"
       >
+      <div class="txt absolute">
       <h3
-        class="title absolute"
+        class="title"
         data-aos="fade-down"
         data-aos-delay="600"
       >無虛坪公設 質勝於量<br />英國藝術家 獨家創作</h3>
       <p
-        class="desc absolute"
+        class="desc"
         data-aos="fade-down"
         data-aos-delay="700"
         v-if="!isMobile"
-      >揮別飯店式浮誇排場<br />以功能與風雅合一,此顯<br />
-        「人,才是突間的高貴主體」並盛邀作品榮登「英國蘇富比、佳士得拍賣藝術品」等級的旅台英國藝術家貝馬丁Martyn Barratt，特為大廳、公設，獨家創作木雕藝術(白在樹)、(一生一世)茶几木椅、(美麗時光)等燒窯玻璃藝術,由於每一幅作品皆未經事先繪圖塑模,全憑靈光乍現，更顯珍稀。</p>
+      >揮別飯店式浮誇排場，以功能與風雅合一，此顯 「人，才是突間的高貴主體」並盛邀作品榮登「英國蘇富比、佳士得拍賣藝術品」等級的旅台英國藝術家貝馬丁Martyn Barratt，特為大廳、公設，獨家創作木雕藝術(白在樹)、(一生一世)茶几木椅、(美麗時光)等燒窯玻璃藝術，由於每一幅作品皆未經事先繪圖塑模，全憑靈光乍現，更顯珍稀。</p>
       <p
-        class="desc absolute"
+        class="desc"
         data-aos="fade-down"
         data-aos-delay="700"
         v-if="isMobile"
-      >揮別飯店式浮誇排場,以功能與風雅合一,此顯「人,才是突間的高貴主體」並盛邀作品榮登「英國蘇富比、佳士得拍賣藝術品」等級的旅台英國藝術家貝馬丁Martyn Barratt，特為大廳、公設，獨家創作木雕藝術(白在樹)、(一生一世)茶几木椅、(美麗時光)等燒窯玻璃藝術,由於每一幅作品皆未經事先繪圖塑模,全憑靈光乍現，更顯珍稀。</p>
+      >揮別飯店式浮誇排場，以功能與風雅合一，此顯「人，才是突間的高貴主體」並盛邀作品榮登「英國蘇富比、佳士得拍賣藝術品」等級的旅台英國藝術家貝馬丁Martyn Barratt，特為大廳、公設，獨家創作木雕藝術(白在樹)、(一生一世)茶几木椅、(美麗時光)等燒窯玻璃藝術，由於每一幅作品皆未經事先繪圖塑模，全憑靈光乍現，更顯珍稀。</p>
+      
+      </div>
       <div
         class="swipe absolute"
         data-aos="fade-right"
@@ -74,7 +76,7 @@
 .section8 {
   width: size(1920);
   height: 100vh;
-  min-height: size(900);
+  min-height: size(800);
   overflow: hidden;
 }
 
@@ -89,7 +91,10 @@
   object-fit: cover;
 
   &:nth-child(1) {
-    position: relative;
+  top: 0;
+  left: auto;
+  right: 0;
+  height: auto;
   }
 }
 
@@ -100,44 +105,38 @@
   bottom: 0;
 }
 
-@keyframes trans {
-  to {
-    top: size(10);
-    left: size(10);
-  }
-}
 
-.title {
-  width: size(381);
-  top: size(220);
-  right: size(185);
-  font-size: size(43);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.34;
-  letter-spacing: 5.16px;
-  text-align: center;
-  color: #a38057;
-  white-space: nowrap;
-}
-
-.desc {
-  width: size(484);
-  top: size(380);
-  right: size(83);
+.txt {
+  width: 26%;
+  height:100%;
+  top:0;
+  right:calc(3.5% + 50px);
   font-size: size(24);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
+  color: #000;z-index: 2;
+  display: flex;align-items:center;flex-direction:column;justify-content:center;
+}
+.title {
+  font-size:1.8em;
+  font-weight: bold;
+  line-height: 1.34;
+  letter-spacing: 0.08em;
+  text-align: center;
+  color: #a68367;
+  white-space: nowrap;
+  margin: 0.5em 0 0.5em 0;
+}
+
+.desc {
   line-height: 2.05;
-  letter-spacing: 0.97px;
-  text-align: left;
-  color: #04040c;
+  letter-spacing: 0.04em;
+  text-align: justify;
 }
 
 .swipe {
-  width: size(1312);
+  width:calc(66vw - 50px);
   height: 100vh;
   min-height: size(900);
   top: 0;

@@ -19,14 +19,16 @@
             :key="slide.img"
             :class="`swipe-item absolute ${slideIndex === i ? 'active' : ''} ${(slideIndex === (i + 1) || slideIndex === (i - slideList.length + 1)) ? 'base' : ''}`"
           >
+      <div class="txt absolute">
             <div
-              :class="`title absolute ${slideIndex === i ? 'active' : ''}`"
+              :class="`title ${slideIndex === i ? 'active' : ''}`"
               v-html="slide.title"
             ></div>
             <div
-              :class="`desc absolute ${slideIndex === i ? 'active' : ''}`"
+              :class="`desc ${slideIndex === i ? 'active' : ''}`"
               v-html="slide.desc"
             ></div>
+          </div>
             <img
               :src="slide.img"
               alt=""
@@ -97,40 +99,42 @@
   }
 }
 
-.title {
-  width: size(436);
-  top: size(199);
-  left: size(1045);
-  font-size: size(58);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.28;
-  letter-spacing: 9.1px;
-  text-align: center;
-  color: #a38057;
-  white-space: nowrap;
-}
-
-.desc {
-  width: size(650);
-  top: size(427);
-  left: size(1045);
-  font-size: size(33);
+.txt {
+  width: 40%;
+  height:100%;
+  top:0;
+  right:calc(3.5% + 50px);
+  font-size: size(24);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.87;
-  letter-spacing: 2px;
-  text-align: left;
-  color: #04040c;
-  // white-space: nowrap;
+  color: #000;z-index: 2;
+  display: flex;align-items:center;flex-direction:column;justify-content:center;
+}
+.title {
+  font-size:1.8em;
+  font-weight: bold;
+  line-height: 1.34;
+  letter-spacing: 0.08em;
+  text-align: center;
+  color: #a68367;
+  white-space: nowrap;
+  margin: 0.5em 0 0.5em 0;
+}
+
+.desc {
+  line-height: 2.05;
+  letter-spacing: 0.04em;
+  text-align: justify;
+  margin:0 0 3em 0;
 }
 
 .img {
-  width: size(720);
-  top: size(91);
-  left: size(245);
+  height:size(880);
+  max-height: 90%;
+  top:50%;
+  right:53%;
+  transform: translateY(-50%);
 }
 
 .swipe {

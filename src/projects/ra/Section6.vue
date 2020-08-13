@@ -5,7 +5,7 @@
         class="sidebar absolute"
         v-if="!isMobile"
       >
-        <div class="title-item sidebar-item flex-c">頤昌建築・影音分享區</div>
+        <div class="title-item sidebar-item flex-c">瑞安影片</div>
         <div
           class="sidebar-item flex-c wrap"
           @click="goTo(index)"
@@ -16,7 +16,7 @@
       <div
         class="title absolute"
         v-if="isMobile"
-      >頤昌建築・影音分享區</div>
+      >隱身公園聚落中的輕豪宅</div>
       <div class="swipe-bottom-btns absolute flex-ac flex-jb" v-if="isMobile">
         <div
           class="prev-btn flex-c"
@@ -129,8 +129,9 @@
 }
 .sidebar {
   width: size(396);
-  top: size(140);
+  top: size(0);
   left: size(186);
+  height: 100%;display: flex;align-items:center;flex-direction:column;justify-content:center;
 }
 .sidebar-item {
   width: 100%;
@@ -149,9 +150,9 @@
 .swipe {
   width: size(1067);
   height: size(800);
-  top: size(140);
+  top:calc(50% - 20.5vw);
   right: size(227);
-  object-fit: cover;
+  object-fit: cover;background: #000;
 }
 
 .swipe-wrap {
@@ -161,8 +162,12 @@
 
   iframe {
     width: 100%;
-    height: 100%;
-    margin-top: size((800 - 388) / 2);
+    height: size(444);
+    position: absolute;
+    left: 0;
+  top:calc(50% - 11.5vw);
+
+  //  margin-top: size((800 - 388) / 2);
   }
 }
 
@@ -558,7 +563,7 @@ export default {
       isTablet,
       slideList: [
         {
-          title: '頤昌璞岳 嶄新登場',
+          title: '隱身公園聚落中的輕豪宅',
           link:
             'https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fforevercollect%2Fvideos%2F312820629270130%2F&show_text=0',
           img: isMobile ? require('./mo/5/1.jpg') : require('./s6/1.jpg'),
