@@ -4,12 +4,12 @@
     <img class="map-bg" :src="bgSrc" alt ref="mapbg" />
     <img class="map-text" :src="bgText" alt />
     <div :class="`mask ${showMask ? 'active' : ''}`">
-      <div class="desc">
+    <!--  <div class="desc">
       大安區好人家,才看得起的大安選房學<br />
       瑞安街為首,大安森林首環,頭等艙位置<br />
       鞏固城市中心點,綠海寫生、静巷養生<br />
-      高隱密静巷宅、第一直擊大安森林者,只有瑞安白在
-    </div>
+      高隱密静巷宅、第一直擊大安森林者,只有瑞安自在
+    </div> -->
     </div>    
     <img
       :src="tag"
@@ -24,7 +24,7 @@
 <style lang="scss" scoped>
 @import '../assets/style/function.scss';
 .map {
-  padding-top: size-m(200);
+  padding-top: size-m(150);
   background-color: rgba(172, 221, 254, 1)
 }
 .desc {
@@ -69,7 +69,7 @@ export default {
           text.style.left = `${mapBg.clientWidth / 2 - 100}px`
         }
 
-        map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2 -130, 0)
+        map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2 -110, 0)
       }, 1200)
 
       setTimeout(() => {

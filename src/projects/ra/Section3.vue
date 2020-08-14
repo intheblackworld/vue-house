@@ -167,7 +167,7 @@
     font-style: normal;
     line-height: 1.73;
     letter-spacing: 0.3px;
-    text-align: left;
+    text-align: justify;
     color: #ffffff;
   }
 }

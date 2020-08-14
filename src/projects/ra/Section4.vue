@@ -14,6 +14,7 @@
         data-aos-duration="1000"
         class="map-img absolute"
       >
+      <div class="buttom absolute"></div>
       <div class="txt absolute">
       <img
         src="./s4/bg2.png"
@@ -153,44 +154,66 @@
     object-fit: cover;
 
     &:nth-child(1) {
-      position: relative;
+      position: relative;display: none;
     }
   }
 
   .map-img {
     width: 100vw;
-    top: size-m(251);
+    top: auto;
+  height:calc(100vh - 100vw);
+    bottom: 0;
     left: size-m(0);
     object-fit: cover;
   }
+  .buttom{
+    background-color: #3aa7c299;
+    border-radius: 50%;
+    position: absolute;
+    width: 20vw;
+    height: 20vw;
+    bottom: calc(50vh - 60vw);
+    left: calc(50% - 10vw);
+    color: #fff;
+    &:before {
+    content: "";
+    background:currentColor;
+    width: 6%;
+    height: 60%;
+    position: absolute;
+    top: 20%;
+    left: 47%;
+    }
+    &:after {
+    content: "";
+    background:currentColor;
+    width: 60%;
+    height: 6%;
+    position: absolute;
+    top: 47%;
+    left: 20%;
+    }
+  }
 
+.txt {
+  width:100vw;
+  height:auto;
+  top: size-m(24);
+  left: 0;
+  font-size: size-m(15);
+  color: #000;
+}
   .title {
-    width: size-m(330);
-    top: size-m(24);
-    right: size-m(22);
-    font-size: size-m(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
+  font-size: 1.666em;
     line-height: 1.44;
-    letter-spacing: 2px;
-    text-align: center;
     color: #a38057;
-    white-space: nowrap;
   }
 
   .desc {
-    top: size-m(110);
-    right: size-m(32);
     width: size-m(310);
-    font-size: size-m(13);
     font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.73;
-    letter-spacing: 0.9px;
-    text-align: left;
-    color: #000000;
+    text-align: justify;
   }
 
   .bubble {

@@ -20,6 +20,15 @@
       v-if="isMobile"
       class="section2"
     >
+      <ul class="desc absolute">
+        <li
+          v-for="(text, index) in text_list"
+          data-aos="fade-right"
+          :data-aos-delay="200 + (index + 1) * 200"
+          data-aos-duration="1000"
+          :key="text"
+        >{{text}}</li>
+      </ul>
       <Map :bgSrc="require('./s2/bg.jpg')" v-if="isMobile" :hand="require('./mo/2/小手.png')">
       </Map>
     </div>
@@ -65,7 +74,7 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 2.08;
-    letter-spacing: 2px;
+    letter-spacing:0.1em;
     text-align: left;
     color: #231815;
     white-space: nowrap;
@@ -88,13 +97,21 @@
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    height: size-m(804);
+    height: calc(100vh - 63px);
+   // height: size-m(804);
     // background-image: url('./mo/1/bg.jpg');
     background-size: cover;
     background-attachment: scroll;
   }
-
-  .bg-img {
+.desc{
+  z-index: 5;left: 0;right: 0;margin: auto;width: 100%;
+  top:calc(30% - 36vw);
+  li {
+    font-size: size-m(15);
+    text-align: center;
+    line-height: 2.08;color: #036c;
+  }
+  /*.bg-img {
     width: 100vw;
     height: auto;
     position: absolute;
@@ -106,7 +123,8 @@
     &:nth-child(1) {
       position: relative;
     }
-  }
+  }*/
+}
 }
 </style>
 <script>
@@ -126,10 +144,11 @@ export default {
       isMobile,
       isTablet,
       text_list: [
-        '大安區好人家,才看得起的大安選房學',
-        '瑞安街為首,大安森林首環,頭等艙位置',
-        '鞏固城市中心點,綠海寫生、静巷養生',
-        '高隱密静巷宅、第一直擊大安森林者,只有瑞安白在',
+        '大安區好人家，才看得起的大安選房學',
+        '瑞安街為首，大安森林首環，頭等艙位置',
+        '鞏固城市中心點，綠海寫生、静巷養生',
+        isMobile? '高隱密静巷宅、第一直擊大安森林者':'高隱密静巷宅、第一直擊大安森林者，只有瑞安自在',
+        isMobile?'只有瑞安自在':'',
       ],
     }
   },

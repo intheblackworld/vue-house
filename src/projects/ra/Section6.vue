@@ -334,9 +334,9 @@
   }
 
   .title {
-    width: sizem(277);
+    width: 100%;
     top: sizem(84);
-    left: sizem(56);
+    left: 0;
     font-size: sizem(25);
     font-weight: bold;
     font-stretch: normal;
@@ -531,7 +531,7 @@
     iframe {
       width: 100%;
       height: 100%;
-      margin-top: sizem((279 - 157) / 2);
+      margin-top: sizem((279 - 157) / 2);top:0;
     }
   }
 }

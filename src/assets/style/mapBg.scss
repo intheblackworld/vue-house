@@ -43,7 +43,7 @@
     width: 100vw;
     .map-bg {
       width: auto;
-      height: size-m(604);
+      height:calc(100vh - 63px - 40vw);
     }
 
     .map-text {
@@ -75,13 +75,12 @@
     .hand {
       position: absolute;
       z-index: 2;
-      display: block;
       width: size-m(87) !important;
       height: auto !important;
-      left: size-m(550);
+      left: size-m(445);
       right: 0;
       margin: 0 auto;
-      top: 65% !important;
+      top: 60% !important;
       display: block;
       animation: swing 2.5s ease-in-out 0s infinite;
       opacity: 0;

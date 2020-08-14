@@ -277,7 +277,7 @@
     }
   }
 
-  .tree {
+  .tree {  display: none;
   width: size(441);
   top: size(50);
   left: size(0);

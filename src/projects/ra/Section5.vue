@@ -293,86 +293,43 @@
     // background-size: cover;
     // background-attachment: fixed;
   }
-
-  .label1 {
-    width: size-m(147);
-    height: size-m(40);
-    top: size-m(54);
-    left: size-m(33);
-    background-color: #a68367;
-    font-size: size-m(20);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.15;
-    letter-spacing: 4.8px;
-    text-align: center;
-    color: #ffffff;
-    cursor: pointer;
-    z-index: 3;
-
-    &::after {
-      content: '';
-      position: absolute;
-      width: size-m(147);
-      height: size-m(40);
-      top: size(0);
-      left: size(0);
-      background-color: transparent;
-      box-shadow: 0 0 0 1px #a68367;
-      animation: trans 0.5s 2s ease-in-out forwards;
-    }
+.bg-img {
+  &:nth-child(1) {display: none;
   }
+}
+.txt {
+  width:100vw;
+  height:auto;
+  top: size-m(24);
+  left: 0;
+  font-size: size-m(15);flex-direction:row;
+    flex-wrap:wrap;
 
-  .label2 {
-    width: size-m(147);
-    height: size-m(40);
-    top: size-m(54);
-    right: size-m(34);
-    font-size: size-m(20);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.15;
-    letter-spacing: 4.8px;
-    text-align: center;
-    color: #a68367;
-    background-color: #ffffff;
-  }
+}
 
+.label1,
+.label2{font-size: size-m(20);
+  width: 8em;
+ margin: 1em 0.25em;
+ display: inline-block;
+  }  
   .title {
-    top: size-m(122);
-    right: auto;
-    left: size-m(86);
-    font-size: size-m(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
+  font-size: 1.666em;
     line-height: 1.44;
-    letter-spacing: 3px;
-    text-align: center;
-    color: #a38057;
   }
 
   .desc {
     width: size-m(310);
-    top: size-m(218);
-    right: auto;
-    left: size-m(33);
-    font-size: sizem(15);
     font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.73;
-    letter-spacing: 0.6px;
-    text-align: left;
-    color: #04040c;
+    text-align: justify;
+  margin:0.8em 0 3em 0;
   }
 
   .swipe {
     width: 100vw;
-    height: size-m(205);
-    top: size-m(402);
+    height: calc(100vh - 63px - 118vw);
+    top: size-m(382);
     left: 0;
     object-fit: cover;
   }

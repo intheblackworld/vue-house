@@ -19,13 +19,13 @@
         data-aos="fade-down"
         data-aos-delay="700"
         v-if="!isMobile"
-      >揮別飯店式浮誇排場，以功能與風雅合一，此顯 「人，才是突間的高貴主體」並盛邀作品榮登「英國蘇富比、佳士得拍賣藝術品」等級的旅台英國藝術家貝馬丁Martyn Barratt，特為大廳、公設，獨家創作木雕藝術(白在樹)、(一生一世)茶几木椅、(美麗時光)等燒窯玻璃藝術，由於每一幅作品皆未經事先繪圖塑模，全憑靈光乍現，更顯珍稀。</p>
+      >揮別飯店式浮誇排場，以功能與風雅合一，此顯 「人，才是突間的高貴主體」並盛邀作品榮登「英國蘇富比、佳士得拍賣藝術品」等級的旅台英國藝術家貝馬丁Martyn Barratt，特為大廳、公設，獨家創作木雕藝術(自在樹)、(一生一世)茶几木椅、(美麗時光)等燒窯玻璃藝術，由於每一幅作品皆未經事先繪圖塑模，全憑靈光乍現，更顯珍稀。</p>
       <p
         class="desc"
         data-aos="fade-down"
         data-aos-delay="700"
         v-if="isMobile"
-      >揮別飯店式浮誇排場，以功能與風雅合一，此顯「人，才是突間的高貴主體」並盛邀作品榮登「英國蘇富比、佳士得拍賣藝術品」等級的旅台英國藝術家貝馬丁Martyn Barratt，特為大廳、公設，獨家創作木雕藝術(白在樹)、(一生一世)茶几木椅、(美麗時光)等燒窯玻璃藝術，由於每一幅作品皆未經事先繪圖塑模，全憑靈光乍現，更顯珍稀。</p>
+      >揮別飯店式浮誇排場，以功能與風雅合一，此顯「人，才是突間的高貴主體」並盛邀作品榮登「英國蘇富比、佳士得拍賣藝術品」等級的旅台英國藝術家貝馬丁Martyn Barratt，特為大廳、公設，獨家創作木雕藝術(自在樹)、(一生一世)茶几木椅、(美麗時光)等燒窯玻璃藝術，由於每一幅作品皆未經事先繪圖塑模，全憑靈光乍現，更顯珍稀。</p>
       
       </div>
       <div
@@ -260,41 +260,38 @@
 @media screen and (max-width: 767px) {
   .section8 {
     width: 100vw;
-    height: sizem(685);
+    height: calc(100vh - 63px);
     min-height: auto;
   }
+.img {display: none;
+}
 
+
+.txt {
+  width:100vw;
+  height:auto;
+  top: size-m(24);
+  left: 0;
+  font-size: size-m(15);
+  color: #000;
+}
   .title {
-    top: size-m(38);
-    left: size-m(63);
-    font-size: sizem(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
+  font-size: 1.666em;
     line-height: 1.44;
-    letter-spacing: 2px;
-    text-align: center;
     color: #a38057;
   }
 
   .desc {
     width: size-m(310);
-    top: size-m(137);
-    left: size-m(33);
-    font-size: sizem(15);
     font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.73;
-    letter-spacing: 0.9px;
-    text-align: left;
-    color: #04040c;
+    text-align: justify;
   }
 
   .swipe {
     width: 100vw;
-    height: size-m(310);
-    top: sizem(374);
+    height: calc(100vh - 63px - 90vw);
+    top: sizem(335);
     left: 0;
     object-fit: cover;
   }
@@ -311,6 +308,7 @@
     left: 100%;
     transition: left 1s ease-in-out;
     z-index: 0;
+    object-fit: cover;
 
     &.base {
       z-index: 1;
