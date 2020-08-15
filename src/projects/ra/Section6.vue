@@ -17,7 +17,10 @@
         class="title absolute"
         v-if="isMobile"
       >隱身公園聚落中的輕豪宅</div>
-      <div class="swipe-bottom-btns absolute flex-ac flex-jb" v-if="isMobile">
+      <div
+        class="swipe-bottom-btns absolute flex-ac flex-jb"
+        v-if="isMobile"
+      >
         <div
           class="prev-btn flex-c"
           @click="decIndex"
@@ -44,60 +47,27 @@
         data-aos="fade-right"
         data-aos-delay="200"
       >
-        <div
-          class="swipe-wrap relative"
-          v-show="!showIframe"
-        >
+        <div class="swipe-wrap relative">
           <div
-            @click="playVideo"
             v-for="(slide, i) in slideList"
             :key="slide.img + i"
             :class="`video-cover swipe-item absolute ${slideIndex === i ? 'active' : ''} ${(slideIndex === (i + 1) || slideIndex === (i - slideList.length + 1)) ? 'base' : ''}`"
           >
-            <img :src="slide.img">
+            <iframe
+              :src="slide.link"
+              style="border:none;overflow:hidden"
+              scrolling="no"
+              frameborder="0"
+              allowTransparency="true"
+              allowFullScreen="true"
+            ></iframe>
           </div>
-          <!-- <img
-            v-for="(slide, i) in slideList"
-            :src="slide.img"
-            :key="slide.img"
-            :class="`swipe-item absolute ${slideIndex === i ? 'active' : ''} ${(slideIndex === (i + 1) || slideIndex === (i - slideList.length + 1)) ? 'base' : ''}`"
-          > -->
-          <!-- <div class="pagination absolute flex-ac">
-            <div
-              :class="`pagination-dot`"
-              v-for="(slide, index) in slideList"
-              :key="slide.img + '-dot'"
-              @click="goTo(index)"
-            ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-          </div> -->
-          <!-- <div class="swipe-btns absolute flex-ac flex-jb">
-            <img
-              src="./all/prev-btn.png"
-              alt=""
-              class="prev-btn"
-              @click="decIndex"
-            >
-            <img
-              src="./all/next-btn.png"
-              alt=""
-              class="next-btn"
-              @click="addIndex"
-            >
-          </div> -->
         </div>
-        <div
+        <!-- <div
           class="swipe-wrap relative"
           v-show="showIframe"
         >
-          <iframe
-            :src="slideList[slideIndex].link"
-            style="border:none;overflow:hidden"
-            scrolling="no"
-            frameborder="0"
-            allowTransparency="true"
-            allowFullScreen="true"
-          ></iframe>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -131,7 +101,11 @@
   width: size(396);
   top: size(0);
   left: size(186);
-  height: 100%;display: flex;align-items:center;flex-direction:column;justify-content:center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 .sidebar-item {
   width: 100%;
@@ -150,9 +124,10 @@
 .swipe {
   width: size(1067);
   height: size(800);
-  top:calc(50% - 20.5vw);
+  top: calc(50% - 20.5vw);
   right: size(227);
-  object-fit: cover;background: #000;
+  object-fit: cover;
+  background: #000;
 }
 
 .swipe-wrap {
@@ -165,9 +140,9 @@
     height: size(444);
     position: absolute;
     left: 0;
-  top:calc(50% - 11.5vw);
+    top: calc(50% - 11.5vw);
 
-  //  margin-top: size((800 - 388) / 2);
+    //  margin-top: size((800 - 388) / 2);
   }
 }
 
@@ -276,38 +251,38 @@
   background: #000;
   cursor: pointer;
 
-  &::before {
-    content: '';
-    position: absolute;
-    z-index: 10;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    display: block;
-    margin: auto;
-    width: 100px;
-    height: 100px;
-    background: #ac1919;
-    border-radius: 50%;
-  }
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   z-index: 10;
+  //   top: 0;
+  //   bottom: 0;
+  //   right: 0;
+  //   left: 0;
+  //   display: block;
+  //   margin: auto;
+  //   width: 100px;
+  //   height: 100px;
+  //   background: #ac1919;
+  //   border-radius: 50%;
+  // }
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 15px;
-    display: block;
-    margin: auto;
-    width: 0;
-    height: 0;
-    border-color: transparent transparent transparent #fff;
-    border-style: solid;
-    border-width: 17.5px 0 17.5px 30.31px;
-    z-index: 10;
-  }
+  // &::after {
+  //   content: '';
+  //   position: absolute;
+  //   top: 0;
+  //   bottom: 0;
+  //   right: 0;
+  //   left: 15px;
+  //   display: block;
+  //   margin: auto;
+  //   width: 0;
+  //   height: 0;
+  //   border-color: transparent transparent transparent #fff;
+  //   border-style: solid;
+  //   border-width: 17.5px 0 17.5px 30.31px;
+  //   z-index: 10;
+  // }
 }
 
 @media only screen and (max-width: 1440px) {
@@ -489,38 +464,38 @@
     background: #000;
     cursor: pointer;
 
-    &::before {
-      content: '';
-      position: absolute;
-      z-index: 10;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      display: block;
-      margin: auto;
-      width: 30px;
-      height: 30px;
-      background: #ac1919;
-      border-radius: 50%;
-    }
+    // &::before {
+    //   content: '';
+    //   position: absolute;
+    //   z-index: 10;
+    //   top: 0;
+    //   bottom: 0;
+    //   right: 0;
+    //   left: 0;
+    //   display: block;
+    //   margin: auto;
+    //   width: 30px;
+    //   height: 30px;
+    //   background: #ac1919;
+    //   border-radius: 50%;
+    // }
 
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 5px;
-      display: block;
-      margin: auto;
-      width: 0;
-      height: 0;
-      border-color: transparent transparent transparent #fff;
-      border-style: solid;
-      border-width: 6px 0 6px 10px;
-      z-index: 10;
-    }
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   top: 0;
+    //   bottom: 0;
+    //   right: 0;
+    //   left: 5px;
+    //   display: block;
+    //   margin: auto;
+    //   width: 0;
+    //   height: 0;
+    //   border-color: transparent transparent transparent #fff;
+    //   border-style: solid;
+    //   border-width: 6px 0 6px 10px;
+    //   z-index: 10;
+    // }
   }
 
   .swipe-wrap {
@@ -531,7 +506,8 @@
     iframe {
       width: 100%;
       height: 100%;
-      margin-top: sizem((279 - 157) / 2);top:0;
+      margin-top: sizem((279 - 157) / 2);
+      top: 0;
     }
   }
 }
