@@ -9,7 +9,7 @@
         alt=""
         class="bg-img"
         data-aos="fade-up"
-        data-aos-delay="200"
+        data-aos-delay="0"
         data-aos-duration="1000"
       >
       <img
