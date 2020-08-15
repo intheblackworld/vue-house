@@ -15,7 +15,23 @@
         class="map-img absolute"
         @click="isDialog = true"
       >
-      <div class="button absolute"></div>
+      <div class="button absolute" @click="isDialog = true"></div>
+      <div
+        class="dialog"
+        v-show="isDialog"
+      >
+        <img
+          class="close"
+          @click="isDialog = false"
+          src="./all/close.png"
+          alt="close"
+        >
+        <img
+          src="./s4/map.png"
+          alt=""
+          class="dialog-map"
+        >
+      </div>
       <div class="txt absolute">
         <img
           src="./s4/bg2.png"
@@ -226,6 +242,35 @@
 
   .bubble {
     display: none;
+  }
+
+  .dialog {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: scroll;
+
+    .slide-content {
+      left: 0;
+    }
+
+    .dialog-map {
+      width: auto;
+      height: 100vh;
+      background-color: #fff;
+    }
+
+    .close {
+      width: 35px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 5px;
+      position: fixed;
+      right: 10px;
+      top: 10px;
+    }
   }
 }
 </style>

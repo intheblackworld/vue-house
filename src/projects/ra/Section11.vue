@@ -8,6 +8,30 @@
       >
         集建築與藝術發想 文學派的大師陣容
       </h3>
+      <!-- <transition-group
+        name="slide-fade"
+        mode="out-in"
+      >
+        <div
+          class="slide-content absolute"
+          v-show="slideIndex1 === index"
+          v-for="(slide, index) in slideList1"
+          :key="slide.desc"
+        >
+          <div
+            class="item-title"
+            v-html="slide.title"
+          ></div>
+          <div
+            class="item-subtitle"
+            v-html="slide.subtitle"
+          ></div>
+          <div
+            class="item-desc"
+            v-html="slide.desc"
+          ></div>
+        </div>
+      </transition-group> -->
       <div
         class="border absolute"
         data-aos="fade-right"
@@ -127,6 +151,25 @@
 </style>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
+// // begin
+// .slide-fade-leave-to
+// /* .slide-fade-leave-active for below version 2.1.8 */ {
+//   // margin-top: 50px !important;
+//   opacity: 0;
+// }
+// // end
+// .slide-fade-enter {
+//   margin-top: 10px !important;
+//   opacity: 0;
+// }
+
+// .slide-fade-enter-active {
+//   transition: all 0.5s ease;
+// }
+
+// .slide-fade-leave-active {
+//   transition: all 0s cubic-bezier(1, 0.5, 0.8, 1);
+// }
 .section11 {
   width: 100%;
   height: 100vh;
