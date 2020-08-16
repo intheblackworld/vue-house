@@ -21,25 +21,25 @@
       id="section2"
     >
       <VideoSection
-        :playBtn="require('@/projects/sdj/s2/area2_playBtn.png')"
+        :playBtn="require('@/projects/sdj1/s2/youtube.png')"
         title="系列影片"
         :close="require('@/projects/jh/s4/close.png')"
         :arrows="[require('@/projects/gydy/arrow-left.png'), require('@/projects/gydy/arrow-right.png')]"
         :slideList="[
         {
-          title: '萬眾矚目北高雄百貨版圖新時代',
-          img: '',
-          video: 'https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fdalitokyo888%2Fvideos%2F738616443631077%2F&show_text=0',
+          title: '萬眾矚目北高雄<br />百貨版圖新時代',
+          img: require('@/projects/sdj1/s2/1.jpg'),
+          video: 'https://www.youtube.com/embed/8sbUAwaPYJY',
+          isPlay: false,
+        },
+        {
+          title: '明誠文藻雙商圈<br />河堤綠帶散步到',
+          img: require('@/projects/sdj1/s2/2.jpg'),
+          video: 'https://www.youtube.com/embed/g1u3UUro2VU',
           isPlay: false,
         },
       ]"
       />
-    </div>
-    <div
-      class="section"
-      id="section3"
-    >
-      <Section3 />
     </div>
     <div
       class="section"
@@ -49,21 +49,28 @@
     </div>
     <div
       class="section"
+      id="section3"
+    >
+      <Section3 />
+    </div>
+
+    <div
+      class="section"
       id="section5"
     >
       <Section5 />
     </div>
     <div
       class="section"
-      id="section6"
-    >
-      <Section6 />
-    </div>
-    <div
-      class="section"
       id="section7"
     >
       <Section7 />
+    </div>
+    <div
+      class="section"
+      id="section6"
+    >
+      <Section6 />
     </div>
     <div
       class="section"
@@ -93,6 +100,7 @@
 
 <script>
 // @ is an alias to /src
+import _ from 'lodash'
 import Navigation from '@/layouts/Navigation.vue'
 import { isMobile } from '@/utils'
 import SideNavigation from '@/layouts/SideNavigation.vue'
@@ -102,14 +110,14 @@ import Loading from '@/components/Loading.vue'
 import VideoSection from '@/components/VideoSection.vue'
 import TopIndigator from '@/components/TopIndigator.vue'
 
-import Section1 from '@/projects/sdj/Section1.vue'
-// import Section2 from '@/projects/sdj/Section2.vue'
-import Section3 from '@/projects/sdj/Section3.vue'
-import Section4 from '@/projects/sdj/Section4.vue'
-import Section5 from '@/projects/sdj/Section5.vue'
-import Section6 from '@/projects/sdj/Section6.vue'
-import Section7 from '@/projects/sdj/Section7.vue'
-import Section8 from '@/projects/sdj/Section8.vue'
+import Section1 from '@/projects/sdj1/Section1.vue'
+// import Section2 from '@/projects/sdj1/Section2.vue'
+import Section3 from '@/projects/sdj1/Section3.vue'
+import Section4 from '@/projects/sdj1/Section4.vue'
+import Section5 from '@/projects/sdj1/Section5.vue'
+import Section6 from '@/projects/sdj1/Section6.vue'
+import Section7 from '@/projects/sdj1/Section7.vue'
+import Section8 from '@/projects/sdj1/Section8.vue'
 // import Section9 from '@/projects/sdj/Section9.vue'
 // import Section10 from '@/projects/sdj/Section10.vue'
 // import Section11 from '@/projects/sdj/Section11.vue'
@@ -145,6 +153,7 @@ export default {
       isSide: false,
       load: true,
       viewIndex: 1,
+      offsetTopArr: [],
       // action: {
       //   moveTo: () => {},
       // },
@@ -164,42 +173,33 @@ export default {
     }
   },
   created() {
-    // setTimeout(() => {
-    //   this.load = false
-    // }, 500)
-    window.addEventListener('load', event => {
-      this.load = false
-    })
   },
   mounted() {
-    window.addEventListener('scroll', this.onScroll, false)
-    // this.action = this.$refs.fullPage.api
-    // if (this.isMobile) {
-    //   this.$refs.fullPage.api.setResponsive(true)
-    // }
+    window.addEventListener('load', event => {
+      console.log('loaded')
+      this.load = false
+    })
+    window.addEventListener('scroll', _.throttle(this.onScroll, 500), false)
+    // 获取所有锚点元素
+    const navContents = document.querySelectorAll('.section')
+    // 所有锚点元素的 offsetTop
+    navContents.forEach(item => {
+      this.offsetTopArr.push(item.offsetTop)
+    })
   },
+
   methods: {
-    onDone() {
-      console.log('done')
-    },
     onScroll() {
-      // 获取所有锚点元素
-      const navContents = document.querySelectorAll('.section')
-      // 所有锚点元素的 offsetTop
-      const offsetTopArr = []
-      navContents.forEach(item => {
-        offsetTopArr.push(item.offsetTop)
-      })
       // 获取当前文档流的 scrollTop
       const scrollTop =
         document.documentElement.scrollTop || document.body.scrollTop
       // 定义当前点亮的导航下标
       let navIndex = 0
-      for (let n = 0; n < offsetTopArr.length; n++) {
+      for (let n = 0; n < this.offsetTopArr.length; n++) {
         // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
         // 那么此时导航索引就应该是n了
         let height = this.isMobile ? 200 : 800
-        if (scrollTop >= offsetTopArr[n] - height) {
+        if (scrollTop >= this.offsetTopArr[n] - height) {
           navIndex = n
         }
 

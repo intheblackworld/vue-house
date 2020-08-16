@@ -40,7 +40,7 @@
     padding-top: 10px !important;
     font-size: 16px !important;
     border: $order_input_border;
-    background:#FFF;
+    background: #fff;
 
     &::placeholder {
       color: $order_input_placeholder;
@@ -73,12 +73,21 @@
   margin-top: 20px !important;
   transition: all 0.3s !important;
   color: $order_submit_color;
+  span {
+    width: 198px;
+    display: block;
+    letter-spacing: 25px;
+    text-align: center;
+    margin: 0 auto;
+    margin-left: 50px;
+  }
   // z-index: 10;
-  border:$order_input_border !important;
+  border: $order_input_border !important;
 
   &.is-disabled {
     background-color: $order_sumbit_disable_bg;
-    opacity: 0.6;
+    border:$order_sumbit_disable_borde;
+    //opacity: 0.6;
   }
 
   svg {

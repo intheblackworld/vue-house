@@ -12,7 +12,11 @@
 }
 
 .swiper-button-next {
-  right: 20px;
+  right: 5px;
+}
+
+.swiper-button-prev {
+  left: 5px;
 }
 
 
@@ -68,6 +72,11 @@
 
   .swiper-button-next {
     right: 0px;
+  }
+
+  .swiper-button-prev, .swiper-button-next {
+    height: auto;
+    margin-top: -10px;
   }
 
 }

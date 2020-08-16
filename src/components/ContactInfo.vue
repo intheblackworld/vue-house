@@ -1,12 +1,12 @@
 <template>
 <div>
   <div class="contact-info">
-    <img class="logo" src="@/assets/img/contact-logo.png" alt="好站" />
+    <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" />
     <div class="info">
       <div class="btn flex-c" @click="showCallDialog">
         <span class="flex-c">
           <font-awesome-icon icon="phone" />
-          {{info.phone}}
+          <span>{{info.phone}}</span>
         </span>
       </div>
       <div class="btn flex-c" @click="showMessengerDialog">
@@ -20,7 +20,7 @@
         </span>
       </a>
       <div class="address flex-c">{{info.address}}</div>
-      <div class="btn flex-c" @click="showMapDialog">
+      <div class="google-btn flex-c" @click="showMapDialog">
         <span class="flex-c">
           <font-awesome-icon icon="map-marker-alt" /><span>導航 Google 地圖</span>
         </span>
@@ -108,12 +108,12 @@ export default {
   background-position: 0% 50%; */
   transform: translateY(0);
   margin: 2vw auto -3vw;
-  padding: 70px 0 50px;
+  padding: 40px 0 50px;
 }
 
 .logo {
   width:auto;
-  height: $contact_logo_pc_width;
+  height: $contact_logo_pc_height;
   margin: 0 auto 40px;
 }
 .info {
@@ -194,7 +194,7 @@ export default {
   color: $contact_google_btn_color;
   background: $contact_google_btn_bg;
   background-position: center !important;
-  box-shadow: $contact_btn_border;
+  // box-shadow: $contact_btn_border;
   transition: all 0.5s;
 
   svg {
@@ -224,7 +224,7 @@ export default {
     padding: 60px 0 80px;
 
     .logo {
-      width: $contact_logo_tablet_width;
+      height: $contact_logo_tablet_height;
     }
   }
 }
@@ -241,7 +241,7 @@ export default {
     margin: 0;
 
     .logo {
-      width: $contact_logo_mobile_width;
+      height: $contact_logo_mobile_height;
     }
   }
 
