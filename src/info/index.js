@@ -1,5 +1,5 @@
 export default {
-  address: '106台北市大安區浦城街6巷1號',
+  address: '106台北市大安區浦城街6巷1號進',
   googleSrc:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.294087597815!2d121.52453151500615!3d25.024091883976983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a98ff236b419%3A0x3261a47cfff7da47!2zMTA25Y-w5YyX5biC5aSn5a6J5Y2A5rWm5Z-O6KGXNuW3tzHomZ8!5e0!3m2!1szh-TW!2stw!4v1596611802368!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/oybEtLGgtMCv2MnLA',

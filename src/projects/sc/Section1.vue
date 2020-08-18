@@ -789,36 +789,36 @@
 
   .logo-img {
     width: size-m(112);
-    top:calc(50% - 57vw);
+    top:calc(50% - 62vw);
     left: size-m(67);
   }
   .logo{
     width: size-m(241);
-    top:calc(50% - 66vw);
+    top:calc(50% - 75vw);
     right: size-m(67);
     left: auto;
   }
 .logo1 {
     width: size-m(95);
-    top:calc(50% - 66.2vw);
+    top:calc(50% - 72.2vw);
     right: size-m(66);
     left: auto;
 }
 .logo2{
     width: size-m(95);
-    top:calc(50% - 38vw);
+    top:calc(50% - 46vw);
     right: size-m(66);
     left: auto;
 }
 
 .logo_txt{
-  top:calc(50% - 0vw);
+  top:calc(50% - 7vw);
   left: size-m(67);
   font-size:size-m(17);
 }
   .txt {
     width: size-m(241);
-    top:calc(50% + 16vw);
+    top:calc(50% + 3vw);
     right: size-m(67);
   }
 
@@ -833,7 +833,7 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    top:calc(50% + 57vw);
+    top:calc(50% + 43vw);
     right: size-m(168);
     cursor: pointer;
   }
