@@ -23,7 +23,6 @@
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  display: none;
 
   .loading-icon {
     width: 150px;
