@@ -1,12 +1,12 @@
 export default {
-  address: '台北市安區瑞安街244巷16號',
+  address: '宜蘭縣五結鄉傳藝路一段56巷',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d903.7980696290949!2d121.5384704!3d25.027548!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa2a257bab43%3A0xf5c13b0583af5798!2z55Ge5a6J6Ieq5Zyo!5e0!3m2!1szh-TW!2stw!4v1597130653568!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/oPw7RoKQvXFTHdFW8',
-  phone: '02-2707-1288',
-  fbLink: 'https://www.facebook.com/forevercollect/',
-  fbMessage: 'https://m.me/forevercollect',
-  caseName: '瑞安自在',
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1812.64610095759!2d121.8171196!3d24.6824801!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3467ef5a48bc9153%3A0xd420ca03e270682f!2zMjY45a6c6Jit57ij5LqU57WQ6YSJ5YKz6Jed6Lev5LiA5q61NTblt7c!5e0!3m2!1szh-TW!2stw!4v1597742951425!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/WpkSme4TcWj8t3Gs5',
+  phone: '0900-799-888',
+  fbLink: 'https://www.facebook.com/IlanCSdeveloper/',
+  fbMessage: 'https://m.me/IlanCSdeveloper',
+  caseName: '小城故事7',
   indigatorLength: 10,
 
   houseInfos: [

@@ -1,6 +1,5 @@
 const webpack = require('webpack')
 const path = require('path')
-const meta = require('./src/info/meta')
 
 function resolve(dir) {
   return path.join(__dirname, '.', dir)
@@ -41,17 +40,6 @@ module.exports = {
       .options({
         symbolId: 'icon-[name]'
       })
-    config.plugin('html').tap(args => {
-      args[0].title = meta.info.title
-      args[0].metaTitle = meta.info.title
-      args[0].ogMetaTitle = meta.info.title
-      args[0].metaDescription = meta.info.description
-      args[0].ogMetaDescription = meta.info.description
-      args[0].metaKeywords = meta.info.keywords
-      args[0].ogMetaType = 'website'
-
-      return args
-    })
     config.plugin('preload')
       .tap(options => {
         // for import() lazy routes use initial https://github.com/vuejs/preload-webpack-plugin
