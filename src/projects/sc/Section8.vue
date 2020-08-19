@@ -5,7 +5,7 @@
         class="title absolute"
         data-aos="fade-up"
         data-aos-delay="200"
-      >好的房子<br />蓋給懂的生活的人</h3>
+      >好的房子<br />蓋給懂的生活的大人</h3>
       <h3
         class="desc absolute"
         data-aos="fade-up"
