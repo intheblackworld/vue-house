@@ -29,7 +29,7 @@
         data-aos-delay="600"
         data-aos-duration="600"
       >
-        【瑞安自在】總戶數為21戶,地上12樓、地下3樓,全棟承襲首鋼機機構細緻精工、深厚人文底蘊,聯手豪宅推手邱垂睿大師,以「綠、舞、墨、樹」靈感,為座落瑞安權貴靜巷誕生墨曜玉石意象之美。搭配垂直木紋鋁格柵,精雕光影層次,引領建築成為收藏風雅的容器。為瑞安風景,示現風格化的富貴寫照,也為上流世家,刻畫難掩雍容的風情。
+        【瑞安自在】總戶數為21戶，地上12樓、地下3樓，全棟承襲首鋼機機構細緻精工、深厚人文底蘊，聯手豪宅推手邱垂睿大師，以「綠、舞、墨、樹」靈感，為座落瑞安權貴靜巷誕生墨曜玉石意象之美。搭配垂直木紋鋁格柵，精雕光影層次，引領建築成為收藏風雅的容器。為瑞安風景，示現風格化的富貴寫照，也為上流世家，刻畫難掩雍容的風情。
       </h3>
     </div>
   </div>
@@ -92,7 +92,7 @@
   font-style: normal;
   line-height: 2.16;
   letter-spacing: normal;
-  text-align: left;
+  text-align: justify;
   color: #ffffff;
 }
 
@@ -154,12 +154,12 @@
     top: sizem(151);
     left: sizem(33);
     font-size: sizem(15);
-    font-weight: normal;
+    font-weight: 300;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.73;
-    letter-spacing: normal;
-    text-align: left;
+    letter-spacing: 0.01em;
+    text-align: justify;
     color: #ffffff;
   }
 }
