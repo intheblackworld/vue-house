@@ -2,64 +2,92 @@
   <div>
     <div class="section5">
       <img
-        src="./s5/bg1_02.png"
+        src="./s5/1.jpg"
         alt=""
-        class="bg-img"
+        class="one absolute"
+        data-aos="fade-right"
+        data-aos-delay="0"
       >
-      <div class="txt absolute">
-        <h3 :class="`label1 ${(slideIndex < 2) ? 'active' : ''}`" @click="goTo(0)">人文區
-        </h3>
-        <h3 :class="`label2 ${slideIndex >= 2 ? 'active' : ''}`"  @click="goTo(2)">大台北交通</h3>
+      <h3
+        class="txt txt-one absolute"
+        data-aos="fade-right"
+        data-aos-delay="100"
+      >交通示意圖</h3>
+      <h3
+        class="title absolute"
+        data-aos="fade-down"
+        data-aos-delay="200"
+      >一高二線<br />
+        速抵台北市區<br />
+        便捷南來北往</h3>
+      <div class="content absolute">
         <h3
-          class="title"
+          class="subtitle"
           data-aos="fade-down"
-          data-aos-delay="600"
-          v-html="slideList[slideIndex].title"
-        ></h3>
-        <!-- v-html="slide.title" -->
-        <p
+          data-aos-delay="400"
+        >約5分鐘國五 五結出口<br />約8分鐘羅東火車站 回宜蘭的家 好方便</h3>
+        <h3
           class="desc"
           data-aos="fade-down"
-          data-aos-delay="700"
-          v-html="slideList[slideIndex].desc"
-        ></p>
+          data-aos-delay="600"
+        >國道5號往雙北、台2線濱海省道北往雙北市，連結蘇澳冷泉、與縱貫宜蘭、花東的台9線。<br />
+          五結鄉，是宜蘭獨一無二正核心，北可抵宜蘭市區、西至羅東轉運站及國道五號、東往傳統藝術中心、南至親水公園，動線多元便捷。
+        </h3>
+
       </div>
-      <div
-        class="swipe absolute"
-        data-aos="fade-right"
-        data-aos-delay="200"
-        @mouseenter.stop="toggleTimer = false"
-        @mouseleave.stop="toggleTimer = true"
+      <img
+        src="./deck/butterfly.png"
+        alt=""
+        class="butterfly absolute"
+        data-aos="fade"
+        data-aos-delay="800"
       >
-        <div class="swipe-wrap relative">
+      <img
+        src="./deck/tree.png"
+        alt=""
+        class="tree absolute"
+        data-aos="fade"
+        data-aos-delay="1000"
+      >
+      <img
+        src="./deck/line.png"
+        alt=""
+        class="line absolute"
+        data-aos="fade"
+        data-aos-delay="1200"
+      >
+      <img
+        src="./deck/leaf.png"
+        alt=""
+        class="leaf absolute"
+        data-aos="fade"
+        data-aos-delay="1400"
+      >
+
+      <img
+        src="./deck/leaf.png"
+        alt=""
+        class="leaf2 absolute"
+        data-aos="fade"
+        data-aos-delay="1400"
+      >
+
+      <div class="img-list flex-ac flex-jb wrap absolute">
+        <div
+          class="img-item relative"
+          v-for="(item, index) in img_list"
+          :key="item.img"
+          data-aos="fade-down"
+          :data-aos-delay="800 + (index * 100)"
+        >
           <img
-            v-for="(slide, i) in slideList"
-            :src="slide.img"
-            :key="slide.img"
-            :class="`swipe-item absolute ${slideIndex === i ? 'active' : ''} ${(slideIndex === (i + 1) || slideIndex === (i - slideList.length + 1)) ? 'base' : ''}`"
+            :src="item.img"
+            alt=""
           >
-          <div class="pagination absolute flex-ac">
-            <div
-              :class="`pagination-dot`"
-              v-for="(slide, index) in slideList"
-              :key="slide.img + '-dot'"
-              @click="goTo(index)"
-            ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-          </div>
-          <div class="swipe-btns absolute flex-ac flex-jb">
-            <img
-              src="./all/prev-btn.png"
-              alt=""
-              class="prev-btn"
-              @click="decIndex"
-            >
-            <img
-              src="./all/next-btn.png"
-              alt=""
-              class="next-btn"
-              @click="addIndex"
-            >
-          </div>
+          <h3
+            class="txt absolute"
+            v-html="item.txt"
+          ></h3>
         </div>
       </div>
     </div>
@@ -71,8 +99,12 @@
 
 .section5 {
   width: size(1920);
-  height: 100vh;
-  min-height: size(800);
+  height: size(576 + 321);
+  // min-height: size(900);
+  // background-image: url('./s2/bg.jpg');
+  // background-size: 100% 100%;
+  // background-position: 0 0;
+  // background-attachment: fixed;
   overflow: hidden;
 }
 
@@ -87,192 +119,128 @@
   object-fit: cover;
 
   &:nth-child(1) {
-    top: 0;
-    left: auto;
-    right: 0;
-    height: auto;
+    position: relative;
   }
 }
-
-.label1,
-.label2 {
-  font-size: size(43);
-  letter-spacing: 0.25em;
-  text-indent: 0.125em;
-  line-height: 1.6;
-  position: relative;
-  font-stretch: normal;
-  font-style: normal;
-  background-color: #ffffff;
-  color: #a68367;
-  width: 8em;
-  cursor: pointer;
-  transition: all 0.3s;
-  margin: 0 0 0.5em;
-  &::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: size(0);
-    left: size(0);
-    border: 1px solid #fff;
-    transition: all 0.3s;
-    //animation: trans 0.5s 2s ease-in-out forwards;
-  }
-  &.active,
-  &:hover {
-    background-color: #a68367;
-    color: #ffffff;
-    transform: translate(-0.2em, -0.2em);
-    &::after {
-      transform: translate(0.2em, 0.2em);
-      border: 1px solid #a68367;
-    }
-  }
+.one {
+  width: size(1020);
+  top: 0;
+  left: 0;
 }
 
 .txt {
-  width: 26%;
-  height: 100%;
-  top: 0;
-  right: calc(3.5% + 50px);
-  font-size: size(24);
-  font-weight: normal;
+  font-size: size(13);
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  color: #000;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
+  line-height: 1.64;
+  letter-spacing: 3.31px;
+  text-align: left;
+  color: #ffffff;
 }
+
+.txt-one {
+  bottom: size(298);
+  left: size(922);
+}
+
+.butterfly {
+  width: size(93);
+  top: size(60);
+  right: size(341);
+}
+.tree {
+  width: size(197);
+  top: size(140);
+  right: size(175);
+}
+
+.leaf {
+  width: size(202);
+  bottom: size(10);
+  right: size(120);
+}
+
+.leaf2 {
+  width: size(124);
+  bottom: size(148);
+  right: size(400);
+  transform: rotate(-90deg);
+}
+
+.line {
+  width: size(565);
+  bottom: size(70);
+  right: size(215);
+}
+
 .title {
-  font-size: 1.8em;
+  top: size(90);
+  right: size(465);
+  font-size: size(48);
   font-weight: bold;
-  line-height: 1.34;
-  letter-spacing: 0.08em;
-  text-align: center;
-  color: #a68367;
-  white-space: nowrap;
-  margin: 0.5em 0 0.5em 0;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.53;
+  letter-spacing: 7.75px;
+  text-align: left;
+  color: #000000;
+}
+
+.subtitle {
+  font-size: size(30);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: 5.4px;
+  text-align: left;
+  color: #333333;
+  margin-bottom: size(20);
 }
 
 .desc {
-  line-height: 2.05;
-  letter-spacing: 0.04em;
-  text-align: justify;
-  margin: 0 0 3em 0;
+  font-size: size(16);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.03;
+  letter-spacing: 1.94px;
+  text-align: left;
+  color: #8e8a74;
 }
 
-.swipe {
-  width: calc(66vw - 50px);
-  height: 100vh;
-  min-height: size(900);
-  top: 0;
-  left: 0;
-  object-fit: cover;
+.content {
+  width: size(635);
+  height: size(576);
+  top: size(292);
+  right: size(175);
+  padding-top: size(62);
 }
 
-.swipe-wrap {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
+.img-list {
+  width: size(400 * 3 + 20 * 2);
+  bottom: size(55);
+  left: size(180);
+  .img-item {
+    width: size(400);
 
-.swipe-item {
-  width: 100%;
-  height: 100%;
-  left: 100%;
-  object-fit: cover;
-  transition: left 1s ease-in-out;
-  z-index: 0;
-
-  &:nth-child(1) {
-    z-index: 1;
-    left: 0;
-  }
-
-  &.base {
-    z-index: 1;
-    left: 0;
-  }
-  &.active {
-    z-index: 2;
-    left: 0;
-  }
-}
-
-.pagination {
-  width: auto;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  justify-content: center;
-}
-
-.pagination-dot {
-  padding: 5px;
-  cursor: pointer;
-  z-index: 4;
-
-  span {
-    display: block;
-    width: 20px;
-    height: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 0 1px #fff;
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.01);
-    transition: all 0.5s;
-
-    &::before {
-      content: '';
-      width: 60%;
-      height: 60%;
-      display: block;
-      background: #fff;
-      border-radius: 20px;
-      opacity: 1;
-      position: absolute;
-      top: 20%;
-      // transform: translateY(-50%);
-      left: 20%;
-      transition: all 0.3s;
-      transform-origin: center;
-      transform: scale(0);
-    }
-    &.active {
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #fff;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transform: scale(1);
-      }
+    img {
+      width: 100%;
     }
   }
-}
 
-.swipe-btns {
-  width: 100%;
-  height: 100%;
-  padding: 0 15px;
-  z-index: 3;
-
-  .prev-btn,
-  .next-btn {
-    width: size(20);
-    cursor: pointer;
+  .txt {
+    left: size(20);
+    bottom: size(7);
+    font-size: size(13);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.64;
+    letter-spacing: 3.25px;
+    text-align: left;
+    color: #ffffff;
   }
 }
 
@@ -294,192 +262,87 @@
     width: 100vw;
     height: calc(100vh - 63px);
     min-height: auto;
-    // background-image: url('./s1/bg.jpg');
-    // background-size: cover;
+    // background-image: url('./s2/bg.jpg');
+    // background-size: 100% 100%;
+    // background-position: 0 0;
     // background-attachment: fixed;
-  }
-  .bg-img {
-    &:nth-child(1) {
-      display: none;
-    }
-  }
-  .txt {
-    width: 100vw;
-    height: auto;
-    top: size-m(24);
-    left: 0;
-    font-size: size-m(15);
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  .label1,
-  .label2 {
-    font-size: size-m(20);
-    width: 8em;
-    margin: 1em 0.25em;
-    display: inline-block;
-  }
-  .title {
-    font-size: 1.666em;
-    line-height: 1.44;
-  }
-
-  .desc {
-    width: size-m(310);
-    font-weight: normal;
-    line-height: 1.73;
-    text-align: justify;
-    margin: 0.8em 0 3em 0;
-  }
-
-  .swipe {
-    width: 100vw;
-    height: calc(100vh - 63px - 118vw);
-    top: size-m(382);
-    left: 0;
-    object-fit: cover;
-  }
-
-  .swipe-wrap {
-    width: 100%;
-    height: 100%;
     overflow: hidden;
   }
 
-  .swipe-item {
-    width: 100%;
-    height: 100%;
-    left: 100%;
-    transition: left 1s ease-in-out;
-    z-index: 0;
-
-    &.base {
-      z-index: 1;
-      left: 0;
-    }
-    &.active {
-      z-index: 2;
-      left: 0;
-    }
-  }
-
-  .pagination {
-    width: auto;
-    bottom: 10px;
+  .bg-img {
+    width: 100vw;
+    height: calc(100vh - 63px);
+    min-height: auto;
+    position: absolute;
+    display: block;
+    top: 0;
     left: 0;
-    right: 0;
-    margin: 0 auto;
-    justify-content: center;
-  }
+    object-fit: cover;
 
-  .pagination-dot {
-    padding: 5px;
-    cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width: 14px;
-      height: 14px;
-      border-radius: 14px;
-      box-shadow: 0 0 0 1px #fff;
+    &:nth-child(1) {
       position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
-      transition: all 0.5s;
-
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #fff;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transition: all 0.3s;
-        transform-origin: center;
-        transform: scale(0);
-      }
-      &.active {
-        &::before {
-          content: '';
-          width: 60%;
-          height: 60%;
-          display: block;
-          background: #fff;
-          border-radius: 20px;
-          opacity: 1;
-          position: absolute;
-          top: 20%;
-          // transform: translateY(-50%);
-          left: 23%;
-          transform: scale(1);
-        }
-      }
     }
   }
 
-  .swipe-btns {
-    width: 100%;
-    height: 100%;
-    padding: 0 10px;
-    z-index: 3;
-    display: none;
-
-    .prev-btn,
-    .next-btn {
-      width: size-m(15);
-      cursor: pointer;
+  .title {
+    width: size-m(268);
+    top: size-m(34);
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    li {
+      font-size: size-m(25);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.44;
+      letter-spacing: 2px;
+      text-align: center;
+      color: #231815;
+      white-space: nowrap;
     }
+  }
+
+  .desc {
+    bottom: size-m(26);
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    width: size-m(310);
+    font-size: size-m(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.73;
+    letter-spacing: 0.3px;
+    text-align: justify;
+    color: #ffffff;
   }
 }
 </style>
 <script>
 // @ is an alias to /src
 import { isMobile, isTablet } from '@/utils'
-import Parallax from 'vue-parallaxy'
-import slider from '@/mixins/slider.js'
 
 export default {
   name: 'section5',
-
-  mixins: [slider],
-
-  components: {
-    Parallax,
-  },
 
   data() {
     return {
       isMobile,
       isTablet,
-      slideList: [
+      img_list: [
         {
-          img: require('./s5/1.jpg'),
-          title: '亨大安森林第一環<br>學府搖籃的正軸心',
-          desc:
-            '【瑞安自在】緊鄰台北市立圖書館、文大城區部；兩大師範名校「師大、台北教育大學」等距抵達;台大近在心尺，加上知名中小學林立，所累積的文教風氣，不僅堪稱大安森林之首，放眼北市核心，也鮮少精華之地能像「瑞安街」如此奢侈、一次凝聚高等學府的雅量。',
+          img: require('./s5/2-1.jpg'),
+          txt: '羅東轉運站',
         },
         {
-          img: require('./s5/2.jpg'),
-          title: '老貴榮華清單<br>永康人文近取',
-          desc: '國家金質獎',
+          img: require('./s5/2-2.jpg'),
+          txt: '羅東車站',
         },
         {
-          img: require('./s5/3.jpg'),
-          title: '六大核心主脈<br>頂級生活間雲野鶴',
-          desc:
-            '【信義大道】豪宅軸線。人文永康商圈。直通台北101<br>【和平大道】文教地盤。師範學府質地。明星中小學群聚<br>【新生大道】學者之道。台大學術重鎮。享羅斯福路商圈<br>【建國大道】南北主幹、擁市立圖書館。近享仁愛路樹海<br>【復興大道】時尚聚落。速抵微風旗艦。SOGO一路通<br>【牧南大道】台化主流。近取遠企生活。近掌仁愛回環',
-        },
-        {
-          img: require('./s5/4.jpg'),
-          title: '入主大安森林第一環整個台北<br>優雅征服',
-          desc:
-            '和平束路、新生南路、建國南路、信義路四方大道簇擁，讓出門向左走、向右走，各有捷運科技大樓站、大安森林公園站，輕鬆迎接。不僅敦南大道、遠企牛活、復興微風、永康商圈、從容速達.連台北101、也一路通，快速納入居家購物圈。彰顯置身大安森林第一環，城市正核心的便捷生活力。',
+          img: require('./s5/2-3.jpg'),
+          txt: '台二線 示意圖',
         },
       ],
     }

@@ -11,6 +11,8 @@
       <h3
         class="order-title"
         v-html="order.title"
+        data-aos="fade-down"
+        data-aos-delay="0"
       ></h3>
       <div
         class="order-subtitle"
@@ -19,21 +21,30 @@
       <div class="order">
         <div class="form">
           <div class="group">
-            <div class="row">
+            <div
+              class="row"
+              data-aos="fade-down"
+              data-aos-delay="100"
+            >
               <label>姓名</label>
               <el-input
                 v-model="form.name"
                 placeholder
               ></el-input>
             </div>
-            <div class="row">
+            <div
+              class="row"
+              data-aos="fade-down"
+              data-aos-delay="200"
+            >
               <label>手機</label>
               <el-input
                 v-model="form.phone"
                 placeholder
               ></el-input>
             </div>
-            <!-- <div class="row">
+            <!-- <div class="row" data-aos="fade-down"
+        data-aos-delay="300">
               <label>聯絡時間(起)</label>
               <el-time-select
                 v-model="form.time_start"
@@ -45,7 +56,8 @@
                 }"
               ></el-time-select>
             </div>
-            <div class="row">
+            <div class="row" data-aos="fade-down"
+        data-aos-delay="400">
               <label>聯絡時間(迄)</label>
               <el-time-select
                 v-model="form.time_end"
@@ -73,9 +85,16 @@
               <label>E-mail</label>
               <el-input v-model="form.email" placeholder></el-input>
             </div> -->
-            <div class="row">
+            <div
+              class="row"
+              data-aos="fade-down"
+              data-aos-delay="300"
+            >
               <label>居住城市</label>
-              <el-select v-model="form.city" placeholder>
+              <el-select
+                v-model="form.city"
+                placeholder
+              >
                 <el-option
                   v-for="city in cityList"
                   :key="city.value"
@@ -85,9 +104,16 @@
                 ></el-option>
               </el-select>
             </div>
-            <div class="row">
+            <div
+              class="row"
+              data-aos="fade-down"
+              data-aos-delay="400"
+            >
               <label>居住地區</label>
-              <el-select v-model="form.area" placeholder>
+              <el-select
+                v-model="form.area"
+                placeholder
+              >
                 <el-option
                   v-for="area in areaList"
                   :key="area.value"
@@ -98,7 +124,11 @@
               </el-select>
             </div>
           </div>
-          <div class="group">
+          <div
+            class="group"
+            data-aos="fade-down"
+            data-aos-delay="600"
+          >
             <div class="row">
               <el-input
                 type="textarea"
@@ -109,7 +139,11 @@
             </div>
           </div>
         </div>
-        <div class="control">
+        <div
+          class="control"
+          data-aos="fade-down"
+          data-aos-delay="500"
+        >
           <el-checkbox v-model="checked">
             <h3>
               本人知悉並同意
@@ -121,6 +155,8 @@
         <div
           style="margin: 0 auto;z-index:2;"
           v-if="!isMobile"
+          data-aos="fade-down"
+          data-aos-delay="600"
         >
           <vue-recaptcha
             :sitekey="info.recaptcha_site_key_v2"
@@ -144,6 +180,8 @@
           :disabled="!checked || !isVerify"
           @click="submit"
           :loading="isSubmit"
+          data-aos="fade-down"
+          data-aos-delay="700"
         >預約賞屋</el-button>
         <Loading
           :loading="isSubmit"
@@ -317,21 +355,24 @@ export default {
   background-size: 100vw auto;
   // background-attachment: fixed;
   background-position: 0% 0%;
-  font-family:$family3;
+  font-family: $family3;
   input,
   textarea,
-  button{font-family:$family3;}
+  button {
+    font-family: $family3;
+  }
   .order-top {
     position: relative;
     overflow: hidden;
   }
   .order-title {
-  font-family:$family2;
+    font-family: $family2;
     width: 100vw;
     padding-top: 20px;
     padding-bottom: 8px;
-    font-weight: bold;
+    font-weight: 700;
     line-height: 1.3;
+    letter-spacing: 20px;
     font-size: calc(100vw * 36 / 1920);
     text-align: center;
     color: $order_title_color;
@@ -352,7 +393,7 @@ export default {
     display: flex;
     flex-direction: column;
     margin-bottom: 3rem;
-    justify-content:space-between;
+    justify-content: space-between;
   }
 
   .form {
@@ -360,7 +401,7 @@ export default {
     display: flex;
     align-items: flex-start;
     margin: 0 auto;
-    justify-content:space-between;
+    justify-content: space-between;
     > .group {
       flex: 1;
       align-items: flex-start;
@@ -404,6 +445,7 @@ export default {
       width: 92px;
       font-size: 16px;
       opacity: 0.8;
+      font-weight: bold;
       color: $order_input_label_color;
     }
   }

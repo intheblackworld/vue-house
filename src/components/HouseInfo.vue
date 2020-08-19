@@ -1,11 +1,27 @@
 <template>
-  <div class="house-info" id="house-info">
+  <div
+    class="house-info"
+    id="house-info"
+  >
     <div class="content">
-      <h3 class="title">建案資訊</h3>
+      <h3
+        class="title"
+        data-aos="fade-down"
+        data-aos-delay="0"
+      >建案資訊</h3>
       <div class="info">
-        <div class="item" :key="infos[0]" v-for="infos in houseInfos">
+        <div
+          class="item"
+          :key="infos[0]"
+          v-for="(infos, index) in houseInfos"
+          data-aos="fade-right"
+          :data-aos-delay="100 + index * 100"
+        >
           <h3 class="label">{{infos[0]}}</h3>
-          <p class="desc" v-html="infos[1]"></p>
+          <p
+            class="desc"
+            v-html="infos[1]"
+          ></p>
         </div>
       </div>
     </div>
@@ -34,7 +50,7 @@ export default {
 @import '@/assets/style/variableColor.scss';
 .house-info {
   width: 100vw;
- // background: $house_bg;
+  // background: $house_bg;
   position: relative;
   z-index: 1;
 }
@@ -54,6 +70,8 @@ export default {
   font-weight: 500;
   color: $house_title_color;
   font-family: $family3;
+  font-weight: bold;
+  letter-spacing: 15px;
 }
 
 .info {
@@ -67,13 +85,13 @@ export default {
   margin-right: 160px;
   width: 260px;
   height: 30px;
-    line-height: 1.4;
- //border-left: 4px solid $house_border_color;
-  padding-left: 0;
+  line-height: 1.4;
+  border-left: 4px solid $house_border_color;
+  padding-left: 10px;
   display: flex;
   align-items: center;
   white-space: nowrap;
-&::before{content: "";width: 4px;height: 1.4em;background:$house_border_color;margin: -1px 10px 0 0;position: relative;}
+  // &::before{content: "";width: 4px;height: 1.4em;background:$house_border_color;margin: -1px 10px 0 0;position: relative;}
   &:nth-of-type(even) {
     margin-right: 0;
   }
@@ -92,25 +110,28 @@ export default {
     text-align: left;
     color: $house_desc_color;
     font-family: $family3;
+    font-weight: bold;
   }
 }
 
 /* 螢幕尺寸標準 */
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
-  .content {height: calc(100vh - 103px);
+  .content {
+    height: calc(100vh - 103px);
     width: 100%;
     margin-bottom: 0;
     font-size: 15px; //內容字級
-    min-height: 35em;  //看內容多寡調整高度
+    min-height: 35em; //看內容多寡調整高度
   }
 
   .title {
     font-size: 32px;
-    margin:0.8em 0 0.5em 0;
+    margin: 0.8em 0 0.5em 0;
   }
 
-  .item {align-items:flex-start;
+  .item {
+    align-items: flex-start;
     margin: 0;
     width: 100%;
     height: auto;
@@ -119,9 +140,10 @@ export default {
   }
 
   .info {
-    width: 100%;flex: 1;
-    justify-content:space-around;
-    align-content:space-around;
+    width: 100%;
+    flex: 1;
+    justify-content: space-around;
+    align-content: space-around;
   }
 }
 

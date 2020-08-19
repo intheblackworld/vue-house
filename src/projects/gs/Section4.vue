@@ -2,62 +2,73 @@
   <div>
     <div class="section4">
       <img
-        src="./s4/bg1_01.png"
-        alt="bg"
-        class="bg-img"
+        src="./s4/1.jpg"
+        alt=""
+        class="one absolute"
+        data-aos="fade-right"
+        data-aos-delay="200"
+      >
+      <h3 class="txt txt-one absolute" data-aos="fade-right"
+          data-aos-delay="300">情境示意圖</h3>
+      <h3 class="title absolute" data-aos="fade-down"
+          data-aos-delay="400">弱水三千取一瓢</h3>
+      <div class="content absolute" data-aos="fade"
+          data-aos-delay="400">
+        <h3 class="subtitle" data-aos="fade-right"
+          data-aos-delay="600">約8分鐘生活圈<br />校園、商圈齊備</h3>
+        <h3 class="desc" data-aos="fade-right"
+          data-aos-delay="800">利澤國中、利澤國小、五結國中、五結國小….近在咫尺，生活機能便利、自然景點圍繞，近傳統藝術中心、親水公園自行車步道、利澤沙丘海岸，3分鐘五結市區、五結鄉行政中心、冬山河親水公園、羅東轉運站、羅東夜市、喜互惠、全聯、各大超商，6-7分鐘直達羅東市區。<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;羅東轉運站未來發展，目前有HOLA、特力屋、村却國際溫泉酒店，未來自辦興建轉運功能，納入商場、餐廳，規劃四樓做為餐廳與藝文空間、三樓小農市集、二樓餐廳與百貨賣場、一樓是轉運站，地下室則是停車空間，預計2021年完工。另未來計畫延伸鐵路3鐵共構(台鐵、直線鐵路、高鐵)，信大水泥進駐羅東後火車站等。
+        </h3>
+
+      </div>
+      <img
+        src="./deck/butterfly.png"
+        alt=""
+        class="butterfly absolute"
+        data-aos="fade"
+        data-aos-delay="800"
       >
       <img
-        src="./s4/map.png"
-        alt="瑞安自在環境區域圖"
-        data-aos="zoom-in"
-        data-aos-delay="200"
-        data-aos-duration="1000"
-        class="map-img absolute"
-        @click="isDialog = true"
+        src="./deck/tree.png"
+        alt=""
+        class="tree absolute"
+        data-aos="fade"
+        data-aos-delay="1000"
       >
-      <div class="button absolute" @click="isDialog = true"></div>
-      <div
-        class="dialog"
-        v-show="isDialog"
+      <img
+        src="./deck/leaf.png"
+        alt=""
+        class="leaf absolute"
+        data-aos="fade"
+        data-aos-delay="1100"
       >
-        <img
-          class="close"
-          @click="isDialog = false"
-          src="./all/close.png"
-          alt="close"
-        >
-        <img
-          src="./s4/map.png"
-          alt=""
-          class="dialog-map"
-        >
-      </div>
-      <div class="txt absolute">
-        <img
-          src="./s4/bg2.png"
-          alt="尊貴第一街 瑞安街"
-          data-aos="zoom-in"
-          data-aos-delay="400"
-          data-aos-duration="1000"
-          class="bubble absolute"
-        >
-        <h3
-          class="title"
+
+      <img
+        src="./deck/leaf.png"
+        alt=""
+        class="leaf2 absolute"
+        data-aos="fade"
+        data-aos-delay="1200"
+      >
+
+      <div class="img-list flex-ac flex-jb wrap absolute">
+        <div
+          class="img-item relative"
+          v-for="(item, index) in img_list"
+          :key="item.img"
           data-aos="fade-down"
-          data-aos-delay="600"
-          data-aos-duration="1000"
+          :data-aos-delay="600 + (index * 100)"
         >
-          尊貴第一街 瑞安街<br />
-          價值萬中選一 北市保值之珠
-        </h3>
-        <h3
-          class="desc"
-          data-aos="fade-down"
-          data-aos-delay="700"
-          data-aos-duration="1000"
-        >
-          瑞安街土地釋出少,百年濃郁的高官文人聚落,一且取得便深具珍藏價值,成為北市房產界，保值之珠。【瑞安自在】以最貼大安森林公園、取地難度最高的「尊貴第一街：瑞安街」不僅未來珍藏性超越同區「水牛書店豪宅群」更以滿定頂級客「人住城心、隱密自在」的尊榮感享有大安森林大道旁,得不到的居住等級。
-        </h3>
+          <img
+            :src="item.img"
+            alt=""
+          >
+          <h3
+            class="txt absolute"
+            v-html="item.txt"
+          ></h3>
+        </div>
       </div>
     </div>
   </div>
@@ -65,18 +76,16 @@
 
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
+
 .section4 {
   width: size(1920);
-  height: 100vh;
-  min-height: size(900);
+  height: size(684 + 283);
+  // min-height: size(900);
+  // background-image: url('./s2/bg.jpg');
+  // background-size: 100% 100%;
+  // background-position: 0 0;
+  // background-attachment: fixed;
   overflow: hidden;
-}
-
-.map-img {
-  height: size(900);
-  top: calc(50% - 23.44vw);
-  right: 45%;
-  object-fit: cover;
 }
 
 .bg-img {
@@ -90,55 +99,128 @@
   object-fit: cover;
 
   &:nth-child(1) {
-    top: auto;
-    bottom: 0;
-    left: auto;
-    right: 0;
-    height: auto;
+    position: relative;
   }
+}
+.one {
+  width: size(1020);
+  top: 0;
+  left: 0;
 }
 
 .txt {
-  width: size(760);
-  height: size(760);
-  top: calc(50% - 20vw);
-  left: 55%;
-  font-size: size(24);
-  font-weight: normal;
+  font-size: size(13);
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
+  line-height: 1.64;
+  letter-spacing: 3.31px;
+  text-align: left;
   color: #ffffff;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
 }
+
+.txt-one {
+  bottom: size(298);
+  left: size(922);
+}
+
+.butterfly {
+  width: size(93);
+  top: size(60);
+  right: size(341);
+}
+.tree {
+  width: size(144);
+  top: size(55);
+  right: size(203);
+}
+
+.leaf2 {
+  width: size(124);
+  bottom: size(114);
+  left: size(108);
+  transform: rotate(-90deg);
+}
+
+.leaf {
+  width: size(126);
+  top: size(500);
+  right: size(680);
+}
+
 .title {
-  //width: size(568);
-  font-size: 1.8em;
+  top: size(30);
+  right: size(801);
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-size: size(56);
   font-weight: bold;
-  line-height: 1.34;
-  letter-spacing: 0.08em;
-  text-align: center;
-  white-space: nowrap;
-  position: relative;
-  z-index: 2;
-  margin: 0 0 0.5em 0;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.32;
+  letter-spacing: 19.04px;
+  text-align: left;
+  color: #000000;
+}
+
+.subtitle {
+  font-size: size(30);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: 5.4px;
+  text-align: left;
+  color: #333333;
 }
 
 .desc {
-  width: 75%;
-  line-height: 2.05;
-  letter-spacing: 0.04em;
-  text-align: justify;
-  position: relative;
-  z-index: 2;
+  font-size: size(16);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.03;
+  letter-spacing: 0.64px;
+  text-align: left;
+  color: #8e8a74;
+  margin-bottom: size(20);
 }
 
-.bubble {
-  width: 100%;
-  top: size(0);
-  right: size(0);
+.content {
+  width: size(578);
+  height: size(578);
+  border: 7px solid #8e8a74;
+  top: size(45);
+  right: size(175);
+  padding: size(28);
+}
+
+.img-list {
+  width: size(357 * 4 + 20 * 3);
+  bottom: size(48);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  .img-item {
+    width: size(357);
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .txt {
+    left: size(20);
+    bottom: size(7);
+    font-size: size(13);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.64;
+    letter-spacing: 3.25px;
+    text-align: left;
+    color: #ffffff;
+  }
 }
 
 @media only screen and (max-width: 1440px) {
@@ -178,122 +260,73 @@
 
     &:nth-child(1) {
       position: relative;
-      display: none;
     }
   }
 
-  .map-img {
-    width: 100vw;
-    top: auto;
-    height: calc(100vh - 100vw);
-    bottom: 0;
-    left: size-m(0);
-    object-fit: cover;
-  }
-  .button {
-    background-color: #3aa7c299;
-    border-radius: 50%;
-    position: absolute;
-    width: 20vw;
-    height: 20vw;
-    bottom: calc(50vh - 60vw);
-    left: calc(50% - 10vw);
-    color: #fff;
-    &:before {
-      content: '';
-      background: currentColor;
-      width: 6%;
-      height: 60%;
-      position: absolute;
-      top: 20%;
-      left: 47%;
-    }
-    &:after {
-      content: '';
-      background: currentColor;
-      width: 60%;
-      height: 6%;
-      position: absolute;
-      top: 47%;
-      left: 20%;
-    }
-  }
-
-  .txt {
-    width: 100vw;
-    height: auto;
-    top: size-m(24);
-    left: 0;
-    font-size: size-m(15);
-    color: #000;
-  }
   .title {
-    font-size: 1.666em;
-    line-height: 1.44;
-    color: #a38057;
+    width: size-m(268);
+    top: size-m(34);
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    li {
+      font-size: size-m(25);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.44;
+      letter-spacing: 2px;
+      text-align: center;
+      color: #231815;
+      white-space: nowrap;
+    }
   }
 
   .desc {
+    bottom: size-m(26);
+    right: 0;
+    left: 0;
+    margin: 0 auto;
     width: size-m(310);
+    font-size: size-m(15);
     font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
     line-height: 1.73;
+    letter-spacing: 0.3px;
     text-align: justify;
-  }
-
-  .bubble {
-    display: none;
-  }
-
-  .dialog {
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.7);
-    overflow: scroll;
-
-    .slide-content {
-      left: 0;
-    }
-
-    .dialog-map {
-      width: auto;
-      height: 100vh;
-      background-color: #fff;
-    }
-
-    .close {
-      width: 35px;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 5px;
-      position: fixed;
-      right: 10px;
-      top: 10px;
-    }
+    color: #ffffff;
   }
 }
 </style>
 <script>
 // @ is an alias to /src
 import { isMobile, isTablet } from '@/utils'
-import Map from '@/components/Map.vue'
 
 export default {
   name: 'section4',
-
-  components: {
-    Map,
-  },
 
   data() {
     return {
       isMobile,
       isTablet,
-      isDialog: false,
-      title_list: [
-        '找不到理由投反對票⋯',
-        '當世界擁有一座森林 價值也找到永恆的晴空',
+      img_list: [
+        {
+          img: require('./s4/2-1.jpg'),
+          txt: '五結國小',
+        },
+        {
+          img: require('./s4/2-2.jpg'),
+          txt: '五結國中',
+        },
+        {
+          img: require('./s4/2-3.jpg'),
+          txt: '利澤國小',
+        },
+        {
+          img: require('./s4/2-4.jpg'),
+          txt: '利澤國中',
+        },
       ],
     }
   },

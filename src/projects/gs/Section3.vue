@@ -2,12 +2,93 @@
   <div>
     <div class="section3">
       <div class="top relative">
-        <img src="./s3/1.jpg" alt="" class="one absolute">
-        <img src="./s3/2.jpg" alt="" class="two absolute">
-        <img src="./s3/3.jpg" alt="" class="three absolute">
-        <h3 class="txt txt-one absolute">國立宜蘭傳統藝術中心</h3>
-        <h3 class="txt txt-two absolute">五結行政中心</h3>
-        <h3 class="txt txt-three absolute">冬山河親水公園</h3>
+        <img
+          src="./s3/1.jpg"
+          alt=""
+          class="one absolute"
+          data-aos="fade-right"
+          data-aos-delay="0"
+        >
+        <img
+          src="./s3/2.jpg"
+          alt=""
+          class="two absolute"
+          data-aos="fade-down"
+          data-aos-delay="200"
+        >
+        <img
+          src="./s3/3.jpg"
+          alt=""
+          class="three absolute"
+          data-aos="fade-down"
+          data-aos-delay="400"
+        >
+        <h3 class="txt txt-one absolute" data-aos="fade-right"
+          data-aos-delay="100">國立宜蘭傳統藝術中心</h3>
+        <h3 class="txt txt-two absolute" data-aos="fade-right"
+          data-aos-delay="300">五結行政中心</h3>
+        <h3 class="txt txt-three absolute" data-aos="fade-right"
+          data-aos-delay="500">冬山河親水公園</h3>
+      </div>
+      <div class="bottom relative">
+        <img
+          src="./deck/butterfly.png"
+          alt=""
+          class="butterfly absolute"
+          data-aos="fade"
+          data-aos-delay="200"
+        >
+        <img
+          src="./deck/line.png"
+          alt=""
+          class="line absolute"
+          data-aos="fade"
+          data-aos-delay="400"
+        >
+        <img
+          src="./deck/leaf.png"
+          alt=""
+          class="leaf absolute"
+          data-aos="fade"
+          data-aos-delay="600"
+        >
+        <img
+          src="./s3/4.jpg"
+          alt=""
+          class="four absolute"
+          data-aos="fade-down"
+          data-aos-delay="600"
+        >
+        <img
+          src="./s3/5.jpg"
+          alt=""
+          class="five absolute"
+          data-aos="fade-down"
+          data-aos-delay="800"
+        >
+        <h3 class="txt txt-four absolute" data-aos="fade-right"
+          data-aos-delay="500">便利商店</h3>
+        <h3 class="txt txt-five absolute" data-aos="fade-right"
+          data-aos-delay="900">羅東夜市</h3>
+        <h3 class="title absolute" data-aos="fade-down"
+          data-aos-delay="200">走遍大城居小城</h3>
+        <div class="content absolute">
+          <h3 class="subtitle" data-aos="fade-right"
+          data-aos-delay="200">靜享五結鄉居悠然情調</h3>
+          <h3 class="smalltitle" data-aos="fade-right"
+          data-aos-delay="400">宜居宜遊宜置產</h3>
+          <h3 class="desc" data-aos="fade-right"
+          data-aos-delay="600">宜蘭縣以觀光立縣，文創結合旅遊、觀光交通動線，致力於環境美化，推展生活多元化、休閒多樣化。宜蘭縣並且為全台投資保障最高的地區之一、擁有令人嚮往的風土民情，兼具交通、自然環境、人文氣息自成一格。<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;年度旅客人次最多的3大景點為「冬山河親水公園」、「傳統藝術中心」和「梅花湖」，【小城故事】就位於其中兩處周邊，宜居宜遊宜置產，追求多元房產效益的首選。
+          </h3>
+
+          <h3 class="subtitle" data-aos="fade-right"
+          data-aos-delay="700">約3分鐘宜蘭人氣No.1羅東夜市 </h3>
+          <h3 class="smalltitle" data-aos="fade-right"
+          data-aos-delay="900">人潮錢潮含金量超高地段</h3>
+          <h3 class="desc" data-aos="fade-right"
+          data-aos-delay="1100">國5雪隧開通，帶動宜蘭觀光潮，週休2日小型度假、雙北休閒養生輕移民，帶動人潮錢潮湧入。羅東夜市排隊美食，小春糕渣卜肉、照燒皮蛋、羅東肉羹番國宴上等肉捲七巧味、三星蔥多餅、鄭記潤餅捲、嘟好燒、皇佳三星蔥肉串、阿灶伯當歸羊肉、羅東紅豆湯圓、東山鴨頭…..美食環繞、商機無限。</h3>
+        </div>
       </div>
     </div>
   </div>
@@ -88,6 +169,103 @@
 .txt-three {
   bottom: size(20);
   right: size(630);
+}
+
+.bottom {
+  width: 100vw;
+  height: size(577);
+  background-color: #fff;
+}
+
+.four {
+  width: size(575);
+  top: size(0);
+  right: size(182);
+}
+.five {
+  width: size(575);
+  top: size(276);
+  right: size(182);
+}
+
+.txt-four {
+  top: size(237);
+  right: size(655);
+}
+
+.txt-five {
+  top: size(507);
+  right: size(655);
+}
+.butterfly {
+  width: size(106);
+  top: size(307);
+  right: size(926);
+}
+.line {
+  width: size(565);
+  top: size(366);
+  right: size(679);
+}
+.leaf {
+  width: size(167);
+  top: size(338);
+  right: size(757);
+}
+
+.title {
+  top: size(20);
+  left: size(221);
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-size: size(56);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.32;
+  letter-spacing: 19.04px;
+  text-align: left;
+  color: #000000;
+}
+
+.subtitle {
+  font-size: size(30);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: 5.4px;
+  text-align: left;
+  color: #333333;
+}
+
+.smalltitle {
+  font-size: size(24);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.74;
+  letter-spacing: 4.32px;
+  text-align: left;
+  color: #8e8a74;
+}
+
+.desc {
+  font-size: size(16);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.03;
+  letter-spacing: 0.64px;
+  text-align: left;
+  color: #8e8a74;
+  margin-bottom: size(20);
+}
+
+.content {
+  width: size(570);
+  top: size(29);
+  left: size(355);
 }
 
 @media only screen and (max-width: 1440px) {

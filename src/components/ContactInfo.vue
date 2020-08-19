@@ -1,15 +1,23 @@
 <template>
   <div>
-    <div class="contact-info">
+    <div
+      class="contact-info"
+      data-aos="fade"
+      data-aos-delay="0"
+    >
       <img
         class="logo"
         src="@/assets/img/contact-logo.png"
         :alt="info.caseName"
+        data-aos="fade-down"
+        data-aos-delay="0"
       />
       <div class="info">
         <div
           class="btn flex-c"
           @click="showCallDialog"
+          data-aos="fade-down"
+          data-aos-delay="100"
         >
           <span class="flex-c">
             <font-awesome-icon icon="phone" />
@@ -19,6 +27,8 @@
         <div
           class="btn flex-c"
           @click="showMessengerDialog"
+          data-aos="fade-down"
+          data-aos-delay="200"
         >
           <span class="flex-c">
             <font-awesome-icon :icon="['fab', 'facebook-messenger']" /><span>FB 諮詢</span>
@@ -28,14 +38,22 @@
           class="btn flex-c"
           :href="info.fbLink"
           target="_blank"
+          data-aos="fade-down"
+          data-aos-delay="300"
         >
           <span class="flex-c">
             <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
           </span>
         </a>
-        <div class="address flex-c">{{info.address}}</div>
+        <div
+          class="address flex-c"
+          data-aos="fade-down"
+          data-aos-delay="400"
+        >{{info.address}}</div>
         <div
           class="google-btn flex-c"
+          data-aos="fade-down"
+          data-aos-delay="400"
           @click="showMapDialog"
         >
           <span class="flex-c">
@@ -132,7 +150,7 @@ export default {
   position: relative;
   z-index: 3;
   width: 1200px;
-  height: 500px;
+  height: 337px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
@@ -169,6 +187,7 @@ export default {
   position: relative;
   overflow: hidden;
   font-weight: 600;
+  border-radius: 18px;
   &.half {
     width: 49%;
   }
@@ -214,6 +233,10 @@ export default {
   width: 600px;
   height: 60px;
   background: #fff;
+  color: $contact_btn_color;
+  font-weight: bold;
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
   //box-shadow: $contact_btn_border;
 }
 .google-btn {
@@ -224,6 +247,8 @@ export default {
   text-decoration: none;
   color: $contact_google_btn_color;
   background: $contact_google_btn_bg;
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
   background-position: center !important;
   // box-shadow: $contact_btn_border;
   transition: all 0.5s;
