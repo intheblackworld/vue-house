@@ -6,21 +6,19 @@
         alt=""
         class="bg-img"
       >
-      <div class="txt absolute">
+      <div class="txt absolute"
+          data-aos="fade-down"
+          data-aos-delay="700">
         <h3 :class="`label1 ${(slideIndex < 2) ? 'active' : ''}`" @click="goTo(0)">人文區
         </h3>
         <h3 :class="`label2 ${slideIndex >= 2 ? 'active' : ''}`"  @click="goTo(2)">大台北交通</h3>
         <h3
           class="title"
-          data-aos="fade-down"
-          data-aos-delay="600"
           v-html="slideList[slideIndex].title"
         ></h3>
         <!-- v-html="slide.title" -->
         <p
           class="desc"
-          data-aos="fade-down"
-          data-aos-delay="700"
           v-html="slideList[slideIndex].desc"
         ></p>
       </div>
@@ -133,11 +131,11 @@
 }
 
 .txt {
-  width: 26%;
+  width: 28%;
   height: 100%;
   top: 0;
   right: calc(3.5% + 50px);
-  font-size: size(24);
+  font-size: size(20);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -149,7 +147,7 @@
   justify-content: center;
 }
 .title {
-  font-size: 1.8em;
+  font-size: 2em;
   font-weight: bold;
   line-height: 1.34;
   letter-spacing: 0.08em;
@@ -164,6 +162,7 @@
   letter-spacing: 0.04em;
   text-align: justify;
   margin: 0 0 3em 0;
+  min-height:14em;
 }
 
 .swipe {
@@ -228,7 +227,7 @@
     background-color: rgba(0, 0, 0, 0.01);
     transition: all 0.5s;
 
-    &::before {
+    &::before { 
       content: '';
       width: 60%;
       height: 60%;
@@ -308,7 +307,7 @@
     height: auto;
     top: size-m(24);
     left: 0;
-    font-size: size-m(15);
+    font-size: size-m(14);
     flex-direction: row;
     flex-wrap: wrap;
   }
@@ -321,22 +320,25 @@
     display: inline-block;
   }
   .title {
-    font-size: 1.666em;
+    font-size:1.9em;
     line-height: 1.44;
+  transform: scaleX(.9);
   }
 
   .desc {
-    width: size-m(310);
+    width: size-m(350);
     font-weight: normal;
-    line-height: 1.73;
+    line-height: 1.7;
     text-align: justify;
-    margin: 0.8em 0 3em 0;
+    margin: 0.0em 1em 3em 0;
+  letter-spacing: 0em;
+  transform: scaleX(.9);
   }
 
   .swipe {
     width: 100vw;
-    height: calc(100vh - 63px - 118vw);
-    top: size-m(382);
+    height: calc(100vh - 63px - 110vw);
+    top: size-m(360);
     left: 0;
     object-fit: cover;
   }
@@ -467,7 +469,7 @@ export default {
         {
           img: require('./s5/2.jpg'),
           title: '老貴榮華清單<br>永康人文近取',
-          desc: '國家金質獎',
+          desc: '大安森林公園的行在,不僅為地產價值劃位頭等艙也為人文生活食尚,劃下菁英品味的清單。讓享受「政要的私廚國度—永康食尚」、「學者的安逸原鄉—青田人文、近近徜徉「貴婦談心的秘密化園—瑞安水牛書店」化為美好日常風光以完整接收北市最優等的慢活場域,展開傲人的城市散策。',
         },
         {
           img: require('./s5/3.jpg'),

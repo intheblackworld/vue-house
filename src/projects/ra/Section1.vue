@@ -42,6 +42,7 @@
         data-aos-duration="1000"
       >
       <div
+        v-if="!isMobile"
         class="btn flex-c absolute"
         data-aos="fade-down"
         data-aos-delay="1000"
@@ -82,10 +83,7 @@
 .section1 {
   width: size(1920);
   height: 100vh;
-  min-height: 900px;
-  background-image: url('./s1/bg.png');
-  background-size: cover;
-  background-attachment: fixed;
+background: linear-gradient(to bottom, #84bae7 0%,#aff1ff 34%,#ffffff 100%);
   overflow: hidden;
 }
 
