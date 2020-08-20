@@ -115,15 +115,18 @@
           <div
             class="img-title"
             v-html="slide.title"
+              data-swiper-parallax="-200"
           ></div>
           <div class="border absolute">
             <h3
               class="subtitle"
+              data-swiper-parallax="-100"
               v-html="slide.subtitle"
             >
             </h3>
             <p
               class="desc"
+              data-swiper-parallax="-300"
               v-html="slide.desc"
             >
             </p>
@@ -231,6 +234,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  font-size: size(20);
 }
 
 .subtitle {
@@ -246,7 +250,6 @@
 }
 
 .desc {
-  font-size: size(20);
   line-height: 2.05;
   letter-spacing: 0.0em;
   text-align: justify;
@@ -301,7 +304,7 @@
   }
 
   .title {
-    width: sizem(214);
+    width:100%;
     top: sizem(85);
     left: 0;
     right: 0;
@@ -325,25 +328,26 @@
   }
 
   .border {
-    width: sizem(250);
+    width: sizem(290);
     height: auto;
     top: sizem(340);
     right: 0;
-    left: 0;
+    left: sizem(-20);
     margin: 0 auto;
     border: none;
     padding: 0;
+    font-size: sizem(16);
   }
 
   .subtitle {
     color: #000;
-    font-size: sizem(20);
+    font-size: 1.25em;
     line-height: 1.44;
-    text-align: left;
+    text-align: center;
+    width: sizem(375);
   }
 
   .desc {
-    font-size: sizem(15);
     font-weight: normal;
     line-height: 1.73;
     text-align: justify;
@@ -372,9 +376,10 @@
     margin-bottom: size(15);
     position: absolute;
     top: sizem(-61);
-    left: 0;
+    left:size-m(-62.5);
     right: 0;
     margin: 0 auto;
+    width:size-m(375);
   }
 }
 </style>
@@ -404,6 +409,7 @@ export default {
         allowSlidePrev: isMobile ? true : true,
         allowSlideNext: isMobile ? true : true,
         centeredSlides: true,
+        parallax: true,
         autoplay: {
           delay: 4000,
           disableOnInteraction: true,
