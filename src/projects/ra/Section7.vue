@@ -14,7 +14,8 @@
         alt=""
         class="bg-img"
       >
-      <ul class="title absolute">
+       <h3 class="title absolute">富貴種子聚首瑞安<br>大器翡玉風雅之最</h3>
+    <!--  <ul class="title absolute">
         <li
           v-for="(text, index) in title_list"
           data-aos="fade-down"
@@ -22,7 +23,7 @@
           data-aos-duration="600"
           :key="text"
         >{{text}}</li>
-      </ul>
+      </ul> -->
       <h3
         class="desc absolute"
         data-aos="fade-down"
@@ -68,17 +69,17 @@
   width: size(300);
   top: size(97);
   left: size(255);
+  font-size: size(35);
+  line-height: 1.65;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: 0.08em;
+  text-align: center;
+  color: #ffffff;
+  white-space: nowrap;
 
   li {
-    font-size: size(35);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.65;
-    letter-spacing: 2.8px;
-    text-align: center;
-    color: #ffffff;
-    white-space: nowrap;
   }
 }
 
@@ -129,25 +130,13 @@
       position: relative;
     }
   }
-
-  .title {
+.title {
     width: sizem(214);
     top: sizem(62);
     left: sizem(80);
-
-    li {
-      font-size: sizem(25);
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.44;
-      letter-spacing: 2px;
-      text-align: center;
-      color: #ffffff;
-      color: #ffffff;
-      white-space: nowrap;
-    }
-  }
+font-size: sizem(25);
+  line-height: 1.4;
+}
 
   .desc {
     width: sizem(310);

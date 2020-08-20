@@ -28,7 +28,7 @@
         data-aos-delay="600"
         data-aos-duration="600"
       >
-        無敵的大安森林,視野秒秒都在踏青。不必婉美紐約中央公園、不必遙想倫敦海德公園、不必儕身「高持有稅」的大安森林大道,隱忍百户紛擾，這裡才是富貴人家高端置產的秘境！以「低持有税、人文精工、頂級到位」超越大道地產學,為入主大安森林第一環名宅群,開創珍稀入手的優勢,預見未來財高追漲的自由。
+        無敵的大安森林，視野秒秒都在踏青。不必婉美紐約中央公園、不必遙想倫敦海德公園、不必儕身「高持有稅」的大安森林大道，隱忍百户紛擾，這裡才是富貴人家高端置產的秘境！以「低持有税、人文精工、頂級到位」超越大道地產學，為入主大安森林第一環名宅群，開創珍稀入手的優勢，預見未來財高追漲的自由。
       </h3>
     </div>
   </div>
@@ -85,15 +85,15 @@
 .desc {
   bottom: size(60);
   right: size(74);
-  width: size(484);
+  width: size(500);
   font-size: size(20);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 2.08;
   letter-spacing: 0.4px;
-  text-align: left;
-  color: #ffffff;
+  text-align: justify;
+  color: #ffffff;z-index: 2;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -166,7 +166,7 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.73;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.05em;
     text-align: justify;
     color: #ffffff;
   }

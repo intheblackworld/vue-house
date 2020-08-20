@@ -13,12 +13,12 @@
           data-aos-delay="600"
           v-html="slideList[slideIndex].title"
         ></h3>
-        <p
+        <ul
           class="desc"
           data-aos="fade-left"
           data-aos-delay="700"
-          v-html="slideList[slideIndex].desc"
-        ></p>
+        ><li>室內減少小樑、大器動線、放大空間效果。領略貴氣舒張於氣流中</li><li>享客廳，境與景的豐藏，大隱於市景觀露台。每個房間，櫃體與床自在無拘</li><li>尊榮21戶、單層雙户雙電梯、全坡平車位，更顯好人家的尊榮氣度</li>
+      </ul>
       </div>
       <h3
         class="title absolute"
@@ -27,13 +27,13 @@
         v-html="slideList[slideIndex].title"
         v-if="isMobile"
       ></h3>
-      <p
+      <ul
         class="desc absolute"
         data-aos="fade-left"
         data-aos-delay="700"
-        v-html="slideList[slideIndex].desc"
         v-if="isMobile"
-      ></p>
+      ><li>室內減少小樑、大器動線、放大空間效果。領略貴氣舒張於氣流中</li><li>享客廳，境與景的豐藏，大隱於市景觀露台。每個房間，櫃體與床自在無拘</li><li>尊榮21戶、單層雙户雙電梯、全坡平車位，更顯好人家的尊榮氣度</li>
+      </ul>
       <div
         class="swipe absolute"
         data-aos="fade-right"
@@ -134,7 +134,8 @@
   line-height: 1.98;
   letter-spacing: 2px;
   text-align: left;
-  color: #ffffff;
+  color: #ffffff;list-style: disc;margin: 0 0 0 0.8em;
+  li{margin:0 0 0.5em 0;}
 }
 
 .swipe {
@@ -426,32 +427,23 @@ export default {
         {
           img: require('./s9/0.jpg'),
           title: '三面6.5米深凹窗  身心徜徉綠意藍天',
-          desc:
-            '．室內減少小樑、大器動線、放大空間效果。領略貴氣舒張於氣流中<br />．享客廳，境與景的豐藏，大隱於市景觀露台。每個房間，櫃體與床自在無拘<br />．尊榮21戶、單層雙户雙電梯、全坡平車位，更顯好人家的尊榮氣度',
         },
         {
           img: require('./s9/1.jpg'),
           title: '三面6.5米深凹窗  身心徜徉綠意藍天',
-          desc:
-            '．室內減少小樑、大器動線、放大空間效果。領略貴氣舒張於氣流中<br />．享客廳，境與景的豐藏，大隱於市景觀露台。每個房間，櫃體與床自在無拘<br />．尊榮21戶、單層雙户雙電梯、全坡平車位，更顯好人家的尊榮氣度',
         },
         {
           img: require('./s9/2.jpg'),
           title: '三面6.5米深凹窗  身心徜徉綠意藍天',
-          desc:
-            '．室內減少小樑、大器動線、放大空間效果。領略貴氣舒張於氣流中<br />．享客廳，境與景的豐藏，大隱於市景觀露台。每個房間，櫃體與床自在無拘<br />．尊榮21戶、單層雙户雙電梯、全坡平車位，更顯好人家的尊榮氣度',
         },
         {
           img: require('./s9/3.jpg'),
           title: '三面6.5米深凹窗  身心徜徉綠意藍天',
-          desc:
-            '．室內減少小樑、大器動線、放大空間效果。領略貴氣舒張於氣流中<br />．享客廳，境與景的豐藏，大隱於市景觀露台。每個房間，櫃體與床自在無拘<br />．尊榮21戶、單層雙户雙電梯、全坡平車位，更顯好人家的尊榮氣度',
+          
         },
         {
           img: require('./s9/4.jpg'),
           title: '三面6.5米深凹窗  身心徜徉綠意藍天',
-          desc:
-            '．室內減少小樑、大器動線、放大空間效果。領略貴氣舒張於氣流中<br />．享客廳，境與景的豐藏，大隱於市景觀露台。每個房間，櫃體與床自在無拘<br />．尊榮21戶、單層雙户雙電梯、全坡平車位，更顯好人家的尊榮氣度',
         },
       ],
     }
