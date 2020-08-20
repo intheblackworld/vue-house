@@ -135,7 +135,7 @@
   letter-spacing: 2px;
   text-align: left;
   color: #ffffff;list-style: disc;margin: 0 0 0 0.8em;
-  li{margin:0 0 0.5em 0;}
+  li{margin:0 0 0.5em 0;list-style:inherit;}
 }
 
 .swipe {
