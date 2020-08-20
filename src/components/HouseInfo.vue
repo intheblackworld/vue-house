@@ -69,11 +69,12 @@ export default {
   height: 30px;
     line-height: 1.4;
  //border-left: 4px solid $house_border_color;
-  padding-left: 0;
+  padding-left: 1em;
+  position: relative;
   display: flex;
   align-items: center;
   white-space: nowrap;
-&::before{content: "";width: 4px;height: 1.4em;background:$house_border_color;margin: -1px 10px 0 0;position: relative;}
+&::before{content: "";width: 4px;height: 1.4em;background:$house_border_color;margin: -1px 10px 0 0;position: absolute;top:calc(50% - 0.7em);left: 0;}
   &:nth-of-type(even) {
     margin-right: 0;
   }
