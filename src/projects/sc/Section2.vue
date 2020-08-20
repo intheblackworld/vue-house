@@ -16,7 +16,7 @@
         @mouseenter.stop="toggleTimer = false"
         @mouseleave.stop="toggleTimer = true"
       >
-        <div class="swipe-wrap relative">
+        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <img
             v-for="(slide, i) in slideList"
             :src="slide.img"
@@ -327,7 +327,7 @@
 <script>
 // @ is an alias to /src
 import { isMobile, isTablet } from '@/utils'
-import Parallax from 'vue-parallaxy'
+// import Parallax from 'vue-parallaxy'
 import slider from '@/mixins/slider.js'
 
 export default {
@@ -335,9 +335,9 @@ export default {
 
   mixins: [slider],
 
-  components: {
-    Parallax,
-  },
+  // components: {
+  //   Parallax,
+  // },
 
   data() {
     return {
