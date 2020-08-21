@@ -13,7 +13,7 @@
             class="menu"
             @click="toggleSidebar"
           >
-            <!-- font-awesome-icon icon="bars" / -->
+            <font-awesome-icon icon="bars" />
           </div>
           <div
             :class="`mask ${isOpen ? 'open' : ''}`"
