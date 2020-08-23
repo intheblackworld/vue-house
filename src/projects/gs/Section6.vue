@@ -14,10 +14,22 @@
             :key="slide.img"
             :class="`swipe-item absolute ${slideIndex === i ? 'active' : ''} ${(slideIndex === (i + 1) || slideIndex === (i - slideList.length + 1)) ? 'base' : ''}`"
           >
-            <img :src="slide.img" alt="">
-            <h3 :class="`absolute title title${i + 1}`" v-html="slide.title"></h3>
-            <h3 :class="`absolute subtitle subtitle${i + 1}`" v-html="slide.subtitle"></h3>
-            <h3 :class="`absolute desc desc${i + 1}`" v-html="slide.desc"></h3>
+            <img
+              :src="slide.img"
+              alt=""
+            >
+            <h3
+              :class="`absolute title title${i + 1}`"
+              v-html="slide.title"
+            ></h3>
+            <h3
+              :class="`absolute subtitle subtitle${i + 1}`"
+              v-html="slide.subtitle"
+            ></h3>
+            <h3
+              :class="`absolute desc desc${i + 1}`"
+              v-html="slide.desc"
+            ></h3>
           </div>
           <div class="pagination absolute flex-ac">
             <div
@@ -68,10 +80,10 @@
   object-fit: cover;
 
   &:nth-child(1) {
-  top: 0;
-  left: auto;
-  right: 0;
-  height: auto;
+    top: 0;
+    left: auto;
+    right: 0;
+    height: auto;
   }
 }
 
@@ -225,17 +237,20 @@
   color: #ffffff;
 }
 
-.title1, .title3 {
+.title1,
+.title3 {
   top: size(72);
   right: size(290);
 }
 
-.subtitle1, .subtitle3 {
+.subtitle1,
+.subtitle3 {
   top: size(216);
   right: size(214);
 }
 
-.desc1, .desc3 {
+.desc1,
+.desc3 {
   top: size(270);
   right: size(200);
 }
@@ -274,35 +289,14 @@
     height: calc(100vh - 63px);
     min-height: auto;
   }
-.img {display: none;
-}
-
-
-.txt {
-  width:100vw;
-  height:auto;
-  top: size-m(24);
-  left: 0;
-  font-size: size-m(15);
-  color: #000;
-}
-  .title {
-  font-size: 1.666em;
-    line-height: 1.44;
-    color: #a38057;
-  }
-
-  .desc {
-    width: size-m(310);
-    font-weight: normal;
-    line-height: 1.73;
-    text-align: justify;
+  .img {
+    display: none;
   }
 
   .swipe {
     width: 100vw;
-    height: calc(100vh - 63px - 90vw);
-    top: sizem(335);
+    height: calc(100vh - 63px);
+    top: 0;
     left: 0;
     object-fit: cover;
   }
@@ -313,23 +307,23 @@
     overflow: hidden;
   }
 
-  .swipe-item {
-    width: 100%;
-    height: 100%;
-    left: 100%;
-    transition: left 1s ease-in-out;
-    z-index: 0;
-    object-fit: cover;
+  // .swipe-item {
+  //   width: 100%;
+  //   height: 100%;
+  //   left: 100%;
+  //   transition: left 1s ease-in-out;
+  //   z-index: 0;
+  //   object-fit: cover;
 
-    &.base {
-      z-index: 1;
-      left: 0;
-    }
-    &.active {
-      z-index: 2;
-      left: 0;
-    }
-  }
+  //   &.base {
+  //     z-index: 1;
+  //     left: 0;
+  //   }
+  //   &.active {
+  //     z-index: 2;
+  //     left: 0;
+  //   }
+  // }
 
   .pagination {
     width: auto;
@@ -338,6 +332,7 @@
     right: 0;
     margin: 0 auto;
     justify-content: center;
+    display: none;
   }
 
   .pagination-dot {
@@ -395,13 +390,74 @@
     height: 100%;
     padding: 0 10px;
     z-index: 3;
-    display: none;
 
     .prev-btn,
     .next-btn {
       width: size-m(15);
       cursor: pointer;
     }
+  }
+
+  .title {
+    text-shadow: 1px 1px 7px rgba(21, 32, 68, 0.8);
+    font-size: sizem(25);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.44;
+    letter-spacing: 2px;
+    text-align: left;
+    color: #ffffff;
+  }
+
+  .subtitle {
+    text-shadow: 1px 1px 7px rgba(21, 32, 68, 0.8);
+    font-size: sizem(20);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.45;
+    letter-spacing: 1.6px;
+    text-align: left;
+    color: #ffffff;
+    white-space: nowrap;
+  }
+
+  .desc {
+    text-shadow: 1px 1px 7px rgba(21, 32, 68, 0.8);
+    font-size: sizem(16);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.03;
+    letter-spacing: 0.96px;
+    text-align: left;
+    color: #ffffff;
+  }
+
+  .title1,
+  .title2,
+  .title3 {
+    top: sizem(92);
+    right: auto;
+    left: sizem(26);
+  }
+
+  .subtitle1,
+  .subtitle2,
+  .subtitle3 {
+    top: sizem(172);
+    right: auto;
+    left: sizem(26);
+  }
+
+  .desc1,
+  .desc2,
+  .desc3 {
+    width: sizem(330);
+    top: sizem(216);
+    right: auto;
+    left: sizem(26);
   }
 }
 </style>
@@ -426,22 +482,22 @@ export default {
       isTablet,
       slideList: [
         {
-          img: require('./s6/1.jpg'),
+          img: isMobile ? require('./mo/6/1.jpg') : require('./s6/1.jpg'),
           title: '有天有地有風采<br />現代簡約建築美學',
           subtitle: '29-62坪 時尚電梯別墅、華廈',
-          desc: '適合投資、置產、退休、閑居、度假族群，暢享田園度假悠適人生'
+          desc: '適合投資、置產、退休、閑居、度假族群，暢享田園度假悠適人生',
         },
         {
-          img: require('./s6/2.jpg'),
+          img: isMobile ? require('./mo/6/2.jpg') : require('./s6/2.jpg'),
           title: '有天有地有風采<br />現代簡約建築美學',
           subtitle: '29-62坪 時尚電梯別墅、華廈',
-          desc: '適合投資、置產、退休、閑居、度假族群，暢享田園度假悠適人生'
+          desc: '適合投資、置產、退休、閑居、度假族群，暢享田園度假悠適人生',
         },
         {
-          img: require('./s6/3.jpg'),
+          img: isMobile ? require('./mo/6/3.jpg') : require('./s6/3.jpg'),
           title: '有天有地有風采<br />現代簡約建築美學',
           subtitle: '29-62坪 時尚電梯別墅、華廈',
-          desc: '適合投資、置產、退休、閑居、度假族群，暢享田園度假悠適人生'
+          desc: '適合投資、置產、退休、閑居、度假族群，暢享田園度假悠適人生',
         },
       ],
     }

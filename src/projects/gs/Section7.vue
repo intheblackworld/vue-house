@@ -298,8 +298,8 @@
 
   .swipe {
     width: 100vw;
-    height: calc(100vh - 63px - 90vw);
-    top: sizem(335);
+    height: calc(100vh - 63px);
+    top: sizem(0);
     left: 0;
     object-fit: cover;
   }
@@ -310,23 +310,23 @@
     overflow: hidden;
   }
 
-  .swipe-item {
-    width: 100%;
-    height: 100%;
-    left: 100%;
-    transition: left 1s ease-in-out;
-    z-index: 0;
-    object-fit: cover;
+  // .swipe-item {
+  //   width: 100%;
+  //   height: 100%;
+  //   left: 100%;
+  //   transition: left 1s ease-in-out;
+  //   z-index: 0;
+  //   object-fit: cover;
 
-    &.base {
-      z-index: 1;
-      left: 0;
-    }
-    &.active {
-      z-index: 2;
-      left: 0;
-    }
-  }
+  //   &.base {
+  //     z-index: 1;
+  //     left: 0;
+  //   }
+  //   &.active {
+  //     z-index: 2;
+  //     left: 0;
+  //   }
+  // }
 
   .pagination {
     width: auto;
@@ -335,6 +335,7 @@
     right: 0;
     margin: 0 auto;
     justify-content: center;
+    display: none;
   }
 
   .pagination-dot {
@@ -392,10 +393,11 @@
     height: 100%;
     padding: 0 10px;
     z-index: 3;
-    display: none;
 
     .prev-btn,
     .next-btn {
+      background-color:rgba(0, 0, 0, 0.3);
+      padding: 5px;
       width: size-m(15);
       cursor: pointer;
     }
@@ -423,22 +425,13 @@ export default {
       isTablet,
       slideList: [
         {
-          img: require('./s7/1.jpg'),
-          title: '有天有地有風采<br />現代簡約建築美學',
-          subtitle: '29-62坪 時尚電梯別墅、華廈',
-          desc: '適合投資、置產、退休、閑居、度假族群，暢享田園度假悠適人生'
+          img: isMobile ? require('./mo/7/1.jpg') : require('./s7/1.jpg'),
         },
         {
-          img: require('./s7/2.jpg'),
-          title: '有天有地有風采<br />現代簡約建築美學',
-          subtitle: '29-62坪 時尚電梯別墅、華廈',
-          desc: '適合投資、置產、退休、閑居、度假族群，暢享田園度假悠適人生'
+          img: isMobile ? require('./mo/7/2.jpg') : require('./s7/2.jpg'),
         },
         {
-          img: require('./s7/3.jpg'),
-          title: '有天有地有風采<br />現代簡約建築美學',
-          subtitle: '29-62坪 時尚電梯別墅、華廈',
-          desc: '適合投資、置產、退休、閑居、度假族群，暢享田園度假悠適人生'
+          img: isMobile ? require('./mo/7/3.jpg') : require('./s7/3.jpg'),
         },
       ],
     }

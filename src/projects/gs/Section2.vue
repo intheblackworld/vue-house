@@ -54,12 +54,34 @@
         src="./s2/map.png"
         alt=""
         class="map-img absolute"
-        data-aos="fade-right"
+        data-aos="zoom-in"
         data-aos-delay="200"
+        @click="isDialog = true"
       >
       <div
+        class="button absolute"
+        v-if="isMobile"
+        @click="isDialog = true"
+      ></div>
+      <div
+        class="dialog"
+        v-show="isDialog"
+      >
+        <img
+          class="close"
+          @click="isDialog = false"
+          src="./all/close.png"
+          alt="close"
+        >
+        <img
+          src="./s2/map.png"
+          alt=""
+          class="dialog-map"
+        >
+      </div>
+      <div
         class="border absolute"
-        data-aos="fade-right"
+        data-aos="zoom-in"
         data-aos-delay="400"
       ></div>
       <div
@@ -266,6 +288,64 @@
     bottom: sizem(50);
     left: sizem(18);
   }
+
+  .button {
+    background-color: #3aa7c299;
+    border-radius: 50%;
+    position: absolute;
+    width: 20vw;
+    height: 20vw;
+    bottom: calc(50vh - 60vw);
+    left: calc(50% - 10vw);
+    color: #fff;
+    &:before {
+      content: '';
+      background: currentColor;
+      width: 6%;
+      height: 60%;
+      position: absolute;
+      top: 20%;
+      left: 47%;
+    }
+    &:after {
+      content: '';
+      background: currentColor;
+      width: 60%;
+      height: 6%;
+      position: absolute;
+      top: 47%;
+      left: 20%;
+    }
+  }
+
+  .dialog {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: scroll;
+
+    .slide-content {
+      left: 0;
+    }
+
+    .dialog-map {
+      width: auto;
+      height: 100vh;
+      background-color: #fff;
+    }
+
+    .close {
+      width: 35px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 5px;
+      position: fixed;
+      right: 10px;
+      top: 10px;
+    }
+  }
 }
 </style>
 <script>
@@ -284,6 +364,7 @@ export default {
     return {
       isMobile,
       isTablet,
+      isDialog: false,
     }
   },
 

@@ -10,20 +10,15 @@ export default {
   indigatorLength: 10,
 
   houseInfos: [
-    ['全案執行', '首鋼機構'],
-    ['投資興建', '首鋼開發股份有限公司'],
-    ['營造公司', '首鋼營造股份有限公司'],
-    ['建築設計', '邱垂睿建築師事務所'],
-    ['藝術規劃', '英國藝術家貝馬丁Martyn Barratt'],
-    ['結構設計', '宗誠結構林文宗技師'],
-    ['公設設計', '禾鼎設計楊豪琳設計師'],
-    ['園藝設計', '花茂造景胡憲民設計師'],
-    ['樓層規劃', '地上12層，地下3層'],
-    ['格局規劃', '四房(63.88坪、66.88坪) 、90坪'],
-    ['基地地址', '台北市大安區瑞安街244巷16.18號'],
+    ['投資興建', '長勝開發股份有限公司',],
+    ['建築設計', '潘振黃建築師事務所',],
+    ['工程營造', '宜錦營造有限公司',],
+    ['格局規劃', '29-62坪',],
+    ['基地面積', '548坪',],
+    ['建照號碼', '108.07.05建管建見字第289至303號',],
   ],
 
-  gtmCode: ['NP9Q357'], // 可放置多個
+  gtmCode: ['PMSHFQH'], // 可放置多個
   recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
