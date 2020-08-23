@@ -3,38 +3,23 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
-          <img
-            class="logo"
-            src="@/assets/img/nav-logo.png"
-            alt
-            v-scroll-to="{ element: `#section1` }"
-          />
-          <div
-            class="menu"
-            @click="toggleSidebar"
-          >
+          <img class="logo" src="@/assets/img/nav-logo.png" alt />
+          <div class="menu" @click="toggleSidebar">
             <font-awesome-icon icon="bars" />
           </div>
-          <div
-            :class="`mask ${isOpen ? 'open' : ''}`"
-            @click="toggleSidebar"
-          />
+          <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
             <li
               :key="item.name"
-              v-scroll-to="{ element: `#${item.section}`, offset: item.offset ? item.offset : offset }"
+              v-scroll-to="{ element: `#${item.section}`, offset: offset }"
               v-for="item in list"
               class="flex-ac"
               @click="toggleSidebar"
             >
               <span class="link">
-                <img
-                  v-if="item.imgSrc"
-                  :src="item.imgSrc"
-                  alt
-                />
+                <img v-if="item.imgSrc" :src="item.imgSrc" alt />
                 <span>
-                  <h3 class="title">{{item.name}}</h3>
+                  <p class="title">{{item.name}}</p>
                   <span class="subTitle">{{item.subTitle}}</span>
                 </span>
               </span>
@@ -88,6 +73,7 @@ export default {
 @import '../assets/style/variableColor.scss';
 @import '../assets/style/variableDefault.scss';
 @import '../assets/style/function.scss';
+
 .navigation {
   background-color: $nav_bg;
   background-image: $nav_bg;
@@ -99,13 +85,12 @@ export default {
   width: 100vw;
   display: flex !important;
   align-items: center;
-  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+ // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 .nav-container {
   height: 100%;
   display: flex;
-  flex: 1;
   align-items: center;
   justify-content: space-between;
 }
@@ -125,20 +110,14 @@ export default {
 
 .logo {
   width: $logo_pc_width;
-  // width:auto;
-  // height: 100%;
-  cursor: pointer;
+  height: auto;
   position: absolute;
-  left: size(38);
-  right: auto;
+  left: 0;
   display: block;
-  top: 20%;
-  transform: translateY(0%);
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.mo {
-  display: none;
-}
 .mask {
   display: none;
 }
@@ -148,115 +127,89 @@ export default {
   align-items: center;
   justify-content: center;
   height: 100%;
-  margin-right: 3vw;
   li {
     height: 100%;
   }
 
   .link {
     color: $nav_link_color;
-    height: 100%;
-    width: 6em;
+    height: 22px;
     text-align: center;
     display: block;
     cursor: pointer;
-    padding: 0;
-    transition: all 0.3s;
+    padding: 0 20px;
+    transition: all .8s;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
     // border-right: 1px solid $nav_link_hover_bg;
-    > span {
-      z-index: 3;
-    }
+
     &:hover {
       color: $nav_link_hover_color;
-      // background-color: $nav_link_hover_bg;
-      img {
-      }
-    }
-    &::before {
-      content: '';
-      width: 1px;
-      height: 40%;
-      display: block;
-      background: $nav_link_hover_bg;
-      position: absolute;
-      left: 0;
-      top: 30%;
-    }
-    /* 
-
-    @keyframes r5 {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(5deg);
-      }
+      // background: $nav_link_hover_bg;
     }
 
-     &::before {
-       content: '';
-       width: 0%;
-       height: 100%;
-       display: block;
-       background: $nav_link_hover_bg; // second bg
-       position: absolute;
-       transform: skewX(-20deg);
-       left: -10%;
-       opacity: 1;
-       top: 0;
-       z-index: 2;
-       transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
-     }
-     &::after {
-       content: '';
-       width: 0%;
-       height: 100%;
-       display: block;
-       background: #fff9; // first bg
-       position: absolute;
-       transform: skewX(-20deg);
-       left: -10%;
-       opacity: 0;
-       top: 0;
-       z-index: 1;
-       transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
-       // box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
-     }
-     &:hover::before {
-       opacity: 1;
-       width: 150%;
-     }
-     &:hover::after {
-       opacity: 1;
-       width: 150%;
-     }
-*/
+    // &::before {
+    //   content: '';
+    //   width: 0%;
+    //   height: 100%;
+    //   display: block;
+    //   background: $nav_link_hover_bg; // second bg
+    //   position: absolute;
+    //   transform: skewX(-20deg);
+    //   left: -10%;
+    //   opacity: 1;
+    //   top: 0;
+    //   z-index: 2;
+    //   transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+    //   // box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
+    // }
+
+    // &::after {
+    //   content: '';
+    //   width: 0%;
+    //   height: 100%;
+    //   display: block;
+    //   background: #fff; // first bg
+    //   position: absolute;
+    //   transform: skewX(-20deg);
+    //   left: -10%;
+    //   opacity: 0;
+    //   top: 0;
+    //   z-index: 1;
+    //   transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
+    //   // box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
+    // }
+    // &:hover::before,
+    // &:hover::before {
+    //   opacity: 1;
+    //   width: 116%;
+    // }
+    // &:hover::after,
+    // &:hover::after {
+    //   opacity: 1;
+    //   width: 120%;
+    // }
 
     .title {
+      font-size: 16px !important;
+      font-weight: bold;
       position: relative;
       z-index: 3;
-      font-family: $family2;
     }
 
     .subTitle {
       color: $nav_link_subtitle_color;
       font-size: 12px;
-      z-index: 3;
     }
 
     img {
-      width: calc(100vw * 50 / 1920);
-      height: auto;
+      // width: 35px;
+      // height: 35px;
       margin-right: 10px;
     }
-  }
-  .flex-ac:first-child .link::before {
-    display: none;
   }
 }
 
@@ -275,8 +228,10 @@ export default {
     height: $nav_tablet_height;
     justify-content: center;
   }
-  /*
+
   .logo {
+    width: $logo_tablet_width;
+    // left: -240px;
   }
 
   .navlist {
@@ -303,13 +258,13 @@ export default {
       width: 100% !important;
     }
   }
-  */
 }
 
 /* 螢幕尺寸標準 */
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .navigation {
+    background-color: transparent !important;
     height: $nav_phone_height;
     z-index: 110;
   }
@@ -322,15 +277,9 @@ export default {
   .logo {
     width: $logo_phone_width;
     left: 15px;
-    top: 15px;
-  }
-
-  .mo {
-    display: block;
-  }
-  .pc {
     display: none;
   }
+
   .nav {
     position: static;
     height: $nav_phone_height;
@@ -339,26 +288,26 @@ export default {
   .menu {
     display: block;
     position: absolute;
+    top: 15px;
     right: 15px;
-    width: 30px;
+    width: sizem(50);
+    height: sizem(50);
+    padding-top: sizem(8);
+    background-color: #8e8a74;
+    z-index: 112;
 
     svg {
-      width: 100%;
-      height: 100%;
+      width: sizem(35);
+      height: sizem(35);
       color: $nav_btn_color;
     }
   }
-  .navlist {
-    .link {
-      width: 5em;
-      font-size: 15px;
-    }
-  }
-  /*
+
   .navlist {
     position: absolute;
     z-index: 111;
     background: transparent;
+    background-size: cover;
     width: 0%;
     right: 0;
     top: $nav_phone_height;
@@ -367,17 +316,23 @@ export default {
     transition: all 0.3s ease-in;
     display: block;
     transform: translateX(40%);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
 
     li {
-      height: 50px;
-      margin-bottom: 5px;
+      width: 100vw;
+      height: 70px;
+      margin-bottom:0;
     }
 
     .link {
       height: 50px;
       width: 100%;
       font-size: 17px;
-      margin-top: 10px;
+      margin-top:0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -389,12 +344,6 @@ export default {
       }
       span {
         line-height: 16px;
-      }
-
-      img {
-        width: calc(100vw * 200 / 1920);
-        height: auto;
-        margin-right: 10px;
       }
     }
 
@@ -414,13 +363,14 @@ export default {
       }
     }
   }
+
   .mask {
     width: 100vw;
     top: $nav_phone_height;
     right: 0;
-    background: $nav_bg;
+    background: rgba(0, 0, 0, 0.5);
     position: fixed;
-    z-index:-1;
+    z-index: 110;
     height: calc(100vh - #{$nav_phone_height});
     opacity: 0;
     transition: all 0.3s ease-in;
@@ -428,15 +378,6 @@ export default {
       display: block;
       width: 100vw;
       opacity: 1;
-    z-index: 110;
-    }
-  }
-*/
-}
-@media only screen and (max-width: 374px) {
-  .navlist {
-    .link {
-      font-size: 4vw;
     }
   }
 }

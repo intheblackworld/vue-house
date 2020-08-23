@@ -7,6 +7,7 @@
         class="bg-img"
         data-aos="fade"
         data-aos-delay="0"
+        v-if="!isMobile"
       >
       <img
         src="./s2/2.png"
@@ -14,6 +15,7 @@
         class="bg-img"
         data-aos="fade"
         data-aos-delay="1000"
+        v-if="!isMobile"
       >
       <img
         src="./s2/3.png"
@@ -21,6 +23,32 @@
         class="bg-img"
         data-aos="fade"
         data-aos-delay="1200"
+        v-if="!isMobile"
+      >
+      <img
+        src="./deck/butterfly.png"
+        alt=""
+        class="absolute butterfly"
+        data-aos="fade"
+        data-aos-delay="800"
+        v-if="isMobile"
+      >
+      <img
+        src="./deck/leaf.png"
+        alt=""
+        class="absolute leaf"
+        data-aos="fade"
+        data-aos-delay="800"
+        v-if="isMobile"
+      >
+
+      <img
+        src="./deck/tree.png"
+        alt=""
+        class="absolute tree"
+        data-aos="fade"
+        data-aos-delay="800"
+        v-if="isMobile"
       >
       <img
         src="./s2/map.png"
@@ -157,11 +185,86 @@
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    height: calc(100vh - 63px);
+    height: sizem(78 + 476);
     // height: size-m(804);
     // background-image: url('./mo/1/bg.jpg');
     background-size: cover;
     background-attachment: scroll;
+  }
+
+  .tree {
+    width: sizem(117);
+    right: sizem(0);
+    top: sizem(190);
+    z-index: 2;
+  }
+
+  .leaf {
+    width: sizem(132);
+    right: sizem(0);
+    top: sizem(-45);
+    z-index: 2;
+  }
+
+  .butterfly {
+    width: sizem(86);
+    left: sizem(5);
+    top: sizem(0);
+    z-index: 2;
+  }
+
+  .title {
+    writing-mode: initial;
+    text-orientation: initial;
+    width: sizem(250);
+    right: sizem(80);
+    top: sizem(78);
+    font-size: sizem(25);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+    white-space: nowrap;
+  }
+
+  .desc {
+    writing-mode: initial;
+    text-orientation: initial;
+    width: sizem(290);
+    right: sizem(37);
+    top: sizem(152);
+    font-size: sizem(20);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.76;
+    letter-spacing: normal;
+    text-align: left;
+    color: #8e8a74;
+  }
+
+  .border {
+    width: sizem(340);
+    height: sizem(224);
+    top: sizem(50);
+    right: sizem(17);
+    opacity: 0.38;
+    border: sizem(5) solid #8e8a74;
+  }
+
+  .txt {
+    width: sizem(131);
+    bottom: sizem(52);
+    right: sizem(191);
+  }
+
+  .map-img {
+    width: sizem(340);
+    bottom: sizem(50);
+    left: sizem(18);
   }
 }
 </style>

@@ -7,6 +7,16 @@
         class="bottom-img absolute"
         data-aos="fade-up"
         data-aos-delay="0"
+        v-if="!isMobile"
+      >
+
+      <img
+        src="./mo/1/bg.png"
+        alt="小城故事NO.7外觀"
+        class="bottom-img absolute"
+        data-aos="fade-up"
+        data-aos-delay="0"
+        v-if="isMobile"
       >
       <img
         src="./s1/logo.png"
@@ -14,6 +24,23 @@
         class="logo absolute"
         data-aos="fade-down"
         data-aos-delay="200"
+        v-if="!isMobile"
+      >
+      <img
+        src="./mo/1/logo1.png"
+        alt="小城故事NO.7"
+        class="logo absolute"
+        data-aos="fade-down"
+        data-aos-delay="200"
+        v-if="isMobile"
+      >
+      <img
+        src="./mo/1/logo2.png"
+        alt="小城故事NO.7"
+        class="logo2 absolute"
+        data-aos="fade-down"
+        data-aos-delay="600"
+        v-if="isMobile"
       >
       <img
         src="./s1/txt.png"
@@ -22,16 +49,28 @@
         data-aos="fade-right"
         data-aos-delay="800"
       >
-      <div class="block absolute" data-aos="fade-down"
-        data-aos-delay="400"></div>
-      <div class="border absolute" data-aos="fade"
-        data-aos-delay="500"></div>
-      <h3 class="title absolute" data-aos="fade-up"
-        data-aos-delay="600">
+      <div
+        class="block absolute"
+        data-aos="fade-down"
+        data-aos-delay="400"
+      ></div>
+      <div
+        class="border absolute"
+        data-aos="fade"
+        data-aos-delay="500"
+      ></div>
+      <h3
+        class="title absolute"
+        data-aos="fade-up"
+        data-aos-delay="600"
+      >
         小城故事系列<br />譜寫宜蘭在地情感
       </h3>
-      <h3 class="desc absolute" data-aos="fade-up"
-        data-aos-delay="700">
+      <h3
+        class="desc absolute"
+        data-aos="fade-up"
+        data-aos-delay="700"
+      >
         深耕宜蘭30載，從規劃兼具美學質地與永久保值的建築，以書寫在地建築歷史為責任，精益求精、時刻創新。
       </h3>
       <div class="item-list flex absolute">
@@ -43,6 +82,7 @@
           :data-aos-delay="800 + (index * 100)"
           data-aos-duration="1000"
         >
+          <div class="item-hr" v-if="isMobile"></div>
           <h3
             class="item-title"
             v-html="item.title"
@@ -51,7 +91,7 @@
             class="item-desc"
             v-html="item.desc"
           ></h3>
-          <div class="item-hr"></div>
+          <div class="item-hr" v-if="!isMobile"></div>
         </div>
       </div>
 
@@ -245,24 +285,178 @@
   .section1 {
     width: 100vw;
     min-height: auto;
-    height: calc(100vh - 63px);
+    height: sizem(604 + 329);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
   }
 
-  .bg-img {
+  .bottom-img {
     width: 100vw;
-    min-height: auto;
     height: auto;
-    position: absolute;
-    display: block;
-    top: 0;
     left: 0;
+    bottom: sizem(329);
     object-fit: cover;
+    z-index: 1;
+  }
 
-    &:nth-child(1) {
-      position: relative;
+  .logo {
+    width: sizem(280);
+    top: sizem(29);
+    right: auto;
+    left: sizem(18);
+    height: auto;
+    object-fit: cover;
+  }
+
+  .logo2 {
+    width: sizem(63);
+    top: sizem(101);
+    right: sizem(28);
+    height: auto;
+    object-fit: cover;
+    z-index: 2;
+  }
+
+  .txt {
+    width: sizem(312);
+    top: sizem(327);
+    right: sizem(13);
+    height: auto;
+    object-fit: cover;
+  }
+
+  .title {
+    width: sizem(246);
+    right: sizem(79);
+    top: sizem(138);
+    font-size: sizem(25);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.46;
+    letter-spacing: 7.57px;
+    text-align: left;
+    color: #000000;
+    white-space: nowrap;
+  }
+
+  .desc {
+    width: sizem(270);
+    right: sizem(54);
+    top: sizem(223);
+    font-size: sizem(15);
+    font-weight: 700;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: 2.57px;
+    text-align: left;
+    color: #8e8a74;
+  }
+
+  .border {
+    width: sizem(347);
+    height: sizem(276);
+    top: sizem(115);
+    right: sizem(14);
+    border: sizem(6) solid #8e8a74;
+  }
+
+  .block {
+    opacity: 0.38;
+    background-color: #8e8a74;
+    width: size(48);
+    top: size(217);
+    right: size(0);
+  }
+
+  .item-list {
+    top: sizem(600);
+    left: sizem(44);
+
+    .item {
+      width: sizem(17);
+      margin-right: sizem(35);
+      // display: flex;
+      // align-items: center;
+      // justify-content: center;
+      // flex-wrap: wrap;
+      .item-hr {
+        width: 1.5px;
+        height: sizem(67);
+        background-color: #8e8a74;
+        margin: 0 auto;
+        margin-bottom: 15px;
+      }
+      &:nth-child(1) {
+        margin-top: 0;
+      }
+      &:nth-child(2) {
+        margin-top: sizem(13);
+        .item-hr {
+          height: sizem(111);
+        }
+      }
+
+      &:nth-child(3) {
+        margin-top: sizem(30);
+        .item-hr {
+          height: sizem(65);
+        }
+      }
+      &:nth-child(4) {
+        margin-top: sizem(17);
+        .item-hr {
+          height: sizem(69);
+        }
+      }
+
+      &:nth-child(5) {
+        margin-top: sizem(20);
+        .item-hr {
+          height: sizem(58);
+        }
+      }
+
+      &:nth-child(6) {
+        margin-top: sizem(5);
+        .item-hr {
+          height: sizem(68);
+        }
+      }
+    }
+    .item-title,
+    .item-desc {
+      writing-mode: vertical-lr;
+      text-orientation: upright;
+      // display: inline-block;
+      // margin: auto;
+    }
+
+    .item-title {
+      font-size: sizem(12);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.08;
+      letter-spacing: normal;
+      text-align: center;
+      color: #8e8a74;
+      margin-bottom: sizem(10);
+      margin-left: sizem(2.5);
+    }
+
+    .item-desc {
+      font-size: sizem(17);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.08;
+      letter-spacing: normal;
+      text-align: center;
+      color: #8e8a74;
+      margin-bottom: sizem(10);
     }
   }
 }
