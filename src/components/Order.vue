@@ -175,7 +175,7 @@
           ></vue-recaptcha>
         </div>
         <el-button
-          class="form-submit"
+          class="form-submit flex-c"
           type="primary"
           :disabled="!checked || !isVerify"
           @click="submit"
