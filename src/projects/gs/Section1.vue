@@ -169,7 +169,7 @@
 .block {
   background-color: #8e8a7455;
   width: size(240);
-  height:calc(23vw + 5vh - 60px);
+  height:calc(20vw + 12vh - 60px);
   max-height:size(468);
   bottom: size(90);
   left: size(340);
@@ -274,7 +274,7 @@
     width: 100vw;
     min-height: auto;
     height: sizem(604 + 329);
-    background-image: url('./mo/1/00.jpg');
+    //background-image: url('./mo/1/00.jpg');
     background-size: cover;
     background-attachment: scroll;
   }
@@ -283,9 +283,10 @@
     width: 100vw;
     height: auto;
     left: 0;
-    bottom: sizem(329);
+  top:sizem(0);
+  //  bottom: sizem(329);
     object-fit: cover;
-    z-index: 1;
+    z-index: 2;
   }
 
   .logo {
@@ -308,8 +309,8 @@
 
   .txt {
     width: sizem(312);
-    top: sizem(327);
-    right: sizem(13);
+    top: sizem(205);
+    right: sizem(0);
     height: auto;
     object-fit: cover;
   }
@@ -319,26 +320,18 @@
     height: sizem(276);
     top: sizem(115);
     right: sizem(14);
-    border: sizem(6) solid #8e8a74;
+    border-width: sizem(6);
     font-size: sizem(15);
+    padding: 1.1em 0 0 2em;
   }
 
-  .title {
-  //  width: sizem(246);
-  //  right: sizem(79);
-  //  top: sizem(138);
-  //  font-size: sizem(25);
-  }
-
-  .desc {
-  }
 
   .block {
-    opacity: 0.38;
-    background-color: #8e8a74;
-    width: size(48);
-    top: size(217);
-    right: size(0);
+    width: sizem(48);
+  height:sizem(215);max-height:initial;
+    top: sizem(-30);
+    right: sizem(-20);
+  left:auto; bottom:auto;
   }
 
   .item-list {

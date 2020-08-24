@@ -2,6 +2,22 @@
   <div>
     <div class="section2">
       <img
+        src="./deck/leaf.png"
+        alt="leaf"
+        class="leaf1 absolute"
+        data-aos="fade"
+        data-aos-delay="0"
+        v-if="!isMobile"
+      >
+      <img
+        src="./deck/leaf.png"
+        alt="leaf"
+        class="leaf2 absolute"
+        data-aos="fade"
+        data-aos-delay="0"
+        v-if="!isMobile"
+      >
+      <img
         src="./s2/1.png"
         alt=""
         class="bg-img"
@@ -132,7 +148,12 @@
 .tree {
 }
 
-.leaf {
+.leaf1 {top: 0;left: size(70);
+width: size(233);
+}
+
+.leaf2 {top: 0;right: size(70);
+width: size(233);
 }
 
 .butterfly {
