@@ -42,6 +42,16 @@
         data-aos-delay="600"
         v-if="isMobile"
       >
+      <div
+        class="border absolute"
+        data-aos="fade"
+        data-aos-delay="500"
+      >
+      <div
+        class="block absolute"
+        data-aos="fade-down"
+        data-aos-delay="400"
+      ></div>
       <img
         src="./s1/txt.png"
         alt="S tory ot Town"
@@ -49,30 +59,21 @@
         data-aos="fade-right"
         data-aos-delay="800"
       >
-      <div
-        class="block absolute"
-        data-aos="fade-down"
-        data-aos-delay="400"
-      ></div>
-      <div
-        class="border absolute"
-        data-aos="fade"
-        data-aos-delay="500"
-      ></div>
       <h3
-        class="title absolute"
+        class="title"
         data-aos="fade-up"
         data-aos-delay="600"
       >
         小城故事系列<br />譜寫宜蘭在地情感
       </h3>
-      <h3
-        class="desc absolute"
+      <p
+        class="desc"
         data-aos="fade-up"
         data-aos-delay="700"
       >
         深耕宜蘭30載，從規劃兼具美學質地與永久保值的建築，以書寫在地建築歷史為責任，精益求精、時刻創新。
-      </h3>
+      </p>
+      </div>
       <div class="item-list flex absolute">
         <div
           class="item"
@@ -105,7 +106,7 @@
 .section1 {
   width: size(1920);
   height: 100vh;
-  min-height: 900px;
+  min-height:size(850);
   background-size: cover;
   background-attachment: fixed;
   overflow: hidden;
@@ -115,14 +116,14 @@
   width: 100vw;
   height: auto;
   left: 0;
-  bottom: 0;
+  top:calc(50% - 4vw);
   object-fit: cover;
-  z-index: 1;
+  z-index: 2;
 }
 
 .logo {
   width: size(693);
-  top: size(270);
+  top:calc(50% - 14.4vw);
   right: size(452);
   height: auto;
   object-fit: cover;
@@ -130,59 +131,71 @@
 
 .txt {
   width: size(527);
-  top: size(443);
-  right: size(274);
+  top:size(30);
+  right: size(-190);
   height: auto;
   object-fit: cover;
-}
-
-.title {
-  width: size(350);
-  right: size(780);
-  top: size(438);
-  font-size: size(29);
-  font-weight: 900;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.46;
-  letter-spacing: 7.57px;
-  text-align: left;
-  color: #000000;
-}
-
-.desc {
-  width: size(350);
-  right: size(780);
-  top: size(538);
-  font-size: size(17);
-  font-weight: 700;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2;
-  letter-spacing: 2.57px;
-  text-align: left;
-  color: #8e8a74;
 }
 
 .border {
   width: size(715);
   height: size(308);
-  top: size(409);
-  right: size(448);
-  border: size(8.2) solid #8e8a74;
+  top: calc(50% - 7.35vw);
+  right: size(435);
+  border: size(8.2) solid currentColor;
+  font-size: size(17);
+  font-stretch: normal;
+  font-style: normal;
+  text-align: justify;
+  color: #8e8a74;
+  padding: 1.5em 0 0 1.7em;
+  z-index: 1;
 }
 
-.block {
-  opacity: 0.38;
-  background-color: #8e8a74;
-  width: size(240);
-  top: size(156);
-  right: size(572);
+.title {
+  font-size:1.7em;
+  font-weight: 900;
+  line-height: 1.46;
+  letter-spacing:0.26em;
+  color: #000000;
 }
+
+.desc {
+  width:17em;
+  font-weight: 700;
+  line-height: 1.85;
+  letter-spacing:0.03em;margin: 0.9em 0 0 0;
+}
+.block {
+  background-color: #8e8a7455;
+  width: size(240);
+  height:calc(23vw + 5vh - 60px);
+  max-height:size(468);
+  bottom: size(90);
+  left: size(340);
+}
+
 
 .item-list {
-  top: size(299);
-  left: size(211);
+  top: calc(50% - 12.7vw);
+  left: size(208);
+  color: #8e8a74;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.08;
+  letter-spacing: normal;
+  text-align: center;
+  font-size: size(17);
+  z-index: 3;
+  .item-title {
+    font-size: 0.705em;
+    margin-left: size(2.5);
+    margin-bottom: size(10);
+  }
+  .item-desc {
+    margin-bottom: size(10);
+  }
 
   .item {
     width: size(22);
@@ -194,41 +207,41 @@
     .item-hr {
       width: 2px;
       height: size(202);
-      background-color: #8e8a74;
+      background-color: currentColor;
       margin: 0 auto;
     }
     &:nth-child(1) {
       margin-top: 0;
     }
     &:nth-child(2) {
-      margin-top: size(43);
+      margin-top: size(50);
       .item-hr {
         height: size(199);
       }
     }
 
     &:nth-child(3) {
-      margin-top: size(20);
+      margin-top: size(18);
       .item-hr {
         height: size(88);
       }
     }
     &:nth-child(4) {
-      margin-top: size(17);
+      margin-top: size(13);
       .item-hr {
         height: size(88);
       }
     }
 
     &:nth-child(5) {
-      margin-top: size(18);
+      margin-top: size(13);
       .item-hr {
         height: size(58);
       }
     }
 
     &:nth-child(6) {
-      margin-top: size(12);
+      margin-top: size(1);
       .item-hr {
         height: size(147);
       }
@@ -240,31 +253,6 @@
     text-orientation: upright;
     // display: inline-block;
     // margin: auto;
-  }
-
-  .item-title {
-    font-size: size(12);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.08;
-    letter-spacing: normal;
-    text-align: center;
-    color: #8e8a74;
-    margin-bottom: size(10);
-    margin-left: size(2.5);
-  }
-
-  .item-desc {
-    font-size: size(17);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.08;
-    letter-spacing: normal;
-    text-align: center;
-    color: #8e8a74;
-    margin-bottom: size(10);
   }
 }
 
@@ -286,7 +274,7 @@
     width: 100vw;
     min-height: auto;
     height: sizem(604 + 329);
-    // background-image: url('./mo/1/bg.png');
+    background-image: url('./mo/1/00.jpg');
     background-size: cover;
     background-attachment: scroll;
   }
@@ -326,41 +314,23 @@
     object-fit: cover;
   }
 
-  .title {
-    width: sizem(246);
-    right: sizem(79);
-    top: sizem(138);
-    font-size: sizem(25);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.46;
-    letter-spacing: 7.57px;
-    text-align: left;
-    color: #000000;
-    white-space: nowrap;
-  }
-
-  .desc {
-    width: sizem(270);
-    right: sizem(54);
-    top: sizem(223);
-    font-size: sizem(15);
-    font-weight: 700;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2;
-    letter-spacing: 2.57px;
-    text-align: left;
-    color: #8e8a74;
-  }
-
   .border {
     width: sizem(347);
     height: sizem(276);
     top: sizem(115);
     right: sizem(14);
     border: sizem(6) solid #8e8a74;
+    font-size: sizem(15);
+  }
+
+  .title {
+  //  width: sizem(246);
+  //  right: sizem(79);
+  //  top: sizem(138);
+  //  font-size: sizem(25);
+  }
+
+  .desc {
   }
 
   .block {

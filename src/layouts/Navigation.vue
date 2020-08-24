@@ -3,7 +3,7 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
-          <img class="logo" src="@/assets/img/nav-logo.png" alt />
+          <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
           <div class="menu" @click="toggleSidebar">
             <font-awesome-icon icon="bars" />
           </div>
@@ -133,7 +133,7 @@ export default {
 
   .link {
     color: $nav_link_color;
-    height: 22px;
+    height:100%;
     text-align: center;
     display: block;
     cursor: pointer;
@@ -148,7 +148,7 @@ export default {
 
     &:hover {
       color: $nav_link_hover_color;
-      // background: $nav_link_hover_bg;
+       background: $nav_link_hover_bg;
     }
 
     // &::before {
@@ -195,7 +195,7 @@ export default {
 
     .title {
       font-size: 16px !important;
-      font-weight: bold;
+      font-weight: 600;
       position: relative;
       z-index: 3;
     }
