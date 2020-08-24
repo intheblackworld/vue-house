@@ -105,7 +105,7 @@
         @mouseenter.stop="toggleTimer = false"
         @mouseleave.stop="toggleTimer = true"
       >
-        <div class="swipe-wrap relative">
+        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <div
             v-for="(slide, i) in slideList"
             :key="slide.img"
