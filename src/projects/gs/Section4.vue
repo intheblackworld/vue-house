@@ -4,10 +4,10 @@
       class="section4"
       v-if="!isMobile"
     >
+     <div class="one absolute">
       <img
         src="./s4/1.jpg"
-        alt=""
-        class="one absolute"
+        alt="情境示意圖"
         data-aos="fade-right"
         data-aos-delay="200"
       >
@@ -16,13 +16,14 @@
         data-aos="fade-right"
         data-aos-delay="300"
       >情境示意圖</h3>
+        </div>
       <h3
         class="title absolute"
         data-aos="fade-down"
         data-aos-delay="400"
       >弱水三千取一瓢</h3>
       <div
-        class="content absolute"
+        class="content"
         data-aos="fade"
         data-aos-delay="400"
       >
@@ -44,8 +45,6 @@
         src="./deck/butterfly.png"
         alt=""
         class="butterfly absolute"
-        data-aos="fade"
-        data-aos-delay="800"
       >
       <img
         src="./deck/tree.png"
@@ -58,16 +57,12 @@
         src="./deck/leaf.png"
         alt=""
         class="leaf absolute"
-        data-aos="fade"
-        data-aos-delay="1100"
       >
 
       <img
         src="./deck/leaf.png"
         alt=""
         class="leaf2 absolute"
-        data-aos="fade"
-        data-aos-delay="1200"
       >
 
       <div class="img-list flex-ac flex-jb wrap absolute">
@@ -146,17 +141,20 @@
         alt=""
         class="absolute butterfly"
       >
+      <div class="leaf absolute"
+        data-aos="fade-down-left"
+        data-aos-delay="200">
       <img
         src="./deck/leaf.png"
-        alt=""
-        class="absolute leaf"
-      >
-
+        alt="leaf"
+      ></div>
+      <div class="line absolute"
+        data-aos="fade-down-left"
+        data-aos-delay="200">
       <img
         src="./deck/line.png"
-        alt=""
-        class="absolute line"
-      >
+        alt="line"
+      ></div>
       <div
         class="dialog flex-c"
         v-show="isDialog"
@@ -195,7 +193,7 @@
 
 .section4 {
   width: size(1920);
-  height: size(684 + 283);
+ // height: size(684 + 283);
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
@@ -222,6 +220,7 @@
   width: size(1020);
   top: 0;
   left: 0;
+    img{width: 100%;}
 }
 
 .txt {
@@ -236,18 +235,19 @@
 }
 
 .txt-one {
-  bottom: size(298);
-  left: size(922);
+  bottom: size(10);
+  right: size(10);
 }
 
 .butterfly {
-  width: size(93);
+  width: size(60);
   top: size(60);
   right: size(341);
+  transform: rotate(12deg);
 }
 .tree {
   width: size(144);
-  top: size(55);
+  top: size(25);
   right: size(203);
 }
 
@@ -255,13 +255,13 @@
   width: size(124);
   bottom: size(114);
   left: size(108);
-  transform: rotate(-90deg);
+  transform:scaleX(-1) rotate(-180deg);
 }
 
 .leaf {
   width: size(126);
   top: size(500);
-  right: size(680);
+  right: size(680);transform:scaleX(-1) rotate(-90deg);
 }
 
 .title {
@@ -297,18 +297,20 @@
   font-style: normal;
   line-height: 2.03;
   letter-spacing: 0.64px;
-  text-align: left;
+  text-align: justify;
   color: #8e8a74;
-  margin-bottom: size(20);
+  margin: size(20) 0;
+
 }
 
 .content {
   width: size(578);
-  height: size(578);
-  border: 7px solid #8e8a74;
-  top: size(45);
-  right: size(175);
-  padding: size(28);
+  min-height: size(577);
+  border: 7px solid #8e8a7466;
+  margin: size(50) 0 size(290) 0;
+  top: size(0);
+  right: size(175);float:right;
+  padding: size(28); position: relative;
 }
 
 .img-list {
@@ -523,7 +525,7 @@
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.09;
+    line-height:1.8;
     letter-spacing: 0.4px;
     text-align: left;
     color: #333333;
@@ -568,19 +570,20 @@
     left: 0;
   }
   .line {
-    width: sizem(330);
+    width: sizem(400);
     top: auto;
     bottom: sizem(10);
     right: auto;
-    left: 0;
+    left:sizem(-100);
+    img{width: 100%;}
   }
   .leaf {
-    width: sizem(163);
+    width: sizem(150);
     top: auto;
-    bottom: sizem(-90);
+    bottom: sizem(-50);
     right: sizem(-20);
+    img{width: 100%;transform:scaleX(-1) rotate(-80deg);}
   }
-
   .dialog {
     position: fixed;
     top: 0;

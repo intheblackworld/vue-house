@@ -5,95 +5,107 @@
       v-if="!isMobile"
     >
       <div class="top relative">
-        <img
-          src="./s3/1.jpg"
-          alt=""
-          class="one absolute"
-          data-aos="fade-right"
-          data-aos-delay="0"
-        >
-        <img
-          src="./s3/2.jpg"
-          alt=""
-          class="two absolute"
-          data-aos="fade-down"
-          data-aos-delay="200"
-        >
-        <img
-          src="./s3/3.jpg"
-          alt=""
-          class="three absolute"
-          data-aos="fade-down"
-          data-aos-delay="400"
-        >
-        <h3
-          class="txt txt-one absolute"
-          data-aos="fade-right"
-          data-aos-delay="100"
-        >國立宜蘭傳統藝術中心</h3>
-        <h3
-          class="txt txt-two absolute"
-          data-aos="fade-right"
-          data-aos-delay="300"
-        >五結行政中心</h3>
-        <h3
-          class="txt txt-three absolute"
-          data-aos="fade-right"
-          data-aos-delay="500"
-        >冬山河親水公園</h3>
+        <div class="one absolute">
+          <img
+            src="./s3/1.jpg"
+            alt="國立宜蘭傳統藝術中心"
+            data-aos="fade-right"
+            data-aos-delay="0"
+          >
+          <h3
+            class="txt txt-one absolute"
+            data-aos="fade-right"
+            data-aos-delay="100"
+          >國立宜蘭傳統藝術中心</h3>
+        </div>
+        <div class="two absolute">
+          <img
+            src="./s3/2.jpg"
+            alt="五結行政中心"
+            data-aos="fade-down"
+            data-aos-delay="200"
+          >
+          <h3
+            class="txt txt-two absolute"
+            data-aos="fade-right"
+            data-aos-delay="300"
+          >五結行政中心</h3>
+        </div>
+        <div class="three absolute">
+          <img
+            src="./s3/3.jpg"
+            alt="冬山河親水公園"
+            data-aos="fade-down"
+            data-aos-delay="400"
+          >
+          <h3
+            class="txt txt-three absolute"
+            data-aos="fade-right"
+            data-aos-delay="500"
+          >冬山河親水公園</h3>
+        </div>
       </div>
       <div class="bottom relative">
         <img
           src="./deck/butterfly.png"
-          alt=""
+          alt="butterfly"
           class="butterfly absolute"
-          data-aos="fade"
-          data-aos-delay="200"
         >
         <img
           src="./deck/line.png"
-          alt=""
+          alt="line"
           class="line absolute"
           data-aos="fade"
           data-aos-delay="400"
         >
+      <div class="leaf1 absolute"
+        data-aos="fade-down-left"
+        data-aos-delay="200">
         <img
           src="./deck/leaf.png"
-          alt=""
-          class="leaf absolute"
-          data-aos="fade"
-          data-aos-delay="600"
+          alt="leaf"
         >
+        </div>
+      <div class="leaf2 absolute"
+        data-aos="fade-down-left"
+        data-aos-delay="200">
+        <img
+          src="./deck/leaf.png"
+          alt="leaf"
+        >
+        </div>
+        <div class="four absolute">
         <img
           src="./s3/4.jpg"
           alt=""
-          class="four absolute"
           data-aos="fade-down"
           data-aos-delay="600"
-        >
-        <img
-          src="./s3/5.jpg"
-          alt=""
-          class="five absolute"
-          data-aos="fade-down"
-          data-aos-delay="800"
         >
         <h3
           class="txt txt-four absolute"
           data-aos="fade-right"
           data-aos-delay="500"
         >便利商店</h3>
+        </div>
+        <div class="five absolute">
+        <img
+          src="./s3/5.jpg"
+          alt=""
+          data-aos="fade-down"
+          data-aos-delay="800"
+        >
         <h3
           class="txt txt-five absolute"
           data-aos="fade-right"
           data-aos-delay="900"
         >羅東夜市</h3>
+        </div>
         <h3
           class="title absolute"
           data-aos="fade-down"
           data-aos-delay="200"
         >走遍大城居小城</h3>
-        <div class="content absolute">
+        <div class="content">
           <h3
             class="subtitle"
             data-aos="fade-right"
@@ -194,17 +206,20 @@
         alt=""
         class="absolute butterfly"
       >
+      <div class="leaf absolute"
+        data-aos="fade-down-left"
+        data-aos-delay="200">
       <img
         src="./deck/leaf.png"
-        alt=""
-        class="absolute leaf"
-      >
-
+        alt="leaf"
+      ></div>
+      <div class="line absolute"
+        data-aos="fade-down-left"
+        data-aos-delay="200">
       <img
         src="./deck/line.png"
-        alt=""
-        class="absolute line"
-      >
+        alt="line"
+      ></div>
       <div
         class="dialog flex-c"
         v-show="isDialog"
@@ -275,19 +290,35 @@
   width: size(1020);
   top: 0;
   left: 0;
+    img{width: 100%;}
 }
 
 .two {
   width: size(575);
   top: size(53);
   right: size(182);
+    img{width: 100%;}
 }
 
 .three {
   width: size(575);
   top: size(329);
   right: size(182);
+    img{width: 100%;}
 }
+.four {
+  width: size(575);
+  top: size(0);
+  right: size(182);
+    img{width: 100%;}
+}
+.five {
+  width: size(575);
+  top: size(276);
+  right: size(182);
+    img{width: 100%;}
+}
+
 
 .txt {
   font-size: size(13);
@@ -301,60 +332,47 @@
 }
 
 .txt-one {
-  bottom: size(14);
-  left: size(843);
+  bottom: size(10);
+  right: size(10);
 }
 
-.txt-two {
-  top: size(289);
-  right: size(646);
-}
-
-.txt-three {
-  bottom: size(20);
-  right: size(630);
+.txt-two,
+.txt-three,
+.txt-four,
+.txt-five {
+  bottom: size(10);
+  left: size(10);
 }
 
 .bottom {
   width: 100vw;
-  height: size(577);
+//  height: size(577);
   background-color: #fff;
+  overflow: hidden;
 }
 
-.four {
-  width: size(575);
-  top: size(0);
-  right: size(182);
-}
-.five {
-  width: size(575);
-  top: size(276);
-  right: size(182);
-}
-
-.txt-four {
-  top: size(237);
-  right: size(655);
-}
-
-.txt-five {
-  top: size(507);
-  right: size(655);
-}
 .butterfly {
   width: size(106);
   top: size(307);
-  right: size(926);
+  right: size(926);transform:rotate(-70deg);
+
 }
 .line {
   width: size(565);
   top: size(366);
   right: size(679);
 }
-.leaf {
+.leaf1 {
   width: size(167);
   top: size(338);
   right: size(757);
+    img{width: 100%;transform:scaleX(-1) rotate(-90deg);}
+}
+.leaf2 {
+  width: size(107);
+  top: size(190);
+  right: size(880);
+    img{width: 100%;transform: rotate(190deg);}
 }
 
 .title {
@@ -370,6 +388,7 @@
   letter-spacing: 19.04px;
   text-align: left;
   color: #000000;
+  white-space: nowrap;
 }
 
 .subtitle {
@@ -408,8 +427,9 @@
 
 .content {
   width: size(570);
-  top: size(29);
+  top: size(0);margin: size(29) 0;
   left: size(355);
+  position: relative;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -597,7 +617,7 @@
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.09;
+    line-height:1.8;
     letter-spacing: 0.4px;
     text-align: left;
     color: #333333;
@@ -642,17 +662,19 @@
     left: 0;
   }
   .line {
-    width: sizem(330);
+    width: sizem(400);
     top: auto;
     bottom: sizem(10);
     right: auto;
-    left: 0;
+    left:sizem(-100);
+    img{width: 100%;}
   }
   .leaf {
-    width: sizem(163);
+    width: sizem(150);
     top: auto;
-    bottom: sizem(-90);
+    bottom: sizem(-50);
     right: sizem(-20);
+    img{width: 100%;transform:scaleX(-1) rotate(-80deg);}
   }
 
   .dialog {

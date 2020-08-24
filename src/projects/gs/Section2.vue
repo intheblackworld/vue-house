@@ -5,38 +5,36 @@
         src="./deck/leaf.png"
         alt="leaf"
         class="leaf1 absolute"
-        data-aos="fade"
+        data-aos="fade-down-right"
         data-aos-delay="0"
         v-if="!isMobile"
       >
+      <div class="leaf2 absolute"
+        data-aos="fade-down-left"
+        data-aos-delay="200">
       <img
         src="./deck/leaf.png"
         alt="leaf"
-        class="leaf2 absolute"
-        data-aos="fade"
-        data-aos-delay="0"
         v-if="!isMobile"
-      >
+      ></div>
       <img
-        src="./s2/1.png"
-        alt=""
-        class="bg-img"
-        data-aos="fade"
-        data-aos-delay="0"
+        src="./deck/tree.png"
+        alt="tree"
+        class="tree absolute"
         v-if="!isMobile"
-      >
-      <img
-        src="./s2/2.png"
-        alt=""
-        class="bg-img"
         data-aos="fade"
-        data-aos-delay="1000"
-        v-if="!isMobile"
-      >
+        data-aos-delay="400">
       <img
-        src="./s2/3.png"
-        alt=""
-        class="bg-img"
+        src="./deck/butterfly.png"
+        alt="butterfly"
+        class="butterfly absolute"
+        v-if="!isMobile"
+        data-aos="fade-up-right"
+        data-aos-delay="500">
+      <img
+        src="./s2/txt.png"
+        alt="txt"
+        class="txt absolute"
         data-aos="fade"
         data-aos-delay="1200"
         v-if="!isMobile"
@@ -144,21 +142,30 @@
     position: relative;
   }
 }
-
-.tree {
-}
-
 .leaf1 {top: 0;left: size(70);
 width: size(233);
 }
 
-.leaf2 {top: 0;right: size(70);
-width: size(233);
+.leaf2 {bottom:size(-20);right: size(190);
+width: size(170);
+    img{width: 100%;transform:scaleX(-1) rotate(-70deg);}
 }
 
-.butterfly {
+.tree {top:size(290);right: size(556);
+width: size(192);z-index: 2;
 }
 
+
+.butterfly {top:size(320);right: size(130);
+width: size(86);z-index: 2;
+}
+
+
+.txt {
+  width: size(242);
+  bottom: size(40);
+  right: size(580);z-index: 2;
+}
 .title {
   writing-mode: vertical-rl;
   text-orientation: upright;
@@ -170,8 +177,8 @@ width: size(233);
   font-stretch: normal;
   font-style: normal;
   line-height: 1.57;
-  letter-spacing: normal;
-  text-align: center;
+  letter-spacing: 0.05em;
+  text-align: left;
   color: #000000;
 }
 
@@ -180,14 +187,14 @@ width: size(233);
   text-orientation: upright;
   width: auto;
   right: size(463);
-  top: size(105);
+  top: size(70);
   font-size: size(24);
-  font-weight: bold;
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.76;
-  letter-spacing: normal;
-  text-align: center;
+  letter-spacing:0.2em;
+  text-align: left;
   color: #8e8a74;
 }
 
@@ -197,13 +204,7 @@ width: size(233);
   top: size(40);
   right: size(300);
   opacity: 0.38;
-  border: size(5.3) solid #8e8a74;
-}
-
-.txt {
-  width: size(243);
-  bottom: size(40);
-  right: size(594);
+  border: size(5.3) solid #8e8a7466;
 }
 
 .map-img {
@@ -316,7 +317,7 @@ width: size(233);
     position: absolute;
     width: 20vw;
     height: 20vw;
-    bottom: calc(50vh - 60vw);
+    bottom: sizem(120);
     left: calc(50% - 10vw);
     color: #fff;
     &:before {

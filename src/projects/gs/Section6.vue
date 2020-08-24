@@ -16,7 +16,8 @@
           >
             <img
               :src="slide.img"
-              alt=""
+              alt="小城故事外觀"
+              class="swipe-item"
             >
             <h3
               :class="`absolute title title${i + 1}`"
@@ -240,19 +241,19 @@
 .title1,
 .title3 {
   top: size(72);
-  right: size(290);
+  left: size(1217);
 }
 
 .subtitle1,
 .subtitle3 {
   top: size(216);
-  right: size(214);
+  left: size(1217);
 }
 
 .desc1,
 .desc3 {
   top: size(270);
-  right: size(200);
+  left: size(1217);
 }
 
 .title2 {
@@ -306,7 +307,9 @@
     height: 100%;
     overflow: hidden;
   }
-
+.swipe-item {background: #4a649f;
+  img{height: auto;position: absolute; bottom: 0;}
+}
   // .swipe-item {
   //   width: 100%;
   //   height: 100%;
@@ -407,7 +410,7 @@
     line-height: 1.44;
     letter-spacing: 2px;
     text-align: left;
-    color: #ffffff;
+    color: #ffffff;z-index: 2;
   }
 
   .subtitle {
@@ -420,7 +423,7 @@
     letter-spacing: 1.6px;
     text-align: left;
     color: #ffffff;
-    white-space: nowrap;
+    white-space: nowrap;z-index: 2;
   }
 
   .desc {
@@ -432,7 +435,7 @@
     line-height: 2.03;
     letter-spacing: 0.96px;
     text-align: left;
-    color: #ffffff;
+    color: #ffffff;z-index: 2;
   }
 
   .title1,

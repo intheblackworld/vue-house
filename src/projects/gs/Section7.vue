@@ -49,7 +49,8 @@
 
 .section7 {
   width: size(1920);
-  height: size(900);
+  height: 100vh;
+  max-height: 56vw;
   min-height: size(900);
   overflow: hidden;
 }
@@ -57,7 +58,7 @@
 .bg-img {
   width: 100vw;
   height: 100vh;
-  min-height: size(900);
+  //min-height: size(900);
   position: absolute;
   display: block;
   top: 0;
@@ -74,8 +75,8 @@
 
 .swipe {
   width: 100vw;
-  height: size(900);
-  min-height: size(900);
+  height:100%;
+  //min-height: size(900);
   top: 0;
   left: 0;
   object-fit: cover;
@@ -97,6 +98,8 @@
 
   img {
     width: 100%;
+  height: 100%;
+  object-fit: cover;
   }
 
   &:nth-child(1) {
@@ -268,9 +271,15 @@
 @media screen and (max-width: 767px) {
   .section7 {
     width: 100vw;
-    height: calc(100vh - 63px);
+    height: size-m(604);
     min-height: auto;
+  max-height: initial;
   }
+  /*
+  width: size(1920);
+  height: 100vh;
+  max-height: 56vw;
+  min-height: size(900);*/
 .img {display: none;
 }
 
@@ -298,7 +307,7 @@
 
   .swipe {
     width: 100vw;
-    height: calc(100vh - 63px);
+   // height: calc(100vh - 63px);
     top: sizem(0);
     left: 0;
     object-fit: cover;

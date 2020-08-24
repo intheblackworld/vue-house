@@ -4,10 +4,11 @@
       class="section5"
       v-if="!isMobile"
     >
+      <div 
+        class="one absolute">
       <img
         src="./s5/1.jpg"
-        alt=""
-        class="one absolute"
+        alt="交通示意圖"
         data-aos="fade-right"
         data-aos-delay="0"
       >
@@ -15,15 +16,20 @@
         class="txt txt-one absolute"
         data-aos="fade-right"
         data-aos-delay="100"
-      >交通示意圖</h3>
+      >交通示意圖</h3></div>
+      <div class="content absolute">
+      <div
+        class="block absolute"
+        data-aos="fade-down"
+        data-aos-delay="400"
+      ></div>
       <h3
-        class="title absolute"
+        class="title"
         data-aos="fade-down"
         data-aos-delay="200"
       >一高二線<br />
         速抵台北市區<br />
         便捷南來北往</h3>
-      <div class="content absolute">
         <h3
           class="subtitle"
           data-aos="fade-down"
@@ -59,21 +65,20 @@
         data-aos="fade"
         data-aos-delay="1200"
       >
+      <div class="leaf absolute"
+        data-aos="fade-down-left"
+        data-aos-delay="200">
       <img
         src="./deck/leaf.png"
-        alt=""
-        class="leaf absolute"
-        data-aos="fade"
-        data-aos-delay="1400"
-      >
-
+        alt="leaf"
+      ></div>
+      <div class="leaf2 absolute"
+        data-aos="fade-down-left"
+        data-aos-delay="200">
       <img
         src="./deck/leaf.png"
-        alt=""
-        class="leaf2 absolute"
-        data-aos="fade"
-        data-aos-delay="1400"
-      >
+        alt="leaf"
+      ></div>
 
       <div class="img-list flex-ac flex-jb wrap absolute">
         <div
@@ -146,16 +151,22 @@
           <div class="toggle-btn"></div>
         </div>
       </div>
+      <div class="butterfly absolute"
+        data-aos="fade-down-left"
+        data-aos-delay="200">
       <img
         src="./deck/butterfly.png"
-        alt=""
-        class="absolute butterfly"
+        alt="butterfly"
       >
+        </div>
+      <div class="leaf absolute"
+        data-aos="fade-down-left"
+        data-aos-delay="200">
       <img
         src="./deck/leaf.png"
-        alt=""
-        class="absolute leaf"
+        alt="leaf"
       >
+        </div>
       <div
         class="dialog flex-c"
         v-show="isDialog"
@@ -221,6 +232,7 @@
   width: size(1020);
   top: 0;
   left: 0;
+    img{width: 100%;}
 }
 
 .txt {
@@ -235,8 +247,8 @@
 }
 
 .txt-one {
-  bottom: size(298);
-  left: size(922);
+  bottom: size(10);
+  right: size(10);
 }
 
 .butterfly {
@@ -254,13 +266,14 @@
   width: size(202);
   bottom: size(10);
   right: size(120);
+  img{width: 100%;transform:scaleX(-1) rotate(-80deg);}
 }
 
 .leaf2 {
   width: size(124);
   bottom: size(148);
   right: size(400);
-  transform: rotate(-90deg);
+  img{width: 100%;transform:scaleX(-1) rotate(90deg);}
 }
 
 .line {
@@ -271,15 +284,16 @@
 
 .title {
   top: size(90);
-  right: size(465);
+  left: size(0);
   font-size: size(48);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.53;
-  letter-spacing: 7.75px;
+  letter-spacing: 0.16em;
   text-align: left;
   color: #000000;
+  margin: 0 0 0.5em 0;
 }
 
 .subtitle {
@@ -288,10 +302,10 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.4;
-  letter-spacing: 5.4px;
+  letter-spacing: 0.16em;
   text-align: left;
   color: #333333;
-  margin-bottom: size(20);
+  margin: 0 0 0.8em 0;
 }
 
 .desc {
@@ -300,7 +314,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 2.03;
-  letter-spacing: 1.94px;
+  letter-spacing: 0.12em;
   text-align: left;
   color: #8e8a74;
 }
@@ -308,9 +322,16 @@
 .content {
   width: size(635);
   height: size(576);
-  top: size(292);
+  top: size(80);
   right: size(175);
-  padding-top: size(62);
+  padding-top: size(0);
+}
+.block {
+  background-color: #8e8a7455;
+  width: size(258);
+  height:size(372);
+  top: size(-40);
+  left: size(-30);
 }
 
 .img-list {
@@ -355,7 +376,8 @@
 @media screen and (max-width: 767px) {
   .section5 {
     width: 100vw;
-    height: calc(100vh - 63px);
+  //  height: calc(100vh - 63px);
+    height:sizem(600);
     min-height: auto;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
@@ -524,7 +546,7 @@
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.09;
+    line-height:1.8;
     letter-spacing: 0.4px;
     text-align: left;
     color: #333333;
@@ -567,12 +589,14 @@
     top: sizem(310);
     right: auto;
     left: 0;
+    img{width: 100%;transform:rotate(-80deg);}
   }
 
   .leaf {
-    width: sizem(100);
+    width: sizem(120);
     top: sizem(315);
     right: sizem(-23);
+    img{width: 100%;transform:scaleX(-1) rotate(0deg);}
   }
 
   .dialog {
