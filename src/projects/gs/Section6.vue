@@ -41,18 +41,8 @@
             ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
           <div class="swipe-btns absolute flex-ac flex-jb">
-            <img
-              src="./all/prev-btn.png"
-              alt=""
-              class="prev-btn"
-              @click="decIndex"
-            >
-            <img
-              src="./all/next-btn.png"
-              alt=""
-              class="next-btn"
-              @click="addIndex"
-            >
+            <div class="prev-btn" @click="decIndex"></div>
+            <div class="next-btn" @click="addIndex"></div>
           </div>
         </div>
       </div>
@@ -189,18 +179,35 @@
   }
 }
 
-.swipe-btns {
-  width: 100%;
-  height: 100%;
-  padding: 0 15px;
-  z-index: 3;
+  .swipe-btns {
+    width: 100%;
+    height: 100%;
+    padding: 0 0;
+    z-index: 3;
 
-  .prev-btn,
-  .next-btn {
-    width: size(20);
-    cursor: pointer;
+    .prev-btn,
+    .next-btn {
+      font-size: size-m(10);
+      cursor: pointer;
+      height: 100%;width: 3em;
+      display: flex;
+      align-items: center;
+      justify-items: center;
+    padding: 0 1em;
+    }
+     .prev-btn::after{content: "";display: block;
+      width: 0;
+height: 0;
+border-style: solid;
+border-width: 1em 1em 1em 0;
+border-color: transparent #fff transparent transparent;}
+    .next-btn::after{content: "";display: block;
+      width: 0;
+height: 0;
+border-style: solid;
+border-width: 1em 0 1em 1em;
+border-color: transparent transparent transparent #fff;}
   }
-}
 .title {
   text-shadow: 1px 1px 7px rgba(21, 32, 68, 0.8);
   font-size: size(48);
@@ -391,12 +398,12 @@
   .swipe-btns {
     width: 100%;
     height: 100%;
-    padding: 0 10px;
+    padding: 0 0;
     z-index: 3;
 
     .prev-btn,
     .next-btn {
-      width: size-m(15);
+   //   width: size-m(15);
       cursor: pointer;
     }
   }

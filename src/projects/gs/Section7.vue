@@ -25,18 +25,8 @@
             ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
           <div class="swipe-btns absolute flex-ac flex-jb">
-            <img
-              src="./all/prev-btn.png"
-              alt=""
-              class="prev-btn"
-              @click="decIndex"
-            >
-            <img
-              src="./all/next-btn.png"
-              alt=""
-              class="next-btn"
-              @click="addIndex"
-            >
+            <div class="prev-btn" @click="decIndex"></div>
+            <div class="next-btn" @click="addIndex"></div>
           </div>
         </div>
       </div>
@@ -400,16 +390,31 @@
   .swipe-btns {
     width: 100%;
     height: 100%;
-    padding: 0 10px;
+    padding: 0 0;
     z-index: 3;
 
     .prev-btn,
     .next-btn {
-      background-color:rgba(0, 0, 0, 0.3);
-      padding: 5px;
-      width: size-m(15);
+      font-size: size-m(10);
       cursor: pointer;
+      height: 100%;width: 3em;
+      display: flex;
+      align-items: center;
+      justify-items: center;
+    padding: 0 1em;
     }
+     .prev-btn::after{content: "";display: block;
+      width: 0;
+height: 0;
+border-style: solid;
+border-width: 1em 1em 1em 0;
+border-color: transparent #0005 transparent transparent;}
+    .next-btn::after{content: "";display: block;
+      width: 0;
+height: 0;
+border-style: solid;
+border-width: 1em 0 1em 1em;
+border-color: transparent transparent transparent #0005;}
   }
 }
 </style>
