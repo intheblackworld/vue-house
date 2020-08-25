@@ -2,7 +2,7 @@
   <div class="home no-padding-top">
     <Loading :loading="load" />
     <!-- <SideNavigation /> -->
-    <Navigation />
+    <!-- <Navigation /> -->
     <!-- <Indigator :viewIndex="viewIndex" /> -->
     <!-- <full-page
       ref="fullPage"
@@ -109,17 +109,17 @@ import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 
-import Section1 from '@/projects/jyfs/Section1.vue'
-import Section2 from '@/projects/jyfs/Section2.vue'
-import Section3 from '@/projects/jyfs/Section3.vue'
-import Section4 from '@/projects/jyfs/Section4.vue'
-import Section5 from '@/projects/jyfs/Section5.vue'
-import Section6 from '@/projects/jyfs/Section6.vue'
-import Section7 from '@/projects/jyfs/Section7.vue'
-// import Section8 from '@/projects/jyfs/Section8.vue'
-// import Section9 from '@/projects/jyfs/Section9.vue'
-// import Section10 from '@/projects/jyfs/Section10.vue'
-// import Section11 from '@/projects/jyfs/Section11.vue'
+import Section1 from '@/projects/jy/Section1.vue'
+import Section2 from '@/projects/jy/Section2.vue'
+import Section3 from '@/projects/jy/Section3.vue'
+import Section4 from '@/projects/jy/Section4.vue'
+import Section5 from '@/projects/jy/Section5.vue'
+import Section6 from '@/projects/jy/Section6.vue'
+import Section7 from '@/projects/jy/Section7.vue'
+// import Section8 from '@/projects/jy/Section8.vue'
+// import Section9 from '@/projects/jy/Section9.vue'
+// import Section10 from '@/projects/jy/Section10.vue'
+// import Section11 from '@/projects/jy/Section11.vue'
 
 export default {
   name: 'home',
