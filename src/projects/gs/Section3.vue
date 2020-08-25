@@ -197,7 +197,7 @@
           class="toggle-item flex-ac flex-jb"
           @click="showDialog(1)"
         >
-          <h3 class="toggle-title">約3分鐘宜蘭人氣No.1羅東夜市</h3>
+          <h3 class="toggle-title">約10分鐘宜蘭人氣No.1羅東夜市</h3>
           <div class="toggle-btn"></div>
         </div>
       </div>
