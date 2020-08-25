@@ -18,7 +18,7 @@ export default {
 
   ],
 
-  gtmCode: ['TXKHJLB'], // 可放置多個
+  gtmCode: ['W5KQ4XB'], // 可放置多個
   order: {
     title: '預約賞屋',
     subTitle: ''
