@@ -56,7 +56,7 @@
       </div>
       <img
         src="./s11/mo/button.png"
-        alt=""
+        alt="預約鑑賞"
         class="btn"
         v-scroll-to="{ element: `#contact` }"
       >

@@ -6,12 +6,12 @@
     >
       <img
         v-lazy="require('./s12/bg.png')"
-        alt=""
+        alt="bg"
         class="bg-img"
       >
       <img
         v-lazy="require('./s12/t.png')"
-        alt=""
+        alt="t"
         class="left"
       >
       <div
@@ -20,24 +20,30 @@
       >
         <img
           v-lazy="require('./s12/img1.png')"
-          alt=""
+          alt="img1"
           class="right-img"
         >
         <img
           v-lazy="require('./s12/img2.png')"
-          alt=""
+          alt="img2"
           class="right-img move"
         >
         <img
           v-lazy="require('./s12/img3.png')"
-          alt=""
+          alt="img3"
           class="right-img move"
         >
         <img
           v-lazy="require('./s12/img4.png')"
-          alt=""
+          alt="img4"
           class="right-img move"
         >
+      <div
+        class="btn"
+        v-scroll-to="{ element: `#contact` }"
+      >馬上預約
+      </div>
+        
       </div>
     </div>
     <div
@@ -78,6 +84,11 @@
           alt=""
           class="img img-b move"
         >
+      <div
+        class="btn"
+        v-scroll-to="{ element: `#contact` }"
+      >馬上預約
+      </div>
       </div>
     </div>
   </div>
@@ -218,6 +229,10 @@
     animation: updown 1.5s .3s ease-in-out infinite alternate;
   }
 }
+.btn{
+  cursor: pointer;font-size: size(28);transition: all 0.3s;letter-spacing:0.1em;position: absolute;bottom: 2.9em;left:calc(50% + 32.5vh);background:#0b318f;color: #fff;border-radius: 0.5em;line-height: 2;width: 8em;text-align: center;
+  &:hover{bottom: 3em;;background:#042477;}
+}
 
 @keyframes updown {
   from {
@@ -242,7 +257,7 @@
 
 @media screen and (max-width: 767px) {
   .m-bg {
-    height: size-m(603);
+    height:calc(100vh - 63px);
     position: relative;
   }
 
@@ -265,6 +280,9 @@
   to {
     margin-top: 0px;
   }
+}
+.btn{font-size: size-m(16);top: calc(161vw + 3vh);left:calc(50% - 4em);display: block;bottom: auto;
+ &:hover{bottom: auto;}
 }
 }
 </style>
