@@ -32,7 +32,7 @@
       <div
         v-if="isMobile"
         class="full-img bg-img"
-        v-lazy:background-image="require('./mo/2/bg.png')"
+        v-lazy:background-image="require('./mo/2/bg.jpg')"
       ></div>
       <!--
       <div
@@ -272,7 +272,11 @@
 @media screen and (max-width: 767px) {
 .full-bg {
   height: calc(100vh - 123px);
+  max-height:size-m(900);
 }
+.full-img {height: 100%;
+}
+
 .bg-img {
 
 &.water-img{
