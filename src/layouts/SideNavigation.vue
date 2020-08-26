@@ -1,11 +1,11 @@
 <template>
   <div class="sideNav">
-    <div :class="`nav relative ${isShowMenu ? 'show' : ''}`">
+    <div class="nav relative">
       <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
-      <div :class="`menubg ${isOpen ? 'open' : ''}`" />
-      <div :class="`menu ${isOpen ? 'open' : ''}`" @click="toggleSidebar">
-        <img v-if="isOpen" src="@/projects/jh/s4/close.png" class="close" alt />
-        <img src="@/assets/img/menu-btn.png" alt />
+      <div class="menu" @click="toggleSidebar">
+        <div :class="`menu-icon ${isOpen ? 'menu-icon-active' : ''}`"></div>
+        <!-- <img v-if="isOpen" src="@/projects/jh/s4/close.png" class="close" alt />
+        <img v-else src="@/assets/img/menu-btn.png" alt />-->
       </div>
       <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
       <ul :class="`navlist ${isOpen ? 'open': ''}`">
@@ -19,7 +19,7 @@
           <span class="link">
             <img v-if="item.imgSrc" :src="item.imgSrc" alt />
             <span>
-              <p class="title">{{item.name}}</p>
+              <div class="title">{{item.name}}</div>
               <span class="subTitle">{{item.subTitle}}</span>
             </span>
           </span>
@@ -36,14 +36,12 @@ import navList from '@/info/navList'
 export default {
   name: 'sideNavigation',
   components: {},
-  props: ['viewIndex'],
   data() {
     return {
       isOpen: false,
       isMobile,
       isTablet,
       list: navList,
-      isShowMenu: false,
     }
   },
 
@@ -58,22 +56,13 @@ export default {
       this.isOpen = !this.isOpen
     },
   },
-
-  watch: {
-    viewIndex(val) {
-      if (val >= 2) {
-        this.isShowMenu = true
-      } else {
-        this.isShowMenu = false
-      }
-    }
-  }
 }
 </script>
 
 <style lang="scss" scoped>
 @import '../assets/style/variableColor.scss';
 @import '../assets/style/variableDefault.scss';
+@import '../assets/style/function.scss';
 
 .navigation {
   height: $nav_phone_height;
@@ -93,67 +82,36 @@ export default {
 .nav {
   position: static;
   height: $nav_phone_height;
-  opacity: 0;
-  transition: opacity .5s;
-  z-index: 110;
-
-  &.show {
-    opacity: 1;
-  }
-}
-
-.menubg {
-  display: flex;
-  background-image: linear-gradient(to right, #e7380d -27%, #e4006e 236%);
-  border-radius: 0 8px 8px 0;
-  display: flex;
-  position: fixed;
-  top: calc(100vh * 60 / 1080);
-  left: 0px;
-  width: 140px;
-  height:70px;
-  transition: all 0.5s;
-  cursor: pointer;
-  z-index: 120;
-  &.open {
-  width: 180px;
-  height:480px;
-  }
 }
 
 .menu {
-  display: flex;
+  display: block;
   position: fixed;
-  top: calc(100vh * 60 / 1080);
-  left: 0px;
-  width: 140px;
-  height:auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 112;
+  top: 30px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  background-color: #707070;
   cursor: pointer;
-  z-index:140;
-  transition: all 0.5s;
 
-  &.open {
-  width: 180px;
-  }
-  img {
-    width:auto;
-    height: 57px;
-    margin: 5% auto 5%  auto;
-  }
+  // img {
+  //   width: 100%;
+  // }
 
-  .close {
-    width: 20px;
-    height: auto;
-    margin-right: 0px;
-    position: absolute;
-    left: 150px;
-    top: 10px;
-  }
+  // .close {
+  //   width: 40px;
+  //   margin-top: 20px;
+  //   margin-right: 0px;
+  // }
 }
 
 .logo {
   width: $logo_pc_width;
-  z-index: 140;
+  z-index: 2;
   height: auto;
   position: absolute;
   left: 0;
@@ -162,18 +120,65 @@ export default {
   transform: translateY(0%);
 }
 
+.menu-icon {
+  position: relative;
+  width: 30px;
+  height: 3px;
+  background-color: #CD0012;
+}
+
+.menu-icon::before {
+  position: absolute;
+  left: 0;
+  top: -10px;
+  content: '';
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #CD0012;
+  transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+}
+
+.menu-icon::after {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  content: '';
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #CD0012;
+  transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+}
+
+.menu-icon.menu-icon-active {
+  background-color: transparent;
+}
+
+.menu-icon.menu-icon-active::before {
+  transform: rotate(45deg);
+  top: 0;
+  transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+}
+
+.menu-icon.menu-icon-active::after {
+  transform: rotate(-45deg);
+  top: 0;
+  transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+}
+
 .navlist {
   position: fixed;
-  z-index:140;
-  //background: $nav_bg;
+  z-index: 111;
+  background: $nav_bg;
   width: 0%;
-  left: 0;
-  top: calc(100vh * 150 / 1080);
-  height: auto;
+  right: 0;
+  top: $nav_phone_height;
+  height: calc(100vh - #{$nav_phone_height});
   text-align: center;
-  transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in-out;
   display: block;
-  transform: translateX(-40%);
+  transform: translateX(40%);
 
   li {
     height: 60px;
@@ -184,7 +189,7 @@ export default {
   .link {
     height: 60px;
     width: 100%;
-    font-size: 17px;
+    font-size: 24px;
     margin-top: 10px;
     display: flex;
     align-items: center;
@@ -227,7 +232,7 @@ export default {
   }
 
   &.open {
-    width: 180px;
+    width: size(300);
     transform: translateX(0%);
     display: flex;
     flex-wrap: wrap;
@@ -262,7 +267,7 @@ export default {
 }
 
 .mask {
-  width: 0;
+  width: 100vw;
   top: $nav_phone_height;
   right: 0;
   background: transparent;
@@ -275,7 +280,7 @@ export default {
     display: block;
     width: 100vw;
     opacity: 1;
-  z-index: 110;
+    z-index: 110;
   }
 }
 
@@ -316,7 +321,7 @@ export default {
 @media only screen and (max-width: 767px) {
   .navigation {
     height: $nav_phone_height;
-    z-index: 120;
+    z-index: 110;
   }
 
   .nav-container {
@@ -335,11 +340,19 @@ export default {
   }
 
   .menu {
-    display: block;
+    display: flex;
     position: fixed;
-    height:auto;
+    right: 30px;
+    top: 30px;
 
+    img {
+      width: 100%;
+    }
 
+    .close {
+      width: 40px;
+      margin-top: 20px;
+    }
 
     svg {
       color: $nav_btn_color;
@@ -348,14 +361,15 @@ export default {
 
   .navlist {
     position: fixed;
+    z-index: 111;
     width: 0%;
-    // right: 0;
-    top:130px;
-    // height: calc(100vh - #{$nav_phone_height});
+    right: 0;
+    top: $nav_phone_height;
+    height: calc(100vh - #{$nav_phone_height});
     text-align: center;
     transition: all 0.3s ease-in;
     display: block;
-    // transform: translateX(40%);
+    transform: translateX(40%);
 
     li {
       height: 50px;
@@ -382,7 +396,7 @@ export default {
     }
 
     &.open {
-      // width: 100%;
+      width: 100%;
       transform: translateX(0%);
 
       .link {
@@ -411,7 +425,7 @@ export default {
       display: block;
       width: 100vw;
       opacity: 1;
-      z-index:110;
+      z-index: 110;
     }
   }
 }
