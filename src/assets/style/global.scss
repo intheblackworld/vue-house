@@ -248,8 +248,8 @@ img[lazy='loaded'] {
 
   .home {
     padding-top: $nav_tablet_height;
-    background-color: $order_bg_color;
-    background-image: $order_bg_image;
+    // background-color: $order_bg_color;
+    // background-image: $order_bg_image;
     background-repeat: no-repeat;
     background-size: 100vw auto;
     background-attachment: fixed;
@@ -342,7 +342,7 @@ img[lazy='loaded'] {
 
   .home {
     padding-top: $nav_phone_height;
-    background-color: $order_bg_color;
+    background-color: $bg;
     background-image: $order_bg_image_m;
     // background-repeat: no-repeat;
     // background-size: cover;
@@ -352,8 +352,6 @@ img[lazy='loaded'] {
     &.no-padding-top {
       padding-top: 0;
     }
-
-    background-color: #fff;
   }
   
   .full-bg {

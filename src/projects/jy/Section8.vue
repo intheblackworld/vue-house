@@ -1,6 +1,19 @@
 <template>
   <div>
-    <div class="section7">
+    <div class="section8">
+      <div class="btn-group flex-c absolute" v-if="isPC">
+        <div
+          :class="`btn ${slideIndex === index ? 'active' : ''}`"
+          v-for="(slide, index) in slideList"
+          :key="slide.img"
+        >
+          <div
+            class="btn-inner flex-c"
+            v-html="slide.title"
+            @click="goTo(index)"
+          ></div>
+        </div>
+      </div>
       <img
         src="./s1/資產 2914.png"
         alt=""
@@ -10,24 +23,17 @@
         src="./s2/icon.png"
         alt=""
         class="icon absolute"
-        data-aos="fade-left-up"
-        data-aos-delay="800"
       >
       <div
         class="title absolute"
         data-aos="fade-right"
         data-aos-delay="0"
-      >18-22坪‧德國精品家</div>
-      <div
-        class="subtitle absolute"
-        data-aos="fade-right"
-        data-aos-delay="200"
-      >全能智慧宅｜建材優勢全面躍昇</div>
+      >德國第一品牌<br />太格精工木地板</div>
       <div
         class="desc absolute"
         data-aos="fade-right"
         data-aos-delay="400"
-      >「一筆箍」柱結構工法、戴雲發AlfaSafe柱中柱、工研院研發抗壓耐震防火輕質系統磚、世界第一大品牌RAK磁磚、5合1AI智慧門鎖、林內三機、德國精品內裝，盡享安全穩固、時尚精品居家質地。</div>
+      >擁有120年歷史，全球最大木業集團生產商，榮獲綠建材標章，耐磨、防滑、隔音佳，德國精工高品質生產製造</div>
       <div
         class="swipe absolute"
         data-aos="fade-up"
@@ -57,9 +63,19 @@
             </div>
           </transition-group>
           <div
-            class="swipe-btns absolute flex-ac flex-jb"
-            v-if="isMobile"
+            class="pagination absolute flex-ac"
+            data-aos="fade-up"
+            data-aos-delay="200"
+            v-if="isPC"
           >
+            <div
+              :class="`pagination-dot`"
+              v-for="(slide, index) in slideList"
+              :key="slide.img + '-dot'"
+              @click="goTo(index)"
+            ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+          </div>
+          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
             <img
               src="./all/prev-btn.png"
               alt=""
@@ -75,19 +91,6 @@
           </div>
         </div>
       </div>
-      <div
-        class="pagination absolute flex-ac"
-        data-aos="fade-up"
-        data-aos-delay="200"
-        v-if="isPC"
-      >
-        <div
-          :class="`pagination-dot`"
-          v-for="(slide, index) in slideList"
-          :key="slide.img + '-dot'"
-          @click="goTo(index)"
-        ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-      </div>
     </div>
   </div>
 </template>
@@ -95,9 +98,9 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section7 {
+.section8 {
   width: size(1920);
-  height: size(968);
+  height: size(825);
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
@@ -122,9 +125,11 @@
 }
 
 .title {
-  width: size(419);
-  top: size(112);
-  left: size(371);
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  // width: size(419);
+  top: size(191);
+  right: size(390);
   font-size: size(42);
   font-weight: bold;
   font-stretch: normal;
@@ -136,54 +141,91 @@
   white-space: nowrap;
 }
 
-.subtitle {
-  width: size(519);
-  top: size(182);
-  left: size(376);
-  font-size: size(32);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: 5.17px;
-  text-align: left;
-  color: #3e3a39;
-  white-space: nowrap;
-}
-
 .desc {
-  width: size(650);
-  top: size(127);
-  left: size(959);
+  width: size(240);
+  top: size(601);
+  right: size(326);
   font-size: size(16);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.32;
-  letter-spacing: 1.6px;
+  line-height: 2.2;
+  letter-spacing: 1.92px;
   text-align: left;
   color: #4d4d4d;
 }
 
 .icon {
   width: size(76);
-  top: size(95);
-  left: size(314);
+  bottom: size(54);
+  right: size(307);
+  transform: rotate(180deg);
 }
 
 .img {
   width: size(216);
-  top: size(23);
-  left: size(-108);
+  bottom: size(44);
+  right: size(-108);
+}
+
+.btn-group {
+  // width: size();
+  top: size(0);
+  left: size(303);
+}
+.btn {
+  position: relative;
+  width: size(227);
+  height: size(63);
+  font-size: size(21);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.13;
+  letter-spacing: size(1.87);
+  text-align: center;
+  color: #717071;
+  margin-right: size(30);
+  cursor: pointer;
+
+  &:before {
+    z-index: 0;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #cb0012;
+    // border: 2px solid #000;
+  }
+
+  .btn-inner {
+    width: size(227);
+    height: size(63);
+    z-index: 1;
+    position: relative;
+    background-color: #d2d1ce;
+    border: 2px solid #717071;
+    transition: transform 0.4s ease;
+  }
+
+  &:hover,
+  &.active {
+    .btn-inner {
+      transform: translate(-6px, -6px);
+    }
+  }
 }
 
 /* Swipe */
 .swipe {
-  width: size(1292);
-  height: size(542);
-  min-height: size(542);
-  top: size(299);
-  left: size(314);
+  width: size(1024);
+  height: size(675);
+  min-height: size(675);
+  top: size(102);
+  left: size(301);
   object-fit: cover;
 }
 
@@ -258,7 +300,7 @@
 
 .pagination {
   width: auto;
-  bottom: size(107);
+  bottom: size(10);
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -343,9 +385,9 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section7 {
+  .section8 {
     width: 100vw;
-    height: sizem(464 + 286);
+    height: sizem(476);
     min-height: auto;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
@@ -353,88 +395,12 @@
     // background-attachment: fixed;
     overflow: hidden;
   }
-
-  .title {
-    width: sizem(260);
-    top: sizem(61);
-    left: sizem(54);
-    font-size: sizem(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.31;
-    letter-spacing: 1.5px;
-    text-align: left;
-    color: #000000;
-    white-space: nowrap;
-  }
-
-  .subtitle {
-    width: sizem(309);
-    top: sizem(101);
-    left: sizem(34);
-    font-size: sizem(20);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.43;
-    letter-spacing: 2.2px;
-    text-align: left;
-    color: #3e3a39;
-    white-space: nowrap;
-  }
-
-  .desc {
-    width: sizem(310);
-    top: sizem(149);
-    left: sizem(34);
-    font-size: sizem(15);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.73;
-    letter-spacing: 1.5px;
-    text-align: left;
-    color: #4d4d4d;
-  }
-
-  .icon {
-    width: sizem(73);
-    top: sizem(31);
-    left: sizem(23);
-  }
-
-  .img {
-    width: size(216);
-    top: size(23);
-    left: size(-108);
-    display: none;
-  }
   .swipe {
     width: 100vw;
-    height: sizem(464);
-    top: sizem(286);
+    height: sizem(247);
+    top: sizem(229);
     left: 0;
     object-fit: cover;
-  }
-
-  // begin
-  .swipe-fade-leave-to {
-    opacity: 0;
-    z-index: 0;
-  }
-  // end
-  .swipe-fade-enter {
-    opacity: 0;
-    z-index: 1;
-  }
-
-  .swipe-fade-enter-active {
-    transition: all 0.5s ease;
-  }
-
-  .swipe-fade-leave-active {
-    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
   }
 
   .swipe-wrap {
@@ -525,6 +491,39 @@
       cursor: pointer;
     }
   }
+
+  .title {
+    width: sizem(184);
+    top: sizem(37);
+    left: sizem(35);
+    right: auto;
+    writing-mode: initial;
+    font-size: sizem(25);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.44;
+    letter-spacing: 1.5px;
+    text-align: left;
+    color: #000000;
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  .desc {
+    width: sizem(312);
+    top: sizem(131);
+    right: auto;
+    left: sizem(36);
+    font-size: sizem(15);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.73;
+    letter-spacing: 1.5px;
+    text-align: left;
+    color: #4d4d4d;
+  }
 }
 </style>
 <script>
@@ -533,21 +532,28 @@ import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section7',
+  name: 'section8',
 
   mixins: [slider],
 
   data() {
     return {
-      isPC,
+      isPC, 
       isMobile,
       isTablet,
+      isDialog: false,
       slideList: [
         {
-          img: isPC ? require('./s7/1.jpg') : require('./s7/1_m.jpg'),
+          img: require('./s8/1.jpg'),
+          title: '德國第一品牌<br />太格精工木地板',
         },
         {
-          img: isPC ? require('./s7/2.jpg') : require('./s7/2_m.jpg'),
+          img: require('./s8/2.jpg'),
+          title: '德國原裝進口<br />impuls精品廚具',
+        },
+        {
+          img: require('./s8/3.jpg'),
+          title: '飯店級高雅享受<br />德國Innoci時尚衛浴',
         },
       ],
     }

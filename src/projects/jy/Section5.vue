@@ -4,7 +4,7 @@
       <img
         src="./s5/資產 2114.png"
         alt=""
-        class="img absolute"
+        class="map-img absolute"
         data-aos="fade-right"
         data-aos-delay="0"
       >
@@ -38,7 +38,11 @@
         @mouseenter.stop="toggleTimer = false"
         @mouseleave.stop="toggleTimer = true"
       >
-        <div class="swipe-wrap relative">
+        <div
+          class="swipe-wrap relative"
+          v-touch:swipe.left="decIndex"
+          v-touch:swipe.right="addIndex"
+        >
           <transition-group
             name="swipe-fade"
             mode="out-in"
@@ -55,7 +59,7 @@
               >
             </div>
           </transition-group>
-          <!-- <div class="swipe-btns absolute flex-ac flex-jb">
+          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
             <img
               src="./all/prev-btn.png"
               alt=""
@@ -68,13 +72,14 @@
               class="next-btn"
               @click="addIndex"
             >
-          </div> -->
+          </div>
         </div>
       </div>
       <div
         class="pagination absolute flex-ac"
         data-aos="fade-up"
         data-aos-delay="200"
+        v-if="isPC"
       >
         <div
           :class="`pagination-dot`"
@@ -116,7 +121,7 @@
   }
 }
 
-.img {
+.map-img {
   width: size(589);
   bottom: size(47);
   left: size(180);
@@ -342,7 +347,7 @@
 @media screen and (max-width: 767px) {
   .section5 {
     width: 100vw;
-    height: sizem(300 + 303);
+    height: sizem(901);
     min-height: auto;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
@@ -350,101 +355,74 @@
     // background-attachment: fixed;
     overflow: hidden;
   }
+  .map-img {
+    width: sizem(331);
+    bottom: sizem(318);
+    left: sizem(22);
+  }
+
+  .title {
+    width: sizem(264);
+    top: sizem(30);
+    left: sizem(34);
+    font-size: sizem(25);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.44;
+    letter-spacing: sizem(1.5);
+    text-align: left;
+    color: #000000;
+    margin-top: 0;
+    white-space: nowrap;
+  }
+
+  .hr {
+    width: sizem(330);
+    height: 4px;
+    top: sizem(115);
+    left: sizem(24);
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .subtitle {
+    width: sizem(252);
+    top: sizem(125);
+    left: sizem(34);
+    font-size: sizem(20);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: sizem(3.2);
+    text-align: left;
+    color: #3e3a39;
+    white-space: nowrap;
+  }
+
+  .desc {
+    width: sizem(315);
+    top: sizem(199);
+    left: sizem(34);
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.73;
+    letter-spacing: sizem(1.5);
+    text-align: left;
+    color: #4d4d4d;
+  }
+
+  /* Swipe */
   .swipe {
-    width: 100vw;
-    height: sizem(300);
-    top: sizem(0);
-    left: 0;
+    width: sizem(330);
+    height: sizem(279);
+    min-height: sizem(279);
+    top: sizem(602);
+    right: auto;
+    left: sizem(23);
     object-fit: cover;
-  }
-
-  .swipe-wrap {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .swipe-item {
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    z-index: 0;
-    object-fit: cover;
-
-    img {
-      width: 100%;
-    }
-
-    &.base {
-      z-index: 1;
-      left: 0;
-      opacity: 1;
-    }
-    &.active {
-      z-index: 2;
-      left: 0;
-      opacity: 1;
-    }
-  }
-
-  .pagination {
-    width: auto;
-    bottom: 10px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    justify-content: center;
-  }
-
-  .pagination-dot {
-    padding: 5px;
-    cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width: 14px;
-      height: 14px;
-      border-radius: 14px;
-      box-shadow: 0 0 0 1px #fff;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
-      transition: all 0.5s;
-
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #fff;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transition: all 0.3s;
-        transform-origin: center;
-        transform: scale(0);
-      }
-      &.active {
-        &::before {
-          content: '';
-          width: 60%;
-          height: 60%;
-          display: block;
-          background: #fff;
-          border-radius: 20px;
-          opacity: 1;
-          position: absolute;
-          top: 20%;
-          // transform: translateY(-50%);
-          left: 23%;
-          transform: scale(1);
-        }
-      }
-    }
   }
 
   .swipe-btns {
@@ -459,190 +437,11 @@
       cursor: pointer;
     }
   }
-
-  .name {
-    right: 15px;
-    bottom: 15px;
-    font-size: 12px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 0.92;
-    letter-spacing: 3.12px;
-    text-align: left;
-    color: #ffffff;
-    z-index: 5;
-  }
-
-  .title {
-    writing-mode: initial;
-    font-size: sizem(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.44;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000000;
-    margin-top: sizem(32 + 300);
-    margin-left: sizem(56);
-  }
-
-  .toggle-list {
-    width: sizem(324);
-    margin: 0 auto;
-    margin-top: sizem(10);
-  }
-
-  .toggle-item {
-    width: 100%;
-    height: sizem(90);
-    border-top: solid 1px rgba(142, 138, 116, 0.5);
-    border-bottom: solid 1px rgba(142, 138, 116, 0.5);
-
-    // &:nth-last-child(1) {
-    //   border-top: none;
-    // }
-  }
-
-  .toggle-title {
-    font-size: sizem(20);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.09;
-    letter-spacing: 0.4px;
-    text-align: left;
-    color: #333333;
-  }
-
-  .toggle-btn {
-    background-color: #fff;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    position: relative;
-    &:before {
-      content: '';
-      background: #707070;
-      width: 1px;
-      height: 14px;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-    }
-    &:after {
-      content: '';
-      background: #707070;
-      width: 14px;
-      height: 1px;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-    }
-  }
-
-  .butterfly {
-    width: sizem(52);
-    top: sizem(307);
-    right: auto;
-    left: 0;
-  }
-  .line {
-    width: sizem(330);
-    top: auto;
-    bottom: sizem(10);
-    right: auto;
-    left: 0;
-  }
-  .leaf {
-    width: sizem(163);
-    top: auto;
-    bottom: sizem(-90);
-    right: sizem(-20);
-  }
-
-  .dialog {
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.7);
-    overflow: scroll;
-
-    .dialog-content {
-      width: sizem(340);
-      height: sizem(556);
-      background-color: #fff;
-      border-radius: 20px;
-      padding: sizem(15);
-      overflow: scroll;
-    }
-
-    .close {
-      width: 35px;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 5px;
-      position: absolute;
-      right: sizem(30);
-      top: sizem(68);
-    }
-
-    .dialog-title {
-      font-size: sizem(25);
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.44;
-      letter-spacing: normal;
-      text-align: left;
-      color: #000000;
-      margin-top: sizem(45);
-    }
-    .dialog-subtitle {
-      font-size: sizem(20);
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 2.09;
-      letter-spacing: 1.6px;
-      text-align: left;
-      color: #333333;
-      margin-top: sizem(10);
-    }
-    .dialog-smalltitle {
-      font-size: sizem(18);
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 2.33;
-      letter-spacing: 3.24px;
-      text-align: left;
-      color: #8e8a74;
-    }
-    .dialog-desc {
-      font-size: sizem(15);
-      font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 2.17;
-      letter-spacing: normal;
-      text-align: left;
-      color: #8e8a74;
-    }
-  }
 }
 </style>
 <script>
 // @ is an alias to /src
-import { isMobile, isTablet } from '@/utils'
+import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
 export default {
@@ -652,6 +451,7 @@ export default {
 
   data() {
     return {
+      isPC,
       isMobile,
       isTablet,
       isDialog: false,

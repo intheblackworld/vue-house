@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="section1">
+    <div class="section1" v-if="isPC">
       <img src="./s1/1.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="0">
       <img src="./s1/2.png" alt="" class="bg-img" data-aos="fade-down" data-aos-delay="800">
       <img src="./s1/3.png" alt="" class="bg-img" data-aos="fade-right" data-aos-delay="300">
@@ -10,6 +10,10 @@
       
       <img src="./s1/c1.png" alt="" class="bg-img cloud1" data-aos="fade" data-aos-delay="800">
       <img src="./s1/c2.png" alt="" class="bg-img cloud2" data-aos="fade" data-aos-delay="1000">
+    </div>
+    <div class="section1" v-if="isMobile">
+      <img src="./s1/資產 514.png" alt="" class="absolute logo">
+      <img src="./s1/資產 2914.png" alt="" class="img absolute">
     </div>
   </div>
 </template>
@@ -72,22 +76,35 @@
   .section1 {
     width: 100vw;
     min-height: auto;
-    height: sizem(604 + 329);
+    height: calc(100vh - 63px);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
+  }
+
+  .logo {
+    width: sizem(260);
+    top: sizem(143);
+    left: sizem(58);
+  }
+
+  .img {
+    width: sizem(160);
+    top: sizem(-120);
+    left: sizem(16);
   }
 }
 </style>
 <script>
 // @ is an alias to /src
-import { isMobile, isTablet } from '@/utils'
+import { isPC, isMobile, isTablet } from '@/utils'
 
 export default {
   name: 'section1',
 
   data() {
     return {
+      isPC,
       isMobile,
       isTablet,
     }

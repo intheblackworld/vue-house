@@ -1,62 +1,71 @@
  <template>
   <div>
     <div class="section6">
-      <div
-        class="swipe absolute"
-        data-aos="fade-right"
-        data-aos-delay="200"
-        @mouseenter.stop="toggleTimer = false"
-        @mouseleave.stop="toggleTimer = true"
+      <img
+        src="./s6/bg.jpg"
+        alt=""
+        class="bg-img"
+        v-if="isPC"
       >
-        <div class="swipe-wrap relative">
-          <transition-group name="swipe-fade" mode="out-in">
-          <div
-            v-for="(slide, i) in slideList"
-            v-show="slideIndex === i"
-            :key="slide.img"
-            :class="`swipe-item absolute`"
-          >
-            <img
-              :src="slide.img"
-              alt=""
-            >
-            <h3
-              :class="`absolute title title${i + 1}`"
-              v-html="slide.title"
-            ></h3>
-            <h3
-              :class="`absolute subtitle subtitle${i + 1}`"
-              v-html="slide.subtitle"
-            ></h3>
-            <h3
-              :class="`absolute desc desc${i + 1}`"
-              v-html="slide.desc"
-            ></h3>
-          </div>
-          </transition-group>
-          <div class="pagination absolute flex-ac">
-            <div
-              :class="`pagination-dot`"
-              v-for="(slide, index) in slideList"
-              :key="slide.img + '-dot'"
-              @click="goTo(index)"
-            ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-          </div>
-          <div class="swipe-btns absolute flex-ac flex-jb">
-            <img
-              src="./all/prev-btn.png"
-              alt=""
-              class="prev-btn"
-              @click="decIndex"
-            >
-            <img
-              src="./all/next-btn.png"
-              alt=""
-              class="next-btn"
-              @click="addIndex"
-            >
-          </div>
-        </div>
+      <img
+        src="./s6/2.png"
+        alt=""
+        class="bg-img"
+        data-aos="fade-down"
+        data-aos-delay="0"
+        v-if="isPC"
+      >
+      <img
+        src="./s6/1.png"
+        alt=""
+        class="bg-img cloud"
+        data-aos="fade-right"
+        data-aos-delay="800"
+        v-if="isPC"
+      >
+
+      <img
+        src="./s6/bgm.jpg"
+        alt=""
+        class="bg-img"
+        v-if="isMobile"
+      >
+      <img
+        src="./s6/2_m.png"
+        alt=""
+        class="bg-img house"
+        data-aos="fade-down"
+        data-aos-delay="0"
+        v-if="isMobile"
+      >
+      <img
+        src="./s6/1_m.png"
+        alt=""
+        class="bg-img cloud"
+        data-aos="fade-right"
+        data-aos-delay="800"
+        v-if="isMobile"
+      >
+      <div
+        class="border absolute"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      ></div>
+      <div
+        class="title absolute"
+        data-aos="fade-up"
+        data-aos-delay="400"
+      >地標推手<br />築億精工</div>
+      <div
+        class="subtitle absolute"
+        data-aos="fade-up"
+        data-aos-delay="600"
+      >尺度｜決定胸懷與眼界</div>
+      <div
+        class="desc absolute"
+        data-aos="fade-up"
+        data-aos-delay="800"
+      >【築億丰盛】前後雙臨路，創造基地退縮永久棟距，簡潔俐落外觀線條，盡顯悠遠大器。面向蘭州公園，居家視野開闊。
       </div>
     </div>
   </div>
@@ -74,7 +83,7 @@
 
 .bg-img {
   width: 100vw;
-  height: 100vh;
+  height: size(900);
   min-height: size(900);
   position: absolute;
   display: block;
@@ -86,227 +95,70 @@
     top: 0;
     left: auto;
     right: 0;
-    height: auto;
+    // height: auto;
   }
 }
 
-.swipe {
-  width: 100vw;
-  height: size(900);
-  min-height: size(900);
-  top: 0;
-  left: 0;
-  object-fit: cover;
+.border {
+  width: size(773);
+  height: size(263);
+  top: size(287);
+  right: size(190);
+  border: solid 3.9px #ffffff;
 }
 
-// begin
-.swipe-fade-leave-to {
-  opacity: 0;
-  z-index: 0;
-}
-// end
-.swipe-fade-enter {
-  opacity: 0;
-  z-index: 1;
-}
-
-.swipe-fade-enter-active {
-  transition: all 0.5s ease;
-}
-
-.swipe-fade-leave-active {
-  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-// begin
-// .swipe-left-leave-to {
-//   margin-left: -100vw;
-//   z-index: 0;
-// }
-// // end
-// .swipe-left-enter {
-//   opacity: 0.5;
-//   margin-left: 0;
-//   z-index: 1;
-// }
-
-// .swipe-left-enter-active {
-//   transition: all 0.5s ease;
-// }
-
-// .swipe-left-leave-active {
-//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-// }
-
-.swipe-wrap {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.swipe-item {
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-
-  img {
-    width: 100%;
-  }
-
-  // &:nth-child(1) {
-  //   z-index: 1;
-  //   // opacity: 1;
-  // }
-
-  // &.base {
-  //   z-index: 1;
-  //   opacity: 1;
-  // }
-  // &.active {
-  //   z-index: 2;
-  //   // opacity: 1;
-  // }
-}
-
-.pagination {
-  width: auto;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  justify-content: center;
-}
-
-.pagination-dot {
-  padding: 5px;
-  cursor: pointer;
-  z-index: 4;
-
-  span {
-    display: block;
-    width: 20px;
-    height: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 0 1px #fff;
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.01);
-    transition: all 0.5s;
-
-    &::before {
-      content: '';
-      width: 60%;
-      height: 60%;
-      display: block;
-      background: #fff;
-      border-radius: 20px;
-      opacity: 1;
-      position: absolute;
-      top: 20%;
-      // transform: translateY(-50%);
-      left: 20%;
-      transition: all 0.3s;
-      transform-origin: center;
-      transform: scale(0);
-    }
-    &.active {
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #fff;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transform: scale(1);
-      }
-    }
-  }
-}
-
-.swipe-btns {
-  width: 100%;
-  height: 100%;
-  padding: 0 15px;
-  z-index: 3;
-
-  .prev-btn,
-  .next-btn {
-    width: size(20);
-    cursor: pointer;
-  }
-}
 .title {
-  text-shadow: 1px 1px 7px rgba(21, 32, 68, 0.8);
-  font-size: size(48);
+  width: size(328);
+  top: size(299);
+  right: size(596);
+  white-space: nowrap;
+  font-size: size(81);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.32;
-  letter-spacing: 2.91px;
+  line-height: 1.34;
+  letter-spacing: 1.62px;
   text-align: left;
   color: #ffffff;
 }
 
 .subtitle {
-  text-shadow: 1px 1px 7px rgba(21, 32, 68, 0.8);
-  font-size: size(29);
-  font-weight: bold;
+  width: size(289);
+  top: size(353);
+  right: size(275);
+  font-size: size(26);
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.64;
-  letter-spacing: 5.85px;
+  line-height: 1.33;
+  letter-spacing: 3.59px;
   text-align: left;
-  color: #ffffff;
+  color: #000000;
   white-space: nowrap;
 }
 
 .desc {
-  text-shadow: 1px 1px 7px rgba(21, 32, 68, 0.8);
+  width: size(350);
+  top: size(408);
+  right: size(214);
   font-size: size(16);
-  font-weight: bold;
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.03;
-  letter-spacing: 0.96px;
+  line-height: 2.45;
+  letter-spacing: 1.92px;
   text-align: left;
-  color: #ffffff;
+  color: #4d4d4d;
 }
 
-.title1,
-.title3 {
-  top: size(72);
-  right: size(290);
+.cloud {
+  animation: cloud 5s 0s ease-in-out infinite alternate-reverse;
 }
 
-.subtitle1,
-.subtitle3 {
-  top: size(216);
-  right: size(214);
-}
-
-.desc1,
-.desc3 {
-  top: size(270);
-  right: size(200);
-}
-
-.title2 {
-  top: size(72);
-  left: size(209);
-}
-
-.subtitle2 {
-  top: size(216);
-  left: size(209);
-}
-
-.desc2 {
-  top: size(270);
-  left: size(209);
+@keyframes cloud {
+  to {
+    margin-left: 150px;
+  }
 }
 
 @media only screen and (max-width: 1440px) {
@@ -328,217 +180,108 @@
     height: calc(100vh - 63px);
     min-height: auto;
   }
-  .img {
-    display: none;
-  }
 
-  .swipe {
+  .bg-img {
     width: 100vw;
-    height: calc(100vh - 63px);
+    height: auto;
+    min-height: sizem(604);
+    position: absolute;
+    display: block;
     top: 0;
     left: 0;
     object-fit: cover;
-  }
 
-  .swipe-wrap {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  // .swipe-item {
-  //   width: 100%;
-  //   height: 100%;
-  //   left: 100%;
-  //   transition: left 1s ease-in-out;
-  //   z-index: 0;
-  //   object-fit: cover;
-
-  //   &.base {
-  //     z-index: 1;
-  //     left: 0;
-  //   }
-  //   &.active {
-  //     z-index: 2;
-  //     left: 0;
-  //   }
-  // }
-
-  .pagination {
-    width: auto;
-    bottom: 10px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    justify-content: center;
-    display: none;
-  }
-
-  .pagination-dot {
-    padding: 5px;
-    cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width: 14px;
-      height: 14px;
-      border-radius: 14px;
-      box-shadow: 0 0 0 1px #fff;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
-      transition: all 0.5s;
-
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #fff;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transition: all 0.3s;
-        transform-origin: center;
-        transform: scale(0);
-      }
-      &.active {
-        &::before {
-          content: '';
-          width: 60%;
-          height: 60%;
-          display: block;
-          background: #fff;
-          border-radius: 20px;
-          opacity: 1;
-          position: absolute;
-          top: 20%;
-          // transform: translateY(-50%);
-          left: 23%;
-          transform: scale(1);
-        }
-      }
+    &:nth-child(1) {
+      top: 0;
+      left: auto;
+      right: 0;
+      // height: auto;
     }
   }
 
-  .swipe-btns {
-    width: 100%;
-    height: 100%;
-    padding: 0 10px;
-    z-index: 3;
+  .house {
+    z-index: 2;
+  }
 
-    .prev-btn,
-    .next-btn {
-      width: size-m(15);
-      cursor: pointer;
+  .cloud {
+    z-index: 1;
+    animation: cloud 15s 0s ease-in-out infinite alternate-reverse;
+  }
+
+  @keyframes cloud {
+    to {
+      margin-left: 50px;
     }
+  }
+
+  .border {
+    width: sizem(331);
+    height: sizem(242);
+    top: sizem(25);
+    right: sizem(21);
+    border: solid 2.4px #ffffff;
   }
 
   .title {
-    text-shadow: 1px 1px 7px rgba(21, 32, 68, 0.8);
+    width: sizem(102);
+    top: sizem(45);
+    right: 0;
+    left: sizem(34);
     font-size: sizem(25);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.44;
-    letter-spacing: 2px;
-    text-align: left;
-    color: #ffffff;
-  }
-
-  .subtitle {
-    text-shadow: 1px 1px 7px rgba(21, 32, 68, 0.8);
-    font-size: sizem(20);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.45;
-    letter-spacing: 1.6px;
+    letter-spacing: 0.5px;
     text-align: left;
     color: #ffffff;
     white-space: nowrap;
   }
 
-  .desc {
-    text-shadow: 1px 1px 7px rgba(21, 32, 68, 0.8);
-    font-size: sizem(16);
-    font-weight: bold;
+  .subtitle {
+    width: sizem(289);
+    top: sizem(121);
+    right: auto;
+    left: sizem(34);
+    font-size: sizem(20);
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.03;
-    letter-spacing: 0.96px;
+    line-height: 1.3;
+    letter-spacing: 2.8px;
     text-align: left;
-    color: #ffffff;
+    color: #000000;
+    white-space: nowrap;
   }
 
-  .title1,
-  .title2,
-  .title3 {
-    top: sizem(92);
+  .desc {
+    width: sizem(310);
+    top: sizem(161);
     right: auto;
-    left: sizem(26);
-  }
-
-  .subtitle1,
-  .subtitle2,
-  .subtitle3 {
-    top: sizem(172);
-    right: auto;
-    left: sizem(26);
-  }
-
-  .desc1,
-  .desc2,
-  .desc3 {
-    width: sizem(330);
-    top: sizem(216);
-    right: auto;
-    left: sizem(26);
+    left: sizem(34);
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.73;
+    letter-spacing: 1.5px;
+    text-align: left;
+    color: #4d4d4d;
   }
 }
 </style>
 <script>
 // @ is an alias to /src
-import { isMobile, isTablet } from '@/utils'
-import Parallax from 'vue-parallaxy'
-import slider from '@/mixins/slider.js'
+import { isPC, isMobile, isTablet } from '@/utils'
 
 export default {
   name: 'section6',
 
-  mixins: [slider],
-
-  components: {
-    Parallax,
-  },
-
   data() {
     return {
+      isPC,
       isMobile,
       isTablet,
-      slideList: [
-        {
-          img: isMobile ? require('./mo/6/1.jpg') : require('./s6/1.jpg'),
-          title: '有天有地有風采<br />現代簡約建築美學',
-          subtitle: '29-62坪 時尚電梯別墅、華廈',
-          desc: '適合投資、置產、退休、閑居、度假族群，暢享田園度假悠適人生',
-        },
-        {
-          img: isMobile ? require('./mo/6/2.jpg') : require('./s6/2.jpg'),
-          title: '有天有地有風采<br />現代簡約建築美學',
-          subtitle: '29-62坪 時尚電梯別墅、華廈',
-          desc: '適合投資、置產、退休、閑居、度假族群，暢享田園度假悠適人生',
-        },
-        {
-          img: isMobile ? require('./mo/6/3.jpg') : require('./s6/3.jpg'),
-          title: '有天有地有風采<br />現代簡約建築美學',
-          subtitle: '29-62坪 時尚電梯別墅、華廈',
-          desc: '適合投資、置產、退休、閑居、度假族群，暢享田園度假悠適人生',
-        },
-      ],
     }
   },
 

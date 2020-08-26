@@ -2,16 +2,30 @@
   <div>
     <div class="section3">
       <img
+        v-if="isPC"
         src="./s3/bg.jpg"
         alt=""
         class="bg-img"
       >
-      <div class="block absolute" data-aos="fade-down"
-        data-aos-delay="0">
+
+      <img
+        v-if="isMobile"
+        src="./s3/bg_m.jpg"
+        alt=""
+        class="img absolute"
+      >
+      <div
+        class="block absolute"
+        data-aos="fade-down"
+        data-aos-delay="0"
+      >
       </div>
-      <div class="desc absolute" data-aos="fade-down"
-        data-aos-delay="400">
-        【築藝丰盛】居大同區核心部位，區內幹道重慶北路、承德路、民權西路、民族西路包圍，步行生活圈內即享完善生活機能：學區、銀行、家樂福、公園，居家生活沉浸於文教區、公園宅氛圍，飯後養生漫步、假日家庭休閒，綠蔭舒心慢活愜意。騎車約6分鐘，抵淡水河岸自行車道，風光水綠隨時出發。迪化大稻埕，南往龍山華江，北接延平、雙溪、八里左岸，東至大佳、大直河濱，飛輪乘風一路暢遊，樂活享受雙北河濱風光。
+      <div
+        class="desc absolute"
+        data-aos="fade-down"
+        data-aos-delay="400"
+      >
+        【築億丰盛】居大同區核心部位，區內幹道重慶北路、承德路、民權西路、民族西路包圍，步行生活圈內即享完善生活機能：學區、銀行、家樂福、公園，居家生活沉浸於文教區、公園宅氛圍，飯後養生漫步、假日家庭休閒，綠蔭舒心慢活愜意。騎車約6分鐘，抵淡水河岸自行車道，風光水綠隨時出發。迪化大稻埕，南往龍山華江，北接延平、雙溪、八里左岸，東至大佳、大直河濱，飛輪乘風一路暢遊，樂活享受雙北河濱風光。
       </div>
       <img
         src="./s2/icon.png"
@@ -97,308 +111,47 @@
 @media screen and (max-width: 767px) {
   .section3 {
     width: 100vw;
-    height: sizem(602);
+    height: sizem(320 + 310);
     min-height: auto;
-    // background-image: url('./s2/bg.jpg');
+    background-image: none;
     // background-size: 100% 100%;
     // background-position: 0 0;
     // background-attachment: fixed;
     overflow: hidden;
   }
 
-  .swipe {
-    width: 100vw;
-    height: sizem(300);
-    top: sizem(0);
-    left: 0;
-    object-fit: cover;
+  .block {
+    display: none;
   }
 
-  .swipe-wrap {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+  .img {
+    width: sizem(375);
+    top: sizem(320);
+    left: sizem(0);
   }
-
-  .swipe-item {
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    z-index: 0;
-    object-fit: cover;
-
-    img {
-      width: 100%;
-    }
-
-    &.base {
-      z-index: 1;
-      left: 0;
-      opacity: 1;
-    }
-    &.active {
-      z-index: 2;
-      left: 0;
-      opacity: 1;
-    }
+  .icon {
+    width: sizem(73);
+    top: sizem(240);
+    right: sizem(20);
   }
-
-  .pagination {
-    width: auto;
-    bottom: 10px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    justify-content: center;
-  }
-
-  .pagination-dot {
-    padding: 5px;
-    cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width: 14px;
-      height: 14px;
-      border-radius: 14px;
-      box-shadow: 0 0 0 1px #fff;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
-      transition: all 0.5s;
-
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #fff;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transition: all 0.3s;
-        transform-origin: center;
-        transform: scale(0);
-      }
-      &.active {
-        &::before {
-          content: '';
-          width: 60%;
-          height: 60%;
-          display: block;
-          background: #fff;
-          border-radius: 20px;
-          opacity: 1;
-          position: absolute;
-          top: 20%;
-          // transform: translateY(-50%);
-          left: 23%;
-          transform: scale(1);
-        }
-      }
-    }
-  }
-
-  .swipe-btns {
-    width: 100%;
-    height: 100%;
-    padding: 0 10px;
-    z-index: 3;
-
-    .prev-btn,
-    .next-btn {
-      width: size-m(15);
-      cursor: pointer;
-    }
-  }
-
-  .name {
-    right: 15px;
-    bottom: 15px;
-    font-size: 12px;
-    font-weight: bold;
+  .desc {
+    width: sizem(315);
+    top: sizem(32);
+    left: sizem(32);
+    font-size: sizem(15);
+    font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 0.92;
-    letter-spacing: 3.12px;
+    line-height: 1.73;
+    letter-spacing: sizem(0.9);
     text-align: left;
-    color: #ffffff;
-    z-index: 5;
-  }
-
-  .title {
-    writing-mode: initial;
-    font-size: sizem(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.44;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000000;
-    margin-top: sizem(32 + 300);
-    margin-left: sizem(56);
-  }
-
-  .toggle-list {
-    width: sizem(324);
-    margin: 0 auto;
-    margin-top: sizem(10);
-  }
-
-  .toggle-item {
-    width: 100%;
-    height: sizem(61);
-    border-top: solid 1px rgba(142, 138, 116, 0.5);
-    border-bottom: solid 1px rgba(142, 138, 116, 0.5);
-
-    &:nth-last-child(1) {
-      border-top: none;
-    }
-  }
-
-  .toggle-title {
-    font-size: sizem(20);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.09;
-    letter-spacing: 0.4px;
-    text-align: left;
-    color: #333333;
-  }
-
-  .toggle-btn {
-    background-color: #fff;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    position: relative;
-    &:before {
-      content: '';
-      background: #707070;
-      width: 1px;
-      height: 14px;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-    }
-    &:after {
-      content: '';
-      background: #707070;
-      width: 14px;
-      height: 1px;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-    }
-  }
-
-  .butterfly {
-    width: sizem(52);
-    top: sizem(307);
-    right: auto;
-    left: 0;
-  }
-  .line {
-    width: sizem(330);
-    top: auto;
-    bottom: sizem(10);
-    right: auto;
-    left: 0;
-  }
-  .leaf {
-    width: sizem(163);
-    top: auto;
-    bottom: sizem(-90);
-    right: sizem(-20);
-  }
-
-  .dialog {
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.7);
-    overflow: scroll;
-
-    .dialog-content {
-      width: sizem(340);
-      height: sizem(556);
-      background-color: #fff;
-      border-radius: 20px;
-      padding: sizem(15);
-      overflow: scroll;
-    }
-
-    .close {
-      width: 35px;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 5px;
-      position: absolute;
-      right: sizem(30);
-      top: sizem(68);
-    }
-
-    .dialog-title {
-      font-size: sizem(25);
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.44;
-      letter-spacing: normal;
-      text-align: left;
-      color: #000000;
-      margin-top: sizem(45);
-    }
-    .dialog-subtitle {
-      font-size: sizem(20);
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 2.09;
-      letter-spacing: 1.6px;
-      text-align: left;
-      color: #333333;
-      margin-top: sizem(10);
-    }
-    .dialog-smalltitle {
-      font-size: sizem(18);
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 2.33;
-      letter-spacing: 3.24px;
-      text-align: left;
-      color: #8e8a74;
-    }
-    .dialog-desc {
-      font-size: sizem(15);
-      font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 2.17;
-      letter-spacing: normal;
-      text-align: left;
-      color: #8e8a74;
-    }
+    color: #4d4d4d;
   }
 }
 </style>
 <script>
 // @ is an alias to /src
-import { isMobile, isTablet } from '@/utils'
+import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
 export default {
@@ -408,6 +161,7 @@ export default {
 
   data() {
     return {
+      isPC,
       isMobile,
       isTablet,
       isDialog: false,

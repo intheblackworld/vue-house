@@ -5,6 +5,24 @@
         src="./s4/資產 1914.png"
         alt=""
         class="img absolute"
+        v-if="isPC"
+        data-aos="fade-right"
+        data-aos-delay="0"
+      >
+      <img
+        src="./s4/m.png"
+        alt=""
+        class="img absolute"
+        v-if="isMobile"
+        data-aos="fade-right"
+        data-aos-delay="0"
+      >
+
+      <img
+        src="./s1/資產 2914.png"
+        alt=""
+        class="red absolute"
+        v-if="isMobile"
         data-aos="fade-right"
         data-aos-delay="0"
       >
@@ -15,8 +33,11 @@
         data-aos="fade-right"
         data-aos-delay="600"
       >
-      <div class="title absolute" data-aos="fade-right"
-        data-aos-delay="400">6分鐘 生活圈全滿足</div>
+      <div
+        class="title absolute"
+        data-aos="fade-right"
+        data-aos-delay="400"
+      >6分鐘 生活圈全滿足</div>
       <div
         class="swipe absolute"
         data-aos="fade-up"
@@ -24,7 +45,11 @@
         @mouseenter.stop="toggleTimer = false"
         @mouseleave.stop="toggleTimer = true"
       >
-        <div class="swipe-wrap relative">
+        <div
+          class="swipe-wrap relative"
+          v-touch:swipe.left="decIndex"
+          v-touch:swipe.right="addIndex"
+        >
           <transition-group
             name="swipe-fade"
             mode="out-in"
@@ -41,7 +66,10 @@
               >
             </div>
           </transition-group>
-          <!-- <div class="swipe-btns absolute flex-ac flex-jb">
+          <div
+            class="swipe-btns absolute flex-ac flex-jb"
+            v-if="isMobile"
+          >
             <img
               src="./all/prev-btn.png"
               alt=""
@@ -54,11 +82,15 @@
               class="next-btn"
               @click="addIndex"
             >
-          </div> -->
+          </div>
         </div>
       </div>
-      <div class="pagination absolute flex-ac" data-aos="fade-up"
-        data-aos-delay="200">
+      <div
+        class="pagination absolute flex-ac"
+        data-aos="fade-up"
+        data-aos-delay="200"
+        v-if="isPC"
+      >
         <div
           :class="`pagination-dot`"
           v-for="(slide, index) in slideList"
@@ -295,7 +327,7 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-    height: sizem(300 + 303);
+    height: sizem(279 + 382);
     min-height: auto;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
@@ -303,13 +335,90 @@
     // background-attachment: fixed;
     overflow: hidden;
   }
+
+  .img {
+    width: sizem(283);
+    top: sizem(14.5);
+    left: sizem(24);
+    z-index: 1;
+  }
+
+  .red {
+    width: sizem(108);
+    top: sizem(181);
+    right: sizem(-50);
+    z-index: 1;
+  }
+
+  .title {
+    width: sizem(238);
+    top: sizem(21);
+    left: sizem(105);
+    font-size: sizem(25);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: 1.5px;
+    text-align: left;
+    color: #000000;
+  }
+
+  .tree {
+    width: sizem(202);
+    top: sizem(287);
+    left: sizem(0);
+    z-index: 0;
+  }
+
+  /* Swipe */
   .swipe {
-    width: 100vw;
-    height: sizem(300);
-    top: sizem(0);
-    left: 0;
+    width: sizem(330);
+    height: sizem(279);
+    min-height: sizem(279);
+    top: sizem(382);
+    left: sizem(23);
     object-fit: cover;
   }
+
+  // begin
+  .swipe-fade-leave-to {
+    opacity: 0;
+    z-index: 0;
+  }
+  // end
+  .swipe-fade-enter {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .swipe-fade-enter-active {
+    transition: all 0.5s ease;
+  }
+
+  .swipe-fade-leave-active {
+    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  // begin
+  // .swipe-left-leave-to {
+  //   margin-left: -100vw;
+  //   z-index: 0;
+  // }
+  // // end
+  // .swipe-left-enter {
+  //   opacity: 0.5;
+  //   margin-left: 0;
+  //   z-index: 1;
+  // }
+
+  // .swipe-left-enter-active {
+  //   transition: all 0.5s ease;
+  // }
+
+  // .swipe-left-leave-active {
+  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  // }
 
   .swipe-wrap {
     width: 100%;
@@ -320,30 +429,30 @@
   .swipe-item {
     width: 100%;
     height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
     z-index: 0;
-    object-fit: cover;
 
     img {
       width: 100%;
     }
 
-    &.base {
-      z-index: 1;
-      left: 0;
-      opacity: 1;
-    }
-    &.active {
-      z-index: 2;
-      left: 0;
-      opacity: 1;
-    }
+    // &:nth-child(1) {
+    //   z-index: 1;
+    //   // opacity: 1;
+    // }
+
+    // &.base {
+    //   z-index: 1;
+    //   opacity: 1;
+    // }
+    // &.active {
+    //   z-index: 2;
+    //   // opacity: 1;
+    // }
   }
 
   .pagination {
     width: auto;
-    bottom: 10px;
+    bottom: size(91);
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -352,15 +461,16 @@
 
   .pagination-dot {
     padding: 5px;
+    margin: 0 10px;
     cursor: pointer;
     z-index: 4;
 
     span {
       display: block;
-      width: 14px;
-      height: 14px;
-      border-radius: 14px;
-      box-shadow: 0 0 0 1px #fff;
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 0 1px #bd2b27;
       position: relative;
       background-color: rgba(0, 0, 0, 0.01);
       transition: all 0.5s;
@@ -370,7 +480,7 @@
         width: 60%;
         height: 60%;
         display: block;
-        background: #fff;
+        background: #bd2b27;
         border-radius: 20px;
         opacity: 1;
         position: absolute;
@@ -384,16 +494,16 @@
       &.active {
         &::before {
           content: '';
-          width: 60%;
-          height: 60%;
+          width: 100%;
+          height: 100%;
           display: block;
-          background: #fff;
+          background: #bd2b27;
           border-radius: 20px;
           opacity: 1;
           position: absolute;
-          top: 20%;
+          top: 0%;
           // transform: translateY(-50%);
-          left: 23%;
+          left: 0%;
           transform: scale(1);
         }
       }
@@ -403,199 +513,20 @@
   .swipe-btns {
     width: 100%;
     height: 100%;
-    padding: 0 10px;
+    padding: 0 15px;
     z-index: 3;
 
     .prev-btn,
     .next-btn {
-      width: size-m(15);
+      width: sizem(15);
       cursor: pointer;
-    }
-  }
-
-  .name {
-    right: 15px;
-    bottom: 15px;
-    font-size: 12px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 0.92;
-    letter-spacing: 3.12px;
-    text-align: left;
-    color: #ffffff;
-    z-index: 5;
-  }
-
-  .title {
-    writing-mode: initial;
-    font-size: sizem(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.44;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000000;
-    margin-top: sizem(32 + 300);
-    margin-left: sizem(56);
-  }
-
-  .toggle-list {
-    width: sizem(324);
-    margin: 0 auto;
-    margin-top: sizem(10);
-  }
-
-  .toggle-item {
-    width: 100%;
-    height: sizem(90);
-    border-top: solid 1px rgba(142, 138, 116, 0.5);
-    border-bottom: solid 1px rgba(142, 138, 116, 0.5);
-
-    // &:nth-last-child(1) {
-    //   border-top: none;
-    // }
-  }
-
-  .toggle-title {
-    font-size: sizem(20);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.09;
-    letter-spacing: 0.4px;
-    text-align: left;
-    color: #333333;
-  }
-
-  .toggle-btn {
-    background-color: #fff;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    position: relative;
-    &:before {
-      content: '';
-      background: #707070;
-      width: 1px;
-      height: 14px;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-    }
-    &:after {
-      content: '';
-      background: #707070;
-      width: 14px;
-      height: 1px;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-    }
-  }
-
-  .butterfly {
-    width: sizem(52);
-    top: sizem(307);
-    right: auto;
-    left: 0;
-  }
-  .line {
-    width: sizem(330);
-    top: auto;
-    bottom: sizem(10);
-    right: auto;
-    left: 0;
-  }
-  .leaf {
-    width: sizem(163);
-    top: auto;
-    bottom: sizem(-90);
-    right: sizem(-20);
-  }
-
-  .dialog {
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.7);
-    overflow: scroll;
-
-    .dialog-content {
-      width: sizem(340);
-      height: sizem(556);
-      background-color: #fff;
-      border-radius: 20px;
-      padding: sizem(15);
-      overflow: scroll;
-    }
-
-    .close {
-      width: 35px;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 5px;
-      position: absolute;
-      right: sizem(30);
-      top: sizem(68);
-    }
-
-    .dialog-title {
-      font-size: sizem(25);
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.44;
-      letter-spacing: normal;
-      text-align: left;
-      color: #000000;
-      margin-top: sizem(45);
-    }
-    .dialog-subtitle {
-      font-size: sizem(20);
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 2.09;
-      letter-spacing: 1.6px;
-      text-align: left;
-      color: #333333;
-      margin-top: sizem(10);
-    }
-    .dialog-smalltitle {
-      font-size: sizem(18);
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 2.33;
-      letter-spacing: 3.24px;
-      text-align: left;
-      color: #8e8a74;
-    }
-    .dialog-desc {
-      font-size: sizem(15);
-      font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 2.17;
-      letter-spacing: normal;
-      text-align: left;
-      color: #8e8a74;
     }
   }
 }
 </style>
 <script>
 // @ is an alias to /src
-import { isMobile, isTablet } from '@/utils'
+import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
 export default {
@@ -605,6 +536,7 @@ export default {
 
   data() {
     return {
+      isPC,
       isMobile,
       isTablet,
       isDialog: false,

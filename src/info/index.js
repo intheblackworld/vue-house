@@ -1,3 +1,4 @@
+import { isMobile } from '../utils/index'
 export default {
   address: '宜蘭縣五結鄉傳藝路一段56巷',
   googleSrc:
@@ -23,7 +24,7 @@ export default {
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
   order: {
-    title: '預約賞屋',
+    title: isMobile ? '讀秒登入<br />双捷靜巷‧公園首席' : '讀秒登入 双捷靜巷‧公園首席',
     subTitle: ''
   }
 }

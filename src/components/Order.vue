@@ -8,12 +8,12 @@
         <h3 class="title">{{order.title}}</h3>
         <div class="subtitle">{{order.subTitle}}</div>
       </div> -->
-      <h3
+      <div
         class="order-title"
         v-html="order.title"
         data-aos="fade-down"
         data-aos-delay="0"
-      ></h3>
+      ></div>
       <div
         class="order-subtitle"
         v-html="order.subTitle"
@@ -182,7 +182,7 @@
           :loading="isSubmit"
           data-aos="fade-down"
           data-aos-delay="700"
-        >預約賞屋</el-button>
+        >立即預約</el-button>
         <Loading
           :loading="isSubmit"
           :isOpacity="true"
@@ -348,7 +348,7 @@ export default {
 }
 .order-bg {
   background-color: $order_bg_color;
-  background-image: $order_bg_image;
+  // background-image: $order_bg_image;
   background-repeat: no-repeat;
   position: relative;
   padding-top: 130px;
@@ -476,7 +476,7 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .order-bg {
-    background-image: $order_bg_image_m;
+    // background-image: $order_bg_image_m;
     background-size: cover;
     padding-top: 40px;
     margin: 0;
@@ -489,7 +489,8 @@ export default {
     .order-title {
       padding-top: 10px;
       padding-bottom: 5px;
-      font-size: calc(100vw * 38 / 375);
+      font-size: calc(100vw * 25 / 375);
+      letter-spacing: 4px;
     }
 
     .order-subtitle {

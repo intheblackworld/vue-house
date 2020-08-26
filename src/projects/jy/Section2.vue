@@ -2,20 +2,44 @@
   <div>
     <div class="section2">
       <img
+        v-if="isPC"
         src="./s2/img.jpg"
         alt=""
         class="img absolute"
-        data-aos="fade-up" data-aos-delay="0"
+        data-aos="fade-up"
+        data-aos-delay="0"
+      >
+
+      <img
+        v-if="isMobile"
+        src="./s2/img_m.jpg"
+        alt=""
+        class="img absolute"
+        data-aos="fade-up"
+        data-aos-delay="0"
       >
       <img
         src="./s2/icon.png"
         alt=""
         class="icon absolute"
-        data-aos="fade-up-left" data-aos-delay="1000"
+        data-aos="fade-up-left"
+        data-aos-delay="1000"
       >
-      <div class="title absolute" data-aos="fade-down" data-aos-delay="400">食衣住行育樂遊</div>
-      <div class="subtitle absolute" data-aos="fade-down" data-aos-delay="600">機能豐盛 繁華近靜</div>
-      <div class="desc absolute" data-aos="fade-down" data-aos-delay="800">人文薈萃與商業豐盛的大同區，未來將因「大同再生計畫」都市更新蓬勃發展，周遭建設規劃豐富水綠、產業、交通、文化歷史及創意氛圍資源，文化觀光及特色商圈整合行銷，循東京車站特區模式，打造台北「丸之內」。</div>
+      <div
+        class="title absolute"
+        data-aos="fade-down"
+        data-aos-delay="400"
+      >食衣住行育樂遊</div>
+      <div
+        class="subtitle absolute"
+        data-aos="fade-down"
+        data-aos-delay="600"
+      >機能豐盛 繁華近靜</div>
+      <div
+        class="desc absolute"
+        data-aos="fade-down"
+        data-aos-delay="800"
+      >人文薈萃與商業豐盛的大同區，未來將因「大同再生計畫」都市更新蓬勃發展，周遭建設規劃豐富水綠、產業、交通、文化歷史及創意氛圍資源，文化觀光及特色商圈整合行銷，循東京車站特區模式，打造台北「丸之內」。</div>
     </div>
   </div>
 </template>
@@ -115,150 +139,69 @@
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    height: sizem(78 + 476);
+    height: sizem(552);
     // height: size-m(804);
-    // background-image: url('./mo/1/bg.jpg');
+    background-image: none;
     background-size: cover;
     background-attachment: scroll;
   }
 
-  .tree {
-    width: sizem(117);
-    right: sizem(0);
-    top: sizem(190);
-    z-index: 2;
+  .img {
+    width: sizem(375);
+    top: sizem(280);
+    left: sizem(0);
   }
-
-  .leaf {
-    width: sizem(132);
-    right: sizem(0);
-    top: sizem(-45);
-    z-index: 2;
-  }
-
-  .butterfly {
-    width: sizem(86);
-    left: sizem(5);
+  .icon {
+    width: sizem(73);
     top: sizem(0);
-    z-index: 2;
+    left: sizem(23);
   }
-
   .title {
-    writing-mode: initial;
-    text-orientation: initial;
-    width: sizem(250);
-    right: sizem(80);
-    top: sizem(78);
+    width: sizem(184);
+    top: sizem(30);
+    left: sizem(52);
     font-size: sizem(25);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.57;
-    letter-spacing: normal;
+    line-height: 2.31;
+    letter-spacing: sizem(1.5);
     text-align: left;
     color: #000000;
     white-space: nowrap;
   }
-
-  .desc {
-    writing-mode: initial;
-    text-orientation: initial;
-    width: sizem(290);
-    right: sizem(37);
-    top: sizem(152);
-    font-size: sizem(20);
+  .subtitle {
+    width: sizem(209);
+    top: sizem(73);
+    left: sizem(52);
+    font-size: sizem(22);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.76;
-    letter-spacing: normal;
+    line-height: 2.21;
+    letter-spacing: sizem(3.5);
     text-align: left;
-    color: #8e8a74;
+    color: #3e3a39;
+    white-space: nowrap;
   }
-
-  .border {
-    width: sizem(340);
-    height: sizem(224);
-    top: sizem(50);
-    right: sizem(17);
-    opacity: 0.38;
-    border: sizem(5) solid #8e8a74;
-  }
-
-  .txt {
-    width: sizem(131);
-    bottom: sizem(52);
-    right: sizem(191);
-  }
-
-  .map-img {
-    width: sizem(340);
-    bottom: sizem(50);
-    left: sizem(18);
-  }
-
-  .button {
-    background-color: #3aa7c299;
-    border-radius: 50%;
-    position: absolute;
-    width: 20vw;
-    height: 20vw;
-    bottom: calc(50vh - 60vw);
-    left: calc(50% - 10vw);
-    color: #fff;
-    &:before {
-      content: '';
-      background: currentColor;
-      width: 6%;
-      height: 60%;
-      position: absolute;
-      top: 20%;
-      left: 47%;
-    }
-    &:after {
-      content: '';
-      background: currentColor;
-      width: 60%;
-      height: 6%;
-      position: absolute;
-      top: 47%;
-      left: 20%;
-    }
-  }
-
-  .dialog {
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.7);
-    overflow: scroll;
-
-    .slide-content {
-      left: 0;
-    }
-
-    .dialog-map {
-      width: auto;
-      height: 100vh;
-      background-color: #fff;
-    }
-
-    .close {
-      width: 35px;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 5px;
-      position: fixed;
-      right: 10px;
-      top: 10px;
-    }
+  .desc {
+    width: sizem(315);
+    top: sizem(120);
+    left: sizem(32);
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.73;
+    letter-spacing: sizem(0.9);
+    text-align: left;
+    color: #4d4d4d;
   }
 }
 </style>
 <script>
 // @ is an alias to /src
-import { isMobile, isTablet } from '@/utils'
+import { isPC, isMobile, isTablet } from '@/utils'
 // import Map from '@/components/Map.vue'
 
 export default {
@@ -270,6 +213,7 @@ export default {
 
   data() {
     return {
+      isPC,
       isMobile,
       isTablet,
       isDialog: false,
