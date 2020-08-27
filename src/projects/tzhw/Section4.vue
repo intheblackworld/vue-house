@@ -89,6 +89,7 @@
         >
           <img
             :src="slide.src"
+            :alt="slide.alt"
             :class="`item-img`"
           />
         </swiper-slide>
@@ -377,19 +378,28 @@ export default {
 
       slideList: [
         {
-          src: require('./s4/1雙溪河岸.jpg'),
+          src: require('./s4/1.jpg'),
+          alt:"雙溪河岸",
         },
         {
-          src: require('./s4/2士林官邸.jpg'),
+          src: require('./s4/1.jpg'),
+          alt:"雙溪河岸",
         },
         {
-          src: require('./s4/3士林科學園區.jpg'),
+          src: require('./s4/3.jpg'),
+          alt:"SOGO商圈",
         },
         {
-          src: require('./s4/4文林商圈.jpg'),
+          src: require('./s4/4.jpg'),
+          alt:"士林官邸",
         },
         {
-          src: require('./s4/5志成公園.jpg'),
+          src: require('./s4/5.jpg'),
+          alt:"天母商圈",
+        },
+        {
+          src: require('./s4/6.jpg'),
+          alt:"高島屋",
         },
       ],
     }
