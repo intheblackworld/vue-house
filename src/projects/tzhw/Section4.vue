@@ -382,7 +382,7 @@ export default {
           alt:"雙溪河岸",
         },
         {
-          src: require('./s4/1.jpg'),
+          src: require('./s4/2.jpg'),
           alt:"雙溪河岸",
         },
         {
