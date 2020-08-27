@@ -185,6 +185,16 @@ export default {
     window.addEventListener('load', event => {
       this.load = false
     })
+    window.navigator.serviceWorker
+      .getRegistrations()
+      .then(function(registrations) {
+        for (let registration of registrations) {
+          registration.unregister()
+        }
+      })
+      .catch(function(err) {
+        console.log('Service Worker registration failed: ', err)
+      })
   },
   mounted() {
     window.addEventListener('scroll', this.onScroll, false)
