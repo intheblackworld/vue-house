@@ -1,7 +1,7 @@
 <template>
   <div class="house-info" id="house-info">
     <div class="content">
-      <h3 class="title">資訊</h3>
+      <h3 class="title">建案資訊</h3>
       <div class="info">
         <div class="item" :key="infos[0]" v-for="infos in houseInfos">
           <h3 class="label">{{infos[0]}}</h3>
