@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="section1" v-if="isPC">
+      <img src="./s1/c1.png" alt="" class="bg-img cloud1" data-aos="fade" data-aos-delay="800">
       <img src="./s1/1.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="0">
       <img src="./s1/2.png" alt="" class="bg-img" data-aos="fade-down" data-aos-delay="800">
       <img src="./s1/3.png" alt="" class="bg-img" data-aos="fade-right" data-aos-delay="300">
       <img src="./s1/4.png" alt="" class="bg-img" data-aos="fade" data-aos-delay="400">
-      <img src="./s1/5.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="500">
-      <img src="./s1/6.png" alt="" class="bg-img" data-aos="fade-right" data-aos-delay="600">
+      <img src="./s1/5.png" alt="" class="bg-img img5" data-aos="fade-up" data-aos-delay="500">
+      <img src="./s1/6.png" alt="" class="bg-img img6" data-aos="fade-right" data-aos-delay="600">
       
-      <img src="./s1/c1.png" alt="" class="bg-img cloud1" data-aos="fade" data-aos-delay="800">
       <img src="./s1/c2.png" alt="" class="bg-img cloud2" data-aos="fade" data-aos-delay="1000">
     </div>
     <div class="section1" v-if="isMobile">
@@ -39,11 +39,18 @@
   height: auto;
   display: block;
   object-fit: cover;
+    margin-top:0;
 
   &:nth-child(1) {
     position: relative;
   }
 }
+.img5{
+    animation: cloud_t 5s 0s linear infinite alternate-reverse;
+  }
+.img6{
+    animation: cloud_t 7s -2s linear infinite alternate-reverse;
+  }
 
 .cloud1 {
   animation: cloud 5s 0s linear infinite alternate-reverse;
@@ -56,6 +63,11 @@
 @keyframes cloud {
   to {
     margin-left: 150px;
+  }
+}
+@keyframes cloud_t {
+  to {
+    top:-150px;
   }
 }
 

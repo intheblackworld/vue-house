@@ -25,16 +25,6 @@
         class="icon absolute"
       >
       <div
-        class="title absolute"
-        data-aos="fade-right"
-        data-aos-delay="0"
-      >德國第一品牌<br />太格精工木地板</div>
-      <div
-        class="desc absolute"
-        data-aos="fade-right"
-        data-aos-delay="400"
-      >擁有120年歷史，全球最大木業集團生產商，榮獲綠建材標章，耐磨、防滑、隔音佳，德國精工高品質生產製造</div>
-      <div
         class="swipe absolute"
         data-aos="fade-up"
         data-aos-delay="600"
@@ -60,6 +50,14 @@
                 :src="slide.img"
                 alt=""
               >
+      <div
+        class="title absolute"
+        v-html="slide.title"
+      ></div>
+      <div
+        class="desc absolute"
+        v-html="slide.desc"
+      ></div>
             </div>
           </transition-group>
           <div
@@ -128,8 +126,8 @@
   writing-mode: vertical-lr;
   text-orientation: upright;
   // width: size(419);
-  top: size(191);
-  right: size(390);
+  top: size(90);
+  right: size(85);
   font-size: size(42);
   font-weight: bold;
   font-stretch: normal;
@@ -143,15 +141,15 @@
 
 .desc {
   width: size(240);
-  top: size(601);
-  right: size(326);
+  top: size(500);
+  right: size(20);
   font-size: size(16);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.2;
+  line-height: 1.6;
   letter-spacing: 1.92px;
-  text-align: left;
+  text-align: justify;
   color: #4d4d4d;
 }
 
@@ -221,7 +219,7 @@
 
 /* Swipe */
 .swipe {
-  width: size(1024);
+  width: size(1300);// size(1024);
   height: size(675);
   min-height: size(675);
   top: size(102);
@@ -280,7 +278,8 @@
   z-index: 0;
 
   img {
-    width: 100%;
+    width:78.6%;
+    float: left;
   }
 
   // &:nth-child(1) {
@@ -546,14 +545,17 @@ export default {
         {
           img: require('./s8/1.jpg'),
           title: '德國第一品牌<br />太格精工木地板',
+          desc: '擁有120年歷史，全球最大木業集團生產商，榮獲綠建材標章，耐磨、防滑、隔音佳，德國精工高品質生產製造',
         },
         {
           img: require('./s8/2.jpg'),
           title: '德國原裝進口<br />impuls精品廚具',
+          desc: '成立於1990年，產品遍佈全球50個國家和地區，堅持德國工藝精神，榮獲德國golden M、GS等多項認證，結合天然環保無毒板材，打造健康空間',
         },
         {
           img: require('./s8/3.jpg'),
           title: '飯店級高雅享受<br />德國Innoci時尚衛浴',
+          desc: '融合國際輕奢年輕的設計概念，德國釉料配方，易潔、抑菌、質感細膩柔滑，讓浴室空間更為時尚高雅',
         },
       ],
     }
