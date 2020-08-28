@@ -183,8 +183,8 @@
 
   .bg-img {
     width: 100vw;
-    height: auto;
-    min-height: sizem(604);
+    height:100%;
+    min-height:100%;
     position: absolute;
     display: block;
     top: 0;
@@ -204,13 +204,14 @@
   }
 
   .cloud {
-    z-index: 1;
+    z-index: 1;margin-left: 0px;
+     width: calc(100vw + 40px);
     animation: cloud 15s 0s ease-in-out infinite alternate-reverse;
   }
 
   @keyframes cloud {
     to {
-      margin-left: 50px;
+      margin-left: -40px;
     }
   }
 
