@@ -396,8 +396,8 @@
   }
   .swipe {
     width: 100vw;
-    height: sizem(247);
-    top: sizem(229);
+    height: sizem(476);
+    top: sizem(0);
     left: 0;
     object-fit: cover;
   }
@@ -414,8 +414,9 @@
     transition: opacity 1s ease-in-out;
     object-fit: cover;
 
-    img {
+    img {top: sizem(229);
       width: 100%;
+      position: relative;
     }
   }
 
@@ -480,7 +481,7 @@
 
   .swipe-btns {
     width: 100%;
-    height: 100%;
+    height: 30%;
     padding: 0 10px;
     z-index: 3;
 
@@ -511,7 +512,7 @@
 
   .desc {
     width: sizem(312);
-    top: sizem(131);
+    top: sizem(115);
     right: auto;
     left: sizem(36);
     font-size: sizem(15);
@@ -520,7 +521,7 @@
     font-style: normal;
     line-height: 1.73;
     letter-spacing: 1.5px;
-    text-align: left;
+    text-align: justify;
     color: #4d4d4d;
   }
 }

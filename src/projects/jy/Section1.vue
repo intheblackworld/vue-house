@@ -12,6 +12,11 @@
       <img src="./s1/c2.png" alt="" class="bg-img cloud2" data-aos="fade" data-aos-delay="1000">
     </div>
     <div class="section1" v-if="isMobile">
+      <img src="./s1/c1.png" alt="" class="bg-img cloud1" data-aos="fade" data-aos-delay="800">
+      <img src="./s1/c2.png" alt="" class="bg-img cloud2" data-aos="fade" data-aos-delay="1000">
+      <img src="./s1/1.png" alt="" class="bg-img img1" data-aos="fade-up" data-aos-delay="0">
+      <img src="./s1/3.png" alt="" class="bg-img img3" data-aos="fade-right" data-aos-delay="300">
+      <img src="./s1/4.png" alt="" class="bg-img img4" data-aos="fade" data-aos-delay="400">
       <img src="./s1/資產 514.png" alt="" class="absolute logo">
       <img src="./s1/資產 2914.png" alt="" class="img absolute">
     </div>
@@ -40,10 +45,10 @@
   display: block;
   object-fit: cover;
     margin-top:0;
-
+/*
   &:nth-child(1) {
     position: relative;
-  }
+  }*/
 }
 .img5{
     animation: cloud_t 5s 0s linear infinite alternate-reverse;
@@ -93,7 +98,39 @@
     background-size: cover;
     background-attachment: scroll;
   }
+.img1{
+   width: sizem(820);
+    top:auto;
+    left: sizem(-100);
+    bottom: 0;
+  }
+.img3{
+   width: sizem(820);
+    top:auto;
+    left: sizem(-50);
+    bottom: 0;
+  }
+.img4{
+   width: sizem(820);
+    top:auto;
+    left: sizem(-130);
+    bottom: 0;
+  }
+.cloud1 {
+   width: sizem(1100); 
+    top:auto;
+    left: sizem(-600);
+    bottom:sizem(100);
+ // animation: cloud 5s 0s linear infinite alternate-reverse;
+}
 
+.cloud2 {
+   width: sizem(1100); 
+    top:auto;
+    left: sizem(-500);
+    bottom:sizem(-50);
+ // animation: cloud 8s 1s linear infinite alternate-reverse;
+}
   .logo {
     width: sizem(260);
     top: sizem(143);

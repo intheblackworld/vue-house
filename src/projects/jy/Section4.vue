@@ -26,13 +26,13 @@
         data-aos="fade-right"
         data-aos-delay="0"
       >
+      <div class="tree absolute"
+        data-aos="fade-left"
+        data-aos-delay="600">
       <img
         src="./s4/資產 2014.png"
-        alt=""
-        class="tree absolute"
-        data-aos="fade-right"
-        data-aos-delay="600"
-      >
+        alt="tree"
+      ></div>
       <div
         class="title absolute"
         data-aos="fade-right"
@@ -142,6 +142,7 @@
   top: size(525);
   left: size(0);
   z-index: 1;
+  img{width: 100%;}
 }
 
 .title {
@@ -367,8 +368,10 @@
   .tree {
     width: sizem(202);
     top: sizem(287);
-    left: sizem(0);
-    z-index: 0;
+    left:auto;
+    right: sizem(-45);
+    z-index: 2;
+    img{transform: scaleX(-1);}
   }
 
   /* Swipe */
