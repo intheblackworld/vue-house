@@ -13,13 +13,16 @@ export default {
   caseName: '神采飛洋',
   houseInfos: [
     ['投資興建', '茂德建設股份有限公司'],
-    ['建築設計', '陳朝雄建築師事務所'],
+    ['建築設計', '陳朝雄 A8建築師事務所'],
+    ['結構工程', '吳志強 永安結構顧問'],
+    ['門廳公設', '徐慈姿 珩荷空間設計'],
+    ['園藝景觀', '徐世萃 大漢設計工程'],
+    ['格局規劃', '二房(15、20坪) 、 三房(25、33坪)'],
     ['公設比例', '32.5%'],
     ['樓層規劃', '地上15層，地下6層'],
     ['基地面積', '846.66坪'],
     ['建照號碼', '102股建字第00258號等1個'],
   ],
-
   gtmCode: ['PS8ZD97'], // 可放置多個
   recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
