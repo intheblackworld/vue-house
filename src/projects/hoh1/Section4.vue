@@ -26,7 +26,7 @@
             data-aos="fade"
             data-aos-delay="400"
           >
-            1分鐘前在家耍廢<br />10分鐘後台北開會
+            1分鐘前台北開會<br />15分鐘後在家耍廢
           </div>
           <div
             class="desc"
@@ -34,7 +34,7 @@
             data-aos-delay="600"
           >
             快速路網大集合<br />
-            5分鐘直上中山高、10分鐘快速直達台北市<br />
+            車行約5分鐘直上中山高、約15分鐘快速直達台北市<br />
             南來北往隨時正常發揮<br />
             在這裡不止重新定義時間<br />
             更懂得快意生活就該如此隨心奔馳
@@ -118,7 +118,7 @@
               公車站
             </div>
             <div class="context-desc">
-              11線公車，8分鐘直達蘆洲捷運站
+              10線公車，約8分鐘直達蘆洲捷運站
             </div>
           </div>
         </div>
@@ -157,7 +157,7 @@
           data-aos="fade"
           data-aos-delay="400"
         >
-          1分鐘前在家耍廢<br />10分鐘後台北開會
+          1分鐘前台北開會<br />15分鐘後在家耍廢
         </div>
         <div
           class="desc"
@@ -165,7 +165,8 @@
           data-aos-delay="500"
         >
           快速路網大集合<br />
-          5分鐘直上中山高、10分鐘快速直達台北市<br />
+          車行約5分鐘直上中山高<br />
+          約15分鐘快速直達台北市<br />
           南來北往隨時正常發揮<br />
           在這裡不止重新定義時間<br />
           更懂得快意生活就該如此隨心奔馳
@@ -233,7 +234,7 @@
             公車站
           </div>
           <div class="context-desc">
-            11線公車，8分鐘直達蘆洲捷運站
+            10線公車，約8分鐘直達蘆洲捷運站
           </div>
         </div>
       </div>
@@ -280,7 +281,7 @@
 .title-block {
   top: size(86);
   left: size(327);
-  width: size(900);
+  width: size(950);
 
   .title {
     font-size: size(48);
@@ -292,6 +293,7 @@
     text-align: right;
     color: #ffffff;
     margin-right: size(35);
+    white-space: nowrap;
   }
 
   .desc {
@@ -303,6 +305,7 @@
     letter-spacing: normal;
     text-align: left;
     color: #ffffff;
+    white-space: nowrap;
   }
 }
 
