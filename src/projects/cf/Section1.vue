@@ -56,8 +56,17 @@
         data-aos="zoom-in"
         data-aos-delay="900"
       >
-        <div class="btn flex-c">精品大樓</div>
-        <div class="btn flex-c">透店別墅宅</div>
+        <router-link
+          to="/"
+          tag="div"
+          class="btn flex-c"
+        >精品大樓
+        </router-link>
+        <router-link
+          to="/villa"
+          tag="div"
+          class="btn flex-c"
+        >透店別墅宅</router-link>
       </div>
 
       <img
@@ -194,7 +203,7 @@
     letter-spacing: size(2.3);
     text-align: center;
     color: #af8680;
-    transition: all .3s;
+    transition: all 0.3s;
 
     &:hover {
       background-color: #af8680;

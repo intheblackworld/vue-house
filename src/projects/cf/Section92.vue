@@ -1,112 +1,7 @@
 <template>
   <div>
-    <div :class="`section6 ${slideList[slideIndex].mode}`">
-      <div
-        class="pagination absolute flex-ac"
-        data-aos="fade-up"
-        data-aos-delay="200"
-        v-if="isPC"
-      >
-        <div
-          :class="`pagination-dot`"
-          v-for="(slide, index) in slideList"
-          :key="slide.img + '-dot'"
-          @click="goTo(index)"
-        ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-      </div>
-      <h3
-        :class="`title absolute`"
-        data-aos="fade-right"
-        data-aos-delay="400"
-      >天際風景新格局<br />時尚風格 珍稀傳家</h3>
-      <div
-        :class="`hr absolute`"
-        data-aos="zoom-in-right"
-        data-aos-delay="600"
-      ></div>
-      <div
-        :class="`desc absolute`"
-        data-aos="fade-right"
-        data-aos-delay="800"
-      >
-        精選平實特區，這繁華與悠閒的共享之地，<br />
-        春福共築大樓與別墅的和諧適居，承襲煙波飯店一貫的簡約與美學，以深灰與白色共演比例之美，以簡潔線條爬梳層次品味，美好生活的嚮往與稀有透天店鋪的價值，絕對值得世代相傳！
-      </div>
-      <div
-        :class="`art absolute`"
-        data-aos="fade-left"
-        data-aos-delay="1000"
-      >
-        ARCHIECTURE ART
-      </div>
-      <div
-        :class="`btn-group absolute flex-ac flex-jb`"
-        data-aos="zoom-in"
-        data-aos-delay="900"
-      >
-        <router-link
-          to="/"
-          tag="div"
-          class="btn flex-c"
-        >精品大樓
-        </router-link>
-        <router-link
-          to="/villa"
-          tag="div"
-          class="btn flex-c"
-        >透店別墅宅</router-link>
-      </div>
-      <div
-        class="swipe absolute"
-        data-aos="fade-up"
-        data-aos-delay="0"
-        @mouseenter.stop="toggleTimer = false"
-        @mouseleave.stop="toggleTimer = true"
-      >
-        <div
-          class="swipe-wrap relative"
-          v-touch:swipe.left="decIndex"
-          v-touch:swipe.right="addIndex"
-        >
-          <transition-group
-            name="swipe-fade"
-            mode="out-in"
-          >
-            <div
-              v-for="(slide, i) in slideList"
-              v-show="slideIndex === i"
-              :key="slide.img"
-              :class="`swipe-item absolute`"
-            >
-              <img
-                :src="slide.img"
-                alt=""
-              >
-              <div
-                class="name absolute"
-                v-html="slide.name"
-              ></div>
-            </div>
-          </transition-group>
-          <div
-            class="swipe-btns absolute flex-ac flex-jb"
-            v-if="isMobile"
-          >
-            <img
-              src="./all/prev-btn.png"
-              alt=""
-              class="prev-btn"
-              @click="decIndex"
-            >
-            <img
-              src="./all/next-btn.png"
-              alt=""
-              class="next-btn"
-              @click="addIndex"
-            >
-          </div>
-        </div>
-      </div>
+    <div class="section92">
+      <img src="./s9/透天_t.jpg" alt="" class="bg-img">
     </div>
   </div>
 </template>
@@ -114,41 +9,13 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section6 {
+.section92 {
   width: size(1920);
   height: 100vh;
   min-height: 900px;
   background-size: cover;
   background-attachment: fixed;
   overflow: hidden;
-
-  &.light {
-    .title {
-      color: #333;
-    }
-
-    .hr {
-      background-color: #333;
-    }
-
-    .desc {
-      color: #333;
-    }
-
-    .art {
-      color: #333;
-    }
-
-    .btn {
-      border: solid 2px #333;
-      color: #333;
-      &:hover {
-        background-color: #333;
-        border-color: #af8680;
-        color: #af8680;
-      }
-    }
-  }
 }
 
 .bg-img {
@@ -166,106 +33,84 @@
   }
 }
 
-.title {
-  width: size(434);
-  top: size(181);
-  right: size(397);
-  font-size: size(51);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.43;
-  letter-spacing: 1.03px;
-  text-align: left;
-  color: #ffffff;
-  z-index: 2;
-  transition: all 0.3s;
-  white-space: nowrap;
-}
-
-.hr {
-  width: size(649);
-  height: 2px;
-  top: size(370);
-  right: size(181);
-  background-color: #fff;
-  z-index: 2;
-  transition: all 0.3s;
-
-  &.light {
-    background-color: #333;
-  }
-}
-
-.desc {
-  width: size(652);
-  top: size(426);
+.tab-groups {
+  width: size(152 * 3 + 28);
+  top: size(118);
   right: size(178);
-  font-size: size(16);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2;
-  letter-spacing: size(1.76);
-  text-align: left;
-  color: #ffffff;
-  transition: all 0.3s;
-  z-index: 2;
-}
 
-.art {
-  top: size(560);
-  right: size(180);
-  font-size: size(70.2);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(2.72);
-  text-align: left;
-  color: #ffffff;
-  text-shadow: 0 0 2px #333;
-  transition: all 0.3s;
-  z-index: 2;
-}
-
-.btn-group {
-  width: size(390);
-  top: size(685);
-  right: size(178);
-  z-index: 2;
-
-  .btn {
-    width: size(190);
-    height: size(43);
-    border: solid 2px #fff;
-    border-radius: 20px / 20px;
+  .tab {
+    width: size(152.8);
+    height: size(75.8);
+    border: solid 2px #c9ac94;
+    padding-top: size(5);
     cursor: pointer;
-    font-size: size(21);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.69;
-    letter-spacing: size(2.3);
-    text-align: center;
-    color: #fff;
-    transition: all 0.3s;
 
-    &:hover {
-      background-color: #fff;
-      border-color: #fff;
-      color: #af8680;
+    &:hover, &:active {
+      background-color: #c9ac94;
+      div, span {
+        color: #fff;
+      }
+    }
+
+    div {
+      font-size: size(30);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.2;
+      letter-spacing: size(2.4);
+      text-align: center;
+      color: #d6aa99;
+    }
+
+    span {
+      font-size: size(20.6);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.2;
+      letter-spacing: size(-0.41);
+      text-align: left;
+      color: #c9ac94;
+
+      span {
+        font-size: size(13.7);
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.2;
+        letter-spacing: size(-0.27);
+        text-align: left;
+        color: #c9ac94;
+
+        // span {
+        //   font-size: size(6.1);
+        //   font-weight: normal;
+        //   font-stretch: normal;
+        //   font-style: normal;
+        //   line-height: 1.2;
+        //   letter-spacing: size(1.23);
+        //   text-align: left;
+        //   color: #717071;
+        // }
+      }
     }
   }
 }
 
+.tab-img {
+  width: size(500);
+  top: size(207);
+  right: size(178);
+}
+
 /* Swipe */
 .swipe {
-  width: 100vw;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  min-height: size(900);
+  width: size(1030);
+  top: size(117);
+  left: size(179);
+  height: size(674);
+  min-height: size(674);
   object-fit: cover;
 }
 
@@ -321,8 +166,6 @@
 
   img {
     width: 100%;
-    height: 100vh;
-    object-fit: cover;
   }
 
   .name {
@@ -355,12 +198,11 @@
 
 .pagination {
   width: auto;
-  top: size(68);
-  left: auto;
-  right: size(190);
+  top: size(837);
+  left: 0;
+  right: 0;
   margin: 0 auto;
   justify-content: center;
-  z-index: 2;
 }
 
 .pagination-dot {
@@ -374,7 +216,7 @@
     width: 20px;
     height: 20px;
     border-radius: 20px;
-    box-shadow: 0 0 0 1px #fff;
+    box-shadow: 0 0 0 1px #d6aa99;
     position: relative;
     background-color: rgba(0, 0, 0, 0.01);
     transition: all 0.5s;
@@ -384,7 +226,7 @@
       width: 60%;
       height: 60%;
       display: block;
-      background: #fff;
+      background: #d6aa99;
       border-radius: 20px;
       opacity: 1;
       position: absolute;
@@ -401,7 +243,7 @@
         width: 100%;
         height: 100%;
         display: block;
-        background: #fff;
+        background: #d6aa99;
         border-radius: 20px;
         opacity: 1;
         position: absolute;
@@ -441,7 +283,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section6 {
+  .section92 {
     width: 100vw;
     height: sizem(279 + 382);
     min-height: auto;
@@ -643,12 +485,12 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
-import slider from '@/mixins/slider.js'
+// import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section6',
+  name: 'section92',
 
-  mixins: [slider],
+  // mixins: [slider],
 
   data() {
     return {
@@ -656,24 +498,14 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
-      slideList: [
-        {
-          img: require('./s6/1.jpg'),
-          mode: 'dark',
-          // name: '成功大學',
-        },
-        {
-          img: require('./s6/2.jpg'),
-          mode: 'light',
-          // name: '崑山科技大學',
-        },
-      ],
     }
   },
 
-  methods: {},
+  methods: {
+  },
 
-  created() {},
+  created() {
+  },
 
   mounted() {},
 

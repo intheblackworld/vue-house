@@ -95,7 +95,7 @@ export default {
   right: 30px;
   width: 40px;
   height: 40px;
-  background-color: #707070;
+  background-color: #fff;
   cursor: pointer;
 
   // img {
@@ -124,7 +124,7 @@ export default {
   position: relative;
   width: 30px;
   height: 3px;
-  background-color: #CD0012;
+  background-color: #af8680;
 }
 
 .menu-icon::before {
@@ -135,7 +135,7 @@ export default {
   display: block;
   width: 30px;
   height: 3px;
-  background-color: #CD0012;
+  background-color: #af8680;
   transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
 }
 
@@ -147,7 +147,7 @@ export default {
   display: block;
   width: 30px;
   height: 3px;
-  background-color: #CD0012;
+  background-color: #af8680;
   transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
 }
 

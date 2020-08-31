@@ -1,5 +1,5 @@
 <template>
-  <div class="home no-padding-top">
+  <div class="villa no-padding-top">
     <Loading :loading="load" />
     <SideNavigation />
     <!-- <Navigation /> -->
@@ -114,15 +114,15 @@ import Section2 from '@/projects/cf/Section2.vue'
 import Section3 from '@/projects/cf/Section3.vue'
 import Section4 from '@/projects/cf/Section4.vue'
 import Section5 from '@/projects/cf/Section5.vue'
-import Section6 from '@/projects/cf/Section6.vue'
+import Section6 from '@/projects/cf/Section62.vue'
 import Section7 from '@/projects/cf/Section7.vue'
 import Section8 from '@/projects/cf/Section8.vue'
-import Section9 from '@/projects/cf/Section9.vue'
+import Section9 from '@/projects/cf/Section92.vue'
 // import Section10 from '@/projects/cf/Section10.vue'
 // import Section11 from '@/projects/cf/Section11.vue'
 
 export default {
-  name: 'home',
+  name: 'villa',
   components: {
     Loading,
     // Indigator,

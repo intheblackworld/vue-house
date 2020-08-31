@@ -4,11 +4,11 @@
     id="house-info"
   >
     <div class="content">
-      <h3
+      <div
         class="title"
         data-aos="fade-down"
         data-aos-delay="0"
-      >建案資訊</h3>
+      >建案資訊</div>
       <div class="info">
         <div
           class="item"
@@ -55,7 +55,7 @@ export default {
   z-index: 1;
 }
 .content {
-  width: 686px;
+  width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -69,20 +69,21 @@ export default {
   margin: 60px 0;
   font-weight: 500;
   color: $house_title_color;
-  font-family: $family3;
   font-weight: bold;
   letter-spacing: 15px;
 }
 
 .info {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
 .item {
   font-size: 16px;
   margin-bottom: 30px;
-  margin-right: 160px;
+  // margin-right: 160px;
   width: 260px;
   height: 30px;
   line-height: 1.4;
@@ -92,9 +93,9 @@ export default {
   align-items: center;
   white-space: nowrap;
   // &::before{content: "";width: 4px;height: 1.4em;background:$house_border_color;margin: -1px 10px 0 0;position: relative;}
-  &:nth-of-type(even) {
-    margin-right: 0;
-  }
+  // &:nth-of-type(even) {
+  //   margin-right: 0;
+  // }
 
   .label {
     font-size: 16px;
@@ -102,14 +103,12 @@ export default {
     margin-bottom: 0;
     margin-right: 20px;
     white-space: nowrap;
-    font-family: $family3;
   }
 
   .desc {
     font-size: 15px;
     text-align: left;
     color: $house_desc_color;
-    font-family: $family3;
     font-weight: bold;
   }
 }

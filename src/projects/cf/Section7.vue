@@ -1,37 +1,82 @@
 <template>
   <div>
-    <div class="section7">
-      <!-- <img
-        src="./s1/資產 2914.png"
+    <div :class="`section7`">
+      <img
+        src="./s7/bg.jpg"
         alt=""
-        class="img absolute"
-      > -->
-      <!-- <img
-        src="./s2/icon.png"
-        alt=""
-        class="icon absolute"
-        data-aos="fade-left-up"
-        data-aos-delay="800"
-      > -->
+        class="bg-img"
+      >
       <div
-        class="title absolute"
-        data-aos="fade-right"
-        data-aos-delay="0"
-      >18-22坪‧德國精品家</div>
-      <div
-        class="subtitle absolute"
-        data-aos="fade-right"
+        class="pagination absolute flex-ac"
+        data-aos="fade-up"
         data-aos-delay="200"
-      >全能智慧宅｜建材優勢全面躍昇</div>
-      <div
-        class="desc absolute"
+        v-if="isPC"
+      >
+        <div
+          :class="`pagination-dot`"
+          v-for="(slide, index) in slideList"
+          :key="slide.img + '-dot'"
+          @click="goTo(index)"
+        ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+      </div>
+      <h3
+        :class="`title absolute`"
         data-aos="fade-right"
         data-aos-delay="400"
-      >「一筆箍」柱結構工法、戴雲發AlfaSafe柱中柱、工研院研發抗壓耐震防火輕質系統磚、世界第一大品牌RAK磁磚、5合1AI智慧門鎖、林內三機、德國精品內裝，盡享安全穩固、時尚精品居家質地。</div>
+      >三位一體和諧釋放<br />人、環境、建築
+      </h3>
+      <div
+        :class="`hr absolute`"
+        data-aos="zoom-in-right"
+        data-aos-delay="600"
+      ></div>
+      <div class="subtitle absolute">榮耀業績</div>
+      <div
+        :class="`desc absolute`"
+        data-aos="fade-right"
+        data-aos-delay="800"
+      >
+        <li class="flex-at">
+          <span class="label">2008</span>
+          <div class="content">建築園冶獎 /欣億建設-富甲官田</div>
+        </li>
+        <li class="flex-at">
+          <span class="label">2012</span>
+          <div class="content">建築園冶獎-優質大樓景觀 /富立建設-和鄉曲<br />
+            建築園冶獎-優質大樓景觀 /泰嘉建設-水丰景<br />
+            建築園冶獎-優質大樓景觀 /泰嘉建設-水山硯
+          </div>
+        </li>
+        <li class="flex-at">
+          <span class="label">2013</span>
+          <div class="content">建築園冶獎-大樓建築景觀 /泰嘉建設-水舞間</div>
+        </li>
+        <li class="flex-at">
+          <span class="label">2014</span>
+          <div class="content">國家卓越建設獎 /富立建設-耘非凡</div>
+        </li>
+        <li class="flex-at">
+          <span class="label">2015</span>
+          <div class="content">國家建築金獎 /歸仁陶喜<br />
+            國家卓越建設獎/卓越獎/最佳規劃設計類/住宅類<br />
+            國家卓越建設獎/金質獎/最佳施工品質類/住宅類<br />
+            建築園冶獎-透天建築景觀類推薦獎 /富立建設-禾雅內<br />
+            建築園冶獎-透天建築景觀類建築園冶獎/國城建設-高雄小城三期<br />
+            建築園冶獎-透天建築景觀類建築園冶獎/國城建設-高雄小城四期</div>
+        </li>
+        <li class="flex-at">
+          <span class="label">2017</span>
+          <div class="content">
+            建築園冶獎-大樓建築景觀類建築園冶獎/和逸建設-水舞紀<br />
+            國家卓越建設獎/卓越獎/最佳管理維護類/富立建設-和鄉曲<br />
+            國家卓越建設獎/優質獎/最佳規劃設計類/和逸建設-水舞紀
+          </div>
+        </li>
+      </div>
       <div
         class="swipe absolute"
         data-aos="fade-up"
-        data-aos-delay="600"
+        data-aos-delay="0"
         @mouseenter.stop="toggleTimer = false"
         @mouseleave.stop="toggleTimer = true"
       >
@@ -54,6 +99,10 @@
                 :src="slide.img"
                 alt=""
               >
+              <div
+                class="name absolute"
+                v-html="slide.name"
+              ></div>
             </div>
           </transition-group>
           <div
@@ -75,19 +124,6 @@
           </div>
         </div>
       </div>
-      <div
-        class="pagination absolute flex-ac"
-        data-aos="fade-up"
-        data-aos-delay="200"
-        v-if="isPC"
-      >
-        <div
-          :class="`pagination-dot`"
-          v-for="(slide, index) in slideList"
-          :key="slide.img + '-dot'"
-          @click="goTo(index)"
-        ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-      </div>
     </div>
   </div>
 </template>
@@ -97,13 +133,11 @@
 
 .section7 {
   width: size(1920);
-  height: size(968);
-  // min-height: size(900);
-  // background-image: url('./s2/bg.jpg');
-  // background-size: 100% 100%;
-  // background-position: 0 0;
-  // background-attachment: fixed;
-  // overflow: hidden;
+  height: 100vh;
+  min-height: 900px;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
 }
 
 .bg-img {
@@ -122,68 +156,96 @@
 }
 
 .title {
-  width: size(419);
-  top: size(112);
-  left: size(371);
-  font-size: size(42);
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  top: size(123);
+  left: size(203);
+  font-size: size(54);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.49;
-  letter-spacing: 2.54px;
-  text-align: left;
-  color: #000000;
+  line-height: 1.24;
+  letter-spacing: size(7.02);
+  text-align: center;
+  color: #ffffff;
   white-space: nowrap;
 }
 
 .subtitle {
-  width: size(519);
-  top: size(182);
-  left: size(376);
-  font-size: size(32);
+  top: size(127);
+  right: size(613);
+  font-size: size(26);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.5;
-  letter-spacing: 5.17px;
+  line-height: 3.98;
+  letter-spacing: 0.52px;
   text-align: left;
-  color: #3e3a39;
-  white-space: nowrap;
+  color: #ffffff;
+}
+
+.hr {
+  width: 2px;
+  height: size(525);
+  top: size(143);
+  right: size(816);
+  background-color: #fff;
+  z-index: 2;
+  transition: all 0.3s;
+
+  &.light {
+    background-color: #333;
+  }
 }
 
 .desc {
-  width: size(650);
-  top: size(127);
-  left: size(959);
+  width: size(482);
+  top: size(204);
+  right: size(235);
   font-size: size(16);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.32;
-  letter-spacing: 1.6px;
+  line-height: 1.5;
+  letter-spacing: size(1.5);
   text-align: left;
-  color: #4d4d4d;
+  color: #ffffff;
+  transition: all 0.3s;
+  white-space: nowrap;
+  z-index: 2;
+  li {
+    margin-bottom: 20px;
+  }
+
+  .label {
+    display: inline-block;
+    margin-right: 10px;
+  }
 }
 
-.icon {
-  width: size(76);
-  top: size(95);
-  left: size(314);
-}
-
-.img {
-  width: size(216);
-  top: size(23);
-  left: size(-108);
+.art {
+  top: size(560);
+  right: size(180);
+  font-size: size(70.2);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(2.72);
+  text-align: left;
+  color: #ffffff;
+  text-shadow: 0 0 2px #333;
+  transition: all 0.3s;
+  z-index: 2;
 }
 
 /* Swipe */
 .swipe {
-  width: size(1292);
-  height: size(542);
-  min-height: size(542);
-  top: size(299);
-  left: size(314);
+  width: size(612);
+  height: size(530);
+  min-height: size(530);
+  top: size(136);
+  left: size(398);
   object-fit: cover;
 }
 
@@ -241,6 +303,19 @@
     width: 100%;
   }
 
+  .name {
+    right: 20px;
+    bottom: 20px;
+    font-size: size(14.8);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.35;
+    letter-spacing: size(0.89);
+    text-align: center;
+    color: #ffffff;
+  }
+
   // &:nth-child(1) {
   //   z-index: 1;
   //   // opacity: 1;
@@ -258,11 +333,12 @@
 
 .pagination {
   width: auto;
-  bottom: size(107);
-  left: 0;
-  right: 0;
+  top: size(68);
+  left: auto;
+  right: size(190);
   margin: 0 auto;
   justify-content: center;
+  z-index: 2;
 }
 
 .pagination-dot {
@@ -345,7 +421,7 @@
 @media screen and (max-width: 767px) {
   .section7 {
     width: 100vw;
-    height: sizem(464 + 286);
+    height: sizem(279 + 382);
     min-height: auto;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
@@ -354,67 +430,48 @@
     overflow: hidden;
   }
 
+  .img {
+    width: sizem(283);
+    top: sizem(14.5);
+    left: sizem(24);
+    z-index: 1;
+  }
+
+  .red {
+    width: sizem(108);
+    top: sizem(181);
+    right: sizem(-50);
+    z-index: 1;
+  }
+
   .title {
-    width: sizem(260);
-    top: sizem(61);
-    left: sizem(54);
+    width: sizem(238);
+    top: sizem(21);
+    left: sizem(105);
     font-size: sizem(25);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.31;
+    line-height: 1.3;
     letter-spacing: 1.5px;
     text-align: left;
     color: #000000;
-    white-space: nowrap;
   }
 
-  .subtitle {
-    width: sizem(309);
-    top: sizem(101);
-    left: sizem(34);
-    font-size: sizem(20);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.43;
-    letter-spacing: 2.2px;
-    text-align: left;
-    color: #3e3a39;
-    white-space: nowrap;
+  .tree {
+    width: sizem(202);
+    top: sizem(287);
+    left: sizem(0);
+    z-index: 0;
   }
 
-  .desc {
-    width: sizem(310);
-    top: sizem(149);
-    left: sizem(34);
-    font-size: sizem(15);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.73;
-    letter-spacing: 1.5px;
-    text-align: left;
-    color: #4d4d4d;
-  }
-
-  .icon {
-    width: sizem(73);
-    top: sizem(31);
-    left: sizem(23);
-  }
-
-  .img {
-    width: size(216);
-    top: size(23);
-    left: size(-108);
-    display: none;
-  }
+  /* Swipe */
   .swipe {
-    width: 100vw;
-    height: sizem(464);
-    top: sizem(286);
-    left: 0;
+    width: sizem(330);
+    height: sizem(279);
+    min-height: sizem(279);
+    top: sizem(382);
+    left: sizem(23);
     object-fit: cover;
   }
 
@@ -437,6 +494,26 @@
     transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
   }
 
+  // begin
+  // .swipe-left-leave-to {
+  //   margin-left: -100vw;
+  //   z-index: 0;
+  // }
+  // // end
+  // .swipe-left-enter {
+  //   opacity: 0.5;
+  //   margin-left: 0;
+  //   z-index: 1;
+  // }
+
+  // .swipe-left-enter-active {
+  //   transition: all 0.5s ease;
+  // }
+
+  // .swipe-left-leave-active {
+  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  // }
+
   .swipe-wrap {
     width: 100%;
     height: 100%;
@@ -446,17 +523,30 @@
   .swipe-item {
     width: 100%;
     height: 100%;
-    transition: opacity 1s ease-in-out;
-    object-fit: cover;
+    z-index: 0;
 
     img {
       width: 100%;
     }
+
+    // &:nth-child(1) {
+    //   z-index: 1;
+    //   // opacity: 1;
+    // }
+
+    // &.base {
+    //   z-index: 1;
+    //   opacity: 1;
+    // }
+    // &.active {
+    //   z-index: 2;
+    //   // opacity: 1;
+    // }
   }
 
   .pagination {
     width: auto;
-    bottom: 10px;
+    bottom: size(91);
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -465,15 +555,16 @@
 
   .pagination-dot {
     padding: 5px;
+    margin: 0 10px;
     cursor: pointer;
     z-index: 4;
 
     span {
       display: block;
-      width: 14px;
-      height: 14px;
-      border-radius: 14px;
-      box-shadow: 0 0 0 1px #fff;
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 0 1px #bd2b27;
       position: relative;
       background-color: rgba(0, 0, 0, 0.01);
       transition: all 0.5s;
@@ -483,7 +574,7 @@
         width: 60%;
         height: 60%;
         display: block;
-        background: #fff;
+        background: #bd2b27;
         border-radius: 20px;
         opacity: 1;
         position: absolute;
@@ -497,16 +588,16 @@
       &.active {
         &::before {
           content: '';
-          width: 60%;
-          height: 60%;
+          width: 100%;
+          height: 100%;
           display: block;
-          background: #fff;
+          background: #bd2b27;
           border-radius: 20px;
           opacity: 1;
           position: absolute;
-          top: 20%;
+          top: 0%;
           // transform: translateY(-50%);
-          left: 23%;
+          left: 0%;
           transform: scale(1);
         }
       }
@@ -516,12 +607,12 @@
   .swipe-btns {
     width: 100%;
     height: 100%;
-    padding: 0 10px;
+    padding: 0 15px;
     z-index: 3;
 
     .prev-btn,
     .next-btn {
-      width: size-m(15);
+      width: sizem(15);
       cursor: pointer;
     }
   }
@@ -542,12 +633,15 @@ export default {
       isPC,
       isMobile,
       isTablet,
+      isDialog: false,
       slideList: [
         {
-          img: isPC ? require('./s7/1.jpg') : require('./s7/1_m.jpg'),
+          img: require('./s7/1.png'),
+          // name: '成功大學',
         },
         {
-          img: isPC ? require('./s7/2.jpg') : require('./s7/2_m.jpg'),
+          img: require('./s7/2.png'),
+          // name: '崑山科技大學',
         },
       ],
     }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div :class="`section6 ${slideList[slideIndex].mode}`">
+    <div :class="`section62 ${slideList[slideIndex].mode}`">
       <div
         class="pagination absolute flex-ac"
         data-aos="fade-up"
@@ -114,7 +114,7 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section6 {
+.section62 {
   width: size(1920);
   height: 100vh;
   min-height: 900px;
@@ -441,7 +441,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section6 {
+  .section62 {
     width: 100vw;
     height: sizem(279 + 382);
     min-height: auto;
@@ -646,7 +646,7 @@ import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section6',
+  name: 'section62',
 
   mixins: [slider],
 
@@ -658,14 +658,9 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s6/1.jpg'),
-          mode: 'dark',
-          // name: '成功大學',
-        },
-        {
-          img: require('./s6/2.jpg'),
+          img: require('./s6/透天的1.jpg'),
           mode: 'light',
-          // name: '崑山科技大學',
+          // name: '成功大學',
         },
       ],
     }

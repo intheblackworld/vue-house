@@ -11,12 +11,9 @@ export default {
   indigatorLength: 10,
 
   houseInfos: [
-    ['投資興建', '長勝開發股份有限公司',],
-    ['建築設計', '潘振黃建築師事務所',],
-    ['工程營造', '宜錦營造有限公司',],
-    ['格局規劃', '29-62坪',],
-    ['基地面積', '548坪',],
-    ['建照號碼', '108.07.05建管建見字第289至303號',],
+    ['投資興建', '春福機構·新春建設',],
+    ['建築代銷', '上揚國際建築團隊',],
+    ['建造號碼', '108南工造字第04415號',],
   ],
 
   gtmCode: ['555BGF4'], // 可放置多個
@@ -24,7 +21,7 @@ export default {
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
   order: {
-    title: isMobile ? '讀秒登入<br />双捷靜巷‧公園首席' : '讀秒登入 双捷靜巷‧公園首席',
+    title: '立即預約',
     subTitle: ''
   }
 }
