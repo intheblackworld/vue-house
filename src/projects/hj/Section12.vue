@@ -19,11 +19,11 @@
         data-aos-delay="300"
       >
         <img
-          v-lazy="require('./s12/img1.png')"
+          v-lazy="require('./s12/img.png')"
           alt="img1"
           class="right-img"
         >
-        <img
+      <!--  <img
           v-lazy="require('./s12/img2.png')"
           alt="img2"
           class="right-img move"
@@ -37,7 +37,7 @@
           v-lazy="require('./s12/img4.png')"
           alt="img4"
           class="right-img move"
-        >
+        >-->
       <div
         class="btn"
         v-scroll-to="{ element: `#contact` }"
@@ -65,11 +65,11 @@
           class="img"
         >
         <img
-          v-lazy="require('./s12/mo/img1.png')"
+          v-lazy="require('./s12/mo/img.png')"
           alt=""
           class="img img-b"
         >
-        <img
+   <!--    <img
           v-lazy="require('./s12/mo/img2.png')"
           alt=""
           class="img img-b move"
@@ -84,6 +84,7 @@
           alt=""
           class="img img-b move"
         >
+        -->
       <div
         class="btn"
         v-scroll-to="{ element: `#contact` }"
