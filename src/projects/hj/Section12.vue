@@ -37,7 +37,8 @@
           v-lazy="require('./s12/img4.png')"
           alt="img4"
           class="right-img move"
-        >-->
+        >
+        -->
       <div
         class="btn"
         v-scroll-to="{ element: `#contact` }"
