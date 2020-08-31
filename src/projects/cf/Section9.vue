@@ -14,7 +14,8 @@
           @click="goTo(index)"
         ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
-      <div class="tab-groups absolute flex-ac flex-jb">
+      <div class="tab-groups absolute flex-ac flex-jb" data-aos="fade-left"
+        data-aos-delay="200">
         <div class="tab" @click="tabIndex = 0">
           <div>2房2衛</div>
           <span>A1/A7/B1/B7</span>
@@ -36,6 +37,8 @@
       <transition-group
         name="swipe-fade"
         mode="out-in"
+        data-aos="fade-left"
+        data-aos-delay="400"
       >
         <img
           v-for="(tabImg, i) in tabList"
