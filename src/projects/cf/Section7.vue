@@ -1,18 +1,18 @@
 <template>
   <div>
     <div class="section7">
-      <img
+      <!-- <img
         src="./s1/資產 2914.png"
         alt=""
         class="img absolute"
-      >
-      <img
+      > -->
+      <!-- <img
         src="./s2/icon.png"
         alt=""
         class="icon absolute"
         data-aos="fade-left-up"
         data-aos-delay="800"
-      >
+      > -->
       <div
         class="title absolute"
         data-aos="fade-right"

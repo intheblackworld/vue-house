@@ -14,16 +14,16 @@
           ></div>
         </div>
       </div>
-      <img
+      <!-- <img
         src="./s1/資產 2914.png"
         alt=""
         class="img absolute"
-      >
-      <img
+      > -->
+      <!-- <img
         src="./s2/icon.png"
         alt=""
         class="icon absolute"
-      >
+      > -->
       <div
         class="title absolute"
         data-aos="fade-right"

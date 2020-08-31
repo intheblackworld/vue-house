@@ -27,24 +27,13 @@
         data-aos="fade-up-left"
         data-aos-delay="800"
       >
-      <div
-        class="pagination absolute flex-ac"
-        data-aos="fade-up"
-        data-aos-delay="200"
-        v-if="isPC"
-      >
-        <div
-          :class="`pagination-dot`"
-          v-for="(slide, index) in slideList"
-          :key="slide.img + '-dot'"
-          @click="goTo(index)"
-        ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-      </div>
       <h3
         class="title absolute"
         data-aos="fade-right"
         data-aos-delay="400"
-      >南紡購物中心為鄰<br />繁華商圈一次集結</h3>
+      >明星學區、<br />
+        機能都到位<br />
+        交通串聯無往不利</h3>
       <div
         class="hr absolute"
         data-aos="zoom-in-right"
@@ -55,17 +44,9 @@
         data-aos="fade-right"
         data-aos-delay="800"
       >
-        南紡購物中心占地約8,000坪，結合購物中心、老爺酒店、威秀影城、誠品書店等機能與指標品牌，加上各式各樣主題餐廳，為台南東區最大、最象徵性的地標商圈。更與周邊成大商圈、東門商圈相互串聯，繁華一次到位！入主【春福采采】，正是同時把握商圈便利與公園悠閒的不二首選！
-      </div>
-      <div
-        class="desc2 absolute"
-        data-aos="fade-right"
-        data-aos-delay="800"
-      >
-        ■與占地約8,000坪「南紡購物中心」比鄰而居<br />
-        ■結合老爺酒店、威秀影城、誠品書店等精彩機能<br />
-        ■台南東區最大、最象徵性的地標商圈<br />
-        ■同步串聯周邊成大商圈、中華商圈
+        ■復興國小、永仁完全中學、成功大學 完整學區<br />
+        ■高雄榮總台南分院、大型連鎖採買商家完整齊全<br />
+        ■完整交通：大灣交流道、國道1號、未來更接軌捷運
       </div>
       <div
         class="life absolute"
@@ -123,6 +104,19 @@
               @click="addIndex"
             >
           </div>
+          <div
+            class="pagination absolute flex-ac"
+            data-aos="fade-up"
+            data-aos-delay="200"
+            v-if="isPC"
+          >
+            <div
+              :class="`pagination-dot`"
+              v-for="(slide, index) in slideList"
+              :key="slide.img + '-dot'"
+              @click="goTo(index)"
+            ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+          </div>
         </div>
       </div>
     </div>
@@ -164,9 +158,21 @@
 }
 
 .fly1 {
-  width: size(112);
-  top: size(78);
-  left: size(46);
+  width: size(94);
+  top: size(70);
+  right: size(214);
+}
+
+.fly2 {
+  width: size(65);
+  bottom: size(212);
+  right: size(145);
+}
+
+.fly3 {
+  width: size(95);
+  top: size(98);
+  right: size(9.5);
 }
 
 .title {
@@ -187,7 +193,7 @@
 .hr {
   width: size(458);
   height: 2px;
-  top: size(358);
+  top: size(388);
   right: size(180);
   background-color: #27a8a8;
 }
@@ -206,23 +212,9 @@
   color: #333333;
 }
 
-.desc2 {
-  width: size(462);
-  top: size(624);
-  right: size(180);
-  font-size: size(16);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2.25;
-  letter-spacing: size(1.12);
-  text-align: left;
-  color: #333333;
-}
-
 .life {
   bottom: size(315);
-  right: size(20);
+  right: size(403);
   font-size: size(150);
   font-weight: normal;
   font-stretch: normal;
@@ -327,9 +319,9 @@
 
 .pagination {
   width: auto;
-  top: size(0);
-  left: auto;
-  right: size(177);
+  bottom: size(20);
+  left: 0;
+  right: 0;
   margin: 0 auto;
   justify-content: center;
 }
@@ -345,7 +337,7 @@
     width: 20px;
     height: 20px;
     border-radius: 20px;
-    box-shadow: 0 0 0 1px #27a8a8;
+    box-shadow: 0 0 0 1px #fff;
     position: relative;
     background-color: rgba(0, 0, 0, 0.01);
     transition: all 0.5s;
@@ -355,7 +347,7 @@
       width: 60%;
       height: 60%;
       display: block;
-      background: #27a8a8;
+      background: #fff;
       border-radius: 20px;
       opacity: 1;
       position: absolute;
@@ -372,7 +364,7 @@
         width: 100%;
         height: 100%;
         display: block;
-        background: #27a8a8;
+        background: #fff;
         border-radius: 20px;
         opacity: 1;
         position: absolute;
