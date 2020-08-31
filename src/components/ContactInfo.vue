@@ -3,7 +3,7 @@
     <img
       class="logo"
       src="@/assets/img/contact-logo.png"
-      alt="心天畝的圖片"
+      alt=""
     />
     <div class="info">
       <div
@@ -93,7 +93,7 @@
       <el-dialog
         title
         :visible.sync="isShowCallDialog"
-        width="90%"
+        :width="`${isMobile ? '90%' : '500px'}`"
         :modal-append-to-body="false"
       >
         <CallDialog :phone="info.phone" />
@@ -149,7 +149,7 @@ export default {
   },
   methods: {
     showCallDialog() {
-      if (!this.isMobile) return
+      // if (!this.isMobile) return
       this.isShowCallDialog = true
     },
     showMessengerDialog() {
@@ -179,7 +179,7 @@ export default {
   flex-direction: column;
   align-content: center;
   justify-content: space-between;
-  transform: translateY(14%);
+  margin-top: -14%;
   position: relative;
   z-index: 3;
   width: 1200px;
