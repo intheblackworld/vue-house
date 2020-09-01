@@ -8,7 +8,7 @@
           :key="slide.img"
         >
           <div
-            class="btn-inner flex-c"
+            class="btn-inner"
             v-html="slide.title"
             @click="goTo(index)"
           ></div>
@@ -93,6 +93,12 @@
   </div>
 </template>
 
+<style lang="scss">
+  .title {
+  b{text-orientation: initial;}
+  }
+  
+  </style>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
@@ -201,9 +207,10 @@
 
   .btn-inner {
     width: size(227);
-    height: size(63);
+    //height:
     z-index: 1;
     position: relative;
+    padding: 0.35em 0 ;
     background-color: #d2d1ce;
     border: 2px solid #717071;
     transition: transform 0.4s ease;
@@ -550,12 +557,12 @@ export default {
         },
         {
           img: require('./s8/2.jpg'),
-          title: '德國原裝進口<br />impuls精品廚具',
+          title: '德國原裝進口<br /><b>impuls</b>精品廚具',
           desc: '成立於1990年，產品遍佈全球50個國家和地區，堅持德國工藝精神，榮獲德國golden M、GS等多項認證，結合天然環保無毒板材，打造健康空間',
         },
         {
           img: require('./s8/3.jpg'),
-          title: '飯店級高雅享受<br />德國Innoci時尚衛浴',
+          title: '飯店級高雅享受<br />德國<b>Innoci</b>時尚衛浴',
           desc: '融合國際輕奢年輕的設計概念，德國釉料配方，易潔、抑菌、質感細膩柔滑，讓浴室空間更為時尚高雅',
         },
       ],

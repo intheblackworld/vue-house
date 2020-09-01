@@ -1,11 +1,15 @@
 @import './variableColor.scss';
 
 .el-dialog{
-    height:calc(100% - 123px) !important;margin-top: 60px !important;
-}
-.el-dialog__title {
-  font-size: 32px !important;
-  line-height:2 !important;
+    height:auto !important;margin-top: 60px !important;align-self:center;
+    &__wrapper{
+      height: 100%;
+      display: flex;
+    }
+    &__title {
+      font-size: 32px !important;
+      line-height:2 !important;
+    }
 }
 .policy-dialog-content {
   width: 980px;

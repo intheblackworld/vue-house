@@ -1,8 +1,11 @@
 @import "./variableColor.scss";
 
 .el-select {
-  margin-left: 21px;
+  //margin-left: 21px;
   font-family:$family3;
+  position: relative;
+  font-size: 14px;
+  display: inline-block;flex: 0 1 auto;
 }
 .el-scrollbar{font-family:$family3;}
 
@@ -13,7 +16,8 @@
   width: 100% !important;
   margin-left: 44px;
 }
-
+.el-input{
+  display: inline-block;flex: 0 1 auto;width:auto !important;;}
 .el-input__inner {
   width: 310px !important;
   height: 48px !important;

@@ -1,12 +1,12 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '台北市大同區重慶北路三段68號2F',
+  address: '台北市大同區蘭州街89巷14號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1812.64610095759!2d121.8171196!3d24.6824801!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3467ef5a48bc9153%3A0xd420ca03e270682f!2zMjY45a6c6Jit57ij5LqU57WQ6YSJ5YKz6Jed6Lev5LiA5q61NTblt7c!5e0!3m2!1szh-TW!2stw!4v1597742951425!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/WpkSme4TcWj8t3Gs5',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.1073596141914!2d121.51354791535177!3d25.064350083958242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a940cacb7247%3A0x8bb93c98247680dd!2zMTAz5Y-w54Gj5Y-w5YyX5biC5aSn5ZCM5Y2A6Jit5bee6KGXODnlt7cxNOiZnw!5e0!3m2!1szh-TW!2sus!4v1598943272919!5m2!1szh-TW!2sus',
+  googleLink: 'https://goo.gl/maps/vGhkc79ivfwZVzk27',
   phone: '02-2587-5257',
-  fbLink: 'https://www.facebook.com/IlanCSdeveloper/',
-  fbMessage: 'https://m.me/IlanCSdeveloper',
+  fbLink: 'https://www.facebook.com/築億丰盛-106367061173988',
+  fbMessage: 'https://m.me/106367061173988',
   caseName: '築億丰盛',
   indigatorLength: 10,
 

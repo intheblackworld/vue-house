@@ -25,21 +25,26 @@
         data-aos="fade-up-left"
         data-aos-delay="1000"
       >
+      <div class="txt absolute">
       <div
-        class="title absolute"
+        class="title"
         data-aos="fade-down"
         data-aos-delay="400"
       >食衣住行育樂遊</div>
       <div
-        class="subtitle absolute"
+        class="subtitle"
         data-aos="fade-down"
         data-aos-delay="600"
       >機能豐盛 繁華近靜</div>
       <div
-        class="desc absolute"
+        class="desc"
         data-aos="fade-down"
         data-aos-delay="800"
-      >人文薈萃與商業豐盛的大同區，未來將因「大同再生計畫」都市更新蓬勃發展，周遭建設規劃豐富水綠、產業、交通、文化歷史及創意氛圍資源，文化觀光及特色商圈整合行銷，循東京車站特區模式，打造台北「丸之內」。</div>
+      >
+      <div>
+        人文薈萃與商業豐盛的大同區，未來將因「大同再生計畫」都市更新蓬勃發展，周遭建設規劃豐富水綠、產業、交通、文化歷史及創意氛圍資源，文化觀光及特色商圈整合行銷，循東京車站特區模式，打造台北「丸之內」。</div>
+      </div>
+    </div>
     </div>
   </div>
 </template>
@@ -67,46 +72,33 @@
   top: size(184);
   left: size(235);
 }
-.title {
-  width: size(286);
+.txt{
   top: size(224);
   left: size(293);
-  font-size: size(39);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.49;
-  letter-spacing: 2.33px;
-  text-align: left;
-  color: #000000;
-  white-space: nowrap;
-}
-.subtitle {
-  width: size(307);
-  top: size(279);
-  left: size(293);
-  font-size: size(32);
-  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.5;
-  letter-spacing: 5.17px;
-  text-align: left;
+  text-align: justify;
+  color: #4d4d4d;
+  font-size: size(16);
+  font-weight: bold;
+  }
+.title {
+  font-size: size(39);
+  letter-spacing:0.06em;
+  color: #000000;
+}
+.subtitle {
+  font-size: size(32);
+  letter-spacing:0.16em;
   color: #3e3a39;
-  white-space: nowrap;
 }
 .desc {
-  width: size(650);
-  top: size(353);
-  left: size(293);
-  font-size: size(16);
+  width:41em;
+  margin: 0.3em 0 0 0;
   font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 2.2;
-  letter-spacing: 1.92px;
-  text-align: left;
-  color: #4d4d4d;
+  letter-spacing:0.12em;
 }
 
 // .bg-img {
@@ -140,6 +132,7 @@
   .section2 {
     width: 100vw;
     height: sizem(552);
+    margin-top:sizem(30);
     // height: size-m(804);
     background-image: none;
     background-size: cover;
@@ -156,46 +149,22 @@
     top: sizem(0);
     left: sizem(23);
   }
-  .title {
-    width: sizem(184);
+.txt{
     top: sizem(30);
     left: sizem(52);
+    }
+  .title {
     font-size: sizem(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.31;
-    letter-spacing: sizem(1.5);
-    text-align: left;
-    color: #000000;
-    white-space: nowrap;
   }
   .subtitle {
-    width: sizem(209);
-    top: sizem(73);
-    left: sizem(52);
     font-size: sizem(22);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.21;
-    letter-spacing: sizem(3.5);
-    text-align: left;
-    color: #3e3a39;
-    white-space: nowrap;
   }
   .desc {
-    width: sizem(315);
-    top: sizem(120);
-    left: sizem(32);
+    width: sizem(290);
     font-size: sizem(15);
     font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.73;
-    letter-spacing: sizem(0.9);
-    text-align: left;
-    color: #4d4d4d;
+    div{transform: scaleX(0.95);width: 101%;transform-origin: 0 0;}
   }
 }
 </style>

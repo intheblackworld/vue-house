@@ -25,7 +25,9 @@
         data-aos="fade-down"
         data-aos-delay="400"
       >
+      <div>
         【築億丰盛】居大同區核心部位，區內幹道重慶北路、承德路、民權西路、民族西路包圍，步行生活圈內即享完善生活機能：學區、銀行、家樂福、公園，居家生活沉浸於文教區、公園宅氛圍，飯後養生漫步、假日家庭休閒，綠蔭舒心慢活愜意。騎車約6分鐘，抵淡水河岸自行車道，風光水綠隨時出發。迪化大稻埕，南往龍山華江，北接延平、雙溪、八里左岸，東至大佳、大直河濱，飛輪乘風一路暢遊，樂活享受雙北河濱風光。
+      </div>
       </div>
       <img
         src="./s2/icon.png"
@@ -75,16 +77,16 @@
 }
 
 .desc {
-  width: size(378);
+  width: size(380);
   top: size(254);
-  right: size(256);
+  right: size(245);
   font-size: size(16);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 2.2;
-  letter-spacing: 1.6px;
-  text-align: left;
+  letter-spacing: 0.06em;
+  text-align: justify;
   color: #4d4d4d;
 }
 
@@ -140,12 +142,8 @@
     left: sizem(32);
     font-size: sizem(15);
     font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.73;
-    letter-spacing: sizem(0.9);
-    text-align: left;
-    color: #4d4d4d;
+    div{transform: scaleX(0.95);width: 101%;transform-origin: 0 0;}
   }
 }
 </style>

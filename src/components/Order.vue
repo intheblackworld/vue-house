@@ -442,7 +442,9 @@ export default {
     }
 
     label {
-      width: 92px;
+      //width:10em;
+      flex: 0 0 6.8em;
+      display:block;text-align: left;
       font-size: 16px;
       opacity: 0.8;
       font-weight: bold;
