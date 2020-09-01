@@ -443,7 +443,7 @@
 @media screen and (max-width: 767px) {
   .section62 {
     width: 100vw;
-    height: sizem(279 + 382);
+    height: sizem(750);
     min-height: auto;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
@@ -452,48 +452,107 @@
     overflow: hidden;
   }
 
-  .img {
-    width: sizem(283);
-    top: sizem(14.5);
-    left: sizem(24);
-    z-index: 1;
-  }
-
-  .red {
-    width: sizem(108);
-    top: sizem(181);
-    right: sizem(-50);
-    z-index: 1;
-  }
-
   .title {
-    width: sizem(238);
-    top: sizem(21);
-    left: sizem(105);
+    width: sizem(210);
+    top: sizem(16);
+    left: sizem(35);
+    right: auto;
     font-size: sizem(25);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.3;
-    letter-spacing: 1.5px;
+    line-height: 1.44;
+    letter-spacing: sizem(0.5);
     text-align: left;
-    color: #000000;
+    color: #ffffff;
+    z-index: 2;
+    transition: all 0.3s;
+    white-space: nowrap;
   }
 
-  .tree {
-    width: sizem(202);
-    top: sizem(287);
-    left: sizem(0);
-    z-index: 0;
+  .hr {
+    width: sizem(310);
+    height: 2px;
+    top: sizem(105);
+    right: sizem(30.5);
+    background-color: #fff;
+    z-index: 2;
+    transition: all 0.3s;
+
+    &.light {
+      background-color: #333;
+    }
+  }
+
+  .desc {
+    width: sizem(310);
+    top: sizem(121);
+    right: sizem(30);
+    font-size: sizem(15);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: sizem(1.65);
+    text-align: left;
+    color: #ffffff;
+    transition: all 0.3s;
+    z-index: 2;
+  }
+
+  .art {
+    top: sizem(334);
+    right: sizem(26);
+    font-size: sizem(35.2);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(0.72);
+    text-align: left;
+    color: #ffffff;
+    text-shadow: 0 0 2px #333;
+    transition: all 0.3s;
+    z-index: 2;
+  }
+
+  .btn-group {
+    width: sizem(303 + 8);
+    top: sizem(396);
+    right: sizem(33);
+    z-index: 2;
+
+    .btn {
+      width: sizem(151);
+      height: sizem(35);
+      border: solid 2px #fff;
+      border-radius: 20px / 20px;
+      cursor: pointer;
+      font-size: sizem(16);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.69;
+      letter-spacing: sizem(1.76);
+      text-align: center;
+      color: #fff;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: #fff;
+        border-color: #fff;
+        color: #af8680;
+      }
+    }
   }
 
   /* Swipe */
   .swipe {
-    width: sizem(330);
-    height: sizem(279);
-    min-height: sizem(279);
-    top: sizem(382);
-    left: sizem(23);
+    width: sizem(375);
+    height: sizem(750);
+    min-height: sizem(750);
+    top: sizem(0);
+    left: sizem(0);
     object-fit: cover;
   }
 
@@ -549,6 +608,7 @@
 
     img {
       width: 100%;
+      height: sizem(750);
     }
 
     // &:nth-child(1) {
@@ -658,9 +718,9 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s6/透天的1.jpg'),
+          img: isMobile ? require('./mo/6/透天的1.jpg') : require('./s6/透天的1.jpg'),
           mode: 'light',
-          // name: '成功大學',
+          // name: '崑山科技大學',
         },
       ],
     }

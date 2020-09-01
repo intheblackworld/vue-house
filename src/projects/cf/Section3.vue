@@ -2,7 +2,6 @@
   <div>
     <div
       class="section3"
-      v-if="isPC"
     >
       <img
         src="./s3/img.png"
@@ -16,7 +15,11 @@
         data-aos="fade-down"
         data-aos-delay="200"
       >
-      <img src="./s1/butterfly2.png" alt="" class="fly2 absolute">
+      <img
+        src="./s1/butterfly2.png"
+        alt=""
+        class="fly2 absolute"
+      >
       <h3
         class="title absolute"
         data-aos="fade-right"
@@ -44,15 +47,13 @@
         ■迎來商業、金融、交通等重大發展<br />
         ■都會公園價值更放大，綠富才是真財富
       </div>
-      <div class="park absolute" data-aos="fade-left"
-        data-aos-delay="1000">
+      <div
+        class="park absolute"
+        data-aos="fade-left"
+        data-aos-delay="1000"
+      >
         PARK
       </div>
-    </div>
-    <div
-      class="section3"
-      v-if="isMobile"
-    >
     </div>
   </div>
 </template>
@@ -168,22 +169,90 @@
   .section3 {
     width: 100vw;
     min-height: auto;
-    height: calc(100vh - 63px);
+    height: sizem(872);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
   }
 
-  .logo {
-    width: sizem(260);
-    top: sizem(143);
-    left: sizem(58);
+  .back {
+    display: none;
   }
 
   .img {
-    width: sizem(160);
-    top: sizem(-120);
-    left: sizem(16);
+    width: 100vw;
+    top: 0;
+    left: 0;
+  }
+
+  .fly2 {
+    width: sizem(78);
+    top: sizem(272);
+    right: sizem(8);
+  }
+
+  .title {
+    width: sizem(233);
+    top: sizem(271);
+    right: sizem(109);
+    font-size: sizem(25);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.44;
+    letter-spacing: sizem(1);
+    text-align: left;
+    color: #333333;
+    white-space: nowrap;
+  }
+
+  .hr {
+    width: sizem(310);
+    height: 1px;
+    top: sizem(366);
+    right: sizem(32);
+    background-color: #27a8a8;
+  }
+
+  .desc {
+    width: sizem(310);
+    top: sizem(390);
+    right: sizem(32);
+    font-size: sizem(15);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.2;
+    letter-spacing: sizem(0.95);
+    text-align: left;
+    color: #333333;
+  }
+
+  .desc2 {
+    width: sizem(310);
+    top: sizem(652);
+    right: sizem(32.3);
+    font-size: sizem(15);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.13;
+    letter-spacing: sizem(1.05);
+    text-align: left;
+    color: #333333;
+  }
+
+  .park {
+    bottom: sizem(0);
+    right: sizem(187);
+    font-size: sizem(70);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.69;
+    letter-spacing: sizem(-5.6);
+    text-align: right;
+    color: #27a8a8;
   }
 }
 </style>

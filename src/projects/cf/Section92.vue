@@ -1,7 +1,8 @@
 <template>
   <div>
     <div class="section92">
-      <img src="./s9/透天_t.jpg" alt="" class="bg-img">
+      <img src="./s9/透天_t.jpg" alt="" class="bg-img" v-if="isPC">
+      <img src="./mo/9/透天_t.jpg" alt="" class="bg-img" v-if="isMobile">
     </div>
   </div>
 </template>
@@ -285,7 +286,7 @@
 @media screen and (max-width: 767px) {
   .section92 {
     width: 100vw;
-    height: sizem(279 + 382);
+    height: sizem(743);
     min-height: auto;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
@@ -294,39 +295,9 @@
     overflow: hidden;
   }
 
-  .img {
-    width: sizem(283);
-    top: sizem(14.5);
-    left: sizem(24);
-    z-index: 1;
-  }
-
-  .red {
-    width: sizem(108);
-    top: sizem(181);
-    right: sizem(-50);
-    z-index: 1;
-  }
-
-  .title {
-    width: sizem(238);
-    top: sizem(21);
-    left: sizem(105);
-    font-size: sizem(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.3;
-    letter-spacing: 1.5px;
-    text-align: left;
-    color: #000000;
-  }
-
-  .tree {
-    width: sizem(202);
-    top: sizem(287);
-    left: sizem(0);
-    z-index: 0;
+  .bg-img {
+    height: auto;
+    min-height: auto;
   }
 
   /* Swipe */

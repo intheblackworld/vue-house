@@ -406,7 +406,7 @@
 @media screen and (max-width: 767px) {
   .section5 {
     width: 100vw;
-    height: sizem(279 + 382);
+    height: sizem(424 + 245);
     min-height: auto;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
@@ -415,48 +415,78 @@
     overflow: hidden;
   }
 
-  .img {
-    width: sizem(283);
-    top: sizem(14.5);
-    left: sizem(24);
-    z-index: 1;
+  .fly1,
+  .fly2 {
+    display: none;
   }
 
-  .red {
-    width: sizem(108);
-    top: sizem(181);
-    right: sizem(-50);
-    z-index: 1;
+  .fly3 {
+    width: size(85);
+    top: size(245 + 36);
+    right: size(12.5);
   }
 
   .title {
-    width: sizem(238);
-    top: sizem(21);
-    left: sizem(105);
+    width: sizem(233);
+    top: sizem(245 + 26);
+    left: sizem(33);
+    right: auto;
     font-size: sizem(25);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.3;
-    letter-spacing: 1.5px;
+    line-height: 1.44;
+    letter-spacing: sizem(1);
     text-align: left;
-    color: #000000;
+    color: #333333;
+    white-space: nowrap;
   }
 
-  .tree {
-    width: sizem(202);
-    top: sizem(287);
-    left: sizem(0);
-    z-index: 0;
+  .hr {
+    width: sizem(310);
+    height: 1px;
+    top: sizem(157 + 245);
+    right: sizem(32);
+    background-color: #004f8f;
+  }
+
+  .desc {
+    width: sizem(310);
+    top: sizem(181 + 245);
+    right: sizem(32);
+    font-size: sizem(15);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.7;
+    letter-spacing: sizem(0.95);
+    text-align: left;
+    color: #333333;
+  }
+
+
+  .life {
+    top: auto;
+    right: auto;
+    bottom: sizem(0);
+    left: sizem(28);
+    font-size: sizem(70);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.69;
+    letter-spacing: sizem(-5.6);
+    text-align: right;
+    color: #4b809d;
   }
 
   /* Swipe */
   .swipe {
-    width: sizem(330);
-    height: sizem(279);
-    min-height: sizem(279);
-    top: sizem(382);
-    left: sizem(23);
+    width: sizem(375);
+    height: sizem(245);
+    min-height: sizem(245);
+    top: sizem(0);
+    left: sizem(0);
     object-fit: cover;
   }
 

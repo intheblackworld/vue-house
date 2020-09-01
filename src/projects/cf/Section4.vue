@@ -401,7 +401,7 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-    height: sizem(279 + 382);
+    height: sizem(614 + 245);
     min-height: auto;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
@@ -410,48 +410,86 @@
     overflow: hidden;
   }
 
-  .img {
-    width: sizem(283);
-    top: sizem(14.5);
-    left: sizem(24);
-    z-index: 1;
-  }
-
-  .red {
-    width: sizem(108);
-    top: sizem(181);
-    right: sizem(-50);
-    z-index: 1;
+  .fly1 {
+    width: sizem(73);
+    top: sizem(272);
+    left: auto;
+    right: sizem(28);
   }
 
   .title {
-    width: sizem(238);
-    top: sizem(21);
-    left: sizem(105);
+    width: sizem(233);
+    top: sizem(271);
+    right: sizem(109);
     font-size: sizem(25);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.3;
-    letter-spacing: 1.5px;
+    line-height: 1.44;
+    letter-spacing: sizem(1);
     text-align: left;
-    color: #000000;
+    color: #333333;
+    white-space: nowrap;
   }
 
-  .tree {
-    width: sizem(202);
-    top: sizem(287);
-    left: sizem(0);
-    z-index: 0;
+  .hr {
+    width: sizem(310);
+    height: 1px;
+    top: sizem(366);
+    right: sizem(32);
+    background-color: #004f8f;
+  }
+
+  .desc {
+    width: sizem(310);
+    top: sizem(390);
+    right: sizem(32);
+    font-size: sizem(15);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: sizem(0.95);
+    text-align: left;
+    color: #333333;
+  }
+
+  .desc2 {
+    width: sizem(310);
+    top: sizem(582);
+    right: sizem(32.3);
+    font-size: sizem(15);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.13;
+    letter-spacing: sizem(1.05);
+    text-align: left;
+    color: #333333;
+  }
+
+  .shopping {
+    top: auto;
+    left: auto;
+    bottom: sizem(0);
+    right: sizem(40);
+    font-size: sizem(70);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.69;
+    letter-spacing: sizem(-5.6);
+    text-align: right;
+    color: #004f8f;
   }
 
   /* Swipe */
   .swipe {
-    width: sizem(330);
-    height: sizem(279);
-    min-height: sizem(279);
-    top: sizem(382);
-    left: sizem(23);
+    width: sizem(375);
+    height: sizem(245);
+    min-height: sizem(245);
+    top: sizem(0);
+    left: sizem(0);
     object-fit: cover;
   }
 

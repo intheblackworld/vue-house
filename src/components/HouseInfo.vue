@@ -135,6 +135,7 @@ export default {
     width: 100%;
     height: auto;
     margin-left: 20px;
+    margin-bottom: 20px;
     white-space: normal;
   }
 
@@ -142,7 +143,7 @@ export default {
     width: 100%;
     flex: 1;
     justify-content: space-around;
-    align-content: space-around;
+    align-content: flex-start;
   }
 }
 

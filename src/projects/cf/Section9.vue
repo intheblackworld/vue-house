@@ -14,17 +14,29 @@
           @click="goTo(index)"
         ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
-      <div class="tab-groups absolute flex-ac flex-jb" data-aos="fade-left"
-        data-aos-delay="200">
-        <div class="tab" @click="tabIndex = 0">
+      <div
+        class="tab-groups absolute flex-ac flex-jb"
+        data-aos="fade-left"
+        data-aos-delay="200"
+      >
+        <div
+          class="tab"
+          @click="tabIndex = 0"
+        >
           <div>2房2衛</div>
           <span>A1/A7/B1/B7</span>
         </div>
-        <div class="tab" @click="tabIndex = 1">
+        <div
+          class="tab"
+          @click="tabIndex = 1"
+        >
           <div>2房</div>
           <span>A3/A5/B3/B5</span>
         </div>
-        <div class="tab" @click="tabIndex = 2">
+        <div
+          class="tab"
+          @click="tabIndex = 2"
+        >
           <div>3房</div>
           <span>
             A2/B2
@@ -48,55 +60,55 @@
           class="tab-img absolute"
         >
       </transition-group>
-        <div
-          class="swipe absolute"
-          data-aos="fade-up"
-          data-aos-delay="200"
-          @mouseenter.stop="toggleTimer = false"
-          @mouseleave.stop="toggleTimer = true"
-        >
-          <!-- v-touch:swipe.left="decIndex(tabIndex)"
+      <div
+        class="swipe absolute"
+        data-aos="fade-up"
+        data-aos-delay="200"
+        @mouseenter.stop="toggleTimer = false"
+        @mouseleave.stop="toggleTimer = true"
+      >
+        <!-- v-touch:swipe.left="decIndex(tabIndex)"
         v-touch:swipe.right="addIndex(tabIndex)" -->
-          <div class="swipe-wrap relative">
-            <transition-group
-              name="swipe-fade"
-              mode="out-in"
-            >
-              <div
-                v-for="(slide, i) in slideList[tabIndex]"
-                v-show="slideIndex === i"
-                :key="slide.img"
-                :class="`swipe-item absolute`"
-              >
-                <img
-                  :src="slide.img"
-                  alt=""
-                >
-                <div
-                  class="name absolute"
-                  v-html="slide.name"
-                ></div>
-              </div>
-            </transition-group>
+        <div class="swipe-wrap relative">
+          <transition-group
+            name="swipe-fade"
+            mode="out-in"
+          >
             <div
-              class="swipe-btns absolute flex-ac flex-jb"
-              v-if="isMobile"
+              v-for="(slide, i) in slideList[tabIndex]"
+              v-show="slideIndex === i"
+              :key="slide.img"
+              :class="`swipe-item absolute`"
             >
               <img
-                src="./all/prev-btn.png"
+                :src="slide.img"
                 alt=""
-                class="prev-btn"
-                @click="decIndex(tabIndex)"
               >
-              <img
-                src="./all/next-btn.png"
-                alt=""
-                class="next-btn"
-                @click="addIndex(tabIndex)"
-              >
+              <div
+                class="name absolute"
+                v-html="slide.name"
+              ></div>
             </div>
+          </transition-group>
+          <div
+            class="swipe-btns absolute flex-ac flex-jb"
+            v-if="isMobile"
+          >
+            <img
+              src="./all/prev-btn.png"
+              alt=""
+              class="prev-btn"
+              @click="decIndex(tabIndex)"
+            >
+            <img
+              src="./all/next-btn.png"
+              alt=""
+              class="next-btn"
+              @click="addIndex(tabIndex)"
+            >
           </div>
         </div>
+      </div>
     </div>
   </div>
 </template>
@@ -141,9 +153,11 @@
     padding-top: size(5);
     cursor: pointer;
 
-    &:hover, &:active {
+    &:hover,
+    &:active {
       background-color: #c9ac94;
-      div, span {
+      div,
+      span {
         color: #fff;
       }
     }
@@ -381,7 +395,7 @@
 @media screen and (max-width: 767px) {
   .section9 {
     width: 100vw;
-    height: sizem(279 + 382);
+    height: sizem(245 + 566);
     min-height: auto;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
@@ -390,48 +404,86 @@
     overflow: hidden;
   }
 
-  .img {
-    width: sizem(283);
-    top: sizem(14.5);
-    left: sizem(24);
-    z-index: 1;
+  .tab-groups {
+    width: sizem(95 * 3 + 26);
+    top: sizem(245 + 26);
+    right: sizem(32);
+
+    .tab {
+      width: sizem(95);
+      height: sizem(47);
+      border: solid 2px #c9ac94;
+      padding-top: sizem(5);
+      cursor: pointer;
+
+      &:hover,
+      &:active {
+        background-color: #c9ac94;
+        div,
+        span {
+          color: #fff;
+        }
+      }
+
+      div {
+        font-size: sizem(17);
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.2;
+        letter-spacing: sizem(2.4);
+        text-align: center;
+        color: #d6aa99;
+      }
+
+      span {
+        font-size: sizem(12);
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.2;
+        letter-spacing: sizem(-0.41);
+        text-align: left;
+        color: #c9ac94;
+
+        span {
+          font-size: sizem(10);
+          font-weight: bold;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.2;
+          letter-spacing: sizem(-0.27);
+          text-align: left;
+          color: #c9ac94;
+
+          // span {
+          //   font-size: sizem(6.1);
+          //   font-weight: normal;
+          //   font-stretch: normal;
+          //   font-style: normal;
+          //   line-height: 1.2;
+          //   letter-spacing: sizem(1.23);
+          //   text-align: left;
+          //   color: #717071;
+          // }
+        }
+      }
+    }
   }
 
-  .red {
-    width: sizem(108);
-    top: sizem(181);
-    right: sizem(-50);
-    z-index: 1;
-  }
-
-  .title {
-    width: sizem(238);
-    top: sizem(21);
-    left: sizem(105);
-    font-size: sizem(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.3;
-    letter-spacing: 1.5px;
-    text-align: left;
-    color: #000000;
-  }
-
-  .tree {
-    width: sizem(202);
-    top: sizem(287);
-    left: sizem(0);
-    z-index: 0;
+  .tab-img {
+    width: sizem(310);
+    top: sizem(245 + 81);
+    right: sizem(32);
   }
 
   /* Swipe */
   .swipe {
-    width: sizem(330);
-    height: sizem(279);
-    min-height: sizem(279);
-    top: sizem(382);
-    left: sizem(23);
+    width: sizem(375);
+    height: sizem(245);
+    min-height: sizem(245);
+    top: sizem(0);
+    left: sizem(0);
     object-fit: cover;
   }
 
