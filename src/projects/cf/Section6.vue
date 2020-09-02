@@ -54,7 +54,7 @@
           to="/villa"
           tag="div"
           class="btn flex-c"
-        >透店別墅宅</router-link>
+        >透天別墅宅</router-link>
       </div>
       <div
         class="swipe absolute"

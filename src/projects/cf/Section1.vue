@@ -67,7 +67,7 @@
         v-if="isPC"
       >2019年春福集團耕耘，台南煙波大飯店正式開幕營運<br />
         2020年，春福繼續帶著全台南人的期待，選擇在永康平實特區，<br />
-        推出精品大樓&透店別墅宅－「春福采采」，<br />
+        推出精品大樓&透天別墅宅－「春福采采」，<br />
         要讓生活更精采，未來大放異采！</div>
       <div
         class="desc absolute"
@@ -78,7 +78,7 @@
         台南煙波大飯店正式開幕營運<br />
         2020年，春福繼續帶著全台南人的期待<br />
         選擇在永康平實特區<br />
-        推出精品大樓&透店別墅宅<br />
+        推出精品大樓&透天別墅宅<br />
         「春福采采」<br />
         要讓生活更精采，未來大放異采！
       </div>
@@ -98,7 +98,7 @@
           to="/villa"
           tag="div"
           class="btn flex-c"
-        >透店別墅宅</router-link>
+        >透天別墅宅</router-link>
       </div>
 
       <img
@@ -122,34 +122,34 @@
   width: size(1920);
   height: 100vh;
   min-height: 900px;
+  background-color:#d1c6b7;
   background-size: cover;
   background-attachment: fixed;
   overflow: hidden;
-  animation: bg 5s 0s linear infinite alternate-reverse;
+ //animation: bg 5s 0s linear infinite alternate-reverse;
 }
 
 .bg-animate {
-  width: size(1920);
-  height: 100vh;
-  min-height: 900px;
+  width: size(1500);
+  height:  size(1500);
   position: absolute;
-  top: 0;
-  left: 0;
+  top: calc(52% - 39vw);
+  left:size(-600);
   display: block;
   object-fit: cover;
   background: radial-gradient(
     ellipse at center,
     rgba(255, 235, 166, 1) 0%,
-    rgba(255, 237, 204, 1) 66%,
-    rgba(255, 237, 204, 0) 100%
+    rgba(255, 237, 204, 1) 46%,
+    rgba(255, 237, 204, 0) 70%
   );
   opacity: 0;
-  animation: bg 3s 0s linear infinite alternate-reverse;
+  animation: bg 3s infinite alternate;
 }
 
 @keyframes bg {
   to {
-    opacity: 1;
+    opacity: 0.8;
   }
 }
 
