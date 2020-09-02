@@ -1,25 +1,12 @@
 <template>
-  <div>
     <div class="section8">
       <div class="block absolute"></div>
-      <div
-        class="pagination absolute flex-ac"
-        data-aos="fade-left"
-        data-aos-delay="800"
-        v-if="isPC"
-      >
-        <div
-          :class="`pagination-dot`"
-          v-for="(slide, index) in slideList"
-          :key="slide.img + '-dot'"
-          @click="goTo(index)"
-        ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-      </div>
       <img
         src="./s8/bg.png"
         alt=""
         class="back absolute"
       >
+    <div class="bg">
       <img
         src="./s1/butterfly2.png"
         alt=""
@@ -34,19 +21,28 @@
         data-aos="fade-up-right"
         data-aos-delay="900"
       >
-      <h3
-        class="title absolute"
-        data-aos="fade-right"
-        data-aos-delay="200"
-      >升等 世界級的<br />
-        幸福空間</h3>
+    <div class="txt absolute">
       <div
-        class="hr absolute"
+        class="title"
+        data-aos="fade-right"
+        data-aos-delay="400">
+      <h3>升等 世界級的<br />
+        幸福空間</h3>
+      </div>
+      <div
+        class="space"
+        data-aos="fade-left"
+        data-aos-delay="400"
+      >
+        DESIGN SPACE
+      </div>
+      <div
+        class="hr"
         data-aos="zoom-in-right"
         data-aos-delay="400"
       ></div>
       <div
-        class="desc absolute"
+        class="desc"
         data-aos="fade-right"
         data-aos-delay="600"
       >
@@ -55,23 +51,35 @@
         讓體貼與感性，注入生活裡為家庭的每位成員<br />
         延伸展演美好生活的新場域
       </div>
+      
       <div
-        class="space absolute"
+        class="pagination flex-ac"
         data-aos="fade-left"
-        data-aos-delay="400"
+        data-aos-delay="800"
+        v-if="isPC"
       >
-        DESIGN SPACE
+        <div
+          :class="`pagination-dot`"
+          v-for="(slide, index) in slideList"
+          :key="slide.img + '-dot'"
+          @click="goTo(index)"
+        ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
       <div
-        class="subtitle absolute"
+        class="subtxt absolute">
+      <div
+        class="subtitle"
         data-aos="fade-left"
         data-aos-delay="1000"
-      >精品大廳</div>
+        v-html="slideList[slideIndex].subtitle"
+      ></div>
       <div
-        class="text absolute"
+        class="text"
         data-aos="fade-left"
         data-aos-delay="1100"
-      >高雅門廳接待朋友、約訪客戶皆體面稱頭</div>
+        v-html="slideList[slideIndex].text"
+      ></div></div>
+      </div>
       <div
         class="swipe absolute"
         data-aos="fade-up"
@@ -132,18 +140,18 @@
 
 .section8 {
   width: size(1920);
-  height: size(971);
   height: 100vh;
-  min-height: 900px;
+  min-height:size(900);
+  max-height:size(1080);
   background-size: cover;
   background-attachment: fixed;
   overflow: hidden;
+  .bg{width:1556px;height: 100%;max-width:90%;position: relative;margin: auto;}
 }
 
 .block {
-  width: size(1092);
-  height: 100vh;
-  min-height: 900px;
+  width: size(1090);
+  height: 100%;
   top: size(0);
   left: size(0);
   background-color: #d6aa99;
@@ -153,40 +161,32 @@
   width: size(534);
   top: size(35);
   left: size(0);
-  z-index: 2;
+ // z-index: 2;
 }
 
-.bg-img {
-  width: 100vw;
-  height: 100vh;
-  min-height: size(900);
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  object-fit: cover;
-
-  &:nth-child(1) {
-    position: relative;
-  }
-}
 
 .fly2 {
   width: size(119);
-  top: size(511);
-  right: size(223);
+  top:calc(50% + 2vw);
+  right: size(70);
 }
 
 .fly3 {
   width: size(61);
-  top: size(614);
-  right: size(149);
+  top:calc(50% + 8vw);
+  right: size(0);
+}
+.txt {
+  width:calc(100% - 57vw);
+  top:12%;
+  right: size(0);
+  font-stretch: normal;
+  font-style: normal;
+  text-align: justify;
+  font-size: size(16); min-height: 76%;
 }
 
 .title {
-  width: size(335);
-  top: size(108);
-  right: size(309);
   font-size: size(51.6);
   font-weight: bold;
   font-stretch: normal;
@@ -199,10 +199,10 @@
 }
 
 .hr {
-  width: size(458);
-  height: 2px;
-  top: size(388);
-  right: size(180);
+  width: 100%;
+  height:size(2);
+  min-height:1px;
+  margin:size(31) 0;
   background-color: #af8680;
 }
 
@@ -219,24 +219,24 @@
   text-align: left;
   color: #333333;
 }
-
+.subtxt{
+  bottom:size(55);display: flex;align-items: center;
+  left: size(0);}
 .subtitle {
-  top: size(715);
-  right: size(455);
   font-size: size(46.7);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 0.13;
+  line-height:1.3;
   letter-spacing: size(0.93);
   text-align: left;
   color: #d6aa99;
+  padding: 0 0.5em 0 0;
+  border-right:2px solid #d6aa99; margin:0 0.5em 0 0;
 }
 
 .text {
   width: size(237);
-  top: size(692);
-  right: size(184);
   font-size: size(16);
   font-weight: 500;
   font-stretch: normal;
@@ -263,11 +263,11 @@
 /* Swipe */
 .swipe {
   width: size(1030);
-  top: size(117);
-  left: size(179);
-  height: size(674);
-  min-height: size(674);
+  height: 76%;
+  top:12%;
+  left: size(0); 
   object-fit: cover;
+  z-index: 3;
 }
 
 // begin
@@ -321,18 +321,18 @@
   z-index: 0;
 
   img {
-    width: 100%;
+    width: 100%;height: 100%;object-fit: cover;
   }
 
   .name {
-    right: 20px;
-    bottom: 20px;
-    font-size: size(65.9);
+    right: size(20);
+    bottom:size(20);
+    font-size: size(66);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: size(-1.32);
+    line-height:2;
+    letter-spacing:-0.02em;
     text-align: left;
     color: #ffffff;
     opacity: 0.7;
@@ -355,11 +355,9 @@
 
 .pagination {
   width: auto;
-  top: size(637);
-  left: auto;
-  right: size(406);
-  margin: 0 auto;
-  justify-content: center;
+  //right: size(406);
+  margin:size(64) auto;
+  justify-content:flex-start;
 }
 
 .pagination-dot {
@@ -443,12 +441,9 @@
   .section8 {
     width: 100vw;
     height: sizem(245 + 406);
-    min-height: auto;
-    // background-image: url('./s2/bg.jpg');
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
-    overflow: hidden;
+  min-height:sizem(600);
+  max-height:sizem(812);
+    .bg{width:100%;max-width:100%;}
   }
 
   .block {
@@ -456,8 +451,9 @@
   }
 
   .space {
-    top: sizem(245 + 326);
-    right: sizem(31);
+    position: absolute;
+    top:auto;bottom:sizem(-80);
+    right:0;
     font-size: sizem(50);
     font-weight: normal;
     font-stretch: normal;
@@ -465,7 +461,7 @@
     line-height: 1.2;
     letter-spacing: sizem(-1.8);
     text-align: left;
-    color: #d6aa99;
+    color: #d6aa99;white-space: nowrap;
   }
 
   .fly2 {
@@ -477,46 +473,33 @@
   .fly3 {
     display: none;
   }
+  .txt {
+  width: sizem(310);
+  top:sizem(250);
+  right: sizem(33);
+  height: auto;
+  font-size: sizem(15);    min-height: 0%;
+}
 
   .title {
-    width: sizem(162);
-    top: sizem(74 + 245);
-    left: sizem(33);
-    right: auto;
+    width:100%;
     font-size: sizem(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.43;
-    letter-spacing: sizem(1);
-    text-align: left;
-    color: #333333;
-    white-space: nowrap;
+    line-height: 1.44;
+    letter-spacing:0.04em;
+    margin:sizem(74) 0 0 0;
   }
 
   .hr {
-    width: sizem(310);
+    width:100%;
     height: 2px;
-    top: sizem(162 + 245);
-    right: sizem(32);
-    background-color: #af8680;
+    margin: sizem(23) 0 ;
   }
 
-  .desc {
-    width: sizem(320);
-    top: sizem(180 + 245);
-    left: sizem(32);
-    right: auto;
-    font-size: sizem(15);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
+  .desc {width: 100%;
     line-height: 1.7;
-    letter-spacing: sizem(1);
-    text-align: left;
-    color: #333333;
+  letter-spacing:0.03em;
   }
-
+.subtxt {top:0;left: 0;bottom: auto;}
   .subtitle {
     padding-right: sizem(18);
     border-right: 2px solid #d6aa99;
@@ -610,20 +593,11 @@
     img {
       width: 100%;
     }
-
-    // &:nth-child(1) {
-    //   z-index: 1;
-    //   // opacity: 1;
-    // }
-
-    // &.base {
-    //   z-index: 1;
-    //   opacity: 1;
-    // }
-    // &.active {
-    //   z-index: 2;
-    //   // opacity: 1;
-    // }
+ .name {
+    right: sizem(32);
+    bottom:0;
+    font-size: sizem(40);
+  }
   }
 
   .pagination {
@@ -720,22 +694,32 @@ export default {
         {
           img: require('./s8/1.jpg'),
           name: 'LOBBY',
+          subtitle: '精品大廳',
+          text: '高雅門廳接待朋友、約訪客戶皆體面稱頭',
         },
         {
           img: require('./s8/2.jpg'),
-          name: 'LOBBY',
+          name: 'SALOON',
+          subtitle: '交誼廳',
+          text: '無論沙發座位、吧檯區，給您專屬的最悠閒',
         },
         {
           img: require('./s8/3.jpg'),
-          name: 'LOBBY',
+          name: 'READING ROOM',
+          subtitle: '閱覽室',
+          text: '用好空間享受閱讀，更是沉澱自我的最佳時刻',
         },
         {
           img: require('./s8/4.jpg'),
-          name: 'LOBBY',
+          name: 'GAMING ROOM',
+          subtitle: '遊戲室',
+          text: '遊樂生活、探索自我！社區就有一座專屬',
         },
         {
           img: require('./s8/5.jpg'),
-          name: 'LOBBY',
+          name: 'HOME GYM',
+          subtitle: '健身房',
+          text: '在家運動，天氣不用顧慮、目標幾K隨心所欲',
         },
       ],
     }

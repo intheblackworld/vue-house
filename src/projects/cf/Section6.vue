@@ -14,18 +14,20 @@
           @click="goTo(index)"
         ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
-      <h3
-        :class="`title absolute`"
-        data-aos="fade-right"
-        data-aos-delay="400"
-      >天際風景新格局<br />時尚風格 珍稀傳家</h3>
+    <div class="txt absolute">
       <div
-        :class="`hr absolute`"
+        class="title"
+        data-aos="fade-right"
+        data-aos-delay="400">
+      <h3>天際風景新格局<br />時尚風格 珍稀傳家</h3>
+      </div>
+      <div
+        :class="`hr`"
         data-aos="zoom-in-right"
         data-aos-delay="600"
       ></div>
       <div
-        :class="`desc absolute`"
+        :class="`desc`"
         data-aos="fade-right"
         data-aos-delay="800"
       >
@@ -33,14 +35,14 @@
         春福共築大樓與別墅的和諧適居，承襲煙波飯店一貫的簡約與美學，以深灰與白色共演比例之美，以簡潔線條爬梳層次品味，美好生活的嚮往與稀有透天店鋪的價值，絕對值得世代相傳！
       </div>
       <div
-        :class="`art absolute`"
+        :class="`art`"
         data-aos="fade-left"
         data-aos-delay="1000"
       >
         ARCHIECTURE ART
       </div>
       <div
-        :class="`btn-group absolute flex-ac flex-jb`"
+        :class="`btn-group flex-ac flex-jb`"
         data-aos="zoom-in"
         data-aos-delay="900"
       >
@@ -54,8 +56,9 @@
           to="/villa"
           tag="div"
           class="btn flex-c"
-        >透店別墅宅</router-link>
+        >透天別墅宅</router-link>
       </div>
+    </div>
       <div
         class="swipe absolute"
         data-aos="fade-up"
@@ -117,11 +120,12 @@
 .section6 {
   width: size(1920);
   height: 100vh;
-  min-height: 900px;
+  min-height:size(900);
+  max-height:size(1080);
   background-size: cover;
   background-attachment: fixed;
   overflow: hidden;
-
+/*
   &.light {
     .title {
       color: #333;
@@ -148,66 +152,50 @@
         color: #af8680;
       }
     }
+  }*/
+  &.light {
+    .txt {filter: drop-shadow(0em 0.2em 0.3em #0586);}
   }
 }
 
-.bg-img {
-  width: 100vw;
-  height: 100vh;
-  min-height: size(900);
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  object-fit: cover;
-
-  &:nth-child(1) {
-    position: relative;
-  }
+.txt {
+  width: size(649);
+  top: size(181);
+  left:56.7%;
+  font-stretch: normal;
+  font-style: normal;
+  text-align: justify;
+  font-size: size(16);
+  z-index: 2;
+  filter: drop-shadow(0em 0.2em 0.3em #040e2766);
+  transition: all 0.3s;
 }
 
 .title {
-  width: size(434);
-  top: size(181);
-  right: size(397);
   font-size: size(51);
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.43;
-  letter-spacing: 1.03px;
-  text-align: left;
+  letter-spacing:0.02em;
   color: #ffffff;
-  z-index: 2;
-  transition: all 0.3s;
   white-space: nowrap;
 }
 
 .hr {
-  width: size(649);
-  height: 2px;
-  top: size(370);
-  right: size(181);
+  width:100%;
+  height:size(2);
+  min-height:1px;
+  margin:size(40) 0;
   background-color: #fff;
-  z-index: 2;
-  transition: all 0.3s;
-
-  &.light {
-    background-color: #333;
-  }
 }
 
 .desc {
-  width: size(652);
-  top: size(426);
-  right: size(178);
   font-size: size(16);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 2;
-  letter-spacing: size(1.76);
-  text-align: left;
+  letter-spacing:0.11em;
+  text-align: justify;
   color: #ffffff;
   transition: all 0.3s;
   z-index: 2;
@@ -221,19 +209,16 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(2.72);
+  letter-spacing:0.038em;
   text-align: left;
   color: #ffffff;
-  text-shadow: 0 0 2px #333;
   transition: all 0.3s;
   z-index: 2;
+  white-space: nowrap;
 }
 
 .btn-group {
-  width: size(390);
-  top: size(685);
-  right: size(178);
-  z-index: 2;
+  z-index: 2;justify-content:flex-end;
 
   .btn {
     width: size(190);
@@ -246,11 +231,11 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.69;
-    letter-spacing: size(2.3);
+    letter-spacing:0.1em;
     text-align: center;
     color: #fff;
     transition: all 0.3s;
-
+    margin: size(40) 0 0 1em;
     &:hover {
       background-color: #fff;
       border-color: #fff;
@@ -264,8 +249,7 @@
   width: 100vw;
   top: 0;
   left: 0;
-  height: 100vh;
-  min-height: size(900);
+  height: 100%;
   object-fit: cover;
 }
 
@@ -321,7 +305,7 @@
 
   img {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     object-fit: cover;
   }
 
@@ -443,114 +427,56 @@
 @media screen and (max-width: 767px) {
   .section6 {
     width: 100vw;
-    height: sizem(750);
-    min-height: auto;
-    // background-image: url('./s2/bg.jpg');
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
-    overflow: hidden;
+    height: calc(100vh - 63px);
+  min-height:sizem(700);
+  max-height:sizem(812);
+    .bg{width:100%;max-width:100%;}
   }
+  .txt {
+  width: sizem(310);
+  top:sizem(30);
+  right: sizem(33);left: auto;
+  font-size: sizem(15);
+    z-index: 2;
+}
 
   .title {
-    width: sizem(210);
-    top: sizem(16);
-    left: sizem(35);
-    right: auto;
     font-size: sizem(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.44;
-    letter-spacing: sizem(0.5);
-    text-align: left;
-    color: #ffffff;
-    z-index: 2;
-    transition: all 0.3s;
-    white-space: nowrap;
   }
 
   .hr {
-    width: sizem(310);
-    height: 2px;
-    top: sizem(105);
-    right: sizem(30.5);
-    background-color: #fff;
-    z-index: 2;
-    transition: all 0.3s;
-
-    &.light {
-      background-color: #333;
-    }
+    height:sizem(2);
   }
 
   .desc {
-    width: sizem(310);
-    top: sizem(121);
-    right: sizem(30);
     font-size: sizem(15);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2;
-    letter-spacing: sizem(1.65);
-    text-align: left;
-    color: #ffffff;
-    transition: all 0.3s;
-    z-index: 2;
+  letter-spacing:0.05em;
   }
 
   .art {
-    top: sizem(334);
-    right: sizem(26);
     font-size: sizem(35.2);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(0.72);
-    text-align: left;
-    color: #ffffff;
-    text-shadow: 0 0 2px #333;
-    transition: all 0.3s;
-    z-index: 2;
   }
 
-  .btn-group {
-    width: sizem(303 + 8);
+  .btn-group { 
+   /*
+   width: sizem(303 + 8);
     top: sizem(396);
     right: sizem(33);
-    z-index: 6;
+    z-index: 6; */
 
     .btn {
       width: sizem(151);
       height: sizem(35);
-      border: solid 2px #fff;
-      border-radius: 20px / 20px;
-      cursor: pointer;
       font-size: sizem(16);
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.69;
-      letter-spacing: sizem(1.76);
-      text-align: center;
-      color: #fff;
-      transition: all 0.3s;
-
-      &:hover {
-        background-color: #fff;
-        border-color: #fff;
-        color: #af8680;
-      }
+      letter-spacing:0.1em;
     }
   }
 
   /* Swipe */
   .swipe {
-    width: sizem(375);
-    height: sizem(750);
-    min-height: sizem(750);
+    width:100%;
+    //height: sizem(750);
+   // min-height: sizem(750);
     top: sizem(0);
     left: sizem(0);
     object-fit: cover;
@@ -603,12 +529,11 @@
 
   .swipe-item {
     width: 100%;
-    height: 100%;
-    z-index: 0;
+    z-index: 0;height: sizem(750);bottom: 0;left: 0;
 
     img {
       width: 100%;
-      height: sizem(750);
+      height: sizem(750);bottom: 0;left: 0;
     }
 
     // &:nth-child(1) {

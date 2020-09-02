@@ -1,18 +1,20 @@
 <template>
-  <div>
-    <div class="section5">
+  <div class="section5">
       <img
         src="./s3/img.png"
         alt=""
         class="back absolute"
       >
-      <img
-        src="./s1/butterfly1.png"
-        alt=""
+    <div class="bg">
+    <div class="txt absolute">
+      <div
         class="fly1 absolute"
         data-aos="fade-up-left"
         data-aos-delay="800"
       >
+      <img
+        src="./s1/butterfly1.png"
+        alt="butterfly"></div>
       <img
         src="./s1/butterfly2.png"
         alt=""
@@ -27,33 +29,34 @@
         data-aos="fade-up-left"
         data-aos-delay="800"
       >
-      <h3
-        class="title absolute"
+      <div
+        class="title"
         data-aos="fade-right"
-        data-aos-delay="400"
-      >明星學區、<br />
+        data-aos-delay="400">
+      <h3>明星學區、<br />
         機能都到位<br />
         交通串聯無往不利</h3>
+      </div>
       <div
-        class="hr absolute"
+        class="hr"
         data-aos="zoom-in-right"
         data-aos-delay="600"
       ></div>
-      <div
-        class="desc absolute"
-        data-aos="fade-right"
-        data-aos-delay="800"
-      >
-        ■復興國小、永仁完全中學、成功大學 完整學區<br />
-        ■高雄榮總台南分院、大型連鎖採買商家完整齊全<br />
-        ■完整交通：大灣交流道、國道1號、未來更接軌捷運
-      </div>
+        <ul class="desc"
+          data-aos="fade-right"
+          data-aos-delay="800"
+        >
+          <li>復興國小、永仁完全中學、成功大學 完整學區</li>
+          <li>高雄榮總台南分院、大型連鎖採買商家完整齊全</li>
+          <li>完整交通：大灣交流道、國道1號、未來更接軌捷運</li>
+        </ul>
       <div
         class="life absolute"
         data-aos="fade-left"
         data-aos-delay="1000"
       >
         LIFE
+      </div>
       </div>
       <div
         class="swipe absolute"
@@ -127,13 +130,14 @@
 @import '@/assets/style/function.scss';
 
 .section5 {
-  width: size(1920);
-  height: size(971);
+   width: size(1920);
   height: 100vh;
-  min-height: 900px;
+  min-height:size(900);
+  max-height:size(1080);
   background-size: cover;
   background-attachment: fixed;
   overflow: hidden;
+  .bg{width:1556px;height: 100%;max-width:90%;position: relative;margin: auto;}
 }
 
 .back {
@@ -142,79 +146,64 @@
   left: size(0);
 }
 
-.bg-img {
-  width: 100vw;
-  height: 100vh;
-  min-height: size(900);
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  object-fit: cover;
-
-  &:nth-child(1) {
-    position: relative;
-  }
-}
-
 .fly1 {
-  width: size(94);
-  top: size(70);
-  right: size(214);
+  width: size(90);
+  top: size(20);
+  right: size(90);
+  img{width: 100%;transform: rotate(10deg);}
 }
 
 .fly2 {
   width: size(65);
-  bottom: size(212);
-  right: size(145);
+  bottom: size(140);
+  right: size(130);
 }
 
 .fly3 {
   width: size(95);
-  top: size(98);
-  right: size(9.5);
+  bottom: size(0);
+  right:-8%;
 }
-
-.title {
-  width: size(481);
-  top: size(148);
-  right: size(160);
-  font-size: size(51.6);
-  font-weight: bold;
+.txt {
+  width:calc(100% - 57vw);
+  top:12%;
+  min-height: 76%;
+  right: size(0);
   font-stretch: normal;
   font-style: normal;
+  text-align: justify;
+  font-size: size(16);
+}
+.title {
+  font-size: size(51.6);
+  font-weight: bold;
   line-height: 1.43;
   letter-spacing: size(2.06);
-  text-align: left;
   color: #333333;
   white-space: nowrap;
 }
 
 .hr {
-  width: size(458);
-  height: 2px;
-  top: size(388);
-  right: size(180);
+  width: 100%;
+  height:size(2);
+  min-height:1px;
+  margin:size(62) 0;
   background-color: #27a8a8;
 }
 
 .desc {
-  width: size(490);
-  top: size(423);
-  right: size(150);
-  font-size: size(16);
   font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2.25;
+  line-height:1.8;
   letter-spacing: size(1.12);
-  text-align: left;
-  color: #333333;
+  position: relative;
+  color: #333333;z-index: 2;text-shadow: 0 0 size(5) #fff;
+  margin: 1em 0 1em 1.5em;list-style: square;
+  li{margin: 0.5em 0;list-style:inherit;}
 }
 
 .life {
-  bottom: size(315);
-  right: size(403);
+  bottom: size(-10);
+  left: size(-10);
   font-size: size(150);
   font-weight: normal;
   font-stretch: normal;
@@ -228,11 +217,9 @@
 /* Swipe */
 .swipe {
   width: size(1030);
-  top: size(126);
-  left: size(182);
-  height: size(674);
-  min-height: size(674);
-  object-fit: cover;
+  height: 76%;
+  top:12%;
+  left: size(0);
 }
 
 // begin
@@ -286,19 +273,12 @@
   z-index: 0;
 
   img {
-    width: 100%;
+    width: 100%;height: 100%;object-fit: cover;
   }
 
-  .name {
-    right: 20px;
-    bottom: 20px;
-    font-size: size(14.8);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.35;
-    letter-spacing: size(0.89);
-    text-align: center;
+  .name {bottom:size(20);right:size(20);
+    line-height: 1.35;font-size: size(14.8);
+    letter-spacing:0.06em;
     color: #ffffff;
   }
 
@@ -406,13 +386,10 @@
 @media screen and (max-width: 767px) {
   .section5 {
     width: 100vw;
-    height: sizem(424 + 245);
-    min-height: auto;
-    // background-image: url('./s2/bg.jpg');
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
-    overflow: hidden;
+    height: sizem(680);
+  min-height:sizem(0);
+  max-height:sizem(900);
+    .bg{width:100%;max-width:100%;}
   }
 
   .fly1,
@@ -421,63 +398,40 @@
   }
 
   .fly3 {
-    width: size(85);
-    top: size(245 + 36);
-    right: size(12.5);
+    width: sizem(85);
+    top: sizem(0);
+    right: sizem(0);
   }
-
+.txt {
+  width: sizem(310);
+  top:sizem(271.5);
+  right: sizem(33);
+  font-size: sizem(15);min-height:initial;
+}
   .title {
-    width: sizem(233);
-    top: sizem(245 + 26);
-    left: sizem(33);
-    right: auto;
     font-size: sizem(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.44;
-    letter-spacing: sizem(1);
-    text-align: left;
-    color: #333333;
-    white-space: nowrap;
+    letter-spacing:0.04em;
   }
 
   .hr {
-    width: sizem(310);
+    width:100%;
     height: 1px;
-    top: sizem(157 + 245);
-    right: sizem(32);
-    background-color: #004f8f;
+    margin: sizem(23) 0 ;
   }
 
   .desc {
-    width: sizem(310);
-    top: sizem(181 + 245);
-    right: sizem(32);
-    font-size: sizem(15);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.7;
-    letter-spacing: sizem(0.95);
-    text-align: left;
-    color: #333333;
+  letter-spacing:0.03em;
   }
 
 
   .life {
-    top: auto;
-    right: auto;
-    bottom: sizem(0);
-    left: sizem(28);
+    bottom: sizem(-80);
+    left: sizem(0);
     font-size: sizem(70);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.69;
     letter-spacing: sizem(-5.6);
-    text-align: right;
-    color: #4b809d;
   }
 
   /* Swipe */
@@ -543,6 +497,7 @@
     img {
       width: 100%;
     }
+  .name{bottom:1em;right:1em;font-size: sizem(12);}
 
     // &:nth-child(1) {
     //   z-index: 1;

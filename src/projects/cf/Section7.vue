@@ -1,18 +1,22 @@
 <template>
   <div>
-    <div :class="`section7`">
+    <div class="section7">
       <img
         src="./s7/bg.jpg"
-        alt=""
+        alt="bg"
         class="bg-img"
         v-if="isPC"
       >
-      <img
-        src="./mo/7/bg.jpg"
-        alt=""
-        class="bg-img"
+      <div
+        class="bg-img absolute"
         v-if="isMobile"
       >
+      <img
+        src="./mo/7/bg.jpg"
+        alt="bg"
+        class="absolute"
+      >
+      </div>
       <div
         class="swipe-btns absolute flex-ac flex-jb"
         v-if="isMobile"
@@ -129,10 +133,8 @@
             新竹春福建設 新竹 西濱段集合住宅 公設與景觀
           </div>
         </li>
-        <li class="flex-at">
-          <span class="label">商業空間</span>
-        </li>
-        <li class="flex-at">
+        <li claslex-s="fat">
+          <span class="label t2">商業空間</span>
           <div class="content">
             竹北 泰式風味餐廳<br />
             羅東 泰式SPA按摩生活館<br />
@@ -290,7 +292,8 @@
 .section7 {
   width: size(1920);
   height: 100vh;
-  min-height: 900px;
+  min-height:size(900);
+  max-height:size(1080);
   background-size: cover;
   background-attachment: fixed;
   overflow: hidden;
@@ -298,17 +301,13 @@
 
 .bg-img {
   width: 100vw;
-  height: 100vh;
-  min-height: size(900);
+  height: 100%;
   position: absolute;
   display: block;
   top: 0;
   left: 0;
   object-fit: cover;
 
-  &:nth-child(1) {
-    position: relative;
-  }
 }
 
 .title {
@@ -322,7 +321,7 @@
   font-style: normal;
   line-height: 1.24;
   letter-spacing: size(7.02);
-  text-align: center;
+  text-align: left;
   color: #ffffff;
   white-space: nowrap;
 }
@@ -373,6 +372,7 @@
     display: inline-block;
     margin-right: 10px;
   }
+  .t2{font-size: 1.25em;margin: 0.5em 0;}
 }
 
 .art {
@@ -573,18 +573,15 @@
 @media screen and (max-width: 767px) {
   .section7 {
     width: 100vw;
-    height: sizem(747);
-    min-height: auto;
-    // background-image: url('./s2/bg.jpg');
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
-    overflow: hidden;
+    height: calc(100vh - 63px);
+  min-height:sizem(0);
+  max-height:sizem(740);
   }
 
-  .bg-img {
+  .bg-img {height: 100%;overflow: hidden;
+    img{
     height: sizem(747);
-    min-height: auto;
+    left: 0;bottom: 0;}
   }
 
   .desc {
@@ -608,7 +605,7 @@
   }
 
   .subtitle {
-    top: sizem(590);
+    top: sizem(450);bottom: auto;
     left: sizem(33);
     right: auto;
     font-size: sizem(26);
@@ -630,8 +627,7 @@
     border-radius: 50%;
     position: absolute;
     width: 32px;
-    height: 32px;
-    top: sizem(625);
+    height: 32px; top: sizem(485);
     left: sizem(155);
     color: #707070;
     z-index: 6;
