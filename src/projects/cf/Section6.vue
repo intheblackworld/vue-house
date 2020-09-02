@@ -14,18 +14,20 @@
           @click="goTo(index)"
         ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
-      <h3
-        :class="`title absolute`"
-        data-aos="fade-right"
-        data-aos-delay="400"
-      >天際風景新格局<br />時尚風格 珍稀傳家</h3>
+    <div class="txt absolute">
       <div
-        :class="`hr absolute`"
+        class="title"
+        data-aos="fade-right"
+        data-aos-delay="400">
+      <h3>天際風景新格局<br />時尚風格 珍稀傳家</h3>
+      </div>
+      <div
+        :class="`hr`"
         data-aos="zoom-in-right"
         data-aos-delay="600"
       ></div>
       <div
-        :class="`desc absolute`"
+        :class="`desc`"
         data-aos="fade-right"
         data-aos-delay="800"
       >
@@ -33,14 +35,14 @@
         春福共築大樓與別墅的和諧適居，承襲煙波飯店一貫的簡約與美學，以深灰與白色共演比例之美，以簡潔線條爬梳層次品味，美好生活的嚮往與稀有透天店鋪的價值，絕對值得世代相傳！
       </div>
       <div
-        :class="`art absolute`"
+        :class="`art`"
         data-aos="fade-left"
         data-aos-delay="1000"
       >
         ARCHIECTURE ART
       </div>
       <div
-        :class="`btn-group absolute flex-ac flex-jb`"
+        :class="`btn-group flex-ac flex-jb`"
         data-aos="zoom-in"
         data-aos-delay="900"
       >
@@ -56,6 +58,7 @@
           class="btn flex-c"
         >透天別墅宅</router-link>
       </div>
+    </div>
       <div
         class="swipe absolute"
         data-aos="fade-up"
@@ -117,11 +120,12 @@
 .section6 {
   width: size(1920);
   height: 100vh;
-  min-height: 900px;
+  min-height:size(900);
+  max-height:size(1080);
   background-size: cover;
   background-attachment: fixed;
   overflow: hidden;
-
+/*
   &.light {
     .title {
       color: #333;
@@ -148,57 +152,38 @@
         color: #af8680;
       }
     }
-  }
+  }*/
 }
 
-.bg-img {
-  width: 100vw;
-  height: 100vh;
-  min-height: size(900);
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  object-fit: cover;
-
-  &:nth-child(1) {
-    position: relative;
-  }
+.txt {
+  width: size(649);
+  top: size(181);
+  left:50%;
+  font-stretch: normal;
+  font-style: normal;
+  text-align: justify;
+  font-size: size(16);
+  z-index: 2;
 }
 
 .title {
-  width: size(434);
-  top: size(181);
-  right: size(397);
   font-size: size(51);
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.43;
   letter-spacing: 1.03px;
-  text-align: left;
   color: #ffffff;
-  z-index: 2;
-  transition: all 0.3s;
   white-space: nowrap;
 }
 
 .hr {
-  width: size(649);
-  height: 2px;
-  top: size(370);
-  right: size(181);
+  width:100%;
+  height:size(2);
+  min-height:1px;
+  margin:size(40) 0;
   background-color: #fff;
-  z-index: 2;
-  transition: all 0.3s;
-
-  &.light {
-    background-color: #333;
-  }
 }
 
 .desc {
-  width: size(652);
   top: size(426);
   right: size(178);
   font-size: size(16);
@@ -207,7 +192,7 @@
   font-style: normal;
   line-height: 2;
   letter-spacing: size(1.76);
-  text-align: left;
+  text-align: justify;
   color: #ffffff;
   transition: all 0.3s;
   z-index: 2;
@@ -264,8 +249,7 @@
   width: 100vw;
   top: 0;
   left: 0;
-  height: 100vh;
-  min-height: size(900);
+  height: 100%;
   object-fit: cover;
 }
 
@@ -321,7 +305,7 @@
 
   img {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     object-fit: cover;
   }
 
@@ -478,10 +462,11 @@
     background-color: #fff;
     z-index: 2;
     transition: all 0.3s;
-
+/*
     &.light {
       background-color: #333;
     }
+    */
   }
 
   .desc {

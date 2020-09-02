@@ -61,7 +61,8 @@
 .section2 {
   width: size(1920);
   height: 100vh;
-  min-height: 900px;
+  min-height:size(900);
+  max-height:size(1080);
   background-size: cover;
   background-attachment: fixed;
   overflow: hidden;
@@ -69,8 +70,7 @@
 
 .bg-img {
   width: size(1920);
-  height: 100vh;
-  min-height: 900px;
+  height:100%;
   position: absolute;
   top: 0;
   left: 0;

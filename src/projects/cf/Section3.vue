@@ -1,52 +1,59 @@
 <template>
-  <div>
-    <div
-      class="section3"
-    >
+  <div class="section3">
       <img
         src="./s3/img.png"
         alt=""
         class="back absolute"
       >
       <img
-        src="./s3/1.jpg"
-        alt=""
-        class="img absolute"
-        data-aos="fade-down"
-        data-aos-delay="200"
-      >
-      <img
         src="./s1/butterfly2.png"
         alt=""
         class="fly2 absolute"
       >
-      <h3
-        class="title absolute"
-        data-aos="fade-right"
-        data-aos-delay="400"
-      >全世界房子的價值<br />與公園的距離成正比</h3>
+    <div
+      class="bg"
+    >
+    <div
+        class="img absolute">
+      <img
+        src="./s3/1.jpg"
+        alt="平實公園"
+        data-aos="fade-down"
+        data-aos-delay="200"
+      >
+      <div class="name absolute">平實公園</div>
+    </div>
+    <div class="txt absolute">
       <div
-        class="hr absolute"
+        class="title"
+        data-aos="fade-right"
+        data-aos-delay="400">
+      <h3>全世界房子的價值<br />與公園的距離成正比</h3>
+      </div>
+      <div
+        class="hr"
         data-aos="zoom-in-right"
         data-aos-delay="600"
       ></div>
       <div
-        class="desc absolute"
+        class="desc"
         data-aos="fade-right"
         data-aos-delay="800"
       >
         在未來，綠富才是真財富。在平實特區的嶄新生活，以特大面積的平實公園為首，公共建設逐漸到位，為區域迎來商業、金融、交通的重大發展性，其既有的「都會公園」價值更是被凸顯，宛如紐約中央公園、英國海德公園的首善之地！因此，首選這裡，等於率先把握最佳的甜蜜機會，為身價帶來不凡升級！
+
+        <ul class="desc2"
+          data-aos="fade-right"
+          data-aos-delay="800"
+        >
+          <li>平實公園為首，公共建設逐漸到位</li>
+          <li>宛如紐約中央公園、英國海德公園</li>
+          <li>迎來商業、金融、交通等重大發展</li>
+          <li>都會公園價值更放大，綠富才是真財富</li>
+        </ul>
       </div>
-      <div
-        class="desc2 absolute"
-        data-aos="fade-right"
-        data-aos-delay="800"
-      >
-        ■平實公園為首，公共建設逐漸到位<br />
-        ■宛如紐約中央公園、英國海德公園<br />
-        ■迎來商業、金融、交通等重大發展<br />
-        ■都會公園價值更放大，綠富才是真財富
-      </div>
+    </div>
+    </div>
       <div
         class="park absolute"
         data-aos="fade-left"
@@ -54,7 +61,6 @@
       >
         PARK
       </div>
-    </div>
   </div>
 </template>
 
@@ -64,10 +70,12 @@
 .section3 {
   width: size(1920);
   height: 100vh;
-  min-height: 900px;
+  min-height:size(900);
+  max-height:size(1080);
   background-size: cover;
   background-attachment: fixed;
   overflow: hidden;
+  .bg{width:1556px;height: 100%;max-width:90%;position: relative;margin: auto;}
 }
 
 .back {
@@ -78,8 +86,14 @@
 
 .img {
   width: size(1030);
-  top: size(126);
-  left: size(182);
+  height: 76%;
+  top:12%;
+  left: size(0);
+  img{width: 100%;height: 100%;object-fit: cover;}
+  .name{bottom:size(20);right:size(20);
+    line-height: 1.35;font-size: size(14.8);
+    letter-spacing:0.06em;
+    color: #ffffff;}
 }
 
 .fly2 {
@@ -88,68 +102,57 @@
   right: size(117);
 }
 
-.title {
-  width: size(481);
-  top: size(148);
-  right: size(160);
-  font-size: size(51.6);
-  font-weight: bold;
+.txt {
+  width:calc(100% - 57vw);
+  top:12%;
+  right: size(0);
   font-stretch: normal;
   font-style: normal;
+  text-align: justify;
+  font-size: size(16);
+}
+
+.title {
+  font-size: size(51.6);
+  font-weight: bold;
   line-height: 1.43;
   letter-spacing: size(2.06);
-  text-align: left;
   color: #333333;
   white-space: nowrap;
+  h3{transform: scaleX(0.95);transform-origin: 0 0;}
 }
 
 .hr {
-  width: size(458);
-  height: 2px;
-  top: size(358);
-  right: size(180);
+  width: 100%;
+  height:size(2);
+  min-height:1px;
+  margin:size(62) 0;
   background-color: #27a8a8;
 }
 
 .desc {
-  width: size(490);
-  top: size(423);
-  right: size(150);
-  font-size: size(16);
   font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2.25;
+  line-height:1.8;
   letter-spacing: size(1.12);
-  text-align: left;
-  color: #333333;
+  position: relative;
+  color: #333333;z-index: 2;text-shadow: 0 0 size(5) #fff;
 }
-
-.desc2 {
-  width: size(462);
-  top: size(624);
-  right: size(180);
-  font-size: size(16);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2.25;
-  letter-spacing: size(1.12);
-  text-align: left;
-  color: #333333;
+.desc2 {margin: 1em 0 1em 1.5em;list-style: square;
+  li{margin: 0.5em 0;list-style: inherit;}
 }
 
 .park {
-  bottom: size(315);
+  bottom:7%;
   right: size(20);
   font-size: size(150);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
+  line-height: 1.5;
   letter-spacing: size(-12.75);
   text-align: right;
   color: #27a8a8;
+  z-index: 1;
 }
 
 @media only screen and (max-width: 1440px) {

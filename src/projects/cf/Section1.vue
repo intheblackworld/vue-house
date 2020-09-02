@@ -121,7 +121,8 @@
 .section1 {
   width: size(1920);
   height: 100vh;
-  min-height: 900px;
+  min-height:size(900);
+  max-height:size(1080);
   background-color:#d1c6b7;
   background-size: cover;
   background-attachment: fixed;
@@ -155,8 +156,8 @@
 
 .bg-img {
   width: size(1920);
-  height: 100vh;
-  min-height: 900px;
+  height: 100%;
+  //min-height: 900px;
   position: absolute;
   top: 0;
   left: 0;

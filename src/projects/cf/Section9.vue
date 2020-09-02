@@ -39,10 +39,10 @@
         >
           <div>3房</div>
           <span>
-            A2/B2
-            <span>A6/B6<br />
-              <!-- <span>格局略有不同</span> -->
-            </span>
+            A2/B2/A6/B6
+             <!-- <span>A6/B6<br />
+             <span>格局略有不同</span>
+            </span> -->
           </span>
         </div>
       </div>

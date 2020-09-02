@@ -322,7 +322,7 @@
   font-style: normal;
   line-height: 1.24;
   letter-spacing: size(7.02);
-  text-align: center;
+  text-align: left;
   color: #ffffff;
   white-space: nowrap;
 }

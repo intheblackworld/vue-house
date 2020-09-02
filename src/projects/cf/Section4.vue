@@ -1,17 +1,54 @@
 <template>
-  <div>
-    <div class="section4">
+  <div class="section4">
       <img
         src="./s4/bg.png"
         alt=""
         class="back absolute"
       >
+    <div class="bg">
       <img
         src="./s1/butterfly1.png"
         alt=""
         class="fly1 absolute"
         data-aos="fade-up-left"
         data-aos-delay="800"
+      >
+    <div class="txt absolute">
+       <div
+        class="title"
+        data-aos="fade-right"
+        data-aos-delay="400"
+      ><h3>南紡購物中心為鄰<br />繁華商圈一次集結</h3>
+      </div>
+      <div
+        class="hr"
+        data-aos="zoom-in-right"
+        data-aos-delay="600"
+      ></div>
+      <div
+        class="desc"
+        data-aos="fade-right"
+        data-aos-delay="800"
+      >
+        南紡購物中心占地約8,000坪，結合購物中心、老爺酒店、威秀影城、誠品書店等機能與指標品牌，加上各式各樣主題餐廳，為台南東區最大、最象徵性的地標商圈。更與周邊成大商圈、東門商圈相互串聯，繁華一次到位！入主【春福采采】，正是同時把握商圈便利與公園悠閒的不二首選！
+        
+        <ul class="desc2"
+          data-aos="fade-right"
+          data-aos-delay="800"
+        >
+          <li>與占地約8,000坪「南紡購物中心」比鄰而居</li>
+          <li>結合老爺酒店、威秀影城、誠品書店等精彩機能</li>
+          <li>台南東區最大、最象徵性的地標商圈</li>
+          <li>同步串聯周邊成大商圈、中華商圈</li>
+        </ul>
+      </div>
+    </div>
+      <div
+        class="swipe absolute"
+        data-aos="fade-up"
+        data-aos-delay="200"
+        @mouseenter.stop="toggleTimer = false"
+        @mouseleave.stop="toggleTimer = true"
       >
       <div
         class="pagination absolute flex-ac"
@@ -26,33 +63,6 @@
           @click="goTo(index)"
         ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
-      <h3
-        class="title absolute"
-        data-aos="fade-right"
-        data-aos-delay="400"
-      >南紡購物中心為鄰<br />繁華商圈一次集結</h3>
-      <div
-        class="hr absolute"
-        data-aos="zoom-in-right"
-        data-aos-delay="600"
-      ></div>
-      <div
-        class="desc absolute"
-        data-aos="fade-right"
-        data-aos-delay="800"
-      >
-        南紡購物中心占地約8,000坪，結合購物中心、老爺酒店、威秀影城、誠品書店等機能與指標品牌，加上各式各樣主題餐廳，為台南東區最大、最象徵性的地標商圈。更與周邊成大商圈、東門商圈相互串聯，繁華一次到位！入主【春福采采】，正是同時把握商圈便利與公園悠閒的不二首選！
-      </div>
-      <div
-        class="desc2 absolute"
-        data-aos="fade-right"
-        data-aos-delay="800"
-      >
-        ■與占地約8,000坪「南紡購物中心」比鄰而居<br />
-        ■結合老爺酒店、威秀影城、誠品書店等精彩機能<br />
-        ■台南東區最大、最象徵性的地標商圈<br />
-        ■同步串聯周邊成大商圈、中華商圈
-      </div>
       <div
         class="shopping absolute"
         data-aos="fade-left"
@@ -60,13 +70,6 @@
       >
         SHOPPING
       </div>
-      <div
-        class="swipe absolute"
-        data-aos="fade-up"
-        data-aos-delay="200"
-        @mouseenter.stop="toggleTimer = false"
-        @mouseleave.stop="toggleTimer = true"
-      >
         <div
           class="swipe-wrap relative"
           v-touch:swipe.left="decIndex"
@@ -120,95 +123,67 @@
 
 .section4 {
   width: size(1920);
-  height: size(971);
   height: 100vh;
-  min-height: 900px;
-  background-size: cover;
+  min-height:size(900);
+  max-height:size(1080);
   background-attachment: fixed;
   overflow: hidden;
+  .bg{width:1556px;height: 100%;max-width:90%;position: relative;margin: auto;}
 }
 
 .back {
   width: size(736);
-  top: size(487);
+  bottom: size(0);
   right: size(0);
-}
-
-.bg-img {
-  width: 100vw;
-  height: 100vh;
-  min-height: size(900);
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  object-fit: cover;
-
-  &:nth-child(1) {
-    position: relative;
-  }
 }
 
 .fly1 {
   width: size(112);
   top: size(78);
-  left: size(46);
+  left: size(-130);
+}
+.txt {
+  width:calc(100% - 57vw);
+  top:12%;
+  left: size(0);
+  font-stretch: normal;
+  font-style: normal;
+  text-align: justify;
+  font-size: size(16);
 }
 
 .title {
-  width: size(427);
-  top: size(70);
-  left: size(179);
   font-size: size(51.6);
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.43;
   letter-spacing: size(2.06);
-  text-align: left;
-  color: #000000;
+  color: #333333;
   white-space: nowrap;
+  //h3{transform: scaleX(0.95);transform-origin: 0 0;}
 }
 
 .hr {
-  width: size(458);
-  height: 2px;
-  top: size(280);
-  left: size(180);
+  width: 100%;
+  height:size(2);
+  min-height:1px;
+  margin:size(62) 0;
   background-color: #004f8f;
 }
 
 .desc {
-  width: size(490);
-  top: size(345);
-  left: size(180);
-  font-size: size(16);
   font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2.25;
+  line-height:1.8;
   letter-spacing: size(1.12);
-  text-align: left;
-  color: #000000;
+  position: relative;
+  color: #333333;z-index: 2;text-shadow: 0 0 size(5) #fff;
 }
-
-.desc2 {
-  width: size(462);
-  top: size(545);
-  left: size(180);
-  font-size: size(16);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2.25;
-  letter-spacing: size(1.12);
-  text-align: left;
-  color: #000000;
+.desc2 {margin: 1em 0 1em 1.5em;list-style: square;
+  li{margin: 0.5em 0;list-style: inherit;}
 }
 
 .shopping {
-  top: size(507);
-  left: size(565);
+  bottom: 0;
+  left: size(-150);
   font-size: size(160.2);
   font-weight: normal;
   font-stretch: normal;
@@ -223,10 +198,9 @@
 /* Swipe */
 .swipe {
   width: size(1030);
-  height: size(674);
-  min-height: size(674);
-  top: size(38);
-  right: size(178);
+  height: 76%;
+  top:12%;
+  right: size(0);
   object-fit: cover;
 }
 
@@ -281,19 +255,18 @@
   z-index: 0;
 
   img {
-    width: 100%;
+    width: 100%;height: 100%;object-fit: cover;
   }
 
   .name {
-    right: 20px;
-    bottom: 20px;
+    right: size(20);
+    bottom: size(20);
     font-size: size(14.8);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.35;
-    letter-spacing: size(0.89);
-    text-align: center;
+    letter-spacing:0.06em;
     color: #ffffff;
   }
 
@@ -314,9 +287,7 @@
 
 .pagination {
   width: auto;
-  top: size(0);
-  left: auto;
-  right: size(177);
+  right: 0;top:-35px;
   margin: 0 auto;
   justify-content: center;
 }

@@ -66,12 +66,14 @@
         class="subtitle absolute"
         data-aos="fade-left"
         data-aos-delay="1000"
-      >精品大廳</div>
+        v-html="slideList[slideIndex].subtitle"
+      ></div>
       <div
         class="text absolute"
         data-aos="fade-left"
         data-aos-delay="1100"
-      >高雅門廳接待朋友、約訪客戶皆體面稱頭</div>
+        v-html="slideList[slideIndex].text"
+      ></div>
       <div
         class="swipe absolute"
         data-aos="fade-up"
@@ -325,14 +327,14 @@
   }
 
   .name {
-    right: 20px;
-    bottom: 20px;
-    font-size: size(65.9);
+    right: size(20);
+    bottom:size(20);
+    font-size: size(66);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: size(-1.32);
+    line-height:2;
+    letter-spacing:-0.02em;
     text-align: left;
     color: #ffffff;
     opacity: 0.7;
@@ -610,20 +612,11 @@
     img {
       width: 100%;
     }
-
-    // &:nth-child(1) {
-    //   z-index: 1;
-    //   // opacity: 1;
-    // }
-
-    // &.base {
-    //   z-index: 1;
-    //   opacity: 1;
-    // }
-    // &.active {
-    //   z-index: 2;
-    //   // opacity: 1;
-    // }
+ .name {
+    right: sizem(32);
+    bottom:0;
+    font-size: sizem(40);
+  }
   }
 
   .pagination {
@@ -720,22 +713,32 @@ export default {
         {
           img: require('./s8/1.jpg'),
           name: 'LOBBY',
+          subtitle: '精品大廳',
+          text: '高雅門廳接待朋友、約訪客戶皆體面稱頭',
         },
         {
           img: require('./s8/2.jpg'),
-          name: 'LOBBY',
+          name: 'SALOON',
+          subtitle: '交誼廳',
+          text: '無論沙發座位、吧檯區，給您專屬的最悠閒',
         },
         {
           img: require('./s8/3.jpg'),
-          name: 'LOBBY',
+          name: 'READING ROOM',
+          subtitle: '閱覽室',
+          text: '用好空間享受閱讀，更是沉澱自我的最佳時刻',
         },
         {
           img: require('./s8/4.jpg'),
-          name: 'LOBBY',
+          name: 'GAMING ROOM',
+          subtitle: '遊戲室',
+          text: '遊樂生活、探索自我！社區就有一座專屬',
         },
         {
           img: require('./s8/5.jpg'),
-          name: 'LOBBY',
+          name: 'HOME GYM',
+          subtitle: '健身房',
+          text: '在家運動，天氣不用顧慮、目標幾K隨心所欲',
         },
       ],
     }
