@@ -418,7 +418,7 @@
   width: 100%;
   height: 100%;
   padding: 0 15px;
-  z-index: 3;
+  z-index: 1;
 
   .prev-btn,
   .next-btn {
@@ -520,7 +520,7 @@
     width: sizem(303 + 8);
     top: sizem(396);
     right: sizem(33);
-    z-index: 2;
+    z-index: 4;
 
     .btn {
       width: sizem(151);
