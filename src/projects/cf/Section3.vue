@@ -244,13 +244,13 @@
   }
 
   .desc {
-    font-size: sizem(15);
+    font-size: sizem(13);
     line-height: 2.2;
     letter-spacing: 0.03em;
   }
 
   .park {
-    bottom: sizem(0);
+    bottom: sizem(10);
     left: sizem(23);
     font-size: sizem(70);
     line-height: 1.1;
