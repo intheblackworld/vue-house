@@ -1,5 +1,6 @@
 /* html, body */
 $bg: url('~@/projects/llcs1/s2/bg.jpg');
+$bg_m: url('~@/projects/llcs1/mo/2/bg.jpg');
 
 /* font-family */
 /* 1主要字體  2次要字體  3表單字體 */
@@ -46,29 +47,29 @@ $order_input_focus_border: solid 1px rgba(0, 0, 0, 1) !important;
 $order_input_selected_color: solid 1px rgba(0, 0, 0, 1) !important;
 $order_check_desc_color: #333 !important;
 $order_check_span_color: #333 !important;
-$order_submit_bg: #996b52 !important;
-$order_submit_color: #fff !important;
+$order_submit_bg: transparent !important;
+$order_submit_color: #4d3328 !important;
 $order_sumbit_disable_bg: #999 !important;
 
 // contactInfo
-$contact_bg: #d6aa99;
-$contact_bg_m: #d6aa99;
+$contact_bg: url('../assets/img/contact-bg.jpg');
+$contact_bg_m: url('../assets/img/contact-bg.jpg');
 $contact_shadow: 0 0 80px 0 rgba(0, 0, 0, 0.2);
 
 $contact_btn_border: inset 0 0 0px 1.5px #fff;
-$contact_btn_color: #333;
-$contact_btn_icon: #333;
-$contact_btn_bg: #fff;
+$contact_btn_color: #fff;
+$contact_btn_icon: #fff;
+$contact_btn_bg: transparent;
 $contact_btn_hover_color: #fff;
 $contact_btn_hover_icon: #fff;
-$contact_btn_hover_bg: #333;
+$contact_btn_hover_bg: #4d3328;
 
 $contact_google_btn_color: #fff;
 $contact_google_btn_icon: #fff;
-$contact_google_btn_bg: #996b52;
-$contact_google_hover_btn_color: #333;
-$contact_google_hover_btn_icon: #333;
-$contact_google_hover_btn_bg: #fff;
+$contact_google_btn_bg: #4d3328;
+$contact_google_hover_btn_color: #fff;
+$contact_google_hover_btn_icon: #fff;
+$contact_google_hover_btn_bg: #4d3328;
 
 
 // houseInfo

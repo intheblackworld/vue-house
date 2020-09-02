@@ -42,24 +42,24 @@
     overflow-y: hidden;
     width: 100vw;
     .map-bg {
-      width: auto;
-      height: sizem(799);
+      width: size-m(1594);;
+      height: sizem(730);
     }
 
     .map-text {
-      width: auto;
-      height: 100vh;
+      width: size-m(1594);;
+      height: size-m(730);
     }
 
     img {
       width: auto;
-      height: 100vh;
+      // height: 100vh;
     }
 
     .mask {
       width: 300vw;
-      height: size-m(799);
-      background-image:  linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.45) 27%, #ffffff);
+      height: size-m(730);
+      background-image:   linear-gradient(to bottom, rgba(0, 102, 153, 0), rgba(0, 102, 153, 0.84));
       // animation: swing 2.5s ease-in-out 0s infinite;
       left: 35vw;
       position: absolute;

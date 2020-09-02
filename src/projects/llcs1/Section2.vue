@@ -2,12 +2,27 @@
   <div class="section6">
     <div>
       <!-- <img src="./s2/bg.png" alt="" class="bg-img"> -->
-      <img src="./s2/f1.png" alt="" class="flower1 absolute" data-aos="fade-left"
-        data-aos-delay="200">
-      <img src="./s2/3.png" alt="" class="flower2 absolute" data-aos="fade-right"
-        data-aos-delay="400">
-      <img src="./s2/4.png" alt="" class="flower3 absolute" data-aos="fade-up"
-        data-aos-delay="600">
+      <img
+        src="./s2/f1.png"
+        alt=""
+        class="flower1 absolute"
+        data-aos="fade-left"
+        data-aos-delay="200"
+      >
+      <img
+        src="./s2/3.png"
+        alt=""
+        class="flower2 absolute"
+        data-aos="fade-right"
+        data-aos-delay="400"
+      >
+      <img
+        src="./s2/4.png"
+        alt=""
+        class="flower3 absolute"
+        data-aos="fade-up"
+        data-aos-delay="600"
+      >
       <div
         class="sidebar absolute"
         data-aos="fade-right"
@@ -22,6 +37,7 @@
           :key="slide.title"
         >{{slide.title}}</div>
       </div>
+      <h3 class="title absolute" v-if="isMobile">朗朗城心影片</h3>
       <div
         class="swipe-bottom-btns absolute flex-ac flex-jb"
         v-if="isMobile"
@@ -367,6 +383,24 @@
     // background-attachment: fixed;
   }
 
+  .flower1 {
+    width: sizem(180);
+    top: sizem(-50);
+    right: sizem(-120);
+  }
+  .flower2 {
+    width: sizem(180);
+    top: sizem(-60);
+    left: sizem(-70);
+  }
+  .flower3 {
+    // width: sizem(130);
+    // bottom: sizem(-50);
+    // left: sizem(0);
+    // z-index: 2;
+    display: none;
+  }
+
   .title {
     width: 100%;
     top: sizem(84);
@@ -378,7 +412,7 @@
     line-height: 1.78;
     letter-spacing: 3px;
     text-align: center;
-    color: #a68367;
+    color: #1b1311;
     white-space: nowrap;
   }
 
@@ -399,18 +433,18 @@
   .swipe-item {
     width: 100%;
     height: 100%;
-    left: 100%;
-    transition: left 1s ease-in-out;
+    // left: 100%;
+    // transition: left 1s ease-in-out;
     z-index: 0;
 
-    &.base {
-      z-index: 1;
-      left: 0;
-    }
-    &.active {
-      z-index: 2;
-      left: 0;
-    }
+    // &.base {
+    //   z-index: 1;
+    //   left: 0;
+    // }
+    // &.active {
+    //   z-index: 2;
+    //   left: 0;
+    // }
   }
 
   .pagination {

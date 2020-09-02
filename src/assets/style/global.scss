@@ -260,7 +260,7 @@ img[lazy='loaded'] {
     // background-image: $order_bg_image;
     background-repeat: no-repeat;
     background-size: 100vw auto;
-    background-attachment: fixed;
+    background-attachment: initial;
     background-position: 0% 50%;
 
     &.no-padding-top {
@@ -350,15 +350,19 @@ img[lazy='loaded'] {
 
   .home {
     padding-top: $nav_phone_height;
-    background-color: $bg;
+    background: $bg_m;
     // background-repeat: no-repeat;
     // background-size: cover;
-    background-attachment: fixed;
+    // background-attachment: fixed;
     background-position: 0% 50%;
 
     &.no-padding-top {
       padding-top: 0;
     }
+  }
+
+  .home2 {
+    background: none;
   }
   
   .full-bg {

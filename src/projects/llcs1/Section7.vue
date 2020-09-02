@@ -51,7 +51,7 @@
         <h3>周邊41公頃綠地 親水公園環繞</h3>
       </h3>
       <img
-        src="./s3/hr.png"
+        src="./mo/2/hrw.png"
         alt=""
         class="hr absolute"
         data-aos="zoom-in-right"
@@ -437,75 +437,92 @@
     overflow: hidden;
   }
 
-  .fly1,
-  .fly2 {
-    display: none;
+  .fly1 {
+    width: sizem(100);
+    bottom: sizem(80);
+    right: sizem(23);
   }
 
-  .fly3 {
-    width: size(85);
-    top: size(245 + 36);
-    right: size(12.5);
+  .fly2 {
+    width: sizem(88);
+    top: sizem(88);
+    right: sizem(200);
+  }
+
+  .flower1 {
+    width: sizem(100);
+    top: sizem(-50);
+    right: sizem(0);
+  }
+
+  .flower2 {
+    width: sizem(170);
+    bottom: sizem(0);
+    right: sizem(200);
+  }
+
+  .flower3 {
+    width: sizem(80);
+    bottom: sizem(-50);
+    right: sizem(0);
   }
 
   .title {
-    width: sizem(233);
-    top: sizem(245 + 26);
-    left: sizem(33);
-    right: auto;
+    width: sizem(310);
+    top: sizem(28 + 324);
+    right: 0;
+    left: 0;
+    margin: 0 auto;
     font-size: sizem(25);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.44;
-    letter-spacing: sizem(1);
-    text-align: left;
-    color: #333333;
+    line-height: 1.62;
+    letter-spacing: sizem(2.5);
+    text-align: center;
+    color: #534136;
     white-space: nowrap;
+    h3 {
+      font-size: sizem(20);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.62;
+      letter-spacing: sizem(2);
+      text-align: center;
+      color: #534136;
+    }
   }
 
   .hr {
     width: sizem(310);
-    height: 1px;
-    top: sizem(157 + 245);
-    right: sizem(32);
-    background-color: #004f8f;
+    top: sizem(102 + 324);
+    right: 0;
+    left: 0;
+    margin: 0 auto;
   }
 
   .desc {
     width: sizem(310);
-    top: sizem(181 + 245);
-    right: sizem(32);
+    top: sizem(121 + 324);
+    right: 0;
+    left: 0;
+    margin: 0 auto;
     font-size: sizem(15);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.7;
-    letter-spacing: sizem(0.95);
-    text-align: left;
-    color: #333333;
-  }
-
-  .life {
-    top: auto;
-    right: auto;
-    bottom: sizem(0);
-    left: sizem(28);
-    font-size: sizem(70);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.69;
-    letter-spacing: sizem(-5.6);
-    text-align: right;
-    color: #4b809d;
+    line-height: 1.85;
+    letter-spacing: normal;
+    text-align: center;
+    color: #05050c;
   }
 
   /* Swipe */
   .swipe {
     width: sizem(375);
-    height: sizem(245);
-    min-height: sizem(245);
+    height: sizem(324);
+    min-height: sizem(324);
     top: sizem(0);
     left: sizem(0);
     object-fit: cover;
