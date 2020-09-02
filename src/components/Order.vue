@@ -180,8 +180,6 @@
           :disabled="!checked || !isVerify"
           @click="submit"
           :loading="isSubmit"
-          data-aos="fade-down"
-          data-aos-delay="700"
         >預約賞屋</el-button>
         <Loading
           :loading="isSubmit"
