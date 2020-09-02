@@ -8,19 +8,19 @@
         v-if="isPC"
       >
       <img
-        src="./s6/2.png"
-        alt=""
-        class="bg-img"
-        data-aos="fade-down"
-        data-aos-delay="0"
-        v-if="isPC"
-      >
-      <img
         src="./s6/1.png"
         alt=""
         class="bg-img cloud"
         data-aos="fade-right"
         data-aos-delay="800"
+        v-if="isPC"
+      >
+      <img
+        src="./s6/2.png"
+        alt=""
+        class="bg-img"
+        data-aos="fade-down"
+        data-aos-delay="0"
         v-if="isPC"
       >
 
@@ -31,19 +31,19 @@
         v-if="isMobile"
       >
       <img
-        src="./s6/2_m.png"
-        alt=""
-        class="bg-img house"
-        data-aos="fade-down"
-        data-aos-delay="0"
-        v-if="isMobile"
-      >
-      <img
         src="./s6/1_m.png"
         alt=""
         class="bg-img cloud"
         data-aos="fade-right"
         data-aos-delay="800"
+        v-if="isMobile"
+      >
+      <img
+        src="./s6/2_m.png"
+        alt=""
+        class="bg-img house"
+        data-aos="fade-down"
+        data-aos-delay="0"
         v-if="isMobile"
       >
       <div
@@ -109,7 +109,7 @@
 
 .title {
   width: size(328);
-  top: size(299);
+  top: size(310);
   right: size(596);
   white-space: nowrap;
   font-size: size(81);
@@ -120,11 +120,12 @@
   letter-spacing: 1.62px;
   text-align: left;
   color: #ffffff;
+  text-shadow: 0 0 size(12) rgba(41, 128, 172, 0.801);
 }
 
 .subtitle {
   width: size(289);
-  top: size(353);
+  top: size(340);
   right: size(275);
   font-size: size(26);
   font-weight: 500;
@@ -138,16 +139,16 @@
 }
 
 .desc {
-  width: size(350);
-  top: size(408);
-  right: size(214);
+  width: size(340);
+  top: size(390);
+  right: size(225);
   font-size: size(16);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 2.45;
   letter-spacing: 1.92px;
-  text-align: left;
+  text-align: justify;
   color: #4d4d4d;
 }
 
