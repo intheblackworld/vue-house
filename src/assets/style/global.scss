@@ -54,7 +54,15 @@ body {
       height: 100vh;
     }
   }
-  
+}
+
+.home2 {
+  background: url('~@/projects/llcs1/s2/bg.png');
+  background-attachment: fixed;
+  background-size: auto;
+  background-position: center center;
+  background-repeat: repeat;
+  overflow: hidden;//試底下多的那塊哪來的
 }
 
 .fullscreen {

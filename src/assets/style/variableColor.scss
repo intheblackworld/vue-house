@@ -1,5 +1,5 @@
 /* html, body */
-$bg: #fff;
+$bg: url('~@/projects/llcs1/s2/bg.jpg');
 
 /* font-family */
 /* 1主要字體  2次要字體  3表單字體 */
@@ -33,8 +33,8 @@ $mask_icon_color: #c82514;
 /* contactSection */
 // order
 $order_bg_color: #fff;
-$order_bg_image: url('~@/projects/cf/all/order-bg.jpg');
-$order_bg_image_m: url('~@/projects/cf/all/order-bg.jpg');
+$order_bg_image: none;
+$order_bg_image_m: none;
 $order_title_color: #333333;
 $order_subtitle_color: #cc2617;
 $order_input_label_color: #333;

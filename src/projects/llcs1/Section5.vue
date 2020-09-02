@@ -2,62 +2,51 @@
   <div>
     <div class="section5">
       <img
-        src="./s3/img.png"
-        alt=""
-        class="back absolute"
-      >
-      <img
-        src="./s1/butterfly1.png"
+        src="./s1/butterfly1.gif"
         alt=""
         class="fly1 absolute"
-        data-aos="fade-up-left"
-        data-aos-delay="800"
+        data-aos="fade-right"
+        data-aos-delay="1000"
       >
       <img
-        src="./s1/butterfly2.png"
+        src="./s1/butterfly3.gif"
         alt=""
         class="fly2 absolute"
-        data-aos="fade-up-left"
-        data-aos-delay="800"
+        data-aos="fade-left"
+        data-aos-delay="1000"
       >
-      <img
-        src="./s1/butterfly3.png"
-        alt=""
-        class="fly3 absolute"
-        data-aos="fade-up-left"
-        data-aos-delay="800"
-      >
+      <img src="./s2/3.png" alt="" class="flower1 absolute" data-aos="fade-left"
+        data-aos-delay="400">
+      <img src="./s2/f1.png" alt="" class="flower2 absolute" data-aos="fade-right"
+        data-aos-delay="600">
+      <img src="./s2/2.png" alt="" class="flower3 absolute" data-aos="fade-left"
+        data-aos-delay="800">
+      <img src="./s4/bg2.png" alt="" class="img absolute" data-aos="zoom-in"
+        data-aos-delay="200">
       <h3
         class="title absolute"
         data-aos="fade-right"
         data-aos-delay="400"
-      >明星學區、<br />
-        機能都到位<br />
-        交通串聯無往不利</h3>
-      <div
+      >商圈金核心<br />
+        <h3>副都心3分鐘　6大商圈一次擁有</h3>
+      </h3>
+      <img
+        src="./s3/hr.png"
+        alt=""
         class="hr absolute"
         data-aos="zoom-in-right"
-        data-aos-delay="600"
-      ></div>
-      <div
+      />
+      <h3
         class="desc absolute"
         data-aos="fade-right"
         data-aos-delay="800"
       >
-        ■復興國小、永仁完全中學、成功大學 完整學區<br />
-        ■高雄榮總台南分院、大型連鎖採買商家完整齊全<br />
-        ■完整交通：大灣交流道、國道1號、未來更接軌捷運
-      </div>
-      <div
-        class="life absolute"
-        data-aos="fade-left"
-        data-aos-delay="1000"
-      >
-        LIFE
-      </div>
+        「朗朗城心」3分鐘前進副都心，中平、幸福、輔大、新泰、廟街商圈僅咫尺之距，便利生活盡情享受，生活所需應有盡有。
+      </h3>
+
       <div
         class="swipe absolute"
-        data-aos="fade-up"
+        data-aos="fade-right"
         data-aos-delay="200"
         @mouseenter.stop="toggleTimer = false"
         @mouseleave.stop="toggleTimer = true"
@@ -81,10 +70,10 @@
                 :src="slide.img"
                 alt=""
               >
-              <div
+              <h3
                 class="name absolute"
                 v-html="slide.name"
-              ></div>
+              ></h3>
             </div>
           </transition-group>
           <div
@@ -128,12 +117,10 @@
 
 .section5 {
   width: size(1920);
-  height: size(971);
-  height: 100vh;
-  min-height: 900px;
+  height: size(1080);
+  min-height: size(1080);
   background-size: cover;
   background-attachment: fixed;
-  overflow: hidden;
 }
 
 .back {
@@ -158,80 +145,93 @@
 }
 
 .fly1 {
-  width: size(94);
-  top: size(70);
-  right: size(214);
+  width: size(200);
+  bottom: size(161);
+  right: size(246);
 }
 
 .fly2 {
-  width: size(65);
-  bottom: size(212);
-  right: size(145);
+  width: size(168);
+  top: size(196);
+  right: size(38);
 }
 
-.fly3 {
-  width: size(95);
-  top: size(98);
-  right: size(9.5);
+.flower1 {
+  width: size(200);
+  top: size(-100);
+  right: size(0);
+}
+
+.flower2 {
+  width: size(344);
+  bottom: size(0);
+  right: size(418);
+}
+
+.flower3 {
+  width: size(158);
+  bottom: size(-100);
+  right: size(0);
+}
+
+.img {
+  width: size(670);
+  top: size(0);
+  right: size(0);
 }
 
 .title {
-  width: size(481);
-  top: size(148);
-  right: size(160);
-  font-size: size(51.6);
+  width: size(620);
+  top: size(335);
+  right: size(25);
+  font-size: size(55);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.43;
-  letter-spacing: size(2.06);
-  text-align: left;
-  color: #333333;
+  line-height: 1.62;
+  letter-spacing: size(5.5);
+  text-align: center;
+  color: #534136;
   white-space: nowrap;
+  h3 {
+    font-size: size(40);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.62;
+    letter-spacing: size(4);
+    text-align: center;
+    color: #534136;
+  }
 }
 
 .hr {
-  width: size(458);
-  height: 2px;
-  top: size(388);
-  right: size(180);
-  background-color: #27a8a8;
+  width: size(446);
+  top: size(493);
+  right: size(111);
 }
 
 .desc {
-  width: size(490);
-  top: size(423);
-  right: size(150);
-  font-size: size(16);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2.25;
-  letter-spacing: size(1.12);
-  text-align: left;
-  color: #333333;
-}
-
-.life {
-  bottom: size(315);
-  right: size(403);
-  font-size: size(150);
+  width: size(402);
+  top: size(527);
+  right: size(133);
+  font-size: size(28);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(-12.75);
-  text-align: right;
-  color: #4b809d;
+  line-height: 1.85;
+  letter-spacing: normal;
+  text-align: center;
+  color: #05050c;
 }
 
 /* Swipe */
 .swipe {
-  width: size(1030);
-  top: size(126);
-  left: size(182);
-  height: size(674);
-  min-height: size(674);
+  width: size(1250);
+  top: size(0);
+  left: size(0);
+  height: size(1080);
+  min-height: size(1080);
   object-fit: cover;
 }
 
@@ -290,14 +290,14 @@
   }
 
   .name {
-    right: 20px;
-    bottom: 20px;
-    font-size: size(14.8);
-    font-weight: 500;
+    left: 20px;
+    bottom: 25px;
+    font-size: size(28);
+    font-weight: 600;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.35;
-    letter-spacing: size(0.89);
+    letter-spacing: size(1.12);
     text-align: center;
     color: #ffffff;
   }
@@ -463,7 +463,6 @@
     text-align: left;
     color: #333333;
   }
-
 
   .life {
     top: auto;
@@ -651,20 +650,20 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s5/1成功大學.jpg'),
-          name: '成功大學',
+          img: require('./s5/1幸福路商圈.jpg'),
+          name: '幸福路商圈',
         },
         {
-          img: require('./s5/2崑山科技大學.jpg'),
-          name: '崑山科技大學',
+          img: require('./s5/2新泰路商圈.jpg'),
+          name: '新泰路商圈',
         },
         {
-          img: require('./s5/3情境示意.jpg'),
-          name: '情境示意',
+          img: require('./s5/3中港路商圈.jpg'),
+          name: '中港路商圈',
         },
         {
-          img: require('./s5/4復興國小.jpg'),
-          name: '復興國小',
+          img: require('./s5/4好市多.jpg'),
+          name: '好市多',
         },
       ],
     }

@@ -1,71 +1,72 @@
 <template>
   <div class="home no-padding-top">
-    <Loading :loading="load" />
-    <SideNavigation />
-    <!-- <Navigation /> -->
-    <!-- <Indigator :viewIndex="viewIndex" /> -->
-    <!-- <full-page
+    <div class="home2">
+      <Loading :loading="load" />
+      <SideNavigation />
+      <!-- <Navigation /> -->
+      <!-- <Indigator :viewIndex="viewIndex" /> -->
+      <!-- <full-page
       ref="fullPage"
       :options="options"
       id="fullpage"
     > -->
-    <vue-lazy-component
-      class="section"
-      id="section1"
-      @init="init"
-    >
-      <Section1 />
-    </vue-lazy-component>
+      <vue-lazy-component
+        class="section"
+        id="section1"
+        @init="init"
+      >
+        <Section1 />
+      </vue-lazy-component>
 
-    <vue-lazy-component
-      class="section"
-      id="section2"
-    >
-      <Section2 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section3"
-    >
-      <Section3 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section4"
-    >
-      <Section4 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section5"
-    >
-      <Section5 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section6"
-    >
-      <Section6 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section7"
-    >
-      <Section7 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section8"
-    >
-      <Section8 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section9"
-    >
-      <Section9 />
-    </vue-lazy-component>
-    <!-- <vue-lazy-component
+      <vue-lazy-component
+        class="section"
+        id="section2"
+      >
+        <Section2 />
+      </vue-lazy-component>
+      <vue-lazy-component
+        class="section"
+        id="section3"
+      >
+        <Section3 />
+      </vue-lazy-component>
+      <vue-lazy-component
+        class="section"
+        id="section4"
+      >
+        <Section4 />
+      </vue-lazy-component>
+      <vue-lazy-component
+        class="section"
+        id="section5"
+      >
+        <Section5 />
+      </vue-lazy-component>
+      <vue-lazy-component
+        class="section"
+        id="section6"
+      >
+        <Section6 />
+      </vue-lazy-component>
+      <vue-lazy-component
+        class="section"
+        id="section7"
+      >
+        <Section7 />
+      </vue-lazy-component>
+      <!-- <vue-lazy-component
+        class="section"
+        id="section8"
+      >
+        <Section8 />
+      </vue-lazy-component> -->
+      <vue-lazy-component
+        class="section"
+        id="section9"
+      >
+        <Section9 />
+      </vue-lazy-component>
+      <!-- <vue-lazy-component
       class="section"
       id="section10"
     >
@@ -77,17 +78,18 @@
     >
       <Section11 />
     </vue-lazy-component> -->
-    <vue-lazy-component
-      class="section"
-      id="contact"
-    >
-      <ContactSection />
-    </vue-lazy-component>
-    <MobileNav />
+      <vue-lazy-component
+        class="section"
+        id="contact"
+      >
+        <ContactSection />
+      </vue-lazy-component>
+      <MobileNav />
+    </div>
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 // @import url('https://fonts.googleapis.com/css?family=Playball&display=swap');
 @import '../assets/style/variableColor.scss';
 
@@ -116,8 +118,8 @@ import Section4 from '@/projects/llcs1/Section4.vue'
 import Section5 from '@/projects/llcs1/Section5.vue'
 import Section6 from '@/projects/llcs1/Section6.vue'
 import Section7 from '@/projects/llcs1/Section7.vue'
-import Section8 from '@/projects/llcs1/Section8.vue'
-import Section9 from '@/projects/llcs1/Section9.vue'
+// import Section8 from '@/projects/llcs1/Section8.vue'
+// import Section9 from '@/projects/llcs1/Section9.vue'
 // import Section10 from '@/projects/llcs1/Section10.vue'
 // import Section11 from '@/projects/llcs1/Section11.vue'
 
@@ -137,8 +139,8 @@ export default {
     Section5,
     Section6,
     Section7,
-    Section8,
-    Section9,
+    // Section8,
+    // Section9,
     // Section10,
     // Section11,
   },

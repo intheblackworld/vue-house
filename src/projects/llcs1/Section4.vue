@@ -2,67 +2,51 @@
   <div>
     <div class="section4">
       <img
-        src="./s4/bg.png"
-        alt=""
-        class="back absolute"
-      >
-      <img
-        src="./s1/butterfly1.png"
+        src="./s1/butterfly1.gif"
         alt=""
         class="fly1 absolute"
-        data-aos="fade-up-left"
-        data-aos-delay="800"
+        data-aos="fade-right"
+        data-aos-delay="1000"
       >
-      <div
-        class="pagination absolute flex-ac"
-        data-aos="fade-up"
-        data-aos-delay="200"
-        v-if="isPC"
+      <img src="./s2/3.png" alt="" class="flower1 absolute" data-aos="fade-left"
+        data-aos-delay="400">
+      <img src="./s2/f1.png" alt="" class="flower2 absolute" data-aos="fade-right"
+        data-aos-delay="600">
+      <img src="./s2/2.png" alt="" class="flower3 absolute" data-aos="fade-left"
+        data-aos-delay="800">
+      <img
+        src="./s1/butterfly2.gif"
+        alt=""
+        class="fly2 absolute"
+        data-aos="fade-left"
+        data-aos-delay="1000"
       >
-        <div
-          :class="`pagination-dot`"
-          v-for="(slide, index) in slideList"
-          :key="slide.img + '-dot'"
-          @click="goTo(index)"
-        ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-      </div>
+      <img src="./s4/bg2.png" alt="" class="img absolute" data-aos="zoom-in"
+        data-aos-delay="200">
       <h3
         class="title absolute"
         data-aos="fade-right"
         data-aos-delay="400"
-      >南紡購物中心為鄰<br />繁華商圈一次集結</h3>
-      <div
+      >交通新軸心<br />
+        <h3>3快4高5捷運 引領城市快速前進</h3>
+      </h3>
+      <img
+        src="./s3/hr.png"
+        alt=""
         class="hr absolute"
         data-aos="zoom-in-right"
-        data-aos-delay="600"
-      ></div>
-      <div
+      />
+      <h3
         class="desc absolute"
         data-aos="fade-right"
         data-aos-delay="800"
       >
-        南紡購物中心占地約8,000坪，結合購物中心、老爺酒店、威秀影城、誠品書店等機能與指標品牌，加上各式各樣主題餐廳，為台南東區最大、最象徵性的地標商圈。更與周邊成大商圈、東門商圈相互串聯，繁華一次到位！入主【春福采采】，正是同時把握商圈便利與公園悠閒的不二首選！
-      </div>
-      <div
-        class="desc2 absolute"
-        data-aos="fade-right"
-        data-aos-delay="800"
-      >
-        ■與占地約8,000坪「南紡購物中心」比鄰而居<br />
-        ■結合老爺酒店、威秀影城、誠品書店等精彩機能<br />
-        ■台南東區最大、最象徵性的地標商圈<br />
-        ■同步串聯周邊成大商圈、中華商圈
-      </div>
-      <div
-        class="shopping absolute"
-        data-aos="fade-left"
-        data-aos-delay="1000"
-      >
-        SHOPPING
-      </div>
+        國門新都心匯聚12大交通網，綿密串聯北台灣重要城市據點，看齊台北車站，打造國道轉運站，未來新北交通新核心就在這裡。
+      </h3>
+
       <div
         class="swipe absolute"
-        data-aos="fade-up"
+        data-aos="fade-right"
         data-aos-delay="200"
         @mouseenter.stop="toggleTimer = false"
         @mouseleave.stop="toggleTimer = true"
@@ -86,10 +70,10 @@
                 :src="slide.img"
                 alt=""
               >
-              <div
+              <h3
                 class="name absolute"
                 v-html="slide.name"
-              ></div>
+              ></h3>
             </div>
           </transition-group>
           <div
@@ -109,6 +93,19 @@
               @click="addIndex"
             >
           </div>
+          <div
+            class="pagination absolute flex-ac"
+            data-aos="fade-up"
+            data-aos-delay="200"
+            v-if="isPC"
+          >
+            <div
+              :class="`pagination-dot`"
+              v-for="(slide, index) in slideList"
+              :key="slide.img + '-dot'"
+              @click="goTo(index)"
+            ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+          </div>
         </div>
       </div>
     </div>
@@ -120,18 +117,16 @@
 
 .section4 {
   width: size(1920);
-  height: size(971);
-  height: 100vh;
-  min-height: 900px;
+  height: size(1080);
+  min-height: size(1080);
   background-size: cover;
   background-attachment: fixed;
-  overflow: hidden;
 }
 
 .back {
-  width: size(736);
-  top: size(487);
-  right: size(0);
+  width: size(534);
+  top: size(35);
+  left: size(0);
 }
 
 .bg-img {
@@ -150,83 +145,93 @@
 }
 
 .fly1 {
-  width: size(112);
-  top: size(78);
-  left: size(46);
+  width: size(200);
+  bottom: size(161);
+  right: size(46);
+}
+
+.fly2 {
+  width: size(168);
+  top: size(196);
+  right: size(438);
+}
+
+.flower1 {
+  width: size(200);
+  top: size(-100);
+  right: size(0);
+}
+
+.flower2 {
+  width: size(344);
+  bottom: size(0);
+  right: size(418);
+}
+
+.flower3 {
+  width: size(158);
+  bottom: size(-100);
+  right: size(0);
+}
+
+.img {
+  width: size(670);
+  top: size(0);
+  right: size(0);
 }
 
 .title {
-  width: size(427);
-  top: size(70);
-  left: size(179);
-  font-size: size(51.6);
+  width: size(620);
+  top: size(335);
+  right: size(25);
+  font-size: size(55);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.43;
-  letter-spacing: size(2.06);
-  text-align: left;
-  color: #000000;
+  line-height: 1.62;
+  letter-spacing: size(5.5);
+  text-align: center;
+  color: #534136;
   white-space: nowrap;
+  h3 {
+    font-size: size(40);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.62;
+    letter-spacing: size(4);
+    text-align: center;
+    color: #534136;
+  }
 }
 
 .hr {
-  width: size(458);
-  height: 2px;
-  top: size(280);
-  left: size(180);
-  background-color: #004f8f;
+  width: size(446);
+  top: size(493);
+  right: size(111);
 }
 
 .desc {
-  width: size(490);
-  top: size(345);
-  left: size(180);
-  font-size: size(16);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2.25;
-  letter-spacing: size(1.12);
-  text-align: left;
-  color: #000000;
-}
-
-.desc2 {
-  width: size(462);
-  top: size(545);
-  left: size(180);
-  font-size: size(16);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2.25;
-  letter-spacing: size(1.12);
-  text-align: left;
-  color: #000000;
-}
-
-.shopping {
-  top: size(507);
-  left: size(565);
-  font-size: size(160.2);
+  width: size(402);
+  top: size(527);
+  right: size(133);
+  font-size: size(28);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(-7.29);
-  text-align: left;
-  color: #004f8f;
-  z-index: 5;
+  line-height: 1.85;
+  letter-spacing: normal;
+  text-align: center;
+  color: #05050c;
 }
 
 /* Swipe */
 .swipe {
-  width: size(1030);
-  height: size(674);
-  min-height: size(674);
-  top: size(38);
-  right: size(178);
+  width: size(1250);
+  top: size(0);
+  left: size(0);
+  height: size(1080);
+  min-height: size(1080);
   object-fit: cover;
 }
 
@@ -285,14 +290,14 @@
   }
 
   .name {
-    right: 20px;
-    bottom: 20px;
-    font-size: size(14.8);
-    font-weight: 500;
+    left: 20px;
+    bottom: 25px;
+    font-size: size(28);
+    font-weight: 600;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.35;
-    letter-spacing: size(0.89);
+    letter-spacing: size(1.12);
     text-align: center;
     color: #ffffff;
   }
@@ -314,9 +319,9 @@
 
 .pagination {
   width: auto;
-  top: size(0);
-  left: auto;
-  right: size(177);
+  bottom: size(20);
+  left: 0;
+  right: 0;
   margin: 0 auto;
   justify-content: center;
 }
@@ -332,7 +337,7 @@
     width: 20px;
     height: 20px;
     border-radius: 20px;
-    box-shadow: 0 0 0 1px #27a8a8;
+    box-shadow: 0 0 0 1px #fff;
     position: relative;
     background-color: rgba(0, 0, 0, 0.01);
     transition: all 0.5s;
@@ -342,7 +347,7 @@
       width: 60%;
       height: 60%;
       display: block;
-      background: #27a8a8;
+      background: #fff;
       border-radius: 20px;
       opacity: 1;
       position: absolute;
@@ -359,7 +364,7 @@
         width: 100%;
         height: 100%;
         display: block;
-        background: #27a8a8;
+        background: #fff;
         border-radius: 20px;
         opacity: 1;
         position: absolute;
@@ -401,7 +406,7 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-    height: sizem(614 + 245);
+    height: sizem(424 + 245);
     min-height: auto;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
@@ -410,17 +415,22 @@
     overflow: hidden;
   }
 
-  .fly1 {
-    width: sizem(73);
-    top: sizem(272);
-    left: auto;
-    right: sizem(28);
+  .fly1,
+  .fly2 {
+    display: none;
+  }
+
+  .fly3 {
+    width: size(85);
+    top: size(245 + 36);
+    right: size(12.5);
   }
 
   .title {
     width: sizem(233);
-    top: sizem(271);
-    right: sizem(109);
+    top: sizem(245 + 26);
+    left: sizem(33);
+    right: auto;
     font-size: sizem(25);
     font-weight: bold;
     font-stretch: normal;
@@ -435,44 +445,30 @@
   .hr {
     width: sizem(310);
     height: 1px;
-    top: sizem(366);
+    top: sizem(157 + 245);
     right: sizem(32);
     background-color: #004f8f;
   }
 
   .desc {
     width: sizem(310);
-    top: sizem(390);
+    top: sizem(181 + 245);
     right: sizem(32);
     font-size: sizem(15);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.8;
+    line-height: 1.7;
     letter-spacing: sizem(0.95);
     text-align: left;
     color: #333333;
   }
 
-  .desc2 {
-    width: sizem(310);
-    top: sizem(582);
-    right: sizem(32.3);
-    font-size: sizem(15);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.13;
-    letter-spacing: sizem(1.05);
-    text-align: left;
-    color: #333333;
-  }
-
-  .shopping {
+  .life {
     top: auto;
-    left: auto;
+    right: auto;
     bottom: sizem(0);
-    right: sizem(40);
+    left: sizem(28);
     font-size: sizem(70);
     font-weight: normal;
     font-stretch: normal;
@@ -480,7 +476,7 @@
     line-height: 1.69;
     letter-spacing: sizem(-5.6);
     text-align: right;
-    color: #004f8f;
+    color: #4b809d;
   }
 
   /* Swipe */
@@ -654,16 +650,20 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s4/1南紡夢時代.jpg'),
-          name: '南紡夢時代',
+          img: require('./s4/165快速道路.jpg'),
+          name: '65快速道路',
         },
         {
-          img: require('./s4/2國賓影城.jpg'),
-          name: '國賓影城',
+          img: require('./s4/2五股交流道.jpg'),
+          name: '五股交流道',
         },
         {
-          img: require('./s4/3成大商圈.jpg'),
-          name: '成大商圈',
+          img: require('./s4/365快速道路.jpg'),
+          name: '65快速道路',
+        },
+        {
+          img: require('./s4/4捷運新莊站.jpg'),
+          name: '捷運新莊站',
         },
       ],
     }

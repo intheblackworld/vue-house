@@ -1,65 +1,53 @@
 <template>
   <div>
-    <div :class="`section6 ${slideList[slideIndex].mode}`">
-      <div
-        class="pagination absolute flex-ac"
-        data-aos="fade-up"
-        data-aos-delay="200"
-        v-if="isPC"
-      >
-        <div
-          :class="`pagination-dot`"
-          v-for="(slide, index) in slideList"
-          :key="slide.img + '-dot'"
-          @click="goTo(index)"
-        ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-      </div>
-      <h3
-        :class="`title absolute`"
+    <div class="section6">
+      <img
+        src="./s1/butterfly2.gif"
+        alt=""
+        class="fly1 absolute"
         data-aos="fade-right"
-        data-aos-delay="400"
-      >天際風景新格局<br />時尚風格 珍稀傳家</h3>
-      <div
-        :class="`hr absolute`"
-        data-aos="zoom-in-right"
-        data-aos-delay="600"
-      ></div>
-      <div
-        :class="`desc absolute`"
-        data-aos="fade-right"
-        data-aos-delay="800"
+        data-aos-delay="1000"
       >
-        精選平實特區，這繁華與悠閒的共享之地，<br />
-        春福共築大樓與別墅的和諧適居，承襲煙波飯店一貫的簡約與美學，以深灰與白色共演比例之美，以簡潔線條爬梳層次品味，美好生活的嚮往與稀有透天店鋪的價值，絕對值得世代相傳！
-      </div>
-      <div
-        :class="`art absolute`"
+      <img
+        src="./s1/butterfly1.gif"
+        alt=""
+        class="fly2 absolute"
         data-aos="fade-left"
         data-aos-delay="1000"
       >
-        ARCHIECTURE ART
-      </div>
-      <div
-        :class="`btn-group absolute flex-ac flex-jb`"
-        data-aos="zoom-in"
-        data-aos-delay="900"
+      <img src="./s2/3.png" alt="" class="flower1 absolute" data-aos="fade-left"
+        data-aos-delay="400">
+      <img src="./s2/f1.png" alt="" class="flower2 absolute" data-aos="fade-right"
+        data-aos-delay="600">
+      <img src="./s2/2.png" alt="" class="flower3 absolute" data-aos="fade-left"
+        data-aos-delay="800">
+      <img src="./s4/bg2.png" alt="" class="img absolute" data-aos="zoom-in"
+        data-aos-delay="200">
+      <h3
+        class="title absolute"
+        data-aos="fade-right"
+        data-aos-delay="400"
+      >書香新城心<br />
+        <h3>在地學習 從幼兒園到大學一應俱全</h3>
+      </h3>
+      <img
+        src="./s3/hr.png"
+        alt=""
+        class="hr absolute"
+        data-aos="zoom-in-right"
+      />
+      <h3
+        class="desc absolute"
+        data-aos="fade-right"
+        data-aos-delay="800"
       >
-        <router-link
-          to="/"
-          tag="div"
-          class="btn flex-c"
-        >精品大樓
-        </router-link>
-        <router-link
-          to="/villa"
-          tag="div"
-          class="btn flex-c"
-        >透店別墅宅</router-link>
-      </div>
+        「朗朗城心」坐落文教核心，下樓就是非營利幼兒園，周邊還有文中、小預定地、新莊高中、輔仁大學…等人文學區，教育資源一次為孩子準備齊全。
+      </h3>
+
       <div
         class="swipe absolute"
-        data-aos="fade-up"
-        data-aos-delay="0"
+        data-aos="fade-right"
+        data-aos-delay="200"
         @mouseenter.stop="toggleTimer = false"
         @mouseleave.stop="toggleTimer = true"
       >
@@ -82,10 +70,10 @@
                 :src="slide.img"
                 alt=""
               >
-              <div
+              <h3
                 class="name absolute"
                 v-html="slide.name"
-              ></div>
+              ></h3>
             </div>
           </transition-group>
           <div
@@ -105,6 +93,19 @@
               @click="addIndex"
             >
           </div>
+          <div
+            class="pagination absolute flex-ac"
+            data-aos="fade-up"
+            data-aos-delay="200"
+            v-if="isPC"
+          >
+            <div
+              :class="`pagination-dot`"
+              v-for="(slide, index) in slideList"
+              :key="slide.img + '-dot'"
+              @click="goTo(index)"
+            ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+          </div>
         </div>
       </div>
     </div>
@@ -116,39 +117,16 @@
 
 .section6 {
   width: size(1920);
-  height: 100vh;
-  min-height: 900px;
+  height: size(1080);
+  min-height: size(1080);
   background-size: cover;
   background-attachment: fixed;
-  overflow: hidden;
+}
 
-  &.light {
-    .title {
-      color: #333;
-    }
-
-    .hr {
-      background-color: #333;
-    }
-
-    .desc {
-      color: #333;
-    }
-
-    .art {
-      color: #333;
-    }
-
-    .btn {
-      border: solid 2px #333;
-      color: #333;
-      &:hover {
-        background-color: #333;
-        border-color: #af8680;
-        color: #af8680;
-      }
-    }
-  }
+.back {
+  width: size(534);
+  top: size(35);
+  left: size(0);
 }
 
 .bg-img {
@@ -166,106 +144,94 @@
   }
 }
 
+.fly1 {
+  width: size(160);
+  bottom: size(161);
+  right: size(96);
+}
+
+.fly2 {
+  width: size(168);
+  top: size(216);
+  right: size(48);
+}
+
+.flower1 {
+  width: size(200);
+  top: size(-100);
+  right: size(0);
+}
+
+.flower2 {
+  width: size(344);
+  bottom: size(0);
+  right: size(418);
+}
+
+.flower3 {
+  width: size(158);
+  bottom: size(-100);
+  right: size(0);
+}
+
+.img {
+  width: size(670);
+  top: size(0);
+  right: size(0);
+}
+
 .title {
-  width: size(434);
-  top: size(181);
-  right: size(397);
-  font-size: size(51);
+  width: size(620);
+  top: size(335);
+  right: size(25);
+  font-size: size(55);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.43;
-  letter-spacing: 1.03px;
-  text-align: left;
-  color: #ffffff;
-  z-index: 2;
-  transition: all 0.3s;
+  line-height: 1.62;
+  letter-spacing: size(5.5);
+  text-align: center;
+  color: #534136;
   white-space: nowrap;
+  h3 {
+    font-size: size(36);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.62;
+    letter-spacing: size(4);
+    text-align: center;
+    color: #534136;
+  }
 }
 
 .hr {
-  width: size(649);
-  height: 2px;
-  top: size(370);
-  right: size(181);
-  background-color: #fff;
-  z-index: 2;
-  transition: all 0.3s;
-
-  &.light {
-    background-color: #333;
-  }
+  width: size(446);
+  top: size(493);
+  right: size(111);
 }
 
 .desc {
-  width: size(652);
-  top: size(426);
-  right: size(178);
-  font-size: size(16);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2;
-  letter-spacing: size(1.76);
-  text-align: left;
-  color: #ffffff;
-  transition: all 0.3s;
-  z-index: 2;
-}
-
-.art {
-  top: size(560);
-  right: size(180);
-  font-size: size(70.2);
+  width: size(402);
+  top: size(527);
+  right: size(133);
+  font-size: size(28);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(2.72);
-  text-align: left;
-  color: #ffffff;
-  text-shadow: 0 0 2px #333;
-  transition: all 0.3s;
-  z-index: 2;
-}
-
-.btn-group {
-  width: size(390);
-  top: size(685);
-  right: size(178);
-  z-index: 2;
-
-  .btn {
-    width: size(190);
-    height: size(43);
-    border: solid 2px #fff;
-    border-radius: 20px / 20px;
-    cursor: pointer;
-    font-size: size(21);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.69;
-    letter-spacing: size(2.3);
-    text-align: center;
-    color: #fff;
-    transition: all 0.3s;
-
-    &:hover {
-      background-color: #fff;
-      border-color: #fff;
-      color: #af8680;
-    }
-  }
+  line-height: 1.85;
+  letter-spacing: normal;
+  text-align: center;
+  color: #05050c;
 }
 
 /* Swipe */
 .swipe {
-  width: 100vw;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  min-height: size(900);
+  width: size(1250);
+  top: size(0);
+  left: size(0);
+  height: size(1080);
+  min-height: size(1080);
   object-fit: cover;
 }
 
@@ -321,19 +287,17 @@
 
   img {
     width: 100%;
-    height: 100vh;
-    object-fit: cover;
   }
 
   .name {
-    right: 20px;
-    bottom: 20px;
-    font-size: size(14.8);
-    font-weight: 500;
+    left: 20px;
+    bottom: 25px;
+    font-size: size(28);
+    font-weight: 600;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.35;
-    letter-spacing: size(0.89);
+    letter-spacing: size(1.12);
     text-align: center;
     color: #ffffff;
   }
@@ -355,12 +319,11 @@
 
 .pagination {
   width: auto;
-  top: size(68);
-  left: auto;
-  right: size(190);
+  bottom: size(20);
+  left: 0;
+  right: 0;
   margin: 0 auto;
   justify-content: center;
-  z-index: 2;
 }
 
 .pagination-dot {
@@ -443,7 +406,7 @@
 @media screen and (max-width: 767px) {
   .section6 {
     width: 100vw;
-    height: sizem(750);
+    height: sizem(424 + 245);
     min-height: auto;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
@@ -452,105 +415,75 @@
     overflow: hidden;
   }
 
+  .fly1,
+  .fly2 {
+    display: none;
+  }
+
+  .fly3 {
+    width: size(85);
+    top: size(245 + 36);
+    right: size(12.5);
+  }
+
   .title {
-    width: sizem(210);
-    top: sizem(16);
-    left: sizem(35);
+    width: sizem(233);
+    top: sizem(245 + 26);
+    left: sizem(33);
     right: auto;
     font-size: sizem(25);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.44;
-    letter-spacing: sizem(0.5);
+    letter-spacing: sizem(1);
     text-align: left;
-    color: #ffffff;
-    z-index: 2;
-    transition: all 0.3s;
+    color: #333333;
     white-space: nowrap;
   }
 
   .hr {
     width: sizem(310);
-    height: 2px;
-    top: sizem(105);
-    right: sizem(30.5);
-    background-color: #fff;
-    z-index: 2;
-    transition: all 0.3s;
-
-    &.light {
-      background-color: #333;
-    }
+    height: 1px;
+    top: sizem(157 + 245);
+    right: sizem(32);
+    background-color: #004f8f;
   }
 
   .desc {
     width: sizem(310);
-    top: sizem(121);
-    right: sizem(30);
+    top: sizem(181 + 245);
+    right: sizem(32);
     font-size: sizem(15);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2;
-    letter-spacing: sizem(1.65);
+    line-height: 1.7;
+    letter-spacing: sizem(0.95);
     text-align: left;
-    color: #ffffff;
-    transition: all 0.3s;
-    z-index: 2;
+    color: #333333;
   }
 
-  .art {
-    top: sizem(334);
-    right: sizem(26);
-    font-size: sizem(35.2);
+  .life {
+    top: auto;
+    right: auto;
+    bottom: sizem(0);
+    left: sizem(28);
+    font-size: sizem(70);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(0.72);
-    text-align: left;
-    color: #ffffff;
-    text-shadow: 0 0 2px #333;
-    transition: all 0.3s;
-    z-index: 2;
-  }
-
-  .btn-group {
-    width: sizem(303 + 8);
-    top: sizem(396);
-    right: sizem(33);
-    z-index: 6;
-
-    .btn {
-      width: sizem(151);
-      height: sizem(35);
-      border: solid 2px #fff;
-      border-radius: 20px / 20px;
-      cursor: pointer;
-      font-size: sizem(16);
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.69;
-      letter-spacing: sizem(1.76);
-      text-align: center;
-      color: #fff;
-      transition: all 0.3s;
-
-      &:hover {
-        background-color: #fff;
-        border-color: #fff;
-        color: #af8680;
-      }
-    }
+    line-height: 1.69;
+    letter-spacing: sizem(-5.6);
+    text-align: right;
+    color: #4b809d;
   }
 
   /* Swipe */
   .swipe {
     width: sizem(375);
-    height: sizem(750);
-    min-height: sizem(750);
+    height: sizem(245);
+    min-height: sizem(245);
     top: sizem(0);
     left: sizem(0);
     object-fit: cover;
@@ -608,7 +541,6 @@
 
     img {
       width: 100%;
-      height: sizem(750);
     }
 
     // &:nth-child(1) {
@@ -718,14 +650,20 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: isMobile ? require('./mo/6/bg.jpg') : require('./s6/1.jpg'),
-          mode: 'dark',
-          // name: '成功大學',
+          img: require('./s6/1輔仁大學.jpg'),
+          name: '輔仁大學',
         },
         {
-          img: isMobile ? require('./mo/6/bg2.jpg') : require('./s6/2.jpg'),
-          mode: 'light',
-          // name: '崑山科技大學',
+          img: require('./s6/2中港國小.jpg'),
+          name: '中港國小',
+        },
+        {
+          img: require('./s6/3新莊高中.jpg'),
+          name: '新莊高中',
+        },
+        {
+          img: require('./s6/4中平國中.jpg'),
+          name: '中平國中',
         },
       ],
     }
