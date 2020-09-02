@@ -117,11 +117,11 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .content {
-    height: calc(100vh - 103px);
+    height:auto;
     width: 100%;
     margin-bottom: 0;
     font-size: 15px; //內容字級
-    min-height: 35em; //看內容多寡調整高度
+    min-height: initial; //看內容多寡調整高度
   }
 
   .title {

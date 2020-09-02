@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="section9">
+  <div class="section9">
+    <div class="bg">
       <div
         class="pagination absolute flex-ac"
         data-aos="fade-left"
@@ -14,8 +14,10 @@
           @click="goTo(index)"
         ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
+      
+    <div class="txt absolute">
       <div
-        class="tab-groups absolute flex-ac flex-jb"
+        class="tab-groups flex-ac flex-jb"
         data-aos="fade-left"
         data-aos-delay="200"
       >
@@ -60,6 +62,7 @@
           class="tab-img absolute"
         >
       </transition-group>
+    </div>
       <div
         class="swipe absolute"
         data-aos="fade-up"
@@ -118,12 +121,13 @@
 
 .section9 {
   width: size(1920);
-  height: size(971);
   height: 100vh;
-  min-height: 900px;
+  min-height:size(900);
+  max-height:size(1080);
   background-size: cover;
   background-attachment: fixed;
   overflow: hidden;
+  .bg{width:1556px;height: 100%;max-width:90%;position: relative;margin: auto;}
 }
 
 .bg-img {
@@ -141,10 +145,22 @@
   }
 }
 
+.txt {
+  width:calc(100% - 56vw);
+  top:12%;
+  height: 76%;
+  right: size(0);
+  font-stretch: normal;
+  font-style: normal;
+  text-align: justify;
+  font-size: size(16);
+}
 .tab-groups {
-  width: size(152 * 3 + 28);
+  width:100%;
   top: size(118);
   right: size(178);
+  display: flex;
+  justify-content:space-between;
 
   .tab {
     width: size(152.8);
@@ -152,6 +168,8 @@
     border: solid 2px #c9ac94;
     padding-top: size(5);
     cursor: pointer;
+    text-align: center;
+    transition: all 0.3s;
 
     &:hover,
     &:active {
@@ -209,19 +227,17 @@
 }
 
 .tab-img {
-  width: size(500);
-  top: size(207);
-  right: size(178);
+  width:100%;
+  bottom: 0;
+  right:0;
 }
 
 /* Swipe */
 .swipe {
   width: size(1030);
-  top: size(117);
-  left: size(179);
-  height: size(674);
-  min-height: size(674);
-  object-fit: cover;
+  height: 76%;
+  top:12%;
+  left: size(0);
 }
 
 // begin
@@ -275,21 +291,13 @@
   z-index: 0;
 
   img {
-    width: 100%;
+    width: 100%;height: 100%;object-fit: cover;
   }
 
-  .name {
-    right: 20px;
-    bottom: 20px;
-    font-size: size(14.8);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.35;
-    letter-spacing: size(0.89);
-    text-align: center;
-    color: #ffffff;
-  }
+  .name{bottom:size(20);right:size(20);
+    line-height: 1.35;font-size: size(14.8);
+    letter-spacing:0.06em;
+    color: #ffffff;}
 
   // &:nth-child(1) {
   //   z-index: 1;
@@ -396,17 +404,20 @@
   .section9 {
     width: 100vw;
     height: sizem(245 + 566);
-    min-height: auto;
-    // background-image: url('./s2/bg.jpg');
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
-    overflow: hidden;
+  min-height:sizem(0);
+  max-height:sizem(900);
+    .bg{width:100%;max-width:100%;}
   }
 
+.txt {
+  width: sizem(310);
+  top:sizem(271.5);
+  right: sizem(33);
+  font-size: sizem(15);
+}
   .tab-groups {
     width: sizem(95 * 3 + 26);
-    top: sizem(245 + 26);
+    top: sizem(500);
     right: sizem(32);
 
     .tab {
@@ -472,9 +483,9 @@
   }
 
   .tab-img {
-    width: sizem(310);
-    top: sizem(245 + 81);
-    right: sizem(32);
+    width: sizem(330);
+    top: sizem(81);
+    right: sizem(-10);
   }
 
   /* Swipe */

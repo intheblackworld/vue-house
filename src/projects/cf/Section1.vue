@@ -265,7 +265,8 @@
     width: 100vw;
     min-height: auto;
     height: calc(100vh - 63px);
-    // background-image: url('./mo/1/bg.png');
+  min-height:sizem(600);
+  max-height:sizem(812);
     background-color: #D2C5B8;
     background-size: cover;
     background-attachment: scroll;

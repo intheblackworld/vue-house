@@ -354,7 +354,7 @@ export default {
   padding-top: 130px;
   background-size: 100vw auto;
   background-attachment: fixed;
-  background-position: 0% 0%;
+  background-position: 80% 0%;
   font-family: $family3;
   input,
   textarea,

@@ -133,12 +133,12 @@
 .desc {
   font-weight: 500;
   line-height:1.8;
-  letter-spacing: size(1.12);
+  letter-spacing:0.07em;
   position: relative;
   color: #333333;z-index: 2;text-shadow: 0 0 size(5) #fff;
 }
 .desc2 {margin: 1em 0 1em 1.5em;list-style: square;
-  li{margin: 0.5em 0;list-style: inherit;}
+  li{margin: 0.4em 0;list-style: inherit;}
 }
 
 .park {
@@ -170,12 +170,10 @@
 
 @media screen and (max-width: 767px) {
   .section3 {
-    width: 100vw;
-    min-height: auto;
     height: sizem(872);
-    // background-image: url('./mo/1/bg.png');
-    background-size: cover;
-    background-attachment: scroll;
+  min-height:sizem(0);
+  max-height:sizem(900);
+    .bg{width:100%;max-width:100%;}
   }
 
   .back {
@@ -184,8 +182,10 @@
 
   .img {
     width: 100vw;
+    height: auto;
     top: 0;
     left: 0;
+  .name{bottom:1em;right:1em;font-size: sizem(12);}
   }
 
   .fly2 {
@@ -194,68 +194,37 @@
     right: sizem(8);
   }
 
+.txt {
+  width: sizem(310);
+  top:sizem(271.5);
+  right: sizem(33);
+  font-size: sizem(15);
+}
+
   .title {
-    width: sizem(233);
-    top: sizem(271);
-    right: sizem(109);
     font-size: sizem(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.44;
-    letter-spacing: sizem(1);
-    text-align: left;
-    color: #333333;
-    white-space: nowrap;
+    letter-spacing:0.04em;
   }
 
   .hr {
-    width: sizem(310);
+    width:100%;
     height: 1px;
-    top: sizem(366);
-    right: sizem(32);
-    background-color: #27a8a8;
+    margin: sizem(23) 0 ;
   }
 
   .desc {
-    width: sizem(310);
-    top: sizem(390);
-    right: sizem(32);
-    font-size: sizem(15);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 2.2;
-    letter-spacing: sizem(0.95);
-    text-align: left;
-    color: #333333;
+  letter-spacing:0.03em;
   }
 
-  .desc2 {
-    width: sizem(310);
-    top: sizem(652);
-    right: sizem(32.3);
-    font-size: sizem(15);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.13;
-    letter-spacing: sizem(1.05);
-    text-align: left;
-    color: #333333;
-  }
 
   .park {
     bottom: sizem(0);
-    right: sizem(187);
+    left: sizem(23);
     font-size: sizem(70);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.69;
+    line-height: 1.69;right: auto;
     letter-spacing: sizem(-5.6);
-    text-align: right;
-    color: #27a8a8;
   }
 }
 </style>

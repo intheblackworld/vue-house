@@ -149,7 +149,9 @@
     width: 100vw;
     min-height: auto;
     height: sizem(799);
-    // background-image: url('./mo/1/bg.png');
+  min-height:sizem(0);
+  max-height:sizem(900);
+  background-color: #2f99f1;
     background-size: cover;
     background-attachment: scroll;
   }
@@ -211,6 +213,7 @@
     color: #333333;
     z-index: 5;
   }
+  .map{margin: sizem(195) 0 0 0;}
 }
 </style>
 <script>

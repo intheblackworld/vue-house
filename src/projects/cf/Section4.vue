@@ -44,6 +44,13 @@
       </div>
     </div>
       <div
+        class="shopping absolute"
+        data-aos="fade-left"
+        data-aos-delay="1000" v-if="isMobile"
+      >
+        SHOPPING
+      </div>
+      <div
         class="swipe absolute"
         data-aos="fade-up"
         data-aos-delay="200"
@@ -66,7 +73,7 @@
       <div
         class="shopping absolute"
         data-aos="fade-left"
-        data-aos-delay="1000"
+        data-aos-delay="1000" v-if="!isMobile"
       >
         SHOPPING
       </div>
@@ -373,12 +380,9 @@
   .section4 {
     width: 100vw;
     height: sizem(614 + 245);
-    min-height: auto;
-    // background-image: url('./s2/bg.jpg');
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
-    overflow: hidden;
+  min-height:sizem(0);
+  max-height:sizem(900);
+    .bg{width:100%;max-width:100%;}
   }
 
   .fly1 {
@@ -388,80 +392,43 @@
     right: sizem(28);
   }
 
+.txt {
+  width: sizem(310);
+  top:sizem(271.5);
+  left: sizem(33);
+  font-size: sizem(15);
+}
   .title {
-    width: sizem(233);
-    top: sizem(271);
-    right: sizem(109);
     font-size: sizem(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.44;
-    letter-spacing: sizem(1);
-    text-align: left;
-    color: #333333;
-    white-space: nowrap;
+    letter-spacing:0.04em;
   }
 
   .hr {
-    width: sizem(310);
+    width:100%;
     height: 1px;
-    top: sizem(366);
-    right: sizem(32);
-    background-color: #004f8f;
+    margin: sizem(23) 0 ;
   }
 
   .desc {
-    width: sizem(310);
-    top: sizem(390);
-    right: sizem(32);
-    font-size: sizem(15);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.8;
-    letter-spacing: sizem(0.95);
-    text-align: left;
-    color: #333333;
-  }
-
-  .desc2 {
-    width: sizem(310);
-    top: sizem(582);
-    right: sizem(32.3);
-    font-size: sizem(15);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.13;
-    letter-spacing: sizem(1.05);
-    text-align: left;
-    color: #333333;
+    line-height:1.8;
+  letter-spacing:0.03em;
   }
 
   .shopping {
-    top: auto;
-    left: auto;
     bottom: sizem(0);
-    right: sizem(40);
+    left: sizem(23);
     font-size: sizem(70);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.69;
     letter-spacing: sizem(-5.6);
-    text-align: right;
-    color: #004f8f;
   }
 
   /* Swipe */
   .swipe {
-    width: sizem(375);
-    height: sizem(245);
-    min-height: sizem(245);
-    top: sizem(0);
-    left: sizem(0);
-    object-fit: cover;
+    width: 100vw;
+    height:sizem(245.5);
+    top: 0;
+    left: 0;
   }
 
   // begin
@@ -517,6 +484,7 @@
     img {
       width: 100%;
     }
+  .name{bottom:1em;right:1em;font-size: sizem(12);}
 
     // &:nth-child(1) {
     //   z-index: 1;

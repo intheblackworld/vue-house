@@ -149,7 +149,7 @@
 .fly1 {
   width: size(90);
   top: size(20);
-  right: size(200);
+  right: size(90);
   img{width: 100%;transform: rotate(10deg);}
 }
 
@@ -386,13 +386,10 @@
 @media screen and (max-width: 767px) {
   .section5 {
     width: 100vw;
-    height: sizem(424 + 245);
-    min-height: auto;
-    // background-image: url('./s2/bg.jpg');
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
-    overflow: hidden;
+    height: sizem(680);
+  min-height:sizem(0);
+  max-height:sizem(900);
+    .bg{width:100%;max-width:100%;}
   }
 
   .fly1,
@@ -401,63 +398,40 @@
   }
 
   .fly3 {
-    width: size(85);
-    top: size(245 + 36);
-    right: size(12.5);
+    width: sizem(85);
+    top: sizem(0);
+    right: sizem(0);
   }
-
+.txt {
+  width: sizem(310);
+  top:sizem(271.5);
+  right: sizem(33);
+  font-size: sizem(15);min-height:initial;
+}
   .title {
-    width: sizem(233);
-    top: sizem(245 + 26);
-    left: sizem(33);
-    right: auto;
     font-size: sizem(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.44;
-    letter-spacing: sizem(1);
-    text-align: left;
-    color: #333333;
-    white-space: nowrap;
+    letter-spacing:0.04em;
   }
 
   .hr {
-    width: sizem(310);
+    width:100%;
     height: 1px;
-    top: sizem(157 + 245);
-    right: sizem(32);
-    background-color: #004f8f;
+    margin: sizem(23) 0 ;
   }
 
   .desc {
-    width: sizem(310);
-    top: sizem(181 + 245);
-    right: sizem(32);
-    font-size: sizem(15);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.7;
-    letter-spacing: sizem(0.95);
-    text-align: left;
-    color: #333333;
+  letter-spacing:0.03em;
   }
 
 
   .life {
-    top: auto;
-    right: auto;
-    bottom: sizem(0);
-    left: sizem(28);
+    bottom: sizem(-80);
+    left: sizem(0);
     font-size: sizem(70);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.69;
     letter-spacing: sizem(-5.6);
-    text-align: right;
-    color: #4b809d;
   }
 
   /* Swipe */
@@ -523,6 +497,7 @@
     img {
       width: 100%;
     }
+  .name{bottom:1em;right:1em;font-size: sizem(12);}
 
     // &:nth-child(1) {
     //   z-index: 1;

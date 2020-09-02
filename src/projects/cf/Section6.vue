@@ -153,24 +153,29 @@
       }
     }
   }*/
+  &.light {
+    .txt {filter: drop-shadow(0em 0.2em 0.3em #0586);}
+  }
 }
 
 .txt {
   width: size(649);
   top: size(181);
-  left:50%;
+  left:56.7%;
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
   font-size: size(16);
   z-index: 2;
+  filter: drop-shadow(0em 0.2em 0.3em #040e2766);
+  transition: all 0.3s;
 }
 
 .title {
   font-size: size(51);
   font-weight: bold;
   line-height: 1.43;
-  letter-spacing: 1.03px;
+  letter-spacing:0.02em;
   color: #ffffff;
   white-space: nowrap;
 }
@@ -184,14 +189,12 @@
 }
 
 .desc {
-  top: size(426);
-  right: size(178);
   font-size: size(16);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 2;
-  letter-spacing: size(1.76);
+  letter-spacing:0.11em;
   text-align: justify;
   color: #ffffff;
   transition: all 0.3s;
@@ -206,19 +209,16 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(2.72);
+  letter-spacing:0.038em;
   text-align: left;
   color: #ffffff;
-  text-shadow: 0 0 2px #333;
   transition: all 0.3s;
   z-index: 2;
+  white-space: nowrap;
 }
 
 .btn-group {
-  width: size(390);
-  top: size(685);
-  right: size(178);
-  z-index: 2;
+  z-index: 2;justify-content:flex-end;
 
   .btn {
     width: size(190);
@@ -231,11 +231,11 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.69;
-    letter-spacing: size(2.3);
+    letter-spacing:0.1em;
     text-align: center;
     color: #fff;
     transition: all 0.3s;
-
+    margin: size(40) 0 0 1em;
     &:hover {
       background-color: #fff;
       border-color: #fff;
@@ -427,115 +427,56 @@
 @media screen and (max-width: 767px) {
   .section6 {
     width: 100vw;
-    height: sizem(750);
-    min-height: auto;
-    // background-image: url('./s2/bg.jpg');
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
-    overflow: hidden;
+    height: calc(100vh - 63px);
+  min-height:sizem(700);
+  max-height:sizem(812);
+    .bg{width:100%;max-width:100%;}
   }
+  .txt {
+  width: sizem(310);
+  top:sizem(30);
+  right: sizem(33);left: auto;
+  font-size: sizem(15);
+    z-index: 2;
+}
 
   .title {
-    width: sizem(210);
-    top: sizem(16);
-    left: sizem(35);
-    right: auto;
     font-size: sizem(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.44;
-    letter-spacing: sizem(0.5);
-    text-align: left;
-    color: #ffffff;
-    z-index: 2;
-    transition: all 0.3s;
-    white-space: nowrap;
   }
 
   .hr {
-    width: sizem(310);
-    height: 2px;
-    top: sizem(105);
-    right: sizem(30.5);
-    background-color: #fff;
-    z-index: 2;
-    transition: all 0.3s;
-/*
-    &.light {
-      background-color: #333;
-    }
-    */
+    height:sizem(2);
   }
 
   .desc {
-    width: sizem(310);
-    top: sizem(121);
-    right: sizem(30);
     font-size: sizem(15);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2;
-    letter-spacing: sizem(1.65);
-    text-align: left;
-    color: #ffffff;
-    transition: all 0.3s;
-    z-index: 2;
+  letter-spacing:0.05em;
   }
 
   .art {
-    top: sizem(334);
-    right: sizem(26);
     font-size: sizem(35.2);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(0.72);
-    text-align: left;
-    color: #ffffff;
-    text-shadow: 0 0 2px #333;
-    transition: all 0.3s;
-    z-index: 2;
   }
 
-  .btn-group {
-    width: sizem(303 + 8);
+  .btn-group { 
+   /*
+   width: sizem(303 + 8);
     top: sizem(396);
     right: sizem(33);
-    z-index: 6;
+    z-index: 6; */
 
     .btn {
       width: sizem(151);
       height: sizem(35);
-      border: solid 2px #fff;
-      border-radius: 20px / 20px;
-      cursor: pointer;
       font-size: sizem(16);
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.69;
-      letter-spacing: sizem(1.76);
-      text-align: center;
-      color: #fff;
-      transition: all 0.3s;
-
-      &:hover {
-        background-color: #fff;
-        border-color: #fff;
-        color: #af8680;
-      }
+      letter-spacing:0.1em;
     }
   }
 
   /* Swipe */
   .swipe {
-    width: sizem(375);
-    height: sizem(750);
-    min-height: sizem(750);
+    width:100%;
+    //height: sizem(750);
+   // min-height: sizem(750);
     top: sizem(0);
     left: sizem(0);
     object-fit: cover;
@@ -588,12 +529,11 @@
 
   .swipe-item {
     width: 100%;
-    height: 100%;
-    z-index: 0;
+    z-index: 0;height: sizem(750);bottom: 0;left: 0;
 
     img {
       width: 100%;
-      height: sizem(750);
+      height: sizem(750);bottom: 0;left: 0;
     }
 
     // &:nth-child(1) {
