@@ -460,6 +460,8 @@
 
   .art {
     font-size: sizem(35.2);
+    text-align: center;
+    letter-spacing:-0.01em;
   }
 
   .btn-group {
@@ -469,12 +471,15 @@
     right: sizem(33);
     z-index: 6; */
     z-index: 4;
+    justify-content:space-between;
+    margin-top:0.6em;
 
     .btn {
-      width: sizem(151);
+      width: sizem(150);
       height: sizem(35);
       font-size: sizem(16);
       letter-spacing: 0.1em;
+    margin:0;
     }
   }
 
