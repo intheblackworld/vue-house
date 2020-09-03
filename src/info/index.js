@@ -7,7 +7,7 @@ export default {
   phone: '0900-799-888',
   fbLink: 'https://www.facebook.com/IlanCSdeveloper/',
   fbMessage: 'https://m.me/IlanCSdeveloper',
-  caseName: '春福采采',
+  caseName: '朗朗城心',
   indigatorLength: 10,
 
   houseInfos: [
