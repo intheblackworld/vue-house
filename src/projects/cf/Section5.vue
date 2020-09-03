@@ -47,7 +47,7 @@
           data-aos-delay="800"
         >
           <li>復興國小、永仁完全中學、成功大學 完整學區</li>
-          <li>高雄榮總台南分院、大型連鎖採買商家完整齊全</li>
+          <li>高雄榮總台南分院、大型連鎖商家完整齊全</li>
           <li>完整交通：大灣交流道、國道1號、未來更接軌捷運</li>
         </ul>
       <div
@@ -421,13 +421,13 @@
   }
 
   .desc {
-    line-height: 1.7;
-  letter-spacing:0.03em;
+    line-height: 1.7;text-align: left;
+  letter-spacing:-0.035em;margin: 1em 0 1em 1.1em;
   }
 
 
   .life {
-    bottom: sizem(-80);
+    bottom: sizem(-100);
     left: sizem(0);
     font-size: sizem(70);
     line-height: 1.69;

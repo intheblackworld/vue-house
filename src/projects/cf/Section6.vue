@@ -172,6 +172,7 @@
   z-index: 2;
   filter: drop-shadow(0em 0.2em 0.3em #040e2766);
   transition: all 0.3s;
+  color: #ffffff;
 }
 
 .title {
@@ -179,7 +180,6 @@
   font-weight: bold;
   line-height: 1.43;
   letter-spacing: 0.02em;
-  color: #ffffff;
   white-space: nowrap;
 }
 
@@ -188,7 +188,7 @@
   height: size(2);
   min-height: 1px;
   margin: size(40) 0;
-  background-color: #fff;
+  background-color: currentColor;
 }
 
 .desc {
@@ -199,7 +199,6 @@
   line-height: 2;
   letter-spacing: 0.11em;
   text-align: justify;
-  color: #ffffff;
   transition: all 0.3s;
   z-index: 2;
 }
@@ -214,7 +213,6 @@
   line-height: 1.2;
   letter-spacing: 0.038em;
   text-align: left;
-  color: #ffffff;
   transition: all 0.3s;
   z-index: 2;
   white-space: nowrap;
@@ -227,7 +225,7 @@
   .btn {
     width: size(190);
     height: size(43);
-    border: solid 2px #fff;
+    border: solid 2px currentColor;
     border-radius: 20px / 20px;
     cursor: pointer;
     font-size: size(21);
@@ -237,13 +235,12 @@
     line-height: 1.69;
     letter-spacing: 0.1em;
     text-align: center;
-    color: #fff;
     transition: all 0.3s;
     margin: size(40) 0 0 1em;
     &:hover {
-      background-color: #fff;
+      background-color: #af8680;
       border-color: #fff;
-      color: #af8680;
+      color: #fff;
     }
   }
 }

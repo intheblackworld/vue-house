@@ -244,6 +244,7 @@
   padding: 0 0.5em 0 0;
   border-right: 2px solid #d6aa99;
   margin: 0 0.5em 0 0;
+  white-space: nowrap;
 }
 
 .text {

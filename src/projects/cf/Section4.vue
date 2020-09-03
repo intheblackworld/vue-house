@@ -414,6 +414,7 @@
     line-height:1.8;
   letter-spacing:0.03em;
   }
+  .desc2 {margin: 1em 0 1em 1.2em;letter-spacing:-0.01em;}
 
   .shopping {
     bottom: sizem(0);

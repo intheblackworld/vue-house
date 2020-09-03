@@ -233,7 +233,7 @@
               </div>
             </li>
             <li class="flex-at wrap">
-              <span class="label">商業空間</span>
+              <span class="label t2">商業空間</span>
               <div class="content">
                 竹北 泰式風味餐廳<br />
                 羅東 泰式SPA按摩生活館<br />
@@ -372,7 +372,7 @@
     display: inline-block;
     margin-right: 10px;
   }
-  .t2{font-size: 1.25em;margin: 0.5em 0;}
+  .t2{font-size: 1.3em;margin: 0.5em 0;}
 }
 
 .art {
@@ -675,6 +675,7 @@
       background-color: #fff;
       border-radius: 15px;
       padding: sizem(15) sizem(15);
+      overflow:auto;
     }
 
     .dialog-title {
@@ -682,7 +683,7 @@
       font-weight: bold;
       font-stretch: normal;
       font-style: normal;
-      line-height: 3.98;
+      line-height: 1.8;
       letter-spacing: sizem(0.52);
       text-align: left;
       color: #000000;
@@ -694,7 +695,7 @@
       font-weight: 500;
       font-stretch: normal;
       font-style: normal;
-      line-height: 1;
+      line-height: 1.5;
       letter-spacing: sizem(1.5);
       text-align: left;
       color: #000;
@@ -709,6 +710,7 @@
         width: 100%;
         margin-right: 10px;
       }
+  .t2{font-size: 1.3em;margin: 0.5em 0;}
     }
   }
 

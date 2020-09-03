@@ -13,16 +13,16 @@
 .section92 {
   width: size(1920);
   height: 100vh;
-  min-height: 900px;
+  min-height: size(800);
+  max-height: size(1040);
   background-size: cover;
   background-attachment: fixed;
   overflow: hidden;
 }
 
 .bg-img {
-  width: 100vw;
-  height: 100vh;
-  min-height: size(900);
+  width: 100%;
+  height: 100%;
   position: absolute;
   display: block;
   top: 0;
@@ -287,12 +287,9 @@
   .section92 {
     width: 100vw;
     height: sizem(743);
-    min-height: auto;
-    // background-image: url('./s2/bg.jpg');
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
-    overflow: hidden;
+  min-height:sizem(0);
+  max-height:sizem(900);
+    .bg{width:100%;max-width:100%;}
   }
 
   .bg-img {

@@ -127,7 +127,7 @@
   font-style: normal;
   line-height: 2.25;
   letter-spacing: size(0.8);
-  text-align: left;
+  text-align: justify;
   color: #333333;
 }
 
