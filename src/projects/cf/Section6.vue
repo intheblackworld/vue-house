@@ -84,7 +84,7 @@
             >
               <img
                 :src="slide.img"
-                alt=""
+                :alt="slide.name"
               >
               <div
                 class="name absolute"
@@ -156,7 +156,7 @@
   }*/
   &.light {
     .txt {
-      filter: drop-shadow(0em 0.2em 0.3em #0586);
+      filter: drop-shadow(0em 0.2em 0.3em #058c);
     }
   }
 }
@@ -164,7 +164,7 @@
 .txt {
   width: size(649);
   top: size(181);
-  left: 56.7%;
+  left: 56%;
   font-stretch: normal;
   font-style: normal;
   text-align: justify;

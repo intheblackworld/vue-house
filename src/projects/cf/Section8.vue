@@ -105,7 +105,7 @@
             >
               <img
                 :src="slide.img"
-                alt=""
+                :alt="slide.subtitle"
               >
               <div
                 class="name absolute"

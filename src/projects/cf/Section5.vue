@@ -82,7 +82,7 @@
             >
               <img
                 :src="slide.img"
-                alt=""
+                :alt="slide.name"
               >
               <div
                 class="name absolute"

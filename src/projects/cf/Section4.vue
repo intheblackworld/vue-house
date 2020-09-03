@@ -94,7 +94,7 @@
             >
               <img
                 :src="slide.img"
-                alt=""
+                :alt="slide.name"
               >
               <div
                 class="name absolute"
@@ -595,7 +595,7 @@ export default {
       slideList: [
         {
           img: require('./s4/1南紡夢時代.jpg'),
-          name: '南紡夢時代',
+          name: '南紡購物中心',
         },
         {
           img: require('./s4/2國賓影城.jpg'),

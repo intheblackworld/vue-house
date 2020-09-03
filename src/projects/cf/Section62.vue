@@ -1,7 +1,7 @@
 <template>
   <div>
     <div :class="`section62 ${slideList[slideIndex].mode}`">
-      <div
+     <!-- <div
         class="pagination absolute flex-ac"
         data-aos="fade-up"
         data-aos-delay="200"
@@ -13,7 +13,7 @@
           :key="slide.img + '-dot'"
           @click="goTo(index)"
         ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-      </div>
+      </div> -->
       <div class="txt absolute">
       <h3
         :class="`title`"
@@ -83,7 +83,7 @@
               ></div>
             </div>
           </transition-group>
-          <div
+        <!--  <div
             class="swipe-btns absolute flex-ac flex-jb"
             v-if="isMobile"
           >
@@ -99,7 +99,7 @@
               class="next-btn"
               @click="addIndex"
             >
-          </div>
+          </div>  -->
         </div>
       </div>
     </div>
@@ -149,7 +149,7 @@
 .txt {
   width: size(500);
   top: size(181);
-  left: 61%;
+  left:calc(79% - 13.02vw);
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
