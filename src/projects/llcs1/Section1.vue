@@ -1,14 +1,28 @@
 <template>
   <div>
     <div class="section1">
-      <!-- <img
-        v-if="isPC"
-        src="./s1/bg.png"
+      <img
+        src="./s2/f1.png"
         alt=""
-        class="bg-img"
+        class="flower1 absolute"
+        data-aos="fade-left"
+        data-aos-delay="200"
+      >
+      <img
+        src="./s2/3.png"
+        alt=""
+        class="flower2 absolute"
         data-aos="fade-right"
-        data-aos-delay="0"
-      > -->
+        data-aos-delay="400"
+      >
+      <img
+        src="./s2/4.png"
+        alt=""
+        class="flower3 absolute"
+        data-aos="fade-up"
+        data-aos-delay="600"
+      >
+      
 
 
       <img
@@ -113,6 +127,23 @@
   top: size(712);
   right: size(749);
   cursor: pointer;
+}
+
+.flower1 {
+  width: size(300);
+  top: size(-50);
+  right: size(-120);
+}
+.flower2 {
+  width: size(300);
+  top: size(-60);
+  left: size(-70);
+}
+.flower3 {
+  width: size(130);
+  bottom: size(-50);
+  left: size(0);
+  z-index: 2;
 }
 
 @media only screen and (max-width: 1440px) {
