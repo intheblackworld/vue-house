@@ -1,27 +1,87 @@
 <template>
   <div>
     <div class="section1">
-      <img
-        src="./s2/f1.png"
-        alt=""
+      <div 
         class="flower1 absolute"
         data-aos="fade-left"
-        data-aos-delay="200"
-      >
-      <img
-        src="./s2/3.png"
-        alt=""
-        class="flower2 absolute"
-        data-aos="fade-right"
-        data-aos-delay="400"
-      >
-      <img
-        src="./s2/4.png"
-        alt=""
-        class="flower3 absolute"
-        data-aos="fade-up"
-        data-aos-delay="600"
-      >
+        data-aos-delay="200">
+        <img
+          src="./s2/f1.png"
+          alt="flower"
+        >
+      </div>
+      <div 
+          class="flower2 absolute"
+          data-aos="fade-right"
+          data-aos-delay="400">
+        <img
+          src="./s2/3.png"
+          alt="flower"
+        >
+      </div>
+      <div 
+          class="flower3 absolute"
+          data-aos="fade-up"
+          data-aos-delay="200">
+        <img
+          src="./s2/4.png"
+          alt="flower"
+        >
+      </div>
+      <div 
+          class="flower5 absolute"
+          data-aos="fade-up"
+          data-aos-delay="400">
+        <img
+          src="./s2/4.png"
+          alt="flower"
+        >
+      </div>
+      <div 
+          class="flower4 absolute"
+          data-aos="fade-up"
+          data-aos-delay="300">
+        <img
+          src="./s2/2.png"
+          alt="flower"
+        >
+      </div>
+      <div 
+          class="flower6 absolute"
+          data-aos="fade-up" v-if="!isMobile"
+          data-aos-delay="500">
+        <img
+          src="./s2/f1.png"
+          alt="flower"
+        >
+      </div>
+      <div 
+          class="flower7 absolute"
+          data-aos="fade-up" v-if="!isMobile"
+          data-aos-delay="600">
+        <img
+          src="./s2/f1.png"
+          alt="flower"
+        >
+      </div>
+      <div 
+          class="flower8 absolute"
+          data-aos="fade-up" v-if="!isMobile"
+          data-aos-delay="700">
+        <img
+          src="./s2/3.png"
+          alt="flower"
+        >
+      </div>
+      <div 
+          class="flower9 absolute"
+          data-aos="fade-up" v-if="!isMobile"
+          data-aos-delay="800">
+        <img
+          src="./s2/3.png"
+          alt="flower"
+        >
+      </div>
       
 
 
@@ -68,19 +128,18 @@
 @import '@/assets/style/function.scss';
 
 .section1 {
-  width: size(1920);
+  width:100%;
   height: 100vh;
-  min-height: 1080px;
+  min-height:size(900);
+  max-height:size(1080);
   background-color: #e95314;
-  background-size: cover;
-  background-attachment: fixed;
   overflow: hidden;
+  position: relative;
 }
 
 .bg-img {
   width: size(1920);
-  height: 100vh;
-  min-height: 1080px;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -94,56 +153,97 @@
 
 .logo {
   width: size(1014);
-  top: size(206);
+  top: calc(50% - 20vw);
   right: size(443);
 }
 
 .title {
   width: size(646);
-  top: size(521);
+  top: calc(50% - 3vw);
   right: size(627);
 }
 
 .subtitle {
   width: size(578);
-  top: size(616);
+  top: calc(50% + 2vw);
   right: size(661);
 }
 
 .fly1 {
   width: size(200);
-  top: size(376);
+  top: calc(50% - 10vw);
   right: size(372);
 }
 
 .fly2 {
   width: size(245);
-  top: size(702);
+  bottom: size(105);
   right: size(1245);
 }
 
 .btn {
   width: size(402);
-  top: size(712);
+  top: calc(50% + 7vw);
   right: size(749);
   cursor: pointer;
 }
 
 .flower1 {
   width: size(300);
-  top: size(-50);
-  right: size(-120);
+  top: size(-35);
+  right: size(-40);
+  img{width: 100%;transform: rotate(210deg);}
 }
 .flower2 {
-  width: size(300);
+  width: size(330);
   top: size(-60);
   left: size(-70);
+  img{width: 100%;transform:rotate(100deg)scaleX(-1);}
 }
 .flower3 {
-  width: size(130);
-  bottom: size(-50);
-  left: size(0);
-  z-index: 2;
+  width: size(400);
+  bottom: size(-470);
+  left: size(250);
+  img{width: 100%;transform:rotate(-26deg)scaleX(-1);}
+}
+.flower4 {
+    width: 17vw;
+    bottom: -22vw;
+    left: 42vw;
+  img{width: 100%;transform:rotate(8deg);}
+}
+.flower5 {
+  width: size(400);
+  bottom: size(-470);left: 65.125vw;
+  img{width: 100%;transform:rotate(34deg);}
+}
+
+.flower6 {
+    width: 21vw;
+    bottom: -7vw;
+    left: -7vw;
+  img{width: 100%;transform:rotate(34deg);}
+}
+
+.flower7 {
+    width: 22vw;
+    bottom: -7vw;
+    left: 24.5vw;
+  img{width: 100%;}
+}
+
+.flower8 {
+    width: 22vw;
+    bottom: -8vw;
+    left: 56vw;
+  img{width: 100%;}
+}
+
+.flower9 {
+  width: 22vw;
+    bottom: -5vw;
+    left: 87vw;
+  img{width: 100%;transform:rotate(-23deg);}
 }
 
 @media only screen and (max-width: 1440px) {
@@ -161,13 +261,9 @@
 
 @media screen and (max-width: 767px) {
   .section1 {
-    width: 100vw;
-    min-height: auto;
     height: calc(100vh - 63px);
-    // background-image: url('./mo/1/bg.png');
-    background-color: #D2C5B8;
-    background-size: cover;
-    background-attachment: scroll;
+    min-height:sizem(600);
+    max-height:sizem(820);
   }
 
   .bg-animate {
@@ -175,9 +271,9 @@
   }
 
   .logo {
-    width: sizem(210);
-    top: sizem(114);
-    left: sizem(83);
+    width: sizem(310);
+    top:calc(50% - 40vw);
+    left: sizem(33);
   }
 
   .img-t {
@@ -193,74 +289,82 @@
   }
 
   .title {
-    width: sizem(236);
-    top: sizem(226);
-    right: sizem(70);
-    font-size: sizem(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.8;
-    letter-spacing: sizem(3.75);
-    text-align: center;
-    color: #af8680;
-    white-space: nowrap;
-  }
-
-  .hr {
     width: sizem(310);
-    height: 1px;
-    top: sizem(271);
-    right: sizem(32);
-    background-color: #af8680;
+    top:calc(50% - 13vw);
+    left: sizem(33);
   }
-  .desc {
-    width: sizem(258);
-    top: sizem(282);
-    right: sizem(59);
-    font-size: sizem(14);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.86;
-    letter-spacing: sizem(0.85);
-    text-align: center;
-    color: #595757;
-    white-space: nowrap;
+  .subtitle  {
+    width: sizem(310);
+    top:calc(50% - 0vw);
+    left: sizem(33);
   }
-
-  .btn-group {
-    width: sizem(146.5 * 2 + 17);
-    top: sizem(486);
-    right: sizem(33);
-
-    .btn {
-      width: sizem(146.5);
-      height: sizem(33.7);
-      border: solid 2px #af8680;
-      border-radius: 18px / 18px;
-      cursor: pointer;
-      font-size: sizem(15);
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.6;
-      letter-spacing: sizem(1.65);
-      text-align: center;
-      color: #af8680;
-      transition: all 0.3s;
-
-      &:hover {
-        background-color: #af8680;
-        border-color: #af8680;
-        color: #fff;
-      }
-    }
+  .btn  {
+    width: sizem(310);
+    top:calc(50% + 19vw);
+    left: sizem(33);
   }
 
   .fly1 {
     display: none;
   }
+.flower1 {
+  width: sizem(200);
+  top: sizem(-35);
+  right: sizem(-40);z-index: 2;
+}
+.flower2 {
+  width: sizem(200);
+  top: sizem(-60);
+  left: sizem(-70);
+  img{width: 100%;transform:rotate(0deg)scaleX(-1);z-index: 2;}
+}
+.flower3 {
+  width: sizem(180);
+  top: sizem(-230);
+  bottom: auto;
+  left: sizem(120);z-index: 1;
+  img{width: 100%;transform:rotate(180deg)scaleX(-1);}
+}
+.flower4 {
+    width: 42vw;
+    bottom: -53vw;
+    left: 40vw;
+  img{width: 100%;transform:rotate(8deg);}
+}
+.flower5 {
+    width: 46vw;
+    bottom: -52vw;
+    left: 3vw;
+  img{width: 100%;transform:rotate(34deg);}
+}
+
+.flower6 {
+    width: 46vw;
+    bottom: -7vw;
+    left: -17vw;
+  img{width: 100%;transform:rotate(34deg);}
+}
+
+.flower7 {
+    width: 22vw;
+    bottom: -7vw;
+    left: 24.5vw;
+  img{width: 100%;}
+}
+
+.flower8 {
+    width: 22vw;
+    bottom: -8vw;
+    left: 56vw;
+  img{width: 100%;}
+}
+
+.flower9 {
+  width: 22vw;
+    bottom: -5vw;
+    left: 87vw;
+  img{width: 100%;transform:rotate(-23deg);}
+}
 }
 </style>
 <script>

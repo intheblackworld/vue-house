@@ -1,13 +1,18 @@
 <template>
   <div>
     <div class="section6">
-      <img
-        src="./s1/butterfly2.gif"
-        alt=""
-        class="fly1 absolute"
-        data-aos="fade-right"
-        data-aos-delay="1000"
-      >
+      <img src="./s4/bg2.png" alt="" class="img absolute" data-aos="zoom-in"
+        data-aos-delay="200">
+        
+      <div 
+          class="fly1 absolute"
+          data-aos="fade-right"
+          data-aos-delay="1000">
+        <img
+          src="./s1/butterfly2.gif"
+          alt="butterfly"
+        >
+      </div>
       <img
         src="./s1/butterfly1.gif"
         alt=""
@@ -15,14 +20,33 @@
         data-aos="fade-left"
         data-aos-delay="1000"
       >
-      <img src="./s2/3.png" alt="" class="flower1 absolute" data-aos="fade-left"
-        data-aos-delay="400">
-      <img src="./s2/f1.png" alt="" class="flower2 absolute" data-aos="fade-right"
-        data-aos-delay="600">
-      <img src="./s2/2.png" alt="" class="flower3 absolute" data-aos="fade-left"
-        data-aos-delay="800">
-      <img src="./s4/bg2.png" alt="" class="img absolute" data-aos="zoom-in"
+      <div 
+        class="flower1 absolute"
+        data-aos="fade-left"
         data-aos-delay="200">
+        <img
+          src="./s2/3.png"
+          alt="flower"
+        >
+      </div>
+      <div 
+          class="flower2 absolute"
+          data-aos="fade-right"
+          data-aos-delay="400">
+        <img
+          src="./s2/f1.png"
+          alt="flower"
+        >
+      </div>
+      <div 
+          class="flower3 absolute"
+          data-aos="fade-up"
+          data-aos-delay="200">
+        <img
+          src="./s2/2.png"
+          alt="flower"
+        >
+      </div>
       <h3
         class="title absolute"
         data-aos="fade-right"
@@ -146,8 +170,10 @@
 
 .fly1 {
   width: size(160);
-  bottom: size(161);
-  right: size(96);
+  bottom: size(70);
+  right: size(200);
+  z-index: 2;
+  img{width: 100%;transform:rotate(-30deg);}
 }
 
 .fly2 {
@@ -157,21 +183,24 @@
 }
 
 .flower1 {
-  width: size(200);
-  top: size(-100);
-  right: size(0);
+  width: size(340);
+  top: size(-80);
+  right: size(-100);
+  img{width: 100%;transform:rotate(95deg)scaleX(1);}
 }
 
 .flower2 {
-  width: size(344);
-  bottom: size(0);
-  right: size(418);
+  width: size(290);
+  top: size(0);
+  right: size(430);
+  img{width: 100%;transform:rotate(90deg)scaleX(-1);}
 }
 
 .flower3 {
-  width: size(158);
-  bottom: size(-100);
-  right: size(0);
+  width: size(250);
+  bottom: size(-170);
+  right: size(-100);
+  img{width: 100%;transform:rotate(-70deg)scaleX(-1);}
 }
 
 .img {
@@ -194,7 +223,7 @@
   color: #534136;
   white-space: nowrap;
   h3 {
-    font-size: size(36);
+    font-size: size(35);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
@@ -407,7 +436,8 @@
   .section6 {
     width: 100vw;
     height: sizem(424 + 245);
-    min-height: auto;
+    min-height:sizem(600);
+    max-height:sizem(820);
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
     // background-position: 0 0;
