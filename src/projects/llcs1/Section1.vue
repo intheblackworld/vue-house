@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="section1">
-      <div class="ovh absolute">
+    <div class="ovh absolute">
       <div 
         class="flower1 absolute"
         data-aos="fade-left"
@@ -48,15 +48,6 @@
         >
       </div>
       <div 
-          class="flower6 absolute"
-          data-aos="fade-up" v-if="!isMobile"
-          data-aos-delay="500">
-        <img
-          src="./s2/f1.png"
-          alt="flower"
-        >
-      </div>
-      <div 
           class="flower7 absolute"
           data-aos="fade-up" v-if="!isMobile"
           data-aos-delay="600">
@@ -74,17 +65,25 @@
           alt="flower"
         >
       </div>
+    </div>
+      <div 
+          class="flower6 absolute"
+          data-aos="fade-up"
+          data-aos-delay="500">
+        <img
+          src="./s2/f1.png"
+          alt="flower"
+        >
+      </div>
       <div 
           class="flower9 absolute"
-          data-aos="fade-up" v-if="!isMobile"
+          data-aos="fade-up"
           data-aos-delay="800">
         <img
           src="./s2/3.png"
           alt="flower"
         >
       </div>
-      
-</div>
 
       <img
         src="./s1/logo.png"
@@ -310,6 +309,11 @@
   .fly1 {
     display: none;
   }
+.fly2 {
+  width: sizem(90);
+  bottom: sizem(50);
+  right: sizem(140);
+}
 .flower1 {
   width: sizem(200);
   top: sizem(-35);
@@ -347,26 +351,11 @@
     left: -17vw;
   img{width: 100%;transform:rotate(34deg);}
 }
-
-.flower7 {
-    width: 22vw;
-    bottom: -7vw;
-    left: 24.5vw;
-  img{width: 100%;}
-}
-
-.flower8 {
-    width: 22vw;
-    bottom: -8vw;
-    left: 56vw;
-  img{width: 100%;}
-}
-
 .flower9 {
-  width: 22vw;
-    bottom: -5vw;
-    left: 87vw;
-  img{width: 100%;transform:rotate(-23deg);}
+    width: 55vw;
+    bottom: -9vw;
+    right: -24vw;left: auto;
+  img{width: 100%;transform:rotate(-40deg);}
 }
 }
 </style>
