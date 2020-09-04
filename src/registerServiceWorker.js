@@ -11,6 +11,10 @@ if (process.env.NODE_ENV === 'production') {
       )
     },
     registered () {
+      caches.keys().then(function (names) {
+        for (let name of names)
+          caches.delete(name)
+      })
       console.log('Service worker has been registered.')
     },
     cached () {
