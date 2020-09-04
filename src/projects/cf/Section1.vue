@@ -88,17 +88,15 @@
         data-aos="zoom-in"
         data-aos-delay="900"
       >
-        <router-link
-          to="/"
-          tag="div"
+        <a
+          href="http://cf.h35.tw/"
           class="btn flex-c"
         >精品大樓
-        </router-link>
-        <router-link
-          to="/villa"
-          tag="div"
+        </a>
+        <a
+          href="http://cf.h35.tw/villa"
           class="btn flex-c"
-        >透天別墅宅</router-link>
+        >透天別墅宅</a>
       </div>
 
       <img
@@ -231,6 +229,7 @@
     letter-spacing: size(2.3);
     text-align: center;
     color: #af8680;
+    text-decoration: none;
     transition: all 0.3s;
 
     &:hover {
