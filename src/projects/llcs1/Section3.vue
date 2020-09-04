@@ -48,7 +48,7 @@
         class="title absolute"
         data-aos="fade-right"
         data-aos-delay="400"
-      >交通新軸心</h3>
+      >國門新都心 用心造城心</h3>
       <h3
         class="subtitle absolute"
         data-aos="fade-right"
@@ -298,9 +298,9 @@
   }
 
   .hr {
-    width: sizem(225);
+    width: sizem(320);
     top: sizem(80);
-    left: sizem(75);
+    left: sizem(27);
   }
 
   .balls {
@@ -314,9 +314,9 @@ img + img{top:size(350);}
 }
 
   .title {
-    width: sizem(135);
+    width: sizem(310);
     top: sizem(-250);
-    left: sizem(121);
+    left: sizem(33);
     font-size: sizem(25);
     font-weight: bold;
     font-stretch: normal;

@@ -235,11 +235,12 @@
   width: size(670);
   top: size(0);
   right: size(0);
+  height: 100%;object-fit: cover;
 }
 
 .title {
   width: size(620);
-  top: size(335);
+  top: calc(50% - ((540 - 335) / 1920) * 100vw);
   right: size(25);
   font-size: size(55);
   font-weight: bold;
@@ -264,13 +265,13 @@
 
 .hr {
   width: size(446);
-  top: size(493);
+  top: calc(50% - ((540 - 493) / 1920) * 100vw);
   right: size(111);
 }
 
 .desc {
   width: size(402);
-  top: size(527);
+  top: calc(50% - ((540 - 527) / 1920) * 100vw);
   right: size(133);
   font-size: size(28);
   font-weight: normal;
@@ -287,9 +288,7 @@
   width: size(1250);
   top: size(0);
   left: size(0);
-  height: size(1080);
-  min-height: size(1080);
-  object-fit: cover;
+  height: 100%;object-fit: cover;
 }
 
 // begin
@@ -344,6 +343,7 @@
 
   img {
     width: 100%;
+  height: 100%;object-fit: cover;
   }
 
   .name {
