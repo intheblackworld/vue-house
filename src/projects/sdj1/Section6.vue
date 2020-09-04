@@ -164,6 +164,7 @@
   bottom: 0.45em;
   letter-spacing: 0.24em;
   display: inline-block;
+  width: 90%;
   &::after {
     content: '';
     position: absolute;

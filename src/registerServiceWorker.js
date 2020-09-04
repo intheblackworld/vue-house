@@ -3,6 +3,7 @@
 import { register, unregister } from 'register-service-worker'
 
 if (process.env.NODE_ENV === 'production') {
+  console.log('new')
   unregister(`${process.env.BASE_URL}service-worker.js`, {
     ready () {
       console.log(
