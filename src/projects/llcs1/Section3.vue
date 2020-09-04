@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="section3">
     <div class="section3-1">
       <div class="bg-block absolute"></div>
       <h3 class="big-title absolute">朗朗城心 六大價值</h3>
@@ -15,11 +15,20 @@
         alt=""
         class="img"
       >
-      <img
+      <div 
+        class="balls absolute">
+        <img src="./s3/i1.png" alt="" >
+        <img src="./s3/i2.png" alt="" ><br v-if="isMobile">
+        <img src="./s3/i3.png" alt="" ><br v-if="!isMobile">
+        <img src="./s3/i4.png" alt="" ><br v-if="isMobile">
+        <img src="./s3/i5.png" alt="" >
+        <img src="./s3/i6.png" alt="" >
+      </div>
+     <!--  <img
         src="./s3/資產 214.png"
         alt=""
         class="balls absolute"
-      >
+      > -->
     </div>
     <div
       class="section3-2"
@@ -101,6 +110,9 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
+.section3 {
+  background-color: #068cce;
+}
 .section3-2,
 .section3-1 {
   width:100%;
@@ -163,6 +175,11 @@
   height:calc(100% - 16vw);
   top: size(250);
   left:50%;transform: translateX(-50%);
+  white-space: nowrap;
+  img{height: 50%;
+  &:nth-child(3){margin-right:size(350);}
+  &:nth-child(4){margin-left:size(350);}
+  }
 }
 
 .title {
@@ -229,14 +246,16 @@
 
 @media screen and (max-width: 767px) {
   .section3-1 {
-    height: sizem(623);
+    height: sizem(850);
     min-height:sizem(600);
-    max-height:sizem(820);
+    max-height:sizem(1000);
   }
   .section3-2 {
     width: 100vw;
     min-height: auto;
     height: sizem(730);
+    min-height:sizem(600);
+    max-height:sizem(820);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -286,10 +305,14 @@
   }
 
   .balls {
-    width: sizem(311);
+    width: sizem(311);height:auto;
     top: sizem(100);
-    left: sizem(34);
-  }
+    img{width: 50%;height: auto;position: relative;
+  &:nth-child(3),
+  &:nth-child(4){margin:0;}
+}
+img + img{top:size(350);}
+}
 
   .title {
     width: sizem(135);

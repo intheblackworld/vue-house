@@ -8,6 +8,8 @@
         data-aos="zoom-in"
         data-aos-delay="200"
       >
+      
+     <div v-if="!isMobile">
       <div 
           class="fly1 absolute"
           data-aos="fade-right"
@@ -48,6 +50,46 @@
           alt="flower"
         > -->
       </div>
+    </div>
+     <div v-if="isMobile" class="f">
+      <div 
+          class="fly1 absolute"
+          data-aos="fade-right"
+          data-aos-delay="1000">
+        <img
+          src="./s1/butterfly2.gif"
+          alt="butterfly"
+        >
+      </div>
+        <div 
+          class="flower1 absolute"
+          data-aos="fade-left"
+          data-aos-delay="200">
+          <img
+            src="./s2/f1.png"
+            alt="flower"
+          >
+        </div>
+        <div 
+            class="flower2 absolute"
+            data-aos="fade-right"
+            data-aos-delay="400">
+          <img
+            src="./s2/3.png"
+            alt="flower"
+          >
+        </div>
+        <div 
+            class="flower3 absolute"
+            data-aos="fade-right"
+            data-aos-delay="400">
+          <img
+            src="./s2/4.png"
+            alt="flower"
+          >
+        </div>
+
+    </div>
       <h3
         class="title absolute"
         data-aos="fade-right"
@@ -447,35 +489,35 @@
     overflow: hidden;
   }
 
+.f{position:absolute;top:sizem(324);left: 0;width: 100%;bottom: 0;}
   .fly1 {
     width: sizem(100);
-    bottom: sizem(80);
-    right: sizem(23);
-  }
-
-  .fly2 {
-    width: sizem(88);
-    top: sizem(88);
-    right: sizem(200);
+    bottom: sizem(30);top: auto;
+    right: sizem(30);left:auto;
+  img{width: 100%;transform:rotate(0deg);}
   }
 
   .flower1 {
-    width: sizem(100);
-    top: sizem(-50);
-    right: sizem(0);
+    width: sizem(150);
+    bottom: sizem(-30);top: auto;
+    left:sizem(-30);right: auto;
+    img{width: 100%;transform:rotate(70deg)scaleX(-1);}
   }
 
-  .flower2 {
-    width: sizem(170);
-    bottom: sizem(0);
-    right: sizem(200);
+  .flower2 {width: 35vw;
+    top: -13vw;
+    bottom:auto;
+    right: -5vw;left:auto;
+  img{width: 100%;transform:rotate(50deg)scaleX(-1);}
   }
 
   .flower3 {
-    width: sizem(80);
-    bottom: sizem(-50);
-    right: sizem(0);
+    width: sizem(130);
+    bottom: sizem(-150);top: auto;
+    right: sizem(-70);left:auto;
+  img{width: 100%;transform:rotate(-34deg)scaleX(-1);}
   }
+
 
   .title {
     width: sizem(310);
