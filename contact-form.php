@@ -1,5 +1,5 @@
 <?php
-    $case_name = "春福采采";
+    $case_name = "春福采采-精品大樓";
     $case_code = 'cf';
 
     $name         = isset($_POST['name']) ? $_POST['name'] : '';
