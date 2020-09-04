@@ -9,14 +9,14 @@
       :options="options"
       id="fullpage"
     > -->
-    <div
+    <vue-lazy-component
       class="section"
       id="section1"
     >
       <Section1 />
-    </div>
+    </vue-lazy-component>
 
-    <div
+    <vue-lazy-component
       class="section"
       id="section2"
     >
@@ -40,44 +40,44 @@
         },
       ]"
       />
-    </div>
-    <div
+    </vue-lazy-component>
+    <vue-lazy-component
       class="section"
       id="section4"
     >
       <Section4 />
-    </div>
-    <div
+    </vue-lazy-component>
+    <vue-lazy-component
       class="section"
       id="section3"
     >
       <Section3 />
-    </div>
+    </vue-lazy-component>
 
-    <div
+    <vue-lazy-component
       class="section"
       id="section5"
     >
       <Section5 />
-    </div>
-    <div
+    </vue-lazy-component>
+    <vue-lazy-component
       class="section"
       id="section7"
     >
       <Section7 />
-    </div>
-    <div
+    </vue-lazy-component>
+    <vue-lazy-component
       class="section"
       id="section6"
     >
       <Section6 />
-    </div>
-    <div
+    </vue-lazy-component>
+    <vue-lazy-component
       class="section"
       id="section8"
     >
       <Section8 />
-    </div>
+    </vue-lazy-component>
     <!-- </full-page> -->
     <ContactSection
       class="section"
