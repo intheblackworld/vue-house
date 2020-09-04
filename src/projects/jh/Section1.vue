@@ -13,9 +13,9 @@
       <audio controls style="display: none" ref="audio" loop="loop">
         <source src="./music.mp3" type="audio/mpeg" />
       </audio>-->
-      <audio controls style="display: none" ref="audio" loop="loop" @click="playMusic">
+      <!-- <audio controls style="display: none" ref="audio" loop="loop" @click="playMusic">
         <source src="./music.wav" type="audio/mpeg" />
-      </audio>
+      </audio> -->
       <div class="modal" v-if="modal">
         <div class="mask" @click="modal = false"></div>
         <div>
