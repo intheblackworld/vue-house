@@ -3,6 +3,7 @@
 import { register, unregister } from 'register-service-worker'
 
 if (process.env.NODE_ENV === 'production') {
+  console.log('new')
   unregister(`${process.env.BASE_URL}service-worker.js`, {
     ready () {
       console.log(
@@ -11,6 +12,10 @@ if (process.env.NODE_ENV === 'production') {
       )
     },
     registered () {
+      caches.keys().then(function (names) {
+        for (let name of names)
+          caches.delete(name)
+      })
       console.log('Service worker has been registered.')
     },
     cached () {
