@@ -223,7 +223,8 @@
   .btn {
     width: size(190);
     height: size(43);
-    border: solid 2px currentColor;
+    border: solid 2px #af8680;
+    color: #af8680;
     border-radius: 20px / 20px;
     cursor: pointer;
     font-size: size(21);
