@@ -20,6 +20,8 @@ module.exports = {
     // }
   },
 
+  publicPath: '/villa',
+
   devServer: {
     port: 9000, // CHANGE YOUR PORT HERE!
     https: false
