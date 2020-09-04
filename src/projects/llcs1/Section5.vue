@@ -203,8 +203,8 @@
 
 .fly1 {
   width: size(200);
-  bottom: size(100);
-  right: size(150);
+  bottom: size(10);
+  right: size(100);
     z-index: 2;
   img{width: 100%;transform:rotate(-25deg);}
 }

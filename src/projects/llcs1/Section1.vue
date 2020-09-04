@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="section1">
+      <div class="ovh absolute">
       <div 
         class="flower1 absolute"
         data-aos="fade-left"
@@ -83,7 +84,7 @@
         >
       </div>
       
-
+</div>
 
       <img
         src="./s1/logo.png"
@@ -133,8 +134,8 @@
   min-height:size(900);
   max-height:size(1080);
   background-color: #e95314;
-  overflow: hidden;
   position: relative;
+  z-index: 2;
 }
 
 .bg-img {
@@ -168,6 +169,8 @@
   top: calc(50% + 2vw);
   right: size(661);
 }
+.ovh{position: absolute;top: 0;left: 0;width: 100%;height: 100%;
+  overflow: hidden;}
 
 .fly1 {
   width: size(200);
