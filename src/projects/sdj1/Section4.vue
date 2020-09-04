@@ -29,9 +29,11 @@
       v-if="isDialog2"
     >
       <div class="dialog-content">
-        50米高、大約17樓以上建築,在世界地震案例中發現,不曾有過倒塌記錄,研究結果顯示最為耐震安全!
-        「上東京」24層樓高,不同於較低樓層建築,只需1人簽證就能蓋樓,必須經由土木技師、結構技師、大地技師等超過5人小組
-        嚴格審查把關,是用最嚴苛的標准,保護你最愛的家人!
+        讀秒到全聯，轉角明誠路，走幾步路，爆紅美食就入手。<br />
+        玩不過癮，就近轉往文藻大學城，攻略懷舊系私房美食，<br />
+        大餐之後想甩掉幸福肥，家到河堤綠帶輕鬆散步到。<br />
+        同樣房價換屋，三大商圈隨心所欲，唯你獨饗滿足勝三倍<br />
+        #明誠 #文藻 #河堤綠帶
       </div>
       <img
         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAKlBMVEVHcEz////z8fHz8fH////z8fHz8fHz8fHz8fHz8fHz8fHz8fHx7u708fEdE1r4AAAADnRSTlMAA0S1Bec3v6z4KcoaoNqzfoQAAAF6SURBVHjapZfLksMgDAQZwOLl/P/vboBydPAaXCPdkkq3TWBAuBoqHFmoQdynNIkcH6WVjztDSRI5PpVwOlfzkTxhgE/HGD44Q/ThyIKhknwEHzl+lnzUwPAuquEtn4/soV/Aq4Hge/mshj0fbryDGih+zsWrFQWZ/F08DNjz6QiCB3VpFbv8tHLx96pfw4klf7aSFg+pqRuW/OYlz9R/sHr/1B+wMQgeeGn6gqtRPMwmJOn4V4bwf7rhQ8//u4US7obYednzuj8s8ksYNH/70mQR/N2gfP9IGqA8Y5j5JTZ+P9J9TStx/HUwCVCv/DOGkupY2nBUoadb88/U11CagYdREE1DsP+JsU9jBeovxsRSZBaS8hMbBjoK9jBSBvuGEo1bGpSnNmVn3NbxdLDEdwcLTtvRBsvhuj/e3e54B91gKM+3OPYmC+/aPKdtnrXRtLa6FD8LaqB4zeadJwzcpQnDIN1gv3TZr30EPw3z4mm++pov39brf/0DkT4QydVQXNwAAAAASUVORK5CYII="
@@ -48,7 +50,7 @@
           v-lazy="require('./s4/map.png')"
           alt="map"
           class="dialog-content"
-        @click="isDialog = false"
+          @click="isDialog = false"
         ></div><img
         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAKlBMVEVHcEz////z8fHz8fH////z8fHz8fHz8fHz8fHz8fHz8fHz8fHx7u708fEdE1r4AAAADnRSTlMAA0S1Bec3v6z4KcoaoNqzfoQAAAF6SURBVHjapZfLksMgDAQZwOLl/P/vboBydPAaXCPdkkq3TWBAuBoqHFmoQdynNIkcH6WVjztDSRI5PpVwOlfzkTxhgE/HGD44Q/ThyIKhknwEHzl+lnzUwPAuquEtn4/soV/Aq4Hge/mshj0fbryDGih+zsWrFQWZ/F08DNjz6QiCB3VpFbv8tHLx96pfw4klf7aSFg+pqRuW/OYlz9R/sHr/1B+wMQgeeGn6gqtRPMwmJOn4V4bwf7rhQ8//u4US7obYednzuj8s8ksYNH/70mQR/N2gfP9IGqA8Y5j5JTZ+P9J9TStx/HUwCVCv/DOGkupY2nBUoadb88/U11CagYdREE1DsP+JsU9jBeovxsRSZBaS8hMbBjoK9jBSBvuGEo1bGpSnNmVn3NbxdLDEdwcLTtvRBsvhuj/e3e54B91gKM+3OPYmC+/aPKdtnrXRtLa6FD8LaqB4zeadJwzcpQnDIN1gv3TZr30EPw3z4mm++pov39brf/0DkT4QydVQXNwAAAAASUVORK5CYII="
         alt=""
@@ -117,6 +119,7 @@
     >讀秒到全聯，轉角明誠路，走幾步路，爆紅美食就入手。<br />玩不過癮，就近轉往文藻大學城，攻略懷舊系私房美食，<br />大餐之後想甩掉幸福肥，家到河堤綠帶輕鬆散步到。<br />
       同樣房價換屋，三大商圈隨心所欲，唯你獨饗滿足勝三倍<br />
       #明誠 #文藻 #河堤綠帶
+
     </div>
     <img
       v-lazy="require('./s4/bg.png')"
