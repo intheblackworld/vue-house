@@ -77,7 +77,7 @@
         class="title absolute"
         data-aos="fade-right"
         data-aos-delay="400"
-      >交通新軸心</h3>
+      >國門新都心 用心造城心</h3>
       <h3
         class="subtitle absolute"
         data-aos="fade-right"
@@ -117,7 +117,7 @@
 .section3-1 {
   width:100%;
   height: 100vh;
-  min-height:size(900);
+  min-height:size(1000);
   max-height:size(1080);
   // overflow: hidden;
   position: relative;
@@ -144,8 +144,7 @@
 
 .bg-block {
   width: size(1920);
-  height: 100vh;
-  min-height: 900px;
+  height: 100%;
   top: 0;
   left: 0;
   background-color: #068cce;
