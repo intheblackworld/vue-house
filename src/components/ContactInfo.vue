@@ -34,7 +34,7 @@
           <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
         </span>
       </a>
-      <el-dialog title :visible.sync="isShowCallDialog" width="90%" :modal-append-to-body="false">
+      <el-dialog title :visible.sync="isShowCallDialog" :width="`${isMobile ? '90%' : '600px'}`" :modal-append-to-body="false">
         <CallDialog :phone="info.phone" />
       </el-dialog>
       <el-dialog
@@ -78,7 +78,7 @@ export default {
   },
   methods: {
     showCallDialog() {
-      if (!this.isMobile) return
+      // if (!this.isMobile) return
       this.isShowCallDialog = true
     },
     showMessengerDialog() {
@@ -108,13 +108,13 @@ export default {
   flex-direction: column;
   align-content: center;
   // justify-content: space-between;
-  transform: translateY(14%);
+  // transform: translateY(14%);
   position: relative;
   z-index: 3;
   width: 1200px;
   height: 460px;
-
   margin: 0 auto;
+  margin-top: 60px;
   // padding: 60px 0 50px;
 }
 
