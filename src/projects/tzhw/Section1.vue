@@ -11,44 +11,23 @@
         class="full-img"
         v-lazy:background-image="require('./mo/1/bg.jpg')"
       ></div>
+     <!--  <div class="water">
       <div
         class="water-img bg-img"
         v-lazy:background-image="require('./s1/e1.gif')"
       ></div>
       <div
         v-if="!isMobile"
-        class="full-img bg-img"
-        v-lazy:background-image="require('./s1/bg.png')"
+        class="waterpng-img bg-img"
+        v-lazy:background-image="require('./s1/bg21.png')"
       ></div>
       <div
         v-if="isMobile"
-        class="full-img bg-img"
-        v-lazy:background-image="require('./mo/1/bg.png')"
-      ></div>
-     <!-- <div
-        class="river"
-        v-if="!isMobile"
-      >
-        <div v-lazy:background-image="require('./s1/an_01.png')"></div>
-        <div v-lazy:background-image="require('./s1/an_02.png')"></div>
-        <div v-lazy:background-image="require('./s1/an_03.png')"></div>
-        <div v-lazy:background-image="require('./s1/an_04.png')"></div>
-        <div v-lazy:background-image="require('./s1/an_05.png')"></div>
-        <div v-lazy:background-image="require('./s1/an_06.png')"></div>
-        <div v-lazy:background-image="require('./s1/an_07.png')"></div>
-      </div>
-      <div
-        class="river"
-        v-if="isMobile"
-      >
-        <div v-lazy:background-image="require('./mo/1/an_01.png')"></div>
-        <div v-lazy:background-image="require('./mo/1/an_02.png')"></div>
-        <div v-lazy:background-image="require('./mo/1/an_03.png')"></div>
-        <div v-lazy:background-image="require('./mo/1/an_04.png')"></div>
-        <div v-lazy:background-image="require('./mo/1/an_05.png')"></div>
-        <div v-lazy:background-image="require('./mo/1/an_06.png')"></div>
-        <div v-lazy:background-image="require('./mo/1/an_07.png')"></div>
+        class="waterpng-img bg-img"
+        v-lazy:background-image="require('./mo/1/bg2.png')"
+      ></div> 
       </div> -->
+
       <div class="txt absolute">
         <h3
           class="title"
@@ -120,78 +99,83 @@
 .bg-img {
   position: absolute;
   z-index: 2;
+    height: 100%;
+    background-position: center;bottom: 0;right: 0;
   // &:first-child {
   //   position: relative;
   // }
-
-&.water-img{bottom: 0;right: 0;opacity: 0.5;
+&.water-img{opacity: 0.5;
     width: 80%;
-    height: 10vw;
-    position: absolute;
-    background-size:100% 100%;
-    background-position: center;}
+    background-size:100% 100%;}
+&.waterpng-img{
+    width:100%;
+    background-size:cover;}
 }
-/*
-@keyframes water {
-  from {
-    transform: skewX(50deg);
-  }
-  to {
-    transform: skewX(-50deg);
-  }
-}
-
-.river {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 100vw;
-  z-index: 1;
-  div {
+.water{bottom: 0;right: 0;
     width: 100%;
-    height: 29px;
-    // margin-left: calc((1920px - 2600px) / 2);
-    // position: absolute;
-    background-size: cover;
-    background-position: 100%;
+    height:calc(100vh * 230 / 1080);
+    position: absolute;}
+/*
+  @keyframes water {
+    from {
+      transform: skewX(50deg);
+    }
+    to {
+      transform: skewX(-50deg);
+    }
   }
 
-  & div:nth-child(1) {
-    animation: water 5s ease-in-out 0s infinite alternate;
-  }
+  .river {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    z-index: 1;
+    div {
+      width: 100%;
+      height: 29px;
+      // margin-left: calc((1920px - 2600px) / 2);
+      // position: absolute;
+      background-size: cover;
+      background-position: 100%;
+    }
 
-  & div:nth-child(2) {
-    animation: water 5s ease-in-out 0s infinite alternate-reverse;
-  }
+    & div:nth-child(1) {
+      animation: water 5s ease-in-out 0s infinite alternate;
+    }
 
-  & div:nth-child(3) {
-    animation: water 5s ease-in-out 0s infinite alternate;
-  }
+    & div:nth-child(2) {
+      animation: water 5s ease-in-out 0s infinite alternate-reverse;
+    }
 
-  & div:nth-child(4) {
-    animation: water 5s ease-in-out 0s infinite alternate-reverse;
-  }
+    & div:nth-child(3) {
+      animation: water 5s ease-in-out 0s infinite alternate;
+    }
 
-  & div:nth-child(5) {
-    animation: water 5s ease-in-out 0s infinite alternate;
-  }
+    & div:nth-child(4) {
+      animation: water 5s ease-in-out 0s infinite alternate-reverse;
+    }
 
-  & div:nth-child(6) {
-    animation: water 5s ease-in-out 0s infinite alternate-reverse;
+    & div:nth-child(5) {
+      animation: water 5s ease-in-out 0s infinite alternate;
+    }
+
+    & div:nth-child(6) {
+      animation: water 5s ease-in-out 0s infinite alternate-reverse;
+    }
+    & div:nth-child(7) {
+      animation: water 5s ease-in-out 0s infinite alternate;
+    }
+    & div:nth-child(8) {
+      animation: water 5s ease-in-out 0s infinite alternate-reverse;
+    }
+    & div:nth-child(9) {
+      animation: water 5s ease-in-out 0s infinite alternate;
+    }
+    & div:nth-child(10) {
+      animation: water 5s ease-in-out 0s infinite alternate-reverse;
+    }
   }
-  & div:nth-child(7) {
-    animation: water 5s ease-in-out 0s infinite alternate;
-  }
-  & div:nth-child(8) {
-    animation: water 5s ease-in-out 0s infinite alternate-reverse;
-  }
-  & div:nth-child(9) {
-    animation: water 5s ease-in-out 0s infinite alternate;
-  }
-  & div:nth-child(10) {
-    animation: water 5s ease-in-out 0s infinite alternate-reverse;
-  }
-}
 */
 .txt{font-size:calc(12px + 2.1vh);
 
@@ -250,12 +234,17 @@ width: 0.64em;
 }
 
 @media screen and (max-width: 767px) {
+  .full-bg{height: calc(100vh - 63px);}
 .bg-img {
-
 &.water-img{
-    width: 100%;
-    height: 45vw;}
+    width: 100%;}
+
 }
+.full-img{
+    background-size: 100% auto;
+}
+.water{top: calc(50% + 67vw);
+    height:calc(100vw * 313 / 750);}
 .txt{
   font-size:size-m(19);
   top: 18%;

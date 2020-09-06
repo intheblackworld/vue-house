@@ -6,11 +6,23 @@
         class="full-img"
         v-lazy:background-image="require('./s2/bg.jpg')"
       ></div>
-     <!--  <div
+      <!-- 
+     <div class="water">
+      <div
+        class="water-img bg-img"
+        v-lazy:background-image="require('./s2/e1.gif')"
+      ></div>
+      <div
         v-if="!isMobile"
-        class="full-img bg-img"
+        class="waterpng-img bg-img"
         v-lazy:background-image="require('./s2/bg.png')"
       ></div>
+      <div
+        v-if="isMobile"
+        class="waterpng-img bg-img"
+        v-lazy:background-image="require('./mo/1/bg2.png')"
+      ></div> 
+      </div>
       -->
       <div
         v-if="isMobile"
@@ -20,7 +32,7 @@
       <div
         v-if="isMobile"
         class="full-img bg-img"
-        v-lazy:background-image="require('./mo/2/bg.png')"
+        v-lazy:background-image="require('./mo/2/bg.jpg')"
       ></div>
       <!--
       <div
@@ -109,7 +121,12 @@
   background-size: cover;
   position: relative;
   height: calc(100vh - 50px);
+  max-height: 53.7vw;
 }
+.full-img {
+    background-position: center 50%;
+}
+
 
 .section2 {
   z-index: 4;
@@ -125,13 +142,20 @@
   // &:first-child {
   //   position: relative;
   // }
-&.water-img{bottom: 0;right: 0;opacity: 0.4;
-    width: 80%;
-    height: 17vw;
-    position: absolute;
-    background-size:100% 100%;
-    background-position: center;}
+&.water-img{opacity: 0.5;
+    width: 40%;mix-blend-mode:overlay;
+    left: 30%;
+    height: 200%;
+    background-size:100% 100%;}
+&.waterpng-img{
+    width:100%;
+    height: 100%;
+    background-size:cover;}
 }
+.water{bottom: 0;right: 0;
+    width: 100%;
+    height:calc(50% - 6.9vw);
+    position: absolute;}
 /*
 @keyframes water {
   from {
@@ -248,7 +272,11 @@
 @media screen and (max-width: 767px) {
 .full-bg {
   height: calc(100vh - 123px);
+  max-height:size-m(900);
 }
+.full-img {height: 100%;
+}
+
 .bg-img {
 
 &.water-img{
