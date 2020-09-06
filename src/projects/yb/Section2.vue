@@ -234,9 +234,11 @@
 .link-g {
   text-decoration: none;
   p {
+    font-size: size(22);
+  letter-spacing: 0.1em;
     color: #fff;
     text-decoration: none;
-    margin-left: 10px;
+    margin-left: 0.5em;
   }
 }
 
@@ -260,8 +262,8 @@
   font-size: 24px;
   color: #333;
   position: absolute;
-  right: 15px;
-  bottom: 15px;
+  left: size(40);
+  bottom:  size(20);
 }
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -360,6 +362,11 @@
       width: 100%;
     }
   }
+.link-g {
+  p {
+    font-size:size-m(14);
+  }
+}
   .fb-link {
     width: size-m(29);
     cursor: pointer;
@@ -371,8 +378,9 @@
     font-weight: bold;
     text-shadow: 0 0 4px #000;
     position: absolute;
-    right: 15px;
-    bottom: 15px;
+    left: 0;right: 0;text-align: center;
+    bottom: 10px;
+    line-height: 1.6;
   }
 }
 </style>
@@ -417,12 +425,12 @@ export default {
       },
 
       slideList: [
+        { src: require('./s2/3.jpg'), title: '鑫建築團隊 許慶鐘董事長' },
         {
-          src: require('./s2/2.jpg'),
+          src: require('./s2/1.jpg'),
           title: '鑫建築團隊 許峻豪執行長與各部門同仁',
         },
-        { src: require('./s2/3.jpg'), title: '鑫建築團隊各部門同仁' },
-        { src: require('./s2/1.jpg'), title: '鑫建築團隊 許慶鐘董事長' },
+        { src: require('./s2/2.jpg'), title: '鑫建築團隊各部門同仁' },
       ],
 
       imgIndex: 0,
