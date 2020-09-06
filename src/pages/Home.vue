@@ -17,13 +17,13 @@
       >
         <Section1 />
       </vue-lazy-component>
-
+<!--
       <vue-lazy-component
         class="section"
         id="section2"
       >
         <Section2 />
-      </vue-lazy-component>
+      </vue-lazy-component> -->
       <vue-lazy-component
         class="section"
         id="section3"

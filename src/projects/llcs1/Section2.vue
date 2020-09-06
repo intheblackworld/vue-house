@@ -16,13 +16,15 @@
         data-aos="fade-right"
         data-aos-delay="400"
       >
-      <img
-        src="./s2/4.png"
-        alt=""
-        class="flower3 absolute"
-        data-aos="fade-up"
-        data-aos-delay="600"
-      >
+      <div 
+          class="flower3 absolute"
+          data-aos="fade-up"
+          data-aos-delay="200">
+        <img
+          src="./s2/4.png"
+          alt="flower"
+        >
+      </div>
       <div
         class="sidebar absolute"
         data-aos="fade-right"
@@ -108,11 +110,11 @@
 @import '@/assets/style/function.scss';
 
 .section6 {
-  width: size(1920);
+  width:100%;
   height: 100vh;
-  min-height: size(1080);
+  min-height:size(900);
+  max-height:size(1080);
   background-size: cover;
-  overflow: hidden;
   position: relative;
 }
 
@@ -142,10 +144,11 @@
   left: size(-70);
 }
 .flower3 {
-  width: size(130);
-  bottom: size(-50);
-  left: size(0);
+    width: 11vw;
+    bottom: -5vw;
+    left: -4vw;
   z-index: 2;
+  img{width: 100%;transform:rotate(66deg);}
 }
 .sidebar {
   width: size(396);
@@ -180,8 +183,8 @@
 
 .swipe {
   width: size(1080);
-  height: size(810);
-  top: size(125);
+  height:76%;
+  top: 12%;
   right: size(227);
   object-fit: cover;
   background: #000;
@@ -375,12 +378,9 @@
 
 @media screen and (max-width: 767px) {
   .section6 {
-    width: 100vw;
     height: calc(100vh - 63px);
-    min-height: auto;
-    // background-image: url('./s1/bg.jpg');
-    // background-size: cover;
-    // background-attachment: fixed;
+    min-height:sizem(600);
+    max-height:sizem(820);
   }
 
   .flower1 {

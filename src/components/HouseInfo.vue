@@ -1,9 +1,9 @@
 <template>
-  <div
+<div
     class="house-info"
     id="house-info"
   >
-    <div class="content">
+   <!--   <div class="content">
       <h3
         class="title"
         data-aos="fade-down"
@@ -24,7 +24,7 @@
           ></p>
         </div>
       </div>
-    </div>
+    </div> -->
     <Footer />
   </div>
 </template>

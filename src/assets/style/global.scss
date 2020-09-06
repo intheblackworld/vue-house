@@ -59,7 +59,7 @@ body {
 .home2 {
   background: url('~@/projects/llcs1/s2/bg.png');
   background-attachment: fixed;
-  background-size: auto;
+  background-size: cover;
   background-position: center center;
   background-repeat: repeat;
   overflow: hidden;//試底下多的那塊哪來的
@@ -353,8 +353,10 @@ img[lazy='loaded'] {
     background: $bg_m;
     // background-repeat: no-repeat;
     // background-size: cover;
-    // background-attachment: fixed;
-    background-position: 0% 50%;
+    // background-attachment: fixed; 
+    background-attachment: fixed;
+    background-position: 0% calc(100% - 63px);
+    background-size:100% auto;
 
     &.no-padding-top {
       padding-top: 0;

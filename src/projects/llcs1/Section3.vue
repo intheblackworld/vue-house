@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="section3">
     <div class="section3-1">
       <div class="bg-block absolute"></div>
       <h3 class="big-title absolute">朗朗城心 六大價值</h3>
@@ -15,11 +15,20 @@
         alt=""
         class="img"
       >
-      <img
+      <div 
+        class="balls absolute">
+        <img src="./s3/i1.png" alt="" >
+        <img src="./s3/i2.png" alt="" ><br v-if="isMobile">
+        <img src="./s3/i3.png" alt="" ><br v-if="!isMobile">
+        <img src="./s3/i4.png" alt="" ><br v-if="isMobile">
+        <img src="./s3/i5.png" alt="" >
+        <img src="./s3/i6.png" alt="" >
+      </div>
+     <!--  <img
         src="./s3/資產 214.png"
         alt=""
         class="balls absolute"
-      >
+      > -->
     </div>
     <div
       class="section3-2"
@@ -39,7 +48,7 @@
         class="title absolute"
         data-aos="fade-right"
         data-aos-delay="400"
-      >交通新軸心</h3>
+      >國門新都心 用心造城心</h3>
       <h3
         class="subtitle absolute"
         data-aos="fade-right"
@@ -68,7 +77,7 @@
         class="title absolute"
         data-aos="fade-right"
         data-aos-delay="400"
-      >交通新軸心</h3>
+      >國門新都心 用心造城心</h3>
       <h3
         class="subtitle absolute"
         data-aos="fade-right"
@@ -101,13 +110,15 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
+.section3 {
+  background-color: #068cce;
+}
 .section3-2,
 .section3-1 {
-  width: size(1920);
+  width:100%;
   height: 100vh;
-  min-height: size(1080);
-  background-size: cover;
-  background-attachment: fixed;
+  min-height:size(1000);
+  max-height:size(1080);
   // overflow: hidden;
   position: relative;
 }
@@ -115,8 +126,7 @@
 .bg-img,
 .img {
   width: size(1920);
-  height: 100vh;
-  min-height: size(1080);
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -134,22 +144,21 @@
 
 .bg-block {
   width: size(1920);
-  height: 100vh;
-  min-height: 900px;
+  height: 100%;
   top: 0;
   left: 0;
   background-color: #068cce;
 }
 .big-title {
   width: size(808);
-  top: size(30);
+  top: size(40);
   left: size(548);
   text-shadow: 3px 3px 8px rgba(35, 24, 21, 0.75);
   font-size: size(89.2);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.18;
+  line-height: 1.6;
   letter-spacing: size(8.92);
   text-align: center;
   color: #ffffff;
@@ -157,14 +166,19 @@
 }
 .hr {
   width: size(887);
-  top: size(160);
+  top: size(190);
   left: size(517);
 }
 
 .balls {
-  width: size(363 + 747 + 420);
-  top: size(240);
-  left: size(191);
+  height:calc(100% - 16vw);
+  top: size(250);
+  left:50%;transform: translateX(-50%);
+  white-space: nowrap;
+  img{height: 50%;
+  &:nth-child(3){margin-right:size(350);}
+  &:nth-child(4){margin-left:size(350);}
+  }
 }
 
 .title {
@@ -231,12 +245,16 @@
 
 @media screen and (max-width: 767px) {
   .section3-1 {
-    height: sizem(623);
+    height: sizem(850);
+    min-height:sizem(600);
+    max-height:sizem(1000);
   }
   .section3-2 {
     width: 100vw;
     min-height: auto;
     height: sizem(730);
+    min-height:sizem(600);
+    max-height:sizem(820);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -280,21 +298,25 @@
   }
 
   .hr {
-    width: sizem(225);
+    width: sizem(320);
     top: sizem(80);
-    left: sizem(75);
+    left: sizem(27);
   }
 
   .balls {
-    width: sizem(311);
+    width: sizem(311);height:auto;
     top: sizem(100);
-    left: sizem(34);
-  }
+    img{width: 50%;height: auto;position: relative;
+  &:nth-child(3),
+  &:nth-child(4){margin:0;}
+}
+img + img{top:size(350);}
+}
 
   .title {
-    width: sizem(135);
+    width: sizem(310);
     top: sizem(-250);
-    left: sizem(121);
+    left: sizem(33);
     font-size: sizem(25);
     font-weight: bold;
     font-stretch: normal;
