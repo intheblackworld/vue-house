@@ -1,8 +1,7 @@
 export default {
   address: '宜蘭縣五結鄉傳藝路一段56巷',
-  googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1812.64610095759!2d121.8171196!3d24.6824801!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3467ef5a48bc9153%3A0xd420ca03e270682f!2zMjY45a6c6Jit57ij5LqU57WQ6YSJ5YKz6Jed6Lev5LiA5q61NTblt7c!5e0!3m2!1szh-TW!2stw!4v1597742951425!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/WpkSme4TcWj8t3Gs5',
+  googleSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3625.3315481903373!2d121.81390331499925!3d24.681126984138768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQwJzUyLjEiTiAxMjHCsDQ4JzU3LjkiRQ!5e0!3m2!1szh-TW!2stw!4v1599625066220!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/ZKBcPBwF3a9p2KCP7',
   phone: '0900-799-888',
   fbLink: 'https://www.facebook.com/IlanCSdeveloper/',
   fbMessage: 'https://m.me/IlanCSdeveloper',
