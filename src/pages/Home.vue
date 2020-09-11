@@ -60,12 +60,12 @@
       >
         <Section8 />
       </vue-lazy-component> -->
-      <vue-lazy-component
+      <!-- <vue-lazy-component
         class="section"
         id="section9"
       >
         <Section9 />
-      </vue-lazy-component>
+      </vue-lazy-component> -->
       <!-- <vue-lazy-component
       class="section"
       id="section10"
