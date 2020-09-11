@@ -70,7 +70,7 @@
         class="map-img absolute"
         data-aos="zoom-in"
         data-aos-delay="200"
-        @click="isDialog = true"
+        @click="() => (isMobile ? (isDialog = true) : isDialog = false)"
       >
       <div
         class="button absolute"
