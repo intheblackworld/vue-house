@@ -4,27 +4,27 @@
       <img src="./s11/bg1.jpg" alt="輕井澤" class="bg-img" />
       <img src="./s11/bg2.jpg" alt="輕井澤" class="bg-img" />
       <div class="text">
-        <h3 class="subtitle">精工至上</h3>
-        <h4 class="title">20年結構保固+5年防水保固</h4>
+        <h3 class="title">精工至上</h3>
+        <h4 class="subtitle">20年結構保固+5年防水保固</h4>
         <p>以筏式基礎穩定打底，搭配PC基樁強化安全性<br>
 從工程材料、結構、機電、<br>
 防水施工…等皆有建物生產履歷<br>
 交屋後提供完善客戶服務，住得安心，買得更放心</p>
       </div>
-      <div class="text-bottom">
-        <h3 class="subtitle">美學極現</h3>
-        <h4 class="title">日本建築職人精神藏美實現</h4>
+  <!--    <div class="text-bottom">
+        <h3 class="title">美學極現</h3>
+        <h4 class="subtitle">日本建築職人精神藏美實現</h4>
         <p>以建築演繹「新日本建築美學」著重美感與機能兼具<br>
 名宅建築團隊精心打造沿街式透天產品．戶戶臨路<br>
 以品牌實力打造水岸別墅社區成功典範</p>
-      </div>
+      </div> -->
     </div>
     <div class="bg relative" v-else>
        <img src="./s11/mo/bg1_01.jpg" alt="輕井澤" class="bg-img" />
         <img src="./s11/mo/bg1_02.jpg" alt="輕井澤" class="bg-img" />
       <div class="text">
-        <h3 class="subtitle">精工至上</h3>
-        <h4 class="title">20年結構保固+5年防水保固</h4>
+        <h3 class="title">精工至上</h3>
+        <h4 class="subtitle">20年結構保固+5年防水保固</h4>
         <p>以筏式基礎穩定打底，搭配PC基樁強化安全性<br>
 從工程材料、結構、機電、<br>
 防水施工…等皆有建物生產履歷<br>
@@ -63,7 +63,7 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-  top: calc(100vw * (100 / 1920));
+  top: calc(100vw * (80 / 1920));
     color: #ffffff;
     line-height: 1.6;
     width:100%;
@@ -72,8 +72,9 @@
     letter-spacing:0.1em;
     text-align: center;
     font-size: calc(100vw * (18 / 1920));
+    text-shadow: 2px 0 8px #0369;
   .title {
-    font-size:2.5em;
+    font-size:4.44em;
     font-weight: bold;
     line-height: normal;
   }
@@ -102,7 +103,7 @@
     text-align: center;
     font-size: calc(100vw * (18 / 1920));
   .title {
-    font-size:2.5em;
+    font-size:4.44em;
     font-weight: bold;
     line-height: normal;
   }
@@ -121,10 +122,10 @@
   }
 
   .text {
-    top: calc(100vw * (30 / 375));
+    top: calc(100vw * (20 / 375));
     font-size: calc(100vw * (13 / 375));
     .title {
-    font-size:2em;
+    font-size:3em;
     }
 
     .subtitle {

@@ -8,8 +8,8 @@
       <img src="./s12/4.png" alt="藏美一品" data-aos="fade" data-aos-delay="1000" class="bg-img" />
       <img src="./s12/5.png" alt="富邦大無疆 外觀示意" class="bg-img" />
       <div class="text">
-        <h3 class="subtitle">美學極現</h3>
-        <h4 class="title">日本建築職人精神<br>藏美實現</h4>
+        <h3 class="title">美學極現</h3>
+        <h4 class="subtitle">日本建築職人精神<br>藏美實現</h4>
         <p>以建築演繹「新日本建築美學」著重美感與機能兼具<br>
 名宅建築團隊精心打造沿街式透天產品．戶戶臨路<br>
 以品牌實力打造水岸別墅社區成功典範</p>
@@ -23,8 +23,8 @@
       <img src="./s12/mo/4.png" alt="藏美一品" data-aos="fade" data-aos-delay="1000" class="bg-img" />
       <img src="./s12/mo/5.png" alt="富邦大無疆 外觀示意" class="bg-img" />
       <div class="text">
-        <h3 class="subtitle">美學極現</h3>
-        <h4 class="title">日本建築職人精神<br>藏美實現</h4>
+        <h3 class="title">美學極現</h3>
+        <h4 class="subtitle">日本建築職人精神<br>藏美實現</h4>
         <p>以建築演繹「新日本建築美學」著重美感與機能兼具<br>
 名宅建築團隊精心打造沿街式透天產品．戶戶臨路<br>
 以品牌實力打造水岸別墅社區成功典範</p>
@@ -109,7 +109,7 @@
     bottom: calc(100vw * (40 / 375));
     font-size: calc(100vw * (13 / 375));
     .title {
-    font-size:2.9em;
+    font-size:3em;
     }
 
     .subtitle {
