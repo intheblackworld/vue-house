@@ -5,7 +5,7 @@
       <div 
         class="flower1 absolute"
         data-aos="fade-left"
-        data-aos-offset="-400"
+        data-aos-offset="-200"
         data-aos-delay="200">
         <img
           src="./s2/f1.png"
@@ -15,7 +15,7 @@
       <div 
           class="flower2 absolute"
           data-aos="fade-right"
-          data-aos-offset="-400"
+          data-aos-offset="-200"
           data-aos-delay="400">
         <img
           src="./s2/3.png"
@@ -25,7 +25,7 @@
       <div 
           class="flower3 absolute"
           data-aos="fade-up"
-          data-aos-offset="-400"
+          data-aos-offset="-200"
           data-aos-delay="200">
         <img
           src="./s2/4.png"
@@ -34,7 +34,7 @@
       </div>
       <div 
           class="flower5 absolute"
-          data-aos-offset="-400"
+          data-aos-offset="-200"
           data-aos="fade-up"
           data-aos-delay="400">
         <img
@@ -44,7 +44,7 @@
       </div>
       <div 
           class="flower4 absolute"
-          data-aos-offset="-400"
+          data-aos-offset="-200"
           data-aos="fade-up"
           data-aos-delay="300">
         <img
@@ -54,7 +54,7 @@
       </div>
       <div 
           class="flower7 absolute"
-          data-aos-offset="-400"
+          data-aos-offset="-200"
           data-aos="fade-up" v-if="!isMobile"
           data-aos-delay="600">
         <img
@@ -64,7 +64,7 @@
       </div>
       <div 
           class="flower8 absolute"
-          data-aos-offset="-400"
+          data-aos-offset="-200"
           data-aos="fade-up" v-if="!isMobile"
           data-aos-delay="700">
         <img
@@ -75,7 +75,7 @@
     </div>
       <div 
           class="flower6 absolute"
-          data-aos-offset="-400"
+          data-aos-offset="-200"
           data-aos="fade-up"
           data-aos-delay="500">
         <img
@@ -85,7 +85,7 @@
       </div>
       <div 
           class="flower9 absolute"
-          data-aos-offset="-400"
+          data-aos-offset="-200"
           data-aos="fade-up"
           data-aos-delay="800">
         <img
