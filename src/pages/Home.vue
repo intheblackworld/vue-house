@@ -175,7 +175,9 @@ export default {
       var totalImages = $('img').length
 
       const allImagesLoaded = () => {
-        this.load = false
+        setTimeout(() => {
+          this.load = false
+        }, 500);
       }
       const imageLoaded = () => {
         imagesLoaded++
