@@ -49,7 +49,10 @@
     position: relative;
   }
 }
-
+.text {
+  color: #40220f;
+}
+/*
 .text {
   position: absolute;
   left: 0;
@@ -78,7 +81,7 @@
   p{margin: 0.5em 0 0 0;
     font-size:1em;}
 }
-
+*/
 .swiper-container {
   width: calc(100vw * (1322 / 1920));
 }
@@ -113,6 +116,11 @@
   }
 
   .text {
+    position: relative;
+    top: 0;
+    margin: calc(100vw * (35 / 375)) auto calc(100vw * (35 / 375)) ;
+    }
+ /* .text {
     width: 100vw;
     top: calc(100vw * (50 / 375));
     position: relative;
@@ -125,8 +133,9 @@
     font-size:1.1em;
     }
   }
+  */
   .item-img {
-    margin-top: 100px;
+    margin-top:0;
     position: relative;
     width: 100vw;
   }

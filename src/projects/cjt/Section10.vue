@@ -131,7 +131,10 @@
   width: 36px;
   transform: translateY(-50%);
 }
-
+.text {
+  color: #40220f;
+}
+/*
 .text {
   position: absolute;
   text-align: center;
@@ -165,7 +168,7 @@
   p{margin: 0.5em 0 0 0;
     font-size:1em;}
 }
-
+*/
 .special {
   .subtitle {
     letter-spacing: 6.6px;
@@ -237,8 +240,10 @@
 
   .text {
     position: relative;
+    top: 0;
+    margin: calc(100vw * (35 / 375)) auto calc(100vw * (32 / 375)) ;
   }
-
+/*
   .text {
     top: calc(100vw * (50 / 375));
     font-size: calc(100vw * (13 / 375));
@@ -265,11 +270,11 @@
       letter-spacing: 6px;
     }
   }
-
+*/
   .swiper-container {
     position: relative;
     width: 100vw;
-    margin-top: 85px;
+    margin-top: 0;
     bottom: 0;
   }
 

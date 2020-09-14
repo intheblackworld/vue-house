@@ -4,11 +4,11 @@
       <div v-if="!isMobile">
         <!-- <img src="./s8/bg.jpg" alt class="bg-img" /> -->
         <div :class="`text ${slideIndex === 2 ? 'hide': ''}`">
-          <div class="subtitle">紅樹林保留地、景觀公園 水岸廊帶</div>
+          <h4 class="subtitle">紅樹林保留地、景觀公園 水岸廊帶</h4>
           <h3 class="title">生態休閒 加值健康</h3>
         </div>
         <div :class="`text ${slideIndex === 2 ? 'special': 'hide'}`">
-          <div class="subtitle">九份子國中小生態學校 預計2021年招生</div>
+          <h4 class="subtitle">九份子國中小生態學校 預計2021年招生</h4>
           <h3 class="title">國家級綠校園陪孩子長大</h3>
         </div>
         <swiper
@@ -36,11 +36,11 @@
       </div>
       <div v-else>
         <div :class="`text ${slideIndex === 2 ? 'hide': ''}`">
-          <div class="subtitle">紅樹林保留地、景觀公園 水岸廊帶</div>
+          <h4 class="subtitle">紅樹林保留地、景觀公園 水岸廊帶</h4>
           <h3 class="title">生態休閒 加值健康</h3>
         </div>
         <div :class="`text ${slideIndex === 2 ? 'special': 'hide'}`">
-          <div class="subtitle">九份子國中小生態學校 預計2021年招生</div>
+          <h4 class="subtitle">九份子國中小生態學校 預計2021年招生</h4>
           <h3 class="title">國家級綠校園 視界更大</h3>
         </div>
         <swiper
@@ -134,37 +134,15 @@
 }
 
 .text {
-  position: absolute;
-  text-align: center;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  top: calc(100vw * (100 / 1920));
     color: #40220f;
-    line-height: 1.6;
-    width:100%;
-    font-stretch: normal;
-    font-style: normal;
-    letter-spacing:0.1em;
-    text-align: center;
-    font-size: calc(100vw * (18 / 1920));
 
   &.hide {
     opacity: 0;
   }
-  .title {
-    font-size:4.44em;
-    font-weight: bold;
-    line-height: normal;
-  }
 
   .subtitle {margin: 0.1em 0 0 0.3em;
-    font-size:1.5em;
     letter-spacing:0.6em;
-    font-weight: 400;
   }
-  p{margin: 0.5em 0 0 0;
-    font-size:1em;}
 &.special {
   .title {transform: scaleX(0.95);
   }
@@ -178,12 +156,6 @@
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
     height: 100vh;
-  }
-
-  .text {
-    .title {
-      font-size: calc(100vw * (82 / 1920));
-    }
   }
 }
 
@@ -207,12 +179,6 @@
   .item-desc {
     width: 400px;
     margin-bottom: calc(100vw * 10 / 1920);
-  }
-
-  .text {
-    .title {
-      font-size: calc(100vw * (83 / 1920));
-    }
   }
 
   .swiper-container {
@@ -247,30 +213,29 @@
     }
   }
 
-  .text {
-    position: relative;
-  }
 
   .text {
-    top: calc(100vw * (50 / 375));
+    position: relative;
+    top: 0;
+    margin: calc(100vw * (35 / 375)) auto calc(100vw * (35 / 375)) ;
     font-size: calc(100vw * (13 / 375));
     &.hide {
       display: none;
     }
-    .title {
-    font-size:2.4em;
-    }
 
     .subtitle {
-    font-size:1.1em;
-    letter-spacing:0.2em;
-    margin-left:0.1em;
+    //font-size:1.1em;
+    letter-spacing:0.15em;
+    margin-left:0em;
     }
  &.special {
+    .title {
+    letter-spacing:-0.0em;transform: scaleX(0.85);width: 110%;margin:0 -5%;
+    }
     .subtitle {
-    font-size:1.1em;
-    letter-spacing:0.23em;
-    margin-left:0.12em;
+    //font-size:1.1em;
+    letter-spacing:0.04em;
+    margin-left:0em;
     }
   }
   }
@@ -279,7 +244,7 @@
   .swiper-container {
     position: relative;
     width: 100vw;
-    margin-top: 85px;
+   // margin-top: 85px;
   }
 
   .item-img {

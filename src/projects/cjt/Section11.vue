@@ -59,32 +59,8 @@
 }
 
 .text {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
   top: calc(100vw * (80 / 1920));
-    color: #ffffff;
-    line-height: 1.6;
-    width:100%;
-    font-stretch: normal;
-    font-style: normal;
-    letter-spacing:0.1em;
-    text-align: center;
-    font-size: calc(100vw * (18 / 1920));
-    text-shadow: 2px 0 8px #0369;
-  .title {
-    font-size:4.44em;
-    font-weight: bold;
-    line-height: normal;
-  }
-
-  .subtitle {margin: 0.1em 0 0 0;
-    font-size:1.67em;
-    font-weight: 600;transform: scaleX(0.9);
-  }
-  p{margin: 0.5em 0 0 0;
-    font-size:1em;}
+  text-shadow: 2px 0 8px #0369;
 }
 
 .text-bottom {
@@ -121,17 +97,9 @@
     background-image: url('./s2/mo/bg.jpg');
   }
 
-  .text {
-    top: calc(100vw * (20 / 375));
-    font-size: calc(100vw * (13 / 375));
-    .title {
-    font-size:3em;
-    }
-
-    .subtitle {
-    font-size:1.56em;
-    }
-  }
+.text {
+    top: calc(100vw * (35 / 375));
+}
   
   .text-bottom {
     bottom: calc(100vw * (50 / 375));

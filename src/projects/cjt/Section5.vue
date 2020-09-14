@@ -3,13 +3,13 @@
     <div class="title-bg">
       <div class="text" v-if="isMobile">
         <h3 class="title">森活贏家 菁英聚落</h3>
-        <div class="subtitle">5大商圈Ⅹ雙大道Ⅹ生態休閒Ⅹ國家級綠校園</div>
+        <h4 class="subtitle">5大商圈Ⅹ雙大道Ⅹ生態休閒Ⅹ國家級綠校園</h4>
       </div>
     </div>
     <Map :tagList="tagList" :bgSrc="isMobile ? bgmSrc : bgSrc" :hand="hand" :altList="altList">
       <div class="text" v-if="!isMobile">
         <h3 class="title">森活贏家 菁英聚落</h3>
-        <div class="subtitle">5大商圈Ⅹ雙大道Ⅹ生態休閒Ⅹ國家級綠校園</div>
+        <h4 class="subtitle">5大商圈Ⅹ雙大道Ⅹ生態休閒Ⅹ國家級綠校園</h4>
       </div>
     </Map>
   </div>
@@ -31,6 +31,7 @@
   height: 530px;
   display: block;
 }
+/*
 .text {
   top: 100px;
   position: absolute;
@@ -59,7 +60,7 @@
   }
   p{margin: 0.5em 0 0 0;
     font-size:1em;}
-}
+}*/
 @media only screen and (max-width: 1440px) and (min-width: 1025px) {
   .fullscreen {
     height: 100vh;
@@ -85,42 +86,22 @@
     background-size: 1920px auto;
     background-position: center;
   }
-
-  .title {
-    // font-size: 52px;
-    margin-top: 80px;
-  }
-
-  .desc {
-    // font-size: 24px;
-  }
-
-  .text {
-    top: 0;
-  }
 }
 
 @media screen and (max-width: 767px) {
   .section5{position: relative;}
+
   .bg {
     background-position: 55%;
     // background-image: url('./s3_bg_m.jpg');
   }
-
-  .title {
-    width: 100vw;
-    font-size: calc(100vw * (35.5 / 375));
-  }
-
-  .desc {
-    width: 100vw;
-    font-size: calc(100vw * (15 / 375));
-  }
-
   .text {
-    top: 0px;
-    background-size: cover;
+    top: calc(100vw * (35 / 375));
+    .subtitle {
+    font-size:1.4em;
+    }
   }
+
 
   .title-bg {
     background-size: auto;
@@ -131,18 +112,6 @@
     background-size: contain;
     display: flex;
     align-items: center;
-
-    .text {
-      position: relative;
-    font-size: calc(100vw * (13 / 375));
-    .title {
-    font-size:2.9em;
-    }
-
-    .subtitle {
-    font-size:1.1em;
-    }
-    }
   }
 }
 </style>

@@ -3,14 +3,14 @@
     <div class="bg relative" v-if="!isMobile">
       <img src="./s7/bg.jpg" alt="輕井澤" class="bg-img" />
       <div class="text">
-        <div class="subtitle" data-aos="fade" data-aos-delay="200">國道8、北外環輕鬆串聯三橫三縱</div>
+        <h4 class="subtitle" data-aos="fade" data-aos-delay="200">國道8、北外環輕鬆串聯三橫三縱</h4>
         <h3 class="title" data-aos="fade" data-aos-delay="400">雙大道 通勤更有利</h3>
       </div>
     </div>
     <div class="bg relative" v-else>
       <img src="./s7/mo/bg.jpg" alt="輕井澤" class="bg-img" />
       <div class="text">
-        <div class="subtitle" data-aos="fade" data-aos-delay="200">國道8、北外環輕鬆串聯三橫三縱</div>
+        <h4 class="subtitle" data-aos="fade" data-aos-delay="200">國道8、北外環輕鬆串聯三橫三縱</h4>
         <h3 class="title" data-aos="fade" data-aos-delay="400">雙大道 通勤更有利</h3>
       </div>
     </div>

@@ -50,35 +50,6 @@
   }
 }
 
-.text {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  top: calc(100vw * (100 / 1920));
-    color: #ffffff;
-    line-height: 1.6;
-    width:100%;
-    font-stretch: normal;
-    font-style: normal;
-    letter-spacing:0.1em;
-    text-align: center;
-    font-size: calc(100vw * (18 / 1920));
-
-  .title {
-    font-size:4.44em;
-    font-weight: bold;
-    line-height: normal;
-  }
-
-  .subtitle {margin: 0.1em 0 0 0;
-    font-size:1.67em;
-    font-weight: 600;transform: scaleX(0.9);
-  }
-  p{margin: 0.5em 0 0 0;
-    font-size:1em;}
-}
-
 @media screen and (max-width: 767px) {
   .bg {
     background-image: url('./s2/mo/bg.jpg');
@@ -95,18 +66,6 @@
   width: 100vw;
   }
 }
-
-  .text {
-    top: calc(100vw * (80 / 375));
-    font-size: calc(100vw * (13 / 375));
-    .title {
-    font-size:3em;
-    }
-
-    .subtitle {
-    font-size:1.56em;
-    }
-  }
   .img {
     display: none;
   }

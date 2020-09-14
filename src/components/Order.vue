@@ -210,9 +210,10 @@ export default {
     margin-top: 40px;
     margin-bottom: 8px;
     font-weight: bold;
-    font-size: 36px;
+    font-size: calc(100vw * (78 / 1920));
     text-align: center;
     color: $order_title_color;
+    font-family: "Noto Serif TC", serif;
   }
 
   .order-subtitle {
@@ -269,6 +270,8 @@ export default {
       font-size: 16px;
       opacity: 0.8;
       color: $order_input_label_color;
+    font-family: "Noto Serif TC", serif;
+    font-weight: 600;
     }
   }
 
@@ -303,6 +306,7 @@ export default {
     .order-title {
       margin-top: 10px;
       margin-bottom: 20px;
+    font-size: calc(100vw * (39 / 375));
     }
 
     .order-subtitle {

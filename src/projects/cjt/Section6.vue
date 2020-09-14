@@ -2,7 +2,7 @@
   <div class="section6">
     <div class="bg fullscreen">
       <div class="absolute text">
-        <div class="subtitle">好市多、和緯、文賢、海佃、國安商圈</div>
+        <h4 class="subtitle">好市多、和緯、文賢、海佃、國安商圈</h4>
         <h3 class="title">5大商圈 悠閒享樂</h3>
       </div>
       <carousel-3d
@@ -54,33 +54,7 @@
 }
 
 .text {
-  top: calc(100vw * (100 / 1920));
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  text-align: center;
   color: #40220f;
-    line-height: 1.6;
-    width:100%;
-    font-stretch: normal;
-    font-style: normal;
-    letter-spacing:0.1em;
-    text-align: center;
-    font-size: calc(100vw * (18 / 1920));
-
-  .title {
-    font-size:4.44em;
-    font-weight: bold;
-    line-height: normal;
-  }
-
-  .subtitle {margin: 0.1em 0 0 0;
-    font-size:1.7em;
-    letter-spacing:0.2em;
-    font-weight: 500;
-  }
-  p{margin: 0.5em 0 0 0;
-    font-size:1em;}
 }
 
 .carousel-3d-container {
@@ -187,10 +161,10 @@
 
   .text {
     position: relative;
-    left: 0;
+    top: 0;
+    margin: calc(100vw * (35 / 375)) auto calc(100vw * (32 / 375)) ;
+/*    left: 0;
     right: 0;
-    top: auto;
-    margin: 0 auto;
     margin-top: 30px;
     width: 90vw;
     font-size: calc(100vw * (13 / 375));
@@ -202,11 +176,12 @@
     .subtitle {
     font-size:1.19em;
     letter-spacing:0.23em;
-    }
+    }  */
   }
 
+
   .carousel-3d-container {
-    margin-bottom: 0 !important;
+    margin: 0 !important;
   }
 
   .video-slide {
@@ -244,7 +219,7 @@
     left: 0;
     right: 0;
     margin: 0 auto;
-    bottom: 10%;
+    bottom: 0%;    height: 240px;
     z-index: 12;
 
     img {
