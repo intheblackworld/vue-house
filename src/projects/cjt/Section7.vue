@@ -35,11 +35,10 @@
 }
 
 .text {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  top: calc(100vw * (100 / 1920));
+  top:0;
+  margin: calc(100vw * (85 / 1920)) auto;
+  color: #40220f;
+  position: relative;
 
   .title {
     font-size: calc(100vw * (80 / 1920));

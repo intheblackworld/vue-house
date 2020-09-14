@@ -59,7 +59,7 @@
 }
 
 .text {
-  top: calc(100vw * (80 / 1920));
+  top: calc(100vw * (85 / 1920));
   text-shadow: 2px 0 8px #0369;
 }
 

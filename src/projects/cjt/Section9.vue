@@ -33,8 +33,8 @@
   position: relative;
   overflow: hidden;
   // padding-top: 220px;
-  width: 100vw;
-  height: calc(100vw * 1150 / 1920);
+ // width: 100vw;
+ // height: calc(100vw * 1150 / 1920);
   background-color: #fcf8f2;// url('./s6/bg.jpg');
 }
 .bg-img {
@@ -50,7 +50,10 @@
   }
 }
 .text {
+  top:0;
+  margin: calc(100vw * (85 / 1920)) auto;
   color: #40220f;
+  position: relative;
 }
 /*
 .text {
@@ -87,7 +90,7 @@
 }
 
 .item-img {
-  position: absolute;
+ // position: absolute;
   bottom: 0;
   left: 0;
   right: 0;

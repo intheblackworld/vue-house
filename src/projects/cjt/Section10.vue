@@ -77,11 +77,12 @@
   overflow: hidden;
   // padding-top: 220px;
   width: 100vw;
-  height: calc(100vw * (1250 / 1920));
+  //height: calc(100vw * (1250 / 1920));
   background-color: #fcf8f2;// url('./s6/bg.jpg');
+  padding-bottom:calc(100vw * (85 / 1920));
 
   > div {
-    display: flex;
+   // display: flex;
   }
 }
 
@@ -110,8 +111,8 @@
 
 .swiper-container {
   width: calc(100vw * (1322 / 1920));
-  position: absolute;
-  bottom: 50px;
+  //position: absolute;
+ // bottom: 50px;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -132,7 +133,10 @@
   transform: translateY(-50%);
 }
 .text {
+  top:0;
+  margin: calc(100vw * (85 / 1920)) auto;
   color: #40220f;
+  position: relative;
 }
 /*
 .text {

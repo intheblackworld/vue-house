@@ -1,6 +1,6 @@
 <template>
   <div class="section6">
-    <div class="bg fullscreen">
+    <div class="bg">
       <div class="absolute text">
         <h4 class="subtitle">好市多、和緯、文賢、海佃、國安商圈</h4>
         <h3 class="title">5大商圈 悠閒享樂</h3>
@@ -44,21 +44,23 @@
 .bg {
   position: relative;
   overflow: hidden;
-  display: flex;
   align-items: center;
   background-color: #fcf8f2;// url('./s6/bg.jpg');
   background-size: cover;
   background-attachment: fixed;
-  height: calc(100vw * (1085 / 1920));
-  min-height: 950px;
+ // height: calc(100vw * (1085 / 1920));
+ // min-height: 950px;
 }
 
 .text {
+  top:0;
+  margin: calc(100vw * (85 / 1920)) auto;
   color: #40220f;
+  position: relative;
 }
 
 .carousel-3d-container {
-  margin-top: calc(100vw * (260 / 1920)) !important;
+  margin:0 !important;
 }
 // .video-slide {
 //   border: 1px solid #e6b048 !important;
@@ -160,8 +162,6 @@
   }
 
   .text {
-    position: relative;
-    top: 0;
     margin: calc(100vw * (35 / 375)) auto calc(100vw * (32 / 375)) ;
 /*    left: 0;
     right: 0;
@@ -179,10 +179,6 @@
     }  */
   }
 
-
-  .carousel-3d-container {
-    margin: 0 !important;
-  }
 
   .video-slide {
     width: 100vw;
