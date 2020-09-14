@@ -2,127 +2,154 @@
   <div class="indigator">
     <div class="list-indigator">
       <div
-        :class="`dot ${index == indigatorIndex ? 'active' : '' }`"
-        v-for="index in info.indigatorLength"
-        :key="`indigator-${index}`"
-        v-scroll-to="{ element: `#section${index}` }"
-        @click="setIndigator(index)"
-      ></div>
+        :class="`dot ${index === indigatorIndex ? 'active' : '' }`"
+        v-for="(nav, index) in navList"
+        :key="`indigator-${index + 1}`"
+        @click="setIndigator(index + 1)"
+      ><span>{{nav.name}}</span></div>
       <!-- <div
-        :class="`dot ${(info.indigatorLength + 1) === indigatorIndex ? 'active' : '' }`"
+        :class="`dot ${(navList.length - 1 + 1) === indigatorIndex + 1 ? 'active' : '' }`"
         v-scroll-to="{ element: `#contact` }"
-        @click="setIndigator(info.indigatorLength + 1)"
+        @click="setIndigator(navList.length - 1 + 1)"
       ></div> -->
     </div>
     <div
       :class="`contact-indigator`"
-      v-scroll-to="{ element: `#contact` }"
-      @click="setIndigator(navList.length - 1 + 1)"
+      @click="setIndigator(navList.length + 1)"
     >預約賞屋</div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .indigator {
-  font-size: 16px;
+    font-size:18px;
   position: fixed;
-  right: 0.8em;
+  right:0em;
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
   .list-indigator {
     position: relative;
     padding: 8px;
+  margin-right:1em;
     border-radius: 20px;
   }
 
   .dot {
-    width: 2em;
-    height: 2em;
-    margin: 0;
+    width:2em;
+    height:3em;
+    line-height: 2;
+    margin:0;
     background: transparent;
-    cursor: pointer;
-    border-radius: 999px;
-    overflow: hidden;
-    &::before {
-      content: '';
+    cursor: pointer;position: relative;
+    border-radius: 999px;//overflow: hidden;
+    &::before{
+      content:"";
       display: block;
-      width: 0.7em;
-      height: 0.7em;
-     //@function border: 1px solid #0000;
-      border-radius: 999px;
-      margin: calc(50% - 0.3em) auto 0 auto;
-      transition: all 0.3s;
-      background: rgba(0, 0, 0, 0.4);
-      // background: #fff;
+    width:0.8em;
+    height:0.8em;
+    //border: 1px solid #fff;
+    border-radius: 999px;margin: 0 auto 0 auto;
+    transition: all 0.3s;
+      background: #ba926299;
+      top:calc(50% - 0.4em);position:absolute;
+      left:calc(50% - 0.4em);
     }
     &.active {
-      &::before {
-        background: #000;
+    &::before{
+      background: #ba9262FF;}
+    }
+    &:hover::before{
+      background: #ba9262FF;
+    }
+    span{color:#FFF;font-family: "Noto Serif TC", serif;letter-spacing: 0.1em;
+    display: block;
+    width: 7em;position:absolute;right: 0;top:calc(50% - 1em);
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 1em;
+      overflow: hidden;transition: all 0.3s;opacity: 0;
       }
+    &:hover{
+       span{right: 2em;opacity: 1;
+       animation: dot_span_an .2s 1s forwards;
+       }
     }
-    &:hover::before {
-      background: #ffd200;
-    }
+    //&:first-child{display:none;}
   }
+  
+@keyframes dot_span_an {
+    to {
+        right: 0;opacity: 0;
+    }
+}
 
   .contact-indigator {
-    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    background:url('../projects/tv/s1/icon.png');
+    background-size: contain;
     margin: 1em auto 1em auto;
-    padding: 0.4em;
-    color: #fff;
-    border-radius: 20px;
+    padding: 0.6em 1em 0 1.3em;
+    color: #666;top: auto;
+    right: 0;
+    top:calc(50% + 50vh - 5em);
+    border-radius:0;
     cursor: pointer;
-    line-height: 1.5;
-    width: 2em;
-    transition: all 0.3s;
-    &:hover {
-      color: #fff;
-    background: rgba(0, 40, 130, 0.4);
+    line-height: 1.4;
+  font-size: 1.3em;
+    width:5em;
+    height: 5em;
+    transition: all 0.3s;font-family: "Noto Serif TC", serif;letter-spacing: 0.1em;font-weight: 700;
+
+    &:hover{
+      color: #000;
     }
   }
 }
-@media screen and (max-width: 767px) {
-  .indigator {
-    // display: none;
-    right: -3.5vw;
-    .contact-indigator {
-      display: none;
-    }
-    .dot {
-      width: 2em;
-      height: 3em;
-    }
+@media screen and (max-width: 767px){
+  
+.indigator {
+  right: -0.5em;
+  .list-indigator {
+  margin-right:0;
   }
+  .contact-indigator {
+    display: none;
+   
+  }
+}
+
+.dot {
+  position: relative;
+  z-index: 2;
+}
 }
 </style>
 
 <script>
-import info from '@/info'
+import navList from '@/info/navList'
+import { isMobile } from '@/utils'
 
 export default {
   name: 'Indigator',
-
+  props: ['action', 'indigatorIndex'],
   data() {
     return {
-      info,
-      indigatorIndex: 1,
+      isMobile,
+      navList,
     }
   },
 
-  props: ['viewIndex'],
-
-  watch: {
-    viewIndex(val) {
-      // console.log(val)
-      this.indigatorIndex = val
-    },
-  },
+  watch: {},
 
   methods: {
     setIndigator(index) {
-      this.indigatorIndex = index
+      // if (this.isMobile) {
+      //   return
+      // }
+      this.action.moveTo(index)
     },
   },
+
+  created() {},
 }
 </script>
