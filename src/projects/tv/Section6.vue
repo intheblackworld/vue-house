@@ -49,7 +49,7 @@
               :src="slide.src"
               :class="`item-img ${slideIndex === index ? 'active' : ''}`"
             />
-            <div v-html="slide.name"></div>
+            <div class="item-name" v-html="slide.name"></div>
           </swiper-slide>
         </swiper>
         <div class="content">
@@ -115,7 +115,7 @@
               :src="slide.src"
               :class="`item-img ${slideIndex === index ? 'active' : ''}`"
             />
-            <div v-html="slide.name"></div>
+            <div class="item-name" v-html="slide.name"></div>
           </swiper-slide>
         </swiper>
           </div>
@@ -419,36 +419,28 @@ export default {
         {
           src: require('./s6/1.jpg'),
           contentIndex: 0,
+          name: "現場實品屋",
           subtitle: '高層景觀飯店寓所，降板湯缸特仕版',
           subtitle_m: '高層景觀飯店寓所<br>降板湯缸特仕版',
         },
         {
           src: require('./s6/2.jpg'),
           contentIndex: 0,
+          name: "現場實品屋",
           subtitle: '高層景觀飯店寓所，降板湯缸特仕版',
           subtitle_m: '高層景觀飯店寓所<br>降板湯缸特仕版',
         },
         {
           src: require('./s6/3.jpg'),
           contentIndex: 1,
+          name: "THE VIEW現場湯缸實景",
           subtitle: '高層景觀飯店寓所，降板湯缸特仕版',
           subtitle_m: '高層景觀飯店寓所<br>降板湯缸特仕版',
         },
         {
           src: require('./s6/4.jpg'),
           contentIndex: 1,
-          subtitle: '高層景觀飯店寓所，降板湯缸特仕版',
-          subtitle_m: '高層景觀飯店寓所<br>降板湯缸特仕版',
-        },
-        {
-          src: require('./s6/5.jpg'),
-          contentIndex: 2,
-          subtitle: '高層景觀飯店寓所，降板湯缸特仕版',
-          subtitle_m: '高層景觀飯店寓所<br>降板湯缸特仕版',
-        },
-        {
-          src: require('./s6/6.jpg'),
-          contentIndex: 2,
+          name: "現場實品屋",
           subtitle: '高層景觀飯店寓所，降板湯缸特仕版',
           subtitle_m: '高層景觀飯店寓所<br>降板湯缸特仕版',
         },

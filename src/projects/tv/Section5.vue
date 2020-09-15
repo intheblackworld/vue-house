@@ -71,7 +71,7 @@
               :src="slide.src"
               :class="`item-img ${slideIndex === index ? 'active' : ''}`"
             />
-            <div v-html="slide.name"></div>
+            <div class="item-name" v-html="slide.name"></div>
           </swiper-slide>
         </swiper>
       </div>
@@ -115,7 +115,7 @@
               :src="slide.src"
               :class="`item-img ${slideIndex === index ? 'active' : ''}`"
             />
-            <div v-html="slide.name"></div>
+            <div class="item-name" v-html="slide.name"></div>
           </swiper-slide>
         </swiper>
         </div>
@@ -186,6 +186,7 @@
 .slides {
   width: size(890);
 }
+.item-name{position:absolute;color: #fff;font-size:calc(12px + 0.2vw);right: 0.5em;bottom: 0.5em;text-shadow: 0.1em 0 0.5em #000c;}
 
 .content {
   width: size(438);
@@ -420,23 +421,22 @@ export default {
         {
           src: require('./s5/1.jpg'),
           contentIndex: 0,
+          name: "",
           subtitle: '當散步變成旅行，在家就是假期<br />奢華與悠遊同行',
         },
         {
           src: require('./s5/2.jpg'),
           contentIndex: 0,
+          name: "THE VIEW挑高門廳實景",
           subtitle: '從台北的安杰、兩岸的安杰<br />到國際的安杰',
         },
         {
           src: require('./s5/3.jpg'),
           contentIndex: 1,
+          name: "",
           subtitle: '從台北的安杰、兩岸的安杰<br />到國際的安杰',
         },
-        {
-          src: require('./s5/4.jpg'),
-          contentIndex: 2,
-          subtitle: '從台北的安杰、兩岸的安杰<br />到國際的安杰',
-        },
+        
       ],
       desc_list: [
         [

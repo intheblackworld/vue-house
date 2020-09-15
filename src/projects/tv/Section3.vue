@@ -72,7 +72,7 @@
               :src="slide.src"
               :class="`item-img ${slideIndex === index ? 'active' : ''}`"
             />
-            <div v-html="slide.name"></div>
+            <div class="item-name" v-html="slide.name"></div>
           </swiper-slide>
         </swiper>
       </div>
@@ -120,7 +120,7 @@
               :src="slide.src"
               :class="`item-img ${slideIndex === index ? 'active' : ''}`"
             />
-            <div v-html="slide.name"></div>
+            <div class="item-name" v-html="slide.name"></div>
           </swiper-slide>
         </swiper>
         </div>
@@ -190,7 +190,7 @@
 .slides {
   width: size(890);
 }
-
+.item-name{position:absolute;color: #fff;font-size:calc(12px + 0.2vw);right: 0.5em;bottom: 0.5em;text-shadow: 0.1em 0 0.5em #000c;}
 .content {
   width: size(438);
   height: size(710);
@@ -438,46 +438,39 @@ export default {
       },
       slideList: [
         {
-          src: require('./s3/1-1.jpg'),
+          src: require('./s3/1.jpg'),
           contentIndex: 0,
+          name: "THE VIEW外觀實景",
           subtitle: '眼光中有山水湛藍，舉止裡有磅礡優雅',
           subtitle_m: '眼光中有山水湛藍<br>舉止裡有磅礡優雅',
         },
         {
-          src: require('./s3/1-2.jpg'),
+          src: require('./s3/2.jpg'),
           contentIndex: 0,
+          name: "THE VIEW挑高門廳實景",
           subtitle: '眼光中有山水湛藍，舉止裡有磅礡優雅',
           subtitle_m: '眼光中有山水湛藍<br>舉止裡有磅礡優雅',
         },
         {
-          src: require('./s3/2-1.jpg'),
+          src: require('./s3/3.jpg'),
           contentIndex: 1,
+          name: "THE VIEW公設實景",
           subtitle: '聞名於外，珍藏於內，林家花園，黃石市場',
           subtitle_m: '聞名於外，珍藏於內<br>林家花園，黃石市場',
         },
         {
-          src: require('./s3/2-2.jpg'),
+          src: require('./s3/4.jpg'),
           contentIndex: 1,
+          name: "THE VIEW挑高門廳實景",
           subtitle: '聞名於外，珍藏於內，林家花園，黃石市場',
           subtitle_m: '聞名於外，珍藏於內<br>林家花園，黃石市場',
         },
         {
-          src: require('./s3/2-3.jpg'),
+          src: require('./s3/5.jpg'),
           contentIndex: 1,
+          name: "THE VIEW公設實景",
           subtitle: '聞名於外，珍藏於內，林家花園，黃石市場',
           subtitle_m: '聞名於外，珍藏於內<br>林家花園，黃石市場',
-        },
-        {
-          src: require('./s3/3-1.jpg'),
-          contentIndex: 2,
-          subtitle: '新板藏美，信義藏峰，青春力量藏心胸',
-          subtitle_m: '新板藏美，信義藏峰<br>青春力量藏心胸',
-        },
-        {
-          src: require('./s3/3-2.jpg'),
-          contentIndex: 2,
-          subtitle: '新板藏美，信義藏峰，青春力量藏心胸',
-          subtitle_m: '新板藏美，信義藏峰<br>青春力量藏心胸',
         },
       ],
       desc_list: [

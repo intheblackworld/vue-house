@@ -29,7 +29,7 @@
               :src="slide.src"
               :class="`item-img ${slideIndex === index ? 'active' : ''}`"
             />
-            <div v-html="slide.name"></div>
+            <div class="item-name" v-html="slide.name"></div>
           </swiper-slide>
           <!-- <div
             class="swiper-pagination"
@@ -104,7 +104,7 @@
               :src="slide.src"
               :class="`item-img ${slideIndex === index ? 'active' : ''}`"
             />
-            <div v-html="slide.name"></div>
+            <div class="item-name" v-html="slide.name"></div>
           </swiper-slide>
         </swiper>
           </div>
@@ -203,7 +203,7 @@
 .slides {
   width: size(890);
 }
-
+.item-name{position:absolute;color: #fff;font-size:calc(12px + 0.2vw);right: 0.5em;bottom: 0.5em;text-shadow: 0.1em 0 0.5em #000c;}
 .content {
   width: size(438);
   height: size(710);
@@ -426,33 +426,33 @@ export default {
       },
       slideList: [
         {
-          src: require('./s2/1-1.jpg'),
+          src: require('./s2/1.jpg'),
           contentIndex: 0,
+          name: "府中捷運站",
           subtitle: '百種新板散策，千種時尚氛圍<br />妳喜歡的理由只要ㄧ個',
         },
         {
-          src: require('./s2/1-2.jpg'),
+          src: require('./s2/2.jpg'),
           contentIndex: 0,
+          name: "府中捷運站",
           subtitle: '百種新板散策，千種時尚氛圍<br />妳喜歡的理由只要ㄧ個',
         },
         {
-          src: require('./s2/2-1.jpg'),
+          src: require('./s2/3.jpg'),
           contentIndex: 1,
+          name: "新板誠品商圈",
           subtitle: '如果愛一個人，你要帶她去<br />看看THE VIEW好在哪裡',
         },
         {
-          src: require('./s2/2-2.jpg'),
+          src: require('./s2/4.jpg'),
           contentIndex: 1,
+          name: "府中捷運商圈",
           subtitle: '如果愛一個人，你要帶她去<br />看看THE VIEW好在哪裡',
         },
         {
-          src: require('./s2/3-2.jpg'),
+          src: require('./s2/5.jpg'),
           contentIndex: 2,
-          subtitle: '全國日運量200萬人次前5大站<br />亮點在這裡！',
-        },
-        {
-          src: require('./s2/3-1.jpg'),
-          contentIndex: 2,
+          name: "新板特區商圈",
           subtitle: '全國日運量200萬人次前5大站<br />亮點在這裡！',
         },
       ],
