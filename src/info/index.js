@@ -16,7 +16,7 @@ export default {
     ['建照案號', '106峽建字第00212']
   ],
 
-  gtmCode: ['52FWZX7'], // 可放置多個
+  gtmCode: ['N9B9BQF'], // 可放置多個
   order: {
     title: '預約賞屋',
     subTitle: ''
