@@ -2,8 +2,8 @@
   <div class="home no-padding-top">
     <Loading :loading="load" />
     <!-- <SideNavigation /> -->
-    <Navigation />
-    <!-- <Indigator :viewIndex="viewIndex" /> -->
+    <!-- <Navigation /> -->
+    <Indigator :viewIndex="viewIndex" />
     <!-- <full-page
       ref="fullPage"
       :options="options"
@@ -109,24 +109,24 @@ import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 
-import Section1 from '@/projects/gs/Section1.vue'
-import Section2 from '@/projects/gs/Section2.vue'
-import Section3 from '@/projects/gs/Section3.vue'
-import Section4 from '@/projects/gs/Section4.vue'
-import Section5 from '@/projects/gs/Section5.vue'
-import Section6 from '@/projects/gs/Section6.vue'
-import Section7 from '@/projects/gs/Section7.vue'
-// import Section8 from '@/projects/gs/Section8.vue'
-// import Section9 from '@/projects/gs/Section9.vue'
-// import Section10 from '@/projects/gs/Section10.vue'
-// import Section11 from '@/projects/gs/Section11.vue'
+import Section1 from '@/projects/cjl1/Section1.vue'
+import Section2 from '@/projects/cjl1/Section2.vue'
+import Section3 from '@/projects/cjl1/Section3.vue'
+import Section4 from '@/projects/cjl1/Section4.vue'
+import Section5 from '@/projects/cjl1/Section5.vue'
+import Section6 from '@/projects/cjl1/Section6.vue'
+import Section7 from '@/projects/cjl1/Section7.vue'
+// import Section8 from '@/projects/cjl1/Section8.vue'
+// import Section9 from '@/projects/cjl1/Section9.vue'
+// import Section10 from '@/projects/cjl1/Section10.vue'
+// import Section11 from '@/projects/cjl1/Section11.vue'
 
 export default {
   name: 'home',
   components: {
     Loading,
-    // Indigator,
-    Navigation,
+    Indigator,
+    // Navigation,
     // SideNavigation,
     ContactSection,
     MobileNav,
@@ -189,7 +189,7 @@ export default {
     })
   },
   mounted() {
-    // window.addEventListener('scroll', this.onScroll, false)
+    window.addEventListener('scroll', this.onScroll, false)
     // this.action = this.$refs.fullPage.api
     // if (this.isMobile) {
     //   this.$refs.fullPage.api.setResponsive(true)
@@ -197,28 +197,28 @@ export default {
   },
   methods: {
     init() {},
-    // onScroll() {
-    //   // 获取所有锚点元素
-    //   const navContents = document.querySelectorAll('.section')
-    //   // 所有锚点元素的 offsetTop
-    //   const offsetTopArr = []
-    //   navContents.forEach(item => {
-    //     offsetTopArr.push(item.offsetTop)
-    //   })
-    //   // 获取当前文档流的 scrollTop
-    //   const scrollTop =
-    //     document.documentElement.scrollTop || document.body.scrollTop
-    //   // 定义当前点亮的导航下标
-    //   let navIndex = 0
-    //   for (let n = 0; n < offsetTopArr.length; n++) {
-    //     // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
-    //     // 那么此时导航索引就应该是n了
-    //     if (scrollTop >= offsetTopArr[n] - 100) {
-    //       navIndex = n
-    //     }
-    //   }
-    //   this.viewIndex = navIndex + 1
-    // },
+    onScroll() {
+      // 获取所有锚点元素
+      const navContents = document.querySelectorAll('.section')
+      // 所有锚点元素的 offsetTop
+      const offsetTopArr = []
+      navContents.forEach(item => {
+        offsetTopArr.push(item.offsetTop)
+      })
+      // 获取当前文档流的 scrollTop
+      const scrollTop =
+        document.documentElement.scrollTop || document.body.scrollTop
+      // 定义当前点亮的导航下标
+      let navIndex = 0
+      for (let n = 0; n < offsetTopArr.length; n++) {
+        // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
+        // 那么此时导航索引就应该是n了
+        if (scrollTop >= offsetTopArr[n] - 100) {
+          navIndex = n
+        }
+      }
+      this.viewIndex = navIndex
+    },
 
     // onLeave(origin, destination, direction) {
     //   if (!this.isMobile) {
