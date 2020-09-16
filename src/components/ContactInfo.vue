@@ -337,11 +337,9 @@ export default {
     width: 280px;
     padding: 0 1em;
     text-align: justify;
-    border-radius: 18px;
   }
 
   .google-btn {
-    border-radius: 18px;
     margin-top: 15px;
   }
 }

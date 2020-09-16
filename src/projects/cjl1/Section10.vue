@@ -8,7 +8,7 @@
       </div>
       <transition-group name="swipe-fade" data-aos="fade-down" data-aos-delay="600">
         <div class="title absolute" v-for="(slide, index) in slideList" :key="slide.img" v-html="slide.title" v-show="slideIndex === index">
-      </div>
+        </div>
       </transition-group>
       <div class="desc absolute" data-aos="fade-down" data-aos-delay="700">
         精品2-4房 東區指標 閃耀登場
@@ -297,7 +297,7 @@
 @media screen and (max-width: 767px) {
   .section10 {
     width: 100vw;
-    height: calc(100vh - 63px);
+    height: sizem(400);
     min-height: auto;
   }
   .img {
@@ -306,7 +306,7 @@
 
   .swipe {
     width: 100vw;
-    height: calc(100vh - 63px);
+    height: sizem(210);
     top: 0;
     left: 0;
     object-fit: cover;
@@ -417,68 +417,39 @@
   }
 
   .title {
-    text-shadow: 1px 1px 7px rgba(21, 32, 68, 0.8);
+    width: sizem(340);
+    height: sizem(84);
+    top: sizem(240);
+    right: sizem(0);
+    left: 0;
+    margin: 0 auto;
+    padding-top: sizem(10);
+    background-image: url('./s9/title.png');
+    background-size: 100% 100%;
     font-size: sizem(25);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.44;
-    letter-spacing: 2px;
-    text-align: left;
+    letter-spacing: sizem(3.5);
+    text-align: center;
     color: #ffffff;
-    z-index: 2;
-  }
-
-  .subtitle {
-    text-shadow: 1px 1px 7px rgba(21, 32, 68, 0.8);
-    font-size: sizem(20);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.45;
-    letter-spacing: 1.6px;
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
-    z-index: 2;
   }
 
   .desc {
-    text-shadow: 1px 1px 7px rgba(21, 32, 68, 0.8);
-    font-size: sizem(16);
-    font-weight: bold;
+    width: sizem(310);
+    top: sizem(320);
+    right: sizem(0);
+    left: 0;
+    margin: 0 auto;
+    font-size: sizem(20);
+    font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.03;
-    letter-spacing: 0.96px;
+    line-height: 1.73;
+    letter-spacing: sizem(2.8);
     text-align: left;
-    color: #ffffff;
-    z-index: 2;
-  }
-
-  .title1,
-  .title2,
-  .title3 {
-    top: sizem(92);
-    right: auto;
-    left: sizem(26);
-  }
-
-  .subtitle1,
-  .subtitle2,
-  .subtitle3 {
-    top: sizem(172);
-    right: auto;
-    left: sizem(26);
-  }
-
-  .desc1,
-  .desc2,
-  .desc3 {
-    width: sizem(330);
-    top: sizem(216);
-    right: auto;
-    left: sizem(26);
+    color: #000000;
   }
 }
 </style>
@@ -504,39 +475,27 @@ export default {
       startcalc: null,
       slideList: [
         {
-          img: isMobile
-            ? require('./s10/1獨立會館一樓 - 接待大廳.jpg')
-            : require('./s10/1獨立會館一樓 - 接待大廳.jpg'),
+          img: require('./s10/1獨立會館一樓 - 接待大廳.jpg'),
           title: '獨立會館一樓 - 接待大廳',
         },
         {
-          img: isMobile
-            ? require('./s10/2獨立會館一樓 – 閱覽室.jpg')
-            : require('./s10/2獨立會館一樓 – 閱覽室.jpg'),
+          img: require('./s10/2獨立會館一樓 – 閱覽室.jpg'),
           title: '獨立會館一樓 – 閱覽室',
         },
         {
-          img: isMobile
-            ? require('./s10/3獨立會館二樓 – 健身房.jpg')
-            : require('./s10/3獨立會館二樓 – 健身房.jpg'),
+          img: require('./s10/3獨立會館二樓 – 健身房.jpg'),
           title: '獨立會館二樓 – 健身房',
         },
         {
-          img: isMobile
-            ? require('./s10/4獨立會館二樓 – 遊戲室.jpg')
-            : require('./s10/4獨立會館二樓 – 遊戲室.jpg'),
+          img: require('./s10/4獨立會館二樓 – 遊戲室.jpg'),
           title: '獨立會館二樓 – 遊戲室',
         },
         {
-          img: isMobile
-            ? require('./s10/5獨立會館三樓 –  生活講堂.jpg')
-            : require('./s10/5獨立會館三樓 –  生活講堂.jpg'),
+          img: require('./s10/5獨立會館三樓 –  生活講堂.jpg'),
           title: '獨立會館三樓 –  生活講堂',
         },
         {
-          img: isMobile
-            ? require('./s10/6獨立會館三樓 –  宴會廳 .jpg')
-            : require('./s10/6獨立會館三樓 –  宴會廳 .jpg'),
+          img: require('./s10/6獨立會館三樓 –  宴會廳 .jpg'),
           title: '獨立會館三樓 –  宴會廳',
         },
       ],
@@ -570,6 +529,9 @@ export default {
   created() {},
 
   mounted() {
+    if (this.isMobile) {
+      return
+    }
     this.start()
     // let a = 50
     // a = a * 3.39
@@ -580,6 +542,9 @@ export default {
 
   watch: {
     i() {
+      if (this.isMobile) {
+        return
+      }
       $('.progress__value').css('stroke-dashoffset', this.dec_circle_value)
       if (this.direction === 'add') {
         $('.add_circle').css('opacity', 1)

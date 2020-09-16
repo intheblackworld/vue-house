@@ -118,18 +118,49 @@
 }
 @media screen and (max-width: 767px) {
   .indigator {
+    top: 0px;
+    transform: none;
     right: -0.5em;
     .list-indigator {
       margin-right: 0;
+      padding-left: 0;
     }
     .contact-indigator {
       display: none;
     }
-  }
 
-  .dot {
-    position: relative;
-    z-index: 2;
+    .dot {
+      width: 1em;
+      height: 2em;
+      position: relative;
+      z-index: 2;
+    }
+
+    .dot {
+      &::before {
+        border: 1px solid #fff;
+        background: transparent;
+      }
+      &.active {
+        &::before {
+          background: #fff;
+        }
+      }
+      &:hover::before {
+        background: #fff;
+      }
+      span {
+        color: #fff;
+      }
+      &:hover {
+        span {
+          right: 2em;
+          opacity: 1;
+          animation: dot_span_an 0.2s 1s forwards;
+        }
+      }
+      //&:first-child{display:none;}
+    }
   }
 }
 </style>

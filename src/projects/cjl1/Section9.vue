@@ -21,8 +21,7 @@
         </div>
       </div>
       <div v-if="!isMobile">
-        <div class="list-title absolute">
-          {{list[listIndex].title}}
+        <div class="list-title absolute" v-html="list[listIndex].title">
         </div>
         <div class="list-desc absolute" v-html="list[listIndex].desc"></div>
         <div class="list flex-jb absolute">
@@ -33,15 +32,14 @@
         </div>
       </div>
       <div v-if="isMobile">
-        <div class="list flex-jb absolute">
-          <div class="item" v-for="(item, i) in list" :key="item.img" @click="listIndex = i">
-            <img :src="item.img" alt="">
-            <div class="name" v-html="item.name"></div>
-          </div>
+        <div class="carousel-container absolute">
+          <carousel-3d ref="mycarousel" :width="imgWidth" :height="imgHeight" :perspective="0" :disable3d="false" :border="0" :display="3" space="auto" :autoplay="true" @after-slide-change="onAfterSlideChange">
+            <slide v-for="(item, index) in list" :index="index" :key="item.img" class="img-slide">
+              <img :src="item.img" :class="`video-img absolute`" />
+            </slide>
+          </carousel-3d>
         </div>
-        <div class="list-title absolute">
-          {{list[listIndex].title}}
-        </div>
+        <div class="list-title absolute" v-html="list[listIndex].title"></div>
         <div class="list-desc absolute" v-html="list[listIndex].desc"></div>
       </div>
     </div>
@@ -240,7 +238,7 @@
   .section9 {
     width: 100vw;
     min-height: auto;
-    height: sizem(1013);
+    height: sizem(1033);
     //background-image: url('./mo/1/00.jpg');
     background-size: cover;
     background-attachment: scroll;
@@ -284,20 +282,60 @@
     }
   }
 
-  .img-item {
-    width: sizem(375);
-    img {
-      width: 100%;
-    }
+  .carousel-container {
+    width: 100vw;
+    top: sizem(380);
+  }
+
+  .list-title {
+    width: sizem(340);
+    height: sizem(114);
+    top: sizem(757);
+    right: sizem(0);
+    left: 0;
+    margin: 0 auto;
+    padding-top: sizem(10);
+    background-image: url('./s9/title.png');
+    background-size: 100% 100%;
+    font-size: sizem(25);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.44;
+    letter-spacing: sizem(3.5);
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .list-desc {
+    width: sizem(310);
+    top: sizem(880);
+    right: sizem(0);
+    left: 0;
+    margin: 0 auto;
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.73;
+    letter-spacing: sizem(1.8);
+    text-align: left;
+    color: #000000;
   }
 }
 </style>
 <script>
 // @ is an alias to /src
 import { icPC, isMobile, isTablet } from '@/utils'
+import { Carousel3d, Slide } from 'vue-carousel-3d'
 
 export default {
   name: 'section9',
+
+  components: {
+    Carousel3d,
+    Slide,
+  },
 
   data() {
     return {
@@ -305,30 +343,32 @@ export default {
       isMobile,
       isTablet,
       listIndex: 0,
+      imgWidth: 220,
+      imgHeight: 328,
       list: [
         {
-          title: '空間藝術顧問 常季設計 張立人設計師',
+          title: isMobile ? '空間藝術顧問<br />常季設計 張立人設計師' : '空間藝術顧問 常季設計 張立人設計師',
           desc:
             '內斂豪奢 盡顯尊貴不凡 / 豪宅御用 常季設計<br />張立人：門廳、公設、庭園，不應只是做為建築的裝飾，而是願意因為空間的氣氛而坐下來享受',
           img: require('./s9/1.jpg'),
           name: '張立人設計師',
         },
         {
-          title: '空間藝術顧問 常季設計 張維仁總經理',
+          title: isMobile ? '空間藝術顧問<br />常季設計 張維仁總經理' : '空間藝術顧問 常季設計 張維仁總經理',
           desc:
             '內斂豪奢 盡顯尊貴不凡 / 豪宅御用 常季設計<br />張立人：門廳、公設、庭園，不應只是做為建築的裝飾，而是願意因為空間的氣氛而坐下來享受',
           img: require('./s9/2.jpg'),
           name: '張維仁總經理',
         },
         {
-          title: '空間藝術顧問 常季設計 王東奎建築師',
+          title: isMobile ? '空間藝術顧問<br />常季設計 王東奎建築師' : '空間藝術顧問 常季設計 王東奎建築師',
           desc:
             '內斂豪奢 盡顯尊貴不凡 / 豪宅御用 常季設計<br />張立人：門廳、公設、庭園，不應只是做為建築的裝飾，而是願意因為空間的氣氛而坐下來享受',
           img: require('./s9/3.jpg'),
           name: '王東奎建築師',
         },
         {
-          title: '空間藝術顧問 常季設計 白石畫廊',
+          title: isMobile ? '空間藝術顧問<br />常季設計 白石畫廊' : '空間藝術顧問 常季設計 白石畫廊',
           desc:
             '內斂豪奢 盡顯尊貴不凡 / 豪宅御用 常季設計<br />張立人：門廳、公設、庭園，不應只是做為建築的裝飾，而是願意因為空間的氣氛而坐下來享受',
           img: require('./s9/4.jpg'),
@@ -338,7 +378,11 @@ export default {
     }
   },
 
-  methods: {},
+  methods: {
+    onAfterSlideChange(index) {
+      this.listIndex = index
+    },
+  },
 
   created() {},
 

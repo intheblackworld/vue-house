@@ -489,22 +489,16 @@ export default {
       startcalc: null,
       slideList: [
         {
-          img: isMobile
-            ? require('./s6/1德安百貨.jpg')
-            : require('./s6/1德安百貨.jpg'),
+          img: require('./s6/1德安百貨.jpg'),
         },
         {
-          img: isMobile
-            ? require('./s6/2文化中心.jpg')
-            : require('./s6/2文化中心.jpg'),
+          img: require('./s6/2文化中心.jpg'),
         },
         {
-          img: isMobile
-            ? require('./s6/3崇德市場.jpg')
-            : require('./s6/3崇德市場.jpg'),
+          img: require('./s6/3崇德市場.jpg'),
         },
         {
-          img: isMobile ? require('./mo/6/3.jpg') : require('./s6/4公園.jpg'),
+          img: require('./s6/4公園.jpg'),
         },
       ],
     }
@@ -537,6 +531,9 @@ export default {
   created() {},
 
   mounted() {
+    if (this.isMobile) {
+      return
+    }
     this.start()
     // let a = 50
     // a = a * 3.39
@@ -547,6 +544,9 @@ export default {
 
   watch: {
     i() {
+      if (this.isMobile) {
+        return
+      }
       $('.progress__value').css('stroke-dashoffset', this.dec_circle_value)
       if (this.direction === 'add') {
         $('.add_circle').css('opacity', 1)

@@ -17,7 +17,7 @@
         <div class="desc absolute" v-for="(slide, index) in slideList" :key="slide.img + 'desc'" v-html="slide.desc" v-show="slideIndex === index">
         </div>
       </transition-group>
-      <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="1000">
+      <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="1000" v-if="!isMobile">
         <div :class="`pagination-dot relative`" v-for="(slide, index) in slideList" :key="slide.img + '-dot' + index" @click="goTo(index)">
           <svg class="progress absolute" viewBox="0 0 120 120">
             <circle cx="60" cy="60" r="54" fill="none" stroke="#999999" stroke-width="5" />
@@ -309,7 +309,7 @@
 @media screen and (max-width: 767px) {
   .section10 {
     width: 100vw;
-    height: calc(100vh - 63px);
+    height: sizem(340 + 318);
     min-height: auto;
   }
   .img {
@@ -318,7 +318,7 @@
 
   .swipe {
     width: 100vw;
-    height: calc(100vh - 63px);
+    height: sizem(340);
     top: 0;
     left: 0;
     object-fit: cover;
@@ -429,68 +429,38 @@
   }
 
   .title {
-    text-shadow: 1px 1px 7px rgba(21, 32, 68, 0.8);
+    width: sizem(340);
+    height: sizem(84);
+    top: sizem(360);
+    right: sizem(0);
+    left: 0;
+    margin: 0 auto;
+    padding-top: sizem(20);
+    background-size: 100% 100%;
     font-size: sizem(25);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.44;
-    letter-spacing: 2px;
-    text-align: left;
+    letter-spacing: sizem(3.5);
+    text-align: center;
     color: #ffffff;
-    z-index: 2;
-  }
-
-  .subtitle {
-    text-shadow: 1px 1px 7px rgba(21, 32, 68, 0.8);
-    font-size: sizem(20);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.45;
-    letter-spacing: 1.6px;
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
-    z-index: 2;
   }
 
   .desc {
-    text-shadow: 1px 1px 7px rgba(21, 32, 68, 0.8);
-    font-size: sizem(16);
-    font-weight: bold;
+    width: sizem(310);
+    top: sizem(470);
+    right: sizem(0);
+    left: 0;
+    margin: 0 auto;
+    font-size: sizem(15);
+    font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.03;
-    letter-spacing: 0.96px;
-    text-align: left;
-    color: #ffffff;
-    z-index: 2;
-  }
-
-  .title1,
-  .title2,
-  .title3 {
-    top: sizem(92);
-    right: auto;
-    left: sizem(26);
-  }
-
-  .subtitle1,
-  .subtitle2,
-  .subtitle3 {
-    top: sizem(172);
-    right: auto;
-    left: sizem(26);
-  }
-
-  .desc1,
-  .desc2,
-  .desc3 {
-    width: sizem(330);
-    top: sizem(216);
-    right: auto;
-    left: sizem(26);
+    line-height: 1.73;
+    letter-spacing: sizem(1.5);
+    text-align: center;
+    color: #000000;
   }
 }
 </style>
