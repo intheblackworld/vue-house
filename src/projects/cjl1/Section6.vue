@@ -6,36 +6,70 @@
         <!-- <img src="./s2/ink1.png" alt="" class="ink-2 absolute" data-aos="zoom-in-up" data-aos-delay="200" data-aos-duration="1200"> -->
         <img src="./s2/ink2.png" alt="" class="ink-2 absolute" data-aos="zoom-in-up" data-aos-delay="400" data-aos-duration="1200">
       </div>
-      <div class="title absolute" data-aos="fade-down" data-aos-delay="600">
-        崇明路、崇德商圈燙金地段
-      </div>
-      <div class="desc absolute" data-aos="fade-down" data-aos-delay="700">
-        食衣住行育樂樣樣具備，在林森路以南、生產路以北、崇善路以西及大同路以東，將台南文化中心包圍在內，尤其崇德公有零售市場周邊最熱鬧，發展時間早，成熟度高，生活機能非常便利。
-      </div>
-      <div class="swipe absolute" data-aos="fade-up" data-aos-delay="800">
-        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
-          <div v-for="(slide, i) in slideList" :key="slide.img" :class="`swipe-item absolute ${slideIndex === i ? 'active' : ''} ${(slideIndex === (i + 1) || slideIndex === (i - slideList.length + 1)) ? 'base' : ''}`">
-            <img :src="slide.img" alt="" class="swipe-item">
-          </div>
-          <!-- <div class="pagination absolute flex-ac">
+      <div v-if="!isMobile">
+        <div class="title absolute" data-aos="fade-down" data-aos-delay="600">
+          崇明路、崇德商圈燙金地段
+        </div>
+        <div class="desc absolute" data-aos="fade-down" data-aos-delay="700">
+          食衣住行育樂樣樣具備，在林森路以南、生產路以北、崇善路以西及大同路以東，將台南文化中心包圍在內，尤其崇德公有零售市場周邊最熱鬧，發展時間早，成熟度高，生活機能非常便利。
+        </div>
+        <div class="swipe absolute" data-aos="fade-up" data-aos-delay="800">
+          <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+            <div v-for="(slide, i) in slideList" :key="slide.img" :class="`swipe-item absolute ${slideIndex === i ? 'active' : ''} ${(slideIndex === (i + 1) || slideIndex === (i - slideList.length + 1)) ? 'base' : ''}`">
+              <img :src="slide.img" alt="" class="swipe-item">
+            </div>
+            <!-- <div class="pagination absolute flex-ac">
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div> -->
-          <div class="swipe-btns absolute flex-ac flex-jb">
-            <div class="prev-btn" @click="decIndex">
-              <img src="./s6/l.png" alt="">
-              <svg class="progress absolute" width="75" height="75" viewBox="0 0 120 120">
-                <!-- <circle cx="60" cy="60" r="54" fill="none" stroke="#e6e6e6" stroke-width="4" /> -->
-                <circle class="dec_circle progress__value" cx="60" cy="60" r="54" fill="none" stroke="#006699" stroke-width="3" />
-              </svg>
-            </div>
-            <div class="next-btn" @click="addIndex">
-              <img src="./s6/r.png" alt="">
-              <svg class="progress absolute" width="75" height="75" viewBox="0 0 120 120">
-                <!-- <circle cx="60" cy="60" r="54" fill="none" stroke="#e6e6e6" stroke-width="4" /> -->
-                <circle class="add_circle progress__value" cx="60" cy="60" r="54" fill="none" stroke="#006699" stroke-width="3" />
-              </svg>
+            <div class="swipe-btns absolute flex-ac flex-jb">
+              <div class="prev-btn" @click="decIndex">
+                <img src="./s6/l.png" alt="">
+                <svg class="progress absolute" width="75" height="75" viewBox="0 0 120 120">
+                  <!-- <circle cx="60" cy="60" r="54" fill="none" stroke="#e6e6e6" stroke-width="4" /> -->
+                  <circle class="dec_circle progress__value" cx="60" cy="60" r="54" fill="none" stroke="#006699" stroke-width="3" />
+                </svg>
+              </div>
+              <div class="next-btn" @click="addIndex">
+                <img src="./s6/r.png" alt="">
+                <svg class="progress absolute" width="75" height="75" viewBox="0 0 120 120">
+                  <!-- <circle cx="60" cy="60" r="54" fill="none" stroke="#e6e6e6" stroke-width="4" /> -->
+                  <circle class="add_circle progress__value" cx="60" cy="60" r="54" fill="none" stroke="#006699" stroke-width="3" />
+                </svg>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div v-if="isMobile">
+        <div class="swipe absolute" data-aos="fade-up" data-aos-delay="800">
+          <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+            <div v-for="(slide, i) in slideList" :key="slide.img" :class="`swipe-item absolute ${slideIndex === i ? 'active' : ''} ${(slideIndex === (i + 1) || slideIndex === (i - slideList.length + 1)) ? 'base' : ''}`">
+              <img :src="slide.img" alt="" class="swipe-item">
+            </div>
+            <!-- <div class="pagination absolute flex-ac">
+            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+          </div> -->
+            <!-- <div class="swipe-btns absolute flex-ac flex-jb">
+              <div class="prev-btn" @click="decIndex">
+                <img src="./s6/l.png" alt="">
+                <svg class="progress absolute" width="75" height="75" viewBox="0 0 120 120">
+                  <circle class="dec_circle progress__value" cx="60" cy="60" r="54" fill="none" stroke="#006699" stroke-width="3" />
+                </svg>
+              </div>
+              <div class="next-btn" @click="addIndex">
+                <img src="./s6/r.png" alt="">
+                <svg class="progress absolute" width="75" height="75" viewBox="0 0 120 120">
+                  <circle class="add_circle progress__value" cx="60" cy="60" r="54" fill="none" stroke="#006699" stroke-width="3" />
+                </svg>
+              </div>
+            </div> -->
+          </div>
+        </div>
+        <div class="title absolute" data-aos="fade-down" data-aos-delay="600">
+          崇明路、崇德商圈燙金地段
+        </div>
+        <div class="desc absolute" data-aos="fade-down" data-aos-delay="700">
+          食衣住行育樂樣樣具備，在林森路以南、生產路以北、崇善路以西及大同路以東，將台南文化中心包圍在內，尤其崇德公有零售市場周邊最熱鬧，發展時間早，成熟度高，生活機能非常便利。
         </div>
       </div>
     </div>
@@ -192,7 +226,7 @@
 
     img {
       width: size(72);
-      opacity: .5;
+      opacity: 0.5;
     }
   }
 }
@@ -276,7 +310,7 @@
 @media screen and (max-width: 767px) {
   .section6 {
     width: 100vw;
-    height: calc(100vh - 63px);
+    height: sizem(221 + 289);
     min-height: auto;
   }
   .img {
@@ -285,7 +319,7 @@
 
   .swipe {
     width: 100vw;
-    height: calc(100vh - 63px);
+    height: sizem(221);
     top: 0;
     left: 0;
     object-fit: cover;
@@ -396,68 +430,40 @@
   }
 
   .title {
-    text-shadow: 1px 1px 7px rgba(21, 32, 68, 0.8);
+    width: sizem(340);
+    height: sizem(84);
+    padding-top: sizem(10);
+    top: sizem(30 + 221);
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    background-image: url('./s6/title.png');
+    background-size: 100% 100%;
     font-size: sizem(25);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.44;
-    letter-spacing: 2px;
-    text-align: left;
+    letter-spacing: normal;
+    text-align: center;
     color: #ffffff;
-    z-index: 2;
-  }
-
-  .subtitle {
-    text-shadow: 1px 1px 7px rgba(21, 32, 68, 0.8);
-    font-size: sizem(20);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.45;
-    letter-spacing: 1.6px;
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
-    z-index: 2;
   }
 
   .desc {
-    text-shadow: 1px 1px 7px rgba(21, 32, 68, 0.8);
-    font-size: sizem(16);
+    width: sizem(310);
+    height: auto;
+    top: sizem(112 + 221);
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    font-size: sizem(15);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.03;
-    letter-spacing: 0.96px;
-    text-align: left;
-    color: #ffffff;
-    z-index: 2;
-  }
-
-  .title1,
-  .title2,
-  .title3 {
-    top: sizem(92);
-    right: auto;
-    left: sizem(26);
-  }
-
-  .subtitle1,
-  .subtitle2,
-  .subtitle3 {
-    top: sizem(172);
-    right: auto;
-    left: sizem(26);
-  }
-
-  .desc1,
-  .desc2,
-  .desc3 {
-    width: sizem(330);
-    top: sizem(216);
-    right: auto;
-    left: sizem(26);
+    line-height: 1.92;
+    letter-spacing: sizem(2.1);
+    text-align: center;
+    color: #000000;
   }
 }
 </style>
@@ -484,17 +490,17 @@ export default {
       slideList: [
         {
           img: isMobile
-            ? require('./mo/6/1.jpg')
+            ? require('./s6/1德安百貨.jpg')
             : require('./s6/1德安百貨.jpg'),
         },
         {
           img: isMobile
-            ? require('./mo/6/2.jpg')
+            ? require('./s6/2文化中心.jpg')
             : require('./s6/2文化中心.jpg'),
         },
         {
           img: isMobile
-            ? require('./mo/6/3.jpg')
+            ? require('./s6/3崇德市場.jpg')
             : require('./s6/3崇德市場.jpg'),
         },
         {
@@ -525,7 +531,7 @@ export default {
     },
     stopcalc() {
       clearInterval(this.startcalc) //停止調用函數
-    }
+    },
   },
 
   created() {},
@@ -549,13 +555,12 @@ export default {
         $('.add_circle').css('opacity', 0)
         $('.dec_circle').css('opacity', 1)
       }
-      
-    }
+    },
   },
 
   computed: {
     dec_circle_value() {
-      return 339 - (this.i * 3.39)
+      return 339 - this.i * 3.39
     },
   },
 }

@@ -12,7 +12,6 @@
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
-
 .section1 {
   width: size(1920);
   height: 100vh;
@@ -91,155 +90,41 @@
   .section1 {
     width: 100vw;
     min-height: auto;
-    height: sizem(604 + 329);
+    height: calc(100vh - 63px);
     //background-image: url('./mo/1/00.jpg');
     background-size: cover;
     background-attachment: scroll;
   }
 
-  .bottom-img {
+  .bg-img {
     width: 100vw;
-    height: auto;
+    height: calc(100vh - 63px);
+    min-height: auto;
+    position: absolute;
+    top: 0;
     left: 0;
-    top: sizem(0);
-    //  bottom: sizem(329);
+    display: block;
     object-fit: cover;
-    z-index: 2;
+
+    // &:nth-child(1) {
+    //   position: relative;
+    // }
   }
 
-  .logo {
-    width: sizem(280);
-    top: sizem(29);
-    right: auto;
-    left: sizem(18);
-    height: auto;
-    object-fit: cover;
+  .logo-img {
+    width: sizem(310);
+    top: sizem(90);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
   }
 
-  .logo2 {
-    width: sizem(63);
-    top: sizem(101);
-    right: sizem(28);
-    height: auto;
-    object-fit: cover;
-    z-index: 2;
-  }
-
-  .txt {
-    width: sizem(312);
-    top: sizem(205);
-    right: sizem(0);
-    height: auto;
-    object-fit: cover;
-  }
-
-  .border {
-    width: sizem(347);
-    height: sizem(276);
-    top: sizem(115);
-    right: sizem(14);
-    border-width: sizem(6);
-    font-size: sizem(15);
-    padding: 1.1em 0 0 2em;
-  }
-
-  .block {
-    width: sizem(48);
-    height: sizem(215);
-    max-height: initial;
-    top: sizem(-30);
-    right: sizem(-20);
-    left: auto;
-    bottom: auto;
-  }
-
-  .item-list {
-    top: sizem(600);
-    left: sizem(44);
-
-    .item {
-      width: sizem(17);
-      margin-right: sizem(35);
-      // display: flex;
-      // align-items: center;
-      // justify-content: center;
-      // flex-wrap: wrap;
-      .item-hr {
-        width: 1.5px;
-        height: sizem(67);
-        background-color: #8e8a74;
-        margin: 0 auto;
-        margin-bottom: 15px;
-      }
-      &:nth-child(1) {
-        margin-top: 0;
-      }
-      &:nth-child(2) {
-        margin-top: sizem(13);
-        .item-hr {
-          height: sizem(111);
-        }
-      }
-
-      &:nth-child(3) {
-        margin-top: sizem(30);
-        .item-hr {
-          height: sizem(65);
-        }
-      }
-      &:nth-child(4) {
-        margin-top: sizem(17);
-        .item-hr {
-          height: sizem(69);
-        }
-      }
-
-      &:nth-child(5) {
-        margin-top: sizem(20);
-        .item-hr {
-          height: sizem(58);
-        }
-      }
-
-      &:nth-child(6) {
-        margin-top: sizem(5);
-        .item-hr {
-          height: sizem(68);
-        }
-      }
-    }
-    .item-title,
-    .item-desc {
-      writing-mode: vertical-lr;
-      text-orientation: upright;
-      // display: inline-block;
-      // margin: auto;
-    }
-
-    .item-title {
-      font-size: sizem(12);
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.08;
-      letter-spacing: normal;
-      text-align: center;
-      color: #8e8a74;
-      margin-bottom: sizem(10);
-      margin-left: sizem(2.5);
-    }
-
-    .item-desc {
-      font-size: sizem(17);
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.08;
-      letter-spacing: normal;
-      text-align: center;
-      color: #8e8a74;
-      margin-bottom: sizem(10);
-    }
+  .title-img {
+    width: sizem(310);
+    top: sizem(170);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
   }
 }
 </style>
@@ -256,7 +141,9 @@ export default {
       isMobile,
       isTablet,
       slideIndex: 0,
-      slideList: [require('./s1/bg.jpg'), require('./s1/bg2.jpg')],
+      slideList: isMobile
+        ? [require('./mo/bg1.jpg'), require('./mo/bg2.jpg')]
+        : [require('./s1/bg.jpg'), require('./s1/bg2.jpg')],
     }
   },
 

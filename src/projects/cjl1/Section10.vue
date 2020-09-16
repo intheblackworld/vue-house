@@ -505,37 +505,37 @@ export default {
       slideList: [
         {
           img: isMobile
-            ? require('./mo/6/1.jpg')
+            ? require('./s10/1獨立會館一樓 - 接待大廳.jpg')
             : require('./s10/1獨立會館一樓 - 接待大廳.jpg'),
           title: '獨立會館一樓 - 接待大廳',
         },
         {
           img: isMobile
-            ? require('./mo/6/2.jpg')
+            ? require('./s10/2獨立會館一樓 – 閱覽室.jpg')
             : require('./s10/2獨立會館一樓 – 閱覽室.jpg'),
           title: '獨立會館一樓 – 閱覽室',
         },
         {
           img: isMobile
-            ? require('./mo/6/3.jpg')
+            ? require('./s10/3獨立會館二樓 – 健身房.jpg')
             : require('./s10/3獨立會館二樓 – 健身房.jpg'),
           title: '獨立會館二樓 – 健身房',
         },
         {
           img: isMobile
-            ? require('./mo/6/3.jpg')
+            ? require('./s10/4獨立會館二樓 – 遊戲室.jpg')
             : require('./s10/4獨立會館二樓 – 遊戲室.jpg'),
           title: '獨立會館二樓 – 遊戲室',
         },
         {
           img: isMobile
-            ? require('./mo/6/3.jpg')
+            ? require('./s10/5獨立會館三樓 –  生活講堂.jpg')
             : require('./s10/5獨立會館三樓 –  生活講堂.jpg'),
           title: '獨立會館三樓 –  生活講堂',
         },
         {
           img: isMobile
-            ? require('./mo/6/3.jpg')
+            ? require('./s10/6獨立會館三樓 –  宴會廳 .jpg')
             : require('./s10/6獨立會館三樓 –  宴會廳 .jpg'),
           title: '獨立會館三樓 –  宴會廳',
         },

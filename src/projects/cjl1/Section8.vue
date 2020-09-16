@@ -11,7 +11,7 @@
         <img src="./s8/leaf (8).png" alt="" class="leaf-8 absolute" data-aos="zoom-in-left" data-aos-delay="200" data-aos-duration="1200">
       </div>
       <div class="block absolute flex-c">
-        <img src="./s8/bg.png" alt="" class="img" data-aos="fade" data-aos-delay="600">
+        <img src="./s8/bg.png" alt="" class="img" data-aos="fade" data-aos-delay="600" v-if="!isMobile">
         <ul class="content flex-jb wrap absolute">
           <li>2019/台南-上揚國寶/透天46戶</li>
           <li>2020/高雄-清景麟．白易居/大樓</li>
@@ -21,6 +21,7 @@
           <li>2021/台南-東區新都心段案</li>
         </ul>
       </div>
+      <img src="./mo/8/bg.png" alt="" class="img" data-aos="fade" data-aos-delay="600" v-if="isMobile">
       <div class="title absolute" data-aos="zoom-in" data-aos-delay="400">
         清景麟提早佈局、放眼未來
       </div>
@@ -175,188 +176,89 @@
 @media screen and (max-width: 767px) {
   .section8 {
     width: 100vw;
-    height: calc(100vh - 63px);
+    height: sizem(340 + 45 + 84);
     min-height: auto;
-  }
-  .img {
-    display: none;
-  }
-
-  .swipe {
-    width: 100vw;
-    height: calc(100vh - 63px);
-    top: 0;
-    left: 0;
-    object-fit: cover;
-  }
-
-  .swipe-wrap {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-  .swipe-item {
-    background: #4a649f;
-    img {
-      height: auto;
-      position: absolute;
-      bottom: 0;
-    }
-  }
-  // .swipe-item {
-  //   width: 100%;
-  //   height: 100%;
-  //   left: 100%;
-  //   transition: left 1s ease-in-out;
-  //   z-index: 0;
-  //   object-fit: cover;
-
-  //   &.base {
-  //     z-index: 1;
-  //     left: 0;
-  //   }
-  //   &.active {
-  //     z-index: 2;
-  //     left: 0;
-  //   }
-  // }
-
-  .pagination {
-    width: auto;
-    bottom: 10px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    justify-content: center;
-    display: none;
-  }
-
-  .pagination-dot {
-    padding: 5px;
-    cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width: 14px;
-      height: 14px;
-      border-radius: 14px;
-      box-shadow: 0 0 0 1px #fff;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
-      transition: all 0.5s;
-
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #fff;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transition: all 0.3s;
-        transform-origin: center;
-        transform: scale(0);
-      }
-      &.active {
-        &::before {
-          content: '';
-          width: 60%;
-          height: 60%;
-          display: block;
-          background: #fff;
-          border-radius: 20px;
-          opacity: 1;
-          position: absolute;
-          top: 20%;
-          // transform: translateY(-50%);
-          left: 23%;
-          transform: scale(1);
-        }
-      }
-    }
-  }
-
-  .swipe-btns {
-    width: 100%;
-    height: 100%;
-    padding: 0 0;
-    z-index: 3;
-
-    .prev-btn,
-    .next-btn {
-      //   width: size-m(15);
-      cursor: pointer;
-    }
   }
 
   .title {
-    text-shadow: 1px 1px 7px rgba(21, 32, 68, 0.8);
+    width: sizem(340);
+    height: sizem(84);
+    padding-top: sizem(10);
+    top: sizem(0);
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    background-image: url('./s6/title.png');
+    background-size: 100% 100%;
     font-size: sizem(25);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.44;
-    letter-spacing: 2px;
-    text-align: left;
+    letter-spacing: normal;
+    text-align: center;
     color: #ffffff;
-    z-index: 2;
   }
 
   .subtitle {
-    text-shadow: 1px 1px 7px rgba(21, 32, 68, 0.8);
+    width: sizem(310);
+    height: auto;
+    top: sizem(70);
+    right: 0;
+    left: 0;
+    margin: 0 auto;
     font-size: sizem(20);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.45;
-    letter-spacing: 1.6px;
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
-    z-index: 2;
+    line-height: 3.2;
+    letter-spacing: sizem(2.8);
+    text-align: center;
+    color: #000000;
   }
 
-  .desc {
-    text-shadow: 1px 1px 7px rgba(21, 32, 68, 0.8);
-    font-size: sizem(16);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.03;
-    letter-spacing: 0.96px;
-    text-align: left;
-    color: #ffffff;
-    z-index: 2;
+  .img {
+    width: 100vw;
+    // height: 100vh;
+    // min-height: size(900);
+    bottom: 0;
+    display: block;
+    top: auto;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
   }
 
-  .title1,
-  .title2,
-  .title3 {
-    top: sizem(92);
-    right: auto;
-    left: sizem(26);
+  .block {
+    width: 100vw;
+    height: sizem(340);
+    background-color: #38a9b3;
+    overflow: hidden;
+    top: sizem(130);
+    left: 0;
   }
 
-  .subtitle1,
-  .subtitle2,
-  .subtitle3 {
-    top: sizem(172);
-    right: auto;
-    left: sizem(26);
-  }
-
-  .desc1,
-  .desc2,
-  .desc3 {
-    width: sizem(330);
-    top: sizem(216);
-    right: auto;
-    left: sizem(26);
+  .content {
+    width: sizem(340);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: sizem(-50);
+    li {
+      width: 100%;
+      font-size: 15px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.73;
+      letter-spacing: 1.35px;
+      text-align: left;
+      color: #ffffff;
+      margin-top: sizem(8);
+      margin-bottom: sizem(8);
+      color: #ffffff;
+      white-space: nowrap;
+    }
   }
 }
 </style>

@@ -9,7 +9,7 @@
       <div class="opacity-5-bg">
         <img src="./s4/leaf (3).png" alt="" class="leaf-3 absolute" data-aos="zoom-in-left" data-aos-delay="200" data-aos-duration="1200">
       </div>
-      <div class="container relative flex-c">
+      <div class="container relative flex-c wrap" v-if="!isMobile">
         <div class="text-item flex-ac wrap">
           <div class="title" data-aos="fade-right" data-aos-delay="600">
             4.5萬坪國家級<br />科學教育體驗未來館
@@ -21,6 +21,20 @@
         </div>
         <div class="img-item" data-aos="fade-left" data-aos-delay="1000">
           <img src="./s4/1.jpg" alt="">
+        </div>
+      </div>
+      <div class="container relative flex-c wrap" v-if="isMobile">
+        <div class="img-item" data-aos="fade-left" data-aos-delay="1000">
+          <img src="./s4/1.jpg" alt="">
+        </div>
+        <div class="text-item flex-ac wrap">
+          <div class="title" data-aos="fade-right" data-aos-delay="600">
+            4.5萬坪國家級<br />科學教育體驗未來館
+          </div>
+          <img src="./s2/hr.png" alt="" class="hr" data-aos="fade-right" data-aos-delay="700">
+          <div class="desc" data-aos="fade-right" data-aos-delay="800">
+            因應科技新世代的來臨及數位經濟的發展趨勢，台南將誕生一處國家級科學教育館，位於佔地約15公頃的東區新都心段27地號土地建置「國立科學教育體驗未來館」。
+          </div>
         </div>
       </div>
     </div>
@@ -162,154 +176,54 @@
   .section4 {
     width: 100vw;
     min-height: auto;
-    height: sizem(604 + 329);
+    height: sizem(514);
     //background-image: url('./mo/1/00.jpg');
     background-size: cover;
     background-attachment: scroll;
   }
 
-  .bottom-img {
-    width: 100vw;
-    height: auto;
-    left: 0;
-    top: sizem(0);
-    //  bottom: sizem(329);
-    object-fit: cover;
-    z-index: 2;
-  }
-
-  .logo {
-    width: sizem(280);
-    top: sizem(29);
-    right: auto;
-    left: sizem(18);
-    height: auto;
-    object-fit: cover;
-  }
-
-  .logo2 {
-    width: sizem(63);
-    top: sizem(101);
-    right: sizem(28);
-    height: auto;
-    object-fit: cover;
-    z-index: 2;
-  }
-
-  .txt {
-    width: sizem(312);
-    top: sizem(205);
-    right: sizem(0);
-    height: auto;
-    object-fit: cover;
-  }
-
-  .border {
-    width: sizem(347);
-    height: sizem(276);
-    top: sizem(115);
-    right: sizem(14);
-    border-width: sizem(6);
-    font-size: sizem(15);
-    padding: 1.1em 0 0 2em;
-  }
-
-  .block {
-    width: sizem(48);
-    height: sizem(215);
-    max-height: initial;
-    top: sizem(-30);
-    right: sizem(-20);
-    left: auto;
-    bottom: auto;
-  }
-
-  .item-list {
-    top: sizem(600);
-    left: sizem(44);
-
-    .item {
-      width: sizem(17);
-      margin-right: sizem(35);
-      // display: flex;
-      // align-items: center;
-      // justify-content: center;
-      // flex-wrap: wrap;
-      .item-hr {
-        width: 1.5px;
-        height: sizem(67);
-        background-color: #8e8a74;
-        margin: 0 auto;
-        margin-bottom: 15px;
-      }
-      &:nth-child(1) {
-        margin-top: 0;
-      }
-      &:nth-child(2) {
-        margin-top: sizem(13);
-        .item-hr {
-          height: sizem(111);
-        }
-      }
-
-      &:nth-child(3) {
-        margin-top: sizem(30);
-        .item-hr {
-          height: sizem(65);
-        }
-      }
-      &:nth-child(4) {
-        margin-top: sizem(17);
-        .item-hr {
-          height: sizem(69);
-        }
-      }
-
-      &:nth-child(5) {
-        margin-top: sizem(20);
-        .item-hr {
-          height: sizem(58);
-        }
-      }
-
-      &:nth-child(6) {
-        margin-top: sizem(5);
-        .item-hr {
-          height: sizem(68);
-        }
-      }
+  .text-item {
+    width: sizem(310);
+    margin-right: auto;
+    margin: 30px auto;
+    > * {
+      width: sizem(310);
     }
-    .item-title,
-    .item-desc {
-      writing-mode: vertical-lr;
-      text-orientation: upright;
-      // display: inline-block;
-      // margin: auto;
+    .hr {
+      width: sizem(288);
+      display: inline-block;
+      margin: 15px auto;
     }
 
-    .item-title {
-      font-size: sizem(12);
+    .title {
+      font-size: sizem(25);
       font-weight: bold;
       font-stretch: normal;
       font-style: normal;
-      line-height: 1.08;
-      letter-spacing: normal;
+      line-height: 1.44;
+      letter-spacing: sizem(3.5);
       text-align: center;
-      color: #8e8a74;
-      margin-bottom: sizem(10);
-      margin-left: sizem(2.5);
+      color: #2e627f;
+      white-space: nowrap;
     }
 
-    .item-desc {
-      font-size: sizem(17);
-      font-weight: bold;
+    .desc {
+      width: sizem(310);
+      font-size: sizem(15);
+      font-weight: normal;
       font-stretch: normal;
       font-style: normal;
-      line-height: 1.08;
-      letter-spacing: normal;
-      text-align: center;
-      color: #8e8a74;
-      margin-bottom: sizem(10);
+      line-height: 1.73;
+      letter-spacing: sizem(1.2);
+      text-align: left;
+      color: #2e627f;
+    }
+  }
+
+  .img-item {
+    width: sizem(375);
+    img {
+      width: 100%;
     }
   }
 }

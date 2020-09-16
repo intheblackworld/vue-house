@@ -10,15 +10,15 @@
         <img src="./s11/leaf (10).png" alt="" class="leaf-10 absolute" data-aos="fade" data-aos-delay="200" data-aos-duration="1200">
       </div>
       <transition-group name="swipe-fade" data-aos="fade-down" data-aos-delay="400">
-        <div class="title absolute" v-for="(slide, index) in slideList" :key="slide.img" v-html="slide.title" v-show="slideIndex === index">
+        <div class="title absolute" v-for="(slide, index) in slideList" :key="slide.img + 'title'" v-html="slide.title" v-show="slideIndex === index">
         </div>
       </transition-group>
       <transition-group name="swipe-fade" data-aos="fade-down" data-aos-delay="600">
-        <div class="desc absolute" v-for="(slide, index) in slideList" :key="slide.img" v-html="slide.desc" v-show="slideIndex === index">
+        <div class="desc absolute" v-for="(slide, index) in slideList" :key="slide.img + 'desc'" v-html="slide.desc" v-show="slideIndex === index">
         </div>
       </transition-group>
       <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="1000">
-        <div :class="`pagination-dot relative`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)">
+        <div :class="`pagination-dot relative`" v-for="(slide, index) in slideList" :key="slide.img + '-dot' + index" @click="goTo(index)">
           <svg class="progress absolute" viewBox="0 0 120 120">
             <circle cx="60" cy="60" r="54" fill="none" stroke="#999999" stroke-width="5" />
             <circle class="pagi_circle progress__value" cx="60" cy="60" r="54" fill="none" stroke="#006699" stroke-width="4" v-show="slideIndex === index" />
@@ -516,26 +516,26 @@ export default {
       startcalc: null,
       slideList: [
         {
-          img: isMobile ? require('./mo/6/1.jpg') : require('./s11/1.jpg'),
+          img: isMobile ? require('./s11/1.jpg') : require('./s11/1.jpg'),
           title: '職人嚴選 清景麟精質精工',
           desc:
             '生活質感 細節體現<br />住友制震系統<br />日本三協氣密窗<br />日本Panasonic / L-CLASS精品廚具設備<br />德國精品衛浴設備',
         },
 
         {
-          img: isMobile ? require('./mo/6/2.jpg') : require('./s11/2.jpg'),
+          img: isMobile ? require('./s11/2.jpg') : require('./s11/2.jpg'),
           title: '職人嚴選 清景麟精質精工',
           desc:
             '生活質感 細節體現<br />住友制震系統<br />日本三協氣密窗<br />日本Panasonic / L-CLASS精品廚具設備<br />德國精品衛浴設備',
         },
         {
-          img: isMobile ? require('./mo/6/3.jpg') : require('./s11/3.jpg'),
+          img: isMobile ? require('./s11/3.jpg') : require('./s11/3.jpg'),
           title: '職人嚴選 清景麟精質精工',
           desc:
             '生活質感 細節體現<br />住友制震系統<br />日本三協氣密窗<br />日本Panasonic / L-CLASS精品廚具設備<br />德國精品衛浴設備',
         },
         {
-          img: isMobile ? require('./mo/6/3.jpg') : require('./s11/4.jpg'),
+          img: isMobile ? require('./s11/4.jpg') : require('./s11/4.jpg'),
           title: '職人嚴選 清景麟精質精工',
           desc:
             '生活質感 細節體現<br />住友制震系統<br />日本三協氣密窗<br />日本Panasonic / L-CLASS精品廚具設備<br />德國精品衛浴設備',
