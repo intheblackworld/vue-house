@@ -6,7 +6,7 @@ export default {
   fbLink: 'https://www.facebook.com/MoreThanTheMountain/',
   fbMessage: 'https://m.me/MoreThanTheMountain',
   googleLink: 'https://goo.gl/maps/rEMTU36ycxbfUxAS6',
-  caseName: '大學墅',
+  caseName: '北大樂馥',
 
   houseInfos: [
     ['投資興建', '弘華機構'],

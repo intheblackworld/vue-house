@@ -1,6 +1,6 @@
 <template>
   <div class="contact-info">
-    <img class="logo" src="@/assets/img/contact-logo.png" alt="心天畝的圖片" />
+    <img class="logo" src="@/assets/img/contact-logo.png" alt="info.caseName" />
     <div class="info">
       <div class="btn flex-c" @click="showCallDialog">
         <span class="flex-c">
