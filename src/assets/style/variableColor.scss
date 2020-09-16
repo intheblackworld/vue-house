@@ -56,27 +56,27 @@ $contact_bg_m:  linear-gradient(to top, #007d6c, #0069a8);
 $contact_shadow: 0 0 80px 0 rgba(0, 0, 0, 0.2);
 
 $contact_btn_border: inset 0 0 0px 1.5px #fff;
-$contact_btn_color: #333;
-$contact_btn_icon: #333;
-$contact_btn_bg: #fff;
+$contact_btn_color: #fff;
+$contact_btn_icon: #fff;
+$contact_btn_bg: transparent;
 $contact_btn_hover_color: #fff;
 $contact_btn_hover_icon: #fff;
 $contact_btn_hover_bg: #333;
 
-$contact_google_btn_color: #fff;
-$contact_google_btn_icon: #fff;
-$contact_google_btn_bg: #333;
-$contact_google_hover_btn_color: #333;
-$contact_google_hover_btn_icon: #333;
-$contact_google_hover_btn_bg: #fff;
+$contact_google_btn_color: #ffe600;
+$contact_google_btn_icon: #ffe600;
+$contact_google_btn_bg: #ba8f7e;
+$contact_google_hover_btn_color: #ffe600;
+$contact_google_hover_btn_icon: #ffe600;
+$contact_google_hover_btn_bg: #ba8f7e;
 
 
 // houseInfo
 $house_bg: #fff;
-$house_title_color: #000;
-$house_border_color: #3b5662;
-$house_label_color: #3b5662;
-$house_desc_color: #000;
+$house_title_color: #37545f;
+$house_border_color: #37545f;
+$house_label_color: #37545f;
+$house_desc_color: #37545f;
 
 // mobileNav
 $mobile_nav_background: #8e8a74;
