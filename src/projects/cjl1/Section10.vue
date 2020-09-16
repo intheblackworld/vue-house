@@ -1,16 +1,17 @@
 <template>
   <div>
-    <div class="section6">
+    <div class="section10">
       <div class="opacity-3-bg">
         <img src="./s2/ink1.png" alt="" class="ink-1 absolute" data-aos="zoom-in-down" data-aos-delay="0" data-aos-duration="1200">
         <!-- <img src="./s2/ink1.png" alt="" class="ink-2 absolute" data-aos="zoom-in-up" data-aos-delay="200" data-aos-duration="1200"> -->
         <img src="./s2/ink2.png" alt="" class="ink-2 absolute" data-aos="zoom-in-up" data-aos-delay="400" data-aos-duration="1200">
       </div>
-      <div class="title absolute" data-aos="fade-down" data-aos-delay="600">
-        崇明路、崇德商圈燙金地段
+      <transition-group name="swipe-fade" data-aos="fade-down" data-aos-delay="600">
+        <div class="title absolute" v-for="(slide, index) in slideList" :key="slide.img" v-html="slide.title" v-show="slideIndex === index">
       </div>
+      </transition-group>
       <div class="desc absolute" data-aos="fade-down" data-aos-delay="700">
-        食衣住行育樂樣樣具備，在林森路以南、生產路以北、崇善路以西及大同路以東，將台南文化中心包圍在內，尤其崇德公有零售市場周邊最熱鬧，發展時間早，成熟度高，生活機能非常便利。
+        精品2-4房 東區指標 閃耀登場
       </div>
       <div class="swipe absolute" data-aos="fade-up" data-aos-delay="800">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -45,10 +46,10 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section6 {
+.section10 {
   width: size(1920);
-  height: size(900);
-  min-height: size(900);
+  height: size(1080);
+  min-height: size(1080);
 }
 
 .bg-img {
@@ -70,10 +71,10 @@
 }
 
 .swipe {
-  width: size(930);
-  height: size(550);
-  min-height: size(550);
-  top: size(330);
+  width: size(1266);
+  height: size(712);
+  min-height: size(712);
+  top: size(0);
   right: 0;
   left: 0;
   margin: 0 auto;
@@ -192,45 +193,46 @@
 
     img {
       width: size(72);
-      opacity: .5;
+      opacity: 0.5;
     }
   }
 }
 .title {
-  width: size(618);
-  height: size(104);
-  padding-top: size(20);
-  top: size(0);
+  width: size(922);
+  height: size(110);
+  padding-top: size(10);
+  top: size(730);
   right: 0;
   left: 0;
   margin: 0 auto;
-  background-image: url('./s6/title.png');
+  background-image: url('./s10/title.png');
   background-size: cover;
-  font-size: size(35);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.37;
-  letter-spacing: size(4.9);
-  text-align: center;
-  color: #ffffff;
-}
-
-.desc {
-  width: size(808);
-  height: size(187);
-  top: size(150);
-  right: 0;
-  left: 0;
-  margin: 0 auto;
-  font-size: size(25);
-  font-weight: bold;
+  font-size: size(49);
+  font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.92;
-  letter-spacing: size(3.5);
+  letter-spacing: size(6.86);
+  text-align: center;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.desc {
+  width: size(620);
+  top: size(845);
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  font-size: size(41);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.96;
+  letter-spacing: size(5.74);
   text-align: center;
   color: #000000;
+  white-space: nowrap;
 }
 
 .ink-1 {
@@ -260,6 +262,25 @@
   transition: stroke-dashoffset 0.01s linear;
 }
 
+// begin
+.swipe-fade-leave-to {
+  opacity: 0;
+  z-index: 0;
+}
+// end
+.swipe-fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.swipe-fade-enter-active {
+  transition: all 0.5s ease;
+}
+
+.swipe-fade-leave-active {
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -274,7 +295,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section6 {
+  .section10 {
     width: 100vw;
     height: calc(100vh - 63px);
     min-height: auto;
@@ -469,7 +490,7 @@ import slider from '@/mixins/slider.js'
 import $ from 'jquery'
 
 export default {
-  name: 'section6',
+  name: 'section10',
 
   mixins: [slider],
 
@@ -485,20 +506,38 @@ export default {
         {
           img: isMobile
             ? require('./mo/6/1.jpg')
-            : require('./s6/1德安百貨.jpg'),
+            : require('./s10/1獨立會館一樓 - 接待大廳.jpg'),
+          title: '獨立會館一樓 - 接待大廳',
         },
         {
           img: isMobile
             ? require('./mo/6/2.jpg')
-            : require('./s6/2文化中心.jpg'),
+            : require('./s10/2獨立會館一樓 – 閱覽室.jpg'),
+          title: '獨立會館一樓 – 閱覽室',
         },
         {
           img: isMobile
             ? require('./mo/6/3.jpg')
-            : require('./s6/3崇德市場.jpg'),
+            : require('./s10/3獨立會館二樓 – 健身房.jpg'),
+          title: '獨立會館二樓 – 健身房',
         },
         {
-          img: isMobile ? require('./mo/6/3.jpg') : require('./s6/4公園.jpg'),
+          img: isMobile
+            ? require('./mo/6/3.jpg')
+            : require('./s10/4獨立會館二樓 – 遊戲室.jpg'),
+          title: '獨立會館二樓 – 遊戲室',
+        },
+        {
+          img: isMobile
+            ? require('./mo/6/3.jpg')
+            : require('./s10/5獨立會館三樓 –  生活講堂.jpg'),
+          title: '獨立會館三樓 –  生活講堂',
+        },
+        {
+          img: isMobile
+            ? require('./mo/6/3.jpg')
+            : require('./s10/6獨立會館三樓 –  宴會廳 .jpg'),
+          title: '獨立會館三樓 –  宴會廳',
         },
       ],
     }
@@ -525,7 +564,7 @@ export default {
     },
     stopcalc() {
       clearInterval(this.startcalc) //停止調用函數
-    }
+    },
   },
 
   created() {},
@@ -549,13 +588,12 @@ export default {
         $('.add_circle').css('opacity', 0)
         $('.dec_circle').css('opacity', 1)
       }
-      
-    }
+    },
   },
 
   computed: {
     dec_circle_value() {
-      return 339 - (this.i * 3.39)
+      return 339 - this.i * 3.39
     },
   },
 }

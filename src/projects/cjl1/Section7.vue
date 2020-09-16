@@ -1,250 +1,161 @@
 <template>
   <div>
-    <div class="section7">
-      <div
-        class="swipe absolute"
-        data-aos="fade-right"
-        data-aos-delay="200"
-        @mouseenter.stop="toggleTimer = false"
-        @mouseleave.stop="toggleTimer = true"
-      >
-        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
-          <div
-            v-for="(slide, i) in slideList"
-            :key="slide.img"
-            :class="`swipe-item absolute ${slideIndex === i ? 'active' : ''} ${(slideIndex === (i + 1) || slideIndex === (i - slideList.length + 1)) ? 'base' : ''}`"
-          >
-            <img :src="slide.img" alt="">
+    <div class="section7 flex-ac">
+      <div class="opacity-3-bg">
+        <img src="./s2/ink1.png" alt="" class="ink-1 absolute" data-aos="zoom-in-down" data-aos-delay="0" data-aos-duration="1200">
+        <!-- <img src="./s2/ink1.png" alt="" class="ink-2 absolute" data-aos="zoom-in-up" data-aos-delay="200" data-aos-duration="1200"> -->
+        <img src="./s2/ink2.png" alt="" class="ink-3 absolute" data-aos="zoom-in-up" data-aos-delay="400" data-aos-duration="1200">
+      </div>
+      <div class="opacity-5-bg">
+        <img src="./s7/leaf (4).png" alt="" class="leaf-4 absolute" data-aos="zoom-in-left" data-aos-delay="200" data-aos-duration="1200">
+        <img src="./s7/leaf (5).png" alt="" class="leaf-5 absolute" data-aos="zoom-in-left" data-aos-delay="200" data-aos-duration="1200">
+        <img src="./s7/leaf (6).png" alt="" class="leaf-6 absolute" data-aos="zoom-in-left" data-aos-delay="200" data-aos-duration="1200">
+      </div>
+      <div class="container relative flex-c">
+        <div class="img-item" data-aos="fade-right" data-aos-delay="600">
+          <img src="./s7/map.png" alt="">
+        </div>
+        <div class="text-item flex-ac wrap">
+          <div class="title" data-aos="fade-left" data-aos-delay="600">
+            南台南心都心<br />黃金生活圈
           </div>
-          <div class="pagination absolute flex-ac">
-            <div
-              :class="`pagination-dot`"
-              v-for="(slide, index) in slideList"
-              :key="slide.img + '-dot'"
-              @click="goTo(index)"
-            ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-          </div>
-          <div class="swipe-btns absolute flex-ac flex-jb">
-            <div class="prev-btn" @click="decIndex"></div>
-            <div class="next-btn" @click="addIndex"></div>
+          <div class="hr" data-aos="fade-left" data-aos-delay="700"></div>
+          <div class="desc" data-aos="fade-left" data-aos-delay="800">
+            「南台南站新都心」地區，因鐵路地下化所增設之南台南車站，巴克禮公園將已擴建5.6公頃；台南重大建設持續推動，東區商圈發展成熟，加上南紡購物中心二期、文化中心、德安百貨、 台南國際機場、長榮桂冠酒店 、崇明中小學區、 仁和國小、國立科學教育體驗未來館、台南市立醫院等利基發展條件及台糖公司亦根留府城並積極推動轉型與升級。在上述主力設施與機構進駐後，加速帶動地區發展，奠定「南台南新都心」穩健成長之基石。
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
-
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
 .section7 {
   width: size(1920);
-  height: 100vh;
-  max-height: 56vw;
-  min-height: size(900);
-  overflow: hidden;
+  min-height: size(1080);
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
 }
 
 .bg-img {
-  width: 100vw;
+  width: size(1920);
   height: 100vh;
-  //min-height: size(900);
+  min-height: 900px;
   position: absolute;
-  display: block;
   top: 0;
   left: 0;
+  display: block;
   object-fit: cover;
 
-  &:nth-child(1) {
-  top: 0;
-  left: auto;
-  right: 0;
-  height: auto;
+  // &:nth-child(1) {
+  //   position: relative;
+  // }
+}
+
+.text-item {
+  width: size(471);
+  margin-left: size(77);
+  > * {
+    width: size(471);
+  }
+
+  .desc {
+    width: size(471);
+    margin: 0 auto;
+  }
+  .hr {
+    width: size(386);
+    display: inline-block;
+    margin: 15px auto;
+    border: solid 2px #08607f;
+  }
+
+  .title {
+    font-size: size(59.1);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: size(8.28);
+    text-align: center;
+    color: #2e627f;
+    white-space: nowrap;
+  }
+
+  .desc {
+    font-size: size(25);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.92;
+    letter-spacing: size(2);
+    text-align: left;
+    color: #2e627f;
   }
 }
 
-.swipe {
-  width: 100vw;
-  height:100%;
-  //min-height: size(900);
-  top: 0;
-  left: 0;
-  object-fit: cover;
-}
-
-.swipe-wrap {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.swipe-item {
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  left: 0;
-  transition: opacity 1s ease-in-out;
-  z-index: 0;
-
+.img-item {
+  width: size(1082);
+  margin-left: size(50);
   img {
     width: 100%;
-  height: 100%;
-  object-fit: cover;
-  }
-
-  &:nth-child(1) {
-    z-index: 1;
-    opacity: 1;
-  }
-
-  &.base {
-    z-index: 1;
-    opacity: 1;
-  }
-  &.active {
-    z-index: 2;
-    opacity: 1;
   }
 }
 
-.pagination {
-  width: auto;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  justify-content: center;
+.ink-1 {
+  height: size(1693);
+  top: size(-500);
+  left: size(-800);
 }
 
-.pagination-dot {
-  padding: 5px;
-  cursor: pointer;
-  z-index: 4;
+.ink-2 {
+  height: size(1581);
+  top: size(872);
+  left: size(-600);
+}
 
-  span {
-    display: block;
-    width: 20px;
-    height: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 0 1px #fff;
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.01);
-    transition: all 0.5s;
+.ink-3 {
+  height: size(1720);
+  top: size(1064);
+  left: size(564);
+}
 
-    &::before {
-      content: '';
-      width: 60%;
-      height: 60%;
-      display: block;
-      background: #fff;
-      border-radius: 20px;
-      opacity: 1;
-      position: absolute;
-      top: 20%;
-      // transform: translateY(-50%);
-      left: 20%;
-      transition: all 0.3s;
-      transform-origin: center;
-      transform: scale(0);
-    }
-    &.active {
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #fff;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transform: scale(1);
-      }
-    }
+.leaf-4 {
+  width: size(463);
+  top: size(-200);
+  left: size(0);
+  animation: leaf 3s ease-in-out infinite alternate-reverse;
+}
+
+.leaf-5 {
+  width: size(440);
+  top: size(-150);
+  right: size(0);
+  animation: leaf 3s ease-in-out infinite alternate-reverse;
+}
+
+.leaf-6 {
+  width: size(165);
+  top: size(200);
+  right: size(0);
+  animation: leaf 3s ease-in-out infinite alternate-reverse;
+}
+
+.opacity-3-bg {
+  opacity: 0.3;
+}
+
+.opacity-5-bg {
+  opacity: 0.5;
+}
+
+@keyframes leaf {
+  to {
+    transform: skewX(2deg) translateX(0px);
   }
 }
-
-.swipe-btns {
-  width: 100%;
-  height: 100%;
-  padding: 0 15px;
-  z-index: 3;
-
-  .prev-btn,
-  .next-btn {
-    width: size(20);
-    cursor: pointer;
-  }
-}
-.title {
-  text-shadow: 1px 1px 7px rgba(21, 32, 68, 0.8);
-  font-size: size(48);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.32;
-  letter-spacing: 2.91px;
-  text-align: left;
-  color: #ffffff;
-}
-
-.subtitle {
-  text-shadow: 1px 1px 7px rgba(21, 32, 68, 0.8);
-  font-size: size(29);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.64;
-  letter-spacing: 5.85px;
-  text-align: left;
-  color: #ffffff;
-  white-space: nowrap;
-}
-
-.desc {
-  text-shadow: 1px 1px 7px rgba(21, 32, 68, 0.8);
-  font-size: size(16);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2.03;
-  letter-spacing: 0.96px;
-  text-align: left;
-  color: #ffffff;
-}
-
-.title1, .title3 {
-  top: size(72);
-  right: size(290);
-}
-
-.subtitle1, .subtitle3 {
-  top: size(216);
-  right: size(214);
-}
-
-.desc1, .desc3 {
-  top: size(270);
-  right: size(200);
-}
-
-.title2 {
-  top: size(72);
-  left: size(209);
-}
-
-.subtitle2 {
-  top: size(216);
-  left: size(209);
-}
-
-.desc2 {
-  top: size(270);
-  left: size(209);
-}
-
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -261,193 +172,171 @@
 @media screen and (max-width: 767px) {
   .section7 {
     width: 100vw;
-    height: size-m(604);
     min-height: auto;
-  max-height: initial;
-  }
-  /*
-  width: size(1920);
-  height: 100vh;
-  max-height: 56vw;
-  min-height: size(900);*/
-.img {display: none;
-}
-
-
-.txt {
-  width:100vw;
-  height:auto;
-  top: size-m(24);
-  left: 0;
-  font-size: size-m(15);
-  color: #000;
-}
-  .title {
-  font-size: 1.666em;
-    line-height: 1.44;
-    color: #a38057;
+    height: sizem(604 + 329);
+    //background-image: url('./mo/1/00.jpg');
+    background-size: cover;
+    background-attachment: scroll;
   }
 
-  .desc {
-    width: size-m(310);
-    font-weight: normal;
-    line-height: 1.73;
-    text-align: justify;
-  }
-
-  .swipe {
+  .bottom-img {
     width: 100vw;
-   // height: calc(100vh - 63px);
-    top: sizem(0);
+    height: auto;
     left: 0;
+    top: sizem(0);
+    //  bottom: sizem(329);
+    object-fit: cover;
+    z-index: 2;
+  }
+
+  .logo {
+    width: sizem(280);
+    top: sizem(29);
+    right: auto;
+    left: sizem(18);
+    height: auto;
     object-fit: cover;
   }
 
-  .swipe-wrap {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+  .logo2 {
+    width: sizem(63);
+    top: sizem(101);
+    right: sizem(28);
+    height: auto;
+    object-fit: cover;
+    z-index: 2;
   }
 
-  // .swipe-item {
-  //   width: 100%;
-  //   height: 100%;
-  //   left: 100%;
-  //   transition: left 1s ease-in-out;
-  //   z-index: 0;
-  //   object-fit: cover;
-
-  //   &.base {
-  //     z-index: 1;
-  //     left: 0;
-  //   }
-  //   &.active {
-  //     z-index: 2;
-  //     left: 0;
-  //   }
-  // }
-
-  .pagination {
-    width: auto;
-    bottom: 10px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    justify-content: center;
-    display: none;
+  .txt {
+    width: sizem(312);
+    top: sizem(205);
+    right: sizem(0);
+    height: auto;
+    object-fit: cover;
   }
 
-  .pagination-dot {
-    padding: 5px;
-    cursor: pointer;
-    z-index: 4;
+  .border {
+    width: sizem(347);
+    height: sizem(276);
+    top: sizem(115);
+    right: sizem(14);
+    border-width: sizem(6);
+    font-size: sizem(15);
+    padding: 1.1em 0 0 2em;
+  }
 
-    span {
-      display: block;
-      width: 14px;
-      height: 14px;
-      border-radius: 14px;
-      box-shadow: 0 0 0 1px #fff;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
-      transition: all 0.5s;
+  .block {
+    width: sizem(48);
+    height: sizem(215);
+    max-height: initial;
+    top: sizem(-30);
+    right: sizem(-20);
+    left: auto;
+    bottom: auto;
+  }
 
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #fff;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transition: all 0.3s;
-        transform-origin: center;
-        transform: scale(0);
+  .item-list {
+    top: sizem(600);
+    left: sizem(44);
+
+    .item {
+      width: sizem(17);
+      margin-right: sizem(35);
+      // display: flex;
+      // align-items: center;
+      // justify-content: center;
+      // flex-wrap: wrap;
+      .item-hr {
+        width: 1.5px;
+        height: sizem(67);
+        background-color: #8e8a74;
+        margin: 0 auto;
+        margin-bottom: 15px;
       }
-      &.active {
-        &::before {
-          content: '';
-          width: 60%;
-          height: 60%;
-          display: block;
-          background: #fff;
-          border-radius: 20px;
-          opacity: 1;
-          position: absolute;
-          top: 20%;
-          // transform: translateY(-50%);
-          left: 23%;
-          transform: scale(1);
+      &:nth-child(1) {
+        margin-top: 0;
+      }
+      &:nth-child(2) {
+        margin-top: sizem(13);
+        .item-hr {
+          height: sizem(111);
+        }
+      }
+
+      &:nth-child(3) {
+        margin-top: sizem(30);
+        .item-hr {
+          height: sizem(65);
+        }
+      }
+      &:nth-child(4) {
+        margin-top: sizem(17);
+        .item-hr {
+          height: sizem(69);
+        }
+      }
+
+      &:nth-child(5) {
+        margin-top: sizem(20);
+        .item-hr {
+          height: sizem(58);
+        }
+      }
+
+      &:nth-child(6) {
+        margin-top: sizem(5);
+        .item-hr {
+          height: sizem(68);
         }
       }
     }
-  }
-
-  .swipe-btns {
-    width: 100%;
-    height: 100%;
-    padding: 0 0;
-    z-index: 3;
-
-    .prev-btn,
-    .next-btn {
-      font-size: size-m(10);
-      cursor: pointer;
-      height: 100%;width: 3em;
-      display: flex;
-      align-items: center;
-      justify-items: center;
-    padding: 0 1em;
+    .item-title,
+    .item-desc {
+      writing-mode: vertical-lr;
+      text-orientation: upright;
+      // display: inline-block;
+      // margin: auto;
     }
-     .prev-btn::after{content: "";display: block;
-      width: 0;
-height: 0;
-border-style: solid;
-border-width: 1em 1em 1em 0;
-border-color: transparent #0005 transparent transparent;}
-    .next-btn::after{content: "";display: block;
-      width: 0;
-height: 0;
-border-style: solid;
-border-width: 1em 0 1em 1em;
-border-color: transparent transparent transparent #0005;}
+
+    .item-title {
+      font-size: sizem(12);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.08;
+      letter-spacing: normal;
+      text-align: center;
+      color: #8e8a74;
+      margin-bottom: sizem(10);
+      margin-left: sizem(2.5);
+    }
+
+    .item-desc {
+      font-size: sizem(17);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.08;
+      letter-spacing: normal;
+      text-align: center;
+      color: #8e8a74;
+      margin-bottom: sizem(10);
+    }
   }
 }
 </style>
 <script>
 // @ is an alias to /src
-import { isMobile, isTablet } from '@/utils'
-import Parallax from 'vue-parallaxy'
-import slider from '@/mixins/slider.js'
+import { icPC, isMobile, isTablet } from '@/utils'
 
 export default {
   name: 'section7',
 
-  mixins: [slider],
-
-  components: {
-    Parallax,
-  },
-
   data() {
     return {
+      icPC,
       isMobile,
       isTablet,
-      slideList: [
-        {
-          img: isMobile ? require('./mo/7/1.jpg') : require('./s7/1.jpg'),
-        },
-        {
-          img: isMobile ? require('./mo/7/2.jpg') : require('./s7/2.jpg'),
-        },
-        {
-          img: isMobile ? require('./mo/7/3.jpg') : require('./s7/3.jpg'),
-        },
-      ],
     }
   },
 

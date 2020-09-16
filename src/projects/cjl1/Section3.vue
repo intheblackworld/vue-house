@@ -11,15 +11,15 @@
         <img src="./s2/leaf (2).png" alt="" class="leaf-2 absolute" data-aos="zoom-in-left" data-aos-delay="200" data-aos-duration="1200">
       </div> -->
       <div class="container relative flex-c">
-        <div class="img-item">
+        <div class="img-item" data-aos="fade-right" data-aos-delay="600">
           <img src="./s3/1.jpg" alt="">
         </div>
         <div class="text-item flex-ac wrap">
-          <div class="title">
+          <div class="title" data-aos="fade-left" data-aos-delay="600">
             南台南車站設立<br />刷新景觀新高度
           </div>
-          <img src="./s2/hr.png" alt="" class="hr">
-          <div class="desc">
+          <img src="./s2/hr.png" alt="" class="hr" data-aos="fade-left" data-aos-delay="700">
+          <div class="desc" data-aos="fade-left" data-aos-delay="800">
             台南鐵路地下化後，提供都會區快鐵之便捷交通，縫合交通系統及都市發展間、改善鐵路行車噪音與震動、改善都市景觀及環境生活品質、促進市中心區土地利用價值、增加經濟活動力。
           </div>
         </div>

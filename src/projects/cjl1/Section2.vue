@@ -12,15 +12,15 @@
       </div>
       <div class="container relative flex-c">
         <div class="text-item flex-ac wrap">
-          <div class="title">
+          <div class="title" data-aos="fade-right" data-aos-delay="600">
             2.7萬坪<br />巴克禮生態公園
           </div>
-          <img src="./s2/hr.png" alt="" class="hr">
-          <div class="desc">
+          <img src="./s2/hr.png" alt="" class="hr" data-aos="fade-right" data-aos-delay="700">
+          <div class="desc" data-aos="fade-right" data-aos-delay="800">
             位於東區南側，緊臨市立文化中心、德安百貨、台糖長榮酒店等商業文教設施，台南市第一座生態公園，全國10大優良公園、第一屆全國景觀大獎、國家卓越建設獎優選。
           </div>
         </div>
-        <div class="img-item">
+        <div class="img-item" data-aos="fade-left" data-aos-delay="1000">
           <img src="./s2/1.jpg" alt="">
         </div>
       </div>

@@ -11,15 +11,15 @@
       </div>
       <div class="container relative flex-c">
         <div class="text-item flex-ac wrap">
-          <div class="title">
+          <div class="title" data-aos="fade-right" data-aos-delay="600">
             4.5萬坪國家級<br />科學教育體驗未來館
           </div>
-          <img src="./s2/hr.png" alt="" class="hr">
-          <div class="desc">
+          <img src="./s2/hr.png" alt="" class="hr" data-aos="fade-right" data-aos-delay="700">
+          <div class="desc" data-aos="fade-right" data-aos-delay="800">
             因應科技新世代的來臨及數位經濟的發展趨勢，台南將誕生一處國家級科學教育館，位於佔地約15公頃的東區新都心段27地號土地建置「國立科學教育體驗未來館」。
           </div>
         </div>
-        <div class="img-item">
+        <div class="img-item" data-aos="fade-left" data-aos-delay="1000">
           <img src="./s4/1.jpg" alt="">
         </div>
       </div>

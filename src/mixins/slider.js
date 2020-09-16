@@ -1,6 +1,7 @@
 export default {
   data() {
     return {
+      direction: 'add',
       slideIndex: 0,
       toggleTimer: true,
     }
@@ -10,7 +11,11 @@ export default {
     setInterval(() => {
       if(this.toggleTimer) {
         if (this.slideList) {
-          this.addIndex()
+          if (this.direction === 'add') {
+            this.addIndex()
+          } else {
+            this.decIndex()
+          }
         }
         if (this.slideList1) {
           this.addMultiIndex(1)
@@ -36,11 +41,15 @@ export default {
       this.slideIndex = index
     },
     addIndex() {
+      this.i = 0
+      this.direction = 'add'
       this.slideIndex =
         this.slideIndex === this.slideList.length - 1 ? 0 : this.slideIndex + 1
     },
 
     decIndex() {
+      this.i = 0
+      this.direction = 'dec'
       this.slideIndex =
         this.slideIndex === 0 ? this.slideList.length - 1 : this.slideIndex - 1
     },

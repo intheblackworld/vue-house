@@ -1,6 +1,7 @@
 @import './variableColor.scss';
 
 .el-dialog{
+  width: 600px !important;
 }
 .el-dialog__title {
   font-size: 32px !important;
@@ -58,6 +59,9 @@
 
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
+  .el-dialog{ 
+    width: 90% !important;
+  }
   .policy-dialog-content {
     width: 100% !important;
     height: 80% !important;
