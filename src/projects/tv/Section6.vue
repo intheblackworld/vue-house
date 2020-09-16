@@ -1,23 +1,9 @@
 <template>
   <div>
     <div class="bg relative">
-      <img
-        src="./s6/head.gif"
-        alt=""
-        class="img absolute"
-      >
-      <div
-        v-if="!isMobile"
-        class="container flex-ac flex-jb relative left"
-        @mouseover="stopSwipe" @mouseleave="startSwipe"
-      >
-        <swiper
-          v-show="show"
-          :options="swiperOption"
-          ref="mySwiper"
-          class="slides"
-          @slideChangeTransitionStart="slideChanged"
-        >
+      <img src="./s6/head.gif" alt="" class="img absolute">
+      <div v-if="!isMobile" class="container flex-ac flex-jb relative left" @mouseover="stopSwipe" @mouseleave="startSwipe">
+        <swiper v-show="show" :options="swiperOption" ref="mySwiper" class="slides" @slideChangeTransitionStart="slideChanged">
           <!-- <div
             class="swiper-button-prev"
             slot="button-prev"
@@ -38,117 +24,46 @@
               alt
             />
           </div> -->
-          <div class="slide-text">{{slideList[slideIndex].text}}</div>
-          <swiper-slide
-            v-for="(slide, index) in slideList"
-            :index="index"
-            :key="slide.src"
-            class="item"
-          >
-            <img
-              :src="slide.src"
-              :class="`item-img ${slideIndex === index ? 'active' : ''}`"
-            />
+          <!-- <div class="slide-text">{{slideList[slideIndex].text}}</div> -->
+          <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.src" class="item">
+            <img :src="slide.src" :class="`item-img ${slideIndex === index ? 'active' : ''}`" />
             <div class="item-name" v-html="slide.name"></div>
           </swiper-slide>
         </swiper>
         <div class="content">
-          <h3
-            class="title"
-            data-aos="fade"
-            data-aos-delay="400"
-          >有感精裝</h3>
-          <h3
-            class="subtitle"
-            data-aos="fade"
-            data-aos-delay="600"
-            v-html="slideList[slideIndex].subtitle"
-          ></h3>
+          <h3 class="title" data-aos="fade" data-aos-delay="400" v-html="slideList[slideIndex].title"></h3>
+          <h3 class="subtitle" data-aos="fade" data-aos-delay="600" v-html="slideList[slideIndex].subtitle"></h3>
           <ul class="desc-list">
-            <h3
-              v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]"
-              data-aos="fade"
-              :data-aos-delay="600 + (index + 1) * 200"
-              data-aos-duration="1000"
-              :key="text"
-            >{{text}}</h3>
+            <h3 v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]" data-aos="fade" :data-aos-delay="600 + (index + 1) * 200" data-aos-duration="1000" :key="text">{{text}}</h3>
           </ul>
         </div>
       </div>
       <div v-if="isMobile" @mouseover="stopSwipe" @mouseleave="startSwipe">
-      <div class="slides_box">
-        <swiper
-          v-show="show"
-          :options="swiperOption"
-          ref="mySwiper"
-          class="slides"
-          @slideChangeTransitionStart="slideChanged"
-        >
-          <div
-            class="swiper-button-prev"
-            slot="button-prev"
-          >
-            <img
-              class="arrow-l"
-              src="./arrow-left.png"
-              alt
-            />
-          </div>
-          <div
-            class="swiper-button-next"
-            slot="button-next"
-          >
-            <img
-              class="arrow-r"
-              src="./arrow-right.png"
-              alt
-            />
-          </div>
-          <div class="slide-text">{{slideList[slideIndex].text}}</div>
-          <swiper-slide
-            v-for="(slide, index) in slideList"
-            :index="index"
-            :key="slide.src"
-            class="item"
-          >
-            <img
-              :src="slide.src"
-              :class="`item-img ${slideIndex === index ? 'active' : ''}`"
-            />
-            <div class="item-name" v-html="slide.name"></div>
-          </swiper-slide>
-        </swiper>
-          </div>
+        <div class="slides_box">
+          <swiper v-show="show" :options="swiperOption" ref="mySwiper" class="slides" @slideChangeTransitionStart="slideChanged">
+            <div class="swiper-button-prev" slot="button-prev">
+              <img class="arrow-l" src="./arrow-left.png" alt />
+            </div>
+            <div class="swiper-button-next" slot="button-next">
+              <img class="arrow-r" src="./arrow-right.png" alt />
+            </div>
+            <div class="slide-text">{{slideList[slideIndex].text}}</div>
+            <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.src" class="item">
+              <img :src="slide.src" :class="`item-img ${slideIndex === index ? 'active' : ''}`" />
+              <div class="item-name" v-html="slide.name"></div>
+            </swiper-slide>
+          </swiper>
+        </div>
         <div class="content">
-          <h3
-            class="title"
-            data-aos="fade"
-            data-aos-delay="400"
-          >有感精裝</h3>
-          <h3
-            class="subtitle"
-            data-aos="fade"
-            data-aos-delay="600"
-            v-html="slideList[slideIndex].subtitle_m"
-          ></h3>
+          <h3 class="title" data-aos="fade" data-aos-delay="400" v-html="slideList[slideIndex].title"></h3>
+          <h3 class="subtitle" data-aos="fade" data-aos-delay="600" v-html="slideList[slideIndex].subtitle_m"></h3>
           <ul class="desc-list">
-            <h3
-              v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]"
-              data-aos="fade"
-              :data-aos-delay="600 + (index + 1) * 200"
-              data-aos-duration="1000"
-              :key="text"
-            >{{text}}</h3>
+            <h3 v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]" data-aos="fade" :data-aos-delay="600 + (index + 1) * 200" data-aos-duration="1000" :key="text">{{text}}</h3>
           </ul>
         </div>
       </div>
       <div class="indigator-list flex-c">
-        <div
-          @click="setIndex(index)"
-          :class="`indigator ${slideIndex === index ? 'active' : ''}`"
-          v-for="(item, index) in slideList"
-          :key="`indigator-1-${index}`"
-        ></div>
+        <div @click="setIndex(index)" :class="`indigator ${slideIndex === index ? 'active' : ''}`" v-for="(item, index) in slideList" :key="`indigator-1-${index}`"></div>
       </div>
     </div>
   </div>
@@ -186,6 +101,14 @@
   width: size(890);
 }
 
+.item-name {
+  position: absolute;
+  color: #fff;
+  font-size: calc(12px + 0.2vw);
+  right: 0.5em;
+  bottom: 0.5em;
+  text-shadow: 0.1em 0 0.5em #000c;
+}
 
 .content {
   width: size(438);
@@ -220,7 +143,7 @@
 
 .desc-list {
   > h3 {
-    font-size: size(15);
+    font-size: size(20);
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
@@ -324,7 +247,7 @@
 
   .desc-list {
     > h3 {
-      font-size: size-m(12);
+      font-size: size-m(15);
       font-weight: 600;
       font-stretch: normal;
       font-style: normal;
@@ -418,56 +341,56 @@ export default {
       slideList: [
         {
           src: require('./s6/1.jpg'),
+          name: '現場實品屋',
           contentIndex: 0,
-          name: "現場實品屋",
-          subtitle: '高層景觀飯店寓所，降板湯缸特仕版',
-          subtitle_m: '高層景觀飯店寓所<br>降板湯缸特仕版',
+          title: '從需要，到想要',
+          subtitle: '有自己的幸福，先成為房子的主人',
+          subtitle_m: '有自己的幸福<br />先成為房子的主人',
         },
         {
           src: require('./s6/2.jpg'),
-          contentIndex: 0,
-          name: "現場實品屋",
-          subtitle: '高層景觀飯店寓所，降板湯缸特仕版',
-          subtitle_m: '高層景觀飯店寓所<br>降板湯缸特仕版',
+          name: '現場實品屋',
+          contentIndex: 1,
+          title: '',
+          subtitle: '',
+          subtitle_m: '',
         },
         {
           src: require('./s6/3.jpg'),
-          contentIndex: 1,
-          name: "THE VIEW現場湯缸實景",
-          subtitle: '高層景觀飯店寓所，降板湯缸特仕版',
-          subtitle_m: '高層景觀飯店寓所<br>降板湯缸特仕版',
+          name: 'THE VIEW現場湯缸實景',
+          contentIndex: 2,
+          title: '',
+          subtitle: '',
+          subtitle_m: '',
         },
         {
           src: require('./s6/4.jpg'),
-          contentIndex: 1,
-          name: "現場實品屋",
-          subtitle: '高層景觀飯店寓所，降板湯缸特仕版',
-          subtitle_m: '高層景觀飯店寓所<br>降板湯缸特仕版',
+          name: '現場實品屋',
+          contentIndex: 2,
+          title: '',
+          subtitle: '',
+          subtitle_m: '',
         },
       ],
       desc_list: [
+        [''],
         [
-          '新板最美小資宅，與特區豪門齊賞落櫻之繽',
-          '小宅也有豪宅靈魂',
-          'A New Wave of Living',
-          '渴望與擁有，只差一步',
-          '如此輕取，新人生已經來臨',
+          '自從搬進The View',
+          '每天下班都歸心似箭',
+          '眷戀陽台的美麗夜景',
+          '在獨立廚房特製減肥餐',
+          '窩在舒適尺度的客廳沙發上',
+          '看著Netflix全新一季的美劇',
+          '歡迎來The View現場親身體驗！',
         ],
         [
-          '新板最美小資宅，與特區豪門齊賞落櫻之繽',
-          '小宅也有豪宅靈魂',
-          'A New Wave of Living',
-          '渴望與擁有，只差一步',
-          '如此輕取，新人生已經來臨',
-        ],
-        [
-          '以極具國際飯店質感的遊創手法',
-          '令收藏家驚艷不已',
-          '戶戶降版大湯缸',
-          '在新板寸土寸金的天秤前',
-          '泡湯享受成為生活幸福圖騰',
-          '創造人生中最美好時光',
-          '妳值得THE VIEW寵愛妳',
+          '五星級降版湯缸',
+          '第一眼就愛上他',
+          '放點沐浴鹽、泡泡浴',
+          '沈浸在保養整個夜晚',
+          '讓泡湯成為寵愛自我的獎賞',
+          '我住我驕傲，我愛故我在',
+          '請對自己好一點，因為妳一定值得',
         ],
       ],
     }

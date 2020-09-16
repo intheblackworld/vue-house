@@ -1,46 +1,16 @@
 <template>
   <div>
     <div class="bg relative">
-      <img
-        src="./s3/skirt.gif"
-        alt=""
-        class="img absolute"
-      >
-      <div
-        v-if="!isMobile"
-        class="container flex-ac flex-jb relative right"
-        @mouseover="stopSwipe"
-        @mouseleave="startSwipe"
-      >
+      <img src="./s3/skirt.gif" alt="" class="img absolute">
+      <div v-if="!isMobile" class="container flex-ac flex-jb relative right" @mouseover="stopSwipe" @mouseleave="startSwipe">
         <div class="content">
-          <h3
-            class="title"
-            data-aos="fade"
-            data-aos-delay="400"
-          >午後文創</h3>
-          <h3
-            class="subtitle"
-            data-aos="fade"
-            data-aos-delay="600"
-            v-html="slideList[slideIndex].subtitle"
-          ></h3>
+          <h3 class="title" data-aos="fade" data-aos-delay="400" v-html="slideList[slideIndex].title"></h3>
+          <h3 class="subtitle" data-aos="fade" data-aos-delay="600" v-html="slideList[slideIndex].subtitle"></h3>
           <ul class="desc-list">
-            <h3
-              v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]"
-              data-aos="fade"
-              :data-aos-delay="600 + (index + 1) * 200"
-              data-aos-duration="1000"
-              :key="text"
-            >{{text}}</h3>
+            <h3 v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]" data-aos="fade" :data-aos-delay="600 + (index + 1) * 200" data-aos-duration="1000" :key="text">{{text}}</h3>
           </ul>
         </div>
-        <swiper
-          v-show="show"
-          :options="swiperOption"
-          ref="mySwiper"
-          class="slides"
-          @slideChangeTransitionStart="slideChanged"
-        >
+        <swiper v-show="show" :options="swiperOption" ref="mySwiper" class="slides" @slideChangeTransitionStart="slideChanged">
           <!-- <div
             class="swiper-button-prev"
             slot="button-prev"
@@ -62,98 +32,38 @@
             />
           </div> -->
           <div class="slide-text">{{slideList[slideIndex].text}}</div>
-          <swiper-slide
-            v-for="(slide, index) in slideList"
-            :index="index"
-            :key="slide.src"
-            class="item"
-          >
-            <img
-              :src="slide.src"
-              :class="`item-img ${slideIndex === index ? 'active' : ''}`"
-            />
+          <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.src" class="item">
+            <img :src="slide.src" :class="`item-img ${slideIndex === index ? 'active' : ''}`" />
             <div class="item-name" v-html="slide.name"></div>
           </swiper-slide>
         </swiper>
       </div>
-      <div
-        v-if="isMobile"
-        @mouseover="stopSwipe"
-        @mouseleave="startSwipe"
-      >
-      <div class="slides_box">
-        <swiper
-          v-show="show"
-          :options="swiperOption"
-          ref="mySwiper"
-          class="slides"
-          @slideChangeTransitionStart="slideChanged"
-        >
-          <div
-            class="swiper-button-prev"
-            slot="button-prev"
-          >
-            <img
-              class="arrow-l"
-              src="./arrow-left.png"
-              alt
-            />
-          </div>
-          <div
-            class="swiper-button-next"
-            slot="button-next"
-          >
-            <img
-              class="arrow-r"
-              src="./arrow-right.png"
-              alt
-            />
-          </div>
-          <div class="slide-text">{{slideList[slideIndex].text}}</div>
-          <swiper-slide
-            v-for="(slide, index) in slideList"
-            :index="index"
-            :key="slide.src"
-            class="item"
-          >
-            <img
-              :src="slide.src"
-              :class="`item-img ${slideIndex === index ? 'active' : ''}`"
-            />
-            <div class="item-name" v-html="slide.name"></div>
-          </swiper-slide>
-        </swiper>
+      <div v-if="isMobile" @mouseover="stopSwipe" @mouseleave="startSwipe">
+        <div class="slides_box">
+          <swiper v-show="show" :options="swiperOption" ref="mySwiper" class="slides" @slideChangeTransitionStart="slideChanged">
+            <div class="swiper-button-prev" slot="button-prev">
+              <img class="arrow-l" src="./arrow-left.png" alt />
+            </div>
+            <div class="swiper-button-next" slot="button-next">
+              <img class="arrow-r" src="./arrow-right.png" alt />
+            </div>
+            <div class="slide-text">{{slideList[slideIndex].text}}</div>
+            <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.src" class="item">
+              <img :src="slide.src" :class="`item-img ${slideIndex === index ? 'active' : ''}`" />
+              <div class="item-name" v-html="slide.name"></div>
+            </swiper-slide>
+          </swiper>
         </div>
         <div class="content">
-          <h3
-            class="title"
-            data-aos="fade"
-            data-aos-delay="400"
-          >午後文創</h3>
-          <h3
-            class="subtitle"
-            data-aos="fade"
-            data-aos-delay="600"
-            v-html="slideList[slideIndex].subtitle_m"
-          ></h3>
+          <h3 class="title" data-aos="fade" data-aos-delay="400" v-html="slideList[slideIndex].title"></h3>
+          <h3 class="subtitle" data-aos="fade" data-aos-delay="600" v-html="slideList[slideIndex].subtitle_m"></h3>
           <ul class="desc-list">
-            <h3
-              v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]"
-              data-aos="fade"
-              :data-aos-delay="600 + (index + 1) * 200"
-              data-aos-duration="1000"
-              :key="text"
-            >{{text}}</h3>
+            <h3 v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]" data-aos="fade" :data-aos-delay="600 + (index + 1) * 200" data-aos-duration="1000" :key="text">{{text}}</h3>
           </ul>
         </div>
       </div>
       <div class="indigator-list flex-c">
-        <div
-          @click="setIndex(index)"
-          :class="`indigator ${slideIndex === index ? 'active' : ''}`"
-          v-for="(item, index) in slideList"
-          :key="`indigator-1-${index}`"
-        ></div>
+        <div @click="setIndex(index)" :class="`indigator ${slideIndex === index ? 'active' : ''}`" v-for="(item, index) in slideList" :key="`indigator-1-${index}`"></div>
       </div>
     </div>
   </div>
@@ -190,7 +100,14 @@
 .slides {
   width: size(890);
 }
-.item-name{position:absolute;color: #fff;font-size:calc(12px + 0.2vw);right: 0.5em;bottom: 0.5em;text-shadow: 0.1em 0 0.5em #000c;}
+.item-name {
+  position: absolute;
+  color: #fff;
+  font-size: calc(12px + 0.2vw);
+  right: 0.5em;
+  bottom: 0.5em;
+  text-shadow: 0.1em 0 0.5em #000c;
+}
 .content {
   width: size(438);
   height: size(710);
@@ -224,7 +141,7 @@
 
 .desc-list {
   > h3 {
-    font-size: size(15);
+    font-size: size(20);
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
@@ -330,7 +247,7 @@
 
   .desc-list {
     > h3 {
-      font-size: size-m(12);
+      font-size: size-m(15);
       font-weight: 600;
       font-stretch: normal;
       font-style: normal;
@@ -439,60 +356,82 @@ export default {
       slideList: [
         {
           src: require('./s3/1.jpg'),
+          name: 'THE VIEW外觀實景',
           contentIndex: 0,
-          name: "THE VIEW外觀實景",
-          subtitle: '眼光中有山水湛藍，舉止裡有磅礡優雅',
-          subtitle_m: '眼光中有山水湛藍<br>舉止裡有磅礡優雅',
+          title: '致富要趁早。',
+          subtitle: '機會？還是命運？未來自己決定！',
+          subtitle_m: '機會？還是命運？<br>未來自己決定！',
         },
         {
           src: require('./s3/2.jpg'),
-          contentIndex: 0,
-          name: "THE VIEW挑高門廳實景",
-          subtitle: '眼光中有山水湛藍，舉止裡有磅礡優雅',
-          subtitle_m: '眼光中有山水湛藍<br>舉止裡有磅礡優雅',
+          name: 'THE VIEW挑高門廳實景',
+          contentIndex: 1,
+          title: '',
+          subtitle: '',
+          subtitle_m: '',
         },
         {
           src: require('./s3/3.jpg'),
-          contentIndex: 1,
-          name: "THE VIEW公設實景",
-          subtitle: '聞名於外，珍藏於內，林家花園，黃石市場',
-          subtitle_m: '聞名於外，珍藏於內<br>林家花園，黃石市場',
+          name: 'THE VIEW公設實景',
+          contentIndex: 2,
+          title: '',
+          subtitle: '',
+          subtitle_m: '',
         },
         {
           src: require('./s3/4.jpg'),
-          contentIndex: 1,
-          name: "THE VIEW挑高門廳實景",
-          subtitle: '聞名於外，珍藏於內，林家花園，黃石市場',
-          subtitle_m: '聞名於外，珍藏於內<br>林家花園，黃石市場',
+          name: 'THE VIEW挑高門廳實景',
+          contentIndex: 3,
+          title: '',
+          subtitle: '',
+          subtitle_m: '',
         },
         {
           src: require('./s3/5.jpg'),
-          contentIndex: 1,
-          name: "THE VIEW公設實景",
-          subtitle: '聞名於外，珍藏於內，林家花園，黃石市場',
-          subtitle_m: '聞名於外，珍藏於內<br>林家花園，黃石市場',
+          name: 'THE VIEW公設實景',
+          contentIndex: 4,
+          title: '',
+          subtitle: '',
+          subtitle_m: '',
         },
       ],
       desc_list: [
+        [''],
         [
-          '5分鐘新板誠品',
-          '以時尚精品，設計文創，閱讀殿堂',
-          '親撫手感生活，織繪新板城中之城',
-          '無與倫比的精彩閱歷',
+          '他愛我，他不愛我',
+          '愛情的承諾太虛無',
+          '不如好好投資自己的未來',
+          '',
+          '股票太難、定存太慢，利息那麼低',
+          '只要繳得起貸款，還是買房最實在',
+          '跟府中站與商圈當鄰居',
+          '不用成為理財達人，也能過好日子',
         ],
         [
-          '林家花園，黃石市場',
-          '結合湳雅夜市聞名小吃',
-          '口袋廚房珍饈品味',
-          '傳統人文風情',
-          '薈萃俬房不藏私',
+          '想起以前租房的日子',
+          '剛領薪水，租金就去掉大半',
+          '租了幾年房，等於幫房東繳貸款',
+          '厭倦了當遊牧民族的生活',
+          '好好算一算，趁著低利時代買房子',
+          '房貸其實比租金還划算',
         ],
         [
-          '7.5萬坪遠東TPARK複合園區',
-          '新北市立圖書總館24小時全時開放',
-          '充滿人文的樹海藍天',
-          '原來環境力量在這裡',
-          '盛產青春的那一頁',
+          '搞不定購物的慾望',
+          '就必須辛苦一輩子',
+          '買房子還是最穩當',
+          '除了住還能兼保值',
+          '幾年後轉手賺增值',
+          '決定踏出買屋的第一步',
+          '十年後的今天會感謝自己',
+        ],
+        [
+          '感謝媽媽贊助的一臂之力',
+          '有捷運、商圈、管理的房子',
+          '家人比看到男朋友還要滿意',
+          '媽媽說再多買一戶',
+          '收租金比放銀行划算',
+          '我知道，除了想當包租婆',
+          '其實媽媽更想，離我近一點',
         ],
       ],
     }

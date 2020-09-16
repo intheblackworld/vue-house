@@ -1,45 +1,16 @@
 <template>
   <div>
     <div class="bg relative">
-      <img
-        src="./s5/o.png"
-        alt=""
-        class="img absolute"
-      >
-      <div
-        v-if="!isMobile"
-        class="container flex-ac flex-jb relative right"
-        @mouseover="stopSwipe" @mouseleave="startSwipe"
-      >
+      <img src="./s5/o.png" alt="" class="img absolute">
+      <div v-if="!isMobile" class="container flex-ac flex-jb relative right" @mouseover="stopSwipe" @mouseleave="startSwipe">
         <div class="content">
-          <h3
-            class="title"
-            data-aos="fade"
-            data-aos-delay="400"
-          >飯店管理</h3>
-          <h3
-            class="subtitle"
-            data-aos="fade"
-            data-aos-delay="600"
-            v-html="slideList[slideIndex].subtitle"
-          ></h3>
+          <h3 class="title" data-aos="fade" data-aos-delay="400" v-html="slideList[slideIndex].title"></h3>
+          <h3 class="subtitle" data-aos="fade" data-aos-delay="600" v-html="slideList[slideIndex].subtitle"></h3>
           <ul class="desc-list">
-            <h3
-              v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]"
-              data-aos="fade"
-              :data-aos-delay="600 + (index + 1) * 200"
-              data-aos-duration="1000"
-              :key="text"
-            >{{text}}</h3>
+            <h3 v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]" data-aos="fade" :data-aos-delay="600 + (index + 1) * 200" data-aos-duration="1000" :key="text">{{text}}</h3>
           </ul>
         </div>
-        <swiper
-          v-show="show"
-          :options="swiperOption"
-          ref="mySwiper"
-          class="slides"
-          @slideChangeTransitionStart="slideChanged"
-        >
+        <swiper v-show="show" :options="swiperOption" ref="mySwiper" class="slides" @slideChangeTransitionStart="slideChanged">
           <!-- <div
             class="swiper-button-prev"
             slot="button-prev"
@@ -61,94 +32,38 @@
             />
           </div> -->
           <div class="slide-text">{{slideList[slideIndex].text}}</div>
-          <swiper-slide
-            v-for="(slide, index) in slideList"
-            :index="index"
-            :key="slide.src"
-            class="item"
-          >
-            <img
-              :src="slide.src"
-              :class="`item-img ${slideIndex === index ? 'active' : ''}`"
-            />
+          <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.src" class="item">
+            <img :src="slide.src" :class="`item-img ${slideIndex === index ? 'active' : ''}`" />
             <div class="item-name" v-html="slide.name"></div>
           </swiper-slide>
         </swiper>
       </div>
       <div v-if="isMobile" @mouseover="stopSwipe" @mouseleave="startSwipe">
-      <div class="slides_box">
-        <swiper
-          v-show="show"
-          :options="swiperOption"
-          ref="mySwiper"
-          class="slides"
-          @slideChangeTransitionStart="slideChanged"
-        >
-          <div
-            class="swiper-button-prev"
-            slot="button-prev"
-          >
-            <img
-              class="arrow-l"
-              src="./arrow-left.png"
-              alt
-            />
-          </div>
-          <div
-            class="swiper-button-next"
-            slot="button-next"
-          >
-            <img
-              class="arrow-r"
-              src="./arrow-right.png"
-              alt
-            />
-          </div>
-          <div class="slide-text">{{slideList[slideIndex].text}}</div>
-          <swiper-slide
-            v-for="(slide, index) in slideList"
-            :index="index"
-            :key="slide.src"
-            class="item"
-          >
-            <img
-              :src="slide.src"
-              :class="`item-img ${slideIndex === index ? 'active' : ''}`"
-            />
-            <div class="item-name" v-html="slide.name"></div>
-          </swiper-slide>
-        </swiper>
+        <div class="slides_box">
+          <swiper v-show="show" :options="swiperOption" ref="mySwiper" class="slides" @slideChangeTransitionStart="slideChanged">
+            <div class="swiper-button-prev" slot="button-prev">
+              <img class="arrow-l" src="./arrow-left.png" alt />
+            </div>
+            <div class="swiper-button-next" slot="button-next">
+              <img class="arrow-r" src="./arrow-right.png" alt />
+            </div>
+            <div class="slide-text">{{slideList[slideIndex].text}}</div>
+            <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.src" class="item">
+              <img :src="slide.src" :class="`item-img ${slideIndex === index ? 'active' : ''}`" />
+              <div class="item-name" v-html="slide.name"></div>
+            </swiper-slide>
+          </swiper>
         </div>
         <div class="content">
-          <h3
-            class="title"
-            data-aos="fade"
-            data-aos-delay="400"
-          >飯店管理</h3>
-          <h3
-            class="subtitle"
-            data-aos="fade"
-            data-aos-delay="600"
-            v-html="slideList[slideIndex].subtitle"
-          ></h3>
+          <h3 class="title" data-aos="fade" data-aos-delay="400" v-html="slideList[slideIndex].title"></h3>
+          <h3 class="subtitle" data-aos="fade" data-aos-delay="600" v-html="slideList[slideIndex].subtitle"></h3>
           <ul class="desc-list">
-            <h3
-              v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]"
-              data-aos="fade"
-              :data-aos-delay="600 + (index + 1) * 200"
-              data-aos-duration="1000"
-              :key="text"
-            >{{text}}</h3>
+            <h3 v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]" data-aos="fade" :data-aos-delay="600 + (index + 1) * 200" data-aos-duration="1000" :key="text">{{text}}</h3>
           </ul>
         </div>
       </div>
       <div class="indigator-list flex-c">
-        <div
-          @click="setIndex(index)"
-          :class="`indigator ${slideIndex === index ? 'active' : ''}`"
-          v-for="(item, index) in slideList"
-          :key="`indigator-1-${index}`"
-        ></div>
+        <div @click="setIndex(index)" :class="`indigator ${slideIndex === index ? 'active' : ''}`" v-for="(item, index) in slideList" :key="`indigator-1-${index}`"></div>
       </div>
     </div>
   </div>
@@ -186,10 +101,17 @@
 .slides {
   width: size(890);
 }
-.item-name{position:absolute;color: #fff;font-size:calc(12px + 0.2vw);right: 0.5em;bottom: 0.5em;text-shadow: 0.1em 0 0.5em #000c;}
+.item-name {
+  position: absolute;
+  color: #fff;
+  font-size: calc(12px + 0.2vw);
+  right: 0.5em;
+  bottom: 0.5em;
+  text-shadow: 0.1em 0 0.5em #000c;
+}
 
 .content {
-  width: size(438);
+  width: size(488);
   height: size(710);
   padding-top: size(200);
 }
@@ -221,7 +143,7 @@
 
 .desc-list {
   > h3 {
-    font-size: size(15);
+    font-size: size(20);
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
@@ -300,7 +222,7 @@
   }
 
   .title {
-    font-size: size-m(39);
+    font-size: size-m(34);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
@@ -326,7 +248,7 @@
 
   .desc-list {
     > h3 {
-      font-size: size-m(12);
+      font-size: size-m(15);
       font-weight: 600;
       font-stretch: normal;
       font-style: normal;
@@ -421,42 +343,45 @@ export default {
         {
           src: require('./s5/1.jpg'),
           contentIndex: 0,
-          name: "",
-          subtitle: '當散步變成旅行，在家就是假期<br />奢華與悠遊同行',
+          name: '',
+          title: '管理交給專業的安杰',
+          subtitle: '我只需顧好自己的美麗',
         },
         {
           src: require('./s5/2.jpg'),
-          contentIndex: 0,
-          name: "THE VIEW挑高門廳實景",
-          subtitle: '從台北的安杰、兩岸的安杰<br />到國際的安杰',
+          name: 'THE VIEW挑高門廳實景',
+          contentIndex: 1,
+          title: '',
+          subtitle: '',
+          subtitle_m: '',
         },
         {
           src: require('./s5/3.jpg'),
-          contentIndex: 1,
-          name: "",
-          subtitle: '從台北的安杰、兩岸的安杰<br />到國際的安杰',
+          name: '',
+          contentIndex: 2,
+          title: '',
+          subtitle: '',
+          subtitle_m: '',
         },
-        
       ],
       desc_list: [
+        [''],
         [
-          '一眼瞬間的華麗，圓最美的人生風景',
-          '最適合妳的顏色，才是世界上最美的顏色',
-          '時間好像靜止，相遇最初的感動',
-          '每扇窗都像櫥窗，每顆心都閃耀光芒',
-          'THE VIEW 妳的專屬飯店寓所',
+          '不是記性變好了',
+          '而是有人更懂的在乎我',
+          '信件包裹不再遺漏，修繕不怕難以詢問',
+          '24小時專人門禁，即使晚歸也令人放心',
+          '不只硬體定期維護，心情也被天天呵護',
+          '我想要的，就是備受重視的感覺',
         ],
         [
-          '服務的景深，成就服務時尚',
-          '致力探尋社區每方空間與環境風貌的相契',
-          '人文內涵的融合',
-          '期盼與住戶一起發現驚喜、享受生活',
-        ],
-        [
-          '服務的景深，成就服務時尚',
-          '致力探尋社區每方空間與環境風貌的相契',
-          '人文內涵的融合',
-          '期盼與住戶一起發現驚喜、享受生活',
+          '媽媽寄來的冬衣',
+          'MOMO買的保養品',
+          '博客來訂的限量雜誌',
+          '自從搬進The View',
+          '再也不用跟宅配約時間',
+          '更不用素顏匆匆忙忙下樓',
+          '貼心的滿足，總是從日常慢慢累積',
         ],
       ],
     }

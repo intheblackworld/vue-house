@@ -1,23 +1,9 @@
 <template>
   <div>
     <div class="bg relative">
-      <img
-        src="./s4/walk.gif"
-        alt=""
-        class="img absolute"
-      >
-      <div
-        v-if="!isMobile"
-        class="container flex-ac flex-jb relative left"
-        @mouseover="stopSwipe" @mouseleave="startSwipe"
-      >
-        <swiper
-          v-show="show"
-          :options="swiperOption"
-          ref="mySwiper"
-          class="slides"
-          @slideChangeTransitionStart="slideChanged"
-        >
+      <img src="./s4/walk.gif" alt="" class="img absolute">
+      <div v-if="!isMobile" class="container flex-ac flex-jb relative left" @mouseover="stopSwipe" @mouseleave="startSwipe">
+        <swiper v-show="show" :options="swiperOption" ref="mySwiper" class="slides" @slideChangeTransitionStart="slideChanged">
           <!-- <div
             class="swiper-button-prev"
             slot="button-prev"
@@ -38,118 +24,47 @@
               alt
             />
           </div> -->
-          <div class="slide-text">{{slideList[slideIndex].text}}</div>
-          <swiper-slide
-            v-for="(slide, index) in slideList"
-            :index="index"
-            :key="slide.src"
-            class="item"
-          >
-            <img
-              :src="slide.src"
-              :class="`item-img ${slideIndex === index ? 'active' : ''}`"
-            />
+          <!-- <div class="slide-text">{{slideList[slideIndex].text}}</div> -->
+          <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.src" class="item">
+            <img :src="slide.src" :class="`item-img ${slideIndex === index ? 'active' : ''}`" />
             <div class="item-name" v-html="slide.name"></div>
           </swiper-slide>
         </swiper>
         <div class="content">
-          <h3
-            class="title"
-            data-aos="fade"
-            data-aos-delay="400"
-          >夜際繁華</h3>
-          <h3
-            class="subtitle"
-            data-aos="fade"
-            data-aos-delay="600"
-            v-html="slideList[slideIndex].subtitle"
-          ></h3>
+          <h3 class="title" data-aos="fade" data-aos-delay="400" v-html="slideList[slideIndex].title"></h3>
+          <h3 class="subtitle" data-aos="fade" data-aos-delay="600" v-html="slideList[slideIndex].subtitle"></h3>
           <ul class="desc-list">
-            <h3
-              v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]"
-              data-aos="fade"
-              :data-aos-delay="600 + (index + 1) * 200"
-              data-aos-duration="1000"
-              :key="text"
-            >{{text}}</h3>
+            <h3 v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]" data-aos="fade" :data-aos-delay="600 + (index + 1) * 200" data-aos-duration="1000" :key="text">{{text}}</h3>
           </ul>
         </div>
       </div>
       <div v-if="isMobile" @mouseover="stopSwipe" @mouseleave="startSwipe">
-        
-      <div class="slides_box">
-        <swiper
-          v-show="show"
-          :options="swiperOption"
-          ref="mySwiper"
-          class="slides"
-          @slideChangeTransitionStart="slideChanged"
-        >
-          <div
-            class="swiper-button-prev"
-            slot="button-prev"
-          >
-            <img
-              class="arrow-l"
-              src="./arrow-left.png"
-              alt
-            />
-          </div>
-          <div
-            class="swiper-button-next"
-            slot="button-next"
-          >
-            <img
-              class="arrow-r"
-              src="./arrow-right.png"
-              alt
-            />
-          </div>
-          <div class="slide-text">{{slideList[slideIndex].text}}</div>
-          <swiper-slide
-            v-for="(slide, index) in slideList"
-            :index="index"
-            :key="slide.src"
-            class="item"
-          >
-            <img
-              :src="slide.src"
-              :class="`item-img ${slideIndex === index ? 'active' : ''}`"
-            />
-            <div class="item-name" v-html="slide.name"></div>
-          </swiper-slide>
-        </swiper>
-          </div>
+
+        <div class="slides_box">
+          <swiper v-show="show" :options="swiperOption" ref="mySwiper" class="slides" @slideChangeTransitionStart="slideChanged">
+            <div class="swiper-button-prev" slot="button-prev">
+              <img class="arrow-l" src="./arrow-left.png" alt />
+            </div>
+            <div class="swiper-button-next" slot="button-next">
+              <img class="arrow-r" src="./arrow-right.png" alt />
+            </div>
+            <div class="slide-text">{{slideList[slideIndex].text}}</div>
+            <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.src" class="item">
+              <img :src="slide.src" :class="`item-img ${slideIndex === index ? 'active' : ''}`" />
+              <div class="item-name" v-html="slide.name"></div>
+            </swiper-slide>
+          </swiper>
+        </div>
         <div class="content">
-          <h3
-            class="title"
-            data-aos="fade"
-            data-aos-delay="400"
-          >夜際繁華</h3>
-          <h3
-            class="subtitle"
-            data-aos="fade"
-            data-aos-delay="600"
-            v-html="slideList[slideIndex].subtitle_m"
-          ></h3>
+          <h3 class="title" data-aos="fade" data-aos-delay="400" v-html="slideList[slideIndex].title"></h3>
+          <h3 class="subtitle" data-aos="fade" data-aos-delay="600" v-html="slideList[slideIndex].subtitle_m"></h3>
           <ul class="desc-list">
-            <h3
-              v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]"
-              data-aos="fade"
-              :data-aos-delay="600 + (index + 1) * 200"
-              data-aos-duration="1000"
-              :key="text"
-            >{{text}}</h3>
+            <h3 v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]" data-aos="fade" :data-aos-delay="600 + (index + 1) * 200" data-aos-duration="1000" :key="text">{{text}}</h3>
           </ul>
         </div>
       </div>
       <div class="indigator-list flex-c">
-        <div
-          @click="setIndex(index)"
-          :class="`indigator ${slideIndex === index ? 'active' : ''}`"
-          v-for="(item, index) in slideList"
-          :key="`indigator-1-${index}`"
-        ></div>
+        <div @click="setIndex(index)" :class="`indigator ${slideIndex === index ? 'active' : ''}`" v-for="(item, index) in slideList" :key="`indigator-1-${index}`"></div>
       </div>
     </div>
   </div>
@@ -186,8 +101,14 @@
 .slides {
   width: size(890);
 }
-.item-name{position:absolute;color: #fff;font-size:calc(12px + 0.2vw);right: 0.5em;bottom: 0.5em;text-shadow: 0.1em 0 0.5em #000c;}
-
+.item-name {
+  position: absolute;
+  color: #fff;
+  font-size: calc(12px + 0.2vw);
+  right: 0.5em;
+  bottom: 0.5em;
+  text-shadow: 0.1em 0 0.5em #000c;
+}
 
 .content {
   width: size(438);
@@ -222,7 +143,7 @@
 
 .desc-list {
   > h3 {
-    font-size: size(15);
+    font-size: size(20);
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
@@ -239,7 +160,7 @@
   left: 0;
   right: 0;
   margin: size(370) auto 0 auto;
-  top:50%;
+  top: 50%;
   .indigator {
     width: size(19);
     height: size(19);
@@ -264,12 +185,12 @@
 
 @media screen and (max-width: 767px) {
   .bg {
-    height:100vh;
+    height: 100vh;
   }
   .img {
     right: size-m(10);
     width: size-m(144);
-   // top: auto;
+    // top: auto;
     top: size-m(320);
   }
 
@@ -293,7 +214,7 @@
 
   .content {
     width: 100vw;
-    height:auto;
+    height: auto;
     padding-top: size-m(31);
     padding-left: size-m(27);
     padding-bottom: size-m(200);
@@ -326,7 +247,7 @@
 
   .desc-list {
     > h3 {
-      font-size: size-m(12);
+      font-size: size-m(15);
       font-weight: 600;
       font-stretch: normal;
       font-style: normal;
@@ -436,57 +357,82 @@ export default {
         {
           src: require('./s4/1.jpg'),
           contentIndex: 0,
-          name: "",
-          subtitle: '讓時尚為我啟蒙，新板為我加冕',
-          subtitle_m: '讓時尚為我啟蒙<br>新板為我加冕',
+          name: '',
+          title: '收藏世界的璀璨',
+          subtitle: '千面女郎的魅力，日與夜的狂野與溫柔',
+          subtitle_m: '千面女郎的魅力<br>日與夜的狂野與溫柔',
         },
         {
           src: require('./s4/2.jpg'),
-          contentIndex: 0,
-          name: "",
-          subtitle: '讓時尚為我啟蒙，新板為我加冕',
-          subtitle_m: '讓時尚為我啟蒙<br>新板為我加冕',
+          name: '',
+          contentIndex: 1,
+          title: '',
+          subtitle: '',
+          subtitle_m: '',
         },
         {
           src: require('./s4/3.jpg'),
-          contentIndex: 1,
-          name: "現場實品屋",
-          subtitle: '新板像打翻的珠寶盒，生活絢麗無比',
-          subtitle_m: '新板像打翻的珠寶盒<br>生活絢麗無比',
+          name: '現場實品屋',
+          contentIndex: 2,
+          title: '',
+          subtitle: '',
+          subtitle_m: '',
         },
         {
           src: require('./s4/4.jpg'),
-          contentIndex: 1,
-          name: "",
-          subtitle: '新板像打翻的珠寶盒，生活絢麗無比',
-          subtitle_m: '新板像打翻的珠寶盒<br>生活絢麗無比',
+          name: '',
+          contentIndex: 3,
+          title: '',
+          subtitle: '',
+          subtitle_m: '',
         },
         {
           src: require('./s4/5.jpg'),
-          contentIndex: 1,
-          name: "THE VIEW高樓層景觀實景",
-          subtitle: '新板像打翻的珠寶盒，生活絢麗無比',
-          subtitle_m: '新板像打翻的珠寶盒<br>生活絢麗無比',
+          name: 'THE VIEW高樓層景觀實景',
+          contentIndex: 4,
+          title: '',
+          subtitle: '',
+          subtitle_m: '',
         },
       ],
       desc_list: [
+        [''],
         [
-          '時尚精靈背後的天使長',
-          '輕取新板的機會只有一次',
-          '時尚的華麗，豪宅的佈局，人文的靜謐',
-          '平凡貴氣自有細膩紋理',
+          '每次在IG分享陽台的景色',
+          '好友又以為我去住飯店了',
+          '精緻的坪數，有媲美豪宅的景觀',
+          '避開都市的侷促',
+          '開窗就能看見遼闊',
+          '對高樓層情有獨鍾',
+          '心與視野嚮往自由',
         ],
         [
-          '飯店百貨CBD，大遠百Mega City',
-          '誠品生活、環球購物、威秀影城',
-          '凱薩飯店，新板希爾頓酒店',
-          '絢爛熙來攘往，儷人繽紛來去',
+          '比起鬧鐘像是突然的襲擊',
+          '更喜歡被溫柔陽光漸漸喚醒',
+          '看著蔚藍天空來個深呼吸',
+          '彷彿成為一種生活的儀式',
+          '開窗不會與別人相望',
+          '保有自己的隱私與自在',
+          '這樣安心的感覺無可取代',
         ],
         [
-          '年度盛會，冬日慶典，全國最大',
-          '結合府中商圈，開城光雕秀',
-          '孩子的魔法小鎮，情侶的甜蜜森林',
-          '家庭繽紛聖誕夢',
+          '夜的華麗，家的寧靜',
+          '為自己斟上一杯紅酒',
+          '讓一天的疲憊慢慢消散',
+          '點起香氛，也點起城市的繁華',
+          '在燈火搖曳中，在沉靜的夜色裡心醉',
+          'I am here，enjoy it！',
+          'Welcome to my world！',
+        ],
+        [
+          'FB跳出去年的動態回顧',
+          '去年這個時候，正在東京小旅行',
+          '還記得跟姐妹排了好久的晴空塔',
+          '但一眼難忘的壯觀景色值回票價',
+          '今年，搬進The View',
+          '也把迷人景觀搬回家裡',
+          '不用刻意計畫、也不需特別排隊',
+          '雖然不能出國，我的心依舊飛揚',
         ],
       ],
     }
