@@ -45,7 +45,7 @@
         </div> -->
         <div class="content">
           <h3 class="title" data-aos="fade" data-aos-delay="400" v-html="slideList[slideIndex].title"></h3>
-          <h3 class="subtitle" data-aos="fade" data-aos-delay="600" v-html="slideList[slideIndex].subtitle"></h3>
+          <h3 class="subtitle" data-aos="fade" data-aos-delay="600" v-html="slideList[slideIndex].subtitle_m"></h3>
           <ul class="desc-list">
             <h3 v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]" data-aos="fade" :data-aos-delay="600 + (index + 1) * 200" data-aos-duration="1000" :key="text">{{text}}</h3>
           </ul>
@@ -350,6 +350,7 @@ export default {
           title: '府中捷運我愛你。',
           subtitle:
             '府中站散步5分鐘，一座城市多款風格<br />雙子座AB型的世界，只有「THE VIEW」<br />最懂我。',
+          subtitle_m: '府中站散步5分鐘<br />一座城市多款風格<br />雙子座AB型的世界<br />只有「THE VIEW」<br />最懂我。',
         },
         {
           src: require('./s2/2.jpg'),
