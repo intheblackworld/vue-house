@@ -1,5 +1,5 @@
 export default [
-  { name: '首頁', imgSrc: '', subTitle: '', section: 'section1', svgSrc: '', offset: -80 },
+  { name: '清景麟鉅作', imgSrc: '', subTitle: '', section: 'section1', svgSrc: '', offset: -80 },
   { name: '未來‧躍進', imgSrc: '', subTitle: '', section: 'section2', svgSrc: '', offset: -100 },
   { name: '繁華‧都心', imgSrc: '', subTitle: '', section: 'section6', svgSrc: '', mobileOffset: 0 },
   { name: '燙金‧生活', imgSrc: '', subTitle: '', section: 'section7', svgSrc: '', mobileOffset: 0 },
