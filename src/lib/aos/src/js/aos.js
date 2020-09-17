@@ -31,7 +31,7 @@ let initialized = false
 let options = {
   offset: -300,
   delay: config.delay,
-  easing: 'ease',
+  easing: config.easing || 'ease',
   duration: config.duration,
   disable: false,
   once: config.once,

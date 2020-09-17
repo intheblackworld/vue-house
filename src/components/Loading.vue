@@ -1,6 +1,10 @@
 <template>
-  <div :class="`loading-bg ${loading ? '' : 'none'} ${isOpacity ? 'opacity': ''}`">
-    <img src="~@/assets/img/loading_b.gif" alt class="loading-icon" />
+  <div :class="`loading-bg ${loading ? '' : 'hide'} ${isOpacity ? 'opacity': ''}`">
+    <img
+      src="~@/assets/img/loading_b.gif"
+      alt
+      class="loading-icon"
+    />
   </div>
 </template>
 
@@ -26,11 +30,11 @@
   }
 
   &.opacity {
-    opacity: .8;
+    opacity: 0.8;
   }
 
   &.hide {
-    animation: hide .3s ease 0s forwards;
+    animation: hide 1s ease-in 0s forwards;
   }
 
   &.none {
@@ -40,19 +44,31 @@
   @keyframes hide {
     0% {
       oacity: 1;
+      left: 0;
       display: block;
     }
 
     99% {
       opacity: 0;
-      display: block;
+      height: 100vh;
+      // left: -100vw;
+      // display: block !important; not work
       z-index: 1000;
     }
 
     100% {
+      height: 0;
       opacity: 0;
+      // display: none !important; not work
+      z-index: -1000 !important;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .loading-bg {
+    &.hide {
       display: none;
-      z-index: -1000;
     }
   }
 }

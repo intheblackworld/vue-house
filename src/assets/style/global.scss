@@ -20,12 +20,18 @@ body {
   }
 
   * {
+   // font-family:$family1;
     outline: none !important;
+  }
+
+  ::selection {
+    background-color: #3b5662;
+    color: #fff;
   }
 }
 
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family:$family1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -33,14 +39,13 @@ body {
 }
 
 .home {
+  background: $bg;
   padding-top: $nav_pc_height;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: auto;
   background-position: center center;
-  overflow: hidden; //試底下多的那塊哪來的
-  // background: #fff;
-  background-image: url("~@/projects/cjl/img/bg.jpg");
-  background-attachment: fixed;
+  background-repeat: repeat;
+  overflow: hidden;//試底下多的那塊哪來的
 
   &.no-padding-top {
     padding-top: 0;
@@ -179,8 +184,8 @@ body {
 @media only screen and (max-width: 1024px) {
   .layout-container {
     width: 100%;
-    margin-left: 1em !important;
-    margin-right: 1em !important;
+   // margin-left: 1em !important;
+   // margin-right: 1em !important;
   }
 }
 
@@ -338,11 +343,8 @@ img[lazy="loaded"] {
     padding-top: $nav_phone_height;
     background-color: transparent;
     background-image: $order_bg_image_m;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-attachment: fixed;
-    background-position: 0 0;
-    background-image: url("~@/projects/cjl/img/bg_m.jpg");
+    // background-repeat: no-repeat;
+    // background-size: cover;
     background-attachment: fixed;
 
     &.no-padding-top {

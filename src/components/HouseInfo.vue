@@ -1,11 +1,28 @@
 <template>
-  <div class="house-info" id="house-info">
-    <!-- <div class="content">
-      <div class="title">建案資訊</div>
+  <div
+    class="house-info"
+    id="house-info"
+  >
+  <!--
+    <div class="content">
+      <h3
+        class="title"
+        data-aos="fade-down"
+        data-aos-delay="0"
+      >建案資訊</h3>
       <div class="info">
-        <div class="item" :key="infos[0]" v-for="infos in houseInfos">
+        <div
+          class="item"
+          :key="infos[0]"
+          v-for="(infos, index) in houseInfos"
+          data-aos="fade-right"
+          :data-aos-delay="100 + index * 100"
+        >
           <h3 class="label">{{infos[0]}}</h3>
-          <p class="desc" v-html="infos[1]"></p>
+          <p
+            class="desc"
+            v-html="infos[1]"
+          ></p>
         </div>
       </div>
     </div> -->
@@ -34,7 +51,7 @@ export default {
 @import '@/assets/style/variableColor.scss';
 .house-info {
   width: 100vw;
-  background: $house_bg;
+  // background: $house_bg;
   position: relative;
   z-index: 1;
 }
@@ -48,17 +65,19 @@ export default {
 }
 
 .title {
-  font-size: 36px;
+  font-size: 32px;
   line-height: 36px;
   margin: 60px 0;
-  font-family: 'Noto Sans TC', serif;
-  font-weight: bold;
+  font-weight: 500;
   color: $house_title_color;
+  font-family: $family3;
+  font-weight: bold;
+  letter-spacing: 15px;
 }
 
 .info {
-  display: flex;
-  flex-wrap: wrap;
+ display: flex;
+ flex-wrap: wrap;
 }
 
 .item {
@@ -67,12 +86,13 @@ export default {
   margin-right: 160px;
   width: 260px;
   height: 30px;
+  line-height: 1.4;
   border-left: 4px solid $house_border_color;
-  padding-left: 12px;
+  padding-left: 10px;
   display: flex;
   align-items: center;
   white-space: nowrap;
-
+  // &::before{content: "";width: 4px;height: 1.4em;background:$house_border_color;margin: -1px 10px 0 0;position: relative;}
   &:nth-of-type(even) {
     margin-right: 0;
   }
@@ -83,13 +103,15 @@ export default {
     margin-bottom: 0;
     margin-right: 20px;
     white-space: nowrap;
+    font-family: $family3;
   }
 
   .desc {
     font-size: 15px;
     text-align: left;
-    line-height: 1.4;
     color: $house_desc_color;
+    font-family: $family3;
+    font-weight: bold;
   }
 }
 
@@ -97,18 +119,21 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .content {
+    height: 25em;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 0;
+    font-size: 15px; //內容字級
+  //  min-height: 35em; //看內容多寡調整高度
   }
 
   .title {
     font-size: 32px;
-    margin: 40px 0 24px;
+    margin: 0.8em 0 0.5em 0;
   }
 
   .item {
-    margin-bottom: 20px;
-    margin-right: 0;
+    align-items: flex-start;
+    margin: 0;
     width: 100%;
     height: auto;
     margin-left: 20px;
@@ -117,6 +142,9 @@ export default {
 
   .info {
     width: 100%;
+    flex: 1;
+    justify-content: space-around;
+    align-content: space-around;
   }
 }
 

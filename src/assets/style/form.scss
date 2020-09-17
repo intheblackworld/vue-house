@@ -2,7 +2,9 @@
 
 .el-select {
   margin-left: 21px;
+  font-family:$family3;
 }
+.el-scrollbar{font-family:$family3;}
 
 .el-date-editor.el-input {
   position: relative !important;
@@ -17,10 +19,10 @@
   height: 48px !important;
   line-height: 48px !important;
   font-size: 16px !important;
-  border-radius: 0 !important;
   border: $order_input_border !important;
   background: $order_input_bg;
   color: $order_input_color;
+  font-family:$family3;
 
   &:focus {
     border: $order_input_focus_border;
@@ -39,19 +41,25 @@
     color: #333;
     padding-top: 10px !important;
     font-size: 16px !important;
-    border: $order_input_border;
+    border: $order_input_border !important;
     background:#FFF;
+  font-family:$family3;
 
     &::placeholder {
       color: $order_input_placeholder;
+    }
+
+    &:focus {
+      border: $order_input_focus_border !important;
     }
   }
 }
 
 .el-checkbox__label {
-  p {
+  p, h3 {
     font-size: 14px;
     color: $order_check_desc_color;
+    font-weight: 1100;
   }
 
   span {
@@ -66,6 +74,9 @@
   // opacity: 0 !important;
   border-radius: 0 !important;
   font-size: 20px !important;
+  font-weight: bold !important;
+  letter-spacing: 10px;
+  text-align: justify;
   background-position: center !important;
   background-color: $order_submit_bg;
   background-image: $order_submit_bg;
@@ -75,6 +86,7 @@
   color: $order_submit_color;
   // z-index: 10;
   border: none !important;
+  font-family: $family3;
 
   &.is-disabled {
     background-color: $order_sumbit_disable_bg;

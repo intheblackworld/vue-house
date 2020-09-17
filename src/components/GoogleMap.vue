@@ -1,11 +1,5 @@
 <template>
-  <div class="google-map">
-    <!-- <div class="map-img flex-ac">
-      <img
-        src="~@/projects/ssj/map-left.png"
-        alt=""
-      >
-    </div> -->
+  <div class="google-map" id="google-map">
     <iframe
       title="googlemap"
       :src="googleSrc"

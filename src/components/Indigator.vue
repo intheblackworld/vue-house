@@ -1,160 +1,195 @@
 <template>
   <div class="indigator">
     <div class="list-indigator">
-      <div
-        :class="`dot ${index == indigatorIndex ? 'active' : '' }`"
-        v-for="index in info.indigatorLength"
-        :key="`indigator-${index}`"
-        v-scroll-to="{ element: `#section${index}` }"
-        @click="setIndigator(index)"
-      ></div>
+      <div :class="`dot ${index === viewIndex ? 'active' : '' }`" v-for="(nav, index) in navList" :key="`indigator-${index + 1}`" v-scroll-to="{ element: `#${nav.section}` }"><span>{{nav.name}}</span></div>
       <!-- <div
-        :class="`dot ${(info.indigatorLength + 1) === indigatorIndex ? 'active' : '' }`"
+        :class="`dot ${(navList.length - 1 + 1) === viewIndex + 1 ? 'active' : '' }`"
         v-scroll-to="{ element: `#contact` }"
-        @click="setIndigator(info.indigatorLength + 1)"
+        @click="setIndigator(navList.length - 1 + 1)"
       ></div> -->
     </div>
-    <!-- <div
-      :class="`contact-indigator`"
-      v-scroll-to="{ element: `#section8` }"
-      @click="setIndigator(info.indigatorLength)"
-    ><img src="@/projects/fs/all/contact-indigator.png" alt=""></div> -->
+    <!-- <div :class="`contact-indigator`" v-scroll-to="{ element: `#contact` }">預約賞屋</div> -->
   </div>
 </template>
 
 <style lang="scss" scoped>
 .indigator {
+  font-size: 18px;
   position: fixed;
-  right: 10px;
+  right: 0em;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 11;
+  z-index: 10;
   .list-indigator {
     position: relative;
     padding: 8px;
-    background: rgba(0, 0, 0, 0.4);
+    margin-right: 1em;
     border-radius: 20px;
   }
 
   .dot {
-    font-size:16px;
-    width: 1em;
-    height: 1em;
-    margin-top: 0.9em;
-    margin-bottom: 0.9em;
+    width: 2em;
+    height: 3em;
+    line-height: 2;
+    margin: 0;
     background: transparent;
     cursor: pointer;
-    border: 1px solid #ccc;
-    border-radius: 999px;
+    position: relative;
+    border-radius: 999px; //overflow: hidden;
+    &::before {
+      content: '';
+      display: block;
+      width: 0.8em;
+      height: 0.8em;
+      border: 1px solid #ccc;
+      border-radius: 999px;
+      margin: 0 auto 0 auto;
+      transition: all 0.3s;
+      background: #ccc0;
+      top: calc(50% - 0.4em);
+      position: absolute;
+      left: calc(50% - 0.4em);
+    }
     &.active {
-      background: #fff;
+      &::before {
+        background: #ccc;
+      }
+    }
+    &:hover::before {
+      background: #069c;
+    }
+    span {
+      color: #fff;
+      font-family: 'Noto Serif TC', serif;
+      letter-spacing: 0.1em;
+      display: block;
+      width: 7em;
+      position: absolute;
+      right: 0;
+      top: calc(50% - 1em);
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 1em;
+      overflow: hidden;
+      transition: all 0.3s;
+      opacity: 0;
     }
     &:hover {
-    border: 2px solid #fff;
+      span {
+        right: 2em;
+        opacity: 1;
+        animation: dot_span_an 0.2s 1s forwards;
+      }
+    }
+    //&:first-child{display:none;}
+  }
+
+  @keyframes dot_span_an {
+    to {
+      right: 0;
+      opacity: 0;
     }
   }
 
   .contact-indigator {
-   /* background: rgb(239,204,125);
-background: -moz-linear-gradient(-45deg,  rgba(239,204,125,1) 0%, rgba(255,255,255,1) 50%, rgba(239,204,125,1) 100%);
-background: -webkit-linear-gradient(-45deg,  rgba(239,204,125,1) 0%,rgba(255,255,255,1) 50%,rgba(239,204,125,1) 100%);
-background: linear-gradient(135deg,  rgba(239,204,125,1) 0%,rgba(255,255,255,1) 50%,rgba(239,204,125,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efcc7d', endColorstr='#efcc7d',GradientType=1 ); */
-    margin: 10px auto;
-    padding: 8px;
-    color: #640;
-    border-radius: 20px;
+    position: absolute;
+    background: url('../projects/cjl1/all/icon.png');
+    background-size: contain;
+    margin: 1em auto 1em auto;
+    padding: 0.6em 1em 0 1.3em;
+    color: #666;
+    top: auto;
+    right: 0;
+    top: calc(50% + 50vh - 5em);
+    border-radius: 0;
     cursor: pointer;
-    line-height: 1.5;
+    line-height: 1.4;
+    font-size: 1.3em;
+    width: 5em;
+    height: 5em;
     transition: all 0.3s;
-    position: absolute;
-    right:0;
-    top:calc( 50% + 50vh - 1.3em);
-    overflow: hidden;
-    border-radius: 50%;
-    font-size: 120px;//用來調按鈕大小的
-    width:1em;
-    height:1em;
-    img{
-    position: absolute;
-    bottom: 0;right: 0;
-    width:100%;}
-    &:hover{     
-    color: #000;
-    }
-    &::before {
-    content: '';
-    width: 40%;
-    height: 100%;
-    display: block;
-    background: #fff;
-    position: absolute;
-    transform: skewX(-20deg);
-    left: -10%;
-    opacity: 0;
-    top: 0;
-    z-index: 5;
-    transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
-  }
+    font-family: 'Noto Serif TC', serif;
+    letter-spacing: 0.1em;
+    font-weight: 700;
 
-  &:hover::before {
-    opacity: 1;
-    width: 90%;
-    left: 140%;
-  }
+    &:hover {
+      color: #000;
+    }
   }
 }
-
 @media screen and (max-width: 767px) {
   .indigator {
-    right: 3px;
-
+    top: 0px;
+    transform: none;
+    right: -0.5em;
     .list-indigator {
-      padding: 4px 5px;
+      margin-right: 0;
+      padding-left: 0;
+    }
+    .contact-indigator {
+      display: none;
     }
 
     .dot {
-      width: 14px;
-      height: 14px;
-      margin: 0 auto;
-      margin-top: 15px;
-      margin-bottom: 15px;
+      width: 1em;
+      height: 2em;
+      position: relative;
+      z-index: 2;
     }
 
-    .contact-indigator {
-      width: 24px;
-      padding: 10px 4px;display: none;
+    .dot {
+      &::before {
+        border: 1px solid #fff;
+        background: transparent;
+      }
+      &.active {
+        &::before {
+          background: #fff;
+        }
+      }
+      &:hover::before {
+        background: #fff;
+      }
+      span {
+        color: #fff;
+      }
+      &:hover {
+        span {
+          right: 2em;
+          opacity: 1;
+          animation: dot_span_an 0.2s 1s forwards;
+        }
+      }
+      //&:first-child{display:none;}
     }
   }
 }
 </style>
 
 <script>
-import info from '@/info'
+import navList from '@/info/navList'
+import { isMobile } from '@/utils'
 
 export default {
   name: 'Indigator',
-
+  props: ['action', 'viewIndex'],
   data() {
     return {
-      info,
-      indigatorIndex: 1,
+      isMobile,
+      navList,
     }
   },
 
-  props: ['viewIndex'],
-
-  watch: {
-    viewIndex(val) {
-      // console.log(val)
-      this.indigatorIndex = val
-    }
-  },
+  watch: {},
 
   methods: {
     setIndigator(index) {
-      this.indigatorIndex = index
+      // if (this.isMobile) {
+      //   return
+      // }
+      this.action.moveTo(index)
     },
   },
+
+  created() {},
 }
 </script>

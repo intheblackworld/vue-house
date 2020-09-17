@@ -6,6 +6,8 @@ h3,
 h4,
 h5,
 p {
+  // font-family:inherit;
+  margin: 0;
   font-family: 'Noto Sans TC', serif;
 }
 
@@ -14,14 +16,14 @@ h2 {
   margin: 0;
   font-weight: normal;
 }
-h3 {
-  font-family: 'Noto Serif TC';
-  // font-family: 'Noto Sans TC', serif;
+h3, label {
+  font-family: 'Noto Serif TC', 'Noto Sans TC',sans-serif;
   margin: 0;
-  font-weight: bold;
+  //font-weight: bold;
 }
 
 p {
+  // font-family: Arial, 'Noto Serif TC', 'Noto Sans TC',sans-serif;
   font-family: 'Noto Sans TC', serif;
   // font-family: '微軟正黑體', 'Microsoft JhengHei', 'Helvetica Neue', Helvetica,
   //   Arial;
@@ -48,13 +50,6 @@ p {
 @font-face {
   font-family: Impact;
   src: url('~@/assets/font/Impact.ttf') format('truetype'), url('~@/assets/font/Impact.ttf');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: TrajanPro;
-  src: url('~@/assets/font/Trajan Pro Regular.ttf') format('truetype'), url('~@/assets/font/Trajan Pro Regular.ttf');
   font-weight: normal;
   font-style: normal;
 }

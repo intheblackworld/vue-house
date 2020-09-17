@@ -1,152 +1,61 @@
 <template>
   <div class="order-bg">
-    <div class="order-top">
-      <!-- <div class="title-block">
-        <h3 class="title">{{order.title}}</h3>
-        <div class="subtitle">{{order.subTitle}}</div>
-      </div> -->
-      <div
-        class="order-title"
-        v-html="order.title"
-      ></div>
-      <div
-        class="order-subtitle"
-        v-html="order.subTitle"
-      ></div>
-      <div class="order">
-        <div class="form">
-          <div class="group">
-            <div class="row">
-              <label>姓名<span>*</span></label>
-              <el-input
-                v-model="form.name"
-                placeholder
-              ></el-input>
-            </div>
-            <div class="row">
-              <label>手機<span>*</span></label>
-              <el-input
-                v-model="form.phone"
-                placeholder
-              ></el-input>
-            </div>
-            <!-- <div class="row">
-              <label>聯絡時間(起)</label>
-              <el-time-select
-                v-model="form.time_start"
-                :editable="false"
-                :picker-options="{
-                  start: '10:00',
-                  step: '01:00',
-                  end: '18:00',
-                }"
-              ></el-time-select>
-            </div>
-            <div class="row">
-              <label>聯絡時間(迄)</label>
-              <el-time-select
-                v-model="form.time_end"
-                :editable="false"
-                :picker-options="{
-                  start: '10:00',
-                  step: '01:00',
-                  end: '18:00',
-                }"
-              ></el-time-select>
-            </div> -->
-            <!-- <div class="row">
-              <label>想看房型</label>
-              <el-select v-model="form.house" placeholder>
-                <el-option
-                  v-for="city in ['甜蜜2房', '幸福3房', '都想看看']"
-                  :key="city"
-                  :label="city"
-                  :value="city"
-                  no-data-text=""
-                ></el-option>
-              </el-select>
-            </div> -->
-            <!-- <div class="row">
-              <label>E-mail</label>
-              <el-input v-model="form.email" placeholder></el-input>
-            </div> -->
-            <div class="row">
-              <label>居住城市</label>
-              <el-select v-model="form.city" placeholder>
-                <el-option
-                  v-for="city in cityList"
-                  :key="city.value"
-                  :label="city.label"
-                  :value="city.value"
-                  no-data-text="無數據"
-                ></el-option>
-              </el-select>
-            </div>
-            <div class="row">
-              <label>居住地區</label>
-              <el-select v-model="form.area" placeholder>
-                <el-option
-                  v-for="area in areaList"
-                  :key="area.value"
-                  :label="area.label"
-                  :value="area.value"
-                  no-data-text="請先選擇居住城市"
-                ></el-option>
-              </el-select>
-            </div>
+    <h3 class="order-title">{{order.title}}</h3>
+    <h3 class="order-subtitle">{{order.subTitle}}</h3>
+    <div class="order">
+      <div class="form">
+        <div class="group">
+          <div class="row">
+            <label>姓名</label>
+            <el-input v-model="form.name" placeholder></el-input>
           </div>
-          <div class="group">
-            <div class="row">
-              <el-input
-                type="textarea"
-                :rows="2"
-                placeholder="請輸入您的留言 (選填)"
-                v-model="form.msg"
-              ></el-input>
-            </div>
+          <div class="row">
+            <label>手機</label>
+            <el-input v-model="form.phone" placeholder></el-input>
+          </div>
+          <div class="row">
+            <label>E-mail</label>
+            <el-input v-model="form.email" placeholder></el-input>
+          </div>
+          <div class="row">
+            <label>居住城市</label>
+            <el-select v-model="form.city" placeholder>
+              <el-option
+                v-for="city in cityList"
+                :key="city.value"
+                :label="city.label"
+                :value="city.value"
+              ></el-option>
+            </el-select>
+          </div>
+          <div class="row">
+            <label>居住地區</label>
+            <el-select v-model="form.area" placeholder>
+              <el-option
+                v-for="area in areaList"
+                :key="area.value"
+                :label="area.label"
+                :value="area.value"
+              ></el-option>
+            </el-select>
           </div>
         </div>
-        <div class="control">
-          <el-checkbox v-model="checked">
-            <p>
-              本人知悉並同意
-              <span @click="showPolicyDialog">「個資告知事項聲明」</span>
-              內容
-            </p>
-          </el-checkbox>
+        <div class="group">
+          <div class="row">
+            <el-input type="textarea" :rows="2" placeholder="請輸入您的留言 (選填)" v-model="form.msg"></el-input>
+          </div>
         </div>
-        <div
-          style="margin: 0 auto;z-index:2;"
-          v-if="!isMobile"
-        >
-          <vue-recaptcha
-            :sitekey="info.recaptcha_site_key_v2"
-            @verify="isVerify = true"
-            :loadRecaptchaScript="true"
-          ></vue-recaptcha>
-        </div>
-        <div
-          style="margin: 0 auto;z-index:2;"
-          v-if="isMobile"
-        >
-          <vue-recaptcha
-            :sitekey="info.recaptcha_site_key_v2"
-            @verify="isVerify = true"
-            :loadRecaptchaScript="true"
-          ></vue-recaptcha>
-        </div>
-        <el-button
-          class="form-submit"
-          type="primary"
-          :disabled="!checked || !isVerify"
-          @click="submit"
-          :loading="isSubmit"
-        >立即預約</el-button>
-        <Loading
-          :loading="isSubmit"
-          :isOpacity="true"
-        />
       </div>
+      <div class="control">
+        <el-checkbox v-model="checked">
+          <p>
+            本人知悉並同意
+            <span @click="showPolicyDialog">「個資告知事項聲明」</span>
+            內容
+          </p>
+        </el-checkbox>
+      </div>
+      <el-button class="form-submit" type="primary" :disabled="!checked" @click="submit" :loading="isSubmit">立即預約</el-button>
     </div>
     <ContactInfo />
     <GoogleMap />
@@ -160,9 +69,6 @@ import GoogleMap from '@/components/GoogleMap.vue'
 import PolicyDialog from '@/components/PolicyDialog.vue'
 import info from '@/info'
 import { cityList, renderAreaList } from '@/info/address'
-import { isMobile } from '@/utils'
-import Loading from '@/components/Loading.vue'
-import VueRecaptcha from 'vue-recaptcha'
 
 export default {
   name: 'order',
@@ -170,16 +76,12 @@ export default {
     ContactInfo,
     GoogleMap,
     PolicyDialog,
-    Loading,
-    VueRecaptcha,
   },
 
   data() {
     return {
       cityList,
-      info,
       order: info.order,
-      isMobile,
       form: {
         name: '',
         phone: '',
@@ -187,12 +89,9 @@ export default {
         city: '',
         area: '',
         msg: '',
-        time_start: '',
-        time_end: '',
       },
       checked: false,
       isSubmit: false,
-      isVerify: false, // google 機器人驗證
       policyVisible: false,
       showValidateDialog: false,
     }
@@ -216,26 +115,21 @@ export default {
         message: h(
           'i',
           { style: 'color: #82191d' },
-          '「姓名、手機」是必填欄位',
+          '「姓名、手機、 E-mail、居住城市、居住地區」是必填欄位',
         ),
       })
     },
 
     submit() {
       if (this.isSubmit) return
-      if (!this.isVerify) return
       if (!this.checked) return
       this.isSubmit = true
       if (
         !this.form.name ||
-        !this.form.phone 
-        //||
-        // !this.form.time_start ||
-        // !this.form.time_end
-        // ||
-        // !this.form.email ||
-        //!this.form.city ||
-        //!this.form.area
+        !this.form.phone ||
+        !this.form.email ||
+        !this.form.city ||
+        !this.form.area
       ) {
         this.alertValidate()
         this.isSubmit = false
@@ -251,8 +145,6 @@ export default {
       formData.append('phone', this.form.phone)
       formData.append('email', this.form.email)
       formData.append('msg', this.form.msg)
-      formData.append('time_start', this.form.time_start)
-      formData.append('time_end', this.form.time_end)
       formData.append('city', this.form.city)
       formData.append('area', this.form.area)
       formData.append('utm_source', utmSource)
@@ -275,14 +167,14 @@ export default {
         },
       )
       fetch('contact-form.php', {
-        method: 'POST',
-        body: formData,
-      }).then(response => {
-        this.isSubmit = false
-        if (response.status === 200) {
-          window.location.href = 'formThanks'
-        }
-      })
+          method: 'POST',
+          body: formData,
+        }).then(response => {
+          this.isSubmit = false
+          if (response.status === 200) {
+            window.location.href = 'formThanks'
+          }
+        })
     },
   },
 }
@@ -290,55 +182,24 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/style/variableColor.scss';
-.bg-img {
-  width: 100vw;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  // mix-blend-mode: screen;
-  //background: ("~@/projects/fs/order/bg_m.jpg");
-  &.no-mix {
-    mix-blend-mode: normal;
-    height: 100%;
-  }
-}
 .order-bg {
-  background-color: $order_bg_color;
-  //background-image: $order_bg_image;
-  background-repeat: no-repeat;
+  background:$order_bg_color url('../assets/img/order-bg.jpg') no-repeat;
   position: relative;
-  padding-top: 130px;
-  background-position:0;
-  background-size:auto;
-  // background-image: $order_bg_image;
+  padding-top: 80px;
 
-  .order-top {
-    position: relative;
-    overflow: hidden;
-  background:no-repeat center bottom;
-  background-size:contain;
-  }
   .order-title {
-    width: 100vw;
-    padding-top: 20px;
-    padding-bottom: 8px;
-    font-weight: bold;
-    line-height: 1.3;
-    font-size: calc(100vw * 36 / 1920);
+    margin-top: 40px;
+    margin-bottom: 8px;
+    font-size: 36px;
     text-align: center;
     color: $order_title_color;
   }
 
   .order-subtitle {
-    width: 100vw;
     font-size: 20px;
     text-align: center;
     color: $order_subtitle_color;
     margin-bottom: 40px;
-    padding-bottom: 18px;
   }
 
   .order {
@@ -346,25 +207,18 @@ export default {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    margin-bottom: 3rem;
-    justify-content: space-between;
   }
 
   .form {
-    width: 100%;
     display: flex;
-    align-items: flex-start;
-    margin: 0 auto;
-    justify-content: space-between;
+    align-items: center;
     > .group {
       flex: 1;
-      align-items: flex-start;
     }
   }
 
   .group {
-    height: 250px;
-    margin-bottom: 40px;
+    height: 300px;
 
     &:nth-child(1) {
       border-right: 1px solid rgba(0, 0, 0, 0.2);
@@ -376,7 +230,6 @@ export default {
     &:nth-child(2) {
       .row {
         justify-content: flex-end;
-        align-items: flex-start;
         height: 100%;
       }
     }
@@ -386,10 +239,6 @@ export default {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
-
-    &.house {
-      margin-top: 50px;
-    }
 
     &:nth-last-child(1) {
       margin-bottom: 0;
@@ -405,7 +254,7 @@ export default {
   }
 
   .control {
-    margin-top: 0px;
+    margin-top: 60px;
     margin-bottom: 20px;
   }
 }
@@ -455,25 +304,16 @@ export default {
 @media only screen and (max-width: 767px) {
   .order-bg {
     padding-top: 40px;
-    margin: 0;
-    position: relative;
-    z-index: 2;
-
-    > img {
-      display: block;
-    }
     .order-title {
-      padding-top: 10px;
-      padding-bottom: 5px;
-      font-size: calc(100vw * 38 / 375);
+      margin-top: 10px;
+      margin-bottom: 20px;
     }
 .order-top{
     background-image: $order_bg_image_m;
     padding-bottom: 40px;
     }
     .order-subtitle {
-      // display: none;
-      font-size: 21px;
+      display: none;
     }
     .order {
       width: 95% !important;
@@ -494,10 +334,6 @@ export default {
 
     .row {
       margin-bottom: 12px !important;
-
-      &.house {
-        margin-top: 20px;
-      }
       label {
         width: 30% !important;
       }
@@ -506,18 +342,6 @@ export default {
     .control {
       margin-top: 10px;
       margin-bottom: 10px;
-    }
-
-    .hint {
-      width: calc(100vw * 334 / 375);
-      font-size: 12px;
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.2;
-      letter-spacing: normal;
-      text-align: left;
-      color: #ffffff;
     }
   }
 }
