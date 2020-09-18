@@ -24,14 +24,14 @@
         <div class="list-desc" v-html="list[listIndex].desc"></div>
         <div class="list flex-jb">
           <div class="item" v-for="(item, i) in list" :key="item.img" @click="listIndex = i">
-            <img :src="item.img" alt="">
+            <img :src="item.img" alt="" :class="`${i === listIndex ? 'active' : ''}`">
             <div class="name" v-html="item.name"></div>
           </div>
         </div>
       </div>
       <div v-if="isMobile">
         <div class="carousel-container absolute">
-          <carousel-3d ref="mycarousel" :width="imgWidth" :height="imgHeight" :perspective="0" :disable3d="false" :border="0" :display="3" space="auto" :autoplay="true" @after-slide-change="onAfterSlideChange">
+          <carousel-3d ref="mycarousel" :width="imgWidth" :height="imgHeight" :perspective="0" :disable3d="false" :border="0" :display="3" space="auto" :autoplay="false" @after-slide-change="onAfterSlideChange">
             <slide v-for="(item, index) in list" :index="index" :key="item.img" class="img-slide">
               <img :src="item.img" :class="`video-img absolute`" />
             </slide>
@@ -160,7 +160,7 @@
     width: 100%;
     display: block;
     transition: all 0.3s;
-    &:hover {
+    &.active {
       box-shadow: 0 0 0px 10px #38a9b3;
     }
   }
@@ -329,7 +329,7 @@
 </style>
 <script>
 // @ is an alias to /src
-import { icPC, isMobile, isTablet } from '@/utils'
+import { isPC, isMobile, isTablet } from '@/utils'
 import { Carousel3d, Slide } from 'vue-carousel-3d'
 
 export default {
@@ -342,7 +342,7 @@ export default {
 
   data() {
     return {
-      icPC,
+      isPC,
       isMobile,
       isTablet,
       listIndex: 0,
@@ -373,7 +373,7 @@ export default {
         {
           title: isMobile ? '美學藝術顧問<br />WHITESTONE 白石畫廊' : '美學藝術顧問 WHITESTONE 白石畫廊',
           desc:
-            '美學顧問 立足國際<br />除了給居住者硬體上安全的住宅之外， 也希望能將我們一直以來重視的美感生活，從一個單純提供居住的空間， 轉變成一個美學演繹的空間。透過其所收藏的藝術作品與國際藝術家們交流， 將藝術不斷的帶入居住著生活的環境之中',
+            '除了給居住者硬體上安全的住宅之外， 也希望能將我們一直以來重視的美感生活，從一個單純提供居住的空間， 轉變成一個美學演繹的空間。透過其所收藏的藝術作品與國際藝術家們交流， 將藝術不斷的帶入居住著生活的環境之中',
           img: require('./s9/4.jpg'),
           name: '白石畫廊',
         },

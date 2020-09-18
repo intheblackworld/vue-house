@@ -332,14 +332,14 @@
 </style>
 <script>
 // @ is an alias to /src
-import { icPC, isMobile, isTablet } from '@/utils'
+import { isPC, isMobile, isTablet } from '@/utils'
 
 export default {
   name: 'section7',
 
   data() {
     return {
-      icPC,
+      isPC,
       isMobile,
       isTablet,
       isShowDialog: false,

@@ -21,14 +21,14 @@
               <img src="./s6/l.png" alt="">
               <svg class="progress absolute" width="75" height="75" viewBox="0 0 120 120">
                 <!-- <circle cx="60" cy="60" r="54" fill="none" stroke="#e6e6e6" stroke-width="4" /> -->
-                <circle class="dec_circle progress__value" cx="60" cy="60" r="54" fill="none" stroke="#006699" stroke-width="3" />
+                <circle :class="`dec_circle progress__value ${direction === 'dec' ? 'show' : ''}`" cx="60" cy="60" r="54" fill="none" stroke="#006699" stroke-width="3" />
               </svg>
             </div>
             <div class="next-btn" @click="addIndex">
               <img src="./s6/r.png" alt="">
               <svg class="progress absolute" width="75" height="75" viewBox="0 0 120 120">
                 <!-- <circle cx="60" cy="60" r="54" fill="none" stroke="#e6e6e6" stroke-width="4" /> -->
-                <circle class="add_circle progress__value" cx="60" cy="60" r="54" fill="none" stroke="#006699" stroke-width="3" />
+                <circle :class="`add_circle progress__value ${direction === 'add' ? 'show' : ''}`" cx="60" cy="60" r="54" fill="none" stroke="#006699" stroke-width="3" />
               </svg>
             </div>
           </div>
@@ -254,7 +254,20 @@
 .progress__value {
   stroke-dasharray: 339.292;
   stroke-dashoffset: 339.292;
-  transition: stroke-dashoffset 0.01s linear;
+  transition: stroke-dashoffset 0.05s ease;
+  animation: circle_animate 5s ease 0s infinite;
+  opacity: 0;
+  &.show {
+    opacity: 1;
+  }
+}
+
+@keyframes circle_animate {
+  @for $i from 1 through 100 {
+    #{$i * 1%} {
+      stroke-dashoffset: calc(339.292 - #{$i * 3.39});
+    }
+  }
 }
 
 // begin
@@ -293,8 +306,8 @@
   .section10 {
     width: 100vw;
     height: sizem(400);
-  min-height: sizem(300);
-  max-height: sizem(812);
+    min-height: sizem(300);
+    max-height: sizem(812);
     min-height: auto;
   }
   .img {
@@ -478,8 +491,6 @@ export default {
     return {
       isMobile,
       isTablet,
-      i: 0,
-      startcalc: null,
       slideList: [
         {
           img: require('./s10/1獨立會館一樓 - 接待大廳.jpg'),
@@ -510,63 +521,32 @@ export default {
   },
 
   methods: {
-    calc() {
-      this.i++
-      if (this.i == 100) {
-        // 一個 = 是給值 二個 == 是判斷
-        // $('.progress__value').css('opacity', 0)
-        this.i = 0 // i算到101時 i歸0
-        // this.stopcalc() //停止時間計算
-        // setTimeout(() => {
-        //   $('.progress__value').css('opacity', 1)
-        //   this.start()
-        // }, 1000);
-      }
-      // console.log(this.i)
-    },
-    start() {
-      //開始計算
-      this.startcalc = setInterval(this.calc, 50) // 不停地調用calc函數 每0.1秒觸發
-    },
-    stopcalc() {
-      clearInterval(this.startcalc) //停止調用函數
-    },
+    // removeAnimate(val) {
+    //   if (val === 'add') {
+    //     this.addAnimate = false
+    //   } else {
+    //     this.decAnimate = false
+    //   }
+    // },
   },
 
   created() {},
 
-  mounted() {
-    if (this.isMobile) {
-      return
-    }
-    this.start()
-    // let a = 50
-    // a = a * 3.39
-    // a = 339 - a
-    // $('.progress__value').css('stroke-dashoffset', a)
-    // this.$refs.dec_circle.css('stroke-dashoffset', 300)
-  },
+  mounted() {},
 
   watch: {
-    i() {
-      if (this.isMobile) {
-        return
-      }
-      $('.progress__value').css('stroke-dashoffset', this.dec_circle_value)
-      if (this.direction === 'add') {
-        $('.add_circle').css('opacity', 1)
-        $('.dec_circle').css('opacity', 0)
-      } else {
-        $('.add_circle').css('opacity', 0)
-        $('.dec_circle').css('opacity', 1)
-      }
-    },
+    // direction(val) {
+    //   if (val === 'add') {
+    //     $('.add_circle').css('opacity', 1)
+    //     $('.dec_circle').css('opacity', 0)
+    //   } else {
+    //     console.log(val, 'dec')
+    //     $('.add_circle').css('opacity', 0)
+    //     $('.dec_circle').css('opacity', 1)
+    //   }
+    // }
   },
 
-  computed: {
-    dec_circle_value() {
-      return 339 - this.i * 3.39
-    },
-  },
+  computed: {},
 }
 </script>

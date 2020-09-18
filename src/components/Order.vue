@@ -55,7 +55,7 @@
           </p>
         </el-checkbox>
       </div>
-      <el-button class="form-submit" type="primary" :disabled="!checked" @click="submit" :loading="isSubmit">立即預約</el-button>
+      <el-button class="form-submit flex-c" type="primary" :disabled="!checked" @click="submit" :loading="isSubmit">立即預約</el-button>
     </div>
     <ContactInfo />
     <GoogleMap />

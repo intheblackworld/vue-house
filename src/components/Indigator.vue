@@ -3,7 +3,7 @@
     <div class="list-indigator active" v-if="!isExtend">
       <div :class="`dot`" @click="isExtend = true"></div>
     </div>
-    <div :class="`list-indigator flex ${isExtend ? 'active' : ''}`">
+    <div :class="`list-indigator ${isMobile ? 'flex' : ''} ${isExtend ? 'active' : ''}`">
       <img src="@/projects/jh/s4/close.png" alt="" v-if="isMobile" class="close" @click="isExtend = false">
       <div :class="`dot ${index === viewIndex ? 'active' : '' }`" v-for="(nav, index) in navList" :key="`indigator-${index + 1}`" v-scroll-to="{ element: `#${nav.section}` }" @click="isExtend = true"><span>{{nav.name}}</span></div>
       <!-- <div

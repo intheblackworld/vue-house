@@ -1136,14 +1136,14 @@
 </style>
 <script>
 // @ is an alias to /src
-import { icPC, isMobile, isTablet } from '@/utils'
+import { isPC, isMobile, isTablet } from '@/utils'
 
 export default {
   name: 'section1',
 
   data() {
     return {
-      icPC,
+      isPC,
       isMobile,
       isTablet,
       slideIndex: 0,
