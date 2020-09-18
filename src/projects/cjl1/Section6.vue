@@ -49,7 +49,7 @@
             <!-- <div class="pagination absolute flex-ac">
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div> -->
-            <!-- <div class="swipe-btns absolute flex-ac flex-jb">
+            <div class="swipe-btns absolute flex-ac flex-jb">
               <div class="prev-btn" @click="decIndex">
                 <img src="./s6/l.png" alt="">
                 <svg class="progress absolute" width="75" height="75" viewBox="0 0 120 120">
@@ -62,7 +62,7 @@
                   <circle class="add_circle progress__value" cx="60" cy="60" r="54" fill="none" stroke="#006699" stroke-width="3" />
                 </svg>
               </div>
-            </div> -->
+            </div>
           </div>
         </div>
         <div class="title absolute" data-aos="fade-down" data-aos-delay="600">
@@ -423,12 +423,22 @@
     width: 100%;
     height: 100%;
     padding: 0 0;
+    left: 0;
     z-index: 3;
 
     .prev-btn,
     .next-btn {
-      //   width: size-m(15);
+      width: sizem(25);
+      padding: 0;
       cursor: pointer;
+      img {
+        display: block;
+        width: sizem(25);
+        opacity: 1;
+      }
+    }
+    .progress {
+      display: none;
     }
   }
 

@@ -404,12 +404,22 @@
     width: 100%;
     height: 100%;
     padding: 0 0;
+    left: 0;
     z-index: 3;
 
     .prev-btn,
     .next-btn {
-      //   width: size-m(15);
+      width: sizem(25);
+      padding: 0;
       cursor: pointer;
+      img {
+        display: block;
+        width: sizem(25);
+        opacity: 1;
+      }
+    }
+    .progress {
+      display: none;
     }
   }
 

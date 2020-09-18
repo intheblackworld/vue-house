@@ -140,7 +140,7 @@
   span {
     display: flex;
     width: size(36);
-    height: size(36);
+    height: size(34);
     border-radius: size(36);
     // box-shadow: 0 0 0 1px #999999;
     position: relative;

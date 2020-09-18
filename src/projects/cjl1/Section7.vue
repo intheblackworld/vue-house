@@ -4,23 +4,23 @@
       <div class="bg">
         <div class="ink-1 absolute" data-aos="zoom-in-down" data-aos-delay="0" data-aos-duration="1200">
           <img src="./s2/ink1.png" alt="ink"></div>
-          <div class="ink-2 absolute" data-aos="zoom-in-down" data-aos-delay="0" data-aos-duration="1200">
+        <div class="ink-2 absolute" data-aos="zoom-in-down" data-aos-delay="0" data-aos-duration="1200">
           <img src="./s2/ink2.png" alt="ink"></div>
         <div class="ink-3 absolute" data-aos="zoom-in-down" data-aos-delay="0" data-aos-duration="1200">
           <img src="./s2/ink1.png" alt="ink"></div>
-          <div class="ink-4 absolute" data-aos="zoom-in-down" data-aos-delay="0" data-aos-duration="1200">
+        <div class="ink-4 absolute" data-aos="zoom-in-down" data-aos-delay="0" data-aos-duration="1200">
           <img src="./s2/ink2.png" alt="ink"></div>
       </div>
       <div class="bg">
         <div class="leaf-4 absolute" data-aos="zoom-in-left" data-aos-delay="200" data-aos-duration="1200">
-        <img src="./s7/leaf (4).png" alt="leaf"></div>
+          <img src="./s7/leaf (4).png" alt="leaf"></div>
         <div class="leaf-5 absolute" data-aos="zoom-in-left" data-aos-delay="200" data-aos-duration="1200">
-        <img src="./s7/leaf (5).png" alt="leaf"></div>
+          <img src="./s7/leaf (5).png" alt="leaf"></div>
         <div class="leaf-6 absolute" data-aos="zoom-in-left" data-aos-delay="200" data-aos-duration="1200">
-        <img src="./s7/leaf (6).png" alt="leaf"></div>
+          <img src="./s7/leaf (6).png" alt="leaf"></div>
       </div>
       <div class="container relative flex-c wrap">
-        <div class="img-item" data-aos="fade-right" data-aos-delay="600">
+        <div class="img-item" data-aos="fade-right" data-aos-delay="600" @click="isShowDialog = true">
           <img src="./s7/map.png" alt="">
         </div>
         <div class="text-item flex-ac wrap">
@@ -33,6 +33,10 @@
           </div>
         </div>
       </div>
+      <div :class="`dialog ${isShowDialog ? 'show' : ''}`">
+        <img src="./s7/map放大.png" alt="" class="dialog-content">
+        <img src="@/projects/jh/s4/close.png" class="close" alt @click="isShowDialog = false" />
+      </div>
     </div>
   </div>
 </template>
@@ -40,7 +44,7 @@
 @import '@/assets/style/function.scss';
 
 .section7 {
-  width:100%;
+  width: 100%;
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);
@@ -49,7 +53,7 @@
 
 .bg-img {
   width: 100%;
-  height:100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -60,7 +64,9 @@
   //   position: relative;
   // }
 }
-.container{margin: auto;}
+.container {
+  margin: auto;
+}
 .text-item {
   width: size(471);
   margin-left: size(77);
@@ -105,8 +111,9 @@
 
 .img-item {
   width: size(1082);
-  max-width:94vh;
+  max-width: 94vh;
   margin-left: size(50);
+  cursor: pointer;
   img {
     width: 100%;
   }
@@ -114,58 +121,80 @@
 
 .ink-1 {
   width: size(767);
-  top:calc(50% - 42vw);
+  top: calc(50% - 42vw);
   left: size(463);
-  img{width: 100%;transform: scaleX(-1); opacity: 0.15;}
+  img {
+    width: 100%;
+    transform: scaleX(-1);
+    opacity: 0.15;
+  }
 }
 
 .ink-2 {
   width: size(750);
-  top:calc(50% + 10vw);
+  top: calc(50% + 10vw);
   right: size(-400);
-  img{width: 100%;transform:rotate(-15deg) scaleX(-1);opacity: 0.5;}
+  img {
+    width: 100%;
+    transform: rotate(-15deg) scaleX(-1);
+    opacity: 0.5;
+  }
 }
 .ink-3 {
   width: size(767);
-  top:calc(50% + 10vw);
-  left:calc(50% - 20vw);
-  img{width: 100%;transform:rotate(90deg)  scaleX(-1);opacity: 0.17;}
+  top: calc(50% + 10vw);
+  left: calc(50% - 20vw);
+  img {
+    width: 100%;
+    transform: rotate(90deg) scaleX(-1);
+    opacity: 0.17;
+  }
 }
 .ink-4 {
   width: size(800);
-  top:calc(50% + 17vw);
+  top: calc(50% + 17vw);
   right: size(-550);
-  img{width: 100%;transform:rotate(90deg) scaleX(-1);opacity: 0.7;}
+  img {
+    width: 100%;
+    transform: rotate(90deg) scaleX(-1);
+    opacity: 0.7;
+  }
 }
 
 .leaf-4 {
   width: size(463);
   top: size(-200);
   left: size(0);
-  img{width: 100%;
-  animation: leaf 3s ease-in-out infinite alternate;
-  transform: skewY(5deg);
-  transform-origin:0% 50%;}
+  img {
+    width: 100%;
+    animation: leaf 3s ease-in-out infinite alternate;
+    transform: skewY(5deg);
+    transform-origin: 0% 50%;
+  }
 }
 
 .leaf-5 {
   width: size(440);
   top: size(-150);
   right: size(0);
-  img{width: 100%;
-  animation: leaf 3s ease-in-out infinite alternate;
-  transform: skewY(5deg);
-  transform-origin:100% 50%;}
+  img {
+    width: 100%;
+    animation: leaf 3s ease-in-out infinite alternate;
+    transform: skewY(5deg);
+    transform-origin: 100% 50%;
+  }
 }
 
 .leaf-6 {
   width: size(165);
   top: size(200);
   right: size(0);
-  img{width: 100%;
-  animation: leaf 4s ease-in-out infinite alternate;
-  transform: skewX(-5deg);
-  transform-origin:100% 90%;}
+  img {
+    width: 100%;
+    animation: leaf 4s ease-in-out infinite alternate;
+    transform: skewX(-5deg);
+    transform-origin: 100% 90%;
+  }
 }
 
 .opacity-3-bg {
@@ -174,6 +203,37 @@
 
 .opacity-5-bg {
   opacity: 0.5;
+}
+
+.dialog {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 120;
+
+  .dialog-content {
+    height: 95vh;
+    width: auto;
+  }
+
+  &.show {
+    display: flex;
+  }
+
+  .close {
+    position: absolute;
+    width: 40px;
+    right: 20px;
+    top: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+  }
 }
 
 @media only screen and (max-width: 1440px) {
@@ -194,8 +254,8 @@
     width: 100vw;
     min-height: auto;
     height: sizem(384 + 491);
-  min-height: sizem(500);
-  max-height: sizem(812);
+    min-height: sizem(500);
+    max-height: sizem(812);
     //background-image: url('./mo/1/00.jpg');
     background-size: cover;
     background-attachment: scroll;
@@ -241,28 +301,29 @@
   .ink-1 {
     width: sizem(350);
     top: sizem(153);
-    bottom:auto;
-    left:sizem(-100);
+    bottom: auto;
+    left: sizem(-100);
   }
   .ink-2 {
     width: sizem(350);
-    right:sizem(-250);
+    right: sizem(-250);
   }
   .ink-3 {
     width: sizem(350);
     top: sizem(153);
-    bottom:auto;
-    left:sizem(-100);
+    bottom: auto;
+    left: sizem(-100);
   }
-.leaf-5 {
+  .leaf-5 {
     top: sizem(300);
   }
-.leaf-6 {
+  .leaf-6 {
     width: sizem(61);
     top: sizem(350);
   }
   .img-item {
-    width: sizem(375); margin-left: 0;
+    width: sizem(375);
+    margin-left: 0;
     img {
       width: 100%;
     }
@@ -281,6 +342,7 @@ export default {
       icPC,
       isMobile,
       isTablet,
+      isShowDialog: false,
     }
   },
 
