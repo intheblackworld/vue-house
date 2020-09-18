@@ -1,7 +1,11 @@
 <template>
   <div class="indigator">
-    <div class="list-indigator">
-      <div :class="`dot ${index === viewIndex ? 'active' : '' }`" v-for="(nav, index) in navList" :key="`indigator-${index + 1}`" v-scroll-to="{ element: `#${nav.section}` }"><span>{{nav.name}}</span></div>
+    <div class="list-indigator active" v-if="!isExtend">
+      <div :class="`dot`" @click="isExtend = true"></div>
+    </div>
+    <div :class="`list-indigator flex ${isExtend ? 'active' : ''}`">
+      <img src="@/projects/jh/s4/close.png" alt="" v-if="isMobile" class="close" @click="isExtend = false">
+      <div :class="`dot ${index === viewIndex ? 'active' : '' }`" v-for="(nav, index) in navList" :key="`indigator-${index + 1}`" v-scroll-to="{ element: `#${nav.section}` }" @click="isExtend = true"><span>{{nav.name}}</span></div>
       <!-- <div
         :class="`dot ${(navList.length - 1 + 1) === viewIndex + 1 ? 'active' : '' }`"
         v-scroll-to="{ element: `#contact` }"
@@ -13,6 +17,7 @@
 </template>
 
 <style lang="scss" scoped>
+@import '@/assets/style/function.scss';
 .indigator {
   font-size: 18px;
   position: fixed;
@@ -124,6 +129,7 @@
     .list-indigator {
       margin-right: 0;
       padding-left: 0;
+      padding-right: 0;
     }
     .contact-indigator {
       display: none;
@@ -162,6 +168,42 @@
       //&:first-child{display:none;}
     }
   }
+  .indigator {
+    padding: sizem(20) sizem(20) sizem(50);
+    right: 0;
+
+    .list-indigator {
+      flex-wrap: wrap;
+      position: absolute;
+      top: sizem(10);
+      right: sizem(0); //background: #0003;
+      width: 0;
+      display: none;
+
+      &.active {
+        display: flex;
+        width: auto;
+        opacity: 1;
+        width: sizem(50);
+        .dot {
+          opacity: 1;
+        }
+      }
+    }
+
+    .close {
+      width: 1.5em;
+      height: 1.5em;
+      margin: 10px sizem(10) 30px;
+    }
+    .dot {
+      width: 2.5em;
+      height: 3em;
+      margin: 0 sizem(10);
+      opacity: 0;
+      transition: all 1s;
+    }
+  }
 }
 </style>
 
@@ -176,6 +218,7 @@ export default {
     return {
       isMobile,
       navList,
+      isExtend: !isMobile,
     }
   },
 
