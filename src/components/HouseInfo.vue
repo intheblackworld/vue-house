@@ -1,27 +1,11 @@
 <template>
-  <div
-    class="house-info"
-    id="house-info"
-  >
+  <div class="house-info" id="house-info">
     <div class="content">
-      <h3
-        class="title"
-        data-aos="fade-down"
-        data-aos-delay="0"
-      >建案資訊</h3>
+      <h3 class="title" data-aos="fade-down" data-aos-delay="0">建案資訊</h3>
       <div class="info">
-        <div
-          class="item"
-          :key="infos[0]"
-          v-for="(infos, index) in houseInfos"
-          data-aos="fade-right"
-          :data-aos-delay="100 + index * 100"
-        >
+        <div class="item" :key="infos[0]" v-for="(infos, index) in houseInfos" data-aos="fade-right" :data-aos-delay="100 + index * 100">
           <h3 class="label">{{infos[0]}}</h3>
-          <p
-            class="desc"
-            v-html="infos[1]"
-          ></p>
+          <p class="desc" v-html="infos[1]"></p>
         </div>
       </div>
     </div>
@@ -118,11 +102,11 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .content {
-    height: calc(100vh - 103px);
+    height: 20em;
     width: 100%;
     margin-bottom: 0;
-    font-size: 15px; //內容字級
-    min-height: 35em; //看內容多寡調整高度
+    font-size: 15px;
+    padding-bottom: 50px;
   }
 
   .title {
