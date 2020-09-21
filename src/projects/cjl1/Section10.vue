@@ -5,9 +5,9 @@
         <div class="title absolute" v-for="(slide, index) in slideList" :key="slide.img" v-html="slide.title" v-show="slideIndex === index">
         </div>
       </transition-group>
-      <div class="desc absolute" data-aos="fade-down" data-aos-delay="700">
+      <!-- div class="desc absolute" data-aos="fade-down" data-aos-delay="700">
         精品2-4房 東區指標 閃耀登場
-      </div>
+      </div  -->
       <div class="swipe absolute" data-aos="fade-up" data-aos-delay="800">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <div v-for="(slide, i) in slideList" :key="slide.img" :class="`swipe-item absolute ${slideIndex === i ? 'active' : ''} ${(slideIndex === (i + 1) || slideIndex === (i - slideList.length + 1)) ? 'base' : ''}`">
