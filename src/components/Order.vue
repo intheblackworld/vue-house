@@ -4,7 +4,7 @@
       <!-- <div class="title-block">
         <h3 class="title">{{order.title}}</h3>
         <div class="subtitle">{{order.subTitle}}</div>
-      </div> -->
+      </div> 
       <div
         class="order-title"
         v-html="order.title"
@@ -12,9 +12,9 @@
       <div
         class="order-subtitle"
         v-html="order.subTitle"
-      ></div>
+      ></div> -->
       <div class="order">
-        <div class="form">
+      <!--   <div class="form">
           <div class="group">
             <div class="row">
               <label>姓名<span>*</span></label>
@@ -65,11 +65,11 @@
                   no-data-text=""
                 ></el-option>
               </el-select>
-            </div> -->
-            <!-- <div class="row">
+            </div>
+            <div class="row">
               <label>E-mail</label>
               <el-input v-model="form.email" placeholder></el-input>
-            </div> -->
+            </div>
             <div class="row">
               <label>居住城市</label>
               <el-select v-model="form.city" placeholder>
@@ -114,7 +114,7 @@
               內容
             </p>
           </el-checkbox>
-        </div>
+        </div> 
         <div
           style="margin: 0 auto;z-index:2;"
           v-if="!isMobile"
@@ -141,11 +141,11 @@
           :disabled="!checked || !isVerify"
           @click="submit"
           :loading="isSubmit"
-        >立即預約</el-button>
+        >立即預約</el-button> 
         <Loading
           :loading="isSubmit"
           :isOpacity="true"
-        />
+        /> -->
       </div>
     </div>
     <ContactInfo />
