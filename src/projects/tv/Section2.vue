@@ -17,7 +17,7 @@
           <h3 class="title" data-aos="fade" data-aos-delay="400" v-html="slideList[slideIndex].title"></h3>
           <h3 class="subtitle" data-aos="fade" data-aos-delay="600" v-html="slideList[slideIndex].subtitle"></h3>
           <ul class="desc-list">
-            <h3 v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]" data-aos="fade" :data-aos-delay="600 + (index + 1) * 200" data-aos-duration="1000" :key="text">{{text}}</h3>
+            <h3 v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]" data-aos="fade" :data-aos-delay="600 + (index + 1) * 200" data-aos-duration="1000" :key="text" v-html="text"></h3>
           </ul>
         </div>
       </div>
@@ -47,7 +47,7 @@
           <h3 class="title" data-aos="fade" data-aos-delay="400" v-html="slideList[slideIndex].title"></h3>
           <h3 class="subtitle" data-aos="fade" data-aos-delay="600" v-html="slideList[slideIndex].subtitle"></h3>
           <ul class="desc-list">
-            <h3 v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]" data-aos="fade" :data-aos-delay="600 + (index + 1) * 200" data-aos-duration="1000" :key="text">{{text}}</h3>
+            <h3 v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]" data-aos="fade" :data-aos-delay="600 + (index + 1) * 200" data-aos-duration="1000" :key="text" v-html="text"></h3>
           </ul>
         </div>
       </div>
@@ -61,6 +61,14 @@
 .slides {
   opacity: 0;
   animation: op 0.3s 0s forwards;
+}
+.desc-list {
+  > h3 {
+    span{transform: scaleX(0.95);
+    transform-origin:0 0;
+    display: block;
+    letter-spacing: 0.05em;}
+  }
 }
 
 @keyframes op {
@@ -79,6 +87,13 @@
   .slides {
     height: 100%;
   }
+.desc-list {
+  > h3 {
+    span{transform: scaleX(0.88);
+    letter-spacing: 0em;}
+  }
+}
+
 }
 </style>
 <style lang="scss" scoped>
@@ -160,7 +175,7 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 2;
-    letter-spacing: 3.75px;
+    letter-spacing: 0.18em;
     text-align: left;
     color: #727272;
   }
@@ -204,7 +219,7 @@
     right: size-m(0);
     width: size-m(150);
     //  top: auto;
-    top: size-m(310);
+    top:calc(100vh - 95vw);
     //  bottom: size-m(10);
   }
 
@@ -261,13 +276,7 @@
   .desc-list {
     > h3 {
       font-size: size-m(15);
-      font-weight: 600;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 2.14;
-      letter-spacing: 0.14px;
-      text-align: left;
-      color: #727272;
+      letter-spacing:0.01em;
     }
   }
 
@@ -349,7 +358,7 @@ export default {
           name: '府中捷運站',
           title: '府中捷運我愛你。',
           subtitle:
-            '府中站散步5分鐘，一座城市多款風格<br />雙子座AB型的世界，只有「THE VIEW」<br />最懂我。',
+          isMobile? '府中站散步5分鐘<br />一座城市多款風格<br />雙子座AB型的世界<br />只有「THE VIEW」<br />最懂我。':'府中站散步5分鐘，一座城市多款風格<br />雙子座AB型的世界，只有「THE VIEW」<br />最懂我。',
         },
         {
           src: require('./s2/2.jpg'),
@@ -405,14 +414,14 @@ export default {
           '戀上一個人，要先看人品有多好',
           '戀上一間房，要先看捷運有多近',
           '愛情跟購屋也有些相通的道理',
-          '想要美麗的未來，看他是否以妳為中心。',
-          '「VIVI，妳跟以前不一樣了！」好友說',
-          '「好房子比好男人更重要啊。」我回答。',
+          '<span>想要美麗的未來，看他是否以妳為中心。</span>',
+          '<span>「VIVI，妳跟以前不一樣了！」好友說</span>',
+          '<span>「好房子比好男人更重要啊。」我回答</span>。',
         ],
         [
-          '今天想要打扮時尚，把城市當成伸展台',
-          '明天想一個人旅行，體驗孤獨的文青感',
-          '有時也得要回到現實，去採購生活的所需',
+          '<span>今天想要打扮時尚，把城市當成伸展台</span>',
+          '<span>明天想一個人旅行，體驗孤獨的文青感</span>',
+          '<span>有時也得要回到現實，去採購生活的所需</span>',
           '但是啊，我是被捧在手心的小公主',
           '不管想做什麼，不論想買什麼',
           '捷運、百貨、公園、文創、市場',
