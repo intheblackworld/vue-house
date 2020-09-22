@@ -7,9 +7,10 @@
 </template>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css?family=Noto+Serif+TC:200,300,400,500,600,700,900&subset=chinese-traditional');
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&subset=chinese-traditional');
-@import url('https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap');
+// 這只用 Noto Sans 減少外連  把2個拿掉
+//@import url('https://fonts.googleapis.com/css?family=Noto+Serif+TC:200,300,400,500,600,700,900&subset=chinese-traditional');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap&subset=chinese-traditional');
+//@import url('https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap');
 </style>
 
 <script>

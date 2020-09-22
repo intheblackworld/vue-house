@@ -1013,6 +1013,7 @@
   overflow: hidden;
   position: relative;
   z-index: 1;
+  background: url("./s1/bg.jpg");
 }
 
 .bg-img {
