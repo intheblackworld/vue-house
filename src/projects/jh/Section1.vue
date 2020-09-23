@@ -27,14 +27,14 @@
       <div class="main">
         <div class="gear">
           <div class="l">
-            <img src="./s1/gear1.png?v1" alt="gear" class="gear1" />
-            <img src="./s1/gear2.png?v1" alt="gear" class="gear2" />
-            <img src="./s1/gear3.png?v1" alt="gear" class="gear3" />
+            <img src="./s1/gear1.png" alt="gear" class="gear1" />
+            <img src="./s1/gear2.png" alt="gear" class="gear2" />
+            <img src="./s1/gear3.png" alt="gear" class="gear3" />
           </div>
           <div class="s">
-            <img src="./s1/gear1.png?v1" alt="gear" class="gear4" />
-            <img src="./s1/gear2.png?v1" alt="gear" class="gear5" />
-            <img src="./s1/gear3.png?v1" alt="gear" class="gear6" />
+            <img src="./s1/gear1.png" alt="gear" class="gear4" />
+            <img src="./s1/gear2.png" alt="gear" class="gear5" />
+            <img src="./s1/gear3.png" alt="gear" class="gear6" />
           </div>
         </div>
 
