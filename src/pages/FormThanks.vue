@@ -1,5 +1,6 @@
 <template>
   <div class="thanks">
+    <div ref="gtmNoScript" />
     <h3>感謝您</h3>
     <p>
       預約成功
