@@ -69,12 +69,12 @@
       >
         <Section8 />
       </vue-lazy-component> -->
-      <vue-lazy-component
+      <!-- <vue-lazy-component
         class="section"
         id="section9"
       >
         <Section9 />
-      </vue-lazy-component>
+      </vue-lazy-component> -->
       <!-- <vue-lazy-component
 =======
     <div
@@ -240,7 +240,9 @@ export default {
       var totalImages = $('img').length
 
       const allImagesLoaded = () => {
-        this.load = false
+        setTimeout(() => {
+          this.load = false
+        }, 500);
       }
       const imageLoaded = () => {
         imagesLoaded++
