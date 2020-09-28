@@ -1,15 +1,24 @@
 <template>
   <div class="home no-padding-top">
+<<<<<<< HEAD
     <div class="home2">
       <Loading :loading="load" />
       <SideNavigation />
       <!-- <Navigation /> -->
       <!-- <Indigator :viewIndex="viewIndex" /> -->
       <!-- <full-page
+=======
+    <Loading :loading="load" />
+    <!-- <SideNavigation v-if="isSide" />
+    <Navigation v-else /> -->
+    <!-- <TopIndigator :viewIndex="viewIndex" /> -->
+    <!-- <full-page
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
       ref="fullPage"
       :options="options"
       id="fullpage"
     > -->
+<<<<<<< HEAD
       <vue-lazy-component
         class="section"
         id="section1"
@@ -67,6 +76,16 @@
         <Section9 />
       </vue-lazy-component>
       <!-- <vue-lazy-component
+=======
+    <div
+      class="section"
+      id="section1"
+    >
+      <Section1 />
+    </div>
+    <!-- </full-page> -->
+    <ContactSection
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
       class="section"
       id="section10"
     >
@@ -89,7 +108,11 @@
   </div>
 </template>
 
+<<<<<<< HEAD
 <style lang="scss" scoped>
+=======
+<style lang="scss">
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
 // @import url('https://fonts.googleapis.com/css?family=Playball&display=swap');
 @import '../assets/style/variableColor.scss';
 
@@ -102,13 +125,19 @@
 
 <script>
 // @ is an alias to /src
+<<<<<<< HEAD
 import $ from 'jquery'
 import Navigation from '@/layouts/Navigation.vue'
+=======
+// import _ from 'lodash'
+// import Navigation from '@/layouts/Navigation.vue'
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
 import { isMobile } from '@/utils'
-import SideNavigation from '@/layouts/SideNavigation.vue'
+// import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
+<<<<<<< HEAD
 import Indigator from '@/components/Indigator.vue'
 
 import Section1 from '@/projects/llcs1/Section1.vue'
@@ -122,35 +151,70 @@ import Section7 from '@/projects/llcs1/Section7.vue'
 // import Section9 from '@/projects/llcs1/Section9.vue'
 // import Section10 from '@/projects/llcs1/Section10.vue'
 // import Section11 from '@/projects/llcs1/Section11.vue'
+=======
+// import TopIndigator from '@/components/TopIndigator.vue'
+
+import Section1 from '@/projects/llcs/Section1.vue'
+// import Section2 from '@/projects/sdj1/Section2.vue'
+// import Section3 from '@/projects/sdj1/Section3.vue'
+// import Section4 from '@/projects/sdj1/Section4.vue'
+// import Section5 from '@/projects/sdj1/Section5.vue'
+// import Section6 from '@/projects/sdj1/Section6.vue'
+// import Section7 from '@/projects/sdj1/Section7.vue'
+// import Section8 from '@/projects/sdj1/Section8.vue'
+// import Section9 from '@/projects/sdj/Section9.vue'
+// import Section10 from '@/projects/sdj/Section10.vue'
+// import Section11 from '@/projects/sdj/Section11.vue'
+// import Section12 from '@/projects/sdj/Section12.vue'
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
 
 export default {
   name: 'home',
   components: {
     Loading,
-    // Indigator,
-    Navigation,
-    SideNavigation,
+    // TopIndigator,
+    // VideoSection,
+    // Navigation,
+    // SideNavigation,
     ContactSection,
     MobileNav,
     Section1,
+<<<<<<< HEAD
     Section2,
     Section3,
     Section4,
     Section5,
     Section6,
     Section7,
+=======
+    // Section2,
+    // Section3,
+    // Section4,
+    // Section5,
+    // Section6,
+    // Section7,
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
     // Section8,
     // Section9,
     // Section10,
     // Section11,
+<<<<<<< HEAD
+=======
+    // Section12,
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
   },
 
   data() {
     return {
       isMobile,
-      isSide: false,
+      // isSide: false,
       load: true,
+<<<<<<< HEAD
       viewIndex: 0,
+=======
+      // viewIndex: 1,
+      // offsetTopArr: [],
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
       // action: {
       //   moveTo: () => {},
       // },
@@ -168,6 +232,7 @@ export default {
     }
   },
   created() {
+<<<<<<< HEAD
     $(document).ready(() => {
       // Images loaded is zero because we're going to process a new set of images.
       var imagesLoaded = 0
@@ -188,37 +253,46 @@ export default {
           .on('load', imageLoaded)
           .attr('src', $(img).attr('src'))
       })
+=======
+    window.addEventListener('load', event => {
+      this.load = false
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
     })
   },
   mounted() {
-    // window.addEventListener('scroll', this.onScroll, false)
-    // this.action = this.$refs.fullPage.api
-    // if (this.isMobile) {
-    //   this.$refs.fullPage.api.setResponsive(true)
-    // }
+    // window.addEventListener('scroll', _.throttle(this.onScroll, 500), false)
+    // 获取所有锚点元素
+    // const navContents = document.querySelectorAll('.section')
+    // 所有锚点元素的 offsetTop
+    // navContents.forEach(item => {
+    //   this.offsetTopArr.push(item.offsetTop)
+    // })
   },
+
   methods: {
+<<<<<<< HEAD
     init() {},
+=======
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
     // onScroll() {
-    //   // 获取所有锚点元素
-    //   const navContents = document.querySelectorAll('.section')
-    //   // 所有锚点元素的 offsetTop
-    //   const offsetTopArr = []
-    //   navContents.forEach(item => {
-    //     offsetTopArr.push(item.offsetTop)
-    //   })
     //   // 获取当前文档流的 scrollTop
     //   const scrollTop =
     //     document.documentElement.scrollTop || document.body.scrollTop
     //   // 定义当前点亮的导航下标
     //   let navIndex = 0
-    //   for (let n = 0; n < offsetTopArr.length; n++) {
+    //   for (let n = 0; n < this.offsetTopArr.length; n++) {
     //     // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
     //     // 那么此时导航索引就应该是n了
-    //     if (scrollTop >= offsetTopArr[n] - 100) {
+    //     let height = this.isMobile ? 200 : 800
+    //     if (scrollTop >= this.offsetTopArr[n] - height) {
     //       navIndex = n
     //     }
+
+    //     // if (n > 4) {
+    //     //   navIndex = 5
+    //     // }
     //   }
+    //   // console.log(navIndex)
     //   this.viewIndex = navIndex + 1
     // },
 

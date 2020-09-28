@@ -29,7 +29,7 @@ let initialized = false
  * Default options
  */
 let options = {
-  offset: 50,
+  offset: -300,
   delay: config.delay,
   easing: config.easing || 'ease',
   duration: config.duration,

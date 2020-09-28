@@ -1,4 +1,6 @@
+
 <template>
+<<<<<<< HEAD
 <div
     class="house-info"
     id="house-info"
@@ -9,6 +11,13 @@
         data-aos="fade-down"
         data-aos-delay="0"
       >建案資訊</h3>
+=======
+  <div class="house-info" id="house-info">
+    <div class="content">
+<!--
+
+     <div class="title">建案資訊</div>
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
       <div class="info">
         <div
           class="item"
@@ -24,11 +33,15 @@
           ></p>
         </div>
       </div>
+<<<<<<< HEAD
     </div> -->
+=======
+      -->
+    </div>
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
     <Footer />
   </div>
 </template>
-
 <script>
 import info from '@/info'
 import Footer from '@/layouts/Footer.vue'
@@ -67,7 +80,12 @@ export default {
   font-size: 32px;
   line-height: 36px;
   margin: 60px 0;
+<<<<<<< HEAD
   font-weight: 500;
+=======
+  font-family: 'Noto Serif TC', serif;
+  font-weight: bold;
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
   color: $house_title_color;
   font-family: $family3;
   font-weight: bold;
@@ -136,6 +154,10 @@ export default {
     width: 100%;
     height: auto;
     white-space: normal;
+    &:last-child{
+  .desc{
+    font-size: 14px;
+  }}
   }
 
   .info {

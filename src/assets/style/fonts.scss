@@ -17,14 +17,19 @@ h2 {
   font-weight: normal;
 }
 h3 {
+<<<<<<< HEAD
   font-family: 'Noto Serif TC', serif;
   // font-family: 'Noto Sans TC', serif;
+=======
+  font-family: 'Noto Serif TC';
+  // font-family: 'Noto Serif TC', serif;
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
   margin: 0;
   font-weight: bold;
 }
 
 p {
-  font-family: 'Noto Sans TC', serif;
+  font-family: 'Noto Serif TC', serif;
   // font-family: '微軟正黑體', 'Microsoft JhengHei', 'Helvetica Neue', Helvetica,
   //   Arial;
   margin: 0;
@@ -47,4 +52,15 @@ p {
     url('~@/assets/font/TimesNewRomanPSMT.ttf');
   font-weight: normal;
   font-style: normal;
+<<<<<<< HEAD
 }
+=======
+}
+
+@font-face {
+  font-family: TrajanPro;
+  src: url('~@/assets/font/Trajan Pro Regular.ttf') format('truetype'), url('~@/assets/font/Trajan Pro Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e

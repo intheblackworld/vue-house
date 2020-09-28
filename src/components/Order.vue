@@ -1,6 +1,8 @@
 <template>
   <div class="order-bg">
-    <!-- <img src="@/projects/fs/order/bg.png" alt="" class="bg-img"> -->
+    <!-- <img src="@/projects/dj/s13/1.png" alt="" class="bg-img cloud1" v-if="!isMobile">
+    <img src="@/projects/dj/s13/2.png" alt="" class="bg-img cloud2" v-if="!isMobile">
+    <img src="@/projects/dj/s13/1_m.png" alt="" class="bg-img cloud3" v-if="isMobile"> -->
     <!-- <img src="@/projects/fs/order/bg1.png" alt="" class="bg-img no-mix"> -->
     <!-- <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile"> -->
     <div class="order-top">
@@ -8,12 +10,16 @@
         <h3 class="title">{{order.title}}</h3>
         <div class="subtitle">{{order.subTitle}}</div>
       </div> -->
-      <div
+      <h3
         class="order-title"
         v-html="order.title"
+<<<<<<< HEAD
         data-aos="fade-down"
         data-aos-delay="0"
       ></div>
+=======
+      ></h3>
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
       <div
         class="order-subtitle"
         v-html="order.subTitle"
@@ -21,30 +27,44 @@
       <div class="order">
         <div class="form">
           <div class="group">
+<<<<<<< HEAD
             <div
               class="row"
               data-aos="fade-down"
               data-aos-delay="100"
             >
               <label>姓名</label>
+=======
+            <div class="row">
+              <label>姓名<span>*</span></label>
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
               <el-input
                 v-model="form.name"
                 placeholder
               ></el-input>
             </div>
+<<<<<<< HEAD
             <div
               class="row"
               data-aos="fade-down"
               data-aos-delay="200"
             >
               <label>手機</label>
+=======
+            <div class="row">
+              <label>手機<span>*</span></label>
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
               <el-input
                 v-model="form.phone"
                 placeholder
               ></el-input>
             </div>
+<<<<<<< HEAD
             <!-- <div class="row" data-aos="fade-down"
         data-aos-delay="300">
+=======
+            <!-- <div class="row">
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
               <label>聯絡時間(起)</label>
               <el-time-select
                 v-model="form.time_start"
@@ -85,11 +105,15 @@
               <label>E-mail</label>
               <el-input v-model="form.email" placeholder></el-input>
             </div> -->
+<<<<<<< HEAD
             <div
               class="row"
               data-aos="fade-down"
               data-aos-delay="300"
             >
+=======
+            <div class="row">
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
               <label>居住城市</label>
               <el-select
                 v-model="form.city"
@@ -180,7 +204,7 @@
           :disabled="!checked || !isVerify"
           @click="submit"
           :loading="isSubmit"
-        >立即預約</el-button>
+        >預約賞屋</el-button>
         <Loading
           :loading="isSubmit"
           :isOpacity="true"
@@ -268,13 +292,16 @@ export default {
       if (
         !this.form.name ||
         !this.form.phone
+<<<<<<< HEAD
         // ||
+=======
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
         // !this.form.time_start ||
         // !this.form.time_end
         // ||
         // !this.form.email ||
-        // !this.form.city ||
-        // !this.form.area
+        //  !this.form.city ||
+        //  !this.form.area
       ) {
         this.alertValidate()
         this.isSubmit = false
@@ -290,8 +317,8 @@ export default {
       formData.append('phone', this.form.phone)
       formData.append('email', this.form.email)
       formData.append('msg', this.form.msg)
-      // formData.append('time_start', this.form.time_start)
-      // formData.append('time_end', this.form.time_end)
+      formData.append('time_start', this.form.time_start)
+      formData.append('time_end', this.form.time_end)
       formData.append('city', this.form.city)
       formData.append('area', this.form.area)
       formData.append('utm_source', utmSource)
@@ -307,7 +334,7 @@ export default {
       const sec = time.getSeconds()
       const date = `${year}-${month}-${day} ${hour}:${min}:${sec}`
       fetch(
-        `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&email=${this.form.email}&cityarea=${this.form.city}${this.form.area}&msg=${this.form.msg}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
+        `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&email=${this.form.email}&cityarea=${this.form.city}${this.form.area}&time_start=${this.form.time_start}&time_end=${this.form.time_end}&msg=${this.form.msg}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
       `,
         {
           method: 'GET',
@@ -345,13 +372,21 @@ export default {
   }
 }
 .order-bg {
+<<<<<<< HEAD
   // background-color: $order_bg_color;
   background-image: $order_bg_image;
+=======
+  //background-color: $order_bg_color;
+  //background-image: $order_bg_image;
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
   background-repeat: no-repeat;
   position: relative;
   padding-top: 130px;
-  background-size: 100vw auto;
+  background-position: center;
+  background-size: cover;
+  background-color: $order_bg_image;
   background-attachment: fixed;
+<<<<<<< HEAD
   background-position: 0% 0%;
   font-family: $family3;
   input,
@@ -359,9 +394,14 @@ export default {
   button {
     font-family: $family3;
   }
+=======
+
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
   .order-top {
     position: relative;
     overflow: hidden;
+    background: no-repeat center bottom;
+    background-size: contain;
   }
   .order-title {
     font-family: $family2;
@@ -392,6 +432,11 @@ export default {
     flex-direction: column;
     margin-bottom: 3rem;
     justify-content: space-between;
+<<<<<<< HEAD
+=======
+    position: relative;
+    z-index: 3;
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
   }
 
   .form {
@@ -445,12 +490,38 @@ export default {
       opacity: 0.8;
       font-weight: bold;
       color: $order_input_label_color;
+      span {
+        color: #c00;
+      }
     }
   }
 
   .control {
     margin-top: 0px;
     margin-bottom: 20px;
+  }
+}
+.cloud1 {
+  top: 10vw;
+  animation: clouda 8s ease-in-out alternate infinite;
+  transform: translateX(-3%);
+}
+.cloud2 {
+  top: 25vw;
+  left: 20vw;
+  animation: clouda 8s 1.5s ease-in-out alternate infinite;
+  transform: translateX(-6%);
+}
+.cloud3 {
+  width: calc(100vw * 1600 / 750);
+  top: 0vw;
+  left: calc(50% - 107vw);
+  animation: clouda 8s 1.5s ease-in-out alternate infinite;
+  transform: translateX(-10%);
+}
+@keyframes clouda {
+  to {
+    transform: translateX(0);
   }
 }
 
@@ -474,7 +545,10 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .order-bg {
+<<<<<<< HEAD
     // background-image: $order_bg_image_m;
+=======
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
     background-size: cover;
     padding-top: 40px;
     margin: 0;
@@ -490,7 +564,10 @@ export default {
       font-size: calc(100vw * 25 / 375);
       letter-spacing: 4px;
     }
-
+    .order-top {
+      // background-image: $order_bg_image_m;
+      padding-bottom: 40px;
+    }
     .order-subtitle {
       // display: none;
       font-size: 21px;

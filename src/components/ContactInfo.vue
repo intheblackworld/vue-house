@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div>
     <div
       class="contact-info"
@@ -60,6 +61,35 @@
             <font-awesome-icon icon="map-marker-alt" /><span>導航 Google 地圖</span>
           </span>
         </div>
+=======
+<div>
+  <div class="contact-info">
+    <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" />
+    <div class="info">
+      <div class="btn flex-c" @click="showCallDialog">
+        <span class="flex-c">
+          <font-awesome-icon icon="phone" />
+          <span>
+           {{info.phone}}
+          </span>
+        </span>
+      </div>
+      <div class="btn flex-c" @click="showMessengerDialog">
+        <span class="flex-c">
+          <font-awesome-icon :icon="['fab', 'facebook-messenger']" /><span>FB 諮詢</span>
+        </span>
+      </div>
+      <a class="btn flex-c" :href="info.fbLink" target="_blank">
+        <span class="flex-c">
+          <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
+        </span>
+      </a>
+      <div class="address flex-c">{{info.address}}</div>
+      <div class="google-btn flex-c" @click="showMapDialog">
+        <span class="flex-c">
+          <font-awesome-icon icon="map-marker-alt" /><span>導航 Google 地圖</span>
+        </span>
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
       </div>
     </div>
     <el-dialog
@@ -151,12 +181,17 @@ export default {
   position: relative;
   z-index: 3;
   width: 1200px;
+<<<<<<< HEAD
   height: 484px;
+=======
+  //height: 314px;
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
   transform: translateY(0);
   margin: 2vw auto -3vw;
+<<<<<<< HEAD
   padding: 30px 0 40px;
 }
 
@@ -165,6 +200,15 @@ export default {
   height: auto;
   // height:;
   margin: 0 auto 20px;
+=======
+  padding: 78px 0 50px;
+}
+
+.logo {
+  width:auto;
+  height: $contact_logo_pc_width;
+  margin: 0 auto 40px;
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
 }
 .info {
   width: 880px;
@@ -183,7 +227,12 @@ export default {
   text-decoration: none;
   color: $contact_btn_color;
   background: $contact_btn_bg;
+<<<<<<< HEAD
   box-shadow: $contact_btn_border;
+=======
+  border: 1px solid #fff;
+  // box-shadow: $contact_btn_border;
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
   transition: all 0.5s;
   position: relative;
   overflow: hidden;

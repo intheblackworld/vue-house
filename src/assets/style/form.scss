@@ -41,9 +41,14 @@
     color: #333;
     padding-top: 10px !important;
     font-size: 16px !important;
+<<<<<<< HEAD
     border: $order_input_border !important;
     background:#FFF;
   font-family:$family3;
+=======
+    border: $order_input_border;
+    background: #fff;
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
 
     &::placeholder {
       color: $order_input_placeholder;
@@ -73,24 +78,38 @@
   height: 72px !important;
   // opacity: 0 !important;
   border-radius: 0 !important;
+  border: $order_input_border;
   font-size: 20px !important;
   font-weight: bold !important;
   letter-spacing: 10px;
   text-align: justify;
   background-position: center !important;
   background-color: $order_submit_bg;
-  background-image: $order_submit_bg;
+  //background-image: $order_submit_bg;
+  box-shadow: inset 0 0 0 0px #5d4577;
   margin: 0 auto !important;
   margin-top: 20px !important;
   transition: all 0.3s !important;
   border: 2px solid $order_submit_color;
   color: $order_submit_color;
+  span {
+    width: 198px;
+    display: block;
+    letter-spacing: 25px;
+    text-align: center;
+    margin: 0 auto;
+    margin-left: 50px;
+  }
   // z-index: 10;
+<<<<<<< HEAD
   font-family: $family3;
+=======
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
 
   &.is-disabled {
     background-color: $order_sumbit_disable_bg;
-    opacity: 0.6;
+    border-color: $order_sumbit_disable_border;
+    //opacity: 0.6;
   }
 
   svg {

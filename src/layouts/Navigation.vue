@@ -3,11 +3,29 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
+<<<<<<< HEAD
           <img class="logo" src="@/assets/img/nav-logo.png" alt />
           <div class="menu" @click="toggleSidebar">
             <font-awesome-icon icon="bars" />
+=======
+        <!--   <img
+            class="logo"
+            src="@/assets/img/nav-logo.png"
+            alt
+            v-scroll-to="{ element: `#section1` }"
+          />  -->
+          <div
+            :class="`menu ${isOpen ? 'open' : ''}`"
+            @click="toggleSidebar"
+          >
+          <span></span>
+          <!--<font-awesome-icon icon="bars" />-->
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
           </div>
-          <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
+          <div
+            :class="`mask ${isOpen ? 'open' : ''}`"
+            @click="toggleSidebar"
+          />
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
             <li
               :key="item.name"
@@ -17,10 +35,19 @@
               @click="toggleSidebar"
             >
               <span class="link">
-                <img v-if="item.imgSrc" :src="item.imgSrc" alt />
+                <img
+                  v-if="item.imgSrc"
+                  :src="item.imgSrc"
+                  alt
+                />
                 <span>
+<<<<<<< HEAD
                   <p class="title">{{item.name}}</p>
                   <span class="subTitle">{{item.subTitle}}</span>
+=======
+                <!--  <div class="title">{{item.name}}</div>
+                  <span class="subTitle">{{item.subTitle}}</span> -->
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
                 </span>
               </span>
             </li>
@@ -72,11 +99,16 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/style/variableColor.scss';
 @import '../assets/style/variableDefault.scss';
+<<<<<<< HEAD
 @import '../assets/style/function.scss';
+=======
+@import '@/assets/style/function.scss';
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
 
 .navigation {
+  font-size: 20px;//圈圈大小
   background-color: $nav_bg;
-  background-image: $nav_bg;
+ // background-image: $nav_bg;
   background-size: cover;
   height: $nav_pc_height;
   z-index: 10;
@@ -85,7 +117,11 @@ export default {
   width: 100vw;
   display: flex !important;
   align-items: center;
+<<<<<<< HEAD
  // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+=======
+  //box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
 }
 
 .nav-container {
@@ -109,8 +145,14 @@ export default {
 }
 
 .logo {
+<<<<<<< HEAD
   width: $logo_pc_width;
   height: auto;
+=======
+  width: auto;
+  height: 66%;
+  cursor: pointer;
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
   position: absolute;
   left: 0;
   display: block;
@@ -137,14 +179,21 @@ export default {
     text-align: center;
     display: block;
     cursor: pointer;
+<<<<<<< HEAD
     padding: 0 20px;
     transition: all .8s;
+=======
+    padding: 0 1em;
+    transition: all 0.8s;
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
+      font-size:inherit !important;
     // border-right: 1px solid $nav_link_hover_bg;
+<<<<<<< HEAD
 
     &:hover {
       color: $nav_link_hover_color;
@@ -196,8 +245,37 @@ export default {
     .title {
       font-size: 16px !important;
       font-weight: bold;
+=======
+    > span {
+      z-index: 3;
+    }
+    &::after{content: "";width: 1em;height: 1em;border: 1px solid #ccc;border-radius: 50%;}
+    &:hover {
+     // background-color: $nav_link_hover_bg;
+      img {
+        animation: r5 0.3s alternate infinite;
+        transform-origin: 50% 100%;
+      }
+    .title {
+      margin:0.5em 0 0 0 ;
+    }
+    }
+
+    @keyframes r5 {
+      0% {
+        transform: skewX(-2deg);
+      }
+      100% {
+        transform:skewX(2deg);
+      }
+    }
+
+    .title {
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
       position: relative;
       z-index: 3;
+      margin:0.8em 0 0 0 ;
+      transition: all 0.3s;
     }
 
     .subTitle {
@@ -206,15 +284,35 @@ export default {
     }
 
     img {
+<<<<<<< HEAD
       // width: 35px;
       // height: 35px;
       margin-right: 10px;
+=======
+      width: calc(100vw * 50 / 1920);
+      height: auto;
+      margin-right: 10px;vertical-align: text-bottom;
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
     }
   }
 }
 
 .menu {
   display: none;
+  span{display: block;width: 1em;transition: all 0.3s;height: 1em;border: 1px solid #ccc;border-radius: 50%;
+  &::before,
+  &::after{transition: all 0.3s;
+content: "";background: #fff0;width: 1.3em;height:1px;display: block;position: absolute;top: 50%;left: -0.15em;
+  }}
+  &.open{
+    
+  span{border: 1px solid #fff0;
+  &::before{transform: rotate(45deg);background: #fff;
+  }
+  &::after{transform: rotate(-45deg);background: #fff;
+}
+  }
+  }
 }
 
 .link {
@@ -228,7 +326,6 @@ export default {
     height: $nav_tablet_height;
     justify-content: center;
   }
-
   .logo {
     width: $logo_tablet_width;
     // left: -240px;
@@ -267,6 +364,7 @@ export default {
     background-color: transparent !important;
     height: $nav_phone_height;
     z-index: 110;
+    width:3em;right: 0;
   }
 
   .nav-container {
@@ -281,6 +379,7 @@ export default {
   }
 
   .nav {
+    width: 100%;
     position: static;
     height: $nav_phone_height;
   }
@@ -288,6 +387,7 @@ export default {
   .menu {
     display: block;
     position: absolute;
+<<<<<<< HEAD
     top: 15px;
     right: 15px;
     width: sizem(50);
@@ -295,6 +395,10 @@ export default {
     padding-top: sizem(8);
     background-color: #8e8a74;
     z-index: 112;
+=======
+    width: 100%;
+    //right: 15px;
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
 
     svg {
       width: sizem(35);
@@ -323,16 +427,25 @@ export default {
     flex-wrap: wrap;
 
     li {
+<<<<<<< HEAD
       width: 100vw;
       height: 70px;
       margin-bottom:0;
+=======
+      height: 40px;
+      margin-bottom: 5px;
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
     }
 
     .link {
-      height: 50px;
+      height: 30px;
       width: 100%;
       font-size: 17px;
+<<<<<<< HEAD
       margin-top:0;
+=======
+      margin-top: 20px;
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
       display: flex;
       align-items: center;
       justify-content: center;
@@ -345,6 +458,19 @@ export default {
       span {
         line-height: 16px;
       }
+<<<<<<< HEAD
+=======
+
+      img {
+        width: calc(100vw * 200 / 1920);
+        height: auto;
+        margin-right: 10px;
+      }
+
+      .title {
+        font-size: size-m(15) !important;
+      }
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
     }
 
     &.open {
@@ -365,19 +491,29 @@ export default {
   }
 
   .mask {
-    width: 100vw;
+    width: 2em;
     top: $nav_phone_height;
     right: 0;
-    background: rgba(0, 0, 0, 0.5);
+    //background: rgba(0, 0, 0, 0.8);
     position: fixed;
+<<<<<<< HEAD
     z-index: 110;
+=======
+    z-index: -1;
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
     height: calc(100vh - #{$nav_phone_height});
     opacity: 0;
     transition: all 0.3s ease-in;
+    position: relative;
     &.open {
       display: block;
-      width: 100vw;
+    //  width: 100vw;
+    width: 2em;
       opacity: 1;
+<<<<<<< HEAD
+=======
+      z-index: 110;
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
     }
   }
 }

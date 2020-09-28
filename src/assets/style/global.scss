@@ -89,7 +89,7 @@ body {
 
 .full-img {
   width: 100%;
-  height: 100vh;
+  height: 200vh;
   position: absolute;
   background-size: cover;
   background-position: center;
@@ -256,8 +256,13 @@ img[lazy='loaded'] {
 
   .home {
     padding-top: $nav_tablet_height;
+<<<<<<< HEAD
     // background-color: $order_bg_color;
     // background-image: $order_bg_image;
+=======
+   // background-color: $order_bg_color;
+   // background-image: $order_bg_image;
+>>>>>>> 9121ee9ebd5fb65447ba0f9cece584988d37677e
     background-repeat: no-repeat;
     background-size: 100vw auto;
     background-attachment: initial;
@@ -371,7 +376,7 @@ img[lazy='loaded'] {
     height: calc(100vh - 63px);
   }
   .full-img {
-    height: calc(100vh - 63px);
+    height: auto;
   }
 
   .col-mobile-1 {
