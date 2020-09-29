@@ -43,20 +43,18 @@
 
 .section7 {
   width: size(1920);
-  height: 100vh;
-  max-height: 56vw;
-  min-height: size(900);
-  overflow: hidden;
-}
-
+  height:calc(100vh - 60px);
+  max-height: size(1080);
+  min-height: size(800);
+  overflow: hidden;background: #0009;}
 .bg-img {
-  width: 100vw;
-  height: 100vh;
+  width: 110%;
+  height: 110%;
   //min-height: size(900);
   position: absolute;
   display: block;
-  top: 0;
-  left: 0;
+  top: -5%;
+  left:-5%; 
   object-fit: cover;
 
   &:nth-child(1) {
@@ -68,18 +66,20 @@
 }
 
 .blur {
-  filter: brightness(50%);
+  filter: brightness(50%)blur(0.2vw);
 }
 
 .swipe {
   width: size(930);
   height: size(550);
   min-height: size(550);
-  top: size(330);
+  top: calc(50% - 14.322vw);
   right: 0;
   left: 0;
   margin: 0 auto;
   object-fit: cover;
+  border: 1px solid #fff8;
+  box-shadow:0 size(5) size(50) #0009;
 }
 
 // begin
@@ -372,6 +372,8 @@
     top: sizem(0);
     left: 0;
     object-fit: cover;
+  border: 0px solid #0000;
+  box-shadow:0 size(0) size(0) #0000;
   }
 
   .swipe-wrap {
