@@ -8,7 +8,7 @@
         </div>
         <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
         <div class="navlist open" v-if="!isMobile">
-          <div :class="`dot ${index == indigatorIndex - 1 ? 'active' : '' }`" v-for="(nav, index) in list" :key="`indigator-${index}`" v-scroll-to="{ element: `#${nav.section}` }" @click="setIndigator(index)"></div>
+          <div :class="`dot ${index == indigatorIndex - 2 ? 'active' : '' }`" v-for="(nav, index) in list" :key="`indigator-${index}`" v-scroll-to="{ element: `#${nav.section}` }" @click="setIndigator(index)"></div>
         </div>
         <ul :class="`navlist ${isOpen ? 'open': ''}`" v-if="isMobile">
           <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: offset }" v-for="item in list" class="flex-ac" @click="toggleSidebar">

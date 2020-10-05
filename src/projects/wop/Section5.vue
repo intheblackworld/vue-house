@@ -33,10 +33,10 @@
           <div class="pagination absolute flex-ac">
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList[contentIndex]" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
-          <!-- <div class="swipe-btns absolute flex-ac flex-jb">
+          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
             <div class="prev-btn" @click="decIndex"></div>
             <div class="next-btn" @click="addIndex"></div>
-          </div> -->
+          </div>
         </div>
       </div>
     </div>
@@ -565,7 +565,7 @@
       height: 0;
       border-style: solid;
       border-width: 1em 1em 1em 0;
-      border-color: transparent #0005 transparent transparent;
+      border-color: transparent #fff transparent transparent;
     }
     .next-btn::after {
       content: '';
@@ -574,7 +574,7 @@
       height: 0;
       border-style: solid;
       border-width: 1em 0 1em 1em;
-      border-color: transparent transparent transparent #0005;
+      border-color: transparent transparent transparent #fff;
     }
   }
 

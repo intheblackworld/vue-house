@@ -1,12 +1,7 @@
 <template>
   <div class="footer">
-<<<<<<< HEAD
      <a href="https://www.lixin.com.tw/" target="_blank"><img src="../assets/img/footerLogo.gif" alt="立炘數位" /></a>
      <a href="https://www.h35.tw/admin/test/login.php" target="_blank">網頁製作</a>
-=======
-    <a href="https://www.lixin.com.tw/" target="_blank"><img src="../assets/img/footerLogo.gif" alt="立炘數位" /></a>
-    <a href="https://www.h35.tw/admin/test/login.php" target="_blank">網頁製作</a>
->>>>>>> 42a16098d5fd70b8cb1b99de8f42295891e2f82a
   </div>
 </template>
 <style lang="scss" scoped>
