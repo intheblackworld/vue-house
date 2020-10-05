@@ -1,5 +1,5 @@
 <template>
-  <div class="section3 relative frame">
+  <div class="section3 relative">
     <img v-if="!isMobile" class="bg-img" src="./s3_bg.jpg" alt />
     <img v-else class="bg-img-m" src="./s3_bg_m.jpg" alt />
     <img

@@ -1,24 +1,10 @@
 export default [
-  { name: '首頁', imgSrc: '', subTitle: '', section: 'section1', svgSrc: '' },
-  { name: '交響導聆', imgSrc: '', subTitle: '', section: 'section4', svgSrc: '' },
-  { name: '世紀繁華', imgSrc: '', subTitle: '', section: 'section5', svgSrc: '' },
-  { name: '奢華公設', imgSrc: '', subTitle: '', section: 'section6', svgSrc: '' },
-  { name: '究好的構築', imgSrc: '', subTitle: '', section: 'section7', svgSrc: '' },
-  { name: '精工團隊', imgSrc: '', subTitle: '', section: 'section8', svgSrc: '' },
-  { name: '歷年築跡', imgSrc: '', subTitle: '', section: 'section9', svgSrc: '' },
-  { name: '愛樂生活', imgSrc: '', subTitle: '', section: 'section10', svgSrc: '' },
-  { name: '媒體報導', imgSrc: '', subTitle: '', section: 'section11', svgSrc: '' },
-  { name: '預約賞屋', imgSrc: '', subTitle: '', section: 'contact', svgSrc: '' },
+  { name: '小城在地情', imgSrc: '', subTitle: '', section: 'section1', svgSrc: '', offset: -80 },
+  { name: '樂居小城', imgSrc: '', subTitle: '', section: 'section3', svgSrc: '', offset: -100 },
+  { name: '便捷小城', imgSrc: '', subTitle: '', section: 'section4', svgSrc: '', mobileOffset: 0 },
+  { name: '風采小城', imgSrc: '', subTitle: '', section: 'section5', svgSrc: '', mobileOffset: 0 },
+  { name: '精工小城', imgSrc: '', subTitle: '', section: 'section6', svgSrc: '', mobileOffset: 0 },
+  { name: '精工小城', imgSrc: '', subTitle: '', section: 'section7', svgSrc: '', mobileOffset: 0 },
+  // { name: '預約賞屋', imgSrc: '', subTitle: '', section: 'contact', svgSrc: '', mobileOffset: -100 },
 ]
-
-
-
-
-
-
-
-
-
-
-
-
+　　　　　　　　　　

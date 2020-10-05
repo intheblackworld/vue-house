@@ -1,79 +1,122 @@
 <template>
-  <div class="home">
-    <div ref="gtmNoScript" />
-    <Loading :loading="loading" />
-    <SideNavigation v-if="isSide" />
-    <Navigation v-else />
-    <div id="section1">
+  <div class="home no-padding-top">
+    <Loading :loading="load" />
+    <!-- <SideNavigation /> -->
+    <Navigation :viewIndex="viewIndex" />
+    <!-- <Indigator :viewIndex="viewIndex" /> -->
+    <!-- <full-page
+      ref="fullPage"
+      :options="options"
+      id="fullpage"
+    > -->
+    <vue-lazy-component
+      class="section relative"
+      id="section1"
+      @init="init"
+    >
       <Section1 />
-    </div>
-    <div id="section2">
+    </vue-lazy-component>
+
+    <!-- <div
+      class="section relative"
+      id="section2"
+    >
       <Section2 />
-    </div>
-    <div id="section3">
+    </div> -->
+    <div
+      class="section relative"
+      id="section3"
+    >
       <Section3 />
     </div>
-    <div id="section4">
+    <div
+      class="section relative"
+      id="section4"
+    >
       <Section4 />
     </div>
-    <div id="section5">
+    <div
+      class="section relative"
+      id="section5"
+    >
       <Section5 />
     </div>
-    <div id="section6">
+    <div
+      class="section relative"
+      id="section6"
+    >
       <Section6 />
     </div>
-    <div id="section7">
+    <div
+      class="section relative"
+      id="section7"
+    >
       <Section7 />
     </div>
-    <div id="section8">
+    <!-- <div
+      class="section relative"
+      id="section8"
+    >
       <Section8 />
-    </div>
-    <div id="section9">
+    </div> -->
+    <!-- <vue-lazy-component
+      class="section relative"
+      id="section9"
+    >
       <Section9 />
-    </div>
-    <div id="section10">
+    </vue-lazy-component>
+    <vue-lazy-component
+      class="section relative"
+      id="section10"
+    >
       <Section10 />
-    </div>
-    <div id="section11">
+    </vue-lazy-component>
+    <vue-lazy-component
+      class="section relative"
+      id="section11"
+    >
       <Section11 />
-    </div>
-    <ContactSection />
+    </vue-lazy-component> -->
+    <vue-lazy-component
+      class="section relative"
+      id="contact"
+    >
+      <ContactSection />
+    </vue-lazy-component>
     <MobileNav />
   </div>
 </template>
 
-<style>
-@import url('https://fonts.googleapis.com/css?family=Playball&display=swap');
-</style>
-
 <script>
 // @ is an alias to /src
+import $ from 'jquery'
 import Navigation from '@/layouts/Navigation.vue'
+import { isMobile } from '@/utils'
 import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
-import gtm from '@/mixins/gtm.js'
+import Indigator from '@/components/Indigator.vue'
 
-import Section1 from '@/projects/jh/Section1.vue'
-import Section2 from '@/projects/jh/Section2.vue'
-import Section3 from '@/projects/jh/Section3.vue'
-import Section4 from '@/projects/jh/Section4.vue'
-import Section5 from '@/projects/jh/Section5.vue'
-import Section6 from '@/projects/jh/Section6.vue'
-import Section7 from '@/projects/jh/Section7.vue'
-import Section8 from '@/projects/jh/Section8.vue'
-import Section9 from '@/projects/jh/Section9.vue'
-import Section10 from '@/projects/jh/Section10.vue'
-import Section11 from '@/projects/jh/Section11.vue'
+import Section1 from '@/projects/wop/Section1.vue'
+import Section2 from '@/projects/wop/Section2.vue'
+import Section3 from '@/projects/wop/Section3.vue'
+import Section4 from '@/projects/wop/Section4.vue'
+import Section5 from '@/projects/wop/Section5.vue'
+import Section6 from '@/projects/wop/Section6.vue'
+import Section7 from '@/projects/wop/Section7.vue'
+import Section8 from '@/projects/wop/Section8.vue'
+// import Section9 from '@/projects/gs/Section9.vue'
+// import Section10 from '@/projects/gs/Section10.vue'
+// import Section11 from '@/projects/gs/Section11.vue'
 
 export default {
   name: 'home',
-  mixins: [gtm],
   components: {
     Loading,
+    // Indigator,
     Navigation,
-    SideNavigation,
+    // SideNavigation,
     ContactSection,
     MobileNav,
     Section1,
@@ -84,32 +127,121 @@ export default {
     Section6,
     Section7,
     Section8,
-    Section9,
-    Section10,
-    Section11,
-
+    // Section9,
+    // Section10,
+    // Section11,
   },
 
   data() {
     return {
-      isSide: true,
-      loading: true,
+      isMobile,
+      isSide: false,
+      load: true,
+      viewIndex: 0,
+      // action: {
+      //   moveTo: () => {},
+      // },
+      // options: {
+      //   menu: '#menu',
+      //   anchors: [],
+      //   scrollBar: true,
+      //   onLeave: this.onLeave,
+      //   afterLoad: this.afterLoad,
+      //   continuousHorizontal: true,
+
+      //   // navigation: true,
+      //   // sectionsColor: ['#41b883', '#ff5f45', '#0798ec'],
+      // },
     }
   },
-  created() {
-    this.$Lazyload.$on('loaded', ({ el, src }) => {
-      setTimeout(() => {
-        if (this.loading) {
-          this.loading = false
-        }
-      }, 0)
-    })
-  },
+  mounted() {
+    $(document).ready(() => {
+      // Images loaded is zero because we're going to process a new set of images.
+      var imagesLoaded = 0
+      // Total images is still the total number of <img> elements on the page.
+      var totalImages = $('img').length
 
+      const allImagesLoaded = () => {
+        setTimeout(() => {
+          this.load = false
+        }, 2000);
+      }
+      const imageLoaded = () => {
+        imagesLoaded++
+        if (imagesLoaded >= (totalImages - 3)) {
+          allImagesLoaded()
+        }
+      }
+      $('img').each(function(idx, img) {
+        $('<img>')
+          .on('load', imageLoaded)
+          .attr('src', $(img).attr('src'))
+      })
+    })
+    if (!this.isMobile) {
+      window.addEventListener('scroll', this.onScroll, false)
+      // this.$refs.fullPage.api.setResponsive(true)
+    }
+  },
+  // mounted() {
+    // window.addEventListener('scroll', this.onScroll, false)
+    // this.action = this.$refs.fullPage.api
+    // if (this.isMobile) {
+    //   this.$refs.fullPage.api.setResponsive(true)
+    // }
+  // },
   methods: {
-    onDone() {
-      console.log('done')
+    init() {},
+    onScroll() {
+      // 获取所有锚点元素
+      const navContents = document.querySelectorAll('.section')
+      // 所有锚点元素的 offsetTop
+      const offsetTopArr = []
+      navContents.forEach(item => {
+        offsetTopArr.push(item.offsetTop)
+      })
+      // 获取当前文档流的 scrollTop
+      const scrollTop =
+        document.documentElement.scrollTop || document.body.scrollTop
+      // 定义当前点亮的导航下标
+      let navIndex = 0
+      for (let n = 0; n < offsetTopArr.length; n++) {
+        // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
+        // 那么此时导航索引就应该是n了
+        if (scrollTop >= offsetTopArr[n] - 100) {
+          navIndex = n
+        }
+      }
+      this.viewIndex = navIndex + 1
     },
+
+    // onLeave(origin, destination, direction) {
+    //   if (!this.isMobile) {
+    //     if (origin.isLast === true && direction === 'up') {
+    //       console.log('加固')
+    //       this.$refs.fullPage.api.setResponsive(false)
+    //     }
+    //     if (origin.isFirst === true && direction === 'down' && this.isMobile) {
+    //       this.$refs.fullPage.api.setResponsive(false)
+    //     }
+
+    //     if (
+    //       destination.isFirst === true &&
+    //       direction === 'up' &&
+    //       this.isMobile
+    //     ) {
+    //       this.$refs.fullPage.api.setResponsive(false)
+    //     }
+    //   }
+    // },
+
+    // afterLoad(origin, destination, direction) {
+    //   this.indigatorIndex = destination.index
+    //   if (destination.isLast === true && direction === 'down') {
+    //     console.log('解除')
+    //     this.$refs.fullPage.api.setResponsive(true)
+    //   }
+    // },
   },
 }
 </script>

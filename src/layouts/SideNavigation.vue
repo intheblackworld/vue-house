@@ -1,15 +1,17 @@
 <template>
   <div class="sideNav">
-    <div class="nav relative">
-      <div class="menu" @click="toggleSidebar">
+    <div :class="`nav relative ${isShowMenu ? 'show' : ''}`">
+      <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
+      <div :class="`menubg ${isOpen ? 'open' : ''}`" />
+      <div :class="`menu ${isOpen ? 'open' : ''}`" @click="toggleSidebar">
         <img v-if="isOpen" src="@/projects/jh/s4/close.png" class="close" alt />
-        <img v-else src="@/assets/img/menu-btn.png" alt />
+        <img src="@/assets/img/menu-btn.png" alt />
       </div>
       <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
       <ul :class="`navlist ${isOpen ? 'open': ''}`">
         <li
           :key="item.name"
-          v-scroll-to="{ element: `#${item.section}`, offset: offset }"
+          v-scroll-to="{ element: `#${item.section}`, offset: isMobile ? (item.mobileOffset ? item.mobileOffset : offset) : (item.offset ? item.offset : offset) }"
           v-for="item in list"
           class="flex-ac"
           @click="toggleSidebar"
@@ -34,12 +36,14 @@ import navList from '@/info/navList'
 export default {
   name: 'sideNavigation',
   components: {},
+  props: ['viewIndex'],
   data() {
     return {
       isOpen: false,
       isMobile,
       isTablet,
       list: navList,
+      isShowMenu: false,
     }
   },
 
@@ -54,6 +58,16 @@ export default {
       this.isOpen = !this.isOpen
     },
   },
+
+  watch: {
+    viewIndex(val) {
+      if (val >= 2) {
+        this.isShowMenu = true
+      } else {
+        this.isShowMenu = false
+      }
+    }
+  }
 }
 </script>
 
@@ -79,41 +93,87 @@ export default {
 .nav {
   position: static;
   height: $nav_phone_height;
+  opacity: 0;
+  transition: opacity .5s;
+  z-index: 110;
+
+  &.show {
+    opacity: 1;
+  }
+}
+
+.menubg {
+  display: flex;
+  background-image: linear-gradient(to right, #e7380d -27%, #e4006e 236%);
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  position: fixed;
+  top: calc(100vh * 60 / 1080);
+  left: 0px;
+  width: 140px;
+  height:70px;
+  transition: all 0.5s;
+  cursor: pointer;
+  z-index: 120;
+  &.open {
+  width: 180px;
+  height:480px;
+  }
 }
 
 .menu {
-  display: block;
+  display: flex;
   position: fixed;
-  z-index: 112;
-  top: 0px;
-  right: 30px;
-  width: 100px;
+  top: calc(100vh * 60 / 1080);
+  left: 0px;
+  width: 140px;
+  height:auto;
   cursor: pointer;
+  z-index:140;
+  transition: all 0.5s;
 
+  &.open {
+  width: 180px;
+  }
   img {
-    width: 100%;
+    width:auto;
+    height: 57px;
+    margin: 5% auto 5%  auto;
   }
 
   .close {
-    width: 40px;
-    margin-top: 0px;
+    width: 20px;
+    height: auto;
     margin-right: 0px;
+    position: absolute;
+    left: 150px;
+    top: 10px;
   }
+}
+
+.logo {
+  width: $logo_pc_width;
+  z-index: 140;
+  height: auto;
+  position: absolute;
+  left: 0;
+  display: block;
+  top: 0px;
+  transform: translateY(0%);
 }
 
 .navlist {
   position: fixed;
-  z-index: 111;
-  background: $nav_bg;
+  z-index:140;
+  //background: $nav_bg;
   width: 0%;
-  right: 0;
-  top: $nav_phone_height;
-  height: calc(100vh - #{$nav_phone_height});
+  left: 0;
+  top: calc(100vh * 150 / 1080);
+  height: auto;
   text-align: center;
   transition: all 0.3s ease-in;
   display: block;
-  transform: translateX(40%);
-  background-image: url('./nav_bg.png');
+  transform: translateX(-40%);
 
   li {
     height: 60px;
@@ -131,6 +191,24 @@ export default {
     justify-content: center;
     display: none;
     background-size: cover;
+    position: relative;
+
+    // &::after {
+    //   display: block;
+    //   content: '';
+    //   width: 0%;
+    //   height: 1px;
+    //   background: #ddd75f;
+    //   transition: all 0.4s;
+    //   left: 50%;
+    //   bottom: 0;
+    //   position: absolute;
+    // }
+
+    // &:hover:after {
+    //   width: 80%;
+    //   left: 10%;
+    // }
 
     img,
     span {
@@ -149,7 +227,7 @@ export default {
   }
 
   &.open {
-    width: 230px;
+    width: 180px;
     transform: translateX(0%);
     display: flex;
     flex-wrap: wrap;
@@ -184,7 +262,7 @@ export default {
 }
 
 .mask {
-  width: 100vw;
+  width: 0;
   top: $nav_phone_height;
   right: 0;
   background: transparent;
@@ -197,7 +275,7 @@ export default {
     display: block;
     width: 100vw;
     opacity: 1;
-    z-index: 110;
+  z-index: 110;
   }
 }
 
@@ -238,7 +316,7 @@ export default {
 @media only screen and (max-width: 767px) {
   .navigation {
     height: $nav_phone_height;
-    z-index: 110;
+    z-index: 120;
   }
 
   .nav-container {
@@ -248,7 +326,7 @@ export default {
 
   .logo {
     width: $logo_phone_width;
-    left: 15px;
+    left: 0px;
   }
 
   .nav {
@@ -259,18 +337,9 @@ export default {
   .menu {
     display: block;
     position: fixed;
-    right: 0px;
-    top: 0px;
-    width: 100px;
+    height:auto;
 
-    img {
-      width: 100%;
-    }
 
-    .close {
-      width: 40px;
-      margin-top: 20px;
-    }
 
     svg {
       color: $nav_btn_color;
@@ -279,16 +348,14 @@ export default {
 
   .navlist {
     position: fixed;
-    z-index: 111;
-    background: $nav_bg;
     width: 0%;
-    right: 0;
-    top: $nav_phone_height;
-    height: calc(100vh - #{$nav_phone_height});
+    // right: 0;
+    top:130px;
+    // height: calc(100vh - #{$nav_phone_height});
     text-align: center;
     transition: all 0.3s ease-in;
     display: block;
-    transform: translateX(40%);
+    // transform: translateX(40%);
 
     li {
       height: 50px;
@@ -315,7 +382,7 @@ export default {
     }
 
     &.open {
-      width: 100%;
+      // width: 100%;
       transform: translateX(0%);
 
       .link {
@@ -344,7 +411,7 @@ export default {
       display: block;
       width: 100vw;
       opacity: 1;
-      z-index: 110;
+      z-index:110;
     }
   }
 }
