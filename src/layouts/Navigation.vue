@@ -1,31 +1,26 @@
 <template>
   <div class="navigation">
     <div class="layout-container-fluid nav-container">
-      <div class="layout-container nav-container">
-        <div class="nav">
-          <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
-          <div class="menu" @click="toggleSidebar">
-            <font-awesome-icon icon="bars" />
-          </div>
-          <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
-          <ul :class="`navlist ${isOpen ? 'open': ''}`">
-            <li
-              :key="item.name"
-              v-scroll-to="{ element: `#${item.section}`, offset: offset }"
-              v-for="item in list"
-              class="flex-ac"
-              @click="toggleSidebar"
-            >
-              <span class="link">
-                <img v-if="item.imgSrc" :src="item.imgSrc" alt />
-                <span>
-                  <p class="title">{{item.name}}</p>
-                  <span class="subTitle">{{item.subTitle}}</span>
-                </span>
-              </span>
-            </li>
-          </ul>
+      <div class="nav">
+        <img class="logo" src="@/assets/img/nav-logo.png" alt />
+        <div class="menu" @click="toggleSidebar">
+          <font-awesome-icon icon="bars" />
         </div>
+        <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
+        <div class="navlist open" v-if="!isMobile">
+          <div :class="`dot ${index == indigatorIndex - 1 ? 'active' : '' }`" v-for="(nav, index) in list" :key="`indigator-${index}`" v-scroll-to="{ element: `#${nav.section}` }" @click="setIndigator(index)"></div>
+        </div>
+        <ul :class="`navlist ${isOpen ? 'open': ''}`" v-if="isMobile">
+          <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: offset }" v-for="item in list" class="flex-ac" @click="toggleSidebar">
+            <span class="link">
+              <img v-if="item.imgSrc" :src="item.imgSrc" alt />
+              <span>
+                <p class="title">{{item.name}}</p>
+                <span class="subTitle">{{item.subTitle}}</span>
+              </span>
+            </span>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -38,12 +33,14 @@ import navList from '@/info/navList'
 export default {
   name: 'navigation',
   components: {},
+  props: ['viewIndex'],
   data() {
     return {
       isOpen: false,
       isMobile,
       isTablet,
       list: navList,
+      indigatorIndex: 1,
     }
   },
 
@@ -65,6 +62,15 @@ export default {
     toggleSidebar() {
       this.isOpen = !this.isOpen
     },
+    setIndigator(index) {
+      this.indigatorIndex = index
+    },
+  },
+  watch: {
+    viewIndex(val) {
+      // console.log(val)
+      this.indigatorIndex = val
+    },
   },
 }
 </script>
@@ -85,7 +91,7 @@ export default {
   width: 100vw;
   display: flex !important;
   align-items: center;
- // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+  // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 .nav-container {
@@ -100,7 +106,7 @@ export default {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   position: relative;
   a {
     display: block;
@@ -122,6 +128,36 @@ export default {
   display: none;
 }
 
+.dot {
+  width: 2em;
+  height: 2em;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 999px;
+  overflow: hidden;
+  &::before {
+    content: '';
+    display: block;
+    width: 1em;
+    height: 1em;
+    //@function border: 1px solid #0000;
+    border-radius: 999px;
+    margin: calc(50% - 0.3em) auto 0 auto;
+    transition: all 0.3s;
+    background: #fff;
+    // background: #fff;
+  }
+  &.active {
+    &::before {
+      background: #ff5626;
+    }
+  }
+  &:hover::before {
+    background: #ffd200;
+  }
+}
+
 .navlist {
   display: flex;
   align-items: center;
@@ -133,12 +169,12 @@ export default {
 
   .link {
     color: $nav_link_color;
-    height:100%;
+    height: 100%;
     text-align: center;
     display: block;
     cursor: pointer;
     padding: 0 20px;
-    transition: all .8s;
+    transition: all 0.8s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -148,7 +184,7 @@ export default {
 
     &:hover {
       color: $nav_link_hover_color;
-       background: $nav_link_hover_bg;
+      background: $nav_link_hover_bg;
     }
 
     // &::before {
@@ -277,10 +313,10 @@ export default {
   .logo {
     width: $logo_phone_width;
     left: 15px;
-    display: none;
   }
 
   .nav {
+    background-color: $nav_bg;
     position: static;
     height: $nav_phone_height;
   }
@@ -288,12 +324,11 @@ export default {
   .menu {
     display: block;
     position: absolute;
-    top: 15px;
+    top: 5px;
     right: 15px;
     width: sizem(50);
     height: sizem(50);
     padding-top: sizem(8);
-    background-color: #8e8a74;
     z-index: 112;
 
     svg {
@@ -325,14 +360,14 @@ export default {
     li {
       width: 100vw;
       height: 70px;
-      margin-bottom:0;
+      margin-bottom: 0;
     }
 
     .link {
       height: 50px;
       width: 100%;
       font-size: 17px;
-      margin-top:0;
+      margin-top: 0;
       display: flex;
       align-items: center;
       justify-content: center;

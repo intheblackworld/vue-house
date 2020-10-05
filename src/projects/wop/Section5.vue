@@ -1,213 +1,113 @@
 <template>
   <div>
-    <div
-      class="section5"
-      v-if="!isMobile"
-    >
-      <div 
-        class="one absolute">
-      <img
-        src="./s5/1.jpg"
-        alt="交通示意圖"
-        data-aos="fade-right"
-        data-aos-delay="0"
-      >
-      <h3
-        class="txt txt-one absolute"
-        data-aos="fade-right"
-        data-aos-delay="100"
-      >交通示意圖</h3></div>
+    <div class="section5">
       <div class="content absolute">
-      <div
-        class="block absolute"
-        data-aos="fade-down"
-        data-aos-delay="400"
-      ></div>
-      <h3
-        class="title"
-        data-aos="fade-down"
-        data-aos-delay="200"
-      >一高二線<br />
-        速抵台北市區<br />
-        便捷南來北往</h3>
-        <h3
-          class="subtitle"
-          data-aos="fade-down"
-          data-aos-delay="400"
-        >約5分鐘國五 五結出口<br />約8分鐘羅東火車站 回宜蘭的家 好方便</h3>
-        <h3
-          class="desc"
-          data-aos="fade-down"
-          data-aos-delay="600"
-        >國道5號往雙北、台2線濱海省道北往雙北市，連結蘇澳冷泉、與縱貫宜蘭、花東的台9線。<br />
-          五結鄉，是宜蘭獨一無二正核心，北可抵宜蘭市區、西至羅東轉運站及國道五號、東往傳統藝術中心、南至親水公園，動線多元便捷。
-        </h3>
-
-      </div>
-      <img
-        src="./deck/butterfly.png"
-        alt=""
-        class="butterfly absolute"
-        data-aos="fade"
-        data-aos-delay="800"
-      >
-      <img
-        src="./deck/tree.png"
-        alt=""
-        class="tree absolute"
-        data-aos="fade"
-        data-aos-delay="1000"
-      >
-      <img
-        src="./deck/line.png"
-        alt=""
-        class="line absolute"
-        data-aos="fade"
-        data-aos-delay="1200"
-      >
-      <div class="leaf absolute"
-        data-aos="fade-down-left"
-        data-aos-delay="200">
-      <img
-        src="./deck/leaf.png"
-        alt="leaf"
-      ></div>
-      <div class="leaf2 absolute"
-        data-aos="fade-down-left"
-        data-aos-delay="200">
-      <img
-        src="./deck/leaf.png"
-        alt="leaf"
-      ></div>
-
-      <div class="img-list flex-ac flex-jb wrap absolute">
-        <div
-          class="img-item relative"
-          v-for="(item, index) in img_list"
-          :key="item.img"
-          data-aos="fade-down"
-          :data-aos-delay="800 + (index * 100)"
-        >
-          <img
-            :src="item.img"
-            alt=""
-          >
-          <h3
-            class="txt absolute"
-            v-html="item.txt"
-          ></h3>
-        </div>
-      </div>
-    </div>
-    <div
-      class="section5"
-      v-if="isMobile"
-    >
-      <div
-        class="swipe absolute"
-        data-aos="fade-right"
-        data-aos-delay="200"
-        @mouseenter.stop="toggleTimer = false"
-        @mouseleave.stop="toggleTimer = true"
-      >
-        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
-          <div
-            v-for="(slide, i) in slideList"
-            :key="slide.img"
-            :class="`swipe-item absolute ${slideIndex === i ? 'active' : ''} ${(slideIndex === (i + 1) || slideIndex === (i - slideList.length + 1)) ? 'base' : ''}`"
-          >
-            <img
-              :src="slide.img"
-              alt=""
-            >
-            <h3
-              class="name absolute"
-              v-html="slide.name"
-            ></h3>
+        <img src="./s5/bg.png" alt="" class="img absolute">
+        <div class="tabs absolute">
+          <div :class="`tab-btn flex-c ${contentIndex === 0 ? 'active' : ''}`" @click="contentIndex = 0">
+            <div class="inside flex-c">
+              <img src="./s5/titlew.png" alt="" v-if="contentIndex === 0">
+              <img src="./s5/title.png" alt="" v-else>
+            </div>
           </div>
-          <div class="swipe-btns absolute flex-ac flex-jb">
+          <div :class="`tab-btn flex-c ${contentIndex === 1 ? 'active' : ''}`" @click="contentIndex = 1">
+            <h3 class="inside flex-c">
+              優越未來新地標
+            </h3>
+          </div>
+          <div :class="`tab-btn flex-c ${contentIndex === 2 ? 'active' : ''}`" @click="contentIndex = 2">
+            <h3 class="inside flex-c">
+              新營純正市中心
+            </h3>
+          </div>
+        </div>
+        <div class="text absolute" v-html="slideList[contentIndex][0].content"></div>
+      </div>
+      <div class="swipe absolute" data-aos="fade-right" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+          <transition-group name="swipe-fade" mode="out-in">
+            <div v-for="(slide, i) in slideList[contentIndex]" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+              <img :src="slide.img" alt="">
+              <div class="name absolute">{{slide.name}}</div>
+            </div>
+          </transition-group>
+          <div class="pagination absolute flex-ac">
+            <div :class="`pagination-dot`" v-for="(slide, index) in slideList[contentIndex]" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+          </div>
+          <!-- <div class="swipe-btns absolute flex-ac flex-jb">
             <div class="prev-btn" @click="decIndex"></div>
             <div class="next-btn" @click="addIndex"></div>
-          </div>
-        </div>
-      </div>
-      <h3 class="title">一高二線<br />速抵台北市區<br />便捷南來北往</h3>
-      <div class="toggle-list">
-        <div
-          class="toggle-item flex-ac flex-jb"
-          @click="showDialog(0)"
-        >
-          <h3 class="toggle-title">約5分鐘國五 五結出口<br />約8分鐘羅東火車站<br />回宜蘭的家 好方便</h3>
-          <div class="toggle-btn"></div>
-        </div>
-      </div>
-      <div class="butterfly absolute"
-        data-aos="fade-down-left"
-        data-aos-delay="200">
-      <img
-        src="./deck/butterfly.png"
-        alt="butterfly"
-      >
-        </div>
-      <div class="leaf absolute"
-        data-aos="fade-down-left"
-        data-aos-delay="200">
-      <img
-        src="./deck/leaf.png"
-        alt="leaf"
-      >
-        </div>
-      <div
-        class="dialog flex-c"
-        v-show="isDialog"
-      >
-        <div class="dialog-content">
-          <img
-            class="close"
-            @click="isDialog = false"
-            src="./all/close.png"
-            alt="close"
-          >
-          <div
-            class="dialog-title"
-            v-html="toggleList[toggleIndex].title"
-          ></div>
-          <div
-            class="dialog-subtitle"
-            v-html="toggleList[toggleIndex].subtitle"
-          ></div>
-          <div
-            class="dialog-smalltitle"
-            v-html="toggleList[toggleIndex].smalltitle"
-          ></div>
-          <div
-            class="dialog-desc"
-            v-html="toggleList[toggleIndex].desc"
-          ></div>
+          </div> -->
         </div>
       </div>
     </div>
   </div>
 </template>
+<style lang="scss">
+@import '@/assets/style/function.scss';
+.custom-subtitle {
+  font-size: size(32);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.91;
+  font-weight: bold;
+  letter-spacing: size(0.64);
+  text-align: left;
+  color: #ffffff;
+}
 
+.custom-desc {
+  font-size: size(26);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.91;
+  letter-spacing: size(0.52);
+  text-align: left;
+  color: #491500;
+}
+
+@media screen and (max-width: 767px) {
+  .custom-subtitle {
+    font-size: sizem(22) !important;;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.51 !important;
+    font-weight: bold;
+    letter-spacing: sizem(0.44) !important;;
+    text-align: left;
+    color: #ffffff;
+  }
+
+  .custom-desc {
+    font-size: sizem(15) !important;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.71 !important;
+    letter-spacing: sizem(0.32) !important;;
+    text-align: left;
+    color: #491500;
+  }
+}
+</style>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
 .section5 {
   width: size(1920);
-  height: size(576 + 321);
-  // min-height: size(900);
-  // background-image: url('./s2/bg.jpg');
-  // background-size: 100% 100%;
-  // background-position: 0 0;
-  // background-attachment: fixed;
+  height: 100vh;
+  background-color: #eb5b29;
+  min-height: size(900);
   overflow: hidden;
 }
 
 .bg-img {
   width: 100vw;
   height: 100vh;
-  min-height: size(900);
+  //min-height: size(900);
   position: absolute;
   display: block;
   top: 0;
@@ -215,138 +115,237 @@
   object-fit: cover;
 
   &:nth-child(1) {
-    position: relative;
+    top: 0;
+    left: auto;
+    right: 0;
+    height: auto;
   }
 }
-.one {
-  width: size(1020);
-  top: 0;
-  left: 0;
-    img{width: 100%;}
-}
 
-.txt {
-  font-size: size(13);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.64;
-  letter-spacing: 3.31px;
-  text-align: left;
-  color: #ffffff;
-}
-
-.txt-one {
-  bottom: size(10);
-  right: size(10);
-}
-
-.butterfly {
-  width: size(93);
-  top: size(60);
-  right: size(341);
-}
-.tree {
-  width: size(197);
-  top: size(140);
-  right: size(175);
-}
-
-.leaf {
-  width: size(202);
-  bottom: size(10);
-  right: size(120);
-  img{width: 100%;transform:scaleX(-1) rotate(-80deg);}
-}
-
-.leaf2 {
-  width: size(124);
-  bottom: size(148);
-  right: size(400);
-  img{width: 100%;transform:scaleX(-1) rotate(90deg);}
-}
-
-.line {
-  width: size(565);
-  bottom: size(70);
-  right: size(215);
-}
-
-.title {
-  top: size(90);
+.img {
+  width: size(540);
+  top: size(0);
   left: size(0);
-  font-size: size(48);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.53;
-  letter-spacing: 0.16em;
-  text-align: left;
-  color: #000000;
-  margin: 0 0 0.5em 0;
 }
 
-.subtitle {
-  font-size: size(30);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.4;
-  letter-spacing: 0.16em;
-  text-align: left;
-  color: #333333;
-  margin: 0 0 0.8em 0;
-}
+.tabs {
+  width: size(590);
+  top: size(165);
+  left: size(112);
 
-.desc {
-  font-size: size(16);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2.03;
-  letter-spacing: 0.12em;
-  text-align: left;
-  color: #8e8a74;
-}
-
-.content {
-  width: size(635);
-  height: size(576);
-  top: size(80);
-  right: size(175);
-  padding-top: size(0);
-}
-.block {
-  background-color: #8e8a7455;
-  width: size(258);
-  height:size(372);
-  top: size(-40);
-  left: size(-30);
-}
-
-.img-list {
-  width: size(400 * 3 + 20 * 2);
-  bottom: size(55);
-  left: size(180);
-  .img-item {
-    width: size(400);
-
-    img {
+  .tab-btn {
+    width: 100%;
+    height: size(68);
+    margin-bottom: size(23);
+    position: relative;
+    cursor: pointer;
+    .inside {
       width: 100%;
+      height: 100%;
+      background-color: #ffffff;
+      font-size: size(43);
+      font-weight: 900;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.34;
+      letter-spacing: size(5.16);
+      text-align: center;
+      color: #491500;
+      position: relative;
+      z-index: 1;
+    }
+
+    &::after {
+      width: 100%;
+      height: 100%;
+      border: 1px solid #491500;
+      position: absolute;
+      content: '';
+      top: 10px;
+      left: -10px;
+      z-index: 0;
+    }
+
+    &.active {
+      .inside {
+        background-color: #491500;
+        color: #fff;
+      }
+    }
+    img {
+      width: size(287);
     }
   }
+}
 
-  .txt {
-    left: size(20);
-    bottom: size(7);
-    font-size: size(13);
+.text {
+  width: size(556);
+  top: size(508);
+  left: size(101);
+}
+
+.swipe {
+  width: size(1160);
+  height: 100vh;
+  min-height: size(900);
+  top: size(0);
+  right: 0;
+  margin: 0 auto;
+  object-fit: cover;
+}
+
+// begin
+.swipe-fade-leave-to {
+  opacity: 0;
+  z-index: 0;
+}
+// end
+.swipe-fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.swipe-fade-enter-active {
+  transition: all 0.5s ease;
+}
+
+.swipe-fade-leave-active {
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+// begin
+// .swipe-left-leave-to {
+//   margin-left: -100vw;
+//   z-index: 0;
+// }
+// // end
+// .swipe-left-enter {
+//   opacity: 0.5;
+//   margin-left: 0;
+//   z-index: 1;
+// }
+
+// .swipe-left-enter-active {
+//   transition: all 0.5s ease;
+// }
+
+// .swipe-left-leave-active {
+//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+// }
+
+.swipe-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.swipe-item {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .name {
+    right: 20px;
+    bottom: 20px;
+    font-size: size(15.7);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.64;
-    letter-spacing: 3.25px;
-    text-align: left;
+    line-height: 1.35;
+    letter-spacing: size(0.89);
+    text-align: center;
     color: #ffffff;
+  }
+
+  // &:nth-child(1) {
+  //   z-index: 1;
+  //   // opacity: 1;
+  // }
+
+  // &.base {
+  //   z-index: 1;
+  //   opacity: 1;
+  // }
+  // &.active {
+  //   z-index: 2;
+  //   // opacity: 1;
+  // }
+}
+
+.pagination {
+  width: auto;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.pagination-dot {
+  padding: 5px;
+  cursor: pointer;
+  z-index: 4;
+
+  span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 0 1px #fff;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.01);
+    transition: all 0.5s;
+
+    &::before {
+      content: '';
+      width: 60%;
+      height: 60%;
+      display: block;
+      background: #fff;
+      border-radius: 20px;
+      opacity: 1;
+      position: absolute;
+      top: 20%;
+      // transform: translateY(-50%);
+      left: 20%;
+      transition: all 0.3s;
+      transform-origin: center;
+      transform: scale(0);
+    }
+    &.active {
+      &::before {
+        content: '';
+        width: 60%;
+        height: 60%;
+        display: block;
+        background: #fff;
+        border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 20%;
+        // transform: translateY(-50%);
+        left: 20%;
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.swipe-btns {
+  width: 100%;
+  height: 100%;
+  padding: 0 15px;
+  z-index: 3;
+
+  .prev-btn,
+  .next-btn {
+    width: size(20);
+    cursor: pointer;
   }
 }
 
@@ -366,20 +365,96 @@
 @media screen and (max-width: 767px) {
   .section5 {
     width: 100vw;
-  //  height: calc(100vh - 63px);
-    height:sizem(600);
+    height: sizem(850);
     min-height: auto;
-    // background-image: url('./s2/bg.jpg');
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
-    overflow: hidden;
+    max-height: initial;
+  }
+
+  .bg-img {
+    width: 100vw;
+    height: 100vh;
+    //min-height: size(900);
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+
+    &:nth-child(1) {
+      top: 0;
+      left: auto;
+      right: 0;
+      height: auto;
+    }
+  }
+
+  .img {
+    width: sizem(375);
+    top: size(0);
+    left: size(0);
+  }
+
+  .tabs {
+    width: sizem(315);
+    top: sizem(30);
+    left: sizem(40);
+
+    .tab-btn {
+      width: 100%;
+      height: sizem(37);
+      margin-bottom: sizem(23);
+      position: relative;
+      cursor: pointer;
+      .inside {
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+        font-size: sizem(22);
+        font-weight: 900;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.34;
+        letter-spacing: sizem(2.64);
+        text-align: center;
+        color: #491500;
+        position: relative;
+        z-index: 1;
+      }
+
+      &::after {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #491500;
+        position: absolute;
+        content: '';
+        top: 10px;
+        left: -10px;
+        z-index: 0;
+      }
+
+      &.active {
+        .inside {
+          background-color: #491500;
+          color: #fff;
+        }
+      }
+      img {
+        width: sizem(153);
+      }
+    }
+  }
+
+  .text {
+    width: sizem(310);
+    top: sizem(213);
+    left: sizem(33);
   }
 
   .swipe {
     width: 100vw;
-    height: sizem(300);
-    top: sizem(0);
+    height: sizem(350);
+    // height: calc(100vh - 63px);
+    top: sizem(500);
     left: 0;
     object-fit: cover;
   }
@@ -390,29 +465,23 @@
     overflow: hidden;
   }
 
-  .swipe-item {
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    z-index: 0;
-    object-fit: cover;
+  // .swipe-item {
+  //   width: 100%;
+  //   height: 100%;
+  //   left: 100%;
+  //   transition: left 1s ease-in-out;
+  //   z-index: 0;
+  //   object-fit: cover;
 
-    img {
-      width: 100%;
-    }
-
-    &.base {
-      z-index: 1;
-      left: 0;
-      opacity: 1;
-    }
-    &.active {
-      z-index: 2;
-      left: 0;
-      opacity: 1;
-    }
-  }
+  //   &.base {
+  //     z-index: 1;
+  //     left: 0;
+  //   }
+  //   &.active {
+  //     z-index: 2;
+  //     left: 0;
+  //   }
+  // }
 
   .pagination {
     width: auto;
@@ -421,6 +490,7 @@
     right: 0;
     margin: 0 auto;
     justify-content: center;
+    display: none;
   }
 
   .pagination-dot {
@@ -472,7 +542,8 @@
       }
     }
   }
-.swipe-btns {
+
+  .swipe-btns {
     width: 100%;
     height: 100%;
     padding: 0 0;
@@ -482,198 +553,36 @@
     .next-btn {
       font-size: size-m(10);
       cursor: pointer;
-      height: 100%;width: 3em;
+      height: 100%;
+      width: 3em;
       display: flex;
       align-items: center;
       justify-items: center;
-    padding: 0 1em;
+      padding: 0 1em;
     }
-     .prev-btn::after{content: "";display: block;
+    .prev-btn::after {
+      content: '';
+      display: block;
       width: 0;
-height: 0;
-border-style: solid;
-border-width: 1em 1em 1em 0;
-border-color: transparent #fff transparent transparent;}
-    .next-btn::after{content: "";display: block;
+      height: 0;
+      border-style: solid;
+      border-width: 1em 1em 1em 0;
+      border-color: transparent #0005 transparent transparent;
+    }
+    .next-btn::after {
+      content: '';
+      display: block;
       width: 0;
-height: 0;
-border-style: solid;
-border-width: 1em 0 1em 1em;
-border-color: transparent transparent transparent #fff;}
+      height: 0;
+      border-style: solid;
+      border-width: 1em 0 1em 1em;
+      border-color: transparent transparent transparent #0005;
+    }
   }
 
   .name {
-    right: 15px;
-    bottom: 15px;
-    font-size: 12px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 0.92;
-    letter-spacing: 3.12px;
-    text-align: left;
-    color: #ffffff;
-    z-index: 5;
-  }
-
-  .title {
-    writing-mode: initial;
-    font-size: sizem(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.44;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000000;
-    margin-top: sizem(16 + 300);
-    margin-left: sizem(56);
-  }
-
-  .toggle-list {
-    width: sizem(324);
-    margin: 0 auto;
-    margin-top: sizem(10);
-  }
-
-  .toggle-item {
-    width: 100%;
-    height: sizem(130);
-    border-top: solid 1px rgba(142, 138, 116, 0.5);
-    border-bottom: solid 1px rgba(142, 138, 116, 0.5);
-
-    // &:nth-last-child(1) {
-    //   border-top: none;
-    // }
-  }
-
-  .toggle-title {
-    font-size: sizem(20);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height:1.8;
-    letter-spacing: 0.4px;
-    text-align: left;
-    color: #333333;
-  }
-
-  .toggle-btn {
-    background-color: #fff;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    position: relative;
-    &:before {
-      content: '';
-      background: #707070;
-      width: 1px;
-      height: 14px;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-    }
-    &:after {
-      content: '';
-      background: #707070;
-      width: 14px;
-      height: 1px;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-    }
-  }
-
-  .butterfly {
-    width: sizem(52);
-    top: sizem(310);
-    right: auto;
-    left: 0;
-    img{width: 100%;transform:rotate(-80deg);}
-  }
-
-  .leaf {
-    width: sizem(120);
-    top: sizem(315);
-    right: sizem(-23);
-    img{width: 100%;transform:scaleX(-1) rotate(0deg);}
-  }
-
-  .dialog {
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.7);
-    overflow: scroll;
-
-    .dialog-content {
-      width: sizem(340);
-      height: sizem(556);
-      background-color: #fff;
-      border-radius: 20px;
-      padding: sizem(15);
-      overflow: scroll;
-    }
-
-    .close {
-      width: 35px;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 5px;
-      position: absolute;
-      right: sizem(30);
-      top: sizem(68);
-    }
-
-    .dialog-title {
-      font-size: sizem(25);
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.44;
-      letter-spacing: normal;
-      text-align: left;
-      color: #000000;
-      margin-top: sizem(45);
-    }
-    .dialog-subtitle {
-      font-size: sizem(20);
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 2.09;
-      letter-spacing: 1.6px;
-      text-align: left;
-      color: #333333;
-      margin-top: sizem(10);
-    }
-    .dialog-smalltitle {
-      font-size: sizem(18);
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 2.33;
-      letter-spacing: 3.24px;
-      text-align: left;
-      color: #8e8a74;
-    }
-    .dialog-desc {
-      font-size: sizem(15);
-      font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 2.17;
-      letter-spacing: normal;
-      text-align: left;
-      color: #8e8a74;
-    }
+    right: 10px !important;
+    bottom: 10px !important;
   }
 }
 </style>
@@ -687,62 +596,66 @@ export default {
 
   mixins: [slider],
 
+  components: {},
+
   data() {
     return {
       isMobile,
       isTablet,
-      isDialog: false,
-      toggleIndex: 0,
-      toggleList: [
-        {
-          title: '一高二線<br />速抵台北市區<br />便捷南來北往',
-          subtitle: '約5分鐘國五 五結出口<br />約8分鐘羅東火車站<br />回宜蘭的家 好方便',
-          smalltitle: '',
-          desc:
-            '國道5號往雙北、台2線濱海省道北往雙北市，連結蘇澳冷泉、與縱貫宜蘭、花東的台9線。<br />五結鄉，是宜蘭獨一無二正核心，北可抵宜蘭市區、西至羅東轉運站及國道五號、東往傳統藝術中心、南至親水公園，動線多元便捷。',
-        },
-      ],
-      img_list: [
-        {
-          img: require('./s5/2-1.jpg'),
-          txt: '羅東轉運站',
-        },
-        {
-          img: require('./s5/2-2.jpg'),
-          txt: '羅東車站',
-        },
-        {
-          img: require('./s5/2-3.jpg'),
-          txt: '台二線 示意圖',
-        },
-      ],
+      contentIndex: 0,
       slideList: [
-        {
-          img: require('./mo/5/1交通示意圖.jpg'),
-          name: '交通示意圖',
-        },
-        {
-          img: require('./mo/5/2羅東轉運站.jpg'),
-          name: '羅東轉運站',
-        },
-        {
-          img: require('./mo/5/3羅東車站.jpg'),
-          name: '羅東車站',
-        },
-        {
-          img: require('./mo/5/4台二線 示意圖.jpg'),
-          name: '台二線 示意圖',
-        },
+        [
+          {
+            img: require('./s5/1-1.jpg'),
+            name: 'Top Location',
+            content:
+              '<div class="custom-subtitle">民治路／隋唐街<br />地王角窗絕版身價</div><br /><br /><div class="custom-desc">地段門牌，就是身價。民治路、隋唐街勾勒出新營繁華軸線，寶雅全聯買進美好生活，文化中心與南瀛綠都心公園共構藝文書香，UNIQLO、家樂福、星巴克、Gogoro皆有設點，住在市中心地王，高人一等先天價值締造絕版身價。</div>',
+          },
+          {
+            img: require('./s5/1-2.jpg'),
+            name: 'Top Location',
+            content:
+              '<div class="custom-subtitle">民治路／隋唐街<br />地王角窗絕版身價</div><br /><br /><div class="custom-desc">地段門牌，就是身價。民治路、隋唐街勾勒出新營繁華軸線，寶雅全聯買進美好生活，文化中心與南瀛綠都心公園共構藝文書香，UNIQLO、家樂福、星巴克、Gogoro皆有設點，住在市中心地王，高人一等先天價值締造絕版身價。</div>',
+          },
+          {
+            img: require('./s5/1-3.jpg'),
+            name: 'Top Location',
+            content:
+              '<div class="custom-subtitle">民治路／隋唐街<br />地王角窗絕版身價</div><br /><br /><div class="custom-desc">地段門牌，就是身價。民治路、隋唐街勾勒出新營繁華軸線，寶雅全聯買進美好生活，文化中心與南瀛綠都心公園共構藝文書香，UNIQLO、家樂福、星巴克、Gogoro皆有設點，住在市中心地王，高人一等先天價值締造絕版身價。</div>',
+          },
+          {
+            img: require('./s5/1-4.jpg'),
+            name: 'Top Location',
+            content:
+              '<div class="custom-subtitle">民治路／隋唐街<br />地王角窗絕版身價</div><br /><br /><div class="custom-desc">地段門牌，就是身價。民治路、隋唐街勾勒出新營繁華軸線，寶雅全聯買進美好生活，文化中心與南瀛綠都心公園共構藝文書香，UNIQLO、家樂福、星巴克、Gogoro皆有設點，住在市中心地王，高人一等先天價值締造絕版身價。</div>',
+          },
+        ],
+        [
+          {
+            img: require('./s5/2-1.jpg'),
+            name: '優越未來新地標',
+            content:
+              '<div class="custom-subtitle">優越未來新地標</div><div class="custom-desc">整合客運、公車、計程車，900公尺距離接軌新營交流道，未來更將引進百貨賣場及豪華商旅，驗收作業已進入最後階段，新營軌道經濟由此展開。</div><div class="custom-subtitle">國家圖書館南部分院</div><div class="custom-desc">34億工程預算，義大利設計大師Carlo Ratti跨海操刀全台首座循環圖書館，高綠覆率結合太陽能科技，打造台南全新藝文聖地，預計2022年正式啟用。</div>',
+          },
+
+          {
+            img: require('./s5/2-2.jpg'),
+            name: '優越未來新地標',
+            content:
+              '<div class="custom-subtitle">優越未來新地標</div><div class="custom-desc">整合客運、公車、計程車，900公尺距離接軌新營交流道，未來更將引進百貨賣場及豪華商旅，驗收作業已進入最後階段，新營軌道經濟由此展開。</div><div class="custom-subtitle">國家圖書館南部分院</div><div class="custom-desc">34億工程預算，義大利設計大師Carlo Ratti跨海操刀全台首座循環圖書館，高綠覆率結合太陽能科技，打造台南全新藝文聖地，預計2022年正式啟用。</div>',
+          },
+        ],
+        [
+          {
+            img: require('./s5/3.jpg'),
+            name: '新營純正市中心',
+          },
+        ],
       ],
     }
   },
 
-  methods: {
-    showDialog(index) {
-      this.toggleIndex = index
-      this.isDialog = true
-    },
-  },
+  methods: {},
 
   created() {},
 

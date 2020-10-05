@@ -88,7 +88,8 @@ body {
 }
 
 .layout-container-fluid {
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .layout-container {
@@ -338,6 +339,10 @@ img[lazy='loaded'] {
       height: calc(100vh - #{$nav_phone_height} - 63px);
       margin: 0 auto;
     }
+  }
+
+  .layout-container-fluid {
+    width: 100%;
   }
 
   .home {

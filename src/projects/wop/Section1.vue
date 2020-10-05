@@ -1,6 +1,16 @@
 <template>
   <div>
     <div class="section1">
+      <img src="./s1/bg2.jpg" alt="" class="bg-img" v-if="!isMobile">
+      <img src="./mo/1/bg2.jpg" alt="" class="bg-img" v-if="isMobile">
+      <img src="./s1/MyVideo.gif" alt="" class="bg-img light" v-if="!isMobile">
+      <img src="./mo/1/MyVideo_2.gif" alt="" class="bg-img light" v-if="isMobile">
+      <img src="./s1/2l.png" alt="" class="img1 absolute" data-aos="fade-up-right" data-aos-delay="2200">
+      <img src="./s1/l_t.png" alt="" class="img2 absolute" data-aos="fade-down" data-aos-delay="2400" v-if="!isMobile">
+      <img src="./s1/logo.png" alt="" class="logo absolute" data-aos="fade-down" data-aos-delay="2600">
+      <img src="./s1/r.png" alt="" class="r absolute" data-aos="fade-left" data-aos-delay="2800" v-if="!isMobile">
+      <img src="./s1/t1.png" alt="" class="t1 absolute" data-aos="fade-down" data-aos-delay="2800">
+      <img src="./s1/t2.png" alt="" class="t2 absolute" data-aos="fade-down" data-aos-delay="3000">
     </div>
   </div>
 </template>
@@ -10,11 +20,79 @@
 .section1 {
   width: size(1920);
   height: 100vh;
-  min-height: size(1080);
+  min-height: size(850);
   background-size: cover;
   background-attachment: fixed;
   overflow: hidden;
 }
+
+.bg-img {
+  width: 100vw;
+  height: 100vh;
+  min-height: size(850);
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+
+  &:nth-child(1) {
+    top: auto;
+    bottom: 0;
+    left: auto;
+    right: 0;
+    height: auto;
+  }
+}
+
+.img1 {
+  width: size(405);
+  left: 0;
+  bottom: 0;
+}
+
+.img2 {
+  width: size(500);
+  left: 0;
+  top: 0;
+}
+
+.logo {
+  width: size(543);
+  left: size(398);
+  top: size(203);
+}
+
+.r {
+  height: 100vh;
+  min-height: size(850);
+  right: size(83);
+  top: size(0);
+}
+
+.t1 {
+  width: size(752);
+  left: size(293);
+  top: size(507);
+}
+
+.t2 {
+  width: size(751);
+  left: size(294);
+  top: size(820);
+}
+
+.light {
+  mix-blend-mode: screen;
+  // opacity: .1;
+  // animation: light 3s linear 0s infinite alternate-reverse;
+}
+
+// @keyframes light {
+//   to {
+//     opacity: .3;
+//   }
+// }
 
 @media only screen and (max-width: 1440px) {
 }
@@ -33,10 +111,46 @@
   .section1 {
     width: 100vw;
     min-height: auto;
-    height: sizem(604 + 329);
+    height: sizem(667);
     //background-image: url('./mo/1/00.jpg');
     background-size: cover;
     background-attachment: scroll;
+  }
+
+  .bg-img {
+    width: 100vw;
+    height: 100vh;
+    min-height: size(850);
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+
+    &:nth-child(1) {
+      top: 0;
+      bottom: auto;
+      left: auto;
+      right: 0;
+      height: auto;
+    }
+  }
+  .logo {
+    width: sizem(310);
+    left: sizem(32);
+    top: sizem(173);
+  }
+
+  .t1 {
+    width: sizem(310);
+    left: sizem(32);
+    top: sizem(351);
+  }
+
+  .t2 {
+    width: sizem(310);
+    left: sizem(32);
+    top: sizem(492);
   }
 }
 </style>

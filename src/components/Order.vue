@@ -346,7 +346,7 @@ export default {
 }
 .order-bg {
   background-color: $order_bg_color;
-  background-image: $order_bg_image;
+  // background-image: $order_bg_image;
   background-repeat: no-repeat;
   position: relative;
   padding-top: 130px;
@@ -442,8 +442,7 @@ export default {
     label {
       width: 92px;
       font-size: 16px;
-      opacity: 0.8;
-      font-weight: bold;
+      font-weight: 900;
       color: $order_input_label_color;
     }
   }
@@ -474,7 +473,7 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .order-bg {
-    background-image: $order_bg_image_m;
+    // background-image: $order_bg_image_m;
     background-size: cover;
     padding-top: 40px;
     margin: 0;

@@ -2,7 +2,7 @@
   <div class="home no-padding-top">
     <Loading :loading="load" />
     <!-- <SideNavigation /> -->
-    <Navigation />
+    <Navigation :viewIndex="viewIndex" />
     <!-- <Indigator :viewIndex="viewIndex" /> -->
     <!-- <full-page
       ref="fullPage"
@@ -10,75 +10,75 @@
       id="fullpage"
     > -->
     <vue-lazy-component
-      class="section"
+      class="section relative"
       id="section1"
       @init="init"
     >
       <Section1 />
     </vue-lazy-component>
 
-    <vue-lazy-component
-      class="section"
+    <!-- <div
+      class="section relative"
       id="section2"
     >
       <Section2 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
+    </div> -->
+    <div
+      class="section relative"
       id="section3"
     >
       <Section3 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
+    </div>
+    <div
+      class="section relative"
       id="section4"
     >
       <Section4 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
+    </div>
+    <div
+      class="section relative"
       id="section5"
     >
       <Section5 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
+    </div>
+    <div
+      class="section relative"
       id="section6"
     >
       <Section6 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
+    </div>
+    <div
+      class="section relative"
       id="section7"
     >
       <Section7 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
+    </div>
+    <!-- <div
+      class="section relative"
       id="section8"
     >
       <Section8 />
-    </vue-lazy-component>
+    </div> -->
     <!-- <vue-lazy-component
-      class="section"
+      class="section relative"
       id="section9"
     >
       <Section9 />
     </vue-lazy-component>
     <vue-lazy-component
-      class="section"
+      class="section relative"
       id="section10"
     >
       <Section10 />
     </vue-lazy-component>
     <vue-lazy-component
-      class="section"
+      class="section relative"
       id="section11"
     >
       <Section11 />
     </vue-lazy-component> -->
     <vue-lazy-component
-      class="section"
+      class="section relative"
       id="contact"
     >
       <ContactSection />
@@ -86,17 +86,6 @@
     <MobileNav />
   </div>
 </template>
-
-<style lang="scss">
-// @import url('https://fonts.googleapis.com/css?family=Playball&display=swap');
-@import '../assets/style/variableColor.scss';
-
-.section,
-.section .fp-slide,
-.section .fp-tableCell {
-  height: auto !important;
-}
-</style>
 
 <script>
 // @ is an alias to /src
@@ -165,7 +154,7 @@ export default {
       // },
     }
   },
-  created() {
+  mounted() {
     $(document).ready(() => {
       // Images loaded is zero because we're going to process a new set of images.
       var imagesLoaded = 0
@@ -173,11 +162,13 @@ export default {
       var totalImages = $('img').length
 
       const allImagesLoaded = () => {
-        this.load = false
+        setTimeout(() => {
+          this.load = false
+        }, 2000);
       }
       const imageLoaded = () => {
         imagesLoaded++
-        if (imagesLoaded == totalImages) {
+        if (imagesLoaded >= (totalImages - 3)) {
           allImagesLoaded()
         }
       }
@@ -187,38 +178,42 @@ export default {
           .attr('src', $(img).attr('src'))
       })
     })
+    if (!this.isMobile) {
+      window.addEventListener('scroll', this.onScroll, false)
+      // this.$refs.fullPage.api.setResponsive(true)
+    }
   },
-  mounted() {
+  // mounted() {
     // window.addEventListener('scroll', this.onScroll, false)
     // this.action = this.$refs.fullPage.api
     // if (this.isMobile) {
     //   this.$refs.fullPage.api.setResponsive(true)
     // }
-  },
+  // },
   methods: {
     init() {},
-    // onScroll() {
-    //   // 获取所有锚点元素
-    //   const navContents = document.querySelectorAll('.section')
-    //   // 所有锚点元素的 offsetTop
-    //   const offsetTopArr = []
-    //   navContents.forEach(item => {
-    //     offsetTopArr.push(item.offsetTop)
-    //   })
-    //   // 获取当前文档流的 scrollTop
-    //   const scrollTop =
-    //     document.documentElement.scrollTop || document.body.scrollTop
-    //   // 定义当前点亮的导航下标
-    //   let navIndex = 0
-    //   for (let n = 0; n < offsetTopArr.length; n++) {
-    //     // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
-    //     // 那么此时导航索引就应该是n了
-    //     if (scrollTop >= offsetTopArr[n] - 100) {
-    //       navIndex = n
-    //     }
-    //   }
-    //   this.viewIndex = navIndex + 1
-    // },
+    onScroll() {
+      // 获取所有锚点元素
+      const navContents = document.querySelectorAll('.section')
+      // 所有锚点元素的 offsetTop
+      const offsetTopArr = []
+      navContents.forEach(item => {
+        offsetTopArr.push(item.offsetTop)
+      })
+      // 获取当前文档流的 scrollTop
+      const scrollTop =
+        document.documentElement.scrollTop || document.body.scrollTop
+      // 定义当前点亮的导航下标
+      let navIndex = 0
+      for (let n = 0; n < offsetTopArr.length; n++) {
+        // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
+        // 那么此时导航索引就应该是n了
+        if (scrollTop >= offsetTopArr[n] - 100) {
+          navIndex = n
+        }
+      }
+      this.viewIndex = navIndex + 1
+    },
 
     // onLeave(origin, destination, direction) {
     //   if (!this.isMobile) {

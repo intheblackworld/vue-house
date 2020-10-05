@@ -24,8 +24,8 @@
 <style lang="scss" scoped>
 @import '../assets/style/function.scss';
 .map {
-  padding-top: size-m(150);
-  background-color: rgba(172, 221, 254, 1)
+  padding-top: size-m(215);
+  background-color: transparent;
 }
 .desc {
   width: size-m(310);
@@ -48,7 +48,7 @@
 <script>
 import { isMobile } from '@/utils'
 export default {
-  name: 'map',
+  name: 'vmap',
   props: ['tagList', 'bgSrc', 'hand', 'bgText'],
   data() {
     return {
@@ -69,7 +69,7 @@ export default {
           text.style.left = `${mapBg.clientWidth / 2 - 100}px`
         }
 
-        map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2 -110, 0)
+        map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2 - 170, 0)
       }, 1200)
 
       setTimeout(() => {
