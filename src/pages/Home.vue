@@ -77,12 +77,12 @@
     >
       <Section11 />
     </vue-lazy-component> -->
-    <vue-lazy-component
+    <div
       class="section relative"
       id="contact"
     >
       <ContactSection />
-    </vue-lazy-component>
+    </div>
     <MobileNav />
   </div>
 </template>
