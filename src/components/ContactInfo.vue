@@ -287,7 +287,7 @@ export default {
   .contact-info {
     display: flex;
     width: 100%;
-    height: auto;
+    height: 100%;
     padding: 40px;
     transform: none;
     position: static;
