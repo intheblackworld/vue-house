@@ -2,7 +2,7 @@
   <div class="navigation">
     <div class="layout-container-fluid nav-container">
       <div class="nav">
-        <img class="logo" src="@/assets/img/nav-logo.png" alt />
+        <img class="logo" src="@/assets/img/nav-logo.png" alt="太子峰雲" v-scroll-to="{ element: `#section1`, offset: offset }"/>
         <div class="menu" @click="toggleSidebar">
           <font-awesome-icon icon="bars" />
         </div>
