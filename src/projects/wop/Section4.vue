@@ -104,7 +104,7 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-  height: sizem(659);
+  height: sizem(670);
   min-height: sizem(604);
   max-height: sizem(812);
     //background-image: url('./mo/1/00.jpg');

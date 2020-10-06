@@ -84,14 +84,15 @@ export default {
   margin-bottom: 30px;
   margin-right: 160px;
   width: 260px;
-  height: 30px;
+  height: auto;
   line-height: 1.4;
-  border-left: 4px solid $house_border_color;
-  padding-left: 10px;
+  //border-left: 4px solid $house_border_color;
+  padding-left: 13px;
   display: flex;
   align-items: center;
   white-space: nowrap;
-  // &::before{content: "";width: 4px;height: 1.4em;background:$house_border_color;margin: -1px 10px 0 0;position: relative;}
+  position: relative;
+  &::before{content: "";width: 4px;height: 1.4em;background:$house_border_color;position: absolute;left: 0;top: 0em;}
   &:nth-of-type(even) {
     margin-right: 0;
   }
@@ -134,7 +135,8 @@ export default {
     align-items: flex-start;
     margin: 0;
     width: 100%;
-    height: auto;
+    //height: auto;
+  line-height: 1.4;
     margin-left: 20px;
     white-space: normal;
   }

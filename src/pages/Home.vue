@@ -53,12 +53,12 @@
     >
       <Section7 />
     </div>
-    <!-- <div
+    <div
       class="section relative"
       id="section8"
     >
       <Section8 />
-    </div> -->
+    </div>
     <!-- <vue-lazy-component
       class="section relative"
       id="section9"

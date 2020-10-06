@@ -1,34 +1,32 @@
 <template>
   <div>
-    <div class="section7">
-      <transition-group name="swipe-fade" mode="out-in">
-        <img v-show="slideIndex === i" v-for="(slide, i) in slideList" :key="slide.img" :src="slide.img" class="bg-img blur">
-      </transition-group>
+    <div class="section8">
+        <img src="./s5/bg.png" alt="" class="img absolute">
+        <img src="./s8/title.png" alt="" class="title absolute">
+        <h3 class="subtitle absolute">
+          風光高度<br>市心城景私藏天際
+        </h3>
+        <img src="./s6/hr.png" alt="" class="hr absolute">
+        <h3 class="desc absolute">
+          凌空15層，打造家的永恆風景，新營唯一空中會館裡捕捉他人沒有的高度視野，用工藝堆砌出值得炫耀的品味，無敵景觀都心御所不只是一棟建築，而是必須珍藏的席次。
+        </h3>
+   <!-- <div class="icons absolute flex-ac">
+          <div :class="`icon-btn ${slideIndex === 0 ? 'active' : ''}`" @click="goTo(0)"><img src="./s6/icon.png" alt="icon"></div>
+          <div :class="`icon-btn ${slideIndex === 1 ? 'active' : ''}`" @click="goTo(1)"><img src="./s6/icon.png" alt="icon"></div>
+          <div :class="`icon-btn ${slideIndex === 2 ? 'active' : ''}`" @click="goTo(2)"><img src="./s6/icon.png" alt="icon"></div>
+        </div> -->
       <div class="swipe absolute" data-aos="fade-right" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
-          <transition-group
-            name="swipe-fade"
-            mode="out-in"
-          >
-            <div
-              v-for="(slide, i) in slideList"
-              v-show="slideIndex === i"
-              :key="slide.img"
-              :class="`swipe-item absolute`"
-            >
-              <img
-                :src="slide.img"
-                alt=""
-              >
-              <div
-                class="name absolute"
-              >室內3D合成示意圖</div>
+          <transition-group name="swipe-fade" mode="out-in">
+            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+              <img :src="slide.img" alt="">
+              <div class="name absolute">{{slide.name}}</div>
             </div>
           </transition-group>
           <div class="pagination absolute flex-ac">
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
-          <div class="swipe-btns absolute flex-ac flex-jb">
+          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
             <div class="prev-btn" @click="decIndex"></div>
             <div class="next-btn" @click="addIndex"></div>
           </div>
@@ -37,15 +35,15 @@
     </div>
   </div>
 </template>
-
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section7 {
-  width: size(1920);
+.section8 {
+  width: 100%;
   height: 100vh;
-  max-height: 56vw;
   min-height: size(900);
+  max-height: size(1080);
+  background-color: #eb5b29;
   overflow: hidden;
 }
 
@@ -67,16 +65,81 @@
   }
 }
 
-.blur {
-  filter: brightness(50%);
+.content {
+  width: 100%;
+  right: 0;
+  top: 0;
+}
+
+.img {
+  width: size(540);
+  top: size(0);
+  right: size(221);
+}
+
+.title {
+  width: size(300);
+  top: calc(50% - 14vw);
+  right: size(240);
+}
+
+.subtitle {
+  width: size(456);
+  top: calc(50% - 10vw);
+  right: size(173);
+  font-size: size(51.6);
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(6.19);
+  text-align: center;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.hr {
+  width: size(598);
+  top: calc(50% - 2.2vw);
+  right: size(98);
+}
+
+.desc {
+  width: size(477);
+  top: calc(50% - 1vw);
+  right: size(156);
+  font-size: size(26);
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.89;
+  letter-spacing: normal;
+  text-align: left;
+  color: #491500;
+}
+.icons {
+  width: size(290);
+  right: size(260);
+  top: calc(50% + 12vw);
+}
+.icon-btn {
+  cursor: pointer;position: relative;
+  width: size(83);
+  margin: 0  size(10);
+  opacity: 0.4;
+  transition: all 0.3s;
+  img{width: 100%;}
+  &::after{content: "";opacity: 0;display: block;width:size(10);height:size(10);background: #fff;border-radius: 50%;position: absolute;top:size(70);left:calc(50% - 0.256vw);}
+  &.active {
+    opacity: 1;
+    &::after{top:size(90);opacity: 1;}
+  }
 }
 
 .swipe {
-  width: size(930);
-  height: size(550);
-  min-height: size(550);
-  top: size(330);
-  right: 0;
+  width: size(1160);
+  height: 100%;
+  top: size(0);
   left: 0;
   margin: 0 auto;
   object-fit: cover;
@@ -140,8 +203,8 @@
   .name {
     right: 20px;
     bottom: 20px;
-    font-size: size(14.8);
-    font-weight: 500;
+    font-size: size(15.7);
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.35;
@@ -163,11 +226,6 @@
   //   z-index: 2;
   //   // opacity: 1;
   // }
-}
-
-.name {
-  background-color: rgba(21, 32, 68, 0.4);
-  padding: 10px;
 }
 
 .pagination {
@@ -241,75 +299,6 @@
     cursor: pointer;
   }
 }
-.title {
-  text-shadow: 1px 1px 7px rgba(21, 32, 68, 0.8);
-  font-size: size(48);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.32;
-  letter-spacing: 2.91px;
-  text-align: left;
-  color: #ffffff;
-}
-
-.subtitle {
-  text-shadow: 1px 1px 7px rgba(21, 32, 68, 0.8);
-  font-size: size(29);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.64;
-  letter-spacing: 5.85px;
-  text-align: left;
-  color: #ffffff;
-  white-space: nowrap;
-}
-
-.desc {
-  text-shadow: 1px 1px 7px rgba(21, 32, 68, 0.8);
-  font-size: size(16);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2.03;
-  letter-spacing: 0.96px;
-  text-align: left;
-  color: #ffffff;
-}
-
-.title1,
-.title3 {
-  top: size(72);
-  right: size(290);
-}
-
-.subtitle1,
-.subtitle3 {
-  top: size(216);
-  right: size(214);
-}
-
-.desc1,
-.desc3 {
-  top: size(270);
-  right: size(200);
-}
-
-.title2 {
-  top: size(72);
-  left: size(209);
-}
-
-.subtitle2 {
-  top: size(216);
-  left: size(209);
-}
-
-.desc2 {
-  top: size(270);
-  left: size(209);
-}
 
 @media only screen and (max-width: 1440px) {
 }
@@ -325,9 +314,9 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section7 {
+  .section8 {
     width: 100vw;
-    height: sizem(210);
+    height: sizem(660);
     min-height: auto;
     max-height: initial;
   }
@@ -337,39 +326,60 @@
   max-height: 56vw;
   min-height: size(900);*/
   .img {
-    display: none;
+    width: sizem(375);
+    top: sizem(0);
+    right: sizem(0);
   }
 
-  .txt {
-    width: 100vw;
-    height: auto;
-    top: size-m(24);
-    left: 0;
-    font-size: size-m(15);
-    color: #000;
-  }
   .title {
-    font-size: 1.666em;
-    line-height: 1.44;
-    color: #a38057;
+    width: sizem(153);
+    top: sizem(38);
+    right: sizem(111);
+  }
+
+  .subtitle {
+    width: sizem(221);
+    top: sizem(80);
+    right: sizem(77);
+    font-size: sizem(25);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(3);
+    text-align: center;
+    color: #ffffff;
+    white-space: nowrap;
+  }
+
+  .hr {
+    width: sizem(310);
+    top: sizem(160);
+    right: sizem(33);
   }
 
   .desc {
-    width: size-m(310);
-    font-weight: normal;
+    width: sizem(310);
+    top: sizem(177);
+    right: sizem(33);
+    font-size: sizem(15);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
     line-height: 1.73;
-    text-align: justify;
+    letter-spacing: normal;
+    text-align: left;
+    color: #491500;
   }
-
-  .blur {
+  .icons {
     display: none;
   }
 
   .swipe {
     width: 100vw;
-    height: sizem(210);
+    height: sizem(350);
     // height: calc(100vh - 63px);
-    top: sizem(0);
+    top: sizem(310);
     left: 0;
     object-fit: cover;
   }
@@ -482,7 +492,7 @@
       height: 0;
       border-style: solid;
       border-width: 1em 1em 1em 0;
-      border-color: transparent #0005 transparent transparent;
+      border-color: transparent #fff transparent transparent;
     }
     .next-btn::after {
       content: '';
@@ -491,7 +501,7 @@
       height: 0;
       border-style: solid;
       border-width: 1em 0 1em 1em;
-      border-color: transparent transparent transparent #0005;
+      border-color: transparent transparent transparent #fff;
     }
   }
 
@@ -504,40 +514,28 @@
 <script>
 // @ is an alias to /src
 import { isMobile, isTablet } from '@/utils'
-import Parallax from 'vue-parallaxy'
 import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section7',
+  name: 'section6',
 
   mixins: [slider],
 
-  components: {
-    Parallax,
-  },
+  components: {},
 
   data() {
     return {
       isMobile,
       isTablet,
+      contentIndex: 0,
       slideList: [
         {
           img: require('./s8/01.jpg'),
+          name: '頂樓空中花園',
         },
         {
           img: require('./s8/02.jpg'),
-        },
-        {
-          img: require('./s8/03.jpg'),
-        },
-        {
-          img: require('./s8/04.jpg'),
-        },
-        {
-          img: require('./s8/06.jpg'),
-        },
-        {
-          img: require('./s8/08.jpg'),
+          name: '頂樓空中花園',
         },
       ],
     }

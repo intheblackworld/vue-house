@@ -5,6 +5,7 @@ export default [
   { name: '核心地段', imgSrc: '', subTitle: '', section: 'section5', svgSrc: '', mobileOffset:  -60 },
   { name: '都心帝標', imgSrc: '', subTitle: '', section: 'section6', svgSrc: '', mobileOffset: -60 },
   { name: '精品公設', imgSrc: '', subTitle: '', section: 'section7', svgSrc: '', mobileOffset: -60 },
+  { name: '市心城景', imgSrc: '', subTitle: '', section: 'section8', svgSrc: '', mobileOffset: -60 },
   { name: '預約賞屋', imgSrc: '', subTitle: '', section: 'contact', svgSrc: '', mobileOffset: -60 },
 ]
 　　　　　　　　　　
