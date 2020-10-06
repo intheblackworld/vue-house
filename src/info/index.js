@@ -1,5 +1,5 @@
 export default {
-  address: '宜蘭縣五結鄉傳藝路一段56巷',
+  address: '宜蘭縣五結鄉傳藝路一段56巷11號旁',
   googleSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3625.3315481903373!2d121.81390331499925!3d24.681126984138768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQwJzUyLjEiTiAxMjHCsDQ4JzU3LjkiRQ!5e0!3m2!1szh-TW!2stw!4v1599625066220!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/ZKBcPBwF3a9p2KCP7',
   phone: '0900-799-888',
