@@ -56,7 +56,7 @@ export default {
 }
 .content {
   width: 686px;
-  margin: 0 auto;
+  margin: 0 auto 1em auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -121,7 +121,7 @@ export default {
   .content {
     height: 25em;
     width: 100%;
-    margin-bottom: 0;
+    margin-bottom: 1em;
     font-size: 15px; //內容字級
   //  min-height: 35em; //看內容多寡調整高度
   }
