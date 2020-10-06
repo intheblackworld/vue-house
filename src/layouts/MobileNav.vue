@@ -1,5 +1,6 @@
 <template>
-  <div :class="{ 'mobile-nav': true }">
+<!-- 
+<div :class="{ 'mobile-nav': true }">
     <a class="nav-item" @click="showCallDialog">
       <font-awesome-icon icon="phone" />
       <div class="label">撥打電話</div>
@@ -32,6 +33,7 @@
       <MapDialog :link="info.googleLink" :address="info.address" />
     </el-dialog>
   </div>
+  -->
 </template>
 
 <script>
