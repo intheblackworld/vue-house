@@ -1,16 +1,16 @@
 <template>
   <div>
     <div class="section8">
-        <img src="./s5/bg.png" alt="" class="img absolute">
-        <img src="./s8/title.png" alt="" class="title absolute">
-        <h3 class="subtitle absolute">
-          風光高度<br>市心城景私藏天際
-        </h3>
-        <img src="./s6/hr.png" alt="" class="hr absolute">
-        <h3 class="desc absolute">
-          凌空15層，打造家的永恆風景，新營唯一空中會館裡捕捉他人沒有的高度視野，用工藝堆砌出值得炫耀的品味，無敵景觀都心御所不只是一棟建築，而是必須珍藏的席次。
-        </h3>
-   <!-- <div class="icons absolute flex-ac">
+      <img src="./s5/bg.png" alt="" class="img absolute">
+      <img src="./s8/title.png" alt="" class="title absolute">
+      <h3 class="subtitle absolute">
+        風光高度<br>市心城景私藏天際
+      </h3>
+      <img src="./s6/hr.png" alt="" class="hr absolute">
+      <h3 class="desc absolute">
+        凌空15層，打造家的永恆風景，新營唯一空中會館裡捕捉他人沒有的高度視野，用工藝堆砌出值得炫耀的品味，無敵景觀都心御所不只是一棟建築，而是必須珍藏的席次。
+      </h3>
+      <!-- <div class="icons absolute flex-ac">
           <div :class="`icon-btn ${slideIndex === 0 ? 'active' : ''}`" @click="goTo(0)"><img src="./s6/icon.png" alt="icon"></div>
           <div :class="`icon-btn ${slideIndex === 1 ? 'active' : ''}`" @click="goTo(1)"><img src="./s6/icon.png" alt="icon"></div>
           <div :class="`icon-btn ${slideIndex === 2 ? 'active' : ''}`" @click="goTo(2)"><img src="./s6/icon.png" alt="icon"></div>
@@ -123,16 +123,33 @@
   top: calc(50% + 12vw);
 }
 .icon-btn {
-  cursor: pointer;position: relative;
+  cursor: pointer;
+  position: relative;
   width: size(83);
-  margin: 0  size(10);
+  margin: 0 size(10);
   opacity: 0.4;
   transition: all 0.3s;
-  img{width: 100%;}
-  &::after{content: "";opacity: 0;display: block;width:size(10);height:size(10);background: #fff;border-radius: 50%;position: absolute;top:size(70);left:calc(50% - 0.256vw);}
+  img {
+    width: 100%;
+  }
+  &::after {
+    content: '';
+    opacity: 0;
+    display: block;
+    width: size(10);
+    height: size(10);
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: size(70);
+    left: calc(50% - 0.256vw);
+  }
   &.active {
     opacity: 1;
-    &::after{top:size(90);opacity: 1;}
+    &::after {
+      top: size(90);
+      opacity: 1;
+    }
   }
 }
 
@@ -527,7 +544,6 @@ export default {
     return {
       isMobile,
       isTablet,
-      contentIndex: 0,
       slideList: [
         {
           img: require('./s8/01.jpg'),

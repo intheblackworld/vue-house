@@ -301,9 +301,9 @@
     width:calc(100vw * 252 / 375);
     // border-color: $loading_icon_color;
   }
-    &.hide {
-      display: none;
-    }
+    // &.hide {
+    //   display: none;
+    // }
   }
 }
 </style>
