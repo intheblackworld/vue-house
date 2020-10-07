@@ -43,7 +43,7 @@
     width: 100vw;
     .map-bg {
       width: auto;
-      height:calc(100vh - 63px - 40vw);
+      height:size-m(530);
     }
 
     .map-text {
@@ -77,8 +77,8 @@
       z-index: 2;
       width: size-m(87) !important;
       height: auto !important;
-      left: size-m(125);
-      right: 0;
+      left: 80%;
+      right: auto;
       margin: 0 auto;
       top: 60% !important;
       display: block;
