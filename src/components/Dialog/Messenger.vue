@@ -7,18 +7,6 @@
       class="cta"
       :href="messenger"
       target="_blank"
-      @click=" window.dotq = window.dotq || [];
- window.dotq.push(
- {
-   'projectId': '10000',
-   'properties': {
-     'pixelId': '10113125',
-     'qstrings': {
-       'et': 'custom',
-       'ea': 'FB10113125'
-     }
- } } ); 
-"
     >立即諮詢</a>
   </div>
 </template>

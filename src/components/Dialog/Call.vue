@@ -5,31 +5,26 @@
     <div class="info">{{phone}}</div>
     <div
       class="cta"
+      v-if="isMobile"
       @click="redirectToPhoneThanks"
     >撥打電話</div>
   </div>
 </template>
 
 <script>
+import { isMobile } from '@/utils'
 export default {
   name: 'CallDialog',
   components: {},
   props: ['phone'],
+  data() {
+    return {
+      isMobile
+    }
+  },
 
   methods: {
     redirectToPhoneThanks(e) {
-      window.dotq = window.dotq || []
-      window.dotq.push({
-        projectId: '10000',
-        properties: {
-          pixelId: '10113125',
-          qstrings: {
-            et: 'custom',
-            ea: 'call10113125',
-          },
-        },
-      })
-
       e.preventDefault()
       window.location.href = `tel:${this.phone.replace('-', '')}`
       setTimeout(() => {
