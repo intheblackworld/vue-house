@@ -1,65 +1,44 @@
 <template>
   <div class="home no-padding-top">
-    <Loading :loading="load" />
+    <Loading :loading="loading" />
     <!-- <SideNavigation /> -->
-    <Navigation :viewIndex="viewIndex" />
-    <!-- <Indigator :viewIndex="viewIndex" /> -->
-    <!-- <full-page
+    <div v-show="!loading">
+      <Navigation :viewIndex="viewIndex" />
+      <!-- <Indigator :viewIndex="viewIndex" /> -->
+      <!-- <full-page
       ref="fullPage"
       :options="options"
       id="fullpage"
     > -->
-    <vue-lazy-component
-      class="section relative"
-      id="section1"
-      @init="init"
-    >
-      <Section1 />
-    </vue-lazy-component>
+      <vue-lazy-component class="section relative" id="section1" @init="init">
+        <Section1 />
+      </vue-lazy-component>
 
-    <!-- <div
+      <!-- <div
       class="section relative"
       id="section2"
     >
       <Section2 />
     </div> -->
-    <div
-      class="section relative"
-      id="section3"
-    >
-      <Section3 />
-    </div>
-    <div
-      class="section relative"
-      id="section4"
-    >
-      <Section4 />
-    </div>
-    <div
-      class="section relative"
-      id="section5"
-    >
-      <Section5 />
-    </div>
-    <div
-      class="section relative"
-      id="section6"
-    >
-      <Section6 />
-    </div>
-    <div
-      class="section relative"
-      id="section7"
-    >
-      <Section7 />
-    </div>
-    <div
-      class="section relative"
-      id="section8"
-    >
-      <Section8 />
-    </div>
-    <!-- <vue-lazy-component
+      <div class="section relative" id="section3">
+        <Section3 />
+      </div>
+      <div class="section relative" id="section4">
+        <Section4 />
+      </div>
+      <div class="section relative" id="section5">
+        <Section5 />
+      </div>
+      <div class="section relative" id="section6">
+        <Section6 />
+      </div>
+      <div class="section relative" id="section7">
+        <Section7 />
+      </div>
+      <div class="section relative" id="section8">
+        <Section8 />
+      </div>
+      <!-- <vue-lazy-component
       class="section relative"
       id="section9"
     >
@@ -77,11 +56,9 @@
     >
       <Section11 />
     </vue-lazy-component> -->
-    <div
-      class="section relative"
-      id="contact"
-    >
-      <ContactSection />
+      <div class="section relative" id="contact">
+        <ContactSection />
+      </div>
     </div>
     <MobileNav />
   </div>
@@ -164,11 +141,11 @@ export default {
       const allImagesLoaded = () => {
         setTimeout(() => {
           this.load = false
-        }, 2000);
+        }, 2000)
       }
       const imageLoaded = () => {
         imagesLoaded++
-        if (imagesLoaded >= (totalImages - 3)) {
+        if (imagesLoaded >= totalImages - 3) {
           allImagesLoaded()
         }
       }
@@ -183,12 +160,18 @@ export default {
       // this.$refs.fullPage.api.setResponsive(true)
     }
   },
+  computed: {
+    loading() {
+      console.log(this.load)
+      return this.load
+    }
+  },
   // mounted() {
-    // window.addEventListener('scroll', this.onScroll, false)
-    // this.action = this.$refs.fullPage.api
-    // if (this.isMobile) {
-    //   this.$refs.fullPage.api.setResponsive(true)
-    // }
+  // window.addEventListener('scroll', this.onScroll, false)
+  // this.action = this.$refs.fullPage.api
+  // if (this.isMobile) {
+  //   this.$refs.fullPage.api.setResponsive(true)
+  // }
   // },
   methods: {
     init() {},
