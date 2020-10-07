@@ -280,17 +280,6 @@ export default {
         this.isSubmit = false
         return
       }
-      window.dotq = window.dotq || []
-      window.dotq.push({
-        projectId: '10000',
-        properties: {
-          pixelId: '10113125',
-          qstrings: {
-            et: 'custom',
-            ea: 'lead10113125',
-          },
-        },
-      })
 
       const urlParams = new URLSearchParams(window.location.search)
       const utmSource = urlParams.get('utm_source')
