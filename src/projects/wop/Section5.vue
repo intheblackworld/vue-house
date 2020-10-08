@@ -3,18 +3,18 @@
     <div class="section5">
         <img src="./s5/bg.png" alt="" class="img absolute">
         <div class="tabs absolute">
-          <div :class="`tab-btn flex-c ${contentIndex === 0 ? 'active' : ''}`" @click="contentIndex = 0">
+          <div :class="`tab-btn flex-c ${contentIndex === 0 ? 'active' : ''}`" @click="contentIndex = 0;slideIndex = 0">
             <div class="inside flex-c">
               <img src="./s5/titlew.png" alt="" v-if="contentIndex === 0">
               <img src="./s5/title.png" alt="" v-else>
             </div>
           </div>
-          <div :class="`tab-btn flex-c ${contentIndex === 1 ? 'active' : ''}`" @click="contentIndex = 1">
+          <div :class="`tab-btn flex-c ${contentIndex === 1 ? 'active' : ''}`" @click="contentIndex = 1;slideIndex = 0">
             <h3 class="inside flex-c">
               優越未來新地標
             </h3>
           </div>
-          <div :class="`tab-btn flex-c ${contentIndex === 2 ? 'active' : ''}`" @click="contentIndex = 2">
+          <div :class="`tab-btn flex-c ${contentIndex === 2 ? 'active' : ''}`" @click="contentIndex = 2;slideIndex = 0">
             <h3 class="inside flex-c">
               新營純正市中心
             </h3>

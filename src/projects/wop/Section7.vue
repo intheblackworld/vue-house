@@ -7,22 +7,22 @@
         <h3 class="desc absolute" v-html="slideList[contentIndex][0].desc"></h3>
         <h3 class="w-desc absolute" v-html="slideList[contentIndex][0].wdesc"></h3>
       <div class="tabs flex-ac flex-jb absolute wrap">
-        <div :class="`tab-btn flex-c ${contentIndex === 0 ? 'active' : ''}`" @click="contentIndex = 0">
+        <div :class="`tab-btn flex-c ${contentIndex === 0 ? 'active' : ''}`" @click="contentIndex = 0;slideIndex = 0">
           <h3 class="inside flex-c">
             凡爾賽花園
           </h3>
         </div>
-        <div :class="`tab-btn flex-c ${contentIndex === 1 ? 'active' : ''}`" @click="contentIndex = 1">
+        <div :class="`tab-btn flex-c ${contentIndex === 1 ? 'active' : ''}`" @click="contentIndex = 1;slideIndex = 0">
           <h3 class="inside flex-c">
             飯店級美學
           </h3>
         </div>
-        <div :class="`tab-btn flex-c ${contentIndex === 2 ? 'active' : ''}`" @click="contentIndex = 2">
+        <div :class="`tab-btn flex-c ${contentIndex === 2 ? 'active' : ''}`" @click="contentIndex = 2;slideIndex = 0">
           <h3 class="inside flex-c">
             菁英俱樂部
           </h3>
         </div>
-        <div :class="`tab-btn flex-c ${contentIndex === 3 ? 'active' : ''}`" @click="contentIndex = 3">
+        <div :class="`tab-btn flex-c ${contentIndex === 3 ? 'active' : ''}`" @click="contentIndex = 3;slideIndex = 0">
           <h3 class="inside flex-c">
             私藏天際線
           </h3>
