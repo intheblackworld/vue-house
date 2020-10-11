@@ -1,11 +1,11 @@
 /* html, body */
-$bg: #D2D1CD;
+$bg: #e5e300;
 
 /* font-family */
 /* 1主要字體  2次要字體  3表單字體 */
-$family1: 'Noto Sans TC',sans-serif;
-$family2: 'Noto Sans TC',sans-serif;
-$family3: 'Noto Sans TC',sans-serif;
+$family1: 'Noto Serif TC',sans-serif;
+$family2: 'Noto Serif TC',sans-serif;
+$family3: 'Noto Serif TC';
 
 /* navigation */
 $nav_bg: #707070;
@@ -32,43 +32,43 @@ $mask_icon_color: #c82514;
 
 /* contactSection */
 // order
-$order_bg_color: #707070;
+$order_bg_color: #e5e300;
 $order_bg_image: url('~@/projects/gs/all/order-bg.jpg');
 $order_bg_image_m: transparent;
-$order_title_color: #fff;
+$order_title_color: #011949;
 $order_subtitle_color: #cc2617;
-$order_input_label_color: #fff;
+$order_input_label_color: #011949;
 $order_input_color: #1a1a1a !important;
 $order_input_placeholder: #666 !important;
 $order_input_bg: #fff !important;
 $order_input_border: solid 1px #988068; 
 $order_input_focus_border: solid 1px rgba(0, 0, 0, 1) !important;
 $order_input_selected_color: solid 1px rgba(0, 0, 0, 1) !important;
-$order_check_desc_color: #1a1a1a !important;
-$order_check_span_color: rgb(255, 231, 95) !important;
-$order_submit_bg: #4d4d4d !important;
+$order_check_desc_color: #fff !important;
+$order_check_span_color: #fff !important;
+$order_submit_bg: #011949 !important;
 $order_submit_color: #fff !important;
 $order_sumbit_disable_bg: #999 !important;
 
 // contactInfo
-$contact_bg: #d3d2cf;
-$contact_bg_m: #d3d2cf;
+$contact_bg: url('~@/assets/img/contact-bg.jpg');
+$contact_bg_m: url('~@/assets/img/contact-bg-m.jpg');
 $contact_shadow: 0 0 80px 0 rgba(0, 0, 0, 0.2);
 
 $contact_btn_border: inset 0 0 0px 1.5px #fff;
-$contact_btn_color: #333;
-$contact_btn_icon: #333;
-$contact_btn_bg: #fff;
-$contact_btn_hover_color: #fff;
-$contact_btn_hover_icon: #fff;
-$contact_btn_hover_bg: #333;
+$contact_btn_color: #fff;
+$contact_btn_icon: #fff;
+$contact_btn_bg: transparent;
+$contact_btn_hover_color: #011949;
+$contact_btn_hover_icon: #011949;
+$contact_btn_hover_bg: #e5e300;
 
 $contact_google_btn_color: #fff;
 $contact_google_btn_icon: #fff;
-$contact_google_btn_bg: #333;
-$contact_google_hover_btn_color: #333;
-$contact_google_hover_btn_icon: #333;
-$contact_google_hover_btn_bg: #fff;
+$contact_google_btn_bg: transparent;
+$contact_google_hover_btn_color: #011949;
+$contact_google_hover_btn_icon: #011949;
+$contact_google_hover_btn_bg: #e5e300;
 
 
 // houseInfo
