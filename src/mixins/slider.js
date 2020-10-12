@@ -2,41 +2,12 @@ export default {
   data() {
     return {
       slideIndex: 0,
-<<<<<<< HEAD
-      slideIndex1: 0,
-      slideIndex2: 0,
-      slideIndex3: 0,
-=======
       toggleTimer: true,
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
     }
   },
 
   created() {
     setInterval(() => {
-<<<<<<< HEAD
-      if (this.isShowDialog) {
-        return
-      }
-      if (this.slideList) {
-        this.addIndex()
-      }
-      if (this.slideList1) {
-        this.addMultiIndex(1)
-      }
-
-      if (this.slideList2) {
-        this.addMultiIndex(2)
-      }
-
-      if (this.slideList3) {
-        this.addMultiIndex(3)
-      }
-
-      if (this.slideList4) {
-        this.addMultiIndex(4)
-      }
-=======
       if(this.toggleTimer) {
         if (this.slideList) {
           this.addIndex()
@@ -58,7 +29,6 @@ export default {
         }
       }
       
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
     }, 5000)
   },
   methods: {

@@ -127,19 +127,7 @@ export default {
   width: 100vw;
   display: flex !important;
   align-items: center;
-<<<<<<< HEAD
-  transition: all 0.3s;
-  // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
-
-  &.min {
-    height: 70px;
-    .logo {
-      width: 250px;
-    }
-  }
-=======
  // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
 }
 
 .nav-container {
@@ -252,12 +240,8 @@ export default {
     // }
 
     .title {
-<<<<<<< HEAD
-      font-size: 24px;
-=======
       font-size: 16px !important;
       font-weight: bold;
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
       position: relative;
       z-index: 3;
       > span {
@@ -356,15 +340,8 @@ export default {
 
   .logo {
     width: $logo_phone_width;
-<<<<<<< HEAD
-    left: size-m(20);
-    top: 50%;
-  transform: translate(0, -40%);
-    // left: 45px;
-=======
     left: 15px;
     display: none;
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
   }
 
   .nav {
@@ -375,12 +352,6 @@ export default {
   .menu {
     display: block;
     position: absolute;
-<<<<<<< HEAD
-    z-index: 3;
-    top: 15px;
-    right: 15px;
-    font-size: 30px;
-=======
     top: 15px;
     right: 15px;
     width: sizem(50);
@@ -388,7 +359,6 @@ export default {
     padding-top: sizem(8);
     background-color: #8e8a74;
     z-index: 112;
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
 
     svg {
       width: sizem(35);
@@ -397,17 +367,6 @@ export default {
     }
   }
 
-<<<<<<< HEAD
-  .close {
-    display: block;
-    position: absolute;
-    z-index: 3;
-    top: 15px;
-    right: 15px;
-    width: 30px;
-    img {
-      width: 100%;
-=======
   .navlist {
     position: absolute;
     z-index: 111;
@@ -450,7 +409,6 @@ export default {
       span {
         line-height: 16px;
       }
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
     }
   }
 

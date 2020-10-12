@@ -5,11 +5,17 @@
     <div class="info">{{phone}}</div>
     <div
       class="cta"
-      @click="redirectToPhoneThanks"
+      @click="redirectToPhoneThanks" 
     >撥打電話</div>
   </div>
 </template>
-
+<style lang="scss" scoped>
+.cta{display: none;}
+/* 手機尺寸 */
+@media only screen and (max-width: 767px) {
+.cta{display: block;}
+}
+ </style>
 <script>
 export default {
   name: 'CallDialog',

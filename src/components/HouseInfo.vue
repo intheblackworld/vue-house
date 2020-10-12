@@ -118,14 +118,14 @@ export default {
   margin-bottom: 30px;
   margin-right: 160px;
   width: 260px;
-  height: 30px;
+  //height: 30px;
   line-height: 1.4;
-  border-left: 4px solid $house_border_color;
+  //border-left: 4px solid $house_border_color;
   padding-left: 10px;
   display: flex;
   align-items: center;
-  white-space: nowrap;
-  // &::before{content: "";width: 4px;height: 1.4em;background:$house_border_color;margin: -1px 10px 0 0;position: relative;}
+  white-space: nowrap;position: relative;
+  &::before{content: "";width: 4px;height: 1.4em;background:$house_border_color;margin: -1px 10px 0 0;position: absolute;left: 0;top: 0;}
   &:nth-of-type(even) {
     //  margin-right: 0;
   }
@@ -140,9 +140,9 @@ export default {
   }
 
   &:nth-child(2) {
-    border-top: 0px solid #ccc;
+  // border-top: 0px solid #ccc;
     .label {
-      display: none;
+   //   display: none;
     }
   }
   .desc {
@@ -151,6 +151,8 @@ export default {
     color: $house_desc_color;
     font-family: $family3;
     font-weight: bold;
+    //width: 3em;overflow: hidden;
+    white-space: pre-wrap;
   }
 }
 
@@ -158,7 +160,7 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .content {
-    height: 20em;
+    height: auto;
     width: 100%;
     margin-bottom: 0;
     font-size: 15px;
@@ -172,7 +174,7 @@ export default {
 
   .item {
     align-items: flex-start;
-    margin: 0;
+    margin: 0 0 1.5em;
     width: 100%;
     // margin-bottom: 20px;
     //  margin-right: 0;
@@ -184,6 +186,7 @@ export default {
 
   .info {
     padding: 0 5%;
+    width: 100%;
   }
   .content .flex {
     flex-direction: column;
@@ -197,7 +200,7 @@ export default {
   }
 .item {
   .desc {
-    font-size: 13px;
+ //   font-size: 13px;
   }
 }
 }

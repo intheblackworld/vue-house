@@ -3,175 +3,6 @@
     <div class="nav relative">
       <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
       <div class="menu" @click="toggleSidebar">
-<<<<<<< HEAD
-        <div class="menu_switch" :class="`${isOpen ? 'active' : ''}`" aria-label="menu">
-          <div class="menu_switch_inner">
-            <div class="menu_line">
-              <span class="menu_line_item"></span>
-              <span class="menu_line_item"></span>
-              <span class="menu_line_item"></span>
-            </div>
-            <div class="menu_svg max">
-              <svg
-                class="menu_circle"
-                x="0px"
-                y="0px"
-                width="30px"
-                height="30px"
-                viewBox="0 0 30 30"
-              >
-                <circle
-                  class="menu_circle_path"
-                  cx="15"
-                  cy="15"
-                  r="13.5"
-                  stroke-width="3"
-                  fill="none"
-                />
-              </svg>
-            </div>
-            <div class="menu_svg min">
-              <svg
-                class="menu_circle"
-                x="0px"
-                y="0px"
-                width="14px"
-                height="14px"
-                viewBox="0 0 14 14"
-              >
-                <circle
-                  class="menu_circle_path"
-                  cx="7"
-                  cy="7"
-                  r="6.5"
-                  stroke-width="1"
-                  fill="none"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" /> -->
-      <div class="sidenav">
-        <div class="sidenav_title">FOLLOW US</div>
-        <div class="sidenav_line"></div>
-        <div class="social">
-          <a
-            class="social_item"
-            data-mct-method="facebook"
-            :href="info.fbLink"
-            target="_blank"
-            title="敦南好好facebook"
-            rel="noopener noreferrer"
-          >
-            <img src="~@/assets/img/icon-facebook.png" alt="敦南好好facebook" />
-          </a>
-          <a
-            class="social_item"
-            data-mct-method="messenger"
-            :href="info.fbMessage"
-            target="_blank"
-            title="敦南好好messenger"
-            rel="noopener noreferrer"
-          >
-            <img src="~@/assets/img/icon-messenger.png" alt="敦南好好messenger" />
-          </a>
-          <a
-            class="social_item"
-            data-mct-method="googlemap"
-            :href="info.googleLink"
-            target="_blank"
-            title="敦南好好map"
-            rel="noopener noreferrer"
-          >
-            <img src="~@/assets/img/icon-map.png" alt="敦南好好map" />
-          </a>
-        </div>
-
-        <div
-          v-scroll-to="{ element: `#contact` }"
-          class="reservation js-reservation-anchor btn-gold reverse"
-          title="敦南好好 預約賞屋"
-        >
-          <span></span>
-          <span class="btn-txt">預約賞屋</span>
-        </div>
-      </div>
-      <div class="menupop menupop-menu" :class="`${isOpen ? 'on' : ''}`">
-        <div class="cloud cloud-top"></div>
-        <div class="menupop_inner">
-          <div class="menu">
-            <ul class="menu_list">
-              <li
-                class="menu_item"
-                v-for="(item, i) in list"
-                :key="`menu_item-${i}`"
-                v-scroll-to="{ element: `#${item.section}`, offset: offset }"
-                @click="toggleSidebar"
-              >
-                <div class="menu_link">
-                  <!-- span class="menu_count">0{{i+1}}</span -->
-                  {{item.name}}
-                </div>
-              </li>
-            </ul>
-            <a
-              href="#contact"
-              class="btn clr:primary btn-reservation btn-gold js-reservation-anchor"
-              title="敦南好好 預約賞屋"
-            >
-              <span></span>
-              <span class="btn-txt">預約賞屋</span>
-            </a>
-          </div>
-          <div class="menupop_line"></div>
-          <div class="menupop_cover">
-            <div class="menupop_banner">
-              <div class="menupop_logo">
-                <img src="~@/assets/img/contact-logo.png" alt="敦南好好" />
-              </div>
-            </div>
-            <div class="menu_social">
-              <div class="menu_social_title">FOLLOW US</div>
-              <div class="menu_social_list">
-                <a
-                  class="menu_social_item"
-                  data-mct-method="facebook"
-                  rel="noopener noreferrer"
-                  :href="info.fbLink"
-                  target="_blank"
-                  title="敦南好好facebook"
-                >
-                  <img src="~@/assets/img/icon-facebook.png" alt="敦南好好facebook" />
-                </a>
-                <a
-                  class="menu_social_item"
-                  data-mct-method="messenger"
-                  rel="noopener noreferrer"
-                  :href="info.fbMessage"
-                  target="_blank"
-                  title="敦南好好messenger"
-                >
-                  <img src="~@/assets/img/icon-messenger.png" alt="敦南好好messenger" />
-                </a>
-                <a
-                  class="menu_social_item"
-                  data-mct-method="googlemap"
-                  rel="noopener noreferrer"
-                  :href="info.googleLink"
-                  target="_blank"
-                  title="敦南好好map"
-                >
-                  <img src="~@/assets/img/icon-map.png" alt="敦南好好map" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="cloud cloud-bottom"></div>
-      </div>
-=======
         <div :class="`menu-icon ${isOpen ? 'menu-icon-active' : ''}`"></div>
         <!-- <img v-if="isOpen" src="@/projects/jh/s4/close.png" class="close" alt />
         <img v-else src="@/assets/img/menu-btn.png" alt />-->
@@ -194,7 +25,6 @@
           </span>
         </li>
       </ul>
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
     </div>
   </div>
 </template>
@@ -256,47 +86,6 @@ export default {
   height: $nav_phone_height;
 }
 
-<<<<<<< HEAD
-// .menu {
-//   display: block;
-//   position: fixed;
-//   z-index: 112;
-//   top: 10px;
-//   right: 30px;
-//   width: 100px;
-//   cursor: pointer;
-//   overflow: hidden;
-//   border-radius: 20px;
-//   &:before {
-//     content: '';
-//     width: 40%;
-//     height: 100%;
-//     display: block;
-//     background: #fff;
-//     position: absolute;
-//     transform: skewX(-20deg);
-//     left: -10%;
-//     opacity: 0;
-//     top: 0;
-//     z-index: 5;
-//     transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
-//   }
-//   &:hover:before {
-//     opacity: 1;
-//     width: 90%;
-//     left: 140%;
-//   }
-//   img {
-//     width: 100%;
-//   }
-
-//   .close {
-//     width: 40px;
-//     margin-top: 20px;
-//     margin-right: 0px;
-//   }
-// }
-=======
 .menu {
   display: block;
   position: fixed;
@@ -379,7 +168,6 @@ export default {
   top: 0;
   transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
 }
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
 
 .navlist {
   position: fixed;
@@ -405,22 +193,13 @@ export default {
     overflow: hidden;
     height: 60px;
     width: 100%;
-<<<<<<< HEAD
-    font-size: 17px;
-=======
     font-size: 24px;
     margin-top: 10px;
     display: flex;
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
     align-items: center;
     justify-content: center;
     display: none;
     background-size: cover;
-<<<<<<< HEAD
-    border-top: 1px solid rgba(250, 250, 250, 0.6);
-    border-bottom: 1px solid rgba(60, 30, 0, 0.2);
-    transition: all 0.3s;
-=======
     position: relative;
 
     // &::after {
@@ -439,7 +218,6 @@ export default {
     //   width: 80%;
     //   left: 10%;
     // }
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
 
     img,
     span {
@@ -587,15 +365,8 @@ export default {
   .menu {
     display: flex;
     position: fixed;
-<<<<<<< HEAD
-    right: 5px;
-    top: 5px;
-    width: 60px;
-    border-radius: 10px;
-=======
     right: 30px;
     top: 30px;
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
 
     img {
       width: 100%;
@@ -614,10 +385,6 @@ export default {
   .navlist {
     position: fixed;
     z-index: 111;
-<<<<<<< HEAD
-    background-image: url('./nav_bg.png');
-=======
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
     width: 0%;
     right: 0;
     top: $nav_phone_height;

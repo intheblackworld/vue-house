@@ -524,8 +524,8 @@
 }
 
 .bg-img {
-  width: size(1920);
-  height: size(900);
+  width:  100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -541,13 +541,13 @@
 
 .img-left {
   width: size(558);
-  top: size(276);
+  top: calc(50% - 14vw);
   left: 0;
 }
 
 .logo {
   width: size(897);
-  top: size(285);
+  top: calc(50% - 14vw);
   left: 0;
   right: 0;
   margin: 0 auto;

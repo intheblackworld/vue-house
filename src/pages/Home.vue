@@ -1,12 +1,5 @@
 <template>
   <div class="home no-padding-top">
-<<<<<<< HEAD
-    <div ref="gtmNoScript" />
-    <Loading :loading="load" />
-    <!-- <SideNavigation v-if="isSide" /> -->
-    <Navigation :min="isNavMin" />
-    <div id="section1">
-=======
     <Loading :loading="load" />
     <!-- <SideNavigation /> -->
     <!-- <Navigation /> -->
@@ -21,7 +14,6 @@
       id="section1"
       @init="init"
     >
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
       <Section1 />
     </vue-lazy-component>
 
@@ -54,11 +46,6 @@
       id="section6"
     >
       <Section6 />
-<<<<<<< HEAD
-    </div>
-    <ContactSection />
-    <!-- <SimpleOrder /> -->
-=======
     </vue-lazy-component>
     <vue-lazy-component
       class="section"
@@ -102,7 +89,6 @@
     >
       <ContactSection />
     </vue-lazy-component>
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
     <MobileNav />
   </div>
 </template>
@@ -122,25 +108,13 @@
 // @ is an alias to /src
 import $ from 'jquery'
 import Navigation from '@/layouts/Navigation.vue'
-<<<<<<< HEAD
-=======
 import { isMobile } from '@/utils'
 import SideNavigation from '@/layouts/SideNavigation.vue'
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 
-<<<<<<< HEAD
-import Section1 from '@/projects/yb/Section1.vue'
-import Section2 from '@/projects/yb/Section2.vue'
-import Section3 from '@/projects/yb/Section3.vue'
-import Section4 from '@/projects/yb/Section4.vue'
-import Section5 from '@/projects/yb/Section5.vue'
-import Section6 from '@/projects/yb/Section6.vue'
-// import SimpleOrder from '@/components/SimpleOrder.vue'
-=======
 import Section1 from '@/projects/ly/Section1.vue'
 // import Section2 from '@/projects/jy/Section2.vue'
 // import Section3 from '@/projects/jy/Section3.vue'
@@ -152,23 +126,10 @@ import Section1 from '@/projects/ly/Section1.vue'
 // import Section9 from '@/projects/jy/Section9.vue'
 // import Section10 from '@/projects/jy/Section10.vue'
 // import Section11 from '@/projects/jy/Section11.vue'
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
 
 export default {
   name: 'home',
   components: {
-<<<<<<< HEAD
-    Navigation,
-    Loading,
-    ContactSection,
-    MobileNav,
-    Section1,
-    Section2,
-    Section3,
-    Section4,
-    Section5,
-    Section6,
-=======
     Loading,
     // Indigator,
     Navigation,
@@ -186,21 +147,10 @@ export default {
     // Section9,
     // Section10,
     // Section11,
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
   },
 
   data() {
     return {
-<<<<<<< HEAD
-      isSide: true,
-      isNavMin: false,
-      load: true,
-    }
-  },
-  created() {
-    window.addEventListener('load', (event) => {
-      this.load = false
-=======
       isMobile,
       isSide: false,
       load: true,
@@ -242,64 +192,18 @@ export default {
           .on('load', imageLoaded)
           .attr('src', $(img).attr('src'))
       })
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
     })
 
     // window.location = "https://ywh.nhc888.com.tw/"
   },
-<<<<<<< HEAD
-
-  mounted() {
-    window.addEventListener('scroll', this.onScroll, false)
-=======
   mounted() {
     // window.addEventListener('scroll', this.onScroll, false)
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
     // this.action = this.$refs.fullPage.api
     // if (this.isMobile) {
     //   this.$refs.fullPage.api.setResponsive(true)
     // }
   },
   methods: {
-<<<<<<< HEAD
-    onDone() {
-      console.log('done')
-    },
-
-    showCallDialog() {
-      // if (!this.isMobile) return
-      this.isShowCallDialog = true
-    },
-
-    onScroll() {
-      // // 获取所有锚点元素
-      // const navContents = document.querySelectorAll('.section')
-      // // 所有锚点元素的 offsetTop
-      // const offsetTopArr = []
-      // navContents.forEach(item => {
-      //   offsetTopArr.push(item.offsetTop)
-      // })
-      // 获取当前文档流的 scrollTop
-      const scrollTop =
-        document.documentElement.scrollTop || document.body.scrollTop
-      // 定义当前点亮的导航下标
-      // let navIndex = 0
-      if (scrollTop > 200) {
-        this.isNavMin = true
-      } else {
-        this.isNavMin = false
-      }
-      // for (let n = 0; n < offsetTopArr.length; n++) {
-      //   // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
-      //   // 那么此时导航索引就应该是n了
-      //   if (scrollTop >= offsetTopArr[n] - 100) {
-      //     navIndex = n
-      //   }
-      // }
-      // console.log(navIndex)
-      // this.viewIndex = navIndex + 1
-    },
-=======
     init() {},
     // onScroll() {
     //   // 获取所有锚点元素
@@ -323,7 +227,6 @@ export default {
     //   }
     //   this.viewIndex = navIndex + 1
     // },
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
 
     // onLeave(origin, destination, direction) {
     //   if (!this.isMobile) {

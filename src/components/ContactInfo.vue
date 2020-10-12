@@ -1,9 +1,5 @@
 <template>
   <div>
-<<<<<<< HEAD
-    <div class="contact-info" id="contact-info">
-      <!-- <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" /> -->
-=======
     <div
       class="contact-info"
       data-aos="fade"
@@ -16,41 +12,21 @@
         data-aos="fade-down"
         data-aos-delay="0"
       />
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
       <div class="info">
         <div
           class="btn flex-c"
           @click="showCallDialog"
-<<<<<<< HEAD
-        >
-          <span class="flex-c">
-            <font-awesome-icon icon="phone" />
-            {{info.phone}}
-=======
           data-aos="fade-down"
           data-aos-delay="100"
         >
           <span class="flex-c">
             <font-awesome-icon icon="phone" />
             <span>{{info.phone}}</span>
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
           </span>
         </div>
         <div
           class="btn flex-c"
           @click="showMessengerDialog"
-<<<<<<< HEAD
-        >
-          <span class="flex-c">
-            <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB 諮詢
-          </span>
-        </div>
-        <!-- <a class="btn flex-c" :href="info.fbMessage" target="_blank" v-else>
-        <span class="flex-c">
-          <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB 諮詢
-        </span>
-      </a> -->
-=======
           data-aos="fade-down"
           data-aos-delay="200"
         >
@@ -58,43 +34,19 @@
             <font-awesome-icon :icon="['fab', 'facebook-messenger']" /><span>FB 諮詢</span>
           </span>
         </div>
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
         <a
           class="btn flex-c"
           :href="info.fbLink"
           target="_blank"
-<<<<<<< HEAD
-        >
-          <span class="flex-c">
-            <font-awesome-icon :icon="['fab', 'facebook-f']" />前往粉絲專頁
-=======
           data-aos="fade-down"
           data-aos-delay="300"
         >
           <span class="flex-c">
             <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
           </span>
         </a>
         <div
           class="address flex-c"
-<<<<<<< HEAD
-          v-html="info.address"
-        ></div>
-        <div
-          class="google-btn flex-c"
-          @click="showMapDialog"
-        >
-          <span class="flex-c">
-            <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
-          </span>
-        </div>
-        <!-- <a class="google-btn flex-c" :href="info.googleLink" target="_blank" v-else>
-        <span class="flex-c">
-          <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
-        </span>
-      </a> -->
-=======
           data-aos="fade-down"
           data-aos-delay="400"
         >{{info.address}}</div>
@@ -108,7 +60,6 @@
             <font-awesome-icon icon="map-marker-alt" /><span>導航 Google 地圖</span>
           </span>
         </div>
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
       </div>
     </div>
     <el-dialog
@@ -188,33 +139,6 @@ export default {
 @import '@/assets/style/variableDefault.scss';
 
 .contact-info {
-<<<<<<< HEAD
- // background: $contact_bg;
-  // background-image: url('../assets/img/contact_bg.jpg');
-  background-size: cover;
- // border-top: 1px solid #4446;
-  // background-position: 50% 100%;
-  box-shadow: $contact_shadow;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  // justify-content: space-between;
-  // transform: translateY(14%);
-  position: relative;
-  z-index: 3;
-  width: 1200px;
-  height: 360px;
-  padding-top: 50px;
-
-  margin: 50px auto 0 auto;
-  // padding: 60px 0 50px;
-}
-
-.logo {
-  width: auto;
-  height: 45%;
-  margin: 40px auto 40px;
-=======
   background: $contact_bg;
   // background-image: url('../assets/img/contact_bg.jpg');/
   background-size: cover;
@@ -240,7 +164,6 @@ export default {
   height: auto;
   // height:;
   margin: 0 auto 20px;
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
 }
 .info {
   width: 880px;
@@ -257,7 +180,7 @@ export default {
   margin-bottom: 20px;
   cursor: pointer;
   text-decoration: none;
-  border-radius: 60px / 60px;
+  //border-radius: 60px / 60px;
   color: $contact_btn_color;
   background: $contact_btn_bg;
   border: $contact_btn_border;
@@ -311,22 +234,9 @@ export default {
   width: 600px;
   height: 60px;
   background: #fff;
-<<<<<<< HEAD
-  box-shadow: inset 0 0 0 1px #d70032;
-  border-top-left-radius: 60px;
-  border-bottom-left-radius: 60px;
-  color: #444;
-
-  &::v-deep span {
-    color: #c00;
-    font-size: 1.1em;
-    font-weight: bold;
-  }
-=======
   color: #040000;
   font-weight: bold;
   //box-shadow: $contact_btn_border;
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
 }
 .google-btn {
   width: 280px;
@@ -334,17 +244,12 @@ export default {
   font-size: 16px;
   cursor: pointer;
   text-decoration: none;
-  border-top-right-radius: 60px;
-  border-bottom-right-radius: 60px;
+ // border-top-right-radius: 60px;
+  //border-bottom-right-radius: 60px;
   color: $contact_google_btn_color;
   background: $contact_google_btn_bg;
-<<<<<<< HEAD
-  // background-image: url("../assets/img/contact_gold_button.png");
-  border: $contact_btn_border;
-=======
   background-position: center !important;
-  box-shadow: $contact_btn_border;
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
+  border: $contact_btn_border;
   transition: all 0.5s;
 
   svg {
@@ -418,12 +323,7 @@ export default {
     width: 100%;
     justify-content: center;
     text-align: center;
-<<<<<<< HEAD
-    //  margin-bottom: 40px;
-    margin-bottom: -12px;
-=======
     //margin-bottom: 40px;
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
 
     > * {
       margin-bottom: 12px;
@@ -445,28 +345,14 @@ export default {
     width: 100%;
   }
   .google-btn {
-    border-top-right-radius: 0px;
+  /* border-top-right-radius: 0px;
     border-top-left-radius: 0px;
     border-bottom-right-radius: 30px;
-    border-bottom-left-radius: 30px;
+    border-bottom-left-radius: 30px;*/
   }
   .address {
-<<<<<<< HEAD
-    margin-bottom: 0;
-    text-align: left;
-    // border: 1px solid #666;
-    border-bottom: none;
-    border-top-right-radius: 30px;
-    border-top-left-radius: 30px;
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-  }
-  .btn svg {
-    position: absolute;
-    margin: 0 0 0 -70px;
-=======
-    width: 280px;
-    padding: 0 1em;
+   // width: 280px;
+    //padding: 0 1em;
     text-align: justify;
   }
 
@@ -478,7 +364,6 @@ export default {
 @media only screen and (max-width: 321px) {
   .address {
     font-size: 14px;
->>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
   }
 }
 </style>

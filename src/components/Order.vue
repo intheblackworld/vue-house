@@ -369,7 +369,7 @@ export default {
     padding-top: 20px;
     padding-bottom: 8px;
     font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.7;
     letter-spacing: 20px;
     font-size: calc(100vw * 36 / 1920);
     text-align: center;
@@ -381,8 +381,8 @@ export default {
     font-size: 20px;
     text-align: center;
     color: $order_subtitle_color;
-    margin-bottom: 40px;
-    padding-bottom: 18px;
+    margin-bottom: 0px;
+    padding-bottom: 8px;
   }
 
   .order {
