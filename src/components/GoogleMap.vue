@@ -1,10 +1,10 @@
 <template>
-  <div class="google-map">
+  <div class="google-map" id="google-map">
     <iframe
       title="googlemap"
       :src="googleSrc"
       width="100%"
-      height="455"
+      height="555"
       frameborder="0"
       style="border: 0"
       allowfullscreen
@@ -29,7 +29,10 @@ export default {
 .google-map {
   display: flex;
   position: relative;
-  z-index: 3;
+  iframe {
+    flex: 1;
+    order: 2;
+  }
 }
 
 @media screen and (max-width: 767px) {

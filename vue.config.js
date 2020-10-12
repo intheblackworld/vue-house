@@ -1,4 +1,4 @@
-const meta = require('./src/info/meta')
+const webpack = require('webpack')
 const path = require('path')
 
 function resolve(dir) {
@@ -31,6 +31,7 @@ module.exports = {
     config.module.rules.delete('svg') // 重点:删除默认配置中处理svg,
     // const svgRule = config.module.rule('svg')
     // svgRule.uses.clear()
+
     config.module
       .rule('@yzfe/vue-svgicon-loader')
       .test(/\.svg$/)
@@ -48,16 +49,24 @@ module.exports = {
         //   ]
         // },
       })
-    config.plugin('html').tap(args => {
-      args[0].title = meta.info.title
-      args[0].metaTitle = meta.info.title
-      args[0].ogMetaTitle = meta.info.title
-      args[0].metaDescription = meta.info.description
-      args[0].ogMetaDescription = meta.info.description
-      args[0].metaKeywords = meta.info.keywords
-      args[0].ogMetaType = 'website'
-
-      return args
-    })
-  }
+    config.plugin('preload')
+      .tap(options => {
+        // for import() lazy routes use initial https://github.com/vuejs/preload-webpack-plugin
+        options.include = 'initial'
+        // or split chunks at the bottom
+        options.include = ['chunk-elementUI']
+        return options
+      })
+    // remove the prefetch plugin
+    config.plugins.delete('prefetch')
+  },
+  configureWebpack: {
+    plugins: [
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'windows.jQuery': 'jquery',
+      }),
+    ],
+  },
 }

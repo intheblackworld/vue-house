@@ -42,6 +42,7 @@
 
 .slide {
   width: calc(100vw * (1258 / 1920));
+  margin-bottom: 40px;
 }
 
 .text {

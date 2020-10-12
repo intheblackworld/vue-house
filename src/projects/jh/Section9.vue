@@ -61,7 +61,12 @@
     img {
       width: 100%;
       margin: 10px 0;
+      border: 1px solid #e6b048 !important;
       cursor: pointer;
+      transition: all 0.3s;
+      &:hover {
+        border-color: #fff !important;
+      }
     }
 
     .title {
@@ -139,6 +144,10 @@
     padding: 0 0 40px;
   }
 
+  .title-block {
+    width: 100vw;
+  }
+
   .fullscreen {
     height: auto !important;
   }
@@ -172,16 +181,18 @@
   }
 
   .slide {
+    width: 100vw !important;
     .name {
       position: absolute;
-      left: 0;
-      right: 0;
+      right: 5vw;
       margin: 0 auto;
-      top: 10px;
+      bottom: 0;
       font-size: 17px;
       color: #fff;
-      text-shadow: 0 1px 2px #000;
       letter-spacing: 2px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 5px 15px;
+      border-top-left-radius: 15px;
     }
 
     .slide-img {

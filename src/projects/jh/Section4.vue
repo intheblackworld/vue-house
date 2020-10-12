@@ -41,7 +41,12 @@
   justify-content: space-between;
   img {
     width: 700px;
+    border: 1px solid #e6b048 !important;
     cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      border-color: #fff !important;
+    }
   }
 }
 
@@ -55,7 +60,8 @@
   top: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.8);
-  z-index: 1;
+  z-index: 150;
+  overflow: scroll;
   &.show {
     display: flex;
     align-items: center;
@@ -64,15 +70,15 @@
 
   .close {
     cursor: pointer;
-    position: absolute;
-    top: -70px;
-    right: -70px;
-    z-index: 2;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 152;
   }
 }
 
 .map-detail {
-  width: calc(100vw * (1022 / 1920));
+  width: calc(100vw * (1920 / 1920));
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -103,7 +109,7 @@
   }
 
   .map-detail {
-    width: calc(100vw * (800 / 1024));
+    width: calc(100vw * (1024 / 1024));
   }
 }
 
@@ -140,18 +146,17 @@
 
   .map-detail {
     width: auto;
-    height: 80vh;
+    height: 100vh;
   }
 
   .dialog {
-    z-index: 10;
+    z-index: 120;
     .close {
       cursor: pointer;
-      position: absolute;
-      width: 40px;
-      top: 0px;
-      right: -70px;
-      z-index: 2;
+      position: fixed;
+      right: 20px;
+      top: 20px;
+      z-index: 152;
     }
   }
 }
@@ -169,8 +174,12 @@ export default {
       isMobile,
       isDialogShow: false,
       mapSrc: '',
-      mapSrc1: isMobile ? require('./s4/mo_map1.png') : require('./s4/maptxt1.png'),
-      mapSrc2: isMobile ? require('./s4/mo_map2.png') : require('./s4/maptxt2.png'),
+      mapSrc1: isMobile
+        ? require('./s4/mo_map1.png')
+        : require('./s4/maptxt1.png'),
+      mapSrc2: isMobile
+        ? require('./s4/mo_map2.png')
+        : require('./s4/maptxt2.png'),
     }
   },
 

@@ -9,13 +9,15 @@ import '@/assets/style/global.scss'
 /* 全局配置 https://blog.csdn.net/FireBird_one/article/details/80295229 */
 import config from './lib/config.js'
 
-import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import VueScrollTo from 'vue-scrollto' // scroll 錨點
 import VueLazyload from 'vue-lazyload' // 圖片 lazy load
-import VueScrollReveal from 'vue-scroll-reveal'
-import VuePhotoZoomPro from 'vue-photo-zoom-pro'
-import VueTouch from 'vue-touch'
+import VueFullPage from 'vue-fullpage.js'
+import VueLazyComponent from '@xunlei/vue-lazy-component'
+import VueRellax from 'vue-rellax'
+import Vue2TouchEvents from 'vue2-touch-events'
+
+
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
@@ -35,6 +37,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueSvgIcon from 'vue-svgicon'
+import './plugins/element.js'
 
 // AOS.init()
 
@@ -46,35 +49,31 @@ library.add(faFacebookMessenger)
 library.add(faFacebookF)
 library.add(faMapMarkerAlt)
 
-Vue.use(VuePhotoZoomPro)
-
-VueTouch.config.swipe = {
-  direction: 'horizontal'
-}
-Vue.use(VueTouch)
-
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.use(VueSvgIcon, {
   tagName: 'icon'
 })
 
-Vue.use(config)
+Vue.use(VueFullPage)
 
-Vue.use(ElementUI)
+Vue.use(config)
 Vue.use(VueScrollTo)
 Vue.use(VueLazyload)
-Vue.use(VueScrollReveal)
+Vue.use(VueLazyComponent)
+Vue.use(VueRellax)
+Vue.use(Vue2TouchEvents)
+
 
 new Vue({
   router,
   store,
   methods: {
-    recaptcha() {
-      this.$recaptchaLoaded('homepage').then((token) => {
-        console.log(token) // Will print the token
-      })
-    }
+    // recaptcha() {
+    //   this.$recaptchaLoaded('homepage').then((token) => {
+    //     console.log(token) // Will print the token
+    //   })
+    // }
   },
   created () {
     AOS.init()

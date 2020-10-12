@@ -63,7 +63,7 @@ export default {
   computed: {
     offset() {
       if (this.isMobile) {
-        return 0
+        return -100
       }
 
       if (this.isTablet) {
@@ -95,6 +95,7 @@ export default {
   width: 100%;
   height: 63px;
   background: $mobile_nav_background;
+
   display: flex;
   position: fixed;
   bottom: 0;

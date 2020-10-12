@@ -127,6 +127,7 @@ export default {
   width: 100vw;
   display: flex !important;
   align-items: center;
+<<<<<<< HEAD
   transition: all 0.3s;
   // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
 
@@ -136,6 +137,9 @@ export default {
       width: 250px;
     }
   }
+=======
+ // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+>>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
 }
 
 .nav-container {
@@ -248,7 +252,12 @@ export default {
     // }
 
     .title {
+<<<<<<< HEAD
       font-size: 24px;
+=======
+      font-size: 16px !important;
+      font-weight: bold;
+>>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
       position: relative;
       z-index: 3;
       > span {
@@ -325,6 +334,7 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .navigation {
+    background-color: transparent !important;
     height: $nav_phone_height;
   //  background-color: #fff;
     height: 70px;
@@ -346,10 +356,15 @@ export default {
 
   .logo {
     width: $logo_phone_width;
+<<<<<<< HEAD
     left: size-m(20);
     top: 50%;
   transform: translate(0, -40%);
     // left: 45px;
+=======
+    left: 15px;
+    display: none;
+>>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
   }
 
   .nav {
@@ -360,16 +375,29 @@ export default {
   .menu {
     display: block;
     position: absolute;
+<<<<<<< HEAD
     z-index: 3;
     top: 15px;
     right: 15px;
     font-size: 30px;
+=======
+    top: 15px;
+    right: 15px;
+    width: sizem(50);
+    height: sizem(50);
+    padding-top: sizem(8);
+    background-color: #8e8a74;
+    z-index: 112;
+>>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
 
     svg {
+      width: sizem(35);
+      height: sizem(35);
       color: $nav_btn_color;
     }
   }
 
+<<<<<<< HEAD
   .close {
     display: block;
     position: absolute;
@@ -379,6 +407,50 @@ export default {
     width: 30px;
     img {
       width: 100%;
+=======
+  .navlist {
+    position: absolute;
+    z-index: 111;
+    background: transparent;
+    background-size: cover;
+    width: 0%;
+    right: 0;
+    top: $nav_phone_height;
+    height: calc(100vh - #{$nav_phone_height});
+    text-align: center;
+    transition: all 0.3s ease-in;
+    display: block;
+    transform: translateX(40%);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    li {
+      width: 100vw;
+      height: 70px;
+      margin-bottom:0;
+    }
+
+    .link {
+      height: 50px;
+      width: 100%;
+      font-size: 17px;
+      margin-top:0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      display: none;
+
+      img,
+      span {
+        display: block;
+      }
+      span {
+        line-height: 16px;
+      }
+>>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
     }
   }
 

@@ -31,7 +31,11 @@ let initialized = false
 let options = {
   offset: 50,
   delay: config.delay,
+<<<<<<< HEAD
   easing: 'ease',
+=======
+  easing: config.easing || 'ease',
+>>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
   duration: config.duration,
   disable: false,
   once: config.once,
@@ -96,8 +100,13 @@ const refreshHard = function refreshHard() {
  * Disable AOS
  * Remove all attributes to reset applied styles
  */
+<<<<<<< HEAD
 const disable = function () {
   $aosElements.forEach(function (el, i) {
+=======
+const disable = function() {
+  $aosElements.forEach(function(el, i) {
+>>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
     el.node.removeAttribute('data-aos')
     el.node.removeAttribute('data-aos-easing')
     el.node.removeAttribute('data-aos-duration')
@@ -185,7 +194,11 @@ const init = function init(settings) {
   /**
    * Handle initializing
    */
+<<<<<<< HEAD
   window.addEventListener(options.startEvent, function () {
+=======
+  window.addEventListener(options.startEvent, function() {
+>>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
     refresh(true)
   })
 

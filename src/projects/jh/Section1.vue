@@ -1,6 +1,10 @@
 <template>
   <div class="section1">
     <div class="bg fullscreen">
+      <!-- <div :class="`music-btn ${isPlay ? 'is-play' : ''}`" @click="playMusic"></div>
+      <audio controls style="display: none" ref="audio" loop="loop">
+        <source src="./music.mp3" type="audio/mpeg" />
+      </audio>-->
       <div class="main">
         <div class="gear">
           <div class="l">
@@ -112,6 +116,34 @@
   opacity: 0;
 }
 
+.music-btn {
+  width: 100px;
+  height: 100px;
+  background-image: url('./s1/music-btn.png');
+  background-size: cover;
+  right: 30px;
+  top: 100px;
+  cursor: pointer;
+  position: fixed;
+  z-index: 3;
+
+  &.is-play {
+    animation: jump 0.5s linear alternate infinite;
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  }
+  40% {
+    transform: translate3d(0, 10%, 0) scale3d(0.95, 1.05, 1);
+  }
+  100% {
+    transform: translate3d(0, 5%, 0) scale3d(1.05, 0.95, 1);
+  }
+}
+
 @keyframes turn {
   from {
     transform: rotate(0deg);
@@ -166,6 +198,15 @@
   .main > img.clock {
     width: 200%;
   }
+
+  .music-btn {
+    width: 120px;
+    height: 120px;
+    background-image: url('./s1/music-btn.png');
+    background-size: cover;
+    right: -10px;
+    top: 80px;
+  }
 }
 </style>
 
@@ -182,10 +223,21 @@ export default {
       isMobile,
       dog1: true,
       dog2: false,
+      isPlay: false,
     }
   },
 
-  methods: {},
+  methods: {
+    playMusic() {
+      if (this.isPlay) {
+        this.$refs.audio.pause()
+        this.isPlay = false
+      } else {
+        this.$refs.audio.play()
+        this.isPlay = true
+      }
+    },
+  },
 
   created() {
     setInterval(() => {

@@ -1,5 +1,9 @@
 <template>
   <div class="thanks">
+<<<<<<< HEAD
+=======
+    <img src="https://bcp.crwdcntrl.net/5/c=13578/b=78113418" width="1" height="1"/>
+>>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
     <a href="/">
       <img src="~@/assets/img/thank-img.png" alt="" class="img">
       <img src="~@/assets/img/thank-img-hover.png" alt="" class="img-hover">
@@ -51,11 +55,9 @@
 </style>
 
 <script>
-import gtm from '@/mixins/gtm.js'
 
 export default {
   name: 'formThanks',
-  mixins: [gtm],
   components: {},
 
   methods: {},

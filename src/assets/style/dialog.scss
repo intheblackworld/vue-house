@@ -1,17 +1,25 @@
 @import './variableColor.scss';
 
-.el-dialog__title {
-  font-size: 32px !important;
+.el-dialog{
+    height:auto !important;margin-top: 60px !important;align-self:center;
+    &__wrapper{
+      height: 100%;
+      display: flex;
+    }
+    &__title {
+      font-size: 32px !important;
+      line-height:2 !important;
+    }
 }
 .policy-dialog-content {
   width: 980px;
   margin: 0 auto;
   background: #fff;
   padding: 40px;
-  overflow-y: scroll;
+  //overflow-y: scroll;
   .title {
     font-size: 24px;
-    font-family: 'Noto Serif TC', serif;
+    font-family: 'Noto Sans TC', serif;
     font-weight: bold;
     color: rgba(0, 0, 0, 0.8);
     line-height: 1.5;
@@ -64,9 +72,9 @@
 
 .dialog-content {
   width: auto;
-  height: 325px;
-  border-radius: 5px;
-  margin: -30px 0;
+  height: 295px;
+  //border-radius: 5px;
+  //margin: -30px 0;
   background-color: $mobile_dialog_bg;
 
   svg {

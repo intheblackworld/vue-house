@@ -1,47 +1,45 @@
 <template>
   <div class="section7">
     <div class="bg fullscreen">
-      <div class="relative">
-        <div :class="`slide relative fullscreen`">
-          <div class="title-block">
-            <h3 class="title">究好的構築</h3>
-            <div class="subtitle">Zhuhe Architecture</div>
+      <div :class="`slide relative fullscreen`">
+        <div class="title-block">
+          <h3 class="title">究好的構築</h3>
+          <div class="subtitle">Zhuhe Architecture</div>
+        </div>
+        <div class="menu-group" v-if="!isMobile">
+          <div :class="`menu ${slideIndex === 0 ? 'active': ''}`" @click="slideIndex = 0">
+            <h3 class="menu-title">築禾初衷</h3>
+            <div class="menu-desc">ZHUHE Theory</div>
           </div>
-          <div class="menu-group" v-if="!isMobile">
-            <div :class="`menu ${slideIndex === 0 ? 'active': ''}`" @click="slideIndex = 0">
-              <h3 class="menu-title">築禾初衷</h3>
-              <div class="menu-desc">ZHUHE Theory</div>
-            </div>
-            <div :class="`menu ${slideIndex === 1 ? 'active': ''}`" @click="slideIndex = 1">
-              <h3 class="menu-title">品牌基石</h3>
-              <div class="menu-desc">The Brand</div>
-            </div>
-            <div :class="`menu ${slideIndex === 2 ? 'active': ''}`" @click="slideIndex = 2">
-              <h3 class="menu-title">理念觸發</h3>
-              <div class="menu-desc">The Concept</div>
-            </div>
+          <div :class="`menu ${slideIndex === 1 ? 'active': ''}`" @click="slideIndex = 1">
+            <h3 class="menu-title">品牌基石</h3>
+            <div class="menu-desc">The Brand</div>
           </div>
-          <img
-            v-for="(slide, index) in slideList"
-            :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
-            :key="`s7-slide-${index}`"
-            :src="isMobile ? slide.srcM : slide.src"
-            alt
-          />
-          <div class="btn-group flex-jb flex-ac flex-mobile-jb" v-if="isMobile">
-            <img @click="decIndex" src="./arrow-left.png" alt />
-            <img @click="addIndex" src="./arrow-right.png" alt />
+          <div :class="`menu ${slideIndex === 2 ? 'active': ''}`" @click="slideIndex = 2">
+            <h3 class="menu-title">理念觸發</h3>
+            <div class="menu-desc">The Concept</div>
           </div>
         </div>
-        <div class="text">
-          <div class="title">
-            <h3>{{slideList[slideIndex].title}}</h3>
-            <span>{{slideList[slideIndex].smalltitle}}</span>
-          </div>
-          <div class="subtitle1">{{slideList[slideIndex].subtitle1}}</div>
-          <div class="subtitle2">{{slideList[slideIndex].subtitle2}}</div>
-          <div class="desc" v-html="slideList[slideIndex].desc"></div>
+        <img
+          v-for="(slide, index) in slideList"
+          :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
+          :key="`s7-slide-${index}`"
+          :src="isMobile ? slide.srcM : slide.src"
+          alt
+        />
+        <div class="btn-group flex-jb flex-ac flex-mobile-jb" v-if="isMobile">
+          <img @click="decIndex" src="./arrow-left.png" alt />
+          <img @click="addIndex" src="./arrow-right.png" alt />
         </div>
+      </div>
+      <div class="text">
+        <div class="title">
+          <h3>{{slideList[slideIndex].title}}</h3>
+          <span>{{slideList[slideIndex].smalltitle}}</span>
+        </div>
+        <div class="subtitle1">{{slideList[slideIndex].subtitle1}}</div>
+        <div class="subtitle2">{{slideList[slideIndex].subtitle2}}</div>
+        <div class="desc" v-html="slideList[slideIndex].desc"></div>
       </div>
     </div>
   </div>
@@ -173,8 +171,13 @@
   }
 }
 
+.fullscreen {
+  min-height: 900px;
+}
+
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
+    min-height: 800px;
     height: auto;
   }
 
@@ -192,6 +195,7 @@
   }
 
   .fullscreen {
+    min-height: auto;
     height: 100vh;
   }
 
@@ -202,7 +206,8 @@
 }
 
 @media screen and (max-width: 767px) {
-  .bg {
+  .fullscreen {
+    min-height: auto;
   }
 
   .title-block {

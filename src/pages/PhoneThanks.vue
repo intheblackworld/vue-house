@@ -50,11 +50,9 @@
 </style>
 
 <script>
-import gtm from '@/mixins/gtm.js'
 
 export default {
   name: 'phoneThanks',
-  mixins: [gtm],
   components: {},
 
   methods: {},

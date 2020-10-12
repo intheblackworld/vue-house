@@ -1,48 +1,11 @@
 <template>
-  <div class="house-info">
+  <div class="house-info" id="house-info">
     <div class="content">
-      <div class="flex">
-        <div class="img relative">
-          <div class="subtitle">聯碩地產行銷團隊</div>
-          <a
-            href="http://unigiants.com.tw/"
-            target="_blank"
-          >
-            <img
-              src="../projects/yb/bottom/banner1.png"
-              alt=""
-              class="banner"
-            >
-          </a>
-          <a
-            href="https://www.facebook.com/unigiant/"
-            target="_blank"
-          >
-            <img
-              src="../projects/yb/bottom/banner2.png"
-              alt=""
-              class="banner"
-            >
-          </a>
-          <img
-            src="../projects/yb/bottom/logo.png"
-            alt=""
-            class="logo"
-          >
-        </div>
-        <div class="info">
-          <div class="title">建案資訊</div>
-          <div
-            class="item"
-            :key="infos[0]"
-            v-for="infos in houseInfos"
-          >
-            <h3 class="label">{{infos[0]}}</h3>
-            <p
-              class="desc"
-              v-html="infos[1]"
-            ></p>
-          </div>
+      <h3 class="title" data-aos="fade-down" data-aos-delay="0">建案資訊</h3>
+      <div class="info">
+        <div class="item" :key="infos[0]" v-for="(infos, index) in houseInfos" data-aos="fade-right" :data-aos-delay="100 + index * 100">
+          <h3 class="label">{{infos[0]}}</h3>
+          <p class="desc" v-html="infos[1]"></p>
         </div>
       </div>
     </div>
@@ -96,13 +59,14 @@ export default {
 }
 
 .title {
-  text-align: left;
-  font-size: 36px;
+  font-size: 32px;
   line-height: 36px;
-  margin: 20px 0 10px 0;
-  font-family: 'Noto Serif TC', serif;
-  font-weight: bold;
+  margin: 60px 0;
+  font-weight: 500;
   color: $house_title_color;
+  font-family: $family3;
+  font-weight: bold;
+  letter-spacing: 15px;
 }
 
 .img {
@@ -151,16 +115,17 @@ export default {
 
 .item {
   font-size: 16px;
-  margin-bottom: 0;
+  margin-bottom: 30px;
   margin-right: 160px;
-  //width: 260px;
-  height: 45px;
-  border-top: 1px solid #ccc;
-  // border-left: 4px solid $house_label_color;
-  padding-left: 0;
+  width: 260px;
+  height: 30px;
+  line-height: 1.4;
+  border-left: 4px solid $house_border_color;
+  padding-left: 10px;
   display: flex;
   align-items: center;
   white-space: nowrap;
+  // &::before{content: "";width: 4px;height: 1.4em;background:$house_border_color;margin: -1px 10px 0 0;position: relative;}
   &:nth-of-type(even) {
     //  margin-right: 0;
   }
@@ -171,6 +136,7 @@ export default {
     margin-bottom: 0;
     margin-right: 20px;
     white-space: nowrap;
+    font-family: $family3;
   }
 
   &:nth-child(2) {
@@ -182,8 +148,9 @@ export default {
   .desc {
     font-size: 15px;
     text-align: left;
-    line-height: 1.4;
     color: $house_desc_color;
+    font-family: $family3;
+    font-weight: bold;
   }
 }
 
@@ -191,17 +158,21 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .content {
+    height: 20em;
     width: 100%;
-    max-width: 100%;
-    padding: 20px 0;
+    margin-bottom: 0;
+    font-size: 15px;
+    padding-bottom: 50px;
   }
 
   .title {
-    //  font-size: 32px;
-    margin: 40px 0 24px;
+    font-size: 32px;
+    margin: 0.8em 0 0.5em 0;
   }
 
   .item {
+    align-items: flex-start;
+    margin: 0;
     width: 100%;
     // margin-bottom: 20px;
     //  margin-right: 0;
@@ -220,31 +191,9 @@ export default {
 
   .img {
     width: 100%;
-    padding: 24px;
-    font-size: size-m(23);
-  }
-
-  .subtitle {
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    text-align: left;
-    color: #f6f6f6;
-  }
-
-  .banner {
-    width: auto;
-   // height: size-m(30);
-  }
-
-  .logo {
-    height:size-m(120);
-    position: relative;
-    bottom: auto;
-    left: auto;
-    margin: 50px auto 30px;
-    display: block;
-    // margin-top: size(190);
+    flex: 1;
+    justify-content: space-around;
+    align-content: space-around;
   }
 .item {
   .desc {

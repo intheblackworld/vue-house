@@ -20,8 +20,8 @@
           <div class="subtitle">Big News</div>
         </div>
         <div class="container">
-          <div class="mask" v-if="!isMobile"></div>
-          <swiper :options="swiperOption" ref="mySwiper">
+          <!-- <div class="mask" v-if="!isMobile"></div> -->
+          <swiper :options="swiperOption" ref="mySwiper" swiper-no-swiping>
             <swiper-slide
               v-for="(slide, index) in slideList"
               :index="index"
@@ -70,18 +70,18 @@
 }
 
 .swiper-button-prev,
-  .swiper-container-rtl .swiper-button-next,
-  .swiper-button-next,
-  .swiper-container-rtl .swiper-button-prev {
-    opacity: 0;
+.swiper-button-next {
+  border: 0px none #0000 !important;
+  width: size(50);
+  height: 100%;top: 0;padding: 0 size(10);display: flex;margin: 0;
+  img{object-fit: contain;height: auto;}
+}
 
-    img {
-      width: 25px;
-    }
-  }
+.swiper-button-prev {left:0;}
+.swiper-button-next {right:0;}
 
 .container {
-  width: 90vw;
+  width: 1160px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -100,12 +100,18 @@
   }
 
   .item {
-    width: 20%;
+    // width: 20%;
     position: relative;
     cursor: pointer;
     padding: 3px;
-    border: 1px solid #dfae2e;
+    border: 1px solid #e6b048 !important;
+    overflow: hidden;
+    transition: all 0.3s;
+    &:hover {
+      border-color: #fff !important;
+    }
     background: #000;
+    z-index: 11;
 
     img {
       width: 100%;
@@ -119,7 +125,31 @@
       color: #ffffff;
       background: #000;
       line-height: 1.4;
-      height: 70px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      padding: 20px;
+    }
+
+    &::before {
+      content: '';
+      width: 40%;
+      height: 100%;
+      display: block;
+      background: #fff;
+      position: absolute;
+      transform: skewX(-20deg);
+      left: -10%;
+      opacity: 0;
+      top: 0;
+      z-index: 5;
+      transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
+    }
+
+    &:hover::before {
+      opacity: 1;
+      width: 90%;
+      left: 140%;
     }
   }
 }
@@ -215,6 +245,7 @@
   .swiper-button-next,
   .swiper-container-rtl .swiper-button-prev {
     background-image: none !important;
+    opacity: 1;
 
     img {
       width: 25px;
@@ -239,6 +270,11 @@
   .swiper-slide {
     width: 90%;
   }
+.swiper-button-prev,
+.swiper-button-next {
+  width: size-m(30);
+  padding:0 size-m(5);cursor: none;
+}
 }
 </style>
 
@@ -266,16 +302,17 @@ export default {
       isDialogShow: false,
       currentIframe: '',
       swiperOption: {
-        slidesPerView: isMobile ? 1 : 5,
-        centeredSlides: true,
+        slidesPerView: isMobile ? 1 : 3,
         spaceBetween: isTablet ? 20 : 30,
         slidesPerColumn: isMobile ? 1 : 2,
-
+        allowSlidePrev: isMobile ? true : false,
+        allowSlideNext: isMobile ? true : false,
+        // centeredSlides: true,
         // autoplay: {
         //   delay: 2500,
         //   disableOnInteraction: false,
         // },
-        loop: true,
+        loop: isMobile,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
@@ -285,48 +322,40 @@ export default {
       iframeHeight: 536,
       slideList: [
         {
-          src: require('./s11/news_0001.jpg'),
-          title: '正義北路！ 房價低北市少2成',
-          link: 'https://tw.finance.appledaily.com/daily/20131109/35424351/',
+          src: require('./s11/1.jpg'),
+          title: '築禾交響院台北1／2價入主三重核心地段豪宅',
+          link: 'https://www.chinatimes.com/realtimenews/20190906000004-260410?chdtv',
         },
         {
-          src: require('./s11/news_0003.jpg'),
-          title: '買氣熱度延燒！集美生活圈',
-          link: 'https://news.housefun.com.tw/news/article/154594192715.html',
+          src: require('./s11/2.jpg'),
+          title: '今年新北最大案公開 三重「築禾交響院」總銷168億',
+          link: 'http://home.appledaily.com.tw/article/index/20190720/38396670/',
         },
+
         {
-          src: require('./s11/news_0004.jpg'),
-          title: '天台商圈／捷運開通推波助瀾造就店頭黃金地段',
+          src: require('./s11/3.jpg'),
+          title: '築禾交響院 大三重市政核心 3361坪摩天地王',
           link:
-            'https://news.housefun.com.tw/mag/hf/4/article/17827737527.html',
+            'https://house.udn.com/house/story/5888/4028534',
         },
+
         {
-          src: require('./s11/news_0005.jpg'),
-          title: '乾式熟成&濕式熟成牛排吃到飽',
+          src: require('./s11/4.jpg'),
+          title: '直擊新北最大案！捷運+公園+市政核心　「築禾交響院」公開爆場',
           link:
-            'https://nixojov.pixnet.net/blog/post/337687421-%E3%80%90%E4%B8%89%E9%87%8D%E7%BE%8E%E9%A3%9F%E3%80%91%E5%8A%9B%E8%A1%8C%E8%B7%AF%E4%BA%8C%E6%AE%B5%E7%A2%B3%E7%83%A4%E8%9C%9C%E6%B1%81%E9%9B%9E%E6%8E%92-%E8%BB%9F%E5%AB%A9',
+            'https://house.ettoday.net/news/1524198',
         },
         {
-          src: require('./s11/news_0004.jpg'),
-          title: '天台商圈／捷運開通推波助瀾造就店頭黃金地段',
+          src: require('./s11/5.jpg'),
+          title: '築禾交響院 三重菜寮站旁 大基地新案',
           link:
-            'https://news.housefun.com.tw/mag/hf/4/article/17827737527.html',
+            'https://estate.ltn.com.tw/article/8042',
         },
         {
-          src: require('./s11/news_0005.jpg'),
-          title: '乾式熟成&濕式熟成牛排吃到飽',
+          src: require('./s11/6.jpg'),
+          title: '三重市地王「築禾交響院」！　捷運+市政+公園三核心交匯',
           link:
-            'https://nixojov.pixnet.net/blog/post/337687421-%E3%80%90%E4%B8%89%E9%87%8D%E7%BE%8E%E9%A3%9F%E3%80%91%E5%8A%9B%E8%A1%8C%E8%B7%AF%E4%BA%8C%E6%AE%B5%E7%A2%B3%E7%83%A4%E8%9C%9C%E6%B1%81%E9%9B%9E%E6%8E%92-%E8%BB%9F%E5%AB%A9',
-        },
-        {
-          src: require('./s11/news_0001.jpg'),
-          title: '正義北路！ 房價低北市少2成',
-          link: 'https://tw.finance.appledaily.com/daily/20131109/35424351/',
-        },
-        {
-          src: require('./s11/news_0003.jpg'),
-          title: '買氣熱度延燒！集美生活圈',
-          link: 'https://news.housefun.com.tw/news/article/154594192715.html',
+            'https://www.setn.com/News.aspx?NewsID=596025',
         },
       ],
     }

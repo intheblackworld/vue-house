@@ -34,24 +34,6 @@
         <img @click="goToSlide(currentIndex - 1)" src="./arrow-left.png" alt />
         <img @click="goToSlide(currentIndex + 1)" src="./arrow-right.png" alt />
       </div>
-      <!-- <div :class="`slide relative fullscreen`" v-else>
-        <div v-for="(slide, index) in slideList" :key="slide.img">
-          <img
-            src="./s3/play_btn.png"
-            alt
-            :class="`play-btn absolute-c ${slide.isPlay ? 'hide' : ''}`"
-            @click="handlePlay(index)"
-          />
-          <img :src="slide.img" :class="`slide-img ${slideIndex === index ? 'active' : ''} ${slide.isPlay ? 'hide' : ''}`" alt />
-          <video :ref="`video${index}`" class="video" @click="pauseAll">
-            <source :src="slide.video" type="video/mp4" />
-          </video>
-        </div>
-        <div class="btn-group flex-jb flex-ac flex-mobile-jb">
-          <img @click="decIndex" src="./arrow-left.png" alt />
-          <img @click="addIndex" src="./arrow-right.png" alt />
-        </div>
-      </div>-->
     </div>
   </div>
 </template>
@@ -67,6 +49,13 @@
 }
 
 .video-slide {
+  border: 1px solid #e6b048 !important;
+  cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+    border-color: #fff !important;
+  }
+  
   .play-btn {
     width: 125px;
     cursor: pointer;
@@ -77,6 +66,9 @@
     &.hide {
       display: none;
     }
+  }
+
+  .video {
   }
 
   .video-img {
@@ -200,7 +192,7 @@
     left: 0;
     right: 0;
     margin: 0 auto;
-    bottom: 45%;
+    bottom: 47%;
     z-index: 12;
 
     img {
@@ -218,7 +210,7 @@ import { Carousel3d, Slide } from 'vue-carousel-3d'
 import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section5',
+  name: 'section3',
   components: {
     Carousel3d,
     Slide,
@@ -294,7 +286,7 @@ export default {
     onAfterSlideChange(index) {
       this.currentIndex = index
       this.pauseAll()
-    }
+    },
   },
 }
 </script>

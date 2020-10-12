@@ -1,7 +1,9 @@
 <template>
   <div class="sideNav">
     <div class="nav relative">
+      <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
       <div class="menu" @click="toggleSidebar">
+<<<<<<< HEAD
         <div class="menu_switch" :class="`${isOpen ? 'active' : ''}`" aria-label="menu">
           <div class="menu_switch_inner">
             <div class="menu_line">
@@ -169,6 +171,30 @@
         </div>
         <div class="cloud cloud-bottom"></div>
       </div>
+=======
+        <div :class="`menu-icon ${isOpen ? 'menu-icon-active' : ''}`"></div>
+        <!-- <img v-if="isOpen" src="@/projects/jh/s4/close.png" class="close" alt />
+        <img v-else src="@/assets/img/menu-btn.png" alt />-->
+      </div>
+      <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
+      <ul :class="`navlist ${isOpen ? 'open': ''}`">
+        <li
+          :key="item.name"
+          v-scroll-to="{ element: `#${item.section}`, offset: isMobile ? (item.mobileOffset ? item.mobileOffset : offset) : (item.offset ? item.offset : offset) }"
+          v-for="item in list"
+          class="flex-ac"
+          @click="toggleSidebar"
+        >
+          <span class="link">
+            <img v-if="item.imgSrc" :src="item.imgSrc" alt />
+            <span>
+              <div class="title">{{item.name}}</div>
+              <span class="subTitle">{{item.subTitle}}</span>
+            </span>
+          </span>
+        </li>
+      </ul>
+>>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
     </div>
   </div>
 </template>
@@ -208,6 +234,7 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/style/variableColor.scss';
 @import '../assets/style/variableDefault.scss';
+@import '../assets/style/function.scss';
 
 .navigation {
   height: $nav_phone_height;
@@ -229,6 +256,7 @@ export default {
   height: $nav_phone_height;
 }
 
+<<<<<<< HEAD
 // .menu {
 //   display: block;
 //   position: fixed;
@@ -268,6 +296,90 @@ export default {
 //     margin-right: 0px;
 //   }
 // }
+=======
+.menu {
+  display: block;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 112;
+  top: 30px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  background-color: #707070;
+  cursor: pointer;
+
+  // img {
+  //   width: 100%;
+  // }
+
+  // .close {
+  //   width: 40px;
+  //   margin-top: 20px;
+  //   margin-right: 0px;
+  // }
+}
+
+.logo {
+  width: $logo_pc_width;
+  z-index: 2;
+  height: auto;
+  position: absolute;
+  left: 0;
+  display: block;
+  top: 0px;
+  transform: translateY(0%);
+}
+
+.menu-icon {
+  position: relative;
+  width: 30px;
+  height: 3px;
+  background-color: #CD0012;
+}
+
+.menu-icon::before {
+  position: absolute;
+  left: 0;
+  top: -10px;
+  content: '';
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #CD0012;
+  transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+}
+
+.menu-icon::after {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  content: '';
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #CD0012;
+  transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+}
+
+.menu-icon.menu-icon-active {
+  background-color: transparent;
+}
+
+.menu-icon.menu-icon-active::before {
+  transform: rotate(45deg);
+  top: 0;
+  transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+}
+
+.menu-icon.menu-icon-active::after {
+  transform: rotate(-45deg);
+  top: 0;
+  transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+}
+>>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
 
 .navlist {
   position: fixed;
@@ -278,10 +390,9 @@ export default {
   top: $nav_phone_height;
   height: calc(100vh - #{$nav_phone_height});
   text-align: center;
-  transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in-out;
   display: block;
   transform: translateX(40%);
-  background-image: url('./nav_bg.png');
 
   li {
     height: 60px;
@@ -294,14 +405,41 @@ export default {
     overflow: hidden;
     height: 60px;
     width: 100%;
+<<<<<<< HEAD
     font-size: 17px;
+=======
+    font-size: 24px;
+    margin-top: 10px;
+    display: flex;
+>>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
     align-items: center;
     justify-content: center;
     display: none;
     background-size: cover;
+<<<<<<< HEAD
     border-top: 1px solid rgba(250, 250, 250, 0.6);
     border-bottom: 1px solid rgba(60, 30, 0, 0.2);
     transition: all 0.3s;
+=======
+    position: relative;
+
+    // &::after {
+    //   display: block;
+    //   content: '';
+    //   width: 0%;
+    //   height: 1px;
+    //   background: #ddd75f;
+    //   transition: all 0.4s;
+    //   left: 50%;
+    //   bottom: 0;
+    //   position: absolute;
+    // }
+
+    // &:hover:after {
+    //   width: 80%;
+    //   left: 10%;
+    // }
+>>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
 
     img,
     span {
@@ -339,7 +477,7 @@ export default {
   }
 
   &.open {
-    width: 230px;
+    width: size(300);
     transform: translateX(0%);
     display: flex;
     flex-wrap: wrap;
@@ -438,7 +576,7 @@ export default {
 
   .logo {
     width: $logo_phone_width;
-    left: 15px;
+    left: 0px;
   }
 
   .nav {
@@ -447,12 +585,17 @@ export default {
   }
 
   .menu {
-    display: block;
+    display: flex;
     position: fixed;
+<<<<<<< HEAD
     right: 5px;
     top: 5px;
     width: 60px;
     border-radius: 10px;
+=======
+    right: 30px;
+    top: 30px;
+>>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
 
     img {
       width: 100%;
@@ -460,6 +603,7 @@ export default {
 
     .close {
       width: 40px;
+      margin-top: 20px;
     }
 
     svg {
@@ -470,7 +614,10 @@ export default {
   .navlist {
     position: fixed;
     z-index: 111;
+<<<<<<< HEAD
     background-image: url('./nav_bg.png');
+=======
+>>>>>>> 720caaf22d574c193475400070dc9cf3e9e04e82
     width: 0%;
     right: 0;
     top: $nav_phone_height;
