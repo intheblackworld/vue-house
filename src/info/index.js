@@ -1,12 +1,12 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '接待會館：新北市八里區龍米路二段117-1號',
+  address: '台北市中山區民生東路一段31號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3611.7718473359423!2d121.44468501500846!3d25.14340318392129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442af2a1f9f9d8b%3A0x5d788c5777723dfb!2z5YWr6YeM6b6N6LqN!5e0!3m2!1szh-TW!2stw!4v1602483280439!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/V55bhAa2sX4vKrJC6',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1807.1445251571747!2d121.52377299823243!3d25.058190386423796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a942c98ae91f%3A0xd85e809b42298290!2zMTA0OTHlj7DljJfluILkuK3lsbHljYDmsJHnlJ_mnbHot6_kuIDmrrUzMeiZnw!5e0!3m2!1szh-TW!2stw!4v1602491321168!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/Pt8iM1tw5QzPm5si9',
   phone: '02-2618-8899',
-  fbLink: 'https://www.facebook.com/%E7%AF%89%E5%84%84%E4%B8%B0%E7%9B%9B-18-22%E5%9D%AA-%E5%BE%B7%E5%9C%8B%E7%B2%BE%E5%93%81%E5%AE%B6-106367061173988',
-  fbMessage: 'https://m.me/106367061173988',
+  fbLink: 'https://www.facebook.com/中山直美-115702496966413',
+  fbMessage: 'https://m.me/115702496966413',
   caseName: '中山直美',
   indigatorLength: 10,
 
@@ -23,7 +23,7 @@ export default {
     ['座落位置', '台北市中山區新生北路二段76巷10-20號',],
   ],
 
-  gtmCode: [''], // 可放置多個
+  gtmCode: ['WX44LWQ'], // 可放置多個
   recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
