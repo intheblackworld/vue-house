@@ -7,7 +7,7 @@ export default {
   phone: '02-2618-8899',
   fbLink: 'https://www.facebook.com/%E7%AF%89%E5%84%84%E4%B8%B0%E7%9B%9B-18-22%E5%9D%AA-%E5%BE%B7%E5%9C%8B%E7%B2%BE%E5%93%81%E5%AE%B6-106367061173988',
   fbMessage: 'https://m.me/106367061173988',
-  caseName: '八里龍躍',
+  caseName: '中山直美',
   indigatorLength: 10,
 
   houseInfos: [
