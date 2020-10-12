@@ -25,7 +25,7 @@ body {
   }
 
   ::selection {
-    background-color: #3b5662;
+    background-color: #a90005;
     color: #fff;
   }
 }
@@ -343,7 +343,7 @@ img[lazy='loaded'] {
 
   .home {
     padding-top: $nav_phone_height;
-    background-color: $bg;
+    background: $bg;
     background-image: $order_bg_image_m;
     // background-repeat: no-repeat;
     // background-size: cover;

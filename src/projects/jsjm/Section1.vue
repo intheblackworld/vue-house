@@ -9,7 +9,12 @@
       <img src="./s1/t.png" alt="" class="t absolute">
     </div>
     <div v-else>
-      <img src="./s1/bgs2_m.png" alt="" class="bg-img">
+      <div class="fade-in">
+        <div class="bg1 absolute"></div>
+        <div class="bg2 absolute"></div>
+        <div class="bg3 absolute"></div>
+      </div>
+    <img src="./s1/bgs2_m.png" alt="" class="bg-img">
       <img src="./s1/bg4s_m.png" alimg="" class="bg-img fade-out">
       <div class="fade-in">
         <img src="./s1/logo_m.png" alt="" class="logo absolute">
@@ -26,7 +31,8 @@
   width: size(1920);
   height: 100vh;
   min-height: size(900);
-  background-size: cover;
+  background:none;
+  background-size: auto;
   background-attachment: fixed;
   overflow: hidden;
   position: relative;
@@ -39,6 +45,7 @@ canvas {
   position: absolute;
   top: 0;
   left: 0;
+  mix-blend-mode: multiply;
 }
 
 .bg-img {
@@ -92,6 +99,16 @@ canvas {
     background-size: cover;
     background-attachment: scroll;
   }
+.bg1,
+.bg2,
+.bg3{top:0;height: 100%;
+  background:  url('./s1/bg.png') fixed;
+  background-size: auto;
+  background-position: 0 0%;
+  background-repeat: repeat;}
+.bg1{left: 10%;width: 5%;}
+.bg2{left: 18%;width: 60%;}
+.bg3{left: 82%;width: 9%;}
 
   .img-left {
     width: sizem(261);
@@ -112,7 +129,7 @@ canvas {
 
   @keyframes fadeout {
     to {
-      margin-top: -30%;
+      transform: translateY(10%);
       opacity: 0;
     }
   }
@@ -179,7 +196,6 @@ export default {
       dots[i] = h
       dotsVel[i] = 10
     }
-
     function anim() {
       window.requestAnimationFrame(anim)
 
