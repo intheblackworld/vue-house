@@ -115,7 +115,7 @@ import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 
-import Section1 from '@/projects/ly/Section1.vue'
+import Section1 from '@/projects/jsjm/Section1.vue'
 // import Section2 from '@/projects/jy/Section2.vue'
 // import Section3 from '@/projects/jy/Section3.vue'
 // import Section4 from '@/projects/jy/Section4.vue'
