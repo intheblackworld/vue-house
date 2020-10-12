@@ -2,7 +2,7 @@ import { isMobile } from '../utils/index'
 export default {
   address: '接待會館：新北市八里區龍米路二段117-1號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.0657132506144!2d121.51123461500706!3d25.06576178395756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a938a4cb10dd%3A0xdb0031b0aad055ed!2zMTAz5Y-w5YyX5biC5aSn5ZCM5Y2A6YeN5oW25YyX6Lev5LiJ5q61NjjomZ8yRg!5e0!3m2!1szh-TW!2stw!4v1599015709736!5m2!1szh-TW!2stw',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3611.7718473359423!2d121.44468501500846!3d25.14340318392129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442af2a1f9f9d8b%3A0x5d788c5777723dfb!2z5YWr6YeM6b6N6LqN!5e0!3m2!1szh-TW!2stw!4v1602483280439!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/V55bhAa2sX4vKrJC6',
   phone: '02-2618-8899',
   fbLink: 'https://www.facebook.com/八里龍躍-118184923350903/',
