@@ -12,16 +12,16 @@ export default {
 
   houseInfos: [
     ['投資興建', '丰河建設 ',],
-    ['格局規劃', '二房(28坪) 、 三房(50、62坪) 、 開放格局(130坪)',],
+    ['格局規劃', '二房(28坪) 、 三房(51、62坪) 、 開放格局(130坪)',],
     ['建築設計', '王志祥建築事務所 ',],
     ['營造公司', '昱嘉營造',],
-    ['公  設  比', '32~32 ',],
+    ['公設比例', '32~32%',],
     ['基地面積', '667坪',],
     ['棟戶規劃', '1幢，1棟，59戶住家 ',],
     ['建造執照', '103八建字第00294號等1個',],
   ],
 
-  gtmCode: [''], // 可放置多個
+  gtmCode: ['5NN8JC3'], // 可放置多個
   recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
