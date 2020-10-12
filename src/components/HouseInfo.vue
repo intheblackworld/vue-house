@@ -23,7 +23,6 @@ export default {
   },
   data() {
     return {
-      info,
       houseInfos: info.houseInfos,
     }
   },
@@ -32,7 +31,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/style/function.scss';
 @import '@/assets/style/variableColor.scss';
 .house-info {
   width: 100vw;
@@ -41,21 +39,12 @@ export default {
   z-index: 1;
 }
 .content {
-  width: 1260px;
-  max-width: 95%;
+  width: 686px;
   margin: 0 auto;
-  padding: 30px 0;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  .flex {
-    width: 100%;
-    .info {
-      flex: 1;
-      justify-content: left;
-    }
-  }
 }
 
 .title {
@@ -69,48 +58,9 @@ export default {
   letter-spacing: 15px;
 }
 
-.img {
-  width: 50%;
-  text-align: left;
-  font-size: size(30);
-  line-height: 1.6;
-  img {
-    max-width: 90%;
-  }
-
-  a {
-    display: block;
-  }
-}
-
-.subtitle {
-  font-size:0.95em;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  letter-spacing: 2.8px;
-  text-align: left;
-  color: #f6f6f6;
-  margin: 0 0 0.8em 0;
-}
-
-.banner {
-  width: auto;
-  height: 1.6em;
-  max-height: 47px;
-  margin: 0 0 0.1em 0;
-}
-
-.logo {
-  height: size(151);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  max-height: 151px;
-  // margin-top: size(190);
-}
-
 .info {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .item {
@@ -118,16 +68,16 @@ export default {
   margin-bottom: 30px;
   margin-right: 160px;
   width: 260px;
-  //height: 30px;
+  height: 30px;
   line-height: 1.4;
-  //border-left: 4px solid $house_border_color;
+  border-left: 4px solid $house_border_color;
   padding-left: 10px;
   display: flex;
   align-items: center;
-  white-space: nowrap;position: relative;
-  &::before{content: "";width: 4px;height: 1.4em;background:$house_border_color;margin: -1px 10px 0 0;position: absolute;left: 0;top: 0;}
+  white-space: nowrap;
+  // &::before{content: "";width: 4px;height: 1.4em;background:$house_border_color;margin: -1px 10px 0 0;position: relative;}
   &:nth-of-type(even) {
-    //  margin-right: 0;
+    margin-right: 0;
   }
 
   .label {
@@ -139,20 +89,12 @@ export default {
     font-family: $family3;
   }
 
-  &:nth-child(2) {
-  // border-top: 0px solid #ccc;
-    .label {
-   //   display: none;
-    }
-  }
   .desc {
     font-size: 15px;
     text-align: left;
     color: $house_desc_color;
     font-family: $family3;
     font-weight: bold;
-    //width: 3em;overflow: hidden;
-    white-space: pre-wrap;
   }
 }
 
@@ -160,7 +102,7 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .content {
-    height: auto;
+    height: 20em;
     width: 100%;
     margin-bottom: 0;
     font-size: 15px;
@@ -174,35 +116,19 @@ export default {
 
   .item {
     align-items: flex-start;
-    margin: 0 0 1.5em;
+    margin: 0;
     width: 100%;
-    // margin-bottom: 20px;
-    //  margin-right: 0;
-    //
-    //  height: auto;
-    //  margin-left: 20px;
-    //  white-space: normal;
+    height: auto;
+    margin-left: 20px;
+    white-space: normal;
   }
 
   .info {
-    padding: 0 5%;
-    width: 100%;
-  }
-  .content .flex {
-    flex-direction: column;
-  }
-
-  .img {
     width: 100%;
     flex: 1;
     justify-content: space-around;
     align-content: space-around;
   }
-.item {
-  .desc {
- //   font-size: 13px;
-  }
-}
 }
 
 /* 平板尺寸 */
