@@ -175,11 +175,11 @@ export default {
     //initial
     let c = document.getElementById('c')
     let w = (c.width = window.innerWidth)
-    let h = (c.height = window.innerHeight)
+    let h = (c.height = window.innerHeight) * 1.5
     let ctx = c.getContext('2d')
     //parameters
     let total = w / 2
-    let accelleration = 0.015
+    let accelleration = 0.01
     //afterinitial calculations
     let size = (w / total) * 8
     let occupation = w / total
