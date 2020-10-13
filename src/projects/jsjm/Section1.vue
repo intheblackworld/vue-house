@@ -179,7 +179,7 @@ export default {
     let ctx = c.getContext('2d')
     //parameters
     let total = w / 2
-    let accelleration = 0.05
+    let accelleration = 0.03
     //afterinitial calculations
     let size = (w / total) * 8
     let occupation = w / total
