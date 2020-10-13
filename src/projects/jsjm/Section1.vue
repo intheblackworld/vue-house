@@ -179,7 +179,7 @@ export default {
     let ctx = c.getContext('2d')
     //parameters
     let total = w / 2
-    let accelleration = 0.03
+    let accelleration = 0.015
     //afterinitial calculations
     let size = (w / total) * 8
     let occupation = w / total
@@ -209,7 +209,7 @@ export default {
         ctx.fillStyle = '#929292'
         ctx.fillRect(occupation * i, currentY, size, dotsVel[i] + 1)
 
-        if (dots[i] > h && Math.random() < 0.01) {
+        if (dots[i] > h && Math.random() < 0.002) {
           dots[i] = dotsVel[i] = 0
         }
       }
