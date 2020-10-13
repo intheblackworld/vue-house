@@ -72,22 +72,22 @@
 }
 
 .img {
-  width: size(540);
-  top: size(0);
-  right: size(221);
+  width: size(260);
+  top: size(-76);
+  left: size(1119);
 }
 
 .title {
-  width: size(300);
-  top: calc(50% - 14vw);
-  right: size(240);
+  width: size(200);
+  top: calc(50% - 6vw);
+  right: size(300);
 }
 
 .subtitle {
   width: size(456);
-  top: calc(50% - 10vw);
+  top: calc(50% - 3vw);
   right: size(173);
-  font-size: size(51.6);
+  font-size: size(33);
   font-weight: 900;
   font-stretch: normal;
   font-style: normal;
@@ -100,19 +100,19 @@
 
 .hr {
   width: size(598);
-  top: calc(50% - 2.2vw);
+  top: calc(50% + 2vw);
   right: size(98);
 }
 
 .desc {
   width: size(477);
-  top: calc(50% - 1vw);
+  top: calc(50% + 3vw);
   right: size(156);
-  font-size: size(26);
+  font-size: size(18);
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.89;
+  line-height: 1.7;
   letter-spacing: normal;
   text-align: left;
   color: #491500;
@@ -154,10 +154,10 @@
 }
 
 .swipe {
-  width: size(1160);
-  height: 100%;
-  top: size(0);
-  left: 0;
+  width: size(1060);
+  height:calc(90% - 60px);
+  top:calc(60px + 5%);
+  left:size(100);
   margin: 0 auto;
   object-fit: cover;
 }
@@ -343,9 +343,9 @@
   max-height: 56vw;
   min-height: size(900);*/
   .img {
-    width: sizem(375);
-    top: sizem(0);
-    right: sizem(0);
+    width: sizem(260);
+    top: sizem(-76);
+    right: sizem(-41);transform: scale(-1,1);
   }
 
   .title {

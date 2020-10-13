@@ -22,11 +22,11 @@
             菁英俱樂部
           </h3>
         </div>
-        <div :class="`tab-btn flex-c ${contentIndex === 3 ? 'active' : ''}`" @click="contentIndex = 3;slideIndex = 0">
+        <!-- div :class="`tab-btn flex-c ${contentIndex === 3 ? 'active' : ''}`" @click="contentIndex = 3;slideIndex = 0">
           <h3 class="inside flex-c">
             私藏天際線
           </h3>
-        </div>
+        </div -->
       </div>
       <div class="swipe absolute" data-aos="fade-right" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -104,26 +104,27 @@
 }
 
 .img {
-  width: size(540);
-  top: size(0);
-  left: size(0);
+  width: size(260);
+  top: size(-76);
+  left: size(-41);
 }
 
 .tabs {
   width: size(1050);
   top: calc(50% + 60px - 22.2vw);
-  right: size(94);
+  right: size(100);
 
   .tab-btn {
-    width: size(245);
-    height: size(48);
+    width: size(300);
+    height: size(60);
     position: relative;
     cursor: pointer;
+      transition:transform 0.2s;
+      font-size: size(33);
     .inside {
       width: 100%;
       height: 100%;
       background-color: #ffffff;
-      font-size: size(35);
       font-weight: 900;
       font-stretch: normal;
       font-style: normal;
@@ -133,6 +134,7 @@
       color: #491500;
       position: relative;
       z-index: 1;
+     transition:all 0.8s;
     }
 
     &::after {
@@ -141,16 +143,24 @@
       border: 1px solid #491500;
       position: absolute;
       content: '';
-      top: 10px;
-      left: -10px;
+      top: 0;
+      left: 0;
       z-index: 0;
+      transition:transform 0.2s;
     }
 
-    &.active {
+    &.active,
+    &:hover {
+      transform: translate(size(0),size(-7));
+    &::after {
+      transform: translate(size(-7),size(7));
+    }
+    }
+    &.active{
       .inside {
         background-color: #491500;
         color: #fff;
-      }
+    }
     }
     img {
       width: size(287);
@@ -159,16 +169,16 @@
 }
 
 .title {
-  width: size(487);
-  top: calc(50% + 60px - 18vw);
+  width: size(350);
+  top: calc(50% - 7.5vw);
   left: size(110);
 }
 
 .subtitle {
   width: size(480);
-  top: calc(50% + 60px - 11vw);
+  top: calc(50% - 2vw);
   left: size(108);
-  font-size: size(48);
+  font-size: size(33);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -180,24 +190,24 @@
 }
 
 .desc {
-  width: size(480);
-  top: calc(50% + 60px - 3.2vw);
+  width: size(477);
+  top: calc(50% + 3.5vw);
   left: size(108);
-  font-size: size(26);
-  font-weight: bold;
+  font-size: size(16);
+  font-weight: 600;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.35;
-  letter-spacing: size(0.52);
-  text-align: left;
+  line-height: 1.7;
+  letter-spacing:0.01em;
+  text-align: justify;
   color: #491500;
 }
 
 .w-desc {
   width: size(480);
-  bottom: calc(50% - 21vw);
+  bottom: calc(50% - 18vw);
   left: size(110);
-  font-size: size(22);
+  font-size: size(18);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -212,7 +222,7 @@
   height: size(755);
   max-height:calc(100% - 60px - 7.5vw);
   top:calc(50% + 60px - 18vw);
-  right: size(94);
+  right: size(100);
   margin: 0 auto;
   object-fit: cover;
   img{object-fit: cover;}
@@ -260,7 +270,7 @@
 .swipe-wrap {
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: hidden;color: #0000;
 }
 
 .swipe-item {
@@ -394,10 +404,11 @@
     max-height: initial;
   }
   .img {
-    width: size(540);
-    top: size(0);
-    left: size(0);
+    width: sizem(260);
+    top: sizem(-76);
+    left: sizem(-41);
   }
+
 
   .tabs {
     width: sizem(305);
@@ -692,7 +703,7 @@ export default {
 
           {
             img: require('./s7/2-2.jpg'),
-            name: '多功能教室｜廚藝交流，上流品味永不妥協',
+            name: '交誼廳｜仕紳會談，富豪人生知心相伴',
             title: require('./s7/title2.png'),
             subtitle: '飯店美學<br />五星會館尊榮享宴',
             desc:
@@ -702,7 +713,7 @@ export default {
           },
           {
             img: require('./s7/2-3.jpg'),
-            name: '交誼廳｜仕紳會談，富豪人生知心相伴',
+            name: '多功能教室｜廚藝交流，上流品味永不妥協',
             title: require('./s7/title2.png'),
             subtitle: '飯店美學<br />五星會館尊榮享宴',
             desc:

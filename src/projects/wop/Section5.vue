@@ -45,24 +45,24 @@
 <style lang="scss">
 @import '@/assets/style/function.scss';
 .custom-subtitle {
-  font-size: size(31);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.9;
-  font-weight: bold;
-  letter-spacing: size(0.64);
-  text-align: justify;
-  color: #ffffff;
-}
-
-.custom-desc {
   font-size: size(25);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.9;
-  letter-spacing: size(0.52);
+  font-weight: bold;
+  letter-spacing:0.02em;
+  text-align: justify;
+  color: #ffffff;
+}
+
+.custom-desc {
+  font-size: size(18);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.9;
+  letter-spacing:0.02em;
   text-align: justify;
   color: #491500;
 }
@@ -122,27 +122,28 @@
 }
 
 .img {
-  width: size(540);
-  top: size(0);
-  left: size(0);
+  width: size(260);
+  top: size(-76);
+  left: size(-41);
 }
 
 .tabs {
-  width: size(590);
-  top: calc(50% - 18vw);
+  width: size(550);
+  top: calc(50% - 15vw);
   left: size(112);
 
   .tab-btn {
     width: 100%;
-    height: size(68);
-    margin-bottom: size(23);
+    height: size(60);
+    margin:0 0 size(23) size(-10);
     position: relative;
     cursor: pointer;
+     transition:transform 0.2s;
+      font-size: size(33);
     .inside {
       width: 100%;
       height: 100%;
       background-color: #ffffff;
-      font-size: size(43);
       font-weight: 900;
       font-stretch: normal;
       font-style: normal;
@@ -152,6 +153,10 @@
       color: #491500;
       position: relative;
       z-index: 1;
+     transition:all 0.8s;
+    }
+    img {
+      height:1.05em;
     }
 
     &::after {
@@ -160,34 +165,39 @@
       border: 1px solid #491500;
       position: absolute;
       content: '';
-      top: 10px;
-      left: -10px;
+      top: 0;
+      left: 0;
       z-index: 0;
+      transition:transform 0.2s;
     }
 
-    &.active {
+    &.active,
+    &:hover {
+      transform: translate(size(7),size(-0));
+    &::after {
+      transform: translate(size(-7),size(7));
+    }
+    }
+    &.active{
       .inside {
         background-color: #491500;
         color: #fff;
-      }
     }
-    img {
-      width: size(287);
     }
   }
 }
 
 .text {
-  width: size(600);
-  top:calc(50% - 3vw);
+  width: size(550);
+  top:calc(50% - 0vw);
   left: size(101);
 }
 
 .swipe {
-  width: size(1160);
-  height: 100%;
-  top: size(0);
-  right: 0;
+  width: size(1060);
+  height:calc(90% - 60px);
+  top:calc(60px + 5%);
+  right:size(100);
   margin: 0 auto;
   object-fit: cover;
 }
@@ -245,6 +255,7 @@
   img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 
   .name {
@@ -387,9 +398,9 @@
   }
 
   .img {
-    width: sizem(375);
-    top: size(0);
-    left: size(0);
+    width: sizem(260);
+    top: sizem(-76);
+    left: sizem(-41);
   }
 
   .tabs {
@@ -607,19 +618,19 @@ export default {
             img: require('./s5/1-1.jpg'),
             name: 'Top Location',
             content:
-              '<div class="custom-subtitle">民治路／隋唐街<br />地王角窗絕版身價</div><br /><br /><div class="custom-desc">地段門牌，就是身價。民治路、隋唐街勾勒出新營繁華軸線，寶雅全聯買進美好生活，文化中心與南瀛綠都心公園共構藝文書香，UNIQLO、家樂福、星巴克、Gogoro皆有設點，住在市中心地王，高人一等先天價值締造絕版身價。</div>',
+              '<div class="custom-subtitle">民治路／隋唐街<br />地王角窗絕版身價</div><br /><div class="custom-desc">地段門牌，就是身價。民治路、隋唐街勾勒出新營繁華軸線，寶雅全聯買進美好生活，文化中心與南瀛綠都心公園共構藝文書香，UNIQLO、家樂福、星巴克、Gogoro皆有設點，住在市中心地王，高人一等先天價值締造絕版身價。</div>',
           },
           {
             img: require('./s5/1-2.jpg'),
             name: 'Top Location',
             content:
-              '<div class="custom-subtitle">民治路／隋唐街<br />地王角窗絕版身價</div><br /><br /><div class="custom-desc">地段門牌，就是身價。民治路、隋唐街勾勒出新營繁華軸線，寶雅全聯買進美好生活，文化中心與南瀛綠都心公園共構藝文書香，UNIQLO、家樂福、星巴克、Gogoro皆有設點，住在市中心地王，高人一等先天價值締造絕版身價。</div>',
+              '<div class="custom-subtitle">民治路／隋唐街<br />地王角窗絕版身價</div><br /><div class="custom-desc">地段門牌，就是身價。民治路、隋唐街勾勒出新營繁華軸線，寶雅全聯買進美好生活，文化中心與南瀛綠都心公園共構藝文書香，UNIQLO、家樂福、星巴克、Gogoro皆有設點，住在市中心地王，高人一等先天價值締造絕版身價。</div>',
           },
           {
             img: require('./s5/1-3.jpg'),
             name: 'Top Location',
             content:
-              '<div class="custom-subtitle">民治路／隋唐街<br />地王角窗絕版身價</div><br /><br /><div class="custom-desc">地段門牌，就是身價。民治路、隋唐街勾勒出新營繁華軸線，寶雅全聯買進美好生活，文化中心與南瀛綠都心公園共構藝文書香，UNIQLO、家樂福、星巴克、Gogoro皆有設點，住在市中心地王，高人一等先天價值締造絕版身價。</div>',
+              '<div class="custom-subtitle">民治路／隋唐街<br />地王角窗絕版身價</div><br /><div class="custom-desc">地段門牌，就是身價。民治路、隋唐街勾勒出新營繁華軸線，寶雅全聯買進美好生活，文化中心與南瀛綠都心公園共構藝文書香，UNIQLO、家樂福、星巴克、Gogoro皆有設點，住在市中心地王，高人一等先天價值締造絕版身價。</div>',
           },
           {
             img: require('./s5/1-4.jpg'),
@@ -633,14 +644,14 @@ export default {
             img: require('./s5/2-1.jpg'),
             name: '優越未來新地標',
             content:
-              '<div class="custom-subtitle">優越未來新地標</div><div class="custom-desc">整合客運、公車、計程車，900公尺距離接軌新營交流道，未來更將引進百貨賣場及豪華商旅，驗收作業已進入最後階段，新營軌道經濟由此展開。</div><div class="custom-subtitle">國家圖書館南部分院</div><div class="custom-desc">34億工程預算，義大利設計大師Carlo Ratti跨海操刀全台首座循環圖書館，高綠覆率結合太陽能科技，打造台南全新藝文聖地，預計2022年正式啟用。</div>',
+              '<div class="custom-subtitle">優越未來新地標</div><div class="custom-desc">整合客運、公車、計程車，900公尺距離接軌新營交流道，未來更將引進百貨賣場及豪華商旅，驗收作業已進入最後階段，新營軌道經濟由此展開。</div><br /><div class="custom-subtitle">國家圖書館南部分院</div><div class="custom-desc">34億工程預算，義大利設計大師Carlo Ratti跨海操刀全台首座循環圖書館，高綠覆率結合太陽能科技，打造台南全新藝文聖地，預計2022年正式啟用。</div>',
           },
 
           {
             img: require('./s5/2-2.jpg'),
             name: '優越未來新地標',
             content:
-              '<div class="custom-subtitle">優越未來新地標</div><div class="custom-desc">整合客運、公車、計程車，900公尺距離接軌新營交流道，未來更將引進百貨賣場及豪華商旅，驗收作業已進入最後階段，新營軌道經濟由此展開。</div><div class="custom-subtitle">國家圖書館南部分院</div><div class="custom-desc">34億工程預算，義大利設計大師Carlo Ratti跨海操刀全台首座循環圖書館，高綠覆率結合太陽能科技，打造台南全新藝文聖地，預計2022年正式啟用。</div>',
+              '<div class="custom-subtitle">優越未來新地標</div><div class="custom-desc">整合客運、公車、計程車，900公尺距離接軌新營交流道，未來更將引進百貨賣場及豪華商旅，驗收作業已進入最後階段，新營軌道經濟由此展開。</div><br /><div class="custom-subtitle">國家圖書館南部分院</div><div class="custom-desc">34億工程預算，義大利設計大師Carlo Ratti跨海操刀全台首座循環圖書館，高綠覆率結合太陽能科技，打造台南全新藝文聖地，預計2022年正式啟用。</div>',
           },
         ],
         [
