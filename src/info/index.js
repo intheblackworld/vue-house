@@ -6,7 +6,7 @@ export default {
   googleLink: 'https://goo.gl/maps/5gLCi4wywrzaCVMn7',
   phone: '02-2832-3288',
   fbLink: 'https://www.facebook.com/全陽豐會-104138187891229/',
-  fbMessage: 'http://m.me/全陽豐會-104138187891229/',
+  fbMessage: 'http://m.me/104138187891229',
   caseName: '全陽豐會',
   indigatorLength: 10,
 
