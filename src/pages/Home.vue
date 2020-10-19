@@ -4,17 +4,20 @@
     <Loading :loading="load" />
     <!-- <SideNavigation v-if="isSide" /> -->
     <Navigation :min="isNavMin" />
+    <img src="../projects/yb1/s1/bg.jpg" alt="" class="s1-img">
     <div id="section1">
       <Section1 />
     </div>
-    <div id="section2">
-      <Section2 />
-    </div>
-    <div id="section3">
-      <Section3 />
-    </div>
-    <div id="section4">
-      <Section4 />
+    <div class="linear-bg">
+      <div id="section2">
+        <Section2 />
+      </div>
+      <div id="section3">
+        <Section3 />
+      </div>
+      <div id="section4">
+        <Section4 />
+      </div>
     </div>
     <div id="section5">
       <Section5 />
@@ -22,14 +25,43 @@
     <div id="section6">
       <Section6 />
     </div>
+    <div id="section7">
+      <Section7 />
+    </div>
+    <div id="section8">
+      <Section8 />
+    </div>
     <ContactSection />
     <!-- <SimpleOrder /> -->
     <MobileNav />
   </div>
 </template>
 
-<style>
+<style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Playball&display=swap');
+@import '~@/assets/style/function.scss';
+.s1-img {
+  width: auto;
+  height: 200vh;
+  min-height: size(2160);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: size((1920 - 2440) / 2);
+
+  &:nth-child(1) {
+    position: relative;
+  }
+}
+
+.linear-bg {
+  width: size(1800);
+  // height: 3299px;
+  opacity: 0.95;
+  clip-path: polygon(0 0,100% 0%,100% 100%,10% 100%,0% 90%);
+  background-image: linear-gradient(to bottom, rgba(255, 87, 0, 0.85), #fa0032 100%, #fa0032 100%);
+  margin: 0 auto 56px;
+}
 </style>
 
 <script>
@@ -40,12 +72,14 @@ import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import gtm from '@/mixins/gtm.js'
 
-import Section1 from '@/projects/yb/Section1.vue'
-import Section2 from '@/projects/yb/Section2.vue'
-import Section3 from '@/projects/yb/Section3.vue'
-import Section4 from '@/projects/yb/Section4.vue'
-import Section5 from '@/projects/yb/Section5.vue'
-import Section6 from '@/projects/yb/Section6.vue'
+import Section1 from '@/projects/yb1/Section1.vue'
+import Section2 from '@/projects/yb1/Section2.vue'
+import Section3 from '@/projects/yb1/Section3.vue'
+import Section4 from '@/projects/yb1/Section4.vue'
+import Section5 from '@/projects/yb1/Section5.vue'
+import Section6 from '@/projects/yb1/Section6.vue'
+import Section7 from '@/projects/yb1/Section7.vue'
+import Section8 from '@/projects/yb1/Section8.vue'
 // import SimpleOrder from '@/components/SimpleOrder.vue'
 
 export default {
@@ -62,6 +96,8 @@ export default {
     Section4,
     Section5,
     Section6,
+    Section7,
+    Section8,
   },
 
   data() {
@@ -72,7 +108,7 @@ export default {
     }
   },
   created() {
-    window.addEventListener('load', (event) => {
+    window.addEventListener('load', event => {
       this.load = false
     })
 
