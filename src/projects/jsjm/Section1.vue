@@ -50,7 +50,7 @@ canvas {
 
 .bg-img {
   width: size(1920);
-  height: 100vh;
+  height: 100%;
   min-height: size(900);
   position: absolute;
   top: 0;
@@ -92,8 +92,8 @@ canvas {
 @media screen and (max-width: 767px) {
   .section1 {
     width: 100vw;
-    min-height: 0;
-    max-height: 500vh;
+    min-height: sizem(470);
+    max-height:sizem(812);
     height: calc(100vh - 63px);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
@@ -143,13 +143,13 @@ canvas {
 
   .logo {
     width: sizem(172);
-    top: sizem(160);
+    top:calc(50% - 43vw);
     right: sizem(101);
   }
 
   .t {
     width: sizem(300);
-    top: sizem(455);
+    top: calc(50% + 35vw);
     right: sizem(37);
   }
 }

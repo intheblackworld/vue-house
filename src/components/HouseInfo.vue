@@ -64,33 +64,34 @@ export default {
 }
 
 .item {
-  font-size: 16px;
-  margin-bottom: 30px;
-  margin-right: 160px;
+  font-size: 15px;
+  margin-bottom:2em;
+  margin-right: 10em;
   width: 260px;
-  height: 30px;
+  //height: 30px;
   line-height: 1.4;
-  border-left: 4px solid $house_border_color;
+  //border-left: 4px solid $house_border_color;
   padding-left: 10px;
   display: flex;
   align-items: center;
-  white-space: nowrap;
-  // &::before{content: "";width: 4px;height: 1.4em;background:$house_border_color;margin: -1px 10px 0 0;position: relative;}
+  white-space: nowrap;position: relative;
+  &::before{content: "";width: 4px;height: 1.4em;background:$house_border_color;margin: 0px 0.8em 0 0;position: absolute;top:0;left: 0;}
   &:nth-of-type(even) {
     margin-right: 0;
   }
 
   .label {
-    font-size: 16px;
+    font-size:1em;
     color: $house_label_color;
     margin-bottom: 0;
-    margin-right: 20px;
+    margin-right:0.8em;
     white-space: nowrap;
     font-family: $family3;
+    width: 4.5em;
   }
 
   .desc {
-    font-size: 15px;
+    font-size: 14px;
     text-align: left;
     color: $house_desc_color;
     font-family: $family3;
