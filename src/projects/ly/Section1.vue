@@ -587,8 +587,8 @@
 @media screen and (max-width: 767px) {
   .section1 {
     width: 100vw;
-    min-height: 0;
-    max-height: 500vh;
+    min-height: sizem(470);
+    max-height: sizem(812);
     height: calc(100vh - 63px);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
@@ -604,7 +604,7 @@
 
   .logo {
     width: sizem(310);
-    top: sizem(251);
+    top: calc(50% - 8vw);
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -616,7 +616,7 @@
     left: 0;
     right: 0;
     margin: 0 auto;
-    bottom: sizem(90);
+    top:  calc(50% + 41vw);
     background-color: #011949;
     h3 {
       font-size: sizem(23);
