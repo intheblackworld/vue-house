@@ -205,7 +205,7 @@
 
   .logo {
     width: size-m(214);
-    top: size-m(210);
+    top:calc(50vh - 28vw)
   }
 }
 </style>
