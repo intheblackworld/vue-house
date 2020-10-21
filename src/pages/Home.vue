@@ -3,7 +3,7 @@
     <Loading :loading="load" />
     <!-- <SideNavigation /> -->
     <!-- <Navigation /> -->
-    <!-- <Indigator :viewIndex="viewIndex" /> -->
+    <Indigator :viewIndex="viewIndex" />
     <!-- <full-page
       ref="fullPage"
       :options="options"
@@ -17,7 +17,7 @@
       <Section1 />
     </vue-lazy-component>
 
-    <!-- <vue-lazy-component
+    <vue-lazy-component
       class="section"
       id="section2"
     >
@@ -58,7 +58,7 @@
       id="section8"
     >
       <Section8 />
-    </vue-lazy-component> -->
+    </vue-lazy-component>
     <!-- <vue-lazy-component
       class="section"
       id="section8"
@@ -115,38 +115,32 @@ import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 
-import Section1 from '@/projects/ly/Section1.vue'
-// import Section2 from '@/projects/jy/Section2.vue'
-// import Section3 from '@/projects/jy/Section3.vue'
-// import Section4 from '@/projects/jy/Section4.vue'
-// import Section5 from '@/projects/jy/Section5.vue'
-// import Section6 from '@/projects/jy/Section6.vue'
-// import Section7 from '@/projects/jy/Section7.vue'
-// import Section8 from '@/projects/jy/Section8.vue'
-// import Section9 from '@/projects/jy/Section9.vue'
-// import Section10 from '@/projects/jy/Section10.vue'
-// import Section11 from '@/projects/jy/Section11.vue'
+import Section1 from '@/projects/blly/Section1.vue'
+import Section2 from '@/projects/blly/Section2.vue'
+import Section3 from '@/projects/blly/Section3.vue'
+import Section4 from '@/projects/blly/Section4.vue'
+import Section5 from '@/projects/blly/Section5.vue'
+import Section6 from '@/projects/blly/Section6.vue'
+import Section7 from '@/projects/blly/Section7.vue'
+import Section8 from '@/projects/blly/Section8.vue'
 
 export default {
   name: 'home',
   components: {
     Loading,
-    // Indigator,
+    Indigator,
     Navigation,
     // SideNavigation,
     ContactSection,
     MobileNav,
     Section1,
-    // Section2,
-    // Section3,
-    // Section4,
-    // Section5,
-    // Section6,
-    // Section7,
-    // Section8,
-    // Section9,
-    // Section10,
-    // Section11,
+    Section2,
+    Section3,
+    Section4,
+    Section5,
+    Section6,
+    Section7,
+    Section8,
   },
 
   data() {
