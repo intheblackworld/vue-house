@@ -1,6 +1,6 @@
 <template>
   <div class="section6">
-    <div v-if="!isMobile" class="bg">
+    <div class="bg">
       <div class="relative">
         <!-- <div class="bg-color"></div> -->
         <div class="content absolute">
@@ -19,11 +19,12 @@
           <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="item">
             <img :src="slide.src" :class="`item-img`" />
           </swiper-slide>
+          <div class="swiper-pagination" slot="pagination"></div>
         </swiper>
       </div>
     </div>
 
-    <div v-if="isMobile" class="relative">
+    <!-- <div v-if="isMobile" class="relative">
       <img src="./mo/2/bg_txt.png" alt="" class="bg-img">
       <img src="./mo/2/l.png" alt="" class="bg-img">
       <div class="title absolute">是誰？</div>
@@ -37,7 +38,7 @@
           <div class="content-desc">
             鑫建築團隊深信台灣土地上的情感故事，啟發我們追尋建築與人居的核心價值，預計取得罕見的鑽石級綠建築、黃金級智慧建築與SGS建築履歷，超越央北標準僅是我們的標準配備，以人性關懷為出發點的本意傳遞屬於鑫建築團隊的起心動念，正等待您親眼所見。
           </div>
-          <!-- <img src="./s3/logoall.png" alt="" class="logoall"> -->
+          <img src="./s3/logoall.png" alt="" class="logoall">
         </div>
         <swiper :options="swiperOption" ref="mySwiper" data-aos="fade" data-aos-delay="1000">
           <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="item">
@@ -45,9 +46,27 @@
           </swiper-slide>
         </swiper>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
+<style lang="scss">
+.swiper-pagination {
+  // bottom: size(26);
+  // right: size(162);
+  // width: auto;
+}
+.swiper-pagination-bullet {
+  background-color: #bcbec0;
+  // box-shadow: inset 0 0 0 1px #c0c1c1;
+  width: 15px;
+  height: 15px;
+  opacity: 0.4;
+}
+.swiper-pagination-bullet-active {
+  background-color: #ff5f00;
+  opacity: 0.7;
+}
+</style>
 <style lang="scss" scoped>
 @import '~@/assets/style/function.scss';
 .bg {
@@ -226,10 +245,12 @@
   }
 
   .content {
-    width: 100vw;
-    height: size-m(451);
-    top: 0;
+    width: size-m(280);
+    height: auto;
+    top: size-m(270);
     left: 0;
+    right: 0;
+    margin: 0 auto;
     padding: 35px 25px;
     background: linear-gradient(to right, #d80033, #ea5400);
   }
@@ -239,18 +260,21 @@
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.92;
+    line-height: 1.2;
     letter-spacing: normal;
     text-align: left;
-    color: #f6f6f6;
+    color: #000000;
     margin-bottom: size-m(15);
   }
 
   .content-title {
-    font-size: size-m(37);
+    font-size: size-m(20);
     line-height: 0.94;
     margin-bottom: size-m(15);
     white-space: nowrap;
+    span {
+      font-size: size-m(15);
+    }
   }
 
   .content-desc {
@@ -262,7 +286,7 @@
   .swiper-container {
     position: relative;
     width: 100vw;
-    height: size-m(440);
+    height: size-m(281);
     top: 0;
     right: 0;
 
@@ -312,6 +336,10 @@ export default {
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
         },
       },
 

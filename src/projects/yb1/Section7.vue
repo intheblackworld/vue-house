@@ -1,29 +1,38 @@
 <template>
   <div class="section7">
-    <div v-if="!isMobile" class="bg">
+    <div class="bg">
       <div class="relative">
         <!-- <div class="bg-color"></div> -->
         <div class="content absolute">
           <div class="content-title">
-            建築表情<br />
-            <span>立面與燈光3D透視</span>
+            里仁之美
           </div>
-          <div class="content-desc">
-            輕盈飛揚的建築語彙是央北鑫建築為年輕世代打造的獨特意象，側邊的堅實量體與斜向大牆穩重平衡，搭配水平線條與跳層玻璃的律動感。親近自然與大地的的清水混凝土語彙，用低調卻也醒目的方式與居者對話。
+          <div class="content-items">
+            <li @click="goTo(1)">1F 門廳 (物管區)</li>
+            <li @click="goTo(2)">A棟 門廳 (圖書區)</li>
+            <li @click="goTo(3)">B棟 門廳 (多功能教室)</li>
+            <li @click="goTo(4)">健身房+兒童遊戲區</li>
+            <li @click="goTo(5)">社區入口</li>
+            <li @click="goTo(6)">1F景觀</li>
+            <li @click="goTo(7)">RF景觀</li>
+            <li @click="goTo(8)">第二門廳</li>
           </div>
-          <div class="content-label">此為廣告效果示意，為單一建物電腦3D
+          <div class="content-label">
+            此為廣告效果示意，為單一建物電腦3D
             透視表現，周遭環境係電腦合成
-            建設公司保有建物外觀修正之權利</div>
+            建設公司保有建物外觀修正之權利
+          </div>
         </div>
         <swiper :options="swiperOption" ref="mySwiper" data-aos="fade" data-aos-delay="1000">
           <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="item">
             <img :src="slide.src" :class="`item-img`" />
           </swiper-slide>
+          <div class="swiper-pagination" slot="pagination"></div>
         </swiper>
       </div>
     </div>
 
-    <div v-if="isMobile" class="relative">
+    <!-- <div v-if="isMobile" class="relative">
       <img src="./mo/2/bg_txt.png" alt="" class="bg-img">
       <img src="./mo/2/l.png" alt="" class="bg-img">
       <div class="title absolute">是誰？</div>
@@ -37,7 +46,7 @@
           <div class="content-desc">
             鑫建築團隊深信台灣土地上的情感故事，啟發我們追尋建築與人居的核心價值，預計取得罕見的鑽石級綠建築、黃金級智慧建築與SGS建築履歷，超越央北標準僅是我們的標準配備，以人性關懷為出發點的本意傳遞屬於鑫建築團隊的起心動念，正等待您親眼所見。
           </div>
-          <!-- <img src="./s3/logoall.png" alt="" class="logoall"> -->
+          <img src="./s3/logoall.png" alt="" class="logoall">
         </div>
         <swiper :options="swiperOption" ref="mySwiper" data-aos="fade" data-aos-delay="1000">
           <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="item">
@@ -45,7 +54,7 @@
           </swiper-slide>
         </swiper>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 <style lang="scss" scoped>
@@ -145,6 +154,27 @@
   }
 }
 
+.content-items {
+  font-size: size(33);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.82;
+  letter-spacing: size(0.99);
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+  margin-bottom: size(40);
+  li {
+    border-radius: size(24.8);
+    margin-bottom: size(20);
+    &:hover {
+      color: #ff5f00;
+      background-color: #ffffff;
+    }
+  }
+}
+
 .content-desc {
   font-size: size(30);
   font-weight: 500;
@@ -226,11 +256,13 @@
   }
 
   .content {
-    width: 100vw;
-    height: size-m(451);
-    top: 0;
+    width: size-m(280);
+    height: auto;
+    top: size-m(270);
     left: 0;
-    padding: 35px 25px;
+    right: 0;
+    margin: 0 auto;
+    padding: 25px 25px;
     background: linear-gradient(to right, #d80033, #ea5400);
   }
 
@@ -239,18 +271,26 @@
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.92;
+    line-height: 1.2;
     letter-spacing: normal;
     text-align: left;
-    color: #f6f6f6;
-    margin-bottom: size-m(15);
+    color: #000000;
+    margin-bottom: size-m(0);
+  }
+
+  .content-items {
+    margin-bottom: size-m(10);
+    font-size: size-m(13);
   }
 
   .content-title {
-    font-size: size-m(37);
+    font-size: size-m(20);
     line-height: 0.94;
     margin-bottom: size-m(15);
     white-space: nowrap;
+    span {
+      font-size: size-m(15);
+    }
   }
 
   .content-desc {
@@ -262,7 +302,7 @@
   .swiper-container {
     position: relative;
     width: 100vw;
-    height: size-m(440);
+    height: size-m(281);
     top: 0;
     right: 0;
 
@@ -313,14 +353,21 @@ export default {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
       },
 
       slideList: [
-        { src: require('./s6/1.jpg') },
-        { src: require('./s6/1.jpg') },
-        { src: require('./s6/1.jpg') },
-        { src: require('./s6/1.jpg') },
-        { src: require('./s6/1.jpg') },
+        { src: require('./s7/1.jpg') },
+        { src: require('./s7/1.jpg') },
+        { src: require('./s7/1.jpg') },
+        { src: require('./s7/1.jpg') },
+        { src: require('./s7/1.jpg') },
+        { src: require('./s7/1.jpg') },
+        { src: require('./s7/1.jpg') },
+        { src: require('./s7/1.jpg') },
       ],
 
       imgIndex: 0,
@@ -330,7 +377,12 @@ export default {
 
   computed: {},
 
-  methods: {},
+  methods: {
+    goTo(index) {
+      const swiper = this.$refs.mySwiper.swiper
+      swiper.slideTo(index)
+    },
+  },
 
   created() {},
   mounted() {},

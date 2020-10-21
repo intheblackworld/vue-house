@@ -4,7 +4,8 @@
     <Loading :loading="load" />
     <!-- <SideNavigation v-if="isSide" /> -->
     <Navigation :min="isNavMin" />
-    <img src="../projects/yb1/s1/bg.jpg" alt="" class="s1-img">
+    <img src="../projects/yb1/s1/bg.jpg" alt="" class="s1-img" v-if="!isMobile">
+    <img src="../projects/yb1/s1/bg_m.jpg" alt="" class="s1-img" v-else>
     <div id="section1">
       <Section1 />
     </div>
@@ -22,13 +23,13 @@
     <div id="section5">
       <Section5 />
     </div>
-    <div id="section6">
+    <div id="section6" class="mb-200">
       <Section6 />
     </div>
-    <div id="section7">
+    <div id="section7" class="mb-200">
       <Section7 />
     </div>
-    <div id="section8">
+    <div id="section8" class="mb-200">
       <Section8 />
     </div>
     <ContactSection />
@@ -58,14 +59,43 @@
   width: size(1800);
   // height: 3299px;
   opacity: 0.95;
-  clip-path: polygon(0 0,100% 0%,100% 100%,10% 100%,0% 90%);
-  background-image: linear-gradient(to bottom, rgba(255, 87, 0, 0.85), #fa0032 100%, #fa0032 100%);
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 10% 100%, 0% 90%);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 87, 0, 0.85),
+    #fa0032 100%,
+    #fa0032 100%
+  );
   margin: 0 auto 56px;
+}
+
+.mb-200 {
+  margin-bottom: size(200);
+}
+
+@media screen and (max-width: 767px) {
+  .s1-img {
+    width: 100vw;
+    height: auto;
+    // min-height: size(2160);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &:nth-child(1) {
+      position: relative;
+    }
+  }
+  .mb-200 {
+    margin-bottom: 0;
+  }
 }
 </style>
 
 <script>
 // @ is an alias to /src
+import { isMobile, isTablet } from '@/utils'
 import Navigation from '@/layouts/Navigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
@@ -102,6 +132,7 @@ export default {
 
   data() {
     return {
+      isMobile,
       isSide: true,
       isNavMin: false,
       load: true,

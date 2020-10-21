@@ -1,7 +1,8 @@
 <template>
   <div>
     <div class="contact-info" id="contact-info">
-      <!-- <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" /> -->
+      <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" v-if="!isMobile" />
+      <img class="logo" src="@/assets/img/contact-logo_m.png" :alt="info.caseName" v-if="isMobile" />
       <div class="info">
         <div
           class="btn flex-c"
@@ -144,7 +145,7 @@ export default {
   position: relative;
   z-index: 3;
   width: 1200px;
-  height: 360px;
+  height: 780px;
   padding-top: 50px;
 
   margin: 50px auto 0 auto;
@@ -152,8 +153,8 @@ export default {
 }
 
 .logo {
-  width: auto;
-  height: 45%;
+  width: 880px;
+  height: auto;
   margin: 40px auto 40px;
 }
 .info {
@@ -312,7 +313,7 @@ export default {
   }
   .btn svg {
     position: absolute;
-    margin: 0 0 0 -70px;
+    margin: 0 0 0 -170px;
   }
 }
 </style>

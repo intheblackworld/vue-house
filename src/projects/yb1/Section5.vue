@@ -1,9 +1,6 @@
 <template>
   <div class="section5">
-    <div
-      v-if="!isMobile"
-      class="relative bg"
-    >
+    <div v-if="!isMobile" class="relative bg">
       <img src="./s5/map.jpg" alt="" class="map-img relative">
       <div class="relative">
         <div class="content flex flex-as flex-jb">
@@ -15,31 +12,16 @@
       </div>
     </div>
 
-    <div
-      v-if="isMobile"
-      class="relative"
-    >
-      <img
-        src="./mo/2/bg_txt.png"
-        alt=""
-        class="bg-img"
-      >
-      <img
-        src="./mo/2/l.png"
-        alt=""
-        class="bg-img"
-      >
-      <div class="title absolute">是誰？</div>
-      <div class="subtitle absolute">以近未來思維重現<br>大直重劃<span>都會綠洲</span></div>
+    <div v-if="isMobile" class="relative">
+      <Map :bgSrc="bgSrc" :hand="hand"></Map>
       <div class="relative">
         <div class="content">
-          <div class="content-label">Our Location</div>
+          <div class="content-label">地段魅力</div>
           <div class="content-desc">
             時至今日，樸實無華的自然情趣也沒有半點貶值的跡象，我們深信那是讓人內心寧靜的永恆之美，而怎樣的喧囂浮華都歸於平常。央北重劃區以TOD概念打造宜居城市重現都市綠洲，營造充滿本質美好的自然永續環境和近鄰信義敦南的便利生活，正如您之所見。
           </div>
         </div>
       </div>
-      <Map :bgSrc="bgSrc" :hand="hand"></Map>
     </div>
   </div>
 </template>
@@ -178,7 +160,7 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 2;
-  letter-spacing: 0.01em;
+    letter-spacing: 0.01em;
     text-align: left;
     color: #ffffff;
     margin: 0 auto;
@@ -239,19 +221,19 @@
     top: 0;
     left: 0;
     padding-top: size-m(35);
-    background: linear-gradient(to right, #d80033, #ea5400);
+    background: #fff;
   }
 
   .content-label {
-    font-size: size-m(12);
+    font-size: size-m(18);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.92;
     letter-spacing: normal;
     text-align: left;
-    color: #f6f6f6;
-    margin-left: size-m(40);
+    color: #242424;
+    margin-left: size-m(5);
     margin-bottom: size-m(15);
   }
 
@@ -262,7 +244,7 @@
     font-style: normal;
     line-height: 0.94;
     text-align: left;
-    color: #f6f6f6;
+    color: #242424;
     margin-bottom: size-m(15);
     font-family: futurabq;
   }
@@ -275,7 +257,7 @@
     font-style: normal;
     line-height: 1.56;
     text-align: left;
-    color: #f6f6f6;
+    color: #242424;
     margin: 0 auto;
     margin-bottom: size-m(35);
   }
@@ -317,7 +299,7 @@ import Map from '@/components/Map.vue'
 
 export default {
   name: 'section5',
-  
+
   components: {
     Map,
   },
@@ -326,7 +308,7 @@ export default {
     return {
       isMobile,
       bgSrc: require('./s5/map.jpg'),
-      hand: require('./arrow.png')
+      hand: require('./s5/小手.png'),
     }
   },
 

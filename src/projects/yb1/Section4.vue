@@ -1,29 +1,13 @@
 <template>
   <div class="section4">
-    <div v-if="!isMobile" class="relative">
+    <div class="relative">
       <div class="content">
         <div class="title">職人團隊</div>
         <div class="swiper-frame">
-          <swiper
-            :options="swiperOption"
-            ref="mySwiper"
-            data-aos="fade"
-            data-aos-delay="1000"
-          >
-            <swiper-slide
-              v-for="(slide, index) in slideList"
-              :index="index"
-              :key="slide.img"
-              class="item"
-            >
-              <img
-                :src="slide.src"
-                :class="`item-img`"
-              />
-              <div
-                class="text"
-                v-html="slide.text"
-              ></div>
+          <swiper :options="swiperOption" ref="mySwiper" data-aos="fade" data-aos-delay="1000">
+            <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="item">
+              <img :src="slide.src" :class="`item-img`" />
+              <div class="text" v-html="slide.text"></div>
             </swiper-slide>
           </swiper>
         </div>
@@ -31,9 +15,6 @@
           回首過往，雖然不斷快速演進的知識和科技成為現代建築進步的要素，但使我們持續前進和銘感五內的仍是【堅持誠實蓋好宅】的誠摯本心。台灣土地上的情感故事，啟發我們追尋物質以外的核心價值，以揉合國際思維與在地精神的美學挑起建築脈動，正等待您親眼所見。
         </div>
       </div>
-    </div>
-
-    <div v-if="isMobile" class="relative">
     </div>
   </div>
 </template>
@@ -108,7 +89,7 @@
     height: size(302);
     border-radius: 999px;
   }
-  
+
   margin: 0 auto;
   margin-bottom: size(58);
 }
@@ -130,7 +111,7 @@
 
 .swiper-frame {
   // position: absolute;
-  width:100%;
+  width: 100%;
   height: size(900);
   // top: size(-150);
   left: size(0);
@@ -176,113 +157,116 @@
     min-height: auto;
   }
 
-  .title {
-    font-size: size-m(38);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 0.55;
-    text-align: right;
-    color: #242424;
-    top: size-m(98);
-    left: size-m(40);
-  }
-
-  .subtitle {
-    font-size: size-m(17);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.31;
-    text-align: left;
-    color: #242424;
-    top: size-m(135);
-    left: size-m(189);
-
-    span {
-      color: #eb5500;
-    }
-
-    .number {
-      font-size: size-m(38);
-    }
-  }
-
   .content {
-    width: 100vw;
-    height: size-m(437);
-    top: 0;
-    left: 0;
-    padding: 35px 40px;
-    background: linear-gradient(to right, #d80033, #ea5400);
+    margin: 0 auto;
+    padding-top: size(180);
   }
 
-  .content-label {
-    font-size: size-m(12);
+  .title {
+    width: size-m(98);
+    font-size: size-m(18);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.92;
-    letter-spacing: normal;
-    text-align: left;
-    color: #f6f6f6;
-    margin-bottom: size-m(15);
+    line-height: 1.08;
+    letter-spacing: size-m(1.8);
+    text-align: center;
+    color: #242424;
+    white-space: nowrap;
+    position: relative;
+    &::after,
+    &::before {
+      content: '';
+      width: size-m(90);
+      height: 2px;
+      background-color: #242424;
+      display: block;
+    }
+
+    &::before {
+      position: absolute;
+      left: size-m(-100);
+      top: size-m(8);
+    }
+
+    &::after {
+      position: absolute;
+      right: size-m(-100);
+      top: size-m(8);
+    }
+    margin: 0 auto;
+    margin-bottom: size(78);
   }
 
-  .content-title {
-    font-size: size-m(40);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 0.94;
-    text-align: left;
-    color: #f6f6f6;
-    margin-bottom: size-m(15);
+  .imgs {
+    width: size-m(330);
+    height: size-m(180);
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .icon-img {
+      width: size-m(290);
+      height: auto;
+      border-radius: 999px;
+    }
+
+    margin: 0 auto;
+    margin-bottom: size-m(0);
   }
 
-  .content-desc {
+  .desc {
+    width: size-m(280);
     font-size: size-m(13);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.56;
+    line-height: 1.6;
+    letter-spacing: size-m(0.65);
     text-align: left;
-    color: #f6f6f6;
-    margin-bottom: size-m(15);
+    color: #ffffff;
+
+    margin: 0 auto;
+    margin-bottom: size-m(30);
+  }
+
+  .swiper-frame {
+    // position: absolute;
+    width: 100%;
+    height: size-m(380);
+    // top: size(-150);
+    left: size(0);
+    overflow: hidden;
+    margin-bottom: size-m(30);
   }
 
   .swiper-container {
     position: relative;
     width: 100vw;
-    height: size-m(500);
+    height: size-m(380);
     top: 0;
-    right: 0;
-
-    img {
-      width: 100%;
-    }
-  }
-  .link-g {
-    p {
-      font-size: size-m(14);
-    }
-  }
-  .fb-link {
-    width: size-m(29);
-    cursor: pointer;
-  }
-
-  .item-title {
-    font-size: 16px;
-    color: #fff;
-    font-weight: bold;
-    text-shadow: 0 0 4px #000;
-    position: absolute;
     left: 0;
-    right: 0;
-    text-align: center;
-    bottom: 10px;
-    line-height: 1.6;
+    margin-left: 0;
+
+    .text {
+      font-size: size-m(13);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.4;
+      letter-spacing: 0.3px;
+      text-align: left;
+      color: #ffffff;
+      margin: 0 auto;
+      span {
+        font-size: size-m(13);
+        color: #242424;
+      }
+    }
+
+    img,
+    .text {
+      width: size-m(266);
+    }
   }
 }
 </style>
@@ -332,7 +316,10 @@ export default {
         { src: require('./s4/3.jpg'), text: '燈光設計 | <span>朱文英</span>' },
         { src: require('./s4/6.jpg'), text: '公設規劃 | <span>林馬克</span>' },
         { src: require('./s4/4.jpg'), text: '結構設計 | <span>陳村林</span>' },
-        { src: require('./s4/5.jpg'), text: '綠建築顧問 | <span>楊謙柔</span>' },
+        {
+          src: require('./s4/5.jpg'),
+          text: '綠建築顧問 | <span>楊謙柔</span>',
+        },
       ],
 
       imgIndex: 0,

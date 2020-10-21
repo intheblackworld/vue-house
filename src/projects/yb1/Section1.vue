@@ -1,14 +1,15 @@
 <template>
   <div class="section1">
-    <div class="bg" v-if="!isMobile">
+    <div class="bg">
       <!-- <img src="./s1/logo.png" alt="" class="logo absolute"> -->
       <img src="./s1/slogo1.png" alt="" class="slogo1 absolute">
       <img src="./s1/slogo2.png" alt="" class="slogo2 absolute">
       <img src="./s1/t1.png" alt="" class="t1 absolute">
-      <img src="./s1/t2.png" alt="" class="t2 absolute">
+      <img src="./s1/t2.png" alt="" class="t2 absolute" v-if="!isMobile">
+      <img src="./s1/t2_m.png" alt="" class="t2 absolute" v-if="isMobile">
       <div class="btn flex-c absolute" v-scroll-to="{ element: `#contact`, offset: -100 }">立即預約</div>
     </div>
-    <div class="bg" v-if="isMobile">
+    <!-- <div class="bg" v-if="isMobile">
       <div class="vh1">
         <img src="./mo/1/txt.png" alt="有我們在幸福的未來就在現在" class="txt_mo">
       </div>
@@ -16,7 +17,7 @@
         <img src="./mo/1/1.jpg" alt="img1" class="img1_mo">
         <img src="./mo/1/2.jpg" alt="img2" class="img2_mo">
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 <style lang="scss" scoped>
@@ -81,7 +82,7 @@
   border: solid 3.8px #f80233;
   background: rgba(248, 2, 51, 0);
   cursor: pointer;
-  transition: all .3s;
+  transition: all 0.3s;
 
   &:hover {
     background: rgba(248, 2, 51, 1);
@@ -98,21 +99,38 @@
     background-size: cover;
     position: relative;
     margin: 0;
+    min-height: size-m(667);
   }
-  .vh1 {
-    height: auto;
-    max-width: 99%;
-  }
-  .txt_mo {
-    width: 100%;
-  }
-  .img1_mo {
-    width: size_m(267);
+  .t1 {
+    width: size-m(203);
+    top: size-m(107);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
   }
 
-  .img2_mo {
-    width: size_m(68.5);
-    margin-left: size_m(18);
+  .t2 {
+    width: size-m(250);
+    top: size-m(153);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  .slogo1 {
+    width: size-m(68);
+    top: size-m(348);
+    left: size-m(116);
+  }
+
+  .slogo2 {
+    width: size-m(57);
+    top: size-m(348);
+    left: size-m(203);
+  }
+
+  .btn {
+    display: none;
   }
 }
 </style>
