@@ -96,12 +96,12 @@
 
 .desc {
   width: size(1080);
-  font-size: size(30);
+  font-size: size(25);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.6;
-  letter-spacing: size(1.5);
+  line-height: 1.7;
+  letter-spacing:0.08em;
   text-align: left;
   color: #ffffff;
 
@@ -112,7 +112,9 @@
 .swiper-frame {
   // position: absolute;
   width: 100%;
-  height: size(900);
+  height:calc(100vh - 32vw);
+  min-height: size(600);
+  max-height: size(850);
   // top: size(-150);
   left: size(0);
   overflow: hidden;
@@ -120,15 +122,16 @@
 
 .swiper-container {
   // position: absolute;
-  width: size(2600);
-  height: size(900);
+ // width: size(200);
+  height:100%;
   // top: size(50);
   left: size(179);
   margin-left: size(-790);
-
+.item{width:auto;margin: 0 size(80) 0 0;}
   img,
   .text {
-    width: size(550);
+   // width: size(550);
+   height:calc(100% - 4vw);
   }
 
   .text {
@@ -233,6 +236,8 @@
     // position: absolute;
     width: 100%;
     height: size-m(380);
+    min-height:0;
+    max-height:size-m(480);
     // top: size(-150);
     left: size(0);
     overflow: hidden;
@@ -294,7 +299,7 @@ export default {
     return {
       isMobile,
       swiperOption: {
-        slidesPerView: isMobile ? 1.4 : 4.2,
+        slidesPerView: isMobile ? 1.4 : "auto",
         centeredSlides: true,
         spaceBetween: isMobile ? 15 : 0,
         slidesPerColumn: isMobile ? 1 : 1,

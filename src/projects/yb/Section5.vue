@@ -74,7 +74,6 @@
   // position: relative;
   // z-index: 5;
   min-height: 100vh;
-  background-color: #eee;
 }
 
 .bg-img {

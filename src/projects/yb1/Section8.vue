@@ -1,7 +1,6 @@
 <template>
   <div class="section7">
-    <div class="bg">
-      <div class="relative">
+    <div class="bg relative">
         <!-- <div class="bg-color"></div> -->
         <div class="content absolute">
           <div class="content-title">
@@ -21,7 +20,6 @@
           </swiper-slide>
           <div class="swiper-pagination" slot="pagination"></div>
         </swiper>
-      </div>
     </div>
 
     <!-- <div v-if="isMobile" class="relative">
@@ -55,8 +53,9 @@
   background-size: cover;
   // position: relative;
   // z-index: 5;
-  height: 100vh;
-  min-height: size(1080);
+  height: calc(100vh - 70px);
+  min-height: size(900);
+  max-height: size(1080);
 }
 
 .bg-img {
@@ -118,14 +117,19 @@
 
 .content {
   width: size(524);
-  height: size(780);
-  top: size(120);
+  height:80%;
+  top:10%;
   left: size(120);
   text-align: center;
   padding: size(34) size(50) 0 size(77);
-  clip-path: polygon(0 0, 100% 0%, 100% 100%, 10% 100%, 0% 90%);
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 6.4vw 100%, 0% calc(100% - 6.4vw));
   background-image: linear-gradient(to bottom, #ff5f00 0%, #fa0032 100%);
   z-index: 10;
+  display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
 }
 
 .content-title {
@@ -137,7 +141,7 @@
   letter-spacing: size(1.44);
   text-align: center;
   color: #242424;
-  margin-bottom: size(120);
+  margin-bottom: size(50);
   white-space: nowrap;
 
   span {
@@ -179,17 +183,19 @@
   letter-spacing: size(0.63);
   text-align: center;
   color: #000000;
-  margin-bottom: size(0)
+  margin-bottom: size(60)
 }
 
 .swiper-container {
   position: absolute;
-  width: size(1440);
-  height: size(1080);
+  width: size(1350);
+  height:100%;
   top: 0;
   right: 0;
   img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 /* 平板尺寸 */
@@ -200,7 +206,9 @@
   .bg {
     background-size: cover;
     margin: 0;
-    min-height: auto;
+  height:size-m(620);
+  min-height: size-m(0);
+  max-height: size-m(812);
   }
 
   .title {

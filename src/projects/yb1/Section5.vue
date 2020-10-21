@@ -39,7 +39,6 @@
   // position: relative;
   // z-index: 5;
   min-height: 100vh;
-  background-color: #eee;
 }
 
 .bg-img {
@@ -117,12 +116,12 @@
 
 .content-desc {
   width: size(975);
-  font-size: size(30);
+  font-size: size(25);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.6;
-  letter-spacing: size(1.5);
+  line-height: 1.7;
+  letter-spacing:0.08em;
   text-align: left;
   color: #242424;
 }

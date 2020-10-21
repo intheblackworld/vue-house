@@ -7,6 +7,9 @@
       <img src="./s1/t1.png" alt="" class="t1 absolute">
       <img src="./s1/t2.png" alt="" class="t2 absolute" v-if="!isMobile">
       <img src="./s1/t2_m.png" alt="" class="t2 absolute" v-if="isMobile">
+      <div class="icon1 absolute" v-if="!isMobile">
+      <img src="./s1/icon.png" alt="" class="icon"></div>
+      <div class="icon2 absolute"><img src="./s1/icon.png" alt="" class="icon"></div>
       <div class="btn flex-c absolute" v-scroll-to="{ element: `#contact`, offset: -100 }">立即預約</div>
     </div>
     <!-- <div class="bg" v-if="isMobile">
@@ -23,21 +26,22 @@
 <style lang="scss" scoped>
 @import '~@/assets/style/function.scss';
 .bg {
-  background-size: cover;
+  background-size: contain;
   position: relative;
   // background-color: #fddb3e;
-  // background-image: url('./s1/kv_city_bg.jpg');
-  background-position: bottom;
+  // background-image: url('./s1/2020-10-21_163431.png');
+  background-position:center center;
   background-repeat: no-repeat;
   overflow: hidden;
-  height: 100vh;
-  min-height: size(1080);
+  height:100vh;
+  min-height: size(900);
+  max-height: size(1080);
   // pointer-events: none;
 }
 
 .t1 {
   width: size(581);
-  top: size(377);
+  top: calc(50% - 8.3vw);
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -45,7 +49,7 @@
 
 .t2 {
   width: size(901);
-  top: size(502);
+  top: calc(50% - 1.4vw);
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -53,20 +57,55 @@
 
 .slogo1 {
   width: size(150);
-  top: size(997);
+  bottom: 6%;
   left: size(801);
 }
 
 .slogo2 {
   width: size(125);
-  top: size(997);
+  bottom: 6%;
   left: size(992);
+}
+
+.icon1{
+  width:calc(50vw - 74.5vh);
+  min-width: size(146);
+  max-width: size(286);
+  top:57%;
+  left:0;
+  text-align: right;
+  .icon{width: size(85);transform: rotate(20deg) scale(0.8);opacity: 0.8;animation: rotate1 1s infinite ease-in-out alternate;}
+}
+.icon2{
+  width:calc(50vw - 70vh);
+  min-width: size(202);
+  max-width: size(335);
+  top:56%;
+  right:0;
+  text-align: left;
+  .icon{width: size(85);transform: rotate(-10deg) scale(0.8);opacity: 0.8;animation: rotate1 1s -0.5s infinite ease-in-out alternate;}
+}
+@keyframes rotate1 {
+    50% {
+      transform: rotate(10deg) scale(1);opacity:1;
+    }
+    to {
+      transform: rotate(0deg) scale(0.8);opacity: 0.8;
+    }
+}
+@keyframes rotate2 {
+    50% {
+      transform: rotate(0deg) scale(1);opacity:1;
+    }
+    to {
+      transform: rotate(10deg) scale(0.8);opacity: 0.8;
+    }
 }
 
 .btn {
   width: size(210);
   height: size(72);
-  top: size(738);
+  top: calc(50% + 9vw);
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -99,7 +138,9 @@
     background-size: cover;
     position: relative;
     margin: 0;
-    min-height: size-m(667);
+  height: calc(100vh - 63px);
+  min-height: size-m(610);
+  max-height: size-m(812);
   }
   .t1 {
     width: size-m(203);
@@ -128,6 +169,19 @@
     top: size-m(348);
     left: size-m(203);
   }
+.icon2{
+  width:100%;
+  min-width: size-m(0);
+  max-width: 100%;
+    height:53vh;
+    min-height: size-m(320);
+    max-height: size-m(500);
+  top:92.8vw;
+  left:0;
+  text-align: center;
+  .icon{position: absolute;top:40%;left:41%;
+    width: size-m(37);transform: rotate(-10deg) scale(0.8);opacity: 0.8;animation: rotate1 1s infinite ease-in-out alternate;}
+}
 
   .btn {
     display: none;

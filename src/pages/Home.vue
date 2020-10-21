@@ -6,6 +6,7 @@
     <Navigation :min="isNavMin" />
     <img src="../projects/yb1/s1/bg.jpg" alt="" class="s1-img" v-if="!isMobile">
     <img src="../projects/yb1/s1/bg_m.jpg" alt="" class="s1-img" v-else>
+    <div class="s1234bg">
     <div id="section1">
       <Section1 />
     </div>
@@ -20,6 +21,7 @@
         <Section4 />
       </div>
     </div>
+      </div>
     <div id="section5">
       <Section5 />
     </div>
@@ -44,22 +46,24 @@
 .s1-img {
   width: auto;
   height: 200vh;
-  min-height: size(2160);
+  min-height: size(1800);
+  max-height: size(2160);
   display: block;
   position: absolute;
   top: 0;
-  left: size((1920 - 2440) / 2);
+  left: 50%;
+  transform: translateX(-50%);
 
   &:nth-child(1) {
     position: relative;
   }
 }
-
+.s1234bg{background: #fff;overflow: hidden;}
 .linear-bg {
   width: size(1800);
   // height: 3299px;
   opacity: 0.95;
-  clip-path: polygon(0 0, 100% 0%, 100% 100%, 10% 100%, 0% 90%);
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 6.4vw 100%, 0% calc(100% - 6.4vw));
   background-image: linear-gradient(
     to bottom,
     rgba(255, 87, 0, 0.85),
@@ -75,13 +79,13 @@
 
 @media screen and (max-width: 767px) {
   .s1-img {
-    width: 100vw;
-    height: auto;
-    // min-height: size(2160);
+    width:auto;
+    height:53vh;
+    min-height: size-m(320);
+    max-height: size-m(500);
     display: block;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: size-m(380);
 
     &:nth-child(1) {
       position: relative;
