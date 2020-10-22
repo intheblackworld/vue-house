@@ -19,23 +19,6 @@
             <img :src="slide.src" :class="`item-img`" />
           </swiper-slide>
           <div class="swiper-pagination" slot="pagination"  v-if="!isMobile"></div>
-          <div
-            class="swipe-btns absolute flex-ac flex-jb"
-            v-if="isMobile"
-          >
-            <img
-              src="./prev-btn.png"
-              alt=""
-              class="swiper-button-prev"
-              @click="decIndex"
-            >
-            <img
-              src="./next-btn.png"
-              alt=""
-              class="swiper-button-next"
-              @click="addIndex"
-            >
-          </div>
         </swiper>
     </div>
 
@@ -321,12 +304,6 @@
   }
   .logoall {
     width: size-m(295);
-  }
-  .swipe-btns{
-    width: 100%;
-    height: 100%;
-    padding: 0 15px;
-    z-index: 3;
   }
 }
 </style>
