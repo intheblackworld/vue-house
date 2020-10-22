@@ -177,6 +177,7 @@ export default {
   background: $contact_btn_bg;
   border: $contact_btn_border;
   transition: all 0.5s;
+  position: relative;
 
   svg {
     color: $contact_btn_icon;
@@ -300,6 +301,13 @@ export default {
     border-top-left-radius: 0px;
     border-bottom-right-radius: 30px;
     border-bottom-left-radius: 30px;
+    position: relative;
+    svg {
+    position: absolute;
+    margin: 0 0 0 0;
+    left:25%;
+    top: 50%;transform: translate(-50%,-50%);
+  }
   }
   .address {
     margin-bottom: 0;
@@ -313,7 +321,9 @@ export default {
   }
   .btn svg {
     position: absolute;
-    margin: 0 0 0 -170px;
+    margin: 0 0 0 0;
+    left:25%;
+    top: 50%;transform: translate(-50%,-50%);
   }
 }
 </style>
