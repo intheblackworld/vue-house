@@ -125,8 +125,8 @@
   // width: size(200);
   height: 100%;
   // top: size(50);
-  left: size(179);
-  margin-left: size(-265);
+  left: size(0);
+  margin-left: size(-295);
   .item {
     width: auto;
     margin: 0 size(80) 0 0;
