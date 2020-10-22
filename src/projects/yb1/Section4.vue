@@ -238,7 +238,7 @@
   .swiper-frame {
     // position: absolute;
     width: 100%;
-    height: size-m(380);
+    height: size-m(390);
     min-height: 0;
     max-height: size-m(480);
     // top: size(-150);
@@ -250,7 +250,7 @@
   .swiper-container {
     position: relative;
     width: 100vw;
-    height: size-m(380);
+    height: 100%;
     top: 0;
     left: 0;
     margin-left: 0;
@@ -273,7 +273,7 @@
 
     img,
     .text {
-      width: size-m(266);
+    height: calc(100% - 10vw);
     }
   }
 }
