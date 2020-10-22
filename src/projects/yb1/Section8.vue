@@ -1,25 +1,31 @@
 <template>
   <div class="section7">
     <div class="bg relative">
-        <!-- <div class="bg-color"></div> -->
-        <div class="content absolute">
-          <div class="content-title">
-            坪效美學
-          </div>
-          <div class="content-items">
-            <li @click="goTo(1)">24坪</li>
-            <li @click="goTo(2)">28坪</li>
-            <li @click="goTo(3)">35坪</li>
-            <li @click="goTo(4)">38坪</li>
-          </div>
-          <div class="content-label">[央北鑫建築] 建築外觀3D透視<br />參考示意圖，實際依銷售合約書為準</div>
+      <!-- <div class="bg-color"></div> -->
+      <div class="content absolute">
+        <div class="content-title">
+          坪效美學
         </div>
-        <swiper :options="swiperOption" ref="mySwiper" data-aos="fade" data-aos-delay="1000">
-          <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="item">
-            <img :src="slide.src" :class="`item-img`" />
-          </swiper-slide>
-          <div class="swiper-pagination" slot="pagination"></div>
-        </swiper>
+        <div class="content-items">
+          <li :class="`${slideIndex == (1 - 1) ? 'active' : ''}`" @click="goTo(1)">24坪</li>
+          <li :class="`${slideIndex == (2 - 1) ? 'active' : ''}`" @click="goTo(2)">28坪</li>
+          <li :class="`${slideIndex == (3 - 1) ? 'active' : ''}`" @click="goTo(3)">35坪</li>
+          <li :class="`${slideIndex == (4 - 1) ? 'active' : ''}`" @click="goTo(4)">38坪</li>
+        </div>
+        <div class="content-label">[央北鑫建築] 建築外觀3D透視<br />參考示意圖，實際依銷售合約書為準</div>
+      </div>
+      <swiper :options="swiperOption" ref="mySwiper8" data-aos="fade" data-aos-delay="1000" @slideChange="slideChanged">
+        <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="item">
+          <img :src="slide.src" :class="`item-img`" />
+        </swiper-slide>
+        <div class="swiper-pagination" slot="pagination" v-if="!isMobile"></div>
+        <div class="swiper-button-prev" slot="button-prev" v-if="isMobile">
+          <img src="./prev-btn.png" alt />
+        </div>
+        <div class="swiper-button-next" slot="button-next" v-if="isMobile">
+          <img src="./next-btn.png" alt />
+        </div>
+      </swiper>
     </div>
 
     <!-- <div v-if="isMobile" class="relative">
@@ -38,7 +44,7 @@
           </div>
           <img src="./s3/logoall.png" alt="" class="logoall">
         </div>
-        <swiper :options="swiperOption" ref="mySwiper" data-aos="fade" data-aos-delay="1000">
+        <swiper :options="swiperOption" ref="mySwiper8" data-aos="fade" data-aos-delay="1000">
           <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="item">
             <img :src="slide.src" :class="`item-img`" />
           </swiper-slide>
@@ -117,19 +123,24 @@
 
 .content {
   width: size(524);
-  height:80%;
-  top:10%;
+  height: 80%;
+  top: 10%;
   left: size(120);
   text-align: center;
   padding: size(34) size(50) 0 size(77);
-  clip-path: polygon(0 0, 100% 0%, 100% 100%, 6.4vw 100%, 0% calc(100% - 6.4vw));
+  clip-path: polygon(
+    0 0,
+    100% 0%,
+    100% 100%,
+    6.4vw 100%,
+    0% calc(100% - 6.4vw)
+  );
   background-image: linear-gradient(to bottom, #ff5f00 0%, #fa0032 100%);
   z-index: 10;
   display: flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .content-title {
@@ -167,7 +178,9 @@
   li {
     border-radius: size(24.8);
     margin-bottom: size(20);
-    &:hover {
+    padding: 0 30px;
+    &:hover,
+    &.active {
       color: #ff5f00;
       background-color: #ffffff;
     }
@@ -183,13 +196,13 @@
   letter-spacing: size(0.63);
   text-align: center;
   color: #000000;
-  margin-bottom: size(60)
+  margin-bottom: size(60);
 }
 
 .swiper-container {
   position: absolute;
   width: size(1350);
-  height:100%;
+  height: 100%;
   top: 0;
   right: 0;
   img {
@@ -206,9 +219,9 @@
   .bg {
     background-size: cover;
     margin: 0;
-  height:size-m(620);
-  min-height: size-m(0);
-  max-height: size-m(812);
+    height: size-m(620);
+    min-height: size-m(0);
+    max-height: size-m(812);
   }
 
   .title {
@@ -366,9 +379,25 @@ export default {
 
   methods: {
     goTo(index) {
-      const swiper = this.$refs.mySwiper.swiper
+      const swiper = this.$refs.mySwiper8.swiper
       swiper.slideTo(index)
-    }
+    },
+
+    slideChanged(e) {
+      const swiper = this.$refs.mySwiper8.swiper
+      if (swiper.activeIndex <= swiper.slides.length - 2) {
+        this.slideIndex = swiper.activeIndex - 1
+      } else {
+        this.slideIndex = 0
+      }
+      // if (swiper.isEnd) {
+      //   this.slideIndex = 0
+      // } else if (swiper.isBeginning) {
+      //   this.slideIndex = swiper.slides.length - 3
+      // } else {
+      //   this.slideIndex = swiper.activeIndex - 1
+      // }
+    },
   },
 
   created() {},

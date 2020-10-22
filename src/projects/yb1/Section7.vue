@@ -1,33 +1,39 @@
 <template>
   <div class="section7">
     <div class="bg relative">
-        <!-- <div class="bg-color"></div> -->
-        <div class="content absolute">
-          <div class="content-title">
-            里仁之美
-          </div>
-          <div class="content-items">
-            <li @click="goTo(1)">1F 門廳 (物管區)</li>
-            <li @click="goTo(2)">A棟 門廳 (圖書區)</li>
-            <li @click="goTo(3)">B棟 門廳 (多功能教室)</li>
-            <li @click="goTo(4)">健身房+兒童遊戲區</li>
-            <li @click="goTo(5)">社區入口</li>
-            <li @click="goTo(6)">1F景觀</li>
-            <li @click="goTo(7)">RF景觀</li>
-            <li @click="goTo(8)">第二門廳</li>
-          </div>
-          <div class="content-label">
-            此為廣告效果示意，為單一建物電腦3D
-            透視表現，周遭環境係電腦合成
-            建設公司保有建物外觀修正之權利
-          </div>
+      <!-- <div class="bg-color"></div> -->
+      <div class="content absolute">
+        <div class="content-title">
+          里仁之美
         </div>
-        <swiper :options="swiperOption" ref="mySwiper" data-aos="fade" data-aos-delay="1000">
-          <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="item">
-            <img :src="slide.src" :class="`item-img`" />
-          </swiper-slide>
-          <div class="swiper-pagination" slot="pagination"></div>
-        </swiper>
+        <div class="content-items">
+          <li :class="`${slideIndex == (1 - 1) ? 'active' : ''}`" @click="goTo(1)">1F 門廳 (物管區)</li>
+          <li :class="`${slideIndex == (2 - 1) ? 'active' : ''}`" @click="goTo(2)">A棟 門廳 (圖書區)</li>
+          <li :class="`${slideIndex == (3 - 1) ? 'active' : ''}`" @click="goTo(3)">B棟 門廳 (多功能教室)</li>
+          <li :class="`${slideIndex == (4 - 1) ? 'active' : ''}`" @click="goTo(4)">健身房+兒童遊戲區</li>
+          <li :class="`${slideIndex == (5 - 1) ? 'active' : ''}`" @click="goTo(5)">社區入口</li>
+          <li :class="`${slideIndex == (6 - 1) ? 'active' : ''}`" @click="goTo(6)">1F景觀</li>
+          <li :class="`${slideIndex == (7 - 1) ? 'active' : ''}`" @click="goTo(7)">RF景觀</li>
+          <li :class="`${slideIndex == (8 - 1) ? 'active' : ''}`" @click="goTo(8)">第二門廳</li>
+        </div>
+        <div class="content-label">
+          此為廣告效果示意，為單一建物電腦3D
+          透視表現，周遭環境係電腦合成
+          建設公司保有建物外觀修正之權利
+        </div>
+      </div>
+      <swiper :options="swiperOption" ref="mySwiper7" data-aos="fade" data-aos-delay="1000" @slideChange="slideChanged">
+        <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="item">
+          <img :src="slide.src" :class="`item-img`" />
+        </swiper-slide>
+        <div class="swiper-pagination" slot="pagination" v-if="!isMobile"></div>
+        <div class="swiper-button-prev" slot="button-prev" v-if="isMobile">
+          <img src="./prev-btn.png" alt />
+        </div>
+        <div class="swiper-button-next" slot="button-next" v-if="isMobile">
+          <img src="./next-btn.png" alt />
+        </div>
+      </swiper>
     </div>
 
     <!-- <div v-if="isMobile" class="relative">
@@ -125,18 +131,24 @@
 
 .content {
   width: size(524);
-  height:80%;
-  top:10%;
+  height: 80%;
+  top: 10%;
   right: size(120);
   text-align: center;
   padding: size(34) size(50) 0 size(77);
-  clip-path: polygon(0 0, 100% 0%, 100% 100%, 6.4vw 100%, 0% calc(100% - 6.4vw));
+  clip-path: polygon(
+    0 0,
+    100% 0%,
+    100% 100%,
+    6.4vw 100%,
+    0% calc(100% - 6.4vw)
+  );
   background-image: linear-gradient(to bottom, #ff5f00 0%, #fa0032 100%);
   z-index: 10;
   display: flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .content-title {
@@ -148,7 +160,7 @@
   letter-spacing: size(1.44);
   text-align: center;
   color: #242424;
-  margin-bottom:0.5em;
+  margin-bottom: 0.5em;
   white-space: nowrap;
 
   span {
@@ -171,7 +183,7 @@
   li {
     border-radius: size(24.8);
     margin-bottom: size(15);
-    &:hover {
+    &:hover, &.active {
       color: #ff5f00;
       background-color: #ffffff;
     }
@@ -184,7 +196,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.7;
-  letter-spacing:0.08em;
+  letter-spacing: 0.08em;
   text-align: left;
   color: #ffffff;
 
@@ -206,7 +218,7 @@
 .swiper-container {
   position: absolute;
   width: size(1350);
-  height:100%;
+  height: 100%;
   top: 0;
   left: 0;
   img {
@@ -223,9 +235,9 @@
   .bg {
     background-size: cover;
     margin: 0;
-  height:size-m(670);
-  min-height: size-m(0);
-  max-height: size-m(812);
+    height: size-m(670);
+    min-height: size-m(0);
+    max-height: size-m(812);
   }
 
   .title {
@@ -354,7 +366,7 @@ export default {
 
         autoplay: {
           delay: 3000,
-          disableOnInteraction: true,
+          disableOnInteraction: false,
         },
         loop: true,
         navigation: {
@@ -387,8 +399,21 @@ export default {
 
   methods: {
     goTo(index) {
-      const swiper = this.$refs.mySwiper.swiper
+      const swiper = this.$refs.mySwiper7.swiper
       swiper.slideTo(index)
+      this.slideIndex = index - 1
+    },
+
+    slideChanged(e) {
+      const swiper = this.$refs.mySwiper7.swiper
+      // console.log(swiper.activeIndex, swiper.slides.length)
+      if (swiper.activeIndex <= swiper.slides.length - 2) {
+         this.slideIndex = swiper.activeIndex - 1
+      } else {
+        this.slideIndex = 0
+      }
+      // 1 - 9, 2
+      // 0 - 8, 2
     },
   },
 

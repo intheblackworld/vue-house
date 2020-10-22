@@ -1,25 +1,31 @@
 <template>
   <div class="section6">
     <div class="bg relative">
-        <!-- <div class="bg-color"></div> -->
-        <div class="content absolute">
-          <div class="content-title">
-            建築表情<br />
-            <span>立面與燈光3D透視</span>
-          </div>
-          <div class="content-desc">
-            輕盈飛揚的建築語彙是央北鑫建築為年輕世代打造的獨特意象，側邊的堅實量體與斜向大牆穩重平衡，搭配水平線條與跳層玻璃的律動感。親近自然與大地的的清水混凝土語彙，用低調卻也醒目的方式與居者對話。
-          </div>
-          <div class="content-label">此為廣告效果示意，為單一建物電腦3D
-            透視表現，周遭環境係電腦合成
-            建設公司保有建物外觀修正之權利</div>
+      <!-- <div class="bg-color"></div> -->
+      <div class="content absolute">
+        <div class="content-title">
+          建築表情<br />
+          <span>立面與燈光3D透視</span>
         </div>
-        <swiper :options="swiperOption" ref="mySwiper" data-aos="fade" data-aos-delay="1000">
-          <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="item">
-            <img :src="slide.src" :class="`item-img`" />
-          </swiper-slide>
-          <div class="swiper-pagination" slot="pagination"  v-if="!isMobile"></div>
-        </swiper>
+        <div class="content-desc">
+          輕盈飛揚的建築語彙是央北鑫建築為年輕世代打造的獨特意象，側邊的堅實量體與斜向大牆穩重平衡，搭配水平線條與跳層玻璃的律動感。親近自然與大地的的清水混凝土語彙，用低調卻也醒目的方式與居者對話。
+        </div>
+        <div class="content-label">此為廣告效果示意，為單一建物電腦3D
+          透視表現，周遭環境係電腦合成
+          建設公司保有建物外觀修正之權利</div>
+      </div>
+      <swiper :options="swiperOption" ref="mySwiper" data-aos="fade" data-aos-delay="1000">
+        <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="item">
+          <img :src="slide.src" :class="`item-img`" />
+        </swiper-slide>
+        <div class="swiper-pagination" slot="pagination" v-if="!isMobile"></div>
+        <div class="swiper-button-prev" slot="button-prev" v-if="isMobile">
+          <img src="./prev-btn.png" alt />
+        </div>
+        <div class="swiper-button-next" slot="button-next" v-if="isMobile">
+          <img src="./next-btn.png" alt />
+        </div>
+      </swiper>
     </div>
 
     <!-- <div v-if="isMobile" class="relative">
@@ -63,6 +69,10 @@
 .swiper-pagination-bullet-active {
   background-color: #ff5f00;
   opacity: 0.7;
+}
+
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev, .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+  background-image: none !important;
 }
 </style>
 <style lang="scss" scoped>
@@ -135,18 +145,24 @@
 
 .content {
   width: size(524);
-  height:80%;
-  top:10%;
+  height: 80%;
+  top: 10%;
   left: size(120);
   text-align: center;
   padding: size(34) size(50) 0 size(77);
-  clip-path: polygon(0 0, 100% 0%, 100% 100%, 6.4vw 100%, 0% calc(100% - 6.4vw));
+  clip-path: polygon(
+    0 0,
+    100% 0%,
+    100% 100%,
+    6.4vw 100%,
+    0% calc(100% - 6.4vw)
+  );
   background-image: linear-gradient(to bottom, #ff5f00 0%, #fa0032 100%);
   z-index: 10;
   display: flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .content-title {
@@ -173,7 +189,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.7;
-  letter-spacing:0.08em;
+  letter-spacing: 0.08em;
   text-align: left;
   color: #ffffff;
 
@@ -195,7 +211,7 @@
 .swiper-container {
   position: absolute;
   width: size(1350);
-  height:100%;
+  height: 100%;
   top: 0;
   right: 0;
   img {
@@ -212,9 +228,9 @@
   .bg {
     background-size: cover;
     margin: 0;
-  height:size-m(620);
-  min-height: size-m(0);
-  max-height: size-m(812);
+    height: size-m(620);
+    min-height: size-m(0);
+    max-height: size-m(812);
   }
 
   .title {
