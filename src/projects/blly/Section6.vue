@@ -1,71 +1,13 @@
  <template>
   <div>
     <div class="section6">
-      <img
-        src="./s6/bg.jpg"
-        alt=""
-        class="bg-img"
-        v-if="isPC"
-      >
-      <img
-        src="./s6/1.png"
-        alt=""
-        class="bg-img cloud"
-        data-aos="fade-right"
-        data-aos-delay="800"
-        v-if="isPC"
-      >
-      <img
-        src="./s6/2.png"
-        alt=""
-        class="bg-img"
-        data-aos="fade-down"
-        data-aos-delay="0"
-        v-if="isPC"
-      >
-
-      <img
-        src="./s6/bgm.jpg"
-        alt=""
-        class="bg-img"
-        v-if="isMobile"
-      >
-      <img
-        src="./s6/1_m.png"
-        alt=""
-        class="bg-img cloud"
-        data-aos="fade-right"
-        data-aos-delay="800"
-        v-if="isMobile"
-      >
-      <img
-        src="./s6/2_m.png"
-        alt=""
-        class="bg-img house"
-        data-aos="fade-down"
-        data-aos-delay="0"
-        v-if="isMobile"
-      >
-      <div
-        class="border absolute"
-        data-aos="fade-up"
-        data-aos-delay="200"
-      ></div>
-      <div
-        class="title absolute"
-        data-aos="fade-up"
-        data-aos-delay="400"
-      >地標推手<br />築億精工</div>
-      <div
-        class="subtitle absolute"
-        data-aos="fade-up"
-        data-aos-delay="600"
-      >尺度｜決定胸懷與眼界</div>
-      <div
-        class="desc absolute"
-        data-aos="fade-up"
-        data-aos-delay="800"
-      >【築億丰盛】前後雙臨路，創造基地退縮永久棟距，簡潔俐落外觀線條，盡顯悠遠大器。面向蘭州公園，居家視野開闊。
+      <img src="./s6/bg.png" alt="" class="bg-img">
+      <img src="./s6/img.jpg" alt="" class="img absolute">
+      <img src="./s1/hr.png" alt="" class="hr absolute">
+      <h3 class="title absolute" data-aos="fade-up" data-aos-delay="600">Living Movement</h3>
+      <h3 class="subtitle absolute" data-aos="fade-up" data-aos-delay="400">至此境 得從容 享自在</h3>
+      <div class="desc absolute" data-aos="fade-up" data-aos-delay="800">
+        現場完工實景
       </div>
     </div>
   </div>
@@ -76,15 +18,15 @@
 
 .section6 {
   width: size(1920);
-  height: size(900);
-  min-height: size(900);
-  overflow: hidden;
+  height: 100vh;
+  min-height: size(1080);
+  background-color: #fff;
 }
 
 .bg-img {
   width: 100vw;
-  height: size(900);
-  min-height: size(900);
+  height: size(1080);
+  min-height: size(1080);
   position: absolute;
   display: block;
   top: 0;
@@ -99,67 +41,63 @@
   }
 }
 
-.border {
-  width: size(773);
-  height: size(263);
-  top: size(287);
-  right: size(190);
-  border: solid 3.9px #ffffff;
+.img {
+  width: size(472);
+  top: size(351);
+  left: size(140);
 }
 
 .title {
-  width: size(328);
-  top: size(310);
-  right: size(596);
-  white-space: nowrap;
-  font-size: size(81);
-  font-weight: bold;
+  width: size(626);
+  top: size(692);
+  left: size(135);
+  font-size: size(67.2);
+  font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.34;
-  letter-spacing: 1.62px;
+  line-height: 1.85;
+  letter-spacing: size(-2.69);
   text-align: left;
-  color: #ffffff;
-  text-shadow: 0 0 size(12) rgba(41, 128, 172, 0.801);
+  color: #a3a3a3;
+  white-space: nowrap;
 }
 
 .subtitle {
-  width: size(289);
-  top: size(340);
-  right: size(275);
-  font-size: size(26);
-  font-weight: 500;
+  width: size(557);
+  top: size(335);
+  left: size(686);
+  font-size: size(55.1);
+  font-weight: 600;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.33;
-  letter-spacing: 3.59px;
+  line-height: 1.44;
+  letter-spacing: size(3.31);
   text-align: left;
-  color: #000000;
+  color: #231815;
   white-space: nowrap;
 }
 
+
 .desc {
   width: size(340);
-  top: size(390);
-  right: size(225);
-  font-size: size(16);
-  font-weight: 500;
+  top: size(637);
+  left: size(624);
+  font-size: size(20.1);
+  font-weight: 300;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.45;
-  letter-spacing: 1.92px;
-  text-align: justify;
-  color: #4d4d4d;
+  line-height: 1.61;
+  letter-spacing: size(1.2);
+  text-align: left;
+  color: #808080;
 }
 
-.cloud {
-  animation: cloud 5s 0s ease-in-out infinite alternate-reverse;
-}
-
-@keyframes cloud {
-  to {
-    margin-left: 150px;
-  }
+.hr {
+  width: 100vw;
+  height: auto;
+  left: 0;
+  top: size(-220);
+  transform: scaleX(-1);
 }
 
 @media only screen and (max-width: 1440px) {
@@ -184,8 +122,8 @@
 
   .bg-img {
     width: 100vw;
-    height:100%;
-    min-height:100%;
+    height: 100%;
+    min-height: 100%;
     position: absolute;
     display: block;
     top: 0;
@@ -205,8 +143,9 @@
   }
 
   .cloud {
-    z-index: 1;margin-left: 0px;
-     width: calc(100vw + 40px);
+    z-index: 1;
+    margin-left: 0px;
+    width: calc(100vw + 40px);
     animation: cloud 15s 0s ease-in-out infinite alternate-reverse;
   }
 

@@ -249,7 +249,7 @@ export default {
   color: $contact_google_btn_color;
   background: $contact_google_btn_bg;
   background-position: center !important;
-  border: $contact_btn_border;
+  border: $contact_google_btn_border;
   transition: all 0.5s;
 
   svg {

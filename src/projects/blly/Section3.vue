@@ -18,8 +18,7 @@
 .section2 {
   width: size(1920);
   height: 100vh;
-  min-height: size(900);
-  max-height: size(1080);
+  min-height: size(1080);
   background-size: cover;
   // background-position: 0 0;
   // background-attachment: fixed;

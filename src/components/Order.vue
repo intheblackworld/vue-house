@@ -345,8 +345,8 @@ export default {
   }
 }
 .order-bg {
-  background-color: $order_bg_color;
-  // background-image: $order_bg_image;
+  // background-color: $order_bg_color;
+  background-image: $order_bg_image;
   background-repeat: no-repeat;
   position: relative;
   padding-top: 130px;

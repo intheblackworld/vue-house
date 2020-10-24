@@ -1,92 +1,14 @@
 <template>
   <div>
     <div class="section5">
-      <img
-        src="./s5/資產 2114.png"
-        alt=""
-        class="map-img absolute"
-        data-aos="fade-right"
-        data-aos-delay="0"
-      >
-      <div
-        class="title absolute"
-        data-aos="fade-right"
-        data-aos-delay="400"
-      >双捷運站紅線×橘線<br />捷運交通網連接大台北</div>
-      <div
-        class="hr absolute"
-        data-aos="fade-right"
-        data-aos-delay="400"
-      ></div>
-      <div
-        class="subtitle absolute"
-        data-aos="fade-right"
-        data-aos-delay="400"
-      >環快｜中山高｜新生高，<br />
-        三快暢遊雙北</div>
-      <div
-        class="desc absolute"
-        data-aos="fade-right"
-        data-aos-delay="400"
-      >約300公尺大橋頭站，約500公尺抵民權西路站，5站內輕鬆接軌淡水信義線、機場捷運線、松山新店線、板南線、文湖線，便利與繁華悠遊一卡通。
-        向西直抵環河快速道路、向北直上中山高，往東直達新生高架，連結大台北交通命脈。
-      </div>
-      <div
-        class="swipe absolute"
-        data-aos="fade-up"
-        data-aos-delay="200"
-        @mouseenter.stop="toggleTimer = false"
-        @mouseleave.stop="toggleTimer = true"
-      >
-        <div
-          class="swipe-wrap relative"
-          v-touch:swipe.left="decIndex"
-          v-touch:swipe.right="addIndex"
-        >
-          <transition-group
-            name="swipe-fade"
-            mode="out-in"
-          >
-            <div
-              v-for="(slide, i) in slideList"
-              v-show="slideIndex === i"
-              :key="slide.img"
-              :class="`swipe-item absolute`"
-            >
-              <img
-                :src="slide.img"
-                alt=""
-              >
-            </div>
-          </transition-group>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <img
-              src="./all/prev-btn.png"
-              alt=""
-              class="prev-btn"
-              @click="decIndex"
-            >
-            <img
-              src="./all/next-btn.png"
-              alt=""
-              class="next-btn"
-              @click="addIndex"
-            >
-          </div>
-        </div>
-      </div>
-      <div
-        class="pagination absolute flex-ac"
-        data-aos="fade-up"
-        data-aos-delay="200"
-        v-if="isPC"
-      >
-        <div
-          :class="`pagination-dot`"
-          v-for="(slide, index) in slideList"
-          :key="slide.img + '-dot'"
-          @click="goTo(index)"
-        ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+      <img src="./s5/bg.jpg" alt="" class="bg-img">
+      <img src="./s5/cloud2.png" alt="" class="cloud cloud1 absolute">
+      <img src="./s5/cloud1.png" alt="" class="cloud cloud2 absolute">
+      <img src="./s5/cloud1.png" alt="" class="cloud cloud3 absolute">
+      <img src="./s5/img.png" alt="" class="bg-img">
+      <h3 class="title absolute" data-aos="fade-right" data-aos-delay="400">Natural Baptism</h3>
+      <h3 class="subtitle absolute" data-aos="fade-right" data-aos-delay="600">山水之中 尋回第二人生</h3>
+      <div class="desc absolute" data-aos="fade-right" data-aos-delay="800">前擁海河壯闊，後倚青山翠毓，「八里 龍躍」如同一座獨立的綠色島嶼，在人生最美麗的轉彎，實現對生活的純粹，給您一間無價景觀的書房，給您一間會呼吸的屋子，用心生活、大口呼吸，在這的每一天都是享受。
       </div>
     </div>
   </div>
@@ -97,19 +19,16 @@
 
 .section5 {
   width: size(1920);
-  height: size(835);
-  min-height: size(835);
-  // background-image: url('./s2/bg.jpg');
-  // background-size: 100% 100%;
-  // background-position: 0 0;
-  // background-attachment: fixed;
-  // overflow: hidden;
+  height: 100vh;
+  min-height: size(1080);
+  overflow: hidden;
+  position: relative;
 }
 
 .bg-img {
   width: 100vw;
   height: 100vh;
-  min-height: size(900);
+  min-height: size(1080);
   position: absolute;
   display: block;
   top: 0;
@@ -120,216 +39,78 @@
     position: relative;
   }
 }
-
-.map-img {
-  width: size(589);
-  bottom: size(47);
-  left: size(180);
-}
-
 .title {
-  width: size(410);
-  top: size(0);
-  left: size(176);
-  font-size: size(39);
-  font-weight: bold;
+  width: size(590);
+  top: size(116);
+  right: size(274);
+  font-size: size(67.2);
+  font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.49;
-  letter-spacing: 2.33px;
+  line-height: 1.85;
+  letter-spacing: size(-2.69);
   text-align: left;
-  color: #000000;
+  color: #ffffff;
   white-space: nowrap;
 }
 
-.hr {
-  width: size(591);
-  height: 4px;
-  top: size(29 + 115);
-  left: size(176);
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
 .subtitle {
-  width: size(410);
-  top: size(56 + 115);
-  left: size(176);
-  font-size: size(32);
-  font-weight: bold;
+  width: size(598);
+  top: size(336);
+  right: size(266);
+  font-size: size(55.1);
+  font-weight: 600;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.5;
-  letter-spacing: 5.17px;
+  line-height: 1.44;
+  letter-spacing: size(3.31);
   text-align: left;
-  color: #3e3a39;
+  color: #ffffff;
   white-space: nowrap;
 }
 
 .desc {
-  width: size(587);
-  top: size(164 + 115);
-  left: size(176);
-  font-size: size(16);
-  font-weight: 500;
+  width: size(606);
+  top: size(446);
+  right: size(254);
+  font-size: size(19.1);
+  font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.2;
-  letter-spacing: 1.6px;
+  line-height: 1.7;
+  letter-spacing: size(1.14);
   text-align: left;
-  color: #4d4d4d;
+  color: #ffffff;
 }
 
-/* Swipe */
-.swipe {
-  width: size(889);
-  height: size(751);
-  min-height: size(751);
-  top: size(0);
-  right: size(180);
-  object-fit: cover;
+.cloud1 {
+  width: size(320);
+  top: 0;
+  left: 0;
 }
 
-// begin
-.swipe-fade-leave-to {
-  opacity: 0;
-  z-index: 0;
-}
-// end
-.swipe-fade-enter {
-  opacity: 0;
-  z-index: 1;
+.cloud2 {
+  width: size(501);
+  top: size(534);
+  left: size(76);
 }
 
-.swipe-fade-enter-active {
-  transition: all 0.5s ease;
+.cloud3 {
+  width: size(365);
+  top: size(492);
+  left: size(766);
 }
 
-.swipe-fade-leave-active {
-  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+.cloud {
+  animation: scale 50s 0s ease-in-out infinite alternate;
 }
 
-// begin
-// .swipe-left-leave-to {
-//   margin-left: -100vw;
-//   z-index: 0;
-// }
-// // end
-// .swipe-left-enter {
-//   opacity: 0.5;
-//   margin-left: 0;
-//   z-index: 1;
-// }
-
-// .swipe-left-enter-active {
-//   transition: all 0.5s ease;
-// }
-
-// .swipe-left-leave-active {
-//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-// }
-
-.swipe-wrap {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.swipe-item {
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-
-  img {
-    width: 100%;
-  }
-
-  // &:nth-child(1) {
-  //   z-index: 1;
-  //   // opacity: 1;
-  // }
-
-  // &.base {
-  //   z-index: 1;
-  //   opacity: 1;
-  // }
-  // &.active {
-  //   z-index: 2;
-  //   // opacity: 1;
-  // }
-}
-
-.pagination {
-  width: auto;
-  bottom: size(22);
-  left: auto;
-  right: size(170);
-  // margin: 0 auto;
-  justify-content: center;
-}
-
-.pagination-dot {
-  padding: 5px;
-  margin: 0 10px;
-  cursor: pointer;
-  z-index: 4;
-
-  span {
-    display: block;
-    width: 20px;
-    height: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 0 1px #bd2b27;
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.01);
-    transition: all 0.5s;
-
-    &::before {
-      content: '';
-      width: 60%;
-      height: 60%;
-      display: block;
-      background: #bd2b27;
-      border-radius: 20px;
-      opacity: 1;
-      position: absolute;
-      top: 20%;
-      // transform: translateY(-50%);
-      left: 20%;
-      transition: all 0.3s;
-      transform-origin: center;
-      transform: scale(0);
-    }
-    &.active {
-      &::before {
-        content: '';
-        width: 100%;
-        height: 100%;
-        display: block;
-        background: #bd2b27;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 0%;
-        // transform: translateY(-50%);
-        left: 0%;
-        transform: scale(1);
-      }
-    }
+@keyframes scale {
+  to {
+    transform: scale(5, 7);
   }
 }
 
-.swipe-btns {
-  width: 100%;
-  height: 100%;
-  padding: 0 15px;
-  z-index: 3;
-
-  .prev-btn,
-  .next-btn {
-    width: size(20);
-    cursor: pointer;
-  }
-}
 
 @media only screen and (max-width: 1440px) {
 }
@@ -413,41 +194,14 @@
     text-align: left;
     color: #4d4d4d;
   }
-
-  /* Swipe */
-  .swipe {
-    width: sizem(330);
-    height: sizem(279);
-    min-height: sizem(279);
-    top: sizem(602);
-    right: auto;
-    left: sizem(23);
-    object-fit: cover;
-  }
-
-  .swipe-btns {
-    width: 100%;
-    height: 100%;
-    padding: 0 10px;
-    z-index: 3;
-
-    .prev-btn,
-    .next-btn {
-      width: size-m(15);
-      cursor: pointer;
-    }
-  }
 }
 </style>
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
-import slider from '@/mixins/slider.js'
 
 export default {
   name: 'section5',
-
-  mixins: [slider],
 
   data() {
     return {
@@ -455,17 +209,6 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
-      slideList: [
-        {
-          img: require('./s5/資產 1514.jpg'),
-        },
-        {
-          img: require('./s5/資產 2314.jpg'),
-        },
-        {
-          img: require('./s5/資產 2414.jpg'),
-        },
-      ],
     }
   },
 
