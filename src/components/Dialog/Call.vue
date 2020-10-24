@@ -7,11 +7,11 @@
   </div>
 </template>
 <style lang="scss" scoped>
-.cta{display: none;}
-/* 手機尺寸 */
-@media only screen and (max-width: 767px) {
-.cta{display: block;}
-}
+// .cta{display: none;}
+// /* 手機尺寸 */
+// @media only screen and (max-width: 767px) {
+// .cta{display: block;}
+// }
  </style>
 <script>
 import { isMobile } from '@/utils'
@@ -22,6 +22,7 @@ export default {
   data() {
     return {
       window,
+      isMobile
     }
   },
 
