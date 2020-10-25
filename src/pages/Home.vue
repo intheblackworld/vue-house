@@ -122,7 +122,7 @@ import Section4 from '@/projects/blly/Section4.vue'
 import Section5 from '@/projects/blly/Section5.vue'
 import Section6 from '@/projects/blly/Section6.vue'
 import Section7 from '@/projects/blly/Section7.vue'
-import Section8 from '@/projects/blly/Section8.vue'
+// import Section8 from '@/projects/blly/Section8.vue'
 
 export default {
   name: 'home',
@@ -140,7 +140,7 @@ export default {
     Section5,
     Section6,
     Section7,
-    Section8,
+    // Section8,
   },
 
   data() {

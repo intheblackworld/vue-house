@@ -63,7 +63,7 @@
               @click="goTo(index)"
             ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+          <!-- <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
             <img
               src="./all/prev-btn.png"
               alt=""
@@ -76,7 +76,7 @@
               class="next-btn"
               @click="addIndex"
             >
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
