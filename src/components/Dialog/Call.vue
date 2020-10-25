@@ -6,6 +6,7 @@
     <div
       class="cta"
       @click="redirectToPhoneThanks" 
+      v-if="isMobile"
     >撥打電話</div>
   </div>
 </template>
@@ -17,12 +18,14 @@
 }
  </style>
 <script>
+import { isMobile } from '@/utils'
 export default {
   name: 'CallDialog',
   components: {},
   props: ['phone'],
   data() {
     return {
+      isMobile,
       window,
     }
   },

@@ -1,11 +1,14 @@
 <template>
   <div>
     <div class="section2">
-      <img src="./s3/bg.jpg" alt="" class="bg-img">
-      <h3 class="title absolute">
+      <img src="./s3/bg.jpg" alt="" class="bg-img" v-if="isPC">
+      <img src="./m/3/bg.jpg" alt="" class="img absolute" v-if="isMobile">
+      <h3 class="subtitle absolute" data-aos="fade-right" data-aos-delay="200">Relax resorts</h3>
+      <h3 class="title absolute" data-aos="fade-right" data-aos-delay="400">
         城市與河岸最舒適的距離
       </h3>
-      <div class="desc absolute">
+      <div class="hr absolute" v-if="isMobile" />
+      <div class="desc absolute" data-aos="fade-right" data-aos-delay="600">
         八里，擁有宜居環境，左右更續接了雙北生活圈，交通便利，透過快速道路、關渡大橋淡江大橋連接了新市鎮生活圈。在這有著深度的文化蘊藏，十三行博物館、左岸公園、左岸劇場，相佐水岸綠道，如此舒心閑適的居所，只有「八里 龍躍」。
       </div>
     </div>
@@ -25,8 +28,6 @@
   // overflow: hidden;
 }
 
-
-
 .bg-img {
   width: 100vw;
   height: auto;
@@ -42,6 +43,22 @@
   }
 }
 
+.subtitle {
+  width: size(485);
+  top: size(93);
+  right: auto;
+  left: size(138);
+  font-size: size(67.2);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.85;
+  letter-spacing: size(-2.69);
+  text-align: left;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
 .title {
   width: size(640);
   top: size(724);
@@ -51,7 +68,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.44;
-  letter-spacing:size(3.3);
+  letter-spacing: size(3.3);
   text-align: left;
   color: #231815;
   white-space: nowrap;
@@ -69,7 +86,6 @@
   letter-spacing: size(1.14);
   text-align: left;
   color: #595757;
-
 }
 
 @media only screen and (max-width: 1440px) {
@@ -88,40 +104,76 @@
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    height: sizem(552);
-    margin-top:sizem(30);
-    // height: size-m(804);
-    background-image: none;
+    min-height: 0;
+    max-height: 500vh;
+    height: calc(100vh);
+    background: #fff;
+    // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
+    position: relative;
+  }
+
+  .subtitle {
+    width: sizem(128);
+    top: sizem(80 - 55);
+    right: auto;
+    left: sizem(32.5);
+    font-size: sizem(22);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.64;
+    letter-spacing: sizem(-0.88);
+    text-align: left;
+    color: #808080;
+    white-space: nowrap;
+  }
+
+  .title {
+    width: sizem(291);
+    top: sizem(120 - 55);
+    right: auto;
+    left: sizem(32.5);
+    font-size: sizem(25);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.44;
+    letter-spacing: sizem(1.5);
+    text-align: left;
+    color: #231815;
+    white-space: nowrap;
   }
 
   .img {
-    width: sizem(375);
-    top: sizem(280);
-    left: sizem(0);
+    width: sizem(340);
+    left: sizem(18);
+    top: sizem(299);
   }
-  .icon {
-    width: sizem(73);
-    top: sizem(0);
-    left: sizem(23);
-  }
-.txt{
-    top: sizem(30);
-    left: sizem(52);
-    }
-  .title {
-    font-size: sizem(25);
-  }
-  .subtitle {
-    font-size: sizem(22);
-  }
+
   .desc {
-    width: sizem(290);
+    width: sizem(291);
+    top: sizem(194 - 55);
+    right: auto;
+    left: sizem(32.5);
     font-size: sizem(15);
     font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
     line-height: 1.73;
-    div{transform: scaleX(0.95);width: 101%;transform-origin: 0 0;}
+    letter-spacing: sizem(0.9);
+    text-align: left;
+    color: #595757;
+  }
+
+  .hr {
+    width: sizem(291);
+    height: 1px;
+    background-color: #595757;
+    top: sizem(164 - 55);
+    right: auto;
+    left: sizem(32.5);
   }
 }
 </style>

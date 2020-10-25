@@ -1,14 +1,16 @@
 <template>
   <div>
     <div class="section2">
-      <img src="./s2/bg.jpg" alt="" class="bg-img">
-      <h3 class="title absolute">
+      <img src="./s2/bg.jpg" alt="" class="bg-img" v-if="isPC">
+      <img src="./m/2/bg.jpg" alt="" class="bg-img" v-if="isMobile">
+      <div class="hr absolute" v-if="isMobile" />
+      <h3 class="title absolute" data-aos="fade-right" data-aos-delay="400">
         你的左岸 極景.極美.極品
       </h3>
-      <h3 class="subtitle absolute">
+      <h3 class="subtitle absolute" data-aos="fade-right" data-aos-delay="200">
         Polar view
       </h3>
-      <div class="desc absolute">
+      <div class="desc absolute" data-aos="fade-right" data-aos-delay="600">
         這是淡水河岸最美的一角，迎面藍帶涓流波潾，後倚綠意青山壯闊，蟠踞270度藍天碧水，釋放身心壓力，給心靈一個安適的停靠，到這裡重新感受生活，順著季節四時變化，入住山水懷抱的「八里 龍躍」。
       </div>
     </div>
@@ -28,8 +30,6 @@
   // background-attachment: fixed;
   // overflow: hidden;
 }
-
-
 
 .bg-img {
   width: 100vw;
@@ -55,7 +55,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.44;
-  letter-spacing:size( 3.3);
+  letter-spacing: size(3.3);
   text-align: left;
   color: #231815;
   white-space: nowrap;
@@ -63,7 +63,7 @@
 
 .subtitle {
   width: size(389);
-  top: size(401);
+  top: size(375);
   left: size(526);
   font-size: size(67);
   font-weight: normal;
@@ -88,7 +88,6 @@
   letter-spacing: size(1.14);
   text-align: left;
   color: #595757;
-
 }
 
 @media only screen and (max-width: 1440px) {
@@ -107,40 +106,68 @@
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    height: sizem(552);
-    margin-top:sizem(30);
-    // height: size-m(804);
-    background-image: none;
+    min-height: 0;
+    max-height: 500vh;
+    height: calc(100vh);
+    // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
   }
 
-  .img {
-    width: sizem(375);
-    top: sizem(280);
-    left: sizem(0);
-  }
-  .icon {
-    width: sizem(73);
-    top: sizem(0);
-    left: sizem(23);
-  }
-.txt{
-    top: sizem(30);
-    left: sizem(52);
-    }
-  .title {
-    font-size: sizem(25);
-  }
   .subtitle {
+    width: sizem(128);
+    top: sizem(80);
+    right: auto;
+    left: sizem(32.5);
     font-size: sizem(22);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.64;
+    letter-spacing: sizem(-0.88);
+    text-align: left;
+    color: #808080;
+    white-space: nowrap;
   }
+
+  .title {
+    width: sizem(291);
+    top: sizem(120);
+    right: auto;
+    left: sizem(32.5);
+    font-size: sizem(25);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.44;
+    letter-spacing: sizem(1.5);
+    text-align: left;
+    color: #231815;
+    white-space: nowrap;
+  }
+
   .desc {
-    width: sizem(290);
+    width: sizem(291);
+    top: sizem(194);
+    right: auto;
+    left: sizem(32.5);
     font-size: sizem(15);
     font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
     line-height: 1.73;
-    div{transform: scaleX(0.95);width: 101%;transform-origin: 0 0;}
+    letter-spacing: sizem(0.9);
+    text-align: left;
+    color: #595757;
+  }
+
+  .hr {
+    width: sizem(291);
+    height: 1px;
+    background-color: #595757;
+    top: sizem(164);
+    right: auto;
+    left: sizem(32.5);
   }
 }
 </style>

@@ -8,10 +8,10 @@
               <img :src="slide.img" alt="">
             </div>
           </transition-group>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+          <!-- <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
             <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
             <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
@@ -279,7 +279,7 @@
 @media screen and (max-width: 767px) {
   .section7 {
     width: 100vw;
-    height: sizem(279 + 382);
+    height: 100vh;
     min-height: auto;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
@@ -288,52 +288,75 @@
     overflow: hidden;
   }
 
-  .img {
-    width: sizem(283);
-    top: sizem(14.5);
-    left: sizem(24);
-    z-index: 1;
-  }
-
-  .red {
-    width: sizem(108);
-    top: sizem(181);
-    right: sizem(-50);
-    z-index: 1;
+  .dark-block {
+    width: sizem(375);
+    height: sizem(324);
+    bottom: auto;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
   }
 
   .title {
-    width: sizem(238);
-    top: sizem(21);
-    left: sizem(105);
-    font-size: sizem(25);
-    font-weight: bold;
+    width: sizem(179);
+    top: sizem(25);
+    left: sizem(32);
+    font-size: sizem(22);
+    font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.3;
-    letter-spacing: 1.5px;
+    line-height: 1.85;
+    letter-spacing: sizem(-0.88);
     text-align: left;
-    color: #000000;
+    color: #ffffff;
+    white-space: nowrap;
   }
 
-  .tree {
-    width: sizem(202);
-    top: sizem(287);
-    left: auto;
-    right: sizem(-45);
-    z-index: 2;
-    img {
-      transform: scaleX(-1);
-    }
+  .subtitle {
+    width: sizem(218);
+    top: sizem(57);
+    left: sizem(32);
+    font-size: sizem(25);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.44;
+    letter-spacing: sizem(1.5);
+    text-align: left;
+    color: #ffffff;
+    white-space: nowrap;
+  }
+
+  .desc {
+    width: sizem(310);
+    top: sizem(121);
+    left: sizem(32);
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.7;
+    letter-spacing: sizem(0.9);
+    text-align: left;
+    color: #ffffff;
+  }
+
+  .hr {
+    width: sizem(310);
+    height: 1px;
+    background-color: #fff;
+    top: sizem(106);
+    right: auto;
+    left: sizem(32);
   }
 
   /* Swipe */
   .swipe {
-    width: sizem(330);
-    height: sizem(279);
-    min-height: sizem(279);
-    top: sizem(382);
-    left: sizem(23);
+    width: sizem(375);
+    height: 100vh;
+    min-height: 100vh;
+    top: sizem(0);
+    left: sizem(0);
     object-fit: cover;
   }
 
@@ -389,6 +412,8 @@
 
     img {
       width: 100%;
+      height: 100vh;
+      object-fit: cover;
     }
 
     // &:nth-child(1) {

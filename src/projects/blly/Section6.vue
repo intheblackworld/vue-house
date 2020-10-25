@@ -1,8 +1,9 @@
  <template>
   <div>
     <div class="section6">
-      <img src="./s6/bg.png" alt="" class="bg-img">
-      <img src="./s6/img.jpg" alt="" class="img absolute">
+      <img src="./s6/bg.png" alt="" class="bg-img" v-if="isPC">
+      <img src="./m/6/bg.png" alt="" class="build absolute" v-if="isMobile">
+      <img src="./s6/img.jpg" alt="" class="img absolute" data-aos="fade-up" data-aos-delay="200">
       <img src="./s1/hr.png" alt="" class="hr absolute">
       <h3 class="title absolute" data-aos="fade-up" data-aos-delay="600">Living Movement</h3>
       <h3 class="subtitle absolute" data-aos="fade-up" data-aos-delay="400">至此境 得從容 享自在</h3>
@@ -77,7 +78,6 @@
   white-space: nowrap;
 }
 
-
 .desc {
   width: size(340);
   top: size(637);
@@ -138,76 +138,64 @@
     }
   }
 
-  .house {
-    z-index: 2;
+  .img {
+    width: sizem(310);
+    top: sizem(119);
+    left: sizem(33);
   }
 
-  .cloud {
-    z-index: 1;
-    margin-left: 0px;
-    width: calc(100vw + 40px);
-    animation: cloud 15s 0s ease-in-out infinite alternate-reverse;
-  }
-
-  @keyframes cloud {
-    to {
-      margin-left: -40px;
-    }
-  }
-
-  .border {
-    width: sizem(331);
-    height: sizem(242);
-    top: sizem(25);
-    right: sizem(21);
-    border: solid 2.4px #ffffff;
+  .build {
+    width: 100vw;
+    bottom: 0;
+    left: 0;
   }
 
   .title {
-    width: sizem(102);
-    top: sizem(45);
-    right: 0;
-    left: sizem(34);
-    font-size: sizem(25);
-    font-weight: bold;
+    width: sizem(205);
+    top: sizem(26);
+    left: sizem(32);
+    font-size: sizem(22);
+    font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.44;
-    letter-spacing: 0.5px;
+    line-height: 1.64;
+    letter-spacing: sizem(-0.88);
     text-align: left;
-    color: #ffffff;
+    color: #a3a3a3;
     white-space: nowrap;
   }
 
   .subtitle {
-    width: sizem(289);
-    top: sizem(121);
-    right: auto;
-    left: sizem(34);
-    font-size: sizem(20);
-    font-weight: 500;
+    width: sizem(253);
+    top: sizem(58);
+    left: sizem(32);
+    font-size: sizem(25);
+    font-weight: 600;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.3;
-    letter-spacing: 2.8px;
+    line-height: 1.44;
+    letter-spacing: sizem(1.5);
     text-align: left;
-    color: #000000;
+    color: #231815;
     white-space: nowrap;
   }
 
   .desc {
-    width: sizem(310);
-    top: sizem(161);
-    right: auto;
-    left: sizem(34);
-    font-size: sizem(15);
-    font-weight: normal;
+    width: sizem(340);
+    top: sizem(326);
+    left: sizem(266);
+    font-size: sizem(12);
+    font-weight: 300;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.73;
-    letter-spacing: 1.5px;
+    line-height: 1.61;
+    letter-spacing: sizem(1.2);
     text-align: left;
-    color: #4d4d4d;
+    color: #808080;
+  }
+
+  .hr {
+    display: none;
   }
 }
 </style>

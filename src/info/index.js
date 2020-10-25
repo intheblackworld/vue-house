@@ -8,7 +8,7 @@ export default {
   fbLink: 'https://www.facebook.com/八里龍躍-118184923350903/',
   fbMessage: 'https://m.me/118184923350903',
   caseName: '八里龍躍',
-  indigatorLength: 10,
+  indigatorLength: 7,
 
   houseInfos: [
     ['投資興建', '丰河建設 ',],

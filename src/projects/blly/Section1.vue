@@ -3,16 +3,24 @@
     <div class="section1" v-if="isPC">
       <img src="./s1/bgbottom.jpg" alt="" class="bg-img">
       <div class="cloud absolute flex">
-        <img src="./s1/cloud.png" alt="" class="cloud-item">  
-        <img src="./s1/cloud.png" alt="" class="cloud-item">  
+        <img src="./s1/cloud.png" alt="" class="cloud-item">
+        <img src="./s1/cloud.png" alt="" class="cloud-item">
       </div>
-      
+
       <img src="./s1/bgtop.png" alt="" class="bg-img">
-      <img src="./s1/hr.png" alt="" class="hr absolute">
-      <img src="./s1/logo.png" alt="" class="logo absolute">
+      <img src="./s1/hr.png" alt="" class="hr absolute" data-aos="fade-right" data-aos-delay="400">
+      <img src="./s1/logo.png" alt="" class="logo absolute" data-aos="fade-down" data-aos-delay="200">
     </div>
     <div class="section1" v-if="isMobile">
+      <img src="./m/1/bgbottom.jpg" alt="" class="bg-img">
+      <div class="cloud absolute flex">
+        <img src="./m/1/cloud.png" alt="" class="cloud-item">
+        <img src="./m/1/cloud.png" alt="" class="cloud-item">
+      </div>
 
+      <img src="./m/1/bgtop.png" alt="" class="bg-img">
+      <img src="./m/1/hr.png" alt="" class="hr absolute" data-aos="fade-right" data-aos-delay="400">
+      <img src="./s1/logo.png" alt="" class="logo absolute" data-aos="fade" data-aos-delay="200">
     </div>
   </div>
 </template>
@@ -54,7 +62,6 @@
 
 .cloud-item {
   width: 100vw;
-
 }
 
 @keyframes move {
@@ -99,42 +106,10 @@
     background-size: cover;
     background-attachment: scroll;
   }
-  .img1 {
-    width: sizem(820);
-    top: auto;
-    left: sizem(-100);
-    bottom: 0;
-  }
-  .img3 {
-    width: sizem(820);
-    top: auto;
-    left: sizem(-50);
-    bottom: 0;
-  }
-  .img4 {
-    width: sizem(820);
-    top: auto;
-    left: sizem(-130);
-    bottom: 0;
-  }
-  .cloud1 {
-    width: sizem(1100);
-    top: auto;
-    left: sizem(-600);
-    bottom: sizem(100);
-    // animation: cloud 5s 0s linear infinite alternate-reverse;
-  }
-
-  .cloud2 {
-    width: sizem(1100);
-    top: auto;
-    z-index: 1;
-    left: sizem(-500);
-    bottom: sizem(-50);
-    // animation: cloud 8s 1s linear infinite alternate-reverse;
-  }
-
-  .img {
+  .logo {
+    width: sizem(230);
+    left: sizem(40);
+    top: sizem(360);
   }
 }
 </style>

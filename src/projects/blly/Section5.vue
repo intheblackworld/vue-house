@@ -1,11 +1,14 @@
 <template>
   <div>
     <div class="section5">
-      <img src="./s5/bg.jpg" alt="" class="bg-img">
+      <img src="./s5/bg.jpg" alt="" class="bg-img" v-if="isPC">
+      <img src="./m/5/bg.jpg" alt="" class="bg-img" v-if="isMobile">
       <img src="./s5/cloud2.png" alt="" class="cloud cloud1 absolute">
       <img src="./s5/cloud1.png" alt="" class="cloud cloud2 absolute">
       <img src="./s5/cloud1.png" alt="" class="cloud cloud3 absolute">
-      <img src="./s5/img.png" alt="" class="bg-img">
+      <img src="./s5/img.png" alt="" class="bg-img" v-if="isPC">
+      <img src="./m/5/img.png" alt="" class="img absolute" v-if="isMobile">
+      <div class="hr absolute" v-if="isMobile" />
       <h3 class="title absolute" data-aos="fade-right" data-aos-delay="400">Natural Baptism</h3>
       <h3 class="subtitle absolute" data-aos="fade-right" data-aos-delay="600">山水之中 尋回第二人生</h3>
       <div class="desc absolute" data-aos="fade-right" data-aos-delay="800">前擁海河壯闊，後倚青山翠毓，「八里 龍躍」如同一座獨立的綠色島嶼，在人生最美麗的轉彎，實現對生活的純粹，給您一間無價景觀的書房，給您一間會呼吸的屋子，用心生活、大口呼吸，在這的每一天都是享受。
@@ -111,7 +114,6 @@
   }
 }
 
-
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -128,71 +130,97 @@
 @media screen and (max-width: 767px) {
   .section5 {
     width: 100vw;
-    height: sizem(901);
-    min-height: auto;
-    // background-image: url('./s2/bg.jpg');
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
-    overflow: hidden;
+    min-height: 0;
+    max-height: 500vh;
+    height: calc(100vh);
+    // background-image: url('./mo/1/bg.png');
+    background-size: cover;
+    background-attachment: scroll;
   }
-  .map-img {
-    width: sizem(331);
-    bottom: sizem(318);
-    left: sizem(22);
+
+  .img {
+    width: 100vw;
+    height: auto;
+    bottom: 0;
+    left: 0;
+  }
+
+  .subtitle {
+    width: sizem(128);
+    top: sizem(80 - 55);
+    right: auto;
+    left: sizem(32.5);
+    font-size: sizem(22);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.64;
+    letter-spacing: sizem(-0.88);
+    text-align: left;
+    color: #fff;
+    white-space: nowrap;
   }
 
   .title {
-    width: sizem(264);
-    top: sizem(30);
-    left: sizem(34);
+    width: sizem(291);
+    top: sizem(120 - 55);
+    right: auto;
+    left: sizem(32.5);
     font-size: sizem(25);
-    font-weight: bold;
+    font-weight: 600;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.44;
     letter-spacing: sizem(1.5);
     text-align: left;
-    color: #000000;
-    margin-top: 0;
-    white-space: nowrap;
-  }
-
-  .hr {
-    width: sizem(330);
-    height: 4px;
-    top: sizem(115);
-    left: sizem(24);
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-
-  .subtitle {
-    width: sizem(252);
-    top: sizem(125);
-    left: sizem(34);
-    font-size: sizem(20);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.3;
-    letter-spacing: sizem(3.2);
-    text-align: left;
-    color: #3e3a39;
+    color: #fff;
     white-space: nowrap;
   }
 
   .desc {
-    width: sizem(315);
-    top: sizem(199);
-    left: sizem(34);
+    width: sizem(291);
+    top: sizem(194 - 55);
+    right: auto;
+    left: sizem(32.5);
     font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.73;
-    letter-spacing: sizem(1.5);
+    letter-spacing: sizem(0.9);
     text-align: left;
-    color: #4d4d4d;
+    color: #fff;
+  }
+
+  .hr {
+    width: sizem(291);
+    height: 1px;
+    background-color: #fff;
+    top: sizem(164 - 55);
+    right: auto;
+    left: sizem(32.5);
+  }
+
+  .cloud1 {
+    width: sizem(84);
+    top: sizem(294);
+    left: 0;
+  }
+
+  .cloud2 {
+    width: sizem(144);
+    top: sizem(410);
+    left: sizem(14);
+  }
+
+  .cloud3 {
+    width: sizem(104);
+    top: sizem(397);
+    left: sizem(211);
+  }
+
+  .cloud {
+    animation: none;
   }
 }
 </style>

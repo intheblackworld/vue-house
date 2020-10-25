@@ -1,24 +1,16 @@
 <template>
   <div class="indigator">
     <div class="list-indigator">
-      <div
-        :class="`dot ${index == indigatorIndex ? 'active' : '' }`"
-        v-for="index in info.indigatorLength"
-        :key="`indigator-${index}`"
-        v-scroll-to="{ element: `#section${index}` }"
-        @click="setIndigator(index)"
-      ></div>
+      <div :class="`dot`" v-for="index in info.indigatorLength" :key="`indigator-${index}`" v-scroll-to="{ element: `#section${index}` }" @click="setIndigator(index)">
+        <span :class="`${indigatorIndex === index ? 'active' : ''}`"></span>
+      </div>
       <!-- <div
         :class="`dot ${(info.indigatorLength + 1) === indigatorIndex ? 'active' : '' }`"
         v-scroll-to="{ element: `#contact` }"
         @click="setIndigator(info.indigatorLength + 1)"
       ></div> -->
     </div>
-    <div
-      :class="`contact-indigator`"
-      v-scroll-to="{ element: `#contact` }"
-      @click="setIndigator(navList.length - 1 + 1)"
-    >預約賞屋</div>
+    <div :class="`contact-indigator`" v-scroll-to="{ element: `#contact` }" @click="setIndigator(navList.length - 1 + 1)">預約賞屋</div>
   </div>
 </template>
 
@@ -37,32 +29,53 @@
   }
 
   .dot {
-    width: 2em;
-    height: 2em;
-    margin: 0;
-    background: transparent;
+    padding: 10px;
+    margin: 0 10px;
     cursor: pointer;
-    border-radius: 999px;
-    overflow: hidden;
-    &::before {
-      content: '';
+    z-index: 4;
+
+    span {
       display: block;
-      width: 0.7em;
-      height: 0.7em;
-     //@function border: 1px solid #0000;
-      border-radius: 999px;
-      margin: calc(50% - 0.3em) auto 0 auto;
-      transition: all 0.3s;
-      background: rgba(0, 0, 0, 0.4);
-      // background: #fff;
-    }
-    &.active {
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 0 1px #fff;
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.01);
+      transition: all 0.5s;
+
       &::before {
-        background: #000;
+        content: '';
+        width: 60%;
+        height: 60%;
+        display: block;
+        background: #004ea2;
+        border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 20%;
+        // transform: translateY(-50%);
+        left: 20%;
+        transition: all 0.3s;
+        transform-origin: center;
+        transform: scale(0);
       }
-    }
-    &:hover::before {
-      background: #ffd200;
+      &.active {
+        &::before {
+          content: '';
+          width: 100%;
+          height: 100%;
+          display: block;
+          background: #004ea2;
+          border-radius: 20px;
+          opacity: 1;
+          position: absolute;
+          top: 0%;
+          // transform: translateY(-50%);
+          left: 0%;
+          transform: scale(1);
+        }
+      }
     }
   }
 
@@ -78,7 +91,7 @@
     transition: all 0.3s;
     &:hover {
       color: #fff;
-    background: rgba(0, 40, 130, 0.4);
+      background: rgba(0, 40, 130, 0.4);
     }
   }
 }
