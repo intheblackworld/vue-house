@@ -17,13 +17,13 @@
       <Section1 />
     </vue-lazy-component>
 
-    <!-- <vue-lazy-component
+    <vue-lazy-component
       class="section"
       id="section2"
     >
       <Section2 />
     </vue-lazy-component>
-    <vue-lazy-component
+    <!-- <vue-lazy-component
       class="section"
       id="section3"
     >
@@ -115,8 +115,8 @@ import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 
-import Section1 from '@/projects/jsjm/Section1.vue'
-// import Section2 from '@/projects/jy/Section2.vue'
+import Section1 from '@/projects/jsjm1/Section1.vue'
+import Section2 from '@/projects/jsjm1/Section2.vue'
 // import Section3 from '@/projects/jy/Section3.vue'
 // import Section4 from '@/projects/jy/Section4.vue'
 // import Section5 from '@/projects/jy/Section5.vue'
@@ -137,7 +137,7 @@ export default {
     ContactSection,
     MobileNav,
     Section1,
-    // Section2,
+    Section2,
     // Section3,
     // Section4,
     // Section5,

@@ -1,12 +1,12 @@
 <template>
   <div class="section1">
     <canvas id="c"></canvas>
-    <canvas id="bg"></canvas>
     <div v-if="!isMobile">
       <img src="./s1/bgs2.png" alt="" class="bg-img">
       <img src="./s1/bg4s.png" alimg="" class="bg-img">
       <img src="./s1/logo.png" alt="" class="logo absolute">
       <img src="./s1/t.png" alt="" class="t absolute">
+      <div class="btn absolute" v-scroll-to="{ element: `#contact` }">立即預約</div>
     </div>
     <div v-else>
       <div class="fade-in">
@@ -14,7 +14,7 @@
         <div class="bg2 absolute"></div>
         <div class="bg3 absolute"></div>
       </div>
-      <img src="./s1/bgs2_m.png" alt="" class="bg-img">
+    <img src="./s1/bgs2_m.png" alt="" class="bg-img">
       <img src="./s1/bg4s_m.png" alimg="" class="bg-img fade-out">
       <div class="fade-in">
         <img src="./s1/logo_m.png" alt="" class="logo absolute">
@@ -31,7 +31,7 @@
   width: size(1920);
   height: 100vh;
   min-height: size(900);
-  background: none;
+  background:none;
   background-size: auto;
   background-attachment: fixed;
   overflow: hidden;
@@ -76,6 +76,26 @@ canvas {
   right: size(442);
 }
 
+.btn {
+  width: size(165);
+  top: size(888);
+  right: size(562);
+  font-size: size(18);
+  letter-spacing: size(2);
+  white-space: nowrap;
+  cursor: pointer;
+  color: #9e0d1b;
+  border-bottom: 1px solid #9e0d1b;
+  padding: size(10) 0;
+  z-index: 10;
+  transition: all .3s;
+
+  &:hover {
+    background: #9e0d1b;
+    color: #fff;
+  }
+}
+
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -93,34 +113,22 @@ canvas {
   .section1 {
     width: 100vw;
     min-height: sizem(470);
-    max-height: sizem(812);
+    max-height:sizem(812);
     height: calc(100vh - 63px);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
   }
-  .bg1,
-  .bg2,
-  .bg3 {
-    top: 0;
-    height: 100%;
-    background: url('./s1/bg.png') fixed;
-    background-size: auto;
-    background-position: 0 0%;
-    background-repeat: repeat;
-  }
-  .bg1 {
-    left: 10%;
-    width: 5%;
-  }
-  .bg2 {
-    left: 18%;
-    width: 60%;
-  }
-  .bg3 {
-    left: 82%;
-    width: 9%;
-  }
+.bg1,
+.bg2,
+.bg3{top:0;height: 100%;
+  background:  url('./s1/bg.png') fixed;
+  background-size: auto;
+  background-position: 0 0%;
+  background-repeat: repeat;}
+.bg1{left: 10%;width: 5%;}
+.bg2{left: 18%;width: 60%;}
+.bg3{left: 82%;width: 9%;}
 
   .img-left {
     width: sizem(261);
@@ -155,7 +163,7 @@ canvas {
 
   .logo {
     width: sizem(172);
-    top: calc(50% - 43vw);
+    top:calc(50% - 43vw);
     right: sizem(101);
   }
 
