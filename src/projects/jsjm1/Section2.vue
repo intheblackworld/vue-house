@@ -1,21 +1,32 @@
 <template>
-  <div class="section1">
+  <div class="section2">
     <canvas id="c2"></canvas>
     <div>
       <img src="./s2/bg.png" alt="" class="bg-img">
-      <img src="./s2/title.png" alt="" class="title absolute">
+      <img src="./s2/title.png" alt="" class="title absolute" @click="playVideo">
+      <div :id="`youtube-player-${id}`" ref="player" class="video-iframe absolute"></div>
+      <img src="./s2/影片.jpg" alt="" :class="`video-iframe absolute ${isPlay == true ? 'hide' : ''}`">
     </div>
   </div>
 </template>
-
+<style lang="scss">
+@import '@/assets/style/function.scss';
+.video-iframe {
+  width: size(454);
+  height: size(806);
+  top: size(38);
+  right: size(417);
+  transition: all .3s;
+}
+</style>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section1 {
+.section2 {
   width: size(1920);
   height: 100vh;
   min-height: size(900);
-  background:none;
+  background: none;
   background-size: auto;
   background-attachment: fixed;
   overflow: hidden;
@@ -72,7 +83,7 @@ canvas {
   border-bottom: 1px solid #9e0d1b;
   padding: size(10) 0;
   z-index: 10;
-  transition: all .3s;
+  transition: all 0.3s;
 
   &:hover {
     background: #9e0d1b;
@@ -84,12 +95,17 @@ canvas {
   width: size(104);
   top: size(148);
   left: size(574);
+  z-index: 3;
   cursor: pointer;
-  transition: all .5s;
+  transition: all 0.5s;
   &:hover {
     transform: scale(1.05);
-    opacity: .7;
+    opacity: 0.7;
   }
+}
+
+.hide {
+  opacity: 0;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -106,25 +122,37 @@ canvas {
 }
 
 @media screen and (max-width: 767px) {
-  .section1 {
+  .section2 {
     width: 100vw;
     min-height: sizem(470);
-    max-height:sizem(812);
+    max-height: sizem(812);
     height: calc(100vh - 63px);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
   }
-.bg1,
-.bg2,
-.bg3{top:0;height: 100%;
-  background:  url('./s1/bg.png') fixed;
-  background-size: auto;
-  background-position: 0 0%;
-  background-repeat: repeat;}
-.bg1{left: 10%;width: 5%;}
-.bg2{left: 18%;width: 60%;}
-.bg3{left: 82%;width: 9%;}
+  .bg1,
+  .bg2,
+  .bg3 {
+    top: 0;
+    height: 100%;
+    background: url('./s1/bg.png') fixed;
+    background-size: auto;
+    background-position: 0 0%;
+    background-repeat: repeat;
+  }
+  .bg1 {
+    left: 10%;
+    width: 5%;
+  }
+  .bg2 {
+    left: 18%;
+    width: 60%;
+  }
+  .bg3 {
+    left: 82%;
+    width: 9%;
+  }
 
   .img-left {
     width: sizem(261);
@@ -159,7 +187,7 @@ canvas {
 
   .logo {
     width: sizem(172);
-    top:calc(50% - 43vw);
+    top: calc(50% - 43vw);
     right: sizem(101);
   }
 
@@ -175,19 +203,69 @@ canvas {
 import { isPC, isMobile, isTablet } from '@/utils'
 
 export default {
-  name: 'section1',
+  name: 'section2',
 
   data() {
     return {
       isPC,
       isMobile,
       isTablet,
+      isPlay: false,
+      player: '',
+      id: 'bzNBCmdCaTU',
     }
   },
 
-  methods: {},
+  methods: {
+    onPlayerReady(event) {
+      console.log('load')
+      event.target.playVideo()
+    },
+    loadVideo() {
+      this.player = new window.YT.Player(`youtube-player-${this.id}`, {
+        videoId: this.id,
+        width: '1920',
+        height: '1080',
+        playerVars: {
+          autoplay: 1,
+          loop: 1,
+          controls: 0,
+          showinfo: 0,
+          autohide: 1,
+          modestbranding: 1,
+          mute: 1,
+          suggestedQuality: 'default',
+          iv_load_policy: 3,
+        },
+        events: {
+          onReady: this.onPlayerReady,
+          onStateChange: this.onPlayerStateChange,
+        },
+      })
+    },
+
+    onPlayerStateChange(e) {
+      if (e.data === window.YT.PlayerState.ENDED) {
+        this.player.loadVideoById(this.id)
+      }
+    },
+
+    playVideo() {
+      this.loadVideo()
+      this.isPlay = true
+    },
+  },
 
   mounted() {
+    // setTimeout(() => {
+    //   if (!this.isMobile) {
+    //     if (!window.YT) {
+    //       window.onYouTubeIframeAPIReady = this.loadVideo
+    //     } else {
+    //       this.loadVideo()
+    //     }
+    //   }
+    // }, 2500)
     //initial
     let c = document.getElementById('c2')
     let w = (c.width = window.innerWidth)
@@ -233,8 +311,12 @@ export default {
 
     anim()
   },
-
-  created() {},
+  created() {
+    const tag = document.createElement('script')
+    tag.src = 'https://www.youtube.com/iframe_api'
+    const firstScriptTag = document.getElementsByTagName('script')[0]
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
+  },
 
   computed: {},
 }
