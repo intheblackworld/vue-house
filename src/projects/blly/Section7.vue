@@ -1,11 +1,14 @@
 <template>
   <div>
     <div class="section7">
-      <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
+              <img :src="slide.img" class="img1" v-if="isMobile" alt="">
+      <div class="dark-block absolute" v-if="isMobile">
+      </div>
+              <img :src="slide.img" class="img2" alt="">
             </div>
           </transition-group>
           <!-- <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
@@ -14,17 +17,17 @@
           </div> -->
         </div>
       </div>
-      <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+      <div class="pagination absolute flex-ac" data-aos="fade" data-aos-delay="200" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
-      <div class="dark-block absolute">
+      <div class="dark-block absolute" v-if="!isMobile" >
       </div>
       <h3 class="title absolute">
         Large scale
       </h3>
       <h3 class="subtitle absolute">
         大器尺度 海闊天空
-      </h3>
+      </h3><div class="hr absolute" v-if="isMobile" />
       <div class="desc absolute">
         居住的空間如同一座巨大的有機體，萬事萬物蘊含著無窮的能量，林木、水流、空氣，都是我們與自然溝通的方式，而陽光、空氣、水更是構成建築最重要的部分，充分的陽光，流動的空氣，適當的濕度，才是最宜居的住所；入住山水懷抱的「八里 龍躍」，入住充滿自然的建築。
       </div>
@@ -36,7 +39,9 @@
 
 .section7 {
   width: size(1920);
-  height: size(1080);
+  height: 100vh;
+  min-height: size(900);
+  max-height: size(1080);
   position: relative;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
@@ -47,9 +52,8 @@
 }
 
 .bg-img {
-  width: 100vw;
-  height: 100vh;
-  min-height: size(900);
+  width: 100%;
+  height: 100%;
   position: absolute;
   display: block;
   top: 0;
@@ -70,24 +74,36 @@
 }
 
 .title {
-  width: size(360);
+  width:auto;
   top: size(67);
-  left: size(200);
-  font-size: size(67.2);
+  left: size(150);
+  font-size: size(67);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.85;
-  letter-spacing: size(-2.69);
+  letter-spacing:-0.04em;
   text-align: left;
   color: #ffffff;
   white-space: nowrap;
+  font-family: "TrajanPro";
+  &::after,
+  &::before{content: "";height: size(2);background: #fff;
+  position: absolute;top:calc(50% - 1px);
+  animation: con_w .5s  2s reverse both;}
+  &::after{left: 110%;width:size(1400);}
+  &::before{right:110%;width:size(150);}
+}
+@keyframes con_w {
+    to {
+        width:0;
+    }
 }
 
 .subtitle {
   width: size(480);
-  top: size(162);
-  left: size(200);
+  top: size(170);
+  left: size(150);
   font-size: size(55.1);
   font-weight: 600;
   font-stretch: normal;
@@ -100,24 +116,23 @@
 }
 
 .desc {
-  width: size(670);
-  top: size(273);
-  left: size(200);
-  font-size: size(19.1);
+  width:36em;
+  top: size(265);
+  left: size(150);
+  font-size: size(19);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.7;
-  letter-spacing: size(1.14);
-  text-align: left;
+  letter-spacing:0.06em;
+  text-align: justify;
   color: #ffffff;
 }
 
 /* Swipe */
 .swipe {
-  width: 100vw;
-  height: 100vh;
-  min-height: size(1080);
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
   object-fit: cover;
@@ -175,6 +190,8 @@
 
   img {
     width: 100%;
+  height: 100%;
+  object-fit: cover;
   }
 
   // &:nth-child(1) {
@@ -279,8 +296,9 @@
 @media screen and (max-width: 767px) {
   .section7 {
     width: 100vw;
-    height: 100vh;
-    min-height: auto;
+    min-height:sizem(604);
+    max-height:sizem(700);
+    height:calc(100vh - 63px);
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
     // background-position: 0 0;
@@ -289,8 +307,9 @@
   }
 
   .dark-block {
-    width: sizem(375);
-    height: sizem(324);
+    display: block;
+    width:100%;
+    height:100%;
     bottom: auto;
     top: 0;
     left: 0;
@@ -298,7 +317,6 @@
   }
 
   .title {
-    width: sizem(179);
     top: sizem(25);
     left: sizem(32);
     font-size: sizem(22);
@@ -310,6 +328,9 @@
     text-align: left;
     color: #ffffff;
     white-space: nowrap;
+  &::after,
+  &::before{display: none;}
+
   }
 
   .subtitle {
@@ -332,13 +353,6 @@
     top: sizem(121);
     left: sizem(32);
     font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.7;
-    letter-spacing: sizem(0.9);
-    text-align: left;
-    color: #ffffff;
   }
 
   .hr {
@@ -352,9 +366,8 @@
 
   /* Swipe */
   .swipe {
-    width: sizem(375);
-    height: 100vh;
-    min-height: 100vh;
+    width: 100vw;
+    height: 100%;
     top: sizem(0);
     left: sizem(0);
     object-fit: cover;
@@ -409,12 +422,21 @@
     width: 100%;
     height: 100%;
     z-index: 0;
-
-    img {
+    .img1 {
       width: 100%;
-      height: 100vh;
+      height: 100%;
       object-fit: cover;
     }
+
+    .img2{
+      width: 100%;
+      height:calc(100% - 88vw);
+      object-fit: cover;
+      position: absolute;
+      left: 0;
+      bottom: 0;z-index: 5;
+    }
+
 
     // &:nth-child(1) {
     //   z-index: 1;

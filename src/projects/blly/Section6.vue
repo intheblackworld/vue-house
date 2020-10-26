@@ -3,11 +3,12 @@
     <div class="section6">
       <img src="./s6/bg.png" alt="" class="bg-img" v-if="isPC">
       <img src="./m/6/bg.png" alt="" class="build absolute" v-if="isMobile">
-      <img src="./s6/img.jpg" alt="" class="img absolute" data-aos="fade-up" data-aos-delay="200">
+      <img src="./s6/img.jpg" alt="" class="img absolute" data-aos="fade" data-aos-delay="200">
       <img src="./s1/hr.png" alt="" class="hr absolute">
-      <h3 class="title absolute" data-aos="fade-up" data-aos-delay="600">Living Movement</h3>
-      <h3 class="subtitle absolute" data-aos="fade-up" data-aos-delay="400">至此境 得從容 享自在</h3>
-      <div class="desc absolute" data-aos="fade-up" data-aos-delay="800">
+      <h3 class="title absolute" data-aos="fade" data-aos-delay="600">Living Movement</h3>
+      <svg v-if="!isMobile" xmlns="http://www.w3.org/2000/svg" class="cls-1 absolute" viewBox="0 0 771 2"><line y1="1" x2="770.41" y2="1"/></svg>
+      <h3 class="subtitle absolute" data-aos="fade" data-aos-delay="400">至此境 得從容 享自在</h3>
+      <div class="desc absolute" data-aos="fade" data-aos-delay="800">
         現場完工實景
       </div>
     </div>
@@ -16,7 +17,20 @@
 
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
-
+.cls-1{fill:none;stroke:#666;stroke-miterlimit:10;stroke-width:2px;
+  width: size(771);
+  height:size(2);
+  left:size(0);
+  top: size(820);
+  animation: letterDraw1 .5s linear 2s forwards;
+  stroke-dasharray: 771;
+  stroke-dashoffset: 771;
+}
+@keyframes letterDraw1 {
+    to {
+        stroke-dashoffset: 0
+    }
+}
 .section6 {
   width: size(1920);
   height: 100vh;
@@ -61,6 +75,7 @@
   text-align: left;
   color: #a3a3a3;
   white-space: nowrap;
+  font-family: "TrajanPro";
 }
 
 .subtitle {
@@ -116,8 +131,9 @@
 @media screen and (max-width: 767px) {
   .section6 {
     width: 100vw;
-    height: calc(100vh - 63px);
-    min-height: auto;
+    min-height:sizem(604);
+    max-height:sizem(700);
+    height:calc(100vh - 63px);
   }
 
   .bg-img {
@@ -140,7 +156,7 @@
 
   .img {
     width: sizem(310);
-    top: sizem(119);
+    top:calc(35.8%  - 27.6vw);
     left: sizem(33);
   }
 
@@ -182,7 +198,7 @@
 
   .desc {
     width: sizem(340);
-    top: sizem(326);
+    top:calc(35.8%  + 27.6vw);
     left: sizem(266);
     font-size: sizem(12);
     font-weight: 300;

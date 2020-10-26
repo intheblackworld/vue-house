@@ -1,11 +1,14 @@
 <template>
   <div>
     <div class="section4">
-      <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
+              <img :src="slide.img" class="img1" v-if="isMobile" alt="">
+      <div class="dark-block absolute" v-if="isMobile">
+      </div>
+              <img :src="slide.img" class="img2" alt="">
             </div>
           </transition-group>
           <!-- <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
@@ -14,14 +17,15 @@
           </div> -->
         </div>
       </div>
-      <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+      <div class="pagination absolute flex-ac" data-aos="fade" data-aos-delay="200" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
-      <div class="dark-block absolute">
+      <div class="dark-block absolute" v-if="!isMobile" >
       </div>
       <h3 class="title absolute">
         RIVERSIDE TRIP
       </h3>
+      <svg v-if="!isMobile" xmlns="http://www.w3.org/2000/svg" class="cls-1 absolute" viewBox="0 0 199 214"><polyline points="0 1 198 1 198 214"/></svg>
       <h3 class="subtitle absolute">
         河岸 開卷一日散策
       </h3>
@@ -34,10 +38,25 @@
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
-
+.cls-1{fill:none;stroke:#FFF;stroke-miterlimit:10;stroke-width:2.01px;
+width: size(199);
+  height:size(211);
+  left:size(652);
+  bottom:size(0);
+  animation: letterDraw1 .5s linear 2s forwards;
+  stroke-dasharray: 1536;
+  stroke-dashoffset: 1536;
+}
+@keyframes letterDraw1 {
+    to {
+        stroke-dashoffset: 0
+    }
+}
 .section4 {
   width: size(1920);
-  height: size(1080);
+  height: 100vh;
+  min-height: size(900);
+  max-height: size(1080);
   position: relative;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
@@ -48,9 +67,8 @@
 }
 
 .bg-img {
-  width: 100vw;
-  height: 100vh;
-  min-height: size(900);
+  width: 100%;
+  height: 100%;
   position: absolute;
   display: block;
   top: 0;
@@ -72,22 +90,23 @@
 
 .title {
   width: size(550);
-  top: size(748);
+  bottom: size(248);
   left: size(150);
   font-size: size(67.2);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.85;
-  letter-spacing: size(-2.69);
+  line-height: 1.25;
+  letter-spacing:-0.04em;
   text-align: left;
   color: #ffffff;
   white-space: nowrap;
+  font-family: "TrajanPro";
 }
 
 .subtitle {
   width: size(481);
-  top: size(845);
+  bottom: size(175);
   left: size(150);
   font-size: size(55.1);
   font-weight: 600;
@@ -102,23 +121,22 @@
 
 .desc {
   width: size(580);
-  top: size(930);
+  top:calc(100% - 9vw);
   left: size(150);
-  font-size: size(19.1);
+  font-size: size(19);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.7;
-  letter-spacing: size(1.14);
-  text-align: left;
+  letter-spacing:0.06em;
+  text-align: justify;
   color: #ffffff;
 }
 
 /* Swipe */
 .swipe {
-  width: 100vw;
-  height: 100vh;
-  min-height: size(1080);
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
   object-fit: cover;
@@ -176,6 +194,8 @@
 
   img {
     width: 100%;
+  height: 100%;
+  object-fit: cover;
   }
 
   // &:nth-child(1) {
@@ -280,8 +300,9 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-    height: 100vh;
-    min-height: auto;
+    min-height:sizem(604);
+    max-height:sizem(812);
+    height:calc(100vh - 63px);
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
     // background-position: 0 0;
@@ -290,8 +311,9 @@
   }
 
   .dark-block {
-    width: sizem(375);
-    height: sizem(284);
+    display: block;
+    width:100%;
+    height:100%;
     bottom: auto;
     top: 0;
     left: 0;
@@ -333,13 +355,6 @@
     top: sizem(121);
     left: sizem(32);
     font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.7;
-    letter-spacing: sizem(0.9);
-    text-align: left;
-    color: #ffffff;
   }
 
   .hr {
@@ -354,8 +369,7 @@
   /* Swipe */
   .swipe {
     width: 100vw;
-    height: 100vh;
-    min-height: 100vh;
+    height: 100%;
     top: sizem(0);
     left: sizem(0);
     object-fit: cover;
@@ -411,10 +425,18 @@
     height: 100%;
     z-index: 0;
 
-    img {
+    .img1 {
       width: 100%;
-      height: 100vh;
+      height: 100%;
       object-fit: cover;
+    }
+
+    .img2{
+      width: 100vw;
+      height:auto;
+      position: absolute;
+      left: 0;
+      bottom: 0;z-index: 5;
     }
 
     // &:nth-child(1) {

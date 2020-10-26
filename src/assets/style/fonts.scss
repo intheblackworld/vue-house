@@ -37,6 +37,13 @@ p {
 
 /* font */
 @font-face {
+  font-family: "TrajanPro";
+  src: url('~@/assets/font/Trajan Pro Regular.ttf') format('truetype'), url('~@/assets/font/Trajan Pro Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+/*
+@font-face {
   font-family: DFPingJuStd;
   src: url('~@/assets/font/DFPingJuStd-W7.otf?#iefix')
       format('embedded-opentype'),
@@ -49,7 +56,6 @@ p {
   src: url('~@/assets/font/icomoon.ttf') format('truetype'),
     url('~@/assets/font/icomoon.ttf');
 }
-
 @font-face {
   font-family: 'TimesNewRomanPSMT';
   src: url('~@/assets/font/TimesNewRomanPSMT.ttf') format('truetype'),
@@ -65,7 +71,6 @@ p {
   font-weight: normal;
   font-style: normal;
 }
-
 @font-face {
   font-family: 'futurabq';
   src: url('~@/assets/font/futurabq-medium.otf') format('truetype');
@@ -79,3 +84,4 @@ p {
   font-weight: normal;
   font-style: normal;
 }
+*/

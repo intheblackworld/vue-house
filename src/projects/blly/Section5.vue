@@ -10,8 +10,12 @@
       <img src="./m/5/img.png" alt="" class="img absolute" v-if="isMobile">
       <div class="hr absolute" v-if="isMobile" />
       <h3 class="title absolute" data-aos="fade-right" data-aos-delay="400">Natural Baptism</h3>
+      <svg  v-if="!isMobile" xmlns="http://www.w3.org/2000/svg" class="cls-1 absolute" viewBox="-329 -217 2304 1080" preserveAspectRatio="xMidYMid slice"><polyline class="cls-11" points="81.05 499.06 1.5 499.06 1.5 1.5 261.62 1.5"/><polyline class="cls-12" points="610.71 1.5 1649.31 1.5 1649.31 499.06 791.28 499.06"/></svg>
       <h3 class="subtitle absolute" data-aos="fade-right" data-aos-delay="600">山水之中 尋回第二人生</h3>
       <div class="desc absolute" data-aos="fade-right" data-aos-delay="800">前擁海河壯闊，後倚青山翠毓，「八里 龍躍」如同一座獨立的綠色島嶼，在人生最美麗的轉彎，實現對生活的純粹，給您一間無價景觀的書房，給您一間會呼吸的屋子，用心生活、大口呼吸，在這的每一天都是享受。
+      </div>
+      <div class="desc2 absolute" data-aos="fade-right" data-aos-delay="800">
+        現場完工實景
       </div>
     </div>
   </div>
@@ -19,19 +23,39 @@
 
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
-
+.cls-1{fill:none;stroke:#FFF;stroke-miterlimit:10;stroke-width:2.01px;
+width: size(1920);
+  height:100%;
+  left:size(0);
+  top:0;
+}
+.cls-11{
+  animation: letterDraw1 .84s linear 2s forwards;
+  stroke-dasharray: 840;
+  stroke-dashoffset: 840;
+}
+.cls-12{
+  animation: letterDraw1 2.4s linear 2.84s forwards;
+  stroke-dasharray: 2400;
+  stroke-dashoffset: 2400;
+}
+@keyframes letterDraw1 {
+    to {
+        stroke-dashoffset: 0
+    }
+}
 .section5 {
   width: size(1920);
   height: 100vh;
-  min-height: size(1080);
+  min-height: size(900);
+  max-height: size(1080);
   overflow: hidden;
   position: relative;
 }
 
 .bg-img {
-  width: 100vw;
-  height: 100vh;
-  min-height: size(1080);
+  width: 100%;
+  height: 100%;
   position: absolute;
   display: block;
   top: 0;
@@ -43,24 +67,25 @@
   }
 }
 .title {
-  width: size(590);
-  top: size(116);
-  right: size(274);
+  width: auto;
+  top:8.5%;
+  left:51%;
   font-size: size(67.2);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.85;
-  letter-spacing: size(-2.69);
+  letter-spacing:-0.04em;
   text-align: left;
   color: #ffffff;
   white-space: nowrap;
+  font-family: "TrajanPro";
 }
 
 .subtitle {
   width: size(598);
-  top: size(336);
-  right: size(266);
+  top:calc(36% - 2.5vw);
+  left:51%;
   font-size: size(55.1);
   font-weight: 600;
   font-stretch: normal;
@@ -74,43 +99,64 @@
 
 .desc {
   width: size(606);
-  top: size(446);
-  right: size(254);
+  top:calc(36% + 2.5vw);
+  left:51%;
   font-size: size(19.1);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.7;
-  letter-spacing: size(1.14);
-  text-align: left;
+  letter-spacing:0.06em;
+  text-align: justify;
+  color: #ffffff;
+}
+.desc2 {
+  width:calc(100% - 140vh);
+  max-width: 36vw;
+  min-width: 21vw;
+  top: calc(63% + 2vw);
+  right:0%;
+  font-size: size(19);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.7;
+  letter-spacing:0.06em;
   color: #ffffff;
 }
 
 .cloud1 {
   width: size(320);
-  top: 0;
-  left: 0;
+  top: size(600);
+  left: size(150);
+  animation: scale 20s -10s linear infinite;
+    opacity:1;
+    transform:translate(0% ,0%) scale(0, 0);
 }
 
 .cloud2 {
   width: size(501);
-  top: size(534);
-  left: size(76);
+  top: size(734);
+  left: size(250);
+  animation: scale 50s -25s linear infinite;
+    opacity:1;
+    transform:translate(0% ,0%) scale(0, 0);
 }
 
 .cloud3 {
   width: size(365);
-  top: size(492);
-  left: size(766);
+  top: size(692);
+  left: size(900);
+  animation: scale 40s -30s linear infinite;
+    opacity: 1;
+    transform:translate(0% ,0%) scale(0, 0);
 }
 
-.cloud {
-  animation: scale 50s 0s ease-in-out infinite alternate;
-}
 
 @keyframes scale {
   to {
-    transform: scale(5, 7);
+    transform:translate(-200% ,-300%) scale(3, 5);
+    opacity:0;
   }
 }
 
@@ -130,9 +176,9 @@
 @media screen and (max-width: 767px) {
   .section5 {
     width: 100vw;
-    min-height: 0;
-    max-height: 500vh;
-    height: calc(100vh);
+    min-height:sizem(590);
+    max-height:sizem(812);
+    height:calc(100vh - 63px);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -145,58 +191,46 @@
     left: 0;
   }
 
-  .subtitle {
-    width: sizem(128);
+  .title {
+    width:auto;
     top: sizem(80 - 55);
     right: auto;
     left: sizem(32.5);
     font-size: sizem(22);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.64;
-    letter-spacing: sizem(-0.88);
-    text-align: left;
-    color: #fff;
-    white-space: nowrap;
   }
-
-  .title {
-    width: sizem(291);
+  .subtitle {
+    width:auto;
     top: sizem(120 - 55);
     right: auto;
     left: sizem(32.5);
     font-size: sizem(25);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.44;
-    letter-spacing: sizem(1.5);
-    text-align: left;
-    color: #fff;
-    white-space: nowrap;
   }
+
 
   .desc {
     width: sizem(291);
-    top: sizem(194 - 55);
-    right: auto;
+    top: sizem(130);
     left: sizem(32.5);
     font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.73;
-    letter-spacing: sizem(0.9);
-    text-align: left;
-    color: #fff;
   }
+.desc2 {
+  width:auto;
+  max-width:100%;
+  min-width:0;
+  top:auto;
+  left:auto;
+  bottom:0.5em;
+  right:5%;
+  font-size: sizem(12);
+  opacity: 0.8;
+}
+
 
   .hr {
     width: sizem(291);
     height: 1px;
     background-color: #fff;
-    top: sizem(164 - 55);
+    top: sizem(115);
     right: auto;
     left: sizem(32.5);
   }
