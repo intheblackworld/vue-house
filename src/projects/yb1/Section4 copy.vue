@@ -127,7 +127,7 @@
     position: relative;
   }
 }
-.bg-color{margin:size(120) 0 0 0;width: 100%;height:size(950);background:linear-gradient(to right, rgba(215,0,50,1) 0%,rgba(235,85,0,1) 100%);}
+.bg-color{margin:size(120) 0 0 0;width: 100%;height:size(950);background:linear-gradient(to bottom, #ff5f00 0%, #fa0032 100%);}
 
 .title {
   font-size: size(110);
@@ -291,7 +291,7 @@
     top: 0;
     left: 0;
     padding-top: size-m(35);
-    background: linear-gradient(to right, #d80033, #ea5400);
+    background: linear-gradient(to bottom, #ff5f00 0%, #fa0032 100%);
   }
 
   .content-label {

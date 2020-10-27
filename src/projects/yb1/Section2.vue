@@ -139,7 +139,7 @@
     &::before {
       content: '';
       width: size-m(90);
-      height: 2px;
+      height: size-m(1);
       background-color: #242424;
       display: block;
     }
@@ -164,16 +164,20 @@
     height: size-m(180);
     flex-wrap: wrap;
     justify-content: center;
+    margin: size-m(15) auto size-m(25) auto;
 
     .round-img {
       width: size-m(81);
       height: size-m(81);
       border-radius: 999px;
       margin: 0 size-m(6);
+      &:nth-child(1){order:4;}
+      &:nth-child(2){order:1;}
+      &:nth-child(3){order:2;}
+      &:nth-child(4){order:3;}
+      &:nth-child(5){order:5;}
     }
 
-    margin: 0 auto;
-    margin-bottom: size(68);
   }
 
   .desc {

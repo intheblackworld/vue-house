@@ -82,7 +82,7 @@
   .icon-img {
     width: size(910);
     height: size(302);
-    border-radius: 999px;
+  //  border-radius: 999px;
   }
 
   margin: 0 auto;
@@ -135,7 +135,7 @@
     &::before {
       content: '';
       width: size-m(90);
-      height: 2px;
+      height: size-m(1);
       background-color: #242424;
       display: block;
     }
@@ -164,7 +164,7 @@
     .icon-img {
       width: size-m(290);
       height: auto;
-      border-radius: 999px;
+//border-radius: 999px;
     }
 
     margin: 0 auto;

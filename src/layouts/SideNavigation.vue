@@ -396,6 +396,7 @@ export default {
   .navigation {
     height: $nav_tablet_height;
     justify-content: center;
+  position: absolute;
   }
 
   .logo {

@@ -26,6 +26,7 @@
 <style lang="scss" scoped>
 @import '~@/assets/style/function.scss';
 .bg {
+ // width: 100vw;
   background-size: contain;
   position: relative;
   // background-color: #fddb3e;
@@ -71,16 +72,16 @@
   width:calc(50vw - 74.5vh);
   min-width: size(146);
   max-width: size(286);
-  top:57%;
+  top:58.2%;
   left:0;
   text-align: right;
   .icon{width: size(85);transform: rotate(20deg) scale(0.8);opacity: 0.8;animation: rotate1 1s infinite ease-in-out alternate;}
 }
 .icon2{
-  width:calc(50vw - 70vh);
-  min-width: size(202);
-  max-width: size(335);
-  top:56%;
+  width:calc(50vw - 72.3vh);
+  min-width: size(176);
+  max-width: size(313);
+  top:57.3%;
   right:0;
   text-align: left;
   .icon{width: size(85);transform: rotate(-10deg) scale(0.8);opacity: 0.8;animation: rotate1 1s -0.5s infinite ease-in-out alternate;}
@@ -105,7 +106,7 @@
 .btn {
   width: size(210);
   height: size(72);
-  top: calc(50% + 9vw);
+  top: calc(50% + 10vw);
   left: 0;
   right: 0;
   margin: 0 auto;

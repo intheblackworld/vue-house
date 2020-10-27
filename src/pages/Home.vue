@@ -62,15 +62,18 @@
 .linear-bg {
   width: size(1800);
   // height: 3299px;
-  opacity: 0.95;
+  //opacity: 0.95;
+  margin: 0 auto size(56);position: relative;
+  &::after{content: "";position: absolute;top: 0;left: 0;width: 100%;opacity: 0.95;z-index: 1;
+  height: 100%;
   clip-path: polygon(0 0, 100% 0%, 100% 100%, 6.4vw 100%, 0% calc(100% - 6.4vw));
   background-image: linear-gradient(
     to bottom,
     rgba(255, 87, 0, 0.85),
     #fa0032 100%,
     #fa0032 100%
-  );
-  margin: 0 auto 56px;
+  );}
+  > div{z-index: 2;position: relative;}
 }
 
 .mb-200 {

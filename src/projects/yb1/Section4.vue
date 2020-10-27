@@ -87,7 +87,7 @@
   .icon-img {
     width: size(910);
     height: size(302);
-    border-radius: 999px;
+   // border-radius: 999px;
   }
 
   margin: 0 auto;
@@ -112,12 +112,13 @@
 .swiper-frame {
   // position: absolute;
   width: 100%;
-  height: calc(100vh - 32vw);
+  height: size(600);
   min-height: size(600);
   max-height: size(850);
   // top: size(-150);
   left: size(0);
   overflow: hidden;
+  margin: size(70);
 }
 
 .swiper-container {
@@ -126,15 +127,15 @@
   height: 100%;
   // top: size(50);
   left: size(0);
-  margin-left: size(-295);
+  //margin-left: size(-295);
   .item {
     width: auto;
-    margin: 0 size(80) 0 0;
+    margin: 0 size(50) 0 0;
   }
   img,
   .text {
     // width: size(550);
-    height: calc(100% - 4vw);
+    height: calc(100% - 2vw);
   }
 
   .text {
@@ -184,7 +185,7 @@
     &::before {
       content: '';
       width: size-m(90);
-      height: 2px;
+      height: size-m(1);
       background-color: #242424;
       display: block;
     }
@@ -213,7 +214,7 @@
     .icon-img {
       width: size-m(290);
       height: auto;
-      border-radius: 999px;
+    //  border-radius: 999px;
     }
 
     margin: 0 auto;
@@ -232,7 +233,7 @@
     color: #ffffff;
 
     margin: 0 auto;
-    margin-bottom: size-m(30);
+    padding-bottom:size-m(40);
   }
 
   .swiper-frame {
@@ -244,7 +245,8 @@
     // top: size(-150);
     left: size(0);
     overflow: hidden;
-    margin-bottom: size-m(30);
+    margin-bottom: size-m(20);
+
   }
 
   .swiper-container {
@@ -303,7 +305,7 @@ export default {
       isMobile,
       swiperOption: {
         slidesPerView: isMobile ? 1.4 : 'auto',
-        centeredSlides: true,
+        centeredSlides: false,
         spaceBetween: isMobile ? 15 : 0,
         slidesPerColumn: isMobile ? 1 : 1,
 
@@ -312,6 +314,7 @@ export default {
           disableOnInteraction: false,
         },
         loop: true,
+        loopedSlides: 6,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',

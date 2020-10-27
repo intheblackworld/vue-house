@@ -101,12 +101,12 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(to right, #d70032 0%, #eb5500 100%);
+    background-image: linear-gradient(to bottom, #ff5f00 0%, #fa0032 100%);
     border-radius: 20px / 20px;
     position: relative;
     z-index: 3;
     &:hover {
-      background-image: linear-gradient(to left, #d70032 0%, #eb5500 100%);
+      background-image: linear-gradient(to top, #ff5f00 0%, #fa0032 100%);
     }
   }
 }
@@ -326,6 +326,7 @@ export default {
 @media only screen and (max-width: 767px) {
   .navigation {
     height: $nav_phone_height;
+  position: absolute;
   //  background-color: #fff;
     height: 70px;
     justify-content: center;

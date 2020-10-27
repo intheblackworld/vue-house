@@ -39,6 +39,7 @@
   // position: relative;
   // z-index: 5;
   min-height: 100vh;
+  background: #fff;
 }
 
 .bg-img {
@@ -100,7 +101,6 @@
   height: size(312);
   text-align: center;
   padding: size(67) size(180) 0;
-  background: #fff;
 }
 
 .content-label {
@@ -216,14 +216,17 @@
 
   .content {
     width: 100vw;
-    height: size-m(222);
+    height: auto;
+   // height: size-m(222);
     top: 0;
     left: 0;
-    padding-top: size-m(35);
+    position: relative;
+    padding: size-m(35) 0 size-m(40) 0;
     background: #fff;
   }
 
   .content-label {
+    width: size-m(295);
     font-size: size-m(18);
     font-weight: 500;
     font-stretch: normal;
@@ -232,8 +235,7 @@
     letter-spacing: normal;
     text-align: left;
     color: #242424;
-    margin-left: size-m(5);
-    margin-bottom: size-m(15);
+    margin: auto auto size-m(15) auto;
   }
 
   .content-title {
@@ -255,10 +257,10 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.56;
-    text-align: left;
+    text-align: justify;
     color: #242424;
     margin: 0 auto;
-    margin-bottom: size-m(35);
+    //margin-bottom: size-m(35);
   }
 
   .swiper-container {

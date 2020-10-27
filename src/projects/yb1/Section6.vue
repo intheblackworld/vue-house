@@ -150,19 +150,22 @@
   left: size(120);
   text-align: center;
   padding: size(34) size(50) 0 size(77);
-  clip-path: polygon(
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  &::after{content:"";position: absolute;top:0;left: 0;width: 100%;
+  height: 100%;clip-path: polygon(
     0 0,
     100% 0%,
     100% 100%,
     6.4vw 100%,
     0% calc(100% - 6.4vw)
   );
+  opacity: 0.9;z-index: -1;
   background-image: linear-gradient(to bottom, #ff5f00 0%, #fa0032 100%);
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  }
 }
 
 .content-title {
@@ -170,12 +173,12 @@
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
+  line-height: 1.5;
   letter-spacing: size(1.44);
   text-align: center;
   color: #242424;
   margin-bottom: size(40);
-  white-space: nowrap;
+  white-space: nowrap;z-index: 1;
 
   span {
     font-size: size(33);
@@ -269,33 +272,18 @@
   }
 
   .content {
-    width: size-m(280);
+    width: size-m(295);
     height: auto;
-    top: size-m(270);
+    top: size-m(265);
     left: 0;
     right: 0;
     margin: 0 auto;
-    padding: 35px 25px;
-    background: linear-gradient(to right, #d80033, #ea5400);
+    padding:size-m(30) size-m(25);
   }
-
-  .content-label {
-    font-size: size-m(12);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000000;
-    margin-bottom: size-m(15);
-  }
-
   .content-title {
     font-size: size-m(20);
-    line-height: 0.94;
-    margin-bottom: size-m(15);
-    white-space: nowrap;
+    //line-height: 0.9;
+    margin-bottom: size-m(10);
     span {
       font-size: size-m(15);
     }
@@ -306,6 +294,15 @@
     line-height: 1.56;
     margin-bottom: size-m(15);
   }
+
+  .content-label {
+    font-size: size-m(12);
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: left;
+    margin-bottom: size-m(15);
+  }
+
 
   .swiper-container {
     position: relative;

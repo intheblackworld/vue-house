@@ -99,7 +99,7 @@ export default {
   text-align: left;
   font-size: 36px;
   line-height: 36px;
-  margin: 20px 0 10px 0;
+  margin: 00px 0 20px 0;
   font-family: 'Noto Serif TC', serif;
   font-weight: bold;
   color: $house_title_color;
@@ -155,10 +155,11 @@ export default {
   margin-right: 160px;
   //width: 260px;
   height: 45px;
-  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
   // border-left: 4px solid $house_label_color;
   padding-left: 0;
   display: flex;
+  justify-content:space-between;
   align-items: center;
   white-space: nowrap;
   &:nth-of-type(even) {
@@ -174,10 +175,10 @@ export default {
   }
 
   &:nth-child(2) {
-    border-top: 0px solid #ccc;
-    .label {
+   border-top: 1px solid #ccc;
+  /*  .label {
       display: none;
-    }
+    }*/
   }
   .desc {
     font-size: 15px;
