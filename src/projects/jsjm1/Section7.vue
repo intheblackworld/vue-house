@@ -8,9 +8,16 @@
               <img :src="slide.img" alt="">
             </div>
           </transition-group>
-          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+          <div class="img-pagination absolute flex-ac">
+            <div v-for="(slide, i) in slideList" :key="slide.img" :class="`img-item relative`" @click="scaleImg(i)">
+              <img src="./s7/icon.png" alt="" class="icon absolute">
+              <img :src="slide.img" alt="">
+              <div class="img-name absolute">{{slide.name}}</div>
+            </div>
           </div>
+          <!-- <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+          </div> -->
           <!-- <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
             <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
             <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
@@ -66,10 +73,10 @@
 
 /* Swipe */
 .swipe {
-  width: size(1310);
+  width: size(1160);
   height: size(703);
   top: size(99);
-  left: 0;
+  left: size(178);
   object-fit: cover;
 }
 
@@ -120,11 +127,12 @@
 
 .swipe-item {
   width: 100%;
-  height: 100%;
+  height: size(530);
   z-index: 0;
 
   img {
     width: 100%;
+    height: 100%;
   }
 
   // &:nth-child(1) {
@@ -140,6 +148,49 @@
   //   z-index: 2;
   //   // opacity: 1;
   // }
+}
+
+.img-pagination {
+  width: 100%;
+  bottom: size(20);
+  right: size(0);
+  justify-content: space-between;
+  .img-item {
+    width: size(150);
+    height: size(130);
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .icon {
+      width: size(19);
+      height: size(19);
+      right: size(9);
+      bottom: size(9);
+    }
+
+    .img-name {
+      width: 100%;
+      height: size(20);
+      right: size(0);
+      bottom: size(-20);
+      border-right: 1px solid #af1f24;
+      border-bottom: 1px solid #af1f24;
+      padding: 0 2px;
+      text-align: right;
+      font-size: size(14.6);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.2;
+      letter-spacing: size(3.5);
+      color: #323333;
+    }
+  }
 }
 
 .pagination {
@@ -475,10 +526,32 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s3/1中山北路二段.jpg'),
+          img: require('./s7/1台北光點.jpg'),
+          name: '台北光點',
         },
         {
-          img: require('./s3/2中山北路二段.jpg'),
+          img: require('./s7/2北美館.jpg'),
+          name: '北美館',
+        },
+        {
+          img: require('./s7/3蔡瑞月舞蹈社.jpg'),
+          name: '蔡瑞月舞蹈社',
+        },
+        {
+          img: require('./s7/4當代藝術館.jpg'),
+          name: '當代藝術館',
+        },
+        {
+          img: require('./s7/5南西誠品.jpg'),
+          name: '南西誠品',
+        },
+        {
+          img: require('./s7/6光點旁的巷弄生活.jpg'),
+          name: '光點旁的巷弄生活',
+        },
+        {
+          img: require('./s7/7赤峰街小器.jpg'),
+          name: '赤峰街小器',
         },
       ],
     }
