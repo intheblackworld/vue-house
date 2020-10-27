@@ -6,26 +6,27 @@
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
               <img :src="slide.img" class="img1" v-if="isMobile" alt="">
-      <div class="dark-block absolute" v-if="isMobile">
-      </div>
+              <div class="dark-block absolute" v-if="isMobile">
+              </div>
               <img :src="slide.img" class="img2" alt="">
             </div>
           </transition-group>
-          <!-- <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
             <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
             <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-          </div> -->
+          </div>
         </div>
       </div>
       <div class="pagination absolute flex-ac" data-aos="fade" data-aos-delay="200" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
-      <div class="dark-block absolute" v-if="!isMobile" >
+      <div class="dark-block absolute" v-if="!isMobile">
       </div>
       <h3 class="title absolute">
         RIVERSIDE TRIP
       </h3>
-      <svg v-if="!isMobile" xmlns="http://www.w3.org/2000/svg" class="cls-1 absolute" viewBox="0 0 199 214"><polyline points="0 1 198 1 198 214"/></svg>
+      <svg v-if="!isMobile && viewIndex == 4"  xmlns="http://www.w3.org/2000/svg" class="cls-1 absolute" viewBox="0 0 199 214">
+        <polyline points="0 1 198 1 198 214" /></svg>
       <h3 class="subtitle absolute">
         河岸 開卷一日散策
       </h3>
@@ -38,19 +39,23 @@
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
-.cls-1{fill:none;stroke:#FFF;stroke-miterlimit:10;stroke-width:2.01px;
-width: size(199);
-  height:size(211);
-  left:size(652);
-  bottom:size(0);
-  animation: letterDraw1 .5s linear 2s forwards;
+.cls-1 {
+  fill: none;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  stroke-width: 2.01px;
+  width: size(199);
+  height: size(211);
+  left: size(652);
+  bottom: size(0);
+  animation: letterDraw1 0.5s linear 1s forwards;
   stroke-dasharray: 1536;
   stroke-dashoffset: 1536;
 }
 @keyframes letterDraw1 {
-    to {
-        stroke-dashoffset: 0
-    }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 .section4 {
   width: size(1920);
@@ -97,11 +102,11 @@ width: size(199);
   font-stretch: normal;
   font-style: normal;
   line-height: 1.25;
-  letter-spacing:-0.04em;
+  letter-spacing: -0.04em;
   text-align: left;
   color: #ffffff;
   white-space: nowrap;
-  font-family: "TrajanPro";
+  font-family: 'TrajanPro';
 }
 
 .subtitle {
@@ -121,14 +126,14 @@ width: size(199);
 
 .desc {
   width: size(580);
-  top:calc(100% - 9vw);
+  top: calc(100% - 9vw);
   left: size(150);
   font-size: size(19);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.7;
-  letter-spacing:0.06em;
+  letter-spacing: 0.06em;
   text-align: justify;
   color: #ffffff;
 }
@@ -194,8 +199,8 @@ width: size(199);
 
   img {
     width: 100%;
-  height: 100%;
-  object-fit: cover;
+    height: 100%;
+    object-fit: cover;
   }
 
   // &:nth-child(1) {
@@ -300,9 +305,9 @@ width: size(199);
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-    min-height:sizem(604);
-    max-height:sizem(812);
-    height:calc(100vh - 63px);
+    min-height: sizem(604);
+    max-height: sizem(812);
+    height: calc(100vh - 63px);
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
     // background-position: 0 0;
@@ -312,8 +317,8 @@ width: size(199);
 
   .dark-block {
     display: block;
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
     bottom: auto;
     top: 0;
     left: 0;
@@ -431,12 +436,13 @@ width: size(199);
       object-fit: cover;
     }
 
-    .img2{
+    .img2 {
       width: 100vw;
-      height:auto;
+      height: auto;
       position: absolute;
       left: 0;
-      bottom: 0;z-index: 5;
+      bottom: 0;
+      z-index: 5;
     }
 
     // &:nth-child(1) {
@@ -537,7 +543,7 @@ export default {
   name: 'section4',
 
   mixins: [slider],
-
+  props: ['viewIndex'],
   data() {
     return {
       isPC,

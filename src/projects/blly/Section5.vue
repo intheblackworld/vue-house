@@ -10,7 +10,7 @@
       <img src="./m/5/img.png" alt="" class="img absolute" v-if="isMobile">
       <div class="hr absolute" v-if="isMobile" />
       <h3 class="title absolute" data-aos="fade-right" data-aos-delay="400">Natural Baptism</h3>
-      <svg  v-if="!isMobile" xmlns="http://www.w3.org/2000/svg" class="cls-1 absolute" viewBox="-329 -217 2304 1080" preserveAspectRatio="xMidYMid slice"><polyline class="cls-11" points="81.05 499.06 1.5 499.06 1.5 1.5 261.62 1.5"/><polyline class="cls-12" points="610.71 1.5 1649.31 1.5 1649.31 499.06 791.28 499.06"/></svg>
+      <svg  v-if="!isMobile && viewIndex == 5"  xmlns="http://www.w3.org/2000/svg" class="cls-1 absolute" viewBox="-329 -217 2304 1080" preserveAspectRatio="xMidYMid slice"><polyline class="cls-11" points="81.05 499.06 1.5 499.06 1.5 1.5 261.62 1.5"/><polyline class="cls-12" points="610.71 1.5 1649.31 1.5 1649.31 499.06 791.28 499.06"/></svg>
       <h3 class="subtitle absolute" data-aos="fade-right" data-aos-delay="600">山水之中 尋回第二人生</h3>
       <div class="desc absolute" data-aos="fade-right" data-aos-delay="800">前擁海河壯闊，後倚青山翠毓，「八里 龍躍」如同一座獨立的綠色島嶼，在人生最美麗的轉彎，實現對生活的純粹，給您一間無價景觀的書房，給您一間會呼吸的屋子，用心生活、大口呼吸，在這的每一天都是享受。
       </div>
@@ -30,12 +30,12 @@ width: size(1920);
   top:0;
 }
 .cls-11{
-  animation: letterDraw1 .84s linear 2s forwards;
+  animation: letterDraw1 .84s linear 1s forwards;
   stroke-dasharray: 840;
   stroke-dashoffset: 840;
 }
 .cls-12{
-  animation: letterDraw1 2.4s linear 2.84s forwards;
+  animation: letterDraw1 2.4s linear 1.84s forwards;
   stroke-dasharray: 2400;
   stroke-dashoffset: 2400;
 }
@@ -264,7 +264,7 @@ import { isPC, isMobile, isTablet } from '@/utils'
 
 export default {
   name: 'section5',
-
+  props: ['viewIndex'],
   data() {
     return {
       isPC,

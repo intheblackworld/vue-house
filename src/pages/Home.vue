@@ -21,31 +21,31 @@
       class="section"
       id="section2"
     >
-      <Section2 />
+      <Section2 :viewIndex="viewIndex" />
     </vue-lazy-component>
     <vue-lazy-component
       class="section"
       id="section3"
     >
-      <Section3 />
+      <Section3 :viewIndex="viewIndex" />
     </vue-lazy-component>
     <vue-lazy-component
       class="section"
       id="section4"
     >
-      <Section4 />
+      <Section4 :viewIndex="viewIndex" />
     </vue-lazy-component>
     <vue-lazy-component
       class="section"
       id="section5"
     >
-      <Section5 />
+      <Section5 :viewIndex="viewIndex" />
     </vue-lazy-component>
     <vue-lazy-component
       class="section"
       id="section6"
     >
-      <Section6 />
+      <Section6 :viewIndex="viewIndex" />
     </vue-lazy-component>
     <vue-lazy-component
       class="section"
@@ -219,7 +219,10 @@ export default {
           navIndex = n
         }
       }
-      this.viewIndex = navIndex + 1
+      if (this.viewIndex !== navIndex + 1) {
+        this.viewIndex = navIndex + 1
+      }
+      console.log(this.viewIndex)
     },
 
     // onLeave(origin, destination, direction) {

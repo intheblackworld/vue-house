@@ -6,7 +6,7 @@
       <img src="./s6/img.jpg" alt="" class="img absolute" data-aos="fade" data-aos-delay="200">
       <img src="./s1/hr.png" alt="" class="hr absolute">
       <h3 class="title absolute" data-aos="fade" data-aos-delay="600">Living Movement</h3>
-      <svg v-if="!isMobile" xmlns="http://www.w3.org/2000/svg" class="cls-1 absolute" viewBox="0 0 771 2"><line y1="1" x2="770.41" y2="1"/></svg>
+      <svg v-if="!isMobile && viewIndex == 6"  xmlns="http://www.w3.org/2000/svg" class="cls-1 absolute" viewBox="0 0 771 2"><line y1="1" x2="770.41" y2="1"/></svg>
       <h3 class="subtitle absolute" data-aos="fade" data-aos-delay="400">至此境 得從容 享自在</h3>
       <div class="desc absolute" data-aos="fade" data-aos-delay="800">
         現場完工實景
@@ -22,7 +22,7 @@
   height:size(2);
   left:size(0);
   top: size(820);
-  animation: letterDraw1 .5s linear 2s forwards;
+  animation: letterDraw1 .5s linear 1s forwards;
   stroke-dasharray: 771;
   stroke-dashoffset: 771;
 }
@@ -221,7 +221,7 @@ import { isPC, isMobile, isTablet } from '@/utils'
 
 export default {
   name: 'section6',
-
+  props: ['viewIndex'],
   data() {
     return {
       isPC,

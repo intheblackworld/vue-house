@@ -11,10 +11,10 @@
               <img :src="slide.img" class="img2" alt="">
             </div>
           </transition-group>
-          <!-- <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
             <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
             <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-          </div> -->
+          </div>
         </div>
       </div>
       <div class="pagination absolute flex-ac" data-aos="fade" data-aos-delay="200" v-if="isPC">
@@ -536,7 +536,7 @@ export default {
   name: 'section7',
 
   mixins: [slider],
-
+  props: ['viewIndex'],
   data() {
     return {
       isPC,

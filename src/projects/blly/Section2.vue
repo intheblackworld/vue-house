@@ -7,7 +7,7 @@
       <h3 class="title absolute" data-aos="fade" data-aos-delay="400">
         你的左岸 極景.極美.極品
       </h3>
-      <svg xmlns="http://www.w3.org/2000/svg" v-if="!isMobile" class="cls-1 absolute" viewBox="0 0 1394 143"><polyline class="st0" points="0,141.9 399,141.9 399,1 1394.1,1"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" v-if="!isMobile && viewIndex == 2" class="cls-1 absolute" viewBox="0 0 1394 143"><polyline class="st0" points="0,141.9 399,141.9 399,1 1394.1,1"/></svg>
       <h3 class="subtitle absolute" data-aos="fade" data-aos-delay="200">
         Polar view
       </h3>
@@ -24,7 +24,7 @@
   height:size(143);
   left:size(535);
   top:size(357);
-  animation: letterDraw1 .5s linear 2s forwards;
+  animation: letterDraw1 .5s linear 1s forwards;
   stroke-dasharray: 1536;
   stroke-dashoffset: 1536;
 }
@@ -167,7 +167,7 @@ import { isPC, isMobile, isTablet } from '@/utils'
 
 export default {
   name: 'section2',
-
+  props: ['viewIndex'],
   // components: {
   //   Map,
   // },

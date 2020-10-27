@@ -1,16 +1,21 @@
 <template>
   <div>
     <div class="section2">
-      <img src="./s3/bg.jpg" alt="" class="bg-img" v-if="isPC">
-      <img src="./m/3/bg.jpg" alt="" class="img absolute" v-if="isMobile">
+      <img src="./s3/bg.jpg" alt="" class="bg-img" v-if="isPC" @click="showDialog">
+      <img src="./m/3/bg.jpg" alt="" class="img absolute" v-if="isMobile" @click="showDialog">
       <h3 class="subtitle absolute" data-aos="fade-right" data-aos-delay="200">Relax resorts</h3>
       <h3 class="title absolute" data-aos="fade-right" data-aos-delay="400">
         城市與河岸最舒適的距離
       </h3>
-      <svg xmlns="http://www.w3.org/2000/svg" v-if="!isMobile" class="cls-1 absolute" viewBox="0 0 827 157.62"><polyline points="0 1 826 1 826 157.62"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" v-if="!isMobile && viewIndex === 3" class="cls-1 absolute" viewBox="0 0 827 157.62">
+        <polyline points="0 1 826 1 826 157.62" /></svg>
       <div class="hr absolute" v-if="isMobile" />
       <div class="desc absolute" data-aos="fade-right" data-aos-delay="600">
         八里，擁有宜居環境，左右更續接了雙北生活圈，交通便利，透過快速道路、關渡大橋淡江大橋連接了新市鎮生活圈。在這有著深度的文化蘊藏，十三行博物館、左岸公園、左岸劇場，相佐水岸綠道，如此舒心閑適的居所，只有「八里 龍躍」。
+      </div>
+      <div :class="`dialog ${isDialog ? 'show' : ''}`">
+        <img :src="isMobile ? require('./m/3/bg.jpg') : require('./s3/bg.jpg')" alt class="dialog-img" />
+        <img src="~@/assets/img/close.png" alt class="close" @click="closeDialog" />
       </div>
     </div>
   </div>
@@ -18,19 +23,23 @@
 
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
-.cls-1{fill:none;stroke:#666;stroke-miterlimit:10;stroke-width:2.01px;
-width: size(827);
-  height:size(157);
-  left:size(0);
+.cls-1 {
+  fill: none;
+  stroke: #666;
+  stroke-miterlimit: 10;
+  stroke-width: 2.01px;
+  width: size(827);
+  height: size(157);
+  left: size(0);
   top: calc(50% + 14vw);
-  animation: letterDraw1 .5s linear 2s forwards;
+  animation: letterDraw1 0.5s linear 1s forwards;
   stroke-dasharray: 1536;
   stroke-dashoffset: 1536;
 }
 @keyframes letterDraw1 {
-    to {
-        stroke-dashoffset: 0
-    }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 .section2 {
   width: size(1920);
@@ -51,6 +60,7 @@ width: size(827);
   top: 0;
   left: 0;
   object-fit: cover;
+  cursor: pointer;
 
   &:nth-child(1) {
     position: relative;
@@ -67,11 +77,11 @@ width: size(827);
   font-stretch: normal;
   font-style: normal;
   line-height: 1.85;
-  letter-spacing:-0.04em;
+  letter-spacing: -0.04em;
   text-align: left;
   color: #ffffff;
   white-space: nowrap;
-  font-family: "TrajanPro";
+  font-family: 'TrajanPro';
 }
 
 .title {
@@ -98,9 +108,41 @@ width: size(827);
   font-stretch: normal;
   font-style: normal;
   line-height: 1.7;
-  letter-spacing:0.06em;
+  letter-spacing: 0.06em;
   text-align: justify;
   color: #595757;
+}
+
+.dialog {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s;
+  display: none;
+  overflow: scroll;
+
+  &.show {
+    display: block;
+    z-index: 210;
+    opacity: 1;
+  }
+
+  .dialog-img {
+    width: 2304px;
+    height: auto;
+  }
+
+  .close {
+    position: fixed;
+    cursor: pointer;
+    right: 35px;
+    top: 25px;
+    width: 40px;
+  }
 }
 
 @media only screen and (max-width: 1440px) {
@@ -119,9 +161,9 @@ width: size(827);
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    min-height:sizem(604);
-    max-height:sizem(812);
-    height:sizem(604);
+    min-height: sizem(604);
+    max-height: sizem(812);
+    height: sizem(604);
     background: #fff;
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
@@ -167,6 +209,38 @@ width: size(827);
     right: auto;
     left: sizem(32.5);
   }
+
+  .dialog {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s;
+    display: none;
+    overflow: scroll;
+
+    &.show {
+      display: block;
+      z-index: 210;
+      opacity: 1;
+    }
+
+    .dialog-img {
+      width: 1500px;
+      height: auto;
+    }
+
+    .close {
+      position: fixed;
+      cursor: pointer;
+      right: 35px;
+      top: 25px;
+      width: 40px;
+    }
+  }
 }
 </style>
 <script>
@@ -180,6 +254,7 @@ export default {
   // components: {
   //   Map,
   // },
+  props: ['viewIndex'],
 
   data() {
     return {
@@ -190,7 +265,14 @@ export default {
     }
   },
 
-  methods: {},
+  methods: {
+    showDialog() {
+      this.isDialog = true
+    },
+    closeDialog() {
+      this.isDialog = false
+    },
+  },
 
   created() {},
 
