@@ -78,9 +78,9 @@
   .icon{width: size(85);transform: rotate(20deg) scale(0.8);opacity: 0.8;animation: rotate1 1s infinite ease-in-out alternate;}
 }
 .icon2{
-  width:calc(50vw - 72.3vh);
-  min-width: size(176);
-  max-width: size(313);
+  width:calc(50vw - 72vh);
+  min-width: size(173);
+  max-width: size(317);
   top:57.3%;
   right:0;
   text-align: left;
