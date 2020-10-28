@@ -78,12 +78,12 @@
       >
         <Section11 />
       </div>
-      <div
+      <!-- <div
         class="section"
         id="section12"
       >
         <Section12 />
-      </div>
+      </div> -->
     </full-page>
     <ContactSection
       class="section"
