@@ -1,7 +1,26 @@
 <template>
   <div>
-    <div class="section9">
-      <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+    <div class="section11">
+      <div class="img-list absolute flex-ac flex-jb">
+        <div v-for="(slide) in slideList" :key="slide.img" :class="`img-item relative`">
+          <img :src="slide.img" alt="">
+          <div class="img-text absolute" v-html="slide.text"></div>
+        </div>
+      </div>
+      <div class="subtitle absolute">
+        建築，爭的不是名利，而是無止盡的問心無愧
+      </div>
+      <div class="title absolute">
+        <span class="number">30</span>年甲級營造職人<br />
+        鐵冠建設<span>‧</span>昌譽營造
+      </div>
+      <div class="desc absolute">
+        創建之初，即成立自家營造廠「昌譽營造」，攜手鑽研土木、鋼構力學等基礎深開挖技術。<br />
+        精淬造工，贏得公共工程界、多項大獎青睞推崇。<br />
+        2020年再以《十三行博物館休閒教育園區》奪下「國家卓越建設獎金質獎」殊榮，印證工法專注苛求，才是建築最完美的價值。
+      </div>
+
+      <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -17,18 +36,17 @@
           </div>
         </div>
       </div>
-      <img src="./s9/img.png" alt="" class="img absolute">
-      <img src="./s9/t.png" alt="" class="t absolute">
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section9 {
+.section11 {
   width: size(1920);
   height: size(900);
   position: relative;
+  background-color: #b01f24;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
@@ -52,16 +70,103 @@
   }
 }
 
-.t {
-  width: size(332);
-  top: size(105);
-  right: size(172);
+.img-list {
+  width: 100vw;
+  height: size(590);
+  top: 0;
+  left: 0;
 }
 
-.img {
-  width: size(208);
-  top: size(586);
-  right: size(318);
+.img-item {
+  width: 25%;
+  height: size(590);
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.img-text {
+  width: size(452.6);
+  height: size(44.6);
+  bottom: size(20);
+  padding-right: 10px;
+  border-right: solid 1px #af1f24;
+  border-bottom: solid 1px #af1f24;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+  font-size: size(16);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: size(0.62);
+  text-align: right;
+  color: #ffffff;
+}
+
+.title {
+  width: size(530);
+  top: size(702);
+  left: size(354);
+  font-size: size(55.7);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(7.74);
+  text-align: right;
+  color: #ffffff;
+  white-space: nowrap;
+  span {
+    font-size: size(55.7);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+  }
+
+  .number {
+    font-size: size(68.4);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: size(6.84);
+    text-align: left;
+    color: #ffffff;
+  }
+}
+
+.subtitle {
+  width: size(530);
+  top: size(660);
+  left: size(354);
+  font-size: size(25.5);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(0.99);
+  text-align: left;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.desc {
+  width: size(625);
+  top: size(652);
+  right: size(262);
+  font-size: size(21);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2;
+  letter-spacing: size(0.92);
+  text-align: left;
+  color: #ffffff;
 }
 
 /* Swipe */
@@ -228,7 +333,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section9 {
+  .section11 {
     width: 100vw;
     height: 100vh;
     min-height: auto;
@@ -252,14 +357,7 @@
     width: sizem(179);
     top: sizem(25);
     left: sizem(32);
-    font-size: sizem(22);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.85;
-    letter-spacing: sizem(-0.88);
-    text-align: left;
-    color: #ffffff;
+
     white-space: nowrap;
   }
 
@@ -462,7 +560,7 @@ import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section9',
+  name: 'section11',
 
   mixins: [slider],
   props: ['viewIndex'],
@@ -475,13 +573,21 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s9/1捷運中山國小站.jpg'),
+          img: require('./s11/1.jpg'),
+          text: '《墨濤院》<br />2017年國家建築金質獎',
         },
         {
-          img: require('./s9/2捷運中山站.jpg'),
+          img: require('./s11/2.jpg'),
+          text: '《十三行博物館休閒教育園區》<br />2020年國家卓越建設獎金質獎',
         },
         {
-          img: require('./s9/3捷運雙連站.jpg'),
+          img: require('./s11/3.jpg'),
+          text:
+            '《實踐大學圖書館及體育館-清水混凝土結構工程》<br />2012年台北市都市景觀首獎',
+        },
+        {
+          img: require('./s11/4.jpg'),
+          text: '《法鼓山人文社會學院》<br />2015年台灣建築獎佳作獎 ',
         },
       ],
     }

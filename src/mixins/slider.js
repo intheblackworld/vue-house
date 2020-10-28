@@ -3,32 +3,33 @@ export default {
     return {
       slideIndex: 0,
       toggleTimer: true,
+      stopAutoPlay: false,
     }
   },
 
-  created() {
+  mounted() {
     setInterval(() => {
-      if(this.toggleTimer) {
-        if (this.slideList) {
+      if (this.toggleTimer) {
+        if (this.slideList && !this.stopAutoPlay) {
           this.addIndex()
         }
         if (this.slideList1) {
           this.addMultiIndex(1)
         }
-  
+
         if (this.slideList2) {
           this.addMultiIndex(2)
         }
-  
+
         if (this.slideList3) {
           this.addMultiIndex(3)
         }
-  
+
         if (this.slideList4) {
           this.addMultiIndex(4)
         }
       }
-      
+
     }, 5000)
   },
   methods: {
@@ -55,6 +56,4 @@ export default {
         this[`slideIndex${index}`] === 0 ? this[`slideList${index}`].length - 1 : this[`slideIndex${index}`] - 1
     },
   },
-
-  mounted() { }
 }
