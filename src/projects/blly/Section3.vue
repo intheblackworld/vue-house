@@ -1,21 +1,23 @@
 <template>
   <div>
     <div class="section2">
-      <img src="./s3/bg.jpg" alt="" class="bg-img" v-if="isPC" @click="showDialog">
-      <img src="./m/3/bg.jpg" alt="" class="img absolute" v-if="isMobile" @click="showDialog">
-      <h3 class="subtitle absolute" data-aos="fade-right" data-aos-delay="200">Relax resorts</h3>
-      <h3 class="title absolute" data-aos="fade-right" data-aos-delay="400">
+      <img src="./s3/bg.jpg" alt="map" class="bg-img" v-if="!isMobile">
+      <div class="txt">
+      <h3 class="subtitle" data-aos="fade-right" data-aos-delay="200">Relax resorts</h3>
+      <h3 class="title" data-aos="fade-right" data-aos-delay="400">
         城市與河岸最舒適的距離
       </h3>
-      <svg xmlns="http://www.w3.org/2000/svg" v-if="!isMobile && viewIndex === 3" class="cls-1 absolute" viewBox="0 0 827 157.62">
+      <svg xmlns="http://www.w3.org/2000/svg" v-if="!isMobile && viewIndex === 3" class="cls-1 absolute" viewBox="0 0 827 157.62"><title>hr</title>
         <polyline points="0 1 826 1 826 157.62" /></svg>
-      <div class="hr absolute" v-if="isMobile" />
-      <div class="desc absolute" data-aos="fade-right" data-aos-delay="600">
+      <div class="hr" v-if="isMobile" />
+      <div class="desc" data-aos="fade-right" data-aos-delay="600">
         八里，擁有宜居環境，左右更續接了雙北生活圈，交通便利，透過快速道路、關渡大橋淡江大橋連接了新市鎮生活圈。在這有著深度的文化蘊藏，十三行博物館、左岸公園、左岸劇場，相佐水岸綠道，如此舒心閑適的居所，只有「八里 龍躍」。
       </div>
+      <div class="img" v-if="isMobile" @click="showDialog"><img src="./m/3/bg.jpg" alt="map">點圖放大</div>
+      </div>
       <div :class="`dialog ${isDialog ? 'show' : ''}`">
-        <img :src="isMobile ? require('./m/3/bg.jpg') : require('./s3/bg.jpg')" alt class="dialog-img" />
-        <img src="~@/assets/img/close.png" alt class="close" @click="closeDialog" />
+        <img :src="isMobile ? require('./m/3/bg.jpg') : require('./s3/bg.jpg')" alt="bg" class="dialog-img" />
+        <img src="~@/assets/img/close.png" alt="close" class="close" @click="closeDialog" />
       </div>
     </div>
   </div>
@@ -68,7 +70,6 @@
 }
 
 .subtitle {
-  width: size(485);
   top: size(93);
   right: auto;
   left: size(138);
@@ -82,6 +83,7 @@
   color: #ffffff;
   white-space: nowrap;
   font-family: 'TrajanPro';
+  position: absolute;
 }
 
 .title {
@@ -97,6 +99,7 @@
   text-align: left;
   color: #231815;
   white-space: nowrap;
+  position: absolute;
 }
 
 .desc {
@@ -111,6 +114,7 @@
   letter-spacing: 0.06em;
   text-align: justify;
   color: #595757;
+  position: absolute;
 }
 
 .dialog {
@@ -161,53 +165,60 @@
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    min-height: sizem(604);
-    max-height: sizem(812);
-    height: sizem(604);
+    min-height: sizem(0);
+    max-height: sizem(1000);
+    height: auto;
     background: #fff;
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
     position: relative;
   }
+  .txt{width:sizem(310);margin:sizem(25) auto sizem(40) auto;}
 
   .subtitle {
-    width: sizem(128);
-    top: sizem(80 - 55);
-    left: sizem(32.5);
+    width: 100%;
+    top:0;
+    left:0;
     font-size: sizem(22);
     color: #808080;
+    position: relative;
   }
 
   .title {
-    width: sizem(291);
-    top: sizem(120 - 55);
-    left: sizem(32.5);
+    width: 100%;
+    top:0;
+    left:0;
     font-size: sizem(25);
     color: #231815;
+    position: relative;
   }
 
   .img {
     width: sizem(340);
-    left: sizem(18);
+    left: 0;
+    margin: sizem(35) sizem(-15) 0;
     top: sizem(299);
+    text-align: center;
+    img{width: 100%;}
   }
 
   .desc {
-    width: sizem(291);
-    top: sizem(188 - 55);
-    left: sizem(32.5);
+    width: 100%;
+    top:0;
+    left:0;
     font-size: sizem(15);
     color: #595757;
+    position: relative;
   }
 
   .hr {
-    width: sizem(291);
+    width: 100%;
+    top:0;
+    left:0;
     height: 1px;
+    margin: sizem(13) auto ;
     background-color: #595757;
-    top: sizem(170 - 55);
-    right: auto;
-    left: sizem(32.5);
   }
 
   .dialog {

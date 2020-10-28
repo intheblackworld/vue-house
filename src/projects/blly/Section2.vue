@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="section2">
-      <img src="./s2/bg.jpg" alt="" class="bg-img" v-if="isPC">
-      <img src="./m/2/bg.jpg" alt="" class="bg-img" v-if="isMobile">
+      <img src="./s2/bg.jpg" alt="bg" class="bg-img" v-if="isPC">
+      <img src="./m/2/bg.jpg" alt="bg" class="bg-img" v-if="isMobile">
       <div class="hr absolute" v-if="isMobile" />
       <h3 class="title absolute" data-aos="fade" data-aos-delay="400">
         你的左岸 極景.極美.極品
       </h3>
-      <svg xmlns="http://www.w3.org/2000/svg" v-if="!isMobile && viewIndex == 2" class="cls-1 absolute" viewBox="0 0 1394 143"><polyline class="st0" points="0,141.9 399,141.9 399,1 1394.1,1"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" v-if="!isMobile && viewIndex == 2" class="cls-1 absolute" viewBox="0 0 1394 143"><title>hr</title><polyline class="st0" points="0,141.9 399,141.9 399,1 1394.1,1"/></svg>
       <h3 class="subtitle absolute" data-aos="fade" data-aos-delay="200">
         Polar view
       </h3>

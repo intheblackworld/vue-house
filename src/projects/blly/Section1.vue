@@ -1,16 +1,17 @@
 <template>
   <div>
     <div class="section1" v-if="isPC">
-      <img src="./s1/bgbottom.jpg" alt="" class="bg-img">
+      <img src="./s1/bgbottom.jpg" alt="bg" class="bg-img">
       <div class="cloud absolute flex">
-        <img src="./s1/cloud.png" alt="" class="cloud-item">
-        <img src="./s1/cloud.png" alt="" class="cloud-item">
+        <img src="./s1/cloud.png" alt="cloud" class="cloud-item">
+        <img src="./s1/cloud.png" alt="cloud" class="cloud-item">
       </div>
 
-      <img src="./s1/bgtop.png" alt="" class="bg-img">
-      <img src="./s1/hr.png" alt="" class="hr absolute">
+      <img src="./s1/bgtop.png" alt="bg" class="bg-img">
+      <img src="./s1/hr.png" alt="hr" class="hr absolute">
       <div class="logo absolute">
         <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-160 0 1080 830" xml:space="preserve">
+          <title>Logo</title>
           <pattern width="500" height="500" patternUnits="userSpaceOnUse" id="img" viewBox="0 -500 500 500" style="overflow: visible;">
             <g>
               <rect y="-500" width="500" height="500" class="st0"></rect>
@@ -92,16 +93,17 @@
       </div>
     </div>
     <div class="section1" v-if="isMobile">
-      <img src="./m/1/bgbottom.jpg" alt="" class="bg-img">
+      <img src="./m/1/bgbottom.jpg" alt="bg" class="bg-img">
       <div class="cloud absolute flex">
-        <img src="./m/1/cloud.png" alt="" class="cloud-item">
-        <img src="./m/1/cloud.png" alt="" class="cloud-item">
+        <img src="./m/1/cloud.png" alt="cloud" class="cloud-item">
+        <img src="./m/1/cloud.png" alt="cloud" class="cloud-item">
       </div>
 
-      <img src="./m/1/bgtop.png" alt="" class="bg-img">
-      <img src="./m/1/hr.png" alt="" class="hr absolute">
+      <img src="./m/1/bgtop.png" alt="bg" class="bg-img">
+      <img src="./m/1/hr.png" alt="hr" class="hr absolute">
       <div class="logo absolute">
         <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-160 0 1080 830" xml:space="preserve">
+          <title>Logo</title>
           <pattern width="500" height="500" patternUnits="userSpaceOnUse" id="img" viewBox="0 -500 500 500" style="overflow: visible;">
             <g>
               <rect y="-500" width="500" height="500" class="st0"></rect>
