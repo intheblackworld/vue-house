@@ -31,11 +31,11 @@
   width: size(1920);
   height: 100vh;
   min-height: size(900);
-  background:none;
-  background-size: auto;
-  background-attachment: fixed;
+  max-height: size(1080);
   overflow: hidden;
   position: relative;
+  background: url("./s1/bg.png") fixed ;
+  background-size: auto;
 }
 
 #c {
@@ -66,19 +66,19 @@ canvas {
 
 .logo {
   width: size(404);
-  top: size(416);
+  top: calc(50% - 8vw);
   right: size(442);
 }
 
 .t {
   width: size(404);
-  top: size(646);
+  top: calc(50% + 3.5vw);
   right: size(442);
 }
 
 .btn {
   width: size(165);
-  top: size(888);
+  top: calc(50% + 15vw);
   right: size(562);
   font-size: size(18);
   letter-spacing: size(2);

@@ -16,6 +16,8 @@
   height: size(806);
   top: size(38);
   right: size(417);
+    z-index: 3;
+    border: solid 1px #929292;
   transition: all 0.3s;
 }
 
@@ -25,9 +27,6 @@
     height: sizem(532);
     top: sizem(34);
     right: sizem(37);
-    z-index: 3;
-    border: solid 1px #929292;
-    transition: all 0.3s;
   }
 }
 </style>
@@ -54,6 +53,10 @@ canvas {
   left: 0;
   mix-blend-mode: multiply;
 }
+.title{
+  width: size(404);
+  top: size(416);
+  right: size(442);}
 
 .bg-img {
   width: size(1920);
