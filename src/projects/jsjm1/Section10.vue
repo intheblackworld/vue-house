@@ -1,14 +1,15 @@
 <template>
   <div class="section10">
-    <img src="./s10/bg.jpg" alt="" class="bg-img">
-    <div class="subtitle absolute">
+    <img src="./s10/bg.jpg" alt="" class="bg-img" v-if="!isMobile">
+    <img src="./s10/bg_m.jpg" alt="" class="bg-img" v-else>
+    <div class="subtitle absolute" data-aos="fade-up" data-aos-delay="200">
       從氣質，就看出精湛品質
     </div>
-    <div class="title absolute">
+    <div class="title absolute" data-aos="fade-up" data-aos-delay="400">
       一筆箍耐震精工<br />人文石尚 風格直寓
     </div>
-    <div class="hr absolute"></div>
-    <div class="desc absolute">
+    <div class="hr absolute" data-aos="fade-up" data-aos-delay="600"></div>
+    <div class="desc absolute" data-aos="fade-up" data-aos-delay="800">
       大器「雪花白蒙卡花崗石」，書寫外觀如渾然天成的山水流瀑，文雅堅毅，展現力抗溫差落雨的雋永誠真。<br />
       結合「一筆箍」鋼筋捆紮、SA級續接，締造抗震係數達0.274g、抗六級以上耐震設計。沈穩精鑄，篤實安家。
     </div>
@@ -94,7 +95,7 @@
   line-height: 1.2;
   letter-spacing: size(1.5);
   text-align: left;
-  color: #ffffff; 
+  color: #ffffff;
   white-space: nowrap;
 }
 
@@ -177,60 +178,81 @@
 }
 
 @media screen and (max-width: 767px) {
-  .bg {
-    background-position: 55%;
-    // background-image: url('./s3_bg_m.jpg');
+  .section10 {
+    width: 100vw;
+    height: sizem(667);
+    position: relative;
   }
 
-  .logo {
-    width: 55vw;
-    margin-top: -80px;
-  }
-
-  .video-container {
-    width: 100%;
-    margin: 0 auto;
-    right: 0;
-    .mask {
-      width: 100vw;
-      height: calc((100vw * 9) / 16);
-
-      img {
-        width: 60px;
-      }
-    }
-    video {
+  .bg-img {
+    width: 100vw;
+    height: sizem(667);
+    min-height: size(1080);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    margin-top: 0;
+    &:nth-child(1) {
       position: relative;
-      width: 100vw;
     }
+  }
+
+  .subtitle {
+    width: sizem(200);
+    top: sizem(25);
+    left: sizem(32);
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
+    font-size: sizem(18);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.7;
+    letter-spacing: sizem(1.06);
+    text-align: left;
+    color: #ffffff;
+    white-space: nowrap;
   }
 
   .title {
-    width: 100vw;
-    font-size: 55px;
+    width: sizem(206);
+    top: sizem(49);
+    left: sizem(32);
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
+    font-size: sizem(25);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.44;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+    white-space: nowrap;
+  }
+
+  .hr {
+    width: sizem(310);
+    top: sizem(133);
+    left: sizem(32.5);
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.6);
+    border: solid 1px #ffffff;
   }
 
   .desc {
-    width: 100vw;
-    font-size: 25px;
-  }
-
-  .text {
-    top: 0;
-    background-size: cover;
-  }
-
-  .title-bg {
-    background-size: auto;
-    height: 270px;
-    // background-image: url('./s3_bg_top.png');
-    background-size: contain;
-    display: flex;
-    align-items: center;
-
-    .text {
-      position: relative;
-    }
+    width: sizem(313);
+    top: sizem(145);
+    left: sizem(32);
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.27;
+    letter-spacing: sizem(1.5);
+    text-align: left;
+    color: #ffffff;
   }
 }
 </style>

@@ -5,7 +5,7 @@
       <img src="./s2/bg.png" alt="" class="bg-img">
       <img src="./s2/title.png" alt="" class="title absolute" @click="playVideo">
       <div :id="`youtube-player-${id}`" ref="player" class="video-iframe absolute"></div>
-      <img src="./s2/影片.jpg" alt="" :class="`video-iframe absolute ${isPlay == true ? 'hide' : ''}`">
+      <img src="./s2/影片.jpg" alt="" :class="`video-iframe absolute ${(isPlay == true) ? 'hide' : ''}`" @click="playVideo">
     </div>
   </div>
 </template>
@@ -16,7 +16,19 @@
   height: size(806);
   top: size(38);
   right: size(417);
-  transition: all .3s;
+  transition: all 0.3s;
+}
+
+@media screen and (max-width: 767px) {
+  .video-iframe {
+    width: sizem(300);
+    height: sizem(532);
+    top: sizem(34);
+    right: sizem(37);
+    z-index: 3;
+    border: solid 1px #929292;
+    transition: all 0.3s;
+  }
 }
 </style>
 <style lang="scss" scoped>
@@ -59,51 +71,6 @@ canvas {
   }
 }
 
-.logo {
-  width: size(404);
-  top: size(416);
-  right: size(442);
-}
-
-.t {
-  width: size(404);
-  top: size(646);
-  right: size(442);
-}
-
-.btn {
-  width: size(165);
-  top: size(888);
-  right: size(562);
-  font-size: size(18);
-  letter-spacing: size(2);
-  white-space: nowrap;
-  cursor: pointer;
-  color: #9e0d1b;
-  border-bottom: 1px solid #9e0d1b;
-  padding: size(10) 0;
-  z-index: 10;
-  transition: all 0.3s;
-
-  &:hover {
-    background: #9e0d1b;
-    color: #fff;
-  }
-}
-
-.title {
-  width: size(104);
-  top: size(148);
-  left: size(574);
-  z-index: 3;
-  cursor: pointer;
-  transition: all 0.5s;
-  &:hover {
-    transform: scale(1.05);
-    opacity: 0.7;
-  }
-}
-
 .hide {
   opacity: 0;
 }
@@ -124,77 +91,28 @@ canvas {
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    min-height: sizem(470);
+    min-height: sizem(604);
     max-height: sizem(812);
     height: calc(100vh - 63px);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
   }
-  .bg1,
-  .bg2,
-  .bg3 {
-    top: 0;
+
+  .bg-img {
+    width: sizem(375);
     height: 100%;
-    background: url('./s1/bg.png') fixed;
-    background-size: auto;
-    background-position: 0 0%;
-    background-repeat: repeat;
-  }
-  .bg1 {
-    left: 10%;
-    width: 5%;
-  }
-  .bg2 {
-    left: 18%;
-    width: 60%;
-  }
-  .bg3 {
-    left: 82%;
-    width: 9%;
-  }
+    min-height: sizem(667);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    object-fit: cover;
+    margin-top: 0;
 
-  .img-left {
-    width: sizem(261);
-    top: sizem(-15);
-    left: sizem(123);
-    transform: rotate(90deg);
-  }
-
-  .fade-out {
-    animation: fadeout 3s 3s ease-in-out forwards;
-  }
-
-  .fade-in {
-    margin-top: -30%;
-    opacity: 0;
-    animation: fadein 3s 4s ease-in-out forwards;
-  }
-
-  @keyframes fadeout {
-    to {
-      transform: translateY(10%);
-      opacity: 0;
+    &:nth-child(1) {
+      position: relative;
     }
-  }
-
-  @keyframes fadein {
-    to {
-      margin-top: 0%;
-      opacity: 1;
-    }
-  }
-
-  .logo {
-    width: sizem(172);
-    top: calc(50% - 43vw);
-    right: sizem(101);
-  }
-
-  .t {
-    width: sizem(300);
-    top: calc(50% + 35vw);
-    right: sizem(37);
   }
 }
 </style>

@@ -1,23 +1,23 @@
 <template>
   <div>
     <div class="section11">
-      <div class="img-list absolute flex-ac flex-jb">
-        <div v-for="(slide) in slideList" :key="slide.img" :class="`img-item relative`">
-          <img :src="slide.img" alt="">
-          <div class="img-text absolute" v-html="slide.text"></div>
+      <div class="img-list absolute flex-ac flex-jb" v-if="!isMobile">
+        <div v-for="(slide, i) in slideList" :key="slide.img" :class="`img-item relative`">
+          <img :src="slide.img" alt="" data-aos="fade" :data-aos-delay="200 + i * 100">
+          <div class="img-text absolute" v-html="slide.text" data-aos="fade" :data-aos-delay="300 + i * 100"></div>
         </div>
       </div>
-      <div class="subtitle absolute">
+      <div class="subtitle absolute" data-aos="fade" data-aos-delay="400">
         建築，爭的不是名利，而是無止盡的問心無愧
       </div>
-      <div class="title absolute">
+      <div class="title absolute" data-aos="fade" data-aos-delay="600">
         <span class="number">30</span>年甲級營造職人<br />
         鐵冠建設<span>‧</span>昌譽營造
       </div>
-      <div class="desc absolute">
-        創建之初，即成立自家營造廠「昌譽營造」，攜手鑽研土木、鋼構力學等基礎深開挖技術。<br />
-        精淬造工，贏得公共工程界、多項大獎青睞推崇。<br />
-        2020年再以《十三行博物館休閒教育園區》奪下「國家卓越建設獎金質獎」殊榮，印證工法專注苛求，才是建築最完美的價值。
+      <div class="desc absolute" data-aos="fade" data-aos-delay="800">
+        創建之初，即成立自家營造廠「昌譽營造」，<br />攜手鑽研土木、鋼構力學等基礎深開挖技術。<br /><br />
+        精淬造工，贏得公共工程界、多項大獎青睞<br />推崇。<br /><br />
+        2020年再以《十三行博物館休閒教育園區》<br />奪下「國家卓越建設獎金質獎」殊榮，印證<br />工法專注苛求，才是建築最完美的價值。
       </div>
 
       <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile">
@@ -25,6 +25,7 @@
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
               <img :src="slide.img" alt="">
+              <div class="img-text absolute" v-html="slide.text"></div>
             </div>
           </transition-group>
           <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
@@ -163,7 +164,7 @@
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2;
+  line-height: 1.1;
   letter-spacing: size(0.92);
   text-align: left;
   color: #ffffff;
@@ -230,6 +231,20 @@
 
   img {
     width: 100%;
+  }
+
+  .slide-name {
+    left: 20px;
+    bottom: 20px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 3.11;
+    letter-spacing: 0.89px;
+    text-align: left;
+    color: #ffffff;
   }
 
   // &:nth-child(1) {
@@ -335,7 +350,7 @@
 @media screen and (max-width: 767px) {
   .section11 {
     width: 100vw;
-    height: 100vh;
+    height: sizem(790);
     min-height: auto;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
@@ -344,33 +359,71 @@
     overflow: hidden;
   }
 
-  .dark-block {
-    width: sizem(375);
-    height: sizem(284);
-    bottom: auto;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.7);
+  .img-text {
+    width: sizem(280);
+    min-height: sizem(44.6);
+    height: auto;
+    bottom: sizem(20);
+    padding-right: 10px;
+    border-right: solid 1px #af1f24;
+    border-bottom: solid 1px #af1f24;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+    font-size: sizem(16);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: sizem(0.62);
+    text-align: right;
+    color: #ffffff;
   }
 
   .title {
-    width: sizem(179);
-    top: sizem(25);
-    left: sizem(32);
-
+    width: sizem(308);
+    top: sizem(440);
+    left: sizem(31.5);
+    font-size: sizem(32);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.16;
+    letter-spacing: sizem(4.45);
+    text-align: left;
+    color: #ffffff;
     white-space: nowrap;
+    span {
+      font-size: sizem(31);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.19;
+      letter-spacing: normal;
+      text-align: left;
+      color: #ffffff;
+    }
+
+    .number {
+      font-size: sizem(42);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.14;
+      letter-spacing: sizem(4.2);
+      text-align: left;
+      color: #ffffff;
+    }
   }
 
   .subtitle {
-    width: sizem(218);
-    top: sizem(57);
-    left: sizem(32);
-    font-size: sizem(25);
-    font-weight: 600;
+    width: sizem(310);
+    top: sizem(397);
+    left: sizem(31.7);
+    font-size: sizem(15);
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.44;
-    letter-spacing: sizem(1.5);
+    line-height: 2.04;
+    letter-spacing: sizem(0.6);
     text-align: left;
     color: #ffffff;
     white-space: nowrap;
@@ -378,34 +431,25 @@
 
   .desc {
     width: sizem(310);
-    top: sizem(121);
-    left: sizem(32);
+    top: sizem(538);
+    right: sizem(32);
     font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.7;
-    letter-spacing: sizem(0.9);
+    line-height: 1.3;
+    letter-spacing: sizem(0.45);
     text-align: left;
     color: #ffffff;
   }
 
-  .hr {
-    width: sizem(310);
-    height: 1px;
-    background-color: #fff;
-    top: sizem(106);
-    right: auto;
-    left: sizem(32);
-  }
-
   /* Swipe */
   .swipe {
-    width: 100vw;
-    height: 100vh;
-    min-height: 100vh;
-    top: sizem(0);
-    left: sizem(0);
+    width: sizem(308);
+    height: sizem(366);
+    min-height: auto;
+    top: sizem(16);
+    left: sizem(34);
     object-fit: cover;
   }
 
@@ -461,7 +505,7 @@
 
     img {
       width: 100%;
-      height: 100vh;
+      height: sizem(366);
       object-fit: cover;
     }
 

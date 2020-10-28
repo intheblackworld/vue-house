@@ -9,13 +9,13 @@
             alt
              v-scroll-to="{ element: `#section1`, offset: offset }"
           />
-          <!-- <div
+          <div
             class="menu"
             @click="toggleSidebar"
             v-show="!isOpen"
           >
             <font-awesome-icon icon="bars" />
-          </div> -->
+          </div>
           <div :class="`mask ${isOpen ? 'open' : ''}`">
             <div
               class="close"
@@ -357,7 +357,7 @@ export default {
     width: sizem(50);
     height: sizem(50);
     padding-top: sizem(8);
-    background-color: #8e8a74;
+    background-color: #af1f24;
     z-index: 112;
 
     svg {

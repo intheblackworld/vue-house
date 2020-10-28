@@ -48,7 +48,7 @@
     width: 100vw;
     .map-bg {
       width: auto;
-      height:calc(100vh - 63px - 40vw);
+      height: sizem(604);
     }
 
     .map-text {
@@ -58,7 +58,7 @@
 
     img {
       width: auto;
-      height: size-m(805);
+      height: sizem(604);
     }
 
     .mask {
@@ -67,13 +67,13 @@
     }
 
     .mask {
-      width: 300vw;
-      height: size-m(804);
-      background-color: rgba(172, 221, 254, .7);
+      width: 200vw;
+      height: sizem(57);
+      background-color: rgba(0, 53, 97, 0.72);
       // animation: swing 2.5s ease-in-out 0s infinite;
       left: 35vw;
       position: absolute;
-      top: 0;
+      top: sizem(285);
       left: 0;
       opacity: 0;
       transition: opacity .5s;
@@ -84,15 +84,15 @@
 
     .hand {
       position: absolute;
-      z-index: 2;
-      width: size-m(87) !important;
+      z-index: 3;
+      width: sizem(87) !important;
       height: auto !important;
-      left: size-m(445);
+      left: sizem(475);
       right: 0;
       margin: 0 auto;
-      top: 60% !important;
+      top: sizem(298) !important;
       display: block;
-      animation: swing 2.5s ease-in-out 0s infinite;
+      animation: swing 2.5s ease-in-out 0s infinite alternate-reverse;
       opacity: 0;
       transition: opacity .5s;
       &.active {

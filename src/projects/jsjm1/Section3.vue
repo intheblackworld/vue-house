@@ -6,6 +6,7 @@
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
               <img :src="slide.img" alt="">
+              <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
           <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
@@ -17,8 +18,28 @@
           </div>
         </div>
       </div>
-      <img src="./s3/img.png" alt="" class="img absolute" v-if="!isMobile">
-      <img src="./s3/t.png" alt="" class="t absolute">
+      <div v-if="!isMobile">
+        <img src="./s3/t.png" alt="直遇中山北 藏玉官道學" class="t absolute">
+      </div>
+      <div v-else>
+        <div class="title absolute">
+          直遇中山北 藏玉官道學
+        </div>
+        <div class="hr absolute"></div>
+        <div class="subtitle absolute">
+          享受中山北之所以迷人的關鍵字：
+        </div>
+        <img src="./s3/s-title.png" alt="" class="s-title absolute">
+        <div class="desc absolute">
+          雕琢人生勝利組的鮮明感。<br /><br />
+          領略官道永遠的主音節：<br />
+          「中山北二段Ｘ南京東西軸」恭維家的座標。<br /><br />
+          不必刷存在感。優越早已是基因，<br />
+          堅定您的市心身軀。
+        </div>
+        <img src="./s3/img.png" alt="" class="img absolute">
+      </div>
+
     </div>
   </div>
 </template>
@@ -127,6 +148,20 @@
     width: 100%;
   }
 
+  .slide-name {
+    left: 20px;
+    bottom: 20px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 3.11;
+    letter-spacing: 0.89px;
+    text-align: left;
+    color: #ffffff;
+  }
+
   // &:nth-child(1) {
   //   z-index: 1;
   //   // opacity: 1;
@@ -230,7 +265,7 @@
 @media screen and (max-width: 767px) {
   .section3 {
     width: 100vw;
-    height: 100vh;
+    height: sizem(790);
     min-height: auto;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
@@ -239,73 +274,77 @@
     overflow: hidden;
   }
 
-  .dark-block {
-    width: sizem(375);
-    height: sizem(284);
-    bottom: auto;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.7);
-  }
-
   .title {
-    width: sizem(179);
-    top: sizem(25);
-    left: sizem(32);
-    font-size: sizem(22);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.85;
-    letter-spacing: sizem(-0.88);
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
-  }
-
-  .subtitle {
-    width: sizem(218);
-    top: sizem(57);
+    width: sizem(270);
+    top: sizem(325);
     left: sizem(32);
     font-size: sizem(25);
-    font-weight: 600;
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.44;
-    letter-spacing: sizem(1.5);
+    line-height: 1.52;
+    letter-spacing: sizem(1.48);
     text-align: left;
-    color: #ffffff;
+    color: #af1f24;
     white-space: nowrap;
-  }
-
-  .desc {
-    width: sizem(310);
-    top: sizem(121);
-    left: sizem(32);
-    font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.7;
-    letter-spacing: sizem(0.9);
-    text-align: left;
-    color: #ffffff;
   }
 
   .hr {
     width: sizem(310);
-    height: 1px;
-    background-color: #fff;
-    top: sizem(106);
-    right: auto;
-    left: sizem(32);
+    height: 2px;
+    top: sizem(374);
+    left: sizem(32.5);
+    background-color: #af1f24;
+  }
+
+  .s-title {
+    width: sizem(270);
+    top: sizem(412);
+    left: sizem(33);
+  }
+
+  .subtitle {
+    width: sizem(300);
+    top: sizem(387);
+    left: sizem(33);
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.27;
+    letter-spacing: sizem(2.09);
+    text-align: left;
+    color: #323333;
+    white-space: nowrap;
+  }
+
+  .desc {
+    width: sizem(300);
+    top: sizem(442);
+    left: sizem(33);
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: sizem(2.09);
+    text-align: left;
+    color: #323333;
+    white-space: nowrap;
+  }
+
+  .img {
+    width: sizem(142);
+    top: auto;
+    bottom: sizem(39);
+    right: sizem(116);
   }
 
   /* Swipe */
   .swipe {
     width: 100vw;
-    height: 100vh;
-    min-height: 100vh;
+    height: sizem(300);
+    min-height: auto;
     top: sizem(0);
     left: sizem(0);
     object-fit: cover;
@@ -363,7 +402,7 @@
 
     img {
       width: 100%;
-      height: 100vh;
+      height: sizem(300);
       object-fit: cover;
     }
 

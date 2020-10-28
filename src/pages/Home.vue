@@ -2,7 +2,7 @@
   <div class="home no-padding-top">
     <Loading :loading="load" />
     <!-- <SideNavigation /> -->
-    <!-- <Navigation /> -->
+    <Navigation v-if="isMobile" />
     <!-- <Indigator :viewIndex="viewIndex" /> -->
     <!-- <full-page
       ref="fullPage"

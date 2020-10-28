@@ -1,6 +1,6 @@
 <template>
   <div class="section4">
-    <img src="./s4/map.jpg" alt="" class="bg-img">
+    <img src="./s4/map.jpg" alt="" class="bg-img" v-if="!isMobile">
     <!-- <div class="title-bg">
       <div class="text" v-if="isMobile">
         <div
@@ -15,20 +15,8 @@
         >步行2分鐘抵高雄大學，自然生態日夜淨化空氣ING</div>
       </div>
     </div> -->
-    <!-- <Map :tagList="tagList" :bgSrc="isMobile ? bgmSrc: bgSrc" :hand="hand">
-      <div class="text" v-if="!isMobile">
-        <div
-          class="title"
-          data-aos="fade-down"
-          data-aos-delay="0"
-        >樹海恬靜學區 爭藏氧森別墅</div>
-        <div
-          class="desc"
-          data-aos="fade-down"
-          data-aos-delay="500"
-        >步行2分鐘抵高雄大學，自然生態日夜淨化空氣ING</div>
-      </div>
-    </Map> -->
+    <Map :bgSrc="bgSrc" :hand="hand" v-else>
+    </Map>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -171,9 +159,9 @@ export default {
       isMobile,
       // tagList: [require('./s3_title.png')],
 
-      // bgSrc: require('./s3_bg.jpg'),
+      bgSrc: require('./s4/map.jpg'),
       // bgmSrc: require('./s3_bg_m.jpg'),
-      // hand: require('../lkf/s4_hand.png'),
+      hand: require('./s4/hand.png'),
     }
   },
 

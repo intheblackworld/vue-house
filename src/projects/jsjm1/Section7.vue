@@ -6,9 +6,10 @@
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
               <img :src="slide.img" alt="">
+              <div class="slide-name absolute" v-html="slide.name" v-if="isMobile"></div>
             </div>
           </transition-group>
-          <div class="img-pagination absolute flex-ac">
+          <div class="img-pagination absolute flex-ac" v-if="!isMobile">
             <div v-for="(slide, i) in slideList" :key="slide.img" :class="`img-item relative`" @click="openDialog(i)">
               <img src="./s7/icon.png" alt="" class="icon absolute">
               <img :src="slide.img" alt="">
@@ -34,8 +35,29 @@
           台北光點為軸，品味生活比想像更簡單
         </div>
       </div>
-      <img src="./s7/img.png" alt="" class="img absolute">
-      <img src="./s7/t.png" alt="" class="t absolute">
+      <div v-if="!isMobile">
+        <img src="./s7/img.png" alt="" class="img absolute">
+        <img src="./s7/t.png" alt="" class="t absolute">
+      </div>
+      <div v-else>
+        <div class="subtitle absolute">
+          台北光點為軸，品味生活比想像更簡單
+        </div>
+        <div class="title absolute">
+          文創新鮮度 永遠逛不膩
+        </div>
+        <div class="hr absolute"></div>
+        <div class="desc absolute">
+          就讓台北光點的戶外午茶、藝術電影，<br />
+          成為週末休閒雙核心！<br /><br />
+          再順手採收一旁巷弄的文青好店、美食！<br />
+          或把時光交給北美館、蔡瑞月舞蹈社、<br />
+          當代藝術館、南西誠品、赤峰小器…<br />
+          屬於中山北的浪漫知性，一放縱便填滿清單！<br /><br />
+          品味生活比想像更簡單。
+        </div>
+        <img src="./s7/img.png" alt="" class="img absolute">
+      </div>
     </div>
   </div>
 </template>
@@ -236,6 +258,20 @@
     height: 100%;
   }
 
+  .slide-name {
+    left: 20px;
+    bottom: 20px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 3.11;
+    letter-spacing: 0.89px;
+    text-align: left;
+    color: #ffffff;
+  }
+
   // &:nth-child(1) {
   //   z-index: 1;
   //   // opacity: 1;
@@ -382,7 +418,7 @@
 @media screen and (max-width: 767px) {
   .section7 {
     width: 100vw;
-    height: 100vh;
+    height: sizem(790);
     min-height: auto;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
@@ -391,73 +427,72 @@
     overflow: hidden;
   }
 
-  .dark-block {
-    width: sizem(375);
-    height: sizem(284);
-    bottom: auto;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.7);
-  }
-
   .title {
-    width: sizem(179);
-    top: sizem(25);
-    left: sizem(32);
-    font-size: sizem(22);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.85;
-    letter-spacing: sizem(-0.88);
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
-  }
-
-  .subtitle {
-    width: sizem(218);
-    top: sizem(57);
+    width: sizem(270);
+    top: sizem(348);
     left: sizem(32);
     font-size: sizem(25);
-    font-weight: 600;
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.44;
-    letter-spacing: sizem(1.5);
+    line-height: 1.52;
+    letter-spacing: sizem(1.48);
     text-align: left;
-    color: #ffffff;
+    color: #af1f24;
     white-space: nowrap;
-  }
-
-  .desc {
-    width: sizem(310);
-    top: sizem(121);
-    left: sizem(32);
-    font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.7;
-    letter-spacing: sizem(0.9);
-    text-align: left;
-    color: #ffffff;
   }
 
   .hr {
     width: sizem(310);
-    height: 1px;
-    background-color: #fff;
-    top: sizem(106);
-    right: auto;
-    left: sizem(32);
+    height: 2px;
+    top: sizem(397);
+    left: sizem(32.5);
+    background-color: #af1f24;
+  }
+
+  .subtitle {
+    width: sizem(300);
+    top: sizem(324);
+    left: sizem(33);
+    font-size: sizem(18);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.53;
+    letter-spacing: sizem(1.06);
+    text-align: left;
+    color: #323333;
+    white-space: nowrap;
+  }
+
+  .desc {
+    width: sizem(300);
+    top: sizem(410);
+    left: sizem(33);
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: sizem(0.65);
+    text-align: left;
+    color: #323333;
+    white-space: nowrap;
+  }
+
+  .img {
+    width: sizem(135);
+    top: auto;
+    left: auto;
+    bottom: sizem(14);
+    right: sizem(120);
   }
 
   /* Swipe */
   .swipe {
     width: 100vw;
-    height: 100vh;
-    min-height: 100vh;
+    height: sizem(300);
+    min-height: auto;
     top: sizem(0);
     left: sizem(0);
     object-fit: cover;
@@ -515,7 +550,7 @@
 
     img {
       width: 100%;
-      height: 100vh;
+      height: sizem(300);
       object-fit: cover;
     }
 

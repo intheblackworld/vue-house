@@ -6,6 +6,7 @@
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
               <img :src="slide.img" alt="">
+              <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
           <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
@@ -17,8 +18,30 @@
           </div>
         </div>
       </div>
-      <img src="./s5/img.png" alt="" class="img absolute">
-      <img src="./s5/t.png" alt="" class="t absolute">
+      <div v-if="!isMobile">
+        <img src="./s5/img.png" alt="" class="img absolute">
+        <img src="./s5/t.png" alt="" class="t absolute">
+      </div>
+      <div v-else>
+        <div class="subtitle absolute">
+          居所座標，以萬坪林森公園，呼喚著
+        </div>
+        <div class="title absolute">
+          綠海地平線 巨場級森活
+        </div>
+        <div class="hr absolute"></div>
+        <div class="desc absolute">
+          日劇裡的慢活，<br />
+          輕易就濃縮在離家5-10公分鐘的映演中！<br /><br />
+          近3公頃 林森公園Ｘ康樂公園，<br />
+          串連中山北百年楓香；<br />
+          轉場中山站線型公園文青朝氣…<br />
+          媲美日本代代木公園、<br />
+          時而明治神宮外苑般的想像，交錯揪心！<br /><br />
+          身心與市心，完美找回正能量的平衡。
+        </div>
+        <img src="./s5/img.png" alt="" class="img absolute">
+      </div>
     </div>
   </div>
 </template>
@@ -127,6 +150,20 @@
     width: 100%;
   }
 
+  .slide-name {
+    left: 20px;
+    bottom: 20px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 3.11;
+    letter-spacing: 0.89px;
+    text-align: left;
+    color: #ffffff;
+  }
+
   // &:nth-child(1) {
   //   z-index: 1;
   //   // opacity: 1;
@@ -230,7 +267,7 @@
 @media screen and (max-width: 767px) {
   .section5 {
     width: 100vw;
-    height: 100vh;
+    height: sizem(790);
     min-height: auto;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
@@ -239,73 +276,71 @@
     overflow: hidden;
   }
 
-  .dark-block {
-    width: sizem(375);
-    height: sizem(284);
-    bottom: auto;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.7);
-  }
-
   .title {
-    width: sizem(179);
-    top: sizem(25);
-    left: sizem(32);
-    font-size: sizem(22);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.85;
-    letter-spacing: sizem(-0.88);
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
-  }
-
-  .subtitle {
-    width: sizem(218);
-    top: sizem(57);
+    width: sizem(270);
+    top: sizem(348);
     left: sizem(32);
     font-size: sizem(25);
-    font-weight: 600;
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.44;
-    letter-spacing: sizem(1.5);
+    line-height: 1.52;
+    letter-spacing: sizem(1.48);
     text-align: left;
-    color: #ffffff;
+    color: #af1f24;
     white-space: nowrap;
-  }
-
-  .desc {
-    width: sizem(310);
-    top: sizem(121);
-    left: sizem(32);
-    font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.7;
-    letter-spacing: sizem(0.9);
-    text-align: left;
-    color: #ffffff;
   }
 
   .hr {
     width: sizem(310);
-    height: 1px;
-    background-color: #fff;
-    top: sizem(106);
-    right: auto;
-    left: sizem(32);
+    height: 2px;
+    top: sizem(397);
+    left: sizem(32.5);
+    background-color: #af1f24;
+  }
+
+  .subtitle {
+    width: sizem(300);
+    top: sizem(324);
+    left: sizem(33);
+    font-size: sizem(18);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.53;
+    letter-spacing: sizem(1.06);
+    text-align: left;
+    color: #323333;
+    white-space: nowrap;
+  }
+
+  .desc {
+    width: sizem(300);
+    top: sizem(410);
+    left: sizem(33);
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: sizem(2.09);
+    text-align: left;
+    color: #323333;
+    white-space: nowrap;
+  }
+
+  .img {
+    width: sizem(135);
+    top: auto;
+    bottom: sizem(14);
+    right: sizem(120);
   }
 
   /* Swipe */
   .swipe {
     width: 100vw;
-    height: 100vh;
-    min-height: 100vh;
+    height: sizem(300);
+    min-height: auto;
     top: sizem(0);
     left: sizem(0);
     object-fit: cover;
@@ -363,7 +398,7 @@
 
     img {
       width: 100%;
-      height: 100vh;
+      height: sizem(300);
       object-fit: cover;
     }
 
@@ -476,15 +511,19 @@ export default {
       slideList: [
         {
           img: require('./s5/1林森公園.jpg'),
+          name: '林森公園',
         },
         {
           img: require('./s5/2林森公園.jpg'),
+          name: '林森公園',
         },
         {
           img: require('./s5/3康樂公園.jpg'),
+          name: '康樂公園',
         },
         {
           img: require('./s5/4中山捷運站線型公園.jpg'),
+          name: '中山捷運站線型公園',
         },
       ],
     }

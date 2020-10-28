@@ -6,6 +6,7 @@
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
               <img :src="slide.img" alt="">
+              <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
           <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
@@ -17,8 +18,30 @@
           </div>
         </div>
       </div>
-      <img src="./s8/img.png" alt="" class="img absolute">
-      <img src="./s8/t.png" alt="" class="t absolute">
+      <div v-if="!isMobile">
+        <img src="./s8/img.png" alt="" class="img absolute">
+        <img src="./s8/t.png" alt="" class="t absolute">
+      </div>
+      <div v-else>
+        <div class="subtitle absolute">
+          活在城市的焦距裡，優雅加分很正常
+        </div>
+        <div class="title absolute">
+          南西時尚力 貼身輕風格
+        </div>
+        <div class="hr absolute"></div>
+        <div class="desc absolute">
+          徜徉生活時序、社交、採買，<br />
+          環遊於城市的光環。<br /><br />
+          青春白領購物指標-南西三越，信手捻來！<br />
+          欣欣秀泰影城、南京東路日式条通，<br />
+          一如住家後院，無拘穿著夾腳拖，<br />
+          無壓邁入夜生活！<br /><br />
+          瀟灑與內斂，就是如此恰如其分，<br />
+          毫不違和，寫出愜意自由。
+        </div>
+        <img src="./s8/img.png" alt="" class="img absolute">
+      </div>
     </div>
   </div>
 </template>
@@ -119,6 +142,20 @@
 
   img {
     width: 100%;
+  }
+
+  .slide-name {
+    left: 20px;
+    bottom: 20px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 3.11;
+    letter-spacing: 0.89px;
+    text-align: left;
+    color: #ffffff;
   }
 
   // &:nth-child(1) {
@@ -224,7 +261,7 @@
 @media screen and (max-width: 767px) {
   .section8 {
     width: 100vw;
-    height: 100vh;
+    height: sizem(790);
     min-height: auto;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
@@ -233,73 +270,72 @@
     overflow: hidden;
   }
 
-  .dark-block {
-    width: sizem(375);
-    height: sizem(284);
-    bottom: auto;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.7);
-  }
-
   .title {
-    width: sizem(179);
-    top: sizem(25);
-    left: sizem(32);
-    font-size: sizem(22);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.85;
-    letter-spacing: sizem(-0.88);
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
-  }
-
-  .subtitle {
-    width: sizem(218);
-    top: sizem(57);
+    width: sizem(270);
+    top: sizem(348);
     left: sizem(32);
     font-size: sizem(25);
-    font-weight: 600;
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.44;
-    letter-spacing: sizem(1.5);
+    line-height: 1.52;
+    letter-spacing: sizem(1.48);
     text-align: left;
-    color: #ffffff;
+    color: #af1f24;
     white-space: nowrap;
-  }
-
-  .desc {
-    width: sizem(310);
-    top: sizem(121);
-    left: sizem(32);
-    font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.7;
-    letter-spacing: sizem(0.9);
-    text-align: left;
-    color: #ffffff;
   }
 
   .hr {
     width: sizem(310);
-    height: 1px;
-    background-color: #fff;
-    top: sizem(106);
-    right: auto;
-    left: sizem(32);
+    height: 2px;
+    top: sizem(397);
+    left: sizem(32.5);
+    background-color: #af1f24;
+  }
+
+  .subtitle {
+    width: sizem(300);
+    top: sizem(324);
+    left: sizem(33);
+    font-size: sizem(18);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.53;
+    letter-spacing: sizem(1.06);
+    text-align: left;
+    color: #323333;
+    white-space: nowrap;
+  }
+
+  .desc {
+    width: sizem(300);
+    top: sizem(410);
+    left: sizem(33);
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: sizem(0.65);
+    text-align: left;
+    color: #323333;
+    white-space: nowrap;
+  }
+
+  .img {
+    width: sizem(135);
+    top: auto;
+    left: auto;
+    bottom: sizem(14);
+    right: sizem(120);
   }
 
   /* Swipe */
   .swipe {
     width: 100vw;
-    height: 100vh;
-    min-height: 100vh;
+    height: sizem(300);
+    min-height: auto;
     top: sizem(0);
     left: sizem(0);
     object-fit: cover;
@@ -357,7 +393,7 @@
 
     img {
       width: 100%;
-      height: 100vh;
+      height: sizem(300);
       object-fit: cover;
     }
 
@@ -470,15 +506,19 @@ export default {
       slideList: [
         {
           img: require('./s8/1中山站商圈.jpg'),
+          name: '中山站商圈',
         },
         {
           img: require('./s8/2欣欣秀泰影城.jpg'),
+          name: '欣欣秀泰影城',
         },
         {
           img: require('./s8/3南京東路、新生北商圈.jpg'),
+          name: '南京東路、新生北商圈',
         },
         {
           img: require('./s8/4南京商圈、商業大樓.jpg'),
+          name: '南京商圈、商業大樓',
         },
       ],
     }
