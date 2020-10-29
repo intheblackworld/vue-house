@@ -94,7 +94,7 @@
     color: #af1f24;
     position: relative;right: size(-10);
     //white-space: nowrap;
-    span{display: block;width: 100%;height: 0.5em;}
+    span{display:block;width:0.5em;height: 0.5em;}
   }
   .desc {   
     font-size: size(21);
@@ -327,7 +327,7 @@
 @media screen and (max-width: 767px) {
   .section3 {
     width: 100vw;
-    height: sizem(810);
+    height: sizem(790);
     min-height: auto;
   max-height:initial;
     // background-image: url('./s2/bg.jpg');
@@ -348,6 +348,7 @@
     width: 100%;
     line-height: 1.6;
     font-size: sizem(25);
+    span{display:inline-block;}
   }
 
   .hr {

@@ -44,7 +44,7 @@
           台北光點為軸，品味生活比想像更簡單
         </div>
         <div class="title">
-          文創新鮮度 永遠逛不膩
+          文創新鮮度<span></span>永遠逛不膩
         </div>
         <div class="hr"></div>
         <div class="desc">
@@ -110,6 +110,7 @@
     text-align: left;
     color: #af1f24;
     position: relative;right:0;top:-0.15em;
+    span{display:block;width:0.5em;height: 0.5em;}
     //white-space: nowrap;
   }
   .subtitle {
@@ -506,6 +507,7 @@
     width: 100%;
     line-height: 1.6;
     font-size: sizem(25);right:0;top:sizem(3);
+    span{display:inline-block;}
   }
 
   .hr {

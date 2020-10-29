@@ -27,7 +27,7 @@
           抓住中山國小站，享受城市快遞
         </div>
         <div class="title">
-          三捷線軸心 直角環遊學
+          三捷線軸心<span></span>直角環遊學
         </div>
         <div class="hr"></div>
         <div class="desc">
@@ -94,6 +94,7 @@
     color: #af1f24;
     position: relative;right:0;top:-0.15em;
     //white-space: nowrap;
+    span{display:block;width:0.5em;height: 0.5em;}
   }
   .subtitle {
     width: 1.2em;
@@ -356,6 +357,7 @@
     width: 100%;
     line-height: 1.6;
     font-size: sizem(25);right:0;top:sizem(3);
+    span{display:inline-block;}
   }
 
   .hr {

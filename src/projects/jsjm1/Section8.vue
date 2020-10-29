@@ -27,7 +27,7 @@
           活在城市的焦距裡，優雅加分很正常
         </div>
         <div class="title">
-          南西時尚力 貼身輕風格
+          南西時尚力<span></span>貼身輕風格
         </div>
         <div class="hr"></div>
         <div class="desc">
@@ -89,6 +89,7 @@
     text-align: left;
     color: #af1f24;
     position: relative;right:0;top:-0.2em;
+    span{display:block;width:0.5em;height: 0.5em;}
     //white-space: nowrap;
   }
   .subtitle {
@@ -343,6 +344,7 @@
     width: 100%;
     line-height: 1.6;
     font-size: sizem(25);right:0;top:sizem(3);
+    span{display:inline-block;}
   }
 
   .hr {
