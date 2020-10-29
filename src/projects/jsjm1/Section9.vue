@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="section9">
-      <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -18,28 +18,27 @@
           </div>
         </div>
       </div>
-      <div v-if="!isMobile">
+      <!-- <div v-if="!isMobile">
         <img src="./s9/img.png" alt="" class="img absolute">
         <img src="./s9/t.png" alt="" class="t absolute">
-      </div>
-      <div v-else>
-        <div class="subtitle absolute">
+      </div> -->
+      <div class="txt absolute">
+        <div class="subtitle">
           抓住中山國小站，享受城市快遞
         </div>
-        <div class="title absolute">
+        <div class="title">
           三捷線軸心 直角環遊學
         </div>
-        <div class="hr absolute"></div>
-        <div class="desc absolute">
-          坐擁中山生活最夯熱點「中山國小站」，<br />
-          與「中山站Ｘ雙連站」形成幾近等距軸心，<br />
-          締造中和新蘆線、松山新店線、信義淡水線，<br />
-          三大通行主脈，一次接收！<br /><br />
-          完美享受<br />
-          「以一個四角矩陣、大台北全向無敵」<br />
-          展開城市暢快計畫。
+        <div class="hr"></div>
+        <div class="desc">
+          <span>坐擁中山生活最夯熱點「中山國小站」，</span>
+          <span>與「中山站Ｘ雙連站」形成幾近等距軸心，</span>
+          <span>締造中和新蘆線、松山新店線、信義淡水線，</span>
+          <span class="p">三大通行主脈，一次接收！</span>
+          <span>完美享受<br v-if="isMobile" />「以一個四角矩陣、大台北全向無敵」</span>
+          <span>展開城市暢快計畫。</span>
         </div>
-        <img src="./s9/img.png" alt="" class="img absolute">
+        <img src="./s9/img.png" alt="" class="img">
       </div>
     </div>
   </div>
@@ -49,7 +48,9 @@
 
 .section9 {
   width: size(1920);
-  height: size(900);
+  height: 100vh;
+  min-height: size(900);
+  max-height: size(1080);
   position: relative;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
@@ -73,7 +74,75 @@
     position: relative;
   }
 }
+.txt{
+  width: size(380);
+  top:calc(50% - 18.2vw);
+  right: size(172);
+  display: flex;
+  flex-direction:row-reverse;
+  padding: 0 0 0 0;
+  }
+  .title {
+    width: 1.2em;
+    font-size: size(44);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing:0.06em;
+    text-align: left;
+    color: #af1f24;
+    position: relative;right:0;top:-0.15em;
+    //white-space: nowrap;
+  }
+  .subtitle {
+    width: 1.2em;
+    font-size: size(25);
+    font-weight: bold;
+    letter-spacing:0.07em;
+    text-align: left;
+    position: relative;right: size(-6);
+    color: #323333;word-break: break-all;
+  flex-direction:row-reverse;word-wrap:break-word;
+  }
+  .desc {   
+    font-size: size(21);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+    text-align: left;
+    color: #323333;
+    position: relative;margin:size(0) size(53) 0 size(-10);
+  display: flex;align-items:flex-start; word-break: break-all;
+  flex-direction:row-reverse;word-wrap:break-word;
+    //white-space: nowrap;
+    span{writing-mode: vertical-rl;
+      width: 1.4em; 
+      margin:0 0 0 0.1em;
+      &.p{
+      margin:0 0 0 0.8em;}
+    }
+  }
+  .s-title{
+  width: size(28);
+  position: relative;
+  top: -0.35Em;
+  left:0.35em;
+  height: auto;}
 
+
+  .hr {
+    width:size(380);
+    height:size(3);
+    position: absolute;
+    top:0;
+    left:size(274);
+    background-color: #af1f24;
+    transform: rotate(90deg);
+    transform-origin: top left;
+  }
 .t {
   width: size(332);
   top: size(105);
@@ -81,16 +150,17 @@
 }
 
 .img {
-  width: size(208);
-  top: size(586);
-  right: size(318);
+  width: size(230);
+  top: size(490);
+  right: size(110);
+  position: absolute;
 }
 
 /* Swipe */
 .swipe {
   width: size(1310);
   height: size(703);
-  top: size(99);
+  top:calc(50% - 18.3vw);
   left: 0;
   object-fit: cover;
 }
@@ -268,72 +338,67 @@
     width: 100vw;
     height: sizem(790);
     min-height: auto;
+    max-height: initial;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
     // background-position: 0 0;
     // background-attachment: fixed;
     overflow: hidden;
   }
+.txt{
+  width: sizem(310);
+  top: sizem(320);
+  left: sizem(32.5);display: block;
+  }
+
 
   .title {
-    width: sizem(270);
-    top: sizem(348);
-    left: sizem(32);
-    font-size: sizem(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.52;
-    letter-spacing: sizem(1.48);
-    text-align: left;
-    color: #af1f24;
-    white-space: nowrap;
+    width: 100%;
+    line-height: 1.6;
+    font-size: sizem(25);right:0;top:sizem(3);
   }
 
   .hr {
-    width: sizem(310);
-    height: 2px;
-    top: sizem(397);
-    left: sizem(32.5);
-    background-color: #af1f24;
+    width: 100%;
+    height: sizem(2);
+    position: relative;right: sizem(0);
+    margin: sizem(12) 0;
+    transform: rotate(0);
+    left: 0;
+    top: 0;
+  }
+
+  .s-title {
+    top:0;
+    left: sizem(0);
+    width: sizem(279);
   }
 
   .subtitle {
-    width: sizem(300);
-    top: sizem(324);
-    left: sizem(33);
-    font-size: sizem(18);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.53;
-    letter-spacing: sizem(1.06);
-    text-align: left;
-    color: #323333;
-    white-space: nowrap;
+    width: 100%;
+    font-size: sizem(18);right: sizem(-1);
   }
 
   .desc {
-    width: sizem(300);
-    top: sizem(410);
-    left: sizem(33);
     font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.4;
-    letter-spacing: sizem(0.65);
-    text-align: left;
-    color: #323333;
-    white-space: nowrap;
+    line-height: 1.6;
+    letter-spacing: sizem(2.09);
+    white-space: nowrap;display: block;
+    span{writing-mode:initial;display: block;
+      width:auto; 
+      margin:0 0 0.0em;
+      &.p{
+      margin:0 0 0.8em;}
+      &.p2{
+      margin:0 0 0.8em -0.5em;}
+    }
   }
 
   .img {
-    width: sizem(135);
-    top: auto;
-    left: auto;
-    bottom: sizem(14);
-    right: sizem(120);
+    width: sizem(142);
+    top:sizem(30);
+    left: sizem(-3);
+  position: relative;
   }
 
   /* Swipe */

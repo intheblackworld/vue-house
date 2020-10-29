@@ -4,7 +4,7 @@
     <img class="map-bg" :src="bgSrc" alt ref="mapbg" />
     <img class="map-text" :src="bgText" alt />
     <div :class="`mask ${showMask ? 'active' : ''}`">
-    </div>    
+    </div>
     <img
       :src="tag"
       data-aos="fade-down"

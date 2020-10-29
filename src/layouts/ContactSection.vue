@@ -19,7 +19,6 @@ export default {
     HouseInfo,
     Footer,
   },
-
-  methods: {},
+ methods: {},
 }
 </script>

@@ -14,7 +14,7 @@
 .video-iframe {
   width: size(454);
   height: size(806);
-  top: size(38);
+  top: calc(50% - 21vw);
   right: size(417);
     z-index: 3;
     border: solid 1px #929292;
@@ -37,6 +37,7 @@
   width: size(1920);
   height: 100vh;
   min-height: size(900);
+  max-height: size(1080);
   background: none;
   background-size: auto;
   background-attachment: fixed;
@@ -54,9 +55,9 @@ canvas {
   mix-blend-mode: multiply;
 }
 .title{
-  width: size(404);
-  top: size(416);
-  right: size(442);}
+  width: size(104);
+  top: calc(50% - 15.5vw);
+  left: size(574);}
 
 .bg-img {
   width: size(1920);

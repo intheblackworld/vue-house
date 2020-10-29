@@ -15,9 +15,9 @@
         鐵冠建設<span>‧</span>昌譽營造
       </div>
       <div class="desc absolute" data-aos="fade" data-aos-delay="800">
-        創建之初，即成立自家營造廠「昌譽營造」，<br />攜手鑽研土木、鋼構力學等基礎深開挖技術。<br /><br />
-        精淬造工，贏得公共工程界、多項大獎青睞<br />推崇。<br /><br />
-        2020年再以《十三行博物館休閒教育園區》<br />奪下「國家卓越建設獎金質獎」殊榮，印證<br />工法專注苛求，才是建築最完美的價值。
+        創建之初，即成立自家營造廠「昌譽營造」，攜手鑽研土木、鋼構力學等基礎深開挖技術。<br /><br />
+        精淬造工，贏得公共工程界、多項大獎青睞推崇。<br /><br />
+        2020年再以《十三行博物館休閒教育園區》奪下「國家卓越建設獎金質獎」殊榮，印證工法專注苛求，才是建築最完美的價值。
       </div>
 
       <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile">
@@ -130,12 +130,12 @@
   }
 
   .number {
-    font-size: size(68.4);
+    font-size: size(69);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.2;
-    letter-spacing: size(6.84);
+    letter-spacing:0.1em;
     text-align: left;
     color: #ffffff;
   }
@@ -158,13 +158,13 @@
 
 .desc {
   width: size(625);
-  top: size(652);
+  top: size(655);
   right: size(262);
   font-size: size(21);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.1;
+  line-height: 1.35;
   letter-spacing: size(0.92);
   text-align: left;
   color: #ffffff;

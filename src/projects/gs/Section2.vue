@@ -356,9 +356,9 @@ import { isMobile, isTablet } from '@/utils'
 export default {
   name: 'section2',
 
-  // components: {
-  //   Map,
-  // },
+  components: {
+   Map,
+   },
 
   data() {
     return {

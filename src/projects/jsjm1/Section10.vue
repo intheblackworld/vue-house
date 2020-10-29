@@ -10,7 +10,7 @@
     </div>
     <div class="hr absolute" data-aos="fade-up" data-aos-delay="600"></div>
     <div class="desc absolute" data-aos="fade-up" data-aos-delay="800">
-      大器「雪花白蒙卡花崗石」，書寫外觀如渾然天成的山水流瀑，文雅堅毅，展現力抗溫差落雨的雋永誠真。<br />
+      大器「雪花白蒙卡花崗石」，書寫外觀如渾然天成的山水流瀑，文雅堅毅，展現力抗溫差落雨的雋永誠真。<br /><br />
       結合「一筆箍」鋼筋捆紮、SA級續接，締造抗震係數達0.274g、抗六級以上耐震設計。沈穩精鑄，篤實安家。
     </div>
     <!-- <div class="title-bg">
@@ -47,14 +47,16 @@
 @import '@/assets/style/function.scss';
 .section10 {
   width: size(1920);
-  height: size(1080);
+  height: 100vh;
+  min-height: size(900);
+  max-height: size(1080);
   position: relative;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
   // background-position: 0 0;
   // background-attachment: fixed;
-  // overflow: hidden;
+  overflow: hidden;
 }
 .bg {
   background-color: #fff;
@@ -68,13 +70,11 @@
 }
 
 .bg-img {
-  width: 100vw;
-  height: 100vh;
-  min-height: size(1080);
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  height: auto;
   display: block;
   object-fit: cover;
   margin-top: 0;
@@ -85,7 +85,7 @@
 
 .subtitle {
   width: size(283);
-  top: size(106);
+  top:calc(50% - 17vw);
   left: size(236);
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
   font-size: size(25.5);
@@ -101,7 +101,7 @@
 
 .title {
   width: size(441);
-  top: size(146);
+  top:calc(50% - 14vw);
   left: size(236);
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
   font-size: size(46.4);
@@ -117,7 +117,7 @@
 
 .hr {
   width: size(564);
-  top: size(295);
+  top:calc(50% - 6.5vw);
   left: size(238);
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.6);
   border: solid 1px #ffffff;
@@ -125,7 +125,7 @@
 
 .desc {
   width: size(570);
-  top: size(316);
+  top:calc(50% - 5vw);
   left: size(235);
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
   font-size: size(21);
@@ -133,10 +133,9 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.53;
-  letter-spacing: size(2.1);
+  letter-spacing: 0.1em;
   text-align: left;
-  color: #ffffff;
-  color: #ffffff;
+  color: #fff;
 }
 @media only screen and (max-width: 1440px) and (min-width: 1025px) {
   .fullscreen {
@@ -266,7 +265,6 @@ export default {
   components: {
     Map,
   },
-
   data() {
     return {
       isMobile,

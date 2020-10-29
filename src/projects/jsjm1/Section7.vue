@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="section7">
-      <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="!isDialog">
+      <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="!isDialog">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -35,26 +35,26 @@
           台北光點為軸，品味生活比想像更簡單
         </div>
       </div>
-      <div v-if="!isMobile">
+     <!--  <div v-if="!isMobile">
         <img src="./s7/img.png" alt="" class="img absolute">
         <img src="./s7/t.png" alt="" class="t absolute">
-      </div>
-      <div v-else>
-        <div class="subtitle absolute">
+      </div> -->
+      <div class="txt absolute">
+        <div class="subtitle">
           台北光點為軸，品味生活比想像更簡單
         </div>
-        <div class="title absolute">
+        <div class="title">
           文創新鮮度 永遠逛不膩
         </div>
-        <div class="hr absolute"></div>
-        <div class="desc absolute">
-          就讓台北光點的戶外午茶、藝術電影，<br />
-          成為週末休閒雙核心！<br /><br />
-          再順手採收一旁巷弄的文青好店、美食！<br />
-          或把時光交給北美館、蔡瑞月舞蹈社、<br />
-          當代藝術館、南西誠品、赤峰小器…<br />
-          屬於中山北的浪漫知性，一放縱便填滿清單！<br /><br />
-          品味生活比想像更簡單。
+        <div class="hr"></div>
+        <div class="desc">
+          <span>就讓台北光點的戶外午茶、藝術電影，</span>
+          <span class="p">成為週末休閒雙核心！</span>
+          <span>再順手採收一旁巷弄的文青好店、美食！</span>
+          <span>或把時光交給北美館、蔡瑞月舞蹈社、</span>
+          <span>當代藝術館、南西誠品、赤峰小器…</span>
+          <span class="p">屬於中山北的浪漫知性，一放縱便填滿清單！</span>
+          <span>品味生活比想像更簡單。</span>
         </div>
         <img src="./s7/img.png" alt="" class="img absolute">
       </div>
@@ -90,7 +90,74 @@
     position: relative;
   }
 }
+.txt{
+  width: size(335);
+  top:calc(50% - 18.2vw);
+  right: size(172);
+  display: flex;
+  flex-direction:row-reverse;
+  padding: 0 0 0 0;
+  z-index: 1;
+  }
+  .title {
+    width: 1.2em;
+    font-size: size(44);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing:0.06em;
+    text-align: left;
+    color: #af1f24;
+    position: relative;right:0;top:-0.15em;
+    //white-space: nowrap;
+  }
+  .subtitle {
+    width: 1.2em;
+    font-size: size(25);
+    font-weight: bold;
+    letter-spacing:0.07em;
+    text-align: left;
+    position: relative;right: size(-6);
+    color: #323333;word-break: break-all;
+  flex-direction:row-reverse;word-wrap:break-word;
+  }
+  .desc {   
+    font-size: size(21);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+    text-align: left;
+    color: #323333;
+    position: relative;margin:size(48) size(23) 0 size(0);
+  display: flex;align-items:flex-start; word-break: break-all;
+  flex-direction:row-reverse;word-wrap:break-word;
+    //white-space: nowrap;
+    span{writing-mode: vertical-rl;
+      width: 1.4em; 
+      margin:0 0 0 0.0em;
+      &.p{
+      margin:0 0 0 0.8em;}
+    }
+  }
+  .s-title{
+  width: size(28);
+  position: relative;
+  top: -0.35Em;
+  left:0.35em;
+  height: auto;}
 
+
+  .hr {
+    width:size(235);
+    height:size(3);
+    position: absolute;
+    top:0;
+    left:0;
+    background-color: #af1f24;
+  }
 .t {
   width: size(332);
   top: size(105);
@@ -98,47 +165,49 @@
 }
 
 .img {
-  width: size(208);
-  top: size(626);
-  right: size(288);
+    width: size(250);
+  top: size(510);
+  right: size(288 - 172);
+  position: absolute;
 }
 
 .dialog {
   width: 100vw;
   height: 100vh;
   position: fixed;
-  top: 0;
-  background: #fff;
-  z-index: -1;
+  top: 0; background: url("./s1/bg.png") repeat ;
+  background-size: auto;
+  z-index: 1;
   opacity: 0;
   transition: opacity 0.5s;
-  display: none;
-  overflow: scroll;
-
+  display: block;
+  overflow: auto;
+  left: 100vw;;
+  transition: all 0.5s;
   &.show {
     display: block;
     z-index: 210;
-    opacity: 1;
+    opacity: 1;left: 0;;
   }
 
   .dialog-img {
     width: size(1160);
-    top: size(164);
+    top: calc(50% - 18.75vw);
     left: size(176);
     object-fit: cover;
-    height: auto;
+    height: auto;z-index: 2;
   }
 
   .dialog-ink {
     width: size(250);
-    top: size(605);
+    top: calc(50% + 2vw);
     right: size(172);
   }
 
   .dialog-text {
-    width: size(297);
+    width: size(800);
     height: size(32.4);
-    top: size(890);
+    top: calc(50% + 17.1vw);
     right: size(177);
     border-bottom: solid 1px #9d0c1a;
     border-right: solid 1px #9d0c1a;
@@ -154,7 +223,7 @@
   }
 
   .dialog-title {
-    top: size(170);
+    top: calc(50% - 18.75vw);
     right: size(423);
     font-size: size(44);
     font-weight: bold;
@@ -169,7 +238,7 @@
   }
 
   .dialog-subtitle {
-    top: size(170);
+    top: calc(50% - 18.75vw);
     right: size(388);
     font-size: size(25);
     font-weight: bold;
@@ -187,7 +256,7 @@
     position: fixed;
     cursor: pointer;
     right: size(186);
-    top: size(192);
+    top: calc(50% - 18.75vw);
     width: size(56);
     background-color: #9d0c1a;
   }
@@ -197,7 +266,7 @@
 .swipe {
   width: size(1160);
   height: size(703);
-  top: size(99);
+  top:calc(50% - 18.3vw);
   left: size(178);
   object-fit: cover;
   z-index: 3;
