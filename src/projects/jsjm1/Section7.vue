@@ -56,7 +56,7 @@
           <span class="p">屬於中山北的浪漫知性，一放縱便填滿清單！</span>
           <span>品味生活比想像更簡單。</span>
         </div>
-        <img src="./s7/img.png" alt="" class="img absolute">
+        <img src="./s7/img.png" alt="" class="img">
       </div>
     </div>
   </div>
@@ -495,66 +495,51 @@
     // background-attachment: fixed;
     overflow: hidden;
   }
+.txt{
+  width: sizem(310);
+  top: sizem(320);
+  left: sizem(32.5);display: block;
+  }
+
 
   .title {
-    width: sizem(270);
-    top: sizem(348);
-    left: sizem(32);
-    font-size: sizem(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.52;
-    letter-spacing: sizem(1.48);
-    text-align: left;
-    color: #af1f24;
-    white-space: nowrap;
+    width: 100%;
+    line-height: 1.6;
+    font-size: sizem(25);right:0;top:sizem(3);
   }
 
   .hr {
-    width: sizem(310);
-    height: 2px;
-    top: sizem(397);
-    left: sizem(32.5);
-    background-color: #af1f24;
+    width: 100%;
+    height: sizem(2);
+    position: relative;right: sizem(0);
+    margin: sizem(12) 0;
   }
-
   .subtitle {
-    width: sizem(300);
-    top: sizem(324);
-    left: sizem(33);
-    font-size: sizem(18);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.53;
-    letter-spacing: sizem(1.06);
-    text-align: left;
-    color: #323333;
-    white-space: nowrap;
+    width: 100%;
+    font-size: sizem(18);right: sizem(-1);
+    letter-spacing:0em;
   }
 
   .desc {
-    width: sizem(300);
-    top: sizem(410);
-    left: sizem(33);
     font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.4;
-    letter-spacing: sizem(0.65);
-    text-align: left;
-    color: #323333;
-    white-space: nowrap;
+    line-height: 1.6;
+    letter-spacing: sizem(2.09);
+    white-space: nowrap;display: block;
+    span{writing-mode:initial;display: block;
+      width:auto; 
+      margin:0 0 0.0em;
+      &.p{
+      margin:0 0 0.8em;}
+      &.p2{
+      margin:0 0 0.8em -0.5em;}
+    }
   }
 
   .img {
     width: sizem(135);
-    top: auto;
-    left: auto;
-    bottom: sizem(14);
-    right: sizem(120);
+    top:sizem(30);
+    left: sizem(-3);
+  position: relative;
   }
 
   /* Swipe */

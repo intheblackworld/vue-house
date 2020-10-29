@@ -67,6 +67,7 @@
 
 @media screen and (max-width: 767px) {
   .loading-bg {
+      display: none;
     &.hide {
       display: none;
     }

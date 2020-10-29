@@ -380,7 +380,7 @@
 
   .title {
     width: sizem(308);
-    top: sizem(440);
+    top: sizem(430);
     left: sizem(31.5);
     font-size: sizem(32);
     font-weight: bold;
@@ -433,13 +433,13 @@
     width: sizem(310);
     top: sizem(538);
     right: sizem(32);
-    font-size: sizem(15);
+    font-size: sizem(14);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.3;
-    letter-spacing: sizem(0.45);
-    text-align: left;
+    line-height: 1.4;
+    letter-spacing: 0;
+    text-align: justify;
     color: #ffffff;
   }
 

@@ -180,6 +180,8 @@
   .section10 {
     width: 100vw;
     height: sizem(667);
+    min-height: auto;
+  max-height:initial;
     position: relative;
   }
 

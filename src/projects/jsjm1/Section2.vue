@@ -4,30 +4,22 @@
     <div>
       <img src="./s2/bg.png" alt="" class="bg-img">
       <img src="./s2/title.png" alt="" class="title absolute" @click="playVideo">
-      <div :id="`youtube-player-${id}`" ref="player" class="video-iframe absolute"></div>
-      <img src="./s2/影片.jpg" alt="" :class="`video-iframe absolute ${(isPlay == true) ? 'hide' : ''}`" @click="playVideo">
+      <div class="video absolute">
+        <div :id="`youtube-player-${id}`" ref="player" class="video-iframe absolute"></div>
+        <img src="./s2/影片.jpg" alt="" :class="`video-img absolute ${(isPlay == true) ? 'hide' : ''}`" @click="playVideo">
+      </div>
     </div>
   </div>
 </template>
 <style lang="scss">
 @import '@/assets/style/function.scss';
 .video-iframe {
-  width: size(454);
-  height: size(806);
-  top: calc(50% - 21vw);
-  right: size(417);
-    z-index: 3;
-    border: solid 1px #929292;
+  width:100%;
+  height: 200%;
+  top:-50%;
+  left:0;
+  z-index: 3;
   transition: all 0.3s;
-}
-
-@media screen and (max-width: 767px) {
-  .video-iframe {
-    width: sizem(300);
-    height: sizem(532);
-    top: sizem(34);
-    right: sizem(37);
-  }
 }
 </style>
 <style lang="scss" scoped>
@@ -43,6 +35,26 @@
   background-attachment: fixed;
   overflow: hidden;
   position: relative;
+}
+
+.video{
+  width: size(454);
+  height: size(806);
+  top: calc(50% - 21vw);
+  right: size(417);
+    z-index: 3;
+    border: solid 1px #929292;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+
+.video-img {
+  width:100%;
+  height: 100%;
+  top:0;
+  left:0;
+  z-index: 3;
+  transition: all 0.3s;
 }
 
 #c2 {
@@ -101,6 +113,12 @@ canvas {
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
+  }
+  .video{
+    width: sizem(300);
+    height: sizem(530);
+    top: sizem(34);
+    right: sizem(37);
   }
 
   .bg-img {
