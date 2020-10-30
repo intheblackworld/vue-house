@@ -97,7 +97,7 @@ export default {
   right: 30px;
   width: 40px;
   height: 40px;
-  background-color: #707070;
+  background-color: #af1f24;
   cursor: pointer;
 
   // img {
@@ -126,7 +126,7 @@ export default {
   position: relative;
   width: 30px;
   height: 3px;
-  background-color: #CD0012;
+  background-color: #fff;
 }
 
 .menu-icon::before {
@@ -137,7 +137,7 @@ export default {
   display: block;
   width: 30px;
   height: 3px;
-  background-color: #CD0012;
+  background-color: #fff;
   transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
 }
 
@@ -149,7 +149,7 @@ export default {
   display: block;
   width: 30px;
   height: 3px;
-  background-color: #CD0012;
+  background-color: #fff;
   transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
 }
 
@@ -1494,13 +1494,7 @@ body {
   margin-bottom: 1rem;
   text-align: center;
 }
-@media (min-width: 768px) {
-  .menu {
-    margin-bottom: 0rem;
-    padding-left: 55px;
-    text-align: left;
-  }
-}
+
 .menu_switch {
   cursor: pointer;
   position: fixed;

@@ -251,6 +251,7 @@
     color: #323333;
     writing-mode: vertical-rl;
     text-orientation: upright;
+    white-space: nowrap;
   }
 
   .close {

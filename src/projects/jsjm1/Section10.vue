@@ -141,14 +141,6 @@
   .fullscreen {
     height: 100vh;
   }
-
-  .text {
-    top: 40px;
-  }
-
-  .title {
-    font-size: 90px;
-  }
 }
 
 /* 螢幕尺寸標準 */
