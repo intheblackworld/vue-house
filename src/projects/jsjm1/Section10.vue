@@ -1,18 +1,21 @@
 <template>
   <div class="section10">
-    <img src="./s10/bg.jpg" alt="" class="bg-img" v-if="!isMobile">
-    <img src="./s10/bg_m.jpg" alt="" class="bg-img" v-else>
-    <div class="subtitle absolute" data-aos="fade-up" data-aos-delay="200">
+    <img src="./s10/2.jpg" alt="" class="bg-img" v-if="!isMobile">
+    <img src="./s10/2_m.jpg" alt="" class="bg-img" v-else>
+    
+      <div class="txt absolute">
+    <div class="subtitle" data-aos="fade-up" data-aos-delay="200">
       從氣質，就看出精湛品質
     </div>
-    <div class="title absolute" data-aos="fade-up" data-aos-delay="400">
+    <div class="title" data-aos="fade-up" data-aos-delay="400">
       一筆箍耐震精工<br />人文石尚 風格直寓
     </div>
-    <div class="hr absolute" data-aos="fade-up" data-aos-delay="600"></div>
-    <div class="desc absolute" data-aos="fade-up" data-aos-delay="800">
+    <div class="hr" data-aos="fade-up" data-aos-delay="600"></div>
+    <div class="desc" data-aos="fade-up" data-aos-delay="800">
       大器「雪花白蒙卡花崗石」，書寫外觀如渾然天成的山水流瀑，文雅堅毅，展現力抗溫差落雨的雋永誠真。<br /><br />
       結合「一筆箍」鋼筋捆紮、SA級續接，締造抗震係數達0.274g、抗六級以上耐震設計。沈穩精鑄，篤實安家。
     </div>
+      </div>
     <!-- <div class="title-bg">
       <div class="text" v-if="isMobile">
         <div
@@ -82,17 +85,25 @@
     position: relative;
   }
 }
+.txt{
+  width: size(1140);
+  height: size(490);
+  top:0;
+  left: 0;
+  /*display: flex;
+  flex-direction:row-reverse;*/
+  padding: size(50) 0 0  size(140);
+  background:linear-gradient(to right, #9e0d1b 0%,#9e0d1b 50%,#9e0d1b00 100%);
+  }
 
 .subtitle {
   width: size(283);
-  top:calc(50% - 17vw);
-  left: size(236);
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
   font-size: size(25.5);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
+  line-height: 1.6;
   letter-spacing: size(1.5);
   text-align: left;
   color: #ffffff;
@@ -101,14 +112,12 @@
 
 .title {
   width: size(441);
-  top:calc(50% - 14vw);
-  left: size(236);
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
   font-size: size(46.4);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
+  line-height: 1.4;
   letter-spacing: size(3.71);
   text-align: left;
   color: #ffffff;
@@ -117,16 +126,13 @@
 
 .hr {
   width: size(564);
-  top:calc(50% - 6.5vw);
-  left: size(238);
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.6);
   border: solid 1px #ffffff;
+  margin:  size(20) 0;
 }
 
 .desc {
   width: size(570);
-  top:calc(50% - 5vw);
-  left: size(235);
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
   font-size: size(21);
   font-weight: normal;
@@ -192,6 +198,13 @@
       position: relative;
     }
   }
+ .txt {
+   top: 0;
+   left: 0;
+   width: 100%;
+    height: auto;
+    padding:sizem(45)  0 sizem(45) sizem(32) ;
+  }
 
   .subtitle {
     width: sizem(200);
@@ -227,10 +240,11 @@
 
   .hr {
     width: sizem(310);
-    top: sizem(133);
-    left: sizem(32.5);
+    top: sizem(0);
+    left: sizem(0);
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.6);
     border: solid 1px #ffffff;
+    margin:sizem(20) 0;
   }
 
   .desc {
