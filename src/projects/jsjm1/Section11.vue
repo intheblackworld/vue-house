@@ -157,7 +157,7 @@
 }
 
 .desc {
-  width: size(625);
+  width: size(695);
   top: size(655);
   right: size(262);
   font-size: size(21);
@@ -168,6 +168,8 @@
   letter-spacing: size(0.92);
   text-align: left;
   color: #ffffff;
+  padding: 0 0 0 size(50);
+  border-left:size(3) solid #fff;
 }
 
 /* Swipe */
@@ -441,6 +443,9 @@
     letter-spacing: 0;
     text-align: justify;
     color: #ffffff;
+    padding: sizem(20)  0 0 0;
+  border-left:size(0) solid #fff;
+  border-top:sizem(2) solid #fff;
   }
 
   /* Swipe */
