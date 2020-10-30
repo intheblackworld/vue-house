@@ -135,6 +135,7 @@
     color: #242424;
     white-space: nowrap;
     position: relative;
+    text-shadow:0 0 5px #ff5f00;
     &::after,
     &::before {
       content: '';
