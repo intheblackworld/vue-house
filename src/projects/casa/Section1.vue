@@ -73,64 +73,28 @@
   .section1 {
     width: 100vw;
     min-height: sizem(470);
-    max-height:sizem(812);
+    max-height: sizem(812);
     height: calc(100vh - 63px);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
   }
-.bg1,
-.bg2,
-.bg3{top:0;height: 100%;
-  background:  url('./s1/bg.png') fixed;
-  background-size: auto;
-  background-position: 0 0%;
-  background-repeat: repeat;}
-.bg1{left: 10%;width: 5%;}
-.bg2{left: 18%;width: 60%;}
-.bg3{left: 82%;width: 9%;}
-
-  .img-left {
-    width: sizem(261);
-    top: sizem(-15);
-    left: sizem(123);
-    transform: rotate(90deg);
-  }
-
-  .fade-out {
-    animation: fadeout 3s 3s ease-in-out forwards;
-  }
-
-  .fade-in {
-    margin-top: -30%;
-    opacity: 0;
-    animation: fadein 3s 4s ease-in-out forwards;
-  }
-
-  @keyframes fadeout {
-    to {
-      transform: translateY(10%);
-      opacity: 0;
-    }
-  }
-
-  @keyframes fadein {
-    to {
-      margin-top: 0%;
-      opacity: 1;
-    }
-  }
-
   .logo {
-    width: sizem(172);
-    top:calc(50% - 43vw);
-    right: sizem(101);
+    width: sizem(308);
+    top: sizem(243);
+    left: sizem(35);
   }
 
-  .t {
-    width: sizem(300);
-    top: calc(50% + 35vw);
-    right: sizem(37);
+  .t1 {
+    width: sizem(308);
+    top: sizem(309);
+    left: sizem(35);
+  }
+
+  .t2 {
+    width: sizem(308);
+    top: sizem(403);
+    left: sizem(35);
   }
 }
 </style>
@@ -151,8 +115,7 @@ export default {
 
   methods: {},
 
-  mounted() {
-  },
+  mounted() {},
 
   created() {},
 

@@ -451,6 +451,44 @@ export default {
       padding-bottom: 5px;
       font-size: calc(100vw * 25 / 375);
       letter-spacing: 4px;
+
+      &.title-d {
+        width: sizem(120);
+        top: sizem(21);
+        font-size: sizem(30);
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.17;
+        letter-spacing: normal;
+        text-align: center;
+        color: #fff;
+
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          right: sizem(-45);
+          width: sizem(28);
+          height: sizem(28);
+          top: sizem(12);
+          background-image: url('../projects/casa/s6/title.png');
+          background-size: cover;
+          transform: rotate(180deg);
+        }
+
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          left: sizem(-45);
+          width: sizem(28);
+          height: sizem(28);
+          top: sizem(12);
+          background-image: url('../projects/casa/s6/title.png');
+          background-size: cover;
+        }
+      }
     }
 
     .order-subtitle {

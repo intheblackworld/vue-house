@@ -10,7 +10,7 @@
       </div>
       <div class="video absolute">
         <div :id="`youtube-player-${id}`" ref="player" class="video-iframe absolute"></div>
-        <img src="./s2/影片.jpg" alt="" :class="`video-img absolute ${(isPlay == true) ? 'hide' : ''}`" @click="playVideo">
+        <img src="" alt="" :class="`video-img absolute ${(isPlay == true) ? 'hide' : ''}`" @click="playVideo">
       </div>
     </div>
   </div>
@@ -135,10 +135,6 @@
   }
 }
 
-.hide {
-  opacity: 0;
-}
-
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -162,27 +158,85 @@
     background-size: cover;
     background-attachment: scroll;
   }
+
   .video {
-    width: sizem(300);
-    height: sizem(530);
-    top: sizem(34);
-    right: sizem(37);
+    width: sizem(365);
+    height: sizem(205);
+    top: sizem(179);
+    right: sizem(5.7);
+    z-index: 3;
+    box-shadow: 0 0 0 sizem(7.4) rgba(0, 63, 68, 0.37);
+    transition: all 0.3s;
+    overflow: hidden;
   }
 
-  .bg-img {
-    width: sizem(375);
+  .video-img {
+    width: 100%;
     height: 100%;
-    min-height: sizem(667);
-    position: absolute;
     top: 0;
     left: 0;
-    display: block;
-    object-fit: cover;
-    margin-top: 0;
+    z-index: 3;
+    transition: all 0.3s;
+  }
 
-    &:nth-child(1) {
-      position: relative;
+  .title-d {
+    width: sizem(270);
+    top: sizem(50);
+    font-size: sizem(30);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    text-align: center;
+    color: #005369;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: sizem(-45);
+      width: sizem(28);
+      height: sizem(28);
+      top: sizem(4);
+      background-image: url('./s2/title.png');
+      background-size: cover;
+      transform: rotate(180deg);
     }
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: sizem(-45);
+      width: sizem(28);
+      height: sizem(28);
+      top: size(8);
+      background-image: url('./s2/title.png');
+      background-size: cover;
+    }
+  }
+
+  .subtitle {
+    width: sizem(255);
+    top: sizem(107);
+    left: sizem(61);
+    font-size: sizem(17);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.18;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000000;
+  }
+
+  .hr {
+    width: auto;
+    height: sizem(10);
+    top: sizem(-10);
+    left: 0;
+    opacity: 0.5;
   }
 }
 </style>

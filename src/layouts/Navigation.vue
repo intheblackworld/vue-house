@@ -258,6 +258,8 @@ export default {
       margin-right: 10px;
     }
   }
+
+  
 }
 
 .menu {
@@ -315,6 +317,9 @@ export default {
 /* 螢幕尺寸標準 */
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
+  .nav {
+    width: 0;
+  }
   .navigation {
     background-color: transparent !important;
     height: $nav_phone_height;
@@ -354,7 +359,7 @@ export default {
     width: sizem(50);
     height: sizem(50);
     padding-top: sizem(8);
-    background-color: #af1f24;
+    background: transparent;
     z-index: 112;
 
     svg {
@@ -423,17 +428,27 @@ export default {
 
     &.open {
       display: block;
+      width: 100%;
       transform: translateX(0%);
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 0;
+      padding-top: 30px;
+      .link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
     .link {
       width: auto;
       padding: 0;
       .title {
-        font-size: 12px !important;
-        margin-top: 14px;
+        font-size: 18px !important;
+        margin-top: 0px;
+        border: none;
         width: auto;
         height: auto;
-        color: #333;
+        color: #fff;
         display: flex;
         align-items: flex-end;
         justify-content: center;

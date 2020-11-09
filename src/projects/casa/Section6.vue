@@ -115,7 +115,8 @@
   }
 }
 
-.title1, .title2 {
+.title1,
+.title2 {
   width: size(725);
   top: size(766);
   font-size: size(30);
@@ -128,15 +129,18 @@
   color: #ffffff;
 }
 
-.title1, .desc1 {
+.title1,
+.desc1 {
   left: size(210);
 }
 
-.title2, .desc2 {
+.title2,
+.desc2 {
   left: size(980);
 }
 
-.desc1, .desc2 {
+.desc1,
+.desc2 {
   width: size(725);
   top: size(812);
   font-size: size(18);
@@ -147,7 +151,6 @@
   letter-spacing: size(0.56);
   text-align: left;
   color: #c7e5e5;
-
 }
 
 /* Swipe */
@@ -343,7 +346,7 @@
 @media screen and (max-width: 767px) {
   .section6 {
     width: 100vw;
-    height: sizem(790);
+    height: sizem(1094);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -352,78 +355,109 @@
     // background-attachment: fixed;
     overflow: hidden;
   }
-  .txt {
-    width: sizem(310);
-    top: sizem(320);
-    left: sizem(32.5);
-    display: block;
-  }
 
-  .title {
-    width: 100%;
-    line-height: 1.6;
-    font-size: sizem(25);
-    right: 0;
-    top: sizem(3);
-    span {
-      display: inline-block;
-    }
-  }
+  .title-d {
+    width: sizem(120);
+    top: sizem(51);
+    font-size: sizem(30);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    text-align: center;
+    color: #fff;
 
-  .hr {
-    width: 100%;
-    height: sizem(2);
-    position: relative;
-    right: sizem(0);
-    margin: sizem(12) 0;
-  }
-
-  .s-title {
-    top: 0;
-    left: sizem(0);
-    width: sizem(279);
-  }
-
-  .subtitle {
-    width: 100%;
-    font-size: sizem(18);
-    right: sizem(-1);
-  }
-
-  .desc {
-    font-size: sizem(15);
-    line-height: 1.6;
-    letter-spacing: sizem(2.09);
-    white-space: nowrap;
-    display: block;
-    span {
-      writing-mode: initial;
+    &::after {
+      content: '';
       display: block;
-      width: auto;
-      margin: 0 0 0em;
-      &.p {
-        margin: 0 0 0.8em;
-      }
-      &.p2 {
-        margin: 0 0 0.8em -0.5em;
-      }
+      position: absolute;
+      right: sizem(-45);
+      width: sizem(28);
+      height: sizem(28);
+      top: sizem(4);
+      background-image: url('./s6/title.png');
+      background-size: cover;
+      transform: rotate(180deg);
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: sizem(-45);
+      width: sizem(28);
+      height: sizem(28);
+      top: size(8);
+      background-image: url('./s6/title.png');
+      background-size: cover;
     }
   }
 
-  .img {
-    width: sizem(135);
-    top: sizem(30);
-    left: sizem(-3);
-    position: relative;
+  .title1,
+  .title2 {
+    width: sizem(100);
+    left: sizem(33);
+    font-size: sizem(25);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.44;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+  }
+
+  .title1 {
+    top: sizem(410);
+  }
+
+  .desc1 {
+    top: sizem(455);
+  }
+
+  .title2 {
+    top: sizem(883);
+  }
+  .desc2 {
+    top: sizem(932);
+  }
+
+  .desc1,
+  .desc2 {
+    width: sizem(310);
+    left: sizem(33);
+    font-size: sizem(15);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.73;
+    letter-spacing: sizem(0.47);
+    text-align: left;
+    color: #c7e5e5;
   }
   /* Swipe */
   .swipe {
     width: 100vw;
-    height: sizem(300);
+    height: sizem(241);
     min-height: auto;
     top: sizem(0);
     left: sizem(0);
     object-fit: cover;
+
+    &.swipe1 {
+      width: sizem(375);
+      height: sizem(240);
+      top: sizem(140);
+      left: sizem(0);
+    }
+
+    &.swipe2 {
+      width: sizem(375);
+      height: sizem(240);
+      top: sizem(612);
+      right: sizem(0);
+    }
   }
 
   // begin

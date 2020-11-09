@@ -2,11 +2,11 @@ import { isMobile } from '../utils/index'
 export default {
   address: '接待會館：台北市信義區吳興街494巷1號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.3236488381526!2d121.56724321500612!3d25.023088283977494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa4d0e7249c9%3A0xbeb38f2915eaf757!2zMTEw5Y-w5YyX5biC5L-h576p5Y2A5ZCz6IiI6KGXNDk05be3MeiZnw!5e0!3m2!1szh-TW!2stw!4v1604889101708!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/4ea739yYEjrDbS6W8',
-  phone: '02-2541-0606',
-  fbLink: 'https://www.facebook.com/中山直美-115702496966413',
-  fbMessage: 'https://m.me/115702496966413',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1807.6618242421!2d121.56833755808036!3d25.02308829599437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abf46a6ca363%3A0x533977bb64281c23!2z5L-h576pQ0FTQeaOpeW-heacg-mkqA!5e0!3m2!1szh-TW!2stw!4v1604894660043!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/XieUejYHgZL8ayCF9',
+  phone: '02-8789-6600',
+  fbLink: 'https://www.facebook.com/%E4%BF%A1%E7%BE%A9casa-110034637544471',
+  fbMessage: 'https://m.me/110034637544471',
   caseName: '信義CASA',
   indigatorLength: 10,
 
