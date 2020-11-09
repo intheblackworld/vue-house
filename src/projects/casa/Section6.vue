@@ -60,6 +60,7 @@
   min-height: size(1030);
   max-height: size(1080);
   position: relative;
+  background: #0004;
 }
 
 .bg-img {
@@ -144,13 +145,13 @@
   width: size(725);
   top: size(812);
   font-size: size(18);
-  font-weight: 500;
+  font-weight: 300;
   font-stretch: normal;
   font-style: normal;
   line-height: 2;
-  letter-spacing: size(0.56);
-  text-align: left;
-  color: #c7e5e5;
+  letter-spacing:0.05em;
+  text-align: justify;
+  color: #e0fcfc;
 }
 
 /* Swipe */
@@ -428,13 +429,7 @@
     width: sizem(310);
     left: sizem(33);
     font-size: sizem(15);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.73;
-    letter-spacing: sizem(0.47);
-    text-align: left;
-    color: #c7e5e5;
   }
   /* Swipe */
   .swipe {

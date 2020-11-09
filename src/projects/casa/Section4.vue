@@ -116,8 +116,8 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 2;
-  letter-spacing: size(0.9);
-  text-align: left;
+  letter-spacing:0.05em;
+  text-align: justify;
   color: #666666;
 }
 
@@ -395,13 +395,7 @@
     top: sizem(548 - 120);
     right: sizem(32);
     font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.73;
-    letter-spacing: sizem(0.75);
-    text-align: left;
-    color: #666666;
   }
 
   /* Swipe */

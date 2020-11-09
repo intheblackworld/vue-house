@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div class="section5">
       <img src="./s2/hr.png" alt="" class="hr-b absolute">
       <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
@@ -28,7 +27,6 @@
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
     </div>
-  </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
@@ -38,7 +36,7 @@
   height: size(688);
   max-height: size(1080);
   position: relative;
-  background: #fff;
+  background: #fff;z-index: 2;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
@@ -154,8 +152,8 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 2;
-  letter-spacing: size(0.9);
-  text-align: left;
+  letter-spacing:0.05em;
+  text-align: justify;
   color: #666666;
 }
 
@@ -256,7 +254,7 @@
 .pagination {
   width: auto;
   bottom: size(148);
-  right: size(710);
+  left:calc(50% + 6.95vw);
   justify-content: center;
 }
 
@@ -442,13 +440,7 @@
     top: sizem(548 - 120);
     right: sizem(32);
     font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.73;
-    letter-spacing: sizem(0.75);
-    text-align: left;
-    color: #666666;
   }
 
   /* Swipe */

@@ -86,7 +86,9 @@ export default {
     margin-top: 15px;
 
     z-index: 3;
-    &:hover {
+      transition: all 0.5s;
+    &:hover,
+    &.active {
       border-bottom: size(3.5) solid #eee93a;
     }
 
@@ -105,6 +107,12 @@ export default {
       background-color: #0a5b6a;
       border: none;
       border-radius: 20px / 20px;
+      transition: all 0.5s;
+    &:hover,
+    &.active {
+      background-color: #eee93a;
+      color: #000000;
+    }
     }
   }
 }
@@ -119,20 +127,21 @@ export default {
   // background-image: $nav_bg;
   background-size: cover;
   height: $nav_pc_height;
-  z-index: 10;
+  z-index:4;
   position: fixed;
   top: 0;
   width: 100vw;
   display: flex !important;
   align-items: center;
   // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+  &::after{content: "";height:100%;width: 150%;top: -100%;left: 0;z-index:9;position: absolute;box-shadow:0 size(0) size(72) size(72)  #005566;}
 }
 
 .nav-container {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between;z-index:10;
 }
 
 .nav {
@@ -157,6 +166,7 @@ export default {
   top: 50%;
   transform: translate(3%, -20%);
   transition: all 0.3s;
+  z-index: 3;
 }
 
 .mask {
