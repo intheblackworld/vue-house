@@ -1,93 +1,40 @@
 <template>
   <div>
-    <div
-      class="contact-info"
-      data-aos="fade"
-      data-aos-delay="0"
-    >
-      <img
-        class="logo"
-        src="@/assets/img/contact-logo.png"
-        :alt="info.caseName"
-        data-aos="fade-down"
-        data-aos-delay="0"
-      />
+    <div id="contact-info" class="contact-info" data-aos="fade" data-aos-delay="0">
+      <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
       <div class="info">
-        <div
-          class="btn flex-c"
-          @click="showCallDialog"
-          data-aos="fade-down"
-          data-aos-delay="100"
-        >
+        <div class="btn flex-c" @click="showCallDialog" data-aos="fade-down" data-aos-delay="100">
           <span class="flex-c">
             <font-awesome-icon icon="phone" />
             <span>{{info.phone}}</span>
           </span>
         </div>
-        <div
-          class="btn flex-c"
-          @click="showMessengerDialog"
-          data-aos="fade-down"
-          data-aos-delay="200"
-        >
+        <div class="btn flex-c" @click="showMessengerDialog" data-aos="fade-down" data-aos-delay="200">
           <span class="flex-c">
             <font-awesome-icon :icon="['fab', 'facebook-messenger']" /><span>FB 諮詢</span>
           </span>
         </div>
-        <a
-          class="btn flex-c"
-          :href="info.fbLink"
-          target="_blank"
-          data-aos="fade-down"
-          data-aos-delay="300"
-        >
+        <a class="btn flex-c" :href="info.fbLink" target="_blank" data-aos="fade-down" data-aos-delay="300">
           <span class="flex-c">
             <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
           </span>
         </a>
-        <div
-          class="address flex-c"
-          data-aos="fade-down"
-          data-aos-delay="400"
-        >{{info.address}}</div>
-        <div
-          class="google-btn flex-c"
-          data-aos="fade-down"
-          data-aos-delay="400"
-          @click="showMapDialog"
-        >
+        <div class="address flex-c" data-aos="fade-down" data-aos-delay="400">{{info.address}}</div>
+        <div class="google-btn flex-c" data-aos="fade-down" data-aos-delay="400" @click="showMapDialog">
           <span class="flex-c">
             <font-awesome-icon icon="map-marker-alt" /><span>導航 Google 地圖</span>
           </span>
         </div>
       </div>
     </div>
-    <el-dialog
-      title
-      :visible.sync="isShowCallDialog"
-      :width="isMobile ? '90%' : '500px'"
-      :modal-append-to-body="false"
-    >
+    <el-dialog title :visible.sync="isShowCallDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
       <CallDialog :phone="info.phone" />
     </el-dialog>
-    <el-dialog
-      title
-      :visible.sync="isShowMessengerDialog"
-      :width="isMobile ? '90%' : '500px'"
-      :modal-append-to-body="false"
-    >
+    <el-dialog title :visible.sync="isShowMessengerDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
       <MessengerDialog :messenger="info.fbMessage" />
     </el-dialog>
-    <el-dialog
-      title
-      :visible.sync="isShowMapDialog"
-      :width="isMobile ? '90%' : '500px'"
-      :modal-append-to-body="false"
-    >
-      <MapDialog
-        :link="info.googleLink"
-        :address="info.address"
-      />
+    <el-dialog title :visible.sync="isShowMapDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
+      <MapDialog :link="info.googleLink" :address="info.address" />
     </el-dialog>
   </div>
 </template>
@@ -150,7 +97,7 @@ export default {
   position: relative;
   z-index: 3;
   width: 1200px;
-  height: 540px;
+  height: 380px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
@@ -184,7 +131,6 @@ export default {
   color: $contact_btn_color;
   background: $contact_btn_bg;
   box-shadow: $contact_btn_border;
-  border-radius: 18px !important;
   transition: all 0.5s;
   position: relative;
   overflow: hidden;
@@ -237,8 +183,6 @@ export default {
   background: #fff;
   color: #040000;
   font-weight: bold;
-  border-top-left-radius: 18px !important;
-  border-bottom-left-radius: 18px !important;
   //box-shadow: $contact_btn_border;
 }
 .google-btn {
@@ -247,15 +191,13 @@ export default {
   font-size: 16px;
   cursor: pointer;
   text-decoration: none;
- // border-top-right-radius: 60px;
+  // border-top-right-radius: 60px;
   //border-bottom-right-radius: 60px;
   color: $contact_google_btn_color;
   background: $contact_google_btn_bg;
   background-position: center !important;
   border: $contact_btn_border;
   transition: all 0.5s;
-  border-top-right-radius: 18px !important;
-  border-bottom-right-radius: 18px !important;
 
   svg {
     color: $contact_google_btn_icon;
@@ -350,21 +292,19 @@ export default {
     width: 100%;
   }
   .google-btn {
-  /* border-top-right-radius: 0px;
+    /* border-top-right-radius: 0px;
     border-top-left-radius: 0px;
     border-bottom-right-radius: 30px;
     border-bottom-left-radius: 30px;*/
   }
   .address {
-   // width: 280px;
+    // width: 280px;
     //padding: 0 1em;
     text-align: justify;
-    border-radius: 18px !important;
   }
 
   .google-btn {
     margin-top: 15px;
-    border-radius: 18px !important;
   }
 }
 

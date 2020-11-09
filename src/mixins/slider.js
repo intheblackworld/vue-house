@@ -2,6 +2,8 @@ export default {
   data() {
     return {
       slideIndex: 0,
+      slideIndex1: 0,
+      slideIndex2: 0,
       toggleTimer: true,
       stopAutoPlay: false,
     }
@@ -35,6 +37,9 @@ export default {
   methods: {
     goTo(index) {
       this.slideIndex = index
+    },
+    goToMultiIndex(listIndex, index) {
+      this[`slideIndex${listIndex}`] = index
     },
     addIndex() {
       this.slideIndex =

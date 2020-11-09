@@ -1,15 +1,15 @@
 <template>
   <div class="home no-padding-top">
     <Loading :loading="load" />
-    <SideNavigation />
-    <!-- <Navigation v-if="isMobile" /> -->
+    <!-- <SideNavigation /> -->
+    <Navigation />
     <!-- <Indigator :viewIndex="viewIndex" /> -->
     <!-- <full-page
       ref="fullPage"
       :options="options"
       id="fullpage"
     > -->
-    <LeafFlow />
+    <!-- <LeafFlow /> -->
     <vue-lazy-component class="section relative" id="section1" @init="init" style="z-index: 3;">
       <Section1 />
     </vue-lazy-component>
@@ -67,12 +67,12 @@
     >
       <Section10 />
     </vue-lazy-component>
-    <vue-lazy-component
+    <!-- <vue-lazy-component
       class="section"
       id="section11"
     >
       <Section11 />
-    </vue-lazy-component>
+    </vue-lazy-component> -->
     <vue-lazy-component class="section" id="contact">
       <ContactSection />
     </vue-lazy-component>
@@ -98,33 +98,33 @@
 import $ from 'jquery'
 import Navigation from '@/layouts/Navigation.vue'
 import { isMobile } from '@/utils'
-import SideNavigation from '@/layouts/SideNavigation.vue'
+// import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
-import LeafFlow from '@/components/LeafFlow.vue'
+// import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/jsjm1/Section1.vue'
-import Section2 from '@/projects/jsjm1/Section2.vue'
-import Section3 from '@/projects/jsjm1/Section3.vue'
-import Section4 from '@/projects/jsjm1/Section4.vue'
-import Section5 from '@/projects/jsjm1/Section5.vue'
-import Section6 from '@/projects/jsjm1/Section6.vue'
-import Section7 from '@/projects/jsjm1/Section7.vue'
-import Section8 from '@/projects/jsjm1/Section8.vue'
-import Section9 from '@/projects/jsjm1/Section9.vue'
-import Section10 from '@/projects/jsjm1/Section10.vue'
-import Section11 from '@/projects/jsjm1/Section11.vue'
+import Section1 from '@/projects/casa/Section1.vue'
+import Section2 from '@/projects/casa/Section2.vue'
+import Section3 from '@/projects/casa/Section3.vue'
+import Section4 from '@/projects/casa/Section4.vue'
+import Section5 from '@/projects/casa/Section5.vue'
+import Section6 from '@/projects/casa/Section6.vue'
+import Section7 from '@/projects/casa/Section7.vue'
+import Section8 from '@/projects/casa/Section8.vue'
+import Section9 from '@/projects/casa/Section9.vue'
+import Section10 from '@/projects/casa/Section10.vue'
+// import Section11 from '@/projects/casa/Section11.vue'
 
 export default {
   name: 'home',
   components: {
     Loading,
     // Indigator,
-    // Navigation,
-    SideNavigation,
-    LeafFlow,
+    Navigation,
+    // SideNavigation,
+    // LeafFlow,
     ContactSection,
     MobileNav,
     Section1,
@@ -137,7 +137,7 @@ export default {
     Section8,
     Section9,
     Section10,
-    Section11,
+    // Section11,
   },
 
   data() {

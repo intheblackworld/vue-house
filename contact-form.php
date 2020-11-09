@@ -1,6 +1,6 @@
 <?php
-    $case_name = "中山直美";
-    $case_code = 'jsjm';
+    $case_name = "信義CASA";
+    $case_code = 'casa';
 
     $name         = isset($_POST['name']) ? $_POST['name'] : '';
     $phone        = isset($_POST['phone']) ? $_POST['phone'] : '';

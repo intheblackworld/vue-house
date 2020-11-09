@@ -1,5 +1,5 @@
 /* html, body */
-$bg: url('~@/projects/jsjm/s1/bg.png');
+$bg: url('~@/projects/casa/s1/bg.jpg');
 
 /* font-family */
 /* 1主要字體  2次要字體  3表單字體 */
@@ -8,7 +8,7 @@ $family2: 'Noto Sans TC',sans-serif;
 $family3: 'Noto Sans TC';
 
 /* navigation */
-$nav_bg: #af1f24;
+$nav_bg: transparent;
 $nav_btn_color: #fff;
 $nav_link_color: #fff;
 $nav_link_subtitle_color: #fff;
@@ -55,41 +55,38 @@ $contact_bg: transparent;
 $contact_bg_m: transparent;
 $contact_shadow: 0 0 80px 0 rgba(0, 0, 0, 0.2);
 
-$contact_btn_border: inset 0 0 0px 1 px #aa1f24;
-$contact_btn_color: #3f3f3f;
-$contact_btn_icon: #3f3f3f;
-$contact_btn_bg: #fff;
-$contact_btn_hover_color: #fff;
-$contact_btn_hover_icon: #fff;
-$contact_btn_hover_bg: #aa1f24;
+$contact_btn_border: inset 0 0 0px 1 px #fff;
+$contact_btn_color: #eee93a;
+$contact_btn_icon: #eee93a;
+$contact_btn_bg: #0a5b6a;
+$contact_btn_hover_color: #eee93a;
+$contact_btn_hover_icon: #eee93a;
+$contact_btn_hover_bg: #0a5b6a;
 
-$contact_google_btn_color: #fff;
-$contact_google_btn_icon: #fff;
-$contact_google_btn_bg: #aa1f24;
-$contact_google_hover_btn_color: #fff;
-$contact_google_hover_btn_icon: #fff;
-$contact_google_hover_btn_bg: #aa1f24;
+$contact_google_btn_color: #eee93a;
+$contact_google_btn_icon: #eee93a;
+$contact_google_btn_bg: #0a5b6a;
+$contact_google_hover_btn_color: #eee93a;
+$contact_google_hover_btn_icon: #eee93a;
+$contact_google_hover_btn_bg: #0a5b6a;
 
-$contact_google_hover_btn_color: #fff;
-$contact_google_hover_btn_icon: #fff;
-$contact_google_hover_btn_bg:  #e5e300;
 // houseInfo
 $house_bg: #fff;
 $house_title_color: #000;
-$house_border_color: #a90005;
-$house_label_color: #a90005;
+$house_border_color: #0a5b6a;
+$house_label_color: #0a5b6a;
 $house_desc_color: #000;
 
 // mobileNav
-$mobile_nav_background: #a90005;
+$mobile_nav_background: #0a5b6a;
 $mobile_nav_color: #fff;
-$mobile_nav_border: #6d0004;
+$mobile_nav_border: #0a333a;
 $mobile_nav_icon: #fff;
 
 $mobile_dialog_bg: #fff;
-$mobile_dialog_icon: #707070;
+$mobile_dialog_icon: #0a5b6a;
 $mobile_dialog_desc: #000;
-$mobile_dialog_submit_bg: #707070;
+$mobile_dialog_submit_bg: #0a5b6a;
 $mobile_dialog_submit_color: #fff;
 
 

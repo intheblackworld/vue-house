@@ -1,13 +1,13 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '台北市中山區民生東路一段31號',
+  address: '接待會館：台北市信義區吳興街494巷1號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1807.144524956971!2d121.523773!3d25.0581904!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a942c98ae91f%3A0xd85e809b42298290!2zMTA0OTHlj7DljJfluILkuK3lsbHljYDmsJHnlJ_mnbHot6_kuIDmrrUzMeiZnw!5e0!3m2!1szh-TW!2stw!4v1602555349295!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/kcDeza3vcYhne5SA6',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.3236488381526!2d121.56724321500612!3d25.023088283977494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa4d0e7249c9%3A0xbeb38f2915eaf757!2zMTEw5Y-w5YyX5biC5L-h576p5Y2A5ZCz6IiI6KGXNDk05be3MeiZnw!5e0!3m2!1szh-TW!2stw!4v1604889101708!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/4ea739yYEjrDbS6W8',
   phone: '02-2541-0606',
   fbLink: 'https://www.facebook.com/中山直美-115702496966413',
   fbMessage: 'https://m.me/115702496966413',
-  caseName: '中山直美',
+  caseName: '信義CASA',
   indigatorLength: 10,
 
   houseInfos: [
@@ -28,7 +28,7 @@ export default {
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
   order: {
-    title: isMobile ? '立即預約直賞' : '立即預約直賞',
+    title: isMobile ? '立即預約' : '立即預約',
     subTitle: ''
   }
 }

@@ -1,10 +1,6 @@
 <template>
   <div :class="`loading-bg ${loading ? '' : 'hide'} ${isOpacity ? 'opacity': ''}`">
-    <img
-      src="~@/assets/img/loading_b.gif"
-      alt
-      class="loading-icon"
-    />
+    <img src="~@/assets/img/loading_b.gif" alt class="loading-icon" />
   </div>
 </template>
 
@@ -35,6 +31,10 @@
 
   &.hide {
     animation: hide 1s ease-in 0s forwards;
+    .loading-icon {
+      display: none;
+      // border-color: $loading_icon_color;
+    }
   }
 
   &.none {
@@ -67,7 +67,7 @@
 
 @media screen and (max-width: 767px) {
   .loading-bg {
-      display: none;
+    display: none;
     &.hide {
       display: none;
     }

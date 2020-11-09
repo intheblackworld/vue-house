@@ -3,44 +3,20 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
-          <img
-            class="logo"
-            src="@/assets/img/nav-logo.png"
-            alt
-             v-scroll-to="{ element: `#section1`, offset: offset }"
-          />
-          <div
-            class="menu"
-            @click="toggleSidebar"
-            v-show="!isOpen"
-          >
+          <img class="logo" src="@/assets/img/nav-logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" />
+          <div class="menu" @click="toggleSidebar" v-show="!isOpen">
             <font-awesome-icon icon="bars" />
           </div>
           <div :class="`mask ${isOpen ? 'open' : ''}`">
-            <div
-              class="close"
-              @click="isOpen = false"
-            >
-              <img
-                src="../assets/img/close.png"
-                alt=""
-              >
+            <div class="close" @click="isOpen = false">
+              <img src="../assets/img/close.png" alt="">
             </div>
           </div>
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
-            <li
-              :key="item.name"
-              v-scroll-to="{ element: `#${item.section}`, offset: offset }"
-              v-for="item in list"
-              class="flex-c"
-              @click="toggleSidebar"
-            >
+            <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: offset }" v-for="item in list" class="flex-c" @click="toggleSidebar">
               <span class="link">
                 <span>
-                  <p
-                    class="title"
-                    v-html="item.name"
-                  ></p>
+                  <p :class="`title ${item.type}`" v-html="item.name"></p>
                   <span class="subTitle">{{item.subTitle}}</span>
                 </span>
               </span>
@@ -92,21 +68,43 @@ export default {
 }
 </script>
 <style lang="scss">
+@import '../assets/style/function.scss';
 .navigation {
   .title {
-    font-size: 19px !important;
-    width: 140px;
-    height: 40px;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: linear-gradient(to right, #d70032 0%, #eb5500 100%);
-    border-radius: 20px / 20px;
-    position: relative;
+    font-size: size(19) !important;
+    width: size(90);
+    height: size(28);
+    font-size: size(21);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: size(-1.05);
+    text-align: center;
+    border-bottom: solid 1px #ffffff;
+    color: #ffffff;
+    margin-top: 15px;
+
     z-index: 3;
     &:hover {
-      background-image: linear-gradient(to left, #d70032 0%, #eb5500 100%);
+      border-bottom: size(3.5) solid #eee93a;
+    }
+
+    &.btn {
+      font-size: size(20.9);
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.2;
+      letter-spacing: size(-1.05);
+      color: #ffffff;
+      width: size(120);
+      height: size(38);
+      line-height: size(38);
+      margin-top: 5px;
+      background-color: #0a5b6a;
+      border: none;
+      border-radius: 20px / 20px;
     }
   }
 }
@@ -127,7 +125,7 @@ export default {
   width: 100vw;
   display: flex !important;
   align-items: center;
- // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+  // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 .nav-container {
@@ -157,8 +155,8 @@ export default {
   left: size(0);
   display: block;
   top: 50%;
-  transform: translate(3%, -50%);
-  transition: all .3s;
+  transform: translate(3%, -20%);
+  transition: all 0.3s;
 }
 
 .mask {
@@ -276,12 +274,12 @@ export default {
   .navigation {
     height: 70px;
     justify-content: center;
-  &.min {
-    .logo {
-    width: $logo_tablet_width;
+    &.min {
+      .logo {
+        width: $logo_tablet_width;
+      }
     }
   }
-}
 
   .logo {
     width: $logo_tablet_width;
@@ -320,16 +318,15 @@ export default {
   .navigation {
     background-color: transparent !important;
     height: $nav_phone_height;
-  //  background-color: #fff;
+    //  background-color: #fff;
     height: 70px;
     justify-content: center;
-  &.min {
-    .logo {
-    width: $logo_phone_width;
+    &.min {
+      .logo {
+        width: $logo_phone_width;
+      }
     }
   }
-}
-
 
   .nav-container {
     display: block;
@@ -346,7 +343,7 @@ export default {
 
   .nav {
     position: static;
-    height:60px;
+    height: 60px;
   }
 
   .menu {
@@ -389,14 +386,14 @@ export default {
     li {
       width: 100vw;
       height: 70px;
-      margin-bottom:0;
+      margin-bottom: 0;
     }
 
     .link {
       height: 50px;
       width: 100%;
       font-size: 17px;
-      margin-top:0;
+      margin-top: 0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -423,6 +420,11 @@ export default {
 
   .navlist {
     display: none;
+
+    &.open {
+      display: block;
+      transform: translateX(0%);
+    }
     .link {
       width: auto;
       padding: 0;
