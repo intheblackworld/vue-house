@@ -16,17 +16,17 @@
           </div>
         </div>
       </div>
-      <div class="title absolute">
+      <div class="title absolute" data-aos="fade-down" data-aos-delay="400">
         國際櫥窗
       </div>
-      <div class="subtitle absolute">
-        全球百貨最密集之地 匯聚國際時尚名品櫥窗
+      <div class="subtitle absolute" data-aos="fade-down" data-aos-delay="300">
+        全球百貨最密集之地 <br v-if="isMobile">匯聚國際時尚名品櫥窗
       </div>
-      <div class="line absolute"></div>
-      <div class="desc absolute">
+      <div class="line absolute" data-aos="fade" data-aos-delay="200"></div>
+      <div class="desc absolute" data-aos="fade-up" data-aos-delay="300">
         比起日本、新加坡密度還高！信義區領先全球指標城市，百貨公司最密集的一級戰區，包括台北101、Bellavita、微風、新光三越、阪急、ATT 4 FUN、遠百信義A13等，匯聚國際頂尖名時尚名品櫥窗，各國風味獨具的美食珍饈佳餚之地，品嚐股神巴菲特最愛頂級牛排店Smith & Wollensky、日本最愛拉麵店「一蘭拉麵」、米其林推薦新加坡「松發肉骨茶」，不用出國就能品味各式料理環遊全世界。
       </div>
-      <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+      <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
     </div>
@@ -187,10 +187,10 @@
   }
 
   .slide-name {
-    right: 20px;
-    bottom: 15px;
+    right:1.5em;
+    bottom:1em;
     color: #fff;
-    font-size: 15px;
+    font-size: size(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -198,6 +198,7 @@
     letter-spacing: 0.89px;
     text-align: left;
     color: #ffffff;
+   text-shadow:0 0.1em 0.3em #000;
   }
 
   // &:nth-child(1) {
@@ -457,11 +458,9 @@
     width: 100%;
     height: 100%;
     z-index: 0;
-
-    img {
-      width: 100%;
-      height: sizem(300);
-      object-fit: cover;
+    .slide-name{
+      right: 1em;
+    font-size: sizem(13);
     }
 
     // &:nth-child(1) {

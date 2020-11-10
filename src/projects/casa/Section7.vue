@@ -2,7 +2,7 @@
   <div>
     <div class="section7">
       <img src="./s2/hr.png" alt="" class="hr absolute">
-      <div class="title-d absolute-jc">設計美學</div>
+      <div class="title-d absolute-jc" data-aos="fade-down" data-aos-delay="200" >設計美學</div>
       <div class="swipe absolute-jc" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -20,10 +20,10 @@
           </div>
         </div>
       </div>
-      <div class="title absolute">人文建築</div>
-      <div class="subtitle absolute">陳逸倫建築師事務所</div>
-      <div class="line absolute"></div>
-      <div class="desc absolute">
+      <div class="title absolute" data-aos="fade-down" data-aos-delay="300">人文建築</div>
+      <div class="subtitle absolute" data-aos="fade-down" data-aos-delay="300">陳逸倫建築師事務所</div>
+      <div class="line absolute" data-aos="fade" data-aos-delay="200" ></div>
+      <div class="desc absolute" data-aos="fade-up" data-aos-delay="300">
         在建築業界耕耘多年的陳逸倫建築師，同時也是淡江大學建築系兼任講師，以學者爾雅的建築思維，打造兼具美學與實用的人文建築，作品關注量體與自然環境的對話，擅長鋪陳光影與內部空間的律動，同時也是賓士、AUDI等頂級品牌長期合作建築師。                
       </div>
     </div>
@@ -220,12 +220,11 @@
     height: 100%;
     object-fit: cover;
   }
-
   .slide-name {
-    right: 20px;
-    bottom: 15px;
+    right:1.5em;
+    bottom:1em;
     color: #fff;
-    font-size: 15px;
+    font-size: size(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -233,6 +232,7 @@
     letter-spacing: 0.89px;
     text-align: left;
     color: #ffffff;
+   text-shadow:0 0.1em 0.3em #000;
   }
 
   // &:nth-child(1) {
@@ -493,11 +493,9 @@
     width: 100%;
     height: 100%;
     z-index: 0;
-
-    img {
-      width: 100%;
-      height: sizem(300);
-      object-fit: cover;
+    .slide-name{
+      right: 1em;
+    font-size: sizem(13);
     }
 
     // &:nth-child(1) {
@@ -609,7 +607,7 @@ export default {
       slideList: [
         {
           img: require('./s7/1.jpg'),
-          name: '3D外觀示意圖',
+          name: '外觀 3D情境示意圖',
         },
       ],
     }

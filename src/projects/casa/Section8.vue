@@ -20,11 +20,11 @@
           </div>
         </div>
       </div>
-      <div class="title absolute">大師公設</div>
-      <div class="subtitle absolute">域研近相空間設計李俊平大師</div>
-      <div class="line absolute"></div>
-      <div class="desc absolute">
-        域研紋理生活映照 近相城市未來啟迪
+      <div class="title absolute" data-aos="fade-down" data-aos-delay="300">大師公設</div>
+      <div class="subtitle absolute" data-aos="fade-down" data-aos-delay="300">域研近相空間設計李俊平大師</div>
+      <div class="line absolute" data-aos="fade" data-aos-delay="200" ></div>
+      <div class="desc absolute" data-aos="fade-up" data-aos-delay="300">
+        域研紋理生活映照 近相城市未來啟迪<br>
         規劃前的環境研究，使空間能反映在地性格，憑藉地域的文化與特質蘭構築生活空間，使室內格局及接待會館噹帶人文美學的承載量體。身為記錄城市歷史的角色，反觀空間價值，誘發城市生命力，啟迪未來的可能和遠見的視野。
       </div>
     </div>
@@ -35,8 +35,8 @@
 
 .section8 {
   width: size(1920);
-  height: size(1178);
-  max-height: size(1358);
+  height: size(1190);
+  max-height: size(1458);
   position: relative;
   background: #fff;
   // min-height: size(900);
@@ -139,13 +139,13 @@
 .line {
   background-color: #888;
   width: size(1500);
-  bottom: size(196);
+  bottom: size(210);
   left: size(210);
   height: size(2);
 }
 .desc {
   width: size(1500);
-  bottom: size(110);
+  bottom: size(80);
   left: size(210);
   font-size: size(18);
   font-weight: normal;
@@ -224,10 +224,10 @@
   }
 
   .slide-name {
-    right: 20px;
-    bottom: 15px;
+    right:1.5em;
+    bottom:1em;
     color: #fff;
-    font-size: 15px;
+    font-size: size(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -235,6 +235,7 @@
     letter-spacing: 0.89px;
     text-align: left;
     color: #ffffff;
+   text-shadow:0 0.1em 0.3em #000;
   }
 
   // &:nth-child(1) {
@@ -494,12 +495,11 @@
     width: 100%;
     height: 100%;
     z-index: 0;
-
-    img {
-      width: 100%;
-      height: sizem(300);
-      object-fit: cover;
+    .slide-name{
+      right: 1em;
+    font-size: sizem(13);
     }
+
 
     // &:nth-child(1) {
     //   z-index: 1;
@@ -610,23 +610,23 @@ export default {
       slideList: [
         {
           img: require('./s8/1景觀戲水池.jpg'),
-          name: '景觀戲水池',
+          name: '景觀戲水池 3D情境示意圖',
         },
         {
           img: require('./s8/2頂樓星空bar.jpg'),
-          name: '頂樓星空bar',
+          name: '頂樓星空bar 3D情境示意圖',
         },
         {
           img: require('./s8/3CASA迎賓大廳.jpg'),
-          name: 'CASA迎賓大廳',
+          name: 'CASA迎賓大廳 3D情境示意圖',
         },
         {
           img: require('./s8/4人文交誼廳.jpg'),
-          name: '人文交誼廳',
+          name: '人文交誼廳 3D情境示意圖',
         },
         {
           img: require('./s8/5地下停車場.jpg'),
-          name: '地下停車場',
+          name: '地下停車場 3D情境示意圖',
         },
       ],
     }

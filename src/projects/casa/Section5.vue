@@ -15,15 +15,15 @@
           </div>
         </div>
       </div>
-      <div class="title absolute">
+      <div class="title absolute" data-aos="fade-down" data-aos-delay="400">
         能動能靜
       </div>
-      <div class="subtitle absolute">一動一靜 時尚華麗轉身 回家沐浴芬多精</div>
-      <div class="line absolute"></div>
-      <div class="desc absolute">
+      <div class="subtitle absolute" data-aos="fade-down" data-aos-delay="300">一動一靜 時尚華麗轉身 <br v-if="isMobile">回家沐浴芬多精</div>
+      <div class="line absolute" data-aos="fade" data-aos-delay="200" ></div>
+      <div class="desc absolute" data-aos="fade-up" data-aos-delay="300" >
         地段決定住家的價值！全台最貴豪宅富人聚落，以往身家沒有幾十個億進不來，「信義CASA」實現您入主燙金門牌的奢侈夢想，鄰近信義計劃區正核心，輕取時尚潮流第一線，轉個彎回到家享受綠意頭等艙，隱於城市繁華與自然間的珍稀地段。
       </div>
-      <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+      <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
     </div>
@@ -222,11 +222,12 @@
     object-fit: cover;
   }
 
+  
   .slide-name {
-    right: 20px;
-    bottom: 15px;
+    right:1.5em;
+    bottom:1em;
     color: #fff;
-    font-size: 15px;
+    font-size: size(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -234,6 +235,7 @@
     letter-spacing: 0.89px;
     text-align: left;
     color: #ffffff;
+   text-shadow:0 0.1em 0.3em #000;
   }
 
   // &:nth-child(1) {
@@ -502,11 +504,9 @@
     width: 100%;
     height: 100%;
     z-index: 0;
-
-    img {
-      width: 100%;
-      height: sizem(300);
-      object-fit: cover;
+    .slide-name{
+      right: 1em;
+    font-size: sizem(13);
     }
 
     // &:nth-child(1) {

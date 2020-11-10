@@ -13,10 +13,10 @@
     <vue-lazy-component class="section relative" id="section1" @init="init" style="z-index: 3;">
       <Section1 />
     </vue-lazy-component>
-
+<!--
     <vue-lazy-component class="section" id="section2">
       <Section2 />
-    </vue-lazy-component>
+    </vue-lazy-component> -->
     <vue-lazy-component
       class="section"
       id="section3"
@@ -54,12 +54,12 @@
     >
       <Section8 />
     </vue-lazy-component>
-    <vue-lazy-component
+<!--      <vue-lazy-component
       class="section"
       id="section9"
     >
-      <Section9 />
-    </vue-lazy-component>
+    <Section9 />
+    </vue-lazy-component>-->
     <vue-lazy-component
       class="section relative"
       id="section10"

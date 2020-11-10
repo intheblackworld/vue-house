@@ -2,7 +2,7 @@
   <div>
     <div class="section3">
       <img src="./s2/hr.png" alt="" class="hr absolute">
-      <div class="title-d absolute-jc">珍稀地段</div>
+      <div class="title-d absolute-jc" data-aos="fade-down" data-aos-delay="200" >珍稀地段</div>
       <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -17,13 +17,13 @@
           </div>
         </div>
       </div>
-      <div class="title absolute">繁華都心</div>
-      <div class="subtitle absolute">信義區 全台首座國際CBD 站上世界舞台的繁華都心</div>
-      <div class="line absolute"></div>
-      <div class="desc absolute">
+      <div class="title absolute" data-aos="fade-down" data-aos-delay="400" >繁華都心</div>
+      <div class="subtitle absolute" data-aos="fade-down" data-aos-delay="300" >信義區 全台首座國際CBD <br v-if="isMobile">站上世界舞台的繁華都心</div>
+      <div class="line absolute" data-aos="fade" data-aos-delay="200" ></div>
+      <div class="desc absolute" data-aos="fade-up" data-aos-delay="300" >
         台灣最驕傲的經濟櫥窗信義計畫區，自1980年代進行開發，為全台首座國際中心商業區（Central Business District，CBD），數十年來，跟著國際脈絡趨勢大躍進，匯聚市政核心、企業總部、百貨商場、五星級酒店、藝文美學及億級豪宅等，放眼天際線盡是世界一流的建築名師爭相在此，留下一座座令人驚豔的搶眼地標。
       </div>
-      <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+      <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
     </div>
@@ -222,10 +222,10 @@
   }
 
   .slide-name {
-    right: 20px;
-    bottom: 15px;
+    right:1.5em;
+    bottom:1em;
     color: #fff;
-    font-size: 15px;
+    font-size: size(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -233,6 +233,7 @@
     letter-spacing: 0.89px;
     text-align: left;
     color: #ffffff;
+   text-shadow:0 0.1em 0.3em #000;
   }
 
   // &:nth-child(1) {
@@ -492,11 +493,9 @@
     width: 100%;
     height: 100%;
     z-index: 0;
-
-    img {
-      width: 100%;
-      height: sizem(300);
-      object-fit: cover;
+    .slide-name{
+      right: 1em;
+    font-size: sizem(13);
     }
 
     // &:nth-child(1) {

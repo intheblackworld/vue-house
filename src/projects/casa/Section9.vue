@@ -20,10 +20,10 @@
           </div>
         </div>
       </div>
-      <div class="title absolute">園藝設計</div>
-      <div class="subtitle absolute">太研規劃景觀建築師設計總監吳書原</div>
-      <div class="line absolute"></div>
-      <div class="desc absolute">
+      <div class="title absolute" data-aos="fade-down" data-aos-delay="300">園藝設計</div>
+      <div class="subtitle absolute" data-aos="fade-down" data-aos-delay="300">太研規劃景觀建築師設計總監吳書原</div>
+      <div class="line absolute" data-aos="fade" data-aos-delay="200" ></div>
+      <div class="desc absolute" data-aos="fade-up" data-aos-delay="300">
         台中花博植栽策畫、台北「西區門戶計畫」三井倉庫歷史建築景觀推手吳書原，畢業於英國AA建築學院，為英國皇家景觀建築師協會副會員（ALI），對於景觀植物的觀念，有著遠多於視覺感官的深刻認知，跳脫傳統框架，為當代植物哲學的實踐家。
       </div>
     </div>
@@ -222,10 +222,10 @@
   }
 
   .slide-name {
-    right: 20px;
-    bottom: 15px;
+    right:1.5em;
+    bottom:1em;
     color: #fff;
-    font-size: 15px;
+    font-size: size(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -233,8 +233,8 @@
     letter-spacing: 0.89px;
     text-align: left;
     color: #ffffff;
+   text-shadow:0 0.1em 0.3em #000;
   }
-
   // &:nth-child(1) {
   //   z-index: 1;
   //   // opacity: 1;
@@ -492,12 +492,11 @@
     width: 100%;
     height: 100%;
     z-index: 0;
-
-    img {
-      width: 100%;
-      height: sizem(300);
-      object-fit: cover;
+    .slide-name{
+      right: 1em;
+    font-size: sizem(13);
     }
+
 
     // &:nth-child(1) {
     //   z-index: 1;

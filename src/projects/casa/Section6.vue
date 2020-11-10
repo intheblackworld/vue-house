@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="section6">
-      <div class="title-d absolute-jc">大師團隊</div>
+      <div class="title-d absolute-jc" data-aos="fade-down" data-aos-delay="200">大師團隊</div>
       <div class="swipe swipe1 absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(1)" v-touch:swipe.right="() => addMultiIndex(1)">
           <transition-group name="swipe-fade" mode="out-in">
@@ -36,16 +36,16 @@
           </div>
         </div>
       </div>
-      <div class="title1 absolute">
+      <div class="title1 absolute" data-aos="fade-down" data-aos-delay="200">
         瑞天開發
       </div>
-      <div class="desc1 absolute">
+      <div class="desc1 absolute" data-aos="fade-up" data-aos-delay="600">
         在大台北有不少精品建築的瑞天開發，可以說是「精緻豪宅」代言人，推案足跡遍及台北市中心、天母、汐止、土城…，擅長打造高坪效空間，讓每一塊珍稀土地，注入全新價值
       </div>
-      <div class="title2 absolute">
+      <div class="title2 absolute" data-aos="fade-down" data-aos-delay="400">
         晏京機構
       </div>
-      <div class="desc2 absolute">
+      <div class="desc2 absolute" data-aos="fade-up" data-aos-delay="800">
         「好建築，應該以居住者的立場出發，走在人們還沒想到的地方。」以優良品質、專業技術、創意延伸、貼心服務四大核心為企業精神，建築品質屢獲國家金獎肯定。
       </div>
     </div>
@@ -142,14 +142,14 @@
 
 .desc1,
 .desc2 {
-  width: size(725);
+  width: size(730);
   top: size(812);
   font-size: size(18);
   font-weight: 300;
   font-stretch: normal;
   font-style: normal;
   line-height: 2;
-  letter-spacing:0.05em;
+  letter-spacing:0.03em;
   text-align: justify;
   color: #e0fcfc;
 }
@@ -229,12 +229,11 @@
   img {
     width: 100%;
   }
-
   .slide-name {
-    right: 20px;
-    bottom: 15px;
+    right:1.5em;
+    bottom:1em;
     color: #fff;
-    font-size: 15px;
+    font-size: size(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -242,6 +241,7 @@
     letter-spacing: 0.89px;
     text-align: left;
     color: #ffffff;
+   text-shadow:0 0.1em 0.3em #000;
   }
 
   // &:nth-child(1) {
@@ -504,11 +504,9 @@
     width: 100%;
     height: 100%;
     z-index: 0;
-
-    img {
-      width: 100%;
-      height: sizem(300);
-      object-fit: cover;
+    .slide-name{
+      right: 1em;
+    font-size: sizem(13);
     }
 
     // &:nth-child(1) {

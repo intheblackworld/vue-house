@@ -1,10 +1,11 @@
 <template>
   <div>
     <div class="section10">
-      <div class="title-d absolute-jc">嚴選建材</div>
-      <div class="mask absolute"></div>
-      <div class="border absolute"></div>
-      <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+     <img src="./s2/hr.png" alt="" class="hr absolute">
+      <div class="title-d absolute-jc" data-aos="fade-down" data-aos-delay="200">嚴選建材</div>
+      <div class="mask absolute" data-aos="fade-down-left" data-aos-delay="200"></div>
+      <div class="border absolute" data-aos="fade-up-right" data-aos-delay="200"></div>
+      <div class="swipe absolute" data-aos="fade" data-aos-delay="400" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -21,8 +22,8 @@
       <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
-      <div class="en absolute" v-html="slideList[slideIndex].en" data-aos="fade" data-aos-delay="400"></div>
-      <div class="name absolute" v-html="slideList[slideIndex].name" data-aos="fade" data-aos-delay="600"></div>
+      <div class="en absolute" v-html="slideList[slideIndex].en" data-aos="fade-down" data-aos-delay="600"></div>
+      <div class="name absolute" v-html="slideList[slideIndex].name" data-aos="fade-up" data-aos-delay="800"></div>
 
     </div>
   </div>
@@ -53,6 +54,13 @@
   }
 }
 
+.hr {
+  width: 100vw;
+  top: size(-1);
+  left: 0;
+  transform: scaleY(-1);
+  opacity: 1;
+}
 .title-d {
   width: size(160);
   top: size(90);
@@ -112,7 +120,6 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(-2);
   text-align: left;
   color: #ffffff;
 }
@@ -322,6 +329,14 @@
     // background-attachment: fixed;
     overflow: hidden;
   }
+  .hr {
+    width: auto;
+    height: sizem(10);
+    top: sizem(-1);
+    left: 0;
+    opacity: 1;
+  }
+
   .title-d {
     width: sizem(120);
     top: sizem(51);
@@ -362,31 +377,23 @@
 
   .en {
     top: sizem(403);
-    left: sizem(97);
+    left: sizem(0);
+    width:100%;
     font-size: sizem(15);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.92;
     letter-spacing: sizem(0.75);
     text-align: center;
-    color: #eee93a;
   }
 
   .name {
-    width: sizem(360);
     top: sizem(425);
+    width:100%;
     left: 0;
     right: 0;
     margin: 0 auto;
     font-size: sizem(25);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.92;
-    letter-spacing: sizem(-1.25);
     text-align: center;
-    color: #ffffff;
   }
 
   .border {
@@ -395,7 +402,7 @@
 
   .mask {
     width: sizem(360);
-    height: sizem(96);
+    height: sizem(110);
     top: sizem(386);
     right: sizem(8);
     background-color: rgba(0, 63, 68, 0.5);
@@ -459,12 +466,6 @@
     width: 100%;
     height: 100%;
     z-index: 0;
-
-    img {
-      width: 100%;
-      height: sizem(300);
-      object-fit: cover;
-    }
 
     // &:nth-child(1) {
     //   z-index: 1;
@@ -576,47 +577,47 @@ export default {
         {
           img: require('./s10/1INNOCI-SQUARE單孔檯面盆.jpg'),
           en: 'KOHLER UNDEERSCORE',
-          name: '單孔檯面盆',
+          name: '多功能浴室淨暖機',
         },
         {
           img: require('./s10/2INNOCI-SQUARE單孔檯面盆.jpg'),
-          en: 'KOHLER UNDEERSCORE',
+          en: 'INNOCI SQUARE',
           name: '單孔檯面盆',
         },
         {
           img: require('./s10/3.jpg'),
-          en: 'KOHLER UNDEERSCORE',
-          name: '單孔檯面盆',
+          en: 'KOHLER INNATE',
+          name: '全自動智慧馬桶',
         },
         {
           img: require('./s10/4.jpg'),
-          en: 'KOHLER UNDEERSCORE',
-          name: '單孔檯面盆',
+          en: 'INNOCI SQUARE',
+          name: '臉盆龍頭',
         },
         {
           img: require('./s10/5.jpg'),
-          en: 'KOHLER UNDEERSCORE',
-          name: '單孔檯面盆',
+          en: ' ',
+          name: '多功能浴室淨暖機',
         },
         {
           img: require('./s10/6.jpg'),
-          en: 'KOHLER UNDEERSCORE',
-          name: '單孔檯面盆',
+          en: 'INNOCI  LUXURY',
+          name: '平台式兩用花灑淋浴柱',
         },
         {
           img: require('./s10/7.jpg'),
-          en: 'KOHLER UNDEERSCORE',
-          name: '單孔檯面盆',
+          en: 'EZEK',
+          name: '易直飲 生飲機',
         },
         {
           img: require('./s10/8.jpg'),
-          en: 'KOHLER UNDEERSCORE',
-          name: '單孔檯面盆',
+          en: '櫻花SAKURA',
+          name: '櫻花單口IH感應爐',
         },
         {
           img: require('./s10/10.jpg'),
-          en: 'KOHLER UNDEERSCORE',
-          name: '單孔檯面盆',
+          en: 'MELAMINE 廚身HDPE',
+          name: '高壓成型防水木地板',
         },
       ],
     }
