@@ -626,7 +626,7 @@ export default {
         },
         {
           img: require('./s8/5地下停車場.jpg'),
-          name: '地下停車場 3D情境示意圖',
+          name: '社區出入空間 3D情境示意圖',
         },
       ],
     }

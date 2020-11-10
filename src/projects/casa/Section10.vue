@@ -606,8 +606,8 @@ export default {
         },
         {
           img: require('./s10/7.jpg'),
-          en: 'EZEK',
-          name: '易直飲 生飲機',
+          en: ' ',
+          name: '冷熱生飲設備',
         },
         {
           img: require('./s10/8.jpg'),
@@ -616,8 +616,8 @@ export default {
         },
         {
           img: require('./s10/10.jpg'),
-          en: 'MELAMINE 廚身HDPE',
-          name: '高壓成型防水木地板',
+          en: ' ',
+          name: '德國進口超耐磨木地板',
         },
       ],
     }

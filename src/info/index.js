@@ -11,19 +11,16 @@ export default {
   indigatorLength: 10,
 
   houseInfos: [
-    ['投資興建', '鐵冠建設股份有限公司',],
-    ['建築設計', '鄭復綱建築師事務所',],
-    ['工程營造', '昌譽營造股份有限公司',],
-    ['公設擘劃', '紅林室內裝修設計有限公司',],
-    ['基地面積', '約197坪',],
-    ['樓層規劃', '地上10層/地下3層',],
-    ['坪數規劃', '23-28坪',],
-    ['建築代銷', '君頤廣告',],
-  //  ['經  紀  人 ', '呂佳縈',],
-    ['座落位置', '台北市中山區新生北路二段76巷10-20號',],
+    ['投資興建', '瑞天開發、汎利建',],
+    ['建築設計', '陳逸倫建築師事務所',],
+    ['基地面積', '316坪',],
+    ['樓層規劃', '地上8層/ 地下4層',],
+    ['規劃戶數', '64戶',],
+    ['規劃坪數', '14~24坪',],
+    ['座落位置', '台北市信義區吳興街524巷',],
   ],
 
-  gtmCode: ['WX44LWQ'], // 可放置多個
+  gtmCode: [' '], // 可放置多個
   recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
