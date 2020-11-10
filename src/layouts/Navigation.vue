@@ -105,8 +105,9 @@ export default {
       line-height: size(38);
       margin-top: 5px;
       background-color: #0a5b6a;
-      border: none;
+      border:1px solid #ff99;
       border-radius: 20px / 20px;
+  
       transition: all 0.5s;
     &:hover,
     &.active {
