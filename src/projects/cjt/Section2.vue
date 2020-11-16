@@ -1,5 +1,6 @@
 <template>
   <div class="section2 relative">
+<iframe class="if" src="https://drive.google.com/file/d/1WpNUGObbL12I2eXgmnpCJ8J16oLr0SF9/preview"></iframe>
     <div class="bg relative" v-if="!isMobile"><img src="./s2/0.png" alt="輕井澤" class="bg-img" data-aos="fade" data-aos-delay="300" />
    <!--   <img src="./s2/1.png" alt="輕井澤" class="bg-img" data-aos="fade" data-aos-delay="300" />
       <img src="./s2/2.png" alt="海佃商圈" class="bg-img" data-aos="fade" data-aos-delay="400" />
@@ -98,6 +99,7 @@
   background-position: center;
   background-size: 100% auto;
 }
+.if{width:calc(80vh * 1920 / 1080);height: 80vh;margin:0 0 10vh;}
 .bg-img {
   width: 100vw;
   height: auto;
