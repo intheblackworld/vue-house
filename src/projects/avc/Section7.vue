@@ -1,5 +1,5 @@
 <template>
-  <div class="section6">
+  <div class="section7">
     <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
@@ -34,7 +34,7 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section6 {
+.section7 {
   width: size(1920);
   height: 100vh;
   min-height: size(900);
@@ -289,7 +289,7 @@ hr {
 }
 
 @media screen and (max-width: 767px) {
-  .section6 {
+  .section7 {
     width: 100vw;
     height: calc(100vh - 63px);
     min-height: sizem(700);
@@ -510,7 +510,7 @@ import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section6',
+  name: 'section7',
 
   mixins: [slider],
 

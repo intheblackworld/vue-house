@@ -1,5 +1,12 @@
 <template>
   <div class="section5">
+    <img src="./s1/b.png" alt="" class="b1">
+    <img src="./s1/b.png" alt="" class="b2">
+    <img src="./s1/b.png" alt="" class="b3">
+    <img src="./s1/b.png" alt="" class="b4">
+    <img src="./s2/img.png" alt="" class="img1">
+    <img src="./s4/img.png" alt="" class="img2">
+
     <img src="./s5/map.png" alt class="map" v-if="!isMobile" />
     <img src="./s5/icon.png" alt class="icon" />
   </div>
@@ -30,6 +37,51 @@
 .icon {
   transform: translateY(-3%);
   animation: heartbeat 0.5s ease-in alternate infinite;
+}
+
+.b1 {
+  @include img_l_pc(198, 58, 720);
+  animation: an2 1.5s infinite alternate;
+}
+
+.b2 {
+  @include img_l_pc(308, 767, 429);
+  animation: an 2.5s infinite alternate;
+}
+
+.b3 {
+  @include img_l_pc(169, 764, 1141);
+  animation: an 2.5s infinite alternate;
+}
+
+.b4 {
+  @include img_r_pc(671, 0, -300);
+  animation: an 4.5s infinite alternate;
+}
+
+.img1 {
+  @include img_r_pc(348, 457, -180);
+  animation: an 2.5s infinite alternate;
+}
+
+.img2 {
+  @include img_l_pc(548, 857, -280);
+  animation: an 2.5s infinite alternate;
+}
+
+@keyframes an {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes an2 {
+  to {
+    transform: translateY(0) rotate(5deg);
+  }
 }
 
 @keyframes heartbeat {

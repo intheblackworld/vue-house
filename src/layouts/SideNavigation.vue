@@ -3,9 +3,9 @@
     <div class="nav relative">
       <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
       <div class="menu" @click="toggleSidebar">
-        <div :class="`menu-icon ${isOpen ? 'menu-icon-active' : ''}`"></div>
-        <!-- <img v-if="isOpen" src="@/projects/jh/s4/close.png" class="close" alt />
-        <img v-else src="@/assets/img/menu-btn.png" alt />-->
+        <!-- <div :class="`menu-icon ${isOpen ? 'menu-icon-active' : ''}`"></div> -->
+        <img v-if="isOpen" src="@/projects/jh/s4/close.png" class="close" alt />
+        <img v-else src="@/assets/img/menu-btn.png" alt />
       </div>
       <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
       <ul :class="`navlist ${isOpen ? 'open': ''}`">
@@ -95,18 +95,18 @@ export default {
   right: 30px;
   width: 40px;
   height: 40px;
-  background-color: #fff;
+  // background-color: #fff;
   cursor: pointer;
 
-  // img {
-  //   width: 100%;
-  // }
+  img {
+    width: 100%;
+  }
 
-  // .close {
-  //   width: 40px;
-  //   margin-top: 20px;
-  //   margin-right: 0px;
-  // }
+  .close {
+    width: 40px;
+    margin-top: 20px;
+    margin-right: 0px;
+  }
 }
 
 .logo {

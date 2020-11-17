@@ -1,138 +1,46 @@
 <template>
   <div class="section8">
-    <div class="block absolute"></div>
-    <img
-      src="./s8/bg.png"
-      alt=""
-      class="back absolute"
-    >
-    <div class="bg">
-      <!-- <img
-        src="./s1/butterfly2.png"
-        alt=""
-        class="fly2 absolute"
-        data-aos="fade-up-left"
-        data-aos-delay="800"
-      >
-      <img
-        src="./s1/butterfly3.png"
-        alt=""
-        class="fly3 absolute"
-        data-aos="fade-up-right"
-        data-aos-delay="900"
-      > -->
-      <div class="txt absolute">
-        <div
-          class="title"
-          data-aos="fade-right"
-          data-aos-delay="400"
-        >
-          <h3>升等 世界級的<br />
-            幸福空間</h3>
-        </div>
-        <div
-          class="space"
-          data-aos="fade-left"
-          data-aos-delay="400"
-        >
-          DESIGN SPACE
-        </div>
-        <div
-          class="hr"
-          data-aos="zoom-in-right"
-          data-aos-delay="400"
-        ></div>
-        <div
-          class="desc"
-          data-aos="fade-right"
-          data-aos-delay="600"
-        >
-          【春福采采】延續煙波飯店美學眼光<br />
-          以全齡化思考設計每項設施堅持把細節做到最細膩<br />
-          讓體貼與感性，注入生活裡為家庭的每位成員<br />
-          延伸展演美好生活的新場域
-        </div>
-
-        <div
-          class="pagination flex-ac"
-          data-aos="fade-left"
-          data-aos-delay="800"
-          v-if="isPC"
-        >
-          <div
-            :class="`pagination-dot`"
-            v-for="(slide, index) in slideList"
-            :key="slide.img + '-dot'"
-            @click="goTo(index)"
-          ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-        </div>
-        <div class="subtxt absolute">
-          <div
-            class="subtitle"
-            data-aos="fade-left"
-            data-aos-delay="1000"
-            v-html="slideList[slideIndex].subtitle"
-          ></div>
-          <div
-            class="text"
-            data-aos="fade-left"
-            data-aos-delay="1100"
-            v-html="slideList[slideIndex].text"
-          ></div>
-        </div>
-      </div>
-      <div
-        class="swipe absolute"
-        data-aos="fade-up"
-        data-aos-delay="200"
-        @mouseenter.stop="toggleTimer = false"
-        @mouseleave.stop="toggleTimer = true"
-      >
-        <div
-          class="swipe-wrap relative"
-          v-touch:swipe.left="decIndex"
-          v-touch:swipe.right="addIndex"
-        >
-          <transition-group
-            name="swipe-fade"
-            mode="out-in"
-          >
-            <div
-              v-for="(slide, i) in slideList"
-              v-show="slideIndex === i"
-              :key="slide.img"
-              :class="`swipe-item absolute`"
-            >
-              <img
-                :src="slide.img"
-                :alt="slide.subtitle"
-              >
-              <div
-                class="name absolute"
-                v-html="slide.name"
-              ></div>
-            </div>
-          </transition-group>
-          <div
-            class="swipe-btns absolute flex-ac flex-jb"
-            v-if="isMobile"
-          >
-            <img
-              src="./all/prev-btn.png"
-              alt=""
-              class="prev-btn"
-              @click="decIndex"
-            >
-            <img
-              src="./all/next-btn.png"
-              alt=""
-              class="next-btn"
-              @click="addIndex"
-            >
+    <img src="./s1/b.png" alt="" class="b1">
+    <img src="./s1/b.png" alt="" class="b2">
+    <img src="./s1/b.png" alt="" class="b3">
+    <img src="./s1/b.png" alt="" class="b4">
+    <img src="./s2/img.png" alt="" class="img1">
+    <img src="./s4/img.png" alt="" class="img2">
+    <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" :alt="slide.name">
+            <div class="name absolute" v-html="slide.name"></div>
           </div>
+        </transition-group>
+        <div class="swipe-btns absolute flex-ac flex-jb">
+          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
         </div>
+        <!-- <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+        </div> -->
       </div>
     </div>
+    <img src="./s1/logobg.png" alt="睿暘水漾LOGO" class="logobg">
+    <div class="btns flex-ac flex-jc wrap">
+      <h3 :class="`btn flex-c ${slideIndex === index ? 'active' : ''}`" v-for="(slide, index) in slideList" :key="slide.btn" @click="goTo(index)">{{slide.btn}}</h3>
+    </div>
+    <h3 class="title1">
+      純漾好格局
+    </h3>
+    <h3 class="title2">
+      看了就知道
+    </h3>
+    <hr>
+    <h3 class="desc">
+      {{slideList[slideIndex].desc}}
+    </h3>
+    <h3 class="subtitle">
+      {{slideList[slideIndex].subtitle}}
+    </h3>
+
   </div>
 </template>
 
@@ -147,139 +55,176 @@
   background-size: cover;
   background-attachment: fixed;
   overflow: hidden;
-  .bg {
-    width: 1556px;
-    height: 100%;
-    max-width: 90%;
+}
+
+.bg-img {
+  width: size(1920);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  object-fit: cover;
+
+  &:nth-child(1) {
     position: relative;
-    margin: auto;
   }
 }
 
-.block {
-  width: size(1090);
-  height: 100%;
-  top: size(0);
-  left: size(0);
-  background-color: #d6aa99;
+.btns {
+  @include img_l_pc(1200, 60, 0);
+  .btn {
+    width: size(291);
+    height: size(74);
+    background-color: #ffffff;
+    border-radius: 35px / 35px;
+    margin: 0 size(48);
+    margin-bottom: size(30);
+    font-size: size(35.6);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: size(1.39);
+    text-align: left;
+    color: #000;
+    cursor: pointer;
+    &.active {
+      color: #fff;
+      background-color: #6e3a1d;
+    }
+  }
 }
 
-.back {
-  width: size(534);
-  top: size(35);
-  left: size(0);
-  // z-index: 2;
-}
-
-.fly2 {
-  width: size(119);
-  top: calc(50% + 2vw);
-  right: size(70);
-}
-
-.fly3 {
-  width: size(61);
-  top: calc(50% + 8vw);
-  right: size(0);
-}
-.txt {
-  width: calc(100% - 57vw);
-  top: 12%;
-  right: size(0);
-  font-stretch: normal;
-  font-style: normal;
-  text-align: justify;
-  font-size: size(16);
-  min-height: 76%;
-}
-
-.title {
-  font-size: size(51.6);
+.title1 {
+  @include img_r_pc(270, 300, 490);
+  font-size: size(50);
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.43;
-  letter-spacing: size(2.06);
-  text-align: left;
-  color: #333333;
-  white-space: nowrap;
-}
-
-.hr {
-  width: 100%;
-  height: size(2);
-  min-height: 1px;
-  margin: size(31) 0;
-  background-color: #af8680;
-}
-
-.desc {
-  width: size(490);
-  top: size(423);
-  right: size(150);
-  font-size: size(16);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2.25;
-  letter-spacing: size(1.12);
-  text-align: left;
-  color: #333333;
-}
-.subtxt {
-  bottom: size(55);
-  display: flex;
-  align-items: center;
-  left: size(0);
-}
-.subtitle {
-  font-size: size(46.7);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.3;
-  letter-spacing: size(0.93);
-  text-align: left;
-  color: #d6aa99;
-  padding: 0 0.5em 0 0;
-  border-right: 2px solid #d6aa99;
-  margin: 0 0.5em 0 0;
-  white-space: nowrap;
-}
-
-.text {
-  width: size(237);
-  font-size: size(16);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: size(1.12);
-  text-align: left;
-  color: #333333;
-}
-
-.space {
-  top: size(253);
-  right: size(197);
-  font-size: size(73.6);
-  font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(-4.18);
+  letter-spacing: size(4);
   text-align: left;
-  color: #d6aa99;
+  color: #ec6300;
+  white-space: nowrap;
+}
+
+.title2 {
+  @include img_r_pc(286, 367, 280);
+  font-size: size(50);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(4);
+  text-align: left;
+  color: #ec6300;
+  white-space: nowrap;
+}
+
+hr {
+  @include img_r_pc(551, 434, 233);
+  border: solid 2px #f6ab00;
+}
+
+.desc {
+  @include img_r_pc(496, 470, 262);
+  font-size: size(29.3);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.78;
+  letter-spacing: size(1.61);
+  text-align: left;
+  color: #231815;
+}
+
+.txt {
+  @include img_r_pc(187, 980, 25);
+  text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
+  font-size: size(26);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(3.61);
+  text-align: left;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.subtitle {
+  @include img_l_pc(731, 946, 218);
+  font-size: size(44);
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(-1.8);
+  text-align: left;
+  color: #000000;
+  white-space: nowrap;
+}
+
+.logobg {
+  // div位置：width: size(656), height: size(708) top: size(113), right: size(182)
+  @include div_r_pc(772, 831, 176, 107);
+  background-image: url('./s1/logobg.png');
+  background-size: cover;
+}
+
+.b1 {
+  @include img_l_pc(198, 58, 720);
+  animation: an2 1.5s infinite alternate;
+}
+
+.b2 {
+  @include img_l_pc(308, 767, 429);
+  animation: an 2.5s infinite alternate;
+}
+
+.b3 {
+  @include img_l_pc(169, 764, 1141);
+  animation: an 2.5s infinite alternate;
+}
+
+.b4 {
+  @include img_r_pc(671, 0, -300);
+  animation: an 4.5s infinite alternate;
+}
+
+.img1 {
+  @include img_r_pc(348, 457, -180);
+  animation: an 2.5s infinite alternate;
+}
+
+.img2 {
+  @include img_l_pc(548, 857, -280);
+  animation: an 2.5s infinite alternate;
+}
+
+@keyframes an {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes an2 {
+  to {
+    transform: translateY(0) rotate(5deg);
+  }
 }
 
 /* Swipe */
 .swipe {
-  width: size(1030);
-  height: 76%;
-  top: 12%;
-  left: size(0);
+  width: size(760);
+  height: size(670);
+  top: size(254);
+  left: size(204);
   object-fit: cover;
-  z-index: 3;
 }
 
 // begin
@@ -339,17 +284,17 @@
   }
 
   .name {
-    right: size(20);
-    bottom: size(20);
-    font-size: size(66);
-    font-weight: normal;
+    right: 1.5em;
+    bottom: 1em;
+    font-size: 0.78125vw;
+    font-weight: 400;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2;
-    letter-spacing: -0.02em;
+    line-height: 1;
+    letter-spacing: 0.89px;
     text-align: left;
-    color: #ffffff;
-    opacity: 0.7;
+    color: #fff;
+    text-shadow: 0 0.1em 0.3em #000;
   }
 
   // &:nth-child(1) {
@@ -369,9 +314,10 @@
 
 .pagination {
   width: auto;
-  //right: size(406);
-  margin: size(64) auto;
-  justify-content: flex-start;
+  right: 0;
+  top: -35px;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 .pagination-dot {
@@ -385,7 +331,7 @@
     width: 20px;
     height: 20px;
     border-radius: 20px;
-    box-shadow: 0 0 0 1px #d6aa99;
+    box-shadow: 0 0 0 1px #27a8a8;
     position: relative;
     background-color: rgba(0, 0, 0, 0.01);
     transition: all 0.5s;
@@ -395,7 +341,7 @@
       width: 60%;
       height: 60%;
       display: block;
-      background: #d6aa99;
+      background: #27a8a8;
       border-radius: 20px;
       opacity: 1;
       position: absolute;
@@ -412,7 +358,7 @@
         width: 100%;
         height: 100%;
         display: block;
-        background: #d6aa99;
+        background: #27a8a8;
         border-radius: 20px;
         opacity: 1;
         position: absolute;
@@ -454,113 +400,66 @@
 @media screen and (max-width: 767px) {
   .section8 {
     width: 100vw;
-    height: sizem(245 + 406);
-    min-height: sizem(600);
+    height: calc(100vh - 63px);
+    min-height: sizem(700);
     max-height: sizem(812);
     .bg {
       width: 100%;
       max-width: 100%;
     }
   }
-
-  .block {
-    display: none;
-  }
-
-  .space {
-    position: absolute;
-    top: auto;
-    bottom: sizem(-80);
-    right: 0;
-    font-size: sizem(50);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(-1.8);
-    text-align: left;
-    color: #d6aa99;
-    white-space: nowrap;
-  }
-
-  .fly2 {
-    width: sizem(87);
-    top: sizem(304);
-    right: sizem(32);
-  }
-
-  .fly3 {
-    display: none;
-  }
   .txt {
     width: sizem(310);
-    top: sizem(250);
+    top: sizem(30);
     right: sizem(33);
-    height: auto;
+    left: auto;
     font-size: sizem(15);
-    min-height: 0%;
+    z-index: 2;
   }
 
   .title {
-    width: 100%;
     font-size: sizem(25);
-    line-height: 1.44;
-    letter-spacing: 0.04em;
-    margin: sizem(74) 0 0 0;
   }
 
   .hr {
-    width: 100%;
-    height: 2px;
-    margin: sizem(23) 0;
+    height: sizem(2);
   }
 
   .desc {
-    width: 100%;
-    font-size: sizem(13);
-    line-height: 1.7;
-    letter-spacing: 0.03em;
-  }
-  .subtxt {
-    top: 0;
-    left: 0;
-    bottom: auto;
-  }
-  .subtitle {
-    padding-right: sizem(18);
-    border-right: 2px solid #d6aa99;
-    top: sizem(265);
-    left: sizem(33);
-    right: auto;
-    font-size: sizem(20);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: sizem(0.93);
-    text-align: left;
-    color: #d6aa99;
+    font-size: sizem(15);
+    letter-spacing: 0.05em;
   }
 
-  .text {
-    width: sizem(193);
-    top: sizem(245 + 12);
-    right: sizem(32.3);
-    font-size: sizem(13);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.7;
-    letter-spacing: sizem(1);
-    text-align: left;
-    color: #333333;
+  .art {
+    font-size: sizem(35.2);
+    text-align: center;
+    letter-spacing: -0.01em;
+  }
+
+  .btn-group {
+    /*
+   width: sizem(303 + 8);
+    top: sizem(396);
+    right: sizem(33);
+    z-index: 6; */
+    z-index: 4;
+    justify-content: space-between;
+    margin-top: 0.6em;
+
+    .btn {
+      width: sizem(150);
+      height: sizem(35);
+      font-size: sizem(16);
+      letter-spacing: 0.1em;
+      margin: 0;
+    }
   }
 
   /* Swipe */
   .swipe {
-    width: sizem(375);
-    height: sizem(245);
-    min-height: sizem(245);
+    width: 100%;
+    //height: sizem(750);
+    // min-height: sizem(750);
     top: sizem(0);
     left: sizem(0);
     object-fit: cover;
@@ -613,22 +512,36 @@
 
   .swipe-item {
     width: 100%;
-    height: 100%;
     z-index: 0;
+    height: sizem(750);
+    bottom: 0;
+    left: 0;
 
     img {
       width: 100%;
-    }
-    .name {
-      right: sizem(32);
+      height: sizem(750);
       bottom: 0;
-      font-size: sizem(40);
+      left: 0;
     }
+
+    // &:nth-child(1) {
+    //   z-index: 1;
+    //   // opacity: 1;
+    // }
+
+    // &.base {
+    //   z-index: 1;
+    //   opacity: 1;
+    // }
+    // &.active {
+    //   z-index: 2;
+    //   // opacity: 1;
+    // }
   }
 
   .pagination {
     width: auto;
-    bottom: sizem(91);
+    bottom: size(91);
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -690,7 +603,7 @@
     width: 100%;
     height: 100%;
     padding: 0 15px;
-    z-index: 3;
+    z-index: 1;
 
     .prev-btn,
     .next-btn {
@@ -718,34 +631,40 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s8/1.jpg'),
-          name: 'LOBBY',
-          subtitle: '精品大廳',
-          text: '高雅門廳接待朋友、約訪客戶皆體面稱頭',
+          img: isMobile ? require('./mo/6/bg.jpg') : require('./s8/a.png'),
+          title: '純漾好格局 看了就知道',
+          desc:
+            '犧牲了可售坪數，只為了能有最好的格局，這樣的心意邀您眼見為憑。琢磨許久的方整規劃，讓每一戶擁有良好採光，也減少走道空間的浪費，讓「家」回歸居住最純粹。',
+          subtitle: '2+1房．2衛．客廳．餐廳．廚房．陽台',
+          btn: 'A戶∣27.9坪',
         },
         {
-          img: require('./s8/2.jpg'),
-          name: 'SALOON',
-          subtitle: '交誼廳',
-          text: '無論沙發座位、吧檯區，給您專屬的最悠閒',
+          img: isMobile ? require('./mo/6/bg2.jpg') : require('./s8/b.png'),
+          desc:
+            '不用花時間出門找運動場地、花月費加入健身房，興致一來穿上運動鞋，隨時開始熱血飆汗。',
+          subtitle: '2房．1衛．客廳．餐廳．廚房．陽台',
+          btn: 'B戶∣23.08坪',
         },
         {
-          img: require('./s8/3.jpg'),
-          name: 'READING ROOM',
-          subtitle: '閱覽室',
-          text: '用好空間享受閱讀，更是沉澱自我的最佳時刻',
+          img: isMobile ? require('./mo/6/bg2.jpg') : require('./s8/c.png'),
+          desc:
+            '陪孩子放電最怕出門大包小包到親子館人擠人，現在電梯一搭在社區裡和孩子一起交朋友玩翻天。',
+          subtitle: '1房．1衛．客廳．餐廳．廚房．陽台',
+          btn: 'C戶∣18.32坪',
         },
         {
-          img: require('./s8/4.jpg'),
-          name: 'GAMING ROOM',
-          subtitle: '遊戲室',
-          text: '遊樂生活、探索自我！社區就有一座專屬',
+          img: isMobile ? require('./mo/6/bg2.jpg') : require('./s8/d.png'),
+          desc:
+            '三五好友小酌相聚、戶外觀星搖椅迎風愜意，獨棟VIP會館式包廂，把信義區時尚酒吧搬回家。',
+          subtitle: '2房．1衛．客廳．餐廳．廚房．陽台',
+          btn: 'D戶∣24.01坪',
         },
         {
-          img: require('./s8/5.jpg'),
-          name: 'HOME GYM',
-          subtitle: '健身房',
-          text: '在家運動，天氣不用顧慮、目標幾K隨心所欲',
+          img: isMobile ? require('./mo/6/bg2.jpg') : require('./s8/e.png'),
+          desc:
+            '在遼闊的水岸天空下曬曬暖陽、和家人輕鬆喝茶談天說地，BBQ區隨時開爐歡聚不用等到中秋節。',
+          subtitle: '2+1房．2衛．客廳．餐廳．廚房．陽台',
+          btn: 'E戶∣28.68坪',
         },
       ],
     }
