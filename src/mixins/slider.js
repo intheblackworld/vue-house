@@ -2,6 +2,9 @@ export default {
   data() {
     return {
       slideIndex: 0,
+      slideIndex1: 0,
+      slideIndex2: 0,
+      slideIndex3: 0,
       toggleTimer: true,
     }
   },

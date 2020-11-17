@@ -1,21 +1,52 @@
 <template>
   <div>
     <div class="section1">
-      <img src="./s1/bg.png" alt="" class="bg-img">
-      <img src="./s1/logobg.png" alt="睿暘水漾LOGO" class="absolute logobg">
-      <img src="./s1/logo.png" alt="睿暘水漾LOGO" class="absolute logo">
-      <img src="./s1/t1.png" alt="三重CP值最高水岸宅" class="absolute t1">
-      <img src="./s1/t2.png" alt="早鳥優惠驚喜價18-28坪" class="absolute t2">
-      
-      <div class="animate-bg">
+      <!-- <img src="./s1/bg.png" alt="" class="bg-img"> -->
 
-      </div>
+      <img src="./s1/b.png" alt="" class="b1">
+      <img src="./s1/b.png" alt="" class="b2">
+      <img src="./s1/b.png" alt="" class="b3">
+      <img src="./s1/b.png" alt="" class="b4">
+
+      <img src="./s1/img.png" alt="" class="img">
+      <img src="./s1/logobg.png" alt="睿暘水漾LOGO" class="logobg">
+      <img src="./s1/logo.png" alt="睿暘水漾LOGO" class="logo">
+      <img src="./s1/t1.png" alt="三重CP值最高水岸宅" class="t1">
+      <img src="./s1/t2.png" alt="早鳥優惠驚喜價18-28坪" class="t2">
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
+// 新增 mixin 代表意義：
+// @mixin img_r_pc($width, $top, $right) {
+//   position: absolute;
+//   width: size($width);
+//   top: size($top);
+//   right: size($right);
+// }
+
+// @mixin img_r_m($width, $top, $right) {
+//   position: absolute;
+//   width: sizem($width);
+//   top: sizem($top);
+//   right: sizem($right);
+// }
+
+// @mixin img_l_pc($width, $top, $left) {
+//   position: absolute;
+//   width: size($width);
+//   top: size($top);
+//   left: size($left);
+// }
+
+// @mixin img_l_m($width, $top, $left) {
+//   position: absolute;
+//   width: sizem($width);
+//   top: sizem($top);
+//   left: sizem($left);
+// }
 
 .section1 {
   width: size(1920);
@@ -44,13 +75,18 @@
   }
 }
 
+.img {
+  @include img_r_pc(1700, 1027, -800);
+  transform-origin: center;
+  transform: rotate(45deg);
+}
+
 .logo {
-  width: size(502);
-  top: size(347);
-  right: size(267);
+  @include img_r_pc(502, 347, 267);
 }
 
 .logobg {
+  // 圖片位置：width: size(712), top: size(201), left: size(118)
   @include img_r_pc(712, 201, 118);
 }
 
@@ -63,11 +99,39 @@
 }
 
 
+.b1 {
+  @include img_l_pc(198, 58, 720);
+  animation: an2 1.5s infinite alternate;
+}
 
-.fly1 {
-  width: size(74);
-  top: size(345);
-  right: size(239);
+.b2 {
+  @include img_l_pc(308, 767, 429);
+  animation: an 2.5s infinite alternate;
+}
+
+.b3 {
+  @include img_l_pc(169, 764, 1141);
+  animation: an 2.5s infinite alternate;
+}
+
+.b4 {
+  @include img_r_pc(671, 0, -300);
+  animation: an 4.5s infinite alternate;
+}
+
+@keyframes an {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes an2 {
+  to {
+    transform: translateY(0) rotate(5deg);
+  }
 }
 
 @media only screen and (max-width: 1440px) {

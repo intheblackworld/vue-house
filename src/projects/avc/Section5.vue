@@ -12,10 +12,11 @@
         data-aos="fade-up-left"
         data-aos-delay="800"
       >
-      <img
+      <!-- <img
         src="./s1/butterfly1.png"
-        alt="butterfly"></div>
-      <img
+        alt="butterfly"> -->
+        </div>
+      <!-- <img
         src="./s1/butterfly2.png"
         alt=""
         class="fly2 absolute"
@@ -28,7 +29,7 @@
         class="fly3 absolute"
         data-aos="fade-up-left"
         data-aos-delay="800"
-      >
+      > -->
       <div
         class="title"
         data-aos="fade-right"

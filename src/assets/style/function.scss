@@ -11,6 +11,37 @@
   @return #{$c-size};
 }
 
+@mixin div_r_pc($width, $height, $top, $right) {
+  position: absolute;
+  width: size($width);
+  height: size($height);
+  top: size($top);
+  right: size($right);
+}
+
+@mixin div_l_pc($width, $height, $top, $left) {
+  position: absolute;
+  width: size($width);
+  height: size($height);
+  top: size($top);
+  left: size($left);
+}
+
+@mixin div_r_m($width, $height, $top, $right) {
+  position: absolute;
+  width: sizem($width);
+  height: sizem($height);
+  top: sizem($top);
+  right: sizem($right);
+}
+
+@mixin div_l_m($width, $height, $top, $left) {
+  position: absolute;
+  width: sizem($width);
+  height: sizem($height);
+  top: sizem($top);
+  left: sizem($left);
+}
 
 @mixin img_r_pc($width, $top, $right) {
   position: absolute;

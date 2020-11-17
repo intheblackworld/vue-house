@@ -44,7 +44,7 @@ body {
   background-attachment: fixed;
   background-size: auto;
   background-position: center center;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   overflow: hidden;//試底下多的那塊哪來的
 
   &.no-padding-top {

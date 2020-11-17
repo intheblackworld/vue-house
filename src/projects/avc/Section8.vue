@@ -7,7 +7,7 @@
       class="back absolute"
     >
     <div class="bg">
-      <img
+      <!-- <img
         src="./s1/butterfly2.png"
         alt=""
         class="fly2 absolute"
@@ -20,7 +20,7 @@
         class="fly3 absolute"
         data-aos="fade-up-right"
         data-aos-delay="900"
-      >
+      > -->
       <div class="txt absolute">
         <div
           class="title"

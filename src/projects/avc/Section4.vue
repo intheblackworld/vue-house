@@ -1,126 +1,92 @@
 <template>
   <div class="section4">
-      <img
-        src="./s4/bg.png"
-        alt=""
-        class="back absolute"
-      >
-    <div class="bg">
-      <img
-        src="./s1/butterfly1.png"
-        alt=""
-        class="fly1 absolute"
-        data-aos="fade-up-left"
-        data-aos-delay="800"
-      >
-    <div class="txt absolute">
-       <div
-        class="title"
-        data-aos="fade-right"
-        data-aos-delay="400"
-      ><h3>南紡購物中心為鄰<br />繁華商圈一次集結</h3>
-      </div>
-      <div
-        class="hr"
-        data-aos="zoom-in-right"
-        data-aos-delay="600"
-      ></div>
-      <div
-        class="desc"
-        data-aos="fade-right"
-        data-aos-delay="800"
-      >
-        南紡購物中心占地約8,000坪，結合購物中心、老爺酒店、威秀影城、誠品書店等機能與指標品牌，加上各式各樣主題餐廳，為台南東區最大、最象徵性的地標商圈。更與周邊成大商圈、東門商圈相互串聯，繁華一次到位！入主【春福采采】，正是同時把握商圈便利與公園悠閒的不二首選！
-        
-        <ul class="desc2"
-          data-aos="fade-right"
-          data-aos-delay="800"
-        >
-          <li>與占地約8,000坪「南紡購物中心」比鄰而居</li>
-          <li>結合老爺酒店、威秀影城、誠品書店等精彩機能</li>
-          <li>台南東區最大、最象徵性的地標商圈</li>
-          <li>同步串聯周邊成大商圈、中華商圈</li>
-        </ul>
+    <img src="./s1/b.png" alt="" class="b1">
+    <img src="./s1/b.png" alt="" class="b2">
+    <img src="./s1/b.png" alt="" class="b3">
+    <img src="./s1/b.png" alt="" class="b4">
+    <img src="./s2/img.png" alt="" class="img1">
+    <img src="./s4/img.png" alt="" class="img2">
+
+
+    <div class="swipe swipe1 absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList1" v-show="slideIndex1 === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" :alt="slide.name">
+            <div class="name absolute" v-html="slide.name"></div>
+          </div>
+        </transition-group>
+        <div class="swipe-btns absolute flex-ac flex-jb">
+          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decMultiIndex(1)">
+          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addMultiIndex(1)">
+        </div>
+        <!-- <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+        </div> -->
       </div>
     </div>
-      <div
-        class="shopping absolute"
-        data-aos="fade-left"
-        data-aos-delay="1000" v-if="isMobile"
-      >
-        SHOPPING
-      </div>
-      <div
-        class="swipe absolute"
-        data-aos="fade-up"
-        data-aos-delay="200"
-        @mouseenter.stop="toggleTimer = false"
-        @mouseleave.stop="toggleTimer = true"
-      >
-      <div
-        class="pagination absolute flex-ac"
-        data-aos="fade-up"
-        data-aos-delay="200"
-        v-if="isPC"
-      >
-        <div
-          :class="`pagination-dot`"
-          v-for="(slide, index) in slideList"
-          :key="slide.img + '-dot'"
-          @click="goTo(index)"
-        ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-      </div>
-      <div
-        class="shopping absolute"
-        data-aos="fade-left"
-        data-aos-delay="1000" v-if="!isMobile"
-      >
-        SHOPPING
-      </div>
-        <div
-          class="swipe-wrap relative"
-          v-touch:swipe.left="decIndex"
-          v-touch:swipe.right="addIndex"
-        >
-          <transition-group
-            name="swipe-fade"
-            mode="out-in"
-          >
-            <div
-              v-for="(slide, i) in slideList"
-              v-show="slideIndex === i"
-              :key="slide.img"
-              :class="`swipe-item absolute`"
-            >
-              <img
-                :src="slide.img"
-                :alt="slide.name"
-              >
-              <div
-                class="name absolute"
-                v-html="slide.name"
-              ></div>
-            </div>
-          </transition-group>
-          <div
-            class="swipe-btns absolute flex-ac flex-jb"
-            v-if="isMobile"
-          >
-            <img
-              src="./all/prev-btn.png"
-              alt=""
-              class="prev-btn"
-              @click="decIndex"
-            >
-            <img
-              src="./all/next-btn.png"
-              alt=""
-              class="next-btn"
-              @click="addIndex"
-            >
+    <div class="swipe swipe2 absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList2" v-show="slideIndex2 === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" :alt="slide.name">
+            <div class="name absolute" v-html="slide.name"></div>
           </div>
+        </transition-group>
+        <div class="swipe-btns absolute flex-ac flex-jb">
+          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decMultiIndex(2)">
+          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addMultiIndex(2)">
         </div>
+        <!-- <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+        </div> -->
       </div>
+    </div>
+    <div class="swipe swipe3 absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList3" v-show="slideIndex3 === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" :alt="slide.name">
+            <div class="name absolute" v-html="slide.name"></div>
+          </div>
+        </transition-group>
+        <div class="swipe-btns absolute flex-ac flex-jb">
+          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decMultiIndex(3)">
+          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addMultiIndex(3)">
+        </div>
+        <!-- <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+        </div> -->
+      </div>
+    </div>
+
+    <div class="logobg1">
+      <h3 class="title">
+        商圈百貨全數到位<br />
+        熟成機能全方位
+      </h3>
+      <hr>
+      <h3 class="desc">散步5分鐘中正北路商圈，美食雜貨一應俱全，全聯、愛買、果菜市場豐富採買，家樂福、Ikea、Costco通通到位。
+      </h3>
+    </div>
+
+    <div class="logobg2">
+      <h3 class="title">
+        10多座公園+6校環抱<br />
+        好環境贏得勝利人生
+      </h3>
+      <hr>
+      <h3 class="desc">散步3分鐘到越堤步道，迎面而來的是氣勢萬千的大台北都會公園美景，多所校園書香環繞，給家人最優質的生活環境。
+      </h3>
+    </div>
+
+    <div class="logobg3">
+      <h3 class="title">
+        雙捷交會9橋之都<br />
+        輕快瞬時移動
+      </h3>
+      <hr>
+      <h3 class="desc">機捷、中和新蘆線交會，車行5分鐘速接快速道路，暢行大台北易如反掌。機捷A2a站延線建設送審中，迎接建設到家門的超級利多。</h3>
     </div>
   </div>
 </template>
@@ -130,85 +96,129 @@
 
 .section4 {
   width: size(1920);
-  height: 100vh;
-  min-height:size(900);
-  max-height:size(1080);
-  background-attachment: fixed;
-  overflow: hidden;
-  .bg{width:1556px;height: 100%;max-width:90%;position: relative;margin: auto;}
+  height: size(2160);
 }
 
-.back {
-  width: size(736);
-  bottom: size(0);
-  right: size(0);
+.logobg1 {
+  // div位置：width: size(656), height: size(708) top: size(113), right: size(182)
+  @include div_r_pc(656, 708, 113, 282);
+  background-image: url('./s1/logobg.png');
+  background-size: cover;
 }
 
-.fly1 {
-  width: size(112);
-  top: size(78);
-  left: size(-130);
+.logobg2 {
+  @include div_l_pc(656, 708, 716, 252);
+  background-image: url('./s1/logobg.png');
+  background-size: cover;
 }
-.txt {
-  width:calc(100% - 57vw);
-  top:12%;
-  left: size(0);
-  font-stretch: normal;
-  font-style: normal;
-  text-align: justify;
-  font-size: size(16);
+
+.logobg3 {
+  @include div_r_pc(656, 708, 1367, 282);
+  background-image: url('./s1/logobg.png');
+  background-size: cover;
 }
 
 .title {
-  font-size: size(51.6);
+  margin-top: size(123);
+  font-size: size(45);
   font-weight: bold;
-  line-height: 1.43;
-  letter-spacing: size(2.06);
-  color: #333333;
-  white-space: nowrap;
-  //h3{transform: scaleX(0.95);transform-origin: 0 0;}
-}
-
-.hr {
-  width: 100%;
-  height:size(2);
-  min-height:1px;
-  margin:size(62) 0;
-  background-color: #004f8f;
-}
-
-.desc {
-  font-weight: 500;
-  line-height:1.8;
-  letter-spacing: size(1.12);
-  position: relative;
-  color: #333333;z-index: 2;text-shadow: 0 0 size(5) #fff;
-}
-.desc2 {margin: 1em 0 1em 1.5em;list-style: square;
-  li{margin: 0.5em 0;list-style: inherit;}
-}
-
-.shopping {
-  bottom: 0;
-  left: size(-150);
-  font-size: size(160.2);
-  font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(-7.29);
+  letter-spacing: size(4);
+  text-align: center;
+  color: #ec6300;
+  margin-left: size(-40);
+  white-space: nowrap;
+}
+
+hr {
+  width: size(501);
+  height: 0;
+  border: solid 4px #f6ab00;
+  margin: 15px;
+  margin-left: size(50);
+}
+
+.desc {
+  width: size(434);
+  margin: 0 auto;
+  font-size: size(26);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.83;
+  letter-spacing: size(1.89);
   text-align: left;
-  color: #004f8f;
-  z-index: 5;
+  color: #231815;
+}
+
+.b1 {
+  @include img_l_pc(198, 58, 720);
+  animation: an2 1.5s infinite alternate;
+}
+
+.b2 {
+  @include img_l_pc(308, 767, 429);
+  animation: an 2.5s infinite alternate;
+}
+
+.b3 {
+  @include img_l_pc(169, 764, 1141);
+  animation: an 2.5s infinite alternate;
+}
+
+.b4 {
+  @include img_r_pc(671, 0, -300);
+  animation: an 4.5s infinite alternate;
+}
+
+.img1 {
+  @include img_r_pc(348, 457, -180);
+  animation: an 2.5s infinite alternate;
+}
+
+.img2 {
+  @include img_l_pc(548, 857, -280);
+  animation: an 2.5s infinite alternate;
+}
+
+@keyframes an {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes an2 {
+  to {
+    transform: translateY(0) rotate(5deg);
+  }
 }
 
 /* Swipe */
 .swipe {
-  width: size(1030);
-  height: 76%;
-  top:12%;
+  width: size(750);
+  height: size(470);
+  top: 0;
   right: size(0);
   object-fit: cover;
+
+  &.swipe1 {
+    top: size(179);
+    left: size(171);
+  }
+
+  &.swipe2 {
+    top: size(821);
+    right: size(174);
+  }
+  &.swipe3 {
+    top: size(1442);
+    left: size(171);
+  }
 }
 
 // begin
@@ -262,7 +272,9 @@
   z-index: 0;
 
   img {
-    width: 100%;height: 100%;object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .name {
@@ -273,7 +285,7 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.35;
-    letter-spacing:0.06em;
+    letter-spacing: 0.06em;
     color: #ffffff;
   }
 
@@ -294,7 +306,8 @@
 
 .pagination {
   width: auto;
-  right: 0;top:-35px;
+  right: 0;
+  top: -35px;
   margin: 0 auto;
   justify-content: center;
 }
@@ -380,9 +393,12 @@
   .section4 {
     width: 100vw;
     height: sizem(614 + 245);
-  min-height:sizem(0);
-  max-height:sizem(900);
-    .bg{width:100%;max-width:100%;}
+    min-height: sizem(0);
+    max-height: sizem(900);
+    .bg {
+      width: 100%;
+      max-width: 100%;
+    }
   }
 
   .fly1 {
@@ -392,29 +408,32 @@
     right: sizem(28);
   }
 
-.txt {
-  width: sizem(310);
-  top:sizem(271.5);
-  left: sizem(33);
-  font-size: sizem(15);
-}
+  .txt {
+    width: sizem(310);
+    top: sizem(271.5);
+    left: sizem(33);
+    font-size: sizem(15);
+  }
   .title {
     font-size: sizem(25);
     line-height: 1.44;
-    letter-spacing:0.04em;
+    letter-spacing: 0.04em;
   }
 
   .hr {
-    width:100%;
+    width: 100%;
     height: 1px;
-    margin: sizem(23) 0 ;
+    margin: sizem(23) 0;
   }
 
   .desc {
-    line-height:1.8;
-  letter-spacing:0.03em;
+    line-height: 1.8;
+    letter-spacing: 0.03em;
   }
-  .desc2 {margin: 1em 0 1em 1.2em;letter-spacing:-0.01em;}
+  .desc2 {
+    margin: 1em 0 1em 1.2em;
+    letter-spacing: -0.01em;
+  }
 
   .shopping {
     bottom: sizem(0);
@@ -427,7 +446,7 @@
   /* Swipe */
   .swipe {
     width: 100vw;
-    height:sizem(245.5);
+    height: sizem(245.5);
     top: 0;
     left: 0;
   }
@@ -485,7 +504,11 @@
     img {
       width: 100%;
     }
-  .name{bottom:1em;right:1em;font-size: sizem(12);}
+    .name {
+      bottom: 1em;
+      right: 1em;
+      font-size: sizem(12);
+    }
 
     // &:nth-child(1) {
     //   z-index: 1;
@@ -592,17 +615,55 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
-      slideList: [
+      slideList1: [
         {
-          img: require('./s4/1南紡夢時代.jpg'),
+          img: require('./s4/1-1.jpg'),
           name: '南紡購物中心',
         },
         {
-          img: require('./s4/2國賓影城.jpg'),
+          img: require('./s4/1-2.jpg'),
           name: '國賓影城',
         },
         {
-          img: require('./s4/3成大商圈.jpg'),
+          img: require('./s4/1-3.jpg'),
+          name: '成大商圈',
+        },
+        {
+          img: require('./s4/1-4.jpg'),
+          name: '成大商圈',
+        },
+        {
+          img: require('./s4/1-5.jpg'),
+          name: '成大商圈',
+        },
+      ],
+
+      slideList2: [
+        {
+          img: require('./s4/2-2.jpg'),
+          name: '國賓影城',
+        },
+        {
+          img: require('./s4/2-3.jpg'),
+          name: '成大商圈',
+        },
+        {
+          img: require('./s4/2-4.jpg'),
+          name: '成大商圈',
+        },
+      ],
+
+      slideList3: [
+        {
+          img: require('./s4/3-1.jpg'),
+          name: '國賓影城',
+        },
+        {
+          img: require('./s4/3-2.jpg'),
+          name: '成大商圈',
+        },
+        {
+          img: require('./s4/3-3.jpg'),
           name: '成大商圈',
         },
       ],
