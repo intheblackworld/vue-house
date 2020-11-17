@@ -36,7 +36,7 @@
               @click="toggleSidebar"
             >
               <span class="link">
-                <span>
+                <span class="flex-c">
                   <p
                     class="title"
                     v-html="item.name"
@@ -92,24 +92,24 @@ export default {
 }
 </script>
 <style lang="scss">
-.navigation {
-  .title {
-    font-size: 19px !important;
-    width: 140px;
-    height: 40px;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: linear-gradient(to right, #d70032 0%, #eb5500 100%);
-    border-radius: 20px / 20px;
-    position: relative;
-    z-index: 3;
-    &:hover {
-      background-image: linear-gradient(to left, #d70032 0%, #eb5500 100%);
-    }
-  }
-}
+// .navigation {
+//   .title {
+//     font-size: 19px !important;
+//     width: 140px;
+//     height: 40px;
+//     color: #fff;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     background-image: linear-gradient(to right, #d70032 0%, #eb5500 100%);
+//     border-radius: 20px / 20px;
+//     position: relative;
+//     z-index: 3;
+//     &:hover {
+//       background-image: linear-gradient(to left, #d70032 0%, #eb5500 100%);
+//     }
+//   }
+// }
 </style>
 <style lang="scss" scoped>
 @import '../assets/style/variableColor.scss';
@@ -182,15 +182,20 @@ export default {
     text-align: center;
     display: block;
     cursor: pointer;
-    padding: 0 0px;
-    margin: 0 10px;
+    padding: 0 22px;
+    // margin: 0 10px;
     transition: all 0.8s;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    border-right: 1px solid #fff;
     // overflow: hidden;
     // border-right: 1px solid $nav_link_hover_bg;
+
+    &:nth-last-child(1) {
+      border-right: none;
+    }
 
     &:hover {
       color: $nav_link_hover_color;

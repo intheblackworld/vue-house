@@ -8,12 +8,12 @@
         <h3 class="title">{{order.title}}</h3>
         <div class="subtitle">{{order.subTitle}}</div>
       </div> -->
-      <div
+      <h3
         class="order-title"
         v-html="order.title"
         data-aos="fade-down"
         data-aos-delay="0"
-      ></div>
+      ></h3>
       <div
         class="order-subtitle"
         v-html="order.subTitle"
@@ -345,12 +345,12 @@ export default {
   }
 }
 .order-bg {
-  background-color: $order_bg_color;
-  // background-image: $order_bg_image;
+  // background-color: $order_bg_color;
+  background-image: $order_bg_image;
   background-repeat: no-repeat;
   position: relative;
   padding-top: 130px;
-  background-size: 100vw auto;
+  background-size: 100vw 100%;
   // background-attachment: fixed;
   background-position: 0% 0%;
   font-family: $family3;
@@ -365,15 +365,19 @@ export default {
   }
   .order-title {
     font-family: $family2;
-    width: 100vw;
+    width: 80vw;
     padding-top: 20px;
-    padding-bottom: 8px;
+    padding-bottom: 20px;
+    margin: 0 auto 40px;
+    display: inline-block;
     font-weight: 700;
     line-height: 1.7;
     letter-spacing: 20px;
     font-size: calc(100vw * 36 / 1920);
     text-align: center;
     color: $order_title_color;
+    border-top: 1px solid #248184;
+    border-bottom: 1px solid #248184;
   }
 
   .order-subtitle {
@@ -480,8 +484,8 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .order-bg {
-    // background-image: $order_bg_image_m;
-    background-size: cover;
+    background-image: $order_bg_image_m;
+    background-size: 100vw auto;
     padding-top: 40px;
     margin: 0;
     position: relative;
@@ -491,8 +495,9 @@ export default {
       display: block;
     }
     .order-title {
+      width: 290px;
       padding-top: 10px;
-      padding-bottom: 5px;
+      padding-bottom: 10px;
       font-size: calc(100vw * 25 / 375);
       letter-spacing: 4px;
     }

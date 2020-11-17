@@ -12,7 +12,7 @@
         data-aos="fade-down"
         data-aos-delay="0"
       />
-      <div class="info">
+      <div class="info" id="contact-info">
         <div
           class="btn flex-c"
           @click="showCallDialog"
@@ -150,7 +150,7 @@ export default {
   position: relative;
   z-index: 3;
   width: 1200px;
-  height: 540px;
+  height: 1140px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
@@ -184,7 +184,6 @@ export default {
   color: $contact_btn_color;
   background: $contact_btn_bg;
   box-shadow: $contact_btn_border;
-  border-radius: 18px !important;
   transition: all 0.5s;
   position: relative;
   overflow: hidden;
@@ -235,11 +234,9 @@ export default {
   width: 600px;
   height: 60px;
   background: #fff;
-  color: #040000;
+  color: $contact_btn_border;
   font-weight: bold;
-  border-top-left-radius: 18px !important;
-  border-bottom-left-radius: 18px !important;
-  //box-shadow: $contact_btn_border;
+  box-shadow: $contact_btn_border;
 }
 .google-btn {
   width: 280px;
@@ -254,8 +251,6 @@ export default {
   background-position: center !important;
   border: $contact_btn_border;
   transition: all 0.5s;
-  border-top-right-radius: 18px !important;
-  border-bottom-right-radius: 18px !important;
 
   svg {
     color: $contact_google_btn_icon;
@@ -359,12 +354,10 @@ export default {
    // width: 280px;
     //padding: 0 1em;
     text-align: justify;
-    border-radius: 18px !important;
   }
 
   .google-btn {
     margin-top: 15px;
-    border-radius: 18px !important;
   }
 }
 

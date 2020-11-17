@@ -1,26 +1,24 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '台北市中山區民生東路一段31號',
+  address: '新北市三重區五谷王北街48號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1807.144524956971!2d121.523773!3d25.0581904!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a942c98ae91f%3A0xd85e809b42298290!2zMTA0OTHlj7DljJfluILkuK3lsbHljYDmsJHnlJ_mnbHot6_kuIDmrrUzMeiZnw!5e0!3m2!1szh-TW!2stw!4v1602555349295!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/kcDeza3vcYhne5SA6',
-  phone: '02-2541-0606',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.5006040482017!2d121.47356631500666!3d25.051016483964386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a8f6eb73de7f%3A0xcd6eec18a60f8730!2zMjQx5paw5YyX5biC5LiJ6YeN5Y2A5LqU6LC3546L5YyX6KGXNDjomZ8!5e0!3m2!1szh-TW!2stw!4v1605628939458!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/1vxT7Dtx5QZctzVP6',
+  phone: '02-89856888',
   fbLink: 'https://www.facebook.com/中山直美-115702496966413',
   fbMessage: 'https://m.me/115702496966413',
-  caseName: '中山直美',
+  caseName: '京旺協奏曲',
   indigatorLength: 10,
 
   houseInfos: [
-    ['投資興建', '鐵冠建設股份有限公司',],
-    ['建築設計', '鄭復綱建築師事務所',],
-    ['工程營造', '昌譽營造股份有限公司',],
-    ['公設擘劃', '紅林室內裝修設計有限公司',],
-    ['基地面積', '約197坪',],
-    ['樓層規劃', '地上10層/地下3層',],
-    ['坪數規劃', '23-28坪',],
-    ['建築代銷', '君頤廣告',],
-  //  ['經  紀  人 ', '呂佳縈',],
-    ['座落位置', '台北市中山區新生北路二段76巷10-20號',],
+    ['投資興建', '京旺開發建設股份有限公司'],
+    ['公設設計', '如榆建築及設計事務所'],
+    ['結構設計', '竺樺結構技師事務所'],
+    ['建案位置', '新北市三重區五谷王北街48號'],
+    ['建築設計', '呂建勳建築師事務所'],
+    ['景觀設計', '三十三設計有限公司'],
+    ['建築代銷', '聯碩行銷股份有限公司'],
+    ['建照號碼', '109建字第XXXX號'],
   ],
 
   gtmCode: ['WX44LWQ'], // 可放置多個
@@ -28,7 +26,7 @@ export default {
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
   order: {
-    title: isMobile ? '立即預約直賞' : '立即預約直賞',
+    title: isMobile ? '預約賞屋' : '預約賞屋',
     subTitle: ''
   }
 }

@@ -1,15 +1,14 @@
 <template>
   <div class="home no-padding-top">
     <Loading :loading="load" />
-    <SideNavigation />
-    <!-- <Navigation v-if="isMobile" /> -->
+    <!-- <SideNavigation /> -->
+    <Navigation v-if="!isMobile" />
     <!-- <Indigator :viewIndex="viewIndex" /> -->
     <!-- <full-page
       ref="fullPage"
       :options="options"
       id="fullpage"
     > -->
-    <LeafFlow />
     <vue-lazy-component class="section relative" id="section1" @init="init" style="z-index: 3;">
       <Section1 />
     </vue-lazy-component>
@@ -21,7 +20,7 @@
       class="section"
       id="section3"
     >
-      <Section3 :viewIndex="viewIndex" />
+      <Section3 />
     </vue-lazy-component>
     <vue-lazy-component
       class="section relative"
@@ -35,43 +34,6 @@
       id="section5"
     >
       <Section5 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section6"
-    >
-      <Section6 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section7"
-    >
-      <Section7 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section8"
-    >
-      <Section8 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section9"
-    >
-      <Section9 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section relative"
-      id="section10"
-      style="z-index: 3;"
-    >
-      <Section10 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section11"
-    >
-      <Section11 />
     </vue-lazy-component>
     <vue-lazy-component class="section" id="contact">
       <ContactSection />
@@ -98,33 +60,27 @@
 import $ from 'jquery'
 import Navigation from '@/layouts/Navigation.vue'
 import { isMobile } from '@/utils'
-import SideNavigation from '@/layouts/SideNavigation.vue'
+// import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
-import LeafFlow from '@/components/LeafFlow.vue'
+// import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/jsjm1/Section1.vue'
-import Section2 from '@/projects/jsjm1/Section2.vue'
-import Section3 from '@/projects/jsjm1/Section3.vue'
-import Section4 from '@/projects/jsjm1/Section4.vue'
-import Section5 from '@/projects/jsjm1/Section5.vue'
-import Section6 from '@/projects/jsjm1/Section6.vue'
-import Section7 from '@/projects/jsjm1/Section7.vue'
-import Section8 from '@/projects/jsjm1/Section8.vue'
-import Section9 from '@/projects/jsjm1/Section9.vue'
-import Section10 from '@/projects/jsjm1/Section10.vue'
-import Section11 from '@/projects/jsjm1/Section11.vue'
+import Section1 from '@/projects/jw/Section1.vue'
+import Section2 from '@/projects/jw/Section2.vue'
+import Section3 from '@/projects/jw/Section3.vue'
+import Section4 from '@/projects/jw/Section4.vue'
+import Section5 from '@/projects/jw/Section5.vue'
 
 export default {
   name: 'home',
   components: {
     Loading,
     // Indigator,
-    // Navigation,
-    SideNavigation,
-    LeafFlow,
+    Navigation,
+    // SideNavigation,
+    // LeafFlow,
     ContactSection,
     MobileNav,
     Section1,
@@ -132,12 +88,6 @@ export default {
     Section3,
     Section4,
     Section5,
-    Section6,
-    Section7,
-    Section8,
-    Section9,
-    Section10,
-    Section11,
   },
 
   data() {
@@ -187,7 +137,7 @@ export default {
     // window.location = "https://ywh.nhc888.com.tw/"
   },
   mounted() {
-    window.addEventListener('scroll', this.onScroll, false)
+    // window.addEventListener('scroll', this.onScroll, false)
     // this.action = this.$refs.fullPage.api
     // if (this.isMobile) {
     //   this.$refs.fullPage.api.setResponsive(true)
@@ -196,31 +146,31 @@ export default {
   },
   methods: {
     init() {},
-    onScroll() {
-      // 获取所有锚点元素
-      const navContents = document.querySelectorAll('.section')
-      // 所有锚点元素的 offsetTop
-      const offsetTopArr = []
-      navContents.forEach(item => {
-        offsetTopArr.push(item.offsetTop)
-      })
-      // 获取当前文档流的 scrollTop
-      const scrollTop =
-        document.documentElement.scrollTop || document.body.scrollTop
-      // 定义当前点亮的导航下标
-      let navIndex = 0
-      for (let n = 0; n < offsetTopArr.length; n++) {
-        // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
-        // 那么此时导航索引就应该是n了
-        if (scrollTop >= offsetTopArr[n] - 100) {
-          navIndex = n
-        }
-      }
-      if (this.viewIndex === navIndex + 1) {
-        this.viewIndex = navIndex + 1
-      }
-      // this.viewIndex = navIndex + 1
-    },
+    // onScroll() {
+    //   // 获取所有锚点元素
+    //   const navContents = document.querySelectorAll('.section')
+    //   // 所有锚点元素的 offsetTop
+    //   const offsetTopArr = []
+    //   navContents.forEach(item => {
+    //     offsetTopArr.push(item.offsetTop)
+    //   })
+    //   // 获取当前文档流的 scrollTop
+    //   const scrollTop =
+    //     document.documentElement.scrollTop || document.body.scrollTop
+    //   // 定义当前点亮的导航下标
+    //   let navIndex = 0
+    //   for (let n = 0; n < offsetTopArr.length; n++) {
+    //     // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
+    //     // 那么此时导航索引就应该是n了
+    //     if (scrollTop >= offsetTopArr[n] - 100) {
+    //       navIndex = n
+    //     }
+    //   }
+    //   if (this.viewIndex === navIndex + 1) {
+    //     this.viewIndex = navIndex + 1
+    //   }
+    //   // this.viewIndex = navIndex + 1
+    // },
 
     // onLeave(origin, destination, direction) {
     //   if (!this.isMobile) {
