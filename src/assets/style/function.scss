@@ -10,3 +10,32 @@
   $c-size: 100vw * $size / 375;
   @return #{$c-size};
 }
+
+
+@mixin img_r_pc($width, $top, $right) {
+  position: absolute;
+  width: size($width);
+  top: size($top);
+  right: size($right);
+}
+
+@mixin img_r_m($width, $top, $right) {
+  position: absolute;
+  width: sizem($width);
+  top: sizem($top);
+  right: sizem($right);
+}
+
+@mixin img_l_pc($width, $top, $left) {
+  position: absolute;
+  width: size($width);
+  top: size($top);
+  left: size($left);
+}
+
+@mixin img_l_m($width, $top, $left) {
+  position: absolute;
+  width: sizem($width);
+  top: sizem($top);
+  left: sizem($left);
+}
