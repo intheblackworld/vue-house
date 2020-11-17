@@ -68,31 +68,6 @@
   }
 }
 
-.btns {
-  @include img_l_pc(1200, 60, 0);
-  .btn {
-    width: size(291);
-    height: size(74);
-    background-color: #ffffff;
-    border-radius: 35px / 35px;
-    margin: 0 size(48);
-    margin-bottom: size(30);
-    font-size: size(35.6);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: size(1.39);
-    text-align: left;
-    color: #000;
-    cursor: pointer;
-    &.active {
-      color: #fff;
-      background-color: #6e3a1d;
-    }
-  }
-}
-
 .title1 {
   @include img_l_pc(320, 134, 330);
   font-size: size(50);
@@ -399,67 +374,110 @@ hr {
 @media screen and (max-width: 767px) {
   .section9 {
     width: 100vw;
-    height: calc(100vh - 63px);
-    min-height: sizem(700);
+    height: calc(760);
+    min-height: sizem(760);
     max-height: sizem(812);
-    .bg {
-      width: 100%;
-      max-width: 100%;
-    }
   }
-  .txt {
-    width: sizem(310);
-    top: sizem(30);
-    right: sizem(33);
-    left: auto;
-    font-size: sizem(15);
-    z-index: 2;
-  }
-
-  .title {
-    font-size: sizem(25);
+  .title1 {
+    @include img_l_m(166, 462, 63);
+    font-size: sizem(26);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(2);
+    text-align: left;
+    color: #ec6300;
+    white-space: nowrap;
   }
 
-  .hr {
-    height: sizem(2);
+  .title2 {
+    @include img_l_m(138, 498, 173);
+    font-size: sizem(26);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(2);
+    text-align: left;
+    color: #ec6300;
+    white-space: nowrap;
+  }
+
+  hr {
+    @include img_l_m(248, 546, 63);
+    border: solid 2px #f6ab00;
   }
 
   .desc {
+    @include img_l_m(248, 560, 63);
     font-size: sizem(15);
-    letter-spacing: 0.05em;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: sizem(0.59);
+    text-align: left;
+    color: #231815;
   }
 
-  .art {
-    font-size: sizem(35.2);
-    text-align: center;
-    letter-spacing: -0.01em;
+  .subtitle {
+    @include div_l_m(184, 63, 18, 158);
+    border: 1px solid #6e3a1d;
+    border-radius: 40px / 40px;
+    font-size: sizem(34);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(2.6);
+    text-align: left;
+    color: #6e3a1d;
+    white-space: nowrap;
   }
 
-  .btn-group {
-    /*
-   width: sizem(303 + 8);
-    top: sizem(396);
-    right: sizem(33);
-    z-index: 6; */
-    z-index: 4;
-    justify-content: space-between;
-    margin-top: 0.6em;
+  .logobg {
+    // div位置：width: size(656), height: size(708) top: size(113), right: size(182)
+    @include div_r_m(347, 386, 404, 0);
+    background-image: none;
+    background-size: cover;
+  }
 
-    .btn {
-      width: sizem(150);
-      height: sizem(35);
-      font-size: sizem(16);
-      letter-spacing: 0.1em;
-      margin: 0;
-    }
+  .b1 {
+    @include img_l_m(80, 60, -20);
+    animation: an2 1.5s infinite alternate;
+  }
+
+  .b2 {
+    @include img_l_m(62, 548, 263);
+    animation: an 2.5s infinite alternate;
+  }
+
+  .b3 {
+    @include img_l_m(134, 560, 12);
+    animation: an 2.5s infinite alternate;
+  }
+
+  .b4 {
+    @include img_r_m(62, 1117, 63);
+    animation: an 4.5s infinite alternate;
+  }
+
+  .img1 {
+    display: none;
+  }
+
+  .img2 {
+    @include img_r_m(548, 1250, -280);
+    animation: an 2.5s infinite alternate;
   }
 
   /* Swipe */
   .swipe {
     width: 100%;
-    //height: sizem(750);
+    height: sizem(320);
     // min-height: sizem(750);
-    top: sizem(0);
+    top: sizem(104);
     left: sizem(0);
     object-fit: cover;
   }
@@ -512,13 +530,13 @@ hr {
   .swipe-item {
     width: 100%;
     z-index: 0;
-    height: sizem(750);
+    height: sizem(320);
     bottom: 0;
     left: 0;
 
     img {
       width: 100%;
-      height: sizem(750);
+      height: sizem(320);
       bottom: 0;
       left: 0;
     }
@@ -630,7 +648,7 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: isMobile ? require('./mo/6/bg.jpg') : require('./s9/1.jpg'),
+          img: require('./s9/1.jpg'),
           title: '',
           desc:
             '挑高的室內空間讓家盡情舒展，多出來的空間可以收納行李箱、戰利品、換季衣物，裝修變化多更多，盡情打造出獨俱風格的家。',

@@ -14,13 +14,21 @@
             <div class="name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
-        <div class="swipe-btns absolute flex-ac flex-jb">
+        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isPC">
           <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
           <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
         </div>
         <!-- <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div> -->
+      </div>
+    </div>
+    <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+      <div class="prev-btn flex-c">
+        <img src="./all/prev-btn.png" alt="" @click="decIndex">
+      </div>
+      <div class="next-btn flex-c">
+        <img src="./all/next-btn.png" alt="" @click="addIndex">
       </div>
     </div>
     <img src="./s1/logobg.png" alt="睿暘水漾LOGO" class="logobg">
@@ -400,67 +408,152 @@ hr {
 @media screen and (max-width: 767px) {
   .section8 {
     width: 100vw;
-    height: calc(100vh - 63px);
-    min-height: sizem(700);
-    max-height: sizem(812);
+    height: sizem(1050);
+    min-height: sizem(1050);
     .bg {
       width: 100%;
       max-width: 100%;
     }
   }
-  .txt {
-    width: sizem(310);
-    top: sizem(30);
-    right: sizem(33);
-    left: auto;
-    font-size: sizem(15);
-    z-index: 2;
+  .btns {
+    @include img_l_m(204, 115, 85);
+    .btn {
+      width: sizem(204);
+      height: sizem(52);
+      background-color: #ffffff;
+      border-radius: 35px / 35px;
+      margin: 0;
+      margin-bottom: 0;
+      font-size: sizem(24);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.2;
+      letter-spacing: sizem(0.94);
+      text-align: left;
+      color: #000;
+      cursor: pointer;
+      display: none;
+      &.active {
+        display: flex;
+        color: #fff;
+        background-color: #6e3a1d;
+      }
+    }
   }
 
-  .title {
-    font-size: sizem(25);
+  .title1 {
+    @include img_r_m(138, 635, 129);
+    font-size: sizem(26);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(2);
+    text-align: left;
+    color: #ec6300;
+    white-space: nowrap;
   }
 
-  .hr {
-    height: sizem(2);
+  .title2 {
+    @include img_r_m(138, 672, 129);
+    font-size: sizem(26);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(2);
+    text-align: left;
+    color: #ec6300;
+    white-space: nowrap;
+  }
+
+  hr {
+    @include img_r_m(280, 717, 43);
+    border: solid 2px #f6ab00;
   }
 
   .desc {
+    @include img_r_m(250, 742, 71);
     font-size: sizem(15);
-    letter-spacing: 0.05em;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.78;
+    letter-spacing: sizem(0.61);
+    text-align: left;
+    color: #231815;
   }
 
-  .art {
-    font-size: sizem(35.2);
-    text-align: center;
-    letter-spacing: -0.01em;
+  .txt {
+    @include img_r_m(87, 512, 20);
+    text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
+    font-size: sizem(12);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(1.61);
+    text-align: left;
+    color: #ffffff;
+    white-space: nowrap;
   }
 
-  .btn-group {
-    /*
-   width: sizem(303 + 8);
-    top: sizem(396);
-    right: sizem(33);
-    z-index: 6; */
-    z-index: 4;
-    justify-content: space-between;
-    margin-top: 0.6em;
+  .subtitle {
+    @include img_l_m(300, 538, 39);
+    font-size: sizem(18);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(-0.8);
+    text-align: left;
+    color: #000000;
+    white-space: nowrap;
+  }
 
-    .btn {
-      width: sizem(150);
-      height: sizem(35);
-      font-size: sizem(16);
-      letter-spacing: 0.1em;
-      margin: 0;
-    }
+  .logobg {
+    // div位置：width: size(656), height: size(708) top: size(113), right: size(182)
+    @include div_r_m(352, 380, 591, 4);
+    background-image: url('./s1/logobg.png');
+    background-size: cover;
+  }
+
+  .b1 {
+    @include img_l_m(80, 60, -20);
+    animation: an2 1.5s infinite alternate;
+  }
+
+  .b2 {
+    @include img_l_m(62, 548, 263);
+    animation: an 2.5s infinite alternate;
+  }
+
+  .b3 {
+    @include img_l_m(134, 560, 12);
+    animation: an 2.5s infinite alternate;
+  }
+
+  .b4 {
+    @include img_r_m(62, 1117, 63);
+    animation: an 4.5s infinite alternate;
+  }
+
+  .img1 {
+    display: none;
+  }
+
+  .img2 {
+    @include img_r_m(548, 1250, -280);
+    animation: an 2.5s infinite alternate;
   }
 
   /* Swipe */
   .swipe {
     width: 100%;
-    //height: sizem(750);
+    height: sizem(330);
     // min-height: sizem(750);
-    top: sizem(0);
+    top: sizem(188);
     left: sizem(0);
     object-fit: cover;
   }
@@ -513,13 +606,13 @@ hr {
   .swipe-item {
     width: 100%;
     z-index: 0;
-    height: sizem(750);
+    height: sizem(330);
     bottom: 0;
     left: 0;
 
     img {
       width: 100%;
-      height: sizem(750);
+      height: sizem(330);
       bottom: 0;
       left: 0;
     }
@@ -601,14 +694,31 @@ hr {
 
   .swipe-btns {
     width: 100%;
-    height: 100%;
-    padding: 0 15px;
+    height: sizem(52);
+    padding: 0px;
     z-index: 1;
+    position: absolute;
+    top: sizem(115);
 
     .prev-btn,
     .next-btn {
-      width: sizem(15);
+      width: sizem(52);
+      height: sizem(52);
       cursor: pointer;
+      background-color: #333;
+      img {
+        width: 10px;
+      }
+    }
+
+    .prev-btn {
+      border-top-right-radius: 25px;
+      border-bottom-right-radius: 25px;
+    }
+
+    .next-btn {
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
     }
   }
 }
@@ -631,7 +741,7 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: isMobile ? require('./mo/6/bg.jpg') : require('./s8/a.png'),
+          img: require('./s8/a.png'),
           title: '純漾好格局 看了就知道',
           desc:
             '犧牲了可售坪數，只為了能有最好的格局，這樣的心意邀您眼見為憑。琢磨許久的方整規劃，讓每一戶擁有良好採光，也減少走道空間的浪費，讓「家」回歸居住最純粹。',
@@ -639,28 +749,28 @@ export default {
           btn: 'A戶∣27.9坪',
         },
         {
-          img: isMobile ? require('./mo/6/bg2.jpg') : require('./s8/b.png'),
+          img: require('./s8/b.png'),
           desc:
             '不用花時間出門找運動場地、花月費加入健身房，興致一來穿上運動鞋，隨時開始熱血飆汗。',
           subtitle: '2房．1衛．客廳．餐廳．廚房．陽台',
           btn: 'B戶∣23.08坪',
         },
         {
-          img: isMobile ? require('./mo/6/bg2.jpg') : require('./s8/c.png'),
+          img: require('./s8/c.png'),
           desc:
             '陪孩子放電最怕出門大包小包到親子館人擠人，現在電梯一搭在社區裡和孩子一起交朋友玩翻天。',
           subtitle: '1房．1衛．客廳．餐廳．廚房．陽台',
           btn: 'C戶∣18.32坪',
         },
         {
-          img: isMobile ? require('./mo/6/bg2.jpg') : require('./s8/d.png'),
+          img: require('./s8/d.png'),
           desc:
             '三五好友小酌相聚、戶外觀星搖椅迎風愜意，獨棟VIP會館式包廂，把信義區時尚酒吧搬回家。',
           subtitle: '2房．1衛．客廳．餐廳．廚房．陽台',
           btn: 'D戶∣24.01坪',
         },
         {
-          img: isMobile ? require('./mo/6/bg2.jpg') : require('./s8/e.png'),
+          img: require('./s8/e.png'),
           desc:
             '在遼闊的水岸天空下曬曬暖陽、和家人輕鬆喝茶談天說地，BBQ區隨時開爐歡聚不用等到中秋節。',
           subtitle: '2+1房．2衛．客廳．餐廳．廚房．陽台',

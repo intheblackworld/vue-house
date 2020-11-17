@@ -17,6 +17,7 @@
   height: size($height);
   top: size($top);
   right: size($right);
+  left: auto;
 }
 
 @mixin div_l_pc($width, $height, $top, $left) {
@@ -25,6 +26,7 @@
   height: size($height);
   top: size($top);
   left: size($left);
+  right: auto;
 }
 
 @mixin div_r_m($width, $height, $top, $right) {
@@ -33,6 +35,7 @@
   height: sizem($height);
   top: sizem($top);
   right: sizem($right);
+  left: auto;
 }
 
 @mixin div_l_m($width, $height, $top, $left) {
@@ -41,6 +44,7 @@
   height: sizem($height);
   top: sizem($top);
   left: sizem($left);
+  right: auto;
 }
 
 @mixin img_r_pc($width, $top, $right) {
@@ -48,6 +52,7 @@
   width: size($width);
   top: size($top);
   right: size($right);
+  left: auto;
 }
 
 @mixin img_r_m($width, $top, $right) {
@@ -55,6 +60,7 @@
   width: sizem($width);
   top: sizem($top);
   right: sizem($right);
+  left: auto;
 }
 
 @mixin img_l_pc($width, $top, $left) {
@@ -62,6 +68,7 @@
   width: size($width);
   top: size($top);
   left: size($left);
+  right: auto;
 }
 
 @mixin img_l_m($width, $top, $left) {
@@ -69,4 +76,5 @@
   width: sizem($width);
   top: sizem($top);
   left: sizem($left);
+  right: auto;
 }

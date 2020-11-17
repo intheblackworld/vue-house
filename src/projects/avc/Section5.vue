@@ -7,8 +7,17 @@
     <img src="./s2/img.png" alt="" class="img1">
     <img src="./s4/img.png" alt="" class="img2">
 
-    <img src="./s5/map.png" alt class="map" v-if="!isMobile" />
+    <img src="./s5/map.png" alt class="map" />
     <img src="./s5/icon.png" alt class="icon" />
+    <div v-if="isMobile" @click="isDialog = true" class="logobg1 flex-c" data-aos="fade-up" data-aos-delay="400">
+      <h3>點圖放大</h3>
+    </div>
+    <div class="dialog flex-c" v-show="isDialog">
+      <div class="dialog-content">
+        <img class="close" @click="isDialog = false" src="./all/close.png" alt="close">
+        <img src="./s5/map.png" alt class="dialog-ma" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -105,213 +114,85 @@
 @media screen and (max-width: 767px) {
   .section5 {
     width: 100vw;
-    height: sizem(680);
-    min-height: sizem(0);
-    max-height: sizem(900);
+    height: sizem(453 + 28);
+    min-height: sizem(453 + 28);
     .bg {
       width: 100%;
       max-width: 100%;
     }
   }
 
-  .fly1,
-  .fly2 {
+  .map {
+    width: auto;
+    height: sizem(453);
+    top: 0;
+    left: 0;
+  }
+
+  .icon {
+    @include img_l_m(50, 199, 290);
+    z-index: 2;
+  }
+
+  .b1 {
     display: none;
   }
 
-  .fly3 {
-    width: sizem(85);
-    top: sizem(0);
-    right: sizem(0);
-  }
-  .txt {
-    width: sizem(310);
-    top: sizem(271.5);
-    right: sizem(33);
-    font-size: sizem(15);
-    min-height: initial;
-  }
-  .title {
-    font-size: sizem(25);
-    line-height: 1.44;
-    letter-spacing: 0.04em;
+  .b2 {
+    display: none;
   }
 
-  .hr {
-    width: 100%;
-    height: 1px;
-    margin: sizem(23) 0;
+  .b3 {
+    display: none;
   }
 
-  .desc {
-    line-height: 1.7;
-    text-align: left;
-    letter-spacing: -0.035em;
-    margin: 1em 0 1em 1.1em;
+  .b4 {
+    display: none;
   }
 
-  .life {
-    bottom: sizem(-100);
-    left: sizem(0);
-    font-size: sizem(70);
-    line-height: 1.69;
-    letter-spacing: sizem(-5.6);
+  .img1 {
+    display: none;
   }
 
-  /* Swipe */
-  .swipe {
-    width: sizem(375);
-    height: sizem(245);
-    min-height: sizem(245);
-    top: sizem(0);
-    left: sizem(0);
-    object-fit: cover;
+  .img2 {
+    display: none;
   }
 
-  // begin
-  .swipe-fade-leave-to {
-    opacity: 0;
-    z-index: 0;
-  }
-  // end
-  .swipe-fade-enter {
-    opacity: 0;
+  .logobg1 {
+    // div位置：width: size(656), height: size(708) top: size(113), right: size(182)
+    @include div_r_m(144, 156, 149, 119);
+    background-image: url('./s1/logobg.png');
+    background-size: cover;
     z-index: 1;
-  }
-
-  .swipe-fade-enter-active {
-    transition: all 0.5s ease;
-  }
-
-  .swipe-fade-leave-active {
-    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-
-  // begin
-  // .swipe-left-leave-to {
-  //   margin-left: -100vw;
-  //   z-index: 0;
-  // }
-  // // end
-  // .swipe-left-enter {
-  //   opacity: 0.5;
-  //   margin-left: 0;
-  //   z-index: 1;
-  // }
-
-  // .swipe-left-enter-active {
-  //   transition: all 0.5s ease;
-  // }
-
-  // .swipe-left-leave-active {
-  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  // }
-
-  .swipe-wrap {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .swipe-item {
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-
-    img {
-      width: 100%;
-    }
-    .name {
-      bottom: 1em;
-      right: 1em;
-      font-size: sizem(12);
-    }
-
-    // &:nth-child(1) {
-    //   z-index: 1;
-    //   // opacity: 1;
-    // }
-
-    // &.base {
-    //   z-index: 1;
-    //   opacity: 1;
-    // }
-    // &.active {
-    //   z-index: 2;
-    //   // opacity: 1;
-    // }
-  }
-
-  .pagination {
-    width: auto;
-    bottom: size(91);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    justify-content: center;
-  }
-
-  .pagination-dot {
-    padding: 5px;
-    margin: 0 10px;
-    cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
-      box-shadow: 0 0 0 1px #bd2b27;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
-      transition: all 0.5s;
-
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #bd2b27;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transition: all 0.3s;
-        transform-origin: center;
-        transform: scale(0);
-      }
-      &.active {
-        &::before {
-          content: '';
-          width: 100%;
-          height: 100%;
-          display: block;
-          background: #bd2b27;
-          border-radius: 20px;
-          opacity: 1;
-          position: absolute;
-          top: 0%;
-          // transform: translateY(-50%);
-          left: 0%;
-          transform: scale(1);
-        }
-      }
+    color: #000;
+    h3 {
+      margin-top: sizem(-20);
+      margin-left: sizem(-10);
     }
   }
 
-  .swipe-btns {
-    width: 100%;
-    height: 100%;
-    padding: 0 15px;
-    z-index: 3;
+  .dialog {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background-color: #F3E12B;
+    overflow: scroll;
 
-    .prev-btn,
-    .next-btn {
-      width: sizem(15);
-      cursor: pointer;
+    .dialog-map {
+      width: auto;
+      height: 100vh;
+      background-color: #fff;
+    }
+
+    .close {
+      width: 35px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 5px;
+      position: fixed;
+      right: 10px;
+      top: 10px;
     }
   }
 }
@@ -319,12 +200,9 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
-import slider from '@/mixins/slider.js'
 
 export default {
   name: 'section5',
-
-  mixins: [slider],
 
   data() {
     return {

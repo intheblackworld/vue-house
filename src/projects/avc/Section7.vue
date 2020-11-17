@@ -1,5 +1,6 @@
 <template>
   <div class="section7">
+    <img :src="slideList[slideIndex].img" alt="" class="bg-img" v-if="isMobile">
     <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
@@ -60,7 +61,11 @@
 
 .mask {
   @include div_l_pc(930, 260, 0, 0);
-  background-image: linear-gradient(to right, rgba(0, 0, 0, .7) 60%, rgba(0, 0, 0, 0.1) 100%);
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.7) 60%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
 }
 
 .title1 {
@@ -291,67 +296,106 @@ hr {
 @media screen and (max-width: 767px) {
   .section7 {
     width: 100vw;
-    height: calc(100vh - 63px);
-    min-height: sizem(700);
+    height: sizem(527);
+    min-height: sizem(527);
     max-height: sizem(812);
+    background-color: #000;
     .bg {
       width: 100%;
       max-width: 100%;
     }
   }
-  .txt {
-    width: sizem(310);
-    top: sizem(30);
-    right: sizem(33);
-    left: auto;
-    font-size: sizem(15);
-    z-index: 2;
+  .bg-img {
+    width: sizem(405);
+    height: sizem(557);
+    position: absolute;
+    top: sizem(-15);
+    left: sizem(-15);
+    display: block;
+    object-fit: cover;
+    filter: blur(5px);
+
+    &:nth-child(1) {
+      position: relative;
+    }
   }
 
-  .title {
-    font-size: sizem(25);
+  .label {
+    @include div_r_m(145, 64, 14, 30);
+    border: solid 1.2px #6e3a1d;
+    font-size: sizem(34);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(2.6);
+    text-align: left;
+    color: #6e3a1d;
+    border-radius: 40px / 40px;
   }
 
-  .hr {
-    height: sizem(2);
+  .title1 {
+    @include img_l_m(229, 48, 32);
+    text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
+    font-size: sizem(26);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(2);
+    text-align: left;
+    color: #ffffff;
+    white-space: nowrap;
+  }
+
+  hr {
+    @include img_r_m(310, 94, 32);
+    border: solid 1px #ffffff;
   }
 
   .desc {
+    @include img_r_m(310, 112, 32);
+    text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
     font-size: sizem(15);
-    letter-spacing: 0.05em;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.66;
+    letter-spacing: sizem(1.73);
+    text-align: left;
+    color: #ffffff;
   }
 
-  .art {
-    font-size: sizem(35.2);
-    text-align: center;
-    letter-spacing: -0.01em;
+  .txt {
+    @include img_r_m(87, 500, 20);
+    text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
+    font-size: sizem(12);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(1.61);
+    text-align: left;
+    color: #ffffff;
+    white-space: nowrap;
   }
 
-  .btn-group {
-    /*
-   width: sizem(303 + 8);
-    top: sizem(396);
-    right: sizem(33);
-    z-index: 6; */
-    z-index: 4;
-    justify-content: space-between;
-    margin-top: 0.6em;
-
-    .btn {
-      width: sizem(150);
-      height: sizem(35);
-      font-size: sizem(16);
-      letter-spacing: 0.1em;
-      margin: 0;
-    }
+  .mask {
+    @include div_l_m(375, 207, 0, 0);
+    background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.4) 60%,
+      rgba(0, 0, 0, 0.1) 100%
+    );
   }
 
   /* Swipe */
   .swipe {
     width: 100%;
+    height: sizem(320);
     //height: sizem(750);
     // min-height: sizem(750);
-    top: sizem(0);
+    top: sizem(207);
     left: sizem(0);
     object-fit: cover;
   }
@@ -404,13 +448,13 @@ hr {
   .swipe-item {
     width: 100%;
     z-index: 0;
-    height: sizem(750);
+    height: sizem(320);
     bottom: 0;
     left: 0;
 
     img {
       width: 100%;
-      height: sizem(750);
+      height: sizem(320);
       bottom: 0;
       left: 0;
     }
@@ -522,29 +566,34 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: isMobile ? require('./mo/6/bg.jpg') : require('./s7/1.jpg'),
+          img: require('./s7/1.jpg'),
           title: '舞墨迎賓廳',
-          desc: '取自國際精品飯店設計靈感，雲紋石材、木格柵、讓入門的每一位賓客享有最尊榮禮遇。',
+          desc:
+            '取自國際精品飯店設計靈感，雲紋石材、木格柵、讓入門的每一位賓客享有最尊榮禮遇。',
         },
         {
-          img: isMobile ? require('./mo/6/bg2.jpg') : require('./s7/2.jpg'),
+          img: require('./s7/2.jpg'),
           title: '都會健身房',
-          desc : '不用花時間出門找運動場地、花月費加入健身房，興致一來穿上運動鞋，隨時開始熱血飆汗。'
+          desc:
+            '不用花時間出門找運動場地、花月費加入健身房，興致一來穿上運動鞋，隨時開始熱血飆汗。',
         },
         {
-          img: isMobile ? require('./mo/6/bg2.jpg') : require('./s7/3.jpg'),
+          img: require('./s7/3.jpg'),
           title: '朵朵遊戲區',
-          desc : '陪孩子放電最怕出門大包小包到親子館人擠人，現在電梯一搭在社區裡和孩子一起交朋友玩翻天。'
+          desc:
+            '陪孩子放電最怕出門大包小包到親子館人擠人，現在電梯一搭在社區裡和孩子一起交朋友玩翻天。',
         },
         {
-          img: isMobile ? require('./mo/6/bg2.jpg') : require('./s7/4.jpg'),
+          img: require('./s7/4.jpg'),
           title: '星夜閣Lounge Bar',
-          desc : '三五好友小酌相聚、戶外觀星搖椅迎風愜意，獨棟VIP會館式包廂，把信義區時尚酒吧搬回家。'
+          desc:
+            '三五好友小酌相聚、戶外觀星搖椅迎風愜意，獨棟VIP會館式包廂，把信義區時尚酒吧搬回家。',
         },
         {
-          img: isMobile ? require('./mo/6/bg2.jpg') : require('./s7/5.jpg'),
+          img: require('./s7/5.jpg'),
           title: '水漾天空花園',
-          desc : '在遼闊的水岸天空下曬曬暖陽、和家人輕鬆喝茶談天說地，BBQ區隨時開爐歡聚不用等到中秋節。 '
+          desc:
+            '在遼闊的水岸天空下曬曬暖陽、和家人輕鬆喝茶談天說地，BBQ區隨時開爐歡聚不用等到中秋節。 ',
         },
       ],
     }

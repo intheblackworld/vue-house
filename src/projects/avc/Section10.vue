@@ -1,7 +1,9 @@
 <template>
   <div>
-    <div class="section10" v-if="isPC">
-      <h3 class="title">睿暘建設 為好建築而生</h3>
+    <div class="section10">
+      <h3 class="title" v-if="isPC">睿暘建設 為好建築而生</h3>
+      <h3 class="title1" v-if="isMobile">睿暘建設</h3>
+      <h3 class="title2" v-if="isMobile">為好建築而生</h3>
       <h3 class="desc">不惜成本，我們把這裡當作蓋自己的家，每一件作品，我們都以代表作的心力細細雕琢，一輩子的幸福居所，放心交給睿暘專業建築團隊為您把關。</h3>
       <h3 class="subtitle">嚴選建材．信賴精工</h3>
       <h3 class="label flex-c">
@@ -153,73 +155,131 @@
   .section10 {
     width: 100vw;
     min-height: auto;
-    height: sizem(799);
-    min-height: sizem(0);
-    max-height: sizem(900);
-    background-color: #2f99f1;
+    height: sizem(1500);
+    min-height: sizem(1500);
+    max-height: sizem(1500);
     background-size: cover;
     background-attachment: scroll;
   }
 
-  .logo {
-    width: sizem(260);
-    top: sizem(143);
-    left: sizem(58);
+  .bg-img {
+    width: sizem(375);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    object-fit: cover;
+
+    &:nth-child(1) {
+      position: relative;
+    }
   }
 
-  .img {
-    width: sizem(160);
-    top: sizem(-120);
-    left: sizem(16);
-  }
-
-  .title {
-    width: sizem(257);
-    top: sizem(28);
-    left: sizem(34);
-    font-size: sizem(25);
+  .title1 {
+    @include img_l_m(148, 125, 33);
+    font-size: sizem(35);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.48;
-    letter-spacing: sizem(4);
+    line-height: 1.2;
+    letter-spacing: sizem(2.8);
     text-align: left;
-    color: #ffffff;
+    color: #ea5504;
     white-space: nowrap;
-    z-index: 5;
+  }
+
+  .title2 {
+    @include img_l_m(224, 176, 120);
+    font-size: sizem(35);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(2.8);
+    text-align: left;
+    color: #ea5504;
+    white-space: nowrap;
   }
 
   .subtitle {
-    width: sizem(241);
-    top: sizem(64);
-    left: sizem(33);
-    font-size: sizem(18);
+    @include img_r_m(220, 417, 78);
+    font-size: sizem(24);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.35;
-    letter-spacing: sizem(3.24);
+    line-height: 1.2;
+    letter-spacing: sizem(1.9);
     text-align: left;
-    color: #333333;
+    color: #ea5504;
     white-space: nowrap;
-    z-index: 5;
   }
+
   .desc {
-    width: sizem(310);
-    top: sizem(108);
-    right: sizem(33);
+    @include img_r_m(310, 235, 33);
     font-size: sizem(15);
-    font-weight: 500;
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.73;
-    letter-spacing: sizem(0.75);
+    line-height: 1.86;
+    letter-spacing: sizem(1.05);
     text-align: left;
-    color: #333333;
-    z-index: 5;
+    color: #231815;
   }
-  .map {
-    margin: sizem(195) 0 0 0;
+
+  .label {
+    @include div_r_m(142, 63, 30, 31);
+    border: 1px solid #6e3a1d;
+    border-radius: 40px / 40px;
+    font-size: sizem(34);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(2.6);
+    text-align: left;
+    color: #6e3a1d;
+    white-space: nowrap;
+  }
+
+  .item-container {
+    @include img_r_m(245, 483, 65);
+    width: sizem(245);
+    transition: all 0.3s;
+  }
+
+  .item-img {
+    width: sizem(108);
+    margin-bottom: sizem(30);
+  }
+
+  .b1 {
+    @include img_l_m(80, 60, -20);
+    animation: an2 1.5s infinite alternate;
+  }
+
+  .b2 {
+    @include img_l_m(62, 548, 263);
+    animation: an 2.5s infinite alternate;
+  }
+
+  .b3 {
+    @include img_l_m(134, 560, 12);
+    animation: an 2.5s infinite alternate;
+  }
+
+  .b4 {
+    @include img_r_m(62, 1117, 63);
+    animation: an 4.5s infinite alternate;
+  }
+
+  .img1 {
+    display: none;
+  }
+
+  .img2 {
+    @include img_r_m(548, 1250, -280);
+    animation: an 2.5s infinite alternate;
   }
 }
 </style>
@@ -266,12 +326,8 @@ export default {
           '漾生活',
           '三重熟成市中心<br /吃喝玩樂All in one',
         ],
-        [
-          require('./s10/9.png'),
-        ],
-        [
-          require('./s10/10.png'),
-        ],
+        [require('./s10/9.png')],
+        [require('./s10/10.png')],
       ],
     }
   },
