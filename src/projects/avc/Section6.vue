@@ -366,18 +366,18 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
-      slideList: [
-        {
-          img: isMobile ? require('./mo/6/bg.jpg') : require('./s6/1.jpg'),
-          mode: 'dark',
-          // name: '成功大學',
-        },
-        {
-          img: isMobile ? require('./mo/6/bg2.jpg') : require('./s6/2.jpg'),
-          mode: 'light',
-          // name: '崑山科技大學',
-        },
-      ],
+      // slideList: [
+      //   {
+      //     img: isMobile ? require('./mo/6/bg.jpg') : require('./s6/1.jpg'),
+      //     mode: 'dark',
+      //     // name: '成功大學',
+      //   },
+      //   {
+      //     img: isMobile ? require('./mo/6/bg2.jpg') : require('./s6/2.jpg'),
+      //     mode: 'light',
+      //     // name: '崑山科技大學',
+      //   },
+      // ],
     }
   },
 
