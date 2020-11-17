@@ -150,7 +150,7 @@ export default {
   position: relative;
   z-index: 3;
   width: 1200px;
-  height: 337px;
+  height: 538px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
@@ -187,7 +187,6 @@ export default {
   position: relative;
   overflow: hidden;
   font-weight: 600;
-  border-radius: 18px;
   &.half {
     width: 49%;
   }
@@ -235,8 +234,6 @@ export default {
   background: #fff;
   color: $contact_btn_color;
   font-weight: bold;
-  border-top-left-radius: 18px;
-  border-bottom-left-radius: 18px;
   //box-shadow: $contact_btn_border;
 }
 .google-btn {
@@ -247,8 +244,6 @@ export default {
   text-decoration: none;
   color: $contact_google_btn_color;
   background: $contact_google_btn_bg;
-  border-top-right-radius: 18px;
-  border-bottom-right-radius: 18px;
   background-position: center !important;
   // box-shadow: $contact_btn_border;
   transition: all 0.5s;
@@ -342,11 +337,9 @@ export default {
     width: 280px;
     padding: 0 1em;
     text-align: justify;
-    border-radius: 18px;
   }
 
   .google-btn {
-    border-radius: 18px;
     margin-top: 15px;
   }
 }

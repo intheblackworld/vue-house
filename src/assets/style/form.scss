@@ -74,7 +74,7 @@
   // opacity: 0 !important;
   border-radius: 0 !important;
   font-size: 20px !important;
-  font-weight: bold !important;
+  font-weight: normal !important;
   letter-spacing: 10px;
   text-align: justify;
   background-position: center !important;
@@ -83,11 +83,10 @@
   margin: 0 auto !important;
   margin-top: 20px !important;
   transition: all 0.3s !important;
-  border-radius: 15px !important;
   color: $order_submit_color;
   // z-index: 10;
-  border: none !important;
-  font-family: $family3;
+  border: 1px solid #ea5504 !important;
+  font-family: $family3 !important;
 
   &.is-disabled {
     background-color: $order_sumbit_disable_bg;

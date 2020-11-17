@@ -1,6 +1,6 @@
 <template>
   <div class="section5">
-    <img src="./s5/map.png" alt class="map" v-if="!isMobile" data-aos="fade-down" data-aos-delay="0" />
+    <img src="./s5/map.png" alt class="map" v-if="!isMobile" />
     <img src="./s5/icon.png" alt class="icon" />
   </div>
 </template>
@@ -19,14 +19,12 @@
 }
 
 .map {
-  height: 90vh;
-  width: auto;
-  margin: 0 auto;
-  margin-top: 5vh;
+  @include img_l_pc(1514, 84, 204);
 }
 
 .icon {
-  @include img_r_pc(119, 499, 810);
+  @include img_l_pc(119, 499, 810);
+  z-index: 2;
 }
 
 .icon {
