@@ -1,14 +1,7 @@
 <template>
   <div class="section5">
-    <img
-        src="./s5/map.png"
-        alt
-        class="map"
-        v-if="!isMobile"
-        data-aos="fade-down"
-        data-aos-delay="0"
-      />
-    <img src="./s5/icon.png" alt class="icon" data-aos="fade-down" data-aos-delay="500" />
+    <img src="./s5/map.png" alt class="map" v-if="!isMobile" data-aos="fade-down" data-aos-delay="0" />
+    <img src="./s5/icon.png" alt class="icon" />
   </div>
 </template>
 
@@ -33,38 +26,17 @@
 }
 
 .icon {
-  animation: heartbeat 1s infinite;
+  @include img_r_pc(119, 499, 810);
 }
 
-.icon, .icon2 {
-  position: absolute;
-  height: 90vh;
-  width: auto;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  margin-top: 5vh;
-  z-index: 2;
+.icon {
+  transform: translateY(-3%);
+  animation: heartbeat 0.5s ease-in alternate infinite;
 }
 
 @keyframes heartbeat {
-  0% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  40% {
-    opacity: 0;
-  }
-  60% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 0.75;
-  }
-  100% {
-    opacity: 0.75;
+  to {
+    transform: translateY(0);
   }
 }
 @media only screen and (max-width: 1440px) {
@@ -310,24 +282,6 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
-      slideList: [
-        {
-          img: require('./s5/1成功大學.jpg'),
-          name: '成功大學',
-        },
-        {
-          img: require('./s5/2崑山科技大學.jpg'),
-          name: '崑山科技大學',
-        },
-        {
-          img: require('./s5/3情境示意.jpg'),
-          name: '情境示意',
-        },
-        {
-          img: require('./s5/4復興國小.jpg'),
-          name: '復興國小',
-        },
-      ],
     }
   },
 
