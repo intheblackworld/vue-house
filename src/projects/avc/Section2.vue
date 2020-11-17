@@ -84,6 +84,10 @@
   margin: 0 auto;
   margin-top: size(222);
   width: size(1088);
+  transition: all .3s;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 .item {
   width: size(240);

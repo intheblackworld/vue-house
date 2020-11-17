@@ -7,7 +7,6 @@
     <img src="./s2/img.png" alt="" class="img1">
     <img src="./s4/img.png" alt="" class="img2">
 
-
     <div class="swipe swipe1 absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
@@ -278,15 +277,17 @@ hr {
   }
 
   .name {
-    right: size(20);
-    bottom: size(20);
-    font-size: size(14.8);
-    font-weight: 500;
+    right: 1.5em;
+    bottom: 1em;
+    font-size: 0.78125vw;
+    font-weight: 400;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.35;
-    letter-spacing: 0.06em;
-    color: #ffffff;
+    line-height: 1;
+    letter-spacing: 0.89px;
+    text-align: left;
+    color: #fff;
+    text-shadow: 0 0.1em 0.3em #000;
   }
 
   // &:nth-child(1) {
@@ -505,9 +506,17 @@ hr {
       width: 100%;
     }
     .name {
+      right: 1.5em;
       bottom: 1em;
-      right: 1em;
       font-size: sizem(12);
+      font-weight: 400;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1;
+      letter-spacing: 0.89px;
+      text-align: left;
+      color: #fff;
+      text-shadow: 0 0.1em 0.3em #000;
     }
 
     // &:nth-child(1) {

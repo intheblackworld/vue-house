@@ -1,115 +1,22 @@
 <template>
-  <div>
-    <div :class="`section6 ${slideList[slideIndex].mode}`">
-      <div
-        class="pagination absolute flex-ac"
-        data-aos="fade-up"
-        data-aos-delay="200"
-        v-if="isPC"
-      >
-        <div
-          :class="`pagination-dot`"
-          v-for="(slide, index) in slideList"
-          :key="slide.img + '-dot'"
-          @click="goTo(index)"
-        ><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-      </div>
-      <div class="txt absolute">
-        <div
-          class="title"
-          data-aos="fade-right"
-          data-aos-delay="400"
-        >
-          <h3>天際風景新格局<br />時尚風格 珍稀傳家</h3>
-        </div>
-        <div
-          :class="`hr`"
-          data-aos="zoom-in-right"
-          data-aos-delay="600"
-        ></div>
-        <div
-          :class="`desc`"
-          data-aos="fade-right"
-          data-aos-delay="800"
-        >
-          精選平實特區，這繁華與悠閒的共享之地，<br />
-          春福共築大樓與別墅的和諧適居，承襲煙波飯店一貫的簡約與美學，以深灰與白色共演比例之美，以簡潔線條爬梳層次品味，美好生活的嚮往與稀有透天店鋪的價值，絕對值得世代相傳！
-        </div>
-        <div
-          :class="`art`"
-          data-aos="fade-left"
-          data-aos-delay="1000"
-        >
-          ARCHIECTURE ART
-        </div>
-        <div
-          :class="`btn-group flex-ac flex-jb`"
-          data-aos="zoom-in"
-          data-aos-delay="900"
-        >
-          <a
-            href="http://cf.h35.tw/"
-            class="btn flex-c"
-          >精品大樓
-          </a>
-          <a
-            href="http://cf.h35.tw/villa"
-            class="btn flex-c"
-          >透天別墅宅</a>
-        </div>
-      </div>
-      <div
-        class="swipe absolute"
-        data-aos="fade-up"
-        data-aos-delay="0"
-        @mouseenter.stop="toggleTimer = false"
-        @mouseleave.stop="toggleTimer = true"
-      >
-        <div
-          class="swipe-wrap relative"
-          v-touch:swipe.left="decIndex"
-          v-touch:swipe.right="addIndex"
-        >
-          <transition-group
-            name="swipe-fade"
-            mode="out-in"
-          >
-            <div
-              v-for="(slide, i) in slideList"
-              v-show="slideIndex === i"
-              :key="slide.img"
-              :class="`swipe-item absolute`"
-            >
-              <img
-                :src="slide.img"
-                :alt="slide.name"
-              >
-              <div
-                class="name absolute"
-                v-html="slide.name"
-              ></div>
-            </div>
-          </transition-group>
-          <div
-            class="swipe-btns absolute flex-ac flex-jb"
-            v-if="isMobile"
-          >
-            <img
-              src="./all/prev-btn.png"
-              alt=""
-              class="prev-btn"
-              @click="decIndex"
-            >
-            <img
-              src="./all/next-btn.png"
-              alt=""
-              class="next-btn"
-              @click="addIndex"
-            >
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="section6">
+    <img src="./s6/bg.jpg" alt="" class="bg-img">
+    <h3 class="label flex-c">
+      漾建築
+    </h3>
+    <h3 class="title1">
+      純粹49戶豪宅規格
+    </h3>
+    <h3 class="title2">
+      新手成家輕價格
+    </h3>
+    <hr>
+    <h3 class="desc">
+      石材氣派基座、挑高6米大廳，精品旅店式休閒設施--健身房、空中花園、親子遊戲室…，全棟僅精選49戶優質好鄰，與億元豪宅同享尊榮居住禮遇。
+    </h3>
+    <h3 class="txt">
+      3D參考示意圖
+    </h3>
   </div>
 </template>
 
@@ -124,292 +31,94 @@
   background-size: cover;
   background-attachment: fixed;
   overflow: hidden;
-  /*
-  &.light {
-    .title {
-      color: #333;
-    }
+}
 
-    .hr {
-      background-color: #333;
-    }
+.bg-img {
+  width: size(1920);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  object-fit: cover;
 
-    .desc {
-      color: #333;
-    }
-
-    .art {
-      color: #333;
-    }
-
-    .btn {
-      border: solid 2px #333;
-      color: #333;
-      &:hover {
-        background-color: #333;
-        border-color: #af8680;
-        color: #af8680;
-      }
-    }
-  }*/
-  &.light {
-    .txt {
-      filter: drop-shadow(0em 0.2em 0.3em #058c);
-    }
+  &:nth-child(1) {
+    position: relative;
   }
 }
 
-.txt {
-  width: size(649);
-  top: size(181);
-  left: 56%;
-  font-stretch: normal;
-  font-style: normal;
-  text-align: justify;
-  font-size: size(16);
-  z-index: 2;
-  filter: drop-shadow(0em 0.2em 0.3em #040e2766);
-  transition: all 0.3s;
-  color: #ffffff;
-}
-
-.title {
-  font-size: size(51);
+.label {
+  @include div_l_pc(184, 81, 67 + 90, 191);
+  border: solid 1.2px #6e3a1d;
+  font-size: size(45);
   font-weight: bold;
-  line-height: 1.43;
-  letter-spacing: 0.02em;
-  white-space: nowrap;
-}
-
-.hr {
-  width: 100%;
-  height: size(2);
-  min-height: 1px;
-  margin: size(40) 0;
-  background-color: currentColor;
-}
-
-.desc {
-  font-size: size(16);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2;
-  letter-spacing: 0.11em;
-  text-align: justify;
-  transition: all 0.3s;
-  z-index: 2;
-}
-
-.art {
-  top: size(560);
-  right: size(180);
-  font-size: size(70.2);
-  font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: 0.038em;
+  letter-spacing: size(3.6);
   text-align: left;
-  transition: all 0.3s;
-  z-index: 2;
+  color: #6e3a1d;
+  border-radius: 40px / 40px;
+}
+
+.title1 {
+  @include img_l_pc(440, 171 + 90, 880);
+  text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
+  font-size: size(50);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(4);
+  text-align: left;
+  color: #ffffff;
   white-space: nowrap;
 }
 
-.btn-group {
-  z-index: 2;
-  justify-content: flex-end;
-
-  .btn {
-    width: size(190);
-    height: size(43);
-    border: solid 2px #af8680;
-    color: #af8680;
-    border-radius: 20px / 20px;
-    cursor: pointer;
-    font-size: size(21);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.69;
-    letter-spacing: 0.1em;
-    text-align: center;
-    text-decoration: none;
-    transition: all 0.3s;
-    margin: size(40) 0 0 1em;
-    &:hover {
-      background-color: #af8680;
-      border-color: #fff;
-      color: #fff;
-    }
-  }
+.title2 {
+  @include img_l_pc(440, 233 + 90, 1055);
+  text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
+  font-size: size(50);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(4);
+  text-align: left;
+  color: #ffffff;
+  white-space: nowrap;
 }
 
-/* Swipe */
-.swipe {
-  width: 100vw;
-  top: 0;
-  left: 0;
-  height: 100%;
-  object-fit: cover;
+hr {
+  @include img_r_pc(687, 396, 444);
+  border: solid 2px #ffffff;
 }
 
-// begin
-.swipe-fade-leave-to {
-  opacity: 0;
-  z-index: 0;
-}
-// end
-.swipe-fade-enter {
-  opacity: 0;
-  z-index: 1;
-}
-
-.swipe-fade-enter-active {
-  transition: all 0.5s ease;
+.desc {
+  @include img_r_pc(581, 330 + 90, 460);
+  text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
+  font-size: size(28);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.66;
+  letter-spacing: size(3.53);
+  text-align: left;
+  color: #ffffff;
 }
 
-.swipe-fade-leave-active {
-  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-// begin
-// .swipe-left-leave-to {
-//   margin-left: -100vw;
-//   z-index: 0;
-// }
-// // end
-// .swipe-left-enter {
-//   opacity: 0.5;
-//   margin-left: 0;
-//   z-index: 1;
-// }
-
-// .swipe-left-enter-active {
-//   transition: all 0.5s ease;
-// }
-
-// .swipe-left-leave-active {
-//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-// }
-
-.swipe-wrap {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.swipe-item {
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .name {
-    right: 20px;
-    bottom: 20px;
-    font-size: size(14.8);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.35;
-    letter-spacing: size(0.89);
-    text-align: center;
-    color: #ffffff;
-  }
-
-  // &:nth-child(1) {
-  //   z-index: 1;
-  //   // opacity: 1;
-  // }
-
-  // &.base {
-  //   z-index: 1;
-  //   opacity: 1;
-  // }
-  // &.active {
-  //   z-index: 2;
-  //   // opacity: 1;
-  // }
-}
-
-.pagination {
-  width: auto;
-  top: size(68);
-  left: auto;
-  right: size(190);
-  margin: 0 auto;
-  justify-content: center;
-  z-index: 2;
-}
-
-.pagination-dot {
-  padding: 5px;
-  margin: 0 10px;
-  cursor: pointer;
-  z-index: 4;
-
-  span {
-    display: block;
-    width: 20px;
-    height: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 0 1px #fff;
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.01);
-    transition: all 0.5s;
-
-    &::before {
-      content: '';
-      width: 60%;
-      height: 60%;
-      display: block;
-      background: #fff;
-      border-radius: 20px;
-      opacity: 1;
-      position: absolute;
-      top: 20%;
-      // transform: translateY(-50%);
-      left: 20%;
-      transition: all 0.3s;
-      transform-origin: center;
-      transform: scale(0);
-    }
-    &.active {
-      &::before {
-        content: '';
-        width: 100%;
-        height: 100%;
-        display: block;
-        background: #fff;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 0%;
-        // transform: translateY(-50%);
-        left: 0%;
-        transform: scale(1);
-      }
-    }
-  }
-}
-
-.swipe-btns {
-  width: 100%;
-  height: 100%;
-  padding: 0 15px;
-  z-index: 1;
-
-  .prev-btn,
-  .next-btn {
-    width: size(20);
-    cursor: pointer;
-  }
+.txt {
+  @include img_r_pc(187, 980, 25);
+  text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
+  font-size: size(26);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(3.61);
+  text-align: left;
+  color: #ffffff;
+  white-space: nowrap;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -461,7 +170,7 @@
   .art {
     font-size: sizem(35.2);
     text-align: center;
-    letter-spacing:-0.01em;
+    letter-spacing: -0.01em;
   }
 
   .btn-group {
@@ -471,15 +180,15 @@
     right: sizem(33);
     z-index: 6; */
     z-index: 4;
-    justify-content:space-between;
-    margin-top:0.6em;
+    justify-content: space-between;
+    margin-top: 0.6em;
 
     .btn {
       width: sizem(150);
       height: sizem(35);
       font-size: sizem(16);
       letter-spacing: 0.1em;
-    margin:0;
+      margin: 0;
     }
   }
 

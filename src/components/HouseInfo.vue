@@ -1,27 +1,11 @@
 <template>
-  <div
-    class="house-info"
-    id="house-info"
-  >
+  <div class="house-info" id="house-info">
     <div class="content">
-      <div
-        class="title"
-        data-aos="fade-down"
-        data-aos-delay="0"
-      >建案資訊</div>
+      <h3 class="title" data-aos="fade-down" data-aos-delay="0">建案資訊</h3>
       <div class="info">
-        <div
-          class="item"
-          :key="infos[0]"
-          v-for="(infos, index) in houseInfos"
-          data-aos="fade-right"
-          :data-aos-delay="100 + index * 100"
-        >
+        <div class="item" :key="infos[0]" v-for="(infos, index) in houseInfos" data-aos="fade-right" :data-aos-delay="100 + index * 100">
           <h3 class="label">{{infos[0]}}</h3>
-          <p
-            class="desc"
-            v-html="infos[1]"
-          ></p>
+          <p class="desc" v-html="infos[1]"></p>
         </div>
       </div>
     </div>
@@ -55,7 +39,7 @@ export default {
   z-index: 1;
 }
 .content {
-  width: 1200px;
+  width: 686px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -69,46 +53,48 @@ export default {
   margin: 60px 0;
   font-weight: 500;
   color: $house_title_color;
+  font-family: $family3;
   font-weight: bold;
   letter-spacing: 15px;
 }
 
 .info {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
 }
 
 .item {
-  font-size: 16px;
-  margin-bottom: 30px;
-  // margin-right: 160px;
+  font-size: 15px;
+  margin-bottom:2em;
+  margin-right: 10em;
   width: 260px;
-  height: 30px;
+  //height: 30px;
   line-height: 1.4;
-  border-left: 4px solid $house_border_color;
+  //border-left: 4px solid $house_border_color;
   padding-left: 10px;
   display: flex;
   align-items: center;
-  white-space: nowrap;
-  // &::before{content: "";width: 4px;height: 1.4em;background:$house_border_color;margin: -1px 10px 0 0;position: relative;}
-  // &:nth-of-type(even) {
-  //   margin-right: 0;
-  // }
+  white-space: nowrap;position: relative;
+  &::before{content: "";width: 4px;height: 1.4em;background:$house_border_color;margin: 0px 0.8em 0 0;position: absolute;top:0;left: 0;}
+  &:nth-of-type(even) {
+    margin-right: 0;
+  }
 
   .label {
-    font-size: 16px;
+    font-size:1em;
     color: $house_label_color;
     margin-bottom: 0;
-    margin-right: 20px;
+    margin-right:0.8em;
     white-space: nowrap;
+    font-family: $family3;
+    width: 4.5em;
   }
 
   .desc {
-    font-size: 15px;
+    font-size: 14px;
     text-align: left;
     color: $house_desc_color;
+    font-family: $family3;
     font-weight: bold;
   }
 }
@@ -117,11 +103,11 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .content {
-    height:auto;
+    height: 35em;
     width: 100%;
     margin-bottom: 0;
-    font-size: 15px; //內容字級
-    min-height: initial; //看內容多寡調整高度
+    font-size: 15px;
+    padding-bottom: 50px;
   }
 
   .title {
@@ -135,7 +121,6 @@ export default {
     width: 100%;
     height: auto;
     margin-left: 20px;
-    margin-bottom: 20px;
     white-space: normal;
   }
 
@@ -143,7 +128,7 @@ export default {
     width: 100%;
     flex: 1;
     justify-content: space-around;
-    align-content: flex-start;
+    align-content: space-around;
   }
 }
 
