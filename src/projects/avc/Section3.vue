@@ -12,7 +12,9 @@
       超越大直水岸、更勝江翠重劃，河岸綠地與市心機能左右環抱，休閒和便利一次入手，住進睿暘水漾擁抱大台北最幸福人生豐景。
     </h3>
 
-    <img src="./s3/720度環景.jpg" alt="" class="vr">
+    <!-- <img src="./s3/720度環景.jpg" alt="" class="vr"> -->
+    <v-pannellum src="https://i.imgur.com/lpWZYfb.jpg" :autoLoad="true" :hfov="isMobile ? 100 : 260" :autoRotate="3" class="vr"></v-pannellum>
+    <!-- <div class="vr-mask" v-if="isPC"></div> -->
   </div>
 </template>
 
@@ -38,6 +40,16 @@
   height: size(1080);
   position: relative;
   z-index: 3;
+}
+
+.vr-mask {
+  width: 100vw;
+  height: 100vh;
+  min-height: size(1080);
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 0;
 }
 
 .title1 {
@@ -115,6 +127,12 @@
 
   .vr {
     // position: absolute;
+    margin-top: sizem(230);
+    left: 0;
+    height: sizem(444);
+  }
+
+  .vr-mask {
     margin-top: sizem(230);
     left: 0;
     height: sizem(444);
