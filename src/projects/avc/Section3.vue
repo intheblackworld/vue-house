@@ -13,7 +13,7 @@
     </h3>
 
     <!-- <img src="./s3/720度環景.jpg" alt="" class="vr"> -->
-    <v-pannellum src="https://i.imgur.com/lpWZYfb.jpg" :autoLoad="true" :hfov="isMobile ? 100 : 260" :autoRotate="true" class="vr"></v-pannellum>
+    <v-pannellum :src="require('./s3/(45M)720度環景.jpg')" :autoLoad="true" :hfov="isMobile ? 100 : 260" :autoRotate="true" class="vr"></v-pannellum>
     <div class="vr-mask"></div>
   </div>
 </template>
