@@ -572,7 +572,7 @@ export default {
           img:isMobile?require('./s7/1_m.jpg'):require('./s7/1.jpg'),
           title: '舞墨迎賓廳',
           desc:
-            '取自國際精品飯店設計靈感，雲紋石材、木格柵、讓入門的每一位賓客享有最尊榮禮遇。',
+            '取自國際精品飯店設計靈感，雲紋石牆、木格柵、讓入門的每一位賓客享有最尊榮禮遇。',
         },
         {
           img: isMobile?require('./s7/5_m.jpg'):require('./s7/5.jpg'),

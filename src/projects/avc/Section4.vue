@@ -89,7 +89,7 @@
         輕快瞬時移動
       </h3>
       <hr>
-      <h3 class="desc">機捷、中和新蘆線交會，車行5分鐘速接快速道路，暢行大台北易如反掌。機捷A2a站延線建設送審中，迎接建設到家門的超級利多。</h3>
+      <h3 class="desc">機捷、中和新蘆線交會，車行5分鐘速接快速道路，暢行大台北易如反掌。機捷A2a站建設送審中，迎接建設到家門的超級利多。</h3>
     </div>
   </div>
 </template>
@@ -495,7 +495,7 @@ hr {
     font-style: normal;
     line-height: 1.73;
     letter-spacing: sizem(0.89);
-    text-align: left;
+    text-align: justify;
     color: #231815;
   }
 
