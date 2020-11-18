@@ -6,6 +6,7 @@
     <img src="./s1/b.png" alt="" class="b4">
     <img src="./s2/img.png" alt="" class="img1">
     <img src="./s4/img.png" alt="" class="img2">
+    <div class="img" data-aos="fade" data-aos-delay="0"><div class="an"><img src="./s1/img.png" alt="水漾"></div></div>
 
     <div class="swipe swipe1 absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -59,6 +60,9 @@
       </div>
     </div>
 
+    <h3 class="label flex-c">
+      漾生活
+    </h3>
     <div class="logobg1" data-aos="fade-up" data-aos-delay="400">
       <h3 class="title">
         商圈百貨全數到位<br />
@@ -98,26 +102,44 @@
   height: size(2160);
 }
 
+.label {
+  @include div_r_pc(184, 81, 90, 232);
+  border: solid 1.2px #6e3a1d;
+  font-size: size(45);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(3.6);
+  text-align: left;
+  color: #6e3a1d;
+  border-radius: 40px / 40px;
+}
+
 .logobg1 {
   // div位置：width: size(656), height: size(708) top: size(113), right: size(182)
   @include div_r_pc(656, 708, 113, 282);
   background-image: url('./s1/logobg.png');
   background-size: cover;
+  padding: 0 size(55) 0 0;
 }
 
 .logobg2 {
   @include div_l_pc(656, 708, 716, 252);
   background-image: url('./s1/logobg.png');
   background-size: cover;
+  padding: 0 size(55) 0 0;
 }
 
 .logobg3 {
   @include div_r_pc(656, 708, 1367, 282);
   background-image: url('./s1/logobg.png');
   background-size: cover;
+  padding: 0 size(55) 0 0;
 }
 
 .title {
+
   margin-top: size(123);
   font-size: size(45);
   font-weight: bold;
@@ -127,16 +149,14 @@
   letter-spacing: size(4);
   text-align: center;
   color: #ec6300;
-  margin-left: size(-40);
   white-space: nowrap;
 }
 
 hr {
   width: size(501);
   height: 0;
-  border: solid 4px #f6ab00;
-  margin: 15px;
-  margin-left: size(50);
+  border: solid size(2) #f6ab00;
+  margin:15px auto;
 }
 
 .desc {
@@ -148,44 +168,60 @@ hr {
   font-style: normal;
   line-height: 1.83;
   letter-spacing: size(1.89);
-  text-align: left;
+  text-align: justify;
   color: #231815;
 }
 
 .b1 {
-  @include img_l_pc(198, 58, 720);
-  animation: an2 1.5s infinite alternate;
+  @include img_l_pc(350, 617, -50);
+  animation: an 1.5s infinite alternate;
+  transform: translateY(6%);
 }
 
 .b2 {
-  @include img_l_pc(308, 767, 429);
+  @include img_r_pc(320, 1300, 200);
   animation: an 2.5s infinite alternate;
+  transform: translateY(-9%);
 }
 
 .b3 {
-  @include img_l_pc(169, 764, 1141);
+  @include img_l_pc(169, 650, 1141);
   animation: an 2.5s infinite alternate;
+  transform: translateY(-6%);z-index: 3;
 }
 
 .b4 {
-  @include img_r_pc(671, 0, -300);
+  @include img_r_pc(800, -200, -300);
   animation: an 4.5s infinite alternate;
+  transform: translateY(-7.5%);
 }
 
 .img1 {
-  @include img_r_pc(348, 457, -180);
+  @include img_r_pc(543, 570, -200);
   animation: an 2.5s infinite alternate;
+  transform: translateY(5%);
 }
 
 .img2 {
-  @include img_l_pc(548, 857, -280);
+  @include img_l_pc(757, 997, -400);
   animation: an 2.5s infinite alternate;
+  transform: translateY(5%);
+}
+.img {
+  @include img_c_pc(1700, calc(100% - 30vw), size(1540));
+  img{width: 100%;
+  transform-origin: 0 0;
+  transform: rotate(45deg);
+ }
+  .an{width: 100%;
+  animation: an 2.5s linear infinite alternate;
+  transform-origin: 0 0;
+  transform:translate(-10%,-20%);
+ }
 }
 
+
 @keyframes an {
-  from {
-    transform: translateY(-20px);
-  }
   to {
     transform: translateY(0);
   }
@@ -414,6 +450,19 @@ hr {
     background-image: url('./s1/logobg.png');
     background-size: cover;
   }
+  .label {
+    @include div_r_m(145, 64, 30, 30);
+    border: solid 1.2px #6e3a1d;
+    font-size: sizem(34);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(2.6);
+    text-align: left;
+    color: #6e3a1d;
+    border-radius: 40px / 40px;
+  }
 
   .title {
     margin-top: sizem(66);
@@ -451,31 +500,31 @@ hr {
   }
 
   .b1 {
-    @include img_l_m(80, 60, -20);
-    animation: an2 1.5s infinite alternate;
+    @include img_l_m(132, 60, -20);
   }
 
   .b2 {
-    @include img_l_m(62, 548, 263);
-    animation: an 2.5s infinite alternate;
+    @include img_l_m(134, 560, 25);
   }
 
   .b3 {
-    @include img_l_m(134, 560, 12);
-    animation: an 2.5s infinite alternate;
+    @include img_l_m(62, 548, 270);
   }
 
   .b4 {
-    @include img_r_m(62 , 1117, 63);
-    animation: an 4.5s infinite alternate;
+    @include img_l_m(62 , 1117, 63);
+    z-index: 3;
   }
+.img {
+    @include img_l_m(450 , 1000, 250);
+}
 
   .img1 {
     display: none;
   }
 
   .img2 {
-    @include img_r_m(548, 1250, -280);
+    @include img_r_m(250, 1500, 10);
     animation: an 2.5s infinite alternate;
   }
 
@@ -678,54 +727,54 @@ export default {
       isDialog: false,
       slideList1: [
         {
-          img: require('./s4/1-1.jpg'),
-          name: '南紡購物中心',
-        },
-        {
-          img: require('./s4/1-2.jpg'),
-          name: '國賓影城',
-        },
-        {
-          img: require('./s4/1-3.jpg'),
-          name: '成大商圈',
+          img: require('./s4/1-5.jpg'),
+          name: '商圈商店-愛買',
         },
         {
           img: require('./s4/1-4.jpg'),
-          name: '成大商圈',
+          name: '商圈商店-全聯',
         },
         {
-          img: require('./s4/1-5.jpg'),
-          name: '成大商圈',
+          img: require('./s4/1-3.jpg'),
+          name: '商圈商店-家樂福',
+        },
+        {
+          img: require('./s4/1-2.jpg'),
+          name: '力行市場',
+        },
+        {
+          img: require('./s4/1-1.jpg'),
+          name: 'IKEA宜家家具',
         },
       ],
 
       slideList2: [
         {
           img: require('./s4/2-2.jpg'),
-          name: '國賓影城',
+          name: '穀保家商',
         },
         {
           img: require('./s4/2-3.jpg'),
-          name: '成大商圈',
+          name: '大台北都會公園',
         },
         {
           img: require('./s4/2-4.jpg'),
-          name: '成大商圈',
+          name: '更寮國小',
         },
       ],
 
       slideList3: [
         {
           img: require('./s4/3-1.jpg'),
-          name: '國賓影城',
+          name: '捷運三重站',
         },
         {
           img: require('./s4/3-2.jpg'),
-          name: '成大商圈',
+          name: '新北環快',
         },
         {
           img: require('./s4/3-3.jpg'),
-          name: '成大商圈',
+          name: '捷運三重站',
         },
       ],
     }

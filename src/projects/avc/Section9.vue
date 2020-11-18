@@ -3,9 +3,10 @@
     <img src="./s1/b.png" alt="" class="b1">
     <img src="./s1/b.png" alt="" class="b2">
     <img src="./s1/b.png" alt="" class="b3">
-    <img src="./s1/b.png" alt="" class="b4">
-    <img src="./s2/img.png" alt="" class="img1">
-    <img src="./s4/img.png" alt="" class="img2">
+    <!-- <img src="./s1/b.png" alt="" class="b4"> -->
+    <div class="img1"><img src="./s2/img.png" alt=""></div>
+      <div class="img" data-aos="fade" data-aos-delay="0">
+      <div class="an"><img src="./s1/img.png" alt="水漾"></div></div>
     <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
@@ -96,7 +97,7 @@
 
 hr {
   @include img_l_pc(504, 288, 327);
-  border: solid 2px #f6ab00;
+  border: solid  size(1) #f6ab00;
 }
 
 .desc {
@@ -148,41 +149,53 @@ hr {
 }
 
 .b1 {
-  @include img_l_pc(198, 58, 720);
-  animation: an2 1.5s infinite alternate;
+  @include img_l_pc(198, 180, 130);
+  animation: an2 3s infinite alternate;
+    transform: translateY(-30%);
+  z-index: 2;
 }
 
 .b2 {
-  @include img_l_pc(308, 767, 429);
+  @include img_l_pc(315, 570, 650);
   animation: an 2.5s infinite alternate;
+    transform: translateY(-15%);
+  z-index: 2;
 }
 
 .b3 {
-  @include img_l_pc(169, 764, 1141);
-  animation: an 2.5s infinite alternate;
+  @include img_r_pc(300, 650, -170);
+  animation: an 2s infinite alternate;
+    transform: translateY(15%);
+  z-index: 2;
 }
 
 .b4 {
   @include img_r_pc(671, 0, -300);
   animation: an 4.5s infinite alternate;
+    transform: translateY(30%);
 }
-
 .img1 {
-  @include img_r_pc(348, 457, -180);
+  @include img_l_pc(550, 100, 150);
   animation: an 2.5s infinite alternate;
+    transform: translateY(10%);
+  img{width: 100%;transform: rotate(25deg);}
 }
-
-.img2 {
-  @include img_l_pc(548, 857, -280);
-  animation: an 2.5s infinite alternate;
+.img {
+  @include img_c_pc(1700, calc(50% - 5vw), size(1540));
+  img{width: 100%;
+  transform-origin: 0 0;
+  transform: rotate(45deg);
+ }
+  .an{width: 100%;
+  animation: an 2.5s linear infinite alternate;
+  transform-origin: 0 0;
+  transform:translate(-10%,-20%);
+ }
 }
 
 @keyframes an {
-  from {
-    transform: translateY(-20px);
-  }
   to {
-    transform: translateY(0);
+    transform: translate(0);
   }
 }
 
@@ -446,16 +459,18 @@ hr {
   .b1 {
     @include img_l_m(80, 60, -20);
     animation: an2 1.5s infinite alternate;
+    z-index: 5;
   }
 
   .b2 {
-    @include img_l_m(62, 548, 263);
+    @include img_l_m(116, 700, 90);
     animation: an 2.5s infinite alternate;
   }
 
   .b3 {
-    @include img_l_m(134, 560, 12);
+    @include img_l_m(134, 400, -50);
     animation: an 2.5s infinite alternate;
+    z-index: auto;
   }
 
   .b4 {
@@ -480,6 +495,7 @@ hr {
     top: sizem(104);
     left: sizem(0);
     object-fit: cover;
+  z-index:3;
   }
 
   // begin

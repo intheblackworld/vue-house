@@ -3,7 +3,6 @@
     <img src="./s1/b.png" alt="" class="b1">
     <img src="./s1/b.png" alt="" class="b2">
     <img src="./s1/b.png" alt="" class="b3">
-    <img src="./s1/b.png" alt="" class="b4">
     <img src="./s2/img.png" alt="" class="img1">
     <img src="./s4/img.png" alt="" class="img2">
 
@@ -12,10 +11,11 @@
     <div v-if="isMobile" @click="isDialog = true" class="logobg1 flex-c" data-aos="fade-up" data-aos-delay="400">
       <h3>點圖放大</h3>
     </div>
-    <div class="dialog flex-c" v-show="isDialog">
+    <div class="dialog" v-show="isDialog">
       <div class="dialog-content">
         <img class="close" @click="isDialog = false" src="./all/close.png" alt="close">
-        <img src="./s5/map.png" alt class="dialog-ma" />
+        <img src="./s5/map.png" alt class="dialog-map" />
+    <img src="./s5/icon.png" alt class="dialog-icon" />
       </div>
     </div>
   </div>
@@ -35,11 +35,15 @@
 }
 
 .map {
-  @include img_l_pc(1514, 84, 204);
+  height: 80%;
+  top:10%;
 }
 
 .icon {
-  @include img_l_pc(119, 499, 810);
+  position: absolute;
+  height:size(119);
+  top:46%;
+  left: 44%;
   z-index: 2;
 }
 
@@ -49,41 +53,39 @@
 }
 
 .b1 {
-  @include img_l_pc(198, 58, 720);
-  animation: an2 1.5s infinite alternate;
+  @include img_r_pc(330, 0, -150);
+  animation: an 1.5s infinite alternate;
+  transform: translateY(-20px);
 }
 
 .b2 {
-  @include img_l_pc(308, 767, 429);
+  @include img_l_pc(410, 780, -180);
   animation: an 2.5s infinite alternate;
+  transform: translateY(-20px);z-index: 2;
 }
 
 .b3 {
-  @include img_l_pc(169, 764, 1141);
+  @include img_l_pc(330, -200, -100);
   animation: an 2.5s infinite alternate;
+  transform: translateY(20px);
 }
 
-.b4 {
-  @include img_r_pc(671, 0, -300);
-  animation: an 4.5s infinite alternate;
-}
 
 .img1 {
-  @include img_r_pc(348, 457, -180);
-  animation: an 2.5s infinite alternate;
+  @include img_l_pc(292, 920, -50);
+  animation: an 4s infinite alternate;
+  transform: translateY(-30px);
 }
 
 .img2 {
-  @include img_l_pc(548, 857, -280);
-  animation: an 2.5s infinite alternate;
+  @include img_l_pc(357, 0, -130);
+  animation: an 3s infinite alternate;
+  transform: translateY(30px);
 }
 
 @keyframes an {
-  from {
-    transform: translateY(-20px);
-  }
   to {
-    transform: translateY(0);
+    transform: translate(0);
   }
 }
 
@@ -130,16 +132,24 @@
   }
 
   .icon {
-    @include img_l_m(50, 199, 290);
+  //  @include img_l_m(50, 199, 290);
+  height:sizem(70);
+  left:sizem(300);
+  top:sizem(210);
     z-index: 2;
+    animation: none;
   }
 
   .b1 {
-    display: none;
+    @include img_l_m(55, 250, 110);
+    z-index: 5;
+  transform: translate(10%,10%);
   }
 
   .b2 {
-    display: none;
+    @include img_l_m(100, -150, 100);
+    z-index: 5;
+  transform: translate(0,20%);
   }
 
   .b3 {
@@ -179,11 +189,20 @@
     z-index: 1000;
     background-color: #F3E12B;
     overflow: scroll;
-
+.dialog-content{height: 100%;width:  sizem(1138);position: relative;}
     .dialog-map {
+      width:  sizem(1138);
+      height: 100%;
+      background-color: #F3E12B;
+    }
+    .dialog-icon {
       width: auto;
-      height: 100vh;
-      background-color: #fff;
+      height: sizem(119);
+      position: absolute;
+  top:46%;
+  left: 40%;
+  animation: heartbeat 0.5s ease-in alternate infinite;
+     // background-color: #fff;
     }
 
     .close {

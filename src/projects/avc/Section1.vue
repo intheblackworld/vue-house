@@ -3,12 +3,12 @@
     <div class="section1">
       <!-- <img src="./s1/bg.png" alt="" class="bg-img"> -->
 
-      <img src="./s1/b.png" alt="" class="b1">
-      <img src="./s1/b.png" alt="" class="b2">
-      <img src="./s1/b.png" alt="" class="b3">
-      <img src="./s1/b.png" alt="" class="b4">
+      <img src="./s1/b.png" alt="氣泡" class="b1">
+      <img src="./s1/b.png" alt="氣泡" class="b2">
+      <img src="./s1/b.png" alt="氣泡" class="b3">
+      <img src="./s1/b.png" alt="氣泡" class="b4">
 
-      <img src="./s1/img.png" alt="" class="img" data-aos="fade" data-aos-delay="0">
+      <div class="img" data-aos="fade" data-aos-delay="0"><div class="an"><img src="./s1/img.png" alt="水漾"></div></div>
       <img src="./s1/logobg.png" alt="睿暘水漾LOGO" class="logobg" data-aos="fade" data-aos-delay="200">
       <img src="./s1/logo.png" alt="睿暘水漾LOGO" class="logo" data-aos="fade" data-aos-delay="400">
       <img src="./s1/t1.png" alt="三重CP值最高水岸宅" class="t1" data-aos="fade" data-aos-delay="600">
@@ -76,54 +76,63 @@
 }
 
 .img {
-  @include img_r_pc(1700, 1027, -800);
-  transform-origin: center;
+  @include img_c_pc(1700, calc(50% - 5vw), size(1540));
+  img{width: 100%;
+  transform-origin: 0 0;
   transform: rotate(45deg);
+ }
+  .an{width: 100%;
+  animation: an 2.5s linear infinite alternate;
+  transform-origin: 0 0;
+  transform:translate(-10%,-20%);
+ }
 }
 
 .logo {
-  @include img_r_pc(502, 347, 267);
+  @include img_c_pc(502, calc(50% - 8vw) ,calc(50% + 11.5vw));
 }
 
 .logobg {
   // 圖片位置：width: size(712), top: size(201), left: size(118)
-  @include img_r_pc(712, 201, 118);
+  @include img_c_pc(712,calc(50% - 16vw) ,calc(50% + 8vw));
 }
 
 .t1 {
-  @include img_l_pc(871, 394, 129);
+  @include img_c_pc(871, calc(50% - 3.5vw), size(129));
 }
 
 .t2 {
-  @include img_l_pc(871, 519, 129);
+  @include img_c_pc(871,calc(50% + 3.5vw), size(129));
 }
 
 .b1 {
-  @include img_l_pc(198, 58, 720);
-  animation: an2 1.5s infinite alternate;
+  @include img_c_pc(198,calc(50% - 25vw), size(720));
+  animation: an 3s infinite alternate;
+  transform: translateY(-30%);
 }
 
 .b2 {
-  @include img_l_pc(308, 767, 429);
+  @include img_c_pc(308,calc(50% + 15vw), size(429));
   animation: an 2.5s infinite alternate;
+  transform: translateY(-19%);
 }
 
 .b3 {
-  @include img_l_pc(169, 764, 1141);
-  animation: an 2.5s infinite alternate;
+  @include img_c_pc(169,calc(50% + 13vw), size(1141));
+  z-index: 3;
+  animation: an 2s infinite alternate;
+  transform: translateY(-10%);
 }
 
 .b4 {
-  @include img_r_pc(671, 0, -300);
+  @include img_c_pc(900,calc(50% - 40vw), size(1350));
   animation: an 4.5s infinite alternate;
+  transform: translateY(-4%);
 }
 
 @keyframes an {
-  from {
-    transform: translateY(-20px);
-  }
   to {
-    transform: translateY(0);
+    transform: translate(0);
   }
 }
 
@@ -151,7 +160,7 @@
     width: 100vw;
     min-height: auto;
     height: calc(100vh - 63px);
-    min-height: sizem(600);
+    min-height: sizem(484);
     max-height: sizem(812);
     background-size: cover;
     background-attachment: scroll;
@@ -174,40 +183,37 @@
 
   .img {
     @include img_r_m(1700, 1027, -800);
-    transform-origin: center;
-    transform: rotate(45deg);
+  @include img_c_m(600, calc(50% - 32vw), sizem(220));
   }
 
   .logo {
-    @include img_r_m(216, 190, 88);
+    @include img_c_m(216,calc(42% - 22vw), sizem(73))
   }
 
   .logobg {
     // 圖片位置：width: size(712), top: size(201), left: size(118)
-    @include img_r_m(306, 126, 23);
+    @include img_c_m(306,calc(42% - 40vw), sizem(45))
   }
 
   .t1 {
-    @include img_l_m(320, 445, 33);
+    @include img_c_m(310,calc(73% - 2vw), sizem(33))
   }
 
   .t2 {
-    @include img_l_m(310, 491, 33);
+    @include img_c_m(310,calc(73% + 12vw), sizem(33))
   }
 
   .b1 {
-    @include img_l_m(140, -58, -20);
-    animation: an2 1.5s infinite alternate;
+    @include img_l_m(140, -38, -20); 
   }
 
   .b2 {
-    @include img_r_m(154, 148, -50);
-    animation: an 2.5s infinite alternate;
+    @include img_c_m(107,calc(50% - 45vw), sizem(320));
   }
 
   .b3 {
-    @include img_l_m(74, 527, 22);
-    animation: an 2.5s infinite alternate;
+    @include img_c_m(74,calc(75% + 18vw), sizem(22));
+       z-index:initial;
   }
 
   .b4 {

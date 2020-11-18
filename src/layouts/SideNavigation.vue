@@ -5,7 +5,7 @@
       <div class="menu" @click="toggleSidebar">
         <!-- <div :class="`menu-icon ${isOpen ? 'menu-icon-active' : ''}`"></div> -->
         <img v-if="isOpen" src="@/projects/jh/s4/close.png" class="close" alt />
-        <img v-else src="@/assets/img/menu-btn.png" alt />
+        <div v-else class="menu-btn"></div>
       </div>
       <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
       <ul :class="`navlist ${isOpen ? 'open': ''}`">
@@ -93,7 +93,7 @@ export default {
   z-index: 112;
   top: 30px;
   right: 30px;
-  width: 40px;
+  width: 45px;
   height: 40px;
   // background-color: #fff;
   cursor: pointer;
@@ -107,8 +107,16 @@ export default {
     margin-top: 20px;
     margin-right: 0px;
   }
-}
+.menu-btn{width: 100%;height: 100%;position: absolute;top: 0;left: 0;background: url("~@/assets/img/menu1.png") -30% 0;background-size:auto 38%;}
+&:hover{.menu-btn{
+  animation: menu 1s linear infinite;}}
 
+}
+@keyframes menu {
+  to {
+    background-position-x: 100%;
+  }
+}
 .logo {
   width: $logo_pc_width;
   z-index: 2;
@@ -197,6 +205,7 @@ export default {
     display: none;
     background-size: cover;
     position: relative;
+  transition: all 0.3s;
 
     // &::after {
     //   display: block;

@@ -45,8 +45,8 @@
 }
 
 .title {
-  @include img_r_pc(829, 91, 194);
-  font-size: size(75);
+  @include img_c_pc(916, calc(50% - 20vw) ,size(880));
+  font-size: size(70);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -58,32 +58,34 @@
 }
 
 .subtitle {
-  @include img_r_pc(457, 491, 338);
-  font-size: size(50);
+  @include img_c_pc(916, calc(50% - 1vw) ,size(880));
+  font-size: size(45);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
   letter-spacing: size(4);
-  text-align: left;
+  text-align: center;
   color: #ea5504;
   white-space: nowrap;
 }
 
 .desc {
-  @include img_r_pc(916, 215, 107);
+  @include img_c_pc(916, calc(50% - 14.8vw) ,size(880));
   font-size: size(35);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.86;
   letter-spacing: size(2.45);
-  text-align: left;
+  text-align: justify;
   color: #231815;
 }
 
 .label {
-  @include div_l_pc(181, 81, 110, 667);
+  //@include div_l_pc(181, 81, 95, 667);
+  @include img_c_pc(181, calc(50% - 19.7vw) ,size(667));
+  height: size(81);
   border: 1px solid #6e3a1d;
   border-radius: 40px / 40px;
   font-size: size(45);
@@ -98,14 +100,15 @@
 }
 
 .item-container {
-  @include img_r_pc(980, 595, 56);
-  width: size(980);
+  @include img_c_pc(950, calc(50% + 3vw) ,size(864));
   transition: all 0.3s;
 }
 
 .item-img {
   width: size(166);
   margin-bottom: size(12);
+  transition:transform 0.3s ;
+  &:hover{transform: scale(1.2);}
 }
 
 .b1 {
@@ -158,8 +161,8 @@
     height: sizem(1500);
     min-height: sizem(1500);
     max-height: sizem(1500);
-    background-size: cover;
-    background-attachment: scroll;
+    background: #fbfbfa url('./s10/bg_m.jpg') scroll no-repeat 0 100%;
+    background-size: 100% auto;
   }
 
   .bg-img {

@@ -1,11 +1,9 @@
 <template>
   <div class="section8">
     <img src="./s1/b.png" alt="" class="b1">
-    <img src="./s1/b.png" alt="" class="b2">
-    <img src="./s1/b.png" alt="" class="b3">
     <img src="./s1/b.png" alt="" class="b4">
-    <img src="./s2/img.png" alt="" class="img1">
-    <img src="./s4/img.png" alt="" class="img2">
+    <div class="b2"><img src="./s2/img.png" alt=""></div>
+    <img src="./s2/img.png" alt="" class="b3">
     <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
@@ -35,6 +33,9 @@
     <div class="btns flex-ac flex-jc wrap">
       <h3 :class="`btn flex-c ${slideIndex === index ? 'active' : ''}`" v-for="(slide, index) in slideList" :key="slide.btn" @click="goTo(index)">{{slide.btn}}</h3>
     </div>
+    <h3 class="label flex-c">
+      漾家居
+    </h3>
     <h3 class="title1">
       純漾好格局
     </h3>
@@ -43,7 +44,7 @@
     </h3>
     <hr>
     <h3 class="desc">
-      {{slideList[slideIndex].desc}}
+     犧牲了可售坪數，只為了能有最好的格局，這樣的心意邀您眼見為憑。琢磨許久的方整規劃，讓每一戶擁有良好採光，也減少走道空間的浪費，讓「家」回歸居住最純粹。
     </h3>
     <h3 class="subtitle">
       {{slideList[slideIndex].subtitle}}
@@ -58,8 +59,8 @@
 .section8 {
   width: size(1920);
   height: 100vh;
-  min-height: size(900);
-  max-height: size(1080);
+  min-height: size(1110);
+  max-height: size(1110);
   background-size: cover;
   background-attachment: fixed;
   overflow: hidden;
@@ -79,14 +80,27 @@
   }
 }
 
+.label {
+  @include div_r_pc(184, 81, 90, 232);
+  border: solid 1.2px #6e3a1d;
+  font-size: size(45);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(3.6);
+  text-align: left;
+  color: #6e3a1d;
+  border-radius: 40px / 40px;
+}
 .btns {
-  @include img_l_pc(1200, 60, 0);
+  @include img_l_pc(1000, 60, 70);
   .btn {
-    width: size(291);
+    width: size(290);
     height: size(74);
     background-color: #ffffff;
     border-radius: 35px / 35px;
-    margin: 0 size(48);
+    margin: 0 0 0 size(40);
     margin-bottom: size(30);
     font-size: size(35.6);
     font-weight: bold;
@@ -132,7 +146,7 @@
 
 hr {
   @include img_r_pc(551, 434, 233);
-  border: solid 2px #f6ab00;
+  border: solid size(1) #f6ab00;
 }
 
 .desc {
@@ -182,22 +196,24 @@ hr {
 }
 
 .b1 {
-  @include img_l_pc(198, 58, 720);
-  animation: an2 1.5s infinite alternate;
+  @include img_r_pc(510, 121, -190);
+  animation: an 4.5s infinite alternate;
 }
 
 .b2 {
-  @include img_l_pc(308, 767, 429);
+  @include img_r_pc(550, 180, 414);
   animation: an 2.5s infinite alternate;
+  img{width: 100%;transform: rotate(25deg);}
 }
 
 .b3 {
-  @include img_l_pc(169, 764, 1141);
+  @include img_r_pc(543, 500, -280);
   animation: an 2.5s infinite alternate;
 }
 
 .b4 {
-  @include img_r_pc(671, 0, -300);
+  @include img_r_pc(180, 790, 210);
+  z-index: 2;
   animation: an 4.5s infinite alternate;
 }
 
@@ -442,6 +458,19 @@ hr {
     }
   }
 
+  .label {
+    @include div_r_m(145, 64, 30, 30);
+    border: solid 1.2px #6e3a1d;
+    font-size: sizem(34);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(2.6);
+    text-align: left;
+    color: #6e3a1d;
+    border-radius: 40px / 40px;
+  }
   .title1 {
     @include img_r_m(138, 635, 129);
     font-size: sizem(26);
@@ -469,19 +498,19 @@ hr {
   }
 
   hr {
-    @include img_r_m(280, 717, 43);
-    border: solid 2px #f6ab00;
+    @include img_r_m(280, 710, 43);
+    border: solid sizem(1) #f6ab00;
   }
 
   .desc {
-    @include img_r_m(250, 742, 71);
+    @include img_r_m(250, 730, 71);
     font-size: sizem(15);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.78;
     letter-spacing: sizem(0.61);
-    text-align: left;
+    text-align: j;
     color: #231815;
   }
 
@@ -520,22 +549,22 @@ hr {
   }
 
   .b1 {
-    @include img_l_m(80, 60, -20);
+    @include img_l_m(130, -20, -20);
     animation: an2 1.5s infinite alternate;
   }
 
   .b2 {
-    @include img_l_m(62, 548, 263);
+    @include img_l_m(300, 570,-52);
     animation: an 2.5s infinite alternate;
   }
 
   .b3 {
-    @include img_l_m(134, 560, 12);
+    @include img_l_m(300, 700, 350);
     animation: an 2.5s infinite alternate;
   }
 
   .b4 {
-    @include img_r_m(62, 1117, 63);
+    @include img_r_m(62, 880, 80);
     animation: an 4.5s infinite alternate;
   }
 
@@ -705,7 +734,7 @@ hr {
       width: sizem(52);
       height: sizem(52);
       cursor: pointer;
-      background-color: #333;
+      background-color: #ec6300;
       img {
         width: 10px;
       }
@@ -743,36 +772,26 @@ export default {
         {
           img: require('./s8/a.png'),
           title: '純漾好格局 看了就知道',
-          desc:
-            '犧牲了可售坪數，只為了能有最好的格局，這樣的心意邀您眼見為憑。琢磨許久的方整規劃，讓每一戶擁有良好採光，也減少走道空間的浪費，讓「家」回歸居住最純粹。',
           subtitle: '2+1房．2衛．客廳．餐廳．廚房．陽台',
           btn: 'A戶∣27.9坪',
         },
         {
           img: require('./s8/b.png'),
-          desc:
-            '不用花時間出門找運動場地、花月費加入健身房，興致一來穿上運動鞋，隨時開始熱血飆汗。',
           subtitle: '2房．1衛．客廳．餐廳．廚房．陽台',
           btn: 'B戶∣23.08坪',
         },
         {
           img: require('./s8/c.png'),
-          desc:
-            '陪孩子放電最怕出門大包小包到親子館人擠人，現在電梯一搭在社區裡和孩子一起交朋友玩翻天。',
           subtitle: '1房．1衛．客廳．餐廳．廚房．陽台',
           btn: 'C戶∣18.32坪',
         },
         {
           img: require('./s8/d.png'),
-          desc:
-            '三五好友小酌相聚、戶外觀星搖椅迎風愜意，獨棟VIP會館式包廂，把信義區時尚酒吧搬回家。',
           subtitle: '2房．1衛．客廳．餐廳．廚房．陽台',
           btn: 'D戶∣24.01坪',
         },
         {
           img: require('./s8/e.png'),
-          desc:
-            '在遼闊的水岸天空下曬曬暖陽、和家人輕鬆喝茶談天說地，BBQ區隨時開爐歡聚不用等到中秋節。',
           subtitle: '2+1房．2衛．客廳．餐廳．廚房．陽台',
           btn: 'E戶∣28.68坪',
         },

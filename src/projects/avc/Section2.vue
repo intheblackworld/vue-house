@@ -2,11 +2,12 @@
   <div>
     <div class="section2">
       <img src="./s2/img.png" alt="" class="img">
-      <img src="./s2/img2.png" alt="" class="img2">
+      <div class="an"><img src="./s2/img2.png" alt="" class="img2"></div>
 
       <img src="./s1/b.png" alt="" class="b1">
       <img src="./s1/b.png" alt="" class="b2">
       <img src="./s1/b.png" alt="" class="b3">
+      <img src="./s1/b.png" alt="" class="b4" v-if="isMobile">
 
       <h3 class="title" data-aos="fade" data-aos-delay="0">8大實力．好漾出擊</h3>
       <div class="item-container flex-ac flex-jb wrap">
@@ -26,8 +27,8 @@
 .section2 {
   width: size(1920);
   height: 100vh;
-  min-height: size(900);
-  max-height: size(1080);
+  min-height: size(1100);
+  max-height: size(1100);
   background-size: cover;
   background-attachment: fixed;
   overflow: hidden;
@@ -51,9 +52,16 @@
   @include img_r_pc(348, 157, -180);
 }
 
+  .an{
+  @include img_r_pc(648, 1088, -250);
+  animation: an 2.5s linear infinite alternate-reverse;
+  transform:translate(10%,20%);
+  transform-origin: 0 0;
+  z-index: 5;
+ }
 .img2 {
-  @include img_r_pc(648, 1088, -180);
-  transform: rotate(45deg);
+  width: 100%;
+  transform: rotate(225deg);
   transform-origin: center;
 }
 
@@ -74,14 +82,17 @@
   position: relative;
   margin: 0 auto;
   margin-top: size(222);
-  width: size(1088);
+  width: size(1200);
   transition: all 0.3s;
-  &:hover {
-    transform: scale(1.1);
-  }
+  z-index: 5;
 }
 .item {
   width: size(240);
+  position: relative;
+  margin:size(20) size(10);
+  &:hover {
+    transform: scale(1.2) !important;
+  }
 }
 .item-img {
   width: size(178);
@@ -113,33 +124,32 @@
 
 .b1 {
   @include img_l_pc(269, 70, 20);
-  animation: an2 1.5s infinite alternate;
+  animation: an 2s linear infinite alternate;
+  transform-origin: 0 0;
+  transform:translate(-10%,-20%);
 }
 
 .b2 {
   @include img_l_pc(214, 823, 20);
-  animation: an 2.5s infinite alternate;
+  animation: an 5s linear infinite alternate;
+  transform-origin: 0 0;
+  transform:translate(-10%,-20%);
+  z-index: 2;
 }
 
 .b3 {
   @include img_r_pc(360, 401, -100);
-  animation: an 2.5s infinite alternate;
+  animation: an 2.5s linear infinite alternate;
+  transform-origin: 0 0;
+  transform:translate(-10%,-20%);
 }
 
 @keyframes an {
-  from {
-    transform: translateY(-20px);
-  }
   to {
     transform: translateY(0);
   }
 }
 
-@keyframes an2 {
-  to {
-    transform: translateY(0) rotate(5deg);
-  }
-}
 
 @media only screen and (max-width: 1440px) {
 }
@@ -180,12 +190,6 @@
     @include img_r_m(160, 290, -80);
   }
 
-  .img2 {
-    @include img_r_m(448, 788, -200);
-    transform: rotate(45deg);
-    transform-origin: center;
-  }
-
   .title {
     @include img_r_m(305, 10, 34);
     font-size: sizem(35);
@@ -204,10 +208,6 @@
     margin: 0 auto;
     margin-top: sizem(112);
     width: sizem(275);
-    transition: all 0.3s;
-    &:hover {
-      transform: scale(1.1);
-    }
   }
   .item {
     width: sizem(125);
@@ -242,7 +242,7 @@
   }
 
   .b1 {
-    @include img_l_m(74, 409, 0);
+    @include img_l_m(74, 409, 30);
     animation: an2 1.5s infinite alternate;
   }
 
@@ -252,9 +252,23 @@
   }
 
   .b3 {
-    @include img_l_m(132, 997, -50);
+    @include img_l_m(132, 997, -10);
     animation: an 2.5s infinite alternate;
   }
+  .b4 {
+    @include img_r_m(62, 1100, -10);
+    animation: an 2s infinite alternate;
+  transform:translate(-10%,-10%);
+  }
+  .an{
+    @include img_r_m(448, 670, -250);
+ }/*
+  .img2 {
+    @include img_r_m(448, 480, -230);
+    transform: rotate(45deg);
+    transform-origin: center;
+  }*/
+
 }
 </style>
 <script>

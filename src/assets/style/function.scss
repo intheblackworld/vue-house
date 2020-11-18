@@ -2,6 +2,10 @@
   $c-size: 100vw * $size / 1920;
   @return #{$c-size};
 }
+@function size_c($size) {
+  $c-size: 50% -100vw * $size / 1920;
+  @return #{$c-size};
+}
 @function size-m($size) {
   $c-size: 100vw * $size / 375;
   @return #{$c-size};
@@ -54,7 +58,6 @@
   right: size($right);
   left: auto;
 }
-
 @mixin img_r_m($width, $top, $right) {
   position: absolute;
   width: sizem($width);
@@ -62,6 +65,20 @@
   right: sizem($right);
   left: auto;
 }
+//置中對其的
+@mixin img_c_pc($width, $top, $left) {
+  position: absolute;
+  width: size($width);
+  top:$top;
+  left:$left;
+}
+@mixin img_c_m($width, $top, $left) {
+  position: absolute;
+  width: sizem($width);
+  top:$top;
+  left:$left;
+}
+
 
 @mixin img_l_pc($width, $top, $left) {
   position: absolute;

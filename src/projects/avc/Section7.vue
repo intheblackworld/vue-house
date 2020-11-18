@@ -60,16 +60,16 @@
 }
 
 .mask {
-  @include div_l_pc(930, 260, 0, 0);
+  @include div_l_pc(970, 260, 0, 0);
   background-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 0.7) 60%,
-    rgba(0, 0, 0, 0.1) 100%
+    rgba(0, 0, 0, 0) 100%
   );
 }
 
 .title1 {
-  @include img_l_pc(440, 26, 60);
+  @include img_l_pc(440, 20, 60);
   text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
   font-size: size(50);
   font-weight: bold;
@@ -83,12 +83,12 @@
 }
 
 hr {
-  @include img_l_pc(687, 100, 0);
+  @include img_l_pc(687, 85, 0);
   border: solid 1px #ffffff;
 }
 
 .desc {
-  @include img_l_pc(581, 115, 60);
+  @include img_l_pc(581, 105, 60);
   text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
   font-size: size(28);
   font-weight: bold;
@@ -96,14 +96,14 @@ hr {
   font-style: normal;
   line-height: 1.66;
   letter-spacing: size(3.53);
-  text-align: left;
+  text-align: justify;
   color: #ffffff;
 }
 
 .txt {
-  @include img_r_pc(187, 980, 25);
+  @include img_c_pc(187,calc(100% - 2vw),calc(100% - 10vw));
   text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
-  font-size: size(26);
+  font-size: size(18);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -116,8 +116,7 @@ hr {
 /* Swipe */
 .swipe {
   width: size(1920);
-  height: 100vh;
-  min-height: size(900);
+  height:100%;
   top: 0;
   right: size(0);
   object-fit: cover;
@@ -335,7 +334,7 @@ hr {
   }
 
   .title1 {
-    @include img_l_m(229, 48, 32);
+    @include img_l_m(229, 35, 32);
     text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
     font-size: sizem(26);
     font-weight: bold;
@@ -349,12 +348,12 @@ hr {
   }
 
   hr {
-    @include img_r_m(310, 94, 32);
+    @include img_r_m(310, 75, 32);
     border: solid 1px #ffffff;
   }
 
   .desc {
-    @include img_r_m(310, 112, 32);
+    @include img_r_m(310, 100, 32);
     text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
     font-size: sizem(15);
     font-weight: bold;
@@ -362,13 +361,17 @@ hr {
     font-style: normal;
     line-height: 1.66;
     letter-spacing: sizem(1.73);
-    text-align: left;
+    text-align: justify;
     color: #ffffff;
   }
 
   .txt {
-    @include img_r_m(87, 500, 20);
-    text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
+    width:auto;
+    top: auto;
+    left: auto;
+    bottom: size-m(10);
+    right: size-m(10);
+    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.8);
     font-size: sizem(12);
     font-weight: bold;
     font-stretch: normal;
@@ -566,31 +569,31 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s7/1.jpg'),
+          img:isMobile?require('./s7/1_m.jpg'):require('./s7/1.jpg'),
           title: '舞墨迎賓廳',
           desc:
             '取自國際精品飯店設計靈感，雲紋石材、木格柵、讓入門的每一位賓客享有最尊榮禮遇。',
         },
         {
-          img: require('./s7/2.jpg'),
+          img: isMobile?require('./s7/5_m.jpg'):require('./s7/5.jpg'),
           title: '都會健身房',
           desc:
             '不用花時間出門找運動場地、花月費加入健身房，興致一來穿上運動鞋，隨時開始熱血飆汗。',
         },
         {
-          img: require('./s7/3.jpg'),
+          img: isMobile?require('./s7/4_m.jpg'):require('./s7/4.jpg'),
           title: '朵朵遊戲區',
           desc:
             '陪孩子放電最怕出門大包小包到親子館人擠人，現在電梯一搭在社區裡和孩子一起交朋友玩翻天。',
         },
         {
-          img: require('./s7/4.jpg'),
+          img: isMobile?require('./s7/3_m.jpg'):require('./s7/3.jpg'),
           title: '星夜閣Lounge Bar',
           desc:
             '三五好友小酌相聚、戶外觀星搖椅迎風愜意，獨棟VIP會館式包廂，把信義區時尚酒吧搬回家。',
         },
         {
-          img: require('./s7/5.jpg'),
+          img: isMobile?require('./s7/2_m.jpg'):require('./s7/2.jpg'),
           title: '水漾天空花園',
           desc:
             '在遼闊的水岸天空下曬曬暖陽、和家人輕鬆喝茶談天說地，BBQ區隨時開爐歡聚不用等到中秋節。 ',

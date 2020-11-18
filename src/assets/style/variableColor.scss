@@ -1,5 +1,6 @@
 /* html, body */
 $bg: url('~@/projects/avc/s1/bg.png');
+$bg_m: url('~@/projects/avc/s1/bg_m.png');
 
 /* font-family */
 /* 1主要字體  2次要字體  3表單字體 */
@@ -8,12 +9,12 @@ $family2: 'Noto Serif TC',sans-serif;
 $family3: 'Noto Serif TC',sans-serif;
 
 /* navigation */
-$nav_bg: #c61b1f;
+$nav_bg: #f29600;
 $nav_btn_color: #fff;
 $nav_link_color: #fff;
 $nav_link_subtitle_color: #fff;
 $nav_link_hover_color: #fff;
-$nav_link_hover_bg: #e64043;
+$nav_link_hover_bg: #c61b1f;
 
 /* loading */
 $loading_bg_color: #ccc;

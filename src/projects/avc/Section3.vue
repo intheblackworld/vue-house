@@ -1,6 +1,7 @@
 <template>
   <div class="section3">
-    <img src="./s3/top.png" alt="" class="top">
+    <img src="./s3/top.png" alt="" class="top" v-if="!isMobile">
+    <img src="./s3/top_m.png" alt="" class="top" v-if="isMobile">
     <h3 class="title1" data-aos="fade" data-aos-delay="200">
       浩瀚城市大景
     </h3>
@@ -29,11 +30,14 @@
 }
 
 .top {
-  @include img_l_pc(1920, 0, 0);
+  @include img_l_pc(1920, -300, 0);
+  z-index: 4;
 }
 
 .vr {
   height: size(1080);
+  position: relative;
+  z-index: 3;
 }
 
 .title1 {
@@ -47,6 +51,7 @@
   text-align: left;
   color: #c61b1f;
   white-space: nowrap;
+  z-index: 4;
 }
 
 .title2 {
@@ -60,6 +65,7 @@
   text-align: left;
   color: #c61b1f;
   white-space: nowrap;
+  z-index: 4;
 }
 
 .desc {
@@ -72,6 +78,7 @@
   letter-spacing: size(2.3);
   text-align: left;
   color: #231815;
+  z-index: 5;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -101,14 +108,14 @@
   }
 
   .top {
-    @include img_l_m(375, 200, 0);
+    @include img_l_m(375, 182, 0);
     height: sizem(79);
-    z-index: 1;
+   // z-index: ;
   }
 
   .vr {
     // position: absolute;
-    margin-top: sizem(200);
+    margin-top: sizem(230);
     left: 0;
     height: sizem(444);
   }

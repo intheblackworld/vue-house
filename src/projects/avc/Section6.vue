@@ -1,6 +1,7 @@
 <template>
   <div class="section6">
-    <img src="./s6/bg.jpg" alt="" class="bg-img">
+    <img src="./s6/bg.jpg" alt="" class="bg-img" v-if="!isMobile">
+    <img src="./s6/bg_m.jpg" alt="" class="bg-img" v-if="isMobile">
     <h3 class="label flex-c">
       漾建築
     </h3>
@@ -48,7 +49,7 @@
 }
 
 .label {
-  @include div_l_pc(184, 81, 67 + 90, 191);
+  @include div_l_pc(184, 81, 67, 191);
   border: solid 1.2px #6e3a1d;
   font-size: size(45);
   font-weight: bold;
@@ -62,7 +63,7 @@
 }
 
 .title1 {
-  @include img_l_pc(440, 171 + 90, 880);
+  @include img_c_pc(495,calc(50% - 14.5vw),calc(50% - 4.8vw));
   text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
   font-size: size(50);
   font-weight: bold;
@@ -76,7 +77,7 @@
 }
 
 .title2 {
-  @include img_l_pc(440, 233 + 90, 1055);
+  @include img_c_pc(495,calc(50% - 11.5vw),50%);
   text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
   font-size: size(50);
   font-weight: bold;
@@ -84,18 +85,18 @@
   font-style: normal;
   line-height: 1.2;
   letter-spacing: size(4);
-  text-align: left;
+  text-align: right;
   color: #ffffff;
   white-space: nowrap;
 }
 
 hr {
-  @include img_r_pc(687, 396, 444);
-  border: solid 2px #ffffff;
+  @include img_c_pc(687,calc(50% - 7.5vw),calc(50% - 8.55vw + 0.2vh));
+  border: solid  size(1) #ffffff;
 }
 
 .desc {
-  @include img_r_pc(581, 330 + 90, 460);
+  @include img_c_pc(585,calc(50% - 6.3vw),calc(50% - 4.8vw));
   text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
   font-size: size(28);
   font-weight: bold;
@@ -103,14 +104,14 @@ hr {
   font-style: normal;
   line-height: 1.66;
   letter-spacing: size(3.53);
-  text-align: left;
+  text-align: justify;
   color: #ffffff;
 }
 
 .txt {
-  @include img_r_pc(187, 980, 25);
+  @include img_c_pc(187,calc(100% - 2vw),calc(100% - 10vw));
   text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
-  font-size: size(26);
+  font-size: size(18);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -138,13 +139,12 @@ hr {
   .section6 {
     width: 100vw;
     height: calc(100vh - 63px);
-    min-height: calc(100vh - 63px);
-    max-height: auto;
+    min-height:sizem(673);
+    max-height:sizem(760);
   }
 
   .bg-img {
     width: sizem(375);
-    height: calc(100vh - 63px);
     position: absolute;
     top: 0;
     left: 0;
@@ -212,13 +212,17 @@ hr {
     font-style: normal;
     line-height: 1.66;
     letter-spacing: sizem(1.83);
-    text-align: left;
+    text-align: justify;
     color: #ffffff;
   }
 
   .txt {
-    @include img_r_m(87, 640, 20);
-    text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
+    width:auto;
+    top: auto;
+    left: auto;
+    bottom: size-m(10);
+    right: size-m(10);
+    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.8);
     font-size: sizem(12);
     font-weight: bold;
     font-stretch: normal;
