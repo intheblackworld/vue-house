@@ -461,6 +461,19 @@ hr {
       bottom: 0;
       left: 0;
     }
+    .name {
+      right: 1.5em;
+      bottom: 1em;
+      font-size: sizem(12);
+      font-weight: 400;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1;
+      letter-spacing: 0.89px;
+      text-align: left;
+      color: #fff;
+      text-shadow: 0 0.1em 0.3em #000;
+    }
 
     // &:nth-child(1) {
     //   z-index: 1;
