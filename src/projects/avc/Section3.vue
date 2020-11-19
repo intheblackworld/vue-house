@@ -14,7 +14,7 @@
 
     <!-- <img src="./s3/720度環景.jpg" alt="" class="vr"> -->
     <v-pannellum :src="require('./s3/(45M)720度環景.jpg')" :autoLoad="true" :hfov="isMobile ? 100 : 260" :autoRotate="true" class="vr"></v-pannellum>
-    <div class="vr-mask"></div>
+    <div class="vr-mask" v-if="isMobile"></div><div class="vr-mask2" v-if="isMobile"></div>
   </div>
 </template>
 
@@ -40,16 +40,6 @@
   height: size(1080);
   position: relative;
   z-index: 3;
-}
-
-.vr-mask {
-  width: 100vw;
-  height: 100vh;
-  min-height: size(1080);
-  position: absolute;
-  z-index: 4;
-  top: 0;
-  left: 0;
 }
 
 .title1 {
@@ -109,7 +99,7 @@
 @media screen and (max-width: 767px) {
   .section3 {
     width: 100vw;
-    height: sizem(624);
+    height: sizem(730);
     min-height: sizem(0);
     max-height: sizem(900);
     overflow-x: scroll;
@@ -128,14 +118,26 @@
   .vr {
     // position: absolute;
     margin-top: sizem(230);
-    left: 0;
-    height: sizem(444);
+    left: -50vw;
+    height: sizem(500);
+    width: 200vw;
   }
 
   .vr-mask {
-    margin-top: sizem(230);
-    left: 0;
-    height: sizem(444);
+  height: 100%;
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 0;
+    width:30vw;
+  }
+  .vr-mask2 {
+  height: 100%;
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  right:0;
+ width:30vw;
   }
 
   .title1 {

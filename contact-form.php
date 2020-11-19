@@ -1,6 +1,8 @@
 <?php
     $case_name = "睿暘水漾";
-    $case_code = 'avc';
+    # 抓網址開頭 如果有特殊設定  把 $case_code="該帶碼"
+    $src =$_SERVER['SERVER_NAME']; 
+    $case_code = substr($src,0,strpos($src,'.'));
 
     $name         = isset($_POST['name']) ? $_POST['name'] : '';
     $phone        = isset($_POST['phone']) ? $_POST['phone'] : '';
