@@ -40,7 +40,7 @@
               <label>手機</label>
               <el-input
                 v-model="form.phone"
-                type="phone"
+                type="number"
                 placeholder
               ></el-input>
             </div>
@@ -296,6 +296,7 @@ export default {
 
       if (!/1{2}[0-9]{8}$/.test(this.form.phone)) {
         this.alertValidatePhone()
+        this.isSubmit = false
         return 
       }
       const urlParams = new URLSearchParams(window.location.search)
