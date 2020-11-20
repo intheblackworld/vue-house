@@ -9,14 +9,14 @@
         <img src="./chevron-up.png" alt />
         </div>-->
       </div>
-      <div class="modal" v-if="modal">
+      <!-- <div class="modal" v-if="modal">
         <div class="mask" @click="modal = false"></div>
         <div>
           <img src="./dialog/web.jpg" alt v-if="!isMobile" />
           <img src="./dialog/mo.jpg" alt v-else />
           <img src="@/assets/img/close.png" alt class="close" @click="modal = false" />
         </div>
-      </div>
+      </div> -->
       <div class="star comet"></div>
       <img src="./s1_logo.png" alt class="logo" data-aos="fade-down" data-aos-delay="0" />
     </div>
