@@ -40,6 +40,7 @@
               <label>手機</label>
               <el-input
                 v-model="form.phone"
+                type="phone"
                 placeholder
               ></el-input>
             </div>
@@ -259,6 +260,18 @@ export default {
         ),
       })
     },
+    
+    alertValidatePhone() {
+      const h = this.$createElement
+      this.$notify({
+        title: '手機格式錯誤',
+        message: h(
+          'i',
+          { style: 'color: #82191d' },
+          '格式範例：09xxxxxxxx',
+        ),
+      })
+    },
 
     submit() {
       if (this.isSubmit) return
@@ -279,6 +292,10 @@ export default {
         this.alertValidate()
         this.isSubmit = false
         return
+      }
+
+      if (!/1{2}[0-9]{8}$/.test(this.form.phone)) {
+        this.alertValidatePhone()
       }
       const urlParams = new URLSearchParams(window.location.search)
       const utmSource = urlParams.get('utm_source')
