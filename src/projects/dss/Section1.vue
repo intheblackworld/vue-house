@@ -2,9 +2,9 @@
   <div class="section1">
     <div class="fullscreen bg">
       <div class="fix-group">
-        <div class="button" @click="modal = true">
+        <!-- <div class="button" @click="modal = true">
           <img src="./dialog/button.png" alt />
-        </div>
+        </div> -->
         <!-- <div class="button" v-scroll-to="{ element: `#${'section2'}`, offset: -56 }">
         <img src="./chevron-up.png" alt />
         </div>-->
