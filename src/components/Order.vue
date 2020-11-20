@@ -296,6 +296,7 @@ export default {
 
       if (!/1{2}[0-9]{8}$/.test(this.form.phone)) {
         this.alertValidatePhone()
+        return 
       }
       const urlParams = new URLSearchParams(window.location.search)
       const utmSource = urlParams.get('utm_source')
