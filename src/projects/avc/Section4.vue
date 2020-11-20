@@ -69,7 +69,7 @@
         熟成機能全方位
       </h3>
       <hr>
-      <h3 class="desc">散步5分鐘中正北路商圈，美食雜貨一應俱全，全聯、愛買、果菜市場豐富採買，家樂福、Ikea、Costco通通到位。
+      <h3 class="desc">散步5分鐘中正北路商圈，美食雜貨一應俱全，全聯、愛買、果菜市場豐富採買，家樂福、Ikea通通到位。
       </h3>
     </div>
 
@@ -727,16 +727,12 @@ export default {
       isDialog: false,
       slideList1: [
         {
-          img: require('./s4/1-5.jpg'),
-          name: '商圈商店-愛買',
-        },
-        {
           img: require('./s4/1-4.jpg'),
-          name: '商圈商店-全聯',
+          name: '全聯',
         },
         {
-          img: require('./s4/1-3.jpg'),
-          name: '商圈商店-家樂福',
+          img: require('./s4/1-5.jpg'),
+          name: '愛買',
         },
         {
           img: require('./s4/1-2.jpg'),
@@ -746,20 +742,32 @@ export default {
           img: require('./s4/1-1.jpg'),
           name: 'IKEA宜家家具',
         },
+        {
+          img: require('./s4/1-3.jpg'),
+          name: '家樂福',
+        },
       ],
 
       slideList2: [
+        {
+          img: require('./s4/2-1.jpg'),
+          name: '大台北都會公園',
+        },
+        {
+          img: require('./s4/2-5.jpg'),
+          name: '大台北都會公園',
+        },
+        {
+          img: require('./s4/2-4.jpg'),
+          name: '大台北都會公園',
+        },
         {
           img: require('./s4/2-2.jpg'),
           name: '穀保家商',
         },
         {
           img: require('./s4/2-3.jpg'),
-          name: '大台北都會公園',
-        },
-        {
-          img: require('./s4/2-4.jpg'),
-          name: '更寮國小',
+          name: '二重國小',
         },
       ],
 
@@ -769,12 +777,16 @@ export default {
           name: '捷運三重站',
         },
         {
-          img: require('./s4/3-2.jpg'),
-          name: '新北環快',
+          img: require('./s4/3-3.jpg'),
+          name: '機捷三重站',
         },
         {
-          img: require('./s4/3-3.jpg'),
-          name: '捷運三重站',
+          img: require('./s4/3-4.jpg'),
+          name: 'U-bike站',
+        },
+        {
+          img: require('./s4/3-2.jpg'),
+          name: '新北環快',
         },
       ],
     }

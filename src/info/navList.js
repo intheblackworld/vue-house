@@ -6,4 +6,5 @@ export default [
   { name: '漾家居', imgSrc: '', subTitle: '', section: 'section8', svgSrc: '', mobileOffset: 0 },
   { name: '漾團隊', imgSrc: '', subTitle: '', section: 'section10', svgSrc: '', mobileOffset: 0 },
   { name: '預約參觀', imgSrc: '', subTitle: '', section: 'contact', svgSrc: '', mobileOffset: -0 },
+  { name: '建案資訊', imgSrc: '', subTitle: '', section: 'house-info', svgSrc: '', mobileOffset: -0 },
 ]
