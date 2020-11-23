@@ -117,7 +117,7 @@ export default {
 @import '../assets/style/function.scss';
 
 .navigation {
-  background-color: $nav_bg;
+  background: $nav_bg;
   // background-image: $nav_bg;
   background-size: cover;
   height: $nav_pc_height;
@@ -174,6 +174,12 @@ export default {
   padding-left: 30px;
   li {
     height: 100%;
+
+    &:nth-last-child(1) {
+      .title {
+        border-right: none;
+      }
+    }
   }
 
   .link {
@@ -182,20 +188,15 @@ export default {
     text-align: center;
     display: block;
     cursor: pointer;
-    padding: 0 22px;
+    padding: 0;
     // margin: 0 10px;
     transition: all 0.8s;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    border-right: 1px solid #fff;
     // overflow: hidden;
     // border-right: 1px solid $nav_link_hover_bg;
-
-    &:nth-last-child(1) {
-      border-right: none;
-    }
 
     &:hover {
       color: $nav_link_hover_color;
@@ -248,6 +249,8 @@ export default {
       font-size: 16px !important;
       font-weight: bold;
       position: relative;
+      border-right: 1px solid #000;
+      padding: 0 12px;
       z-index: 3;
       > span {
         font-size: 24px !important;

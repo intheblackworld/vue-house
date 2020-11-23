@@ -35,6 +35,18 @@
     >
       <Section5 />
     </vue-lazy-component>
+    <vue-lazy-component
+      class="section"
+      id="section6"
+    >
+      <Section6 />
+    </vue-lazy-component>
+    <vue-lazy-component
+      class="section"
+      id="section7"
+    >
+      <Section7 />
+    </vue-lazy-component>
     <vue-lazy-component class="section" id="contact">
       <ContactSection />
     </vue-lazy-component>
@@ -67,11 +79,13 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/jw/Section1.vue'
-import Section2 from '@/projects/jw/Section2.vue'
-import Section3 from '@/projects/jw/Section3.vue'
-import Section4 from '@/projects/jw/Section4.vue'
-import Section5 from '@/projects/jw/Section5.vue'
+import Section1 from '@/projects/dc/Section1.vue'
+import Section2 from '@/projects/dc/Section2.vue'
+import Section3 from '@/projects/dc/Section3.vue'
+import Section4 from '@/projects/dc/Section4.vue'
+import Section5 from '@/projects/dc/Section5.vue'
+import Section6 from '@/projects/dc/Section6.vue'
+import Section7 from '@/projects/dc/Section7.vue'
 
 export default {
   name: 'home',
@@ -88,6 +102,8 @@ export default {
     Section3,
     Section4,
     Section5,
+    Section6,
+    Section7,
   },
 
   data() {

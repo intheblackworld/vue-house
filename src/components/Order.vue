@@ -8,12 +8,12 @@
         <h3 class="title">{{order.title}}</h3>
         <div class="subtitle">{{order.subTitle}}</div>
       </div> -->
-      <h3
+      <div
         class="order-title"
         v-html="order.title"
         data-aos="fade-down"
         data-aos-delay="0"
-      ></h3>
+      ></div>
       <div
         class="order-subtitle"
         v-html="order.subTitle"
@@ -347,12 +347,12 @@ export default {
 .order-bg {
   // background-color: $order_bg_color;
   background-image: $order_bg_image;
-  background-repeat: no-repeat;
+  background-repeat:Srepeat;
   position: relative;
   padding-top: 130px;
-  background-size: 100vw 100%;
-  // background-attachment: fixed;
-  background-position: 0% 0%;
+  background-size: 100vw auto;
+  background-attachment: fixed;
+  background-position: 80% 0%;
   font-family: $family3;
   input,
   textarea,
@@ -365,19 +365,15 @@ export default {
   }
   .order-title {
     font-family: $family2;
-    width: 80vw;
+    width: 100vw;
     padding-top: 20px;
-    padding-bottom: 20px;
-    margin: 0 auto 40px;
-    display: inline-block;
+    padding-bottom: 8px;
     font-weight: 700;
-    line-height: 1.7;
+    line-height: 1.3;
     letter-spacing: 20px;
     font-size: calc(100vw * 36 / 1920);
     text-align: center;
     color: $order_title_color;
-    border-top: 1px solid #248184;
-    border-bottom: 1px solid #248184;
   }
 
   .order-subtitle {
@@ -385,8 +381,8 @@ export default {
     font-size: 20px;
     text-align: center;
     color: $order_subtitle_color;
-    margin-bottom: 0px;
-    padding-bottom: 8px;
+    margin-bottom: 40px;
+    padding-bottom: 18px;
   }
 
   .order {
@@ -444,17 +440,11 @@ export default {
     }
 
     label {
-      //width:10em;
-      flex: 0 0 6.8em;
-      display:block;text-align: left;
+      width: 92px;
       font-size: 16px;
       opacity: 0.8;
       font-weight: bold;
       color: $order_input_label_color;
-
-      span {
-        color: #ff0000;
-      }
     }
   }
 
@@ -484,8 +474,9 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .order-bg {
-    background-image: $order_bg_image_m;
-    background-size: 100vw auto;
+    // background-image: $order_bg_image_m;
+    background-attachment: initial;
+    background-size: cover;
     padding-top: 40px;
     margin: 0;
     position: relative;
@@ -495,9 +486,8 @@ export default {
       display: block;
     }
     .order-title {
-      width: 290px;
       padding-top: 10px;
-      padding-bottom: 10px;
+      padding-bottom: 5px;
       font-size: calc(100vw * 25 / 375);
       letter-spacing: 4px;
     }
@@ -507,14 +497,13 @@ export default {
       font-size: 21px;
     }
     .order {
-      width: 84%;
+      width: 95% !important;
       margin: 0 auto;
       padding: 0;
     }
 
     .form {
       flex-direction: column;
-    margin-bottom: -12px ;
     }
 
     .group {
@@ -536,12 +525,8 @@ export default {
     }
 
     .control {
-    .el-checkbox{
-      margin:10px auto;
-    }
-     /* margin-top: 10px;
+      margin-top: 10px;
       margin-bottom: 10px;
-      */
     }
 
     .hint {

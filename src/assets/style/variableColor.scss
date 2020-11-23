@@ -1,5 +1,5 @@
 /* html, body */
-$bg: url('~@/projects/jw/s1/bg.jpg');
+$bg: url('~@/projects/dc/s1/bg2.png');
 
 /* font-family */
 /* 1主要字體  2次要字體  3表單字體 */
@@ -8,11 +8,11 @@ $family2: 'Noto Serif TC', serif;
 $family3: 'Noto Serif TC', serif;
 
 /* navigation */
-$nav_bg: #248184;
-$nav_btn_color: #fff;
-$nav_link_color: #fff;
+$nav_bg: linear-gradient(to right, rgba(255, 255, 255, .4), rgba(255, 255, 255, 1));
+$nav_btn_color: #000;
+$nav_link_color: #000;
 $nav_link_subtitle_color: #fff;
-$nav_link_hover_color: #ccc;
+$nav_link_hover_color: #666;
 $nav_link_hover_bg: #eee;
 
 /* loading */

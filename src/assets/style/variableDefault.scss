@@ -1,9 +1,9 @@
 @import './function.scss';
 /* navigation */
-$nav_pc_height: 60px;
+$nav_pc_height: size(90);
 $nav_tablet_height: 60px;
 $nav_phone_height: 0px;
-$logo_pc_width: calc(100vw * 100 / 1920);
+$logo_pc_width: calc(100vw * 184 / 1920);
 $logo_tablet_width: calc(100vw * 80 / 1920);
 $logo_phone_width: 40px;
 
