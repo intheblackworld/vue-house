@@ -196,9 +196,9 @@ export default {
       isMobile,
       // tagList: [require('./s3_title.png')],
 
-      bgSrc: require('./s3/map.jpg'),
+      bgSrc: require('./s2/bg.jpg'),
       // bgmSrc: require('./s3_bg_m.jpg'),
-      hand: require('./s3/小手.png'),
+      hand: require('./s2/小手.png'),
     }
   },
 
