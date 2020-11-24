@@ -1,7 +1,11 @@
 <template>
   <div class="section1">
-    <img src="./s1/bg.jpg" alt="" class="bg-img" v-if="isPC">
-    <img src="./s1/bg_m.jpg" alt="" class="bg-img" v-if="isMobile">
+    <div class="bg-img">
+    <img src="./s1/bg.jpg" alt="bg" v-if="isPC">
+    <img src="./s1/bg.jpg" alt="bg" v-if="isPC">
+    <img src="./s1/bg_m.jpg" alt="bg" v-if="isMobile">
+    <img src="./s1/bg_m.jpg" alt="bg" v-if="isMobile">
+    <img src="./s1/bg_m.jpg" alt="bg" v-if="isMobile"></div>
     <img src="./s1/img.png" alt="" class="img" data-aos="fade" data-aos-delay="0" v-if="isMobile">
     <img src="./s1/img_m.png" alt="" class="img" data-aos="fade" data-aos-delay="0" v-else>
     <img src="./s1/logo.png" alt="" class="logo" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
@@ -28,45 +32,61 @@
 
 .section1 {
   width: size(1920);
-  height: size(1280);
+  height:100vh;
   min-height: size(900);
-  max-height: size(1280);
-  overflow: hidden;
+  max-height: size(1080);
+  //overflow: hidden;
   position: relative;
   // background: url('./s1/bg.png') fixed;
   background-size: auto;
 }
 
 .bg-img {
-  width: size(1920);
-  height: 100%;
-  min-height: size(900);
+  width: 100%;
+  height: 100%;overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
   display: block;
   object-fit: cover;
   margin-top: 0;
+  &::after{content: "";width: 100%;height: 30%;
+  position: absolute;
+  bottom: 0;left: 0;
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);}
 
   &:nth-child(1) {
     position: relative;
   }
+  img{width: 100%;position: relative;float: left;
+    animation: tr 30s linear infinite;
+    transform: translate(0%, -100%);}
+}
+@keyframes tr {
+  to {
+    transform: translate(0%, 0%);
+  }
 }
 
 .img {
-  @include img_l_pc(722, 0, 0);
+ // @include img_l_pc(722, 0, 0);
+  @include img_c(700, calc(50% - 33vw), 0);
 }
 
 .logo {
-  @include img_r_pc(605, 304, 157);
+ // @include img_r_pc(605, 304, 157);
+  @include img_c(605, calc(50% - 13vw),size(1158));
 }
 
 .logo2 {
-  @include img_r_pc(163, 866, 155);
+  //@include img_r_pc(163, 866, 155);
+  
+  @include img_c(163, calc(50% + 16vw),size(1602));
 }
 
 .title1 {
-  @include img_r_pc(433, 752, 709);
+  //@include img_r_pc(433, 752, 709);
+  @include img_c(433, calc(50% + 10vw),size(778));
   font-size: size(58);
   font-weight: bold;
   font-stretch: normal;
@@ -79,7 +99,7 @@
 }
 
 .title2 {
-  @include img_r_pc(512, 752, 152);
+  @include img_c(512, calc(50% + 10vw),size(1254));
   font-size: size(58);
   font-weight: bold;
   font-stretch: normal;
@@ -92,7 +112,8 @@
 }
 
 .phone {
-  @include img_r_pc(451, 823, 691);
+  //@include img_r_pc(451, 823, 691);
+  @include img_c(451, calc(50% + 14.5vw),size(778));
   font-size: size(102);
   font-weight: 500;
   font-stretch: normal;
@@ -105,7 +126,9 @@
 }
 
 .btn {
-  @include div_r_pc(280, 77, 863, 375);
+ // @include div_r_pc(280, 77, 863, 375);
+  @include img_c(280, calc(50% + 16vw),size(1264));
+  height:size(77);
   border: 2px solid #248184;
   font-size: size(41);
   font-weight: bold;
@@ -140,29 +163,14 @@
 @media screen and (max-width: 767px) {
   .section1 {
     width: 100vw;
-    min-height: sizem(470);
+    min-height:calc(161vw + 80vw);
     max-height: sizem(812);
-    height: calc(100vh - 63px);
+    height: calc(100vh - 63px + 80vw);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
   }
 
-  .bg-img {
-    width: sizem(375);
-    height: calc(100vh - 63px);
-    min-height: calc(100vh - 63px);
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    object-fit: cover;
-    margin-top: 0;
-
-    &:nth-child(1) {
-      position: relative;
-    }
-  }
 
   .img {
     @include img_l_m(201, 0, 0);

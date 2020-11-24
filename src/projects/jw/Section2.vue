@@ -93,6 +93,7 @@
     height: sizem(346);
     min-height: auto;
     max-height: initial;
+    margin: -60vw 0 0 0 ;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
     // background-position: 0 0;
@@ -101,7 +102,7 @@
   }
 
   .desc {
-    width: sizem(170);
+    width: sizem(170);z-index: 5;
     font-size: sizem(17);
     font-weight: normal;
     font-stretch: normal;

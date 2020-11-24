@@ -52,9 +52,10 @@
 }
 
 .s-title {
-  @include img_r_pc(345, 511, 274);
+  //@include img_r_pc(345, 511, 274);
+  @include img_c(345, calc(60% - 4.5vw), size(1300));
   font-size: size(90);
-  font-weight: bold;
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
@@ -65,9 +66,10 @@
 }
 
 .title {
-  @include img_r_pc(300, 646, 310);
+  //@include img_r_pc(300, 646, 310);
+  @include img_c(300, calc(60% + 3.2vw), size(1310));
   font-size: size(32);
-  font-weight: bold;
+  font-weight:700;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
@@ -78,7 +80,8 @@
 }
 
 .subtitle {
-  @include img_r_pc(434, 744, 175);
+  //include img_r_pc(434, 744, 175);
+  @include img_c(434, calc(60% + 7.6vw), size(1310));
   font-size: size(24);
   font-weight: bold;
   font-stretch: normal;
@@ -116,14 +119,15 @@
 }
 
 .desc {
-  @include img_r_pc(440, 816, 170);
+  //@include img_r_pc(440, 816, 170);
+  @include img_c(440, calc(60% + 11vw), size(1310));
   font-size: size(20);
-  font-weight: bold;
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 2.2;
   letter-spacing: size(0.96);
-  text-align: left;
+  text-align: justify;
   color: #221815;
 }
 
@@ -571,15 +575,15 @@ export default {
       slideList: [
         {
           img: require('./s4/1.jpg'),
-          name: '圖片為公園示意',
+          name: ' ',
         },
         {
           img: require('./s4/2.jpg'),
-          name: '圖片為公園示意',
+          name: ' ',
         },
         {
           img: require('./s4/3.jpg'),
-          name: '圖片為公園示意',
+          name: ' ',
         },
       ],
     }

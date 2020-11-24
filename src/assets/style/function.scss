@@ -70,6 +70,13 @@
   left: size($left);
   right: auto;
 }
+@mixin img_c($width, $top, $left) {
+  position: absolute;
+  width: size($width);
+  top: $top;
+  left: $left;
+  right: auto;
+}
 
 @mixin img_l_m($width, $top, $left) {
   position: absolute;

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="section5">
-      <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile">
+      <div class="swipe absolute" v-if="isMobile" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -41,9 +41,9 @@
         繼〔京旺三重奏〕之後，京旺開發特聘北市豪宅御用建築師呂建勳首獻二重重劃區左岸，強強聯手，首席團隊精鑄雙園首席之家。
       </h1>
 
-      <h3 v-html="slideList[slideIndex].title" class="item-title"></h3>
-      <h3 v-html="slideList[slideIndex].subtitle" class="item-subtitle"></h3>
-      <div class="item-desc" v-html="slideList[slideIndex].desc"></div>
+      <h3 v-html="slideList[slideIndex].title" class="item-title" v-if="isMobile"></h3>
+      <h3 v-html="slideList[slideIndex].subtitle" class="item-subtitle" v-if="isMobile"></h3>
+      <div class="item-desc" v-html="slideList[slideIndex].desc" v-if="isMobile"></div>  
     </div>
   </div>
 </template>
@@ -139,7 +139,7 @@
   font-style: normal;
   line-height: 2.2;
   letter-spacing: size(0.96);
-  text-align: left;
+  text-align: justify;
   color: #221815;
 }
 
@@ -464,14 +464,14 @@
   }
 
   .item-desc {
-    @include img_l_m(290, 570, 40);
+    @include img_l_m(300, 570, 40);
     font-size: sizem(15);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(0.3);
-    text-align: left;
+    line-height: 1.6;
+    letter-spacing:0.02em;
+    text-align: justify;
     color: #248184;
   }
 
