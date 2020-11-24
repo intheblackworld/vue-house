@@ -1,5 +1,11 @@
 <template>
   <div>
+    <div class="section1-1" v-if="isPC"
+        data-aos="fade-left"
+        data-aos-delay="100">
+<img src="./s2/1-1img.jpg" alt="4米2店面 典藏釋出" class="img11 absolute">
+<img src="./s2/t.png" alt="4米2店面 典藏釋出">
+    </div>
     <div class="section2">
       <img
         v-if="isPC"
@@ -52,11 +58,31 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
+.section1-1 {
+  width: size(1060 + 719);
+  height: size(300);
+  background: #910003;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top:size(0);
+  padding: 0 0 0 35%;
+  img{
+  width:auto;
+  height:52%;}
+  img.img11{
+    left: 0;top: 0;
+  width:auto;
+  height:100%;}
+}
 .section2 {
   width: size(1920);
-  height: size(931);
+  height: size(1181);
+  margin: size(-127) 0 0 0;
   background-image: url('./s2/bg.png');
-  background-size: cover;
+  background-size: cover;z-index: 0;
   // background-position: 0 0;
   // background-attachment: fixed;
   // overflow: hidden;
@@ -64,16 +90,16 @@
 
 .img {
   width: size(1568);
-  top: size(116);
+  top: size(377);
   left: size(176);
 }
 .icon {
   width: size(78);
-  top: size(184);
+  top: size(434);
   left: size(235);
 }
 .txt{
-  top: size(224);
+  top: size(474);
   left: size(293);
   font-stretch: normal;
   font-style: normal;
@@ -94,7 +120,7 @@
   color: #3e3a39;
 }
 .desc {
-  width:41em;
+  width:43em;
   margin: 0.3em 0 0 0;
   font-weight: 500;
   line-height: 2.2;

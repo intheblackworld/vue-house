@@ -76,15 +76,15 @@
 
 .section6 {
   width: size(1920);
-  height: size(900);
-  min-height: size(900);
+  height: 100vh;
+  min-height: size(930);
+  max-height: size(1080);
   overflow: hidden;
 }
 
 .bg-img {
   width: 100vw;
-  height: size(900);
-  min-height: size(900);
+  height:100%;
   position: absolute;
   display: block;
   top: 0;
@@ -179,13 +179,13 @@
   .section6 {
     width: 100vw;
     height: calc(100vh - 63px);
-    min-height: auto;
+  min-height: sizem(604);
+  max-height: sizem(812);
   }
 
   .bg-img {
     width: 100vw;
     height:100%;
-    min-height:100%;
     position: absolute;
     display: block;
     top: 0;
