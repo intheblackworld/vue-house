@@ -3,44 +3,23 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
-          <img
-            class="logo"
-            src="@/assets/img/nav-logo.png"
-            alt
-             v-scroll-to="{ element: `#section1`, offset: offset }"
-          />
-          <div
-            class="menu"
-            @click="toggleSidebar"
-            v-show="!isOpen"
-          >
+          <img class="logo" src="@/assets/img/nav-logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" />
+          <div class="menu" @click="toggleSidebar" v-show="!isOpen">
             <font-awesome-icon icon="bars" />
           </div>
           <div :class="`mask ${isOpen ? 'open' : ''}`">
-            <div
-              class="close"
-              @click="isOpen = false"
-            >
-              <img
-                src="../assets/img/close.png"
-                alt=""
-              >
-            </div>
+            <!-- <div class="close" @click="isOpen = false">
+              <img src="../assets/img/close.png" alt="">
+            </div> -->
           </div>
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
-            <li
-              :key="item.name"
-              v-scroll-to="{ element: `#${item.section}`, offset: offset }"
-              v-for="item in list"
-              class="flex-c"
-              @click="toggleSidebar"
-            >
+            <div class="close" @click="isOpen = false" v-if="isMobile">
+              <img src="../assets/img/close.png" alt="">
+            </div>
+            <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: offset }" v-for="item in list" class="flex-c" @click="toggleSidebar">
               <span class="link">
                 <span class="flex-c">
-                  <p
-                    class="title"
-                    v-html="item.name"
-                  ></p>
+                  <p class="title" v-html="item.name"></p>
                   <span class="subTitle">{{item.subTitle}}</span>
                 </span>
               </span>
@@ -127,7 +106,7 @@ export default {
   width: 100vw;
   display: flex !important;
   align-items: center;
- // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+  // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 .nav-container {
@@ -158,7 +137,7 @@ export default {
   display: block;
   top: 50%;
   transform: translate(3%, -50%);
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .mask {
@@ -284,12 +263,12 @@ export default {
   .navigation {
     height: 70px;
     justify-content: center;
-  &.min {
-    .logo {
-    width: $logo_tablet_width;
+    &.min {
+      .logo {
+        width: $logo_tablet_width;
+      }
     }
   }
-}
 
   .logo {
     width: $logo_tablet_width;
@@ -328,16 +307,15 @@ export default {
   .navigation {
     background-color: transparent !important;
     height: $nav_phone_height;
-  //  background-color: #fff;
-    height: 70px;
+    //  background-color: #fff;
+    height: 60px;
     justify-content: center;
-  &.min {
-    .logo {
-    width: $logo_phone_width;
+    &.min {
+      .logo {
+        width: $logo_phone_width;
+      }
     }
   }
-}
-
 
   .nav-container {
     display: block;
@@ -354,18 +332,18 @@ export default {
 
   .nav {
     position: static;
-    height:60px;
+    height: 60px;
   }
 
   .menu {
     display: block;
     position: absolute;
-    top: 15px;
+    top: 5px;
     right: 15px;
     width: sizem(50);
     height: sizem(50);
     padding-top: sizem(8);
-    background-color: #af1f24;
+    // background-color: #af1f24;
     z-index: 112;
 
     svg {
@@ -397,14 +375,14 @@ export default {
     li {
       width: 100vw;
       height: 70px;
-      margin-bottom:0;
+      margin-bottom: 0;
     }
 
     .link {
       height: 50px;
       width: 100%;
       font-size: 17px;
-      margin-top:0;
+      margin-top: 0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -430,28 +408,77 @@ export default {
   }
 
   .navlist {
-    display: none;
+    position: fixed;
+    z-index: 111;
+    width: 0%;
+    right: 0;
+    top: $nav_phone_height;
+    height: calc(100vh - #{$nav_phone_height});
+    text-align: center;
+    transition: all 0.3s ease-in;
+    display: block;
+    transform: translateX(40%);
+
+    li {
+    }
+
     .link {
-      width: auto;
-      padding: 0;
-      .title {
-        font-size: 12px !important;
-        margin-top: 14px;
-        width: auto;
-        height: auto;
-        color: #333;
+      display: none;
+
+      img,
+      span {
+        display: block;
+      }
+      span {
+        line-height: 16px;
+      }
+    }
+
+    &.open {
+      width: 100%;
+      transform: translateX(0%);
+      padding-left: 0;
+      padding-top: 50px;
+
+      .link {
         display: flex;
-        align-items: flex-end;
         justify-content: center;
-        background-image: none;
-        border-radius: 0;
-        position: relative;
-        z-index: 3;
-        &:hover {
-          background-image: none;
+        color: #fff;
+        .title {
+          border-right: none;
+        }
+        span {
+          white-space: nowrap;
+        }
+        .divided {
+          display: none;
         }
       }
     }
+  }
+
+  .mask {
+    width: 100vw;
+    top: $nav_phone_height;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    height: calc(100vh - #{$nav_phone_height});
+    opacity: 0;
+    transition: all 0.3s ease-in;
+    &.open {
+      display: block;
+      width: 100vw;
+      opacity: 1;
+      z-index: 110;
+    }
+  }
+
+  .close {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 120;
   }
 }
 </style>

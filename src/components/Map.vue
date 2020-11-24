@@ -2,6 +2,7 @@
   <div class="map" id="map" refs="map" @scroll="handleScroll">
     <img :src="hand" alt :class="`hand ${showMask ? 'active' : ''}`" />
     <img class="map-bg" :src="bgSrc" alt ref="mapbg" />
+    <slot></slot>
     <img class="map-text" :src="bgText" alt />
     <div :class="`mask ${showMask ? 'active' : ''}`">
     </div>

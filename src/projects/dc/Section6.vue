@@ -1,11 +1,23 @@
 <template>
   <div class="section6">
-    <img src="./s6/bg.jpg" alt="" class="bg-img">
-    <img src="./s6/i1.png" alt="" class="bg-img">
-    <img src="./s6/i2.png" alt="" class="bg-img">
-    <img src="./s6/i3.png" alt="" class="bg-img">
-    <img src="./s6/i4.png" alt="" class="bg-img">
-    <h1 class="title">輕鬆入主 新北致富第一環</h1>
+    <div v-if="isPC">
+      <img src="./s6/bg.jpg" alt="" class="bg-img">
+      <img src="./s6/i1.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="200">
+      <img src="./s6/i2.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="400">
+      <img src="./s6/i3.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="600">
+      <img src="./s6/i4.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="800">
+      <h1 class="title" data-aos="fade-up" data-aos-delay="0">輕鬆入主 新北致富第一環</h1>
+    </div>
+    <div v-if="isMobile">
+      <img src="./s5/lt.png" alt="" class="lt" data-aos="fade" data-aos-delay="0">
+      <img src="./s6/bg.jpg" alt="" class="bg-img">
+      <img src="./s6/i1_m.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="200">
+      <img src="./s6/i2_m.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="400">
+      <img src="./s6/i3_m.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="600">
+      <img src="./s6/i4_m.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="800">
+      <h1 class="title" data-aos="fade" data-aos-delay="0">輕鬆入主</h1>
+      <h1 class="subtitle" data-aos="fade" data-aos-delay="0">新北致富第一環</h1>
+    </div>
   </div>
 </template>
 
@@ -107,18 +119,51 @@
 @media screen and (max-width: 767px) {
   .section6 {
     width: 100vw;
-    min-height: sizem(470);
-    max-height: sizem(812);
-    height: calc(100vh - 63px);
+    min-height: sizem(521);
+    max-height: sizem(521);
+    height: sizem(521);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
   }
 
+  .lt {
+    @include img_l_m(205, 80, 0);
+  }
+
+  .title {
+    @include div_l_m(194, 66, 133, 30);
+    text-shadow: 0 3px 11px #002565;
+
+    font-size: sizem(45);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(4.5);
+    text-align: left;
+    color: #fff;
+    white-space: nowrap;
+  }
+
+  .subtitle {
+    @include div_l_m(266, 52, 203, 30);
+    text-shadow: 0 3px 11px #002565;
+    font-size: sizem(35);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(3.5);
+    text-align: left;
+    color: #fff;
+    white-space: nowrap;
+  }
+
   .bg-img {
     width: sizem(375);
-    height: calc(100vh - 63px);
-    min-height: calc(100vh - 63px);
+    height: sizem(521);
+    min-height: sizem(521);
     position: absolute;
     top: 0;
     left: 0;
@@ -128,77 +173,6 @@
 
     &:nth-child(1) {
       position: relative;
-    }
-  }
-
-  .img {
-    @include img_l_m(201, 0, 0);
-  }
-
-  .logo {
-    @include img_r_m(95, 47, 73);
-  }
-
-  .logo2 {
-    @include img_l_m(65, 515, 69);
-  }
-
-  .title1 {
-    @include img_r_m(239, 348, 72);
-    font-size: sizem(32);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(3.2);
-    text-align: left;
-    color: #248184;
-    white-space: nowrap;
-  }
-
-  .title2 {
-    @include img_r_m(239, 391, 71);
-    font-size: sizem(27);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(2);
-    text-align: left;
-    color: #000;
-    white-space: nowrap;
-  }
-
-  .phone {
-    @include img_r_m(239, 428, 71);
-    font-size: sizem(54);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.22;
-    letter-spacing: sizem(-2.11);
-    text-align: left;
-    color: #000000;
-    white-space: nowrap;
-  }
-
-  .btn {
-    @include div_r_m(114, 31, 513, 78);
-    border: 1px solid #248184;
-    font-size: sizem(16);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.19;
-    letter-spacing: sizem(1.44);
-    text-align: left;
-    color: #248184;
-    cursor: pointer;
-    transition: all 0.3s;
-
-    &:hover {
-      background-color: #248184;
-      color: #fff;
     }
   }
 }

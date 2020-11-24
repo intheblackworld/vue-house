@@ -1,15 +1,25 @@
 <template>
   <div class="section1">
     <div class="bg"></div>
-    <img src="./s1/0.jpg" alt="" class="img0">
-    <img src="./s1/1.jpg" alt="" class="img1">
-    <img src="./s1/2.jpg" alt="" class="img2">
-    <img src="./s1/3.jpg" alt="" class="img3">
-    <img src="./s1/4.jpg" alt="" class="img4">
+    <img src="./s1/0.jpg" alt="" class="img0" data-aos="fade" data-aos-delay="0">
+    <div v-if="isPC">
+      <img src="./s1/1.jpg" alt="" class="img1" data-aos="fade-down" data-aos-delay="200">
+      <img src="./s1/2.jpg" alt="" class="img2" data-aos="fade-up" data-aos-delay="400">
+      <img src="./s1/3.jpg" alt="" class="img3" data-aos="fade-down" data-aos-delay="600">
+      <img src="./s1/4.jpg" alt="" class="img4" data-aos="fade-up" data-aos-delay="800">
+    </div>
+    <div v-if="isMobile" class="m-container">
+      <swiper :options="swiperOption" ref="mySwiper" class>
+        <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="item">
+          <img :src="slide.img" :class="`item-img`" />
+        </swiper-slide>
+      </swiper>
+    </div>
     <img src="./s1/lt.png" alt="" class="lt">
-    <h1 class="title">台北新東區樹海市心</h1>
-    <h1 class="subtitle">聚富公園金店面</h1>
-    <h1 class="label flex-c">公園特區金店面｜65坪｜2692-1155</h1>
+    <h1 class="title" data-aos="fade-down" data-aos-delay="0">台北新東區樹海市心</h1>
+    <h1 class="subtitle" data-aos="fade-down" data-aos-delay="0">聚富公園金店面</h1>
+    <h1 class="label flex-c" v-if="isPC" data-aos="fade-up" data-aos-delay="1000">公園特區金店面｜65坪｜2692-1155</h1>
+    <h1 class="label flex-c" v-if="isMobile" data-aos="fade-up" data-aos-delay="1000">公園特區金店面<br />65坪｜2692-1155</h1>
   </div>
 </template>
 
@@ -46,7 +56,7 @@
 .bg {
   @include div_l_pc(1877, 1005, 0, 0);
   background-image: url('./s1/bg.png');
-  background-attachment: fixed;  
+  background-attachment: fixed;
 }
 
 .img0 {
@@ -116,7 +126,6 @@
   white-space: nowrap;
 }
 
-
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -133,7 +142,7 @@
 @media screen and (max-width: 767px) {
   .section1 {
     width: 100vw;
-    min-height: sizem(470);
+    min-height: auto;
     max-height: sizem(812);
     height: calc(100vh - 63px);
     // background-image: url('./mo/1/bg.png');
@@ -157,74 +166,76 @@
     }
   }
 
-  .img {
-    @include img_l_m(201, 0, 0);
+  .bg {
+    @include div_l_m(350, 544, 0, 0);
+    background-image: url('./s1/bg.png');
+    background-attachment: fixed;
   }
 
-  .logo {
-    @include img_r_m(95, 47, 73);
+  .img0 {
+    @include div_l_m(284, 667, 0, 0);
+    object-fit: cover;
   }
 
-  .logo2 {
-    @include img_l_m(65, 515, 69);
+  .lt {
+    @include img_l_m(135, 60, 0);
   }
 
-  .title1 {
-    @include img_r_m(239, 348, 72);
-    font-size: sizem(32);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(3.2);
-    text-align: left;
-    color: #248184;
-    white-space: nowrap;
-  }
-
-  .title2 {
-    @include img_r_m(239, 391, 71);
+  .label {
+    @include div_r_m(277, 100, 0, 0);
+    top: auto;
+    bottom: sizem(40);
+    background-color: #000000;
     font-size: sizem(27);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
+    line-height: 1.37;
+    letter-spacing: sizem(1.24);
+    text-align: left;
+    color: #ffffff;
+    z-index: 3;
+  }
+
+  .title {
+    @include div_r_m(329, 52, 104, 0);
+    text-shadow: 0 0 12px #000000;
+    font-size: sizem(35);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
     line-height: 1.2;
-    letter-spacing: sizem(2);
+    letter-spacing: sizem(1.74);
     text-align: left;
-    color: #000;
+    color: #ffffff;
     white-space: nowrap;
   }
 
-  .phone {
-    @include img_r_m(239, 428, 71);
-    font-size: sizem(54);
-    font-weight: 500;
+  .subtitle {
+    @include div_l_m(182, 38, 154, 46);
+    text-shadow: 0 0 12px #000000;
+    font-size: sizem(26);
+    font-weight: 900;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.22;
-    letter-spacing: sizem(-2.11);
+    line-height: 1.2;
+    letter-spacing: normal;
     text-align: left;
-    color: #000000;
+    color: #ffffff;
     white-space: nowrap;
   }
 
-  .btn {
-    @include div_r_m(114, 31, 513, 78);
-    border: 1px solid #248184;
-    font-size: sizem(16);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.19;
-    letter-spacing: sizem(1.44);
-    text-align: left;
-    color: #248184;
-    cursor: pointer;
-    transition: all 0.3s;
+  .m-container {
+    margin-top: sizem(200);
+  }
 
-    &:hover {
-      background-color: #248184;
-      color: #fff;
+  .item-img {
+    width: sizem(152);
+  }
+
+  .item {
+    &:nth-child(odd) {
+      margin-top: sizem(45);
     }
   }
 }
@@ -232,6 +243,10 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
+import slider from '@/mixins/slider.js'
+import 'swiper/dist/css/swiper.css'
+
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'section1',
@@ -241,10 +256,65 @@ export default {
       isPC,
       isMobile,
       isTablet,
+
+      swiperOption: {
+        slidesPerView: isMobile ? 2 : 1,
+        spaceBetween: isTablet ? 20 : -30,
+        slidesPerColumn: isMobile ? 1 : 1,
+        allowSlidePrev: isMobile ? true : true,
+        allowSlideNext: isMobile ? true : true,
+        // centeredSlides: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        loop: true,
+        effect: 'slide',
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        // observer: true, //修改swiper自己或子元素時，自動初始化swiper
+        // observeParents: true, //修改swiper的父元素時，自動初始化swiper
+      },
+
+      slideList: [
+        {
+          img: require('./s1/1.jpg'),
+        },
+        {
+          img: require('./s1/2.jpg'),
+        },
+        {
+          img: require('./s1/3.jpg'),
+        },
+        {
+          img: require('./s1/4.jpg'),
+        },
+      ],
     }
   },
 
-  methods: {},
+  mixins: [slider],
+
+  components: {
+    swiper,
+    swiperSlide,
+  },
+
+  methods: {
+    // @slideChangeTransitionEnd="slideChanged"
+    // slideChanged(e) {
+    //   const swiper = this.$refs.mySwiper.swiper
+    //   if (swiper.isEnd) {
+    //     this.slideIndex = 0
+    //   } else if (swiper.isBeginning) {
+    //     this.slideIndex = swiper.slides.length - 3
+    //   } else {
+    //     this.slideIndex = swiper.activeIndex - 1
+    //   }
+    // },
+  },
 
   mounted() {},
 

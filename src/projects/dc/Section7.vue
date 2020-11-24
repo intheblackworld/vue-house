@@ -1,11 +1,13 @@
 <template>
   <div class="section4">
-    <img src="./s7/bg.jpg" alt="" class="bg-img">
-    <img src="./s7/lt.png" alt="" class="lt">
-    <img src="./s7/train2.png" alt="" class="train" data-aos="zoom-in-left" data-aos-delay="800">
-    <h1 class="title">漲勢新星</h1>
-    <h1 class="subtitle">接軌未來 新東區漲勢動能</h1>
-    <div class="desc">
+    <img src="./s7/bg.jpg" alt="" class="bg-img" v-if="isPC">
+    <img src="./s7/bg_m.jpg" alt="" class="bg-img" v-if="isMobile">
+    <img src="./s7/lt.png" alt="" class="lt" data-aos="fade" data-aos-delay="0">
+    <img src="./s7/train2.png" alt="" class="train" data-aos="zoom-in-left" data-aos-delay="800" v-if="isPC" >
+    <img src="./s7/train_m.png" alt="" class="train" data-aos="zoom-in-left" data-aos-delay="800" v-if="isMobile">
+    <h1 class="title" data-aos="fade" data-aos-delay="0">漲勢新星</h1>
+    <h1 class="subtitle" data-aos="fade" data-aos-delay="200">接軌未來 新東區漲勢動能</h1>
+    <div class="desc" data-aos="fade" data-aos-delay="400">
       精準睿智投資，掌握捷運財富，距離民生汐止線僅350M。<br />
       預約未來漲勢，串聯城際精彩，晉身夢想增值趨勢家！
     </div>
@@ -113,9 +115,9 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-    min-height: sizem(470);
-    max-height: sizem(812);
-    height: calc(100vh - 63px);
+    min-height: sizem(604);
+    max-height: sizem(604);
+    height: sizem(604);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -123,8 +125,8 @@
 
   .bg-img {
     width: sizem(375);
-    height: calc(100vh - 63px);
-    min-height: calc(100vh - 63px);
+    height: sizem(604);
+    min-height: sizem(604);
     position: absolute;
     top: 0;
     left: 0;
@@ -137,75 +139,52 @@
     }
   }
 
-  .img {
-    @include img_l_m(201, 0, 0);
+  .lt {
+    @include img_l_m(89, 71, 30);
   }
 
-  .logo {
-    @include img_r_m(95, 47, 73);
+  .train {
+  @include img_l_m(375, 0, 0);
+}
+
+  .title {
+    @include div_l_m(194, 66, 97, 62);
+    font-size: sizem(45);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.62;
+    letter-spacing: sizem(4.5);
+    text-align: left;
+    color: #fff;
+    white-space: nowrap;
   }
 
-  .logo2 {
-    @include img_l_m(65, 515, 69);
-  }
-
-  .title1 {
-    @include img_r_m(239, 348, 72);
-    font-size: sizem(32);
-    font-weight: bold;
+  .subtitle {
+    @include div_l_m(222, 27, 165, 62);
+    text-shadow: 0 3px 11px #002565;
+    font-size: sizem(18);
+    font-weight: 900;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.2;
-    letter-spacing: sizem(3.2);
+    letter-spacing: sizem(1.5);
     text-align: left;
-    color: #248184;
+    color: #fff;
     white-space: nowrap;
   }
 
-  .title2 {
-    @include img_r_m(239, 391, 71);
-    font-size: sizem(27);
-    font-weight: bold;
+  .desc {
+    @include div_l_m(310, 149, 211, 30);
+    font-size: sizem(15);
+    font-weight: 900;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(2);
+    line-height: 1.6;
+    letter-spacing: sizem(1.5);
     text-align: left;
-    color: #000;
-    white-space: nowrap;
-  }
-
-  .phone {
-    @include img_r_m(239, 428, 71);
-    font-size: sizem(54);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.22;
-    letter-spacing: sizem(-2.11);
-    text-align: left;
-    color: #000000;
-    white-space: nowrap;
-  }
-
-  .btn {
-    @include div_r_m(114, 31, 513, 78);
-    border: 1px solid #248184;
-    font-size: sizem(16);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.19;
-    letter-spacing: sizem(1.44);
-    text-align: left;
-    color: #248184;
-    cursor: pointer;
-    transition: all 0.3s;
-
-    &:hover {
-      background-color: #248184;
-      color: #fff;
-    }
+    color: #fff;
+    white-space: normal;
   }
 }
 </style>

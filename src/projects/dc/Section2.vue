@@ -1,10 +1,10 @@
 <template>
   <div class="section2">
     <img src="./s2/bg.jpg" alt="" class="bg-img" v-if="!isMobile">
-    <img src="./s2/logo.png" alt="" class="logo" v-if="!isMobile">
-    <img src="./s2/光.jpg" alt="" class="light" v-if="!isMobile">
-    <img src="./s2/光.jpg" alt="" class="light animate1" v-if="!isMobile">
-    <img src="./s2/光.jpg" alt="" class="light animate2" v-if="!isMobile">
+    <img src="./s2/logo.png" alt="" class="logo" v-if="!isMobile" data-aos="fade-down" data-aos-delay="200">
+    <img src="./s2/光.jpg" alt="" class="light" v-if="!isMobile" data-aos="fade" data-aos-delay="0">
+    <img src="./s2/光.jpg" alt="" class="light animate1" v-if="!isMobile" data-aos="fade" data-aos-delay="0">
+    <img src="./s2/光.jpg" alt="" class="light animate2" v-if="!isMobile" data-aos="fade" data-aos-delay="0">
     <!-- <div class="title-bg">
       <div class="text" v-if="isMobile">
         <div
@@ -20,6 +20,10 @@
       </div>
     </div> -->
     <Map :bgSrc="bgSrc" :hand="hand" v-if="isMobile">
+      <img src="./s2/logo.png" alt="" class="logo">
+      <img src="./s2/光.jpg" alt="" class="light">
+      <img src="./s2/光.jpg" alt="" class="light animate1">
+      <img src="./s2/光.jpg" alt="" class="light animate2">
     </Map>
   </div>
 </template>
@@ -127,56 +131,22 @@
     background-position: 55%;
     // background-image: url('./s3_bg_m.jpg');
   }
+  .items {
+    position: absolute;
+    top: 0;
+    left: 0;
+    // width: 100vw;
+    z-index: 1;
+  }
+
+  .light {
+    @include img_l_m(225, 201, 525);
+    mix-blend-mode: screen;
+    z-index: 2;
+  }
 
   .logo {
-    width: 55vw;
-    margin-top: -80px;
-  }
-
-  .video-container {
-    width: 100%;
-    margin: 0 auto;
-    right: 0;
-    .mask {
-      width: 100vw;
-      height: calc((100vw * 9) / 16);
-
-      img {
-        width: 60px;
-      }
-    }
-    video {
-      position: relative;
-      width: 100vw;
-    }
-  }
-
-  .title {
-    width: 100vw;
-    font-size: 55px;
-  }
-
-  .desc {
-    width: 100vw;
-    font-size: 25px;
-  }
-
-  .text {
-    top: 0;
-    background-size: cover;
-  }
-
-  .title-bg {
-    background-size: auto;
-    height: 270px;
-    // background-image: url('./s3_bg_top.png');
-    background-size: contain;
-    display: flex;
-    align-items: center;
-
-    .text {
-      position: relative;
-    }
+    @include img_l_m(71, 307, 604);
   }
 }
 </style>

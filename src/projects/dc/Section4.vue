@@ -1,17 +1,28 @@
 <template>
   <div class="section4">
-    <img src="./s4/bg.jpg" alt="" class="bg-img">
-    <img src="./s4/1.png" alt="" :class="`bg-img fade ${imgIndex === 0 ? 'show' : ''}`">
-    <img src="./s4/2.png" alt="" :class="`bg-img fade ${imgIndex === 1 ? 'show' : ''}`">
-    <img src="./s4/lt.png" alt="" class="lt">
-    <h1 class="title">樹海城心</h1>
-    <h1 class="subtitle">繁華市心<br />漫步樹海街廓</h1>
-    <div class="desc">
+    <img src="./s4/bg.jpg" alt="" class="bg-img" v-if="isPC" />
+    <img src="./s4/bg_m.jpg" alt="" class="bg-img" v-if="isMobile" />
+    <img src="./s4/1.png" alt="" :class="`bg-img fade ${imgIndex === 0 ? 'show' : ''}`" v-if="isPC" />
+    <img src="./s4/2.png" alt="" :class="`bg-img fade ${imgIndex === 1 ? 'show' : ''}`" v-if="isPC" />
+    <img src="./s4/1_m.png" alt="" :class="`bg-img fade ${imgIndex === 0 ? 'show' : ''}`" v-if="isMobile" />
+    <img src="./s4/2_m.png" alt="" :class="`bg-img fade ${imgIndex === 1 ? 'show' : ''}`" v-if="isMobile" />
+    <img src="./s4/lt.png" alt="" class="lt"  data-aos="fade" data-aos-delay="0">
+    <h1 class="title"  data-aos="fade" data-aos-delay="0">樹海城心</h1>
+    <h1 class="subtitle" v-if="isPC"  data-aos="fade" data-aos-delay="200">繁華市心<br />漫步樹海街廓</h1>
+    <h1 class="subtitle" v-if="isMobile"  data-aos="fade" data-aos-delay="200">繁華市心 漫步樹海街廓</h1>
+    <div class="desc" v-if="isPC"  data-aos="fade" data-aos-delay="400">
       絕版在即！<br />
       汐止繁華核心5000坪公園造鎮，60%以上規劃為綠地廣場，<br />
       建物退縮成就森氧風光，收藏無價樹海首排景觀。<br /><br />
       大棟距馥綠視野，漫步高植感城市花園，彷彿置身日本六本木街頭，隨<br />
       享異國風情；超高指名度社區，創業坐擁商機，出租立賺租金。
+    </div>
+    <div class="desc" v-if="isMobile"  data-aos="fade" data-aos-delay="400">
+      絕版在即！<br />
+      汐止繁華核心5000坪公園造鎮，<br />60%以上規劃為綠地廣場，<br />
+      建物退縮成就森氧風光，<br />收藏無價樹海首排景觀。<br /><br />
+      大棟距馥綠視野，漫步高植感城市花園，<br />彷彿置身日本六本木街頭，隨
+      享異國風情；<br />超高指名度社區，<br />創業坐擁商機，出租立賺租金。
     </div>
   </div>
 </template>
@@ -113,9 +124,9 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-    min-height: sizem(470);
-    max-height: sizem(812);
-    height: calc(100vh - 63px);
+    min-height: sizem(740);
+    max-height: sizem(740);
+    height: sizem(740);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -123,7 +134,7 @@
 
   .bg-img {
     width: sizem(375);
-    height: calc(100vh - 63px);
+    height: sizem(740);
     min-height: calc(100vh - 63px);
     position: absolute;
     top: 0;
@@ -137,75 +148,47 @@
     }
   }
 
-  .img {
-    @include img_l_m(201, 0, 0);
+  .lt {
+    @include img_l_m(130, 90, 30);
   }
 
-  .logo {
-    @include img_r_m(95, 47, 73);
-  }
-
-  .logo2 {
-    @include img_l_m(65, 515, 69);
-  }
-
-  .title1 {
-    @include img_r_m(239, 348, 72);
-    font-size: sizem(32);
-    font-weight: bold;
+  .title {
+    @include div_l_m(194, 66, 120, 63);
+    font-size: sizem(45);
+    font-weight: 900;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.2;
-    letter-spacing: sizem(3.2);
+    letter-spacing: sizem(4.5);
     text-align: left;
-    color: #248184;
+    color: #fff;
     white-space: nowrap;
   }
 
-  .title2 {
-    @include img_r_m(239, 391, 71);
-    font-size: sizem(27);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(2);
-    text-align: left;
-    color: #000;
-    white-space: nowrap;
-  }
-
-  .phone {
-    @include img_r_m(239, 428, 71);
-    font-size: sizem(54);
+  .subtitle {
+    @include div_l_m(200, 27, 191, 73);
+    font-size: sizem(18);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.22;
-    letter-spacing: sizem(-2.11);
+    line-height: 1.2;
+    letter-spacing: sizem(1.8);
     text-align: left;
-    color: #000000;
+    color: #fff;
     white-space: nowrap;
   }
 
-  .btn {
-    @include div_r_m(114, 31, 513, 78);
-    border: 1px solid #248184;
-    font-size: sizem(16);
-    font-weight: bold;
+  .desc {
+    @include img_l_m(310, 242, 32);
+    font-size: sizem(15);
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.19;
-    letter-spacing: sizem(1.44);
+    line-height: 1.73;
+    letter-spacing: sizem(1.35);
     text-align: left;
-    color: #248184;
-    cursor: pointer;
-    transition: all 0.3s;
-
-    &:hover {
-      background-color: #248184;
-      color: #fff;
-    }
+    color: #fff;
+    white-space: nowrap;
   }
 }
 </style>
@@ -234,7 +217,7 @@ export default {
       } else {
         this.imgIndex = 1
       }
-    }, 3000);
+    }, 3000)
   },
 
   created() {},
