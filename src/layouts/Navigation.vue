@@ -53,14 +53,14 @@ export default {
   computed: {
     offset() {
       if (this.isMobile) {
-        return -39
+        return 0
       }
 
       if (this.isTablet) {
-        return -45
+        return 0
       }
 
-      return -56
+      return 0
     },
   },
 
