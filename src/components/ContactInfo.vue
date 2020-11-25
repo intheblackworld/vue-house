@@ -150,7 +150,7 @@ export default {
   position: relative;
   z-index: 3;
   width: 1200px;
-  height: 460px;
+  height: 530px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
@@ -163,7 +163,7 @@ export default {
   width: $contact_logo_pc_width;
   height: auto;
   // height:;
-  margin: 0 auto 20px;
+  margin: 0 auto size(-20);
 }
 .info {
   width: 880px;
@@ -292,14 +292,14 @@ export default {
     width: 100%;
     //  max-width: 95%;
     height: auto;
-    padding: 5%;
+    padding:0;
     transform: none;
     position: static;
     margin: 0;
 
     .logo {
       width: $contact_logo_mobile_width;
-      margin: 5% auto 10%;
+      margin: 8% auto 5%;
     }
   }
 
@@ -320,7 +320,7 @@ export default {
   }
 
   .info {
-    width: 100%;
+    width: 90%;
     justify-content: center;
     text-align: center;
     //margin-bottom: 40px;

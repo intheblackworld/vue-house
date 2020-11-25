@@ -16,7 +16,7 @@
       </div>
 
       <div class="flex wrap flex-jb" v-if="isPC">
-        <div class="block relative" v-for="slide in blockList" :key="slide.name">
+        <div class="txt block relative" v-for="slide in blockList" :key="slide.name">
           <h1 class="title" v-show="!slide.img"  data-aos="fade" data-aos-delay="0">商機核心</h1>
           <h1 class="subtitle" v-show="!slide.img"  data-aos="fade" data-aos-delay="0">饗樂生活 近擁機能零距離</h1>
           <div class="desc" v-show="!slide.img"  data-aos="fade" data-aos-delay="0">搶佔繁華商圈一席之地，鄰近康寧街商圈、明峰街商圈、中興街商圈，繁華金三角吸納萬戶消費力，百工百業開店即獲利，商機錢景在手！</div>
@@ -83,46 +83,46 @@
 }
 
 .lt {
-  @include img_l_pc(480, 0, 0);
+  @include img_l_pc(400, 0, 0);
 }
 
-.title {
-  @include div_l_pc(344, 119, 40, 132);
-  font-size: size(80);
-  font-weight: 900;
+.txt{
+  //@include div_l_pc(450, 119, 40, 132);
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(8);
-  text-align: left;
+  line-height: 1.5;
+  letter-spacing:0.1em;
   color: #000;
+  display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding: size(15) 0 0 0 ;
+
+.title {
+  font-size: size(67);
+  font-weight: 900;
+  line-height: 1.3;
+  text-align: center;
   white-space: nowrap;
 }
 
 .subtitle {
-  @include div_l_pc(333, 70, 145, 138);
-  font-size: size(27);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(2.7);
-  text-align: left;
-  color: #000;
+  font-size: size(22.5);
+  line-height: 1.3;
+  text-align: center;
   white-space: nowrap;
+  margin: 0 0 size(25) 0;
 }
 
 .desc {
-  @include img_l_pc(450, 218, 105);
-  font-size: size(20);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(0.46);
-  text-align: left;
-  color: #000;
+  width: size(430);
+  font-size: size(17);
+  text-align: justify;
 }
+  
+  }
 
 @media only screen and (max-width: 1440px) {
 }
@@ -155,7 +155,7 @@
   }
 
   .title {
-    @include div_l_m(194, 66, 94, 30);
+    @include div_l_m(194, 66, 98, 30);
     font-size: sizem(45);
     font-weight: 900;
     font-stretch: normal;
@@ -182,29 +182,38 @@
 
   .desc {
     @include img_l_m(310, 218, 30);
-    font-size: sizem(15);
+    font-size: sizem(14.4);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
+    line-height: 1.6;
     letter-spacing: sizem(0.36);
-    text-align: left;
+    text-align: justify;
     color: #000;
   }
 
   .m-container {
     margin-top: sizem(326);
+    .swiper-container{height:sizem(326);}
   }
 
   .item-img {
     width: sizem(310);
   }
-
+  .item {
+     transform: translateY(10%);
+     transition:all 0.3s;opacity: 0.5;
+    &.swiper-slide-active {
+     transform: translateY(0%);
+     z-index: 2;opacity: 1;
+    }
+  }
+/*
   .item {
     &:nth-child(even) {
       margin-top: sizem(45);
     }
-  }
+  }*/
 }
 </style>
 <script>
@@ -229,8 +238,9 @@ export default {
       isDialog: false,
       fadeIndex: 0,
       swiperOption: {
-        slidesPerView: isMobile ? 1 : 1,
+        slidesPerView: isMobile ? 1.2 : 1,
         spaceBetween: isTablet ? 20 : -50,
+	  centeredSlides: true,
         slidesPerColumn: isMobile ? 1 : 1,
         allowSlidePrev: isMobile ? true : true,
         allowSlideNext: isMobile ? true : true,

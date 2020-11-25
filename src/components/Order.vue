@@ -26,8 +26,8 @@
               data-aos="fade-down"
               data-aos-delay="100"
             >
-              <label>姓名</label>
-              <el-input
+              <label for="form-name">姓名</label>
+              <el-input id="form-name"
                 v-model="form.name"
                 placeholder
               ></el-input>
@@ -37,8 +37,8 @@
               data-aos="fade-down"
               data-aos-delay="200"
             >
-              <label>手機</label>
-              <el-input
+              <label for="form-phone">手機</label>
+              <el-input id="form-phone"
                 v-model="form.phone"
                 placeholder
               ></el-input>
@@ -90,8 +90,8 @@
               data-aos="fade-down"
               data-aos-delay="300"
             >
-              <label>居住城市</label>
-              <el-select
+              <label for="form-city">居住城市</label>
+              <el-select id="form-city"
                 v-model="form.city"
                 placeholder
               >
@@ -109,8 +109,8 @@
               data-aos="fade-down"
               data-aos-delay="400"
             >
-              <label>居住地區</label>
-              <el-select
+              <label for="form-area">居住地區</label>
+              <el-select id="form-area"
                 v-model="form.area"
                 placeholder
               >
@@ -412,6 +412,7 @@ export default {
 
     &:nth-child(1) {
       border-right: 1px solid rgba(0, 0, 0, 0.2);
+      padding: 0 29px 0 0 ;
       .row {
         justify-content: flex-start;
       }
@@ -475,8 +476,8 @@ export default {
 @media only screen and (max-width: 767px) {
   .order-bg {
     // background-image: $order_bg_image_m;
-    background-attachment: initial;
-    background-size: cover;
+    /*background-attachment: initial;
+    background-size: cover;*/
     padding-top: 40px;
     margin: 0;
     position: relative;
@@ -493,8 +494,8 @@ export default {
     }
 
     .order-subtitle {
-      // display: none;
-      font-size: 21px;
+    font-size:0;
+    margin-bottom: 0;
     }
     .order {
       width: 95% !important;
@@ -511,7 +512,12 @@ export default {
       height: auto !important;
       margin-bottom: 0px !important;
       border: none !important;
+    &:nth-child(1) {
+      padding:0;
     }
+
+    }
+
 
     .row {
       margin-bottom: 12px !important;

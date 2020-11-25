@@ -2,15 +2,15 @@
   <div class="section6">
     <div v-if="isPC">
       <img src="./s6/bg.jpg" alt="" class="bg-img">
-      <img src="./s6/i1.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="200">
-      <img src="./s6/i2.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="400">
-      <img src="./s6/i3.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="600">
-      <img src="./s6/i4.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="800">
+      <img src="./s6/i1.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="200" data-aos-offset="-300">
+      <img src="./s6/i2.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="400" data-aos-offset="-300">
+      <img src="./s6/i3.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-300">
+      <img src="./s6/i4.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="800" data-aos-offset="-300">
       <h1 class="title" data-aos="fade-up" data-aos-delay="0">輕鬆入主 新北致富第一環</h1>
     </div>
     <div v-if="isMobile">
       <img src="./s5/lt.png" alt="" class="lt" data-aos="fade" data-aos-delay="0">
-      <img src="./s6/bg.jpg" alt="" class="bg-img">
+      <img src="./s6/bg_m.jpg" alt="" class="bg-img">
       <img src="./s6/i1_m.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="200">
       <img src="./s6/i2_m.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="400">
       <img src="./s6/i3_m.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="600">
@@ -38,17 +38,13 @@
 .bg-img {
   width: size(1920);
   height: 100%;
-  min-height: size(900);
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   display: block;
   object-fit: cover;
   margin-top: 0;
 
-  &:nth-child(1) {
-    position: relative;
-  }
 }
 
 .lt {
@@ -161,9 +157,8 @@
   }
 
   .bg-img {
-    width: sizem(375);
-    height: sizem(521);
-    min-height: sizem(521);
+    width: 100%;
+    height:100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -171,9 +166,6 @@
     object-fit: cover;
     margin-top: 0;
 
-    &:nth-child(1) {
-      position: relative;
-    }
   }
 }
 </style>

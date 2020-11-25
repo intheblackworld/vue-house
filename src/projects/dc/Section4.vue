@@ -43,22 +43,18 @@
 
 .bg-img {
   width: size(1920);
-  height: 100%;
-  min-height: size(900);
+  height: auto;
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   display: block;
   object-fit: cover;
   margin-top: 0;
 
-  &:nth-child(1) {
-    position: relative;
-  }
 }
 
 .lt {
-  @include img_l_pc(302, 107, 288);
+  @include img_l_pc(250, 103, 285);
 }
 
 .title {

@@ -3,8 +3,7 @@
     <img src="./s7/bg.jpg" alt="" class="bg-img" v-if="isPC">
     <img src="./s7/bg_m.jpg" alt="" class="bg-img" v-if="isMobile">
     <img src="./s7/lt.png" alt="" class="lt" data-aos="fade" data-aos-delay="0">
-    <img src="./s7/train2.png" alt="" class="train" data-aos="zoom-in-left" data-aos-delay="800" v-if="isPC" >
-    <img src="./s7/train_m.png" alt="" class="train" data-aos="zoom-in-left" data-aos-delay="800" v-if="isMobile">
+    <img src="./s7/train2.png" alt="" class="train">
     <h1 class="title" data-aos="fade" data-aos-delay="0">漲勢新星</h1>
     <h1 class="subtitle" data-aos="fade" data-aos-delay="200">接軌未來 新東區漲勢動能</h1>
     <div class="desc" data-aos="fade" data-aos-delay="400">
@@ -30,30 +29,44 @@
 
 .bg-img {
   width: size(1920);
-  height: 100%;
-  min-height: size(900);
+  height:auto;
   position: absolute;
   top: 0;
   left: 0;
   display: block;
   object-fit: cover;
   margin-top: 0;
-
-  &:nth-child(1) {
-    position: relative;
-  }
 }
 
 .lt {
-  @include img_l_pc(302, 90, 0);
+  @include img_l_pc(302, 95, 0);
 }
 
 .train {
-  @include img_l_pc(1002, 163, 0);
+  @include img_l_pc(1002, 162, 0);
+  transform-origin:95% 58%;
+  
+    opacity: 1;
+    transform:scale(0.3);
+animation: an 10s  infinite;}
+
+@keyframes an {
+  30% {
+    transform:scale(1);
+  }
+  99% {
+    transform:scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform:scale(1.5);
+    opacity: 0;
+  }
 }
 
+
 .title {
-  @include div_l_pc(344, 123, 150, 571);
+  @include div_l_pc(344, 123, 160, 571);
   font-size: size(80);
   font-weight: 900;
   font-stretch: normal;
@@ -81,10 +94,10 @@
 .desc {
   @include img_l_pc(563, 226, 956);
   font-size: size(20);
-  font-weight: 500;
+  font-weight: 300;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
+  line-height: 1.5;
   letter-spacing: size(1.75);
   text-align: left;
   color: #fff;
@@ -143,12 +156,10 @@
     @include img_l_m(89, 71, 30);
   }
 
-  .train {
-  @include img_l_m(375, 0, 0);
-}
-
+.train {
+  @include img_l_m(313, 316, -2);}
   .title {
-    @include div_l_m(194, 66, 97, 62);
+    @include div_l_m(194, 66, 110, 62);
     font-size: sizem(45);
     font-weight: 900;
     font-stretch: normal;
@@ -177,9 +188,6 @@
   .desc {
     @include div_l_m(310, 149, 211, 30);
     font-size: sizem(15);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.6;
     letter-spacing: sizem(1.5);
     text-align: left;

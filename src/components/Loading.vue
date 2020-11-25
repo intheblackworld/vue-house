@@ -13,7 +13,7 @@
 
 .loading-bg {
   background-color: $loading_bg_color;
-  background-image: $loading_bg_image;
+ // background-image: $loading_bg_image;
   position: fixed;
   left: 0;
   top: 0;
@@ -23,6 +23,8 @@
   justify-content: center;
   width: 100vw;
   height: 100vh;
+  
+  display: none;
 
   .loading-icon {
     width: 150px;

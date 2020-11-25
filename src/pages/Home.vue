@@ -158,7 +158,6 @@ export default {
     // if (this.isMobile) {
     //   this.$refs.fullPage.api.setResponsive(true)
     // }
-    
   },
   methods: {
     init() {},

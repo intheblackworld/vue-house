@@ -1,12 +1,12 @@
 <template>
   <div class="section1">
-    <div class="bg"></div>
+    <div class="bg absolute"></div>
     <img src="./s1/0.jpg" alt="" class="img0" data-aos="fade" data-aos-delay="0">
-    <div v-if="isPC">
-      <img src="./s1/1.jpg" alt="" class="img1" data-aos="fade-down" data-aos-delay="200">
-      <img src="./s1/2.jpg" alt="" class="img2" data-aos="fade-up" data-aos-delay="400">
-      <img src="./s1/3.jpg" alt="" class="img3" data-aos="fade-down" data-aos-delay="600">
-      <img src="./s1/4.jpg" alt="" class="img4" data-aos="fade-up" data-aos-delay="800">
+    <div v-if="isPC" class="img">
+      <div class="img1" data-aos="fade-down" data-aos-delay="200"><img src="./s1/1.jpg" alt=""></div>
+      <div class="img2" data-aos="fade-down" data-aos-delay="400"><img src="./s1/2.jpg" alt=""></div>
+      <div class="img3" data-aos="fade-down" data-aos-delay="600"><img src="./s1/3.jpg" alt=""></div>
+      <div class="img4" data-aos="fade-down" data-aos-delay="800"><img src="./s1/4.jpg" alt=""></div>
     </div>
     <div v-if="isMobile" class="m-container">
       <swiper :options="swiperOption" ref="mySwiper" class>
@@ -47,14 +47,17 @@
   display: block;
   object-fit: cover;
   margin-top: 0;
-
   &:nth-child(1) {
     position: relative;
   }
 }
 
 .bg {
-  @include div_l_pc(1877, 1005, 0, 0);
+  width: size(1887);
+  height: auto;
+  left: 0;
+  top: size(80);
+  bottom: size(60);
   background-image: url('./s1/bg.png');
   background-attachment: fixed;
 }
@@ -63,28 +66,45 @@
   @include img_l_pc(843, 0, 0);
 }
 
+.img{img{width: 100%;transform: translateY(-10%);}}
 .img1 {
-  @include img_l_pc(322, 437, 553);
+ // @include img_l_pc(322, 437, 553);
+  @include img_c_p(300, 65%, 270, 340, 1920);
+  img{animation: an 4s 0s linear infinite alternate;}  
 }
 
 .img2 {
-  @include img_l_pc(322, 308, 902);
+ // @include img_l_pc(322, 308, 902);
+  @include img_c_p(300, 65%, 270, 10, 1920);
+  img{animation: an 4s -4s linear infinite alternate;}  
 }
 
 .img3 {
-  @include img_l_pc(322, 407, 1251);
+//  @include img_l_pc(322, 407, 1251);
+  @include img_c_p(300, 65%, 270, -320, 1920);
+  img{animation: an 4s 0s linear infinite alternate;}  
 }
 
 .img4 {
-  @include img_r_pc(320, 308, 0);
+// @include img_r_pc(320, 308, 0);
+  @include img_c_p(300, 65%, 270, -650, 1920);
+  img{animation: an 4s -4s linear infinite alternate;}  
+}
+
+@keyframes an {
+  to {
+    transform: translateY(0);
+  }
 }
 
 .lt {
-  @include img_l_pc(302, 90, 0);
+  @include img_l_pc(260, 80, 0);
+ // @include img_c_p(300, 67%, 270, 380, 1920);
 }
 
 .label {
   @include div_r_pc(753, 78, 0, 0);
+ // @include img_c_p(300, 67%, 270, 380, 1920);
   top: auto;
   bottom: 0;
   background-color: #000000;
@@ -99,9 +119,9 @@
 }
 
 .title {
-  @include div_l_pc(984, 154, 151, 85);
+  @include div_l_pc(984, 154, 140, 85);
   text-shadow: 0 0 12px #000000;
-  font-size: size(104.7);
+  font-size: size(95);
   font-weight: 900;
   font-stretch: normal;
   font-style: normal;
@@ -113,9 +133,9 @@
 }
 
 .subtitle {
-  @include div_l_pc(536, 113, 290, 85);
+  @include div_l_pc(536, 113, 260, 88);
   text-shadow: 0 0 12px #000000;
-  font-size: size(76.5);
+  font-size: size(70);
   font-weight: 900;
   font-stretch: normal;
   font-style: normal;
@@ -142,9 +162,9 @@
 @media screen and (max-width: 767px) {
   .section1 {
     width: 100vw;
-    min-height: auto;
+    min-height:sizem(604);
     max-height: sizem(812);
-    height: calc(100vh - 63px);
+    height: 100vh;
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -152,8 +172,7 @@
 
   .bg-img {
     width: sizem(375);
-    height: calc(100vh - 63px);
-    min-height: calc(100vh - 63px);
+    height:100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -167,7 +186,9 @@
   }
 
   .bg {
-    @include div_l_m(350, 544, 0, 0);
+  width: sizem(350);
+  top: sizem(60);
+  bottom: sizem(63);
     background-image: url('./s1/bg.png');
     background-attachment: fixed;
   }
@@ -184,7 +205,7 @@
   .label {
     @include div_r_m(277, 100, 0, 0);
     top: auto;
-    bottom: sizem(40);
+    bottom: sizem(82);
     background-color: #000000;
     font-size: sizem(27);
     font-weight: bold;
@@ -201,41 +222,25 @@
     @include div_r_m(329, 52, 104, 0);
     text-shadow: 0 0 12px #000000;
     font-size: sizem(35);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(1.74);
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
+    letter-spacing: sizem(1.3);
   }
 
   .subtitle {
     @include div_l_m(182, 38, 154, 46);
     text-shadow: 0 0 12px #000000;
     font-size: sizem(26);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: normal;
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
   }
 
   .m-container {
-    margin-top: sizem(200);
+    margin-top: sizem(190);
+    .swiper-container {height:sizem(660);}
   }
 
   .item-img {
-    width: sizem(152);
+    width: sizem(152);transform: translateY(10%);
   }
-
-  .item {
-    &:nth-child(odd) {
-      margin-top: sizem(45);
+  .item {transform: translateY(8%);animation: an 5s  linear infinite alternate;
+    &:nth-child(odd) {animation: an 5s -5s linear infinite alternate;
     }
   }
 }

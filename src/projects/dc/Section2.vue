@@ -1,10 +1,12 @@
 <template>
   <div class="section2">
     <img src="./s2/bg.jpg" alt="" class="bg-img" v-if="!isMobile">
+    <div class="light" data-aos="fade" data-aos-delay="0" v-if="!isMobile">
+    <img src="./s2/光.jpg" alt="光" class="">
+    <img src="./s2/光.jpg" alt="光" class="animate1">
+    <img src="./s2/光.jpg" alt="光" class="animate2">
+    </div>
     <img src="./s2/logo.png" alt="" class="logo" v-if="!isMobile" data-aos="fade-down" data-aos-delay="200">
-    <img src="./s2/光.jpg" alt="" class="light" v-if="!isMobile" data-aos="fade" data-aos-delay="0">
-    <img src="./s2/光.jpg" alt="" class="light animate1" v-if="!isMobile" data-aos="fade" data-aos-delay="0">
-    <img src="./s2/光.jpg" alt="" class="light animate2" v-if="!isMobile" data-aos="fade" data-aos-delay="0">
     <!-- <div class="title-bg">
       <div class="text" v-if="isMobile">
         <div
@@ -20,10 +22,12 @@
       </div>
     </div> -->
     <Map :bgSrc="bgSrc" :hand="hand" v-if="isMobile">
+    <div class="light">
+    <img src="./s2/光.jpg" alt="光" class="">
+    <img src="./s2/光.jpg" alt="光" class="animate1">
+    <img src="./s2/光.jpg" alt="光" class="animate2">
+    </div>
       <img src="./s2/logo.png" alt="" class="logo">
-      <img src="./s2/光.jpg" alt="" class="light">
-      <img src="./s2/光.jpg" alt="" class="light animate1">
-      <img src="./s2/光.jpg" alt="" class="light animate2">
     </Map>
   </div>
 </template>
@@ -58,12 +62,17 @@
 }
 
 .light {
+
   @include img_l_pc(403, 359, 985);
   mix-blend-mode: screen;
+  img{width: 100%;mix-blend-mode: screen;position: absolute;top: 0;left: 0;
+    opacity: .8;}
 }
 
-.animate1 {
-  animation: pulse 0.8s ease-in-out infinite;
+.animate1{transform: scaleX(-1);}
+.animate2{
+  animation: pulse 0.5s ease-out infinite alternate;
+    opacity: 1;
 }
 
 .logo {
@@ -75,16 +84,8 @@
 // }
 
 @keyframes pulse {
-  0% {
-    transform: scaleX(-1);
-  }
-
-  50% {
-    transform: scaleX(1);
-  }
-
-  100% {
-    transform: scaleX(-1);
+  to {
+    opacity: 0;
   }
 }
 @media only screen and (max-width: 1440px) and (min-width: 1025px) {
@@ -146,7 +147,7 @@
   }
 
   .logo {
-    @include img_l_m(71, 307, 604);
+    @include img_l_m(71, 307, 604);z-index: 2;
   }
 }
 </style>

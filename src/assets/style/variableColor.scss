@@ -10,7 +10,7 @@ $family3: 'Noto Sans TC',sans-serif;
 // $family3: 'Noto Serif TC', serif;
 
 /* navigation */
-$nav_bg: linear-gradient(to right, rgba(255, 255, 255, .4), rgba(255, 255, 255, 1));
+$nav_bg: linear-gradient(to right, rgba(255,255,255,0.3) 0%,rgba(255,255,255,.8) 20%,rgba(255,255,255,1) 50%,rgba(255,255,255,.8) 100%);
 $nav_btn_color: #000;
 $nav_link_color: #000;
 $nav_link_subtitle_color: #fff;
@@ -39,7 +39,7 @@ $order_bg_image: url('~@/projects/dc/s1/bg.png');
 $order_bg_image_m: url('~@/projects/dc/s1/bg.png');
 $order_title_color: #000;
 $order_subtitle_color: #cc2617;
-$order_input_label_color: #248184;
+$order_input_label_color: #000;
 $order_input_color: #000 !important;
 $order_input_placeholder: #666 !important;
 $order_input_bg: #fff !important;

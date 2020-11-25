@@ -28,7 +28,7 @@
 
 .section3 {
   width: size(1920);
-  height: 100vh;
+  height: size(1080);
   min-height: size(900);
   max-height: size(1080);
   overflow: hidden;

@@ -70,11 +70,30 @@
   left: size($left);
   right: auto;
 }
-
 @mixin img_l_m($width, $top, $left) {
   position: absolute;
   width: sizem($width);
   top: sizem($top);
   left: sizem($left);
+  right: auto;
+}
+
+@function sizem($size) {
+  $c-size: 100vw * $size / 375;
+  @return #{$c-size};
+}
+@mixin img_c($width, $top, $left, $size) {
+  position: absolute;
+  width: size($width);
+  top: calc(50% - (100vw * #{$top} / #{$size}));
+  left: calc(50% - (100vw * #{$left} / #{$size}));
+  right: auto;
+}
+
+@mixin img_c_p($width, $top_p,$top, $left, $size) {
+  position: absolute;
+  width: size($width);
+  top: calc(#{$top_p} - (100vw * #{$top} / #{$size}));
+  left: calc(50% - (100vw * #{$left} / #{$size}));
   right: auto;
 }

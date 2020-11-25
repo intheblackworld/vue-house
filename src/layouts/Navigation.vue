@@ -16,6 +16,7 @@
             <div class="close" @click="isOpen = false" v-if="isMobile">
               <img src="../assets/img/close.png" alt="">
             </div>
+            <li v-if="isMobile" alt v-scroll-to="{ element: `#section1`, offset: offset }" ><img class="navlogo" src="@/assets/img/nav-logo.png"/></li>
             <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: offset }" v-for="item in list" class="flex-c" @click="toggleSidebar">
               <span class="link">
                 <span class="flex-c">
@@ -274,7 +275,6 @@ export default {
     width: $logo_tablet_width;
     // left: -240px;
   }
-
   .navlist {
     width: 85%;
   }
@@ -327,7 +327,7 @@ export default {
   .logo {
     width: $logo_phone_width;
     left: 15px;
-    display: none;
+   // display: none;
   }
 
   .nav {
@@ -419,6 +419,7 @@ export default {
     display: block;
     transform: translateX(40%);
 
+.navlogo{height:70px;}
     li {
     }
 
@@ -443,7 +444,7 @@ export default {
       .link {
         display: flex;
         justify-content: center;
-        color: #fff;
+        color: #000;
         .title {
           border-right: none;
         }
@@ -454,6 +455,9 @@ export default {
           display: none;
         }
       }
+  .close {
+    transform: translateX(0);
+    }
     }
   }
 
@@ -461,7 +465,12 @@ export default {
     width: 100vw;
     top: $nav_phone_height;
     right: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAhUlEQVRIibXPUQqAIBBF0ZcU0f430aZaR4RCoR9Bpakzb+4GDnfYVpzTCJN8APYDcNbAMgPOGogTdOQNxKhIDqAiJYCG/AEUpAaokRZAhbQCYqQHECG9QDciAboQKdCMaIAmRAtUEQbwi7CAIsIEsggb+CAWwAOxAm7EEkiINZAQa8AH4ALY3mam/LbLFgAAAABJRU5ErkJggg==);
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-position: 80% 0%;
+
+
     position: fixed;
     height: calc(100vh - #{$nav_phone_height});
     opacity: 0;
@@ -479,6 +488,7 @@ export default {
     top: 10px;
     right: 10px;
     z-index: 120;
+    transform: translateX(100%);
   }
 }
 </style>
