@@ -7,7 +7,7 @@
     <h1 class="title" data-aos="fade" data-aos-delay="0">漲勢新星</h1>
     <h1 class="subtitle" data-aos="fade" data-aos-delay="200">接軌未來 新東區漲勢動能</h1>
     <div class="desc" data-aos="fade" data-aos-delay="400">
-      精準睿智投資，掌握捷運財富，距離民生汐止東湖線僅350M。<br />
+      精準睿智投資，掌握捷運財富，距離汐止東湖線僅350M。<br />
       預約未來漲勢，串聯城際精彩，晉身夢想增值趨勢家！
     </div>
   </div>

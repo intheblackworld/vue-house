@@ -22,7 +22,15 @@
       <img src="./s6/i1_m.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="200">
       <img src="./s6/i2_m.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="400">
       <img src="./s6/i3_m.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="600">
-      <img src="./s6/i4_m.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="800">
+      <div class="i4" data-aos="fade-up" data-aos-delay="800" data-aos-offset="-300">
+        <div class="t1"><span>3</span>字頭</div>
+        <div class="an">
+        <div class="img4">
+          <img src="./s6/fire.png" class="fire" alt="火箭"><img src="./s6/4.png"  alt="火箭"><div class="t2">汐止</div>
+        </div>
+        </div>
+      <!--   <img src="./s6/t4.png" class="t4" alt="火箭">  -->
+      </div>
       <h1 class="title" data-aos="fade" data-aos-delay="0">輕鬆入主</h1>
       <h1 class="subtitle" data-aos="fade" data-aos-delay="0">新北致富第一環</h1>
     </div>
@@ -177,6 +185,30 @@
   .lt {
     @include img_l_m(205, 80, 0);
   }
+  .img4{
+    animation: img4 .5s linear infinite alternate;width:100%;position: absolute;bottom: 0;left:0;transform:translate(0, sizem(-10));
+  }
+  .an{z-index: 3;
+    animation: an 5s linear infinite;width:100%;position: absolute;bottom: 0;left:0;transform:translateY(sizem(500));
+  }
+.i4{
+  @include img_c_p(73, 50%, -20,-80, 375);
+  height: sizem(185);
+  font-size:sizem(20);
+  font-weight: 900;
+  text-align: center;
+  letter-spacing:0em;
+
+  img{width:100%;position: absolute;bottom:0;left:0;
+    &.t4{position: absolute;top:sizem(14);left:sizem(14);width: sizem(170);}
+    &.fire{position: absolute;bottom:sizem(-15);left:35%;width: 30%;animation: fire .2s  linear infinite alternate;
+    transform: skewX(2deg);transform-origin: 50% 0%;}
+  }
+  .t1{position: absolute;top:0;left:0;z-index: 3;width: 100%;color: #c00;z-index: 1;
+  span{font-size: 1.4em;display:inline-block;transform:translate(sizem(2) , sizem(5));}}
+  .t2{position: absolute;bottom:sizem(70);left:0;z-index: 3;width: 100%;color: #fff;}
+  }
+
 
   .title {
     @include div_l_m(194, 66, 133, 30);

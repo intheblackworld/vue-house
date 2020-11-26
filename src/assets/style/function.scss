@@ -92,7 +92,7 @@
 
 @mixin img_c_p($width, $top_p,$top, $left, $size) {
   position: absolute;
-  width: size($width);
+  width: 100vw * $width / $size;
   top: calc(#{$top_p} - (100vw * #{$top} / #{$size}));
   left: calc(50% - (100vw * #{$left} / #{$size}));
   right: auto;
