@@ -5,7 +5,12 @@
       <img src="./s6/i1.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="200" data-aos-offset="-300">
       <img src="./s6/i2.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="400" data-aos-offset="-300">
       <img src="./s6/i3.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-300">
-      <img src="./s6/i4.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="800" data-aos-offset="-300">
+      <div class="i4" data-aos="fade-up" data-aos-delay="800" data-aos-offset="-300">
+        <div class="img4">
+          <img src="./s6/fire.png" class="fire" alt="火箭"><img src="./s6/4.png"  alt="火箭"><div class="t2">汐止</div>
+        </div>
+        <div class="t1">3字頭</div>
+        <img src="./s6/t4.png" class="t4" alt="火箭"></div>
       <h1 class="title" data-aos="fade-up" data-aos-delay="0">輕鬆入主 新北致富第一環</h1>
     </div>
     <div v-if="isMobile">
@@ -46,7 +51,27 @@
   margin-top: 0;
 
 }
-
+  .img4{
+    animation: an .5s linear infinite alternate;width:100%;position: absolute;bottom: 0;left:0;transform:translate(0, size(-10));
+  }
+.i4{
+  @include div_l_pc(208, 475, 462, 1281);
+  img{width:100%;position: absolute;bottom:0;left:0;
+    &.t4{position: absolute;top: 0;left:size(14);width: size(170);}
+    &.fire{position: absolute;bottom:size(-20);left:size(79);width: size(48.5);animation: fire .5s  linear infinite alternate;
+    transform: skewX(2deg);transform-origin: 50% 0%;}
+  }
+  }
+@keyframes an {
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes fire {
+  to {
+    transform: skewX(-2deg);
+  }
+}
 .lt {
   @include img_l_pc(302, 107, 288);
 }
