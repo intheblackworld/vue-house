@@ -6,11 +6,14 @@
       <img src="./s6/i2.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="400" data-aos-offset="-300">
       <img src="./s6/i3.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-300">
       <div class="i4" data-aos="fade-up" data-aos-delay="800" data-aos-offset="-300">
+        <div class="t1"><span>3</span>字頭</div>
+        <div class="an">
         <div class="img4">
           <img src="./s6/fire.png" class="fire" alt="火箭"><img src="./s6/4.png"  alt="火箭"><div class="t2">汐止</div>
         </div>
-        <div class="t1">3字頭</div>
-        <img src="./s6/t4.png" class="t4" alt="火箭"></div>
+        </div>
+      <!--   <img src="./s6/t4.png" class="t4" alt="火箭">  -->
+      </div>
       <h1 class="title" data-aos="fade-up" data-aos-delay="0">輕鬆入主 新北致富第一環</h1>
     </div>
     <div v-if="isMobile">
@@ -52,17 +55,40 @@
 
 }
   .img4{
-    animation: an .5s linear infinite alternate;width:100%;position: absolute;bottom: 0;left:0;transform:translate(0, size(-10));
+    animation: img4 .5s linear infinite alternate;width:100%;position: absolute;bottom: 0;left:0;transform:translate(0, size(-10));
+  }
+  .an{z-index: 3;
+    animation: an 5s linear infinite;width:100%;position: absolute;bottom: 0;left:0;transform:translateY(size(500));
   }
 .i4{
-  @include div_l_pc(208, 475, 462, 1281);
+  @include img_c_p(208, 50%, 100,- 300, 1920);
+  height: size(475);
+  font-size:size(56);
+  font-weight: 900;
+  text-align: center;
+  letter-spacing:0em;
+
   img{width:100%;position: absolute;bottom:0;left:0;
-    &.t4{position: absolute;top: 0;left:size(14);width: size(170);}
-    &.fire{position: absolute;bottom:size(-20);left:size(79);width: size(48.5);animation: fire .5s  linear infinite alternate;
+    &.t4{position: absolute;top:size(14);left:size(14);width: size(170);}
+    &.fire{position: absolute;bottom:size(-20);left:size(79);width: size(48.5);animation: fire .2s  linear infinite alternate;
     transform: skewX(2deg);transform-origin: 50% 0%;}
   }
+  .t1{position: absolute;top:0;left:0;z-index: 3;width: 100%;color: #c00;z-index: 1;
+  span{font-size: 1.4em;display:inline-block;transform:translate(size(2) , size(5));}}
+  .t2{position: absolute;bottom:size(230);left:0;z-index: 3;width: 100%;color: #fff;}
   }
 @keyframes an {
+  10% {
+    transform: translateY(0);
+  }
+  90% {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(size(-1080));
+  }
+}
+@keyframes img4 {
   to {
     transform: translateY(0);
   }
