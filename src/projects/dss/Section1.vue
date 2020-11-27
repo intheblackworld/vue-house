@@ -75,7 +75,10 @@
   align-items: center;
   justify-content: center;
   background-image: url('./s1_bg.jpg');
+  min-height:calc(100vw * 900 / 1920);
+  max-height:calc(100vw * 1080 / 1920);
 }
+.logo{width:calc(100vw * 1261 / 1920);}
 
 .bg-bottom {
   width: 100vw;
