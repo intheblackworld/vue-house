@@ -178,6 +178,9 @@ export default {
         {
           src: require('./s8/5.jpg'),
         },
+        {
+          src: require('./s8/6.jpg'),
+        },
       ],
     }
   },
