@@ -89,14 +89,16 @@
 .bg {
   background-size: cover;
   position: relative;
-  height: calc(100vh - 50px);overflow: hidden;
+  height: calc(100vh - 50px);
+  max-height: size(1080);
+  min-height: size(900);overflow: hidden;
 }
 
 .section6 {
   &::v-deep {
     .swiper-pagination {
       // display: none;
-      width: 200px;
+      width:auto;
       left: auto;
       bottom: 20px;
       right: 20px;
@@ -127,11 +129,12 @@
   //   position: relative;
   // }
 }
+.full-img {height: 100%;}
 
 .mask {
   background-color: rgba(0, 0, 0, 0.5);
-  width: size(846);
-  height:45%;
+  width: size(700);
+  height:40%;
   top: 13%;
   right: 0;
   z-index: 2;
@@ -151,19 +154,20 @@
 
 }
 .title {
-  font-size:2.1em;
+  font-size:1.65em;
   font-weight: bold;
   letter-spacing:0.1em;
+  line-height: 1.5;
 }
 
 .desc {
-  font-size:1em;
+  font-size:0.9em;
   font-weight: normal;
   line-height: 1.81;
 }
 
 .hr {
-    width: 25em;
+    width: 20em;
     margin: 0.5em auto;
     height: auto;
 }
@@ -176,8 +180,11 @@
   .bg {
     width: 100vw;
     height: size-m(353 + 317);
+  max-height: size-m(812);
+  min-height: size-m(604);
     background-color: #fff;
   }
+
   .full-img {
     width: 100vw;
     min-height: auto;
@@ -290,19 +297,25 @@ export default {
 
       slideList: [
         {
-          src: require('./s6/1Lounge Bar實景.jpg'),
+          src: require('./s6/01.jpg'),
         },
         {
-          src: require('./s6/2迎賓大廳實景.jpg'),
+          src: require('./s6/02.jpg'),
         },
         {
-          src: require('./s6/3健身房.jpg'),
+          src: require('./s6/03.jpg'),
         },
         {
-          src: require('./s6/4交誼廳實景.jpg'),
+          src: require('./s6/04.jpg'),
         },
         {
-          src: require('./s6/5宴會廳實景.jpg'),
+          src: require('./s6/05.jpg'),
+        },
+        {
+          src: require('./s6/06.jpg'),
+        },
+        {
+          src: require('./s6/07.jpg'),
         },
       ],
     }

@@ -47,7 +47,9 @@
 .bg {
   background-size: cover;
   position: relative;
-  height: size(1080);
+  height:100vh;
+  max-height: size(1080);
+  min-height: size(900);
 }
 
 // .bg-img {
@@ -84,8 +86,8 @@
 
 .mask {
   background-color: rgba(0, 0, 0, 0.5);
-  width: size(846);
-  height:40%;
+  width: size(700);
+  height:35%;
   top: 13%;
   right: 0;
   z-index: 2;
@@ -105,19 +107,20 @@
 
 }
 .title {
-  font-size:2.1em;
+  font-size:1.65em;
   font-weight: bold;
   letter-spacing:0.1em;
+  line-height: 1.5;
 }
 
 .desc {
-  font-size:1em;
+  font-size:0.9em;
   font-weight: normal;
   line-height: 1.81;
 }
 
 .hr {
-    width: 25em;
+    width: 20em;
     margin: 0.5em auto;
     height: auto;
 }
@@ -128,6 +131,14 @@
 }
 
 @media screen and (max-width: 767px) {
+.bg {
+  background-size: cover;
+  position: relative;
+  height:100vh;
+  max-height:initial;
+  min-height:0;
+}
+
 .bg-img {
 &.water-img{
     width: 100%;}

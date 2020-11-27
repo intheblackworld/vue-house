@@ -122,7 +122,7 @@
   &::v-deep {
     .swiper-pagination {
       // display: none;
-      width: 200px;
+      width:auto;
       left: auto;
       bottom: 20px;
       right: 20px;
@@ -202,6 +202,7 @@
   color: #04040c;
 }
 
+.full-img {height: 100%;}
 .main-img {
   width: auto;
   margin: 0 1.5% 0 0;

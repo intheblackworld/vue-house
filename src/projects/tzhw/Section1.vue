@@ -1,16 +1,20 @@
 <template>
   <div class="section1">
-    <div class="full-bg relative">
+    <div class="bg relative">
       <div
         v-if="!isMobile"
-        class="full-img"
-        v-lazy:background-image="require('./s1/bg.jpg')"
-      ></div>
+        class="bg-img"
+        v-lazy:background-image="require('./s1/bg1.jpg')"
+      ></div>      
       <div
         v-if="isMobile"
-        class="full-img"
-        v-lazy:background-image="require('./mo/1/bg.jpg')"
+        class="bg-img"
+        v-lazy:background-image="require('./s1/bg1_m.jpg')"
       ></div>
+      <img src="./s1/bg.png" alt="龍脈" class="bg-img" v-if="!isMobile">
+      <img src="./s1/bg2.png" alt="太子華威" class="bg-img" v-if="!isMobile">
+      <img src="./s1/bg_m.png" alt="龍脈" class="bg-img" v-if="isMobile">
+      <img src="./s1/bg2_m.png" alt="太子華威" class="bg-img" v-if="isMobile">
      <!--  <div class="water">
       <div
         class="water-img bg-img"
@@ -30,20 +34,35 @@
 
       <div class="txt absolute">
         <h3
-          class="title"
+          class="title" v-if="!isMobile"
           data-aos="fade-up"
           data-aos-delay="400"
         >百年一遇 太子華威</h3>
         <h3
-          class="subtitle"
+          class="title" v-if="isMobile"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >百年一遇<br>太子華威</h3>
+        <h3
+          class="subtitle" v-if="!isMobile"
           data-aos="fade-up"
           data-aos-delay="600"
         >雙溪第一景｜龍脈靜謐居</h3>
         <h3
-          class="desc"
+          class="subtitle" v-if="isMobile"
+          data-aos="fade-up"
+          data-aos-delay="600"
+        >雙溪第一景<br>龍脈靜謐居</h3>
+        <h3
+          class="desc" v-if="!isMobile"
           data-aos="fade-up"
           data-aos-delay="800"
         >83-115坪&nbsp;&nbsp;&nbsp;&nbsp;02-2838-2188</h3>
+        <h3
+          class="desc" v-if="isMobile"
+          data-aos="fade-up"
+          data-aos-delay="800"
+        >83-115坪<br>02-2838-2188</h3>
 
         <img
           v-lazy="require('./s1/float.png')"
@@ -89,7 +108,9 @@
 .bg {
   background-size: cover;
   position: relative;
-  height: calc(100vh);
+  height: 100vh;
+  min-height: size(900);
+  max-height: size(1080);
 }
 
 // .bg-img {
@@ -100,21 +121,14 @@
   position: absolute;
   z-index: 2;
     height: 100%;
+    width: 100%;
     background-position: center;bottom: 0;right: 0;
+
+
+}
   // &:first-child {
   //   position: relative;
   // }
-&.water-img{opacity: 0.5;
-    width: 80%;
-    background-size:100% 100%;}
-&.waterpng-img{
-    width:100%;
-    background-size:cover;}
-}
-.water{bottom: 0;right: 0;
-    width: 100%;
-    height:calc(100vh * 230 / 1080);
-    position: absolute;}
 /*
   @keyframes water {
     from {
@@ -177,10 +191,10 @@
     }
   }
 */
-.txt{font-size:calc(12px + 2.1vh);
+.txt{font-size:calc(12px + 1.1vw);
 
-  top: 14%;
-  right: size(600);
+  top: calc(40% - 5vw);
+  right: size(800);
   transform: translateX(50%);
   z-index: 3;
   font-weight:initial;
@@ -189,7 +203,7 @@
   line-height: 1.66;
   letter-spacing: normal;
   text-align: center;
-  color: #004ea2;
+  color: #fff;
 
 .title{font-size:2.44em;
   font-weight: 900;}
@@ -234,8 +248,17 @@ width: 0.64em;
 }
 
 @media screen and (max-width: 767px) {
+.bg {
+  background-size: 100% 100%;
+  position: relative;
+  height:  calc(100vh - 63px);
+  min-height: size-m(604);
+  max-height: size-m(812);
+  }
   .full-bg{height: calc(100vh - 63px);}
 .bg-img {
+  height: 100%;
+  width: 100%;
 &.water-img{
     width: 100%;}
 
@@ -247,9 +270,9 @@ width: 0.64em;
     height:calc(100vw * 313 / 750);}
 .txt{
   font-size:size-m(19);
-  top: 18%;
-  right:50%;
-  width:size-m(323);
+  top: 25%;
+  right:35%;
+  width:size-m(200);
   transform: translateX(50%);
 .title{font-size:2em;}
 .subtitle {font-size:1.32em;margin: 0 0 0 0.2em;}
@@ -257,12 +280,12 @@ width: 0.64em;
   border-top: 1px solid currentColor;
   border-bottom: 1px solid currentColor;
   margin: 0.44em auto;
-  width:size-m(323);
+  width:100%;
   line-height: 1.7;
 }
 .float2 {
     top:9em;
-    left: 0.5em;
+    left: -1.2em;
 }
 
 .float3 {
