@@ -107,14 +107,14 @@ export default {
     margin-top: 20px;
     margin-right: 0px;
   }
-.menu-btn{width: 100%;height: 100%;position: absolute;top: 0;left: 0;background: url("~@/assets/img/menu1.png") -30% 0;background-size:auto 38%;}
+.menu-btn{width: 100%;height: 100%;position: absolute;top: 0;left: 0;background: url("~@/assets/img/menu1.png") -100% 0;background-size:auto 38%;}
 &:hover{.menu-btn{
   animation: menu 1s linear infinite;}}
 
 }
 @keyframes menu {
   to {
-    background-position-x: 100%;
+    background-position-x: 30%;
   }
 }
 .logo {
@@ -206,18 +206,24 @@ export default {
     background-size: cover;
     position: relative;
   transition: all 0.3s;
+      font-size:size(18);
+      line-height: 1.6;
 
-    // &::after {
-    //   display: block;
-    //   content: '';
-    //   width: 0%;
-    //   height: 1px;
-    //   background: #ddd75f;
-    //   transition: all 0.4s;
-    //   left: 50%;
-    //   bottom: 0;
-    //   position: absolute;
-    // }
+     &::before {
+       display: inline-block;
+       content: '';
+       width:1em;
+       height: 1em;
+       background: url("~@/assets/img/menu2.png");
+       background-size: 58% auto;
+       background-position-x: -100%;
+       transition: all 0.4s; margin: 0 0.5em 0 0;
+    }
+   &:hover:before{
+  animation: menu 1s linear infinite;}
+      /* left: %;
+       bottom: 0;
+       position: absolute*/
 
     // &:hover:after {
     //   width: 80%;
@@ -229,7 +235,7 @@ export default {
       display: block;
     }
     span {
-      line-height: 16px;
+     //line-height: 16px;
     }
 
     &:hover {
@@ -394,13 +400,18 @@ export default {
       align-items: center;
       justify-content: center;
       display: none;
+      font-size:sizem(18);
+
+
+     &::before {
+  animation: menu 1s linear infinite;
+    }
+
+
 
       img,
       span {
         display: block;
-      }
-      span {
-        line-height: 16px;
       }
     }
 

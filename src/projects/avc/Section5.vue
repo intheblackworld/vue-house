@@ -7,7 +7,7 @@
     <img src="./s4/img.png" alt="" class="img2">
 
     <img src="./s5/map.png" alt class="map" />
-    <img src="./s5/icon.png" alt class="icon" />
+    <!-- <img src="./s5/icon.png" alt class="icon" />  -->
     <div v-if="isMobile" @click="isDialog = true" class="logobg1 flex-c" data-aos="fade-up" data-aos-delay="400">
       <h3>點圖放大</h3>
     </div>
@@ -15,7 +15,7 @@
       <div class="dialog-content">
         <img class="close" @click="isDialog = false" src="./all/close.png" alt="close">
         <img src="./s5/map.png" alt class="dialog-map" />
-    <img src="./s5/icon.png" alt class="dialog-icon" />
+   <!--  <img src="./s5/icon.png" alt class="dialog-icon" /> -->
       </div>
     </div>
   </div>
@@ -35,8 +35,8 @@
 }
 
 .map {
-  height: 80%;
-  top:10%;
+  height: 99%;
+  top:0%;
 }
 
 .icon {

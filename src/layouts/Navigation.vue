@@ -194,10 +194,11 @@ export default {
     // }
 
     .title {
-      font-size: 16px !important;
+      font-size:size(16) !important;
       font-weight: bold;
       position: relative;
       z-index: 3;
+      line-height: 1.6;
     }
 
     .subTitle {
@@ -337,13 +338,15 @@ export default {
       align-items: center;
       justify-content: center;
       display: none;
+      font-size:sizem(15);
+
 
       img,
       span {
         display: block;
       }
       span {
-        line-height: 16px;
+      // line-height: 16px;
       }
     }
 
