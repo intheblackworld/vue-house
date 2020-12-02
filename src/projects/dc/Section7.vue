@@ -3,7 +3,9 @@
     <img src="./s7/bg.jpg" alt="" class="bg-img" v-if="isPC">
     <img src="./s7/bg_m.jpg" alt="" class="bg-img" v-if="isMobile">
     <img src="./s7/lt.png" alt="" class="lt" data-aos="fade" data-aos-delay="0">
-    <img src="./s7/train2.png" alt="" class="train">
+
+    <div class="train">
+    <img src="./s7/train2.png" alt=""></div>
     <h1 class="title" data-aos="fade" data-aos-delay="0">漲勢新星</h1>
     <h1 class="subtitle" data-aos="fade" data-aos-delay="200">接軌未來 新東區漲勢動能</h1>
     <div class="desc" data-aos="fade" data-aos-delay="400">
@@ -44,11 +46,18 @@
 
 .train {
   @include img_l_pc(1002, 162, 0);
-  transform-origin:95% 58%;
+  height:size(714) ;
   
     opacity: 1;
+&::before{content: "";clip-path: polygon(71% 50%,80% 50%,95.8% 58.5%,95.8% 58.9%,81% 63%,69.5% 63%);width: 100%; height: 100%;position: absolute;top: 0;left: 0;
+background: #fff url("./s7/bg2.jpg") 0 39%;//
+animation: an2 10s infinite;
+}
+img{width: 100%;position: relative;z-index: 2;
     transform:scale(0.3);
-animation: an 10s  infinite;}
+ animation: an 10s infinite;
+  transform-origin:95% 58%;}}
+
 
 @keyframes an {
   30% {
@@ -61,6 +70,17 @@ animation: an 10s  infinite;}
   100% {
     transform:scale(1.5);
     opacity: 0;
+  }
+}
+
+@keyframes an2 {
+  30% {clip-path: polygon(15% 25%,50% 25%,96.7% 54%,96.7% 58.9%,50% 70%,10% 70%);
+  }
+  99% {
+ clip-path: polygon(15% 25%,50% 25%,96.7% 54%,96.7% 58.9%,50% 70%,10% 70%);
+  }
+  100% {
+ clip-path: polygon(-23% 10%,30% 10%,96.7% 51%,96.7% 56%,30% 70%,-25% 72%);
   }
 }
 
