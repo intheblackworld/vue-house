@@ -78,9 +78,11 @@ img{width: 100%;position: relative;z-index: 2;
   }
   99% {
  clip-path: polygon(15% 25%,50% 25%,96.7% 54%,96.7% 58.9%,50% 70%,10% 70%);
+    opacity: 1;
   }
   100% {
  clip-path: polygon(-23% 10%,30% 10%,96.7% 51%,96.7% 56%,30% 70%,-25% 72%);
+    opacity: 0;
   }
 }
 
