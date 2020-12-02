@@ -1,11 +1,15 @@
 <template>
   <div>
-    <div class="section1-1" v-if="isPC"
-        data-aos="fade-left"
-        data-aos-delay="100">
+    <div class="section1-1">
 <img src="./s2/1-1img.jpg" alt="4米2店面 典藏釋出" class="img11 absolute">
 <img src="./s2/t.png" alt="4米2店面 典藏釋出">
     </div>
+    <!--<div class="section1-1" v-if="isMobile"
+        data-aos="fade"
+        data-aos-delay="100">
+<img src="./s2/1-1img.jpg" alt="4米2店面 典藏釋出" class="img11">
+<img src="./s2/t.png" alt="4米2店面 典藏釋出">
+    </div>-->
     <div class="section2">
       <img
         v-if="isPC"
@@ -155,10 +159,29 @@
 }
 
 @media screen and (max-width: 767px) {
+.section1-1 {
+  width:100%;
+  height:auto;
+  background: #910003;
+  right: 0;
+  top:size(0);
+  display: block;
+  position: relative;padding: 0;
+  img{
+    margin: 5% 0;
+  width: 85%;
+  height:auto;}
+  img.img11{
+  position: relative;
+    margin:0 0;
+    left: 0;top: 0;
+  width:100%;
+  height:auto;}
+}
   .section2 {
     width: 100vw;
     height: sizem(552);
-    margin-top:sizem(30);
+    //margin-top:sizem(30);
     // height: size-m(804);
     background-image: none;
     background-size: cover;
@@ -167,16 +190,16 @@
 
   .img {
     width: sizem(375);
-    top: sizem(280);
+    top: sizem(280 + 265);
     left: sizem(0);
   }
   .icon {
     width: sizem(73);
-    top: sizem(0);
+    top: sizem(265);
     left: sizem(23);
   }
 .txt{
-    top: sizem(30);
+    top: sizem(30 + 265);
     left: sizem(52);
     }
   .title {

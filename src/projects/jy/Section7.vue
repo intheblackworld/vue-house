@@ -1,11 +1,5 @@
 <template>
   <div>
-    <div class="section1-1" v-if="isMobile"
-        data-aos="fade"
-        data-aos-delay="100">
-<img src="./s2/1-1img.jpg" alt="4米2店面 典藏釋出" class="img11">
-<img src="./s2/t.png" alt="4米2店面 典藏釋出">
-    </div>
     <div class="section7">
       <img
         src="./s1/資產 2914.png"
@@ -349,25 +343,9 @@
 }
 
 @media screen and (max-width: 767px) {
-.section1-1 {
-  width:100%;
-  height:auto;
-  background: #910003;
-  right: 0;
-  top:size(0);
-  img{
-    margin: 5% 0;
-  width: 85%;
-  height:auto;}
-  img.img11{
-    margin:0 0;
-    left: 0;top: 0;
-  width:100%;
-  height:auto;}
-}
   .section7 {
     width: 100vw;
-    height: sizem(464 + 286);
+    height: sizem(464 + 286 );
     min-height: auto;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
@@ -378,7 +356,7 @@
 
   .title {
     width: sizem(260);
-    top: sizem(61 + 265);
+    top: sizem(61);
     left: sizem(54);
     font-size: sizem(25);
     font-weight: bold;
@@ -393,7 +371,7 @@
 
   .subtitle {
     width: sizem(309);
-    top: sizem(101 + 265);
+    top: sizem(101);
     left: sizem(34);
     font-size: sizem(20);
     font-weight: bold;
@@ -408,7 +386,7 @@
 
   .desc {
     width: sizem(310);
-    top: sizem(149 + 265);
+    top: sizem(149);
     left: sizem(34);
     font-size: sizem(15);
     font-weight: 500;
@@ -422,20 +400,20 @@
 
   .icon {
     width: sizem(73);
-    top: sizem(31 + 265);
+    top: sizem(31);
     left: sizem(23);
   }
 
   .img {
     width: size(216);
-    top: size(23 + 265);
+    top: size(23);
     left: size(-108);
     display: none;
   }
   .swipe {
     width: 100vw;
     height: sizem(464);
-    top: sizem(286 + 265);
+    top: sizem(286);
     left: 0;
     object-fit: cover;
   }
