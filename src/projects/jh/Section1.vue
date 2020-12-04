@@ -2,10 +2,10 @@
   <div class="section1">
     <div class="bg fullscreen" @click="$refs.audio.play()">
       <div class="fix-group">
-        <div class="button" @click="modal = true">
+         <div class="button" @click="modal = true">
           <img src="./button.png" alt />
         </div>
-        <!-- <div class="button" v-scroll-to="{ element: `#${'section2'}`, offset: -56 }">
+      <!--  <div class="button" v-scroll-to="{ element: `#${'section2'}`, offset: -56 }">
         <img src="./chevron-up.png" alt />
         </div>-->
       </div>
