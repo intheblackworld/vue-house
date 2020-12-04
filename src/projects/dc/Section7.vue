@@ -176,10 +176,18 @@ img{width: 100%;position: relative;z-index: 2;
 
   .lt {
     @include img_l_m(89, 71, 30);
+  height:size(714) ;
   }
 
 .train {
-  @include img_l_m(313, 316, -2);}
+  @include img_l_m(313, 316, -2);
+  height:sizem(231) ;
+  
+  
+  
+  
+  
+  }
   .title {
     @include div_l_m(194, 66, 110, 62);
     font-size: sizem(45);
