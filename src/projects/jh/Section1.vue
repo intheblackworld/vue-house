@@ -1,21 +1,21 @@
 <template>
   <div class="section1">
     <div class="bg fullscreen" @click="$refs.audio.play()">
-      <div class="fix-group">
+      <!-- <div class="fix-group">
         <div class="button" @click="modal = true">
           <img src="./button.png" alt />
         </div>
-        <!-- <div class="button" v-scroll-to="{ element: `#${'section2'}`, offset: -56 }">
+        <div class="button" v-scroll-to="{ element: `#${'section2'}`, offset: -56 }">
         <img src="./chevron-up.png" alt />
-        </div>-->
-      </div>
+        </div>
+      </div>-->
       <!-- <div :class="`music-btn ${isPlay ? 'is-play' : ''}`" @click="playMusic"></div>
       <audio controls style="display: none" ref="audio" loop="loop">
         <source src="./music.mp3" type="audio/mpeg" />
       </audio>-->
       <!-- <audio controls style="display: none" ref="audio" loop="loop" @click="playMusic">
         <source src="./music.wav" type="audio/mpeg" />
-      </audio> -->
+      </audio> 
       <div class="modal" v-if="modal">
         <div class="mask" @click="modal = false"></div>
         <div>
@@ -23,7 +23,7 @@
           <img src="./mo.jpg" alt v-else />
           <img src="@/projects/jh/s4/close.png" alt class="close" @click="modal = false" />
         </div>
-      </div>
+      </div>-->
       <div class="main">
         <div class="gear">
           <div class="l">
