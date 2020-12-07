@@ -1,5 +1,5 @@
 <template>
-  <div class="home no-padding-top">
+  <div class="home">
     <Loading :loading="load" />
     <!-- <SideNavigation /> -->
     <Navigation />
@@ -23,9 +23,8 @@
       <Section3 />
     </vue-lazy-component>
     <vue-lazy-component
-      class="section relative"
+      class="section"
       id="section4"
-      style="z-index: 3;"
     >
       <Section4 />
     </vue-lazy-component>
@@ -34,18 +33,6 @@
       id="section5"
     >
       <Section5 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section6"
-    >
-      <Section6 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section7"
-    >
-      <Section7 />
     </vue-lazy-component>
     <vue-lazy-component class="section" id="contact">
       <ContactSection />
@@ -73,19 +60,17 @@ import $ from 'jquery'
 import Navigation from '@/layouts/Navigation.vue'
 import { isMobile } from '@/utils'
 // import SideNavigation from '@/layouts/SideNavigation.vue'
-import ContactSection from '@/layouts/ContactSection.vue'
+import ContactSection from '@/layouts/ContactSection2.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/dc/Section1.vue'
-import Section2 from '@/projects/dc/Section2.vue'
-import Section3 from '@/projects/dc/Section3.vue'
-import Section4 from '@/projects/dc/Section4.vue'
-import Section5 from '@/projects/dc/Section5.vue'
-import Section6 from '@/projects/dc/Section6.vue'
-import Section7 from '@/projects/dc/Section7.vue'
+import Section1 from '@/projects/lc/index/Section1.vue'
+import Section2 from '@/projects/lc/index/Section2.vue'
+import Section3 from '@/projects/lc/index/Section3.vue'
+import Section4 from '@/projects/lc/index/Section4.vue'
+import Section5 from '@/projects/lc/index/Section5.vue'
 
 export default {
   name: 'home',
@@ -102,8 +87,6 @@ export default {
     Section3,
     Section4,
     Section5,
-    Section6,
-    Section7,
   },
 
   data() {

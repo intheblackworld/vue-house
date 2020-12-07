@@ -3,7 +3,7 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
-          <img class="logo" src="@/assets/img/nav-logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" />
+          <img class="logo" src="@/assets/img/nav-logo.png" alt @click="$router.push('/')" />
           <div class="menu" @click="toggleSidebar" v-show="!isOpen">
             <font-awesome-icon icon="bars" />
           </div>
@@ -16,8 +16,8 @@
             <div class="close" @click="isOpen = false" v-if="isMobile">
               <img src="../assets/img/close.png" alt="">
             </div>
-            <li v-if="isMobile" alt v-scroll-to="{ element: `#section1`, offset: offset }" ><img class="navlogo" src="@/assets/img/nav-logo.png"/></li>
-            <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: offset }" v-for="item in list" class="flex-c" @click="toggleSidebar">
+            <li v-if="isMobile" alt v-scroll-to="{ element: `#section1`, offset: offset }"><img class="navlogo" src="@/assets/img/nav-logo.png" /></li>
+            <li :key="item.name" v-for="item in list" class="flex-c" @click="toggleSidebar(item.path)">
               <span class="link">
                 <span class="flex-c">
                   <p class="title" v-html="item.name"></p>
@@ -65,7 +65,9 @@ export default {
   },
 
   methods: {
-    toggleSidebar() {
+    toggleSidebar(path) {
+      console.log(path)
+      this.$router.push(`/${path}`)
       this.isOpen = !this.isOpen
     },
   },
@@ -327,7 +329,7 @@ export default {
   .logo {
     width: $logo_phone_width;
     left: 15px;
-   // display: none;
+    // display: none;
   }
 
   .nav {
@@ -419,7 +421,9 @@ export default {
     display: block;
     transform: translateX(40%);
 
-.navlogo{height:70px;}
+    .navlogo {
+      height: 70px;
+    }
     li {
     }
 
@@ -455,9 +459,9 @@ export default {
           display: none;
         }
       }
-  .close {
-    transform: translateX(0);
-    }
+      .close {
+        transform: translateX(0);
+      }
     }
   }
 
@@ -469,7 +473,6 @@ export default {
     background-repeat: repeat;
     background-attachment: fixed;
     background-position: 80% 0%;
-
 
     position: fixed;
     height: calc(100vh - #{$nav_phone_height});
