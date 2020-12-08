@@ -101,6 +101,8 @@
   .bg {
     background-size: 1920px auto;
     background-position: center;
+  min-height:0;
+  max-height:900vw;
   }
 }
 
@@ -109,6 +111,8 @@
     background-position: 55%;
     background-size: cover;
   background-image: url('./s1_bg_m.jpg');
+  min-height:calc(100vw * 604 / 375);
+  max-height:calc(100vw * 812 / 375);
   }
 
   .logo {

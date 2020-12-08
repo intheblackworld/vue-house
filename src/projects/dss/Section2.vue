@@ -135,11 +135,14 @@
 }
 
 @media screen and (max-width: 767px) {
+  .section2{overflow: hidden;position: relative;}
   .bg {
     background-position: 55%;
     background-size: cover;
     background-image: url('./s2_bg_m.jpg');
     display: block;
+    width: 100%;
+    height: 100%;
   }
 
   .logo {
@@ -150,10 +153,8 @@
   .video-container {
     width: 100%;
     margin: 0 auto;
-    position: relative;
-    top: 0;
-
-    right: 0;
+    position: absolute;
+    top: calc(50% - (100vw * 100 / 375));left: 0;
     .mask {
       width: 100vw;
       height: calc((100vw * 9) / 16);
@@ -176,12 +177,16 @@
   }
 
   .bg-bottom {
-    margin-top: calc(-100vw * (1270 / 1920));
+   // margin-top: calc(-100vw * (1270 / 1920));
+    position: absolute;
+    bottom:0;
   }
 
   .txt-m {
     width: 100vw;
     margin-bottom: 20px;
+    position: absolute;
+    bottom:0;left: 0;
   }
 }
 </style>
