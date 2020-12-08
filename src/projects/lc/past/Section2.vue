@@ -24,6 +24,9 @@
       ◆ 結合陽光、空氣、水的絕美建築<br />
       ◆ 低建蔽率，高公共生活空間
     </div>
+    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
+      <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+    </div>
   </div>
 </template>
 
@@ -144,10 +147,10 @@
 
 /* Swipe */
 .swipe {
-  width: size(840);
-  height: size(560);
-  top: size(233);
-  left: size(210);
+  width: size(1252);
+  height: size(1081);
+  top: size(133);
+  left: size(0);
   object-fit: cover;
 }
 
@@ -239,8 +242,8 @@
 
 .pagination {
   width: auto;
-  bottom: size(148);
-  left: calc(50% + 6.95vw);
+  bottom: size(327);
+  left: size(1330);
   justify-content: center;
 }
 
@@ -255,9 +258,10 @@
     width: 15px;
     height: 15px;
     border-radius: 0px;
-    box-shadow: 0 0 0 1px #ccc;
+    box-shadow: 0 0 0 1px #ff8100;
     position: relative;
-    background-color: #ccc;
+    background-color: transparent;
+    border-radius: 999px;
     transition: all 0.5s;
 
     &::before {
@@ -265,7 +269,7 @@
       width: 60%;
       height: 60%;
       display: block;
-      background: #005369;
+      background: #ff8100;
       // border-radius: 20px;
       opacity: 1;
       position: absolute;
@@ -277,19 +281,20 @@
       transform: scale(0);
     }
     &.active {
-      box-shadow: none;
+      // box-shadow: none;
       &::before {
         content: '';
-        width: 100%;
-        height: 100%;
+        width: 60%;
+        height: 60%;
         display: block;
-        background: #005369;
+        background: #ff8100;
+        border-radius: 999px;
         // border-radius: 20px;
         opacity: 1;
         position: absolute;
-        top: 0%;
+        top: 20%;
         // transform: translateY(-50%);
-        left: 0%;
+        left: 20%;
         transform: scale(1.1);
       }
     }
@@ -526,16 +531,16 @@ export default {
       tabIndex: 0,
       slideList: [
         {
-          img: require('./s3/1信義計劃區-台北101.jpg'),
-          name: '台北101',
+          img: require('./s1/01.jpg'),
+          // name: '台北101',
         },
         {
-          img: require('./s3/2信義計劃區-台北101.jpg'),
-          name: '台北101',
+          img: require('./s1/01.jpg'),
+          // name: '台北101',
         },
         {
-          img: require('./s3/3信義計劃區-台北101.jpg'),
-          name: '台北101',
+          img: require('./s1/01.jpg'),
+          // name: '台北101',
         },
       ],
     }

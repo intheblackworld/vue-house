@@ -4,6 +4,8 @@
       <div class="layout-container nav-container">
         <div class="nav">
           <img class="logo" src="@/assets/img/nav-logo.png" alt @click="$router.push('/')" />
+          <img src="@/projects/lc/menu/icon_f.png" alt="" class="fb" @click="showMessengerDialog">
+          <img src="@/projects/lc/menu/icon_l.png" alt="" class="line">
           <div class="menu" @click="toggleSidebar" v-show="!isOpen">
             <font-awesome-icon icon="bars" />
           </div>
@@ -17,8 +19,8 @@
               <img src="../assets/img/close.png" alt="">
             </div>
             <li v-if="isMobile" alt v-scroll-to="{ element: `#section1`, offset: offset }"><img class="navlogo" src="@/assets/img/nav-logo.png" /></li>
-            <li :key="item.name" v-for="item in list" class="flex-c" @click="toggleSidebar(item.path)">
-              <span class="link">
+            <li :key="item.name" v-for="item in list" class="flex-c">
+              <span class="link" @click="toggleSidebar(item.path)">
                 <span class="flex-c">
                   <p class="title" v-html="item.name"></p>
                   <span class="subTitle">{{item.subTitle}}</span>
@@ -29,22 +31,31 @@
         </div>
       </div>
     </div>
+    <el-dialog title :visible.sync="isShowMessengerDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
+      <MessengerDialog :messenger="info.fbMessage" />
+    </el-dialog>
   </div>
 </template>
 
 <script>
 import { isMobile, isTablet } from '@/utils'
+import info from '@/info'
 import navList from '@/info/navList'
+import MessengerDialog from '@/components/Dialog/Messenger'
 
 export default {
   name: 'navigation',
-  components: {},
+  components: {
+    MessengerDialog,
+  },
   data() {
     return {
+      info,
       isOpen: false,
       isMobile,
       isTablet,
       list: navList,
+      isShowMessengerDialog: false,
     }
   },
 
@@ -69,6 +80,11 @@ export default {
       console.log(path)
       this.$router.push(`/${path}`)
       this.isOpen = !this.isOpen
+    },
+
+    showMessengerDialog() {
+      // if (!this.isMobile) return
+      this.isShowMessengerDialog = true
     },
   },
 }
@@ -120,11 +136,13 @@ export default {
 }
 
 .nav {
-  width: 100%;
+  min-width: 1280px;
+  width: 1280px;
   height: 100%;
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  // justify-content: center;
   position: relative;
   a {
     display: block;
@@ -132,14 +150,32 @@ export default {
   }
 }
 
-.logo {
-  width: $logo_pc_width;
-  height: auto;
+.line {
+  width: 40px;
   position: absolute;
-  left: size(0);
+  right: 160px;
   display: block;
-  top: 50%;
-  transform: translate(3%, -50%);
+  top: 40px;
+  cursor: pointer;
+}
+
+.fb {
+  width: 40px;
+  position: absolute;
+  right: 205px;
+  display: block;
+  top: 40px;
+  cursor: pointer;
+}
+
+.logo {
+  width: 109px;
+  height: auto;
+  // position: absolute;
+  // left: 50px;
+  display: block;
+  // top: 50%;
+  // transform: translate(3%, -50%);
   transition: all 0.3s;
 }
 
@@ -167,6 +203,7 @@ export default {
   .link {
     color: $nav_link_color;
     height: 22px;
+    margin-top: 80px;
     text-align: center;
     display: block;
     cursor: pointer;
@@ -228,11 +265,11 @@ export default {
     // }
 
     .title {
-      font-size: 16px !important;
+      font-size: 20px !important;
       font-weight: bold;
       position: relative;
-      border-right: 1px solid #000;
-      padding: 0 12px;
+      // border-right: 1px solid #000;
+      padding: 0 35px;
       z-index: 3;
       > span {
         font-size: 24px !important;

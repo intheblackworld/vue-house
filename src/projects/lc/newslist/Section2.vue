@@ -1,0 +1,190 @@
+<template>
+  <div class="section2">
+    <div class="news-container">
+      <div class="news-item" v-for="(item, index) in list" :key="item.title + index" @click="$router.push(`/news/${index}`)">
+        <img :src="item.img" alt="" class="news-img">
+        <div class="news-title">
+          {{item.title}}
+        </div>
+      </div>
+      <div class="pagination flex-c">
+        <div :class="`pagi flex-c ${index === currentPage ? 'active' : ''}`" v-for="index in pageCount" :key="'pagi' + index" @click="currentPage = index">{{index}}</div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+@import '@/assets/style/function.scss';
+
+.section2 {
+  width: size(1920);
+  // height: size(1444);
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+  background-size: auto;
+}
+
+.bg-img {
+  width: size(1920);
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  object-fit: cover;
+  margin-top: 0;
+  &:nth-child(1) {
+    position: relative;
+  }
+}
+.news-container {
+  width: size(1330);
+  margin: size(80) auto;
+  padding-bottom: size(80);
+  display: flex;
+  flex-wrap: wrap;
+}
+.news-item {
+  width: size(393);
+  margin: 0 size(25);
+  cursor: pointer;
+}
+
+.news-img {
+  width: 100%;
+  height: size(355);
+  object-fit: cover;
+  margin-bottom: size(10);
+}
+
+.news-title {
+  font-size: size(33);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.61;
+  letter-spacing: size(3.96);
+  text-align: left;
+  color: #ff9e00;
+}
+
+.pagination {
+  width: 100%;
+  height: size(80);
+  margin-top: size(40);
+
+  .pagi {
+    width: size(45);
+    height: size(45);
+    font-size: size(20);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: left;
+    border: solid 1px #ff9e00;
+    color: #666666;
+    margin: 0 size(15);
+    cursor: pointer;
+
+    &.active {
+      color: #ffffff;
+      background-color: #ff9e00;
+    }
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+}
+@media only screen and (max-width: 1280px) and (min-width: 1025px) {
+  .fullscreen {
+    height: 100vh;
+  }
+}
+
+/* 螢幕尺寸標準 */
+/* 平板尺寸 */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+}
+
+@media screen and (max-width: 767px) {
+  .section2 {
+    width: 100vw;
+    min-height: sizem(604);
+    max-height: sizem(812);
+    height: 100vh;
+    // background-image: url('./mo/1/bg.png');
+    background-size: cover;
+    background-attachment: scroll;
+  }
+
+  .bg-img {
+    width: sizem(375);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    object-fit: cover;
+    margin-top: 0;
+
+    &:nth-child(1) {
+      position: relative;
+    }
+  }
+
+  .bg {
+    width: sizem(350);
+    top: sizem(60);
+    bottom: sizem(63);
+    // background-image: url('./s1/bg.png');
+    background-attachment: fixed;
+  }
+}
+</style>
+<script>
+// @ is an alias to /src
+import { isPC, isMobile, isTablet } from '@/utils'
+
+export default {
+  name: 'section2',
+
+  data() {
+    return {
+      isPC,
+      isMobile,
+      isTablet,
+      tabIndex: 0,
+      list: [...Array(18).keys()].map((i) => ({
+        img: require('./s1/01.jpg'),
+        title: '新聞標題新聞標題新聞標題新聞標題新聞標題',
+      })),
+      pageCount: 3,
+      currentPage: 1,
+    }
+  },
+
+  methods: {
+    // @slideChangeTransitionEnd="slideChanged"
+    // slideChanged(e) {
+    //   const swiper = this.$refs.mySwiper.swiper
+    //   if (swiper.isEnd) {
+    //     this.slideIndex = 0
+    //   } else if (swiper.isBeginning) {
+    //     this.slideIndex = swiper.slides.length - 3
+    //   } else {
+    //     this.slideIndex = swiper.activeIndex - 1
+    //   }
+    // },
+  },
+
+  mounted() {},
+
+  created() {},
+
+  computed: {},
+}
+</script>

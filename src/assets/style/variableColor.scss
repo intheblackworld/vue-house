@@ -11,11 +11,11 @@ $family3: 'Noto Sans TC',sans-serif;
 // $family3: 'Noto Serif TC', serif;
 
 /* navigation */
-$nav_bg: linear-gradient(to right, rgba(255,255,255,0.3) 0%,rgba(255,255,255,.8) 20%,rgba(255,255,255,1) 50%,rgba(255,255,255,.8) 100%);
-$nav_btn_color: #000;
-$nav_link_color: #000;
+$nav_bg: url('~@/projects/lc/menu/bg.jpg');
+$nav_btn_color: #fff;
+$nav_link_color: #fff;
 $nav_link_subtitle_color: #fff;
-$nav_link_hover_color: #666;
+$nav_link_hover_color: #ff8200;
 $nav_link_hover_bg: #eee;
 
 /* loading */
