@@ -1,5 +1,19 @@
 <template>
   <div class="section2">
+    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" alt="">
+            <div class="slide-name absolute" v-html="slide.name"></div>
+          </div>
+        </transition-group>
+        <!-- <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+        </div> -->
+      </div>
+    </div>
     <img src="./s1/01.jpg" alt="" class="img">
     <div class="content-desc">
       基地位置： 三重區神農街433號～439號<br />
@@ -128,18 +142,171 @@
   color: #fff;
 }
 
-.video {
-  cursor: pointer;
-  @include div_r_pc(1343, 762, 1292, 150);
+/* Swipe */
+.swipe {
+  width: size(840);
+  height: size(560);
+  top: size(233);
+  left: size(210);
+  object-fit: cover;
 }
 
-.rb {
-  position: absolute;
-  background-color: #fff;
-  width: size(308);
-  height: size(167);
-  right: size(-100);
-  bottom: size(-80);
+// begin
+.swipe-fade-leave-to {
+  opacity: 0;
+  z-index: 0;
+}
+// end
+.swipe-fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.swipe-fade-enter-active {
+  transition: all 0.5s ease;
+}
+
+.swipe-fade-leave-active {
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+// begin
+// .swipe-left-leave-to {
+//   margin-left: -100vw;
+//   z-index: 0;
+// }
+// // end
+// .swipe-left-enter {
+//   opacity: 0.5;
+//   margin-left: 0;
+//   z-index: 1;
+// }
+
+// .swipe-left-enter-active {
+//   transition: all 0.5s ease;
+// }
+
+// .swipe-left-leave-active {
+//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+// }
+
+.swipe-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.swipe-item {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .slide-name {
+    right: 1.5em;
+    bottom: 1em;
+    color: #fff;
+    font-size: size(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.89px;
+    text-align: left;
+    color: #ffffff;
+    text-shadow: 0 0.1em 0.3em #000;
+  }
+
+  // &:nth-child(1) {
+  //   z-index: 1;
+  //   // opacity: 1;
+  // }
+
+  // &.base {
+  //   z-index: 1;
+  //   opacity: 1;
+  // }
+  // &.active {
+  //   z-index: 2;
+  //   // opacity: 1;
+  // }
+}
+
+.pagination {
+  width: auto;
+  bottom: size(148);
+  left: calc(50% + 6.95vw);
+  justify-content: center;
+}
+
+.pagination-dot {
+  padding: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+  z-index: 4;
+
+  span {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 0px;
+    box-shadow: 0 0 0 1px #ccc;
+    position: relative;
+    background-color: #ccc;
+    transition: all 0.5s;
+
+    &::before {
+      content: '';
+      width: 60%;
+      height: 60%;
+      display: block;
+      background: #005369;
+      // border-radius: 20px;
+      opacity: 1;
+      position: absolute;
+      top: 20%;
+      // transform: translateY(-50%);
+      left: 20%;
+      transition: all 0.3s;
+      transform-origin: center;
+      transform: scale(0);
+    }
+    &.active {
+      box-shadow: none;
+      &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: #005369;
+        // border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 0%;
+        // transform: translateY(-50%);
+        left: 0%;
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+.swipe-btns {
+  width: 100%;
+  height: 100%;
+  padding: 0 15px;
+  z-index: 3;
+
+  .prev-btn,
+  .next-btn {
+    width: size(20);
+    cursor: pointer;
+  }
 }
 
 @media only screen and (max-width: 1440px) {
@@ -189,60 +356,155 @@
     background-attachment: fixed;
   }
 
-  .img0 {
-    @include div_l_m(284, 667, 0, 0);
+  /* Swipe */
+  .swipe {
+    width: 100vw;
+    height: sizem(250);
+    min-height: auto;
+    top: sizem(120);
+    left: sizem(0);
     object-fit: cover;
   }
 
-  .lt {
-    @include img_l_m(135, 60, 0);
+  // begin
+  .swipe-fade-leave-to {
+    opacity: 0;
+    z-index: 0;
+  }
+  // end
+  .swipe-fade-enter {
+    opacity: 0;
+    z-index: 1;
   }
 
-  .label {
-    @include div_r_m(277, 100, 0, 0);
-    top: auto;
-    bottom: sizem(82);
-    background-color: #000000;
-    font-size: sizem(27);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.37;
-    letter-spacing: sizem(1.24);
-    text-align: left;
-    color: #ffffff;
-    z-index: 3;
+  .swipe-fade-enter-active {
+    transition: all 0.5s ease;
   }
 
-  .title {
-    @include div_r_m(329, 52, 104, 0);
-    text-shadow: 0 0 12px #000000;
-    font-size: sizem(35);
-    letter-spacing: sizem(1.3);
+  .swipe-fade-leave-active {
+    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
   }
 
-  .subtitle {
-    @include div_l_m(182, 38, 154, 46);
-    text-shadow: 0 0 12px #000000;
-    font-size: sizem(26);
+  // begin
+  // .swipe-left-leave-to {
+  //   margin-left: -100vw;
+  //   z-index: 0;
+  // }
+  // // end
+  // .swipe-left-enter {
+  //   opacity: 0.5;
+  //   margin-left: 0;
+  //   z-index: 1;
+  // }
+
+  // .swipe-left-enter-active {
+  //   transition: all 0.5s ease;
+  // }
+
+  // .swipe-left-leave-active {
+  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  // }
+
+  .swipe-wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
   }
 
-  .m-container {
-    margin-top: sizem(190);
-    .swiper-container {
-      height: sizem(660);
+  .swipe-item {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    .slide-name {
+      right: 1em;
+      font-size: sizem(13);
+    }
+
+    // &:nth-child(1) {
+    //   z-index: 1;
+    //   // opacity: 1;
+    // }
+
+    // &.base {
+    //   z-index: 1;
+    //   opacity: 1;
+    // }
+    // &.active {
+    //   z-index: 2;
+    //   // opacity: 1;
+    // }
+  }
+
+  .pagination {
+    width: auto;
+    bottom: size(91);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .pagination-dot {
+    padding: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    z-index: 4;
+
+    span {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 0 1px #fff;
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.01);
+      transition: all 0.5s;
+
+      &::before {
+        content: '';
+        width: 60%;
+        height: 60%;
+        display: block;
+        background: #004ea2;
+        border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 20%;
+        // transform: translateY(-50%);
+        left: 20%;
+        transition: all 0.3s;
+        transform-origin: center;
+        transform: scale(0);
+      }
+      &.active {
+        &::before {
+          content: '';
+          width: 100%;
+          height: 100%;
+          display: block;
+          background: #004ea2;
+          border-radius: 20px;
+          opacity: 1;
+          position: absolute;
+          top: 0%;
+          // transform: translateY(-50%);
+          left: 0%;
+          transform: scale(1);
+        }
+      }
     }
   }
 
-  .item-img {
-    width: sizem(152);
-    transform: translateY(10%);
-  }
-  .item {
-    transform: translateY(8%);
-    animation: an 5s linear infinite alternate;
-    &:nth-child(odd) {
-      animation: an 5s -5s linear infinite alternate;
+  .swipe-btns {
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+    z-index: 3;
+
+    .prev-btn,
+    .next-btn {
+      width: sizem(15);
+      cursor: pointer;
     }
   }
 }
@@ -250,9 +512,11 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
+import slider from '@/mixins/slider.js'
 
 export default {
   name: 'section2',
+  mixins: [slider],
 
   data() {
     return {
@@ -262,34 +526,16 @@ export default {
       tabIndex: 0,
       slideList: [
         {
-          img: '',
-          name: '真心。穩固',
-          desc:
-            '台灣位於太平洋地震帶上，地震頻繁，耐震穩固絕對是建築首要注意的重點。「立瑾建築機構」以確實精確的工法做建築，除了符合CNS國家標準外，更精益求精以更高規格打造百年穩固、精實耐震之好房。',
+          img: require('./s3/1信義計劃區-台北101.jpg'),
+          name: '台北101',
         },
         {
-          img: '',
-          name: '真心。建材',
-          desc:
-            '台灣位於太平洋地震帶上，地震頻繁，耐震穩固絕對是建築首要注意的重點。「立瑾建築機構」以確實精確的工法做建築，除了符合CNS國家標準外，更精益求精以更高規格打造百年穩固、精實耐震之好房。',
+          img: require('./s3/2信義計劃區-台北101.jpg'),
+          name: '台北101',
         },
         {
-          img: '',
-          name: '真心。地段',
-          desc:
-            '台灣位於太平洋地震帶上，地震頻繁，耐震穩固絕對是建築首要注意的重點。「立瑾建築機構」以確實精確的工法做建築，除了符合CNS國家標準外，更精益求精以更高規格打造百年穩固、精實耐震之好房。',
-        },
-        {
-          // img: require('./s1/1.jpg'),
-          name: '真心。設計',
-          desc:
-            '台灣位於太平洋地震帶上，地震頻繁，耐震穩固絕對是建築首要注意的重點。「立瑾建築機構」以確實精確的工法做建築，除了符合CNS國家標準外，更精益求精以更高規格打造百年穩固、精實耐震之好房。',
-        },
-        {
-          // img: require('./s1/1.jpg'),
-          name: '真心。生活',
-          desc:
-            '台灣位於太平洋地震帶上，地震頻繁，耐震穩固絕對是建築首要注意的重點。「立瑾建築機構」以確實精確的工法做建築，除了符合CNS國家標準外，更精益求精以更高規格打造百年穩固、精實耐震之好房。',
+          img: require('./s3/3信義計劃區-台北101.jpg'),
+          name: '台北101',
         },
       ],
     }
