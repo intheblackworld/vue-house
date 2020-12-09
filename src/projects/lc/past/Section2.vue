@@ -8,10 +8,10 @@
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
-        <!-- <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-        </div> -->
+        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+          <img src="../about/s3/l.png" alt="" class="prev-btn" @click="decIndex">
+          <img src="../about/s3/r.png" alt="" class="next-btn" @click="addIndex">
+        </div>
       </div>
     </div>
     <!-- <img src="./s1/01.jpg" alt="" class="img"> -->
@@ -98,19 +98,6 @@
   letter-spacing: size(6.37);
   text-align: left;
   color: #ff8200;
-  white-space: nowrap;
-}
-
-.content-title {
-  @include div_r_pc(391, 63, 470, 76);
-  font-size: size(42.5);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(4.25);
-  text-align: left;
-  color: #606060;
   white-space: nowrap;
 }
 
@@ -361,13 +348,31 @@
     background-attachment: fixed;
   }
 
+  .content-desc {
+    @include div_r_m(310, 260, 356, 22);
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.65;
+    letter-spacing: sizem(1);
+    text-align: left;
+    color: #ff8100;
+
+    span {
+      font-size: sizem(15);
+      font-weight: bold;
+      letter-spacing: sizem(1.15);
+    }
+  }
+
   /* Swipe */
   .swipe {
-    width: 100vw;
-    height: sizem(250);
+    width: sizem(330);
+    height: sizem(284);
     min-height: auto;
-    top: sizem(120);
-    left: sizem(0);
+    top: sizem(60);
+    left: sizem(22.5);
     object-fit: cover;
   }
 

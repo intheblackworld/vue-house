@@ -4,8 +4,11 @@
     <div class="subtitle">
       Hot Case
     </div>
-    <img src="./s1/top.jpg" alt="" class="bg-img">
-    <carousel-3d ref="mycarousel" :width="imgWidth" :height="imgHeight" :autoplay="true" :autoplayTimeout="5000" :autoplayHoverPause="true" :perspective="0" :disable3d="isMobile ? true : false" :border="0" :display="isMobile ? 1 : 3" :space="isMobile ? 'auto' : 'auto'" @after-slide-change="onAfterSlideChange">
+    <img src="./s1/top.jpg" alt="" class="bg-img" v-if="isPC">
+    <img src="./s1/top_m.jpg" alt="" class="bg-img" v-if="isMobile">
+    <carousel-3d ref="mycarousel" :width="imgWidth" :height="imgHeight" :autoplay="true" :autoplayTimeout="5000" :autoplayHoverPause="true" :perspective="0" :disable3d="isMobile ? false : false" :border="0" :display="isMobile ? 3 : 3" :space="isMobile ? 'auto' : 'auto'" @after-slide-change="onAfterSlideChange"
+    v-if="isPC"
+    >
       <slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="carousel-3d-item">
         <img :src="slide.img" :class="`carousel-3d-img`" :alt="slide.alt" />
         <div class="mask">
@@ -15,7 +18,7 @@
         </div>
       </slide>
     </carousel-3d>
-    <img src="../index/s5/s.png" alt="" class="shadow">
+    <img src="../index/s5/s.png" alt="" class="shadow" v-if="shadow">
   </div>
 </template>
 
@@ -167,69 +170,55 @@
     }
   }
 
-  .bg {
-    width: sizem(350);
-    top: sizem(60);
-    bottom: sizem(63);
-    // background-image: url('./s1/bg.png');
-    background-attachment: fixed;
-  }
-
-  .img0 {
-    @include div_l_m(284, 667, 0, 0);
-    object-fit: cover;
-  }
-
-  .lt {
-    @include img_l_m(135, 60, 0);
-  }
-
-  .label {
-    @include div_r_m(277, 100, 0, 0);
-    top: auto;
-    bottom: sizem(82);
-    background-color: #000000;
-    font-size: sizem(27);
-    font-weight: bold;
+  .title {
+    @include div_l_m(147, 47, 417, 114);
+    font-size: sizem(32);
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.37;
-    letter-spacing: sizem(1.24);
+    line-height: 1.2;
+    letter-spacing: sizem(5.02);
     text-align: left;
     color: #ffffff;
-    z-index: 3;
-  }
-
-  .title {
-    @include div_r_m(329, 52, 104, 0);
-    text-shadow: 0 0 12px #000000;
-    font-size: sizem(35);
-    letter-spacing: sizem(1.3);
+    white-space: nowrap;
   }
 
   .subtitle {
-    @include div_l_m(182, 38, 154, 46);
-    text-shadow: 0 0 12px #000000;
-    font-size: sizem(26);
+    @include div_l_m(64, 22, 400, 156);
+    font-size: sizem(15);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
   }
 
-  .m-container {
-    margin-top: sizem(190);
-    .swiper-container {
-      height: sizem(660);
+  .desc {
+    @include div_l_m(200, 51, 490, 88);
+    font-size: sizem(17);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(3.38);
+    text-align: left;
+    color: #ff8200;
+    white-space: nowrap;
+
+    span {
+      color: #fff;
     }
   }
 
-  .item-img {
-    width: sizem(152);
-    transform: translateY(10%);
-  }
-  .item {
-    transform: translateY(8%);
-    animation: an 5s linear infinite alternate;
-    &:nth-child(odd) {
-      animation: an 5s -5s linear infinite alternate;
-    }
+  .carousel-3d-container {
+    z-index: 3 !important;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: sizem(280) !important;
   }
 }
 </style>

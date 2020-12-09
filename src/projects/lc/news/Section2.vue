@@ -163,8 +163,8 @@
   .section2 {
     width: 100vw;
     min-height: sizem(604);
-    max-height: sizem(812);
-    height: 100vh;
+    max-height: auto;
+    height: auto;
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -185,12 +185,105 @@
     }
   }
 
-  .bg {
-    width: sizem(350);
-    top: sizem(60);
-    bottom: sizem(63);
-    // background-image: url('./s1/bg.png');
-    background-attachment: fixed;
+  .news-container {
+    width: sizem(310);
+    margin: sizem(60) auto;
+    padding-bottom: sizem(60);
+  }
+  .news-title {
+    width: 100%;
+    font-size: sizem(28);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ff9e00;
+    margin-bottom: sizem(15);
+  }
+  .news-subtitle {
+    font-size: sizem(16);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+    margin-bottom: sizem(15);
+  }
+  .news-date {
+    font-size: sizem(13);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #666666;
+    margin-bottom: sizem(15);
+  }
+  .news-author {
+    font-size: sizem(13);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #666666;
+    margin-bottom: sizem(15);
+  }
+  .news-img {
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: sizem(15);
+  }
+  .news-desc {
+    width: 100%;
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+  }
+
+  .pagination {
+    width: 100%;
+    height: auto;
+    margin-top: size(40);
+    flex-wrap: wrap;
+
+    .pagi {
+      width: 100%;
+      height: sizem(63);
+      border-radius: 10px;
+      font-size: sizem(20);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: sizem(63);
+      letter-spacing: sizem(1.6);
+      text-align: center;
+      border: solid 1px #ff9e00;
+      color: #666666;
+      margin: 0;
+      margin-bottom: 15px;
+      cursor: pointer;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      padding: 0 sizem(5) 0 sizem(15);
+
+      &.active {
+        color: #ffffff;
+        background-color: #ff9e00;
+      }
+    }
   }
 }
 </style>

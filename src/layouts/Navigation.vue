@@ -6,7 +6,7 @@
           <img class="logo" src="@/assets/img/nav-logo.png" alt @click="$router.push('/')" />
           <img src="@/projects/lc/menu/icon_f.png" alt="" class="fb" @click="showMessengerDialog" v-if="!isMobile">
           <img src="@/projects/lc/menu/icon_l.png" alt="" class="line" v-if="!isMobile">
-          <div class="menu" @click="toggleSidebar" v-show="!isOpen">
+          <div class="menu" @click="toggleSidebar('')" v-show="!isOpen">
             <font-awesome-icon icon="bars" />
           </div>
           <div :class="`mask ${isOpen ? 'open' : ''}`">
@@ -20,7 +20,7 @@
             </div>
             <img src="@/projects/lc/menu/icon_f.png" alt="" class="fb" @click="showMessengerDialog" v-if="isMobile">
             <img src="@/projects/lc/menu/icon_l.png" alt="" class="line" v-if="isMobile">
-            <li v-if="isMobile" alt v-scroll-to="{ element: `#section1`, offset: offset }"><img class="navlogo" src="@/assets/img/nav-logo.png" /></li>
+            <!-- <li v-if="isMobile" alt v-scroll-to="{ element: `#section1`, offset: offset }"><img class="navlogo" src="@/assets/img/nav-logo.png" /></li> -->
             <li :key="item.name" v-for="item in list" class="flex-c">
               <span class="link" @click="toggleSidebar(item.path)">
                 <span class="flex-c">
@@ -79,7 +79,7 @@ export default {
 
   methods: {
     toggleSidebar(path) {
-      if (this.isMobile) {
+      if (!path) {
         this.isOpen = !this.isOpen
       } else {
         this.$router.push(`/${path}`)
@@ -485,7 +485,7 @@ export default {
       width: 100%;
       transform: translateX(0%);
       padding-left: 0;
-      padding-top: 50px;
+      // padding-top: 50px;
 
       .link {
         display: flex;

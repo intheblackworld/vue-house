@@ -114,8 +114,8 @@
   .section2 {
     width: 100vw;
     min-height: sizem(604);
-    max-height: sizem(812);
-    height: 100vh;
+    max-height: auto;
+    height: auto;
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -142,6 +142,64 @@
     bottom: sizem(63);
     // background-image: url('./s1/bg.png');
     background-attachment: fixed;
+  }
+
+  .news-container {
+    width: sizem(375);
+    margin: sizem(60) auto;
+    padding-bottom: sizem(60);
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .news-item {
+    width: sizem(310);
+    margin: 0 auto sizem(25);
+    cursor: pointer;
+  }
+
+  .news-img {
+    width: 100%;
+    height: sizem(280);
+    object-fit: cover;
+    margin-bottom: sizem(10);
+  }
+
+  .news-title {
+    font-size: sizem(26);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.31;
+    letter-spacing: sizem(3.16);
+    text-align: left;
+    color: #ff9e00;
+  }
+
+  .pagination {
+    width: 100%;
+    height: sizem(80);
+    margin-top: sizem(40);
+
+    .pagi {
+      width: sizem(45);
+      height: sizem(45);
+      font-size: sizem(20);
+      font-weight: 300;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.2;
+      letter-spacing: normal;
+      text-align: left;
+      border: solid 1px #ff9e00;
+      color: #666666;
+      margin: 0 sizem(15);
+      cursor: pointer;
+
+      &.active {
+        color: #ffffff;
+        background-color: #ff9e00;
+      }
+    }
   }
 }
 </style>

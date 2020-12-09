@@ -111,9 +111,9 @@
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    min-height: sizem(604);
+    min-height: sizem(454);
     max-height: sizem(812);
-    height: 100vh;
+    height: sizem(454);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -134,68 +134,49 @@
     }
   }
 
-  .bg {
-    width: sizem(350);
-    top: sizem(60);
-    bottom: sizem(63);
-    // background-image: url('./s1/bg.png');
-    background-attachment: fixed;
-  }
+  .img {
+    @include div_l_m(344, 223, 0, 0);
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+    }
 
-  .img0 {
-    @include div_l_m(284, 667, 0, 0);
-    object-fit: cover;
-  }
-
-  .lt {
-    @include img_l_m(135, 60, 0);
-  }
-
-  .label {
-    @include div_r_m(277, 100, 0, 0);
-    top: auto;
-    bottom: sizem(82);
-    background-color: #000000;
-    font-size: sizem(27);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.37;
-    letter-spacing: sizem(1.24);
-    text-align: left;
-    color: #ffffff;
-    z-index: 3;
-  }
-
-  .title {
-    @include div_r_m(329, 52, 104, 0);
-    text-shadow: 0 0 12px #000000;
-    font-size: sizem(35);
-    letter-spacing: sizem(1.3);
-  }
-
-  .subtitle {
-    @include div_l_m(182, 38, 154, 46);
-    text-shadow: 0 0 12px #000000;
-    font-size: sizem(26);
-  }
-
-  .m-container {
-    margin-top: sizem(190);
-    .swiper-container {
-      height: sizem(660);
+    .border {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      width: 95%;
+      height: 95%;
+      border: 3px solid #ff8200;
     }
   }
 
-  .item-img {
-    width: sizem(152);
-    transform: translateY(10%);
+  .info-block {
+    @include div_r_m(336, 203, 183, 0);
+    background-color: #ff8200;
   }
-  .item {
-    transform: translateY(8%);
-    animation: an 5s linear infinite alternate;
-    &:nth-child(odd) {
-      animation: an 5s -5s linear infinite alternate;
+
+  .content {
+    width: sizem(260);
+    height: sizem(140);
+    background-color: #fff;
+    padding: sizem(20) sizem(30);
+    font-size: sizem(14);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: sizem(5.48);
+    text-align: left;
+    color: #606060;
+    .title {
+      font-size: sizem(15);
+      font-weight: 900;
+      letter-spacing: sizem(1.49);
     }
   }
 }

@@ -106,69 +106,29 @@
     }
   }
 
-  .bg {
-    width: sizem(350);
-    top: sizem(60);
-    bottom: sizem(63);
-    // background-image: url('./s1/bg.png');
-    background-attachment: fixed;
-  }
-
-  .img0 {
-    @include div_l_m(284, 667, 0, 0);
-    object-fit: cover;
-  }
-
-  .lt {
-    @include img_l_m(135, 60, 0);
-  }
-
-  .label {
-    @include div_r_m(277, 100, 0, 0);
-    top: auto;
-    bottom: sizem(82);
-    background-color: #000000;
-    font-size: sizem(27);
-    font-weight: bold;
+  .title {
+    @include div_l_m(147, 47, 460, 43);
+    font-size: sizem(32);
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.37;
-    letter-spacing: sizem(1.24);
+    line-height: 1.2;
+    letter-spacing: sizem(5.02);
     text-align: left;
     color: #ffffff;
-    z-index: 3;
-  }
-
-  .title {
-    @include div_r_m(329, 52, 104, 0);
-    text-shadow: 0 0 12px #000000;
-    font-size: sizem(35);
-    letter-spacing: sizem(1.3);
+    white-space: nowrap;
   }
 
   .subtitle {
-    @include div_l_m(182, 38, 154, 46);
-    text-shadow: 0 0 12px #000000;
-    font-size: sizem(26);
-  }
-
-  .m-container {
-    margin-top: sizem(190);
-    .swiper-container {
-      height: sizem(660);
-    }
-  }
-
-  .item-img {
-    width: sizem(152);
-    transform: translateY(10%);
-  }
-  .item {
-    transform: translateY(8%);
-    animation: an 5s linear infinite alternate;
-    &:nth-child(odd) {
-      animation: an 5s -5s linear infinite alternate;
-    }
+    @include div_l_m(64, 22, 436, 35);
+    font-size: sizem(15);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
   }
 }
 </style>

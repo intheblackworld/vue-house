@@ -1,20 +1,25 @@
 <template>
   <div class="section2">
     <transition-group name="swipe-fade" mode="out-in">
-      <div v-for="(slide, i) in slideList" v-show="tabIndex === i" :key="slide.img" :class="`bg-img absolute`">
+      <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`bg-img absolute`">
         <img :src="slide.img" alt="">
       </div>
     </transition-group>
     <div class="title">
-      {{slideList[tabIndex].name}}
+      {{slideList[slideIndex].name}}
     </div>
     <div class="desc">
-      {{slideList[tabIndex].desc}}
+      {{slideList[slideIndex].desc}}
     </div>
-    <div class="sidebar flex-ac wrap">
-      <div class="item flex-c" v-for="(slide, index) in slideList" :key="slide.name" @click="tabIndex = index">
+    <div class="sidebar flex-ac wrap" v-if="isPC">
+      <div class="item flex-c" v-for="(slide, index) in slideList" :key="slide.name" @click="slideIndex = index">
         {{slide.name}}
       </div>
+    </div>
+    <div class="page-head flex-c" v-if="isMobile">
+      <div class="page-title">{{slideList[slideIndex].name}}</div>
+      <div class="prev-btn" @click="addIndex"></div>
+      <div class="next-btn" @click="decIndex"></div>
     </div>
   </div>
 </template>
@@ -121,9 +126,9 @@
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    min-height: sizem(604);
+    min-height: sizem(560);
     max-height: sizem(812);
-    height: 100vh;
+    height: sizem(560);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -131,82 +136,93 @@
 
   .bg-img {
     width: sizem(375);
-    height: 100%;
+    height: sizem(210);
     position: absolute;
-    top: 0;
+    top: auto;
     left: 0;
+    bottom: 0;
     display: block;
     object-fit: cover;
     margin-top: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
     &:nth-child(1) {
       position: relative;
     }
   }
 
-  .bg {
-    width: sizem(350);
-    top: sizem(60);
-    bottom: sizem(63);
-    // background-image: url('./s1/bg.png');
-    background-attachment: fixed;
-  }
-
-  .img0 {
-    @include div_l_m(284, 667, 0, 0);
-    object-fit: cover;
-  }
-
-  .lt {
-    @include img_l_m(135, 60, 0);
-  }
-
-  .label {
-    @include div_r_m(277, 100, 0, 0);
-    top: auto;
-    bottom: sizem(82);
-    background-color: #000000;
-    font-size: sizem(27);
+  .title {
+    @include div_l_m(310, 112, 144, 33);
+    font-size: sizem(15);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.37;
-    letter-spacing: sizem(1.24);
+    line-height: 1.2;
+    letter-spacing: sizem(2.99);
     text-align: left;
+    color: #606060;
+    white-space: nowrap;
+  }
+
+  .desc {
+    @include div_l_m(310, 112, 174, 33);
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: sizem(2.97);
+    text-align: left;
+    color: #606060;
+  }
+
+  .page-head {
+    width: 100vw;
+    height: sizem(119);
+    background: rgba(0, 0, 0, 0.4);
+    position: relative;
+  }
+
+  .page-title {
+    font-size: sizem(27);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.72;
+    letter-spacing: sizem(2.7);
+    text-align: center;
     color: #ffffff;
-    z-index: 3;
   }
-
-  .title {
-    @include div_r_m(329, 52, 104, 0);
-    text-shadow: 0 0 12px #000000;
-    font-size: sizem(35);
-    letter-spacing: sizem(1.3);
+  .prev-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    width: sizem(30);
+    height: sizem(30);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: sizem(18) sizem(25) sizem(18) 0;
+    border-color: transparent #fff transparent transparent;
   }
-
-  .subtitle {
-    @include div_l_m(182, 38, 154, 46);
-    text-shadow: 0 0 12px #000000;
-    font-size: sizem(26);
-  }
-
-  .m-container {
-    margin-top: sizem(190);
-    .swiper-container {
-      height: sizem(660);
-    }
-  }
-
-  .item-img {
-    width: sizem(152);
-    transform: translateY(10%);
-  }
-  .item {
-    transform: translateY(8%);
-    animation: an 5s linear infinite alternate;
-    &:nth-child(odd) {
-      animation: an 5s -5s linear infinite alternate;
-    }
+  .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    width: sizem(30);
+    height: sizem(30);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: sizem(18) 0 sizem(18) sizem(25);
+    border-color: transparent transparent transparent #fff;
   }
 }
 </style>
@@ -224,7 +240,6 @@ export default {
       isPC,
       isMobile,
       isTablet,
-      tabIndex: 0,
       slideList: [
         {
           img: require('./s1/1.jpg'),
