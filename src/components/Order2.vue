@@ -382,6 +382,7 @@ export default {
     // background-image: $order_bg_image_m;
     /*background-attachment: initial;
     background-size: cover;*/
+    height: auto;
     padding-top: 40px;
     margin: 0;
     position: relative;
@@ -398,8 +399,12 @@ export default {
     }
 
     .order-subtitle {
-      font-size: 0;
+      font-size: sizem(15);
       margin-bottom: 0;
+    }
+
+    .form-hint {
+      font-size: sizem(16);
     }
     .order {
       width: 95% !important;

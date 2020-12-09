@@ -83,7 +83,7 @@
 
 .btn {
   @include div_l_pc(182, 46, 1114, 310);
-  background-color: rgba(255, 130, 0, .7);
+  background-color: rgba(255, 130, 0, 0.7);
   cursor: pointer;
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
   font-size: size(23.8);
@@ -95,7 +95,7 @@
   text-align: center;
   color: #fffcfd;
   border-radius: 5px;
-  transition: all .3s;
+  transition: all 0.3s;
   z-index: 5;
   position: absolute;
   &:hover {
@@ -119,9 +119,9 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-    min-height: sizem(604);
-    max-height: sizem(812);
-    height: 100vh;
+    min-height: sizem(1124);
+    // max-height: sizem(812);
+    // height: 100vh;
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -142,69 +142,65 @@
     }
   }
 
-  .bg {
-    width: sizem(350);
-    top: sizem(60);
-    bottom: sizem(63);
-    // background-image: url('./s1/bg.png');
-    background-attachment: fixed;
-  }
-
-  .img0 {
-    @include div_l_m(284, 667, 0, 0);
-    object-fit: cover;
-  }
-
-  .lt {
-    @include img_l_m(135, 60, 0);
-  }
-
-  .label {
-    @include div_r_m(277, 100, 0, 0);
-    top: auto;
-    bottom: sizem(82);
-    background-color: #000000;
-    font-size: sizem(27);
-    font-weight: bold;
+  .title {
+    @include div_l_m(130, 40, 96, 123);
+    font-size: sizem(28);
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.37;
-    letter-spacing: sizem(1.24);
+    line-height: 1.2;
+    letter-spacing: sizem(5.02);
     text-align: left;
-    color: #ffffff;
-    z-index: 3;
-  }
-
-  .title {
-    @include div_r_m(329, 52, 104, 0);
-    text-shadow: 0 0 12px #000000;
-    font-size: sizem(35);
-    letter-spacing: sizem(1.3);
+    color: #606060;
+    white-space: nowrap;
   }
 
   .subtitle {
-    @include div_l_m(182, 38, 154, 46);
-    text-shadow: 0 0 12px #000000;
-    font-size: sizem(26);
+    @include div_l_m(64, 21, 141, 155);
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ff8200;
+    white-space: nowrap;
   }
 
-  .m-container {
-    margin-top: sizem(190);
-    .swiper-container {
-      height: sizem(660);
-    }
+  .img1 {
+    @include img_l_m(156, 218, 22);
   }
 
-  .item-img {
-    width: sizem(152);
-    transform: translateY(10%);
+  .img2 {
+    @include img_l_m(156, 218, 197);
   }
-  .item {
-    transform: translateY(8%);
-    animation: an 5s linear infinite alternate;
-    &:nth-child(odd) {
-      animation: an 5s -5s linear infinite alternate;
-    }
+
+  .img3 {
+    @include img_r_m(367, 640, 4);
+  }
+
+  .btn {
+    display: none;
+    // @include div_l_pc(182, 46, 1114, 310);
+    // background-color: rgba(255, 130, 0, 0.7);
+    // cursor: pointer;
+    // text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+    // font-size: size(23.8);
+    // font-weight: normal;
+    // font-stretch: normal;
+    // font-style: normal;
+    // line-height: 1.2;
+    // letter-spacing: size(3.74);
+    // text-align: center;
+    // color: #fffcfd;
+    // border-radius: 5px;
+    // transition: all 0.3s;
+    // z-index: 5;
+    // position: absolute;
+    // &:hover {
+    //   background-color: rgba(255, 130, 0, 1);
+    // }
   }
 }
 </style>

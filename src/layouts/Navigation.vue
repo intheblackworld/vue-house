@@ -4,8 +4,8 @@
       <div class="layout-container nav-container">
         <div class="nav">
           <img class="logo" src="@/assets/img/nav-logo.png" alt @click="$router.push('/')" />
-          <img src="@/projects/lc/menu/icon_f.png" alt="" class="fb" @click="showMessengerDialog">
-          <img src="@/projects/lc/menu/icon_l.png" alt="" class="line">
+          <img src="@/projects/lc/menu/icon_f.png" alt="" class="fb" @click="showMessengerDialog" v-if="!isMobile">
+          <img src="@/projects/lc/menu/icon_l.png" alt="" class="line" v-if="!isMobile">
           <div class="menu" @click="toggleSidebar" v-show="!isOpen">
             <font-awesome-icon icon="bars" />
           </div>
@@ -18,6 +18,8 @@
             <div class="close" @click="isOpen = false" v-if="isMobile">
               <img src="../assets/img/close.png" alt="">
             </div>
+            <img src="@/projects/lc/menu/icon_f.png" alt="" class="fb" @click="showMessengerDialog" v-if="isMobile">
+            <img src="@/projects/lc/menu/icon_l.png" alt="" class="line" v-if="isMobile">
             <li v-if="isMobile" alt v-scroll-to="{ element: `#section1`, offset: offset }"><img class="navlogo" src="@/assets/img/nav-logo.png" /></li>
             <li :key="item.name" v-for="item in list" class="flex-c">
               <span class="link" @click="toggleSidebar(item.path)">
@@ -77,9 +79,11 @@ export default {
 
   methods: {
     toggleSidebar(path) {
-      console.log(path)
-      this.$router.push(`/${path}`)
-      this.isOpen = !this.isOpen
+      if (this.isMobile) {
+        this.isOpen = !this.isOpen
+      } else {
+        this.$router.push(`/${path}`)
+      }
     },
 
     showMessengerDialog() {
@@ -119,7 +123,7 @@ export default {
   // background-image: $nav_bg;
   background-size: cover;
   height: $nav_pc_height;
-  z-index: 10;
+  z-index: 30;
   position: fixed;
   top: 0;
   width: 100vw;
@@ -365,7 +369,7 @@ export default {
 
   .logo {
     width: $logo_phone_width;
-    left: 15px;
+    margin-left: 15px;
     // display: none;
   }
 
@@ -413,7 +417,8 @@ export default {
 
     li {
       width: 100vw;
-      height: 70px;
+      height: 45px;
+      margin-top: 15px;
       margin-bottom: 0;
     }
 
@@ -459,7 +464,7 @@ export default {
     transform: translateX(40%);
 
     .navlogo {
-      height: 70px;
+      height: 50px;
     }
     li {
     }
@@ -485,7 +490,7 @@ export default {
       .link {
         display: flex;
         justify-content: center;
-        color: #000;
+        color: #fff;
         .title {
           border-right: none;
         }
@@ -506,7 +511,7 @@ export default {
     width: 100vw;
     top: $nav_phone_height;
     right: 0;
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAhUlEQVRIibXPUQqAIBBF0ZcU0f430aZaR4RCoR9Bpakzb+4GDnfYVpzTCJN8APYDcNbAMgPOGogTdOQNxKhIDqAiJYCG/AEUpAaokRZAhbQCYqQHECG9QDciAboQKdCMaIAmRAtUEQbwi7CAIsIEsggb+CAWwAOxAm7EEkiINZAQa8AH4ALY3mam/LbLFgAAAABJRU5ErkJggg==);
+    background-image: url('~@/projects/lc/form/bg.jpg');
     background-repeat: repeat;
     background-attachment: fixed;
     background-position: 80% 0%;
@@ -529,6 +534,26 @@ export default {
     right: 10px;
     z-index: 120;
     transform: translateX(100%);
+  }
+
+  .line {
+    width: sizem(40);
+    position: absolute;
+    right: sizem(130);
+    display: block;
+    top: auto;
+    bottom: sizem(90);
+    cursor: pointer;
+  }
+
+  .fb {
+    width: sizem(40);
+    position: absolute;
+    right: 205px;
+    display: block;
+    top: auto;
+    bottom: sizem(90);
+    cursor: pointer;
   }
 }
 </style>
