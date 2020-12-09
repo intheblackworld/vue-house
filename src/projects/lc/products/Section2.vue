@@ -1,6 +1,10 @@
 <template>
   <div class="section2">
-    <img src="./s1/1.jpg" class="bg-img" />
+    <transition-group name="swipe-fade" mode="out-in">
+      <div v-for="(slide, i) in slideList" v-show="tabIndex === i" :key="slide.img" :class="`bg-img absolute`">
+        <img :src="slide.img" alt="">
+      </div>
+    </transition-group>
     <div class="title">
       {{slideList[tabIndex].name}}
     </div>
@@ -209,10 +213,12 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
+import slider from '@/mixins/slider.js'
 
 export default {
   name: 'section2',
 
+  mixins: [slider],
   data() {
     return {
       isPC,
@@ -227,25 +233,25 @@ export default {
             '台灣位於太平洋地震帶上，地震頻繁，耐震穩固絕對是建築首要注意的重點。「立瑾建築機構」以確實精確的工法做建築，除了符合CNS國家標準外，更精益求精以更高規格打造百年穩固、精實耐震之好房。',
         },
         {
-          img: require('./s1/1.jpg'),
+          img: require('./s1/2.jpg'),
           name: '真心。建材',
           desc:
             '台灣位於太平洋地震帶上，地震頻繁，耐震穩固絕對是建築首要注意的重點。「立瑾建築機構」以確實精確的工法做建築，除了符合CNS國家標準外，更精益求精以更高規格打造百年穩固、精實耐震之好房。',
         },
         {
-          img: require('./s1/1.jpg'),
+          img: require('./s1/3.jpg'),
           name: '真心。地段',
           desc:
             '台灣位於太平洋地震帶上，地震頻繁，耐震穩固絕對是建築首要注意的重點。「立瑾建築機構」以確實精確的工法做建築，除了符合CNS國家標準外，更精益求精以更高規格打造百年穩固、精實耐震之好房。',
         },
         {
-          img: require('./s1/1.jpg'),
+          img: require('./s1/4.jpg'),
           name: '真心。設計',
           desc:
             '台灣位於太平洋地震帶上，地震頻繁，耐震穩固絕對是建築首要注意的重點。「立瑾建築機構」以確實精確的工法做建築，除了符合CNS國家標準外，更精益求精以更高規格打造百年穩固、精實耐震之好房。',
         },
         {
-          img: require('./s1/1.jpg'),
+          img: require('./s1/5.jpg'),
           name: '真心。生活',
           desc:
             '台灣位於太平洋地震帶上，地震頻繁，耐震穩固絕對是建築首要注意的重點。「立瑾建築機構」以確實精確的工法做建築，除了符合CNS國家標準外，更精益求精以更高規格打造百年穩固、精實耐震之好房。',

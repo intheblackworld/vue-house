@@ -14,7 +14,7 @@
         </div> -->
       </div>
     </div>
-    <img src="./s1/01.jpg" alt="" class="img">
+    <!-- <img src="./s1/01.jpg" alt="" class="img"> -->
     <div class="content-desc">
       基地位置： 三重區神農街433號～439號<br />
       完工時間： 2020年<br />
@@ -531,15 +531,23 @@ export default {
       tabIndex: 0,
       slideList: [
         {
-          img: require('./s1/01.jpg'),
+          img: require('./s2/2-1.jpg'),
           // name: '台北101',
         },
         {
-          img: require('./s1/01.jpg'),
+          img: require('./s2/2-2.jpg'),
           // name: '台北101',
         },
         {
-          img: require('./s1/01.jpg'),
+          img: require('./s2/2-3.jpg'),
+          // name: '台北101',
+        },
+        {
+          img: require('./s2/2-4.jpg'),
+          // name: '台北101',
+        },
+        {
+          img: require('./s2/2-5.jpg'),
           // name: '台北101',
         },
       ],
