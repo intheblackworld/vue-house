@@ -71,7 +71,7 @@ export default {
 }
 
 .item {
-  font-size: sizem(15);
+  font-size: size(23);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -118,6 +118,7 @@ export default {
 
   .item {
     align-items: flex-start;
+  font-size: sizem(15);
     margin: 0;
     width: 100%;
     height: auto;
