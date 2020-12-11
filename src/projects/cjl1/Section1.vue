@@ -6,6 +6,12 @@
       </transition-group>
       <img src="./s1/bg2.png" alt="" class="bg-img" data-aos="fade-up" data-aos-delay="200" v-if="!isMobile">
       <img src="./mo/bg2.png" alt="" class="bg-img2" data-aos="fade-up" data-aos-delay="200" v-if="isMobile">
+      <img src="./s1/i1.png" alt="" class="img img1">
+      <img src="./s1/i2.png" alt="" class="img img2">
+      <img src="./s1/i3.png" alt="" class="img img3">
+      <img src="./s1/i4.png" alt="" class="img img4">
+      <img src="./s1/l.png" alt="" class="img img5">
+      <img src="./s1/l.png" alt="" class="img img6">
       <svg version="1.1" class="logo" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="65 660 1450 310" style="enable-background:new 65 660 1450 310;" xml:space="preserve">
         <path class="st1" d="M636.3,871.8c3.1,0.7,4.2-0.5,3.6-4.2C637.9,867.6,636.5,869.1,636.3,871.8z M625.4,902.1
           c-0.3-0.1-1.1,0.6-1,0.8c0.1,0.5,0.6,1,1.1,1.8c0.5-0.7,1-1.2,0.9-1.5C626.3,902.7,625.8,902.2,625.4,902.1z M703.6,922.5
@@ -1043,7 +1049,47 @@
   // }
 }
 
+.img{position: absolute;}
+.img1{right: 6vw;
+    bottom: 5vw;
+    width: 25vw;animation: tr 4s ease-in infinite alternate;
+    transform: translateY(0)skew(0deg,0)rotate(5deg);
+    transform-origin: left bottom;
+}
+.img2{
+    left: -3vw;
+    top: -11vw;
+    width: 31vw;animation: tr 5s ease-in infinite alternate;
+    transform: translateY(-6%)skew(5deg,0)rotate(-6deg);
+    transform-origin: left bottom;}
+.img3{
+    right: -14vw;
+    top: -5vw;
+    width: 31vw;animation: tr 6s ease-in infinite alternate;
+    transform: translateY(-6%)skew(5deg,0)rotate(-6deg);
+    transform-origin: left bottom;}
+.img4{
+    left: -12vw;
+    bottom: 5vw;
+    width: 31vw;animation: tr 6s ease-in infinite alternate;
+    transform: translateY(-6%)skew(5deg,0)rotate(-6deg);
+    transform-origin: left bottom;}
+.img5{mix-blend-mode: lighten;
+    left: -12vw;
+    bottom: 5vw;
+    opacity: 0.3;
+    width: 31vw;animation: tr 1s -1s ease-in infinite alternate;}
+.img6{mix-blend-mode: lighten;
+    right: -5vw;
+    top: 5vw;
+    opacity: 0.3;
+    width: 40vw;animation: tr 1s ease-in infinite alternate;}
 
+    
+  @keyframes tr {
+    to {transform: translateY(0)skew(0deg,0)rotate(0deg);opacity: 1;
+    }
+}
 // begin
 .swipe-fade-leave-to {
   opacity: 0;
@@ -1133,6 +1179,31 @@
     right: 0;
     margin: 0 auto;
   }
+.img1{right: -16vw;
+    bottom: -5vw;
+    width: 50vw;
+}
+.img2{
+    left: -2vw;
+    top: -22vw;
+    width: 61vw;}
+.img3{
+    right: -14vw;
+    top: -5vw;
+    width: 41vw;}
+.img4{left: -12vw;
+    bottom: 52vw;
+    width: 44vw;}
+.img5{mix-blend-mode: lighten;
+    left: -12vw;
+    bottom: 55vw;
+    opacity: 0.3;
+    width: 71vw;}
+.img6{mix-blend-mode: lighten;
+    right: -5vw;
+    top: 5vw;
+    opacity: 0.3;
+    width: 80vw;}
 }
 </style>
 <script>
