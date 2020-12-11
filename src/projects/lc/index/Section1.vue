@@ -1,8 +1,14 @@
 <template>
   <div class="section1">
-    <img src="./s1/bg.jpg" alt="" class="bg-img" v-if="isPC">
-    <img src="./s1/bg_m.jpg" alt="" class="bg-img" v-if="isMobile">
-    <img src="./s1/2.png" alt="" class="bg-img">
+    <div class="cloud">
+    <img src="./s1/cloud1.png" alt="cloud" class="cloud1">
+    <img src="./s1/cloud2.png" alt="cloud" class="cloud2">
+    <img src="./s1/cloud3.png" alt="cloud" class="cloud3">
+    <img src="./s1/cloud4.png" alt="cloud" class="cloud4">
+    </div>
+    <img src="./s1/bg.png" alt="bg" class="bg-img bg1" v-if="isPC">
+    <img src="./s1/bg_m.png" alt="bg_m" class="bg-img bg1" v-if="isMobile">
+    <img src="./s1/2.png" alt="2" class="bg-img">
     <h1 class="title">立瑾建築機構</h1>
     <h1 class="desc">
       百年建築 將心構築<br /><br />
@@ -23,6 +29,19 @@
   position: relative;
   background: #fff;
   background-size: auto;
+background: linear-gradient(to bottom,  rgba(29,125,209,1) 0%,rgba(20,135,241,1) 21%,rgba(59,183,255,1) 65%,rgba(171,220,255,1) 99%);
+}
+.cloud{position: absolute;top: 0;left: 0;width:100%;height: 100%;
+.cloud1{ @include img_l_pc(1193, 750, 0);transform: translateX(calc(100vw + 100%));animation: an 45s -14s linear infinite reverse;}  
+.cloud2{@include img_l_pc(915, 160, 0);transform: translateX(calc(100vw + 100%));animation: an 30s -4s linear infinite reverse;}  
+.cloud3{@include img_l_pc(878, 400, 0);transform: translateX(calc(100vw + 100%));animation: an 35s 0s linear infinite reverse;}  
+.cloud4{@include img_l_pc(1020, 820, 0);transform: translateX(calc(100vw + 100%));animation: an 40s -20s linear infinite reverse;}  
+}
+
+@keyframes an {
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 .bg-img {
@@ -34,7 +53,7 @@
   display: block;
   object-fit: cover;
   margin-top: 0;
-  &:nth-child(1) {
+  &.bg1 {
     position: relative;
   }
 }
@@ -61,6 +80,7 @@
   text-align: left;
   color: #ffffff;
   white-space: nowrap;
+  text-shadow: 0 0 1em #1487F1,0 0 0.5em #1D7DD1,0 0 0.3em #1D7DD1;
 }
 
 .desc {
@@ -73,6 +93,7 @@
   letter-spacing: size(4.78);
   text-align: center;
   color: #ffffff;
+  text-shadow: 0 0 1em #1487F1,0 0 0.5em #1487F1,0 0 0.3em #1487F1;
 }
 
 @media only screen and (max-width: 1440px) {

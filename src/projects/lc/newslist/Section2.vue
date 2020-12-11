@@ -48,7 +48,7 @@
 }
 .news-item {
   width: size(393);
-  margin: 0 size(25);
+  margin: 0 size(25)  size(25)  size(25);
   cursor: pointer;
 }
 
@@ -65,8 +65,8 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.61;
-  letter-spacing: size(3.96);
-  text-align: left;
+  letter-spacing:0.01em;
+  text-align: justify;
   color: #ff9e00;
 }
 
@@ -216,10 +216,28 @@ export default {
       isMobile,
       isTablet,
       tabIndex: 0,
-      list: [...Array(18).keys()].map((i) => ({
-        img: require('./s1/01.jpg'),
-        title: '新聞標題新聞標題新聞標題新聞標題新聞標題',
-      })),
+      list: [//...Array(18).keys()].map((i) => ({
+      {
+        img: require('../news/s2/1/20191009004718.jpg'),
+        title: '立瑾醞 三重水岸正大3房 純住宅智能規劃 永久景觀棟距稀有珍貴',
+      },
+      {
+        img: require('../news/s2/2/160683225228081_P6748206.jpg'),
+        title: '快來「立瑾醞」！ 地主自己當',
+      },
+      {
+        img: require('../news/s2/3/2193147-XXL.jpg'),
+        title: '別再買縮水版3房了！立瑾醞三重水岸大3房一次買到位',
+      },
+      {
+        img: require('../news/s2/4/30-98629-001.jpg'),
+        title: '立瑾醞 口碑推爆：三重水岸住大3房的幸福',
+      },
+      {
+        img: require('../news/s2/no.png'),
+        title: '立瑾醞 享受大三房、水岸景觀之美',
+      },
+      ],//)),
       pageCount: 3,
       currentPage: 1,
     }

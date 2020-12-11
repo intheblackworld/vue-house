@@ -37,6 +37,7 @@ export default {
   background: $house_bg;
   position: relative;
   z-index: 1;
+  box-shadow: 0 0 15vw #0009;
 }
 .content {
   width: 686px;

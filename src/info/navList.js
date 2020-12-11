@@ -1,5 +1,5 @@
 export default [
-  { name: '首頁', path: ''},
+  { name: '首頁', path: '#'},
   { name: '關於立瑾', path: 'about'},
   { name: '真心構築', path: 'products'},
   { name: '熱銷建案', path: 'hot'},

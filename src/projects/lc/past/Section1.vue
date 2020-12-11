@@ -91,11 +91,19 @@
 .carousel-3d-item {
   // position: relative;
 
-  &:hover {
-    .mask {
-      opacity: 1;
-    }
+  &.current {
+      .mask {
+        opacity: 1;
+      }
+    &:hover {
+      .mask {
+        opacity: 0;
+      }
+   }
   }
+  }
+.carousel-3d-img {
+  height: 100%;object-fit: cover;
 }
 .mask {
   width: 100%;
@@ -126,7 +134,7 @@
 }
 
 .shadow {
-  @include img_l_pc(1388, 1080, 266);
+  @include img_l_pc(1388, 1040, 266);
 }
 
 @media only screen and (max-width: 1440px) {
@@ -245,20 +253,24 @@ export default {
       imgHeight: 393,
       slideList: [
         {
-          img: require('../index/s5/1.jpg'),
+          img: require('../works/1/1.jpg'),
           alt: '',
           name: ' 立瑾醞',
+          desc:'<b>基地位置：</b>三重區神農街433號～439號<br><b>完工時間：</b>2020年<br><b>規劃樓層：</b>地上12層，地下2層<br><b>個案特色：</b><br>◆  校園第一排、河畔第一境<br>◆  結合陽光、空氣、水的絕美建築<br>◆ 低建蔽率，高公共生活空間',
+        },
+        /*
+        {
+          img: require('../works/2/1.jpg'),
+          alt: '',
+          name: ' 立瑾way',
+          desc:'鶯歌鳳鳴 立瑾Way2020年11月<br>延續著住戶的期盼，<br>今年11月19日於鶯歌鳳鳴重劃區，<br>辦理開工動土祈福典禮，<br>將接續公開新案「立瑾way」，<br>只為給您最好的居家。<br>基地地址：鶯歌鳳鳴段',
         },
         {
-          img: require('../index/s5/1.jpg'),
+          img: require('../works/3/1.jpg'),
           alt: '',
-          name: ' 立瑾醞',
-        },
-        {
-          img: require('../index/s5/1.jpg'),
-          alt: '',
-          name: ' 立瑾醞',
-        },
+          name: ' 鳳福段',
+          desc:'<b>基地位置：</b>三重區神農街433號～439號<br>完工時間： 2020年<br>規劃樓層： 地上12層，地下2層<br>個案特色：<br>◆  校園第一排、河畔第一境<br>◆  結合陽光、空氣、水的絕美建築<br>◆ 低建蔽率，高公共生活空間',
+        },*/
       ],
     }
   },

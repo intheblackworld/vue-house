@@ -85,8 +85,8 @@
   top: size(200);
 }
 
-.item-img {
-  width: size(431);
+.item-img {width:100%;
+ // width: size(431);
 }
 
 .title2 {
@@ -127,7 +127,14 @@
   color: #606060;
   white-space: nowrap;
 }
-
+.swiper-container{overflow: initial;position: relative;
+&::after,
+&::before{content: "";height: 100%;width: 100%;background: #fff;position: absolute;top:0;z-index:5;}
+&::after{left: 100%;}
+&::before{right: 100%;}
+}
+.swiper-button-prev{left: 0px;transform: translateX(-150%);}
+.swiper-button-next{right: 0px;transform: translateX(150%);}
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {

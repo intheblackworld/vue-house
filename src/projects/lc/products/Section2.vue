@@ -5,11 +5,11 @@
         <img :src="slide.img" alt="">
       </div>
     </transition-group>
-    <div class="title">
-      {{slideList[slideIndex].name}}
+    <div :class="slideList[slideIndex].class">
+    <div class="title" v-html="slideList[slideIndex].name">
     </div>
-    <div class="desc">
-      {{slideList[slideIndex].desc}}
+    <div class="desc" v-html="slideList[slideIndex].desc">
+    </div>
     </div>
     <div class="sidebar flex-ac wrap" v-if="isPC">
       <div class="item flex-c" v-for="(slide, index) in slideList" :key="slide.name" @click="slideIndex = index">
@@ -49,30 +49,34 @@
     position: relative;
   }
 }
-
-.title {
-  @include div_l_pc(764, 112, 112, 830);
-  font-size: size(40);
-  font-weight: 500;
+[class*=txt]{
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(8);
-  text-align: left;
-  color: #606060;
+  text-align: justify;
+  position: absolute;
+  top:size(112);
+  left:size(830);
+  line-height: 1.67;
+  letter-spacing: 0.2em;
+  /*
+  @include div_l_pc(764, 112, 112, 830);*/
+}
+.txt{
+  &1{width: size(764);left:size(830);color: #606060;}
+  &2{width: size(624);left:size(973);color: #606060;}
+  &3{width: size(1310);left:size(304);color: #fff;}
+  &4{width: size(782);left:size(174);color: #fff;}
+  &5{width: size(1351);left:size(205);color: #606060;}
+}
+.title {
+  font-size: size(40);
+  font-weight: 500;
   white-space: nowrap;
 }
 
 .desc {
-  @include div_l_pc(764, 112, 172, 830);
-  font-size: size(30);
+  font-size: size(25);
   font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.67;
-  letter-spacing: size(5.97);
-  text-align: left;
-  color: #606060;
 }
 
 .sidebar {
@@ -242,34 +246,39 @@ export default {
       isTablet,
       slideList: [
         {
+          class:"txt1",
           img: require('./s1/1.jpg'),
           name: '真心。穩固',
           desc:
             '台灣位於太平洋地震帶上，地震頻繁，耐震穩固絕對是建築首要注意的重點。「立瑾建築機構」以確實精確的工法做建築，除了符合CNS國家標準外，更精益求精以更高規格打造百年穩固、精實耐震之好房。',
         },
         {
+          class:"txt2",
           img: require('./s1/2.jpg'),
           name: '真心。建材',
           desc:
-            '台灣位於太平洋地震帶上，地震頻繁，耐震穩固絕對是建築首要注意的重點。「立瑾建築機構」以確實精確的工法做建築，除了符合CNS國家標準外，更精益求精以更高規格打造百年穩固、精實耐震之好房。',
+            '以「人」為出發點，考慮建築設計的所有細節，以頂規建材打造經典住宅，不僅石材、鋼材精挑細選，更融入AIOT設備打造智慧住宅，讓科技結合生活。',
         },
         {
+          class:"txt3",
           img: require('./s1/3.jpg'),
           name: '真心。地段',
           desc:
-            '台灣位於太平洋地震帶上，地震頻繁，耐震穩固絕對是建築首要注意的重點。「立瑾建築機構」以確實精確的工法做建築，除了符合CNS國家標準外，更精益求精以更高規格打造百年穩固、精實耐震之好房。',
+            '好地段，是所有住宅的著力點。「立瑾建築機構」看準未來發展、繁華商圈、增值性高、無可取代之絕佳基地，打造完美建築。土地的價值，經由立瑾完美體現。',
         },
         {
+          class:"txt4",
           img: require('./s1/4.jpg'),
           name: '真心。設計',
           desc:
-            '台灣位於太平洋地震帶上，地震頻繁，耐震穩固絕對是建築首要注意的重點。「立瑾建築機構」以確實精確的工法做建築，除了符合CNS國家標準外，更精益求精以更高規格打造百年穩固、精實耐震之好房。',
+            '「立瑾建築機構」致力於建築美學發展，建築團隊精挑細選，依照周邊環境、人文特色，設計建築外觀及景觀，呈現當代建築美學，打造絕美城市天際線。',
         },
         {
+          class:"txt5",
           img: require('./s1/5.jpg'),
           name: '真心。生活',
           desc:
-            '台灣位於太平洋地震帶上，地震頻繁，耐震穩固絕對是建築首要注意的重點。「立瑾建築機構」以確實精確的工法做建築，除了符合CNS國家標準外，更精益求精以更高規格打造百年穩固、精實耐震之好房。',
+            '將美學融入生活，將藝術結合建築，建築的初心我們從未忘記。<br>◆ 外觀結構隨基地環境發展成長，使地景與建築更具協調性。<br>◆ 照顧全年齡使用性的公設設計，不論多樣性、通用性皆考慮所有層面精心打造。<br>◆ 景觀園藝的精心規劃，選用符合風格的植栽、動線順暢的配置，由外而內符合華美璞韻的建築語彙。'
         },
       ],
     }

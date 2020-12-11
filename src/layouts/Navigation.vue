@@ -4,8 +4,6 @@
       <div class="layout-container nav-container">
         <div class="nav">
           <img class="logo" src="@/assets/img/nav-logo.png" alt @click="$router.push('/')" />
-          <img src="@/projects/lc/menu/icon_f.png" alt="" class="fb" @click="showMessengerDialog" v-if="!isMobile">
-          <img src="@/projects/lc/menu/icon_l.png" alt="" class="line" v-if="!isMobile">
           <div class="menu" @click="toggleSidebar('')" v-show="!isOpen">
             <font-awesome-icon icon="bars" />
           </div>
@@ -28,6 +26,12 @@
                   <span class="subTitle">{{item.subTitle}}</span>
                 </span>
               </span>
+            </li>
+            <li class="flex-c" @click="showMessengerDialog">
+          <img src="@/projects/lc/menu/icon_f.png" class="fb" alt="fb">
+            </li>
+            <li class="flex-c">
+          <img src="@/projects/lc/menu/icon_l.png" class="line" alt="line">
             </li>
           </ul>
         </div>
@@ -139,7 +143,7 @@ export default {
   justify-content: space-between;
 }
 
-.nav {
+.nav {justify-content: space-between;
   min-width: 1280px;
   width: 1280px;
   height: 100%;
@@ -155,25 +159,20 @@ export default {
 }
 
 .line {
-  width: 40px;
-  position: absolute;
-  right: 160px;
+  width:1.5em;
   display: block;
-  top: 40px;
+  
   cursor: pointer;
+    margin: 0 1.5em 0 0;
 }
-
 .fb {
-  width: 40px;
-  position: absolute;
-  right: 205px;
+  width:1.5em;
   display: block;
-  top: 40px;
   cursor: pointer;
+    margin: 0 1.5em 0 0;
 }
-
 .logo {
-  width: 109px;
+  width:$logo_pc_width;
   height: auto;
   // position: absolute;
   // left: 50px;
@@ -194,6 +193,7 @@ export default {
   height: 100%;
   overflow: hidden;
   padding-left: 30px;
+  font-size:size(18);
   li {
     height: 100%;
 
@@ -206,12 +206,14 @@ export default {
 
   .link {
     color: $nav_link_color;
-    height: 22px;
-    margin-top: 80px;
+   // height: 22px;
+   // margin-top:50%;
+    margin: 0 2.5em 0 0;
     text-align: center;
     display: block;
     cursor: pointer;
-    padding: 0;
+    padding:0;
+    line-height: 1.6;
     // margin: 0 10px;
     transition: all 0.8s;
     display: flex;
@@ -226,54 +228,11 @@ export default {
       // background: $nav_link_hover_bg;
     }
 
-    // &::before {
-    //   content: '';
-    //   width: 0%;
-    //   height: 100%;
-    //   display: block;
-    //   background: $nav_link_hover_bg; // second bg
-    //   position: absolute;
-    //   transform: skewX(-20deg);
-    //   left: -10%;
-    //   opacity: 1;
-    //   top: 0;
-    //   z-index: 2;
-    //   transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
-    //   // box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
-    // }
-
-    // &::after {
-    //   content: '';
-    //   width: 0%;
-    //   height: 100%;
-    //   display: block;
-    //   background: #fff; // first bg
-    //   position: absolute;
-    //   transform: skewX(-20deg);
-    //   left: -10%;
-    //   opacity: 0;
-    //   top: 0;
-    //   z-index: 1;
-    //   transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
-    //   // box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
-    // }
-    // &:hover::before,
-    // &:hover::before {
-    //   opacity: 1;
-    //   width: 116%;
-    // }
-    // &:hover::after,
-    // &:hover::after {
-    //   opacity: 1;
-    //   width: 120%;
-    // }
-
     .title {
-      font-size: 20px !important;
-      font-weight: bold;
+      font-weight:500;
       position: relative;
       // border-right: 1px solid #000;
-      padding: 0 35px;
+     // padding: 0 35px;
       z-index: 3;
       > span {
         font-size: 24px !important;
@@ -288,7 +247,7 @@ export default {
     img {
       // width: 35px;
       // height: 35px;
-      margin-right: 10px;
+      margin-right: 10px; 
     }
   }
 }
@@ -299,7 +258,7 @@ export default {
 
 .link {
   color: rgba(0, 0, 0, 0.7);
-  font-size: 16px;
+ // font-size: 16px;
 }
 
 /* 平板尺寸 */

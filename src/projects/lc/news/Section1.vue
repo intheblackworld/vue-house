@@ -4,7 +4,7 @@
     <div class="subtitle">
       News
     </div>
-    <img src="./s1/top.jpg" alt="" class="bg-img">
+    <img src="./s1/top.png" alt="" class="bg-img">
   </div>
 </template>
 

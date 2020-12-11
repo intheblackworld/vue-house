@@ -5,7 +5,7 @@
       堅持<span>「確實、創新、執行」</span>三大使命
     </h1>
     <div class="imgs flex-ac flex-jb" v-if="isPC">
-      <div class="img">
+      <div class="img" @click="$router.push('/about')">
         <img src="./s2/1.jpg" alt="">
         <div class="mask">
           <div class="border flex-c">
@@ -13,7 +13,7 @@
           </div>
         </div>
       </div>
-      <div class="img">
+      <div class="img" @click="$router.push('/about')">
         <img src="./s2/2.jpg" alt="">
         <div class="mask">
           <div class="border flex-c">
@@ -21,7 +21,7 @@
           </div>
         </div>
       </div>
-      <div class="img">
+      <div class="img" @click="$router.push('/about')">
         <img src="./s2/3.jpg" alt="">
         <div class="mask">
           <div class="border flex-c">
@@ -116,7 +116,7 @@
   color: #fffcfd;
   transition: all 0.3s;
   &:hover {
-    background-color: #444;
+    background-color: #ff8200;
   }
 }
 

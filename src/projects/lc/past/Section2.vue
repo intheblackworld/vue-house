@@ -15,6 +15,8 @@
       </div>
     </div>
     <!-- <img src="./s1/01.jpg" alt="" class="img"> -->
+    <div class="txt">
+    <div class="content-title">立瑾醞</div>
     <div class="content-desc">
       基地位置： 三重區神農街433號～439號<br />
       完工時間： 2020年<br />
@@ -23,7 +25,7 @@
       ◆ 校園第一排、河畔第一境<br />
       ◆ 結合陽光、空氣、水的絕美建築<br />
       ◆ 低建蔽率，高公共生活空間
-    </div>
+    </div></div>
     <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
       <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
     </div>
@@ -100,17 +102,27 @@
   color: #ff8200;
   white-space: nowrap;
 }
-
-.content-desc {
-  @include div_r_pc(463, 100, 550, 120);
+.txt{
+width: size(583);
+right:0;bottom: size(370);position: absolute;
+  color: #ff8100;
+  text-align: justify;
   font-size: size(20);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.65;
-  letter-spacing: size(1);
-  text-align: left;
-  color: #ff8100;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  &::after{content: "";width:calc(100% + 5vw);display: block;
+   height: 1px; right: 0;bottom: size(-5);position: absolute;
+   background:#ff8100;}
+}
+.content-title {
+  font-size: size(40);
+  font-weight: bold;
+}
+.content-desc {
+  margin: 0 0 0.5em;
 
   span {
     font-size: size(23);
@@ -136,7 +148,7 @@
 .swipe {
   width: size(1252);
   height: size(1081);
-  top: size(133);
+  top: size(0);
   left: size(0);
   object-fit: cover;
 }
@@ -536,23 +548,23 @@ export default {
       tabIndex: 0,
       slideList: [
         {
-          img: require('./s2/2-1.jpg'),
+          img:require('../works/1/1.jpg'),
           // name: '台北101',
         },
         {
-          img: require('./s2/2-2.jpg'),
+          img: require('../works/1/2.jpg'),
           // name: '台北101',
         },
         {
-          img: require('./s2/2-3.jpg'),
+          img: require('../works/1/3.jpg'),
           // name: '台北101',
         },
         {
-          img: require('./s2/2-4.jpg'),
+          img: require('../works/1/4.jpg'),
           // name: '台北101',
         },
         {
-          img: require('./s2/2-5.jpg'),
+          img: require('../works/1/5.jpg'),
           // name: '台北101',
         },
       ],

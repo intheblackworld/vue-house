@@ -9,6 +9,7 @@
     <div class="imgs flex-ac flex-jb">
       <div class="img">
         <img src="./s3/1.jpg" alt="">
+        <div class="border-orange"></div>
         <div class="mask">
           <div class="border flex-c">
             真心<br />穩固
@@ -17,6 +18,7 @@
       </div>
       <div class="img">
         <img src="./s3/2.jpg" alt="">
+        <div class="border-orange"></div>
         <div class="mask">
           <div class="border flex-c">
             真心<br />建材
@@ -26,9 +28,15 @@
       <div class="img">
         <img src="./s3/3.jpg" alt="">
         <div class="border-orange"></div>
+        <div class="mask">
+          <div class="border flex-c">
+            真心<br />建材
+          </div>
+        </div>
       </div>
       <div class="img">
         <img src="./s3/4.jpg" alt="">
+        <div class="border-orange"></div>
         <div class="mask">
           <div class="border flex-c">
             真心<br />設計
@@ -37,6 +45,7 @@
       </div>
       <div class="img">
         <img src="./s3/5.jpg" alt="">
+        <div class="border-orange"></div>
         <div class="mask">
           <div class="border flex-c">
             真心<br />生活
@@ -126,7 +135,7 @@
 
     &:hover {
       .mask {
-        opacity: 1;
+        opacity: 0;
       }
     }
   }
@@ -136,13 +145,17 @@
     position: absolute;
     top: 0;
     right: 0;
+    opacity: 1;transform: scaleX(1);
+    transition: all .5s;
     background: rgba(255, 255, 255, 0.7);
+    border-radius: 999px;
   }
 
   .border {
     width: 100%;
     height: 100%;
-    box-shadow: inset 0 0 0 10px #fff;
+   // box-shadow: inset 0 0 0 10px #fff;
+    border: 10px solid #FFF;
     border-radius: 999px;
     font-size: size(57.7);
     font-weight: 900;
@@ -160,8 +173,8 @@
     right: 0;
     width: 100%;
     height: 100%;
-    box-shadow: inset 0 0 0 7px #fe8100;
     border-radius: 999px;
+    border: 10px solid #fe8100;
   }
 }
 

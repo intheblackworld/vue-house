@@ -18,7 +18,8 @@
     <img src="./s5/s.png" alt="" class="shadow">
     <div class="info">
       <div class="info-item">
-        <div class="info-title">
+        <div class="info-desc" v-html="slideList[slideIndex].desc"></div>
+       <!-- <div class="info-title">
           基地位置：
         </div>
         <div class="info-desc">
@@ -43,7 +44,7 @@
           ◆ 校園第一排、河畔第一境<br />
           ◆ 結合陽光、空氣、水的絕美建築<br />
           ◆ 低建蔽率，高公共生活空間
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -120,11 +121,19 @@
 .carousel-3d-item {
   // position: relative;
 
-  &:hover {
-    .mask {
-      opacity: 1;
-    }
+  &.current {
+      .mask {
+        opacity: 1;
+      }
+    &:hover {
+      .mask {
+        opacity: 0;
+      }
+   }
   }
+  }
+.carousel-3d-img {
+  height: 100%;object-fit: cover;
 }
 .mask {
   width: 100%;
@@ -155,40 +164,30 @@
 }
 
 .shadow {
-  @include img_l_pc(1388, 900, 266);
+  @include img_l_pc(1388, 830, 266);
 }
 
 .info {
   width: size(1244);
-  height: 276px;
+  //height: 276px;
   position: absolute;
   left: 0;
   right: 0;
   margin: 0 auto;
-  top: size(1050);
-  border-top: 1px solid #ff8200;
-  border-bottom: 1px solid #ff8200;
+  top: size(950);
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
   padding: 20px 0;
+  font-size: size(20);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.65;
+  letter-spacing:0.05em;
+  color: #ff8200;
+    text-align: center;
   .info-item {
     width: 100%;
-    font-size: size(20);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.65;
-    letter-spacing: size(1);
-    text-align: center;
-    color: #ff8200;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 15px;
-  }
-  .info-title {
-    font-weight: bold;
-    &.full {
-      width: 100%;
-    }
   }
 }
 
@@ -272,16 +271,6 @@
     right: 0;
     margin: 0 auto;
     top: sizem(280) !important;
-  }
-
-  .carousel-3d-item {
-    // position: relative;
-
-    &:hover, &.current {
-      .mask {
-        opacity: 1;
-      }
-    }
   }
   .mask {
     width: 100%;
@@ -375,20 +364,24 @@ export default {
       imgHeight: 393,
       slideList: [
         {
-          img: require('./s5/1.jpg'),
+          img: require('../works/1/1.jpg'),
           alt: '',
           name: ' 立瑾醞',
+          desc:'<b>基地位置：</b>三重區神農街433號～439號<br><b>完工時間：</b>2020年<br><b>規劃樓層：</b>地上12層，地下2層<br><b>個案特色：</b><br>◆  校園第一排、河畔第一境<br>◆  結合陽光、空氣、水的絕美建築<br>◆ 低建蔽率，高公共生活空間',
+        },
+        /*
+        {
+          img: require('../works/2/1.jpg'),
+          alt: '',
+          name: ' 立瑾way',
+          desc:'鶯歌鳳鳴 立瑾Way2020年11月<br>延續著住戶的期盼，<br>今年11月19日於鶯歌鳳鳴重劃區，<br>辦理開工動土祈福典禮，<br>將接續公開新案「立瑾way」，<br>只為給您最好的居家。<br>基地地址：鶯歌鳳鳴段',
         },
         {
-          img: require('./s5/1.jpg'),
+          img: require('../works/3/1.jpg'),
           alt: '',
-          name: ' 立瑾醞',
-        },
-        {
-          img: require('./s5/1.jpg'),
-          alt: '',
-          name: ' 立瑾醞',
-        },
+          name: ' 鳳福段',
+          desc:'<b>基地位置：</b>三重區神農街433號～439號<br>完工時間： 2020年<br>規劃樓層： 地上12層，地下2層<br>個案特色：<br>◆  校園第一排、河畔第一境<br>◆  結合陽光、空氣、水的絕美建築<br>◆ 低建蔽率，高公共生活空間',
+        },*/
       ],
     }
   },
