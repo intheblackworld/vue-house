@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="section4">
-      <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="tabIndex == 1">
+    <div class="section9">
+      <div class="swipe swipe1 absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="(isPC && tabIndex == 1) || isMobile">
         <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(1)" v-touch:swipe.right="() => addMultiIndex(1)">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList1" v-show="slideIndex1 === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -18,7 +18,7 @@
           </div>
         </div>
       </div>
-      <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="tabIndex == 2">
+      <div class="swipe absolute swipe2" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="(isPC && tabIndex == 2) || isMobile">
         <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(2)" v-touch:swipe.right="() => addMultiIndex(2)">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList2" v-show="slideIndex2 === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -77,7 +77,7 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section4 {
+.section9 {
   width: size(1920);
   height: 100vh;
   min-height: size(900);
@@ -210,13 +210,13 @@
 
   .slide-name {
     left: 20px;
-    bottom: 20px;
+    bottom: 10px;
     color: #fff;
     font-size: 15px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 3.11;
+    line-height: 1.11;
     letter-spacing: 0.89px;
     text-align: left;
     color: #ffffff;
@@ -325,9 +325,9 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section4 {
+  .section9 {
     width: 100vw;
-    height: sizem(681);
+    height: sizem(1036 + 270);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -337,90 +337,76 @@
     overflow: hidden;
   }
 
-  .s-title {
-    @include img_r_m(222, 58, 114);
-    font-size: sizem(58);
+  .btn {
+    width: sizem(316);
+    height: sizem(54);
+    border-top: 2px solid #248184;
+    border-bottom: 2px solid #248184;
+    font-size: sizem(20);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(-1.1);
+    line-height: 3.2;
+    letter-spacing: sizem(1.18);
     text-align: left;
-    color: #e7ecec;
-    white-space: nowrap;
+    color: #248284;
+    cursor: pointer;
+    transition: all 0.3s;
+    &.active {
+      color: #fff;
+      background-color: #248284;
+    }
   }
 
-  .title {
-    @include img_r_m(183, 130, 40);
-    font-size: sizem(19);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(1.5);
-    text-align: left;
-    color: #248184;
-    white-space: nowrap;
+  .btn1 {
+    @include div_r_m(315, 54, 28, 29);
   }
 
-  .subtitle {
-    @include img_r_m(271, 193, 64);
-    font-size: sizem(15);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.25;
-    letter-spacing: sizem(1.24);
-    text-align: left;
-    color: #221815;
-    white-space: nowrap;
-
-    span {
-      width: 1.2em;
-      height: 1.2em;
-      position: relative;
-      display: inline-block;
-      text-align: center;
-    }
-
-    span:before,
-    span:after {
-      content: '';
-      position: absolute;
-      width: 1px;
-      height: 100%;
-      background-color: #248184;
-      top: 0.2em;
-    }
-
-    span:before {
-      transform: rotate(45deg) translateX(-50%);
-    }
-    span:after {
-      transform: rotate(-45deg) translateX(-50%);
-    }
+  .btn2 {
+    @include div_r_m(315, 54, 686, 29);
   }
 
   .desc {
-    @include img_r_m(300, 222, 34);
     font-size: sizem(15);
-    font-weight: bold;
+    font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.2;
-    letter-spacing: sizem(0.72);
+    line-height: 2;
+    letter-spacing: sizem(0.45);
     text-align: left;
     color: #221815;
+    white-space: nowrap;
+
+    li {
+      list-style-type: disc;
+    }
+  }
+
+  .desc1 {
+    @include div_r_m(301, 338, 102, 29);
+  }
+
+  .desc2 {
+    @include div_r_m(301, 338, 771, 29);
   }
 
   /* Swipe */
   .swipe {
     width: 100vw;
-    height: sizem(330);
+    height: sizem(270);
     min-height: auto;
-    top: sizem(351);
+    top: auto;
+    bottom: 0;
     left: sizem(0);
     object-fit: cover;
+  }
+
+  .swipe1 {
+    top: sizem(366);
+  }
+
+  .swipe2 {
+    top: sizem(1036);
   }
 
   // begin
@@ -475,7 +461,7 @@
 
     img {
       width: 100%;
-      height: sizem(300);
+      height: sizem(270);
       object-fit: cover;
     }
 
@@ -574,7 +560,7 @@ import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section4',
+  name: 'section9',
 
   mixins: [slider],
   props: ['viewIndex'],
@@ -591,30 +577,30 @@ export default {
       slideList1: [
         {
           img: require('./s9/2-1.jpg'),
-          name: ' ',
+          name: '圖片為公園示意',
         },
         {
           img: require('./s9/2-2.jpg'),
-          name: ' ',
+          name: '圖片為公園示意',
         },
         {
           img: require('./s9/2-3.jpg'),
-          name: ' ',
+          name: '圖片為公園示意',
         },
       ],
 
       slideList2: [
         {
           img: require('./s9/3-1.jpg'),
-          name: ' ',
+          name: '圖片為公園示意',
         },
         {
           img: require('./s9/3-2.jpg'),
-          name: ' ',
+          name: '圖片為公園示意',
         },
         {
           img: require('./s9/3-3.jpg'),
-          name: ' ',
+          name: '圖片為公園示意',
         },
       ],
     }

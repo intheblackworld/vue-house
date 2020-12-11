@@ -316,7 +316,7 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-    height: sizem(681);
+    height: sizem(427 + 277);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -327,20 +327,20 @@
   }
 
   .s-title {
-    @include img_r_m(222, 58, 114);
+    @include img_r_m(172, 50, 164);
     font-size: sizem(58);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.2;
-    letter-spacing: sizem(-1.1);
+    letter-spacing: sizem(-0.3);
     text-align: left;
     color: #e7ecec;
     white-space: nowrap;
   }
 
   .title {
-    @include img_r_m(183, 130, 40);
+    @include img_r_m(178, 29, 158);
     font-size: sizem(19);
     font-weight: bold;
     font-stretch: normal;
@@ -391,7 +391,7 @@
   }
 
   .desc {
-    @include img_r_m(300, 222, 34);
+    @include img_r_m(300, 187, 35);
     font-size: sizem(15);
     font-weight: bold;
     font-stretch: normal;
@@ -405,9 +405,10 @@
   /* Swipe */
   .swipe {
     width: 100vw;
-    height: sizem(330);
+    height: sizem(277);
     min-height: auto;
-    top: sizem(351);
+    top: auto;
+    bottom: 0;
     left: sizem(0);
     object-fit: cover;
   }
@@ -464,7 +465,7 @@
 
     img {
       width: 100%;
-      height: sizem(300);
+      height: sizem(277);
       object-fit: cover;
     }
 
