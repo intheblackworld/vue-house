@@ -7,9 +7,9 @@
           {{item.title}}
         </div>
       </div>
-      <div class="pagination flex-c">
+      <!-- <div class="pagination flex-c">
         <div :class="`pagi flex-c ${index === currentPage ? 'active' : ''}`" v-for="index in pageCount" :key="'pagi' + index" @click="currentPage = index">{{index}}</div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -153,7 +153,7 @@
   }
   .news-item {
     width: sizem(310);
-    margin: 0 auto sizem(25);
+    margin: 0 auto sizem(40);
     cursor: pointer;
   }
 

@@ -6,7 +6,7 @@
     </div>
     <img src="./s1/top.jpg" alt="" class="bg-img" v-if="isPC">
     <img src="./s1/top_m.jpg" alt="" class="bg-img" v-if="isMobile">
-    <carousel-3d ref="mycarousel" v-if="isPC" :width="imgWidth" :height="imgHeight" :autoplay="true" :autoplayTimeout="5000" :autoplayHoverPause="true" :perspective="0" :disable3d="isMobile ? false : false" :border="0" :display="isMobile ? 3 : 3" :space="isMobile ? 'auto' : 'auto'" @after-slide-change="onAfterSlideChange">
+    <carousel-3d ref="mycarousel" :width="imgWidth" :height="imgHeight" :autoplay="true" :autoplayTimeout="5000" :autoplayHoverPause="true" :perspective="0" :disable3d="isMobile ? false : false" :border="0" :display="isMobile ? 3 : 3" :space="isMobile ? 'auto' : 'auto'" @after-slide-change="onAfterSlideChange">
       <slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="carousel-3d-item">
         <img :src="slide.img" :class="`carousel-3d-img`" :alt="slide.alt" />
         <div class="mask">
@@ -154,8 +154,8 @@
   .section1 {
     width: 100vw;
     min-height: sizem(604);
-    max-height: sizem(812);
-    height: 100vh;
+    max-height: sizem(900);
+    height:sizem(900);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -163,7 +163,7 @@
 
   .bg-img {
     width: sizem(375);
-    height: 100%;
+    height:auto;
     position: absolute;
     top: 0;
     left: 0;
@@ -224,7 +224,73 @@
     left: 0;
     right: 0;
     margin: 0 auto;
-    top: sizem(280) !important;
+    top: sizem(600) !important;
+  }
+  .mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba(255, 130, 0, 0.7);
+    padding: sizem(20);
+    opacity: 0;
+    transition: all 0.3s;
+  }
+
+  
+  .border {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #fff;
+    color: #fff;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+    font-size: sizem(51.9);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(10.32);
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .shadow {
+    @include img_l_m(1388, 900, 266);
+  }
+
+  .info {
+    width: sizem(310);
+    height: sizem(247);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: sizem(554);
+    border-top: 1px solid #ff8200;
+    border-bottom: 1px solid #ff8200;
+    padding: 20px 0;
+    .info-item {
+      width: 100%;
+      font-size: sizem(15);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.65;
+      letter-spacing: sizem(1);
+      text-align: center;
+      color: #ff8200;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+    .info-title {
+      font-weight: bold;
+      &.full {
+        width: 100%;
+      }
+    }
   }
 }
 </style>
@@ -287,8 +353,8 @@ export default {
 
   mounted() {
     if (this.isMobile) {
-      this.imgWidth = window.screen.width
-      this.imgHeight = window.screen.width * (393 / 451)
+      this.imgWidth = window.screen.width * 0.75
+      this.imgHeight = window.screen.width * 0.75 * (272 / 312)
     }
   },
 

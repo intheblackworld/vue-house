@@ -4,7 +4,8 @@
     <div class="subtitle">
       News
     </div>
-    <img src="../news/s1/top.png" alt="" class="bg-img">
+    <img src="../news/s1/top.png" alt="" class="bg-img" v-if="isPC">
+    <img src="../news/s1/top_m.jpg" alt="" class="bg-img" v-if="isMobile">
   </div>
 </template>
 

@@ -289,7 +289,7 @@
 
       &:hover {
         .mask {
-          opacity: 1;
+          opacity: 0;
         }
       }
     }
@@ -305,7 +305,7 @@
     .border {
       width: 100%;
       height: 100%;
-      box-shadow: inset 0 0 0 10px #fff;
+    //  box-shadow: inset 0 0 0 10px #fff;
       border-radius: 999px;
       font-size: sizem(26);
       font-weight: 900;
@@ -323,7 +323,7 @@
       right: 0;
       width: 100%;
       height: 100%;
-      box-shadow: inset 0 0 0 7px #fe8100;
+      //box-shadow: inset 0 0 0 7px #fe8100;
       border-radius: 999px;
     }
   }

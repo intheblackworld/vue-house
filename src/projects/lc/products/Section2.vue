@@ -159,32 +159,26 @@
       position: relative;
     }
   }
+[class*=txt]{
+  top:sizem(144);
+  /*
+  @include div_l_pc(764, 112, 112, 830);*/
+}
+.txt{
+  &1,
+  &2,
+  &3,
+  &4,
+  &5{width: sizem(310);left:sizem(33);color: #606060;}
+}
+.title {
+  font-size: sizem(25);display: none;
+}
 
-  .title {
-    @include div_l_m(310, 112, 144, 33);
-    font-size: sizem(15);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(2.99);
-    text-align: left;
-    color: #606060;
-    white-space: nowrap;
-  }
-
-  .desc {
-    @include div_l_m(310, 112, 174, 33);
-    font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.67;
-    letter-spacing: sizem(2.97);
-    text-align: left;
-    color: #606060;
-  }
-
+.desc {
+  font-size: sizem(15);
+  font-weight: normal;
+}
   .page-head {
     width: 100vw;
     height: sizem(119);

@@ -71,7 +71,7 @@ export default {
 }
 
 .item {
-  font-size: 23px;
+  font-size: sizem(15);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;

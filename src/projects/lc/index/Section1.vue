@@ -45,8 +45,8 @@ background: linear-gradient(to bottom,  rgba(29,125,209,1) 0%,rgba(20,135,241,1)
 }
 
 .bg-img {
-  width: size(1920);
-  height: auto;
+  width: 100%;
+  height:100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -120,20 +120,13 @@ background: linear-gradient(to bottom,  rgba(29,125,209,1) 0%,rgba(20,135,241,1)
     background-attachment: scroll;
   }
 
-  .bg-img {
-    width: sizem(375);
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    object-fit: cover;
-    margin-top: 0;
+.cloud{position: absolute;top: 0;left: 0;width:100%;height: 100%;
+.cloud1{ @include img_l_m(600, 370, 0);}  
+.cloud2{@include img_l_m(460, 80, 0);}  
+.cloud3{@include img_l_m(440, 200, 0);}  
+.cloud4{@include img_l_m(510, 410, 0);}  
+}
 
-    &:nth-child(1) {
-      position: relative;
-    }
-  }
 
   .bottom {
     @include div_r_m(375, 44, 0, 0);

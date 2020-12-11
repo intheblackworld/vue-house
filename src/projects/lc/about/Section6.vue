@@ -1,6 +1,7 @@
 <template>
   <div class="section4">
-    <img src="./s6/bg.jpg" alt="" class="bg-img">
+    <img src="./s6/bg.jpg" alt="" class="bg-img" v-if="isPC">
+    <img src="./s6/bg_m.jpg" alt="" class="bg-img" v-if="isMobile">>
     <div class="title">成就一個經典不容易，<br />但我們以打造經典為使命。</div>
   </div>
 </template>
@@ -62,17 +63,17 @@
     width: 100vw;
     min-height: sizem(504);
     max-height: sizem(812);
-    height: sizem(504);
-    // background-image: url('./mo/1/bg.png');
+    height: sizem(604);
+    background:#fff;
     background-size: cover;
     background-attachment: scroll;
   }
 
   .bg-img {
     width: sizem(375);
-    height: 100%;
+    height: auto;
     position: absolute;
-    top: 0;
+    top: sizem(100);
     left: 0;
     display: block;
     object-fit: cover;

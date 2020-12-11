@@ -181,8 +181,8 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.92;
-    letter-spacing: sizem(1.78);
-    text-align: left;
+    letter-spacing:0.02em;
+    text-align: justify;
     color: #606060;
   }
 }
