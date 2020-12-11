@@ -25,15 +25,38 @@
     <vue-lazy-component
       class="section relative"
       id="section4"
-      style="z-index: 3;"
     >
       <Section4 />
+    </vue-lazy-component>
+    <vue-lazy-component
+      class="section"
+      id="section6"
+    >
+      <Section6 />
+    </vue-lazy-component>
+    <vue-lazy-component
+      class="section"
+      id="section7"
+    >
+      <Section7 />
     </vue-lazy-component>
     <vue-lazy-component
       class="section"
       id="section5"
     >
       <Section5 />
+    </vue-lazy-component>
+    <vue-lazy-component
+      class="section"
+      id="section8"
+    >
+      <Section8 />
+    </vue-lazy-component>
+    <vue-lazy-component
+      class="section"
+      id="section9"
+    >
+      <Section9 />
     </vue-lazy-component>
     <vue-lazy-component class="section" id="contact">
       <ContactSection />
@@ -67,11 +90,15 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/jw/Section1.vue'
-import Section2 from '@/projects/jw/Section2.vue'
-import Section3 from '@/projects/jw/Section3.vue'
-import Section4 from '@/projects/jw/Section4.vue'
-import Section5 from '@/projects/jw/Section5.vue'
+import Section1 from '@/projects/jw1/Section1.vue'
+import Section2 from '@/projects/jw1/Section2.vue'
+import Section3 from '@/projects/jw1/Section3.vue'
+import Section4 from '@/projects/jw1/Section4.vue'
+import Section5 from '@/projects/jw1/Section5.vue'
+import Section6 from '@/projects/jw1/Section6.vue'
+import Section7 from '@/projects/jw1/Section7.vue'
+import Section8 from '@/projects/jw1/Section8.vue'
+import Section9 from '@/projects/jw1/Section9.vue'
 
 export default {
   name: 'home',
@@ -88,6 +115,10 @@ export default {
     Section3,
     Section4,
     Section5,
+    Section6,
+    Section7,
+    Section8,
+    Section9,
   },
 
   data() {
