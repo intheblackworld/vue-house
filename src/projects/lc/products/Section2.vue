@@ -12,7 +12,7 @@
     </div>
     </div>
     <div class="sidebar flex-ac wrap" v-if="isPC">
-      <div class="item flex-c" v-for="(slide, index) in slideList" :key="slide.name" @click="slideIndex = index">
+      <div :class="`item flex-c ${slideIndex === index ? 'active' : ''}`" v-for="(slide, index) in slideList" :key="slide.name" @click="slideIndex = index">
         {{slide.name}}
       </div>
     </div>
@@ -109,7 +109,7 @@
   cursor: pointer;
   transition: all 0.3s;
 
-  &:hover {
+  &.active, &:hover {
     background-color: #ff8200;
   }
 }

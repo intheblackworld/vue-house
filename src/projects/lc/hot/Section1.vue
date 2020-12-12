@@ -1,31 +1,87 @@
 <template>
-  <div class="section5">
-    <div class="title">熱銷建案</div>
-    <div class="subtitle">
-      Hot Case
-    </div>
-    <img src="./s1/top.jpg" alt="" class="bg-img" v-if="isPC">
-    <img src="./s1/top_m.jpg" alt="" class="bg-img" v-if="isMobile">
-    <carousel-3d ref="mycarousel" :width="imgWidth" :height="imgHeight" :autoplay="true" :autoplayTimeout="5000" :autoplayHoverPause="true" :perspective="0" :disable3d="isMobile ? false : false" :border="0" :display="isMobile ? 3 : 3" :space="isMobile ? 'auto' : 'auto'" @after-slide-change="onAfterSlideChange"
- 
-    >
-      <slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="carousel-3d-item">
-        <img :src="slide.img" :class="`carousel-3d-img`" :alt="slide.alt" />
-        <div class="mask">
-          <div class="border flex-c">
-            {{slide.name}}
+  <div>
+    <div class="section1">
+      <div class="title-1">熱銷建案</div>
+      <div class="subtitle">
+        Hot Case
+      </div>
+      <img src="./s1/top.jpg" alt="" class="bg-img" v-if="isPC">
+      <img src="./s1/top_m.jpg" alt="" class="bg-img" v-if="isMobile">
+      <carousel-3d ref="mycarousel" :width="imgWidth" :height="imgHeight" :autoplay="false" :autoplayTimeout="5000" :autoplayHoverPause="true" :perspective="0" :disable3d="isMobile ? false : false" :border="0" :display="isMobile ? 3 : 3" :space="isMobile ? 'auto' : 'auto'" @after-slide-change="onAfterSlideChange">
+        <slide v-for="(slide, index) in slideList" :index="index" :key="slide.img + index" class="carousel-3d-item">
+          <img :src="slide.img" :class="`carousel-3d-img`" :alt="slide.alt" />
+          <div class="mask">
+            <div class="border flex-c">
+              {{slide.name}}
+            </div>
           </div>
+        </slide>
+      </carousel-3d>
+      <img src="../index/s5/s.png" alt="" class="shadow">
+    </div>
+    <div :class="`section2 ${(currentIndex === 0 || currentIndex === 2) ? 'show' : ''}`">
+      <img src="./s1/01.jpg" alt="" class="img">
+      <div class="border-container relative">
+        <div class="title-2">
+          用<span>真心</span>打造住宅，用<span>真情</span>構築城市
         </div>
-      </slide>
-    </carousel-3d>
-    <img src="../index/s5/s.png" alt="" class="shadow" v-if="shadow">
+        <div class="s-title">
+          現正熱銷
+        </div>
+        <div class="content-title">
+          鶯歌鳳鳴 立瑾Way
+        </div>
+        <div class="content-desc">
+          2020年11月<br />
+          延續著住戶的期盼，<br />
+          今年11月19日於鶯歌鳳鳴重劃區，<br />
+          辦理開工動土祈福典禮，<br />
+          將接續公開新案「立瑾way」，<br />
+          只為給您最好的居家。<br />
+          <span>基地地址：鶯歌鳳鳴段</span>
+        </div>
+        <div class="btn flex-c">
+          官網預約
+        </div>
+        <img src="./s1/youtube.jpg" alt="" class="video">
+        <img src="./s1/rb.png" alt="" class="rb">
+      </div>
+    </div>
+    <div :class="`section2 short ${(currentIndex === 1 || currentIndex === 3) ? 'show' : ''}`">
+      <img src="../works/3/1.jpg" alt="" class="img">
+      <div class="border-container relative">
+        <div class="title-2">
+          用<span>真心</span>打造住宅，用<span>真情</span>構築城市
+        </div>
+        <div class="s-title">
+          即將推出
+        </div>
+        <div class="content-title">
+          鶯歌鳳福段
+        </div>
+        <!-- <div class="content-desc">
+          2020年11月<br />
+          延續著住戶的期盼，<br />
+          今年11月19日於鶯歌鳳鳴重劃區，<br />
+          辦理開工動土祈福典禮，<br />
+          將接續公開新案「立瑾way」，<br />
+          只為給您最好的居家。<br />
+          <span>基地地址：鶯歌鳳鳴段</span>
+        </div>
+        <div class="btn flex-c">
+          官網預約
+        </div>
+        <img src="./s1/youtube.jpg" alt="" class="video">
+        <img src="./s1/rb.png" alt="" class="rb"> -->
+      </div>
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section5 {
+.section1 {
   width: size(1920);
   height: size(1250);
   // overflow: hidden;
@@ -48,7 +104,7 @@
   }
 }
 
-.title {
+.title-1 {
   @include div_l_pc(346, 112, 237, 364);
   font-size: size(75.5);
   font-weight: 500;
@@ -94,18 +150,19 @@
   // position: relative;
 
   &.current {
-      .mask {
-        opacity: 1;
-      }
+    .mask {
+      opacity: 1;
+    }
     &:hover {
       .mask {
         opacity: 0;
       }
-   }
+    }
   }
-  }
+}
 .carousel-3d-img {
-  height: 100%;object-fit: cover;
+  height: 100%;
+  object-fit: cover;
 }
 .mask {
   width: 100%;
@@ -139,6 +196,146 @@
   @include img_l_pc(1388, 1080, 266);
 }
 
+.section2 {
+  width: size(1920);
+  height: size(2360);
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+  background-size: auto;
+  display: none;
+  &.show {
+    display: block;
+  }
+
+  &.short {
+    height: size(1500);
+  }
+}
+
+.bg-img {
+  width: size(1920);
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  object-fit: cover;
+  margin-top: 0;
+  &:nth-child(1) {
+    position: relative;
+  }
+}
+
+.border-container {
+  width: size(1637);
+  height: size(2160);
+  margin: size(50) auto size(75);
+  border: 3px solid #ff8200;
+}
+
+.short {
+  .border-container {
+    height: size(1300);
+  }
+}
+
+.title-2 {
+  width: size(700);
+  margin: 0 auto;
+  margin-top: size(-30);
+  font-size: 34px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 3.4px;
+  text-align: center;
+  color: #606060;
+  background-color: #fff;
+  white-space: nowrap;
+
+  span {
+    color: #ff8200;
+  }
+}
+
+.img {
+  @include img_l_pc(1252, 117, 0);
+  z-index: 2;
+}
+
+.s-title {
+  @include div_r_pc(147, 47, 227, 222);
+  font-size: size(32);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(6.37);
+  text-align: left;
+  color: #ff8200;
+  white-space: nowrap;
+}
+
+.content-title {
+  @include div_r_pc(391, 63, 470, 76);
+  font-size: size(42.5);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(4.25);
+  text-align: left;
+  color: #606060;
+  white-space: nowrap;
+}
+
+.content-desc {
+  @include div_r_pc(463, 100, 550, 0);
+  font-size: size(20);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.65;
+  letter-spacing: size(1);
+  text-align: left;
+  color: #606060;
+
+  span {
+    font-size: size(23);
+    font-weight: bold;
+    letter-spacing: size(1.15);
+  }
+}
+
+.btn {
+  @include div_r_pc(200, 40, 850, 260);
+  font-size: size(20);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.65;
+  letter-spacing: size(1);
+  text-align: left;
+  background-color: #ff8200;
+  color: #fff;
+}
+
+.video {
+  cursor: pointer;
+  @include div_r_pc(1343, 762, 1292, 150);
+}
+
+.rb {
+  position: absolute;
+  background-color: #fff;
+  width: size(308);
+  height: size(167);
+  right: size(-100);
+  bottom: size(-80);
+}
+
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -153,11 +350,11 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section5 {
+  .section1 {
     width: 100vw;
     min-height: sizem(604);
     max-height: sizem(900);
-    height:sizem(900);
+    height: sizem(900);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -165,7 +362,7 @@
 
   .bg-img {
     width: sizem(375);
-    height:auto;
+    height: auto;
     position: absolute;
     top: 0;
     left: 0;
@@ -178,7 +375,7 @@
     }
   }
 
-  .title {
+  .title-1 {
     @include div_l_m(147, 47, 417, 114);
     font-size: sizem(32);
     font-weight: 500;
@@ -240,7 +437,6 @@
     transition: all 0.3s;
   }
 
-  
   .border {
     width: 100%;
     height: 100%;
@@ -294,6 +490,139 @@
       }
     }
   }
+
+  .section2 {
+    width: 100vw;
+    min-height: sizem(1134);
+    max-height: sizem(812);
+    height: sizem(1134);
+    // background-image: url('./mo/1/bg.png');
+    background-size: cover;
+    background-attachment: scroll;
+
+    &.short {
+      min-height: sizem(550);
+      height: sizem(550);
+    }
+  }
+
+  .bg-img {
+    width: sizem(375);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    object-fit: cover;
+    margin-top: 0;
+
+    &:nth-child(1) {
+      position: relative;
+    }
+  }
+
+  .border-container {
+    width: sizem(355);
+    height: sizem(1027);
+    margin: sizem(40) auto sizem(30);
+    border: 3px solid #ff8200;
+  }
+
+  .title-2 {
+    width: sizem(314);
+    margin: 0 auto;
+    margin-top: sizem(-30);
+    font-size: sizem(20);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #606060;
+    background-color: #fff;
+    white-space: nowrap;
+
+    span {
+      color: #ff8200;
+    }
+  }
+
+  .img {
+    @include img_l_m(340, 60, 0);
+    z-index: 2;
+  }
+
+  .s-title {
+    @include div_r_m(130, 41, 341, 123);
+    font-size: sizem(28);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(5.37);
+    text-align: left;
+    color: #ff8200;
+    white-space: nowrap;
+  }
+
+  .content-title {
+    @include div_l_m(258, 41, 407, 23);
+    font-size: sizem(28);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(2.8);
+    text-align: left;
+    color: #606060;
+    white-space: nowrap;
+  }
+
+  .content-desc {
+    @include div_r_m(310, 260, 476, 23);
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.65;
+    letter-spacing: sizem(0.75);
+    text-align: left;
+    color: #606060;
+
+    span {
+      font-size: sizem(15);
+      font-weight: bold;
+      letter-spacing: sizem(0.75);
+    }
+  }
+
+  .btn {
+    @include div_r_m(150, 40, 700, 113);
+    font-size: sizem(23);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.65;
+    letter-spacing: sizem(1);
+    text-align: left;
+    background-color: #ff8200;
+    color: #fff;
+  }
+
+  .video {
+    cursor: pointer;
+    @include div_r_m(320, 181, 782, 17);
+  }
+
+  .rb {
+    position: absolute;
+    background-color: #fff;
+    width: sizem(132);
+    height: sizem(72);
+    right: sizem(-10);
+    bottom: sizem(-40);
+  }
 }
 </style>
 <script>
@@ -303,7 +632,7 @@ import slider from '@/mixins/slider.js'
 import { Carousel3d, Slide } from 'vue-carousel-3d'
 
 export default {
-  name: 'section5',
+  name: 'section1',
   mixins: [slider],
 
   components: {
@@ -331,25 +660,29 @@ export default {
           img: require('../works/2/1.jpg'),
           alt: '',
           name: ' 立瑾way',
-          desc:'鶯歌鳳鳴 立瑾Way2020年11月<br>延續著住戶的期盼，<br>今年11月19日於鶯歌鳳鳴重劃區，<br>辦理開工動土祈福典禮，<br>將接續公開新案「立瑾way」，<br>只為給您最好的居家。<br>基地地址：鶯歌鳳鳴段',
+          desc:
+            '鶯歌鳳鳴 立瑾Way2020年11月<br>延續著住戶的期盼，<br>今年11月19日於鶯歌鳳鳴重劃區，<br>辦理開工動土祈福典禮，<br>將接續公開新案「立瑾way」，<br>只為給您最好的居家。<br>基地地址：鶯歌鳳鳴段',
         },
         {
           img: require('../works/3/1.jpg'),
           alt: '',
           name: ' 鳳福段',
-          desc:'<b>基地位置：</b>三重區神農街433號～439號<br>完工時間： 2020年<br>規劃樓層： 地上12層，地下2層<br>個案特色：<br>◆  校園第一排、河畔第一境<br>◆  結合陽光、空氣、水的絕美建築<br>◆ 低建蔽率，高公共生活空間',
+          desc:
+            '<b>基地位置：</b>三重區神農街433號～439號<br>完工時間： 2020年<br>規劃樓層： 地上12層，地下2層<br>個案特色：<br>◆  校園第一排、河畔第一境<br>◆  結合陽光、空氣、水的絕美建築<br>◆ 低建蔽率，高公共生活空間',
         },
         {
           img: require('../works/2/1.jpg'),
           alt: '',
           name: ' 立瑾way',
-          desc:'鶯歌鳳鳴 立瑾Way2020年11月<br>延續著住戶的期盼，<br>今年11月19日於鶯歌鳳鳴重劃區，<br>辦理開工動土祈福典禮，<br>將接續公開新案「立瑾way」，<br>只為給您最好的居家。<br>基地地址：鶯歌鳳鳴段',
+          desc:
+            '鶯歌鳳鳴 立瑾Way2020年11月<br>延續著住戶的期盼，<br>今年11月19日於鶯歌鳳鳴重劃區，<br>辦理開工動土祈福典禮，<br>將接續公開新案「立瑾way」，<br>只為給您最好的居家。<br>基地地址：鶯歌鳳鳴段',
         },
         {
           img: require('../works/3/1.jpg'),
           alt: '',
           name: ' 鳳福段',
-          desc:'<b>基地位置：</b>三重區神農街433號～439號<br>完工時間： 2020年<br>規劃樓層： 地上12層，地下2層<br>個案特色：<br>◆  校園第一排、河畔第一境<br>◆  結合陽光、空氣、水的絕美建築<br>◆ 低建蔽率，高公共生活空間',
+          desc:
+            '<b>基地位置：</b>三重區神農街433號～439號<br>完工時間： 2020年<br>規劃樓層： 地上12層，地下2層<br>個案特色：<br>◆  校園第一排、河畔第一境<br>◆  結合陽光、空氣、水的絕美建築<br>◆ 低建蔽率，高公共生活空間',
         },
       ],
     }
@@ -369,6 +702,13 @@ export default {
     if (this.isMobile) {
       this.imgWidth = window.screen.width * 0.75
       this.imgHeight = window.screen.width * 0.75 * (272 / 312)
+    }
+    if (this.$route.query.index == 1) {
+      this.goToSlide(0)
+    }
+
+    if (this.$route.query.index == 2) {
+      this.goToSlide(1)
     }
   },
 

@@ -20,7 +20,7 @@
             <img src="@/projects/lc/menu/icon_l.png" alt="" class="line" v-if="isMobile">
             <!-- <li v-if="isMobile" alt v-scroll-to="{ element: `#section1`, offset: offset }"><img class="navlogo" src="@/assets/img/nav-logo.png" /></li> -->
             <li :key="item.name" v-for="item in list" class="flex-c">
-              <span class="link" @click="toggleSidebar(item.path)">
+              <span :class="`link ${item.path == $route.name ? 'active' : ''}`" @click="toggleSidebar(item.path)">
                 <span class="flex-c">
                   <p class="title" v-html="item.name"></p>
                   <span class="subTitle">{{item.subTitle}}</span>
@@ -79,6 +79,11 @@ export default {
 
       return 0
     },
+  },
+
+  mounted() {
+    // console.log(this.$route)
+    // console.log(this.list)
   },
 
   methods: {
@@ -222,7 +227,7 @@ export default {
     position: relative;
     // overflow: hidden;
     // border-right: 1px solid $nav_link_hover_bg;
-
+    &.active,
     &:hover {
       color: $nav_link_hover_color;
       // background: $nav_link_hover_bg;

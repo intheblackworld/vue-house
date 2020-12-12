@@ -11,10 +11,10 @@
       <div class="news-author">
         {{currentItem.author}}
       </div>
-      <img :src="currentItem.img" alt="" class="news-img">
+      <img v-if="currentItem.img" :src="currentItem.img" alt="" class="news-img">
       <div class="news-desc" v-html="currentItem.desc"></div>
       <div class="pagination flex-c">
-        <a :class="`pagi ${index == $route.params.id ? 'active' : ''}`" target="_blank" v-for="(link, index) in links" :key="'pagi' + index" :href="link.url">{{link.title}}</a>
+        <a class="pagi" target="_blank" v-for="(link, index) in currentItem.links" :key="'pagi' + index" :href="link.url">{{link.title}}</a>
       </div>
     </div>
   </div>
@@ -136,7 +136,7 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    padding: 0 size(5) 0 size(15);
+    padding: 0 size(5) 0 size(5);
     transition:all 0.5s ;
 
     &.active,
@@ -387,7 +387,7 @@ export default {
         subtitle: '',
         date: '2019年8月30日',
         author: '中時新聞網 綜合報導',
-          img: require('../news/s2/no.png'),
+        img: '',
         desc:'商時報【台北訊】 三重二重疏洪道左側重劃區，一直具有水岸景觀與交通完備的兩大優勢。寬闊的視野與綠帶景觀，加上中和新蘆線「先嗇宮站」與機場線雙捷運「三重站」，轉個彎就能直上台64八里新店快速道路，連結新北環快銜接板橋、中和、永和、新店，串聯中山高國道系統，這裡正成為未來開發潛力股。區內8月登場的新案「立瑾醞」，以水岸校園永久棟距、正二房與正三房規格，和戶戶土地持份逾10坪的三大優勢，網路口碑推爆。 「立瑾醞」規畫為43戶的純住宅大樓，一層四戶，產品規格分為44坪三房、41坪三房、38坪三房，以及31坪兩房，戶戶標配智慧家庭設備、Hansgrohe、TOTO衛浴，提供永久保固與水質檢測的櫻花廚具。各房型皆享公園綠地開闊景觀，總價1,500萬起可購得二房含車位。 負責銷售的林經理指出，「立瑾醞」的優勢在於，它是區域內「唯一以大三房為主力」的建案。二重疏洪道重劃區左岸的眾多建案中，目前僅有「立瑾醞」按規格打造真正的三房（38∼44坪）、兩房（31坪）住宅，因此無論哪一種房型，實際坪數都較它案同級產品更大。 此外，僅43戶的純住社區，戶戶平均持分583坪的基地面積，換算後每戶所持分的土地面積超過10坪，更享424公頃大都會水岸公園綠地河景、將近8千坪校園預定地的第一排永久棟距。相較於同區右岸三重段五字頭的房價，左岸充滿潛力的平實價格，使得「立瑾醞」自8月初開案迄今，每周來客數皆維持在20組左右。除有來自新莊和三重的換屋族群，也吸引不少頂崁工業區的企業主在此換屋、置產。地址：新北市三重區神農街451號，洽詢電話：（02）2995－8585，官網：https://reurl.cc/md6DG7。',
         links: [
             {
@@ -417,26 +417,26 @@ export default {
       pageCount: 3,
       currentPage: 1,
       currentItem: {
-        title: '新聞標題新聞標題新聞標題新聞標題新聞標題1',
-        subtitle: '小標文字1',
-        date: '2020-12-02',
-        author: 'XXXX',
-        img: require('../news/s2/1/20191009004718.jpg'),
-        desc:
-          '文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案',
+        // title: '新聞標題新聞標題新聞標題新聞標題新聞標題1',
+        // subtitle: '小標文字1',
+        // date: '2020-12-02',
+        // author: 'XXXX',
+        // img: require('../news/s2/1/20191009004718.jpg'),
+        // desc:
+        //   '文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案',
       },
-      links: [
-        {
-          title: '立瑾醞官網',
-          id: '2',
-          url: 'https://lju.h35.tw/',
-        },
-        {
-          title: '立瑾醞官網',
-          id: '2',
-          url: 'https://lju.h35.tw/',
-        },
-      ],
+      // links: [
+      //   {
+      //     title: '立瑾醞官網',
+      //     id: '2',
+      //     url: 'https://lju.h35.tw/',
+      //   },
+      //   {
+      //     title: '立瑾醞官網',
+      //     id: '2',
+      //     url: 'https://lju.h35.tw/',
+      //   },
+      // ],
     }
   },
 

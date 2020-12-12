@@ -8,7 +8,7 @@
     <carousel-3d ref="mycarousel" :width="imgWidth" :height="imgHeight" :autoplay="true" :autoplayTimeout="5000" :autoplayHoverPause="true" :perspective="0" :disable3d="isMobile ? false : false" :border="0" :display="isMobile ? 3 : 3" :space="isMobile ? 'auto' : 'auto'" @after-slide-change="onAfterSlideChange">
       <slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="carousel-3d-item">
         <img :src="slide.img" :class="`carousel-3d-img`" :alt="slide.alt" />
-        <div class="mask">
+        <div class="mask" @click="$router.push('/past')">
           <div class="border flex-c">
             {{slide.name}}
           </div>
@@ -145,6 +145,7 @@
   padding: size(27);
   opacity: 0;
   transition: all 0.3s;
+  cursor: pointer;
 }
 
 .border {
