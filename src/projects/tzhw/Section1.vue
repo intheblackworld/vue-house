@@ -11,6 +11,7 @@
         class="bg-img"
         v-lazy:background-image="require('./s1/bg1_m.jpg')"
       ></div>
+      <div class="cloud absolute"><img src="./s1/cloud3.png" alt="cloud"><img src="./s1/cloud4.png" alt="cloud"><img src="./s1/cloud3.png" alt="cloud"><img src="./s1/cloud4.png" alt="cloud"></div>
       <img src="./s1/bg.png" alt="龍脈" class="bg-img" v-if="!isMobile">
       <img src="./s1/bg2.png" alt="太子華威" class="bg-img" v-if="!isMobile">
       <img src="./s1/bg_m.png" alt="龍脈" class="bg-img" v-if="isMobile">
@@ -191,6 +192,29 @@
     }
   }
 */
+
+.cloud{bottom: 0;left:0;width:size(800);
+    width:100%;
+    height: 100%;
+    z-index: 2;  
+img{position: absolute;bottom: 0;left:0;
+    transform: translateX(-100%);
+    &:nth-child(1){width:size(1887);
+    animation: cloud 55s linear infinite;bottom:-28vw;opacity: 0.8;}
+    &:nth-child(2){width:size(1020);
+    animation: cloud 40s -10s linear infinite;bottom:-10vw;}
+    &:nth-child(3){width:size(887);
+    animation: cloud 45s -30s linear infinite;bottom:-5vw;}
+    &:nth-child(4){width:size(1020);
+    animation: cloud 50s -40s linear infinite;bottom:-10vw;}
+    }
+    
+    }
+
+@keyframes cloud {
+    to {transform: translateX(calc(100vw + 100%));
+    }
+}
 .txt{font-size:calc(12px + 1.1vw);
 
   top: calc(40% - 5vw);
@@ -266,6 +290,19 @@ width: 0.64em;
 .full-img{
     background-size: 100% auto;
 }
+
+
+.cloud{
+img{
+    &:nth-child(1){bottom:-10vw;opacity: 0.8;}
+    &:nth-child(2){bottom:-3vw;}
+    &:nth-child(3){bottom:-0vw;}
+    &:nth-child(4){bottom:5vw;}
+    }
+}
+
+
+
 .water{top: calc(50% + 67vw);
     height:calc(100vw * 313 / 750);}
 .txt{
