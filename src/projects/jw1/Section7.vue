@@ -57,7 +57,7 @@
   //@include img_r_pc(345, 511, 274);
   @include img_c(345, calc(40% - 4.5vw), size(1300));
   font-size: size(90);
-  font-weight: 500;
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
@@ -71,7 +71,7 @@
   //@include img_r_pc(300, 646, 310);
   @include img_c(300, calc(40% + 3.2vw), size(1310));
   font-size: size(32);
-  font-weight: 700;
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
@@ -197,20 +197,20 @@
     height: size(850);
   }
 
+
   .slide-name {
-    left: 20px;
-    bottom: 20px;
+    left:3em;
+    bottom:1.5em;
     color: #fff;
-    font-size: 15px;
+    font-size:  size(18);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 3.11;
-    letter-spacing: 0.89px;
+    line-height: 1.6;
+    letter-spacing:0.03em;
     text-align: left;
-    color: #ffffff;
+    text-shadow: 0 0.3em 1em #0003;
   }
-
   // &:nth-child(1) {
   //   z-index: 1;
   //   // opacity: 1;
@@ -327,7 +327,7 @@
   }
 
   .s-title {
-    @include img_r_m(172, 50, 164);
+    @include img_r_m(222, 58, 114);
     font-size: sizem(58);
     font-weight: bold;
     font-stretch: normal;
@@ -340,7 +340,7 @@
   }
 
   .title {
-    @include img_r_m(178, 29, 158);
+    @include img_l_m(222, 140, 40);
     font-size: sizem(19);
     font-weight: bold;
     font-stretch: normal;
@@ -492,6 +492,10 @@
     margin: 0 auto;
     justify-content: center;
   }
+  .slide-name {
+    font-size: sizem(15);
+  }
+
 
   .pagination-dot {
     padding: 5px;
@@ -578,15 +582,15 @@ export default {
       slideList: [
         {
           img: require('./s7/1.jpg'),
-          name: ' ',
+          name: '新北大橋',
         },
         {
           img: require('./s7/2.jpg'),
-          name: ' ',
+          name: '新莊地區空拍',
         },
         {
           img: require('./s7/3.jpg'),
-          name: ' ',
+          name: '新板特區',
         },
       ],
     }

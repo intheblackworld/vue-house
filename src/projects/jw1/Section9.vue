@@ -57,7 +57,7 @@
         <li>珍稀超高得房率</li>
       </div>
       <h3 :class="`btn btn2 flex-c ${tabIndex === 2 ? 'active' : ''}`" @click="tabIndex = 2">
-        兩房戶型
+        三房戶型
       </h3>
       <!-- <h1 class="s-title" data-aos="fade" data-aos-delay="200">
         Overture
@@ -114,11 +114,11 @@
 }
 
 .btn1 {
-  @include div_r_pc(315, 54, 220, 236);
+  @include div_r_pc(315, 54, 90, 236);
 }
 
 .btn2 {
-  @include div_r_pc(315, 54, 700, 236);
+  @include div_r_pc(315, 54, 570, 236);
 }
 
 .desc {
@@ -138,11 +138,11 @@
 }
 
 .desc1 {
-  @include div_r_pc(315, 338, 300, 236);
+  @include div_r_pc(315, 338, 170, 236);
 }
 
 .desc2 {
-  @include div_r_pc(315, 338, 780, 236);
+  @include div_r_pc(315, 338, 650, 236);
 }
 /* Swipe */
 .swipe {
@@ -207,19 +207,18 @@
     width: 100%;
     height: size(850);
   }
-
   .slide-name {
-    left: 20px;
-    bottom: 10px;
+    left:3em;
+    bottom:1.5em;
     color: #fff;
-    font-size: 15px;
+    font-size:  size(18);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.11;
-    letter-spacing: 0.89px;
+    line-height: 1.6;
+    letter-spacing:0.03em;
     text-align: left;
-    color: #ffffff;
+    text-shadow: 0 0.3em 1em #0003;
   }
 
   // &:nth-child(1) {
@@ -479,6 +478,10 @@
     //   // opacity: 1;
     // }
   }
+  .slide-name {
+    font-size: sizem(15);
+  }
+
 
   .pagination {
     width: auto;
@@ -577,30 +580,30 @@ export default {
       slideList1: [
         {
           img: require('./s9/2-1.jpg'),
-          name: '圖片為公園示意',
+          name: '樣品屋裝潢風格情境參考示意圖',
         },
         {
           img: require('./s9/2-2.jpg'),
-          name: '圖片為公園示意',
+          name: '樣品屋裝潢風格情境參考示意圖',
         },
         {
           img: require('./s9/2-3.jpg'),
-          name: '圖片為公園示意',
+          name: '樣品屋裝潢風格情境參考示意圖',
         },
       ],
 
       slideList2: [
         {
           img: require('./s9/3-1.jpg'),
-          name: '圖片為公園示意',
+          name: '樣品屋裝潢風格情境參考示意圖',
         },
         {
           img: require('./s9/3-2.jpg'),
-          name: '圖片為公園示意',
+          name: '樣品屋裝潢風格情境參考示意圖',
         },
         {
           img: require('./s9/3-3.jpg'),
-          name: '圖片為公園示意',
+          name: '樣品屋裝潢風格情境參考示意圖',
         },
       ],
     }
