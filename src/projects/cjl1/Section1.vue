@@ -1131,12 +1131,15 @@
   font-size:size(90);
   line-height: 1.35;
   font-weight: bold;
-  letter-spacing:0.1em;
+  letter-spacing:0.06em;
   width:100%;
   bottom:calc(61% - 2vw);
   left: 0;
   right: 0;
+  padding: 0 0 0 0.06em;
   margin: 0 auto;
+  text-align: center;
+  transform: scaleX(0.95);
 }
 
 @media only screen and (max-width: 1440px) {
@@ -1181,7 +1184,7 @@
 
   .logo {
     width: sizem(310);
-    top: calc(50% - 42vw);
+    top: calc(50% - 46vw);
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -1219,6 +1222,11 @@
     top: 5vw;
     opacity: 0.3;
     width: 80vw;}
+}
+.txt {
+  font-size:sizem(45);
+  bottom:calc(50% - 2vw);
+
 }
 </style>
 <script>
