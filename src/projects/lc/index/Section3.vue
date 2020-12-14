@@ -7,7 +7,7 @@
     </h1>
     <div class="bottom"></div>
     <div class="imgs flex-ac flex-jb">
-      <div class="img">
+      <div class="img" @click="$router.push('/products?index=1')">
         <img src="./s3/1.jpg" alt="">
         <div class="border-orange"></div>
         <div class="mask">
@@ -16,7 +16,7 @@
           </div>
         </div>
       </div>
-      <div class="img">
+      <div class="img" @click="$router.push('/products?index=2')">
         <img src="./s3/2.jpg" alt="">
         <div class="border-orange"></div>
         <div class="mask">
@@ -25,7 +25,7 @@
           </div>
         </div>
       </div>
-      <div class="img">
+      <div class="img" @click="$router.push('/products?index=3')">
         <img src="./s3/3.jpg" alt="">
         <div class="border-orange"></div>
         <div class="mask">
@@ -34,7 +34,7 @@
           </div>
         </div>
       </div>
-      <div class="img">
+      <div class="img" @click="$router.push('/products?index=4')">
         <img src="./s3/4.jpg" alt="">
         <div class="border-orange"></div>
         <div class="mask">
@@ -43,7 +43,7 @@
           </div>
         </div>
       </div>
-      <div class="img">
+      <div class="img" @click="$router.push('/products?index=5')">
         <img src="./s3/5.jpg" alt="">
         <div class="border-orange"></div>
         <div class="mask">

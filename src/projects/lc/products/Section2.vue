@@ -228,16 +228,22 @@
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
+import { Carousel3d, Slide } from 'vue-carousel-3d'
 
 export default {
   name: 'section2',
 
   mixins: [slider],
+  components: {
+    Carousel3d,
+    Slide,
+  },
   data() {
     return {
       isPC,
       isMobile,
       isTablet,
+      currentIndex: 0,
       slideList: [
         {
           class:"txt1",
@@ -279,20 +285,24 @@ export default {
   },
 
   methods: {
-    // @slideChangeTransitionEnd="slideChanged"
-    // slideChanged(e) {
-    //   const swiper = this.$refs.mySwiper.swiper
-    //   if (swiper.isEnd) {
-    //     this.slideIndex = 0
-    //   } else if (swiper.isBeginning) {
-    //     this.slideIndex = swiper.slides.length - 3
-    //   } else {
-    //     this.slideIndex = swiper.activeIndex - 1
-    //   }
-    // },
+    goToSlide(index) {
+      this.currentIndex = index
+      this.$refs.mycarousel.goSlide(index)
+    },
+    onAfterSlideChange(index) {
+      this.currentIndex = index
+    },
   },
 
-  mounted() {},
+  mounted() {
+    if (this.$route.query.index == 1) {
+      this.goToSlide(0)
+    }
+
+    if (this.$route.query.index == 2) {
+      this.goToSlide(1)
+    }
+  },
 
   created() {},
 
