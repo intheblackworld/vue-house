@@ -243,7 +243,6 @@ export default {
       isPC,
       isMobile,
       isTablet,
-      currentIndex: 0,
       slideList: [
         {
           class:"txt1",
@@ -286,21 +285,31 @@ export default {
 
   methods: {
     goToSlide(index) {
-      this.currentIndex = index
-      this.$refs.mycarousel.goSlide(index)
-    },
-    onAfterSlideChange(index) {
-      this.currentIndex = index
+      this.slideIndex = index
+      // this.$refs.mycarousel.goSlide(index)
     },
   },
 
   mounted() {
+    this.stopAutoPlay = true
     if (this.$route.query.index == 1) {
       this.goToSlide(0)
     }
 
     if (this.$route.query.index == 2) {
       this.goToSlide(1)
+    }
+
+    if (this.$route.query.index == 3) {
+      this.goToSlide(2)
+    }
+
+    if (this.$route.query.index == 4) {
+      this.goToSlide(3)
+    }
+
+    if (this.$route.query.index == 5) {
+      this.goToSlide(4)
     }
   },
 
