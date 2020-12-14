@@ -770,7 +770,8 @@
 
 
       </svg>
-      <img src="./s1/txt.png" alt="" class="title-img absolute" data-aos="fade-down" data-aos-delay="800">
+      <div class="txt absolute">南台南新都心<br>準備大賺三代</div>
+     <!-- <img src="./s1/txt.png" alt="" class="title-img absolute" data-aos="fade-down" data-aos-delay="800">  -->
     </div>
   </div>
 </template>
@@ -1109,8 +1110,10 @@
   transition: all 3s cubic-bezier(1, 0.5, 0.8, 1);
 }
 .logo {
-  width: size(724);
-  height:size(340);
+  width: size(400);
+  height:calc(39% - 10vw);
+  max-height:size(230);
+  min-height: size(200);
   margin: 0 auto;
   position: relative;
   z-index: 1;
@@ -1119,6 +1122,18 @@
 .title-img {
   width: size(725);
   top: size(276);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.txt {
+  color: #fff;
+  font-size:size(90);
+  line-height: 1.35;
+  font-weight: bold;
+  letter-spacing:0.1em;
+  width:100%;
+  bottom:calc(61% - 2vw);
   left: 0;
   right: 0;
   margin: 0 auto;
