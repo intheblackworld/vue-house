@@ -128,6 +128,7 @@
     border-radius: 999px;
     overflow: hidden;
     box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.48);
+    cursor: pointer;
     img {
       width: 100%;
       height: 100%;
