@@ -1222,12 +1222,11 @@
     top: 5vw;
     opacity: 0.3;
     width: 80vw;}
-}
 .txt {
   font-size:sizem(45);
   bottom:calc(50% - 2vw);
 
-}
+}}
 </style>
 <script>
 // @ is an alias to /src
