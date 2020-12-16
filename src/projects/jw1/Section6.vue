@@ -201,8 +201,8 @@
     height: size(850);
   }
   .slide-name {
-    left:3em;
-    bottom:1.5em;
+    left:1.2em;
+    bottom:1.2em;
     color: #fff;
     font-size:  size(18);
     font-weight: normal;
@@ -489,9 +489,9 @@
     //   z-index: 2;
     //   // opacity: 1;
     // }
-  }
   .slide-name {
     font-size: sizem(15);
+  }
   }
 
   .pagination {

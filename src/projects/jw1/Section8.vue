@@ -27,7 +27,7 @@
       </h1>
       <h1 class="desc" data-aos="fade" data-aos-delay="800">
         〔京旺協奏曲〕一層四戶雙電梯，<br />
-        規劃35-45坪和樂三房、22坪幸福兩房<br />
+        規劃35坪和樂三房、22坪幸福兩房<br />
         全戶型邊間、全棟雙採光，配合3米6的挑<br />
         高身段，室內空間寬容大亮
       </h1>
@@ -218,8 +218,8 @@
   }
 
   .slide-name {
-    left:3em;
-    bottom:1.5em;
+    left:1.2em;
+    bottom:1.2em;
     color: #fff;
     font-size:  size(18);
     font-weight: normal;
@@ -519,10 +519,10 @@
     //   z-index: 2;
     //   // opacity: 1;
     // }
-  }
-
   .slide-name {
     font-size: sizem(15);
+  }
+
   }
 
 
@@ -620,6 +620,10 @@ export default {
       slideList: [
         {
           img: require('./s8/1.jpg'),
+          name: '圖片為示意圖',
+        },
+        {
+          img: require('./s8/2.jpg'),
           name: '圖片為示意圖',
         },
       ],

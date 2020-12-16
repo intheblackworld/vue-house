@@ -196,8 +196,8 @@
   }
 
   .slide-name {
-    left:3em;
-    bottom:1.5em;
+    left:1.2em;
+    bottom:1.2em;
     color: #fff;
     font-size:  size(18);
     font-weight: normal;
@@ -478,10 +478,10 @@
     //   z-index: 2;
     //   // opacity: 1;
     // }
-  }
-
   .slide-name {
     font-size: sizem(15);
+  }
+
   }
 
   .pagination {
@@ -578,15 +578,15 @@ export default {
       slideList: [
         {
           img: require('./s4/1.jpg'),
-          name: '神龍公園',
+          name: '神農公園',
         },
         {
           img: require('./s4/2.jpg'),
-          name: '神龍公園',
+          name: '神農公園',
         },
         {
           img: require('./s4/3.jpg'),
-          name: '神龍公園',
+          name: '神農公園',
         },
       ],
     }

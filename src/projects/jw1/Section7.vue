@@ -28,9 +28,9 @@
         千坪綠意神農公園<span></span>少棒名校興穀國小
       </h1> -->
       <h1 class="desc" data-aos="fade" data-aos-delay="600">
-        未來第二行政中心落址二重左岸五谷王<br />
+        未來第二行政中心落址三重左岸五谷王<br />
         三重新都心、新莊副都心、新板特定區形成「新北鐵三角」。<br /><br />
-        工變住都更案、新北科技園區兩大人口吸力加持,二重重劃區迎接起漲點!
+        工變住都更案、新北科技園區兩大人口吸力加持，三重重劃區迎接起漲點！
       </h1>
     </div>
   </div>
@@ -199,8 +199,8 @@
 
 
   .slide-name {
-    left:3em;
-    bottom:1.5em;
+    left:1.2em;
+    bottom:1.2em;
     color: #fff;
     font-size:  size(18);
     font-weight: normal;
@@ -482,6 +482,9 @@
     //   z-index: 2;
     //   // opacity: 1;
     // }
+  .slide-name {
+    font-size: sizem(15);
+  }
   }
 
   .pagination {
@@ -491,9 +494,6 @@
     right: 0;
     margin: 0 auto;
     justify-content: center;
-  }
-  .slide-name {
-    font-size: sizem(15);
   }
 
 

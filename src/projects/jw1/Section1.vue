@@ -13,10 +13,13 @@
 
     <img src="./s1/logo2.png" alt="" class="logo2" data-aos="fade" data-aos-delay="1000">
     <h1 class="title1" data-aos="fade" data-aos-delay="400">
-      先嗇宮站2~3房
+      2~3房
     </h1>
-    <h1 class="title2" data-aos="fade" data-aos-delay="600">
-      公園校園 即將成雙
+    <h1 class="title2" data-aos="fade" data-aos-delay="400">
+      22<b>．</b>35
+    </h1>
+    <h1 class="title3" data-aos="fade" data-aos-delay="600">
+      公園首席 百米棟距
     </h1>
     <h1 class="phone" data-aos="fade" data-aos-delay="800">
       8985-6888
@@ -92,22 +95,38 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(5.8);
+  letter-spacing:-0.05em;
   text-align: left;
-  color: #248184;
+  color:  #000; 
   white-space: nowrap;
+  &::after{content: "";position: absolute;right: 0;right:0;width: 2px;height: 100%;background:#248184;}
 }
 
 .title2 {
-  @include img_c(512, calc(50% + 10vw),size(1254));
+  @include img_c(433, calc(50% + 10vw),size(978));
   font-size: size(58);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(4.3);
+  letter-spacing:-0.05em;
   text-align: left;
-  color: #000;
+  color: #000; 
+  white-space: nowrap;
+  b{color:#248184;}
+  &::after{content: "";position: absolute;right: 0;right:0;width: 2px;height: 100%;background:#248184;}
+}
+
+.title3 {
+  @include img_c(512, calc(50% + 10vw),size(1290));
+  font-size: size(58);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing:0.02em;
+  text-align: left;
+  color:#248184;
   white-space: nowrap;
 }
 
