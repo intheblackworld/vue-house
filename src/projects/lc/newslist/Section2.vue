@@ -7,6 +7,10 @@
           {{item.title}}
         </div>
       </div>
+      <div class="news-item">
+      </div>
+      <div class="news-item">
+      </div>
       <!-- <div class="pagination flex-c">
         <div :class="`pagi flex-c ${index === currentPage ? 'active' : ''}`" v-for="index in pageCount" :key="'pagi' + index" @click="currentPage = index">{{index}}</div>
       </div> -->
@@ -40,27 +44,13 @@
   }
 }
 .news-container {
-  width: size(1330);
+  width:56em;
   margin: size(80) auto;
   padding-bottom: size(80);
+    justify-content:space-between;
   display: flex;
   flex-wrap: wrap;
-}
-.news-item {
-  width: size(393);
-  margin: 0 size(25)  size(25)  size(25);
-  cursor: pointer;
-}
-
-.news-img {
-  width: 100%;
-  height: size(355);
-  object-fit: cover;
-  margin-bottom: size(10);
-}
-
-.news-title {
-  font-size: size(33);
+  font-size: size(25);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -68,6 +58,18 @@
   letter-spacing:0.01em;
   text-align: justify;
   color: #ff9e00;
+}
+.news-item {
+  width:16em;
+  margin: 0 1em  1.5em  1em;
+  cursor: pointer;
+}
+
+.news-img {
+  width: 100%;
+  height:14em;
+  object-fit: cover;
+ // margin-bottom: size(10);
 }
 
 .pagination {

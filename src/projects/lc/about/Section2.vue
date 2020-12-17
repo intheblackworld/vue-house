@@ -28,7 +28,7 @@
 
 .section2 {
   width: size(1920);
-  height: size(1171);
+  height: size(890);
   overflow: hidden;
   position: relative;
   background: #fff;
@@ -50,7 +50,7 @@
 }
 
 .img {
-  @include div_l_pc(753, 487, 98, 310);
+  @include div_l_pc(800, 500, 20, 260);
   position: relative;
   img {
     width: 100%;
@@ -64,34 +64,35 @@
     margin: 0 auto;
     left: 0;
     right: 0;
-    width: 95%;
-    height: 95%;
+    width: calc(100% - 1.1vw);
+    height: calc(100% - 1.1vw);
     border: 3px solid #ff8200;
   }
 }
 
 .info-block {
-  @include div_r_pc(687, 333, 461, 295);
+  @include div_r_pc(700, 360, 320, 280);
   background-color: #ff8200;
 }
 
 .content {
-  width: size(550);
-  height: size(220);
+    width: calc(100% - 5vw);
+    height: calc(100% - 5vw);
   background-color: #fff;
   padding: size(20) size(30);
-  font-size: size(27.5);
+  font-size: size(25);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.5;
-  letter-spacing: size(5.48);
+  letter-spacing: 0.2em;
   text-align: left;
   color: #606060;
   .title {
-    font-size: size(29.8);
+    font-size: size(30);
     font-weight: 900;
-    letter-spacing: size(1.49);
+    letter-spacing:0.05em;
+    margin: 0.6em 0 0 0;
   }
 }
 
@@ -161,16 +162,14 @@
   }
 
   .content {
-    width: sizem(260);
-    height: sizem(140);
-    background-color: #fff;
-    padding: sizem(20) sizem(30);
+    width: calc(100% - 10vw);
+    height: calc(100% - 10vw);
+    padding: sizem(25) sizem(30);
     font-size: sizem(14);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.5;
-    letter-spacing: sizem(5.48);
     text-align: left;
     color: #606060;
     .title {

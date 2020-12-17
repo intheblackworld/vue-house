@@ -25,7 +25,7 @@
 
 .section1 {
   width: size(1920);
-  height: size(1250);
+  height: size(800);
   // overflow: hidden;
   position: static;
   background: #fff;
@@ -47,28 +47,28 @@
 }
 
 .title {
-  @include div_l_pc(346, 112, 237, 364);
-  font-size: size(75.5);
+  @include div_l_pc(346, 112, 187, 370);
+  font-size: size(60);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(15.02);
-  text-align: center;
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+  text-align: left;
   color: #ffffff;
   white-space: nowrap;
   z-index: 10;
 }
 
 .subtitle {
-  @include div_l_pc(160, 55, 190, 370);
-  font-size: size(37.3);
+  @include div_l_pc(346, 55, 150, 370);
+  font-size: size(30);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
   letter-spacing: normal;
-  text-align: center;
+  text-align: left;
   color: #ffffff;
   white-space: nowrap;
   z-index: 10;
@@ -85,7 +85,7 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-  top: size(700) !important;
+  top: size(350) !important;
 }
 
 .carousel-3d-item {
@@ -134,7 +134,7 @@
 }
 
 .shadow {
-  @include img_l_pc(1388, 1040, 266);
+  @include img_l_pc(1388, 660, 266);
 }
 
 @media only screen and (max-width: 1440px) {
@@ -153,9 +153,9 @@
 @media screen and (max-width: 767px) {
   .section1 {
     width: 100vw;
-    min-height: sizem(604);
-    max-height: sizem(900);
-    height:sizem(900);
+    min-height: sizem(400);
+    max-height: sizem(812);
+    height:sizem(600);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -163,34 +163,25 @@
 
   .bg-img {
     width: sizem(375);
-    height:auto;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: auto;
+    left: 0;bottom: sizem(200);
     display: block;
     object-fit: cover;
     margin-top: 0;
 
     &:nth-child(1) {
-      position: relative;
+      position: absolute;
     }
   }
 
   .title {
-    @include div_l_m(147, 47, 460, 43);
+    @include div_l_m(147, 47, 180, 114);
     font-size: sizem(32);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(5.02);
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
   }
 
   .subtitle {
-    @include div_l_m(64, 22, 436, 43);
+    @include div_l_m(64, 22, 160, 156);
     font-size: sizem(15);
     font-weight: 500;
     font-stretch: normal;
@@ -224,7 +215,7 @@
     left: 0;
     right: 0;
     margin: 0 auto;
-    top: sizem(600) !important;
+    top: sizem(340) !important;
   }
   .mask {
     width: 100%;
@@ -315,8 +306,8 @@ export default {
       isMobile,
       isTablet,
       currentIndex: 0,
-      imgWidth: 451,
-      imgHeight: 393,
+      imgWidth: window.innerWidth * 0.234,
+      imgHeight:  window.innerWidth * 0.2,
       slideList: [
         {
           img: require('../works/1/1.jpg'),

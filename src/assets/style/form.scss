@@ -30,7 +30,7 @@
   width: 100% !important;
   height: 70px !important;
   line-height: 48px !important;
-  font-size: 20px !important;
+  font-size:size(18) !important;
   border: $order_input_border !important;
   border-radius: 0 !important;
   background: $order_input_bg;
@@ -57,7 +57,7 @@
     border-radius: 0 !important;
     color: #fff;
     padding-top: 10px !important;
-    font-size: 20px !important;
+    font-size: size(18) !important;
     border: $order_input_border !important;
     background: $order_input_bg;
     font-family: $family3;
@@ -79,7 +79,7 @@
   p,
   h3,
   div {
-    font-size: 20px;
+    font-size: size(18);
     color: $order_check_desc_color;
     font-weight: 1100;
   }
@@ -95,7 +95,7 @@
   height: 54px !important;
   // opacity: 0 !important;
   border-radius: 0 !important;
-  font-size: 20px !important;
+  font-size: size(18) !important;
   font-weight: bold !important;
   letter-spacing: 3px;
   text-align: justify;
@@ -153,13 +153,26 @@
 @media only screen and (max-width: 767px) {
   .el-input__inner {
     width: 100% !important;
+    font-size:sizem(15) !important;
+  }
+  .el-checkbox__label {
+    p,
+    h3,
+    div {
+      font-size: sizem(15);
+    }
+  
+    span {
+      color: $order_check_span_color;
+      text-decoration: underline;
+    }
   }
 
   .el-textarea .el-textarea__inner {
     width: 100% !important;
     height: 120px !important;
+      font-size:sizem(15) !important;
   }
-
   .el-select {
     margin-left: 0;
     width: 100%;
@@ -179,6 +192,7 @@
     width: 100% !important;
     font-size: 16px !important;
     margin: 10px auto 20px auto !important;
+    font-size:sizem(15) !important;
   }
 
   .el-date-editor.el-input {

@@ -49,7 +49,7 @@
 
 .section2 {
   width: size(1920);
-  height: size(792);
+  height: size(780);
   overflow: hidden;
   position: relative;
   background: #fff;
@@ -72,46 +72,46 @@
 
 .title {
   @include div_r_pc(346, 112, 4, 787);
-  font-size: size(75.5);
+  font-size: size(60);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(15.02);
+  letter-spacing:0.2em;
   text-align: center;
   color: #606060;
   white-space: nowrap;
 }
 
 .subtitle {
-  @include div_r_pc(630, 55, 133, 645);
-  font-size: size(34);
+  @include div_r_pc(630, 55, 100, 645);
+  font-size: size(25);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.1;
-  letter-spacing: size(-1.85);
+  line-height: 1.6;
+  letter-spacing:0.02em;
   text-align: center;
   color: #5d5d5d;
   white-space: nowrap;
 
   span {
-    font-size: size(37);
+    font-size: size(27);
     color: #ff8200;
   }
 }
 
 .btn {
-  @include div_r_pc(182, 48, 689, 869);
+  @include div_r_pc(182, 48, 620, 869);
   background-color: #565656;
   cursor: pointer;
-  text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 0 0.3em rgba(0, 0, 0, 0.8);
   font-size: size(23.8);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(3.74);
+  letter-spacing: 0.16em;
   text-align: center;
   color: #fffcfd;
   transition: all 0.3s;
@@ -122,7 +122,7 @@
 
 .imgs {
   width: size(1386);
-  top: size(239);
+  top: size(200);
   position: absolute;
   margin: 0 auto;
   left: 0;
@@ -210,50 +210,22 @@
   }
 
   .title {
-    @include div_r_m(128, 41, 72, 124);
+    @include div_r_m(375, 41, 72, 0);
     font-size: sizem(28);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(5.02);
-    text-align: center;
-    color: #606060;
-    white-space: nowrap;
   }
 
   .subtitle {
-    @include div_r_m(274, 24, 120, 54);
+    @include div_r_m(375, 24, 120, 0);
     font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.1;
-    letter-spacing: normal;
-    text-align: center;
-    color: #5d5d5d;
-    white-space: nowrap;
 
     span {
       font-size: sizem(16);
-      color: #ff8200;
     }
   }
 
   .btn {
     @include div_r_m(140, 37, 476, 117);
-    background-color: #565656;
-    cursor: pointer;
-    text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
     font-size: sizem(18);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(3.74);
-    text-align: center;
-    color: #fffcfd;
-    transition: all 0.3s;
     &:hover {
       background-color: #444;
     }

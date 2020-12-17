@@ -46,22 +46,22 @@
 }
 
 .img {
-  @include div_l_pc(753, 487, 85, 914);
+  @include div_r_pc(753, 487, 85, 280);
   img {
     width: 100%;
   }
 
   .border {
-    width: 95%;
-    height: 90%;
+    width: calc(100% - 1.1vw);
+    height: calc(100% - 1.1vw);
     border: 3px solid #ff8200;
   }
 }
 
 .title1 {
-  @include div_l_pc(371, 142, 120, 300);
+  @include div_l_pc(371, 142, 160, 300);
   font-size: size(34);
-  font-weight: normal;
+  font-weight: 700;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.35;
@@ -72,8 +72,8 @@
 }
 
 .title2 {
-  @include div_l_pc(614, 142, 278, 300);
-  font-size: size(34);
+  @include div_l_pc(614, 142, 320, 300);
+  font-size: size(30);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -85,14 +85,14 @@
 }
 
 .subtitle {
-  @include div_l_pc(614, 142, 330, 300);
-  font-size: size(24);
+  @include div_l_pc(530, 142, 370, 300);
+  font-size: size(20);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.92;
   letter-spacing: size(4.78);
-  text-align: left;
+  text-align: justify;
   color: #606060;
 }
 

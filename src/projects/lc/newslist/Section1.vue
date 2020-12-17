@@ -4,7 +4,7 @@
     <div class="subtitle">
       News
     </div>
-    <img src="../news/s1/top.png" alt="" class="bg-img" v-if="isPC">
+    <img src="../news/s1/top.jpg" alt="" class="bg-img" v-if="isPC">
     <img src="../news/s1/top_m.jpg" alt="" class="bg-img" v-if="isMobile">
   </div>
 </template>
@@ -14,7 +14,7 @@
 
 .section1 {
   width: size(1920);
-  height: size(740);
+  height: size(640);
   // overflow: hidden;
   position: static;
   background: #fff;
@@ -36,28 +36,28 @@
 }
 
 .title {
-  @include div_l_pc(346, 112, 237, 364);
-  font-size: size(75.5);
+  @include div_l_pc(346, 112, 187, 370);
+  font-size: size(60);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
   letter-spacing: size(15.02);
-  text-align: center;
+  text-align: left;
   color: #ffffff;
   white-space: nowrap;
   z-index: 10;
 }
 
 .subtitle {
-  @include div_l_pc(160, 55, 190, 340);
-  font-size: size(37.3);
+  @include div_l_pc(346, 55, 150, 370);
+  font-size: size(30);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
   letter-spacing: normal;
-  text-align: center;
+  text-align: left;
   color: #ffffff;
   white-space: nowrap;
   z-index: 10;
@@ -84,9 +84,9 @@
 @media screen and (max-width: 767px) {
   .section1 {
     width: 100vw;
-    min-height: sizem(604);
+    min-height: sizem(400);
     max-height: sizem(812);
-    height: 100vh;
+    height:sizem(400);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -94,21 +94,20 @@
 
   .bg-img {
     width: sizem(375);
-    height: 100%;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: auto;
+    left: 0;bottom: sizem(0);
     display: block;
     object-fit: cover;
     margin-top: 0;
 
     &:nth-child(1) {
-      position: relative;
+      position: absolute;
     }
   }
 
   .title {
-    @include div_l_m(147, 47, 460, 43);
+    @include div_l_m(147, 47, 180, 114);
     font-size: sizem(32);
     font-weight: 500;
     font-stretch: normal;
@@ -121,7 +120,7 @@
   }
 
   .subtitle {
-    @include div_l_m(64, 22, 436, 35);
+    @include div_l_m(64, 22, 160, 156);
     font-size: sizem(15);
     font-weight: 500;
     font-stretch: normal;

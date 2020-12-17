@@ -15,7 +15,7 @@
 @import '@/assets/style/function.scss';
 .section1 {
   width: size(1920);
-  height: size(942);
+  height: size(750);
   overflow: hidden;
   position: relative;
   background: #fff;
@@ -37,12 +37,12 @@
 }
 
 .title {
-  @include div_l_pc(347, 112, 443, 640);
-  font-size: size(75.5);
+  @include div_l_pc(347, 112, 187, 640);
+  font-size: size(60);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
+  line-height: 1.6;
   letter-spacing: size(15.02);
   text-align: center;
   color: #ffffff;
@@ -50,20 +50,20 @@
 }
 
 .subtitle {
-  @include div_l_pc(160, 55, 405, 740);
-  font-size: size(37.3);
+  @include div_l_pc(160, 55, 150, 740);
+  font-size: size(30);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
+  line-height: 1.6;
   letter-spacing: normal;
   text-align: center;
   color: #ffffff;
 }
 
 .desc {
-  @include div_l_pc(522, 143, 565, 624);
-  font-size: size(35);
+  @include div_l_pc(522, 143, 290, 648);
+  font-size: size(25);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -89,9 +89,9 @@
 @media screen and (max-width: 767px) {
   .section1 {
     width: 100vw;
-    min-height: sizem(604);
+    min-height: sizem(400);
     max-height: sizem(812);
-    height: 100vh;
+    height:sizem(400);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -99,21 +99,20 @@
 
   .bg-img {
     width: sizem(375);
-    height: 100%;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: auto;
+    left: 0;bottom: 0;
     display: block;
     object-fit: cover;
     margin-top: 0;
 
     &:nth-child(1) {
-      position: relative;
+      position: absolute;
     }
   }
 
   .title {
-    @include div_l_m(147, 47, 417, 114);
+    @include div_l_m(147, 47, 180, 114);
     font-size: sizem(32);
     font-weight: 500;
     font-stretch: normal;
@@ -126,7 +125,7 @@
   }
 
   .subtitle {
-    @include div_l_m(64, 22, 400, 156);
+    @include div_l_m(64, 22, 160, 156);
     font-size: sizem(15);
     font-weight: 500;
     font-stretch: normal;
@@ -138,14 +137,9 @@
   }
 
   .desc {
-    @include div_l_m(200, 51, 490, 88);
+    @include div_l_m(375, 51, 240, 0);
     font-size: sizem(17);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(3.38);
-    text-align: left;
+    text-align: center;
     color: #ff8200;
     white-space: nowrap;
 

@@ -37,7 +37,7 @@
 
 .section2 {
   width: size(1920);
-  height: size(1155);
+  height: size(900);
   overflow: hidden;
   position: relative;
   background: #fff;
@@ -145,8 +145,8 @@ right:0;bottom: size(370);position: absolute;
 
 /* Swipe */
 .swipe {
-  width: size(1252);
-  height: size(1081);
+  width: size(1244);
+  height: size(700);
   top: size(0);
   left: size(0);
   object-fit: cover;
@@ -591,6 +591,10 @@ export default {
         },
         {
           img: require('../works/1/5.jpg'),
+          // name: '台北101',
+        },
+        {
+          img: require('../works/1/6.jpg'),
           // name: '台北101',
         },
       ],

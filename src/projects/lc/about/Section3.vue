@@ -33,7 +33,7 @@
 
 .section3 {
   width: size(1920);
-  height: size(1500);
+  height: size(1150);
   overflow: hidden;
   position: relative;
   background-color: #fff;
@@ -57,7 +57,7 @@
 .title {
   @include div_l_pc(1321, 121, 0, 302);
   font-size: size(42.5);
-  font-weight: normal;
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.5;
@@ -68,8 +68,8 @@
 }
 
 .subtitle {
-  @include div_l_pc(1321, 121, 80, 302);
-  font-size: size(34);
+  @include div_l_pc(1321, 121, 70, 302);
+  font-size: size(25);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -81,8 +81,8 @@
 }
 
 .swiper-container {
-  width: size(1321);
-  top: size(200);
+  width: size(1250);
+  top: size(160);
 }
 
 .item-img {width:100%;
@@ -90,9 +90,9 @@
 }
 
 .title2 {
-  @include div_l_pc(1321, 121, 890, 302);
-  font-size: size(42.5);
-  font-weight: normal;
+  @include div_l_pc(1321, 121, 790, 302);
+  font-size: size(35);
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.5;
@@ -103,29 +103,32 @@
 }
 
 .subtitle2 {
-  @include div_l_pc(1321, 121, 960, 302);
-  font-size: size(34);
+  @include div_l_pc(1321, 121, 840, 302);
+  font-size: size(25);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.44;
-  letter-spacing: size(6.77);
+  letter-spacing: 0.1em;
   text-align: center;
   color: #ff8200;
   white-space: nowrap;
 }
 
 .desc {
-  @include div_l_pc(1321, 121, 1160, 302);
-  font-size: size(34);
+  @include div_l_pc(1250, 121, 900, 335);
+
+  font-size: size(18);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.44;
-  letter-spacing: size(6.77);
+  line-height: 1.8;
+  padding-top: 1.3em;
+  letter-spacing:0.2em;
   text-align: center;
   color: #606060;
   white-space: nowrap;
+  &::before{content: "";width: 100%; height: 1px;background: #ff8200;position: absolute;top: 0;left: 0;}
 }
 .swiper-container{overflow: initial;position: relative;
 &::after,
@@ -151,9 +154,9 @@
 @media screen and (max-width: 767px) {
   .section3 {
     width: 100vw;
-    min-height: sizem(935);
-    max-height: sizem(812);
-    height: sizem(935);
+    min-height:  sizem(850);
+    max-height: sizem(850);
+    height:sizem(850);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -175,28 +178,13 @@
   }
 
   .title {
-    @include div_l_m(212, 41, 0, 82);
+    @include div_l_m(375, 41, 0, 0);
     font-size: sizem(28);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: sizem(6.77);
-    text-align: center;
-    color: #606060;
-    white-space: nowrap;
   }
 
   .subtitle {
     @include div_l_m(310, 121, 60, 33);
     font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.44;
-    letter-spacing: sizem(2.77);
-    text-align: center;
-    color: #ff8200;
     white-space: normal;
   }
 
@@ -237,14 +225,14 @@
   }
 
   .desc {
-    @include div_l_m(310, 144, 770, 32);
+    @include div_l_m(310, 144, 665, 32);
     font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.44;
     letter-spacing: sizem(2.77);
-    text-align: left;
+    text-align: justify;
     color: #606060;
     white-space: normal;
   }

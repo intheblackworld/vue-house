@@ -61,7 +61,7 @@
 
 .section3 {
   width: size(1920);
-  height: size(904);
+  height: size(750);
   overflow: hidden;
   position: relative;
   background-image: linear-gradient(
@@ -89,43 +89,43 @@
 }
 
 .title {
-  @include div_l_pc(346, 112, 64, 287);
-  font-size: size(75.5);
+  @include div_l_pc(346, 112, 104, 287);
+  font-size: size(60);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(15.02);
+  letter-spacing:0.2em;
   text-align: left;
   color: #606060;
   white-space: nowrap;
 }
 
 .subtitle {
-  @include div_l_pc(437, 142, 72, 726);
-  font-size: size(34);
+  @include div_l_pc(437, 142, 108, 600);
+  font-size: size(25);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.44;
-  letter-spacing: size(6.77);
+  line-height: 1.4;
+  letter-spacing:0.02em;
   text-align: left;
   color: #ff8200;
   white-space: nowrap;
 }
 
 .imgs {
-  width: size(1623);
-  top: size(346);
+  width: size(1400);
+  top: size(280);
   position: absolute;
   margin: 0 auto;
   left: 0;
   right: 0;
   .img {
-    width: size(315);
-    height: size(315);
+    width: size(270);
+    height: size(270);
     position: relative;
-    border-radius: 999px;
+    border-radius: 100%;
     overflow: hidden;
     box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.48);
     cursor: pointer;
@@ -156,9 +156,9 @@
     width: 100%;
     height: 100%;
    // box-shadow: inset 0 0 0 10px #fff;
-    border: 10px solid #FFF;
-    border-radius: 999px;
-    font-size: size(57.7);
+    border: size(10) solid #FFF;
+    border-radius: 100%;
+    font-size: size(48);
     font-weight: 900;
     font-stretch: normal;
     font-style: normal;
@@ -174,8 +174,8 @@
     right: 0;
     width: 100%;
     height: 100%;
-    border-radius: 999px;
-    border: 10px solid #fe8100;
+    border-radius: 100%;
+    border: size(10) solid #fe8100;
   }
 }
 
@@ -208,7 +208,7 @@
     width: 100vw;
     min-height: sizem(604);
     max-height: sizem(812);
-    height: 100vh;
+    height:sizem(660);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -230,29 +230,15 @@
   }
 
   .title {
-    @include div_r_m(130, 41, 23, 115);
+    @include div_r_m(375, 41, 23, 0);
     font-size: sizem(28);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(5.02);
-    text-align: left;
-    color: #606060;
-    white-space: nowrap;
+    text-align: center;
   }
 
   .subtitle {
-    @include div_r_m(176, 74, 70, 99);
+    @include div_r_m(375, 74, 70, 0);
     font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.44;
-    letter-spacing: sizem(2.77);
-    text-align: left;
-    color: #ff8200;
-    white-space: nowrap;
+    text-align: center;
   }
 
   .imgs {
@@ -266,11 +252,6 @@
     .img {
       width: sizem(150);
       height: sizem(150);
-      position: relative;
-      border-radius: 999px;
-      overflow: hidden;
-      box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.48);
-
       &:nth-child(1) {
         display: inline-block;
         margin: 0 sizem(15);
@@ -307,8 +288,9 @@
       width: 100%;
       height: 100%;
     //  box-shadow: inset 0 0 0 10px #fff;
-      border-radius: 999px;
+     // border-radius: 999px;
       font-size: sizem(26);
+      border: sizem(7) solid #FFF;
       font-weight: 900;
       font-stretch: normal;
       font-style: normal;
@@ -319,13 +301,7 @@
     }
 
     .border-orange {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      //box-shadow: inset 0 0 0 7px #fe8100;
-      border-radius: 999px;
+    border: sizem(7) solid #fe8100;
     }
   }
 

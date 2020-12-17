@@ -20,7 +20,7 @@
       <img src="../index/s5/s.png" alt="" class="shadow">
     </div>
     <div :class="`section2 ${(currentIndex === 0 || currentIndex === 2) ? 'show' : ''}`">
-      <img src="./s1/01.jpg" alt="" class="img">
+      <img src="../works/2/1.jpg" alt="" class="img">
       <div class="border-container relative">
         <div class="title-2">
           用<span>真心</span>打造住宅，用<span>真情</span>構築城市
@@ -83,7 +83,7 @@
 
 .section1 {
   width: size(1920);
-  height: size(1250);
+  height: size(800);
   // overflow: hidden;
   position: static;
   background: #fff;
@@ -105,28 +105,28 @@
 }
 
 .title-1 {
-  @include div_l_pc(346, 112, 237, 364);
-  font-size: size(75.5);
+  @include div_l_pc(346, 112, 187, 370);
+  font-size: size(60);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
   letter-spacing: size(15.02);
-  text-align: center;
+  text-align: left;
   color: #ffffff;
   white-space: nowrap;
   z-index: 10;
 }
 
 .subtitle {
-  @include div_l_pc(160, 55, 190, 370);
-  font-size: size(37.3);
+  @include div_l_pc(346, 55, 150, 370);
+  font-size: size(30);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
   letter-spacing: normal;
-  text-align: center;
+  text-align: left;
   color: #ffffff;
   white-space: nowrap;
   z-index: 10;
@@ -143,7 +143,7 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-  top: size(700) !important;
+  top: size(350) !important;
 }
 
 .carousel-3d-item {
@@ -193,7 +193,7 @@
 }
 
 .shadow {
-  @include img_l_pc(1388, 1080, 266);
+  @include img_l_pc(1388, 660,266);
 }
 
 .section2 {
@@ -212,24 +212,9 @@
     height: size(1500);
   }
 }
-
-.bg-img {
-  width: size(1920);
-  height: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  object-fit: cover;
-  margin-top: 0;
-  &:nth-child(1) {
-    position: relative;
-  }
-}
-
 .border-container {
   width: size(1637);
-  height: size(2160);
+  height: size(1800);
   margin: size(50) auto size(75);
   border: 3px solid #ff8200;
 }
@@ -244,7 +229,7 @@
   width: size(700);
   margin: 0 auto;
   margin-top: size(-30);
-  font-size: 34px;
+  font-size: size(34);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -261,25 +246,26 @@
 }
 
 .img {
-  @include img_l_pc(1252, 117, 0);
+  @include img_l_pc(1244, 117, 0);
+  height: size(700);
   z-index: 2;
 }
 
 .s-title {
-  @include div_r_pc(147, 47, 227, 222);
+  @include div_r_pc(515, 47, 170, 10);
   font-size: size(32);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
   letter-spacing: size(6.37);
-  text-align: left;
+  text-align: center;
   color: #ff8200;
   white-space: nowrap;
 }
 
 .content-title {
-  @include div_r_pc(391, 63, 470, 76);
+  @include div_r_pc(391, 63, 300, 76);
   font-size: size(42.5);
   font-weight: bold;
   font-stretch: normal;
@@ -292,7 +278,7 @@
 }
 
 .content-desc {
-  @include div_r_pc(463, 100, 550, 0);
+  @include div_r_pc(463, 100, 400, 0);
   font-size: size(20);
   font-weight: normal;
   font-stretch: normal;
@@ -310,7 +296,7 @@
 }
 
 .btn {
-  @include div_r_pc(200, 40, 850, 260);
+  @include div_r_pc(200, 40, 700, 260);
   font-size: size(20);
   font-weight: normal;
   font-stretch: normal;
@@ -324,7 +310,7 @@
 
 .video {
   cursor: pointer;
-  @include div_r_pc(1343, 762, 1292, 150);
+  @include div_r_pc(1343, 762, 900, 150);
 }
 
 .rb {
@@ -352,31 +338,31 @@
 @media screen and (max-width: 767px) {
   .section1 {
     width: 100vw;
-    min-height: sizem(604);
-    max-height: sizem(900);
-    height: sizem(900);
+    min-height: sizem(400);
+    max-height: sizem(812);
+    height:sizem(600);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
+    position: relative;
   }
 
   .bg-img {
     width: sizem(375);
-    height: auto;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: auto;
+    left: 0;bottom: sizem(200);
     display: block;
     object-fit: cover;
     margin-top: 0;
 
     &:nth-child(1) {
-      position: relative;
+      position: absolute;
     }
   }
 
   .title-1 {
-    @include div_l_m(147, 47, 417, 114);
+    @include div_l_m(147, 47, 180, 114);
     font-size: sizem(32);
     font-weight: 500;
     font-stretch: normal;
@@ -389,7 +375,7 @@
   }
 
   .subtitle {
-    @include div_l_m(64, 22, 400, 156);
+    @include div_l_m(64, 22, 160, 156);
     font-size: sizem(15);
     font-weight: 500;
     font-stretch: normal;
@@ -423,7 +409,7 @@
     left: 0;
     right: 0;
     margin: 0 auto;
-    top: sizem(600) !important;
+    top: sizem(340) !important;
   }
   .mask {
     width: 100%;
@@ -505,7 +491,7 @@
       height: sizem(550);
     }
   }
-
+/*
   .bg-img {
     width: sizem(375);
     height: 100%;
@@ -520,19 +506,24 @@
       position: relative;
     }
   }
-
+*/
   .border-container {
     width: sizem(355);
-    height: sizem(1027);
+    height: sizem(950);
     margin: sizem(40) auto sizem(30);
     border: 3px solid #ff8200;
   }
+.short {
+  .border-container {
+    height: sizem(450);
+  }
+}
 
   .title-2 {
     width: sizem(314);
     margin: 0 auto;
-    margin-top: sizem(-30);
-    font-size: sizem(20);
+    margin-top: sizem(-20);
+    font-size: sizem(18);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -549,38 +540,32 @@
   }
 
   .img {
-    @include img_l_m(340, 60, 0);
+    @include img_l_m(375, 70, 0);
+  height: sizem(211);
     z-index: 2;
   }
 
   .s-title {
-    @include div_r_m(130, 41, 341, 123);
+    @include div_r_m(375, 41, 280, 0);
     font-size: sizem(28);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.2;
     letter-spacing: sizem(5.37);
-    text-align: left;
+    text-align: center;
     color: #ff8200;
     white-space: nowrap;
   }
 
   .content-title {
-    @include div_l_m(258, 41, 407, 23);
+    @include div_l_m(258, 41, 360 ,23);
     font-size: sizem(28);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(2.8);
-    text-align: left;
-    color: #606060;
     white-space: nowrap;
   }
 
   .content-desc {
-    @include div_r_m(310, 260, 476, 23);
+    @include div_l_m(310, 260, 410,23);
     font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
@@ -598,7 +583,7 @@
   }
 
   .btn {
-    @include div_r_m(150, 40, 700, 113);
+    @include div_r_m(150, 40, 600, 113);
     font-size: sizem(23);
     font-weight: normal;
     font-stretch: normal;
@@ -612,7 +597,7 @@
 
   .video {
     cursor: pointer;
-    @include div_r_m(320, 181, 782, 17);
+    @include div_r_m(320, 181, 700, 17);
   }
 
   .rb {
@@ -646,8 +631,8 @@ export default {
       isMobile,
       isTablet,
       currentIndex: 0,
-      imgWidth: 451,
-      imgHeight: 393,
+      imgWidth: window.innerWidth * 0.234,
+      imgHeight:  window.innerWidth * 0.2,
       slideList: [
         /*{
           img: require('../works/1/1.jpg'),

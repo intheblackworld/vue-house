@@ -37,8 +37,8 @@
 }
 
 .title {
-  @include div_l_pc(1285, 112, 200, 320);
-  font-size: size(34);
+  @include div_l_pc(1285, 112, 200, 280);
+  font-size: size(30);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -50,14 +50,14 @@
 }
 
 .subtitle {
-  @include div_l_pc(1285, 54, 260, 320);
-  font-size: size(24);
+  @include div_l_pc(1285, 54, 260, 280);
+  font-size: size(20);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.7;
-  letter-spacing: size(4.78);
-  text-align: left;
+  letter-spacing:0.2em;
+  text-align: justify;
   color: #ffffff;
   white-space: nowrap;
 }
@@ -122,7 +122,7 @@
     font-style: normal;
     line-height: 1.7;
     letter-spacing: sizem(2.58);
-    text-align: left;
+    text-align: justify;
     color: #ffffff;
     white-space: normal;
   }

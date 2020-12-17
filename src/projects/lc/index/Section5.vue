@@ -55,7 +55,7 @@
 
 .section5 {
   width: size(1920);
-  height: size(1396);
+  height:auto;
   // overflow: hidden;
   position: static;
   background: #fff;
@@ -111,11 +111,10 @@
 
 .carousel-3d-container {
   z-index: 3 !important;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  top: size(500) !important;
+  //position: absolute;
+  margin:0 auto size(500);
+  top: size(500);
+
 }
 
 .carousel-3d-item {
@@ -165,16 +164,18 @@
 }
 
 .shadow {
-  @include img_l_pc(1388, 830, 266);
+  //@include img_l_pc(1388, 770, 266);
+  width: size(1380);
+  margin:size(-70) auto size(30);
 }
 
 .info {
   width: size(1244);
   //height: 276px;
-  position: absolute;
+ // position: absolute;
   left: 0;
   right: 0;
-  margin: 0 auto;
+  margin: 0 auto size(50);
   top: size(950);
   border-top: 1px solid currentColor;
   border-bottom: 1px solid currentColor;
@@ -232,31 +233,15 @@
   }
 
   .title {
-    @include div_l_m(64, 22, 161, 117);
+    @include div_l_m(375, 22, 161, 0);
     font-size: sizem(28);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(5.02);
     text-align: center;
-    color: #ffffff;
-    white-space: nowrap;
-    z-index: 10;
   }
 
   .subtitle {
-    @include div_l_m(64, 22, 139, 150);
+    @include div_l_m(375, 22, 139, 0);
     font-size: sizem(15);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: normal;
     text-align: center;
-    color: #ffffff;
-    white-space: nowrap;
-    z-index: 10;
   }
 
   .s-bg {
@@ -307,7 +292,7 @@
 
   .info {
     width: sizem(310);
-    height: sizem(247);
+    height: auto;
     position: absolute;
     left: 0;
     right: 0;
@@ -361,16 +346,15 @@ export default {
       isMobile,
       isTablet,
       currentIndex: 0,
-      imgWidth: 451,
-      imgHeight: 393,
+      imgWidth: 360,
+      imgHeight: 300,
       slideList: [
         {
           img: require('../works/1/1.jpg'),
           alt: '',
           name: ' 立瑾醞',
           desc:'<b>基地位置：</b>三重區神農街433號～439號<br><b>完工時間：</b>2020年<br><b>規劃樓層：</b>地上12層，地下2層<br><b>個案特色：</b><br>◆  校園第一排、河畔第一境<br>◆  結合陽光、空氣、水的絕美建築<br>◆ 低建蔽率，高公共生活空間',
-        },
-        /*
+        },/*
         {
           img: require('../works/2/1.jpg'),
           alt: '',
@@ -382,7 +366,8 @@ export default {
           alt: '',
           name: ' 鳳福段',
           desc:'<b>基地位置：</b>三重區神農街433號～439號<br>完工時間： 2020年<br>規劃樓層： 地上12層，地下2層<br>個案特色：<br>◆  校園第一排、河畔第一境<br>◆  結合陽光、空氣、水的絕美建築<br>◆ 低建蔽率，高公共生活空間',
-        },*/
+        },
+        */
       ],
     }
   },

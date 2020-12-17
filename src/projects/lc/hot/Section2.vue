@@ -34,7 +34,7 @@
 
 .section2 {
   width: size(1920);
-  height: size(2360);
+  height:auto;
   overflow: hidden;
   position: relative;
   background: #fff;
@@ -57,8 +57,8 @@
 
 .border-container {
   width: size(1637);
-  height: size(2160);
-  margin: size(50) auto size(75);
+  height:auto;
+  margin: size(50) auto 0;
   border: 3px solid #ff8200;
 }
 
@@ -88,7 +88,7 @@
 }
 
 .s-title {
-  @include div_r_pc(147, 47, 227, 222);
+  @include div_r_pc(140, 47, 227, 222);
   font-size: size(32);
   font-weight: 500;
   font-stretch: normal;

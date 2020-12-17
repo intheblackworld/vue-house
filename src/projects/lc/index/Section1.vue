@@ -8,7 +8,7 @@
     </div>
     <img src="./s1/bg.png" alt="bg" class="bg-img bg1" v-if="isPC">
     <img src="./s1/bg_m.png" alt="bg_m" class="bg-img bg1" v-if="isMobile">
-    <img src="./s1/2.png" alt="2" class="bg-img">
+    <img src="./s1/2.png" alt="2" class="bg-img bg2">
     <h1 class="title">立瑾建築機構</h1>
     <h1 class="desc">
       百年建築 將心構築<br /><br />
@@ -25,6 +25,9 @@
 
 .section1 {
   width: size(1920);
+  height: 100vh;
+  min-height:size(900);
+  max-height:size(1080);
   overflow: hidden;
   position: relative;
   background: #fff;
@@ -55,6 +58,14 @@ background: linear-gradient(to bottom,  rgba(29,125,209,1) 0%,rgba(20,135,241,1)
   margin-top: 0;
   &.bg1 {
     position: relative;
+  }
+  &.bg2 {
+  width:auto;
+  height:calc(50% - 5vw);
+  top:auto;
+  left:auto;
+  bottom:10%;
+  right: 0;
   }
 }
 
@@ -125,6 +136,16 @@ background: linear-gradient(to bottom,  rgba(29,125,209,1) 0%,rgba(20,135,241,1)
 .cloud2{@include img_l_m(460, 80, 0);}  
 .cloud3{@include img_l_m(440, 200, 0);}  
 .cloud4{@include img_l_m(510, 410, 0);}  
+}
+.bg-img {
+  &.bg2 {
+  width:auto;
+  height:sizem(150);
+  top:auto;
+  left:auto;
+  bottom:0%;
+  right: -30%;
+  }
 }
 
 

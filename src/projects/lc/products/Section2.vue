@@ -2,7 +2,7 @@
   <div class="section2">
     <transition-group name="swipe-fade" mode="out-in">
       <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`bg-img absolute`">
-        <img :src="slide.img" alt="">
+        <img :src="slide.img" alt="" class="bg-img">
       </div>
     </transition-group>
     <div :class="slideList[slideIndex].class">
@@ -29,16 +29,22 @@
 
 .section2 {
   width: size(1920);
-  height: size(1080);
+  height: calc(100vh -  3.6458333333vw);
+  min-height: size(840);
+  max-height: size(1080);
   overflow: hidden;
   position: relative;
   background: #fff;
   background-size: auto;
+  &::before{content:"";width: 100%;height:16%;position: absolute;
+  top: 0;left: 0;background: #FFF;z-index: 4;
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,.95) 20%,rgba(255,255,255,0.7) 44%,rgba(255,255,255,0) 100%);
+  }
 }
 
 .bg-img {
   width: size(1920);
-  height: auto;
+  height:100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -86,7 +92,7 @@
     #000000 88%
   );
   width: size(267);
-  height: size(1080);
+  height:100%;
   z-index: 3;
   position: absolute;
   top: 0;
@@ -136,6 +142,10 @@
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
+  &::before{
+  top: auto;bottom: 32.5vw;
+  z-index: 1;
+  }
   }
 
   .bg-img {
@@ -169,7 +179,8 @@
   &2,
   &3,
   &4,
-  &5{width: sizem(310);left:sizem(33);color: #606060;}
+  &5{width: sizem(310);left:sizem(33);color: #606060;
+  z-index: 5;}
 }
 .title {
   font-size: sizem(25);display: none;

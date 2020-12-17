@@ -149,8 +149,9 @@ export default {
 }
 
 .nav {justify-content: space-between;
-  min-width: 1280px;
-  width: 1280px;
+  //min-width: 1280px;
+  width: size(1400);
+  max-width: 100%;
   height: 100%;
   margin: 0 auto;
   display: flex;
@@ -315,7 +316,6 @@ export default {
     background-color: transparent !important;
     height: $nav_phone_height;
     //  background-color: #fff;
-    height: 60px;
     justify-content: center;
     &.min {
       .logo {
@@ -339,7 +339,7 @@ export default {
 
   .nav {
     position: static;
-    height: 60px;
+    height: 60px;width:100%;
   }
 
   .menu {

@@ -1,6 +1,6 @@
 <template>
   <div class="section1">
-    <img src="./s1/1.png" alt="" class="bg-img" v-if="isPC">
+    <img src="./s1/1.jpg" alt="" class="bg-img" v-if="isPC">
     <img src="./s1/1_m.png" alt="" class="bg-img" v-if="isMobile">
     <!-- <img src="./s1/2.png" alt="" class="bg-img"> -->
     <h1 class="title">關於立瑾</h1>
@@ -39,8 +39,8 @@
 }
 
 .title {
-  @include div_l_pc(347, 112, 160, 305);
-  font-size: size(75.5);
+  @include div_l_pc(347, 112, 187, 305);
+  font-size: size(60);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -52,8 +52,8 @@
 }
 
 .desc {
-  @include div_l_pc(570, 192, 294, 308);
-  font-size: size(34);
+  @include div_l_pc(570, 192, 290, 308);
+  font-size: size(25);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -66,47 +66,27 @@
     color: #fff;
   }
 }
-
-.ball1 {
-  @include div_l_pc(160, 160, 444, 304);
-  border-radius: 999px;
-  background-color: #fff;
-  font-size: size(51.9);
+.ball1,
+.ball2,
+.ball3{
+  font-size: size(40);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  // letter-spacing: size(10.32);
+  border-radius:100%;
   text-align: center;
   color: #ff8200;
+  background-color: #fff;
+  @include div_l_pc(160, 160, 370, 304);
 }
 
 .ball2 {
-  @include div_l_pc(160, 160, 444, 495);
-  border-radius: 999px;
-  background-color: #fff;
-  font-size: size(51.9);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  // letter-spacing: size(10.32);
-  text-align: center;
-  color: #ff8200;
+  left: size(495);
 }
 
 .ball3 {
-  @include div_l_pc(160, 160, 444, 683);
-  border-radius: 999px;
-  background-color: #fff;
-  font-size: size(51.9);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  // letter-spacing: size(10.32);
-  text-align: center;
-  color: #ff8200;
+  left: size(683);
 }
 
 @media only screen and (max-width: 1440px) {

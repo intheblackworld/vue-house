@@ -46,7 +46,7 @@ export default {
   box-shadow: 0 0 15vw #0009;
 }
 .content {
-  width: 686px;
+  width:size(700);
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -55,31 +55,31 @@ export default {
 }
 
 .title {
-  margin: 40px 0;
-  font-size: 60.5px;
+  margin:0.5em 0 0.0em 0;
+  font-size:size(50);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
-  letter-spacing: 6.05px;
+  line-height: 1.6;
+  letter-spacing:0.1em;
   text-align: left;
   color: $house_title_color;
 }
 
 .info {
-  margin-bottom: 55px;
+  margin-bottom: size(25);
 }
 
 .item {
-  font-size: size(23);
-  font-weight: bold;
+  font-size: size(18);
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
-  letter-spacing: 2.3px;
+  line-height: 2;
+  letter-spacing:0.1em;
   text-align: center;
   color: #ffffff;
-  margin-bottom: 12px;
+  //margin-bottom: 12px;
   //border-left: 4px solid $house_border_color;
   .label {
     font-size: 1em;

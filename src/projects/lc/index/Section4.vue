@@ -16,7 +16,7 @@
 
 .section4 {
   width: size(1920);
-  height: size(1400);
+  height: size(1100);
   overflow: hidden;
   position: relative;
   background-image: linear-gradient(
@@ -44,21 +44,21 @@
 }
 
 .title {
-  @include div_l_pc(346, 112, 234, 307);
-  font-size: size(75.5);
+  @include div_l_pc(346, 112, 64, 287);
+  font-size: size(60);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(15.02);
+  letter-spacing:0.2em;
   text-align: left;
   color: #606060;
   white-space: nowrap;
 }
 
 .subtitle {
-  @include div_l_pc(160, 54, 270, 667);
-  font-size: size(37.3);
+  @include div_l_pc(160, 54, 100, 600);
+  font-size: size(25);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -70,17 +70,17 @@
 }
 
 .img1 {
-  @include img_l_pc(276, 411, 206);
+  @include img_l_pc(270, 190, 287);
   cursor: pointer;
 }
 
 .img2 {
-  @include img_l_pc(276, 411, 515);
+  @include img_l_pc(270, 190, 597);
   cursor: pointer;
 }
 
 .img3 {
-  @include img_r_pc(1135, -50, 15);
+  @include img_r_pc(1000, -150, 15);
 }
 
 .btn {
@@ -121,7 +121,7 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-    min-height: sizem(1124);
+    min-height: sizem(1000);
     // max-height: sizem(812);
     // height: 100vh;
     // background-image: url('./mo/1/bg.png');
@@ -145,29 +145,16 @@
   }
 
   .title {
-    @include div_l_m(130, 40, 96, 123);
+    @include div_l_m(375, 40, 96, 0);
     font-size: sizem(28);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(5.02);
-    text-align: left;
-    color: #606060;
-    white-space: nowrap;
+    text-align: center;
   }
 
   .subtitle {
-    @include div_l_m(64, 21, 141, 155);
+    @include div_l_m(375, 21, 141, 0);
     font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.8;
-    letter-spacing: normal;
-    text-align: left;
-    color: #ff8200;
-    white-space: nowrap;
+    text-align: center;
+    
   }
 
   .img1 {

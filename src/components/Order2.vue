@@ -214,13 +214,14 @@ export default {
 .order-bg {
   // background-color: $order_bg_color;
   width: 100vw;
-  height: size(1357);
+  height:auto;
   background-image: $order_bg_image;
   background-repeat: repeat;
   position: relative;
   // background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 80% 0%;
+  overflow: hidden;
   font-family: $family3;
   input,
   textarea,
@@ -256,7 +257,7 @@ export default {
   }
 
   .order {
-    width: 1240px;
+    width: size(1440);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -265,15 +266,15 @@ export default {
   }
 
   .form-hint {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: size(0.2);
+    line-height:30px;
+    letter-spacing:0.02em;
     text-align: left;
     color: $order_subtitle_color;
-    margin-bottom: size(15);
+    margin-bottom: 5px;
   }
 
   .form {
@@ -285,11 +286,12 @@ export default {
     > .group {
       // flex: 1;
       align-items: flex-start;
+      &:nth-child(1){margin: 0 size(40) 0 0;}
     }
   }
 
   .group {
-    width: 580px;
+    flex: 1 1 auto;
     // height: 250px;
     margin-bottom: 40px;
 
@@ -324,8 +326,8 @@ export default {
     }
 
     label {
-      width: 92px;
-      font-size: 16px;
+      width: size(92);
+      font-size: size(16);
       opacity: 0.8;
       font-weight: bold;
       color: $order_input_label_color;
@@ -338,12 +340,12 @@ export default {
   }
 
   .control-desc {
-    font-size: 20px;
+    font-size: size(20);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: size(3.98);
+    line-height: 1.6;
+    letter-spacing: 0.02em;
     text-align: left;
     color: #ffffff;
 
@@ -358,6 +360,9 @@ export default {
     margin-bottom: 15px;
   }
 }
+.el-textarea .el-textarea__inner,
+.el-input__inner{
+    font-size: size(20) !important;}
 
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -407,7 +412,7 @@ export default {
       font-size: sizem(16);
     }
     .order {
-      width: 95% !important;
+      width: 90% !important;
       margin: 0 auto;
       padding: 0;
     }
@@ -441,6 +446,10 @@ export default {
       margin-top: 10px;
       margin-bottom: 10px;
     }
+
+  .control-desc {
+    font-size: sizem(15);
+  }
   }
 }
 </style>
