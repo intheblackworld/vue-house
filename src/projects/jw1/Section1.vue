@@ -89,8 +89,8 @@
 
 .title1 {
   //@include img_r_pc(433, 752, 709);
-  @include img_c(433, calc(50% + 10vw),size(778));
-  font-size: size(58);
+  @include img_c(190, calc(50% + 10vw),size(786));
+  font-size: size(62);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -103,8 +103,8 @@
 }
 
 .title2 {
-  @include img_c(433, calc(50% + 10vw),size(978));
-  font-size: size(58);
+  @include img_c(225, calc(50% + 10vw),size(1005));
+  font-size: size(62);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -118,8 +118,8 @@
 }
 
 .title3 {
-  @include img_c(512, calc(50% + 10vw),size(1290));
-  font-size: size(58);
+  @include img_c(512, calc(50% + 10vw),size(1260));
+  font-size: size(62);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -204,28 +204,40 @@
   }
 
   .title1 {
-    @include img_r_m(239, 348, 72);
+    @include img_r_m(105, 345, 197);
     font-size: sizem(32);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.2;
-    letter-spacing: sizem(3.2);
+  //  letter-spacing: sizem(3.2);
     text-align: left;
-    color: #248184;
     white-space: nowrap;
   }
 
   .title2 {
-    @include img_r_m(239, 391, 71);
+    @include img_r_m(110, 345, 71);
+    font-size: sizem(32);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+
+  //  letter-spacing: sizem(3.2);
+    text-align: left;
+    white-space: nowrap;
+    &::after{display: none;}
+  }
+
+  .title3 {
+    @include img_r_m(235, 392, 71);
     font-size: sizem(27);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.2;
-    letter-spacing: sizem(2);
+  //  letter-spacing: sizem(2);
     text-align: left;
-    color: #000;
     white-space: nowrap;
   }
 
