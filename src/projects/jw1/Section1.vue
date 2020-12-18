@@ -16,7 +16,7 @@
       2~3房
     </h1>
     <h1 class="title2" data-aos="fade" data-aos-delay="400">
-      22<b>．</b>35
+      22<b>．</b>35坪
     </h1>
     <h1 class="title3" data-aos="fade" data-aos-delay="600">
       公園首席 百米棟距
@@ -89,8 +89,8 @@
 
 .title1 {
   //@include img_r_pc(433, 752, 709);
-  @include img_c(190, calc(50% + 10vw),size(786));
-  font-size: size(62);
+  @include img_c(180, calc(50% + 10vw),size(786));
+  font-size: size(61);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -99,12 +99,13 @@
   text-align: left;
   color:  #000; 
   white-space: nowrap;
-  &::after{content: "";position: absolute;right: 0;right:0;width: 2px;height: 100%;background:#248184;}
+  &::after{content: "";position: absolute;right:0;top: 10%;
+  width: 2px;height: 80%;background:#248184;}
 }
 
 .title2 {
-  @include img_c(225, calc(50% + 10vw),size(1005));
-  font-size: size(62);
+  @include img_c(257, calc(50% + 10vw),size(987));
+  font-size: size(61);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -113,13 +114,14 @@
   text-align: left;
   color: #000; 
   white-space: nowrap;
-  b{color:#248184;}
-  &::after{content: "";position: absolute;right: 0;right:0;width: 2px;height: 100%;background:#248184;}
+  b{color:#248184;
+  letter-spacing:-0.3em;left: -0.15em;position: relative;}
+  &::after{content: "";position: absolute;right:0;top: 10%;width: 2px;height: 80%;background:#248184;}
 }
 
 .title3 {
   @include img_c(512, calc(50% + 10vw),size(1260));
-  font-size: size(62);
+  font-size: size(61);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
