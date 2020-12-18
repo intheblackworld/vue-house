@@ -85,7 +85,7 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-  top: size(350) !important;
+  top: size(450) !important;
 }
 
 .carousel-3d-item {
@@ -134,7 +134,7 @@
 }
 
 .shadow {
-  @include img_l_pc(1388, 660, 266);
+  @include img_l_pc(1100, 680,410);
 }
 
 @media only screen and (max-width: 1440px) {
@@ -155,7 +155,7 @@
     width: 100vw;
     min-height: sizem(400);
     max-height: sizem(812);
-    height:sizem(600);
+    height:sizem(550);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -165,7 +165,7 @@
     width: sizem(375);
     position: absolute;
     top: auto;
-    left: 0;bottom: sizem(200);
+    left: 0;bottom: sizem(150);
     display: block;
     object-fit: cover;
     margin-top: 0;
@@ -236,20 +236,9 @@
     border: 1px solid #fff;
     color: #fff;
     text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
-    font-size: sizem(51.9);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(10.32);
-    text-align: center;
-    color: #ffffff;
+    font-size: sizem(34);
+    letter-spacing: 0.05em;
   }
-
-  .shadow {
-    @include img_l_m(1388, 900, 266);
-  }
-
   .info {
     width: sizem(310);
     height: sizem(247);
@@ -306,8 +295,8 @@ export default {
       isMobile,
       isTablet,
       currentIndex: 0,
-      imgWidth: window.innerWidth * 0.234,
-      imgHeight:  window.innerWidth * 0.2,
+      imgWidth: window.innerWidth * 0.187,
+      imgHeight:  window.innerWidth * 0.156,
       slideList: [
         {
           img: require('../works/1/1.jpg'),
@@ -344,8 +333,8 @@ export default {
 
   mounted() {
     if (this.isMobile) {
-      this.imgWidth = window.screen.width * 0.75
-      this.imgHeight = window.screen.width * 0.75 * (272 / 312)
+      this.imgWidth = window.screen.width * 0.6
+      this.imgHeight = window.screen.width * 0.6 * (272 / 312)
     }
   },
 

@@ -20,11 +20,11 @@
       <img src="../index/s5/s.png" alt="" class="shadow">
     </div>
     <div :class="`section2 ${(currentIndex === 0 || currentIndex === 2) ? 'show' : ''}`">
-      <img src="../works/2/1.jpg" alt="" class="img">
       <div class="border-container relative">
         <div class="title-2">
           用<span>真心</span>打造住宅，用<span>真情</span>構築城市
         </div>
+        <img src="../works/2/1.jpg" alt="" class="img">
         <div class="s-title">
           現正熱銷
         </div>
@@ -43,16 +43,16 @@
         <div class="btn flex-c">
           官網預約
         </div>
-        <img src="./s1/youtube.jpg" alt="" class="video">
+       <!-- <img src="./s1/youtube.jpg" alt="" class="video">  -->
         <img src="./s1/rb.png" alt="" class="rb">
       </div>
     </div>
     <div :class="`section2 short ${(currentIndex === 1 || currentIndex === 3) ? 'show' : ''}`">
-      <img src="../works/3/1.jpg" alt="" class="img">
       <div class="border-container relative">
         <div class="title-2">
           用<span>真心</span>打造住宅，用<span>真情</span>構築城市
         </div>
+      <img src="../works/3/1.jpg" alt="" class="img">
         <div class="s-title">
           即將推出
         </div>
@@ -71,8 +71,8 @@
         <div class="btn flex-c">
           官網預約
         </div>
-        <img src="./s1/youtube.jpg" alt="" class="video">
-        <img src="./s1/rb.png" alt="" class="rb"> -->
+        <img src="./s1/youtube.jpg" alt="" class="video"> -->
+        <img src="./s1/rb.png" alt="" class="rb">
       </div>
     </div>
   </div>
@@ -143,7 +143,7 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-  top: size(350) !important;
+  top: size(450) !important;
 }
 
 .carousel-3d-item {
@@ -193,36 +193,32 @@
 }
 
 .shadow {
-  @include img_l_pc(1388, 660,266);
+  @include img_l_pc(1100, 680,410);
 }
 
 .section2 {
   width: size(1920);
-  height: size(2360);
+  //height: size(2360);
   overflow: hidden;
   position: relative;
   background: #fff;
   background-size: auto;
   display: none;
+  padding-bottom: size(200);
   &.show {
     display: block;
   }
-
+/*
   &.short {
     height: size(1500);
-  }
+  }*/
 }
 .border-container {
   width: size(1637);
-  height: size(1800);
+ // height: size(1800);
   margin: size(50) auto size(75);
   border: 3px solid #ff8200;
-}
-
-.short {
-  .border-container {
-    height: size(1300);
-  }
+  &::after{content: "";display: block;clear:both;}
 }
 
 .title-2 {
@@ -246,8 +242,11 @@
 }
 
 .img {
-  @include img_l_pc(1244, 117, 0);
+  //@include img_l_pc(1244, 117, 0);
   height: size(700);
+  margin: size(117) 0;
+  width: size(1244);
+  float: left;position: relative;left:size(-145);
   z-index: 2;
 }
 
@@ -340,7 +339,7 @@
     width: 100vw;
     min-height: sizem(400);
     max-height: sizem(812);
-    height:sizem(600);
+    height:sizem(550);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -351,7 +350,7 @@
     width: sizem(375);
     position: absolute;
     top: auto;
-    left: 0;bottom: sizem(200);
+    left: 0;bottom: sizem(150);
     display: block;
     object-fit: cover;
     margin-top: 0;
@@ -429,19 +428,10 @@
     border: 1px solid #fff;
     color: #fff;
     text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
-    font-size: sizem(51.9);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(10.32);
-    text-align: center;
-    color: #ffffff;
+    font-size: sizem(34);
+    letter-spacing: 0.05em;
   }
 
-  .shadow {
-    @include img_l_m(1388, 900, 266);
-  }
 
   .info {
     width: sizem(310);
@@ -479,45 +469,26 @@
 
   .section2 {
     width: 100vw;
-    min-height: sizem(1134);
-    max-height: sizem(812);
-    height: sizem(1134);
+   // min-height: sizem(1134);
+  //  max-height: sizem(812);
+   // height: sizem(1134);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
+    padding-bottom: sizem(50);
 
-    &.short {
+  /*  &.short {
       min-height: sizem(550);
       height: sizem(550);
-    }
+    }*/
   }
-/*
-  .bg-img {
-    width: sizem(375);
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    object-fit: cover;
-    margin-top: 0;
-
-    &:nth-child(1) {
-      position: relative;
-    }
-  }
-*/
   .border-container {
     width: sizem(355);
-    height: sizem(950);
+   //height: sizem(950);
     margin: sizem(40) auto sizem(30);
     border: 3px solid #ff8200;
+    padding:0 sizem(23) sizem(60) ;
   }
-.short {
-  .border-container {
-    height: sizem(450);
-  }
-}
 
   .title-2 {
     width: sizem(314);
@@ -540,32 +511,45 @@
   }
 
   .img {
-    @include img_l_m(375, 70, 0);
+   // @include img_l_m(375, 70, 0);
+  width: sizem(375);
   height: sizem(211);
     z-index: 2;
+    margin:sizem(25) 0;left:sizem(-36);
+    float:none;
   }
 
   .s-title {
-    @include div_r_m(375, 41, 280, 0);
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
     font-size: sizem(28);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
+    line-height: 1.6;
     letter-spacing: sizem(5.37);
     text-align: center;
     color: #ff8200;
     white-space: nowrap;
+    position: relative;
+    margin: 0 0 1em;
   }
 
   .content-title {
-    @include div_l_m(258, 41, 360 ,23);
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
     font-size: sizem(28);
     white-space: nowrap;
+    position: relative;
+    margin: 0 0 0.5em;
   }
 
   .content-desc {
-    @include div_l_m(310, 260, 410,23);
+    @include div_l_m(310, 260, 0,0);
     font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
@@ -574,6 +558,12 @@
     letter-spacing: sizem(0.75);
     text-align: left;
     color: #606060;
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    margin: 0 0 1.5em;
 
     span {
       font-size: sizem(15);
@@ -593,6 +583,11 @@
     text-align: left;
     background-color: #ff8200;
     color: #fff;
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
   }
 
   .video {
@@ -631,8 +626,8 @@ export default {
       isMobile,
       isTablet,
       currentIndex: 0,
-      imgWidth: window.innerWidth * 0.234,
-      imgHeight:  window.innerWidth * 0.2,
+      imgWidth: window.innerWidth * 0.187,
+      imgHeight:  window.innerWidth * 0.156,
       slideList: [
         /*{
           img: require('../works/1/1.jpg'),
@@ -685,8 +680,8 @@ export default {
 
   mounted() {
     if (this.isMobile) {
-      this.imgWidth = window.screen.width * 0.75
-      this.imgHeight = window.screen.width * 0.75 * (272 / 312)
+      this.imgWidth = window.screen.width * 0.60
+      this.imgHeight = window.screen.width * 0.60 * (272 / 312)
     }
     if (this.$route.query.index == 1) {
       this.goToSlide(0)

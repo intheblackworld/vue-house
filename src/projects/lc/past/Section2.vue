@@ -328,9 +328,9 @@ right:0;bottom: size(370);position: absolute;
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    min-height: sizem(604);
-    max-height: sizem(812);
-    height: 100vh;
+    min-height: sizem(0);
+    max-height:initial;
+    height: auto;
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -360,8 +360,8 @@ right:0;bottom: size(370);position: absolute;
   }
 .txt{
 width: sizem(310);
-right:sizem(22);bottom:auto;top:sizem(356);position: absolute;
-  color: #ff8100;
+right:sizem(0);bottom:auto;top:sizem(0);position: relative;
+  color: #ff8100;margin:sizem(50) sizem(0) sizem(0) sizem(40);
   text-align: justify;
   font-size: sizem(15);
   font-weight: normal;
@@ -369,6 +369,7 @@ right:sizem(22);bottom:auto;top:sizem(356);position: absolute;
   font-style: normal;
   line-height: 1.8;
   letter-spacing: 0.05em;
+  margin-bottom: sizem(50);;
   &::after{content: "";width:1px;display: block;
    height: calc(100% + 10vw);left: -3vw; right:auto;bottom: sizem(-5);position: absolute;
    background:#ff8100;}
@@ -409,9 +410,10 @@ right:sizem(22);bottom:auto;top:sizem(356);position: absolute;
     width: sizem(330);
     height: sizem(284);
     min-height: auto;
-    top: sizem(60);
+    top: sizem(40);
     left: sizem(22.5);
     object-fit: cover;
+    position: relative !important;
   }
 
   // begin
