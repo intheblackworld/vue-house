@@ -1,99 +1,13 @@
 <template>
   <div class="order-bg">
-    <!--<div class="order-top">
-       <div class="title-block">
-        <h3 class="title">{{order.title}}</h3>
-        <div class="subtitle">{{order.subTitle}}</div>
-      </div> 
-      <div
-        class="order-title"
-        v-html="order.title"
-      ></div>
-      <div
-        class="order-subtitle"
-        v-html="order.subTitle"
-      ></div>
-      <div class="order">
-        <div class="form">
-          <div class="group">
-            <div class="row">
-              <label>姓名<span>*</span></label>
-              <el-input
-                v-model="form.name"
-                placeholder
-              ></el-input>
-            </div>
-            <div class="row">
-              <label>手機<span>*</span></label>
-              <el-input
-                v-model="form.phone"
-                placeholder
-              ></el-input>
-            </div>
-            <div class="row">
-              <label>聯絡時間(起)</label>
-              <el-time-select
-                v-model="form.time_start"
-                :editable="false"
-                :picker-options="{
-                  start: '10:00',
-                  step: '01:00',
-                  end: '18:00',
-                }"
-              ></el-time-select>
-            </div>
-            <div class="row">
-              <label>聯絡時間(迄)</label>
-              <el-time-select
-                v-model="form.time_end"
-                :editable="false"
-                :picker-options="{
-                  start: '10:00',
-                  step: '01:00',
-                  end: '18:00',
-                }"
-              ></el-time-select>
-            </div> -->
-            <!-- <div class="row">
-              <label>想看房型</label>
-              <el-select v-model="form.house" placeholder>
-                <el-option
-                  v-for="city in ['甜蜜2房', '幸福3房', '都想看看']"
-                  :key="city"
-                  :label="city"
-                  :value="city"
-                  no-data-text=""
-                ></el-option>
-              </el-select>
-            </div>
-            <div class="row">
-              <label>E-mail</label>
-              <el-input v-model="form.email" placeholder></el-input>
-            </div>
-            <div class="row">
-              <label>居住城市</label>
-              <el-select v-model="form.city" placeholder>
-                <el-option
-                  v-for="city in cityList"
-                  :key="city.value"
-                  :label="city.label"
-                  :value="city.value"
-                  no-data-text="無數據"
-                ></el-option>
-              </el-select>
-            </div>
-            <div class="row">
-              <label>居住地區</label>
-              <el-select v-model="form.area" placeholder>
-                <el-option
-                  v-for="area in areaList"
-                  :key="area.value"
-                  :label="area.label"
-                  :value="area.value"
-                  no-data-text="請先選擇居住城市"
-                ></el-option>
-              </el-select>
-            </div>
+    <h3 class="order-title">{{order.title}}</h3>
+    <h3 class="order-subtitle">{{order.subTitle}}</h3>
+    <div class="order">
+      <div class="form">
+        <div class="group">
+          <div class="row">
+            <label>姓名</label>
+            <el-input v-model="form.name" placeholder></el-input>
           </div>
           <div class="row">
             <label>手機</label>
@@ -126,46 +40,11 @@
             </el-select>
           </div>
         </div>
-        <div class="control">
-          <el-checkbox v-model="checked">
-            <p>
-              本人知悉並同意
-              <span @click="showPolicyDialog">「個資告知事項聲明」</span>
-              內容
-            </p>
-          </el-checkbox>
-        </div> 
-        <div
-          style="margin: 0 auto;z-index:2;"
-          v-if="!isMobile"
-        >
-          <vue-recaptcha
-            :sitekey="info.recaptcha_site_key_v2"
-            @verify="isVerify = true"
-            :loadRecaptchaScript="true"
-          ></vue-recaptcha>
+        <div class="group">
+          <div class="row">
+            <el-input type="textarea" :rows="2" placeholder="請輸入您的留言 (選填)" v-model="form.msg"></el-input>
+          </div>
         </div>
-        <div
-          style="margin: 0 auto;z-index:2;"
-          v-if="isMobile"
-        >
-          <vue-recaptcha
-            :sitekey="info.recaptcha_site_key_v2"
-            @verify="isVerify = true"
-            :loadRecaptchaScript="true"
-          ></vue-recaptcha>
-        </div>
-        <el-button
-          class="form-submit"
-          type="primary"
-          :disabled="!checked || !isVerify"
-          @click="submit"
-          :loading="isSubmit"
-        >立即預約</el-button> 
-        <Loading
-          :loading="isSubmit"
-          :isOpacity="true"
-        />
       </div>
       <div class="control">
         <el-checkbox v-model="checked">
@@ -177,7 +56,7 @@
         </el-checkbox>
       </div>
       <el-button class="form-submit flex-c" type="primary" :disabled="!checked" @click="submit" :loading="isSubmit">立即預約</el-button>
-    </div> -->
+    </div>
     <ContactInfo />
     <GoogleMap />
     <PolicyDialog :policyVisible="policyVisible" />
