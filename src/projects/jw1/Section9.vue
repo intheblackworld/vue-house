@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="section9">
-      <div class="swipe swipe1 absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="(isPC && tabIndex == 1) || isMobile">
+      <div class="swipe swipe1 absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-show="(isPC && tabIndex == 1) || isMobile">
         <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(1)" v-touch:swipe.right="() => addMultiIndex(1)">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList1" v-show="slideIndex1 === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -18,7 +18,7 @@
           </div>
         </div>
       </div>
-      <div class="swipe absolute swipe2" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="(isPC && tabIndex == 2) || isMobile">
+      <div class="swipe absolute swipe2" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-show="(isPC && tabIndex == 2) || isMobile">
         <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(2)" v-touch:swipe.right="() => addMultiIndex(2)">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList2" v-show="slideIndex2 === i" :key="slide.img" :class="`swipe-item absolute`">
