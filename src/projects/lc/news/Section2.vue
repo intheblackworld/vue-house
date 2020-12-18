@@ -382,6 +382,8 @@ export default {
             },
           ],
       },
+
+      /*
       {
         title: '立瑾醞 享受大三房、水岸景觀之美',
         subtitle: '',
@@ -401,7 +403,7 @@ export default {
               url: 'https://tw.news.yahoo.com/立瑾醞 享受大三房、水岸景觀之美-215015395--finance.html',
             },
           ],
-      },
+      },*/
       ],
       /*
       list: [...Array(18).keys()].map((i) => ({

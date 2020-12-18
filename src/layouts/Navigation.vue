@@ -30,9 +30,9 @@
             <li class="flex-c" @click="showMessengerDialog">
           <img src="@/projects/lc/menu/icon_f.png" class="fb" alt="fb">
             </li>
-            <li class="flex-c">
+           <!-- <li class="flex-c">
           <img src="@/projects/lc/menu/icon_l.png" class="line" alt="line">
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>

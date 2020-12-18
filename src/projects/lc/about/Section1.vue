@@ -1,7 +1,7 @@
 <template>
   <div class="section1">
     <img src="./s1/1.jpg" alt="" class="bg-img" v-if="isPC">
-    <img src="./s1/1_m.png" alt="" class="bg-img" v-if="isMobile">
+    <img src="./s1/1_m.jpg" alt="" class="bg-img" v-if="isMobile">
     <!-- <img src="./s1/2.png" alt="" class="bg-img"> -->
     <h1 class="title">關於立瑾</h1>
     <h1 class="desc">

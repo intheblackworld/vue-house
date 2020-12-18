@@ -235,10 +235,11 @@ export default {
         img: require('../news/s2/4/30-98629-001.jpg'),
         title: '立瑾醞 口碑推爆：三重水岸住大3房的幸福',
       },
-      {
+     /*{
         img: require('../news/s2/no.png'),
         title: '立瑾醞 享受大三房、水岸景觀之美',
       },
+      */
       ],//)),
       pageCount: 3,
       currentPage: 1,
