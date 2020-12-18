@@ -112,7 +112,7 @@
 .carousel-3d-container {
   z-index: 3 !important;
   //position: absolute;
-  margin:0 auto size(500);
+  margin:0 auto size(500) !important;
   top: size(500);
 
 }
@@ -255,7 +255,7 @@
     position: absolute;
     left: 0;
     right: 0;
-    margin: 0 auto;
+    margin: 0 auto !important;
     top: sizem(280) !important;
   }
   .mask {
