@@ -70,6 +70,7 @@ export default {
   width: 260px;
   //height: 30px;
   line-height: 1.4;
+  text-align: left;
   //border-left: 4px solid $house_border_color;
   padding-left: 10px;
   display: flex;
@@ -84,10 +85,10 @@ export default {
     font-size:1em;
     color: $house_label_color;
     margin-bottom: 0;
-    margin-right:0.8em;
+    margin-right:0.7em;
     white-space: nowrap;
     font-family: $family3;
-    width: 4.5em;
+    width: 4em;
   }
 
   .desc {

@@ -113,7 +113,7 @@
 
   bottom: 0;}
 .btn {
-  width: size(350);
+  width:100%;
   height: size(54);
   border-top: 2px solid #248184;
   border-bottom: 2px solid #248184;
