@@ -55,7 +55,7 @@
   //@include img_r_pc(345, 511, 274);
   @include img_c(345, calc(60% - 4.5vw), size(1300));
   font-size: size(90);
-  font-weight: 500;
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
@@ -69,7 +69,7 @@
   //@include img_r_pc(300, 646, 310);
   @include img_c(300, calc(60% + 3.2vw), size(1310));
   font-size: size(32);
-  font-weight:700;
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
@@ -196,17 +196,17 @@
   }
 
   .slide-name {
-    left: 20px;
-    bottom: 20px;
+    left:1.2em;
+    bottom:1.2em;
     color: #fff;
-    font-size: 15px;
+    font-size:  size(18);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 3.11;
-    letter-spacing: 0.89px;
+    line-height: 1.6;
+    letter-spacing:0.03em;
     text-align: left;
-    color: #ffffff;
+    text-shadow: 0 0.3em 1em #0003;
   }
 
   // &:nth-child(1) {
@@ -331,14 +331,14 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.2;
-    letter-spacing: sizem(-1.1);
+    letter-spacing:0.03em;
     text-align: left;
     color: #e7ecec;
     white-space: nowrap;
   }
 
   .title {
-    @include img_r_m(183, 130, 40);
+    @include img_l_m(222, 140, 40);
     font-size: sizem(19);
     font-weight: bold;
     font-stretch: normal;
@@ -461,8 +461,7 @@
     z-index: 0;
 
     img {
-      width: 100%;
-      height: sizem(300);
+      width: 100%;height: 100%;
       object-fit: cover;
     }
 
@@ -479,6 +478,10 @@
     //   z-index: 2;
     //   // opacity: 1;
     // }
+  .slide-name {
+    font-size: sizem(15);
+  }
+
   }
 
   .pagination {
@@ -575,15 +578,15 @@ export default {
       slideList: [
         {
           img: require('./s4/1.jpg'),
-          name: ' ',
+          name: '神農公園',
         },
         {
           img: require('./s4/2.jpg'),
-          name: ' ',
+          name: '神農公園',
         },
         {
           img: require('./s4/3.jpg'),
-          name: ' ',
+          name: '神農公園',
         },
       ],
     }

@@ -27,9 +27,9 @@
       </h1>
       <h1 class="desc" data-aos="fade" data-aos-delay="800">
         〔京旺協奏曲〕一層四戶雙電梯，<br />
-        規劃35-45坪和樂三房、22坪幸福兩房<br />
+        規劃35坪和樂三房、22坪幸福兩房<br />
         全戶型邊間、全棟雙採光，配合3米6的挑<br />
-        高身段，室内空間寬容大亮
+        高身段，室內空間寬容大亮
       </h1>
     </div>
   </div>
@@ -44,6 +44,8 @@
   // max-height: size(1080);
   position: relative;
   background-color: #fff;
+  padding: size(0) 0 0;
+  overflow: hidden;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
@@ -71,7 +73,7 @@
   //@include img_r_pc(345, 511, 274);
   @include img_l_pc(345, 431, 180);
   font-size: size(90);
-  font-weight: 500;
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
@@ -85,7 +87,7 @@
   //@include img_r_pc(300, 646, 310);
   @include img_l_pc(345, 573, 187);
   font-size: size(32);
-  font-weight: 700;
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
@@ -216,18 +218,19 @@
   }
 
   .slide-name {
-    left: 20px;
-    bottom: 20px;
+    left:1.2em;
+    bottom:1.2em;
     color: #fff;
-    font-size: 15px;
+    font-size:  size(18);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 3.11;
-    letter-spacing: 0.89px;
+    line-height: 1.6;
+    letter-spacing:0.03em;
     text-align: left;
-    color: #ffffff;
+    text-shadow: 0 0.3em 1em #0003;
   }
+
 
   // &:nth-child(1) {
   //   z-index: 1;
@@ -334,7 +337,7 @@
 @media screen and (max-width: 767px) {
   .section6 {
     width: 100vw;
-    height: sizem(340 + 500);
+    height: sizem(340 + 550);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -342,23 +345,24 @@
     // background-position: 0 0;
     // background-attachment: fixed;
     overflow: hidden;
+  padding: 0 0 0;
   }
 
   .s-title {
-    @include img_r_m(298, 45, 38);
-    font-size: sizem(58);
+    @include img_r_m(222, 58, 114);
+    font-size: sizem(55);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.2;
-    letter-spacing: sizem(-5);
+    letter-spacing:-0.05em;
     text-align: left;
     color: #e7ecec;
     white-space: nowrap;
   }
 
   .title {
-    @include img_r_m(178, 115, 158);
+    @include img_l_m(222, 140, 40);
     font-size: sizem(19);
     font-weight: bold;
     font-stretch: normal;
@@ -409,7 +413,7 @@
   }
 
   .desc {
-    @include img_r_m(300, 170, 35);
+    @include img_r_m(300, 190, 35);
     font-size: sizem(15);
     font-weight: bold;
     font-stretch: normal;
@@ -515,7 +519,12 @@
     //   z-index: 2;
     //   // opacity: 1;
     // }
+  .slide-name {
+    font-size: sizem(15);
   }
+
+  }
+
 
   .pagination {
     width: auto;
@@ -611,7 +620,11 @@ export default {
       slideList: [
         {
           img: require('./s8/1.jpg'),
-          name: ' ',
+          name: '圖片為示意圖',
+        },
+        {
+          img: require('./s8/2.jpg'),
+          name: '圖片為示意圖',
         },
       ],
     }

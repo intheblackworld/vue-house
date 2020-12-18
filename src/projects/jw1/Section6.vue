@@ -57,7 +57,7 @@
   //@include img_r_pc(345, 511, 274);
   @include img_l_pc(345, 231, 180);
   font-size: size(90);
-  font-weight: 500;
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
@@ -71,7 +71,7 @@
   //@include img_r_pc(300, 646, 310);
   @include img_l_pc(345, 373, 187);
   font-size: size(32);
-  font-weight: 700;
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
@@ -200,19 +200,18 @@
     width: 100%;
     height: size(850);
   }
-
   .slide-name {
-    left: 20px;
-    bottom: 20px;
+    left:1.2em;
+    bottom:1.2em;
     color: #fff;
-    font-size: 15px;
+    font-size:  size(18);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 3.11;
-    letter-spacing: 0.89px;
+    line-height: 1.6;
+    letter-spacing:0.03em;
     text-align: left;
-    color: #ffffff;
+    text-shadow: 0 0.3em 1em #0003;
   }
 
   // &:nth-child(1) {
@@ -337,14 +336,14 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.2;
-    letter-spacing: sizem(-0.3);
+    letter-spacing:0.03em;
     text-align: left;
     color: #e7ecec;
     white-space: nowrap;
   }
 
   .title {
-    @include img_r_m(251, 127, 85);
+    @include img_l_m(222, 140, 40);
     font-size: sizem(19);
     font-weight: bold;
     font-stretch: normal;
@@ -395,7 +394,7 @@
   }
 
   .img {
-    @include img_l_m(278, 194, 40);
+    @include img_l_m(278, 200, 40);
   }
 
   .desc {
@@ -490,6 +489,9 @@
     //   z-index: 2;
     //   // opacity: 1;
     // }
+  .slide-name {
+    font-size: sizem(15);
+  }
   }
 
   .pagination {
@@ -585,16 +587,16 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s4/1.jpg'),
-          name: ' ',
+          img: require('./s6/1.jpg'),
+          name: '先嗇宮站',
         },
         {
-          img: require('./s4/2.jpg'),
-          name: ' ',
+          img: require('./s6/2.jpg'),
+          name: '機捷三重站',
         },
         {
-          img: require('./s4/3.jpg'),
-          name: ' ',
+          img: require('./s6/3.jpg'),
+          name: '頭前庄站',
         },
       ],
     }

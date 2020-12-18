@@ -35,42 +35,58 @@
           </div>
         </div>
       </div>
-      <h3 :class="`btn btn1 flex-c ${tabIndex === 1 ? 'active' : ''}`" @click="tabIndex = 1">
-        兩房戶型
-      </h3>
-      <div class="desc desc1">
-        <li>雙面採光、挑高3.6米，寬容大亮</li>
-        <li>大面寬客廳，媲美35坪以上產品</li>
-        <li>大兩房規劃，可擺梳妝臺、收納櫃</li>
-        <li>二字型廚房，可規劃前後工作檯面</li>
-        <li>2.75米大陽台，做起家事不卡卡</li>
-        <li>無雨遮登記，坪數實在</li>
-        <li>珍稀超高得房率</li>
+      <div class="txt"  v-if="isPC">
+        <h3 :class="`btn btn1 flex-c ${tabIndex === 1 ? 'active' : ''}`" @click="tabIndex = 1">
+          兩房戶型
+        </h3>
+        <div class="desc desc1">
+          <li>雙面採光、挑高3.6米，寬容大亮</li>
+          <li>大面寬客廳，媲美35坪以上產品</li>
+          <li>大兩房規劃，可擺梳妝臺、收納櫃</li>
+          <li>二字型廚房，可規劃前後工作檯面</li>
+          <li>2.75米大陽台，做起家事不卡卡</li>
+          <li>無雨遮登記，坪數實在</li>
+          <li>珍稀超高得房率</li>
+        </div>
+        <h3 :class="`btn btn2 flex-c ${tabIndex === 2 ? 'active' : ''}`" @click="tabIndex = 2">
+          三房戶型
+        </h3>
+        <div class="desc desc2">
+          <li>正面公園，客廳、臥室享舒心綠景</li>
+          <li>雙面採光、挑高3.6米，寬容大亮</li>
+          <li>大三房規劃，可擺梳妝臺、收納櫃</li>
+          <li>二字型廚房，可規劃前後工作檯面</li>
+          <li>4.2米大陽台，做起家事不卡卡</li>
+          <li>無雨遮登記，坪數實在</li>
+          <li>珍稀超高得房率</li>
+        </div>
       </div>
-      <div class="desc desc2">
-        <li>正面公園，客廳、臥室享舒心綠景</li>
-        <li>雙面採光、挑高3.6米，寬容大亮</li>
-        <li>大三房規劃，可擺梳妝臺、收納櫃</li>
-        <li>二字型廚房,可規劃前後工作檯面</li>
-        <li>4.2米大陽台，做起家事不卡卡</li>
-        <li>無雨遮登記，坪數實在</li>
-        <li>珍稀超高得房率</li>
+      <div v-if="isMobile">
+        <h3 :class="`btn btn1 flex-c ${tabIndex === 1 ? 'active' : ''}`" @click="tabIndex = 1">
+          兩房戶型
+        </h3>
+        <div class="desc desc1">
+          <li>雙面採光、挑高3.6米，寬容大亮</li>
+          <li>大面寬客廳，媲美35坪以上產品</li>
+          <li>大兩房規劃，可擺梳妝臺、收納櫃</li>
+          <li>二字型廚房，可規劃前後工作檯面</li>
+          <li>2.75米大陽台，做起家事不卡卡</li>
+          <li>無雨遮登記，坪數實在</li>
+          <li>珍稀超高得房率</li>
+        </div>
+        <h3 :class="`btn btn2 flex-c ${tabIndex === 2 ? 'active' : ''}`" @click="tabIndex = 2">
+          三房戶型
+        </h3>
+        <div class="desc desc2">
+          <li>正面公園，客廳、臥室享舒心綠景</li>
+          <li>雙面採光、挑高3.6米，寬容大亮</li>
+          <li>大三房規劃，可擺梳妝臺、收納櫃</li>
+          <li>二字型廚房，可規劃前後工作檯面</li>
+          <li>4.2米大陽台，做起家事不卡卡</li>
+          <li>無雨遮登記，坪數實在</li>
+          <li>珍稀超高得房率</li>
+        </div>
       </div>
-      <h3 :class="`btn btn2 flex-c ${tabIndex === 2 ? 'active' : ''}`" @click="tabIndex = 2">
-        兩房戶型
-      </h3>
-      <!-- <h1 class="s-title" data-aos="fade" data-aos-delay="200">
-        Overture
-      </h1>
-      <h1 class="title" data-aos="fade" data-aos-delay="400">
-        雙園合奏生活主閑綠
-      </h1>
-      <h1 class="subtitle" data-aos="fade" data-aos-delay="600">
-        千坪綠意神農公園<span></span>少棒名校興穀國小
-      </h1>
-      <h1 class="desc" data-aos="fade" data-aos-delay="800">
-        門前正臨1,390坪神農公園，伸手擁抱全齡守護興穀國小。百米永恆棟距舒心視野，翠綠家景蔚然而生。
-      </h1> -->
     </div>
   </div>
 </template>
@@ -91,9 +107,13 @@
   // background-attachment: fixed;
   // overflow: hidden;
 }
+.txt{display: flex;overflow: hidden;position: relative;flex-direction:column;
+   @include div_r_pc(325, 850, 0, 236);justify-content:space-between;
+   top: auto;
 
+  bottom: 0;}
 .btn {
-  width: size(316);
+  width: size(350);
   height: size(54);
   border-top: 2px solid #248184;
   border-bottom: 2px solid #248184;
@@ -114,11 +134,11 @@
 }
 
 .btn1 {
-  @include div_r_pc(315, 54, 220, 236);
+// @include div_r_pc(315, 54, 90, 236);
 }
 
-.btn2 {
-  @include div_r_pc(315, 54, 700, 236);
+.btn2 {margin: size(150) 0 0 0;
+//  @include div_r_pc(315, 54, 570, 236);
 }
 
 .desc {
@@ -138,11 +158,11 @@
 }
 
 .desc1 {
-  @include div_r_pc(315, 338, 300, 236);
+  position: relative;
 }
 
 .desc2 {
-  @include div_r_pc(315, 338, 780, 236);
+  position: relative;
 }
 /* Swipe */
 .swipe {
@@ -207,19 +227,18 @@
     width: 100%;
     height: size(850);
   }
-
   .slide-name {
-    left: 20px;
-    bottom: 10px;
+    left:1.2em;
+    bottom:1.2em;
     color: #fff;
-    font-size: 15px;
+    font-size:  size(18);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.11;
-    letter-spacing: 0.89px;
+    line-height: 1.6;
+    letter-spacing:0.03em;
     text-align: left;
-    color: #ffffff;
+    text-shadow: 0 0.3em 1em #0003;
   }
 
   // &:nth-child(1) {
@@ -478,7 +497,11 @@
     //   z-index: 2;
     //   // opacity: 1;
     // }
+  .slide-name {
+    font-size: sizem(15);
   }
+  }
+
 
   .pagination {
     width: auto;
@@ -577,30 +600,30 @@ export default {
       slideList1: [
         {
           img: require('./s9/2-1.jpg'),
-          name: '圖片為公園示意',
+          name: '樣品屋裝潢風格情境參考示意圖',
         },
         {
           img: require('./s9/2-2.jpg'),
-          name: '圖片為公園示意',
+          name: '樣品屋裝潢風格情境參考示意圖',
         },
         {
           img: require('./s9/2-3.jpg'),
-          name: '圖片為公園示意',
+          name: '樣品屋裝潢風格情境參考示意圖',
         },
       ],
 
       slideList2: [
         {
           img: require('./s9/3-1.jpg'),
-          name: '圖片為公園示意',
+          name: '樣品屋裝潢風格情境參考示意圖',
         },
         {
           img: require('./s9/3-2.jpg'),
-          name: '圖片為公園示意',
+          name: '樣品屋裝潢風格情境參考示意圖',
         },
         {
           img: require('./s9/3-3.jpg'),
-          name: '圖片為公園示意',
+          name: '樣品屋裝潢風格情境參考示意圖',
         },
       ],
     }

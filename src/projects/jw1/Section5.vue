@@ -52,9 +52,9 @@
 
 .section5 {
   width: size(1920);
-  height: 100vh;
-  min-height: size(1550);
-  max-height: size(1550);
+  height:size(1500);
+ /* min-height: size(1550);
+  max-height: size(1550);*/
   position: relative;
   background-color: #fff;
   // min-height: size(900);
@@ -67,8 +67,8 @@
 
 .bg-img {
   width: 100vw;
-  height: 100vh;
-  min-height: size(900);
+  height: 100%;
+  //min-height: size(900);
   position: absolute;
   display: block;
   top: 0;
@@ -81,7 +81,7 @@
 }
 
 .s-title {
-  @include img_l_pc(180, 200, 177);
+  @include img_l_pc(180, 100, 177);
   font-size: size(90);
   font-weight: bold;
   font-stretch: normal;
@@ -94,7 +94,7 @@
 }
 
 .subtitle {
-  @include img_l_pc(303, 350, 181);
+  @include img_l_pc(303, 250, 181);
   font-size: size(32);
   font-weight: bold;
   font-stretch: normal;
@@ -132,19 +132,19 @@
 }
 
 .desc {
-  @include img_l_pc(440, 460, 181);
+  @include img_l_pc(440, 360, 181);
   font-size: size(20);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 2.2;
-  letter-spacing: size(0.96);
+  letter-spacing:0.3em;
   text-align: justify;
   color: #221815;
 }
 
 .items {
-  @include img_l_pc(1562, 200, 177);
+  @include img_l_pc(1562, 100, 177);
 }
 
 .item {
@@ -183,13 +183,13 @@
 }
 
 .item-desc {
-  font-size: size(23);
+  font-size: size(22);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.61;
-  letter-spacing: size(1.36);
-  text-align: left;
+  line-height: 1.6;
+  letter-spacing:0.03em;
+  text-align: justify;
   color: #248184;
 }
 
@@ -258,17 +258,17 @@
   }
 
   .slide-name {
-    left: 20px;
-    bottom: 20px;
+    left:1.2em;
+    bottom:1.2em;
     color: #fff;
-    font-size: 15px;
+    font-size:  size(18);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 3.11;
-    letter-spacing: 0.89px;
+    line-height: 1.6;
+    letter-spacing:0.03em;
     text-align: left;
-    color: #ffffff;
+    text-shadow: 0 0.3em 1em #0003;
   }
 
   // &:nth-child(1) {
@@ -386,26 +386,26 @@
     overflow: hidden;
   }
   .s-title {
-    @include img_l_m(125, 74, 38);
+    @include img_r_m(222, 58, 114);
     font-size: sizem(58);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.2;
-    letter-spacing: sizem(-1.3);
+    letter-spacing:0.03em;
     text-align: left;
     color: #e7ecec;
     white-space: nowrap;
   }
 
   .subtitle {
-    @include img_l_m(190, 140, 40);
-    font-size: sizem(20);
+    @include img_l_m(222, 140, 40);
+    font-size: sizem(19);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.25;
-    letter-spacing: sizem(1.14);
+    line-height: 1.2;
+    letter-spacing: sizem(1.5);
     text-align: left;
     color: #248184;
     white-space: nowrap;
@@ -554,6 +554,9 @@
     //   z-index: 2;
     //   // opacity: 1;
     // }
+  .slide-name {
+    font-size: sizem(15);
+  }
   }
 
   .pagination {

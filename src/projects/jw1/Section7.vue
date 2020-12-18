@@ -28,9 +28,9 @@
         千坪綠意神農公園<span></span>少棒名校興穀國小
       </h1> -->
       <h1 class="desc" data-aos="fade" data-aos-delay="600">
-        未來第二行政中心落址二重左岸五谷王<br />
+        未來第二行政中心落址三重左岸五谷王<br />
         三重新都心、新莊副都心、新板特定區形成「新北鐵三角」。<br /><br />
-        工變住都更案、新北科技園區兩大人口吸力加持,二重重劃區迎接起漲點!
+        工變住都更案、新北科技園區兩大人口吸力加持，三重重劃區迎接起漲點！
       </h1>
     </div>
   </div>
@@ -57,7 +57,7 @@
   //@include img_r_pc(345, 511, 274);
   @include img_c(345, calc(40% - 4.5vw), size(1300));
   font-size: size(90);
-  font-weight: 500;
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
@@ -71,7 +71,7 @@
   //@include img_r_pc(300, 646, 310);
   @include img_c(300, calc(40% + 3.2vw), size(1310));
   font-size: size(32);
-  font-weight: 700;
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
@@ -197,20 +197,20 @@
     height: size(850);
   }
 
+
   .slide-name {
-    left: 20px;
-    bottom: 20px;
+    left:1.2em;
+    bottom:1.2em;
     color: #fff;
-    font-size: 15px;
+    font-size:  size(18);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 3.11;
-    letter-spacing: 0.89px;
+    line-height: 1.6;
+    letter-spacing:0.03em;
     text-align: left;
-    color: #ffffff;
+    text-shadow: 0 0.3em 1em #0003;
   }
-
   // &:nth-child(1) {
   //   z-index: 1;
   //   // opacity: 1;
@@ -327,7 +327,7 @@
   }
 
   .s-title {
-    @include img_r_m(172, 50, 164);
+    @include img_r_m(222, 58, 114);
     font-size: sizem(58);
     font-weight: bold;
     font-stretch: normal;
@@ -340,7 +340,7 @@
   }
 
   .title {
-    @include img_r_m(178, 29, 158);
+    @include img_l_m(222, 140, 40);
     font-size: sizem(19);
     font-weight: bold;
     font-stretch: normal;
@@ -482,6 +482,9 @@
     //   z-index: 2;
     //   // opacity: 1;
     // }
+  .slide-name {
+    font-size: sizem(15);
+  }
   }
 
   .pagination {
@@ -492,6 +495,7 @@
     margin: 0 auto;
     justify-content: center;
   }
+
 
   .pagination-dot {
     padding: 5px;
@@ -578,15 +582,15 @@ export default {
       slideList: [
         {
           img: require('./s7/1.jpg'),
-          name: ' ',
+          name: '新北大橋',
         },
         {
           img: require('./s7/2.jpg'),
-          name: ' ',
+          name: '新莊地區空拍',
         },
         {
           img: require('./s7/3.jpg'),
-          name: ' ',
+          name: '新板特區',
         },
       ],
     }

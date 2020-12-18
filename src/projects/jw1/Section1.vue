@@ -13,10 +13,13 @@
 
     <img src="./s1/logo2.png" alt="" class="logo2" data-aos="fade" data-aos-delay="1000">
     <h1 class="title1" data-aos="fade" data-aos-delay="400">
-      先嗇宮站2~3房
+      2~3房
     </h1>
-    <h1 class="title2" data-aos="fade" data-aos-delay="600">
-      公園校園 即將成雙
+    <h1 class="title2" data-aos="fade" data-aos-delay="400">
+      22<b>．</b>35坪
+    </h1>
+    <h1 class="title3" data-aos="fade" data-aos-delay="600">
+      公園首席 百米棟距
     </h1>
     <h1 class="phone" data-aos="fade" data-aos-delay="800">
       8985-6888
@@ -86,28 +89,46 @@
 
 .title1 {
   //@include img_r_pc(433, 752, 709);
-  @include img_c(433, calc(50% + 10vw),size(778));
-  font-size: size(58);
+  @include img_c(180, calc(50% + 10vw),size(786));
+  font-size: size(61);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(5.8);
+  letter-spacing:-0.05em;
   text-align: left;
-  color: #248184;
+  color:  #000; 
   white-space: nowrap;
+  &::after{content: "";position: absolute;right:0;top: 10%;
+  width: 2px;height: 80%;background:#248184;}
 }
 
 .title2 {
-  @include img_c(512, calc(50% + 10vw),size(1254));
-  font-size: size(58);
+  @include img_c(257, calc(50% + 10vw),size(987));
+  font-size: size(61);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(4.3);
+  letter-spacing:-0.05em;
   text-align: left;
-  color: #000;
+  color: #000; 
+  white-space: nowrap;
+  b{color:#248184;
+  letter-spacing:-0.3em;left: -0.15em;position: relative;}
+  &::after{content: "";position: absolute;right:0;top: 10%;width: 2px;height: 80%;background:#248184;}
+}
+
+.title3 {
+  @include img_c(512, calc(50% + 10vw),size(1260));
+  font-size: size(61);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing:0.02em;
+  text-align: left;
+  color:#248184;
   white-space: nowrap;
 }
 
@@ -185,28 +206,40 @@
   }
 
   .title1 {
-    @include img_r_m(239, 348, 72);
+    @include img_r_m(105, 345, 197);
     font-size: sizem(32);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.2;
-    letter-spacing: sizem(3.2);
+  //  letter-spacing: sizem(3.2);
     text-align: left;
-    color: #248184;
     white-space: nowrap;
   }
 
   .title2 {
-    @include img_r_m(239, 391, 71);
+    @include img_r_m(110, 345, 71);
+    font-size: sizem(32);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+
+  //  letter-spacing: sizem(3.2);
+    text-align: left;
+    white-space: nowrap;
+    &::after{display: none;}
+  }
+
+  .title3 {
+    @include img_r_m(235, 392, 71);
     font-size: sizem(27);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.2;
-    letter-spacing: sizem(2);
+  //  letter-spacing: sizem(2);
     text-align: left;
-    color: #000;
     white-space: nowrap;
   }
 
