@@ -13,10 +13,10 @@
             <label>手機</label>
             <el-input v-model="form.phone" placeholder></el-input>
           </div>
-          <div class="row">
+          <!-- <div class="row">
             <label>E-mail</label>
             <el-input v-model="form.email" placeholder></el-input>
-          </div>
+          </div> -->
           <div class="row">
             <label>居住城市</label>
             <el-select v-model="form.city" placeholder>
@@ -127,7 +127,7 @@ export default {
       if (
         !this.form.name ||
         !this.form.phone ||
-        !this.form.email ||
+        // !this.form.email ||
         !this.form.city ||
         !this.form.area
       ) {
@@ -218,7 +218,7 @@ export default {
   }
 
   .group {
-    height: 300px;
+    height: 250px !important;
 
     &:nth-child(1) {
       border-right: 1px solid rgba(0, 0, 0, 0.2);
