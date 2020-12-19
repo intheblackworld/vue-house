@@ -1,14 +1,14 @@
 <template>
   <div class="section1">
     <div class="fullscreen bg">
-      <div class="fix-group">
-        <!-- <div class="button" @click="modal = true">
+      <!--<div class="fix-group">
+        <div class="button" @click="modal = true">
           <img src="./dialog/button.png" alt />
-        </div> -->
-        <!-- <div class="button" v-scroll-to="{ element: `#${'section2'}`, offset: -56 }">
+        </div>
+         <div class="button" v-scroll-to="{ element: `#${'section2'}`, offset: -56 }">
         <img src="./chevron-up.png" alt />
-        </div>-->
-      </div>
+        </div>
+      </div>-->
       <!-- <div class="modal" v-if="modal">
         <div class="mask" @click="modal = false"></div>
         <div>
@@ -17,11 +17,12 @@
           <img src="@/assets/img/close.png" alt class="close" @click="modal = false" />
         </div>
       </div> -->
-      <div class="star comet"></div>
-      <img src="./s1_logo.png" alt class="logo" data-aos="fade-down" data-aos-delay="0" />
+     <!-- <div class="star comet"></div>  -->
+      <img src="./s1_logo.png" alt class="logo" data-aos="fade-down" data-aos-delay="0" v-if="!isMobile"  />
+      <img src="./s1_logo_m.png" alt class="logo" data-aos="fade-down" data-aos-delay="0" v-if="isMobile"  />
     </div>
-    <img src="./s1_bg_bottom.png" alt class="bg-bottom" v-if="!isMobile" />
-    <img src="./s1_bg_bottom_m.png" alt class="bg-bottom" v-if="isMobile" />
+  <!--  <img src="./s1_bg_bottom.png" alt class="bg-bottom" v-if="!isMobile" />
+    <img src="./s1_bg_bottom_m.png" alt class="bg-bottom" v-if="isMobile" />  -->
   </div>
 </template>
 <style lang="scss">
@@ -104,11 +105,12 @@
   .bg {
     background-position: 55%;
     background-size: cover;
+  background-image: url('./s1_bg_m.jpg');
   }
 
   .logo {
-    width: 55vw;
-    margin-top: -80px;
+    width: 80vw;
+    margin-top: 0px;
   }
 
   .bg-bottom {
@@ -132,7 +134,7 @@ export default {
   mounted() {
     const wH = window.innerHeight
     const wW = window.innerWidth
-
+/*
     const generateStars = n => {
       for (let i = 0; i < n; i++) {
         const div = document.createElement('div')
@@ -154,10 +156,10 @@ export default {
         document.querySelector('.bg').appendChild(div)
       }
     }
-    /* 數量 */
+   //  數量 
     generateStars(150)
+*/
   },
-
   methods: {},
 }
 </script>

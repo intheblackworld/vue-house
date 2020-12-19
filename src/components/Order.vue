@@ -83,8 +83,8 @@
         :loading="isSubmit"
       >立即預約</el-button>
     </div>
-    <ContactInfo />
-    <GoogleMap />
+    <!-- <ContactInfo /> -->
+    <!-- <GoogleMap /> -->
     <PolicyDialog :policyVisible="policyVisible" />
   </div>
 </template>
@@ -221,6 +221,7 @@ export default {
   background-image: url('../assets/img/order-bg.jpg');
   position: relative;
   padding-top: 80px;
+  padding-bottom: 80px;
 
   .order-title {
     margin-top: 40px;
