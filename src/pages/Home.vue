@@ -9,34 +9,34 @@
       :options="options"
       id="fullpage"
     > -->
-    <vue-lazy-component class="section relative" id="section1" @init="init" style="z-index: 3;">
+    <div class="section relative" id="section1" @init="init" style="z-index: 3;">
       <Section1 />
-    </vue-lazy-component>
+    </div>
 
-    <vue-lazy-component class="section" id="section2">
+    <div class="section" id="section2">
       <Section2 />
-    </vue-lazy-component>
-    <vue-lazy-component
+    </div>
+    <div
       class="section"
       id="section3"
     >
       <Section3 />
-    </vue-lazy-component>
-    <vue-lazy-component
+    </div>
+    <div
       class="section"
       id="section4"
     >
       <Section4 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
+    </div>
+    <div
+      class="section relative"
       id="section5"
     >
       <Section5 />
-    </vue-lazy-component>
-    <vue-lazy-component class="section" id="contact">
+    </div>
+    <div class="section" id="contact">
       <ContactSection />
-    </vue-lazy-component>
+    </div>
     <MobileNav />
   </div>
 </template>
