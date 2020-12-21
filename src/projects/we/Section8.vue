@@ -1,31 +1,12 @@
 <template>
   <div>
     <div class="section8">
-      <!-- <img src="./s2/hr.png" alt="" class="hr absolute"> -->
-      <!-- <div class="title-d absolute-jc">設計美學</div> -->
-      <div class="swipe absolute-jc" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
-          <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
-              <div class="slide-name absolute" v-html="slide.name"></div>
-            </div>
-          </transition-group>
-          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-          </div>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-          </div>
-        </div>
+      <img src="./s8/logo.png" alt="" class="logo">
+      <div class="title">
+        威地段，輕首付，訂製宅，幸福住
       </div>
-      <div class="title absolute" data-aos="fade-down" data-aos-delay="300">大師公設</div>
-      <div class="subtitle absolute" data-aos="fade-down" data-aos-delay="300">域研近相空間設計李俊平大師</div>
-      <div class="line absolute" data-aos="fade" data-aos-delay="200" ></div>
-      <div class="desc absolute" data-aos="fade-up" data-aos-delay="300">
-        域研紋理生活映照 近相城市未來啟迪<br>
-        規劃前的環境研究，使空間能反映在地性格，憑藉地域的文化與特質蘭構築生活空間，使室內格局及接待會館噹帶人文美學的承載量體。身為記錄城市歷史的角色，反觀空間價值，誘發城市生命力，啟迪未來的可能和遠見的視野。
+      <div class="subtitle">
+        悅峰WE時代，我們的威時代
       </div>
     </div>
   </div>
@@ -35,8 +16,8 @@
 
 .section8 {
   width: size(1920);
-  height: size(1190);
-  max-height: size(1458);
+  height: size(900);
+  max-height: size(900);
   position: relative;
   background: #fff;
   // min-height: size(900);
@@ -62,267 +43,34 @@
   }
 }
 
-.title-d {
-  width: size(160);
-  top: size(90);
-  font-size: size(40);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: normal;
-  text-align: center;
-  color: #005369;
-
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    right: size(-60);
-    width: size(36);
-    height: size(36);
-    background-image: url('./s2/title.png');
-    background-size: cover;
-    transform: rotate(180deg);
-    top: size(8);
-  }
-
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    left: size(-60);
-    top: size(8);
-    width: size(36);
-    height: size(36);
-    background-image: url('./s2/title.png');
-    background-size: cover;
-  }
-}
-
-.hr {
-  width: 100vw;
-  top: size(-18);
-  left: 0;
-  opacity: 1;
+.logo {
+  @include img_c_pc(482, 112);
 }
 
 .title {
-  width: size(125);
-  top: size(1091 - 180);
-  left: size(210);
-  font-size: size(30);
-  font-weight: 500;
+  @include img_c_pc(824, 636);
+  font-size: size(56);
+  font-weight: 900;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(1.5);
-  text-align: left;
-  color: #005369;
+  line-height: 1.48;
+  letter-spacing: size(-1.12);
+  text-align: center;
+  color: #000000;
   white-space: nowrap;
 }
 
 .subtitle {
-  width: size(226);
-  top: size(1095 - 180);
-  left: size(382);
-  font-size: size(24);
-  font-weight: 500;
+  @include img_c_pc(830, 720);
+  font-size: size(66);
+  font-weight: 900;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(1.2);
-  text-align: left;
-  color: #2c9899;
+  line-height: 1.48;
+  letter-spacing: normal;
+  text-align: center;
+  color: #000000;
   white-space: nowrap;
-}
-.line {
-  background-color: #888;
-  width: size(1500);
-  bottom: size(210);
-  left: size(210);
-  height: size(2);
-}
-.desc {
-  width: size(1500);
-  bottom: size(80);
-  left: size(210);
-  font-size: size(18);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2;
-  letter-spacing:0.05em;
-  text-align: left;
-  text-align: justify;
-  color: #666666;
-}
-
-/* Swipe */
-.swipe {
-  width: size(1500);
-  height: size(844);
-  top: size(211 - 180);
-  // left: size(210);
-  object-fit: cover;
-}
-
-// begin
-.swipe-fade-leave-to {
-  opacity: 0;
-  z-index: 0;
-}
-// end
-.swipe-fade-enter {
-  opacity: 0;
-  z-index: 1;
-}
-
-.swipe-fade-enter-active {
-  transition: all 0.5s ease;
-}
-
-.swipe-fade-leave-active {
-  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-// begin
-// .swipe-left-leave-to {
-//   margin-left: -100vw;
-//   z-index: 0;
-// }
-// // end
-// .swipe-left-enter {
-//   opacity: 0.5;
-//   margin-left: 0;
-//   z-index: 1;
-// }
-
-// .swipe-left-enter-active {
-//   transition: all 0.5s ease;
-// }
-
-// .swipe-left-leave-active {
-//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-// }
-
-.swipe-wrap {
-  width: 100%;
-  height: 100%;
-  // overflow: hidden;
-}
-
-.swipe-item {
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .slide-name {
-    right:1.5em;
-    bottom:1em;
-    color: #fff;
-    font-size: size(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1;
-    letter-spacing: 0.89px;
-    text-align: left;
-    color: #ffffff;
-   text-shadow:0 0.1em 0.3em #000;
-  }
-
-  // &:nth-child(1) {
-  //   z-index: 1;
-  //   // opacity: 1;
-  // }
-
-  // &.base {
-  //   z-index: 1;
-  //   opacity: 1;
-  // }
-  // &.active {
-  //   z-index: 2;
-  //   // opacity: 1;
-  // }
-}
-
-.pagination {
-  width: auto;
-  bottom: size(-40);
-  right: size(-10);
-  justify-content: center;
-}
-
-.pagination-dot {
-  padding: 5px;
-  margin: 0 5px;
-  cursor: pointer;
-  z-index: 4;
-
-  span {
-    display: block;
-    width: 15px;
-    height: 15px;
-    border-radius: 0px;
-    box-shadow: 0 0 0 1px #ccc;
-    position: relative;
-    background-color: #ccc;
-    transition: all 0.5s;
-
-    &::before {
-      content: '';
-      width: 60%;
-      height: 60%;
-      display: block;
-      background: #005369;
-      // border-radius: 20px;
-      opacity: 1;
-      position: absolute;
-      top: 20%;
-      // transform: translateY(-50%);
-      left: 20%;
-      transition: all 0.3s;
-      transform-origin: center;
-      transform: scale(0);
-    }
-    &.active {
-      box-shadow: none;
-      &::before {
-        content: '';
-        width: 100%;
-        height: 100%;
-        display: block;
-        background: #005369;
-        // border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 0%;
-        // transform: translateY(-50%);
-        left: 0%;
-        transform: scale(1.1);
-      }
-    }
-  }
-}
-
-.swipe-btns {
-  width: 100%;
-  height: 100%;
-  padding: 0 15px;
-  z-index: 3;
-
-  .prev-btn,
-  .next-btn {
-    width: size(20);
-    cursor: pointer;
-  }
 }
 
 @media only screen and (max-width: 1440px) {
@@ -495,11 +243,10 @@
     width: 100%;
     height: 100%;
     z-index: 0;
-    .slide-name{
+    .slide-name {
       right: 1em;
-    font-size: sizem(13);
+      font-size: sizem(13);
     }
-
 
     // &:nth-child(1) {
     //   z-index: 1;

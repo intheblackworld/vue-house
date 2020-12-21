@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="section4">
-      <img src="./s2/hr.png" alt="" class="hr absolute">
       <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -16,15 +15,17 @@
           </div>
         </div>
       </div>
+      <img src="./s2/rb.png" alt="" class="rb">
       <div class="title absolute" data-aos="fade-down" data-aos-delay="400">
-        國際櫥窗
+        <span>板南、萬大雙捷運，</span>通勤雙北我最WIN
       </div>
-      <div class="subtitle absolute" data-aos="fade-down" data-aos-delay="300">
-        全球百貨最密集之地 <br v-if="isMobile">匯聚國際時尚名品櫥窗
-      </div>
-      <div class="line absolute" data-aos="fade" data-aos-delay="200"></div>
+      <div class="hr absolute" data-aos="fade" data-aos-delay="200"></div>
       <div class="desc absolute" data-aos="fade-up" data-aos-delay="300">
-        比起日本、新加坡密度還高！信義區領先全球指標城市，百貨公司最密集的一級戰區，包括台北101、Bellavita、微風、新光三越、阪急、ATT 4 FUN、遠百信義A13等，匯聚國際頂尖名時尚名品櫥窗，各國風味獨具的美食珍饈佳餚之地，品嚐股神巴菲特最愛頂級牛排店Smith & Wollensky、日本最愛拉麵店「一蘭拉麵」、米其林推薦新加坡「松發肉骨茶」，不用出國就能品味各式料理環遊全世界。
+        捷運板南線海山站、土城站，隨你心情動線決定回家路線；<br />
+        國道3號、65快速道路，翱翔雙北無縫接軌；<br />
+        動工中的捷運萬大線LG10站就在中正國中旁上學好近，<br />
+        未來還有北土城交流道就近通勤，新北閃耀五星的大黑馬，<br />
+        青年成家卡位這裡最好！
       </div>
       <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
@@ -36,12 +37,10 @@
 @import '@/assets/style/function.scss';
 
 .section4 {
-  width: size(1920);
-  height: size(688);
   max-height: size(1080);
   position: relative;
-  background: #fff;
-  // min-height: size(900);
+  background: #5fc8ce;
+  min-height: size(1250);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
   // background-position: 0 0;
@@ -65,31 +64,36 @@
 }
 
 .hr {
-  width: 100vw;
-  top: size(-18);
-  left: 0;
-  opacity: 1;
+  @include img_l_pc(1500, 1000, 210);
+  border: solid 1.1px #888888;
+}
+
+.rb {
+  @include img_r_pc(1200, 0, 0);
+  top: auto;
+  bottom: 0;
 }
 
 .title {
-  width: size(125);
-  top: size(343 - 233);
-  left: size(210);
+  @include img_l_pc(518, 920, 210);
   font-size: size(30);
-  font-weight: 500;
+  font-weight: 900;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
   letter-spacing: size(1.5);
   text-align: left;
-  color: #005369;
+  color: #fff;
   white-space: nowrap;
+  span {
+    color: #ffff00;
+  }
 }
 
 .subtitle {
   width: size(568);
-  top: size(393 - 233);
-  left: size(210);
+  top: size(393);
+  right: size(252);
   font-size: size(24);
   font-weight: 500;
   font-stretch: normal;
@@ -100,33 +104,26 @@
   color: #2c9899;
   white-space: nowrap;
 }
-.line {
-  background-color: #888;
-  width: size(610);
-  top: size(449 - 233);
-  left: size(210);
-  height: size(2);
-}
+
 .desc {
-  width: size(610);
-  top: size(467 - 233);
-  left: size(210);
+  @include img_l_pc(1500, 1030, 210);
   font-size: size(18);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 2;
-  letter-spacing:0.05em;
-  text-align: justify;
+  letter-spacing: size(0.9);
+  text-align: left;
   color: #666666;
+  white-space: nowrap;
 }
 
 /* Swipe */
 .swipe {
-  width: size(840);
-  height: size(560);
-  top: size(0);
-  right: size(210);
+  width: size(1500);
+  height: size(844);
+  top: size(20);
+  left: size(210);
   object-fit: cover;
 }
 
@@ -187,8 +184,8 @@
   }
 
   .slide-name {
-    right:1.5em;
-    bottom:1em;
+    right: 1.5em;
+    bottom: 1em;
     color: #fff;
     font-size: size(15);
     font-weight: normal;
@@ -198,7 +195,7 @@
     letter-spacing: 0.89px;
     text-align: left;
     color: #ffffff;
-   text-shadow:0 0.1em 0.3em #000;
+    text-shadow: 0 0.1em 0.3em #000;
   }
 
   // &:nth-child(1) {
@@ -218,8 +215,8 @@
 
 .pagination {
   width: auto;
-  bottom: size(148);
-  left: size(680);
+  top: size(880);
+  right: size(200);
   justify-content: center;
 }
 
@@ -234,9 +231,10 @@
     width: 15px;
     height: 15px;
     border-radius: 0px;
-    box-shadow: 0 0 0 1px #ccc;
+    box-shadow: 0 0 0 5px #fff;
+    border-radius: 15px;
     position: relative;
-    background-color: #ccc;
+    // background-color: #ccc;
     transition: all 0.5s;
 
     &::before {
@@ -244,7 +242,7 @@
       width: 60%;
       height: 60%;
       display: block;
-      background: #005369;
+      background: transparent;
       // border-radius: 20px;
       opacity: 1;
       position: absolute;
@@ -262,7 +260,12 @@
         width: 100%;
         height: 100%;
         display: block;
-        background: #005369;
+        box-shadow: 0 0 0 5px #000;
+        border-radius: 15px;
+        background-image: url('./s2/dot.png');
+        background-size: 70% 70%;
+        background-position: center;
+        background-repeat: no-repeat;
         // border-radius: 20px;
         opacity: 1;
         position: absolute;
@@ -303,16 +306,21 @@
 
 @media screen and (max-width: 767px) {
   .section4 {
-    width: 100vw;
-    height: sizem(706);
     min-height: auto;
     max-height: initial;
-    overflow: hidden;
+  }
+
+  .hr {
+    width: auto;
+    height: sizem(10);
+    top: sizem(-10);
+    left: 0;
+    opacity: 1;
   }
 
   .title-d {
     width: sizem(120);
-    top: sizem(0);
+    top: sizem(50);
     font-size: sizem(30);
     font-weight: 500;
     font-stretch: normal;
@@ -330,7 +338,7 @@
       width: sizem(28);
       height: sizem(28);
       top: sizem(4);
-      background-image: url('./s2/title.png');
+      // background-image: url('./s2/title.png');
       background-size: cover;
       transform: rotate(180deg);
     }
@@ -343,21 +351,14 @@
       width: sizem(28);
       height: sizem(28);
       top: size(8);
-      background-image: url('./s2/title.png');
+      // background-image: url('./s2/title.png');
       background-size: cover;
     }
   }
 
-  .hr {
-    width: 100vw;
-    top: size(-18);
-    left: 0;
-    opacity: 1;
-  }
-
   .title {
     width: sizem(104);
-    top: sizem(411 - 120);
+    top: sizem(411);
     right: sizem(238);
     font-size: sizem(25);
     font-weight: 500;
@@ -372,7 +373,7 @@
 
   .subtitle {
     width: sizem(242);
-    top: sizem(455 - 120);
+    top: sizem(455);
     right: sizem(100);
     font-size: sizem(20);
     font-weight: 500;
@@ -387,13 +388,13 @@
   .line {
     background-color: #888;
     width: sizem(310);
-    top: sizem(532 - 120);
+    top: sizem(532);
     right: sizem(32);
     height: sizem(2);
   }
   .desc {
     width: sizem(310);
-    top: sizem(548 - 120);
+    top: sizem(548);
     right: sizem(32);
     font-size: sizem(15);
     line-height: 1.73;
@@ -404,7 +405,7 @@
     width: 100vw;
     height: sizem(250);
     min-height: auto;
-    top: sizem(0);
+    top: sizem(120);
     left: sizem(0);
     object-fit: cover;
   }
@@ -458,9 +459,9 @@
     width: 100%;
     height: 100%;
     z-index: 0;
-    .slide-name{
+    .slide-name {
       right: 1em;
-    font-size: sizem(13);
+      font-size: sizem(13);
     }
 
     // &:nth-child(1) {
@@ -556,12 +557,9 @@
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
-
 export default {
-  name: 'section4',
-
   mixins: [slider],
-  props: ['viewIndex'],
+  // props: ['viewIndex'],
 
   data() {
     return {
@@ -571,20 +569,20 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s4/BELLAVITA.jpg'),
-          name: 'BELLAVITA',
+          img: require('./s2/2-1.jpg'),
+          name: '日月光廣場',
         },
         {
-          img: require('./s4/台北市政府.jpg'),
-          name: '台北市政府',
+          img: require('./s2/2-2.jpg'),
+          name: '日月光廣場',
         },
         {
-          img: require('./s4/市府轉運站.jpg'),
-          name: '市府轉運站',
+          img: require('./s2/2-3.jpg'),
+          name: '日月光廣場',
         },
         {
-          img: require('./s4/百貨商圈.jpg'),
-          name: '百貨商圈',
+          img: require('./s2/2-4.jpg'),
+          name: '日月光廣場',
         },
       ],
     }
@@ -600,7 +598,7 @@ export default {
 
   watch: {
     viewIndex() {
-      if (this.viewIndex === 4) {
+      if (this.viewIndex === 3) {
         this.slideIndex = 0
         console.log(this.slideIndex, 'slideIndex')
       }

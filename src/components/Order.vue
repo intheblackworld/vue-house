@@ -8,7 +8,7 @@
         <h3 class="title">{{order.title}}</h3>
         <div class="subtitle">{{order.subTitle}}</div>
       </div> -->
-      <div class="order-title title-d" v-html="order.title"></div>
+      <div class="order-title" v-html="order.title"></div>
       <div class="order-subtitle" v-html="order.subTitle"></div>
       <div class="order">
         <div class="form">

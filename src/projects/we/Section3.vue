@@ -1,8 +1,6 @@
 <template>
   <div>
     <div class="section3">
-      <img src="./s2/hr.png" alt="" class="hr absolute">
-      <div class="title-d absolute-jc" data-aos="fade-down" data-aos-delay="200" >珍稀地段</div>
       <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -17,11 +15,12 @@
           </div>
         </div>
       </div>
-      <div class="title absolute" data-aos="fade-down" data-aos-delay="400" >繁華都心</div>
-      <div class="subtitle absolute" data-aos="fade-down" data-aos-delay="300" >信義區 全台首座國際CBD <br v-if="isMobile">站上世界舞台的繁華都心</div>
-      <div class="line absolute" data-aos="fade" data-aos-delay="200" ></div>
-      <div class="desc absolute" data-aos="fade-up" data-aos-delay="300" >
-        台灣最驕傲的經濟櫥窗信義計畫區，自1980年代進行開發，為全台首座國際中心商業區（Central Business District，CBD），數十年來，跟著國際脈絡趨勢大躍進，匯聚市政核心、企業總部、百貨商場、五星級酒店、藝文美學及億級豪宅等，放眼天際線盡是世界一流的建築名師爭相在此，留下一座座令人驚豔的搶眼地標。
+      <div class="title absolute" data-aos="fade-down" data-aos-delay="400">
+        悅峰WE時代 <span>10分鐘核心生活圈</span>
+      </div>
+      <div class="hr absolute" data-aos="fade" data-aos-delay="200"></div>
+      <div class="desc absolute" data-aos="fade-up" data-aos-delay="300">
+        金城正核心雙捷商圈，同時擁有重劃區新街廓與舊市區的生活便利，地段力、交通力、生活力、增值力一次到位，第一次買房就WIN在起跑點。
       </div>
       <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
@@ -33,12 +32,10 @@
 @import '@/assets/style/function.scss';
 
 .section3 {
-  width: size(1920);
-  height: size(900);
   max-height: size(1080);
   position: relative;
-  background: #fff;
-  // min-height: size(900);
+  background: #5fc8ce;
+  min-height: size(1072);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
   // background-position: 0 0;
@@ -61,64 +58,25 @@
   }
 }
 
-.title-d {
-  width: size(160);
-  top: size(90);
-  font-size: size(40);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: normal;
-  text-align: center;
-  color: #005369;
-
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    right: size(-60);
-    width: size(36);
-    height: size(36);
-    background-image: url('./s2/title.png');
-    background-size: cover;
-    transform: rotate(180deg);
-    top: size(8);
-  }
-
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    left: size(-60);
-    top: size(8);
-    width: size(36);
-    height: size(36);
-    background-image: url('./s2/title.png');
-    background-size: cover;
-  }
-}
-
 .hr {
-  width: 100vw;
-  top: size(-18);
-  left: 0;
-  opacity: 1;
+  @include img_l_pc(1500, 1210, 210);
+  border: solid 1.1px #888888;
 }
 
 .title {
-  width: size(125);
-  top: size(343);
-  right: size(695);
+  @include img_l_pc(518, 920, 210);
   font-size: size(30);
-  font-weight: 500;
+  font-weight: 900;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
   letter-spacing: size(1.5);
   text-align: left;
-  color: #005369;
+  color: #fff;
   white-space: nowrap;
+  span {
+    color: #ffff00;
+  }
 }
 
 .subtitle {
@@ -135,32 +93,25 @@
   color: #2c9899;
   white-space: nowrap;
 }
-.line {
-  background-color: #888;
-  width: size(610);
-  top: size(449);
-  right: size(210);
-  height: size(2);
-}
+
 .desc {
-  width: size(610);
-  top: size(467);
-  right: size(210);
+  @include img_l_pc(1500, 1236, 210);
   font-size: size(18);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 2;
-  letter-spacing:0.05em;
-  text-align: justify;
+  letter-spacing: size(0.9);
+  text-align: left;
   color: #666666;
+  white-space: nowrap;
 }
 
 /* Swipe */
 .swipe {
-  width: size(840);
-  height: size(560);
-  top: size(233);
+  width: size(1500);
+  height: size(844);
+  top: size(20);
   left: size(210);
   object-fit: cover;
 }
@@ -222,8 +173,8 @@
   }
 
   .slide-name {
-    right:1.5em;
-    bottom:1em;
+    right: 1.5em;
+    bottom: 1em;
     color: #fff;
     font-size: size(15);
     font-weight: normal;
@@ -233,7 +184,7 @@
     letter-spacing: 0.89px;
     text-align: left;
     color: #ffffff;
-   text-shadow:0 0.1em 0.3em #000;
+    text-shadow: 0 0.1em 0.3em #000;
   }
 
   // &:nth-child(1) {
@@ -253,8 +204,8 @@
 
 .pagination {
   width: auto;
-  bottom: size(148);
-  left:calc(50% + 6.95vw);
+  top: size(880);
+  right: size(200);
   justify-content: center;
 }
 
@@ -269,9 +220,10 @@
     width: 15px;
     height: 15px;
     border-radius: 0px;
-    box-shadow: 0 0 0 1px #ccc;
+    box-shadow: 0 0 0 5px #fff;
+    border-radius: 15px;
     position: relative;
-    background-color: #ccc;
+    // background-color: #ccc;
     transition: all 0.5s;
 
     &::before {
@@ -279,7 +231,7 @@
       width: 60%;
       height: 60%;
       display: block;
-      background: #005369;
+      background: transparent;
       // border-radius: 20px;
       opacity: 1;
       position: absolute;
@@ -297,7 +249,12 @@
         width: 100%;
         height: 100%;
         display: block;
-        background: #005369;
+        box-shadow: 0 0 0 5px #000;
+        border-radius: 15px;
+        background-image: url('./s2/dot.png');
+        background-size: 70% 70%;
+        background-position: center;
+        background-repeat: no-repeat;
         // border-radius: 20px;
         opacity: 1;
         position: absolute;
@@ -338,8 +295,6 @@
 
 @media screen and (max-width: 767px) {
   .section3 {
-    width: 100vw;
-    height: sizem(806);
     min-height: auto;
     max-height: initial;
   }
@@ -372,7 +327,7 @@
       width: sizem(28);
       height: sizem(28);
       top: sizem(4);
-      background-image: url('./s2/title.png');
+      // background-image: url('./s2/title.png');
       background-size: cover;
       transform: rotate(180deg);
     }
@@ -385,7 +340,7 @@
       width: sizem(28);
       height: sizem(28);
       top: size(8);
-      background-image: url('./s2/title.png');
+      // background-image: url('./s2/title.png');
       background-size: cover;
     }
   }
@@ -493,9 +448,9 @@
     width: 100%;
     height: 100%;
     z-index: 0;
-    .slide-name{
+    .slide-name {
       right: 1em;
-    font-size: sizem(13);
+      font-size: sizem(13);
     }
 
     // &:nth-child(1) {
@@ -591,12 +546,9 @@
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
-
 export default {
-  name: 'section3',
-
   mixins: [slider],
-  props: ['viewIndex'],
+  // props: ['viewIndex'],
 
   data() {
     return {
@@ -606,16 +558,20 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s3/1信義計劃區-台北101.jpg'),
-          name: '台北101',
+          img: require('./s2/2-1.jpg'),
+          name: '日月光廣場',
         },
         {
-          img: require('./s3/2信義計劃區-台北101.jpg'),
-          name: '台北101',
+          img: require('./s2/2-2.jpg'),
+          name: '日月光廣場',
         },
         {
-          img: require('./s3/3信義計劃區-台北101.jpg'),
-          name: '台北101',
+          img: require('./s2/2-3.jpg'),
+          name: '日月光廣場',
+        },
+        {
+          img: require('./s2/2-4.jpg'),
+          name: '日月光廣場',
         },
       ],
     }

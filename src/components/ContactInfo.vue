@@ -191,6 +191,7 @@ export default {
   font-size: 16px;
   cursor: pointer;
   text-decoration: none;
+  font-weight: bold;
   // border-top-right-radius: 60px;
   //border-bottom-right-radius: 60px;
   color: $contact_google_btn_color;

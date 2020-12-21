@@ -1,137 +1,287 @@
 <template>
-  <div class="section2">
-    <div>
-      <img src="./s2/hr.png" alt="" class="hr absolute">
-      <div class="title-d absolute-jc">
-        繁華核心　轉身瞬靜
+  <div>
+    <div class="section2">
+      <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+          <transition-group name="swipe-fade" mode="out-in">
+            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+              <img :src="slide.img" alt="">
+              <div class="slide-name absolute" v-html="slide.name"></div>
+            </div>
+          </transition-group>
+          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+          </div>
+        </div>
       </div>
-      <div class="subtitle absolute">
-        信義計劃生活圈　萬坪自然保護區
+      <img src="./s2/logo.png" alt="" class="logo">
+      <div class="title absolute" data-aos="fade-down" data-aos-delay="400">
+        <span>雙捷運x雙商圈x雙公園</span> 輕取美好生活
       </div>
-      <div class="video absolute">
-        <div :id="`youtube-player-${id}`" ref="player" class="video-iframe absolute"></div>
-        <img src="" alt="" :class="`video-img absolute ${(isPlay == true) ? 'hide' : ''}`" @click="playVideo">
+      <div class="hr absolute" data-aos="fade" data-aos-delay="200"></div>
+      <div class="desc absolute" data-aos="fade-up" data-aos-delay="300">
+        金城正核心雙捷商圈，同時擁有重劃區新街廓與舊市區的生活便利，地段力、交通力、生活力、增值力一次到位，第一次買房就WIN在起跑點。
+      </div>
+      <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
+        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
     </div>
   </div>
 </template>
-<style lang="scss">
-@import '@/assets/style/function.scss';
-.video-iframe {
-  width: 100%;
-  height: 200%;
-  top: -50%;
-  left: 0;
-  z-index: 3;
-  transition: all 0.3s;
-}
-</style>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
 .section2 {
-  width: size(1920);
+  max-height: size(1080);
+  position: relative;
+  background: #5fc8ce;
+  min-height: size(1238 + 140);
+  // background-image: url('./s2/bg.jpg');
+  // background-size: 100% 100%;
+  // background-position: 0 0;
+  // background-attachment: fixed;
+  // overflow: hidden;
+}
+
+.bg-img {
+  width: 100vw;
   height: size(900);
   min-height: size(900);
-  // max-height: size(1080);
-  background: rgba(255, 255, 255, 0.5);
-  background-size: auto;
-  background-attachment: fixed;
-  // overflow: hidden;
-  position: relative;
-}
-
-.video {
-  width: size(990);
-  height: size(556);
-  top: size(230);
-  right: size(466);
-  z-index: 3;
-  box-shadow: 0 0 0 size(23) rgba(0, 63, 68, 0.37);
-  transition: all 0.3s;
-  overflow: hidden;
-}
-
-.video-img {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  display: block;
   top: 0;
   left: 0;
-  z-index: 3;
-  transition: all 0.3s;
+  object-fit: cover;
+
+  &:nth-child(1) {
+    position: relative;
+  }
 }
 
-.title-d {
-  width: size(360);
-  top: size(70);
-  font-size: size(40);
-  font-weight: 500;
+.logo {
+  @include img_r_pc(472, 70, 210);
+}
+
+.hr {
+  @include img_l_pc(1500, 1210, 210);
+  border: solid 1.1px #888888;
+}
+
+.title {
+  @include img_l_pc(518, 1141, 210);
+  font-size: size(30);
+  font-weight: 900;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: normal;
-  text-align: center;
-  color: #005369;
-
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    right: size(-60);
-    width: size(36);
-    height: size(36);
-    background-image: url('./s2/title.png');
-    background-size: cover;
-    transform: rotate(180deg);
-    top: size(8);
-  }
-
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    left: size(-60);
-    top: size(8);
-    width: size(36);
-    height: size(36);
-    background-image: url('./s2/title.png');
-    background-size: cover;
+  letter-spacing: size(1.5);
+  text-align: left;
+  color: #fff;
+  white-space: nowrap;
+  span {
+    color: #ffff00;
   }
 }
 
 .subtitle {
-  width: size(360);
-  top: size(133);
-  left: size(781);
+  width: size(568);
+  top: size(393);
+  right: size(252);
   font-size: size(24);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: normal;
+  letter-spacing: size(1.2);
   text-align: left;
-  color: #000000;
+  color: #2c9899;
+  white-space: nowrap;
 }
 
-.hr {
-  width: 100vw;
-  top: size(-18);
-  left: 0;
-  opacity: 0.5;
+.desc {
+  @include img_l_pc(1500, 1236, 210);
+  font-size: size(18);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2;
+  letter-spacing: size(0.9);
+  text-align: left;
+  color: #666666;
+  white-space: nowrap;
 }
-.bg-img {
-  width: size(1920);
-  height: 100%;
-  min-height: size(900);
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
+
+/* Swipe */
+.swipe {
+  width: size(1500);
+  height: size(844);
+  top: size(260);
+  left: size(210);
   object-fit: cover;
-  margin-top: 0;
+}
 
-  &:nth-child(1) {
+// begin
+.swipe-fade-leave-to {
+  opacity: 0;
+  z-index: 0;
+}
+// end
+.swipe-fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.swipe-fade-enter-active {
+  transition: all 0.5s ease;
+}
+
+.swipe-fade-leave-active {
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+// begin
+// .swipe-left-leave-to {
+//   margin-left: -100vw;
+//   z-index: 0;
+// }
+// // end
+// .swipe-left-enter {
+//   opacity: 0.5;
+//   margin-left: 0;
+//   z-index: 1;
+// }
+
+// .swipe-left-enter-active {
+//   transition: all 0.5s ease;
+// }
+
+// .swipe-left-leave-active {
+//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+// }
+
+.swipe-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.swipe-item {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .slide-name {
+    right: 1.5em;
+    bottom: 1em;
+    color: #fff;
+    font-size: size(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.89px;
+    text-align: left;
+    color: #ffffff;
+    text-shadow: 0 0.1em 0.3em #000;
+  }
+
+  // &:nth-child(1) {
+  //   z-index: 1;
+  //   // opacity: 1;
+  // }
+
+  // &.base {
+  //   z-index: 1;
+  //   opacity: 1;
+  // }
+  // &.active {
+  //   z-index: 2;
+  //   // opacity: 1;
+  // }
+}
+
+.pagination {
+  width: auto;
+  top: size(1120);
+  right: size(200);
+  justify-content: center;
+}
+
+.pagination-dot {
+  padding: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+  z-index: 4;
+
+  span {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 0px;
+    box-shadow: 0 0 0 5px #fff;
+    border-radius: 15px;
     position: relative;
+    // background-color: #ccc;
+    transition: all 0.5s;
+
+    &::before {
+      content: '';
+      width: 60%;
+      height: 60%;
+      display: block;
+      background: transparent;
+      // border-radius: 20px;
+      opacity: 1;
+      position: absolute;
+      top: 20%;
+      // transform: translateY(-50%);
+      left: 20%;
+      transition: all 0.3s;
+      transform-origin: center;
+      transform: scale(0);
+    }
+    &.active {
+      box-shadow: none;
+      &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        display: block;
+        box-shadow: 0 0 0 5px #000;
+        border-radius: 15px;
+        background-image: url('./s2/dot.png');
+        background-size: 70% 70%;
+        background-position: center;
+        background-repeat: no-repeat;
+        // border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 0%;
+        // transform: translateY(-50%);
+        left: 0%;
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+.swipe-btns {
+  width: 100%;
+  height: 100%;
+  padding: 0 15px;
+  z-index: 3;
+
+  .prev-btn,
+  .next-btn {
+    width: size(20);
+    cursor: pointer;
   }
 }
 
@@ -150,37 +300,20 @@
 
 @media screen and (max-width: 767px) {
   .section2 {
-    width: 100vw;
-    min-height: sizem(604);
-    max-height: sizem(812);
-    height: calc(100vh - 63px);
-    // background-image: url('./mo/1/bg.png');
-    background-size: cover;
-    background-attachment: scroll;
+    min-height: auto;
+    max-height: initial;
   }
 
-  .video {
-    width: sizem(365);
-    height: sizem(205);
-    top: sizem(179);
-    right: sizem(5.7);
-    z-index: 3;
-    box-shadow: 0 0 0 sizem(7.4) rgba(0, 63, 68, 0.37);
-    transition: all 0.3s;
-    overflow: hidden;
-  }
-
-  .video-img {
-    width: 100%;
-    height: 100%;
-    top: 0;
+  .hr {
+    width: auto;
+    height: sizem(10);
+    top: sizem(-10);
     left: 0;
-    z-index: 3;
-    transition: all 0.3s;
+    opacity: 1;
   }
 
   .title-d {
-    width: sizem(270);
+    width: sizem(120);
     top: sizem(50);
     font-size: sizem(30);
     font-weight: 500;
@@ -199,7 +332,7 @@
       width: sizem(28);
       height: sizem(28);
       top: sizem(4);
-      background-image: url('./s2/title.png');
+      // background-image: url('./s2/title.png');
       background-size: cover;
       transform: rotate(180deg);
     }
@@ -212,100 +345,250 @@
       width: sizem(28);
       height: sizem(28);
       top: size(8);
-      background-image: url('./s2/title.png');
+      // background-image: url('./s2/title.png');
       background-size: cover;
     }
   }
 
-  .subtitle {
-    width: sizem(255);
-    top: sizem(107);
-    left: sizem(61);
-    font-size: sizem(17);
+  .title {
+    width: sizem(104);
+    top: sizem(411);
+    right: sizem(238);
+    font-size: sizem(25);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.18;
-    letter-spacing: normal;
-    text-align: center;
-    color: #000000;
+    line-height: 1.44;
+    letter-spacing: sizem(1.25);
+    text-align: left;
+    color: #005369;
+    white-space: nowrap;
   }
 
-  .hr {
+  .subtitle {
+    width: sizem(242);
+    top: sizem(455);
+    right: sizem(100);
+    font-size: sizem(20);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.44;
+    letter-spacing: sizem(1);
+    text-align: left;
+    color: #2c9899;
+    white-space: normal;
+  }
+  .line {
+    background-color: #888;
+    width: sizem(310);
+    top: sizem(532);
+    right: sizem(32);
+    height: sizem(2);
+  }
+  .desc {
+    width: sizem(310);
+    top: sizem(548);
+    right: sizem(32);
+    font-size: sizem(15);
+    line-height: 1.73;
+  }
+
+  /* Swipe */
+  .swipe {
+    width: 100vw;
+    height: sizem(250);
+    min-height: auto;
+    top: sizem(120);
+    left: sizem(0);
+    object-fit: cover;
+  }
+
+  // begin
+  .swipe-fade-leave-to {
+    opacity: 0;
+    z-index: 0;
+  }
+  // end
+  .swipe-fade-enter {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .swipe-fade-enter-active {
+    transition: all 0.5s ease;
+  }
+
+  .swipe-fade-leave-active {
+    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  // begin
+  // .swipe-left-leave-to {
+  //   margin-left: -100vw;
+  //   z-index: 0;
+  // }
+  // // end
+  // .swipe-left-enter {
+  //   opacity: 0.5;
+  //   margin-left: 0;
+  //   z-index: 1;
+  // }
+
+  // .swipe-left-enter-active {
+  //   transition: all 0.5s ease;
+  // }
+
+  // .swipe-left-leave-active {
+  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  // }
+
+  .swipe-wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .swipe-item {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    .slide-name {
+      right: 1em;
+      font-size: sizem(13);
+    }
+
+    // &:nth-child(1) {
+    //   z-index: 1;
+    //   // opacity: 1;
+    // }
+
+    // &.base {
+    //   z-index: 1;
+    //   opacity: 1;
+    // }
+    // &.active {
+    //   z-index: 2;
+    //   // opacity: 1;
+    // }
+  }
+
+  .pagination {
     width: auto;
-    height: sizem(10);
-    top: sizem(-10);
+    bottom: size(91);
     left: 0;
-    opacity: 0.5;
+    right: 0;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .pagination-dot {
+    padding: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    z-index: 4;
+
+    span {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 0 1px #fff;
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.01);
+      transition: all 0.5s;
+
+      &::before {
+        content: '';
+        width: 60%;
+        height: 60%;
+        display: block;
+        background: #004ea2;
+        border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 20%;
+        // transform: translateY(-50%);
+        left: 20%;
+        transition: all 0.3s;
+        transform-origin: center;
+        transform: scale(0);
+      }
+      &.active {
+        &::before {
+          content: '';
+          width: 100%;
+          height: 100%;
+          display: block;
+          background: #004ea2;
+          border-radius: 20px;
+          opacity: 1;
+          position: absolute;
+          top: 0%;
+          // transform: translateY(-50%);
+          left: 0%;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  .swipe-btns {
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+    z-index: 3;
+
+    .prev-btn,
+    .next-btn {
+      width: sizem(15);
+      cursor: pointer;
+    }
   }
 }
 </style>
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
-
+import slider from '@/mixins/slider.js'
 export default {
-  name: 'section2',
+  mixins: [slider],
+  // props: ['viewIndex'],
 
   data() {
     return {
       isPC,
       isMobile,
       isTablet,
-      isPlay: false,
-      player: '',
-      id: 'bzNBCmdCaTU',
+      isDialog: false,
+      slideList: [
+        {
+          img: require('./s2/1-1.jpg'),
+          name: '台北101',
+        },
+        {
+          img: require('./s2/1-2.jpg'),
+          name: '台北101',
+        },
+      ],
     }
   },
 
-  methods: {
-    onPlayerReady(event) {
-      console.log('load')
-      event.target.playVideo()
-    },
-    loadVideo() {
-      this.player = new window.YT.Player(`youtube-player-${this.id}`, {
-        videoId: this.id,
-        width: '1920',
-        height: '1080',
-        playerVars: {
-          autoplay: 1,
-          loop: 1,
-          controls: 0,
-          showinfo: 0,
-          autohide: 1,
-          modestbranding: 1,
-          mute: 1,
-          suggestedQuality: 'default',
-          iv_load_policy: 3,
-        },
-        events: {
-          onReady: this.onPlayerReady,
-          onStateChange: this.onPlayerStateChange,
-        },
-      })
-    },
+  methods: {},
 
-    onPlayerStateChange(e) {
-      if (e.data === window.YT.PlayerState.ENDED) {
-        this.player.loadVideoById(this.id)
-      }
-    },
-
-    playVideo() {
-      this.loadVideo()
-      this.isPlay = true
-    },
-  },
+  created() {},
 
   mounted() {},
-  created() {
-    const tag = document.createElement('script')
-    tag.src = 'https://www.youtube.com/iframe_api'
-    const firstScriptTag = document.getElementsByTagName('script')[0]
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
-  },
 
   computed: {},
+
+  watch: {
+    viewIndex() {
+      if (this.viewIndex === 3) {
+        this.slideIndex = 0
+        console.log(this.slideIndex, 'slideIndex')
+      }
+    },
+  },
 }
 </script>

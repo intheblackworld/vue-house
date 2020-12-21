@@ -1,40 +1,20 @@
 <template>
   <div class="section1">
     <div>
-    </div>
+			<div class="w-block"></div>
+			<img src="./s1/logo.png" alt="" class="logo">
+			<img src="./s1/1/st.png" alt="" class="st">
+			<img src="./s1/1/t1.png" alt="" class="t1">
+			<img src="./s1/1/t2.png" alt="" class="t2">
+			<img src="./s1/1/i.jpg" alt="" class="i">
+			<div class="hint">
+				本公司保留活動修改及終止權利！！數量有限，要買要快
+			</div>
+		</div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-@keyframes letterDraw{
-    50%{
-        stroke-dashoffset: 0;fill:#FFFFFF00;
-    }
-    to {
-        stroke-dashoffset: 0;fill:#FFFFFF;
-    }
-}
-@keyframes letterDraw3{
-    50%{
-        stroke-dashoffset: 0;
-    }
-    to {
-        stroke-dashoffset: 0;
-    }
-}
-@keyframes letterDraw2{
-    50%{
-        stroke-dashoffset: 0;fill:#EEE93A00;
-    }
-    to {
-        stroke-dashoffset: 0;fill:#EEE93A;
-    }
-}
-@keyframes op {
-    to {
-       fill:#FFFFFF;
-    }
-}
 
 @import '@/assets/style/function.scss';
 
@@ -65,11 +45,42 @@
   }
 }
 
+.w-block {
+	background-color: #fff;
+	@include div_l_pc(1874, 963, 0, 0);
+}
+
 .logo {
-  width: size(743);
-  top: calc(50% - 9.5vw);
-  left: size(589);
-  filter: drop-shadow(0px 10px 5px #044955)
+  @include img_l_pc(677, 209, 232);
+}
+
+.st {
+	@include img_l_pc(272, 347, 434);
+}
+
+.t1 {
+	@include img_l_pc(712, 383, 214);
+}
+
+.t2 {
+	@include img_l_pc(720, 768, 210);
+}
+
+.i {
+	@include img_r_pc(633, 209, 209);
+}
+
+.hint {
+	@include div_r_pc(450, 27, 965, 46);
+	font-size: size(18);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+	text-align: right;
+	color: #ffffff;
+	white-space: nowrap;
 }
 /*
 .t1 {

@@ -1,31 +1,31 @@
 <template>
-  <div>
-    <div class="section7">
-      <img src="./s2/hr.png" alt="" class="hr absolute">
-      <div class="title-d absolute-jc" data-aos="fade-down" data-aos-delay="200" >設計美學</div>
-      <div class="swipe absolute-jc" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
-          <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
-              <div class="slide-name absolute" v-html="slide.name"></div>
-            </div>
-          </transition-group>
-          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+  <div class="section7">
+    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" alt="">
+            <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-          </div>
+        </transition-group>
+        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
         </div>
       </div>
-      <div class="title absolute" data-aos="fade-down" data-aos-delay="300">人文建築</div>
-      <div class="subtitle absolute" data-aos="fade-down" data-aos-delay="300">陳逸倫建築師事務所</div>
-      <div class="line absolute" data-aos="fade" data-aos-delay="200" ></div>
-      <div class="desc absolute" data-aos="fade-up" data-aos-delay="300">
-        在建築業界耕耘多年的陳逸倫建築師，同時也是淡江大學建築系兼任講師，以學者爾雅的建築思維，打造兼具美學與實用的人文建築，作品關注量體與自然環境的對話，擅長鋪陳光影與內部空間的律動，同時也是賓士、AUDI等頂級品牌長期合作建築師。                
-      </div>
+    </div>
+    <div class="w-block"></div>
+    <img src="./s7/最WE Style的家.png" alt="最WE Style的家" class="logo">
+    <div class="title absolute" data-aos="fade-down" data-aos-delay="400">
+      1-2-3自由配 量身訂製你的家
+    </div>
+    <div class="line absolute" data-aos="fade" data-aos-delay="200"></div>
+    <div class="desc absolute" data-aos="fade-up" data-aos-delay="300">
+      住宅內裝客製化，從大門到地坪，從臥室到衛浴，建材隨你自由配，
+      打造出最有型有款的訂製宅，讓家有自己的STYLE，有開心的玩法。
+    </div>
+    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
+      <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
     </div>
   </div>
 </template>
@@ -34,10 +34,11 @@
 
 .section7 {
   width: size(1920);
-  height: size(1358);
-  max-height: size(1358);
+  height: size(900 + 120);
+  max-height: size(1080);
   position: relative;
-  background: #fff;
+  // background: #fff;
+  z-index: 2;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
@@ -61,108 +62,54 @@
   }
 }
 
-.title-d {
-  width: size(160);
-  top: size(90);
-  font-size: size(40);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: normal;
-  text-align: center;
-  color: #005369;
-
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    right: size(-60);
-    width: size(36);
-    height: size(36);
-    background-image: url('./s2/title.png');
-    background-size: cover;
-    transform: rotate(180deg);
-    top: size(8);
-  }
-
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    left: size(-60);
-    top: size(8);
-    width: size(36);
-    height: size(36);
-    background-image: url('./s2/title.png');
-    background-size: cover;
-  }
+.w-block {
+	background-color: #fff;
+	@include div_l_pc(1874, 900, 0, 0);
 }
 
-.hr {
-  width: 100vw;
-  top: size(-18);
-  left: 0;
-  opacity: 1;
+.logo {
+  @include img_r_pc(677, 90, 209);
 }
 
 .title {
-  width: size(125);
-  top: size(1091);
-  left: size(210);
+  @include img_r_pc(404, 332 + 50, 416);
   font-size: size(30);
-  font-weight: 500;
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
   letter-spacing: size(1.5);
   text-align: left;
-  color: #005369;
+  color: #055e9b;
   white-space: nowrap;
 }
 
-.subtitle {
-  width: size(226);
-  top: size(1095);
-  left: size(382);
-  font-size: size(24);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(1.2);
-  text-align: left;
-  color: #2c9899;
-  white-space: nowrap;
-}
-.line {
-  background-color: #888;
-  width: size(1500);
-  bottom: size(196);
-  left: size(210);
-  height: size(2);
-}
 .desc {
-  width: size(1500);
-  bottom: size(110);
-  left: size(210);
+  @include img_r_pc(610, 420 + 50, 210);
   font-size: size(18);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 2;
-  letter-spacing:0.05em;
-  text-align: justify;
+  letter-spacing: size(0.9);
+  text-align: left;
   color: #666666;
+  // white-space: nowrap;
+}
+.line {
+  @include img_r_pc(610, 398 + 50, 210);
+  background-color: #888;
+  height: size(2);
 }
 
 /* Swipe */
 .swipe {
-  width: size(1500);
-  height: size(844);
-  top: size(211);
-  // left: size(210);
+  width: size(830);
+  height: size(560);
+  top: size(229);
+  left: size(210);
   object-fit: cover;
+  z-index: 2;
 }
 
 // begin
@@ -207,7 +154,7 @@
 .swipe-wrap {
   width: 100%;
   height: 100%;
-  // overflow: hidden;
+  overflow: hidden;
 }
 
 .swipe-item {
@@ -220,9 +167,10 @@
     height: 100%;
     object-fit: cover;
   }
+
   .slide-name {
-    right:1.5em;
-    bottom:1em;
+    right: 1.5em;
+    bottom: 1em;
     color: #fff;
     font-size: size(15);
     font-weight: normal;
@@ -232,7 +180,7 @@
     letter-spacing: 0.89px;
     text-align: left;
     color: #ffffff;
-   text-shadow:0 0.1em 0.3em #000;
+    text-shadow: 0 0.1em 0.3em #000;
   }
 
   // &:nth-child(1) {
@@ -252,10 +200,9 @@
 
 .pagination {
   width: auto;
-  bottom: size(-40);
-  right: size(-10);
+  bottom: size(248);
+  left: calc(50% + 6.95vw);
   justify-content: center;
-  display: none;
 }
 
 .pagination-dot {
@@ -269,9 +216,10 @@
     width: 15px;
     height: 15px;
     border-radius: 0px;
-    box-shadow: 0 0 0 1px #ccc;
+    box-shadow: 0 0 0 5px #ccc;
+    border-radius: 15px;
     position: relative;
-    background-color: #ccc;
+    // background-color: #ccc;
     transition: all 0.5s;
 
     &::before {
@@ -279,7 +227,7 @@
       width: 60%;
       height: 60%;
       display: block;
-      background: #005369;
+      background: transparent;
       // border-radius: 20px;
       opacity: 1;
       position: absolute;
@@ -297,7 +245,12 @@
         width: 100%;
         height: 100%;
         display: block;
-        background: #005369;
+        box-shadow: 0 0 0 5px #000;
+        border-radius: 15px;
+        background-image: url('./s2/dot.png');
+        background-size: 70% 70%;
+        background-position: center;
+        background-repeat: no-repeat;
         // border-radius: 20px;
         opacity: 1;
         position: absolute;
@@ -339,22 +292,24 @@
 @media screen and (max-width: 767px) {
   .section7 {
     width: 100vw;
-    height: sizem(723);
+    height: sizem(706);
     min-height: auto;
     max-height: initial;
   }
 
-  .hr {
+  .hr-b {
     width: auto;
     height: sizem(10);
-    top: sizem(-10);
+    bottom: sizem(-10);
     left: 0;
     opacity: 1;
+    transform-origin: center;
+    transform: rotate(180deg);
   }
 
   .title-d {
     width: sizem(120);
-    top: sizem(50);
+    top: sizem(0);
     font-size: sizem(30);
     font-weight: 500;
     font-stretch: normal;
@@ -390,10 +345,17 @@
     }
   }
 
+  .hr {
+    width: 100vw;
+    top: size(-18);
+    left: 0;
+    opacity: 1;
+  }
+
   .title {
     width: sizem(104);
-    top: sizem(411);
-    left: sizem(32);
+    top: sizem(411 - 120);
+    right: sizem(238);
     font-size: sizem(25);
     font-weight: 500;
     font-stretch: normal;
@@ -407,8 +369,8 @@
 
   .subtitle {
     width: sizem(242);
-    top: sizem(455);
-    left: sizem(32);
+    top: sizem(455 - 120);
+    right: sizem(100);
     font-size: sizem(20);
     font-weight: 500;
     font-stretch: normal;
@@ -422,14 +384,14 @@
   .line {
     background-color: #888;
     width: sizem(310);
-    top: sizem(502);
-    left: sizem(32);
+    top: sizem(532 - 120);
+    right: sizem(32);
     height: sizem(2);
   }
   .desc {
     width: sizem(310);
-    top: sizem(518);
-    left: sizem(32);
+    top: sizem(548 - 120);
+    right: sizem(32);
     font-size: sizem(15);
     line-height: 1.73;
   }
@@ -437,9 +399,9 @@
   /* Swipe */
   .swipe {
     width: 100vw;
-    height: sizem(260);
+    height: sizem(250);
     min-height: auto;
-    top: sizem(120);
+    top: sizem(0);
     left: sizem(0);
     object-fit: cover;
   }
@@ -493,9 +455,9 @@
     width: 100%;
     height: 100%;
     z-index: 0;
-    .slide-name{
+    .slide-name {
       right: 1em;
-    font-size: sizem(13);
+      font-size: sizem(13);
     }
 
     // &:nth-child(1) {
@@ -607,7 +569,15 @@ export default {
       slideList: [
         {
           img: require('./s7/1.jpg'),
-          name: '外觀 3D情境示意圖',
+          name: '室內裝修參考示意圖',
+        },
+        {
+          img: require('./s7/2.jpg'),
+          name: '室內裝修參考示意圖',
+        },
+        {
+          img: require('./s7/3.jpg'),
+          name: '室內裝修參考示意圖',
         },
       ],
     }
@@ -623,7 +593,7 @@ export default {
 
   watch: {
     viewIndex() {
-      if (this.viewIndex === 7) {
+      if (this.viewIndex === 5) {
         this.slideIndex = 0
         console.log(this.slideIndex, 'slideIndex')
       }

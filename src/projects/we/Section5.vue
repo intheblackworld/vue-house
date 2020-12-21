@@ -1,42 +1,43 @@
 <template>
-    <div class="section5">
-      <img src="./s2/hr.png" alt="" class="hr-b absolute">
-      <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
-          <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
-              <div class="slide-name absolute" v-html="slide.name"></div>
-            </div>
-          </transition-group>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+  <div class="section5">
+    <img src="./s2/hr.png" alt="" class="hr-b absolute">
+    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" alt="">
+            <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
+        </transition-group>
+        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
         </div>
       </div>
-      <div class="title absolute" data-aos="fade-down" data-aos-delay="400">
-        能動能靜
-      </div>
-      <div class="subtitle absolute" data-aos="fade-down" data-aos-delay="300">一動一靜 時尚華麗轉身 <br v-if="isMobile">回家沐浴芬多精</div>
-      <div class="line absolute" data-aos="fade" data-aos-delay="200" ></div>
-      <div class="desc absolute" data-aos="fade-up" data-aos-delay="300" >
-        地段決定住家的價值！全台最貴豪宅富人聚落，以往身家沒有幾十個億進不來，「信義CASA」實現您入主燙金門牌的奢侈夢想，鄰近信義計劃區正核心，輕取時尚潮流第一線，轉個彎回到家享受綠意頭等艙，隱於城市繁華與自然間的珍稀地段。
-      </div>
-      <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
-        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-      </div>
     </div>
+    <img src="./s3/logo.png" alt="最wee建築" class="logo">
+    <div class="title absolute" data-aos="fade-down" data-aos-delay="400">
+      高顏值建築門面 威3房圓夢款
+    </div>
+    <div class="line absolute" data-aos="fade" data-aos-delay="200"></div>
+    <div class="desc absolute" data-aos="fade-up" data-aos-delay="300">
+      建築外觀以低調的深灰與謙遜的萃白，演繹現代主義包浩斯美學。精品商旅時尚門廳、坡道平面車位、一層三戶淳芳鄰、戶戶邊間雙面採光、剛剛好的3房2衛精實坪效，小資價格升級名宅規格。
+    </div>
+    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
+      <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+    </div>
+  </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
 .section5 {
   width: size(1920);
-  height: size(688);
+  height: size(900);
   max-height: size(1080);
   position: relative;
-  background: #fff;z-index: 2;
+  background: #fff;
+  z-index: 2;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
@@ -107,61 +108,46 @@
   transform: rotate(180deg);
 }
 
+.logo {
+  @include img_r_pc(472, 107, 209);
+}
+
 .title {
-  width: size(125);
-  top: size(343 - 233);
-  right: size(695);
+  @include img_r_pc(404, 332, 416);
   font-size: size(30);
-  font-weight: 500;
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
   letter-spacing: size(1.5);
   text-align: left;
-  color: #005369;
+  color: #055e9b;
   white-space: nowrap;
 }
 
-.subtitle {
-  width: size(568);
-  top: size(393 - 233);
-  right: size(252);
-  font-size: size(24);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(1.2);
-  text-align: left;
-  color: #2c9899;
-  white-space: nowrap;
-}
-.line {
-  background-color: #888;
-  width: size(610);
-  top: size(449 - 233);
-  right: size(210);
-  height: size(2);
-}
 .desc {
-  width: size(610);
-  top: size(467 - 233);
-  right: size(210);
+  @include img_r_pc(610, 420, 210);
   font-size: size(18);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 2;
-  letter-spacing:0.05em;
-  text-align: justify;
+  letter-spacing: size(0.9);
+  text-align: left;
   color: #666666;
+  // white-space: nowrap;
+}
+.line {
+  @include img_r_pc(610, 398, 210);
+  background-color: #888;
+  height: size(2);
 }
 
 /* Swipe */
 .swipe {
-  width: size(840);
+  width: size(830);
   height: size(560);
-  top: size(0);
+  top: size(170);
   left: size(210);
   object-fit: cover;
 }
@@ -222,10 +208,9 @@
     object-fit: cover;
   }
 
-  
   .slide-name {
-    right:1.5em;
-    bottom:1em;
+    right: 1.5em;
+    bottom: 1em;
     color: #fff;
     font-size: size(15);
     font-weight: normal;
@@ -235,7 +220,7 @@
     letter-spacing: 0.89px;
     text-align: left;
     color: #ffffff;
-   text-shadow:0 0.1em 0.3em #000;
+    text-shadow: 0 0.1em 0.3em #000;
   }
 
   // &:nth-child(1) {
@@ -255,8 +240,8 @@
 
 .pagination {
   width: auto;
-  bottom: size(148);
-  left:calc(50% + 6.95vw);
+  bottom: size(188);
+  left: calc(50% + 6.95vw);
   justify-content: center;
 }
 
@@ -271,9 +256,10 @@
     width: 15px;
     height: 15px;
     border-radius: 0px;
-    box-shadow: 0 0 0 1px #ccc;
+    box-shadow: 0 0 0 5px #ccc;
+    border-radius: 15px;
     position: relative;
-    background-color: #ccc;
+    // background-color: #ccc;
     transition: all 0.5s;
 
     &::before {
@@ -281,7 +267,7 @@
       width: 60%;
       height: 60%;
       display: block;
-      background: #005369;
+      background: transparent;
       // border-radius: 20px;
       opacity: 1;
       position: absolute;
@@ -299,7 +285,12 @@
         width: 100%;
         height: 100%;
         display: block;
-        background: #005369;
+        box-shadow: 0 0 0 5px #000;
+        border-radius: 15px;
+        background-image: url('./s2/dot.png');
+        background-size: 70% 70%;
+        background-position: center;
+        background-repeat: no-repeat;
         // border-radius: 20px;
         opacity: 1;
         position: absolute;
@@ -504,9 +495,9 @@
     width: 100%;
     height: 100%;
     z-index: 0;
-    .slide-name{
+    .slide-name {
       right: 1em;
-    font-size: sizem(13);
+      font-size: sizem(13);
     }
 
     // &:nth-child(1) {
@@ -617,16 +608,16 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s5/古道1.jpg'),
-          name: '古道',
+          img: require('./s5/1.jpg'),
+          name: '外觀3D示意圖',
         },
         {
-          img: require('./s5/古道2.jpg'),
-          name: '古道',
+          img: require('./s5/2.jpg'),
+          name: '外觀3D示意圖',
         },
         {
-          img: require('./s5/古道3.jpg'),
-          name: '古道',
+          img: require('./s5/3.jpg'),
+          name: '外觀3D示意圖',
         },
       ],
     }

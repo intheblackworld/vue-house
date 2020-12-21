@@ -16,7 +16,7 @@
             <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: offset }" v-for="item in list" class="flex-c" @click="toggleSidebar">
               <span class="link">
                 <span>
-                  <p :class="`title ${item.type}`" v-html="item.name"></p>
+                  <p :class="`title ${item.type} ${item.color}`" v-html="item.name"></p>
                   <span class="subTitle">{{item.subTitle}}</span>
                 </span>
               </span>
@@ -72,7 +72,7 @@ export default {
 .navigation {
   .title {
     font-size: size(19) !important;
-    width: size(90);
+    width: size(140);
     height: size(28);
     font-size: size(21);
     font-weight: 500;
@@ -81,15 +81,16 @@ export default {
     line-height: 1.2;
     letter-spacing: size(-1.05);
     text-align: center;
-    border-bottom: solid 1px #ffffff;
-    color: #ffffff;
+    border-bottom: solid 0px #ffffff;
+    color: #000;
     margin-top: 15px;
+    white-space: nowrap;
 
     z-index: 3;
       transition: all 0.5s;
     &:hover,
     &.active {
-      border-bottom: size(3.5) solid #eee93a;
+      border-bottom: size(3.5) solid #11a4aa;
     }
 
     &.btn {
@@ -105,10 +106,22 @@ export default {
       line-height: size(38);
       margin-top: 5px;
       background-color: #0a5b6a;
-      border:1px solid #ff99;
+      // border:1px solid #ff99;
       border-radius: 20px / 20px;
   
       transition: all 0.5s;
+
+    &.orange {
+      background-color: #ff6b00;
+    }
+
+    &.blue {
+      background-color: #0a5a91;
+    }
+
+    &.green {
+      background-color: #5dbec4;
+    }
     &:hover,
     &.active {
       background-color: #eee93a;
@@ -135,7 +148,7 @@ export default {
   display: flex !important;
   align-items: center;
   // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
-  &::after{content: "";height:100%;width: 150%;top: -100%;left: 0;z-index:9;position: absolute;box-shadow:0 size(0) size(72) size(72)  #005566;}
+  // &::after{content: "";height:100%;width: 150%;top: -100%;left: 0;z-index:9;position: absolute;box-shadow:0 size(0) size(72) size(72)  #005566;}
 }
 
 .nav-container {
