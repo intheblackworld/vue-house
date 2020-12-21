@@ -7,12 +7,13 @@
           <div class="menu" @click="toggleSidebar" v-show="!isOpen">
             <font-awesome-icon icon="bars" />
           </div>
-          <div :class="`mask ${isOpen ? 'open' : ''}`">
+          <!-- <div :class="`mask ${isOpen ? 'open' : ''}`">
+            
+          </div> -->
+          <ul :class="`navlist ${isOpen ? 'open': ''}`">
             <div class="close" @click="isOpen = false">
               <img src="../assets/img/close.png" alt="">
             </div>
-          </div>
-          <ul :class="`navlist ${isOpen ? 'open': ''}`">
             <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: offset }" v-for="item in list" class="flex-c" @click="toggleSidebar">
               <span class="link">
                 <span>
@@ -185,6 +186,10 @@ export default {
 
 .mask {
   display: none;
+
+  &.open {
+    display: block;
+  }
 }
 
 .navlist {
@@ -355,6 +360,17 @@ export default {
         width: $logo_phone_width;
       }
     }
+  }
+
+  .btn {
+    background: transparent !important;
+  }
+
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 100;
   }
 
   .nav-container {

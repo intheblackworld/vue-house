@@ -16,8 +16,14 @@
         </div>
       </div>
       <img src="./s2/logo.png" alt="" class="logo">
-      <div class="title absolute" data-aos="fade-down" data-aos-delay="400">
+      <div class="title absolute" data-aos="fade-down" data-aos-delay="400" v-if="isPC">
         <span>雙捷運x雙商圈x雙公園</span> 輕取美好生活
+      </div>
+      <div class="title absolute" data-aos="fade-down" data-aos-delay="400" v-if="isMobile">
+        <span>雙捷運x雙商圈x雙公園</span>
+      </div>
+      <div class="subtitle" data-aos="fade-down" data-aos-delay="400" v-if="isMobile">
+        輕取美好生活
       </div>
       <div class="hr absolute" data-aos="fade" data-aos-delay="200"></div>
       <div class="desc absolute" data-aos="fade-up" data-aos-delay="300">
@@ -302,104 +308,66 @@
   .section2 {
     min-height: auto;
     max-height: initial;
+    height: sizem(784);
+  }
+
+  .logo {
+    @include img_r_m(236, 56, 20);
   }
 
   .hr {
-    width: auto;
-    height: sizem(10);
-    top: sizem(-10);
-    left: 0;
-    opacity: 1;
-  }
-
-  .title-d {
-    width: sizem(120);
-    top: sizem(50);
-    font-size: sizem(30);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.17;
-    letter-spacing: normal;
-    text-align: center;
-    color: #005369;
-
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      right: sizem(-45);
-      width: sizem(28);
-      height: sizem(28);
-      top: sizem(4);
-      // background-image: url('./s2/title.png');
-      background-size: cover;
-      transform: rotate(180deg);
-    }
-
-    &::before {
-      content: '';
-      display: block;
-      position: absolute;
-      left: sizem(-45);
-      width: sizem(28);
-      height: sizem(28);
-      top: size(8);
-      // background-image: url('./s2/title.png');
-      background-size: cover;
-    }
+    @include img_l_m(310, 481, 33);
+    border: solid 1.1px #888888;
   }
 
   .title {
-    width: sizem(104);
-    top: sizem(411);
-    right: sizem(238);
+    @include img_l_m(310, 389, 33);
     font-size: sizem(25);
-    font-weight: 500;
+    font-weight: 900;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.44;
+    line-height: 1.2;
     letter-spacing: sizem(1.25);
     text-align: left;
-    color: #005369;
+    color: #fff;
     white-space: nowrap;
+    span {
+      color: #ffff00;
+    }
   }
 
   .subtitle {
-    width: sizem(242);
-    top: sizem(455);
-    right: sizem(100);
-    font-size: sizem(20);
-    font-weight: 500;
+    @include img_l_m(310, 433, 33);
+    font-size: sizem(25);
+    font-weight: 900;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.44;
-    letter-spacing: sizem(1);
+    line-height: 1.2;
+    letter-spacing: sizem(1.25);
     text-align: left;
-    color: #2c9899;
-    white-space: normal;
+    color: #fff;
+    white-space: nowrap;
   }
-  .line {
-    background-color: #888;
-    width: sizem(310);
-    top: sizem(532);
-    right: sizem(32);
-    height: sizem(2);
-  }
+
   .desc {
-    width: sizem(310);
-    top: sizem(548);
-    right: sizem(32);
+    @include img_l_m(310, 497, 33);
     font-size: sizem(15);
-    line-height: 1.73;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: sizem(0.75);
+    text-align: left;
+    color: #666666;
+    white-space: normal;
   }
 
   /* Swipe */
   .swipe {
     width: 100vw;
-    height: sizem(250);
+    height: sizem(211);
     min-height: auto;
-    top: sizem(120);
+    top: sizem(149);
     left: sizem(0);
     object-fit: cover;
   }
@@ -564,11 +532,11 @@ export default {
       slideList: [
         {
           img: require('./s2/1-1.jpg'),
-          name: '台北101',
+          name: 'WE機能圖',
         },
         {
           img: require('./s2/1-2.jpg'),
-          name: '台北101',
+          name: 'WE機能圖',
         },
       ],
     }

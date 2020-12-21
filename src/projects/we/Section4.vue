@@ -16,16 +16,25 @@
         </div>
       </div>
       <img src="./s2/rb.png" alt="" class="rb">
-      <div class="title absolute" data-aos="fade-down" data-aos-delay="400">
+      <div class="title absolute" data-aos="fade-down" data-aos-delay="400" v-if="isPC">
         <span>板南、萬大雙捷運，</span>通勤雙北我最WIN
       </div>
+      <div class="title absolute" data-aos="fade-down" data-aos-delay="400" v-if="isMobile">
+        <span>板南、萬大雙捷運，</span>
+      </div>
+      <div class="subtitle absolute" data-aos="fade-down" data-aos-delay="700" v-if="isMobile">
+        通勤雙北我最WIN
+      </div>
       <div class="hr absolute" data-aos="fade" data-aos-delay="200"></div>
-      <div class="desc absolute" data-aos="fade-up" data-aos-delay="300">
+      <div class="desc absolute" data-aos="fade-up" data-aos-delay="300" v-if="isPC">
         捷運板南線海山站、土城站，隨你心情動線決定回家路線；<br />
         國道3號、65快速道路，翱翔雙北無縫接軌；<br />
         動工中的捷運萬大線LG10站就在中正國中旁上學好近，<br />
         未來還有北土城交流道就近通勤，新北閃耀五星的大黑馬，<br />
         青年成家卡位這裡最好！
+      </div>
+      <div class="desc absolute" data-aos="fade-up" data-aos-delay="300" v-if="isMobile">
+        捷運板南線海山站、土城站，隨你心情動線決定回家路線；國道3號、65快速道路，翱翔雙北無縫接軌；動工中的捷運萬大線LG10站就在中正國中旁上學好近，未來還有北土城交流道就近通勤，新北閃耀五星的大黑馬，青年成家卡位這裡最好！
       </div>
       <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
@@ -308,96 +317,64 @@
   .section4 {
     min-height: auto;
     max-height: initial;
+    height: sizem(250 + 393);
+  }
+
+  .logo {
+    display: none;
   }
 
   .hr {
-    width: auto;
-    height: sizem(10);
-    top: sizem(-10);
-    left: 0;
-    opacity: 1;
+    @include img_l_m(310, 122 + 250, 33);
+    border: solid 1.1px #888888;
   }
 
-  .title-d {
-    width: sizem(120);
-    top: sizem(50);
-    font-size: sizem(30);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.17;
-    letter-spacing: normal;
-    text-align: center;
-    color: #005369;
-
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      right: sizem(-45);
-      width: sizem(28);
-      height: sizem(28);
-      top: sizem(4);
-      // background-image: url('./s2/title.png');
-      background-size: cover;
-      transform: rotate(180deg);
-    }
-
-    &::before {
-      content: '';
-      display: block;
-      position: absolute;
-      left: sizem(-45);
-      width: sizem(28);
-      height: sizem(28);
-      top: size(8);
-      // background-image: url('./s2/title.png');
-      background-size: cover;
-    }
+  .rb {
+    @include img_r_m(375, 0, 0);
+    top: auto;
+    bottom: 0;
   }
 
   .title {
-    width: sizem(104);
-    top: sizem(411);
-    right: sizem(238);
+    @include img_l_m(310, 280, 33);
     font-size: sizem(25);
-    font-weight: 500;
+    font-weight: 900;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.44;
+    line-height: 1.2;
     letter-spacing: sizem(1.25);
     text-align: left;
-    color: #005369;
+    color: #fff;
     white-space: nowrap;
+    span {
+      color: #ffff00;
+    }
   }
 
   .subtitle {
-    width: sizem(242);
-    top: sizem(455);
-    right: sizem(100);
+    @include img_l_m(310, 250 + 74, 33);
     font-size: sizem(20);
-    font-weight: 500;
+    font-weight: 900;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.44;
+    line-height: 1.2;
     letter-spacing: sizem(1);
     text-align: left;
-    color: #2c9899;
-    white-space: normal;
+    color: #fff;
+    white-space: nowrap;
   }
-  .line {
-    background-color: #888;
-    width: sizem(310);
-    top: sizem(532);
-    right: sizem(32);
-    height: sizem(2);
-  }
+
   .desc {
-    width: sizem(310);
-    top: sizem(548);
-    right: sizem(32);
+    @include img_l_m(310, 250 + 138, 33);
     font-size: sizem(15);
-    line-height: 1.73;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: sizem(0.5);
+    text-align: left;
+    color: #666666;
+    white-space: normal;
   }
 
   /* Swipe */
@@ -405,7 +382,7 @@
     width: 100vw;
     height: sizem(250);
     min-height: auto;
-    top: sizem(120);
+    top: sizem(0);
     left: sizem(0);
     object-fit: cover;
   }

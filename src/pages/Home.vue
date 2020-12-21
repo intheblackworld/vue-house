@@ -113,9 +113,6 @@ import Section5 from '@/projects/we/Section5.vue'
 import Section6 from '@/projects/we/Section6.vue'
 import Section7 from '@/projects/we/Section7.vue'
 import Section8 from '@/projects/we/Section8.vue'
-import Section9 from '@/projects/we/Section9.vue'
-import Section10 from '@/projects/we/Section10.vue'
-// import Section11 from '@/projects/casa/Section11.vue'
 
 export default {
   name: 'home',
@@ -135,9 +132,6 @@ export default {
     Section6,
     Section7,
     Section8,
-    Section9,
-    Section10,
-    // Section11,
   },
 
   data() {

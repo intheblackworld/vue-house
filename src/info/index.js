@@ -7,7 +7,7 @@ export default {
   phone: '02-8789-6600',
   fbLink: 'https://www.facebook.com/%E4%BF%A1%E7%BE%A9casa-110034637544471',
   fbMessage: 'https://m.me/110034637544471',
-  caseName: '信義CASA',
+  caseName: '悅峰WE時代',
   indigatorLength: 10,
 
   houseInfos: [

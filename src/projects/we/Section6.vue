@@ -5,8 +5,11 @@
       <img src="./s6/i2.png" alt="" class="i2">
       <img src="./s6/1.jpg" alt="" class="img">
       <img src="./s6/logo.png" alt="最wow建材" class="logo">
-      <div class="title">
+      <div class="title" v-if="isPC">
         建材從優 享受從寬 CP值最威
+      </div>
+      <div class="title" v-if="isMobile">
+        建材從優 享受從寬<br />CP值最威
       </div>
       <div class="desc">
         從管道間排水防疫的PAPA & STUDOR建材，搭配當層排氣工法，到媲美大戶的日本INAX全系列衛浴五金、DORIS整體廚具、YKK氣密窗、冠軍磁磚、德國精工木地板….全數納入你的威生活。
@@ -116,28 +119,54 @@
   .section6 {
     width: 100vw;
     min-height: sizem(470);
-    max-height: sizem(812);
-    height: calc(100vh - 63px);
+    max-height: sizem(822);
+    height: sizem(822);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
   }
   .logo {
-    width: sizem(308);
-    top: sizem(243);
-    left: sizem(35);
+    @include img_r_m(239, 72, 18);
   }
 
-  .t1 {
-    width: sizem(308);
-    top: sizem(309);
-    left: sizem(35);
+  .img {
+    @include img_l_m(338, 149, 18);
+    border-radius: 20px;
   }
 
-  .t2 {
-    width: sizem(308);
-    top: sizem(403);
-    left: sizem(35);
+  .i1 {
+    display: none;
+  }
+
+  .i2 {
+    @include img_r_m(129, 656, 18);
+    transform: rotate(270deg);
+  }
+
+  .title {
+    @include img_r_m(223, 522, 119);
+    font-size: sizem(25);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.47;
+    letter-spacing: sizem(1.25);
+    text-align: left;
+    color: #ffffff;
+    white-space: nowrap;
+  }
+
+  .desc {
+    @include img_r_m(280, 612, 62);
+    font-size: sizem(15);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.97;
+    letter-spacing: normal;
+    text-align: left;
+    color: #050101;
+    // white-space: nowrap;
   }
 }
 </style>

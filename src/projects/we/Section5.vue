@@ -16,8 +16,11 @@
       </div>
     </div>
     <img src="./s3/logo.png" alt="最wee建築" class="logo">
-    <div class="title absolute" data-aos="fade-down" data-aos-delay="400">
+    <div class="title absolute" data-aos="fade-down" data-aos-delay="400" v-if="isPC">
       高顏值建築門面 威3房圓夢款
+    </div>
+    <div class="title absolute" data-aos="fade-down" data-aos-delay="400" v-if="isMobile">
+      高顏值建築門面<br />威3房圓夢款
     </div>
     <div class="line absolute" data-aos="fade" data-aos-delay="200"></div>
     <div class="desc absolute" data-aos="fade-up" data-aos-delay="300">
@@ -59,53 +62,6 @@
   &:nth-child(1) {
     position: relative;
   }
-}
-
-.title-d {
-  width: size(160);
-  top: size(90);
-  font-size: size(40);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: normal;
-  text-align: center;
-  color: #005369;
-
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    right: size(-60);
-    width: size(36);
-    height: size(36);
-    background-image: url('./s2/title.png');
-    background-size: cover;
-    transform: rotate(180deg);
-    top: size(8);
-  }
-
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    left: size(-60);
-    top: size(8);
-    width: size(36);
-    height: size(36);
-    background-image: url('./s2/title.png');
-    background-size: cover;
-  }
-}
-
-.hr-b {
-  width: 100vw;
-  bottom: size(-17);
-  left: 0;
-  opacity: 1;
-  transform-origin: center;
-  transform: rotate(180deg);
 }
 
 .logo {
@@ -332,108 +288,44 @@
 @media screen and (max-width: 767px) {
   .section5 {
     width: 100vw;
-    height: sizem(706);
+    height: sizem(748);
     min-height: auto;
     max-height: initial;
   }
 
-  .hr-b {
-    width: auto;
-    height: sizem(10);
-    bottom: sizem(-10);
-    left: 0;
-    opacity: 1;
-    transform-origin: center;
-    transform: rotate(180deg);
-  }
-
-  .title-d {
-    width: sizem(120);
-    top: sizem(0);
-    font-size: sizem(30);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.17;
-    letter-spacing: normal;
-    text-align: center;
-    color: #005369;
-
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      right: sizem(-45);
-      width: sizem(28);
-      height: sizem(28);
-      top: sizem(4);
-      background-image: url('./s2/title.png');
-      background-size: cover;
-      transform: rotate(180deg);
-    }
-
-    &::before {
-      content: '';
-      display: block;
-      position: absolute;
-      left: sizem(-45);
-      width: sizem(28);
-      height: sizem(28);
-      top: size(8);
-      background-image: url('./s2/title.png');
-      background-size: cover;
-    }
-  }
-
-  .hr {
-    width: 100vw;
-    top: size(-18);
-    left: 0;
-    opacity: 1;
+  .logo {
+    @include img_r_m(236, 72, 20);
   }
 
   .title {
-    width: sizem(104);
-    top: sizem(411 - 120);
-    right: sizem(238);
+    @include img_r_m(189, 452, 152);
     font-size: sizem(25);
-    font-weight: 500;
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.44;
+    line-height: 1.2;
     letter-spacing: sizem(1.25);
     text-align: left;
-    color: #005369;
+    color: #055e9b;
     white-space: nowrap;
   }
 
-  .subtitle {
-    width: sizem(242);
-    top: sizem(455 - 120);
-    right: sizem(100);
-    font-size: sizem(20);
-    font-weight: 500;
+  .desc {
+    @include img_r_m(310, 538, 32);
+    font-size: sizem(15);
+    font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.44;
-    letter-spacing: sizem(1);
+    line-height: 2;
+    letter-spacing: sizem(0.75);
     text-align: left;
-    color: #2c9899;
-    white-space: normal;
+    color: #666666;
+    // white-space: nowrap;
   }
   .line {
+    @include img_r_m(310, 522, 32);
     background-color: #888;
-    width: sizem(310);
-    top: sizem(532 - 120);
-    right: sizem(32);
     height: sizem(2);
-  }
-  .desc {
-    width: sizem(310);
-    top: sizem(548 - 120);
-    right: sizem(32);
-    font-size: sizem(15);
-    line-height: 1.73;
   }
 
   /* Swipe */
@@ -441,7 +333,7 @@
     width: 100vw;
     height: sizem(250);
     min-height: auto;
-    top: sizem(0);
+    top: sizem(150);
     left: sizem(0);
     object-fit: cover;
   }
