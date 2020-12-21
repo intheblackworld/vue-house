@@ -135,42 +135,15 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
-import slider from '@/mixins/slider.js'
 
 export default {
   name: 'section8',
-
-  mixins: [slider],
-  props: ['viewIndex'],
 
   data() {
     return {
       isPC,
       isMobile,
       isTablet,
-      isDialog: false,
-      slideList: [
-        {
-          img: require('./s8/1景觀戲水池.jpg'),
-          name: '景觀戲水池 3D情境示意圖',
-        },
-        {
-          img: require('./s8/2頂樓星空bar.jpg'),
-          name: '頂樓星空bar 3D情境示意圖',
-        },
-        {
-          img: require('./s8/3CASA迎賓大廳.jpg'),
-          name: 'CASA迎賓大廳 3D情境示意圖',
-        },
-        {
-          img: require('./s8/4人文交誼廳.jpg'),
-          name: '人文交誼廳 3D情境示意圖',
-        },
-        {
-          img: require('./s8/5地下停車場.jpg'),
-          name: '社區出入空間 3D情境示意圖',
-        },
-      ],
     }
   },
 
@@ -183,12 +156,6 @@ export default {
   computed: {},
 
   watch: {
-    viewIndex() {
-      if (this.viewIndex === 8) {
-        this.slideIndex = 0
-        console.log(this.slideIndex, 'slideIndex')
-      }
-    },
   },
 }
 </script>

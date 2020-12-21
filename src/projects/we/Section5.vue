@@ -1,6 +1,6 @@
 <template>
   <div class="section5">
-    <img src="./s2/hr.png" alt="" class="hr-b absolute">
+    <!-- <img src="./s2/hr.png" alt="" class="hr-b absolute"> -->
     <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
@@ -15,7 +15,7 @@
         </div>
       </div>
     </div>
-    <img src="./s3/logo.png" alt="最wee建築" class="logo">
+    <img src="./s5/logo.png" alt="最wee建築" class="logo">
     <div class="title absolute" data-aos="fade-down" data-aos-delay="400" v-if="isPC">
       高顏值建築門面 威3房圓夢款
     </div>
