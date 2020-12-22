@@ -285,7 +285,7 @@
         display: block;
         box-shadow: 0 0 0 5px #000;
         border-radius: 15px;
-        background-image: url('./s2/dot.png');
+        // background-image: url('./s2/dot.png');
         background-size: 70% 70%;
         background-position: center;
         background-repeat: no-repeat;
