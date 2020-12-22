@@ -105,14 +105,14 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/we/Section1.vue'
-import Section2 from '@/projects/we/Section2.vue'
-import Section3 from '@/projects/we/Section3.vue'
-import Section4 from '@/projects/we/Section4.vue'
-import Section5 from '@/projects/we/Section5.vue'
-import Section6 from '@/projects/we/Section6.vue'
-import Section7 from '@/projects/we/Section7.vue'
-import Section8 from '@/projects/we/Section8.vue'
+import Section1 from '@/projects/way/Section1.vue'
+import Section2 from '@/projects/way/Section2.vue'
+import Section3 from '@/projects/way/Section3.vue'
+// import Section4 from '@/projects/way/Section4.vue'
+// import Section5 from '@/projects/way/Section5.vue'
+// import Section6 from '@/projects/way/Section6.vue'
+// import Section7 from '@/projects/way/Section7.vue'
+// import Section8 from '@/projects/way/Section8.vue'
 
 export default {
   name: 'home',
@@ -127,11 +127,11 @@ export default {
     Section1,
     Section2,
     Section3,
-    Section4,
-    Section5,
-    Section6,
-    Section7,
-    Section8,
+    // Section4,
+    // Section5,
+    // Section6,
+    // Section7,
+    // Section8,
   },
 
   data() {
