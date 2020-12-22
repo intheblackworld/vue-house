@@ -221,7 +221,7 @@ export default {
       isPC,
       isMobile,
       isTablet,
-			pageIndex: 2,
+			pageIndex: 1,
 			interval: null,
     }
   },
@@ -229,10 +229,10 @@ export default {
   methods: {},
 
   mounted() {
-		// clearInterval(this.interval)
-    // this.interval = setInterval(() => {
-    //   this.pageIndex = this.pageIndex === 1 ? 2 : 1
-    // }, 5000)
+		clearInterval(this.interval)
+    this.interval = setInterval(() => {
+      this.pageIndex = this.pageIndex === 1 ? 2 : 1
+    }, 5000)
   },
 
   created() {},
