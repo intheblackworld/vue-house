@@ -25,7 +25,7 @@ export default {
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
   order: {
-    title: isMobile ? '立即預約' : '立即預約',
+    title: isMobile ? '預約賞屋' : '預約賞屋',
     subTitle: ''
   }
 }

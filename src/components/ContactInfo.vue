@@ -97,13 +97,13 @@ export default {
   position: relative;
   z-index: 3;
   width: 1200px;
-  height: 380px;
+  height: 520px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
   transform: translateY(0);
   margin: 2vw auto 0;
-  padding: 30px 0 40px;
+  padding: 30px 0 80px;
 }
 
 .logo {

@@ -1,6 +1,14 @@
 <template>
   <div class="section1">
-    
+    <!-- <img src="./s1/bg.jpg" alt="" class="bg-img"> -->
+    <img src="./s1/i1.png" alt="" class="i1">
+    <img src="./s1/i2.png" alt="" class="i2">
+    <img src="./s1/i3.png" alt="" class="i3">
+    <img src="./s1/b.png" alt="" class="b" @click="moveT">
+    <!-- <img src="./s1/b1.png" alt="" class="b1">
+    <img src="./s1/b2.png" alt="" class="b2"> -->
+    <img src="./s1/logo.png" alt="" class="logo">
+    <img src="./s1/t.png" alt="" :class="`t ${isMove ? 'moving' : ''}`">
   </div>
 </template>
 
@@ -34,54 +42,72 @@
   }
 }
 
-.w-block {
-  background-color: #fff;
-  @include div_l_pc(1874, 963, 0, 0);
-}
-
 .logo {
-  @include img_l_pc(677, 209, 232);
+  @include img_l_pc(611, 285, 225);
 }
 
-.st {
-  @include img_l_pc(272, 347, 434);
+.b {
+  @include img_r_pc(664, 535, 554);
+  cursor: pointer;
 }
 
-.t1 {
-  @include img_l_pc(712, 383, 214);
+// .b1 {
+//   @include img_l_pc(712, 383, 214);
+// }
+
+// .b2 {
+//   @include img_l_pc(720, 768, 210);
+// }
+
+.i1 {
+  @include img_l_pc(933, 596, 186);
 }
 
-.t2 {
-  @include img_l_pc(720, 768, 210);
+.i2 {
+  @include img_r_pc(678, 181, 182);
 }
 
-.i {
-  @include img_r_pc(633, 209, 209);
+.i3 {
+  @include img_r_pc(419, 540, 306);
 }
 
-.hint {
-  @include div_r_pc(450, 27, 965, 46);
-  font-size: size(18);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: normal;
-  text-align: right;
-  color: #ffffff;
-  white-space: nowrap;
+.t {
+  @include img_r_pc(67, 614, 441);
+  transform-origin: center;
+
+  &.moving {
+    animation: swing 1s 0s ease-in-out infinite;
+  }
 }
 
-.logo2 {
-  @include img_c_pc(1064, 220);
-}
+@keyframes swing {
+  0% {
+    transform: scale(0.8), rotate(0deg);
+  }
 
-.st2 {
-  @include img_c_pc(610, 428);
-}
+  10% {
+    transform: rotate(5deg);
+  }
 
-.t3 {
-  @include img_c_pc(1054, 614);
+  30% {
+    transform: rotate(-5deg);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+
+  70% {
+    transform: rotate(-5deg);
+  }
+
+  90% {
+    transform: rotate(5deg);
+  }
+
+  100% {
+    transform: scale(0.8), rotate(0deg);
+  }
 }
 
 .swipe-fade-leave-to {
@@ -130,61 +156,44 @@
 @media screen and (max-width: 767px) {
   .section1 {
     width: 100vw;
-    min-height: sizem(470);
-    max-height: sizem(812);
-    height: sizem(709);
+    min-height: sizem(725);
+    max-height: sizem(725);
+    height: sizem(725);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
   }
-  .w-block {
-    background-color: #fff;
-    @include div_l_m(361, 607 - 63, 60, 0);
-  }
-
   .logo {
-    @include img_l_m(223, 111, 80);
+    @include img_c_m(180, 63);
   }
 
-  .st {
-    @include img_l_m(117, 157, 129);
+  .b {
+    @include img_r_m(270, 492, 0);
+    cursor: pointer;
   }
 
-  .t1 {
-    @include img_l_m(234, 169, 72);
+  // .b1 {
+  //   @include img_l_m(712, 383, 214);
+  // }
+
+  // .b2 {
+  //   @include img_l_m(720, 768, 210);
+  // }
+
+  .i1 {
+    @include img_l_m(288, 603, 0);
   }
 
-  .t2 {
-    @include img_l_m(222, 296, 74);
+  .i2 {
+    @include img_c_m(244, 188);
   }
 
-  .i {
-    @include img_r_m(238, 354, 68);
+  .i3 {
+    @include img_c_m(259, 323);
   }
 
-  .hint {
-    @include div_r_m(300, 18, 667, 14);
-    font-size: sizem(12);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: normal;
-    text-align: right;
-    color: #ffffff;
-    white-space: nowrap;
-  }
-
-  .logo2 {
-    @include img_l_m(154, 123, 99);
-  }
-
-  .tm {
-    @include img_l_m(253, 310, 56);
-  }
-
-  .rb {
-    @include img_l_m(292, 410, 0);
+  .t {
+    @include img_r_m(42, 371, 140);
   }
 }
 </style>
@@ -200,14 +209,20 @@ export default {
       isPC,
       isMobile,
       isTablet,
+      isMove: false,
     }
   },
 
-  methods: {},
-
-  mounted() {
-		
+  methods: {
+    moveT() {
+      this.isMove = true
+      setTimeout(() => {
+        this.isMove = false
+      }, 1000)
+    },
   },
+
+  mounted() {},
 
   created() {},
 

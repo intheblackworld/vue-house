@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="section2">
-      <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isPC">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -9,29 +9,35 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+          <div class="swipe-btns absolute flex-ac flex-jb">
             <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
             <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
           </div>
         </div>
       </div>
-      <img src="./s2/logo.png" alt="" class="logo">
+      <div class="img-list" v-if="isMobile">
+        <img src="./mo/1m.jpg" alt="">
+        <img src="./mo/2m.jpg" alt="">
+        <img src="./mo/3m.jpg" alt="">
+      </div>
       <div class="title absolute" data-aos="fade-down" data-aos-delay="400" v-if="isPC">
-        <span>雙捷運x雙商圈x雙公園</span> 輕取美好生活
+        鳳鳴好感生活圈<br />
+        建築對味<br />
+        幸福到位
       </div>
       <div class="title absolute" data-aos="fade-down" data-aos-delay="400" v-if="isMobile">
-        <span>雙捷運x雙商圈x雙公園</span>
+        鳳鳴好感生活圈<br />建築對味．幸福到位
       </div>
-      <div class="subtitle" data-aos="fade-down" data-aos-delay="400" v-if="isMobile">
-        輕取美好生活
+      <div class="btn" data-aos="fade-down" data-aos-delay="200"></div>
+      <div class="subtitle" data-aos="fade-down" data-aos-delay="600" v-if="isPC">
+        立瑾建築機構<br />構築家的好品味 悅享幸福心滋味
       </div>
-      <div class="hr absolute" data-aos="fade" data-aos-delay="200"></div>
-      <div class="desc absolute" data-aos="fade-up" data-aos-delay="300">
-        金城正核心雙捷商圈，同時擁有重劃區新街廓與舊市區的生活便利，地段力、交通力、生活力、增值力一次到位，第一次買房就WIN在起跑點。
+      <div class="subtitle" data-aos="fade-down" data-aos-delay="600" v-if="isMobile">
+        立瑾建築機構 構築家的好品味 悅享幸福心滋味
       </div>
-      <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
+      <!-- <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -41,8 +47,8 @@
 .section2 {
   max-height: size(1080);
   position: relative;
-  background: #5fc8ce;
-  min-height: size(1238 + 140);
+  background: #e0eedd;
+  min-height: size(1080);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
   // background-position: 0 0;
@@ -52,7 +58,7 @@
 
 .bg-img {
   width: 100vw;
-  height: size(900);
+  height: size(1080);
   min-height: size(900);
   position: absolute;
   display: block;
@@ -65,65 +71,52 @@
   }
 }
 
-.logo {
-  @include img_r_pc(472, 70, 210);
-}
-
-.hr {
-  @include img_l_pc(1500, 1210, 210);
-  border: solid 1.1px #888888;
-}
-
 .title {
-  @include img_l_pc(518, 1141, 210);
-  font-size: size(30);
+  @include img_l_pc(400, 382, 173);
+  font-size: size(57);
   font-weight: 900;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(1.5);
-  text-align: left;
-  color: #fff;
+  line-height: 1.32;
+  letter-spacing: normal;
+  text-align: center;
+  color: #444444;
   white-space: nowrap;
-  span {
-    color: #ffff00;
-  }
 }
 
 .subtitle {
-  width: size(568);
-  top: size(393);
-  right: size(252);
-  font-size: size(24);
+  @include img_l_pc(526, 701, 107);
+  font-size: size(37);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(1.2);
-  text-align: left;
-  color: #2c9899;
+  line-height: 1.49;
+  letter-spacing: normal;
+  text-align: center;
+  color: #444444;
   white-space: nowrap;
 }
 
-.desc {
-  @include img_l_pc(1500, 1236, 210);
-  font-size: size(18);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2;
-  letter-spacing: size(0.9);
-  text-align: left;
-  color: #666666;
-  white-space: nowrap;
-}
+.btn {
+  @include div_l_pc(511, 255 + 68, 318, 115);
+  background: linear-gradient(to right, #3e3a39 10px, transparent 10px) 0 0,
+    linear-gradient(to right, #3e3a39 10px, transparent 10px) 0 100%,
+    linear-gradient(to left, #3e3a39 10px, transparent 10px) 100% 0,
+    linear-gradient(to left, #3e3a39 10px, transparent 10px) 100% 100%,
+    linear-gradient(to bottom, #3e3a39 10px, transparent 10px) 0 0,
+    linear-gradient(to bottom, #3e3a39 10px, transparent 10px) 100% 0,
+    linear-gradient(to top, #3e3a39 10px, transparent 10px) 0 100%,
+    linear-gradient(to top, #3e3a39 10px, transparent 10px) 100% 100%;
 
+  background-repeat: no-repeat;
+  background-size: size(50) size(34);
+}
 /* Swipe */
 .swipe {
-  width: size(1500);
-  height: size(844);
-  top: size(260);
-  left: size(210);
+  width: size(1150);
+  height: size(987);
+  top: size(47);
+  right: size(55);
   object-fit: cover;
 }
 
@@ -308,209 +301,61 @@
   .section2 {
     min-height: auto;
     max-height: initial;
-    height: sizem(784);
-  }
-
-  .logo {
-    @include img_r_m(236, 56, 20);
-  }
-
-  .hr {
-    @include img_l_m(310, 481, 33);
-    border: solid 1.1px #888888;
+    height: sizem(892);
   }
 
   .title {
-    @include img_l_m(310, 389, 33);
-    font-size: sizem(25);
+    @include img_c_m(224, 40);
+    font-size: sizem(24);
     font-weight: 900;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(1.25);
-    text-align: left;
-    color: #fff;
+    line-height: 1.42;
+    letter-spacing: sizem(0.96);
+    text-align: center;
+    color: #444444;
     white-space: nowrap;
-    span {
-      color: #ffff00;
-    }
   }
 
   .subtitle {
-    @include img_l_m(310, 433, 33);
-    font-size: sizem(25);
-    font-weight: 900;
+    @include img_c_m(318, 156);
+    font-size: sizem(15);
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(1.25);
-    text-align: left;
-    color: #fff;
+    line-height: 1.73;
+    letter-spacing: normal;
+    text-align: center;
+    color: #444444;
     white-space: nowrap;
   }
 
-  .desc {
-    @include img_l_m(310, 497, 33);
-    font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2;
-    letter-spacing: sizem(0.75);
-    text-align: left;
-    color: #666666;
-    white-space: normal;
+  .btn {
+    @include div_l_m(266, 98, 25, 55);
+    background: linear-gradient(to right, #3e3a39 5px, transparent 5px) 0 0,
+      linear-gradient(to right, #3e3a39 5px, transparent 5px) 0 100%,
+      linear-gradient(to left, #3e3a39 5px, transparent 5px) 100% 0,
+      linear-gradient(to left, #3e3a39 5px, transparent 5px) 100% 100%,
+      linear-gradient(to bottom, #3e3a39 5px, transparent 5px) 0 0,
+      linear-gradient(to bottom, #3e3a39 5px, transparent 5px) 100% 0,
+      linear-gradient(to top, #3e3a39 5px, transparent 5px) 0 100%,
+      linear-gradient(to top, #3e3a39 5px, transparent 5px) 100% 100%;
+
+    background-repeat: no-repeat;
+    background-size: sizem(14) sizem(21);
   }
 
-  /* Swipe */
-  .swipe {
-    width: 100vw;
-    height: sizem(211);
-    min-height: auto;
-    top: sizem(149);
-    left: sizem(0);
-    object-fit: cover;
-  }
-
-  // begin
-  .swipe-fade-leave-to {
-    opacity: 0;
-    z-index: 0;
-  }
-  // end
-  .swipe-fade-enter {
-    opacity: 0;
-    z-index: 1;
-  }
-
-  .swipe-fade-enter-active {
-    transition: all 0.5s ease;
-  }
-
-  .swipe-fade-leave-active {
-    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-
-  // begin
-  // .swipe-left-leave-to {
-  //   margin-left: -100vw;
-  //   z-index: 0;
-  // }
-  // // end
-  // .swipe-left-enter {
-  //   opacity: 0.5;
-  //   margin-left: 0;
-  //   z-index: 1;
-  // }
-
-  // .swipe-left-enter-active {
-  //   transition: all 0.5s ease;
-  // }
-
-  // .swipe-left-leave-active {
-  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  // }
-
-  .swipe-wrap {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .swipe-item {
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    .slide-name {
-      right: 1em;
-      font-size: sizem(13);
-    }
-
-    // &:nth-child(1) {
-    //   z-index: 1;
-    //   // opacity: 1;
-    // }
-
-    // &.base {
-    //   z-index: 1;
-    //   opacity: 1;
-    // }
-    // &.active {
-    //   z-index: 2;
-    //   // opacity: 1;
-    // }
-  }
-
-  .pagination {
-    width: auto;
-    bottom: size(91);
-    left: 0;
-    right: 0;
+  .img-list {
+    position: relative;
+    width: sizem(342);
     margin: 0 auto;
-    justify-content: center;
-  }
+    top: sizem(187);
 
-  .pagination-dot {
-    padding: 5px;
-    margin: 0 10px;
-    cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
-      box-shadow: 0 0 0 1px #fff;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
-      transition: all 0.5s;
-
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #004ea2;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transition: all 0.3s;
-        transform-origin: center;
-        transform: scale(0);
-      }
-      &.active {
-        &::before {
-          content: '';
-          width: 100%;
-          height: 100%;
-          display: block;
-          background: #004ea2;
-          border-radius: 20px;
-          opacity: 1;
-          position: absolute;
-          top: 0%;
-          // transform: translateY(-50%);
-          left: 0%;
-          transform: scale(1);
-        }
-      }
-    }
-  }
-
-  .swipe-btns {
-    width: 100%;
-    height: 100%;
-    padding: 0 15px;
-    z-index: 3;
-
-    .prev-btn,
-    .next-btn {
-      width: sizem(15);
-      cursor: pointer;
+    img {
+      width: 100%;
+      // height: sizem(230);
+      object-fit: cover;
+      margin-bottom: sizem(4);
     }
   }
 }
@@ -531,12 +376,16 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s2/1-1.jpg'),
-          name: 'WE機能圖',
+          img: require('./s2/1.jpg'),
+          // name: 'WE機能圖',
         },
         {
-          img: require('./s2/1-2.jpg'),
-          name: 'WE機能圖',
+          img: require('./s2/2.jpg'),
+          // name: 'WE機能圖',
+        },
+        {
+          img: require('./s2/3.jpg'),
+          // name: 'WE機能圖',
         },
       ],
     }

@@ -9,28 +9,26 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+          <!-- <div class="swipe-btns absolute flex-ac flex-jb">
             <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
             <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-          </div>
+          </div> -->
         </div>
       </div>
-      <div class="title absolute" data-aos="fade-down" data-aos-delay="400" v-if="isPC">
-        悅峰WE時代 <span>10分鐘核心生活圈</span>
+      <div class="title absolute" data-aos="fade-down" data-aos-delay="400">
+        對味的好生活<br />
+        <span>Coming soon!</span>
       </div>
-      <div class="title absolute" data-aos="fade-down" data-aos-delay="400" v-if="isMobile">
-        <span>10分鐘核心生活圈</span>
+      <!-- <div class="title absolute" data-aos="fade-down" data-aos-delay="400" v-if="isMobile">
+      </div> -->
+      <div class="btn" data-aos="fade-down" data-aos-delay="200"></div>
+      <div class="subtitle" data-aos="fade-down" data-aos-delay="400">
+        <span class="big">2-3</span> <span>房 新登場</span><span class="border">|</span> <span>早預約 享優惠</span><br />
+        <span class="small">預約專線</span> <span class="number">02.2670-7777</span>
       </div>
-      <div class="subtitle absolute" data-aos="fade-down" data-aos-delay="600" v-if="isMobile">
-        悅峰WE時代
-      </div>
-      <div class="hr absolute" data-aos="fade" data-aos-delay="200"></div>
-      <div class="desc absolute" data-aos="fade-up" data-aos-delay="300">
-        金城正核心雙捷商圈，同時擁有重劃區新街廓與舊市區的生活便利，地段力、交通力、生活力、增值力一次到位，第一次買房就WIN在起跑點。
-      </div>
-      <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
+      <!-- <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -40,8 +38,8 @@
 .section3 {
   max-height: size(1080);
   position: relative;
-  background: #5fc8ce;
-  min-height: size(1072);
+  background: transparent;
+  min-height: size(1080);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
   // background-position: 0 0;
@@ -51,7 +49,7 @@
 
 .bg-img {
   width: 100vw;
-  height: size(900);
+  height: size(1080);
   min-height: size(900);
   position: absolute;
   display: block;
@@ -64,61 +62,91 @@
   }
 }
 
-.hr {
-  @include img_l_pc(1500, 1210, 210);
-  border: solid 1.1px #888888;
-}
-
 .title {
-  @include img_l_pc(518, 920, 210);
-  font-size: size(30);
+  @include img_l_pc(504, 273, 201);
+  font-size: size(62);
   font-weight: 900;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(1.5);
-  text-align: left;
-  color: #fff;
+  line-height: 1.35;
+  letter-spacing: size(-0.62);
+  text-align: center;
+  color: #008796;
   white-space: nowrap;
+
   span {
-    color: #ffff00;
+    font-weight: 500;
   }
 }
 
 .subtitle {
-  width: size(568);
-  top: size(393);
-  right: size(252);
-  font-size: size(24);
-  font-weight: 500;
+  @include img_l_pc(626, 547, 117);
+  font-size: size(53);
+  font-weight: 900;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(1.2);
-  text-align: left;
-  color: #2c9899;
+  line-height: 2.3;
+  letter-spacing: size(-1.59);
+  text-align: center;
+  color: #008796;
   white-space: nowrap;
+  > * {
+    height: size(78);
+    line-height: size(78);
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+  .big {
+    font-size: size(68);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    // line-height: 1.79;
+    letter-spacing: 1.36px;
+    text-align: center;
+  }
+  .border {
+    font-size: size(24);
+    text-align: center;
+    margin: 0 10px;
+  }
+
+  .small {
+    font-size: size(45);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: size(0.45);
+    text-align: center;
+  }
+
+  .number {
+    font-weight: 500;
+    margin-left: 15px;
+  }
 }
 
-.desc {
-  @include img_l_pc(1500, 1236, 210);
-  font-size: size(18);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2;
-  letter-spacing: size(0.9);
-  text-align: left;
-  color: #666666;
-  white-space: nowrap;
-}
+.btn {
+  @include div_l_pc(664, 110 + 135, 240, 117);
+  background: linear-gradient(to right, #008796 10px, transparent 10px) 0 0,
+    linear-gradient(to right, #008796 10px, transparent 10px) 0 100%,
+    linear-gradient(to left, #008796 10px, transparent 10px) 100% 0,
+    linear-gradient(to left, #008796 10px, transparent 10px) 100% 100%,
+    linear-gradient(to bottom, #008796 10px, transparent 10px) 0 0,
+    linear-gradient(to bottom, #008796 10px, transparent 10px) 100% 0,
+    linear-gradient(to top, #008796 10px, transparent 10px) 0 100%,
+    linear-gradient(to top, #008796 10px, transparent 10px) 100% 100%;
 
+  background-repeat: no-repeat;
+  background-size: size(37) size(55);
+}
 /* Swipe */
 .swipe {
-  width: size(1500);
-  height: size(844);
-  top: size(20);
-  left: size(210);
+  width: size(950);
+  height: size(666);
+  top: size(216);
+  right: size(74);
   object-fit: cover;
 }
 
@@ -210,7 +238,7 @@
 
 .pagination {
   width: auto;
-  top: size(880);
+  top: size(1120);
   right: size(200);
   justify-content: center;
 }
@@ -303,62 +331,88 @@
   .section3 {
     min-height: auto;
     max-height: initial;
-    height: sizem(255 + 183);
-  }
-
-  .hr {
-    display: none;
+    height: sizem(438);
   }
 
   .title {
-    @include img_l_m(310, 66 + 250, 33);
+    @include img_c_m(206, 40);
     font-size: sizem(25);
     font-weight: 900;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(1.25);
-    text-align: left;
-    color: #fff;
+    line-height: 1.42;
+    letter-spacing: sizem(0.96);
+    text-align: center;
+    color: #008796;
     white-space: nowrap;
-    span {
-      color: #ffff00;
-    }
   }
 
   .subtitle {
-    @include img_l_m(310, 280, 33);
-    font-size: sizem(20);
+    @include img_c_m(360, 148);
+    font-size: sizem(21);
     font-weight: 900;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(1.25);
-    text-align: left;
-    color: #fff;
+    line-height: 1.3;
+    letter-spacing: sizem(-0.63);
+    text-align: center;
+    color: #008796;
     white-space: nowrap;
+    > * {
+      height: sizem(40);
+      line-height: sizem(40);
+      vertical-align: middle;
+      display: inline-block;
+    }
+
+    .big {
+      font-size: sizem(27);
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      letter-spacing: 0.54px;
+    }
+    .border {
+      font-size: sizem(13);
+      margin: 0 10px;
+    }
+
+    .small {
+      font-size: sizem(18);
+      font-weight: 900;
+      font-stretch: normal;
+      font-style: normal;
+      letter-spacing: sizem(0.18);
+    }
+
+    .number {
+      font-weight: 500;
+      margin-left: 15px;
+    }
   }
 
-  .desc {
-    @include img_l_m(310, 497, 33);
-    font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2;
-    letter-spacing: sizem(0.75);
-    text-align: left;
-    color: #666666;
-    white-space: normal;
+  .btn {
+    @include div_l_m(266, 98, 25, 55);
+    background: linear-gradient(to right, #008796 5px, transparent 5px) 0 0,
+      linear-gradient(to right, #008796 5px, transparent 5px) 0 100%,
+      linear-gradient(to left, #008796 5px, transparent 5px) 100% 0,
+      linear-gradient(to left, #008796 5px, transparent 5px) 100% 100%,
+      linear-gradient(to bottom, #008796 5px, transparent 5px) 0 0,
+      linear-gradient(to bottom, #008796 5px, transparent 5px) 100% 0,
+      linear-gradient(to top, #008796 5px, transparent 5px) 0 100%,
+      linear-gradient(to top, #008796 5px, transparent 5px) 100% 100%;
+
+    background-repeat: no-repeat;
+    background-size: sizem(14) sizem(21);
   }
 
   /* Swipe */
   .swipe {
-    width: 100vw;
-    height: sizem(250);
+    width: sizem(249);
+    height: sizem(174);
     min-height: auto;
-    top: sizem(0);
-    left: sizem(0);
+    top: sizem(232);
+    left: sizem(66);
     object-fit: cover;
   }
 
@@ -521,20 +575,8 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s2/2-1.jpg'),
-          name: '日月光廣場',
-        },
-        {
-          img: require('./s2/2-2.jpg'),
-          name: '日月光廣場',
-        },
-        {
-          img: require('./s2/2-3.jpg'),
-          name: '日月光廣場',
-        },
-        {
-          img: require('./s2/2-4.jpg'),
-          name: '日月光廣場',
+          img: require('./s3/img.png'),
+          // name: 'WE機能圖',
         },
       ],
     }
