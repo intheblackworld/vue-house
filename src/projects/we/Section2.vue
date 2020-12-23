@@ -15,7 +15,7 @@
           </div>
         </div>
       </div>
-      <img src="./s2/logo.png" alt="" class="logo">
+      <img src="./s2/logo.png" alt="最Win地段" class="logo">
       <div class="title absolute" data-aos="fade-down" data-aos-delay="400" v-if="isPC">
         <span>雙捷運x雙商圈x雙公園</span> 輕取美好生活
       </div>
@@ -41,7 +41,8 @@
 .section2 {
   max-height: size(1080);
   position: relative;
-  background: #5fc8ce;
+  background: #5fc8ce url('./s2/rb.png') fixed no-repeat bottom right;
+  background-size: size(1200) auto;
   min-height: size(1238 + 140);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
@@ -308,7 +309,9 @@
   .section2 {
     min-height: auto;
     max-height: initial;
-    height: sizem(784);
+    height: sizem(700);
+  background-position: right calc(100% - 63px);
+  background-size:100% auto;
   }
 
   .logo {

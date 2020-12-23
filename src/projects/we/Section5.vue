@@ -37,6 +37,7 @@
 .section5 {
   width: size(1920);
   height: size(900);
+  min-height: size(900);
   max-height: size(1080);
   position: relative;
   background: #fff;

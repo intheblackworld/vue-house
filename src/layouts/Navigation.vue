@@ -11,7 +11,7 @@
             
           </div> -->
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
-            <div class="close" @click="isOpen = false">
+            <div class="close" @click="isOpen = false" v-if="isMobile">
               <img src="../assets/img/close.png" alt="">
             </div>
             <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: offset }" v-for="item in list" class="flex-c" @click="toggleSidebar">
@@ -149,7 +149,7 @@ export default {
   display: flex !important;
   align-items: center;
   // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
-  // &::after{content: "";height:100%;width: 150%;top: -100%;left: 0;z-index:9;position: absolute;box-shadow:0 size(0) size(72) size(72)  #005566;}
+  &::after{content: "";height:100%;width: 97.6%;top: -100%;left: 0;z-index:9;position: absolute;box-shadow:size(0) size(0) size(70) size(70) #fff;}
 }
 
 .nav-container {
@@ -267,12 +267,12 @@ export default {
     // }
 
     .title {
-      font-size: 16px !important;
+      font-size:size(16);
       font-weight: bold;
       position: relative;
       z-index: 3;
       > span {
-        font-size: 24px !important;
+        font-size:size(24);
       }
     }
 
@@ -322,7 +322,7 @@ export default {
   }
 
   .navlist .link {
-    font-size: 12px;
+    font-size:sizem(12);
     width: 120px;
     white-space: nowrap;
 
@@ -360,6 +360,7 @@ export default {
         width: $logo_phone_width;
       }
     }
+    &::after{box-shadow:0 0 sizem(40) sizem(40) #218388;}
   }
 
   .btn {
@@ -437,7 +438,7 @@ export default {
     .link {
       height: 50px;
       width: 100%;
-      font-size: 17px;
+      font-size:sizem(17);
       margin-top: 0;
       display: flex;
       align-items: center;
@@ -470,7 +471,7 @@ export default {
       display: block;
       width: 100%;
       transform: translateX(0%);
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color:#116266cc;
       padding: 0;
       padding-top: 30px;
       .link {

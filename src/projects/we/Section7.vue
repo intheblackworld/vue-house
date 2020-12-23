@@ -53,7 +53,6 @@
 .bg-img {
   width: 100vw;
   height: size(900);
-  min-height: size(900);
   position: absolute;
   display: block;
   top: 0;

@@ -15,7 +15,6 @@
           </div>
         </div>
       </div>
-      <img src="./s2/rb.png" alt="" class="rb">
       <div class="title absolute" data-aos="fade-down" data-aos-delay="400" v-if="isPC">
         <span>板南、萬大雙捷運，</span>通勤雙北我最WIN
       </div>
@@ -48,8 +47,9 @@
 .section4 {
   max-height: size(1080);
   position: relative;
-  background: #5fc8ce;
-  min-height: size(1250);
+  background: #5fc8ce url('./s2/rb.png') fixed no-repeat bottom right;
+  background-size: size(1200) auto;
+  min-height: size(1250 + 150);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
   // background-position: 0 0;
@@ -77,11 +77,6 @@
   border: solid 1.1px #888888;
 }
 
-.rb {
-  @include img_r_pc(1200, 0, 0);
-  top: auto;
-  bottom: 0;
-}
 
 .title {
   @include img_l_pc(518, 920, 210);
@@ -318,6 +313,8 @@
     min-height: auto;
     max-height: initial;
     height: sizem(250 + 393);
+  background-position: right calc(100% - 63px);
+  background-size:100% auto;
   }
 
   .logo {

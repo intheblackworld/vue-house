@@ -40,7 +40,8 @@
 .section3 {
   max-height: size(1080);
   position: relative;
-  background: #5fc8ce;
+  background: #5fc8ce url('./s2/rb.png') fixed no-repeat bottom right;
+  background-size: size(1200) auto;
   min-height: size(1072);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
@@ -304,6 +305,8 @@
     min-height: auto;
     max-height: initial;
     height: sizem(255 + 183);
+  background-position: right calc(100% - 63px);
+  background-size:100% auto;
   }
 
   .hr {

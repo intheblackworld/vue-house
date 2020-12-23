@@ -58,30 +58,38 @@
 .w-block {
   background-color: #fff;
   @include div_l_pc(1874, 963, 0, 0);
+  height:calc(100% - 4vw);
 }
 
 .logo {
   @include img_l_pc(677, 209, 232);
+  top:calc(50% - 16.2vw);
 }
 
 .st {
   @include img_l_pc(272, 347, 434);
+  top:calc(50% - 9vw);
 }
 
 .t1 {
   @include img_l_pc(712, 383, 214);
+  top:calc(50% - 7.25vw);
 }
 
 .t2 {
   @include img_l_pc(720, 768, 210);
+  top:calc(50% + 12.8vw);
 }
 
 .i {
   @include img_r_pc(633, 209, 209);
+  top:calc(50% - 17.2vw);
 }
 
 .hint {
   @include div_r_pc(450, 27, 965, 46);
+  top:calc(100% - 4vw);
+  width: auto;
   font-size: size(18);
   font-weight: normal;
   font-stretch: normal;
@@ -95,14 +103,18 @@
 
 .logo2 {
   @include img_c_pc(1064, 220);
+  top:calc(50% - 14.67vw);
+
 }
 
 .st2 {
   @include img_c_pc(610, 428);
+  top:calc(50% - 2.83vw);
 }
 
 .t3 {
   @include img_c_pc(1054, 614);
+  top:calc(50% + 3vw);
 }
 
 .swipe-fade-leave-to {
@@ -151,9 +163,9 @@
 @media screen and (max-width: 767px) {
   .section1 {
     width: 100vw;
-    min-height: sizem(470);
+    min-height: sizem(667);
     max-height: sizem(812);
-    height: sizem(709);
+    height:calc(100vh - 63px);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -161,30 +173,38 @@
   .w-block {
     background-color: #fff;
     @include div_l_m(361, 607 - 63, 60, 0);
+    height: calc(100% - 30vw);
   }
 
   .logo {
     @include img_l_m(223, 111, 80);
+  top:calc(50% - 59vw);
   }
 
   .st {
     @include img_l_m(117, 157, 129);
+  top:calc(50% - 46vw);
   }
 
   .t1 {
     @include img_l_m(234, 169, 72);
+  top:calc(50% - 38vw);
   }
 
   .t2 {
     @include img_l_m(222, 296, 74);
+  top:calc(50% - 5vw);
   }
 
   .i {
     @include img_r_m(238, 354, 68);
+  top:calc(50% + 5vw);
   }
 
   .hint {
     @include div_r_m(300, 18, 667, 14);
+    top: calc(100% - 12vw);
+    width: 100%;
     font-size: sizem(12);
     font-weight: normal;
     font-stretch: normal;
@@ -198,14 +218,18 @@
 
   .logo2 {
     @include img_l_m(154, 123, 99);
+  top:calc(50% - 59vw);
   }
 
   .tm {
     @include img_l_m(253, 310, 56);
+  top:calc(50% - 10vw);
   }
 
   .rb {
     @include img_l_m(292, 410, 0);
+    top:auto;
+    bottom:14vw;
   }
 }
 </style>
