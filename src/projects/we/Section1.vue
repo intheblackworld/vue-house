@@ -73,7 +73,7 @@
 
 .t1 {
   @include img_l_pc(712, 383, 214);
-  top:calc(50% - 7.25vw);
+  top:calc(50% - 5.3vw);
 }
 
 .t2 {
