@@ -3,11 +3,12 @@
     <transition-group name="swipe-fade">
       <div v-if="pageIndex === 1" key="page1">
         <div class="w-block"></div>
-        <img src="./s1/logo.png" alt="" class="logo">
-        <img src="./s1/1/st.png" alt="" class="st">
-        <img src="./s1/1/t1.png" alt="" class="t1">
-        <img src="./s1/1/t2.png" alt="" class="t2">
+       <!-- <img src="./s1/logo.png" alt="" class="logo">
+        <img src="./s1/1/st.png" alt="" class="st">  -->
         <img src="./s1/1/i.jpg" alt="" class="i">
+        <div class="t1">早鳥享好康<br>好禮我最威</div>
+        <div class="t2">好禮4選3，風光成家最給力！</div>
+				<img src="./s1/img.png" alt="" class="rb"> 
         <div class="hint">
           本公司保留活動修改及終止權利！！數量有限，要買要快
         </div>
@@ -16,8 +17,8 @@
         <div class="w-block"></div>
         <img src="./s1/logo.png" alt="" class="logo2" v-if="isPC">
 				<img src="./s1/logo2.png" alt="" class="logo2" v-if="isMobile">
-        <img src="./s1/2/st.png" alt="" class="st2" v-if="isPC">
-        <img src="./s1/2/t.png" alt="" class="t3" v-if="isPC">
+        <div class="st2" v-if="isPC">金城正核心 WIN在起跑點</div>
+        <div class="t3" v-if="isPC">30坪首付38萬起 含平面車位<br>3房2衛 採光邊間 訂製你的家</div>
 				<img src="./s1/t_m.png" alt="" class="tm">
 				<img src="./s1/img.png" alt="" class="rb">
       </div>
@@ -61,6 +62,10 @@
   height:calc(100% - 4vw);
 }
 
+.o {
+  @include img_l_pc(1920, 0, 0);
+  height:100%;
+}
 .logo {
   @include img_l_pc(677, 209, 232);
   top:calc(50% - 16.2vw);
@@ -72,20 +77,42 @@
 }
 
 .t1 {
-  @include img_l_pc(712, 383, 214);
-  top:calc(50% - 5.3vw);
+  @include img_l_pc(730, 383, 340);
+  top:calc(50% - 1.6em);
+  font-size:size(110);
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.22;
+  letter-spacing:0.02em;
+  text-align: center;
+  color: #0a5a91;
 }
 
 .t2 {
-  @include img_l_pc(720, 768, 210);
-  top:calc(50% + 12.8vw);
+  @include img_l_pc(720, 768, 340);
+  top:calc(50% + 1.2em);
+  font-size: size(46);
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 3.11;
+  letter-spacing:-0.01em;
+  text-align: center;
+  color: #fe6b00;
 }
 
 .i {
-  @include img_r_pc(633, 209, 209);
-  top:calc(50% - 17.2vw);
+  @include img_r_pc(465, 0, 0);
+  top:calc(50% - 12vw);
+  left:calc(50% + 7.5vw);
 }
 
+  .rb {
+    @include img_l_pc(889, 410, 0);
+    top:auto;
+    bottom:4vw;
+  }
 .hint {
   @include div_r_pc(450, 27, 965, 46);
   top:calc(100% - 4vw);
@@ -102,19 +129,35 @@
 }
 
 .logo2 {
-  @include img_c_pc(1064, 220);
-  top:calc(50% - 14.67vw);
+  @include img_c_pc(840, 210);
+  top:calc(50% - 11vw);
 
 }
 
 .st2 {
   @include img_c_pc(610, 428);
   top:calc(50% - 2.83vw);
+  font-size:size(40);
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.48;
+  letter-spacing: normal;
+  text-align: center;
+  color: #535353;
 }
 
 .t3 {
   @include img_c_pc(1054, 614);
-  top:calc(50% + 3vw);
+  top:calc(50% + 1vw);
+  font-size:size(73);
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.27;
+  letter-spacing: -2.58px;
+  text-align: center;
+  color: #000000;
 }
 
 .swipe-fade-leave-to {
@@ -178,27 +221,29 @@
 
   .logo {
     @include img_l_m(223, 111, 80);
-  top:calc(50% - 59vw);
+  top:calc(50% - 64vw);
   }
 
   .st {
     @include img_l_m(117, 157, 129);
-  top:calc(50% - 46vw);
+  top:calc(50% - 56vw);
   }
 
   .t1 {
-    @include img_l_m(234, 169, 72);
-  top:calc(50% - 38vw);
+    @include img_l_m(375, 169, 0);
+  top:calc(50% - 58vw);
+  font-size:sizem(45);
   }
 
   .t2 {
-    @include img_l_m(222, 296, 74);
-  top:calc(50% - 5vw);
+    @include img_l_m(375, 296, 0);
+  top:calc(50% - 29vw);
+  font-size:sizem(17);
   }
 
   .i {
     @include img_r_m(238, 354, 68);
-  top:calc(50% + 5vw);
+  top:calc(50% - 15vw);
   }
 
   .hint {

@@ -74,28 +74,28 @@
 }
 
 .title {
-  @include img_r_pc(404, 332 + 50, 416);
-  font-size: size(30);
+  @include img_r_pc(404, 332 + 30, 416);
+  font-size: size(45);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
   letter-spacing: size(1.5);
-  text-align: left;
+  text-align: justify;
   color: #055e9b;
   white-space: nowrap;
 }
 
 .desc {
   @include img_r_pc(610, 420 + 50, 210);
-  font-size: size(18);
+  font-size: size(25);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 2;
   letter-spacing: size(0.9);
-  text-align: left;
-  color: #666666;
+  text-align: justify;
+  color: #000;
   // white-space: nowrap;
 }
 .line {
@@ -174,7 +174,7 @@
     right: 1.5em;
     bottom: 1em;
     color: #fff;
-    font-size: size(15);
+    font-size: size(23);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -215,11 +215,11 @@
 
   span {
     display: block;
-    width: 15px;
-    height: 15px;
+    width: size(20);
+    height:size(20);
     border-radius: 0px;
-    box-shadow: 0 0 0 5px #ccc;
-    border-radius: 15px;
+    box-shadow: 0 0 0 4px #ccc;
+    border-radius:100%;
     position: relative;
     // background-color: #ccc;
     transition: all 0.5s;
@@ -247,10 +247,10 @@
         width: 100%;
         height: 100%;
         display: block;
-        box-shadow: 0 0 0 5px #000;
-        border-radius: 15px;
+        box-shadow: 0 0 0 4px #000;
+        border-radius:100%;
         background-image: url('./s2/dot.png');
-        background-size: 70% 70%;
+        background-size: 60% 60%;
         background-position: center;
         background-repeat: no-repeat;
         // border-radius: 20px;
@@ -312,7 +312,7 @@
     font-style: normal;
     line-height: 1.2;
     letter-spacing: sizem(1.25);
-    text-align: left;
+    text-align: justify;
     color: #055e9b;
     white-space: nowrap;
   }
@@ -325,8 +325,8 @@
     font-style: normal;
     line-height: 2;
     letter-spacing: sizem(0.75);
-    text-align: left;
-    color: #666666;
+    text-align: justify;
+    color: #000;
     // white-space: nowrap;
   }
   .line {

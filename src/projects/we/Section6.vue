@@ -66,8 +66,8 @@
 }
 
 .title {
-  @include img_r_pc(732, 247, 205);
-  font-size: size(57);
+  @include img_r_pc(732, 290, 205);
+  font-size: size(45);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -79,9 +79,9 @@
 }
 
 .desc {
-  @include img_r_pc(728, 362, 209);
-  font-size: size(28);
-  font-weight: bold;
+  @include img_r_pc(680, 380,255);
+  font-size: size(25);
+  font-weight: 400;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.97;

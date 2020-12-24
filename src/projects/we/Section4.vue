@@ -49,7 +49,7 @@
   position: relative;
   background: #5fc8ce url('./s2/rb.png') fixed no-repeat bottom right;
   background-size: size(1200) auto;
-  min-height: size(1250 + 150);
+  min-height: size(1250 + 280);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
   // background-position: 0 0;
@@ -73,14 +73,14 @@
 }
 
 .hr {
-  @include img_l_pc(1500, 1000, 210);
+  @include img_l_pc(1500, 1005, 210);
   border: solid 1.1px #888888;
 }
 
 
 .title {
   @include img_l_pc(518, 920, 210);
-  font-size: size(30);
+  font-size: size(45);
   font-weight: 900;
   font-stretch: normal;
   font-style: normal;
@@ -98,7 +98,7 @@
   width: size(568);
   top: size(393);
   right: size(252);
-  font-size: size(24);
+  font-size: size(28);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -111,14 +111,14 @@
 
 .desc {
   @include img_l_pc(1500, 1030, 210);
-  font-size: size(18);
+  font-size: size(25);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 2;
   letter-spacing: size(0.9);
   text-align: left;
-  color: #666666;
+  color: #000;
   white-space: nowrap;
 }
 
@@ -191,7 +191,7 @@
     right: 1.5em;
     bottom: 1em;
     color: #fff;
-    font-size: size(15);
+    font-size: size(23);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -232,11 +232,11 @@
 
   span {
     display: block;
-    width: 15px;
-    height: 15px;
+    width: size(20);
+    height:size(20);
     border-radius: 0px;
-    box-shadow: 0 0 0 5px #fff;
-    border-radius: 15px;
+    box-shadow: 0 0 0 4px #fff;
+    border-radius:100%;
     position: relative;
     // background-color: #ccc;
     transition: all 0.5s;
@@ -264,10 +264,10 @@
         width: 100%;
         height: 100%;
         display: block;
-        box-shadow: 0 0 0 5px #000;
-        border-radius: 15px;
+        box-shadow: 0 0 0 4px #000;
+        border-radius:100%;
         background-image: url('./s2/dot.png');
-        background-size: 70% 70%;
+        background-size: 60% 60%;
         background-position: center;
         background-repeat: no-repeat;
         // border-radius: 20px;
@@ -370,7 +370,7 @@
     line-height: 2;
     letter-spacing: sizem(0.5);
     text-align: left;
-    color: #666666;
+    color: #000;
     white-space: normal;
   }
 
@@ -543,20 +543,20 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s2/2-1.jpg'),
-          name: '日月光廣場',
+          img: require('./s2/3-1.jpg'),
+          name: '捷運海山站實景',
         },
         {
-          img: require('./s2/2-2.jpg'),
-          name: '日月光廣場',
+          img: require('./s2/3-2.jpg'),
+          name: '65快速道路',
         },
         {
-          img: require('./s2/2-3.jpg'),
-          name: '日月光廣場',
+          img: require('./s2/3-3.jpg'),
+          name: '國道3號',
         },
         {
-          img: require('./s2/2-4.jpg'),
-          name: '日月光廣場',
+          img: require('./s2/3-4.jpg'),
+          name: '捷運萬大線LG10站就在中正國中旁',
         },
       ],
     }

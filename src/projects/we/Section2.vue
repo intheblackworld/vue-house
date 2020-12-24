@@ -27,7 +27,7 @@
       </div>
       <div class="hr absolute" data-aos="fade" data-aos-delay="200"></div>
       <div class="desc absolute" data-aos="fade-up" data-aos-delay="300">
-        金城正核心雙捷商圈，同時擁有重劃區新街廓與舊市區的生活便利，地段力、交通力、生活力、增值力一次到位，第一次買房就WIN在起跑點。
+        金城正核心雙捷商圈，同時擁有重劃區新街廓與舊市區的生活便利，<br>地段力、交通力、生活力、增值力一次到位，第一次買房就WIN在起跑點。
       </div>
       <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
@@ -43,7 +43,7 @@
   position: relative;
   background: #5fc8ce url('./s2/rb.png') fixed no-repeat bottom right;
   background-size: size(1200) auto;
-  min-height: size(1238 + 140);
+  min-height: size(1238 + 200);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
   // background-position: 0 0;
@@ -71,13 +71,13 @@
 }
 
 .hr {
-  @include img_l_pc(1500, 1210, 210);
+  @include img_l_pc(1500, 1220, 210);
   border: solid 1.1px #888888;
 }
 
 .title {
   @include img_l_pc(518, 1141, 210);
-  font-size: size(30);
+  font-size: size(45);
   font-weight: 900;
   font-stretch: normal;
   font-style: normal;
@@ -95,7 +95,7 @@
   width: size(568);
   top: size(393);
   right: size(252);
-  font-size: size(24);
+  font-size: size(28);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -108,15 +108,15 @@
 
 .desc {
   @include img_l_pc(1500, 1236, 210);
-  font-size: size(18);
+  font-size: size(25);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 2;
   letter-spacing: size(0.9);
   text-align: left;
-  color: #666666;
-  white-space: nowrap;
+  color: #000;
+//  white-space: nowrap;
 }
 
 /* Swipe */
@@ -188,7 +188,7 @@
     right: 1.5em;
     bottom: 1em;
     color: #fff;
-    font-size: size(15);
+    font-size: size(23);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -229,11 +229,11 @@
 
   span {
     display: block;
-    width: 15px;
-    height: 15px;
+    width: size(20);
+    height:size(20);
     border-radius: 0px;
-    box-shadow: 0 0 0 5px #fff;
-    border-radius: 15px;
+    box-shadow: 0 0 0 4px #fff;
+    border-radius:100%;
     position: relative;
     // background-color: #ccc;
     transition: all 0.5s;
@@ -261,10 +261,10 @@
         width: 100%;
         height: 100%;
         display: block;
-        box-shadow: 0 0 0 5px #000;
-        border-radius: 15px;
+        box-shadow: 0 0 0 4px #000;
+        border-radius:100%;
         background-image: url('./s2/dot.png');
-        background-size: 70% 70%;
+        background-size: 60% 60%;
         background-position: center;
         background-repeat: no-repeat;
         // border-radius: 20px;
@@ -361,7 +361,7 @@
     line-height: 2;
     letter-spacing: sizem(0.75);
     text-align: left;
-    color: #666666;
+    color: #000;
     white-space: normal;
   }
 
@@ -535,11 +535,11 @@ export default {
       slideList: [
         {
           img: require('./s2/1-1.jpg'),
-          name: 'WE機能圖',
+          name: ' ',
         },
         {
           img: require('./s2/1-2.jpg'),
-          name: 'WE機能圖',
+          name: 'WE鳥瞰',
         },
       ],
     }

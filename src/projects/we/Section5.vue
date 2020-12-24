@@ -70,8 +70,8 @@
 }
 
 .title {
-  @include img_r_pc(404, 332, 416);
-  font-size: size(30);
+  @include img_r_pc(404, 320, 416);
+  font-size: size(45);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -84,14 +84,14 @@
 
 .desc {
   @include img_r_pc(610, 420, 210);
-  font-size: size(18);
+  font-size: size(25);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 2;
-  letter-spacing: size(0.9);
-  text-align: left;
-  color: #666666;
+  letter-spacing:0;
+  text-align: justify;
+  color: #000;
   // white-space: nowrap;
 }
 .line {
@@ -169,7 +169,7 @@
     right: 1.5em;
     bottom: 1em;
     color: #fff;
-    font-size: size(15);
+    font-size: size(23);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -210,11 +210,11 @@
 
   span {
     display: block;
-    width: 15px;
-    height: 15px;
+    width: size(20);
+    height:size(20);
     border-radius: 0px;
-    box-shadow: 0 0 0 5px #ccc;
-    border-radius: 15px;
+    box-shadow: 0 0 0 4px #ccc;
+    border-radius:100%;
     position: relative;
     // background-color: #ccc;
     transition: all 0.5s;
@@ -242,10 +242,10 @@
         width: 100%;
         height: 100%;
         display: block;
-        box-shadow: 0 0 0 5px #000;
-        border-radius: 15px;
+        box-shadow: 0 0 0 4px #000;
+        border-radius:100%;
         background-image: url('./s2/dot.png');
-        background-size: 70% 70%;
+        background-size: 60% 60%;
         background-position: center;
         background-repeat: no-repeat;
         // border-radius: 20px;
@@ -320,7 +320,7 @@
     line-height: 2;
     letter-spacing: sizem(0.75);
     text-align: left;
-    color: #666666;
+    color: #000;
     // white-space: nowrap;
   }
   .line {
@@ -506,11 +506,11 @@ export default {
         },
         {
           img: require('./s5/2.jpg'),
-          name: '外觀3D示意圖',
+          name: '大廳3D示意圖',
         },
         {
           img: require('./s5/3.jpg'),
-          name: '外觀3D示意圖',
+          name: '大廳3D示意圖',
         },
       ],
     }
