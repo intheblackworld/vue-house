@@ -191,7 +191,7 @@
     right: size-m(10);
     width: size-m(144);
     // top: auto;
-    top: size-m(320);
+    top:calc(100vh - 95vw);
   }
 
   .container {
