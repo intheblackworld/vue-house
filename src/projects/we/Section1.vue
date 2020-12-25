@@ -1,5 +1,5 @@
 <template>
-  <div class="section1">
+  <div class="section1" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1">
     <transition-group name="swipe-fade">
       <div v-if="pageIndex === 1" key="page1">
         <div class="w-block"></div>
