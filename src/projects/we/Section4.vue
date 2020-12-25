@@ -35,7 +35,7 @@
       <div class="desc absolute" data-aos="fade-up" data-aos-delay="300" v-if="isMobile">
         捷運板南線海山站、土城站，隨你心情動線決定回家路線；國道3號、65快速道路，翱翔雙北無縫接軌；動工中的捷運萬大線LG10站就在中正國中旁上學好近，未來還有北土城交流道就近通勤，新北閃耀五星的大黑馬，青年成家卡位這裡最好！
       </div>
-      <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
+      <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" data-aos-offset="-500" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
     </div>
@@ -232,13 +232,14 @@
 
   span {
     display: block;
-    width: size(20);
-    height:size(20);
+    width: size(35);
+    height:size(35);
     border-radius: 0px;
-    box-shadow: 0 0 0 4px #fff;
+   box-shadow: 0 0 4px 4px #5fc8ce;
     border-radius:100%;
+    border: 4px solid #fff;
     position: relative;
-    // background-color: #ccc;
+    background-color: #5fc8ce;
     transition: all 0.5s;
 
     &::before {
@@ -258,17 +259,16 @@
       transform: scale(0);
     }
     &.active {
-      box-shadow: none;
+    border: 4px solid #000;
       &::before {
         content: '';
         width: 100%;
         height: 100%;
         display: block;
-        box-shadow: 0 0 0 4px #000;
         border-radius:100%;
         background-image: url('./s2/dot.png');
-        background-size: 60% 60%;
-        background-position: center;
+        background-size: 52% auto;
+        background-position: 54% 46%;
         background-repeat: no-repeat;
         // border-radius: 20px;
         opacity: 1;

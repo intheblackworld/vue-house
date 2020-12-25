@@ -28,7 +28,7 @@
       <div class="desc absolute" data-aos="fade-up" data-aos-delay="300">
         金城正核心雙捷商圈，同時擁有重劃區新街廓與舊市區的生活便利，地段力、交通力、生活力、增值力一次到位，第一次買房就WIN在起跑點。
       </div>
-      <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
+      <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" data-aos-offset="-500" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
     </div>
@@ -224,13 +224,14 @@
 
   span {
     display: block;
-    width: size(20);
-    height:size(20);
+    width: size(35);
+    height:size(35);
     border-radius: 0px;
-    box-shadow: 0 0 0 4px #fff;
+   box-shadow: 0 0 4px 4px #5fc8ce;
     border-radius:100%;
+    border: 4px solid #fff;
     position: relative;
-    // background-color: #ccc;
+    background-color: #5fc8ce;
     transition: all 0.5s;
 
     &::before {
@@ -250,17 +251,16 @@
       transform: scale(0);
     }
     &.active {
-      box-shadow: none;
+    border: 4px solid #000;
       &::before {
         content: '';
         width: 100%;
         height: 100%;
         display: block;
-        box-shadow: 0 0 0 4px #000;
         border-radius:100%;
         background-image: url('./s2/dot.png');
-        background-size: 60% 60%;
-        background-position: center;
+        background-size: 52% auto;
+        background-position: 54% 46%;
         background-repeat: no-repeat;
         // border-radius: 20px;
         opacity: 1;
@@ -537,7 +537,11 @@ export default {
         },
         {
           img: require('./s2/2-4.jpg'),
-          name: '中正國民中學',
+          name: 'UNIQLO',
+        },
+        {
+          img: require('./s2/2-5.jpg'),
+          name: '藏壽司',
         },
       ],
     }

@@ -27,7 +27,7 @@
       住宅內裝客製化，從大門到地坪，從臥室到衛浴，建材隨你自由配，
       打造出最有型有款的訂製宅，讓家有自己的STYLE，有開心的玩法。
     </div>
-    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
+    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" data-aos-offset="-500" v-if="isPC">
       <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
     </div>
   </div>
@@ -215,13 +215,14 @@
 
   span {
     display: block;
-    width: size(20);
-    height:size(20);
+    width: size(35);
+    height:size(35);
     border-radius: 0px;
-    box-shadow: 0 0 0 4px #ccc;
+   box-shadow: 0 0 4px 4px #fff;
     border-radius:100%;
+    border: 4px solid #ccc;
     position: relative;
-    // background-color: #ccc;
+    background-color: #fff;
     transition: all 0.5s;
 
     &::before {
@@ -241,17 +242,16 @@
       transform: scale(0);
     }
     &.active {
-      box-shadow: none;
+    border: 4px solid #000;
       &::before {
         content: '';
         width: 100%;
         height: 100%;
         display: block;
-        box-shadow: 0 0 0 4px #000;
         border-radius:100%;
         background-image: url('./s2/dot.png');
-        background-size: 60% 60%;
-        background-position: center;
+        background-size: 52% auto;
+        background-position: 54% 46%;
         background-repeat: no-repeat;
         // border-radius: 20px;
         opacity: 1;
