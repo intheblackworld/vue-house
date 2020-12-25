@@ -5,7 +5,7 @@
       <div v-if="!isMobile" class="container flex-ac flex-jb relative left">
         <div class="slides swiper-container">
           <div :id="`youtube-player-${id}`" ref="player" class="swiper-wrapper"></div>
-          <img src="./s2/1.jpg" alt="" :class="`video-img absolute ${(isPlay == true) ? 'hide' : ''}`" @click="playVideo">
+          <img src="./tv.jpg" alt="" :class="`video-img absolute ${(isPlay == true) ? 'hide' : ''}`" @click="playVideo">
         </div>
         <!-- <swiper v-show="show" :options="swiperOption" ref="mySwiper" class="slides" @slideChangeTransitionStart="slideChanged">
           <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.src" class="item">
