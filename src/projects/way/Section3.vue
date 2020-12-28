@@ -63,7 +63,7 @@
 }
 
 .title {
-  @include img_l_pc(504, 273, 201);
+  @include img_l_pc(700, 273, 117);
   font-size: size(62);
   font-weight: 900;
   font-stretch: normal;
@@ -75,68 +75,66 @@
   white-space: nowrap;
 
   span {
-    font-weight: 500;
+    font-weight: 500;  font-family: KhmerMN;
+    font-size: 1.387em;
   }
 }
 
 .subtitle {
-  @include img_l_pc(626, 547, 117);
+  @include img_l_pc(700, 547, 117);
   font-size: size(53);
   font-weight: 900;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.3;
-  letter-spacing: size(-1.59);
+  line-height:1.3;
+  letter-spacing:-0.03em;
   text-align: center;
   color: #008796;
   white-space: nowrap;
   > * {
-    height: size(78);
-    line-height: size(78);
+    height:1.472em;
+    //line-height: size(78);
     vertical-align: middle;
-    display: inline-block;
+  //  display: inline-block;
   }
 
   .big {
-    font-size: size(68);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
+    font-size:1.28em;
+    font-weight: 700;
     // line-height: 1.79;
-    letter-spacing: 1.36px;
-    text-align: center;
+    letter-spacing: 0;
   }
   .border {
-    font-size: size(24);
+    font-size:0.453em;
     text-align: center;
-    margin: 0 10px;
+    margin: 0 0.5em;
   }
 
   .small {
-    font-size: size(45);
-    font-weight: 900;
+    font-size: 0.85em;
+    font-weight: 800;
     font-stretch: normal;
     font-style: normal;
-    letter-spacing: size(0.45);
+    letter-spacing:0.01em;
     text-align: center;
   }
 
   .number {
-    font-weight: 500;
-    margin-left: 15px;
+    font-weight: 700;
+    margin-left:0.28em;
   }
 }
 
 .btn {
-  @include div_l_pc(664, 110 + 135, 240, 117);
-  background: linear-gradient(to right, #008796 10px, transparent 10px) 0 0,
-    linear-gradient(to right, #008796 10px, transparent 10px) 0 100%,
-    linear-gradient(to left, #008796 10px, transparent 10px) 100% 0,
-    linear-gradient(to left, #008796 10px, transparent 10px) 100% 100%,
-    linear-gradient(to bottom, #008796 10px, transparent 10px) 0 0,
-    linear-gradient(to bottom, #008796 10px, transparent 10px) 100% 0,
-    linear-gradient(to top, #008796 10px, transparent 10px) 0 100%,
-    linear-gradient(to top, #008796 10px, transparent 10px) 100% 100%;
+  @include div_l_pc(700, 110 + 135, 240, 117);
+  background: linear-gradient(to right, #008796 size(15), transparent size(15)) 0 0,
+    linear-gradient(to right, #008796 size(15), transparent size(15)) 0 100%,
+    linear-gradient(to left, #008796 size(15), transparent size(15)) 100% 0,
+    linear-gradient(to left, #008796 size(15), transparent size(15)) 100% 100%,
+    linear-gradient(to bottom, #008796 size(15), transparent size(15)) 0 0,
+    linear-gradient(to bottom, #008796 size(15), transparent size(15)) 100% 0,
+    linear-gradient(to top, #008796 size(15), transparent size(15)) 0 100%,
+    linear-gradient(to top, #008796 size(15), transparent size(15)) 100% 100%;
 
   background-repeat: no-repeat;
   background-size: size(37) size(55);
@@ -350,45 +348,7 @@
   .subtitle {
     @include img_c_m(360, 148);
     font-size: sizem(21);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.3;
-    letter-spacing: sizem(-0.63);
-    text-align: center;
-    color: #008796;
-    white-space: nowrap;
-    > * {
-      height: sizem(40);
-      line-height: sizem(40);
-      vertical-align: middle;
-      display: inline-block;
-    }
 
-    .big {
-      font-size: sizem(27);
-      font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      letter-spacing: 0.54px;
-    }
-    .border {
-      font-size: sizem(13);
-      margin: 0 10px;
-    }
-
-    .small {
-      font-size: sizem(18);
-      font-weight: 900;
-      font-stretch: normal;
-      font-style: normal;
-      letter-spacing: sizem(0.18);
-    }
-
-    .number {
-      font-weight: 500;
-      margin-left: 15px;
-    }
   }
 
   .btn {

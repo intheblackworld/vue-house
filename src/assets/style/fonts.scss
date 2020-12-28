@@ -38,6 +38,12 @@ p {
 
 /* font */
 @font-face {
+  font-family: KhmerMN;
+  src: url('~@/assets/font/KhmerMN.ttf') format('truetype'),
+    url('~@/assets/font/KhmerMN.ttf');
+}
+
+@font-face {
   font-family: DFPingJuStd;
   src: url('~@/assets/font/DFPingJuStd-W7.otf?#iefix')
       format('embedded-opentype'),

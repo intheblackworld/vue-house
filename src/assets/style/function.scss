@@ -105,7 +105,7 @@
   position: absolute;
   width: size($width);
   top: calc(50% - (100vw * #{$top} / #{$size}));
-  left: calc(50% - (100vw * #{$left} / #{$size}));
+  left: calc(50% + (100vw * #{$left} / #{$size}));
   right: auto;
 }
 

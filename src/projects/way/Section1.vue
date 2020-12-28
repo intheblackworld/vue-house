@@ -1,14 +1,21 @@
 <template>
   <div class="section1">
     <!-- <img src="./s1/bg.jpg" alt="" class="bg-img"> -->
-    <img src="./s1/i1.png" alt="" class="i1">
-    <img src="./s1/i2.png" alt="" class="i2">
-    <img src="./s1/i3.png" alt="" class="i3">
-    <img src="./s1/b.png" alt="" class="b" @click="moveT">
+    <img src="./s1/i1.png" alt="" class="i1" data-aos="fade" data-aos-delay="200">
+    <img src="./s1/i2.png" alt="" class="i2" data-aos="fade-up" data-aos-delay="400">
+    <img src="./s1/i3.png" alt="" class="i3" data-aos="fade" data-aos-delay="400">
+   <!--<img src="./s1/b.png" alt="" class="b" @click="moveT"> -->
+    <div class="b" data-aos="fade" data-aos-delay="800">
+    <div class="bimg">
+      <img src="./s1/b1.png" alt=""><img src="./s1/b2.png" alt="">
+      </div>
+      </div>
     <!-- <img src="./s1/b1.png" alt="" class="b1">
     <img src="./s1/b2.png" alt="" class="b2"> -->
-    <img src="./s1/logo.png" alt="" class="logo">
-    <img src="./s1/t.png" alt="" :class="`t ${isMove ? 'moving' : ''}`">
+    <img src="./s1/logo.png" alt="" class="logo" data-aos="fade-down" data-aos-delay="400">
+    <div class="t" data-aos="fade" data-aos-delay="800">
+    <img src="./s1/t.png" alt="" >
+      </div>
   </div>
 </template>
 
@@ -22,8 +29,6 @@
   max-height: size(1080);
   overflow: hidden;
   position: relative;
-  // background: url("./s1/bg.jpg") fixed ;
-  background-size: auto;
 }
 
 .bg-img {
@@ -43,12 +48,25 @@
 }
 
 .logo {
-  @include img_l_pc(611, 285, 225);
+  @include img_c(611, 255, -735, 1920);
 }
 
 .b {
-  @include img_r_pc(664, 535, 554);
-  cursor: pointer;
+  @include img_c(664, 5, -255, 1920);
+  img{width: 100%;position: absolute;top: 0;left: 0;
+  &:last-child{transform: rotate(0deg);
+  transform-origin: 59% 58%;
+  animation:tr1 2s infinite alternate;
+  }
+  }
+}
+@keyframes tr1{
+    90%{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(10deg);
+    }
 }
 
 // .b1 {
@@ -60,26 +78,36 @@
 // }
 
 .i1 {
-  @include img_l_pc(933, 596, 186);
+  @include img_c(933, -55, -775, 1920);
 }
 
 .i2 {
-  @include img_r_pc(678, 181, 182);
+  @include img_c(678, 360, 100, 1920);
 }
 
 .i3 {
-  @include img_r_pc(419, 540, 306);
+  @include img_c(419, 0, 235, 1920);
 }
 
 .t {
-  @include img_r_pc(67, 614, 441);
+  @include img_c(67, -74, 452, 1920);
   transform-origin: center;
-
-  &.moving {
-    animation: swing 1s 0s ease-in-out infinite;
-  }
+  img{width: 100%;  animation:tr2 2s 0.4s ease-out infinite alternate;
 }
 
+  /*&.moving {
+    animation: swing 1s 0s ease-in-out infinite;
+  }*/
+}
+@keyframes tr2{
+    93%{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(10deg);
+    }
+}
+/*
 @keyframes swing {
   0% {
     transform: scale(0.8), rotate(0deg);
@@ -108,7 +136,7 @@
   100% {
     transform: scale(0.8), rotate(0deg);
   }
-}
+}*/
 
 .swipe-fade-leave-to {
   opacity: 0;
@@ -164,12 +192,12 @@
     background-attachment: scroll;
   }
   .logo {
-    @include img_c_m(180, 63);
+    @include img_c_m(200, 55);
   }
 
   .b {
-    @include img_r_m(270, 492, 0);
-    cursor: pointer;
+    @include img_r_m(300, 495, -35);
+    .bimg{transform: scaleX(-1)}
   }
 
   // .b1 {
