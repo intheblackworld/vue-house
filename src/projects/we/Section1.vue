@@ -1,7 +1,7 @@
 <template>
-  <div class="section1" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1">
+  <div class="section1">
     <transition-group name="swipe-fade">
-      <div v-if="pageIndex === 1" key="page1">
+      <div v-if="pageIndex === 1" key="page1" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1">
         <div class="w-block"></div>
        <!-- <img src="./s1/logo.png" alt="" class="logo">
         <img src="./s1/1/st.png" alt="" class="st">  -->
@@ -13,7 +13,7 @@
           本公司保留活動修改及終止權利！！數量有限，要買要快
         </div>
       </div>
-      <div v-if="pageIndex === 2" key="page2">
+      <div v-if="pageIndex === 2" key="page2" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1">
         <div class="w-block"></div>
         <img src="./s1/logo.png" alt="" class="logo2" v-if="isPC">
 				<img src="./s1/logo2.png" alt="" class="logo2" v-if="isMobile">
