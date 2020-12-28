@@ -309,7 +309,7 @@
     font-weight: 900;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
+    line-height: 1.4;
     letter-spacing: sizem(1.25);
     text-align: justify;
     color: #055e9b;
@@ -323,7 +323,7 @@
     letter-spacing:0.05em;
   }
   .line {
-    @include img_r_m(310, 522, 32);
+    @include img_r_m(310, 524, 32);
     background-color: #888;
     height: sizem(2);
   }

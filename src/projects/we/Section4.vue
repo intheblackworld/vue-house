@@ -19,7 +19,7 @@
         <span>板南、萬大雙捷運，</span>通勤雙北我最WIN
       </div>
       <div class="title absolute" data-aos="fade-down" data-aos-delay="400" v-if="isMobile">
-        <span>板南、萬大雙捷運，</span>
+        <span>板南、萬大雙捷運</span>
       </div>
       <div class="subtitle absolute" data-aos="fade-down" data-aos-delay="700" v-if="isMobile">
         通勤雙北我最WIN
@@ -332,7 +332,7 @@
   }
 
   .title {
-    @include img_l_m(310, 280, 33);
+    @include img_l_m(310, 290, 33);
     font-size: sizem(25);
     font-weight: 900;
     font-stretch: normal;
@@ -348,7 +348,7 @@
   }
 
   .subtitle {
-    @include img_l_m(310, 250 + 74, 33);
+    @include img_l_m(310, 330, 33);
     font-size: sizem(20);
     font-weight: 500;
     font-stretch: normal;

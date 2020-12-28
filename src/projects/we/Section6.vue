@@ -12,7 +12,7 @@
         建材從優 享受從寬<br />CP值最威
       </div>
       <div class="desc">
-        從管道間排水防疫的PAPA &amp; STUDOR建材，搭配當層排氣工法，到媲美大戶的日本INAX全系列衛浴五金、DORIS整體廚具、YKK氣密窗、冠軍磁磚、德國精工木地板….全數納入你的威生活。
+        從管道間排水防疫的PAPA &amp; STUDOR建材，搭配當層排氣工法，到媲美大戶的日本INAX全系列衛浴五金、DORIS整體廚具、YKK氣密窗、冠軍磁磚、德國精工木地板…全數納入你的威生活。
       </div>
     </div>
   </div>
@@ -149,7 +149,7 @@
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.47;
+    line-height: 1.4;
     letter-spacing: sizem(1.25);
     text-align: left;
     color: #ffffff;
@@ -157,7 +157,7 @@
   }
 
   .desc {
-    @include img_r_m(280, 612, 62);
+    @include img_r_m(280, 608, 62);
     font-size: sizem(15);
     line-height: 1.7;
     letter-spacing:0.05em;

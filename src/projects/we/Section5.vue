@@ -298,9 +298,9 @@
   }
 
   .title {
-    @include img_r_m(189, 452, 152);
+    @include img_r_m(189, 445, 152);
     font-size: sizem(25);
-    line-height: 1.2;
+    line-height: 1.4;
     letter-spacing: sizem(1.25);
     text-align: left;
     color: #055e9b;

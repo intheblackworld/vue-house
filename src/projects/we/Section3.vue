@@ -314,7 +314,7 @@
   }
 
   .title {
-    @include img_l_m(310, 66 + 250, 33);
+    @include img_l_m(310, 320, 33);
     font-size: sizem(25);
     font-weight: 900;
     font-stretch: normal;
@@ -330,7 +330,7 @@
   }
 
   .subtitle {
-    @include img_l_m(310, 280, 33);
+    @include img_l_m(310, 290, 33);
     font-size: sizem(20);
     font-weight: 500;
     font-stretch: normal;
