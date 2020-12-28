@@ -3,6 +3,8 @@
     <!-- <img src="@/projects/fs/order/bg.png" alt="" class="bg-img"> -->
     <!-- <img src="@/projects/fs/order/bg1.png" alt="" class="bg-img no-mix"> -->
     <!-- <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile"> -->
+    <img src="../projects/cy/s1/bg.jpg" alt="" class="bg-top" v-if="isPC">
+    <img src="../projects/cy/s1/bg_m.jpg" alt="" class="bg-top" v-if="isMobile">
     <div class="order-top">
       <!-- <div class="title-block">
         <h3 class="title">{{order.title}}</h3>
@@ -113,7 +115,7 @@ import GoogleMap from '@/components/GoogleMap.vue'
 import PolicyDialog from '@/components/PolicyDialog.vue'
 import info from '@/info'
 import { cityList, renderAreaList } from '@/info/address'
-import { isMobile } from '@/utils'
+import { isPC, isMobile } from '@/utils'
 import Loading from '@/components/Loading.vue'
 import VueRecaptcha from 'vue-recaptcha'
 
@@ -132,6 +134,7 @@ export default {
       cityList,
       info,
       order: info.order,
+      isPC,
       isMobile,
       form: {
         name: '',
@@ -230,7 +233,7 @@ export default {
       fetch('contact-form.php', {
         method: 'POST',
         body: formData,
-      }).then(response => {
+      }).then((response) => {
         this.isSubmit = false
         if (response.status === 200) {
           window.location.href = 'formThanks'
@@ -277,6 +280,10 @@ export default {
   .order-top {
     position: relative;
     overflow: hidden;
+  }
+
+  .bg-top {
+    @include img_c_pc(1920, -275);
   }
   .order-title {
     font-family: $family2;
@@ -499,6 +506,10 @@ export default {
       width: 84%;
       margin: 0 auto;
       padding: 0;
+    }
+
+    .bg-top {
+      @include img_c_m(375, -415);
     }
 
     .form {

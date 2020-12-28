@@ -10,7 +10,7 @@
       id="fullpage"
     > -->
     <!-- <LeafFlow /> -->
-    <vue-lazy-component class="section relative" id="section1" @init="init" style="z-index: 3;">
+    <vue-lazy-component class="section relative" id="section1" @init="init" style="z-index: 4;">
       <Section1 />
     </vue-lazy-component>
 <!--      <vue-lazy-component
@@ -61,10 +61,10 @@ import { isMobile } from '@/utils'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
-import Indigator from '@/components/Indigator.vue'
+// import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/we/Section1.vue'
+import Section1 from '@/projects/cy/Section1.vue'
 
 export default {
   name: 'home',
