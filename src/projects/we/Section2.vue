@@ -27,7 +27,7 @@
       </div>
       <div class="hr absolute" data-aos="fade" data-aos-delay="200"></div>
       <div class="desc absolute" data-aos="fade-up" data-aos-delay="300">
-        金城正核心雙捷商圈，同時擁有重劃區新街廓與舊市區的生活便利，<br>地段力、交通力、生活力、增值力一次到位，第一次買房就WIN在起跑點。
+        金城正核心雙捷商圈，同時擁有重劃區新街廓與舊市區的生活便利，<br v-if="isPC">地段力、交通力、生活力、增值力一次到位，第一次買房就WIN在起跑點。
       </div>
       <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" data-aos-offset="-500" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
