@@ -1,26 +1,25 @@
 <template>
   <div class="section1">
+    <div class="w-block"></div>
+				<img src="./s1/img.png" alt="" class="rb"> 
+        <div class="hint">
+          本公司保留活動修改及終止權利！！數量有限，要買要快
+        </div>
     <transition-group name="swipe-fade">
-      <div v-if="pageIndex === 1" key="page1" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <div class="w-block"></div>
+      <div class="list" v-if="pageIndex === 1" key="page1" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+        
        <!-- <img src="./s1/logo.png" alt="" class="logo">
         <img src="./s1/1/st.png" alt="" class="st">  -->
         <img src="./s1/1/i.jpg" alt="" class="i">
         <div class="t1">早鳥享好康<br>好禮我最威</div>
         <div class="t2">好禮4選3，風光成家最給力！</div>
-				<img src="./s1/img.png" alt="" class="rb"> 
-        <div class="hint">
-          本公司保留活動修改及終止權利！！數量有限，要買要快
-        </div>
       </div>
-      <div v-if="pageIndex === 2" key="page2" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <div class="w-block"></div>
+      <div class="list" v-if="pageIndex === 2" key="page2" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <img src="./s1/logo.png" alt="" class="logo2" v-if="isPC">
 				<img src="./s1/logo2.png" alt="" class="logo2" v-if="isMobile">
         <div class="st2" v-if="isPC">金城正核心 WIN在起跑點</div>
         <div class="t3" v-if="isPC">30坪首付38萬起 含平面車位<br>3房2衛 採光邊間 訂製你的家</div>
-				<img src="./s1/t_m.png" alt="" class="tm">
-				<img src="./s1/img.png" alt="" class="rb">
+				<img src="./s1/t_m.png" alt="" class="tm" v-if="isMobile">
       </div>
     </transition-group>
   </div>
@@ -84,7 +83,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.22;
-  letter-spacing:0.02em;
+  letter-spacing:0.1em;
   text-align: center;
   color: #0a5a91;
 }
@@ -159,7 +158,7 @@
   text-align: center;
   color: #000000;
 }
-
+.list::after{content: "";position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 3;}
 .swipe-fade-leave-to {
   opacity: 0;
   z-index: 0;

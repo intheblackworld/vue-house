@@ -9,8 +9,8 @@
           </div>
         </transition-group>
         <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+          <div class="prev-btn" @click="decIndex"><img src="./s2/dot.png" alt=""></div>
+          <div class="next-btn" @click="addIndex"><img src="./s2/dot.png" alt=""></div>
         </div>
       </div>
     </div>
@@ -93,10 +93,9 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 2;
-  letter-spacing: size(0.9);
+    letter-spacing:0.036em;
   text-align: justify;
   color: #000;
-  // white-space: nowrap;
 }
 .line {
   @include img_r_pc(610, 398 + 50, 210);
@@ -307,7 +306,7 @@
   .title {
     @include img_r_m(189, 437, 152);
     font-size: sizem(25);
-    font-weight: bold;
+    font-weight: 900;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.2;
@@ -320,14 +319,8 @@
   .desc {
     @include img_r_m(310, 538, 32);
     font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2;
-    letter-spacing: sizem(0.75);
-    text-align: justify;
-    color: #000;
-    // white-space: nowrap;
+    line-height: 1.7;
+    letter-spacing:0.05em;
   }
   .line {
     @include img_r_m(310, 522, 32);
@@ -482,8 +475,18 @@
 
     .prev-btn,
     .next-btn {
-      width: sizem(15);
+      width: sizem(25);
+      height:sizem(25);
       cursor: pointer;
+      background: #fff;
+      border-radius: 50%;
+      border:sizem(2.5) solid #000;
+      display: flex;justify-content:center;
+      align-items: center;
+      img{width: 60%;transform: rotate(45deg) translate(5%,-5%);}
+    }
+    .next-btn {
+      transform: scaleX(-1);
     }
   }
 }

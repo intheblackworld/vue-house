@@ -3,10 +3,10 @@
     <div class="section8">
       <img src="./s8/logo.png" alt="" class="logo">
       <div class="title">
-        威地段，輕首付，訂製宅，幸福住
+        威地段&emsp;輕首付&emsp;訂製宅&emsp;幸福住
       </div>
       <div class="subtitle">
-        悅峰WE時代，我們的威時代
+        <span>悅峰WE時代&ensp;</span>我們的威時代
       </div>
       <div class="g-block"></div>
     </div>
@@ -21,12 +21,15 @@
   max-height: size(900);
   position: relative;
   background: #fff;
-  // min-height: size(900);
-  // background-image: url('./s2/bg.jpg');
-  // background-size: 100% 100%;
-  // background-position: 0 0;
-  // background-attachment: fixed;
-  // overflow: hidden;
+  font-size: size(56);
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.48;
+  text-align: center;
+  color: #000000;
+  white-space: nowrap;
+  letter-spacing:-0.015em;
 }
 
 .bg-img {
@@ -50,28 +53,12 @@
 
 .title {
   @include img_c_pc(824, 636);
-  font-size: size(56);
-  font-weight: 900;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.48;
-  letter-spacing: size(-1.12);
-  text-align: center;
-  color: #000000;
-  white-space: nowrap;
 }
 
 .subtitle {
-  @include img_c_pc(830, 720);
-  font-size: size(66);
-  font-weight: 900;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.48;
-  letter-spacing: normal;
-  text-align: center;
-  color: #000000;
-  white-space: nowrap;
+  @include img_c_pc(1000, 720);
+  font-size:1.17em;
+  span{letter-spacing:0.06em;margin:0 0.18em 0 -0.01em;}
 }
 
 @media only screen and (max-width: 1440px) {
@@ -94,6 +81,7 @@
     min-height: auto;
     max-height: initial;
     overflow: hidden;
+    font-size: sizem(21);
   }
 
   .g-block {
@@ -106,29 +94,11 @@
   }
 
   .title {
-    @include img_c_m(310, 333);
-    font-size: sizem(21);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.48;
-    letter-spacing: sizem(-0.42);
-    text-align: center;
-    color: #000000;
-    white-space: nowrap;
+    @include img_c_m(375, 333);
   }
 
   .subtitle {
-    @include img_c_m(310, 364);
-    font-size: sizem(25);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.48;
-    letter-spacing: normal;
-    text-align: center;
-    color: #000000;
-    white-space: nowrap;
+    @include img_c_m(375, 364);
   }
 }
 </style>

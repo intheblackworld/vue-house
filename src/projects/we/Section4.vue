@@ -10,8 +10,8 @@
             </div>
           </transition-group>
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+            <div class="prev-btn" @click="decIndex"><img src="./s2/dot.png" alt=""></div>
+            <div class="next-btn" @click="addIndex"><img src="./s2/dot.png" alt=""></div>
           </div>
         </div>
       </div>
@@ -116,10 +116,9 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 2;
-  letter-spacing: size(0.9);
-  text-align: left;
+    letter-spacing:0.036em;
+  text-align: justify;
   color: #000;
-  white-space: nowrap;
 }
 
 /* Swipe */
@@ -323,7 +322,7 @@
 
   .hr {
     @include img_l_m(310, 122 + 250, 33);
-    border: solid 1.1px #888888;
+    border: solid 1px #888888;
   }
 
   .rb {
@@ -351,7 +350,7 @@
   .subtitle {
     @include img_l_m(310, 250 + 74, 33);
     font-size: sizem(20);
-    font-weight: 900;
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.2;
@@ -364,14 +363,8 @@
   .desc {
     @include img_l_m(310, 250 + 138, 33);
     font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2;
-    letter-spacing: sizem(0.5);
-    text-align: left;
-    color: #000;
-    white-space: normal;
+    line-height:1.7;
+    letter-spacing:0.05em;
   }
 
   /* Swipe */
@@ -512,7 +505,6 @@
       }
     }
   }
-
   .swipe-btns {
     width: 100%;
     height: 100%;
@@ -521,8 +513,18 @@
 
     .prev-btn,
     .next-btn {
-      width: sizem(15);
+      width: sizem(25);
+      height:sizem(25);
       cursor: pointer;
+      background: #fff;
+      border-radius: 50%;
+      border:sizem(2.5) solid #000;
+      display: flex;justify-content:center;
+      align-items: center;
+      img{width: 60%;transform: rotate(45deg) translate(5%,-5%);}
+    }
+    .next-btn {
+      transform: scaleX(-1);
     }
   }
 }

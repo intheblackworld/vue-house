@@ -87,8 +87,7 @@
   line-height: 1.97;
   letter-spacing:0.02em;
   text-align: justify;
-  color: #050101;
-  // white-space: nowrap;
+  color: #000;
 }
 /*
 .t1 {
@@ -160,14 +159,8 @@
   .desc {
     @include img_r_m(280, 612, 62);
     font-size: sizem(15);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.97;
-    letter-spacing: normal;
-    text-align: left;
-    color: #050101;
-    // white-space: nowrap;
+    line-height: 1.7;
+    letter-spacing:0.05em;
   }
 }
 </style>
