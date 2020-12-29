@@ -424,7 +424,7 @@ export default {
         },
         {
           img: require('./s2/2.jpg'),
-          title: '印象太和',
+          title: '映象太和',
         },
         {
           img: require('./s2/3.jpg'),
