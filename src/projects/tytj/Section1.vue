@@ -188,7 +188,7 @@
       class="absolute title"
       data-aos="fade-up"
       data-aos-delay="800"
-    >泰欣系統以一流的機電環控<br />建立安心居住、放心生活的家園</h3>
+    >泰新系統以一流的機電環控<br />建立安心居住、放心生活的家園</h3>
   </div>
 </template>
 <style lang="scss" scoped>
