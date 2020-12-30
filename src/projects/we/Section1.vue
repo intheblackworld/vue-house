@@ -196,7 +196,7 @@
   width: 100%;
   height: 100%;
   padding: 0 15px;
-  z-index: 3;
+ // z-index: 3;
 
   .prev-btn,
   .next-btn {
@@ -207,16 +207,16 @@
 
 .pagination {
   width: auto;
-  top: size(900);
-  right: size(200);
-  justify-content: center;
+  top: calc(100% - 7vw);
+  right: size(70);
+  justify-content: center;z-index:30;
 }
 
 .pagination-dot {
   padding: 5px;
   margin: 0 5px;
   cursor: pointer;
-  z-index: 3;
+ // z-index: 3;
 
   span {
     display: block;
@@ -373,7 +373,7 @@
     width: 100%;
     height: 100%;
     padding: 0 15px;
-    z-index: 3;
+    //z-index: 3;
 
     .prev-btn,
     .next-btn {
