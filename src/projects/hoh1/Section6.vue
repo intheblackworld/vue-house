@@ -564,7 +564,7 @@ export default {
           src: require('./s6/3.png'),
           title: 'LANDSCAPE',
           subtitle: '環境人文思考，都會繁花盛放',
-          desc: '代表作品∣陶朱隱園．維多利亞酒店．碧波白',
+          desc: '代表作品∣維多利亞酒店．碧波白',
         },
       ],
 
