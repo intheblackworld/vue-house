@@ -16,7 +16,7 @@
       </div>
       <swiper :options="swiperOption" ref="mySwiper" data-aos="fade" data-aos-delay="1000">
         <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="item">
-          <img :src="slide.src" :class="`item-img`" />
+          <img :src="slide.src" :class="`item-img`" /><span class="item-txt" v-html="slide.txt"></span>
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination" v-if="!isMobile"></div>
         <div class="swiper-button-prev" slot="button-prev" v-if="isMobile">
@@ -146,7 +146,7 @@
 .content {
   width: size(524);
   height: 80%;
-  top: 10%;
+  top: 15%;
   left: size(120);
   text-align: center;
   padding: size(34) size(50) 0 size(77);
@@ -160,8 +160,8 @@
     0 0,
     100% 0%,
     100% 100%,
-    6.4vw 100%,
-    0% calc(100% - 6.4vw)
+    5.5vw 100%,
+    0% calc(100% - 5.5vw)
   );
   opacity: 0.9;z-index: -1;
   background-image: linear-gradient(to bottom, #ff5f00 0%, #fa0032 100%);
@@ -214,13 +214,21 @@
 .swiper-container {
   position: absolute;
   width: size(1350);
-  height: 100%;
-  top: 0;
+  height: 90%;
+  top: 10%;
   right: 0;
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+  .item-txt{
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  color: #FFF;
+  font-size: size(15);
+  text-shadow: 0 0 0.5em #000;
   }
 }
 /* 平板尺寸 */
@@ -314,6 +322,9 @@
     img {
       width: 100%;
     }
+  .item-txt{
+  font-size: sizem(12);
+  }
   }
   .logoall {
     width: size-m(295);
@@ -365,11 +376,14 @@ export default {
       },
 
       slideList: [
-        { src: require('./s6/1.jpg') },
-        { src: require('./s6/1.jpg') },
-        { src: require('./s6/1.jpg') },
-        { src: require('./s6/1.jpg') },
-        { src: require('./s6/1.jpg') },
+        {
+          src: require('./s6/1.jpg') ,
+          txt: "外觀模擬圖，建設公司保有修正之權利"
+        },
+      //  { src: require('./s6/1.jpg') },
+      //  { src: require('./s6/1.jpg') },
+      //  { src: require('./s6/1.jpg') },
+      //  { src: require('./s6/1.jpg') },
       ],
 
       imgIndex: 0,

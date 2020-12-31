@@ -12,11 +12,11 @@
           <li :class="`${slideIndex == (3 - 1) ? 'active' : ''}`" @click="goTo(3)">35坪</li>
           <li :class="`${slideIndex == (4 - 1) ? 'active' : ''}`" @click="goTo(4)">38坪</li>
         </div>
-        <div class="content-label">[央北鑫建築] 建築外觀3D透視<br />參考示意圖，實際依銷售合約書為準</div>
+        <div class="content-label">[央北鑫建築] 裝潢風格情境參考示意圖，實際坪數，格局尺度，依銷售買賣合約書為準，建設公司保有修正之權利</div>
       </div>
       <swiper :options="swiperOption" ref="mySwiper8" data-aos="fade" data-aos-delay="1000" @slideChange="slideChanged">
         <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="item">
-          <img :src="slide.src" :class="`item-img`" />
+          <img :src="slide.src" :class="`item-img`" /><span class="item-txt">裝潢風格情境參考示意圖</span>
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination" v-if="!isMobile"></div>
         <div class="swiper-button-prev" slot="button-prev" v-if="isMobile">
@@ -123,7 +123,7 @@
 .content {
   width: size(524);
   height: 80%;
-  top: 10%;
+  top: 5%;
   left: size(120);
   text-align: center;
   padding: size(34) size(50) 0 size(77);
@@ -137,8 +137,8 @@
     0 0,
     100% 0%,
     100% 100%,
-    6.4vw 100%,
-    0% calc(100% - 6.4vw)
+    5.5vw 100%,
+    0% calc(100% - 5.5vw)
   );
   opacity: 0.9;z-index: -1;
   background-image: linear-gradient(to bottom, #ff5f00 0%, #fa0032 100%);
@@ -204,13 +204,21 @@
 .swiper-container {
   position: absolute;
   width: size(1350);
-  height: 100%;
+  height: 90%;
   top: 0;
   right: 0;
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+  .item-txt{
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  color: #FFF;
+  font-size: size(15);
+  text-shadow: 0 0 0.5em #000;
   }
 }
 /* 平板尺寸 */
@@ -365,10 +373,31 @@ export default {
       },
 
       slideList: [
-        { src: require('./s8/1.jpg') },
-        { src: require('./s8/1.jpg') },
-        { src: require('./s8/1.jpg') },
-        { src: require('./s8/1.jpg') },
+        { src: require('./s8/24-1.jpg') },
+        { src: require('./s8/24-2.jpg') },
+        { src: require('./s8/24-3.jpg') },
+        { src: require('./s8/24-4.jpg') },
+        { src: require('./s8/24-5.jpg') },
+
+        { src: require('./s8/28-1.jpg') },
+        { src: require('./s8/28-2.jpg') },
+        { src: require('./s8/28-3.jpg') },
+        { src: require('./s8/28-4.jpg') },
+        { src: require('./s8/28-5.jpg') },
+        { src: require('./s8/28-6.jpg') },
+        { src: require('./s8/28-7.jpg') },
+
+        { src: require('./s8/35-1.jpg') },
+        { src: require('./s8/35-2.jpg') },
+        { src: require('./s8/35-3.jpg') },
+        { src: require('./s8/35-4.jpg') },
+        
+        { src: require('./s8/38-1.jpg') },
+        { src: require('./s8/38-2.jpg') },
+        { src: require('./s8/38-3.jpg') },
+        { src: require('./s8/38-4.jpg') },
+        { src: require('./s8/38-5.jpg') },
+        { src: require('./s8/38-6.jpg') },
       ],
 
       imgIndex: 0,

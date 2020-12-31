@@ -7,14 +7,16 @@
           里仁之美
         </div>
         <div class="content-items">
+          <li :class="`${slideIndex == (1 - 1) ? 'active' : ''}`" @click="goTo(1)">A棟 門廳 (圖書區)</li>
+          <li :class="`${slideIndex == (2 - 1) ? 'active' : ''}`" @click="goTo(2)">B棟 門廳 (多功能教室)</li>
+          <li :class="`${slideIndex == (3 - 1) ? 'active' : ''}`" @click="goTo(3)">健身房</li>
+          <li :class="`${slideIndex == (4 - 1) ? 'active' : ''}`" @click="goTo(4)">兒童遊戲區</li>
+        <!--
           <li :class="`${slideIndex == (1 - 1) ? 'active' : ''}`" @click="goTo(1)">1F 門廳 (物管區)</li>
-          <li :class="`${slideIndex == (2 - 1) ? 'active' : ''}`" @click="goTo(2)">A棟 門廳 (圖書區)</li>
-          <li :class="`${slideIndex == (3 - 1) ? 'active' : ''}`" @click="goTo(3)">B棟 門廳 (多功能教室)</li>
-          <li :class="`${slideIndex == (4 - 1) ? 'active' : ''}`" @click="goTo(4)">健身房+兒童遊戲區</li>
           <li :class="`${slideIndex == (5 - 1) ? 'active' : ''}`" @click="goTo(5)">社區入口</li>
           <li :class="`${slideIndex == (6 - 1) ? 'active' : ''}`" @click="goTo(6)">1F景觀</li>
           <li :class="`${slideIndex == (7 - 1) ? 'active' : ''}`" @click="goTo(7)">RF景觀</li>
-          <li :class="`${slideIndex == (8 - 1) ? 'active' : ''}`" @click="goTo(8)">第二門廳</li>
+          <li :class="`${slideIndex == (8 - 1) ? 'active' : ''}`" @click="goTo(8)">第二門廳</li> -->
         </div>
         <div class="content-label">
           此為廣告效果示意，為單一建物電腦3D
@@ -24,7 +26,7 @@
       </div>
       <swiper :options="swiperOption" ref="mySwiper7" data-aos="fade" data-aos-delay="1000" @slideChange="slideChanged">
         <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="item">
-          <img :src="slide.src" :class="`item-img`" />
+          <img :src="slide.src" :class="`item-img`" /><span class="item-txt" v-html="slide.txt"></span>
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination" v-if="!isMobile"></div>
         <div class="swiper-button-prev" slot="button-prev" v-if="isMobile">
@@ -133,7 +135,7 @@
   width: size(524);
   height: 80%;
   top: 10%;
-  left: size(120);
+  right: size(120);
   text-align: center;
   padding: size(34) size(50) 0 size(77);
   z-index: 10;
@@ -145,9 +147,9 @@
   height: 100%;clip-path: polygon(
     0 0,
     100% 0%,
-    100% 100%,
-    6.4vw 100%,
-    0% calc(100% - 6.4vw)
+    100% calc(100% - 5.5vw),
+    calc(100% - 5.5vw) 100%,
+    0% 100% 
   );
   opacity: 0.9;z-index: -1;
   background-image: linear-gradient(to bottom, #ff5f00 0%, #fa0032 100%);
@@ -186,6 +188,7 @@
   li {
     border-radius: size(24.8);
     margin-bottom: size(15);
+    padding: 0 1em;
     &:hover, &.active {
       color: #ff5f00;
       background-color: #ffffff;
@@ -221,13 +224,21 @@
 .swiper-container {
   position: absolute;
   width: size(1350);
-  height: 100%;
-  top: 0;
+  height: 90%;
+  top: 5%;
   left: 0;
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+  .item-txt{
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  color: #FFF;
+  font-size: size(15);
+  text-shadow: 0 0 0.5em #000;
   }
 }
 /* 平板尺寸 */
@@ -332,6 +343,9 @@
     img {
       width: 100%;
     }
+  .item-txt{
+  font-size: sizem(12);
+  }
   }
   .logoall {
     width: size-m(295);
@@ -383,14 +397,18 @@ export default {
       },
 
       slideList: [
-        { src: require('./s7/1.jpg') },
-        { src: require('./s7/1.jpg') },
-        { src: require('./s7/1.jpg') },
-        { src: require('./s7/1.jpg') },
-        { src: require('./s7/1.jpg') },
-        { src: require('./s7/1.jpg') },
-        { src: require('./s7/1.jpg') },
-        { src: require('./s7/1.jpg') },
+        { src: require('./s7/4.jpg'),
+          txt: "A棟 門廳 (圖書區)模擬圖，建設公司保有修正之權利"
+          },
+        { src: require('./s7/1.jpg') ,
+          txt: "B棟 門廳 (多功能教室)模擬圖，建設公司保有修正之權利"
+          },
+        { src: require('./s7/2.jpg'),
+          txt: "健身房模擬圖，建設公司保有修正之權利"
+          },
+        { src: require('./s7/3.jpg'),
+          txt: "兒童遊戲區模擬圖，建設公司保有修正之權利"
+          },
       ],
 
       imgIndex: 0,
