@@ -42,6 +42,7 @@
         alt="bg"
         class="absolute light"
       >
+      <div class="txt absolute">市心3房總價688萬起<br><span>工程結構0付款</span></div>
     </div>
     <div class="s2 relative">
       <Map :bgSrc="require('./s1/bg_02.jpg')">
@@ -144,6 +145,21 @@
   height: size(317);
   top: calc(40% - 16.5104166667vw * 0.5);
   left: calc(50% - 17.3958333333vw * 0.5);
+}
+
+.txt {
+  text-align: center;
+  width: 100%;
+  top: calc(40% + 10vw);
+  left: 0;
+  color: #069;
+  font-size:size(34);
+  line-height: 1.5;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  span{font-size: 1.3em;
+  color: #f33;
+  letter-spacing: 0.15em;}
 }
 
 .light {
@@ -304,13 +320,13 @@
   }
   .doll1 {
     width: size-m(189);
-    top: size-m(320);
-    left: size-m(-70);
+    top: size-m(380);
+    left: size-m(-50);
   }
 
   .doll2 {
     width: size-m(264);
-    top: size-m(400);
+    top: size-m(440);
     right: size-m(-50);
   }
 
@@ -331,6 +347,12 @@
     left: size-m(61);*/
   }
 
+.txt {
+  font-size:size-m(20);
+  top: calc(40% - 5vw);
+  color:#fc0;
+  span{color: #f66;}
+}
   .light {
     // width: size-m(750);
     // top: size-m(536);
