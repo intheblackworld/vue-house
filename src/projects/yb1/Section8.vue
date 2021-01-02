@@ -7,15 +7,15 @@
           坪效美學
         </div>
         <div class="content-items">
-          <li :class="`${slideIndex == (1 - 1) ? 'active' : ''}`" @click="goTo(1)">24坪</li>
-          <li :class="`${slideIndex == (2 - 1) ? 'active' : ''}`" @click="goTo(2)">28坪</li>
-          <li :class="`${slideIndex == (3 - 1) ? 'active' : ''}`" @click="goTo(3)">35坪</li>
-          <li :class="`${slideIndex == (4 - 1) ? 'active' : ''}`" @click="goTo(4)">38坪</li>
+          <li :class="`${tabIndex == (1 - 1) ? 'active' : ''}`" @click="changeTab(0)">24坪</li>
+          <li :class="`${tabIndex == (2 - 1) ? 'active' : ''}`" @click="changeTab(1)">28坪</li>
+          <li :class="`${tabIndex == (3 - 1) ? 'active' : ''}`" @click="changeTab(2)">35坪</li>
+          <li :class="`${tabIndex == (4 - 1) ? 'active' : ''}`" @click="changeTab(3)">38坪</li>
         </div>
         <div class="content-label">[央北鑫建築] 裝潢風格情境參考示意圖，實際坪數，格局尺度，依銷售買賣合約書為準，建設公司保有修正之權利</div>
       </div>
       <swiper :options="swiperOption" ref="mySwiper8" data-aos="fade" data-aos-delay="1000" @slideChange="slideChanged">
-        <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="item">
+        <swiper-slide v-for="(slide, index) in slideList[tabIndex]" :index="index" :key="slide.img" class="item">
           <img :src="slide.src" :class="`item-img`" /><span class="item-txt">裝潢風格情境參考示意圖</span>
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination" v-if="!isMobile"></div>
@@ -351,6 +351,7 @@ export default {
   data() {
     return {
       isMobile,
+      tabIndex: 0,
       swiperOption: {
         slidesPerView: isMobile ? 1 : 1,
         centeredSlides: true,
@@ -373,31 +374,31 @@ export default {
       },
 
       slideList: [
-        { src: require('./s8/24-1.jpg') },
+        [{ src: require('./s8/24-1.jpg') },
         { src: require('./s8/24-2.jpg') },
         { src: require('./s8/24-3.jpg') },
         { src: require('./s8/24-4.jpg') },
-        { src: require('./s8/24-5.jpg') },
+        { src: require('./s8/24-5.jpg') },],
 
-        { src: require('./s8/28-1.jpg') },
+        [{ src: require('./s8/28-1.jpg') },
         { src: require('./s8/28-2.jpg') },
         { src: require('./s8/28-3.jpg') },
         { src: require('./s8/28-4.jpg') },
         { src: require('./s8/28-5.jpg') },
         { src: require('./s8/28-6.jpg') },
-        { src: require('./s8/28-7.jpg') },
+        { src: require('./s8/28-7.jpg') },],
 
-        { src: require('./s8/35-1.jpg') },
+        [{ src: require('./s8/35-1.jpg') },
         { src: require('./s8/35-2.jpg') },
         { src: require('./s8/35-3.jpg') },
-        { src: require('./s8/35-4.jpg') },
+        { src: require('./s8/35-4.jpg') },],
         
-        { src: require('./s8/38-1.jpg') },
+        [{ src: require('./s8/38-1.jpg') },
         { src: require('./s8/38-2.jpg') },
         { src: require('./s8/38-3.jpg') },
         { src: require('./s8/38-4.jpg') },
         { src: require('./s8/38-5.jpg') },
-        { src: require('./s8/38-6.jpg') },
+        { src: require('./s8/38-6.jpg') },]
       ],
 
       imgIndex: 0,
@@ -408,6 +409,10 @@ export default {
   computed: {},
 
   methods: {
+    changeTab(index) {
+      this.tabIndex = index
+      this.goTo(1)
+    },
     goTo(index) {
       const swiper = this.$refs.mySwiper8.swiper
       swiper.slideTo(index)
