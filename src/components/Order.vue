@@ -1,6 +1,6 @@
 <template>
   <div class="order-bg">
-    <div class="order-title" v-scroll-to="{ element: `#contact` }">{{order.title}}</div>
+    <!-- <div class="order-title" v-scroll-to="{ element: `#contact` }">{{order.title}}</div> -->
     <h3 class="order-subtitle">{{order.subTitle}}</h3>
     <div class="order">
       <div class="form">

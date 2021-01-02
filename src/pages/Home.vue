@@ -3,8 +3,8 @@
     <div ref="gtmNoScript" />
     <Loading :loading="load" />
     <!-- <SideNavigation v-if="isSide" /> -->
-    <Navigation />
-    <div id="section1">
+    <!-- <Navigation /> -->
+    <!-- <div id="section1">
       <Section1 />
     </div>
     <div id="section2">
@@ -21,7 +21,7 @@
     </div>
     <div id="section6">
       <Section6 />
-    </div>
+    </div> -->
     <div id="section7">
       <Section7 />
     </div>
@@ -37,35 +37,35 @@
 
 <script>
 // @ is an alias to /src
-import Navigation from '@/layouts/Navigation.vue'
+// import Navigation from '@/layouts/Navigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import gtm from '@/mixins/gtm.js'
 
-import Section1 from '@/projects/hoh1/Section1.vue'
-import Section2 from '@/projects/hoh1/Section2.vue'
-import Section3 from '@/projects/hoh1/Section3.vue'
-import Section4 from '@/projects/hoh1/Section4.vue'
-import Section5 from '@/projects/hoh1/Section5.vue'
-import Section6 from '@/projects/hoh1/Section6.vue'
-import Section7 from '@/projects/hoh1/Section7.vue'
+// import Section1 from '@/projects/hg/Section1.vue'
+// import Section2 from '@/projects/hg/Section2.vue'
+// import Section3 from '@/projects/hg/Section3.vue'
+// import Section4 from '@/projects/hg/Section4.vue'
+// import Section5 from '@/projects/hg/Section5.vue'
+// import Section6 from '@/projects/hg/Section6.vue'
+import Section7 from '@/projects/hg/Section7.vue'
 // import SimpleOrder from '@/components/SimpleOrder.vue'
 
 export default {
   name: 'home',
   mixins: [gtm],
   components: {
-    Navigation,
+    // Navigation,
     Loading,
     ContactSection,
     MobileNav,
-    Section1,
-    Section2,
-    Section3,
-    Section4,
-    Section5,
-    Section6,
+    // Section1,
+    // Section2,
+    // Section3,
+    // Section4,
+    // Section5,
+    // Section6,
     Section7,
   },
 

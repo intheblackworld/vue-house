@@ -1,56 +1,51 @@
 <template>
-<div>
-  <div class="contact-info">
-    <img class="logo" :src="!isMobile ? require('@/assets/img/contact-logo.png') : require('@/assets/img/contact-logo_m.png')" alt="" />
-    <div class="info">
-      <div class="btn flex-c" @click="showCallDialog">
-        <span class="flex-c">
-          <font-awesome-icon icon="phone" />
-          {{info.phone}}
-        </span>
-      </div>
-      <div class="btn flex-c" @click="showMessengerDialog">
-        <span class="flex-c">
-          <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB 諮詢
-        </span>
-      </div>
-      <!-- <a class="btn flex-c" :href="info.fbMessage" target="_blank" v-else>
+  <div>
+    <div class="contact-info">
+      <img class="logo" :src="require('@/assets/img/contact-logo.png')" alt="" />
+      <div class="info">
+        <div class="btn flex-c" @click="showCallDialog">
+          <span class="flex-c">
+            <font-awesome-icon icon="phone" />
+            {{info.phone}}
+          </span>
+        </div>
+        <div class="btn flex-c" @click="showMessengerDialog">
+          <span class="flex-c">
+            <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB 諮詢
+          </span>
+        </div>
+        <!-- <a class="btn flex-c" :href="info.fbMessage" target="_blank" v-else>
         <span class="flex-c">
           <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB 諮詢
         </span>
       </a> -->
-      <a class="btn flex-c" :href="info.fbLink" target="_blank">
-        <span class="flex-c">
-          <font-awesome-icon :icon="['fab', 'facebook-f']" />前往粉絲專頁
-        </span>
-      </a>
-      <div class="address flex-c" v-html="info.address"></div>
-      <div class="google-btn flex-c" @click="isShowMapDialog = true">
-        <span class="flex-c">
-          <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
-        </span>
-      </div>
-      <!-- <a class="google-btn flex-c" :href="info.googleLink" target="_blank" v-else>
+        <a class="btn flex-c" :href="info.fbLink" target="_blank">
+          <span class="flex-c">
+            <font-awesome-icon :icon="['fab', 'facebook-f']" />前往粉絲專頁
+          </span>
+        </a>
+        <div class="address flex-c" v-html="info.address"></div>
+        <div class="google-btn flex-c" @click="isShowMapDialog = true">
+          <span class="flex-c">
+            <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
+          </span>
+        </div>
+        <!-- <a class="google-btn flex-c" :href="info.googleLink" target="_blank" v-else>
         <span class="flex-c">
           <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
         </span>
       </a> -->
+      </div>
     </div>
-  </div>
-  <el-dialog title :visible.sync="isShowCallDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
-    <CallDialog :phone="info.phone" />
-  </el-dialog>
-  <el-dialog
-    title
-    :visible.sync="isShowMessengerDialog"
-    :width="isMobile ? '90%' : '500px'"
-    :modal-append-to-body="false"
-  >
-    <MessengerDialog :messenger="info.fbMessage" />
-  </el-dialog>
-  <el-dialog title :visible.sync="isShowMapDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
-    <MapDialog :link="info.googleLink" :address="info.address" />
-  </el-dialog>
+    <el-dialog title :visible.sync="isShowCallDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
+      <CallDialog :phone="info.phone" />
+    </el-dialog>
+    <el-dialog title :visible.sync="isShowMessengerDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
+      <MessengerDialog :messenger="info.fbMessage" />
+    </el-dialog>
+    <el-dialog title :visible.sync="isShowMapDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
+      <MapDialog :link="info.googleLink" :address="info.address" />
+    </el-dialog>
   </div>
 </template>
 
@@ -110,13 +105,13 @@ export default {
   flex-direction: column;
   align-content: center;
   // justify-content: space-between;
-  transform: translateY(14%);
+  // transform: translateY(14%);
   position: relative;
   z-index: 4;
   width: 1200px;
   height: 515px;
   padding: 30px;
-  border-radius: 20px;
+  // border-radius: 20px;
 
   margin: 0 auto;
   // padding: 60px 0 50px;
@@ -144,9 +139,9 @@ export default {
   text-decoration: none;
   color: $contact_btn_color;
   background: $contact_btn_bg;
-  border:$contact_btn_border;
+  border: $contact_btn_border;
   transition: all 0.5s;
-  border-radius: 10px;
+  // border-radius: 10px;
 
   svg {
     color: $contact_btn_icon;
@@ -169,19 +164,19 @@ export default {
 .address {
   width: 600px;
   height: 60px;
-  background: #EEE;
+  background: #eee;
   //box-shadow: inset 0 0 0 1px #999;
   color: #444;
-  border-radius: 10px 0 0  10px;
+  // border-radius: 10px 0 0  10px;
 
   &::v-deep span {
     color: #c00;
-    font-size:1.1em;
+    font-size: 1.1em;
     font-weight: bold;
   }
 }
 .google-btn {
-  border-radius:0 10px 10px 0;
+  // border-radius:0 10px 10px 0;
   width: 280px;
   height: 60px;
   font-size: 16px;
@@ -236,7 +231,7 @@ export default {
     transform: none;
     position: static;
     margin-top: 60px;
-    border-radius:0;
+    border-radius: 0;
 
     .logo {
       width: $contact_logo_mobile_width;
@@ -265,18 +260,18 @@ export default {
     //@debugborder: 1px solid #666;
     border-bottom: none;
     padding: 10px;
-    border-radius:10px 10px 0 0;
+    // border-radius: 10px 10px 0 0;
   }
-.btn {
-  width: 300px;
-}
-.btn svg {
-    position: absolute;
-    margin: 0 0 0 -70px;
+  .btn {
+    width: 300px;
   }
-.google-btn {
-  border-radius: 0 0 10px 10px;
-  width: 300px;
-}
+  .btn svg {
+    // position: absolute;
+    // margin: 0 0 0 -70px;
+  }
+  .google-btn {
+    // border-radius: 0 0 10px 10px;
+    width: 300px;
+  }
 }
 </style>
