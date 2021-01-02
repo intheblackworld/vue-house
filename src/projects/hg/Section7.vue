@@ -3,12 +3,14 @@
     <div v-if="!isMobile">
       <img src="./s1/logo.png" alt="" class="logo">
       <img src="./s1/t.png" alt="" class="t">
-      <div class="order-btn flex-c" v-scroll-to="{element: '#contact'}">
-        <div>
-          <div>立即預約</div>
-          <img src="./s1/botton.png" alt="" class="botton">
+      <parallax breakpoint="(min-width: 68px)" :speed-factor="0.3" direction="up">
+        <div class="order-btn flex-c" v-scroll-to="{element: '#contact'}">
+          <div>
+            <div>立即預約</div>
+            <img src="./s1/botton.png" alt="" class="botton">
+          </div>
         </div>
-      </div>
+      </parallax>
       <!-- <parallax :class="`animate-slide`" breakpoint="(min-width: 68px)" :speed-factor="0.5" direction="down"> -->
       <div class="animate-slide">
         <img src="./s1/1.png" alt="" class="left1" data-parallax="0">
@@ -48,7 +50,7 @@
 .Masthead,
 .Masthead__image {
   height: auto;
-  min-height: 123.875rem;
+  min-height: 73.875rem;
   z-index: 3;
 }
 .Masthead__image > img {
