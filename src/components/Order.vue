@@ -19,14 +19,14 @@
               placeholder
             ></el-input>
           </div>
-          <div class="row">
+          <!-- <div class="row">
             <label>E-mail</label>
             <el-input
               v-model="form.email"
               placeholder
             ></el-input>
-          </div>
-          <div class="row">
+          </div> -->
+          <!-- <div class="row">
             <label>居住城市</label>
             <el-select
               v-model="form.city"
@@ -39,8 +39,8 @@
                 :value="city.value"
               ></el-option>
             </el-select>
-          </div>
-          <div class="row">
+          </div> -->
+          <!-- <div class="row">
             <label>居住地區</label>
             <el-select
               v-model="form.area"
@@ -53,7 +53,7 @@
                 :value="area.value"
               ></el-option>
             </el-select>
-          </div>
+          </div> -->
         </div>
         <div class="group">
           <div class="row">
@@ -83,7 +83,7 @@
         :loading="isSubmit"
       >立即預約</el-button>
     </div>
-    <!-- <ContactInfo /> -->
+    <ContactInfo />
     <!-- <GoogleMap /> -->
     <PolicyDialog :policyVisible="policyVisible" />
   </div>
@@ -152,10 +152,11 @@ export default {
       this.isSubmit = true
       if (
         !this.form.name ||
-        !this.form.phone ||
-        !this.form.email ||
-        !this.form.city ||
-        !this.form.area
+        !this.form.phone 
+        // ||
+        // !this.form.email ||
+        // !this.form.city ||
+        // !this.form.area
       ) {
         this.alertValidate()
         this.isSubmit = false
@@ -254,7 +255,7 @@ export default {
   }
 
   .group {
-    height: 300px;
+    height: 110px;
 
     &:nth-child(1) {
       border-right: 1px solid rgba(0, 0, 0, 0.2);

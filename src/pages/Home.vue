@@ -44,7 +44,7 @@
       <Section12 />
     </div>
     <ContactSection />
-    <!-- <MobileNav /> -->
+    <MobileNav />
   </div>
 </template>
 
