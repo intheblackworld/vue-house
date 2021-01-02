@@ -28,7 +28,7 @@
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);
-  // overflow: hidden;
+  overflow: hidden;
   position: relative;
   background: #552e70 fixed;
   background-size: auto;

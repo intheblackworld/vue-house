@@ -49,18 +49,18 @@
                 }"
               ></el-time-select>
             </div> -->
-            <!-- <div class="row">
+            <div class="row">
               <label>想看房型</label>
               <el-select v-model="form.house" placeholder>
                 <el-option
-                  v-for="city in ['甜蜜2房', '幸福3房', '都想看看']"
+                  v-for="city in ['兩房', '三房']"
                   :key="city"
                   :label="city"
                   :value="city"
                   no-data-text=""
                 ></el-option>
               </el-select>
-            </div> -->
+            </div>
             <!-- <div class="row">
               <label>E-mail</label>
               <el-input v-model="form.email" placeholder></el-input>
@@ -172,7 +172,7 @@ export default {
         message: h(
           'i',
           { style: 'color: #82191d' },
-          '「姓名、手機」是必填欄位',
+          '「姓名、手機、想看房型」是必填欄位',
         ),
       })
     },
@@ -184,7 +184,8 @@ export default {
       this.isSubmit = true
       if (
         !this.form.name ||
-        !this.form.phone
+        !this.form.phone || 
+        !this.form.house
         // ||
         // !this.form.time_start ||
         // !this.form.time_end
@@ -369,7 +370,7 @@ export default {
   }
 
   .group {
-    height: 250px;
+    height: 315px;
     margin-bottom: 40px;
 
     &:nth-child(1) {

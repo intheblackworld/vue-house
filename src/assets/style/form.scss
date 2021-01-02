@@ -84,14 +84,14 @@
   background-position: center !important;
   background-color: $order_submit_bg;
   background-image: $order_submit_bg;
-  border: 1px solid #eb5500 !important;
+  border: 3px solid #dadf00 !important;
  // border-radius: 72px / 72px !important;
   margin: 0 auto !important;
   margin-top: 20px !important;
   transition: all 0.3s !important;
   color: $order_submit_color;
   // z-index: 10;
-  border: none !important;
+  // border: none !important;
   font-family: $family3;
 
   &.is-disabled {
