@@ -3,83 +3,83 @@
     <div class="s1 relative">
       <img
         src="./s1/bg_01.jpg"
-        alt="bg"
+        :alt="`${info.caseName}_bg_01`"
         class="bg-img"
       >
       <img
         v-lazy="require('./s1/left.png')"
-        alt=""
+        :alt="`${info.caseName}_left`"
         class="doll1 absolute"
       >
       <img
         v-lazy="require('./s1/right.png')"
-        alt=""
+        :alt="`${info.caseName}_right`"
         class="doll2 absolute"
       >
       <img
         v-lazy="require('./s1/cloud2.png')"
-        alt=""
+        :alt="`${info.caseName}_cloud2`"
         class="cloud1-2 absolute"
       >
       <img
         v-lazy="require('./s1/logo.png')"
         data-aos="fade"
         data-aos-delay="400"
-        alt=""
+        :alt="`${info.caseName}_logo`"
         class="logo absolute"
       >
       <img
         v-lazy="require('./s1/logo.gif')"
         data-aos="fade"
         data-aos-delay="400"
-        alt=""
+        :alt="`${info.caseName}_logo`"
         class="logo absolute"
       >
       <img
         v-lazy="require('./s1/light.png')"
         data-aos="fade"
         data-aos-delay="800"
-        alt="bg"
+        :alt="`${info.caseName}_light`"
         class="absolute light"
       >
-      <div class="txt absolute">市心3房總價688萬起<br><span>工程結構0付款</span></div>
+      <div class="txt absolute">市心3房總價<span class="l">688</span>萬起<br><span class="s">工程結構0付款</span></div>
     </div>
     <div class="s2 relative">
       <Map :bgSrc="require('./s1/bg_02.jpg')">
         <div slot="main">
           <img
             v-lazy="require('./s1/cloud1.png')"
-            alt=""
+            :alt="`${info.caseName}_cloud1`"
             class="cloud2-1 absolute"
           >
           <img
             v-lazy="require('./s1/cloud2.png')"
-            alt=""
+            :alt="`${info.caseName}_cloud2`"
             class="cloud2-2 absolute"
           >
           <img
             src="./s1/bg.png"
-            alt="map"
+            :alt="`${info.caseName}_bg`"
             class="location absolute"
           >
           <img
             src="./s1/line.png"
-            alt=""
+            :alt="`${info.caseName}_line`"
             class="line1 absolute"
           >
           <img
             src="./s1/line.png"
-            alt=""
+            :alt="`${info.caseName}_line`"
             class="line2 absolute"
           >
           <img
             src="./s1/ball1.png"
-            alt="map"
+            :alt="`${info.caseName}_ball1`"
             class="ball1 absolute"
           >
           <img
             src="./s1/ball2.png"
-            alt="map"
+            :alt="`${info.caseName}_ball2`"
             class="ball2 absolute"
           >
         </div>
@@ -152,14 +152,17 @@
   width: 100%;
   top: calc(40% + 10vw);
   left: 0;
-  color: #069;
-  font-size:size(34);
+  color: #036;
+  font-size:size(33);
   line-height: 1.5;
   font-weight: 700;
-  letter-spacing: 0.05em;
-  span{font-size: 1.3em;
-  color: #f33;
-  letter-spacing: 0.15em;}
+  letter-spacing: 0.07em;
+  .l{font-size: 1.4em;
+  color: #f00;
+  letter-spacing: -0.02em;}
+  .s{font-size: 0.8em;width:13em;
+  display:inline-block;border: 1px solid currentColor;
+  letter-spacing: 0.05em;}
 }
 
 .light {
@@ -341,7 +344,7 @@
   .logo {
     height: size-m(200);
     top: calc(25% - 60.8vw * 0.5);
-    left: calc(50% - 63vw * 0.5);
+    left: calc(50% - 55vw * 0.5);
     /* width: size-m(228);
     top: size-m(145);
     left: size-m(61);*/
@@ -351,7 +354,7 @@
   font-size:size-m(20);
   top: calc(40% - 5vw);
   color:#fc0;
-  span{color: #f66;}
+  .l{color: #f33;}
 }
   .light {
     // width: size-m(750);
@@ -435,6 +438,7 @@
 </style>
 <script>
 // @ is an alias to /src
+import info from '@/info'
 import { isMobile } from '@/utils'
 import Map from '@/components/Map.vue'
 
@@ -446,6 +450,7 @@ export default {
   },
   data() {
     return {
+      info,
       isMobile,
     }
   },

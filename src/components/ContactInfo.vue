@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="contact-info">
-    <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" />
+    <img class="logo" src="@/assets/img/contact-logo.png" :alt="`${info.caseName}_logo`" />
     <div class="info">
       <div class="btn flex-c" @click="showCallDialog">
         <span class="flex-c">
