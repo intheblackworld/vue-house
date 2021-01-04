@@ -79,7 +79,7 @@
       //以下是呼叫上面的函式
       var mb = myBrowser();
       
-      document.write(navigator.userAgent);
+      // document.querySelector('.useragent').write(navigator.userAgent).style.color;
       // if (mb.indexOf("IE")>-1) {
       //    if (mb.replace("IE","")<=8)
       //    {
@@ -93,11 +93,11 @@
       // }
       
       
-      
+      console.log(mb)
       if (mb.indexOf("IE")>-1) {
            if (mb.replace("IE","")<=8) {
               window.alert('本網站建議以Internet Explorer 10以上、Firefox或Google Chrome等瀏覽器瀏覽')
-           }  
+           }
       }
       // if ("FF" == mb) {
       //     alert("我是 Firefox");
