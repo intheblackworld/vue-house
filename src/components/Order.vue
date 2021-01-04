@@ -243,7 +243,7 @@ export default {
   background-image: $order_bg_image;
   background-size: cover;
   position: relative;
-  padding-top: 80px;
+  padding-top: calc(100vw * 300 / 1920);
   overflow: hidden;
 
   .order-title {
@@ -306,7 +306,7 @@ export default {
     height: 236px;
 
     &:nth-child(1) {
-      border-right: 1px solid rgba(0, 0, 0, 0.2);
+      border-right: 1px solid rgba(255, 255, 255, 0.2);
       .row {
         justify-content: flex-start;
       }
@@ -332,11 +332,11 @@ export default {
     label {
       width: 92px;
       font-size: 16px;
-      opacity: 0.8;
+      opacity: 1;
       color: $order_input_label_color;
 
       span {
-        color: #ff0000;
+        color: #ff0;
       }
     }
   }
@@ -349,7 +349,8 @@ export default {
 
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .order-title {
+ 
+ .order-title {
     font-size: 32px;
   }
 
@@ -370,7 +371,7 @@ export default {
     // background-image: $order_bg_image_m;
     background-color: transparent;
     background-size: auto 250vw;
-    padding-top: 40px;
+  padding-top: calc(100vw * 200 / 375);
     .order-title {
       font-size: 18px;
       margin-top: 10px;
@@ -380,7 +381,6 @@ export default {
       position: relative;
       z-index: 2;
     }
-
     .order-subtitle {
       display: none;
     }

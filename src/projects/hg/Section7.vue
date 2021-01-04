@@ -1,48 +1,63 @@
 <template>
   <div class="bg">
     <div v-if="!isMobile">
-      <img src="./s1/logo.png" alt="" class="logo">
+      <div class="s1">
+      <img src="./s1/logo.png" 
+        :alt="`${info.caseName}_logo`" class="logo">
       <img src="./s1/t.png" alt="" class="t">
-      <parallax breakpoint="(min-width: 68px)" :speed-factor="0.3" direction="up">
+      </div>
+      <parallax breakpoint="(min-width: 68px)" :speed-factor="-0.7" direction="up">
         <div class="order-btn flex-c" v-scroll-to="{element: '#contact'}">
           <div>
             <div>立即預約</div>
-            <img src="./s1/botton.png" alt="" class="botton">
+            <parallax class="botton" breakpoint="(min-width: 68px)" :speed-factor="-0.255" direction="up">
+            <img src="./s1/botton.png" 
+        :alt="`${info.caseName}logo`">
+        </parallax>
           </div>
         </div>
       </parallax>
       <!-- <parallax :class="`animate-slide`" breakpoint="(min-width: 68px)" :speed-factor="0.5" direction="down"> -->
       <div class="animate-slide">
-        <img src="./s1/1.png" alt="" class="left1" data-parallax="0">
-        <!-- <img src="./s1/2.png" alt="" class="left2">
+       <!--  <img src="./s1/1.png" 
+        :alt="`${info.caseName}logo`" class="left1" data-parallax="0">
+        <img src="./s1/2.png" alt="" class="left2">
         <img src="./s1/4.png" alt="" class="left3"> -->
-        <img src="./s1/pc1.png" alt="" class="pc1" data-parallax="1">
-        <img src="./s1/pc2.png" alt="" class="pc2" data-parallax="2">
-        <img src="./s1/pc3.png" alt="" class="pc3" data-parallax="3">
-        <img src="./s1/pc4.png" alt="" class="pc4" data-parallax="4">
+        <img src="./s1/pc4.png" 
+        :alt="`${info.caseName}_logo`" class="pc4" data-parallax="4">
+        <img src="./s1/pc3.png" 
+        :alt="`${info.caseName}_ogo`" class="pc3" data-parallax="3">
+        <img src="./s1/pc2.png" 
+        :alt="`${info.caseName}_logo`" class="pc2" data-parallax="2">
+        <img src="./s1/pc1.png" 
+        :alt="`${info.caseName}_logo`" class="pc1" data-parallax="1">
       </div>
       <!-- </parallax> -->
     </div>
 
     <div v-if="isMobile" class="relative">
-      <div class="order-btn flex-c" v-scroll-to="{element: '#contact'}">
-        <div>
-          <div>立即預約</div>
-          <img src="./s1/botton.png" alt="" class="botton">
-        </div>
-      </div>
       <!-- <parallax :class="`animate-slide`" breakpoint="(min-width: 68px)" :speed-factor="0.5" direction="down"> -->
       <div class="animate-slide">
-        <img src="./s1/1.png" alt="" class="left1" data-parallax="0">
         <!-- <img src="./s1/2.png" alt="" class="left2">
         <img src="./s1/4.png" alt="" class="left3"> -->
-        <img src="./s1/mo1.png" alt="" class="mo1" data-parallax="1">
-        <img src="./s1/mo2.png" alt="" class="mo2" data-parallax="2">
         <img src="./s1/mo3.png" alt="" class="mo3" data-parallax="3">
+        <img src="./s1/mo2.png" alt="" class="mo2" data-parallax="2">
+        <img src="./s1/mo1.png" alt="" class="mo1" data-parallax="1">
       </div>
       <!-- </parallax> -->
       <img src="./s1/logo.png" alt="" class="logo">
       <img src="./s1/t.png" alt="" class="t">
+      <parallax breakpoint="(min-width: 68px)" :speed-factor="-0.7" direction="up">
+        <div class="order-btn flex-c" v-scroll-to="{element: '#contact'}">
+          <div>
+            <div>立即預約</div>
+            <parallax class="botton" breakpoint="(min-width: 68px)" :speed-factor="-0.255" direction="up">
+            <img src="./s1/botton.png" 
+        :alt="`${info.caseName}logo`">
+        </parallax>
+          </div>
+        </div>
+      </parallax>
     </div>
   </div>
 </template>
@@ -71,7 +86,7 @@
   .Masthead,
   .Masthead__image {
     height: auto !important;
-    min-height: 12.875rem;
+    min-height:152vw;
   }
 }
 </style>
@@ -79,16 +94,22 @@
 @import '~@/assets/style/function.scss';
 .bg {
   background-size: cover;
-  // position: relative;
+  position: relative;
   // z-index: 5;
-  height: size(1132);
-  min-height: size(1132);
+  height:size(900);
   background-color: #2d73ab;
+}
+.s1 {
+  height: 100vh;
+  min-height: size(900);
+  max-height: size(1080);
+  width: 100%;
+  position: absolute;
 }
 
 .bg-img {
-  width: 100vw;
-  min-height: 100vh;
+  width: 100%;
+  min-height: 100%;
   object-fit: cover;
   position: absolute;
   left: 0;
@@ -96,14 +117,16 @@
 
 .logo {
   @include img_c_pc(583, 353);
+  top:calc(45% - 10vw);
 }
 
 .t {
   @include img_c_pc(574, 577);
+  top:calc(45% + 1vw);
 }
 
 .order-btn {
-  @include img_c_pc(310, 822);
+  @include img_c_pc(310, 610);
   z-index: 10;
   height: size(310);
   background-color: #ff6855;
@@ -113,7 +136,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(5.96);
+  letter-spacing: 0.1em;
   text-align: center;
   color: #ffffff;
   cursor: pointer;
@@ -124,6 +147,9 @@
 }
 
 .botton {
+  position: absolute;
+  top:calc(50% + 0.3em);
+  left: calc(50% - 0.3em);
   width: size(32);
   margin: 0 auto 0;
   cursor: pointer;
@@ -196,17 +222,23 @@
     width: 100vw;
     background-size: cover;
     margin: 0;
-    height: sizem(172 + 576);
+    height: sizem(172 + 376);
     position: relative;
     z-index: 2;
-    overflow-x: hidden;
+   // overflow: hidden;
+
   }
+.s1 {
+  height:  sizem(172 + 176);
+  min-height: sizem(172 + 176);
+  max-height:  sizem(172 + 176);
+}
 
   .relative {
     min-height: size-m(750);
     padding-top: 0;
     // padding-bottom: size-m(62);
-    overflow: hidden;
+    //overflow: hidden;
   }
 
   .bg-img {
@@ -223,7 +255,7 @@
   }
 
   .order-btn {
-    @include img_c_m(172, 546);
+    @include img_c_m(172, 380);
     z-index: 10;
     height: sizem(172);
     background-color: #ff6855;
@@ -300,6 +332,7 @@
 
 <script>
 // @ is an alias to /src
+import info from '@/info'
 import { isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 // import Parallax from '@/components/Parallax.vue'
@@ -319,6 +352,7 @@ export default {
 
   data() {
     return {
+      info,
       isMobile,
       swiperOption: {
         slidesPerView: isMobile ? 1.4 : 1,

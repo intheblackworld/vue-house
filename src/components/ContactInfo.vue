@@ -230,7 +230,7 @@ export default {
     padding: 40px;
     transform: none;
     position: static;
-    margin-top: 60px;
+    margin-top: 0;
     border-radius: 0;
 
     .logo {
@@ -250,7 +250,7 @@ export default {
   }
 
   .logo {
-    margin-bottom: 20px;
+    margin: 50px auto;
   }
 
   .address {
