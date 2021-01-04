@@ -154,13 +154,13 @@
   left: 0;
   color: #036;
   font-size:size(33);
-  line-height: 1.8;
+  line-height: 1.6;
   font-weight: 700;
   letter-spacing: 0.07em;
   .l{font-size: 2.1em;  display:inline-block;top:0.05em;
   color: #f00;
   letter-spacing: -0.05em;position: relative;
-  span{font-size:0.32em;font-weight: 500;letter-spacing:0em;display:block;position: absolute;bottom: -0.25em;left:0;}
+  span{font-size:0.2em;width:100% ;font-weight:300;letter-spacing:0.02em;display:block;position: absolute; bottom:0em;left:0;text-align: right;}
   }
   .s{font-size: 0.8em;width:14.5em;
   display:inline-block;border: 1px solid currentColor;
