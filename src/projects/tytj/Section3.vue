@@ -1,6 +1,8 @@
 <template>
   <div class="relative">
     <div v-if="!isMobile">
+        <h3
+          class="absolute title">精華地段</h3>
       <img
         src="./s3/bg.jpg"
         alt="泰御天鑄"
@@ -88,6 +90,19 @@
   left: size(630);
   z-index: 3;
   animation: cloud 30s ease-in-out 0s infinite;
+}
+.title {
+  font-size: size(65);
+  text-shadow: 0 3px 12px rgba(35, 24, 21, 0.4);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 9.1px;
+  text-align: left;
+  color: #ffffff;
+  top: size(74);
+  right: size(94);z-index: 2;
 }
 
 @keyframes cloud {

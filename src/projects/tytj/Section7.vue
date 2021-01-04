@@ -1,5 +1,10 @@
 <template>
   <div class="relative section7">
+    <img
+      src="./s1/wlogo.png"
+      alt=""
+      class="logo absolute"
+    >
     <swiper
       :options="swiperOption"
       ref="mySwiper7"
@@ -17,6 +22,14 @@
           alt=""
           class="item-img"
         >
+        <h3
+          class="absolute item-title"
+          v-html="slide.title"
+        ></h3>
+        <h3
+          class="absolute item-subtitle"
+          v-html="slide.subtitle"
+        ></h3>
       </swiper-slide>
       <div
         v-if="isMobile"
@@ -44,9 +57,6 @@
         slot="pagination"
       ></div>
     </swiper>
-    <div class="desc absolute">
-      特聘知名建築師團隊以現代造型為設計發展架構，精心規劃整體垂直分段設計並結合都市景觀，展現新穎兼具人文特質之藝 建築，外觀採用丁掛磚加石材搭配造型，線條創造出整體建築細膩感，提升大樓外觀價值。
-    </div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -131,21 +141,6 @@
   height: 100%;
   object-fit: cover;
 }
-.desc {
-  text-shadow: 2px 3px 5px rgba(35, 24, 21, 0.4);
-  top: size(82);
-  right: size(79);
-  width: size(660);
-  font-size: size(18);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2;
-  letter-spacing: 1.8px;
-  text-align: left;
-  color: #ffffff;
-  z-index: 3;
-}
 
 @media only screen and (max-width: 1440px) {
   .bg-img {
@@ -161,6 +156,65 @@
 
 @media screen and (max-width: 767px) {
   .relative {
+    height: size-m(375 + 204);
+  }
+
+  .logo,
+  .title,
+  .subtitle {
+    display: block;
+  }
+
+  .logo {
+    width: size-m(212);
+    top: size-m(-(212 / 2));
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    opacity: 0.5;
+  }
+
+
+
+  .swiper-container {
+    width: 100vw;
+    height: size-m(590);
+    position: absolute;
+    top: size-m(104);
+    left: 0;
+  }
+
+  .swiper-slide {background-image: linear-gradient(to right, #edbd5b, #edbc5b 29%, #d6a045 66%, #bf842e);}
+  .item-img {
+    margin-top: size-m(100);
+    width: 100vw;
+    height: size-m(375);
+  }
+
+.item-title {
+    font-size: size-m(27);
+  text-shadow: 0 3px 12px rgba(35, 24, 21, 0.4);
+  font-weight: bold;
+    line-height: 2.44;
+  letter-spacing:0.14em;
+    text-align: center;
+  color: #ffffff;
+    top: size-m(0);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.item-subtitle {
+    font-size: size-m(15);
+    letter-spacing: 0.16em;
+    text-align: center;
+  color: #ffffff;
+    top: size-m(48);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+  /* .relative {
     background-image: url('./mo/6/bg.jpg');
     background-size: cover;
     background-attachment: fixed;
@@ -190,7 +244,9 @@
     color: #000000;
     z-index: 3;
   }
+  */
 }
+
 </style>
 <script>
 // @ is an alias to /src
@@ -236,15 +292,23 @@ export default {
       slideList: [
         {
           img: require('./s7/p1_1.jpg'),
+          title: '精華公設',
+          subtitle: '迎賓大廳',
         },
         {
           img: require('./s7/p2_1.jpg'),
+          title: '精華公設',
+          subtitle: '交誼廳',
         },
         {
           img: require('./s7/p3_1.jpg'),
+          title: '精華公設',
+          subtitle: '宴會廳',
         },
         {
           img: require('./s7/p4_1.jpg'),
+          title: '精華公設',
+          subtitle: '星空Bar',
         },
       ],
     }

@@ -5,8 +5,8 @@
       alt=""
       class="logo absolute"
     >
-    <h3 class="title absolute">繁華生活圈</h3>
-    <div class="subtitle absolute">公益路商圈</div>
+ <!-- h3 class="title absolute">繁華生活圈</h3>
+    <div class="subtitle absolute">公益路商圈</div  --->
     <swiper
       class="absolute"
       :options="swiperOption4"
@@ -164,7 +164,7 @@
 
 @media screen and (max-width: 767px) {
   .relative {
-    height: size-m(375 + 229);
+    height: size-m(375 + 204);
   }
 
   .logo,
@@ -182,55 +182,47 @@
     opacity: 0.5;
   }
 
-  .title {
-    text-shadow: 0 3px 12px rgba(35, 24, 21, 0.4);
-    font-size: size-m(27);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.44;
-    letter-spacing: 3.78px;
-    text-align: center;
-    color: #ffffff;
-    top: size-m(125);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-  }
 
-  .subtitle {
-    text-shadow: 2px 3px 12px rgba(35, 24, 21, 0.4);
-    font-size: size-m(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.67;
-    letter-spacing: 2.4px;
-    text-align: center;
-    color: #ffffff;
-    top: size-m(173);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-  }
 
   .swiper-container {
     width: 100vw;
-    height: size-m(375);
+    height: size-m(590);
     position: absolute;
-    top: size-m(229);
+    top: size-m(104);
     left: 0;
   }
 
+  .item {background-image: linear-gradient(to right, #edbd5b, #edbc5b 29%, #d6a045 66%, #bf842e);}
   .item-img {
+    margin-top: size-m(100);
     width: 100vw;
     height: size-m(375);
   }
 
-  .item-title,
-  .item-subtitle {
-    display: none;
-  }
+.item-title {
+    font-size: size-m(27);
+  text-shadow: 0 3px 12px rgba(35, 24, 21, 0.4);
+  font-weight: bold;
+    line-height: 2.44;
+  letter-spacing:0.14em;
+    text-align: center;
+  color: #ffffff;
+    top: size-m(0);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.item-subtitle {
+    font-size: size-m(15);
+    letter-spacing: 0.16em;
+    text-align: center;
+  color: #ffffff;
+    top: size-m(48);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
 }
 </style>
 <script>

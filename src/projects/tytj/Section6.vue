@@ -50,15 +50,7 @@
       alt=""
       class="g-banner absolute"
     >
-<div class="w-banner_bg absolute"></div>
- <svg class="clipping-mask" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 800 1080" style="enable-background:new 0 0 800 1080;" xml:space="preserve">
- <defs>
- <clipPath id="clipping">
- <polygon class="st0" points="791.3,759.6 791.3,320.4 513.5,0 0,0 0,1080 513.5,1080 	"/>
- </clipPath>
- </defs>
- </svg>
+<div class="w-banner_bg absolute" v-if="!isMobile"></div>
 
     <img
       src="./s6/logo.png"
@@ -77,17 +69,13 @@
   </div>
 </template>
 <style lang="scss">
-.clipping-mask {
- width: 100%;
- height: 100%;
-}
 .w-banner{
 }
 </style>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .section6 {
-  height: size(1080);
+  height:100vh;
   // overflow: hidden;
   position: relative;
   //height: size(1080);
@@ -111,12 +99,13 @@
 
 .swiper-container {
   width: 100vw;
-  height: size(1080);
+  height:100vh;
 }
 
 .item-img {
   width: 100vw;
-  height: size(1080);
+  height:100vh;
+  object-fit: cover;
 }
 .bg-img {
   width: 100vw;
@@ -152,16 +141,16 @@
 .w-banner_bg {
  top: 0;
  left: 0;
-  width: size(800);
-  height: size(1080);
+  width: size(780);
+  height: 100%;
  background: url("./s9/bg.jpg") fixed center;
  background-size: cover;
  z-index: 1;
- clip-path: url(#clipping);
+ clip-path: polygon(0% 0%, 73% 0%,100% 25%,100% 73%,73% 100%,0% 100%);
 }
 .clipping-mask {
  width: 100%;
- height: 100%;
+ height:100vh;
  position: absolute;
  top: 0;left: 0;z-index: 5;
 }

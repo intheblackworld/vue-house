@@ -8,7 +8,7 @@
       >
         <img
           src="./s2/1.jpg"
-          alt=""
+          alt="泰御花園"
           class="img"
         >
         <div class="item-title">泰御花園</div>
@@ -20,10 +20,10 @@
       >
         <img
           src="./s2/2.jpg"
-          alt=""
+          alt="映象太和"
           class="img"
         >
-        <div class="item-title">印象太和</div>
+        <div class="item-title">映象太和</div>
       </div>
       <div
         class="item"
@@ -32,7 +32,7 @@
       >
         <img
           src="./s2/3.jpg"
-          alt=""
+          alt="新北南海段"
           class="img"
         >
         <div class="item-title">新北南海段</div>
@@ -44,7 +44,7 @@
       >
         <img
           src="./s2/4.jpg"
-          alt=""
+          alt="親家雲硯"
           class="img"
         >
         <div class="item-title">親家雲硯</div>
@@ -56,7 +56,7 @@
       >
         <img
           src="./s2/5.jpg"
-          alt=""
+          alt="親家T3市政國際中心"
           class="img"
         >
         <div class="item-title">親家T3市政國際中心</div>
@@ -68,7 +68,7 @@
       >
         <img
           src="./s2/6.jpg"
-          alt=""
+          alt="故宮博物院"
           class="img"
         >
         <div class="item-title">故宮博物院</div>
@@ -424,7 +424,7 @@ export default {
         },
         {
           img: require('./s2/2.jpg'),
-          title: '印象太和',
+          title: '映象太和',
         },
         {
           img: require('./s2/3.jpg'),
