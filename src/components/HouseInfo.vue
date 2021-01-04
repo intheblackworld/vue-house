@@ -103,7 +103,7 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .content {
-    height: 15em;
+    //height: 15em;
     width: 100%;
     margin-bottom: 0em;
     font-size: 15px;
