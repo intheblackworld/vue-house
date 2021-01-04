@@ -1,20 +1,20 @@
 <template>
   <div class="section1" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1">
-    <img src="./s1/bg.jpg" alt="" class="bg" v-if="isPC">
+    <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg" v-if="isPC">
     <!-- <img src="./s1/bg_m.jpg" alt="" class="bg" v-if="isMobile"> -->
-    <img src="./s1/img1.png" alt="" class="tree" v-if="isPC">
+    <img src="./s1/img1.png" :alt="`${info.caseName}_img1`" class="tree" v-if="isPC">
     <transition-group name="swipe-fade">
-      <div v-if="pageIndex === 1" key="page1">
-        <img src="./s1/logot1.png" alt="" class="logo">
-        <img src="./s1/img2.png" alt="" :class="`img2 ${pageIndex === 1 ? 'moving' : ''}`">
-        <img src="./s1/img1.png" alt="" class="tree" v-if="isMobile">
+      <div class="list" v-if="pageIndex === 1" key="page1">
+        <img src="./s1/logot1.png" :alt="`${info.caseName}_logot1`" class="logo">
+        <img src="./s1/img2.png" :alt="`${info.caseName}_img2`" :class="`img2 ${pageIndex === 1 ? 'moving' : ''}`">
+        <img src="./s1/img1.png" :alt="`${info.caseName}_img1`" class="tree" v-if="isMobile">
       </div>
-      <div v-if="pageIndex === 2" key="page2">
-        <img src="./s1/t2.png" alt="" class="t2" v-if="isPC">
-        <img src="./s1/t2_m.png" alt="" class="t2" v-if="isMobile">
-        <img src="./s1/img3.png" alt="" :class="`img3 ${pageIndex === 2 ? 'moving' : ''}`">
-        <img src="./s1/img4.png" alt="" class="img4">
-        <img src="./s1/mrt.png" alt="" class="mrt">
+      <div class="list" v-if="pageIndex === 2" key="page2">
+        <img src="./s1/t2.png" :alt="`${info.caseName}_t2`" class="t2" v-if="isPC">
+        <img src="./s1/t2_m.png" :alt="`${info.caseName}_t2_m`" class="t2" v-if="isMobile">
+        <img src="./s1/img3.png" :alt="`${info.caseName}_img3`" :class="`img3 ${pageIndex === 2 ? 'moving' : ''}`">
+        <img src="./s1/img4.png" :alt="`${info.caseName}_limg4`" class="img4">
+        <img src="./s1/mrt.png" :alt="`${info.caseName}_mrt`" class="mrt">
       </div>
     </transition-group>
   </div>
@@ -34,7 +34,14 @@
   background-size: auto;
   z-index: 23;
 }
-
+.list:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;}
 .bg-img {
   width: size(1920);
   height: 100%;
@@ -53,6 +60,7 @@
 
 .logo {
   @include img_c_pc(720, 406);
+  top:calc(50% - 9vw);
 }
 
 .bg {
@@ -65,26 +73,37 @@
   @include img_r_pc(643, 0, -200);
   top: auto;
   bottom: 0;
+  animation: tree 4s ease-out infinite alternate;
+  transform: skewX(2deg);
+  transform-origin: 50% 100%
 }
 
 .img2 {
-  @include img_l_pc(235, 0, 315);
+  @include img_l_pc(235, 0, 415);
   top: auto;
   bottom: 0;
+  transform: translateX(-100%);
 }
 
 .img3 {
-  @include img_l_pc(188, 857, 109);
+  @include img_l_pc(188, 0, 600);
+  top: auto;
+  bottom: 0;
+  transform: translateX(-400%);
 }
 
 .img4 {
   @include img_l_pc(194, 0, 1126);
   top: auto;
   bottom: 0;
+  animation: tree 3s ease-in-out infinite alternate;
+  transform: skewX(2deg);
+  transform-origin: 50% 100%
 }
 
 .t2 {
   @include img_c_pc(997, 459);
+  top:calc(50% - 7vw);
 }
 
 .mrt {
@@ -92,53 +111,14 @@
 }
 
 .moving {
-  animation: moving 0.7s linear forwards;
+  animation: moving 7s linear forwards;
 }
 
 @keyframes moving {
-  0% {
-    transform: translateY(0px);
-  }
-
-  10% {
-    transform: translateY(-10px);
-  }
-
-  20% {
-    transform: translateY(0px);
-  }
-
-  30% {
-    transform: translateY(7px);
-  }
-
-  40% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-5px);
-  }
-
-  60% {
-    transform: translateY(0px);
-  }
-
-  70% {
-    transform: translateY(3px);
-  }
-
-  80% {
-    transform: translateY(0px);
-  }
-
-  90% {
-    transform: translateY(-1px);
-  }
-
-  100% {
-    transform: translateY(0px);
-  }
+  to{transform: translateX(0%);}
+}
+@keyframes tree {
+  to{transform: skewX(-2deg);}
 }
 
 .swipe-fade-leave-to {
@@ -238,6 +218,7 @@
 </style>
 <script>
 // @ is an alias to /src
+import info from '@/info'
 import { isPC, isMobile, isTablet } from '@/utils'
 
 export default {
@@ -245,6 +226,7 @@ export default {
 
   data() {
     return {
+      info,
       isPC,
       isMobile,
       isTablet,

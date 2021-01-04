@@ -16,11 +16,11 @@
         <div class="form">
           <div class="group">
             <div class="row" data-aos="fade-down" data-aos-delay="100">
-              <label>姓名</label>
+              <label>姓名<span>*</span></label>
               <el-input v-model="form.name" placeholder></el-input>
             </div>
             <div class="row" data-aos="fade-down" data-aos-delay="200">
-              <label>手機</label>
+              <label>手機<span>*</span></label>
               <el-input v-model="form.phone" placeholder></el-input>
             </div>
             <!-- <div class="row" data-aos="fade-down"
@@ -49,8 +49,8 @@
                 }"
               ></el-time-select>
             </div> -->
-            <div class="row">
-              <label>想看房型</label>
+            <div class="row" data-aos="fade-down" data-aos-delay="300">
+              <label>想看房型<span>*</span></label>
               <el-select v-model="form.house" placeholder>
                 <el-option
                   v-for="city in ['兩房', '三房']"
@@ -65,13 +65,13 @@
               <label>E-mail</label>
               <el-input v-model="form.email" placeholder></el-input>
             </div> -->
-            <div class="row" data-aos="fade-down" data-aos-delay="300">
+            <div class="row" data-aos="fade-down" data-aos-delay="400">
               <label>居住城市</label>
               <el-select v-model="form.city" placeholder>
                 <el-option v-for="city in cityList" :key="city.value" :label="city.label" :value="city.value" no-data-text="無數據"></el-option>
               </el-select>
             </div>
-            <div class="row" data-aos="fade-down" data-aos-delay="400">
+            <div class="row" data-aos="fade-down" data-aos-delay="500">
               <label>居住地區</label>
               <el-select v-model="form.area" placeholder>
                 <el-option v-for="area in areaList" :key="area.value" :label="area.label" :value="area.value" no-data-text="請先選擇居住城市"></el-option>
@@ -408,12 +408,12 @@ export default {
       display: block;
       text-align: left;
       font-size: 16px;
-      opacity: 0.8;
-      font-weight: bold;
+      opacity: 1;
+      font-weight: 500;
       color: $order_input_label_color;
 
       span {
-        color: #ff0000;
+        color:$order_check_span_color;
       }
     }
   }
