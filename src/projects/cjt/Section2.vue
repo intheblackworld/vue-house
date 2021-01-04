@@ -115,13 +115,13 @@
   .bg {
     background-image: url('./s2/mo/bg.jpg');
   }
-.if{width:100vw;height:calc(100vw * 211 / 375);margin:0 0 10vh;}
   .img {
     display: none;
   }
   .imgM {
     display: block;
   }
+.if{width:100vw;height:calc(100vw * 211 / 375);margin:0 0 10vh;}
 }
 </style>
 
