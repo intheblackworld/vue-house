@@ -39,10 +39,14 @@
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.2&appId=542185515968935&autoLogAppEvents=1"></script>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit" async defer>
-    </script> 
+    </script>
+    <!-​​-[if lte IE 8]>
+    本網站建議以Internet Explorer 10以上、Firefox或Google Chrome等瀏覽器瀏覽
+    <![endif]–> 
     <script>
       function myBrowser(){
           var userAgent = navigator.userAgent; //取得瀏覽器的userAgent字串
+          console.log(userAgent)
           var isOpera = userAgent.indexOf("Opera") > -1;
           if (isOpera) {
               return "Opera"
@@ -79,7 +83,7 @@
       //以下是呼叫上面的函式
       var mb = myBrowser();
       
-      // document.querySelector('.useragent').write(navigator.userAgent).style.color;
+      document.write(navigator.userAgent);
       // if (mb.indexOf("IE")>-1) {
       //    if (mb.replace("IE","")<=8)
       //    {
@@ -91,9 +95,6 @@
       //    }
       //    alert(mb.replace("IE",""));
       // }
-      
-      
-      console.log(mb)
       if (mb.indexOf("IE")>-1) {
            if (mb.replace("IE","")<=8) {
               window.alert('本網站建議以Internet Explorer 10以上、Firefox或Google Chrome等瀏覽器瀏覽')
