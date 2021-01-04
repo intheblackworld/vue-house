@@ -167,9 +167,9 @@
 @media screen and (max-width: 767px) {
   .section1 {
     width: 100vw;
-    min-height: sizem(415 + 189);
-    max-height: sizem(415 + 189);
-    height: sizem(415 + 189);
+    height: calc(100vh - 63px);
+    min-height: sizem(604);
+    max-height: sizem(750);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -177,6 +177,7 @@
   }
   .logo {
     @include img_c_m(320, 190);
+    top: calc(50% - 22vw);
   }
 
   .bg {
@@ -186,19 +187,21 @@
   }
 
   .tree {
-    @include img_r_m(206, 0, -70);
+    @include img_r_m(280, 0, -110);
     top: auto;
     bottom: 0;
   }
 
   .img2 {
-    @include img_l_m(135, 0, 26);
+    @include img_l_m(135, 0, 140);
     top: auto;
     bottom: 0;
   }
 
   .img3 {
-    @include img_l_m(110, 496, 40);
+    @include img_l_m(110, 0, 200);
+    top: auto;
+    bottom: 0;
   }
 
   .img4 {
@@ -209,6 +212,7 @@
 
   .t2 {
     @include img_c_m(310, 121);
+    top: calc(50% - 40vw);
   }
 
   .mrt {
