@@ -1,5 +1,6 @@
 <template>
   <div class="relative">
+    <!--
     <svg version="1.1" id="logo1" class="logo absolute" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 450" style="enable-background:new 0 0 500 450;" xml:space="preserve">
       <path class="st0 op1" d="M18,315.4c3.8,0.5,9.2,0.8,16.2,0.8h19.1c1.2-4.9,2.1-10.2,2.9-15.9c4.4,1.4,8.1,2.6,11,3.5
         c4.4,1.5,6.6,2.9,6.6,4.1c0,1.1-1,1.9-2.9,2.4c-1.8,0.4-2.7,1-2.8,1.7c-0.5,1.5-0.9,2.9-1.3,4.1h21.6c0.3-0.1,1.6-1.7,3.9-4.9
@@ -184,6 +185,12 @@
       alt="泰御天鑄"
       class="absolute logo-b"
     >
+    -->
+    <img
+      src="./s1/logoty.png"
+      alt="泰御天鑄"
+      class="absolute logo"
+    >
     <h3
       class="absolute title"
       data-aos="fade-up"
@@ -234,8 +241,8 @@
   );
 }
 .logo {
-  height:calc(100vh * 450 / 1080);
-  top:calc(100vh * 183 / 1080);
+  height: size(300);
+  top:calc(50% - 10vw);
   left: 0;
   right: 0;
   margin: 0 auto;
