@@ -42,7 +42,7 @@
         :alt="`${info.caseName}_light`"
         class="absolute light"
       >
-      <div class="txt absolute">市心3房總價<span class="l">688</span>萬起<br><span class="s">工程結構0付款</span></div>
+      <div class="txt absolute">市心3房總價<span class="l">688<span>需另購車位</span></span>萬起<br><span class="s">工程結構0付款</span></div>
     </div>
     <div class="s2 relative">
       <Map :bgSrc="require('./s1/bg_02.jpg')">
@@ -150,17 +150,19 @@
 .txt {
   text-align: center;
   width: 100%;
-  top: calc(40% + 10vw);
+  top: calc(40% + 8vw);
   left: 0;
   color: #036;
   font-size:size(33);
-  line-height: 1.5;
+  line-height: 1.8;
   font-weight: 700;
   letter-spacing: 0.07em;
-  .l{font-size: 1.4em;
+  .l{font-size: 2.1em;  display:inline-block;top:0.05em;
   color: #f00;
-  letter-spacing: -0.02em;}
-  .s{font-size: 0.8em;width:13em;
+  letter-spacing: -0.05em;position: relative;
+  span{font-size:0.32em;font-weight: 500;letter-spacing:0em;display:block;position: absolute;bottom: -0.25em;left:0;}
+  }
+  .s{font-size: 0.8em;width:14.5em;
   display:inline-block;border: 1px solid currentColor;
   letter-spacing: 0.05em;}
 }
@@ -351,8 +353,8 @@
   }
 
 .txt {
-  font-size:size-m(20);
-  top: calc(40% - 5vw);
+  font-size:size-m(18);
+  top: calc(40% - 9vw);
   color:#fc0;
   .l{color: #f33;}
 }
