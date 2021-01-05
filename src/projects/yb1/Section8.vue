@@ -14,7 +14,8 @@
         </div>
         <div class="content-label">[央北鑫建築] 裝潢風格情境參考示意圖，實際坪數，格局尺度，依銷售買賣合約書為準，建設公司保有修正之權利</div>
       </div>
-      <swiper :options="swiperOption" ref="mySwiper8" data-aos="fade" data-aos-delay="1000" @slideChange="slideChanged">
+      <swiper :options="swiperOption" ref="mySwiper8" data-aos="fade" data-aos-delay="1000" >
+        <!-- @slideChange="slideChanged" -->
         <swiper-slide v-for="(slide, index) in slideList[tabIndex]" :index="index" :key="slide.img" class="item">
           <img :src="slide.src" :class="`item-img`" /><span class="item-txt">裝潢風格情境參考示意圖</span>
         </swiper-slide>
@@ -418,21 +419,21 @@ export default {
       swiper.slideTo(index)
     },
 
-    slideChanged(e) {
-      const swiper = this.$refs.mySwiper8.swiper
-      if (swiper.activeIndex <= swiper.slides.length - 2) {
-        this.slideIndex = swiper.activeIndex - 1
-      } else {
-        this.slideIndex = 0
-      }
-      // if (swiper.isEnd) {
-      //   this.slideIndex = 0
-      // } else if (swiper.isBeginning) {
-      //   this.slideIndex = swiper.slides.length - 3
-      // } else {
-      //   this.slideIndex = swiper.activeIndex - 1
-      // }
-    },
+    // slideChanged(e) {
+    //   const swiper = this.$refs.mySwiper8.swiper
+    //   if (swiper.activeIndex <= swiper.slides.length - 2) {
+    //     this.slideIndex = swiper.activeIndex - 1
+    //   } else {
+    //     this.slideIndex = 0
+    //   }
+    //   // if (swiper.isEnd) {
+    //   //   this.slideIndex = 0
+    //   // } else if (swiper.isBeginning) {
+    //   //   this.slideIndex = swiper.slides.length - 3
+    //   // } else {
+    //   //   this.slideIndex = swiper.activeIndex - 1
+    //   // }
+    // },
   },
 
   created() {},
