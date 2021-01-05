@@ -1,128 +1,43 @@
 <template>
   <div class="relative">
     <div class="absolute imgs flex-jb flex-ac wrap">
-      <div
-        class="item"
-        data-aos="fade"
-        data-aos-delay="600"
-      >
-        <img
-          src="./s2/1.jpg"
-          alt="泰御花園"
-          class="img"
-        >
+      <div class="item" data-aos="fade" data-aos-delay="600">
+        <img src="./s2/1.jpg" alt="泰御花園" class="img">
         <div class="item-title">泰御花園</div>
       </div>
-      <div
-        class="item"
-        data-aos="fade"
-        data-aos-delay="650"
-      >
-        <img
-          src="./s2/2.jpg"
-          alt="映象太和"
-          class="img"
-        >
+      <div class="item" data-aos="fade" data-aos-delay="650">
+        <img src="./s2/2.jpg" alt="映象太和" class="img">
         <div class="item-title">映象太和</div>
       </div>
-      <div
-        class="item"
-        data-aos="fade"
-        data-aos-delay="700"
-      >
-        <img
-          src="./s2/3.jpg"
-          alt="新北南海段"
-          class="img"
-        >
+      <div class="item" data-aos="fade" data-aos-delay="700">
+        <img src="./s2/3.jpg" alt="新北南海段" class="img">
         <div class="item-title">新北南海段</div>
       </div>
-      <div
-        class="item"
-        data-aos="fade"
-        data-aos-delay="750"
-      >
-        <img
-          src="./s2/4.jpg"
-          alt="親家雲硯"
-          class="img"
-        >
+      <div class="item" data-aos="fade" data-aos-delay="750">
+        <img src="./s2/4.jpg" alt="親家雲硯" class="img">
         <div class="item-title">親家雲硯</div>
       </div>
-      <div
-        class="item"
-        data-aos="fade"
-        data-aos-delay="800"
-      >
-        <img
-          src="./s2/5.jpg"
-          alt="親家T3市政國際中心"
-          class="img"
-        >
+      <div class="item" data-aos="fade" data-aos-delay="800">
+        <img src="./s2/5.jpg" alt="親家T3市政國際中心" class="img">
         <div class="item-title">親家T3市政國際中心</div>
       </div>
-      <div
-        class="item"
-        data-aos="fade"
-        data-aos-delay="850"
-      >
-        <img
-          src="./s2/6.jpg"
-          alt="故宮博物院"
-          class="img"
-        >
+      <div class="item" data-aos="fade" data-aos-delay="850">
+        <img src="./s2/6.jpg" alt="故宮博物院" class="img">
         <div class="item-title">故宮博物院</div>
       </div>
     </div>
-    <img
-      src="./s1/wlogo.png"
-      alt="泰御天鑄"
-      class="absolute logo-b"
-      data-aos="fade"
-      data-aos-delay="400"
-    >
+    <img src="./s1/wlogo.png" alt="泰御天鑄" class="absolute logo-b" data-aos="fade" data-aos-delay="400">
     <div class="absolute txt">
-      <h3
-        class="title"
-        data-aos="fade"
-        data-aos-delay="400"
-      >泰新<br />水電消防工程 精選業績</h3>
-      <div
-        class="hr"
-        data-aos="fade"
-        data-aos-delay="500"
-      ></div>
-      <div
-        class="desc"
-        data-aos="fade"
-        data-aos-delay="600"
-      >「泰新系統」長期耕耘專業水電領域，全台北、中、南都有知名代表作，曾打造公共工程、廠辦、商辦、商場、學校、住宅等多元建築作品，歷經多次國際高標考驗，曾與無數業界頂尖設計菁英合作，奠定完整而難得的跨領域水電經驗，更以32年專業作為實踐建築理念的新起點，成立「泰御建設」，多年經驗累積100% 的施工品質，2006年導入國外預製工法，由Victaulic原廠協助成立專業預製廠，開創國內第一家使用預製工法及防震工法之先創，「泰御建設」從開發、規劃、設計、施工，實踐力行精神，一步一腳印，每一細節皆嚴格把關、精準要求，完成智慧建築。</div>
+      <h3 class="title" data-aos="fade" data-aos-delay="400">泰新<br />水電消防工程 精選業績</h3>
+      <div class="hr" data-aos="fade" data-aos-delay="500"></div>
+      <div class="desc" data-aos="fade" data-aos-delay="600">「泰新系統」長期耕耘專業水電領域，全台北、中、南都有知名代表作，曾打造公共工程、廠辦、商辦、商場、學校、住宅等多元建築作品，歷經多次國際高標考驗，曾與無數業界頂尖設計菁英合作，奠定完整而難得的跨領域水電經驗，更以32年專業作為實踐建築理念的新起點，成立「泰御建設」，多年經驗累積100% 的施工品質，2006年導入國外預製工法，由Victaulic原廠協助成立專業預製廠，開創國內第一家使用預製工法及防震工法之先創，「泰御建設」從開發、規劃、設計、施工，實踐力行精神，一步一腳印，每一細節皆嚴格把關、精準要求，完成智慧建築。</div>
     </div>
-    <swiper
-      :options="swiperOption2"
-      ref="mySwiper2"
-      data-aos="fade"
-      data-aos-delay="200"
-      v-if="isMobile"
-    >
-      <swiper-slide
-        v-for="(slide, index) in slideList"
-        :index="index"
-        :key="slide.img"
-      >
-        <img
-          :src="slide.img"
-          alt=""
-          class="item-img"
-        >
+    <swiper :options="swiperOption2" ref="mySwiper2" data-aos="fade" data-aos-delay="200" v-if="isMobile">
+      <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img">
+        <img :src="slide.img" alt="" class="item-img">
         <h3 class="absolute item-title">
           {{slide.title}}
-          <img
-            @click="showDialog(index)"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwAQMAAABtzGvEAAAABlBMVEVHcExZV1f8sp6qAAAAAXRSTlMAQObYZgAAABpJREFUeAFjwA+YDwwcxf8fCD5gpQbUZXgBAP6+L1l0YJagAAAAAElFTkSuQmCC"
-            alt="plus"
-            class="plus"
-          >
+          <img @click="showDialog(index)" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwAQMAAABtzGvEAAAABlBMVEVHcExZV1f8sp6qAAAAAXRSTlMAQObYZgAAABpJREFUeAFjwA+YDwwcxf8fCD5gpQbUZXgBAP6+L1l0YJagAAAAAElFTkSuQmCC" alt="plus" class="plus">
         </h3>
       </swiper-slide>
       <!-- <div
@@ -130,23 +45,11 @@
         slot="pagination"
       ></div> -->
     </swiper>
-    <div
-      class="dialog"
-      v-if="isDialog"
-    >
+    <div class="dialog" v-if="isDialog">
       <div>
-        <img
-          :src="slideList[dialogIndex].img"
-          alt="map"
-          class="dialog-content"
-        >
+        <img :src="slideList[dialogIndex].img" alt="map" class="dialog-content">
       </div>
-      <img
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAKlBMVEVHcEz////z8fHz8fH////z8fHz8fHz8fHz8fHz8fHz8fHz8fHx7u708fEdE1r4AAAADnRSTlMAA0S1Bec3v6z4KcoaoNqzfoQAAAF6SURBVHjapZfLksMgDAQZwOLl/P/vboBydPAaXCPdkkq3TWBAuBoqHFmoQdynNIkcH6WVjztDSRI5PpVwOlfzkTxhgE/HGD44Q/ThyIKhknwEHzl+lnzUwPAuquEtn4/soV/Aq4Hge/mshj0fbryDGih+zsWrFQWZ/F08DNjz6QiCB3VpFbv8tHLx96pfw4klf7aSFg+pqRuW/OYlz9R/sHr/1B+wMQgeeGn6gqtRPMwmJOn4V4bwf7rhQ8//u4US7obYednzuj8s8ksYNH/70mQR/N2gfP9IGqA8Y5j5JTZ+P9J9TStx/HUwCVCv/DOGkupY2nBUoadb88/U11CagYdREE1DsP+JsU9jBeovxsRSZBaS8hMbBjoK9jBSBvuGEo1bGpSnNmVn3NbxdLDEdwcLTtvRBsvhuj/e3e54B91gKM+3OPYmC+/aPKdtnrXRtLa6FD8LaqB4zeadJwzcpQnDIN1gv3TZr30EPw3z4mm++pov39brf/0DkT4QydVQXNwAAAAASUVORK5CYII="
-        alt=""
-        class="close"
-        @click="isDialog = false"
-      >
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAKlBMVEVHcEz////z8fHz8fH////z8fHz8fHz8fHz8fHz8fHz8fHz8fHx7u708fEdE1r4AAAADnRSTlMAA0S1Bec3v6z4KcoaoNqzfoQAAAF6SURBVHjapZfLksMgDAQZwOLl/P/vboBydPAaXCPdkkq3TWBAuBoqHFmoQdynNIkcH6WVjztDSRI5PpVwOlfzkTxhgE/HGD44Q/ThyIKhknwEHzl+lnzUwPAuquEtn4/soV/Aq4Hge/mshj0fbryDGih+zsWrFQWZ/F08DNjz6QiCB3VpFbv8tHLx96pfw4klf7aSFg+pqRuW/OYlz9R/sHr/1B+wMQgeeGn6gqtRPMwmJOn4V4bwf7rhQ8//u4US7obYednzuj8s8ksYNH/70mQR/N2gfP9IGqA8Y5j5JTZ+P9J9TStx/HUwCVCv/DOGkupY2nBUoadb88/U11CagYdREE1DsP+JsU9jBeovxsRSZBaS8hMbBjoK9jBSBvuGEo1bGpSnNmVn3NbxdLDEdwcLTtvRBsvhuj/e3e54B91gKM+3OPYmC+/aPKdtnrXRtLa6FD8LaqB4zeadJwzcpQnDIN1gv3TZr30EPw3z4mm++pov39brf/0DkT4QydVQXNwAAAAASUVORK5CYII=" alt="" class="close" @click="isDialog = false">
     </div>
   </div>
 </template>
@@ -298,8 +201,8 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.73;
-    letter-spacing: 1.5px;
-    text-align: left;
+    letter-spacing: 0.05em;
+    text-align: justify;
     color: #ffffff;
     top: size-m(104);
     left: 0;

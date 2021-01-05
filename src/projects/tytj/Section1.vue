@@ -186,42 +186,68 @@
       class="absolute logo-b"
     >
     -->
-    <img
-      src="./s1/logoty.png"
-      alt="泰御天鑄"
-      class="absolute logo"
-    >
-    <h3
-      class="absolute title"
-      data-aos="fade-up"
-      data-aos-delay="800"
-    >泰新系統以一流的機電環控<br />建立安心居住、放心生活的家園</h3>
+    <img src="./s1/logoty.png" alt="泰御天鑄" class="absolute logo">
+    <h3 class="absolute title" data-aos="fade-up" data-aos-delay="800">泰新系統以一流的機電環控<br />建立安心居住、放心生活的家園</h3>
   </div>
 </template>
 <style lang="scss" scoped>
-  .logo{color:#68361A;
-    .icon{fill:none;stroke:currentColor;stroke-miterlimit:10;
-    }
-    .st0{fill:currentColor;}
-    .st1{stroke-width:1.06;}
-    .st2{stroke-width:9.1272;}
-    .st3{stroke-width:1.8791;}
-    .letter1{stroke-dasharray:310;stroke-dashoffset:310;animation: letterDraw 2s 1s linear forwards;}
-    .letter2{stroke-dasharray: 410;stroke-dashoffset:410;animation: letterDraw 2.2s 3.8s linear forwards;}
-    .letter3{stroke-dasharray: 170;stroke-dashoffset:170;animation: letterDraw 0.8s 3s linear forwards;}
-    .letter4{stroke-dasharray: 1390;stroke-dashoffset:1390;animation: letterDraw 5s 3s linear forwards;}
-    .op1{opacity:0;animation: op 1s 3s linear forwards;}
-    .op2{opacity:0;animation: op 0.5s 4s linear forwards;}
+.logo {
+  color: #68361a;
+  .icon {
+    fill: none;
+    stroke: currentColor;
+    stroke-miterlimit: 10;
   }
+  .st0 {
+    fill: currentColor;
+  }
+  .st1 {
+    stroke-width: 1.06;
+  }
+  .st2 {
+    stroke-width: 9.1272;
+  }
+  .st3 {
+    stroke-width: 1.8791;
+  }
+  .letter1 {
+    stroke-dasharray: 310;
+    stroke-dashoffset: 310;
+    animation: letterDraw 2s 1s linear forwards;
+  }
+  .letter2 {
+    stroke-dasharray: 410;
+    stroke-dashoffset: 410;
+    animation: letterDraw 2.2s 3.8s linear forwards;
+  }
+  .letter3 {
+    stroke-dasharray: 170;
+    stroke-dashoffset: 170;
+    animation: letterDraw 0.8s 3s linear forwards;
+  }
+  .letter4 {
+    stroke-dasharray: 1390;
+    stroke-dashoffset: 1390;
+    animation: letterDraw 5s 3s linear forwards;
+  }
+  .op1 {
+    opacity: 0;
+    animation: op 1s 3s linear forwards;
+  }
+  .op2 {
+    opacity: 0;
+    animation: op 0.5s 4s linear forwards;
+  }
+}
 @keyframes letterDraw {
-    to {
-        stroke-dashoffset: 0
-    }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 @keyframes op {
-    to {
-        opacity:1;
-    }
+  to {
+    opacity: 1;
+  }
 }
 </style>
 <style lang="scss" scoped>
@@ -242,7 +268,7 @@
 }
 .logo {
   height: size(300);
-  top:calc(50% - 10vw);
+  top: calc(50% - 10vw);
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -251,19 +277,21 @@
 .logo-t {
   width: size(472);
   right: size(292 - 472);
-  top: size(319 - 472);opacity:0.5;
-  
+  top: size(319 - 472);
+  opacity: 0.5;
 }
 
 .logo-b {
   width: size(472);
   left: size(275 - 472);
-  bottom: size(-150);opacity:0.5;z-index: 2;
+  bottom: size(-150);
+  opacity: 0.5;
+  z-index: 2;
 }
 
 .title {
   text-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
-  font-size:calc(100vh * 55 / 1080);
+  font-size: calc(100vh * 55 / 1080);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -271,11 +299,12 @@
   letter-spacing: 0.35em;
   text-align: center;
   color: #ffffff;
-  top:calc(100vh * 681 / 1080);
+  top: calc(100vh * 681 / 1080);
   left: 0;
   right: 0;
   margin: 0 auto;
-  opacity:0;animation: op 0.5s 5s linear forwards;
+  opacity: 0;
+  animation: op 0.5s 5s linear forwards;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -296,9 +325,10 @@
   }
 
   .logo {
-    width: size-m(179);
-    top: size-m(110);
-    left: size-m(98);
+    height: auto;
+    width: size-m(300);
+    top: size-m(150);
+    left: size-m(37.5);
     right: auto;
     margin: 0 auto;
   }
@@ -307,7 +337,7 @@
     width: size-m(375);
     right: 0;
     top: size-m(129 - 375);
-    opacity: .5 !important;
+    opacity: 0.5 !important;
   }
 
   .logo-b {
@@ -316,7 +346,7 @@
     right: 0;
     margin: 0 auto;
     top: size-m(441);
-    opacity: .5 !important;
+    opacity: 0.5 !important;
   }
 
   .title {
