@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './pages/Home.vue'
 import FormThanks from './pages/FormThanks.vue'
-import PhoneThanks from './pages/PhoneThanks.vue'
+// import PhoneThanks from './pages/PhoneThanks.vue'
 
 Vue.use(Router)
 

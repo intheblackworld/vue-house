@@ -1,0 +1,286 @@
+<template>
+  <div class="section2">
+    <img src="./s2/t.png" alt="" class="t">
+    <div class="right">
+      <div class="item flex-ac flex-jb">
+        <img src="./s2/icon1.png" alt="" class="icon">
+        <div class="desc">
+          對於銷售的偏執，我們絕不妥協<br />
+          對於客戶，以真誠款待<br />
+          客戶服務，吹毛求疵，讓廣大民眾，都擁有一個完美的家。
+        </div>
+      </div>
+      <div class="item flex-ac flex-jb">
+        <img src="./s2/icon2.png" alt="" class="icon">
+        <div class="desc">
+          對於建商，以完銷回饋<br />
+          以良善創造建案價值，用創意力、行銷力為信念正向合作。<br />
+          成為買賣雙方的橋樑，讓買賣不僅僅是金錢交換，而是一種循環美好的互動。
+        </div>
+      </div>
+      <div class="item flex-ac flex-jb">
+        <img src="./s2/icon3.png" alt="" class="icon">
+        <div class="desc">
+          我們言語不多 但心意很多。<br />
+          關於房子的許多事，不需要訴說，只需用心感受
+        </div>
+      </div>
+      <img src="./s2/i1.jpg" alt="" class="img">
+      <img src="./s2/logo.png" alt="" class="logo">
+      <div class="desc">
+        「得邦廣告」以短短三年的時間，成功推行總值160億的案量。<br /><br />
+        以精緻服務為核心價值，為消費者全盤規劃、推薦最合適的美宅。並對建設公司，提供土地規劃、建築設計、環境規劃、景觀規劃、美學架構等全盤的建議。<br /><br />
+        在房地產行銷的領域中，以領先業界的專業服務，建構「人」與「家」最堅固的橋樑。
+      </div>
+    </div>
+    <div class="video-item" v-for="(video, index) in video_list" :key="video.title + index">
+      <img :src="video.img" alt="" class="v">
+      <div class="flex-ac flex-jb">
+        <div class="video-title">
+          {{video.title}}
+        </div>
+        <div class="video-desc">
+          {{video.desc}}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+@import '@/assets/style/function.scss';
+
+.section2 {
+  width: size(1920);
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+  background-size: auto;
+}
+
+.bg-img {
+  width: size(1920);
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  object-fit: cover;
+  margin-top: 0;
+  &:nth-child(1) {
+    position: relative;
+  }
+}
+
+.t {
+  @include img_l_pc(116, 47, 301);
+}
+
+.right {
+  padding-left: size(648);
+}
+
+.item {
+  width: size(1920 - 648);
+  margin-bottom: size(21);
+  .icon {
+    width: size(209);
+  }
+
+  .desc {
+    width: size(1063 - 103);
+    font-size: size(24);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: size(1.2);
+    text-align: left;
+    color: #4d4d4d;
+    white-space: nowrap;
+  }
+}
+
+.img {
+  float: left;
+  width: size(1274);
+  margin-top: size(50);
+  margin-bottom: size(60);
+}
+
+.logo {
+  width: size(547);
+  margin-bottom: size(40);
+}
+
+.desc {
+  width: size(1095);
+  font-size: size(24);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.56;
+  letter-spacing: size(2.4);
+  text-align: left;
+  color: #4d4d4d;
+  margin-bottom: size(60);
+}
+
+.video-item {
+  width: size(1560);
+  margin: 0 auto size(40);
+
+  .v {
+    width: 100%;
+  }
+
+  .video-title {
+    font-size: size(36);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.62;
+    letter-spacing: size(2.16);
+    text-align: left;
+    color: #008fbb;
+  }
+
+  .video-desc {
+    font-size: size(24);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.99;
+    letter-spacing: size(0.96);
+    text-align: left;
+    color: #1a1a1a;
+  }
+}
+@media only screen and (max-width: 1440px) {
+}
+@media only screen and (max-width: 1280px) and (min-width: 1025px) {
+  .fullscreen {
+    height: 100vh;
+  }
+}
+
+/* 螢幕尺寸標準 */
+/* 平板尺寸 */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+}
+
+@media screen and (max-width: 767px) {
+  .section2 {
+    width: 100vw;
+    min-height: sizem(454);
+    max-height: sizem(812);
+    height: sizem(454);
+    // background-image: url('./mo/1/bg.png');
+    background-size: cover;
+    background-attachment: scroll;
+  }
+
+  .bg-img {
+    width: sizem(375);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    object-fit: cover;
+    margin-top: 0;
+
+    &:nth-child(1) {
+      position: relative;
+    }
+  }
+
+  .img {
+    @include div_l_m(344, 223, 0, 0);
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .border {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      width: 95%;
+      height: 95%;
+      border: 3px solid #ff8200;
+    }
+  }
+
+  .info-block {
+    @include div_r_m(336, 203, 183, 0);
+    background-color: #ff8200;
+  }
+
+  .content {
+    width: calc(100% - 10vw);
+    height: calc(100% - 10vw);
+    padding: sizem(25) sizem(30);
+    font-size: sizem(14);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    text-align: left;
+    color: #606060;
+    .title {
+      font-size: sizem(15);
+      font-weight: 900;
+      letter-spacing: sizem(1.49);
+    }
+  }
+}
+</style>
+<script>
+// @ is an alias to /src
+import { isPC, isMobile, isTablet } from '@/utils'
+
+export default {
+  name: 'section2',
+
+  data() {
+    return {
+      isPC,
+      isMobile,
+      isTablet,
+      video_list: [
+        {
+          img: require('./s2/v.jpg'),
+          title: '影片標題影片標題影片標題影片標題',
+          desc: '小標文字（沒文字隱藏）',
+        },
+      ],
+    }
+  },
+
+  methods: {
+    // @slideChangeTransitionEnd="slideChanged"
+    // slideChanged(e) {
+    //   const swiper = this.$refs.mySwiper.swiper
+    //   if (swiper.isEnd) {
+    //     this.slideIndex = 0
+    //   } else if (swiper.isBeginning) {
+    //     this.slideIndex = swiper.slides.length - 3
+    //   } else {
+    //     this.slideIndex = swiper.activeIndex - 1
+    //   }
+    // },
+  },
+
+  mounted() {},
+
+  created() {},
+
+  computed: {},
+}
+</script>

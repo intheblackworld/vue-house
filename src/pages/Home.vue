@@ -34,6 +34,12 @@
     >
       <Section5 />
     </div>
+    <div
+      class="section relative"
+      id="section6"
+    >
+      <Section6 />
+    </div>
     <div class="section" id="contact">
       <ContactSection />
     </div>
@@ -66,11 +72,12 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/lc/index/Section1.vue'
-import Section2 from '@/projects/lc/index/Section2.vue'
-import Section3 from '@/projects/lc/index/Section3.vue'
-import Section4 from '@/projects/lc/index/Section4.vue'
-import Section5 from '@/projects/lc/index/Section5.vue'
+import Section1 from '@/projects/db/index/Section1.vue'
+import Section2 from '@/projects/db/index/Section2.vue'
+import Section3 from '@/projects/db/index/Section3.vue'
+import Section4 from '@/projects/db/index/Section4.vue'
+import Section5 from '@/projects/db/index/Section5.vue'
+import Section6 from '@/projects/db/index/Section6.vue'
 
 export default {
   name: 'home',
@@ -87,6 +94,7 @@ export default {
     Section3,
     Section4,
     Section5,
+    Section6,
   },
 
   data() {

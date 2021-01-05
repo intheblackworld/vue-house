@@ -43,7 +43,7 @@ export default {
   position: relative;
   z-index: 1;
  // background-attachment: fixed;
-  box-shadow: 0 0 15vw #0009;
+  // box-shadow: 0 0 15vw #0009;
 }
 .content {
   width:size(700);
