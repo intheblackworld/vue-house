@@ -45,7 +45,7 @@ export default {
 
       setTimeout(() => {
         this.showMask = true
-      }, 1500)
+      }, 2500)
     }
   },
   methods: {
