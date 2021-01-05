@@ -2,10 +2,13 @@
   <div class="bg">
     <div v-if="!isMobile">
       <div class="s1">
+        <div class="t1">
+        <span>2021</span>桃園最潮的生活浪潮</div>
       <img src="./s1/logo.png" 
         :alt="`${info.caseName}_logo`" class="logo">
       <img src="./s1/t.png" alt="" class="t">
       </div>
+        <div class="t3">（03）325-7555</div>
       <parallax breakpoint="(min-width: 68px)" :speed-factor="-0.7" direction="up">
         <div class="order-btn flex-c" v-scroll-to="{element: '#contact'}">
           <div>
