@@ -90,6 +90,16 @@ export default new Router({
     },
 
     {
+      path: '/videos',
+      name: 'videos',
+      // route level code-splitting
+      // this generates a separate chunk (news.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () =>
+        import(/* webpackChunkName: "news" */ './pages/Videos.vue')
+    },
+
+    {
       path: '/news/:id',
       name: 'news',
       // route level code-splitting

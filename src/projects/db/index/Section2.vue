@@ -6,9 +6,9 @@
     <div class="subtitle">
       對於銷售的偏執，我們絕不妥協<br />對於客戶，以真誠款待......................
     </div>
-    <img src="./s2/title.png" alt="" class="title-img">
-    <img src="./s2/icon.png" alt="" class="icon">
-    <img src="./s2/more.png" alt="" class="btn" @click="$router.push('/about')">
+    <img src="./s2/title.png" :alt="`${info.caseName}_title`" class="title-img">
+    <img src="./s2/icon.png" :alt="`${info.caseName}_icon`" class="icon">
+    <img src="./s2/more.png" :alt="`${info.caseName}_more`" class="btn" @click="$router.push('/about')">
   </div>
 </template>
 
@@ -206,6 +206,7 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
+import info  from '@/info'
 // import slider from '@/mixins/slider.js'
 // import { Carousel3d, Slide } from 'vue-carousel-3d'
 
@@ -223,6 +224,7 @@ export default {
       isPC,
       isMobile,
       isTablet,
+      info,
     }
   },
 

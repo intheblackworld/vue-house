@@ -13,7 +13,7 @@
       <Section1 />
     </div>
 
-    <div class="section" id="section2">
+    <div class="section relative" id="section2" style="z-index: 3;">
       <Section2 />
     </div>
     <div class="section" id="contact">
@@ -48,8 +48,8 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/lc/newslist/Section1.vue'
-import Section2 from '@/projects/lc/newslist/Section2.vue'
+import Section1 from '@/projects/db/newslist/Section1.vue'
+import Section2 from '@/projects/db/newslist/Section2.vue'
 
 export default {
   name: 'past',

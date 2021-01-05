@@ -1,9 +1,9 @@
 <template>
   <div class="section5">
-    <img src="./s5/bg.jpg" alt="" class="bg-img">
-    <img src="./s5/title.png" alt="" class="title-img">
+    <img src="./s5/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
+    <img src="./s5/title.png" :alt="`${info.caseName}_title`" class="title-img">
     <div class="title flex-ac" @click="$router.push('/news')">房產資訊</div>
-    <img src="./s2/more.png" alt="" class="btn" @click="$router.push('/news')">
+    <img src="./s2/more.png" :alt="`${info.caseName}_more`" class="btn" @click="$router.push('/news')">
   </div>
 </template>
 
@@ -207,6 +207,7 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
+import info  from '@/info'
 import slider from '@/mixins/slider.js'
 
 export default {
@@ -217,6 +218,7 @@ export default {
       isPC,
       isMobile,
       isTablet,
+      info,
     }
   },
 

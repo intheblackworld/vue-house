@@ -1,7 +1,7 @@
 <template>
   <div class="section1">
-    <img src="./s1/bg.jpg" alt="" class="bg-img">
-    <img src="./s1/t.png" alt="" class="t">
+    <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
+    <img src="./s1/t.png" :alt="`${info.caseName}_t`" class="t">
     <div class="title">
       What is great in man<br />
       is that he is a bridge<br />
@@ -268,6 +268,7 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
+import info from '@/info'
 
 export default {
   name: 'section1',
@@ -277,6 +278,7 @@ export default {
       isPC,
       isMobile,
       isTablet,
+      info,
     }
   },
 

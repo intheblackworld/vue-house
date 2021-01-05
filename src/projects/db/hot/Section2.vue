@@ -1,30 +1,23 @@
 <template>
   <div class="section2">
-    <img src="./s1/01.jpg" alt="" class="img">
-    <div class="border-container relative">
-      <div class="title">
-        用<span>真心</span>打造住宅，用<span>真情</span>構築城市
+    <div class="title1">
+      好的建築，不需用言語訴說
+    </div>
+    <div class="title2">
+      好的生活，讓生命真切感動
+    </div>
+    <div class="container flex wrap">
+      <div class="item" v-for="(item, index) in item_list" :key="item.title + index">
+        <img :src="item.img" :alt="`${info.caseName}`">
+        <div class="add"></div>
+        <div class="content flex flex-ac" v-if="!item.isEmpty">
+          <div class="item-title flex-c" v-html="item.title"></div>
+          <div class="item-desc flex-ac" v-html="item.desc"></div>
+        </div>
+        <div class="content flex-c" v-if="item.isEmpty">
+          <div class="item-coming">Coming soon</div>
+        </div>
       </div>
-      <div class="s-title">
-        現正熱銷
-      </div>
-      <div class="content-title">
-        鶯歌鳳鳴 立瑾Way
-      </div>
-      <div class="content-desc">
-        2020年11月<br />
-        延續著住戶的期盼，<br />
-        今年11月19日於鶯歌鳳鳴重劃區，<br />
-        辦理開工動土祈福典禮，<br />
-        將接續公開新案「立瑾way」，<br />
-        只為給您最好的居家。<br />
-        <span>基地地址：鶯歌鳳鳴段</span>
-      </div>
-      <div class="btn flex-c">
-        官網預約
-      </div>
-      <img src="./s1/youtube.jpg" alt="" class="video">
-      <img src="./s1/rb.png" alt="" class="rb">
     </div>
   </div>
 </template>
@@ -34,8 +27,8 @@
 
 .section2 {
   width: size(1920);
-  height:auto;
-  overflow: hidden;
+  height: auto;
+  // overflow: hidden;
   position: relative;
   background: #fff;
   background-size: auto;
@@ -55,107 +48,91 @@
   }
 }
 
-.border-container {
-  width: size(1637);
-  height:auto;
-  margin: size(50) auto 0;
-  border: 3px solid #ff8200;
-}
-
-.title {
-  width: size(700);
-  margin: 0 auto;
-  margin-top: size(-30);
-  font-size: 34px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: 3.4px;
-  text-align: center;
-  color: #606060;
-  background-color: #fff;
-  white-space: nowrap;
-
-  span {
-    color: #ff8200;
-  }
-}
-
-.img {
-  @include img_l_pc(1252, 117, 0);
-  z-index: 2;
-}
-
-.s-title {
-  @include div_r_pc(140, 47, 227, 222);
+.title1 {
+  @include img_l_pc(596, -206, 1089);
   font-size: size(32);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(6.37);
-  text-align: left;
-  color: #ff8200;
-  white-space: nowrap;
-}
-
-.content-title {
-  @include div_r_pc(391, 63, 470, 76);
-  font-size: size(42.5);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(4.25);
-  text-align: left;
-  color: #606060;
-  white-space: nowrap;
-}
-
-.content-desc {
-  @include div_r_pc(463, 100, 550, 0);
-  font-size: size(20);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.65;
-  letter-spacing: size(1);
+  line-height: 1.74;
+  letter-spacing: size(7.36);
   text-align: left;
-  color: #606060;
+  color: #333333;
+  white-space: nowrap;
+  z-index: 3;
+}
 
-  span {
-    font-size: size(23);
-    font-weight: bold;
-    letter-spacing: size(1.15);
+.title2 {
+  @include img_r_pc(496, -156, 234);
+  font-size: size(32);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.74;
+  letter-spacing: size(7.36);
+  text-align: left;
+  color: #333333;
+  white-space: nowrap;
+}
+
+.container {
+  width: size(496 * 3 + 72 + 36);
+  margin: size(100) auto size(170);
+}
+
+.item {
+  width: size(496);
+  height: size(618);
+  background-color: #f7f8f8;
+  margin: 0 size(18) size(50);
+
+  .add {
   }
-}
 
-.btn {
-  @include div_r_pc(200, 40, 850, 260);
-  font-size: size(20);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.65;
-  letter-spacing: size(1);
-  text-align: left;
-  background-color: #ff8200;
-  color: #fff;
-}
+  img {
+    width: 100%;
+    height: size(487);
+    object-fit: cover;
+  }
 
-.video {
-  cursor: pointer;
-  @include div_r_pc(1343, 762, 1292, 150);
-}
+  .content {
+    height: size(130);
+  }
 
-.rb {
-  position: absolute;
-  background-color: #fff;
-  width: size(308);
-  height: size(167);
-  right: size(-100);
-  bottom: size(-80);
+  .item-title {
+    width: 30%;
+    font-size: size(36);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.05;
+    letter-spacing: size(0.72);
+    text-align: left;
+    color: #000000;
+  }
+
+  .item-desc {
+    width: 70%;
+    font-size: size(20);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.37;
+    letter-spacing: size(0.92);
+    text-align: left;
+    color: #4d4d4d;
+  }
+
+  .item-coming {
+    font-size: size(36.5);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.35;
+    letter-spacing: size(0.73);
+    text-align: center;
+    color: #8e8e8e;
+  }
 }
 
 @media only screen and (max-width: 1440px) {
@@ -304,6 +281,7 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
+import info from '@/info'
 
 export default {
   name: 'section2',
@@ -313,8 +291,47 @@ export default {
       isPC,
       isMobile,
       isTablet,
-      tabIndex: 0,
-      slideList: [
+      info,
+      item_list: [
+        {
+          title: '碧波白',
+          desc:
+            '新北市｜新店區<br />23-49坪‧ 70‧78坪大戶雙併<br />走遍千山萬水 還是碧潭最美',
+          img: require('./s1/imgbg.jpg'),
+          isEmpty: false,
+        },
+        {
+          title: '陽光<br />PARK',
+          desc: '新北市｜新店區<br />27-54坪<br />新店陽光公園特區生態建築',
+          img: require('./s1/imgbg.jpg'),
+          isEmpty: false,
+        },
+        {
+          title: '神采<br />飛洋',
+          desc:
+            '新北市｜洲子洋重劃區<br />2房(15、20坪)｜3房(25、33坪)<br />公園 校園 花園 誠徵有園人',
+          img: require('./s1/imgbg.jpg'),
+          isEmpty: false,
+        },
+        {
+          title: '太陽<br />帝國',
+          desc:
+            '新北市｜中和區<br />19-39坪 2-3房<br />不是王牌不出手 唯有贏家能出手',
+          img: require('./s1/imgbg.jpg'),
+          isEmpty: false,
+        },
+        {
+          title: '',
+          desc: '',
+          img: require('./s1/imgbg.jpg'),
+          isEmpty: true,
+        },
+        {
+          title: '',
+          desc: '',
+          img: require('./s1/imgbg.jpg'),
+          isEmpty: true,
+        },
       ],
     }
   },

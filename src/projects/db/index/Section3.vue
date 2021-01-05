@@ -1,12 +1,12 @@
 <template>
   <div class="section3">
-    <img src="./s3/bg.jpg" alt="" class="bg-img">
+    <img src="./s3/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
     <h1 class="title">熱銷建案</h1>
     <h1 class="subtitle">
       以真心，推薦好建築
     </h1>
-    <img src="./s3/title.png" alt="" class="title-img">
-    <img src="./s2/more.png" alt="" class="btn" @click="$router.push('/hot')">
+    <img src="./s3/title.png" :alt="`${info.caseName}_title`" class="title-img">
+    <img src="./s2/more.png" :alt="`${info.caseName}_more`" class="btn" @click="$router.push('/hot')">
   </div>
 </template>
 
@@ -206,6 +206,7 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
+import info  from '@/info'
 
 export default {
   name: 'section3',
@@ -215,6 +216,7 @@ export default {
       isPC,
       isMobile,
       isTablet,
+      info,
     }
   },
 

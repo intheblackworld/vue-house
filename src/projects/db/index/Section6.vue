@@ -1,9 +1,9 @@
 <template>
   <div class="section6">
     <!-- <div class="title">經典建案</div> -->
-    <img src="./s6/i.jpg" alt="" class="img">
-    <img src="./s6/title.png" alt="" class="title-img">
-    <img src="./s4/more.png" alt="" class="btn" @click="$router.push('/videos')">
+    <img src="./s6/i.jpg" :alt="`${info.caseName}_i`" class="img">
+    <img src="./s6/title.png" :alt="`${info.caseName}_title`" class="title-img">
+    <img src="./s4/more.png" :alt="`${info.caseName}_more`" class="btn" @click="$router.push('/videos')">
   </div>
 </template>
 
@@ -168,6 +168,7 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
+import info  from '@/info'
 
 export default {
   name: 'section6',
@@ -177,6 +178,7 @@ export default {
       isPC,
       isMobile,
       isTablet,
+      info,
     }
   },
 

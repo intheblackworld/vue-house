@@ -48,8 +48,8 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/lc/products/Section1.vue'
-import Section2 from '@/projects/lc/products/Section2.vue'
+import Section1 from '@/projects/db/products/Section1.vue'
+import Section2 from '@/projects/db/products/Section2.vue'
 
 export default {
   name: 'home',

@@ -1,8 +1,8 @@
 <template>
   <div class="section1">
-    <img src="./s1/bg.jpg" alt="" class="bg-img">
+    <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
     <h1 class="title">關於我們</h1>
-    <img src="./s1/title.png" alt="" class="title-img">
+    <img src="./s1/title.png" :alt="`${info.caseName}_title`" class="title-img">
     <div class="bottom"></div>
   </div>
 </template>
@@ -191,12 +191,14 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
+import info from '@/info'
 
 export default {
   name: 'section1',
 
   data() {
     return {
+      info,
       isPC,
       isMobile,
       isTablet,

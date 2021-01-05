@@ -1,8 +1,25 @@
 <template>
   <div class="house-info" id="house-info">
     <div class="content">
-      <div class="title" data-aos="fade-down" data-aos-delay="0">{{info.mechanism}}</div>
-      <div class="info" data-aos="fade-down" data-aos-delay="200">
+      <!-- <div class="title" data-aos="fade-down" data-aos-delay="0">{{info.mechanism}}</div> -->
+      <img src="../projects/db/contact/logo.png" :alt="`${info.caseName}_logo`" class="logo">
+      <img src="../projects/db/contact/logot.png" :alt="`${info.caseName}_logot`" class="logot">
+      <div class="desc">
+        <span>新北市新店區安興路105號10樓之7</span><br />
+        P 02-2211-7711 / F 02-2212-3760
+      </div>
+      <div class="links flex-ac flex-jb">
+        <a href="#">
+          <img src="../projects/db/contact/icon1.png" :alt="`${info.caseName}_icon1`" class="ig">
+        </a>
+        <a href="#">
+          <img src="../projects/db/contact/icon2.png" :alt="`${info.caseName}_icon2`" class="ig">
+        </a>
+        <a href="#">
+          <img src="../projects/db/contact/icon3.png" :alt="`${info.caseName}_icon3`" class="ig">
+        </a>
+      </div>
+      <!-- <div class="info" data-aos="fade-down" data-aos-delay="200">
         <div class="item">
           電話 {{info.phone}}
         </div>
@@ -12,7 +29,7 @@
         <div class="item">
           地址 {{info.address}}
         </div>
-      </div>
+      </div> -->
     </div>
     <Footer />
   </div>
@@ -37,16 +54,19 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/style/variableColor.scss';
+@import '@/assets/style/function.scss';
 .house-info {
   width: 100vw;
   background: $house_bg;
   position: relative;
+  overflow: hidden;
   z-index: 1;
- // background-attachment: fixed;
+  // background-attachment: fixed;
   // box-shadow: 0 0 15vw #0009;
 }
 .content {
-  width:size(700);
+  width: size(700);
+  height: size(230);
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -55,13 +75,13 @@ export default {
 }
 
 .title {
-  margin:0.5em 0 0.0em 0;
-  font-size:size(50);
+  margin: 0.5em 0 0em 0;
+  font-size: size(50);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.6;
-  letter-spacing:0.1em;
+  letter-spacing: 0.1em;
   text-align: left;
   color: $house_title_color;
 }
@@ -70,33 +90,72 @@ export default {
   margin-bottom: size(25);
 }
 
-.item {
-  font-size: size(18);
-  font-weight: 500;
+// .item {
+//   font-size: size(18);
+//   font-weight: 500;
+//   font-stretch: normal;
+//   font-style: normal;
+//   line-height: 2;
+//   letter-spacing: 0.1em;
+//   text-align: center;
+//   color: #ffffff;
+//   //margin-bottom: 12px;
+//   //border-left: 4px solid $house_border_color;
+//   .label {
+//     font-size: 1em;
+//     color: $house_label_color;
+//     margin-bottom: 0;
+//     margin-right: 0.8em;
+//     white-space: nowrap;
+//     font-family: $family3;
+//     width: 4.5em;
+//   }
+
+//   .desc {
+//     font-size: 14px;
+//     text-align: left;
+//     color: $house_desc_color;
+//     font-family: $family3;
+//     font-weight: bold;
+//   }
+// }
+
+.desc {
+}
+
+.logo {
+  @include img_l_pc(889, -50, 36);
+}
+
+.logot {
+  @include img_l_pc(335, 111, 959);
+}
+
+.desc {
+  @include img_l_pc(379, 152, 960);
+  font-size: size(23.2);
+  font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2;
-  letter-spacing:0.1em;
-  text-align: center;
+  line-height: 1.27;
+  letter-spacing: size(1.46);
+  text-align: left;
+  white-space: nowrap;
   color: #ffffff;
-  //margin-bottom: 12px;
-  //border-left: 4px solid $house_border_color;
-  .label {
-    font-size: 1em;
-    color: $house_label_color;
-    margin-bottom: 0;
-    margin-right: 0.8em;
-    white-space: nowrap;
-    font-family: $family3;
-    width: 4.5em;
+
+  span {
+    font-weight: bold;
+  }
+}
+
+.links {
+  @include img_r_pc(184, 154, 362);
+  a {
+    width: size(60);
   }
 
-  .desc {
-    font-size: 14px;
-    text-align: left;
-    color: $house_desc_color;
-    font-family: $family3;
-    font-weight: bold;
+  img {
+    width: 100%;
   }
 }
 
@@ -118,7 +177,7 @@ export default {
 
   .item {
     align-items: flex-start;
-  font-size: sizem(15);
+    font-size: sizem(15);
     margin: 0;
     width: 100%;
     height: auto;

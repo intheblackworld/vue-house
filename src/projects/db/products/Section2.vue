@@ -1,25 +1,23 @@
 <template>
   <div class="section2">
-    <transition-group name="swipe-fade" mode="out-in">
-      <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`bg-img absolute`">
-        <img :src="slide.img" alt="" class="bg-img">
+    <!-- <div class="title1">
+      好的建築，不需用言語訴說
+    </div>
+    <div class="title2">
+      好的生活，讓生命真切感動
+    </div> -->
+    <div class="container flex wrap">
+      <div class="item" v-for="(item, index) in item_list" :key="item.title + index">
+        <img :src="item.img" :alt="`${info.caseName}`">
+        <div class="add"></div>
+        <div class="content flex flex-ac" v-if="!item.isEmpty">
+          <div class="item-title flex-c" v-html="item.title"></div>
+          <div class="item-desc flex-ac" v-html="item.desc"></div>
+        </div>
+        <div class="content flex-c" v-if="item.isEmpty">
+          <div class="item-coming">Coming soon</div>
+        </div>
       </div>
-    </transition-group>
-    <div :class="slideList[slideIndex].class">
-    <div class="title" v-html="slideList[slideIndex].name">
-    </div>
-    <div class="desc" v-html="slideList[slideIndex].desc">
-    </div>
-    </div>
-    <div class="sidebar flex-ac wrap" v-if="isPC">
-      <div :class="`item flex-c ${slideIndex === index ? 'active' : ''}`" v-for="(slide, index) in slideList" :key="slide.name" @click="slideIndex = index">
-        {{slide.name}}
-      </div>
-    </div>
-    <div class="page-head flex-c" v-if="isMobile">
-      <div class="page-title">{{slideList[slideIndex].name}}</div>
-      <div class="prev-btn" @click="addIndex"></div>
-      <div class="next-btn" @click="decIndex"></div>
     </div>
   </div>
 </template>
@@ -29,22 +27,16 @@
 
 .section2 {
   width: size(1920);
-  height: calc(100vh -  3.6458333333vw);
-  min-height: size(840);
-  max-height: size(1080);
-  overflow: hidden;
+  height: auto;
+  // overflow: hidden;
   position: relative;
   background: #fff;
   background-size: auto;
-  &::before{content:"";width: 100%;height:16%;position: absolute;
-  top: 0;left: 0;background: #FFF;z-index: 4;
-  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,.95) 20%,rgba(255,255,255,0.7) 44%,rgba(255,255,255,0) 100%);
-  }
 }
 
 .bg-img {
   width: size(1920);
-  height:100%;
+  height: auto;
   position: absolute;
   top: 0;
   left: 0;
@@ -55,68 +47,91 @@
     position: relative;
   }
 }
-[class*=txt]{
+
+.title1 {
+  @include img_l_pc(596, -206, 1089);
+  font-size: size(32);
+  font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  text-align: justify;
-  position: absolute;
-  top:size(112);
-  left:size(830);
-  line-height: 1.67;
-  letter-spacing: 0.2em;
-  /*
-  @include div_l_pc(764, 112, 112, 830);*/
+  line-height: 1.74;
+  letter-spacing: size(7.36);
+  text-align: left;
+  color: #333333;
+  white-space: nowrap;
+  z-index: 3;
 }
-.txt{
-  &1{width: size(764);left:size(830);color: #606060;}
-  &2{width: size(624);left:size(973);color: #606060;}
-  &3{width: size(1310);left:size(304);color: #fff;}
-  &4{width: size(782);left:size(174);color: #fff;}
-  &5{width: size(1351);left:size(205);color: #606060;}
-}
-.title {
-  font-size: size(40);
-  font-weight: 500;
+
+.title2 {
+  @include img_r_pc(496, -156, 234);
+  font-size: size(32);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.74;
+  letter-spacing: size(7.36);
+  text-align: left;
+  color: #333333;
   white-space: nowrap;
 }
 
-.desc {
-  font-size: size(25);
-  font-weight: normal;
-}
-
-.sidebar {
-  background-image: linear-gradient(
-    to bottom,
-    rgba(112, 105, 103, 0.3) 16%,
-    #000000 88%
-  );
-  width: size(267);
-  height:100%;
-  z-index: 3;
-  position: absolute;
-  top: 0;
-  right: 0;
-  align-content: center;
+.container {
+  width: size(496 * 3 + 72 + 36);
+  margin: size(50) auto size(170);
 }
 
 .item {
-  width: 100%;
-  height: size(113);
-  font-size: size(33);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2.23;
-  letter-spacing: size(3.3);
-  text-align: left;
-  color: #ffffff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.22);
-  cursor: pointer;
-  transition: all 0.3s;
+  width: size(496);
+  height: size(618);
+  background-color: #f7f8f8;
+  margin: 0 size(18) size(50);
 
-  &.active, &:hover {
-    background-color: #ff8200;
+  .add {
+  }
+
+  img {
+    width: 100%;
+    height: size(487);
+    object-fit: cover;
+  }
+
+  .content {
+    height: size(130);
+  }
+
+  .item-title {
+    width: 30%;
+    font-size: size(36);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.05;
+    letter-spacing: size(0.72);
+    text-align: left;
+    color: #000000;
+  }
+
+  .item-desc {
+    width: 70%;
+    font-size: size(20);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.37;
+    letter-spacing: size(0.92);
+    text-align: left;
+    color: #4d4d4d;
+  }
+
+  .item-coming {
+    font-size: size(36.5);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.35;
+    letter-spacing: size(0.73);
+    text-align: center;
+    color: #8e8e8e;
   }
 }
 
@@ -136,193 +151,206 @@
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    min-height: sizem(560);
+    min-height: sizem(1134);
     max-height: sizem(812);
-    height: sizem(560);
+    height: sizem(1134);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
-  &::before{
-  top: auto;bottom: 32.5vw;
-  z-index: 1;
-  }
   }
 
   .bg-img {
     width: sizem(375);
-    height: sizem(210);
+    height: 100%;
     position: absolute;
-    top: auto;
+    top: 0;
     left: 0;
-    bottom: 0;
     display: block;
     object-fit: cover;
     margin-top: 0;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
 
     &:nth-child(1) {
       position: relative;
     }
   }
-[class*=txt]{
-  top:sizem(144);
-  /*
-  @include div_l_pc(764, 112, 112, 830);*/
-}
-.txt{
-  &1,
-  &2,
-  &3,
-  &4,
-  &5{width: sizem(310);left:sizem(33);color: #606060;
-  z-index: 5;}
-}
-.title {
-  font-size: sizem(25);display: none;
-}
 
-.desc {
-  font-size: sizem(15);
-  font-weight: normal;
-}
-  .page-head {
-    width: 100vw;
-    height: sizem(119);
-    background: rgba(0, 0, 0, 0.4);
-    position: relative;
+  .border-container {
+    width: sizem(355);
+    height: sizem(1027);
+    margin: sizem(40) auto sizem(30);
+    border: 3px solid #ff8200;
   }
 
-  .page-title {
-    font-size: sizem(27);
+  .title {
+    width: sizem(314);
+    margin: 0 auto;
+    margin-top: sizem(-30);
+    font-size: sizem(20);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.72;
-    letter-spacing: sizem(2.7);
+    line-height: 2;
+    letter-spacing: 1px;
     text-align: center;
-    color: #ffffff;
+    color: #606060;
+    background-color: #fff;
+    white-space: nowrap;
+
+    span {
+      color: #ff8200;
+    }
   }
-  .prev-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 20px;
-    width: sizem(30);
-    height: sizem(30);
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: sizem(18) sizem(25) sizem(18) 0;
-    border-color: transparent #fff transparent transparent;
+
+  .img {
+    @include img_l_m(340, 60, 0);
+    z-index: 2;
   }
-  .next-btn {
+
+  .s-title {
+    @include div_r_m(130, 41, 341, 123);
+    font-size: sizem(28);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(5.37);
+    text-align: left;
+    color: #ff8200;
+    white-space: nowrap;
+  }
+
+  .content-title {
+    @include div_l_m(258, 41, 407, 23);
+    font-size: sizem(28);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(2.8);
+    text-align: left;
+    color: #606060;
+    white-space: nowrap;
+  }
+
+  .content-desc {
+    @include div_r_m(310, 260, 476, 23);
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.65;
+    letter-spacing: sizem(0.75);
+    text-align: left;
+    color: #606060;
+
+    span {
+      font-size: sizem(15);
+      font-weight: bold;
+      letter-spacing: sizem(0.75);
+    }
+  }
+
+  .btn {
+    @include div_r_m(150, 40, 700, 113);
+    font-size: sizem(23);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.65;
+    letter-spacing: sizem(1);
+    text-align: left;
+    background-color: #ff8200;
+    color: #fff;
+  }
+
+  .video {
+    cursor: pointer;
+    @include div_r_m(320, 181, 782, 17);
+  }
+
+  .rb {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 20px;
-    width: sizem(30);
-    height: sizem(30);
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: sizem(18) 0 sizem(18) sizem(25);
-    border-color: transparent transparent transparent #fff;
+    background-color: #fff;
+    width: sizem(132);
+    height: sizem(72);
+    right: sizem(-10);
+    bottom: sizem(-40);
   }
 }
 </style>
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
-import slider from '@/mixins/slider.js'
-import { Carousel3d, Slide } from 'vue-carousel-3d'
+import info from '@/info'
 
 export default {
   name: 'section2',
 
-  mixins: [slider],
-  components: {
-    Carousel3d,
-    Slide,
-  },
   data() {
     return {
       isPC,
       isMobile,
       isTablet,
-      slideList: [
+      info,
+      item_list: [
         {
-          class:"txt1",
-          img: require('./s1/1.jpg'),
-          name: '真心。穩固',
+          title: '碧波白',
           desc:
-            '台灣位於太平洋地震帶上，地震頻繁，耐震穩固絕對是建築首要注意的重點。「立瑾建築機構」以確實精確的工法做建築，除了符合CNS國家標準外，更精益求精以更高規格打造百年穩固、精實耐震之好房。',
+            '新北市｜新店區<br />23-49坪‧ 70‧78坪大戶雙併<br />走遍千山萬水 還是碧潭最美',
+          img: require('../hot/s1/imgbg.jpg'),
+          isEmpty: false,
         },
         {
-          class:"txt2",
-          img: require('./s1/2.jpg'),
-          name: '真心。建材',
-          desc:
-            '以「人」為出發點，考慮建築設計的所有細節，以頂規建材打造經典住宅，不僅石材、鋼材精挑細選，更融入AIOT設備打造智慧住宅，讓科技結合生活。',
+          title: '陽光<br />PARK',
+          desc: '新北市｜新店區<br />27-54坪<br />新店陽光公園特區生態建築',
+          img: require('../hot/s1/imgbg.jpg'),
+          isEmpty: false,
         },
         {
-          class:"txt3",
-          img: require('./s1/3.jpg'),
-          name: '真心。地段',
+          title: '神采<br />飛洋',
           desc:
-            '好地段，是所有住宅的著力點。「立瑾建築機構」看準未來發展、繁華商圈、增值性高、無可取代之絕佳基地，打造完美建築。土地的價值，經由立瑾完美體現。',
+            '新北市｜洲子洋重劃區<br />2房(15、20坪)｜3房(25、33坪)<br />公園 校園 花園 誠徵有園人',
+          img: require('../hot/s1/imgbg.jpg'),
+          isEmpty: false,
         },
         {
-          class:"txt4",
-          img: require('./s1/4.jpg'),
-          name: '真心。設計',
+          title: '太陽<br />帝國',
           desc:
-            '「立瑾建築機構」致力於建築美學發展，建築團隊精挑細選，依照周邊環境、人文特色，設計建築外觀及景觀，呈現當代建築美學，打造絕美城市天際線。',
+            '新北市｜中和區<br />19-39坪 2-3房<br />不是王牌不出手 唯有贏家能出手',
+          img: require('../hot/s1/imgbg.jpg'),
+          isEmpty: false,
         },
         {
-          class:"txt5",
-          img: require('./s1/5.jpg'),
-          name: '真心。生活',
-          desc:
-            '將美學融入生活，將藝術結合建築，建築的初心我們從未忘記。<br>◆ 外觀結構隨基地環境發展成長，使地景與建築更具協調性。<br>◆ 照顧全年齡使用性的公設設計，不論多樣性、通用性皆考慮所有層面精心打造。<br>◆ 景觀園藝的精心規劃，選用符合風格的植栽、動線順暢的配置，由外而內符合華美璞韻的建築語彙。'
+          title: '',
+          desc: '',
+          img: require('../hot/s1/imgbg.jpg'),
+          isEmpty: true,
+        },
+        {
+          title: '',
+          desc: '',
+          img: require('../hot/s1/imgbg.jpg'),
+          isEmpty: true,
         },
       ],
     }
   },
 
   methods: {
-    goToSlide(index) {
-      this.slideIndex = index
-      // this.$refs.mycarousel.goSlide(index)
-    },
+    // @slideChangeTransitionEnd="slideChanged"
+    // slideChanged(e) {
+    //   const swiper = this.$refs.mySwiper.swiper
+    //   if (swiper.isEnd) {
+    //     this.slideIndex = 0
+    //   } else if (swiper.isBeginning) {
+    //     this.slideIndex = swiper.slides.length - 3
+    //   } else {
+    //     this.slideIndex = swiper.activeIndex - 1
+    //   }
+    // },
   },
 
-  mounted() {
-    this.stopAutoPlay = true
-    if (this.$route.query.index == 1) {
-      this.goToSlide(0)
-    }
-
-    if (this.$route.query.index == 2) {
-      this.goToSlide(1)
-    }
-
-    if (this.$route.query.index == 3) {
-      this.goToSlide(2)
-    }
-
-    if (this.$route.query.index == 4) {
-      this.goToSlide(3)
-    }
-
-    if (this.$route.query.index == 5) {
-      this.goToSlide(4)
-    }
-  },
+  mounted() {},
 
   created() {},
 

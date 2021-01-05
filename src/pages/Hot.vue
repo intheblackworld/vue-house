@@ -13,9 +13,9 @@
       <Section1 />
     </div>
 
-    <!-- <div class="section" id="section2">
+    <div class="section relative" id="section2" style="z-index: 1;">
       <Section2 />
-    </div> -->
+    </div>
     <div class="section" id="contact">
       <ContactSection :hideOrder="true" />
     </div>
@@ -48,8 +48,8 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/lc/hot/Section1.vue'
-import Section2 from '@/projects/lc/hot/Section2.vue'
+import Section1 from '@/projects/db/hot/Section1.vue'
+import Section2 from '@/projects/db/hot/Section2.vue'
 
 export default {
   name: 'hot',
