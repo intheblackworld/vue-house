@@ -1,27 +1,7 @@
 <template>
   <div class="bg">
-    <div v-if="!isMobile">
-      <div class="s1">
-        <div class="t1">
-        <span>2021</span>桃園最潮的生活浪潮</div>
-      <img src="./s1/logo.png" 
-        :alt="`${info.caseName}_logo`" class="logo">
-      <img src="./s1/t.png" alt="" class="t">
-      </div>
-        <div class="t3">（03）325-7555</div>
-      <parallax breakpoint="(min-width: 68px)" :speed-factor="-0.7" direction="up">
-        <div class="order-btn flex-c" v-scroll-to="{element: '#contact'}">
-          <div>
-            <div>立即預約</div>
-            <parallax class="botton" breakpoint="(min-width: 68px)" :speed-factor="-0.255" direction="up">
-            <img src="./s1/botton.png" 
-        :alt="`${info.caseName}logo`">
-        </parallax>
-          </div>
-        </div>
-      </parallax>
-      <!-- <parallax :class="`animate-slide`" breakpoint="(min-width: 68px)" :speed-factor="0.5" direction="down"> -->
-      <div class="animate-slide">
+    <div>
+      <div class="animate-slide" v-if="!isMobile">
        <!--  <img src="./s1/1.png" 
         :alt="`${info.caseName}logo`" class="left1" data-parallax="0">
         <img src="./s1/2.png" alt="" class="left2">
@@ -35,32 +15,47 @@
         <img src="./s1/pc1.png" 
         :alt="`${info.caseName}_logo`" class="pc1" data-parallax="1">
       </div>
-      <!-- </parallax> -->
-    </div>
-
-    <div v-if="isMobile" class="relative">
-      <!-- <parallax :class="`animate-slide`" breakpoint="(min-width: 68px)" :speed-factor="0.5" direction="down"> -->
-      <div class="animate-slide">
+      <div class="animate-slide" v-if="isMobile">
         <!-- <img src="./s1/2.png" alt="" class="left2">
         <img src="./s1/4.png" alt="" class="left3"> -->
         <img src="./s1/mo3.png" alt="" class="mo3" data-parallax="3">
         <img src="./s1/mo2.png" alt="" class="mo2" data-parallax="2">
         <img src="./s1/mo1.png" alt="" class="mo1" data-parallax="1">
       </div>
-      <!-- </parallax> -->
-      <img src="./s1/logo.png" alt="" class="logo">
+      <div class="s1">
+        <div class="t1">
+        <span>202</span>1桃園最潮的生活浪潮</div>
+      <img src="./s1/logo.png" 
+        :alt="`${info.caseName}_logo`" class="logo">
+      <img src="./s1/t2.png" 
+        :alt="`${info.caseName}_logo`" class="t2">
       <img src="./s1/t.png" alt="" class="t">
-      <parallax breakpoint="(min-width: 68px)" :speed-factor="-0.7" direction="up">
+        <div class="t3">（03）325-7555</div>
+      <img src="./s1/t4.png" alt="" class="t4">
+      <div class="order-btn flex-c" v-scroll-to="{element: '#contact'}">
+          <div>
+            <img src="./s1/reservation.png" :alt="`${info.caseName}_reservation`">
+            <div>搶先預約</div>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20.71 16.72' fill='%23ffb321'%3E%3Cpolygon class='cls-1' points='10.36 16.72 20.71 0 0 0 10.36 16.72'/%3E%3C/svg%3E"  
+        :alt="`${info.caseName}_logo`" class="botton">
+          </div>
+        </div>
+      </div>
+       <!-- <parallax breakpoint="(min-width: 68px)" :speed-factor="-0.7" direction="up">
         <div class="order-btn flex-c" v-scroll-to="{element: '#contact'}">
           <div>
-            <div>立即預約</div>
+            <img src="./s1/reservation.png" :alt="`${info.caseName}_reservation`">
+            <div>搶先預約</div>
             <parallax class="botton" breakpoint="(min-width: 68px)" :speed-factor="-0.255" direction="up">
             <img src="./s1/botton.png" 
-        :alt="`${info.caseName}logo`">
+        :alt="`${info.caseName}_logo`">
         </parallax>
           </div>
         </div>
-      </parallax>
+      </parallax> -->
+      <!-- <parallax :class="`animate-slide`" breakpoint="(min-width: 68px)" :speed-factor="0.5" direction="down"> -->
+      
+      <!-- </parallax> -->
     </div>
   </div>
 </template>
@@ -100,7 +95,9 @@
   position: relative;
   // z-index: 5;
   height:size(900);
-  background-color: #2d73ab;
+  background: #2d73ab;
+ // background-size: cover;
+
 }
 .s1 {
   height: 100vh;
@@ -110,31 +107,57 @@
   position: absolute;
 }
 
-.bg-img {
-  width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-  position: absolute;
-  left: 0;
-}
-
 .logo {
-  @include img_c_pc(583, 353);
-  top:calc(45% - 10vw);
+  @include img_c_pc(779, 353);
+  top:calc(50% - 14.5vw);
 }
 
 .t {
-  @include img_c_pc(574, 577);
-  top:calc(45% + 1vw);
+  @include img_l_pc(410, 0,668);
+  top:calc(50% + 14.8vw);
+}
+
+.t1 {
+  @include img_c_pc(1920, 50);
+  letter-spacing: 0.5em;
+  font-weight: 500;
+  font-size: size(49);
+  text-align: center;
+  color: #ffb321;
+  margin-left: 0.3em;
+span{
+  letter-spacing: 0.1em;}
+}
+.t2{
+  @include img_c_pc(567, 0);
+  top:calc(50% + 3vw);
+}
+.t3 {
+  @include img_c_pc(659, 50);
+  top:calc(50% + 18vw);
+  letter-spacing: -0.015em;
+  font-weight:700;
+  font-size: size(60);
+  text-align: left;
+  color: #fff;
+span{
+  letter-spacing: 0.1em;}
+}
+.t4{
+  @include img_r_pc(303, 0,420);
+  top:calc(50% - 3.7vw);
+    animation: an3 3s infinite alternate;
+    transform-origin: 10% 90%
 }
 
 .order-btn {
-  @include img_c_pc(310, 610);
+  @include img_r_pc(200, 0,560);
+  top:calc(50% + 12.3vw);
   z-index: 10;
-  height: size(310);
+  height: size(200);
   background-color: #ff6855;
   border-radius: 999px;
-  font-size: size(54.2);
+  font-size: size(34);
   font-weight: 900;
   font-stretch: normal;
   font-style: normal;
@@ -143,19 +166,21 @@
   text-align: center;
   color: #ffffff;
   cursor: pointer;
-  > div {
-    width: 100%;
-    cursor: pointer;
+  > div {position: relative;
+    width: 100%;top:-0.3em;
   }
+  img{
+  height:0.485em;}
+  &:hover{
+    animation: an4 3s infinite;}
 }
 
 .botton {
   position: absolute;
-  top:calc(50% + 0.3em);
-  left: calc(50% - 0.3em);
-  width: size(32);
-  margin: 0 auto 0;
-  cursor: pointer;
+  top:calc(50% + 1.5em);
+  left:0;
+  width: 100%;
+  height:size(18);
 }
 
 .animate-slide {
@@ -202,7 +227,7 @@
   }
 
   .pc4 {
-    @include img_r_pc(1599, 630, 297);
+    @include img_r_pc(1700, 630,200);
   }
 }
 
@@ -211,9 +236,23 @@
     transform: translateY(0);
   }
 }
-@keyframes an2 {
+@keyframes an3 {
   to {
-    transform: translateY(0) rotate(5deg);
+    transform: rotate(5deg);
+  }
+}
+@keyframes an4 {
+  80% {
+    transform: scale(1.2)rotate(5deg);
+  }
+  85% {
+    transform: scale(1) ;
+  }
+  90% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 /* 平板尺寸 */
@@ -236,53 +275,45 @@
   min-height: sizem(172 + 176);
   max-height:  sizem(172 + 176);
 }
-
-  .relative {
-    min-height: size-m(750);
-    padding-top: 0;
-    // padding-bottom: size-m(62);
-    //overflow: hidden;
-  }
-
-  .bg-img {
-    width: 100vw;
-    min-height: size-m(750);
-  }
-
   .logo {
-    @include img_c_m(300, 212);
+    @include img_c_m(300, 190);
   }
 
   .t {
-    @include img_c_m(292, 327);
+    @include img_c_m(232, 450);
   }
+.t1 {
+  @include img_c_m(375, 135);
+  font-size: sizem(21);
+  letter-spacing: 0.2em;
+  margin-left: 0.1em;}
+
+.t2{
+  @include img_c_m(280, 320);
+}
+.t3 {
+  @include img_c_m(375, 482);
+  font-size: sizem(34);
+  text-align: center;margin-right: 0.3em}
+.t4{
+  @include img_r_m(70, 310,0);
+    animation: an3 3s infinite alternate;
+    transform-origin: 10% 90%
+}
 
   .order-btn {
-    @include img_c_m(172, 380);
+    @include img_c_m(172, 610);
     z-index: 10;
     height: sizem(172);
-    background-color: #ff6855;
-    border-radius: 999px;
     font-size: sizem(30.3);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(3.33);
-    text-align: center;
-    color: #ffffff;
-    cursor: pointer;
     > div {
       width: 100%;
       cursor: pointer;
     }
+  &:hover{
+    animation:none;}
   }
 
-  .botton {
-    width: sizem(22);
-    margin: 0 auto 0;
-    cursor: pointer;
-  }
 
   .animate-slide {
     width: 100%;

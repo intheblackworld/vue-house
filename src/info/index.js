@@ -1,12 +1,12 @@
 // import { isMobile } from '@/utils'
 
 export default {
-  address: '接待會館：',
+  address: '接待會館：桃園市桃園區幸福路上(同安派出所旁)',
   // isMobile ? '接待中心：<br />106台北市大安區基隆路三段20-1號' : '接待中心：106台北市大安區基隆路三段20-1號',
   googleSrc:
-    'https://www.google.com/maps/',
-  googleLink: 'https://goo.gl/maps/',
-  phone: '02-2608-6985',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1807.587435393966!2d121.2989889580804!3d25.02813889599381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDAxJzQxLjMiTiAxMjHCsDE4JzAwLjMiRQ!5e0!3m2!1szh-TW!2stw!4v1609839535129!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/trD5N6LMwjgB1ZgD9',
+  phone: '03-325-7555',
   fbLink:
     'https://www.facebook.com/',
   fbMessage: 'https://m.me/',
@@ -28,7 +28,7 @@ export default {
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
   order: {
-    title: '預約賞屋',
-    subTitle: ''
+    title: '預約賞屋' ,
+    subTitle: '若想了解建案資訊，歡迎填寫表單或來電洽詢，將由專人為您服務，謝謝！'
   },
 }

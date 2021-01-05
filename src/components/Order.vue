@@ -1,20 +1,20 @@
 <template>
   <div class="order-bg">
-    <!-- <div class="order-title" v-scroll-to="{ element: `#contact` }">{{order.title}}</div> -->
+    <div class="order-title" v-scroll-to="{ element: `#contact` }">{{order.title}}</div>
     <h3 class="order-subtitle">{{order.subTitle}}</h3>
     <div class="order">
       <div class="form">
         <div class="group">
           <div class="row">
-            <label>姓名<span>*</span></label>
-            <el-input
+            <label for="name">姓名<span>*</span></label>
+            <el-input id="name"
               v-model="form.name"
               placeholder
             ></el-input>
           </div>
           <div class="row">
-            <label>手機<span>*</span></label>
-            <el-input
+            <label for="phone">手機<span>*</span></label>
+            <el-input id="phone"
               v-model="form.phone"
               placeholder
             ></el-input>
@@ -24,8 +24,8 @@
             <el-input v-model="form.email" placeholder></el-input>
           </div> -->
           <div class="row">
-            <label>居住城市</label>
-            <el-select
+            <label for="city">居住城市</label>
+            <el-select id="city"
               v-model="form.city"
               placeholder
             >
@@ -38,8 +38,8 @@
             </el-select>
           </div>
           <div class="row">
-            <label>居住地區</label>
-            <el-select
+            <label for="area">居住地區</label>
+            <el-select id="area"
               v-model="form.area"
               placeholder
               no-data-text="請先選擇居住城市"
@@ -243,44 +243,35 @@ export default {
   background-image: $order_bg_image;
   background-size: cover;
   position: relative;
-  padding-top: calc(100vw * 300 / 1920);
+  padding-top: calc(100vw * 200 / 1920);
   overflow: hidden;
 
   .order-title {
-    margin-top: 40px;
-    margin-bottom: 8px;
-    font-size: calc(100vw * 38 / 1920);
+    margin-top: 0;
+    margin-bottom: 0.2em;
+    font-size: calc(100vw * 85 / 1920);
+    font-weight: 800;
+    line-height: 2.5;
+  letter-spacing: 0.15em;
     text-align: center;
     color: $order_title_color;
     width:calc(100vw * 500 / 1920);
-    background-color: #3d2824;
-    border-radius: 60px / 60px;
     display: block;
-    margin: 40px auto 8px;
-    height: 60px;
+    margin: 0 auto 0;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     position: relative;
     z-index: 3;
-    &::before{
-     content: "";
-     position: absolute;
-     width: 1200px;
-     max-width: 95vw;
-     height: 1px;
-    background-color: #3d2824;
-    z-index: -1;
-
-    }
   }
 
   .order-subtitle {
-    font-size: 20px;
+    font-size: calc(100vw * 18 / 1920);
     text-align: center;
     color: $order_subtitle_color;
-    margin-bottom: 40px;
+    margin-bottom:2em;
     position: relative;
     z-index: 3;
   }
@@ -322,23 +313,31 @@ export default {
 
   .row {
     display: flex;
-    align-items: center;
+    //align-items: center;
     margin-bottom: 15px;
+    align-items:stretch;
+    justify-content:center;
 
     &:nth-last-child(1) {
       margin-bottom: 0;
     }
 
     label {
-      width: 92px;
+      width: 92px;align-items: center;display: flex;
       font-size: 16px;
       opacity: 1;
       color: $order_input_label_color;
+      background: $order_input_bg;
+      margin-left: 21px;
+      padding: 0.5em;
 
       span {
-        color: #ff0;
+        color: #c00;
       }
     }
+    .el-input {width: auto;}
+    .el-input__inner{width: auto !important;}
+    .el-select{margin: 0;}
   }
 
   .control {
@@ -371,7 +370,7 @@ export default {
     // background-image: $order_bg_image_m;
     background-color: transparent;
     background-size: auto 250vw;
-  padding-top: calc(100vw * 200 / 375);
+  padding-top: calc(100vw * 250 / 375);
     .order-title {
       font-size: 18px;
       margin-top: 10px;
@@ -380,12 +379,13 @@ export default {
       height: 30px;
       position: relative;
       z-index: 2;
+      display: none;
     }
     .order-subtitle {
       display: none;
     }
     .order {
-      width: 95% !important;
+      width: 85% !important;
       margin: 0 auto;
       padding: 0;
       position: relative;
@@ -406,8 +406,10 @@ export default {
     .row {
       margin-bottom: 12px !important;
       label {
-        width: 30% !important;
+        width: 40% !important;
+        margin-left: 0;
       }
+      .el-input{width: 100%;}
     }
 
     .control {

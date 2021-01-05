@@ -254,7 +254,7 @@ export default {
   }
 
   .address {
-    width: 300px;
+    width:  100%;
     margin-bottom: 0;
     text-align: left;
     //@debugborder: 1px solid #666;
@@ -263,7 +263,7 @@ export default {
     // border-radius: 10px 10px 0 0;
   }
   .btn {
-    width: 300px;
+    width: 100%;
   }
   .btn svg {
     // position: absolute;
@@ -271,7 +271,7 @@ export default {
   }
   .google-btn {
     // border-radius: 0 0 10px 10px;
-    width: 300px;
+    width: 100%;
   }
 }
 </style>
