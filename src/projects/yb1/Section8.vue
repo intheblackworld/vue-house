@@ -14,7 +14,7 @@
         </div>
         <div class="content-label">[央北鑫建築] 裝潢風格情境參考示意圖，實際坪數，格局尺度，依銷售買賣合約書為準，建設公司保有修正之權利</div>
       </div>
-      <swiper :options="swiperOption" ref="mySwiper8" data-aos="fade" data-aos-delay="1000" v-if="tabIndex === 0">
+      <swiper :options="swiperOption" ref="mySwiper8" data-aos="fade" data-aos-delay="1000" v-show="tabIndex === 0">
         <!-- @slideChange="slideChanged" -->
         <swiper-slide v-for="(slide, index) in slideList[0]" :index="index" :key="slide.img" class="item">
           <img :src="slide.src" :class="`item-img`" /><span class="item-txt">裝潢風格情境參考示意圖</span>
@@ -27,7 +27,7 @@
           <img src="./next-btn.png" alt />
         </div>
       </swiper>
-      <swiper :options="swiperOption" ref="mySwiper8" data-aos="fade" data-aos-delay="1000" v-if="tabIndex === 1">
+      <swiper :options="swiperOption" ref="mySwiper8" data-aos="fade" data-aos-delay="1000" v-show="tabIndex === 1">
         <!-- @slideChange="slideChanged" -->
         <swiper-slide v-for="(slide, index) in slideList[1]" :index="index" :key="slide.img" class="item">
           <img :src="slide.src" :class="`item-img`" /><span class="item-txt">裝潢風格情境參考示意圖</span>
@@ -40,7 +40,7 @@
           <img src="./next-btn.png" alt />
         </div>
       </swiper>
-      <swiper :options="swiperOption" ref="mySwiper8" data-aos="fade" data-aos-delay="1000" v-if="tabIndex === 2">
+      <swiper :options="swiperOption" ref="mySwiper8" data-aos="fade" data-aos-delay="1000" v-show="tabIndex === 2">
         <!-- @slideChange="slideChanged" -->
         <swiper-slide v-for="(slide, index) in slideList[2]" :index="index" :key="slide.img" class="item">
           <img :src="slide.src" :class="`item-img`" /><span class="item-txt">裝潢風格情境參考示意圖</span>
@@ -53,7 +53,7 @@
           <img src="./next-btn.png" alt />
         </div>
       </swiper>
-      <swiper :options="swiperOption" ref="mySwiper8" data-aos="fade" data-aos-delay="1000" v-if="tabIndex === 3">
+      <swiper :options="swiperOption" ref="mySwiper8" data-aos="fade" data-aos-delay="1000" v-show="tabIndex === 3">
         <!-- @slideChange="slideChanged" -->
         <swiper-slide v-for="(slide, index) in slideList[3]" :index="index" :key="slide.img" class="item">
           <img :src="slide.src" :class="`item-img`" /><span class="item-txt">裝潢風格情境參考示意圖</span>
