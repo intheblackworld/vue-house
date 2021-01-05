@@ -411,8 +411,8 @@ export default {
 
   methods: {
     changeTab(index) {
-      this.goTo(1)
       this.tabIndex = index
+      this.goTo(1)
     },
     goTo(index) {
       const swiper = this.$refs.mySwiper8.swiper
