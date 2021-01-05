@@ -41,11 +41,11 @@ export default {
         }
 
         map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2, 0)
-      }, 1200)
+      }, 2000)
 
       setTimeout(() => {
         this.showMask = true
-      }, 1500)
+      }, 2500)
     }
   },
   methods: {
