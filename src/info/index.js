@@ -20,7 +20,7 @@ export default {
     ['座落位置', '台北市信義區吳興街524巷',],*/
   ],
 
-  gtmCode: [' '], // 可放置多個
+  gtmCode: ['NC3LPM7'], // 可放置多個
   recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
