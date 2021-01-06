@@ -1,9 +1,9 @@
 <template>
   <div class="section1">
     <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
-    <h1 class="title">關於我們</h1>
-    <img src="./s1/title.png" :alt="`${info.caseName}_title`" class="title-img">
+    <h1 class="title">最新消息</h1>
     <div class="bottom"></div>
+    <img src="./s1/title.png" :alt="`${info.caseName}_title`" class="title-img">
   </div>
 </template>
 
@@ -12,7 +12,7 @@
 
 .section1 {
   width: size(1920);
-  height: size(1200);
+  height: size(563);
   overflow: hidden;
   position: relative;
   background-image: #008fbb;
@@ -27,23 +27,25 @@
   left: 0;
   display: block;
   object-fit: cover;
-  margin-top: 0;
+  margin-top: size(-500);
   &:nth-child(1) {
     position: relative;
   }
 }
 
 .title {
-  @include div_l_pc(274, 86, 800, 711);
-  font-size: size(58);
-  font-weight: normal;
+  @include div_r_pc(303, 58, 274, 250);
+  font-size: size(37);
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.61;
-  letter-spacing: size(18.54);
-  text-align: left;
-  color: #ffe900;
+  letter-spacing: size(7.4);
+  text-align: center;
+  color: #000000;
+  background-color: #ffe900;
   white-space: nowrap;
+  z-index: 2;
 }
 
 .title-img {

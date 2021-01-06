@@ -1,21 +1,27 @@
 <template>
   <div class="section2">
     <div class="tab flex-ac flex-jb">
-      <div :class="`tab-item flex-c ${type === 1 ? 'active' : ''}`">
-        最新消息
+      <div :class="`tab-item flex-c yellow`">
+        線上熱銷
       </div>
-      <div :class="`tab-item flex-c ${type === 2 ? 'active' : ''}`">
-        媒體報導
+      <div :class="`tab-item flex-c blue`">
+        完銷個案
+      </div>
+      <div :class="`tab-item flex-c black`">
+        媒體影音
       </div>
     </div>
     <div class="container flex wrap">
-      <div class="item" v-for="(item, index) in item_list" :key="item.title + index" @click="$router.push(`/news/${index}`)">
+      <div class="item flex-ac" v-for="(item, index) in item_list" :key="item.title + index" @click="$router.push(`/news/${index}`)">
         <img :src="item.img" :alt="`${info.caseName}`">
-        <div class="add"></div>
-        <div class="content flex flex-ac">
-          <img :src="item.icon" alt="" class="item-icon">
+        <div class="content">
+          <div class="item-label flex-c yellow" v-if="item.type === 1">線上熱銷</div>
+          <div class="item-label flex-c blue" v-if="item.type === 2">完銷個案</div>
+          <div class="item-label flex-c black" v-if="item.type === 3">媒體影音</div>
+          <div class="item-title flex-ac" v-html="item.title"></div>
           <div class="item-desc flex-ac" v-html="item.desc"></div>
         </div>
+        <div class="add"></div>
       </div>
     </div>
   </div>
@@ -48,13 +54,11 @@
 }
 
 .tab {
-  @include img_l_pc(228 * 2 + 40, -206, 1284);
+  @include img_l_pc(228 * 3 + 40 * 2, -206, 976);
 
   .tab-item {
     width: size(228);
     height: size(44);
-    background-color: #008fbb;
-    color: #fff;
     font-size: size(33);
     font-weight: 500;
     font-stretch: normal;
@@ -65,55 +69,99 @@
     transition: all 0.3s;
     cursor: pointer;
 
-    &.active {
+    &.blue {
+      background-color: #008fbb;
+      color: #fff;
+    }
+
+    &.yellow {
       background-color: #ffe900;
       color: #000;
+    }
+
+    &.black {
+      background-color: #333;
+      color: #fff;
     }
   }
 }
 
 .container {
-  width: size(496 * 3 + 72 + 36);
+  width: size(1562);
   margin: size(50) auto size(170);
 }
 
 .item {
-  width: size(496);
-  height: size(618);
-  background-color: #f7f8f8;
-  margin: 0 size(18) size(50);
+  width: 100%;
+  height: size(629 + 71);
+  margin: 0 size(18) size(65);
+  border-bottom: 2px solid #008fbb;
   cursor: pointer;
 
   .add {
   }
 
   img {
-    width: 100%;
-    height: size(487);
+    width: size(1066);
+    height: size(629);
     object-fit: cover;
   }
 
   .content {
     height: size(130);
-    padding: 0 size(5);
+    padding: 0 size(75);
   }
 
-  .item-icon {
-    width: size(70);
-    height: size(70);
-    margin-right: size(15);
+  .item-label {
+    width: size(228);
+    height: size(44);
+    font-size: size(33);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.81;
+    letter-spacing: size(6.27);
+    text-align: center;
+    margin-bottom: 15px;
+    &.blue {
+      background-color: #008fbb;
+      color: #fff;
+    }
+
+    &.yellow {
+      background-color: #ffe900;
+      color: #000;
+    }
+
+    &.black {
+      background-color: #333;
+      color: #fff;
+    }
+    // margin-right: size(15);
+  }
+
+  .item-title {
+    font-size: size(36);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.62;
+    letter-spacing: size(2.16);
+    text-align: left;
+    color: #333333;
+    // margin-bottom: 15px;
   }
 
   .item-desc {
     width: size(396);
-    font-size: size(25);
+    font-size: size(24);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.37;
-    letter-spacing: size(0.92);
+    line-height: 1.99;
+    letter-spacing: size(0.96);
     text-align: left;
-    color: #4d4d4d;
+    color: #808080;
   }
 
   .item-coming {
@@ -290,19 +338,22 @@ export default {
         {
           icon: require('./s1/icon1.png'),
           type: 1,
-          desc: '新聞標題新聞標題新聞標題新聞新聞標題新聞標題新聞標題新聞新聞',
+          title: '影片標題影片標題<br />影片標題影片標題',
+          desc: '小標文字（沒文字隱藏）',
           img: require('../hot/s1/imgbg.jpg'),
         },
         {
           icon: require('./s1/icon2.png'),
           type: 2,
-          desc: '新聞標題新聞標題新聞標題新聞新聞標題新聞標題新聞標題新聞新聞',
+          title: '影片標題影片標題<br /影片標題影片標題',
+          desc: '小標文字（沒文字隱藏）',
           img: require('../hot/s1/imgbg.jpg'),
         },
         {
           icon: require('./s1/icon1.png'),
-          type: 1,
-          desc: '新聞標題新聞標題新聞標題新聞新聞標題新聞標題新聞標題新聞新聞',
+          type: 3,
+          title: '影片標題影片標題<br /影片標題影片標題',
+          desc: '',
           img: require('../hot/s1/imgbg.jpg'),
         },
       ],

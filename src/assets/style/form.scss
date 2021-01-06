@@ -30,7 +30,7 @@
   width: 100% !important;
   height: 70px !important;
   line-height: 48px !important;
-  font-size:size(18) !important;
+  font-size: size(18) !important;
   border: $order_input_border !important;
   border-radius: 0 !important;
   background: $order_input_bg;
@@ -90,6 +90,10 @@
   }
 }
 
+.el-textarea .el-textarea__inner {
+  color: $order_input_color;
+}
+
 .form-submit {
   width: 222px !important;
   height: 54px !important;
@@ -102,7 +106,7 @@
   background-position: center !important;
   background-color: $order_submit_bg;
   background-image: $order_submit_bg;
-  border: 1px solid #fff !important;
+  border: 1px solid #008fbb !important;
   // border-radius: 72px / 72px !important;
   margin: 0 auto !important;
   margin-top: 20px !important;
@@ -153,7 +157,7 @@
 @media only screen and (max-width: 767px) {
   .el-input__inner {
     width: 100% !important;
-    font-size:sizem(15) !important;
+    font-size: sizem(15) !important;
   }
   .el-checkbox__label {
     p,
@@ -161,7 +165,7 @@
     div {
       font-size: sizem(15);
     }
-  
+
     span {
       color: $order_check_span_color;
       text-decoration: underline;
@@ -171,7 +175,8 @@
   .el-textarea .el-textarea__inner {
     width: 100% !important;
     height: 120px !important;
-      font-size:sizem(15) !important;
+    font-size: sizem(15) !important;
+    color: $order_input_color !important;
   }
   .el-select {
     margin-left: 0;
@@ -192,7 +197,7 @@
     width: 100% !important;
     font-size: 16px !important;
     margin: 10px auto 20px auto !important;
-    font-size:sizem(15) !important;
+    font-size: sizem(15) !important;
   }
 
   .el-date-editor.el-input {

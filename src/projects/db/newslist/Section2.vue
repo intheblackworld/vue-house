@@ -1,10 +1,10 @@
 <template>
   <div class="section2">
     <div class="tab flex-ac flex-jb">
-      <div :class="`tab-item flex-c ${type === 1 ? 'active' : ''}`">
+      <div :class="`tab-item flex-c yellow`">
         最新消息
       </div>
-      <div :class="`tab-item flex-c ${type === 2 ? 'active' : ''}`">
+      <div :class="`tab-item flex-c blue`">
         媒體報導
       </div>
     </div>
@@ -53,8 +53,6 @@
   .tab-item {
     width: size(228);
     height: size(44);
-    background-color: #008fbb;
-    color: #fff;
     font-size: size(33);
     font-weight: 500;
     font-stretch: normal;
@@ -65,7 +63,12 @@
     transition: all 0.3s;
     cursor: pointer;
 
-    &.active {
+    &.blue {
+      background-color: #008fbb;
+      color: #fff;
+    }
+
+    &.yellow {
       background-color: #ffe900;
       color: #000;
     }

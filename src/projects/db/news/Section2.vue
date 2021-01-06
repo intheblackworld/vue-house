@@ -52,14 +52,14 @@
 }
 .news-title {
   width: 100%;
-  font-size: size(64);
+  font-size: size(54);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
   letter-spacing: normal;
   text-align: left;
-  color: #ff9e00;
+  color: #0289b8;
   margin-bottom: size(15);
 }
 .news-subtitle {
@@ -129,7 +129,7 @@
     line-height: size(71);
     letter-spacing: size(1.68);
     text-align: center;
-    border: solid 1px #ff9e00;
+    border: solid 1px #008fbb;
     color: #666666;
     margin: 0 size(15);
     cursor: pointer;
@@ -142,7 +142,7 @@
     &.active,
     &:hover{
       color: #ffffff;
-      background-color: #ff9e00;
+      background-color: #008fbb;
     }
   }
 }
@@ -299,8 +299,8 @@ export default {
       tabIndex: 0,
       list: [
       {
-        title: '立瑾醞 三重水岸正大3房 純住宅智能規劃 永久景觀棟距稀有珍貴',
-        subtitle: '',
+        title: '新聞標題新聞標題新聞標題新聞標題新聞標題',
+        subtitle: '小標文字(沒字隱藏)',
         date: '2019/10/09 19:41',
         author: '中時新聞網 綜合報導',
         img: require('../news/s2/1/20191009004718.jpg'),

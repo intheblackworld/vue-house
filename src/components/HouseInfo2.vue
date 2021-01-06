@@ -5,8 +5,8 @@
       <img src="../projects/db/contact/logo.png" :alt="`${info.caseName}_logo`" class="logo">
       <img src="../projects/db/contact/logot.png" :alt="`${info.caseName}_logot`" class="logot">
       <div class="desc">
-        <span>新北市新店區安興路105號10樓之7</span><br />
-        P 02-2211-7711 / F 02-2212-3760
+        <span>{{info.address}}</span><br />
+        {{info.phone}}
       </div>
       <div class="links flex-ac flex-jb">
         <a href="#">

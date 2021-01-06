@@ -13,7 +13,7 @@
       <Section1 />
     </div>
 
-    <div class="section relative" id="section2" style="z-index: 1;">
+    <div class="section" id="section2" style="z-index: 1;">
       <Section2 />
     </div>
     <div class="section" id="contact">

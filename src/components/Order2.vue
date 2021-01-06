@@ -1,7 +1,14 @@
 <template>
   <div class="order-bg">
-    <h3 class="order-subtitle" v-html="order.subTitle"></h3>
-    <div class="order-title" v-html="order.title" data-aos="fade-down" data-aos-delay="0"></div>
+    <img src="../projects/db/contact/title.png" alt="" class="order-title">
+    <img src="../projects/db/index/s7/資產 16@2x.png" alt="" class="info-img" data-aos="fade-down" data-aos-delay="500">
+    <img src="../projects/db/contact/logot.png" :alt="`${info.caseName}_logot`" class="logot" data-aos="fade-down" data-aos-delay="600">
+    <div class="info-desc" data-aos="fade-down" data-aos-delay="600">
+      <span>{{info.address}}</span><br />
+      {{info.phone}}
+    </div>
+    <!-- <h3 class="order-subtitle" v-html="order.subTitle"></h3>
+    <div class="order-title" v-html="order.title" data-aos="fade-down" data-aos-delay="0"></div> -->
     <div class="order">
       <div class="form">
         <div class="group">
@@ -15,7 +22,7 @@
           <div class="row" data-aos="fade-down" data-aos-delay="200">
             <el-input id="form-phone" v-model="form.type" placeholder="想了解的建案"></el-input>
           </div>
-          <div class="row">
+          <div class="row" data-aos="fade-down" data-aos-delay="200">
             <el-input type="textarea" :rows="5" placeholder="請輸入您的留言，將有專人為您服務" v-model="form.msg"></el-input>
           </div>
           <div class="control" data-aos="fade-down" data-aos-delay="500">
@@ -39,13 +46,13 @@
         </div>
         <div class="group">
           <iframe class="google-map" title="googlemap" :src="googleSrc" width="100%" height="535" frameborder="0" style="border: 0" allowfullscreen />
-          <div class="control" data-aos="fade-down" data-aos-delay="500">
+          <!-- <div class="control" data-aos="fade-down" data-aos-delay="500">
             <div class="control-desc">
               <p>電話 {{info.phone}}<br />
                 信箱 {{info.email}}<br />
                 地址 {{info.address}}</p>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
       <!-- <img src="./" alt="" class="bottom-img"> -->
@@ -211,10 +218,36 @@ export default {
     height: 100%;
   }
 }
+
+.info-img {
+  @include img_r_pc(570, 1114, 375);
+}
+
+.logot {
+  @include img_r_pc(313, 1154, 615);
+}
+
+.info-desc {
+  @include img_r_pc(314, 1194, 615);
+  font-size: size(22.2);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.27;
+  letter-spacing: size(-0.84);
+  text-align: left;
+  white-space: nowrap;
+  color: #ffffff;
+
+  span {
+    font-weight: bold;
+  }
+}
+
 .order-bg {
   // background-color: $order_bg_color;
   width: 100vw;
-  height:auto;
+  height: auto;
   background-image: $order_bg_image;
   background-repeat: repeat;
   position: relative;
@@ -229,18 +262,19 @@ export default {
     font-family: $family3;
   }
   .order-title {
-    font-family: $family2;
-    width: 100vw;
-    padding-top: size(10);
-    font-size: size(58.7);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: size(11.69);
-    text-align: center;
-    color: #ffffff;
-    color: $order_title_color;
+    @include img_l_pc(1242, 145, 339);
+    // font-family: $family2;
+    // width: 100vw;
+    // padding-top: size(10);
+    // font-size: size(58.7);
+    // font-weight: 500;
+    // font-stretch: normal;
+    // font-style: normal;
+    // line-height: 1.2;
+    // letter-spacing: size(11.69);
+    // text-align: center;
+    // color: #ffffff;
+    // color: $order_title_color;
   }
 
   .order-subtitle {
@@ -262,6 +296,7 @@ export default {
     display: flex;
     flex-direction: column;
     margin-bottom: 3rem;
+    margin-top: size(447);
     justify-content: space-between;
   }
 
@@ -270,8 +305,8 @@ export default {
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height:30px;
-    letter-spacing:0.02em;
+    line-height: 30px;
+    letter-spacing: 0.02em;
     text-align: left;
     color: $order_subtitle_color;
     margin-bottom: 5px;
@@ -286,7 +321,9 @@ export default {
     > .group {
       // flex: 1;
       align-items: flex-start;
-      &:nth-child(1){margin: 0 size(40) 0 0;}
+      &:nth-child(1) {
+        margin: 0 size(40) 0 0;
+      }
     }
   }
 
@@ -361,8 +398,9 @@ export default {
   }
 }
 .el-textarea .el-textarea__inner,
-.el-input__inner{
-    font-size: size(20) !important;}
+.el-input__inner {
+  font-size: size(20) !important;
+}
 
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -447,9 +485,9 @@ export default {
       margin-bottom: 10px;
     }
 
-  .control-desc {
-    font-size: sizem(15);
-  }
+    .control-desc {
+      font-size: sizem(15);
+    }
   }
 }
 </style>
