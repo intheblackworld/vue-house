@@ -8,8 +8,8 @@ export default {
   googleLink: 'https://goo.gl/maps/trD5N6LMwjgB1ZgD9',
   phone: '03-325-7555',
   fbLink:
-    'https://www.facebook.com/',
-  fbMessage: 'https://m.me/',
+    'https://www.facebook.com/築億海格-105185948194625/',
+  fbMessage: 'https://m.me/105185948194625/',
   caseName: '築億海格',
   houseInfos: [
     ['投資興建', '築億建設股份有限公司'],

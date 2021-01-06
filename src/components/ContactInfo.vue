@@ -6,12 +6,12 @@
         <div class="btn flex-c" @click="showCallDialog">
           <span class="flex-c">
             <font-awesome-icon icon="phone" />
-            {{info.phone}}
+            <span>{{info.phone}}</span>
           </span>
         </div>
         <div class="btn flex-c" @click="showMessengerDialog">
           <span class="flex-c">
-            <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB 諮詢
+            <font-awesome-icon :icon="['fab', 'facebook-messenger']" /><span>FB 諮詢</span>
           </span>
         </div>
         <!-- <a class="btn flex-c" :href="info.fbMessage" target="_blank" v-else>
@@ -21,13 +21,13 @@
       </a> -->
         <a class="btn flex-c" :href="info.fbLink" target="_blank">
           <span class="flex-c">
-            <font-awesome-icon :icon="['fab', 'facebook-f']" />前往粉絲專頁
+            <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
           </span>
         </a>
         <div class="address flex-c" v-html="info.address"></div>
         <div class="google-btn flex-c" @click="isShowMapDialog = true">
           <span class="flex-c">
-            <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
+            <font-awesome-icon icon="map-marker-alt" /><span>導航 Google 地圖</span>
           </span>
         </div>
         <!-- <a class="google-btn flex-c" :href="info.googleLink" target="_blank" v-else>
@@ -97,24 +97,17 @@ export default {
 
 .contact-info {
   background: $contact_bg;
-  // background-image: url('../assets/img/contact_bg.jpg');
   background-size: cover;
-  // background-position: 50% 100%;
   box-shadow: $contact_shadow;
   display: flex;
   flex-direction: column;
   align-content: center;
-  // justify-content: space-between;
-  // transform: translateY(14%);
   position: relative;
   z-index: 4;
   width: 1200px;
   height: 515px;
   padding: 30px;
-  // border-radius: 20px;
-
   margin: 0 auto;
-  // padding: 60px 0 50px;
 }
 
 .logo {
@@ -128,12 +121,13 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .btn {
   width: 280px;
   height: 60px;
-  font-size: 16px;
   margin-bottom: 20px;
   cursor: pointer;
   text-decoration: none;
@@ -224,15 +218,10 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .contact-info {
-    display: flex;
-    width: 100%;
+    width: 85%;
     height: auto;
-    padding: 40px;
-    transform: none;
+    padding: 0;
     position: static;
-    margin-top: 0;
-    border-radius: 0;
-
     .logo {
       width: $contact_logo_mobile_width;
     }
@@ -257,17 +246,21 @@ export default {
     width:  100%;
     margin-bottom: 0;
     text-align: left;
-    //@debugborder: 1px solid #666;
     border-bottom: none;
     padding: 10px;
-    // border-radius: 10px 10px 0 0;
+    height: auto;
   }
   .btn {
     width: 100%;
+    position: relative;
+    span{padding: 0 0 0 0.5em;}
+   svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: calc(50% - 5em);
+    margin-right: 0;
   }
-  .btn svg {
-    // position: absolute;
-    // margin: 0 0 0 -70px;
   }
   .google-btn {
     // border-radius: 0 0 10px 10px;
