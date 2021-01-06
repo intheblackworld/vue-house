@@ -235,6 +235,10 @@ export default {
         img: require('../news/s2/4/30-98629-001.jpg'),
         title: '立瑾醞 口碑推爆：三重水岸住大3房的幸福',
       },
+      {
+        img: require('../news/s2/5/a1.jpg'),
+        title: '三重立瑾醞召開第一次區權會',
+      },
      /*{
         img: require('../news/s2/no.png'),
         title: '立瑾醞 享受大三房、水岸景觀之美',

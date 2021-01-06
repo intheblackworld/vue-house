@@ -382,6 +382,22 @@ export default {
             },
           ],
       },
+      {
+        title: '三重立瑾醞召開第一次區權會',
+        subtitle: '',
+        date: '2021/1/3(日)',
+        author: '',
+          img: require('../news/s2/5/a1.jpg'),
+        desc:
+          '2021/1/3(日)三重立瑾醞第一次區域所有權人大會，會議實記！',
+        links: [
+            {
+              title: '立瑾醞官網',
+              id: '1',
+              url: 'https://lju.h35.tw/',
+            },
+          ],
+      },
 
       /*
       {
