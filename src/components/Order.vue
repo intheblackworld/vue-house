@@ -53,7 +53,7 @@
               <label>想看房型<span>*</span></label>
               <el-select v-model="form.house" placeholder>
                 <el-option
-                  v-for="city in ['兩房', '三房']"
+                  v-for="city in ['一房','兩房', '三房']"
                   :key="city"
                   :label="city"
                   :value="city"
