@@ -134,7 +134,7 @@
           ></vue-recaptcha>
         </div>
         <div
-          style="margin: 0 auto;z-index:2;"
+          style="margin: 0 auto;z-index:2;width: 304px;"
           v-if="isMobile"
         >
           <vue-recaptcha
