@@ -7,7 +7,7 @@
       好的生活，讓生命真切感動
     </div> -->
     <div class="container flex wrap">
-      <div class="item" v-for="(item, index) in item_list" :key="item.title + index">
+      <div class="item" v-for="(item, index) in item_list" :key="item.title + index" @click="showProjectDialog(item)">
         <img :src="item.img" :alt="`${info.caseName}`">
         <div class="add"></div>
         <div class="content flex flex-ac" v-if="!item.isEmpty">
@@ -16,6 +16,28 @@
         </div>
         <div class="content flex-c" v-if="item.isEmpty">
           <div class="item-coming">Coming soon</div>
+        </div>
+      </div>
+    </div>
+    <div class="product-dialog" v-show="isProjectDialog">
+      <div class="border-container">
+        <img src="../../../assets/img/close.png" :alt="`${info.caseName}_close`" class="close" @click="closeProjectDialog">
+        <div class="product-title" v-html="dialogData.title2"></div>
+        <div class="product-info1" v-html="dialogData.info1"></div>
+        <div class="hr"></div>
+        <div class="product-info2" v-html="dialogData.info2"></div>
+        <div class="product-info3" v-html="dialogData.info3"></div>
+        <div class="product-contact" v-html="dialogData.contact"></div>
+        <!-- <a class="product-btn" :href="dialogData.link" target="_blank">建案官網</a> -->
+        <img src="./s1/rb.png" :alt="`${info.caseName}`" class="rb">
+        <img :src="dialogData.logo" alt="" class="logo">
+        <div class="slide-imgs flex-as flex-jb">
+          <img :src="dialogData.imgs[0]" :alt="`${info.caseName}`" class="main" @click="selectImg(0)">
+          <div class="imgs">
+            <img :src="dialogData.imgs[1]" :alt="`${info.caseName}`" @click="selectImg(1)">
+            <img :src="dialogData.imgs[2]" :alt="`${info.caseName}`" @click="selectImg(2)">
+            <img :src="dialogData.imgs[3]" :alt="`${info.caseName}`" @click="selectImg(3)">
+          </div>
         </div>
       </div>
     </div>
@@ -85,6 +107,7 @@
   height: size(618);
   background-color: #f7f8f8;
   margin: 0 size(18) size(50);
+  cursor: pointer;
 
   .add {
   }
@@ -132,6 +155,148 @@
     letter-spacing: size(0.73);
     text-align: center;
     color: #8e8e8e;
+  }
+}
+
+.product-dialog {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+}
+
+.border-container {
+  @include div_r_pc(1562, 691, 204, 172);
+  width: size(1562);
+  height: size(691);
+  border: 9.4px solid #008fbb;
+}
+
+.close {
+  @include div_r_pc(40, 40, -50, -11);
+  width: size(40);
+  height: size(40);
+  background-color: #008fbb;
+  cursor: pointer;
+}
+
+.product-title {
+  @include img_l_pc(207, 48 + 50, 884);
+  font-size: size(51);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.11;
+  letter-spacing: size(1.02);
+  text-align: left;
+  color: #000000;
+  white-space: nowrap;
+}
+
+.hr {
+  @include div_l_pc(285, 2, 264, 884);
+  background-color: #008fbb;
+}
+
+.product-info1 {
+  @include img_l_pc(340, 130 + 50, 884);
+  font-size: size(23);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.37;
+  letter-spacing: size(0.92);
+  text-align: left;
+  color: #4d4d4d;
+  white-space: nowrap;
+}
+
+.product-info2 {
+  @include img_l_pc(586, 308, 884);
+  font-size: size(19);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.55;
+  letter-spacing: size(0.76);
+  text-align: left;
+  color: #008fbb;
+  // white-space: nowrap;
+}
+
+.product-info3 {
+  @include img_l_pc(340, 377, 884);
+  font-size: size(19);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: size(0.84);
+  text-align: left;
+  color: #008fbb;
+  white-space: nowrap;
+}
+
+.product-contact {
+  @include img_l_pc(356, 517, 884);
+  font-size: size(19);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.55;
+  letter-spacing: size(1.14);
+  text-align: left;
+  color: #4d4d4d;
+}
+
+.product-btn {
+  @include div_l_pc(180, 32, 541, 1297 + 20);
+  background-color: #008fbb;
+  white-space: nowrap;
+  font-size: size(23);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.37;
+  letter-spacing: size(5.06);
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.rb {
+  @include img_r_pc(576, 610, 100);
+  padding: 0 size(30);
+  background-color: #fff;
+}
+
+.logo {
+  @include img_r_pc(203, 23, 20);
+}
+
+.slide-imgs {
+  width: size(598 + 206);
+  margin-left: size(55);
+  margin-top: size(48);
+
+  .main {
+    width: size(586);
+    height: size(580);
+    object-fit: cover;
+  }
+
+  .imgs {
+    width: size(206);
+
+    img {
+      width: 100%;
+      height: size(180);
+      object-fit: cover;
+      margin-bottom: size(18);
+    }
   }
 }
 
@@ -292,33 +457,38 @@ export default {
       isMobile,
       isTablet,
       info,
+      isProjectDialog: false,
+      dialogData: {
+        title: '',
+        title2: '',
+        info1: '',
+        info2: '',
+        info3: '',
+        contact: '',
+        link: '',
+        logo: '',
+        imgs: [],
+      },
       item_list: [
         {
-          title: '碧波白',
+          title: '容邑PARK',
+          title2: '容邑PARK',
           desc:
-            '新北市｜新店區<br />23-49坪‧ 70‧78坪大戶雙併<br />走遍千山萬水 還是碧潭最美',
+            '新北市｜新莊副都心',
           img: require('../hot/s1/imgbg.jpg'),
           isEmpty: false,
-        },
-        {
-          title: '陽光<br />PARK',
-          desc: '新北市｜新店區<br />27-54坪<br />新店陽光公園特區生態建築',
-          img: require('../hot/s1/imgbg.jpg'),
-          isEmpty: false,
-        },
-        {
-          title: '神采<br />飛洋',
-          desc:
-            '新北市｜洲子洋重劃區<br />2房(15、20坪)｜3房(25、33坪)<br />公園 校園 花園 誠徵有園人',
-          img: require('../hot/s1/imgbg.jpg'),
-          isEmpty: false,
-        },
-        {
-          title: '太陽<br />帝國',
-          desc:
-            '新北市｜中和區<br />19-39坪 2-3房<br />不是王牌不出手 唯有贏家能出手',
-          img: require('../hot/s1/imgbg.jpg'),
-          isEmpty: false,
+          info1: '新北市｜新莊副都心',
+          info2: '信義區機能+重劃區規格+超甜蜜價格，你想要的人生好味在容邑PARK一席通包。感受新莊副都心完熟機能，就在【容邑PARK】',
+          info3: '完工時間｜2019年<br />規劃樓層｜地上15層，地下6層<br />格局規劃｜開放格局(15-33坪)<br />基地地址｜新北市新莊區富貴路182號<br />建案特色｜新莊副都心，機能完整<br />機場捷運A3新北產業園區站，散步即達<br />步行2分鐘，抵達塭仔底生態公園',
+          contact: '',
+          logo: require('../hot/s1/imgbg.jpg'),
+          link: '',
+          imgs: [
+            require('../hot/s1/imgbg.jpg'),
+            require('../hot/s1/imgbg.jpg'),
+            require('../hot/s1/imgbg.jpg'),
+            require('../hot/s1/imgbg.jpg'),
+          ],
         },
         {
           title: '',
@@ -348,6 +518,30 @@ export default {
     //     this.slideIndex = swiper.activeIndex - 1
     //   }
     // },
+
+    removeElement(elem) {
+      let index = this.dialogData.imgs.indexOf(elem)
+      if (index > -1) {
+        this.dialogData.imgs.splice(index, 1)
+      }
+    },
+
+    selectImg(index) {
+      let firstItem = this.dialogData.imgs[index]
+      this.removeElement(this.dialogData.imgs[index])
+      this.dialogData.imgs = [firstItem, ...this.dialogData.imgs]
+      console.log(this.dialogData.imgs)
+    },
+    showProjectDialog(item) {
+      if (!item.isEmpty) {
+        this.dialogData = item
+        this.isProjectDialog = true
+      }
+    },
+
+    closeProjectDialog() {
+      this.isProjectDialog = false
+    },
   },
 
   mounted() {},

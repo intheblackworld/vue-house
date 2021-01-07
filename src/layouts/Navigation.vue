@@ -3,7 +3,11 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
-          <img class="logo" src="@/assets/img/nav-logo.png" alt @click="$router.push('/')" />
+          <img src="../assets/img/close.png" :alt="`${info.caseName}_close`" class="close" @click="min = true">
+          <div class="close flex-c" @click="min = false" v-if="min">
+            <div class="menu-icon"></div>
+          </div>
+          <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt @click="$router.push('/')" /> -->
           <div class="menu" @click="toggleSidebar('')" v-show="!isOpen">
             <font-awesome-icon icon="bars" />
           </div>
@@ -21,16 +25,16 @@
             <!-- <li v-if="isMobile" alt v-scroll-to="{ element: `#section1`, offset: offset }"><img class="navlogo" src="@/assets/img/nav-logo.png" /></li> -->
             <li :key="item.name" v-for="item in list" class="flex-c">
               <span :class="`link ${item.path == $route.name ? 'active' : ''}`" @click="toggleSidebar(item.path)">
-                <span class="flex-c">
+                <span class="flex-c wrap">
                   <p class="title" v-html="item.name"></p>
                   <span class="subTitle">{{item.subTitle}}</span>
                 </span>
               </span>
             </li>
             <li class="flex-c" @click="showMessengerDialog">
-          <img src="@/projects/lc/menu/icon_f.png" class="fb" alt="fb">
+              <img src="@/projects/lc/menu/icon_f.png" class="fb" alt="fb">
             </li>
-           <!-- <li class="flex-c">
+            <!-- <li class="flex-c">
           <img src="@/projects/lc/menu/icon_l.png" class="line" alt="line">
             </li> -->
           </ul>
@@ -135,7 +139,8 @@ export default {
   z-index: 30;
   position: fixed;
   top: 0;
-  width: 100vw;
+  left: size(620);
+  width: size(1300);
   display: flex !important;
   align-items: center;
   // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
@@ -148,7 +153,8 @@ export default {
   justify-content: space-between;
 }
 
-.nav {justify-content: space-between;
+.nav {
+  justify-content: flex-end;
   //min-width: 1280px;
   width: size(1400);
   max-width: 100%;
@@ -165,20 +171,20 @@ export default {
 }
 
 .line {
-  width:1.5em;
+  width: 1.5em;
   display: block;
-  
+
   cursor: pointer;
-    margin: 0 1.5em 0 0;
+  margin: 0 1.5em 0 0;
 }
 .fb {
-  width:1.5em;
+  width: 1.5em;
   display: block;
   cursor: pointer;
-    margin: 0 1.5em 0 0;
+  margin: 0 1.5em 0 0;
 }
 .logo {
-  width:$logo_pc_width;
+  width: $logo_pc_width;
   height: auto;
   // position: absolute;
   // left: 50px;
@@ -192,6 +198,46 @@ export default {
   display: none;
 }
 
+.close {
+  @include div_r_pc(40, 40, 15, 27);
+  // width: size(40);
+  // height: size(40);
+  background-color: #008fbb;
+  cursor: pointer;
+}
+
+.menu-icon {
+  position: relative;
+  width: size(30);
+  height: 2px;
+  margin-top: size(-20);
+  background-color: #fff;
+}
+
+.menu-icon::before {
+  position: absolute;
+  left: 0;
+  top: size(10);
+  content: '';
+  display: block;
+  width: size(30);
+  height: 2px;
+  background-color: #fff;
+  transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+}
+
+.menu-icon::after {
+  position: absolute;
+  left: 0;
+  top: size(20);
+  content: '';
+  display: block;
+  width: size(30);
+  height: 2px;
+  background-color: #fff;
+  transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+}
+
 .navlist {
   display: flex;
   align-items: center;
@@ -199,7 +245,7 @@ export default {
   height: 100%;
   overflow: hidden;
   padding-left: 30px;
-  font-size:size(18);
+  font-size: size(18);
   li {
     height: 100%;
 
@@ -212,13 +258,13 @@ export default {
 
   .link {
     color: $nav_link_color;
-   // height: 22px;
-   // margin-top:50%;
+    // height: 22px;
+    // margin-top:50%;
     margin: 0 2.5em 0 0;
     text-align: center;
     display: block;
     cursor: pointer;
-    padding:0;
+    padding: 0;
     line-height: 1.6;
     // margin: 0 10px;
     transition: all 0.8s;
@@ -234,11 +280,15 @@ export default {
       // background: $nav_link_hover_bg;
     }
 
+    > span {
+      width: 80px;
+    }
+
     .title {
-      font-weight:500;
+      font-weight: 500;
       position: relative;
       // border-right: 1px solid #000;
-     // padding: 0 35px;
+      // padding: 0 35px;
       z-index: 3;
       > span {
         font-size: 24px !important;
@@ -246,14 +296,16 @@ export default {
     }
 
     .subTitle {
+      width: 100%;
       color: $nav_link_subtitle_color;
       font-size: 12px;
+      text-align: center;
     }
 
     img {
       // width: 35px;
       // height: 35px;
-      margin-right: 10px; 
+      margin-right: 10px;
     }
   }
 }
@@ -264,7 +316,17 @@ export default {
 
 .link {
   color: rgba(0, 0, 0, 0.7);
- // font-size: 16px;
+  // font-size: 16px;
+}
+
+.min {
+  &.navigation {
+    background: transparent;
+  }
+
+  .navlist {
+    display: none;
+  }
 }
 
 /* 平板尺寸 */
@@ -339,7 +401,8 @@ export default {
 
   .nav {
     position: static;
-    height: 60px;width:100%;
+    height: 60px;
+    width: 100%;
   }
 
   .menu {

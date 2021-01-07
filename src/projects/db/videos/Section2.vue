@@ -336,21 +336,21 @@ export default {
       type: 1, // 1 最新消息, 2 媒體報導
       item_list: [
         {
-          icon: require('./s1/icon1.png'),
+          // icon: require('./s1/icon1.png'),
           type: 1,
           title: '影片標題影片標題<br />影片標題影片標題',
           desc: '小標文字（沒文字隱藏）',
           img: require('../hot/s1/imgbg.jpg'),
         },
         {
-          icon: require('./s1/icon2.png'),
+          // icon: require('./s1/icon2.png'),
           type: 2,
           title: '影片標題影片標題<br /影片標題影片標題',
           desc: '小標文字（沒文字隱藏）',
           img: require('../hot/s1/imgbg.jpg'),
         },
         {
-          icon: require('./s1/icon1.png'),
+          // icon: require('./s1/icon1.png'),
           type: 3,
           title: '影片標題影片標題<br /影片標題影片標題',
           desc: '',

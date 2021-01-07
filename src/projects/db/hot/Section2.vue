@@ -21,25 +21,25 @@
     </div>
     <div class="product-dialog" v-show="isProjectDialog">
       <div class="border-container">
-        <div class="close" @click="closeProjectDialog"></div>
+        <img src="../../../assets/img/close.png" :alt="`${info.caseName}_close`" class="close" @click="closeProjectDialog">
         <div class="product-title" v-html="dialogData.title2"></div>
         <div class="product-info1" v-html="dialogData.info1"></div>
         <div class="hr"></div>
         <div class="product-info2" v-html="dialogData.info2"></div>
+        <div class="info-title">建案特色：</div>
         <div class="product-info3" v-html="dialogData.info3"></div>
         <div class="product-contact" v-html="dialogData.contact"></div>
         <a class="product-btn" :href="dialogData.link" target="_blank">建案官網</a>
         <img src="./s1/rb.png" :alt="`${info.caseName}`" class="rb">
         <img :src="dialogData.logo" alt="" class="logo">
-        <div class="slide-imgs">
-          <img :src="dialogData.imgs[0]" :alt="`${info.caseName}`" class="main">
+        <div class="slide-imgs flex-as flex-jb">
+          <img :src="dialogData.imgs[0]" :alt="`${info.caseName}`" class="main" @click="selectImg(0)">
           <div class="imgs">
-            <img :src="dialogData.imgs[1]" :alt="`${info.caseName}`">
-            <img :src="dialogData.imgs[2]" :alt="`${info.caseName}`">
-            <img :src="dialogData.imgs[3]" :alt="`${info.caseName}`">
+            <img :src="dialogData.imgs[1]" :alt="`${info.caseName}`" @click="selectImg(1)">
+            <img :src="dialogData.imgs[2]" :alt="`${info.caseName}`" @click="selectImg(2)">
+            <img :src="dialogData.imgs[3]" :alt="`${info.caseName}`" @click="selectImg(3)">
           </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -185,7 +185,7 @@
 }
 
 .product-title {
-  @include img_l_pc(207, 48, 834);
+  @include img_l_pc(207, 48, 884);
   font-size: size(51);
   font-weight: normal;
   font-stretch: normal;
@@ -198,12 +198,12 @@
 }
 
 .hr {
-  @include div_l_pc(285, 2, 264, 834);
+  @include div_l_pc(285, 2, 264, 884);
   background-color: #008fbb;
 }
 
 .product-info1 {
-  @include img_l_pc(340, 130, 834);
+  @include img_l_pc(340, 130, 884);
   font-size: size(23);
   font-weight: normal;
   font-stretch: normal;
@@ -216,7 +216,7 @@
 }
 
 .product-info2 {
-  @include img_l_pc(296, 308, 834);
+  @include img_l_pc(296, 308, 884);
   font-size: size(19);
   font-weight: normal;
   font-stretch: normal;
@@ -228,9 +228,22 @@
   white-space: nowrap;
 }
 
+.info-title {
+  @include img_l_pc(340, 377, 884);
+  font-size: size(19);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: size(0.84);
+  text-align: left;
+  color: #008fbb;
+  white-space: nowrap;
+}
+
 .product-info3 {
-  @include img_l_pc(340, 377, 834);
-  font-size: size(21);
+  @include img_l_pc(340, 377, 884 + 100);
+  font-size: size(19);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -242,7 +255,7 @@
 }
 
 .product-contact {
-  @include img_l_pc(356, 517, 834);
+  @include img_l_pc(356, 517, 884);
   font-size: size(19);
   font-weight: normal;
   font-stretch: normal;
@@ -254,7 +267,7 @@
 }
 
 .product-btn {
-  @include div_l_pc(180, 32, 541, 1297);
+  @include div_l_pc(180, 32, 541, 1297 + 20);
   background-color: #008fbb;
   white-space: nowrap;
   font-size: size(23);
@@ -269,13 +282,36 @@
 }
 
 .rb {
-  @include img_r_pc(576, 610, 160);
-  padding: 0 40px;
+  @include img_r_pc(576, 610, 100);
+  padding: 0 size(30);
   background-color: #fff;
 }
 
 .logo {
   @include img_r_pc(203, 23, 20);
+}
+
+.slide-imgs {
+  width: size(598 + 206);
+  margin-left: size(55);
+  margin-top: size(48);
+
+  .main {
+    width: size(586);
+    height: size(580);
+    object-fit: cover;
+  }
+
+  .imgs {
+    width: size(206);
+
+    img {
+      width: 100%;
+      height: size(180);
+      object-fit: cover;
+      margin-bottom: size(18);
+    }
+  }
 }
 
 @media only screen and (max-width: 1440px) {
@@ -580,6 +616,20 @@ export default {
     //     this.slideIndex = swiper.activeIndex - 1
     //   }
     // },
+
+    removeElement(elem) {
+      let index = this.dialogData.imgs.indexOf(elem)
+      if (index > -1) {
+        this.dialogData.imgs.splice(index, 1)
+      }
+    },
+
+    selectImg(index) {
+      let firstItem = this.dialogData.imgs[index]
+      this.removeElement(this.dialogData.imgs[index])
+      this.dialogData.imgs = [firstItem, ...this.dialogData.imgs]
+      console.log(this.dialogData.imgs)
+    },
     showProjectDialog(item) {
       if (!item.isEmpty) {
         this.dialogData = item
