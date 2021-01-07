@@ -365,7 +365,11 @@
   .news-img {
     width: 100%;
     object-fit: cover;
+    height: sizem(200);
     margin-bottom: sizem(15);
+    .swipe-item{
+    width: 100%;
+    object-fit: cover;}
   }
   .news-desc {
     width: 100%;
