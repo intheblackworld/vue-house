@@ -200,7 +200,7 @@ export default {
 }
 
 .close {
-  @include div_r_pc(40, 40, 15, 27);
+  @include div_r_pc(40, 40, 15, 0);
   // width: size(40);
   // height: size(40);
   background-color: #008fbb;

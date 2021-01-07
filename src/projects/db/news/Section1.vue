@@ -12,7 +12,7 @@
 
 .section1 {
   width: size(1920);
-  height: size(563);
+  height: size(643);
   overflow: hidden;
   position: relative;
   background-image: #008fbb;
@@ -49,7 +49,7 @@
 }
 
 .title-img {
-  @include img_l_pc(548, 745, 181);
+  @include img_l_pc(548, 189, 181);
 }
 
 .bottom {
