@@ -5,7 +5,7 @@ export default {
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.5699101093123!2d121.29992931500591!3d25.014726283981375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34681fb1f2d86179%3A0x727c09d7f490ef69!2zMzMw5qGD5ZyS5biC5qGD5ZyS5Y2A5paw5Z-U5YWt6KGXOTfomZ8!5e0!3m2!1szh-TW!2stw!4v1607682826270!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/L7dBXU3XqJ8BSCVx7',
   phone: '+886-3-3569188',
-  email: '8886688@gmail.com',
+  email: 'lichin9188@gmail.com',
   mechanism: '立瑾建築機構',
   fbLink: 'https://www.facebook.com/lichinconstruction',
   fbMessage: 'https://m.me/lichinconstruction',
