@@ -1,8 +1,10 @@
 <template>
   <div class="section4">
     <!-- <div class="title">經典建案</div> -->
-    <img src="./s4/i.jpg" :alt="`${info.caseName}_i`" class="img">
-    <img src="./s4/title.png" :alt="`${info.caseName}_title`" class="title-img">
+    <img src="./s4/i.jpg" :alt="`${info.caseName}_i`" class="img" v-if="isPC">
+    <img src="./s4/i_m.jpg" :alt="`${info.caseName}_i`" class="img" v-if="isMobile">
+    <img src="./s4/title.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isPC">
+    <img src="./s4/title_m.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isMobile">
     <img src="./s4/more.png" :alt="`${info.caseName}_more`" class="btn" @click="$router.push('/products')">
   </div>
 </template>
@@ -40,7 +42,6 @@
 .title-img {
   @include img_r_pc(725, 561, 180);
 }
-
 
 .title {
   @include div_r_pc(288, 86, 748, 397);
@@ -94,7 +95,7 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-    min-height: sizem(1000);
+    min-height: sizem(660);
     // max-height: sizem(812);
     // height: 100vh;
     // background-image: url('./mo/1/bg.png');
@@ -117,58 +118,35 @@
     }
   }
 
-  .title {
-    @include div_l_m(375, 40, 96, 0);
-    font-size: sizem(28);
-    text-align: center;
+  // .title {
+  //   @include div_l_m(375, 40, 96, 0);
+  //   font-size: sizem(28);
+  //   text-align: center;
+  // }
+
+  // .subtitle {
+  //   @include div_l_m(375, 21, 141, 0);
+  //   font-size: sizem(15);
+  //   text-align: center;
+  // }
+
+  .img {
+    @include img_l_m(353, 33, 0);
   }
 
-  .subtitle {
-    @include div_l_m(375, 21, 141, 0);
-    font-size: sizem(15);
-    text-align: center;
+  .title-img {
+    @include img_r_m(308, 474, 32);
   }
-
-  .img1 {
-    @include img_l_m(156, 218, 22);
-  }
-
-  .img2 {
-    @include img_l_m(156, 218, 197);
-  }
-
-  .img3 {
-    @include img_r_m(367, 640, 4);
-  }
-
   .btn {
-    display: none;
-    // @include div_l_pc(182, 46, 1114, 310);
-    // background-color: rgba(255, 130, 0, 0.7);
-    // cursor: pointer;
-    // text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
-    // font-size: size(23.8);
-    // font-weight: normal;
-    // font-stretch: normal;
-    // font-style: normal;
-    // line-height: 1.2;
-    // letter-spacing: size(3.74);
-    // text-align: center;
-    // color: #fffcfd;
-    // border-radius: 5px;
-    // transition: all 0.3s;
-    // z-index: 5;
-    // position: absolute;
-    // &:hover {
-    //   background-color: rgba(255, 130, 0, 1);
-    // }
+    @include img_r_m(151, 563, 32);
+    cursor: pointer;
   }
 }
 </style>
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
-import info  from '@/info'
+import info from '@/info'
 
 export default {
   name: 'section4',

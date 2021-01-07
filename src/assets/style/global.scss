@@ -248,7 +248,7 @@ img[lazy='loaded'] {
   }
 
   .home {
-    padding-top: $nav_tablet_height;
+    // padding-top: $nav_tablet_height;
     // background-color: $order_bg_color;
     // background-image: $order_bg_image;
     background-repeat: no-repeat;
@@ -342,9 +342,9 @@ img[lazy='loaded'] {
   }
 
   .home {
-    padding-top: $nav_phone_height;
+    // padding-top: $nav_phone_height;
     background: $bg;
-    background-image: $order_bg_image_m;
+    // background-image: $order_bg_image_m;
     // background-repeat: no-repeat;
     // background-size: cover;
     background-attachment: fixed;

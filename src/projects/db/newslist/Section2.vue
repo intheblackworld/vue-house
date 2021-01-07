@@ -147,9 +147,9 @@
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    min-height: sizem(1134);
-    max-height: sizem(812);
-    height: sizem(1134);
+    min-height: auto;
+    max-height: auto;
+    height: auto;
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -170,107 +170,110 @@
     }
   }
 
-  .border-container {
-    width: sizem(355);
-    height: sizem(1027);
-    margin: sizem(40) auto sizem(30);
-    border: 3px solid #ff8200;
-  }
+  .tab {
+    @include img_l_m(320, -50, 33);
+    justify-content: flex-start;
 
-  .title {
-    width: sizem(314);
-    margin: 0 auto;
-    margin-top: sizem(-30);
-    font-size: sizem(20);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2;
-    letter-spacing: 1px;
-    text-align: center;
-    color: #606060;
-    background-color: #fff;
-    white-space: nowrap;
-
-    span {
-      color: #ff8200;
-    }
-  }
-
-  .img {
-    @include img_l_m(340, 60, 0);
-    z-index: 2;
-  }
-
-  .s-title {
-    @include div_r_m(130, 41, 341, 123);
-    font-size: sizem(28);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(5.37);
-    text-align: left;
-    color: #ff8200;
-    white-space: nowrap;
-  }
-
-  .content-title {
-    @include div_l_m(258, 41, 407, 23);
-    font-size: sizem(28);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(2.8);
-    text-align: left;
-    color: #606060;
-    white-space: nowrap;
-  }
-
-  .content-desc {
-    @include div_r_m(310, 260, 476, 23);
-    font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.65;
-    letter-spacing: sizem(0.75);
-    text-align: left;
-    color: #606060;
-
-    span {
+    .tab-item {
+      width: sizem(92);
+      height: sizem(32);
       font-size: sizem(15);
-      font-weight: bold;
-      letter-spacing: sizem(0.75);
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.53;
+      letter-spacing: sizem(2.85);
+      text-align: center;
+      color: #000000;
+      margin-right: sizem(15);
+      transition: all 0.3s;
+      cursor: pointer;
+
+      &.blue {
+        background-color: #008fbb;
+        color: #fff;
+      }
+
+      &.yellow {
+        background-color: #ffe900;
+        color: #000;
+      }
+
+      &.black {
+        background-color: #333;
+        color: #fff;
+      }
     }
   }
 
-  .btn {
-    @include div_r_m(150, 40, 700, 113);
-    font-size: sizem(23);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.65;
-    letter-spacing: sizem(1);
-    text-align: left;
-    background-color: #ff8200;
-    color: #fff;
+  .container {
+    width: sizem(310);
+    margin: sizem(120) auto sizem(80);
   }
 
-  .video {
+  .item {
+    width: 100%;
+    height: sizem(300);
+    margin: 0 sizem(0) sizem(70);
+    border-bottom: none;
     cursor: pointer;
-    @include div_r_m(320, 181, 782, 17);
-  }
 
-  .rb {
-    position: absolute;
-    background-color: #fff;
-    width: sizem(132);
-    height: sizem(72);
-    right: sizem(-10);
-    bottom: sizem(-40);
+    .add {
+    }
+
+    img {
+      width: sizem(310);
+      height: sizem(221);
+      object-fit: cover;
+    }
+
+    .content {
+      // margin-top: sizem(221);
+      height: sizem(70);
+      padding: 0 sizem(5);
+    }
+
+    .item-icon {
+      width: sizem(43);
+      height: sizem(43);
+      margin-right: sizem(15);
+    }
+
+    .item-desc {
+      width: sizem(238);
+      font-size: sizem(15);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.4;
+      letter-spacing: sizem(0.9);
+      text-align: left;
+      color: #4d4d4d;
+
+      color: #4d4d4d;
+    }
+    .item-title {
+      font-size: sizem(20);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.62;
+      letter-spacing: sizem(1.16);
+      text-align: left;
+      color: #333333;
+      // margin-bottom: 15px;
+    }
+
+    .item-coming {
+      font-size: sizem(24);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.35;
+      letter-spacing: size(0.73);
+      text-align: center;
+      color: #8e8e8e;
+    }
   }
 }
 </style>

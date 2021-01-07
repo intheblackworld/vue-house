@@ -1,7 +1,35 @@
 <template>
   <div class="section2">
     <img src="./s2/t.png" :alt="`${info.caseName}_t`" class="t">
-    <div class="right">
+    <div class="flex-c" v-if="isMobile">
+      <img src="./s2/icon1.png" :alt="`${info.caseName}_icon1`" class="icon">
+      <img src="./s2/icon2.png" :alt="`${info.caseName}_icon2`" class="icon">
+      <img src="./s2/icon3.png" :alt="`${info.caseName}_icon3`" class="icon">
+    </div>
+    <div v-if="isMobile">
+      <div class="desc">
+        對於銷售的偏執，我們絕不妥協<br />
+        對於客戶，以真誠款待<br />
+        客戶服務，吹毛求疵，讓廣大民眾，都擁有一個完美的家。
+      </div>
+      <div class="desc">
+        對於建商，以完銷回饋<br />
+        以良善創造建案價值，用創意力、行銷力為信念正向合作。<br />
+        成為買賣雙方的橋樑，讓買賣不僅僅是金錢交換，而是一種循環美好的互動。
+      </div>
+      <div class="desc">
+        我們言語不多 但心意很多。<br />
+        關於房子的許多事，不需要訴說，只需用心感受
+      </div>
+      <img src="./s2/i1.jpg" :alt="`${info.caseName}_i1`" class="img">
+      <img src="./s2/logo.png" :alt="`${info.caseName}_logo`" class="logo">
+      <div class="desc">
+        「得邦廣告」以短短三年的時間，成功推行總值160億的案量。<br /><br />
+        以精緻服務為核心價值，為消費者全盤規劃、推薦最合適的美宅。並對建設公司，提供土地規劃、建築設計、環境規劃、景觀規劃、美學架構等全盤的建議。<br /><br />
+        在房地產行銷的領域中，以領先業界的專業服務，建構「人」與「家」最堅固的橋樑。
+      </div>Ｆ
+    </div>
+    <div class="right" v-if="isPC">
       <div class="item flex-ac flex-jb">
         <img src="./s2/icon1.png" :alt="`${info.caseName}_icon1`" class="icon">
         <div class="desc">
@@ -35,7 +63,7 @@
     </div>
     <div class="video-item" v-for="(video, index) in video_list" :key="video.title + index">
       <img :src="video.img" :alt="`${info.caseName}_video`" class="v">
-      <div class="flex-ac flex-jb">
+      <div class="flex-ac flex-jb wrap">
         <div class="video-title">
           {{video.title}}
         </div>
@@ -173,9 +201,9 @@
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    min-height: sizem(454);
-    max-height: sizem(812);
-    height: sizem(454);
+    min-height: auto;
+    max-height: auto;
+    height: auto;
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -196,47 +224,112 @@
     }
   }
 
-  .img {
-    @include div_l_m(344, 223, 0, 0);
-    position: relative;
-    img {
-      width: 100%;
-      height: 100%;
-    }
-
-    .border {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      margin: 0 auto;
-      left: 0;
-      right: 0;
-      width: 95%;
-      height: 95%;
-      border: 3px solid #ff8200;
-    }
+  .t {
+    display: none;
   }
 
-  .info-block {
-    @include div_r_m(336, 203, 183, 0);
-    background-color: #ff8200;
+  .right {
+    display: none;
   }
 
-  .content {
-    width: calc(100% - 10vw);
-    height: calc(100% - 10vw);
-    padding: sizem(25) sizem(30);
-    font-size: sizem(14);
+  .icon {
+    width: sizem(95);
+    margin-right: sizem(10);
+    margin-bottom: sizem(34);
+  }
+
+  .desc {
+    font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.5;
+    line-height: 1.73;
+    letter-spacing: sizem(0.75);
     text-align: left;
-    color: #606060;
-    .title {
+    color: #4d4d4d;
+    margin-bottom: sizem(15);
+    margin-left: sizem(35);
+  }
+
+  .item {
+    width: size(1920 - 648);
+    margin-bottom: size(21);
+    .icon {
+      width: size(209);
+    }
+
+    .desc {
+      width: size(1063 - 103);
+      font-size: size(24);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.75;
+      letter-spacing: size(1.2);
+      text-align: left;
+      color: #4d4d4d;
+      white-space: nowrap;
+    }
+  }
+
+  .img {
+    float: right;
+    width: sizem(341);
+    margin-top: sizem(50);
+    margin-bottom: sizem(50);
+  }
+
+  .logo {
+    width: sizem(300);
+    margin-bottom: size(40);
+    margin: 0 auto sizem(40);
+  }
+
+  .desc {
+    width: size(1095);
+    font-size: size(24);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.56;
+    letter-spacing: size(2.4);
+    text-align: left;
+    color: #4d4d4d;
+    margin-bottom: size(60);
+  }
+
+  .video-item {
+    width: 100vw;
+    margin: 0 auto size(40);
+
+    .v {
+      width: 100%;
+    }
+
+    .video-title {
+      width: sizem(296);
+      margin: sizem(40) auto 0;
+      font-size: sizem(20);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.62;
+      letter-spacing: sizem(2.16);
+      text-align: left;
+      color: #008fbb;
+    }
+
+    .video-desc {
+      width: sizem(296);
+      margin: 0 auto sizem(40);
       font-size: sizem(15);
-      font-weight: 900;
-      letter-spacing: sizem(1.49);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.99;
+      letter-spacing: sizem(0.96);
+      text-align: left;
+      color: #1a1a1a;
     }
   }
 }

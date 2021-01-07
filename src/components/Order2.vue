@@ -1,9 +1,9 @@
 <template>
   <div class="order-bg">
     <img src="../projects/db/contact/title.png" alt="" class="order-title">
-    <img src="../projects/db/index/s7/資產 16@2x.png" alt="" class="info-img" data-aos="fade-down" data-aos-delay="500">
-    <img src="../projects/db/contact/logot.png" :alt="`${info.caseName}_logot`" class="logot" data-aos="fade-down" data-aos-delay="600">
-    <div class="info-desc" data-aos="fade-down" data-aos-delay="600">
+    <img src="../projects/db/index/s7/資產 16@2x.png" alt="" class="info-img" data-aos="fade-down" data-aos-delay="500" v-if="isPC">
+    <img src="../projects/db/contact/logot.png" :alt="`${info.caseName}_logot`" class="logot" data-aos="fade-down" data-aos-delay="600" v-if="isPC">
+    <div class="info-desc" data-aos="fade-down" data-aos-delay="600" v-if="isPC">
       <span>{{info.address}}</span><br />
       {{info.phone}}
     </div>
@@ -426,7 +426,7 @@ export default {
     /*background-attachment: initial;
     background-size: cover;*/
     height: auto;
-    padding-top: 40px;
+    padding-top: 120px;
     margin: 0;
     position: relative;
     z-index: 2;
@@ -435,10 +435,19 @@ export default {
       display: block;
     }
     .order-title {
-      padding-top: 10px;
-      padding-bottom: 5px;
-      font-size: calc(100vw * 25 / 375);
-      letter-spacing: 4px;
+      @include img_l_m(310, 64, 33);
+      // font-family: $family2;
+      // width: 100vw;
+      // padding-top: size(10);
+      // font-size: size(58.7);
+      // font-weight: 500;
+      // font-stretch: normal;
+      // font-style: normal;
+      // line-height: 1.2;
+      // letter-spacing: size(11.69);
+      // text-align: center;
+      // color: #ffffff;
+      // color: $order_title_color;
     }
 
     .order-subtitle {

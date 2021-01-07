@@ -10,7 +10,7 @@
       <div class="item" v-for="(item, index) in item_list" :key="item.title + index" @click="showProjectDialog(item)">
         <img :src="item.img" :alt="`${info.caseName}`">
         <div class="add"></div>
-        <div class="content flex flex-ac" v-if="!item.isEmpty">
+        <div class="content flex flex-ac wrap" v-if="!item.isEmpty">
           <div class="item-title flex-c" v-html="item.title"></div>
           <div class="item-desc flex-ac" v-html="item.desc"></div>
         </div>
@@ -316,9 +316,9 @@
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    min-height: sizem(1134);
-    max-height: sizem(812);
-    height: sizem(1134);
+    min-height: auto;
+    max-height: auto;
+    height: auto;
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -339,107 +339,75 @@
     }
   }
 
-  .border-container {
-    width: sizem(355);
-    height: sizem(1027);
-    margin: sizem(40) auto sizem(30);
-    border: 3px solid #ff8200;
+  .container {
+    width: sizem(310);
+    margin: sizem(60) auto sizem(80);
   }
 
-  .title {
-    width: sizem(314);
-    margin: 0 auto;
-    margin-top: sizem(-30);
-    font-size: sizem(20);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2;
-    letter-spacing: 1px;
-    text-align: center;
-    color: #606060;
-    background-color: #fff;
-    white-space: nowrap;
-
-    span {
-      color: #ff8200;
-    }
-  }
-
-  .img {
-    @include img_l_m(340, 60, 0);
-    z-index: 2;
-  }
-
-  .s-title {
-    @include div_r_m(130, 41, 341, 123);
-    font-size: sizem(28);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(5.37);
-    text-align: left;
-    color: #ff8200;
-    white-space: nowrap;
-  }
-
-  .content-title {
-    @include div_l_m(258, 41, 407, 23);
-    font-size: sizem(28);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(2.8);
-    text-align: left;
-    color: #606060;
-    white-space: nowrap;
-  }
-
-  .content-desc {
-    @include div_r_m(310, 260, 476, 23);
-    font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.65;
-    letter-spacing: sizem(0.75);
-    text-align: left;
-    color: #606060;
-
-    span {
-      font-size: sizem(15);
-      font-weight: bold;
-      letter-spacing: sizem(0.75);
-    }
-  }
-
-  .btn {
-    @include div_r_m(150, 40, 700, 113);
-    font-size: sizem(23);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.65;
-    letter-spacing: sizem(1);
-    text-align: left;
-    background-color: #ff8200;
-    color: #fff;
-  }
-
-  .video {
+  .item {
+    width: 100%;
+    height: sizem(400);
+    margin: 0 sizem(0) sizem(70);
+    border-bottom: none;
     cursor: pointer;
-    @include div_r_m(320, 181, 782, 17);
-  }
 
-  .rb {
-    position: absolute;
-    background-color: #fff;
-    width: sizem(132);
-    height: sizem(72);
-    right: sizem(-10);
-    bottom: sizem(-40);
+    .add {
+    }
+
+    img {
+      width: sizem(310);
+      height: sizem(305);
+      object-fit: cover;
+    }
+
+    .content {
+      // margin-top: sizem(221);
+      height: sizem(70);
+      padding: 0 sizem(15);
+    }
+
+    .item-icon {
+      width: sizem(43);
+      height: sizem(43);
+      margin-right: sizem(15);
+    }
+
+    .item-desc {
+      width: sizem(238);
+      width: 100%;
+      font-size: sizem(15);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.4;
+      letter-spacing: sizem(0.9);
+      text-align: left;
+      color: #4d4d4d;
+    }
+    .item-title {
+      width: 100%;
+      font-size: sizem(20);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.62;
+      letter-spacing: sizem(1.16);
+      text-align: left;
+      justify-content: flex-start;
+      color: #333333;
+      // margin-bottom: 15px;
+    }
+
+    .item-coming {
+      font-size: sizem(24);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.35;
+      letter-spacing: size(0.73);
+      text-align: center;
+      color: #8e8e8e;
+    }
   }
 }
 </style>
@@ -473,13 +441,14 @@ export default {
         {
           title: '容邑PARK',
           title2: '容邑PARK',
-          desc:
-            '新北市｜新莊副都心',
+          desc: '新北市｜新莊副都心',
           img: require('../hot/s1/imgbg.jpg'),
           isEmpty: false,
           info1: '新北市｜新莊副都心',
-          info2: '信義區機能+重劃區規格+超甜蜜價格，你想要的人生好味在容邑PARK一席通包。感受新莊副都心完熟機能，就在【容邑PARK】',
-          info3: '完工時間｜2019年<br />規劃樓層｜地上15層，地下6層<br />格局規劃｜開放格局(15-33坪)<br />基地地址｜新北市新莊區富貴路182號<br />建案特色｜新莊副都心，機能完整<br />機場捷運A3新北產業園區站，散步即達<br />步行2分鐘，抵達塭仔底生態公園',
+          info2:
+            '信義區機能+重劃區規格+超甜蜜價格，你想要的人生好味在容邑PARK一席通包。感受新莊副都心完熟機能，就在【容邑PARK】',
+          info3:
+            '完工時間｜2019年<br />規劃樓層｜地上15層，地下6層<br />格局規劃｜開放格局(15-33坪)<br />基地地址｜新北市新莊區富貴路182號<br />建案特色｜新莊副都心，機能完整<br />機場捷運A3新北產業園區站，散步即達<br />步行2分鐘，抵達塭仔底生態公園',
           contact: '',
           logo: require('../hot/s1/imgbg.jpg'),
           link: '',

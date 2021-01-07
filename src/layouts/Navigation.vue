@@ -3,13 +3,14 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
-          <img src="../assets/img/close.png" :alt="`${info.caseName}_close`" class="close" @click="min = true">
-          <div class="close flex-c" @click="min = false" v-if="min">
+          <img src="../assets/img/close.png" :alt="`${info.caseName}_close`" class="close" @click="min = true" v-if="!isMobile">
+          <div class="close flex-c" @click="min = false" v-if="min && !isMobile">
             <div class="menu-icon"></div>
           </div>
           <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt @click="$router.push('/')" /> -->
           <div class="menu" @click="toggleSidebar('')" v-show="!isOpen">
-            <font-awesome-icon icon="bars" />
+            <div class="menu-icon"></div>
+            <!-- <font-awesome-icon icon="bars" /> -->
           </div>
           <div :class="`mask ${isOpen ? 'open' : ''}`">
             <!-- <div class="close" @click="isOpen = false">
@@ -245,6 +246,7 @@ export default {
   height: 100%;
   overflow: hidden;
   padding-left: 30px;
+  padding-top: 50px;
   font-size: size(18);
   li {
     height: 100%;
@@ -260,7 +262,7 @@ export default {
     color: $nav_link_color;
     // height: 22px;
     // margin-top:50%;
-    margin: 0 2.5em 0 0;
+    margin: 0 0 0 0;
     text-align: center;
     display: block;
     cursor: pointer;
@@ -410,10 +412,10 @@ export default {
     position: absolute;
     top: 5px;
     right: 15px;
-    width: sizem(50);
-    height: sizem(50);
+    width: sizem(40);
+    height: sizem(40);
     padding-top: sizem(8);
-    // background-color: #af1f24;
+    background-color: #008fbb;
     z-index: 112;
 
     svg {
@@ -421,6 +423,39 @@ export default {
       height: sizem(35);
       color: $nav_btn_color;
     }
+  }
+
+  .menu-icon {
+    position: relative;
+    width: sizem(30);
+    height: 2px;
+    margin-top: sizem(0);
+    margin-left: sizem(5);
+    background-color: #fff;
+  }
+
+  .menu-icon::before {
+    position: absolute;
+    left: 0;
+    top: sizem(10);
+    content: '';
+    display: block;
+    width: sizem(30);
+    height: 2px;
+    background-color: #fff;
+    transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+  }
+
+  .menu-icon::after {
+    position: absolute;
+    left: 0;
+    top: sizem(20);
+    content: '';
+    display: block;
+    width: sizem(30);
+    height: 2px;
+    background-color: #fff;
+    transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
   }
 
   .navlist {
@@ -483,7 +518,7 @@ export default {
     z-index: 111;
     width: 0%;
     right: 0;
-    top: $nav_phone_height;
+    top: 0;
     height: calc(100vh - #{$nav_phone_height});
     text-align: center;
     transition: all 0.3s ease-in;
@@ -536,7 +571,7 @@ export default {
 
   .mask {
     width: 100vw;
-    top: $nav_phone_height;
+    top: 0;
     right: 0;
     background-image: url('~@/projects/lc/form/bg.jpg');
     background-repeat: repeat;
@@ -557,10 +592,15 @@ export default {
 
   .close {
     position: fixed;
+    width: sizem(41);
+    height: sizem(41);
     top: 10px;
     right: 10px;
     z-index: 120;
     transform: translateX(100%);
+    img {
+      width: 100%;
+    }
   }
 
   .line {

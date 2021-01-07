@@ -1,6 +1,7 @@
 <template>
   <div class="section3">
-    <img src="./s3/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
+    <img src="./s3/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC">
+    <img src="./s3/bg_m.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isMobile">
     <h1 class="title">熱銷建案</h1>
     <h1 class="subtitle">
       以真心，推薦好建築
@@ -92,9 +93,9 @@
 @media screen and (max-width: 767px) {
   .section3 {
     width: 100vw;
-    min-height: sizem(604);
+    min-height: sizem(404);
     max-height: sizem(812);
-    height:sizem(660);
+    height: sizem(490);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -116,97 +117,31 @@
   }
 
   .title {
-    @include div_r_m(375, 41, 23, 0);
+    @include div_r_m(149, 45, 390, 191);
     font-size: sizem(28);
     text-align: center;
   }
 
   .subtitle {
-    @include div_r_m(375, 74, 70, 0);
+    @include div_r_m(145, 34, 435, 194);
     font-size: sizem(15);
     text-align: center;
   }
 
-  .imgs {
-    width: sizem(375);
-    top: sizem(146);
-    position: absolute;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    display: block !important;
-    .img {
-      width: sizem(150);
-      height: sizem(150);
-      &:nth-child(1) {
-        display: inline-block;
-        margin: 0 sizem(15);
-      }
-      &:nth-child(2), &:nth-child(4), &:nth-child(5) {
-        display: inline-block;
-        margin: 0 sizem(15);
-      }
-
-      &:nth-child(3) {
-        margin: sizem(15) auto;
-      }
-      img {
-        width: 100%;
-        height: 100%;
-      }
-
-      &:hover {
-        .mask {
-          opacity: 0;
-        }
-      }
-    }
-    .mask {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      right: 0;
-      background: rgba(255, 255, 255, 0.7);
-    }
-
-    .border {
-      width: 100%;
-      height: 100%;
-    //  box-shadow: inset 0 0 0 10px #fff;
-     // border-radius: 999px;
-      font-size: sizem(26);
-      border: sizem(7) solid #FFF;
-      font-weight: 900;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.34;
-      letter-spacing: normal;
-      text-align: left;
-      color: #ff8200;
-    }
-
-    .border-orange {
-    border: sizem(7) solid #fe8100;
-    }
+  .title-img {
+    @include img_l_m(288, 308, 54);
   }
 
-  .bottom {
-    @include div_r_m(375, 173, 0, 0);
-    top: auto;
-    bottom: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: sizem(173) 0 0 sizem(375);
-    border-color: transparent transparent transparent #fff;
+  .btn {
+    @include img_r_m(151, 434, 32);
+    cursor: pointer;
   }
 }
 </style>
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
-import info  from '@/info'
+import info from '@/info'
 
 export default {
   name: 'section3',

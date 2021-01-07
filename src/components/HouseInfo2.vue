@@ -163,7 +163,7 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .content {
-    min-height: 15em;
+    min-height: sizem(175 + 188);
     width: 100%;
     margin-bottom: 0;
     font-size: 15px;
@@ -191,6 +191,42 @@ export default {
     flex: 1;
     justify-content: space-around;
     align-content: space-around;
+  }
+
+  .logo {
+    @include img_l_m(375, 0, 0);
+  }
+
+  .logot {
+    @include img_r_m(277, 252, 65);
+  }
+
+  .desc {
+    @include img_l_m(268, 285, 34);
+    font-size: sizem(16);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.27;
+    letter-spacing: sizem(-0.32);
+    text-align: left;
+    white-space: nowrap;
+    color: #ffffff;
+
+    span {
+      font-weight: bold;
+    }
+  }
+
+  .links {
+    @include img_l_m(184, 169, 161);
+    a {
+      width: sizem(52);
+    }
+
+    img {
+      width: 100%;
+    }
   }
 }
 

@@ -1,8 +1,9 @@
 <template>
   <div class="section2">
     <div class="bottom"></div>
-    <div class="title">用最真誠的心<br />
+    <div class="title" v-if="isPC">用最真誠的心<br />
       為台灣房市注入一份勇於前進的信念</div>
+    <div class="title" v-if="isMobile">用最真誠的心<br />為台灣房市注入一份<br />勇於前進的信念</div>
     <div class="subtitle">
       對於銷售的偏執，我們絕不妥協<br />對於客戶，以真誠款待......................
     </div>
@@ -91,7 +92,7 @@
   height: 0;
   border-style: solid;
   border-width: size(300) size(3020) 0 0;
-  border-color: #008fbb transparent transparent  transparent;
+  border-color: #008fbb transparent transparent transparent;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -110,7 +111,7 @@
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    min-height: sizem(584);
+    min-height: sizem(544);
     max-height: sizem(812);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
@@ -133,80 +134,65 @@
   }
 
   .title {
-    @include div_r_m(375, 41, 72, 0);
-    font-size: sizem(28);
+    @include div_r_m(162, 77, 310, 180);
+    font-size: sizem(17);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.53;
+    letter-spacing: sizem(1.17);
+    text-align: left;
+    color: #ffffff;
+    white-space: nowrap;
   }
 
   .subtitle {
-    @include div_r_m(375, 24, 120, 0);
-    font-size: sizem(15);
+    @include div_r_m(309, 96, 404, 33);
+    font-size: sizem(17);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.53;
+    letter-spacing: sizem(1.17);
+    text-align: left;
+    color: #ffffff;
+    white-space: nowrap;
 
     span {
-      font-size: sizem(16);
+      font-size: size(27);
+      color: #ff8200;
     }
+  }
+
+  .title-img {
+    @include img_l_m(178, 95, 29);
+  }
+
+  .icon {
+    @include img_r_m(310, 221, 32);
   }
 
   .btn {
-    @include div_r_m(140, 37, 476, 117);
-    font-size: sizem(18);
-    &:hover {
-      background-color: #444;
-    }
+    @include img_r_m(151, 471, 32);
+    cursor: pointer;
   }
 
-  .carousel-3d-container {
-    z-index: 3 !important;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    top: sizem(200) !important;
-  }
-
-  .carousel-3d-item {
-    // position: relative;
-
-    &:hover,
-    &.current {
-      .mask {
-        opacity: 1;
-      }
-    }
-  }
-
-  .mask {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: rgba(255, 130, 0, 0.7);
-    padding: sizem(20);
-    opacity: 0;
-    transition: all 0.3s;
-  }
-
-  .border {
-    width: 100%;
-    height: 100%;
-    border: 1px solid #fff;
-    color: #fff;
-    text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
-    font-size: sizem(32);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(6.32);
-    text-align: center;
-    color: #ffffff;
+  .bottom {
+    @include div_r_m(1920, 78, 0, 0);
+    top: auto;
+    bottom: size(-300);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: size(300) size(3020) 0 0;
+    border-color: #008fbb transparent transparent transparent;
   }
 }
 </style>
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
-import info  from '@/info'
+import info from '@/info'
 // import slider from '@/mixins/slider.js'
 // import { Carousel3d, Slide } from 'vue-carousel-3d'
 

@@ -200,7 +200,7 @@
     line-height: 1.2;
     letter-spacing: normal;
     text-align: left;
-    color: #ff9e00;
+    color: #0289b8;
     margin-bottom: sizem(15);
   }
   .news-subtitle {
@@ -270,7 +270,7 @@
       line-height: sizem(63);
       letter-spacing: sizem(1.6);
       text-align: center;
-      border: solid 1px #ff9e00;
+      border: solid 1px #0289b8;
       color: #666666;
       margin: 0;
       margin-bottom: 15px;

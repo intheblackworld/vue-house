@@ -1,14 +1,19 @@
 <template>
   <div class="section1">
-    <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
-    <img src="./s1/t.png" :alt="`${info.caseName}_t`" class="t">
+    <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC">
+    <img src="./s1/bg_m.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isMobile">
+    <img src="./s1/t.png" :alt="`${info.caseName}_t`" class="t" v-if="isPC">
+    <img src="./s1/t_m.png" :alt="`${info.caseName}_t`" class="t" v-if="isMobile">
     <div class="title">
       What is great in man<br />
       is that he is a bridge<br />
       and not an end.
     </div>
-    <div class="subtitle">
+    <div class="subtitle" v-if="isPC">
       「人之所以偉大，是因為他是一座橋樑，而非目的。」
+    </div>
+    <div class="subtitle" v-if="isMobile">
+      「人之所以偉大，<br />是因為他是一座橋樑，而非目的。」
     </div>
     <div class="hr"></div>
     <div class="name">
@@ -190,63 +195,75 @@
 @media screen and (max-width: 767px) {
   .section1 {
     width: 100vw;
-    min-height: sizem(700);
+    min-height: sizem(670);
     max-height: sizem(812);
-    height: 100vh;
+    height: sizem(670);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
   }
 
-  .cloud {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    .cloud1 {
-      @include img_l_m(600, 370, 0);
-    }
-    .cloud2 {
-      @include img_l_m(460, 80, 0);
-    }
-    .cloud3 {
-      @include img_l_m(440, 200, 0);
-    }
-    .cloud4 {
-      @include img_l_m(510, 410, 0);
-    }
+  .t {
+    @include img_r_m(375, 0, 0);
   }
-  .bg-img {
-    &.bg2 {
-      width: auto;
-      height: sizem(150);
-      top: auto;
-      left: auto;
-      bottom: 0%;
-      right: -30%;
+
+  .hr {
+    @include div_r_m(190, 1, 611, 148);
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.58);
+    background-color: #fff;
+  }
+
+  .name {
+    @include div_r_m(113, 22, 599, 22);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.58);
+    font-size: sizem(15);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: right;
+    color: #ffffff;
+    white-space: nowrap;
+    span {
+      font-size: sizem(15);
+      white-space: nowrap;
     }
   }
 
   .bottom {
-    @include div_r_m(375, 44, 0, 0);
+    @include div_r_m(375, 34, 0, 0);
     top: auto;
-    bottom: 0;
+    bottom: -10px;
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 0 0 sizem(44) sizem(375);
-    border-color: transparent transparent #fff transparent;
+    border-width: 0 0 size(300) size(3020);
+    border-color: transparent transparent #008fbb transparent;
   }
 
   .title {
-    @include div_r_m(196, 41, 40, 90);
-    font-size: sizem(28);
-    font-weight: bold;
+    @include div_r_m(302, 149, 420, 35);
+    font-size: sizem(32);
+    font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(5.57);
+    line-height: 1.16;
+    letter-spacing: sizem(-1.28);
+    text-align: left;
+    color: #ffe900;
+    white-space: nowrap;
+  }
+
+  .subtitle {
+    @include div_r_m(253, 56, 551, 93);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.58);
+    font-size: sizem(15);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.13;
+    letter-spacing: normal;
     text-align: left;
     color: #ffffff;
     white-space: nowrap;

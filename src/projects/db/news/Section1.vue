@@ -79,9 +79,9 @@
 @media screen and (max-width: 767px) {
   .section1 {
     width: 100vw;
-    min-height: sizem(604);
+    min-height: sizem(320);
     max-height: sizem(812);
-    height:sizem(660);
+    height: sizem(320);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -103,90 +103,31 @@
   }
 
   .title {
-    @include div_r_m(375, 41, 23, 0);
-    font-size: sizem(28);
+    @include div_r_m(112, 38, 291, 32);
+    font-size: sizem(17);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.53;
+    letter-spacing: sizem(3.23);
     text-align: center;
+    color: #000000;
+    white-space: nowrap;
   }
 
-  .subtitle {
-    @include div_r_m(375, 74, 70, 0);
-    font-size: sizem(15);
-    text-align: center;
-  }
-
-  .imgs {
-    width: sizem(375);
-    top: sizem(146);
-    position: absolute;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    display: block !important;
-    .img {
-      width: sizem(150);
-      height: sizem(150);
-      &:nth-child(1) {
-        display: inline-block;
-        margin: 0 sizem(15);
-      }
-      &:nth-child(2), &:nth-child(4), &:nth-child(5) {
-        display: inline-block;
-        margin: 0 sizem(15);
-      }
-
-      &:nth-child(3) {
-        margin: sizem(15) auto;
-      }
-      img {
-        width: 100%;
-        height: 100%;
-      }
-
-      &:hover {
-        .mask {
-          opacity: 0;
-        }
-      }
-    }
-    .mask {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      right: 0;
-      background: rgba(255, 255, 255, 0.7);
-    }
-
-    .border {
-      width: 100%;
-      height: 100%;
-    //  box-shadow: inset 0 0 0 10px #fff;
-     // border-radius: 999px;
-      font-size: sizem(26);
-      border: sizem(7) solid #FFF;
-      font-weight: 900;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.34;
-      letter-spacing: normal;
-      text-align: left;
-      color: #ff8200;
-    }
-
-    .border-orange {
-    border: sizem(7) solid #fe8100;
-    }
+  .title-img {
+    @include img_l_m(258, 212, 33);
   }
 
   .bottom {
-    @include div_r_m(375, 173, 0, 0);
+    @include div_r_m(375, 50, 0, 0);
     top: auto;
     bottom: 0;
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: sizem(173) 0 0 sizem(375);
-    border-color: transparent transparent transparent #fff;
+    border-width: 0 0 sizem(50) sizem(700);
+    border-color: transparent transparent #fff transparent;
   }
 }
 </style>
