@@ -44,10 +44,10 @@
   }
 }
 .news-container {
-  width:56em;
+  width: 56em;
   margin: size(80) auto;
   padding-bottom: size(80);
-    justify-content:space-between;
+  justify-content: space-between;
   display: flex;
   flex-wrap: wrap;
   font-size: size(25);
@@ -55,21 +55,21 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.61;
-  letter-spacing:0.01em;
+  letter-spacing: 0.01em;
   text-align: justify;
   color: #ff9e00;
 }
 .news-item {
-  width:16em;
-  margin: 0 1em  1.5em  1em;
+  width: 16em;
+  margin: 0 1em 1.5em 1em;
   cursor: pointer;
 }
 
 .news-img {
   width: 100%;
-  height:14em;
+  height: 14em;
   object-fit: cover;
- // margin-bottom: size(10);
+  // margin-bottom: size(10);
 }
 
 .pagination {
@@ -218,33 +218,34 @@ export default {
       isMobile,
       isTablet,
       tabIndex: 0,
-      list: [//...Array(18).keys()].map((i) => ({
-      {
-        img: require('../news/s2/1/20191009004718.jpg'),
-        title: '立瑾醞 三重水岸正大3房 純住宅智能規劃 永久景觀棟距稀有珍貴',
-      },
-      {
-        img: require('../news/s2/2/160683225228081_P6748206.jpg'),
-        title: '快來「立瑾醞」！ 地主自己當',
-      },
-      {
-        img: require('../news/s2/3/2193147-XXL.jpg'),
-        title: '別再買縮水版3房了！立瑾醞三重水岸大3房一次買到位',
-      },
-      {
-        img: require('../news/s2/4/30-98629-001.jpg'),
-        title: '立瑾醞 口碑推爆：三重水岸住大3房的幸福',
-      },
-      {
-        img: require('../news/s2/5/a1.jpg'),
-        title: '三重立瑾醞召開第一次區權會',
-      },
-     /*{
+      list: [
+        //...Array(18).keys()].map((i) => ({
+        {
+          img: require('../news/s2/5/a1.jpg'),
+          title: '三重立瑾醞召開第一次區權會',
+        },
+        {
+          img: require('../news/s2/1/20191009004718.jpg'),
+          title: '立瑾醞 三重水岸正大3房 純住宅智能規劃 永久景觀棟距稀有珍貴',
+        },
+        {
+          img: require('../news/s2/2/160683225228081_P6748206.jpg'),
+          title: '快來「立瑾醞」！ 地主自己當',
+        },
+        {
+          img: require('../news/s2/3/2193147-XXL.jpg'),
+          title: '別再買縮水版3房了！立瑾醞三重水岸大3房一次買到位',
+        },
+        {
+          img: require('../news/s2/4/30-98629-001.jpg'),
+          title: '立瑾醞 口碑推爆：三重水岸住大3房的幸福',
+        },
+        /*{
         img: require('../news/s2/no.png'),
         title: '立瑾醞 享受大三房、水岸景觀之美',
       },
       */
-      ],//)),
+      ], //)),
       pageCount: 3,
       currentPage: 1,
     }
