@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="section section-bottom" data-aos="fade-up" data-aos-duration="1000">
+    <div class="section section-bottom" id="section-bottom" data-aos="fade-up" data-aos-duration="1000">
       <div class="title text-align-center">
         <img src="../pages/texture/section-bottom/title.png" alt="台南唯一 TSUTAYA BOOKSTORE 蔦屋書苑 西門大道凌空制震地標  文元學區2-4房" v-if="!isMobile" />
         <img src="../pages/mobile-texture/section-bottom/title.png" alt="台南唯一 TSUTAYA BOOKSTORE 蔦屋書苑 西門大道凌空制震地標  文元學區2-4房" v-if="isMobile" />
@@ -15,7 +15,7 @@
         <a class="hover" @click="isShowMapDialog = true">導航google地圖</a>
       </div>
     </div>
-    <div class="section section-bottom-mb">
+    <div class="section section-bottom-mb" id="section-bottom">
       <div class="title text-align-center">
         <img src="../pages/mobile-texture/section-bottom/title.png" alt="台南唯一 TSUTAYA BOOKSTORE 蔦屋書苑 西門大道凌空制震地標  文元學區2-4房" />
       </div>
