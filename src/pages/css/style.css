@@ -571,6 +571,13 @@ p {
         left: 0;
         bottom: unset;
         width: 100%;
+        animation: oxxo 3s ease-in-out infinite alternate;
+       transform:skewY(3deg);transform-origin: 50% 50%;
+    }
+    @keyframes oxxo{
+        to{
+            transform:skewY(-3deg);
+        }
     }
     .section.section-1 .button1 {
         display: none;
