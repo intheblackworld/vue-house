@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.png">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.png" />
 
     <!--SEO meta-->
-    <meta
-      name="title"
-      content="<%= htmlWebpackPlugin.options.metaTitle %>"
-    />
+    <meta name="title" content="<%= htmlWebpackPlugin.options.metaTitle %>" />
     <meta
       name="description"
       content="<%= htmlWebpackPlugin.options.metaDescription %>"
@@ -23,12 +20,14 @@
       property="og:title"
       content="<%= htmlWebpackPlugin.options.ogMetaTitle %>"
     />
-    <meta property="og:type" content="<%= htmlWebpackPlugin.options.ogMetaType %>" />
+    <meta
+      property="og:type"
+      content="<%= htmlWebpackPlugin.options.ogMetaType %>"
+    />
     <meta
       property="og:description"
       content="<%= htmlWebpackPlugin.options.ogMetaDescription %>"
     />
-    <script type="application/javascript">(function(w,d,t,r,u){w[u]=w[u]||[];w[u].push({'projectId':'10000','properties':{'pixelId':'10101258'}});var s=d.createElement(t);s.src=r;s.async=true;s.onload=s.onreadystatechange=function(){var y,rs=this.readyState,c=w[u];if(rs&&rs!="complete"&&rs!="loaded"){return}try{y=YAHOO.ywa.I13N.fireBeacon;w[u]=[];w[u].push=function(p){y([p])};y(c)}catch(e){}};var scr=d.getElementsByTagName(t)[0],par=scr.parentNode;par.insertBefore(s,scr)})(window,document,"script","https://s.yimg.com/wi/ytc.js","dotq");</script>
     <!-- <script type="application/javascript">
 
       window.dotq = window.dotq || [];
@@ -54,7 +53,7 @@
       } } );
      
      </script>  -->
-     <!-- <script type="application/javascript">
+    <!-- <script type="application/javascript">
 
       window.dotq = window.dotq || [];
      
@@ -79,7 +78,7 @@
       } } );
      
      </script> -->
-     <!-- <script type="application/javascript">
+    <!-- <script type="application/javascript">
 
       window.dotq = window.dotq || [];
      
@@ -104,7 +103,7 @@
       } } );
      
      </script>  -->
-     <!-- <script type="application/javascript">
+    <!-- <script type="application/javascript">
 
       window.dotq = window.dotq || [];
      
@@ -132,15 +131,35 @@
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but vue-house doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong
+        >We're sorry but vue-house doesn't work properly without JavaScript
+        enabled. Please enable it to continue.</strong
+      >
     </noscript>
     <div id="app"></div>
     <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.2&appId=542185515968935&autoLogAppEvents=1"></script>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <script src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit" async defer>
-    </script> 
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.2&appId=542185515968935&autoLogAppEvents=1"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <script
+      src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit"
+      async
+      defer
+    ></script>
 
     <!-- built files will be auto injected -->
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/swiper-bundle.min.js"></script>
+    <script src="./js/aos.js"></script>
+    <script src="./js/tilt.jquery.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>
