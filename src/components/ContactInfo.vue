@@ -2,17 +2,27 @@
   <div>
     <div
       class="contact-info"
+      id="contact-info"
       data-aos="fade"
       data-aos-delay="0"
     >
       <img
+        v-if="!isMobile"
         class="logo"
         src="@/assets/img/contact-logo.png"
         :alt="info.caseName"
         data-aos="fade-down"
         data-aos-delay="0"
       />
-      <div class="info" id="contact-info">
+      <img
+        v-if="isMobile"
+        class="logo"
+        src="@/assets/img/contact-logo_m.png"
+        :alt="info.caseName"
+        data-aos="fade-down"
+        data-aos-delay="0"
+      />
+      <div class="info">
         <div
           class="btn flex-c"
           @click="showCallDialog"
@@ -150,7 +160,7 @@ export default {
   position: relative;
   z-index: 3;
   width: 1200px;
-  height: 1140px;
+  height: 500px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */

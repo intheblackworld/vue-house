@@ -13,7 +13,7 @@
 
 html,
 body {
-  background: $bg !important;
+  // background: $bg !important;
   overflow-x: hidden;
   *::-webkit-scrollbar {
     // display: none;
@@ -25,7 +25,7 @@ body {
   }
 
   ::selection {
-    background-color: #a90005;
+    background-color: #60c2e9;
     color: #fff;
   }
 }
@@ -40,8 +40,9 @@ body {
 
 .home {
   background: $bg;
+  // background-image: url('~@/projects/lj/s1/bg.png');
   padding-top: $nav_pc_height;
-  background-attachment: fixed;
+  // background-attachment: fixed;
   background-size: auto;
   background-position: center center;
   background-repeat: repeat;
@@ -343,12 +344,13 @@ img[lazy='loaded'] {
 
   .home {
     padding-top: $nav_phone_height;
-    background: $bg;
-    background-image: $order_bg_image_m;
+    background: linear-gradient(to bottom, #094b76, #ffffff 50%, #004471 70%);
+    // background-image: url('~@/projects/lj/s1/bg_m.png');
+    // background-image: $order_bg_image_m;
     // background-repeat: no-repeat;
     // background-size: cover;
-    background-attachment: fixed;
-    background-position: 0% 50%;
+    // background-attachment: fixed;
+    // background-position: 0% 50%;
 
     &.no-padding-top {
       padding-top: 0;

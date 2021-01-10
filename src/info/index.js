@@ -27,6 +27,6 @@ export default {
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
   order: {
     title: isMobile ? '預約賞屋' : '預約賞屋',
-    subTitle: ''
+    subTitle: '連雲建築的精質手工  日本職人的講究房子<br /><br />即將靜好公開 敬請期待  歡迎預約優先參觀品賞'
   }
 }

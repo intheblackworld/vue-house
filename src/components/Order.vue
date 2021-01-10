@@ -16,6 +16,8 @@
       ></h3>
       <div
         class="order-subtitle"
+        data-aos="fade-down"
+        data-aos-delay="100"
         v-html="order.subTitle"
       ></div>
       <div class="order">
@@ -368,7 +370,7 @@ export default {
     width: 80vw;
     padding-top: 20px;
     padding-bottom: 20px;
-    margin: 0 auto 40px;
+    margin: 0 auto 10px;
     display: inline-block;
     font-weight: 700;
     line-height: 1.7;
@@ -376,8 +378,8 @@ export default {
     font-size: calc(100vw * 36 / 1920);
     text-align: center;
     color: $order_title_color;
-    border-top: 1px solid #248184;
-    border-bottom: 1px solid #248184;
+    // border-top: 1px solid #248184;
+    // border-bottom: 1px solid #248184;
   }
 
   .order-subtitle {
@@ -385,7 +387,7 @@ export default {
     font-size: 20px;
     text-align: center;
     color: $order_subtitle_color;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
     padding-bottom: 8px;
   }
 
@@ -504,7 +506,8 @@ export default {
 
     .order-subtitle {
       // display: none;
-      font-size: 21px;
+      font-weight: bold;
+      font-size: 14px;
     }
     .order {
       width: 84%;

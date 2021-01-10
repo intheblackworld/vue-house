@@ -76,6 +76,45 @@
   top: $top;
   left: $left;
   right: auto;
+  margin: 0 auto;
+}
+
+@mixin img_c_pc($width, $top) {
+  position: absolute;
+  width: size($width);
+  top: size($top);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+@mixin div_c_pc($width, $height, $top) {
+  position: absolute;
+  width: size($width);
+  height: size($height);
+  top: size($top);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+@mixin img_c_m($width, $top) {
+  position: absolute;
+  width: sizem($width);
+  top: sizem($top);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+@mixin div_c_m($width, $height, $top) {
+  position: absolute;
+  width: sizem($width);
+  height: sizem($height);
+  top: sizem($top);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
 
 @mixin img_l_m($width, $top, $left) {

@@ -30,17 +30,17 @@
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
             <li
               :key="item.name"
-              v-scroll-to="{ element: `#${item.section}`, offset: offset }"
+              v-scroll-to="{ element: `#${item.section}`, offset: item.offset }"
               v-for="item in list"
               class="flex-c"
               @click="toggleSidebar"
             >
               <span class="link">
                 <span class="flex-c">
-                  <p
+                  <h1
                     class="title"
                     v-html="item.name"
-                  ></p>
+                  ></h1>
                   <span class="subTitle">{{item.subTitle}}</span>
                 </span>
               </span>
@@ -174,11 +174,18 @@ export default {
   padding-left: 30px;
   li {
     height: 100%;
+
+    &:nth-last-child(1) {
+      .link {
+        border-right: none;
+      }
+    }
   }
 
   .link {
     color: $nav_link_color;
     height: 22px;
+    border-right: 1px solid #fff;
     text-align: center;
     display: block;
     cursor: pointer;
@@ -189,13 +196,8 @@ export default {
     align-items: center;
     justify-content: center;
     position: relative;
-    border-right: 1px solid #fff;
     // overflow: hidden;
     // border-right: 1px solid $nav_link_hover_bg;
-
-    &:nth-last-child(1) {
-      border-right: none;
-    }
 
     &:hover {
       color: $nav_link_hover_color;
@@ -245,9 +247,10 @@ export default {
     // }
 
     .title {
-      font-size: 16px !important;
-      font-weight: bold;
+      font-size: 24px !important;
+      font-weight: 500;
       position: relative;
+      color: #fff;
       z-index: 3;
       > span {
         font-size: 24px !important;
