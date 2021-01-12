@@ -12,22 +12,25 @@
       </h1>
     </div>
     <div class="view view-2">
-      <img src="./s1/img.png" :alt="`${info.caseName}_img`" class="img-2" v-if="isPC">
+      <div  class="img-2" v-if="isPC">
+      <img src="./s1/img1.png" :alt="`${info.caseName}_img`" class="i1">
+      <img src="./s1/img2.png" :alt="`${info.caseName}_img`" class="i2">
+      </div>
       <img src="./s1/img_m.png" :alt="`${info.caseName}_img`" class="img-2" v-if="isMobile">
     </div>
-    <div class="view view-3">
-      <img src="./s1/logo.png" :alt="`${info.caseName}_logo`" class="logo" v-if="isPC">
-      <img src="./s1/logo_m.png" :alt="`${info.caseName}_logo`" class="logo" v-if="isMobile">
-      <h1 class="info1">
+    <div class="view">
+      <img src="./s1/logo.png" :alt="`${info.caseName}_logo`" class="logo view-3" v-if="isPC">
+      <img src="./s1/logo_m.png" :alt="`${info.caseName}_logo`" class="logo view-3" v-if="isMobile">
+      <h1 class="info1 view-3">
         仙岩公園首排 吉村靖孝美學
       </h1>
-      <h1 class="info2">
+      <h1 class="info2 view-3">
         靜心學園 2-4房 ｜ 8932-2888
       </h1>
-      <h1 class="btn flex-c" v-scroll-to="{element: `#contact`}" data-aos="fade" data-aos-delay="5000">
+      <h1 class="btn flex-c view-3" v-scroll-to="{element: `#contact`}">
         立即預約
       </h1>
-      <img src="./s1/logo2.png" :alt="`${info.caseName}_logo2`" class="logo2">
+      <img src="./s1/logo2.png" :alt="`${info.caseName}_logo2`" class="logo2 view-3">
     </div>
   </div>
 </template>
@@ -64,10 +67,13 @@
 
 .img-1 {
   @include img_c_pc(362, 379);
+  top:calc(50% - 9vw);
+
 }
 
 .title-1 {
   @include img_c_pc(529, 596);
+  top:calc(50% + 2vw);
   font-size: size(28);
   font-weight: 500;
   font-stretch: normal;
@@ -78,16 +84,29 @@
   color: #ffffff;
 }
 
-.img-2 {
-  @include img_l_pc(1022, 92, 10);
+.img-2 {@include img_l_pc(1022, 92, 10);
+animation: i1 4s infinite alternate;
+transform: skewX(2deg);
+height: size(1204);
+transform-origin: 50% 100%;
+  .i1{@include img_l_pc(1022, 0, 0);}
+  .i2{@include img_l_pc(352, 398, 55);
+  animation: i1 4s  infinite alternate;transform:rotate(-3deg);
+transform-origin: 98% 80%;}
+}
+@keyframes i1 {
+  to {transform: skew(0deg,0deg);
+  }
 }
 
 .logo {
   @include img_r_pc(565, 400, 240);
+  top:calc(50% - 9vw);
 }
 
 .info1 {
   @include img_r_pc(560, 554, 247);
+  top:calc(50% - 2vw);
   font-size: size(45.7);
   font-weight: bold;
   font-stretch: normal;
@@ -100,6 +119,7 @@
 
 .info2 {
   @include img_r_pc(578, 632, 228);
+  top:calc(50% + 2.5vw);
   font-size: size(42);
   font-weight: bold;
   font-stretch: normal;
@@ -112,11 +132,13 @@
 
 .logo2 {
   @include img_r_pc(130, 734, 246);
+  top:calc(50% + 8vw);
 }
 
 .btn {
   // @include div_r_pc(280, 77, 863, 375);
   @include div_r_pc(382, 78, 729, 418);
+  top:calc(50% + 8vw);
   border: 1px solid #fff;
   font-size: size(28);
   font-weight: bold;
@@ -155,7 +177,7 @@
   animation: fade_right 2.5s 4s ease-in-out forwards;
 }
 
-.view-3 {
+.view-3{
   opacity: 0;
   animation: fade_left 2.5s 4s ease-in-out forwards;
 }
@@ -163,7 +185,7 @@
 @keyframes fade_out {
   0% {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1)
   }
 
   100% {
@@ -198,10 +220,11 @@
 
 .scroll-indigator {
   @include div_c_pc(1, 210, 925);
+  top: calc(100% - 6vw);
   display: flex;
   z-index: 100;
-  color: #fff;
-  mix-blend-mode: exclusion;
+  color: #fffC;
+ // mix-blend-mode: exclusion;
 
   &::before,
   &::after {
@@ -288,6 +311,9 @@
 
   .img-2 {
     @include img_l_m(375, 0, 0);
+height: auto;
+transform-origin: 100% 100%;
+transform: skewY(5deg);
   }
 
   .logo {
@@ -370,31 +396,11 @@
 
   .scroll-indigator {
     @include div_c_m(1, 150, 555);
-    display: flex;
-    z-index: 100;
-    color: #fff;
-    mix-blend-mode: exclusion;
 
     &::before,
     &::after {
-      width: size(1);
-      height: size(210);
-      position: absolute;
-      right: 0;
-      left: 0;
-      top: 0;
-      bottom: auto;
-      content: '';
-      background-color: currentColor;
-    }
-
-    &::before {
-      opacity: 0.2;
-    }
-
-    &::after {
-      animation: ScrollnavigateAnimation 2s infinite
-        cubic-bezier(0.77, 0, 0.18, 1);
+      width: sizem(1);
+      height: sizem(150);
     }
   }
 }

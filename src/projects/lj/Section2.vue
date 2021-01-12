@@ -148,7 +148,8 @@
   bottom: size(136);
   left: 0;
   object-fit: cover;
-  background-image: url('./s2/bg_noise_bk.gif');
+  background:#0344;
+ // background-image: url('./s2/bg_noise_bk.gif');
   background-size: cover;
 }
 
@@ -333,13 +334,14 @@
   .dialog-img {
     position: absolute;
     width: size(1350);
-    height: size(820);
-    top: size(130);
+    height:auto;
+    top: calc(50% - 21.35vw);
     left: 0;
   }
 
   .dialog-title {
-    @include img_r_pc(325, 129, 179);
+    @include img_r_pc(325, 0, 179);
+    top: calc(50% - 22vw);
     font-size: size(36);
     font-weight: bold;
     font-stretch: normal;
@@ -353,6 +355,7 @@
 
   .dialog-close {
     @include div_r_pc(42, 42, 130, 94);
+    top: calc(50% - 22vw);
     border: 1px solid #fff;
     cursor: pointer;
 
@@ -363,6 +366,8 @@
 
   .dialog-desc {
     @include img_r_pc(448, 303, 52);
+    top:auto;
+    bottom: calc(50% - 22vw);
     font-size: size(18);
     font-weight: bold;
     font-stretch: normal;

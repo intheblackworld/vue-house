@@ -106,8 +106,7 @@
   bottom: size(164);
   right: 0;
   object-fit: cover;
-  background-image: url('./s2/bg_noise_bk.gif');
-  background-size: cover;
+  background:#0344;
 }
 
 // begin
