@@ -1,6 +1,7 @@
 <template>
   <div class="section1">
     <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
+    <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img an">
     <h1 class="title">經典建案</h1>
     <h1 class="subtitle">以經典，再造風華</h1>
     <img src="./s1/title.png" :alt="`${info.caseName}_title`" class="title-img">
@@ -32,6 +33,15 @@
   &:nth-child(1) {
     position: relative;
   }
+}
+ .an{
+  animation:oxxo 25s ease-in infinite;
+}
+@keyframes oxxo{
+    95%{transform: scale(1.4);opacity: 1;
+    }
+    100%{opacity: 0;transform: scale(1.4);
+    }
 }
 
 .title {

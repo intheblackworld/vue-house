@@ -46,7 +46,7 @@
       <div class="section1">
         <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
         <h1 class="title">熱銷建案</h1>
-        <h1 class="subtitle">以真心，推薦好建築</h1>
+        <h1 class="subtitle">好的建築，真心推薦</h1>
         <img src="./s1/title.png" :alt="`${info.caseName}_title`" class="title-img">
         <div class="bottom"></div>
       </div>

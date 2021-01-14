@@ -1,10 +1,9 @@
 <template>
-  <div :class="`navigation ${min ? 'min' : ''}`">
+  <div :class="`navigation ${min ? '' : 'min'}`">
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
-          <img src="../assets/img/close.png" :alt="`${info.caseName}_close`" class="close" @click="min = true" v-if="!isMobile">
-          <div class="close flex-c" @click="min = false" v-if="min && !isMobile">
+          <div class="close flex-c" @click="min = !min" v-if="!isMobile">
             <div class="menu-icon"></div>
           </div>
           <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt @click="$router.push('/')" /> -->
@@ -21,9 +20,9 @@
             <div class="close" @click="isOpen = false" v-if="isMobile">
               <img src="../assets/img/close.png" alt="">
             </div>
-            <img src="@/projects/lc/menu/icon_f.png" alt="" class="fb" @click="showMessengerDialog" v-if="isMobile">
+         <!--     <img src="@/projects/lc/menu/icon_f.png" alt="" class="fb" @click="showMessengerDialog" v-if="isMobile">
             <img src="@/projects/lc/menu/icon_l.png" alt="" class="line" v-if="isMobile">
-            <!-- <li v-if="isMobile" alt v-scroll-to="{ element: `#section1`, offset: offset }"><img class="navlogo" src="@/assets/img/nav-logo.png" /></li> -->
+           <li v-if="isMobile" alt v-scroll-to="{ element: `#section1`, offset: offset }"><img class="navlogo" src="@/assets/img/nav-logo.png" /></li> -->
             <li :key="item.name" v-for="item in list" class="flex-c">
               <span :class="`link ${item.path == $route.name ? 'active' : ''}`" @click="toggleSidebar(item.path)">
                 <span class="flex-c wrap">
@@ -32,10 +31,10 @@
                 </span>
               </span>
             </li>
-            <li class="flex-c" @click="showMessengerDialog">
+          <!--   <li class="flex-c" @click="showMessengerDialog">
               <img src="@/projects/lc/menu/icon_f.png" class="fb" alt="fb">
             </li>
-            <!-- <li class="flex-c">
+            <li class="flex-c">
           <img src="@/projects/lc/menu/icon_l.png" class="line" alt="line">
             </li> -->
           </ul>
@@ -133,17 +132,18 @@ export default {
 @import '../assets/style/function.scss';
 
 .navigation {
-  background: $nav_bg;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.7)  45%,rgba(255, 255, 255, 0.7)  90%, rgba(255, 255, 255, 0.42));
   // background-image: $nav_bg;
   background-size: cover;
   height: $nav_pc_height;
   z-index: 30;
   position: fixed;
   top: 0;
-  left: size(620);
-  width: size(1300);
+  left: size(0);
+  width: 100%;
   display: flex !important;
   align-items: center;
+  transition: all 0.5s;
   // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -210,46 +210,76 @@ export default {
 .menu-icon {
   position: relative;
   width: size(30);
+  top: size(10);
   height: 2px;
   margin-top: size(-20);
-  background-color: #fff;
+  background-color: #fff0;
+  transition: all 0.3s;
 }
 
 .menu-icon::before {
   position: absolute;
   left: 0;
-  top: size(10);
   content: '';
   display: block;
   width: size(30);
   height: 2px;
   background-color: #fff;
-  transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+  transition: transform 0.2s ease-in, top 0.2s;
+  transform: rotate(45deg);
+  transform-origin: center;
+  top: size(0);
 }
 
 .menu-icon::after {
   position: absolute;
   left: 0;
-  top: size(20);
   content: '';
   display: block;
   width: size(30);
   height: 2px;
   background-color: #fff;
-  transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+  transition: transform 0.2s ease-in, top 0.2s;
+  transform: rotate(-45deg);
+  transform-origin: center;
+  top: size(0);
 }
 
+.min {
+  &.navigation {
+    background: transparent;
+  }
+
+  .navlist {
+    display: none;
+  }
+  .menu-icon {
+  background-color: #fff;
+  }
+
+  .menu-icon::before {
+  transform: rotate(0deg);
+  top: size(-10);
+  }
+
+  .menu-icon::after {
+  transform: rotate(0deg);
+  top: size(10);}
+}
 .navlist {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items:center;
+    justify-content:space-around;
   height: 100%;
   overflow: hidden;
-  padding-left: 30px;
-  padding-top: 50px;
+  padding-right:3em;
+  //padding-top: 50px;
   font-size: size(18);
+  width: 48em;
   li {
     height: 100%;
+    align-items: stretch;
+    flex: 1;
 
     &:nth-last-child(1) {
       .title {
@@ -267,41 +297,47 @@ export default {
     display: block;
     cursor: pointer;
     padding: 0;
-    line-height: 1.6;
+    line-height: 1.3;
     // margin: 0 10px;
     transition: all 0.8s;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    width: 100%;
     // overflow: hidden;
     // border-right: 1px solid $nav_link_hover_bg;
     &.active,
     &:hover {
       color: $nav_link_hover_color;
-      // background: $nav_link_hover_bg;
+   background: $nav_link_hover_bg;
+  //border-bottom: 3px solid #069;
     }
 
     > span {
-      width: 80px;
+      //width: 80px;
+    justify-content: center;
+
     }
 
     .title {
-      font-weight: 500;
+      width: 100%;
+      font-weight: 300;
       position: relative;
       // border-right: 1px solid #000;
       // padding: 0 35px;
       z-index: 3;
       > span {
-        font-size: 24px !important;
+        font-size: 1.3em ;
       }
     }
 
     .subTitle {
-      width: 100%;
+     // width: 100%;
       color: $nav_link_subtitle_color;
-      font-size: 12px;
+      font-size:0.9em;
       text-align: center;
+      font-family: "gothic";
     }
 
     img {
@@ -321,15 +357,6 @@ export default {
   // font-size: 16px;
 }
 
-.min {
-  &.navigation {
-    background: transparent;
-  }
-
-  .navlist {
-    display: none;
-  }
-}
 
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {

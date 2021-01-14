@@ -1,9 +1,10 @@
 <template>
   <div class="section5">
     <img src="./s5/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
-    <img src="./s5/title.png" :alt="`${info.caseName}_title`" class="title-img">
-    <div class="title flex-ac" @click="$router.push('/news')">房產資訊</div>
-    <img src="./s2/more.png" :alt="`${info.caseName}_more`" class="btn" @click="$router.push('/news')">
+    <img src="./s5/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img an">
+    <img src="./s5/title.png" :alt="`${info.caseName}_title`" class="title-img" data-aos="fade-right" data-aos-delay="100">
+    <div class="title flex-ac" @click="$router.push('/news')" data-aos="fade" data-aos-delay="600">房產資訊</div>
+    <img src="./s2/more.png" :alt="`${info.caseName}_more`" class="btn" @click="$router.push('/news')" data-aos="fade" data-aos-delay="600">
   </div>
 </template>
 
@@ -13,7 +14,7 @@
 .section5 {
   width: size(1920);
   height: size(900);
-  // overflow: hidden;
+  overflow: hidden;
   position: relative;
   background: #fff;
   background-size: auto;
@@ -31,6 +32,15 @@
   &:nth-child(1) {
     position: relative;
   }
+}
+ .an{
+  animation:oxxo 25s ease-in infinite;
+}
+@keyframes oxxo{
+    95%{transform: scale(1.4);opacity: 1;
+    }
+    100%{opacity: 0;transform: scale(1.4);
+    }
 }
 
 .title {

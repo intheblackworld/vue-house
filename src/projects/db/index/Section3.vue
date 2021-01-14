@@ -1,13 +1,14 @@
 <template>
   <div class="section3">
     <img src="./s3/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC">
+    <img src="./s3/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img an" v-if="isPC">
     <img src="./s3/bg_m.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isMobile">
-    <h1 class="title">熱銷建案</h1>
-    <h1 class="subtitle">
-      以真心，推薦好建築
+    <h1 class="title" data-aos="fade" data-aos-delay="400">熱銷建案</h1>
+    <h1 class="subtitle" data-aos="fade" data-aos-delay="600">
+      好的建築，真心推薦
     </h1>
-    <img src="./s3/title.png" :alt="`${info.caseName}_title`" class="title-img">
-    <img src="./s2/more.png" :alt="`${info.caseName}_more`" class="btn" @click="$router.push('/hot')">
+    <img src="./s3/title.png" :alt="`${info.caseName}_title`" class="title-img" data-aos="fade-right" data-aos-delay="100">
+    <img src="./s2/more.png" :alt="`${info.caseName}_more`" class="btn" @click="$router.push('/hot')" data-aos="fade" data-aos-delay="600">
   </div>
 </template>
 
@@ -36,6 +37,16 @@
     position: relative;
   }
 }
+ .an{
+  animation:oxxo 25s ease-in infinite;
+}
+@keyframes oxxo{
+    95%{transform: scale(1.4);opacity: 1;
+    }
+    100%{opacity: 0;transform: scale(1.4);
+    }
+}
+
 
 .title {
   @include div_r_pc(288, 86, 748, 397);
@@ -48,6 +59,7 @@
   text-align: left;
   color: #ffe900;
   white-space: nowrap;
+  text-shadow: 0 0 0.3em #0009;
 }
 
 .subtitle {
@@ -61,6 +73,7 @@
   text-align: left;
   color: #ffffff;
   white-space: nowrap;
+  text-shadow: 0 0 0.3em #0006;
 
   span {
     font-size: size(27);
@@ -75,6 +88,7 @@
 .btn {
   @include img_r_pc(217, 835, 175);
   cursor: pointer;
+  box-shadow: 0 0 0.5em #0006;
 }
 
 @media only screen and (max-width: 1440px) {

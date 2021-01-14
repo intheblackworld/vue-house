@@ -1,11 +1,11 @@
 <template>
   <div class="section6">
     <!-- <div class="title">經典建案</div> -->
-    <img src="./s6/i.jpg" :alt="`${info.caseName}_i`" class="img" v-if="isPC">
-    <img src="./s6/i_m.jpg" :alt="`${info.caseName}_i`" class="img" v-if="isMobile">
-    <img src="./s6/title.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isPC">
+    <img src="./s6/i.jpg" :alt="`${info.caseName}_i`" class="img" v-if="isPC" data-aos="fade" data-aos-delay="100">
+    <img src="./s6/i_m.jpg" :alt="`${info.caseName}_i`" class="img" v-if="isMobile" data-aos="fade" data-aos-delay="100">
+    <img src="./s6/title.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isPC" data-aos="fade-down" data-aos-delay="600">
     <img src="./s6/title_m.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isMobile">
-    <img src="./s4/more.png" :alt="`${info.caseName}_more`" class="btn" @click="$router.push('/videos')">
+    <img src="./s4/more.png" :alt="`${info.caseName}_more`" class="btn" @click="$router.push('/videos')" data-aos="fade-down" data-aos-delay="600">
   </div>
 </template>
 

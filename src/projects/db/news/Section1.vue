@@ -1,6 +1,7 @@
 <template>
   <div class="section1">
     <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
+    <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img an">
     <h1 class="title">最新消息</h1>
     <div class="bottom"></div>
     <img src="./s1/title.png" :alt="`${info.caseName}_title`" class="title-img">
@@ -32,6 +33,16 @@
     position: relative;
   }
 }
+ .an{
+  animation:oxxo 25s ease-in infinite;
+}
+@keyframes oxxo{
+    95%{transform: scale(1.4);opacity: 1;
+    }
+    100%{opacity: 0;transform: scale(1.4);
+    }
+}
+
 
 .title {
   @include div_r_pc(303, 58, 274, 250);

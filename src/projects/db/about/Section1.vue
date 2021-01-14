@@ -1,6 +1,7 @@
 <template>
   <div class="section1">
     <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
+    <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img an">
     <h1 class="title" v-if="isPC">關於我們</h1>
     <img src="./s1/title.png" :alt="`${info.caseName}_title`" class="title-img">
     <div class="bottom"></div>
@@ -31,6 +32,15 @@
   &:nth-child(1) {
     position: relative;
   }
+}
+ .an{
+  animation:oxxo 25s ease-in infinite alternate;
+}
+@keyframes oxxo{
+    95%{transform: scale(1.3);opacity: 1;
+    }
+    100%{transform: scale(1.3);opacity: 1;
+    }
 }
 
 .title {

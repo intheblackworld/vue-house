@@ -1,15 +1,13 @@
 <template>
   <div class="section2">
     <div class="bottom"></div>
-    <div class="title" v-if="isPC">用最真誠的心<br />
-      為台灣房市注入一份勇於前進的信念</div>
-    <div class="title" v-if="isMobile">用最真誠的心<br />為台灣房市注入一份<br />勇於前進的信念</div>
-    <div class="subtitle">
+    <div class="title" data-aos="fade" data-aos-delay="400">用最真誠的心<br />為台灣房市注入一份<br v-if="isMobile" />勇於前進的信念</div>
+    <div class="subtitle" data-aos="fade" data-aos-delay="600">
       對於銷售的偏執，我們絕不妥協<br />對於客戶，以真誠款待......................
     </div>
-    <img src="./s2/title.png" :alt="`${info.caseName}_title`" class="title-img">
-    <img src="./s2/icon.png" :alt="`${info.caseName}_icon`" class="icon">
-    <img src="./s2/more.png" :alt="`${info.caseName}_more`" class="btn" @click="$router.push('/about')">
+    <img src="./s2/title.png" :alt="`${info.caseName}_關於得幫廣告`" class="title-img" data-aos="fade-right" data-aos-delay="100">
+    <img src="./s2/icon.png" :alt="`${info.caseName}_icon`" class="icon" data-aos="fade" data-aos-delay="400">
+    <img src="./s2/more.png" :alt="`${info.caseName}_more`" class="btn" @click="$router.push('/about')" data-aos="fade" data-aos-delay="600">
   </div>
 </template>
 

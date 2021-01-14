@@ -1,23 +1,23 @@
 <template>
   <div class="section1">
-    <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC">
+    <img src="./s1/bg.jpg" :alt="`${inf}_bg`" o.caseNameclass="bg-img" v-if="isPC">
+    <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img an" v-if="isPC">
     <img src="./s1/bg_m.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isMobile">
-    <img src="./s1/t.png" :alt="`${info.caseName}_t`" class="t" v-if="isPC">
-    <img src="./s1/t_m.png" :alt="`${info.caseName}_t`" class="t" v-if="isMobile">
-    <div class="title">
+    <img src="./s1/t.png" :alt="`${info.caseName}_t`" class="t" v-if="isPC" data-aos="fade" data-aos-delay="200">
+    <img src="./s1/t_m.png" :alt="`${info.caseName}_t`" class="t" v-if="isMobile" data-aos="fade" data-aos-delay="200">
+    <div class="title" data-aos="fade-down" data-aos-delay="300">
       What is great in man<br />
       is that he is a bridge<br />
       and not an end.
     </div>
-    <div class="subtitle" v-if="isPC">
-      「人之所以偉大，是因為他是一座橋樑，而非目的。」
-    </div>
-    <div class="subtitle" v-if="isMobile">
-      「人之所以偉大，<br />是因為他是一座橋樑，而非目的。」
+    <div data-aos="fade" data-aos-delay="600">
+    <div class="subtitle">
+      「人之所以偉大，<br v-if="isMobile" />是因為他是一座橋樑，而非目的。」
     </div>
     <div class="hr"></div>
     <div class="name">
       弗里德里希·<span>尼采</span>
+    </div>
     </div>
     <!-- <div class="cloud">
     <img src="./s1/cloud1.png" alt="cloud" class="cloud1">
@@ -44,9 +44,9 @@
 
 .section1 {
   width: size(1920);
-  height: size(1200);
-  min-height: size(1200);
-  max-height: size(1200);
+  height: calc(100vh + 15.5vw);
+  min-height: size(1100);
+  max-height: size(1235);
   overflow: hidden;
   position: relative;
   background: #fff;
@@ -59,40 +59,6 @@
     rgba(171, 220, 255, 1) 99%
   );
 }
-.cloud {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  .cloud1 {
-    @include img_l_pc(1193, 750, 0);
-    transform: translateX(calc(100vw + 100%));
-    animation: an 45s -14s linear infinite reverse;
-  }
-  .cloud2 {
-    @include img_l_pc(915, 160, 0);
-    transform: translateX(calc(100vw + 100%));
-    animation: an 30s -4s linear infinite reverse;
-  }
-  .cloud3 {
-    @include img_l_pc(878, 400, 0);
-    transform: translateX(calc(100vw + 100%));
-    animation: an 35s 0s linear infinite reverse;
-  }
-  .cloud4 {
-    @include img_l_pc(1020, 820, 0);
-    transform: translateX(calc(100vw + 100%));
-    animation: an 40s -20s linear infinite reverse;
-  }
-}
-
-@keyframes an {
-  to {
-    transform: translateX(-100%);
-  }
-}
-
 .bg-img {
   width: 100%;
   height: 100%;
@@ -101,18 +67,13 @@
   left: 0;
   display: block;
   object-fit: cover;
-  margin-top: 0;
-  &.bg1 {
-    position: relative;
-  }
-  &.bg2 {
-    width: auto;
-    height: calc(50% - 5vw);
-    top: auto;
-    left: auto;
-    bottom: 10%;
-    right: 0;
-  }
+  margin-top: 0;}
+ .an{
+  animation:oxxo 20s ease-in forwards;
+}
+@keyframes oxxo{
+    100%{transform: scale(1.2);opacity: 1;
+    }
 }
 
 .bottom {
@@ -127,29 +88,38 @@
 }
 
 .t {
-  @include img_r_pc(1370, 0, 0);
+  @include img_r_pc(1400, 0, 0);
+  top:calc(35% - 21vw);
+  
 }
 
 .title {
   @include div_l_pc(876, 409, 615, 180);
-  font-size: size(92.6);
+  height: auto;
+  top: auto;
+  bottom:size(320);
+  font-size: size(93);
   font-weight: normal;
+  font-family:'gothic';
   font-stretch: normal;
   font-style: normal;
   line-height: 1.08;
-  letter-spacing: size(-3.71);
+  letter-spacing: -0.04em;
   text-align: left;
   color: #ffe900;
 }
 
 .subtitle {
   @include div_r_pc(628, 69, 757, 167);
+  height: auto;
+  top: auto;
+  bottom:size(375);
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.58);
   font-size: size(26.2);
-  font-weight: 500;
+  font-weight: 400;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
+  line-height: 1.7;
   letter-spacing: normal;
   text-align: right;
   color: #ffffff;
@@ -158,17 +128,22 @@
 
 .hr {
   @include div_r_pc(444, 1, 821, 338);
+  top: auto;
+  bottom:size(345);
   background-color: #fff;
 }
 
 .name {
   @include div_r_pc(146, 34, 795, 180);
+  height: auto;
+  top: auto;
+  bottom:size(330);
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.58);
   font-size: size(17.9);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
+  line-height: 1.7;
   letter-spacing: normal;
   text-align: right;
   color: #ffffff;
