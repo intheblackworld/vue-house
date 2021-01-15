@@ -150,7 +150,9 @@
   }
 
   .subtitle {
-    @include div_r_m(168, 29, 255, 32);
+    @include div_r_m(168, 29, 260, 32);
+    width: auto;
+    height:auto;
     font-size: sizem(20);
     font-weight: normal;
     font-stretch: normal;
@@ -163,7 +165,7 @@
   }
 
   .title-img {
-    @include img_l_m(180, 208, 33);
+    @include img_l_m(220, 201, 33);
   }
 
   .bottom {

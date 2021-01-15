@@ -5,6 +5,7 @@
     <img src="./s6/i_m.jpg" :alt="`${info.caseName}_i`" class="img" v-if="isMobile" data-aos="fade" data-aos-delay="100">
     <img src="./s6/title.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isPC" data-aos="fade-down" data-aos-delay="600">
     <img src="./s6/title_m.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isMobile">
+    <h1 class="title" data-aos="fade" data-aos-delay="400" v-if="isMobile">影音專區</h1>
     <img src="./s4/more.png" :alt="`${info.caseName}_more`" class="btn" @click="$router.push('/videos')" data-aos="fade-down" data-aos-delay="600">
   </div>
 </template>
@@ -37,10 +38,12 @@
 
 .img {
   @include img_l_pc(1224, 82, 0);
+  z-index: 5;
 }
 
 .title-img {
   @include img_r_pc(593, 566, 176);
+  z-index: 5;
 }
 
 .title {
@@ -54,6 +57,7 @@
   text-align: left;
   color: #ffe900;
   white-space: nowrap;
+  z-index: 5;
 }
 
 .subtitle {
@@ -95,10 +99,9 @@
 @media screen and (max-width: 767px) {
   .section6 {
     width: 100vw;
-    min-height: sizem(667);
-    // max-height: sizem(812);
-    // height: 100vh;
-    // background-image: url('./mo/1/bg.png');
+    height: calc(100vh - 63px);
+    min-height: sizem(604);
+    max-height: sizem(812);
     background-size: cover;
     background-attachment: scroll;
   }
@@ -117,17 +120,44 @@
       position: relative;
     }
   }
-
   .img {
-    @include img_l_m(353, 42, 0);
+    @include img_l_m(353, 33, 0);
+    height: calc(100% - 65vw);
+    object-fit: cover;
+  }
+.title {
+    @include div_l_m(149, 45, 415, 32);
+    font-size: sizem(30);
+    text-align: left;
+  letter-spacing:0.251em;
+    top:auto;
+    height: auto;
+    bottom:sizem(51);
+    color: #008FBB;
+  }
+
+  .subtitle {
+    @include div_l_m(145, 34, 460, 32);
+    font-size: sizem(16);
+    text-align: left;
+    top:auto;
+    height: auto;
+    bottom:sizem(56);
+    color: #666666;
   }
 
   .title-img {
-    @include img_r_m(266, 488, 32);
+    @include img_l_m(209, 474, 32);
+    top:auto;
+    height: auto;
+    bottom:sizem(102);
   }
+
   .btn {
-    @include img_r_m(145, 586, 32);
+    @include img_r_m(151, 456, 32);
     cursor: pointer;
+    top:auto;
+    bottom:sizem(60);
   }
 }
 </style>

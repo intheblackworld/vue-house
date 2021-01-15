@@ -27,6 +27,9 @@
       <div class="pagination flex-c">
         <a class="pagi" target="_blank" v-for="(link, index) in currentItem.links" :key="'pagi' + index" :href="link.url">{{link.title}}</a>
       </div>
+        <div class="back" @click="isProjectDialog = false">
+          ［回上一頁］
+        </div>
     </div>
   </div>
 </template>
@@ -259,6 +262,7 @@
     }
   }
 }
+
 
 @media only screen and (max-width: 1440px) {
 }
@@ -541,6 +545,21 @@
       width: sizem(15);
       cursor: pointer;
     }
+  }
+  .back {
+    @include img_r_m(107, 0, 134);
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.09;
+    letter-spacing: sizem(3.3);
+    text-align: left;
+    color: #008fbb;
+    white-space: nowrap;
+    cursor: pointer;
+    top: auto;
+    bottom: sizem(80);
   }
 }
 </style>

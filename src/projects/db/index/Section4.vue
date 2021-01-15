@@ -6,6 +6,10 @@
     <img src="./s4/title.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isPC" data-aos="fade-down" data-aos-delay="600">
     <img src="./s4/title_m.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isMobile">
     <img src="./s4/more.png" :alt="`${info.caseName}_more`" class="btn" @click="$router.push('/products')" data-aos="fade-down" data-aos-delay="600">
+    <h1 class="title" data-aos="fade" data-aos-delay="400" v-if="isMobile">經典建案</h1>
+    <h1 class="subtitle" data-aos="fade" data-aos-delay="600">
+      以經典　再造風華
+    </h1>
   </div>
 </template>
 
@@ -95,8 +99,9 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-    min-height: sizem(660);
-    // max-height: sizem(812);
+    height: calc(100vh - 63px);
+    min-height: sizem(604);
+    max-height: sizem(812);
     // height: 100vh;
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
@@ -118,28 +123,45 @@
     }
   }
 
-  // .title {
-  //   @include div_l_m(375, 40, 96, 0);
-  //   font-size: sizem(28);
-  //   text-align: center;
-  // }
-
-  // .subtitle {
-  //   @include div_l_m(375, 21, 141, 0);
-  //   font-size: sizem(15);
-  //   text-align: center;
-  // }
 
   .img {
     @include img_l_m(353, 33, 0);
+    height: calc(100% - 65vw);
+    object-fit: cover;
+  }
+  .title {
+    @include div_l_m(149, 45, 415, 32);
+    font-size: sizem(30);
+    text-align: left;
+  letter-spacing:0.251em;
+    top:auto;
+    height: auto;
+    bottom:sizem(85);
+    color: #008FBB;
+  }
+
+  .subtitle {
+    @include div_l_m(145, 34, 460, 32);
+    font-size: sizem(16);
+    text-align: left;
+    top:auto;
+    height: auto;
+    bottom:sizem(56);
+    color: #666666;
   }
 
   .title-img {
-    @include img_r_m(308, 474, 32);
+    @include img_l_m(209, 474, 32);
+    top:auto;
+    height: auto;
+    bottom:sizem(135);
   }
+
   .btn {
-    @include img_r_m(151, 563, 32);
+    @include img_r_m(151, 456, 32);
     cursor: pointer;
+    top:auto;
+    bottom:sizem(60);
   }
 }
 </style>

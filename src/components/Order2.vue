@@ -1,6 +1,7 @@
 <template>
   <div class="order-bg">
-    <img src="../projects/db/contact/title.png" alt="" class="order-title">
+    <img src="../projects/db/contact/title.png" alt="聯絡我們" class="order-title" v-if="!isMobile">
+    <img src="../projects/db/index/s7/title.png" alt="聯絡我們" class="order-title" v-if="isMobile">
     <img src="../projects/db/index/s7/資產 16@2x.png" alt="" class="info-img" data-aos="fade-down" data-aos-delay="500" v-if="isPC">
     <img src="../projects/db/contact/logot.png" :alt="`${info.caseName}_logot`" class="logot" data-aos="fade-down" data-aos-delay="600" v-if="isPC">
     <div class="info-desc" data-aos="fade-down" data-aos-delay="600" v-if="isPC">
@@ -381,13 +382,13 @@ export default {
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.6;
+    line-height: 1.8;
     letter-spacing: 0.02em;
     text-align: left;
     color: #ffffff;
 
     p {
-      line-height: 1.5;
+   //   line-height: 1.7;
       margin-bottom: 12px;
     }
   }

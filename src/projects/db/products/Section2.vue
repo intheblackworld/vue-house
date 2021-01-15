@@ -153,6 +153,9 @@
     height: size(487);
     object-fit: cover;
   }
+  &::before,
+  &::after{content: "";width: 1em;height: 0.1em;font-size:size(44);background: #004ea2;position: absolute;right: 0.5em;top:10em;}
+  &::after{transform-origin:50% 50%;transform: rotate(90deg);}
 
   .content {
     height: size(130);
@@ -379,7 +382,7 @@
     }
 
     .title {
-      @include div_r_m(118, 37, 196, 32);
+    @include div_r_m(118, 37, 196, 32);
       font-size: sizem(25);
       font-weight: normal;
       font-stretch: normal;
@@ -391,21 +394,21 @@
       white-space: nowrap;
     }
 
-    .subtitle {
-      @include div_r_m(168, 29, 255, 32);
-      font-size: sizem(20);
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 4.59;
-      letter-spacing: sizem(1.2);
-      text-align: left;
-      color: #444444;
-      z-index: 10;
-    }
+  .subtitle {
+    @include div_r_m(200, 29, 258, 32);
+    font-size: sizem(20);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 4.59;
+    letter-spacing: sizem(1.2);
+    text-align: right;
+    color: #444444;
+    z-index: 10;
+  }
 
     .title-img {
-      @include img_l_m(180, 208, 33);
+    @include img_l_m(186, 205, 33);
     }
 
     .bottom {
@@ -455,6 +458,7 @@
     height: sizem(400);
     margin: 0 sizem(0) sizem(70);
     border-bottom: none;
+  position: relative;
     cursor: pointer;
 
     .add {
@@ -465,6 +469,8 @@
       height: sizem(305);
       object-fit: cover;
     }
+  &::before,
+  &::after{font-size:sizem(27.5);}
 
     .content {
       // margin-top: sizem(221);

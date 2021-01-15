@@ -57,7 +57,7 @@ export default {
 @import '@/assets/style/function.scss';
 .house-info {
   width: 100vw;
-  background: $house_bg;
+  background: $house_bg center;
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -162,6 +162,9 @@ export default {
 /* 螢幕尺寸標準 */
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
+.house-info {
+  background-size: cover;
+}
   .content {
     min-height: sizem(175 + 188);
     width: 100%;
@@ -194,7 +197,7 @@ export default {
   }
 
   .logo {
-    @include img_l_m(375, 0, 0);
+    @include img_r_m(500, 10, 0);
   }
 
   .logot {
@@ -214,7 +217,7 @@ export default {
     color: #ffffff;
 
     span {
-      font-weight: bold;
+      font-weight: 300;
     }
   }
 

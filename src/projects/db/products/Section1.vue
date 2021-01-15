@@ -139,20 +139,20 @@
   }
 
   .subtitle {
-    @include div_r_m(168, 29, 255, 32);
+    @include div_r_m(200, 29, 258, 32);
     font-size: sizem(20);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 4.59;
     letter-spacing: sizem(1.2);
-    text-align: left;
+    text-align: right;
     color: #444444;
     z-index: 10;
   }
 
   .title-img {
-    @include img_l_m(180, 208, 33);
+    @include img_l_m(186, 205, 33);
   }
 
   .bottom {

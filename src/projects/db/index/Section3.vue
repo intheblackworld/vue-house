@@ -109,7 +109,7 @@
     width: 100vw;
     min-height: sizem(404);
     max-height: sizem(812);
-    height: sizem(490);
+    height: sizem(540);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -131,24 +131,36 @@
   }
 
   .title {
-    @include div_r_m(149, 45, 390, 191);
-    font-size: sizem(28);
-    text-align: center;
+    @include div_l_m(149, 45, 415, 32);
+    font-size: sizem(30);
+    text-align: left;
+  letter-spacing:0.251em;
+    top:auto;
+    height: auto;
+    bottom:sizem(75);
   }
 
   .subtitle {
-    @include div_r_m(145, 34, 435, 194);
-    font-size: sizem(15);
-    text-align: center;
+    @include div_l_m(145, 34, 460, 32);
+    font-size: sizem(16);
+    text-align: left;
+    top:auto;
+    height: auto;
+    bottom:sizem(46);
   }
 
   .title-img {
-    @include img_l_m(288, 308, 54);
+    @include img_l_m(240, 350, 35);
+    top:auto;
+    height: auto;
+    bottom:sizem(125);
   }
 
   .btn {
-    @include img_r_m(151, 434, 32);
+    @include img_r_m(151, 456, 32);
     cursor: pointer;
+    top:auto;
+    bottom:sizem(50);
   }
 }
 </style>

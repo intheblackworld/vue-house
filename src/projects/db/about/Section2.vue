@@ -27,7 +27,7 @@
         「得邦廣告」以短短三年的時間，成功推行總值160億的案量。<br /><br />
         以精緻服務為核心價值，為消費者全盤規劃、推薦最合適的美宅。並對建設公司，提供土地規劃、建築設計、環境規劃、景觀規劃、美學架構等全盤的建議。<br /><br />
         在房地產行銷的領域中，以領先業界的專業服務，建構「人」與「家」最堅固的橋樑。
-      </div>Ｆ
+      </div>
     </div>
     <div class="right" v-if="isPC">
       <div class="item flex-ac flex-jb">
@@ -209,6 +209,7 @@
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
+  padding:sizem(95) 0 0 0;
   }
 
   .bg-img {
@@ -241,37 +242,19 @@
   }
 
   .desc {
+    width: 80%;
     font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.73;
-    letter-spacing: sizem(0.75);
-    text-align: left;
+    letter-spacing:0.05em;
+    text-align: justify;
     color: #4d4d4d;
-    margin-bottom: sizem(15);
+    margin-bottom: sizem(70);
     margin-left: sizem(35);
-  }
-
-  .item {
-    width: size(1920 - 648);
-    margin-bottom: size(21);
-    .icon {
-      width: size(209);
-    }
-
-    .desc {
-      width: size(1063 - 103);
-      font-size: size(24);
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.75;
-      letter-spacing: size(1.2);
-      text-align: left;
-      color: #4d4d4d;
-      white-space: nowrap;
-    }
+    &:first-child{
+    margin-bottom: sizem(15);}
   }
 
   .img {
@@ -285,19 +268,6 @@
     width: sizem(300);
     margin-bottom: size(40);
     margin: 0 auto sizem(40);
-  }
-
-  .desc {
-    width: size(1095);
-    font-size: size(24);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.56;
-    letter-spacing: size(2.4);
-    text-align: left;
-    color: #4d4d4d;
-    margin-bottom: size(60);
   }
 
   .video-item {

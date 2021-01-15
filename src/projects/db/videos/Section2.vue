@@ -218,7 +218,7 @@
   }
 
   .tab {
-    @include img_l_m(320, -50, 33);
+    @include img_l_m(320, -70, 33);
 
     .tab-item {
       width: sizem(92);
@@ -253,7 +253,7 @@
 
   .container {
     width: sizem(375);
-    margin: sizem(120) auto sizem(120);
+    margin: sizem(70) auto sizem(120);
   }
 
   .item {

@@ -99,17 +99,19 @@
 @media screen and (max-width: 767px) {
   .section5 {
     width: 100vw;
-    min-height: sizem(667);
-    // max-height: sizem(812);
-    // height: 100vh;
-    // background-image: url('./mo/1/bg.png');
+    height: calc(100vh - 63px);
+    min-height: sizem(604);
+    max-height: sizem(812);
     background-size: cover;
     background-attachment: scroll;
+    &::before{content:"";width: 100%;height: 100%;top: 0;left: 0;
+    background: linear-gradient(to bottom,#0360 40%,#0259 100%);
+    position: absolute;z-index: 2;}
   }
 
   .bg-img {
-    width: sizem(375);
-    height: sizem(667);
+    width: 100%;
+    height:100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -123,18 +125,39 @@
   }
 
   .title {
-    @include div_l_m(136, 40, 581, 33);
-    font-size: sizem(28);
-    text-align: center;
+    @include div_l_m(149, 45, 415, 32);
+    font-size: sizem(30);
+    text-align: left;
+  letter-spacing:0.251em;
+    top:auto;
+    height: auto;
+    bottom:sizem(48);
+    color: #ffe900;
+    background: none;z-index: 3;
+  }
+
+  .subtitle {
+    @include div_l_m(145, 34, 460, 32);
+    font-size: sizem(16);
+    text-align: left;
+    top:auto;
+    height: auto;
+    bottom:sizem(56);
+    color: #666666;z-index: 3;
   }
 
   .title-img {
-    @include img_l_m(255, 479, 33);
+    @include img_l_m(179, 474, 32);
+    top:auto;
+    height: auto;
+    bottom:sizem(105);z-index: 3;
   }
 
   .btn {
-    @include img_r_m(151, 598, 32);
+    @include img_r_m(151, 456, 32);
     cursor: pointer;
+    top:auto;
+    bottom:sizem(60);z-index: 3;
   }
 }
 </style>

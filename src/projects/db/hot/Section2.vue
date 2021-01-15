@@ -145,6 +145,7 @@
   height: size(618);
   background-color: #f7f8f8;
   margin: 0 size(18) size(50);
+  position: relative;
   cursor: pointer;
 
   .add {
@@ -155,6 +156,9 @@
     height: size(487);
     object-fit: cover;
   }
+  &::before,
+  &::after{content: "";width: 1em;height: 0.1em;font-size:size(44);background: #004ea2;position: absolute;right: 0.5em;top:10em;}
+  &::after{transform-origin:50% 50%;transform: rotate(90deg);}
 
   .content {
     height: size(130);
@@ -459,7 +463,7 @@
 
   .container {
     width: sizem(310);
-    margin: sizem(60) auto sizem(80);
+    margin: sizem(50) auto sizem(80);
   }
 
   .item {
@@ -477,6 +481,9 @@
       height: sizem(305);
       object-fit: cover;
     }
+  &::before,
+  &::after{font-size:sizem(27.5);}
+
 
     .content {
       // margin-top: sizem(221);
@@ -508,8 +515,8 @@
       font-weight: normal;
       font-stretch: normal;
       font-style: normal;
-      line-height: 1.62;
-      letter-spacing: sizem(1.16);
+      line-height: 1.6;
+      letter-spacing:0.06em;
       text-align: left;
       justify-content: flex-start;
       color: #333333;

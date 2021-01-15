@@ -34,7 +34,7 @@ export default {
 @import '@/assets/style/variableColor.scss';
 .house-info {
   width: 100vw;
-  background: $house_bg;
+  background: $house_bg center;
   position: relative;
   z-index: 1;
   box-shadow: 0 0 15vw #0009;
@@ -103,6 +103,9 @@ export default {
 /* 螢幕尺寸標準 */
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
+.house-info {
+  background-size: cover;
+}
   .content {
     height: 25em;
     width: 100%;

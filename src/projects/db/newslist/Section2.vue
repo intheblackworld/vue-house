@@ -83,7 +83,7 @@
 .item {
   width: size(496);
   height: size(618);
-  background-color: #f7f8f8;
+  background-color: #fff;
   margin: 0 size(18) size(50);
   cursor: pointer;
 
@@ -98,7 +98,7 @@
 
   .content {
     height: size(130);
-    padding: 0 size(5);
+    padding: 0 0;
   }
 
   .item-icon {
@@ -108,14 +108,14 @@
   }
 
   .item-desc {
-    width: size(396);
+    width: size(410);
     font-size: size(25);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.37;
     letter-spacing: size(0.92);
-    text-align: left;
+    text-align: justify;
     color: #4d4d4d;
   }
 
@@ -208,7 +208,7 @@
 
   .container {
     width: sizem(310);
-    margin: sizem(120) auto sizem(80);
+    margin: sizem(55) auto sizem(80);
   }
 
   .item {
@@ -230,7 +230,7 @@
     .content {
       // margin-top: sizem(221);
       height: sizem(70);
-      padding: 0 sizem(5);
+      padding: 0;
     }
 
     .item-icon {
@@ -240,17 +240,13 @@
     }
 
     .item-desc {
-      width: sizem(238);
+      width: sizem(260);
       font-size: sizem(15);
       font-weight: normal;
       font-stretch: normal;
       font-style: normal;
       line-height: 1.4;
       letter-spacing: sizem(0.9);
-      text-align: left;
-      color: #4d4d4d;
-
-      color: #4d4d4d;
     }
     .item-title {
       font-size: sizem(20);

@@ -133,7 +133,7 @@ export default {
   // background-image: $nav_bg;
   background-size: cover;
   height: $nav_pc_height;
-  z-index: 30;
+    z-index: 10001;
   position: fixed;
   top: 0;
   left: size(0);
@@ -435,7 +435,7 @@ export default {
   .menu {
     display: block;
     position: absolute;
-    top: 5px;
+    top: 15px;
     right: 15px;
     width: sizem(40);
     height: sizem(40);
