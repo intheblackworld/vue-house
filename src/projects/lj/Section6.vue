@@ -66,7 +66,7 @@
 .hr {
   @include img_r_pc(316, 393, 187);
   height: size(0.5);
-  background: #333333;
+  background: #33333366;
 }
 
 .desc {
@@ -166,8 +166,8 @@
   }
 
   .slide-name {
-    right: 1.2em;
-    bottom: 1.2em;
+    left:2em;
+    bottom:1.2em;
     color: #fff;
     font-size: size(18);
     font-weight: bold;
@@ -527,6 +527,10 @@ export default {
         {
           img: isMobile ? require('./s6/1_m.jpg') : require('./s6/1.jpg'),
           name: '臺北市私立靜心高級中學',
+        },
+        {
+          img: isMobile ? require('./s6/2_m.jpg') : require('./s6/2.jpg'),
+          name: '菁英家庭優質私校首選',
         },
       ],
     }

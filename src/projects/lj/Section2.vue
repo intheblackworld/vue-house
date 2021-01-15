@@ -107,7 +107,7 @@
 .hr {
   @include img_r_pc(316, 393, 187);
   height: size(0.5);
-  background: #fff;
+  background: #fff9;
 }
 
 .desc {
@@ -209,8 +209,8 @@
   }
 
   .slide-name {
-    right: 1.2em;
-    bottom: 1.2em;
+    left:2em;
+    bottom:1.2em;
     color: #fff;
     font-size: size(18);
     font-weight: bold;
@@ -704,10 +704,14 @@ export default {
           img: isMobile ? require('./s2/1_m.jpg') : require('./s2/1.jpg'),
           name: '泰安連雲-接雲樓',
         },
-        // {
-        //   img: isMobile ? require('./s2/2_m.jpg') : require('./s2/2.jpg'),
-        //   name: '泰安連雲-接雲樓',
-        // },
+        {
+          img: isMobile ? require('./s2/2_m.jpg') : require('./s2/2.jpg'),
+          name: '泰安連雲-連峰樓',
+        },
+        {
+          img: isMobile ? require('./s2/3_m.jpg') : require('./s2/3.jpg'),
+          name: '靜心連雲',
+        },
       ],
     }
   },

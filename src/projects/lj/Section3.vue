@@ -65,7 +65,7 @@
 .hr {
   @include img_l_pc(316, 421, 79);
   height: size(0.5);
-  background: #fff;
+  background: #fff9;
 }
 
 .desc {
@@ -165,8 +165,8 @@
   }
 
   .slide-name {
-    right: 1.2em;
-    bottom: 1.2em;
+    left:2em;
+    bottom:1.2em;
     color: #fff;
     font-size: size(18);
     font-weight: bold;

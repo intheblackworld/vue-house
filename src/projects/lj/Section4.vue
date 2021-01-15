@@ -169,8 +169,8 @@
   }
 
   .slide-name {
-    right: 1.2em;
-    bottom: 1.2em;
+    left:2em;
+    bottom:1.2em;
     color: #fff;
     font-size: size(18);
     font-weight: bold;

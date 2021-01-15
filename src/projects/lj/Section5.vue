@@ -65,7 +65,7 @@
 .hr {
   @include img_l_pc(316, 421, 79);
   height: size(0.5);
-  background: #333;
+  background: #3336;
 }
 
 .desc {
@@ -165,8 +165,8 @@
   }
 
   .slide-name {
-    right: 1.2em;
-    bottom: 1.2em;
+    left:2em;
+    bottom:1.2em;
     color: #fff;
     font-size: size(18);
     font-weight: bold;
@@ -526,6 +526,14 @@ export default {
         {
           img: isMobile ? require('./s5/1_m.jpg') : require('./s5/1.jpg'),
           name: '仙岩公園',
+        },
+        {
+          img: isMobile ? require('./s5/2_m.jpg') : require('./s5/2.jpg'),
+          name: '仙岩公園一景',
+        },
+        {
+          img: isMobile ? require('./s5/3_m.jpg') : require('./s5/3.jpg'),
+          name: '仙岩公園一景',
         },
       ],
     }
