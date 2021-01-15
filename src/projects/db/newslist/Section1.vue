@@ -13,7 +13,9 @@
 
 .section1 {
   width: size(1920);
-  height: size(1200);
+  height: calc(100vh + 15.5vw);
+  min-height: size(1100);
+  max-height: size(1235);
   overflow: hidden;
   position: relative;
   background-image: #008fbb;
@@ -33,15 +35,16 @@
     position: relative;
   }
 }
- .an{
-  animation:oxxo 25s ease-in infinite;
+.an{
+  animation:oxxo 40s linear infinite;
 }
 @keyframes oxxo{
-    95%{transform: scale(1.4);opacity: 1;
+    90%{transform: scale(1.2);opacity: 1;
     }
-    100%{opacity: 0;transform: scale(1.4);
+    100%{transform: scale(1.22);opacity: 0;
     }
 }
+
 
 .title {
   @include div_l_pc(274, 86, 800, 711);
@@ -54,10 +57,15 @@
   text-align: left;
   color: #ffe900;
   white-space: nowrap;
+  height: auto;
+  top: auto;
+  bottom:size(320)
 }
 
 .title-img {
   @include img_l_pc(548, 745, 181);
+  top: auto;
+  bottom:size(320);
 }
 
 .bottom {

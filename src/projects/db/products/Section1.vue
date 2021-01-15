@@ -3,7 +3,7 @@
     <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
     <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img an">
     <h1 class="title">經典建案</h1>
-    <h1 class="subtitle">以經典，再造風華</h1>
+    <h1 class="subtitle">以經典　再造風華</h1>
     <img src="./s1/title.png" :alt="`${info.caseName}_title`" class="title-img">
     <div class="bottom"></div>
   </div>
@@ -34,15 +34,16 @@
     position: relative;
   }
 }
- .an{
-  animation:oxxo 25s ease-in infinite;
+.an{
+  animation:oxxo 40s linear infinite;
 }
 @keyframes oxxo{
-    95%{transform: scale(1.4);opacity: 1;
+    90%{transform: scale(1.2);opacity: 1;
     }
-    100%{opacity: 0;transform: scale(1.4);
+    100%{transform: scale(1.22);opacity: 0;
     }
 }
+
 
 .title {
   @include div_l_pc(274, 86, 805, 1089);

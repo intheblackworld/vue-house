@@ -69,10 +69,14 @@
   object-fit: cover;
   margin-top: 0;}
  .an{
-  animation:oxxo 20s ease-in forwards;
+  animation:oxxo 40s linear infinite;
 }
 @keyframes oxxo{
-    100%{transform: scale(1.2);opacity: 1;
+    0%{transform: scale(1);opacity: 1;
+    }
+    90%{transform: scale(1.2);opacity: 1;
+    }
+    100%{transform: scale(1.22);opacity: 0;
     }
 }
 
@@ -172,7 +176,7 @@
     width: 100vw;
     min-height: sizem(670);
     max-height: sizem(812);
-    height: sizem(670);
+    height: sizem(700);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -183,13 +187,13 @@
   }
 
   .hr {
-    @include div_r_m(190, 1, 611, 148);
+    @include div_r_m(170, 1, 592, 168);
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.58);
     background-color: #fff;
   }
 
   .name {
-    @include div_r_m(113, 22, 599, 22);
+    @include div_r_m(140, 22, 579, 22);
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.58);
     font-size: sizem(15);
     font-weight: 300;
@@ -201,7 +205,7 @@
     color: #ffffff;
     white-space: nowrap;
     span {
-      font-size: sizem(15);
+      font-size: sizem(20);
       white-space: nowrap;
     }
   }
@@ -218,7 +222,7 @@
   }
 
   .title {
-    @include div_r_m(302, 149, 420, 35);
+    @include div_r_m(302, 149, 400, 35);
     font-size: sizem(32);
     font-weight: normal;
     font-stretch: normal;
@@ -231,7 +235,7 @@
   }
 
   .subtitle {
-    @include div_r_m(253, 56, 551, 93);
+    @include div_r_m(253, 56, 531, 93);
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.58);
     font-size: sizem(15);
     font-weight: 300;
@@ -245,7 +249,7 @@
   }
 
   .desc {
-    @include div_r_m(325, 192, 93, 27);
+    @include div_r_m(325, 192, 83, 27);
     font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;

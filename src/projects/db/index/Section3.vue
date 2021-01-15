@@ -5,7 +5,7 @@
     <img src="./s3/bg_m.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isMobile">
     <h1 class="title" data-aos="fade" data-aos-delay="400">熱銷建案</h1>
     <h1 class="subtitle" data-aos="fade" data-aos-delay="600">
-      好的建築，真心推薦
+      好的建築　真心推薦
     </h1>
     <img src="./s3/title.png" :alt="`${info.caseName}_title`" class="title-img" data-aos="fade-right" data-aos-delay="100">
     <img src="./s2/more.png" :alt="`${info.caseName}_more`" class="btn" @click="$router.push('/hot')" data-aos="fade" data-aos-delay="600">
@@ -37,13 +37,13 @@
     position: relative;
   }
 }
- .an{
-  animation:oxxo 25s ease-in infinite;
+.an{
+  animation:oxxo 40s linear infinite;
 }
 @keyframes oxxo{
-    95%{transform: scale(1.4);opacity: 1;
+    90%{transform: scale(1.2);opacity: 1;
     }
-    100%{opacity: 0;transform: scale(1.4);
+    100%{transform: scale(1.22);opacity: 0;
     }
 }
 

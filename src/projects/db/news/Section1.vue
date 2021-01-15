@@ -33,15 +33,16 @@
     position: relative;
   }
 }
- .an{
-  animation:oxxo 25s ease-in infinite;
+.an{
+  animation:oxxo 40s linear infinite;
 }
 @keyframes oxxo{
-    95%{transform: scale(1.4);opacity: 1;
+    90%{transform: scale(1.2);opacity: 1;
     }
-    100%{opacity: 0;transform: scale(1.4);
+    100%{transform: scale(1.22);opacity: 0;
     }
 }
+
 
 
 .title {
@@ -60,7 +61,7 @@
 }
 
 .title-img {
-  @include img_l_pc(548, 189, 181);
+  @include img_l_pc(548, 220, 181);
 }
 
 .bottom {

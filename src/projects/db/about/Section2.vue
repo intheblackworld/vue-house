@@ -1,29 +1,29 @@
 <template>
   <div class="section2">
-    <img src="./s2/t.png" :alt="`${info.caseName}_t`" class="t">
-    <div class="flex-c" v-if="isMobile">
-      <img src="./s2/icon1.png" :alt="`${info.caseName}_icon1`" class="icon">
-      <img src="./s2/icon2.png" :alt="`${info.caseName}_icon2`" class="icon">
-      <img src="./s2/icon3.png" :alt="`${info.caseName}_icon3`" class="icon">
+    <img src="./s2/t.png" :alt="`${info.caseName}_關於我們 得邦廣告`" class="t" data-aos="fade" data-aos-delay="200">
+    <div class="flex-c" v-if="isMobile" data-aos="fade" data-aos-delay="300">
+      <img src="./s2/icon1.png" :alt="`${info.caseName}_icon1`" class="icon" data-aos="fade">
+      <img src="./s2/icon2.png" :alt="`${info.caseName}_icon2`" class="icon" data-aos="fade">
+      <img src="./s2/icon3.png" :alt="`${info.caseName}_icon3`" class="icon" data-aos="fade">
     </div>
-    <div v-if="isMobile">
-      <div class="desc">
+    <div v-if="isMobile" data-aos="fade">
+      <div class="desc" data-aos="fade">
         對於銷售的偏執，我們絕不妥協<br />
         對於客戶，以真誠款待<br />
         客戶服務，吹毛求疵，讓廣大民眾，都擁有一個完美的家。
       </div>
-      <div class="desc">
+      <div class="desc" data-aos="fade">
         對於建商，以完銷回饋<br />
         以良善創造建案價值，用創意力、行銷力為信念正向合作。<br />
         成為買賣雙方的橋樑，讓買賣不僅僅是金錢交換，而是一種循環美好的互動。
       </div>
-      <div class="desc">
+      <div class="desc" data-aos="fade" data-aos-delay="600">
         我們言語不多 但心意很多。<br />
         關於房子的許多事，不需要訴說，只需用心感受
       </div>
-      <img src="./s2/i1.jpg" :alt="`${info.caseName}_i1`" class="img">
-      <img src="./s2/logo.png" :alt="`${info.caseName}_logo`" class="logo">
-      <div class="desc">
+      <img src="./s2/i1.jpg" :alt="`${info.caseName}_i1`" class="img" data-aos="fade" data-aos-delay="300">
+      <img src="./s2/logo.png" :alt="`${info.caseName}_logo`" class="logo" data-aos="fade" data-aos-delay="400">
+      <div class="desc" data-aos="fade" data-aos-delay="500">
         「得邦廣告」以短短三年的時間，成功推行總值160億的案量。<br /><br />
         以精緻服務為核心價值，為消費者全盤規劃、推薦最合適的美宅。並對建設公司，提供土地規劃、建築設計、環境規劃、景觀規劃、美學架構等全盤的建議。<br /><br />
         在房地產行銷的領域中，以領先業界的專業服務，建構「人」與「家」最堅固的橋樑。
@@ -31,7 +31,7 @@
     </div>
     <div class="right" v-if="isPC">
       <div class="item flex-ac flex-jb">
-        <img src="./s2/icon1.png" :alt="`${info.caseName}_icon1`" class="icon">
+        <img src="./s2/icon1.png" :alt="`${info.caseName}_icon1`" class="icon" data-aos="fade" data-aos-delay="300">
         <div class="desc">
           對於銷售的偏執，我們絕不妥協<br />
           對於客戶，以真誠款待<br />
@@ -61,6 +61,7 @@
         在房地產行銷的領域中，以領先業界的專業服務，建構「人」與「家」最堅固的橋樑。
       </div>
     </div>
+    <!--
     <div class="video-item" v-for="(video, index) in video_list" :key="video.title + index">
       <img :src="video.img" :alt="`${info.caseName}_video`" class="v">
       <div class="flex-ac flex-jb wrap">
@@ -72,6 +73,7 @@
         </div>
       </div>
     </div>
+    -->
   </div>
 </template>
 
@@ -111,9 +113,9 @@
 
 .item {
   width: size(1920 - 648);
-  margin-bottom: size(21);
+  margin: size(30) 0 0;
   .icon {
-    width: size(209);
+    width: size(209);top:size(-30);position: relative;
   }
 
   .desc {

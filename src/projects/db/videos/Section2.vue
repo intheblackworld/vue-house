@@ -93,16 +93,18 @@
 
 .item {
   width: 100%;
-  height: size(629 + 71);
-  margin: 0 size(18) size(65);
+  height: size(780);
+  margin: 0 size(18);
   border-bottom: 2px solid #008fbb;
+  transition:all 0.3s;
   cursor: pointer;
 
+  &:hover{background: #00000003;}
   .add {
   }
 
   img {
-    width: size(1066);
+    width: size(966);
     height: size(629);
     object-fit: cover;
   }
@@ -261,8 +263,6 @@
     border-bottom: none;
     cursor: pointer;
 
-    .add {
-    }
 
     img {
       width: sizem(375);
@@ -272,7 +272,7 @@
 
     .content {
       // margin-top: sizem(221);
-      height: sizem(180);
+      height: auto;
       padding: 0 sizem(35);
     }
 

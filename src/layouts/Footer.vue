@@ -9,7 +9,7 @@
   width: 100%;
   height: 40px;
   margin-bottom: 0px;
-  background: #000000;
+  background: #014a5b;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,7 +21,7 @@
   img {
     height: 1.2em;
     margin-right: 20px;
-    vertical-align: inherit;
+    vertical-align: inherit;mix-blend-mode:lighten;
   }
 
   p {

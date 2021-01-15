@@ -1,9 +1,9 @@
 <template>
   <div class="section2">
     <div class="tab flex-ac flex-jb">
-      <div :class="`tab-item flex-c yellow`">
+     <!-- <div :class="`tab-item flex-c yellow`">
         最新消息
-      </div>
+      </div> -->
       <div :class="`tab-item flex-c blue`">
         媒體報導
       </div>
@@ -294,22 +294,22 @@ export default {
       type: 1, // 1 最新消息, 2 媒體報導
       item_list: [
         {
-          icon: require('./s1/icon1.png'),
+          icon: require('./s1/icon2.png'),
           type: 1,
           desc: '新聞標題新聞標題新聞標題新聞新聞標題新聞標題新聞標題新聞新聞',
-          img: require('../hot/s1/imgbg.jpg'),
+          img: require('../news/s2/1/20201103002310.jpg'),
         },
         {
           icon: require('./s1/icon2.png'),
           type: 2,
-          desc: '新聞標題新聞標題新聞標題新聞新聞標題新聞標題新聞標題新聞新聞',
-          img: require('../hot/s1/imgbg.jpg'),
+          desc: '坐擁全齡機能！新店碧波白兩代宅躍升換屋首選',
+          img: require('../news/s2/1/20201103002310.jpg'),
         },
         {
-          icon: require('./s1/icon1.png'),
+          icon: require('./s1/icon2.png'),
           type: 1,
-          desc: '新聞標題新聞標題新聞標題新聞新聞標題新聞標題新聞標題新聞新聞',
-          img: require('../hot/s1/imgbg.jpg'),
+          desc: 'MUSE Design Awards得獎公布 台灣之光「碧波白」雙料奪金',
+          img: require('../news/s2/1/20201103002310.jpg'),
         },
       ],
     }

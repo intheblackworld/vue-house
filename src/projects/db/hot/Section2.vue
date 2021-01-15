@@ -1,10 +1,10 @@
 <template>
   <div class="section2">
     <div class="title1" v-if="isPC">
-      好的建築，不需用言語訴說
+      好的建築　不需用言語訴說
     </div>
     <div class="title2" v-if="isPC">
-      好的生活，讓生命真切感動
+      好的生活　讓生命真切感動
     </div>
     <div class="container flex wrap">
       <div class="item" v-for="(item, index) in item_list" :key="item.title + index" @click="showProjectDialog(item)">
@@ -46,7 +46,7 @@
       <div class="section1">
         <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
         <h1 class="title">熱銷建案</h1>
-        <h1 class="subtitle">好的建築，真心推薦</h1>
+        <h1 class="subtitle">好的建築　真心推薦</h1>
         <img src="./s1/title.png" :alt="`${info.caseName}_title`" class="title-img">
         <div class="bottom"></div>
       </div>
@@ -207,14 +207,15 @@
 }
 
 .border-container {
-  @include div_r_pc(1562, 691, 204, 172);
+  @include div_r_pc(1562, 691, 0, 172);
+  top: calc(50% - 18vw);
   width: size(1562);
   height: size(691);
   border: 9.4px solid #008fbb;
 }
 
 .close {
-  @include div_r_pc(40, 40, -50, -11);
+  @include div_r_pc(40, 40, -45, -9);
   width: size(40);
   height: size(40);
   background-color: #008fbb;
@@ -879,7 +880,7 @@ export default {
           title2: '碧波白',
           desc:
             '新北市｜新店區<br />23-49坪‧ 70‧78坪大戶雙併<br />走遍千山萬水 還是碧潭最美',
-          img: require('./s1/imgbg.jpg'),
+          img: require('../works/1/0.jpg'),
           isEmpty: false,
           info1:
             '新北市｜新店區<br />23-49坪‧ 70‧78坪大戶雙併<br />走遍千山萬水 還是碧潭最美',
@@ -889,19 +890,19 @@ export default {
             '碧潭水岸首席 <br />涵碧美學御所<br />澳洲PTW建築團隊巨鑄<br />2020 Muse Design Awards 建築設計、室內設計',
           contact: '貴賓專線｜02-2913-1333<br />接待會館｜新店區北新路一段79號',
           link: 'https://www.bmwlife.com.tw/',
-          logo: require('./s1/imgbg.jpg'),
+          logo: require('../works/1/0.jpg'),
           imgs: [
-            require('./s1/imgbg.jpg'),
-            require('./s1/imgbg.jpg'),
-            require('./s1/imgbg.jpg'),
-            require('./s1/imgbg.jpg'),
+             require('../works/1/1.jpg'),
+             require('../works/1/2.jpg'), 
+             require('../works/1/3.jpg'), 
+             require('../works/1/4.jpg'),
           ],
         },
         {
           title: '陽光<br />PARK',
           title2: '陽光PARK',
           desc: '新北市｜新店區<br />27-54坪<br />新店陽光公園特區生態建築',
-          img: require('./s1/imgbg.jpg'),
+          img: require('../works/2/0.jpg'),
           isEmpty: false,
           info1: '新北市｜新店區<br />27-54坪<br />新店陽光公園特區生態建築',
           info2:
@@ -911,12 +912,12 @@ export default {
           contact:
             '貴賓專線｜02-2211-7711<br />接待會館｜新北市新店區安興路107號',
           link: 'https://pk88.h35.tw/',
-          logo: require('./s1/imgbg.jpg'),
+          logo: require('../works/2/0.jpg'),
           imgs: [
-            require('./s1/imgbg.jpg'),
-            require('./s1/imgbg.jpg'),
-            require('./s1/imgbg.jpg'),
-            require('./s1/imgbg.jpg'),
+            require('../works/2/1.jpg'),
+            require('../works/2/2.jpg'),
+            require('../works/2/3.jpg'),
+            require('../works/2/4.jpg'),
           ],
         },
         {
@@ -924,7 +925,7 @@ export default {
           title2: '神采飛洋',
           desc:
             '新北市｜洲子洋重劃區<br />2房(15、20坪)｜3房(25、33坪)<br />公園 校園 花園 誠徵有園人',
-          img: require('./s1/imgbg.jpg'),
+          img: require('../works/3/0.jpg'),
           isEmpty: false,
           info1:
             '新北市｜洲子洋重劃區<br />2房(15、20坪)｜3房(25、33坪)<br />公園 校園 花園 誠徵有園人',
@@ -935,12 +936,12 @@ export default {
           contact:
             '貴賓專線｜02-8295-1777<br />接待會館｜新北市五股區<br />新城五路與新城八路交叉口',
           link: 'https://hoh.h35.tw/',
-          logo: require('./s1/imgbg.jpg'),
+          logo: require('../works/3/0.jpg'),
           imgs: [
-            require('./s1/imgbg.jpg'),
-            require('./s1/imgbg.jpg'),
-            require('./s1/imgbg.jpg'),
-            require('./s1/imgbg.jpg'),
+            require('../works/3/1.jpg'),
+            require('../works/3/2.jpg'),
+            require('../works/3/3.jpg'),
+            require('../works/3/4.jpg'),
           ],
         },
         {
@@ -948,7 +949,7 @@ export default {
           title2: '太陽帝國',
           desc:
             '新北市｜中和區<br />19-39坪 2-3房<br />不是王牌不出手 唯有贏家能出手',
-          img: require('./s1/imgbg.jpg'),
+          img: require('../works/4/0.jpg'),
           isEmpty: false,
           info1:
             '新北市｜中和區<br />19-39坪 2-3房<br />不是王牌不出手 唯有贏家能出手',
@@ -958,37 +959,13 @@ export default {
           contact:
             '貴賓專線｜02-8668-7373<br />接待會館｜新北市中和區和平街25之1號',
           link: 'https://www.aceptw.com.tw/',
-          logo: require('./s1/imgbg.jpg'),
+          logo: require('../works/4/0.jpg'),
           imgs: [
-            require('./s1/imgbg.jpg'),
-            require('./s1/imgbg.jpg'),
-            require('./s1/imgbg.jpg'),
-            require('./s1/imgbg.jpg'),
+            require('../works/4/1.jpg'),
+            require('../works/4/2.jpg'),
+            require('../works/4/3.jpg'),
+            require('../works/4/4.jpg'),
           ],
-        },
-        {
-          title: '',
-          desc: '',
-          img: require('./s1/imgbg.jpg'),
-          isEmpty: true,
-          info1: '',
-          info2: '',
-          contact: '',
-          link: '',
-          logo: '',
-          imgs: [],
-        },
-        {
-          title: '',
-          desc: '',
-          img: require('./s1/imgbg.jpg'),
-          isEmpty: true,
-          info1: '',
-          info2: '',
-          contact: '',
-          link: '',
-          logo: '',
-          imgs: [],
         },
       ],
     }

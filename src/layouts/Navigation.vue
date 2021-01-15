@@ -7,7 +7,7 @@
             <div class="menu-icon"></div>
           </div>
           <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt @click="$router.push('/')" /> -->
-          <div class="menu" @click="toggleSidebar('')" v-show="!isOpen">
+          <div @click="toggleSidebar('')" :class="`menu ${isOpen ? 'open' : ''}`">
             <div class="menu-icon"></div>
             <!-- <font-awesome-icon icon="bars" /> -->
           </div>
@@ -17,9 +17,6 @@
             </div> -->
           </div>
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
-            <div class="close" @click="isOpen = false" v-if="isMobile">
-              <img src="../assets/img/close.png" alt="">
-            </div>
          <!--     <img src="@/projects/lc/menu/icon_f.png" alt="" class="fb" @click="showMessengerDialog" v-if="isMobile">
             <img src="@/projects/lc/menu/icon_l.png" alt="" class="line" v-if="isMobile">
            <li v-if="isMobile" alt v-scroll-to="{ element: `#section1`, offset: offset }"><img class="navlogo" src="@/assets/img/nav-logo.png" /></li> -->
@@ -209,10 +206,11 @@ export default {
 
 .menu-icon {
   position: relative;
-  width: size(30);
-  top: size(10);
+  font-size:size(20);
+  width:1.5em;
+  top: 0.5em;
   height: 2px;
-  margin-top: size(-20);
+  margin-top: -1em;
   background-color: #fff0;
   transition: all 0.3s;
 }
@@ -222,13 +220,13 @@ export default {
   left: 0;
   content: '';
   display: block;
-  width: size(30);
+  width:100%;
   height: 2px;
   background-color: #fff;
   transition: transform 0.2s ease-in, top 0.2s;
   transform: rotate(45deg);
   transform-origin: center;
-  top: size(0);
+  top:0;
 }
 
 .menu-icon::after {
@@ -236,13 +234,13 @@ export default {
   left: 0;
   content: '';
   display: block;
-  width: size(30);
+  width: 100%;
   height: 2px;
   background-color: #fff;
   transition: transform 0.2s ease-in, top 0.2s;
   transform: rotate(-45deg);
   transform-origin: center;
-  top: size(0);
+  top:0;
 }
 
 .min {
@@ -259,12 +257,12 @@ export default {
 
   .menu-icon::before {
   transform: rotate(0deg);
-  top: size(-10);
+  top: -0.5em;
   }
 
   .menu-icon::after {
   transform: rotate(0deg);
-  top: size(10);}
+  top:0.5em;}
 }
 .navlist {
   display: flex;
@@ -441,7 +439,7 @@ export default {
     right: 15px;
     width: sizem(40);
     height: sizem(40);
-    padding-top: sizem(8);
+   // padding-top: sizem(8);
     background-color: #008fbb;
     z-index: 112;
 
@@ -450,40 +448,26 @@ export default {
       height: sizem(35);
       color: $nav_btn_color;
     }
-  }
+    &.open {
 
   .menu-icon {
-    position: relative;
-    width: sizem(30);
-    height: 2px;
-    margin-top: sizem(0);
-    margin-left: sizem(5);
-    background-color: #fff;
+  background-color: #fff0;
   }
 
   .menu-icon::before {
-    position: absolute;
-    left: 0;
-    top: sizem(10);
-    content: '';
-    display: block;
-    width: sizem(30);
-    height: 2px;
-    background-color: #fff;
-    transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+  transform: rotate(-45deg);
+  top:0em;
   }
 
   .menu-icon::after {
-    position: absolute;
-    left: 0;
-    top: sizem(20);
-    content: '';
-    display: block;
-    width: sizem(30);
-    height: 2px;
-    background-color: #fff;
-    transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+  transform: rotate(45deg);
+  top:0em;}
+}
   }
+.menu-icon {
+  top:100%;
+  left: 50%;transform: translateX(-50%);
+  font-size:sizem(20);}
 
   .navlist {
     position: absolute;
@@ -503,12 +487,13 @@ export default {
     align-content: center;
     justify-content: center;
     flex-wrap: wrap;
+      margin-top:sizem(60);
 
     li {
       width: 100vw;
       height: 45px;
-      margin-top: 15px;
-      margin-bottom: 0;
+      margin-top:0;
+      margin-bottom:  15px;
     }
 
     .link {
@@ -530,7 +515,7 @@ export default {
       }
     }
   }
-
+.min .navlist{display: block;}
   .mask-logo {
     width: $logo_phone_width;
     height: auto;
@@ -579,7 +564,7 @@ export default {
       .link {
         display: flex;
         justify-content: center;
-        color: #fff;
+        color: #4d4d4d;
         .title {
           border-right: none;
         }
@@ -600,7 +585,8 @@ export default {
     width: 100vw;
     top: 0;
     right: 0;
-    background-image: url('~@/projects/lc/form/bg.jpg');
+    background-color: #FFFC;
+   // background-image: url('~@/projects/lc/form/bg.jpg');
     background-repeat: repeat;
     background-attachment: fixed;
     background-position: 80% 0%;

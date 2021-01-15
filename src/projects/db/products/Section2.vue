@@ -1,10 +1,10 @@
 <template>
   <div class="section2">
     <!-- <div class="title1">
-      好的建築，不需用言語訴說
+      好的建築　不需用言語訴說
     </div>
     <div class="title2">
-      好的生活，讓生命真切感動
+      好的生活　讓生命真切感動
     </div> -->
     <div class="container flex wrap">
       <div class="item" v-for="(item, index) in item_list" :key="item.title + index" @click="showProjectDialog(item)">
@@ -45,7 +45,7 @@
       <div class="section1">
         <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
         <h1 class="title">經典建案</h1>
-        <h1 class="subtitle">以經典，再造風華</h1>
+        <h1 class="subtitle">以經典　再造風華</h1>
         <img src="./s1/title.png" :alt="`${info.caseName}_title`" class="title-img">
         <div class="bottom"></div>
       </div>
@@ -206,19 +206,21 @@
 }
 
 .border-container {
-  @include div_r_pc(1562, 691, 204, 172);
+  @include div_r_pc(1562, 691, 0, 172);
+  top: calc(50% - 18vw);
   width: size(1562);
   height: size(691);
   border: 9.4px solid #008fbb;
 }
 
 .close {
-  @include div_r_pc(40, 40, -50, -11);
+  @include div_r_pc(40, 40, -45, -9);
   width: size(40);
   height: size(40);
   background-color: #008fbb;
   cursor: pointer;
 }
+
 
 .product-title {
   @include img_l_pc(207, 48 + 50, 884);
@@ -851,7 +853,7 @@ export default {
           title: '容邑PARK',
           title2: '容邑PARK',
           desc: '新北市｜新莊副都心',
-          img: require('../hot/s1/imgbg.jpg'),
+          img:require('../works/5/0.jpg'),
           isEmpty: false,
           info1: '新北市｜新莊副都心',
           info2:
@@ -859,15 +861,16 @@ export default {
           info3:
             '完工時間｜2019年<br />規劃樓層｜地上15層，地下6層<br />格局規劃｜開放格局(15-33坪)<br />基地地址｜新北市新莊區富貴路182號<br />建案特色｜新莊副都心，機能完整<br />機場捷運A3新北產業園區站，散步即達<br />步行2分鐘，抵達塭仔底生態公園',
           contact: '',
-          logo: require('../hot/s1/imgbg.jpg'),
+          logo: require('../works/5/0.jpg'),
           link: '',
           imgs: [
-            require('../hot/s1/imgbg.jpg'),
-            require('../hot/s1/imgbg.jpg'),
-            require('../hot/s1/imgbg.jpg'),
-            require('../hot/s1/imgbg.jpg'),
+            require('../works/5/1.jpg'),
+            require('../works/5/2.jpg'),
+            require('../works/5/3.jpg'),
+            require('../works/5/4.jpg'),
           ],
         },
+        /*
         {
           title: '',
           desc: '',
@@ -880,6 +883,7 @@ export default {
           img: require('../hot/s1/imgbg.jpg'),
           isEmpty: true,
         },
+        */
       ],
     }
   },

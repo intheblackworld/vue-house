@@ -1,8 +1,8 @@
 <template>
   <div class="section1">
-    <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
     <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img an">
     <h1 class="title" v-if="isPC">關於我們</h1>
+    <div class="line"></div>
     <img src="./s1/title.png" :alt="`${info.caseName}_title`" class="title-img">
     <div class="bottom"></div>
   </div>
@@ -13,8 +13,10 @@
 
 .section1 {
   width: size(1920);
-  height: size(1200);
-  overflow: hidden;
+  height: calc(100vh + 15.5vw);
+  min-height: size(1100);
+  max-height: size(1235);
+  //overflow: hidden;
   position: relative;
   background-image: #008fbb;
   background-size: auto;
@@ -37,9 +39,11 @@
   animation:oxxo 25s ease-in infinite alternate;
 }
 @keyframes oxxo{
-    95%{transform: scale(1.3);opacity: 1;
+    5%{transform: scale(1);
     }
-    100%{transform: scale(1.3);opacity: 1;
+    95%{transform: scale(1.25);
+    }
+    100%{transform: scale(1.25);
     }
 }
 
@@ -54,12 +58,20 @@
   text-align: left;
   color: #ffe900;
   white-space: nowrap;
+  height: auto;
+  top: auto;
+  bottom:size(320)
 }
 
 .title-img {
   @include img_l_pc(548, 745, 181);
+  top: auto;
+  bottom:size(320);
 }
 
+.line{
+  @include div_l_pc(3, 2050, 420, 275);background: linear-gradient(to bottom, rgba(255,233,0,1) 0%,rgba(255,233,0,1) 78%,rgba(255,233,0,0) 100%);z-index: 3;top:calc(100% - 16vw);
+}
 .bottom {
   @include div_r_pc(1920, 78, 0, 0);
   top: auto;
