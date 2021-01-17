@@ -73,8 +73,8 @@
   height: 72px !important;
   // opacity: 0 !important;
   border-radius: 0 !important;
-  font-size: 20px !important;
-  font-weight: normal !important;
+  font-size: 24px !important;
+  font-weight: bold !important;
   letter-spacing: 10px;
   text-align: justify;
   background-position: center !important;
@@ -85,7 +85,7 @@
   transition: all 0.3s !important;
   color: $order_submit_color;
   // z-index: 10;
-  border: 1px solid #ea5504 !important;
+  border: 3px solid #c7a26e !important;
   font-family: $family3 !important;
 
   &.is-disabled {

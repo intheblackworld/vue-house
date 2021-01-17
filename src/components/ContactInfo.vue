@@ -2,8 +2,6 @@
   <div>
     <div
       class="contact-info"
-      data-aos="fade"
-      data-aos-delay="0"
     >
       <img
         class="logo"
@@ -137,6 +135,7 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/style/variableColor.scss';
 @import '@/assets/style/variableDefault.scss';
+@import '@/assets/style/function.scss';
 
 .contact-info {
   background: $contact_bg;
@@ -149,13 +148,13 @@ export default {
   justify-content: space-between;
   position: relative;
   z-index: 3;
-  width: 1200px;
+  width: size(1440);
   height: 538px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
   transform: translateY(0);
-  margin: 2vw auto -3vw;
+  margin: 0 auto 0;
   padding: 30px 0 40px;
 }
 
@@ -232,7 +231,7 @@ export default {
   width: 600px;
   height: 60px;
   background: #fff;
-  color: $contact_btn_color;
+  color: #000;
   font-weight: bold;
   //box-shadow: $contact_btn_border;
 }

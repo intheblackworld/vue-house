@@ -1,6 +1,5 @@
 <template>
   <div class="section8">
-    <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
     <img src="./s8/bg.png" :alt="`${info.caseName}_bgimg`" class="bg-img">
     <div class="title">
       公設王牌
@@ -205,7 +204,8 @@
 .pagination {
   width: auto;
   right: 0;
-  top: -35px;
+  left: 0;
+  bottom: 12px;
   margin: 0 auto;
   justify-content: center;
 }
@@ -221,9 +221,9 @@
     width: 20px;
     height: 20px;
     border-radius: 20px;
-    box-shadow: 0 0 0 1px #27a8a8;
+    box-shadow: 0 0 0 1px #fff;
     position: relative;
-    background-color: rgba(0, 0, 0, 0.01);
+    background-color: rgba(255, 255, 255, 0.38);
     transition: all 0.5s;
 
     &::before {
@@ -231,7 +231,7 @@
       width: 60%;
       height: 60%;
       display: block;
-      background: #27a8a8;
+      background: #fff;
       border-radius: 20px;
       opacity: 1;
       position: absolute;
@@ -248,7 +248,7 @@
         width: 100%;
         height: 100%;
         display: block;
-        background: #27a8a8;
+        background: #fff;
         border-radius: 20px;
         opacity: 1;
         position: absolute;
@@ -269,7 +269,7 @@
 
   .prev-btn,
   .next-btn {
-    width: size(20);
+    width: size(46);
     cursor: pointer;
   }
 }
@@ -597,8 +597,8 @@
 
     .prev-btn,
     .next-btn {
-      width: sizem(52);
-      height: sizem(52);
+      width: sizem(46);
+      height: sizem(87);
       cursor: pointer;
       background-color: #ec6300;
       img {

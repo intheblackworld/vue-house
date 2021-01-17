@@ -1,7 +1,5 @@
 <template>
   <div class="section6">
-    <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
-    <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
     <img src="./s6/bg.png" :alt="`${info.caseName}_bgimg`" class="bg-img">
     <img src="./s6/img.jpg" :alt="`${info.caseName}_img`" class="img">
     <img src="./s6/logoall.png" :alt="`${info.caseName}_logoall`" class="logoall">

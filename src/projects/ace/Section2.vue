@@ -1,9 +1,41 @@
 <template>
   <div class="section2">
-    <img src="./s1/bg.jpg" :alt="`${info.caseName}_bgimg`" class="bg-img">
-    <img src="./s2/bg.png" :alt="`${info.caseName}_bg`" class="bg">
-    <img src="./s2/img1.png" :alt="`${info.caseName}_img1`" class="img1">
+    <img src="./s2/bg.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isPC">
+    <img src="./mo/w1.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isMobile">
+    <img src="./s2/img1.png" :alt="`${info.caseName}_img1`" class="img1" v-if="isPC">
     <img src="./s2/title_t.png" :alt="`${info.caseName}_title_t`" class="title_t">
+    <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex" v-if="isPC">
+        <!-- <transition-group name="swipe-fade" mode="out-in"> -->
+        <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item flex-c wrap absolute`">
+          <div :class="`complex-item flex-c wrap ${slideIndex === i ? 'turn' : ''}`" v-for="(item, index) in slide.items" :key="item.name + index">
+            <img :src="item.icon" :alt="`${info.caseName}_icon`">
+            <div class="complex-name" v-html="item.name"></div>
+          </div>
+        </div>
+        <!-- </transition-group> -->
+        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isPC">
+          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+        </div>
+      </div>
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex" v-if="isMobile">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.icon" :class="`swipe-item absolute ${slideIndex === i ? 'turn' : ''}`">
+            <img :src="slide.icon" :alt="slide.name">
+            <div class="name absolute" v-html="slide.name"></div>
+          </div>
+        </transition-group>
+      </div>
+    </div>
+    <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+      <div class="prev-btn flex-c">
+        <img src="./all/prev-btn.png" alt="" @click="decIndex">
+      </div>
+      <div class="next-btn flex-c">
+        <img src="./all/next-btn.png" alt="" @click="addIndex">
+      </div>
+    </div>
   </div>
 </template>
 
@@ -46,6 +78,206 @@
   @include img_r_pc(546, 109, 393);
 }
 
+/* Swipe */
+.swipe {
+  width: size(1980 - 119 - 721);
+  height: size(1080 - 289 - 2);
+  top: size(289);
+  right: size(118);
+  object-fit: cover;
+}
+
+// begin
+.swipe-fade-leave-to {
+  opacity: 0;
+  z-index: 0;
+}
+// end
+.swipe-fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.swipe-fade-enter-active {
+  transition: all 0.5s ease;
+}
+
+.swipe-fade-leave-active {
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+// begin
+// .swipe-left-leave-to {
+//   margin-left: -100vw;
+//   z-index: 0;
+// }
+// // end
+// .swipe-left-enter {
+//   opacity: 0.5;
+//   margin-left: 0;
+//   z-index: 1;
+// }
+
+// .swipe-left-enter-active {
+//   transition: all 0.5s ease;
+// }
+
+// .swipe-left-leave-active {
+//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+// }
+
+.swipe-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+@keyframes flip {
+  to {
+    transform: rotateY(720deg);
+  }
+}
+
+.complex-item {
+  width: size(238);
+  margin: 15px size(50);
+
+  &.turn {
+    img {
+      animation: flip 1s 0s ease-in-out forwards;
+    }
+  }
+
+  img {
+    width: size(177);
+    margin-bottom: 10px;
+  }
+
+  .complex-name {
+    font-size: size(20);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.47;
+    letter-spacing: size(0.92);
+    text-align: center;
+    color: #ffffff;
+    white-space: nowrap;
+  }
+}
+
+.swipe-item {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .name {
+    right: 1.5em;
+    bottom: 1em;
+    font-size: 0.78125vw;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.89px;
+    text-align: left;
+    color: #fff;
+    text-shadow: 0 0.1em 0.3em #000;
+  }
+
+  // &:nth-child(1) {
+  //   z-index: 1;
+  //   // opacity: 1;
+  // }
+
+  // &.base {
+  //   z-index: 1;
+  //   opacity: 1;
+  // }
+  // &.active {
+  //   z-index: 2;
+  //   // opacity: 1;
+  // }
+}
+
+.pagination {
+  width: auto;
+  right: 0;
+  left: 0;
+  bottom: 12px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.pagination-dot {
+  padding: 5px;
+  margin: 0 10px;
+  cursor: pointer;
+  z-index: 4;
+
+  span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 0 1px #fff;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.38);
+    transition: all 0.5s;
+
+    &::before {
+      content: '';
+      width: 60%;
+      height: 60%;
+      display: block;
+      background: #fff;
+      border-radius: 20px;
+      opacity: 1;
+      position: absolute;
+      top: 20%;
+      // transform: translateY(-50%);
+      left: 20%;
+      transition: all 0.3s;
+      transform-origin: center;
+      transform: scale(0);
+    }
+    &.active {
+      &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: #fff;
+        border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 0%;
+        // transform: translateY(-50%);
+        left: 0%;
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.swipe-btns {
+  width: 100%;
+  height: 100%;
+  padding: 0 15px;
+  z-index: 3;
+
+  .prev-btn,
+  .next-btn {
+    width: size(46);
+    cursor: pointer;
+  }
+}
 
 @media only screen and (max-width: 1440px) {
 }
@@ -63,7 +295,7 @@
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    min-height: sizem(1115);
+    min-height: sizem(504);
     background-size: cover;
     background-attachment: scroll;
   }
@@ -82,97 +314,222 @@
     }
   }
 
-  .img {
-    @include img_r_m(160, 290, -80);
+  .bg {
+    @include img_r_m(375, 0, 0);
   }
 
-  .title {
-    @include img_r_m(305, 10, 34);
-    font-size: sizem(35);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(2.8);
-    text-align: left;
-    color: #c61b1f;
-    white-space: nowrap;
+  .img1 {
+    // @include img_l_m(520, 27, 187);
   }
 
-  .item-container {
-    position: relative;
+  .title_t {
+    @include img_r_m(286, 52, 44);
+  }
+
+  /* Swipe */
+  .swipe {
+    width: sizem(250);
+    height: sizem(330);
+    // min-height: sizem(750);
+    top: sizem(176);
+    left: 0;
+    right: 0;
     margin: 0 auto;
-    margin-top: sizem(112);
-    width: sizem(275);
-  }
-  .item {
-    width: sizem(125);
-    margin-bottom: sizem(45);
-  }
-  .item-img {
-    width: sizem(104);
-    margin-bottom: sizem(8);
+    object-fit: cover;
   }
 
-  .item-title {
-    font-size: sizem(19);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(1.5);
-    text-align: center;
-    color: #b81c22;
+  // begin
+  .swipe-fade-leave-to {
+    opacity: 0;
+    z-index: 0;
+  }
+  // end
+  .swipe-fade-enter {
+    opacity: 0;
+    z-index: 1;
   }
 
-  .item-desc {
-    font-size: sizem(15);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.7;
-    letter-spacing: sizem(1.05);
-    text-align: center;
-    color: #231815;
-    white-space: nowrap;
+  .swipe-fade-enter-active {
+    transition: all 0.5s ease;
   }
 
-  .b1 {
-    @include img_l_m(74, 409, 30);
-    animation: an2 1.5s infinite alternate;
+  .swipe-fade-leave-active {
+    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
   }
 
-  .b2 {
-    @include img_r_m(150, 230, -100);
-    animation: an 2.5s infinite alternate;
+  // begin
+  // .swipe-left-leave-to {
+  //   margin-left: -100vw;
+  //   z-index: 0;
+  // }
+  // // end
+  // .swipe-left-enter {
+  //   opacity: 0.5;
+  //   margin-left: 0;
+  //   z-index: 1;
+  // }
+
+  // .swipe-left-enter-active {
+  //   transition: all 0.5s ease;
+  // }
+
+  // .swipe-left-leave-active {
+  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  // }
+
+  .swipe-wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
   }
 
-  .b3 {
-    @include img_l_m(132, 997, -10);
-    animation: an 2.5s infinite alternate;
+  .swipe-item {
+    width: 100%;
+    z-index: 0;
+    height: sizem(330);
+    bottom: 0;
+    left: 0;
+
+    img {
+      width: sizem(161);
+      height: sizem(194);
+      // height: sizem(330);
+      bottom: 0;
+      left: 0;
+    }
+
+    .name {
+      right: 0;
+      left: 0;
+      margin: 0 auto;
+      bottom: 2em;
+      font-size: sizem(18);
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.5;
+      letter-spacing: sizem(0.72);
+      text-align: center;
+      color: #ffffff;
+      white-space: nowrap;
+      text-shadow: 0 0.1em 0.3em #000;
+    }
+
+    // &:nth-child(1) {
+    //   z-index: 1;
+    //   // opacity: 1;
+    // }
+
+    // &.base {
+    //   z-index: 1;
+    //   opacity: 1;
+    // }
+    // &.active {
+    //   z-index: 2;
+    //   // opacity: 1;
+    // }
   }
-  .b4 {
-    @include img_r_m(62, 1100, -10);
-    animation: an 2s infinite alternate;
-    transform: translate(-10%, -10%);
+
+  .pagination {
+    width: auto;
+    bottom: size(91);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    justify-content: center;
   }
-  .an {
-    @include img_r_m(448, 670, -250);
-  } /*
-  .img2 {
-    @include img_r_m(448, 480, -230);
-    transform: rotate(45deg);
-    transform-origin: center;
-  }*/
+
+  .pagination-dot {
+    padding: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    z-index: 4;
+
+    span {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 0 1px #bd2b27;
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.01);
+      transition: all 0.5s;
+
+      &::before {
+        content: '';
+        width: 60%;
+        height: 60%;
+        display: block;
+        background: #bd2b27;
+        border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 20%;
+        // transform: translateY(-50%);
+        left: 20%;
+        transition: all 0.3s;
+        transform-origin: center;
+        transform: scale(0);
+      }
+      &.active {
+        &::before {
+          content: '';
+          width: 100%;
+          height: 100%;
+          display: block;
+          background: #bd2b27;
+          border-radius: 20px;
+          opacity: 1;
+          position: absolute;
+          top: 0%;
+          // transform: translateY(-50%);
+          left: 0%;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  .swipe-btns {
+    width: 100%;
+    height: sizem(52);
+    padding: 0px;
+    z-index: 1;
+    position: absolute;
+    top: sizem(235);
+
+    .prev-btn,
+    .next-btn {
+      width: sizem(26);
+      height: sizem(52);
+      cursor: pointer;
+      // background-color: #ec6300;
+      img {
+        width: 100%;
+      }
+    }
+
+    // .prev-btn {
+    //   border-top-right-radius: 25px;
+    //   border-bottom-right-radius: 25px;
+    // }
+
+    // .next-btn {
+    //   border-top-left-radius: 25px;
+    //   border-bottom-left-radius: 25px;
+    // }
+  }
 }
 </style>
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
+import slider from '@/mixins/slider.js'
 import info from '@/info'
 
 export default {
   name: 'section2',
+  mixins: [slider],
 
   data() {
     return {
@@ -180,6 +537,100 @@ export default {
       isPC,
       isMobile,
       isTablet,
+
+      slideList: isMobile
+        ? [
+            {
+              icon: require('./s2/icon.png'),
+              name: '36層浩瀚之境<br />獻給王與后的專屬天空',
+            },
+            {
+              icon: require('./s2/icon.png'),
+              name: '澳洲PTW集131年大成<br />重寫雙和摩天史',
+            },
+            {
+              icon: require('./s2/icon.png'),
+              name: '近760坪沙龍花園會館<br />獨家3層私人會所',
+            },
+            {
+              icon: require('./s2/icon.png'),
+              name: '101燈光設計<br />信義豪宅4大建築團隊精鑄',
+            },
+            {
+              icon: require('./s2/icon.png'),
+              name: '黃金級綠建築<br />每次呼吸都是博物館的空氣',
+            },
+            {
+              icon: require('./s2/icon.png'),
+              name: '七星級飯店式物業管理<br />生生世世養尊處優',
+            },
+            {
+              icon: require('./s2/icon.png'),
+              name: '雙和核心、1高2捷3快環繞<br />大台北速度贏家',
+            },
+            {
+              icon: require('./s2/icon.png'),
+              name: '中和線、環狀線<br />雙捷運3分鐘腳程增值南都心',
+            },
+            {
+              icon: require('./s2/icon.png'),
+              name: '雙和市中心<br />購物中心、Costco..眾星拱月',
+            },
+            {
+              icon: require('./s2/icon.png'),
+              name: '雙和唯一，萬噸鋼骨用量<br />+brb+cft柱雙制震',
+            },
+          ]
+        : [
+            {
+              items: [
+                {
+                  icon: require('./s2/icon.png'),
+                  name: '36層浩瀚之境<br />獻給王與后的專屬天空',
+                },
+                {
+                  icon: require('./s2/icon.png'),
+                  name: '澳洲PTW集131年大成<br />重寫雙和摩天史',
+                },
+                {
+                  icon: require('./s2/icon.png'),
+                  name: '近760坪沙龍花園會館<br />獨家3層私人會所',
+                },
+                {
+                  icon: require('./s2/icon.png'),
+                  name: '101燈光設計<br />信義豪宅4大建築團隊精鑄',
+                },
+                {
+                  icon: require('./s2/icon.png'),
+                  name: '黃金級綠建築<br />每次呼吸都是博物館的空氣',
+                },
+              ],
+            },
+            {
+              items: [
+                {
+                  icon: require('./s2/icon.png'),
+                  name: '七星級飯店式物業管理<br />生生世世養尊處優',
+                },
+                {
+                  icon: require('./s2/icon.png'),
+                  name: '雙和核心、1高2捷3快環繞<br />大台北速度贏家',
+                },
+                {
+                  icon: require('./s2/icon.png'),
+                  name: '中和線、環狀線<br />雙捷運3分鐘腳程增值南都心',
+                },
+                {
+                  icon: require('./s2/icon.png'),
+                  name: '雙和市中心<br />購物中心、Costco..眾星拱月',
+                },
+                {
+                  icon: require('./s2/icon.png'),
+                  name: '雙和唯一，萬噸鋼骨用量<br />+brb+cft柱雙制震',
+                },
+              ],
+            },
+          ],
     }
   },
 

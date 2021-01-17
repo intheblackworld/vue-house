@@ -4,26 +4,28 @@
       <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
       <div class="menu" @click="toggleSidebar">
         <!-- <div :class="`menu-icon ${isOpen ? 'menu-icon-active' : ''}`"></div> -->
-        <img v-if="isOpen" src="@/projects/jh/s4/close.png" class="close" alt />
-        <div v-else class="menu-btn"></div>
+        <img src="@/projects/ace/menu/menu.png" class="close" alt />
+        <h1 class="menu-text">{{isOpen ? 'CLOSE' : 'MENU'}}</h1>
       </div>
       <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
-      <ul :class="`navlist ${isOpen ? 'open': ''}`">
-        <li
-          :key="item.name"
-          v-scroll-to="{ element: `#${item.section}`, offset: isMobile ? (item.mobileOffset ? item.mobileOffset : offset) : (item.offset ? item.offset : offset) }"
-          v-for="item in list"
-          class="flex-ac"
-          @click="toggleSidebar"
-        >
-          <span class="link">
-            <img v-if="item.imgSrc" :src="item.imgSrc" alt />
-            <span>
-              <div class="title">{{item.name}}</div>
-              <span class="subTitle">{{item.subTitle}}</span>
+      <ul :class="`navlist flex-c ${isOpen ? 'open': ''}`">
+        <div class="list">
+          <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: isMobile ? (item.mobileOffset ? item.mobileOffset : offset) : (item.offset ? item.offset : offset) }" v-for="(item, index) in list" class="flex-ac" @click="toggleSidebar" data-aos="fade-up" :data-aos-delay="`${200 + index  * 100}`">
+            <span class="link">
+              <span>
+                <div class="title">{{item.name}}</div>
+                <span class="subTitle">{{item.subTitle}}</span>
+              </span>
             </span>
-          </span>
-        </li>
+          </li>
+        </div>
+        <div class="hr" data-aos="zoom-in-down" data-aos-delay="200"></div>
+        <div class="content">
+          <img src="@/assets/img/contact-logo.png" alt="" class="menu-logo" data-aos="fade-down" data-aos-delay="200">
+          <img src="@/projects/ace/menu/f.png" alt="" class="fb" data-aos="fade-down" data-aos-delay="400">
+          <img src="@/projects/ace/menu/line.png" alt="" class="line" data-aos="fade-down" data-aos-delay="500">
+          <img src="@/projects/ace/menu/phone.png" alt="" class="phone" data-aos="fade-down" data-aos-delay="600">
+        </div>
       </ul>
     </div>
   </div>
@@ -92,7 +94,7 @@ export default {
   align-items: center;
   z-index: 112;
   top: 30px;
-  right: 30px;
+  right: 40px;
   width: 45px;
   height: 40px;
   // background-color: #fff;
@@ -103,14 +105,38 @@ export default {
   }
 
   .close {
-    width: 40px;
-    margin-top: 20px;
-    margin-right: 0px;
+    width: size(85);
+    // margin-top: 20px;
+    // margin-right: 0px;
   }
-.menu-btn{width: 100%;height: 100%;position: absolute;top: 0;left: 0;background: url("~@/assets/img/menu1.png") -100% 0;background-size:auto 38%;}
-&:hover{.menu-btn{
-  animation: menu 1s linear infinite;}}
 
+  .menu-text {
+    position: absolute;
+    top: size(10);
+    right: size(-5);
+    font-size: size(18.2);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.47;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+  }
+  .menu-btn {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('~@/assets/img/menu1.png') -100% 0;
+    background-size: auto 38%;
+  }
+  &:hover {
+    .menu-btn {
+      animation: menu 1s linear infinite;
+    }
+  }
 }
 @keyframes menu {
   to {
@@ -180,48 +206,78 @@ export default {
   z-index: 111;
   background: $nav_bg;
   width: 0%;
-  right: 0;
+  left: 100vw;
   top: $nav_phone_height;
   height: calc(100vh - #{$nav_phone_height});
   text-align: center;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
   display: block;
-  transform: translateX(40%);
+  // transform: translateX(40%);
 
   li {
-    height: 60px;
-    margin-bottom: 5px;
-    width: 100%;
+  }
+
+  .list {
+    @include img_l_pc(122, 282, 651);
+  }
+
+  .hr {
+    @include div_c_pc(25, 600, 247);
+    border-left: 3px solid #c39f6d;
+  }
+
+  .menu-logo {
+    @include img_l_pc(342, 268, 1094);
+  }
+
+  .fb {
+    @include img_l_pc(44, 768, 1171);
+    cursor: pointer;
+  }
+
+  .line {
+    @include img_l_pc(44, 768, 1251);
+    cursor: pointer;
+  }
+
+  .phone {
+    @include img_l_pc(44, 768, 1331);
+    cursor: pointer;
   }
 
   .link {
-    height: 60px;
-    width: 100%;
-    font-size: 24px;
-    margin-top: 10px;
+    height: size(41);
+    width: size(122);
+    font-size: size(24);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.02;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+    margin-bottom: size(20);
     display: flex;
     align-items: center;
     justify-content: center;
-    display: none;
-    background-size: cover;
     position: relative;
-  transition: all 0.3s;
-      font-size:size(18);
-      line-height: 1.6;
+    transition: all 0.3s;
 
-     &::before {
-       display: inline-block;
-       content: '';
-       width:1em;
-       height: 1em;
-       background: url("~@/assets/img/menu2.png");
-       background-size: 58% auto;
-       background-position-x: -100%;
-       transition: all 0.4s; margin: 0 0.5em 0 0;
+    // &::before {
+    //   display: inline-block;
+    //   content: '';
+    //   width: 1em;
+    //   height: 1em;
+    //   background: url('~@/assets/img/menu2.png');
+    //   background-size: 58% auto;
+    //   background-position-x: -100%;
+    //   transition: all 0.4s;
+    //   margin: 0 0.5em 0 0;
+    // }
+    &:hover:before {
+      animation: menu 1s linear infinite;
     }
-   &:hover:before{
-  animation: menu 1s linear infinite;}
-      /* left: %;
+    /* left: %;
        bottom: 0;
        position: absolute*/
 
@@ -235,7 +291,7 @@ export default {
       display: block;
     }
     span {
-     //line-height: 16px;
+      //line-height: 16px;
     }
 
     &:hover {
@@ -247,8 +303,8 @@ export default {
   }
 
   &.open {
-    width: size(300);
-    transform: translateX(0%);
+    width: 100vw;
+    left: 0;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
@@ -357,16 +413,30 @@ export default {
   .menu {
     display: flex;
     position: fixed;
-    right: 30px;
-    top: 30px;
+    right: sizem(23);
+    top: sizem(12);
 
     img {
       width: 100%;
     }
 
     .close {
-      width: 40px;
-      margin-top: 20px;
+      width: sizem(50);
+      // margin-top: 0px;
+    }
+
+    .menu-text {
+      position: absolute;
+      top: sizem(10);
+      right: sizem(3);
+      font-size: sizem(11);
+      font-weight: 900;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.47;
+      letter-spacing: normal;
+      text-align: center;
+      color: #ffffff;
     }
 
     svg {
@@ -382,7 +452,7 @@ export default {
     top: $nav_phone_height;
     height: calc(100vh - #{$nav_phone_height});
     text-align: center;
-    transition: all 0.3s ease-in;
+    transition: all 1s ease-in-out;
     display: block;
     transform: translateX(40%);
 
@@ -400,14 +470,11 @@ export default {
       align-items: center;
       justify-content: center;
       display: none;
-      font-size:sizem(18);
+      font-size: sizem(18);
 
-
-     &::before {
-  animation: menu 1s linear infinite;
-    }
-
-
+      &::before {
+        animation: menu 1s linear infinite;
+      }
 
       img,
       span {

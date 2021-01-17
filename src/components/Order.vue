@@ -3,6 +3,7 @@
     <!-- <img src="@/projects/fs/order/bg.png" alt="" class="bg-img"> -->
     <!-- <img src="@/projects/fs/order/bg1.png" alt="" class="bg-img no-mix"> -->
     <!-- <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile"> -->
+    <div class="order-tt"></div>
     <div class="order-top">
       <!-- <div class="title-block">
         <h3 class="title">{{order.title}}</h3>
@@ -348,6 +349,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/style/variableColor.scss';
+@import '@/assets/style/function.scss';
 .bg-img {
   width: 100vw;
   position: absolute;
@@ -368,7 +370,7 @@ export default {
   background-image: $order_bg_image;
   background-repeat:Srepeat;
   position: relative;
-  padding-top: 130px;
+  // padding-top: 130px;
   background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 80% 0%;
@@ -378,19 +380,29 @@ export default {
   button {
     font-family: $family3;
   }
+
+  .order-tt {
+    width: size(1440);
+    height: size(500);
+    margin: size(-300) auto 0;
+    background: rgba(0, 0, 0, 0.8);
+  }
   .order-top {
+    width: size(1440);
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.8);
     position: relative;
     overflow: hidden;
   }
   .order-title {
     font-family: $family2;
-    width: 100vw;
+    width: 100%;
     padding-top: 20px;
     padding-bottom: 8px;
-    font-weight: 700;
+    font-weight: 900;
     line-height: 1.3;
     letter-spacing: 20px;
-    font-size: calc(100vw * 36 / 1920);
+    font-size: calc(100vw * 40 / 1920);
     text-align: center;
     color: $order_title_color;
   }

@@ -1,12 +1,18 @@
 <template>
   <div>
     <div class="section1">
-      <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
-      <img src="./s1/bg.png" :alt="`${info.caseName}_bg`" class="bg-img">
+      <img src="./s1/bg.png" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC">
+      <img src="./mo/1/bg.png" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isMobile">
       <img src="./s1/logo.png" :alt="`${info.caseName}_logo`" class="logo">
-      <img src="./s1/p2.png" :alt="`${info.caseName}_p2`" class="p2">
-      <img src="./s1/p12.png" :alt="`${info.caseName}_p12`" class="p12">
+      <img src="./s1/p2.png" :alt="`${info.caseName}_p2`" class="p2" v-if="isPC">
+      <img src="./s1/p12.png" :alt="`${info.caseName}_p12`" class="p12" v-if="isPC">
+      <img src="./mo/1/p2.png" :alt="`${info.caseName}_bg`" class="p2" v-if="isMobile">
+      <img src="./mo/1/p1.png" :alt="`${info.caseName}_bg`" class="p12" v-if="isMobile">
       <img src="./s1/預約紐.png" :alt="`${info.caseName}_order_btn`" class="order-btn" v-scroll-to="{ element: `#contact` }">
+      <h1 class="title">
+        不是王牌不出手<br />
+        唯有贏家能擁有
+      </h1>
       <!-- <img src="./s1/t2.png" alt="早鳥優惠驚喜價18-28坪" class="t2" data-aos="fade" data-aos-delay="800"> -->
     </div>
   </div>
@@ -49,8 +55,8 @@
   min-height: size(900);
   max-height: size(1080);
   // background-color:#d1c6b7;
-  background-size: cover;
-  background-attachment: fixed;
+  // background-size: cover;
+  // background-attachment: fixed;
   overflow: hidden;
   //animation: bg 5s 0s linear infinite alternate-reverse;
 }
@@ -104,9 +110,9 @@
   .section1 {
     width: 100vw;
     min-height: auto;
-    height: calc(100vh - 63px);
-    min-height: sizem(484);
-    max-height: sizem(812);
+    height: sizem(604);
+    min-height: sizem(604);
+    max-height: sizem(604);
     background-size: cover;
     background-attachment: scroll;
   }
@@ -126,43 +132,35 @@
     }
   }
 
-  // .img {
-  //   @include img_r_m(1700, 1027, -800);
-  // @include img_c_m(600, calc(50% - 32vw), sizem(220));
-  // }
+  .logo {
+    @include img_r_m(163, 111, 116);
+  }
 
-  // .logo {
-  //   @include img_c_m(216,calc(42% - 22vw), sizem(73))
-  // }
+  .p2 {
+    @include img_r_m(91, 143, 0);
+  }
 
-  // .logobg {
-  //   // 圖片位置：width: size(712), top: size(201), left: size(118)
-  //   @include img_c_m(306,calc(42% - 40vw), sizem(45))
-  // }
+  .p12 {
+    @include img_l_m(129, 333, 0);
+    top: auto;
+    bottom: 0;
+  }
 
-  // .t1 {
-  //   @include img_c_m(310,calc(73% - 2vw), sizem(33))
-  // }
-
-  // .t2 {
-  //   @include img_c_m(310,calc(73% + 12vw), sizem(33))
-  // }
-
-  // .b1 {
-  //   @include img_l_m(140, -38, -20);
-  // }
-
-  // .b2 {
-  //   @include img_c_m(107,calc(50% - 45vw), sizem(320));
-  // }
-
-  // .b3 {
-  //   @include img_c_m(74,calc(75% + 18vw), sizem(22));
-  //      z-index:initial;
-  // }
-
-  .b4 {
+  .order-btn {
     display: none;
+  }
+
+  .title {
+    @include img_l_m(166, 336, 94);
+    font-size: sizem(23);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.39;
+    letter-spacing: normal;
+    text-align: center;
+    color: #685335;
+    white-space: nowrap;
   }
 }
 </style>
