@@ -3,15 +3,15 @@
     <div class="list-indigator">
       <div
         :class="`dot ${index === indigatorIndex + 1 ? 'active' : '' }`"
-        v-for="index in navList.length - 1"
-        :key="`indigator-${index}`"
+        v-for="index in navList.length"
+        :key="`indigator-${index - 1}`"
         @click="setIndigator(index)"
       ></div>
-      <div
+   <!--   <div
         :class="`dot ${(navList.length - 1 + 1) === indigatorIndex + 1 ? 'active' : '' }`"
         v-scroll-to="{ element: `#contact` }"
         @click="setIndigator(navList.length - 1 + 1)"
-      ></div>
+      ></div> -->
     </div>
     <div
       :class="`contact-indigator`"

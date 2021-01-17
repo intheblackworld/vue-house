@@ -331,8 +331,6 @@ export default {
     display: block;
     transform: translateX(40%);
 
-    li {
-    }
 
     .link {
       display: none;

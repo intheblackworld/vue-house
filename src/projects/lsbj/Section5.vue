@@ -12,10 +12,11 @@
             :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
             :key="`s5-slide-${index}`"
           >
-            <img :class="`slide-img1 ${slideIndex === index ? 'active' : ''}`" :src="slide.src1" alt />
-            <img :class="`slide-img2 ${slideIndex === index ? 'active' : ''}`" :src="slide.src2" alt />
+            <img :class="`slide-img1 ${slideIndex === index ? 'active' : ''}`" :src="slide.src" alt />
+            <img :class="`slide-img2 ${slideIndex === index ? 'active' : ''}`" :src="slide.src" alt />
             <div class="slide-text">
-              <h3>{{slideList[slideIndex].title}}</h3>
+              <h3>歐式風華氣韻　對位世界級層峰渡假學</h3>
+              <h4>{{slideList[slideIndex].title}}</h4>
               <p>{{slideList[slideIndex].p}}</p>
             </div>
           </div>
@@ -34,8 +35,8 @@
             :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
             :key="`s5-slide-${index}`"
           >
-            <img :class="`slide-img1 ${slideIndex === index ? 'active' : ''}`" :src="slide.src1" alt />
-            <img :class="`slide-img2 ${slideIndex === index ? 'active' : ''}`" :src="slide.src2" alt />
+            <img :class="`slide-img1 ${slideIndex === index ? 'active' : ''}`" :src="slide.src" alt />
+            <img :class="`slide-img2 ${slideIndex === index ? 'active' : ''}`" :src="slide.src" alt />
           </div>
         </div>
         <div class="btn-group">
@@ -43,7 +44,8 @@
           <img src="./s5/right.png" alt class="btn right" @click="addIndex" />
         </div>
         <div class="slide-text">
-              <h3>{{slideList[slideIndex].title}}</h3>
+              <h3>歐式風華氣韻<br>對位世界級層峰渡假學</h3>
+              <h4>{{slideList[slideIndex].title}}</h4>
               <p>{{slideList[slideIndex].p}}</p>
         </div>
       </div>
@@ -56,11 +58,12 @@
   position: relative;
   z-index: 2;
   overflow: hidden;height: 100vh;
+  width: 100%;
 }
 
 .img {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   position: absolute;
   left: 0;
   top: 0;
@@ -79,7 +82,7 @@
 .slide {
   height: 100%;
   .slide-img1{
-  width: 100vw;height: 100vh;filter: blur(10px);opacity: 0.6;}
+  width: 100%;height: 100vh;filter: blur(10px);opacity: 0.6;}
   .slide-img2{
   position: absolute;top:0;left:50%;height: 100vh;object-fit: contain;transform: translate(-50%)}
 }
@@ -90,7 +93,7 @@
   font-stretch: normal;
   font-style: normal;
   letter-spacing: 1.2px;
-  text-align:left;
+  text-align:justify;
   color: #ffffff;
   position: absolute;
   padding: 3.1vw  5vw 2px 60vw;
@@ -99,14 +102,15 @@
   z-index: 5;
     background: url('./s5/tbg.png') no-repeat;
     background-position: top right;
-    background-size: 100vw auto;
+    background-size: 100% auto;
 
 h3{color: #fff;font-size: 1.7em;padding: 0 0 0.8em 3em;}
-p{color: rgba(255,255,255, 0.7);width: 36em;}
+h4{color: #fff;font-size: 1.3em;}
+p{color: rgba(255,255,255, 0.8);width: 36em;}
 }
 
 .btn-group {
-  width: 100vw;
+  width: 95%;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -165,8 +169,8 @@ p{color: rgba(255,255,255, 0.7);width: 36em;}
     bottom:auto;  
     padding: 4em 2em 0 3em;
     width: 100%;
-h3{}
-p{width: auto;}
+h3{position: relative;margin: -1.5em 0 0 0;}
+p{width: 90%;}
   }
 
   .btn-group {
@@ -191,64 +195,36 @@ export default {
       isMobile,
       slideList: [
         {
-          src1: isMobile
-            ? require('./s5/mo/迎賓車道圖.jpg')
-            : require('./s5/1迎賓車道圖.jpg'),
-          src2: isMobile
-            ? require('./s5/mo/迎賓車道圖.jpg')
-            : require('./s5/1迎賓車道圖.jpg'),
-          title: '飯店式迴車廣場',
-          p: '跨界飯店Private Club住宅，國際飯店行旅質感凝鍊，以低調內斂的姿態，在現代都會桃源內雕琢奢華，一樓大器規格迎賓，璞麗風華LOBBY、LOUNGE交誼廳咖啡品茗小酌、閱讀交誼區休閒商務聚會、VIP視聽室影音盛宴…同步飯店質感生活。',
+          src: require('./s5/1.jpg'),
+          title: '藝術迎賓大廳',
+          p: '挑高7米典雅大廳，融入殿堂級大器格局，水晶長吊燈、光彩輝煌壁面，專業管家服務櫃台，貴族氣息流光溢彩。',
         },
         {
-          src1: isMobile
-            ? require('./s5/mo/大廳.jpg')
-            : require('./s5/2大廳.jpg'),
-          src2: isMobile
-            ? require('./s5/mo/大廳.jpg')
-            : require('./s5/2大廳.jpg'),
-          title: '挑高7米迎賓大廳 Lobby',
-          p: '跨界飯店Private Club住宅，國際飯店行旅質感凝鍊，以低調內斂的姿態，在現代都會桃源內雕琢奢華，一樓大器規格迎賓，璞麗風華LOBBY、LOUNGE交誼廳咖啡品茗小酌、閱讀交誼區休閒商務聚會、VIP視聽室影音盛宴…同步飯店質感生活。',
+          src: require('./s5/2.jpg'),
+          title: '歐式午茶交誼廳',
+          p: '金碧輝煌的天花線條，融入純白與原木交織的雍容質地，凝鍊國際星級飯店的奢華品味與交誼時光。',
         },
         {
-          src1: isMobile
-            ? require('./s5/mo/沙發區.jpg')
-            : require('./s5/3沙發區.jpg'),
-          src2: isMobile
-            ? require('./s5/mo/沙發區.jpg')
-            : require('./s5/3沙發區.jpg'),
-          title: '歐式午茶交誼廳 Lounge',
-          p: '跨界飯店Private Club住宅，國際飯店行旅質感凝鍊，以低調內斂的姿態，在現代都會桃源內雕琢奢華，一樓大器規格迎賓，璞麗風華LOBBY、LOUNGE交誼廳咖啡品茗小酌、閱讀交誼區休閒商務聚會、VIP視聽室影音盛宴…同步飯店質感生活。',
-        },
-        {
-          src1: isMobile
-            ? require('./s5/mo/長型會客區.jpg')
-            : require('./s5/4長型會客區.jpg'),
-          src2: isMobile
-            ? require('./s5/mo/長型會客區.jpg')
-            : require('./s5/4長型會客區.jpg'),
-          title: '歐式尊爵饗宴廳 Ballroom',
-          p: '跨界飯店Private Club住宅，國際飯店行旅質感凝鍊，以低調內斂的姿態，在現代都會桃源內雕琢奢華，一樓大器規格迎賓，璞麗風華LOBBY、LOUNGE交誼廳咖啡品茗小酌、閱讀交誼區休閒商務聚會、VIP視聽室影音盛宴…同步飯店質感生活。',
-        },
-        {
-          src1: isMobile
-            ? require('./s5/mo/視聽室.jpg')
-            : require('./s5/視聽室.jpg'),
-          src2: isMobile
-            ? require('./s5/mo/視聽室.jpg')
-            : require('./s5/視聽室.jpg'),
+          src: require('./s5/3.jpg'),
           title: 'VIP包廂影廳',
-          p: '跨界飯店Private Club住宅，國際飯店行旅質感凝鍊，以低調內斂的姿態，在現代都會桃源內雕琢奢華，一樓大器規格迎賓，璞麗風華LOBBY、LOUNGE交誼廳咖啡品茗小酌、閱讀交誼區休閒商務聚會、VIP視聽室影音盛宴…同步飯店質感生活。',
+          p: '挑高豪華包廂，頂級影音KTV設備，在宛如私人招待會所的寬敞空間，盡情揮灑精彩的娛樂生活。',
+        },
+     /*
+      {
+          src: require('./s5/4.jpg'),
+          title: '歐式尊爵饗宴廳',
+          p: '挑高牆面引領成熟內斂的優雅氣度；大理石材宴客長桌，彰顯歐式豪門獨享的貴族家宴格局。',
+        },
+        */
+        {
+          src: require('./s5/5.jpg'),
+          title: '星空豪景SKY BAR',
+          p: '在最接近天空的地方，設置一席得以無遮蔽眺望亞灣豪景的空中吧檯，與三五好友舉杯邀月共話人生豪情。',
         },
         {
-          src1: isMobile
-            ? require('./s5/mo/SKY.jpg')
-            : require('./s5/SKY.jpg'),
-          src2: isMobile
-            ? require('./s5/mo/SKY.jpg')
-            : require('./s5/SKY.jpg'),
-          title: 'SKY BAR',
-          p: '跨界飯店Private Club住宅，國際飯店行旅質感凝鍊，以低調內斂的姿態，在現代都會桃源內雕琢奢華，一樓大器規格迎賓，璞麗風華LOBBY、LOUNGE交誼廳咖啡品茗小酌、閱讀交誼區休閒商務聚會、VIP視聽室影音盛宴…同步飯店質感生活。',
+          src: require('./s5/6.jpg'),
+          title: '飯店式迴車廣場',
+          p: '飯店式尊榮迴車空間，以高雅的地舖美學搭配氣勢磅礡的門樓入口，從回家的第一刻就能享受國賓級的接待禮遇。',
         },
       ],
     }

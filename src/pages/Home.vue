@@ -9,6 +9,9 @@
       <div id="section1" class="section">
         <Section1 />
       </div>
+      <div id="section8" class="section">
+        <Section8 />
+      </div>
       <div id="section2" class="section">
         <Section2 />
       </div>
@@ -21,9 +24,9 @@
       <div id="section5" class="section">
         <Section5 />
       </div>
-      <div id="section6" class="section">
+      <!-- <div id="section6" class="section">
         <Section6 />
-      </div>
+      </div> -->
       <div id="section7" class="section">
         <Section7 />
       </div>
@@ -56,6 +59,7 @@ import Section4 from '@/projects/lsbj/Section4.vue'
 import Section5 from '@/projects/lsbj/Section5.vue'
 import Section6 from '@/projects/lsbj/Section6.vue'
 import Section7 from '@/projects/lsbj/Section7.vue'
+import Section8 from '@/projects/lsbj/Section8.vue'
 // import SimpleOrder from '@/components/SimpleOrder.vue'
 
 export default {
@@ -74,6 +78,7 @@ export default {
     Section5,
     Section6,
     Section7,
+    Section8,
   },
 
   data() {

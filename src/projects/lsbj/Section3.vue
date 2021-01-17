@@ -2,19 +2,13 @@
   <div class="section3">
     <div class="bg relative">
       <div v-if="!isMobile">
-        <img src="./s3/bg.jpg" alt="同步國際 創造臨海城市新傳奇" class="img" data-aos="fade" data-aos-delay="400">
-        <div class="text"><h3>同步國際 創造臨海城市新傳奇</h3><p>亞洲新灣區　一如　東京港區<br>
-虎之門之丘、六本木之丘、東京中城、赤坂SAKAS <br>
-世紀豪宅、時尚頂尖，東京最惜售的鑽石地段<br>
-薈萃奢華富裕品味，創造國際級資產價值</p>
+        <img src="./s3/bg.jpg" alt="雄女第一排無遮蔽視野　坐享亞灣山海河帝景" class="img" data-aos="fade" data-aos-delay="400">
+        <div class="text"><h3>雄女第一排無遮蔽視野　坐享亞灣山海河帝景</h3><p>緊鄰雄女第一排無遮蔽視野，遠眺高雄市心點點璀璨繁華，近賞愛河亞灣山海河相連的朗闊帝景，倚窗敘寫人生巔峰豪情。</p>
 </div>
       </div>
       <div v-if="isMobile">
-        <img src="./s3/mo/bg.jpg" alt="同步國際 創造臨海城市新傳奇" class="img" data-aos="fade" data-aos-delay="400">
-         <div class="text"><h3>同步國際<br>創造臨海城市新傳奇</h3><p>亞洲新灣區　一如　東京港區<br>
-虎之門之丘、六本木之丘、東京中城、赤坂SAKAS <br>
-世紀豪宅、時尚頂尖，東京最惜售的鑽石地段<br>
-薈萃奢華富裕品味，創造國際級資產價值</p>
+        <img src="./s3/mo/bg.jpg" alt="雄女第一排無遮蔽視野　坐享亞灣山海河帝景" class="img" data-aos="fade" data-aos-delay="400">
+         <div class="text"><h3>雄女第一排無遮蔽視野<br>坐享亞灣山海河帝景</h3><p>緊鄰雄女第一排無遮蔽視野，遠眺高雄市心點點璀璨繁華，近賞愛河亞灣山海河相連的朗闊帝景，倚窗敘寫人生巔峰豪情。</p>
 </div> </div>
     </div>
   </div>
@@ -45,11 +39,11 @@
   }
 }
 
-.text{background: url('./s2/title.png') no-repeat;position: absolute;text-align:left;background-size: 65em auto;
-font-size:0.92vw;line-height: 1.6;top: 5.5vw; left: 53.8vw;padding: 2.7em 2em 0 3em;right: 0;
+.text{background: url('./s2/title.png') no-repeat;position: absolute;text-align:justify;background-size: 65em auto;
+font-size:0.92vw;line-height: 1.6;top: 3vw; left: 53.8vw;padding: 2.7em 2em 0 3em;right: 0;
 
 h3{color: #fff;font-size: 1.7em;padding: 0 0 0.8em 3em;}
-p{color: rgba(255,255,255, 0.7);}
+p{color: rgba(255,255,255, 0.9);margin: 0 0 5em 0;}
 }
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -66,10 +60,13 @@ p{color: rgba(255,255,255, 0.7);}
   }
   .img {
   &:nth-child(1) {
-    height:calc(100vh - 63px);
+   // height:calc(100vh - 63px);
   }
   }
-  .text{background-image: url('./s2/mo/titleall.png');background-size: 100% auto;font-size:3.8vw;top:50%; left: 0; padding: 0 1em 0 1.7em;}
+  .text{background-image: url('./s2/mo/titleall.png');background-size: 100% auto;font-size:3.8vw;top:50%; left: 0;
+   padding: 0 1em 0 1.7em;
+h3{padding: 0 0 0.8em 2.8em;}
+p{width: 90%;}}
 
 }
 </style>

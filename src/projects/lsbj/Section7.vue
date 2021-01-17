@@ -13,7 +13,7 @@
         <p>晶綺盛宴</p>
       </div>
       </div>
-         <h2 class="text"><span>聯上集團多角化經營</span><span>打造夢想生活藍圖</span></h2>
+         <h2 class="text"><span>上市櫃多角化經營</span><span>聯上集團  讓高雄聯上世界</span></h2>
     </div>
   </div>
 </template>
@@ -44,12 +44,13 @@
 }
 
 .text{
-  display: flex;
-   position: absolute;top: calc(100vw * 120 / 1920);left:50%;
-  font-weight: bold;color: #000;width:3.7em;transform: translateX(-50%);line-height: 1.1;
+  display: flex;align-items:flex-start;
+  position: absolute;top: calc(100vw * 20 / 1920);left:50%;
+  font-weight: bold;color: #000;width:3.7em;
+  transform: translateX(-50%);line-height: 1.1;
   font-size:calc(100vw * 57 / 1920);
-  span{font-family: "Noto Serif TC";background-color:rgba(255,255,255,0.8) ;margin:0 0.2em;padding:1.7em 0.1em;
-  &:nth-child(2){position: relative;top: calc(100vw * 100 / 1920);}
+  span{flex:1;font-family: "Noto Serif TC";background-color:rgba(255,255,255,0.8) ;margin:0 0.2em;padding:1.7em 0.1em;
+  &:nth-child(1){position: relative;top: calc(100vw * 0 / 1920);}
   }
 
 }
@@ -82,12 +83,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
   .img2 + p{bottom:0;right: 50%;}
     }
 .text{
-  display: flex; flex-direction:column;
+  display: flex; flex-direction:column;justify-content:center;align-items:flex-start;
+  width: 15em;
+  height: auto;
    position: absolute;top: calc(100vw * 630 / 750);left:50%;
-  font-weight: bold;color: #000;width:11em;transform: translateX(-55%);
+  font-weight: bold;color: #000;transform: translateX(-55%);
   font-size:calc(100vw * 40 / 750);
-  span{display: block;font-family: "Noto Serif TC";background-color:rgba(255,255,255,0.8) ;margin:0;padding:0.3em 0em;flex:1 1 auto;
-  &:nth-child(2){position: relative;left: calc(100vw * 70 / 750);top:calc(100vw * 10 / 750);}
+  span{display: block;font-family: "Noto Serif TC";background-color:rgba(255,255,255,0.8) ;margin:0;padding:0.3em 1em;flex:1 1 auto;
+  &:nth-child(1){position: relative;left: calc(100vw * 0 / 750);top:calc(100vw * -10 / 750);}
   }
 
 }

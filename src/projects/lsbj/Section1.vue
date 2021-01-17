@@ -1,42 +1,28 @@
 <template>
-  <div class="section1">
+  <div class="section3">
     <div class="bg relative">
-      <div>
-        <div class="img_bg" @scroll="hide = true">
-        <div class="img_bg_c">
-        <img src="./s1/bg.jpg" alt="" class="img content" v-if="!isMobile">
-        <img src="./s1/mo/bg.jpg" alt="" class="img content" v-if="isMobile">
-        <img src="./s1/light1.png" alt="" class="img light1">
-        <img src="./s1/light2.png" alt="" class="img light2">
-        <img src="./s1/arrow.png" alt="" :class="`img arrow ${hide ? 'hide' : ''}`">
-        </div>
-        </div>
+      <div v-if="!isMobile">
+        <img src="./s1/1.jpg" alt="高雄漢神商圈雄女人文首排_聯上鉑金_60-140坪|五福 成功路口" class="img">
+      </div>
+      <div v-if="isMobile">
+        <img src="./s1/1m.jpg" alt="高雄漢神商圈雄女人文首排_聯上鉑金_60-140坪|五福 成功路口" class="img">
+      </div>
         <div class="img light4">
           <div class="light_b"></div>
-          <img src="./s1/light4.jpg" alt="">
+          <img src="./s1/light4.jpg" alt="聯上鉑金_light4">
         </div>
-        <img src="./s1/logo.png" alt="" class="img logo">
-        <div class="img light3">
-          <img src="./s1/light3a.png" class="l3_1" alt="">
-          <img src="./s1/light3a.png" class="l3_2" alt="">
-          <img src="./s1/light3a.png" class="l3_3" alt="">
-          <img src="./s1/light3a.png" class="l3_4" alt="">
-        </div>
-      </div>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
-// for svg
-</style>
-<style lang="scss" scoped>
 .bg {
   background-size: cover;
   position: relative;
+  z-index: 2;
   overflow: hidden;
   height: 100vh;
 }
-.img_bg_c{position: relative;}
+
 .img {
   width: 100vw;
   height: auto;
@@ -45,34 +31,12 @@
   top: 0;
   object-fit: cover;
   display: block;
-  
+  &.fix {
+    position: fixed;
+  }
   &:nth-child(1) {
     position: relative;
     height: 100vh;
-  }
-  &.light1,
-  &.light2{
-    opacity: 0;
-    animation: op 1s alternate infinite;
-  object-fit: cover;
-    height: 100vh;width: 100vw;
-  }
-  &.arrow{
-    display: none;
-    animation: arrow 1s ease-in-out alternate infinite;
-    transform: translateX(-2%)
-  }
-  &.light2{
-    animation-delay:1s
-  }
-  &.light3{
-    mix-blend-mode:screen;
-    img{position: absolute;top:0;left: 50%;transform:translate(-50%,-50%) rotate(0deg);transform-origin: center center;
-    animation: ro 2s linear infinite;width:0;height: 0;opacity: 1;}
-    .l3_1{top: 13vw;left: 41%;}
-    .l3_2{top: 8.5vw;left: 49.5%;animation-delay:0.5s}
-    .l3_3{top: 14vw;left: 58.5%;animation-delay:1s}
-    .l3_4{top: 8.5vw;left: 63%;animation-delay:1.5s}
   }
   &.light4{mix-blend-mode:screen;width: 100%;height: 100%;}
 }
@@ -99,97 +63,45 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
     }
 }
 
-@keyframes ro {
-    30% {
-        transform:translate(-50%,-50%) rotate(90deg);
-        width:5em;height: 5em;opacity: 1;
-    }
-    50% {
-        transform:translate(-50%,-50%) rotate(180deg);
-        width:10em;height: 10em;opacity: 0;
-    }
-    100% {
-        transform:translate(-50%,-50%) rotate(180deg);
-        width:10em;height: 10em;opacity: 0;
-    }
+
+.text{background: url('./s2/title.png') no-repeat;position: absolute;text-align:left;background-size: 65em auto;
+font-size:0.92vw;line-height: 1.6;top: 5.5vw; left: 53.8vw;padding: 2.7em 2em 0 3em;right: 0;
+
+h3{color: #fff;font-size: 1.7em;padding: 0 0 0.8em 3em;}
+p{color: rgba(255,255,255, 0.7);}
 }
-
-
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .text {
+    width: calc(100vw * 950 / 1920);
+    right: calc(100vw * 232 / 1920);
+  }
 }
 
 @media screen and (max-width: 767px) {
   .bg {
     background-size: cover;
-    height:100vh;
-      position: relative;
-  }
-
-  .section1 {
-    .bg {
-      overflow: hidden;
-    }
-  }
-
-  .img {
-    width: 280vw;
-    height: 60vw;
-    left:50%;
-    transform: translateX(-50%);
-    object-position: 50% 0%;
-    &:nth-child(1) {
-      position: relative;
-      height:100vh;
-    left:0;
-    transform: translateX(0);
-    }
-  &.light1,
-  &.light2,
-  &.arrow{
-    left:0;
-    height:100vh;
-    transform: translateX(0);
-    }
-  &.light1,
-  &.light2{
-    left:90%;}
-  &.arrow{
-    display:block;
-
-    &.hide {
-      display: none;
-    }
-  }
-  &.light3{width:295%; top: 21vw;height: 30vw;}
-  &.light4{height: 42%;overflow: hidden;
-    img{
     height:calc(100vh - 63px);
-    width: 100%;
-    object-fit: cover;}
+  }
+  .img {
+  &:nth-child(1) {
+    height:calc(100vh - 63px);
   }
   }
-.img_bg{overflow:auto;}
-.light_b{background: -moz-linear-gradient(left,  rgba(0,0,0,1) 0%, rgba(0,0,0,1) 34%, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 66%, rgba(0,0,0,1) 100%);
-background: -webkit-linear-gradient(left,  rgba(0,0,0,1) 0%,rgba(0,0,0,1) 34%,rgba(0,0,0,0) 50%,rgba(0,0,0,1) 66%,rgba(0,0,0,1) 100%);
-background: linear-gradient(to right,  rgba(0,0,0,1) 0%,rgba(0,0,0,1) 34%,rgba(0,0,0,0) 50%,rgba(0,0,0,1) 66%,rgba(0,0,0,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000',GradientType=1 );
+  .text{background-image: url('./s2/mo/titleall.png');background-size: 100% auto;font-size:3.8vw;top:50%; left: 0; padding: 0 1em 0 1.7em;}
 
-}
 }
 </style>
 
 <script>
 // @ is an alias to /src
 import { isMobile } from '@/utils'
-
 export default {
-  name: 'section1',
+  name: 'section3',
 
   data() {
     return {
       isMobile,
-      hide: false,
     }
   },
 
@@ -198,20 +110,6 @@ export default {
   methods: {},
 
   created() {},
-  mounted() {
-    if (this.isMobile) {
-      setTimeout(() => {
-        const frame = document.querySelector('.img_bg')
-        const content = document.querySelector('.img_bg_c .content')
-        console.log(frame)
-        console.log(content)
-        frame.scrollTo(content.clientWidth * 20 / 100, 0)
-      }, 500)
-
-      setTimeout(() => {
-        this.hide = false
-      }, 700)
-    }
-  }
+  mounted() {},
 }
 </script>
