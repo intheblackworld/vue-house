@@ -1,6 +1,7 @@
 <template>
   <div class="section6">
-    <img src="./s6/bg.png" :alt="`${info.caseName}_bgimg`" class="bg-img">
+    <img src="./s6/bg.png" :alt="`${info.caseName}_bgimg`" class="bg-img" v-if="isPC">
+    <img src="./mo/b.png" :alt="`${info.caseName}_bgimg`" class="bg" v-if="isMobile">
     <img src="./s6/img.jpg" :alt="`${info.caseName}_img`" class="img">
     <img src="./s6/logoall.png" :alt="`${info.caseName}_logoall`" class="logoall">
     <div class="title">
@@ -104,107 +105,56 @@
 @media screen and (max-width: 767px) {
   .section6 {
     width: 100vw;
-    height: sizem(453 + 28);
-    min-height: sizem(453 + 28);
-    .bg {
-      width: 100%;
-      max-width: 100%;
-    }
+    height: sizem(990);
+    min-height: sizem(990);
   }
 
-  .map {
-    width: auto;
-    height: sizem(453);
-    top: 0;
-    left: 0;
+  .bg {
+    @include img_r_m(374, 0, 0);
+    height: sizem(992);
   }
 
-  .icon {
-    //  @include img_l_m(50, 199, 290);
-    height: sizem(70);
-    left: sizem(300);
-    top: sizem(210);
-    z-index: 2;
-    animation: none;
+  .title {
+    @include img_l_m(96, 525, 33);
+    font-size: sizem(24);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.33;
+    letter-spacing: normal;
+    text-align: left;
+    color: #285065;
+    white-space: nowrap;
   }
 
-  .b1 {
-    @include img_l_m(55, 250, 110);
-    z-index: 5;
-    transform: translate(10%, 10%);
+  .subtitle {
+    @include img_l_m(252, 567, 33);
+    font-size: sizem(25);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: normal;
+    text-align: left;
+    color: #685335;
+    white-space: nowrap;
   }
 
-  .b2 {
-    @include img_l_m(100, -150, 100);
-    z-index: 5;
-    transform: translate(0, 20%);
+  .desc {
+    @include div_l_m(310, 27, 714, 25);
+    font-size: sizem(16);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.07;
+    letter-spacing: sizem(0.3);
+    text-align: left;
+    color: #284e62;
+    // background-color: #685335;
   }
 
-  .b3 {
-    display: none;
-  }
-
-  .b4 {
-    display: none;
-  }
-
-  .img1 {
-    display: none;
-  }
-
-  .img2 {
-    display: none;
-  }
-
-  .logobg1 {
-    // div位置：width: size(656), height: size(708) top: size(113), right: size(182)
-    @include div_r_m(144, 156, 149, 119);
-    // background-image: url('./s1/logobg.png');
-    background-size: cover;
-    z-index: 1;
-    color: #000;
-    h3 {
-      margin-top: sizem(-20);
-      margin-left: sizem(-10);
-    }
-  }
-
-  .dialog {
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1000;
-    background-color: #f3e12b;
-    overflow: scroll;
-    .dialog-content {
-      height: 100%;
-      width: sizem(1138);
-      position: relative;
-    }
-    .dialog-map {
-      width: sizem(1138);
-      height: 100%;
-      background-color: #f3e12b;
-    }
-    .dialog-icon {
-      width: auto;
-      height: sizem(119);
-      position: absolute;
-      top: 46%;
-      left: 40%;
-      animation: heartbeat 0.5s ease-in alternate infinite;
-      // background-color: #fff;
-    }
-
-    .close {
-      width: 35px;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 5px;
-      position: fixed;
-      right: 10px;
-      top: 10px;
-    }
+  .img {
+    @include img_l_m(310, 35, 33);
   }
 }
 </style>

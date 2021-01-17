@@ -1,16 +1,20 @@
 <template>
   <div class="section5">
-    <img src="./s5/bg.png" :alt="`${info.caseName}_bgimg`" class="bg">
+    <img src="./s5/bg.png" :alt="`${info.caseName}_bgimg`" class="bg" v-if="isPC">
+    <img src="./mo/w2.png" :alt="`${info.caseName}_bgimg`" class="bg" v-if="isMobile">
     <div class="title">
       四大王牌
     </div>
-    <h1 class="subtitle">
+    <h1 class="subtitle" v-if="isPC">
       國際團隊打造 時尚精品飯店宅
+    </h1>
+    <h1 class="subtitle" v-if="isMobile">
+      國際團隊打造<br />時尚精品飯店宅
     </h1>
     <div class="desc flex-c">
       買名牌包 不如收藏精品宅
     </div>
-    <div class="imgs flex-ac flex-jb">
+    <div class="imgs flex-ac flex-jb wrap">
       <img src="./s5/1.jpg" :alt="`${info.caseName}_img1`" @click="showDialog(0)">
       <img src="./s5/2.jpg" :alt="`${info.caseName}_img2`" @click="showDialog(1)">
       <img src="./s5/3.jpg" :alt="`${info.caseName}_img3`" @click="showDialog(2)">
@@ -246,106 +250,191 @@
 @media screen and (max-width: 767px) {
   .section5 {
     width: 100vw;
-    height: sizem(453 + 28);
-    min-height: sizem(453 + 28);
-    .bg {
-      width: 100%;
-      max-width: 100%;
-    }
+    height: sizem(667);
+    min-height: sizem(667);
   }
 
-  .map {
-    width: auto;
-    height: sizem(453);
-    top: 0;
-    left: 0;
+  .bg {
+    @include img_r_m(375, 0, 0);
   }
 
-  .icon {
-    //  @include img_l_m(50, 199, 290);
-    height: sizem(70);
-    left: sizem(300);
-    top: sizem(210);
-    z-index: 2;
-    animation: none;
+  .title {
+    @include img_l_m(96, 32, 141);
+    font-size: sizem(24);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.33;
+    letter-spacing: normal;
+    text-align: left;
+    color: #285065;
+    white-space: nowrap;
   }
 
-  .b1 {
-    @include img_l_m(55, 250, 110);
-    z-index: 5;
-    transform: translate(10%, 10%);
+  .subtitle {
+    @include img_l_m(210, 77, 82);
+    font-size: sizem(25);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: normal;
+    text-align: center;
+    color: #685335;
+    white-space: nowrap;
   }
 
-  .b2 {
-    @include img_l_m(100, -150, 100);
-    z-index: 5;
-    transform: translate(0, 20%);
+  .desc {
+    @include div_l_m(310, 27, 160, 31);
+    font-size: sizem(15);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.07;
+    letter-spacing: sizem(0.3);
+    text-align: center;
+    color: #ffffff;
+    background-color: #685335;
   }
 
-  .b3 {
-    display: none;
-  }
+  .imgs {
+    @include div_c_m(149 * 2 + 12, 440, 200);
 
-  .b4 {
-    display: none;
-  }
-
-  .img1 {
-    display: none;
-  }
-
-  .img2 {
-    display: none;
-  }
-
-  .logobg1 {
-    // div位置：width: size(656), height: size(708) top: size(113), right: size(182)
-    @include div_r_m(144, 156, 149, 119);
-    // background-image: url('./s1/logobg.png');
-    background-size: cover;
-    z-index: 1;
-    color: #000;
-    h3 {
-      margin-top: sizem(-20);
-      margin-left: sizem(-10);
+    img {
+      width: sizem(150);
+      cursor: pointer;
+      transition: transform 0.3s;
+      &:hover {
+        transform: rotateY(-180deg);
+      }
     }
   }
 
   .dialog {
     position: fixed;
-    top: 0;
     width: 100vw;
     height: 100vh;
+    background-image: url('./menu/bg.jpg');
+    background-size: cover;
+    left: 100%;
+    top: 0;
+    transition: left 1s;
     z-index: 1000;
-    background-color: #f3e12b;
-    overflow: scroll;
-    .dialog-content {
-      height: 100%;
-      width: sizem(1138);
-      position: relative;
-    }
-    .dialog-map {
-      width: sizem(1138);
-      height: 100%;
-      background-color: #f3e12b;
-    }
-    .dialog-icon {
-      width: auto;
-      height: sizem(119);
-      position: absolute;
-      top: 46%;
-      left: 40%;
-      animation: heartbeat 0.5s ease-in alternate infinite;
-      // background-color: #fff;
+
+    &.active {
+      left: 0;
     }
 
-    .close {
-      width: 35px;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 5px;
-      position: fixed;
-      right: 10px;
-      top: 10px;
+    .dialog-title {
+      @include img_l_pc(145, 200, 325);
+      font-size: size(37);
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 5.56;
+      letter-spacing: normal;
+      text-align: left;
+      color: #ffffff;
+      white-space: nowrap;
+    }
+
+    .dialog-subtitle {
+      @include img_l_pc(288, 334, 325);
+      font-size: size(48);
+      font-weight: 900;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.18;
+      letter-spacing: normal;
+      text-align: left;
+      color: #c4a06d;
+      white-space: nowrap;
+
+      span {
+        color: #fff;
+      }
+    }
+
+    .dialog-label {
+      @include div_l_pc(615, 47, 473, 325);
+      font-size: size(30);
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 2.15;
+      letter-spacing: normal;
+      text-align: left;
+      color: #ffffff;
+      background-color: #c7a26e;
+      white-space: nowrap;
+    }
+
+    .dialog-desc {
+      @include img_l_pc(584, 544, 325);
+      font-size: size(24);
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 2.02;
+      letter-spacing: size(-0.48);
+      text-align: left;
+      color: #ffffff;
+      // white-space: nowrap;
+    }
+
+    .dialog-work {
+      @include img_l_pc(580, 787, 325);
+      font-size: size(27.1);
+      font-weight: 900;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.48;
+      letter-spacing: size(0.54);
+      text-align: left;
+      color: #c7a26e;
+      // white-space: nowrap;
+    }
+
+    .dialog-imgs {
+      @include img_l_pc(600, 115, 985);
+      img {
+        width: 100%;
+        margin-bottom: size(20);
+        border-radius: size(45);
+      }
+
+      .dialog-name1 {
+        @include img_r_pc(132, 370, 64);
+        font-size: size(22);
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.35;
+        letter-spacing: normal;
+        text-align: right;
+        color: #ffffff;
+        white-space: nowrap;
+      }
+      .dialog-name2 {
+        @include img_r_pc(132, 805, 64);
+        font-size: size(22);
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.35;
+        letter-spacing: normal;
+        text-align: right;
+        color: #ffffff;
+        white-space: nowrap;
+      }
+    }
+
+    .dialog-close {
+      width: size(61);
+      top: size(40);
+      right: size(49);
+      position: absolute;
+      cursor: pointer;
     }
   }
 }

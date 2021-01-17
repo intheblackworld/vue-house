@@ -1,6 +1,7 @@
 <template>
   <div class="section3">
-    <img src="./s3/bg.png" :alt="`${info.caseName}_bg`" class="bg">
+    <img src="./s3/bg.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isPC">
+    <img src="./mo/b.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isMobile">
     <img src="./s3/img_r.png" :alt="`${info.caseName}_img_r`" class="img_r">
     <img src="./s3/img_l.jpg" :alt="`${info.caseName}_img_l`" class="img_l">
     <div class="title">
@@ -95,83 +96,61 @@
 @media screen and (max-width: 767px) {
   .section3 {
     width: 100vw;
-    height: sizem(730);
-    min-height: sizem(0);
+    height: sizem(674);
+    min-height: sizem(674);
     max-height: sizem(900);
     overflow-x: scroll;
-    .bg {
-      width: 100%;
-      max-width: 100%;
-    }
   }
 
-  .top {
-    @include img_l_m(375, 182, 0);
-    height: sizem(79);
-    // z-index: ;
+  .bg {
+    @include img_r_m(373, 0, 0);
   }
 
-  .vr {
-    // position: absolute;
-    margin-top: sizem(230);
-    left: -50vw;
-    height: sizem(500);
-    width: 200vw;
+  .img_r {
+    @include img_r_m(375, 20, 0);
   }
 
-  .vr-mask {
-    height: 100%;
-    position: absolute;
-    z-index: 4;
-    top: 0;
-    left: 0;
-    width: 30vw;
-  }
-  .vr-mask2 {
-    height: 100%;
-    position: absolute;
-    z-index: 4;
-    top: 0;
-    right: 0;
-    width: 30vw;
+  .img_l {
+    @include img_l_m(310, 447, 33);
   }
 
-  .title1 {
-    @include img_l_m(224, 16, 33);
-    font-size: sizem(35);
-    font-weight: bold;
+  .title {
+    @include img_l_m(96, 328, 33);
+    font-size: sizem(24);
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(2.8);
+    line-height: 2.33;
+    letter-spacing: normal;
     text-align: left;
-    color: #c61b1f;
+    color: #285065;
     white-space: nowrap;
   }
 
-  .title2 {
-    @include img_l_m(224, 66, 119);
-    font-size: sizem(35);
-    font-weight: bold;
+  .subtitle {
+    @include img_l_m(300, 362, 34);
+    font-size: sizem(25);
+    font-weight: 900;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(2.8);
+    line-height: 2.2;
+    letter-spacing: normal;
     text-align: left;
-    color: #c61b1f;
+    color: #685335;
     white-space: nowrap;
   }
 
   .desc {
-    @include img_r_m(310, 120, 32);
+    @include div_l_m(309, 27, 409, 34);
     font-size: sizem(15);
-    font-weight: bold;
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.73;
-    letter-spacing: sizem(1.05);
-    text-align: left;
-    color: #231815;
+    line-height: 2.07;
+    letter-spacing: sizem(0.3);
+    text-align: center;
+    color: #ffffff;
+    background-color: #685335;
   }
 }
 </style>
