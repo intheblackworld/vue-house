@@ -1,23 +1,23 @@
 <template>
   <div class="section6">
-    <img src="./s6/bg.jpg" alt="" class="bg-img" v-if="!isMobile">
-    <img src="./s6/bg_m.jpg" alt="" class="bg-img" v-if="isMobile">
-    <h3 class="label flex-c">
-      漾建築
-    </h3>
-    <h3 class="title1">
-      純粹49戶豪宅規格
-    </h3>
-    <h3 class="title2">
-      新手成家輕價格
-    </h3>
-    <hr>
-    <h3 class="desc">
-      石材氣派基座、挑高6米大廳，精品旅店式休閒設施--健身房、空中花園、親子遊戲室…，全棟僅精選49戶優質好鄰，與億元豪宅同享尊榮居住禮遇。
-    </h3>
-    <h3 class="txt">
-      3D參考示意圖
-    </h3>
+    <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
+    <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
+    <img src="./s6/bg.png" :alt="`${info.caseName}_bgimg`" class="bg-img">
+    <img src="./s6/img.jpg" :alt="`${info.caseName}_img`" class="img">
+    <img src="./s6/logoall.png" :alt="`${info.caseName}_logoall`" class="logoall">
+    <div class="title">
+      結構王牌
+    </div>
+    <h1 class="subtitle">
+      強度比肩台北101<br />ACE級雙制震建築
+    </h1>
+    <div class="desc flex-c">
+      CFT柱內萬磅灌漿 101同級制震<br />
+      SC鋼骨 SN耐震鋼材 雙S級抗震高標準<br />
+      全建築144支BRB制震器 層層降振保平安<br />
+      業界領導品牌加持 101同級萬磅混凝土<br />
+      地基深扎岩盤 達到最佳耐震力
+    </div>
   </div>
 </template>
 
@@ -26,7 +26,7 @@
 
 .section6 {
   width: size(1920);
-  height: 100vh;
+  height: size(1080);
   min-height: size(900);
   max-height: size(1080);
   background-size: cover;
@@ -48,78 +48,46 @@
   }
 }
 
-.label {
-  @include div_l_pc(184, 81, 67, 191);
-  border: solid 1.2px #6e3a1d;
+.title {
+  @include img_r_pc(180, 168, 679);
   font-size: size(45);
-  font-weight: bold;
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(3.6);
+  line-height: 2.36;
+  letter-spacing: normal;
   text-align: left;
-  color: #6e3a1d;
-  border-radius: 40px / 40px;
-}
-
-.title1 {
-  @include img_c_pc(495,calc(50% - 14.5vw),calc(50% - 4.8vw));
-  text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
-  font-size: size(50);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(4);
-  text-align: left;
-  color: #ffffff;
+  color: #285065;
   white-space: nowrap;
 }
 
-.title2 {
-  @include img_c_pc(495,calc(50% - 11.5vw),50%);
-  text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
-  font-size: size(50);
-  font-weight: bold;
+.subtitle {
+  @include img_r_pc(390, 245, 469);
+  font-size: size(48);
+  font-weight: 900;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(4);
-  text-align: right;
-  color: #ffffff;
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-align: left;
+  color: #685335;
   white-space: nowrap;
-}
-
-hr {
-  @include img_c_pc(687,calc(50% - 7.5vw),calc(50% - 8.55vw + 0.2vh));
-  border: solid  size(1) #ffffff;
 }
 
 .desc {
-  @include img_c_pc(585,calc(50% - 6.3vw),calc(50% - 4.8vw));
-  text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
-  font-size: size(28);
-  font-weight: bold;
+  @include img_r_pc(538, 393, 323);
+  font-size: size(30);
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.66;
-  letter-spacing: size(3.53);
-  text-align: justify;
-  color: #ffffff;
+  line-height: 2.15;
+  letter-spacing: normal;
+  text-align: left;
+  color: #284e62;
 }
 
-.txt {
-  @include img_c_pc(187,calc(100% - 2vw),calc(100% - 10vw));
-  text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
-  font-size: size(18);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(3.61);
-  text-align: left;
-  color: #ffffff;
-  white-space: nowrap;
+.img {
+  @include img_l_pc(646, 45, 328);
 }
 
 @media only screen and (max-width: 1440px) {
@@ -138,100 +106,107 @@ hr {
 @media screen and (max-width: 767px) {
   .section6 {
     width: 100vw;
-    height: calc(100vh - 63px);
-    min-height:sizem(673);
-    max-height:sizem(760);
-  }
-
-  .bg-img {
-    width: sizem(375);
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    object-fit: cover;
-
-    &:nth-child(1) {
-      position: relative;
+    height: sizem(453 + 28);
+    min-height: sizem(453 + 28);
+    .bg {
+      width: 100%;
+      max-width: 100%;
     }
   }
 
-  .label {
-    @include div_r_m(145, 64, 14, 30);
-    border: solid 1.2px #6e3a1d;
-    font-size: sizem(34);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(2.6);
-    text-align: left;
-    color: #6e3a1d;
-    border-radius: 40px / 40px;
+  .map {
+    width: auto;
+    height: sizem(453);
+    top: 0;
+    left: 0;
   }
 
-  .title1 {
-    @include img_l_m(229, 96, 32);
-    text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
-    font-size: sizem(26);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(2);
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
+  .icon {
+    //  @include img_l_m(50, 199, 290);
+    height: sizem(70);
+    left: sizem(300);
+    top: sizem(210);
+    z-index: 2;
+    animation: none;
   }
 
-  .title2 {
-    @include img_l_m(229, 134, 148);
-    text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
-    font-size: sizem(26);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(2);
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
+  .b1 {
+    @include img_l_m(55, 250, 110);
+    z-index: 5;
+    transform: translate(10%, 10%);
   }
 
-  hr {
-    @include img_r_m(310, 180, 32);
-    border: solid 1px #ffffff;
+  .b2 {
+    @include img_l_m(100, -150, 100);
+    z-index: 5;
+    transform: translate(0, 20%);
   }
 
-  .desc {
-    @include img_r_m(310, 208, 33);
-    text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
-    font-size: sizem(15);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.66;
-    letter-spacing: sizem(1.83);
-    text-align: justify;
-    color: #ffffff;
+  .b3 {
+    display: none;
   }
 
-  .txt {
-    width:auto;
-    top: auto;
-    left: auto;
-    bottom: size-m(10);
-    right: size-m(10);
-    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.8);
-    font-size: sizem(12);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(1.61);
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
+  .b4 {
+    display: none;
+  }
+
+  .img1 {
+    display: none;
+  }
+
+  .img2 {
+    display: none;
+  }
+
+  .logobg1 {
+    // div位置：width: size(656), height: size(708) top: size(113), right: size(182)
+    @include div_r_m(144, 156, 149, 119);
+    // background-image: url('./s1/logobg.png');
+    background-size: cover;
+    z-index: 1;
+    color: #000;
+    h3 {
+      margin-top: sizem(-20);
+      margin-left: sizem(-10);
+    }
+  }
+
+  .dialog {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background-color: #f3e12b;
+    overflow: scroll;
+    .dialog-content {
+      height: 100%;
+      width: sizem(1138);
+      position: relative;
+    }
+    .dialog-map {
+      width: sizem(1138);
+      height: 100%;
+      background-color: #f3e12b;
+    }
+    .dialog-icon {
+      width: auto;
+      height: sizem(119);
+      position: absolute;
+      top: 46%;
+      left: 40%;
+      animation: heartbeat 0.5s ease-in alternate infinite;
+      // background-color: #fff;
+    }
+
+    .close {
+      width: 35px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 5px;
+      position: fixed;
+      right: 10px;
+      top: 10px;
+    }
   }
 }
 </style>
@@ -239,12 +214,9 @@ hr {
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
 import info from '@/info'
-import slider from '@/mixins/slider.js'
 
 export default {
   name: 'section6',
-
-  mixins: [slider],
 
   data() {
     return {
@@ -253,18 +225,6 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
-      // slideList: [
-      //   {
-      //     img: isMobile ? require('./mo/6/bg.jpg') : require('./s6/1.jpg'),
-      //     mode: 'dark',
-      //     // name: '成功大學',
-      //   },
-      //   {
-      //     img: isMobile ? require('./mo/6/bg2.jpg') : require('./s6/2.jpg'),
-      //     mode: 'light',
-      //     // name: '崑山科技大學',
-      //   },
-      // ],
     }
   },
 

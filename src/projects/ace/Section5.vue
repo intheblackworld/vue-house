@@ -2,6 +2,21 @@
   <div class="section5">
     <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
     <img src="./s5/bg.png" :alt="`${info.caseName}_bgimg`" class="bg">
+    <div class="title">
+      四大王牌
+    </div>
+    <h1 class="subtitle">
+      國際團隊打造 時尚精品飯店宅
+    </h1>
+    <div class="desc flex-c">
+      買名牌包 不如收藏精品宅
+    </div>
+    <div class="imgs flex-ac flex-jb">
+      <img src="./s5/1.jpg" :alt="`${info.caseName}_img1`">
+      <img src="./s5/2.jpg" :alt="`${info.caseName}_img2`">
+      <img src="./s5/3.jpg" :alt="`${info.caseName}_img3`">
+      <img src="./s5/4.jpg" :alt="`${info.caseName}_img4`">
+    </div>
   </div>
 </template>
 
@@ -22,6 +37,53 @@
   @include img_r_pc(1655, 0, 132);
 }
 
+.title {
+  @include img_c_pc(180, 123);
+  font-size: size(45);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.36;
+  letter-spacing: normal;
+  text-align: left;
+  color: #285065;
+  white-space: nowrap;
+}
+
+.subtitle {
+  @include img_c_pc(636, 188);
+  font-size: size(48);
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.22;
+  letter-spacing: normal;
+  text-align: left;
+  color: #685335;
+  white-space: nowrap;
+}
+
+.desc {
+  @include img_c_pc(356, 290);
+  font-size: size(30);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.08;
+  letter-spacing: size(-1.2);
+  text-align: left;
+  color: #ffffff;
+  background-color: #685335;
+}
+
+.imgs {
+  @include div_c_pc(302 * 4 + 28 * 3, 430, 385);
+  
+  img {
+    width: size(302);
+    cursor: pointer;
+  }
+}
 
 @media only screen and (max-width: 1440px) {
 }

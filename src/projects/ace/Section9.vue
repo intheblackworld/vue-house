@@ -181,18 +181,18 @@ hr {
     transform: translateY(10%);
   img{width: 100%;transform: rotate(25deg);}
 }
-.img {
-  @include img_c_pc(1700, calc(50% - 5vw), size(1540));
-  img{width: 100%;
-  transform-origin: 0 0;
-  transform: rotate(45deg);
- }
-  .an{width: 100%;
-  animation: an 2.5s linear infinite alternate;
-  transform-origin: 0 0;
-  transform:translate(-10%,-20%);
- }
-}
+// .img {
+//   @include img_c_pc(1700, calc(50% - 5vw), size(1540));
+//   img{width: 100%;
+//   transform-origin: 0 0;
+//   transform: rotate(45deg);
+//  }
+//   .an{width: 100%;
+//   animation: an 2.5s linear infinite alternate;
+//   transform-origin: 0 0;
+//   transform:translate(-10%,-20%);
+//  }
+// }
 
 @keyframes an {
   to {

@@ -1,9 +1,19 @@
 <template>
   <div class="section8">
-    <!-- <img src="./s1/b.png" alt="" class="b1">
-    <img src="./s1/b.png" alt="" class="b4">
-    <div class="b2"><img src="./s2/img.png" alt=""></div>
-    <img src="./s2/img.png" alt="" class="b3"> -->
+    <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
+    <img src="./s8/bg.png" :alt="`${info.caseName}_bgimg`" class="bg-img">
+    <div class="title">
+      公設王牌
+    </div>
+    <h1 class="subtitle">
+      頂尖世代層峰會所
+    </h1>
+    <div class="desc flex-c">
+      罕見天際私人會所，近760坪花園會館<br />
+      25項頂級休閒公設．3層名流社交場域<br />
+      雲頂層峰視野．凌空百米俯覽城市<br />
+      飯店式管理．盡享大牌隱私尊榮
+    </div>
     <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
@@ -16,9 +26,9 @@
           <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
           <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
         </div>
-        <!-- <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+        <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-        </div> -->
+        </div>
       </div>
     </div>
     <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
@@ -29,27 +39,6 @@
         <img src="./all/next-btn.png" alt="" @click="addIndex">
       </div>
     </div>
-    <!-- <img src="./s1/logobg.png" alt="睿暘水漾LOGO" class="logobg"> -->
-    <div class="btns flex-ac flex-jc wrap">
-      <h3 :class="`btn flex-c ${slideIndex === index ? 'active' : ''}`" v-for="(slide, index) in slideList" :key="slide.btn" @click="goTo(index)">{{slide.btn}}</h3>
-    </div>
-    <h3 class="label flex-c">
-      漾家居
-    </h3>
-    <h3 class="title1">
-      純漾好格局
-    </h3>
-    <h3 class="title2">
-      看了就知道
-    </h3>
-    <hr>
-    <h3 class="desc">
-     犧牲了可售坪數，只為了能有最好的格局，這樣的心意邀您眼見為憑。琢磨許久的方整規劃，讓每一戶擁有良好採光，也減少走道空間的浪費，讓「家」回歸居住最純粹。
-    </h3>
-    <h3 class="subtitle">
-      {{slideList[slideIndex].subtitle}}
-    </h3>
-
   </div>
 </template>
 
@@ -58,9 +47,9 @@
 
 .section8 {
   width: size(1920);
-  height: 100vh;
-  min-height: size(1110);
-  max-height: size(1110);
+  height: size(1080);
+  min-height: size(900);
+  max-height: size(1080);
   background-size: cover;
   background-attachment: fixed;
   overflow: hidden;
@@ -80,174 +69,51 @@
   }
 }
 
-.label {
-  @include div_r_pc(184, 81, 90, 232);
-  border: solid 1.2px #6e3a1d;
+.title {
+  @include img_l_pc(180, 334, 118);
   font-size: size(45);
-  font-weight: bold;
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(3.6);
+  line-height: 2.36;
+  letter-spacing: normal;
   text-align: left;
-  color: #6e3a1d;
-  border-radius: 40px / 40px;
-}
-.btns {
-  @include img_l_pc(1000, 60, 70);
-  .btn {
-    width: size(290);
-    height: size(74);
-    background-color: #ffffff;
-    border-radius: 35px / 35px;
-    margin: 0 0 0 size(40);
-    margin-bottom: size(30);
-    font-size: size(35.6);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: size(1.39);
-    text-align: left;
-    color: #000;
-    cursor: pointer;
-    &.active {
-      color: #fff;
-      background-color: #6e3a1d;
-    }
-  }
-}
-
-.title1 {
-  @include img_r_pc(270, 300, 490);
-  font-size: size(50);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(4);
-  text-align: left;
-  color: #ec6300;
-  white-space: nowrap;
-}
-
-.title2 {
-  @include img_r_pc(286, 367, 280);
-  font-size: size(50);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(4);
-  text-align: left;
-  color: #ec6300;
-  white-space: nowrap;
-}
-
-hr {
-  @include img_r_pc(551, 434, 233);
-  border: solid size(1) #f6ab00;
-}
-
-.desc {
-  @include img_r_pc(496, 470, 262);
-  font-size: size(29.3);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.78;
-  letter-spacing: size(1.61);
-  text-align: left;
-  color: #231815;
-}
-
-.txt {
-  @include img_r_pc(187, 980, 25);
-  text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
-  font-size: size(26);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(3.61);
-  text-align: left;
-  color: #ffffff;
+  color: #285065;
   white-space: nowrap;
 }
 
 .subtitle {
-  @include img_l_pc(731, 946, 218);
-  font-size: size(44);
-  font-weight: 600;
+  @include img_l_pc(384, 417, 118);
+  font-size: size(48);
+  font-weight: 900;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(-1.8);
+  line-height: 1.3;
+  letter-spacing: normal;
   text-align: left;
-  color: #000000;
+  color: #685335;
   white-space: nowrap;
 }
 
-.logobg {
-  // div位置：width: size(656), height: size(708) top: size(113), right: size(182)
-  @include div_r_pc(772, 831, 176, 107);
-  // background-image: url('./s1/logobg.png');
-  background-size: cover;
-}
-
-.b1 {
-  @include img_r_pc(510, 121, -190);
-  animation: an 4.5s infinite alternate;
-}
-
-.b2 {
-  @include img_r_pc(550, 180, 414);
-  animation: an 2.5s infinite alternate;
-  img{width: 100%;transform: rotate(25deg);}
-}
-
-.b3 {
-  @include img_r_pc(543, 500, -280);
-  animation: an 2.5s infinite alternate;
-}
-
-.b4 {
-  @include img_r_pc(180, 790, 210);
-  z-index: 2;
-  animation: an 4.5s infinite alternate;
-}
-
-.img1 {
-  @include img_r_pc(348, 457, -180);
-  animation: an 2.5s infinite alternate;
-}
-
-.img2 {
-  @include img_l_pc(548, 857, -280);
-  animation: an 2.5s infinite alternate;
-}
-
-@keyframes an {
-  from {
-    transform: translateY(-20px);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-
-@keyframes an2 {
-  to {
-    transform: translateY(0) rotate(5deg);
-  }
+.desc {
+  @include img_l_pc(501, 487, 118);
+  font-size: size(30);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.15;
+  letter-spacing: normal;
+  text-align: left;
+  color: #284e62;
+  white-space: nowrap;
 }
 
 /* Swipe */
 .swipe {
-  width: size(760);
-  height: size(670);
-  top: size(254);
-  left: size(204);
+  width: size(1110);
+  height: size(625);
+  top: size(221);
+  right: size(118);
   object-fit: cover;
 }
 
@@ -554,7 +420,7 @@ hr {
   }
 
   .b2 {
-    @include img_l_m(300, 570,-52);
+    @include img_l_m(300, 570, -52);
     animation: an 2.5s infinite alternate;
   }
 
@@ -772,30 +638,25 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s8/a.png'),
-          title: '純漾好格局 看了就知道',
-          subtitle: '2+1房．2衛．客廳．餐廳．廚房．陽台',
-          btn: 'A戶∣約28坪',
+          img: require('./s8/1.jpg'),
         },
         {
-          img: require('./s8/b.png'),
-          subtitle: '2房．1衛．客廳．餐廳．廚房．陽台',
-          btn: 'B戶∣約23坪',
+          img: require('./s8/2.jpg'),
         },
         {
-          img: require('./s8/c.png'),
-          subtitle: '1房．1衛．客廳．餐廳．廚房．陽台',
-          btn: 'C戶∣約18坪',
+          img: require('./s8/3.jpg'),
         },
         {
-          img: require('./s8/d.png'),
-          subtitle: '2房．1衛．客廳．餐廳．廚房．陽台',
-          btn: 'D戶∣約24坪',
+          img: require('./s8/4.jpg'),
         },
         {
-          img: require('./s8/e.png'),
-          subtitle: '2+1房．2衛．客廳．餐廳．廚房．陽台',
-          btn: 'E戶∣約28坪',
+          img: require('./s8/5.jpg'),
+        },
+        {
+          img: require('./s8/6.jpg'),
+        },
+        {
+          img: require('./s8/7.jpg'),
         },
       ],
     }

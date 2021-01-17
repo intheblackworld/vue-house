@@ -126,40 +126,40 @@
     }
   }
 
-  .img {
-    @include img_r_m(1700, 1027, -800);
-  @include img_c_m(600, calc(50% - 32vw), sizem(220));
-  }
+  // .img {
+  //   @include img_r_m(1700, 1027, -800);
+  // @include img_c_m(600, calc(50% - 32vw), sizem(220));
+  // }
 
-  .logo {
-    @include img_c_m(216,calc(42% - 22vw), sizem(73))
-  }
+  // .logo {
+  //   @include img_c_m(216,calc(42% - 22vw), sizem(73))
+  // }
 
-  .logobg {
-    // 圖片位置：width: size(712), top: size(201), left: size(118)
-    @include img_c_m(306,calc(42% - 40vw), sizem(45))
-  }
+  // .logobg {
+  //   // 圖片位置：width: size(712), top: size(201), left: size(118)
+  //   @include img_c_m(306,calc(42% - 40vw), sizem(45))
+  // }
 
-  .t1 {
-    @include img_c_m(310,calc(73% - 2vw), sizem(33))
-  }
+  // .t1 {
+  //   @include img_c_m(310,calc(73% - 2vw), sizem(33))
+  // }
 
-  .t2 {
-    @include img_c_m(310,calc(73% + 12vw), sizem(33))
-  }
+  // .t2 {
+  //   @include img_c_m(310,calc(73% + 12vw), sizem(33))
+  // }
 
-  .b1 {
-    @include img_l_m(140, -38, -20); 
-  }
+  // .b1 {
+  //   @include img_l_m(140, -38, -20);
+  // }
 
-  .b2 {
-    @include img_c_m(107,calc(50% - 45vw), sizem(320));
-  }
+  // .b2 {
+  //   @include img_c_m(107,calc(50% - 45vw), sizem(320));
+  // }
 
-  .b3 {
-    @include img_c_m(74,calc(75% + 18vw), sizem(22));
-       z-index:initial;
-  }
+  // .b3 {
+  //   @include img_c_m(74,calc(75% + 18vw), sizem(22));
+  //      z-index:initial;
+  // }
 
   .b4 {
     display: none;
