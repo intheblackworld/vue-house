@@ -65,8 +65,8 @@
 
 .hr {
   @include img_r_pc(316, 393, 187);
-  height: size(0.5);
-  background: #33333366;
+  height: 35px;
+  border-top: size(0.5) solid  #3336;
 }
 
 .desc {

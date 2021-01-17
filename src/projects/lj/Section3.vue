@@ -21,7 +21,7 @@
       <h1 class="title" data-aos="flip-up" data-aos-delay="1200">
         日系美學，職人工藝。
       </h1>
-      <div class="hr" data-aos="zoom-in-right" data-aos-delay="1400"></div>
+      <div class="hr" data-aos="zoom-in-right" data-aos-delay="1400" data-aos-offset="100"></div>
       <h1 class="desc" data-aos="fade-up" data-aos-delay="1600">
         特邀日本新生代建築家－吉村靖孝<br />
         早稲田、明治大學、東大研究所建築名師<br />
@@ -64,8 +64,8 @@
 
 .hr {
   @include img_l_pc(316, 421, 79);
-  height: size(0.5);
-  background: #fff9;
+  height: 35px;
+  border-top: size(0.5) solid  #fff9;
 }
 
 .desc {
