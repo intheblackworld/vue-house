@@ -27,9 +27,9 @@
       <div class="pagination flex-c">
         <a class="pagi" target="_blank" v-for="(link, index) in currentItem.links" :key="'pagi' + index" :href="link.url">{{link.title}}</a>
       </div>
-        <div class="back" @click="isProjectDialog = false">
-          ［回上一頁］
-        </div>
+      <div class="back" @click="$router.push('/news')">
+        ［回上一頁］
+      </div>
     </div>
   </div>
 </template>
@@ -108,6 +108,11 @@
   text-align: left;
   color: #666666;
   margin-bottom: size(15);
+}
+
+.back {
+  margin-top: size(15);
+  cursor: pointer;
 }
 .swipe {
   width: size(1280);
@@ -262,7 +267,6 @@
     }
   }
 }
-
 
 @media only screen and (max-width: 1440px) {
 }
@@ -586,7 +590,7 @@ export default {
           date: '2019/10/09 19:41',
           author: '中時新聞網 綜合報導',
           imgs: [require('../news/s2/1/20201103002310.jpg')],
-        /*  imgs: [
+          /*  imgs: [
             require('./s2/1/20191009004718.jpg'),
             require('./s2/1/20191009004721.jpg'),
             require('./s2/1/20191009004722.jpg'),
@@ -635,10 +639,12 @@ export default {
           subtitle: '',
           date: '2020/11/03 09:49',
           author: '文 中時新聞網 朱立君',
-          imgs: [require('../news/s2/1/20201103002310.jpg'),
-          require('../news/s2/1/20201103002318.jpg'),
-          require('../news/s2/1/20201103002320.jpg'),
-          require('../news/s2/1/20201103002431.jpg'),],
+          imgs: [
+            require('../news/s2/1/20201103002310.jpg'),
+            require('../news/s2/1/20201103002318.jpg'),
+            require('../news/s2/1/20201103002320.jpg'),
+            require('../news/s2/1/20201103002431.jpg'),
+          ],
           desc:
             'MUSE Design Awards謬思設計獎為國際獎項協會International Awards Associates(IAA)的一項重要大獎，獎項設立的宗旨為集合全世界各個領域的設計構思，打造出未來設計新趨勢，並提供給創作者更豐富的設計靈感，經過評審嚴格審查後，僅有呈現最具創造力與美感的作品，才有機會捧起「謬思女神雕像獎盃」。今年的參賽情況相當踴躍，設計者無不展現創作技藝與巧思，爭取這項榮譽，日前已公布得獎名單，來自台灣的建築設計作品「碧波白」，在外觀設計與室內空間設計項目，均獲得金獎殊榮，成為2020台灣唯一雙料奪金的作品，成為建築設計界的「台灣之光」。<br><br>【百年建築團隊著手規劃 「碧波白」成就美學經典】<br><br>「碧波白」位於北台灣景色最優美的碧潭水岸，外觀為30層樓高白色波浪建築，一改高樓建築予人方方正正的刻板印象，因此與周圍建築物對比十分顯眼，成為新店當地相當醒目的地標。常需要會見賓客，住戶進出頻繁的交誼大廳，則運用燈光與大器的柱面設計，搭配平台鋼琴與其他精心布置的裝置藝術，讓人體驗華麗氛圍之餘，也能感受到精緻典雅的內涵。<br><br>受訪業者表示，這次之所以在MUSE Design Awards大獲好評，一舉雙料奪金，得完全歸功於背後大有來頭的設計團隊，「碧波白」的外觀設計部分，特別邀請到澳洲百年建築團隊PTW，該團隊善於挑選世界知名水岸打造地標建築，從雪梨Lumiere One Central Park，到杜拜Palm Jebel、北京水立方，每一件作品，都帶有國際眼界與格局，並成功為城市留下百年傳承的經典之作。而在內部空間規劃上，則邀請到台灣空間設計之光—涵碧樓美學大師王勝正、台北101燈光設計師林朗菴聯手打造出極富後現代主義美感的公設大廳。在建築外觀與內部空間皆精心擘劃的情況下，才使得「碧波白」順利拿下難能一見的Muse建築設計雙金獎，為碧潭畔豎立起一座唯美地標。<br><br>【碧波白地理條件優 兼顧交通便利與生活機能】<br><br>「碧波白」鄰近捷運新店站，擁有碧潭畔的悠閒生活環境，生活機能則依靠新店最繁榮的北新路商圈，商家賣場應有盡有，交通往返也相當便利，開車5分鐘即可駛上國道，約15分鐘抵達信義區。開價約落在每坪68~78萬之間，現已進入完銷倒數階段，限量釋出38、45坪精華保留席以及78坪大戶豪邸。業者表示，由於新冠疫情影響造成台商回流，而「碧波白」的整體規劃相當受到台商們的喜愛，再加上周遭生活條件優異，因此現階段成交的皆為自住客，其中不乏從大安區、信義區搬來的換屋族，是大台北近年來難得一建的優質建案',
           links: [
@@ -657,13 +663,11 @@ export default {
       ],
       pageCount: 3,
       currentPage: 1,
-      currentItem: {
-        },
+      currentItem: {},
     }
   },
 
-  methods: {
-  },
+  methods: {},
 
   mounted() {
     this.currentItem = this.slideList[this.$route.params.id]

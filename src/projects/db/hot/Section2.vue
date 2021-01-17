@@ -33,11 +33,11 @@
         <img src="./s1/rb.png" :alt="`${info.caseName}`" class="rb">
         <img :src="dialogData.logo" alt="" class="logo">
         <div class="slide-imgs flex-as flex-jb">
-          <img :src="dialogData.imgs[0]" :alt="`${info.caseName}`" class="main" @click="selectImg(0)">
+          <img :src="dialogData.imgs[0]" :alt="`${info.caseName}`" class="main" @click="selectImg(dialogData.imgs[0])">
           <div class="imgs">
-            <img :src="dialogData.imgs[1]" :alt="`${info.caseName}`" @click="selectImg(1)">
-            <img :src="dialogData.imgs[2]" :alt="`${info.caseName}`" @click="selectImg(2)">
-            <img :src="dialogData.imgs[3]" :alt="`${info.caseName}`" @click="selectImg(3)">
+            <img :src="dialogData.imgs[1]" :alt="`${info.caseName}`" @click="selectImg(dialogData.imgs[1])">
+            <img :src="dialogData.imgs[2]" :alt="`${info.caseName}`" @click="selectImg(dialogData.imgs[2])">
+            <img :src="dialogData.imgs[3]" :alt="`${info.caseName}`" @click="selectImg(dialogData.imgs[3])">
           </div>
         </div>
       </div>
@@ -157,8 +157,20 @@
     object-fit: cover;
   }
   &::before,
-  &::after{content: "";width: 1em;height: 0.1em;font-size:size(44);background: #004ea2;position: absolute;right: 0.5em;top:10em;}
-  &::after{transform-origin:50% 50%;transform: rotate(90deg);}
+  &::after {
+    content: '';
+    width: 1em;
+    height: 0.1em;
+    font-size: size(44);
+    background: #004ea2;
+    position: absolute;
+    right: 0.5em;
+    top: 10em;
+  }
+  &::after {
+    transform-origin: 50% 50%;
+    transform: rotate(90deg);
+  }
 
   .content {
     height: size(130);
@@ -481,9 +493,10 @@
       height: sizem(305);
       object-fit: cover;
     }
-  &::before,
-  &::after{font-size:sizem(27.5);}
-
+    &::before,
+    &::after {
+      font-size: sizem(27.5);
+    }
 
     .content {
       // margin-top: sizem(221);
@@ -516,7 +529,7 @@
       font-stretch: normal;
       font-style: normal;
       line-height: 1.6;
-      letter-spacing:0.06em;
+      letter-spacing: 0.06em;
       text-align: left;
       justify-content: flex-start;
       color: #333333;
@@ -899,10 +912,10 @@ export default {
           link: 'https://www.bmwlife.com.tw/',
           logo: require('../works/1/0.jpg'),
           imgs: [
-             require('../works/1/1.jpg'),
-             require('../works/1/2.jpg'), 
-             require('../works/1/3.jpg'), 
-             require('../works/1/4.jpg'),
+            require('../works/1/1.jpg'),
+            require('../works/1/2.jpg'),
+            require('../works/1/3.jpg'),
+            require('../works/1/4.jpg'),
           ],
         },
         {
@@ -991,18 +1004,13 @@ export default {
     //   }
     // },
 
-    removeElement(elem) {
-      let index = this.dialogData.imgs.indexOf(elem)
-      if (index > -1) {
-        this.dialogData.imgs.splice(index, 1)
-      }
-    },
-
-    selectImg(index) {
-      let firstItem = this.dialogData.imgs[index]
-      this.removeElement(this.dialogData.imgs[index])
-      this.dialogData.imgs = [firstItem, ...this.dialogData.imgs]
-      console.log(this.dialogData.imgs)
+    selectImg(src) {
+      this.dialogData.imgs.unshift(
+        this.dialogData.imgs.splice(
+          this.dialogData.imgs.findIndex((item) => item === src),
+          1,
+        )[0],
+      )
     },
     showProjectDialog(item) {
       if (!item.isEmpty) {

@@ -10,14 +10,14 @@
       is that he is a bridge<br />
       and not an end.
     </div>
-    <div data-aos="fade" data-aos-delay="600">
-    <div class="subtitle">
-      「人之所以偉大，<br v-if="isMobile" />是因為他是一座橋樑，而非目的。」
-    </div>
-    <div class="hr"></div>
-    <div class="name">
-      弗里德里希·<span>尼采</span>
-    </div>
+    <div>
+      <div class="subtitle" data-aos="fade" data-aos-delay="600">
+        「人之所以偉大，<br v-if="isMobile" />是因為他是一座橋樑，而非目的。」
+      </div>
+      <div class="hr" data-aos="fade" data-aos-delay="600"></div>
+      <div class="name" data-aos="fade" data-aos-delay="600">
+        弗里德里希·<span>尼采</span>
+      </div>
     </div>
     <!-- <div class="cloud">
     <img src="./s1/cloud1.png" alt="cloud" class="cloud1">
@@ -67,17 +67,24 @@
   left: 0;
   display: block;
   object-fit: cover;
-  margin-top: 0;}
- .an{
-  animation:oxxo 40s linear infinite;
+  margin-top: 0;
 }
-@keyframes oxxo{
-    0%{transform: scale(1);opacity: 1;
-    }
-    90%{transform: scale(1.2);opacity: 1;
-    }
-    100%{transform: scale(1.22);opacity: 0;
-    }
+.an {
+  animation: oxxo 40s linear infinite;
+}
+@keyframes oxxo {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  90% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.22);
+    opacity: 0;
+  }
 }
 
 .bottom {
@@ -93,18 +100,17 @@
 
 .t {
   @include img_r_pc(1400, 0, 0);
-  top:calc(35% - 21vw);
-  
+  top: calc(35% - 21vw);
 }
 
 .title {
   @include div_l_pc(876, 409, 615, 180);
   height: auto;
   top: auto;
-  bottom:size(320);
+  bottom: size(320);
   font-size: size(93);
   font-weight: normal;
-  font-family:'gothic';
+  font-family: 'gothic';
   font-stretch: normal;
   font-style: normal;
   line-height: 1.08;
@@ -117,7 +123,7 @@
   @include div_r_pc(628, 69, 757, 167);
   height: auto;
   top: auto;
-  bottom:size(375);
+  bottom: size(375 + 50);
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.58);
   font-size: size(26.2);
   font-weight: 400;
@@ -133,7 +139,7 @@
 .hr {
   @include div_r_pc(444, 1, 821, 338);
   top: auto;
-  bottom:size(345);
+  bottom: size(345 + 50);
   background-color: #fff;
 }
 
@@ -141,7 +147,7 @@
   @include div_r_pc(146, 34, 795, 180);
   height: auto;
   top: auto;
-  bottom:size(330);
+  bottom: size(330 + 50);
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.58);
   font-size: size(17.9);
   font-weight: normal;

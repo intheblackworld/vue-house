@@ -32,11 +32,11 @@
         <img src="./s1/rb.png" :alt="`${info.caseName}`" class="rb">
         <img :src="dialogData.logo" alt="" class="logo">
         <div class="slide-imgs flex-as flex-jb">
-          <img :src="dialogData.imgs[0]" :alt="`${info.caseName}`" class="main" @click="selectImg(0)">
+          <img :src="dialogData.imgs[0]" :alt="`${info.caseName}`" class="main" @click="selectImg(dialogData.imgs[0])">
           <div class="imgs">
-            <img :src="dialogData.imgs[1]" :alt="`${info.caseName}`" @click="selectImg(1)">
-            <img :src="dialogData.imgs[2]" :alt="`${info.caseName}`" @click="selectImg(2)">
-            <img :src="dialogData.imgs[3]" :alt="`${info.caseName}`" @click="selectImg(3)">
+            <img :src="dialogData.imgs[1]" :alt="`${info.caseName}`" @click="selectImg(dialogData.imgs[1])">
+            <img :src="dialogData.imgs[2]" :alt="`${info.caseName}`" @click="selectImg(dialogData.imgs[2])">
+            <img :src="dialogData.imgs[3]" :alt="`${info.caseName}`" @click="selectImg(dialogData.imgs[3])">
           </div>
         </div>
       </div>
@@ -144,6 +144,7 @@
   background-color: #f7f8f8;
   margin: 0 size(18) size(50);
   cursor: pointer;
+  position: relative;
 
   .add {
   }
@@ -907,18 +908,8 @@ export default {
     //   }
     // },
 
-    removeElement(elem) {
-      let index = this.dialogData.imgs.indexOf(elem)
-      if (index > -1) {
-        this.dialogData.imgs.splice(index, 1)
-      }
-    },
-
-    selectImg(index) {
-      let firstItem = this.dialogData.imgs[index]
-      this.removeElement(this.dialogData.imgs[index])
-      this.dialogData.imgs = [firstItem, ...this.dialogData.imgs]
-      console.log(this.dialogData.imgs)
+    selectImg(src) {
+      this.dialogData.imgs.unshift(this.dialogData.imgs.splice(this.dialogData.imgs.findIndex(item => item === src), 1)[0])
     },
     showProjectDialog(item) {
       if (!item.isEmpty) {

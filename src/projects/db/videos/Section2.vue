@@ -12,8 +12,8 @@
       </div>
     </div>
     <div class="container flex wrap">
-      <div class="item flex-ac wrap" v-for="(item, index) in item_list" :key="item.title + index" @click="$router.push(`/news/${index}`)">
-        <img :src="item.img" :alt="`${info.caseName}`">
+      <div class="item flex-ac wrap" v-for="(item, index) in item_list" :key="item.title + index">
+        <iframe :src="item.video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <div class="content">
           <div class="item-label flex-c yellow" v-if="item.type === 1">線上熱銷</div>
           <div class="item-label flex-c blue" v-if="item.type === 2">完銷個案</div>
@@ -96,14 +96,17 @@
   height: size(780);
   margin: 0 size(18);
   border-bottom: 2px solid #008fbb;
-  transition:all 0.3s;
+  transition: all 0.3s;
   cursor: pointer;
 
-  &:hover{background: #00000003;}
+  &:hover {
+    background: #00000003;
+  }
   .add {
   }
 
-  img {
+  img,
+  iframe {
     width: size(966);
     height: size(629);
     object-fit: cover;
@@ -263,8 +266,8 @@
     border-bottom: none;
     cursor: pointer;
 
-
-    img {
+    img,
+    iframe {
       width: sizem(375);
       height: sizem(221);
       object-fit: cover;
@@ -364,6 +367,7 @@ export default {
           title: '影片標題影片標題<br />影片標題影片標題',
           desc: '小標文字（沒文字隱藏）',
           img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/nkg8R28fa5U',
         },
         {
           // icon: require('./s1/icon2.png'),
@@ -371,6 +375,7 @@ export default {
           title: '影片標題影片標題<br /影片標題影片標題',
           desc: '小標文字（沒文字隱藏）',
           img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/UcxPCDzs_yw',
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -378,6 +383,31 @@ export default {
           title: '影片標題影片標題<br /影片標題影片標題',
           desc: '',
           img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/QRoZESYwKmI',
+        },
+        {
+          // icon: require('./s1/icon1.png'),
+          type: 3,
+          title: '影片標題影片標題<br /影片標題影片標題',
+          desc: '',
+          img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/rXN9VphSzaw',
+        },
+        {
+          // icon: require('./s1/icon1.png'),
+          type: 3,
+          title: '影片標題影片標題<br /影片標題影片標題',
+          desc: '',
+          img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/Z_hsfRlA4dg',
+        },
+        {
+          // icon: require('./s1/icon1.png'),
+          type: 3,
+          title: '影片標題影片標題<br /影片標題影片標題',
+          desc: '',
+          img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/RNMo_H1Kxh0',
         },
       ],
     }
