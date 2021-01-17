@@ -6,11 +6,11 @@
     <!-- <Navigation v-else /> -->
     <Indigator :action="action" :indigatorIndex="indigatorIndex" />
     <full-page ref="fullPage" :options="options" id="fullpage">
-      <div id="section1" class="section">
-        <Section1 />
-      </div>
       <div id="section8" class="section">
         <Section8 />
+      </div>
+      <div id="section1" class="section">
+        <Section1 />
       </div>
       <div id="section2" class="section">
         <Section2 />
