@@ -2,15 +2,15 @@
   <div class="section3">
     <img src="./s3/bg.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isPC">
     <img src="./mo/b.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isMobile">
-    <img src="./s3/img_r.png" :alt="`${info.caseName}_img_r`" class="img_r">
-    <img src="./s3/img_l.jpg" :alt="`${info.caseName}_img_l`" class="img_l">
-    <div class="title">
+    <img src="./s3/img_r.png" :alt="`${info.caseName}_img_r`" class="img_r" data-aos="fade-down" data-aos-delay="100">
+    <img src="./s3/img_l.jpg" :alt="`${info.caseName}_img_l`" class="img_l" data-aos="fade-down" data-aos-delay="400">
+    <div class="title" data-aos="fade-down" data-aos-delay="100">
       地段王牌
     </div>
-    <h1 class="subtitle">
+    <h1 class="subtitle" data-aos="fade-down" data-aos-delay="200">
       雙和正中心‧享受富饒生活
     </h1>
-    <div class="desc flex-c">
+    <div class="desc flex-c" data-aos="fade-down" data-aos-delay="300">
       富貴線正中心 一高二捷三快五商圈六大橋
     </div>
   </div>
@@ -21,7 +21,7 @@
 
 .section3 {
   width: size(1920);
-  height: size(1080);
+  height: 100vh;
   min-height: size(900);
   max-height: size(1080);
   background-size: cover;
@@ -31,19 +31,23 @@
 
 .bg {
   @include img_r_pc(1843, 0, 0);
+  height: 100%;
 }
 
 .img_r {
   @include img_r_pc(1015, 79, 128);
+  top:calc(50% - 25vw);
 }
 
 .img_l {
   @include img_l_pc(518, 461, 243);
+  top:calc(50% - 0.5vw);
 }
 
 .title {
   @include img_l_pc(518, 239, 186);
   font-size: size(45);
+  top:calc(50% - 12.5vw);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -56,6 +60,7 @@
 
 .subtitle {
   @include img_l_pc(518, 295, 186);
+  top:calc(50% - 9vw);
   font-size: size(48);
   font-weight: 900;
   font-stretch: normal;
@@ -69,6 +74,7 @@
 
 .desc {
   @include div_l_pc(574, 43, 392, 187);
+  top:calc(50% - 4vw);
   font-size: size(30);
   font-weight: 500;
   font-stretch: normal;

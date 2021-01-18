@@ -2,46 +2,47 @@
   <div class="section5">
     <img src="./s5/bg.png" :alt="`${info.caseName}_bgimg`" class="bg" v-if="isPC">
     <img src="./mo/w2.png" :alt="`${info.caseName}_bgimg`" class="bg" v-if="isMobile">
-    <div class="title">
+    <div class="title" data-aos="fade-down" data-aos-delay="100">
       四大王牌
     </div>
-    <h1 class="subtitle" v-if="isPC">
+    <h1 class="subtitle" v-if="isPC" data-aos="fade-down" data-aos-delay="200">
       國際團隊打造 時尚精品飯店宅
     </h1>
-    <h1 class="subtitle" v-if="isMobile">
+    <h1 class="subtitle" v-if="isMobile" data-aos="fade-down" data-aos-delay="200">
       國際團隊打造<br />時尚精品飯店宅
     </h1>
-    <div class="desc flex-c">
+    <div class="desc flex-c" data-aos="fade-down" data-aos-delay="300">
       買名牌包 不如收藏精品宅
     </div>
     <div class="imgs flex-ac flex-jb wrap">
-      <img src="./s5/1.jpg" :alt="`${info.caseName}_img1`" @click="showDialog(0)">
-      <img src="./s5/2.jpg" :alt="`${info.caseName}_img2`" @click="showDialog(1)">
-      <img src="./s5/3.jpg" :alt="`${info.caseName}_img3`" @click="showDialog(2)">
-      <img src="./s5/4.jpg" :alt="`${info.caseName}_img4`" @click="showDialog(3)">
+        <div @click="showDialog(0)" data-aos="fade-down" data-aos-delay="400"><img src="./s5/1.jpg" :alt="`${info.caseName}_img1`"></div>
+        <div @click="showDialog(1)" data-aos="fade-down" data-aos-delay="500"><img src="./s5/2.jpg" :alt="`${info.caseName}_img2`"></div>
+      <div @click="showDialog(2)" data-aos="fade-down" data-aos-delay="600"><img src="./s5/3.jpg" :alt="`${info.caseName}_img3`"></div>
+      <div @click="showDialog(3)" data-aos="fade-down" data-aos-delay="700"><img src="./s5/4.jpg" :alt="`${info.caseName}_img4`"></div>
     </div>
     <div :class="`dialog ${isDialog ? 'active' : ''}`">
       <img src="./all/close.png" :alt="`${info.caseName}_close`" class="dialog-close" @click="isDialog = false">
-      <div class="dialog-title" v-html="dialogData.title"></div>
-      <h1 class="dialog-subtitle" v-html="dialogData.subtitle"></h1>
-      <div class="dialog-label flex-ac" v-html="dialogData.label"></div>
-      <div class="dialog-desc" v-html="dialogData.desc"></div>
-      <div class="dialog-work" v-html="dialogData.work"></div>
-      <div class="dialog-imgs" v-if="isPC">
-        <img :src="dialogData.imgs[0].img" :alt="`${info.caseName}_img`">
-        <img :src="dialogData.imgs[1].img" :alt="`${info.caseName}_img`">
-        <div class="dialog-name1" v-html="dialogData.imgs[0].name"></div>
-        <div class="dialog-name2" v-html="dialogData.imgs[1].name"></div>
-      </div>
-      <div class="dialog-imgs" v-if="isMobile">
-        <div class="img-item">
-          <img :src="dialogData.imgs[0].img" :alt="`${info.caseName}_img`">
-          <div class="dialog-name" v-html="dialogData.imgs[0].name"></div>
-        </div>
+      <div class="dialog-content">
+        <div class="dialog-title" v-html="dialogData.title"></div>
+        <h1 class="dialog-subtitle" v-html="dialogData.subtitle"></h1>
+        <div class="dialog-label flex-ac" v-html="dialogData.label"></div>
+        <div class="dialog-desc" v-html="dialogData.desc"></div>
+        <div class="dialog-work" v-html="dialogData.work"></div>
+        <div class="dialog-imgs" v-if="isPC">
+          <div><img :src="dialogData.imgs[0].img" :alt="`${info.caseName}_img`"><div class="dialog-name" v-html="dialogData.imgs[0].name"></div></div>
+          <div><img :src="dialogData.imgs[1].img" :alt="`${info.caseName}_img`"><div class="dialog-name" v-html="dialogData.imgs[1].name"></div></div>
 
-        <div class="img-item">
-          <img :src="dialogData.imgs[1].img" :alt="`${info.caseName}_img`">
-          <div class="dialog-name" v-html="dialogData.imgs[1].name"></div>
+        </div>
+        <div class="dialog-imgs" v-if="isMobile">
+          <div class="img-item">
+            <img :src="dialogData.imgs[0].img" :alt="`${info.caseName}_img`">
+            <div class="dialog-name" v-html="dialogData.imgs[0].name"></div>
+          </div>
+
+          <div class="img-item">
+            <img :src="dialogData.imgs[1].img" :alt="`${info.caseName}_img`">
+            <div class="dialog-name" v-html="dialogData.imgs[1].name"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -70,7 +71,9 @@
 }
 
 .bg {
-  @include img_r_pc(1655, 0, 132);
+  @include img_r_pc(1655, 0, 0);
+  left:50%;transform: translateX(-50%)
+
 }
 
 .title {
@@ -115,12 +118,15 @@
 .imgs {
   @include div_c_pc(302 * 4 + 28 * 3, 430, 385);
 
-  img {
+  div{
     width: size(302);
     cursor: pointer;
-    transition: transform 0.3s;
-    &:hover {
-      transform: rotateY(-180deg);
+    img {
+    width:100%;
+    transition: transform 1s;
+  }
+    &:hover img{
+      transform: rotateY(-360deg);
     }
   }
 }
@@ -135,35 +141,45 @@
   top: 0;
   transition: left 1s;
   z-index: 1000;
+  overflow: auto;
+  display: flex;
+  align-items:center;
+  justify-content:center;
 
   &.active {
     left: 0;
   }
-
-  .dialog-title {
-    @include img_l_pc(145, 200, 325);
-    font-size: size(37);
-    font-weight: 500;
+.dialog-content{position:relative;
+width: 90%;max-width: size(1270);
+height:90%;max-height: size(852);
+padding: 0 30% 0 0;
+  background-color: #0000;
+  align-items:center;
+    align-content:center;
+  justify-content:flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  
+  
     font-stretch: normal;
     font-style: normal;
-    line-height: 5.56;
+    text-align: justify;
     letter-spacing: normal;
-    text-align: left;
+    line-height:1.6;
     color: #ffffff;
-    white-space: nowrap;
+  }
+  .dialog-title {
+    width: 100%;
+    font-size: size(37);
+    font-weight: 500;
+    color: #ffffff;
   }
 
   .dialog-subtitle {
-    @include img_l_pc(288, 334, 325);
+    width: 100%;
     font-size: size(48);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.18;
-    letter-spacing: normal;
-    text-align: left;
+    font-weight: 900;line-height:1.2;
     color: #c4a06d;
-    white-space: nowrap;
 
     span {
       color: #fff;
@@ -171,67 +187,54 @@
   }
 
   .dialog-label {
-    @include div_l_pc(615, 47, 473, 325);
     font-size: size(30);
     font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.15;
-    letter-spacing: normal;
-    text-align: left;
-    color: #ffffff;
     background-color: #c7a26e;
     white-space: nowrap;
+    padding: 0 0.5em;margin: 0.7em 0;
   }
 
   .dialog-desc {
-    @include img_l_pc(584, 544, 325);
     font-size: size(24);
     font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.02;
-    letter-spacing: size(-0.48);
-    text-align: left;
-    color: #ffffff;
+    letter-spacing: -0.02em;
+    color: #fff;
+    text-align: justify;
+    width: 90%;
     // white-space: nowrap;
   }
 
   .dialog-work {
-    @include img_l_pc(580, 787, 325);
-    font-size: size(27.1);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
+    font-size: size(27);
+    width: 90%;
+    font-weight: 700;
     line-height: 1.48;
-    letter-spacing: size(0.54);
-    text-align: left;
+    letter-spacing: 0.02em;
+    text-align: justify;
     color: #c7a26e;
     // white-space: nowrap;
   }
 
   .dialog-imgs {
-    @include img_l_pc(600, 115, 985);
+    @include img_r_pc(600, 0, 0);
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction:column;
+    justify-content:space-between;
+    > div{position: relative;flex: 1 1 48%;height: 48%;
+      margin: size(10) 0;}
+    
     img {
-      width: 100%;
-      margin-bottom: size(20);
+     width:auto;
       border-radius: size(45);
+      height: 100%;
     }
 
-    .dialog-name1 {
-      @include img_r_pc(132, 370, 64);
-      font-size: size(22);
-      font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.35;
-      letter-spacing: normal;
-      text-align: right;
-      color: #ffffff;
-      white-space: nowrap;
-    }
-    .dialog-name2 {
-      @include img_r_pc(132, 805, 64);
+    .dialog-name{
+      position: absolute;
+      right: 1em;
+      bottom: 1em;
       font-size: size(22);
       font-weight: 500;
       font-stretch: normal;
@@ -268,17 +271,20 @@
 
 @media screen and (max-width: 767px) {
   .section5 {
-    width: 100vw;
+    width: 100%;
     height: sizem(667);
-    min-height: sizem(667);
+    //height:calc(100vh - 63px);
+    min-height: sizem(604);
+    max-height: sizem(750);
   }
 
   .bg {
     @include img_r_m(375, 0, 0);
+    transform: translateX(0%);
   }
 
   .title {
-    @include img_l_m(96, 32, 141);
+    @include img_l_m(96, 35, 141);
     font-size: sizem(24);
     font-weight: 500;
     font-stretch: normal;
@@ -291,7 +297,7 @@
   }
 
   .subtitle {
-    @include img_l_m(210, 77, 82);
+    @include img_l_m(210, 85, 82);
     font-size: sizem(25);
     font-weight: 900;
     font-stretch: normal;
@@ -304,7 +310,7 @@
   }
 
   .desc {
-    @include div_l_m(310, 27, 160, 31);
+    @include div_l_m(310, 27, 162, 31);
     font-size: sizem(15);
     font-weight: 500;
     font-stretch: normal;
@@ -317,57 +323,27 @@
   }
 
   .imgs {
-    @include div_c_m(149 * 2 + 12, 440, 200);
-
-    img {
-      width: sizem(150);
-      cursor: pointer;
-      transition: transform 0.3s;
-      &:hover {
-        transform: rotateY(-180deg);
-      }
-    }
+    @include div_c_m(330, 450, 180);
+    flex-wrap: wrap;
+    
+    > div{position: relative;flex: 1 1 40%;height: 35%;
+      margin: sizem(10);}
   }
 
   .dialog {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background-image: url('./menu/bg.jpg');
-    background-size: cover;
-    left: 100%;
-    top: 0;
-    transition: left 1s;
-    z-index: 1000;
+.dialog-content{
+width:sizem(310);max-width: sizem(310);
+height:sizem(500);max-height: sizem(500);
+padding: 0 0 sizem(150) 0;
+  }
 
-    &.active {
-      left: 0;
-    }
 
     .dialog-title {
-      @include img_l_m(80, 0, 33);
       font-size: sizem(20);
-      font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 5.3;
-      letter-spacing: normal;
-      text-align: left;
-      color: #ffffff;
-      white-space: nowrap;
     }
 
     .dialog-subtitle {
-      @include img_l_m(200, 73, 33);
       font-size: sizem(27);
-      font-weight: 900;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.33;
-      letter-spacing: normal;
-      text-align: left;
-      color: #c7a26e;
-      white-space: nowrap;
 
       span {
         color: #fff;
@@ -375,101 +351,42 @@
     }
 
     .dialog-label {
-      @include div_l_m(310, 25, 162, 33);
-      padding-left: sizem(5);
       font-size: sizem(15);
-      font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 2.15;
-      letter-spacing: normal;
-      text-align: left;
-      color: #ffffff;
-      background-color: #c7a26e;
-      white-space: nowrap;
     }
 
     .dialog-desc {
-      @include img_l_m(310, 203, 33);
       font-size: sizem(15);
-      font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 2.13;
-      letter-spacing: normal;
-      text-align: left;
-      color: #ffffff;
-      // white-space: nowrap;
+    width: 100%;
     }
 
     .dialog-work {
-      @include img_l_m(310, 400, 33);
       font-size: sizem(15);
-      font-weight: 900;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.37;
-      letter-spacing: sizem(0.3);
-      text-align: left;
-      color: #c7a26e;
-      // white-space: nowrap;
     }
 
     .dialog-imgs {
-      @include img_l_m(375 - 33, 0, 33);
+      width: 120%;
       height: sizem(143);
+     flex-direction:row;
       top: auto;
-      bottom: sizem(37);
+      bottom: 0;left:-10%;right: auto;
       // padding: 0 sizem(35);
       display: flex;
       align-items: center;
       overflow-x: scroll;
       .img-item {
-        min-width: sizem(206);
+        height: 100%;margin: 0 sizem(-15) 0 sizem(30);
+       /* min-width: sizem(206);
         margin-bottom: 0;
         margin-right: sizem(15);
         border-radius: size(10);
-        position: relative;
+        position: relative;*/
         img {
-          width: 100%;
+          width:auto;height: 100%;
         }
       }
 
       .dialog-name {
-        position: absolute;
-        bottom: sizem(15);
-        right: sizem(15);
-        font-size: sizem(15);
-        font-weight: 500;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.73;
-        letter-spacing: normal;
-        text-align: right;
-        color: #ffffff;
-        // @include img_r_m(132, 370, 64);
-        // font-size: size(22);
-        // font-weight: 500;
-        // font-stretch: normal;
-        // font-style: normal;
-        // line-height: 1.35;
-        // letter-spacing: normal;
-        // text-align: right;
-        // color: #ffffff;
-        // white-space: nowrap;
-      }
-      .dialog-name2 {
-        display: none;
-        // @include img_r_m(132, 805, 64);
-        // font-size: size(22);
-        // font-weight: 500;
-        // font-stretch: normal;
-        // font-style: normal;
-        // line-height: 1.35;
-        // letter-spacing: normal;
-        // text-align: right;
-        // color: #ffffff;
-        // white-space: nowrap;
+        font-size: sizem(12);
       }
     }
 

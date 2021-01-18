@@ -44,16 +44,16 @@
 
 .section2 {
   width: size(1920);
-  height: size(1080);
-  min-height: size(1080);
+  height: 100vh;
+  min-height: size(900);
   max-height: size(1080);
   background-size: cover;
   background-attachment: fixed;
-  overflow: hidden;
+//  overflow: hidden;
 }
 
 .bg-img {
-  width: size(1920);
+  width:  100%;
   height: 100%;
   position: absolute;
   top: 0;
@@ -67,23 +67,30 @@
 }
 
 .bg {
-  @include img_r_pc(1333, 0, 0);
+  @include img_r_pc(1320, 0, 0);
+  height: 100%;
 }
 
 .img1 {
   @include img_l_pc(520, 27, 187);
+  width: auto;
+  height:99%;
+  top: 2%;
+  z-index: 2;
 }
 
 .title_t {
-  @include img_r_pc(546, 109, 393);
+  @include img_r_pc(530, 109, 393);
+  z-index: 2;
+  top:calc(50% - 22vw);
 }
 
 /* Swipe */
 .swipe {
   width: size(1980 - 119 - 721);
-  height: size(1080 - 289 - 2);
-  top: size(289);
-  right: size(118);
+  height: size(1080 - 400);
+  top:calc(50% - 14vw);
+  right: size(80);
   object-fit: cover;
 }
 
@@ -139,8 +146,8 @@
 }
 
 .complex-item {
-  width: size(238);
-  margin: 15px size(50);
+  width: size(180);
+  margin: size(0) size(60);
 
   &.turn {
     img {
@@ -295,7 +302,9 @@
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    min-height: sizem(504);
+    height:calc(100vh - 63px);
+    min-height: sizem(604);
+    max-height: sizem(750);
     background-size: cover;
     background-attachment: scroll;
   }
@@ -318,12 +327,10 @@
     @include img_r_m(375, 0, 0);
   }
 
-  .img1 {
-    // @include img_l_m(520, 27, 187);
-  }
 
   .title_t {
     @include img_r_m(286, 52, 44);
+    top:calc(50% + ((70 - 302) * 0.266666vw));
   }
 
   /* Swipe */
@@ -331,7 +338,7 @@
     width: sizem(250);
     height: sizem(330);
     // min-height: sizem(750);
-    top: sizem(176);
+    top:calc(50% + ((190 - 302) * 0.266666vw));
     left: 0;
     right: 0;
     margin: 0 auto;

@@ -2,12 +2,12 @@
   <div class="section7">
     <img src="./s7/bg.png" :alt="`${info.caseName}_bgimg`" class="bg-img" v-if="isPC">
     <img src="./mo/w2.png" :alt="`${info.caseName}_bgimg`" class="bg" v-if="isMobile">
-    <img src="./s7/1.png" :alt="`${info.caseName}_img1`" class="img1">
-    <img src="./s7/2.png" :alt="`${info.caseName}_img2`" class="img2">
-    <img src="./s7/3.png" :alt="`${info.caseName}_img3`" class="img3">
-    <img src="./s7/4.png" :alt="`${info.caseName}_img4`" class="img4">
-    <img src="./s7/5.png" :alt="`${info.caseName}_img5`" class="img5">
-    <img src="./s7/6.png" :alt="`${info.caseName}_img6`" class="img6">
+    <img src="./s7/1.png" :alt="`${info.caseName}_img1`" class="img1" data-aos="fade" data-aos-delay="100">
+    <img src="./s7/2.png" :alt="`${info.caseName}_img2`" class="img2" data-aos="fade" data-aos-delay="300">
+    <img src="./s7/3.png" :alt="`${info.caseName}_img3`" class="img3" data-aos="fade" data-aos-delay="500">
+    <div data-aos="fade" data-aos-delay="700" class="img4"><img src="./s7/4.png" :alt="`${info.caseName}_img4`"></div>
+    <img src="./s7/5.png" :alt="`${info.caseName}_img5`" class="img5" data-aos="fade" data-aos-delay="900">
+    <img src="./s7/6.png" :alt="`${info.caseName}_img6`" class="img6" data-aos="fade" data-aos-delay="1100">
   </div>
 </template>
 
@@ -16,7 +16,7 @@
 
 .section7 {
   width: size(1920);
-  height: size(1080);
+  height:100vh;
   min-height: size(900);
   max-height: size(1080);
   background-size: cover;
@@ -40,26 +40,34 @@
 
 .img1 {
   @include img_l_pc(422, 124, 178);
+  top: calc(50% - 21.66vw);
+  //(540 - 124)*100 / 1920
 }
 
 .img2 {
   @include img_l_pc(86, 560, 507);
+  top: calc(50% + 1.04vw);
 }
 
 .img3 {
   @include img_l_pc(128, 330, 669);
+  top: calc(50% - 11vw);
 }
 
 .img4 {
   @include img_l_pc(86, 573, 859);
+  top: calc(50% + 1.719vw);
+  img{width: 100%;}
 }
 
 .img5 {
   @include img_l_pc(322, 233, 812);
+  top: calc(50% - 16vw);
 }
 
 .img6 {
   @include img_r_pc(353, 111, 248);
+  top: calc(50% - 22vw);
 }
 
 @media only screen and (max-width: 1440px) {
@@ -101,7 +109,7 @@
 
   .img4 {
     @include img_l_m(31, 346, 172);
-    transform: rotate(90deg);
+    img{transform: rotate(90deg);}
   }
 
   .img5 {

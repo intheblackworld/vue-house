@@ -2,18 +2,18 @@
   <div class="section8">
     <img src="./s8/bg.png" :alt="`${info.caseName}_bgimg`" class="bg-img" v-if="isPC">
     <img src="./mo/b.png" :alt="`${info.caseName}_bgimg`" class="bg" v-if="isMobile">
-    <div class="title">
+    <div class="title" data-aos="fade-down" data-aos-delay="100">
       公設王牌
     </div>
-    <h1 class="subtitle">
+    <h1 class="subtitle" data-aos="fade-down" data-aos-delay="200">
       頂尖世代層峰會所
     </h1>
-    <div class="desc flex-c">
-      罕見天際私人會所，近760坪花園會館<br />
-      25項頂級休閒公設．3層名流社交場域<br />
-      雲頂層峰視野．凌空百米俯覽城市<br />
-      飯店式管理．盡享大牌隱私尊榮
-    </div>
+    <ul class="desc">
+      <li data-aos="fade-down" data-aos-delay="300">罕見天際私人會所，近760坪花園會館</li>
+      <li data-aos="fade-down" data-aos-delay="400">25項頂級休閒公設．3層名流社交場域</li>
+      <li data-aos="fade-down" data-aos-delay="500">雲頂層峰視野．凌空百米俯覽城市</li>
+      <li data-aos="fade-down" data-aos-delay="600">飯店式管理．盡享大牌隱私尊榮</li>
+    </ul>
     <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
@@ -47,7 +47,7 @@
 
 .section8 {
   width: size(1920);
-  height: size(1080);
+  height:100vh;
   min-height: size(900);
   max-height: size(1080);
   background-size: cover;
@@ -71,6 +71,7 @@
 
 .title {
   @include img_l_pc(180, 334, 118);
+  top: calc(50% - 10.729vw);
   font-size: size(45);
   font-weight: 500;
   font-stretch: normal;
@@ -84,6 +85,7 @@
 
 .subtitle {
   @include img_l_pc(384, 417, 118);
+  top: calc(50% + ((417 - 540) * 0.0520833333333333vw));
   font-size: size(48);
   font-weight: 900;
   font-stretch: normal;
@@ -97,22 +99,26 @@
 
 .desc {
   @include img_l_pc(501, 487, 118);
+  top: calc(50% + ((487 - 540) * 0.0520833333333333vw));
   font-size: size(30);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.15;
+  line-height: 2;
   letter-spacing: normal;
   text-align: left;
   color: #284e62;
   white-space: nowrap;
+  li::before{content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 9' fill='%23c7a578'%3E%3Crect x='0' y='0' width='5' height='5' transform='translate(4 0) rotate(45)'/%3E%3C/svg%3E");
+    width: 0.7em;height: 0.7em;display: inline-block;margin: 0 0.3em 0 0;
+  }
 }
 
 /* Swipe */
 .swipe {
   width: size(1110);
   height: size(625);
-  top: size(221);
+  top: calc(50% + ((221 - 540) * 0.0520833333333333vw));
   right: size(118);
   object-fit: cover;
 }
@@ -302,7 +308,7 @@
   }
 
   .title {
-    @include img_l_m(104, 60, 33);
+    @include img_l_m(104, 60, 40);
     font-size: sizem(24);
     font-weight: 500;
     font-stretch: normal;
@@ -315,7 +321,7 @@
   }
 
   .subtitle {
-    @include img_l_m(208, 107, 33);
+    @include img_l_m(208, 107, 40);
     font-size: sizem(25);
     font-weight: 900;
     font-stretch: normal;
@@ -328,15 +334,8 @@
   }
 
   .desc {
-    @include div_l_m(310, 27, 203, 17);
+    @include div_l_m(310, 27, 155, 40);
     font-size: sizem(16);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.07;
-    letter-spacing: sizem(0.3);
-    text-align: left;
-    color: #284e62;
     // background-color: #685335;
   }
 

@@ -13,7 +13,7 @@
 
 .section4 {
   width: size(1920);
-  height: size(1080);
+  height:100vh;
   min-height: size(900);
   max-height: size(1080);
   background-size: cover;
@@ -51,8 +51,11 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-    min-height: sizem(586);
-    height: sizem(586);
+    height:calc(100vh - 63px);
+    min-height: sizem(604);
+    max-height: sizem(750);
+    position: relative;
+    > div {height: 100%;}
   }
 }
 </style>

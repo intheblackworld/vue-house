@@ -95,25 +95,26 @@ export default {
   z-index: 112;
   top: 30px;
   right: 40px;
-  width: 45px;
-  height: 40px;
+  width:auto;
+  height: auto;
   // background-color: #fff;
   cursor: pointer;
 
   img {
-    width: 100%;
+    width: size(85);
   }
 
   .close {
-    width: size(85);
+    width:100%;
     // margin-top: 20px;
     // margin-right: 0px;
   }
 
   .menu-text {
     position: absolute;
-    top: size(10);
-    right: size(-5);
+    top: calc(50% - 0.8em);
+    right: 0;
+    width: 100%;
     font-size: size(18.2);
     font-weight: 900;
     font-stretch: normal;
@@ -214,8 +215,6 @@ export default {
   display: block;
   // transform: translateX(40%);
 
-  li {
-  }
 
   .list {
     @include img_l_pc(122, 282, 651);
@@ -289,9 +288,6 @@ export default {
     img,
     span {
       display: block;
-    }
-    span {
-      //line-height: 16px;
     }
 
     &:hover {
@@ -426,17 +422,7 @@ export default {
     }
 
     .menu-text {
-      position: absolute;
-      top: sizem(10);
-      right: sizem(3);
       font-size: sizem(11);
-      font-weight: 900;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.47;
-      letter-spacing: normal;
-      text-align: center;
-      color: #ffffff;
     }
 
     svg {

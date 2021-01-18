@@ -2,31 +2,29 @@ import { isMobile } from '../utils/index'
 export default {
   address: '新北市三重區中正北路560巷47號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.929333123806!2d121.46859961500695!3d25.070384183955255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a92cda243cb9%3A0x4e1759be8296a7b6!2z552_5pqY5rC05ry-!5e0!3m2!1szh-TW!2stw!4v1605583844068!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/nC8eknL4TccWz9yE7',
-  phone: '02-2981-0515',
-  fbLink: 'https://www.facebook.com/AQUAVITACITY',
-  fbMessage: 'https://m.me/AQUAVITACITY',
-  caseName: '睿暘水漾',
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d115720.66152808438!2d121.507936!3d24.990917!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x123f7c605c425b02!2z5aSq6Zm95bid5ZyLIOaOpeW-heacg-mkqA!5e0!3m2!1szh-TW!2stw!4v1610955579869!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/YM1x978q4czEANdEA',
+  phone: '02-8668-7373',
+  fbLink: 'https://www.facebook.com/ACEPTW86687373/',
+  fbMessage: 'https://m.me/ACEPTW86687373',
+  caseName: '太陽帝國',
   indigatorLength: 10,
 
   houseInfos: [
-    ['投資興建', '睿暘開發建設',],
-    ['建築設計', '張文正建築師事務所',],
-    ['企劃銷售', '海沃創意行銷',],
-    ['基地面積', '約338.6坪',],
-    ['樓層規劃', '12F/B2、共49戶',],
-    ['樓層高度', '1樓6米；2~12樓3.6米',],
-    ['公設比例', '33.82%',],
-    ['規劃坪數', '18~28坪',],
-    ['基地地址', '新北市三重區疏洪東路二段',],
-    ['接待中心', '新北市三重區中正北路560巷47號',],
+    ['投資興建', '美聯開發股份有限公司',],
+    ['建築設計', '九騰建築師事務所',],
+    ['公設設計', '珩荷空間設計',],
+    ['景觀設計', '澳洲PTW建築師事務所',],
+    ['基地面積', '1128.34坪',],
+    ['營造公司', '昇北營造股份有限公司',],
+    ['企劃銷售', '新富利廣告有限公司',],
+    ['樓層規劃', '地下6層',],
   ],
 
   gtmCode: ['WG7P8LC'], // 可放置多個
-  recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
-  recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
-  recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
+  recaptcha_site_key_v2: '6LfGUjEaAAAAANYvhZQx5imGm23pRt0V-rOvkpNC',
+  recaptcha_site_key: '6LfGUjEaAAAAAFR9F5m6Lg1RfS-D07l64KWmoLcK', // recaptcha v3
+  recaptcha_user_token: '6LfGUjEaAAAAAFR9F5m6Lg1RfS-D07l64KWmoLcK',
   order: {
     title: '立即預約',
     subTitle: ''
