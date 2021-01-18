@@ -17,7 +17,7 @@
 .section4 {
   width: size(1920);
   height: size(1100);
-  overflow: hidden;
+  //overflow: hidden;
   position: relative;
   background-image: linear-gradient(
     to bottom,

@@ -580,14 +580,6 @@ export default {
           // name: '台北101',
         },
         {
-          img: require('../works/1/2.jpg'),
-          // name: '台北101',
-        },
-        {
-          img: require('../works/1/3.jpg'),
-          // name: '台北101',
-        },
-        {
           img: require('../works/1/4.jpg'),
           // name: '台北101',
         },
