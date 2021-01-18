@@ -2,6 +2,7 @@
   <div>
     <div
       class="contact-info"
+      id="contact-info"
     >
       <img
         class="logo"
@@ -283,12 +284,12 @@ export default {
 @media only screen and (max-width: 767px) {
   .contact-info {
     display: flex;
-    width: 100%;
+    width: sizem(360);
     height: auto;
     padding: 40px;
     transform: none;
     position: static;
-    margin: 0;
+    margin: 0 auto;
 
     .logo {
       width: $contact_logo_mobile_width;

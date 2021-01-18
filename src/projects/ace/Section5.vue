@@ -27,16 +27,35 @@
       <div class="dialog-label flex-ac" v-html="dialogData.label"></div>
       <div class="dialog-desc" v-html="dialogData.desc"></div>
       <div class="dialog-work" v-html="dialogData.work"></div>
-      <div class="dialog-imgs">
+      <div class="dialog-imgs" v-if="isPC">
         <img :src="dialogData.imgs[0].img" :alt="`${info.caseName}_img`">
         <img :src="dialogData.imgs[1].img" :alt="`${info.caseName}_img`">
         <div class="dialog-name1" v-html="dialogData.imgs[0].name"></div>
         <div class="dialog-name2" v-html="dialogData.imgs[1].name"></div>
       </div>
+      <div class="dialog-imgs" v-if="isMobile">
+        <div class="img-item">
+          <img :src="dialogData.imgs[0].img" :alt="`${info.caseName}_img`">
+          <div class="dialog-name" v-html="dialogData.imgs[0].name"></div>
+        </div>
+
+        <div class="img-item">
+          <img :src="dialogData.imgs[1].img" :alt="`${info.caseName}_img`">
+          <div class="dialog-name" v-html="dialogData.imgs[1].name"></div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
-
+<style lang="scss">
+.dialog-subtitle {
+  color: #c7a26e;
+  span {
+    font-family: "Noto Serif TC", serif;
+    color: #fff;
+  }
+}
+</style>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
@@ -326,12 +345,12 @@
     }
 
     .dialog-title {
-      @include img_l_pc(145, 200, 325);
-      font-size: size(37);
+      @include img_l_m(80, 0, 33);
+      font-size: sizem(20);
       font-weight: 500;
       font-stretch: normal;
       font-style: normal;
-      line-height: 5.56;
+      line-height: 5.3;
       letter-spacing: normal;
       text-align: left;
       color: #ffffff;
@@ -339,15 +358,15 @@
     }
 
     .dialog-subtitle {
-      @include img_l_pc(288, 334, 325);
-      font-size: size(48);
+      @include img_l_m(200, 73, 33);
+      font-size: sizem(27);
       font-weight: 900;
       font-stretch: normal;
       font-style: normal;
-      line-height: 1.18;
+      line-height: 1.33;
       letter-spacing: normal;
       text-align: left;
-      color: #c4a06d;
+      color: #c7a26e;
       white-space: nowrap;
 
       span {
@@ -356,8 +375,9 @@
     }
 
     .dialog-label {
-      @include div_l_pc(615, 47, 473, 325);
-      font-size: size(30);
+      @include div_l_m(310, 25, 162, 33);
+      padding-left: sizem(5);
+      font-size: sizem(15);
       font-weight: 500;
       font-stretch: normal;
       font-style: normal;
@@ -370,69 +390,93 @@
     }
 
     .dialog-desc {
-      @include img_l_pc(584, 544, 325);
-      font-size: size(24);
+      @include img_l_m(310, 203, 33);
+      font-size: sizem(15);
       font-weight: 500;
       font-stretch: normal;
       font-style: normal;
-      line-height: 2.02;
-      letter-spacing: size(-0.48);
+      line-height: 2.13;
+      letter-spacing: normal;
       text-align: left;
       color: #ffffff;
       // white-space: nowrap;
     }
 
     .dialog-work {
-      @include img_l_pc(580, 787, 325);
-      font-size: size(27.1);
+      @include img_l_m(310, 400, 33);
+      font-size: sizem(15);
       font-weight: 900;
       font-stretch: normal;
       font-style: normal;
-      line-height: 1.48;
-      letter-spacing: size(0.54);
+      line-height: 1.37;
+      letter-spacing: sizem(0.3);
       text-align: left;
       color: #c7a26e;
       // white-space: nowrap;
     }
 
     .dialog-imgs {
-      @include img_l_pc(600, 115, 985);
-      img {
-        width: 100%;
-        margin-bottom: size(20);
-        border-radius: size(45);
+      @include img_l_m(375 - 33, 0, 33);
+      height: sizem(143);
+      top: auto;
+      bottom: sizem(37);
+      // padding: 0 sizem(35);
+      display: flex;
+      align-items: center;
+      overflow-x: scroll;
+      .img-item {
+        min-width: sizem(206);
+        margin-bottom: 0;
+        margin-right: sizem(15);
+        border-radius: size(10);
+        position: relative;
+        img {
+          width: 100%;
+        }
       }
 
-      .dialog-name1 {
-        @include img_r_pc(132, 370, 64);
-        font-size: size(22);
+      .dialog-name {
+        position: absolute;
+        bottom: sizem(15);
+        right: sizem(15);
+        font-size: sizem(15);
         font-weight: 500;
         font-stretch: normal;
         font-style: normal;
-        line-height: 1.35;
+        line-height: 1.73;
         letter-spacing: normal;
         text-align: right;
         color: #ffffff;
-        white-space: nowrap;
+        // @include img_r_m(132, 370, 64);
+        // font-size: size(22);
+        // font-weight: 500;
+        // font-stretch: normal;
+        // font-style: normal;
+        // line-height: 1.35;
+        // letter-spacing: normal;
+        // text-align: right;
+        // color: #ffffff;
+        // white-space: nowrap;
       }
       .dialog-name2 {
-        @include img_r_pc(132, 805, 64);
-        font-size: size(22);
-        font-weight: 500;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.35;
-        letter-spacing: normal;
-        text-align: right;
-        color: #ffffff;
-        white-space: nowrap;
+        display: none;
+        // @include img_r_m(132, 805, 64);
+        // font-size: size(22);
+        // font-weight: 500;
+        // font-stretch: normal;
+        // font-style: normal;
+        // line-height: 1.35;
+        // letter-spacing: normal;
+        // text-align: right;
+        // color: #ffffff;
+        // white-space: nowrap;
       }
     }
 
     .dialog-close {
-      width: size(61);
-      top: size(40);
-      right: size(49);
+      width: sizem(30);
+      top: sizem(33);
+      right: sizem(36);
       position: absolute;
       cursor: pointer;
     }

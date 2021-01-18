@@ -9,41 +9,18 @@
         <h3 class="title">{{order.title}}</h3>
         <div class="subtitle">{{order.subTitle}}</div>
       </div> -->
-      <div
-        class="order-title"
-        v-html="order.title"
-        data-aos="fade-down"
-        data-aos-delay="0"
-      ></div>
-      <div
-        class="order-subtitle"
-        v-html="order.subTitle"
-      ></div>
+      <div class="order-title" v-html="order.title" data-aos="fade-down" data-aos-delay="0"></div>
+      <div class="order-subtitle" v-html="order.subTitle"></div>
       <div class="order">
         <div class="form">
           <div class="group">
-            <div
-              class="row"
-              data-aos="fade-down"
-              data-aos-delay="100"
-            >
+            <div class="row" data-aos="fade-down" data-aos-delay="100">
               <label>姓名</label>
-              <el-input
-                v-model="form.name"
-                placeholder
-              ></el-input>
+              <el-input v-model="form.name" placeholder></el-input>
             </div>
-            <div
-              class="row"
-              data-aos="fade-down"
-              data-aos-delay="200"
-            >
+            <div class="row" data-aos="fade-down" data-aos-delay="200">
               <label>手機</label>
-              <el-input
-                v-model="form.phone"
-                type="number"
-                placeholder
-              ></el-input>
+              <el-input v-model="form.phone" type="number" placeholder></el-input>
             </div>
             <!-- <div class="row" data-aos="fade-down"
         data-aos-delay="300">
@@ -87,65 +64,26 @@
               <label>E-mail</label>
               <el-input v-model="form.email" placeholder></el-input>
             </div> -->
-            <div
-              class="row"
-              data-aos="fade-down"
-              data-aos-delay="300"
-            >
+            <div class="row" data-aos="fade-down" data-aos-delay="300">
               <label>居住城市</label>
-              <el-select
-                v-model="form.city"
-                placeholder
-              >
-                <el-option
-                  v-for="city in cityList"
-                  :key="city.value"
-                  :label="city.label"
-                  :value="city.value"
-                  no-data-text="無數據"
-                ></el-option>
+              <el-select v-model="form.city" placeholder>
+                <el-option v-for="city in cityList" :key="city.value" :label="city.label" :value="city.value" no-data-text="無數據"></el-option>
               </el-select>
             </div>
-            <div
-              class="row"
-              data-aos="fade-down"
-              data-aos-delay="400"
-            >
+            <div class="row" data-aos="fade-down" data-aos-delay="400">
               <label>居住地區</label>
-              <el-select
-                v-model="form.area"
-                placeholder
-              >
-                <el-option
-                  v-for="area in areaList"
-                  :key="area.value"
-                  :label="area.label"
-                  :value="area.value"
-                  no-data-text="請先選擇居住城市"
-                ></el-option>
+              <el-select v-model="form.area" placeholder>
+                <el-option v-for="area in areaList" :key="area.value" :label="area.label" :value="area.value" no-data-text="請先選擇居住城市"></el-option>
               </el-select>
             </div>
           </div>
-          <div
-            class="group"
-            data-aos="fade-down"
-            data-aos-delay="600"
-          >
+          <div class="group" data-aos="fade-down" data-aos-delay="600">
             <div class="row">
-              <el-input
-                type="textarea"
-                :rows="2"
-                placeholder="請輸入您的留言 (選填)"
-                v-model="form.msg"
-              ></el-input>
+              <el-input type="textarea" :rows="2" placeholder="請輸入您的留言 (選填)" v-model="form.msg"></el-input>
             </div>
           </div>
         </div>
-        <div
-          class="control"
-          data-aos="fade-down"
-          data-aos-delay="500"
-        >
+        <div class="control" data-aos="fade-down" data-aos-delay="500">
           <el-checkbox v-model="checked">
             <h3>
               本人知悉並同意
@@ -154,39 +92,14 @@
             </h3>
           </el-checkbox>
         </div>
-        <div
-          style="margin: 0 auto;z-index:2;"
-          v-if="!isMobile"
-          data-aos="fade-down"
-          data-aos-delay="600"
-        >
-          <vue-recaptcha
-            :sitekey="info.recaptcha_site_key_v2"
-            @verify="isVerify = true"
-            :loadRecaptchaScript="true"
-          ></vue-recaptcha>
+        <div style="margin: 0 auto;z-index:2;" v-if="!isMobile" data-aos="fade-down" data-aos-delay="600">
+          <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
         </div>
-        <div
-          style="margin: 0 auto;z-index:2;"
-          v-if="isMobile"
-        >
-          <vue-recaptcha
-            :sitekey="info.recaptcha_site_key_v2"
-            @verify="isVerify = true"
-            :loadRecaptchaScript="true"
-          ></vue-recaptcha>
+        <div style="margin: 0 auto;z-index:2;" v-if="isMobile">
+          <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
         </div>
-        <el-button
-          class="form-submit flex-c"
-          type="primary"
-          :disabled="!checked || !isVerify"
-          @click="submit"
-          :loading="isSubmit"
-        >立即預約</el-button>
-        <Loading
-          :loading="isSubmit"
-          :isOpacity="true"
-        />
+        <el-button class="form-submit flex-c" type="primary" :disabled="!checked || !isVerify" @click="submit" :loading="isSubmit">立即預約</el-button>
+        <Loading :loading="isSubmit" :isOpacity="true" />
       </div>
     </div>
     <ContactInfo />
@@ -261,7 +174,7 @@ export default {
         ),
       })
     },
-    
+
     // alertValidatePhone() {
     //   const h = this.$createElement
     //   this.$notify({
@@ -298,7 +211,7 @@ export default {
       // if (!/1{2}[0-9]{8}$/.test(this.form.phone)) {
       //   this.alertValidatePhone()
       //   this.isSubmit = false
-      //   return 
+      //   return
       // }
       const urlParams = new URLSearchParams(window.location.search)
       const utmSource = urlParams.get('utm_source')
@@ -336,7 +249,7 @@ export default {
       fetch('contact-form.php', {
         method: 'POST',
         body: formData,
-      }).then(response => {
+      }).then((response) => {
         this.isSubmit = false
         if (response.status === 200) {
           window.location.href = 'formThanks'
@@ -368,7 +281,7 @@ export default {
 .order-bg {
   // background-color: $order_bg_color;
   background-image: $order_bg_image;
-  background-repeat:Srepeat;
+  background-repeat: Srepeat;
   position: relative;
   // padding-top: 130px;
   background-size: 100vw auto;
@@ -508,13 +421,27 @@ export default {
     // background-image: $order_bg_image_m;
     background-attachment: initial;
     background-size: cover;
-    padding-top: 40px;
+    padding-top: 0px;
     margin: 0;
     position: relative;
     z-index: 2;
 
     > img {
       display: block;
+    }
+
+    .order-tt {
+      width: sizem(360);
+      height: sizem(100);
+      margin: size(0) auto 0;
+      background: rgba(0, 0, 0, 0.8);
+    }
+    .order-top {
+      width: sizem(360);
+      margin: 0 auto;
+      background: rgba(0, 0, 0, 0.8);
+      position: relative;
+      overflow: hidden;
     }
     .order-title {
       padding-top: 10px;

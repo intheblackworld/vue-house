@@ -1,6 +1,7 @@
 <template>
   <div class="section8">
-    <img src="./s8/bg.png" :alt="`${info.caseName}_bgimg`" class="bg-img">
+    <img src="./s8/bg.png" :alt="`${info.caseName}_bgimg`" class="bg-img" v-if="isPC">
+    <img src="./mo/b.png" :alt="`${info.caseName}_bgimg`" class="bg" v-if="isMobile">
     <div class="title">
       公設王牌
     </div>
@@ -290,166 +291,62 @@
 @media screen and (max-width: 767px) {
   .section8 {
     width: 100vw;
-    height: sizem(1050);
-    min-height: sizem(1050);
-    .bg {
-      width: 100%;
-      max-width: 100%;
-    }
+    height: sizem(529);
+    min-height: sizem(529);
   }
-  .btns {
-    @include img_l_m(204, 115, 85);
-    .btn {
-      width: sizem(204);
-      height: sizem(52);
-      background-color: #ffffff;
-      border-radius: 35px / 35px;
-      margin: 0;
-      margin-bottom: 0;
-      font-size: sizem(24);
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.2;
-      letter-spacing: sizem(0.94);
-      text-align: left;
-      color: #000;
-      cursor: pointer;
-      display: none;
-      &.active {
-        display: flex;
-        color: #fff;
-        background-color: #6e3a1d;
-      }
-    }
+  .bg {
+    @include img_r_m(375, 0, 0);
+    transform: skewX(1deg);
+    transform-origin: bottom;
+    height: sizem(529);
   }
 
-  .label {
-    @include div_r_m(145, 64, 30, 30);
-    border: solid 1.2px #6e3a1d;
-    font-size: sizem(34);
-    font-weight: bold;
+  .title {
+    @include img_l_m(104, 60, 33);
+    font-size: sizem(24);
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(2.6);
+    line-height: 2.33;
+    letter-spacing: normal;
     text-align: left;
-    color: #6e3a1d;
-    border-radius: 40px / 40px;
-  }
-  .title1 {
-    @include img_r_m(138, 635, 129);
-    font-size: sizem(26);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(2);
-    text-align: left;
-    color: #ec6300;
-    white-space: nowrap;
-  }
-
-  .title2 {
-    @include img_r_m(138, 672, 129);
-    font-size: sizem(26);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(2);
-    text-align: left;
-    color: #ec6300;
-    white-space: nowrap;
-  }
-
-  hr {
-    @include img_r_m(280, 710, 43);
-    border: solid sizem(1) #f6ab00;
-  }
-
-  .desc {
-    @include img_r_m(250, 730, 71);
-    font-size: sizem(15);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.78;
-    letter-spacing: sizem(0.61);
-    text-align: j;
-    color: #231815;
-  }
-
-  .txt {
-    @include img_r_m(87, 512, 20);
-    text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
-    font-size: sizem(12);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(1.61);
-    text-align: left;
-    color: #ffffff;
+    color: #285065;
     white-space: nowrap;
   }
 
   .subtitle {
-    @include img_l_m(300, 538, 39);
-    font-size: sizem(18);
-    font-weight: 600;
+    @include img_l_m(208, 107, 33);
+    font-size: sizem(25);
+    font-weight: 900;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(-0.8);
+    line-height: 1.3;
+    letter-spacing: normal;
     text-align: left;
-    color: #000000;
+    color: #685335;
     white-space: nowrap;
   }
 
-  .logobg {
-    // div位置：width: size(656), height: size(708) top: size(113), right: size(182)
-    @include div_r_m(352, 380, 591, 4);
-    // background-image: url('./s1/logobg.png');
-    background-size: cover;
-  }
-
-  .b1 {
-    @include img_l_m(130, -20, -20);
-    animation: an2 1.5s infinite alternate;
-  }
-
-  .b2 {
-    @include img_l_m(300, 570, -52);
-    animation: an 2.5s infinite alternate;
-  }
-
-  .b3 {
-    @include img_l_m(300, 700, 350);
-    animation: an 2.5s infinite alternate;
-  }
-
-  .b4 {
-    @include img_r_m(62, 880, 80);
-    animation: an 4.5s infinite alternate;
-  }
-
-  .img1 {
-    display: none;
-  }
-
-  .img2 {
-    @include img_r_m(548, 1250, -280);
-    animation: an 2.5s infinite alternate;
+  .desc {
+    @include div_l_m(310, 27, 203, 17);
+    font-size: sizem(16);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.07;
+    letter-spacing: sizem(0.3);
+    text-align: left;
+    color: #284e62;
+    // background-color: #685335;
   }
 
   /* Swipe */
   .swipe {
-    width: 100%;
-    height: sizem(330);
+    width: sizem(311);
+    height: sizem(175);
     // min-height: sizem(750);
-    top: sizem(188);
-    left: sizem(0);
+    top: sizem(309);
+    left: sizem(32);
     object-fit: cover;
   }
 
@@ -501,13 +398,13 @@
   .swipe-item {
     width: 100%;
     z-index: 0;
-    height: sizem(330);
+    height: sizem(175);
     bottom: 0;
     left: 0;
 
     img {
       width: 100%;
-      height: sizem(330);
+      height: sizem(175);
       bottom: 0;
       left: 0;
     }
@@ -593,28 +490,28 @@
     padding: 0px;
     z-index: 1;
     position: absolute;
-    top: sizem(115);
+    top: sizem(355);
 
     .prev-btn,
     .next-btn {
-      width: sizem(46);
-      height: sizem(87);
+      width: sizem(26);
+      height: sizem(52);
       cursor: pointer;
-      background-color: #ec6300;
+      // background-color: #ec6300;
       img {
-        width: 10px;
+        width: 100%;
       }
     }
 
-    .prev-btn {
-      border-top-right-radius: 25px;
-      border-bottom-right-radius: 25px;
-    }
+    // .prev-btn {
+    //   border-top-right-radius: 25px;
+    //   border-bottom-right-radius: 25px;
+    // }
 
-    .next-btn {
-      border-top-left-radius: 25px;
-      border-bottom-left-radius: 25px;
-    }
+    // .next-btn {
+    //   border-top-left-radius: 25px;
+    //   border-bottom-left-radius: 25px;
+    // }
   }
 }
 </style>

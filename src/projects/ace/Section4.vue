@@ -1,6 +1,10 @@
 <template>
   <div class="section4">
-    <img src="./s4/bg.jpg" :alt="`${info.caseName}_bgimg`" class="bg-img">
+    <img src="./s4/bg.jpg" :alt="`${info.caseName}_bgimg`" class="bg-img" v-if="isPC">
+    <div v-else>
+      <Map :bgSrc="require('./s4/bg.jpg')" :hand="require('./mo/4/小手.png')">
+      </Map>
+    </div>
   </div>
 </template>
 
@@ -56,12 +60,16 @@
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
 import info from '@/info'
+import Map from '@/components/Map.vue'
 import slider from '@/mixins/slider.js'
 
 export default {
   name: 'section4',
 
   mixins: [slider],
+  components: {
+    Map,
+  },
 
   data() {
     return {

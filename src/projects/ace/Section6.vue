@@ -89,6 +89,10 @@
   @include img_l_pc(646, 45, 328);
 }
 
+.logoall {
+  @include img_r_pc(384, 743, 478);
+}
+
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -110,7 +114,9 @@
   }
 
   .bg {
-    @include img_r_m(374, 0, 0);
+    @include img_r_m(375, 0, 0);
+    transform: skewX(0.5deg);
+    transform-origin: bottom;
     height: sizem(992);
   }
 
@@ -154,7 +160,11 @@
   }
 
   .img {
-    @include img_l_m(310, 35, 33);
+    @include img_l_m(310, 35, 28);
+  }
+
+  .logoall {
+    @include img_r_m(310, 866, 32);
   }
 }
 </style>

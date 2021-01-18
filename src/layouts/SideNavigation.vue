@@ -22,9 +22,9 @@
         <div class="hr" data-aos="zoom-in-down" data-aos-delay="200"></div>
         <div class="content">
           <img src="@/assets/img/contact-logo.png" alt="" class="menu-logo" data-aos="fade-down" data-aos-delay="200">
-          <img src="@/projects/ace/menu/f.png" alt="" class="fb" data-aos="fade-down" data-aos-delay="400">
-          <img src="@/projects/ace/menu/line.png" alt="" class="line" data-aos="fade-down" data-aos-delay="500">
-          <img src="@/projects/ace/menu/phone.png" alt="" class="phone" data-aos="fade-down" data-aos-delay="600">
+          <img src="@/projects/ace/menu/f.png" alt="" class="fb" data-aos="fade-down" data-aos-delay="400" @click="toggleSidebar" v-scroll-to="{ element: '#contact-info', offset: 0 }">
+          <img src="@/projects/ace/menu/line.png" alt="" class="line" data-aos="fade-down" data-aos-delay="500" @click="toggleSidebar" v-scroll-to="{ element: '#contact-info', offset: 0 }">
+          <img src="@/projects/ace/menu/phone.png" alt="" class="phone" data-aos="fade-down" data-aos-delay="600" @click="toggleSidebar" v-scroll-to="{ element: '#contact-info', offset: 0 }">
         </div>
       </ul>
     </div>
@@ -452,13 +452,41 @@ export default {
     top: $nav_phone_height;
     height: calc(100vh - #{$nav_phone_height});
     text-align: center;
-    transition: all 1s ease-in-out;
+    transition: all .3s ease-in-out;
     display: block;
     transform: translateX(40%);
 
     li {
       height: 50px;
       margin-bottom: 5px;
+    }
+
+    .list {
+      @include img_l_m(170, 100, 20);
+    }
+
+    .hr {
+      @include div_c_m(25, 500, 70);
+      border-left: 3px solid #c39f6d;
+    }
+
+    .menu-logo {
+      @include img_l_m(130, 200, 210);
+    }
+
+    .fb {
+      @include img_l_m(34, 400, 201);
+      cursor: pointer;
+    }
+
+    .line {
+      @include img_l_m(34, 400, 251);
+      cursor: pointer;
+    }
+
+    .phone {
+      @include img_l_m(34, 400, 300);
+      cursor: pointer;
     }
 
     .link {

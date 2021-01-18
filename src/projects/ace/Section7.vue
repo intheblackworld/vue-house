@@ -1,6 +1,7 @@
 <template>
   <div class="section7">
-    <img src="./s7/bg.png" :alt="`${info.caseName}_bgimg`" class="bg-img">
+    <img src="./s7/bg.png" :alt="`${info.caseName}_bgimg`" class="bg-img" v-if="isPC">
+    <img src="./mo/w2.png" :alt="`${info.caseName}_bgimg`" class="bg" v-if="isMobile">
     <img src="./s7/1.png" :alt="`${info.caseName}_img1`" class="img1">
     <img src="./s7/2.png" :alt="`${info.caseName}_img2`" class="img2">
     <img src="./s7/3.png" :alt="`${info.caseName}_img3`" class="img3">
@@ -77,107 +78,38 @@
 @media screen and (max-width: 767px) {
   .section7 {
     width: 100vw;
-    height: sizem(453 + 28);
-    min-height: sizem(453 + 28);
-    .bg {
-      width: 100%;
-      max-width: 100%;
-    }
+    height: sizem(751);
+    min-height: sizem(751);
   }
 
-  .map {
-    width: auto;
-    height: sizem(453);
-    top: 0;
-    left: 0;
-  }
-
-  .icon {
-    //  @include img_l_m(50, 199, 290);
-    height: sizem(70);
-    left: sizem(300);
-    top: sizem(210);
-    z-index: 2;
-    animation: none;
-  }
-
-  .b1 {
-    @include img_l_m(55, 250, 110);
-    z-index: 5;
-    transform: translate(10%, 10%);
-  }
-
-  .b2 {
-    @include img_l_m(100, -150, 100);
-    z-index: 5;
-    transform: translate(0, 20%);
-  }
-
-  .b3 {
-    display: none;
-  }
-
-  .b4 {
-    display: none;
+  .bg {
+    @include img_r_m(375, 0, 0);
+    height: sizem(751);
   }
 
   .img1 {
-    display: none;
+    @include img_l_m(153, 29, 53);
   }
 
   .img2 {
-    display: none;
+    @include img_l_m(31, 186, 172);
   }
 
-  .logobg1 {
-    // div位置：width: size(656), height: size(708) top: size(113), right: size(182)
-    @include div_r_m(144, 156, 149, 119);
-    // background-image: url('./s1/logobg.png');
-    background-size: cover;
-    z-index: 1;
-    color: #000;
-    h3 {
-      margin-top: sizem(-20);
-      margin-left: sizem(-10);
-    }
+  .img3 {
+    @include img_l_m(45, 83, 233);
   }
 
-  .dialog {
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1000;
-    background-color: #f3e12b;
-    overflow: scroll;
-    .dialog-content {
-      height: 100%;
-      width: sizem(1138);
-      position: relative;
-    }
-    .dialog-map {
-      width: sizem(1138);
-      height: 100%;
-      background-color: #f3e12b;
-    }
-    .dialog-icon {
-      width: auto;
-      height: sizem(119);
-      position: absolute;
-      top: 46%;
-      left: 40%;
-      animation: heartbeat 0.5s ease-in alternate infinite;
-      // background-color: #fff;
-    }
+  .img4 {
+    @include img_l_m(31, 346, 172);
+    transform: rotate(90deg);
+  }
 
-    .close {
-      width: 35px;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 5px;
-      position: fixed;
-      right: 10px;
-      top: 10px;
-    }
+  .img5 {
+    @include img_l_m(116, 396,  33);
+  }
+
+  .img6 {
+    @include img_r_m(145, 396, 51);
   }
 }
 </style>
