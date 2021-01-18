@@ -134,7 +134,7 @@ export default {
       }
 
       if (destination.isFirst === true && direction === 'up' && this.isMobile) {
-        this.$refs.fullPage.api.setResponsive(false)
+        this.$refs.fullPage.api.setResponsive(true)
       }
     },
 
