@@ -70,7 +70,7 @@
           用<span>真心</span>打造住宅，用<span>真情</span>構築城市
         </div>
         <!-- <img src="../works/3/1.jpg" alt="" class="img"> -->
-        <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+        <div class="swipe" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
           <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
             <transition-group name="swipe-fade" mode="out-in">
               <div v-for="(slide, i) in slideList2" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -1062,15 +1062,15 @@ export default {
       ],
       slideList2: [
         {
-          img: require('../works/1/1.jpg'),
+          img: require('../works/2/1.jpg'),
           // name: '台北101',
         },
         {
-          img: require('../works/1/4.jpg'),
+          img: require('../works/2/2.jpg'),
           // name: '台北101',
         },
         {
-          img: require('../works/1/5.jpg'),
+          img: require('../works/2/3.jpg'),
           // name: '台北101',
         },
         // {
