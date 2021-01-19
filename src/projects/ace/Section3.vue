@@ -2,9 +2,9 @@
   <div class="section3">
     <img src="./s3/bg.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isPC">
     <img src="./mo/b.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isMobile">
-    <img src="./s3/img_r.png" :alt="`${info.caseName}_img_r`" class="img_r" data-aos="fade-down" data-aos-delay="100" @click="isDialog = true">
+    <img src="./s3/img_r.png" :alt="`${info.caseName}_img_r`" class="img_r" data-aos="fade-down" data-aos-delay="100" @click="showDialog">
     <img src="./s3/img_l.jpg" :alt="`${info.caseName}_img_l`" class="img_l" data-aos="fade-down" data-aos-delay="400">
-    <div class="icon" @click="isDialog = true"></div>
+    <div class="icon" @click="showDialog"></div>
     <div class="title" data-aos="fade-down" data-aos-delay="100">
       地段王牌
     </div>
@@ -17,7 +17,7 @@
     <transition name="swipe-fade" mode="out-in">
       <div class="dialog" v-if="isDialog">
         <img class="close" @click="isDialog = false" src="./all/close.png" alt="close">
-        <img src="./s3/img_r.png" :alt="`${info.caseName}_img_r`" class="dialog-map" data-aos="fade-down" data-aos-delay="100" @click="isDialog = true">
+        <img src="./s3/img_r.png" :alt="`${info.caseName}_img_r`" class="dialog-map" data-aos="fade-down" data-aos-delay="100">
       </div>
     </transition>
   </div>
@@ -235,7 +235,13 @@ export default {
       isDialog: false,
     }
   },
-  methods: {},
+  methods: {
+    showDialog() {
+      if (this.isMobile) {
+        this.isDialog = true
+      }
+    }
+  },
 
   created() {},
 
