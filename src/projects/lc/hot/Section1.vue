@@ -37,7 +37,7 @@
             <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
             <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
           </div> -->
-            <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200">
+            <div class="pagination absolute flex-ac">
               <div :class="`pagination-dot`" v-for="(slide, index) in slideList2" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
             </div>
           </div>
@@ -70,10 +70,10 @@
           用<span>真心</span>打造住宅，用<span>真情</span>構築城市
         </div>
         <!-- <img src="../works/3/1.jpg" alt="" class="img"> -->
-        <div class="swipe" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+        <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
           <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
             <transition-group name="swipe-fade" mode="out-in">
-              <div v-for="(slide, i) in slideList2" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+              <div v-for="(slide, i) in slideList3" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
                 <img :src="slide.img" :alt="slide.name">
                 <div class="name absolute" v-html="slide.name"></div>
               </div>
@@ -83,7 +83,7 @@
             <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
           </div> -->
             <div class="pagination absolute flex-ac">
-              <div :class="`pagination-dot`" v-for="(slide, index) in slideList2" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+              <div :class="`pagination-dot`" v-for="(slide, index) in slideList3" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
             </div>
           </div>
         </div>
@@ -407,7 +407,7 @@
     width: 20px;
     height: 20px;
     border-radius: 20px;
-    box-shadow: 0 0 0 1px #fff;
+    box-shadow: 0 0 0 1px #333;
     position: relative;
     background-color: rgba(255, 255, 255, 0.38);
     transition: all 0.5s;
@@ -417,7 +417,7 @@
       width: 60%;
       height: 60%;
       display: block;
-      background: #fff;
+      background: #333;
       border-radius: 20px;
       opacity: 1;
       position: absolute;
@@ -434,7 +434,7 @@
         width: 100%;
         height: 100%;
         display: block;
-        background: #fff;
+        background: #333;
         border-radius: 20px;
         opacity: 1;
         position: absolute;
@@ -844,7 +844,7 @@
       width: 20px;
       height: 20px;
       border-radius: 20px;
-      box-shadow: 0 0 0 1px #fff;
+      box-shadow: 0 0 0 1px #333;
       position: relative;
       background-color: rgba(255, 255, 255, 0.38);
       transition: all 0.5s;
@@ -854,7 +854,7 @@
         width: 60%;
         height: 60%;
         display: block;
-        background: #fff;
+        background: #333;
         border-radius: 20px;
         opacity: 1;
         position: absolute;
@@ -871,7 +871,7 @@
           width: 100%;
           height: 100%;
           display: block;
-          background: #fff;
+          background: #333;
           border-radius: 20px;
           opacity: 1;
           position: absolute;
@@ -1078,6 +1078,24 @@ export default {
         //   // name: '台北101',
         // },
       ],
+      slideList3: [
+        {
+          img: require('../works/3/1.jpg'),
+          // name: '台北101',
+        },
+        // {
+        //   img: require('../works/1/6.jpg'),
+        //   // name: '台北101',
+        // },
+      ],
+    }
+  },
+
+  watch: {
+    currentIndex(index) {
+      if (index === 1 || index === 3) {
+        this.slideIndex = 0
+      }
     }
   },
 
