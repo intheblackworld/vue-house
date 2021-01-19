@@ -2,7 +2,7 @@
   <div class="section3">
     <img src="./s3/bg.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isPC">
     <img src="./mo/b.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isMobile">
-    <img src="./s3/img_r.png" :alt="`${info.caseName}_img_r`" class="img_r" data-aos="fade-down" data-aos-delay="100" @click="isDialog = true"> 
+    <img src="./s3/img_r.png" :alt="`${info.caseName}_img_r`" class="img_r" data-aos="fade-down" data-aos-delay="100" @click="isDialog = true">
     <img src="./s3/img_l.jpg" :alt="`${info.caseName}_img_l`" class="img_l" data-aos="fade-down" data-aos-delay="400">
     <div class="icon" @click="isDialog = true"></div>
     <div class="title" data-aos="fade-down" data-aos-delay="100">
@@ -16,7 +16,8 @@
     </div>
     <transition name="swipe-fade" mode="out-in">
       <div class="dialog" v-if="isDialog">
-        <img src="./s3/img_r.png" :alt="`${info.caseName}_img_r`" class="img_r" data-aos="fade-down" data-aos-delay="100" @click="isDialog = true"> 
+        <img class="close" @click="isDialog = false" src="./all/close.png" alt="close">
+        <img src="./s3/img_r.png" :alt="`${info.caseName}_img_r`" class="dialog-map" data-aos="fade-down" data-aos-delay="100" @click="isDialog = true">
       </div>
     </transition>
   </div>
@@ -42,18 +43,18 @@
 
 .img_r {
   @include img_r_pc(1015, 79, 128);
-  top:calc(50% - 25vw);
+  top: calc(50% - 25vw);
 }
 
 .img_l {
   @include img_l_pc(518, 461, 243);
-  top:calc(50% - 0.5vw);
+  top: calc(50% - 0.5vw);
 }
 
 .title {
   @include img_l_pc(518, 239, 186);
   font-size: size(45);
-  top:calc(50% - 12.5vw);
+  top: calc(50% - 12.5vw);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -66,7 +67,7 @@
 
 .subtitle {
   @include img_l_pc(518, 295, 186);
-  top:calc(50% - 9vw);
+  top: calc(50% - 9vw);
   font-size: size(48);
   font-weight: 900;
   font-stretch: normal;
@@ -80,7 +81,7 @@
 
 .desc {
   @include div_l_pc(574, 43, 392, 187);
-  top:calc(50% - 4vw);
+  top: calc(50% - 4vw);
   font-size: size(30);
   font-weight: 500;
   font-stretch: normal;
@@ -125,20 +126,28 @@
   .img_l {
     @include img_l_m(310, 447, 33);
   }
-.icon{
+  .icon {
     @include img_r_m(45, 180, 165);
     height: sizem(45);
     background: #68533599;
     border-radius: 50%;
-  
-  
-  &::before,
-  &::after{
-    content: "";width: 60%;display: block;position: absolute;top: 50%;
-    height: sizem(3);transform: translateY(-50%);left: 20%;
-    background: #fff;transform-origin:50% 50%;
-  }
-  &::before{transform:translateY(-50%) rotate(90deg)}
+
+    &::before,
+    &::after {
+      content: '';
+      width: 60%;
+      display: block;
+      position: absolute;
+      top: 50%;
+      height: sizem(3);
+      transform: translateY(-50%);
+      left: 20%;
+      background: #fff;
+      transform-origin: 50% 50%;
+    }
+    &::before {
+      transform: translateY(-50%) rotate(90deg);
+    }
   }
   .title {
     @include img_l_m(96, 328, 33);
@@ -178,6 +187,35 @@
     color: #ffffff;
     background-color: #685335;
   }
+
+  .dialog {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: scroll;
+
+    .slide-content {
+      left: 0;
+    }
+
+    .dialog-map {
+      width: auto;
+      height: 100vh;
+      background-color: #fff;
+    }
+
+    .close {
+      width: 35px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 5px;
+      position: fixed;
+      right: 10px;
+      top: 10px;
+    }
+  }
 }
 </style>
 <script>
@@ -194,17 +232,14 @@ export default {
       isPC,
       isMobile,
       isTablet,
+      isDialog: false,
     }
   },
-  methods: {
-  },
+  methods: {},
 
-  created() {
+  created() {},
 
-  },
-
-  mounted() {
-  },
+  mounted() {},
 
   computed: {},
 }

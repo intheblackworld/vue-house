@@ -15,8 +15,8 @@
       買名牌包 不如收藏精品宅
     </div>
     <div class="imgs flex-ac flex-jb wrap">
-        <div @click="showDialog(0)" data-aos="fade-down" data-aos-delay="400"><img src="./s5/1.jpg" :alt="`${info.caseName}_img1`"></div>
-        <div @click="showDialog(1)" data-aos="fade-down" data-aos-delay="500"><img src="./s5/2.jpg" :alt="`${info.caseName}_img2`"></div>
+      <div @click="showDialog(0)" data-aos="fade-down" data-aos-delay="400"><img src="./s5/1.jpg" :alt="`${info.caseName}_img1`"></div>
+      <div @click="showDialog(1)" data-aos="fade-down" data-aos-delay="500"><img src="./s5/2.jpg" :alt="`${info.caseName}_img2`"></div>
       <div @click="showDialog(2)" data-aos="fade-down" data-aos-delay="600"><img src="./s5/3.jpg" :alt="`${info.caseName}_img3`"></div>
       <div @click="showDialog(3)" data-aos="fade-down" data-aos-delay="700"><img src="./s5/4.jpg" :alt="`${info.caseName}_img4`"></div>
     </div>
@@ -29,8 +29,12 @@
         <div class="dialog-desc" v-html="dialogData.desc"></div>
         <div class="dialog-work" v-html="dialogData.work"></div>
         <div class="dialog-imgs" v-if="isPC">
-          <div><img :src="dialogData.imgs[0].img" :alt="`${info.caseName}_img`"><div class="dialog-name" v-html="dialogData.imgs[0].name"></div></div>
-          <div><img :src="dialogData.imgs[1].img" :alt="`${info.caseName}_img`"><div class="dialog-name" v-html="dialogData.imgs[1].name"></div></div>
+          <div><img :src="dialogData.imgs[0].img" :alt="`${info.caseName}_img`">
+            <div class="dialog-name" v-html="dialogData.imgs[0].name"></div>
+          </div>
+          <div><img :src="dialogData.imgs[1].img" :alt="`${info.caseName}_img`">
+            <div class="dialog-name" v-html="dialogData.imgs[1].name"></div>
+          </div>
 
         </div>
         <div class="dialog-imgs" v-if="isMobile">
@@ -52,7 +56,7 @@
 .dialog-subtitle {
   color: #c7a26e;
   span {
-    font-family: "Noto Serif TC", serif;
+    font-family: 'Noto Serif TC', serif;
     color: #fff;
   }
 }
@@ -72,8 +76,8 @@
 
 .bg {
   @include img_r_pc(1655, 0, 0);
-  left:50%;transform: translateX(-50%)
-
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .title {
@@ -118,14 +122,14 @@
 .imgs {
   @include div_c_pc(302 * 4 + 28 * 3, 430, 385);
 
-  div{
+  div {
     width: size(302);
     cursor: pointer;
     img {
-    width:100%;
-    transition: transform 1s;
-  }
-    &:hover img{
+      width: 100%;
+      transition: transform 1s;
+    }
+    &:hover img {
       transform: rotateY(-360deg);
     }
   }
@@ -143,29 +147,31 @@
   z-index: 1000;
   overflow: auto;
   display: flex;
-  align-items:center;
-  justify-content:center;
+  align-items: center;
+  justify-content: center;
 
   &.active {
     left: 0;
   }
-.dialog-content{position:relative;
-width: 90%;max-width: size(1270);
-height:90%;max-height: size(852);
-padding: 0 30% 0 0;
-  background-color: #0000;
-  align-items:center;
-    align-content:center;
-  justify-content:flex-start;
-  display: flex;
-  flex-wrap: wrap;
-  
-  
+  .dialog-content {
+    position: relative;
+    width: 90%;
+    max-width: size(1270);
+    height: 90%;
+    max-height: size(852);
+    padding: 0 30% 0 0;
+    background-color: #0000;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+
     font-stretch: normal;
     font-style: normal;
     text-align: justify;
     letter-spacing: normal;
-    line-height:1.6;
+    line-height: 1.6;
     color: #ffffff;
   }
   .dialog-title {
@@ -178,7 +184,8 @@ padding: 0 30% 0 0;
   .dialog-subtitle {
     width: 100%;
     font-size: size(48);
-    font-weight: 900;line-height:1.2;
+    font-weight: 900;
+    line-height: 1.2;
     color: #c4a06d;
 
     span {
@@ -191,7 +198,8 @@ padding: 0 30% 0 0;
     font-weight: 500;
     background-color: #c7a26e;
     white-space: nowrap;
-    padding: 0 0.5em;margin: 0.7em 0;
+    padding: 0 0.5em;
+    margin: 0.7em 0;
   }
 
   .dialog-desc {
@@ -220,18 +228,22 @@ padding: 0 30% 0 0;
     width: auto;
     height: 100%;
     display: flex;
-    flex-direction:column;
-    justify-content:space-between;
-    > div{position: relative;flex: 1 1 48%;height: 48%;
-      margin: size(10) 0;}
-    
+    flex-direction: column;
+    justify-content: space-between;
+    > div {
+      position: relative;
+      flex: 1 1 48%;
+      height: 48%;
+      margin: size(10) 0;
+    }
+
     img {
-     width:auto;
+      width: auto;
       border-radius: size(45);
       height: 100%;
     }
 
-    .dialog-name{
+    .dialog-name {
       position: absolute;
       right: 1em;
       bottom: 1em;
@@ -325,18 +337,23 @@ padding: 0 30% 0 0;
   .imgs {
     @include div_c_m(330, 450, 180);
     flex-wrap: wrap;
-    
-    > div{position: relative;flex: 1 1 40%;height: 35%;
-      margin: sizem(10);}
+
+    > div {
+      position: relative;
+      flex: 1 1 40%;
+      height: 35%;
+      margin: sizem(10);
+    }
   }
 
   .dialog {
-.dialog-content{
-width:sizem(310);max-width: sizem(310);
-height:sizem(500);max-height: sizem(500);
-padding: 0 0 sizem(150) 0;
-  }
-
+    .dialog-content {
+      width: sizem(310);
+      max-width: sizem(310);
+      height: sizem(500);
+      max-height: sizem(500);
+      padding: 0 0 sizem(150) 0;
+    }
 
     .dialog-title {
       font-size: sizem(20);
@@ -356,7 +373,7 @@ padding: 0 0 sizem(150) 0;
 
     .dialog-desc {
       font-size: sizem(15);
-    width: 100%;
+      width: 100%;
     }
 
     .dialog-work {
@@ -366,22 +383,26 @@ padding: 0 0 sizem(150) 0;
     .dialog-imgs {
       width: 120%;
       height: sizem(143);
-     flex-direction:row;
+      flex-direction: row;
       top: auto;
-      bottom: 0;left:-10%;right: auto;
+      bottom: 0;
+      left: -10%;
+      right: auto;
       // padding: 0 sizem(35);
       display: flex;
       align-items: center;
       overflow-x: scroll;
       .img-item {
-        height: 100%;margin: 0 sizem(-15) 0 sizem(30);
-       /* min-width: sizem(206);
+        height: 100%;
+        margin: 0 sizem(-15) 0 sizem(30);
+        /* min-width: sizem(206);
         margin-bottom: 0;
         margin-right: sizem(15);
         border-radius: size(10);
         position: relative;*/
         img {
-          width:auto;height: 100%;
+          width: auto;
+          height: 100%;
         }
       }
 
@@ -415,7 +436,18 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
-      dialogData: {},
+      dialogData: {
+        imgs: [
+          {
+            img: require('./s5/1-1.jpg'),
+            name: '北京 水立方',
+          },
+          {
+            img: require('./s5/1-2.jpg'),
+            name: '碧波白',
+          },
+        ],
+      },
       item_list: [
         {
           title: '建築王牌',

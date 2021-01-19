@@ -21,7 +21,7 @@
       </div>
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex" v-if="isMobile">
         <transition-group name="swipe-fade" mode="out-in">
-          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.icon" :class="`swipe-item absolute ${slideIndex === i ? 'turn' : ''}`">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.icon + i" :class="`swipe-item absolute ${slideIndex === i ? 'turn' : ''}`">
             <img :src="slide.icon" :alt="slide.name">
             <div class="name absolute" v-html="slide.name"></div>
           </div>
