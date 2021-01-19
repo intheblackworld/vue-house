@@ -150,13 +150,13 @@ export default {
   position: relative;
   z-index: 3;
   width: size(1440);
-  height: 538px;
+  //height: 538px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
   transform: translateY(0);
   margin: 0 auto 0;
-  padding: 30px 0 40px;
+  padding: 30px 0 60px;
 }
 
 .logo {

@@ -294,10 +294,11 @@ export default {
     font-family: $family3;
   }
 
-  .order-tt {
+  .order-tt {position: relative;
     width: size(1440);
-    height: size(500);
-    margin: size(-300) auto 0;
+    height: size(400);
+    margin: 0 auto size(-300);
+    top: size(-300);
     background: rgba(0, 0, 0, 0.8);
   }
   .order-top {
@@ -432,9 +433,10 @@ export default {
 
     .order-tt {
       width: sizem(360);
-      height: sizem(100);
-      margin: size(0) auto 0;
+      height: sizem(50);top: 0;
+      margin: 0 auto;
       background: rgba(0, 0, 0, 0.8);
+      
     }
     .order-top {
       width: sizem(360);

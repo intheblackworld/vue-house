@@ -4,6 +4,7 @@
     <img src="./mo/b.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isMobile">
     <img src="./s3/img_r.png" :alt="`${info.caseName}_img_r`" class="img_r" data-aos="fade-down" data-aos-delay="100">
     <img src="./s3/img_l.jpg" :alt="`${info.caseName}_img_l`" class="img_l" data-aos="fade-down" data-aos-delay="400">
+    <div class="icon"></div>
     <div class="title" data-aos="fade-down" data-aos-delay="100">
       地段王牌
     </div>
@@ -176,12 +177,15 @@ export default {
       isTablet,
     }
   },
+  methods: {
+  },
 
-  methods: {},
+  created() {
 
-  created() {},
+  },
 
-  mounted() {},
+  mounted() {
+  },
 
   computed: {},
 }

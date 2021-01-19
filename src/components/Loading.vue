@@ -1,11 +1,11 @@
 <template>
- <!-- <div :class="`loading-bg ${loading ? '' : 'hide'} ${isOpacity ? 'opacity': ''}`">
+<div :class="`loading-bg ${loading ? '' : 'hide'} ${isOpacity ? 'opacity': ''}`">
     <img
       src="~@/assets/img/loading_b.gif"
       alt
       class="loading-icon"
     />
-  </div> -->
+  </div>
 </template>
 
 <style lang="scss" scoped>
