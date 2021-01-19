@@ -1073,10 +1073,10 @@ export default {
           img: require('../works/1/5.jpg'),
           // name: '台北101',
         },
-        {
-          img: require('../works/1/6.jpg'),
-          // name: '台北101',
-        },
+        // {
+        //   img: require('../works/1/6.jpg'),
+        //   // name: '台北101',
+        // },
       ],
     }
   },
