@@ -1,9 +1,9 @@
 <template>
   <div class="section2">
     <div class="tab flex-ac flex-jb">
-     <!-- <div :class="`tab-item flex-c yellow`">
+      <div :class="`tab-item flex-c yellow`">
         最新消息
-      </div> -->
+      </div> 
       <div :class="`tab-item flex-c blue`">
         媒體報導
       </div>
@@ -292,14 +292,20 @@ export default {
         {
           icon: require('./s1/icon2.png'),
           type: 1,
-          desc: '新聞標題新聞標題新聞標題新聞新聞標題新聞標題新聞標題新聞新聞',
-          img: require('../news/s2/1/20201103002310.jpg'),
+          desc: '百萬自備款買新北三房 神采飛洋賣破七成',
+          img: require('../news/s2/4/20201125001673.jpg'),
+        },
+        {
+          icon: require('./s1/icon2.png'),
+          type: 1,
+          desc: '租不如買！「神采飛洋」區域最低價　入住洲子洋蛋黃區',
+          img: require('../news/s2/3/2700816-PH.jpg'),
         },
         {
           icon: require('./s1/icon2.png'),
           type: 2,
-          desc: '坐擁全齡機能！新店碧波白兩代宅躍升換屋首選',
-          img: require('../news/s2/1/20201103002310.jpg'),
+          desc: '住宅安全受重視 中和地標「太陽帝國」全棟採鋼骨結構為換屋首選',
+          img: require('../news/s2/2/161071133159705_P9028438.jpg'),
         },
         {
           icon: require('./s1/icon2.png'),

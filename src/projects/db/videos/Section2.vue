@@ -99,9 +99,9 @@
   transition: all 0.3s;
   cursor: pointer;
 
-  &:hover {
+ /* &:hover {
     background: #00000003;
-  }
+  }*/
   .add {
   }
 
@@ -114,7 +114,8 @@
 
   .content {
     height: size(130);
-    padding: 0 size(75);
+    width: 36%;
+    padding: 0 0 0 size(75);
   }
 
   .item-label {
@@ -152,7 +153,7 @@
     font-style: normal;
     line-height: 1.62;
     letter-spacing: size(2.16);
-    text-align: left;
+    text-align: justify;
     color: #333333;
     // margin-bottom: 15px;
   }
@@ -165,7 +166,7 @@
     font-style: normal;
     line-height: 1.99;
     letter-spacing: size(0.96);
-    text-align: left;
+    text-align: justify;
     color: #808080;
   }
 
@@ -364,47 +365,47 @@ export default {
         {
           // icon: require('./s1/icon1.png'),
           type: 1,
-          title: '影片標題影片標題<br />影片標題影片標題',
-          desc: '小標文字（沒文字隱藏）',
+          title: '坐擁全齡機能! 新店碧波白兩代宅躍升換屋首選',
+          desc: '',
           img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/nkg8R28fa5U',
         },
         {
           // icon: require('./s1/icon2.png'),
-          type: 2,
-          title: '影片標題影片標題<br /影片標題影片標題',
-          desc: '小標文字（沒文字隱藏）',
+          type: 1,
+          title: '翻修老屋不如換新房! 換屋客搶進新店碧波白',
+          desc: '',
           img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/UcxPCDzs_yw',
         },
         {
           // icon: require('./s1/icon1.png'),
-          type: 3,
-          title: '影片標題影片標題<br /影片標題影片標題',
+          type: 1,
+          title: '36層全棟鋼骨制震宅 南勢角建案太陽帝國熱銷',
           desc: '',
           img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/QRoZESYwKmI',
         },
         {
           // icon: require('./s1/icon1.png'),
-          type: 3,
-          title: '影片標題影片標題<br /影片標題影片標題',
+          type: 1,
+          title: '租不如買！「神采飛洋」區域最低價　入住洲子洋蛋黃區',
           desc: '',
           img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/rXN9VphSzaw',
         },
         {
           // icon: require('./s1/icon1.png'),
-          type: 3,
-          title: '影片標題影片標題<br /影片標題影片標題',
+          type: 1,
+          title: '首購族買房神曲唱起來!台北車站10分鐘，有薪就有家',
           desc: '',
           img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/Z_hsfRlA4dg',
         },
         {
           // icon: require('./s1/icon1.png'),
-          type: 3,
-          title: '影片標題影片標題<br /影片標題影片標題',
+          type: 1,
+          title: '【房市最速報】五股洲子洋重劃區 「神采飛洋」祭低自備 區域最低價',
           desc: '',
           img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/RNMo_H1Kxh0',
