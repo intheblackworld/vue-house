@@ -2,9 +2,9 @@
   <div class="section3">
     <img src="./s3/bg.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isPC">
     <img src="./mo/b.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isMobile">
-    <img src="./s3/img_r.png" :alt="`${info.caseName}_img_r`" class="img_r" data-aos="fade-down" data-aos-delay="100">
+    <img src="./s3/img_r.png" :alt="`${info.caseName}_img_r`" class="img_r" data-aos="fade-down" data-aos-delay="100" @click="isDialog = true"> 
     <img src="./s3/img_l.jpg" :alt="`${info.caseName}_img_l`" class="img_l" data-aos="fade-down" data-aos-delay="400">
-    <div class="icon"></div>
+    <div class="icon" @click="isDialog = true"></div>
     <div class="title" data-aos="fade-down" data-aos-delay="100">
       地段王牌
     </div>
@@ -14,6 +14,11 @@
     <div class="desc flex-c" data-aos="fade-down" data-aos-delay="300">
       富貴線正中心 一高二捷三快五商圈六大橋
     </div>
+    <transition name="swipe-fade" mode="out-in">
+      <div class="dialog" v-if="isDialog">
+        <img src="./s3/img_r.png" :alt="`${info.caseName}_img_r`" class="img_r" data-aos="fade-down" data-aos-delay="100" @click="isDialog = true"> 
+      </div>
+    </transition>
   </div>
 </template>
 
