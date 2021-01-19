@@ -120,7 +120,21 @@
   .img_l {
     @include img_l_m(310, 447, 33);
   }
-
+.icon{
+    @include img_r_m(45, 180, 165);
+    height: sizem(45);
+    background: #68533599;
+    border-radius: 50%;
+  
+  
+  &::before,
+  &::after{
+    content: "";width: 60%;display: block;position: absolute;top: 50%;
+    height: sizem(3);transform: translateY(-50%);left: 20%;
+    background: #fff;transform-origin:50% 50%;
+  }
+  &::before{transform:translateY(-50%) rotate(90deg)}
+  }
   .title {
     @include img_l_m(96, 328, 33);
     font-size: sizem(24);
