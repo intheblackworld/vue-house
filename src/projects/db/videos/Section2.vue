@@ -11,7 +11,7 @@
         媒體影音
       </div>
     </div>
-    <div class="container flex wrap">
+    <div class="container">
       <div class="item flex-ac wrap" v-for="(item, index) in item_list" :key="item.title + index">
         <iframe :src="item.video" allow="accelerometer; autoplay;"></iframe>
         <div class="content">
@@ -105,7 +105,6 @@
   .add {
   }
 
-  img,
   iframe {
     width: size(966);
     height: size(629);
@@ -263,12 +262,12 @@
   .item {
     width: 100vw;
     height: sizem(380);
-    margin: 0 sizem(0) sizem(70);
+    margin: 0 0 sizem(70);
     justify-content: center;
     border-bottom: none;
     cursor: pointer;
+    display: block !important;
 
-    img,
     iframe {
       width: sizem(375);
       height: sizem(221);
