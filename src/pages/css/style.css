@@ -84,6 +84,15 @@ p {
     transform: translateZ(80px); /*透視深度*/
 }
 
+.title1{
+ width:calc(100vw * 458 / 1920);
+ }
+.title2{
+ width:calc(100vw * 488 / 1920);
+   }
+.title3{
+ width:calc(100vw * 725 / 1920);
+}
 .section.section-1 .button1 {
     position: absolute;
     top: 22vh;
@@ -116,7 +125,6 @@ p {
 .section.section-1 .button2:hover {
     opacity: 0.5;
 }
-
 .section.section-1 .subtitle {
     position: relative;
     margin: 0 auto;
@@ -566,17 +574,49 @@ p {
     .section.section-1 .title img:first-child {
         margin-bottom: 3rem;
     }
+    .title1{
+        width:calc(100vw * 124 / 375);
+        margin-bottom:calc(100vw * 48 / 375);
+    }
+    .title2{
+     width:calc(100vw * 263 / 375);
+       }
+    .title3{
+     width:calc(100vw * 306 / 375);
+    }
     .section.section-1 .bg img {
         top: 0;
         left: 0;
         bottom: unset;
         width: 100%;
+        animation: oxxo 3s ease-in-out infinite alternate;
+       transform:skewY(3deg);transform-origin: 50% 50%;
+    }
+    @keyframes oxxo{
+        to{
+            transform:skewY(-3deg);
+        }
     }
     .section.section-1 .button1 {
         display: none;
     }
     .section.section-1 .button2 {
         top: 9vh;
+    }.section.section-1 .button2 > a{
+        font-size:calc(100vw * 13 /375);
+        font-weight: 800;
+        letter-spacing:0.5em;
+        width: calc(100vw * 144 /375);
+        height: calc(100vw * 49 /375);padding: 0 0 0 0.25em;
+        border: 1px solid currentColor;
+        border-radius: 1em;
+        color: #d0121b;
+        text-decoration: none;
+        display: inline-flex;align-items: center;justify-content: center;text-align: center;
+    }
+    .section.section-1 .button2:hover > a{
+        background-color: #d0121b;
+        color: #fff;
     }
     .divider {
         display: none;
