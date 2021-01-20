@@ -8,17 +8,17 @@
         <span>{{info.address}}</span><br />
         {{info.phone}}
       </div>
-      <!-- <div class="links flex-ac flex-jb">
-        <a href="#">
+      <div class="links flex-ac flex-jc">
+        <a href="https://www.facebook.com/%E5%BE%97%E9%82%A6%E5%BB%A3%E5%91%8A-1938941179701767/" target="_blank">
           <img src="../projects/db/contact/icon1.png" :alt="`${info.caseName}_icon1`" class="ig">
         </a>
-        <a href="#">
+        <!-- <a href="#">
           <img src="../projects/db/contact/icon2.png" :alt="`${info.caseName}_icon2`" class="ig">
-        </a>
-        <a href="#">
+        </a> -->
+        <a href="https://www.youtube.com/channel/UC2Jmxt8ws2aENeLAU1PEirg" target="_blank">
           <img src="../projects/db/contact/icon3.png" :alt="`${info.caseName}_icon3`" class="ig">
         </a>
-      </div> -->
+      </div>
       <!-- <div class="info" data-aos="fade-down" data-aos-delay="200">
         <div class="item">
           電話 {{info.phone}}
@@ -152,6 +152,7 @@ export default {
   @include img_r_pc(184, 154, 362);
   a {
     width: size(60);
+    margin-right: 15px;
   }
 
   img {

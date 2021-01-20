@@ -13,7 +13,7 @@
     </div>
     <div class="container flex wrap">
       <div class="item flex-ac wrap" v-for="(item, index) in item_list" :key="item.title + index">
-        <iframe :src="item.video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe :src="item.video" allow="accelerometer; autoplay;"></iframe>
         <div class="content">
           <div class="item-label flex-c yellow" v-if="item.type === 1">線上熱銷</div>
           <div class="item-label flex-c blue" v-if="item.type === 2">完銷個案</div>
@@ -261,9 +261,10 @@
   }
 
   .item {
-    width: 100%;
+    width: 100vw;
     height: sizem(380);
     margin: 0 sizem(0) sizem(70);
+    justify-content: center;
     border-bottom: none;
     cursor: pointer;
 
