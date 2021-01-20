@@ -9,7 +9,7 @@
         {{info.phone}}
       </div>
       <div class="links flex-ac flex-jc">
-        <a href="https://www.facebook.com/%E5%BE%97%E9%82%A6%E5%BB%A3%E5%91%8A-1938941179701767/" target="_blank">
+        <a :href="info.fbLink" target="_blank">
           <img src="../projects/db/contact/icon1.png" :alt="`${info.caseName}_icon1`" class="ig">
         </a>
         <!-- <a href="#">
