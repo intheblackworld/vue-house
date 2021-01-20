@@ -1,12 +1,12 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '桃園市桃園區新埔六街97號16樓',
+  address: '新北市新店區安興路105號10樓之7',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.5699101093123!2d121.29992931500591!3d25.014726283981375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34681fb1f2d86179%3A0x727c09d7f490ef69!2zMzMw5qGD5ZyS5biC5qGD5ZyS5Y2A5paw5Z-U5YWt6KGXOTfomZ8!5e0!3m2!1szh-TW!2stw!4v1607682826270!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/L7dBXU3XqJ8BSCVx7',
-  phone: '+886-3-3569188',
-  email: '8886688@gmail.com',
-  mechanism: '立瑾建築機構',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.6370875267094!2d121.51260381524632!3d24.978459146669085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34680215227748c9%3A0x848e4a39fe46e8fd!2zMjMx5paw5YyX5biC5paw5bqX5Y2A5a6J6IiI6LevMTA16Jmf!5e0!3m2!1szh-TW!2stw!4v1611130031918!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/kzjXuViJCCoZ7L2Y9',
+  phone: '(02)2211-7711',
+  email: '@gmail.com',
+  mechanism: '得邦廣告',
   fbLink: 'https://www.facebook.com/得邦廣告-1938941179701767',
   fbMessage: 'https://m.me/1938941179701767',
   caseName: '得邦廣告',

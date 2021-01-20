@@ -896,6 +896,7 @@ export default {
       },
       slideList: [],
       item_list: [
+        //碧波白
         {
           title: '碧波白',
           title2: '碧波白',
@@ -919,28 +920,31 @@ export default {
             require('../works/1/4.jpg'),
           ],
         },
+        //太陽
         {
-          title: '陽光<br />PARK',
-          title2: '陽光PARK',
-          desc: '新北市｜新店區<br />27-54坪<br />新店陽光公園特區生態建築',
-          img: require('../works/2/0.jpg'),
+          title: '太陽<br />帝國',
+          title2: '太陽帝國',
+          desc:
+            '新北市｜中和區<br />19-39坪 2-3房<br />不是王牌不出手 唯有贏家能出手',
+          img: require('../works/4/0.jpg'),
           isEmpty: false,
-          info1: '新北市｜新店區<br />27-54坪<br />新店陽光公園特區生態建築',
-          info2:
-            '建設公司：統一工商綜合區開發股份有限公司<br />坪數規劃：27-54坪',
+          info1:
+            '新北市｜中和區<br />19-39坪 2-3房<br />不是王牌不出手 唯有贏家能出手',
+          info2: '投資興建：美聯開發股份有限公司<br />規劃坪數：19-39坪',
           info3:
-            '新店陽光公園特區，高綠覆率 <br />輕軌K8新和國小站 682米<br />千坪花園生態池',
+            '澳洲PTW建築團隊巨鑄<br />雙和第一高峰36層地標<br />全棟144隻BRB制震器',
           contact:
-            '貴賓專線｜02-2211-7711<br />接待會館｜新北市新店區安興路107號',
-          link: 'https://pk88.h35.tw/',
-          logo: require('../works/2/0.jpg'),
+            '貴賓專線｜02-8668-7373<br />接待會館｜新北市中和區和平街25之1號',
+          link: 'https://www.aceptw.com.tw/',
+          logo: require('../works/4/0.jpg'),
           imgs: [
-            require('../works/2/1.jpg'),
-            require('../works/2/2.jpg'),
-            require('../works/2/3.jpg'),
-            require('../works/2/4.jpg'),
+            require('../works/4/1.jpg'),
+            require('../works/4/2.jpg'),
+            require('../works/4/3.jpg'),
+            require('../works/4/4.jpg'),
           ],
         },
+        //神采
         {
           title: '神采<br />飛洋',
           title2: '神采飛洋',
@@ -965,27 +969,27 @@ export default {
             require('../works/3/4.jpg'),
           ],
         },
+        //陽光
         {
-          title: '太陽<br />帝國',
-          title2: '太陽帝國',
-          desc:
-            '新北市｜中和區<br />19-39坪 2-3房<br />不是王牌不出手 唯有贏家能出手',
-          img: require('../works/4/0.jpg'),
+          title: '陽光<br />PARK',
+          title2: '陽光PARK',
+          desc: '新北市｜新店區<br />27-54坪<br />新店陽光公園特區生態建築',
+          img: require('../works/2/0.jpg'),
           isEmpty: false,
-          info1:
-            '新北市｜中和區<br />19-39坪 2-3房<br />不是王牌不出手 唯有贏家能出手',
-          info2: '投資興建：美聯開發股份有限公司<br />規劃坪數：19-39坪',
+          info1: '新北市｜新店區<br />27-54坪<br />新店陽光公園特區生態建築',
+          info2:
+            '建設公司：統一工商綜合區開發股份有限公司<br />坪數規劃：27-54坪',
           info3:
-            '澳洲PTW建築團隊巨鑄<br />雙和第一高峰36層地標<br />全棟144隻BRB制震器',
+            '新店陽光公園特區，高綠覆率 <br />輕軌K8新和國小站 682米<br />千坪花園生態池',
           contact:
-            '貴賓專線｜02-8668-7373<br />接待會館｜新北市中和區和平街25之1號',
-          link: 'https://www.aceptw.com.tw/',
-          logo: require('../works/4/0.jpg'),
+            '貴賓專線｜02-2211-7711<br />接待會館｜新北市新店區安興路107號',
+          link: 'https://pk88.h35.tw/',
+          logo: require('../works/2/0.jpg'),
           imgs: [
-            require('../works/4/1.jpg'),
-            require('../works/4/2.jpg'),
-            require('../works/4/3.jpg'),
-            require('../works/4/4.jpg'),
+            require('../works/2/1.jpg'),
+            require('../works/2/2.jpg'),
+            require('../works/2/3.jpg'),
+            require('../works/2/4.jpg'),
           ],
         },
       ],
