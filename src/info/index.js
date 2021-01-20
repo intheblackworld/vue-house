@@ -7,8 +7,8 @@ export default {
   phone: '+886-3-3569188',
   email: '8886688@gmail.com',
   mechanism: '立瑾建築機構',
-  fbLink: 'https://www.facebook.com/lichinconstruction',
-  fbMessage: 'https://m.me/lichinconstruction',
+  fbLink: 'https://www.facebook.com/得邦廣告-1938941179701767',
+  fbMessage: 'https://m.me/1938941179701767',
   caseName: '得邦廣告',
   indigatorLength: 10,
 

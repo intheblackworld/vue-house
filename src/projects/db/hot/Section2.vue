@@ -500,6 +500,7 @@
 
     .content {
       // margin-top: sizem(221);
+      align-content: center;
       height: sizem(146);
       padding: 0 sizem(15) sizem(15);
     }
@@ -533,7 +534,7 @@
       text-align: left;
       justify-content: flex-start;
       color: #333333;
-      // margin-bottom: 15px;
+      margin-bottom: sizem(10);
     }
 
     .item-coming {

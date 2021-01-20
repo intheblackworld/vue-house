@@ -275,6 +275,7 @@
     }
 
     .content {
+      width: 100%;
       // margin-top: sizem(221);
       height: auto;
       padding: 0 sizem(35);

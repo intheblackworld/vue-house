@@ -8,7 +8,7 @@
         <span>{{info.address}}</span><br />
         {{info.phone}}
       </div>
-      <div class="links flex-ac flex-jb">
+      <!-- <div class="links flex-ac flex-jb">
         <a href="#">
           <img src="../projects/db/contact/icon1.png" :alt="`${info.caseName}_icon1`" class="ig">
         </a>
@@ -18,7 +18,7 @@
         <a href="#">
           <img src="../projects/db/contact/icon3.png" :alt="`${info.caseName}_icon3`" class="ig">
         </a>
-      </div>
+      </div> -->
       <!-- <div class="info" data-aos="fade-down" data-aos-delay="200">
         <div class="item">
           電話 {{info.phone}}
