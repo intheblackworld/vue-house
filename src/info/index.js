@@ -4,7 +4,7 @@ export default {
   googleSrc:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.6370875267094!2d121.51260381524632!3d24.978459146669085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34680215227748c9%3A0x848e4a39fe46e8fd!2zMjMx5paw5YyX5biC5paw5bqX5Y2A5a6J6IiI6LevMTA16Jmf!5e0!3m2!1szh-TW!2stw!4v1611130031918!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/kzjXuViJCCoZ7L2Y9',
-  phone: '(02)2211-7711',
+  phone: 'T:(02)2211-3513　F:(02)2211-3875',
   email: '@gmail.com',
   mechanism: '得邦廣告',
   fbLink: 'https://www.facebook.com/得邦廣告-1938941179701767',
