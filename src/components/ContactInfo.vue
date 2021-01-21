@@ -1,9 +1,22 @@
 <template>
   <div>
-    <div class="section section-bottom" id="section-bottom" data-aos="fade-up" data-aos-duration="1000">
+    <div
+      class="section section-bottom"
+      id="section-bottom"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <div class="title text-align-center">
-        <img src="../pages/texture/section-bottom/title.png" alt="台南唯一 TSUTAYA BOOKSTORE 蔦屋書苑 西門大道凌空制震地標  文元學區2-4房" v-if="!isMobile" />
-        <img src="../pages/mobile-texture/section-bottom/title.png" alt="台南唯一 TSUTAYA BOOKSTORE 蔦屋書苑 西門大道凌空制震地標  文元學區2-4房" v-if="isMobile" />
+        <img
+          src="../pages/texture/section-bottom/title.png"
+          alt="台南唯一 TSUTAYA BOOKSTORE 蔦屋書苑 西門大道凌空制震地標  文元學區2-4房"
+          v-if="!isMobile"
+        />
+        <img
+          src="../pages/mobile-texture/section-bottom/title.png"
+          alt="台南唯一 TSUTAYA BOOKSTORE 蔦屋書苑 西門大道凌空制震地標  文元學區2-4房"
+          v-if="isMobile"
+        />
       </div>
       <div class="buttons">
         <a class="hover" @click="showCallDialog">來電預約</a>
@@ -11,25 +24,37 @@
         <a class="hover" :href="info.fbLink" target="_blank">前往粉絲專頁</a>
       </div>
       <div class="buttons buttons-address">
-        <a class="hover">台南市北區西門路四段|育成路口</a>
+        <a class="hover">台南市北區西門路四段|文成三路口</a>
         <a class="hover" @click="isShowMapDialog = true">導航google地圖</a>
       </div>
     </div>
     <div class="section section-bottom-mb" id="section-bottom">
       <div class="title text-align-center">
-        <img src="../pages/mobile-texture/section-bottom/title.png" alt="台南唯一 TSUTAYA BOOKSTORE 蔦屋書苑 西門大道凌空制震地標  文元學區2-4房" />
+        <img
+          src="../pages/mobile-texture/section-bottom/title.png"
+          alt="台南唯一 TSUTAYA BOOKSTORE 蔦屋書苑 西門大道凌空制震地標  文元學區2-4房"
+        />
       </div>
       <div class="title text-align-center">
-        <img src="../pages/mobile-texture/section-bottom/1.png" alt="來電預約" />
+        <img
+          src="../pages/mobile-texture/section-bottom/1.png"
+          alt="來電預約"
+        />
       </div>
       <div class="title text-align-center">
         <img src="../pages/mobile-texture/section-bottom/2.png" alt="FB諮詢" />
       </div>
       <div class="title text-align-center">
-        <img src="../pages/mobile-texture/section-bottom/3.png" alt="前往粉絲專頁" />
+        <img
+          src="../pages/mobile-texture/section-bottom/3.png"
+          alt="前往粉絲專頁"
+        />
       </div>
       <div class="title text-align-center">
-        <img src="../pages/mobile-texture/section-bottom/4.png" alt="台南市北區西門路四段|育成路口 導航google地圖" />
+        <img
+          src="../pages/mobile-texture/section-bottom/4.png"
+          alt="台南市北區西門路四段|文成三路口 導航google地圖"
+        />
       </div>
     </div>
     <!-- <div class="contact-info">
@@ -59,30 +84,45 @@
         </div>
       </div>
     </div> -->
-    <el-dialog title :visible.sync="isShowCallDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
+    <el-dialog
+      title
+      :visible.sync="isShowCallDialog"
+      :width="isMobile ? '90%' : '500px'"
+      :modal-append-to-body="false"
+    >
       <CallDialog :phone="info.phone" />
     </el-dialog>
-    <el-dialog title :visible.sync="isShowMessengerDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
+    <el-dialog
+      title
+      :visible.sync="isShowMessengerDialog"
+      :width="isMobile ? '90%' : '500px'"
+      :modal-append-to-body="false"
+    >
       <MessengerDialog :messenger="info.fbMessage" />
     </el-dialog>
-    <el-dialog title :visible.sync="isShowMapDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
+    <el-dialog
+      title
+      :visible.sync="isShowMapDialog"
+      :width="isMobile ? '90%' : '500px'"
+      :modal-append-to-body="false"
+    >
       <MapDialog :link="info.googleLink" :address="info.address" />
     </el-dialog>
   </div>
 </template>
 
 <script>
-import info from '@/info'
-import { isMobile, isTablet } from '@/utils'
-import CallDialog from '@/components/Dialog/Call'
-import MessengerDialog from '@/components/Dialog/Messenger'
-import MapDialog from '@/components/Dialog/Map'
+import info from "@/info";
+import { isMobile, isTablet } from "@/utils";
+import CallDialog from "@/components/Dialog/Call";
+import MessengerDialog from "@/components/Dialog/Messenger";
+import MapDialog from "@/components/Dialog/Map";
 export default {
-  name: 'contactInfo',
+  name: "contactInfo",
   components: {
     CallDialog,
     MessengerDialog,
-    MapDialog,
+    MapDialog
   },
   data() {
     return {
@@ -92,30 +132,30 @@ export default {
       isTablet,
       isShowCallDialog: false,
       isShowMessengerDialog: false,
-      isShowMapDialog: false,
-    }
+      isShowMapDialog: false
+    };
   },
   methods: {
     showCallDialog() {
       // if (!this.isMobile) return
-      this.isShowCallDialog = true
+      this.isShowCallDialog = true;
     },
     showMessengerDialog() {
       // if (!this.isMobile) return
-      this.isShowMessengerDialog = true
+      this.isShowMessengerDialog = true;
     },
 
     showMapDialog() {
       // if (!this.isMobile) return
-      this.isShowMapDialog = true
-    },
-  },
-}
+      this.isShowMapDialog = true;
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/style/variableColor.scss';
-@import '@/assets/style/variableDefault.scss';
+@import "@/assets/style/variableColor.scss";
+@import "@/assets/style/variableDefault.scss";
 
 // .contact-info {
 //   background: $contact_bg;
