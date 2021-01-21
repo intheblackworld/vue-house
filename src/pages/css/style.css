@@ -5,6 +5,15 @@ body {
     overflow-x: hidden;
 }
 
+/* img optimize*/
+img {
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
 /* base */
 .section {
     position: relative;
@@ -84,35 +93,36 @@ p {
     transform: translateZ(80px); /*透視深度*/
 }
 
-.title1{
- width:calc(100vw * 458 / 1920);
- }
-.title2{
- width:calc(100vw * 488 / 1920);
-   }
-.title3{
- width:calc(100vw * 725 / 1920);
+.title1 {
+    width: calc(100% * 837 / 1920);
 }
+.title2 {
+    width: calc(100% * 891 / 1920);
+}
+.title3 {
+    width: calc(100% * 725 / 1920);
+}
+
 .section.section-1 .button1 {
     position: absolute;
-    top: 22vh;
-    right: 2vw;
+    top: 24%;
+    right: 2%;
     margin: 0 auto;
     transform: translateZ(50px); /*透視深度*/
 }
 
 .section.section-1 .button1 > a {
     transition: opacity 0.3s;
-}
-
-.section.section-1 .button1 > a:hover {
-    opacity: 0.5;
-}
-
-.section.section-1 .button1 > a {
     display: block;
 }
 
+.section.section-1 .button1 > a > img {
+    width: calc(100vw * 100 / 1920);
+    max-width: 70px;
+}
+.section.section-1 .button1 > a:hover {
+    opacity: 0.5;
+}
 .section.section-1 .button2 {
     position: relative;
     margin: 0 auto;
@@ -144,9 +154,31 @@ p {
 
 .section.section-1 .bg img {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 25px;
 }
+
+.s1-ext {
+    display: none;
+    position: fixed;
+    opacity: 0;
+    transition: opacity 0.6s;
+}
+
+.s1-ext.active {
+    opacity: 1;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
 /* section-1 end */
 
 /* section-swiper */
@@ -195,6 +227,7 @@ p {
     background: #fff;
     opacity: 1;
     border: 1px solid #d0121b;
+    margin: 0 4px;
 }
 .section-swiper .swiper-container .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
     background: #d0121b;
@@ -260,7 +293,8 @@ p {
     text-align-last: justify;
     font-size: 20px;
 }
-.section.section-form .form > .left > div > input, .section.section-form .form > .left > div > select {
+.section.section-form .form > .left > div > input,
+.section.section-form .form > .left > div > select {
     border: 1px solid #d0121b;
     height: 32px;
     width: calc(100% - 120px);
@@ -268,7 +302,8 @@ p {
     font-size: 20px;
     box-sizing: content-box;
 }
-.section.section-form .form > .left > div > input:focus, .section.section-form .form > .left > div > select:focus {
+.section.section-form .form > .left > div > input:focus,
+.section.section-form .form > .left > div > select:focus {
     outline: none !important;
     border: 1px solid #d0121b;
     box-shadow: 0 0 10px #b6b6b6;
@@ -574,15 +609,15 @@ p {
     .section.section-1 .title img:first-child {
         margin-bottom: 3rem;
     }
-    .title1{
-        width:calc(100vw * 124 / 375);
-        margin-bottom:calc(100vw * 48 / 375);
+    .title1 {
+        width: calc(100vw * 124 / 375);
+        margin-bottom: calc(100vw * 48 / 375);
     }
-    .title2{
-     width:calc(100vw * 263 / 375);
-       }
-    .title3{
-     width:calc(100vw * 306 / 375);
+    .title2 {
+        width: calc(100vw * 263 / 375);
+    }
+    .title3 {
+        width: calc(100vw * 306 / 375);
     }
     .section.section-1 .bg img {
         top: 0;
@@ -590,11 +625,12 @@ p {
         bottom: unset;
         width: 100%;
         animation: oxxo 3s ease-in-out infinite alternate;
-       transform:skewY(3deg);transform-origin: 50% 50%;
+        transform: skewY(3deg);
+        transform-origin: 50% 50%;
     }
-    @keyframes oxxo{
-        to{
-            transform:skewY(-3deg);
+    @keyframes oxxo {
+        to {
+            transform: skewY(-3deg);
         }
     }
     .section.section-1 .button1 {
@@ -602,19 +638,24 @@ p {
     }
     .section.section-1 .button2 {
         top: 9vh;
-    }.section.section-1 .button2 > a{
-        font-size:calc(100vw * 13 /375);
+    }
+    .section.section-1 .button2 > a {
+        font-size: calc(100vw * 13 / 375);
         font-weight: 800;
-        letter-spacing:0.5em;
-        width: calc(100vw * 144 /375);
-        height: calc(100vw * 49 /375);padding: 0 0 0 0.25em;
+        letter-spacing: 0.5em;
+        width: calc(100vw * 144 / 375);
+        height: calc(100vw * 49 / 375);
+        padding: 0 0 0 0.25em;
         border: 1px solid currentColor;
         border-radius: 1em;
         color: #d0121b;
         text-decoration: none;
-        display: inline-flex;align-items: center;justify-content: center;text-align: center;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
-    .section.section-1 .button2:hover > a{
+    .section.section-1 .button2:hover > a {
         background-color: #d0121b;
         color: #fff;
     }
