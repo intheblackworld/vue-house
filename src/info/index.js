@@ -7,7 +7,7 @@ export default {
   phone: '02-8668-7373',
   fbLink: 'https://www.facebook.com/ACEPTW86687373/',
   fbMessage: 'https://m.me/ACEPTW86687373',
-  caseName: '太陽帝國',
+  caseName: '遛樂KID',
   indigatorLength: 10,
 
   houseInfos: [

@@ -1,7 +1,7 @@
 <template>
   <div class="home no-padding-top">
     <Loading :loading="load" />
-    <SideNavigation />
+    <!-- <SideNavigation /> -->
     <!-- <Navigation /> -->
     <!-- <Indigator :viewIndex="viewIndex" /> -->
     <!-- <full-page
@@ -110,14 +110,14 @@ import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 
-import Section1 from '@/projects/ace/Section1.vue'
-import Section2 from '@/projects/ace/Section2.vue'
-import Section3 from '@/projects/ace/Section3.vue'
-import Section4 from '@/projects/ace/Section4.vue'
-import Section5 from '@/projects/ace/Section5.vue'
-import Section6 from '@/projects/ace/Section6.vue'
-import Section7 from '@/projects/ace/Section7.vue'
-import Section8 from '@/projects/ace/Section8.vue'
+import Section1 from '@/projects/kid/Section1.vue'
+import Section2 from '@/projects/kid/Section2.vue'
+import Section3 from '@/projects/kid/Section3.vue'
+import Section4 from '@/projects/kid/Section4.vue'
+import Section5 from '@/projects/kid/Section5.vue'
+import Section6 from '@/projects/kid/Section6.vue'
+import Section7 from '@/projects/kid/Section7.vue'
+import Section8 from '@/projects/kid/Section8.vue'
 // import Section9 from '@/projects/ace/Section9.vue'
 // import Section10 from '@/projects/ace/Section10.vue'
 // import Section11 from '@/projects/ace/Section11.vue'

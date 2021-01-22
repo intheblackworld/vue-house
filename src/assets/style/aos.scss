@@ -48,3 +48,14 @@
     transform: scaleX(1);
   }
 }
+
+[data-aos='child-jump'] {
+  opacity: 1;
+  bottom: 1200px;
+
+  &.aos-animate {
+    top: auto !important;
+    opacity: 1;
+    bottom: -400px !important;
+  }
+}
