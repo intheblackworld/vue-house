@@ -1306,20 +1306,6 @@
           />
         </svg>
       </div>
-      <div class="button1">
-        <a href=""
-          ><img
-            src="./texture/section-1/r-button-1.png"
-            v-scroll-to="{ element: `#contact`, offset: 0 }"
-            alt="立即預約"
-        /></a>
-        <a href=""
-          ><img
-            src="./texture/section-1/r-button-2.png"
-            alt="立即來電"
-            v-scroll-to="{ element: `#section-bottom`, offset: 0 }"
-        /></a>
-      </div>
       <div class="button2" v-if="!isMobile">
         <a href=""
           ><img
@@ -3438,6 +3424,20 @@
       >
         <img src="./mobile-texture/section-1/bg.png" alt="" />
       </div>
+    </div>
+    <div class="button1">
+      <a href=""
+        ><img
+          src="./texture/section-1/r-button-1.png"
+          v-scroll-to="{ element: `#contact`, offset: 0 }"
+          alt="立即預約"
+      /></a>
+      <a href=""
+        ><img
+          src="./texture/section-1/r-button-2.png"
+          alt="立即來電"
+          v-scroll-to="{ element: `#section-bottom`, offset: 0 }"
+      /></a>
     </div>
     <!--分隔-->
     <div class="divider" data-aos="fade-down" data-aos-duration="2000">
