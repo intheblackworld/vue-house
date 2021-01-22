@@ -13,12 +13,18 @@
       <img src="./s1/logo.png" alt="睿暘水漾LOGO" class="logo" data-aos="fade" data-aos-delay="400">
       <img src="./s1/t1.png" alt="三重CP值最高水岸宅" class="t1" data-aos="fade" data-aos-delay="600">
       <img src="./s1/t2.png" alt="早鳥優惠驚喜價18-28坪" class="t2" data-aos="fade" data-aos-delay="800">
+
+      <div class="s1"></div>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
+.s1{background: url("./s1/w.jpg") center;
+background-size: cover;
+width: 100%;height: 100%;position: absolute;top: 0;left: 0;}
+
 // 新增 mixin 代表意義：
 // @mixin img_r_pc($width, $top, $right) {
 //   position: absolute;
@@ -156,12 +162,13 @@
 }
 
 @media screen and (max-width: 767px) {
+.s1{background-image:url("./s1/mo.jpg") ;}
   .section1 {
     width: 100vw;
     min-height: auto;
     height: calc(100vh - 63px);
-    min-height: sizem(484);
-    max-height: sizem(812);
+    min-height: sizem(604);
+    max-height: sizem(750);
     background-size: cover;
     background-attachment: scroll;
   }
