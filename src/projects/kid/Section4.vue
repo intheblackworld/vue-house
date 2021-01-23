@@ -1,10 +1,10 @@
 <template>
   <div class="section4">
     <div class="bg-img"></div>
-    <img src="./s2/title.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isPC">
-    <img src="./s2/title_m.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isMobile">
-    <img src="./s2/o.png" :alt="`${info.
-    caseName}_o`" class="o">
+    <img src="./s4/title.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isPC">
+    <img src="./s4/title_m.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isMobile">
+    <img src="./s4/logo.png" :alt="`${info.
+    caseName}_logo`" class="logo">
     <h1 class="title">
       國語日報 千書牆
     </h1>
@@ -16,12 +16,11 @@
       悠閒的享受閱讀時光吧！
     </div>
     <div class="animate-bg">
-      <img src="./s1/bubb (5).png" :alt="`${info.caseName}_bubble4`" class="bubble4">
-      <img src="./s1/bubb (6).png" :alt="`${info.caseName}_bubble6`" class="bubble6">
+      <img src="./s4/bubb (11).png" :alt="`${info.caseName}_bubble4`" class="bubble4">
+      <!-- <img src="./s1/bubb (6).png" :alt="`${info.caseName}_bubble6`" class="bubble6"> -->
     </div>
     <div class="child-jump">
-      <img src="./s2/p1.png" :alt="`${info.caseName}_p1`" class="p1" data-aos="child-jump" data-aos-delay="1200" data-aos-duration="3000">
-      <img src="./s2/p2.png" :alt="`${info.caseName}_p2`" class="p2" data-aos="child-jump" data-aos-delay="1000" data-aos-duration="3000">
+      <img src="./s4/p3.png" :alt="`${info.caseName}_p1`" class="p1" data-aos="child-jump" data-aos-delay="1200" data-aos-duration="3000">
     </div>
     <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
