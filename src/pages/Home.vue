@@ -3311,7 +3311,7 @@
       <div class="swiper-container">
         <div class="feature-title text-align-center">
           <img src="./texture/section-swiper/s3-title.png" alt="" v-if="!isMobile" />
-          <img src="./mobile-texture/section-swiper/s3-title.png" alt="" v-else />
+          <img src="./mobile-texture/section-swiper/s3-featuretitle.png" alt="" v-else />
         </div>
         <div class="swipe-here">
           <img src="./texture/swipe.png" alt="" v-if="!isMobile" />
@@ -3350,7 +3350,7 @@
       <div class="title flex-reverse" data-aos="fade-right" data-aos-duration="1000">
         <p class="text-align-right swiper-intro-text-2">
           以往到日本朝聖全球最美書店「蔦屋書店 」，現在在家就能享受<br />
-          台南首座與台灣蔦屋書店TSUTAYA BOOKSTORE攜手打造<br />
+          台南首座與台灣蔦屋TSUTAYA BOOKSTORE攜手打造<br />
           將現代和風生活提案帶入〔西門大院〕書香人文空間<br />
           包括四季大花園、台灣蔦屋書房、健身房、兒童遊戲閱覽室<br />
           才藝教室、閱覽室、空中花園等豐富的樂齡共享休閒設施
@@ -3361,7 +3361,7 @@
       <div class="swiper-container">
         <div class="feature-title text-align-center" data-aos="fade-up" data-aos-duration="1000">
           <img src="./texture/section-swiper/s4-title.png" alt="" v-if="!isMobile" />
-          <img src="./mobile-texture/section-swiper/s4-title.png" alt="" v-else />
+          <img src="./mobile-texture/section-swiper/s4-featuretitle.png" alt="" v-else />
         </div>
         <div class="swipe-here">
           <img src="./texture/swipe.png" alt="" v-if="!isMobile" />
