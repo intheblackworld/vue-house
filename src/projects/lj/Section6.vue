@@ -530,7 +530,11 @@ export default {
         },
         {
           img: isMobile ? require('./s6/2_m.jpg') : require('./s6/2.jpg'),
-          name: '菁英家庭優質私校首選',
+          name: '菁英家庭優質私校首選，圖為優質校風示意圖',
+        },
+        {
+          img: isMobile ? require('./s6/3_m.jpg') : require('./s6/3.jpg'),
+          name: '私立靜心高級中學',
         },
       ],
     }

@@ -522,7 +522,15 @@ export default {
       slideList: [
         {
           img: isMobile ? require('./s3/1_m.jpg') : require('./s3/1.jpg'),
-          name: '佐島桃源',
+          name: '「Nowhere but Sajima」獲得東京建築師協會住宅建築獎金獎肯定',
+        },
+        {
+          img: isMobile ? require('./s3/2_m.jpg') : require('./s3/2.jpg'),
+          name: '「Bayside Marina Hotel」橫濱海景旅店',
+        },
+        {
+          img: isMobile ? require('./s3/3_m.jpg') : require('./s3/3.jpg'),
+          name: '「フクマスベース」日本建築設計学会賞大賞',
         },
       ],
     }

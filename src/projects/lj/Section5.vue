@@ -533,7 +533,7 @@ export default {
         },
         {
           img: isMobile ? require('./s5/3_m.jpg') : require('./s5/3.jpg'),
-          name: '仙岩公園一景',
+          name: '仙跡岩一景',
         },
       ],
     }
