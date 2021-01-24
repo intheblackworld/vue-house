@@ -1,7 +1,8 @@
 <template>
   <div class="section3">
     <img src="./s3/bg.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isPC">
-    <img src="./mo/b.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isMobile">
+    <!--<img src="./mo/b.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isMobile"> -->
+    <div class="bg" v-if="isMobile"></div>
     <img src="./s3/img_r.png" :alt="`${info.caseName}_img_r`" class="img_r" data-aos="fade-down" data-aos-delay="100" @click="showDialog">
     <img src="./s3/img_l.jpg" :alt="`${info.caseName}_img_l`" class="img_l" data-aos="fade-down" data-aos-delay="400">
     <div class="icon" @click="showDialog"></div>
@@ -116,7 +117,10 @@
   }
 
   .bg {
-    @include img_r_m(373, 0, 0);
+    @include img_r_m(360, 0, 0);
+    left: 50%;transform: translateX(-50%);
+    background: #fff;
+    height: 100%;
   }
 
   .img_r {

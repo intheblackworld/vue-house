@@ -1,7 +1,8 @@
 <template>
   <div class="section8">
     <img src="./s8/bg.png" :alt="`${info.caseName}_bgimg`" class="bg-img" v-if="isPC">
-    <img src="./mo/b.png" :alt="`${info.caseName}_bgimg`" class="bg" v-if="isMobile">
+    <!-- <img src="./mo/b.png" :alt="`${info.caseName}_bgimg`" class="bg" v-if="isMobile"> -->
+    <div class="bg" v-if="isMobile"></div>
     <div class="title" data-aos="fade-down" data-aos-delay="100">
       公設王牌
     </div>
@@ -301,12 +302,11 @@
     min-height: sizem(529);
   }
   .bg {
-    @include img_r_m(375, 0, 0);
-    transform: skewX(1deg);
-    transform-origin: bottom;
-    height: sizem(529);
+    @include img_r_m(360, 0, 0);
+    left: 50%;transform: translateX(-50%);
+    background: #fff;
+    height: 100%;
   }
-
   .title {
     @include img_l_m(104, 60, 40);
     font-size: sizem(24);
@@ -341,11 +341,11 @@
 
   /* Swipe */
   .swipe {
-    width: sizem(311);
+    width:92vw;
     height: sizem(175);
     // min-height: sizem(750);
     top: sizem(309);
-    left: sizem(32);
+    left: calc(50% - 46vw);
     object-fit: cover;
   }
 
@@ -484,21 +484,22 @@
   }
 
   .swipe-btns {
-    width: 100%;
-    height: sizem(52);
+    width: 90%;
+    left: 5%;
+    height: sizem(30);
     padding: 0px;
     z-index: 1;
     position: absolute;
-    top: sizem(355);
+    top: sizem(380);
 
     .prev-btn,
     .next-btn {
-      width: sizem(26);
-      height: sizem(52);
+      width:auto;
+      height:100%;
       cursor: pointer;
       // background-color: #ec6300;
       img {
-        width: 100%;
+        height: 100%;
       }
     }
 
@@ -553,6 +554,15 @@ export default {
         },
         {
           img: require('./s8/7.jpg'),
+        },
+        {
+          img: require('./s8/8.jpg'),
+        },
+        {
+          img: require('./s8/9.jpg'),
+        },
+        {
+          img: require('./s8/10.jpg'),
         },
       ],
     }

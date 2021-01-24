@@ -1,7 +1,8 @@
 <template>
   <div class="section7">
     <img src="./s7/bg.png" :alt="`${info.caseName}_bgimg`" class="bg-img" v-if="isPC">
-    <img src="./mo/w2.png" :alt="`${info.caseName}_bgimg`" class="bg" v-if="isMobile">
+    <!-- <img src="./mo/w2.png" :alt="`${info.caseName}_bgimg`" class="bg" v-if="isMobile"> -->
+    <div class="bg" v-if="isMobile"></div>
     <img src="./s7/1.png" :alt="`${info.caseName}_img1`" class="img1" data-aos="fade" data-aos-delay="100">
     <img src="./s7/2.png" :alt="`${info.caseName}_img2`" class="img2" data-aos="fade" data-aos-delay="300">
     <img src="./s7/3.png" :alt="`${info.caseName}_img3`" class="img3" data-aos="fade" data-aos-delay="500">
@@ -91,8 +92,10 @@
   }
 
   .bg {
-    @include img_r_m(375, 0, 0);
-    height: sizem(751);
+    @include img_r_m(360, 0, 0);
+    left: 50%;transform: translateX(-50%);
+    background: #fff;
+    height: 100%;
   }
 
   .img1 {

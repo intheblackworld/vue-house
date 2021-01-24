@@ -1,7 +1,8 @@
 <template>
   <div class="section5">
     <img src="./s5/bg.png" :alt="`${info.caseName}_bgimg`" class="bg" v-if="isPC">
-    <img src="./mo/w2.png" :alt="`${info.caseName}_bgimg`" class="bg" v-if="isMobile">
+    <!-- <img src="./mo/w2.png" :alt="`${info.caseName}_bgimg`" class="bg" v-if="isMobile"> -->
+    <div class="bg" v-if="isMobile"></div>
     <div class="title" data-aos="fade-down" data-aos-delay="100">
       四大王牌
     </div>
@@ -291,8 +292,10 @@
   }
 
   .bg {
-    @include img_r_m(375, 0, 0);
-    transform: translateX(0%);
+    @include img_r_m(360, 0, 0);
+    left: 50%;transform: translateX(-50%);
+    background: #fff;
+    height: 100%; 
   }
 
   .title {

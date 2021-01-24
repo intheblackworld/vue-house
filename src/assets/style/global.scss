@@ -343,7 +343,7 @@ img[lazy='loaded'] {
     padding-top: $nav_phone_height;
     background: $bg_m;
     background-attachment: fixed;
-    background-size:100% auto;
+    background-size:auto 100vh;
     background-position:0 0;
     background-repeat: no-repeat;
     overflow: hidden;//試底下多的那塊哪來的

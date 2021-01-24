@@ -1,7 +1,8 @@
 <template>
   <div class="section6">
     <img src="./s6/bg.png" :alt="`${info.caseName}_bgimg`" class="bg-img" v-if="isPC">
-    <img src="./mo/b.png" :alt="`${info.caseName}_bgimg`" class="bg" v-if="isMobile">
+    <!-- <img src="./mo/b.png" :alt="`${info.caseName}_bgimg`" class="bg" v-if="isMobile"> -->
+    <div class="bg" v-if="isMobile"></div>
     <img src="./s6/img.jpg" :alt="`${info.caseName}_img`" class="img">
     <img src="./s6/logoall.png" :alt="`${info.caseName}_logoall`" class="logoall" data-aos="fade-down" data-aos-delay="800">
     <div class="title" data-aos="fade-down" data-aos-delay="100">
@@ -13,7 +14,7 @@
     <ul class="desc">
       <li data-aos="fade-down" data-aos-delay="300">柱內萬磅灌漿 101同級制震</li>
       <li data-aos="fade-down" data-aos-delay="400">SC鋼骨 SN耐震鋼材 雙S級抗震高標準</li>
-      <li data-aos="fade-down" data-aos-delay="500">全建築144支BRB制震器 層層降振保平安</li>
+      <li data-aos="fade-down" data-aos-delay="500">全建築144支BRB制震器 層層降震保平安</li>
       <li data-aos="fade-down" data-aos-delay="600">業界領導品牌加持 101同級萬磅混凝土</li>
       <li data-aos="fade-down" data-aos-delay="700">地基深扎岩盤 達到最佳耐震力</li>
     </ul>
@@ -128,12 +129,18 @@
     min-height: sizem(990);
     max-height: sizem(990);
   }
-
+/*
   .bg {
     @include img_r_m(375, 0, 0);
     transform: skewX(0.5deg);
     transform-origin: bottom;
     height: sizem(992);
+  } */
+  .bg {
+    @include img_r_m(360, 0, 0);
+    left: 50%;transform: translateX(-50%);
+    background: #fff;
+    height: 100%;
   }
 
   .title {

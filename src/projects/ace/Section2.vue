@@ -1,7 +1,8 @@
 <template>
   <div class="section2">
     <img src="./s2/bg.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isPC">
-    <img src="./mo/w1.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isMobile">
+    <!-- <img src="./mo/w1.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isMobile"> -->
+    <div class="bg" v-if="isMobile"></div>
     <img src="./s2/img1.png" :alt="`${info.caseName}_img1`" class="img1" v-if="isPC">
     <img src="./s2/title_t.png" :alt="`${info.caseName}_title_t`" class="title_t">
     <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
@@ -324,7 +325,10 @@
   }
 
   .bg {
-    @include img_r_m(375, 0, 0);
+    @include img_r_m(360, 0, 0);
+    left: 50%;transform: translateX(-50%);
+    background: #000;
+    height: 100%;
   }
 
 
@@ -497,22 +501,24 @@
     }
   }
 
+  
   .swipe-btns {
-    width: 100%;
-    height: sizem(52);
+    width: 90%;
+    left: 5%;
+    height: sizem(30);
     padding: 0px;
     z-index: 1;
     position: absolute;
-    top: sizem(235);
+    top:calc(50% + 10vw);
 
     .prev-btn,
     .next-btn {
-      width: sizem(26);
-      height: sizem(52);
+      width:auto;
+      height:100%;
       cursor: pointer;
       // background-color: #ec6300;
       img {
-        width: 100%;
+        height: 100%;
       }
     }
 
@@ -585,7 +591,7 @@ export default {
             },
             {
               icon: require('./s2/icon.png'),
-              name: '雙和唯一，萬噸鋼骨用量<br />+brb+cft柱雙制震',
+              name: '雙和唯一，15萬噸鋼骨用量<br />BRB+CFT柱雙制震',
             },
           ]
         : [
@@ -633,7 +639,7 @@ export default {
                 },
                 {
                   icon: require('./s2/icon.png'),
-                  name: '雙和唯一，萬噸鋼骨用量<br />+brb+cft柱雙制震',
+                  name: '雙和唯一，15萬噸鋼骨用量<br />BRB+CFT柱雙制震',
                 },
               ],
             },
