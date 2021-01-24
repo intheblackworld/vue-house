@@ -187,7 +187,7 @@ export default {
   data() {
     return {
       isMobile,
-      tagList: [require('./s3_title.png')],
+     // tagList: [require('./s3_title.png')],
 
       bgSrc: require('./s3_bg.jpg'),
       bgmSrc: require('./s3_bg_m.jpg'),
