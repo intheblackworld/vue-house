@@ -103,27 +103,27 @@ p {
     width: calc(100% * 725 / 1920);
 }
 
-.section.section-1 .button1 {
-    position: absolute;
-    top: 24%;
+.button1 {
+    position: fixed;
+    top: 4%;
     right: 2%;
     margin: 0 auto;
     transform: translateZ(50px); /*透視深度*/
 }
 
-.section.section-1 .button1 > a {
+.button1 > a {
     transition: opacity 0.3s;
     display: block;
-}
+} 
 
-.section.section-1 .button1 > a > img {
+.button1 > a > img {
     width: calc(100vw * 100 / 1920);
     max-width: 70px;
 }
-.section.section-1 .button1 > a:hover {
+.button1 > a:hover {
     opacity: 0.5;
 }
-.section.section-1 .button2 {
+.button2 {
     position: relative;
     margin: 0 auto;
     top: 22vh;
@@ -132,7 +132,7 @@ p {
     transform: translateZ(50px); /*透視深度*/
 }
 
-.section.section-1 .button2:hover {
+.button2:hover {
     opacity: 0.5;
 }
 .section.section-1 .subtitle {
@@ -633,13 +633,13 @@ p {
             transform: skewY(-3deg);
         }
     }
-    .section.section-1 .button1 {
+    .button1 {
         display: none;
     }
-    .section.section-1 .button2 {
+    .button2 {
         top: 9vh;
     }
-    .section.section-1 .button2 > a {
+    .button2 > a {
         font-size: calc(100vw * 13 / 375);
         font-weight: 800;
         letter-spacing: 0.5em;
@@ -655,7 +655,7 @@ p {
         justify-content: center;
         text-align: center;
     }
-    .section.section-1 .button2:hover > a {
+    .button2:hover > a {
         background-color: #d0121b;
         color: #fff;
     }
