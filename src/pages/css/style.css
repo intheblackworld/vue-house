@@ -105,10 +105,14 @@ p {
 
 .button1 {
     position: fixed;
-    top: 4%;
+    top: 20%;
     right: 2%;
     margin: 0 auto;
     transform: translateZ(50px); /*透視深度*/
+    width:calc(50% - 635px);
+    min-width: calc(100vw * 100 / 1920);
+    text-align: left;
+    z-index: 5;
 }
 
 .button1 > a {
@@ -154,7 +158,8 @@ p {
 
 .section.section-1 .bg img {
     position: absolute;
-    top: 0;
+    top:20vh;
+    transform: translateY(-30.2%);
     left: 25px;
 }
 
