@@ -3,7 +3,7 @@ export default [
   { name: '關於得邦', subTitle: 'About Us', path: 'about'},
   { name: '熱銷建案', subTitle: 'Projects', path: 'hot'},
   { name: '經典建案', subTitle: 'Classic', path: 'products'},
-  { name: '媒體報導', subTitle: 'News', path: 'news'},
+  { name: '房產資訊', subTitle: 'News', path: 'news'},
   { name: '影音專區', subTitle: 'Video', path: 'videos'},
   { name: '聯絡我們', subTitle: 'Contact Us', path: 'contacts'},
   // { name: '地圖導航', imgSrc: '', subTitle: '', section: 'google-map', svgSrc: '', mobileOffset: 0 },

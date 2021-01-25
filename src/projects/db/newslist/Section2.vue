@@ -1,15 +1,15 @@
 <template>
   <div class="section2">
-    <div class="tab flex-ac flex-jb">
-      <div :class="`tab-item flex-c yellow`">
+    <div class="tab flex-ac flex-jr">
+      <div :class="`tab-item flex-c yellow`" v-show="item_list.filter(i => i.type === 1).length > 0" @click="currentType = 1">
         最新消息
       </div> 
-      <div :class="`tab-item flex-c blue`">
+      <div :class="`tab-item flex-c blue`" v-show="item_list.filter(i => i.type === 2).length > 0" @click="currentType = 2">
         媒體報導
       </div>
     </div>
     <div class="container flex wrap">
-      <div class="item" v-for="(item, index) in item_list" :key="item.title + index" @click="$router.push(`/news/${index}`)">
+      <div class="item" v-for="(item, index) in item_list" :key="item.title + index" @click="$router.push(`/news/${index}?type=${item.type}`)" v-show="item.type === currentType">
         <img :src="item.img" :alt="`${info.caseName}`">
         <div class="add"></div>
         <div class="content flex flex-ac">
@@ -60,6 +60,7 @@
     line-height: 1.81;
     letter-spacing: size(6.6);
     text-align: center;
+    margin: 0 20px;
     transition: all 0.3s;
     cursor: pointer;
 
@@ -186,6 +187,7 @@
       text-align: center;
       color: #000000;
       margin-right: sizem(15);
+      margin-left: 0;
       transition: all 0.3s;
       cursor: pointer;
 
@@ -288,6 +290,7 @@ export default {
       isTablet,
       info,
       type: 1, // 1 最新消息, 2 媒體報導
+      currentType: 2,
       item_list: [
         {
           icon: require('./s1/icon2.png'),

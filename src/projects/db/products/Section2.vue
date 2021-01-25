@@ -52,19 +52,23 @@
         <div class="bottom"></div>
       </div>
       <div class="border-container">
-          <div class="swipe news-img" data-aos="fade-right" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-            <div class="swipe-wrap relative">
-              <img v-for="(slide, i) in slideList" :src="slide" :key="slide + i + 'slide'" :class="`swipe-item absolute ${slideIndex === i ? 'active' : ''} ${(slideIndex === (i + 1) || slideIndex === (i - slideList.length + 1)) ? 'base' : ''}`">
-              <div class="pagination absolute flex-ac">
-                <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+        <div class="swipe news-img" data-aos="fade-right" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+          <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+            <transition-group name="swipe-fade" mode="out-in">
+              <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide + i" :class="`swipe-item absolute`">
+                <img :src="slide" alt="">
               </div>
-              <div class="swipe-btns absolute flex-ac flex-jb">
-                <img src="../all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-                <img src="../all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-              </div>
+            </transition-group>
+            <div class="pagination absolute flex-ac">
+              <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+            </div>
+            <div class="swipe-btns absolute flex-ac flex-jb">
+              <img src="../all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+              <img src="../all/next-btn.png" alt="" class="next-btn" @click="addIndex">
             </div>
           </div>
-          <img :src="dialogData.logo" alt="" class="logo">
+        </div>
+        <img :src="dialogData.logo" alt="" class="logo">
         <img src="../../../assets/img/close.png" :alt="`${info.caseName}_close`" class="close" @click="closeProjectDialog">
         <div class="product-title" v-html="dialogData.title2"></div>
         <div class="product-info1" v-html="dialogData.info1"></div>
@@ -159,8 +163,20 @@
     object-fit: cover;
   }
   &::before,
-  &::after{content: "";width: 1em;height: 0.1em;font-size:size(44);background: #004ea2;position: absolute;right: 0.5em;top:10em;}
-  &::after{transform-origin:50% 50%;transform: rotate(90deg);}
+  &::after {
+    content: '';
+    width: 1em;
+    height: 0.1em;
+    font-size: size(44);
+    background: #004ea2;
+    position: absolute;
+    right: 0.5em;
+    top: 10em;
+  }
+  &::after {
+    transform-origin: 50% 50%;
+    transform: rotate(90deg);
+  }
 
   .content {
     height: size(130);
@@ -229,7 +245,6 @@
   cursor: pointer;
 }
 
-
 .product-title {
   @include img_l_pc(207, 48 + 50, 884);
   font-size: size(51);
@@ -260,15 +275,15 @@
   color: #4d4d4d;
   white-space: nowrap;
 }
-.txt{ 
+.txt {
   @include img_l_pc(640, 308, 884);
   font-size: size(19);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.55;
-    letter-spacing:0.05em;
-    text-align: left;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.55;
+  letter-spacing: 0.05em;
+  text-align: left;
   color: #008fbb;
 }
 
@@ -278,17 +293,18 @@
 
 .product-info3 {
   line-height: 1.4;
-  }
+}
 .product-contact {
   color: #4d4d4d;
 }
 
 .product-btn {
   @include div_r_pc(180, 32, 0, 0);
-  top: auto;bottom: 0;
+  top: auto;
+  bottom: 0;
   background-color: #008fbb;
   white-space: nowrap;
-  font-size:1.21em;
+  font-size: 1.21em;
   line-height: 1.37;
   letter-spacing: 0.22em;
   text-align: center;
@@ -369,7 +385,7 @@
     }
 
     .title {
-    @include div_r_m(118, 37, 196, 32);
+      @include div_r_m(118, 37, 196, 32);
       font-size: sizem(25);
       font-weight: normal;
       font-stretch: normal;
@@ -381,21 +397,21 @@
       white-space: nowrap;
     }
 
-  .subtitle {
-    @include div_r_m(200, 29, 258, 32);
-    font-size: sizem(20);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 4.59;
-    letter-spacing: sizem(1.2);
-    text-align: right;
-    color: #444444;
-    z-index: 10;
-  }
+    .subtitle {
+      @include div_r_m(200, 29, 258, 32);
+      font-size: sizem(20);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 4.59;
+      letter-spacing: sizem(1.2);
+      text-align: right;
+      color: #444444;
+      z-index: 10;
+    }
 
     .title-img {
-    @include img_l_m(186, 205, 33);
+      @include img_l_m(186, 205, 33);
     }
 
     .bottom {
@@ -445,7 +461,7 @@
     height: sizem(400);
     margin: 0 sizem(0) sizem(70);
     border-bottom: none;
-  position: relative;
+    position: relative;
     cursor: pointer;
 
     .add {
@@ -456,8 +472,10 @@
       height: sizem(305);
       object-fit: cover;
     }
-  &::before,
-  &::after{font-size:sizem(27.5);}
+    &::before,
+    &::after {
+      font-size: sizem(27.5);
+    }
 
     .content {
       // margin-top: sizem(221);
@@ -563,14 +581,13 @@
     color: #4d4d4d;
     white-space: nowrap;
   }
-.txt{ 
-  @include img_l_m(330, 482, 30);
+  .txt {
+    @include img_l_m(330, 482, 30);
     font-size: sizem(16);
     padding: 0 0 5.5em 0;
-    
-}
+  }
   .product-btn {
-   // @include div_l_pc(107, 26, 815, 229);
+    // @include div_l_pc(107, 26, 815, 229);
     font-size: sizem(15);
     width: 7.2em;
     height: 1.7333em;
@@ -690,6 +707,12 @@
       font-size: sizem(13);
     }
 
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
     // &:nth-child(1) {
     //   z-index: 1;
     //   // opacity: 1;
@@ -803,13 +826,18 @@ export default {
         logo: '',
         imgs: [],
       },
-      slideList: [],
+      slideList: [
+        require('../works/5/1.jpg'),
+        require('../works/5/2.jpg'),
+        require('../works/5/3.jpg'),
+        require('../works/5/4.jpg'),
+      ],
       item_list: [
         {
           title: '容邑PARK',
           title2: '容邑PARK',
           desc: '新北市｜新莊副都心',
-          img:require('../works/5/0.jpg'),
+          img: require('../works/5/0.jpg'),
           isEmpty: false,
           info1: '新北市｜新莊副都心',
           info2:
@@ -858,7 +886,12 @@ export default {
     // },
 
     selectImg(src) {
-      this.dialogData.imgs.unshift(this.dialogData.imgs.splice(this.dialogData.imgs.findIndex(item => item === src), 1)[0])
+      this.dialogData.imgs.unshift(
+        this.dialogData.imgs.splice(
+          this.dialogData.imgs.findIndex((item) => item === src),
+          1,
+        )[0],
+      )
     },
     showProjectDialog(item) {
       if (!item.isEmpty) {

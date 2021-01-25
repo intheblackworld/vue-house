@@ -1,18 +1,18 @@
 <template>
   <div class="section2">
-    <div class="tab flex-ac flex-jb">
-      <div :class="`tab-item flex-c yellow`">
+    <div class="tab flex-ac flex-jr">
+      <div :class="`tab-item flex-c yellow`" v-show="item_list.filter(i => i.type === 1).length > 0" @click="currentType = 1">
         線上熱銷
       </div>
-      <div :class="`tab-item flex-c blue`">
+      <div :class="`tab-item flex-c blue`" v-show="item_list.filter(i => i.type === 2).length > 0" @click="currentType = 2">
         完銷個案
       </div>
-      <div :class="`tab-item flex-c black`">
+      <div :class="`tab-item flex-c black`" v-show="item_list.filter(i => i.type === 3).length > 0" @click="currentType = 3">
         媒體影音
       </div>
     </div>
     <div class="container">
-      <div class="item flex-ac wrap" v-for="(item, index) in item_list" :key="item.title + index">
+      <div class="item flex-ac wrap" v-for="(item, index) in item_list" :key="item.title + index" v-show="item.type === currentType">
         <iframe :src="item.video" frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen></iframe>
@@ -68,6 +68,7 @@
     line-height: 1.81;
     letter-spacing: size(6.6);
     text-align: center;
+    margin: 0 20px;
     transition: all 0.3s;
     cursor: pointer;
 
@@ -236,6 +237,8 @@
       letter-spacing: sizem(2.85);
       text-align: center;
       color: #000000;
+      margin-right: 0;
+      margin-left: sizem(15);
       transition: all 0.3s;
       cursor: pointer;
 
@@ -268,7 +271,7 @@
     // justify-content: center;
     border-bottom: none;
     cursor: pointer;
-    display: block !important;
+    display: block;
 
     iframe {
       width: 100vw;
@@ -368,7 +371,8 @@ export default {
       isMobile,
       isTablet,
       info,
-      type: 1, // 1 最新消息, 2 媒體報導
+      type: 1, // 1 線上熱銷, 2 完銷個案, 3 媒體影音
+      currentType: 1,
       item_list: [
         {
           // icon: require('./s1/icon1.png'),

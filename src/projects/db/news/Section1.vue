@@ -2,8 +2,8 @@
   <div class="section1">
     <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
     <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img an">
-    <h1 class="title1">最新消息</h1>
-    <h1 class="title2">媒體報導</h1>
+    <h1 class="title1" v-show="$route.query.type == 1">最新消息</h1>
+    <h1 class="title2" v-show="$route.query.type == 2">媒體報導</h1>
     <div class="bottom"></div>
     <img src="./s1/title.png" :alt="`${info.caseName}_title`" class="title-img">
   </div>
