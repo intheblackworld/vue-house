@@ -20,7 +20,7 @@
             </div>
             <div class="row" data-aos="fade-down" data-aos-delay="200">
               <label>手機</label>
-              <el-input v-model="form.phone" type="number" placeholder></el-input>
+              <el-input v-model="form.phone" placeholder></el-input>
             </div>
             <!-- <div class="row" data-aos="fade-down"
         data-aos-delay="300">
