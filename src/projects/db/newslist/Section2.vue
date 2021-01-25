@@ -311,7 +311,7 @@ export default {
           icon: require('./s1/icon2.png'),
           type: 2,
           desc: '【中時新聞網】百萬自備款買新北三房 神采飛洋賣破七成',
-          img: require('../newimg/5/中時1.jpg'),
+          img: require('../newimg/5/中時2.jpg'),
         },
         {
           icon: require('./s1/icon2.png'),
