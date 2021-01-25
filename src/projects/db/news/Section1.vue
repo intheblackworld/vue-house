@@ -54,7 +54,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.61;
-  letter-spacing: size(7.4);
+  letter-spacing:0.2em;
   text-align: center;
   color: #000000;
   background-color: #ffe900;
@@ -121,16 +121,10 @@
   }
 
   .title {
+    &1,&2{
     @include div_r_m(112, 38, 291, 32);
     font-size: sizem(17);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.53;
-    letter-spacing: sizem(3.23);
-    text-align: center;
-    color: #000000;
-    white-space: nowrap;
+    }
   }
 
   .title-img {
