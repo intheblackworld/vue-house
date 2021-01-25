@@ -17,9 +17,9 @@
           <img src="@/assets/img/close.png" alt class="close" @click="modal = false" />
         </div>
       </div> -->
-     <!-- <div class="star comet"></div>  -->
+     <!-- <div class="star comet"></div>
       <img src="./s1_logo.png" alt class="logo" data-aos="fade-down" data-aos-delay="0" v-if="!isMobile"  />
-      <img src="./s1_logo_m.png" alt class="logo" data-aos="fade-down" data-aos-delay="0" v-if="isMobile"  />
+      <img src="./s1_logo_m.png" alt class="logo" data-aos="fade-down" data-aos-delay="0" v-if="isMobile"  />  -->
     </div>
   <!--  <img src="./s1_bg_bottom.png" alt class="bg-bottom" v-if="!isMobile" />
     <img src="./s1_bg_bottom_m.png" alt class="bg-bottom" v-if="isMobile" />  -->
@@ -74,7 +74,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('./s1_bg.jpg');
+  background-image: url('./w.jpg');
   min-height:calc(100vw * 900 / 1920);
   max-height:calc(100vw * 1080 / 1920);
 }
@@ -110,7 +110,7 @@
   .bg {
     background-position: 55%;
     background-size: cover;
-  background-image: url('./s1_bg_m.jpg');
+  background-image: url('./mo.jpg');
   min-height:calc(100vw * 604 / 375);
   max-height:calc(100vw * 812 / 375);
   }
