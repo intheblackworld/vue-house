@@ -166,7 +166,7 @@
   .p12 {
     @include img_r_m(129, 333, 240);
     top: auto;
-    bottom: 0;
+    bottom: sizem(-1);
   width: auto;
   height:calc(50% - 20vw);
   }

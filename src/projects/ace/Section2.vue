@@ -325,8 +325,8 @@
   }
 
   .bg {
-    @include img_r_m(360, 0, 0);
-    left: 50%;transform: translateX(-50%);
+    @include img_r_m(375, 0, 0);
+    left: 0;transform: translateX(0%);
     background: #000;
     height: 100%;
   }
@@ -587,7 +587,7 @@ export default {
             },
             {
               icon: require('./s2/icon.png'),
-              name: '雙和市中心<br />購物中心、Costco..眾星拱月',
+              name: '雙和市中心<br />購物中心、COSTCO..眾星拱月',
             },
             {
               icon: require('./s2/icon.png'),
@@ -635,11 +635,11 @@ export default {
                 },
                 {
                   icon: require('./s2/icon.png'),
-                  name: '雙和市中心<br />購物中心、Costco..眾星拱月',
+                  name: '雙和市中心<br />購物中心、COSTCO..眾星拱月',
                 },
                 {
                   icon: require('./s2/icon.png'),
-                  name: '雙和唯一，15萬噸鋼骨用量<br />BRB+CFT柱雙制震',
+                  name: '雙和唯一，1.5萬噸鋼骨用量<br />BRB+CFT柱雙制震',
                 },
               ],
             },
