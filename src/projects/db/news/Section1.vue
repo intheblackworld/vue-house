@@ -2,7 +2,8 @@
   <div class="section1">
     <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
     <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img an">
-    <h1 class="title">最新消息</h1>
+    <h1 class="title1">最新消息</h1>
+    <h1 class="title2">媒體報導</h1>
     <div class="bottom"></div>
     <img src="./s1/title.png" :alt="`${info.caseName}_title`" class="title-img">
   </div>
@@ -46,6 +47,7 @@
 
 
 .title {
+  &1,&2{
   @include div_r_pc(303, 58, 274, 250);
   font-size: size(37);
   font-weight: 500;
@@ -58,6 +60,10 @@
   background-color: #ffe900;
   white-space: nowrap;
   z-index: 2;
+  }
+  &2{
+  background-color:#008fbb;
+  color: #fff;}
 }
 
 .title-img {

@@ -25,11 +25,13 @@
         <div class="product-title" v-html="dialogData.title2"></div>
         <div class="product-info1" v-html="dialogData.info1"></div>
         <div class="hr"></div>
-        <div class="product-info2" v-html="dialogData.info2"></div>
-        <div class="info-title">建案特色：</div>
-        <div class="product-info3" v-html="dialogData.info3"></div>
-        <div class="product-contact" v-html="dialogData.contact"></div>
-        <a class="product-btn" :href="dialogData.link" target="_blank">建案官網</a>
+        <div class="txt">
+          <div class="product-info2" v-html="dialogData.info2"></div>
+          <div class="info-title">建案特色：</div>
+          <div class="product-info3" v-html="dialogData.info3"></div>
+          <div class="product-contact" v-html="dialogData.contact"></div>
+          <a class="product-btn" :href="dialogData.link" target="_blank">建案官網</a>
+        </div>
         <img src="./s1/rb.png" :alt="`${info.caseName}`" class="rb">
         <img :src="dialogData.logo" alt="" class="logo">
         <div class="slide-imgs flex-as flex-jb">
@@ -51,31 +53,33 @@
         <div class="bottom"></div>
       </div>
       <div class="border-container">
-        <img src="../../../assets/img/close.png" :alt="`${info.caseName}_close`" class="close" @click="closeProjectDialog">
+          <div class="swipe news-img" data-aos="fade-right" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+            <div class="swipe-wrap relative">
+              <img v-for="(slide, i) in slideList" :src="slide" :key="slide + i + 'slide'" :class="`swipe-item absolute ${slideIndex === i ? 'active' : ''} ${(slideIndex === (i + 1) || slideIndex === (i - slideList.length + 1)) ? 'base' : ''}`">
+              <div class="pagination absolute flex-ac">
+                <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+              </div>
+              <div class="swipe-btns absolute flex-ac flex-jb">
+                <img src="../all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+                <img src="../all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+              </div>
+            </div>
+          </div>
+          <img :src="dialogData.logo" alt="" class="logo">
+       <!-- <img src="../../../assets/img/close.png" :alt="`${info.caseName}_close`" class="close" @click="closeProjectDialog"> -->
         <div class="product-title" v-html="dialogData.title2"></div>
         <div class="product-info1" v-html="dialogData.info1"></div>
         <div class="hr"></div>
-        <div class="product-info2" v-html="dialogData.info2"></div>
-        <div class="info-title">建案特色：</div>
-        <div class="product-info3" v-html="dialogData.info3"></div>
-        <div class="product-contact" v-html="dialogData.contact"></div>
-        <!-- <a class="product-btn" :href="dialogData.link" target="_blank">建案官網</a> -->
-        <img src="./s1/rb.png" :alt="`${info.caseName}`" class="rb">
-        <img :src="dialogData.logo" alt="" class="logo">
-        <div class="swipe news-img" data-aos="fade-right" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-          <div class="swipe-wrap relative">
-            <img v-for="(slide, i) in slideList" :src="slide" :key="slide + i + 'slide'" :class="`swipe-item absolute ${slideIndex === i ? 'active' : ''} ${(slideIndex === (i + 1) || slideIndex === (i - slideList.length + 1)) ? 'base' : ''}`">
-            <div class="pagination absolute flex-ac">
-              <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-            </div>
-            <div class="swipe-btns absolute flex-ac flex-jb">
-              <img src="../all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-              <img src="../all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-            </div>
+        <div class="txt">
+          <div class="product-info2" v-html="dialogData.info2"></div>
+          <div class="info-title">建案特色：</div>
+          <div class="product-info3" v-html="dialogData.info3"></div>
+          <div class="product-contact" v-html="dialogData.contact"></div>
+          <a class="product-btn" :href="dialogData.link" target="_blank">建案官網</a>
+          <img src="./s1/rb.png" :alt="`${info.caseName}`" class="rb">
+          <div class="back" @click="isProjectDialog = false">
+            ［回上一頁］
           </div>
-        </div>
-        <div class="back" @click="isProjectDialog = false">
-          ［回上一頁］
         </div>
       </div>
     </div>
@@ -268,68 +272,42 @@
   color: #4d4d4d;
   white-space: nowrap;
 }
-
-.product-info2 {
-  @include img_l_pc(296, 308, 884);
+.txt{ 
+  @include img_l_pc(640, 308, 884);
   font-size: size(19);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.55;
-  letter-spacing: size(0.76);
-  text-align: left;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.55;
+    letter-spacing:0.05em;
+    text-align: left;
   color: #008fbb;
-  white-space: nowrap;
+}
+.product-info2 {
+  margin: 0 0 0.6em;
 }
 
 .info-title {
-  @include img_l_pc(340, 377, 884);
-  font-size: size(19);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.4;
-  letter-spacing: size(0.84);
-  text-align: left;
-  color: #008fbb;
-  white-space: nowrap;
 }
 
 .product-info3 {
-  @include img_l_pc(340, 377, 884 + 100);
-  font-size: size(19);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.4;
-  letter-spacing: size(0.84);
-  text-align: left;
-  color: #008fbb;
-  white-space: nowrap;
+  position: relative;top: -1.35em;margin: 0 0 -0.6em 5.3em;
 }
 
 .product-contact {
-  @include img_l_pc(356, 517, 884);
-  font-size: size(19);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.55;
-  letter-spacing: size(1.14);
-  text-align: left;
   color: #4d4d4d;
 }
 
 .product-btn {
-  @include div_l_pc(180, 32, 541, 1297 + 20);
+  @include div_r_pc(180, 32, 0, 0);
+  top: auto;bottom: 0;
   background-color: #008fbb;
   white-space: nowrap;
-  font-size: size(23);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
+  font-size:1.21em;
   line-height: 1.37;
-  letter-spacing: size(5.06);
+  letter-spacing: 0.22em;
   text-align: center;
   text-decoration: none;
   color: #ffffff;
@@ -421,14 +399,14 @@
     }
 
     .subtitle {
-      @include div_r_m(168, 29, 255, 32);
+      @include div_r_m(300, 29, 255, 32);
       font-size: sizem(20);
       font-weight: normal;
       font-stretch: normal;
       font-style: normal;
       line-height: 4.59;
       letter-spacing: sizem(1.2);
-      text-align: left;
+      text-align: right;
       color: #444444;
       z-index: 10;
     }
@@ -563,7 +541,8 @@
   .border-container {
     @include div_l_m(375, 691, 277, 0);
     width: sizem(375);
-    min-height: sizem(950);
+    min-height: sizem(0);
+    height: auto;
     border: none;
   }
 
@@ -602,72 +581,19 @@
     white-space: nowrap;
   }
 
-  .product-info2 {
-    @include img_l_m(297, 522, 30);
+.txt{ 
+  @include img_l_m(330, 522, 30);
     font-size: sizem(16);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.55;
-    letter-spacing: sizem(0.76);
-    text-align: left;
-    color: #008fbb;
-    white-space: normal;
-  }
-
-  .info-title {
-    @include img_l_m(340, 636, 30);
-    font-size: sizem(16);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.4;
-    letter-spacing: sizem(0.84);
-    text-align: left;
-    color: #008fbb;
-    white-space: nowrap;
-  }
-
-  .product-info3 {
-    @include img_l_m(340, 636, 112);
-    width: sizem(233);
-    font-size: sizem(16);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.4;
-    letter-spacing: sizem(0.84);
-    text-align: left;
-    color: #008fbb;
-    white-space: normal;
-  }
-
-  .product-contact {
-    @include img_l_m(240, 763, 30);
-    width: sizem(303);
-    font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.55;
-    letter-spacing: sizem(1.14);
-    text-align: left;
-    color: #4d4d4d;
-  }
+    padding: 0 0 5.5em 0;
+    
+}
 
   .product-btn {
-    @include div_l_pc(107, 26, 815, 229);
-    background-color: #008fbb;
-    white-space: nowrap;
+   // @include div_l_pc(107, 26, 815, 229);
     font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.37;
-    letter-spacing: sizem(3.06);
-    text-align: center;
-    text-decoration: none;
-    color: #ffffff;
+    width: 7.2em;
+    height: 1.7333em;
+    bottom: 3em;
   }
 
   .rb {
@@ -679,7 +605,9 @@
   }
 
   .back {
-    @include img_r_m(107, 840, 134);
+    @include img_r_m(107, 0, 134);
+    top: auto;
+    bottom: 0;
     font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
@@ -925,11 +853,11 @@ export default {
           title: '太陽<br />帝國',
           title2: '太陽帝國',
           desc:
-            '新北市｜中和區<br />19-39坪 2-3房<br />不是王牌不出手 唯有贏家能出手',
+            '新北市｜中和區<br />19-39坪 2-3房<br />不是王牌不出手 唯有贏家能擁有',
           img: require('../works/4/0.jpg'),
           isEmpty: false,
           info1:
-            '新北市｜中和區<br />19-39坪 2-3房<br />不是王牌不出手 唯有贏家能出手',
+            '新北市｜中和區<br />19-39坪 2-3房<br />不是王牌不出手 唯有贏家能擁有',
           info2: '投資興建：美聯開發股份有限公司<br />規劃坪數：19-39坪',
           info3:
             '澳洲PTW建築團隊巨鑄<br />雙和第一高峰36層地標<br />全棟144隻BRB制震器',
@@ -949,11 +877,11 @@ export default {
           title: '神采<br />飛洋',
           title2: '神采飛洋',
           desc:
-            '新北市｜洲子洋重劃區<br />2房(15、20坪)｜3房(25、33坪)<br />公園 校園 花園 誠徵有園人',
+            '新北市｜洲子洋重劃區<br />2房(15、20坪)｜3房(25、33坪)<br />別人的是房 自己的才是家',
           img: require('../works/3/0.jpg'),
           isEmpty: false,
           info1:
-            '新北市｜洲子洋重劃區<br />2房(15、20坪)｜3房(25、33坪)<br />公園 校園 花園 誠徵有園人',
+            '新北市｜洲子洋重劃區<br />2房(15、20坪)｜3房(25、33坪)<br />別人的是房 自己的才是家',
           info2:
             '投資興建：茂德建設股份有限公司<br />格局規劃：二房(15、20坪) 、 三房(25、33坪)',
           info3:
@@ -966,7 +894,7 @@ export default {
             require('../works/3/1.jpg'),
             require('../works/3/2.jpg'),
             require('../works/3/3.jpg'),
-            require('../works/3/4.jpg'),
+            require('../works/3/4.jpg')
           ],
         },
         //陽光
@@ -997,17 +925,19 @@ export default {
   },
 
   methods: {
-    // @slideChangeTransitionEnd="slideChanged"
-    // slideChanged(e) {
-    //   const swiper = this.$refs.mySwiper.swiper
-    //   if (swiper.isEnd) {
-    //     this.slideIndex = 0
-    //   } else if (swiper.isBeginning) {
-    //     this.slideIndex = swiper.slides.length - 3
-    //   } else {
-    //     this.slideIndex = swiper.activeIndex - 1
-    //   }
-    // },
+   /*
+   @slideChangeTransitionEnd="slideChanged"
+     slideChanged(e) {
+       const swiper = this.$refs.mySwiper.swiper
+       if (swiper.isEnd) {
+         this.slideIndex = 0
+       } else if (swiper.isBeginning) {
+         this.slideIndex = swiper.slides.length - 3
+       } else {
+         this.slideIndex = swiper.activeIndex - 1
+       }
+     },
+    */
 
     selectImg(src) {
       this.dialogData.imgs.unshift(

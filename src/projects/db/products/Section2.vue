@@ -25,10 +25,12 @@
         <div class="product-title" v-html="dialogData.title2"></div>
         <div class="product-info1" v-html="dialogData.info1"></div>
         <div class="hr"></div>
-        <div class="product-info2" v-html="dialogData.info2"></div>
-        <div class="product-info3" v-html="dialogData.info3"></div>
-        <div class="product-contact" v-html="dialogData.contact"></div>
-        <!-- <a class="product-btn" :href="dialogData.link" target="_blank">建案官網</a> -->
+        <div class="txt">
+          <div class="product-info2" v-html="dialogData.info2"></div>
+          <div class="product-info3" v-html="dialogData.info3"></div>
+          <div class="product-contact" v-html="dialogData.contact"></div>
+          <!-- <a class="product-btn" :href="dialogData.link" target="_blank">建案官網</a> -->
+        </div>
         <img src="./s1/rb.png" :alt="`${info.caseName}`" class="rb">
         <img :src="dialogData.logo" alt="" class="logo">
         <div class="slide-imgs flex-as flex-jb">
@@ -50,30 +52,32 @@
         <div class="bottom"></div>
       </div>
       <div class="border-container">
+          <div class="swipe news-img" data-aos="fade-right" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+            <div class="swipe-wrap relative">
+              <img v-for="(slide, i) in slideList" :src="slide" :key="slide + i + 'slide'" :class="`swipe-item absolute ${slideIndex === i ? 'active' : ''} ${(slideIndex === (i + 1) || slideIndex === (i - slideList.length + 1)) ? 'base' : ''}`">
+              <div class="pagination absolute flex-ac">
+                <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+              </div>
+              <div class="swipe-btns absolute flex-ac flex-jb">
+                <img src="../all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+                <img src="../all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+              </div>
+            </div>
+          </div>
+          <img :src="dialogData.logo" alt="" class="logo">
         <img src="../../../assets/img/close.png" :alt="`${info.caseName}_close`" class="close" @click="closeProjectDialog">
         <div class="product-title" v-html="dialogData.title2"></div>
         <div class="product-info1" v-html="dialogData.info1"></div>
         <div class="hr"></div>
-        <div class="product-info2" v-html="dialogData.info2"></div>
-        <div class="product-info3" v-html="dialogData.info3"></div>
-        <div class="product-contact" v-html="dialogData.contact"></div>
-        <!-- <a class="product-btn" :href="dialogData.link" target="_blank">建案官網</a> -->
-        <img src="./s1/rb.png" :alt="`${info.caseName}`" class="rb">
-        <img :src="dialogData.logo" alt="" class="logo">
-        <div class="swipe news-img" data-aos="fade-right" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-          <div class="swipe-wrap relative">
-            <img v-for="(slide, i) in slideList" :src="slide" :key="slide + i + 'slide'" :class="`swipe-item absolute ${slideIndex === i ? 'active' : ''} ${(slideIndex === (i + 1) || slideIndex === (i - slideList.length + 1)) ? 'base' : ''}`">
-            <div class="pagination absolute flex-ac">
-              <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-            </div>
-            <div class="swipe-btns absolute flex-ac flex-jb">
-              <img src="../all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-              <img src="../all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-            </div>
+        <div class="txt">
+          <div class="product-info2" v-html="dialogData.info2"></div>
+          <div class="product-info3" v-html="dialogData.info3"></div>
+          <div class="product-contact" v-html="dialogData.contact"></div>
+          <!-- <a class="product-btn" :href="dialogData.link" target="_blank">建案官網</a> -->
+          <img src="./s1/rb.png" :alt="`${info.caseName}`" class="rb">
+          <div class="back" @click="isProjectDialog = false">
+            ［回上一頁］
           </div>
-        </div>
-        <div class="back" @click="isProjectDialog = false">
-          ［回上一頁］
         </div>
       </div>
     </div>
@@ -256,55 +260,37 @@
   color: #4d4d4d;
   white-space: nowrap;
 }
+.txt{ 
+  @include img_l_pc(640, 308, 884);
+  font-size: size(19);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.55;
+    letter-spacing:0.05em;
+    text-align: left;
+  color: #008fbb;
+}
 
 .product-info2 {
-  @include img_l_pc(586, 308, 884);
-  font-size: size(19);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.55;
-  letter-spacing: size(0.76);
-  text-align: left;
-  color: #008fbb;
-  // white-space: nowrap;
+  margin: 0 0 0.6em;
 }
 
 .product-info3 {
-  @include img_l_pc(340, 377, 884);
-  font-size: size(19);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.4;
-  letter-spacing: size(0.84);
-  text-align: left;
-  color: #008fbb;
-  white-space: nowrap;
-}
-
+  }
 .product-contact {
-  @include img_l_pc(356, 517, 884);
-  font-size: size(19);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.55;
-  letter-spacing: size(1.14);
-  text-align: left;
   color: #4d4d4d;
 }
 
 .product-btn {
-  @include div_l_pc(180, 32, 541, 1297 + 20);
+  @include div_r_pc(180, 32, 0, 0);
+  top: auto;bottom: 0;
   background-color: #008fbb;
   white-space: nowrap;
-  font-size: size(23);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
+  font-size:1.21em;
   line-height: 1.37;
-  letter-spacing: size(5.06);
+  letter-spacing: 0.22em;
   text-align: center;
   text-decoration: none;
   color: #ffffff;
@@ -538,7 +524,8 @@
   .border-container {
     @include div_l_m(375, 691, 277, 0);
     width: sizem(375);
-    min-height: sizem(950);
+    min-height: sizem(0);
+    height: auto;
     border: none;
   }
 
@@ -560,7 +547,7 @@
   }
 
   .hr {
-    @include div_l_m(320, 2, 500, 32);
+    @include div_l_m(320, 2, 460, 32);
     background-color: #008fbb;
   }
 
@@ -576,58 +563,18 @@
     color: #4d4d4d;
     white-space: nowrap;
   }
-
-  .product-info2 {
-    @include img_l_m(297, 522, 30);
+.txt{ 
+  @include img_l_m(330, 482, 30);
     font-size: sizem(16);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.55;
-    letter-spacing: sizem(0.76);
-    text-align: left;
-    color: #008fbb;
-    // white-space: nowrap;
-  }
-
-  .product-info3 {
-    @include img_l_m(340, 636, 30);
-    font-size: sizem(16);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.4;
-    letter-spacing: sizem(0.84);
-    text-align: left;
-    color: #008fbb;
-    white-space: nowrap;
-  }
-
-  .product-contact {
-    @include img_l_pc(356, 743, 30);
-    font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.55;
-    letter-spacing: sizem(1.14);
-    text-align: left;
-    color: #4d4d4d;
-  }
-
+    padding: 0 0 5.5em 0;
+    
+}
   .product-btn {
-    @include div_l_pc(107, 26, 815, 229);
-    background-color: #008fbb;
-    white-space: nowrap;
+   // @include div_l_pc(107, 26, 815, 229);
     font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.37;
-    letter-spacing: sizem(3.06);
-    text-align: center;
-    text-decoration: none;
-    color: #ffffff;
+    width: 7.2em;
+    height: 1.7333em;
+    bottom: 3em;
   }
 
   .rb {
@@ -640,6 +587,8 @@
 
   .back {
     @include img_r_m(107, 820, 134);
+    top: auto;
+    bottom: 0;
     font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
