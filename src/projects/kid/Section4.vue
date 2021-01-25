@@ -1,6 +1,8 @@
 <template>
   <div class="section4">
     <div class="bg-img"></div>
+    <img src="./s2/o.png" :alt="`${info.
+    caseName}_o`" class="o">
     <img src="./s4/title.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isPC">
     <img src="./s4/title_m.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isMobile">
     <img src="./s4/logo.png" :alt="`${info.
@@ -25,7 +27,7 @@
     <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
-          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img + i" :class="`swipe-item absolute`">
             <img :src="slide.img" :alt="slide.name">
             <div class="name absolute" v-html="slide.name"></div>
           </div>
@@ -71,7 +73,7 @@
   left: 0;
   display: block;
   object-fit: cover;
-  background-color: #f5f0ec;
+  // background-color: #f5f0ec;
 
   &:nth-child(1) {
     position: relative;
@@ -83,11 +85,11 @@
 }
 
 .o {
-  @include img_r_pc(626, 272, 0);
+  @include img_r_pc(626, -22, 0);
 }
 
 .title {
-  @include img_l_pc(452, 147, 533);
+  @include img_l_pc(452, 97, 533);
   font-size: size(37);
   font-weight: 900;
   font-stretch: normal;
@@ -100,7 +102,7 @@
 }
 
 .desc {
-  @include img_l_pc(552, 227, 532);
+  @include img_l_pc(552, 163, 532);
   font-size: size(20);
   font-weight: normal;
   font-stretch: normal;
@@ -109,6 +111,10 @@
   letter-spacing: normal;
   text-align: left;
   color: #606060;
+}
+
+.logo {
+  @include img_r_pc(462, 80, 582);
 }
 
 .p1 {
@@ -129,7 +135,7 @@
 }
 .animate-bg {
   .bubble4 {
-    @include img_l_pc(139, 887, 322);
+    @include img_l_pc(333, 821, 152);
     animation: jump 1s 0s ease-in-out alternate-reverse infinite;
     z-index: 5;
   }
@@ -144,7 +150,7 @@
 .swipe {
   width: size(754);
   height: size(500);
-  top: size(432);
+  top: size(399);
   right: size(633);
   object-fit: cover;
   border: 3px solid #e32372;

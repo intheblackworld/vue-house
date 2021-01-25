@@ -5,7 +5,7 @@
       <img src="./s3/img.jpg" alt="" v-rellax="{
           // Rellax Options
           // See: https://github.com/dixonandmoe/rellax#features
-          speed: 2,
+          speed: 1,
         }">
     </div>
     <img src="./s3/title.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isPC">

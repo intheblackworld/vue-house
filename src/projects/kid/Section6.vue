@@ -1,22 +1,45 @@
 <template>
   <div class="section6">
-    <img src="./s6/bg.png" :alt="`${info.caseName}_bgimg`" class="bg-img" v-if="isPC">
-    <img src="./mo/b.png" :alt="`${info.caseName}_bgimg`" class="bg" v-if="isMobile">
-    <img src="./s6/img.jpg" :alt="`${info.caseName}_img`" class="img">
-    <img src="./s6/logoall.png" :alt="`${info.caseName}_logoall`" class="logoall" data-aos="fade-down" data-aos-delay="800">
-    <div class="title" data-aos="fade-down" data-aos-delay="100">
-      結構王牌
+    <div class="bg-img"></div>
+    <img src="./s6/1.png" :alt="`${info.
+    caseName}_o`" class="o high">
+    <img src="./s6/2.png" :alt="`${info.
+    caseName}_o`" class="o">
+    <img src="./s6/free.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isPC">
+    <!-- <img src="./s6/title_m.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isMobile"> -->
+    <img src="./s4/logo.png" :alt="`${info.
+    caseName}_logo`" class="logo">
+    <div class="title">
+      全新生活平台 祕境歡樂一整天
     </div>
-    <h1 class="subtitle" data-aos="fade-down" data-aos-delay="200">
-      強度比肩台北101<br />ACE級雙制震建築
-    </h1>
-    <ul class="desc">
-      <li data-aos="fade-down" data-aos-delay="300">柱內萬磅灌漿 101同級制震</li>
-      <li data-aos="fade-down" data-aos-delay="400">SC鋼骨 SN耐震鋼材 雙S級抗震高標準</li>
-      <li data-aos="fade-down" data-aos-delay="500">全建築144支BRB制震器 層層降振保平安</li>
-      <li data-aos="fade-down" data-aos-delay="600">業界領導品牌加持 101同級萬磅混凝土</li>
-      <li data-aos="fade-down" data-aos-delay="700">地基深扎岩盤 達到最佳耐震力</li>
-    </ul>
+    <div class="child-jump">
+      <img src="./s4/p3.png" :alt="`${info.caseName}_p1`" class="p1" data-aos="child-jump" data-aos-delay="1200" data-aos-duration="3000">
+    </div>
+    <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img + i" :class="`swipe-item absolute`">
+            <img :src="slide.img" :alt="slide.name">
+            <div class="name absolute" v-html="slide.name"></div>
+          </div>
+        </transition-group>
+        <!-- <div class="swipe-btns absolute flex-ac flex-jb" v-if="isPC">
+          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+        </div> -->
+      </div>
+    </div>
+    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+      <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+    </div>
+    <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+      <div class="prev-btn flex-c">
+        <img src="./all/prev-btn.png" alt="" @click="decIndex">
+      </div>
+      <div class="next-btn flex-c">
+        <img src="./all/next-btn.png" alt="" @click="addIndex">
+      </div>
+    </div>
   </div>
 </template>
 
@@ -25,87 +48,231 @@
 
 .section6 {
   width: size(1920);
-  height: 100vh;
-  min-height: size(900);
-  max-height: size(1080);
+  height: size(1830);
+  min-height: size(1830);
+  max-height: size(1830);
   background-size: cover;
   background-attachment: fixed;
-  overflow: hidden;
+  //  overflow: hidden;
 }
 
 .bg-img {
-  width: size(1920);
+  width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   display: block;
-  left:50%;transform: translateX(-50%)
+  object-fit: cover;
+  background-color: #fff;
+
+  &:nth-child(1) {
+    position: relative;
+  }
+}
+
+.title-img {
+  @include img_l_pc(322, 239, 375);
+}
+
+.o {
+  @include img_r_pc(648, -132, 0);
+
+  &.high {
+    z-index: 2;
+  }
 }
 
 .title {
-  @include img_l_pc(180, 168, 679);
-  left: calc(50% + 5vw);
-  top: calc(50% - 19vw);
-  font-size: size(45);
-  font-weight: 500;
+  @include img_c_pc(680, 100);
+  font-size: size(51.4);
+  font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.36;
+  line-height: 1.2;
   letter-spacing: normal;
   text-align: left;
-  color: #285065;
+  color: #000000;
   white-space: nowrap;
 }
 
-.subtitle {
-  @include img_l_pc(390, 245, 469);
-  left: calc(50% + 5vw);
-  top: calc(50% - 14vw);
-  font-size: size(48);
-  font-weight: 900;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.3;
-  letter-spacing: normal;
-  text-align: left;
-  color: #685335;
-  white-space: nowrap;
+.logo {
+  @include img_r_pc(462, 80, 582);
 }
 
-.desc {
-  @include img_l_pc(538, 400, 0);
-  left: calc(50% + 5vw);
-  width: auto;
-  top: calc(50% - 6.5vw);
-  font-size: size(27);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2.15;
-  letter-spacing: normal;
-  text-align: left;
-  color: #284e62;
-  li::before{content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 9' fill='%23c7a578'%3E%3Crect x='0' y='0' width='5' height='5' transform='translate(4 0) rotate(45)'/%3E%3C/svg%3E");
-    width: 0.7em;height: 0.7em;display: inline-block;margin: 0 0.3em 0 0;
+.p1 {
+  @include img_r_pc(217, 235, 223);
+  top: auto;
+}
+
+.p2 {
+  @include img_r_pc(211, 516, 445);
+  top: auto;
+}
+
+/* Swipe */
+.swipe {
+  width: size(754);
+  height: size(500);
+  top: size(399);
+  right: size(633);
+  object-fit: cover;
+  border: 3px solid #e32372;
+}
+
+// begin
+.swipe-fade-leave-to {
+  opacity: 0;
+  z-index: 0;
+}
+// end
+.swipe-fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.swipe-fade-enter-active {
+  transition: all 0.5s ease;
+}
+
+.swipe-fade-leave-active {
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+// begin
+// .swipe-left-leave-to {
+//   margin-left: -100vw;
+//   z-index: 0;
+// }
+// // end
+// .swipe-left-enter {
+//   opacity: 0.5;
+//   margin-left: 0;
+//   z-index: 1;
+// }
+
+// .swipe-left-enter-active {
+//   transition: all 0.5s ease;
+// }
+
+// .swipe-left-leave-active {
+//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+// }
+
+.swipe-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.swipe-item {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
+  .name {
+    right: 1.5em;
+    bottom: 1em;
+    font-size: 0.78125vw;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.89px;
+    text-align: left;
+    color: #fff;
+    text-shadow: 0 0.1em 0.3em #000;
+  }
+
+  // &:nth-child(1) {
+  //   z-index: 1;
+  //   // opacity: 1;
+  // }
+
+  // &.base {
+  //   z-index: 1;
+  //   opacity: 1;
+  // }
+  // &.active {
+  //   z-index: 2;
+  //   // opacity: 1;
+  // }
 }
 
-.img {
-  @include img_l_pc(646, 0, 328);
-  width:auto;
-  height: 90%;
-  top: 5%;
-  left: auto;
-  right: 49%;
-  max-height: size(968.5);
+.pagination {
+  @include img_l_pc(754, 956, 516);
+  margin: 0 auto;
+  justify-content: flex-start;
 }
 
-.logoall {
-  @include img_l_pc(384, 743, 478);
-  left: calc(50% + 5vw);
-  top: calc(50% + 11vw);
+.pagination-dot {
+  padding: 5px;
+  margin: 0 10px;
+  cursor: pointer;
+  z-index: 4;
+
+  span {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 1px #e32372;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.38);
+    transition: all 0.5s;
+
+    &::before {
+      content: '';
+      width: 60%;
+      height: 60%;
+      display: block;
+      background: #e32372;
+      border-radius: 20px;
+      opacity: 1;
+      position: absolute;
+      top: 20%;
+      // transform: translateY(-50%);
+      left: 20%;
+      transition: all 0.3s;
+      transform-origin: center;
+      transform: scale(0);
+    }
+    &.active {
+      &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: #e32372;
+        border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 0%;
+        // transform: translateY(-50%);
+        left: 0%;
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.swipe-btns {
+  width: 100%;
+  height: 100%;
+  padding: 0 15px;
+  z-index: 3;
+
+  .prev-btn,
+  .next-btn {
+    width: size(46);
+    cursor: pointer;
+  }
 }
 
 @media only screen and (max-width: 1440px) {
@@ -124,75 +291,240 @@
 @media screen and (max-width: 767px) {
   .section6 {
     width: 100vw;
-    height: sizem(990);
-    min-height: sizem(990);
-    max-height: sizem(990);
+    height: calc(100vh - 63px);
+    min-height: sizem(604);
+    max-height: sizem(750);
+    background-size: cover;
+    background-attachment: scroll;
+  }
+
+  .bg-img {
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    object-fit: cover;
+
+    &:nth-child(1) {
+      position: relative;
+    }
   }
 
   .bg {
     @include img_r_m(375, 0, 0);
-    transform: skewX(0.5deg);
-    transform-origin: bottom;
-    height: sizem(992);
   }
 
-  .title {
-    @include img_l_m(96, 515, 33);
-    font-size: sizem(24);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.33;
-    letter-spacing: normal;
-    text-align: left;
-    color: #285065;
-    white-space: nowrap;
+  .title_t {
+    @include img_r_m(286, 52, 44);
+    top: calc(50% + ((70 - 302) * 0.266666vw));
   }
 
-  .subtitle {
-    @include img_l_m(252, 567, 33);
-    font-size: sizem(25);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.3;
-    letter-spacing: normal;
-    text-align: left;
-    color: #685335;
-    white-space: nowrap;
+  /* Swipe */
+  .swipe {
+    width: sizem(250);
+    height: sizem(330);
+    // min-height: sizem(750);
+    top: calc(50% + ((190 - 302) * 0.266666vw));
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    object-fit: cover;
   }
 
-  .desc {
-    @include div_l_m(310, 27, 650, 25);
-    font-size: sizem(16);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.07;
-    letter-spacing: sizem(0.3);
-    text-align: left;
-    color: #284e62;
-    // background-color: #685335;
+  // begin
+  .swipe-fade-leave-to {
+    opacity: 0;
+    z-index: 0;
+  }
+  // end
+  .swipe-fade-enter {
+    opacity: 0;
+    z-index: 1;
   }
 
-  .img {
-    @include img_l_m(310, 35, 28);
-  height:auto;
-  max-height: sizem(2000);
+  .swipe-fade-enter-active {
+    transition: all 0.5s ease;
   }
 
-  .logoall {
-    @include img_r_m(310, 850, 32);
+  .swipe-fade-leave-active {
+    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  // begin
+  // .swipe-left-leave-to {
+  //   margin-left: -100vw;
+  //   z-index: 0;
+  // }
+  // // end
+  // .swipe-left-enter {
+  //   opacity: 0.5;
+  //   margin-left: 0;
+  //   z-index: 1;
+  // }
+
+  // .swipe-left-enter-active {
+  //   transition: all 0.5s ease;
+  // }
+
+  // .swipe-left-leave-active {
+  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  // }
+
+  .swipe-wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .swipe-item {
+    width: 100%;
+    z-index: 0;
+    height: sizem(330);
+    bottom: 0;
+    left: 0;
+
+    img {
+      width: sizem(161);
+      height: sizem(194);
+      // height: sizem(330);
+      bottom: 0;
+      left: 0;
+    }
+
+    .name {
+      right: 0;
+      left: 0;
+      margin: 0 auto;
+      bottom: 2em;
+      font-size: sizem(18);
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.5;
+      letter-spacing: sizem(0.72);
+      text-align: center;
+      color: #ffffff;
+      white-space: nowrap;
+      text-shadow: 0 0.1em 0.3em #000;
+    }
+
+    // &:nth-child(1) {
+    //   z-index: 1;
+    //   // opacity: 1;
+    // }
+
+    // &.base {
+    //   z-index: 1;
+    //   opacity: 1;
+    // }
+    // &.active {
+    //   z-index: 2;
+    //   // opacity: 1;
+    // }
+  }
+
+  .pagination {
+    width: auto;
+    bottom: size(91);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .pagination-dot {
+    padding: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    z-index: 4;
+
+    span {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 0 1px #bd2b27;
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.01);
+      transition: all 0.5s;
+
+      &::before {
+        content: '';
+        width: 60%;
+        height: 60%;
+        display: block;
+        background: #bd2b27;
+        border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 20%;
+        // transform: translateY(-50%);
+        left: 20%;
+        transition: all 0.3s;
+        transform-origin: center;
+        transform: scale(0);
+      }
+      &.active {
+        &::before {
+          content: '';
+          width: 100%;
+          height: 100%;
+          display: block;
+          background: #bd2b27;
+          border-radius: 20px;
+          opacity: 1;
+          position: absolute;
+          top: 0%;
+          // transform: translateY(-50%);
+          left: 0%;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  .swipe-btns {
+    width: 100%;
+    height: sizem(52);
+    padding: 0px;
+    z-index: 1;
+    position: absolute;
+    top: sizem(235);
+
+    .prev-btn,
+    .next-btn {
+      width: sizem(26);
+      height: sizem(52);
+      cursor: pointer;
+      // background-color: #ec6300;
+      img {
+        width: 100%;
+      }
+    }
+
+    // .prev-btn {
+    //   border-top-right-radius: 25px;
+    //   border-bottom-right-radius: 25px;
+    // }
+
+    // .next-btn {
+    //   border-top-left-radius: 25px;
+    //   border-bottom-left-radius: 25px;
+    // }
   }
 }
 </style>
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
+import slider from '@/mixins/slider.js'
 import info from '@/info'
 
 export default {
   name: 'section6',
+  mixins: [slider],
 
   data() {
     return {
@@ -200,7 +532,18 @@ export default {
       isPC,
       isMobile,
       isTablet,
-      isDialog: false,
+
+      slideList: [
+        {
+          img: require('./s2/資產 55@2x-80.jpg'),
+        },
+        {
+          img: require('./s2/資產 55@2x-80.jpg'),
+        },
+        {
+          img: require('./s2/資產 55@2x-80.jpg'),
+        },
+      ],
     }
   },
 

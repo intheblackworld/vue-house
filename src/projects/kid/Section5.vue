@@ -1,269 +1,313 @@
 <template>
   <div class="section5">
-    <img src="./s5/bg.png" :alt="`${info.caseName}_bgimg`" class="bg" v-if="isPC">
-    <img src="./mo/w2.png" :alt="`${info.caseName}_bgimg`" class="bg" v-if="isMobile">
-    <div class="title" data-aos="fade-down" data-aos-delay="100">
-      四大王牌
-    </div>
-    <h1 class="subtitle" v-if="isPC" data-aos="fade-down" data-aos-delay="200">
-      國際團隊打造 時尚精品飯店宅
+    <div class="bg-img"></div>
+    <img src="./s2/o.png" :alt="`${info.
+    caseName}_o`" class="o">
+    <img src="./s5/title.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isPC">
+    <img src="./s5/title_m.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isMobile">
+    <img src="./s4/logo.png" :alt="`${info.
+    caseName}_logo`" class="logo">
+    <h1 class="title">
+      傑恩咖啡 冠軍享受
     </h1>
-    <h1 class="subtitle" v-if="isMobile" data-aos="fade-down" data-aos-delay="200">
-      國際團隊打造<br />時尚精品飯店宅
-    </h1>
-    <div class="desc flex-c" data-aos="fade-down" data-aos-delay="300">
-      買名牌包 不如收藏精品宅
+    <div class="desc">
+      想喝一杯好咖啡不必遠求，<br />
+      來自台中的世界咖啡結合複合Life Style概念，<br />
+      打造理想空間，<br />
+      拿本書，<br />
+      配一杯冠軍咖啡，優雅享受美好下午。
     </div>
-    <div class="imgs flex-ac flex-jb wrap">
-      <div @click="showDialog(0)" data-aos="fade-down" data-aos-delay="400"><img src="./s5/1.jpg" :alt="`${info.caseName}_img1`"></div>
-      <div @click="showDialog(1)" data-aos="fade-down" data-aos-delay="500"><img src="./s5/2.jpg" :alt="`${info.caseName}_img2`"></div>
-      <div @click="showDialog(2)" data-aos="fade-down" data-aos-delay="600"><img src="./s5/3.jpg" :alt="`${info.caseName}_img3`"></div>
-      <div @click="showDialog(3)" data-aos="fade-down" data-aos-delay="700"><img src="./s5/4.jpg" :alt="`${info.caseName}_img4`"></div>
+    <div class="animate-bg">
+      <img src="./s1/bubb (4).png" :alt="`${info.caseName}_bubble4`" class="bubble4">
+      <img src="./s1/bubb (6).png" :alt="`${info.caseName}_bubble6`" class="bubble6">
     </div>
-    <div :class="`dialog ${isDialog ? 'active' : ''}`">
-      <img src="./all/close.png" :alt="`${info.caseName}_close`" class="dialog-close" @click="isDialog = false">
-      <div class="dialog-content">
-        <div class="dialog-title" v-html="dialogData.title"></div>
-        <h1 class="dialog-subtitle" v-html="dialogData.subtitle"></h1>
-        <div class="dialog-label flex-ac" v-html="dialogData.label"></div>
-        <div class="dialog-desc" v-html="dialogData.desc"></div>
-        <div class="dialog-work" v-html="dialogData.work"></div>
-        <div class="dialog-imgs" v-if="isPC">
-          <div><img :src="dialogData.imgs[0].img" :alt="`${info.caseName}_img`">
-            <div class="dialog-name" v-html="dialogData.imgs[0].name"></div>
+    <div class="child-jump">
+      <img src="./s4/p3.png" :alt="`${info.caseName}_p1`" class="p1" data-aos="child-jump" data-aos-delay="1200" data-aos-duration="3000">
+    </div>
+    <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img + i" :class="`swipe-item absolute`">
+            <img :src="slide.img" :alt="slide.name">
+            <div class="name absolute" v-html="slide.name"></div>
           </div>
-          <div><img :src="dialogData.imgs[1].img" :alt="`${info.caseName}_img`">
-            <div class="dialog-name" v-html="dialogData.imgs[1].name"></div>
-          </div>
-
-        </div>
-        <div class="dialog-imgs" v-if="isMobile">
-          <div class="img-item">
-            <img :src="dialogData.imgs[0].img" :alt="`${info.caseName}_img`">
-            <div class="dialog-name" v-html="dialogData.imgs[0].name"></div>
-          </div>
-
-          <div class="img-item">
-            <img :src="dialogData.imgs[1].img" :alt="`${info.caseName}_img`">
-            <div class="dialog-name" v-html="dialogData.imgs[1].name"></div>
-          </div>
-        </div>
+        </transition-group>
+        <!-- <div class="swipe-btns absolute flex-ac flex-jb" v-if="isPC">
+          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+        </div> -->
+      </div>
+    </div>
+    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+      <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+    </div>
+    <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+      <div class="prev-btn flex-c">
+        <img src="./all/prev-btn.png" alt="" @click="decIndex">
+      </div>
+      <div class="next-btn flex-c">
+        <img src="./all/next-btn.png" alt="" @click="addIndex">
       </div>
     </div>
   </div>
 </template>
-<style lang="scss">
-.dialog-subtitle {
-  color: #c7a26e;
-  span {
-    font-family: 'Noto Serif TC', serif;
-    color: #fff;
-  }
-}
-</style>
+
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
 .section5 {
   width: size(1920);
   height: size(1080);
-  min-height: size(900);
+  min-height: size(1080);
   max-height: size(1080);
   background-size: cover;
   background-attachment: fixed;
-  overflow: hidden;
+  //  overflow: hidden;
 }
 
-.bg {
-  @include img_r_pc(1655, 0, 0);
-  left: 50%;
-  transform: translateX(-50%);
+.bg-img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  object-fit: cover;
+  background-color: #f5f0ec;
+
+  &:nth-child(1) {
+    position: relative;
+  }
+}
+
+.title-img {
+  @include img_l_pc(112, 126, 362);
+}
+
+.o {
+  @include img_r_pc(626, 12, -40);
 }
 
 .title {
-  @include img_c_pc(180, 123);
-  font-size: size(45);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2.36;
-  letter-spacing: normal;
-  text-align: left;
-  color: #285065;
-  white-space: nowrap;
-}
-
-.subtitle {
-  @include img_c_pc(636, 188);
-  font-size: size(48);
+  @include img_l_pc(452, 97, 533);
+  font-size: size(37);
   font-weight: 900;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.22;
+  line-height: 1.2;
   letter-spacing: normal;
   text-align: left;
-  color: #685335;
+  color: #000000;
   white-space: nowrap;
 }
 
 .desc {
-  @include img_c_pc(356, 290);
-  font-size: size(30);
-  font-weight: 500;
+  @include img_l_pc(552, 163, 532);
+  font-size: size(20);
+  font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.08;
-  letter-spacing: size(-1.2);
+  line-height: 1.85;
+  letter-spacing: normal;
   text-align: left;
-  color: #ffffff;
-  background-color: #685335;
+  color: #606060;
 }
 
-.imgs {
-  @include div_c_pc(302 * 4 + 28 * 3, 430, 385);
+.logo {
+  @include img_r_pc(462, 80, 582);
+}
 
-  div {
-    width: size(302);
-    cursor: pointer;
-    img {
-      width: 100%;
-      transition: transform 1s;
-    }
-    &:hover img {
-      transform: rotateY(-360deg);
-    }
+.p1 {
+  @include img_r_pc(217, 235, 223);
+  top: auto;
+}
+
+.p2 {
+  @include img_r_pc(211, 516, 445);
+  top: auto;
+}
+
+@keyframes jump {
+  to {
+    margin-top: -20px;
+    // transform: translateY(-30px);
+  }
+}
+.animate-bg {
+  .bubble4 {
+    @include img_l_pc(333, 821, -150);
+    animation: jump 1s 0s ease-in-out alternate-reverse infinite;
+    z-index: 1;
+  }
+
+  .bubble6 {
+    @include img_l_pc(481, 765, -340);
+    animation: jump 2s 0s ease-in-out alternate-reverse infinite;
+    z-index: 2;
   }
 }
 
-.dialog {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background-image: url('./menu/bg.jpg');
-  background-size: cover;
-  left: 100%;
-  top: 0;
-  transition: left 1s;
-  z-index: 1000;
-  overflow: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Swipe */
+.swipe {
+  width: size(754);
+  height: size(500);
+  top: size(399);
+  right: size(633);
+  object-fit: cover;
+  border: 3px solid #e32372;
+}
 
-  &.active {
-    left: 0;
+// begin
+.swipe-fade-leave-to {
+  opacity: 0;
+  z-index: 0;
+}
+// end
+.swipe-fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.swipe-fade-enter-active {
+  transition: all 0.5s ease;
+}
+
+.swipe-fade-leave-active {
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+// begin
+// .swipe-left-leave-to {
+//   margin-left: -100vw;
+//   z-index: 0;
+// }
+// // end
+// .swipe-left-enter {
+//   opacity: 0.5;
+//   margin-left: 0;
+//   z-index: 1;
+// }
+
+// .swipe-left-enter-active {
+//   transition: all 0.5s ease;
+// }
+
+// .swipe-left-leave-active {
+//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+// }
+
+.swipe-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.swipe-item {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
-  .dialog-content {
-    position: relative;
-    width: 90%;
-    max-width: size(1270);
-    height: 90%;
-    max-height: size(852);
-    padding: 0 30% 0 0;
-    background-color: #0000;
-    align-items: center;
-    align-content: center;
-    justify-content: flex-start;
-    display: flex;
-    flex-wrap: wrap;
 
+  .name {
+    right: 1.5em;
+    bottom: 1em;
+    font-size: 0.78125vw;
+    font-weight: 400;
     font-stretch: normal;
     font-style: normal;
-    text-align: justify;
-    letter-spacing: normal;
-    line-height: 1.6;
-    color: #ffffff;
-  }
-  .dialog-title {
-    width: 100%;
-    font-size: size(37);
-    font-weight: 500;
-    color: #ffffff;
-  }
-
-  .dialog-subtitle {
-    width: 100%;
-    font-size: size(48);
-    font-weight: 900;
-    line-height: 1.2;
-    color: #c4a06d;
-
-    span {
-      color: #fff;
-    }
-  }
-
-  .dialog-label {
-    font-size: size(30);
-    font-weight: 500;
-    background-color: #c7a26e;
-    white-space: nowrap;
-    padding: 0 0.5em;
-    margin: 0.7em 0;
-  }
-
-  .dialog-desc {
-    font-size: size(24);
-    font-weight: 500;
-    letter-spacing: -0.02em;
+    line-height: 1;
+    letter-spacing: 0.89px;
+    text-align: left;
     color: #fff;
-    text-align: justify;
-    width: 90%;
-    // white-space: nowrap;
+    text-shadow: 0 0.1em 0.3em #000;
   }
 
-  .dialog-work {
-    font-size: size(27);
-    width: 90%;
-    font-weight: 700;
-    line-height: 1.48;
-    letter-spacing: 0.02em;
-    text-align: justify;
-    color: #c7a26e;
-    // white-space: nowrap;
-  }
+  // &:nth-child(1) {
+  //   z-index: 1;
+  //   // opacity: 1;
+  // }
 
-  .dialog-imgs {
-    @include img_r_pc(600, 0, 0);
-    width: auto;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    > div {
-      position: relative;
-      flex: 1 1 48%;
-      height: 48%;
-      margin: size(10) 0;
-    }
+  // &.base {
+  //   z-index: 1;
+  //   opacity: 1;
+  // }
+  // &.active {
+  //   z-index: 2;
+  //   // opacity: 1;
+  // }
+}
 
-    img {
-      width: auto;
-      border-radius: size(45);
-      height: 100%;
-    }
+.pagination {
+  @include img_l_pc(754, 956, 516);
+  margin: 0 auto;
+  justify-content: flex-start;
+}
 
-    .dialog-name {
+.pagination-dot {
+  padding: 5px;
+  margin: 0 10px;
+  cursor: pointer;
+  z-index: 4;
+
+  span {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 1px #e32372;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.38);
+    transition: all 0.5s;
+
+    &::before {
+      content: '';
+      width: 60%;
+      height: 60%;
+      display: block;
+      background: #e32372;
+      border-radius: 20px;
+      opacity: 1;
       position: absolute;
-      right: 1em;
-      bottom: 1em;
-      font-size: size(22);
-      font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.35;
-      letter-spacing: normal;
-      text-align: right;
-      color: #ffffff;
-      white-space: nowrap;
+      top: 20%;
+      // transform: translateY(-50%);
+      left: 20%;
+      transition: all 0.3s;
+      transform-origin: center;
+      transform: scale(0);
+    }
+    &.active {
+      &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: #e32372;
+        border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 0%;
+        // transform: translateY(-50%);
+        left: 0%;
+        transform: scale(1);
+      }
     }
   }
+}
 
-  .dialog-close {
-    width: size(61);
-    top: size(40);
-    right: size(49);
-    position: absolute;
+.swipe-btns {
+  width: 100%;
+  height: 100%;
+  padding: 0 15px;
+  z-index: 3;
+
+  .prev-btn,
+  .next-btn {
+    width: size(46);
     cursor: pointer;
   }
 }
@@ -283,151 +327,241 @@
 
 @media screen and (max-width: 767px) {
   .section5 {
-    width: 100%;
-    height: sizem(667);
-    //height:calc(100vh - 63px);
+    width: 100vw;
+    height: calc(100vh - 63px);
     min-height: sizem(604);
     max-height: sizem(750);
+    background-size: cover;
+    background-attachment: scroll;
+  }
+
+  .bg-img {
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    object-fit: cover;
+
+    &:nth-child(1) {
+      position: relative;
+    }
   }
 
   .bg {
     @include img_r_m(375, 0, 0);
-    transform: translateX(0%);
   }
 
-  .title {
-    @include img_l_m(96, 35, 141);
-    font-size: sizem(24);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.33;
-    letter-spacing: normal;
-    text-align: left;
-    color: #285065;
-    white-space: nowrap;
+  .title_t {
+    @include img_r_m(286, 52, 44);
+    top: calc(50% + ((70 - 302) * 0.266666vw));
   }
 
-  .subtitle {
-    @include img_l_m(210, 85, 82);
-    font-size: sizem(25);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.3;
-    letter-spacing: normal;
-    text-align: center;
-    color: #685335;
-    white-space: nowrap;
+  /* Swipe */
+  .swipe {
+    width: sizem(250);
+    height: sizem(330);
+    // min-height: sizem(750);
+    top: calc(50% + ((190 - 302) * 0.266666vw));
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    object-fit: cover;
   }
 
-  .desc {
-    @include div_l_m(310, 27, 162, 31);
-    font-size: sizem(15);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.07;
-    letter-spacing: sizem(0.3);
-    text-align: center;
-    color: #ffffff;
-    background-color: #685335;
+  // begin
+  .swipe-fade-leave-to {
+    opacity: 0;
+    z-index: 0;
+  }
+  // end
+  .swipe-fade-enter {
+    opacity: 0;
+    z-index: 1;
   }
 
-  .imgs {
-    @include div_c_m(330, 450, 180);
-    flex-wrap: wrap;
-
-    > div {
-      position: relative;
-      flex: 1 1 40%;
-      height: 35%;
-      margin: sizem(10);
-    }
+  .swipe-fade-enter-active {
+    transition: all 0.5s ease;
   }
 
-  .dialog {
-    .dialog-content {
-      width: sizem(310);
-      max-width: sizem(310);
-      height: sizem(500);
-      max-height: sizem(500);
-      padding: 0 0 sizem(150) 0;
-    }
+  .swipe-fade-leave-active {
+    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  }
 
-    .dialog-title {
-      font-size: sizem(20);
-    }
+  // begin
+  // .swipe-left-leave-to {
+  //   margin-left: -100vw;
+  //   z-index: 0;
+  // }
+  // // end
+  // .swipe-left-enter {
+  //   opacity: 0.5;
+  //   margin-left: 0;
+  //   z-index: 1;
+  // }
 
-    .dialog-subtitle {
-      font-size: sizem(27);
+  // .swipe-left-enter-active {
+  //   transition: all 0.5s ease;
+  // }
 
-      span {
-        color: #fff;
-      }
-    }
+  // .swipe-left-leave-active {
+  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  // }
 
-    .dialog-label {
-      font-size: sizem(15);
-    }
+  .swipe-wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
 
-    .dialog-desc {
-      font-size: sizem(15);
-      width: 100%;
-    }
+  .swipe-item {
+    width: 100%;
+    z-index: 0;
+    height: sizem(330);
+    bottom: 0;
+    left: 0;
 
-    .dialog-work {
-      font-size: sizem(15);
-    }
-
-    .dialog-imgs {
-      width: 120%;
-      height: sizem(143);
-      flex-direction: row;
-      top: auto;
+    img {
+      width: sizem(161);
+      height: sizem(194);
+      // height: sizem(330);
       bottom: 0;
-      left: -10%;
-      right: auto;
-      // padding: 0 sizem(35);
-      display: flex;
-      align-items: center;
-      overflow-x: scroll;
-      .img-item {
-        height: 100%;
-        margin: 0 sizem(-15) 0 sizem(30);
-        /* min-width: sizem(206);
-        margin-bottom: 0;
-        margin-right: sizem(15);
-        border-radius: size(10);
-        position: relative;*/
-        img {
-          width: auto;
+      left: 0;
+    }
+
+    .name {
+      right: 0;
+      left: 0;
+      margin: 0 auto;
+      bottom: 2em;
+      font-size: sizem(18);
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.5;
+      letter-spacing: sizem(0.72);
+      text-align: center;
+      color: #ffffff;
+      white-space: nowrap;
+      text-shadow: 0 0.1em 0.3em #000;
+    }
+
+    // &:nth-child(1) {
+    //   z-index: 1;
+    //   // opacity: 1;
+    // }
+
+    // &.base {
+    //   z-index: 1;
+    //   opacity: 1;
+    // }
+    // &.active {
+    //   z-index: 2;
+    //   // opacity: 1;
+    // }
+  }
+
+  .pagination {
+    width: auto;
+    bottom: size(91);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .pagination-dot {
+    padding: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    z-index: 4;
+
+    span {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 0 1px #bd2b27;
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.01);
+      transition: all 0.5s;
+
+      &::before {
+        content: '';
+        width: 60%;
+        height: 60%;
+        display: block;
+        background: #bd2b27;
+        border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 20%;
+        // transform: translateY(-50%);
+        left: 20%;
+        transition: all 0.3s;
+        transform-origin: center;
+        transform: scale(0);
+      }
+      &.active {
+        &::before {
+          content: '';
+          width: 100%;
           height: 100%;
+          display: block;
+          background: #bd2b27;
+          border-radius: 20px;
+          opacity: 1;
+          position: absolute;
+          top: 0%;
+          // transform: translateY(-50%);
+          left: 0%;
+          transform: scale(1);
         }
       }
+    }
+  }
 
-      .dialog-name {
-        font-size: sizem(12);
+  .swipe-btns {
+    width: 100%;
+    height: sizem(52);
+    padding: 0px;
+    z-index: 1;
+    position: absolute;
+    top: sizem(235);
+
+    .prev-btn,
+    .next-btn {
+      width: sizem(26);
+      height: sizem(52);
+      cursor: pointer;
+      // background-color: #ec6300;
+      img {
+        width: 100%;
       }
     }
 
-    .dialog-close {
-      width: sizem(30);
-      top: sizem(33);
-      right: sizem(36);
-      position: absolute;
-      cursor: pointer;
-    }
+    // .prev-btn {
+    //   border-top-right-radius: 25px;
+    //   border-bottom-right-radius: 25px;
+    // }
+
+    // .next-btn {
+    //   border-top-left-radius: 25px;
+    //   border-bottom-left-radius: 25px;
+    // }
   }
 }
 </style>
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
+import slider from '@/mixins/slider.js'
 import info from '@/info'
 
 export default {
   name: 'section5',
+  mixins: [slider],
 
   data() {
     return {
@@ -435,110 +569,26 @@ export default {
       isPC,
       isMobile,
       isTablet,
-      isDialog: false,
-      dialogData: {
-        imgs: [
-          {
-            img: require('./s5/1-1.jpg'),
-            name: '北京 水立方',
-          },
-          {
-            img: require('./s5/1-2.jpg'),
-            name: '碧波白',
-          },
-        ],
-      },
-      item_list: [
+
+      slideList: [
         {
-          title: '建築王牌',
-          subtitle: '國際級建築贏家<br /><span>PTW</span>王牌登場',
-          label: '131年澳洲建築設計先驅‧不是王牌不出手',
-          desc:
-            '超越一世紀建築經驗，PTW僅精挑地王打造國際級地標建築，以高度美學語彙雋永鑄刻，每一出手必締造令人驚豔的傳世經典。「太陽帝國」王牌造型積層堆疊出碩大宏偉外觀，以36層雲端高度擎起建築美學新標竿，是大台北的第一次，更是台灣建築史上嶄新的一次。',
-          work:
-            '代表作品：One Central Park、雪梨Lumiere北京 水立方、杜拜 Paim Jebel',
-          imgs: [
-            {
-              img: require('./s5/1-1.jpg'),
-              name: '北京 水立方',
-            },
-            {
-              img: require('./s5/1-2.jpg'),
-              name: '碧波白',
-            },
-          ],
+          img: require('./s2/資產 55@2x-80.jpg'),
         },
         {
-          title: '燈光王牌',
-          subtitle: '<span>燈光巨擘</span>蘭克斯<br />王牌天廈全城聚焦',
-          label: '36層鋼骨地標耀眼世界‧不容忽視的豔羨目光',
-          desc:
-            '從台北101到仁愛帝寶，蘭克斯以半世紀燈光專業，點亮無數國際級建築地標。隨時段靈動調整的光線層次角度，映照出建築最美的光影，創造的不只是雋永美學價值，更凝聚出全城仰望的城市地景，為旅人指引回家的方向。',
-          work: '代表作品：台北101、仁愛帝寶、W Hotel<br />澳門威尼斯人酒店',
-          imgs: [
-            {
-              img: require('./s5/2-1.jpg'),
-              name: '仁愛帝寶',
-            },
-            {
-              img: require('./s5/2-2.jpg'),
-              name: '台北101',
-            },
-          ],
+          img: require('./s2/資產 55@2x-80.jpg'),
         },
         {
-          title: '空間王牌',
-          subtitle: '史上最華麗展演<br />盛情款待<span>王與后</span>',
-          label: '美國Muse大獎．百年一遇精品訂製空間',
-          desc:
-            '德國iF DESIGN、German Design Award、義大利A’Design大獎設計名師袁世賢，以生活的立體感知為基底，透過光影轉換借景入境，讓太陽帝國休閒會所不僅是頂級社交休閒場域，更成為家的空間延展，散發無限美學張力。',
-          work: '代表作品：台北美麗信花園酒店、台南煙波大飯店、桂田磐古、璽園',
-          imgs: [
-            {
-              img: require('./s5/3-1.jpg'),
-              name: '山水裊裊',
-            },
-            {
-              img: require('./s5/3-2.jpg'),
-              name: '台南煙波酒店',
-            },
-          ],
-        },
-        {
-          title: '景觀王牌',
-          subtitle: '信義豪宅御用<br /><span>景觀生態</span>之王',
-          label: '國際建築視野‧城市花園綠藝新觀',
-          desc:
-            '北市億元豪宅「信義豪宅御用」空中花園競圖第一名，專為頂級建築打造會呼吸的城市綠帶，完美融合建築物與環境界線，使空間與土地產生最自然連結。戶外庭園不只是家向世界延伸的舞台，更是城市中具永續生態視野的最美地景。',
-          work: '代表作品：維多利亞酒店、碧波白',
-          imgs: [
-            {
-              img: require('./s5/3-1.jpg'),
-              name: '維多利亞酒店',
-            },
-            {
-              img: require('./s5/3-2.jpg'),
-              name: '碧波白',
-            },
-          ],
+          img: require('./s2/資產 55@2x-80.jpg'),
         },
       ],
     }
   },
 
-  methods: {
-    showDialog(index) {
-      this.dialogData = this.item_list[index]
-      this.slideList = this.item_list[index].imgs
-      this.isDialog = true
-    },
-  },
+  methods: {},
 
   created() {},
 
-  mounted() {
-    this.dialogData = this.item_list[0]
-  },
+  mounted() {},
 
   computed: {},
 }
