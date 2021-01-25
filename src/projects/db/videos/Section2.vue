@@ -11,9 +11,11 @@
         媒體影音
       </div>
     </div>
-    <div class="container flex wrap">
+    <div class="container">
       <div class="item flex-ac wrap" v-for="(item, index) in item_list" :key="item.title + index">
-        <iframe :src="item.video" allow="accelerometer; autoplay;"></iframe>
+        <iframe :src="item.video" frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
         <div class="content">
           <div class="item-label flex-c yellow" v-if="item.type === 1">線上熱銷</div>
           <div class="item-label flex-c blue" v-if="item.type === 2">完銷個案</div>
@@ -105,7 +107,6 @@
   .add {
   }
 
-  img,
   iframe {
     width: size(966);
     height: size(629);
@@ -263,15 +264,20 @@
   .item {
     width: 100vw;
     height: sizem(380);
-    margin: 0 sizem(0) sizem(70);
-    justify-content: center;
+    margin: 0 0 sizem(70);
+    // justify-content: center;
     border-bottom: none;
     cursor: pointer;
+    display: block !important;
 
-    img,
     iframe {
-      width: sizem(375);
-      height: sizem(221);
+      width: 100vw;
+      min-height: sizem(190);
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      background-color: #000;
+      transition: all 1s;
       object-fit: cover;
     }
 
