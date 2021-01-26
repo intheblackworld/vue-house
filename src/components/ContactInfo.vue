@@ -35,22 +35,22 @@
           alt="台南唯一 TSUTAYA BOOKSTORE 蔦屋書苑 西門大道凌空制震地標  文元學區2-4房"
         />
       </div>
-      <div class="title text-align-center">
+      <div class="title text-align-center" @click="showCallDialog">
         <img
           src="../pages/mobile-texture/section-bottom/1.png"
           alt="來電預約"
         />
       </div>
-      <div class="title text-align-center">
+      <div class="title text-align-center" @click="showMessengerDialog">
         <img src="../pages/mobile-texture/section-bottom/2.png" alt="FB諮詢" />
       </div>
-      <div class="title text-align-center">
+      <div class="title text-align-center" :href="info.fbLink" target="_blank">
         <img
           src="../pages/mobile-texture/section-bottom/3.png"
           alt="前往粉絲專頁"
         />
       </div>
-      <div class="title text-align-center">
+      <div class="title text-align-center" @click="isShowMapDialog = true">
         <img
           src="../pages/mobile-texture/section-bottom/4.png"
           alt="台南市北區西門路四段|文成三路口 導航google地圖"

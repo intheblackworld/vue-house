@@ -35,13 +35,13 @@
             <h3 data-v-4d6acc36="" class="label">立面公設</h3>
             <p data-v-4d6acc36="" class="desc">如榆建築及設計事務所</p>
           </div>
-          <div data-v-4d6acc36="" class="item">
+          <!-- <div data-v-4d6acc36="" class="item">
             <h3 data-v-4d6acc36="" class="label">營建施工</h3>
             <p data-v-4d6acc36="" class="desc"></p>
-          </div>
+          </div> -->
           <div data-v-4d6acc36="" class="item">
             <h3 data-v-4d6acc36="" class="label">書苑合作</h3>
-            <p data-v-4d6acc36="" class="desc">台灣蔦屋書店TSUTAYA BOOKSTORE</p>
+            <p data-v-4d6acc36="" class="desc">臺灣蔦屋股份有限公司</p>
           </div>
           <div data-v-4d6acc36="" class="item">
             <h3 data-v-4d6acc36="" class="label">建築代銷</h3>

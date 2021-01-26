@@ -8,8 +8,8 @@ export default {
   googleLink: 'https://goo.gl/maps/tg65p8Gxc8kamXmW9',
   phone: '02-2608-6985',
   fbLink:
-    'https://www.facebook.com/',
-  fbMessage: 'https://m.me/',
+    'https://www.facebook.com/%E8%A5%BF%E9%96%80%E5%A4%A7%E9%99%A2-101474465251897',
+  fbMessage: 'https://m.me/101474465251897',
   caseName: '西門大院',
   houseInfos: [
     ['投資興建', '築億建設股份有限公司'],
