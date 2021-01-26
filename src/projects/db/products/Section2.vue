@@ -20,8 +20,9 @@
       </div>
     </div>
     <div class="product-dialog" v-show="isProjectDialog && isPC">
+      <div class="product-close" @click="closeProjectDialog"></div>
       <div class="border-container">
-        <img src="../../../assets/img/close.png" :alt="`${info.caseName}_close`" class="close" @click="closeProjectDialog">
+        <div class="close" @click="closeProjectDialog"></div>
         <div class="product-title" v-html="dialogData.title2"></div>
         <div class="product-info1" v-html="dialogData.info1"></div>
         <div class="hr"></div>
@@ -45,6 +46,7 @@
     </div>
     <div class="product-dialog" v-show="isProjectDialog && isMobile">
       <div class="section1">
+        <div class="close" @click="isProjectDialog = false"></div>
         <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
         <h1 class="title">經典建案</h1>
         <h1 class="subtitle">以經典　再造風華</h1>
@@ -69,7 +71,6 @@
           </div>
         </div>
         <img :src="dialogData.logo" alt="" class="logo">
-        <img src="../../../assets/img/close.png" :alt="`${info.caseName}_close`" class="close" @click="closeProjectDialog">
         <div class="product-title" v-html="dialogData.title2"></div>
         <div class="product-info1" v-html="dialogData.info1"></div>
         <div class="hr"></div>
@@ -227,6 +228,7 @@
   top: 0;
   left: 0;
   z-index: 10000;
+  .product-close{position: absolute;top:0;left: 0;width: 100%;height: 100%;}
 }
 
 .border-container {
@@ -239,10 +241,20 @@
 
 .close {
   @include div_r_pc(40, 40, -45, -9);
-  width: size(40);
-  height: size(40);
   background-color: #008fbb;
   cursor: pointer;
+  &::before,
+  &::after{
+    position: absolute;
+    left: 0;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;transform: rotate(-45deg);transform-origin: center;
+    top:calc(50% - 1px);
+  }
+  &::before{transform: rotate(45deg);}
 }
 
 .product-title {
@@ -326,6 +338,13 @@
   width: size(598 + 206);
   margin-left: size(55);
   margin-top: size(48);
+  &::before{
+    white-space: pre;
+    font-size: size(12);
+    line-height: 1.6;
+    content:"本圖為示意圖,依核准之執照圖說及\A合約副圖為準,建設公司保有修改權";
+    position: absolute;bottom:4em;left:5em;opacity: 0.9;
+    color: #fff;text-shadow: 0 0 0.6em #000;}
 
   .main {
     width: size(586);
@@ -548,7 +567,9 @@
   }
 
   .close {
-    display: none;
+  @include div_r_m(40, 40, 15, 15);
+  z-index: 5;
+  position: fixed;
   }
 
   .product-title {
@@ -584,14 +605,14 @@
   .txt {
     @include img_l_m(330, 482, 30);
     font-size: sizem(16);
-    padding: 0 0 5.5em 0;
+    padding: 0 0 10.5em 0;
   }
   .product-btn {
     // @include div_l_pc(107, 26, 815, 229);
     font-size: sizem(15);
     width: 7.2em;
     height: 1.7333em;
-    bottom: 3em;
+    bottom: 8em;
   }
 
   .rb {
@@ -605,7 +626,7 @@
   .back {
     @include img_r_m(107, 820, 134);
     top: auto;
-    bottom: 0;
+    bottom: 5em;
     font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
@@ -650,6 +671,13 @@
     left: sizem(33);
     object-fit: cover;
     position: relative !important;
+    &::before{
+    white-space: pre;
+    font-size: sizem(12);transform: scale(0.9);transform-origin: 0 100%;
+    line-height: 1.6;
+    content:"本圖為示意圖,依核准之執照圖說及\A合約副圖為準,建設公司保有修改權";
+    position: absolute;bottom:0.3em;left:0.3em;opacity: 0.8;z-index: 5;
+    color: #fff;text-shadow: 0 0 0.6em #000;}
   }
 
   // begin
