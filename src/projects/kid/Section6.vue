@@ -1,43 +1,48 @@
 <template>
   <div class="section6">
-    <div class="bg-img"></div>
-    <img src="./s6/1.png" :alt="`${info.
+    <div class="block-1">
+      <div class="bg-img"></div>
+      <img src="./s6/bg.jpg" :alt="`${info.
+    caseName}_grass`" class="grass" v-if="isPC">
+      <img src="./s6/bg_m.jpg" :alt="`${info.
+    caseName}_grass`" class="grass" v-if="isMobile">
+      <img src="./s6/1.png" :alt="`${info.
     caseName}_o`" class="o high">
-    <img src="./s6/2.png" :alt="`${info.
+      <img src="./s6/2.png" :alt="`${info.
     caseName}_o`" class="o">
-    <img src="./s6/free.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isPC">
-    <!-- <img src="./s6/title_m.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isMobile"> -->
-    <img src="./s4/logo.png" :alt="`${info.
-    caseName}_logo`" class="logo">
-    <div class="title">
-      全新生活平台 祕境歡樂一整天
+      <div class="title">
+        全新生活平台 祕境歡樂一整天
+      </div>
+      <img src="./s6/tbg.png" :alt="`${info.
+    caseName}_tbg`" class="tbg">
+      <img src="./s6/title.png" :alt="`${info.
+    caseName}_logo`" class="title-img">
+      <img src="./s6/free.png" :alt="`${info.caseName}_title`" class="logo1">
+      <img src="./s6/free.png" :alt="`${info.caseName}_title`" class="logo2">
+      <img src="./s6/p5.png" :alt="`${info.caseName}_p5`" class="p5">
+      <img src="./s6/p6.png" :alt="`${info.caseName}_p6`" class="p6">
+      <div class="child-jump">
+        <img src="./s4/p3.png" :alt="`${info.caseName}_p1`" class="p1" data-aos="child-jump" data-aos-delay="1200" data-aos-duration="3000">
+      </div>
     </div>
-    <div class="child-jump">
-      <img src="./s4/p3.png" :alt="`${info.caseName}_p1`" class="p1" data-aos="child-jump" data-aos-delay="1200" data-aos-duration="3000">
-    </div>
-    <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
-        <transition-group name="swipe-fade" mode="out-in">
-          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img + i" :class="`swipe-item absolute`">
-            <img :src="slide.img" :alt="slide.name">
-            <div class="name absolute" v-html="slide.name"></div>
+    <div class="block-2">
+      <div class="title2">
+        活動消息
+      </div>
+      <carousel-3d class="swipe relative" ref="mycarousel" :width="videoWidth" :height="videoHeight" :perspective="0" :disable3d="isMobile ? true : false" :border="0" :display="isMobile ? 1 : 3" :space="isMobile ? 300 : 300" @after-slide-change="onAfterSlideChange">
+        <slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="video-slide">
+          <img :src="slide.img" :class="`video-img absolute`" />
+          <div class="mask">
+            <div class="slide-title" v-html="slide.title">
+            </div>
+            <div class="btn">
+              >>我要報名
+            </div>
           </div>
-        </transition-group>
-        <!-- <div class="swipe-btns absolute flex-ac flex-jb" v-if="isPC">
-          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-        </div> -->
-      </div>
-    </div>
-    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-      <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-    </div>
-    <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-      <div class="prev-btn flex-c">
-        <img src="./all/prev-btn.png" alt="" @click="decIndex">
-      </div>
-      <div class="next-btn flex-c">
-        <img src="./all/next-btn.png" alt="" @click="addIndex">
+        </slide>
+      </carousel-3d>
+      <div class="pagination">
+        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goToSlide(index)"><span :class="`flex-c ${currentIndex === index ? 'active' : ''}`">{{index + 1}}</span></div>
       </div>
     </div>
   </div>
@@ -48,12 +53,25 @@
 
 .section6 {
   width: size(1920);
-  height: size(1830);
-  min-height: size(1830);
-  max-height: size(1830);
+  height: size(2130);
+  min-height: size(2130);
+  max-height: size(2130);
   background-size: cover;
   background-attachment: fixed;
   //  overflow: hidden;
+}
+
+.block-1 {
+  width: 100vw;
+  height: size(1156);
+  position: relative;
+}
+
+.block-2 {
+  background-color: #71943a;
+  position: relative;
+  width: 100vw;
+  height: size(2130 - 1156);
 }
 
 .bg-img {
@@ -71,8 +89,20 @@
   }
 }
 
-.title-img {
+.logo1 {
   @include img_l_pc(322, 239, 375);
+}
+
+.logo2 {
+  @include img_l_pc(129, 550, 935);
+}
+
+.title-img {
+  @include img_c_pc(290, 320);
+}
+
+.tbg {
+  @include img_c_pc(588, 208);
 }
 
 .o {
@@ -81,6 +111,14 @@
   &.high {
     z-index: 2;
   }
+}
+
+.p5 {
+  @include img_l_pc(310, 440, 403);
+}
+
+.p6 {
+  @include img_l_pc(294, 620, 856);
 }
 
 .title {
@@ -96,10 +134,6 @@
   white-space: nowrap;
 }
 
-.logo {
-  @include img_r_pc(462, 80, 582);
-}
-
 .p1 {
   @include img_r_pc(217, 235, 223);
   top: auto;
@@ -110,105 +144,111 @@
   top: auto;
 }
 
-/* Swipe */
+.grass {
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.title2 {
+  @include img_c_pc(206, 0);
+  font-size: size(51.4);
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+}
 .swipe {
-  width: size(754);
-  height: size(500);
-  top: size(399);
-  right: size(633);
-  object-fit: cover;
-  border: 3px solid #e32372;
+  position: absolute;
+  top: size(120);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
-
-// begin
-.swipe-fade-leave-to {
-  opacity: 0;
-  z-index: 0;
-}
-// end
-.swipe-fade-enter {
-  opacity: 0;
-  z-index: 1;
-}
-
-.swipe-fade-enter-active {
-  transition: all 0.5s ease;
-}
-
-.swipe-fade-leave-active {
-  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-// begin
-// .swipe-left-leave-to {
-//   margin-left: -100vw;
-//   z-index: 0;
-// }
-// // end
-// .swipe-left-enter {
-//   opacity: 0.5;
-//   margin-left: 0;
-//   z-index: 1;
-// }
-
-// .swipe-left-enter-active {
-//   transition: all 0.5s ease;
-// }
-
-// .swipe-left-leave-active {
-//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-// }
-
-.swipe-wrap {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.swipe-item {
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.video-slide {
+  cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+    .mask {
+      opacity: 0.85;
+    }
   }
 
-  .name {
-    right: 1.5em;
-    bottom: 1em;
-    font-size: 0.78125vw;
-    font-weight: 400;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1;
-    letter-spacing: 0.89px;
-    text-align: left;
-    color: #fff;
-    text-shadow: 0 0.1em 0.3em #000;
+  .play-btn {
+    width: 125px;
+    cursor: pointer;
+    z-index: 2;
+
+    display: block;
+
+    &.hide {
+      display: none;
+    }
   }
 
-  // &:nth-child(1) {
-  //   z-index: 1;
-  //   // opacity: 1;
-  // }
+  .video {
+  }
 
-  // &.base {
-  //   z-index: 1;
-  //   opacity: 1;
-  // }
-  // &.active {
-  //   z-index: 2;
-  //   // opacity: 1;
-  // }
+  .video-img {
+    width: 1036px;
+    display: block;
+
+    &.hide {
+      display: none;
+    }
+  }
+}
+
+.mask {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 48.5%;
+  height: 100%;
+  background-color: #f5f0ec;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.slide-title {
+  @include img_r_pc(473, 265, 52);
+  font-size: size(53.5);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #40834d;
+  cursor: pointer;
+}
+
+.btn {
+  @include img_r_pc(176, 438, 107);
+  font-size: size(33.6);
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #606060;
+  cursor: pointer;
 }
 
 .pagination {
-  @include img_l_pc(754, 956, 516);
+  position: absolute;
+  width: 100vw;
+  right: 0;
+  left: 0;
+  bottom: size(100);
   margin: 0 auto;
-  justify-content: flex-start;
+  display: flex;
+  justify-content: center;
 }
 
 .pagination-dot {
@@ -219,59 +259,54 @@
 
   span {
     display: block;
-    width: 10px;
-    height: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 0 1px #e32372;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    color: #fff;
     position: relative;
-    background-color: rgba(255, 255, 255, 0.38);
     transition: all 0.5s;
+    font-size: size(18.2);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 20px;
+    letter-spacing: normal;
+    text-align: center;
 
     &::before {
-      content: '';
-      width: 60%;
-      height: 60%;
-      display: block;
-      background: #e32372;
-      border-radius: 20px;
-      opacity: 1;
-      position: absolute;
-      top: 20%;
-      // transform: translateY(-50%);
-      left: 20%;
-      transition: all 0.3s;
-      transform-origin: center;
-      transform: scale(0);
+      // content: '';
+      // width: 60%;
+      // height: 60%;
+      // display: block;
+      // background: #fff;
+      // border-radius: 20px;
+      // opacity: 1;
+      // position: absolute;
+      // top: 20%;
+      // // transform: translateY(-50%);
+      // left: 20%;
+      // transition: all 0.3s;
+      // transform-origin: center;
+      // transform: scale(0);
     }
     &.active {
+      color: #709339;
+      background-color: #fff;
       &::before {
-        content: '';
-        width: 100%;
-        height: 100%;
-        display: block;
-        background: #e32372;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 0%;
-        // transform: translateY(-50%);
-        left: 0%;
-        transform: scale(1);
+        // content: '';
+        // width: 100%;
+        // height: 100%;
+        // display: block;
+        // background: #fff;
+        // border-radius: 20px;
+        // opacity: 1;
+        // position: absolute;
+        // top: 0%;
+        // // transform: translateY(-50%);
+        // left: 0%;
+        // transform: scale(1);
       }
     }
-  }
-}
-
-.swipe-btns {
-  width: 100%;
-  height: 100%;
-  padding: 0 15px;
-  z-index: 3;
-
-  .prev-btn,
-  .next-btn {
-    width: size(46);
-    cursor: pointer;
   }
 }
 
@@ -321,204 +356,41 @@
     top: calc(50% + ((70 - 302) * 0.266666vw));
   }
 
-  /* Swipe */
-  .swipe {
-    width: sizem(250);
-    height: sizem(330);
-    // min-height: sizem(750);
-    top: calc(50% + ((190 - 302) * 0.266666vw));
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    object-fit: cover;
-  }
-
-  // begin
-  .swipe-fade-leave-to {
-    opacity: 0;
-    z-index: 0;
-  }
-  // end
-  .swipe-fade-enter {
-    opacity: 0;
-    z-index: 1;
-  }
-
-  .swipe-fade-enter-active {
-    transition: all 0.5s ease;
-  }
-
-  .swipe-fade-leave-active {
-    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-
-  // begin
-  // .swipe-left-leave-to {
-  //   margin-left: -100vw;
-  //   z-index: 0;
-  // }
-  // // end
-  // .swipe-left-enter {
-  //   opacity: 0.5;
-  //   margin-left: 0;
-  //   z-index: 1;
-  // }
-
-  // .swipe-left-enter-active {
-  //   transition: all 0.5s ease;
-  // }
-
-  // .swipe-left-leave-active {
-  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  // }
-
-  .swipe-wrap {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .swipe-item {
-    width: 100%;
-    z-index: 0;
-    height: sizem(330);
-    bottom: 0;
-    left: 0;
-
-    img {
-      width: sizem(161);
-      height: sizem(194);
-      // height: sizem(330);
-      bottom: 0;
-      left: 0;
-    }
-
-    .name {
-      right: 0;
-      left: 0;
-      margin: 0 auto;
-      bottom: 2em;
-      font-size: sizem(18);
-      font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.5;
-      letter-spacing: sizem(0.72);
-      text-align: center;
-      color: #ffffff;
-      white-space: nowrap;
-      text-shadow: 0 0.1em 0.3em #000;
-    }
-
-    // &:nth-child(1) {
-    //   z-index: 1;
-    //   // opacity: 1;
-    // }
-
-    // &.base {
-    //   z-index: 1;
-    //   opacity: 1;
-    // }
-    // &.active {
-    //   z-index: 2;
-    //   // opacity: 1;
-    // }
-  }
-
-  .pagination {
-    width: auto;
-    bottom: size(91);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    justify-content: center;
-  }
-
-  .pagination-dot {
-    padding: 5px;
-    margin: 0 10px;
-    cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
-      box-shadow: 0 0 0 1px #bd2b27;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
-      transition: all 0.5s;
-
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #bd2b27;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transition: all 0.3s;
-        transform-origin: center;
-        transform: scale(0);
-      }
-      &.active {
-        &::before {
-          content: '';
-          width: 100%;
-          height: 100%;
-          display: block;
-          background: #bd2b27;
-          border-radius: 20px;
-          opacity: 1;
-          position: absolute;
-          top: 0%;
-          // transform: translateY(-50%);
-          left: 0%;
-          transform: scale(1);
-        }
-      }
-    }
-  }
-
-  .swipe-btns {
-    width: 100%;
-    height: sizem(52);
-    padding: 0px;
-    z-index: 1;
-    position: absolute;
-    top: sizem(235);
-
-    .prev-btn,
-    .next-btn {
-      width: sizem(26);
-      height: sizem(52);
+  .video-slide {
+    width: 100vw;
+    // position: relative;
+    z-index: 15;
+    .play-btn {
+      width: 80px;
       cursor: pointer;
-      // background-color: #ec6300;
-      img {
-        width: 100%;
+      z-index: 15;
+
+      display: block;
+
+      &.hide {
+        display: none;
       }
     }
 
-    // .prev-btn {
-    //   border-top-right-radius: 25px;
-    //   border-bottom-right-radius: 25px;
-    // }
+    .video-img {
+      width: 100vw;
+      display: block;
 
-    // .next-btn {
-    //   border-top-left-radius: 25px;
-    //   border-bottom-left-radius: 25px;
-    // }
+      &.hide {
+        display: none;
+      }
+    }
+
+    video {
+      width: 100%;
+    }
   }
 }
 </style>
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
+import { Carousel3d, Slide } from 'vue-carousel-3d'
 import slider from '@/mixins/slider.js'
 import info from '@/info'
 
@@ -526,32 +398,59 @@ export default {
   name: 'section6',
   mixins: [slider],
 
+  components: {
+    Carousel3d,
+    Slide,
+  },
+
   data() {
     return {
       info,
       isPC,
       isMobile,
       isTablet,
-
+      currentIndex: 0,
       slideList: [
         {
-          img: require('./s2/資產 55@2x-80.jpg'),
+          title: '前20名報名者，將獲得瑪莎限量拍照牌！',
+          img: require('./s7/1.jpg'),
         },
         {
-          img: require('./s2/資產 55@2x-80.jpg'),
+          title: '前20名報名者，將獲得瑪莎限量拍照牌！',
+          img: require('./s7/1.jpg'),
         },
         {
-          img: require('./s2/資產 55@2x-80.jpg'),
+          title: '前20名報名者，將獲得瑪莎限量拍照牌！',
+          img: require('./s7/1.jpg'),
         },
       ],
+      videoWidth: 900,
+      videoHeight: 483,
     }
   },
 
-  methods: {},
+  methods: {
+    goToSlide(index) {
+      this.$refs.mycarousel.goSlide(index)
+    },
+
+    onAfterSlideChange(index) {
+      this.currentIndex = index
+    },
+  },
 
   created() {},
 
-  mounted() {},
+  mounted() {
+    if (this.isTablet) {
+      this.videoWidth = 800
+      this.videoHeight = 450
+    }
+    if (this.isMobile) {
+      this.videoWidth = window.screen.width
+      this.videoHeight = window.screen.width * (450 / 800)
+    }
+  },
 
   computed: {},
 }

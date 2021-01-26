@@ -4,9 +4,9 @@ $bg_m: #fff;
 
 /* font-family */
 /* 1主要字體  2次要字體  3表單字體 */
-$family1: 'Noto Serif TC',sans-serif;
-$family2: 'Noto Serif TC',sans-serif;
-$family3: 'Noto Serif TC',sans-serif;
+$family1: 'Noto Sans TC',sans-serif;
+$family2: 'Noto Sans TC',sans-serif;
+$family3: 'Noto Sans TC',sans-serif;
 
 /* navigation */
 $nav_bg: url('~@/projects/ace/menu/bg.jpg');;
@@ -33,10 +33,10 @@ $mask_icon_color: #c82514;
 
 /* contactSection */
 // order
-$order_bg_color: transparent;
-$order_bg_image: transparent;
-$order_bg_image_m: transparent;
-$order_title_color: #c7a26e;
+$order_bg_color: #71943a;
+$order_bg_image: #71943a;
+$order_bg_image_m: #71943a;
+$order_title_color: #fff;
 $order_subtitle_color: #cc2617;
 $order_input_label_color: #fff;
 $order_input_color: #333 !important;

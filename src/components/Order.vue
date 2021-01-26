@@ -2,8 +2,7 @@
   <div class="order-bg">
     <!-- <img src="@/projects/fs/order/bg.png" alt="" class="bg-img"> -->
     <!-- <img src="@/projects/fs/order/bg1.png" alt="" class="bg-img no-mix"> -->
-    <!-- <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile"> -->
-    <div class="order-tt"></div>
+    <!-- <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img"> -->
     <div class="order-top">
       <!-- <div class="title-block">
         <h3 class="title">{{order.title}}</h3>
@@ -20,7 +19,7 @@
             </div>
             <div class="row" data-aos="fade-down" data-aos-delay="200">
               <label>手機</label>
-              <el-input v-model="form.phone" type="number" placeholder></el-input>
+              <el-input v-model="form.phone" placeholder></el-input>
             </div>
             <!-- <div class="row" data-aos="fade-down"
         data-aos-delay="300">
@@ -279,7 +278,7 @@ export default {
   }
 }
 .order-bg {
-  // background-color: $order_bg_color;
+  background-color: $order_bg_color;
   background-image: $order_bg_image;
   background-repeat: Srepeat;
   position: relative;
@@ -299,12 +298,10 @@ export default {
     height: size(400);
     margin: 0 auto size(-300);
     top: size(-300);
-    background: rgba(0, 0, 0, 0.8);
   }
   .order-top {
-    width: size(1440);
+    width: 100vw;
     margin: 0 auto;
-    background: rgba(0, 0, 0, 0.8);
     position: relative;
     overflow: hidden;
   }
@@ -435,13 +432,11 @@ export default {
       width: sizem(360);
       height: sizem(50);top: 0;
       margin: 0 auto;
-      background: rgba(0, 0, 0, 0.8);
       
     }
     .order-top {
       width: sizem(360);
       margin: 0 auto;
-      background: rgba(0, 0, 0, 0.8);
       position: relative;
       overflow: hidden;
     }
