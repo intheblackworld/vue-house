@@ -276,6 +276,7 @@
     right: size(49);
     position: absolute;
     cursor: pointer;
+    z-index: 5;
   }
 }
 
@@ -363,13 +364,15 @@
     .dialog-content {
       width: sizem(310);
       max-width: sizem(310);
-      height: sizem(500);
-      max-height: sizem(500);
-      padding: 0 0 sizem(150) 0;
+      height: sizem(580);
+      max-height: sizem(580);
+      padding: 0 0 sizem(170) 0;
     }
-
+    .dialog-toptitle {
+          font-size: sizem(20);
+      }
     .dialog-title {
-      font-size: sizem(20);
+      font-size: sizem(40);
     }
 
     .dialog-subtitle {
@@ -391,6 +394,7 @@
 
     .dialog-work {
       font-size: sizem(15);
+      width: 100%;
     }
 
     .dialog-imgs {
@@ -398,7 +402,7 @@
       height: sizem(143);
       flex-direction: row;
       top: auto;
-      bottom: 0;
+      bottom: sizem(30);
       left: -10%;
       right: auto;
       // padding: 0 sizem(35);
