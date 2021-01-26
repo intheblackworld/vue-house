@@ -3,8 +3,8 @@
     <div class="bg-img"></div>
     <img src="./s2/o.png" :alt="`${info.
     caseName}_o`" class="o">
-    <img src="./s4/title.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isPC">
-    <img src="./s4/title_m.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isMobile">
+    <img src="./s4/title.png" :alt="`${info.caseName}_title`" class="title-img">
+    <!-- <img src="./s4/title_m.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isMobile"> -->
     <img src="./s4/logo.png" :alt="`${info.
     caseName}_logo`" class="logo">
     <h1 class="title">
@@ -334,11 +334,13 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-    height: calc(100vh - 63px);
-    min-height: sizem(604);
+    height: sizem(665);
+    min-height: sizem(665);
     max-height: sizem(750);
     background-size: cover;
     background-attachment: scroll;
+    position: relative;
+    z-index: 2;
   }
 
   .bg-img {
@@ -355,25 +357,94 @@
     }
   }
 
-  .bg {
-    @include img_r_m(375, 0, 0);
+  .title-img {
+    @include img_l_m(58, 52, 33);
   }
 
-  .title_t {
-    @include img_r_m(286, 52, 44);
-    top: calc(50% + ((70 - 302) * 0.266666vw));
+  .o {
+    @include img_r_m(163, 440, 0);
+  }
+
+  .title {
+    @include img_l_m(173, 112, 88);
+    font-size: sizem(24);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+    white-space: nowrap;
+  }
+
+  .desc {
+    @include img_r_m(230, 163, 32);
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.85;
+    letter-spacing: normal;
+    text-align: left;
+    color: #606060;
+  }
+
+  .logo {
+    @include img_r_m(216, 54, 42);
+  }
+
+  .p1 {
+    @include img_r_m(90, 578, 93);
+    top: auto;
+  }
+
+  .p2 {
+    @include img_r_m(87, 697, 186);
+    top: auto;
+  }
+
+  @keyframes jump {
+    to {
+      margin-top: -20px;
+      // transform: translateY(-30px);
+    }
+  }
+  .animate-bg {
+    .bubble4 {
+      @include img_l_m(134, 482, -30);
+      animation: jump 1s 0s ease-in-out alternate-reverse infinite;
+      z-index: 10;
+    }
+
+    .bubble6 {
+      @include img_r_m(190, 195, -150);
+      animation: jump 2s 0s ease-in-out alternate-reverse infinite;
+    }
+  }
+
+  .child-jump {
+    width: sizem(375);
+    height: sizem(923);
+    min-height: sizem(923);
+    max-height: sizem(923);
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
   /* Swipe */
   .swipe {
-    width: sizem(250);
-    height: sizem(330);
+    width: sizem(310);
+    height: sizem(205);
     // min-height: sizem(750);
-    top: calc(50% + ((190 - 302) * 0.266666vw));
+    top: sizem(353);
     left: 0;
     right: 0;
     margin: 0 auto;
     object-fit: cover;
+    z-index: 5;
   }
 
   // begin
@@ -424,13 +495,13 @@
   .swipe-item {
     width: 100%;
     z-index: 0;
-    height: sizem(330);
+    height: sizem(205);
     bottom: 0;
     left: 0;
 
     img {
-      width: sizem(161);
-      height: sizem(194);
+      width: sizem(310);
+      height: sizem(205);
       // height: sizem(330);
       bottom: 0;
       left: 0;
@@ -534,7 +605,7 @@
     padding: 0px;
     z-index: 1;
     position: absolute;
-    top: sizem(235);
+    top: sizem(435);
 
     .prev-btn,
     .next-btn {

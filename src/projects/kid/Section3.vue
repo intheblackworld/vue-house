@@ -153,111 +153,88 @@
 @media screen and (max-width: 767px) {
   .section3 {
     width: 100vw;
-    height: sizem(674);
-    min-height: sizem(674);
+    height: sizem(184 + 317);
+    min-height: sizem(184 + 317);
     max-height: sizem(900);
-    overflow-x: scroll;
+    overflow: visible;
+    position: relative;
   }
 
-  .bg {
-    @include img_r_m(373, 0, 0);
+  .title-img {
+    @include img_l_m(304, 44, 33);
+    z-index: 10;
   }
 
-  .img_r {
-    @include img_r_m(375, 20, 0);
+  .logo {
+    @include img_r_m(143, 94, 10);
+    z-index: 5;
   }
 
-  .img_l {
-    @include img_l_m(310, 447, 33);
-  }
-  .icon {
-    @include img_r_m(45, 180, 165);
-    height: sizem(45);
-    background: #68533599;
-    border-radius: 50%;
-
-    &::before,
-    &::after {
-      content: '';
-      width: 60%;
-      display: block;
-      position: absolute;
-      top: 50%;
-      height: sizem(3);
-      transform: translateY(-50%);
-      left: 20%;
-      background: #fff;
-      transform-origin: 50% 50%;
-    }
-    &::before {
-      transform: translateY(-50%) rotate(90deg);
-    }
-  }
   .title {
-    @include img_l_m(96, 328, 33);
+    @include img_l_m(179, 123, 33);
     font-size: sizem(24);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.33;
-    letter-spacing: normal;
-    text-align: left;
-    color: #285065;
-    white-space: nowrap;
-  }
-
-  .subtitle {
-    @include img_l_m(300, 362, 34);
-    font-size: sizem(25);
     font-weight: 900;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.2;
+    line-height: 1.2;
     letter-spacing: normal;
     text-align: left;
-    color: #685335;
+    color: #000000;
     white-space: nowrap;
   }
 
   .desc {
-    @include div_l_m(309, 27, 409, 34);
+    @include img_l_m(310, 179, 33);
     font-size: sizem(15);
-    font-weight: 500;
+    font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.07;
-    letter-spacing: sizem(0.3);
-    text-align: center;
-    color: #ffffff;
-    background-color: #685335;
+    line-height: 1.85;
+    letter-spacing: normal;
+    text-align: left;
+    color: #606060;
+    white-space: nowrap;
   }
 
-  .dialog {
-    position: fixed;
-    top: 0;
+  .p1 {
+    @include img_r_m(90, 578, 93);
+    top: auto;
+  }
+
+  .p2 {
+    @include img_r_m(87, 697, 186);
+    top: auto;
+  }
+
+  @keyframes jump {
+    to {
+      margin-top: -20px;
+      // transform: translateY(-30px);
+    }
+  }
+  .animate-bg {
+    .bubble3 {
+      @include img_l_m(140, 409, -70);
+      animation: jump 2s 0s ease-in-out alternate-reverse infinite;
+    }
+
+    .bubble4 {
+      @include img_r_m(83, 278, 10);
+      animation: jump 1s 0s ease-in-out alternate-reverse infinite;
+      z-index: 5;
+    }
+  }
+
+  .parallax-img {
     width: 100vw;
-    height: 100vh;
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.7);
-    overflow: scroll;
-
-    .slide-content {
-      left: 0;
-    }
-
-    .dialog-map {
-      width: auto;
-      height: 100vh;
-      background-color: #fff;
-    }
-
-    .close {
-      width: 35px;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 5px;
-      position: fixed;
-      right: 10px;
-      top: 10px;
+    height: sizem(184);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    img {
+      width: 100%;
+      margin-top: sizem(150);
     }
   }
 }

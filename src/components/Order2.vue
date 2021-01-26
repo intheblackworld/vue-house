@@ -1,5 +1,6 @@
 <template>
   <div class="order-bg">
+    <img src="@/projects/kid/s1/logo.png" alt="" class="order-logo">
     <h3 class="order-subtitle" v-html="order.subTitle"></h3>
     <div class="order-title" v-html="order.title" data-aos="fade-down" data-aos-delay="0"></div>
     <div class="order">
@@ -287,7 +288,7 @@ export default {
     width: 100vw;
     padding-top: size(10);
     font-size: size(58.7);
-    font-weight: 500;
+    font-weight: 900;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.2;
@@ -295,6 +296,11 @@ export default {
     text-align: center;
     color: #ffffff;
     color: $order_title_color;
+  }
+
+  .order-logo {
+    width: size(490);
+    margin: 20px auto;
   }
 
   .order-subtitle {
@@ -491,6 +497,7 @@ export default {
     margin: 0;
     position: relative;
     z-index: 2;
+    padding-bottom: 350px;
 
     > img {
       display: block;
@@ -498,13 +505,60 @@ export default {
     .order-title {
       padding-top: 10px;
       padding-bottom: 5px;
-      font-size: calc(100vw * 25 / 375);
+      font-size: calc(100vw * 35 / 375);
       letter-spacing: 4px;
+    }
+
+    .order-logo {
+      width: sizem(310);
+      margin: 20px auto;
     }
 
     .order-subtitle {
       font-size: sizem(15);
       margin-bottom: 0;
+    }
+
+    .contact-btn {
+      border-radius: 19px;
+      background-color: #3a836d;
+      text-decoration: none;
+      img {
+        width: sizem(40);
+      }
+      .btn-desc {
+        font-size: sizem(15);
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.73;
+        letter-spacing: normal;
+        text-align: left;
+        color: #ffffff;
+      }
+    }
+    .google-map-btn {
+      @include div_l_m(70, 70, 1288, 15);
+    }
+
+    .fb-btn {
+      @include div_l_m(70, 70, 1288, 97);
+    }
+
+    .bottom-img {
+      width: 100vw;
+      position: absolute;
+      bottom: 63px;
+      left: 0;
+    }
+
+    .bottom-logo {
+      width: sizem(195);
+      position: absolute;
+      bottom: 74px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
     }
 
     .form-hint {

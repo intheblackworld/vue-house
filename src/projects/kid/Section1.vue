@@ -9,6 +9,10 @@
       <img src="./s1/t3.png" :alt="`${info.caseName}_t3`" class="t3">
       <img src="./s1/logo.png" :alt="`${info.caseName}_logo`" class="logo">
 
+      <div class="title">
+        打造全桃<span>唯一</span>快閃LAND
+      </div>
+
       <img src="./s1/bottom.png" :alt="`${info.caseName}_bottom`" class="bottom">
       <div class="animate-bg">
         <img src="./s1/bubb (1).png" :alt="`${info.caseName}_bubble1`" class="bubble1">
@@ -88,6 +92,23 @@
   @include img_c_pc(755, 298);
 }
 
+.title {
+  @include img_c_pc(404, 782);
+  font-size: size(37.6);
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  white-space: nowrap;
+
+  span {
+    color: #faee00;
+  }
+}
+
 .t1 {
   @include img_c_pc(468, 170);
 }
@@ -115,7 +136,6 @@
   }
 }
 .animate-bg {
-
   .bubble1 {
     @include img_r_pc(210, 670, 142);
     animation: jump 3s 0s ease-in-out alternate-reverse infinite;
@@ -126,7 +146,7 @@
     @include img_l_pc(210, -40, -42);
     animation: jump 3s 0s ease-in-out alternate-reverse infinite;
   }
-  
+
   .bubble3 {
     @include img_l_pc(271, 790, 121);
     animation: jump 3.5s 0s ease-in-out alternate-reverse infinite;
@@ -211,39 +231,106 @@
   }
 
   .logo {
-    @include img_r_m(163, 111, 116);
-    top: calc(50% + ((111 - 302) * 0.266666vw));
-  }
-
-  .p2 {
-    @include img_r_m(91, 143, 0);
-    top: calc(50% + ((100 - 302) * 0.266666vw));
-  }
-
-  .p12 {
-    @include img_r_m(129, 333, 240);
-    top: auto;
-    bottom: 0;
-    width: auto;
-    height: calc(50% - 20vw);
-  }
-
-  .order-btn {
-    display: none;
+    @include img_c_m(295, 195);
   }
 
   .title {
-    @include img_l_m(166, 336, 94);
-    top: calc(50% + ((336 - 302) * 0.266666vw));
-    font-size: sizem(23);
+    @include img_c_m(204, 440);
+    font-size: sizem(19);
     font-weight: 900;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.39;
+    line-height: 1.2;
     letter-spacing: normal;
     text-align: center;
-    color: #685335;
+    color: #ffffff;
     white-space: nowrap;
+
+    span {
+      color: #faee00;
+    }
+  }
+
+  .t1 {
+    @include img_c_m(261, 128);
+  }
+
+  .t2 {
+    @include img_c_m(310, 274);
+  }
+
+  .t3 {
+    @include img_c_m(295, 384);
+  }
+
+  .bottom {
+    width: 100vw;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    z-index: 1;
+  }
+
+  @keyframes jump {
+    to {
+      margin-top: -20px;
+      // transform: translateY(-30px);
+    }
+  }
+  .animate-bg {
+    .bubble1 {
+      display: none;
+    }
+
+    .bubble2 {
+      @include img_l_m(150, -10, 0);
+      animation: jump 3s 0s ease-in-out alternate-reverse infinite;
+    }
+
+    .bubble3 {
+      @include img_l_m(151, 500, -61);
+      animation: jump 3.5s 0s ease-in-out alternate-reverse infinite;
+      z-index: 5;
+    }
+
+    .bubble4 {
+      @include img_l_m(53, 470, 38);
+      animation: jump 1s 0s ease-in-out alternate-reverse infinite;
+      z-index: 5;
+      display: none;
+    }
+
+    .bubble5 {
+      @include img_r_m(84, 47, 23);
+      animation: jump 2.3s 0s ease-in-out alternate-reverse infinite;
+      z-index: 5;
+    }
+
+    .bubble6 {
+      @include img_l_m(110, 424, -52);
+      animation: jump 2s 0s ease-in-out alternate-reverse infinite;
+    }
+
+    .bubble7 {
+      // @include img_l_m(314, 741, 325);
+      // animation: jump 2.5s 0s ease-in-out alternate-reverse infinite;
+      display: none;
+    }
+
+    .bubble8 {
+      @include img_r_m(150, 452, -102);
+      animation: jump 4s 0s ease-in-out alternate-reverse infinite;
+    }
+
+    .bubble9 {
+      @include img_r_m(150, 0, -70);
+      animation: jump 1.4s 0s ease-in-out alternate-reverse infinite;
+    }
+
+    .bubble10 {
+      @include img_r_pc(410, -90, -142);
+      animation: jump 3s 0s ease-in-out alternate-reverse infinite;
+    }
   }
 }
 </style>

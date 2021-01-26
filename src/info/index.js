@@ -27,7 +27,7 @@ export default {
   recaptcha_site_key: '6LfGUjEaAAAAAFR9F5m6Lg1RfS-D07l64KWmoLcK', // recaptcha v3
   recaptcha_user_token: '6LfGUjEaAAAAAFR9F5m6Lg1RfS-D07l64KWmoLcK',
   order: {
-    title: '立即預約',
+    title: '報名遊玩',
     subTitle: ''
   }
 }

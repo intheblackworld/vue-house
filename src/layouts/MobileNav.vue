@@ -7,12 +7,12 @@
 
     <a class="nav-item" v-scroll-to="{ element: `#contact`, offset: offset }">
       <font-awesome-icon icon="pen" />
-      <div class="label">預約賞屋</div>
+      <div class="label">我要報名</div>
     </a>
-    <a class="nav-item" @click="showMessengerDialog">
+    <!-- <a class="nav-item" @click="showMessengerDialog">
       <font-awesome-icon :icon="['fab', 'facebook-messenger']" />
       <div class="label">FB諮詢</div>
-    </a>
+    </a> -->
     <a class="nav-item" @click="showMapDialog">
       <font-awesome-icon icon="map-marker-alt" />
       <div class="label">地圖導航</div>

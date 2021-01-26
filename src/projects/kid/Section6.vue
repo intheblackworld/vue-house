@@ -29,10 +29,10 @@
       <div class="title2">
         活動消息
       </div>
-      <carousel-3d class="swipe relative" ref="mycarousel" :width="videoWidth" :height="videoHeight" :perspective="0" :disable3d="isMobile ? true : false" :border="0" :display="isMobile ? 1 : 3" :space="isMobile ? 300 : 300" @after-slide-change="onAfterSlideChange">
+      <carousel-3d class="swipe relative" ref="mycarousel" :width="videoWidth" :height="videoHeight" :perspective="0" :disable3d="false" :border="0" :display="3" :space="isMobile ? 300 : 300" @after-slide-change="onAfterSlideChange">
         <slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="video-slide">
           <img :src="slide.img" :class="`video-img absolute`" />
-          <div class="mask">
+          <div class="mask" v-if="!isMobile">
             <div class="slide-title" v-html="slide.title">
             </div>
             <div class="btn">
@@ -41,6 +41,11 @@
           </div>
         </slide>
       </carousel-3d>
+      <div class="slide-title" v-html="slideList[slideIndex].title" v-if="isMobile">
+      </div>
+      <div class="btn" v-if="isMobile">
+        >>我要報名
+      </div>
       <div class="pagination">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot' + index" @click="goToSlide(index)"><span :class="`flex-c ${currentIndex === index ? 'active' : ''}`">{{index + 1}}</span></div>
       </div>
@@ -338,10 +343,12 @@
   .section6 {
     width: 100vw;
     height: calc(100vh - 63px);
-    min-height: sizem(604);
-    max-height: sizem(750);
+    min-height: sizem(900);
+    max-height: sizem(900);
     background-size: cover;
     background-attachment: scroll;
+    position: relative;
+    // z-index: 1;
   }
 
   .bg-img {
@@ -362,39 +369,273 @@
     @include img_r_m(375, 0, 0);
   }
 
-  .title_t {
-    @include img_r_m(286, 52, 44);
-    top: calc(50% + ((70 - 302) * 0.266666vw));
+  .block-1 {
+    width: 100vw;
+    height: sizem(437);
+    position: relative;
   }
 
-  .video-slide {
+  .block-2 {
+    background-color: #71943a;
+    position: relative;
     width: 100vw;
-    // position: relative;
-    z-index: 15;
+    height: sizem(900 - 437);
+  }
+
+  .bg-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    object-fit: cover;
+    background-color: #fff;
+
+    // &:nth-child(1) {
+    //   position: relative;
+    // }
+  }
+
+  .logo1 {
+    @include img_l_m(96, 170, 0);
+    z-index: 4;
+  }
+
+  .logo2 {
+    @include img_l_m(38, 262, 147);
+    z-index: 4;
+  }
+
+  .title-img {
+    @include img_l_m(108, 123, 93);
+    z-index: 4;
+  }
+
+  .tbg {
+    @include img_l_m(220, 82, 33);
+    z-index: 3;
+  }
+
+  .o {
+    @include img_r_m(163, 34, 0);
+
+    &.high {
+      z-index: 2;
+    }
+  }
+
+  .p5 {
+    @include img_l_m(92, 230, 0);
+    z-index: 3;
+  }
+
+  .p6 {
+    @include img_l_m(88, 284, 123);
+    z-index: 3;
+  }
+
+  .title {
+    @include img_c_m(290, 24);
+    font-size: sizem(22);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+    white-space: nowrap;
+    z-index: 4;
+  }
+
+  .p1 {
+    @include img_r_pc(217, 235, 223);
+    top: auto;
+  }
+
+  .p2 {
+    @include img_r_pc(211, 516, 445);
+    top: auto;
+  }
+
+  .grass {
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+
+  .title2 {
+    @include img_c_m(140, 0);
+    font-size: sizem(35);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+  }
+  .swipe {
+    position: absolute;
+    top: sizem(80);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+  .video-slide {
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      .mask {
+        opacity: 0.85;
+      }
+    }
+
     .play-btn {
-      width: 80px;
+      width: 125px;
       cursor: pointer;
-      z-index: 15;
+      z-index: 2;
 
       display: block;
 
       &.hide {
         display: none;
       }
+    }
+
+    .video {
     }
 
     .video-img {
-      width: 100vw;
+      width: 274px;
       display: block;
 
       &.hide {
         display: none;
       }
     }
+  }
 
-    video {
-      width: 100%;
+  .mask {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 48.5%;
+    height: 100%;
+    background-color: #f5f0ec;
+    opacity: 0;
+    transition: all 0.3s;
+  }
+
+  .slide-title {
+    @include img_r_m(310, 250, 32);
+    font-size: sizem(30);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #faee00;
+    cursor: pointer;
+  }
+
+  .btn {
+    @include img_r_m(130, 350, 32);
+    font-size: sizem(25);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  .pagination {
+    position: absolute;
+    width: 100vw;
+    right: 0;
+    left: 0;
+    bottom: size(100);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .pagination-dot {
+    padding: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    z-index: 4;
+
+    span {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      color: #fff;
+      position: relative;
+      transition: all 0.5s;
+      font-size: size(18.2);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 20px;
+      letter-spacing: normal;
+      text-align: center;
+
+      &::before {
+        // content: '';
+        // width: 60%;
+        // height: 60%;
+        // display: block;
+        // background: #fff;
+        // border-radius: 20px;
+        // opacity: 1;
+        // position: absolute;
+        // top: 20%;
+        // // transform: translateY(-50%);
+        // left: 20%;
+        // transition: all 0.3s;
+        // transform-origin: center;
+        // transform: scale(0);
+      }
+      &.active {
+        color: #709339;
+        background-color: #fff;
+        &::before {
+          // content: '';
+          // width: 100%;
+          // height: 100%;
+          // display: block;
+          // background: #fff;
+          // border-radius: 20px;
+          // opacity: 1;
+          // position: absolute;
+          // top: 0%;
+          // // transform: translateY(-50%);
+          // left: 0%;
+          // transform: scale(1);
+        }
+      }
     }
+  }
+
+  .child-jump {
+    width: size(1920);
+    height: size(1080);
+    min-height: size(1080);
+    max-height: size(1080);
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
   }
 }
 </style>
@@ -458,8 +699,8 @@ export default {
       this.videoHeight = 450
     }
     if (this.isMobile) {
-      this.videoWidth = window.screen.width
-      this.videoHeight = window.screen.width * (450 / 800)
+      this.videoWidth = 274
+      this.videoHeight = 127
     }
   },
 
