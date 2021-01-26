@@ -21,9 +21,9 @@
       <img src="./s1/bubb (4).png" :alt="`${info.caseName}_bubble4`" class="bubble4">
       <img src="./s1/bubb (6).png" :alt="`${info.caseName}_bubble6`" class="bubble6">
     </div>
-    <div class="child-jump">
+    <!-- <div class="child-jump">
       <img src="./s4/p3.png" :alt="`${info.caseName}_p1`" class="p1" data-aos="child-jump" data-aos-delay="1200" data-aos-duration="3000">
-    </div>
+    </div> -->
     <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
@@ -39,7 +39,7 @@
       </div>
     </div>
     <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-      <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+      <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot' + index" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
     </div>
     <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
       <div class="prev-btn flex-c">
@@ -86,6 +86,7 @@
 
 .o {
   @include img_r_pc(626, 12, -40);
+  z-index: 10;
 }
 
 .title {
@@ -145,6 +146,17 @@
     animation: jump 2s 0s ease-in-out alternate-reverse infinite;
     z-index: 2;
   }
+}
+
+.child-jump {
+  width: size(1920);
+  height: size(1080);
+  min-height: size(1080);
+  max-height: size(1080);
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  left: 0;
 }
 
 /* Swipe */
@@ -344,9 +356,9 @@
     display: block;
     object-fit: cover;
 
-    &:nth-child(1) {
-      position: relative;
-    }
+    // &:nth-child(1) {
+    //   position: relative;
+    // }
   }
 
   .bg {

@@ -79,9 +79,9 @@
   display: block;
   object-fit: cover;
 
-  &:nth-child(1) {
-    position: relative;
-  }
+  // &:nth-child(1) {
+  //   position: relative;
+  // }
 }
 
 .logo {

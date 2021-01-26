@@ -1,10 +1,18 @@
 @import "./variableColor.scss";
 
 .el-select {
-  margin-left: 21px;
-  font-family:$family3;
+  //margin-left: 21px;
+  font-family: $family3;
+  position: relative;
+  font-size: 14px;
+  text-align: right;
+  width: 100%;
+  display: inline-block;
+  flex: 0 1 auto;
 }
-.el-scrollbar{font-family:$family3;}
+.el-scrollbar {
+  font-family: $family3;
+}
 
 .el-date-editor.el-input {
   position: relative !important;
@@ -13,16 +21,25 @@
   width: 100% !important;
   margin-left: 44px;
 }
-
+.el-input {
+  display: inline-block;
+  flex: 0 1 auto;
+  text-align: right;
+}
 .el-input__inner {
-  width: 310px !important;
+  width: 100% !important;
   height: 48px !important;
   line-height: 48px !important;
-  font-size: 16px !important;
+  font-size:size(18) !important;
   border: $order_input_border !important;
+  border-radius: 0 !important;
   background: $order_input_bg;
   color: $order_input_color;
-  font-family:$family3;
+  font-family: $family3;
+
+  &::placeholder {
+    color: $order_input_placeholder !important;
+  }
 
   &:focus {
     border: $order_input_focus_border;
@@ -33,17 +50,17 @@
 }
 
 .el-textarea {
-  width: 420px !important;
-  height: 95% !important;
+  width: 100% !important;
+  height: 100% !important;
   .el-textarea__inner {
-    height: 100% !important;
+    height: 278px !important;
     border-radius: 0 !important;
-    color: #333;
+    color: #fff;
     padding-top: 10px !important;
-    font-size: 16px !important;
+    font-size: size(18) !important;
     border: $order_input_border !important;
-    background:#FFF;
-  font-family:$family3;
+    background: $order_input_bg;
+    font-family: $family3;
 
     &::placeholder {
       color: $order_input_placeholder;
@@ -54,10 +71,15 @@
     }
   }
 }
-
+.el-checkbox {
+  text-align: left !important;
+  width: 100% !important;
+}
 .el-checkbox__label {
-  p, h3 {
-    font-size: 14px;
+  p,
+  h3,
+  div {
+    font-size: size(18);
     color: $order_check_desc_color;
     font-weight: 1100;
   }
@@ -69,24 +91,26 @@
 }
 
 .form-submit {
-  width: 320px !important;
-  height: 72px !important;
+  width: 222px !important;
+  height: 54px !important;
   // opacity: 0 !important;
   border-radius: 0 !important;
-  font-size: 24px !important;
+  font-size: size(18) !important;
   font-weight: bold !important;
-  letter-spacing: 10px;
+  letter-spacing: 3px;
   text-align: justify;
   background-position: center !important;
   background-color: $order_submit_bg;
   background-image: $order_submit_bg;
+  border: none !important;
+  // border-radius: 72px / 72px !important;
   margin: 0 auto !important;
   margin-top: 20px !important;
   transition: all 0.3s !important;
   color: $order_submit_color;
   // z-index: 10;
-  border: 3px solid #c7a26e !important;
-  font-family: $family3 !important;
+  // border: none !important;
+  // font-family: $family3;
 
   &.is-disabled {
     background-color: $order_sumbit_disable_bg;
@@ -129,13 +153,26 @@
 @media only screen and (max-width: 767px) {
   .el-input__inner {
     width: 100% !important;
+    font-size:sizem(15) !important;
+  }
+  .el-checkbox__label {
+    p,
+    h3,
+    div {
+      font-size: sizem(15);
+    }
+  
+    span {
+      color: $order_check_span_color;
+      text-decoration: underline;
+    }
   }
 
   .el-textarea .el-textarea__inner {
     width: 100% !important;
     height: 120px !important;
+      font-size:sizem(15) !important;
   }
-
   .el-select {
     margin-left: 0;
     width: 100%;
@@ -152,9 +189,10 @@
   }
 
   .form-submit {
-    width: 90% !important;
+    width: 100% !important;
     font-size: 16px !important;
-    margin: 10px auto !important;
+    margin: 10px auto 20px auto !important;
+    font-size:sizem(15) !important;
   }
 
   .el-date-editor.el-input {

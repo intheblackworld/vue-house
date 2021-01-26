@@ -5,19 +5,37 @@
     <div class="order">
       <div class="form">
         <div class="group">
-          <div class="form-hint">* 每個欄位都是必填欄位</div>
+          <!-- <div class="form-hint">* 每個欄位都是必填欄位</div> -->
           <div class="row" data-aos="fade-down" data-aos-delay="100">
-            <el-input id="form-name" v-model="form.name" placeholder="姓名"></el-input>
+            <el-select v-model="form.activity" placeholder>
+              <el-option v-for="act in activies" :key="act.value" :label="act.label" :value="act.value" no-data-text="無數據"></el-option>
+            </el-select>
+          </div>
+          <div class="row" data-aos="fade-down" data-aos-delay="100">
+            <el-input id="form-name" v-model="form.count" placeholder="報名人數"></el-input>
+          </div>
+          <div class="row" data-aos="fade-down" data-aos-delay="100">
+            <el-input id="form-name" v-model="form.name" placeholder="姓名*"></el-input>
           </div>
           <div class="row" data-aos="fade-down" data-aos-delay="200">
-            <el-input id="form-phone" v-model="form.phone" placeholder="電話"></el-input>
+            <el-input id="form-phone" v-model="form.phone" placeholder="手機*"></el-input>
           </div>
-          <div class="row" data-aos="fade-down" data-aos-delay="200">
+          <div class="row" data-aos="fade-down" data-aos-delay="300">
+            <el-select v-model="form.city" placeholder="居住城市*">
+              <el-option v-for="city in cityList" :key="city.value" :label="city.label" :value="city.value" no-data-text="無數據"></el-option>
+            </el-select>
+          </div>
+          <div class="row" data-aos="fade-down" data-aos-delay="400">
+            <el-select v-model="form.area" placeholder="居住地區*">
+              <el-option v-for="area in areaList" :key="area.value" :label="area.label" :value="area.value" no-data-text="請先選擇居住城市"></el-option>
+            </el-select>
+          </div>
+          <!-- <div class="row" data-aos="fade-down" data-aos-delay="200">
             <el-input id="form-phone" v-model="form.type" placeholder="想了解的建案"></el-input>
-          </div>
-          <div class="row">
+          </div> -->
+          <!-- <div class="row">
             <el-input type="textarea" :rows="5" placeholder="請輸入您的留言，將有專人為您服務" v-model="form.msg"></el-input>
-          </div>
+          </div> -->
           <div class="control" data-aos="fade-down" data-aos-delay="500">
             <div class="control-desc">
               <p>您所登錄的個人資料將作為以下用途</p>
@@ -38,17 +56,33 @@
           <el-button class="form-submit flex-c" type="primary" :disabled="!checked || !isVerify" @click="submit" :loading="isSubmit">確認送出</el-button>
         </div>
         <div class="group">
-          <iframe class="google-map" title="googlemap" :src="googleSrc" width="100%" height="535" frameborder="0" style="border: 0" allowfullscreen />
+          <iframe class="google-map" title="googlemap" :src="googleSrc" width="100%" height="383" frameborder="0" style="border: 0" allowfullscreen />
           <div class="control" data-aos="fade-down" data-aos-delay="500">
             <div class="control-desc">
-              <p>電話 {{info.phone}}<br />
-                信箱 {{info.email}}<br />
-                地址 {{info.address}}</p>
+              <p>
+                <!-- 電話 {{info.phone}}<br /> -->
+                客服信箱：{{info.email}}<br />
+                樂園位置：{{info.address}}
+              </p>
             </div>
           </div>
         </div>
       </div>
-      <!-- <img src="./" alt="" class="bottom-img"> -->
+      <a :href="info.googleLink" target="_blank" class="contact-btn flex-c wrap google-map-btn">
+        <img src="~@/projects/kid/c/m.png" alt="">
+        <div class="btn-desc">
+          地圖導航
+        </div>
+      </a>
+      <a :href="info.fbLink" target="_blank" class="contact-btn flex-c wrap fb-btn">
+        <img src="~@/projects/kid/c/f.png" alt="">
+        <div class="btn-desc">
+          粉絲專頁
+        </div>
+      </a>
+      <img src="~@/projects/kid/c/bottom.png" alt="" class="bottom-img" v-if="!isMobile">
+      <img src="~@/projects/kid/c/bottom_m.png" alt="" class="bottom-img" v-if="isMobile">
+      <img src="~@/projects/kid/c/資產 48@2x.png" alt="" class="bottom-logo">
       <!-- <div style="margin: 0 auto;z-index:2;" v-if="!isMobile" data-aos="fade-down" data-aos-delay="600">
         <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
       </div> -->
@@ -85,7 +119,23 @@ export default {
       order: info.order,
       isMobile,
       googleSrc: info.googleSrc,
+      activies: [
+        {
+          value: '2/15( 六)  14:00-16:00  瑪莎見面會',
+          label: '2/15( 六)  14:00-16:00  瑪莎見面會',
+        },
+        {
+          value: '2/15( 六)  14:00-16:00  瑪莎見面會',
+          label: '2/15( 六)  14:00-16:00  瑪莎見面會',
+        },
+        {
+          value: '2/15( 六)  14:00-16:00  瑪莎見面會',
+          label: '2/15( 六)  14:00-16:00  瑪莎見面會',
+        },
+      ],
       form: {
+        activity: '2/15( 六)  14:00-16:00  瑪莎見面會', // 活動名稱
+        count: '', // 報名人數
         name: '',
         phone: '',
         email: '',
@@ -121,7 +171,7 @@ export default {
         message: h(
           'i',
           { style: 'color: #82191d' },
-          '「姓名、手機」是必填欄位',
+          '「活動、姓名、手機、居住城市、居住地區」是必填欄位',
         ),
       })
     },
@@ -133,14 +183,15 @@ export default {
       this.isSubmit = true
       if (
         !this.form.name ||
-        !this.form.phone
+        !this.form.phone ||
+        !this.form.activity ||
         // ||
         // !this.form.time_start ||
         // !this.form.time_end
         // ||
         // !this.form.email ||
-        // !this.form.city ||
-        // !this.form.area
+        !this.form.city ||
+        !this.form.area
       ) {
         this.alertValidate()
         this.isSubmit = false
@@ -152,6 +203,8 @@ export default {
       const utmContent = urlParams.get('utm_content')
       const utmCampaign = urlParams.get('utm_campaign')
       const formData = new FormData()
+      formData.append('activity', this.form.activity)
+      formData.append('count', this.form.count)
       formData.append('name', this.form.name)
       formData.append('phone', this.form.phone)
       formData.append('email', this.form.email)
@@ -212,10 +265,11 @@ export default {
   }
 }
 .order-bg {
-  // background-color: $order_bg_color;
+  background-color: $order_bg_color;
   width: 100vw;
-  height:auto;
-  background-image: $order_bg_image;
+  height: auto;
+  // background-image: $order_bg_image;
+  padding-bottom: 250px;
   background-repeat: repeat;
   position: relative;
   // background-size: 100vw auto;
@@ -257,7 +311,7 @@ export default {
   }
 
   .order {
-    width: size(1440);
+    width: size(930);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -270,8 +324,8 @@ export default {
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height:30px;
-    letter-spacing:0.02em;
+    line-height: 30px;
+    letter-spacing: 0.02em;
     text-align: left;
     color: $order_subtitle_color;
     margin-bottom: 5px;
@@ -286,7 +340,10 @@ export default {
     > .group {
       // flex: 1;
       align-items: flex-start;
-      &:nth-child(1){margin: 0 size(40) 0 0;}
+      margin-top: size(40);
+      &:nth-child(1) {
+        margin: size(40) size(40) 0 0;
+      }
     }
   }
 
@@ -315,7 +372,7 @@ export default {
   .row {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 19px;
 
     &.house {
       margin-top: 50px;
@@ -356,13 +413,55 @@ export default {
   }
 
   .google-map {
-    margin-top: 35px;
+    // margin-top: 35px;
     margin-bottom: 15px;
   }
 }
 .el-textarea .el-textarea__inner,
-.el-input__inner{
-    font-size: size(20) !important;}
+.el-input__inner {
+  font-size: size(20) !important;
+}
+
+.bottom-img {
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.bottom-logo {
+  position: absolute;
+  width: size(299);
+  bottom: size(50);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.contact-btn {
+  border-radius: 19px;
+  background-color: #3a836d;
+  text-decoration: none;
+  img {
+    width: size(50);
+  }
+  .btn-desc {
+    font-size: size(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.73;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+  }
+}
+.google-map-btn {
+  @include div_r_pc(90, 90, 873, 880);
+}
+
+.fb-btn {
+  @include div_r_pc(90, 90, 873, 770);
+}
 
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -447,9 +546,9 @@ export default {
       margin-bottom: 10px;
     }
 
-  .control-desc {
-    font-size: sizem(15);
-  }
+    .control-desc {
+      font-size: sizem(15);
+    }
   }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="contact" id="contact">
     <Order />
-    <HouseInfo />
+    <!-- <HouseInfo /> -->
   </div>
 </template>
 <style lang="scss" scoped>

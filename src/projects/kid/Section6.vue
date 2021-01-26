@@ -22,7 +22,7 @@
       <img src="./s6/p5.png" :alt="`${info.caseName}_p5`" class="p5">
       <img src="./s6/p6.png" :alt="`${info.caseName}_p6`" class="p6">
       <div class="child-jump">
-        <img src="./s4/p3.png" :alt="`${info.caseName}_p1`" class="p1" data-aos="child-jump" data-aos-delay="1200" data-aos-duration="3000">
+        <img src="./s6/p4.png" :alt="`${info.caseName}_p1`" class="p1" data-aos="child-jump" data-aos-delay="1200" data-aos-duration="3000">
       </div>
     </div>
     <div class="block-2">
@@ -42,7 +42,7 @@
         </slide>
       </carousel-3d>
       <div class="pagination">
-        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goToSlide(index)"><span :class="`flex-c ${currentIndex === index ? 'active' : ''}`">{{index + 1}}</span></div>
+        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot' + index" @click="goToSlide(index)"><span :class="`flex-c ${currentIndex === index ? 'active' : ''}`">{{index + 1}}</span></div>
       </div>
     </div>
   </div>
@@ -84,9 +84,9 @@
   object-fit: cover;
   background-color: #fff;
 
-  &:nth-child(1) {
-    position: relative;
-  }
+  // &:nth-child(1) {
+  //   position: relative;
+  // }
 }
 
 .logo1 {
@@ -106,7 +106,7 @@
 }
 
 .o {
-  @include img_r_pc(648, -132, 0);
+  @include img_r_pc(648, -82, -30);
 
   &.high {
     z-index: 2;
@@ -308,6 +308,17 @@
       }
     }
   }
+}
+
+.child-jump {
+  width: size(1920);
+  height: size(1080);
+  min-height: size(1080);
+  max-height: size(1080);
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  left: 0;
 }
 
 @media only screen and (max-width: 1440px) {

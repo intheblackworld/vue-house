@@ -39,7 +39,7 @@
       </div>
     </div>
     <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-      <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+      <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot' + index" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
     </div>
     <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
       <div class="prev-btn flex-c">
@@ -74,10 +74,6 @@
   display: block;
   object-fit: cover;
   // background-color: #f5f0ec;
-
-  &:nth-child(1) {
-    position: relative;
-  }
 }
 
 .title-img {
@@ -144,6 +140,17 @@
     @include img_l_pc(481, 465, 178);
     animation: jump 2s 0s ease-in-out alternate-reverse infinite;
   }
+}
+
+.child-jump {
+  width: size(1920);
+  height: size(1080);
+  min-height: size(1080);
+  max-height: size(1080);
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  left: 0;
 }
 
 /* Swipe */

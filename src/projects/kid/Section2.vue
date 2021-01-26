@@ -20,8 +20,8 @@
       <img src="./s1/bubb (6).png" :alt="`${info.caseName}_bubble6`" class="bubble6">
     </div>
     <div class="child-jump">
-      <img src="./s2/p1.png" :alt="`${info.caseName}_p1`" class="p1" data-aos="child-jump" data-aos-delay="1200" data-aos-duration="3000">
-      <img src="./s2/p2.png" :alt="`${info.caseName}_p2`" class="p2" data-aos="child-jump" data-aos-delay="1000" data-aos-duration="3000">
+      <img src="./s2/p1.png" :alt="`${info.caseName}_p1`" class="p1" data-aos="child-jump" data-aos-delay="500" data-aos-duration="3000">
+      <img src="./s2/p2.png" :alt="`${info.caseName}_p2`" class="p2" data-aos="child-jump" data-aos-delay="300" data-aos-duration="3000">
     </div>
     <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -38,7 +38,7 @@
       </div>
     </div>
     <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-      <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+      <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot' + index" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
     </div>
     <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
       <div class="prev-btn flex-c">
@@ -74,9 +74,9 @@
   object-fit: cover;
   background-color: #f5f0ec;
 
-  &:nth-child(1) {
-    position: relative;
-  }
+  // &:nth-child(1) {
+  //   position: relative;
+  // }
 }
 
 .title-img {
@@ -139,6 +139,17 @@
     @include img_l_pc(481, 465, 178);
     animation: jump 2s 0s ease-in-out alternate-reverse infinite;
   }
+}
+
+.child-jump {
+  width: size(1920);
+  height: size(1080);
+  min-height: size(1080);
+  max-height: size(1080);
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 /* Swipe */
