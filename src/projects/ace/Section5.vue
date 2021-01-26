@@ -12,9 +12,9 @@
     <h1 class="subtitle" v-if="isMobile" data-aos="fade-down" data-aos-delay="200">
       國際團隊打造<br />時尚精品飯店宅
     </h1>
-    <div class="desc flex-c" data-aos="fade-down" data-aos-delay="300">
+   <!-- <div class="desc flex-c" data-aos="fade-down" data-aos-delay="300">
       買名牌包 不如收藏精品宅
-    </div>
+    </div> -->
     <div class="imgs flex-ac flex-jb wrap">
       <div @click="showDialog(0)" data-aos="fade-down" data-aos-delay="400"><img src="./s5/1.jpg" :alt="`${info.caseName}_img1`"></div>
       <div @click="showDialog(1)" data-aos="fade-down" data-aos-delay="500"><img src="./s5/2.jpg" :alt="`${info.caseName}_img2`"></div>
@@ -24,7 +24,8 @@
     <div :class="`dialog ${isDialog ? 'active' : ''}`">
       <img src="./all/close.png" :alt="`${info.caseName}_close`" class="dialog-close" @click="isDialog = false">
       <div class="dialog-content">
-        <div class="dialog-title" v-html="dialogData.title"></div>
+        <div class="dialog-toptitle" v-html="dialogData.toptitle"></div>
+        <h2 class="dialog-title" v-html="dialogData.title"></h2>
         <h1 class="dialog-subtitle" v-html="dialogData.subtitle"></h1>
         <div class="dialog-label flex-ac" v-html="dialogData.label"></div>
         <div class="dialog-desc" v-html="dialogData.desc"></div>
@@ -121,7 +122,7 @@
 }
 
 .imgs {
-  @include div_c_pc(302 * 4 + 28 * 3, 430, 385);
+  @include div_c_pc(302 * 4 + 28 * 3, 400, 385);
 
   div {
     width: size(302);
@@ -175,11 +176,20 @@
     line-height: 1.6;
     color: #ffffff;
   }
+  .dialog-toptitle {
+    width: 100%;
+    font-size: size(25);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    margin: 0 0 -0.5em 0;
+  }
   .dialog-title {
     width: 100%;
-    font-size: size(37);
-    font-weight: 500;
+    font-size: size(90);
+    font-weight: 900;
     color: #ffffff;
+    margin: 0 0 -0.1em 0;
   }
 
   .dialog-subtitle {
@@ -453,7 +463,8 @@ export default {
       },
       item_list: [
         {
-          title: '建築王牌',
+          toptitle: '建築王牌',
+          title: 'Andrew Forst',
           subtitle: '國際級建築贏家<br /><span>PTW</span>王牌登場',
           label: '131年澳洲建築設計先驅‧不是王牌不出手',
           desc:
@@ -472,7 +483,8 @@ export default {
           ],
         },
         {
-          title: '燈光王牌',
+          toptitle: '燈光王牌',
+          title: '林朗菴',
           subtitle: '<span>燈光巨擘</span>蘭克斯<br />王牌天廈全城聚焦',
           label: '36層鋼骨地標耀眼世界‧不容忽視的豔羨目光',
           desc:
@@ -490,12 +502,13 @@ export default {
           ],
         },
         {
-          title: '空間王牌',
+          toptitle: '空間王牌',
+          title: '袁世賢',
           subtitle: '史上最華麗展演<br />盛情款待<span>王與后</span>',
           label: '美國Muse大獎．百年一遇精品訂製空間',
           desc:
             '德國iF DESIGN、German Design Award、義大利A’Design大獎設計名師袁世賢，以生活的立體感知為基底，透過光影轉換借景入境，讓太陽帝國休閒會所不僅是頂級社交休閒場域，更成為家的空間延展，散發無限美學張力。',
-          work: '代表作品：台北美麗信花園酒店、台南煙波大飯店、桂田磐古、璽園',
+          work: '代表作品：台北美麗信花園酒店、台南煙波大飯店、桂田磐古、璽園、山水裊裊',
           imgs: [
             {
               img: require('./s5/3-1.jpg'),
@@ -508,19 +521,20 @@ export default {
           ],
         },
         {
-          title: '景觀王牌',
+          toptitle: '景觀王牌',
+          title: '徐世萃',
           subtitle: '信義豪宅御用<br /><span>景觀生態</span>之王',
           label: '國際建築視野‧城市花園綠藝新觀',
           desc:
-            '北市億元豪宅「信義豪宅御用」空中花園競圖第一名，專為頂級建築打造會呼吸的城市綠帶，完美融合建築物與環境界線，使空間與土地產生最自然連結。戶外庭園不只是家向世界延伸的舞台，更是城市中具永續生態視野的最美地景。',
-          work: '代表作品：維多利亞酒店、碧波白',
+            '信義豪宅御用，專為頂級建築打造會呼吸的城市綠帶，完美融合建築物與環境界線，使空間與土地產生最自然連結。戶外庭園不只是家向世界延伸的舞台，更是城市中具永續生態視野的最美地景。',
+          work: '代表作品：維多利亞酒店、碧波白、甲山林-城上城、希望城市、富春居、墾丁凱薩大飯店',
           imgs: [
             {
-              img: require('./s5/3-1.jpg'),
+              img: require('./s5/4-1.jpg'),
               name: '維多利亞酒店',
             },
             {
-              img: require('./s5/3-2.jpg'),
+              img: require('./s5/4-2.jpg'),
               name: '碧波白',
             },
           ],
