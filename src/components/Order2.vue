@@ -9,7 +9,7 @@
           <!-- <div class="form-hint">* 每個欄位都是必填欄位</div> -->
           <div class="row" data-aos="fade-down" data-aos-delay="100">
             <el-select v-model="form.activity" placeholder>
-              <el-option v-for="act in activies" :key="act.value" :label="act.label" :value="act.value" no-data-text="無數據"></el-option>
+              <el-option v-for="(act, index) in activies" :key="act.value + index" :label="act.label" :value="act.value" no-data-text="無數據"></el-option>
             </el-select>
           </div>
           <div class="row" data-aos="fade-down" data-aos-delay="100">
@@ -97,6 +97,7 @@
 </template>
 
 <script>
+import main from '@/main.js'
 import ContactInfo from '@/components/ContactInfo.vue'
 import PolicyDialog from '@/components/PolicyDialog.vue'
 import info from '@/info'
@@ -122,20 +123,20 @@ export default {
       googleSrc: info.googleSrc,
       activies: [
         {
-          value: '2/15( 六)  14:00-16:00  瑪莎見面會',
-          label: '2/15( 六)  14:00-16:00  瑪莎見面會',
+          value: '2/15( 六)  14:00-16:00  瑪莎見面會1',
+          label: '2/15( 六)  14:00-16:00  瑪莎見面會1',
         },
         {
-          value: '2/15( 六)  14:00-16:00  瑪莎見面會',
-          label: '2/15( 六)  14:00-16:00  瑪莎見面會',
+          value: '2/15( 六)  14:00-16:00  瑪莎見面會2',
+          label: '2/15( 六)  14:00-16:00  瑪莎見面會2',
         },
         {
-          value: '2/15( 六)  14:00-16:00  瑪莎見面會',
-          label: '2/15( 六)  14:00-16:00  瑪莎見面會',
+          value: '2/15( 六)  14:00-16:00  瑪莎見面會3',
+          label: '2/15( 六)  14:00-16:00  瑪莎見面會3',
         },
       ],
       form: {
-        activity: '2/15( 六)  14:00-16:00  瑪莎見面會', // 活動名稱
+        activity: '2/15( 六)  14:00-16:00  瑪莎見面會1', // 活動名稱
         count: '', // 報名人數
         name: '',
         phone: '',
@@ -158,6 +159,12 @@ export default {
     areaList() {
       return renderAreaList(this.form.city)
     },
+  },
+
+  created() {
+    main.$on('changeAct', (index) => {
+      this.form.activity = this.activies[index].value
+    })
   },
 
   methods: {

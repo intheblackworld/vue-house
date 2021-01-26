@@ -29,13 +29,13 @@
       <div class="title2">
         活動消息
       </div>
-      <carousel-3d class="swipe relative" ref="mycarousel" :width="videoWidth" :height="videoHeight" :perspective="0" :disable3d="false" :border="0" :display="3" :space="isMobile ? 300 : 300" @after-slide-change="onAfterSlideChange">
-        <slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="video-slide">
+      <carousel-3d class="swipe relative" ref="mycarousel" :width="videoWidth" :height="videoHeight" :perspective="0" :disable3d="false" :border="0" :display="3" :space="isMobile ? 300 : 300" @before-slide-change="onBeforeSlideChange">
+        <slide v-for="(slide, index) in slideList" :index="index" :key="slide.img + index" class="video-slide">
           <img :src="slide.img" :class="`video-img absolute`" />
           <div class="mask" v-if="!isMobile">
             <div class="slide-title" v-html="slide.title">
             </div>
-            <div class="btn">
+            <div class="btn" @click="changeAct(index)" v-scroll-to="{element: '#contact'}">
               >>我要報名
             </div>
           </div>
@@ -43,11 +43,11 @@
       </carousel-3d>
       <div class="slide-title" v-html="slideList[slideIndex].title" v-if="isMobile">
       </div>
-      <div class="btn" v-if="isMobile">
+      <div class="btn" v-if="isMobile" @click="changeAct(slideIndex)" v-scroll-to="{element: '#contact'}">
         >>我要報名
       </div>
       <div class="pagination">
-        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot' + index" @click="goToSlide(index)"><span :class="`flex-c ${currentIndex === index ? 'active' : ''}`">{{index + 1}}</span></div>
+        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot' + index" @click="goToSlide(index)"><span :class="`flex-c ${slideIndex === index ? 'active' : ''}`">{{index + 1}}</span></div>
       </div>
     </div>
   </div>
@@ -641,6 +641,7 @@
 </style>
 <script>
 // @ is an alias to /src
+import main from '@/main.js'
 import { isPC, isMobile, isTablet } from '@/utils'
 import { Carousel3d, Slide } from 'vue-carousel-3d'
 import slider from '@/mixins/slider.js'
@@ -661,18 +662,18 @@ export default {
       isPC,
       isMobile,
       isTablet,
-      currentIndex: 0,
+      // currentIndex: 0,
       slideList: [
         {
-          title: '前20名報名者，將獲得瑪莎限量拍照牌！',
+          title: '前20名報名者，將獲得瑪莎限量拍照牌！1',
           img: require('./s7/1.jpg'),
         },
         {
-          title: '前20名報名者，將獲得瑪莎限量拍照牌！',
+          title: '前20名報名者，將獲得瑪莎限量拍照牌！2',
           img: require('./s7/1.jpg'),
         },
         {
-          title: '前20名報名者，將獲得瑪莎限量拍照牌！',
+          title: '前20名報名者，將獲得瑪莎限量拍照牌！3',
           img: require('./s7/1.jpg'),
         },
       ],
@@ -686,9 +687,13 @@ export default {
       this.$refs.mycarousel.goSlide(index)
     },
 
-    onAfterSlideChange(index) {
-      this.currentIndex = index
+    onBeforeSlideChange(index) {
+      this.slideIndex = index
     },
+
+    changeAct(index) {
+      main.$emit('changeAct', index)
+    }
   },
 
   created() {},

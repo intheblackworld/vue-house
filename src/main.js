@@ -67,7 +67,7 @@ Vue.use(Vue2TouchEvents)
 Vue.component('VPannellum', VuePannellum)
 
 
-new Vue({
+export default new Vue({
   router,
   store,
   methods: {
