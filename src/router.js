@@ -13,12 +13,12 @@ export default new Router({
       name: 'home',
       component: Home
     },
-    {
-      path: '/villa',
-      name: 'villa',
-      component: () =>
-      import(/* webpackChunkName: "about" */ './pages/Villa.vue')
-    },
+    // {
+    //   path: '/villa',
+    //   name: 'villa',
+    //   component: () =>
+    //   import(/* webpackChunkName: "about" */ './pages/Villa.vue')
+    // },
     {
       path: '/formThanks',
       name: 'formThanks',

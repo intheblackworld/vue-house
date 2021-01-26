@@ -9,7 +9,7 @@
 </style>
 
 <script>
-import Order from '@/components/Order.vue'
+import Order from '@/components/Order2.vue'
 import HouseInfo from '@/components/HouseInfo.vue'
 
 export default {
