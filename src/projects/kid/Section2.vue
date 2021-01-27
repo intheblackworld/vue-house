@@ -20,9 +20,11 @@
       <img src="./s1/bubb (6).png" :alt="`${info.caseName}_bubble6`" class="bubble6">
     </div>
     <div class="child-jump">
-      <img src="./s2/p1.png" :alt="`${info.caseName}_p1`" class="p1" data-aos="child-jump" data-aos-delay="500" data-aos-duration="3000">
-      <img src="./s2/p2.png" :alt="`${info.caseName}_p2`" class="p2" data-aos="child-jump" data-aos-delay="300" data-aos-duration="3000">
-    </div>
+      <img src="./s2/p1.png" :alt="`${info.caseName}_p1`" class="p1">
+      <img src="./s2/p2.png" :alt="`${info.caseName}_p2`" class="p2">
+    <!--  <img src="./s2/p1.png" :alt="`${info.caseName}_p1`" class="p1" data-aos="child-jump" data-aos-delay="500" data-aos-duration="0">
+      <img src="./s2/p2.png" :alt="`${info.caseName}_p2`" class="p2" data-aos="child-jump" data-aos-delay="300" data-aos-duration="0"> -->
+    </div> 
     <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
@@ -56,8 +58,8 @@
 
 .section2 {
   width: size(1920);
-  height: size(1080);
-  min-height: size(1080);
+  height:100vh;
+  min-height: size(900);
   max-height: size(1080);
   background-size: cover;
   background-attachment: fixed;
@@ -81,14 +83,17 @@
 
 .title-img {
   @include img_l_pc(112, 126, 362);
+  top: calc(50% + 100vw * (126 - 540) / 1920);
 }
 
 .o {
   @include img_r_pc(626, 272, 0);
+  top: calc(50% + 100vw * (272 - 540) / 1920);
 }
 
 .title {
   @include img_l_pc(452, 147, 533);
+  top: calc(50% + 100vw * (147 - 540) / 1920);
   font-size: size(37);
   font-weight: 900;
   font-stretch: normal;
@@ -102,6 +107,7 @@
 
 .desc {
   @include img_l_pc(552, 227, 532);
+  top: calc(50% + 100vw * (227 - 540) / 1920);
   font-size: size(20);
   font-weight: normal;
   font-stretch: normal;
@@ -121,6 +127,12 @@
   @include img_r_pc(211, 516, 445);
   top: auto;
 }
+@keyframes jump {
+  25%{transform: translateY(-30px);}
+  50%{}
+  75%{}
+  100%{}
+}
 
 @keyframes jump {
   to {
@@ -131,12 +143,14 @@
 .animate-bg {
   .bubble4 {
     @include img_l_pc(139, 887, 322);
+  top: calc(50% + 100vw * (887 - 540) / 1920);
     animation: jump 1s 0s ease-in-out alternate-reverse infinite;
     z-index: 5;
   }
 
   .bubble6 {
     @include img_l_pc(481, 465, 178);
+  top: calc(50% + 100vw * (465 - 540) / 1920);
     animation: jump 2s 0s ease-in-out alternate-reverse infinite;
   }
 }
@@ -156,7 +170,7 @@
 .swipe {
   width: size(754);
   height: size(500);
-  top: size(432);
+  top: calc(50% + 100vw * (432 - 540) / 1920);
   right: size(633);
   object-fit: cover;
   border: 3px solid #e32372;

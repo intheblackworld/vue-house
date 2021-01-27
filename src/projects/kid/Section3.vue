@@ -5,7 +5,8 @@
       <img src="./s3/img.jpg" alt="" v-rellax="{
           // Rellax Options
           // See: https://github.com/dixonandmoe/rellax#features
-          speed: 1,
+          speed: 3,
+    center: true,
         }">
     </div>
     <img src="./s3/title.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isPC">
@@ -132,8 +133,11 @@
   left: 0;
   bottom: 0;
   overflow: hidden;
+  background: #CCC;
   img {
+    position: relative;
     width: 100%;
+    top:-10vw;
   }
 }
 

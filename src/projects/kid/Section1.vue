@@ -15,16 +15,17 @@
 
       <img src="./s1/bottom.png" :alt="`${info.caseName}_bottom`" class="bottom">
       <div class="animate-bg">
-        <img src="./s1/bubb (1).png" :alt="`${info.caseName}_bubble1`" class="bubble1">
-        <img src="./s1/bubb (2).png" :alt="`${info.caseName}_bubble2`" class="bubble2">
+        <img src="./s1/bubb (10).png" :alt="`${info.caseName}_bubble10`" class="bubble10">
+        <img src="./s1/bubb (6).png" :alt="`${info.caseName}_bubble6`" class="bubble6">
+        <img src="./s1/bubb (9).png" :alt="`${info.caseName}_bubble9`" class="bubble9">
+        <img src="./s1/bubb (8).png" :alt="`${info.caseName}_bubble8`" class="bubble8">
+        <img src="./s1/bubb (7).png" :alt="`${info.caseName}_bubble7`" class="bubble7">
         <img src="./s1/bubb (3).png" :alt="`${info.caseName}_bubble3`" class="bubble3">
         <img src="./s1/bubb (5).png" :alt="`${info.caseName}_bubble4`" class="bubble4">
+        <img src="./s1/bubb (4).png" :alt="`${info.caseName}_bubble11`" class="bubble11">
+        <img src="./s1/bubb (2).png" :alt="`${info.caseName}_bubble2`" class="bubble2">
+        <img src="./s1/bubb (1).png" :alt="`${info.caseName}_bubble1`" class="bubble1">
         <img src="./s1/bubb (5).png" :alt="`${info.caseName}_bubble5`" class="bubble5">
-        <img src="./s1/bubb (6).png" :alt="`${info.caseName}_bubble6`" class="bubble6">
-        <img src="./s1/bubb (7).png" :alt="`${info.caseName}_bubble7`" class="bubble7">
-        <img src="./s1/bubb (8).png" :alt="`${info.caseName}_bubble8`" class="bubble8">
-        <img src="./s1/bubb (9).png" :alt="`${info.caseName}_bubble9`" class="bubble9">
-        <img src="./s1/bubb (10).png" :alt="`${info.caseName}_bubble10`" class="bubble10">
       </div>
     </div>
   </div>
@@ -64,7 +65,7 @@
 .section1 {
   width: size(1920);
   height: 100vh;
-  min-height: size(1080);
+  min-height: size(900);
   max-height: size(1080);
   background-color: #e32271;
   // background-size: cover;
@@ -90,10 +91,13 @@
 
 .logo {
   @include img_c_pc(755, 298);
+  top:calc(50% - 12.5vw);
+    z-index: 3;
 }
 
 .title {
   @include img_c_pc(404, 782);
+  top:calc(50% + 13vw);
   font-size: size(37.6);
   font-weight: 900;
   font-stretch: normal;
@@ -103,6 +107,7 @@
   text-align: center;
   color: #ffffff;
   white-space: nowrap;
+    z-index: 3;
 
   span {
     color: #faee00;
@@ -111,14 +116,20 @@
 
 .t1 {
   @include img_c_pc(468, 170);
+  top:calc(50% - 19.3vw);
+    z-index: 3;
 }
 
 .t2 {
   @include img_c_pc(794, 499);
+  top:calc(50% - 2vw);
+    z-index: 3;
 }
 
 .t3 {
   @include img_c_pc(535, 701);
+  top:calc(50% + 7.5vw);
+    z-index: 3;
 }
 
 .bottom {
@@ -131,63 +142,92 @@
 
 @keyframes jump {
   to {
-    margin-top: -20px;
-    // transform: translateY(-30px);
+  transform: translateY(0);
   }
 }
 .animate-bg {
   .bubble1 {
-    @include img_r_pc(210, 670, 142);
+    @include img_r_pc(211, 670, 142);
+    top: auto;
+    bottom: size(1080 - 670 - 181);
     animation: jump 3s 0s ease-in-out alternate-reverse infinite;
+  transform: translateY(-10%) rotate(3deg);
     z-index: 5;
   }
 
   .bubble2 {
-    @include img_l_pc(210, -40, -42);
-    animation: jump 3s 0s ease-in-out alternate-reverse infinite;
+    @include img_l_pc(259, -70, -81);
+    animation: jump 4s 0s ease-in-out alternate-reverse infinite;
+  transform: translateY(-10%) rotate(3deg);
   }
 
   .bubble3 {
     @include img_l_pc(271, 790, 121);
+    top: auto;
+    bottom: size(1080 - 790 - 280);
     animation: jump 3.5s 0s ease-in-out alternate-reverse infinite;
     z-index: 5;
+  transform: translateY(-10%) rotate(3deg);
   }
 
   .bubble4 {
-    @include img_l_pc(210, 327, 257);
+    @include img_l_pc(139, 327, 257);
+    top: calc(50% + 100vw * (327 - 540) / 1920);//置中對其位子的算法
     animation: jump 1s 0s ease-in-out alternate-reverse infinite;
     z-index: 5;
+  transform: translateY(-10%) rotate(3deg);
   }
 
   .bubble5 {
-    @include img_r_pc(139, 655, 452);
+    @include img_r_pc(150, 655, 1920 - (1329 + 139));
+    top: calc(50% + 100vw * (655 - 540) / 1920);
     animation: jump 2.3s 0s ease-in-out alternate-reverse infinite;
     z-index: 5;
+  transform: translateY(-10%) rotate(3deg);
   }
 
   .bubble6 {
-    @include img_l_pc(577, 635, -82);
+    @include img_l_pc(353, 635, -71);
+    top: auto;
+    bottom: size(1080 - 635 - 390);
     animation: jump 2s 0s ease-in-out alternate-reverse infinite;
+  transform: translateY(-10%) rotate(-5deg);
   }
 
   .bubble7 {
     @include img_l_pc(314, 741, 325);
+    top: auto;
+    bottom: size(1080 - 741 - 359);
     animation: jump 2.5s 0s ease-in-out alternate-reverse infinite;
+  transform: translateY(-10%) rotate(3deg);
   }
 
   .bubble8 {
-    @include img_r_pc(425, 568, -142);
+    @include img_r_pc(448, 568, -169);
+    top: auto;
+    bottom: size(1080 - 568 - 468);
     animation: jump 4s 0s ease-in-out alternate-reverse infinite;
+  transform: translateY(-10%) rotate(5deg);
   }
 
   .bubble9 {
     @include img_r_pc(452, 864, 162);
+    top: auto;
+    bottom: size(1080 - 864 - 390);
     animation: jump 1.4s 0s ease-in-out alternate-reverse infinite;
+  transform: translateY(-10%) rotate(-3deg);
   }
 
   .bubble10 {
-    @include img_r_pc(410, -90, -142);
-    animation: jump 3s 0s ease-in-out alternate-reverse infinite;
+    @include img_l_pc(2152, 620, -554);
+    top: calc(50% + 100vw * (620 - 540) / 1920);
+    animation: jump 10s 0s ease-in-out alternate-reverse infinite;
+  transform:skewX(5deg) rotate(3deg);
+  }
+  .bubble11 {
+    @include img_r_pc(497, -335, -252);
+    animation: jump 10s 0s ease-in-out alternate-reverse infinite;
+  transform:skewX(5deg) rotate(3deg);
   }
 }
 
