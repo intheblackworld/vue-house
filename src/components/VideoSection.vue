@@ -15,7 +15,7 @@
           <div
             :class="`video-item ${slideIndex == sIndex ? 'active' : ''}`"
             v-for="(slide, sIndex) in slideList"
-            :key="slide.img"
+            :key="slide.img + sIndex"
           >
             <img
               :src="slide.img"
@@ -36,7 +36,7 @@
             <div
               :class="`item ${slideIndex == index ? 'active' : ''}`"
               v-for="(item, index) in slideList"
-              :key="item.title"
+              :key="item.title + index"
             >
               <div
                 class="item-content"
@@ -74,7 +74,7 @@
         <div
           :class="`video-item ${slideIndex === sIndex ? 'active' : ''}`"
           v-for="(slide, sIndex) in slideList"
-          :key="slide.img"
+          :key="slide.img + sIndex"
         >
           <img
             :src="slide.img"
@@ -173,6 +173,8 @@
     cursor: pointer;
     margin-bottom: size(17);
     cursor: pointer;
+    position: relative;
+    z-index: 10;
 
     .item-content {
       font-size: size(23);
@@ -189,6 +191,7 @@
       padding: 0px 15px;
       transition: all 0.3s;
       background-image: url('~@/projects/sdj1/s2/bg.png');
+      background-color: rgba(0, 0, 0, 0.2);
       background-size: cover;
     }
     &:hover,
@@ -227,7 +230,7 @@
   align-items: center;
   justify-content: center;
   height: 4em;
-  top: size(543);
+  top: size(583);
   right: size(342);
 }
 

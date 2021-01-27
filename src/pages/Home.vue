@@ -9,80 +9,53 @@
       :options="options"
       id="fullpage"
     > -->
-    <vue-lazy-component
-      class="section"
-      id="section1"
-    >
+    <vue-lazy-component class="section" id="section1">
       <Section1 />
     </vue-lazy-component>
 
-    <vue-lazy-component
-      class="section"
-      id="section2"
-    >
-      <VideoSection
-        :playBtn="require('@/projects/sdj1/s2/youtube.png')"
-        title="系列影片"
-        :close="require('@/projects/jh/s4/close.png')"
-        :arrows="[require('@/projects/gydy/arrow-left.png'), require('@/projects/gydy/arrow-right.png')]"
-        :slideList="[
+    <vue-lazy-component class="section" id="section2">
+      <VideoSection :playBtn="require('@/projects/sdj1/s2/youtube.png')" title="系列影片" :close="require('@/projects/jh/s4/close.png')" :arrows="[require('@/projects/gydy/arrow-left.png'), require('@/projects/gydy/arrow-right.png')]" :slideList="[
         {
-          title: '妻子嚴選高坪效<br />聽老婆的就對了',
+					title: '萬眾矚目北高雄<br />百貨版圖新時代',
+          img: require('@/projects/sdj1/s2/1.jpg'),
+          video: 'https://www.youtube.com/embed/8sbUAwaPYJY',
+          isPlay: false,
+        },
+				{
+					title: '妻子嚴選高坪效<br />聽老婆的就對了',
           img: require('@/projects/sdj1/s2/1.jpg'),
           video: 'https://www.youtube.com/embed/-LFr3WaougI',
           isPlay: false,
         },
         {
           title: '在熟悉的環境裡<br />給父母親最好的',
-          img: require('@/projects/sdj1/s2/2.jpg'),
+          img: require('@/projects/sdj1/s2/3.jpg'),
           video: 'https://www.youtube.com/embed/uoQ8ZL-HNXQ',
           isPlay: false,
         },
-      ]"
-      />
+      ]" />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section4"
-    >
+    <vue-lazy-component class="section" id="section4">
       <Section4 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section3"
-    >
+    <vue-lazy-component class="section" id="section3">
       <Section3 />
     </vue-lazy-component>
 
-    <vue-lazy-component
-      class="section"
-      id="section5"
-    >
+    <vue-lazy-component class="section" id="section5">
       <Section5 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section7"
-    >
+    <vue-lazy-component class="section" id="section7">
       <Section7 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section6"
-    >
+    <vue-lazy-component class="section" id="section6">
       <Section6 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section8"
-    >
+    <vue-lazy-component class="section" id="section8">
       <Section8 />
     </vue-lazy-component>
     <!-- </full-page> -->
-    <ContactSection
-      class="section"
-      id="contact"
-    />
+    <ContactSection class="section" id="contact" />
     <MobileNav />
   </div>
 </template>
@@ -172,10 +145,9 @@ export default {
       // },
     }
   },
-  created() {
-  },
+  created() {},
   mounted() {
-    window.addEventListener('load', event => {
+    window.addEventListener('load', (event) => {
       console.log('loaded')
       this.load = false
     })
@@ -183,7 +155,7 @@ export default {
     // 获取所有锚点元素
     const navContents = document.querySelectorAll('.section')
     // 所有锚点元素的 offsetTop
-    navContents.forEach(item => {
+    navContents.forEach((item) => {
       this.offsetTopArr.push(item.offsetTop)
     })
   },
