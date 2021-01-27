@@ -1,12 +1,18 @@
 <template>
   <div class="section3">
     <div class="bg-img"></div>
-    <div class="parallax-img">
+    <div class="parallax-img" v-if="isPC">
       <img src="./s3/img.jpg" alt="" v-rellax="{
           // Rellax Options
           // See: https://github.com/dixonandmoe/rellax#features
-          speed: 3,
-    center: true,
+          speed: -2,center: true,
+        }">
+    </div>
+    <div class="parallax-img" v-if="isMobile">
+      <img src="./s3/img.jpg" alt="" v-rellax="{
+          // Rellax Options
+          // See: https://github.com/dixonandmoe/rellax#features
+          speed: -0.1,
         }">
     </div>
     <img src="./s3/title.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isPC">
@@ -120,9 +126,9 @@
   }
 
   .bubble4 {
-    @include img_r_pc(282, 135, 248);
+    @include img_r_pc(282, 135, 200);
     animation: jump 1s 0s ease-in-out alternate-reverse infinite;
-    z-index: 5;
+    z-index: 3;
   }
 }
 
@@ -133,11 +139,11 @@
   left: 0;
   bottom: 0;
   overflow: hidden;
-  background: #CCC;
+  background: #eee;
   img {
     position: relative;
     width: 100%;
-    top:-10vw;
+    top:-40vw;
   }
 }
 

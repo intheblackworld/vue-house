@@ -2,14 +2,14 @@ import { isMobile } from '../utils/index'
 export default {
   address: '桃園市幸福路201號旁',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14465.049488524071!2d121.50209708570556!3d24.99119914817879!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x123f7c605c425b02!2z5aSq6Zm95bid5ZyLIOaOpeW-heacg-mkqA!5e0!3m2!1szh-TW!2stw!4v1611024470616!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/qa3PVnj7Pkgdnuew7',
-  phone: '02-8668-7373',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1807.587435393966!2d121.2989889580804!3d25.02813889599381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDAxJzQxLjMiTiAxMjHCsDE4JzAwLjMiRQ!5e0!3m2!1szh-TW!2stw!4v1611754642852!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/exyjkmY98H8aH5wm9',
+  phone: '',
   fbLink: 'https://www.facebook.com/ACEPTW86687373/',
   fbMessage: 'https://m.me/ACEPTW86687373',
   caseName: '遛樂KID',
   indigatorLength: 10,
-  email: 'chrischen851225@gmail.com',
+  email: '',
 
   houseInfos: [
     ['投資興建', '美聯開發股份有限公司',],

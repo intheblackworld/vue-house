@@ -5,7 +5,7 @@
     caseName}_o`" class="o">
     <img src="./s5/title.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isPC">
     <img src="./s5/title_m.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isMobile">
-    <img src="./s4/logo.png" :alt="`${info.
+    <img src="./s5/logo.png" :alt="`${info.
     caseName}_logo`" class="logo">
     <h1 class="title">
       傑恩咖啡 冠軍享受
@@ -38,7 +38,7 @@
         </div> -->
       </div>
     </div>
-    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-offset="-400" data-aos-delay="200" v-if="isPC">
       <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot' + index" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
     </div>
     <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
@@ -57,8 +57,8 @@
 
 .section5 {
   width: size(1920);
-  height: size(1080);
-  min-height: size(1080);
+  height:100vh;
+  min-height: size(900);
   max-height: size(1080);
   background-size: cover;
   background-attachment: fixed;
@@ -82,15 +82,19 @@
 
 .title-img {
   @include img_l_pc(112, 126, 362);
+  top: calc(50% + 100vw * (126 - 540) / 1920); z-index: 6;
 }
 
 .o {
-  @include img_r_pc(626, 12, -40);
+  @include img_r_pc(590, 12, -50);
   z-index: 10;
+  top: auto;
+  bottom:size(-70);
 }
 
 .title {
   @include img_l_pc(452, 97, 533);
+  top: calc(50% + 100vw * (147 - 540) / 1920);
   font-size: size(37);
   font-weight: 900;
   font-stretch: normal;
@@ -104,6 +108,7 @@
 
 .desc {
   @include img_l_pc(552, 163, 532);
+  top: calc(50% + 100vw * (227 - 540) / 1920);
   font-size: size(20);
   font-weight: normal;
   font-stretch: normal;
@@ -115,7 +120,8 @@
 }
 
 .logo {
-  @include img_r_pc(462, 80, 582);
+  @include img_r_pc(350, 75, 480);
+  top: calc(50% + 100vw * (140 - 540) / 1920);
 }
 
 .p1 {
@@ -150,10 +156,7 @@
 
 .child-jump {
   width: size(1920);
-  height: size(1080);
-  min-height: size(1080);
-  max-height: size(1080);
-  overflow: hidden;
+  height:100%;
   position: relative;
   top: 0;
   left: 0;
@@ -163,7 +166,7 @@
 .swipe {
   width: size(754);
   height: size(500);
-  top: size(399);
+  top: calc(50% + 100vw * (432 - 540) / 1920);
   right: size(633);
   object-fit: cover;
   border: 3px solid #e32372;
@@ -210,7 +213,7 @@
 
 .swipe-wrap {
   width: 100%;
-  height: 100%;
+  height: calc(100% + 1px);
   overflow: hidden;
 }
 
@@ -256,6 +259,7 @@
 
 .pagination {
   @include img_l_pc(754, 956, 516);
+  top: calc(50% + 100vw * (950 - 540) / 1920);
   margin: 0 auto;
   justify-content: flex-start;
 }
@@ -367,7 +371,9 @@
 
   .o {
     @include img_r_m(163, 400, 0);
-    z-index: 3;
+    top:auto;
+    bottom: sizem(604 - 400 - 270);
+    z-index: 4;
   }
 
   .title {
@@ -396,7 +402,7 @@
   }
 
   .logo {
-    @include img_l_m(246, 112, 8);
+    @include img_l_m(145, 112, 32);
   }
 
   .p1 {
@@ -654,13 +660,16 @@ export default {
 
       slideList: [
         {
-          img: require('./s2/資產 55@2x-80.jpg'),
+          img: require('./s5/1.jpg'),
         },
         {
-          img: require('./s2/資產 55@2x-80.jpg'),
+          img: require('./s5/2.jpg'),
         },
         {
-          img: require('./s2/資產 55@2x-80.jpg'),
+          img: require('./s5/3.jpg'),
+        },
+        {
+          img: require('./s5/4.jpg'),
         },
       ],
     }

@@ -22,7 +22,7 @@
       <!-- <img src="./s1/bubb (6).png" :alt="`${info.caseName}_bubble6`" class="bubble6"> -->
     </div>
     <div class="child-jump">
-      <img src="./s4/p3.png" :alt="`${info.caseName}_p1`" class="p1" data-aos="child-jump" data-aos-delay="1200" data-aos-duration="3000">
+      <img src="./s4/p3.png" :alt="`${info.caseName}_p1`" class="p1">
     </div>
     <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -38,7 +38,7 @@
         </div> -->
       </div>
     </div>
-    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" data-aos-offset="-400" v-if="isPC">
       <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot' + index" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
     </div>
     <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
@@ -57,8 +57,8 @@
 
 .section4 {
   width: size(1920);
-  height: size(1080);
-  min-height: size(1080);
+  height:100vh;
+  min-height: size(900);
   max-height: size(1080);
   background-size: cover;
   background-attachment: fixed;
@@ -78,14 +78,18 @@
 
 .title-img {
   @include img_l_pc(112, 126, 362);
+  top: calc(50% + 100vw * (126 - 540) / 1920);
 }
 
 .o {
-  @include img_r_pc(626, -22, 0);
+  @include img_r_pc(620, -22, -10);
+  top: calc(50% + 100vw * (-22 - 540) / 1920); 
+  z-index: 2;
 }
 
 .title {
   @include img_l_pc(452, 97, 533);
+  top: calc(50% + 100vw * (147 - 540) / 1920);
   font-size: size(37);
   font-weight: 900;
   font-stretch: normal;
@@ -99,6 +103,7 @@
 
 .desc {
   @include img_l_pc(552, 163, 532);
+  top: calc(50% + 100vw * (227 - 540) / 1920);
   font-size: size(20);
   font-weight: normal;
   font-stretch: normal;
@@ -111,16 +116,31 @@
 
 .logo {
   @include img_r_pc(462, 80, 582);
+  top: calc(50% + 100vw * (140 - 540) / 1920); 
 }
 
 .p1 {
-  @include img_r_pc(217, 235, 223);
-  top: auto;
+  @include img_r_pc(217, 0, -223);
+  top: calc(50% + 100vw * (-20 - 540) / 1920);
+  z-index:3;
+    animation: jump1 5s 0s linear  infinite;
+    font-size: size(19.2); 
 }
 
 .p2 {
   @include img_r_pc(211, 516, 445);
   top: auto;
+}
+@keyframes jump1{
+  0%{transform: translateY(0px) rotate(80deg);}
+  12.5%{transform: translate(-7em,1em) rotate(62.5deg);}
+  25%{transform: translate(-13em,3em) rotate(45deg);}
+  37.5%{transform: translate(-20em,7vw) rotate(17.5deg);}
+  50%{transform: translate(-23em,12em) rotate(0deg);}
+  70%{transform: translate(-23em,25em) rotate(-0deg);}
+  80%{transform: translate(-20em,31em) rotate(-25deg);}
+  90%{transform: translate(-10em,37.5em) rotate(-52.5deg);}
+  100%{transform: translate(3em,40em) rotate(-80deg);}
 }
 
 @keyframes jump {
@@ -132,22 +152,22 @@
 .animate-bg {
   .bubble4 {
     @include img_l_pc(333, 821, 152);
+  top: calc(50% + 100vw * (851 - 540) / 1920); 
     animation: jump 1s 0s ease-in-out alternate-reverse infinite;
     z-index: 5;
   }
 
   .bubble6 {
     @include img_l_pc(481, 465, 178);
+  top: calc(50% + 100vw * (495 - 540) / 1920); 
     animation: jump 2s 0s ease-in-out alternate-reverse infinite;
   }
 }
 
 .child-jump {
   width: size(1920);
-  height: size(1080);
-  min-height: size(1080);
-  max-height: size(1080);
-  overflow: hidden;
+  height:100%;
+ // overflow: hidden;
   position: relative;
   top: 0;
   left: 0;
@@ -157,7 +177,7 @@
 .swipe {
   width: size(754);
   height: size(500);
-  top: size(399);
+  top: calc(50% + 100vw * (432 - 540) / 1920);
   right: size(633);
   object-fit: cover;
   border: 3px solid #e32372;
@@ -204,7 +224,7 @@
 
 .swipe-wrap {
   width: 100%;
-  height: 100%;
+  height: calc(100% + 1px);
   overflow: hidden;
 }
 
@@ -250,6 +270,7 @@
 
 .pagination {
   @include img_l_pc(754, 956, 516);
+  top: calc(50% + 100vw * (950 - 540) / 1920); 
   margin: 0 auto;
   justify-content: flex-start;
 }
@@ -366,7 +387,7 @@
   }
 
   .title {
-    @include img_l_m(173, 112, 88);
+    @include img_l_m(173, 112, 113);
     font-size: sizem(24);
     font-weight: 900;
     font-stretch: normal;
@@ -379,7 +400,7 @@
   }
 
   .desc {
-    @include img_r_m(230, 163, 32);
+    @include img_l_m(230, 163, 113);
     font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
@@ -391,12 +412,12 @@
   }
 
   .logo {
-    @include img_r_m(216, 54, 42);
+    @include img_r_m(216, 54, 45);
   }
 
   .p1 {
-    @include img_r_m(90, 578, 93);
-    top: auto;
+    @include img_r_m(90, 400, -80);
+    font-size: sizem(5.2); 
   }
 
   .p2 {
@@ -649,14 +670,20 @@ export default {
 
       slideList: [
         {
+          img: require('./s4/1.jpg'),
+        },
+        {
+          img: require('./s4/1.jpg'),
+        },
+        {
+          img: require('./s4/1.jpg'),
+        },
+      /*  {
           img: require('./s2/資產 55@2x-80.jpg'),
         },
         {
           img: require('./s2/資產 55@2x-80.jpg'),
-        },
-        {
-          img: require('./s2/資產 55@2x-80.jpg'),
-        },
+        },*/
       ],
     }
   },

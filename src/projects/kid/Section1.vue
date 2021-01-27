@@ -66,7 +66,7 @@
   width: size(1920);
   height: 100vh;
   min-height: size(900);
-  max-height: size(1080);
+  max-height: size(1080);//100vw * 1080 / 1920   
   background-color: #e32271;
   // background-size: cover;
   // background-attachment: fixed;
@@ -272,10 +272,12 @@
 
   .logo {
     @include img_c_m(295, 195);
+    top: calc(50% + 100vw * (195 - 302) / 375);
   }
 
   .title {
     @include img_c_m(204, 440);
+    top: calc(50% + 100vw * (440 - 302) / 375);
     font-size: sizem(19);
     font-weight: 900;
     font-stretch: normal;
@@ -293,30 +295,29 @@
 
   .t1 {
     @include img_c_m(261, 128);
+    top: calc(50% + 100vw * (128 - 302) / 375);
   }
 
   .t2 {
     @include img_c_m(310, 274);
+    top: calc(50% + 100vw * (274 - 302) / 375);
   }
 
   .t3 {
     @include img_c_m(295, 384);
+    top: calc(50% + 100vw * (384 - 302) / 375);
   }
 
   .bottom {
     width: 100vw;
+    height: sizem(70);
     bottom: 0;
     left: 0;
     position: absolute;
     z-index: 1;
+    object-fit: cover;
   }
 
-  @keyframes jump {
-    to {
-      margin-top: -20px;
-      // transform: translateY(-30px);
-    }
-  }
   .animate-bg {
     .bubble1 {
       display: none;
@@ -324,31 +325,28 @@
 
     .bubble2 {
       @include img_l_m(150, -10, 0);
-      animation: jump 3s 0s ease-in-out alternate-reverse infinite;
     }
 
     .bubble3 {
       @include img_l_m(151, 500, -61);
-      animation: jump 3.5s 0s ease-in-out alternate-reverse infinite;
+      top: auto;
+      bottom: sizem(604 - 500 - 156);
       z-index: 5;
     }
 
     .bubble4 {
-      @include img_l_m(53, 470, 38);
-      animation: jump 1s 0s ease-in-out alternate-reverse infinite;
-      z-index: 5;
       display: none;
     }
 
     .bubble5 {
       @include img_r_m(84, 47, 23);
-      animation: jump 2.3s 0s ease-in-out alternate-reverse infinite;
       z-index: 5;
     }
 
     .bubble6 {
       @include img_l_m(110, 424, -52);
-      animation: jump 2s 0s ease-in-out alternate-reverse infinite;
+      top: auto;
+      bottom: sizem(604 - 424 - 127);
     }
 
     .bubble7 {
@@ -359,17 +357,16 @@
 
     .bubble8 {
       @include img_r_m(150, 452, -102);
-      animation: jump 4s 0s ease-in-out alternate-reverse infinite;
+      top: auto;
+      bottom: sizem(604 - 452 - 157);
     }
 
     .bubble9 {
       @include img_r_m(150, 0, -70);
-      animation: jump 1.4s 0s ease-in-out alternate-reverse infinite;
     }
 
     .bubble10 {
       @include img_r_pc(410, -90, -142);
-      animation: jump 3s 0s ease-in-out alternate-reverse infinite;
     }
   }
 }

@@ -39,7 +39,7 @@
         </div> -->
       </div>
     </div>
-    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-offset="-400" data-aos-delay="200" v-if="isPC">
       <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot' + index" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
     </div>
     <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
@@ -83,12 +83,12 @@
 
 .title-img {
   @include img_l_pc(112, 126, 362);
-  top: calc(50% + 100vw * (126 - 540) / 1920);
+  top: calc(50% + 100vw * (126 - 540) / 1920);   z-index: 3;
 }
 
 .o {
   @include img_r_pc(626, 272, 0);
-  top: calc(50% + 100vw * (272 - 540) / 1920);
+  top: calc(50% + 100vw * (272 - 540) / 1920);  z-index: 2;
 }
 
 .title {
@@ -119,48 +119,71 @@
 }
 
 .p1 {
-  @include img_r_pc(217, 235, 223);
-  top: auto;
+  @include img_r_pc(217, 0, -223);
+  top: calc(50% + 100vw * (272 - 540) / 1920);
+  z-index:3;
+    animation: jump1 5s 0s linear  infinite;
+    font-size: size(19.2); 
+  
 }
 
 .p2 {
-  @include img_r_pc(211, 516, 445);
-  top: auto;
+  @include img_r_pc(211, 0, -100);
+  top: calc(50% + 100vw * (130 - 540) / 1920);
+    font-size: size(19.2); 
+  z-index:3;
+    animation: jump2 5s -2.5s linear  infinite;
+  transform: translateY(25vw,0vw) rotate(80deg);
 }
-@keyframes jump {
-  25%{transform: translateY(-30px);}
-  50%{}
-  75%{}
-  100%{}
+@keyframes jump1{
+  0%{transform: translateY(0px) rotate(80deg);}
+  12.5%{transform: translate(-7em,1em) rotate(62.5deg);}
+  25%{transform: translate(-13em,3em) rotate(45deg);}
+  37.5%{transform: translate(-20em,7em) rotate(17.5deg);}
+  50%{transform: translate(-23em,12em) rotate(0deg);}
+  70%{transform: translate(-23em,25em) rotate(-0deg);}
+  80%{transform: translate(-20em,31em) rotate(-25deg);}
+  90%{transform: translate(-10em,37.5em) rotate(-52.5deg);}
+  100%{transform: translate(3em,40em) rotate(-80deg);}
 }
-
+@keyframes jump2 {
+  0%{transform: translateY(0px) rotate(80deg);}
+  12.5%{transform: translate(-7em,1em) rotate(62.5deg);}
+  25%{transform: translate(-13em,3em) rotate(45deg);}
+  37.5%{transform: translate(-20em,7em) rotate(17.5deg);}
+  50%{transform: translate(-23em,12em) rotate(0deg);}
+  70%{transform: translate(-23em,29em) rotate(-0deg);}
+  80%{transform: translate(-20em,35em) rotate(-25deg);}
+  88%{transform: translate(-10em,45.5em) rotate(-52.5deg);}
+  100%{transform: translate(10em,50em) rotate(-80deg);}
+}
 @keyframes jump {
   to {
-    margin-top: -20px;
-    // transform: translateY(-30px);
+  transform: translateY(0%);
   }
 }
+
 .animate-bg {
   .bubble4 {
     @include img_l_pc(139, 887, 322);
   top: calc(50% + 100vw * (887 - 540) / 1920);
     animation: jump 1s 0s ease-in-out alternate-reverse infinite;
     z-index: 5;
+  transform: translateY(20%)rotate(3deg);
   }
 
   .bubble6 {
     @include img_l_pc(481, 465, 178);
   top: calc(50% + 100vw * (465 - 540) / 1920);
     animation: jump 2s 0s ease-in-out alternate-reverse infinite;
+  transform: translateY(20%)rotate(6deg)scaleX(1.2);
   }
 }
 
 .child-jump {
   width: size(1920);
-  height: size(1080);
-  min-height: size(1080);
-  max-height: size(1080);
-  overflow: hidden;
+  height:100%;
+ // overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
@@ -217,7 +240,7 @@
 
 .swipe-wrap {
   width: 100%;
-  height: 100%;
+  height: calc(100% + 1px);
   overflow: hidden;
 }
 
@@ -263,6 +286,7 @@
 
 .pagination {
   @include img_l_pc(754, 956, 516);
+  top: calc(50% + 100vw * (950 - 540) / 1920);
   margin: 0 auto;
   justify-content: flex-start;
 }
@@ -404,21 +428,17 @@
   }
 
   .p1 {
-    @include img_r_m(90, 578, 93);
-    top: auto;
+    @include img_r_m(90, 620, -40);
+    font-size: sizem(7); 
+    //top: auto;
   }
 
   .p2 {
-    @include img_r_m(87, 697, 186);
-    top: auto;
+    @include img_r_m(87, 600, 0);
+    font-size: sizem(7); 
+   // top: auto;
   }
 
-  @keyframes jump {
-    to {
-      margin-top: -20px;
-      // transform: translateY(-30px);
-    }
-  }
   .animate-bg {
     .bubble4 {
       @include img_l_m(74, 586, -22);
@@ -430,17 +450,6 @@
       @include img_r_m(190, 195, -150);
       animation: jump 2s 0s ease-in-out alternate-reverse infinite;
     }
-  }
-
-  .child-jump {
-    width: sizem(375);
-    height: sizem(923);
-    min-height: sizem(923);
-    max-height: sizem(923);
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
   }
 
   /* Swipe */
