@@ -23,7 +23,7 @@
         },
 				{
 					title: '妻子嚴選高坪效<br />聽老婆的就對了',
-          img: require('@/projects/sdj1/s2/1.jpg'),
+          img: require('@/projects/sdj1/s2/2.jpg'),
           video: 'https://www.youtube.com/embed/-LFr3WaougI',
           isPlay: false,
         },
