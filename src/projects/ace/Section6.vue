@@ -137,7 +137,7 @@
     height: sizem(992);
   } */
   .bg {
-    @include img_r_m(360, 0, 0);
+    @include img_r_m(375, 0, 0);
     left: 50%;transform: translateX(-50%);
     background: #fff;
     height: 100%;
