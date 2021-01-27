@@ -284,7 +284,7 @@ export default {
 @media only screen and (max-width: 767px) {
   .contact-info {
     display: flex;
-    width: sizem(360);
+    width:100%;
     height: auto;
     padding: 40px;
     transform: none;

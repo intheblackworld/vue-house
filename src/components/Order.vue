@@ -432,14 +432,14 @@ export default {
     }
 
     .order-tt {
-      width: sizem(360);
+      width: 100%;
       height: sizem(50);top: 0;
       margin: 0 auto;
       background: rgba(0, 0, 0, 0.8);
       
     }
     .order-top {
-      width: sizem(360);
+      width: 100%;
       margin: 0 auto;
       background: rgba(0, 0, 0, 0.8);
       position: relative;
