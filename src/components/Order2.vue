@@ -352,7 +352,7 @@ export default {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
     justify-content: space-between;
   }
 

@@ -68,6 +68,7 @@
   height: size(2130);
   min-height: size(2130);
   max-height: size(2130);
+  background-color: #71943a;
   background-size: cover;
   background-attachment: fixed;
   //  overflow: hidden;

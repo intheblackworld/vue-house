@@ -105,7 +105,8 @@
   border: none !important;
   // border-radius: 72px / 72px !important;
   margin: 0 auto !important;
-  margin-top: 20px !important;
+  // margin-top: 20px !important;
+  float: left;
   transition: all 0.3s !important;
   color: $order_submit_color;
   // z-index: 10;

@@ -139,11 +139,13 @@
   left: 0;
   bottom: 0;
   overflow: hidden;
-  background: #eee;
+  background: #fff;
   img {
     position: relative;
     width: 100%;
-    top:-40vw;
+    height: size(956);
+    object-fit: cover;
+    top: 0;
   }
 }
 
@@ -244,7 +246,8 @@
     overflow: hidden;
     img {
       width: 100%;
-      margin-top: sizem(150);
+      height: sizem(214);
+      margin-top: sizem(-20);
     }
   }
 }
