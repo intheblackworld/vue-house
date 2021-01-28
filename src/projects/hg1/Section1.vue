@@ -25,8 +25,8 @@
       <div class="s1">
         <div class="t1">
         <span>202</span>1桃園最潮的生活浪潮</div>
-      <img src="./s1/logo.png" 
-        :alt="`${info.caseName}_logo`" class="logo">
+      <img src="./s1/title.png" 
+        :alt="`${info.caseName}_title`" class="logo">
       <img src="./s1/t2.png" 
         :alt="`${info.caseName}_logo`" class="t2">
       <img src="./s1/t.png" alt="" class="t">
@@ -94,7 +94,7 @@
   background-size: cover;
   position: relative;
   // z-index: 5;
-  height:size(900);
+  height:size(1080);
   background: #2d73ab;
  // background-size: cover;
 

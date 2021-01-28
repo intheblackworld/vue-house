@@ -1,7 +1,9 @@
 export default [
-  { name: '<span>神</span>之領域', imgSrc: require('../projects/hoh1/ball/bright.png'), subTitle: '', section: 'section2', svgSrc: '' },
-  { name: '<span>采</span>采生活', imgSrc: require('../projects/hoh1/ball/bright.png'), subTitle: '', section: 'section3', svgSrc: '' },
-  { name: '<span>飛</span>速交通', imgSrc: require('../projects/hoh1/ball/bright.png'), subTitle: '', section: 'section4', svgSrc: '' },
-  { name: '<span>洋</span>溢幸福', imgSrc: require('../projects/hoh1/ball/bright.png'), subTitle: '', section: 'section5', svgSrc: '' },
-  { name: '<span>預</span>約賞屋', imgSrc: require('../projects/hoh1/ball/bright.png'), subTitle: '', section: 'contact', svgSrc: '' },
+  { name: '中山直美', imgSrc: '', subTitle: '', section: 'section1', svgSrc: '', offset: 0 },
+  { name: '直址核心', imgSrc: '', subTitle: '', section: 'section3', svgSrc: '', mobileOffset: 0 },
+  { name: '上質生活', imgSrc: '', subTitle: '', section: 'section5', svgSrc: '', mobileOffset: 0 },
+  { name: '三捷直暢', imgSrc: '', subTitle: '', section: 'section9', svgSrc: '', mobileOffset: 0 },
+  { name: '建築直賞', imgSrc: '', subTitle: '', section: 'section10', svgSrc: '', mobileOffset: 0 },
+  { name: '精質品牌', imgSrc: '', subTitle: '', section: 'section11', svgSrc: '', mobileOffset: 0 },
+  { name: '立即預約', imgSrc: '', subTitle: '', section: 'contact', svgSrc: '', mobileOffset: 0 },
 ]
