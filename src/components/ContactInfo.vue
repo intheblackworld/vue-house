@@ -23,9 +23,9 @@
         <a class="hover" @click="showMessengerDialog">FB諮詢</a>
         <a class="hover" :href="info.fbLink" target="_blank">前往粉絲專頁</a>
       </div>
-      <div class="buttons buttons-address">
-        <a class="hover">台南市北區西門路四段|文成三路口</a>
-        <a class="hover" @click="isShowMapDialog = true">導航google地圖</a>
+      <div class="buttons buttons-address" @click="isShowMapDialog = true">
+        <a class="hover" v-html="info.address"></a>
+        <a class="hover">導航GOOGLE地圖</a>
       </div>
     </div>
     <div class="section section-bottom-mb" id="section-bottom">
@@ -50,11 +50,9 @@
           alt="前往粉絲專頁"
         />
       </div>
-      <div class="title text-align-center" @click="isShowMapDialog = true">
-        <img
-          src="../pages/mobile-texture/section-bottom/4.png"
-          alt="台南市北區西門路四段|文成三路口 導航google地圖"
-        />
+      <div class="mapbutton" @click="isShowMapDialog = true">
+        <a v-html="info.address"></a>
+        <a class="hover">導航GOOGLE地圖</a>
       </div>
     </div>
     <!-- <div class="contact-info">

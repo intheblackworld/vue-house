@@ -1,11 +1,12 @@
 // import { isMobile } from '@/utils'
 
 export default {
-  address: '接待會館：臺南市北區西門路四段357號',
+  address:'接待會館：台南市北區西門路四段/文成三路口',
+  //address:  isMobile ? '接待會館：<br>台南市北區西門路四段/文成三路口':'接待會館：台南市北區西門路四段/文成三路口',
   // isMobile ? '接待中心：<br />106台北市大安區基隆路三段20-1號' : '接待中心：106台北市大安區基隆路三段20-1號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.221454243889!2d120.20803281535407!3d23.01563972236179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e76f951fa95b9%3A0x7db91a148c47a54e!2zNzA05Y-w5Y2X5biC5YyX5Y2A6KW_6ZaA6Lev5Zub5q61MzU36Jmf!5e0!3m2!1szh-TW!2stw!4v1611755799328!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/kdsdDfEZb3GyvJWc7',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1836.11190450433!2d120.20896865861967!3d23.015553233411012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDAwJzU2LjAiTiAxMjDCsDEyJzM2LjIiRQ!5e0!3m2!1szh-TW!2stw!4v1611810113323!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/z6M9roU1sno2LdKr9',
   phone: '06 225 6688',
   fbLink:
     'https://www.facebook.com/%E8%A5%BF%E9%96%80%E5%A4%A7%E9%99%A2-101474465251897/',
