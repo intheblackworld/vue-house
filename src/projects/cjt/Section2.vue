@@ -1,6 +1,6 @@
 <template>
   <div class="section2 relative">
-<iframe class="if" src="https://www.youtube.com/embed/8FG3YSvW2Mo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="if" src="https://www.youtube.com/embed/CC-4aWhO674" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <div class="bg relative" v-if="!isMobile"><img src="./s2/0.png" alt="輕井澤" class="bg-img" data-aos="fade" data-aos-delay="300" />
    <!--   <img src="./s2/1.png" alt="輕井澤" class="bg-img" data-aos="fade" data-aos-delay="300" />
       <img src="./s2/2.png" alt="海佃商圈" class="bg-img" data-aos="fade" data-aos-delay="400" />
