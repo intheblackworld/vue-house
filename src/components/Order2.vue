@@ -604,6 +604,7 @@ export default {
     }
     .order {
       width: 90% !important;
+      min-width: auto;
       margin: 0 auto;
       padding: 0;
     }
