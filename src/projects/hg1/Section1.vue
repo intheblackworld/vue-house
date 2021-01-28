@@ -368,19 +368,19 @@ span{
 // @ is an alias to /src
 import info from '@/info'
 import { isMobile, isTablet } from '@/utils'
-import slider from '@/mixins/slider.js'
+// import slider from '@/mixins/slider.js'
 // import Parallax from '@/components/Parallax.vue'
-import 'swiper/dist/css/swiper.css'
+// import 'swiper/dist/css/swiper.css'
 import Parallax from '@/components/Parallax.vue'
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
+// import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'section7',
 
-  mixins: [slider],
+  // mixins: [slider],
   components: {
-    swiper,
-    swiperSlide,
+    // swiper,
+    // swiperSlide,
     Parallax,
   },
 
@@ -410,26 +410,26 @@ export default {
         },
       },
 
-      slideList: [
-        {
-          src: require('./s6/1.png'),
-          title: 'INTERIOR SPACE',
-          subtitle: '國際一線美學，名門傲氣優雅',
-          desc: '代表作品∣頤海大院．台中帝寶．開璽吾界． SKY1',
-        },
-        {
-          src: require('./s6/2.png'),
-          title: 'ARCHITECTURE',
-          subtitle: '動感琴鍵協奏，定義奢華高度',
-          desc: '代表作品∣波爾多．江翠ONE．金城舞2',
-        },
-        {
-          src: require('./s6/3.png'),
-          title: 'LANDSCAPE',
-          subtitle: '環境人文思考，都會繁花盛放',
-          desc: '代表作品∣維多利亞酒店．碧波白',
-        },
-      ],
+      // slideList: [
+      //   {
+      //     src: require('./s6/1.png'),
+      //     title: 'INTERIOR SPACE',
+      //     subtitle: '國際一線美學，名門傲氣優雅',
+      //     desc: '代表作品∣頤海大院．台中帝寶．開璽吾界． SKY1',
+      //   },
+      //   {
+      //     src: require('./s6/2.png'),
+      //     title: 'ARCHITECTURE',
+      //     subtitle: '動感琴鍵協奏，定義奢華高度',
+      //     desc: '代表作品∣波爾多．江翠ONE．金城舞2',
+      //   },
+      //   {
+      //     src: require('./s6/3.png'),
+      //     title: 'LANDSCAPE',
+      //     subtitle: '環境人文思考，都會繁花盛放',
+      //     desc: '代表作品∣維多利亞酒店．碧波白',
+      //   },
+      // ],
 
       imgIndex: 0,
       isShowDialog: false,
