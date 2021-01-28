@@ -61,14 +61,10 @@
           <div class="control" data-aos="fade-down" data-aos-delay="500">
             <div class="control-desc">
               <p>
-                <!-- 電話 {{info.phone}}<br /> -->
-                客服信箱：{{info.email}}<br />
-                樂園位置：{{info.address}}
+                <!-- 電話 {{info.phone}}<br />客服信箱：{{info.email}}<br /> -->                
+                樂園位置：<br>{{info.address}}
               </p>
             </div>
-          </div>
-        </div>
-      </div>
       <a :href="info.googleLink" target="_blank" class="contact-btn flex-c wrap google-map-btn">
         <img src="~@/projects/kid/c/m.png" alt="">
         <div class="btn-desc">
@@ -81,6 +77,9 @@
           粉絲專頁
         </div>
       </a>
+          </div>
+        </div>
+      </div>
       <img src="~@/projects/kid/c/bottom.png" alt="" class="bottom-img" v-if="!isMobile">
       <img src="~@/projects/kid/c/bottom_m.png" alt="" class="bottom-img" v-if="isMobile">
       <img src="~@/projects/kid/c/資產 48@2x.png" alt="" class="bottom-logo">
@@ -348,7 +347,8 @@ export default {
   }
 
   .order {
-    width: size(930);
+    width:size(930);
+    min-width:750px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -431,6 +431,7 @@ export default {
   .control {
     margin-top: 0px;
     margin-bottom: 20px;
+    position: relative;
   }
 
   .control-desc {
@@ -475,14 +476,15 @@ export default {
   margin: 0 auto;
 }
 .contact-btn {
-  border-radius: 19px;
+  border-radius:1.1em;
   background-color: #3a836d;
   text-decoration: none;
+  font-size: size(15);
+  padding: 0.3em 0 0 0;
   img {
-    width: size(50);
+  width:3em;
   }
   .btn-desc {
-    font-size: size(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -493,11 +495,16 @@ export default {
   }
 }
 .google-map-btn {
-  @include div_r_pc(90, 90, 873, 880);
+  @include div_r_pc(80, 80, 0, 100);
+  right:6em;
+  width:5.3em;
+  height:5.3em;
 }
 
 .fb-btn {
-  @include div_r_pc(90, 90, 873, 770);
+  @include div_r_pc(80,80, 0, 0);
+  width:5.3em;
+  height:5.3em;
 }
 
 /* 平板尺寸 */
