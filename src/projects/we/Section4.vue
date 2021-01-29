@@ -545,6 +545,10 @@ export default {
       isDialog: false,
       slideList: [
         {
+          img: require('./s2/3-5.jpg'),
+          name: '捷運土城站實景',
+        },
+        {
           img: require('./s2/3-1.jpg'),
           name: '捷運海山站實景',
         },
