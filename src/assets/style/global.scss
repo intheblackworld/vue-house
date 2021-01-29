@@ -15,9 +15,9 @@ html,
 body {
   background: $bg;
   overflow-x: hidden;
-  *::-webkit-scrollbar {
+  /**::-webkit-scrollbar {
     // display: none;
-  }
+  }*/
 
   * {
    // font-family:$family1;
