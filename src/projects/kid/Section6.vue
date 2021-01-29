@@ -236,9 +236,6 @@
     }
   }
 
-  .video {
-  }
-
   .video-img {
     width: 100%;
     display: block;
@@ -704,7 +701,7 @@ export default {
           img: require('./s7/1.jpg'),
         },
         {
-          title: '透過唱跳遊戲及手作的方式，讓孩子更加認識過年。',
+          title: '透過繪本、唱跳和動手玩創作，一起來迎接春天吧～',
           img: require('./s7/2.jpg'),
         },
         {
@@ -712,7 +709,7 @@ export default {
           img: require('./s7/3.jpg'),
         },
         {
-          title: '讓姊姊說好聽好玩的故事，感受不同的週末親子時光。',
+          title: '邀請親子同樂，一起透過讀報來認識世界，創造驚喜。',
           img: require('./s7/4.jpg'),
         },
         {
@@ -720,16 +717,17 @@ export default {
           img: require('./s7/5.jpg'),
         },
         {
-          title: '透過繪本、唱跳和動手玩創作，一起來迎接春天吧～',
+          title: '激發孩子創造力，活動筋骨，擁有開心健康的兒童節！',
           img: require('./s7/6.jpg'),
         },
         {
-          title: '邀請親子同樂，一起透過讀報來認識世界，創造驚喜。',
+          title: '讓姊姊說好聽好玩的故事，感受不同的週末親子時光。',
           img: require('./s7/7.jpg'),
         },
         {
-          title: '激發孩子創造力，活動筋骨，擁有開心健康的兒童節！',
           img: require('./s7/8.jpg'),
+          title: ' ',
+     //     title: '透過唱跳遊戲及手作的方式，讓孩子更加認識過年。',
         },
         {
           title: '一杯口感馥郁香氣的黑色飲料，蘊藏著多少功夫細節？',
