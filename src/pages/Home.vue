@@ -3667,7 +3667,7 @@
           等待是值得的，鄭子寮最美的日系花園建築，2021即將美好盛開
         </p>
         <img src="./texture/section-swiper/s4-title.png" alt="鄭子寮富人特區 凌空24層制震豪邸" v-if="!isMobile" />
-        <svg version="1.1" id="圖層_1" class="stitle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        <svg version="1.1" id="圖層_1" class="stitle" v-else xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 305 41.3" enable-background="new 0 0 305 41.3" xml:space="preserve">
    <title>鄭子寮富人特區 凌空24層制震豪邸</title>
 <g>
