@@ -36,7 +36,7 @@
       <transition name="swipe-fade" mode="out-in">
         <div class="dialog" v-if="isDialog">
           <div class="dialog-bg">
-            <img src="./s2/2.jpg" alt="" class="dialog-img" v-if="isPC">
+            <img src="./s2/5.jpg" alt="" class="dialog-img" v-if="isPC">
             <h3 class="dialog-name" v-if="isPC">
               從規劃設計到營建施工，連雲以一條龍專業團隊實踐建築最高品質
             </h3>
@@ -44,7 +44,7 @@
               從規劃設計到營建施工，<br />
               連雲以一條龍專業團隊實踐建築最高品質
             </h3>
-            <img src="./s2/2_m.jpg" alt="" class="dialog-img" v-if="isMobile">
+            <img src="./s2/5_m.jpg" alt="" class="dialog-img" v-if="isMobile">
             <div class="dialog-title">
               8B NICEHOMES® 好宅指標
             </div>
@@ -322,7 +322,7 @@
 
   .dialog-bg {
     width: 100%;
-    height: 100%;
+    height:  100%;
     background-image: url('~@/projects/lj/s1/bg.png');
     // padding-top: $nav_pc_height;
     background-attachment: fixed;
@@ -363,6 +363,19 @@
       width: 90%;
     }
   }
+ .dialog-name{
+   position: absolute;
+    left:2em;
+    bottom:calc(50% - 21.35vw + 1.2em);
+    color: #fff;
+    font-size: size(18);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+    text-align: left;
+    text-shadow: 0 0.2em 1em #000;}
 
   .dialog-desc {
     @include img_r_pc(448, 303, 52);
@@ -376,6 +389,7 @@
     letter-spacing: normal;
     text-align: left;
     color: #ffffff;
+    margin: 0 0 ;
   }
 }
 
@@ -628,7 +642,7 @@
 
     .dialog-bg {
       width: 100%;
-      height: 100%;
+      height: 112%;
       background-image: url('~@/projects/lj/s1/bg_m.png');
       // padding-top: $nav_pc_height;
       background-attachment: fixed;
@@ -667,6 +681,14 @@
         width: 90%;
       }
     }
+ .dialog-name{
+      right: auto;
+      bottom: auto;
+      top: calc(15.2vw + 1.2rem);
+      left: 1.2rem;
+      font-size: sizem(15);
+      z-index: 2;
+      }
 
     .dialog-desc {
       @include img_r_m(313, 454, 18);
@@ -678,6 +700,8 @@
       letter-spacing: normal;
       text-align: left;
       color: #ffffff;
+      height: auto;
+      margin: 0 0 5em;
     }
   }
 }
