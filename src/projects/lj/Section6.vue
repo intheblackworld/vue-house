@@ -12,10 +12,10 @@
           <div class="pagination absolute flex-ac" v-if="isPC">
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
-          <!-- <div class="swipe-btns absolute flex-ac flex-jb">
+          <div class="swipe-btns absolute flex-ac flex-jb">
             <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
             <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-          </div> -->
+          </div>
         </div>
       </div>
       <h1 class="title" data-aos="flip-up" data-aos-delay="1200">
@@ -36,7 +36,7 @@
 @import '@/assets/style/function.scss';
 
 .section6 {
-  width: size(1920);
+  width: 100%;
   height: size(1080);
   min-height: size(1080);
   max-height: size(1080);

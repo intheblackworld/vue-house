@@ -94,7 +94,7 @@
 @import '@/assets/style/function.scss';
 
 .section9 {
-  width: size(1920);
+  width:100%;
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);

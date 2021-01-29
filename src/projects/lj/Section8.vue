@@ -38,7 +38,7 @@
 @import '@/assets/style/function.scss';
 
 .section6 {
-  width: size(1920);
+  width:100%;
   height: size(1365);
   min-height: size(1365);
   // max-height: size(1080);
