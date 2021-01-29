@@ -1,7 +1,7 @@
 <template>
   <div class="section10">
-    <img src="./s10/2.jpg" alt="" class="bg-img" v-if="!isMobile">
-    <img src="./s10/2_m.jpg" alt="" class="bg-img" v-else>
+    <img src="./s10/bg.jpg" alt="" class="bg-img" v-if="!isMobile">
+    <img src="./s10/bg_m.jpg" alt="" class="bg-img" v-else>
     
       <div class="txt absolute">
     <div class="subtitle" data-aos="fade-up" data-aos-delay="200">
@@ -91,8 +91,9 @@
   left: 0;
   /*display: flex;
   flex-direction:row-reverse;*/
-  padding: size(50) 0 0  size(140);
-  background:linear-gradient(to right, #9e0d1b 0%,#9e0d1b 50%,#9e0d1b00 100%);
+  //局部板用的 padding: size(50) 0 0  size(140);
+  padding: size(110) 0 0  size(200);
+  //局部板用的 background:linear-gradient(to right, #9e0d1b 0%,#9e0d1b 50%,#9e0d1b00 100%);
   }
 
 .subtitle {
