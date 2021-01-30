@@ -97,6 +97,7 @@ export default {
         name: '',
         phone: '',
         email: '',
+        type: '', // 想了解的建案
         city: '',
         area: '',
         msg: '',
@@ -166,6 +167,7 @@ export default {
       formData.append('msg', this.form.msg)
       // formData.append('time_start', this.form.time_start)
       // formData.append('time_end', this.form.time_end)
+      formData.append('type', this.form.type)
       formData.append('city', this.form.city)
       formData.append('area', this.form.area)
       formData.append('utm_source', utmSource)
@@ -181,7 +183,7 @@ export default {
       const sec = time.getSeconds()
       const date = `${year}-${month}-${day} ${hour}:${min}:${sec}`
       fetch(
-        `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&email=${this.form.email}&cityarea=${this.form.city}${this.form.area}&msg=${this.form.msg}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
+        `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&email=${this.form.email}&type=${this.form.type}&cityarea=${this.form.city}${this.form.area}&msg=${this.form.msg}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
       `,
         {
           method: 'GET',
