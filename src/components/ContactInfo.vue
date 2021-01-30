@@ -7,21 +7,20 @@
       data-aos-delay="0"
     >
       <img
-        v-if="!isMobile"
         class="logo"
         src="@/assets/img/contact-logo.png"
         :alt="info.caseName"
         data-aos="fade-down"
         data-aos-delay="0"
       />
-      <img
+      <!-- <img
         v-if="isMobile"
         class="logo"
         src="@/assets/img/contact-logo_m.png"
         :alt="info.caseName"
         data-aos="fade-down"
         data-aos-delay="0"
-      />
+      /> -->
       <div class="info">
         <div
           class="btn flex-c"
@@ -160,7 +159,7 @@ export default {
   position: relative;
   z-index: 3;
   width: 1200px;
-  height: 500px;
+  height: 600px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
@@ -254,6 +253,7 @@ export default {
   font-size: 16px;
   cursor: pointer;
   text-decoration: none;
+  font-weight: bold;
  // border-top-right-radius: 60px;
   //border-bottom-right-radius: 60px;
   color: $contact_google_btn_color;
