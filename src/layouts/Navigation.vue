@@ -133,7 +133,7 @@ export default {
   // background-image: $nav_bg;
   background-size: cover;
   height: $nav_pc_height;
-    z-index: 10001;
+    z-index: 9000;
   position: fixed;
   top: 0;
   left: size(0);

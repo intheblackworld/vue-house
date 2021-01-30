@@ -165,7 +165,7 @@
   }
 
   .title-img {
-    @include img_l_m(220, 201, 33);
+      @include img_l_m(180, 208, 33);
   }
 
   .bottom {
