@@ -1,9 +1,9 @@
 <template>
   <div class="section1">
-    <img src="./s1/bg.png" :alt="`${info.caseName}_mountain`" class="mountain" v-if="isPC">
-    <img src="./s1/bg_m.png" :alt="`${info.caseName}_mountain`" class="mountain" v-if="isMobile">
-    <img src="./s1/top.png" :alt="`${info.caseName}_top`" class="top" v-if="isPC">
-    <img src="./s1/top_m.png" :alt="`${info.caseName}_top`" class="top" v-if="isMobile">
+    <img src="./s1/bg.png" :alt="`${info.caseName}_mountain`" class="mountain" v-if="isPC" data-aos="fade" data-aos-delay="200">
+    <img src="./s1/bg_m.png" :alt="`${info.caseName}_mountain`" class="mountain" v-if="isMobile" data-aos="fade" data-aos-delay="200">
+    <img src="./s1/top.png" :alt="`${info.caseName}_top`" class="top" v-if="isPC" data-aos="fade" data-aos-delay="400">
+    <img src="./s1/top_m.png" :alt="`${info.caseName}_top`" class="top" v-if="isMobile" data-aos="fade" data-aos-delay="400">
   </div>
 </template>
 
