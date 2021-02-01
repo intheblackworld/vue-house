@@ -775,21 +775,21 @@ export default {
           subtitle: '2+1房．2衛．客廳．餐廳．廚房．陽台',
           btn: 'A戶∣約28坪',
         },
-        {
-          img: require('./s8/b.png'),
-          subtitle: '2房．1衛．客廳．餐廳．廚房．陽台',
-          btn: 'B戶∣約23坪',
-        },
-        {
-          img: require('./s8/c.png'),
-          subtitle: '1房．1衛．客廳．餐廳．廚房．陽台',
-          btn: 'C戶∣約18坪',
-        },
-        {
-          img: require('./s8/d.png'),
-          subtitle: '2房．1衛．客廳．餐廳．廚房．陽台',
-          btn: 'D戶∣約24坪',
-        },
+        // {
+        //   img: require('./s8/b.png'),
+        //   subtitle: '2房．1衛．客廳．餐廳．廚房．陽台',
+        //   btn: 'B戶∣約23坪',
+        // },
+        // {
+        //   img: require('./s8/c.png'),
+        //   subtitle: '1房．1衛．客廳．餐廳．廚房．陽台',
+        //   btn: 'C戶∣約18坪',
+        // },
+        // {
+        //   img: require('./s8/d.png'),
+        //   subtitle: '2房．1衛．客廳．餐廳．廚房．陽台',
+        //   btn: 'D戶∣約24坪',
+        // },
         {
           img: require('./s8/e.png'),
           subtitle: '2+1房．2衛．客廳．餐廳．廚房．陽台',
