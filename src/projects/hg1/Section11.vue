@@ -1,5 +1,26 @@
 <template>
   <div class="section11">
+    <div class="animate-slide" v-if="!isMobile">
+      <img src="./s11/漂浮物件_分層/10_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
+      <img src="./s11/漂浮物件_分層/10_class_2.png" :alt="`${info.caseName}_logo`" class="pc2" data-parallax="4">
+    </div>
+    <div class="animate-slide" v-if="isMobile">
+      <img src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
+      <img src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2">
+      <img src="./s1/mo1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
+    </div>
+    <img src="./s11/masterteam_bg.png" :alt="`${info.caseName}_style_arrow`" class="bg-img" data-aos="fade-up" data-aos-delay="0">
+    <div class="bg-img blue"></div>
+    <div class="title" data-aos="fade" data-aos-delay="400">
+      大師團隊<br />四強聯手
+    </div>
+    <div class="subtitle" data-aos="fade" data-aos-delay="600">
+      MASTER<br />TEAM
+    </div>
+    <img src="./s11/style_arrow_7.png" :alt="`${info.caseName}_style_arrow`" class="arrow" data-aos="fade-up" data-aos-delay="200">
+    <div class="item-list">
+      <img :src="item.img" :alt="`${info.caseName}_item`" data-aos="fade-up" :data-aos-delay="200 + index * 50" v-for="(item, index) in item_list" :key="item.img + index">
+    </div>
     <div :class="`dialog ${isDialog ? 'show' : ''}`">
       <!-- <img :src="slideList[imgIndex].img" alt="" class="dialog-img absolute"> -->
       <img src="~@/assets/img/close.png" alt class="close" @click="closeDialog" />
@@ -113,9 +134,11 @@
 
 .section11 {
   width: size(1920);
-  height: size(900);
+  height: 100vh;
+  min-height: size(900);
   position: relative;
-  background-color: #b01f24;
+  z-index: 10;
+  // background-color: #b01f24;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
@@ -126,7 +149,7 @@
 
 .bg-img {
   width: 100vw;
-  height: 100vh;
+  height: auto;
   min-height: size(900);
   position: absolute;
   display: block;
@@ -137,107 +160,105 @@
   &:nth-child(1) {
     position: relative;
   }
-}
 
-.img-list {
-  width: 100vw;
-  height: size(590);
-  top: 0;
-  left: 0;
-}
-
-.img-item {
-  width: 25%;
-  height: size(590);
-  img {
-    width: 100%;
-    height: 100%;
+  &.blue {
+    background-color: rgba(45, 115, 171, 0.77);
   }
-}
-
-.img-text {
-  width: size(452.6);
-  height: size(44.6);
-  bottom: size(20);
-  padding-right: 10px;
-  border-right: solid 1px #af1f24;
-  border-bottom: solid 1px #af1f24;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
-  font-size: size(16);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.25;
-  letter-spacing: size(0.62);
-  text-align: right;
-  color: #ffffff;
 }
 
 .title {
-  width: size(530);
-  top: size(702);
-  left: size(354);
-  font-size: size(55.7);
-  font-weight: bold;
+  @include img_l_pc(340, 183, 170);
+  font-size: size(82.1);
+  font-weight: 300;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(7.74);
+  line-height: 1.25;
+  letter-spacing: size(3.53);
   text-align: right;
   color: #ffffff;
   white-space: nowrap;
-  span {
-    font-size: size(55.7);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: normal;
-    text-align: left;
-    color: #ffffff;
-  }
-
-  .number {
-    font-size: size(69);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: 0.1em;
-    text-align: left;
-    color: #ffffff;
-  }
 }
 
 .subtitle {
-  width: size(530);
-  top: size(660);
-  left: size(354);
-  font-size: size(25.5);
-  font-weight: bold;
+  @include img_l_pc(333, 406, 172);
+  font-size: size(85.9);
+  font-weight: 300;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(0.99);
+  line-height: 1.13;
+  letter-spacing: size(0.26);
   text-align: left;
-  color: #ffffff;
+  color: #df9529;
   white-space: nowrap;
 }
 
-.desc {
-  width: size(695);
-  top: size(655);
-  right: size(262);
-  font-size: size(21);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.35;
-  letter-spacing: size(0.92);
-  text-align: left;
-  color: #ffffff;
-  padding: 0 0 0 size(50);
-  border-left: size(3) solid #fff;
+.arrow {
+  @include img_l_pc(50, 591, 440);
+}
+
+.item-list {
+  @include img_r_pc(1192, 125, 151);
+  img {
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    &:nth-child(1) {
+      width: size(280);
+      left: 0;
+    }
+
+    &:nth-child(2) {
+      width: size(505);
+      left: size(200);
+    }
+
+    &:nth-child(3) {
+      width: size(505);
+      left: size(500);
+    }
+
+    &:nth-child(4) {
+      width: size(400);
+      left: size(830);
+      top: size(45);
+    }
+    // margin: size(10) size(20);
+  }
+}
+
+.animate-slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  // z-index: 3;
+  top: 0;
+  left: 0;
+  transition: all 0.5s;
+  > img {
+    @for $i from 1 through 10 {
+      $randomNum: random(4) + 3;
+      &:nth-child(#{$i}) {
+        transform: translateY((random(10) - 50) + px);
+        animation: an ($randomNum + s) 3s infinite alternate;
+      }
+    }
+  }
+
+  .pc1 {
+    @include img_r_pc(300, 300, -40);
+    z-index: 1;
+  }
+
+  .pc2 {
+    @include img_l_pc(260, -40, 0);
+    z-index: 1;
+  }
+}
+
+@keyframes an {
+  to {
+    transform: translateY(0);
+  }
 }
 
 /* Swipe */
@@ -768,13 +789,14 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
+import info from '@/info'
 import slider from '@/mixins/slider.js'
 
 export default {
   name: 'section11',
 
   mixins: [slider],
-  props: ['viewIndex'],
+  // props: ['viewIndex'],
 
   data() {
     return {
@@ -782,24 +804,39 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
+      info,
+      item_list: [
+        {
+          img: require('./s11/masterteam_man1.png'),
+        },
+        {
+          img: require('./s11/masterteam_man2.png'),
+        },
+        {
+          img: require('./s11/masterteam_man3.png'),
+        },
+        {
+          img: require('./s11/masterteam_man4.png'),
+        },
+      ],
       slideList: [
-        {
-          img: require('./s11/1.jpg'),
-          text: '《墨濤院》<br />2017年國家建築金質獎',
-        },
-        {
-          img: require('./s11/2.jpg'),
-          text: '《十三行博物館休閒教育園區》<br />2020年國家卓越建設獎金質獎',
-        },
-        {
-          img: require('./s11/3.jpg'),
-          text:
-            '《實踐大學圖書館及體育館-清水混凝土結構工程》<br />2012年台北市都市景觀首獎',
-        },
-        {
-          img: require('./s11/4.jpg'),
-          text: '《法鼓山人文社會學院》<br />2015年台灣建築獎佳作獎 ',
-        },
+        // {
+        //   img: require('./s11/1.jpg'),
+        //   text: '《墨濤院》<br />2017年國家建築金質獎',
+        // },
+        // {
+        //   img: require('./s11/2.jpg'),
+        //   text: '《十三行博物館休閒教育園區》<br />2020年國家卓越建設獎金質獎',
+        // },
+        // {
+        //   img: require('./s11/3.jpg'),
+        //   text:
+        //     '《實踐大學圖書館及體育館-清水混凝土結構工程》<br />2012年台北市都市景觀首獎',
+        // },
+        // {
+        //   img: require('./s11/4.jpg'),
+        //   text: '《法鼓山人文社會學院》<br />2015年台灣建築獎佳作獎 ',
+        // },
       ],
     }
   },
@@ -813,12 +850,12 @@ export default {
   computed: {},
 
   watch: {
-    viewIndex() {
-      if (this.viewIndex === 5) {
-        this.slideIndex = 0
-        console.log(this.slideIndex, 'slideIndex')
-      }
-    },
+    // viewIndex() {
+    //   if (this.viewIndex === 5) {
+    //     this.slideIndex = 0
+    //     console.log(this.slideIndex, 'slideIndex')
+    //   }
+    // },
   },
 }
 </script>

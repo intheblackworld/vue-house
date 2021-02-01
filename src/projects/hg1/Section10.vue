@@ -21,7 +21,9 @@
     </div>
     <div class="hr"></div>
     <img src="./s10/style_arrow_6.png" :alt="`${info.caseName}_style_arrow`" class="arrow" data-aos="fade-up" data-aos-delay="200">
-    <img :src="item.img" :alt="`${info.caseName}_item`" class="arrow" data-aos="fade-up" data-aos-delay="200" v-for="(item, index) in item_list" :key="item.img + index">
+    <div class="item-list flex-c wrap">
+      <img :src="item.img" :alt="`${info.caseName}_item`" data-aos="fade-up" :data-aos-delay="200 + index * 50" v-for="(item, index) in item_list" :key="item.img + index">
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -114,6 +116,14 @@
   @include img_r_pc(545, 821, 180);
   height: 1px;
   background-color: #fff;
+}
+
+.item-list {
+  @include img_r_pc(1085, 220, 185);
+  img {
+    width: size(177);
+    margin: size(10) size(20);
+  }
 }
 .animate-slide {
   width: 100%;
