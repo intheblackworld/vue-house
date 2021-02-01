@@ -1,6 +1,16 @@
 <template>
   <div class="section10">
-
+    <div class="animate-slide" v-if="!isMobile">
+      <img src="./s10/漂浮物件_分層/9_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
+      <img src="./s10/漂浮物件_分層/9_class_2.png" :alt="`${info.caseName}_logo`" class="pc2" data-parallax="4">
+    </div>
+    <div class="animate-slide" v-if="isMobile">
+      <img src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
+      <img src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2">
+      <img src="./s1/mo1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
+    </div>
+    <img src="./s10/materials_bg.png" :alt="`${info.caseName}_style_arrow`" class="img1" data-aos="fade-up" data-aos-delay="200">
+    <img src="./s8/style_arrow_5.png" :alt="`${info.caseName}_style_arrow`" class="arrow" data-aos="fade-up" data-aos-delay="200">
   </div>
 </template>
 <style lang="scss" scoped>
@@ -16,7 +26,7 @@
   // background-size: 100% 100%;
   // background-position: 0 0;
   // background-attachment: fixed;
-  overflow: hidden;
+  // overflow: hidden;
 }
 .bg {
   background-color: #fff;
@@ -42,63 +52,41 @@
     position: relative;
   }
 }
-.txt{
-  width: size(1140);
-  height: size(490);
-  top:0;
+.animate-slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  // z-index: 3;
+  top: 0;
   left: 0;
-  /*display: flex;
-  flex-direction:row-reverse;*/
-  padding: size(50) 0 0  size(140);
-  background:linear-gradient(to right, #9e0d1b 0%,#9e0d1b 50%,#9e0d1b00 100%);
+  transition: all 0.5s;
+  > img {
+    @for $i from 1 through 10 {
+      $randomNum: random(4) + 3;
+      &:nth-child(#{$i}) {
+        transform: translateY((random(10) - 50) + px);
+        animation: an ($randomNum + s) 3s infinite alternate;
+      }
+    }
   }
 
-.subtitle {
-  width: size(283);
-  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
-  font-size: size(25.5);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.6;
-  letter-spacing: size(1.5);
-  text-align: left;
-  color: #ffffff;
-  white-space: nowrap;
+  .pc1 {
+    @include img_l_pc(550, 0, 0);
+    // z-index: 1;
+  }
+
+  .pc2 {
+    @include img_r_pc(160, 73, 68);
+    top: auto;
+    bottom: 0;
+    // z-index: 1;
+  }
 }
 
-.title {
-  width: size(441);
-  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
-  font-size: size(46.4);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.4;
-  letter-spacing: size(3.71);
-  text-align: left;
-  color: #ffffff;
-  white-space: nowrap;
-}
-
-.hr {
-  width: size(564);
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.6);
-  border: solid 1px #ffffff;
-  margin:  size(20) 0;
-}
-
-.desc {
-  width: size(570);
-  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
-  font-size: size(21);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.53;
-  letter-spacing: 0.1em;
-  text-align: left;
-  color: #fff;
+@keyframes an {
+  to {
+    transform: translateY(0);
+  }
 }
 @media only screen and (max-width: 1440px) and (min-width: 1025px) {
   .fullscreen {
