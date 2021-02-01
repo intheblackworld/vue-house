@@ -1,12 +1,12 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '接待會館：新北市五股區新五路三段157號',
+  address: '接待會館：新北市五股區成泰路三段171號(對面)',
   googleSrc:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.287345766993!2d121.4453082150074!3d25.092132683945135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a8aa48dd86d3%3A0x98a97449a6066c9b!2zMjQ45paw5YyX5biC5LqU6IKh5Y2A5paw5LqU6Lev5LiJ5q61MTU36Jmf!5e0!3m2!1szh-TW!2stw!4v1611984342402!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/sfyZDRjcqF315UjD6',
   phone: '02-2292-2255',
-  fbLink: 'https://www.facebook.com/%E9%80%A3%E9%9B%B2%E6%99%AF%E7%B2%8B-105504811458953',
-  fbMessage: 'https://m.me/105504811458953',
+  fbLink: 'https://m.facebook.com/%E5%A4%A9%E7%A9%BA%E4%B9%8B%E9%82%91-102772851839341/',
+  fbMessage: 'https://m.me/102772851839341',
   caseName: '天空之邑',
   indigatorLength: 10,
 
