@@ -342,6 +342,7 @@ transform: skewY(5deg);
     letter-spacing: sizem(0.3);
     text-align: left;
     color: #ffffff;
+    white-space: nowrap;
   }
 
   .logo2 {
