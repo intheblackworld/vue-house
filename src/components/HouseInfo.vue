@@ -1,6 +1,6 @@
 <template>
   <div class="house-info" id="house-info">
-    <div class="content">
+    <!-- <div class="content">
       <h3 class="title" data-aos="fade-down" data-aos-delay="0">建案資訊</h3>
       <div class="info">
         <div class="item" :key="infos[0]" v-for="(infos, index) in houseInfos" data-aos="fade-right" :data-aos-delay="100 + index * 100">
@@ -8,7 +8,7 @@
           <p class="desc" v-html="infos[1]"></p>
         </div>
       </div>
-    </div>
+    </div> -->
     <Footer />
   </div>
 </template>

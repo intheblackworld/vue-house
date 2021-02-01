@@ -2,8 +2,8 @@ import { isMobile } from '../utils/index'
 export default {
   address: '接待會館：新北市五股區成泰路三段171號(對面)',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.287345766993!2d121.4453082150074!3d25.092132683945135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a8aa48dd86d3%3A0x98a97449a6066c9b!2zMjQ45paw5YyX5biC5LqU6IKh5Y2A5paw5LqU6Lev5LiJ5q61MTU36Jmf!5e0!3m2!1szh-TW!2stw!4v1611984342402!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/sfyZDRjcqF315UjD6',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.2907122557103!2d121.44305321542826!3d25.092018683945213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a601fb82c025%3A0xa0eb02e41c8374ec!2zMjQ45paw5YyX5biC5LqU6IKh5Y2A5oiQ5rOw6Lev5LiJ5q61MTcx6Jmf!5e0!3m2!1szh-TW!2stw!4v1612155242808!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/BEp2gd6h3otsGDwd6',
   phone: '02-2292-2255',
   fbLink: 'https://m.facebook.com/%E5%A4%A9%E7%A9%BA%E4%B9%8B%E9%82%91-102772851839341/',
   fbMessage: 'https://m.me/102772851839341',
