@@ -10,7 +10,18 @@
       <img src="./s1/mo1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
     </div>
     <img src="./s10/materials_bg.png" :alt="`${info.caseName}_style_arrow`" class="img1" data-aos="fade-up" data-aos-delay="200">
-    <img src="./s8/style_arrow_5.png" :alt="`${info.caseName}_style_arrow`" class="arrow" data-aos="fade-up" data-aos-delay="200">
+    <div class="title" data-aos="fade" data-aos-delay="400">
+      精品建材
+    </div>
+    <div class="subtitle" data-aos="fade" data-aos-delay="600">
+      MATERIALS
+    </div>
+    <div class="desc" data-aos="fade" data-aos-delay="800">
+      名品建材 升級享受
+    </div>
+    <div class="hr"></div>
+    <img src="./s10/style_arrow_6.png" :alt="`${info.caseName}_style_arrow`" class="arrow" data-aos="fade-up" data-aos-delay="200">
+    <img :src="item.img" :alt="`${info.caseName}_item`" class="arrow" data-aos="fade-up" data-aos-delay="200" v-for="(item, index) in item_list" :key="item.img + index">
   </div>
 </template>
 <style lang="scss" scoped>
@@ -51,6 +62,58 @@
   &:nth-child(1) {
     position: relative;
   }
+}
+
+.img1 {
+  @include img_l_pc(1076, 185, -100);
+}
+
+.title {
+  @include img_l_pc(211, 695, 693);
+  font-size: size(53.4);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(-0.9);
+  text-align: left;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.subtitle {
+  @include img_l_pc(170, 745, 688);
+  font-size: size(85.9);
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(0.26);
+  text-align: left;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.desc {
+  @include img_r_pc(299, 772, 178);
+  font-size: size(37);
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(-0.63);
+  text-align: left;
+  color: #ffffff;
+}
+
+.arrow {
+  @include img_l_pc(50, 717, 916);
+}
+
+.hr {
+  @include img_r_pc(545, 821, 180);
+  height: 1px;
+  background-color: #fff;
 }
 .animate-slide {
   width: 100%;
@@ -124,7 +187,7 @@
     width: 100vw;
     height: sizem(667);
     min-height: auto;
-  max-height:initial;
+    max-height: initial;
     position: relative;
   }
 
@@ -143,12 +206,12 @@
       position: relative;
     }
   }
- .txt {
-   top: 0;
-   left: 0;
-   width: 100%;
+  .txt {
+    top: 0;
+    left: 0;
+    width: 100%;
     height: auto;
-    padding:sizem(45)  0 sizem(45) sizem(32) ;
+    padding: sizem(45) 0 sizem(45) sizem(32);
   }
 
   .subtitle {
@@ -189,7 +252,7 @@
     left: sizem(0);
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.6);
     border: solid 1px #ffffff;
-    margin:sizem(20) 0;
+    margin: sizem(20) 0;
   }
 
   .desc {
@@ -219,6 +282,35 @@ export default {
     return {
       isMobile,
       info,
+      item_list: [
+        {
+          img: require('./s10/materials_list_ 1.png'),
+        },
+        {
+          img: require('./s10/materials_list_2.png'),
+        },
+        {
+          img: require('./s10/materials_list_3.png'),
+        },
+        {
+          img: require('./s10/materials_list_4.png'),
+        },
+        {
+          img: require('./s10/materials_list_5.png'),
+        },
+        {
+          img: require('./s10/materials_list_6.png'),
+        },
+        {
+          img: require('./s10/materials_list_7.png'),
+        },
+        {
+          img: require('./s10/materials_list_8.png'),
+        },
+        {
+          img: require('./s10/materials_list_9.png'),
+        },
+      ],
     }
   },
 
