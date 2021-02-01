@@ -1,49 +1,6 @@
 <template>
   <div class="section10">
-    <img src="./s10/2.jpg" alt="" class="bg-img" v-if="!isMobile">
-    <img src="./s10/2_m.jpg" alt="" class="bg-img" v-else>
-    
-      <div class="txt absolute">
-    <div class="subtitle" data-aos="fade-up" data-aos-delay="200">
-      從氣質，就看出精湛品質
-    </div>
-    <div class="title" data-aos="fade-up" data-aos-delay="400">
-      一筆箍耐震精工<br />人文石尚 風格直寓
-    </div>
-    <div class="hr" data-aos="fade-up" data-aos-delay="600"></div>
-    <div class="desc" data-aos="fade-up" data-aos-delay="800">
-      大器「雪花白蒙卡花崗石」，書寫外觀如渾然天成的山水流瀑，文雅堅毅，展現力抗溫差落雨的雋永誠真。<br /><br />
-      結合「一筆箍」鋼筋捆紮、SA級續接，締造抗震係數達0.274g、抗六級以上耐震設計。沈穩精鑄，篤實安家。
-    </div>
-      </div>
-    <!-- <div class="title-bg">
-      <div class="text" v-if="isMobile">
-        <div
-          class="title"
-          data-aos="fade-down"
-          data-aos-delay="0"
-        >樹海恬靜學區 爭藏氧森別墅</div>
-        <div
-          class="desc"
-          data-aos="fade-down"
-          data-aos-delay="200"
-        >步行2分鐘抵高雄大學，自然生態日夜淨化空氣ING</div>
-      </div>
-    </div> -->
-    <!-- <Map :tagList="tagList" :bgSrc="isMobile ? bgmSrc: bgSrc" :hand="hand">
-      <div class="text" v-if="!isMobile">
-        <div
-          class="title"
-          data-aos="fade-down"
-          data-aos-delay="0"
-        >樹海恬靜學區 爭藏氧森別墅</div>
-        <div
-          class="desc"
-          data-aos="fade-down"
-          data-aos-delay="500"
-        >步行2分鐘抵高雄大學，自然生態日夜淨化空氣ING</div>
-      </div>
-    </Map> -->
+
   </div>
 </template>
 <style lang="scss" scoped>
@@ -266,21 +223,14 @@
 
 <script>
 import { isMobile } from '@/utils'
-import Map from '@/components/Map.vue'
+import info from '@/info'
 export default {
   name: 'section10',
 
-  components: {
-    Map,
-  },
   data() {
     return {
       isMobile,
-      // tagList: [require('./s3_title.png')],
-
-      // bgSrc: require('./s3_bg.jpg'),
-      // bgmSrc: require('./s3_bg_m.jpg'),
-      // hand: require('../lkf/s4_hand.png'),
+      info,
     }
   },
 

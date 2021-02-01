@@ -16,6 +16,7 @@ import VueLazyload from 'vue-lazyload' // 圖片 lazy load
 import VueScrollReveal from 'vue-scroll-reveal'
 import VuePhotoZoomPro from 'vue-photo-zoom-pro'
 import VueTouch from 'vue-touch'
+import VueLazyComponent from '@xunlei/vue-lazy-component'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
@@ -47,6 +48,8 @@ library.add(faFacebookF)
 library.add(faMapMarkerAlt)
 
 Vue.use(VuePhotoZoomPro)
+Vue.use(VueLazyComponent)
+
 
 VueTouch.config.swipe = {
   direction: 'horizontal'

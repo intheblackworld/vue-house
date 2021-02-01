@@ -3,5 +3,5 @@ export default {
   once: false, // 重複出現
   mirror: true, // 重複出現
   delay: 0,
-  duration: 400,
+  duration: 900,
 }

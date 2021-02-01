@@ -1,47 +1,115 @@
 <template>
-  <div>
-    <div class="section11">
-      <div class="img-list absolute flex-ac flex-jb" v-if="!isMobile">
-        <div v-for="(slide, i) in slideList" :key="slide.img" :class="`img-item relative`">
-          <img :src="slide.img" alt="" data-aos="fade" :data-aos-delay="200 + i * 100">
-          <div class="img-text absolute" v-html="slide.text" data-aos="fade" :data-aos-delay="300 + i * 100"></div>
-        </div>
-      </div>
-      <div class="subtitle absolute" data-aos="fade" data-aos-delay="400">
-        建築，爭的不是名利，而是無止盡的問心無愧
-      </div>
-      <div class="title absolute" data-aos="fade" data-aos-delay="600">
-        <span class="number">30</span>年甲級營造職人<br />
-        鐵冠建設<span>‧</span>昌譽營造
-      </div>
-      <div class="desc absolute" data-aos="fade" data-aos-delay="800">
-        創建之初，即成立自家營造廠「昌譽營造」，攜手鑽研土木、鋼構力學等基礎深開挖技術。<br /><br />
-        精淬造工，贏得公共工程界、多項大獎青睞推崇。<br /><br />
-        2020年再以《十三行博物館休閒教育園區》奪下「國家卓越建設獎金質獎」殊榮，印證工法專注苛求，才是建築最完美的價值。
-      </div>
-
-      <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile">
-        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
-          <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
-              <div class="img-text absolute" v-html="slide.text"></div>
-            </div>
-          </transition-group>
-          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-          </div>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-          </div>
-        </div>
-      </div>
+  <div class="section11">
+    <div :class="`dialog ${isDialog ? 'show' : ''}`">
+      <!-- <img :src="slideList[imgIndex].img" alt="" class="dialog-img absolute"> -->
+      <img src="~@/assets/img/close.png" alt class="close" @click="closeDialog" />
+      <!-- <img src="./s7/img.png" alt="" class="dialog-ink absolute"> -->
+      <!-- <div class="dialog-text absolute">{{slideList[imgIndex].name}}</div>
+        <div class="dialog-title absolute">文創新鮮度 永遠逛不膩</div>
+        <div class="dialog-subtitle absolute">
+          台北光點為軸，品味生活比想像更簡單
+        </div> -->
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
+
+// 彈窗效果
+.dialog {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background: url('./s1/bg.png') repeat;
+  background-size: auto;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+  display: block;
+  overflow: auto;
+  left: 100vw;
+  transition: all 0.5s;
+  &.show {
+    display: block;
+    z-index: 210;
+    opacity: 1;
+    left: 0;
+  }
+
+  .dialog-img {
+    width: size(1160);
+    top: calc(50% - 18.75vw);
+    left: size(176);
+    object-fit: cover;
+    height: auto;
+    z-index: 2;
+  }
+
+  .dialog-ink {
+    width: size(250);
+    top: calc(50% + 2vw);
+    right: size(172);
+  }
+
+  .dialog-text {
+    width: size(800);
+    height: size(32.4);
+    top: calc(50% + 17.1vw);
+    right: size(177);
+    border-bottom: solid 1px #9d0c1a;
+    border-right: solid 1px #9d0c1a;
+    text-align: right;
+    font-size: size(23.6);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: size(5.66);
+    padding: 0 5px;
+    color: #262626;
+  }
+
+  .dialog-title {
+    top: calc(50% - 18.75vw);
+    right: size(423);
+    font-size: size(44);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.06;
+    letter-spacing: size(2.6);
+    text-align: left;
+    color: #af1f24;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+
+  .dialog-subtitle {
+    top: calc(50% - 18.75vw);
+    right: size(388);
+    font-size: size(25);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.1;
+    letter-spacing: size(1.48);
+    text-align: left;
+    color: #323333;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    white-space: nowrap;
+  }
+
+  .close {
+    position: fixed;
+    cursor: pointer;
+    right: size(186);
+    top: calc(50% - 18.75vw);
+    width: size(56);
+    background-color: #9d0c1a;
+  }
+}
 
 .section11 {
   width: size(1920);
@@ -135,7 +203,7 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.2;
-    letter-spacing:0.1em;
+    letter-spacing: 0.1em;
     text-align: left;
     color: #ffffff;
   }
@@ -169,7 +237,7 @@
   text-align: left;
   color: #ffffff;
   padding: 0 0 0 size(50);
-  border-left:size(3) solid #fff;
+  border-left: size(3) solid #fff;
 }
 
 /* Swipe */
@@ -350,6 +418,100 @@
 }
 
 @media screen and (max-width: 767px) {
+  .dialog {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    // background: url('./s1/bg.png') repeat;
+    background-size: auto;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s;
+    display: block;
+    overflow: auto;
+    left: 100vw;
+    transition: all 0.5s;
+    &.show {
+      display: block;
+      z-index: 210;
+      opacity: 1;
+      left: 0;
+    }
+
+    .dialog-img {
+      width: size(1160);
+      top: calc(50% - 18.75vw);
+      left: size(176);
+      object-fit: cover;
+      height: auto;
+      z-index: 2;
+    }
+
+    .dialog-ink {
+      width: size(250);
+      top: calc(50% + 2vw);
+      right: size(172);
+    }
+
+    .dialog-text {
+      width: size(800);
+      height: size(32.4);
+      top: calc(50% + 17.1vw);
+      right: size(177);
+      border-bottom: solid 1px #9d0c1a;
+      border-right: solid 1px #9d0c1a;
+      text-align: right;
+      font-size: size(23.6);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.2;
+      letter-spacing: size(5.66);
+      padding: 0 5px;
+      color: #262626;
+    }
+
+    .dialog-title {
+      top: calc(50% - 18.75vw);
+      right: size(423);
+      font-size: size(44);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.06;
+      letter-spacing: size(2.6);
+      text-align: left;
+      color: #af1f24;
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+    }
+
+    .dialog-subtitle {
+      top: calc(50% - 18.75vw);
+      right: size(388);
+      font-size: size(25);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.1;
+      letter-spacing: size(1.48);
+      text-align: left;
+      color: #323333;
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      white-space: nowrap;
+    }
+
+    .close {
+      position: fixed;
+      cursor: pointer;
+      right: size(186);
+      top: calc(50% - 18.75vw);
+      width: size(56);
+      background-color: #9d0c1a;
+    }
+  }
   .section11 {
     width: 100vw;
     height: sizem(790);
@@ -443,9 +605,9 @@
     letter-spacing: 0;
     text-align: justify;
     color: #ffffff;
-    padding: sizem(20)  0 0 0;
-  border-left:size(0) solid #fff;
-  border-top:sizem(2) solid #fff;
+    padding: sizem(20) 0 0 0;
+    border-left: size(0) solid #fff;
+    border-top: sizem(2) solid #fff;
   }
 
   /* Swipe */

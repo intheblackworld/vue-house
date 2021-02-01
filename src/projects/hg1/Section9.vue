@@ -1,63 +1,52 @@
 <template>
-  <div>
-    <div class="section9">
-      <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
-          <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
-              <div class="slide-name absolute" v-html="slide.name"></div>
-            </div>
-          </transition-group>
-          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+  <div class="section8">
+    <div class="animate-slide" v-if="!isMobile">
+      <img src="./s8/漂浮物件_分層/8_class_2.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
+    </div>
+    <div class="animate-slide" v-if="isMobile">
+      <img src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
+      <img src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2">
+      <img src="./s1/mo1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
+    </div>
+    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" alt="">
+            <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-          </div>
+        </transition-group>
+        <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
-      </div>
-      <!-- <div v-if="!isMobile">
-        <img src="./s9/img.png" alt="" class="img absolute">
-        <img src="./s9/t.png" alt="" class="t absolute">
-      </div> -->
-      <div class="txt absolute">
-        <div class="subtitle">
-          抓住中山國小站，享受城市快遞
+        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
         </div>
-        <div class="title">
-          三捷線軸心<span></span>直角環遊學
-        </div>
-        <div class="hr"></div>
-        <div class="desc">
-          <span>坐擁中山生活最夯熱點「中山國小站」，</span>
-          <span>與「中山站Ｘ雙連站」形成幾近等距軸心，</span>
-          <span>締造中和新蘆線、松山新店線、信義淡水線，</span>
-          <span class="p">三大通行主脈，一次接收！</span>
-          <span>完美享受<br v-if="isMobile" />「以一個四角矩陣、大台北全向無敵」</span>
-          <span>展開城市暢快計畫。</span>
-        </div>
-        <img src="./s9/img.png" alt="" class="img">
       </div>
     </div>
+    <div class="content-bg" data-aos="fade" data-aos-delay="0"></div>
+    <div class="title" data-aos="fade" data-aos-delay="400">
+      幸福格局
+    </div>
+    <div class="subtitle" data-aos="fade" data-aos-delay="600">
+      SPACE
+    </div>
+    <div class="desc" data-aos="fade" data-aos-delay="800">
+      2-3房戶戶雙採光，引風養綠，讓您品味自然的健康空間，無敵高坪效，一次收藏最稀有的繁華轉身！從此在家不僅是過日子，而是享受生活。
+    </div>
+    <img src="./s8/style_arrow_5.png" :alt="`${info.caseName}_style_arrow`" class="arrow" data-aos="fade-up" data-aos-delay="200">
   </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section9 {
+.section8 {
   width: size(1920);
-  height: 100vh;
+  height: size(968);
   min-height: size(900);
   max-height: size(1080);
   position: relative;
-  // min-height: size(900);
-  // background-image: url('./s2/bg.jpg');
-  // background-size: 100% 100%;
-  // background-position: 0 0;
-  // background-attachment: fixed;
-  // overflow: hidden;
 }
 
 .bg-img {
@@ -74,95 +63,92 @@
     position: relative;
   }
 }
-.txt{
-  width: size(380);
-  top:calc(50% - 18.2vw);
-  right: size(172);
-  display: flex;
-  flex-direction:row-reverse;
-  padding: 0 0 0 0;
-  }
-  .title {
-    width: 1.2em;
-    font-size: size(44);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing:0.06em;
-    text-align: left;
-    color: #af1f24;
-    position: relative;right:0;top:-0.15em;
-    //white-space: nowrap;
-    span{display:block;width:0.5em;height: 0.5em;}
-  }
-  .subtitle {
-    width: 1.2em;
-    font-size: size(25);
-    font-weight: bold;
-    letter-spacing:0.07em;
-    text-align: left;
-    position: relative;right: size(-6);
-    color: #323333;word-break: break-all;
-  flex-direction:row-reverse;word-wrap:break-word;
-  }
-  .desc {   
-    font-size: size(21);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: 0.1em;
-    text-align: left;
-    color: #323333;
-    position: relative;margin:size(0) size(53) 0 size(-10);
-  display: flex;align-items:flex-start; word-break: break-all;
-  flex-direction:row-reverse;word-wrap:break-word;
-    //white-space: nowrap;
-    span{writing-mode: vertical-rl;
-      width: 1.4em; 
-      margin:0 0 0 0.1em;
-      &.p{
-      margin:0 0 0 0.8em;}
-    }
-  }
-  .s-title{
-  width: size(28);
-  position: relative;
-  top: -0.35Em;
-  left:0.35em;
-  height: auto;}
 
-
-  .hr {
-    width:size(380);
-    height:size(3);
-    position: absolute;
-    top:0;
-    left:size(274);
-    background-color: #af1f24;
-    transform: rotate(90deg);
-    transform-origin: top left;
-  }
-.t {
-  width: size(332);
-  top: size(105);
-  right: size(172);
+.content-bg {
+  @include div_l_pc(1372, 84, 635, 0);
+  background-color: rgba(255, 255, 255, .75);
 }
 
-.img {
-  width: size(230);
-  top: size(490);
-  right: size(110);
+.title {
+  @include img_l_pc(381, 644, 221);
+  font-size: size(53.4);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(1.23);
+  text-align: left;
+  color: #0083be;
+  white-space: nowrap;
+}
+
+.subtitle {
+  @include img_l_pc(170, 635, 495);
+  font-size: size(67);
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(-1.14);
+  text-align: center;
+  color: #4d4d4d;
+  white-space: nowrap;
+}
+
+.desc {
+  @include img_r_pc(667, 648, 544);
+  font-size: size(19);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.64;
+  letter-spacing: size(1.96);
+  text-align: left;
+  color: #666666;
+}
+
+.arrow {
+  @include img_l_pc(47, 665, 437);
+}
+
+.animate-slide {
+  width: 100%;
+  height: 100%;
   position: absolute;
+  // z-index: 3;
+  top: 0;
+  left: 0;
+  transition: all 0.5s;
+  > img {
+    @for $i from 1 through 10 {
+      $randomNum: random(4) + 3;
+      &:nth-child(#{$i}) {
+        transform: translateY((random(10) - 50) + px);
+        animation: an ($randomNum + s) 3s infinite alternate;
+      }
+    }
+  }
+
+  .pc1 {
+    @include img_l_pc(1920, 73, 0);
+    // z-index: 1;
+  }
+}
+
+@keyframes an {
+  to {
+    transform: translateY(0);
+  }
 }
 
 /* Swipe */
 .swipe {
-  width: size(1310);
-  height: size(703);
-  top:calc(50% - 18.3vw);
+  width: size(1561);
+  height: size(760);
+  top: size(0);
+  right: 0;
   left: 0;
+  margin: 0 auto;
   object-fit: cover;
 }
 
@@ -221,10 +207,10 @@
   }
 
   .slide-name {
-    left: 20px;
-    bottom: 20px;
+    right: 20px;
+    top: 0px;
     color: #fff;
-    font-size: 15px;
+    font-size: 22px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -251,8 +237,8 @@
 
 .pagination {
   width: auto;
-  bottom: size(20);
-  right: size(20);
+  top: size(20);
+  left: size(20);
   justify-content: center;
 }
 
@@ -335,7 +321,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section9 {
+  .section8 {
     width: 100vw;
     height: sizem(790);
     min-height: auto;
@@ -346,61 +332,70 @@
     // background-attachment: fixed;
     overflow: hidden;
   }
-.txt{
-  width: sizem(310);
-  top: sizem(320);
-  left: sizem(32.5);display: block;
-  }
 
+  .txt {
+    width: sizem(310);
+    top: sizem(320);
+    left: sizem(32.5);
+    display: block;
+  }
 
   .title {
     width: 100%;
     line-height: 1.6;
-    font-size: sizem(25);right:0;top:sizem(3);
-    span{display:inline-block;}
+    font-size: sizem(25);
+    right: 0;
+    top: sizem(3);
+    span {
+      display: inline-block;
+    }
   }
 
   .hr {
     width: 100%;
     height: sizem(2);
-    position: relative;right: sizem(0);
+    position: relative;
+    right: sizem(0);
     margin: sizem(12) 0;
-    transform: rotate(0);
-    left: 0;
-    top: 0;
   }
 
   .s-title {
-    top:0;
+    top: 0;
     left: sizem(0);
     width: sizem(279);
   }
 
   .subtitle {
     width: 100%;
-    font-size: sizem(18);right: sizem(-1);
+    font-size: sizem(18);
+    right: sizem(-1);
   }
 
   .desc {
     font-size: sizem(15);
     line-height: 1.6;
     letter-spacing: sizem(2.09);
-    white-space: nowrap;display: block;
-    span{writing-mode:initial;display: block;
-      width:auto; 
-      margin:0 0 0.0em;
-      &.p{
-      margin:0 0 0.8em;}
-      &.p2{
-      margin:0 0 0.8em -0.5em;}
+    white-space: nowrap;
+    display: block;
+    span {
+      writing-mode: initial;
+      display: block;
+      width: auto;
+      margin: 0 0 0em;
+      &.p {
+        margin: 0 0 0.8em;
+      }
+      &.p2 {
+        margin: 0 0 0.8em -0.5em;
+      }
     }
   }
 
   .img {
     width: sizem(142);
-    top:sizem(30);
+    top: sizem(30);
     left: sizem(-3);
-  position: relative;
+    position: relative;
   }
 
   /* Swipe */
@@ -561,10 +556,11 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
+import info from '@/info'
 import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section9',
+  name: 'section8',
 
   mixins: [slider],
   props: ['viewIndex'],
@@ -574,19 +570,12 @@ export default {
       isPC,
       isMobile,
       isTablet,
+      info,
       isDialog: false,
       slideList: [
         {
-          img: require('./s9/1捷運中山國小站.jpg'),
-          name: '捷運中山國小站',
-        },
-        {
-          img: require('./s9/2捷運中山站.jpg'),
-          name: '捷運中山站',
-        },
-        {
-          img: require('./s9/3捷運雙連站.jpg'),
-          name: '捷運雙連站',
+          img: require('./s8/space_img.jpg'),
+          name: '樣品屋圖說',
         },
       ],
     }
@@ -600,13 +589,6 @@ export default {
 
   computed: {},
 
-  watch: {
-    viewIndex() {
-      if (this.viewIndex === 5) {
-        this.slideIndex = 0
-        console.log(this.slideIndex, 'slideIndex')
-      }
-    },
-  },
+  watch: {},
 }
 </script>

@@ -1,6 +1,15 @@
 <template>
-  <div>
-    <div class="section5">
+  <div class="section5 flex-ac">
+    <div class="animate-slide" v-if="!isMobile">
+      <img src="./s5/漂浮物件_分層/5_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
+      <img src="./s5/漂浮物件_分層/5_class_2.png" :alt="`${info.caseName}_logo`" class="pc2" data-parallax="4">
+    </div>
+    <div class="animate-slide" v-if="isMobile">
+      <img src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
+      <img src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2">
+      <img src="./s1/mo1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
+    </div>
+    <div class="relative container">
       <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -18,30 +27,23 @@
           </div>
         </div>
       </div>
-      <!--<div v-if="!isMobile">
-        <img src="./s5/img.png" alt="" class="img absolute">
-        <img src="./s5/t.png" alt="" class="t absolute">
-      </div> -->
-      <div class="txt absolute">
-        <div class="subtitle">
-          居所座標，以萬坪林森公園，呼喚著
-        </div>
-        <div class="title">
-          綠海地平線<span></span>巨場級森活
-        </div>
-        <div class="hr"></div>
-        <div class="desc">
-          <span>日劇裡的慢活，</span>
-          <span class="p">輕易就濃縮在離家5-10公分鐘的映演中！</span>
-          <span>近3公頃 林森公園Ｘ康樂公園，</span>
-          <span>串連中山北百年楓香；</span>
-          <span>轉場中山站線型公園文青朝氣…</span>
-          <span>媲美日本代代木公園、</span>
-          <span class="p">時而明治神宮外苑般的想像，交錯揪心！</span>
-          <span>身心與市心，完美找回正能量的平衡。</span>
-        </div>
-        <img src="./s5/img.png" alt="" class="img">
+      <div class="big-title">
+        海格新生活
       </div>
+      <div class="big-eng">
+        RICH LIFE
+      </div>
+      <div class="content-bg" data-aos="fade-up" data-aos-delay="200"></div>
+      <h1 class="title" data-aos="fade-up" data-aos-delay="400">
+        健康生活的 主人
+      </h1>
+      <h1 class="subtitle" data-aos="fade-up" data-aos-delay="600">
+        HEALTH
+      </h1>
+      <div class="desc" data-aos="fade-up" data-aos-delay="800">
+        都市人夢寐以求的生活，擁享全桃園唯一有水岸自行車道的重劃區！總長約30公里，沿岸將興建多座商辦、與百貨商圈，出門綠意環繞，涵養日日森活。
+      </div>
+      <img src="./s5/style_arrow_2.png" :alt="`${info.caseName}_style_arrow`" class="arrow" data-aos="fade-up" data-aos-delay="200">
     </div>
   </div>
 </template>
@@ -62,6 +64,11 @@
   // overflow: hidden;
 }
 
+.container {
+  width: 100vw;
+  height: size(671);
+}
+
 .bg-img {
   width: 100vw;
   height: 100vh;
@@ -76,93 +83,129 @@
     position: relative;
   }
 }
-.txt{
-  width: size(366);
-  top:calc(50% - 18.2vw);
-  right: size(172);
-  display: flex;
-  flex-direction:row-reverse;
-  padding: 0 0 0 0;
-  }
-  .title {
-    width: 1.2em;
-    font-size: size(44);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing:0.06em;
-    text-align: left;
-    color: #af1f24;
-    position: relative;right:0;top:-0.15em;
-    span{display:block;width:0.5em;height: 0.5em;}
-    //white-space: nowrap;
-  }
-  .subtitle {
-    width: 1.2em;
-    font-size: size(25);
-    font-weight: bold;
-    letter-spacing:0.07em;
-    text-align: left;
-    position: relative;right: size(-6);
-    color: #323333;word-break: break-all;
-  flex-direction:row-reverse;word-wrap:break-word;
-  }
-  .desc {   
-    font-size: size(21);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: 0.1em;
-    text-align: left;
-    color: #323333;
-    position: relative;margin:size(48) size(26) 0 size(-10);
-  display: flex;align-items:flex-start; word-break: break-all;
-  flex-direction:row-reverse;word-wrap:break-word;
-    //white-space: nowrap;
-    span{writing-mode: vertical-rl;
-      width: 1.4em; 
-      margin:0 0 0 0.0em;
-      &.p{
-      margin:0 0 0 0.8em;}
-    }
-  }
-  .s-title{
-  width: size(28);
-  position: relative;
-  top: -0.35Em;
-  left:0.35em;
-  height: auto;}
 
-
-  .hr {
-    width:size(250);
-    height:size(3);
-    position: absolute;
-    top:0;
-    left:0;
-    background-color: #af1f24;
-  }
-.t {
-  width: size(366);
-  top: size(105);
-  right: size(172);
+.content-bg {
+  @include div_l_pc(584.2, 465.4, 469 - 250, 178);
+  background-color: #0083be;
 }
 
-.img {
-  width: size(217);
-  top: size(536 - 105);
-  right: size(318 - 172);
+.title {
+  @include img_l_pc(400, 533 - 250, 227);
+  font-size: size(53.4);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(0.16);
+  text-align: left;
+  color: #fff;
+  white-space: nowrap;
+  span {
+    font-size: size(64.6);
+  }
+}
+
+.subtitle {
+  @include img_l_pc(400, 600 - 250, 227);
+  font-size: size(61);
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.03;
+  letter-spacing: size(1.4);
+  text-align: left;
+  color: #df9529;
+  white-space: nowrap;
+}
+
+.desc {
+  @include img_l_pc(400, 700 - 250, 227);
+  font-size: size(19);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.17;
+  letter-spacing: size(1.96);
+  text-align: left;
+  color: #fff;
+}
+
+.arrow {
+  @include img_l_pc(50, 620 - 250, 552);
+}
+
+.animate-slide {
+  width: 100%;
+  height: 100%;
   position: absolute;
+  // z-index: 3;
+  top: 0;
+  left: 0;
+  transition: all 0.5s;
+  > img {
+    @for $i from 1 through 10 {
+      $randomNum: random(4) + 3;
+      &:nth-child(#{$i}) {
+        transform: translateY((random(10) - 50) + px);
+        animation: an ($randomNum + s) 3s infinite alternate;
+      }
+    }
+  }
+
+  .pc1 {
+    @include img_l_pc(780, 0, 178);
+    // z-index: 1;
+  }
+
+  .pc2 {
+    @include img_r_pc(288, 0, 192);
+    z-index: 2;
+  }
+}
+
+@keyframes an {
+  to {
+    transform: translateY(0);
+  }
+}
+
+.big-title {
+  @include img_r_pc(438, 283, 768);
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.75);
+  font-size: size(82.1);
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(6.81);
+  text-align: left;
+  color: #ffffff;
+  white-space: nowrap;
+  z-index: 3;
+}
+
+.big-eng {
+  @include img_r_pc(915, 353, 311);
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.75);
+  font-size: size(189.8);
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(8.16);
+  text-align: center;
+  color: #ffffff;
+  white-space: nowrap;
+  z-index: 3;
 }
 
 /* Swipe */
 .swipe {
-  width: size(1310);
-  height: size(703);
-  top:calc(50% - 18.3vw);
-  left: 0;
+  width: size(1252);
+  height: size(671);
+  top: size(-100);
+  right: 0;
+  z-index: 1;
   object-fit: cover;
 }
 
@@ -221,10 +264,11 @@
   }
 
   .slide-name {
-    left: 20px;
-    bottom: 20px;
+    right: 20px;
+    bottom: 0px;
     color: #fff;
-    font-size: 15px;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.75);
+    font-size: 22px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -251,8 +295,8 @@
 
 .pagination {
   width: auto;
-  bottom: size(20);
-  right: size(20);
+  top: size(20);
+  left: size(20);
   justify-content: center;
 }
 
@@ -346,58 +390,69 @@
     // background-attachment: fixed;
     overflow: hidden;
   }
- .txt{
-  width: sizem(310);
-  top: sizem(320);
-  left: sizem(32.5);display: block;
+  .txt {
+    width: sizem(310);
+    top: sizem(320);
+    left: sizem(32.5);
+    display: block;
   }
-
 
   .title {
     width: 100%;
     line-height: 1.6;
-    font-size: sizem(25);right:0;top:sizem(3);
-    span{display:inline-block;}
+    font-size: sizem(25);
+    right: 0;
+    top: sizem(3);
+    span {
+      display: inline-block;
+    }
   }
 
   .hr {
     width: 100%;
     height: sizem(2);
-    position: relative;right: sizem(0);
+    position: relative;
+    right: sizem(0);
     margin: sizem(12) 0;
   }
 
   .s-title {
-    top:0;
+    top: 0;
     left: sizem(0);
     width: sizem(279);
   }
 
   .subtitle {
     width: 100%;
-    font-size: sizem(18);right: sizem(-1);
+    font-size: sizem(18);
+    right: sizem(-1);
   }
 
   .desc {
     font-size: sizem(15);
     line-height: 1.6;
     letter-spacing: sizem(2.09);
-    white-space: nowrap;display: block;
-    span{writing-mode:initial;display: block;
-      width:auto; 
-      margin:0 0 0.0em;
-      &.p{
-      margin:0 0 0.8em;}
-      &.p2{
-      margin:0 0 0.8em -0.5em;}
+    white-space: nowrap;
+    display: block;
+    span {
+      writing-mode: initial;
+      display: block;
+      width: auto;
+      margin: 0 0 0em;
+      &.p {
+        margin: 0 0 0.8em;
+      }
+      &.p2 {
+        margin: 0 0 0.8em -0.5em;
+      }
     }
   }
 
   .img {
     width: sizem(142);
-    top:sizem(30);
+    top: sizem(30);
     left: sizem(-3);
-  position: relative;
+    position: relative;
   }
 
   /* Swipe */
@@ -558,36 +613,37 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
+import info from '@/info'
 import slider from '@/mixins/slider.js'
 
 export default {
   name: 'section5',
 
   mixins: [slider],
-  props: ['viewIndex'],
 
   data() {
     return {
       isPC,
       isMobile,
       isTablet,
+      info,
       isDialog: false,
       slideList: [
         {
-          img: require('./s5/1林森公園.jpg'),
-          name: '林森公園',
+          img: require('./s5/slider_2-1.jpg'),
+          name: '南崁溪沿岸綠帶實景',
         },
         {
-          img: require('./s5/2林森公園.jpg'),
-          name: '林森公園',
+          img: require('./s5/slider_2-2.jpg'),
+          name: '自行車道',
         },
         {
-          img: require('./s5/3康樂公園.jpg'),
-          name: '康樂公園',
+          img: require('./s5/slider_2-3.jpg'),
+          name: '南崁溪沿岸綠帶實景',
         },
         {
-          img: require('./s5/4中山捷運站線型公園.jpg'),
-          name: '中山捷運站線型公園',
+          img: require('./s5/slider_2-4.jpg'),
+          name: '經國環保公園',
         },
       ],
     }
@@ -601,13 +657,6 @@ export default {
 
   computed: {},
 
-  watch: {
-    viewIndex() {
-      if (this.viewIndex === 5) {
-        this.slideIndex = 0
-        console.log(this.slideIndex, 'slideIndex')
-      }
-    },
-  },
+  watch: {},
 }
 </script>

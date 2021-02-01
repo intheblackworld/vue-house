@@ -97,7 +97,7 @@ export default {
   right: 30px;
   width: 40px;
   height: 40px;
-  background-color: #af1f24;
+  background-color: #df982a;
   cursor: pointer;
 
   // img {

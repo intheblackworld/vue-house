@@ -1,62 +1,24 @@
 <template>
-  <div class="bg">
-    <div>
-      <div class="animate-slide" v-if="!isMobile">
-       <!--  <img src="./s1/1.png" 
-        :alt="`${info.caseName}logo`" class="left1" data-parallax="0">
-        <img src="./s1/2.png" alt="" class="left2">
-        <img src="./s1/4.png" alt="" class="left3"> -->
-        <img src="./s1/pc4.png" 
-        :alt="`${info.caseName}_logo`" class="pc4" data-parallax="4">
-        <img src="./s1/pc3.png" 
-        :alt="`${info.caseName}_ogo`" class="pc3" data-parallax="3">
-        <img src="./s1/pc2.png" 
-        :alt="`${info.caseName}_logo`" class="pc2" data-parallax="2">
-        <img src="./s1/pc1.png" 
-        :alt="`${info.caseName}_logo`" class="pc1" data-parallax="1">
-      </div>
-      <div class="animate-slide" v-if="isMobile">
-        <!-- <img src="./s1/2.png" alt="" class="left2">
-        <img src="./s1/4.png" alt="" class="left3"> -->
-        <img src="./s1/mo3.png" alt="" class="mo3" data-parallax="3">
-        <img src="./s1/mo2.png" alt="" class="mo2" data-parallax="2">
-        <img src="./s1/mo1.png" alt="" class="mo1" data-parallax="1">
-      </div>
-      <div class="s1">
-        <div class="t1">
-        <span>202</span>1桃園最潮的生活浪潮</div>
-      <img src="./s1/title.png" 
-        :alt="`${info.caseName}_title`" class="logo">
-      <img src="./s1/t2.png" 
-        :alt="`${info.caseName}_logo`" class="t2">
-      <img src="./s1/t.png" alt="" class="t">
-        <div class="t3">（03）325-7555</div>
-      <img src="./s1/t4.png" alt="" class="t4">
-      <div class="order-btn flex-c" v-scroll-to="{element: '#contact'}">
-          <div>
-            <img src="./s1/reservation.png" :alt="`${info.caseName}_reservation`">
-            <div>搶先預約</div>
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20.71 16.72' fill='%23ffb321'%3E%3Cpolygon class='cls-1' points='10.36 16.72 20.71 0 0 0 10.36 16.72'/%3E%3C/svg%3E"  
-        :alt="`${info.caseName}_logo`" class="botton">
-          </div>
-        </div>
-      </div>
-       <!-- <parallax breakpoint="(min-width: 68px)" :speed-factor="-0.7" direction="up">
-        <div class="order-btn flex-c" v-scroll-to="{element: '#contact'}">
-          <div>
-            <img src="./s1/reservation.png" :alt="`${info.caseName}_reservation`">
-            <div>搶先預約</div>
-            <parallax class="botton" breakpoint="(min-width: 68px)" :speed-factor="-0.255" direction="up">
-            <img src="./s1/botton.png" 
-        :alt="`${info.caseName}_logo`">
-        </parallax>
-          </div>
-        </div>
-      </parallax> -->
-      <!-- <parallax :class="`animate-slide`" breakpoint="(min-width: 68px)" :speed-factor="0.5" direction="down"> -->
-      
-      <!-- </parallax> -->
+  <div class="section1">
+    <div class="animate-slide" v-if="!isMobile">
+      <img src="./s1/漂浮物件_分層/class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
+      <img src="./s1/漂浮物件_分層/class_2.png" :alt="`${info.caseName}_logo`" class="pc2" data-parallax="3">
+      <!-- <img src="./s1/pc2.png" :alt="`${info.caseName}_logo`" class="pc2" data-parallax="2">
+      <img src="./s1/pc1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="1"> -->
     </div>
+    <div class="animate-slide" v-if="isMobile">
+      <img src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
+      <img src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2">
+      <img src="./s1/mo1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
+    </div>
+    <h1 class="title">
+      G12幸福到站 <span>|</span> 26-40坪 <span>|</span> (03) 325-7555
+    </h1>
+    <h1 class="subtitle">
+      新潮生活 登入經國
+    </h1>
+    <img src="./s1/title.png" :alt="`${info.caseName}_title`" class="logo">
+    <img src="./s1/btn.png" :alt="`${info.caseName}_bg`" class="order-btn flex-c" v-scroll-to="{element: '#contact'}">
   </div>
 </template>
 <style lang="scss">
@@ -84,103 +46,76 @@
   .Masthead,
   .Masthead__image {
     height: auto !important;
-    min-height:152vw;
+    min-height: 152vw;
   }
 }
 </style>
 <style lang="scss" scoped>
 @import '~@/assets/style/function.scss';
-.bg {
+.section1 {
   background-size: cover;
   position: relative;
-  // z-index: 5;
-  height:size(1080);
-  background: #2d73ab;
- // background-size: cover;
-
-}
-.s1 {
-  height: 100vh;
-  min-height: size(900);
-  max-height: size(1080);
-  width: 100%;
-  position: absolute;
+  z-index: 3;
+  overflow: visible;
+  width: 100vw;
+  min-height: size(1080);
+  height: size(1080);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 131, 190, 0) 13%,
+    rgba(0, 131, 190, 0.66) 42%,
+    #0083be 57%
+  );
+  // background-size: cover;
 }
 
 .logo {
   @include img_c_pc(779, 353);
-  top:calc(50% - 14.5vw);
-}
-
-.t {
-  @include img_l_pc(410, 0,668);
-  top:calc(50% + 14.8vw);
-}
-
-.t1 {
-  @include img_c_pc(1920, 50);
-  letter-spacing: 0.5em;
-  font-weight: 500;
-  font-size: size(49);
-  text-align: center;
-  color: #ffb321;
-  margin-left: 0.3em;
-span{
-  letter-spacing: 0.1em;}
-}
-.t2{
-  @include img_c_pc(567, 0);
-  top:calc(50% + 3vw);
-}
-.t3 {
-  @include img_c_pc(659, 50);
-  top:calc(50% + 18vw);
-  letter-spacing: -0.015em;
-  font-weight:700;
-  font-size: size(60);
-  text-align: left;
-  color: #fff;
-span{
-  letter-spacing: 0.1em;}
-}
-.t4{
-  @include img_r_pc(303, 0,420);
-  top:calc(50% - 3.7vw);
-    animation: an3 3s infinite alternate;
-    transform-origin: 10% 90%
+  top: calc(50% - 14.5vw);
 }
 
 .order-btn {
-  @include img_r_pc(200, 0,560);
-  top:calc(50% + 12.3vw);
+  @include img_c_pc(171, 688);
+  // top: calc(50% + 12.3vw);
   z-index: 10;
-  height: size(200);
-  background-color: #ff6855;
-  border-radius: 999px;
-  font-size: size(34);
-  font-weight: 900;
+  cursor: pointer;
+  &:hover {
+    animation: an4 3s infinite;
+  }
+}
+
+.title {
+  @include img_c_pc(772, 530);
+  font-size: size(42);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.24;
+  letter-spacing: size(0.29);
+  text-align: center;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  span {
+    color: #df9529;
+    font-size: size(30);
+    line-height: 1.24;
+  }
+}
+
+.subtitle {
+  @include img_c_pc(772, 591);
+  font-size: size(55.9);
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: 0.1em;
-  text-align: center;
-  color: #ffffff;
-  cursor: pointer;
-  > div {position: relative;
-    width: 100%;top:-0.3em;
-  }
-  img{
-  height:0.485em;}
-  &:hover{
-    animation: an4 3s infinite;}
-}
-
-.botton {
-  position: absolute;
-  top:calc(50% + 1.5em);
-  left:0;
-  width: 100%;
-  height:size(18);
+  letter-spacing: size(37.98);
+  text-align: left;
+  color: #df982a;
+  white-space: nowrap;
 }
 
 .animate-slide {
@@ -215,20 +150,20 @@ span{
   }
 
   .pc1 {
-    @include img_r_pc(1706, 0, 114);
+    @include img_r_pc(1920, 0, 0);
   }
 
   .pc2 {
-    @include img_r_pc(1962, 52, -44);
+    @include img_r_pc(1920, 0, 0);
   }
 
-  .pc3 {
-    @include img_r_pc(1994, 400, -44);
-  }
+  // .pc3 {
+  //   @include img_r_pc(1994, 400, -44);
+  // }
 
-  .pc4 {
-    @include img_r_pc(1700, 630,200);
-  }
+  // .pc4 {
+  //   @include img_r_pc(1700, 630, 200);
+  // }
 }
 
 @keyframes an {
@@ -243,10 +178,10 @@ span{
 }
 @keyframes an4 {
   80% {
-    transform: scale(1.2)rotate(5deg);
+    transform: scale(1.2) rotate(5deg);
   }
   85% {
-    transform: scale(1) ;
+    transform: scale(1);
   }
   90% {
     transform: scale(1.1);
@@ -267,14 +202,13 @@ span{
     height: sizem(172 + 376);
     position: relative;
     z-index: 2;
-   // overflow: hidden;
-
+    // overflow: hidden;
   }
-.s1 {
-  height:  sizem(172 + 176);
-  min-height: sizem(172 + 176);
-  max-height:  sizem(172 + 176);
-}
+  .s1 {
+    height: sizem(172 + 176);
+    min-height: sizem(172 + 176);
+    max-height: sizem(172 + 176);
+  }
   .logo {
     @include img_c_m(300, 190);
   }
@@ -282,24 +216,27 @@ span{
   .t {
     @include img_c_m(232, 450);
   }
-.t1 {
-  @include img_c_m(375, 135);
-  font-size: sizem(21);
-  letter-spacing: 0.2em;
-  margin-left: 0.1em;}
+  .t1 {
+    @include img_c_m(375, 135);
+    font-size: sizem(21);
+    letter-spacing: 0.2em;
+    margin-left: 0.1em;
+  }
 
-.t2{
-  @include img_c_m(280, 320);
-}
-.t3 {
-  @include img_c_m(375, 482);
-  font-size: sizem(34);
-  text-align: center;margin-right: 0.3em}
-.t4{
-  @include img_r_m(70, 310,0);
+  .t2 {
+    @include img_c_m(280, 320);
+  }
+  .t3 {
+    @include img_c_m(375, 482);
+    font-size: sizem(34);
+    text-align: center;
+    margin-right: 0.3em;
+  }
+  .t4 {
+    @include img_r_m(70, 310, 0);
     animation: an3 3s infinite alternate;
-    transform-origin: 10% 90%
-}
+    transform-origin: 10% 90%;
+  }
 
   .order-btn {
     @include img_c_m(172, 610);
@@ -310,10 +247,10 @@ span{
       width: 100%;
       cursor: pointer;
     }
-  &:hover{
-    animation:none;}
+    &:hover {
+      animation: none;
+    }
   }
-
 
   .animate-slide {
     width: 100%;

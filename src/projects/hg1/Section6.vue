@@ -1,6 +1,14 @@
 <template>
-  <div>
-    <div class="section6">
+  <div class="section6 flex-ac">
+    <div class="animate-slide" v-if="!isMobile">
+      <img src="./s6/漂浮物件_分層/6_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
+    </div>
+    <div class="animate-slide" v-if="isMobile">
+      <img src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
+      <img src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2">
+      <img src="./s1/mo1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
+    </div>
+    <div class="relative container">
       <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -18,28 +26,17 @@
           </div>
         </div>
       </div>
-     <!--  <div v-if="!isMobile">
-        <img src="./s6/img.png" alt="" class="img absolute">
-        <img src="./s6/t.png" alt="" class="t absolute">
-      </div> -->
-      <div class="txt absolute">
-        <div class="subtitle">
-          從您選擇的地段，讀出您的身段
-        </div>
-        <div class="title">
-          以精品風景<span></span>標註您蹤影
-        </div>
-        <div class="hr"></div>
-        <div class="desc">
-          <span>LV旗艦店、日本皇室御用飯店-大倉久和、</span>
-          <span class="p">名流婚宴首席-晶華酒店＆精品名城…</span>
-          <span>老貴時尚史、佐以後起之秀-赤峰文創，</span>
-          <span>不分年齡，上流指數皆在此持續加權！</span>
-          <span class="p">別讓自己僅是風潮的打卡者。</span>
-          <span>爭得一席，待城市來加值您！</span>
-        </div>
-        <img src="./s6/img.png" alt="" class="img">
+      <div class="content-bg" data-aos="fade-up" data-aos-delay="200"></div>
+      <h1 class="title" data-aos="fade-up" data-aos-delay="400">
+        都會時尚的 旅人
+      </h1>
+      <h1 class="subtitle" data-aos="fade-up" data-aos-delay="600">
+        CITY
+      </h1>
+      <div class="desc" data-aos="fade-up" data-aos-delay="800">
+        十分鐘生活圈，家樂福、藝文特區、南崁COSTCO、特力屋、台茂購物中心等五大商圈環繞，多彩多姿的超強機能，食衣住行一次滿足，讓您擁有一城之富。
       </div>
+      <img src="./s6/style_arrow_3.png" :alt="`${info.caseName}_style_arrow`" class="arrow" data-aos="fade-up" data-aos-delay="200">
     </div>
   </div>
 </template>
@@ -52,6 +49,17 @@
   min-height: size(900);
   max-height: size(1080);
   position: relative;
+  // min-height: size(900);
+  // background-image: url('./s2/bg.jpg');
+  // background-size: 100% 100%;
+  // background-position: 0 0;
+  // background-attachment: fixed;
+  // overflow: hidden;
+}
+
+.container {
+  width: 100vw;
+  height: size(671);
 }
 
 .bg-img {
@@ -68,86 +76,95 @@
     position: relative;
   }
 }
-.txt{
-  width: size(332);
-  top:calc(50% - 18.2vw);
-  left: size(214);
-  display: flex;
-  flex-direction:row-reverse;
-  padding: 0 0 0 0;
+
+.content-bg {
+  @include div_r_pc(584.2, 429.4, 469 - 250, 178);
+  background-color: #0083be;
+}
+
+.title {
+  @include img_r_pc(400, 533 - 250, 227);
+  font-size: size(53.4);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(0.16);
+  text-align: left;
+  color: #fff;
+  white-space: nowrap;
+  span {
+    font-size: size(64.6);
   }
-  .title {
-    width: 1.2em;
-    font-size: size(44);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing:0.06em;
-    text-align: left;
-    color: #af1f24;
-    position: relative;right:0;top:-0.2em;
-    span{display:block;width:0.5em;height: 0.5em;}
-    //white-space: nowrap;
-  }
-  .subtitle {
-    width: 1.2em;
-    font-size: size(25);
-    font-weight: bold;
-    letter-spacing:0.07em;
-    text-align: left;
-    position: relative;right: size(-6);
-    color: #323333;word-break: break-all;
-  flex-direction:row-reverse;word-wrap:break-word;
-  }
-  .desc {   
-    font-size: size(21);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: 0.1em;
-    text-align: left;
-    color: #323333;
-    position: relative;margin:size(48) size(21) 0 size(-10);
-  display: flex;align-items:flex-start; word-break: break-all;
-  flex-direction:row-reverse;word-wrap:break-word;
-    //white-space: nowrap;
-    span{writing-mode: vertical-rl;
-      width: 1.4em; 
-      margin:0 0 0 0.3em;
-      &.p{
-      margin:0 0 0 0.8em;}
+}
+
+.subtitle {
+  @include img_r_pc(400, 600 - 250, 227);
+  font-size: size(61);
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.03;
+  letter-spacing: size(1.4);
+  text-align: left;
+  color: #df9529;
+  white-space: nowrap;
+}
+
+.desc {
+  @include img_r_pc(400, 700 - 250, 227);
+  font-size: size(19);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.17;
+  letter-spacing: size(1.96);
+  text-align: left;
+  color: #fff;
+}
+
+.arrow {
+  @include img_r_pc(41, 610 - 250, 292);
+  transform: rotate(90deg);
+}
+
+.animate-slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  // z-index: 3;
+  top: 0;
+  left: 0;
+  transition: all 0.5s;
+  > img {
+    @for $i from 1 through 10 {
+      $randomNum: random(4) + 3;
+      &:nth-child(#{$i}) {
+        transform: translateY((random(10) - 50) + px);
+        animation: an ($randomNum + s) 3s infinite alternate;
+      }
     }
   }
 
-
-  .hr {
-    width:size(226);
-    height:size(3);
-    position: absolute;
-    top:0;
-    left:0;
-    background-color: #af1f24;
+  .pc1 {
+    @include img_l_pc(1920, 0, 0);
+    // z-index: 1;
   }
-.t {width: size(332);
-  top: size(105);
-  left: size(214);
 }
 
-.img {
-  width: size(208);
-  top: size(556 - 105);
-  left: size(188 - 172);
-  position: absolute;
+@keyframes an {
+  to {
+    transform: translateY(0);
+  }
 }
 
 /* Swipe */
 .swipe {
-  width: size(1310);
-  height: size(703);
-  top:calc(50% - 18.3vw);
-  right: 0;
+  width: size(1252);
+  height: size(671);
+  top: size(-100);
+  left: 0;
+  z-index: 1;
   object-fit: cover;
 }
 
@@ -206,10 +223,11 @@
   }
 
   .slide-name {
-    left: 20px;
-    bottom: 20px;
+    right: 20px;
+    top: 0px;
     color: #fff;
-    font-size: 15px;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.75);
+    font-size: 22px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -322,68 +340,80 @@
 @media screen and (max-width: 767px) {
   .section6 {
     width: 100vw;
-    height: sizem(790);
+    height: sizem(870);
     min-height: auto;
-  max-height:initial;
+    max-height: initial;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
     // background-position: 0 0;
     // background-attachment: fixed;
     overflow: hidden;
   }
-.txt{
-  width: sizem(310);
-  top: sizem(320);
-  left: sizem(32.5);display: block;
+  .txt {
+    width: sizem(310);
+    top: sizem(320);
+    left: sizem(32.5);
+    display: block;
   }
-
 
   .title {
     width: 100%;
     line-height: 1.6;
-    font-size: sizem(25);right:0;top:sizem(3);
-    span{display:inline-block;}
+    font-size: sizem(25);
+    right: 0;
+    top: sizem(3);
+    span {
+      display: inline-block;
+    }
   }
 
   .hr {
     width: 100%;
     height: sizem(2);
-    position: relative;right: sizem(0);
+    position: relative;
+    right: sizem(0);
     margin: sizem(12) 0;
   }
 
   .s-title {
-    top:0;
+    top: 0;
     left: sizem(0);
     width: sizem(279);
   }
 
   .subtitle {
     width: 100%;
-    font-size: sizem(18);right: sizem(-1);
+    font-size: sizem(18);
+    right: sizem(-1);
   }
 
   .desc {
     font-size: sizem(15);
     line-height: 1.6;
     letter-spacing: sizem(2.09);
-    white-space: nowrap;display: block;
-    span{writing-mode:initial;display: block;
-      width:auto; 
-      margin:0 0 0.0em;
-      &.p{
-      margin:0 0 0.8em;}
-      &.p2{
-      margin:0 0 0.8em -0.5em;}
+    white-space: nowrap;
+    display: block;
+    span {
+      writing-mode: initial;
+      display: block;
+      width: auto;
+      margin: 0 0 0em;
+      &.p {
+        margin: 0 0 0.8em;
+      }
+      &.p2 {
+        margin: 0 0 0.8em -0.5em;
+      }
     }
   }
 
   .img {
-    width: sizem(135);
-    top:sizem(30);
+    width: sizem(142);
+    top: sizem(30);
     left: sizem(-3);
-  position: relative;
+    position: relative;
   }
+
   /* Swipe */
   .swipe {
     width: 100vw;
@@ -542,36 +572,41 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
+import info from '@/info'
 import slider from '@/mixins/slider.js'
 
 export default {
   name: 'section6',
 
   mixins: [slider],
-  props: ['viewIndex'],
 
   data() {
     return {
       isPC,
       isMobile,
       isTablet,
+      info,
       isDialog: false,
       slideList: [
         {
-          img: require('./s6/1中山北路二段精品大道.jpg'),
-          name: '中山北路二段精品大道',
+          img: require('./s6/slider_3-1.jpg'),
+          name: '家樂福商圈實景',
         },
         {
-          img: require('./s6/2大倉久和.jpg'),
-          name: '大倉久和',
+          img: require('./s6/slider_3-2.jpg'),
+          name: '藝文特區',
         },
         {
-          img: require('./s6/3晶華飯店.jpg'),
-          name: '晶華飯店',
+          img: require('./s6/slider_3-3.jpg'),
+          name: '南崁COSTCO',
         },
         {
-          img: require('./s6/4老爺酒店.jpg'),
-          name: '老爺酒店',
+          img: require('./s6/slider_3-4.jpg'),
+          name: '特力屋',
+        },
+        {
+          img: require('./s6/slider_3-5.jpg'),
+          name: '台茂購物中心',
         },
       ],
     }
@@ -585,13 +620,6 @@ export default {
 
   computed: {},
 
-  watch: {
-    viewIndex() {
-      if (this.viewIndex === 6) {
-        this.slideIndex = 0
-        console.log(this.slideIndex, 'slideIndex')
-      }
-    },
-  },
+  watch: {},
 }
 </script>

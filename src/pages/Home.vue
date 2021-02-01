@@ -2,60 +2,31 @@
   <div class="home no-padding-top">
     <Loading :loading="load" />
     <SideNavigation />
-    <vue-lazy-component class="section relative" id="section1" @init="init" style="z-index: 3;">
+    <vue-lazy-component class="section relative" id="section1">
       <Section1 />
     </vue-lazy-component>
 
     <vue-lazy-component class="section" id="section2">
       <Section2 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section3"
-    >
-      <Section3 :viewIndex="viewIndex" />
+    <vue-lazy-component>
+      <div class="top-bg">
+        <Section3 />
+        <Section4 />
+        <Section5 />
+        <Section6 />
+      </div>
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section relative"
-      id="section4"
-      style="z-index: 3;"
-    >
-      <Section4 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section5"
-    >
-      <Section5 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section6"
-    >
-      <Section6 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section7"
-    >
+    <vue-lazy-component class="section" id="section7">
       <Section7 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section8"
-    >
+    <vue-lazy-component class="section" id="section8">
       <Section8 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section9"
-    >
+    <vue-lazy-component class="section" id="section9">
       <Section9 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section11"
-    >
+    <vue-lazy-component class="section" id="section11">
       <Section11 />
     </vue-lazy-component>
     <vue-lazy-component class="section" id="contact">
@@ -75,7 +46,16 @@
 .section .fp-tableCell {
   height: auto !important;
 }
-#contact{z-index: 3;}
+#contact {
+  z-index: 3;
+}
+
+.top-bg {
+  width: 100vw;
+  background-image: url('~@/projects/hg1/s3/technology_bg.png');
+  background-size: cover;
+  margin-top: -30px;
+}
 </style>
 
 <script>
@@ -161,10 +141,8 @@ export default {
           allImagesLoaded()
         }
       }
-      $('img').each(function(idx, img) {
-        $('<img>')
-          .on('load', imageLoaded)
-          .attr('src', $(img).attr('src'))
+      $('img').each(function (idx, img) {
+        $('<img>').on('load', imageLoaded).attr('src', $(img).attr('src'))
       })
     })
     // window.location = "https://ywh.nhc888.com.tw/"
@@ -175,35 +153,34 @@ export default {
     // if (this.isMobile) {
     //   this.$refs.fullPage.api.setResponsive(true)
     // }
-    
   },
   methods: {
     init() {},
-    onScroll() {
-      // 获取所有锚点元素
-      const navContents = document.querySelectorAll('.section')
-      // 所有锚点元素的 offsetTop
-      const offsetTopArr = []
-      navContents.forEach(item => {
-        offsetTopArr.push(item.offsetTop)
-      })
-      // 获取当前文档流的 scrollTop
-      const scrollTop =
-        document.documentElement.scrollTop || document.body.scrollTop
-      // 定义当前点亮的导航下标
-      let navIndex = 0
-      for (let n = 0; n < offsetTopArr.length; n++) {
-        // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
-        // 那么此时导航索引就应该是n了
-        if (scrollTop >= offsetTopArr[n] - 100) {
-          navIndex = n
-        }
-      }
-      if (this.viewIndex === navIndex + 1) {
-        this.viewIndex = navIndex + 1
-      }
-      // this.viewIndex = navIndex + 1
-    },
+    // onScroll() {
+    //   // 获取所有锚点元素
+    //   const navContents = document.querySelectorAll('.section')
+    //   // 所有锚点元素的 offsetTop
+    //   const offsetTopArr = []
+    //   navContents.forEach((item) => {
+    //     offsetTopArr.push(item.offsetTop)
+    //   })
+    //   // 获取当前文档流的 scrollTop
+    //   const scrollTop =
+    //     document.documentElement.scrollTop || document.body.scrollTop
+    //   // 定义当前点亮的导航下标
+    //   let navIndex = 0
+    //   for (let n = 0; n < offsetTopArr.length; n++) {
+    //     // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
+    //     // 那么此时导航索引就应该是n了
+    //     if (scrollTop >= offsetTopArr[n] - 100) {
+    //       navIndex = n
+    //     }
+    //   }
+    //   if (this.viewIndex === navIndex + 1) {
+    //     this.viewIndex = navIndex + 1
+    //   }
+    //   // this.viewIndex = navIndex + 1
+    // },
 
     // onLeave(origin, destination, direction) {
     //   if (!this.isMobile) {
