@@ -35,17 +35,18 @@
           </div>
         </div>
       </div>
-      <h1 class="title" data-aos="fade-up" data-aos-delay="400">
+      <h1 class="title" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="400">
         掌握速度的 巨人
       </h1>
-      <h1 class="subtitle" data-aos="fade-up" data-aos-delay="600">
+      <h1 class="subtitle" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="600">
         SPEED
       </h1>
-      <div class="desc" data-aos="fade-up" data-aos-delay="800">
+      <div class="desc" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="800">
         1分鐘即刻擁有轉運站全天候330班次暢行全台；3分鐘國道一號，擁南崁 / 中正北雙交流道，台北好近；未來再享捷運G12站增值潛力，黃金地段天生優越！
       </div>
-      <img src="./s3/style_arrow.png" :alt="`${info.caseName}_style_arrow`" class="arrow" data-aos="fade-up" data-aos-delay="200">
-      <img src="./s4/timeline.png" alt="" class="timeline" data-aos="fade-up" data-aos-delay="800">
+      <img src="./s3/style_arrow.png" :alt="`${info.caseName}_style_arrow`" class="arrow" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="200">
+      <img src="./s4/timeline.png" alt="" class="timeline" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="800" v-if="isPC">
+      <img src="./s4/timeline.png" alt="" class="timeline" v-if="isMobile">
     </div>
   </div>
 </template>

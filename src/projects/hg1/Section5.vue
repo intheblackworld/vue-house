@@ -5,9 +5,9 @@
       <img src="./s5/漂浮物件_分層/5_class_2.png" :alt="`${info.caseName}_logo`" class="pc2" data-parallax="4">
     </div>
     <div class="animate-slide" v-if="isMobile">
-      <img src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
-      <img src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2">
-      <img src="./s1/mo1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
+      <!-- <img src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
+      <img src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2"> -->
+      <!-- <img src="./mo/s5/漂浮物件_單一/" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1"> -->
     </div>
     <div class="relative container">
       <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
@@ -33,17 +33,17 @@
       <div class="big-eng">
         RICH LIFE
       </div>
-      <div class="content-bg" data-aos="fade-up" data-aos-delay="200"></div>
-      <h1 class="title" data-aos="fade-up" data-aos-delay="400">
+      <div class="content-bg" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="200"></div>
+      <h1 class="title" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="400">
         健康生活的 主人
       </h1>
-      <h1 class="subtitle" data-aos="fade-up" data-aos-delay="600">
+      <h1 class="subtitle" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="600">
         HEALTH
       </h1>
-      <div class="desc" data-aos="fade-up" data-aos-delay="800">
+      <div class="desc" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="800">
         都市人夢寐以求的生活，擁享全桃園唯一有水岸自行車道的重劃區！總長約30公里，沿岸將興建多座商辦、與百貨商圈，出門綠意環繞，涵養日日森活。
       </div>
-      <img src="./s5/style_arrow_2.png" :alt="`${info.caseName}_style_arrow`" class="arrow" data-aos="fade-up" data-aos-delay="200">
+      <img src="./s5/style_arrow_2.png" :alt="`${info.caseName}_style_arrow`" class="arrow" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="200">
     </div>
   </div>
 </template>
@@ -381,88 +381,108 @@
 @media screen and (max-width: 767px) {
   .section5 {
     width: 100vw;
-    height: sizem(870);
+    height: sizem(474);
     min-height: auto;
     max-height: initial;
+    background-color: #0083be;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
     // background-position: 0 0;
     // background-attachment: fixed;
     overflow: hidden;
   }
-  .txt {
-    width: sizem(310);
-    top: sizem(320);
-    left: sizem(32.5);
-    display: block;
+  .container {
+    height: sizem(474);
+  }
+  // .timeline {
+  //   @include img_c_m(310, 496);
+  // }
+
+  .arrow {
+    @include img_r_m(37, 303, 34);
+    opacity: 1 !important;
   }
 
   .title {
-    width: 100%;
-    line-height: 1.6;
+    @include img_l_m(196, 256, 32);
     font-size: sizem(25);
-    right: 0;
-    top: sizem(3);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: sizem(0.08);
+    text-align: left;
+    color: #fff;
+    white-space: nowrap;
+    opacity: 1 !important;
     span {
-      display: inline-block;
+      font-size: sizem(30);
     }
-  }
-
-  .hr {
-    width: 100%;
-    height: sizem(2);
-    position: relative;
-    right: sizem(0);
-    margin: sizem(12) 0;
-  }
-
-  .s-title {
-    top: 0;
-    left: sizem(0);
-    width: sizem(279);
   }
 
   .subtitle {
-    width: 100%;
-    font-size: sizem(18);
-    right: sizem(-1);
+    @include img_l_m(190, 303, 32);
+    font-size: sizem(28);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.07;
+    letter-spacing: sizem(0.64);
+    text-align: left;
+    color: #df9529;
+    opacity: 1 !important;
+    white-space: nowrap;
   }
 
   .desc {
-    font-size: sizem(15);
-    line-height: 1.6;
-    letter-spacing: sizem(2.09);
-    white-space: nowrap;
-    display: block;
-    span {
-      writing-mode: initial;
-      display: block;
-      width: auto;
-      margin: 0 0 0em;
-      &.p {
-        margin: 0 0 0.8em;
-      }
-      &.p2 {
-        margin: 0 0 0.8em -0.5em;
-      }
-    }
+    @include img_l_m(308, 357, 33);
+    font-size: size(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: sizem(1.2);
+    text-align: left;
+    opacity: 1 !important;
+    color: #fff;
   }
 
-  .img {
-    width: sizem(142);
-    top: sizem(30);
-    left: sizem(-3);
-    position: relative;
+  .animate-slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
+    > img {
+      @for $i from 1 through 10 {
+        $randomNum: random(4) + 3;
+        &:nth-child(#{$i}) {
+          transform: translateY((random(10) - 50) + px);
+          animation: an ($randomNum + s) 3s infinite alternate;
+        }
+      }
+    }
+
+    .mo1 {
+      @include img_r_m(60, 230, -20);
+    }
+
+    // .mo2 {
+    //   @include img_c_m(375, -20);
+    // }
   }
 
   /* Swipe */
   .swipe {
     width: 100vw;
-    height: sizem(300);
+    height: sizem(201);
     min-height: auto;
     top: sizem(0);
     left: sizem(0);
     object-fit: cover;
+    z-index: 50 !important;
+    opacity: 1 !important;
   }
 
   // begin
@@ -517,7 +537,7 @@
 
     img {
       width: 100%;
-      height: sizem(300);
+      height: sizem(201);
       object-fit: cover;
     }
 
@@ -600,7 +620,7 @@
     width: 100%;
     height: 100%;
     padding: 0 15px;
-    z-index: 3;
+    z-index: 30;
 
     .prev-btn,
     .next-btn {

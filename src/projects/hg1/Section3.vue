@@ -27,14 +27,14 @@
     <div class="item title-4" data-aos="fade-down" data-aos-delay="1100">
       中正藝文<br />商圈
     </div>
-    <h1 class="title" data-aos="fade-up" data-aos-delay="400">
+    <h1 class="title" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="400">
       信義區<span>2.0</span>的 超人
     </h1>
-    <h1 class="subtitle" data-aos="fade-up" data-aos-delay="600">
+    <h1 class="subtitle" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="600">
       2025<br />
       NEXT FUTURE
     </h1>
-    <div class="desc" data-aos="fade-up" data-aos-delay="800">
+    <div class="desc" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="800">
       「大經國特定計畫區」以生活商業生態的多元發展，遠雄及中悅建設百億資金注入造鎮，加上中國人壽即將進駐，經國特區將躍升為國門最大頂級商辦中心，聚焦繁榮璀璨都心，有望成為台灣第二座信義計畫區！
     </div>
   </div>
@@ -231,7 +231,7 @@
   }
 
   .arrow {
-    @include img_r_m(37, 370 - 140, 34);
+    @include img_r_m(37, 370, 34);
     opacity: 1 !important;
   }
 
@@ -279,7 +279,7 @@
   }
 
   .title {
-    @include img_l_m(196, 286 - 140, 32);
+    @include img_l_m(196, 286, 32);
     font-size: sizem(25);
     font-weight: bold;
     font-stretch: normal;
@@ -296,7 +296,7 @@
   }
 
   .subtitle {
-    @include img_l_m(190, 337 - 140, 32);
+    @include img_l_m(190, 337, 32);
     font-size: sizem(28);
     font-weight: 300;
     font-stretch: normal;
@@ -310,7 +310,7 @@
   }
 
   .desc {
-    @include img_l_m(308, 428 - 160, 33);
+    @include img_l_m(308, 428, 33);
     font-size: size(15);
     font-weight: normal;
     font-stretch: normal;

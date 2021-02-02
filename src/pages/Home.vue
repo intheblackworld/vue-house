@@ -17,9 +17,9 @@
         <Section6 />
       </div>
     </vue-lazy-component>
-    <vue-lazy-component class="section" id="section7">
+    <!-- <vue-lazy-component class="section" id="section7">
       <Section7 />
-    </vue-lazy-component>
+    </vue-lazy-component> -->
     <vue-lazy-component class="section" id="section8">
       <Section8 />
     </vue-lazy-component>

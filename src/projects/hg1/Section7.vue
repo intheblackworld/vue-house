@@ -1,23 +1,27 @@
 <template>
   <div class="section7">
-    <img src="./s7/structure_img.png" :alt="`${info.caseName}_bg`" class="bg-img">
-    <h1 class="title" data-aos="fade-up" data-aos-delay="400">
+    <img src="./s7/structure_img.png" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC">
+    <img src="./mo/s7/m.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isMobile">
+    <div class="m-title" v-if="isMobile">
+      ARCHITECTURE
+    </div>
+    <h1 class="title" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="400">
       建築新體驗
     </h1>
-    <h1 class="subtitle" data-aos="fade-up" data-aos-delay="600">
+    <h1 class="subtitle" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="600">
       全新風潮，新時代鉅獻
     </h1>
-    <div class="big-title" data-aos="fade-up" data-aos-delay="800">
+    <div class="big-title" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="800">
       STRUCTURE
     </div>
-    <img src="./s7/style_arrow_4.png" :alt="`${info.caseName}_style_arrow`" class="arrow" data-aos="fade-up" data-aos-delay="200">
+    <img src="./s7/style_arrow_4.png" :alt="`${info.caseName}_style_arrow`" class="arrow" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="200">
     <div class="animate-slide" v-if="!isMobile">
       <img src="./s7/漂浮物件_分層/7_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
     </div>
     <div class="animate-slide" v-if="isMobile">
-      <img src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
-      <img src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2">
-      <img src="./s1/mo1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
+      <!-- <img src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
+      <img src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2"> -->
+      <img src="./mo/s7/漂浮物件_分層/m_7_class_1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
     </div>
   </div>
 </template>
@@ -354,225 +358,82 @@
 @media screen and (max-width: 767px) {
   .section7 {
     width: 100vw;
-    height: sizem(790);
+    height: sizem(427);
     min-height: auto;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
     // background-position: 0 0;
     // background-attachment: fixed;
-    overflow: hidden;
-  }
-  .txt {
-    width: sizem(310);
-    top: sizem(320);
-    left: sizem(32.5);
-    display: block;
+    // overflow: hidden;
   }
 
-  .title {
-    width: 100%;
-    line-height: 1.6;
-    font-size: sizem(25);
-    right: 0;
-    top: sizem(3);
-    span {
-      display: inline-block;
-    }
+  .bg-img {
+    height: 100%;
   }
-
-  .hr {
-    width: 100%;
-    height: sizem(2);
-    position: relative;
-    right: sizem(0);
-    margin: sizem(12) 0;
-  }
-  .subtitle {
-    width: 100%;
-    font-size: sizem(18);
-    right: sizem(-1);
-    letter-spacing: 0em;
-  }
-
-  .desc {
-    font-size: sizem(15);
-    line-height: 1.6;
-    letter-spacing: sizem(2.09);
+  .m-title {
+    @include img_r_m(300, 189, 39);
+    font-size: sizem(41);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.8;
+    letter-spacing: sizem(0.12);
+    text-align: center;
+    color: #ffffff;
     white-space: nowrap;
-    display: block;
-    span {
-      writing-mode: initial;
-      display: block;
-      width: auto;
-      margin: 0 0 0em;
-      &.p {
-        margin: 0 0 0.8em;
-      }
-      &.p2 {
-        margin: 0 0 0.8em -0.5em;
-      }
-    }
   }
 
-  .img {
-    width: sizem(135);
-    top: sizem(30);
-    left: sizem(-3);
-    position: relative;
+  .arrow {
+    @include img_r_m(24, 269, 34);
+    z-index: 2;
+    opacity: 1 !important;
   }
 
-  /* Swipe */
-  .swipe {
-    width: 100vw;
-    height: sizem(300);
-    min-height: auto;
-    top: sizem(0);
-    left: sizem(0);
-    object-fit: cover;
+  .big-title {
+    display: none;
+    // @include img_r_m(191, 268, 62);
+    // top: auto;
+    // bottom: size(20);
+    // text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.75);
+    // font-size: size(189.8);
+    // font-weight: 300;
+    // font-stretch: normal;
+    // font-style: normal;
+    // line-height: 1.2;
+    // letter-spacing: size(0.57);
+    // text-align: center;
+    // color: #ffffff;
+    // white-space: nowrap;
+    // z-index: 3;
+  }
+  .title {
+    @include img_r_m(191, 268, 62);
+    font-size: sizem(23);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.78;
+    letter-spacing: sizem(1.45);
+    text-align: right;
+    color: #0083be;
+    white-space: nowrap;
+    z-index: 2;
+    opacity: 1 !important;
   }
 
-  // begin
-  .swipe-fade-leave-to {
-    opacity: 0;
-    z-index: 0;
-  }
-  // end
-  .swipe-fade-enter {
-    opacity: 0;
-    z-index: 1;
-  }
-
-  .swipe-fade-enter-active {
-    transition: all 0.5s ease;
-  }
-
-  .swipe-fade-leave-active {
-    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-
-  // begin
-  // .swipe-left-leave-to {
-  //   margin-left: -100vw;
-  //   z-index: 0;
-  // }
-  // // end
-  // .swipe-left-enter {
-  //   opacity: 0.5;
-  //   margin-left: 0;
-  //   z-index: 1;
-  // }
-
-  // .swipe-left-enter-active {
-  //   transition: all 0.5s ease;
-  // }
-
-  // .swipe-left-leave-active {
-  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  // }
-
-  .swipe-wrap {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .swipe-item {
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-
-    img {
-      width: 100%;
-      height: sizem(300);
-      object-fit: cover;
-    }
-
-    // &:nth-child(1) {
-    //   z-index: 1;
-    //   // opacity: 1;
-    // }
-
-    // &.base {
-    //   z-index: 1;
-    //   opacity: 1;
-    // }
-    // &.active {
-    //   z-index: 2;
-    //   // opacity: 1;
-    // }
-  }
-
-  .pagination {
-    width: auto;
-    bottom: size(91);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    justify-content: center;
-  }
-
-  .pagination-dot {
-    padding: 5px;
-    margin: 0 10px;
-    cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
-      box-shadow: 0 0 0 1px #fff;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
-      transition: all 0.5s;
-
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #004ea2;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transition: all 0.3s;
-        transform-origin: center;
-        transform: scale(0);
-      }
-      &.active {
-        &::before {
-          content: '';
-          width: 100%;
-          height: 100%;
-          display: block;
-          background: #004ea2;
-          border-radius: 20px;
-          opacity: 1;
-          position: absolute;
-          top: 0%;
-          // transform: translateY(-50%);
-          left: 0%;
-          transform: scale(1);
-        }
-      }
-    }
-  }
-
-  .swipe-btns {
-    width: 100%;
-    height: 100%;
-    padding: 0 15px;
-    z-index: 3;
-
-    .prev-btn,
-    .next-btn {
-      width: sizem(15);
-      cursor: pointer;
-    }
+  .subtitle {
+    @include img_r_m(150, 302, 33);
+    font-size: sizem(14.8);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.35;
+    letter-spacing: sizem(-0.25);
+    text-align: left;
+    color: #666666;
+    white-space: nowrap;
+    z-index: 2;
+    opacity: 1 !important;
   }
 }
 </style>
@@ -611,12 +472,10 @@ export default {
 
   created() {},
 
-  mounted() {
-  },
+  mounted() {},
 
   computed: {},
 
-  watch: {
-  },
+  watch: {},
 }
 </script>
