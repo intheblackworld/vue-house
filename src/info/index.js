@@ -3,8 +3,8 @@ export default {
   googleSrc:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.8875157512216!2d121.35171201500431!3d24.935901584018335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468195875d82cab%3A0xdce4424bb186ce36!2zMjM35paw5YyX5biC5LiJ5bO95Y2A5Lit5bGx6LevNDU55be3OTLomZ8!5e0!3m2!1szh-TW!2stw!4v1567394439545!5m2!1szh-TW!2stw',
   phone: '02-26737555',
-  fbLink: 'https://www.facebook.com/MoreThanTheMountain/',
-  fbMessage: 'https://m.me/MoreThanTheMountain',
+  fbLink: 'https://www.facebook.com/%E5%8C%97%E5%A4%A7%E6%A8%82%E9%A6%A5-112627960268481',
+  fbMessage: 'https://m.me/112627960268481',
   googleLink: 'https://goo.gl/maps/rEMTU36ycxbfUxAS6',
   caseName: '北大樂馥',
 
