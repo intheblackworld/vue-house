@@ -297,6 +297,7 @@ export default {
   .btn {
     width: 100%;
     position: relative;
+    z-index: 10;
     span {
       padding: 0 0 0 0.5em;
     }
@@ -311,6 +312,8 @@ export default {
   .google-btn {
     // border-radius: 0 0 10px 10px;
     width: 100%;
+    position: relative;
+    z-index: 10;
   }
 
   .animate-slide {
