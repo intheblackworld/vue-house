@@ -22,11 +22,19 @@
       <img :src="item.img" :alt="`${info.caseName}_item`" data-aos="fade-up" :data-aos-delay="200 + index * 50" v-for="(item, index) in item_list" :key="item.img + index" @click="showDialog(index)">
     </div>
     <div :class="`dialog ${isDialog ? 'show' : ''}`">
-      <!-- <img :src="slideList[imgIndex].img" alt="" class="dialog-img absolute"> -->
+      <div class="animate-slide" v-if="!isMobile">
+        <img src="./s11/漂浮物件_分層/10_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
+        <img src="./s11/漂浮物件_分層/10_class_2.png" :alt="`${info.caseName}_logo`" class="pc2" data-parallax="4">
+      </div>
+      <div class="animate-slide" v-if="isMobile">
+        <img src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
+        <img src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2">
+        <img src="./s1/mo1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
+      </div>
       <img src="./s11/masterteam_bg.png" :alt="`${info.caseName}_masterteam_bg`" class="bg-img dialog-bg" data-aos="fade-up" data-aos-delay="0">
       <div class="bg-img blue light"></div>
       <img src="~@/assets/img/close.png" alt class="close" @click="closeDialog" />
-      <transition-group name="swipe-fade" mode="out-in">
+      <transition-group name="swipe-fade" mode="out-in" class="absolute dialog-content">
         <div class="dialog-content" v-if="isDialog1" key="dialog-1">
           <div class="dialog-slogan dialog-slogan1">
             MASTER<br />TEAM
@@ -48,17 +56,14 @@
             MASTER<br />TEAM
           </div>
           <div class="dialog-title dialog-title2">
-            空間美學推手
+            豪宅建築巨擘
           </div>
           <div class="dialog-desc dialog-desc2">
-            以精湛的手法將簡約藝術與人文氣息融合，以人為本，細心設計生活空間，塑造穩重卻令人放鬆的氛圍，用心實踐品味之美，體現愜意生活的無上享受！
+            豪宅御用建築師 林永發，將藝術放入生活，將溫度帶進建築，經典代表作中悦建設、葛里法系列等，本案為近年來首發的小坪數作品，是第一也是唯一的珍貴！
           </div>
           <div class="dialog-works dialog-works2">
-            獲獎紀錄／<br />
-            義大利 A’Design Award<br />
-            美國 IDA Design Award<br />
-            中國 Idea-Tops Award<br />
-            日本 Good-design Award
+            經典業績／<br />
+            中悦美樹花園、中悦國寶、葛里法系列
           </div>
           <img class="dialog-img dialog-img2" src="./s11/masterteam_man2.png" :alt="`${info.caseName}_dialog_img`">
         </div>
@@ -80,19 +85,22 @@
           </div>
           <img class="dialog-img dialog-img3" src="./s11/masterteam_man3.png" :alt="`${info.caseName}_dialog_img`">
         </div>
-        <div class="dialog-content" v-if="isDialog4" key="dialog-4">
+        <div class="dialog-content absolute" v-if="isDialog4" key="dialog-4">
           <div class="dialog-slogan dialog-slogan4">
             MASTER<br />TEAM
           </div>
           <div class="dialog-title dialog-title4">
-            豪宅建築巨擘
+            空間美學推手
           </div>
           <div class="dialog-desc dialog-desc4">
-            豪宅御用建築師 林永發，將藝術放入生活，將溫度帶進建築，經典代表作中悦建設、葛里法系列等，本案為近年來首發的小坪數作品，是第一也是唯一的珍貴！
+            以精湛的手法將簡約藝術與人文氣息融合，以人為本，細心設計生活空間，塑造穩重卻令人放鬆的氛圍，用心實踐品味之美，體現愜意生活的無上享受！
           </div>
           <div class="dialog-works dialog-works4">
-            經典業績／<br />
-            中悦美樹花園、中悦國寶、葛里法系列
+            獲獎紀錄／<br />
+            義大利 A’Design Award<br />
+            美國 IDA Design Award<br />
+            中國 Idea-Tops Award<br />
+            日本 Good-design Award
           </div>
           <img class="dialog-img dialog-img4" src="./s11/masterteam_man4.png" :alt="`${info.caseName}_dialog_img`">
         </div>
@@ -132,9 +140,30 @@
     mix-blend-mode: overlay;
   }
 
+  .dialog-content {
+    margin: 0;
+    background: transparent;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+
   .dialog-img {
     &.dialog-img1 {
-      @include img_l_pc(280, 65, 700);
+      @include img_l_pc(280, 125, 790);
+    }
+
+    &.dialog-img2 {
+      @include img_l_pc(585, 65, 690);
+    }
+
+    &.dialog-img3 {
+      @include img_l_pc(625, 45, 8);
+    }
+
+    &.dialog-img4 {
+      @include img_l_pc(544, 65, 630);
     }
   }
 
@@ -148,8 +177,12 @@
     text-align: left;
     color: #ffffff;
     white-space: nowrap;
-    &.dialog-slogan1 {
+    &.dialog-slogan1, &.dialog-slogan2, &.dialog-slogan4 {
       @include img_l_pc(649, 493, 165);
+    }
+
+    &.dialog-slogan3 {
+      @include img_l_pc(649, 49, 165);
     }
   }
 
@@ -163,18 +196,49 @@
     text-align: left;
     color: #ffffff;
     white-space: nowrap;
-    &.dialog-title1 {
+    &.dialog-title1, &.dialog-title2, &.dialog-title4 {
       @include img_l_pc(316, 426, 1173);
+    }
+
+    &.dialog-title3 {
+      @include img_l_pc(316, 559, 512);
     }
   }
 
   .dialog-desc {
-    &.dialog-desc1 {
+    font-size: size(21);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.77;
+    letter-spacing: size(1.32);
+    text-align: left;
+    color: #ffffff;
+    &.dialog-desc1, &.dialog-desc2, &.dialog-desc4 {
+      @include img_r_pc(565, 527, 180);
+    }
+
+    &.dialog-desc3 {
+      @include img_l_pc(310, 656, 512);
     }
   }
 
   .dialog-works {
-    &.dialog-works1 {
+    font-size: size(21);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.58;
+    letter-spacing: size(1.32);
+    text-align: left;
+    color: #ffffff;
+    white-space: nowrap;
+    &.dialog-works1, &.dialog-works2, &.dialog-works4 {
+      @include img_r_pc(410, 668, 336);
+    }
+
+    &.dialog-works3 {
+      @include img_l_pc(142, 657, 873);
     }
   }
 
@@ -184,6 +248,7 @@
     right: size(60);
     top: size(70);
     width: size(56);
+    z-index: 1;
     // background-color: #9d0c1a;
   }
 }
@@ -350,7 +415,7 @@
 }
 
 .swipe-fade-enter-active {
-  transition: all 0.5s ease;
+  transition: all 1.5s ease;
 }
 
 .swipe-fade-leave-active {
@@ -920,6 +985,10 @@ export default {
     },
     closeDialog() {
       this.isDialog = false
+      this.isDialog1 = false
+      this.isDialog2 = false
+      this.isDialog3 = false
+      this.isDialog4 = false
       // this[`isDialog$${index + 1}`] = false
     },
   },

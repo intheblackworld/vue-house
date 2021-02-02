@@ -7,17 +7,11 @@
         <div class="group">
           <div class="row">
             <label for="name">姓名<span>*</span></label>
-            <el-input id="name"
-              v-model="form.name"
-              placeholder
-            ></el-input>
+            <el-input id="name" v-model="form.name" placeholder></el-input>
           </div>
           <div class="row">
             <label for="phone">手機<span>*</span></label>
-            <el-input id="phone"
-              v-model="form.phone"
-              placeholder
-            ></el-input>
+            <el-input id="phone" v-model="form.phone" placeholder></el-input>
           </div>
           <!-- <div class="row">
             <label>E-mail</label>
@@ -25,42 +19,20 @@
           </div> -->
           <div class="row">
             <label for="city">居住城市</label>
-            <el-select id="city"
-              v-model="form.city"
-              placeholder
-            >
-              <el-option
-                v-for="city in cityList"
-                :key="city.value"
-                :label="city.label"
-                :value="city.value"
-              ></el-option>
+            <el-select id="city" v-model="form.city" placeholder>
+              <el-option v-for="city in cityList" :key="city.value" :label="city.label" :value="city.value"></el-option>
             </el-select>
           </div>
           <div class="row">
             <label for="area">居住地區</label>
-            <el-select id="area"
-              v-model="form.area"
-              placeholder
-              no-data-text="請先選擇居住城市"
-            >
-              <el-option
-                v-for="area in areaList"
-                :key="area.value"
-                :label="area.label"
-                :value="area.value"
-              ></el-option>
+            <el-select id="area" v-model="form.area" placeholder no-data-text="請先選擇居住城市">
+              <el-option v-for="area in areaList" :key="area.value" :label="area.label" :value="area.value"></el-option>
             </el-select>
           </div>
         </div>
         <div class="group">
           <div class="row">
-            <el-input
-              type="textarea"
-              :rows="2"
-              placeholder="請輸入您的留言 (選填)"
-              v-model="form.msg"
-            ></el-input>
+            <el-input type="textarea" :rows="2" placeholder="請輸入您的留言 (選填)" v-model="form.msg"></el-input>
           </div>
         </div>
       </div>
@@ -74,18 +46,9 @@
         </el-checkbox>
       </div>
       <div style="margin: 0 auto">
-        <vue-recaptcha
-          :sitekey="info.recaptcha_site_key_v2"
-          @verify="isVerify = true"
-        ></vue-recaptcha>
+        <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true"></vue-recaptcha>
       </div>
-      <el-button
-        class="form-submit"
-        type="primary"
-        :disabled="!checked || !isVerify"
-        @click="submit"
-        :loading="isSubmit"
-      >立即預約</el-button>
+      <el-button class="form-submit" type="primary" :disabled="!checked || !isVerify" @click="submit" :loading="isSubmit">立即預約</el-button>
       <!-- <Loading :loading="isSubmit" :isOpacity="true" /> -->
     </div>
     <ContactInfo />
@@ -209,7 +172,7 @@ export default {
       fetch('contact-form.php', {
         method: 'POST',
         body: formData,
-      }).then(response => {
+      }).then((response) => {
         this.isSubmit = false
         if (response.status === 200) {
           window.location.href = 'formThanks'
@@ -238,7 +201,7 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/style/variableColor.scss';
 .order-bg {
- // background-color: $order_bg_color;transparent
+  // background-color: $order_bg_color;transparent
   background-color: transparent;
   background-image: $order_bg_image;
   background-size: cover;
@@ -248,14 +211,14 @@ export default {
 
   .order-title {
     margin-top: 0;
-    margin-bottom: 0.2em;
+    margin-bottom: 0.1em;
     font-size: calc(100vw * 85 / 1920);
     font-weight: 800;
-    line-height: 2.5;
-  letter-spacing: 0.15em;
+    line-height: 1.5;
+    letter-spacing: 0.15em;
     text-align: center;
     color: $order_title_color;
-    width:calc(100vw * 500 / 1920);
+    // width: calc(100vw * 500 / 1920);
     display: block;
     margin: 0 auto 0;
     height: auto;
@@ -271,7 +234,7 @@ export default {
     font-size: calc(100vw * 18 / 1920);
     text-align: center;
     color: $order_subtitle_color;
-    margin-bottom:2em;
+    margin-bottom: 2em;
     position: relative;
     z-index: 3;
   }
@@ -315,15 +278,17 @@ export default {
     display: flex;
     //align-items: center;
     margin-bottom: 15px;
-    align-items:stretch;
-    justify-content:center;
+    align-items: stretch;
+    justify-content: center;
 
     &:nth-last-child(1) {
       margin-bottom: 0;
     }
 
     label {
-      width: 92px;align-items: center;display: flex;
+      width: 92px;
+      align-items: center;
+      display: flex;
       font-size: 16px;
       opacity: 1;
       color: $order_input_label_color;
@@ -335,9 +300,15 @@ export default {
         color: #c00;
       }
     }
-    .el-input {width: auto;}
-    .el-input__inner{width: auto !important;}
-    .el-select{margin: 0;}
+    .el-input {
+      width: auto;
+    }
+    .el-input__inner {
+      width: auto !important;
+    }
+    .el-select {
+      margin: 0;
+    }
   }
 
   .control {
@@ -348,8 +319,7 @@ export default {
 
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
- 
- .order-title {
+  .order-title {
     font-size: 32px;
   }
 
@@ -370,7 +340,7 @@ export default {
     // background-image: $order_bg_image_m;
     background-color: transparent;
     background-size: auto 250vw;
-  padding-top: calc(100vw * 250 / 375);
+    padding-top: calc(100vw * 250 / 375);
     .order-title {
       font-size: 18px;
       margin-top: 10px;
@@ -409,7 +379,9 @@ export default {
         width: 40% !important;
         margin-left: 0;
       }
-      .el-input{width: 100%;}
+      .el-input {
+        width: 100%;
+      }
     }
 
     .control {

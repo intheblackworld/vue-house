@@ -104,10 +104,10 @@ export default {
   align-content: center;
   position: relative;
   z-index: 4;
-  width: 1200px;
-  height: 515px;
-  padding: 30px;
-  margin: 0 auto;
+  width: 100vw;
+  height: 485px;
+  padding: 10px;
+  margin: 80px auto;
 }
 
 .logo {

@@ -19,7 +19,7 @@
     <div class="desc" data-aos="fade" data-aos-delay="800">
       名品建材 升級享受
     </div>
-    <div class="hr"></div>
+    <div class="hr" data-aos="scale-right" data-aos-delay="200"></div>
     <img src="./s10/style_arrow_6.png" :alt="`${info.caseName}_style_arrow`" class="arrow" data-aos="fade-up" data-aos-delay="200">
     <div class="item-list flex-c wrap">
       <img :src="item.img" :alt="`${info.caseName}_item`" data-aos="fade-up" :data-aos-delay="200 + index * 50" v-for="(item, index) in item_list" :key="item.img + index">
