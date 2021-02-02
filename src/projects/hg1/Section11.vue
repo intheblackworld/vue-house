@@ -9,7 +9,7 @@
       <img src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2">
       <img src="./s1/mo1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
     </div>
-    <img src="./s11/masterteam_bg.png" :alt="`${info.caseName}_style_arrow`" class="bg-img" data-aos="fade-up" data-aos-delay="0">
+    <img src="./s11/masterteam_bg.png" :alt="`${info.caseName}_masterteam_bg`" class="bg-img" data-aos="fade-up" data-aos-delay="0">
     <div class="bg-img blue"></div>
     <div class="title" data-aos="fade" data-aos-delay="400">
       大師團隊<br />四強聯手
@@ -19,17 +19,84 @@
     </div>
     <img src="./s11/style_arrow_7.png" :alt="`${info.caseName}_style_arrow`" class="arrow" data-aos="fade-up" data-aos-delay="200">
     <div class="item-list">
-      <img :src="item.img" :alt="`${info.caseName}_item`" data-aos="fade-up" :data-aos-delay="200 + index * 50" v-for="(item, index) in item_list" :key="item.img + index">
+      <img :src="item.img" :alt="`${info.caseName}_item`" data-aos="fade-up" :data-aos-delay="200 + index * 50" v-for="(item, index) in item_list" :key="item.img + index" @click="showDialog(index)">
     </div>
     <div :class="`dialog ${isDialog ? 'show' : ''}`">
       <!-- <img :src="slideList[imgIndex].img" alt="" class="dialog-img absolute"> -->
+      <img src="./s11/masterteam_bg.png" :alt="`${info.caseName}_masterteam_bg`" class="bg-img dialog-bg" data-aos="fade-up" data-aos-delay="0">
+      <div class="bg-img blue light"></div>
       <img src="~@/assets/img/close.png" alt class="close" @click="closeDialog" />
-      <!-- <img src="./s7/img.png" alt="" class="dialog-ink absolute"> -->
-      <!-- <div class="dialog-text absolute">{{slideList[imgIndex].name}}</div>
-        <div class="dialog-title absolute">文創新鮮度 永遠逛不膩</div>
-        <div class="dialog-subtitle absolute">
-          台北光點為軸，品味生活比想像更簡單
-        </div> -->
+      <transition-group name="swipe-fade" mode="out-in">
+        <div class="dialog-content" v-if="isDialog1" key="dialog-1">
+          <div class="dialog-slogan dialog-slogan1">
+            MASTER<br />TEAM
+          </div>
+          <div class="dialog-title dialog-title1">
+            築億建設 訂製經典
+          </div>
+          <div class="dialog-desc dialog-desc1">
+            以觀念決定態度，品質決定價值的信念，打造每一棟帶領風潮的建築，「築億建設」以不斷創新的思維及高標準的要求，為每一位住戶打造藝極經典！
+          </div>
+          <div class="dialog-works dialog-works1">
+            經典作品／<br />
+            築億丰盛、築億築藝、大樹小墅、時上逸品、曉學堂
+          </div>
+          <img class="dialog-img dialog-img1" src="./s11/masterteam_man1.png" :alt="`${info.caseName}_dialog_img`">
+        </div>
+        <div class="dialog-content" v-if="isDialog2" key="dialog-2">
+          <div class="dialog-slogan dialog-slogan2">
+            MASTER<br />TEAM
+          </div>
+          <div class="dialog-title dialog-title2">
+            空間美學推手
+          </div>
+          <div class="dialog-desc dialog-desc2">
+            以精湛的手法將簡約藝術與人文氣息融合，以人為本，細心設計生活空間，塑造穩重卻令人放鬆的氛圍，用心實踐品味之美，體現愜意生活的無上享受！
+          </div>
+          <div class="dialog-works dialog-works2">
+            獲獎紀錄／<br />
+            義大利 A’Design Award<br />
+            美國 IDA Design Award<br />
+            中國 Idea-Tops Award<br />
+            日本 Good-design Award
+          </div>
+          <img class="dialog-img dialog-img2" src="./s11/masterteam_man2.png" :alt="`${info.caseName}_dialog_img`">
+        </div>
+        <div class="dialog-content" v-if="isDialog3" key="dialog-3">
+          <div class="dialog-slogan dialog-slogan3">
+            MASTER<br />TEAM
+          </div>
+          <div class="dialog-title dialog-title3">
+            安居結構權威
+          </div>
+          <div class="dialog-desc dialog-desc3">
+            採用「Alfa Safe柱中柱」世界專利技術，經由國家地震工程研究中心實驗證明，耐震韌性較傳統柱提升近100%，給您安全耐震好宅！
+          </div>
+          <div class="dialog-works dialog-works3">
+            代表作品／<br />
+            築億築藝<br />
+            達永秋鄉<br />
+            昭揚君璽
+          </div>
+          <img class="dialog-img dialog-img3" src="./s11/masterteam_man3.png" :alt="`${info.caseName}_dialog_img`">
+        </div>
+        <div class="dialog-content" v-if="isDialog4" key="dialog-4">
+          <div class="dialog-slogan dialog-slogan4">
+            MASTER<br />TEAM
+          </div>
+          <div class="dialog-title dialog-title4">
+            豪宅建築巨擘
+          </div>
+          <div class="dialog-desc dialog-desc4">
+            豪宅御用建築師 林永發，將藝術放入生活，將溫度帶進建築，經典代表作中悦建設、葛里法系列等，本案為近年來首發的小坪數作品，是第一也是唯一的珍貴！
+          </div>
+          <div class="dialog-works dialog-works4">
+            經典業績／<br />
+            中悦美樹花園、中悦國寶、葛里法系列
+          </div>
+          <img class="dialog-img dialog-img4" src="./s11/masterteam_man4.png" :alt="`${info.caseName}_dialog_img`">
+        </div>
+      </transition-group>
     </div>
   </div>
 </template>
@@ -42,9 +109,8 @@
   height: 100vh;
   position: fixed;
   top: 0;
-  background: url('./s1/bg.png') repeat;
-  background-size: auto;
-  z-index: 1;
+  background-color: rgba(45, 115, 171, 1);
+  z-index: 100;
   opacity: 0;
   transition: opacity 0.5s;
   display: block;
@@ -58,77 +124,67 @@
     left: 0;
   }
 
-  .dialog-img {
-    width: size(1160);
-    top: calc(50% - 18.75vw);
-    left: size(176);
+  .dialog-bg {
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
-    height: auto;
-    z-index: 2;
+    opacity: 1 !important;
+    mix-blend-mode: overlay;
   }
 
-  .dialog-ink {
-    width: size(250);
-    top: calc(50% + 2vw);
-    right: size(172);
+  .dialog-img {
+    &.dialog-img1 {
+      @include img_l_pc(280, 65, 700);
+    }
   }
 
-  .dialog-text {
-    width: size(800);
-    height: size(32.4);
-    top: calc(50% + 17.1vw);
-    right: size(177);
-    border-bottom: solid 1px #9d0c1a;
-    border-right: solid 1px #9d0c1a;
-    text-align: right;
-    font-size: size(23.6);
-    font-weight: normal;
+  .dialog-slogan {
+    font-size: size(159);
+    font-weight: 300;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: size(5.66);
-    padding: 0 5px;
-    color: #262626;
+    line-height: 1.13;
+    letter-spacing: size(6.84);
+    text-align: left;
+    color: #ffffff;
+    white-space: nowrap;
+    &.dialog-slogan1 {
+      @include img_l_pc(649, 493, 165);
+    }
   }
 
   .dialog-title {
-    top: calc(50% - 18.75vw);
-    right: size(423);
-    font-size: size(44);
-    font-weight: bold;
+    font-size: size(53.4);
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.06;
-    letter-spacing: size(2.6);
+    line-height: 1.2;
+    letter-spacing: size(-0.91);
     text-align: left;
-    color: #af1f24;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
+    color: #ffffff;
+    white-space: nowrap;
+    &.dialog-title1 {
+      @include img_l_pc(316, 426, 1173);
+    }
   }
 
-  .dialog-subtitle {
-    top: calc(50% - 18.75vw);
-    right: size(388);
-    font-size: size(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.1;
-    letter-spacing: size(1.48);
-    text-align: left;
-    color: #323333;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    white-space: nowrap;
+  .dialog-desc {
+    &.dialog-desc1 {
+    }
+  }
+
+  .dialog-works {
+    &.dialog-works1 {
+    }
   }
 
   .close {
     position: fixed;
     cursor: pointer;
-    right: size(186);
-    top: calc(50% - 18.75vw);
+    right: size(60);
+    top: size(70);
     width: size(56);
-    background-color: #9d0c1a;
+    // background-color: #9d0c1a;
   }
 }
 
@@ -136,7 +192,7 @@
   width: size(1920);
   height: 100vh;
   min-height: size(900);
-  position: relative;
+  // position: relative;
   z-index: 10;
   // background-color: #b01f24;
   // min-height: size(900);
@@ -149,7 +205,7 @@
 
 .bg-img {
   width: 100vw;
-  height: auto;
+  height: 100vh;
   min-height: size(900);
   position: absolute;
   display: block;
@@ -163,6 +219,10 @@
 
   &.blue {
     background-color: rgba(45, 115, 171, 0.77);
+
+    &.light {
+      background-color: rgba(45, 115, 171, 0.57);
+    }
   }
 }
 
@@ -193,15 +253,23 @@
 }
 
 .arrow {
-  @include img_l_pc(50, 591, 440);
+  @include img_l_pc(50, 541, 430);
 }
 
 .item-list {
   @include img_r_pc(1192, 125, 151);
   img {
+    cursor: pointer !important;
     position: absolute;
     top: 0;
     z-index: 3;
+    opacity: 0.85 !important;
+    transition: all 0.3s !important;
+
+    &:hover {
+      opacity: 1 !important;
+      transform: scale(1.1) !important;
+    }
     &:nth-child(1) {
       width: size(280);
       left: 0;
@@ -804,6 +872,10 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
+      isDialog1: false,
+      isDialog2: false,
+      isDialog3: false,
+      isDialog4: false,
       info,
       item_list: [
         {
@@ -841,7 +913,16 @@ export default {
     }
   },
 
-  methods: {},
+  methods: {
+    showDialog(index) {
+      this.isDialog = true
+      this[`isDialog${index + 1}`] = true
+    },
+    closeDialog() {
+      this.isDialog = false
+      // this[`isDialog$${index + 1}`] = false
+    },
+  },
 
   created() {},
 
