@@ -1,6 +1,14 @@
 <template>
   <div>
     <div class="contact-info">
+      <div class="animate-slide" v-if="!isMobile">
+        <img src="../projects/hg1/s13/漂浮物件_分層/12_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
+      </div>
+      <div class="animate-slide" v-if="isMobile">
+        <img src="../projects/hg1/s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
+        <img src="../projects/hg1/s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2">
+        <img src="../projects/hg1/s1/mo1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
+      </div>
       <img class="logo" :src="require('@/assets/img/contact-logo.png')" alt="" />
       <div class="info">
         <div class="btn flex-c" @click="showCallDialog">
@@ -95,6 +103,42 @@ export default {
 @import '@/assets/style/variableColor.scss';
 @import '@/assets/style/variableDefault.scss';
 
+.animate-slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  // z-index: 3;
+  top: 0;
+  left: 0;
+  transition: all 0.5s;
+  > img {
+    @for $i from 1 through 10 {
+      $randomNum: random(4) + 3;
+      &:nth-child(#{$i}) {
+        transform: translateY((random(10) - 50) + px);
+        animation: an ($randomNum + s) 3s infinite alternate;
+      }
+    }
+  }
+
+  .pc1 {
+    @include img_r_pc(1920, -97, 0);
+    z-index: 1;
+  }
+
+  // .pc2 {
+  //   @include img_l_pc(1920, 306, 0);
+  //   z-index: 1;
+  // }
+}
+
+@keyframes an {
+  to {
+    transform: translateY(0);
+  }
+}
+
+
 .contact-info {
   background: $contact_bg;
   background-size: cover;
@@ -103,7 +147,7 @@ export default {
   flex-direction: column;
   align-content: center;
   position: relative;
-  z-index: 4;
+  // z-index: 4;
   width: 100vw;
   height: 485px;
   padding: 10px;
@@ -243,7 +287,7 @@ export default {
   }
 
   .address {
-    width:  100%;
+    width: 100%;
     margin-bottom: 0;
     text-align: left;
     border-bottom: none;
@@ -253,14 +297,16 @@ export default {
   .btn {
     width: 100%;
     position: relative;
-    span{padding: 0 0 0 0.5em;}
-   svg {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: calc(50% - 5em);
-    margin-right: 0;
-  }
+    span {
+      padding: 0 0 0 0.5em;
+    }
+    svg {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: calc(50% - 5em);
+      margin-right: 0;
+    }
   }
   .google-btn {
     // border-radius: 0 0 10px 10px;
