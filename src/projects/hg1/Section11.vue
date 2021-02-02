@@ -31,7 +31,7 @@
         <img src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2">
         <img src="./s1/mo1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
       </div>
-      <img src="./s11/masterteam_bg.png" :alt="`${info.caseName}_masterteam_bg`" class="bg-img dialog-bg" data-aos="fade-up" data-aos-delay="0">
+      <img src="./pop-up/pop_bg.png" :alt="`${info.caseName}_masterteam_bg`" class="bg-img dialog-bg" data-aos="fade-up" data-aos-delay="0">
       <div class="bg-img blue light"></div>
       <img src="~@/assets/img/close.png" alt class="close" @click="closeDialog" />
       <transition-group name="swipe-fade" mode="out-in" class="absolute dialog-content">
@@ -49,7 +49,7 @@
             經典作品／<br />
             築億丰盛、築億築藝、大樹小墅、時上逸品、曉學堂
           </div>
-          <img class="dialog-img dialog-img1" src="./s11/masterteam_man1.png" :alt="`${info.caseName}_dialog_img`">
+          <img class="dialog-img dialog-img1" src="./pop-up/01/pop_1_man.png" :alt="`${info.caseName}_dialog_img`">
         </div>
         <div class="dialog-content" v-if="isDialog2" key="dialog-2">
           <div class="dialog-slogan dialog-slogan2">
@@ -65,7 +65,7 @@
             經典業績／<br />
             中悦美樹花園、中悦國寶、葛里法系列
           </div>
-          <img class="dialog-img dialog-img2" src="./s11/masterteam_man2.png" :alt="`${info.caseName}_dialog_img`">
+          <img class="dialog-img dialog-img2" src="./pop-up/02/pop_2_man.png" :alt="`${info.caseName}_dialog_img`">
         </div>
         <div class="dialog-content" v-if="isDialog3" key="dialog-3">
           <div class="dialog-slogan dialog-slogan3">
@@ -83,7 +83,7 @@
             達永秋鄉<br />
             昭揚君璽
           </div>
-          <img class="dialog-img dialog-img3" src="./s11/masterteam_man3.png" :alt="`${info.caseName}_dialog_img`">
+          <img class="dialog-img dialog-img3" src="./pop-up/03/pop_3_man.png" :alt="`${info.caseName}_dialog_img`">
         </div>
         <div class="dialog-content absolute" v-if="isDialog4" key="dialog-4">
           <div class="dialog-slogan dialog-slogan4">
@@ -102,7 +102,7 @@
             中國 Idea-Tops Award<br />
             日本 Good-design Award
           </div>
-          <img class="dialog-img dialog-img4" src="./s11/masterteam_man4.png" :alt="`${info.caseName}_dialog_img`">
+          <img class="dialog-img dialog-img4" src="./pop-up/04/pop_4_man.png" :alt="`${info.caseName}_dialog_img`">
         </div>
       </transition-group>
     </div>

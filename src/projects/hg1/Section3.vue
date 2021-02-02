@@ -4,9 +4,9 @@
       <img src="./s3/漂浮物件_分層/3_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
     </div>
     <div class="animate-slide" v-if="isMobile">
-      <img src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
-      <img src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2">
-      <img src="./s1/mo1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
+      <!-- <img src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3"> -->
+      <img src="./mo/s3/漂浮物件_單一/m_3_single_1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="2">
+      <!-- <img src="./s1/mo1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1"> -->
     </div>
     <img src="./s3/technology_line.png" :alt="`${info.caseName}_technology_line`" class="tech-line" data-aos="fade" data-aos-delay="0">
     <img src="./s3/city.png" :alt="`${info.caseName}_city`" class="city" data-aos="fade-up" data-aos-delay="200">
@@ -15,16 +15,6 @@
     <img src="./s3/balloon_3.png" :alt="`${info.caseName}_balloon_3`" class="balloon-3" data-aos="fade-down" data-aos-delay="800">
     <img src="./s3/balloon_4.png" :alt="`${info.caseName}_balloon_4`" class="balloon-4" data-aos="fade-down" data-aos-delay="1000">
     <img src="./s3/style_arrow.png" :alt="`${info.caseName}_style_arrow`" class="arrow" data-aos="fade-up" data-aos-delay="200">
-    <h1 class="title" data-aos="fade-up" data-aos-delay="400">
-      信義區<span>2.0</span>的 超人
-    </h1>
-    <h1 class="subtitle" data-aos="fade-up" data-aos-delay="600">
-      2025<br />
-      NEXT FUTURE
-    </h1>
-    <div class="desc" data-aos="fade-up" data-aos-delay="800">
-      「大經國特定計畫區」以生活商業生態的多元發展，遠雄及中悅建設百億資金注入造鎮，加上中國人壽即將進駐，經國特區將躍升為國門最大頂級商辦中心，聚焦繁榮璀璨都心，有望成為台灣第二座信義計畫區！
-    </div>
     <div class="item title-1" data-aos="fade-down" data-aos-delay="500">
       南崁台茂<br />生活圈
     </div>
@@ -36,6 +26,16 @@
     </div>
     <div class="item title-4" data-aos="fade-down" data-aos-delay="1100">
       中正藝文<br />商圈
+    </div>
+    <h1 class="title" data-aos="fade-up" data-aos-delay="400">
+      信義區<span>2.0</span>的 超人
+    </h1>
+    <h1 class="subtitle" data-aos="fade-up" data-aos-delay="600">
+      2025<br />
+      NEXT FUTURE
+    </h1>
+    <div class="desc" data-aos="fade-up" data-aos-delay="800">
+      「大經國特定計畫區」以生活商業生態的多元發展，遠雄及中悅建設百億資金注入造鎮，加上中國人壽即將進駐，經國特區將躍升為國門最大頂級商辦中心，聚焦繁榮璀璨都心，有望成為台灣第二座信義計畫區！
     </div>
   </div>
 </template>
@@ -212,7 +212,7 @@
 @media screen and (max-width: 767px) {
   .section3 {
     width: 100vw;
-    height: sizem(790);
+    height: sizem(618);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -222,226 +222,130 @@
     overflow: hidden;
   }
 
-  .txt {
-    width: sizem(310);
-    top: sizem(320);
-    left: sizem(32.5);
-    display: block;
+  .city {
+    @include img_c_m(375, 35);
+  }
+
+  .tech-line {
+    @include img_c_m(375, 10);
+  }
+
+  .arrow {
+    @include img_r_m(37, 370 - 140, 34);
+    opacity: 1 !important;
+  }
+
+  .balloon-1 {
+    @include img_l_m(52, 39, 33);
+  }
+
+  .balloon-2 {
+    @include img_l_m(52, 39, 123);
+  }
+
+  .balloon-3 {
+    @include img_r_m(52, 39, 116);
+  }
+
+  .balloon-4 {
+    @include img_r_m(52, 39, 33);
+  }
+
+  .item {
+    font-size: sizem(10);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(-0.3);
+    text-align: center;
+    color: #ffffff;
+    white-space: nowrap;
+  }
+
+  .title-1 {
+    @include img_l_m(40, 51, 35);
+  }
+  .title-2 {
+    @include img_l_m(40, 51, 128);
+    color: #0296db;
+  }
+  .title-3 {
+    @include img_r_m(40, 51, 126);
+  }
+  .title-4 {
+    @include img_r_m(40, 51, 43);
+    color: #0296db;
   }
 
   .title {
-    width: 100%;
-    line-height: 1.6;
+    @include img_l_m(196, 286 - 140, 32);
     font-size: sizem(25);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: sizem(0.08);
+    text-align: left;
+    color: #19191a;
+    white-space: nowrap;
+    opacity: 1 !important;
     span {
-      display: inline-block;
+      font-size: sizem(30);
     }
   }
 
-  .hr {
-    height: sizem(2);
-    position: relative;
-    right: size(0);
-    margin: sizem(12) 0;
-  }
-
-  .s-title {
-    top: sizem(2);
-    left: sizem(0);
-    width: sizem(279);
-  }
-
   .subtitle {
-    font-size: sizem(15);
-    font-weight: normal;
+    @include img_l_m(190, 337 - 140, 32);
+    font-size: sizem(28);
+    font-weight: 300;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.27;
-    letter-spacing: sizem(2.09);
+    line-height: 1.07;
+    letter-spacing: sizem(0.64);
     text-align: left;
-    color: #323333;
+    color: #0296db;
+    opacity: 1 !important;
     white-space: nowrap;
   }
 
   .desc {
-    font-size: sizem(15);
-    line-height: 1.6;
-    letter-spacing: sizem(2.09);
-    white-space: nowrap;
-    display: block;
-    span {
-      writing-mode: initial;
-      display: block;
-      width: auto;
-      margin: 0 0 0em;
-      &.p {
-        margin: 0 0 0.8em;
-      }
-      &.p2 {
-        margin: 0 0 0.8em -0.5em;
-      }
-    }
+    @include img_l_m(308, 428 - 160, 33);
+    font-size: size(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: sizem(1.2);
+    text-align: left;
+    opacity: 1 !important;
+    color: #666666;
   }
 
-  .img {
-    width: sizem(142);
-    top: sizem(30);
-    left: sizem(0);
-    position: relative;
-  }
-
-  /* Swipe */
-  .swipe {
-    width: 100vw;
-    height: sizem(300);
-    min-height: auto;
-    top: sizem(0);
-    left: sizem(0);
-    object-fit: cover;
-  }
-
-  // begin
-  .swipe-fade-leave-to {
-    opacity: 0;
-    z-index: 0;
-  }
-  // end
-  .swipe-fade-enter {
-    opacity: 0;
-    z-index: 1;
-  }
-
-  .swipe-fade-enter-active {
-    transition: all 0.5s ease;
-  }
-
-  .swipe-fade-leave-active {
-    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-
-  // begin
-  // .swipe-left-leave-to {
-  //   margin-left: -100vw;
-  //   z-index: 0;
-  // }
-  // // end
-  // .swipe-left-enter {
-  //   opacity: 0.5;
-  //   margin-left: 0;
-  //   z-index: 1;
-  // }
-
-  // .swipe-left-enter-active {
-  //   transition: all 0.5s ease;
-  // }
-
-  // .swipe-left-leave-active {
-  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  // }
-
-  .swipe-wrap {
+  .animate-slide {
     width: 100%;
     height: 100%;
-    overflow: hidden;
-  }
-
-  .swipe-item {
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-
-    img {
-      width: 100%;
-      height: sizem(300);
-      object-fit: cover;
-    }
-
-    // &:nth-child(1) {
-    //   z-index: 1;
-    //   // opacity: 1;
-    // }
-
-    // &.base {
-    //   z-index: 1;
-    //   opacity: 1;
-    // }
-    // &.active {
-    //   z-index: 2;
-    //   // opacity: 1;
-    // }
-  }
-
-  .pagination {
-    width: auto;
-    bottom: size(91);
+    position: absolute;
+    top: 0;
     left: 0;
-    right: 0;
-    margin: 0 auto;
-    justify-content: center;
-  }
-
-  .pagination-dot {
-    padding: 5px;
-    margin: 0 10px;
-    cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
-      box-shadow: 0 0 0 1px #fff;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
-      transition: all 0.5s;
-
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #004ea2;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transition: all 0.3s;
-        transform-origin: center;
-        transform: scale(0);
-      }
-      &.active {
-        &::before {
-          content: '';
-          width: 100%;
-          height: 100%;
-          display: block;
-          background: #004ea2;
-          border-radius: 20px;
-          opacity: 1;
-          position: absolute;
-          top: 0%;
-          // transform: translateY(-50%);
-          left: 0%;
-          transform: scale(1);
+    transition: all 0.5s;
+    > img {
+      @for $i from 1 through 10 {
+        $randomNum: random(4) + 3;
+        &:nth-child(#{$i}) {
+          transform: translateY((random(10) - 50) + px);
+          animation: an ($randomNum + s) 3s infinite alternate;
         }
       }
     }
-  }
 
-  .swipe-btns {
-    width: 100%;
-    height: 100%;
-    padding: 0 15px;
-    z-index: 3;
-
-    .prev-btn,
-    .next-btn {
-      width: sizem(15);
-      cursor: pointer;
+    .mo1 {
+      @include img_r_m(60, 230, -20);
     }
+
+    // .mo2 {
+    //   @include img_c_m(375, -20);
+    // }
   }
 }
 </style>

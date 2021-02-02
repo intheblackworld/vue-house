@@ -1,18 +1,17 @@
 <template>
   <div class="section1">
-    <div class="animate-slide" v-if="!isMobile">
+    <div class="animate-slide" v-if="isPC">
       <img src="./s1/漂浮物件_分層/class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
       <img src="./s1/漂浮物件_分層/class_2.png" :alt="`${info.caseName}_logo`" class="pc2" data-parallax="3">
       <!-- <img src="./s1/pc2.png" :alt="`${info.caseName}_logo`" class="pc2" data-parallax="2">
       <img src="./s1/pc1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="1"> -->
     </div>
     <div class="animate-slide" v-if="isMobile">
-      <img src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
-      <img src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2">
-      <img src="./s1/mo1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
+      <img src="./mo/s1/漂浮物件_分層/m_1_class_1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="3">
+      <img src="./mo/s1/漂浮物件_分層/m_1_class_2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2">
     </div>
     <h1 class="title">
-      G12幸福到站 <span>|</span> 26-40坪 <span>|</span> (03) 325-7555
+      G12幸福到站 <span>|</span> 26-40坪 <span v-if="isPC">|</span> <div v-if="isPC">(03) 325-7555</div>
     </h1>
     <h1 class="subtitle">
       新潮生活 登入經國
@@ -195,61 +194,64 @@
 }
 
 @media screen and (max-width: 767px) {
-  .bg {
+  .section1 {
     width: 100vw;
     background-size: cover;
     margin: 0;
-    height: sizem(172 + 376);
+    height: sizem(705);
     position: relative;
     z-index: 2;
     // overflow: hidden;
   }
-  .s1 {
-    height: sizem(172 + 176);
-    min-height: sizem(172 + 176);
-    max-height: sizem(172 + 176);
-  }
+
   .logo {
-    @include img_c_m(300, 190);
-  }
-
-  .t {
-    @include img_c_m(232, 450);
-  }
-  .t1 {
-    @include img_c_m(375, 135);
-    font-size: sizem(21);
-    letter-spacing: 0.2em;
-    margin-left: 0.1em;
-  }
-
-  .t2 {
-    @include img_c_m(280, 320);
-  }
-  .t3 {
-    @include img_c_m(375, 482);
-    font-size: sizem(34);
-    text-align: center;
-    margin-right: 0.3em;
-  }
-  .t4 {
-    @include img_r_m(70, 310, 0);
-    animation: an3 3s infinite alternate;
-    transform-origin: 10% 90%;
+    @include img_c_m(310, 160);
+    // top: calc(50% - 14.5vw);
   }
 
   .order-btn {
-    @include img_c_m(172, 610);
+    @include img_c_m(80, 385);
+    // top: calc(50% + 12.3vw);
     z-index: 10;
-    height: sizem(172);
-    font-size: sizem(30.3);
-    > div {
-      width: 100%;
-      cursor: pointer;
-    }
+    cursor: pointer;
     &:hover {
-      animation: none;
+      animation: an4 3s infinite;
     }
+  }
+
+  .title {
+    @include img_c_m(310, 271);
+    font-size: sizem(28);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.24;
+    letter-spacing: sizem(0.2);
+    text-align: center;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+
+    span {
+      color: #df9529;
+      font-size: sizem(20);
+      line-height: 1.24;
+    }
+  }
+
+  .subtitle {
+    @include img_c_m(260, 321);
+    font-size: sizem(19);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(13);
+    text-align: left;
+    color: #df982a;
+    white-space: nowrap;
   }
 
   .animate-slide {
@@ -269,33 +271,29 @@
       }
     }
 
-    .left1 {
-      // @include img_l_pc(314, 417, 0);
-      display: none;
-    }
+    // .left1 {
+    //   // @include img_l_pc(314, 417, 0);
+    //   display: none;
+    // }
 
-    .left2 {
-      // @include img_l_pc(240, -150, 220);
-      // transform: rotate(30deg) !important;
-      // animation: none !important;
-      display: none;
-    }
+    // .left2 {
+    //   // @include img_l_pc(240, -150, 220);
+    //   // transform: rotate(30deg) !important;
+    //   // animation: none !important;
+    //   display: none;
+    // }
 
-    .left3 {
-      // @include img_l_pc(18, 654, 235);
-      display: none;
-    }
+    // .left3 {
+    //   // @include img_l_pc(18, 654, 235);
+    //   display: none;
+    // }
 
     .mo1 {
-      @include img_r_m(375, 50, 0);
+      @include img_c_m(405, 80);
     }
 
     .mo2 {
-      @include img_l_m(375, 0, -24);
-    }
-
-    .mo3 {
-      @include img_r_m(200, 44, -24);
+      @include img_c_m(375, -20);
     }
   }
 }
@@ -304,7 +302,7 @@
 <script>
 // @ is an alias to /src
 import info from '@/info'
-import { isMobile, isTablet } from '@/utils'
+import { isPC, isMobile, isTablet } from '@/utils'
 // import slider from '@/mixins/slider.js'
 // import Parallax from '@/components/Parallax.vue'
 // import 'swiper/dist/css/swiper.css'
@@ -324,6 +322,7 @@ export default {
   data() {
     return {
       info,
+      isPC,
       isMobile,
       swiperOption: {
         slidesPerView: isMobile ? 1.4 : 1,

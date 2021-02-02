@@ -67,6 +67,7 @@
 </template>
 
 <script>
+import { isPC, isMobile } from '@/info'
 import ContactInfo from '@/components/ContactInfo.vue'
 import GoogleMap from '@/components/GoogleMap.vue'
 import PolicyDialog from '@/components/PolicyDialog.vue'
@@ -89,6 +90,8 @@ export default {
     return {
       cityList,
       info,
+      isPC,
+      isMobile,
       order: info.order,
       form: {
         name: '',

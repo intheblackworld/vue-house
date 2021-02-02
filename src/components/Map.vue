@@ -38,7 +38,7 @@ export default {
 
         if (hand) {
           // hand.style.width = `${mapBg.clientWidth}px`
-          hand.style.left = `${mapBg.clientWidth / 2 - 200}px`
+          hand.style.left = `${mapBg.clientWidth / 2 - 300}px`
         }
 
         map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2 - 120, 0)
