@@ -5,11 +5,12 @@
       <img src="./s10/漂浮物件_分層/9_class_2.png" :alt="`${info.caseName}_logo`" class="pc2" data-parallax="4">
     </div>
     <div class="animate-slide" v-if="isMobile">
-      <img src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
-      <img src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2">
-      <img src="./s1/mo1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
+      <!-- <img src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
+      <img src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2"> -->
+      <img src="./mo/s10/漂浮物件_分層/m_9_class_1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
     </div>
-    <img src="./s10/materials_bg.png" :alt="`${info.caseName}_style_arrow`" class="img1" data-aos="fade-up" data-aos-delay="200">
+    <img src="./s10/materials_bg.png" :alt="`${info.caseName}_style_arrow`" class="img1" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="200" v-if="isPC">
+    <img src="./mo/s10/m_materials_bg.png" :alt="`${info.caseName}_style_arrow`" class="img1" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="200" v-if="isMobile">
     <div class="title" data-aos="fade" data-aos-delay="400">
       精品建材
     </div>
@@ -19,10 +20,10 @@
     <div class="desc" data-aos="fade" data-aos-delay="800">
       名品建材 升級享受
     </div>
-    <div class="hr" data-aos="scale-right" data-aos-delay="200"></div>
-    <img src="./s10/style_arrow_6.png" :alt="`${info.caseName}_style_arrow`" class="arrow" data-aos="fade-up" data-aos-delay="200">
+    <div class="hr" :data-aos="isPC ? 'scale-right' : 'fade'" data-aos-delay="200"></div>
+    <img src="./s10/style_arrow_6.png" :alt="`${info.caseName}_style_arrow`" class="arrow" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="200">
     <div class="item-list flex-c wrap">
-      <img :src="item.img" :alt="`${info.caseName}_item`" data-aos="fade-up" :data-aos-delay="200 + index * 50" v-for="(item, index) in item_list" :key="item.img + index">
+      <img :src="item.img" :alt="`${info.caseName}_item`" :data-aos="isPC ? 'fade-up' : 'fade'" :data-aos-delay="200 + index * 50" v-for="(item, index) in item_list" :key="item.img + index">
     </div>
   </div>
 </template>
@@ -195,7 +196,7 @@
 @media screen and (max-width: 767px) {
   .section10 {
     width: 100vw;
-    height: sizem(667);
+    height: sizem(958);
     min-height: auto;
     max-height: initial;
     position: relative;
@@ -203,7 +204,7 @@
 
   .bg-img {
     width: 100vw;
-    height: sizem(667);
+    height: sizem(958);
     min-height: size(1080);
     position: absolute;
     top: 0;
@@ -216,80 +217,111 @@
       position: relative;
     }
   }
-  .txt {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    padding: sizem(45) 0 sizem(45) sizem(32);
-  }
-
-  .subtitle {
-    width: sizem(200);
-    top: sizem(25);
-    left: sizem(32);
-    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
-    font-size: sizem(18);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.7;
-    letter-spacing: sizem(1.06);
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
+  .img1 {
+    @include img_l_m(375, 550, 0);
+    opacity: 1 !important;
   }
 
   .title {
-    width: sizem(206);
-    top: sizem(49);
-    left: sizem(32);
-    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
+    @include img_l_m(100, 60, 32);
     font-size: sizem(25);
-    font-weight: bold;
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.44;
-    letter-spacing: normal;
+    line-height: 2.56;
+    letter-spacing: sizem(-0.43);
     text-align: left;
     color: #ffffff;
     white-space: nowrap;
+    opacity: 1 !important;
   }
 
-  .hr {
-    width: sizem(310);
-    top: sizem(0);
-    left: sizem(0);
-    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.6);
-    border: solid 1px #ffffff;
-    margin: sizem(20) 0;
+  .subtitle {
+    @include img_l_m(283, 94, 28);
+    font-size: sizem(54);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.91;
+    letter-spacing: sizem(0.16);
+    text-align: left;
+    color: #ffffff;
+    white-space: nowrap;
+    opacity: 1 !important;
   }
 
   .desc {
-    width: sizem(313);
-    top: sizem(145);
-    left: sizem(32);
-    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
-    font-size: sizem(15);
-    font-weight: normal;
+    @include img_l_m(162, 187, 30);
+    font-size: sizem(20);
+    font-weight: 300;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.27;
-    letter-spacing: sizem(1.5);
+    line-height: 2.22;
+    letter-spacing: sizem(-0.34);
     text-align: left;
     color: #ffffff;
+    opacity: 1 !important;
+  }
+
+  .arrow {
+    @include img_l_m(28, 84, 138);
+    opacity: 1 !important;
+  }
+
+  .hr {
+    @include img_l_m(310, 185, 32);
+    height: 1px;
+    background-color: #fff;
+    opacity: 1 !important;
+  }
+
+  .item-list {
+    @include img_r_m(375 - 64 + 20, 252, 32);
+    img {
+      min-width: sizem(89);
+      margin: sizem(9) sizem(10);
+      opacity: 1 !important;
+    }
+  }
+
+  .animate-slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
+    > img {
+      @for $i from 1 through 10 {
+        $randomNum: random(4) + 3;
+        &:nth-child(#{$i}) {
+          transform: translateY((random(10) - 50) + px);
+          animation: an ($randomNum + s) 3s infinite alternate;
+        }
+      }
+    }
+
+    .mo1 {
+      @include img_r_m(375, 0, 0);
+      z-index: 3;
+    }
+
+    // .mo2 {
+    //   @include img_l_m(95, 360, -30);
+    // }
   }
 }
 </style>
 
 <script>
-import { isMobile } from '@/utils'
+import { isPC, isMobile } from '@/utils'
 import info from '@/info'
 export default {
   name: 'section10',
 
   data() {
     return {
+      isPC,
       isMobile,
       info,
       item_list: [

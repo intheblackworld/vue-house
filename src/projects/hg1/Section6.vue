@@ -358,7 +358,7 @@
   // }
 
   .arrow {
-    @include img_r_m(37, 303, 34);
+    @include img_r_m(27, 303, 34);
     opacity: 1 !important;
   }
 
@@ -394,7 +394,7 @@
   }
 
   .desc {
-    @include img_l_m(308, 357, 33);
+    @include img_l_m(308, 347, 33);
     font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;

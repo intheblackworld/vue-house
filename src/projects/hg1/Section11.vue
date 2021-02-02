@@ -5,9 +5,9 @@
       <img src="./s11/漂浮物件_分層/10_class_2.png" :alt="`${info.caseName}_logo`" class="pc2" data-parallax="4">
     </div>
     <div class="animate-slide" v-if="isMobile">
-      <img src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
-      <img src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2">
-      <img src="./s1/mo1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
+      <!-- <img src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
+      <img src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2"> -->
+      <img src="./mo/s10/漂浮物件_分層/m_9_class_1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
     </div>
     <img src="./s11/masterteam_bg.png" :alt="`${info.caseName}_masterteam_bg`" class="bg-img" data-aos="fade-up" data-aos-delay="0">
     <div class="bg-img blue"></div>

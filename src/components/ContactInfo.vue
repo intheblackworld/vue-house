@@ -5,9 +5,9 @@
         <img src="../projects/hg1/s13/漂浮物件_分層/12_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
       </div>
       <div class="animate-slide" v-if="isMobile">
-        <img src="../projects/hg1/s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
-        <img src="../projects/hg1/s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2">
-        <img src="../projects/hg1/s1/mo1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
+        <!-- <img src="../projects/hg1/s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
+        <img src="../projects/hg1/s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2"> -->
+        <img src="../projects/hg1/mo/s13/漂浮物件_分層/m_12_class_1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
       </div>
       <img class="logo" :src="require('@/assets/img/contact-logo.png')" alt="" />
       <div class="info">
@@ -249,7 +249,7 @@ export default {
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .contact-info {
     display: flex;
-    width: 90% !important;
+    width: 100% !important;
     height: 460px;
     padding: 60px 0 80px;
 
@@ -262,10 +262,10 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .contact-info {
-    width: 85%;
+    width: 100%;
     height: auto;
-    padding: 0;
-    position: static;
+    padding: 0 10%;
+    position: relative;
     .logo {
       width: $contact_logo_mobile_width;
     }
@@ -311,6 +311,32 @@ export default {
   .google-btn {
     // border-radius: 0 0 10px 10px;
     width: 100%;
+  }
+
+  .animate-slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
+    > img {
+      @for $i from 1 through 10 {
+        $randomNum: random(4) + 3;
+        &:nth-child(#{$i}) {
+          transform: translateY((random(10) - 50) + px);
+          animation: an ($randomNum + s) 3s infinite alternate;
+        }
+      }
+    }
+
+    // .mo1 {
+    //   @include img_r_m(60, 230, -20);
+    // }
+
+    .mo1 {
+      @include img_r_m(375, -20, 0);
+    }
   }
 }
 </style>

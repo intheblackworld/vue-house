@@ -1,13 +1,13 @@
 <template>
   <div class="order-bg">
-    <div class="animate-slide" v-if="!isMobile">
+    <div class="animate-slide" v-if="isPC">
       <img src="../projects/hg1/s12/漂浮物件_分層/11_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
       <img src="../projects/hg1/s12/漂浮物件_分層/11_class_2.png" :alt="`${info.caseName}_logo`" class="pc2" data-parallax="4">
     </div>
-    <div class="animate-slide" v-if="isMobile">
-      <img src="../projects/hg1/s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
-      <img src="../projects/hg1/s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2">
-      <img src="../projects/hg1/s1/mo1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
+    <div class="animate-slide aaa" v-if="isMobile">
+      <!-- <img src="../projects/hg1/s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3"> -->
+      <img src="../projects/hg1/mo/s12/漂浮物件_單一/m_11_single_2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2">
+      <!-- <img src="../projects/hg1/mo/s12/漂浮物件_單一/m_11_single_1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1"> -->
     </div>
     <div class="order-title" v-scroll-to="{ element: `#contact` }">{{order.title}}</div>
     <h3 class="order-subtitle">{{order.subTitle}}</h3>
@@ -67,7 +67,7 @@
 </template>
 
 <script>
-import { isPC, isMobile } from '@/info'
+import { isPC, isMobile } from '@/utils'
 import ContactInfo from '@/components/ContactInfo.vue'
 import GoogleMap from '@/components/GoogleMap.vue'
 import PolicyDialog from '@/components/PolicyDialog.vue'
@@ -390,17 +390,23 @@ export default {
     background-size: auto 250vw;
     padding-top: calc(100vw * 250 / 375);
     .order-title {
-      font-size: 18px;
+      font-size: sizem(37);
       margin-top: 10px;
       margin-bottom: 20px;
-      width: 90vw;
+      width: 100vw;
       height: 30px;
       position: relative;
       z-index: 2;
-      display: none;
+      white-space: nowrap;
+      text-align: center;
+      // display: none;
     }
     .order-subtitle {
-      display: none;
+      // display: none;
+      width: sizem(294);
+      margin: 0 auto;
+      line-height: 1.4;
+      margin-bottom: 15px;
     }
     .order {
       width: 85% !important;
@@ -435,6 +441,32 @@ export default {
     .control {
       margin-top: 10px;
       margin-bottom: 10px;
+    }
+  }
+
+  .animate-slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
+    > img {
+      @for $i from 1 through 10 {
+        $randomNum: random(4) + 3;
+        &:nth-child(#{$i}) {
+          transform: translateY((random(10) - 50) + px);
+          animation: an ($randomNum + s) 3s infinite alternate;
+        }
+      }
+    }
+
+    // .mo1 {
+    //   @include img_r_m(60, 230, -20);
+    // }
+
+    .mo2 {
+      @include img_r_m(75, -20, 0);
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="section8">
+  <div class="section9">
     <div class="animate-slide" v-if="!isMobile">
       <img src="./s8/漂浮物件_分層/8_class_2.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
     </div>
@@ -8,7 +8,24 @@
       <img src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2">
       <img src="./s1/mo1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
     </div>
-    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isPC">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" alt="">
+            <div class="slide-name absolute" v-html="slide.name"></div>
+          </div>
+        </transition-group>
+        <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+        </div>
+        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+        </div>
+      </div>
+    </div>
+    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -35,13 +52,13 @@
     <div class="desc" data-aos="fade" data-aos-delay="800">
       2-3房戶戶雙採光，引風養綠，讓您品味自然的健康空間，無敵高坪效，一次收藏最稀有的繁華轉身！從此在家不僅是過日子，而是享受生活。
     </div>
-    <img src="./s8/style_arrow_5.png" :alt="`${info.caseName}_style_arrow`" class="arrow" data-aos="fade-up" data-aos-delay="200">
+    <img src="./s8/style_arrow_5.png" :alt="`${info.caseName}_style_arrow`" class="arrow" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="200">
   </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section8 {
+.section9 {
   width: size(1920);
   height: size(968);
   min-height: size(900);
@@ -66,7 +83,8 @@
 
 .content-bg {
   @include div_l_pc(1372, 84, 635, 0);
-  background-color: rgba(255, 255, 255, .75);
+  background-color: rgba(255, 255, 255, 0.75);
+  opacity: 1 !important;
 }
 
 .title {
@@ -80,6 +98,7 @@
   text-align: left;
   color: #0083be;
   white-space: nowrap;
+  opacity: 1 !important;
 }
 
 .subtitle {
@@ -93,6 +112,7 @@
   text-align: center;
   color: #4d4d4d;
   white-space: nowrap;
+  opacity: 1 !important;
 }
 
 .desc {
@@ -105,10 +125,12 @@
   letter-spacing: size(1.96);
   text-align: left;
   color: #666666;
+  opacity: 1 !important;
 }
 
 .arrow {
   @include img_l_pc(47, 665, 437);
+  opacity: 1 !important;
 }
 
 .animate-slide {
@@ -321,91 +343,121 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section8 {
+  .section9 {
     width: 100vw;
-    height: sizem(790);
+    height: sizem(344);
     min-height: auto;
     max-height: initial;
+    background-color: #0083be;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
     // background-position: 0 0;
     // background-attachment: fixed;
     overflow: hidden;
   }
+  .container {
+    height: sizem(474);
+  }
+  // .timeline {
+  //   @include img_c_m(310, 496);
+  // }
 
-  .txt {
-    width: sizem(310);
-    top: sizem(320);
-    left: sizem(32.5);
-    display: block;
+  .arrow {
+    @include img_l_m(21, 168, 130);
+    opacity: 1 !important;
+    z-index: 10;
+  }
+
+  .content-bg {
+    @include div_l_m(375, 196, 151, 0);
+    background-color: rgba(255, 255, 255, 0.75);
+    z-index: 10;
   }
 
   .title {
-    width: 100%;
-    line-height: 1.6;
-    font-size: sizem(25);
-    right: 0;
-    top: sizem(3);
+    @include img_l_m(143, 156, 32);
+    font-size: sizem(20);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: sizem(0.08);
+    text-align: left;
+    color: #0083be;
+    white-space: nowrap;
+    opacity: 1 !important;
+    z-index: 10;
     span {
-      display: inline-block;
+      font-size: sizem(30);
     }
-  }
-
-  .hr {
-    width: 100%;
-    height: sizem(2);
-    position: relative;
-    right: sizem(0);
-    margin: sizem(12) 0;
-  }
-
-  .s-title {
-    top: 0;
-    left: sizem(0);
-    width: sizem(279);
   }
 
   .subtitle {
-    width: 100%;
-    font-size: sizem(18);
-    right: sizem(-1);
+    @include img_l_m(80, 160, 175);
+    font-size: sizem(24);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.07;
+    letter-spacing: sizem(0.64);
+    text-align: left;
+    color: #666666;
+    opacity: 1 !important;
+    z-index: 10;
+    white-space: nowrap;
   }
 
   .desc {
+    @include img_l_m(310, 220, 33);
     font-size: sizem(15);
-    line-height: 1.6;
-    letter-spacing: sizem(2.09);
-    white-space: nowrap;
-    display: block;
-    span {
-      writing-mode: initial;
-      display: block;
-      width: auto;
-      margin: 0 0 0em;
-      &.p {
-        margin: 0 0 0.8em;
-      }
-      &.p2 {
-        margin: 0 0 0.8em -0.5em;
-      }
-    }
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: sizem(1.2);
+    text-align: left;
+    opacity: 1 !important;
+    z-index: 10;
+    color: #666666;
   }
 
-  .img {
-    width: sizem(142);
-    top: sizem(30);
-    left: sizem(-3);
-    position: relative;
+  .animate-slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
+    > img {
+      @for $i from 1 through 10 {
+        $randomNum: random(4) + 3;
+        &:nth-child(#{$i}) {
+          transform: translateY((random(10) - 50) + px);
+          animation: an ($randomNum + s) 3s infinite alternate;
+        }
+      }
+    }
+
+    .mo1 {
+      @include img_r_m(80, 150, -40);
+      z-index: 10;
+    }
+
+    .mo2 {
+      @include img_l_m(95, 360, -30);
+    }
   }
 
   /* Swipe */
   .swipe {
     width: 100vw;
-    height: sizem(300);
+    height: sizem(201);
     min-height: auto;
     top: sizem(0);
     left: sizem(0);
     object-fit: cover;
+    z-index: 10 !important;
+    opacity: 1 !important;
   }
 
   // begin
@@ -460,7 +512,7 @@
 
     img {
       width: 100%;
-      height: sizem(300);
+      height: sizem(201);
       object-fit: cover;
     }
 
@@ -543,7 +595,7 @@
     width: 100%;
     height: 100%;
     padding: 0 15px;
-    z-index: 3;
+    z-index: 30;
 
     .prev-btn,
     .next-btn {
@@ -560,7 +612,7 @@ import info from '@/info'
 import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section8',
+  name: 'section9',
 
   mixins: [slider],
   props: ['viewIndex'],
