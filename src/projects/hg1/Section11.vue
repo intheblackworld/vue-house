@@ -11,25 +11,43 @@
     </div>
     <img src="./s11/masterteam_bg.png" :alt="`${info.caseName}_masterteam_bg`" class="bg-img" data-aos="fade-up" data-aos-delay="0">
     <div class="bg-img blue"></div>
-    <div class="title" data-aos="fade" data-aos-delay="400">
+    <div class="title" data-aos="fade" data-aos-delay="400" v-if="isPC">
       大師團隊<br />四強聯手
+    </div>
+    <div class="title" data-aos="fade" data-aos-delay="400" v-if="isMobile">
+      大師團隊 四強聯手
     </div>
     <div class="subtitle" data-aos="fade" data-aos-delay="600">
       MASTER<br />TEAM
     </div>
-    <img src="./s11/style_arrow_7.png" :alt="`${info.caseName}_style_arrow`" class="arrow" data-aos="fade-up" data-aos-delay="200">
-    <div class="item-list">
+    <img src="./s11/style_arrow_7.png" :alt="`${info.caseName}_style_arrow`" class="arrow" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="200">
+    <div class="item-list" v-if="isPC">
       <img :src="item.img" :alt="`${info.caseName}_item`" data-aos="fade-up" :data-aos-delay="200 + index * 50" v-for="(item, index) in item_list" :key="item.img + index" @click="showDialog(index)">
     </div>
+
+    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`" @click="showDialog(i)">
+            <img :src="slide.img" alt="">
+            <img :src="slide.name" alt="" class="slide-name-img">
+          </div>
+        </transition-group>
+        <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+        </div>
+        <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex" v-if="isMobile">
+        <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex" v-if="isMobile">
+      </div>
+    </div>
+
     <div :class="`dialog ${isDialog ? 'show' : ''}`">
       <div class="animate-slide" v-if="!isMobile">
         <img src="./s11/漂浮物件_分層/10_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
         <img src="./s11/漂浮物件_分層/10_class_2.png" :alt="`${info.caseName}_logo`" class="pc2" data-parallax="4">
       </div>
       <div class="animate-slide" v-if="isMobile">
-        <img src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
-        <img src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2">
-        <img src="./s1/mo1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
+        <img src="./mo/s10/漂浮物件_分層/m_9_class_1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
       </div>
       <img src="./pop-up/pop_bg.png" :alt="`${info.caseName}_masterteam_bg`" class="bg-img dialog-bg" data-aos="fade-up" data-aos-delay="0">
       <div class="bg-img blue light"></div>
@@ -45,11 +63,17 @@
           <div class="dialog-desc dialog-desc1">
             以觀念決定態度，品質決定價值的信念，打造每一棟帶領風潮的建築，「築億建設」以不斷創新的思維及高標準的要求，為每一位住戶打造藝極經典！
           </div>
-          <div class="dialog-works dialog-works1">
+          <div class="dialog-works dialog-works1" v-if="isPC">
             經典作品／<br />
             築億丰盛、築億築藝、大樹小墅、時上逸品、曉學堂
           </div>
-          <img class="dialog-img dialog-img1" src="./pop-up/01/pop_1_man.png" :alt="`${info.caseName}_dialog_img`">
+          <div class="dialog-works dialog-works1" v-if="isMobile">
+            經典作品／<br />
+            築億丰盛、築億築藝、大樹小墅<br />時上逸品、曉學堂
+          </div>
+          <img class="dialog-img dialog-img1" src="./pop-up/01/pop_1_man.png" :alt="`${info.caseName}_dialog_img`" v-if="isPC">
+          <img class="dialog-img dialog-img1" src="./mo/pop-up/01/masterteam_man1_m_popup.png" :alt="`${info.caseName}_dialog_img`" v-if="isMobile">
+          <img class="dialog-img dialog-name" src="./mo/pop-up/01/name_1_m_popup.png" :alt="`${info.caseName}_dialog_img`" v-if="isMobile">
         </div>
         <div class="dialog-content" v-if="isDialog2" key="dialog-2">
           <div class="dialog-slogan dialog-slogan2">
@@ -65,7 +89,9 @@
             經典業績／<br />
             中悦美樹花園、中悦國寶、葛里法系列
           </div>
-          <img class="dialog-img dialog-img2" src="./pop-up/02/pop_2_man.png" :alt="`${info.caseName}_dialog_img`">
+          <img class="dialog-img dialog-img2" src="./pop-up/02/pop_2_man.png" :alt="`${info.caseName}_dialog_img`" v-if="isPC">
+          <img class="dialog-img dialog-img2" src="./mo/pop-up/02/masterteam_man4_m_popup.png" :alt="`${info.caseName}_dialog_img`" v-if="isMobile">
+          <img class="dialog-img dialog-name" src="./mo/pop-up/02/name_2_m_popup.png" :alt="`${info.caseName}_dialog_img`" v-if="isMobile">
         </div>
         <div class="dialog-content" v-if="isDialog3" key="dialog-3">
           <div class="dialog-slogan dialog-slogan3">
@@ -83,7 +109,11 @@
             達永秋鄉<br />
             昭揚君璽
           </div>
-          <img class="dialog-img dialog-img3" src="./pop-up/03/pop_3_man.png" :alt="`${info.caseName}_dialog_img`">
+          <img class="dialog-img dialog-img3" src="./pop-up/03/pop_3_man.png" :alt="`${info.caseName}_dialog_img`" v-if="isPC">
+          <img src="./mo/pop-up/03/3d_img_logo.png" alt="" class="dialog-3d" v-if="isMobile">
+          <img src="./mo/pop-up/03/popup_3d_img.png" alt="" class="dialog-struc" v-if="isMobile">
+          <img class="dialog-img dialog-img3" src="./mo/pop-up/03/masterteam_man3_m_popup.png" :alt="`${info.caseName}_dialog_img`" v-if="isMobile">
+          <img class="dialog-img dialog-name" src="./mo/pop-up/03/name_3_m_popup.png" :alt="`${info.caseName}_dialog_img`" v-if="isMobile">
         </div>
         <div class="dialog-content absolute" v-if="isDialog4" key="dialog-4">
           <div class="dialog-slogan dialog-slogan4">
@@ -102,7 +132,9 @@
             中國 Idea-Tops Award<br />
             日本 Good-design Award
           </div>
-          <img class="dialog-img dialog-img4" src="./pop-up/04/pop_4_man.png" :alt="`${info.caseName}_dialog_img`">
+          <img class="dialog-img dialog-img4" src="./pop-up/04/pop_4_man.png" :alt="`${info.caseName}_dialog_img`" v-if="isPC">
+          <img class="dialog-img dialog-img4" src="./mo/pop-up/04/masterteam_man2_m_popup.png" :alt="`${info.caseName}_dialog_img`" v-if="isMobile">
+          <img class="dialog-img dialog-name" src="./mo/pop-up/04/name_4_m_popup.png" :alt="`${info.caseName}_dialog_img`" v-if="isMobile">
         </div>
       </transition-group>
     </div>
@@ -149,6 +181,15 @@
     height: 100vh;
   }
 
+  // .dialog-3d {
+  //   @include img_l_pc(67, 137, 36);
+  // }
+
+  // .dialog-struc {
+  //   @include img_r_pc(270, 147, 10);
+  //   top: auto;
+  //   bottom: 5vh;
+  // }
   .dialog-img {
     &.dialog-img1 {
       @include img_l_pc(280, 125, 790);
@@ -177,7 +218,9 @@
     text-align: left;
     color: #ffffff;
     white-space: nowrap;
-    &.dialog-slogan1, &.dialog-slogan2, &.dialog-slogan4 {
+    &.dialog-slogan1,
+    &.dialog-slogan2,
+    &.dialog-slogan4 {
       @include img_l_pc(649, 493, 165);
     }
 
@@ -196,7 +239,9 @@
     text-align: left;
     color: #ffffff;
     white-space: nowrap;
-    &.dialog-title1, &.dialog-title2, &.dialog-title4 {
+    &.dialog-title1,
+    &.dialog-title2,
+    &.dialog-title4 {
       @include img_l_pc(316, 426, 1173);
     }
 
@@ -214,7 +259,9 @@
     letter-spacing: size(1.32);
     text-align: left;
     color: #ffffff;
-    &.dialog-desc1, &.dialog-desc2, &.dialog-desc4 {
+    &.dialog-desc1,
+    &.dialog-desc2,
+    &.dialog-desc4 {
       @include img_r_pc(565, 527, 180);
     }
 
@@ -233,7 +280,9 @@
     text-align: left;
     color: #ffffff;
     white-space: nowrap;
-    &.dialog-works1, &.dialog-works2, &.dialog-works4 {
+    &.dialog-works1,
+    &.dialog-works2,
+    &.dialog-works4 {
       @include img_r_pc(410, 668, 336);
     }
 
@@ -259,13 +308,6 @@
   min-height: size(900);
   // position: relative;
   z-index: 10;
-  // background-color: #b01f24;
-  // min-height: size(900);
-  // background-image: url('./s2/bg.jpg');
-  // background-size: 100% 100%;
-  // background-position: 0 0;
-  // background-attachment: fixed;
-  // overflow: hidden;
 }
 
 .bg-img {
@@ -572,14 +614,14 @@
 }
 
 @media screen and (max-width: 767px) {
+  // 彈窗效果
   .dialog {
     width: 100vw;
     height: 100vh;
     position: fixed;
     top: 0;
-    // background: url('./s1/bg.png') repeat;
-    background-size: auto;
-    z-index: 1;
+    background-color: rgba(45, 115, 171, 1);
+    z-index: 100;
     opacity: 0;
     transition: opacity 0.5s;
     display: block;
@@ -593,82 +635,178 @@
       left: 0;
     }
 
-    .dialog-img {
-      width: size(1160);
-      top: calc(50% - 18.75vw);
-      left: size(176);
+    .dialog-bg {
+      width: 100vw;
+      height: 100vh;
       object-fit: cover;
-      height: auto;
-      z-index: 2;
+      opacity: 1 !important;
+      mix-blend-mode: overlay;
     }
 
-    .dialog-ink {
-      width: size(250);
-      top: calc(50% + 2vw);
-      right: size(172);
+    .dialog-content {
+      margin: 0;
+      background: transparent;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+    }
+    .dialog-3d {
+      @include img_l_m(67, 137, 36);
     }
 
-    .dialog-text {
-      width: size(800);
-      height: size(32.4);
-      top: calc(50% + 17.1vw);
-      right: size(177);
-      border-bottom: solid 1px #9d0c1a;
-      border-right: solid 1px #9d0c1a;
-      text-align: right;
-      font-size: size(23.6);
-      font-weight: normal;
+    .dialog-struc {
+      @include img_r_m(270, 147, 10);
+      top: auto;
+      bottom: 5vh;
+    }
+    .dialog-img {
+      &.dialog-name {
+        @include img_l_m(110, 160, 33);
+        width: auto;
+        height: sizem(111);
+      }
+      &.dialog-img1 {
+        @include img_l_m(280, 125, 790);
+        width: auto;
+        height: sizem(400);
+        left: auto;
+        top: sizem(48);
+        right: sizem(30);
+      }
+
+      &.dialog-img2 {
+        @include img_l_m(585, 65, 690);
+        width: auto;
+        height: sizem(400);
+        top: sizem(48);
+        left: auto;
+        right: sizem(30);
+      }
+
+      &.dialog-img3 {
+        @include img_l_m(625, 45, 8);
+        width: auto;
+        height: sizem(400);
+        top: sizem(48);
+        left: auto;
+        right: sizem(30);
+      }
+
+      &.dialog-img4 {
+        @include img_l_m(544, 65, 630);
+        width: auto;
+        height: sizem(400);
+        top: sizem(48);
+        left: auto;
+        right: sizem(30);
+      }
+    }
+
+    .dialog-slogan {
+      font-size: sizem(54);
+      font-weight: 300;
       font-stretch: normal;
       font-style: normal;
-      line-height: 1.2;
-      letter-spacing: size(5.66);
-      padding: 0 5px;
-      color: #262626;
+      line-height: 1.11;
+      letter-spacing: sizem(2.32);
+      text-align: left;
+      color: #ffffff;
+      white-space: nowrap;
+      z-index: 2;
+      &.dialog-slogan1,
+      &.dialog-slogan2,
+      &.dialog-slogan4 {
+        @include img_l_m(220, 13, 32);
+      }
+
+      &.dialog-slogan3 {
+        @include img_l_m(220, 13, 32);
+      }
     }
 
     .dialog-title {
-      top: calc(50% - 18.75vw);
-      right: size(423);
-      font-size: size(44);
-      font-weight: bold;
+      font-size: sizem(25);
+      font-weight: 500;
       font-stretch: normal;
       font-style: normal;
-      line-height: 1.06;
-      letter-spacing: size(2.6);
+      line-height: 2;
+      letter-spacing: sizem(-0.43);
       text-align: left;
-      color: #af1f24;
-      writing-mode: vertical-rl;
-      text-orientation: upright;
+      color: #ffffff;
+      z-index: 2;
+      white-space: nowrap;
+      &.dialog-title1,
+      &.dialog-title2,
+      &.dialog-title4 {
+        @include img_l_m(316, 273, 30);
+      }
+
+      &.dialog-title3 {
+        @include img_l_m(316, 273, 30);
+      }
     }
 
-    .dialog-subtitle {
-      top: calc(50% - 18.75vw);
-      right: size(388);
-      font-size: size(25);
-      font-weight: bold;
+    .dialog-desc {
+      font-size: sizem(16);
+      font-weight: normal;
       font-stretch: normal;
       font-style: normal;
-      line-height: 1.1;
-      letter-spacing: size(1.48);
+      line-height: 1.88;
+      letter-spacing: sizem(1.28);
       text-align: left;
-      color: #323333;
-      writing-mode: vertical-rl;
-      text-orientation: upright;
+      z-index: 2;
+      color: #ffffff;
+      &.dialog-desc1,
+      &.dialog-desc2,
+      &.dialog-desc4 {
+        @include img_r_m(322, 329, 19);
+      }
+
+      &.dialog-desc3 {
+        @include img_r_m(322, 329, 19);
+      }
+    }
+
+    .dialog-works {
+      font-size: sizem(16);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.88;
+      letter-spacing: sizem(1.28);
+      text-align: left;
+      color: #ffffff;
       white-space: nowrap;
+      &.dialog-works1,
+      &.dialog-works2,
+      &.dialog-works4 {
+        @include img_r_m(322, 19, 19);
+        top: auto;
+        bottom: 10vh;
+      }
+
+      &.dialog-works3 {
+        @include img_r_m(322, 19, 19);
+        top: auto;
+        bottom: 10vh;
+      }
     }
 
     .close {
       position: fixed;
       cursor: pointer;
-      right: size(186);
-      top: calc(50% - 18.75vw);
-      width: size(56);
-      background-color: #9d0c1a;
+      right: sizem(32);
+      top: sizem(23);
+      width: sizem(30);
+      z-index: 1;
+      // background-color: #9d0c1a;
     }
   }
+
   .section11 {
     width: 100vw;
-    height: sizem(790);
+    height: sizem(601);
     min-height: auto;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
@@ -677,100 +815,110 @@
     overflow: hidden;
   }
 
-  .img-text {
-    width: sizem(280);
-    min-height: sizem(44.6);
-    height: auto;
-    bottom: sizem(20);
-    padding-right: 10px;
-    border-right: solid 1px #af1f24;
-    border-bottom: solid 1px #af1f24;
-    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
-    font-size: sizem(16);
-    font-weight: normal;
+  .title {
+    @include img_l_m(214, 34, 33);
+    font-size: sizem(25);
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.25;
-    letter-spacing: sizem(0.62);
+    line-height: 4.1;
+    letter-spacing: sizem(1.08);
     text-align: right;
     color: #ffffff;
-  }
-
-  .title {
-    width: sizem(308);
-    top: sizem(430);
-    left: sizem(31.5);
-    font-size: sizem(32);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.16;
-    letter-spacing: sizem(4.45);
-    text-align: left;
-    color: #ffffff;
     white-space: nowrap;
-    span {
-      font-size: sizem(31);
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.19;
-      letter-spacing: normal;
-      text-align: left;
-      color: #ffffff;
-    }
-
-    .number {
-      font-size: sizem(42);
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.14;
-      letter-spacing: sizem(4.2);
-      text-align: left;
-      color: #ffffff;
-    }
   }
 
   .subtitle {
-    width: sizem(310);
-    top: sizem(397);
-    left: sizem(31.7);
-    font-size: sizem(15);
-    font-weight: bold;
+    @include img_l_m(224, 103, 32);
+    font-size: sizem(54);
+    font-weight: 300;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.04;
-    letter-spacing: sizem(0.6);
+    line-height: 1.11;
+    letter-spacing: sizem(0.16);
     text-align: left;
-    color: #ffffff;
+    color: #df9529;
     white-space: nowrap;
   }
 
-  .desc {
-    width: sizem(310);
-    top: sizem(538);
-    right: sizem(32);
-    font-size: sizem(14);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.4;
-    letter-spacing: 0;
-    text-align: justify;
-    color: #ffffff;
-    padding: sizem(20) 0 0 0;
-    border-left: size(0) solid #fff;
-    border-top: sizem(2) solid #fff;
+  .arrow {
+    @include img_l_m(28, 75, 263);
+  }
+
+  .item-list {
+    @include img_r_m(1192, 125, 151);
+    img {
+      cursor: pointer !important;
+      position: absolute;
+      top: 0;
+      z-index: 3;
+      opacity: 0.85 !important;
+      transition: all 0.3s !important;
+
+      &:hover {
+        opacity: 1 !important;
+        transform: scale(1.1) !important;
+      }
+      &:nth-child(1) {
+        width: size(280);
+        left: 0;
+      }
+
+      &:nth-child(2) {
+        width: size(505);
+        left: size(200);
+      }
+
+      &:nth-child(3) {
+        width: size(505);
+        left: size(500);
+      }
+
+      &:nth-child(4) {
+        width: size(400);
+        left: size(830);
+        top: size(45);
+      }
+      // margin: size(10) size(20);
+    }
+  }
+
+  .animate-slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    // z-index: 3;
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
+    > img {
+      @for $i from 1 through 10 {
+        $randomNum: random(4) + 3;
+        &:nth-child(#{$i}) {
+          transform: translateY((random(10) - 50) + px);
+          animation: an ($randomNum + s) 3s infinite alternate;
+        }
+      }
+    }
+
+    .mo1 {
+      @include img_r_m(375, 0, 0);
+      z-index: 1;
+    }
+
+    // .mo2 {
+    //   @include img_l_mo(260, -40, 0);
+    //   z-index: 1;
+    // }
   }
 
   /* Swipe */
   .swipe {
-    width: sizem(308);
-    height: sizem(366);
+    width: sizem(375 - 32 - 24);
+    height: sizem(509);
     min-height: auto;
     top: sizem(16);
-    left: sizem(34);
+    left: sizem(32);
     object-fit: cover;
   }
 
@@ -822,12 +970,28 @@
   .swipe-item {
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: 3;
 
     img {
-      width: 100%;
-      height: sizem(366);
+      width: auto;
+      height: sizem(409);
       object-fit: cover;
+      position: absolute;
+      z-index: 10;
+      top: sizem(140);
+      left: auto;
+      right: sizem(0);
+    }
+
+    .slide-name-img {
+      width: auto;
+      height: sizem(89);
+      object-fit: cover;
+      position: absolute;
+      z-index: 10;
+      top: auto;
+      left: sizem(32);
+      bottom: sizem(22);
     }
 
     // &:nth-child(1) {
@@ -910,12 +1074,21 @@
     height: 100%;
     padding: 0 15px;
     z-index: 3;
+  }
+  .prev-btn {
+    left: 5%;
+  }
 
-    .prev-btn,
-    .next-btn {
-      width: sizem(15);
-      cursor: pointer;
-    }
+  .next-btn {
+    right: 5%;
+  }
+  .prev-btn,
+  .next-btn {
+    width: sizem(15) !important;
+    top: 40%;
+    z-index: 13;
+    position: absolute;
+    cursor: pointer;
   }
 }
 </style>
@@ -957,6 +1130,22 @@ export default {
         },
       ],
       slideList: [
+        {
+          img: require('./mo/s11/masterteam_man1_m.png'),
+          name: require('./mo/s11/name_1_m.png'),
+        },
+        {
+          img: require('./mo/s11/masterteam_man2_m.png'),
+          name: require('./mo/s11/name_2_m.png'),
+        },
+        {
+          img: require('./mo/s11/masterteam_man3_m.png'),
+          name: require('./mo/s11/name_3_m.png'),
+        },
+        {
+          img: require('./mo/s11/masterteam_man4_m.png'),
+          name: require('./mo/s11/name_4_m.png'),
+        },
         // {
         //   img: require('./s11/1.jpg'),
         //   text: '《墨濤院》<br />2017年國家建築金質獎',

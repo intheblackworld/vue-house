@@ -247,6 +247,7 @@
     text-align: left;
     color: #ffffff;
     white-space: nowrap;
+    z-index: 10;
     opacity: 1 !important;
   }
 
@@ -260,6 +261,7 @@
     letter-spacing: sizem(-0.34);
     text-align: left;
     color: #ffffff;
+    z-index: 10;
     opacity: 1 !important;
   }
 
@@ -277,6 +279,7 @@
 
   .item-list {
     @include img_r_m(375 - 64 + 20, 252, 32);
+    z-index: 10;
     img {
       min-width: sizem(89);
       margin: sizem(9) sizem(10);

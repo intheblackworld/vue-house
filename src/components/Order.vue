@@ -388,7 +388,7 @@ export default {
     // background-image: $order_bg_image_m;
     background-color: transparent;
     background-size: auto 250vw;
-    padding-top: calc(100vw * 250 / 375);
+    // padding-top: calc(100vw * 250 / 375);
     .order-title {
       font-size: sizem(37);
       margin-top: 10px;
