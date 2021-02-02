@@ -17,16 +17,15 @@
     caseName}_tbg`" class="tbg">
       <img src="./s6/title.png" :alt="`${info.
     caseName}_logo`" class="title-img">
-    <div class="p2">
-      <img src="./s6/free.png" :alt="`${info.caseName}_title`" class="logo1">
-      <img src="./s6/p5.png" :alt="`${info.caseName}_p5`" class="p5">
+      <div class="p2">
+        <img src="./s6/free.png" :alt="`${info.caseName}_title`" class="logo1">
+        <img src="./s6/p5.png" :alt="`${info.caseName}_p5`" class="p5">
       </div>
-    <div class="p3">
-      <img src="./s6/free.png" :alt="`${info.caseName}_title`" class="logo2">
-      <img src="./s6/p6.png" :alt="`${info.caseName}_p6`" class="p6">
+      <div class="p3">
+        <img src="./s6/free.png" :alt="`${info.caseName}_title`" class="logo2">
+        <img src="./s6/p6.png" :alt="`${info.caseName}_p6`" class="p6">
       </div>
-      
-      
+
       <div class="child-jump">
         <img src="./s6/p4.png" :alt="`${info.caseName}_p1`" class="p1">
       </div>
@@ -38,6 +37,7 @@
       <carousel-3d class="swipe relative" ref="mycarousel" :width="videoWidth" :height="videoHeight" :perspective="0" :disable3d="false" :border="0" :display="3" :space="isMobile ? 300 : 300" @before-slide-change="onBeforeSlideChange">
         <slide v-for="(slide, index) in slideList" :index="index" :key="slide.img + index" class="video-slide">
           <img :src="slide.img" :class="`video-img absolute`" />
+          <div class="name">{{slide.name}}</div>
           <div class="mask" v-if="!isMobile">
             <div class="slide-title" v-html="slide.title">
             </div>
@@ -101,7 +101,6 @@
   // }
 }
 
-
 .title-img {
   @include img_c_pc(290, 320);
 }
@@ -122,34 +121,39 @@
   @include img_l_pc(310, 440, 403);
   animation: jump2 1.5s 0s ease-in infinite alternate;
 }
-.p3 {@include img_l_pc(294, 620, 856);
+.p3 {
+  @include img_l_pc(294, 620, 856);
   animation: jump2 1.7s -1.7s ease-in infinite alternate;
 }
 .logo1 {
   @include img_l_pc(322, -180, -25);
-  animation: jump5 .8s ease-in infinite alternate;
+  animation: jump5 0.8s ease-in infinite alternate;
   transform-origin: 65% 100%;
 }
 
 .logo2 {
   @include img_l_pc(129, -80, 85);
-  animation: jump5 .6s -.6s ease-in infinite alternate;
+  animation: jump5 0.6s -0.6s ease-in infinite alternate;
   transform-origin: 65% 100%;
 }
 .p5 {
-  width:100%;
-// @include img_l_pc(310, 440, 403);
+  width: 100%;
+  // @include img_l_pc(310, 440, 403);
 }
 
 .p6 {
-  width:100%;
-//  @include img_l_pc(294, 620, 856);
+  width: 100%;
+  //  @include img_l_pc(294, 620, 856);
 }
-@keyframes jump2{
-  to{transform: translateX(-15%);}
+@keyframes jump2 {
+  to {
+    transform: translateX(-15%);
+  }
 }
-@keyframes jump5{
-  to{transform:scale(0.8);}
+@keyframes jump5 {
+  to {
+    transform: scale(0.8);
+  }
 }
 
 .title {
@@ -166,18 +170,31 @@
 }
 .p1 {
   @include img_r_pc(198, 130, 292);
-  animation: jump1 3s 0s linear  infinite;
+  animation: jump1 3s 0s linear infinite;
   font-size: 1vw;
 }
-@keyframes jump1{
-  0%{transform: translateY(0);opacity:1}
-  30%{transform: translateY(27em);opacity:1}
-  78%{transform: translateY(27em);opacity:1}
-  80%{transform: translateY(30em);opacity: 0}
-  100%{transform: translateY(30em);opacity: 0}
+@keyframes jump1 {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  30% {
+    transform: translateY(27em);
+    opacity: 1;
+  }
+  78% {
+    transform: translateY(27em);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(30em);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(30em);
+    opacity: 0;
+  }
 }
-
-
 
 .grass {
   width: 100vw;
@@ -207,22 +224,36 @@
 .video-slide {
   cursor: pointer;
   transition: all 0.3s;
-  
-  .box100{position: absolute;top: 0;left: 0;width: 0;height: 0;}
+
+  .box100 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+  }
   &:hover {
     .mask {
-      opacity:0.6;
-      .slide-title,.btn{opacity:0;}
+      opacity: 0.6;
+      .slide-title,
+      .btn {
+        opacity: 0;
+      }
     }
   }
   &.current:hover {
     .mask {
-      opacity:1;
-      .slide-title,.btn{opacity:1;}
+      opacity: 1;
+      .slide-title,
+      .btn {
+        opacity: 1;
+      }
     }
-    .box100{width: 100%; height: 100%;}
+    .box100 {
+      width: 100%;
+      height: 100%;
+    }
   }
-
 
   .play-btn {
     width: 125px;
@@ -255,8 +286,9 @@
   background-color: #f5f0eccc;
   opacity: 0;
   transition: all 0.3s;
-  padding:size(60);
-  display: flex;align-items: center;
+  padding: size(60);
+  display: flex;
+  align-items: center;
 }
 
 .slide-title {
@@ -268,14 +300,17 @@
   line-height: 1.2;
   letter-spacing: normal;
   text-align: justify;
-  color: #40834d;text-shadow: 0 0 0.5em #fff;
-  cursor: pointer;opacity:0;
+  color: #40834d;
+  text-shadow: 0 0 0.5em #fff;
+  cursor: pointer;
+  opacity: 0;
 }
 
 .btn {
   @include img_r_pc(176, 438, 107);
   width: auto;
-  top: auto;bottom: 0.5em;
+  top: auto;
+  bottom: 0.5em;
   right: 0.5em;
   font-size: size(40);
   font-weight: 900;
@@ -285,7 +320,8 @@
   letter-spacing: normal;
   text-align: left;
   color: #606060;
-  cursor: pointer;opacity:0;
+  cursor: pointer;
+  opacity: 0;
 }
 
 .pagination {
@@ -309,7 +345,7 @@
     display: block;
     width: 1.8em;
     height: 1.8em;
-    border-radius:50%;
+    border-radius: 50%;
     color: #fff;
     position: relative;
     transition: all 0.5s;
@@ -317,7 +353,7 @@
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height:1.8;
+    line-height: 1.8;
     letter-spacing: normal;
     text-align: center;
     background-color: #fff3;
@@ -360,12 +396,27 @@
 }
 
 .child-jump {
-  width:100%;
-  height:100%;
- // overflow: hidden;
+  width: 100%;
+  height: 100%;
+  // overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.name {
+  right: 1.5em;
+  bottom: 1em;
+  font-size: 0.78125vw;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: 0.89px;
+  text-align: left;
+  color: #fff;
+  position: absolute;
+  text-shadow: 0 0.1em 0.3em #000;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -452,13 +503,13 @@
   .o {
     @include img_r_m(163, 34, 0);
 
-      z-index: 2;
+    z-index: 2;
     &.high {
       z-index: 3;
     }
   }
-  
-  .p2{
+
+  .p2 {
     @include img_l_m(92, 230, 20);
     z-index: 3;
   }
@@ -478,7 +529,6 @@
     z-index: 4;
   }
 
-
   .title {
     @include img_c_m(290, 24);
     font-size: sizem(22);
@@ -495,8 +545,8 @@
 
   .p1 {
     @include img_r_m(60, 170, 66);
-  font-size: 1vw; 
-  z-index: 2;
+    font-size: 1vw;
+    z-index: 2;
   }
 
   .grass {
@@ -515,6 +565,7 @@
     line-height: 1.2;
     letter-spacing: normal;
     text-align: center;
+    white-space: nowrap;
     color: #ffffff;
   }
   .swipe {
@@ -604,7 +655,7 @@
     width: 100vw;
     right: 0;
     left: 0;
-    top:sizem(400);
+    top: sizem(400);
     //bottom: size(100);
     margin: 0 auto;
     display: flex;
@@ -669,6 +720,25 @@
       }
     }
   }
+
+  .name {
+    // right: 0;
+    // left: 0;
+    // margin: 0 auto;
+    right: 0.5em;
+    bottom: 0.5em;
+    position: absolute;
+    font-size: sizem(14);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: sizem(0.72);
+    text-align: center;
+    color: #ffffff;
+    white-space: nowrap;
+    text-shadow: 0 0.1em 0.3em #000;
+  }
 }
 </style>
 <script>
@@ -699,43 +769,55 @@ export default {
         {
           title: '前20名報名者，將獲得瑪莎限量拍照牌！',
           img: require('./s7/1.jpg'),
+          name: '情境示意圖',
         },
         {
           title: '透過繪本、唱跳和動手玩創作，一起來迎接春天吧～',
           img: require('./s7/2.jpg'),
+          name: '情境示意圖',
         },
         {
           title: '聽說海底王國裡有許多故事，跟著海底探險家出發吧！',
           img: require('./s7/3.jpg'),
+          name: '情境示意圖',
         },
         {
           title: '邀請親子同樂，一起透過讀報來認識世界，創造驚喜。',
           img: require('./s7/4.jpg'),
+          name: '情境示意圖',
         },
         {
           title: '國語日報特製闖關遊戲，結合閱讀，玩樂中兼具學習！',
           img: require('./s7/5.jpg'),
+          name: '情境示意圖',
         },
         {
           title: '激發孩子創造力，活動筋骨，擁有開心健康的兒童節！',
           img: require('./s7/6.jpg'),
+          name: '情境示意圖',
         },
         {
           title: '讓姊姊說好聽好玩的故事，感受不同的週末親子時光。',
           img: require('./s7/7.jpg'),
+          name: '情境示意圖',
         },
         {
           img: require('./s7/8.jpg'),
+          name: '情境示意圖',
           title: ' ',
-     //     title: '透過唱跳遊戲及手作的方式，讓孩子更加認識過年。',
+          //     title: '透過唱跳遊戲及手作的方式，讓孩子更加認識過年。',
         },
         {
           title: '一杯口感馥郁香氣的黑色飲料，蘊藏著多少功夫細節？',
           img: require('./s7/9.jpg'),
         },
       ],
-      videoWidth: isMobile?window.innerWidth * 350 / 375:window.innerWidth * 1036 / 1920,
-      videoHeight:isMobile?window.innerWidth * 163 / 375: window.innerWidth * 483 / 1920,
+      videoWidth: isMobile
+        ? (window.innerWidth * 350) / 375
+        : (window.innerWidth * 1036) / 1920,
+      videoHeight: isMobile
+        ? (window.innerWidth * 163) / 375
+        : (window.innerWidth * 483) / 1920,
     }
   },
 
@@ -750,19 +832,19 @@ export default {
 
     changeAct(index) {
       main.$emit('changeAct', index)
-    }
+    },
   },
 
   created() {},
 
   mounted() {
     if (this.isTablet) {
-      this.videoWidth = window.innerWidth * 1036 / 1920
-      this.videoHeight = window.innerWidth * 483 / 1920
+      this.videoWidth = (window.innerWidth * 1036) / 1920
+      this.videoHeight = (window.innerWidth * 483) / 1920
     }
     if (this.isMobile) {
-      this.videoWidth = window.innerWidth * 350 / 375
-      this.videoHeight = window.innerWidth * 160 / 375
+      this.videoWidth = (window.innerWidth * 350) / 375
+      this.videoHeight = (window.innerWidth * 160) / 375
     }
   },
 

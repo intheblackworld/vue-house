@@ -7,11 +7,11 @@
       <div class="form">
         <div class="group">
           <!-- <div class="form-hint">* 每個欄位都是必填欄位</div> -->
-          <div class="row" data-aos="fade-down" data-aos-delay="100">
+          <!-- <div class="row" data-aos="fade-down" data-aos-delay="100">
             <el-select v-model="form.activity" placeholder>
               <el-option v-for="(act, index) in activies" :key="act.value + index" :label="act.label" :value="act.value" no-data-text="無數據"></el-option>
             </el-select>
-          </div>
+          </div> -->
           <div class="row" data-aos="fade-down" data-aos-delay="100">
             <el-input id="form-name" v-model="form.count" placeholder="報名人數"></el-input>
           </div>
@@ -60,9 +60,13 @@
           <iframe class="google-map" title="googlemap" :src="googleSrc" width="100%" height="383" frameborder="0" style="border: 0" allowfullscreen />
           <div class="control" data-aos="fade-down" data-aos-delay="500">
             <div class="control-desc">
-              <p>
+              <p v-if="isPC">
                 <!-- 電話 {{info.phone}}<br />客服信箱：{{info.email}}<br /> -->                
                 樂園位置：<br>{{info.address}}
+              </p>
+              <p v-if="isMobile">
+                <!-- 電話 {{info.phone}}<br />客服信箱：{{info.email}}<br /> -->                
+                樂園位置：{{info.address}}
               </p>
             </div>
       <a :href="info.googleLink" target="_blank" class="contact-btn flex-c wrap google-map-btn">
@@ -159,7 +163,8 @@ export default {
         },
       ],
       form: {
-        activity: '2/15(六)14:00-16:00 瑪莎見面會', // 活動名稱
+        // activity: '2/15(六)14:00-16:00 瑪莎見面會', // 活動名稱
+        activity: '',
         count: '', // 報名人數
         name: '',
         phone: '',
@@ -215,7 +220,7 @@ export default {
       if (
         !this.form.name ||
         !this.form.phone ||
-        !this.form.activity ||
+        // !this.form.activity ||
         // ||
         // !this.form.time_start ||
         // !this.form.time_end

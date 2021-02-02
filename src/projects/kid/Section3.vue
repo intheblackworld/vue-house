@@ -28,6 +28,7 @@
       把「多元設施」及「情境體驗」搬來，<br />
       打造城市探險，全場免費，親子嗨玩！
     </div>
+    <div class="name">情境示意圖</div>
     <div class="animate-bg">
       <img src="./s1/bubb (3).png" :alt="`${info.caseName}_bubble3`" class="bubble3">
       <img src="./s1/bubb (5).png" :alt="`${info.caseName}_bubble4`" class="bubble4">
@@ -149,6 +150,22 @@
   }
 }
 
+.name {
+  right: 1.5em;
+  bottom: 3em;
+  font-size: 0.78125vw;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: 0.89px;
+  text-align: left;
+  color: #fff;
+  position: absolute;
+  z-index: 10;
+  text-shadow: 0 0.1em 0.3em #000;
+}
+
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -249,6 +266,25 @@
       height: sizem(214);
       margin-top: sizem(-20);
     }
+  }
+
+  .name {
+    // right: 0;
+    // left: 0;
+    // margin: 0 auto;
+    right: 0.5em;
+    bottom: 0.5em;
+    position: absolute;
+    font-size: sizem(14);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: sizem(0.72);
+    text-align: center;
+    color: #ffffff;
+    white-space: nowrap;
+    text-shadow: 0 0.1em 0.3em #000;
   }
 }
 </style>

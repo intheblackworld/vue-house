@@ -399,6 +399,7 @@
     letter-spacing: normal;
     text-align: left;
     color: #606060;
+    white-space: nowrap;
   }
 
   .logo {
@@ -519,11 +520,12 @@
     }
 
     .name {
-      right: 0;
-      left: 0;
-      margin: 0 auto;
-      bottom: 2em;
-      font-size: sizem(18);
+      // right: 0;
+      // left: 0;
+      // margin: 0 auto;
+      right: 0.5em;
+      bottom: 0.5em;
+      font-size: sizem(14);
       font-weight: 500;
       font-stretch: normal;
       font-style: normal;
@@ -661,16 +663,19 @@ export default {
       slideList: [
         {
           img: require('./s5/1.jpg'),
+          name: '情境示意圖',
         },
         {
           img: require('./s5/2.jpg'),
+          name: '情境示意圖',
         },
         {
           img: require('./s5/3.jpg'),
+          name: '情境示意圖',
         },
-        {
-          img: require('./s5/4.jpg'),
-        },
+        // {
+        //   img: require('./s5/4.jpg'),
+        // },
       ],
     }
   },
