@@ -10,9 +10,9 @@
       :options="options"
       id="fullpage"
     > -->
-      <vue-lazy-component class="section relative" id="section1" @init="init">
-        <Section1 />
-      </vue-lazy-component>
+      <!-- <vue-lazy-component class="section relative" id="section1" @init="init"> -->
+      <Section1 />
+      <!-- </vue-lazy-component> -->
 
       <!-- <vue-lazy-component class="section" id="section2" style="">
         <Section2 />
@@ -76,7 +76,7 @@
   background-size: auto;
   background-position: center center;
   background-repeat: repeat;
-  overflow: hidden;//試底下多的那塊哪來的
+  overflow: hidden; //試底下多的那塊哪來的
 }
 
 @media only screen and (max-width: 767px) {
@@ -152,25 +152,24 @@ export default {
     }
   },
   created() {
-    $(document).ready(() => {
-      // Images loaded is zero because we're going to process a new set of images.
-      var imagesLoaded = 0
-      // Total images is still the total number of <img> elements on the page.
-      var totalImages = $('img').length
-
-      const allImagesLoaded = () => {
-        this.load = false
-      }
-      const imageLoaded = () => {
-        imagesLoaded++
-        if (imagesLoaded == totalImages) {
-          allImagesLoaded()
-        }
-      }
-      $('img').each(function (idx, img) {
-        $('<img>').on('load', imageLoaded).attr('src', $(img).attr('src'))
-      })
-    })
+    // $(document).ready(() => {
+    //   // Images loaded is zero because we're going to process a new set of images.
+    //   var imagesLoaded = 0
+    //   // Total images is still the total number of <img> elements on the page.
+    //   var totalImages = $('img').length
+    //   const allImagesLoaded = () => {
+    //     this.load = false
+    //   }
+    //   const imageLoaded = () => {
+    //     imagesLoaded++
+    //     if (imagesLoaded == totalImages) {
+    //       allImagesLoaded()
+    //     }
+    //   }
+    //   $('img').each(function (idx, img) {
+    //     $('<img>').on('load', imageLoaded).attr('src', $(img).attr('src'))
+    //   })
+    // })
     // window.location = "https://ywh.nhc888.com.tw/"
   },
   mounted() {
