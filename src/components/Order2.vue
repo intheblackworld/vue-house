@@ -60,13 +60,9 @@
           <iframe class="google-map" title="googlemap" :src="googleSrc" width="100%" frameborder="0" style="border: 0" allowfullscreen />
           <div class="control" data-aos="fade-down" data-aos-delay="500">
             <div class="control-desc">
-              <p v-if="isPC">
+              <p>
                 <!-- 電話 {{info.phone}}<br />客服信箱：{{info.email}}<br /> -->                
-                樂園位置：<br>{{info.address}}
-              </p>
-              <p v-if="isMobile">
-                <!-- 電話 {{info.phone}}<br />客服信箱：{{info.email}}<br /> -->                
-                樂園位置：{{info.address}}
+                樂園位置：<br v-if="!isMobile">{{info.address}}
               </p>
             </div>
       <a :href="info.googleLink" target="_blank" class="contact-btn flex-c wrap google-map-btn">
@@ -581,12 +577,16 @@ export default {
         color: #ffffff;
       }
     }
+  .google-map {
+    // margin-top: 35px;
+    height:sizem(248);
+  }
     .google-map-btn {
-      @include div_l_m(70, 70, 1288, 15);
+      @include div_l_m(70, 70, 45, 0);
     }
 
     .fb-btn {
-      @include div_l_m(70, 70, 1288, 97);
+      @include div_l_m(70, 70, 45, 82);
     }
 
     .bottom-img {
