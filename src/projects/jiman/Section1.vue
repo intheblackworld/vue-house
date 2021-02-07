@@ -25,6 +25,8 @@
       </div>
     </div>
     <div v-else>
+      <img src="./s1/t1.png" :alt="`${info.caseName}_t1`" class="t1" data-aos="fade" data-aos-delay="400">
+      <img src="./s1/logo.png" :alt="`${info.caseName}_logo`" class="logo" data-aos="fade" data-aos-delay="600">
       <img src="./mo/1/f1.png" :alt="`${info.caseName}_f1`" class="f1">
       <img src="./mo/1/f2.png" :alt="`${info.caseName}_f2`" class="f2">
       <img src="./mo/1/t2.png" :alt="`${info.caseName}_t2`" class="t2">
@@ -124,75 +126,43 @@
     width: 100vw;
     min-height: sizem(470);
     max-height: sizem(812);
-    height: calc(100vh - 63px);
+    height: 100vh;
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
   }
-  .bg1,
-  .bg2,
-  .bg3 {
-    top: 0;
-    height: 100%;
-    // background:  url('./s1/bg.png') fixed;
-    background-size: auto;
-    background-position: 0 0%;
-    background-repeat: repeat;
-  }
-  .bg1 {
-    left: 10%;
-    width: 5%;
-  }
-  .bg2 {
-    left: 18%;
-    width: 60%;
-  }
-  .bg3 {
-    left: 82%;
-    width: 9%;
+  .f1 {
+    @include img_r_m(202, 0, 0);
+    transform-origin: right;
+    animation: flow1 3s 0s ease-in-out infinite alternate-reverse;
   }
 
-  .img-left {
-    width: sizem(261);
-    top: sizem(-15);
-    left: sizem(123);
-    transform: rotate(90deg);
+  .f2 {
+    @include img_l_m(146, 540, 0);
+    top: auto;
+    bottom: sizem(-80);
+    transform-origin: left;
+    animation: flow2 2.7s 2s ease-in-out infinite alternate-reverse;
   }
 
-  .fade-out {
-    animation: fadeout 3s 3s ease-in-out forwards;
-  }
-
-  .fade-in {
-    margin-top: -30%;
-    opacity: 0;
-    animation: fadein 3s 4s ease-in-out forwards;
-  }
-
-  @keyframes fadeout {
+  @keyframes flow2 {
     to {
-      transform: translateY(10%);
-      opacity: 0;
+      transform: skewY(3.3deg) translateY(-10px);
     }
   }
 
-  @keyframes fadein {
-    to {
-      margin-top: 0%;
-      opacity: 1;
-    }
+  .t1 {
+    @include img_l_m(79, 39, 47);
+  }
+
+  .t2 {
+    @include img_r_m(225, 291, 47);
   }
 
   .logo {
-    width: sizem(172);
-    top: calc(50% - 43vw);
-    right: sizem(101);
-  }
-
-  .t {
-    width: sizem(300);
-    top: calc(50% + 35vw);
-    right: sizem(37);
+    @include img_r_m(144, 291, 39);
+    top: auto;
+    bottom: sizem(20);
   }
 }
 </style>

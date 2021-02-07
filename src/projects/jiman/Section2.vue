@@ -33,9 +33,19 @@
       </div> -->
     </div>
     <div v-else>
-      <img src="./mo/1/f1.png" :alt="`${info.caseName}_f1`" class="f1">
-      <img src="./mo/1/f2.png" :alt="`${info.caseName}_f2`" class="f2">
-      <img src="./mo/1/t2.png" :alt="`${info.caseName}_t2`" class="t2">
+      <img src="./mo/2/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
+      <div class="animate-bg">
+        <img src="./mo/2/f3.png" :alt="`${info.caseName}_f3`" class="f3">
+        <img src="./mo/2/f4.png" :alt="`${info.caseName}_f4`" class="f4">
+      </div>
+      <img src="./mo/2/t1.png" :alt="`${info.caseName}_t1`" class="t1" data-aos="fade" data-aos-delay="200">
+      <img src="./mo/2/t2.png" :alt="`${info.caseName}_t2`" class="t2" data-aos="fade" data-aos-delay="200">
+      <img src="./mo/2/t3.png" :alt="`${info.caseName}_t3`" class="t3" data-aos="fade" data-aos-delay="400">
+      <img src="./s2/t4.png" :alt="`${info.caseName}_t4`" class="t4" data-aos="fade" data-aos-delay="800">
+
+      <img src="./mo/2/st1.png" :alt="`${info.caseName}_st1`" class="st1" data-aos="fade" data-aos-delay="400">
+      <img src="./mo/2/st2.png" :alt="`${info.caseName}_st2`" class="st2" data-aos="fade" data-aos-delay="400">
+      <img src="./mo/2/st3.png" :alt="`${info.caseName}_st3`" class="st3" data-aos="fade" data-aos-delay="400">
     </div>
   </div>
 </template>
@@ -127,76 +137,76 @@
   .section2 {
     width: 100vw;
     min-height: sizem(470);
-    max-height: sizem(812);
-    height: calc(100vh - 63px);
+    max-height: sizem(1337);
+    height: sizem(1337);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
   }
-  .bg1,
-  .bg2,
-  .bg3 {
-    top: 0;
+
+  .bg-img {
+    width: 100vw;
     height: 100%;
-    // background:  url('./s1/bg.png') fixed;
-    background-size: auto;
-    background-position: 0 0%;
-    background-repeat: repeat;
+    min-height: size(900);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    object-fit: cover;
+    margin-top: 0;
+
+    &:nth-child(1) {
+      position: relative;
+    }
   }
-  .bg1 {
-    left: 10%;
-    width: 5%;
-  }
-  .bg2 {
-    left: 18%;
-    width: 60%;
-  }
-  .bg3 {
-    left: 82%;
-    width: 9%;
+  .f3 {
+    @include img_r_m(233, 418, 0);
+    transform-origin: left;
+    animation: flow1 3s 0s ease-in-out infinite alternate-reverse;
   }
 
-  .img-left {
-    width: sizem(261);
-    top: sizem(-15);
-    left: sizem(123);
-    transform: rotate(90deg);
+  .f4 {
+    @include img_l_m(250, 190, 0);
+    top: auto;
+    bottom: 0;
+    transform-origin: left;
+    animation: flow1 2.3s 0s ease-in-out infinite alternate-reverse;
   }
-
-  .fade-out {
-    animation: fadeout 3s 3s ease-in-out forwards;
-  }
-
-  .fade-in {
-    margin-top: -30%;
-    opacity: 0;
-    animation: fadein 3s 4s ease-in-out forwards;
-  }
-
-  @keyframes fadeout {
+  @keyframes flow1 {
     to {
-      transform: translateY(10%);
-      opacity: 0;
+      transform: skewY(4.3deg) translateY(-15px);
     }
   }
 
-  @keyframes fadein {
-    to {
-      margin-top: 0%;
-      opacity: 1;
-    }
+  .t1 {
+    @include img_r_m(21.2, 70, 90);
+  }
+  .t2 {
+    @include img_r_m(10.1, 305, 66);
+  }
+  .t3 {
+    @include img_r_m(292, 934, 38);
+  }
+  .t4 {
+    @include img_r_m(298, 610, 34);
+    top: auto;
+    bottom: sizem(185);
   }
 
-  .logo {
-    width: sizem(172);
-    top: calc(50% - 43vw);
-    right: sizem(101);
+  // .logo {
+  //   @include img_r_m(479, 707, 310);
+  // }
+
+  .st1 {
+    @include img_l_m(17, 128, 157);
   }
 
-  .t {
-    width: sizem(300);
-    top: calc(50% + 35vw);
-    right: sizem(37);
+  .st2 {
+    @include img_l_m(16, 128, 128);
+  }
+
+  .st3 {
+    @include img_l_m(17, 128, 97);
   }
 }
 </style>
