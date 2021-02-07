@@ -19,7 +19,7 @@
         <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
-        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+        <div class="swipe-btns absolute flex-ac flex-jb">
           <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
           <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
         </div>
@@ -33,10 +33,10 @@
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
-        <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+        <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
-        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+        <div class="swipe-btns absolute flex-ac flex-jb">
           <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
           <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
         </div>
@@ -232,6 +232,7 @@
     right: 20px;
     top: 0px;
     color: #fff;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.75);
     font-size: 22px;
     font-weight: normal;
     font-stretch: normal;
@@ -285,7 +286,7 @@
       width: 60%;
       height: 60%;
       display: block;
-      background: #b50005;
+      background: #d66655;
       border-radius: 20px;
       opacity: 1;
       position: absolute;
@@ -303,7 +304,7 @@
         width: 100%;
         height: 100%;
         display: block;
-        background: #b50005;
+        background: #d66655;
         border-radius: 20px;
         opacity: 1;
         position: absolute;
@@ -353,7 +354,7 @@
     // background-size: 100% 100%;
     // background-position: 0 0;
     // background-attachment: fixed;
-    overflow: hidden;
+    overflow: visible;
   }
   .container {
     height: sizem(474);
@@ -502,7 +503,7 @@
   .swipe-wrap {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .swipe-item {
@@ -514,6 +515,10 @@
       width: 100%;
       height: sizem(201);
       object-fit: cover;
+    }
+
+    .slide-name {
+      font-size: sizem(16);
     }
 
     // &:nth-child(1) {
@@ -533,27 +538,29 @@
 
   .pagination {
     width: auto;
-    bottom: size(91);
-    left: 0;
+    height: sizem(40);
+    top: sizem(-40);
+    bottom: auto !important;
+    left: auto;
     right: 0;
-    margin: 0 auto;
+    margin: auto;
     justify-content: center;
   }
 
   .pagination-dot {
     padding: 5px;
-    margin: 0 10px;
+    margin: 0 5px;
     cursor: pointer;
     z-index: 4;
 
     span {
       display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
+      width: 12px;
+      height: 12px;
+      border-radius: 12px;
       box-shadow: 0 0 0 1px #fff;
       position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
+      background-color: transparent;
       transition: all 0.5s;
 
       &::before {
@@ -561,8 +568,8 @@
         width: 60%;
         height: 60%;
         display: block;
-        background: #004ea2;
-        border-radius: 20px;
+        background: transparent;
+        border-radius: 12px;
         opacity: 1;
         position: absolute;
         top: 20%;
@@ -578,8 +585,8 @@
           width: 100%;
           height: 100%;
           display: block;
-          background: #004ea2;
-          border-radius: 20px;
+          background: #fff;
+          border-radius: 12px;
           opacity: 1;
           position: absolute;
           top: 0%;

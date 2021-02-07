@@ -25,19 +25,19 @@
       <img :src="item.img" :alt="`${info.caseName}_item`" data-aos="fade-up" :data-aos-delay="200 + index * 50" v-for="(item, index) in item_list" :key="item.img + index" @click="showDialog(index)">
     </div>
 
-    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`" @click="showDialog(i)">
             <img :src="slide.img" alt="">
-            <img :src="slide.name" alt="" class="slide-name-img">
+            <!-- <img :src="slide.name" alt="" class="slide-name-img"> -->
           </div>
         </transition-group>
         <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
-        <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex" v-if="isMobile">
-        <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex" v-if="isMobile">
+        <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+        <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
       </div>
     </div>
 
@@ -110,6 +110,7 @@
             昭揚君璽
           </div>
           <img class="dialog-img dialog-img3" src="./pop-up/03/pop_3_man.png" :alt="`${info.caseName}_dialog_img`" v-if="isPC">
+          <img src="./pop-up/03/pop_3_img.png" alt="" class="dialog-struc" v-if="isPC">
           <img src="./mo/pop-up/03/3d_img_logo.png" alt="" class="dialog-3d" v-if="isMobile">
           <img src="./mo/pop-up/03/popup_3d_img.png" alt="" class="dialog-struc" v-if="isMobile">
           <img class="dialog-img dialog-img3" src="./mo/pop-up/03/masterteam_man3_m_popup.png" :alt="`${info.caseName}_dialog_img`" v-if="isMobile">
@@ -134,6 +135,7 @@
           </div>
           <img class="dialog-img dialog-img4" src="./pop-up/04/pop_4_man.png" :alt="`${info.caseName}_dialog_img`" v-if="isPC">
           <img class="dialog-img dialog-img4" src="./mo/pop-up/04/masterteam_man2_m_popup.png" :alt="`${info.caseName}_dialog_img`" v-if="isMobile">
+          <img class="dialog-img dialog-reward" src="./pop-up/04/popup_04_logo_class.png" :alt="`${info.caseName}_dialog_img`">
           <img class="dialog-img dialog-name" src="./mo/pop-up/04/name_4_m_popup.png" :alt="`${info.caseName}_dialog_img`" v-if="isMobile">
         </div>
       </transition-group>
@@ -185,11 +187,18 @@
   //   @include img_l_pc(67, 137, 36);
   // }
 
-  // .dialog-struc {
-  //   @include img_r_pc(270, 147, 10);
-  //   top: auto;
-  //   bottom: 5vh;
-  // }
+  .dialog-reward {
+    @include img_r_pc(240, 38, 182);
+    top: auto;
+    z-index: 10;
+    bottom: size(140);
+  }
+
+  .dialog-struc {
+    @include img_r_pc(676, 38, 172);
+    top: auto;
+    bottom: 5vh;
+  }
   .dialog-img {
     &.dialog-img1 {
       @include img_l_pc(280, 125, 790);
@@ -556,7 +565,7 @@
       width: 60%;
       height: 60%;
       display: block;
-      background: #b50005;
+      background: #d66655;
       border-radius: 20px;
       opacity: 1;
       position: absolute;
@@ -574,7 +583,7 @@
         width: 100%;
         height: 100%;
         display: block;
-        background: #b50005;
+        background: #d66655;
         border-radius: 20px;
         opacity: 1;
         position: absolute;
@@ -653,6 +662,13 @@
     }
     .dialog-3d {
       @include img_l_m(67, 137, 36);
+    }
+
+    .dialog-reward {
+      @include img_l_m(120, 38, 36);
+      top: auto;
+      z-index: 10;
+      bottom: sizem(20);
     }
 
     .dialog-struc {
@@ -914,11 +930,11 @@
 
   /* Swipe */
   .swipe {
-    width: sizem(375 - 32 - 24);
-    height: sizem(509);
+    width: 100vw;
+    height: sizem(539);
     min-height: auto;
     top: sizem(16);
-    left: sizem(32);
+    left: sizem(0);
     object-fit: cover;
   }
 
@@ -964,7 +980,7 @@
   .swipe-wrap {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    // overflow: hidden;
   }
 
   .swipe-item {
@@ -974,7 +990,7 @@
 
     img {
       width: auto;
-      height: sizem(409);
+      height: sizem(430);
       object-fit: cover;
       position: absolute;
       z-index: 10;
@@ -1131,20 +1147,21 @@ export default {
       ],
       slideList: [
         {
-          img: require('./mo/s11/masterteam_man1_m.png'),
+          img: require('./mo/s11/masterteam_man1_m_class.png'),
           name: require('./mo/s11/name_1_m.png'),
         },
         {
-          img: require('./mo/s11/masterteam_man2_m.png'),
-          name: require('./mo/s11/name_2_m.png'),
+          img: require('./mo/s11/masterteam_man4_m_class.png'),
+          name: require('./mo/s11/name_4_m.png'),
         },
         {
-          img: require('./mo/s11/masterteam_man3_m.png'),
+          img: require('./mo/s11/masterteam_man3_m_class.png'),
           name: require('./mo/s11/name_3_m.png'),
         },
+
         {
-          img: require('./mo/s11/masterteam_man4_m.png'),
-          name: require('./mo/s11/name_4_m.png'),
+          img: require('./mo/s11/masterteam_man2_m_class.png'),
+          name: require('./mo/s11/name_2_m.png'),
         },
         // {
         //   img: require('./s11/1.jpg'),
@@ -1170,8 +1187,13 @@ export default {
   methods: {
     showDialog(index) {
       this.isDialog = true
-      this[`isDialog${index + 1}`] = true
+      if (index === 3) {
+        this.isDialog4 = true
+      } else {
+        this[`isDialog${index + 1}`] = true
+      }
     },
+
     closeDialog() {
       this.isDialog = false
       this.isDialog1 = false

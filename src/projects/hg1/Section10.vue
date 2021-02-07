@@ -305,7 +305,7 @@
     }
 
     .mo1 {
-      @include img_r_m(375, 0, 0);
+      @include img_l_m(435, 50, -20);
       z-index: 3;
     }
 

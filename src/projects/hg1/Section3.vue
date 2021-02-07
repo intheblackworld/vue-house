@@ -9,7 +9,8 @@
       <!-- <img src="./s1/mo1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1"> -->
     </div>
     <img src="./s3/technology_line.png" :alt="`${info.caseName}_technology_line`" class="tech-line" data-aos="fade" data-aos-delay="0">
-    <img src="./s3/city.png" :alt="`${info.caseName}_city`" class="city" data-aos="fade-up" data-aos-delay="200">
+    <img src="./s3/city.png" :alt="`${info.caseName}_city`" class="city" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+    <img src="./s3/city_m.jpg" :alt="`${info.caseName}_city`" class="city" data-aos="fade-up" data-aos-delay="200" v-if="isMobile">
     <img src="./s3/balloon_1.png" :alt="`${info.caseName}_balloon_1`" class="balloon-1" data-aos="fade-down" data-aos-delay="400">
     <img src="./s3/balloon_2.png" :alt="`${info.caseName}_balloon_2`" class="balloon-2" data-aos="fade-down" data-aos-delay="600">
     <img src="./s3/balloon_3.png" :alt="`${info.caseName}_balloon_3`" class="balloon-3" data-aos="fade-down" data-aos-delay="800">
@@ -185,7 +186,7 @@
   }
 
   .pc1 {
-    @include img_r_pc(1920, 0, 0);
+    @include img_l_pc(1980, 0, -60);
     z-index: 1;
   }
 }
@@ -280,12 +281,12 @@
 
   .title {
     @include img_l_m(196, 286, 32);
-    font-size: sizem(25);
-    font-weight: bold;
+    font-size: sizem(22);
+    font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.8;
-    letter-spacing: sizem(0.08);
+    letter-spacing: sizem(0.3);
     text-align: left;
     color: #19191a;
     white-space: nowrap;

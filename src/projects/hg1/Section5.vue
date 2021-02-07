@@ -18,10 +18,10 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200">
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+          <div class="swipe-btns absolute flex-ac flex-jb">
             <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
             <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
           </div>
@@ -171,7 +171,8 @@
 
 .big-title {
   @include img_r_pc(438, 283, 768);
-  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.75);
+  top: 16.739583vw;
+  // text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.75);
   font-size: size(82.1);
   font-weight: 300;
   font-stretch: normal;
@@ -186,8 +187,10 @@
 
 .big-eng {
   @include img_r_pc(915, 353, 311);
-  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.75);
-  font-size: size(189.8);
+  width: 51.65625vw;
+  top: 20.385417vw;
+  // text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.75);
+  font-size: 8.885417vw;
   font-weight: 300;
   font-stretch: normal;
   font-style: normal;
@@ -264,7 +267,7 @@
   }
 
   .slide-name {
-    right: 20px;
+    right: size(60);
     bottom: 0px;
     color: #fff;
     text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.75);
@@ -321,7 +324,7 @@
       width: 60%;
       height: 60%;
       display: block;
-      background: #b50005;
+      background: #d66655;
       border-radius: 20px;
       opacity: 1;
       position: absolute;
@@ -339,7 +342,7 @@
         width: 100%;
         height: 100%;
         display: block;
-        background: #b50005;
+        background: #d66655;
         border-radius: 20px;
         opacity: 1;
         position: absolute;
@@ -432,6 +435,36 @@
     color: #df9529;
     opacity: 1 !important;
     white-space: nowrap;
+  }
+
+  .big-title {
+    @include img_l_m(123, 113, 32);
+    // text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.75);
+    font-size: sizem(23);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.22;
+    letter-spacing: sizem(1.91);
+    text-align: left;
+    color: #ffffff;
+    white-space: nowrap;
+    z-index: 120;
+  }
+
+  .big-eng {
+    @include img_l_m(260, 140, 28);
+    // text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.75);
+    font-size: sizem(54);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.24;
+    letter-spacing: sizem(2.32);
+    text-align: center;
+    color: #ffffff;
+    white-space: nowrap;
+    z-index: 120;
   }
 
   .desc {
@@ -527,7 +560,7 @@
   .swipe-wrap {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .swipe-item {
@@ -539,6 +572,12 @@
       width: 100%;
       height: sizem(201);
       object-fit: cover;
+    }
+
+    .slide-name {
+      bottom: auto;
+      top: sizem(0);
+      font-size: sizem(16);
     }
 
     // &:nth-child(1) {
@@ -558,27 +597,29 @@
 
   .pagination {
     width: auto;
-    bottom: size(91);
+    height: sizem(40);
+    top: auto;
+    bottom: sizem(-40) !important;
     left: 0;
-    right: 0;
-    margin: 0 auto;
+    right: auto;
+    margin: auto;
     justify-content: center;
   }
 
   .pagination-dot {
     padding: 5px;
-    margin: 0 10px;
+    margin: 0 5px;
     cursor: pointer;
     z-index: 4;
 
     span {
       display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
+      width: 12px;
+      height: 12px;
+      border-radius: 12px;
       box-shadow: 0 0 0 1px #fff;
       position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
+      background-color: #fff;
       transition: all 0.5s;
 
       &::before {
@@ -586,8 +627,8 @@
         width: 60%;
         height: 60%;
         display: block;
-        background: #004ea2;
-        border-radius: 20px;
+        background: #d66655;
+        border-radius: 12px;
         opacity: 1;
         position: absolute;
         top: 20%;
@@ -603,8 +644,8 @@
           width: 100%;
           height: 100%;
           display: block;
-          background: #004ea2;
-          border-radius: 20px;
+          background: #d66655;
+          border-radius: 12px;
           opacity: 1;
           position: absolute;
           top: 0%;

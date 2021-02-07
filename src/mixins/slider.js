@@ -53,6 +53,10 @@ export default {
       this[`slideIndex${index}`] =
         this[`slideIndex${index}`] === 0 ? this[`slideList${index}`].length - 1 : this[`slideIndex${index}`] - 1
     },
+
+    goTo(index) {
+      this.slideIndex = index
+    }
   },
 
   mounted() {}

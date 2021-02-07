@@ -17,10 +17,10 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200">
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+          <div class="swipe-btns absolute flex-ac flex-jb">
             <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
             <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
           </div>
@@ -280,7 +280,7 @@
       width: 60%;
       height: 60%;
       display: block;
-      background: #b50005;
+      background: #D66655;
       border-radius: 20px;
       opacity: 1;
       position: absolute;
@@ -298,7 +298,7 @@
         width: 100%;
         height: 100%;
         display: block;
-        background: #b50005;
+        background: #D66655;
         border-radius: 20px;
         opacity: 1;
         position: absolute;
@@ -486,7 +486,7 @@
   .swipe-wrap {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .swipe-item {
@@ -498,6 +498,10 @@
       width: 100%;
       height: sizem(201);
       object-fit: cover;
+    }
+
+    .slide-name {
+      font-size: sizem(16);
     }
 
     // &:nth-child(1) {
@@ -517,27 +521,29 @@
 
   .pagination {
     width: auto;
-    bottom: size(91);
+    height: sizem(40);
+    top: auto;
+    bottom: sizem(-40) !important;
     left: 0;
-    right: 0;
-    margin: 0 auto;
+    right: auto;
+    margin: auto;
     justify-content: center;
   }
 
   .pagination-dot {
     padding: 5px;
-    margin: 0 10px;
+    margin: 0 5px;
     cursor: pointer;
     z-index: 4;
 
     span {
       display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
+      width: 12px;
+      height: 12px;
+      border-radius: 12px;
       box-shadow: 0 0 0 1px #fff;
       position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
+      background-color: #fff;
       transition: all 0.5s;
 
       &::before {
@@ -545,8 +551,8 @@
         width: 60%;
         height: 60%;
         display: block;
-        background: #004ea2;
-        border-radius: 20px;
+        background: #D66655;
+        border-radius: 12px;
         opacity: 1;
         position: absolute;
         top: 20%;
@@ -562,8 +568,8 @@
           width: 100%;
           height: 100%;
           display: block;
-          background: #004ea2;
-          border-radius: 20px;
+          background: #D66655;
+          border-radius: 12px;
           opacity: 1;
           position: absolute;
           top: 0%;
