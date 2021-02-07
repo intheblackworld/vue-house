@@ -17,20 +17,20 @@
     <vue-lazy-component class="section" id="section2">
       <Section2 />
     </vue-lazy-component>
-    <vue-lazy-component
+    <!-- <vue-lazy-component
       class="section"
       id="section3"
     >
       <Section3 :viewIndex="viewIndex" />
-    </vue-lazy-component>
-    <vue-lazy-component
+    </vue-lazy-component> -->
+    <!-- <vue-lazy-component
       class="section relative"
       id="section4"
       style="z-index: 3;"
     >
       <Section4 />
-    </vue-lazy-component>
-    <vue-lazy-component
+    </vue-lazy-component> -->
+    <!-- <vue-lazy-component
       class="section"
       id="section5"
     >
@@ -41,7 +41,7 @@
       id="section6"
     >
       <Section6 />
-    </vue-lazy-component>
+    </vue-lazy-component> -->
     <!-- <vue-lazy-component
       class="section"
       id="section7"
@@ -107,10 +107,10 @@ import LeafFlow from '@/components/LeafFlow.vue'
 
 import Section1 from '@/projects/jiman/Section1.vue'
 import Section2 from '@/projects/jiman/Section2.vue'
-import Section3 from '@/projects/jiman/Section3.vue'
-import Section4 from '@/projects/jiman/Section4.vue'
-import Section5 from '@/projects/jiman/Section5.vue'
-import Section6 from '@/projects/jiman/Section6.vue'
+// import Section3 from '@/projects/jiman/Section3.vue'
+// import Section4 from '@/projects/jiman/Section4.vue'
+// import Section5 from '@/projects/jiman/Section5.vue'
+// import Section6 from '@/projects/jiman/Section6.vue'
 // import Section7 from '@/projects/jiman/Section7.vue'
 // import Section8 from '@/projects/jiman/Section8.vue'
 // import Section9 from '@/projects/jiman/Section9.vue'
@@ -129,10 +129,10 @@ export default {
     MobileNav,
     Section1,
     Section2,
-    Section3,
-    Section4,
-    Section5,
-    Section6,
+    // Section3,
+    // Section4,
+    // Section5,
+    // Section6,
     // Section7,
     // Section8,
     // Section9,
@@ -196,31 +196,31 @@ export default {
   },
   methods: {
     init() {},
-    onScroll() {
-      // 获取所有锚点元素
-      const navContents = document.querySelectorAll('.section')
-      // 所有锚点元素的 offsetTop
-      const offsetTopArr = []
-      navContents.forEach(item => {
-        offsetTopArr.push(item.offsetTop)
-      })
-      // 获取当前文档流的 scrollTop
-      const scrollTop =
-        document.documentElement.scrollTop || document.body.scrollTop
-      // 定义当前点亮的导航下标
-      let navIndex = 0
-      for (let n = 0; n < offsetTopArr.length; n++) {
-        // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
-        // 那么此时导航索引就应该是n了
-        if (scrollTop >= offsetTopArr[n] - 100) {
-          navIndex = n
-        }
-      }
-      if (this.viewIndex === navIndex + 1) {
-        this.viewIndex = navIndex + 1
-      }
-      // this.viewIndex = navIndex + 1
-    },
+    // onScroll() {
+    //   // 获取所有锚点元素
+    //   const navContents = document.querySelectorAll('.section')
+    //   // 所有锚点元素的 offsetTop
+    //   const offsetTopArr = []
+    //   navContents.forEach(item => {
+    //     offsetTopArr.push(item.offsetTop)
+    //   })
+    //   // 获取当前文档流的 scrollTop
+    //   const scrollTop =
+    //     document.documentElement.scrollTop || document.body.scrollTop
+    //   // 定义当前点亮的导航下标
+    //   let navIndex = 0
+    //   for (let n = 0; n < offsetTopArr.length; n++) {
+    //     // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
+    //     // 那么此时导航索引就应该是n了
+    //     if (scrollTop >= offsetTopArr[n] - 100) {
+    //       navIndex = n
+    //     }
+    //   }
+    //   if (this.viewIndex === navIndex + 1) {
+    //     this.viewIndex = navIndex + 1
+    //   }
+    //   // this.viewIndex = navIndex + 1
+    // },
 
     // onLeave(origin, destination, direction) {
     //   if (!this.isMobile) {

@@ -7,7 +7,7 @@ export default {
   phone: '02-2541-0606',
   fbLink: 'https://www.facebook.com/中山直美-115702496966413',
   fbMessage: 'https://m.me/115702496966413',
-  caseName: '中山直美',
+  caseName: '自漫藏',
   indigatorLength: 10,
 
   houseInfos: [
@@ -28,7 +28,7 @@ export default {
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
   order: {
-    title: isMobile ? '立即預約直賞' : '立即預約直賞',
+    title: isMobile ? '立即預約' : '立即預約',
     subTitle: ''
   }
 }

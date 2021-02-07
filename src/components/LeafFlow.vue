@@ -32,10 +32,16 @@ export default {
   mounted() {
     $(function() {
       var snowflakeURl = [
-        require('../projects/jsjm1/s2/leaf (1).png'),
-        require('../projects/jsjm1/s2/leaf (2).png'),
-        require('../projects/jsjm1/s2/leaf (3).png'),
-        require('../projects/jsjm1/s2/leaf (4).png'),
+        // require('../projects/jsjm1/s2/leaf (1).png'),
+        // require('../projects/jsjm1/s2/leaf (2).png'),
+        // require('../projects/jsjm1/s2/leaf (3).png'),
+        // require('../projects/jsjm1/s2/leaf (4).png'),
+        require('../projects/jiman/leaf/f1.png'),
+        require('../projects/jiman/leaf/f2.png'),
+        require('../projects/jiman/leaf/f3.png'),
+        require('../projects/jiman/leaf/f4.png'),
+        require('../projects/jiman/leaf/f5.png'),
+        require('../projects/jiman/leaf/f6.png'),
       ]
       var container = $('#leaf-content')
       const visualWidth = container.width()
@@ -45,7 +51,7 @@ export default {
         var $flakeContainer = $('#leaf-bg')
         // 随机六张图
         function getImagesName() {
-          return snowflakeURl[[Math.floor(Math.random() * 8)]]
+          return snowflakeURl[[Math.floor(Math.random() * 6)]]
         }
         // 创建一个雪花元素
         function createSnowBox() {
@@ -59,6 +65,7 @@ export default {
               zIndex: 100000,
               top: '-41px',
               backgroundImage: 'url(' + url + ')',
+              backgroundSize: 'cover'
             })
             .addClass('snowRoll')
         }
@@ -68,7 +75,7 @@ export default {
           var startPositionLeft = Math.random() * visualWidth - 100,
             startOpacity = 1,
             endPositionTop = visualHeight - 40,
-            endPositionLeft = startPositionLeft - 100 + Math.random() * 500,
+            endPositionLeft = startPositionLeft - 100 + Math.random() * 1000,
             duration = visualHeight * 10 + Math.random() * 5000
           // 随机透明度，不小于0.5
           var randomStart = Math.random()
