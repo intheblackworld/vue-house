@@ -1,6 +1,7 @@
 <?php
     $case_name = "自漫藏";
-    $case_code = 'jiman';
+    $src =$_SERVER['SERVER_NAME']; 
+    $case_code = substr($src,0,strpos($src,'.'));
 
     $name         = isset($_POST['name']) ? $_POST['name'] : '';
     $phone        = isset($_POST['phone']) ? $_POST['phone'] : '';
