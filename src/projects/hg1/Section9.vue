@@ -60,7 +60,7 @@
 
 .section9 {
   width: size(1920);
-  height: size(968);
+  height: 100vh;
   min-height: size(900);
   max-height: size(1080);
   position: relative;
@@ -82,13 +82,13 @@
 }
 
 .content-bg {
-  @include div_l_pc(1372, 84, 635, 0);
+  @include div_l_pc(1372, 84, 635 + 150, 0);
   background-color: rgba(255, 255, 255, 0.75);
   opacity: 1 !important;
 }
 
 .title {
-  @include img_l_pc(381, 644, 221);
+  @include img_l_pc(381, 644 + 150, 221);
   font-size: size(53.4);
   font-weight: 500;
   font-stretch: normal;
@@ -102,7 +102,7 @@
 }
 
 .subtitle {
-  @include img_l_pc(170, 635, 495);
+  @include img_l_pc(170, 635 + 150, 495);
   font-size: size(67);
   font-weight: 300;
   font-stretch: normal;
@@ -116,7 +116,7 @@
 }
 
 .desc {
-  @include img_r_pc(667, 648, 544);
+  @include img_r_pc(667, 648 + 150, 544);
   font-size: size(19);
   font-weight: normal;
   font-stretch: normal;
@@ -129,7 +129,7 @@
 }
 
 .arrow {
-  @include img_l_pc(47, 665, 437);
+  @include img_l_pc(47, 665 + 150, 437);
   opacity: 1 !important;
 }
 
@@ -167,7 +167,7 @@
 .swipe {
   width: size(1561);
   height: size(760);
-  top: size(0);
+  top: size(150);
   right: 0;
   left: 0;
   margin: 0 auto;

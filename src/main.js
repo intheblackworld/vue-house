@@ -17,6 +17,7 @@ import VueScrollReveal from 'vue-scroll-reveal'
 import VuePhotoZoomPro from 'vue-photo-zoom-pro'
 import Vue2TouchEvents from 'vue2-touch-events'
 import VueLazyComponent from '@xunlei/vue-lazy-component'
+import VueFullPage from 'vue-fullpage.js'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
@@ -49,6 +50,8 @@ library.add(faMapMarkerAlt)
 
 Vue.use(VuePhotoZoomPro)
 Vue.use(VueLazyComponent)
+
+Vue.use(VueFullPage)
 
 
 // VueTouch.config.swipe = {

@@ -57,7 +57,7 @@
 
 .section8 {
   width: size(1920);
-  height: size(968);
+  height: 100vh;
   min-height: size(900);
   max-height: size(1080);
   position: relative;
@@ -79,7 +79,7 @@
 }
 
 .title {
-  @include img_l_pc(381, 738, 221);
+  @include img_l_pc(381, 738 + 100, 221);
   font-size: size(53.4);
   font-weight: 500;
   font-stretch: normal;
@@ -92,7 +92,7 @@
 }
 
 .subtitle {
-  @include img_l_pc(220, 730, 606);
+  @include img_l_pc(220, 730 + 100, 606);
   font-size: size(67);
   font-weight: 300;
   font-stretch: normal;
@@ -105,7 +105,7 @@
 }
 
 .desc {
-  @include img_r_pc(703, 745, 182);
+  @include img_r_pc(703, 745 + 100, 182);
   font-size: size(19);
   font-weight: normal;
   font-stretch: normal;
@@ -117,7 +117,7 @@
 }
 
 .arrow {
-  @include img_l_pc(47, 750, 838);
+  @include img_l_pc(47, 750 + 100, 838);
 }
 
 .animate-slide {
@@ -154,7 +154,7 @@
 .swipe {
   width: size(1561);
   height: size(760);
-  top: size(65);
+  top: size(65 + 100);
   right: 0;
   left: 0;
   margin: 0 auto;

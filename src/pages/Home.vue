@@ -2,41 +2,48 @@
   <div class="home no-padding-top">
     <Loading :loading="load" />
     <SideNavigation />
-    <full-page
-      ref="fullPage"
-      :options="options"
-      id="fullpage"
-    >
-    <vue-lazy-component class="section relative" id="section1">
-      <Section1 />
-    </vue-lazy-component>
+    <full-page ref="fullPage" :options="options" id="fullpage">
+      <vue-lazy-component class="section relative" id="section1">
+        <Section1 />
+      </vue-lazy-component>
 
-    <vue-lazy-component class="section" id="section2">
-      <Section2 />
-    </vue-lazy-component>
-    <vue-lazy-component>
-      <div class="top-bg">
-        <Section3 class="section" id="section3" />
-        <Section4 class="section" id="section4" />
-        <Section5 class="section" id="section5" />
-        <Section6 class="section" id="section6" />
-      </div>
-    </vue-lazy-component>
-    <!-- <vue-lazy-component class="section" id="section7">
+      <vue-lazy-component class="section" id="section2">
+        <Section2 />
+      </vue-lazy-component>
+      <!-- <vue-lazy-component>
+        
+      </vue-lazy-component> -->
+      <vue-lazy-component class="section" id="section3">
+        <Section3 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section4">
+        <Section4 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section5">
+        <Section5 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section6">
+        <Section6 />
+      </vue-lazy-component>
+      <!-- <div>
+        <div class="top-bg">
+        </div>
+      </div> -->
+      <!-- <vue-lazy-component class="section" id="section7">
       <Section7 />
     </vue-lazy-component> -->
-    <vue-lazy-component class="section" id="section8">
-      <Section8 />
-    </vue-lazy-component>
-    <vue-lazy-component class="section" id="section9">
-      <Section9 />
-    </vue-lazy-component>
-    <vue-lazy-component class="section" id="section10">
-      <Section10 />
-    </vue-lazy-component>
-    <vue-lazy-component class="section" id="section11">
-      <Section11 />
-    </vue-lazy-component>
+      <vue-lazy-component class="section" id="section8">
+        <Section8 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section9">
+        <Section9 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section10">
+        <Section10 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section11">
+        <Section11 />
+      </vue-lazy-component>
     </full-page>
     <vue-lazy-component class="section" id="contact">
       <ContactSection />

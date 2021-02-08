@@ -49,6 +49,9 @@
   min-height: size(900);
   max-height: size(1080);
   position: relative;
+  background-image: url('~@/projects/hg1/s3/technology_bg.png');
+  background-size: cover;
+  background-position: 100%;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
@@ -341,9 +344,11 @@
   .section6 {
     width: 100vw;
     height: sizem(474);
+    padding-bottom: sizem(20);
     min-height: auto;
     max-height: initial;
     background-color: #0083be;
+    background-image: none;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
     // background-position: 0 0;
