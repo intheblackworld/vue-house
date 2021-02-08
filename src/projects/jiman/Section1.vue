@@ -26,7 +26,7 @@
     </div>
     <div v-else>
       <img src="./s1/t1.png" :alt="`${info.caseName}_t1`" class="t1" data-aos="fade" data-aos-delay="400">
-      <img src="./s1/logo.png" :alt="`${info.caseName}_logo`" class="logo" data-aos="fade" data-aos-delay="600">
+      <img src="./s1/logo.png" :alt="`${info.caseName}_logo`" class="logo" data-aos="fade" data-aos-delay="600" data-aos-offset="-400"> 
       <img src="./mo/1/f1.png" :alt="`${info.caseName}_f1`" class="f1">
       <img src="./mo/1/f2.png" :alt="`${info.caseName}_f2`" class="f2">
       <img src="./mo/1/t2.png" :alt="`${info.caseName}_t2`" class="t2">
@@ -129,16 +129,16 @@
 @media screen and (max-width: 767px) {
   .section1 {
     width: 100vw;
-    min-height: sizem(604);
-    max-height: sizem(750);
-    height: calc(100vh - 63px);
+    min-height: sizem(720);
+    max-height: sizem(850);
+    height: 100vh;
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
   }
   .f1 {
     @include img_r_m(202, 0, 0);
-  top:calc(26.7% - 100vw * 200 / 375);
+  top:calc(26.7% - 100vw * 220 / 375);
     transform-origin: 100% 0;
     transform: skewX(2.5deg);
   filter: drop-shadow(0 0 .5em #d67f76); 
@@ -146,7 +146,7 @@
 
   .f2 {
     @include img_l_m(146, 540, 0);
-  top:calc(80% + 100vw * (540 - 667 * .8) / 375);
+  top:calc(80% + 100vw * (525 - 667 * .8) / 375);
     transform-origin: left;
     animation: flow1 2.7s 2s ease-in-out infinite alternate-reverse;
   filter: drop-shadow(0 0 .0em #d67f7600); 
@@ -154,17 +154,17 @@
 
   .t1 {
     @include img_l_m(79, 39, 47);
-  top:calc(20% + 100vw * (39 - 667 * .20) / 375);
+  top:calc(20% + 100vw * (29 - 667 * .20) / 375);
   }
 
   .t2 {
-    @include img_r_m(225, 291, 47);
-  top:calc(80% + 100vw * (291 - 667 * .8) / 375);
+    @include img_r_m(250, 291, 33);
+  top:calc(80% + 100vw * (240 - 667 * .8) / 375);
   }
 
   .logo {
     @include img_r_m(144, 291, 39);
-  top:calc(85% + 100vw * (568 - 667 * .85) / 375);
+  top:calc(85% + 100vw * (548 - 667 * .85) / 375);
   }
   
 }
