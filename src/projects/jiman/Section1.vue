@@ -38,7 +38,7 @@
 @import '@/assets/style/function.scss';
 
 .section1 {
-  width: size(1920);
+  width:100%;
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);
@@ -65,38 +65,42 @@
 
 .f1 {
   @include img_r_pc(1016, 76, 0);
-  transform-origin: right;
-  animation: flow1 3s 0s ease-in-out infinite alternate-reverse;
+  top:calc(50% + 100vw * (76 - 540) / 1920);
+  transform-origin:100% 80%;
+  animation: flow1 3s 0s ease-in-out infinite alternate;
+    transform: skewY(2deg);
 }
 
 .f2 {
   @include img_l_pc(479, 656, 0);
-  transform-origin: left;
-  animation: flow2 1.7s 2s ease-in-out infinite alternate-reverse;
+  top:calc(50% + 100vw * (656 - 540) / 1920);
+  transform-origin:0% 90%;
+  animation: flow1 3s ease-in-out infinite alternate;
+    transform: skewY(2.5deg);
+  filter: drop-shadow(0 0 .5em #d67f76); 
 }
 
 @keyframes flow1 {
   to {
-    transform: skewY(3.3deg) translateY(-25px);
-  }
-}
-
-@keyframes flow2 {
-  to {
-    transform: skewY(4.3deg) translateY(-5px);
+    transform: skewY(0);
   }
 }
 
 .t1 {
   @include img_l_pc(148, 131, 248);
+  top:calc(50% + 100vw * (131 - 540) / 1920);
+  filter: drop-shadow(0 0 .5em #d67f76); 
 }
 
 .logo {
   @include img_r_pc(479, 707, 310);
+  top:calc(70% + 100vw * (707 - 1080 * .7) / 1920);
+  filter: drop-shadow(0 0 .5em #d67f76); 
 }
 
 .desc {
   @include img_l_pc(501, 282, 505);
+  top:calc(60% + 100vw * (282 - 1080 * .6) / 1920);
   font-size: size(23);
   font-weight: 300;
   font-stretch: normal;
@@ -106,6 +110,7 @@
   text-align: left;
   color: #ffffff;
   white-space: nowrap;
+  text-shadow: 0 0 .5em #d67f76,0 0 .5em #d67f76;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -124,46 +129,44 @@
 @media screen and (max-width: 767px) {
   .section1 {
     width: 100vw;
-    min-height: sizem(470);
-    max-height: sizem(812);
-    height: 100vh;
+    min-height: sizem(604);
+    max-height: sizem(750);
+    height: calc(100vh - 63px);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
   }
   .f1 {
     @include img_r_m(202, 0, 0);
-    transform-origin: right;
-    animation: flow1 3s 0s ease-in-out infinite alternate-reverse;
+  top:calc(26.7% - 100vw * 200 / 375);
+    transform-origin: 100% 0;
+    transform: skewX(2.5deg);
+  filter: drop-shadow(0 0 .5em #d67f76); 
   }
 
   .f2 {
     @include img_l_m(146, 540, 0);
-    top: auto;
-    bottom: sizem(-80);
+  top:calc(80% + 100vw * (540 - 667 * .8) / 375);
     transform-origin: left;
-    animation: flow2 2.7s 2s ease-in-out infinite alternate-reverse;
-  }
-
-  @keyframes flow2 {
-    to {
-      transform: skewY(3.3deg) translateY(-10px);
-    }
+    animation: flow1 2.7s 2s ease-in-out infinite alternate-reverse;
+  filter: drop-shadow(0 0 .0em #d67f7600); 
   }
 
   .t1 {
     @include img_l_m(79, 39, 47);
+  top:calc(20% + 100vw * (39 - 667 * .20) / 375);
   }
 
   .t2 {
     @include img_r_m(225, 291, 47);
+  top:calc(80% + 100vw * (291 - 667 * .8) / 375);
   }
 
   .logo {
     @include img_r_m(144, 291, 39);
-    top: auto;
-    bottom: sizem(20);
+  top:calc(85% + 100vw * (568 - 667 * .85) / 375);
   }
+  
 }
 </style>
 <script>

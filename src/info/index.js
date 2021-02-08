@@ -1,16 +1,17 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '台北市中山區民生東路一段31號',
+  address: '台北市文山區羅斯福路五段216號之2號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1807.144524956971!2d121.523773!3d25.0581904!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a942c98ae91f%3A0xd85e809b42298290!2zMTA0OTHlj7DljJfluILkuK3lsbHljYDmsJHnlJ_mnbHot6_kuIDmrrUzMeiZnw!5e0!3m2!1szh-TW!2stw!4v1602555349295!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/kcDeza3vcYhne5SA6',
-  phone: '02-2541-0606',
-  fbLink: 'https://www.facebook.com/中山直美-115702496966413',
-  fbMessage: 'https://m.me/115702496966413',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1807.9674460345761!2d121.53746605862119!3d25.002328214429987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa1d136e1fb5%3A0x8bc6de2b2de9cc7c!2zMTE25Y-w5YyX5biC5paH5bGx5Y2A576F5pav56aP6Lev5LqU5q61MjE26Jmf!5e0!3m2!1szh-TW!2stw!4v1612773335927!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/7jRLW7dWRUQpvdG77',
+  phone: '02-2933-1888',
+  fbLink: 'https://www.facebook.com/0',
+  fbMessage: 'https://m.me/0',
   caseName: '自漫藏',
   indigatorLength: 10,
-
+  /*
   houseInfos: [
+  
     ['投資興建', '鐵冠建設股份有限公司',],
     ['建築設計', '鄭復綱建築師事務所',],
     ['工程營造', '昌譽營造股份有限公司',],
@@ -21,14 +22,15 @@ export default {
     ['建築代銷', '君頤廣告',],
   //  ['經  紀  人 ', '呂佳縈',],
     ['座落位置', '台北市中山區新生北路二段76巷10-20號',],
-  ],
+   
+  ], */
 
-  gtmCode: ['WX44LWQ'], // 可放置多個
+  gtmCode: [''], // 可放置多個
   recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
   order: {
-    title: isMobile ? '立即預約' : '立即預約',
+    title: isMobile ? '預約賞屋' : '預約賞屋',
     subTitle: ''
   }
 }

@@ -304,7 +304,7 @@ export default {
 
     .logo {
       width: $contact_logo_mobile_width;
-      margin: 5% auto 10%;
+      margin: 20% auto 5%;
     }
   }
 

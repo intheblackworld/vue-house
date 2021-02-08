@@ -37,6 +37,7 @@
       <div class="animate-bg">
         <img src="./mo/2/f3.png" :alt="`${info.caseName}_f3`" class="f3">
         <img src="./mo/2/f4.png" :alt="`${info.caseName}_f4`" class="f4">
+        <div class="f5"><img src="./s1/f1.png" :alt="`${info.caseName}_f5`"></div>
       </div>
       <img src="./mo/2/t1.png" :alt="`${info.caseName}_t1`" class="t1" data-aos="fade" data-aos-delay="200">
       <img src="./mo/2/t2.png" :alt="`${info.caseName}_t2`" class="t2" data-aos="fade" data-aos-delay="200">
@@ -54,7 +55,7 @@
 @import '@/assets/style/function.scss';
 
 .section2 {
-  width: size(1920);
+  width:100%;
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);
@@ -64,9 +65,8 @@
 }
 
 .bg-img {
-  width: size(1920);
+  width:100%;
   height: 100%;
-  min-height: size(900);
   position: absolute;
   top: 0;
   left: 0;
@@ -75,40 +75,58 @@
   margin-top: 0;
 
   &:nth-child(1) {
-    position: relative;
+  //  position: relative;
   }
 }
 
 .f3 {
   @include img_l_pc(694, 190, 0);
-  transform-origin: left;
-  animation: flow1 3s 0s ease-in-out infinite alternate-reverse;
+  top:calc(50% + 100vw * (190 - 540) / 1920);
+  transform-origin: 0% 90%;
+    transform: skewY(2deg);
+  animation: flow1 4s 0s ease-in-out infinite ;
 }
 @keyframes flow1 {
   to {
-    transform: skewY(4.3deg) translateY(-15px);
+    transform: skewY(0);
   }
 }
 
 .t1 {
   @include img_l_pc(843, 204, 173);
+  top:calc(50% + 100vw * (204 - 540) / 1920);
+  z-index: 3;
+  filter: drop-shadow(0 0 .5em #fff); 
 }
 .t2 {
   @include img_l_pc(398, 281, 618);
+  top:calc(50% + 100vw * (281 - 540) / 1920);
+  z-index: 3;
+  filter: drop-shadow(0 0 .5em #fff); 
 }
 .t3 {
   @include img_r_pc(548, 206, 229);
+  top:calc(50% + 100vw * (206 - 540) / 1920);
+  z-index: 3;
+  filter: drop-shadow(0 0 .5em #fff); 
 }
 .t4 {
   @include img_r_pc(554, 610, 224);
+  top:calc(50% + 100vw * (610 - 540) / 1920);
+  z-index: 3;
+  filter: drop-shadow(0 0 .5em #fff); 
 }
 
 .logo {
   @include img_r_pc(479, 707, 310);
+  top:calc(50% + 100vw * (707 - 540) / 1920);
+  z-index: 3;
+  filter: drop-shadow(0 0 .5em #fff); 
 }
 
 .desc {
   @include img_r_pc(514, 377, 245);
+  top:calc(50% + 100vw * (377 - 540) / 1920);
   font-size: size(34);
   font-weight: 300;
   font-stretch: normal;
@@ -118,6 +136,8 @@
   text-align: center;
   color: #d67f76;
   white-space: nowrap;
+  z-index: 3;
+  text-shadow: 0 0 0.5em #fff,0 0 0.5em #fff,0 0 0.5em #fff;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -161,21 +181,30 @@
   }
   .f3 {
     @include img_r_m(233, 418, 0);
-    transform-origin: left;
+  transform-origin:100% 90%;
+    transform: skewY(2deg);
     animation: flow1 3s 0s ease-in-out infinite alternate-reverse;
+    z-index: 3;
   }
 
   .f4 {
-    @include img_l_m(250, 190, 0);
+    @include img_l_m(250, 0, 0);
     top: auto;
-    bottom: 0;
-    transform-origin: left;
-    animation: flow1 2.3s 0s ease-in-out infinite alternate-reverse;
+    bottom: sizem(-30);
+  transform-origin:0% 90%;
+    animation: flow1 2.3s 0s ease-in-out infinite alternate;
+    transform: skewY(2deg);
+    z-index: 3;
   }
-  @keyframes flow1 {
-    to {
-      transform: skewY(4.3deg) translateY(-15px);
-    }
+  .f5 {
+    @include img_r_m(160, 0, 0);
+    top: auto;
+    bottom: sizem(-780);
+  transform-origin:100% 90%;
+    animation: flow1 2.3s 0s ease-in-out infinite alternate;
+    transform: skewY(3deg);
+    z-index: 3;
+    img{width: 100%;transform: scaleY(-1)}
   }
 
   .t1 {
