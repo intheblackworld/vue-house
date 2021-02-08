@@ -2,6 +2,11 @@
   <div class="home no-padding-top">
     <Loading :loading="load" />
     <SideNavigation />
+    <full-page
+      ref="fullPage"
+      :options="options"
+      id="fullpage"
+    >
     <vue-lazy-component class="section relative" id="section1">
       <Section1 />
     </vue-lazy-component>
@@ -32,6 +37,7 @@
     <vue-lazy-component class="section" id="section11">
       <Section11 />
     </vue-lazy-component>
+    </full-page>
     <vue-lazy-component class="section" id="contact">
       <ContactSection />
     </vue-lazy-component>
