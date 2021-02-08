@@ -59,7 +59,7 @@ export default {
           return $('<div class="snowbox" />')
             .css({
               width: 25,
-              height: 26,
+              height: 35,
               position: 'absolute',
               backgroundRepeat: 'no-repeat',
               zIndex: 100000,
@@ -76,7 +76,7 @@ export default {
             startOpacity = 1,
             endPositionTop = visualHeight - 40,
             endPositionLeft = startPositionLeft - 100 + Math.random() * 1000,
-            duration = visualHeight * 10 + Math.random() * 5000
+            duration = visualHeight * 10 + Math.random() * 10000
           // 随机透明度，不小于0.5
           var randomStart = Math.random()
           randomStart = randomStart < 0.5 ? startOpacity : randomStart
