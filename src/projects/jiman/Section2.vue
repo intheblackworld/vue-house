@@ -84,7 +84,7 @@
   top:calc(50% + 100vw * (190 - 540) / 1920);
   transform-origin: 0% 90%;
     transform: skewY(2deg);
-  animation: flow1 4s 0s ease-in-out infinite ;
+  animation: flow1 4s 0s ease-in-out infinite alternate;
 }
 @keyframes flow1 {
   to {
