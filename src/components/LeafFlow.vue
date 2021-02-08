@@ -78,7 +78,7 @@ export default {
               startOpacity = 1,
               endPositionTop = visualHeight - 40,
               endPositionLeft = startPositionLeft - 100 + Math.random() * 1000,
-              duration = visualHeight * 10 + Math.random() * 10000
+              duration = visualHeight * 10 + Math.random() * 20000 // 飄落速度
             // 随机透明度，不小于0.5
             var randomStart = Math.random()
             randomStart = randomStart < 0.5 ? startOpacity : randomStart
