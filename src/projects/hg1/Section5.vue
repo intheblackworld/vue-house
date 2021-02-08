@@ -692,11 +692,11 @@ export default {
       slideList: [
         {
           img: require('./s5/slider_2-1.jpg'),
-          name: '南崁溪沿岸綠帶實景',
+          name: '南崁溪水岸實景',
         },
         {
           img: require('./s5/slider_2-2.jpg'),
-          name: '自行車道',
+          name: '南崁溪自行車道',
         },
         {
           img: require('./s5/slider_2-3.jpg'),

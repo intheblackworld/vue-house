@@ -592,15 +592,15 @@ export default {
       slideList: [
         {
           img: require('./s4/slider_1-1.jpg'),
-          name: '交流道',
+          name: '南崁交流道實景',
         },
         {
           img: require('./s4/slider_1-2.jpg'),
-          name: '經國轉運站',
+          name: '桃園捷運綠線G12站',
         },
         {
           img: require('./s4/slider_1-3.jpg'),
-          name: '桃園捷運綠線G12站(情境代圖)',
+          name: '經國轉運站實景',
         },
       ],
     }

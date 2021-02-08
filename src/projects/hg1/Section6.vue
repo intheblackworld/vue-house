@@ -616,11 +616,11 @@ export default {
       slideList: [
         {
           img: require('./s6/slider_3-1.jpg'),
-          name: '家樂福商圈實景',
+          name: '家樂福商圈',
         },
         {
           img: require('./s6/slider_3-2.jpg'),
-          name: '藝文特區',
+          name: '桃園藝文展演中心',
         },
         {
           img: require('./s6/slider_3-3.jpg'),
