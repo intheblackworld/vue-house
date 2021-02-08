@@ -286,8 +286,8 @@ img[lazy='loaded'] {
 
   .home {
     padding-top: $nav_phone_height;
-    width: 100vw;
-    overflow: hidden;
+    // width: 100vw;
+    // overflow: hidden;
 
     &.no-padding-top {
       padding-top: 0;

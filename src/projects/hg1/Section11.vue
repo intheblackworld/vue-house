@@ -637,7 +637,7 @@
     z-index: 100;
     opacity: 0;
     transition: opacity 0.5s;
-    display: block;
+    display: none;
     overflow: auto;
     left: 100vw;
     transition: all 0.5s;

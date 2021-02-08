@@ -440,7 +440,7 @@
     }
 
     .mo1 {
-      @include img_r_m(80, 150, -40);
+      @include img_r_m(80, 150, 0);
       z-index: 10;
     }
 

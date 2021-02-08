@@ -293,8 +293,8 @@
     // }
 
     .mo1 {
-      @include img_c_m(405, 80);
-    top:calc(50% + 100vw * (80 - 302) / 375);
+      @include img_c_m(375, 80);
+      top:calc(50% + 100vw * (80 - 302) / 375);
     }
 
     .mo2 {
