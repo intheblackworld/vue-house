@@ -198,7 +198,9 @@
     width: 100vw;
     background-size: cover;
     margin: 0;
-    height: sizem(705);
+    height: calc(100vh - 63px);
+    min-height: sizem(604);
+    max-height: sizem(750);
     position: relative;
     z-index: 2;
     // overflow: hidden;
@@ -206,12 +208,12 @@
 
   .logo {
     @include img_c_m(310, 160);
-    // top: calc(50% - 14.5vw);
+    top:calc(50% + 100vw * (160 - 302) / 375);
   }
 
   .order-btn {
     @include img_c_m(80, 385);
-    // top: calc(50% + 12.3vw);
+    top:calc(50% + 100vw * (385 - 302) / 375);
     z-index: 10;
     cursor: pointer;
     &:hover {
@@ -221,6 +223,7 @@
 
   .title {
     @include img_c_m(310, 271);
+    top:calc(50% + 100vw * (272 - 302) / 375);
     font-size: sizem(28);
     font-weight: 500;
     font-stretch: normal;
@@ -243,6 +246,7 @@
 
   .subtitle {
     @include img_c_m(260, 321);
+    top:calc(50% + 100vw * (323 - 302) / 375);
     font-size: sizem(19);
     font-weight: bold;
     font-stretch: normal;
@@ -290,10 +294,12 @@
 
     .mo1 {
       @include img_c_m(405, 80);
+    top:calc(50% + 100vw * (80 - 302) / 375);
     }
 
     .mo2 {
       @include img_c_m(375, -20);
+    top:calc(50% + 100vw * (-20 - 302) / 375);
     }
   }
 }

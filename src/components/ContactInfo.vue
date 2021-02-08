@@ -147,7 +147,7 @@ export default {
   flex-direction: column;
   align-content: center;
   position: relative;
-  // z-index: 4;
+  z-index: 4;
   width: 100vw;
   height: 485px;
   padding: 10px;
@@ -167,6 +167,7 @@ export default {
   justify-content: space-between;
   font-size: 16px;
   line-height: 1.6;
+  z-index: 5;
 }
 
 .btn {
@@ -338,7 +339,7 @@ export default {
     // }
 
     .mo1 {
-      @include img_r_m(375, -20, 0);
+      @include img_r_m(375, 20, 0);
     }
   }
 }

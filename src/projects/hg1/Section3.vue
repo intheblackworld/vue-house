@@ -10,24 +10,32 @@
     </div>
     <img src="./s3/technology_line.png" :alt="`${info.caseName}_technology_line`" class="tech-line" data-aos="fade" data-aos-delay="0">
     <img src="./s3/city.png" :alt="`${info.caseName}_city`" class="city" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-    <img src="./s3/city_m.jpg" :alt="`${info.caseName}_city`" class="city" data-aos="fade-up" data-aos-delay="200" v-if="isMobile">
-    <img src="./s3/balloon_1.png" :alt="`${info.caseName}_balloon_1`" class="balloon-1" data-aos="fade-down" data-aos-delay="400">
-    <img src="./s3/balloon_2.png" :alt="`${info.caseName}_balloon_2`" class="balloon-2" data-aos="fade-down" data-aos-delay="600">
-    <img src="./s3/balloon_3.png" :alt="`${info.caseName}_balloon_3`" class="balloon-3" data-aos="fade-down" data-aos-delay="800">
-    <img src="./s3/balloon_4.png" :alt="`${info.caseName}_balloon_4`" class="balloon-4" data-aos="fade-down" data-aos-delay="1000">
-    <img src="./s3/style_arrow.png" :alt="`${info.caseName}_style_arrow`" class="arrow" data-aos="fade-up" data-aos-delay="200">
+    <img src="./s3/city_m.png" :alt="`${info.caseName}_city`" class="city" data-aos="fade-up" data-aos-delay="200" v-if="isMobile">
+    <div class="balloon-1" data-aos="fade-down" data-aos-delay="400">
+      <img src="./s3/balloon_1.png" :alt="`${info.caseName}_balloon_1`">
     <div class="item title-1" data-aos="fade-down" data-aos-delay="500">
       南崁台茂<br />生活圈
     </div>
+    </div>
+    <div class="balloon-2" data-aos="fade-down" data-aos-delay="600">
+      <img src="./s3/balloon_2.png" :alt="`${info.caseName}_balloon_2`">
     <div class="item title-2" data-aos="fade-down" data-aos-delay="700">
       春日路<br />商圈
     </div>
+    </div>
+    <div class="balloon-3" data-aos="fade-down" data-aos-delay="800">
+      <img src="./s3/balloon_3.png" :alt="`${info.caseName}_balloon_3`">
     <div class="item title-3" data-aos="fade-down" data-aos-delay="900">
       經國特區<br />商圈
     </div>
+    </div>
+    <div class="balloon-4" data-aos="fade-down" data-aos-delay="1000">
+      <img src="./s3/balloon_4.png" :alt="`${info.caseName}_balloon_4`">
     <div class="item title-4" data-aos="fade-down" data-aos-delay="1100">
       中正藝文<br />商圈
     </div>
+    </div>
+    <img src="./s3/style_arrow.png" :alt="`${info.caseName}_style_arrow`" class="arrow" data-aos="fade-up" data-aos-delay="200">
     <h1 class="title" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="400">
       信義區<span>2.0</span>的 超人
     </h1>
@@ -84,12 +92,19 @@
   @include img_l_pc(50, 150 + 60, 545);
 }
 
+.balloon-{
+  &1,
+  &2,
+  &3,
+  &4{img{width: 100%;position: absolute;left: 0;top: 0;}}
+}
 .balloon-1 {
   @include img_r_pc(169, 150 + 60, 1024);
 }
 
 .balloon-2 {
   @include img_r_pc(169, 150 + 60, 730);
+  .item{color: #0296db;}
 }
 
 .balloon-3 {
@@ -98,9 +113,10 @@
 
 .balloon-4 {
   @include img_r_pc(169, 150 + 60, 193);
+  .item{color: #0296db;}
 }
 
-.item {
+.item {position: relative;
   font-size: size(34.2);
   font-weight: 900;
   font-stretch: normal;
@@ -109,22 +125,8 @@
   letter-spacing: size(-1.03);
   text-align: center;
   color: #ffffff;
-  white-space: nowrap;
-}
-
-.title-1 {
-  @include img_r_pc(169, 195 + 60, 1024);
-}
-.title-2 {
-  @include img_r_pc(169, 195 + 60, 730);
-  color: #0296db;
-}
-.title-3 {
-  @include img_r_pc(169, 195 + 60, 460);
-}
-.title-4 {
-  @include img_r_pc(169, 195 + 60, 193);
-  color: #0296db;
+  top: 1.35em;
+  white-space: nowrap;width: 97%;
 }
 
 .title {
@@ -254,30 +256,8 @@
 
   .item {
     font-size: sizem(10);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(-0.3);
-    text-align: center;
-    color: #ffffff;
-    white-space: nowrap;
   }
 
-  .title-1 {
-    @include img_l_m(40, 51, 35);
-  }
-  .title-2 {
-    @include img_l_m(40, 51, 128);
-    color: #0296db;
-  }
-  .title-3 {
-    @include img_r_m(40, 51, 126);
-  }
-  .title-4 {
-    @include img_r_m(40, 51, 43);
-    color: #0296db;
-  }
 
   .title {
     @include img_l_m(196, 286, 32);
@@ -312,7 +292,7 @@
 
   .desc {
     @include img_l_m(308, 428, 33);
-    font-size: size(15);
+    font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;

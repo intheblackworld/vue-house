@@ -371,7 +371,7 @@
 
   .desc {
     @include img_l_m(308, 357, 33);
-    font-size: size(15);
+    font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;

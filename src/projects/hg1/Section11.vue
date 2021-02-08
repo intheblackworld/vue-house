@@ -36,8 +36,12 @@
         <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
-        <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-        <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+      <!--   <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+        <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex"> -->
+        <div class="prev-btn" @click="decIndex"></div>
+        <div class="next-btn" @click="addIndex"></div>
+
+
       </div>
     </div>
 
@@ -659,26 +663,25 @@
       left: 0;
       width: 100vw;
       height: 100vh;
+      z-index: 2;
     }
     .dialog-3d {
       @include img_l_m(67, 137, 36);
     }
 
     .dialog-reward {
-      @include img_l_m(120, 38, 36);
-      top: auto;
+      @include img_l_m(120, 625, 36);
       z-index: 10;
-      bottom: sizem(20);
     }
 
     .dialog-struc {
-      @include img_r_m(270, 147, 10);
-      top: auto;
-      bottom: 5vh;
+      @include img_r_m(270, 447, 10);
+     // top: auto;
+    //  bottom: 5vh;
     }
     .dialog-img {
       &.dialog-name {
-        @include img_l_m(110, 160, 33);
+        @include img_r_m(110, 160, 193);
         width: auto;
         height: sizem(111);
       }
@@ -785,7 +788,7 @@
     }
 
     .dialog-works {
-      font-size: sizem(16);
+      font-size: sizem(14);
       font-weight: normal;
       font-stretch: normal;
       font-style: normal;
@@ -797,15 +800,11 @@
       &.dialog-works1,
       &.dialog-works2,
       &.dialog-works4 {
-        @include img_r_m(322, 19, 19);
-        top: auto;
-        bottom: 10vh;
+        @include img_r_m(322, 480, 19);
       }
 
       &.dialog-works3 {
-        @include img_r_m(322, 19, 19);
-        top: auto;
-        bottom: 10vh;
+        @include img_r_m(322,480, 19);
       }
     }
 
@@ -815,7 +814,7 @@
       right: sizem(32);
       top: sizem(23);
       width: sizem(30);
-      z-index: 1;
+      z-index: 5;
       // background-color: #9d0c1a;
     }
   }
@@ -996,7 +995,7 @@
       z-index: 10;
       top: sizem(140);
       left: auto;
-      right: sizem(0);
+      right: sizem(60);
     }
 
     .slide-name-img {
@@ -1092,19 +1091,27 @@
     z-index: 3;
   }
   .prev-btn {
-    left: 5%;
+    left: 0%;
+    transform: scaleX(-1);
   }
 
   .next-btn {
-    right: 5%;
+    right: 0%;
   }
   .prev-btn,
   .next-btn {
-    width: sizem(15) !important;
-    top: 40%;
+    width: sizem(60) !important;
+    font-size:sizem(20) ;
+    top: 20%;
+    height: 80%;
     z-index: 13;
     position: absolute;
     cursor: pointer;
+    &::before{content: "";display: block;
+    width: 1em;height: 1em;
+    border: 0.1em solid #fff;border-width: 0.1em 0.1em 0 0;
+    transform: rotate(45deg);top: calc(50% - 0.5em);position: absolute;
+    left:calc(40% - 0.5em);}
   }
 }
 </style>
