@@ -403,6 +403,7 @@ export default {
     }
     .order-subtitle {
       // display: none;
+      font-size: sizem(14);
       width: sizem(294);
       margin: 0 auto;
       line-height: 1.4;
