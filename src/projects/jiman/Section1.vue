@@ -26,10 +26,25 @@
     </div>
     <div v-else>
       <img src="./s1/t1.png" :alt="`${info.caseName}_t1`" class="t1" data-aos="fade" data-aos-delay="400">
-      <img src="./s1/logo.png" :alt="`${info.caseName}_logo`" class="logo" data-aos="fade" data-aos-delay="600" data-aos-offset="-400"> 
+      <img src="./s1/logo_m.png" :alt="`${info.caseName}_logo`" class="logo" data-aos="fade" data-aos-delay="600" data-aos-offset="-400"> 
       <img src="./mo/1/f1.png" :alt="`${info.caseName}_f1`" class="f1">
       <img src="./mo/1/f2.png" :alt="`${info.caseName}_f2`" class="f2">
-      <img src="./mo/1/t2.png" :alt="`${info.caseName}_t2`" class="t2">
+      <div class="desc" data-aos="fade" data-aos-delay="800">
+        懂收藏的人，有旁人難及的自豪氣慨<br />
+        自豪於收藏從不看價格，而是看故事<br />
+        罐裡的玻璃彈珠，藏著孩提時的單純快樂<br />
+        整頁護貝的球員卡，藏著昂揚熱血的青春<br />
+        滿櫃名錶的價值，在於留藏難以復返的時間<br />
+        若問其中最引以為傲的藏品<br />
+        莫過一席水岸豪景，典藏了成功人生的自慢閱歷<br /><br />
+        懂收藏的人，只願收藏唯一<br />
+        藏台大椰林師大樹海，獨一無二雋永人文<br />
+        藏台灣水岸第一次，日本國土營造精工手筆<br />
+        藏江山於市心，北市最後一塊水岸豪景沃土<br />
+        自在、慢活、收藏無法複製的唯一<br />
+        頂級收藏家不用說出口的自豪
+
+      </div>
     </div>
   </div>
 </template>
@@ -106,7 +121,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 2.09;
-  letter-spacing: size(0.92);
+  letter-spacing: 0.04em;
   text-align: left;
   color: #ffffff;
   white-space: nowrap;
@@ -161,9 +176,17 @@
     @include img_r_m(250, 291, 33);
   top:calc(80% + 100vw * (240 - 667 * .8) / 375);
   }
+  .desc {
+    @include img_r_m(250, 291, 30);
+  top:calc(80% + 100vw * (235 - 667 * .8) / 375);
+  font-size: sizem(12);
+  width: auto;
+  text-align: right;
+  line-height:1.8;
+  }
 
   .logo {
-    @include img_r_m(144, 291, 39);
+    @include img_r_m(145, 291, 39);
   top:calc(85% + 100vw * (548 - 667 * .85) / 375);
   }
   
