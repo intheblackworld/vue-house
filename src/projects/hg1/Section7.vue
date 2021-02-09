@@ -29,9 +29,10 @@
 @import '@/assets/style/function.scss';
 
 .section7 {
-  width: size(1920);
+  width:100%;
   height: 100vh;
-  min-height: size(1080);
+  min-height: size(900);
+  max-height: size(1080);
   position: relative;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
@@ -42,9 +43,8 @@
 }
 
 .bg-img {
-  width: 100vw;
-  height: 100vh;
-  min-height: size(900);
+  width:100%;
+  height:100%;
   position: absolute;
   display: block;
   top: 0;

@@ -56,7 +56,7 @@
 @import '@/assets/style/function.scss';
 
 .section8 {
-  width: size(1920);
+  width:100%;
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);
@@ -64,9 +64,8 @@
 }
 
 .bg-img {
-  width: 100vw;
-  height: 100vh;
-  min-height: size(900);
+  width:100%;
+  height:100%;
   position: absolute;
   display: block;
   top: 0;

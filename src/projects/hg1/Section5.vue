@@ -51,7 +51,7 @@
 @import '@/assets/style/function.scss';
 
 .section5 {
-  width: size(1920);
+  width:100%;
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);
@@ -68,14 +68,13 @@
 }
 
 .container {
-  width: 100vw;
+  width:100%;
   height: size(671);
 }
 
 .bg-img {
-  width: 100vw;
-  height: 100vh;
-  min-height: size(900);
+  width: 100%;
+  height:100%;
   position: absolute;
   display: block;
   top: 0;
