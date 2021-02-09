@@ -11,10 +11,10 @@
             <el-select v-model="form.activity" placeholder>
               <el-option v-for="(act, index) in activies" :key="act.value + index" :label="act.label" :value="act.value" no-data-text="無數據"></el-option>
             </el-select>
-          </div> -->
-          <div class="row" data-aos="fade-down" data-aos-delay="100">
-            <el-input id="form-name" v-model="form.count" placeholder="報名人數"></el-input>
           </div>
+          <div class="row" data-aos="fade-down" data-aos-delay="100">
+            <el-input id="form-people" v-model="form.count" placeholder="報名人數"></el-input>
+          </div> -->
           <div class="row" data-aos="fade-down" data-aos-delay="100">
             <el-input id="form-name" v-model="form.name" placeholder="姓名*"></el-input>
           </div>
@@ -57,16 +57,12 @@
           <el-button class="form-submit flex-c" type="primary" :disabled="!checked || !isVerify" @click="submit" :loading="isSubmit">確認送出</el-button>
         </div>
         <div class="group">
-          <iframe class="google-map" title="googlemap" :src="googleSrc" width="100%" height="383" frameborder="0" style="border: 0" allowfullscreen />
+          <iframe class="google-map" title="googlemap" :src="googleSrc" width="100%" frameborder="0" style="border: 0" allowfullscreen />
           <div class="control" data-aos="fade-down" data-aos-delay="500">
             <div class="control-desc">
-              <p v-if="isPC">
+              <p>
                 <!-- 電話 {{info.phone}}<br />客服信箱：{{info.email}}<br /> -->                
-                樂園位置：<br>{{info.address}}
-              </p>
-              <p v-if="isMobile">
-                <!-- 電話 {{info.phone}}<br />客服信箱：{{info.email}}<br /> -->                
-                樂園位置：{{info.address}}
+                樂園位置：<br v-if="!isMobile">{{info.address}}
               </p>
             </div>
       <a :href="info.googleLink" target="_blank" class="contact-btn flex-c wrap google-map-btn">
@@ -457,6 +453,7 @@ export default {
 
   .google-map {
     // margin-top: 35px;
+    height:size(248);
     margin-bottom: 15px;
   }
 }
@@ -580,12 +577,16 @@ export default {
         color: #ffffff;
       }
     }
+  .google-map {
+    // margin-top: 35px;
+    height:sizem(248);
+  }
     .google-map-btn {
-      @include div_l_m(70, 70, 1288, 15);
+      @include div_l_m(70, 70, 45, 0);
     }
 
     .fb-btn {
-      @include div_l_m(70, 70, 1288, 97);
+      @include div_l_m(70, 70, 45, 82);
     }
 
     .bottom-img {

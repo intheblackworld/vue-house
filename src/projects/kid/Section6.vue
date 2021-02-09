@@ -30,6 +30,7 @@
         <img src="./s6/p4.png" :alt="`${info.caseName}_p1`" class="p1">
       </div>
     </div>
+    <!--
     <div class="block-2">
       <div class="title2">
         活動消息
@@ -57,6 +58,7 @@
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot' + index" @click="goToSlide(index)"><span :class="`flex-c ${slideIndex === index ? 'active' : ''}`">{{index + 1}}</span></div>
       </div>
     </div>
+    -->
   </div>
 </template>
 
@@ -65,9 +67,9 @@
 
 .section6 {
   width: size(1920);
-  height: size(2130);
-  min-height: size(2130);
-  max-height: size(2130);
+  height: size(1156);
+  /*min-height: size(2130);
+  max-height: size(2130);*/
   background-color: #71943a;
   background-size: cover;
   background-attachment: fixed;
@@ -435,9 +437,7 @@
 @media screen and (max-width: 767px) {
   .section6 {
     width: 100vw;
-    height: calc(100vh - 63px);
-    min-height: sizem(900);
-    max-height: sizem(900);
+    height: sizem(400);
     background-size: cover;
     background-attachment: scroll;
     position: relative;

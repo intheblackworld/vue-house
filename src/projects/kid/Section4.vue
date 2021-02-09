@@ -41,7 +41,7 @@
     <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" data-aos-offset="-400" v-if="isPC">
       <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot' + index" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
     </div>
-    <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+<!--   因為只有一張圖先隱藏箭頭 <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
       <div class="prev-btn flex-c">
         <img src="./all/prev-btn.png" alt="" @click="decIndex">
       </div>
@@ -49,6 +49,8 @@
         <img src="./all/next-btn.png" alt="" @click="addIndex">
       </div>
     </div>
+
+    -->
   </div>
 </template>
 
@@ -674,14 +676,14 @@ export default {
           img: require('./s4/1.jpg'),
           name: '情境示意圖',
         },
-        {
+   /*     {
           img: require('./s4/1.jpg'),
           name: '情境示意圖',
         },
         {
           img: require('./s4/1.jpg'),
           name: '情境示意圖',
-        },
+        },*/
       /*  {
           img: require('./s2/資產 55@2x-80.jpg'),
         },

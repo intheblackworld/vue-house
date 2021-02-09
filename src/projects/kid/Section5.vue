@@ -613,17 +613,18 @@
   }
 
   .swipe-btns {
-    width: 100%;
+    width: 80%;
     height: sizem(52);
     padding: 0px;
-    z-index: 1;
+    z-index: 12;
     position: absolute;
-    top: sizem(435);
+    top: sizem(460);
+    left:10%;
 
     .prev-btn,
     .next-btn {
-      width: sizem(26);
-      height: sizem(52);
+      width: sizem(18);
+      height:auto;
       cursor: pointer;
       // background-color: #ec6300;
       img {

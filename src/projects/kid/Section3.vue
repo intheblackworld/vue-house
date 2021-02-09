@@ -2,18 +2,20 @@
   <div class="section3">
     <div class="bg-img"></div>
     <div class="parallax-img" v-if="isPC">
-      <img src="./s3/img.jpg" alt="" v-rellax="{
+      <div v-rellax="{
           // Rellax Options
           // See: https://github.com/dixonandmoe/rellax#features
-          speed: -2,center: true,
-        }">
+          speed: -3,
+        }"><img src="./s3/img.jpg" alt="img"></div>
+     
     </div>
     <div class="parallax-img" v-if="isMobile">
-      <img src="./s3/img.jpg" alt="" v-rellax="{
+      <div v-rellax="{
           // Rellax Options
           // See: https://github.com/dixonandmoe/rellax#features
-          speed: -0.1,
+          speed: -0.75
         }">
+      <img src="./s3/img.jpg" alt="img"></div>
     </div>
     <img src="./s3/title.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isPC">
     <img src="./s3/title_m.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isMobile">
@@ -141,18 +143,31 @@
   bottom: 0;
   overflow: hidden;
   background: #fff;
+  /*
   img {
-    position: relative;
+    position: absolute;
     width: 100%;
     height: size(956);
-    object-fit: cover;
-    top: 0;
+    object-fit: cover;left: 0;
+    top:size(-250);
+   // &.img1{opacity: 0.8;}
   }
+  */
+    > div{
+    transform-origin: center center;
+      height: 500px;
+    top:calc(50% - 250px);}
+    img {
+      width: 100%;
+    height: size(956);
+    top:0%;
+    transform: translateY(-53%);
+    }
 }
 
 .name {
-  right: 1.5em;
-  bottom: 3em;
+  right: 25em;
+  bottom: 1em;
   font-size: 0.78125vw;
   font-weight: 400;
   font-stretch: normal;
@@ -166,13 +181,7 @@
   text-shadow: 0 0.1em 0.3em #000;
 }
 
-@media only screen and (max-width: 1440px) {
-}
-@media only screen and (max-width: 1280px) and (min-width: 1025px) {
-  .fullscreen {
-    height: 100vh;
-  }
-}
+
 
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
@@ -261,10 +270,15 @@
     left: 0;
     bottom: 0;
     overflow: hidden;
+    > div{
+    transform-origin: center center;
+      height: 200px;
+    top:calc(50% - 100px);}
     img {
       width: 100%;
       height: sizem(214);
-      margin-top: sizem(-20);
+    top:0%;
+    transform: translateY(-75%);
     }
   }
 
