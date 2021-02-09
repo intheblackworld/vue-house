@@ -153,6 +153,8 @@
 .dialog {
   width: 100vw;
   height: 100vh;
+  min-height: size(900);
+  max-height: size(1080);
   position: fixed;
   top: 0;
   background-color: rgba(45, 115, 171, 1);

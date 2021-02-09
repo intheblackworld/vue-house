@@ -28,6 +28,7 @@ body {
 }
 
 .home {
+  width: 100%;overflow: hidden;
   padding-top: $nav_pc_height;
 
   &.no-padding-top {

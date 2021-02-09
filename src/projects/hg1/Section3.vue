@@ -52,7 +52,7 @@
 @import '@/assets/style/function.scss';
 
 .section3 {
-  width: size(1920);
+  width: 100%;
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);
@@ -69,18 +69,14 @@
 }
 
 .bg-img {
-  width: 100vw;
-  height: 100vh;
-  min-height: size(900);
+  width: 100%;
+  height: 100%;
   position: absolute;
   display: block;
   top: 0;
   left: 0;
   object-fit: cover;
 
-  &:nth-child(1) {
-    position: relative;
-  }
 }
 
 .city {
@@ -99,7 +95,7 @@
   &1,
   &2,
   &3,
-  &4{img{width: 100%;position: absolute;left: 0;top: 0;}}
+  &4{img{width: 100%;position: absolute;left: 0;top: 0;z-index: 3}}
 }
 .balloon-1 {
   @include img_r_pc(169, 150 + 60, 1024);
@@ -129,7 +125,7 @@
   text-align: center;
   color: #ffffff;
   top: 1.35em;
-  white-space: nowrap;width: 97%;
+  white-space: nowrap;width: 97%;z-index: 4;
 }
 
 .title {

@@ -31,9 +31,9 @@
 @import '@/assets/style/function.scss';
 
 .section2 {
-  width: size(1920);
+  width: 100%;
   height: 100vh;
-  min-height: size(1080);
+  min-height: size(900);
   max-height: size(1080);
   background: none;
   background-size: auto;
@@ -45,16 +45,13 @@
 
 .bg-img {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   display: block;
   object-fit: cover;
   margin-top: 0;
-  &:nth-child(1) {
-    position: relative;
-  }
 }
 
 .title {

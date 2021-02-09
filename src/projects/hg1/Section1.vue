@@ -56,9 +56,10 @@
   position: relative;
   z-index: 3;
   overflow: visible;
-  width: 100vw;
-  min-height: size(1080);
-  height: size(1080);
+  width: 100%;
+  height: 100vh;
+  min-height: size(900);
+  max-height: size(1080);
   background: linear-gradient(
     to bottom,
     rgba(0, 131, 190, 0) 13%,
