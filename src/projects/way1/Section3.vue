@@ -1,0 +1,423 @@
+<template>
+  <div class="section3">
+    <img src="./s3/03_green_style.png" :alt="`${info.caseName}_grass`" class="grass">
+    <img src="./s3/03_img.jpg" :alt="`${info.caseName}_img`" class="img">
+    <h1 class="big-title">
+      <span>6</span>大城市規劃 擘畫國際宜居之城
+    </h1>
+    <div class="title">
+      超前部署<br />
+      建設願景<br />
+      鳳鳴站啟動，交通好Way
+    </div>
+    <div class="hr"></div>
+    <div class="desc">
+      台鐵＋捷運雙鐵交匯，軌道軸線引領向前，台鐵鳳鳴站＋捷運三鶯線，軌道路網雙線加持，台鐵鳳鳴臨時站啟動，即將改寫城市移動新模式。
+    </div>
+    <div class="content flex-ac flex-jb">
+      <div class="content-block flex-c wrap">
+        <img src="./s3/03_mrt_icon.png" :alt="`${info.caseName}_mrt_icon`" class="mrt_icon">
+        <div class="block-title">
+          台鐵鳳鳴臨時站
+        </div>
+        <div class="block-desc">
+          預計民國113年年底完工
+        </div>
+      </div>
+      <div class="content-block flex-c wrap">
+        <img src="./s3/03_tra_icon.png" :alt="`${info.caseName}_tra_icon`" class="tra_icon">
+        <div class="block-title">
+          捷運三鶯線
+        </div>
+        <div class="block-desc">
+          預計民國112年12月完工
+        </div>
+      </div>
+
+    </div>
+  </div>
+</template>
+<style lang="scss" scoped>
+@import '@/assets/style/function.scss';
+
+.section3 {
+  width: 100vw;
+  height: size(1216);
+  max-height: size(1216);
+  min-height: size(1216);
+  position: relative;
+  // background-image: url('./s2/bg.jpg');
+  // background-size: 100% 100%;
+  // background-position: 0 0;
+  // background-attachment: fixed;
+  // overflow: hidden;
+}
+
+.bg-img {
+  width: 100vw;
+  height: size(1080);
+  min-height: size(900);
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+
+  &:nth-child(1) {
+    position: relative;
+  }
+}
+
+.grass {
+  @include img_r_pc(497, 311, 117);
+
+  animation: grass 2s 0s ease-in-out alternate-reverse infinite;
+}
+
+@keyframes grass {
+  to {
+    transform: skew(5deg);
+  }
+}
+.img {
+  @include img_r_pc(988, 266, 97);
+}
+
+.big-title {
+  @include img_r_pc(794, 141, 94);
+  font-size: size(53.6);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: size(3.22);
+  text-align: center;
+  color: #2f2c2c;
+  white-space: nowrap;
+
+  span {
+    font-size: size(70);
+  }
+}
+
+.title {
+  @include img_l_pc(488, 380, 183);
+  font-size: size(40.5);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.41;
+  letter-spacing: size(2.43);
+  text-align: center;
+  color: #009fb1;
+  white-space: nowrap;
+}
+
+.hr {
+  @include img_l_pc(46, 590, 404);
+  border-bottom: solid size(4) #009fb1;
+}
+.desc {
+  @include img_l_pc(608, 632, 118);
+  font-size: size(26);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing: size(2.6);
+  text-align: left;
+  color: #2f2c2c;
+}
+.content {
+  @include img_l_pc(608, 802, 118);
+}
+
+.content-block {
+  width: size(294);
+  height: size(266);
+  border-radius: 14.2px;
+  background-color: #d1d2d3;
+  padding: 40px 40px;
+}
+
+.mrt_icon {
+  width: size(107);
+}
+
+.tra_icon {
+  width: size(107);
+}
+
+.block-title {
+  font-size: size(30.3);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.75;
+  letter-spacing: size(0.61);
+  text-align: center;
+  color: #009fb1;
+  white-space: nowrap;
+}
+
+.block-desc {
+  font-size: size(18.5);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.53;
+  letter-spacing: size(1.11);
+  text-align: center;
+  color: #009fb1;
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 1440px) {
+}
+@media only screen and (max-width: 1280px) and (min-width: 1025px) {
+  .fullscreen {
+    height: 100vh;
+  }
+}
+
+/* 螢幕尺寸標準 */
+/* 平板尺寸 */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+}
+
+@media screen and (max-width: 767px) {
+  .section3 {
+    min-height: auto;
+    max-height: initial;
+    height: sizem(438);
+  }
+
+  .title {
+    @include img_c_m(206, 40);
+    font-size: sizem(25);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.42;
+    letter-spacing: sizem(0.96);
+    text-align: center;
+    color: #008796;
+    white-space: nowrap;
+  }
+
+  .subtitle {
+    @include img_c_m(360, 148);
+    font-size: sizem(21);
+  }
+
+  .btn {
+    @include div_l_m(266, 98, 25, 55);
+    background: linear-gradient(to right, #008796 5px, transparent 5px) 0 0,
+      linear-gradient(to right, #008796 5px, transparent 5px) 0 100%,
+      linear-gradient(to left, #008796 5px, transparent 5px) 100% 0,
+      linear-gradient(to left, #008796 5px, transparent 5px) 100% 100%,
+      linear-gradient(to bottom, #008796 5px, transparent 5px) 0 0,
+      linear-gradient(to bottom, #008796 5px, transparent 5px) 100% 0,
+      linear-gradient(to top, #008796 5px, transparent 5px) 0 100%,
+      linear-gradient(to top, #008796 5px, transparent 5px) 100% 100%;
+
+    background-repeat: no-repeat;
+    background-size: sizem(14) sizem(21);
+  }
+
+  /* Swipe */
+  .swipe {
+    width: sizem(249);
+    height: sizem(174);
+    min-height: auto;
+    top: sizem(232);
+    left: sizem(66);
+    object-fit: cover;
+  }
+
+  // begin
+  .swipe-fade-leave-to {
+    opacity: 0;
+    z-index: 0;
+  }
+  // end
+  .swipe-fade-enter {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .swipe-fade-enter-active {
+    transition: all 0.5s ease;
+  }
+
+  .swipe-fade-leave-active {
+    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  // begin
+  // .swipe-left-leave-to {
+  //   margin-left: -100vw;
+  //   z-index: 0;
+  // }
+  // // end
+  // .swipe-left-enter {
+  //   opacity: 0.5;
+  //   margin-left: 0;
+  //   z-index: 1;
+  // }
+
+  // .swipe-left-enter-active {
+  //   transition: all 0.5s ease;
+  // }
+
+  // .swipe-left-leave-active {
+  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  // }
+
+  .swipe-wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .swipe-item {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    .slide-name {
+      right: 1em;
+      font-size: sizem(13);
+    }
+
+    // &:nth-child(1) {
+    //   z-index: 1;
+    //   // opacity: 1;
+    // }
+
+    // &.base {
+    //   z-index: 1;
+    //   opacity: 1;
+    // }
+    // &.active {
+    //   z-index: 2;
+    //   // opacity: 1;
+    // }
+  }
+
+  .pagination {
+    width: auto;
+    bottom: size(91);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .pagination-dot {
+    padding: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    z-index: 4;
+
+    span {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 0 1px #fff;
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.01);
+      transition: all 0.5s;
+
+      &::before {
+        content: '';
+        width: 60%;
+        height: 60%;
+        display: block;
+        background: #004ea2;
+        border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 20%;
+        // transform: translateY(-50%);
+        left: 20%;
+        transition: all 0.3s;
+        transform-origin: center;
+        transform: scale(0);
+      }
+      &.active {
+        &::before {
+          content: '';
+          width: 100%;
+          height: 100%;
+          display: block;
+          background: #004ea2;
+          border-radius: 20px;
+          opacity: 1;
+          position: absolute;
+          top: 0%;
+          // transform: translateY(-50%);
+          left: 0%;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  .swipe-btns {
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+    z-index: 3;
+
+    .prev-btn,
+    .next-btn {
+      width: sizem(15);
+      cursor: pointer;
+    }
+  }
+}
+</style>
+<script>
+// @ is an alias to /src
+import { isPC, isMobile, isTablet } from '@/utils'
+import info from '@/info'
+// import slider from '@/mixins/slider.js'
+export default {
+  // mixins: [slider],
+  // props: ['viewIndex'],
+
+  data() {
+    return {
+      info,
+      isPC,
+      isMobile,
+      isTablet,
+      isDialog: false,
+      // slideList: [
+      //   {
+      //     img: require('./s3/img.png'),
+      //     // name: 'WE機能圖',
+      //   },
+      // ],
+    }
+  },
+
+  methods: {},
+
+  created() {},
+
+  mounted() {},
+
+  computed: {},
+
+  watch: {
+    // viewIndex() {
+    //   if (this.viewIndex === 3) {
+    //     this.slideIndex = 0
+    //     console.log(this.slideIndex, 'slideIndex')
+    //   }
+    // },
+  },
+}
+</script>
