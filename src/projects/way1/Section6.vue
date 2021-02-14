@@ -4,7 +4,8 @@
     <h1 class="title">Taste Of Building Art</h1>
     <h1 class="subtitle">建築很有料</h1>
     <div class="hr"></div>
-    <img src="./s6/06_img.jpg" :alt="`${info.caseName}_img`" class="img">
+    <img src="./s6/06_img.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isPC">
+    <img src="./m/06/06_img.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isMobile">
   </div>
 </template>
 <style lang="scss" scoped>
@@ -115,62 +116,67 @@
   .section6 {
     min-height: auto;
     max-height: initial;
-    height: sizem(892);
+    height: sizem(911 - 18 - 34);
+  }
+
+  .label {
+    @include img_l_m(131, 14, 30);
+    top: auto;
+    bottom: sizem(133);
+    font-size: sizem(17.8);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: sizem(1.07);
+    text-align: left;
+    color: #5f5e5e;
+    white-space: nowrap;
+    span {
+      font-weight: normal;
+    }
   }
 
   .title {
-    @include img_c_m(224, 40);
-    font-size: sizem(24);
-    font-weight: 900;
+    @include img_l_m(283, 37, 30);
+    top: auto;
+    bottom: sizem(98);
+    font-size: sizem(27.7);
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.42;
-    letter-spacing: sizem(0.96);
-    text-align: center;
-    color: #444444;
+    line-height: 2;
+    letter-spacing: sizem(-1.94);
+    text-align: left;
+    color: #302d2c;
     white-space: nowrap;
   }
-
   .subtitle {
-    @include img_c_m(318, 156);
-    font-size: sizem(15);
+    @include img_l_m(177, 120, 27);
+    top: auto;
+    bottom: sizem(0);
+    font-size: sizem(33.7);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.73;
-    letter-spacing: normal;
-    text-align: center;
-    color: #444444;
+    line-height: 1.38;
+    letter-spacing: sizem(2.02);
+    text-align: left;
+    color: #302d2c;
     white-space: nowrap;
   }
 
-  .btn {
-    @include div_l_m(266, 98, 25, 55);
-    background: linear-gradient(to right, #3e3a39 5px, transparent 5px) 0 0,
-      linear-gradient(to right, #3e3a39 5px, transparent 5px) 0 100%,
-      linear-gradient(to left, #3e3a39 5px, transparent 5px) 100% 0,
-      linear-gradient(to left, #3e3a39 5px, transparent 5px) 100% 100%,
-      linear-gradient(to bottom, #3e3a39 5px, transparent 5px) 0 0,
-      linear-gradient(to bottom, #3e3a39 5px, transparent 5px) 100% 0,
-      linear-gradient(to top, #3e3a39 5px, transparent 5px) 0 100%,
-      linear-gradient(to top, #3e3a39 5px, transparent 5px) 100% 100%;
-
-    background-repeat: no-repeat;
-    background-size: sizem(14) sizem(21);
+  .hr {
+    @include img_l_m(40, 100, 33);
+    top: auto;
+    bottom: sizem(68);
+    border-bottom: solid sizem(5) #009fb1;
   }
 
-  .img-list {
-    position: relative;
-    width: sizem(342);
-    margin: 0 auto;
-    top: sizem(187);
-
-    img {
-      width: 100%;
-      // height: sizem(230);
-      object-fit: cover;
-      margin-bottom: sizem(4);
-    }
+  .img {
+    @include img_c_m(334, 25);
+    height: sizem(606);
+    object-fit: cover;
   }
 }
 </style>

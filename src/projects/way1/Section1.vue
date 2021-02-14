@@ -1,15 +1,19 @@
 <template>
   <div class="section1">
     <!-- <img src="./s1/bg.jpg" alt="" class="bg-img"> -->
-    <img src="./s1/01_bg.jpg" :alt="`${info.caseName}_img`" class="img">
+    <img src="./s1/01_bg.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isPC">
+    <img src="./m/01/01_bg_m.png" :alt="`${info.caseName}_img`" class="img" v-if="isMobile">
     <img src="./s1/01_arrow.png" :alt="`${info.caseName}_arrow`" class="arrow">
     <img src="./s1/01_btn.png" :alt="`${info.caseName}_btn`" class="btn">
     <img src="./s1/01_logo_box.png" :alt="`${info.caseName}_logo-box`" class="logo-box">
     <img src="./s1/01_logo.png" :alt="`${info.caseName}_logo`" class="logo">
     <img src="./s1/boutique_logo.png" :alt="`${info.caseName}_b-logo`" class="b-logo">
-    <h1 class="title">建築對味 幸福到位</h1>
-    <h3 class="subtitle1 flex-ac">遇見鳳鳴特區<span class="flex-ac">Destiny That Brought You To Me</span></h3>
-    <h3 class="subtitle2 flex-ac">北歐幸福生活<span class="flex-ac">Is Living A Happy Life</span></h3>
+    <h1 class="title" v-if="isPC">建築對味 幸福到位</h1>
+    <h1 class="title" v-if="isMobile">建築對味<br />幸福到位</h1>
+    <h3 class="subtitle1 flex-ac" v-if="isPC">遇見鳳鳴特區<span class="flex-ac">Destiny That Brought You To Me</span></h3>
+    <h3 class="subtitle2 flex-ac" v-if="isPC">北歐幸福生活<span class="flex-ac">Is Living A Happy Life</span></h3>
+    <h3 class="subtitle1 flex-ac wrap" v-if="isMobile">遇見鳳鳴特區<br /><span class="flex-ac">Destiny That Brought You To Me</span></h3>
+    <h3 class="subtitle2 flex-ac wrap" v-if="isMobile">北歐幸福生活<br /><span class="flex-ac">Is Living A Happy Life</span></h3>
   </div>
 </template>
 
@@ -130,48 +134,6 @@
   }
 }
 
-// .b1 {
-//   @include img_l_pc(712, 383, 214);
-// }
-
-// .b2 {
-//   @include img_l_pc(720, 768, 210);
-// }
-
-.i1 {
-  @include img_c(933, -55, -775, 1920);
-}
-
-.swipe-fade-leave-to {
-  opacity: 0;
-  z-index: 0;
-}
-// end
-.swipe-fade-enter {
-  opacity: 0;
-  z-index: 1;
-}
-
-.swipe-fade-enter-active {
-  transition: all 0.5s ease;
-}
-
-.swipe-fade-leave-active {
-  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-}
-/*
-.t1 {
-  width: size(751);
-  top: size(483);
-  left: size(585);
-}
-
-.t2 {
-  width: size(751);
-  top: size(711);
-  left: size(585);
-}
-*/
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -188,46 +150,101 @@
 @media screen and (max-width: 767px) {
   .section1 {
     width: 100vw;
-    min-height: sizem(725);
-    max-height: sizem(725);
-    height: sizem(725);
+    min-height: sizem(604);
+    max-height: sizem(604);
+    height: sizem(604);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
   }
-  .logo {
-    @include img_c_m(200, 55);
+  .img {
+    @include img_c_m(335, 25);
   }
 
-  .b {
-    @include img_r_m(300, 495, -35);
-    .bimg {
-      transform: scaleX(-1);
+  .arrow {
+    @include img_l_m(36.6, 400, 60);
+  }
+
+  .btn {
+    display: none;
+    // @include img_l_m(438, 712, 475);
+  }
+
+  .logo-box {
+    @include img_r_m(340, 408, -40);
+  }
+
+  .logo {
+    @include img_r_m(147, 509, 10);
+  }
+
+  .b-logo {
+    @include img_r_m(68, 96, 54);
+  }
+
+  .title {
+    @include img_l_m(161, 186, 69);
+    font-size: sizem(39);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.35;
+    letter-spacing: sizem(1.56);
+    text-align: left;
+    color: #ffffff;
+    white-space: nowrap;
+  }
+
+  .subtitle1 {
+    @include img_l_m(120, 324, 109);
+    font-size: sizem(18.9);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: sizem(1.13);
+    text-align: left;
+    color: #ffffff;
+    white-space: nowrap;
+
+    span {
+      font-size: sizem(9.2);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 2;
+      letter-spacing: sizem(0.82);
+      text-align: left;
+      color: #ffffff;
+      white-space: nowrap;
+      margin-left: 0px;
     }
   }
 
-  // .b1 {
-  //   @include img_l_m(712, 383, 214);
-  // }
+  .subtitle2 {
+    @include img_l_m(119, 382, 109);
+    font-size: sizem(18.9);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: sizem(1.13);
+    text-align: left;
+    color: #ffffff;
+    white-space: nowrap;
 
-  // .b2 {
-  //   @include img_l_m(720, 768, 210);
-  // }
-
-  .i1 {
-    @include img_l_m(288, 603, 0);
-  }
-
-  .i2 {
-    @include img_c_m(244, 188);
-  }
-
-  .i3 {
-    @include img_c_m(259, 323);
-  }
-
-  .t {
-    @include img_r_m(42, 371, 140);
+    span {
+      font-size: sizem(9.2);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 2;
+      letter-spacing: sizem(0.82);
+      text-align: left;
+      color: #ffffff;
+      white-space: nowrap;
+      margin-left: 0px;
+    }
   }
 }
 </style>

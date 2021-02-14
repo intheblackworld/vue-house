@@ -1,7 +1,9 @@
 <template>
   <div class="section5">
-    <h1 class="title">鳳鳴好感生活圈 繁華同步宜居環境</h1>
-    <h1 class="subtitle">繁華時尚、綠意文風、美食饗宴、生活步調，由你決定</h1>
+    <h1 class="title" v-if="isPC">鳳鳴好感生活圈 繁華同步宜居環境</h1>
+    <h1 class="title" v-if="isMobile">鳳鳴好感生活圈<br />繁華同步宜居環境</h1>
+    <h1 class="subtitle" v-if="isPC">繁華時尚、綠意文風、美食饗宴、生活步調，由你決定</h1>
+    <h1 class="subtitle" v-if="isMobile">繁華時尚、綠意文風、美食饗宴<br />生活步調，由你決定</h1>
     <div class="hr"></div>
     <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -24,7 +26,7 @@
         <div class="block-title">
           雙繁華
         </div>
-        <div class="block-desc">
+        <div class="block-desc" v-if="isPC">
           鶯桃路商圈、桃園新站商圈，全聯即將進駐機能豐足、繁華到位。
         </div>
       </div>
@@ -33,7 +35,7 @@
         <div class="block-title">
           雙綠意
         </div>
-        <div class="block-desc">
+        <div class="block-desc" v-if="isPC">
           鳳福公園綠意近鄰，鳳鳴公園休憩樂活，享受市心健康綠意
         </div>
       </div>
@@ -42,7 +44,7 @@
         <div class="block-title">
           雙學區
         </div>
-        <div class="block-desc">
+        <div class="block-desc" v-if="isPC">
           鳳鳴國小、鳳鳴國中完整學區，涵養優質文教氣息。
         </div>
       </div>
@@ -360,49 +362,113 @@
   .section5 {
     min-height: auto;
     max-height: initial;
-    height: sizem(438);
+    height: sizem(418 + 243);
+  }
+
+  .grass {
+    display: none;
   }
 
   .title {
-    @include img_c_m(206, 40);
-    font-size: sizem(25);
-    font-weight: 900;
+    @include img_c_m(196, 47);
+    font-size: sizem(23.2);
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.42;
-    letter-spacing: sizem(0.96);
+    line-height: 1.43;
+    letter-spacing: sizem(1.39);
     text-align: center;
-    color: #008796;
+    color: #302d2c;
     white-space: nowrap;
+
+    span {
+      font-size: sizem(30);
+    }
   }
 
   .subtitle {
-    @include img_c_m(360, 148);
-    font-size: sizem(21);
+    @include img_c_m(262, 171);
+    font-size: sizem(17.7);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: sizem(1.06);
+    text-align: center;
+    color: #009fb1;
+    white-space: nowrap;
   }
 
-  .btn {
-    @include div_l_m(266, 98, 25, 55);
-    background: linear-gradient(to right, #008796 5px, transparent 5px) 0 0,
-      linear-gradient(to right, #008796 5px, transparent 5px) 0 100%,
-      linear-gradient(to left, #008796 5px, transparent 5px) 100% 0,
-      linear-gradient(to left, #008796 5px, transparent 5px) 100% 100%,
-      linear-gradient(to bottom, #008796 5px, transparent 5px) 0 0,
-      linear-gradient(to bottom, #008796 5px, transparent 5px) 100% 0,
-      linear-gradient(to top, #008796 5px, transparent 5px) 0 100%,
-      linear-gradient(to top, #008796 5px, transparent 5px) 100% 100%;
+  .hr {
+    @include img_c_m(32, 141);
+    height: auto;
+    border-bottom: solid sizem(3) #009fb1;
+  }
 
-    background-repeat: no-repeat;
-    background-size: sizem(14) sizem(21);
+  .desc {
+    @include img_l_m(317, 218, 31);
+    font-size: sizem(14);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: sizem(0.86);
+    text-align: left;
+    color: #302d2c;
+  }
+
+  .content {
+    @include img_l_m(101 * 3 + 12, 246, 30);
+  }
+
+  .content-block {
+    width: sizem(101);
+    height: sizem(119);
+    border-radius: sizem(10);
+    background-color: #d1d2d3;
+    padding: 20px;
+  }
+
+  .mrt_icon {
+    width: sizem(57);
+  }
+
+  .tra_icon {
+    width: sizem(57);
+  }
+
+  .block-title {
+    font-size: sizem(16.1);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: sizem(0.32);
+    text-align: center;
+    color: #009fb1;
+    white-space: nowrap;
+  }
+
+  .block-desc {
+    font-size: sizem(11.1);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.53;
+    letter-spacing: sizem(0.66);
+    text-align: center;
+    color: #009fb1;
+    white-space: normal;
   }
 
   /* Swipe */
   .swipe {
-    width: sizem(249);
-    height: sizem(174);
+    width: sizem(375);
+    height: sizem(243);
     min-height: auto;
-    top: sizem(232);
-    left: sizem(66);
+    top: auto;
+    bottom: 0;
+    left: sizem(0);
     object-fit: cover;
   }
 

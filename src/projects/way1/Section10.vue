@@ -1,8 +1,12 @@
 <template>
-  <div class="section8">
+  <div class="section10">
     <img src="./s10/10_house.png" :alt="`${info.caseName}_house`" class="house">
-    <div class="big-title">
+    <div class="hr" v-if="isMobile"></div>
+    <div class="big-title" v-if="isPC">
       嚴選頂規建材 滿足你講究的品味
+    </div>
+    <div class="big-title" v-if="isMobile">
+      嚴選頂規建材<br />滿足你講究的品味
     </div>
     <div class="content">
       <div class="title">
@@ -57,7 +61,7 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section8 {
+.section10 {
   width: 100vw;
   height: size(1236);
   max-height: size(1236);
@@ -122,10 +126,6 @@
   }
 }
 
-// .hr {
-//   @include img_l_pc(46, 466, 390);
-//   border-bottom: solid size(4) #009fb1;
-// }
 .desc {
   font-size: size(25.4);
   font-weight: normal;
@@ -341,52 +341,73 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section8 {
+  .section10 {
     min-height: auto;
     max-height: initial;
-    height: sizem(438);
+    height: sizem(1025 + 104);
   }
 
-  .title {
-    @include img_c_m(206, 40);
-    font-size: sizem(25);
-    font-weight: 900;
+  .house {
+    @include img_c_m(274, 664);
+    top: auto;
+    bottom: 0;
+  }
+
+  .big-title {
+    @include img_c_m(196, 82);
+    font-size: sizem(23.2);
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.42;
-    letter-spacing: sizem(0.96);
+    line-height: 1.43;
+    letter-spacing: sizem(1.39);
     text-align: center;
-    color: #008796;
+    color: #302d2c;
     white-space: nowrap;
   }
 
-  .subtitle {
-    @include img_c_m(360, 148);
-    font-size: sizem(21);
+  .hr {
+    @include img_c_m(32, 56);
+    border-bottom: solid sizem(3) #009fb1;
   }
 
-  .btn {
-    @include div_l_m(266, 98, 25, 55);
-    background: linear-gradient(to right, #008796 5px, transparent 5px) 0 0,
-      linear-gradient(to right, #008796 5px, transparent 5px) 0 100%,
-      linear-gradient(to left, #008796 5px, transparent 5px) 100% 0,
-      linear-gradient(to left, #008796 5px, transparent 5px) 100% 100%,
-      linear-gradient(to bottom, #008796 5px, transparent 5px) 0 0,
-      linear-gradient(to bottom, #008796 5px, transparent 5px) 100% 0,
-      linear-gradient(to top, #008796 5px, transparent 5px) 0 100%,
-      linear-gradient(to top, #008796 5px, transparent 5px) 100% 100%;
+  .content {
+    @include img_l_m(314, 456, 27);
+  }
 
-    background-repeat: no-repeat;
-    background-size: sizem(14) sizem(21);
+  .title {
+    font-size: sizem(17.7);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: sizem(1.06);
+    text-align: left;
+    color: #009fb1;
+    margin: sizem(15) 0 sizem(5);
+    span {
+      font-size: sizem(49);
+    }
+  }
+
+  .desc {
+    font-size: sizem(14.3);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.61;
+    letter-spacing: sizem(0.29);
+    text-align: left;
+    color: #302d2c;
   }
 
   /* Swipe */
   .swipe {
-    width: sizem(249);
-    height: sizem(174);
+    width: sizem(375);
+    height: sizem(265);
     min-height: auto;
-    top: sizem(232);
-    left: sizem(66);
+    top: sizem(169);
+    left: sizem(0);
     object-fit: cover;
   }
 

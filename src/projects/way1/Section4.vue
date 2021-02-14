@@ -20,8 +20,9 @@
         </div>
       </div>
     </div>
-    <div class="content-block flex-c wrap">
+    <div class="content-block flex-c wrap" v-if="isPC">
     </div>
+    <img src="./m/04/04_font_box_m.png" alt="" class="content-block" v-if="isMobile">
     <div class="block-hr"></div>
     <div class="block-title">
       卡位鳳鳴站前第一排<br />搶佔軌道增值第一站
@@ -323,7 +324,7 @@
   z-index: 3;
   left: 0;
   bottom: size(-60);
-  
+
   .prev-btn,
   .next-btn {
     width: size(50);
@@ -360,49 +361,116 @@
   .section4 {
     min-height: auto;
     max-height: initial;
-    height: sizem(438);
+    height: sizem(243 + 441);
+  }
+
+  .grass {
+    display: none;
+    // @include img_l_pc(838, 886, 439);
+
+    // animation: grass 2s 0s ease-in-out alternate-reverse infinite;
+  }
+
+  @keyframes grass {
+    to {
+      transform: skew(5deg);
+    }
+  }
+
+  .label {
+    @include img_l_m(131, 14, 30);
+    font-size: sizem(17.8);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: sizem(1.07);
+    text-align: left;
+    color: #5f5e5e;
+    white-space: nowrap;
+    span {
+      font-weight: normal;
+    }
   }
 
   .title {
-    @include img_c_m(206, 40);
-    font-size: sizem(25);
-    font-weight: 900;
+    @include img_l_m(283, 37, 30);
+    font-size: sizem(27.7);
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.42;
-    letter-spacing: sizem(0.96);
-    text-align: center;
-    color: #008796;
+    line-height: 2;
+    letter-spacing: sizem(-1.94);
+    text-align: left;
+    color: #302d2c;
+    white-space: nowrap;
+  }
+  .subtitle {
+    @include img_l_m(177, 120, 27);
+    font-size: sizem(33.7);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: sizem(2.02);
+    text-align: left;
+    color: #302d2c;
     white-space: nowrap;
   }
 
-  .subtitle {
-    @include img_c_m(360, 148);
-    font-size: sizem(21);
+  .hr {
+    @include img_l_m(40, 100, 33);
+    border-bottom: solid sizem(5) #009fb1;
   }
 
-  .btn {
-    @include div_l_m(266, 98, 25, 55);
-    background: linear-gradient(to right, #008796 5px, transparent 5px) 0 0,
-      linear-gradient(to right, #008796 5px, transparent 5px) 0 100%,
-      linear-gradient(to left, #008796 5px, transparent 5px) 100% 0,
-      linear-gradient(to left, #008796 5px, transparent 5px) 100% 100%,
-      linear-gradient(to bottom, #008796 5px, transparent 5px) 0 0,
-      linear-gradient(to bottom, #008796 5px, transparent 5px) 100% 0,
-      linear-gradient(to top, #008796 5px, transparent 5px) 0 100%,
-      linear-gradient(to top, #008796 5px, transparent 5px) 100% 100%;
+  .content-block {
+    // display: none;
+    @include img_l_m(605, 68, 0);
+    left: sizem(-115);
+    height: auto;
+    // border: 5px solid #000;
+    background-image: none;
+    // background-size: cover;
+  }
 
-    background-repeat: no-repeat;
-    background-size: sizem(14) sizem(21);
+  .block-hr {
+    @include img_r_m(37.5, 256, 268);
+    border-bottom: solid sizem(3) #009fb1;
+  }
+
+  .block-title {
+    @include img_r_m(168, 273, 140);
+    font-size: sizem(17.7);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: sizem(1.06);
+    text-align: center;
+    color: #009fb1;
+    white-space: nowrap;
+  }
+
+  .block-desc {
+    @include img_r_m(269, 348, 41);
+    font-size: sizem(14.3);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: sizem(0.86);
+    text-align: left;
+    color: #2f2c2c;
   }
 
   /* Swipe */
   .swipe {
-    width: sizem(249);
-    height: sizem(174);
+    width: sizem(375);
+    height: sizem(243);
     min-height: auto;
-    top: sizem(232);
-    left: sizem(66);
+    top: auto;
+    bottom: 0;
+    left: sizem(0);
     object-fit: cover;
   }
 

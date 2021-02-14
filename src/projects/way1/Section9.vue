@@ -2,7 +2,8 @@
   <div class="section9">
     <h1 class="label"><span>品味</span>精質內涵</h1>
     <h1 class="title">Taste Of Building Materials</h1>
-    <h1 class="subtitle">為你營造家的幸福滋味</h1>
+    <h1 class="subtitle" v-if="isPC">為你營造家的幸福滋味</h1>
+    <h1 class="subtitle" v-if="isMobile">為你營造<br />家的幸福滋味</h1>
     <div class="hr"></div>
     <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -12,10 +13,10 @@
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
-        <div class="swipe-btns absolute flex-ac">
+        <div :class="`swipe-btns absolute flex-ac ${isMobile ? 'flex-jb' : ''}`">
           <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
           <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-          <div class="order-index">{{slideIndex + 1}}/{{slideList.length}}</div>
+          <div class="order-index" v-if="isPC">{{slideIndex + 1}}/{{slideList.length}}</div>
         </div>
       </div>
     </div>
@@ -360,49 +361,95 @@
   .section9 {
     min-height: auto;
     max-height: initial;
-    height: sizem(438);
+    height: sizem(455 + 270);
+  }
+
+  .label {
+    @include img_l_m(131, 80, 30);
+    font-size: sizem(17.8);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: sizem(1.07);
+    text-align: left;
+    color: #5f5e5e;
+    white-space: nowrap;
+    span {
+      font-weight: normal;
+    }
   }
 
   .title {
-    @include img_c_m(206, 40);
-    font-size: sizem(25);
-    font-weight: 900;
+    @include img_l_m(283, 103, 30);
+    font-size: sizem(27.7);
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.42;
-    letter-spacing: sizem(0.96);
-    text-align: center;
-    color: #008796;
+    line-height: 2;
+    letter-spacing: sizem(-1.94);
+    text-align: left;
+    color: #302d2c;
+    white-space: nowrap;
+  }
+  .subtitle {
+    @include img_l_m(177, 212, 27);
+    font-size: sizem(33.7);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: sizem(2.02);
+    text-align: left;
+    color: #302d2c;
     white-space: nowrap;
   }
 
-  .subtitle {
-    @include img_c_m(360, 148);
-    font-size: sizem(21);
+  .hr {
+    @include img_l_m(40, 172, 33);
+    border-bottom: solid sizem(5) #009fb1;
   }
 
-  .btn {
-    @include div_l_m(266, 98, 25, 55);
-    background: linear-gradient(to right, #008796 5px, transparent 5px) 0 0,
-      linear-gradient(to right, #008796 5px, transparent 5px) 0 100%,
-      linear-gradient(to left, #008796 5px, transparent 5px) 100% 0,
-      linear-gradient(to left, #008796 5px, transparent 5px) 100% 100%,
-      linear-gradient(to bottom, #008796 5px, transparent 5px) 0 0,
-      linear-gradient(to bottom, #008796 5px, transparent 5px) 100% 0,
-      linear-gradient(to top, #008796 5px, transparent 5px) 0 100%,
-      linear-gradient(to top, #008796 5px, transparent 5px) 100% 100%;
+  .content-block {
+    display: none;
+  }
 
-    background-repeat: no-repeat;
-    background-size: sizem(14) sizem(21);
+  .block-hr {
+    display: none;
+  }
+
+  .block-title {
+    @include img_l_m(225, 324, 29);
+    font-size: sizem(17.7);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: sizem(2.13);
+    text-align: left;
+    color: #009fb1;
+    white-space: nowrap;
+  }
+
+  .block-desc {
+    @include img_l_m(314, 388, 29);
+    font-size: sizem(14.3);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.61;
+    letter-spacing: sizem(0.57);
+    text-align: left;
+    color: #302d2c;
   }
 
   /* Swipe */
   .swipe {
-    width: sizem(249);
-    height: sizem(174);
+    width: sizem(375);
+    height: sizem(270);
     min-height: auto;
-    top: sizem(232);
-    left: sizem(66);
+    top: sizem(455);
+    left: sizem(0);
     object-fit: cover;
   }
 
@@ -543,7 +590,9 @@
 
     .prev-btn,
     .next-btn {
-      width: sizem(15);
+      width: sizem(30);
+      background-color: #fff;
+      border-radius: 999px;
       cursor: pointer;
     }
   }

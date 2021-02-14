@@ -2,9 +2,11 @@
   <div class="section2">
     <h1 class="label"><span>城味</span>預見鳳鳴</h1>
     <h1 class="title">Taste Of City Feng Ming</h1>
-    <h1 class="subtitle">城市大進化 鳳鳴新未來</h1>
+    <h1 class="subtitle" v-if="isPC">城市大進化 鳳鳴新未來</h1>
+    <h1 class="subtitle" v-if="isMobile">城市大進化<br />鳳鳴新未來</h1>
     <div class="hr"></div>
-    <img src="./s2/02_bg.jpg" :alt="`${info.caseName}_img`" class="img">
+    <img src="./s2/02_bg.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isPC">
+    <img src="./m/02/02_bg_m.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isMobile">
     <div class="text-content">
       <div class="text-title flex-ac flex-jb">
         <div>INDUSTRY</div>
@@ -168,62 +170,97 @@
   .section2 {
     min-height: auto;
     max-height: initial;
-    height: sizem(892);
+    height: sizem(360 + 236);
+  }
+
+  .label {
+    @include img_l_m(131, 14, 30);
+    font-size: sizem(17.8);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: sizem(1.07);
+    text-align: left;
+    color: #5f5e5e;
+    white-space: nowrap;
+    span {
+      font-weight: normal;
+    }
   }
 
   .title {
-    @include img_c_m(224, 40);
-    font-size: sizem(24);
-    font-weight: 900;
+    @include img_l_m(283, 37, 30);
+    font-size: sizem(27.7);
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.42;
-    letter-spacing: sizem(0.96);
-    text-align: center;
-    color: #444444;
+    line-height: 2;
+    letter-spacing: sizem(-1.94);
+    text-align: left;
+    color: #302d2c;
     white-space: nowrap;
   }
-
   .subtitle {
-    @include img_c_m(318, 156);
-    font-size: sizem(15);
+    @include img_l_m(177, 120, 27);
+    font-size: sizem(33.7);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.73;
-    letter-spacing: normal;
-    text-align: center;
-    color: #444444;
+    line-height: 1.38;
+    letter-spacing: sizem(2.02);
+    text-align: left;
+    color: #302d2c;
     white-space: nowrap;
   }
 
-  .btn {
-    @include div_l_m(266, 98, 25, 55);
-    background: linear-gradient(to right, #3e3a39 5px, transparent 5px) 0 0,
-      linear-gradient(to right, #3e3a39 5px, transparent 5px) 0 100%,
-      linear-gradient(to left, #3e3a39 5px, transparent 5px) 100% 0,
-      linear-gradient(to left, #3e3a39 5px, transparent 5px) 100% 100%,
-      linear-gradient(to bottom, #3e3a39 5px, transparent 5px) 0 0,
-      linear-gradient(to bottom, #3e3a39 5px, transparent 5px) 100% 0,
-      linear-gradient(to top, #3e3a39 5px, transparent 5px) 0 100%,
-      linear-gradient(to top, #3e3a39 5px, transparent 5px) 100% 100%;
-
-    background-repeat: no-repeat;
-    background-size: sizem(14) sizem(21);
+  .hr {
+    @include img_l_m(40, 100, 33);
+    border-bottom: solid sizem(5) #009fb1;
   }
 
-  .img-list {
-    position: relative;
-    width: sizem(342);
-    margin: 0 auto;
-    top: sizem(187);
+  .img {
+    @include img_l_m(375, 236, 0);
+    height: sizem(360);
+    object-fit: cover;
+    // top: auto;
+    bottom: auto;
+  }
 
-    img {
-      width: 100%;
-      // height: sizem(230);
-      object-fit: cover;
-      margin-bottom: sizem(4);
+  .text-content {
+    @include img_c_m(375 - 88, 294);
+  }
+
+  .text-title {
+    > div {
+      width: sizem(92);
     }
+
+    font-size: sizem(19.5);
+    font-weight: 100;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.29;
+    letter-spacing: sizem(0.59);
+    text-align: center;
+    color: #ffffff;
+    white-space: nowrap;
+  }
+
+  .text-subtitle {
+    > div {
+      width: sizem(92);
+    }
+    margin-bottom: sizem(13);
+    font-size: sizem(15.3);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.37;
+    letter-spacing: sizem(0.92);
+    text-align: center;
+    color: #ffffff;
+    white-space: nowrap;
   }
 }
 </style>

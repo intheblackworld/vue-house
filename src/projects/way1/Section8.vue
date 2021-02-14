@@ -1,15 +1,18 @@
 <template>
   <div class="section8">
     <img src="./s8/08_green_style.png" :alt="`${info.caseName}_grass`" class="grass">
-    <div class="title">
+    <div class="title" v-if="isPC">
       <span>15</span>項全齡聚樂部<br />
       讓生活更有味
+    </div>
+    <div class="title" v-if="isMobile">
+      15項全齡聚樂部 讓生活更有味
     </div>
     <div class="hr"></div>
     <div class="desc">
       ［立瑾Way］規劃豐富多彩的VIP休閒設施交誼、休憩、氧身、娛樂，親子共享、好友齊聚，讓居住成為一種生活品味回家就是度假的開始。
     </div>
-    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isPC">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -19,6 +22,36 @@
         </transition-group>
         <div class="swipe-btns absolute flex-ac flex-jr">
           <div class="order-index">{{slideIndex + 1}}/{{slideList.length}}</div>
+          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+        </div>
+      </div>
+    </div>
+    <div class="swipe swipe1 absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList.slice(0, 4)" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" alt="">
+            <div class="slide-name absolute" v-html="slide.name"></div>
+          </div>
+        </transition-group>
+        <div class="swipe-btns absolute flex-ac flex-jb">
+          <!-- <div class="order-index">{{slideIndex + 1}}/{{slideList.length}}</div> -->
+          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+        </div>
+      </div>
+    </div>
+    <div class="swipe swipe2 absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList.slice(4, 8)" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" alt="">
+            <div class="slide-name absolute" v-html="slide.name"></div>
+          </div>
+        </transition-group>
+        <div class="swipe-btns absolute flex-ac flex-jb">
+          <!-- <div class="order-index">{{slideIndex + 1}}/{{slideList.length}}</div> -->
           <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
           <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
         </div>
@@ -307,49 +340,64 @@
   .section8 {
     min-height: auto;
     max-height: initial;
-    height: sizem(438);
+    height: sizem(253 + 245 + 245);
+  }
+
+  .grass {
+    display: none;
   }
 
   .title {
-    @include img_c_m(206, 40);
-    font-size: sizem(25);
-    font-weight: 900;
+    @include img_c_m(252, 109 + 245);
+    font-size: sizem(17.7);
+    font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.42;
-    letter-spacing: sizem(0.96);
+    line-height: 1.5;
+    letter-spacing: sizem(1.06);
     text-align: center;
-    color: #008796;
+    color: #009fb1;
     white-space: nowrap;
+    span {
+      font-size: size(17.7);
+    }
   }
 
-  .subtitle {
-    @include img_c_m(360, 148);
-    font-size: sizem(21);
+  .hr {
+    @include img_c_m(46, 245 + 18);
+    width: 1px;
+    height: sizem(75);
+    border-left: solid size(4) #009fb1;
   }
-
-  .btn {
-    @include div_l_m(266, 98, 25, 55);
-    background: linear-gradient(to right, #008796 5px, transparent 5px) 0 0,
-      linear-gradient(to right, #008796 5px, transparent 5px) 0 100%,
-      linear-gradient(to left, #008796 5px, transparent 5px) 100% 0,
-      linear-gradient(to left, #008796 5px, transparent 5px) 100% 100%,
-      linear-gradient(to bottom, #008796 5px, transparent 5px) 0 0,
-      linear-gradient(to bottom, #008796 5px, transparent 5px) 100% 0,
-      linear-gradient(to top, #008796 5px, transparent 5px) 0 100%,
-      linear-gradient(to top, #008796 5px, transparent 5px) 100% 100%;
-
-    background-repeat: no-repeat;
-    background-size: sizem(14) sizem(21);
+  .desc {
+    @include img_c_m(322, 148 + 245);
+    font-size: sizem(14.3);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.61;
+    letter-spacing: sizem(0.86);
+    text-align: left;
+    color: #2f2c2c;
   }
 
   /* Swipe */
   .swipe {
-    width: sizem(249);
-    height: sizem(174);
+    width: sizem(375);
+    height: sizem(245);
     min-height: auto;
-    top: sizem(232);
-    left: sizem(66);
+    top: sizem(0);
+    left: sizem(0);
+    object-fit: cover;
+  }
+
+  .swipe2 {
+    width: sizem(375);
+    height: sizem(245);
+    min-height: auto;
+    top: auto;
+    bottom: sizem(0);
+    left: sizem(0);
     object-fit: cover;
   }
 
@@ -490,7 +538,9 @@
 
     .prev-btn,
     .next-btn {
-      width: sizem(15);
+      width: sizem(30);
+      background-color: #fff;
+      border-radius: 999px;
       cursor: pointer;
     }
   }

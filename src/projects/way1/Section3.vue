@@ -2,12 +2,19 @@
   <div class="section3">
     <img src="./s3/03_green_style.png" :alt="`${info.caseName}_grass`" class="grass">
     <img src="./s3/03_img.jpg" :alt="`${info.caseName}_img`" class="img">
-    <h1 class="big-title">
+    <h1 class="big-title" v-if="isPC">
       <span>6</span>大城市規劃 擘畫國際宜居之城
     </h1>
-    <div class="title">
+    <h1 class="big-title" v-if="isMobile">
+      <span>6</span>大城市規劃<br />擘畫國際宜居之城
+    </h1>
+    <div class="title" v-if="isPC">
       超前部署<br />
       建設願景<br />
+      鳳鳴站啟動，交通好Way
+    </div>
+    <div class="title" v-if="isMobile">
+      超前部署 建設願景<br />
       鳳鳴站啟動，交通好Way
     </div>
     <div class="hr"></div>
@@ -189,192 +196,116 @@
   .section3 {
     min-height: auto;
     max-height: initial;
-    height: sizem(438);
+    height: sizem(245 + 576);
+  }
+
+  .grass {
+    display: none;
+    // @include img_r_pc(497, 311, 117);
+
+    // animation: grass 2s 0s ease-in-out alternate-reverse infinite;
+  }
+
+  @keyframes grass {
+    to {
+      transform: skew(5deg);
+    }
+  }
+  .img {
+    @include img_r_m(375, 266, 0);
+    top: auto;
+    bottom: 0;
+  }
+
+  .big-title {
+    @include img_r_m(196, 19, 90);
+    font-size: sizem(23.2);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: sizem(1.39);
+    text-align: center;
+    color: #302d2c;
+    white-space: nowrap;
+
+    span {
+      font-size: sizem(30);
+    }
   }
 
   .title {
-    @include img_c_m(206, 40);
-    font-size: sizem(25);
-    font-weight: 900;
+    @include img_l_m(214, 154, 80);
+    font-size: sizem(17.7);
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.42;
-    letter-spacing: sizem(0.96);
+    line-height: 1.5;
+    letter-spacing: sizem(1.06);
     text-align: center;
-    color: #008796;
+    color: #009fb1;
     white-space: nowrap;
   }
 
-  .subtitle {
-    @include img_c_m(360, 148);
-    font-size: sizem(21);
+  .hr {
+    @include img_l_m(32, 115, 174);
+    border-bottom: solid sizem(3) #009fb1;
   }
 
-  .btn {
-    @include div_l_m(266, 98, 25, 55);
-    background: linear-gradient(to right, #008796 5px, transparent 5px) 0 0,
-      linear-gradient(to right, #008796 5px, transparent 5px) 0 100%,
-      linear-gradient(to left, #008796 5px, transparent 5px) 100% 0,
-      linear-gradient(to left, #008796 5px, transparent 5px) 100% 100%,
-      linear-gradient(to bottom, #008796 5px, transparent 5px) 0 0,
-      linear-gradient(to bottom, #008796 5px, transparent 5px) 100% 0,
-      linear-gradient(to top, #008796 5px, transparent 5px) 0 100%,
-      linear-gradient(to top, #008796 5px, transparent 5px) 100% 100%;
-
-    background-repeat: no-repeat;
-    background-size: sizem(14) sizem(21);
+  .desc {
+    @include img_l_m(317, 218, 31);
+    font-size: sizem(14);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: sizem(0.86);
+    text-align: left;
+    color: #302d2c;
   }
 
-  /* Swipe */
-  .swipe {
-    width: sizem(249);
-    height: sizem(174);
-    min-height: auto;
-    top: sizem(232);
-    left: sizem(66);
-    object-fit: cover;
+  .content {
+    @include img_l_m(160 + 155, 352, 30);
   }
 
-  // begin
-  .swipe-fade-leave-to {
-    opacity: 0;
-    z-index: 0;
-  }
-  // end
-  .swipe-fade-enter {
-    opacity: 0;
-    z-index: 1;
+  .content-block {
+    width: sizem(154);
+    height: sizem(176);
+    border-radius: sizem(10);
+    background-color: #d1d2d3;
+    padding: 20px;
   }
 
-  .swipe-fade-enter-active {
-    transition: all 0.5s ease;
+  .mrt_icon {
+    width: sizem(57);
   }
 
-  .swipe-fade-leave-active {
-    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  .tra_icon {
+    width: sizem(57);
   }
 
-  // begin
-  // .swipe-left-leave-to {
-  //   margin-left: -100vw;
-  //   z-index: 0;
-  // }
-  // // end
-  // .swipe-left-enter {
-  //   opacity: 0.5;
-  //   margin-left: 0;
-  //   z-index: 1;
-  // }
-
-  // .swipe-left-enter-active {
-  //   transition: all 0.5s ease;
-  // }
-
-  // .swipe-left-leave-active {
-  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  // }
-
-  .swipe-wrap {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+  .block-title {
+    font-size: sizem(16.1);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: sizem(0.32);
+    text-align: center;
+    color: #009fb1;
+    white-space: nowrap;
   }
 
-  .swipe-item {
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    .slide-name {
-      right: 1em;
-      font-size: sizem(13);
-    }
-
-    // &:nth-child(1) {
-    //   z-index: 1;
-    //   // opacity: 1;
-    // }
-
-    // &.base {
-    //   z-index: 1;
-    //   opacity: 1;
-    // }
-    // &.active {
-    //   z-index: 2;
-    //   // opacity: 1;
-    // }
-  }
-
-  .pagination {
-    width: auto;
-    bottom: size(91);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    justify-content: center;
-  }
-
-  .pagination-dot {
-    padding: 5px;
-    margin: 0 10px;
-    cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
-      box-shadow: 0 0 0 1px #fff;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
-      transition: all 0.5s;
-
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #004ea2;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transition: all 0.3s;
-        transform-origin: center;
-        transform: scale(0);
-      }
-      &.active {
-        &::before {
-          content: '';
-          width: 100%;
-          height: 100%;
-          display: block;
-          background: #004ea2;
-          border-radius: 20px;
-          opacity: 1;
-          position: absolute;
-          top: 0%;
-          // transform: translateY(-50%);
-          left: 0%;
-          transform: scale(1);
-        }
-      }
-    }
-  }
-
-  .swipe-btns {
-    width: 100%;
-    height: 100%;
-    padding: 0 15px;
-    z-index: 3;
-
-    .prev-btn,
-    .next-btn {
-      width: sizem(15);
-      cursor: pointer;
-    }
+  .block-desc {
+    font-size: sizem(11.1);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.53;
+    letter-spacing: sizem(0.66);
+    text-align: center;
+    color: #009fb1;
+    white-space: normal;
   }
 }
 </style>
