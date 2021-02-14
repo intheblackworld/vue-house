@@ -2,13 +2,13 @@
   <div class="section3">
     <img src="./s3/03_green_style.png" :alt="`${info.caseName}_grass`" class="grass">
     <img src="./s3/03_img.jpg" :alt="`${info.caseName}_img`" class="img">
-    <h1 class="big-title" v-if="isPC">
+    <h1 class="big-title" v-if="isPC" data-aos="fade-up" data-aos-delay="200">
       <span>6</span>大城市規劃 擘畫國際宜居之城
     </h1>
-    <h1 class="big-title" v-if="isMobile">
+    <h1 class="big-title" v-if="isMobile" data-aos="fade-up" data-aos-delay="200">
       <span>6</span>大城市規劃<br />擘畫國際宜居之城
     </h1>
-    <div class="title" v-if="isPC">
+    <div class="title" v-if="isPC"  data-aos="fade-up" data-aos-delay="400">
       超前部署<br />
       建設願景<br />
       鳳鳴站啟動，交通好Way
@@ -17,8 +17,8 @@
       超前部署 建設願景<br />
       鳳鳴站啟動，交通好Way
     </div>
-    <div class="hr"></div>
-    <div class="desc">
+    <div class="hr"  data-aos="fade-right" data-aos-delay="400"></div>
+    <div class="desc"  data-aos="fade-up" data-aos-delay="600">
       台鐵＋捷運雙鐵交匯，軌道軸線引領向前，台鐵鳳鳴站＋捷運三鶯線，軌道路網雙線加持，台鐵鳳鳴臨時站啟動，即將改寫城市移動新模式。
     </div>
     <div class="content flex-ac flex-jb">

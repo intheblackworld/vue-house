@@ -3,17 +3,17 @@
     <!-- <img src="./s1/bg.jpg" alt="" class="bg-img"> -->
     <img src="./s1/01_bg.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isPC">
     <img src="./m/01/01_bg_m.png" :alt="`${info.caseName}_img`" class="img" v-if="isMobile">
-    <img src="./s1/01_arrow.png" :alt="`${info.caseName}_arrow`" class="arrow">
-    <img src="./s1/01_btn.png" :alt="`${info.caseName}_btn`" class="btn">
+    <img src="./s1/01_arrow.png" :alt="`${info.caseName}_arrow`" class="arrow"  data-aos="fade-up" data-aos-delay="800" v-scroll-to="{ element: `#section2` }">
+    <img src="./s1/01_btn.png" :alt="`${info.caseName}_btn`" class="btn" v-scroll-to="{ element: `#contact` }">
     <img src="./s1/01_logo_box.png" :alt="`${info.caseName}_logo-box`" class="logo-box">
     <img src="./s1/01_logo.png" :alt="`${info.caseName}_logo`" class="logo">
     <img src="./s1/boutique_logo.png" :alt="`${info.caseName}_b-logo`" class="b-logo">
-    <h1 class="title" v-if="isPC">建築對味 幸福到位</h1>
-    <h1 class="title" v-if="isMobile">建築對味<br />幸福到位</h1>
-    <h3 class="subtitle1 flex-ac" v-if="isPC">遇見鳳鳴特區<span class="flex-ac">Destiny That Brought You To Me</span></h3>
-    <h3 class="subtitle2 flex-ac" v-if="isPC">北歐幸福生活<span class="flex-ac">Is Living A Happy Life</span></h3>
-    <h3 class="subtitle1 flex-ac wrap" v-if="isMobile">遇見鳳鳴特區<br /><span class="flex-ac">Destiny That Brought You To Me</span></h3>
-    <h3 class="subtitle2 flex-ac wrap" v-if="isMobile">北歐幸福生活<br /><span class="flex-ac">Is Living A Happy Life</span></h3>
+    <h1 class="title" v-if="isPC" data-aos="fade-up" data-aos-delay="200">建築對味 幸福到位</h1>
+    <h1 class="title" v-if="isMobile" data-aos="fade-up" data-aos-delay="200">建築對味<br />幸福到位</h1>
+    <h3 class="subtitle1 flex-ac" v-if="isPC"  data-aos="fade-up" data-aos-delay="400">遇見鳳鳴特區<span class="flex-ac">Destiny That Brought You To Me</span></h3>
+    <h3 class="subtitle2 flex-ac" v-if="isPC"  data-aos="fade-up" data-aos-delay="600">北歐幸福生活<span class="flex-ac">Is Living A Happy Life</span></h3>
+    <h3 class="subtitle1 flex-ac wrap" v-if="isMobile"  data-aos="fade-up" data-aos-delay="400">遇見鳳鳴特區<br /><span class="flex-ac">Destiny That Brought You To Me</span></h3>
+    <h3 class="subtitle2 flex-ac wrap" v-if="isMobile"  data-aos="fade-up" data-aos-delay="600">北歐幸福生活<br /><span class="flex-ac">Is Living A Happy Life</span></h3>
   </div>
 </template>
 
@@ -51,10 +51,19 @@
 
 .arrow {
   @include img_l_pc(107, 556, 336);
+  animation: arrow 1s 0s ease-in-out alternate-reverse infinite;
+  cursor: pointer;
+}
+
+@keyframes arrow {
+  to {
+    margin-top: 25px;
+  }
 }
 
 .btn {
   @include img_l_pc(438, 712, 475);
+  cursor: pointer;
 }
 
 .logo-box {

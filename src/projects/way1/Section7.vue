@@ -1,19 +1,19 @@
 <template>
   <div class="section7">
     <img src="./s7/07_img.jpg" :alt="`${info.caseName}_img`" class="img">
-    <div class="title" v-if="isPC">
+    <div class="title" v-if="isPC"  data-aos="fade-up" data-aos-delay="200">
       空間很有味<br />
       好宅一次到位
     </div>
-    <div class="title" v-if="isMobile">
+    <div class="title" v-if="isMobile"  data-aos="fade-up" data-aos-delay="200">
       空間很有味 好宅一次到位
     </div>
-    <div class="hr"></div>
-    <div class="subtitle">
+    <div class="hr"  data-aos="fade-right" data-aos-delay="200"></div>
+    <div class="subtitle"  data-aos="fade-up" data-aos-delay="400">
       北歐風格美學<br />
       簡潔框景建築
     </div>
-    <div class="desc">
+    <div class="desc"  data-aos="fade-up" data-aos-delay="600">
       以北歐風格簡潔美學營造建築大器立面，水平橫幅延伸視野，流動著晨昏的光影與季節的變換大地色系交織白色框景，俐落身段雋永耐看。
     </div>
   </div>

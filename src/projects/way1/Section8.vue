@@ -1,18 +1,18 @@
 <template>
   <div class="section8">
     <img src="./s8/08_green_style.png" :alt="`${info.caseName}_grass`" class="grass">
-    <div class="title" v-if="isPC">
+    <div class="title" v-if="isPC"  data-aos="fade-up" data-aos-delay="200">
       <span>15</span>項全齡聚樂部<br />
       讓生活更有味
     </div>
-    <div class="title" v-if="isMobile">
+    <div class="title" v-if="isMobile"  data-aos="fade-up" data-aos-delay="200">
       15項全齡聚樂部 讓生活更有味
     </div>
-    <div class="hr"></div>
-    <div class="desc">
+    <div class="hr"  data-aos="fade-right" data-aos-delay="200"></div>
+    <div class="desc"  data-aos="fade-up" data-aos-delay="400">
       ［立瑾Way］規劃豐富多彩的VIP休閒設施交誼、休憩、氧身、娛樂，親子共享、好友齊聚，讓居住成為一種生活品味回家就是度假的開始。
     </div>
-    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isPC">
+    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isPC">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -20,40 +20,40 @@
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
-        <div class="swipe-btns absolute flex-ac flex-jr">
-          <div class="order-index">{{slideIndex + 1}}/{{slideList.length}}</div>
+        <div :class="`swipe-btns absolute flex-ac ${isMobile ? 'flex-jb' : ''}`">
           <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
           <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+          <div class="order-index" v-if="isPC">{{slideIndex + 1}}/{{slideList.length}}</div>
         </div>
       </div>
     </div>
-    <div class="swipe swipe1 absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile">
+    <div class="swipe swipe1 absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
-          <div v-for="(slide, i) in slideList.slice(0, 4)" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+          <div v-for="(slide, i) in slideList1" v-show="slideIndex1 === i" :key="slide.img" :class="`swipe-item absolute`">
             <img :src="slide.img" alt="">
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
         <div class="swipe-btns absolute flex-ac flex-jb">
-          <!-- <div class="order-index">{{slideIndex + 1}}/{{slideList.length}}</div> -->
-          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+          <!-- <div class="order-index">{{slideIndex1 + 1}}/{{slideList.length}}</div> -->
+          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decMultiIndex(1)">
+          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addMultiIndex(1)">
         </div>
       </div>
     </div>
-    <div class="swipe swipe2 absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile">
+    <div class="swipe swipe2 absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
-          <div v-for="(slide, i) in slideList.slice(4, 8)" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+          <div v-for="(slide, i) in slideList2" v-show="slideIndex2 === i" :key="slide.img" :class="`swipe-item absolute`">
             <img :src="slide.img" alt="">
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
         <div class="swipe-btns absolute flex-ac flex-jb">
-          <!-- <div class="order-index">{{slideIndex + 1}}/{{slideList.length}}</div> -->
-          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+          <!-- <div class="order-index">{{slideIndex2 + 1}}/{{slideList.length}}</div> -->
+          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decMultiIndex(2)">
+          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addMultiIndex(2)">
         </div>
       </div>
     </div>
@@ -301,11 +301,9 @@
   z-index: 3;
   right: 0;
   bottom: size(-60);
-  .prev-btn {
-    margin-right: 10px;
-  }
   .prev-btn,
   .next-btn {
+    margin-right: 10px;
     width: size(50);
     cursor: pointer;
   }
@@ -535,12 +533,15 @@
     height: 100%;
     padding: 0 15px;
     z-index: 3;
+    bottom: 0;
 
     .prev-btn,
     .next-btn {
       width: sizem(30);
       background-color: #fff;
       border-radius: 999px;
+      margin-right: 0;
+      
       cursor: pointer;
     }
   }
@@ -579,6 +580,38 @@ export default {
           img: require('./s8/08_slider_04.jpg'),
           name: '清寬迎賓門廳3D示意',
         },
+        {
+          img: require('./s8/08_slider_05.jpg'),
+          name: '樂活健身房3D示意',
+        },
+        {
+          img: require('./s8/08_slider_06.jpg'),
+          name: '舒韻瑜珈教室3D示意',
+        },
+        {
+          img: require('./s8/08_slider_07.jpg'),
+          name: '童趣兒童遊戲區3D示意',
+        },
+      ],
+      slideList1: [
+        {
+          img: require('./s8/08_slider_01.jpg'),
+          name: '文詠閱覽會議區3D示意',
+        },
+        {
+          img: require('./s8/08_slider_02.jpg'),
+          name: '澄品多功能資訊室3D示意',
+        },
+        {
+          img: require('./s8/08_slider_03.jpg'),
+          name: '采藝媽媽教室3D示意',
+        },
+        {
+          img: require('./s8/08_slider_04.jpg'),
+          name: '清寬迎賓門廳3D示意',
+        },
+      ],
+      slideList2: [
         {
           img: require('./s8/08_slider_05.jpg'),
           name: '樂活健身房3D示意',

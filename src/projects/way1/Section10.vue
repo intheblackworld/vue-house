@@ -2,40 +2,40 @@
   <div class="section10">
     <img src="./s10/10_house.png" :alt="`${info.caseName}_house`" class="house">
     <div class="hr" v-if="isMobile"></div>
-    <div class="big-title" v-if="isPC">
+    <div class="big-title" v-if="isPC" data-aos="fade-up" data-aos-delay="200">
       嚴選頂規建材 滿足你講究的品味
     </div>
-    <div class="big-title" v-if="isMobile">
+    <div class="big-title" v-if="isMobile" data-aos="fade-up" data-aos-delay="200">
       嚴選頂規建材<br />滿足你講究的品味
     </div>
     <div class="content">
-      <div class="title">
+      <div class="title"  data-aos="fade-up" data-aos-delay="200">
         靜音舒適工學
       </div>
-      <div class="desc">
+      <div class="desc"  data-aos="fade-up" data-aos-delay="300">
         ●台灣MUCA美木家隔音樓板<br />
         ●力霸氣密隔音窗<br />
         ●5+5mm膠合玻璃
       </div>
-      <div class="title">
+      <div class="title"  data-aos="fade-up" data-aos-delay="400">
         創新進化工學
       </div>
-      <div class="desc">
+      <div class="desc"  data-aos="fade-up" data-aos-delay="500">
         ●立瑾承諾10年防水保固＋5年建材保固<br />
         ●B1臨停車位配置電動車充電設備<br />
         ●冷熱水管皆採用明管配置、保溫披覆
       </div>
-      <div class="title">
+      <div class="title"  data-aos="fade-up" data-aos-delay="600">
         防疫健康工學
       </div>
-      <div class="desc">
+      <div class="desc"  data-aos="fade-up" data-aos-delay="700">
         ●STUDOR排水通氣防疫系統<br />
         ●三菱電梯車廂配備空氣清淨機
       </div>
-      <div class="title">
+      <div class="title"  data-aos="fade-up" data-aos-delay="800">
         嚴選頂規建材
       </div>
-      <div class="desc">
+      <div class="desc"  data-aos="fade-up" data-aos-delay="900">
         ●INAX日本質感衛浴 ●櫻花整體廚具<br />
         ●hansgrohe德國衞浴五金<br />
         ●APD指紋電子密碼鎖
@@ -49,10 +49,10 @@
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
-        <div class="swipe-btns absolute flex-ac flex-jr">
-          <div class="order-index">{{slideIndex + 1}}/{{slideList.length}}</div>
+        <div :class="`swipe-btns absolute flex-ac ${isMobile ? 'flex-jb' : ''}`">
           <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
           <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+          <div class="order-index" v-if="isPC">{{slideIndex + 1}}/{{slideList.length}}</div>
         </div>
       </div>
     </div>
@@ -311,6 +311,7 @@
   .prev-btn,
   .next-btn {
     width: size(50);
+    margin-right: 10px;
     cursor: pointer;
   }
 
@@ -545,10 +546,15 @@
     height: 100%;
     padding: 0 15px;
     z-index: 3;
+    bottom: 0;
 
     .prev-btn,
     .next-btn {
-      width: sizem(15);
+      width: sizem(30);
+      background-color: #fff;
+      border-radius: 999px;
+      margin-right: 0;
+      
       cursor: pointer;
     }
   }

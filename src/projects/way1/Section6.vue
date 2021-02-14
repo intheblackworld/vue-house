@@ -1,11 +1,11 @@
 <template>
   <div class="section6">
-    <h1 class="label"><span>對味</span>建築詠賦</h1>
-    <h1 class="title">Taste Of Building Art</h1>
-    <h1 class="subtitle">建築很有料</h1>
-    <div class="hr"></div>
-    <img src="./s6/06_img.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isPC">
-    <img src="./m/06/06_img.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isMobile">
+    <h1 class="label"  data-aos="fade-up" data-aos-delay="200"><span>對味</span>建築詠賦</h1>
+    <h1 class="title"  data-aos="fade-up" data-aos-delay="400">Taste Of Building Art</h1>
+    <h1 class="subtitle"  data-aos="fade-up" data-aos-delay="600">建築很有料</h1>
+    <div class="hr"  data-aos="fade-right" data-aos-delay="400"></div>
+    <img src="./s6/06_img.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isPC"  data-aos="fade-up" data-aos-delay="200">
+    <img src="./m/06/06_img.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isMobile"  data-aos="fade-up" data-aos-delay="200">
   </div>
 </template>
 <style lang="scss" scoped>

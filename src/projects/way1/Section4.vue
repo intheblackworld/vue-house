@@ -1,11 +1,11 @@
 <template>
   <div class="section4">
     <img src="./s4/04_green_style.png" :alt="`${info.caseName}_grass`" class="grass">
-    <h1 class="label"><span>尋味</span>宜居優境</h1>
-    <h1 class="title">Taste Of City Feng Ming</h1>
-    <h1 class="subtitle">鳳鳴站350米</h1>
-    <div class="hr"></div>
-    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+    <h1 class="label"  data-aos="fade-up" data-aos-delay="200"><span>尋味</span>宜居優境</h1>
+    <h1 class="title"  data-aos="fade-up" data-aos-delay="400">Taste Of City Feng Ming</h1>
+    <h1 class="subtitle"  data-aos="fade-up" data-aos-delay="600">鳳鳴站350米</h1>
+    <div class="hr"  data-aos="fade-right" data-aos-delay="400"></div>
+    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -13,21 +13,21 @@
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
-        <div class="swipe-btns absolute flex-ac">
+        <div :class="`swipe-btns absolute flex-ac ${isMobile ? 'flex-jb' : ''}`">
           <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
           <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-          <div class="order-index">{{slideIndex + 1}}/{{slideList.length}}</div>
+          <div class="order-index" v-if="isPC">{{slideIndex + 1}}/{{slideList.length}}</div>
         </div>
       </div>
     </div>
     <div class="content-block flex-c wrap" v-if="isPC">
     </div>
     <img src="./m/04/04_font_box_m.png" alt="" class="content-block" v-if="isMobile">
-    <div class="block-hr"></div>
-    <div class="block-title">
+    <div class="block-hr"  data-aos="fade-right" data-aos-delay="400"></div>
+    <div class="block-title"  data-aos="fade-up" data-aos-delay="600">
       卡位鳳鳴站前第一排<br />搶佔軌道增值第一站
     </div>
-    <div class="block-desc">
+    <div class="block-desc"  data-aos="fade-up" data-aos-delay="800">
       買房跟著交通建設走就對了，［立瑾Way］距鳳鳴正式站約350公尺，臨時站約650公尺，現在進駐正是時候。
     </div>
   </div>
@@ -608,10 +608,15 @@
     height: 100%;
     padding: 0 15px;
     z-index: 3;
+    bottom: 0;
 
     .prev-btn,
     .next-btn {
-      width: sizem(15);
+      width: sizem(30);
+      background-color: #fff;
+      border-radius: 999px;
+      margin-right: 0;
+      
       cursor: pointer;
     }
   }

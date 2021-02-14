@@ -1,8 +1,8 @@
 <template>
   <div class="home no-padding-top">
     <Loading :loading="load" />
-    <!-- <SideNavigation /> -->
-    <!-- <Navigation /> -->
+    <SideNavigation v-if="isMobile" />
+    <Navigation v-if="isPC" />
     <!-- <Indigator :viewIndex="viewIndex" /> -->
     <!-- <full-page
       ref="fullPage"
@@ -79,9 +79,9 @@
 <script>
 // @ is an alias to /src
 import $ from 'jquery'
-// import Navigation from '@/layouts/Navigation.vue'
-import { isMobile } from '@/utils'
-// import SideNavigation from '@/layouts/SideNavigation.vue'
+import Navigation from '@/layouts/Navigation.vue'
+import { isPC, isMobile } from '@/utils'
+import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
@@ -104,8 +104,8 @@ export default {
   components: {
     Loading,
     // Indigator,
-    // Navigation,
-    // SideNavigation,
+    Navigation,
+    SideNavigation,
     // LeafFlow,
     ContactSection,
     MobileNav,
@@ -123,6 +123,7 @@ export default {
 
   data() {
     return {
+      isPC,
       isMobile,
       isSide: false,
       load: true,

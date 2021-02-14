@@ -3,7 +3,7 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
-          <img class="logo" src="@/assets/img/nav-logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" />
+          <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" /> -->
           <div class="menu" @click="toggleSidebar" v-show="!isOpen">
             <font-awesome-icon icon="bars" />
           </div>
@@ -11,15 +11,13 @@
             
           </div> -->
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
-            <div class="close" @click="isOpen = false">
+            <!-- <div class="close" @click="isOpen = false">
               <img src="../assets/img/close.png" alt="">
-            </div>
+            </div> -->
             <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: offset }" v-for="item in list" class="flex-c" @click="toggleSidebar">
               <span class="link">
-                <span>
-                  <p :class="`title ${item.type} ${item.color}`" v-html="item.name"></p>
-                  <span class="subTitle">{{item.subTitle}}</span>
-                </span>
+                <p :class="`title flex-c ${item.type} ${item.color}`" v-html="item.name"></p>
+                <span class="subTitle">{{item.subTitle}}</span>
               </span>
             </li>
           </ul>
@@ -73,8 +71,8 @@ export default {
 .navigation {
   .title {
     font-size: size(19) !important;
-    width: size(140);
-    height: size(28);
+    // width: size(140);
+    // height: size(28);
     font-size: size(21);
     font-weight: 500;
     font-stretch: normal;
@@ -84,15 +82,18 @@ export default {
     text-align: center;
     border-bottom: solid 0px #ffffff;
     color: #000;
-    margin-top: 15px;
     white-space: nowrap;
 
-    z-index: 3;
-      transition: all 0.5s;
-    &:hover,
-    &.active {
-      border-bottom: size(3.5) solid #11a4aa;
+    span {
+      font-weight: normal;
     }
+
+    z-index: 3;
+    transition: all 0.5s;
+    // &:hover,
+    // &.active {
+    //   border-bottom: size(3.5) solid #11a4aa;
+    // }
 
     &.btn {
       font-size: size(20.9);
@@ -109,25 +110,25 @@ export default {
       background-color: #0a5b6a;
       // border:1px solid #ff99;
       border-radius: 20px / 20px;
-  
+
       transition: all 0.5s;
 
-    &.orange {
-      background-color: #ff6b00;
-    }
+      &.orange {
+        background-color: #ff6b00;
+      }
 
-    &.blue {
-      background-color: #0a5a91;
-    }
+      &.blue {
+        background-color: #0a5a91;
+      }
 
-    &.green {
-      background-color: #5dbec4;
-    }
-    &:hover,
-    &.active {
-      background-color: #eee93a;
-      color: #000000;
-    }
+      &.green {
+        background-color: #5dbec4;
+      }
+      &:hover,
+      &.active {
+        background-color: #eee93a;
+        color: #000000;
+      }
     }
   }
 }
@@ -142,7 +143,7 @@ export default {
   // background-image: $nav_bg;
   background-size: cover;
   height: $nav_pc_height;
-  z-index:4;
+  z-index: 4;
   position: fixed;
   top: 0;
   width: 100vw;
@@ -156,7 +157,8 @@ export default {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;z-index:10;
+  justify-content: space-between;
+  z-index: 10;
 }
 
 .nav {
@@ -164,7 +166,7 @@ export default {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   position: relative;
   a {
     display: block;
@@ -195,17 +197,20 @@ export default {
 .navlist {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  width: 100%;
   height: 100%;
   overflow: hidden;
-  padding-left: 30px;
+  // padding-left: 30px;
   li {
+    min-width: 240px;
     height: 100%;
   }
 
   .link {
     color: $nav_link_color;
-    height: 22px;
+    width: 100%;
+    height: 100%;
     text-align: center;
     display: block;
     cursor: pointer;
@@ -267,12 +272,20 @@ export default {
     // }
 
     .title {
-      font-size: 16px !important;
-      font-weight: bold;
+      height: 100%;
+      font-size: size(32) !important;
+      font-weight: 100;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.2;
+      letter-spacing: 2.56px;
+      text-align: left;
+      color: #5e5c5d;
       position: relative;
       z-index: 3;
       > span {
-        font-size: 24px !important;
+        font-size: size(32) !important;
+        font-weight: normal;
       }
     }
 
@@ -287,8 +300,6 @@ export default {
       margin-right: 10px;
     }
   }
-
-  
 }
 
 .menu {

@@ -1,11 +1,11 @@
 <template>
   <div class="section9">
-    <h1 class="label"><span>品味</span>精質內涵</h1>
-    <h1 class="title">Taste Of Building Materials</h1>
-    <h1 class="subtitle" v-if="isPC">為你營造家的幸福滋味</h1>
-    <h1 class="subtitle" v-if="isMobile">為你營造<br />家的幸福滋味</h1>
-    <div class="hr"></div>
-    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+    <h1 class="label"  data-aos="fade-up" data-aos-delay="200"><span>品味</span>精質內涵</h1>
+    <h1 class="title"  data-aos="fade-up" data-aos-delay="400">Taste Of Building Materials</h1>
+    <h1 class="subtitle" v-if="isPC" data-aos="fade-up" data-aos-delay="600">為你營造家的幸福滋味</h1>
+    <h1 class="subtitle" v-if="isMobile" data-aos="fade-up" data-aos-delay="600">為你營造<br />家的幸福滋味</h1>
+    <div class="hr" data-aos="fade-right" data-aos-delay="400"></div>
+    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -22,12 +22,12 @@
     </div>
     <div class="content-block flex-c wrap">
     </div>
-    <div class="block-hr"></div>
-    <div class="block-title">
+    <div class="block-hr"  data-aos="fade-right" data-aos-delay="400"></div>
+    <div class="block-title"  data-aos="fade-up" data-aos-delay="200">
       24-36坪高坪效質感生活<br />
       夠好.夠住.夠用心
     </div>
-    <div class="block-desc">
+    <div class="block-desc"  data-aos="fade-up" data-aos-delay="600">
       不用多但要好，適合的最剛好［立瑾Way］想給你的，比你想要的多更多。
     </div>
   </div>
@@ -587,12 +587,15 @@
     height: 100%;
     padding: 0 15px;
     z-index: 3;
+    bottom: 0;
 
     .prev-btn,
     .next-btn {
       width: sizem(30);
       background-color: #fff;
       border-radius: 999px;
+      margin-right: 0;
+      
       cursor: pointer;
     }
   }

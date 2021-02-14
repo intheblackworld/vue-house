@@ -19,7 +19,7 @@
           <span class="link">
             <img v-if="item.imgSrc" :src="item.imgSrc" alt />
             <span>
-              <div class="title">{{item.name}}</div>
+              <div class="title" v-html="item.name"></div>
               <span class="subTitle">{{item.subTitle}}</span>
             </span>
           </span>
@@ -97,7 +97,7 @@ export default {
   right: 30px;
   width: 40px;
   height: 40px;
-  background-color: #af1f24;
+  background-color: #008796;
   cursor: pointer;
 
   // img {
