@@ -49,7 +49,7 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-  top: size(203);
+  top:calc(50% + 100vw * (203 - 540) / 1920);
 }
 
 @media only screen and (max-width: 1440px) {

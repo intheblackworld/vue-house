@@ -159,7 +159,7 @@ export default {
   position: relative;
   z-index: 3;
   width: 1200px;
-  height: 600px;
+  height: 560px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
@@ -172,7 +172,7 @@ export default {
   width: $contact_logo_pc_width;
   height: auto;
   // height:;
-  margin: 0 auto 20px;
+  margin: 0 auto 0px;
 }
 .info {
   width: 880px;
