@@ -25,7 +25,7 @@ export default {
    
   ], */
 
-  gtmCode: [''], // 可放置多個
+  gtmCode: ['KT3B2F7'], // 可放置多個
   //得幫金鑰
   recaptcha_site_key_v2: '6LfGUjEaAAAAANYvhZQx5imGm23pRt0V-rOvkpNC',
   recaptcha_site_key: '6LfGUjEaAAAAAFR9F5m6Lg1RfS-D07l64KWmoLcK', // recaptcha v3
