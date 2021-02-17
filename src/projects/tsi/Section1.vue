@@ -11,7 +11,7 @@
 @import '@/assets/style/function.scss';
 
 .section1 {
-  width: size(1920);
+  width: 100%;
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);
@@ -45,7 +45,7 @@
 }
 .top {
   position: absolute;
-  width: size(830);
+  width: size(930);
   left: 0;
   right: 0;
   margin: 0 auto;
