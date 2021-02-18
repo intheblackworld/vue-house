@@ -126,7 +126,7 @@
 }
 .desc {
   @include img_l_pc(608, 632, 118);
-  font-size: size(26);
+  font-size: size(22);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;

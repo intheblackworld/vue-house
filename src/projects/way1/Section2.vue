@@ -1,10 +1,10 @@
 <template>
   <div class="section2">
-    <h1 class="label"  data-aos="fade-up" data-aos-delay="200"><span>城味</span>預見鳳鳴</h1>
-    <h1 class="title"  data-aos="fade-up" data-aos-delay="400">Taste Of City Feng Ming</h1>
-    <h1 class="subtitle" v-if="isPC"  data-aos="fade-up" data-aos-delay="600">城市大進化 鳳鳴新未來</h1>
-    <h1 class="subtitle" v-if="isMobile"  data-aos="fade-up" data-aos-delay="600">城市大進化<br />鳳鳴新未來</h1>
-    <div class="hr"  data-aos="fade-right" data-aos-delay="400"></div>
+    <h1 class="label" data-aos="fade-up" data-aos-delay="200"><span>城味</span>預見鳳鳴</h1>
+    <h1 class="title" data-aos="fade-up" data-aos-delay="400">Taste Of City Feng Ming</h1>
+    <h1 class="subtitle" v-if="isPC" data-aos="fade-up" data-aos-delay="600">城市大進化 鳳鳴新未來</h1>
+    <h1 class="subtitle" v-if="isMobile" data-aos="fade-up" data-aos-delay="600">城市大進化<br />鳳鳴新未來</h1>
+    <div class="hr" data-aos="fade-right" data-aos-delay="400"></div>
     <img src="./s2/02_bg.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isPC">
     <img src="./m/02/02_bg_m.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isMobile">
     <div class="text-content" data-aos="fade-up" data-aos-delay="800">
@@ -65,7 +65,7 @@
 
 .label {
   @include img_l_pc(400, 0, 104);
-  font-size: size(46);
+  font-size: size(46 - 6);
   font-weight: 300;
   font-stretch: normal;
   font-style: normal;
@@ -81,7 +81,7 @@
 
 .title {
   @include img_l_pc(731, 64, 105);
-  font-size: size(71.5);
+  font-size: size(71.5 - 10);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -93,7 +93,7 @@
 }
 .subtitle {
   @include img_l_pc(731, 68 + 127, 468);
-  font-size: size(75.2);
+  font-size: size(75.2  - 10);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -105,7 +105,7 @@
 }
 
 .hr {
-  @include img_l_pc(102, 180 + 68, 338);
+  @include img_l_pc(102, 180 + 60, 338);
   border-bottom: solid size(5) #009fb1;
 }
 

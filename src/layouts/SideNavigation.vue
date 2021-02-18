@@ -9,13 +9,7 @@
       </div>
       <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
       <ul :class="`navlist ${isOpen ? 'open': ''}`">
-        <li
-          :key="item.name"
-          v-scroll-to="{ element: `#${item.section}`, offset: isMobile ? (item.mobileOffset ? item.mobileOffset : offset) : (item.offset ? item.offset : offset) }"
-          v-for="item in list"
-          class="flex-ac"
-          @click="toggleSidebar"
-        >
+        <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: isMobile ? (item.mobileOffset ? item.mobileOffset : offset) : (item.offset ? item.offset : offset) }" v-for="item in list" class="flex-ac" @click="toggleSidebar">
           <span class="link">
             <img v-if="item.imgSrc" :src="item.imgSrc" alt />
             <span>
@@ -184,7 +178,7 @@ export default {
 
   li {
     height: 60px;
-    margin-bottom: 0;
+    margin-bottom: 15px;
     width: 100%;
   }
 
@@ -262,14 +256,20 @@ export default {
     align-content: center;
 
     .link {
+      height: 60px;
       display: flex;
       justify-content: center;
       cursor: pointer;
       span {
         white-space: nowrap;
+        height: 100%;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        border-bottom: 1px solid #ccc;
       }
 
       .title {
+        height: 100%;
         color: $nav_link_color;
       }
 
@@ -1728,7 +1728,7 @@ body {
   width: 120px;
   height: 100%;
   display: none;
-  background-image: url("~@/assets/img/contact_mb-bg.png");
+  background-image: url('~@/assets/img/contact_mb-bg.png');
 }
 @media (min-width: 992px) {
   .sidenav {

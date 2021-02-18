@@ -70,21 +70,21 @@ export default {
 @import '../assets/style/function.scss';
 .navigation {
   .title {
-    font-size: size(19) !important;
+    font-size: size(28) !important;
     // width: size(140);
     // height: size(28);
-    font-size: size(21);
+    // font-size: size(21);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.2;
     letter-spacing: size(-1.05);
     text-align: center;
-    border-bottom: solid 0px #ffffff;
+    // border-bottom: solid 0px #ffffff;
     color: #000;
     white-space: nowrap;
 
-    span {
+    .bold {
       font-weight: normal;
     }
 
@@ -139,7 +139,7 @@ export default {
 @import '../assets/style/function.scss';
 
 .navigation {
-  background-color: $nav_bg;
+  background-color: transparent;
   // background-image: $nav_bg;
   background-size: cover;
   height: $nav_pc_height;
@@ -149,6 +149,10 @@ export default {
   width: 100vw;
   display: flex !important;
   align-items: center;
+  transition: all .3s;
+  &.min {
+    background-color: $nav_bg;
+  }
   // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
   // &::after{content: "";height:100%;width: 150%;top: -100%;left: 0;z-index:9;position: absolute;box-shadow:0 size(0) size(72) size(72)  #005566;}
 }
@@ -273,7 +277,7 @@ export default {
 
     .title {
       height: 100%;
-      font-size: size(32) !important;
+      // font-size: size(32) !important;
       font-weight: 100;
       font-stretch: normal;
       font-style: normal;
@@ -283,10 +287,10 @@ export default {
       color: #5e5c5d;
       position: relative;
       z-index: 3;
-      > span {
-        font-size: size(32) !important;
-        font-weight: normal;
-      }
+      // > span {
+      //   font-size: size(32) !important;
+      //   font-weight: normal;
+      // }
     }
 
     .subTitle {

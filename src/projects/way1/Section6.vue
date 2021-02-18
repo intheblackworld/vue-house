@@ -43,7 +43,7 @@
   @include img_l_pc(400, 0, 104);
   top: auto;
   bottom: size(293);
-  font-size: size(46);
+  font-size: size(46  - 6);
   font-weight: 300;
   font-stretch: normal;
   font-style: normal;
@@ -61,7 +61,7 @@
   @include img_l_pc(731, 64, 105);
   top: auto;
   bottom: size(190);
-  font-size: size(71.5);
+  font-size: size(71.5 - 10);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -75,7 +75,7 @@
   @include img_l_pc(731, 68 + 127, 468);
   top: auto;
   bottom: size(62);
-  font-size: size(75.2);
+  font-size: size(75.2 - 10);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -89,7 +89,7 @@
 .hr {
   @include img_l_pc(102, 180 + 68, 338);
   top: auto;
-  bottom: size(113);
+  bottom: size(100);
   border-bottom: solid size(5) #009fb1;
 }
 

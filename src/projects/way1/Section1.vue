@@ -1,13 +1,13 @@
 <template>
   <div class="section1">
     <!-- <img src="./s1/bg.jpg" alt="" class="bg-img"> -->
-    <img src="./s1/01_bg.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isPC">
-    <img src="./m/01/01_bg_m.png" :alt="`${info.caseName}_img`" class="img" v-if="isMobile">
-    <img src="./s1/01_arrow.png" :alt="`${info.caseName}_arrow`" class="arrow"  data-aos="fade-up" data-aos-delay="800" v-scroll-to="{ element: `#section2` }">
-    <img src="./s1/01_btn.png" :alt="`${info.caseName}_btn`" class="btn" v-scroll-to="{ element: `#contact` }">
-    <img src="./s1/01_logo_box.png" :alt="`${info.caseName}_logo-box`" class="logo-box">
-    <img src="./s1/01_logo.png" :alt="`${info.caseName}_logo`" class="logo">
-    <img src="./s1/boutique_logo.png" :alt="`${info.caseName}_b-logo`" class="b-logo">
+    <img src="./s1/01_bg.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isPC" data-aos="fade" data-aos-delay="0">
+    <img src="./m/01/01_bg_m.png" :alt="`${info.caseName}_img`" class="img" v-if="isMobile" data-aos="fade" data-aos-delay="0">
+    <img src="./s1/01_arrow.png" :alt="`${info.caseName}_arrow`" class="arrow"  data-aos="fade-up" data-aos-delay="800" v-scroll-to="{ element: `#section2` }" >
+    <img src="./s1/01_btn.png" :alt="`${info.caseName}_btn`" class="btn" v-scroll-to="{ element: `#contact` }" data-aos="fade" data-aos-delay="0">
+    <img src="./s1/01_logo_box.png" :alt="`${info.caseName}_logo-box`" class="logo-box" data-aos="fade" data-aos-delay="0">
+    <img src="./s1/01_logo.png" :alt="`${info.caseName}_logo`" class="logo" data-aos="fade" data-aos-delay="0">
+    <img src="./s1/boutique_logo.png" :alt="`${info.caseName}_b-logo`" class="b-logo" data-aos="fade" data-aos-delay="0">
     <h1 class="title" v-if="isPC" data-aos="fade-up" data-aos-delay="200">建築對味 幸福到位</h1>
     <h1 class="title" v-if="isMobile" data-aos="fade-up" data-aos-delay="200">建築對味<br />幸福到位</h1>
     <h3 class="subtitle1 flex-ac" v-if="isPC"  data-aos="fade-up" data-aos-delay="400">遇見鳳鳴特區<span class="flex-ac">Destiny That Brought You To Me</span></h3>

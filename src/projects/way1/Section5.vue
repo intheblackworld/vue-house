@@ -353,6 +353,8 @@
 .next-btn {
   width: size(50);
   margin-right: 10px;
+  left: 0;
+  right: 0;
   position: relative;
   cursor: pointer;
 }

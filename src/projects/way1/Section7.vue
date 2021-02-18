@@ -84,7 +84,7 @@
 
 .desc {
   @include img_r_pc(438, 691, 238);
-  font-size: 26px;
+  font-size: size(22);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;

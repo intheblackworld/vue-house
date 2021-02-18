@@ -77,7 +77,7 @@
 
 .label {
   @include img_l_pc(400, 0 + 153, 104);
-  font-size: size(46);
+  font-size: size(46  - 6);
   font-weight: 300;
   font-stretch: normal;
   font-style: normal;
@@ -93,7 +93,7 @@
 
 .title {
   @include img_l_pc(731, 64 + 153, 105);
-  font-size: size(71.5);
+  font-size: size(71.5 - 10);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -105,7 +105,7 @@
 }
 .subtitle {
   @include img_l_pc(731, 68 + 127 + 153, 468);
-  font-size: size(75.2);
+  font-size: size(75.2 - 10);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -117,7 +117,7 @@
 }
 
 .hr {
-  @include img_l_pc(102, 180 + 68 + 153, 338);
+  @include img_l_pc(102, 180 + 60 + 153, 338);
   border-bottom: solid size(5) #009fb1;
 }
 
@@ -147,7 +147,7 @@
 
 .block-desc {
   @include img_r_pc(522, 1041, 202);
-  font-size: size(26);
+  font-size: size(22);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
