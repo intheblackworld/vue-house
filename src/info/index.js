@@ -19,7 +19,7 @@ export default {
     ['戶數規劃', '59戶'],
   ],
 
-  gtmCode: ['M23CM6L'], // 可放置多個
+  gtmCode: ['PFLMPX5'], // 可放置多個
   order: {
     title: '預約賞屋',
     subTitle: ''
