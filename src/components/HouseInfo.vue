@@ -1,5 +1,5 @@
 <template>
- <div class="house-info" id="house-info">
+  <div class="house-info" id="house-info">
     <div class="content">
       <h3 class="title" data-aos="fade-down" data-aos-delay="0">建案資訊</h3>
       <div class="info">
@@ -65,7 +65,7 @@ export default {
 
 .item {
   font-size: 15px;
-  margin-bottom:2em;
+  margin-bottom: 2em;
   margin-right: 10em;
   width: 260px;
   //height: 30px;
@@ -74,20 +74,31 @@ export default {
   padding-left: 10px;
   display: flex;
   align-items: center;
-  white-space: nowrap;position: relative;
-  &::before{content: "";width: 4px;height: 1.4em;background:$house_border_color;margin: 0px 0.8em 0 0;position: absolute;top:0;left: 0;}
+  white-space: nowrap;
+  position: relative;
+  &::before {
+    content: '';
+    width: 4px;
+    height: 1.4em;
+    background: $house_border_color;
+    margin: 0px 0.8em 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
   &:nth-of-type(even) {
     margin-right: 0;
   }
 
   .label {
-    font-size:1em;
+    font-size: 1em;
     color: $house_label_color;
     margin-bottom: 0;
-    margin-right:0.8em;
+    margin-right: 0.8em;
     white-space: nowrap;
     font-family: $family3;
-    width: 4.5em;
+    width: 6.5em;
+    text-align: left;
   }
 
   .desc {
@@ -103,10 +114,10 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .content {
-   // height: 35em;
+    height: 20em;
     width: 100%;
     margin-bottom: 0;
-    font-size: 15px;
+    font-size: 16px;
     padding-bottom: 50px;
   }
 
