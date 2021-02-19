@@ -7,14 +7,14 @@
       <div class="form">
         <div class="group">
           <!-- <div class="form-hint">* 每個欄位都是必填欄位</div> -->
-          <!-- <div class="row" data-aos="fade-down" data-aos-delay="100">
-            <el-select v-model="form.activity" placeholder>
+          <div class="row" data-aos="fade-down" data-aos-delay="100">
+            <el-select v-model="form.activity" placeholder="想報名的活動">
               <el-option v-for="(act, index) in activies" :key="act.value + index" :label="act.label" :value="act.value" no-data-text="無數據"></el-option>
             </el-select>
           </div>
           <div class="row" data-aos="fade-down" data-aos-delay="100">
-            <el-input id="form-people" v-model="form.count" placeholder="報名人數"></el-input>
-          </div> -->
+            <el-input id="form-people" type="number" v-model="form.count" placeholder="報名人數"></el-input>
+          </div>
           <div class="row" data-aos="fade-down" data-aos-delay="100">
             <el-input id="form-name" v-model="form.name" placeholder="姓名*"></el-input>
           </div>
@@ -122,8 +122,8 @@ export default {
       googleSrc: info.googleSrc,
       activies: [
         {
-          value: '2/15(六)14:00-16:00 瑪莎見面會',
-          label: '2/15(六)14:00-16:00 瑪莎見面會',
+          value: '2/28(日)14:00-16:00 瑪莎見面會',
+          label: '2/28(日)14:00-16:00 瑪莎見面會',
         },
         {
           value: '3/6(六)14:00-16:00 春來了',
@@ -148,15 +148,11 @@ export default {
         {
           value: '4/10(六)14:00-15:30  故事魔法寶盒',
           label: '4/10(六)14:00-15:30  故事魔法寶盒',
-        },
-        {
-          value: '4/17(六)14:00-16:00 課程名稱待確認 ',
-          label: '4/17(六)14:00-16:00 年獸賀新年',
-        },        
-        {
-          value: '4月 敬請期待 14:00-15:00 咖啡職人研究室',
-          label: '4月 敬請期待 14:00-15:00 咖啡職人研究室',
-        },
+        },  
+    /*   {
+          value: '更多精彩活動 敬請期待 即將公開',
+          label: '更多精彩活動 敬請期待 即將公開',
+        }, */
       ],
       form: {
         // activity: '2/15(六)14:00-16:00 瑪莎見面會', // 活動名稱
@@ -453,7 +449,7 @@ export default {
 
   .google-map {
     // margin-top: 35px;
-    height:size(248);
+    height:size(420);
     margin-bottom: 15px;
   }
 }

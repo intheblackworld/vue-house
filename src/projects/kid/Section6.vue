@@ -30,7 +30,7 @@
         <img src="./s6/p4.png" :alt="`${info.caseName}_p1`" class="p1">
       </div>
     </div>
-    <!--
+    
     <div class="block-2">
       <div class="title2">
         活動消息
@@ -58,7 +58,7 @@
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot' + index" @click="goToSlide(index)"><span :class="`flex-c ${slideIndex === index ? 'active' : ''}`">{{index + 1}}</span></div>
       </div>
     </div>
-    -->
+    
   </div>
 </template>
 
@@ -67,7 +67,7 @@
 
 .section6 {
   width: size(1920);
-  height: size(1156);
+ // height: size(1156);
   /*min-height: size(2130);
   max-height: size(2130);*/
   background-color: #71943a;
@@ -437,7 +437,7 @@
 @media screen and (max-width: 767px) {
   .section6 {
     width: 100vw;
-    height: sizem(400);
+   // height: sizem(400);
     background-size: cover;
     background-attachment: scroll;
     position: relative;
@@ -651,20 +651,13 @@
   }
 
   .pagination {
-    position: absolute;
-    width: 100vw;
-    right: 0;
-    left: 0;
+    width: 90%;
     top: sizem(400);
-    //bottom: size(100);
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
   }
 
   .pagination-dot {
     padding: 5px;
-    margin: 0 10px;
+    margin: 0 5px;
     cursor: pointer;
     z-index: 4;
 
@@ -676,7 +669,7 @@
       color: #fff;
       position: relative;
       transition: all 0.5s;
-      font-size: size(18.2);
+      font-size: sizem(15);
       font-weight: bold;
       font-stretch: normal;
       font-style: normal;
@@ -803,14 +796,14 @@ export default {
         },
         {
           img: require('./s7/8.jpg'),
-          name: '情境示意圖',
+          name: ' ',
           title: ' ',
           //     title: '透過唱跳遊戲及手作的方式，讓孩子更加認識過年。',
         },
-        {
+    /*   {
           title: '一杯口感馥郁香氣的黑色飲料，蘊藏著多少功夫細節？',
           img: require('./s7/9.jpg'),
-        },
+        }, */ 
       ],
       videoWidth: isMobile
         ? (window.innerWidth * 350) / 375
