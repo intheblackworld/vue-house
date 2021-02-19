@@ -1,9 +1,9 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '接待會館：新北市鶯歌區鶯歌路128號旁',
+  address: '接待會館：新北市鶯歌區鶯歌路128號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3616.9040482748223!2d121.330933!3d24.969379!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDU4JzEwLjUiTiAxMjHCsDE5JzU3LjUiRQ!5e0!3m2!1szh-TW!2stw!4v1609137511275!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/5QJkBQZhCXpT7kbWA',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.8828102185057!2d121.33095381542624!3d24.970101484002257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34681ebf3c16ad83%3A0xde99a93dad8c79e0!2zMjM55paw5YyX5biC6bav5q2M5Y2A6bav5q2M6LevMTI46Jmf!5e0!3m2!1szh-TW!2stw!4v1613699900552!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/yyCENALD9UWEme1T6',
   phone: '02-2670-7777',
   fbLink: 'https://www.facebook.com/立瑾Way-102495151749492/  ',
   fbMessage: 'https://m.me/102495151749492/',
