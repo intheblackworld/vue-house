@@ -362,12 +362,13 @@ export default {
   }
   .address {
    // width: 280px;
-    //padding: 0 1em;
+    padding: 0.8em 1em;
     text-align: justify;
+    line-height: 1.5;
+    height: auto;
   }
-
   .google-btn {
-    margin-top: 15px;
+    margin-top: 0;
   }
 }
 

@@ -70,7 +70,7 @@
 }
 
 .bg-img {
-  background-image: url('~@/projects/lj/s1/bg.png');
+ // background-image: url('~@/projects/lj/s1/bg.png');
   // padding-top: $nav_pc_height;
   background-attachment: fixed;
   background-size: auto;
