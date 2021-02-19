@@ -35,11 +35,11 @@
       <div class="title2">
         活動消息
       </div>
-      <carousel-3d class="swipe relative" ref="mycarousel" :width="videoWidth" :height="videoHeight" :perspective="0" :disable3d="false" :border="0" :display="3" :space="isMobile ? 300 : 300" @before-slide-change="onBeforeSlideChange">
+      <carousel-3d class="swipe relative" ref="mycarousel" :width="videoWidth" :height="videoHeight" :perspective="0" :disable3d="false" :border="0" :display="3" :space="isMobile ? 300 : 300" @before-slide-change="onBeforeSlideChange" :autoplay="true">
         <slide v-for="(slide, index) in slideList" :index="index" :key="slide.img + index" class="video-slide">
           <img :src="slide.img" :class="`video-img absolute`" />
           <div class="name">{{slide.name}}</div>
-          <div class="mask" v-if="!isMobile">
+          <div :class="`mask ${slide.hide}`" v-if="!isMobile && !slide.hide">
             <div class="slide-title" v-html="slide.title">
             </div>
             <div class="btn">
@@ -739,12 +739,12 @@
 import main from '@/main.js'
 import { isPC, isMobile, isTablet } from '@/utils'
 import { Carousel3d, Slide } from 'vue-carousel-3d'
-import slider from '@/mixins/slider.js'
+// import slider from '@/mixins/slider.js'
 import info from '@/info'
 
 export default {
   name: 'section6',
-  mixins: [slider],
+  // mixins: [slider],
 
   components: {
     Carousel3d,
@@ -757,6 +757,7 @@ export default {
       isPC,
       isMobile,
       isTablet,
+      slideIndex: 0,
       // currentIndex: 0,
       slideList: [
         {
@@ -798,6 +799,7 @@ export default {
           img: require('./s7/8.jpg'),
           name: ' ',
           title: ' ',
+          hide: true,
           //     title: '透過唱跳遊戲及手作的方式，讓孩子更加認識過年。',
         },
     /*   {
