@@ -1,5 +1,5 @@
 <?php
-    $case_name = "立瑾";
+    $case_name = "得邦廣告";
     $src =$_SERVER['SERVER_NAME']; 
     $case_code = substr($src,0,strpos($src,'.'));
 
