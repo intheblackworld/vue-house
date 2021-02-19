@@ -1,5 +1,5 @@
 <?php
-$case_name = "神采飛洋";
+$case_name = "築億海格";
 $src = $_SERVER['SERVER_NAME'];
 $case_code = substr($src, 0, strpos($src, '.'));
 
