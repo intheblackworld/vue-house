@@ -30,7 +30,7 @@
         <img src="./s6/p4.png" :alt="`${info.caseName}_p1`" class="p1">
       </div>
     </div>
-    
+
     <div class="block-2">
       <div class="title2">
         活動消息
@@ -58,7 +58,7 @@
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot' + index" @click="goToSlide(index)"><span :class="`flex-c ${slideIndex === index ? 'active' : ''}`">{{index + 1}}</span></div>
       </div>
     </div>
-    
+
   </div>
 </template>
 
@@ -67,7 +67,7 @@
 
 .section6 {
   width: size(1920);
- // height: size(1156);
+  // height: size(1156);
   /*min-height: size(2130);
   max-height: size(2130);*/
   background-color: #71943a;
@@ -437,7 +437,7 @@
 @media screen and (max-width: 767px) {
   .section6 {
     width: 100vw;
-   // height: sizem(400);
+    // height: sizem(400);
     background-size: cover;
     background-attachment: scroll;
     position: relative;
@@ -796,16 +796,21 @@ export default {
           name: '情境示意圖',
         },
         {
+          title: '一杯口感馥郁香氣的黑色飲料，蘊藏著多少功夫細節?',
+          img: require('./s7/9.jpg'),
+          name: '情境示意圖',
+        },
+        {
           img: require('./s7/8.jpg'),
           name: ' ',
           title: ' ',
           hide: true,
-          //     title: '透過唱跳遊戲及手作的方式，讓孩子更加認識過年。',
+          title: '123',
         },
-    /*   {
+        /*   {
           title: '一杯口感馥郁香氣的黑色飲料，蘊藏著多少功夫細節？',
           img: require('./s7/9.jpg'),
-        }, */ 
+        }, */
       ],
       videoWidth: isMobile
         ? (window.innerWidth * 350) / 375

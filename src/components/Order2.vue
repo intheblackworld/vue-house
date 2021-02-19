@@ -13,7 +13,7 @@
             </el-select>
           </div>
           <div class="row" data-aos="fade-down" data-aos-delay="100">
-            <el-input id="form-people" type="number" v-model="form.count" placeholder="報名人數"></el-input>
+            <el-input id="form-people" type="number" v-model="form.count" placeholder="報名人數" :max="6"></el-input>
           </div>
           <div class="row" data-aos="fade-down" data-aos-delay="100">
             <el-input id="form-name" v-model="form.name" placeholder="姓名*"></el-input>
@@ -61,22 +61,22 @@
           <div class="control" data-aos="fade-down" data-aos-delay="500">
             <div class="control-desc">
               <p>
-                <!-- 電話 {{info.phone}}<br />客服信箱：{{info.email}}<br /> -->                
+                <!-- 電話 {{info.phone}}<br />客服信箱：{{info.email}}<br /> -->
                 樂園位置：<br v-if="!isMobile">{{info.address}}
               </p>
             </div>
-      <a :href="info.googleLink" target="_blank" class="contact-btn flex-c wrap google-map-btn">
-        <img src="~@/projects/kid/c/m.png" alt="">
-        <div class="btn-desc">
-          地圖導航
-        </div>
-      </a>
-      <a :href="info.fbLink" target="_blank" class="contact-btn flex-c wrap fb-btn">
-        <img src="~@/projects/kid/c/f.png" alt="">
-        <div class="btn-desc">
-          粉絲專頁
-        </div>
-      </a>
+            <a :href="info.googleLink" target="_blank" class="contact-btn flex-c wrap google-map-btn">
+              <img src="~@/projects/kid/c/m.png" alt="">
+              <div class="btn-desc">
+                地圖導航
+              </div>
+            </a>
+            <a :href="info.fbLink" target="_blank" class="contact-btn flex-c wrap fb-btn">
+              <img src="~@/projects/kid/c/f.png" alt="">
+              <div class="btn-desc">
+                粉絲專頁
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -148,8 +148,12 @@ export default {
         {
           value: '4/10(六)14:00-15:30  故事魔法寶盒',
           label: '4/10(六)14:00-15:30  故事魔法寶盒',
-        },  
-    /*   {
+        },
+        {
+          value: '4月 敬請期待  如何沖泡一杯好咖啡',
+          label: '4月 敬請期待  如何沖泡一杯好咖啡',
+        },
+        /*   {
           value: '更多精彩活動 敬請期待 即將公開',
           label: '更多精彩活動 敬請期待 即將公開',
         }, */
@@ -204,6 +208,18 @@ export default {
       })
     },
 
+    alertValidateCount() {
+      const h = this.$createElement
+      this.$notify({
+        title: '報名人數超過上限',
+        message: h(
+          'i',
+          { style: 'color: #82191d' },
+          '報名人數最多以六人為限',
+        ),
+      })
+    },
+
     submit() {
       if (this.isSubmit) return
       if (!this.isVerify) return
@@ -222,6 +238,11 @@ export default {
         !this.form.area
       ) {
         this.alertValidate()
+        this.isSubmit = false
+        return
+      }
+      if (this.form.count > 6) {
+        this.alertValidateCount()
         this.isSubmit = false
         return
       }
@@ -344,8 +365,8 @@ export default {
   }
 
   .order {
-    width:size(930);
-    min-width:750px;
+    width: size(930);
+    min-width: 750px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -449,7 +470,7 @@ export default {
 
   .google-map {
     // margin-top: 35px;
-    height:size(420);
+    height: size(420);
     margin-bottom: 15px;
   }
 }
@@ -474,13 +495,13 @@ export default {
   margin: 0 auto;
 }
 .contact-btn {
-  border-radius:1.1em;
+  border-radius: 1.1em;
   background-color: #3a836d;
   text-decoration: none;
   font-size: size(15);
   padding: 0.3em 0 0 0;
   img {
-  width:3em;
+    width: 3em;
   }
   .btn-desc {
     font-weight: normal;
@@ -494,15 +515,15 @@ export default {
 }
 .google-map-btn {
   @include div_r_pc(80, 80, 0, 100);
-  right:6em;
-  width:5.3em;
-  height:5.3em;
+  right: 6em;
+  width: 5.3em;
+  height: 5.3em;
 }
 
 .fb-btn {
-  @include div_r_pc(80,80, 0, 0);
-  width:5.3em;
-  height:5.3em;
+  @include div_r_pc(80, 80, 0, 0);
+  width: 5.3em;
+  height: 5.3em;
 }
 
 /* 平板尺寸 */
@@ -573,10 +594,10 @@ export default {
         color: #ffffff;
       }
     }
-  .google-map {
-    // margin-top: 35px;
-    height:sizem(248);
-  }
+    .google-map {
+      // margin-top: 35px;
+      height: sizem(248);
+    }
     .google-map-btn {
       @include div_l_m(70, 70, 45, 0);
     }
