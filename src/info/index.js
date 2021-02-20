@@ -1,9 +1,9 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '新北市中和區和平街25之1號1F',
+  address: '新北市中和區景新街337號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14465.049488524071!2d121.50209708570556!3d24.99119914817879!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x123f7c605c425b02!2z5aSq6Zm95bid5ZyLIOaOpeW-heacg-mkqA!5e0!3m2!1szh-TW!2stw!4v1611024470616!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/qa3PVnj7Pkgdnuew7',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.2607941892597!2d121.50979001500541!3d24.991252783992437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34680274835f1b4f%3A0xe726b38ca2ec6556!2zMjM15paw5YyX5biC5Lit5ZKM5Y2A5pmv5paw6KGXMzM36Jmf!5e0!3m2!1szh-TW!2stw!4v1613802554258!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/BmCc5wrL7WpW9z478',
   phone: '02-8668-7373',
   fbLink: 'https://www.facebook.com/ACEPTW86687373/',
   fbMessage: 'https://m.me/ACEPTW86687373',
@@ -22,7 +22,7 @@ export default {
     ['園藝設計', '大漢景觀設計',],
     ['基地面積', '1128.34坪',],
     ['規劃坪數', '19-39坪',],
-    ['企劃銷售', '得邦廣告有限公司',],
+    ['企劃銷售', '得邦廣告',],
   ],
 
   gtmCode: ['KVNRLFH'], // 可放置多個
