@@ -14,9 +14,9 @@ $case_code = substr($src,0,strpos($src,$case_code_test=='1'?'1':'.'));
 
 # 下3段 抓$case_name 這樣就不會打錯案名了
 # $case_name = "鳳翔"; 特殊案使用
-    $sql_n = "SELECT casename FROM susers WHERE email = '" . $case_code . "'";
-    $dataList = $pdo->query($sql_n)->fetchAll();
-    $case_name = $aGetDbList[0]['casename'];
+$sql_name = "SELECT casename FROM susers WHERE email = '" . $case_code . "'";
+$dataList = $pdo->query($sql_name)->fetchAll();
+$case_name = $dataList[0]['casename'];
 
     $activity         = isset($_POST['activity']) ? $_POST['activity'] : ''; // 活動名稱
     $count         = isset($_POST['count']) ? $_POST['count'] : ''; // 報名人數
