@@ -13,7 +13,7 @@
             </el-select>
           </div>
           <div class="row" data-aos="fade-down" data-aos-delay="100">
-            <el-input id="form-people" type="number" v-model="form.count" placeholder="報名人數" :min="0" :max="6"></el-input>
+            <el-input id="form-people" type="number" v-model="form.count" placeholder="報名人數" :min="1" :max="6"></el-input>
           </div>
           <div class="row" data-aos="fade-down" data-aos-delay="100">
             <el-input id="form-name" v-model="form.name" placeholder="姓名*"></el-input>
