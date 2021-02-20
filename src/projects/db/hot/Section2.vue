@@ -905,8 +905,8 @@ export default {
           info3:
             '澳洲PTW建築團隊巨鑄<br />雙和第一高峰36層地標<br />全棟144隻BRB制震器',
           contact:
-            '貴賓專線｜02-8668-7373<br />接待會館｜新北市中和區和平街25之1號',
-          link: 'https://www.aceptw.com.tw/',
+            '貴賓專線｜02-8668-7373<br />接待會館｜新北市中和區景新街337號',
+          link: 'https://ace.debang.tw/',
           logo: require('../works/4/0.jpg'),
           imgs: [
             require('../works/4/1.jpg'),
