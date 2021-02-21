@@ -179,6 +179,21 @@
     height: size(469);
     object-fit: cover;
   }
+
+  .item-title {
+    position: absolute;
+    text-shadow: 0 0.1em 0.3em #000;
+    right: 10px;
+    bottom: 10px;
+    font-size: size(23);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.36;
+    letter-spacing: size(0.94);
+    text-align: left;
+    color: #ffffff;
+  }
 }
 
 /* Swipe */
