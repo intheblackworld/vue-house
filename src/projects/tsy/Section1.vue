@@ -161,6 +161,9 @@
 .btn {
   @include img_r_pc(780, 701, 84);
   cursor: pointer;
+  &:hover {
+    
+  }
 }
 
 .child-bg {
