@@ -27,7 +27,7 @@
           <font-awesome-icon :icon="['fab', 'facebook-messenger']" />FB 諮詢
         </span>
       </a> -->
-        <a class="btn flex-c" :href="info.fbLink" target="_blank">
+        <a class="btn flex-c bt_fanpage" :href="info.fbLink" target="_blank">
           <span class="flex-c">
             <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
           </span>

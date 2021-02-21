@@ -7,7 +7,7 @@
       v-html="address"
     ></div>
     <a
-      class="cta"
+      class="cta bt_search"
       :href="link"
       target="_blank"
       @click="window.dotq = window.dotq || [];

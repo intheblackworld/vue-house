@@ -4,7 +4,7 @@
     <div class="dialog-desc">Facebook Messenger</div>
     <div class="info">線上諮詢</div>
     <a
-      class="cta"
+      class="cta bt_lead"
       :href="messenger"
       target="_blank"
       @click="window.dotq = window.dotq || [];

@@ -4,7 +4,7 @@
     <div class="dialog-desc">賞屋專線</div>
     <div class="info">{{phone}}</div>
     <div
-      class="cta"
+      class="cta bt_contact"
       @click="redirectToPhoneThanks"
     >撥打電話</div>
   </div>
