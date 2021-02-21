@@ -1,5 +1,5 @@
 <?php
-    $case_name = "自漫藏";
+    $case_name = "翠松園";
     $src =$_SERVER['SERVER_NAME']; 
     $case_code = substr($src,0,strpos($src,'.'));
 

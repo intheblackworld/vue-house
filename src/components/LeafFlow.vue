@@ -37,12 +37,12 @@ export default {
         // require('../projects/jsjm1/s2/leaf (2).png'),
         // require('../projects/jsjm1/s2/leaf (3).png'),
         // require('../projects/jsjm1/s2/leaf (4).png'),
-        require('../projects/jiman/leaf/f1.png'),
-        require('../projects/jiman/leaf/f2.png'),
-        require('../projects/jiman/leaf/f3.png'),
-        require('../projects/jiman/leaf/f4.png'),
-        require('../projects/jiman/leaf/f5.png'),
-        require('../projects/jiman/leaf/f6.png'),
+        require('../projects/tsy/s1/leaf.png'),
+        require('../projects/tsy/s1/leaf_2.png'),
+        require('../projects/tsy/s1/leaf.png'),
+        require('../projects/tsy/s1/leaf_2.png'),
+        require('../projects/tsy/s1/leaf.png'),
+        require('../projects/tsy/s1/leaf_2.png'),
       ]
       var container = $('#leaf-content')
       const visualWidth = container.width()
