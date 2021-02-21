@@ -1,5 +1,23 @@
 <template>
   <div class="order-bg">
+    <div class="bubble-bg" v-if="isPC">
+      <img src="../projects/tsy/s1/bg_style_8.png" :alt="`${info.caseName}_bubble_1`" class="bubble_1">
+      <img src="../projects/tsy/s1/bg_style_5.png" :alt="`${info.caseName}_bubble_2`" class="bubble_2">
+      <img src="../projects/tsy/s1/bg_style_6.png" :alt="`${info.caseName}_bubble_3`" class="bubble_3">
+      <img src="../projects/tsy/s1/bg_style_7.png" :alt="`${info.caseName}_bubble_4`" class="bubble_4">
+    </div>
+    <div class="bubble-bg" v-if="isMobile">
+      <img src="../projects/tsy/mobile/m_bg_style_class_2.png" :alt="`${info.caseName}_bubble_1`" class="bubble_1">
+    </div>
+    <div class="bling-bg" v-if="isPC">
+      <img src="../projects/tsy/s1/style_1.png" :alt="`${info.caseName}_bling_1`" class="bling_1">
+      <img src="../projects/tsy/s1/style_2.png" :alt="`${info.caseName}_bling_2`" class="bling_2">
+      <img src="../projects/tsy/s1/style_2.png" :alt="`${info.caseName}_bling_3`" class="bling_3">
+      <img src="../projects/tsy/s1/style_2.png" :alt="`${info.caseName}_bling_4`" class="bling_4">
+    </div>
+    <div class="bling-bg" v-if="isMobile">
+      <img src="../projects/tsy/mobile/m_style_class_2.png" :alt="`${info.caseName}_bling_1`" class="bling_1">
+    </div>
     <!-- <img src="@/projects/fs/order/bg.png" alt="" class="bg-img"> -->
     <!-- <img src="@/projects/fs/order/bg1.png" alt="" class="bg-img no-mix"> -->
     <!-- <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile"> -->
@@ -8,40 +26,18 @@
         <h3 class="title">{{order.title}}</h3>
         <div class="subtitle">{{order.subTitle}}</div>
       </div> -->
-      <div
-        class="order-title"
-        v-html="order.title"
-        data-aos="fade-down"
-        data-aos-delay="0"
-      ></div>
-      <div
-        class="order-subtitle"
-        v-html="order.subTitle"
-      ></div>
+      <div class="order-title" v-html="order.title" data-aos="fade-down" data-aos-delay="0"></div>
+      <div class="order-subtitle" v-html="order.subTitle" data-aos="fade-down" data-aos-delay="0"></div>
       <div class="order">
         <div class="form">
           <div class="group">
-            <div
-              class="row"
-              data-aos="fade-down"
-              data-aos-delay="100"
-            >
+            <div class="row" data-aos="fade-down" data-aos-delay="100">
               <label>姓名</label>
-              <el-input
-                v-model="form.name"
-                placeholder
-              ></el-input>
+              <el-input v-model="form.name" placeholder></el-input>
             </div>
-            <div
-              class="row"
-              data-aos="fade-down"
-              data-aos-delay="200"
-            >
+            <div class="row" data-aos="fade-down" data-aos-delay="200">
               <label>手機</label>
-              <el-input
-                v-model="form.phone"
-                placeholder
-              ></el-input>
+              <el-input v-model="form.phone" placeholder></el-input>
             </div>
             <!-- <div class="row" data-aos="fade-down"
         data-aos-delay="300">
@@ -85,65 +81,26 @@
               <label>E-mail</label>
               <el-input v-model="form.email" placeholder></el-input>
             </div> -->
-            <div
-              class="row"
-              data-aos="fade-down"
-              data-aos-delay="300"
-            >
+            <div class="row" data-aos="fade-down" data-aos-delay="300">
               <label>居住城市</label>
-              <el-select
-                v-model="form.city"
-                placeholder
-              >
-                <el-option
-                  v-for="city in cityList"
-                  :key="city.value"
-                  :label="city.label"
-                  :value="city.value"
-                  no-data-text="無數據"
-                ></el-option>
+              <el-select v-model="form.city" placeholder>
+                <el-option v-for="city in cityList" :key="city.value" :label="city.label" :value="city.value" no-data-text="無數據"></el-option>
               </el-select>
             </div>
-            <div
-              class="row"
-              data-aos="fade-down"
-              data-aos-delay="400"
-            >
+            <div class="row" data-aos="fade-down" data-aos-delay="400">
               <label>居住地區</label>
-              <el-select
-                v-model="form.area"
-                placeholder
-              >
-                <el-option
-                  v-for="area in areaList"
-                  :key="area.value"
-                  :label="area.label"
-                  :value="area.value"
-                  no-data-text="請先選擇居住城市"
-                ></el-option>
+              <el-select v-model="form.area" placeholder>
+                <el-option v-for="area in areaList" :key="area.value" :label="area.label" :value="area.value" no-data-text="請先選擇居住城市"></el-option>
               </el-select>
             </div>
           </div>
-          <div
-            class="group"
-            data-aos="fade-down"
-            data-aos-delay="600"
-          >
+          <div class="group" data-aos="fade-down" data-aos-delay="600">
             <div class="row">
-              <el-input
-                type="textarea"
-                :rows="2"
-                placeholder="請輸入您的留言 (選填)"
-                v-model="form.msg"
-              ></el-input>
+              <el-input type="textarea" :rows="2" placeholder="請輸入您的留言 (選填)" v-model="form.msg"></el-input>
             </div>
           </div>
         </div>
-        <div
-          class="control"
-          data-aos="fade-down"
-          data-aos-delay="500"
-        >
+        <div class="control" data-aos="fade-down" data-aos-delay="500">
           <el-checkbox v-model="checked">
             <h3>
               本人知悉並同意
@@ -152,39 +109,14 @@
             </h3>
           </el-checkbox>
         </div>
-        <div
-          style="margin: 0 auto;z-index:2;"
-          v-if="!isMobile"
-          data-aos="fade-down"
-          data-aos-delay="600"
-        >
-          <vue-recaptcha
-            :sitekey="info.recaptcha_site_key_v2"
-            @verify="isVerify = true"
-            :loadRecaptchaScript="true"
-          ></vue-recaptcha>
+        <div style="margin: 0 auto;z-index:2;" v-if="!isMobile" data-aos="fade-down" data-aos-delay="600">
+          <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
         </div>
-        <div
-          style="margin: 0 auto;z-index:2;"
-          v-if="isMobile"
-        >
-          <vue-recaptcha
-            :sitekey="info.recaptcha_site_key_v2"
-            @verify="isVerify = true"
-            :loadRecaptchaScript="true"
-          ></vue-recaptcha>
+        <div style="margin: 0 auto;z-index:2;" v-if="isMobile">
+          <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
         </div>
-        <el-button
-          class="form-submit flex-c"
-          type="primary"
-          :disabled="!checked || !isVerify"
-          @click="submit"
-          :loading="isSubmit"
-        >立即預約</el-button>
-        <Loading
-          :loading="isSubmit"
-          :isOpacity="true"
-        />
+        <el-button class="form-submit flex-c" type="primary" :disabled="!checked || !isVerify" @click="submit" :loading="isSubmit">立即預約</el-button>
+        <Loading :loading="isSubmit" :isOpacity="true" />
       </div>
     </div>
     <ContactInfo />
@@ -199,7 +131,7 @@ import GoogleMap from '@/components/GoogleMap.vue'
 import PolicyDialog from '@/components/PolicyDialog.vue'
 import info from '@/info'
 import { cityList, renderAreaList } from '@/info/address'
-import { isMobile } from '@/utils'
+import { isMobile, isPC } from '@/utils'
 import Loading from '@/components/Loading.vue'
 import VueRecaptcha from 'vue-recaptcha'
 
@@ -218,6 +150,7 @@ export default {
       cityList,
       info,
       order: info.order,
+      isPC,
       isMobile,
       form: {
         name: '',
@@ -316,7 +249,7 @@ export default {
       fetch('contact-form.php', {
         method: 'POST',
         body: formData,
-      }).then(response => {
+      }).then((response) => {
         this.isSubmit = false
         if (response.status === 200) {
           window.location.href = 'formThanks'
@@ -329,6 +262,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/style/variableColor.scss';
+@import '@/assets/style/function.scss';
 .bg-img {
   width: 100vw;
   position: absolute;
@@ -343,6 +277,76 @@ export default {
     mix-blend-mode: normal;
     height: 100%;
   }
+}
+
+.bling-bg {
+  @for $i from 1 through 10 {
+    $randomNum: random(3) + 1;
+    > img:nth-child(#{$i}) {
+      transform: translateY((random(10) - 30) + px);
+      animation: an ($randomNum + s) 1s infinite alternate;
+    }
+  }
+}
+
+@keyframes an {
+  to {
+    transform: translateY(0);
+  }
+}
+
+// ------------ bling
+
+.bling_1 {
+  @include img_l_pc(27, 700, 155);
+}
+
+.bling_2 {
+  @include img_l_pc(34, 500, 311);
+}
+
+.bling_3 {
+  @include img_r_pc(105, 840, 145);
+}
+
+.bling_4 {
+  @include img_l_pc(240, 925, 98);
+}
+
+.bubble-bg {
+  @for $i from 1 through 10 {
+    $randomNum: random(3) + 4;
+    > img:nth-child(#{$i}) {
+      opacity: 0;
+      transform: translateY((random(20) - 40) + px);
+      animation: an2 ($randomNum + s) 1s infinite alternate;
+    }
+  }
+}
+
+@keyframes an2 {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ----- bubble
+.bubble_1 {
+  @include img_l_pc(391, 0, 52);
+  // z-index: 6;
+}
+
+.bubble_2 {
+  @include img_r_pc(323, -56, 110);
+}
+
+.bubble_3 {
+  @include img_r_pc(559, 340, 48);
+}
+
+.bubble_4 {
+  @include img_l_pc(289, 840, 204);
 }
 .order-bg {
   background-color: $order_bg_color;
@@ -368,21 +372,30 @@ export default {
     width: 100vw;
     padding-top: 20px;
     padding-bottom: 8px;
-    font-weight: 700;
-    line-height: 1.7;
-    letter-spacing: 20px;
-    font-size: calc(100vw * 36 / 1920);
+    font-size: size(85);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: size(21.26);
+    text-align: center;
+    color: #ffffff;
     text-align: center;
     color: $order_title_color;
   }
 
   .order-subtitle {
     width: 100vw;
-    font-size: 20px;
+    font-size: size(18);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: size(4.32);
     text-align: center;
     color: $order_subtitle_color;
     margin-bottom: 0px;
-    padding-bottom: 8px;
+    padding-bottom: 28px;
   }
 
   .order {
@@ -442,7 +455,8 @@ export default {
     label {
       //width:10em;
       flex: 0 0 6.8em;
-      display:block;text-align: left;
+      display: block;
+      text-align: left;
       font-size: 16px;
       opacity: 0.8;
       font-weight: bold;
@@ -479,6 +493,34 @@ export default {
 /* 螢幕尺寸標準 */
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
+  .bling-bg {
+    @for $i from 1 through 10 {
+      $randomNum: random(3) + 1;
+      > img:nth-child(#{$i}) {
+        transform: translateY((random(8) - 20) + px);
+        animation: an ($randomNum + s) 1s infinite alternate-reverse;
+      }
+    }
+  }
+  // ----- bling mobile
+  .bling_1 {
+    @include img_c_m(335, 100);
+  }
+
+  .bubble-bg {
+    @for $i from 1 through 10 {
+      $randomNum: random(3) + 2;
+      > img:nth-child(#{$i}) {
+        opacity: 0;
+        transform: translateY((random(8) - 20) + px);
+        animation: an2 ($randomNum + s) 1s infinite alternate-reverse;
+      }
+    }
+  }
+  // ----- bubble mobile
+  .bubble_1 {
+    @include img_c_m(375, 170);
+  }
   .order-bg {
     // background-image: $order_bg_image_m;
     background-size: cover;
@@ -493,13 +535,26 @@ export default {
     .order-title {
       padding-top: 10px;
       padding-bottom: 5px;
-      font-size: calc(100vw * 25 / 375);
-      letter-spacing: 4px;
+      font-size: sizem(37);
+      font-weight: 900;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.19;
+      letter-spacing: sizem(9.25);
+      text-align: center;
+      color: #ffffff;
     }
 
     .order-subtitle {
       // display: none;
-      font-size: 21px;
+      font-size: sizem(12);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.5;
+      letter-spacing: sizem(2.88);
+      text-align: center;
+      color: #ffffff;
     }
     .order {
       width: 84%;
@@ -509,7 +564,7 @@ export default {
 
     .form {
       flex-direction: column;
-    margin-bottom: -12px ;
+      margin-bottom: -12px;
     }
 
     .group {
@@ -531,10 +586,10 @@ export default {
     }
 
     .control {
-    .el-checkbox{
-      margin:10px auto;
-    }
-     /* margin-top: 10px;
+      .el-checkbox {
+        margin: 10px auto;
+      }
+      /* margin-top: 10px;
       margin-bottom: 10px;
       */
     }

@@ -12,6 +12,7 @@
         data-aos="fade-down"
         data-aos-delay="0"
       />
+      <img src="../projects/tsy/s1/child_7.png" :alt="`${info.caseName}_child_1`" class="child_1" v-if="!isMobile">
       <div class="info">
         <div
           class="btn flex-c"
@@ -26,7 +27,7 @@
         </div>
         <div
           class="btn flex-c"
-          @click="showMessengerDialog"
+          @click="showWaitingDialog"
           data-aos="fade-down"
           data-aos-delay="200"
         >
@@ -34,17 +35,16 @@
             <font-awesome-icon :icon="['fab', 'facebook-messenger']" /><span>FB 諮詢</span>
           </span>
         </div>
-        <a
+        <div
           class="btn flex-c"
-          :href="info.fbLink"
-          target="_blank"
+          @click="showWaitingDialog"
           data-aos="fade-down"
           data-aos-delay="300"
         >
           <span class="flex-c">
             <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
           </span>
-        </a>
+        </div>
         <div
           class="address flex-c"
           data-aos="fade-down"
@@ -89,6 +89,16 @@
         :address="info.address"
       />
     </el-dialog>
+    <el-dialog
+      title="敬請期待"
+      class="waiting-dialog"
+      :visible.sync="isShowWaitingDialog"
+      :width="isMobile ? '90%' : '500px'"
+      :modal-append-to-body="false"
+      center
+    >
+      
+    </el-dialog>
   </div>
 </template>
 
@@ -114,6 +124,7 @@ export default {
       isShowCallDialog: false,
       isShowMessengerDialog: false,
       isShowMapDialog: false,
+      isShowWaitingDialog: false,
     }
   },
   methods: {
@@ -130,13 +141,43 @@ export default {
       // if (!this.isMobile) return
       this.isShowMapDialog = true
     },
+
+    showWaitingDialog() {
+      this.isShowWaitingDialog = true
+    }
   },
 }
 </script>
+<style lang="scss">
+.waiting-dialog {
+  .el-dialog__title {
+    font-size: 36px !important;
+  }
+  .el-dialog__header {
+    padding: 50px;
+  }
+  .el-dialog__body {
+    display: none;
+  }
 
+}
+</style>
 <style lang="scss" scoped>
 @import '@/assets/style/variableColor.scss';
 @import '@/assets/style/variableDefault.scss';
+@import '@/assets/style/function.scss';
+
+.child_1 {
+  @include img_r_pc(199, 0, 122);
+  transform: translateY(-30px);
+  animation: an 3s 1s infinite alternate-reverse;
+}
+
+@keyframes an {
+  to {
+    transform: translateY(0);
+  }
+}
 
 .contact-info {
   background: $contact_bg;
@@ -150,7 +191,7 @@ export default {
   position: relative;
   z-index: 3;
   width: 1200px;
-  height: 540px;
+  // height: 440px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
@@ -171,6 +212,8 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  position: relative;
+  z-index: 2;
 }
 
 .btn {
@@ -184,7 +227,7 @@ export default {
   color: $contact_btn_color;
   background: $contact_btn_bg;
   box-shadow: $contact_btn_border;
-  border-radius: 18px !important;
+  // border-radius: 18px !important;
   transition: all 0.5s;
   position: relative;
   overflow: hidden;
@@ -237,8 +280,8 @@ export default {
   background: #fff;
   color: #040000;
   font-weight: bold;
-  border-top-left-radius: 18px !important;
-  border-bottom-left-radius: 18px !important;
+  // border-top-left-radius: 18px !important;
+  // border-bottom-left-radius: 18px !important;
   //box-shadow: $contact_btn_border;
 }
 .google-btn {
@@ -254,8 +297,8 @@ export default {
   background-position: center !important;
   border: $contact_btn_border;
   transition: all 0.5s;
-  border-top-right-radius: 18px !important;
-  border-bottom-right-radius: 18px !important;
+  // border-top-right-radius: 18px !important;
+  // border-bottom-right-radius: 18px !important;
 
   svg {
     color: $contact_google_btn_icon;
@@ -359,12 +402,12 @@ export default {
    // width: 280px;
     //padding: 0 1em;
     text-align: justify;
-    border-radius: 18px !important;
+    // border-radius: 18px !important;
   }
 
   .google-btn {
     margin-top: 15px;
-    border-radius: 18px !important;
+    // border-radius: 18px !important;
   }
 }
 

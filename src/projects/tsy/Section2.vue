@@ -37,7 +37,7 @@
       <div class="animate-bg">
         <img src="./mo/2/f3.png" :alt="`${info.caseName}_f3`" class="f3">
         <img src="./mo/2/f4.png" :alt="`${info.caseName}_f4`" class="f4">
-        <div class="f5"><img src="./s1/f1.png" :alt="`${info.caseName}_f5`"></div>
+        <!-- <div class="f5"><img src="./s1/f1.png" :alt="`${info.caseName}_f5`"></div> -->
       </div>
       <img src="./mo/2/t1.png" :alt="`${info.caseName}_t1`" class="t1" data-aos="fade" data-aos-delay="200">
       <img src="./mo/2/t2.png" :alt="`${info.caseName}_t2`" class="t2" data-aos="fade" data-aos-delay="200">

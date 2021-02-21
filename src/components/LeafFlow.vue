@@ -9,8 +9,9 @@
 .leaf-content {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
   min-height: size(1080);
-  position: fixed;
+  position: absolute;
   z-index: 1;
 }
 </style>

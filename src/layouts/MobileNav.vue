@@ -133,6 +133,7 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .mobile-nav {
+    width: 100vw;
     display: flex;
   }
 }
