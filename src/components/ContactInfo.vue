@@ -221,7 +221,8 @@ export default {
     width: 85%;
     height: auto;
     padding: 0;
-    position: static;
+    position: relative;
+    z-index: 5;
     .logo {
       width: $contact_logo_mobile_width;
     }
