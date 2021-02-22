@@ -21,15 +21,15 @@
   position: relative;
   // z-index: 5;
   height: 100vh;
-  min-height: size(1080);
+  min-height: size(900);
+  //max-height: size(1080);
   background: #2d73ab;
   // background-size: cover;
 }
 
 .bg-img {
-  width: size(1920);
+  width:100%;
   height: 100%;
-  min-height: size(900);
   position: absolute;
   top: 0;
   left: 0;
@@ -44,14 +44,17 @@
 
 .logo {
   @include img_c_pc(396, 147);
+  top: calc(50% + 100vw * (147 - 504) / 1920);
 }
 
 .title {
   @include img_c_pc(396, 547);
+  top: calc(50% + 100vw * (547 - 504) / 1920);
 }
 
 .btn1 {
   @include img_l_pc(453, 754, 293);
+  top: calc(50% + 100vw * (754 - 504) / 1920);
   img {
     width: 100%;
   }
@@ -59,6 +62,7 @@
 
 .btn2 {
   @include img_r_pc(453, 754, 293);
+  top: calc(50% + 100vw * (754 - 504) / 1920);
   img {
     width: 100%;
   }
@@ -72,17 +76,13 @@
     width: 100vw;
     background-size: cover;
     margin: 0;
-    height: 100vh;
+    height: 100vh; min-height: sizem(573);
     position: relative;
     z-index: 2;
     // overflow: hidden;
   }
 
   .bg-img {
-    width: sizem(375);
-    height: 100vh;
-    min-height: sizem(667);
-    position: absolute;
     top: 0;
     left: 0;
     display: block;
@@ -96,14 +96,17 @@
 
   .logo {
     @include img_c_m(185, 94);
+  top: calc(50% + 100vw * (74 - 302) / 375);
   }
 
   .title {
     @include img_c_m(185, 283);
+  top: calc(50% + 100vw * (263 - 302) / 375);
   }
 
   .btn1 {
     @include img_c_m(270, 378);
+  top: calc(50% + 100vw * (358 - 302) / 375);
     img {
       width: 100%;
     }
@@ -111,6 +114,7 @@
 
   .btn2 {
     @include img_c_m(270, 490);
+  top: calc(50% + 100vw * (470 - 302) / 375);
     img {
       width: 100%;
     }
