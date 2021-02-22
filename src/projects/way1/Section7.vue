@@ -1,19 +1,20 @@
 <template>
   <div class="section7">
     <img src="./s7/07_img.jpg" :alt="`${info.caseName}_img`" class="img">
-    <div class="title" v-if="isPC"  data-aos="fade-up" data-aos-delay="200">
+    <div class="name">3D示意</div>
+    <div class="title" v-if="isPC" data-aos="fade-up" data-aos-delay="200">
       空間很有味<br />
       好宅一次到位
     </div>
-    <div class="title" v-if="isMobile"  data-aos="fade-up" data-aos-delay="200">
+    <div class="title" v-if="isMobile" data-aos="fade-up" data-aos-delay="200">
       空間很有味 好宅一次到位
     </div>
-    <div class="hr"  data-aos="fade-right" data-aos-delay="200"></div>
-    <div class="subtitle"  data-aos="fade-up" data-aos-delay="400">
+    <div class="hr" data-aos="fade-right" data-aos-delay="200"></div>
+    <div class="subtitle" data-aos="fade-up" data-aos-delay="400">
       北歐風格美學<br />
       簡潔框景建築
     </div>
-    <div class="desc"  data-aos="fade-up" data-aos-delay="600">
+    <div class="desc" data-aos="fade-up" data-aos-delay="600">
       以北歐風格簡潔美學營造建築大器立面，水平橫幅延伸視野，流動著晨昏的光影與季節的變換大地色系交織白色框景，俐落身段雋永耐看。
     </div>
   </div>
@@ -54,6 +55,21 @@
   @include img_l_pc(986, 0, 0);
   height: size(1130);
   object-fit: cover;
+}
+
+.name {
+  @include img_l_pc(77, 0, 880);
+  top: auto;
+  bottom: 20px;
+  font-size: size(23);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.36;
+  letter-spacing: size(0.94);
+  text-align: left;
+  color: #ffffff;
+  white-space: nowrap;
 }
 
 .title {
@@ -298,6 +314,20 @@
     @include img_l_m(375, 53, 0);
     height: sizem(430);
     object-fit: cover;
+  }
+
+  .name {
+    @include img_r_m(30, 455, 20);
+    bottom: auto;
+    font-size: sizem(12);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.36;
+    letter-spacing: size(0.94);
+    text-align: left;
+    color: #ffffff;
+    white-space: nowrap;
   }
 
   .title {
