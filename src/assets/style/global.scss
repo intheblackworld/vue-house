@@ -43,10 +43,10 @@ body {
   // background-image: url('~@/projects/lj/s1/bg.png');
   // padding-top: $nav_pc_height;
   background-attachment: fixed;
-  background-size: cover;
-  background-position: cover;
+  background-size: auto;
+  background-position: center center;
   background-repeat: repeat;
-  // overflow: hidden;//試底下多的那塊哪來的
+  overflow: hidden;//試底下多的那塊哪來的
 
   &.no-padding-top {
     padding-top: 0;
@@ -252,8 +252,8 @@ img[lazy='loaded'] {
     padding-top: $nav_tablet_height;
     // background-color: $order_bg_color;
     background-image: $bg_m;
-    background-repeat: no-repeat;
-    background-size: 100vw auto;
+    background-repeat: repeat;
+    background-size: cover;
     background-attachment: fixed;
     background-position: 0% 50%;
 
