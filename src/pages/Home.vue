@@ -76,7 +76,7 @@
   background-size: auto;
   background-position: center center;
   background-repeat: repeat;
-  overflow: hidden; //試底下多的那塊哪來的
+  // overflow: hidden; //試底下多的那塊哪來的
 }
 
 @media only screen and (max-width: 767px) {
