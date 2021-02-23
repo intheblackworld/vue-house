@@ -47,9 +47,9 @@
     >
       <Section9 />
     </vue-lazy-component> -->
-      <vue-lazy-component class="section" id="contact">
+      <!-- <vue-lazy-component class="section" id="contact"> -->
         <ContactSection />
-      </vue-lazy-component>
+      <!-- </vue-lazy-component> -->
     <!-- </div> -->
     <MobileNav />
   </div>
