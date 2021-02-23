@@ -28,7 +28,7 @@
         <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
           <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
             <transition-group name="swipe-fade" mode="out-in">
-              <div v-for="(slide, i) in slideList2" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+              <div v-for="(slide, i) in slideList2" v-show="slideIndex2 === i" :key="slide.img" :class="`swipe-item absolute`">
                 <img :src="slide.img" :alt="slide.name">
                 <div class="name absolute" v-html="slide.name"></div>
               </div>
@@ -38,7 +38,7 @@
             <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
           </div> -->
             <div class="pagination absolute flex-ac">
-              <div :class="`pagination-dot`" v-for="(slide, index) in slideList2" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+              <div :class="`pagination-dot`" v-for="(slide, index) in slideList2" :key="slide.img + '-dot'" @click="goToMul(2, index)"><span :class="`${slideIndex2 === index ? 'active' : ''}`"></span></div>
             </div>
           </div>
         </div>
@@ -73,7 +73,7 @@
         <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
           <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
             <transition-group name="swipe-fade" mode="out-in">
-              <div v-for="(slide, i) in slideList3" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+              <div v-for="(slide, i) in slideList3" v-show="slideIndex3 === i" :key="slide.img" :class="`swipe-item absolute`">
                 <img :src="slide.img" :alt="slide.name">
                 <div class="name absolute" v-html="slide.name"></div>
               </div>
@@ -83,7 +83,7 @@
             <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
           </div> -->
             <div class="pagination absolute flex-ac">
-              <div :class="`pagination-dot`" v-for="(slide, index) in slideList3" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+              <div :class="`pagination-dot`" v-for="(slide, index) in slideList3" :key="slide.img + '-dot'" @click="goToMul(3, index)"><span :class="`${slideIndex3 === index ? 'active' : ''}`"></span></div>
             </div>
           </div>
         </div>
@@ -1023,6 +1023,8 @@ export default {
       currentIndex: 0,
       imgWidth: window.innerWidth * 0.187,
       imgHeight: window.innerWidth * 0.156,
+      slideIndex2: 0,
+      slideIndex3: 0, 
       slideList: [
         /*{
           img: require('../works/1/1.jpg'),
@@ -1095,6 +1097,8 @@ export default {
     currentIndex(index) {
       if (index === 1 || index === 3) {
         this.slideIndex = 0
+        this.slideIndex2 = 0
+        this.slideIndex3 = 0
       }
     }
   },
