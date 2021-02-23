@@ -1,6 +1,6 @@
 <template>
   <div class="home no-padding-top">
-    <!-- <div class="bg-img"> -->
+    <div class="bg-img">
       <Loading :loading="load" />
       <!-- <SideNavigation /> -->
       <!-- <Navigation v-if="!isMobile" /> -->
@@ -50,7 +50,7 @@
       <!-- <vue-lazy-component class="section" id="contact"> -->
         <ContactSection />
       <!-- </vue-lazy-component> -->
-    <!-- </div> -->
+    </div>
     <MobileNav />
   </div>
 </template>
@@ -70,19 +70,18 @@
 }
 
 .bg-img {
-  // background-image: url('~@/projects/lj/s1/bg.png');
-  // // padding-top: $nav_pc_height;
-  // background-attachment: fixed;
-  // background-size: auto;
-  // background-position: center center;
-  // background-repeat: repeat;
-  // overflow: hidden; //試底下多的那塊哪來的
+  background-image: url('~@/projects/lj/s1/bg.png');
+  // padding-top: $nav_pc_height;
+  background-attachment: fixed;
+  background-size: auto;
+  background-position: center center;
+  background-repeat: repeat;
+  overflow: hidden; //試底下多的那塊哪來的
 }
 
 @media only screen and (max-width: 767px) {
   .bg-img {
-    // background-image: url('~@/projects/lj/s1/bg.png');
-    // background-image: url('~@/projects/lj/s1/bg_m.png');
+    background-image: url('~@/projects/lj/s1/bg_m.png');
   }
 }
 </style>
