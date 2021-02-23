@@ -361,12 +361,12 @@
   .name {
     right: 1.5em;
     bottom: 1em;
-    font-size: 0.78125vw;
+    font-size: size(15);
     font-weight: 400;
     font-stretch: normal;
     font-style: normal;
     line-height: 1;
-    letter-spacing: 0.89px;
+    letter-spacing:0.05em;
     text-align: left;
     color: #fff;
     text-shadow: 0 0.1em 0.3em #000;
@@ -732,7 +732,7 @@
   .img {
     // @include img_l_m(375, 70, 0);
     width: sizem(375);
-    height: sizem(211);
+    height: sizem(260);
     z-index: 2;
     margin: sizem(25) 0;
     left: sizem(-36);
@@ -742,7 +742,7 @@
   /* Swipe */
   .swipe {
     width: sizem(375);
-    height: sizem(211);
+    height: sizem(260);
     z-index: 2;
     margin: sizem(25) 0;
     left: sizem(-36);
@@ -798,16 +798,20 @@
   .swipe-item {
     width: 100%;
     z-index: 0;
-    height: sizem(175);
+    height:100%;
     bottom: 0;
     left: 0;
 
     img {
       width: 100%;
-      height: sizem(175);
+      height:100%;
       bottom: 0;
       left: 0;
     }
+
+  .name {
+    font-size: sizem(12);
+  }
 
     // &:nth-child(1) {
     //   z-index: 1;
@@ -826,7 +830,7 @@
 
   .pagination {
     width: auto;
-    top: sizem(42);
+    top: sizem(10);
     // left: 0;
     right: sizem(0);
     margin: 0 auto;
@@ -1065,30 +1069,30 @@ export default {
       slideList2: [
         {
           img: require('../works/2/1.jpg'),
-          // name: '台北101',
+          name: '3D模擬示意圖',
         },
         {
           img: require('../works/2/2.jpg'),
-          // name: '台北101',
+          name: '3D模擬示意圖',
         },
         {
           img: require('../works/2/3.jpg'),
-          // name: '台北101',
-        },
-        // {
-        //   img: require('../works/1/6.jpg'),
-        //   // name: '台北101',
-        // },
+          name: '',
+        }
       ],
       slideList3: [
         {
           img: require('../works/3/1.jpg'),
-          // name: '台北101',
+          name: '3D模擬示意圖',
         },
-        // {
-        //   img: require('../works/1/6.jpg'),
-        //   // name: '台北101',
-        // },
+        {
+          img: require('../works/3/2.jpg'),
+          name: '3D模擬示意圖',
+        },
+        {
+          img: require('../works/3/3.jpg'),
+          name: '3D模擬示意圖',
+        }
       ],
     }
   },
