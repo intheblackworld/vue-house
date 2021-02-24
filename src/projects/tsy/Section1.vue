@@ -42,6 +42,7 @@
       </div>
       <img src="./s1/btn_class.png" :alt="`${info.caseName}_btn`" class="btn" v-if="isPC" v-scroll-to="{ element: `#contact` }">
       <img src="./mobile/m_btn_class.png" :alt="`${info.caseName}_btn`" class="btn" v-if="isMobile" v-scroll-to="{ element: `#contact` }">
+      <img src="./s1/star_class.png" :alt="`${info.caseName}_star`" class="star" v-scroll-to="{ element: `#contact` }">
     </div>
   </div>
 </template>
@@ -161,6 +162,11 @@
     background-color: #fff;
     height: size(70);
   }
+}
+
+.star {
+  @include img_r_pc(381, 706, 172);
+  cursor: pointer;
 }
 
 .btn {
@@ -392,7 +398,7 @@
   }
   // ----- bling mobile
   .bling_1 {
-    @include img_c_m(335, 260);
+    @include img_c_m(335, 180);
   }
 
   .bubble-bg {

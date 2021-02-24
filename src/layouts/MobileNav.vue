@@ -9,7 +9,7 @@
       <font-awesome-icon icon="pen" />
       <div class="label">預約賞屋</div>
     </a>
-    <a class="nav-item" @click="showMessengerDialog">
+    <a class="nav-item" @click="showWaitingDialog">
       <font-awesome-icon :icon="['fab', 'facebook-messenger']" />
       <div class="label">FB諮詢</div>
     </a>
@@ -30,6 +30,16 @@
     </el-dialog>
     <el-dialog title :visible.sync="isShowMapDialog" width="90%" :modal-append-to-body="false">
       <MapDialog :link="info.googleLink" :address="info.address" />
+    </el-dialog>
+    <el-dialog
+      title="敬請期待"
+      class="waiting-dialog"
+      :visible.sync="isShowWaitingDialog"
+      :width="isMobile ? '90%' : '500px'"
+      :modal-append-to-body="false"
+      center
+    >
+      
     </el-dialog>
   </div>
 </template>
@@ -58,6 +68,7 @@ export default {
       isShowCallDialog: false,
       isShowMessengerDialog: false,
       isShowMapDialog: false,
+      isShowWaitingDialog: false,
     }
   },
   computed: {
@@ -84,6 +95,10 @@ export default {
     showMapDialog() {
       this.isShowMapDialog = true
     },
+
+    showWaitingDialog() {
+      this.isShowWaitingDialog = true
+    }
   },
 }
 </script>

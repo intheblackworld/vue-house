@@ -168,8 +168,14 @@ export default {
 @import '@/assets/style/function.scss';
 
 .child_1 {
-  @include img_r_pc(199, 0, 122);
-  transform: translateY(-30px);
+  position: absolute;
+  top: 90px;
+  right: 150px;
+  // left: 0;
+  // margin: 0 auto;
+  width: 120px;
+  // @include img_r_pc(120, 75, 142);
+  transform: translateY(-15px);
   animation: an 3s 1s infinite alternate-reverse;
 }
 

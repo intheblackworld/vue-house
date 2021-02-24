@@ -9,7 +9,7 @@
       :options="options"
       id="fullpage"
     > -->
-    <LeafFlow />
+    <!-- <LeafFlow /> -->
     <vue-lazy-component class="section relative" id="section1" @init="init" style="z-index: 3;">
       <Section1 />
     </vue-lazy-component>
@@ -103,7 +103,7 @@ import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
-import LeafFlow from '@/components/LeafFlow.vue'
+// import LeafFlow from '@/components/LeafFlow.vue'
 
 import Section1 from '@/projects/tsy/Section1.vue'
 import Section2 from '@/projects/tsy/Section2.vue'
@@ -124,7 +124,7 @@ export default {
     // Indigator,
     // Navigation,
     // SideNavigation,
-    LeafFlow,
+    // LeafFlow,
     ContactSection,
     MobileNav,
     Section1,
