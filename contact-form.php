@@ -2,12 +2,12 @@
 #下3段式抓 為案件編號 $case_code
 #$case_code_test 是用來判斷是否為1的測試頁
 #$case_code = "jw";特殊案使用
-$src = $_SERVER['SERVER_NAME'];
-$case_code_test = substr(substr($src, 0, strpos($src, '.')), -1);
-$case_code = substr($src, 0, strpos($src, $case_code_test == '1' ? '1' : '.'));
+$src =$_SERVER['SERVER_NAME']; 
+$case_code_test = substr(substr($src,0,strpos($src,'.')),-1);
+$case_code = substr($src,0,strpos($src,$case_code_test=='1'?'1':'.'));
 
 # PDO DB 連線 Start
-$pdo = new pdo('mysql:host=localhost;dbname=htw_web', 'htw', '748aSgl5Ni');
+$pdo=new pdo('mysql:host=localhost;dbname=htw_web','htw','748aSgl5Ni');
 $pdo->exec("SET NAMES 'utf8'");
 # PDO DB 連線 End
 
@@ -16,6 +16,7 @@ $pdo->exec("SET NAMES 'utf8'");
 $sql_name = "SELECT casename FROM susers WHERE email = '" . $case_code . "'";
 $dataList = $pdo->query($sql_name)->fetchAll();
 $case_name = $dataList[0]['casename'];
+
 
 $name         = isset($_POST['name']) ? $_POST['name'] : '';
 $phone        = isset($_POST['phone']) ? $_POST['phone'] : '';
