@@ -44,6 +44,8 @@
       <img src="./mobile/m_btn_class.png" :alt="`${info.caseName}_btn`" class="btn" v-if="isMobile" v-scroll-to="{ element: `#contact` }">
       <img src="./s1/star_class.png" :alt="`${info.caseName}_star`" class="star" v-scroll-to="{ element: `#contact` }">
     </div>
+    <img v-lazy="require('./s1/leaf.png')" alt="float" data-aos="float1" data-aos-delay="500" data-aos-duration="1100" class="float2 absolute">
+    <img v-lazy="require('./s1/leaf_2.png')" alt="float" data-aos="fade-down-left" data-aos-delay="400" data-aos-duration="1000" class="float3 absolute">
   </div>
 </template>
 
