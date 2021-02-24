@@ -29,7 +29,8 @@
       <img src="./s1/child_6.png" :alt="`${info.caseName}_child_6`" class="child_6">
     </div>
     <div class="content">
-      <img src="./s1/logo_noleaf.png" :alt="`${info.caseName}_logo`" class="logo">
+      <img src="./s1/logo_noleaf.png" :alt="`${info.caseName}_logo`" class="logo" v-if="isPC">
+      <img src="./s1/logo.png" :alt="`${info.caseName}_logo`" class="logo" v-if="isMobile">
       <div class="title1">新店站</div>
       <div class="title2">300秒</div>
       <div class="title3">房價省一半</div>
@@ -44,8 +45,8 @@
       <img src="./mobile/m_btn_class.png" :alt="`${info.caseName}_btn`" class="btn" v-if="isMobile" v-scroll-to="{ element: `#contact` }">
       <img src="./s1/star_class.png" :alt="`${info.caseName}_star`" class="star" v-scroll-to="{ element: `#contact` }">
     </div>
-    <img v-lazy="require('./s1/leaf.png')" alt="float" data-aos="float1" data-aos-delay="500" data-aos-duration="1100" class="float2 absolute">
-    <img v-lazy="require('./s1/leaf_2.png')" alt="float" data-aos="fade-down-left" data-aos-delay="400" data-aos-duration="1000" class="float3 absolute">
+    <img src="./s1/leaf.png" :alt="`${info.caseName}_float`" data-aos="float1" data-aos-delay="0" data-aos-duration="1100" class="float1 absolute" v-if="isPC">
+    <img src="./s1/leaf_2.png" :alt="`${info.caseName}_float`" data-aos="float2" data-aos-delay="0" data-aos-duration="1000" class="float2 absolute" v-if="isPC">
   </div>
 </template>
 
@@ -292,6 +293,17 @@
   @include img_r_pc(25, 232, 114);
   top: auto;
   bottom: 0;
+}
+
+.float1 {
+  @include img_r_pc(77, 251, 188);
+  opacity: 0;
+}
+
+.float2 {
+  @include img_r_pc(88, 857, 583);
+  opacity: 0;
+  z-index: 3;
 }
 
 @media only screen and (max-width: 1440px) {
