@@ -1,19 +1,18 @@
 <template>
   <div class="section10">
-    <img src="./s10/2.jpg" alt="" class="bg-img" v-if="!isMobile">
-    <img src="./s10/2_m.jpg" alt="" class="bg-img" v-else>
+    <img src="./s10/bg.jpg" alt="" class="bg-img" v-if="!isMobile">
+    <img src="./s10/bg_m.jpg" alt="" class="bg-img" v-else>
     
       <div class="txt absolute">
     <div class="subtitle" data-aos="fade-up" data-aos-delay="200">
       從氣質，就看出精湛品質
     </div>
     <div class="title" data-aos="fade-up" data-aos-delay="400">
-      一筆箍耐震精工<br />人文石尚 風格直寓
+      職人鍛造 頂奢耐震<br />人文石尚 風格直寓
     </div>
     <div class="hr" data-aos="fade-up" data-aos-delay="600"></div>
     <div class="desc" data-aos="fade-up" data-aos-delay="800">
-      大器「雪花白蒙卡花崗石」，書寫外觀如渾然天成的山水流瀑，文雅堅毅，展現力抗溫差落雨的雋永誠真。<br /><br />
-      結合「一筆箍」鋼筋捆紮、SA級續接，締造抗震係數達0.274g、抗六級以上耐震設計。沈穩精鑄，篤實安家。
+      不惜血本，汲取日本匠師鍛造精髓，箍筋彎鉤角度，均經電腦專屬精密設計、三道工序手工細紮，搭配「SA級續接」、「雪花白蒙卡花崗石外觀」力抗溫差落雨，締造建築如專屬工藝極品、超越國家級達0.274g、耐六級以上強震。沈穩精鑄，頂奢罕見。
     </div>
       </div>
     <!-- <div class="title-bg">
@@ -92,8 +91,9 @@
   left: 0;
   /*display: flex;
   flex-direction:row-reverse;*/
-  padding: size(50) 0 0  size(140);
-  background:linear-gradient(to right, #9e0d1b 0%,#9e0d1b 50%,#9e0d1b00 100%);
+  //局部板用的 padding: size(50) 0 0  size(140);
+  padding: size(110) 0 0  size(200);
+  //局部板用的 background:linear-gradient(to right, #9e0d1b 0%,#9e0d1b 50%,#9e0d1b00 100%);
   }
 
 .subtitle {
@@ -140,7 +140,7 @@
   font-style: normal;
   line-height: 1.53;
   letter-spacing: 0.1em;
-  text-align: left;
+  text-align: justify;
   color: #fff;
 }
 @media only screen and (max-width: 1440px) and (min-width: 1025px) {
@@ -243,7 +243,6 @@
     top: sizem(0);
     left: sizem(0);
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.6);
-    border: solid 1px #ffffff;
     margin:sizem(20) 0;
   }
 
@@ -253,13 +252,7 @@
     left: sizem(32);
     text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
     font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.27;
     letter-spacing: sizem(1.5);
-    text-align: left;
-    color: #ffffff;
   }
 }
 </style>

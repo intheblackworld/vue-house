@@ -26,8 +26,8 @@
               data-aos="fade-down"
               data-aos-delay="100"
             >
-              <label>姓名</label>
-              <el-input
+              <label for="form-name">姓名</label>
+              <el-input id="form-name"
                 v-model="form.name"
                 placeholder
               ></el-input>
@@ -37,14 +37,15 @@
               data-aos="fade-down"
               data-aos-delay="200"
             >
-              <label>手機</label>
-              <el-input
+              <label for="form-phone">手機</label>
+              <el-input id="form-phone"
                 v-model="form.phone"
                 placeholder
               ></el-input>
             </div>
-            <!-- <div class="row" data-aos="fade-down"
-        data-aos-delay="300">
+          <!--
+            <div class="row" data-aos="fade-down"
+              data-aos-delay="300">
               <label>聯絡時間(起)</label>
               <el-time-select
                 v-model="form.time_start"
@@ -57,7 +58,7 @@
               ></el-time-select>
             </div>
             <div class="row" data-aos="fade-down"
-        data-aos-delay="400">
+             data-aos-delay="400">
               <label>聯絡時間(迄)</label>
               <el-time-select
                 v-model="form.time_end"
@@ -68,7 +69,8 @@
                   end: '18:00',
                 }"
               ></el-time-select>
-            </div> -->
+            </div> 
+          -->
             <!-- <div class="row">
               <label>想看房型</label>
               <el-select v-model="form.house" placeholder>
@@ -84,14 +86,15 @@
             <!-- <div class="row">
               <label>E-mail</label>
               <el-input v-model="form.email" placeholder></el-input>
-            </div> -->
+            </div> 
+          -->
             <div
               class="row"
               data-aos="fade-down"
               data-aos-delay="300"
             >
-              <label>居住城市</label>
-              <el-select
+              <label for="form-city">居住城市</label>
+              <el-select id="form-city"
                 v-model="form.city"
                 placeholder
               >
@@ -109,8 +112,8 @@
               data-aos="fade-down"
               data-aos-delay="400"
             >
-              <label>居住地區</label>
-              <el-select
+              <label for="form-area">居住地區</label>
+              <el-select id="form-area"
                 v-model="form.area"
                 placeholder
               >
@@ -400,6 +403,7 @@ export default {
     align-items: flex-start;
     margin: 0 auto;
     justify-content: space-between;
+    align-content:space-between;
     > .group {
       flex: 1;
       align-items: flex-start;
@@ -408,16 +412,28 @@ export default {
 
   .group {
     height: 250px;
+    display: flex;
+    flex-direction:column;
     margin-bottom: 40px;
+    justify-content:space-between;
+    align-content:space-between;
 
     &:nth-child(1) {
       border-right: 1px solid rgba(0, 0, 0, 0.2);
       .row {
-        justify-content: flex-start;
+        overflow: hidden;
+        width: 95%;
+      justify-content: flex-start;
+    border: $order_input_border;
+    background: $order_input_bg;
+    padding: 0 0 0 0.5em;
+    margin:0 0 0 0;
+     //margin: ;
       }
     }
 
     &:nth-child(2) {
+      align-items:center;margin:0 0 0 7px;
       .row {
         justify-content: flex-end;
         align-items: flex-start;
@@ -429,7 +445,6 @@ export default {
   .row {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
 
     &.house {
       margin-top: 50px;
@@ -517,6 +532,19 @@ export default {
       height: auto !important;
       margin-bottom: 0px !important;
       border: none !important;
+      
+      &:nth-child(1) {
+      .row {
+        width: 100%;
+     //margin: ;
+      }
+    }
+
+    &:nth-child(2) {margin: 0 0 0 0;
+      .row {
+        width: 100%;
+      }
+    }
     }
 
     .row {
