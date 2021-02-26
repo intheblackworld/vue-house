@@ -276,9 +276,9 @@ export default {
   methods: {},
 
   mounted() {
-    // setTimeout(() => {
-    //   this.blockIndex = 1
-    // }, 6000)
+    setTimeout(() => {
+      this.blockIndex = 1
+    }, 6000)
   },
 
   created() {},
