@@ -453,7 +453,7 @@
     text-align: left;
     color: #ffffff;
     white-space: nowrap;
-    z-index: 120;
+    z-index: 10;
   }
 
   .big-eng {
@@ -468,7 +468,7 @@
     text-align: center;
     color: #ffffff;
     white-space: nowrap;
-    z-index: 120;
+    z-index: 10;
   }
 
   .desc {
@@ -518,7 +518,7 @@
     top: sizem(0);
     left: sizem(0);
     object-fit: cover;
-    z-index: 50 !important;
+    z-index: 3 !important;
     opacity: 1 !important;
   }
 
