@@ -12,12 +12,12 @@
           <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
-          <div class="mask" v-if="isMobile"></div>
           <div class="btn flex-c" v-if="isMobile" @click="isDialog = true" v-html="slideList[slideIndex].btn"></div>
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+            <div class="prev-btn" @click="decIndex"></div>
+            <div class="next-btn" @click="addIndex"></div>
           </div>
+          <div class="mask" v-if="isMobile" @click="isDialog = true"></div>
         </div>
       </div>
       <!--  <div v-if="!isMobile">
@@ -384,18 +384,6 @@
   }
 }
 
-.swipe-btns {
-  width: 100%;
-  height: 100%;
-  padding: 0 15px;
-  z-index: 3;
-
-  .prev-btn,
-  .next-btn {
-    width: size(20);
-    cursor: pointer;
-  }
-}
 
 @media only screen and (max-width: 1440px) {
 }
@@ -515,29 +503,31 @@
 
   .mask {
     position: absolute;
-    width: 100vw;
+    width:76%;
     height: sizem(288);
-    min-height: auto;
     top: sizem(0);
-    left: sizem(0);
+    left:12%;
+   //background-color: #b01f24;
+    min-height: auto;
     object-fit: cover;
-    background-color: #b01f24;
-    opacity: 0.46;
+    opacity: 0.46; 
+    z-index: 4;
   }
 
   .btn {
     position: absolute;
     z-index: 10;
-    width: sizem(150);
-    height: sizem(81);
+    width: sizem(170);
+    //height: sizem(81);
     min-height: auto;
     top: auto;
     bottom: 0;
     left: 0;
     right: 0;
     margin: 0 auto;
+    padding: 0.3em 0;
     background-color: #af1f24;
-    font-size: sizem(21);
+    font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -545,6 +535,7 @@
     letter-spacing: sizem(2.31);
     text-align: center;
     color: #ffffff;
+    border-radius: 0.5em 0.5em 0 0;
   }
 
   /* Swipe */
@@ -688,18 +679,24 @@
     }
   }
 
-  .swipe-btns {
-    width: 100%;
-    height: 100%;
-    padding: 0 15px;
-    z-index: 3;
+.swipe-btns {
+  width: 100%;
+  height: 100%;
+  padding: 0 0;
+  z-index: 3;
 
-    .prev-btn,
-    .next-btn {
-      width: sizem(15);
-      cursor: pointer;
-    }
+  .prev-btn,
+  .next-btn {position:relative;
+    top:0;height: 100%;
+    font-size:sizem(20);
+    width:1.8em;
+    background: #0003;
+    cursor: pointer;
+    &::after{content:"";width: 1em;height: 1em;border: solid #fff;border-width: 0.2em 0.2em 0 0;position:absolute;
+    top:calc(50% - 0.5em);left: calc(50% - 0.7em);transform:rotate(45deg);}
   }
+  .prev-btn{transform:scaleX(-1);}
+}
 
   .dialog {
     position: fixed;
@@ -755,7 +752,7 @@ export default {
           t2: '精質23坪 夢幻⼤大2房',
           t3: '唯美⾼高坪效！ 豪華大主臥',
           t4: '動線超流暢！ 忍不不住想跳起華爾滋！',
-          btn: '5F/B戶<br />點這放大圖',
+          btn: '5F/B戶 點擊放大',
           // name: '中山站商圈',
         },
         {
@@ -764,7 +761,7 @@ export default {
           t2: '珍稀28坪 重隱私特仕款',
           t3: '二房雙衛浴 邊間雙陽台',
           t4: '設計師特愛！ ⾵風靡歐美L型⾵風格居所！',
-          btn: '5F/C戶<br />點這放大圖',
+          btn: '5F/C戶 點擊放大',
           // name: '欣欣秀泰影城',
         },
         {
@@ -773,7 +770,7 @@ export default {
           t2: '完勝26坪 ⾃自由⼤大3房',
           t3: '空間⼤大尺度！ ⼩小宅⼤大尊嚴',
           t4: '新⼿手爸媽⼼心動！ 家族成⻑⾧長⼤大有容！',
-          btn: '5F/D戶<br />點這放大圖',
+          btn: '5F/D戶 點擊放大',
           // name: '南京東路、新生北商圈',
         },
         {
@@ -782,7 +779,7 @@ export default {
           t2: '邊間24坪 雍容⼤大2房',
           t3: '大容量量⽞玄關 全能收納宅',
           t4: '包租置產行情優！ 單身已婚都實住！',
-          btn: '5F/E戶<br />點這放大圖',
+          btn: '5F/E戶 點擊放大',
           // name: '南京商圈、商業大樓',
         },
       ],
