@@ -150,7 +150,7 @@
   }
 
   .pc1 {
-    @include img_r_pc(1920, 0, 0);
+    @include img_r_pc(1920, -200, 0);
   }
 
   .pc2 {
