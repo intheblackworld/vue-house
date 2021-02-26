@@ -6,13 +6,14 @@
     <!-- <div class="animate-slide" v-if="isMobile">
       <img src="./mo/s2/漂浮物件_分層/m_2_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
     </div> -->
-    <img src="./s2/2_bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC">
-    <h1 class="title">
+    <img src="./s2/2_bg.png" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC">
+    <!-- <h1 class="title">
       桃園新都心
-    </h1>
-    <h1 class="subtitle" v-if="isMobile">
+    </h1> -->
+    <!-- <h1 class="subtitle" v-if="isMobile">
       LOCATION
-    </h1>
+    </h1> -->
+    <img src="./s2/02_title_m.png" alt="" class="title-img">
     <Map :tagList="tagList" :bgSrc="bgSrc" :hand="hand" v-if="isMobile">
       <!-- <div class="text">
         <div class="title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">國際線上 雙北暢遊</div>
@@ -44,14 +45,16 @@
 }
 
 .bg-img {
-  width: 100%;
-  height: 100%;
+  width: size(1920);
+  height: size(938);
+  // border-top: 1px solid red;
+  margin-top: -1px;
   position: absolute;
   top: 0;
   left: 0;
   display: block;
-  object-fit: cover;
-  margin-top: 0;
+  // object-fit: cover;
+  // margin-top: 0;
 }
 
 .title {
@@ -115,9 +118,9 @@
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    min-height: sizem(427);
+    min-height: sizem(583);
     max-height: sizem(812);
-    height: sizem(427);
+    height: sizem(583);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -191,6 +194,11 @@
       @include img_c_m(375, -20);
     }
   }
+
+  .title-img  {
+    @include img_c_m(324, 33);
+    z-index: 10;
+  }
 }
 </style>
 <script>
@@ -213,7 +221,7 @@ export default {
       isTablet,
       info,
       tagList: [],
-      bgSrc: require('./mo/s2/2_bg_m.jpg'),
+      bgSrc: require('./s2/2_bg_m.jpg'),
       hand: require('./mo/s2/m_2_mobile_hand.png'),
     }
   },

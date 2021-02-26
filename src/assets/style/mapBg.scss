@@ -42,12 +42,12 @@
     overflow-y: hidden;
     .map-bg {
       width: auto;
-      height: size-m(427);
+      height: size-m(583);
     }
 
     img {
       width: auto;
-      height: size-m(427);
+      height: size-m(583);
     }
 
     .hand {
@@ -59,7 +59,7 @@
       left: 0;
       right: 0;
       margin: 0 auto;
-      top: size-m(190);
+      top: size-m(350);
       display: block;
       z-index: 10;
       animation: swing 2.5s ease-in-out 0s infinite;
@@ -73,7 +73,7 @@
       width: 300vw;
       height: size-m(94);
       position: absolute;
-      top: size-m(165);
+      top: size-m(315);
       left: 0;
       background-color: #004880;
       opacity: .6;

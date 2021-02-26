@@ -2,7 +2,7 @@
   <div class="home no-padding-top">
     <Loading :loading="load" />
     <SideNavigation />
-    <full-page ref="fullPage" :options="options" id="fullpage">
+    <!-- <full-page ref="fullPage" :options="options" id="fullpage"> -->
       <vue-lazy-component class="section relative" id="section1">
         <Section1 />
       </vue-lazy-component>
@@ -32,19 +32,19 @@
       <!-- <vue-lazy-component class="section" id="section7">
       <Section7 />
     </vue-lazy-component> -->
-      <vue-lazy-component class="section" id="section8">
+      <!-- <vue-lazy-component class="section" id="section8">
         <Section8 />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section9">
         <Section9 />
-      </vue-lazy-component>
+      </vue-lazy-component> -->
       <vue-lazy-component class="section" id="section10">
         <Section10 />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section11">
         <Section11 />
       </vue-lazy-component>
-    </full-page>
+    <!-- </full-page> -->
     <vue-lazy-component class="section" id="contact">
       <ContactSection />
     </vue-lazy-component>
@@ -92,8 +92,8 @@ import Section4 from '@/projects/hg1/Section4.vue'
 import Section5 from '@/projects/hg1/Section5.vue'
 import Section6 from '@/projects/hg1/Section6.vue'
 import Section7 from '@/projects/hg1/Section7.vue'
-import Section8 from '@/projects/hg1/Section8.vue'
-import Section9 from '@/projects/hg1/Section9.vue'
+// import Section8 from '@/projects/hg1/Section8.vue'
+// import Section9 from '@/projects/hg1/Section9.vue'
 import Section10 from '@/projects/hg1/Section10.vue'
 import Section11 from '@/projects/hg1/Section11.vue'
 
@@ -113,8 +113,8 @@ export default {
     Section5,
     Section6,
     Section7,
-    Section8,
-    Section9,
+    // Section8,
+    // Section9,
     Section10,
     Section11,
   },
@@ -165,10 +165,10 @@ export default {
   },
   mounted() {
     window.addEventListener('scroll', this.onScroll, false)
-    this.action = this.$refs.fullPage.api
-    if (this.isMobile) {
-      this.$refs.fullPage.api.setResponsive(true)
-    }
+    // this.action = this.$refs.fullPage.api
+    // if (this.isMobile) {
+    //   this.$refs.fullPage.api.setResponsive(true)
+    // }
   },
   methods: {
     init() {},

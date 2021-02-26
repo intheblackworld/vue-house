@@ -598,7 +598,7 @@ export default {
         },
         {
           img: require('./s4/slider_1-2.jpg'),
-          name: '桃園捷運綠線G12站',
+          name: '桃園捷運綠線G12站　情境示意圖',
         },
         {
           img: require('./s4/slider_1-3.jpg'),
