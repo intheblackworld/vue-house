@@ -13,7 +13,7 @@
     <vue-lazy-component class="section relative" id="section1" @init="init" style="z-index: 3;">
       <Section1 />
     </vue-lazy-component>
-<!--
+    <!--
     <vue-lazy-component class="section" id="section2">
       <Section2 />
     </vue-lazy-component>
@@ -22,63 +22,34 @@
       id="section3"
     >
 -->
-
+    <vue-lazy-component>
       <Section3 :viewIndex="viewIndex" />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section relative"
-      id="section4"
-      style="z-index: 3;"
-    >
+    <vue-lazy-component class="section relative" id="section4" style="z-index: 3;">
       <Section4 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section5"
-    >
+    <vue-lazy-component class="section" id="section5">
       <Section5 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section6"
-    >
+    <vue-lazy-component class="section" id="section6">
       <Section6 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section7"
-    >
+    <vue-lazy-component class="section" id="section7">
       <Section7 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section8"
-    >
+    <vue-lazy-component class="section" id="section8">
       <Section8 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section9"
-    >
+    <vue-lazy-component class="section" id="section9">
       <Section9 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section relative"
-      id="section10"
-      style="z-index: 3;"
-    >
+    <vue-lazy-component class="section relative" id="section10" style="z-index: 3;">
       <Section10 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section12"
-    >
+    <vue-lazy-component class="section" id="section12">
       <Section12 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section11"
-    >
+    <vue-lazy-component class="section" id="section11">
       <Section11 />
     </vue-lazy-component>
     <vue-lazy-component class="section" id="contact">
@@ -98,7 +69,9 @@
 .section .fp-tableCell {
   height: auto !important;
 }
-#contact{z-index: 3;}
+#contact {
+  z-index: 3;
+}
 </style>
 
 <script>
@@ -188,10 +161,8 @@ export default {
           allImagesLoaded()
         }
       }
-      $('img').each(function(idx, img) {
-        $('<img>')
-          .on('load', imageLoaded)
-          .attr('src', $(img).attr('src'))
+      $('img').each(function (idx, img) {
+        $('<img>').on('load', imageLoaded).attr('src', $(img).attr('src'))
       })
     })
     // window.location = "https://ywh.nhc888.com.tw/"
@@ -202,7 +173,6 @@ export default {
     // if (this.isMobile) {
     //   this.$refs.fullPage.api.setResponsive(true)
     // }
-    
   },
   methods: {
     init() {},
@@ -211,7 +181,7 @@ export default {
       const navContents = document.querySelectorAll('.section')
       // 所有锚点元素的 offsetTop
       const offsetTopArr = []
-      navContents.forEach(item => {
+      navContents.forEach((item) => {
         offsetTopArr.push(item.offsetTop)
       })
       // 获取当前文档流的 scrollTop
