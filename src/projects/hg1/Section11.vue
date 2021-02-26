@@ -633,6 +633,7 @@
   .dialog {
     width: 100vw;
     height: 100vh;
+    max-height: 100vh;
     position: fixed;
     top: 0;
     background-color: rgba(45, 115, 171, 1);

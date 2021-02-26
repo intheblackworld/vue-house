@@ -42,10 +42,10 @@ export default {
         }
 
         map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2 + 130, 0)
-      }, 400)
+      }, 600)
       setTimeout(() => {
         this.hide = false
-      }, 700)
+      }, 1000)
     }
   },
 }
