@@ -237,7 +237,7 @@
 .swipe {
   width: size(1310);
   height: size(900);
-  top: calc(50% - 20.3vw);
+  top: calc(50% - 25.3vw);
   right: 0;
   object-fit: cover;
 }
