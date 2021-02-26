@@ -72,7 +72,6 @@
     <vue-lazy-component
       class="section"
       id="section12"
-      style="z-index: 3;"
     >
       <Section12 />
     </vue-lazy-component>
