@@ -136,14 +136,17 @@
 
 .top-logo {
   @include img_c_pc(954, 165);
+  top: calc(50% - 18vw);
 }
 
 .top-title1 {
   @include img_c_pc(954, 527);
+  top: calc(50%);
 }
 
 .top-title2 {
   @include img_c_pc(766, 675);
+  top: calc(50% + 7.5vw);
 }
 
 // begin
@@ -273,9 +276,9 @@ export default {
   methods: {},
 
   mounted() {
-    setTimeout(() => {
-      this.blockIndex = 1
-    }, 6000)
+    // setTimeout(() => {
+    //   this.blockIndex = 1
+    // }, 6000)
   },
 
   created() {},
