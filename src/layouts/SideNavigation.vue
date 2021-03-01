@@ -19,8 +19,8 @@
           <span class="link">
             <img v-if="item.imgSrc" :src="item.imgSrc" alt />
             <span>
-              <div class="title">{{item.name}}</div>
-              <span class="subTitle">{{item.subTitle}}</span>
+              <div class="title" v-html="item.name"></div>
+              <span class="subTitle" v-html="item.subTitle"></span>
             </span>
           </span>
         </li>

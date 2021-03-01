@@ -11,14 +11,10 @@ export default {
   indigatorLength: 10,
 
   houseInfos: [
-  /* ['投資興建', '盛泓開發股份有限公司',],
-    ['建築設計', '吳文修建築師事務所',],
-     ['基地面積', '316坪',],
-    ['樓層規劃', '地上8層/ 地下4層',],
-    ['規劃戶數', '64戶',],
-    ['規劃坪數', '14~24坪',],
-    ['座落位置', '台北市信義區吳興街524巷',],
-    */
+    ['投資興建', '盛泓開發股份有限公司'],
+    ['營造公司', '昇北營造股份有限公司'],
+    ['企劃銷售', '新富利廣告有限公司'],
+    ['景觀設計', '六國景觀'],
   ],
 
   gtmCode: [' '], // 可放置多個
@@ -26,7 +22,7 @@ export default {
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
   order: {
-    title: isMobile ? '立即預約' : '立即預約',
-    subTitle: ''
+    title: isMobile ? '預約專線' : '預約專線',
+    subTitle: '｜相約九揚 蘆洲最美的家｜'
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="contact-info" class="contact-info" data-aos="fade" data-aos-delay="0">
-      <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
+      <img class="logo" src="@/projects/cy1/s10/09_logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
       <div class="info">
         <div class="btn flex-c" @click="showCallDialog" data-aos="fade-down" data-aos-delay="100">
           <span class="flex-c">
@@ -14,7 +14,7 @@
             <font-awesome-icon :icon="['fab', 'facebook-messenger']" /><span>FB 諮詢</span>
           </span>
         </div>
-        <a class="btn flex-c" :href="info.fbLink" target="_blank" data-aos="fade-down" data-aos-delay="300">
+        <a class="btn flex-c bt_fanpage" :href="info.fbLink" target="_blank" data-aos="fade-down" data-aos-delay="300">
           <span class="flex-c">
             <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
           </span>
@@ -97,7 +97,7 @@ export default {
   position: relative;
   z-index: 3;
   width: 1200px;
-  height: 480px;
+  height: 320px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
@@ -111,6 +111,7 @@ export default {
   height: auto;
   // height:;
   margin: 0 auto 20px;
+  margin-top: -200px;
 }
 .info {
   width: 880px;

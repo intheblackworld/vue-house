@@ -1,11 +1,13 @@
 <template>
   <div class="house-info" id="house-info">
-    <div class="content">
-     <!--  <h3 class="title" data-aos="fade-down" data-aos-delay="0">建案資訊</h3> -->
-      <div class="info">
-        <div class="item" :key="infos[0]" v-for="(infos, index) in houseInfos" data-aos="fade-right" :data-aos-delay="100 + index * 100" data-aos-offset="-100">
-          <h3 class="label">{{infos[0]}}</h3>
-          <p class="desc" v-html="infos[1]"></p>
+    <div class="container">
+      <div class="content">
+        <h3 class="title" data-aos="fade-down" data-aos-delay="0">建案資訊</h3>
+        <div class="info">
+          <div class="item" :key="infos[0]" v-for="(infos, index) in houseInfos" data-aos="fade-right" :data-aos-delay="100 + index * 100" data-aos-offset="-100">
+            <h3 class="label">{{infos[0]}}</h3>
+            <p class="desc" v-html="infos[1]"></p>
+          </div>
         </div>
       </div>
     </div>
@@ -32,11 +34,18 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/style/variableColor.scss';
+@import '@/assets/style/function.scss';
 .house-info {
   width: 100vw;
   background: $house_bg;
   position: relative;
   z-index: 1;
+}
+
+.container {
+  width: size(1440);
+  margin: 0 auto;
+  background-color: #542e71;
 }
 .content {
   width: 686px;
@@ -65,7 +74,7 @@ export default {
 
 .item {
   font-size: 15px;
-  margin-bottom:2em;
+  margin-bottom: 2em;
   margin-right: 10em;
   width: 260px;
   //height: 30px;
@@ -74,17 +83,27 @@ export default {
   padding-left: 10px;
   display: flex;
   align-items: center;
-  white-space: nowrap;position: relative;
-  &::before{content: "";width: 4px;height: 1.4em;background:$house_border_color;margin: 0px 0.8em 0 0;position: absolute;top:0;left: 0;}
+  white-space: nowrap;
+  position: relative;
+  &::before {
+    content: '';
+    width: 4px;
+    height: 1.4em;
+    background: $house_border_color;
+    margin: 0px 0.8em 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
   &:nth-of-type(even) {
     margin-right: 0;
   }
 
   .label {
-    font-size:1em;
+    font-size: 1em;
     color: $house_label_color;
     margin-bottom: 0;
-    margin-right:0.8em;
+    margin-right: 0.8em;
     white-space: nowrap;
     font-family: $family3;
     width: 4.5em;

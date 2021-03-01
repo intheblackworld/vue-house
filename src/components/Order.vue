@@ -1,11 +1,14 @@
 <template>
   <div class="order-bg">
-    <!-- <img src="@/projects/fs/order/bg.png" alt="" class="bg-img"> -->
     <!-- <img src="@/projects/fs/order/bg1.png" alt="" class="bg-img no-mix"> -->
     <!-- <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile"> -->
-    <img src="../projects/cy/s1/bg.jpg" alt="" class="bg-top" v-if="isPC">
-    <img src="../projects/cy/s1/bg_m.jpg" alt="" class="bg-top" v-if="isMobile">
+    <!-- <img src="../projects/cy/s1/bg.jpg" alt="" class="bg-top" v-if="isPC"> -->
+    <!-- <img src="../projects/cy/s1/bg_m.jpg" alt="" class="bg-top" v-if="isMobile"> -->
     <div class="order-top">
+      <img src="@/projects/cy1/s10/09_people_img1.png" :alt="`${info.caseName}_people`" class="people1">
+      <img src="@/projects/cy1/s10/09_people_img2.png" :alt="`${info.caseName}_people`" class="people2">
+      <img src="@/projects/cy1/s10/09_tree_img.png" :alt="`${info.caseName}_tree`" class="tree1">
+      <img src="@/projects/cy1/s10/09_tree_img.png" :alt="`${info.caseName}_tree`" class="tree2">
       <!-- <div class="title-block">
         <h3 class="title">{{order.title}}</h3>
         <div class="subtitle">{{order.subTitle}}</div>
@@ -52,13 +55,7 @@
             <div class="row" data-aos="fade-down" data-aos-delay="300">
               <label>想看房型<span>*</span></label>
               <el-select v-model="form.house" placeholder>
-                <el-option
-                  v-for="city in ['一房','兩房', '三房']"
-                  :key="city"
-                  :label="city"
-                  :value="city"
-                  no-data-text=""
-                ></el-option>
+                <el-option v-for="city in ['一房','兩房', '三房']" :key="city" :label="city" :value="city" no-data-text=""></el-option>
               </el-select>
             </div>
             <!-- <div class="row">
@@ -99,7 +96,7 @@
         <div style="margin: 0 auto;z-index:2;" v-if="isMobile">
           <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
         </div>
-        <el-button class="form-submit flex-c" type="primary" :disabled="!checked || !isVerify" @click="submit" :loading="isSubmit">立即預約</el-button>
+        <el-button class="form-submit flex-c bt_registration" type="primary" :disabled="!checked || !isVerify" @click="submit" :loading="isSubmit">立即預約</el-button>
         <Loading :loading="isSubmit" :isOpacity="true" />
       </div>
     </div>
@@ -185,7 +182,7 @@ export default {
       this.isSubmit = true
       if (
         !this.form.name ||
-        !this.form.phone || 
+        !this.form.phone ||
         !this.form.house
         // ||
         // !this.form.time_start ||
@@ -250,6 +247,43 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/style/variableColor.scss';
 @import '@/assets/style/function.scss';
+
+.tree1 {
+  @include img_l_pc(437, 50, -90);
+  top: auto;
+  bottom: 0;
+  animation: tree 4s ease-out infinite alternate;
+  transform: skewX(2deg);
+  transform-origin: 50% 100%;
+}
+
+.tree2 {
+  @include img_r_pc(837, 50, -490);
+  top: auto;
+  bottom: 0;
+  animation: tree 4s ease-out infinite alternate;
+  transform: skewX(2deg);
+  transform-origin: 50% 100%;
+}
+
+@keyframes tree {
+  to {
+    transform: skewX(-2deg);
+  }
+}
+
+.people1 {
+  @include img_r_pc(142, 730, 180);
+  top: auto;
+  bottom: 0;
+}
+
+.people2 {
+  @include img_l_pc(168, 540, 500);
+  top: auto;
+  bottom: size(0);
+}
+
 .bg-img {
   width: 100vw;
   position: absolute;
@@ -266,7 +300,7 @@ export default {
   }
 }
 .order-bg {
-  background-color: $order_bg_color;
+  // background-color: $order_bg_color;
   // background-image: $order_bg_image;
   background-repeat: no-repeat;
   position: relative;
@@ -283,6 +317,8 @@ export default {
   .order-top {
     position: relative;
     overflow: hidden;
+    background-color: $order_bg_color;
+    padding-bottom: 160px;
   }
 
   .bg-top {
@@ -291,11 +327,11 @@ export default {
   .order-title {
     font-family: $family2;
     width: 100vw;
-    padding-top: 20px;
-    padding-bottom: 8px;
+    padding-top: 80px;
+    padding-bottom: 18px;
     font-weight: 700;
     line-height: 1.7;
-    letter-spacing: 20px;
+    // letter-spacing: 20px;
     font-size: calc(100vw * 36 / 1920);
     text-align: center;
     color: $order_title_color;
@@ -347,7 +383,7 @@ export default {
     text-align: center;
     color: $order_subtitle_color;
     margin-bottom: 0px;
-    padding-bottom: 8px;
+    padding-bottom: 28px;
   }
 
   .order {
@@ -415,7 +451,7 @@ export default {
       color: $order_input_label_color;
 
       span {
-        color:$order_check_span_color;
+        color: $order_check_span_color;
       }
     }
   }

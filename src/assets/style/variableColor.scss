@@ -1,5 +1,5 @@
 /* html, body */
-$bg: #552E70;
+$bg: url('~@/projects/cy1/all/w_bg.jpg');
 
 /* font-family */
 /* 1主要字體  2次要字體  3表單字體 */
@@ -35,8 +35,8 @@ $mask_icon_color: #c82514;
 $order_bg_color: #552E70;
 $order_bg_image: #552E70;
 $order_bg_image_m: #552E70;
-$order_title_color: #fff;
-$order_subtitle_color: #cc2617;
+$order_title_color: #ebd232;
+$order_subtitle_color: #fff;
 $order_input_label_color: #fff;
 $order_input_color: #1a1a1a !important;
 $order_input_placeholder: #666 !important;
@@ -55,38 +55,38 @@ $contact_bg: transparent;
 $contact_bg_m: transparent;
 $contact_shadow: 0 0 80px 0 rgba(0, 0, 0, 0.2);
 
-$contact_btn_border: inset 0 0 0px 3px #dadf00;
-$contact_btn_color: #fff;
-$contact_btn_icon: #fff;
-$contact_btn_bg: transparent;
+$contact_btn_border: inset 0 0 0px 1px #542e71;
+$contact_btn_color: #542e71;
+$contact_btn_icon: #542e71;
+$contact_btn_bg: #fff;
 $contact_btn_hover_color: #602a8b;
 $contact_btn_hover_icon: #602a8b;
-$contact_btn_hover_bg: #eee93a;
+$contact_btn_hover_bg: #ebd232;
 
 $contact_google_btn_color: #602a8b;
 $contact_google_btn_icon: #602a8b;
-$contact_google_btn_bg: #eee93a;
+$contact_google_btn_bg: #ebd232;
 $contact_google_hover_btn_color: #eee93a;
 $contact_google_hover_btn_icon: #eee93a;
 $contact_google_hover_btn_bg: #602a8b;
 
 // houseInfo
 $house_bg: #fff;
-$house_title_color: #602a8b;
-$house_border_color: #602a8b;
-$house_label_color: #602a8b;
-$house_desc_color: #666666;
+$house_title_color: #ebd232;
+$house_border_color: #ebd232;
+$house_label_color: #ebd232;
+$house_desc_color: #ebd232;
 
 // mobileNav
-$mobile_nav_background: #ffd600;
-$mobile_nav_color: #000000;
-$mobile_nav_border: #0a333a;
-$mobile_nav_icon: #000000;
+$mobile_nav_background: #542e71;
+$mobile_nav_color: #fff;
+$mobile_nav_border: #000;
+$mobile_nav_icon: #fff;
 
 $mobile_dialog_bg: #fff;
-$mobile_dialog_icon: #602a8b;
+$mobile_dialog_icon: #542e71;
 $mobile_dialog_desc: #000;
-$mobile_dialog_submit_bg: #602a8b;
+$mobile_dialog_submit_bg: #542e71;
 $mobile_dialog_submit_color: #fff;
 
 

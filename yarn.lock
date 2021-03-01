@@ -8956,6 +8956,11 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.0.tgz#bd76d6a23323e2ca8ffa12028dc04559c75f9019"
   integrity sha512-iq+S7vZJE60yejDYM0ek6zg308+UZsdtPExWP9VZoCFCz1zkJoXFnAX7aZfd/ZwrkidzdUZL0C/ryW+JwAiIGw==
 
+vue-accordion@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/vue-accordion/-/vue-accordion-1.0.0.tgz#b3ba39b22e49037860c5a89683bd68a3e05ee3ea"
+  integrity sha1-s7o5si5JA3hgxaiWg71oo+Be4+o=
+
 vue-awesome-swiper@^3.1.3:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/vue-awesome-swiper/-/vue-awesome-swiper-3.1.3.tgz#05500b501ffb3fec9bf7eb9985bcf4ae8360ed9e"

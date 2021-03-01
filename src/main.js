@@ -16,6 +16,8 @@ import VueFullPage from 'vue-fullpage.js'
 import VueLazyComponent from '@xunlei/vue-lazy-component'
 import VueRellax from 'vue-rellax'
 import Vue2TouchEvents from 'vue2-touch-events'
+import { vueAccordion } from 'vue-accordion'
+
 
 
 
@@ -50,6 +52,7 @@ library.add(faFacebookF)
 library.add(faMapMarkerAlt)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
+Vue.component('vue-accordion', vueAccordion)
 
 Vue.use(VueSvgIcon, {
   tagName: 'icon'
@@ -75,7 +78,7 @@ new Vue({
     //   })
     // }
   },
-  created () {
+  created() {
     AOS.init()
   },
   render: h => h(App)
