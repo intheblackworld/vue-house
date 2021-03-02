@@ -1,6 +1,7 @@
 <template>
   <div class="section7">
-    <img src="./s7/06_img.jpg" :alt="`${info.caseName}_img`" class="img">
+    <img src="./s7/06_img.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isPC">
+    <img src="./s7/06_bg_m.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isMobile">
     <h1 class="title">
       彩虹公園第一排　明媚風光生活
     </h1>
@@ -140,56 +141,58 @@
 @media screen and (max-width: 767px) {
   .section7 {
     width: 100vw;
-    height: calc(100vh - 63px);
-    min-height: sizem(604);
+    height: sizem(656);
+    min-height: sizem(656);
     max-height: sizem(750);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
     background: transparent;
   }
-  .logo {
-    @include img_c_m(320, 190);
-    top: calc(50% - 22vw);
-  }
-
-  .bg {
+  .img {
     @include img_c_m(375, 0);
+    height: sizem(656);
+  }
+
+  .title {
+    @include img_c_m(325, 30);
+    font-size: sizem(20);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.2;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(3, 27, 114, 0.75);
+  }
+
+  .desc {
+    @include img_c_m(325, 70);
+    font-size: sizem(13);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.92;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(3, 27, 114, 0.75);
+  }
+
+  .name {
+    @include img_l_m(325, 880, 20);
     top: auto;
-    bottom: sizem(-275);
-  }
-
-  .tree {
-    @include img_r_m(280, 0, -110);
-    top: auto;
-    bottom: 0;
-  }
-
-  .img2 {
-    @include img_l_m(135, 0, 140);
-    top: auto;
-    bottom: 0;
-  }
-
-  .img3 {
-    @include img_l_m(110, 0, 200);
-    top: auto;
-    bottom: 0;
-  }
-
-  .img4 {
-    @include img_l_m(113, 0, 206);
-    top: auto;
-    bottom: 0;
-  }
-
-  .t2 {
-    @include img_c_m(310, 121);
-    top: calc(50% - 40vw);
-  }
-
-  .mrt {
-    @include img_l_m(114, 0, 0);
+    bottom: sizem(20);
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
   }
 }
 </style>

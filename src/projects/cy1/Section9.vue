@@ -1,9 +1,16 @@
 <template>
   <div class="section9">
-    <img src="./s9/08_bg.jpg" :alt="`${info.caseName}_icon`" class="bg">
+    <img src="./s9/08_bg.jpg" :alt="`${info.caseName}_icon`" class="bg" v-if="isPC">
+    <div class="bg" v-if="isMobile"></div>
     <img src="./s9/08_logo_icon.png" :alt="`${info.caseName}_icon`" class="logo">
-    <img src="./s9/08_title_1.png" :alt="`${info.caseName}_icon`" class="title1">
-    <img src="./s9/08_title_2.png" :alt="`${info.caseName}_icon`" class="title2">
+    <img src="./s9/08_title_1.png" :alt="`${info.caseName}_icon`" class="title1" v-if="isPC">
+    <img src="./s9/08_title_2.png" :alt="`${info.caseName}_icon`" class="title2" v-if="isPC">
+    <div class="title1" v-if="isMobile">
+      九揚環球集團．經典建案
+    </div>
+    <div class="title2" v-if="isMobile">
+      世襲貴族風範　實力無可取代
+    </div>
     <vue-accordion :items="items" :accordionClass="acClass" :styles="styles"></vue-accordion>
   </div>
 </template>
@@ -33,6 +40,8 @@
   ul:hover {
     li:hover a {
       background: transparent !important;
+      box-shadow: rgba(50, 50, 93, 0.25) 30px 0px 30px -12px inset,
+        rgba(0, 0, 0, 0.3) 18px 0px 18px -18px inset;
     }
     li:nth-child(2) {
       width: 15% !important;
@@ -46,7 +55,55 @@
     }
   }
 }
+@media screen and (max-width: 767px) {
+  .vue-accordion {
+    max-width: 100vw !important;
+    width: 100vw;
+    position: relative;
+    top: 0;
+    top: sizem(250);
+    margin-bottom: sizem(200);
+    left: 0;
+  }
 
+  .vue-accordion {
+    ul {
+      width: 100%;
+      li {
+        display: block !important;
+        background-position: 100% 0% !important;
+        background-size: cover !important;
+      }
+      li {
+        width: 100vw !important;
+        height: sizem(218) !important;
+      }
+      li:nth-child(2) {
+        width: 100vw !important;
+        height: sizem(561) !important;
+      }
+    }
+    ul:hover {
+      li:hover a {
+        background: transparent !important;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+      }
+      li:nth-child(2) {
+        width: 100vw !important;
+        height: sizem(218) !important;
+      }
+      li {
+        width: 100vw !important;
+        height: sizem(218) !important;
+      }
+
+      li:hover {
+        width: 100vw !important;
+        height: sizem(561) !important;
+      }
+    }
+  }
+}
 </style>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
@@ -141,56 +198,48 @@
 @media screen and (max-width: 767px) {
   .section9 {
     width: 100vw;
-    height: calc(100vh - 63px);
+    height: auto;
     min-height: sizem(604);
-    max-height: sizem(750);
+    max-height: auto;
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
     background: transparent;
   }
-  .logo {
-    @include img_c_m(320, 190);
-    top: calc(50% - 22vw);
-  }
-
   .bg {
-    @include img_c_m(375, 0);
-    top: auto;
-    bottom: sizem(-275);
+    @include img_l_m(375, 0, 0);
+    height: sizem(250);
+    background-color: #542e71;
   }
 
-  .tree {
-    @include img_r_m(280, 0, -110);
-    top: auto;
-    bottom: 0;
+  .logo {
+    @include img_c_m(60, 40);
   }
 
-  .img2 {
-    @include img_l_m(135, 0, 140);
-    top: auto;
-    bottom: 0;
+  .title1 {
+    @include img_c_m(285, 83);
+    font-size: sizem(25);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 3.46;
+    letter-spacing: normal;
+    text-align: right;
+    color: #ebd232;
   }
 
-  .img3 {
-    @include img_l_m(110, 0, 200);
-    top: auto;
-    bottom: 0;
-  }
-
-  .img4 {
-    @include img_l_m(113, 0, 206);
-    top: auto;
-    bottom: 0;
-  }
-
-  .t2 {
-    @include img_c_m(310, 121);
-    top: calc(50% - 40vw);
-  }
-
-  .mrt {
-    @include img_l_m(114, 0, 0);
+  .title2 {
+    @include img_c_m(260, 159);
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    font-size: sizem(20);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-align: right;
+    color: #ffffff;
   }
 }
 </style>
@@ -211,27 +260,33 @@ export default {
       acClass: 'vue-accordion',
       styles: {
         div: {
-          height: '100vh',
+          height: isMobile ? 'auto' : '100vh',
         },
       },
       items: [
         {
           title: '',
           text: '',
-          url: '',
-          image: require('./s9/08_item_1.jpg'),
+          // url: '#',
+          image: isMobile
+            ? require('./s9/08_item_1_m.jpg')
+            : require('./s9/08_item_1.jpg'),
         },
         {
           title: '',
           text: '',
-          url: '',
-          image: require('./s9/08_item_2.jpg'),
+          // url: '#',
+          image: isMobile
+            ? require('./s9/08_item_2_m.jpg')
+            : require('./s9/08_item_2.jpg'),
         },
         {
           title: '',
           text: '',
-          url: '',
-          image: require('./s9/08_item_3.jpg'),
+          // url: '#',
+          image: isMobile
+            ? require('./s9/08_item_3_m.jpg')
+            : require('./s9/08_item_3.jpg'),
         },
       ],
     }

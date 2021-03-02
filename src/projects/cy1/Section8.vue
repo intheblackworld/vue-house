@@ -30,13 +30,25 @@
       </div>
     </div>
     <img src="./s8/07_dark_bg.png" :alt="`${info.caseName}_img`" class="mask">
-    <h1 class="title">
+    <h1 class="title" v-if="isPC">
       陽光、空氣、水 健康三要素，一宅收藏!
     </h1>
-    <h3 class="desc">
+    <h1 class="title" v-if="isMobile">
+      陽光、空氣、水 健康三要素<br />
+      一宅收藏!
+    </h1>
+    <h3 class="desc" v-if="isPC">
       為滿足頂客族與首購小家庭需求，規劃精緻17-33坪1-3房型，<br />
       客廳優質採光零暗房，廚房擁有通風窗，小坪數產品也享前陽台。<br />
       貼心全客變服務，隨心設計專屬的居住空間，理想好生活就在這裡！
+    </h3>
+    <h3 class="desc" v-if="isMobile">
+      為滿足頂客族與首購小家庭需求，<br />
+      規劃精緻17-33坪1-3房型，<br />
+      客廳優質採光零暗房，廚房擁有通風窗，<br />
+      小坪數產品也享前陽台。<br />
+      貼心全客變服務，隨心設計專屬的居住空間，<br />
+      理想好生活就在這裡！
     </h3>
   </div>
 </template>
@@ -180,56 +192,93 @@
 @media screen and (max-width: 767px) {
   .section8 {
     width: 100vw;
-    height: calc(100vh - 63px);
-    min-height: sizem(604);
-    max-height: sizem(750);
+    height: sizem(1188);
+    min-height: sizem(1188);
+    // max-height: sizem(750);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
     background: transparent;
   }
-  .logo {
-    @include img_c_m(320, 190);
-    top: calc(50% - 22vw);
+
+  .item-list {
+    width: 100vw;
+    margin: sizem(65) auto sizem(13);
+    flex-wrap: wrap;
   }
 
-  .bg {
-    @include img_c_m(375, 0);
-    top: auto;
-    bottom: sizem(-275);
+  .item {
+    width: sizem(375);
+    height: sizem(271);
+    position: relative;
+    .img {
+      width: sizem(139);
+      left: 0;
+      top: 0;
+      position: absolute;
+    }
+
+    .icon {
+      position: absolute;
+      // left: 0;
+      right: auto;
+      margin: 0 auto;
+      width: sizem(58);
+      top: sizem(0);
+      left: sizem(110);
+      z-index: 1;
+    }
+
+    .item-desc {
+      @include img_r_m(190, 90, 30);
+      font-size: sizem(13);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 2.54;
+      letter-spacing: normal;
+      text-align: left;
+      color: #606060;
+      color: #606060;
+    }
   }
 
-  .tree {
-    @include img_r_m(280, 0, -110);
+  .mask {
+    @include img_c_m(375, 591);
+    height: sizem(281);
     top: auto;
     bottom: 0;
+    background-color: #929292;
   }
 
-  .img2 {
-    @include img_l_m(135, 0, 140);
+  .title {
+    @include img_c_m(268, 612);
     top: auto;
-    bottom: 0;
+    bottom: sizem(203);
+    font-size: sizem(20);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: sizem(2);
+    text-align: center;
+    color: #ffffff;
+    white-space: nowrap;
   }
 
-  .img3 {
-    @include img_l_m(110, 0, 200);
+  .desc {
+    @include img_c_m(325, 692);
     top: auto;
-    bottom: 0;
-  }
-
-  .img4 {
-    @include img_l_m(113, 0, 206);
-    top: auto;
-    bottom: 0;
-  }
-
-  .t2 {
-    @include img_c_m(310, 121);
-    top: calc(50% - 40vw);
-  }
-
-  .mrt {
-    @include img_l_m(114, 0, 0);
+    bottom: sizem(34);
+    font-size: sizem(13);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.92;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    white-space: nowrap;
   }
 }
 </style>

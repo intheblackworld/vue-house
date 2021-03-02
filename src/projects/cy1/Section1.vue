@@ -1,6 +1,7 @@
 <template>
   <div class="section1">
     <img src="./s1/top_bg.jpg" :alt="`${info.caseName}_bg-img`" class="bg-img" v-if="isPC">
+    <Map :bgSrc="require('./s1/top_bg_m.jpg')" :hand="hand" v-if="isMobile"></Map>
     <img src="./s1/top_logo.png" :alt="`${info.caseName}_logo`" class="logo">
     <img src="./s1/top_title_1.png" :alt="`${info.caseName}_title_1`" class="title-1">
     <img src="./s1/top_title_2.png" :alt="`${info.caseName}_title_2`" class="title-2">
@@ -168,7 +169,7 @@
 @media screen and (max-width: 767px) {
   .section1 {
     width: 100vw;
-    height: sizem(1256);
+    height: sizem(1232);
     min-height: sizem(604);
     // max-height: sizem(750);
     // background-image: url('./mo/1/bg.png');
@@ -192,9 +193,9 @@
   }
 
   .tree1 {
-    @include img_c_m(320, 0);
-    top: auto;
-    bottom: 0;
+    @include img_c_m(320, 357);
+    // top: auto;
+    // bottom: 0;
     animation: tree 4s ease-out infinite alternate;
     transform: skewX(2deg);
     transform-origin: 50% 100%;
@@ -239,6 +240,7 @@
 <script>
 // @ is an alias to /src
 import info from '@/info'
+import Map from '@/components/Map.vue'
 import { isPC, isMobile, isTablet } from '@/utils'
 
 export default {
@@ -250,7 +252,12 @@ export default {
       isPC,
       isMobile,
       isTablet,
+      hand: require('./s1/m_2_mobile_hand.png'),
     }
+  },
+
+  components: {
+    Map,
   },
 
   methods: {},

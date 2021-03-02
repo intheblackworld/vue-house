@@ -16,7 +16,7 @@
             <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
             <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
           </div>
-          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" data-aos-offset="-500" v-if="isPC">
+          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" data-aos-offset="-500">
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList1" :key="slide.img + '-dot'" @click="goToMultiIndex(1, index)"><span :class="`${slideIndex1 === index ? 'active' : ''}`"></span></div>
           </div>
         </div>
@@ -45,7 +45,7 @@
             <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
             <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
           </div>
-          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" data-aos-offset="-500" v-if="isPC">
+          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" data-aos-offset="-500">
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList2" :key="slide.img + '-dot'" @click="goToMultiIndex(2, index)"><span :class="`${slideIndex1 === index ? 'active' : ''}`"></span></div>
           </div>
         </div>
@@ -66,7 +66,7 @@
             <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
             <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
           </div>
-          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" data-aos-offset="-500" v-if="isPC">
+          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" data-aos-offset="-500">
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList3" :key="slide.img + '-dot'" @click="goToMultiIndex(3, index)"><span :class="`${slideIndex1 === index ? 'active' : ''}`"></span></div>
           </div>
         </div>
@@ -83,7 +83,7 @@
             <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
             <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
           </div>
-          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" data-aos-offset="-500" v-if="isPC">
+          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" data-aos-offset="-500">
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList4" :key="slide.img + '-dot'" @click="goToMultiIndex(4, index)"><span :class="`${slideIndex1 === index ? 'active' : ''}`"></span></div>
           </div>
         </div>
@@ -408,68 +408,123 @@
   .section5 {
     min-height: auto;
     max-height: initial;
-    height: sizem(700);
+    height: sizem(2140 - 84);
     background-position: right calc(100% - 63px);
     background-size: 100% auto;
   }
 
-  .logo {
-    @include img_r_m(236, 56, 20);
+  .container {
+    width: sizem(375);
+    margin: 0 auto;
   }
 
-  .hr {
-    @include img_l_m(310, 481, 33);
-    border: solid 1.1px #888888;
-  }
-
-  .title {
-    @include img_l_m(310, 389, 33);
-    font-size: sizem(25);
+  .title-block {
+    width: 100vw;
+    background-color: #542e71;
+    font-size: sizem(20);
     font-weight: 900;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(1.25);
-    text-align: left;
-    color: #fff;
-    white-space: nowrap;
-    span {
-      color: #ffff00;
-    }
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 0;
+    position: absolute;
   }
 
-  .subtitle {
-    @include img_l_m(310, 433, 33);
-    font-size: sizem(25);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(1.25);
-    text-align: left;
-    color: #fff;
-    white-space: nowrap;
+  .title-block1 {
+    height: sizem(147);
+    top: 0;
+    left: 0;
   }
 
-  .desc {
-    @include img_l_m(310, 497, 33);
-    font-size: sizem(15);
+  .title-block2 {
+    top: sizem(261 + 147 + 246 + 286);
+    height: sizem(142);
+  }
+
+  .desc-block {
+    width: 100vw;
+    font-size: sizem(13);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2;
-    letter-spacing: sizem(0.75);
-    text-align: left;
-    color: #000;
-    white-space: normal;
+    line-height: 1.92;
+    letter-spacing: normal;
+    text-align: center;
+    color: #606060;
+    margin-bottom: 0;
+    position: absolute;
+  }
+
+  .desc-block1 {
+    height: sizem(246);
+    top: sizem(261 + 147);
+    left: 0;
+  }
+
+  .desc-block2 {
+    top: sizem(261 + 147 + 246 + 286 + 142 + 364);
+    height: sizem(223);
+  }
+
+  .tree {
+    @include img_r_m(300, 50, -150);
+    top: auto;
+    bottom: sizem(385);
+    animation: tree 4s ease-out infinite alternate;
+    transform: skewX(2deg);
+    transform-origin: 50% 100%;
+  }
+
+  @keyframes tree {
+    to {
+      transform: skewX(-2deg);
+    }
+  }
+
+  .people1 {
+    @include img_l_m(167, 612 - 74, 7);
+  }
+
+  .people2 {
+    display: none;
+    // @include img_r_pc(295, 540, 540);
+    // top: auto;
+    // bottom: size(-40);
+  }
+
+  .swipe1 {
+    height: sizem(261);
+    top: sizem(147) !important;
+    left: 0;
+  }
+
+  .swipe2 {
+    height: sizem(286);
+    left: 0;
+    top: sizem(261 + 147 + 246);
+  }
+
+  .swipe3 {
+    height: sizem(364);
+    top: sizem(261 + 147 + 246 + 286 + 142);
+  }
+
+  .swipe4 {
+    height: sizem(390);
+    margin-top: 0;
+    top: sizem(261 + 147 + 246 + 286 + 142 + 364 + 223)
   }
 
   /* Swipe */
   .swipe {
     width: 100vw;
-    height: sizem(211);
+    // height: sizem(211);
     min-height: auto;
-    top: sizem(149);
+    // top: sizem(149);
+    position: absolute;
     left: sizem(0);
     object-fit: cover;
   }
@@ -545,7 +600,7 @@
 
   .pagination {
     width: auto;
-    bottom: size(91);
+    bottom: sizem(14);
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -560,9 +615,9 @@
 
     span {
       display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
+      width: sizem(8.5);
+      height: sizem(8.5);
+      border-radius: sizem(8.5);
       box-shadow: 0 0 0 1px #fff;
       position: relative;
       background-color: rgba(0, 0, 0, 0.01);
@@ -573,8 +628,8 @@
         width: 60%;
         height: 60%;
         display: block;
-        background: #004ea2;
-        border-radius: 20px;
+        background: #fff;
+        border-radius: sizem(8.5);
         opacity: 1;
         position: absolute;
         top: 20%;
@@ -590,8 +645,8 @@
           width: 100%;
           height: 100%;
           display: block;
-          background: #004ea2;
-          border-radius: 20px;
+          background: #fff;
+          border-radius: sizem(8.5);
           opacity: 1;
           position: absolute;
           top: 0%;

@@ -124,56 +124,45 @@
 @media screen and (max-width: 767px) {
   .section3 {
     width: 100vw;
-    height: calc(100vh - 63px);
-    min-height: sizem(604);
+    height: sizem(526);
+    min-height: sizem(526);
     max-height: sizem(750);
+    background-color: #542e71;
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
-    background: transparent;
+    // background: transparent;
+  }
+  .img {
+    @include img_c_m(375, 22);
   }
   .logo {
-    @include img_c_m(320, 190);
-    top: calc(50% - 22vw);
+    @include img_c_m(211, 233);
   }
 
-  .bg {
-    @include img_c_m(375, 0);
-    top: auto;
-    bottom: sizem(-275);
+  .title {
+    @include img_c_m(325, 338);
+    font-size: sizem(20);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.95;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
   }
 
-  .tree {
-    @include img_r_m(280, 0, -110);
-    top: auto;
-    bottom: 0;
-  }
-
-  .img2 {
-    @include img_l_m(135, 0, 140);
-    top: auto;
-    bottom: 0;
-  }
-
-  .img3 {
-    @include img_l_m(110, 0, 200);
-    top: auto;
-    bottom: 0;
-  }
-
-  .img4 {
-    @include img_l_m(113, 0, 206);
-    top: auto;
-    bottom: 0;
-  }
-
-  .t2 {
-    @include img_c_m(310, 121);
-    top: calc(50% - 40vw);
-  }
-
-  .mrt {
-    @include img_l_m(114, 0, 0);
+  .desc {
+    @include img_c_m(325, 381);
+    font-size: sizem(13);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.92;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    // top: calc(50% - 9vw);
   }
 }
 </style>

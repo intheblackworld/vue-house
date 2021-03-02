@@ -290,7 +290,7 @@
         height: 100%;
         display: block;
         border-radius: 100%;
-        background-image: url('./s4/dot.png');
+        // background-image: url('./s4/dot.png');
         background-size: 52% auto;
         background-position: 54% 46%;
         background-repeat: no-repeat;
@@ -336,68 +336,60 @@
   .section4 {
     min-height: auto;
     max-height: initial;
-    height: sizem(700);
+    height: sizem(743);
     background-position: right calc(100% - 63px);
     background-size: 100% auto;
   }
 
-  .logo {
-    @include img_r_m(236, 56, 20);
-  }
-
-  .hr {
-    @include img_l_m(310, 481, 33);
-    border: solid 1.1px #888888;
-  }
-
   .title {
-    @include img_l_m(310, 389, 33);
-    font-size: sizem(25);
+    @include img_c_m(325, 23);
+    font-size: sizem(20);
     font-weight: 900;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(1.25);
-    text-align: left;
-    color: #fff;
-    white-space: nowrap;
-    span {
-      color: #ffff00;
-    }
-  }
-
-  .subtitle {
-    @include img_l_m(310, 433, 33);
-    font-size: sizem(25);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(1.25);
-    text-align: left;
-    color: #fff;
-    white-space: nowrap;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    color: #542e71;
   }
 
   .desc {
-    @include img_l_m(310, 497, 33);
-    font-size: sizem(15);
-    font-weight: normal;
+    @include img_c_m(325, 102);
+    font-size: sizem(13);
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2;
-    letter-spacing: sizem(0.75);
-    text-align: left;
-    color: #000;
-    white-space: normal;
+    line-height: 1.92;
+    letter-spacing: normal;
+    text-align: center;
+    color: #707070;
+    // top: calc(50% - 9vw);
+  }
+
+  .tree {
+    display: none;
+    // @include img_l_m(608, -50, 73);
+    // animation: tree 4s ease-out infinite alternate;
+    // transform: skewX(2deg);
+    // transform-origin: 50% 100%;
+  }
+
+  @keyframes tree {
+    to {
+      transform: skewX(-2deg);
+    }
+  }
+
+  .people {
+    @include img_l_m(195, 19, 11);
   }
 
   /* Swipe */
   .swipe {
     width: 100vw;
-    height: sizem(211);
+    height: sizem(318);
     min-height: auto;
-    top: sizem(149);
+    top: sizem(351);
     left: sizem(0);
     object-fit: cover;
   }
@@ -452,7 +444,7 @@
     height: 100%;
     z-index: 0;
     .slide-name {
-      right: 1em;
+      left: 1em;
       font-size: sizem(13);
     }
 

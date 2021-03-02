@@ -121,6 +121,11 @@ export default {
 /* 螢幕尺寸標準 */
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
+  .container {
+    width: 100vw;
+    margin: 0 auto;
+    background-color: #542e71;
+  }
   .content {
     //height: 15em;
     width: 100%;
@@ -140,6 +145,7 @@ export default {
     width: 100%;
     height: auto;
     margin-left: 20px;
+    margin-bottom: 5px;
     white-space: normal;
   }
 

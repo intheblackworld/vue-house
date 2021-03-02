@@ -1,14 +1,21 @@
-@import './function.scss';
+@import '../style/function.scss';
 @keyframes swing {
+  0% {
+    transform: translateX(20px);
+  }
 
- to {
-    transform: translateX(-15%);
+  50% {
+    transform: translateX(-20px);
+  }
+
+  100% {
+    transform: translateX(20px);
   }
 }
 
 .map {
   position: relative;
-  z-index: 1;
+  // z-index: 1;
   .map-bg {
     width: 100vw;
     height: auto;
@@ -27,76 +34,52 @@
     top: 0;
     left: 0;
   }
-
-  .mask {
-    width: 300vw;
-    height: 130vh;
-    position: absolute;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(to bottom,#0000 0%,#000 100%);
-    z-index: 2;
-  }
 }
 
 @media screen and (max-width: 767px) {
   .map {
     overflow-x: scroll;
     overflow-y: hidden;
-    width: 100vw;
     .map-bg {
       width: auto;
-      height: sizem(604);
-    }
-
-    .map-text {
-      width: auto;
-      height: 100vh;
+      height: size-m(1233);
     }
 
     img {
       width: auto;
-      height: sizem(604);
-    }
-
-    .mask {
-    //  animation: swing 2.5s ease-in-out 0s infinite;
-      left: 50%;
-    }
-
-    .mask {
-      width: 200vw;
-      height: sizem(57);
-      background-color: rgba(0, 53, 97, 0.72);
-      // animation: swing 2.5s ease-in-out 0s infinite;
-      left: 35vw;
-      position: absolute;
-      top: sizem(285);
-      left: 0;
-      opacity: 0;
-      transition: opacity .5s;
-      &.active {
-        opacity: 1;
-      }
+      height: size-m(1233);
     }
 
     .hand {
       position: absolute;
-      z-index: 3;
-      width: sizem(87) !important;
+      z-index: 2;
+      display: block;
+      width: size-m(111);
       height: auto !important;
-      left: sizem(475);
+      left: size-m(435);
       right: 0;
       margin: 0 auto;
-      top: sizem(298) !important;
-      display: block;
-      animation: swing 2.5s ease-in-out 0s infinite alternate-reverse;
-      opacity: 0;
-      transition: opacity .5s;
-      &.active {
-        opacity: 1;
+      top: size-m(940);
+      z-index: 10;
+      animation: swing 2.5s ease-in-out 0s infinite;
+      transition: all .3s;
+
+      &.hide {
+        opacity: 0;
+      }
+    }
+
+    .mask {
+      width: 200vw;
+      height: size-m(94);
+      position: absolute;
+      top: size-m(915);
+      left: 0;
+      background-color: rgba(28, 28, 28, 0.3);
+      z-index: 1;
+      transition: all .3s;
+      &.hide {
+        opacity: 0;
       }
     }
   }

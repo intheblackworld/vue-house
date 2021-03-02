@@ -304,7 +304,7 @@ export default {
   // background-image: $order_bg_image;
   background-repeat: no-repeat;
   position: relative;
-  padding-top: 130px;
+  // padding-top: 130px;
   background-size: 100vw auto;
   // background-attachment: fixed;
   background-position: 0% 0%;

@@ -1,9 +1,9 @@
 <template>
   <div class="map" id="map" refs="map" @scroll="handleScroll">
-    <img :src="hand" alt :class="`hand ${showMask ? 'active' : ''}`" />
+    <img :src="hand" alt :class="`hand ${showMask ? '' : 'hide'}`" />
     <img class="map-bg" :src="bgSrc" alt ref="mapbg" />
     <img class="map-text" :src="bgText" alt />
-    <div :class="`mask ${showMask ? 'active' : ''}`">
+    <div :class="`mask ${showMask ? '' : 'hide'}`">
     </div>
     <img
       :src="tag"
