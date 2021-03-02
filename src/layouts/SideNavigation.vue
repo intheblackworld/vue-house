@@ -183,7 +183,7 @@ export default {
   z-index: 24;
   background: $nav_bg;
   width: size(185);
-  left: size(-25);
+  left: size(55);
   top: size(-703);
   padding-top: size(120);
   padding-bottom: size(60);
