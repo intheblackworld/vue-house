@@ -136,7 +136,7 @@ export default {
 
   .title {
     font-size: 32px;
-    margin: 0.8em 0 0.5em 0;
+    margin: 0.8em 0 1.5em 0;
   }
 
   .item {
@@ -145,7 +145,7 @@ export default {
     width: 100%;
     height: auto;
     margin-left: 20px;
-    margin-bottom: 5px;
+    margin-bottom: 25px;
     white-space: normal;
   }
 

@@ -192,8 +192,8 @@
 @media screen and (max-width: 767px) {
   .section8 {
     width: 100vw;
-    height: sizem(1188);
-    min-height: sizem(1188);
+    height: sizem(1093);
+    min-height: sizem(1093);
     // max-height: sizem(750);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
@@ -211,6 +211,7 @@
     width: sizem(375);
     height: sizem(271);
     position: relative;
+    background-color: #f6f6f6;
     .img {
       width: sizem(139);
       left: 0;

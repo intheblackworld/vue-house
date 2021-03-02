@@ -11,12 +11,21 @@
     <div class="title2" v-if="isMobile">
       世襲貴族風範　實力無可取代
     </div>
-    <vue-accordion :items="items" :accordionClass="acClass" :styles="styles"></vue-accordion>
+    <div class="vue-accordion">
+      <ul>
+        <li :class="`${currentIndex === index ? 'active' : ''}`" v-for="(item, index) in items" :key="item.image" :style="{ backgroundImage: `url(${item.image})` }" @click="currentIndex = index">
+          <h2></h2>
+          <p></p>
+        </li>
+      </ul>
+    </div>
+    <!-- <vue-accordion :items="items" :accordionClass="acClass" :styles="styles"></vue-accordion> -->
   </div>
 </template>
 <style lang="scss">
 @import '@/assets/style/function.scss';
 .vue-accordion {
+  height: 100vh;
   max-width: size(1920 - 389) !important;
   width: size(1920 - 389);
   position: absolute;
@@ -26,39 +35,43 @@
 
 .vue-accordion {
   ul {
+    width: 100%;
+    height: 100%;
+    display: table;
+    table-layout: fixed;
+    margin: 0;
+    padding: 0;
     li {
-      background-position: 0% !important;
-      background-size: cover !important;
+      vertical-align: bottom;
+      position: relative;
+      height: 100%;
+      display: table-cell;
+      width: 50%;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      transition: all 0.5s ease;
+      background-position: 0%;
+      background-size: cover;
+      cursor: pointer;
     }
     li {
-      width: 15% !important;
-    }
-    li:nth-child(2) {
-      width: 60% !important;
+      width: 15%;
     }
   }
-  ul:hover {
-    li:hover a {
-      background: transparent !important;
-      box-shadow: rgba(50, 50, 93, 0.25) 30px 0px 30px -12px inset,
-        rgba(0, 0, 0, 0.3) 18px 0px 18px -18px inset;
-    }
-    li:nth-child(2) {
-      width: 15% !important;
-    }
-    li {
-      width: 15% !important;
-    }
+  li.active {
+    box-shadow: rgba(50, 50, 93, 0.25) 30px 0px 30px -12px inset,
+      rgba(0, 0, 0, 0.3) 18px 0px 18px -18px inset;
+    width: 60%;
+  }
 
-    li:hover {
-      width: 60% !important;
-    }
+  li.active {
   }
 }
 @media screen and (max-width: 767px) {
   .vue-accordion {
     max-width: 100vw !important;
     width: 100vw;
+    height: auto;
     position: relative;
     top: 0;
     top: sizem(250);
@@ -78,29 +91,17 @@
         width: 100vw !important;
         height: sizem(218) !important;
       }
-      li:nth-child(2) {
-        width: 100vw !important;
-        height: sizem(561) !important;
-      }
     }
-    ul:hover {
-      li:hover a {
-        background: transparent !important;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-      }
-      li:nth-child(2) {
-        width: 100vw !important;
-        height: sizem(218) !important;
-      }
-      li {
-        width: 100vw !important;
-        height: sizem(218) !important;
-      }
-
-      li:hover {
-        width: 100vw !important;
-        height: sizem(561) !important;
-      }
+    li.active {
+      width: 100vw !important;
+      height: sizem(561) !important;
+      // background: transparent !important;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+        rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    }
+    li {
+      width: 100vw !important;
+      height: sizem(218) !important;
     }
   }
 }
@@ -263,6 +264,7 @@ export default {
           height: isMobile ? 'auto' : '100vh',
         },
       },
+      currentIndex: 1,
       items: [
         {
           title: '',

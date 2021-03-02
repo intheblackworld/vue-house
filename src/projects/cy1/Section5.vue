@@ -13,8 +13,8 @@
             </div>
           </transition-group>
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="() => decMultiIndex(1)">
+            <img src="./all/next-btn.png" alt="" class="next-btn" @click="() => addMultiIndex(1)">
           </div>
           <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" data-aos-offset="-500">
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList1" :key="slide.img + '-dot'" @click="goToMultiIndex(1, index)"><span :class="`${slideIndex1 === index ? 'active' : ''}`"></span></div>
@@ -42,11 +42,11 @@
             </div>
           </transition-group>
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="() => decMultiIndex(2)">
+            <img src="./all/next-btn.png" alt="" class="next-btn" @click="() => addMultiIndex(2)">
           </div>
           <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" data-aos-offset="-500">
-            <div :class="`pagination-dot`" v-for="(slide, index) in slideList2" :key="slide.img + '-dot'" @click="goToMultiIndex(2, index)"><span :class="`${slideIndex1 === index ? 'active' : ''}`"></span></div>
+            <div :class="`pagination-dot`" v-for="(slide, index) in slideList2" :key="slide.img + '-dot'" @click="goToMultiIndex(2, index)"><span :class="`${slideIndex2 === index ? 'active' : ''}`"></span></div>
           </div>
         </div>
       </div>
@@ -63,11 +63,11 @@
             </div>
           </transition-group>
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="() => decMultiIndex(3)">
+            <img src="./all/next-btn.png" alt="" class="next-btn" @click="() => addMultiIndex(3)">
           </div>
           <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" data-aos-offset="-500">
-            <div :class="`pagination-dot`" v-for="(slide, index) in slideList3" :key="slide.img + '-dot'" @click="goToMultiIndex(3, index)"><span :class="`${slideIndex1 === index ? 'active' : ''}`"></span></div>
+            <div :class="`pagination-dot`" v-for="(slide, index) in slideList3" :key="slide.img + '-dot'" @click="goToMultiIndex(3, index)"><span :class="`${slideIndex3 === index ? 'active' : ''}`"></span></div>
           </div>
         </div>
       </div>
@@ -80,11 +80,11 @@
             </div>
           </transition-group>
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="() => decMultiIndex(4)">
+            <img src="./all/next-btn.png" alt="" class="next-btn" @click="() => addMultiIndex(4)">
           </div>
           <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" data-aos-offset="-500">
-            <div :class="`pagination-dot`" v-for="(slide, index) in slideList4" :key="slide.img + '-dot'" @click="goToMultiIndex(4, index)"><span :class="`${slideIndex1 === index ? 'active' : ''}`"></span></div>
+            <div :class="`pagination-dot`" v-for="(slide, index) in slideList4" :key="slide.img + '-dot'" @click="goToMultiIndex(4, index)"><span :class="`${slideIndex4 === index ? 'active' : ''}`"></span></div>
           </div>
         </div>
       </div>
