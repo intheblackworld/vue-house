@@ -5,15 +5,19 @@
     <img src="./m/01/01_bg_m.png" :alt="`${info.caseName}_img`" class="img" v-if="isMobile" data-aos="fade" data-aos-delay="0">
     <img src="./s1/01_arrow.png" :alt="`${info.caseName}_arrow`" class="arrow"  data-aos="fade-up" data-aos-delay="800" v-scroll-to="{ element: `#section2` }" >
     <img src="./s1/01_btn.png" :alt="`${info.caseName}_btn`" class="btn" v-scroll-to="{ element: `#contact` }" data-aos="fade" data-aos-delay="0">
-    <img src="./s1/01_logo_box.png" :alt="`${info.caseName}_logo-box`" class="logo-box" data-aos="fade" data-aos-delay="0">
-    <img src="./s1/01_logo.png" :alt="`${info.caseName}_logo`" class="logo" data-aos="fade" data-aos-delay="0">
+    <img src="./s1/01_logo_box.png" :alt="`${info.caseName}_logo-box`" class="logo-box" data-aos="fade" data-aos-delay="0" data-aos-offset="-300">
+    <img src="./s1/01_logo.png" :alt="`${info.caseName}_logo`" class="logo" data-aos="fade" data-aos-delay="0" data-aos-offset="-500">
     <img src="./s1/boutique_logo.png" :alt="`${info.caseName}_b-logo`" class="b-logo" data-aos="fade" data-aos-delay="0">
     <h1 class="title" v-if="isPC" data-aos="fade-up" data-aos-delay="200">建築對味 幸福到位</h1>
     <h1 class="title" v-if="isMobile" data-aos="fade-up" data-aos-delay="200">建築對味<br />幸福到位</h1>
-    <h3 class="subtitle1 flex-ac" v-if="isPC"  data-aos="fade-up" data-aos-delay="400">遇見鳳鳴特區<span class="flex-ac">Destiny That Brought You To Me</span></h3>
-    <h3 class="subtitle2 flex-ac" v-if="isPC"  data-aos="fade-up" data-aos-delay="600">北歐幸福生活<span class="flex-ac">Is Living A Happy Life</span></h3>
-    <h3 class="subtitle1 flex-ac wrap" v-if="isMobile"  data-aos="fade-up" data-aos-delay="400">遇見鳳鳴特區<br /><span class="flex-ac">Destiny That Brought You To Me</span></h3>
-    <h3 class="subtitle2 flex-ac wrap" v-if="isMobile"  data-aos="fade-up" data-aos-delay="600">北歐幸福生活<br /><span class="flex-ac">Is Living A Happy Life</span></h3>
+    <div class="subtitle" v-if="isPC">
+      <h3 class="subtitle1 flex-ac" data-aos="fade-up" data-aos-delay="400">遇見鳳鳴特區<span class="flex-ac">Destiny That Brought You To Me</span></h3>
+      <h3 class="subtitle2 flex-ac" data-aos="fade-up" data-aos-delay="600">北歐幸福生活<span class="flex-ac">Is Living A Happy Life</span></h3>
+    </div>
+    <div class="subtitle" v-if="isMobile">
+      <h3 class="subtitle1 flex-ac wrap" data-aos="fade-up" data-aos-delay="400" >遇見鳳鳴特區<br /><span class="flex-ac">Destiny That Brought You To Me</span></h3>
+      <h3 class="subtitle2 flex-ac wrap" data-aos="fade-up" data-aos-delay="600" >北歐幸福生活<br /><span class="flex-ac">Is Living A Happy Life</span></h3>
+    </div>
   </div>
 </template>
 
@@ -21,18 +25,18 @@
 @import '@/assets/style/function.scss';
 
 .section1 {
-  width: size(1920);
-  height: size(1080);
-  min-height: size(1080);
+  width: 100%;
+  height:calc(100vh - 80px);
+  min-height: size(950);
   max-height: size(1080);
   // overflow: hidden;
   position: relative;
+  margin: 0 0 5vw;
 }
 
 .bg-img {
-  width: size(1920);
+  width: 100%;
   height: 100%;
-  min-height: size(900);
   position: absolute;
   top: 0;
   left: 0;
@@ -47,10 +51,14 @@
 
 .img {
   @include img_c_pc(1712, 156);
+  top:10%;
+  height:85%;
+  object-fit: cover;
 }
 
 .arrow {
   @include img_l_pc(107, 556, 336);
+  top:calc(50% + 100vw * (550 - 540) / 1920);
   animation: arrow 1s 0s ease-in-out alternate-reverse infinite;
   cursor: pointer;
 }
@@ -63,23 +71,30 @@
 
 .btn {
   @include img_l_pc(438, 712, 475);
+  top:calc(50% + 100vw * (712 - 540) / 1920);
   cursor: pointer;
 }
 
 .logo-box {
   @include img_r_pc(822, 591, 0);
+  top:auto;
+  bottom:calc(5% - 8.3vw);
 }
 
 .logo {
   @include img_r_pc(340, 845, 131);
+  top:auto;
+  bottom:calc(5% + 1.2vw);
 }
 
 .b-logo {
   @include img_r_pc(138, 211, 192);
+  top:calc(50% + 100vw * (211 - 540) / 1920);
 }
 
 .title {
   @include img_l_pc(438, 327, 329);
+  top:calc(50% + 100vw * (327 - 540) / 1920);
   font-size: size(115.9);
   font-weight: normal;
   font-stretch: normal;
@@ -91,58 +106,34 @@
   white-space: nowrap;
 }
 
-.subtitle1 {
+.subtitle{
   @include img_l_pc(438, 532, 474);
-  font-size: size(44.6);
+  top:calc(50% + 100vw * (532 - 540) / 1920);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
+  font-size: size(44.6);
   line-height: 2;
-  letter-spacing: size(2.68);
-  text-align: left;
+  letter-spacing:0.06em;
   color: #ffffff;
   white-space: nowrap;
 
-  span {
-    font-size: size(29.5);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2;
-    letter-spacing: size(2.95);
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
-    margin-left: 5px;
-  }
 }
-
+.subtitle1,
 .subtitle2 {
-  @include img_l_pc(438, 598, 474);
-  font-size: size(44.6);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2;
-  letter-spacing: size(2.68);
+  font-size:1em;
   text-align: left;
-  color: #ffffff;
-  white-space: nowrap;
 
   span {
     font-size: size(29.5);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 2;
-    letter-spacing: size(2.95);
+    letter-spacing:0.09em;
     text-align: left;
     color: #ffffff;
     white-space: nowrap;
     margin-left: 5px;
   }
 }
-
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -159,19 +150,23 @@
 @media screen and (max-width: 767px) {
   .section1 {
     width: 100vw;
-    min-height: sizem(604);
-    max-height: sizem(604);
-    height: sizem(604);
+    min-height: sizem(540);
+    max-height: sizem(750);
+    height: calc(100vh - 63px);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
   }
   .img {
     @include img_c_m(335, 25);
+    width: calc(100% - 50px);
+    top: 25px;
+    height: 90%;
   }
 
   .arrow {
-    @include img_l_m(36.6, 400, 60);
+    @include img_l_m(36.6, 380, 65);
+    top: calc(48% + 100vw * (380 - 302) / 375);
   }
 
   .btn {
@@ -181,10 +176,14 @@
 
   .logo-box {
     @include img_r_m(340, 408, -40);
+  top:auto;
+  bottom:calc(10% - 25px - 17.2vw);
   }
 
   .logo {
     @include img_r_m(147, 509, 10);
+  top:auto;
+  bottom:calc(10% - 25px + 2vw);
   }
 
   .b-logo {
@@ -193,6 +192,7 @@
 
   .title {
     @include img_l_m(161, 186, 69);
+    top: calc(48% + 100vw * (186 - 302) / 375);
     font-size: sizem(39);
     font-weight: normal;
     font-stretch: normal;
@@ -201,58 +201,37 @@
     letter-spacing: sizem(1.56);
     text-align: left;
     color: #ffffff;
-    white-space: nowrap;
+    white-space: nowrap;justify-content: flex-end;
   }
 
-  .subtitle1 {
-    @include img_l_m(120, 324, 109);
-    font-size: sizem(18.9);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2;
-    letter-spacing: sizem(1.13);
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
+  .subtitle{
+  @include img_r_m(250, 280, 146);
+    top: calc(48% + 100vw * (280 - 302) / 375);
+    font-size: sizem(25);
+    transform: scale(0.756);
+    transform-origin: 100% 100%;
+    display: block;
 
-    span {
-      font-size: sizem(9.2);
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 2;
-      letter-spacing: sizem(0.82);
-      text-align: left;
-      color: #ffffff;
-      white-space: nowrap;
-      margin-left: 0px;
-    }
   }
-
+  
+  
+  .subtitle1,
   .subtitle2 {
-    @include img_l_m(119, 382, 109);
-    font-size: sizem(18.9);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2;
-    letter-spacing: sizem(1.13);
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
+    width: 100%;
+    font-weight:300;
+    text-align: right;
+    justify-content: flex-end;
+
 
     span {
-      font-size: sizem(9.2);
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 2;
-      letter-spacing: sizem(0.82);
-      text-align: left;
+      display: block;
+      font-size:0.486em;
+      line-height: 1.5;
+      letter-spacing:0.09em;
+      text-align: right;
       color: #ffffff;
       white-space: nowrap;
-      margin-left: 0px;
+      margin-bottom:1em;
     }
   }
 }

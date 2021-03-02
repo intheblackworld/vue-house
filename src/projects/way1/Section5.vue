@@ -37,7 +37,7 @@
           雙繁華
         </div>
         <div class="block-desc" v-if="isPC" data-aos="fade-up" data-aos-delay="400">
-          鶯桃路商圈、桃園新站商圈，全聯即將進駐機能豐足、繁華到位。
+          鶯桃路商圈、桃園新站商圈，全聯即將進駐，機能豐足、繁華到位。
         </div>
       </div>
       <div class="content-block flex-c wrap">
@@ -157,14 +157,14 @@
 }
 
 .block-desc {
-  width: size(270);
+  width: size(250);
   font-size: size(24);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.46;
   letter-spacing: size(0.65);
-  text-align: left;
+  text-align: justify;
   color: #009fb1;
 }
 
@@ -453,7 +453,7 @@
     font-style: normal;
     line-height: 1.75;
     letter-spacing: sizem(0.86);
-    text-align: left;
+    text-align: justify;
     color: #302d2c;
   }
 

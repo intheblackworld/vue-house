@@ -132,7 +132,7 @@
   font-style: normal;
   line-height: 1.67;
   letter-spacing: size(2.6);
-  text-align: left;
+  text-align: justify;
   color: #2f2c2c;
 }
 .content {

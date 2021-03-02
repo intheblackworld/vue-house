@@ -10,7 +10,7 @@
     </div>
     <div class="hr"  data-aos="fade-right" data-aos-delay="200"></div>
     <div class="desc"  data-aos="fade-up" data-aos-delay="400">
-      ［立瑾Way］規劃豐富多彩的VIP休閒設施交誼、休憩、氧身、娛樂，親子共享、好友齊聚，讓居住成為一種生活品味回家就是度假的開始。
+      ［立瑾Way］規劃豐富多彩的VIP休閒設施。交誼、休憩、氧身、娛樂，親子共享、好友齊聚，讓居住成為一種生活品味，回家就是度假的開始。
     </div>
     <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isPC">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -63,7 +63,7 @@
 @import '@/assets/style/function.scss';
 
 .section8 {
-  width: 100vw;
+  width: 100%;
   height: size(1036);
   max-height: size(1036);
   min-height: size(1036);
@@ -76,9 +76,8 @@
 }
 
 .bg-img {
-  width: 100vw;
-  height: size(1080);
-  min-height: size(900);
+  width:100%;
+  height:100%;
   position: absolute;
   display: block;
   top: 0;
@@ -123,14 +122,14 @@
   border-bottom: solid size(4) #009fb1;
 }
 .desc {
-  @include img_l_pc(510, 507, 173);
+  @include img_l_pc(500, 507, 178);
   font-size: size(22);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.67;
   letter-spacing: size(2.6);
-  text-align: left;
+  text-align: justify;
   color: #2f2c2c;
 }
 
@@ -368,14 +367,14 @@
     border-left: solid size(4) #009fb1;
   }
   .desc {
-    @include img_c_m(322, 148 + 245);
+    @include img_c_m(325, 148 + 245);
     font-size: sizem(14.3);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.61;
-    letter-spacing: sizem(0.86);
-    text-align: left;
+    letter-spacing:0.03em;
+    text-align: justify;
     color: #2f2c2c;
   }
 

@@ -36,7 +36,7 @@
 @import '@/assets/style/function.scss';
 
 .section4 {
-  width: 100vw;
+  width: 100%;
   height: size(1410);
   max-height: size(1410);
   min-height: size(1410);
@@ -49,9 +49,8 @@
 }
 
 .bg-img {
-  width: 100vw;
+  width: 100%;
   height: size(1080);
-  min-height: size(900);
   position: absolute;
   display: block;
   top: 0;
@@ -153,7 +152,7 @@
   font-style: normal;
   line-height: 1.65;
   letter-spacing: normal;
-  text-align: left;
+  text-align: justify;
   color: #2f2c2c;
 }
 
@@ -452,14 +451,14 @@
   }
 
   .block-desc {
-    @include img_r_m(269, 348, 41);
+    @include img_r_m(249, 348,60);
     font-size: sizem(14.3);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.75;
-    letter-spacing: sizem(0.86);
-    text-align: left;
+    letter-spacing:0.04em;
+    text-align: justify;
     color: #2f2c2c;
   }
 

@@ -15,7 +15,7 @@
       簡潔框景建築
     </div>
     <div class="desc" data-aos="fade-up" data-aos-delay="600">
-      以北歐風格簡潔美學營造建築大器立面，水平橫幅延伸視野，流動著晨昏的光影與季節的變換大地色系交織白色框景，俐落身段雋永耐看。
+      以北歐風格簡潔美學營造建築大器立面，水平橫幅延伸視野，流動著晨昏的光影與季節的變換，大地色系交織白色框景，俐落身段雋永耐看。
     </div>
   </div>
 </template>
@@ -106,7 +106,7 @@
   font-style: normal;
   line-height: 1.67;
   letter-spacing: 2.08px;
-  text-align: left;
+  text-align: justify;
   color: #ffffff;
 }
 .hr {

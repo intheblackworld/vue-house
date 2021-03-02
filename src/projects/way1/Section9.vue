@@ -28,7 +28,7 @@
       夠好.夠住.夠用心
     </div>
     <div class="block-desc"  data-aos="fade-up" data-aos-delay="600">
-      不用多但要好，適合的最剛好［立瑾Way］想給你的，比你想要的多更多。
+      不用多但要好，適合的最剛好。［立瑾Way］想給你的，比你想要的多更多。
     </div>
   </div>
 </template>

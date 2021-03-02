@@ -365,8 +365,8 @@ export default {
   .menu {
     display: flex;
     position: fixed;
-    right: 30px;
-    top: 30px;
+    right: 25px;
+    top: 25px;
 
     img {
       width: 100%;
