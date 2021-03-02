@@ -2,21 +2,21 @@
   <div class="section1">
     <img src="./s1/top_bg.jpg" :alt="`${info.caseName}_bg-img`" class="bg-img" v-if="isPC">
     <Map :bgSrc="require('./s1/top_bg_m.jpg')" :hand="hand" v-if="isMobile"></Map>
-    <img src="./s1/top_logo.png" :alt="`${info.caseName}_logo`" class="logo">
-    <img src="./s1/top_title_1.png" :alt="`${info.caseName}_title_1`" class="title-1">
-    <img src="./s1/top_title_2.png" :alt="`${info.caseName}_title_2`" class="title-2">
-    <img src="./s1/top_tree_single.png" :alt="`${info.caseName}_tree1`" class="tree1">
-    <img src="./s1/top_tree_single.png" :alt="`${info.caseName}_tree2`" class="tree2">
-    <h1 class="title-3">
+    <img src="./s1/top_logo.png" :alt="`${info.caseName}_logo`" class="logo" data-aos="fade-up" data-aos-delay="200">
+    <img src="./s1/top_title_1.png" :alt="`${info.caseName}_title_1`" class="title-1" data-aos="fade-up" data-aos-delay="400">
+    <img src="./s1/top_title_2.png" :alt="`${info.caseName}_title_2`" class="title-2" data-aos="fade-up" data-aos-delay="600">
+    <img src="./s1/top_tree_single.png" :alt="`${info.caseName}_tree1`" class="tree1" data-aos="fade-up" data-aos-delay="800">
+    <img src="./s1/top_tree_single.png" :alt="`${info.caseName}_tree2`" class="tree2" data-aos="fade-up" data-aos-delay="900">
+    <h1 class="title-3" data-aos="fade-up" data-aos-delay="200">
       九揚盧登堡
     </h1>
-    <h1 class="desc" v-if="isPC">
+    <h1 class="desc" v-if="isPC" data-aos="fade-up" data-aos-delay="400">
       蘆洲首見17-33坪1-3房新藝術城堡宅，<br />
       距離捷運蘆洲站300米、坐落彩虹公園正對面，<br />
       繁華機能與馥郁美好輕鬆收藏入宅，<br />
       除此之外，還提供完美保固與貼心客變服務，在這裡您將遇見最美麗的成家景色。
     </h1>
-    <h1 class="desc" v-if="isMobile">
+    <h1 class="desc" v-if="isMobile" data-aos="fade-up" data-aos-delay="400">
       蘆洲首見17-33坪1-3房新藝術城堡宅，<br />
       距離捷運蘆洲站300米、坐落彩虹公園正對面，<br />
       繁華機能與馥郁美好輕鬆收藏入宅，<br />

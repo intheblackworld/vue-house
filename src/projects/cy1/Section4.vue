@@ -1,9 +1,9 @@
 <template>
   <div class="section4">
-    <h1 class="title">
+    <h1 class="title" data-aos="fade-up" data-aos-delay="200">
       新北第一環<br />輕成本購足高享受
     </h1>
-    <h3 class="desc">
+    <h3 class="desc" data-aos="fade-up" data-aos-delay="400">
       蘆洲貴為新北第一環，<br />
       生活機能豐富便利，房價卻十分親民，成為新北移居之冠!<br /><br />
       【九揚盧登堡】坐享南港子生活圈，<br />
@@ -12,8 +12,8 @@
       近享蘆洲市區完善商業、文教、市政機能。<br />
       以最低成本輕鬆站上置產高峰，未來值得期待。
     </h3>
-    <img src="./s4/04_tree_img.png" :alt="`${info.caseName}_tree`" class="tree">
-    <img src="./s4/04_people_img.png" :alt="`${info.caseName}_people`" class="people">
+    <img src="./s4/04_tree_img.png" :alt="`${info.caseName}_tree`" class="tree" data-aos="fade-up" data-aos-delay="600">
+    <img src="./s4/04_people_img.png" :alt="`${info.caseName}_people`" class="people" data-aos="fade-up" data-aos-delay="800">
     <div class="item-list flex" v-if="isPC">
       <div v-for="(slide) in slideList" :key="slide.img" :class="`item`">
         <img :src="slide.img" alt="">

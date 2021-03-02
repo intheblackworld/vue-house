@@ -1,8 +1,8 @@
 <template>
   <div class="section5">
-    <img src="./s5/05_people_img1.png" :alt="`${info.caseName}_people1`" class="people1">
-    <img src="./s5/05_people_img2.png" :alt="`${info.caseName}_people2`" class="people2">
-    <img src="./s5/05_tree_img.png" :alt="`${info.caseName}_tree`" class="tree">
+    <img src="./s5/05_people_img1.png" :alt="`${info.caseName}_people1`" class="people1" data-aos="fade-up" data-aos-delay="200">
+    <img src="./s5/05_people_img2.png" :alt="`${info.caseName}_people2`" class="people2" data-aos="fade-up" data-aos-delay="400">
+    <img src="./s5/05_tree_img.png" :alt="`${info.caseName}_tree`" class="tree" data-aos="fade-up" data-aos-delay="200">
     <div class="container flex-as flex-jb wrap">
       <div class="swipe swipe1" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(1)" v-touch:swipe.right="() => addMultiIndex(1)">
@@ -25,7 +25,7 @@
         馥郁書香環繞<br />
         滿園芬芳桃李
       </div>
-      <div class="desc-block desc-block1 flex-c">
+      <div class="desc-block desc-block1 flex-c" data-aos="fade-up" data-aos-delay="200">
         以蘆洲百年學風氣韻薈萃滋養下一代，<br />
         出家門5分鐘抵達忠義國小、鷺江國中明星學校，<br />
         替家長省下9年接送孩子的時間，<br />
@@ -88,7 +88,7 @@
           </div>
         </div>
       </div>
-      <div class="desc-block desc-block2 flex-c">
+      <div class="desc-block desc-block2 flex-c" data-aos="fade-up" data-aos-delay="200">
         距離捷運蘆洲站300米，五股交流道10分鐘，<br />
         開車族15分鐘可輕鬆抵達台北市，<br />
         也可透過永安大橋輕易連結64快速道路<br />

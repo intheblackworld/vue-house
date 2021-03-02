@@ -4,7 +4,7 @@
       <div class="item">
         <img src="./s8/07_icon_1.png" :alt="`${info.caseName}_icon`" class="icon">
         <img src="./s8/07_img_1.jpg" :alt="`${info.caseName}_img`" class="img">
-        <div class="item-desc">
+        <div class="item-desc" data-aos="fade-up" data-aos-delay="200">
           戶戶明廳、絕佳採光通風<br />
           5+5膠合鍍膜玻璃，節能環保，<br />
           隔絕有害紫外線。
@@ -13,7 +13,7 @@
       <div class="item">
         <img src="./s8/07_icon_2.png" :alt="`${info.caseName}_icon`" class="icon">
         <img src="./s8/07_img_2.jpg" :alt="`${info.caseName}_img`" class="img">
-        <div class="item-desc">
+        <div class="item-desc" data-aos="fade-up" data-aos-delay="400">
           當層排氣、英國STUDOR排水防疫系統<br />
           莎普羅吊隱式除濕機，<br />
           居家生活舒適乾爽
@@ -22,7 +22,7 @@
       <div class="item">
         <img src="./s8/07_icon_3.png" :alt="`${info.caseName}_icon`" class="icon">
         <img src="./s8/07_img_3.jpg" :alt="`${info.caseName}_img`" class="img">
-        <div class="item-desc">
+        <div class="item-desc" data-aos="fade-up" data-aos-delay="600">
           頂樓水塔配備長庚諧振活化設備<br />
           櫻花廚下型淨水設備，<br />
           打造由內而外健康好生活。
@@ -30,19 +30,19 @@
       </div>
     </div>
     <img src="./s8/07_dark_bg.png" :alt="`${info.caseName}_img`" class="mask">
-    <h1 class="title" v-if="isPC">
+    <h1 class="title" v-if="isPC" data-aos="fade-up" data-aos-delay="200">
       陽光、空氣、水 健康三要素，一宅收藏!
     </h1>
-    <h1 class="title" v-if="isMobile">
+    <h1 class="title" v-if="isMobile" data-aos="fade-up" data-aos-delay="200">
       陽光、空氣、水 健康三要素<br />
       一宅收藏!
     </h1>
-    <h3 class="desc" v-if="isPC">
+    <h3 class="desc" v-if="isPC" data-aos="fade-up" data-aos-delay="400">
       為滿足頂客族與首購小家庭需求，規劃精緻17-33坪1-3房型，<br />
       客廳優質採光零暗房，廚房擁有通風窗，小坪數產品也享前陽台。<br />
       貼心全客變服務，隨心設計專屬的居住空間，理想好生活就在這裡！
     </h3>
-    <h3 class="desc" v-if="isMobile">
+    <h3 class="desc" v-if="isMobile" data-aos="fade-up" data-aos-delay="400">
       為滿足頂客族與首購小家庭需求，<br />
       規劃精緻17-33坪1-3房型，<br />
       客廳優質採光零暗房，廚房擁有通風窗，<br />

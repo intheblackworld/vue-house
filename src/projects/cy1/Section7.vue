@@ -2,10 +2,10 @@
   <div class="section7">
     <img src="./s7/06_img.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isPC">
     <img src="./s7/06_bg_m.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isMobile">
-    <h1 class="title">
+    <h1 class="title" data-aos="fade-up" data-aos-delay="200">
       彩虹公園第一排　明媚風光生活
     </h1>
-    <h1 class="desc">
+    <h1 class="desc" data-aos="fade-up" data-aos-delay="400">
       坐落綠意公園正對面，獨覽蘆洲四季豐采；私人歐式景觀花園，開窗即享舒活芬多精。<br />
       5分鐘蘆洲國民運動中心，天天樂在運動、享受休閒，生活自然健康，健康就是如此自然。
     </h1>

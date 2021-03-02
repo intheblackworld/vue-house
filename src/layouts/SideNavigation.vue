@@ -222,6 +222,7 @@ export default {
     width: 70%;
     margin: 0 auto;
     font-size: size(15);
+    font-weight: bold;
     padding: 15px 0;
     // border-top: 1px solid rgba(255, 255, 255, .5);
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);

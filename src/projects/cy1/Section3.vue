@@ -1,11 +1,11 @@
 <template>
   <div class="section3">
     <img src="./s3/03_img.jpg" :alt="`${info.caseName}_img`" class="img">
-    <img src="./s3/03_logo.png" :alt="`${info.caseName}_logo`" class="logo">
-    <h1 class="title">
+    <img src="./s3/03_logo.png" :alt="`${info.caseName}_logo`" class="logo" data-aos="fade-up" data-aos-delay="200">
+    <h1 class="title" data-aos="fade-up" data-aos-delay="400">
       30年貴族血脈　新藝術精工建築
     </h1>
-    <h1 class="desc">
+    <h1 class="desc" data-aos="fade-up" data-aos-delay="600">
       國際企業九揚環球集團，30年城堡建築第一品牌，提供領先業界—結構體15年、防水5年、固定建材設備3年的完美保固，並且由自營的甲級營造廠「昇北營造」給買家最貼心的全客製化客變服務。名聲遠逐海內外，人生第一宅當然選擇九揚名宅！
     </h1>
   </div>
