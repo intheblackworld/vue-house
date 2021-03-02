@@ -290,6 +290,14 @@ export default {
             ? require('./s9/08_item_3_m.jpg')
             : require('./s9/08_item_3.jpg'),
         },
+        {
+          title: '',
+          text: '',
+          // url: '#',
+          image: isMobile
+            ? require('./s9/08_item_4_m.jpg')
+            : require('./s9/08_item_4.jpg'),
+        },
       ],
     }
   },

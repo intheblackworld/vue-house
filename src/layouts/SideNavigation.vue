@@ -89,10 +89,10 @@ export default {
   justify-content: center;
   align-items: center;
   z-index: 112;
-  top: size(51);
-  left: size(77);
-  width: size(53);
-  height: size(46);
+  top: size(21);
+  left: size(51);
+  width: size(103);
+  // height: size(46);
   // background-image: linear-gradient(to bottom, rgba(35, 24, 21, 0) 6%, rgba(35, 24, 21, 0.42) 12%, rgba(35, 24, 21, 0.75) 19%, rgba(35, 24, 21, 0.95) 30%, #231815 60%, rgba(35, 24, 21, 0) 107%);
   cursor: pointer;
 
