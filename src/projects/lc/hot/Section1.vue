@@ -1078,6 +1078,10 @@ export default {
         {
           img: require('../works/2/3.jpg'),
           name: '',
+        },
+        {
+          img: require('../works/2/4.jpg'),
+          name: '',
         }
       ],
       slideList3: [
