@@ -2,19 +2,25 @@
   <div class="section1">
     <div class="w-block"></div>
     <img src="./s1/img.png" alt="" class="rb">
-    <div class="hint">
+  <!--    <div class="hint">
       本公司保留活動修改及終止權利！！數量有限，要買要快
-    </div>
+    </div>--><div class="list">
+        <!-- v-if="pageIndex === 2" key="page2" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" -->
+        <img src="./s1/logo.png" alt="" class="logo2" v-if="isPC">
+        <img src="./s1/logo2.png" alt="" class="logo2" v-if="isMobile">
+        <div class="st2" v-if="isPC">金城正核心 WIN在起跑點</div>
+        <div class="t3" v-if="isPC">30坪首付38萬起 含平面車位<br>3房2衛 採光邊間 訂製你的家</div>
+        <img src="./s1/t_m.png" alt="" class="tm" v-if="isMobile">
+      </div>
     <transition-group name="swipe-fade">
-      <div class="list" v-if="pageIndex === 1" key="page1" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-
-        <!-- <img src="./s1/logo.png" alt="" class="logo">
-        <img src="./s1/1/st.png" alt="" class="st">  -->
+   <!--     <div class="list" v-if="pageIndex === 1" key="page1" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+ 
         <img src="./s1/1/i.jpg" alt="" class="i">
         <div class="t1">早鳥享好康<br>好禮我最威</div>
         <div class="t2">好禮4選3，風光成家最給力！</div>
-      </div>
-      <div class="list" v-if="pageIndex === 2" key="page2" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      </div> -->
+      <div class="list">
+        <!-- v-if="pageIndex === 2" key="page2" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" -->
         <img src="./s1/logo.png" alt="" class="logo2" v-if="isPC">
         <img src="./s1/logo2.png" alt="" class="logo2" v-if="isMobile">
         <div class="st2" v-if="isPC">金城正核心 WIN在起跑點</div>
@@ -22,14 +28,14 @@
         <img src="./s1/t_m.png" alt="" class="tm" v-if="isMobile">
       </div>
     </transition-group>
-    <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+   <!--   <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
       <div class="prev-btn" @click="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1"><img src="./s2/dot.png" alt=""></div>
       <div class="next-btn" @click="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1"><img src="./s2/dot.png" alt=""></div>
     </div>
     <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
       <div :class="`pagination-dot`" @click="pageIndex = 1"><span :class="`${pageIndex === 1 ? 'active' : ''}`"></span></div>
       <div :class="`pagination-dot`" @click="pageIndex = 2"><span :class="`${pageIndex === 2 ? 'active' : ''}`"></span></div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -414,12 +420,12 @@ export default {
   methods: {},
 
   mounted() {
-    clearInterval(this.interval)
+ /*    clearInterval(this.interval)
     this.interval = setInterval(() => {
       if (this.toggleTimer) {
         this.pageIndex = this.pageIndex === 1 ? 2 : 1
       }
-    }, 5000)
+    }, 5000)*/
   },
 
   created() {},
