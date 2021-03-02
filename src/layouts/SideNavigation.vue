@@ -3,19 +3,14 @@
     <div class="nav relative">
       <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
       <div class="menu" @click="toggleSidebar">
-        <div :class="`menu-icon ${isOpen ? 'menu-icon-active' : ''}`"></div>
+        <img src="@/projects/cy1/s1/menu_icon.png" alt />
+        <!-- <div :class="`menu-icon ${isOpen ? 'menu-icon-active' : ''}`"></div> -->
         <!-- <img v-if="isOpen" src="@/projects/jh/s4/close.png" class="close" alt />
         <img v-else src="@/assets/img/menu-btn.png" alt />-->
       </div>
       <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
       <ul :class="`navlist ${isOpen ? 'open': ''}`">
-        <li
-          :key="item.name"
-          v-scroll-to="{ element: `#${item.section}`, offset: isMobile ? (item.mobileOffset ? item.mobileOffset : offset) : (item.offset ? item.offset : offset) }"
-          v-for="item in list"
-          class="flex-ac"
-          @click="toggleSidebar"
-        >
+        <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: isMobile ? (item.mobileOffset ? item.mobileOffset : offset) : (item.offset ? item.offset : offset) }" v-for="item in list" class="" @click="toggleSidebar">
           <span class="link">
             <img v-if="item.imgSrc" :src="item.imgSrc" alt />
             <span>
@@ -25,6 +20,7 @@
           </span>
         </li>
       </ul>
+      <img :class="`contact-btn ${isOpen ? 'open': ''}`" v-scroll-to="{ element: `#contact` }" src="@/projects/cy1/s1/contact_btn.png" @click="isOpen = false" alt />
     </div>
   </div>
 </template>
@@ -93,11 +89,11 @@ export default {
   justify-content: center;
   align-items: center;
   z-index: 112;
-  top: 30px;
-  right: 30px;
-  width: 40px;
-  height: 40px;
-  background-color: #af1f24;
+  top: size(51);
+  left: size(77);
+  width: size(53);
+  height: size(46);
+  // background-image: linear-gradient(to bottom, rgba(35, 24, 21, 0) 6%, rgba(35, 24, 21, 0.42) 12%, rgba(35, 24, 21, 0.75) 19%, rgba(35, 24, 21, 0.95) 30%, #231815 60%, rgba(35, 24, 21, 0) 107%);
   cursor: pointer;
 
   // img {
@@ -127,6 +123,19 @@ export default {
   width: 30px;
   height: 3px;
   background-color: #fff;
+}
+
+.contact-btn {
+  @include img_l_pc(74, 133, 65);
+  transition: all 0.3s;
+  position: fixed;
+  cursor: pointer;
+  z-index: 25;
+
+  &.open {
+    @include img_l_pc(74, 683, 65);
+    position: fixed;
+  }
 }
 
 .menu-icon::before {
@@ -171,30 +180,51 @@ export default {
 
 .navlist {
   position: fixed;
-  z-index: 111;
+  z-index: 24;
   background: $nav_bg;
-  width: 0%;
-  right: 0;
-  top: $nav_phone_height;
-  height: calc(100vh - #{$nav_phone_height});
+  width: size(185);
+  left: size(-25);
+  top: size(-703);
+  padding-top: size(120);
+  padding-bottom: size(60);
+  // height: size(703);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(35, 24, 21, 0) 0%,
+    rgba(35, 24, 21, 0.24) 6%,
+    rgba(35, 24, 21, 0.3) 19%,
+    rgba(35, 24, 21, 0.38) 30%,
+    rgba(35, 24, 21, 0.48) 60%,
+    rgba(35, 24, 21, 0) 100%
+  );
+  // height: calc(100vh - #{$nav_phone_height});
   text-align: center;
   transition: all 0.3s ease-in-out;
   display: block;
-  transform: translateX(40%);
+  // transform: translateX(40%);
 
   li {
-    height: 60px;
+    min-height: size(45);
     margin-bottom: 0;
     width: 100%;
+
+    &:nth-last-child(1) {
+      .link {
+        border-bottom: none;
+      }
+    }
   }
 
   .link {
     position: relative;
     overflow: hidden;
-    height: 60px;
-    width: 100%;
-    font-size: 24px;
-    margin-top: 10px;
+    min-height: size(45);
+    width: 70%;
+    margin: 0 auto;
+    font-size: size(15);
+    padding: 15px 0;
+    // border-top: 1px solid rgba(255, 255, 255, .5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -255,8 +285,9 @@ export default {
   }
 
   &.open {
-    width: size(300);
-    transform: translateX(0%);
+    top: size(0);
+    // width: size(300);
+    // transform: translateX(0%);
     display: flex;
     flex-wrap: wrap;
     align-content: center;
@@ -303,7 +334,7 @@ export default {
     display: block;
     width: 100vw;
     opacity: 1;
-    z-index: 110;
+    z-index: 22;
   }
 }
 
@@ -342,6 +373,19 @@ export default {
 /* 螢幕尺寸標準 */
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
+  .contact-btn {
+    @include img_l_m(53, 83, 17);
+    transition: all 0.3s;
+    position: fixed;
+    cursor: pointer;
+    z-index: 127;
+
+    &.open {
+      @include img_l_m(53, 83, 17);
+      // z-index: 27;
+      position: fixed;
+    }
+  }
   .navigation {
     height: $nav_phone_height;
     z-index: 110;
@@ -364,9 +408,10 @@ export default {
 
   .menu {
     display: flex;
+    @include img_l_m(53, 19, 16);
+    height: sizem(46);
     position: fixed;
-    right: 30px;
-    top: 30px;
+    z-index: 112;
 
     img {
       width: 100%;
@@ -385,39 +430,66 @@ export default {
   .navlist {
     position: fixed;
     z-index: 111;
-    width: 0%;
-    right: 0;
-    top: $nav_phone_height;
-    height: calc(100vh - #{$nav_phone_height});
+    width: 100vw;
+    padding-top: sizem(60);
+    padding-bottom: sizem(60);
+    left: 0;
+    // right: 0;
+    top: sizem(-590);
+    // height: calc(100vh - #{$nav_phone_height});
     text-align: center;
     transition: all 0.3s ease-in;
     display: block;
-    transform: translateX(40%);
+    background: linear-gradient(
+      to bottom,
+      rgba(35, 24, 21, 0) 0%,
+      rgba(35, 24, 21, 0.28) 6%,
+      rgba(35, 24, 21, 0.6) 19%,
+      rgba(35, 24, 21, 0.7) 30%,
+      rgba(35, 24, 21, 0.8) 60%,
+      rgba(35, 24, 21, 0) 100%
+    );
+    // transform: translateX(40%);
 
     li {
     }
 
     .link {
-      display: none;
+      display: block;
+      color: #fff;
+      font-size: sizem(17);
+      font-weight: bold;
+      width: 40%;
 
       img,
       span {
         display: block;
       }
       span {
-        line-height: 16px;
+        line-height: 1.3;
       }
     }
 
     &.open {
-      width: 100%;
-      transform: translateX(0%);
+      width: sizem(375);
+      padding-top: sizem(60);
+      padding-bottom: sizem(60);
+      left: 0;
+      top: 0;
+      right: auto;
+      height: auto;
+      // width: 100%;
+      // transform: translateX(0%);
 
       .link {
         display: flex;
         justify-content: center;
         span {
           white-space: nowrap;
+        }
+
+        .title {
+          line-height: 1.3;
         }
         .divided {
           display: none;
@@ -436,10 +508,10 @@ export default {
     opacity: 0;
     transition: all 0.3s ease-in;
     &.open {
-      display: block;
+      display: none;
       width: 100vw;
       opacity: 1;
-      z-index: 110;
+      z-index: 24;
     }
   }
 }
@@ -1728,7 +1800,7 @@ body {
   width: 120px;
   height: 100%;
   display: none;
-  background-image: url("~@/assets/img/contact_mb-bg.png");
+  background-image: url('~@/assets/img/contact_mb-bg.png');
 }
 @media (min-width: 992px) {
   .sidenav {
