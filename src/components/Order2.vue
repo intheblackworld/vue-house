@@ -77,6 +77,7 @@
                 粉絲專頁
               </div>
             </a>
+          <img src="~@/projects/kid/c/map2.png" class="map_img" alt="停車資訊地圖">
           </div>
         </div>
       </div>
@@ -406,7 +407,12 @@ export default {
     flex: 1 1 auto;
     // height: 250px;
     margin-bottom: 40px;
-
+    &:nth-child(1) {
+      flex: 1 1 55%;
+    }
+    &:nth-child(2) {
+      flex: 1 1 45%;
+    }
     // &:nth-child(1) {
     //   border-right: 1px solid rgba(0, 0, 0, 0.2);
     //   padding: 0 29px 0 0;
@@ -470,9 +476,13 @@ export default {
 
   .google-map {
     // margin-top: 35px;
-    height: size(420);
-    margin-bottom: 15px;
+    display: block;
+    width:100%;
+    height: size(200);
+    margin:0 auto size(15) auto;
   }
+  .map_img{
+    width:105%;margin:size(70) 0 size(15) -5%;}
 }
 .el-textarea .el-textarea__inner,
 .el-input__inner {
