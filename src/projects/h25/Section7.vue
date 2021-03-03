@@ -7,7 +7,7 @@
             <img :src="slide.img" alt="">
           </div>
         </transition-group>
-        <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200">
+        <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
         <div class="swipe-btns absolute flex-ac flex-jb">
@@ -369,107 +369,62 @@
 @media screen and (max-width: 767px) {
   .section7 {
     width: 100vw;
-    height: sizem(474);
+    height: sizem(766);
     min-height: auto;
     max-height: initial;
-    background-color: #0083be;
+    background-color: #000;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
     // background-position: 0 0;
     // background-attachment: fixed;
     overflow: visible;
   }
-  .container {
-    height: sizem(474);
+  .person1, .person2, .person3 {
+    @include img_r_m(201, 391, 0);
   }
-  // .timeline {
-  //   @include img_c_m(310, 496);
-  // }
-
-  .arrow {
-    @include img_r_m(21, 165, 93);
-    opacity: 1 !important;
-    z-index: 10;
+  .name1, .name2, .name3 {
+    @include img_l_m(230, 263, 33);
+    font-size: sizem(25);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.44;
+    letter-spacing: sizem(4);
+    text-align: left;
+    color: #c3985b;
+    white-space: nowrap;
   }
 
-  .title {
-    @include img_l_m(143, 156, 32);
+  .title1, .title2, .title3 {
+    @include img_l_m(182, 308, 33);
     font-size: sizem(20);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.8;
-    letter-spacing: sizem(0.08);
+    line-height: 2.22;
+    letter-spacing: sizem(3.2);
     text-align: left;
-    color: #fff;
-    white-space: nowrap;
-    opacity: 1 !important;
-    z-index: 10;
-    span {
-      font-size: sizem(30);
-    }
-  }
-
-  .subtitle {
-    @include img_l_m(80, 160, 175);
-    font-size: sizem(24);
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.07;
-    letter-spacing: sizem(0.64);
-    text-align: left;
-    color: #fff;
-    opacity: 1 !important;
-    z-index: 10;
+    color: #ffffff;
     white-space: nowrap;
   }
 
-  .desc {
-    @include img_l_m(310, 220, 33);
+  .desc1, .desc2, .desc3 {
+    @include img_l_m(182, 358, 33);
     font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2;
-    letter-spacing: sizem(1.2);
+    line-height: 1.88;
+    letter-spacing: sizem(1.8);
     text-align: left;
-    opacity: 1 !important;
-    z-index: 10;
-    color: #fff;
-  }
-
-  .animate-slide {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: all 0.5s;
-    > img {
-      @for $i from 1 through 10 {
-        $randomNum: random(4) + 3;
-        &:nth-child(#{$i}) {
-          transform: translateY((random(10) - 50) + px);
-          animation: an ($randomNum + s) 3s infinite alternate;
-        }
-      }
-    }
-
-    .mo1 {
-      @include img_r_m(80, 150, 0);
-      z-index: 10;
-    }
-
-    .mo2 {
-      @include img_l_m(95, 360, -30);
-    }
+    color: #ffffff;
   }
 
   /* Swipe */
   .swipe {
     width: 100vw;
-    height: sizem(201);
+    height: sizem(250);
+    max-height: auto;
     min-height: auto;
     top: sizem(0);
     left: sizem(0);
@@ -530,7 +485,7 @@
 
     img {
       width: 100%;
-      height: sizem(201);
+      height: 100%;
       object-fit: cover;
     }
 

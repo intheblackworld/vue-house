@@ -255,7 +255,8 @@ export default {
       }
     }
 
-    .order-top-title1, .order-top-title2 {
+    .order-top-title1,
+    .order-top-title2 {
       width: 400px;
       margin-top: 25px;
       font-size: size(45.3);
@@ -443,6 +444,53 @@ export default {
     background-color: transparent;
     background-size: auto 250vw;
     // padding-top: calc(100vw * 250 / 375);
+
+    .order-top {
+      width: sizem(310);
+      height: sizem(240);
+      padding-top: sizem(25);
+      padding-bottom: sizem(31);
+      margin: 0 auto;
+
+      .order-top-desc {
+        font-size: sizem(15);
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.69;
+        letter-spacing: sizem(3);
+        text-align: left;
+        color: #c3985b;
+        span {
+          font-size: sizem(15);
+          font-weight: 500;
+          letter-spacing: sizem(3);
+        }
+      }
+
+      .order-top-title1,
+      .order-top-title2 {
+        width: 400px;
+        margin-top: 0px;
+        font-size: sizem(29);
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.48;
+        letter-spacing: sizem(-1.16);
+        text-align: left;
+        color: #ffffff;
+      }
+
+      .order-top-title1 {
+        float: none;
+        margin-top: 10px;
+      }
+
+      .order-top-title2 {
+        float: none;
+      }
+    }
     .order-title {
       font-size: sizem(37);
       margin-top: 10px;

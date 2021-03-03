@@ -6,10 +6,10 @@
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
             <img :src="slide.img" alt="">
-            <div class="slide-name absolute" v-html="slide.name"></div>
+            <!-- <div class="slide-name absolute" v-html="slide.name"></div> -->
           </div>
         </transition-group>
-        <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200">
+        <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
         <div class="swipe-btns absolute flex-ac flex-jb">
@@ -61,7 +61,6 @@
   bottom: size(0);
 }
 
-
 .title {
   @include img_l_pc(203, 0, 700);
   top: auto;
@@ -94,7 +93,7 @@
   @include img_c_pc(618, 0);
   top: auto;
   bottom: size(127);
-  border-bottom: 2px  solid #c3985b;
+  border-bottom: 2px solid #c3985b;
 }
 .desc {
   @include img_c_pc(621, 0);
@@ -109,7 +108,6 @@
   text-align: center;
   color: #ffffff;
 }
-
 
 /* Swipe */
 .swipe {
@@ -296,110 +294,72 @@
 @media screen and (max-width: 767px) {
   .section8 {
     width: 100vw;
-    height: sizem(474);
+    height: sizem(250 + 169);
     min-height: auto;
     max-height: initial;
-    background-color: #0083be;
+    background-color: #000;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
     // background-position: 0 0;
     // background-attachment: fixed;
     overflow: visible;
   }
-  .container {
-    height: sizem(474);
-  }
-  // .timeline {
-  //   @include img_c_m(310, 496);
-  // }
-
-  .arrow {
-    @include img_r_m(21, 165, 93);
-    opacity: 1 !important;
-    z-index: 10;
+  .o {
+    display: none;
+    // @include img_r_pc(581, 0, 0);
+    // top: auto;
+    // bottom: size(0);
   }
 
   .title {
-    @include img_l_m(143, 156, 32);
+    @include img_l_m(109, 169 + 23, 33);
+    font-size: sizem(25);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.44;
+    letter-spacing: sizem(3);
+    text-align: left;
+    color: #c3985b;
+    white-space: nowrap;
+  }
+  .subtitle {
+    @include img_l_m(317, 169 + 39, 160);
     font-size: sizem(20);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.8;
-    letter-spacing: sizem(0.08);
+    line-height: 0.2;
+    letter-spacing: sizem(0.8);
     text-align: left;
-    color: #fff;
-    white-space: nowrap;
-    opacity: 1 !important;
-    z-index: 10;
-    span {
-      font-size: sizem(30);
-    }
-  }
-
-  .subtitle {
-    @include img_l_m(80, 160, 175);
-    font-size: sizem(24);
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.07;
-    letter-spacing: sizem(0.64);
-    text-align: left;
-    color: #fff;
-    opacity: 1 !important;
-    z-index: 10;
+    color: #ffffff;
     white-space: nowrap;
   }
-
+  .hr {
+    @include img_c_m(310, 169 + 68);
+    bottom: auto;
+    border-bottom: 2px solid #c3985b;
+  }
   .desc {
-    @include img_l_m(310, 220, 33);
+    @include img_c_m(310, 169 + 80);
     font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2;
-    letter-spacing: sizem(1.2);
+    line-height: 2.2;
+    letter-spacing: sizem(2.4);
     text-align: left;
-    opacity: 1 !important;
-    z-index: 10;
-    color: #fff;
-  }
-
-  .animate-slide {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: all 0.5s;
-    > img {
-      @for $i from 1 through 10 {
-        $randomNum: random(4) + 3;
-        &:nth-child(#{$i}) {
-          transform: translateY((random(10) - 50) + px);
-          animation: an ($randomNum + s) 3s infinite alternate;
-        }
-      }
-    }
-
-    .mo1 {
-      @include img_r_m(80, 150, 0);
-      z-index: 10;
-    }
-
-    .mo2 {
-      @include img_l_m(95, 360, -30);
-    }
+    color: #ffffff;
   }
 
   /* Swipe */
   .swipe {
-    width: 100vw;
-    height: sizem(201);
+    width: sizem(355);
+    height: sizem(169);
     min-height: auto;
     top: sizem(0);
-    left: sizem(0);
+    left: 0;
+    right: 0;
     object-fit: cover;
     z-index: 3 !important;
     opacity: 1 !important;
@@ -457,7 +417,7 @@
 
     img {
       width: 100%;
-      height: sizem(201);
+      height: sizem(169);
       object-fit: cover;
     }
 
