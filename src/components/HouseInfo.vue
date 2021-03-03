@@ -1,5 +1,6 @@
 <template>
   <div class="house-info" id="house-info">
+    <img src="~@/projects/h25/c/bbg.png" alt="" class="bg">
     <div class="content">
       <div class="title">建案資訊</div>
       <div class="info">
@@ -37,6 +38,13 @@ export default {
   background: $house_bg;
   position: relative;
   z-index: 1;
+}
+
+.bg {
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 .content {
   width: 686px;

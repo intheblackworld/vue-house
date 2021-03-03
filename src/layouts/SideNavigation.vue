@@ -97,7 +97,7 @@ export default {
   right: 30px;
   width: 40px;
   height: 40px;
-  background-color: #df982a;
+  background-color: #c3985b;
   cursor: pointer;
 
   // img {
@@ -365,8 +365,8 @@ export default {
   .menu {
     display: flex;
     position: fixed;
-    right: 30px;
-    top: 30px;
+    left: 18px;
+    top: 20px;
 
     img {
       width: 100%;

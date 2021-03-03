@@ -28,12 +28,8 @@
       你選擇的生活，不僅意味品味，<br />
       更意味著你追求的人生
     </div>
-    <div class="desc1">
-      華山文創園區，空總文化實驗場，前衛創意。
-    </div>
-    <div class="desc2">
-      華山每年輪展內容領先全臺灣，從國際到在地、經典到時尚，每個領域的可能性都在這裡發生，也因此吸引了各式風範的生活品牌落址：光點、肯園、克莉絲汀...，甚至跨足電子的舊光華、新三創也都蔓延新生。
-    </div>
+    <h3 class="desc1" v-html="slideList[slideIndex].desc1"></h3>
+    <div class="desc2" v-html="slideList[slideIndex].desc2"></div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -46,6 +42,7 @@
   max-height: size(1080);
   position: relative;
   // background-image: url('~@/projects/hg1/s3/technology_bg.png');
+  background-color: #fff;
   background-size: cover;
   background-position: 100%;
   // min-height: size(900);
@@ -134,7 +131,6 @@
   color: #100b09;
   white-space: nowrap;
 }
-
 
 .desc2 {
   @include img_r_pc(777, 0, 180);
@@ -331,7 +327,7 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-    height: sizem(748);
+    height: sizem(505 + 250);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -340,98 +336,79 @@
     // background-attachment: fixed;
     overflow: hidden;
   }
-  .container {
-    height: sizem(748);
-  }
-  .timeline {
-    @include img_c_m(310, 496);
+
+  .content {
+    @include div_l_m(346, 160, 240, 12);
+    background-color: #100b09;
+
+    .t_bg {
+      @include img_r_m(170, 0, 0);
+      top: auto;
+      bottom: 0;
+    }
   }
 
-  .arrow {
-    @include img_r_m(37, 303, 34);
-    opacity: 1 !important;
+  .border {
+    @include div_l_m(346, 160, 245, 17.8);
+    border: 2px solid #866231;
   }
 
   .title {
-    @include img_l_m(196, 256, 32);
+    @include img_l_m(231, 265, 33);
     font-size: sizem(25);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.8;
-    letter-spacing: sizem(0.08);
+    line-height: 1.44;
+    letter-spacing: sizem(0.75);
     text-align: left;
-    color: #19191a;
+    color: #c3985b;
     white-space: nowrap;
-    opacity: 1 !important;
-    span {
-      font-size: sizem(30);
-    }
   }
 
   .subtitle {
-    @include img_l_m(190, 303, 32);
-    font-size: sizem(28);
-    font-weight: 300;
+    @include img_l_m(310, 310, 33);
+    font-size: sizem(15);
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.07;
-    letter-spacing: sizem(0.64);
+    line-height: 2.2;
+    letter-spacing: sizem(2.4);
     text-align: left;
-    color: #0296db;
-    opacity: 1 !important;
-    white-space: nowrap;
+    color: #ffffff;
+    white-space: normal;
   }
 
-  .desc {
-    @include img_l_m(308, 357, 33);
+  .desc1 {
+    @include img_c_m(310, 250 + 176);
     font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2;
-    letter-spacing: sizem(1.2);
+    line-height: 1.98;
+    letter-spacing: sizem(2.7);
     text-align: left;
-    opacity: 1 !important;
-    color: #666666;
+    color: #333333;
+    white-space: normal;
   }
 
-  .animate-slide {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: all 0.5s;
-    > img {
-      @for $i from 1 through 10 {
-        $randomNum: random(4) + 3;
-        &:nth-child(#{$i}) {
-          transform: translateY((random(10) - 50) + px);
-          animation: an ($randomNum + s) 3s infinite alternate;
-        }
-      }
-    }
-
-    .mo1 {
-      @include img_r_m(60, 230, -20);
-    }
-
-    // .mo2 {
-    //   @include img_c_m(375, -20);
-    // }
+  .desc2 {
+    @include img_c_m(310, 250 + 255);
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.98;
+    letter-spacing: sizem(1.7);
+    text-align: left;
+    color: #333333;
   }
 
   /* Swipe */
   .swipe {
-    width: 100vw;
-    height: sizem(201);
-    min-height: auto;
-    top: sizem(0);
-    left: sizem(0);
+    @include img_l_m(375, 0, 0);
+    height: sizem(250);
     object-fit: cover;
-    z-index: 50 !important;
-    opacity: 1 !important;
   }
 
   // begin
@@ -486,7 +463,7 @@
 
     img {
       width: 100%;
-      height: sizem(201);
+      height: 100%;
       object-fit: cover;
     }
 
@@ -606,19 +583,27 @@ export default {
       slideList: [
         {
           img: require('./s4/1.jpg'),
-          name: '',
+          desc1: '華山文創園區，空總文化實驗場，前衛創意。',
+          desc2:
+            '華山每年輪展內容領先全臺灣，從國際到在地、經典到時尚，每個領域的可能性都在這裡發生，也因此吸引了各式風範的生活品牌落址：光點、肯園、克莉絲汀...，甚至跨足電子的舊光華、新三創也都蔓延新生。',
         },
         {
           img: require('./s4/2.jpg'),
-          name: '',
+          desc1: '齊東詩社，台北琴道館、書畫院，薈萃年華。',
+          desc2:
+            '不只與時俱進，仔細看進這區，傳統文化是這裡之所以精彩的風骨。齊東詩社保存日治時期細緻而優雅的建築空間，與琴道館、書畫院，共同復育舊人智慧淬鍊的精彩文化。',
         },
         {
           img: require('./s4/3.jpg'),
-          name: '',
+          desc1: '遠東SOGO商圈，京站新光三越，定義時尚。',
+          desc2:
+            '法國巴黎第一區，義大利米蘭倫巴底區，如同每座時尚之都都會聚焦在精華地區，台北東區的時尚地位也不必多語。<br />時尚快活，收藏慢享，瀟灑人生可以有一百種方式。',
         },
         {
           img: require('./s4/4.jpg'),
-          name: '',
+          desc1: '雙捷運忠孝新生、善導寺，交匯只在核心。',
+          desc2:
+            '忠孝新生橫軸藍線、縱軸橘線，支線延伸等同拿下整座台北城。善導寺鄰近台北車站小國門，更坐擁創意文化與宗教重鎮，無論自用快捷、投資報酬都是最讓人期待的標的。',
         },
       ],
     }

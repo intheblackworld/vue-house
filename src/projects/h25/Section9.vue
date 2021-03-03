@@ -1,5 +1,7 @@
 <template>
   <div class="section9 flex-ac">
+    <div class="content"></div>
+    <div class="border"></div>
     <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
@@ -17,7 +19,7 @@
         </div>
       </div>
     </div>
-
+    <div class="hr"></div>
     <div class="title">
       是藝術更是精品<br />
       以百年風華<br />
@@ -33,10 +35,11 @@
 
 .section9 {
   width: 100%;
-  height: 100vh;
+  height: size(900);
   min-height: size(900);
   max-height: size(1080);
   position: relative;
+  background-color: #fff;
   // background-image: url('~@/projects/hg1/s3/technology_bg.png');
   background-size: cover;
   background-position: 100%;
@@ -63,16 +66,22 @@
 }
 
 .content {
-  @include div_l_pc(654, 234, 0, 179);
-  top: auto;
-  bottom: size(50);
+  @include div_r_pc(1710, 731, 88, 83);
   background-color: #100b09;
 }
 
+.border {
+  @include div_r_pc(522, 731, 100, 95);
+  border: solid 2px #707070;
+}
+
+.hr {
+  @include img_r_pc(349, 450, 169);
+  border-bottom: 2px solid #c3985b;
+}
+
 .title {
-  @include img_l_pc(472, 0, 285);
-  top: auto;
-  bottom: size(193);
+  @include img_r_pc(342, 209, 177);
   font-size: size(46);
   font-weight: bold;
   font-stretch: normal;
@@ -85,7 +94,15 @@
 }
 
 .desc {
-  
+  @include img_r_pc(352, 476, 169);
+  font-size: size(18);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.99;
+  letter-spacing: size(2.88);
+  text-align: left;
+  color: #ffffff;
 }
 
 /* Swipe */

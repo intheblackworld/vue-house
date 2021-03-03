@@ -20,16 +20,9 @@
     <div class="content"></div>
     <div class="border1"></div>
     <div class="border2"></div>
-    <div class="desc">
-      漫步齊東公園、幸安市場，<br />
-      穿梭SOGO商圈、格調餐酒館<br />
-      動、靜、日、夜，
-    </div>
+    <div class="desc" v-html="slideList[slideIndex].desc"></div>
     <div class="hr"></div>
-    <div class="title">
-      從未結束過的故事，<br />
-      豈止精采24小時？
-    </div>
+    <div class="title" v-html="slideList[slideIndex].title"></div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -76,14 +69,14 @@
 }
 
 .border1 {
-  @include img_c_pc(1839, 33);
-  height: size(999);
+  @include img_c_pc(1839, 65);
+  height: size(930);
   border: 2px solid #866231;
 }
 
 .border2 {
-  @include img_c_pc(1853, 33);
-  height: size(999);
+  @include img_c_pc(1853, 65);
+  height: size(930);
   border: 2px solid #866231;
 }
 
@@ -585,19 +578,23 @@ export default {
       slideList: [
         {
           img: require('./s4/1.jpg'),
-          name: '',
+          desc: '漫步齊東公園、幸安市場，<br />穿梭SOGO商圈、格調餐酒館<br />動、靜、日、夜，',
+          title: '從未結束過的故事，<br />豈止精采24小時？',
         },
         {
           img: require('./s4/2.jpg'),
-          name: '',
+          desc: '漫步齊東公園、幸安市場，<br />穿梭SOGO商圈、格調餐酒館<br />動、靜、日、夜，',
+          title: '從未結束過的故事，<br />豈止精采24小時？',
         },
         {
           img: require('./s4/3.jpg'),
-          name: '',
+          desc: '漫步齊東公園、幸安市場，<br />穿梭SOGO商圈、格調餐酒館<br />動、靜、日、夜，',
+          title: '從未結束過的故事，<br />豈止精采24小時？',
         },
         {
           img: require('./s4/4.jpg'),
-          name: '',
+          desc: '漫步齊東公園、幸安市場，<br />穿梭SOGO商圈、格調餐酒館<br />動、靜、日、夜，',
+          title: '從未結束過的故事，<br />豈止精采24小時？',
         },
       ],
     }

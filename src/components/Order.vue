@@ -1,16 +1,20 @@
 <template>
   <div class="order-bg">
-    <div class="animate-slide" v-if="isPC">
-      <img src="../projects/hg1/s12/漂浮物件_分層/11_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
-      <img src="../projects/hg1/s12/漂浮物件_分層/11_class_2.png" :alt="`${info.caseName}_logo`" class="pc2" data-parallax="4">
+    <img src="~@/projects/h25/c/bg.png" alt="" class="bg">
+    <div class="order-top">
+      <div class="order-top-desc">
+        讓精彩生活變得平易近人，讓日常細節變得風格動人<br />
+        獨佔市中心的一座貴賓席，開啟神秘的第<span>25</span>個小時
+      </div>
+      <div class="order-top-title1">
+        精彩錯過不再
+      </div>
+      <div class="order-top-title2">
+        歡迎預約搶藏
+      </div>
     </div>
-    <div class="animate-slide aaa" v-if="isMobile">
-      <!-- <img src="../projects/hg1/s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3"> -->
-      <img src="../projects/hg1/mo/s12/漂浮物件_單一/m_11_single_2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2">
-      <!-- <img src="../projects/hg1/mo/s12/漂浮物件_單一/m_11_single_1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1"> -->
-    </div>
-    <div class="order-title" v-scroll-to="{ element: `#contact` }">{{order.title}}</div>
-    <h3 class="order-subtitle">{{order.subTitle}}</h3>
+    <!-- <div class="order-title" v-scroll-to="{ element: `#contact` }">{{order.title}}</div>
+    <h3 class="order-subtitle">{{order.subTitle}}</h3> -->
     <div class="order">
       <div class="form">
         <div class="group">
@@ -219,9 +223,59 @@ export default {
   background-image: $order_bg_image;
   background-size: cover;
   // position: relative;
-  padding-top: calc(100vw * 200 / 1920);
+  // padding-top: calc(100vw * 200 / 1920);
   // overflow: hidden;
 
+  .bg {
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .order-top {
+    width: 880px;
+    height: size(357);
+    padding-top: size(141);
+    padding-bottom: size(50);
+    margin: 0 auto;
+
+    .order-top-desc {
+      font-size: size(22.2);
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.69;
+      letter-spacing: size(4.45);
+      text-align: left;
+      color: #c3985b;
+      span {
+        font-size: size(27.2);
+        font-weight: 300;
+        letter-spacing: size(2.17);
+      }
+    }
+
+    .order-top-title1, .order-top-title2 {
+      width: 400px;
+      margin-top: 25px;
+      font-size: size(45.3);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.58;
+      letter-spacing: size(-1.81);
+      text-align: left;
+      color: #ffffff;
+    }
+
+    .order-top-title1 {
+      float: left;
+    }
+
+    .order-top-title2 {
+      float: right;
+    }
+  }
   .order-title {
     margin-top: 0;
     margin-bottom: 0.1em;
@@ -273,7 +327,7 @@ export default {
     height: 236px;
 
     &:nth-child(1) {
-      border-right: 1px solid rgba(255, 255, 255, 0.2);
+      border-right: 1px solid rgba(255, 255, 255, 1);
       .row {
         justify-content: flex-start;
       }

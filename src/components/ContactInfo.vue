@@ -1,14 +1,6 @@
 <template>
   <div>
     <div class="contact-info">
-      <div class="animate-slide" v-if="!isMobile">
-        <img src="../projects/hg1/s13/漂浮物件_分層/12_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
-      </div>
-      <div class="animate-slide" v-if="isMobile">
-        <!-- <img src="../projects/hg1/s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
-        <img src="../projects/hg1/s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2"> -->
-        <img src="../projects/hg1/mo/s13/漂浮物件_分層/m_12_class_1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
-      </div>
       <img class="logo" :src="require('@/assets/img/contact-logo.png')" alt="" />
       <div class="info">
         <div class="btn flex-c" @click="showCallDialog">
@@ -138,7 +130,6 @@ export default {
   }
 }
 
-
 .contact-info {
   background: $contact_bg;
   background-size: cover;
@@ -148,8 +139,8 @@ export default {
   align-content: center;
   position: relative;
   z-index: 4;
-  width: 100vw;
-  height: 485px;
+  width: 1023px;
+  height: 337px;
   padding: 10px;
   margin: 80px auto;
 }
@@ -180,7 +171,7 @@ export default {
   background: $contact_btn_bg;
   border: $contact_btn_border;
   transition: all 0.5s;
-  // border-radius: 10px;
+  border-radius: 18px;
 
   svg {
     color: $contact_btn_icon;
@@ -206,7 +197,7 @@ export default {
   background: #eee;
   //box-shadow: inset 0 0 0 1px #999;
   color: #444;
-  // border-radius: 10px 0 0  10px;
+  border-radius: 18px 0 0 18px;
 
   &::v-deep span {
     color: #c00;
@@ -215,7 +206,7 @@ export default {
   }
 }
 .google-btn {
-  // border-radius:0 10px 10px 0;
+  border-radius: 0 18px 18px 0;
   width: 280px;
   height: 60px;
   font-size: 16px;
