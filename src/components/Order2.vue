@@ -605,9 +605,14 @@ export default {
       }
     }
     .google-map {
-      // margin-top: 35px;
       height: sizem(248);
+    margin:0 auto sizem(15) auto;
     }
+
+  .map_img{
+    width:100%;margin:sizem(120) 0 0 0;}
+
+
     .google-map-btn {
       @include div_l_m(70, 70, 45, 0);
     }
