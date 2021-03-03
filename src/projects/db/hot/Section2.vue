@@ -37,7 +37,7 @@
         <img :src="dialogData.logo" alt="" class="logo">
         <div class="slide-imgs flex-as flex-jb">
           <img :src="dialogData.imgs[0]" :alt="`${info.caseName}`" class="main" @click="selectImg(dialogData.imgs[0])">
-          <div class="text" v-html="dialogData.imgs[0]"></div>
+          <div class="text" v-html="dialogData.hint"></div>
           <div class="imgs" v-if="dialogData.imgs[1]">
             <img :src="dialogData.imgs[1]" :alt="`${info.caseName}`" @click="selectImg(dialogData.imgs[1])">
             <img :src="dialogData.imgs[2]" :alt="`${info.caseName}`" @click="selectImg(dialogData.imgs[2])">
@@ -228,7 +228,13 @@
   top: 0;
   left: 0;
   z-index: 10000;
-  .product-close{position: absolute;top:0;left: 0;width: 100%;height: 100%;}
+  .product-close {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .border-container {
@@ -244,17 +250,21 @@
   background-color: #008fbb;
   cursor: pointer;
   &::before,
-  &::after{
+  &::after {
     position: absolute;
     left: 0;
-    content: "";
+    content: '';
     display: block;
     width: 100%;
     height: 2px;
-    background-color: #fff;transform: rotate(-45deg);transform-origin: center;
-    top:calc(50% - 1px);
+    background-color: #fff;
+    transform: rotate(-45deg);
+    transform-origin: center;
+    top: calc(50% - 1px);
   }
-  &::before{transform: rotate(45deg);}
+  &::before {
+    transform: rotate(45deg);
+  }
 }
 
 .product-title {
@@ -345,30 +355,36 @@
   width: size(598 + 206);
   margin-left: size(55);
   margin-top: size(48);
-  overflow: hidden;justify-content:center;
-  .text{
+  overflow: hidden;
+  justify-content: center;
+  .text {
     white-space: pre;
     font-size: size(12);
     line-height: 1.6;
-  //  content:"本圖為示意圖,依核准之執照圖說及\A合約副圖為準,建設公司保有修改權";
-    position: absolute;bottom:4em;left:5em;opacity: 0.9;
-    color: #fff;text-shadow: 0 0 0.6em #000;}
+    // content: '';
+    position: absolute;
+    bottom: 4em;
+    left: 5em;
+    opacity: 0.9;
+    color: #fff;
+    text-shadow: 0 0 0.6em #000;
+  }
 
   .main {
-  // width: size(586);
-   // max-width: size(586);
-    width:70%;
-    flex:1 1 73%;
+    // width: size(586);
+    // max-width: size(586);
+    width: 70%;
+    flex: 1 1 73%;
     height: size(580);
     object-fit: cover;
   }
 
   .imgs {
-   // width: size(206);
-    width:30%;
-    flex:0 0 30%;
+    // width: size(206);
+    width: 30%;
+    flex: 0 0 30%;
     max-width: size(206);
-    margin-left:size(12);
+    margin-left: size(12);
 
     img {
       width: 100%;
@@ -580,9 +596,9 @@
   }
 
   .close {
-  @include div_r_m(40, 40, 15, 15);
-  z-index: 5;
-  position: fixed;
+    @include div_r_m(40, 40, 15, 15);
+    z-index: 5;
+    position: fixed;
   }
 
   .product-title {
@@ -686,13 +702,21 @@
     left: sizem(33);
     object-fit: cover;
     position: relative !important;
-    &::before{
-    white-space: pre;
-    font-size: sizem(12);transform: scale(0.9);transform-origin: 0 100%;
-    line-height: 1.6;
-    content:"本圖為示意圖,依核准之執照圖說及\A合約副圖為準,建設公司保有修改權";
-    position: absolute;bottom:0.3em;left:0.3em;opacity: 0.8;z-index: 5;
-    color: #fff;text-shadow: 0 0 0.6em #000;}
+    &::before {
+      white-space: pre;
+      font-size: sizem(12);
+      transform: scale(0.9);
+      transform-origin: 0 100%;
+      line-height: 1.6;
+      content: '本圖為示意圖,依核准之執照圖說及\A合約副圖為準,建設公司保有修改權';
+      position: absolute;
+      bottom: 0.3em;
+      left: 0.3em;
+      opacity: 0.8;
+      z-index: 5;
+      color: #fff;
+      text-shadow: 0 0 0.6em #000;
+    }
   }
 
   // begin
@@ -905,6 +929,7 @@ export default {
             require('../works/1/3.jpg'),
             require('../works/1/4.jpg'),
           ],
+          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
         },
         //太陽
         {
@@ -935,6 +960,7 @@ export default {
             require('../works/1/3.jpg'),
             require('../works/1/4.jpg'),
           ],
+          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
         },
         //自慢藏
         {
@@ -953,12 +979,9 @@ export default {
             '貴賓專線｜02-2933-1888<br />接待會館｜台北市羅斯福路五段216號之2',
           link: 'https://jiman.debang.tw/',
           logo: require('../works/6/0.jpg'),
-          imgs: [
-            require('../works/6/1.jpg'),
-          ],
-          text: [
-            require('../works/1/1.jpg'),
-          ],
+          imgs: [require('../works/6/1.jpg')],
+          text: [require('../works/1/1.jpg')],
+          hint: '',
         },
         //神采
         {
@@ -990,6 +1013,7 @@ export default {
             require('../works/1/3.jpg'),
             require('../works/1/4.jpg'),
           ],
+          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
         },
         //陽光
         {
@@ -1019,6 +1043,7 @@ export default {
             require('../works/1/3.jpg'),
             require('../works/1/4.jpg'),
           ],
+          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
         },
       ],
     }
