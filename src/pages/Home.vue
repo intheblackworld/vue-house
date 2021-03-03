@@ -2,49 +2,55 @@
   <div class="home no-padding-top">
     <Loading :loading="load" />
     <SideNavigation />
-    <full-page ref="fullPage" :options="options" id="fullpage">
-      <vue-lazy-component class="section relative" id="section1">
-        <Section1 />
-      </vue-lazy-component>
+    <!-- <full-page ref="fullPage" :options="options" id="fullpage"> -->
+    <vue-lazy-component class="section relative" id="section1">
+      <Section1 />
+    </vue-lazy-component>
 
-      <vue-lazy-component class="section" id="section2">
-        <Section2 />
-      </vue-lazy-component>
-      <!-- <vue-lazy-component>
+    <vue-lazy-component class="section" id="section2">
+      <Section2 />
+    </vue-lazy-component>
+    <!-- <vue-lazy-component>
         
       </vue-lazy-component> -->
-      <vue-lazy-component class="section" id="section3">
-        <Section3 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section4">
-        <Section4 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section5">
-        <Section5 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section6">
-        <Section6 />
-      </vue-lazy-component>
-      <!-- <div>
+    <vue-lazy-component class="section" id="section3">
+      <Section3 />
+    </vue-lazy-component>
+    <vue-lazy-component class="section" id="section4">
+      <Section4 />
+    </vue-lazy-component>
+    <vue-lazy-component class="section" id="section5">
+      <Section5 />
+    </vue-lazy-component>
+    <!-- <vue-lazy-component class="section" id="section6">
+      <Section6 />
+    </vue-lazy-component> -->
+    <vue-lazy-component class="section" id="section7">
+      <Section7 />
+    </vue-lazy-component>
+    <vue-lazy-component class="section" id="section8">
+      <Section8 />
+    </vue-lazy-component>
+    <!-- <div>
         <div class="top-bg">
         </div>
       </div> -->
-      <!-- <vue-lazy-component class="section" id="section7">
+    <!-- <vue-lazy-component class="section" id="section7">
       <Section7 />
     </vue-lazy-component> -->
-      <!-- <vue-lazy-component class="section" id="section8">
+    <!-- <vue-lazy-component class="section" id="section8">
         <Section8 />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section9">
         <Section9 />
       </vue-lazy-component> -->
-      <vue-lazy-component class="section" id="section10">
-        <Section10 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section11">
-        <Section11 />
-      </vue-lazy-component>
-    </full-page>
+    <vue-lazy-component class="section" id="section10">
+      <Section10 />
+    </vue-lazy-component>
+    <vue-lazy-component class="section" id="section11">
+      <Section11 />
+    </vue-lazy-component>
+    <!-- </full-page> -->
     <vue-lazy-component class="section" id="contact">
       <ContactSection />
     </vue-lazy-component>
@@ -85,17 +91,17 @@ import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 // import Indigator from '@/components/Indigator.vue'
 
-import Section1 from '@/projects/hg1/Section1.vue'
-import Section2 from '@/projects/hg1/Section2.vue'
-import Section3 from '@/projects/hg1/Section3.vue'
-import Section4 from '@/projects/hg1/Section4.vue'
-import Section5 from '@/projects/hg1/Section5.vue'
-import Section6 from '@/projects/hg1/Section6.vue'
-import Section7 from '@/projects/hg1/Section7.vue'
-// import Section8 from '@/projects/hg1/Section8.vue'
-// import Section9 from '@/projects/hg1/Section9.vue'
-import Section10 from '@/projects/hg1/Section10.vue'
-import Section11 from '@/projects/hg1/Section11.vue'
+import Section1 from '@/projects/h25/Section1.vue'
+import Section2 from '@/projects/h25/Section2.vue'
+import Section3 from '@/projects/h25/Section3.vue'
+import Section4 from '@/projects/h25/Section4.vue'
+import Section5 from '@/projects/h25/Section5.vue'
+// import Section6 from '@/projects/h25/Section6.vue'
+import Section7 from '@/projects/h25/Section7.vue'
+import Section8 from '@/projects/h25/Section8.vue'
+// import Section9 from '@/projects/h25/Section9.vue'
+import Section10 from '@/projects/h25/Section10.vue'
+import Section11 from '@/projects/h25/Section11.vue'
 
 export default {
   name: 'home',
@@ -111,9 +117,9 @@ export default {
     Section3,
     Section4,
     Section5,
-    Section6,
+    // Section6,
     Section7,
-    // Section8,
+    Section8,
     // Section9,
     Section10,
     Section11,
@@ -128,17 +134,17 @@ export default {
       action: {
         moveTo: () => {},
       },
-      options: {
-        menu: '#menu',
-        anchors: [],
-        scrollBar: true,
-        onLeave: this.onLeave,
-        afterLoad: this.afterLoad,
-        continuousHorizontal: true,
+      // options: {
+      //   menu: '#menu',
+      //   anchors: [],
+      //   scrollBar: true,
+      //   onLeave: this.onLeave,
+      //   afterLoad: this.afterLoad,
+      //   continuousHorizontal: true,
 
-        // navigation: true,
-        // sectionsColor: ['#41b883', '#ff5f45', '#0798ec'],
-      },
+      //   // navigation: true,
+      //   // sectionsColor: ['#41b883', '#ff5f45', '#0798ec'],
+      // },
     }
   },
   created() {
@@ -164,67 +170,67 @@ export default {
     // window.location = "https://ywh.nhc888.com.tw/"
   },
   mounted() {
-    window.addEventListener('scroll', this.onScroll, false)
-    this.action = this.$refs.fullPage.api
-    if (this.isMobile) {
-      this.$refs.fullPage.api.setResponsive(true)
-    }
+    // window.addEventListener('scroll', this.onScroll, false)
+    // this.action = this.$refs.fullPage.api
+    // if (this.isMobile) {
+    //   this.$refs.fullPage.api.setResponsive(true)
+    // }
   },
   methods: {
     init() {},
-    onScroll() {
-      // 获取所有锚点元素
-      const navContents = document.querySelectorAll('.section')
-      // 所有锚点元素的 offsetTop
-      const offsetTopArr = []
-      navContents.forEach((item) => {
-        offsetTopArr.push(item.offsetTop)
-      })
-      // 获取当前文档流的 scrollTop
-      const scrollTop =
-        document.documentElement.scrollTop || document.body.scrollTop
-      // 定义当前点亮的导航下标
-      let navIndex = 0
-      for (let n = 0; n < offsetTopArr.length; n++) {
-        // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
-        // 那么此时导航索引就应该是n了
-        if (scrollTop >= offsetTopArr[n] - 100) {
-          navIndex = n
-        }
-      }
-      if (this.viewIndex === navIndex + 1) {
-        this.viewIndex = navIndex + 1
-      }
-      // this.viewIndex = navIndex + 1
-    },
+    // onScroll() {
+    //   // 获取所有锚点元素
+    //   const navContents = document.querySelectorAll('.section')
+    //   // 所有锚点元素的 offsetTop
+    //   const offsetTopArr = []
+    //   navContents.forEach((item) => {
+    //     offsetTopArr.push(item.offsetTop)
+    //   })
+    //   // 获取当前文档流的 scrollTop
+    //   const scrollTop =
+    //     document.documentElement.scrollTop || document.body.scrollTop
+    //   // 定义当前点亮的导航下标
+    //   let navIndex = 0
+    //   for (let n = 0; n < offsetTopArr.length; n++) {
+    //     // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
+    //     // 那么此时导航索引就应该是n了
+    //     if (scrollTop >= offsetTopArr[n] - 100) {
+    //       navIndex = n
+    //     }
+    //   }
+    //   if (this.viewIndex === navIndex + 1) {
+    //     this.viewIndex = navIndex + 1
+    //   }
+    //   // this.viewIndex = navIndex + 1
+    // },
 
-    onLeave(origin, destination, direction) {
-      if (!this.isMobile) {
-        if (origin.isLast === true && direction === 'up') {
-          console.log('加固')
-          this.$refs.fullPage.api.setResponsive(false)
-        }
-        if (origin.isFirst === true && direction === 'down' && this.isMobile) {
-          this.$refs.fullPage.api.setResponsive(false)
-        }
+    // onLeave(origin, destination, direction) {
+    //   if (!this.isMobile) {
+    //     if (origin.isLast === true && direction === 'up') {
+    //       console.log('加固')
+    //       this.$refs.fullPage.api.setResponsive(false)
+    //     }
+    //     if (origin.isFirst === true && direction === 'down' && this.isMobile) {
+    //       this.$refs.fullPage.api.setResponsive(false)
+    //     }
 
-        if (
-          destination.isFirst === true &&
-          direction === 'up' &&
-          this.isMobile
-        ) {
-          this.$refs.fullPage.api.setResponsive(false)
-        }
-      }
-    },
+    //     if (
+    //       destination.isFirst === true &&
+    //       direction === 'up' &&
+    //       this.isMobile
+    //     ) {
+    //       this.$refs.fullPage.api.setResponsive(false)
+    //     }
+    //   }
+    // },
 
-    afterLoad(origin, destination, direction) {
-      this.indigatorIndex = destination.index
-      if (destination.isLast === true && direction === 'down') {
-        console.log('解除')
-        this.$refs.fullPage.api.setResponsive(true)
-      }
-    },
+    // afterLoad(origin, destination, direction) {
+    //   this.indigatorIndex = destination.index
+    //   if (destination.isLast === true && direction === 'down') {
+    //     console.log('解除')
+    //     this.$refs.fullPage.api.setResponsive(true)
+    //   }
+    // },
   },
 }
 </script>
