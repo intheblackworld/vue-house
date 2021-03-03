@@ -37,7 +37,8 @@
         <img :src="dialogData.logo" alt="" class="logo">
         <div class="slide-imgs flex-as flex-jb">
           <img :src="dialogData.imgs[0]" :alt="`${info.caseName}`" class="main" @click="selectImg(dialogData.imgs[0])">
-          <div class="imgs">
+          <div class="text" v-html="dialogData.imgs[0]"></div>
+          <div class="imgs" v-if="dialogData.imgs[1]">
             <img :src="dialogData.imgs[1]" :alt="`${info.caseName}`" @click="selectImg(dialogData.imgs[1])">
             <img :src="dialogData.imgs[2]" :alt="`${info.caseName}`" @click="selectImg(dialogData.imgs[2])">
             <img :src="dialogData.imgs[3]" :alt="`${info.caseName}`" @click="selectImg(dialogData.imgs[3])">
@@ -62,7 +63,7 @@
                 <img :src="slide" alt="">
               </div>
             </transition-group>
-            <div class="swipe-btns absolute flex-ac flex-jb">
+            <div class="swipe-btns absolute flex-ac flex-jb" v-if="dialogData.imgs[1]">
               <img src="../all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
               <img src="../all/next-btn.png" alt="" class="next-btn" @click="addIndex">
             </div>
@@ -197,12 +198,12 @@
 
   .item-desc {
     width: 70%;
-    font-size: size(20);
+    font-size: size(19);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.37;
-    letter-spacing: size(0.92);
+    letter-spacing: 0.04em;
     text-align: left;
     color: #4d4d4d;
   }
@@ -287,7 +288,7 @@
   white-space: nowrap;
 }
 .txt {
-  @include img_l_pc(640, 308, 884);
+  @include img_l_pc(640, 305, 884);
   font-size: size(19);
   font-weight: normal;
   font-stretch: normal;
@@ -344,22 +345,30 @@
   width: size(598 + 206);
   margin-left: size(55);
   margin-top: size(48);
-  &::before{
+  overflow: hidden;justify-content:center;
+  .text{
     white-space: pre;
     font-size: size(12);
     line-height: 1.6;
-    content:"本圖為示意圖,依核准之執照圖說及\A合約副圖為準,建設公司保有修改權";
+  //  content:"本圖為示意圖,依核准之執照圖說及\A合約副圖為準,建設公司保有修改權";
     position: absolute;bottom:4em;left:5em;opacity: 0.9;
     color: #fff;text-shadow: 0 0 0.6em #000;}
 
   .main {
-    width: size(586);
+  // width: size(586);
+   // max-width: size(586);
+    width:70%;
+    flex:1 1 73%;
     height: size(580);
     object-fit: cover;
   }
 
   .imgs {
-    width: size(206);
+   // width: size(206);
+    width:30%;
+    flex:0 0 30%;
+    max-width: size(206);
+    margin-left:size(12);
 
     img {
       width: 100%;
@@ -890,6 +899,12 @@ export default {
             require('../works/1/3.jpg'),
             require('../works/1/4.jpg'),
           ],
+          text: [
+            require('../works/1/1.jpg'),
+            require('../works/1/2.jpg'),
+            require('../works/1/3.jpg'),
+            require('../works/1/4.jpg'),
+          ],
         },
         //太陽
         {
@@ -913,6 +928,36 @@ export default {
             require('../works/4/2.jpg'),
             require('../works/4/3.jpg'),
             require('../works/4/4.jpg'),
+          ],
+          text: [
+            require('../works/1/1.jpg'),
+            require('../works/1/2.jpg'),
+            require('../works/1/3.jpg'),
+            require('../works/1/4.jpg'),
+          ],
+        },
+        //自慢藏
+        {
+          title: '自慢藏',
+          title2: '自慢藏',
+          desc:
+            '台北市｜文山區<br />35·45·60坪<br />藏山藏水藏台大 見識越高越是深藏不露',
+          img: require('../works/6/0.jpg'),
+          isEmpty: false,
+          info1:
+            '台北市｜文山區<br />35·45·60坪<br />藏山藏水藏台大 見識越高越是深藏不露',
+          info2: '投資興建：沅利建設<br />坪數房型：35、45、60坪',
+          info3:
+            '台大師大雙文、公園水岸雙景觀<br />台大最後一塊珍稀水岸、沅家集團-沅利建設40年代表作<br />日本國土開發台北水岸第一次<br />SRC鋼骨耐震標章建築<br />中鋼、新日鐵台日頂級鋼材<br />台灣大學地震中心結構外審',
+          contact:
+            '貴賓專線｜02-2933-1888<br />接待會館｜台北市羅斯福路五段216號之2',
+          link: 'https://jiman.debang.tw/',
+          logo: require('../works/6/0.jpg'),
+          imgs: [
+            require('../works/6/1.jpg'),
+          ],
+          text: [
+            require('../works/1/1.jpg'),
           ],
         },
         //神采
@@ -939,6 +984,12 @@ export default {
             require('../works/3/3.jpg'),
             require('../works/3/4.jpg'),
           ],
+          text: [
+            require('../works/1/1.jpg'),
+            require('../works/1/2.jpg'),
+            require('../works/1/3.jpg'),
+            require('../works/1/4.jpg'),
+          ],
         },
         //陽光
         {
@@ -961,6 +1012,12 @@ export default {
             require('../works/2/2.jpg'),
             require('../works/2/3.jpg'),
             require('../works/2/4.jpg'),
+          ],
+          text: [
+            require('../works/1/1.jpg'),
+            require('../works/1/2.jpg'),
+            require('../works/1/3.jpg'),
+            require('../works/1/4.jpg'),
           ],
         },
       ],
