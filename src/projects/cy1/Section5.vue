@@ -50,7 +50,7 @@
           </div>
         </div>
       </div>
-      <div class="title-block title-block2 flex-c">
+      <div class="title-block title-block2 flex-c" id="section5-2">
         300米捷運蘆洲站<br />
         美好連成線
       </div>
@@ -140,11 +140,11 @@
   width: size(638.5);
   background-color: #542e71;
   font-size: size(30.7);
-  font-weight: 900;
+  font-weight: 700;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.56;
-  letter-spacing: normal;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
   text-align: center;
   color: #ffffff;
   margin-bottom: size(6.5);
@@ -161,13 +161,13 @@
 .desc-block {
   width: size(638.5);
   font-size: size(16);
-  font-weight: normal;
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.07;
-  letter-spacing: normal;
+  line-height: 1.9;
+  letter-spacing:0.02em;
   text-align: center;
-  color: #606060;
+  color: #000a;
   margin-bottom: size(6.5);
 }
 
@@ -421,14 +421,7 @@
   .title-block {
     width: 100vw;
     background-color: #542e71;
-    font-size: sizem(20);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: normal;
-    text-align: center;
-    color: #ffffff;
+    font-size: sizem(22);
     margin-bottom: 0;
     position: absolute;
   }
@@ -446,14 +439,7 @@
 
   .desc-block {
     width: 100vw;
-    font-size: sizem(13);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.92;
-    letter-spacing: normal;
-    text-align: center;
-    color: #606060;
+    font-size: sizem(13.5);
     margin-bottom: 0;
     position: absolute;
   }

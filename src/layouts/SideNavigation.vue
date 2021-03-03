@@ -20,7 +20,7 @@
           </span>
         </li>
       </ul>
-      <img :class="`contact-btn ${isOpen ? 'open': ''}`" v-scroll-to="{ element: `#contact` }" src="@/projects/cy1/s1/contact_btn.png" @click="isOpen = false" alt />
+      <img :class="`contact-btn ${isOpen ? 'open': ''}`" v-scroll-to="{ element: `#contact` }" src="@/projects/cy1/s1/contact_btn.png" @click="isOpen = false" alt v-if="!isMobile" />
     </div>
   </div>
 </template>

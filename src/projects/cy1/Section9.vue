@@ -13,7 +13,7 @@
     </div>
     <div class="vue-accordion">
       <ul>
-        <li :class="`${currentIndex === index ? 'active' : ''}`" v-for="(item, index) in items" :key="item.image" :style="{ backgroundImage: `url(${item.image})` }" @click="currentIndex = index">
+        <li :id="`s9_${item.index}`" v-scroll-to="{ element: `#s9_${item.index}`}" :class="`${currentIndex === index ? 'active' : ''}`" v-for="(item, index) in items" :key="item.image" :style="{ backgroundImage: `url(${item.image})` }" @click="currentIndex = index">
           <h2></h2>
           <p></p>
         </li>
@@ -48,23 +48,25 @@
       display: table-cell;
       width: 50%;
       background-repeat: no-repeat;
-      background-position: 50%;
+      background-position: center;
       transition: all 0.5s ease;
       background-position: 0%;
       background-size: cover;
       cursor: pointer;
+    box-shadow: rgba(50, 50, 93, 0.3) 80px 0px 80px -12px inset,
+      rgba(0, 0, 0, 0.3) 18px 0px 18px -18px inset,;
     }
     li {
       width: 15%;
     }
   }
   li.active {
-    box-shadow: rgba(50, 50, 93, 0.25) 30px 0px 30px -12px inset,
-      rgba(0, 0, 0, 0.3) 18px 0px 18px -18px inset;
     width: 60%;
   }
 
   li.active {
+    box-shadow: rgba(50, 50, 93, 0.25) 20px 0px 20px -12px inset,
+      rgba(0, 0, 0, 0.3) 18px 0px 18px -18px inset;
   }
 }
 @media screen and (max-width: 767px) {
@@ -86,17 +88,17 @@
         display: block !important;
         background-position: 100% 0% !important;
         background-size: cover !important;
-      }
-      li {
         width: 100vw !important;
         height: sizem(218) !important;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+        rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
       }
     }
     li.active {
       width: 100vw !important;
       height: sizem(561) !important;
       // background: transparent !important;
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+      box-shadow: rgba(50, 50, 93, 0.1) 0px 15px 20px -12px inset,
         rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
     }
     li {
@@ -114,7 +116,7 @@
   height: 100vh;
   // min-height: size(1080);
   // max-height: size(1080);
-  // overflow: hidden;
+  overflow: hidden;
   position: relative;
   // background: #552e70 fixed;
   background-size: auto;
@@ -122,7 +124,7 @@
 }
 
 .bg-img {
-  width: size(1920);
+  width:100%;
   // height: 100%;
   // min-height: size(900);
   position: absolute;
@@ -139,6 +141,8 @@
 
 .bg {
   @include img_l_pc(389, 0, 0);
+  top: auto;
+  bottom: 0
 }
 
 .logo {
@@ -267,6 +271,7 @@ export default {
       currentIndex: 1,
       items: [
         {
+          index:1,
           title: '',
           text: '',
           // url: '#',
@@ -275,6 +280,7 @@ export default {
             : require('./s9/08_item_1.jpg'),
         },
         {
+          index:2,
           title: '',
           text: '',
           // url: '#',
@@ -283,6 +289,7 @@ export default {
             : require('./s9/08_item_2.jpg'),
         },
         {
+          index:3,
           title: '',
           text: '',
           // url: '#',
@@ -291,6 +298,7 @@ export default {
             : require('./s9/08_item_3.jpg'),
         },
         {
+          index:4,
           title: '',
           text: '',
           // url: '#',

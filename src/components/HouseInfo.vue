@@ -43,7 +43,7 @@ export default {
 }
 
 .container {
-  width: size(1440);
+  width: 100%;
   margin: 0 auto;
   background-color: #542e71;
 }
@@ -70,10 +70,11 @@ export default {
 .info {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 0 3em;
+  font-size: 15px;
 }
 
 .item {
-  font-size: 15px;
   margin-bottom: 2em;
   margin-right: 10em;
   width: 260px;
@@ -114,7 +115,7 @@ export default {
     text-align: left;
     color: $house_desc_color;
     font-family: $family3;
-    font-weight: bold;
+    font-weight: 400;
   }
 }
 

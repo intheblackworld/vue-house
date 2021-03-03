@@ -72,12 +72,12 @@
 }
 
 .title {
-  @include img_c_pc(900, 53);
+  @include img_c_pc(900, 30);
   font-size: size(30.7);
   font-weight: 900;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.14;
+  line-height: 1.5;
   letter-spacing: normal;
   text-align: center;
   color: #542e71;
@@ -89,10 +89,10 @@
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.8;
-  letter-spacing: normal;
+  line-height: 1.9;
+  letter-spacing:0.02em;
   text-align: center;
-  color: #707070;
+  color: #000a;
   // top: calc(50% - 9vw);
 }
 
@@ -137,12 +137,13 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.2;
-    letter-spacing: normal;
+    letter-spacing: 0.02em;
     text-align: left;
     color: #ffffff;
     position: absolute;
     left: size(35);
     bottom: size(15);
+    text-shadow: 0 0 5px #000;
   }
 }
 
@@ -342,27 +343,13 @@
   }
 
   .title {
-    @include img_c_m(325, 23);
+    @include img_c_m(325, 50);
     font-size: sizem(20);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: normal;
-    text-align: center;
-    color: #542e71;
   }
 
   .desc {
-    @include img_c_m(325, 102);
+    @include img_c_m(340, 130);
     font-size: sizem(13);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.92;
-    letter-spacing: normal;
-    text-align: center;
-    color: #707070;
     // top: calc(50% - 9vw);
   }
 

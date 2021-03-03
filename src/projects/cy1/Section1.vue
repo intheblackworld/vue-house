@@ -7,7 +7,7 @@
     <img src="./s1/top_title_2.png" :alt="`${info.caseName}_title_2`" class="title-2" data-aos="fade-up" data-aos-delay="600">
     <img src="./s1/top_tree_single.png" :alt="`${info.caseName}_tree1`" class="tree1" data-aos="fade-up" data-aos-delay="800">
     <img src="./s1/top_tree_single.png" :alt="`${info.caseName}_tree2`" class="tree2" data-aos="fade-up" data-aos-delay="900">
-    <h1 class="title-3" data-aos="fade-up" data-aos-delay="200">
+    <h1 class="title-3" id="section1-1" data-aos="fade-up" data-aos-delay="200">
       九揚盧登堡
     </h1>
     <h1 class="desc" v-if="isPC" data-aos="fade-up" data-aos-delay="400">
@@ -95,25 +95,25 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 0.97;
-  letter-spacing: size(5.18);
+  letter-spacing: 0.1em;
   text-align: center;
   color: #542e71;
   white-space: nowrap;
 }
 
 .desc {
-  @include img_c_pc(592, 466);
+  @include img_c_pc(592, 450);
   top: auto;
-  bottom: size(680);
-  text-shadow: 0 0 4px #061247;
+  bottom: size(710);
+  //text-shadow: 0 0 6px #061247,0 0 4px #061247;
   font-size: size(15);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.2;
-  letter-spacing: size(1.5);
+  line-height: 1.8;
+  letter-spacing: 0.06em;
   text-align: center;
-  color: #ffffff;
+  color: #542e71;
   white-space: nowrap;
 }
 
@@ -210,30 +210,14 @@
     // top: auto;
     bottom: auto;
     font-size: sizem(34);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 0.97;
-    letter-spacing: sizem(3.4);
-    text-align: center;
-    color: #542e71;
-    white-space: nowrap;
   }
 
   .desc {
-    @include img_c_m(296, 783);
+    @include img_c_m(296, 773);
     // top: auto;
     bottom: auto;
-    text-shadow: 0 0 4px #061247;
+    text-shadow: 0 0 6px #fff;
     font-size: sizem(13);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.54;
-    letter-spacing: sizem(1.3);
-    text-align: center;
-    color: #ffffff;
-    white-space: nowrap;
   }
 }
 </style>
