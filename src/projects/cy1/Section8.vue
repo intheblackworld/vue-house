@@ -136,8 +136,8 @@
 
 .desc {
   @include img_c_pc(736, 692);
-  font-size: size(15);
-  font-weight: 900;
+  font-size: size(16);
+  font-weight: 400;
   font-stretch: normal;
   font-style: normal;
   line-height: 2.67;

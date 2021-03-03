@@ -85,11 +85,11 @@
 
 .desc {
   @include img_c_pc(666, 160);
-  font-size: size(15);
+  font-size: size(16);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2;
+  line-height: 1.8;
   letter-spacing: normal;
   text-align: center;
   color: #707070;
