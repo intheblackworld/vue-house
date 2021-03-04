@@ -61,6 +61,7 @@
             <transition-group name="swipe-fade" mode="out-in">
               <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide + i" :class="`swipe-item absolute`">
                 <img :src="slide" alt="">
+                <div class="text" v-html="dialogData.hint"></div>
               </div>
             </transition-group>
             <div class="swipe-btns absolute flex-ac flex-jb" v-if="dialogData.imgs[1]">
@@ -702,13 +703,13 @@
     left: sizem(33);
     object-fit: cover;
     position: relative !important;
-    &::before {
+    .text {
       white-space: pre;
       font-size: sizem(12);
       transform: scale(0.9);
       transform-origin: 0 100%;
       line-height: 1.6;
-      content: '本圖為示意圖,依核准之執照圖說及\A合約副圖為準,建設公司保有修改權';
+     //content: '本圖為示意圖,依核准之執照圖說及\A合約副圖為準,建設公司保有修改權';
       position: absolute;
       bottom: 0.3em;
       left: 0.3em;
@@ -954,12 +955,6 @@ export default {
             require('../works/4/3.jpg'),
             require('../works/4/4.jpg'),
           ],
-          text: [
-            require('../works/1/1.jpg'),
-            require('../works/1/2.jpg'),
-            require('../works/1/3.jpg'),
-            require('../works/1/4.jpg'),
-          ],
           hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
         },
         //自慢藏
@@ -980,7 +975,6 @@ export default {
           link: 'https://jiman.debang.tw/',
           logo: require('../works/6/0.jpg'),
           imgs: [require('../works/6/1.jpg')],
-          text: [require('../works/1/1.jpg')],
           hint: '',
         },
         //神采
@@ -1007,12 +1001,6 @@ export default {
             require('../works/3/3.jpg'),
             require('../works/3/4.jpg'),
           ],
-          text: [
-            require('../works/1/1.jpg'),
-            require('../works/1/2.jpg'),
-            require('../works/1/3.jpg'),
-            require('../works/1/4.jpg'),
-          ],
           hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
         },
         //陽光
@@ -1036,12 +1024,6 @@ export default {
             require('../works/2/2.jpg'),
             require('../works/2/3.jpg'),
             require('../works/2/4.jpg'),
-          ],
-          text: [
-            require('../works/1/1.jpg'),
-            require('../works/1/2.jpg'),
-            require('../works/1/3.jpg'),
-            require('../works/1/4.jpg'),
           ],
           hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
         },
