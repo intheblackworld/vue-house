@@ -65,7 +65,7 @@
 
 .desc {
   @include img_c_pc(780, 140);
-  font-size: size(17);
+  font-size: size(18);
   font-weight: 400;
   font-stretch: normal;
   font-style: normal;

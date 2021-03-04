@@ -160,7 +160,7 @@
 
 .desc-block {
   width: size(638.5);
-  font-size: size(16);
+  font-size: size(18);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;

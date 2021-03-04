@@ -72,7 +72,7 @@
 }
 
 .title {
-  @include img_c_pc(900, 30);
+  @include img_c_pc(900, 10);
   font-size: size(30.7);
   font-weight: 900;
   font-stretch: normal;
@@ -84,8 +84,8 @@
 }
 
 .desc {
-  @include img_c_pc(666, 160);
-  font-size: size(16);
+  @include img_c_pc(666, 130);
+  font-size: size(18);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;

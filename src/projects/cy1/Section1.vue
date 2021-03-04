@@ -104,9 +104,9 @@
 .desc {
   @include img_c_pc(592, 450);
   top: auto;
-  bottom: size(710);
+  bottom: size(680);
   //text-shadow: 0 0 6px #061247,0 0 4px #061247;
-  font-size: size(15);
+  font-size: size(18);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;

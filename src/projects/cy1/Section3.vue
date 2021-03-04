@@ -1,6 +1,7 @@
 <template>
   <div class="section3">
-    <img src="./s3/03_img.jpg" :alt="`${info.caseName}_img`" class="img">
+    <img src="./s3/03_img_full.jpg" :alt="`${info.caseName}_img`" class="img" v-if="!isMobile">
+    <img src="./s3/03_img.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isMobile">
     <img src="./s3/03_logo.png" :alt="`${info.caseName}_logo`" class="logo" data-aos="fade-up" data-aos-delay="200">
     <h1 class="title" data-aos="fade-up" data-aos-delay="400">
       30年貴族血脈　新藝術精工建築
@@ -42,7 +43,7 @@
   }
 }
 .img {
-  @include img_c_pc(1283, 83);
+  @include img_c_pc(1920, 0);
 }
 .logo {
   @include img_c_pc(371, 733);
@@ -62,8 +63,8 @@
 }
 
 .desc {
-  @include img_c_pc(900, 900);
-  font-size: size(15);
+  @include img_c_pc(1100, 900);
+  font-size: size(18);
   font-weight: 300;
   font-stretch: normal;
   font-style: normal;

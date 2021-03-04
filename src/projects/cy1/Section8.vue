@@ -106,8 +106,8 @@
   }
 
   .item-desc {
-    @include img_c_pc(333, 110);
-    font-size: size(17);
+    @include img_c_pc(333,105);
+    font-size: size(18);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
@@ -136,8 +136,8 @@
 }
 
 .desc {
-  @include img_c_pc(736, 712);
-  font-size: size(16);
+  @include img_c_pc(736, 705);
+  font-size: size(18);
   font-weight: 400;
   font-stretch: normal;
   font-style: normal;

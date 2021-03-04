@@ -151,6 +151,7 @@
 
 .title1 {
   @include img_l_pc(47, 233, 206);
+  white-space: nowrap;
 }
 
 .title2 {
@@ -222,19 +223,19 @@
   }
 
   .title1 {
-    @include img_c_m(285, 83);
+    @include img_c_m(310, 83);
     font-size: sizem(25);
     font-weight: 900;
     font-stretch: normal;
     font-style: normal;
     line-height: 3.46;
     letter-spacing: normal;
-    text-align: right;
+    text-align: center;
     color: #ebd232;
   }
 
   .title2 {
-    @include img_c_m(260, 159);
+    @include img_c_m(290, 159);
     border-top: 1px solid #fff;
     border-bottom: 1px solid #fff;
     font-size: sizem(20);
@@ -243,7 +244,7 @@
     font-style: normal;
     line-height: 1.6;
     letter-spacing: normal;
-    text-align: right;
+    text-align: center;
     color: #ffffff;
   }
 }
@@ -272,39 +273,39 @@ export default {
       items: [
         {
           index:1,
-          title: '',
-          text: '',
+          title:isMobile ? '' : require('./s9/09_01_item_text1.jpg'),
+          text: '城堡地標　名宅傳奇',
           // url: '#',
           image: isMobile
             ? require('./s9/08_item_1_m.jpg')
-            : require('./s9/08_item_1.jpg'),
+            : require('./s9/09_01_item_img.jpg'),
         },
         {
           index:2,
-          title: '',
-          text: '',
+          title:isMobile ? '' : require('./s9/09_02_item_text1.jpg'),
+          text: '與生俱來　無可取代',
           // url: '#',
           image: isMobile
             ? require('./s9/08_item_2_m.jpg')
-            : require('./s9/08_item_2.jpg'),
+            : require('./s9/09_02_item_img.jpg'),
         },
         {
           index:3,
-          title: '',
-          text: '',
+          title:isMobile ? '' : require('./s9/09_03_item_text1.jpg'),
+          text: '與生俱來　無可取代',
           // url: '#',
           image: isMobile
             ? require('./s9/08_item_3_m.jpg')
-            : require('./s9/08_item_3.jpg'),
+            : require('./s9/09_03_item_img.jpg'),
         },
         {
           index:4,
-          title: '',
-          text: '',
+          title:isMobile ? '' : require('./s9/09_04_item_text1.jpg'),
+          text: '優雅精緻　壯麗林口',
           // url: '#',
           image: isMobile
             ? require('./s9/08_item_4_m.jpg')
-            : require('./s9/08_item_4.jpg'),
+            : require('./s9/09_04_item_img.jpg'),
         },
       ],
     }
