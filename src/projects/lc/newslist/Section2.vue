@@ -221,6 +221,10 @@ export default {
       list: [
         //...Array(18).keys()].map((i) => ({
         {
+          img: require('../news/s2/6/1.jpg'),
+          title: '鶯歌最夯建案 立瑾WAY 3/6即將開案',
+        },
+        {
           img: require('../news/s2/5/a1.jpg'),
           title: '三重立瑾醞召開第一次區權會',
         },
