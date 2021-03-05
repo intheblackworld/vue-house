@@ -14,7 +14,7 @@
     <div class="vue-accordion">
       <ul>
         <li :id="`s9_${item.index}`" v-scroll-to="{ element: `#s9_${item.index}`}" :class="`${currentIndex === index ? 'active' : ''}`" v-for="(item, index) in items" :key="item.image" :style="{ backgroundImage: `url(${item.image})` }" @click="currentIndex = index">
-          <h2 class="title"><img :src="item.title" alt="title" /></h2>
+          <h2 class="title"><img :src="item.title" alt="title" v-if="item.title" /></h2>
           <p class="text" v-html="item.text"></p>
         </li>
       </ul>
