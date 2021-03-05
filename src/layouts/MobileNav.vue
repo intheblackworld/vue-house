@@ -9,7 +9,7 @@
       <font-awesome-icon icon="pen" />
       <div class="label">預約賞屋</div>
     </a>
-    <a class="nav-item" @click="showWaitingDialog">
+    <a class="nav-item" @click="showMessengerDialog">
       <font-awesome-icon :icon="['fab', 'facebook-messenger']" />
       <div class="label">FB諮詢</div>
     </a>
