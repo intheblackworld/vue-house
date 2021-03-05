@@ -269,7 +269,7 @@ $case_name = $dataList[0]['casename'];
             $url .= "&email=".$user_email;
             $url .= "&city=".$city;
             $url .= "&area=".$area;
-            $url .= "&message="."活動名稱：".$activity."報名人數：".$count;
+            $url .= "&message="."活動名稱：".$activity."；報名人數：".$count;
             $url .= "&utm_source=".$utm_source;
             $url .= "&utm_medium=".$utm_medium;
             $url .= "&utm_content=".$utm_content;
