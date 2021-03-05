@@ -5,8 +5,8 @@ export default {
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.3706602029324!2d121.5513162154261!3d24.9535006840101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468019a17672335%3A0xf2b049e5845da248!2zMjMx5paw5YyX5biC5paw5bqX5Y2A5YyX5a6c6Lev5LqM5q61MjI16Jmf!5e0!3m2!1szh-TW!2stw!4v1613900894952!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/zhnxsLxHmxTKq3uU9',
   phone: '02-2933-1888',
-  fbLink: 'https://www.facebook.com/%E8%87%AA%E6%85%A2%E8%97%8F-338064510833000',
-  fbMessage: 'https://m.me/338064510833000',
+  fbLink: 'https://www.facebook.com/%E7%BF%A0%E6%9D%BE%E5%9C%92-104854654998745',
+  fbMessage: 'https://m.me/104854654998745/',
   caseName: '翠松園',
   indigatorLength: 10,
   houseInfos: [
