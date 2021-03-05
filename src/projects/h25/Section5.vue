@@ -1,6 +1,6 @@
 <template>
   <div class="section5 flex-ac">
-    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -31,7 +31,7 @@
 .section5 {
   width: 100%;
   height: 100vh;
-  min-height: size(1080);
+  min-height: size(900);
   max-height: size(1080);
   position: relative;
   background-image: url('~@/projects/hg1/s3/technology_bg.png');
@@ -62,21 +62,20 @@
 .content {
   @include div_l_pc(443, 234, 0, 168);
   top: 0;
-  min-height: size(1080);
-  height: 100vh;
+  height: 100%;
   background-color: rgba(16, 11, 9, 0.8);
   z-index: 1;
 }
 
 .border1 {
-  @include img_c_pc(1839, 65);
-  height: size(930);
+  @include img_c_pc(1839, 30);
+  height: calc(100% - 3.125vw);
   border: 2px solid #866231;
 }
 
 .border2 {
-  @include img_c_pc(1853, 65);
-  height: size(930);
+  @include img_c_pc(1853, 30);
+  height: calc(100% - 3.125vw);
   border: 2px solid #866231;
 }
 
@@ -123,9 +122,7 @@
 /* Swipe */
 .swipe {
   @include img_l_pc(1920, 0, 0);
-  height: 100vh;
-  min-height: size(1080);
-  max-height: size(1080);
+  height: 100%;
 }
 
 // begin

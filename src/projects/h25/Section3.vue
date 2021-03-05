@@ -55,7 +55,7 @@
 
 .img {
   @include img_l_pc(1920, 0, 0);
-  height: size(890);
+  height:calc(100% - 9vw);
   object-fit: cover;
 }
 
@@ -97,8 +97,8 @@
 .subtitle {
   @include img_l_pc(556, 0, 249);
   top: auto;
-  bottom: size(40);
-  font-size: size(23);
+  bottom: size(60);
+  font-size: size(20);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -118,8 +118,8 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.65;
-  letter-spacing: size(3.24);
-  text-align: left;
+  letter-spacing:0.18em;
+  text-align: justify;
   color: #333333;
 }
 
@@ -200,13 +200,8 @@
   .desc {
     @include img_c_m(310, 250 + 265);
     font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.98;
-    letter-spacing: sizem(2.7);
-    text-align: left;
-    color: #333333;
+  letter-spacing:0.18em;
   }
 }
 </style>

@@ -24,16 +24,22 @@
     </transition-group>
 
     <transition-group name="swipe-fade" mode="out-in">
-      <img v-if="slideIndex === 1" :src="slideList[slideIndex].person" alt="" class="person1" key="img2">
+      <img v-if="slideIndex === 1" :src="slideList[slideIndex].person" alt="" class="person2" key="img2">
       <div v-if="slideIndex === 1" key="name2" :class="`name2`" v-html="slideList[slideIndex].name"></div>
       <div v-if="slideIndex === 1" key="title2" :class="`title2`" v-html="slideList[slideIndex].title"></div>
       <div v-if="slideIndex === 1" key="desc2" :class="`desc2`" v-html="slideList[slideIndex].desc"></div>
     </transition-group>
     <transition-group name="swipe-fade" mode="out-in">
-      <img v-if="slideIndex === 2" :src="slideList[slideIndex].person" alt="" class="person1" key="img3">
+      <img v-if="slideIndex === 2" :src="slideList[slideIndex].person" alt="" class="person3" key="img3">
       <div v-if="slideIndex === 2" key="name3" :class="`name3`" v-html="slideList[slideIndex].name"></div>
       <div v-if="slideIndex === 2" key="title3" :class="`title3`" v-html="slideList[slideIndex].title"></div>
       <div v-if="slideIndex === 2" key="desc3" :class="`desc3`" v-html="slideList[slideIndex].desc"></div>
+    </transition-group>
+    <transition-group name="swipe-fade" mode="out-in">
+      <img v-if="slideIndex === 3" :src="slideList[slideIndex].person" alt="" class="person4" key="img4">
+      <div v-if="slideIndex === 3" key="name4" :class="`name4`" v-html="slideList[slideIndex].name"></div>
+      <div v-if="slideIndex === 3" key="title4" :class="`title4`" v-html="slideList[slideIndex].title"></div>
+      <div v-if="slideIndex === 3" key="desc4" :class="`desc4`" v-html="slideList[slideIndex].desc"></div>
     </transition-group>
 
   </div>
@@ -65,43 +71,50 @@
 
 .person1 {
   @include img_l_pc(564, 79, 177);
+  opacity: 0;
 }
 .name1 {
-  @include img_l_pc(428, 604, 733);
+  @include img_r_pc(428, 604, 733);
+  right: calc(50% - 2vw);
+  width: auto;
   font-size: size(46.5);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.09;
   letter-spacing: size(7.44);
-  text-align: left;
+  text-align: center;
   color: #c3985b;
   white-space: nowrap;
 }
 
 .title1 {
-  @include img_r_pc(370, 610, 331);
+  @include img_l_pc(370, 610, 331);
+  width: auto;
+  left: calc(50% + 3vw);
   font-size: size(40.6);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.09;
   letter-spacing: size(6.5);
-  text-align: left;
+  text-align: center;
   color: #ffffff;
   white-space: nowrap;
 }
 
 .desc1 {
   @include img_r_pc(879, 673, 307);
+  right: calc(50% - 23.1vw);
   font-size: size(18);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.88;
   letter-spacing: size(1.8);
-  text-align: left;
+  text-align: center;
   color: #ffffff;
+  border-top: 1px solid #c3985b;
 }
 
 .person2 {
@@ -185,13 +198,58 @@
   text-align: left;
   color: #ffffff;
 }
+.person4 {
+  @include img_l_pc(564, 79, 177);
+}
+.name4 {
+  @include img_l_pc(428, 604, 733);
+  font-size: size(46.5);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.09;
+  letter-spacing: size(7.44);
+  text-align: left;
+  color: #c3985b;
+  white-space: nowrap;
+}
+
+.title4 {
+  @include img_r_pc(370, 610, 331);
+  font-size: size(40.6);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.09;
+  letter-spacing: size(6.5);
+  text-align: left;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.desc4 {
+  @include img_r_pc(879, 673, 307);
+  font-size: size(18);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.88;
+  letter-spacing: size(1.8);
+  text-align: left;
+  color: #ffffff;
+}
 
 /* Swipe */
 .swipe {
-  width: size(880);
+width: size(1370);
   height: size(485);
   top: size(110);
   right: size(305);
+
+ /* width: size(880);
+  height: size(485);
+  top: size(110);
+  right: size(305);*/
   left: auto;
   margin: 0 auto;
   object-fit: cover;
@@ -243,9 +301,17 @@
 }
 
 .swipe-item {
-  width: 100%;
+  width: size(880);
   height: 100%;
   z-index: 0;
+  margin: 0 0 0 auto;
+  display: block;
+  right: 0;
+  &:nth-child(1){
+    
+  width: 100%;
+  height: 100%;
+  }
 
   img {
     width: 100%;
@@ -284,7 +350,7 @@
 .pagination {
   width: auto;
   top: size(20);
-  left: size(20);
+  right: size(20);
   justify-content: center;
 }
 
@@ -379,11 +445,11 @@
     // background-attachment: fixed;
     overflow: visible;
   }
-  .person1, .person2, .person3 {
-    @include img_r_m(201, 391, 0);
+  .person1, .person2, .person3 , .person4 {
+    @include img_r_m(201, 391, -30);
   }
-  .name1, .name2, .name3 {
-    @include img_l_m(230, 263, 33);
+  .name1, .name2, .name3 , .name4 {
+    @include img_l_m(230, 280, 33);
     font-size: sizem(25);
     font-weight: bold;
     font-stretch: normal;
@@ -395,7 +461,7 @@
     white-space: nowrap;
   }
 
-  .title1, .title2, .title3 {
+  .title1, .title2, .title3, .title4 {
     @include img_l_m(182, 308, 33);
     font-size: sizem(20);
     font-weight: bold;
@@ -408,22 +474,27 @@
     white-space: nowrap;
   }
 
-  .desc1, .desc2, .desc3 {
-    @include img_l_m(182, 358, 33);
+  .desc1, .desc2, .desc3, .desc4 {
+    @include img_l_m(180, 358, 33);
     font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.88;
-    letter-spacing: sizem(1.8);
-    text-align: left;
+    letter-spacing:0.01em;
+    text-align: justify;
     color: #ffffff;
   }
 
+  .desc1 {
+
+    @include img_l_m(310, 358, 33);
+
+  }
   /* Swipe */
   .swipe {
     width: 100vw;
-    height: sizem(250);
+    height: sizem(260);
     max-height: auto;
     min-height: auto;
     top: sizem(0);
@@ -605,27 +676,31 @@ export default {
       isDialog: false,
       slideList: [
         {
+          img: isPC ? require('./s7/4.png') : require('./s7/4_m.png') ,
+          name:'許華山 X 力天開發',
+          title:'一次最精彩的轉譯',
+          desc:'建築不只是存在，而是一場行動，其創造環境、更樹立影響力。<br />在富含價值的歷史與新創文化中，力天開發與許華山建築師事務所共讀區域紋理，尊重人文、轉譯設計、進而發酵於生活，讓建築與區域一同精彩，更像你的樣。',
+          person: require('./s7/資產 17.png'),
+        },
+        {
           img: require('./s7/1.jpg'),
-          name: '許華山 X 力天開發',
-          title: '一次最精彩的轉譯',
-          desc:
-            '建築不只是存在，而是一場行動，其創造環境、更樹立影響力。<br />在富含價值的歷史與新創文化中，力天開發與呂大吉、許華山建築師事務所共讀區域紋理，尊重人文、轉譯設計、進而發酵於生活，讓建築與區域一同精彩，更像你的樣。',
+          name: '建築茶人',
+          title: '許華山建築師事務所',
+          desc:'許華山建築師曾獲亞洲最具影響力設計大獎銅牌、2017香港建築師學會兩岸四地建築設計銀獎，設計實力廣受精品邀約、作品遍及海內外。許華山從思維到表現皆精巧延續東方傳統的「Zen」，從尊重環境人文起始，融入科技，淬鍊屬於當地和當代的生活風範。<br />作品實績：大安賦、大安墨花香、天母Jamei Chen Masion、花蓮 Giwas Ali',
           person: require('./s7/資產 17.png'),
         },
         {
           img: require('./s7/2.jpg'),
-          name: '許華山 X 力天開發',
-          title: '一次最精彩的轉譯',
-          desc:
-            '建築不只是存在，而是一場行動，其創造環境、更樹立影響力。<br />在富含價值的歷史與新創文化中，力天開發與呂大吉、許華山建築師事務所共讀區域紋理，尊重人文、轉譯設計、進而發酵於生活，讓建築與區域一同精彩，更像你的樣。',
+          name: '建築茶人',
+          title: '許華山建築師事務所',
+          desc:'許華山建築師曾獲亞洲最具影響力設計大獎銅牌、2017香港建築師學會兩岸四地建築設計銀獎，設計實力廣受精品邀約、作品遍及海內外。許華山從思維到表現皆精巧延續東方傳統的「Zen」，從尊重環境人文起始，融入科技，淬鍊屬於當地和當代的生活風範。<br />作品實績：大安賦、大安墨花香、天母Jamei Chen Masion、花蓮 Giwas Ali',
           person: require('./s7/資產 17.png'),
         },
         {
           img: require('./s7/3.jpg'),
-          name: '許華山 X 力天開發',
-          title: '一次最精彩的轉譯',
-          desc:
-            '建築不只是存在，而是一場行動，其創造環境、更樹立影響力。<br />在富含價值的歷史與新創文化中，力天開發與呂大吉、許華山建築師事務所共讀區域紋理，尊重人文、轉譯設計、進而發酵於生活，讓建築與區域一同精彩，更像你的樣。',
+          name: '建築茶人',
+          title: '許華山建築師事務所',
+          desc:'許華山建築師曾獲亞洲最具影響力設計大獎銅牌、2017香港建築師學會兩岸四地建築設計銀獎，設計實力廣受精品邀約、作品遍及海內外。許華山從思維到表現皆精巧延續東方傳統的「Zen」，從尊重環境人文起始，融入科技，淬鍊屬於當地和當代的生活風範。<br />作品實績：大安賦、大安墨花香、天母Jamei Chen Masion、花蓮 Giwas Ali',
           person: require('./s7/資產 17.png'),
         },
       ],

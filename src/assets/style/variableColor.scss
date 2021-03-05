@@ -1,5 +1,5 @@
 /* html, body */
-$bg: #000;
+$bg:url('~@/projects/h25/s1/bg.gif');
 
 /* navigation */
 $nav_bg: #c3985b;
@@ -49,7 +49,7 @@ $order_submit_color: #fff !important;
 $order_sumbit_disable_bg: rgba(255, 255, 255, .4) !important;
 
 // contactInfo
-$contact_bg: #c3985b;
+$contact_bg: linear-gradient(to right, #b5834a 0%,#774f13 100%);
 $contact_shadow: none;
 
 $contact_btn_border: 0 0 0px 1px transparent;

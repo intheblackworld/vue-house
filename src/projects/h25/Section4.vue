@@ -149,7 +149,7 @@
 /* Swipe */
 .swipe {
   @include img_l_pc(1920, 0, 0);
-  height: size(830);
+  height:calc(100% - 11vw);
   object-fit: cover;
 }
 
@@ -387,7 +387,7 @@
     font-style: normal;
     line-height: 1.98;
     letter-spacing: sizem(2.7);
-    text-align: left;
+    text-align: justify;
     color: #333333;
     white-space: normal;
   }
@@ -400,7 +400,7 @@
     font-style: normal;
     line-height: 1.98;
     letter-spacing: sizem(1.7);
-    text-align: left;
+    text-align: justify;
     color: #333333;
   }
 

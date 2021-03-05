@@ -30,7 +30,7 @@
 }
 
 .bg-img {
-  width: size(1920);
+  width: 100%;
   height: size(938);
   // border-top: 1px solid red;
   margin-top: -1px;

@@ -10,7 +10,7 @@ export default {
   fbLink:
     'https://www.facebook.com/築億海格-105185948194625/',
   fbMessage: 'https://m.me/105185948194625/',
-  caseName: '築億海格',
+  caseName: '中正H25',
   houseInfos: [
     ['投資興建', '築億建設股份有限公司'],
     ['建築設計', '林永發建築師事務所'],
