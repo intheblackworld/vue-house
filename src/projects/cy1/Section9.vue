@@ -14,7 +14,7 @@
     <div class="vue-accordion">
       <ul>
         <li :id="`s9_${item.index}`" v-scroll-to="{ element: `#s9_${item.index}`}" :class="`${currentIndex === index ? 'active' : ''}`" v-for="(item, index) in items" :key="item.image" :style="{ backgroundImage: `url(${item.image})` }" @click="currentIndex = index">
-          <h2 class="title"><img :src="item.title" alt=""></img></h2>
+          <h2 class="title"><img :src="item.title" alt="title" /></h2>
           <p class="text" v-html="item.text"></p>
         </li>
       </ul>
@@ -96,6 +96,8 @@
         height: sizem(218) !important;
       box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
         rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+      .text{display: none;
+      }
       }
     }
     li.active {
@@ -208,12 +210,13 @@
   .section9 {
     width: 100vw;
     height: auto;
-    min-height: sizem(604);
-    max-height: auto;
+    min-height: sizem(0);
+  max-height:unset;
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
     background: transparent;
+    overflow: initial;
   }
   .bg {
     @include img_l_m(375, 0, 0);

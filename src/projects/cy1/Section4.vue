@@ -337,18 +337,18 @@
   .section4 {
     min-height: auto;
     max-height: initial;
-    height: sizem(743);
+    height: sizem(695);
     background-position: right calc(100% - 63px);
     background-size: 100% auto;
   }
 
   .title {
-    @include img_c_m(325, 50);
+    @include img_c_m(325, 70);
     font-size: sizem(20);
   }
 
   .desc {
-    @include img_c_m(340, 130);
+    @include img_c_m(340, 150);
     font-size: sizem(13);
     // top: calc(50% - 9vw);
   }
@@ -376,7 +376,7 @@
     width: 100vw;
     height: sizem(318);
     min-height: auto;
-    top: sizem(351);
+    top: sizem(380);
     left: sizem(0);
     object-fit: cover;
   }
