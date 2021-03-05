@@ -57,9 +57,9 @@
           只為給您最好的居家。<br />
           <span>基地地址：鶯歌鳳鳴段</span>
         </div>
-        <div class="btn flex-c">
+        <a class="btn flex-c" href="https://way.h35.tw/" target="_blank">
           官網預約
-        </div>
+        </a>
         <!-- <img src="./s1/youtube.jpg" alt="" class="video">  -->
         <img src="./s1/rb.png" alt="" class="rb">
       </div>
@@ -366,7 +366,7 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1;
-    letter-spacing:0.05em;
+    letter-spacing: 0.05em;
     text-align: left;
     color: #fff;
     text-shadow: 0 0.1em 0.3em #000;
@@ -524,6 +524,7 @@
   text-align: left;
   background-color: #ff8200;
   color: #fff;
+  text-decoration: none;
 }
 
 .video {
@@ -798,20 +799,20 @@
   .swipe-item {
     width: 100%;
     z-index: 0;
-    height:100%;
+    height: 100%;
     bottom: 0;
     left: 0;
 
     img {
       width: 100%;
-      height:100%;
+      height: 100%;
       bottom: 0;
       left: 0;
     }
 
-  .name {
-    font-size: sizem(12);
-  }
+    .name {
+      font-size: sizem(12);
+    }
 
     // &:nth-child(1) {
     //   z-index: 1;
@@ -1028,7 +1029,7 @@ export default {
       imgWidth: window.innerWidth * 0.187,
       imgHeight: window.innerWidth * 0.156,
       slideIndex2: 0,
-      slideIndex3: 0, 
+      slideIndex3: 0,
       slideList: [
         /*{
           img: require('../works/1/1.jpg'),
@@ -1082,7 +1083,7 @@ export default {
         {
           img: require('../works/2/4.jpg'),
           name: '',
-        }
+        },
       ],
       slideList3: [
         {
@@ -1096,7 +1097,7 @@ export default {
         {
           img: require('../works/3/3.jpg'),
           name: '3D模擬示意圖',
-        }
+        },
       ],
     }
   },
@@ -1108,7 +1109,7 @@ export default {
         this.slideIndex2 = 0
         this.slideIndex3 = 0
       }
-    }
+    },
   },
 
   methods: {

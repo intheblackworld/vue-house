@@ -33,9 +33,9 @@
         只為給您最好的居家。<br />
         <span>基地地址：鶯歌鳳鳴段</span>
       </div>
-      <div class="btn flex-c">
+      <a class="btn flex-c" href="https://way.h35.tw/" target="_blank">
         官網預約
-      </div>
+      </a>
       <!-- <img src="./s1/youtube.jpg" alt="" class="video"> -->
       <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
