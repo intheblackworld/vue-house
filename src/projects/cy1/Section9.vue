@@ -14,8 +14,8 @@
     <div class="vue-accordion">
       <ul>
         <li :id="`s9_${item.index}`" v-scroll-to="{ element: `#s9_${item.index}`}" :class="`${currentIndex === index ? 'active' : ''}`" v-for="(item, index) in items" :key="item.image" :style="{ backgroundImage: `url(${item.image})` }" @click="currentIndex = index">
-          <h2></h2>
-          <p></p>
+          <h2 class="title"><img :src="item.title" alt=""></img></h2>
+          <p class="text" v-html="item.text"></p>
         </li>
       </ul>
     </div>
@@ -25,7 +25,7 @@
 <style lang="scss">
 @import '@/assets/style/function.scss';
 .vue-accordion {
-  height: 100vh;
+  height: 100%;
   max-width: size(1920 - 389) !important;
   width: size(1920 - 389);
   position: absolute;
@@ -48,25 +48,29 @@
       display: table-cell;
       width: 50%;
       background-repeat: no-repeat;
-      background-position: center;
-      transition: all 0.5s ease;
-      background-position: 0%;
+      background-position: 0% 50%;
+      transition: all 0.5s ease;transition: all 1s;
       background-size: cover;
       cursor: pointer;
     box-shadow: rgba(50, 50, 93, 0.3) 80px 0px 80px -12px inset,
-      rgba(0, 0, 0, 0.3) 18px 0px 18px -18px inset,;
-    }
-    li {
+      rgba(0, 0, 0, 0.3) 18px 0px 18px -18px inset;
       width: 15%;
+      .title{left:50%;top: size(50);position: absolute;transform: translateX(-50%);transition: all 1.2s;
+      img{width:size(52);}
+      }
+      .text{font-family: 'Noto Serif TC',sans-serif;
+        left:150%;top: size(50);position: absolute;transform: translateX(-50%);transition: all 1.2s;width: 1.2em;
+      font-size: size(38);font-weight: 900;text-align: center;
+      }
     }
   }
   li.active {
     width: 60%;
-  }
-
-  li.active {
+    background-position: 50% 50%;
     box-shadow: rgba(50, 50, 93, 0.25) 20px 0px 20px -12px inset,
       rgba(0, 0, 0, 0.3) 18px 0px 18px -18px inset;
+    .title{left:10%;transform: translateX(0%);}
+    .text{left:90%;transform: translateX(-100%);}
   }
 }
 @media screen and (max-width: 767px) {
@@ -114,8 +118,8 @@
 .section9 {
   width: size(1920);
   height: 100vh;
-  // min-height: size(1080);
-  // max-height: size(1080);
+  min-height: size(900);
+  max-height: size(1080);
   overflow: hidden;
   position: relative;
   // background: #552e70 fixed;
@@ -125,8 +129,7 @@
 
 .bg-img {
   width:100%;
-  // height: 100%;
-  // min-height: size(900);
+  height: 100%;
   position: absolute;
   top: -1px;
   left: 0;
@@ -273,8 +276,8 @@ export default {
       items: [
         {
           index:1,
-          title:isMobile ? '' : require('./s9/09_01_item_text1.jpg'),
-          text: '城堡地標　名宅傳奇',
+          title:isMobile ? '' : require('./s9/09_01_item_text1.png'),
+          text: '城堡地標<br>　<br>名宅傳奇',
           // url: '#',
           image: isMobile
             ? require('./s9/08_item_1_m.jpg')
@@ -282,8 +285,8 @@ export default {
         },
         {
           index:2,
-          title:isMobile ? '' : require('./s9/09_02_item_text1.jpg'),
-          text: '與生俱來　無可取代',
+          title:isMobile ? '' : require('./s9/09_02_item_text1.png'),
+          text: '與生俱來<br>　<br>無可取代',
           // url: '#',
           image: isMobile
             ? require('./s9/08_item_2_m.jpg')
@@ -291,8 +294,8 @@ export default {
         },
         {
           index:3,
-          title:isMobile ? '' : require('./s9/09_03_item_text1.jpg'),
-          text: '與生俱來　無可取代',
+          title:isMobile ? '' : require('./s9/09_03_item_text1.png'),
+          text: '與生俱來<br>　<br>無可取代',
           // url: '#',
           image: isMobile
             ? require('./s9/08_item_3_m.jpg')
@@ -300,8 +303,8 @@ export default {
         },
         {
           index:4,
-          title:isMobile ? '' : require('./s9/09_04_item_text1.jpg'),
-          text: '優雅精緻　壯麗林口',
+          title:isMobile ? '' : require('./s9/09_04_item_text1.png'),
+          text: '優雅精緻<br>　<br>壯麗林口',
           // url: '#',
           image: isMobile
             ? require('./s9/08_item_4_m.jpg')
