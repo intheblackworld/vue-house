@@ -283,7 +283,7 @@ export default {
           text: '城堡地標<br>　<br>名宅傳奇',
           // url: '#',
           image: isMobile
-            ? require('./s9/08_item_1_m.jpg')
+            ? require('./s9/08_item_4_m.jpg')
             : require('./s9/09_01_item_img.jpg'),
         },
         {
@@ -292,7 +292,7 @@ export default {
           text: '與生俱來<br>　<br>無可取代',
           // url: '#',
           image: isMobile
-            ? require('./s9/08_item_2_m.jpg')
+            ? require('./s9/08_item_1_m.jpg')
             : require('./s9/09_02_item_img.jpg'),
         },
         {
@@ -301,7 +301,7 @@ export default {
           text: '與生俱來<br>　<br>無可取代',
           // url: '#',
           image: isMobile
-            ? require('./s9/08_item_3_m.jpg')
+            ? require('./s9/08_item_2_m.jpg')
             : require('./s9/09_03_item_img.jpg'),
         },
         {
@@ -310,7 +310,7 @@ export default {
           text: '優雅精緻<br>　<br>壯麗林口',
           // url: '#',
           image: isMobile
-            ? require('./s9/08_item_4_m.jpg')
+            ? require('./s9/08_item_3_m.jpg')
             : require('./s9/09_04_item_img.jpg'),
         },
       ],
