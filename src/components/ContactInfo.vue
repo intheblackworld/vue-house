@@ -1,103 +1,44 @@
 <template>
   <div>
-    <div
-      class="contact-info"
-      data-aos="fade"
-      data-aos-delay="0"
-    >
-      <img
-        class="logo"
-        src="@/assets/img/contact-logo.png"
-        :alt="info.caseName"
-        data-aos="fade-down"
-        data-aos-delay="0"
-      />
+    <div class="contact-info" data-aos="fade" data-aos-delay="0">
+      <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
       <img src="../projects/tsy/s1/child_7.png" :alt="`${info.caseName}_child_1`" class="child_1" v-if="!isMobile">
       <div class="info">
-        <div
-          class="btn flex-c"
-          @click="showCallDialog"
-          data-aos="fade-down"
-          data-aos-delay="100"
-        >
+        <div class="btn flex-c" @click="showCallDialog" data-aos="fade-down" data-aos-delay="100">
           <span class="flex-c">
             <font-awesome-icon icon="phone" />
             <span>{{info.phone}}</span>
           </span>
         </div>
-        <div
-          class="btn flex-c"
-          @click="showWaitingDialog"
-          data-aos="fade-down"
-          data-aos-delay="200"
-        >
+        <div class="btn flex-c" @click="showMessengerDialog" data-aos="fade-down" data-aos-delay="200">
           <span class="flex-c">
             <font-awesome-icon :icon="['fab', 'facebook-messenger']" /><span>FB 諮詢</span>
           </span>
         </div>
-        <div
-          class="btn flex-c"
-          @click="showWaitingDialog"
-          data-aos="fade-down"
-          data-aos-delay="300"
-        >
+        <a class="btn flex-c" :href="info.fbLink" target="_blank" data-aos="fade-down" data-aos-delay="300">
           <span class="flex-c">
             <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
           </span>
-        </div>
-        <div
-          class="address flex-c"
-          data-aos="fade-down"
-          data-aos-delay="400"
-        >{{info.address}}</div>
-        <div
-          class="google-btn flex-c"
-          data-aos="fade-down"
-          data-aos-delay="400"
-          @click="showMapDialog"
-        >
+        </a>
+        <div class="address flex-c" data-aos="fade-down" data-aos-delay="400">{{info.address}}</div>
+        <div class="google-btn flex-c" data-aos="fade-down" data-aos-delay="400" @click="showMapDialog">
           <span class="flex-c">
             <font-awesome-icon icon="map-marker-alt" /><span>導航 Google 地圖</span>
           </span>
         </div>
       </div>
     </div>
-    <el-dialog
-      title
-      :visible.sync="isShowCallDialog"
-      :width="isMobile ? '90%' : '500px'"
-      :modal-append-to-body="false"
-    >
+    <el-dialog title :visible.sync="isShowCallDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
       <CallDialog :phone="info.phone" />
     </el-dialog>
-    <el-dialog
-      title
-      :visible.sync="isShowMessengerDialog"
-      :width="isMobile ? '90%' : '500px'"
-      :modal-append-to-body="false"
-    >
+    <el-dialog title :visible.sync="isShowMessengerDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
       <MessengerDialog :messenger="info.fbMessage" />
     </el-dialog>
-    <el-dialog
-      title
-      :visible.sync="isShowMapDialog"
-      :width="isMobile ? '90%' : '500px'"
-      :modal-append-to-body="false"
-    >
-      <MapDialog
-        :link="info.googleLink"
-        :address="info.address"
-      />
+    <el-dialog title :visible.sync="isShowMapDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
+      <MapDialog :link="info.googleLink" :address="info.address" />
     </el-dialog>
-    <el-dialog
-      title="敬請期待"
-      class="waiting-dialog"
-      :visible.sync="isShowWaitingDialog"
-      :width="isMobile ? '90%' : '500px'"
-      :modal-append-to-body="false"
-      center
-    >
-      
+    <el-dialog title="敬請期待" class="waiting-dialog" :visible.sync="isShowWaitingDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false" center>
+
     </el-dialog>
   </div>
 </template>
@@ -144,7 +85,7 @@ export default {
 
     showWaitingDialog() {
       this.isShowWaitingDialog = true
-    }
+    },
   },
 }
 </script>
@@ -159,7 +100,6 @@ export default {
   .el-dialog__body {
     display: none;
   }
-
 }
 </style>
 <style lang="scss" scoped>
@@ -296,7 +236,7 @@ export default {
   font-size: 16px;
   cursor: pointer;
   text-decoration: none;
- // border-top-right-radius: 60px;
+  // border-top-right-radius: 60px;
   //border-bottom-right-radius: 60px;
   color: $contact_google_btn_color;
   background: $contact_google_btn_bg;
@@ -399,13 +339,13 @@ export default {
     width: 100%;
   }
   .google-btn {
-  /* border-top-right-radius: 0px;
+    /* border-top-right-radius: 0px;
     border-top-left-radius: 0px;
     border-bottom-right-radius: 30px;
     border-bottom-left-radius: 30px;*/
   }
   .address {
-   // width: 280px;
+    // width: 280px;
     //padding: 0 1em;
     text-align: justify;
     // border-radius: 18px !important;
