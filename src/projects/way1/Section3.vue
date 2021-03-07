@@ -23,7 +23,7 @@
     </div>
     <div class="content flex-ac flex-jb">
       <div class="content-block flex-c wrap">
-        <img src="./s3/03_mrt_icon.png" :alt="`${info.caseName}_mrt_icon`" class="mrt_icon">
+        <img src="./s3/03_tra_icon.png" :alt="`${info.caseName}_tra_icon`" class="tra_icon">
         <div class="block-title">
           台鐵鳳鳴臨時站
         </div>
@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class="content-block flex-c wrap">
-        <img src="./s3/03_tra_icon.png" :alt="`${info.caseName}_tra_icon`" class="tra_icon">
+        <img src="./s3/03_mrt_icon.png" :alt="`${info.caseName}_mrt_icon`" class="mrt_icon">
         <div class="block-title">
           捷運三鶯線
         </div>
