@@ -180,6 +180,9 @@
       font-weight: 900;
       letter-spacing: sizem(1.49);
     }
+  .desc{
+      font-size: sizem(13);
+  }
   }
 }
 </style>
