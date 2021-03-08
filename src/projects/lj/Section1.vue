@@ -321,7 +321,7 @@ transform: skewY(5deg);
   }
 
   .info1 {
-    @include img_r_m(260, 380, 58);
+    @include img_l_m(375 - 58, 380, 58);
     font-size: sizem(21);
     font-weight: bold;
     font-stretch: normal;
@@ -333,7 +333,7 @@ transform: skewY(5deg);
   }
 
   .info2 {
-    @include img_r_m(260, 423, 58);
+    @include img_l_m(375 - 58, 423, 58);
     font-size: sizem(19);
     font-weight: bold;
     font-stretch: normal;
