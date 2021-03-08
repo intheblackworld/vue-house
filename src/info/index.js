@@ -6,7 +6,7 @@ export default {
   googleSrc:
     'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7229.442801339142!2d121.5252484!3d25.0435271!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a97af1b8b009%3A0xba2c0a9a93d4c2d8!2zMTAw5Y-w5YyX5biC5Lit5q2j5Y2A5b-g5a2d5p2x6Lev5LqM5q61MjLomZ8!5e0!3m2!1szh-TW!2stw!4v1615173040430!5m2!1szh-TW!2st',
   googleLink: 'https://goo.gl/maps/2y84Bx5YEPRqFfBi8',
-  phone: '03-325-7555',
+  phone: '(02)2391-5577',
   fbLink:
     'https://www.facebook.com/中正H25-102637598419351/',
   fbMessage: 'https://m.me/102637598419351/',

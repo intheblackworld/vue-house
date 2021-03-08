@@ -541,25 +541,19 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s4/1.jpg'),
+          img: require('./s5/1.jpg'),
           desc:
             '漫步齊東公園、幸安市場，<br />穿梭SOGO商圈、格調餐酒館<br />動、靜、日、夜，',
           title: '從未結束過的故事，<br />豈止精采24小時？',
         },
         {
-          img: require('./s4/2.jpg'),
+          img: require('./s5/2.jpg'),
           desc:
             '漫步齊東公園、幸安市場，<br />穿梭SOGO商圈、格調餐酒館<br />動、靜、日、夜，',
           title: '從未結束過的故事，<br />豈止精采24小時？',
         },
         {
-          img: require('./s4/3.jpg'),
-          desc:
-            '漫步齊東公園、幸安市場，<br />穿梭SOGO商圈、格調餐酒館<br />動、靜、日、夜，',
-          title: '從未結束過的故事，<br />豈止精采24小時？',
-        },
-        {
-          img: require('./s4/4.jpg'),
+          img: require('./s5/3.jpg'),
           desc:
             '漫步齊東公園、幸安市場，<br />穿梭SOGO商圈、格調餐酒館<br />動、靜、日、夜，',
           title: '從未結束過的故事，<br />豈止精采24小時？',

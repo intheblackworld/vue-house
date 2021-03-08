@@ -285,6 +285,7 @@ export default {
     border-bottom: none;
     padding: 10px;
     height: auto;
+  border-radius: 18px 18px 0 0 ;
   }
   .btn {
     width: 100%;
@@ -306,6 +307,7 @@ export default {
     width: 100%;
     position: relative;
     z-index: 10;
+  border-radius: 0 0 18px 18px;
   }
 
   .animate-slide {
