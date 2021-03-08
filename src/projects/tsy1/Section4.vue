@@ -146,22 +146,15 @@
 
 <script>
 import { isMobile } from '@/utils'
-import Map from '@/components/Map.vue'
+import info from '@/info'
+// import Map from '@/components/Map.vue'
 export default {
   name: 'section4',
-
-  components: {
-    Map,
-  },
 
   data() {
     return {
       isMobile,
       // tagList: [require('./s3_title.png')],
-
-      bgSrc: require('./s4/map.jpg'),
-      // bgmSrc: require('./s3_bg_m.jpg'),
-      hand: require('./s4/hand.png'),
     }
   },
 

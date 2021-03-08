@@ -176,7 +176,7 @@
   width: 100vw;
   height: 100vh;
   position: fixed;
-  top: 0; background: url("./s1/bg.png") repeat ;
+  // top: 0; background: url("./s1/bg.png") repeat ;
   background-size: auto;
   z-index: 1;
   opacity: 0;

@@ -1,7 +1,10 @@
 <template>
   <div>
     <div class="section3">
-      <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <img src="./s3/03_tree_1.png" :alt="`${info.caseName}_bg`" class="tree1">
+      <img src="./s3/03_tree_2.png" :alt="`${info.caseName}_bg`" class="tree2">
+      <img src="./s3/03_bg.jpg" :alt="`${info.caseName}_bg`" class="img">
+      <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -18,26 +21,9 @@
           </div>
         </div>
       </div>
-      <!-- <div v-if="!isMobile">
-        <img src="./s3/t.png" alt="直遇中山北 藏玉官道學" class="t absolute">
-      </div> -->
-      <div class="txt absolute">
-        <div class="title">
-          直遇中山北<span></span>藏玉官道學
-        </div>
-        <div class="hr"></div>
-        <div class="desc">
-         <span>享受中山北之所以迷人的關鍵字：</span>
-        <img src="./s3/title.png" v-if="!isMobile" alt="" class="s-title">
-        <img src="./s3/s-title.png" v-if="isMobile" alt="" class="s-title">
-        
-          <span class="p">雕琢人生勝利組的鮮明感。</span>
-          <span>領略官道永遠的主音節：</span>
-          <span class="p p2">「中山北二段Ｘ南京東西軸」恭維家的座標。</span>
-          <span>不必刷存在感。優越早已是基因，</span>
-          <span>堅定您的市心身軀。</span>
-        </div>
-        <img src="./s3/img.png" alt="" class="img">
+      <div class="title">新店站<span>5</span>分鐘 300秒</div>
+      <div class="desc">
+        青潭至新店捷運站之間，5分鐘車程，房價輕鬆省⼀半！首站上車永遠有座位，3站大坪林雙捷運環狀線與綠線交會、4站景美站瞬間切換近北市，新店客運總站交通樞紐，高速串聯台北市各大菁華商圈。
       </div>
 
     </div>
@@ -74,86 +60,24 @@
     position: relative;
   }
 }
-.txt{
-  width: size(332);
-  top:calc(50% - 18.2vw);
-  right: size(172);
-  display: flex;
-  flex-direction:row-reverse;
-  padding: size(35) 0 0 0;
-  }
-  .title {
-    width: 1.2em;
-    font-size: size(44);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing:0.06em;
-    text-align: left;
-    color: #af1f24;
-    position: relative;right: size(-10);
-    //white-space: nowrap;
-    span{display:block;width:0.5em;height: 0.5em;}
-  }
-  .desc {   
-    font-size: size(21);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: 0.1em;
-    text-align: left;
-    color: #323333;
-    position: relative;margin:size(58) size(18) 0 size(-10);
-  display: flex;align-items:flex-start; word-break: break-all;
-  flex-direction:row-reverse;word-wrap:break-word;
-    //white-space: nowrap;
-    span{writing-mode: vertical-rl;
-      width: 1.4em; 
-      margin:0 0 0 0.3em;
-      &.p{
-      margin:0 0 0 0.9em;}
-      &.p2{
-      margin:-0.5em 0 0 0.9em;}
-    }
-  }
-  .s-title{
-  width: size(28);
-  position: relative;
-  top: -0.35Em;
-  left:0.35em;
-  height: auto;}
-
-
-  .hr {
-    width:100%;
-    height:size(3);
-    position: absolute;
-    top:0;
-    left:0;
-    background-color: #af1f24;
-  }
-.t {
-  width: size(332);
-  top: size(105);
-  right: size(172);
-}
 
 .img {
-  width: size(190);
-  top: size(560);
-  right: size(160);
+  width: size(1751);
   position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
 
 /* Swipe */
 .swipe {
-  width: size(1310);
-  height: size(703);
-  top:calc(50% - 18.3vw);
-  left: 0;
-  object-fit: cover;
+  width: size(1125);
+  height: size(737);
+  top: 50%;
+  transform: translateY(-50%);
+  right: size(126);
 }
 
 // begin
@@ -208,6 +132,7 @@
 
   img {
     width: 100%;
+    object-fit: cover;
   }
 
   .slide-name {
@@ -311,6 +236,43 @@
   }
 }
 
+.title {
+  @include img_l_pc(466, 288 , 149);
+  font-size: size(53);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  white-space: nowrap;
+
+  span {
+    font-size: size(72);
+  }
+}
+
+.desc {
+  @include img_l_pc(457, 434 , 160);
+  font-size: size(28);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.69;
+  letter-spacing: size(-0.56);
+  text-align: left;
+  color: #ffffff;
+}
+
+.tree1 {
+  @include img_l_pc(341, -80 , 4);
+}
+
+.tree2 {
+  @include img_r_pc(260, -80 , 0);
+}
+
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -329,36 +291,39 @@
     width: 100vw;
     height: sizem(790);
     min-height: auto;
-  max-height:initial;
+    max-height: initial;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
     // background-position: 0 0;
     // background-attachment: fixed;
     overflow: hidden;
   }
-  
-  .txt{
-  width: sizem(310);
-  top: sizem(320);
-  left: sizem(32.5);display: block;
-  }
 
+  .txt {
+    width: sizem(310);
+    top: sizem(320);
+    left: sizem(32.5);
+    display: block;
+  }
 
   .title {
     width: 100%;
     line-height: 1.6;
     font-size: sizem(25);
-    span{display:inline-block;}
+    span {
+      display: inline-block;
+    }
   }
 
   .hr {
     height: sizem(2);
-    position: relative;right: size(0);
+    position: relative;
+    right: size(0);
     margin: sizem(12) 0;
   }
 
   .s-title {
-    top:sizem(2);
+    top: sizem(2);
     left: sizem(0);
     width: sizem(279);
   }
@@ -379,22 +344,27 @@
     font-size: sizem(15);
     line-height: 1.6;
     letter-spacing: sizem(2.09);
-    white-space: nowrap;display: block;
-    span{writing-mode:initial;display: block;
-      width:auto; 
-      margin:0 0 0.0em;
-      &.p{
-      margin:0 0 0.8em;}
-      &.p2{
-      margin:0 0 0.8em -0.5em;}
+    white-space: nowrap;
+    display: block;
+    span {
+      writing-mode: initial;
+      display: block;
+      width: auto;
+      margin: 0 0 0em;
+      &.p {
+        margin: 0 0 0.8em;
+      }
+      &.p2 {
+        margin: 0 0 0.8em -0.5em;
+      }
     }
   }
 
   .img {
     width: sizem(142);
-    top:sizem(30);
+    top: sizem(30);
     left: sizem(0);
-  position: relative;
+    position: relative;
   }
 
   /* Swipe */
@@ -555,6 +525,7 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
+import info from '@/info'
 import slider from '@/mixins/slider.js'
 
 export default {
@@ -565,16 +536,17 @@ export default {
 
   data() {
     return {
+      info,
       isPC,
       isMobile,
       isTablet,
       isDialog: false,
       slideList: [
         {
-          img: require('./s3/1中山北路二段.jpg'),
+          img: require('./s3/03_slider_1.jpg'),
         },
         {
-          img: require('./s3/2中山北路二段.jpg'),
+          img: require('./s3/03_slider_2.jpg'),
         },
       ],
     }
