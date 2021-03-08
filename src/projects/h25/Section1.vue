@@ -97,17 +97,19 @@
             V289.4z M420.3,277.4H417V292h3.4V277.4z M432.9,277.4h-10.4V292h3.3v-5.7h6.2v-2.7h-6.2v-3.5h7.1V277.4z M446,289.4h-8.1V286h7.4
             v-2.7h-7.4v-3.2h7.9v-2.7h-11.2V292H446V289.4z M546.2,222.5H392v79.9h154.1V222.5z M392.8,223.3h152.6v78.4H392.8V223.3z"/>
         </defs>
-        <clipPath id="SVGID_2_">
-          <use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
-        </clipPath>
-        
-          <linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-347.3052" y1="208.0041" x2="-60.0879" y2="208.0041" gradientTransform="matrix(0.9349 0.355 -0.355 0.9349 86.9078 193.8063)">
-          <stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
-          <stop  offset="0.5" style="stop-color:#FFFFFF"/>
-          <stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0"/>
-        </linearGradient>
-        <polygon class="st5" points="-162.3,680.8 -466.3,672.3 -192.4,-48.9 111.6,-40.4 	"/>
-      </g>
+
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_" class="an3"  style="overflow:visible;"/>
+	</clipPath>
+	<g class="st6">
+		<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="185.2467" y1="193.203" x2="617.2767" y2="394.6619">
+			<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
+			<stop  offset="0.5" style="stop-color:#FFFFFF"/>
+			<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0"/>
+		</linearGradient>
+		<rect x="61.2" y="-83" class="st5" width="624.5" height="727.8"/>
+	</g>
+</g>
     </svg>
     <img src="./s1/t.png" :alt="`${info.caseName}_logo`" class="t">
   </div>
@@ -179,9 +181,15 @@
 	.st2{fill:#BF945B;}
 	.st3{fill:#826231;}
 	.st4{fill:none;stroke:#826231;stroke-width:0.7471;stroke-miterlimit:10;}
-	.st5{clip-path:url(#SVGID_2_);fill:url(#SVGID_3_);}
+	.st5{clip-path:url(#SVGID_2_);fill:url(#SVGID_3_);
+ animation: an3 3s 3.5s infinite linear;opacity:0;}
 	.an1{animation: an1 .5s 3s linear forwards;opacity:0;}
 	.an2{animation: an1 1s 3.5s linear forwards;opacity: 0;}
+}
+@keyframes anan3 {
+  to {
+  transform: translateX(100%);
+  }
 }
 @keyframes letterDraw {
   to {
@@ -193,6 +201,21 @@
     opacity: 1;
   }
 }
+@keyframes an3 {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
 
 .t {
   @include img_c_pc(553, 737);
