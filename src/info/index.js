@@ -1,23 +1,22 @@
 // import { isMobile } from '@/utils'
 
 export default {
-  address: '接待會館：桃園市桃園區幸福路上(同安派出所旁)',
+  address: '接待會館：台北市中正區忠孝東路二段22號',
   // isMobile ? '接待中心：<br />106台北市大安區基隆路三段20-1號' : '接待中心：106台北市大安區基隆路三段20-1號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1807.587435393966!2d121.2989889580804!3d25.02813889599381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDAxJzQxLjMiTiAxMjHCsDE4JzAwLjMiRQ!5e0!3m2!1szh-TW!2stw!4v1609839535129!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/trD5N6LMwjgB1ZgD9',
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7229.442801339142!2d121.5252484!3d25.0435271!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a97af1b8b009%3A0xba2c0a9a93d4c2d8!2zMTAw5Y-w5YyX5biC5Lit5q2j5Y2A5b-g5a2d5p2x6Lev5LqM5q61MjLomZ8!5e0!3m2!1szh-TW!2stw!4v1615173040430!5m2!1szh-TW!2st',
+  googleLink: 'https://goo.gl/maps/2y84Bx5YEPRqFfBi8',
   phone: '03-325-7555',
   fbLink:
-    'https://www.facebook.com/築億海格-105185948194625/',
-  fbMessage: 'https://m.me/105185948194625/',
+    'https://www.facebook.com/中正H25-102637598419351/',
+  fbMessage: 'https://m.me/102637598419351/',
   caseName: '中正H25',
   houseInfos: [
-    ['投資興建', '築億建設股份有限公司'],
-    ['建築設計', '林永發建築師事務所'],
-    ['工程營造', '興澤營造'],
-    ['基地面積', '586.43坪'],
-    ['公設比例', '34%'],
-    ['樓層規劃', '15層/B4層'],
+    ['投資興建', '力天開發股份有限公司'],
+    ['建築設計', '呂大吉建築師事務所、許華山建築師事務所'],
+    ['建案位置', '台北市中正區忠孝東路二段22號'],
+    ['建照號碼', '109建字第0215號'],
+    ['企劃銷售', '群旺廣告'],
     // ['公設比例', '32.5%'],
     // ['樓層規劃', '地上15層，地下6層'],
     // ['基地面積', '846.66坪'],
