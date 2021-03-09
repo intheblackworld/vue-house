@@ -3,7 +3,7 @@
     <div class="section1">
       <!-- <img src="./s1/bg.png" alt="" class="bg-img"> -->
 
-      <img src="./s1/b.png" alt="氣泡" class="b1">
+    <!--  <img src="./s1/b.png" alt="氣泡" class="b1">
       <img src="./s1/b.png" alt="氣泡" class="b2">
       <img src="./s1/b.png" alt="氣泡" class="b3">
       <img src="./s1/b.png" alt="氣泡" class="b4">
@@ -14,7 +14,20 @@
       <img src="./s1/t1.png" alt="三重CP值最高水岸宅" class="t1" data-aos="fade" data-aos-delay="600">
       <img src="./s1/t2.png" alt="早鳥優惠驚喜價18-28坪" class="t2" data-aos="fade" data-aos-delay="800">
 
-      <div class="s1"></div>
+      <div class="s1"></div> -->
+    <div class="swipe absolute" data-aos="fade" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" :alt="slide.name">
+            <div class="name absolute" v-html="slide.name"></div>
+          </div>
+        </transition-group>
+
+      </div>
+    </div>
+    <img src="./s1/logobox.png" v-if="!isMobile" alt="睿洋水樣_logo" class="logobox">
+    <img src="./s1/logobox_m.png" v-if="isMobile" alt="睿洋水樣_logo" class="logobox">
     </div>
   </div>
 </template>
@@ -102,7 +115,9 @@ width: 100%;height: 100%;position: absolute;top: 0;left: 0;}
   // 圖片位置：width: size(712), top: size(201), left: size(118)
   @include img_c_pc(712,calc(50% - 16vw) ,calc(50% + 8vw));
 }
-
+.logobox{
+  @include img_c_pc(1702, calc(50% - 31.3020833333vw * .5) ,calc(50% - 88.6458333333vw * 0.5));
+}
 .t1 {
   @include img_c_pc(871, calc(50% - 3.5vw), size(129));
 }
@@ -148,6 +163,67 @@ width: 100%;height: 100%;position: absolute;top: 0;left: 0;}
   }
 }
 
+
+/* Swipe */
+.swipe {
+  width: 100%;
+  height:100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+// begin
+.swipe-fade-leave-to {
+  opacity: 0;
+  z-index: 0;
+}
+// end
+.swipe-fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.swipe-fade-enter-active {
+  transition: all 0.5s ease;
+}
+
+.swipe-fade-leave-active {
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.swipe-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.swipe-item {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .name {
+    right: 1.5em;
+    bottom: 1em;
+    font-size: 0.78125vw;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.89px;
+    text-align: left;
+    color: #fff;
+    text-shadow: 0 0.1em 0.3em #000;
+  }
+
+}
+
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -166,7 +242,7 @@ width: 100%;height: 100%;position: absolute;top: 0;left: 0;}
   .section1 {
     width: 100vw;
     min-height: auto;
-    height: calc(100vh - 63px);
+    height:100vh;
     min-height: sizem(604);
     max-height: sizem(750);
     background-size: cover;
@@ -201,6 +277,9 @@ width: 100%;height: 100%;position: absolute;top: 0;left: 0;}
     // 圖片位置：width: size(712), top: size(201), left: size(118)
     @include img_c_m(306,calc(42% - 40vw), sizem(45))
   }
+.logobox{
+  @include img_c_m(332, calc(50% - 78vw ) ,calc(50% - 88.5333333333 * 0.5));
+}
 
   .t1 {
     @include img_c_m(310,calc(73% - 2vw), sizem(33))
@@ -231,15 +310,44 @@ width: 100%;height: 100%;position: absolute;top: 0;left: 0;}
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
+import slider from '@/mixins/slider.js'
 
 export default {
   name: 'section1',
+  mixins: [slider],
 
   data() {
     return {
       isPC,
       isMobile,
       isTablet,
+      isDialog: false,
+      slideList: [
+        {
+          img:isMobile? require('./s1/1m.jpg'):require('./s1/1.jpg'),
+          name: '',
+        },
+        {
+          img: isMobile?require('./s1/2m.jpg'):require('./s1/2.jpg'),
+          name: '',
+        },
+        {
+          img:isMobile? require('./s1/3m.jpg'):require('./s1/3.jpg'),
+          name: '',
+        },
+        {
+          img:isMobile?require('./s1/4m.jpg'):require('./s1/4.jpg'),
+          name: '',
+        },
+        {
+          img:isMobile? require('./s1/5m.jpg'):require('./s1/5.jpg'),
+          name: '',
+        },
+        {
+          img:isMobile? require('./s1/6m.jpg'):require('./s1/6.jpg'),
+          name: '',
+        },
+      ],
     }
   },
 
