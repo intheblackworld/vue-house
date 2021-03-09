@@ -599,9 +599,9 @@
     z-index: 0;
 
     img {
-      width: 100%;
+      width: 80%;
       height: sizem(288);
-      object-fit: cover;
+      object-fit: contain;
     }
 
     // &:nth-child(1) {
