@@ -190,7 +190,7 @@ export default {
           navIndex = n
         }
       }
-      if (this.viewIndex === navIndex + 1) {
+      if (this.viewIndex !== navIndex + 1) {
         this.viewIndex = navIndex + 1
       }
       // this.viewIndex = navIndex + 1
