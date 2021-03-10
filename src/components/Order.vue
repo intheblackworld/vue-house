@@ -115,7 +115,7 @@
         <div style="margin: 0 auto;z-index:2;" v-if="isMobile">
           <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
         </div>
-        <el-button class="form-submit flex-c" type="primary" :disabled="!checked || !isVerify" @click="submit" :loading="isSubmit">立即預約</el-button>
+        <el-button class="form-submit flex-c bt_registration" type="primary" :disabled="!checked || !isVerify" @click="submit" :loading="isSubmit">立即預約</el-button>
         <Loading :loading="isSubmit" :isOpacity="true" />
       </div>
     </div>
@@ -354,7 +354,7 @@ export default {
   background-repeat: no-repeat;
   position: relative;
   padding-top: 130px;
-  background-size: 100vw auto;
+  background-size: cover;
   // background-attachment: fixed;
   background-position: 0% 0%;
   font-family: $family3;
@@ -372,7 +372,7 @@ export default {
     width: 100vw;
     padding-top: 20px;
     padding-bottom: 8px;
-    font-size: size(85);
+    font-size: size(50);
     font-weight: 900;
     font-stretch: normal;
     font-style: normal;

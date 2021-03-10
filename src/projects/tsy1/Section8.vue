@@ -1,28 +1,23 @@
 <template>
-  <div>
-    <div class="section8">
-      <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
-          <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
-              <div class="slide-name absolute" v-html="slide.name"></div>
-            </div>
-          </transition-group>
-          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+  <div class="section8">
+    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" alt="">
+            <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-          </div>
+        </transition-group>
+        <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
+        <!-- <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+        </div> -->
       </div>
-     <!--  <div v-if="!isMobile">
-        <img src="./s8/img.png" alt="" class="img absolute">
-        <img src="./s8/t.png" alt="" class="t absolute">
-      </div>  -->
-      <div class="txt absolute">
+    </div>
+    <!-- <div class="txt absolute">
         <div class="subtitle">
           活在城市的焦距裡，優雅加分很正常
         </div>
@@ -41,8 +36,7 @@
           <span>毫不違和，寫出愜意自由。</span>
         </div>
         <img src="./s8/img.png" alt="" class="img">
-      </div>
-    </div>
+      </div> -->
   </div>
 </template>
 <style lang="scss" scoped>
@@ -70,66 +64,81 @@
     position: relative;
   }
 }
-.txt{
+.txt {
   width: size(356);
-  top:calc(50% - 18.2vw);
+  top: calc(50% - 18.2vw);
   left: size(190);
   display: flex;
-  flex-direction:row-reverse;
+  flex-direction: row-reverse;
   padding: 0 0 0 0;
+}
+.title {
+  width: 1.2em;
+  font-size: size(44);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  text-align: left;
+  color: #af1f24;
+  position: relative;
+  right: 0;
+  top: -0.2em;
+  span {
+    display: block;
+    width: 0.5em;
+    height: 0.5em;
   }
-  .title {
-    width: 1.2em;
-    font-size: size(44);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing:0.06em;
-    text-align: left;
-    color: #af1f24;
-    position: relative;right:0;top:-0.2em;
-    span{display:block;width:0.5em;height: 0.5em;}
-    //white-space: nowrap;
-  }
-  .subtitle {
-    width: 1.2em;
-    font-size: size(25);
-    font-weight: bold;
-    letter-spacing:0.07em;
-    text-align: left;
-    position: relative;right: size(-6);
-    color: #323333;word-break: break-all;
-  flex-direction:row-reverse;word-wrap:break-word;
-  }
-  .desc {   
-    font-size: size(21);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: 0.1em;
-    text-align: left;
-    color: #323333;
-    position: relative;margin:size(48) size(21) 0 size(-10);
-  display: flex;align-items:flex-start; word-break: break-all;
-  flex-direction:row-reverse;word-wrap:break-word;
-    //white-space: nowrap;
-    span{writing-mode: vertical-rl;
-      width: 1.4em; 
-      margin:0 0 0 0.0em;
-      &.p{
-      margin:0 0 0 0.8em;}
+  //white-space: nowrap;
+}
+.subtitle {
+  width: 1.2em;
+  font-size: size(25);
+  font-weight: bold;
+  letter-spacing: 0.07em;
+  text-align: left;
+  position: relative;
+  right: size(-6);
+  color: #323333;
+  word-break: break-all;
+  flex-direction: row-reverse;
+  word-wrap: break-word;
+}
+.desc {
+  font-size: size(21);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  text-align: left;
+  color: #323333;
+  position: relative;
+  margin: size(48) size(21) 0 size(-10);
+  display: flex;
+  align-items: flex-start;
+  word-break: break-all;
+  flex-direction: row-reverse;
+  word-wrap: break-word;
+  //white-space: nowrap;
+  span {
+    writing-mode: vertical-rl;
+    width: 1.4em;
+    margin: 0 0 0 0em;
+    &.p {
+      margin: 0 0 0 0.8em;
     }
   }
-  .hr {
-    width:size(255);
-    height:size(3);
-    position: absolute;
-    top:0;
-    left:0;
-    background-color: #af1f24;
-  }
+}
+.hr {
+  width: size(255);
+  height: size(3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #af1f24;
+}
 .t {
   width: size(332);
   top: size(105);
@@ -145,9 +154,9 @@
 
 /* Swipe */
 .swipe {
-  width: size(1310);
-  height: size(703);
-  top:calc(50% - 18.3vw);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
   right: 0;
   object-fit: cover;
 }
@@ -323,7 +332,7 @@
 @media screen and (max-width: 767px) {
   .section8 {
     width: 100vw;
-    height: sizem(790);
+    height: sizem(211);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -333,64 +342,75 @@
     overflow: hidden;
   }
 
-  .txt{
-  width: sizem(310);
-  top: sizem(320);
-  left: sizem(32.5);display: block;
+  .txt {
+    width: sizem(310);
+    top: sizem(320);
+    left: sizem(32.5);
+    display: block;
   }
-
 
   .title {
     width: 100%;
     line-height: 1.6;
-    font-size: sizem(25);right:0;top:sizem(3);
-    span{display:inline-block;}
+    font-size: sizem(25);
+    right: 0;
+    top: sizem(3);
+    span {
+      display: inline-block;
+    }
   }
 
   .hr {
     width: 100%;
     height: sizem(2);
-    position: relative;right: sizem(0);
+    position: relative;
+    right: sizem(0);
     margin: sizem(12) 0;
   }
 
   .s-title {
-    top:0;
+    top: 0;
     left: sizem(0);
     width: sizem(279);
   }
 
   .subtitle {
     width: 100%;
-    font-size: sizem(18);right: sizem(-1);
+    font-size: sizem(18);
+    right: sizem(-1);
   }
 
   .desc {
     font-size: sizem(15);
     line-height: 1.6;
     letter-spacing: sizem(2.09);
-    white-space: nowrap;display: block;
-    span{writing-mode:initial;display: block;
-      width:auto; 
-      margin:0 0 0.0em;
-      &.p{
-      margin:0 0 0.8em;}
-      &.p2{
-      margin:0 0 0.8em -0.5em;}
+    white-space: nowrap;
+    display: block;
+    span {
+      writing-mode: initial;
+      display: block;
+      width: auto;
+      margin: 0 0 0em;
+      &.p {
+        margin: 0 0 0.8em;
+      }
+      &.p2 {
+        margin: 0 0 0.8em -0.5em;
+      }
     }
   }
 
   .img {
     width: sizem(142);
-    top:sizem(30);
+    top: sizem(30);
     left: sizem(-3);
-  position: relative;
+    position: relative;
   }
 
   /* Swipe */
   .swipe {
     width: 100vw;
-    height: sizem(300);
+    height: sizem(211);
     min-height: auto;
     top: sizem(0);
     left: sizem(0);
@@ -449,7 +469,7 @@
 
     img {
       width: 100%;
-      height: sizem(300);
+      height: sizem(211);
       object-fit: cover;
     }
 
@@ -470,7 +490,7 @@
 
   .pagination {
     width: auto;
-    bottom: size(91);
+    bottom: sizem(11);
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -479,15 +499,15 @@
 
   .pagination-dot {
     padding: 5px;
-    margin: 0 10px;
+    margin: 0 5px;
     cursor: pointer;
     z-index: 4;
 
     span {
       display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
+      width: 10px;
+      height: 10px;
+      border-radius: 10px;
       box-shadow: 0 0 0 1px #fff;
       position: relative;
       background-color: rgba(0, 0, 0, 0.01);
@@ -498,8 +518,8 @@
         width: 60%;
         height: 60%;
         display: block;
-        background: #004ea2;
-        border-radius: 20px;
+        background: #fff100;
+        border-radius: 10px;
         opacity: 1;
         position: absolute;
         top: 20%;
@@ -515,8 +535,8 @@
           width: 100%;
           height: 100%;
           display: block;
-          background: #004ea2;
-          border-radius: 20px;
+          background: #fff100;
+          border-radius: 10px;
           opacity: 1;
           position: absolute;
           top: 0%;
@@ -561,20 +581,8 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s8/1中山站商圈.jpg'),
-          name: '中山站商圈',
-        },
-        {
-          img: require('./s8/2欣欣秀泰影城.jpg'),
-          name: '欣欣秀泰影城',
-        },
-        {
-          img: require('./s8/3南京東路、新生北商圈.jpg'),
-          name: '南京東路、新生北商圈',
-        },
-        {
-          img: require('./s8/4南京商圈、商業大樓.jpg'),
-          name: '南京商圈、商業大樓',
+          img: require('./s8/08_img.jpg'),
+          name: '',
         },
       ],
     }
@@ -590,9 +598,8 @@ export default {
 
   watch: {
     viewIndex() {
-      if (this.viewIndex === 6) {
+      if (this.viewIndex === 8) {
         this.slideIndex = 0
-        console.log(this.slideIndex, 'slideIndex')
       }
     },
   },

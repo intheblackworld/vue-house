@@ -36,7 +36,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to bottom,#0000 0%,#000 100%);
+    // background: linear-gradient(to bottom,#0000 0%,#000 100%);
     z-index: 2;
   }
 }
@@ -68,8 +68,8 @@
 
     .mask {
       width: 200vw;
-      height: sizem(57);
-      background-color: rgba(0, 53, 97, 0.72);
+      height: sizem(94);
+      background-color: rgba(28, 28, 28, 0.2);
       // animation: swing 2.5s ease-in-out 0s infinite;
       left: 35vw;
       position: absolute;

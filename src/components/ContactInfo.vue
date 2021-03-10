@@ -1,8 +1,9 @@
 <template>
   <div>
     <div class="contact-info" data-aos="fade" data-aos-delay="0">
-      <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
-      <img src="../projects/tsy/s1/child_7.png" :alt="`${info.caseName}_child_1`" class="child_1" v-if="!isMobile">
+      <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" v-if="isPC" />
+      <img class="child-logo" src="@/projects/tsy1/mobile/s10/10_child_m.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" v-if="isMobile" />
+      <img class="logo" src="@/projects/tsy1/mobile/s10/10_logo_m.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" v-if="isMobile" />
       <div class="info">
         <div class="btn flex-c" @click="showCallDialog" data-aos="fade-down" data-aos-delay="100">
           <span class="flex-c">
@@ -15,7 +16,7 @@
             <font-awesome-icon :icon="['fab', 'facebook-messenger']" /><span>FB 諮詢</span>
           </span>
         </div>
-        <a class="btn flex-c" :href="info.fbLink" target="_blank" data-aos="fade-down" data-aos-delay="300">
+        <a class="btn flex-c bt_fanpage" :href="info.fbLink" target="_blank" data-aos="fade-down" data-aos-delay="300">
           <span class="flex-c">
             <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
           </span>
@@ -142,7 +143,7 @@ export default {
   background-attachment: fixed;
   background-position: 0% 50%; */
   transform: translateY(0);
-  margin: 2vw auto 0;
+  margin: 2vw auto 2vw;
   padding: 30px 0 40px;
 }
 
@@ -293,7 +294,13 @@ export default {
 
     .logo {
       width: $contact_logo_mobile_width;
-      margin: 20% auto 5%;
+      margin: 5% auto 5%;
+    }
+
+    .child-logo {
+      width: 326px;
+      margin: 5% auto 0;
+      z-index: 2;
     }
   }
 

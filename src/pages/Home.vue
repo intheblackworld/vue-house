@@ -3,12 +3,12 @@
     <Loading :loading="load" />
     <!-- <SideNavigation /> -->
     <!-- <Navigation v-if="isMobile" /> -->
-    <Indigator :viewIndex="viewIndex" />
-    <!-- <full-page
+    <Indigator :viewIndex="viewIndex" v-if="isPC" />
+    <full-page
       ref="fullPage"
       :options="options"
       id="fullpage"
-    > -->
+    >
     <!-- <LeafFlow /> -->
     <vue-lazy-component class="section relative" id="section1" @init="init">
       <Section1 />
@@ -16,49 +16,27 @@
     <vue-lazy-component class="section relative" id="section2" style="z-index: 2;">
       <Section2 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section3"
-    >
+    <vue-lazy-component class="section" id="section3">
       <Section3 :viewIndex="viewIndex" />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section relative"
-      id="section4"
-      style="z-index: 3;"
-    >
+    <vue-lazy-component class="section relative" id="section4" style="z-index: 3;">
       <Section4 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section5"
-    >
-      <Section5 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section6"
-    >
-      <Section6 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section7"
-    >
+    <div class="bg-b">
+      <vue-lazy-component class="section" id="section5">
+        <Section5 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section6">
+        <Section6 />
+      </vue-lazy-component>
+    </div>
+    <vue-lazy-component class="section" id="section7">
       <Section7 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section8"
-    >
+    <vue-lazy-component class="section" id="section8">
       <Section8 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section9"
-    >
-      <Section9 />
-    </vue-lazy-component>
+    </full-page>
     <!-- <vue-lazy-component
       class="section relative"
       id="section10"
@@ -89,7 +67,14 @@
 .section .fp-tableCell {
   height: auto !important;
 }
-#contact{z-index: 3;}
+#contact {
+  z-index: 3;
+}
+
+.bg-b {
+  background-image: url('~@/projects/tsy1/s5/0506_bg.jpg');
+  background-size: cover;
+}
 </style>
 
 <script>
@@ -112,7 +97,6 @@ import Section5 from '@/projects/tsy1/Section5.vue'
 import Section6 from '@/projects/tsy1/Section6.vue'
 import Section7 from '@/projects/tsy1/Section7.vue'
 import Section8 from '@/projects/tsy1/Section8.vue'
-import Section9 from '@/projects/tsy1/Section9.vue'
 // import Section10 from '@/projects/tsy1/Section10.vue'
 // import Section11 from '@/projects/tsy1/Section11.vue'
 
@@ -134,7 +118,6 @@ export default {
     Section6,
     Section7,
     Section8,
-    Section9,
     // Section10,
     // Section11,
   },
@@ -148,17 +131,17 @@ export default {
       // action: {
       //   moveTo: () => {},
       // },
-      // options: {
-      //   menu: '#menu',
-      //   anchors: [],
-      //   scrollBar: true,
-      //   onLeave: this.onLeave,
-      //   afterLoad: this.afterLoad,
-      //   continuousHorizontal: true,
+      options: {
+        menu: '#menu',
+        anchors: [],
+        scrollBar: true,
+        onLeave: this.onLeave,
+        afterLoad: this.afterLoad,
+        continuousHorizontal: true,
 
-      //   // navigation: true,
-      //   // sectionsColor: ['#41b883', '#ff5f45', '#0798ec'],
-      // },
+        // navigation: true,
+        // sectionsColor: ['#41b883', '#ff5f45', '#0798ec'],
+      },
     }
   },
   created() {
@@ -177,21 +160,18 @@ export default {
           allImagesLoaded()
         }
       }
-      $('img').each(function(idx, img) {
-        $('<img>')
-          .on('load', imageLoaded)
-          .attr('src', $(img).attr('src'))
+      $('img').each(function (idx, img) {
+        $('<img>').on('load', imageLoaded).attr('src', $(img).attr('src'))
       })
     })
     // window.location = "https://ywh.nhc888.com.tw/"
   },
   mounted() {
     window.addEventListener('scroll', this.onScroll, false)
-    // this.action = this.$refs.fullPage.api
-    // if (this.isMobile) {
-    //   this.$refs.fullPage.api.setResponsive(true)
-    // }
-    
+    this.action = this.$refs.fullPage.api
+    if (this.isMobile) {
+      this.$refs.fullPage.api.setResponsive(true)
+    }
   },
   methods: {
     init() {},
@@ -200,7 +180,7 @@ export default {
       const navContents = document.querySelectorAll('.section')
       // 所有锚点元素的 offsetTop
       const offsetTopArr = []
-      navContents.forEach(item => {
+      navContents.forEach((item) => {
         offsetTopArr.push(item.offsetTop)
       })
       // 获取当前文档流的 scrollTop
@@ -221,33 +201,33 @@ export default {
       // this.viewIndex = navIndex + 1
     },
 
-    // onLeave(origin, destination, direction) {
-    //   if (!this.isMobile) {
-    //     if (origin.isLast === true && direction === 'up') {
-    //       console.log('加固')
-    //       this.$refs.fullPage.api.setResponsive(false)
-    //     }
-    //     if (origin.isFirst === true && direction === 'down' && this.isMobile) {
-    //       this.$refs.fullPage.api.setResponsive(false)
-    //     }
+    onLeave(origin, destination, direction) {
+      if (!this.isMobile) {
+        if (origin.isLast === true && direction === 'up') {
+          console.log('加固')
+          this.$refs.fullPage.api.setResponsive(false)
+        }
+        if (origin.isFirst === true && direction === 'down' && this.isMobile) {
+          this.$refs.fullPage.api.setResponsive(false)
+        }
 
-    //     if (
-    //       destination.isFirst === true &&
-    //       direction === 'up' &&
-    //       this.isMobile
-    //     ) {
-    //       this.$refs.fullPage.api.setResponsive(false)
-    //     }
-    //   }
-    // },
+        if (
+          destination.isFirst === true &&
+          direction === 'up' &&
+          this.isMobile
+        ) {
+          this.$refs.fullPage.api.setResponsive(false)
+        }
+      }
+    },
 
-    // afterLoad(origin, destination, direction) {
-    //   this.indigatorIndex = destination.index
-    //   if (destination.isLast === true && direction === 'down') {
-    //     console.log('解除')
-    //     this.$refs.fullPage.api.setResponsive(true)
-    //   }
-    // },
+    afterLoad(origin, destination, direction) {
+      this.indigatorIndex = destination.index
+      if (destination.isLast === true && direction === 'down') {
+        console.log('解除')
+        this.$refs.fullPage.api.setResponsive(true)
+      }
+    },
   },
 }
 </script>

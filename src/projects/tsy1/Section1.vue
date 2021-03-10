@@ -1,6 +1,6 @@
 <template>
   <div class="section1">
-    <img src="./s1/01_bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
+    <img src="./s1/01_bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC">
     <!-- <div class="bubble-bg" v-if="isPC">
       <img src="./s1/bg_style_2.png" :alt="`${info.caseName}_bubble_1`" class="bubble_1">
       <img src="./s1/bg_style_3.png" :alt="`${info.caseName}_bubble_2`" class="bubble_2">
@@ -18,9 +18,9 @@
       <img src="./s1/01_style_5.png" :alt="`${info.caseName}_bling_5`" class="bling_5">
       <img src="./s1/01_style_6.png" :alt="`${info.caseName}_bling_6`" class="bling_6">
     </div>
-    <div class="bling-bg" v-if="isMobile">
+    <!-- <div class="bling-bg" v-if="isMobile">
       <img src="./mobile/m_style_class_1.png" :alt="`${info.caseName}_bling_1`" class="bling_1">
-    </div>
+    </div> -->
     <div class="child-bg">
       <img src="./s1/child_1.png" :alt="`${info.caseName}_child_1`" class="child_1">
       <img src="./s1/child_2.png" :alt="`${info.caseName}_child_2`" class="child_2">
@@ -104,11 +104,6 @@
 
 .title_2 {
   @include img_l_pc(533, 539, 321);
-}
-
-.star {
-  @include img_r_pc(381, 706, 172);
-  cursor: pointer;
 }
 
 .btn {
@@ -275,9 +270,11 @@
     min-height: sizem(604);
     max-height: sizem(850);
     height: sizem(604);
-    // background-image: url('./mo/1/bg.png');
-    background-size: cover;
-    background-attachment: scroll;
+    background-image: url('./bg_m.png');
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    // background-size: cover;
+    // background-attachment: scroll;
   }
   .logo {
     @include img_c_m(292, 45);
@@ -285,48 +282,20 @@
     // filter: drop-shadow(0 0 .5em #d67f76);
   }
 
-  .title1 {
-    @include img_l_m(63, 175, 47);
-    font-size: sizem(21);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.24;
-    letter-spacing: normal;
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
+  .title_1 {
+    @include img_c_m(335, 204);
   }
 
-  .title2 {
-    @include img_r_m(82, 170, 170);
-    font-size: sizem(29);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.17;
-    letter-spacing: normal;
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
-  }
-
-  .title3 {
-    @include img_r_m(105, 175, 49.4);
-    font-size: sizem(21);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.24;
-    letter-spacing: normal;
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
+  .title_2 {
+    @include img_c_m(258, 251);
   }
 
   .btn {
-    @include img_c_m(302, 267);
+    @include img_c_m(138, 267);
+    top: auto;
+    bottom: sizem(8);
     cursor: pointer;
+    z-index: 2;
     &:hover {
     }
   }
@@ -372,28 +341,36 @@
   // ----- child mobile
 
   .child_1 {
-    @include img_l_m(158, 384, 130);
-    z-index: 6;
+    @include img_l_m(150, 309, 66);
+    z-index: 1;
   }
 
   .child_2 {
-    @include img_r_m(57, 372, 50);
+    @include img_r_m(76, 451, 29);
   }
 
   .child_3 {
-    @include img_l_m(73, 491, 44);
+    @include img_l_m(73, 483, 37);
   }
 
   .child_4 {
-    @include img_r_m(70, 478, 44);
+    @include img_r_m(80, 383, 104);
   }
 
   .child_5 {
-    @include img_l_m(64, 383, 72);
+    @include img_r_m(71, 336, 37);
   }
 
   .child_6 {
-    @include img_l_m(50, 502, 193);
+    display: none
+  }
+
+  .balloon_1 {
+    @include img_l_m(49, 317, 25);
+  }
+
+  .balloon_2 {
+    @include img_r_m(36, 313, 20);
   }
 }
 </style>

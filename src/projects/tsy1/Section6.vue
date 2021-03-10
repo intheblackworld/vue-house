@@ -1,45 +1,38 @@
 <template>
-  <div>
-    <div class="section6">
-      <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
-          <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
-              <div class="slide-name absolute" v-html="slide.name"></div>
-            </div>
-          </transition-group>
-          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+  <div class="section6">
+    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" alt="">
+            <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-          </div>
+        </transition-group>
+        <div class="pagination absolute flex-ac">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
+        <!-- <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+        </div> -->
       </div>
-     <!--  <div v-if="!isMobile">
-        <img src="./s6/img.png" alt="" class="img absolute">
-        <img src="./s6/t.png" alt="" class="t absolute">
-      </div> -->
-      <div class="txt absolute">
-        <div class="subtitle">
-          從您選擇的地段，讀出您的身段
-        </div>
-        <div class="title">
-          以精品風景<span></span>標註您蹤影
-        </div>
-        <div class="hr"></div>
-        <div class="desc">
-          <span>LV旗艦店、日本皇室御用飯店-大倉久和、</span>
-          <span class="p">名流婚宴首席-晶華酒店＆精品名城…</span>
-          <span>老貴時尚史、佐以後起之秀-赤峰文創，</span>
-          <span>不分年齡，上流指數皆在此持續加權！</span>
-          <span class="p">別讓自己僅是風潮的打卡者。</span>
-          <span>爭得一席，待城市來加值您！</span>
-        </div>
-        <img src="./s6/img.png" alt="" class="img">
-      </div>
+    </div>
+    <div class="balloon-bg" v-if="isPC">
+      <img src="./s5/06_balloon_1.png" :alt="`${info.caseName}_bg`" class="balloon1">
+      <img src="./s5/06_balloon_2.png" :alt="`${info.caseName}_bg`" class="balloon2">
+    </div>
+    <img src="./s5/06_child_1.png" :alt="`${info.caseName}_bg`" class="child1" v-if="isPC">
+    <img src="./s5/06_child_2.png" :alt="`${info.caseName}_bg`" class="child2" v-if="isPC">
+    <img src="./s5/06_img_1.jpg" :alt="`${info.caseName}_bg`" class="img1" v-if="isPC">
+    <img src="./s5/06_img_2.jpg" :alt="`${info.caseName}_bg`" class="img2" v-if="isPC">
+    <div class="title" v-if="isPC">
+      青潭國小旁 校園水岸 便利悠居
+    </div>
+    <div class="title" v-if="isMobile">
+      青潭國小旁 校園水岸<br />便利悠居
+    </div>
+    <div class="desc">
+      「翠松園｣座落青潭溪畔青潭國小旁，水岸芬多精健康純境，校園操場作前院，附設公托雙薪小家庭最愛！巷口公車站、UBIKE、全聯、美廉社、農會、7-11、全家、郵局、幼稚園、餐飲…坐享寧靜美地兼得機能便利。
     </div>
   </div>
 </template>
@@ -52,259 +45,249 @@
   min-height: size(900);
   max-height: size(1080);
   position: relative;
+  // min-height: size(900);
+  // background-image: url('./s2/bg.jpg');
+  // background-size: 100% 100%;
+  // background-position: 0 0;
+  // background-attachment: fixed;
+  // overflow: hidden;
 }
 
-.bg-img {
-  width: 100vw;
-  height: 100vh;
-  min-height: size(900);
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  object-fit: cover;
-
-  &:nth-child(1) {
-    position: relative;
-  }
+.img1 {
+  @include img_l_pc(855, 75, 82);
+  top: auto;
+  bottom: size(75);
 }
-.txt{
-  width: size(332);
-  top:calc(50% - 18.2vw);
-  left: size(214);
-  display: flex;
-  flex-direction:row-reverse;
-  padding: 0 0 0 0;
-  }
-  .title {
-    width: 1.2em;
-    font-size: size(44);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing:0.06em;
-    text-align: left;
-    color: #af1f24;
-    position: relative;right:0;top:-0.2em;
-    span{display:block;width:0.5em;height: 0.5em;}
-    //white-space: nowrap;
-  }
-  .subtitle {
-    width: 1.2em;
-    font-size: size(25);
-    font-weight: bold;
-    letter-spacing:0.07em;
-    text-align: left;
-    position: relative;right: size(-6);
-    color: #323333;word-break: break-all;
-  flex-direction:row-reverse;word-wrap:break-word;
-  }
-  .desc {   
-    font-size: size(21);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: 0.1em;
-    text-align: left;
-    color: #323333;
-    position: relative;margin:size(48) size(21) 0 size(-10);
-  display: flex;align-items:flex-start; word-break: break-all;
-  flex-direction:row-reverse;word-wrap:break-word;
-    //white-space: nowrap;
-    span{writing-mode: vertical-rl;
-      width: 1.4em; 
-      margin:0 0 0 0.3em;
-      &.p{
-      margin:0 0 0 0.8em;}
+
+.img2 {
+  @include img_r_pc(855, 75, 82);
+  top: auto;
+  bottom: size(75);
+}
+
+.title {
+  @include img_c_pc(740, 97);
+  font-size: size(55);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.15;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.desc {
+  @include img_c_pc(862, 192);
+  font-size: size(28);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.69;
+  letter-spacing: size(0.28);
+  text-align: left;
+  color: #ffffff;
+}
+
+.child1 {
+  @include img_r_pc(422, 70, 42);
+}
+
+.child2 {
+  @include img_l_pc(157, 244, 180);
+}
+
+.balloon1 {
+  @include img_l_pc(85, 100, 383);
+}
+
+.balloon2 {
+  @include img_r_pc(72, 42, 408);
+}
+
+.balloon-bg {
+  @for $i from 1 through 10 {
+    $randomNum: random(2) + 1;
+    > img:nth-child(#{$i}) {
+      transform: translateY((random(10) - 30) + px);
+      animation: an ($randomNum + s) 1s infinite alternate-reverse;
     }
   }
+}
 
-
-  .hr {
-    width:size(226);
-    height:size(3);
-    position: absolute;
-    top:0;
-    left:0;
-    background-color: #af1f24;
+@keyframes an {
+  to {
+    transform: translateY(0);
   }
-.t {width: size(332);
-  top: size(105);
-  left: size(214);
 }
 
-.img {
-  width: size(208);
-  top: size(556 - 105);
-  left: size(188 - 172);
-  position: absolute;
-}
+// /* Swipe */
+// .swipe {
+//   width: size(1296);
+//   height: 100vh;
+//   min-height: size(900);
+//   top: 0;
+//   left: 0;
+// }
 
-/* Swipe */
-.swipe {
-  width: size(1310);
-  height: size(703);
-  top:calc(50% - 18.3vw);
-  right: 0;
-  object-fit: cover;
-}
-
-// begin
-.swipe-fade-leave-to {
-  opacity: 0;
-  z-index: 0;
-}
-// end
-.swipe-fade-enter {
-  opacity: 0;
-  z-index: 1;
-}
-
-.swipe-fade-enter-active {
-  transition: all 0.5s ease;
-}
-
-.swipe-fade-leave-active {
-  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-// begin
-// .swipe-left-leave-to {
-//   margin-left: -100vw;
+// // begin
+// .swipe-fade-leave-to {
+//   opacity: 0;
 //   z-index: 0;
 // }
 // // end
-// .swipe-left-enter {
-//   opacity: 0.5;
-//   margin-left: 0;
+// .swipe-fade-enter {
+//   opacity: 0;
 //   z-index: 1;
 // }
 
-// .swipe-left-enter-active {
+// .swipe-fade-enter-active {
 //   transition: all 0.5s ease;
 // }
 
-// .swipe-left-leave-active {
+// .swipe-fade-leave-active {
 //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
 // }
 
-.swipe-wrap {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
+// // begin
+// // .swipe-left-leave-to {
+// //   margin-left: -100vw;
+// //   z-index: 0;
+// // }
+// // // end
+// // .swipe-left-enter {
+// //   opacity: 0.5;
+// //   margin-left: 0;
+// //   z-index: 1;
+// // }
 
-.swipe-item {
-  width: 100%;
-  height: 100%;
-  z-index: 0;
+// // .swipe-left-enter-active {
+// //   transition: all 0.5s ease;
+// // }
 
-  img {
-    width: 100%;
-  }
+// // .swipe-left-leave-active {
+// //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+// // }
 
-  .slide-name {
-    left: 20px;
-    bottom: 20px;
-    color: #fff;
-    font-size: 15px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 3.11;
-    letter-spacing: 0.89px;
-    text-align: left;
-    color: #ffffff;
-  }
+// .swipe-wrap {
+//   width: 100%;
+//   height: 100%;
+//   overflow: hidden;
+// }
 
-  // &:nth-child(1) {
-  //   z-index: 1;
-  //   // opacity: 1;
-  // }
+// .swipe-item {
+//   width: 100%;
+//   height: 100%;
+//   z-index: 0;
 
-  // &.base {
-  //   z-index: 1;
-  //   opacity: 1;
-  // }
-  // &.active {
-  //   z-index: 2;
-  //   // opacity: 1;
-  // }
-}
+//   img {
+//     width: 100%;
+//     object-fit: cover;
+//   }
 
-.pagination {
-  width: auto;
-  bottom: size(20);
-  right: size(20);
-  justify-content: center;
-}
+//   .slide-name {
+//     left: 20px;
+//     bottom: 20px;
+//     color: #fff;
+//     font-size: 15px;
+//     font-weight: normal;
+//     font-stretch: normal;
+//     font-style: normal;
+//     line-height: 3.11;
+//     letter-spacing: 0.89px;
+//     text-align: left;
+//     color: #ffffff;
+//   }
 
-.pagination-dot {
-  padding: 5px;
-  margin: 0 5px;
-  cursor: pointer;
-  z-index: 4;
+//   // &:nth-child(1) {
+//   //   z-index: 1;
+//   //   // opacity: 1;
+//   // }
 
-  span {
-    display: block;
-    width: 10px;
-    height: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 0 1px #fff;
-    position: relative;
-    background-color: #fff;
-    transition: all 0.5s;
+//   // &.base {
+//   //   z-index: 1;
+//   //   opacity: 1;
+//   // }
+//   // &.active {
+//   //   z-index: 2;
+//   //   // opacity: 1;
+//   // }
+// }
 
-    &::before {
-      content: '';
-      width: 60%;
-      height: 60%;
-      display: block;
-      background: #b50005;
-      border-radius: 20px;
-      opacity: 1;
-      position: absolute;
-      top: 20%;
-      // transform: translateY(-50%);
-      left: 20%;
-      transition: all 0.3s;
-      transform-origin: center;
-      transform: scale(0);
-    }
-    &.active {
-      box-shadow: none;
-      &::before {
-        content: '';
-        width: 100%;
-        height: 100%;
-        display: block;
-        background: #b50005;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 0%;
-        // transform: translateY(-50%);
-        left: 0%;
-        transform: scale(1);
-      }
-    }
-  }
-}
+// .pagination {
+//   width: 30%;
+//   bottom: size(20);
+//   right: 0;
+//   left: 0;
+//   margin: 0 auto;
+//   justify-content: center;
+// }
 
-.swipe-btns {
-  width: 100%;
-  height: 100%;
-  padding: 0 15px;
-  z-index: 3;
+// .pagination-dot {
+//   padding: 5px;
+//   margin: 0 5px;
+//   cursor: pointer;
+//   z-index: 6;
 
-  .prev-btn,
-  .next-btn {
-    width: size(20);
-    cursor: pointer;
-  }
-}
+//   span {
+//     display: block;
+//     width: size(17);
+//     height: size(17);
+//     border-radius: size(17);
+//     box-shadow: inset 0 0 0 1px #fff;
+//     position: relative;
+//     background-color: #fff;
+//     transition: all 0.5s;
+
+//     &::before {
+//       content: '';
+//       width: 100%;
+//       height: 100%;
+//       display: block;
+//       background: #fff100;
+//       border-radius: 20px;
+//       opacity: 1;
+//       position: absolute;
+//       top: 0%;
+//       // transform: translateY(-50%);
+//       left: 0%;
+//       transition: all 0.3s;
+//       transform-origin: center;
+//       transform: scale(0);
+//     }
+//     &.active {
+//       box-shadow: none;
+//       &::before {
+//         content: '';
+//         width: 100%;
+//         height: 100%;
+//         display: block;
+//         background: #fff100;
+//         border-radius: 20px;
+//         opacity: 1;
+//         position: absolute;
+//         top: 0%;
+//         // transform: translateY(-50%);
+//         left: 0%;
+//         transform: scale(1);
+//       }
+//     }
+//   }
+// }
+
+// .swipe-btns {
+//   width: 100%;
+//   height: 100%;
+//   padding: 0 15px;
+//   z-index: 3;
+
+//   .prev-btn,
+//   .next-btn {
+//     width: size(20);
+//     cursor: pointer;
+//   }
+// }
 
 @media only screen and (max-width: 1440px) {
 }
@@ -322,75 +305,47 @@
 @media screen and (max-width: 767px) {
   .section6 {
     width: 100vw;
-    height: sizem(790);
+    height: sizem(576);
     min-height: auto;
-  max-height:initial;
-    // background-image: url('./s2/bg.jpg');
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
+    max-height: initial;
+    background-image: url('./bg_m.png');
+    background-size: 100% 100%;
+    background-attachment: fixed;
     overflow: hidden;
   }
-.txt{
-  width: sizem(310);
-  top: sizem(320);
-  left: sizem(32.5);display: block;
-  }
-
 
   .title {
-    width: 100%;
-    line-height: 1.6;
-    font-size: sizem(25);right:0;top:sizem(3);
-    span{display:inline-block;}
-  }
-
-  .hr {
-    width: 100%;
-    height: sizem(2);
-    position: relative;right: sizem(0);
-    margin: sizem(12) 0;
-  }
-
-  .s-title {
-    top:0;
-    left: sizem(0);
-    width: sizem(279);
-  }
-
-  .subtitle {
-    width: 100%;
-    font-size: sizem(18);right: sizem(-1);
+    @include img_r_m(276, 264, 50);
+    font-size: sizem(30);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.37;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    white-space: nowrap;
   }
 
   .desc {
-    font-size: sizem(15);
-    line-height: 1.6;
-    letter-spacing: sizem(2.09);
-    white-space: nowrap;display: block;
-    span{writing-mode:initial;display: block;
-      width:auto; 
-      margin:0 0 0.0em;
-      &.p{
-      margin:0 0 0.8em;}
-      &.p2{
-      margin:0 0 0.8em -0.5em;}
-    }
+    @include img_r_m(335, 370, 20);
+    font-size: sizem(16);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.88;
+    letter-spacing: sizem(-0.32);
+    text-align: left;
+    color: #ffffff;
   }
 
-  .img {
-    width: sizem(135);
-    top:sizem(30);
-    left: sizem(-3);
-  position: relative;
-  }
   /* Swipe */
   .swipe {
-    width: 100vw;
-    height: sizem(300);
+    width: sizem(335);
+    height: sizem(224);
     min-height: auto;
     top: sizem(0);
-    left: sizem(0);
+    left: sizem(20);
     object-fit: cover;
   }
 
@@ -467,7 +422,7 @@
 
   .pagination {
     width: auto;
-    bottom: size(91);
+    bottom: sizem(11);
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -476,15 +431,15 @@
 
   .pagination-dot {
     padding: 5px;
-    margin: 0 10px;
+    margin: 0 5px;
     cursor: pointer;
     z-index: 4;
 
     span {
       display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
+      width: 10px;
+      height: 10px;
+      border-radius: 10px;
       box-shadow: 0 0 0 1px #fff;
       position: relative;
       background-color: rgba(0, 0, 0, 0.01);
@@ -495,8 +450,8 @@
         width: 60%;
         height: 60%;
         display: block;
-        background: #004ea2;
-        border-radius: 20px;
+        background: #fff100;
+        border-radius: 10px;
         opacity: 1;
         position: absolute;
         top: 20%;
@@ -512,8 +467,8 @@
           width: 100%;
           height: 100%;
           display: block;
-          background: #004ea2;
-          border-radius: 20px;
+          background: #fff100;
+          border-radius: 10px;
           opacity: 1;
           position: absolute;
           top: 0%;
@@ -542,6 +497,7 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
+import info from '@/info'
 import slider from '@/mixins/slider.js'
 
 export default {
@@ -552,26 +508,23 @@ export default {
 
   data() {
     return {
+      info,
       isPC,
       isMobile,
       isTablet,
       isDialog: false,
       slideList: [
         {
-          img: require('./s6/1中山北路二段精品大道.jpg'),
-          name: '中山北路二段精品大道',
+          img: require('./s5/05_slider_1.jpg'),
         },
         {
-          img: require('./s6/2大倉久和.jpg'),
-          name: '大倉久和',
+          img: require('./s5/05_slider_2.jpg'),
         },
         {
-          img: require('./s6/3晶華飯店.jpg'),
-          name: '晶華飯店',
+          img: require('./s5/05_slider_3.jpg'),
         },
         {
-          img: require('./s6/4老爺酒店.jpg'),
-          name: '老爺酒店',
+          img: require('./s5/05_slider_4.jpg'),
         },
       ],
     }
@@ -589,7 +542,6 @@ export default {
     viewIndex() {
       if (this.viewIndex === 6) {
         this.slideIndex = 0
-        console.log(this.slideIndex, 'slideIndex')
       }
     },
   },
