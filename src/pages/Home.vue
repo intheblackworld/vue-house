@@ -4,38 +4,32 @@
     <!-- <SideNavigation /> -->
     <!-- <Navigation v-if="isMobile" /> -->
     <Indigator :viewIndex="viewIndex" v-if="isPC" />
-    <full-page
-      ref="fullPage"
-      :options="options"
-      id="fullpage"
-    >
-    <!-- <LeafFlow /> -->
-    <vue-lazy-component class="section relative" id="section1" @init="init">
-      <Section1 />
-    </vue-lazy-component>
-    <vue-lazy-component class="section relative" id="section2" style="z-index: 2;">
-      <Section2 />
-    </vue-lazy-component>
-    <vue-lazy-component class="section" id="section3">
-      <Section3 :viewIndex="viewIndex" />
-    </vue-lazy-component>
-    <vue-lazy-component class="section relative" id="section4" style="z-index: 3;">
-      <Section4 />
-    </vue-lazy-component>
-    <div class="bg-b">
-      <vue-lazy-component class="section" id="section5">
+    <full-page ref="fullPage" :options="options" id="fullpage">
+      <!-- <LeafFlow /> -->
+      <vue-lazy-component class="section relative" id="section1" @init="init">
+        <Section1 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section relative" id="section2" style="z-index: 2;">
+        <Section2 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section3">
+        <Section3 :viewIndex="viewIndex" />
+      </vue-lazy-component>
+      <vue-lazy-component class="section relative" id="section4" style="z-index: 3;">
+        <Section4 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section5" style="z-index: 4;">
         <Section5 />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section6">
         <Section6 />
       </vue-lazy-component>
-    </div>
-    <vue-lazy-component class="section" id="section7">
-      <Section7 />
-    </vue-lazy-component>
-    <vue-lazy-component class="section" id="section8">
-      <Section8 />
-    </vue-lazy-component>
+      <vue-lazy-component class="section" id="section7">
+        <Section7 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section8">
+        <Section8 />
+      </vue-lazy-component>
     </full-page>
     <!-- <vue-lazy-component
       class="section relative"

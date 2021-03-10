@@ -18,8 +18,8 @@
       </div>
     </div>
     <div class="title-bg">
-      <div class="title" v-html="slideList[slideIndex].title"></div>
-      <div class="desc" v-html="slideList[slideIndex].desc"></div>
+      <div class="title" v-html="slideList[slideIndex].title"  data-aos="fade-up" data-aos-delay="200"></div>
+      <div class="desc" v-html="slideList[slideIndex].desc"  data-aos="fade-up" data-aos-delay="400"></div>
     </div>
   </div>
 </template>

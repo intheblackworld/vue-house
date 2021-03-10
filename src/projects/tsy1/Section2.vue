@@ -2,12 +2,12 @@
   <div class="section2">
     <div v-if="!isMobile">
       <img src="./s2/02_img.png" :alt="`${info.caseName}_bg`" class="bg-img">
-      <img src="./s2/02_text.png" :alt="`${info.caseName}_text`" class="text">
+      <img src="./s2/02_text.png" :alt="`${info.caseName}_text`" class="text"  data-aos="fade-up" data-aos-delay="200">
     </div>
     <div v-else>
       <Map :bgSrc="bgSrc" :hand="hand">
       </Map>
-      <img src="./s2/02_text.png" :alt="`${info.caseName}_text`" class="text">
+      <img src="./s2/02_text.png" :alt="`${info.caseName}_text`" class="text"  data-aos="fade-up" data-aos-delay="200">
     </div>
   </div>
 </template>

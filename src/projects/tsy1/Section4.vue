@@ -1,6 +1,6 @@
 <template>
   <div class="section4">
-    <img src="./s4/04_child.png" :alt="`${info.caseName}_bg`" class="child1">
+    <img src="./s4/04_child.png" :alt="`${info.caseName}_bg`" class="child1" data-aos="fade-up" data-aos-delay="800">
     <img src="./s4/04_tree_1.png" :alt="`${info.caseName}_bg`" class="tree1" v-if="isPC">
     <img src="./s4/04_tree_2.png" :alt="`${info.caseName}_bg`" class="tree2" v-if="isPC">
     <img src="./s4/04_bg.jpg" :alt="`${info.caseName}_bg`" class="img" v-if="isPC">
@@ -10,7 +10,7 @@
     <img src="./s4/04_img_2.jpg" :alt="`${info.caseName}_bg`" class="img2" v-if="isPC">
     <img src="./s4/04_img_3.jpg" :alt="`${info.caseName}_bg`" class="img3" v-if="isPC">
     <img src="./s4/04_img_4.jpg" :alt="`${info.caseName}_bg`" class="img4" v-if="isPC">
-    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -27,11 +27,11 @@
         </div> -->
       </div>
     </div>
-    <div class="title">
+    <div class="title" data-aos="fade-up" data-aos-delay="200">
       風景勝境<br />
       <span>回家輕旅行 遊山又玩水</span>
     </div>
-    <div class="desc">
+    <div class="desc"  data-aos="fade-up" data-aos-delay="400">
       濛濛湖、梅花湖、燕子湖、碧潭、青潭、直潭、灣潭、塗潭等三湖五潭；和美山、獅仔頭山、屈尺、伸丈、銀河洞…寺廟走春、湖濱秘境、登山步道森呼吸、烏來泡湯賞櫻花，人間山水神仙生活。
     </div>
   </div>
@@ -427,7 +427,7 @@
 </style>
 
 <script>
-import { isMobile } from '@/utils'
+import { isPC, isMobile } from '@/utils'
 import info from '@/info'
 import slider from '@/mixins/slider.js'
 
@@ -440,6 +440,7 @@ export default {
   data() {
     return {
       info,
+      isPC,
       isMobile,
       slideList: [
         {

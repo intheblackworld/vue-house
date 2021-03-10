@@ -1,5 +1,6 @@
 <template>
   <div class="section5">
+    <img src="./s5/05_child.png" :alt="`${info.caseName}_bg`" class="child1" v-if="isPC"  data-aos="fade-up" data-aos-delay="800">
     <img src="./mobile/s5/05_m_style.png" :alt="`${info.caseName}_bg`" class="img" v-if="isMobile">
     <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -18,11 +19,11 @@
         </div> -->
       </div>
     </div>
-    <div class="title">
+    <div class="title"  data-aos="fade-up" data-aos-delay="200">
       日韓時尚餐飲<br />
       新店站碧潭廣場見
     </div>
-    <div class="desc">
+    <div class="desc"  data-aos="fade-up" data-aos-delay="400">
       最高CP值2600坪複合式捷運商場「碧潭有約」，由日系「無印良品」、韓式吃到飽「兩餐」以及全聯、寶雅攜手進駐，加上小碧潭站「IKEA」、「京站」，串聯捷運、碧潭水岸以及商場，打造新店人日常休閒娛樂天堂。
     </div>
   </div>
@@ -36,6 +37,9 @@
   min-height: size(900);
   max-height: size(1080);
   position: relative;
+  background-image: url('~@/projects/tsy1/s5/0506_bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .bg-img {
@@ -51,6 +55,10 @@
   &:nth-child(1) {
     position: relative;
   }
+}
+
+.child1 {
+  @include img_l_pc(336, -285, 295);
 }
 
 /* Swipe */

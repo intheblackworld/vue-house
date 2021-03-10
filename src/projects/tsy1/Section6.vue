@@ -18,20 +18,20 @@
       </div>
     </div>
     <div class="balloon-bg" v-if="isPC">
-      <img src="./s5/06_balloon_1.png" :alt="`${info.caseName}_bg`" class="balloon1">
-      <img src="./s5/06_balloon_2.png" :alt="`${info.caseName}_bg`" class="balloon2">
+      <img src="./s5/06_balloon_1.png" :alt="`${info.caseName}_bg`" class="balloon1"  data-aos="fade-up" data-aos-delay="200">
+      <img src="./s5/06_balloon_2.png" :alt="`${info.caseName}_bg`" class="balloon2"  data-aos="fade-up" data-aos-delay="300">
     </div>
-    <img src="./s5/06_child_1.png" :alt="`${info.caseName}_bg`" class="child1" v-if="isPC">
-    <img src="./s5/06_child_2.png" :alt="`${info.caseName}_bg`" class="child2" v-if="isPC">
+    <img src="./s5/06_child_1.png" :alt="`${info.caseName}_bg`" class="child1" v-if="isPC"  data-aos="fade-up" data-aos-delay="400">
+    <img src="./s5/06_child_2.png" :alt="`${info.caseName}_bg`" class="child2" v-if="isPC"  data-aos="fade-up" data-aos-delay="600">
     <img src="./s5/06_img_1.jpg" :alt="`${info.caseName}_bg`" class="img1" v-if="isPC">
     <img src="./s5/06_img_2.jpg" :alt="`${info.caseName}_bg`" class="img2" v-if="isPC">
-    <div class="title" v-if="isPC">
+    <div class="title" v-if="isPC"  data-aos="fade-up" data-aos-delay="200">
       青潭國小旁 校園水岸 便利悠居
     </div>
-    <div class="title" v-if="isMobile">
+    <div class="title" v-if="isMobile"  data-aos="fade-up" data-aos-delay="200">
       青潭國小旁 校園水岸<br />便利悠居
     </div>
-    <div class="desc">
+    <div class="desc"  data-aos="fade-up" data-aos-delay="400">
       「翠松園｣座落青潭溪畔青潭國小旁，水岸芬多精健康純境，校園操場作前院，附設公托雙薪小家庭最愛！巷口公車站、UBIKE、全聯、美廉社、農會、7-11、全家、郵局、幼稚園、餐飲…坐享寧靜美地兼得機能便利。
     </div>
   </div>
@@ -45,6 +45,9 @@
   min-height: size(900);
   max-height: size(1080);
   position: relative;
+  background-image: url('~@/projects/tsy1/s5/0506_bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;

@@ -30,11 +30,11 @@
       <img src="./s1/01_balloon_1.png" :alt="`${info.caseName}_ballon`" class="balloon_1">
       <img src="./s1/01_balloon_2.png" :alt="`${info.caseName}_ballon`" class="balloon_2">
     </div>
-    <img src="./s1/logo_noleaf.png" :alt="`${info.caseName}_logo`" class="logo" v-if="isPC">
-    <img src="./s1/logo.png" :alt="`${info.caseName}_logo`" class="logo" v-if="isMobile">
-    <img src="./s1/01_text_1.png" :alt="`${info.caseName}_title`" class="title_1">
-    <img src="./s1/01_text_2.png" :alt="`${info.caseName}_title`" class="title_2">
-    <img src="./s1/01_btn.png" :alt="`${info.caseName}_btn`" class="btn" v-scroll-to="{element: '#contact'}">
+    <img src="./s1/logo_noleaf.png" :alt="`${info.caseName}_logo`" class="logo" v-if="isPC"  data-aos="fade-up" data-aos-delay="200">
+    <img src="./s1/logo.png" :alt="`${info.caseName}_logo`" class="logo" v-if="isMobile"  data-aos="fade-up" data-aos-delay="200">
+    <img src="./s1/01_text_1.png" :alt="`${info.caseName}_title`" class="title_1"  data-aos="fade-up" data-aos-delay="400">
+    <img src="./s1/01_text_2.png" :alt="`${info.caseName}_title`" class="title_2"  data-aos="fade-up" data-aos-delay="600">
+    <img src="./s1/01_btn.png" :alt="`${info.caseName}_btn`" class="btn" v-scroll-to="{element: '#contact'}"  data-aos="fade-up" data-aos-delay="800">
     <img src="./s1/leaf.png" :alt="`${info.caseName}_float`" data-aos="float1" data-aos-delay="0" data-aos-duration="1100" class="float1 absolute" v-if="isPC">
     <img src="./s1/leaf_2.png" :alt="`${info.caseName}_float`" data-aos="float2" data-aos-delay="0" data-aos-duration="1000" class="float2 absolute" v-if="isPC">
   </div>
