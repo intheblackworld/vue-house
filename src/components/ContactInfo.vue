@@ -46,7 +46,7 @@
 
 <script>
 import info from '@/info'
-import { isMobile, isTablet } from '@/utils'
+import { isPC, isMobile, isTablet } from '@/utils'
 import CallDialog from '@/components/Dialog/Call'
 import MessengerDialog from '@/components/Dialog/Messenger'
 import MapDialog from '@/components/Dialog/Map'
@@ -60,7 +60,7 @@ export default {
   data() {
     return {
       info,
-
+      isPC,
       isMobile,
       isTablet,
       isShowCallDialog: false,

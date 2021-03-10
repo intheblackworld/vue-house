@@ -75,7 +75,7 @@
 // @ is an alias to /src
 import $ from 'jquery'
 import Navigation from '@/layouts/Navigation.vue'
-import { isMobile } from '@/utils'
+import { isPC, isMobile } from '@/utils'
 // import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
@@ -119,6 +119,7 @@ export default {
   data() {
     return {
       isMobile,
+      isPC,
       isSide: false,
       load: true,
       viewIndex: 0,

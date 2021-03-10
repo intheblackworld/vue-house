@@ -53,16 +53,16 @@
       border-radius: 999px;
       margin: calc(50% - 0.3em) auto 0 auto;
       transition: all 0.3s;
-      background: rgba(0, 0, 0, 0.4);
+      background: #fff;
       // background: #fff;
     }
     &.active {
       &::before {
-        background: #000;
+        background: #ffd200;
       }
     }
     &:hover::before {
-      background: #ffd200;
+      background: #666;
     }
   }
 
