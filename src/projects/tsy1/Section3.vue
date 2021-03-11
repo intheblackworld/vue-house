@@ -30,7 +30,7 @@
 @import '@/assets/style/function.scss';
 
 .section3 {
-  width: size(1920);
+  width: 100%;
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);
@@ -44,9 +44,8 @@
 }
 
 .bg-img {
-  width: 100vw;
-  height: 100vh;
-  min-height: size(900);
+  width:  100%;
+  height:  100%;
   position: absolute;
   display: block;
   top: 0;
@@ -237,7 +236,8 @@
 }
 
 .title {
-  @include img_l_pc(466, 288, 149);
+  @include img_l_pc(466, 288, 130);
+   top: calc(50% + 100vw * (288 - 1080 * .5) / 1920);
   font-size: size(53);
   font-weight: bold;
   font-stretch: normal;
@@ -254,14 +254,15 @@
 }
 
 .desc {
-  @include img_l_pc(457, 434, 160);
+  @include img_l_pc(457, 434, 130);
+   top: calc(50% + 100vw * (434 - 1080 * .5) / 1920);
   font-size: size(28);
-  font-weight: 500;
+  font-weight: 400;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.69;
   letter-spacing: size(-0.56);
-  text-align: left;
+  text-align: justify;
   color: #ffffff;
 }
 
@@ -298,7 +299,6 @@
 
 @media screen and (max-width: 767px) {
   .section3 {
-    width: 100vw;
     height: sizem(524);
     min-height: auto;
     max-height: initial;
@@ -330,12 +330,12 @@
   .desc {
     @include img_c_m(335, 327);
     font-size: sizem(16);
-    font-weight: 500;
+    font-weight: 400;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.88;
     letter-spacing: size(-0.32);
-    text-align: left;
+    text-align: justify;
     color: #ffffff;
   }
 

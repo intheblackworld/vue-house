@@ -39,7 +39,7 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .section4 {
-  width: size(1920);
+  width: 100%;
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);
@@ -48,27 +48,39 @@
 }
 
 .img {
-  @include img_l_pc(535, 45, 83);
+  @include img_l_pc(525, 45, 83);
+  top: 3%;
+  height: 94%;
 }
 
 .img1 {
-  @include img_r_pc(842, 48, 435);
+  @include img_r_pc(842, 14, 435);
+  top: 3%;
+  height: calc(47% - 0.5vw);
+  object-fit: cover;
 }
 
 .img2 {
   @include img_r_pc(332, 48, 82);
+  top: 3%;
+  height: calc(47% - 0.5vw);
+  object-fit: cover;
 }
 
 .img3 {
   @include img_r_pc(332, 53, 945);
   top: auto;
-  bottom: size(30);
+  bottom: 3%;
+  height: calc(47% - 0.5vw);
+  object-fit: cover;
 }
 
 .img4 {
   @include img_r_pc(842, 45, 83);
   top: auto;
-  bottom: size(30);
+  bottom: 3%;
+  height: calc(47% - 0.5vw);
+  object-fit: cover;
 }
 
 .child1 {
@@ -76,7 +88,8 @@
 }
 
 .title {
-  @include img_l_pc(460, 268, 121);
+  @include img_l_pc(450, 268, 125);
+   top: calc(60% + 100vw * (268 - 1080 * .6) / 1920);
   font-size: size(55);
   font-weight: bold;
   font-stretch: normal;
@@ -87,19 +100,20 @@
   color: #ffffff;
   white-space: nowrap;
   span {
-    font-size: size(45);
+    font-size: size(44);
   }
 }
 
 .desc {
-  @include img_l_pc(421, 436, 139);
+  @include img_l_pc(450, 436, 125);
+   top: calc(60% + 100vw * (436 - 1080 * .6) / 1920);
   font-size: size(28);
-  font-weight: 500;
+  font-weight: 400;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.83;
   letter-spacing: normal;
-  text-align: left;
+  text-align: justify;
   color: #ffffff;
 }
 
@@ -137,42 +151,15 @@
   }
 }
 @media only screen and (max-width: 1440px) and (min-width: 1025px) {
-  .fullscreen {
-    height: 100vh;
-  }
 
-  .text {
-    top: 40px;
-  }
 
-  .title {
-    font-size: 90px;
-  }
 }
 
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .bg {
-    background-size: 1920px auto;
-    background-position: center;
-  }
-  .txt {
-    height: auto;
-    margin-top: 100px;
-  }
 
-  .title {
-    font-size: 52px;
-  }
 
-  .desc {
-    font-size: 24px;
-  }
-
-  .text {
-    top: 0;
-  }
 }
 
 @media screen and (max-width: 767px) {
@@ -184,11 +171,12 @@
     background-image: url('./bg_m.png');
     background-size: 100% 100%;
     background-attachment: fixed;
-    overflow: hidden;
+  //  overflow: hidden;
   }
 
   .img {
     @include img_c_m(380, -24);
+    height: auto;
   }
 
   .img_bg {
@@ -238,12 +226,10 @@
   .desc {
     @include img_c_m(335, 430);
     font-size: sizem(16);
-    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.88;
     letter-spacing: sizem(-0.32);
-    text-align: left;
     color: #ffffff;
   }
 

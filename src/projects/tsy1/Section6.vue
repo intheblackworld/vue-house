@@ -40,7 +40,7 @@
 @import '@/assets/style/function.scss';
 
 .section6 {
-  width: size(1920);
+  width: 100%;
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);
@@ -59,18 +59,22 @@
 .img1 {
   @include img_l_pc(855, 75, 82);
   top: auto;
-  bottom: size(75);
+  bottom: 3%;
+  height: calc(70% - 6vw);
+  object-fit: cover;
 }
 
 .img2 {
   @include img_r_pc(855, 75, 82);
   top: auto;
-  bottom: size(75);
+  bottom: 3%;
+  height: calc(70% - 6vw);
+  object-fit: cover;
 }
 
 .title {
   @include img_c_pc(740, 97);
-  font-size: size(55);
+  font-size: size(52);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -82,31 +86,31 @@
 }
 
 .desc {
-  @include img_c_pc(862, 192);
+  @include img_c_pc(950, 192);
   font-size: size(28);
-  font-weight: 500;
+  font-weight: 400;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.69;
   letter-spacing: size(0.28);
-  text-align: left;
+  text-align: justify;
   color: #ffffff;
 }
 
 .child1 {
-  @include img_r_pc(422, 70, 42);
+  @include img_r_pc(400, 70, 42);
 }
 
 .child2 {
-  @include img_l_pc(157, 244, 180);
+  @include img_l_pc(130, 244, 180);
 }
 
 .balloon1 {
-  @include img_l_pc(85, 100, 383);
+  @include img_l_pc(65, 100, 383);
 }
 
 .balloon2 {
-  @include img_r_pc(72, 42, 408);
+  @include img_r_pc(52, 42, 408);
 }
 
 .balloon-bg {
@@ -333,12 +337,12 @@
   .desc {
     @include img_r_m(335, 370, 20);
     font-size: sizem(16);
-    font-weight: 500;
+    font-weight: 400;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.88;
     letter-spacing: sizem(-0.32);
-    text-align: left;
+    text-align: justify;
     color: #ffffff;
   }
 

@@ -32,7 +32,7 @@
 @import '@/assets/style/function.scss';
 
 .section5 {
-  width: size(1920);
+  width:100%;
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);
@@ -43,9 +43,8 @@
 }
 
 .bg-img {
-  width: 100vw;
-  height: 100vh;
-  min-height: size(900);
+  width: 100%;
+  height: 100%;
   position: absolute;
   display: block;
   top: 0;
@@ -64,8 +63,7 @@
 /* Swipe */
 .swipe {
   width: size(1296);
-  height: 100vh;
-  min-height: size(900);
+  height:100%;
   top: 0;
   left: 0;
 }
@@ -230,6 +228,7 @@
 
 .title {
   @include img_r_pc(440, 262, 101);
+   top: calc(50% + 100vw * (262 - 1080 * .5) / 1920);
   font-size: size(55);
   font-weight: bold;
   font-stretch: normal;
@@ -243,13 +242,14 @@
 
 .desc {
   @include img_r_pc(468, 444, 79);
+   top: calc(50% + 100vw * (444 - 1080 * .5) / 1920);
   font-size: size(28);
-  font-weight: 500;
+  font-weight: 400;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.69;
   letter-spacing: size(0.56);
-  text-align: left;
+  text-align: justify;
   color: #ffffff;
 }
 
@@ -275,7 +275,7 @@
     background-image: url('./bg_m.png');
     background-size: 100% 100%;
     background-attachment: fixed;
-    overflow: hidden;
+  //  overflow: hidden;
   }
 
   .img {
@@ -299,12 +299,12 @@
   .desc {
     @include img_r_m(335, 517, 20);
     font-size: sizem(16);
-    font-weight: 500;
+    font-weight: 400;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.88;
     letter-spacing: sizem(-0.32);
-    text-align: left;
+    text-align: justify;
     color: #ffffff;
   }
 

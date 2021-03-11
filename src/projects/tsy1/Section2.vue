@@ -41,7 +41,9 @@
 }
 
 .text {
-  @include img_l_pc(733, 87, 79);
+  @include img_l_pc(700, 87, 79);
+   top: calc(50% + 100vw * (140 - 1080 * .5) / 1920);
+  
 }
 
 @media only screen and (max-width: 1440px) {
