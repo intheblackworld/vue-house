@@ -47,7 +47,7 @@
 @import '@/assets/style/function.scss';
 
 .section8 {
-  width: size(1920);
+  width:100%;
   height:100vh;
   min-height: size(900);
   max-height: size(1080);
@@ -57,7 +57,7 @@
 }
 
 .bg-img {
-  width: size(1920);
+  width:100%;
   height: 100%;
   position: absolute;
   top: 0;
@@ -117,8 +117,8 @@
 
 /* Swipe */
 .swipe {
-  width: size(1110);
-  height: size(625);
+  width: size(1080);
+  height: size(615);
   top: calc(50% + ((221 - 540) * 0.0520833333333333vw));
   right: size(118);
   object-fit: cover;
@@ -341,8 +341,8 @@
 
   /* Swipe */
   .swipe {
-    width:92vw;
-    height: sizem(175);
+  width: sizem(345);
+  height: sizem(196);
     // min-height: sizem(750);
     top: sizem(309);
     left: calc(50% - 46vw);
@@ -397,13 +397,13 @@
   .swipe-item {
     width: 100%;
     z-index: 0;
-    height: sizem(175);
+    height:100%;
     bottom: 0;
     left: 0;
 
     img {
       width: 100%;
-      height: sizem(175);
+      height:100%;
       bottom: 0;
       left: 0;
     }
@@ -425,7 +425,7 @@
 
   .pagination {
     width: auto;
-    bottom: size(91);
+    bottom: sizem(91);
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -490,7 +490,7 @@
     padding: 0px;
     z-index: 1;
     position: absolute;
-    top: sizem(380);
+    top: sizem(395);
 
     .prev-btn,
     .next-btn {
