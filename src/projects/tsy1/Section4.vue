@@ -10,16 +10,16 @@
     <img src="./s4/04_img_2.jpg" :alt="`${info.caseName}_bg`" class="img2" v-if="isPC">
     <img src="./s4/04_img_3.jpg" :alt="`${info.caseName}_bg`" class="img3" v-if="isPC">
     <img src="./s4/04_img_4.jpg" :alt="`${info.caseName}_bg`" class="img4" v-if="isPC">
-    <div class="name name1">
+    <div class="name name1" v-if="isPC">
       碧潭橋
     </div>
-    <div class="name name2">
+    <div class="name name2" v-if="isPC">
       青潭河濱公園
     </div>
-    <div class="name name3">
+    <div class="name name3" v-if="isPC">
       青潭溪
     </div>
-    <div class="name name4">
+    <div class="name name4" v-if="isPC">
       青潭橋自行車步道
     </div>
     <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile">
