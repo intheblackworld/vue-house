@@ -77,13 +77,13 @@
 }
 
 .desc {
-  font-size: size(32.3);
-  font-weight: 500;
+  font-size: size(32);
+  font-weight:400;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.74;
   letter-spacing: normal;
-  text-align: left;
+  text-align: justify;
   color: #ffffff;
 }
 
@@ -269,7 +269,6 @@
 
 @media screen and (max-width: 767px) {
   .section7 {
-    width: 100vw;
     height: sizem(312 + 192);
     min-height: auto;
     max-height: initial;
@@ -283,7 +282,7 @@
   .title-bg {
     @include img_l_m(375, 312, 0);
     height: sizem(192);
-    padding: sizem(24) sizem(20) sizem(20) size(20);
+    padding: sizem(24) 0 sizem(20) 0;
     background-color: rgba(16, 161, 180, 0.9);
     z-index: 3;
     transition: all 0.3s;
@@ -301,12 +300,14 @@
   }
 
   .desc {
+    width: sizem(320);
+    margin: auto;
     font-size: sizem(20);
-    font-weight: 500;
+    font-weight: 400;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.75;
-    letter-spacing: normal;
+    letter-spacing: 0.02em;
     text-align: center;
     color: #ffffff;
   }

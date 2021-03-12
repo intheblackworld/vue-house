@@ -34,9 +34,8 @@
     <img src="./s1/logo.png" :alt="`${info.caseName}_logo`" class="logo" v-if="isMobile"  data-aos="fade-up" data-aos-delay="200">
     <img src="./s1/01_text_1.png" :alt="`${info.caseName}_title`" class="title_1"  data-aos="fade-up" data-aos-delay="400">
     <img src="./s1/01_text_2.png" :alt="`${info.caseName}_title`" class="title_2"  data-aos="fade-up" data-aos-delay="600">
-    <img src="./s1/01_btn.png" :alt="`${info.caseName}_btn`" class="btn" v-scroll-to="{element: '#contact'}"  data-aos="fade-up" data-aos-delay="800">
+    <div class="btn1" v-scroll-to="{ element: `#contact`, offset: offset }"><span>搶先預約</span><img src="./s1/leaf_2.png" :alt="`${info.caseName}_float`" data-aos="float2" data-aos-delay="0" data-aos-duration="1000" class="float2 absolute" ></div>
     <img src="./s1/leaf.png" :alt="`${info.caseName}_float`" data-aos="float1" data-aos-delay="0" data-aos-duration="1100" class="float1 absolute" v-if="isPC">
-    <img src="./s1/leaf_2.png" :alt="`${info.caseName}_float`" data-aos="float2" data-aos-delay="0" data-aos-duration="1000" class="float2 absolute" v-if="isPC">
   </div>
 </template>
 
@@ -93,24 +92,57 @@
 // }
 
 .logo {
-  @include img_l_pc(651, 148, 266);
-  // top: calc(70% + 100vw * (707 - 1080 * .7) / 1920);
+  @include img_l_pc(620, 148, 280);
+   top: calc(50% + 100vw * (200 - 1080 * .5) / 1920);
   // filter: drop-shadow(0 0 .5em #d67f76);
 }
 
 .title_1 {
-  @include img_l_pc(681, 444, 251);
+  @include img_l_pc(630, 444, 275);
+   top: calc(50% + 100vw * (480 - 1080 * .5) / 1920);
 }
 
 .title_2 {
-  @include img_l_pc(533, 539, 321);
+  @include img_l_pc(510, 539, 310);
+   top: calc(50% + 100vw * (560 - 1080 * .5) / 1920);
 }
 
 .btn {
-  @include img_l_pc(301, 688, 430);
+  @include img_l_pc(270, 688, 430);
+   top: calc(50% + 100vw * (670 - 1080 * .5) / 1920);
   cursor: pointer;
   &:hover {
   }
+}
+.btn1 {
+  @include img_l_pc(270, 688, 430);
+  background: #FFF;
+  height: size(270);
+  top: calc(50% + 100vw * (670 - 1080 * .5) / 1920);
+  cursor: pointer;
+  color: #10a1b4;
+  border-radius:50%;
+  font-size: size(76);
+  line-height: 1.1;
+  font-weight: 700;
+  transition: all 0.5s;
+  span{width: 92%;height: 92%;margin: 4%;border:0.03em solid #10a1b4;
+  border-radius:50%;padding:5%;
+  display: flex;
+  align-items: center;
+  transition: all 0.5s;
+  justify-content: center;}
+  &:hover {
+    transform: rotate(30deg) ; 
+    span{transform: rotate(-25deg)}
+  }
+.float2 {
+  @include img_r_pc(109, 0, 0);
+   top: calc(50% + 0.4em);
+  right: -0.1em;
+  opacity: 1;
+  z-index: 3;
+}
 }
 
 .child-bg {
@@ -159,70 +191,84 @@
 
 // ----- bubble
 .bubble_1 {
-  @include img_l_pc(433, 134, -100);
+  @include img_l_pc(400, 134, -100);
+   top: calc(50% + 100vw * (134 - 1080 * .5) / 1920);
   // z-index: 6;
 }
 
 .bubble_2 {
-  @include img_l_pc(372, 436, 410);
+  @include img_l_pc(372, 436, 400);
+   top: calc(50% + 100vw * (400 - 1080 * .5) / 1920);
 }
 
 .bubble_3 {
   @include img_r_pc(563, -70, 0);
+   top: calc(50% + 100vw * (-70 - 1080 * .5) / 1920);
 }
 
 .bubble_4 {
   @include img_r_pc(324, 819, 651);
+   top: calc(50% + 100vw * (819 - 1080 * .5) / 1920);
 }
 // ----- child
 
 .child_1 {
-  @include img_r_pc(486, 328, 346);
+  @include img_r_pc(440, 328, 390);
+   top: calc(50% + 100vw * (328 - 1080 * .5) / 1920);
   z-index: 6;
 }
 
 .child_2 {
-  @include img_r_pc(190, 554, 84);
+  @include img_r_pc(170, 554, 84);
+   top: calc(50% + 100vw * (554 - 1080 * .5) / 1920);
   top: auto;
   bottom: size(11);
 }
 
 .child_3 {
-  @include img_r_pc(205, 549, 805);
+  @include img_r_pc(205, 549, 810);
+   top: calc(50% + 100vw * (549 - 1080 * .5) / 1920);
   top: auto;
   bottom: size(11);
 }
 
 .child_4 {
-  @include img_r_pc(198, 663, 386);
+  @include img_r_pc(160, 600, 420);
+   top: calc(50% + 100vw * (650 - 1080 * .5) / 1920);
   top: auto;
   bottom: 0;
 }
 
 .child_5 {
-  @include img_r_pc(197, 608, 229);
+  @include img_r_pc(180, 608, 240);
+   top: calc(50% + 100vw * (608 - 1080 * .5) / 1920);
 }
 
 .balloon_1 {
   @include img_r_pc(106, 129, 804);
+   top: calc(50% + 100vw * (150 - 1080 * .5) / 1920);
 }
 
 .balloon_2 {
   @include img_r_pc(115, 390, 155);
+   top: calc(50% + 100vw * (390 - 1080 * .5) / 1920);
 }
 
 // ------------ bling
 
 .bling_1 {
   @include img_r_pc(28, 393, 313);
+   top: calc(50% + 100vw * (393 - 1080 * .5) / 1920);
 }
 
 .bling_2 {
   @include img_l_pc(27, 741, 389);
+   top: calc(50% + 100vw * (741 - 1080 * .5) / 1920);
 }
 
 .bling_3 {
   @include img_l_pc(27, 919, 764);
+   top: calc(50% + 100vw * (919 - 1080 * .5) / 1920);
 }
 
 .bling_4 {
@@ -232,21 +278,25 @@
 
 .bling_5 {
   @include img_r_pc(66, 196, 774);
+   top: calc(50% + 100vw * (196 - 1080 * .5) / 1920);
 }
 
 .bling_6 {
   @include img_l_pc(66, 943, 636);
+   top: calc(50% + 100vw * (943 - 1080 * .5) / 1920);
   top: auto;
   bottom: 0;
 }
 
 .float1 {
-  @include img_l_pc(81, 257, 821);
+  @include img_l_pc(81, 257, 800);
+   top: calc(50% + 100vw * (290 - 1080 * .5) / 1920);
   opacity: 0;
 }
 
 .float2 {
-  @include img_l_pc(109, 871, 640);
+  @include img_l_pc(109, 871, 600);
+   top: calc(50% + 100vw * (830 - 1080 * .5) / 1920);
   opacity: 0;
   z-index: 3;
 }
@@ -266,38 +316,38 @@
 
 @media screen and (max-width: 767px) {
   .section1 {
-    width: 100vw;
     min-height: sizem(604);
     max-height: sizem(850);
     height: sizem(604);
     background-image: url('./bg_m.png');
-    background-size: 100% 100%;
+    background-size: 100% auto;
     background-attachment: fixed;
+    background-position: 0 0;
     // background-size: cover;
     // background-attachment: scroll;
   }
   .logo {
-    @include img_c_m(292, 45);
+    @include img_c_m(320, 45);
     // top: calc(70% + 100vw * (707 - 1080 * .7) / 1920);
     // filter: drop-shadow(0 0 .5em #d67f76);
   }
 
   .title_1 {
-    @include img_c_m(335, 204);
+    @include img_c_m(335, 200);
   }
 
   .title_2 {
-    @include img_c_m(258, 251);
+    @include img_c_m(258, 245);
   }
 
-  .btn {
+  .btn1 {
     @include img_c_m(138, 267);
+  height: sizem(138);
     top: auto;
     bottom: sizem(8);
-    cursor: pointer;
+  font-size: sizem(38);
     z-index: 2;
-    &:hover {
-    }
+.float2 {width: sizem(51);}
   }
 
   .bling-bg {
@@ -346,19 +396,19 @@
   }
 
   .child_2 {
-    @include img_r_m(76, 451, 29);
+    @include img_r_m(76, 451, 29);z-index: 1;
   }
 
   .child_3 {
-    @include img_l_m(73, 483, 37);
+    @include img_l_m(73, 483, 37);z-index: 2;
   }
 
   .child_4 {
-    @include img_r_m(80, 383, 104);
+    @include img_r_m(80, 383, 104);z-index: 2;
   }
 
   .child_5 {
-    @include img_r_m(71, 336, 37);
+    @include img_r_m(71, 336, 37);z-index: 1;
   }
 
   .child_6 {
