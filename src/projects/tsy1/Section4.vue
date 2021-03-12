@@ -109,11 +109,11 @@
 }
 
 .name1 {
-  @include img_r_pc(70, 480, 454);
+  @include img_r_pc(70, 465, 454);
 }
 
 .name2 {
-  @include img_r_pc(140, 480, 100);
+  @include img_r_pc(140, 465, 100);
 }
 
 .name3 {
