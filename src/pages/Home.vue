@@ -6,9 +6,9 @@
     <Indigator :viewIndex="viewIndex" v-if="isPC" />
     <full-page ref="fullPage" :options="options" id="fullpage">
       <!-- <LeafFlow /> -->
-      <vue-lazy-component class="section relative" id="section1" @init="init">
+      <div class="section relative" id="section1" @init="init">
         <Section1 />
-      </vue-lazy-component>
+      </div>
       <vue-lazy-component class="section relative" id="section2" style="z-index: 2;">
         <Section2 />
       </vue-lazy-component>

@@ -10,6 +10,18 @@
     <img src="./s4/04_img_2.jpg" :alt="`${info.caseName}_bg`" class="img2" v-if="isPC">
     <img src="./s4/04_img_3.jpg" :alt="`${info.caseName}_bg`" class="img3" v-if="isPC">
     <img src="./s4/04_img_4.jpg" :alt="`${info.caseName}_bg`" class="img4" v-if="isPC">
+    <div class="name name1">
+      碧潭橋
+    </div>
+    <div class="name name2">
+      青潭河濱公園
+    </div>
+    <div class="name name3">
+      青潭溪
+    </div>
+    <div class="name name4">
+      青潭橋自行車步道
+    </div>
     <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
@@ -31,7 +43,7 @@
       風景勝境<br />
       <span>回家輕旅行 遊山又玩水</span>
     </div>
-    <div class="desc"  data-aos="fade-up" data-aos-delay="400">
+    <div class="desc" data-aos="fade-up" data-aos-delay="400">
       濛濛湖、梅花湖、燕子湖、碧潭、青潭、直潭、灣潭、塗潭等三湖五潭；和美山、獅仔頭山、屈尺、伸丈、銀河洞…寺廟走春、湖濱秘境、登山步道森呼吸、烏來泡湯賞櫻花，人間山水神仙生活。
     </div>
   </div>
@@ -69,6 +81,35 @@
   @include img_r_pc(842, 45, 83);
   top: auto;
   bottom: size(30);
+}
+
+.name {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+  font-size: size(22);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.33;
+  letter-spacing: size(1.32);
+  text-align: left;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.name1 {
+  @include img_r_pc(70, 480, 454);
+}
+
+.name2 {
+  @include img_r_pc(140, 480, 100);
+}
+
+.name3 {
+  @include img_r_pc(70, 970, 960);
+}
+
+.name4 {
+  @include img_r_pc(185, 970, 100);
 }
 
 .child1 {

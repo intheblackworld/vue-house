@@ -8,7 +8,7 @@ export default {
   fbLink: 'https://www.facebook.com/%E7%BF%A0%E6%9D%BE%E5%9C%92-104854654998745',
   fbMessage: 'https://m.me/104854654998745/',
   caseName: '翠松園',
-  indigatorLength: 10,
+  indigatorLength: 8,
   houseInfos: [
     ['基地位置', '新北市新店區⽵林路與⽵林路70巷交界',],
     ['接待會館', '新北市新店區北宜路⼆段 225號',],
