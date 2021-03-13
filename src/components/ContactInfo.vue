@@ -45,7 +45,7 @@
           </span>
         </div>
         <a
-          class="btn flex-c"
+          class="btn flex-c bt_fanpage"
           :href="info.fbLink"
           target="_blank"
           data-aos="fade-down"
@@ -147,6 +147,7 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/style/variableColor.scss';
 @import '@/assets/style/variableDefault.scss';
+@import '@/assets/style/function.scss';
 
 .contact-info {
   background: $contact_bg;
@@ -159,8 +160,8 @@ export default {
   justify-content: space-between;
   position: relative;
   z-index: 3;
-  width: 1200px;
-  height: 500px;
+  width: size(1200);
+  height: size(1000);
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */

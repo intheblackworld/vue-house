@@ -23,25 +23,19 @@
       <vue-lazy-component class="section relative" id="section4">
         <Section4 />
       </vue-lazy-component>
-      <!--  <vue-lazy-component
-      class="section"
-      id="section7"
-    >
-      <Section7 />
-    </vue-lazy-component> -->
       <vue-lazy-component class="section" id="section5">
         <Section5 />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section6">
         <Section6 />
       </vue-lazy-component>
+      <vue-lazy-component class="section" id="section7">
+        <Section7 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section8">
+        <Section8 />
+      </vue-lazy-component>
       <!-- <vue-lazy-component
-      class="section"
-      id="section8"
-    >
-      <Section8 />
-    </vue-lazy-component>
-    <vue-lazy-component
       class="section"
       id="section9"
     >
@@ -76,7 +70,7 @@
   background-size: auto;
   background-position: center center;
   background-repeat: repeat;
-  overflow: hidden;//試底下多的那塊哪來的
+  overflow: hidden; //試底下多的那塊哪來的
 }
 
 @media only screen and (max-width: 767px) {
@@ -104,8 +98,8 @@ import Section3 from '@/projects/sj/Section3.vue'
 import Section4 from '@/projects/sj/Section4.vue'
 import Section5 from '@/projects/sj/Section5.vue'
 import Section6 from '@/projects/sj/Section6.vue'
-// import Section7 from '@/projects/sj/Section7.vue'
-// import Section8 from '@/projects/sj/Section8.vue'
+import Section7 from '@/projects/sj/Section7.vue'
+import Section8 from '@/projects/sj/Section8.vue'
 // import Section9 from '@/projects/sj/Section9.vue'
 
 export default {
@@ -124,8 +118,8 @@ export default {
     Section4,
     Section5,
     Section6,
-    // Section7,
-    // Section8,
+    Section7,
+    Section8,
     // Section9,
   },
 

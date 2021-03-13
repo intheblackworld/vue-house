@@ -32,6 +32,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/style/variableColor.scss';
+@import '@/assets/style/function.scss';
 .house-info {
   width: 100vw;
   background: $house_bg;
@@ -39,7 +40,7 @@ export default {
   z-index: 1;
 }
 .content {
-  width: 706px;
+  width: size(1500);
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -48,8 +49,12 @@ export default {
 }
 
 .title {
+  width: 80vw;
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+  background-color: #040000;
   font-size: 32px;
-  line-height: 36px;
   margin: 60px 0;
   font-weight: 500;
   color: $house_title_color;
@@ -64,27 +69,38 @@ export default {
 }
 
 .item {
-  font-size: 15px;
-  margin-bottom:2em;
-  margin-right: 10em;
-  width: 270px;
-  //height: 30px;
+  font-size: size(30);
+  margin-bottom: 2em;
+  // margin-right: 10em;
+  width: size(700);
+  //height: size(30);
   line-height: 1.4;
   //border-left: 4px solid $house_border_color;
   padding-left: 10px;
   display: flex;
-  align-items: center;justify-content:flex-start;
-  white-space: nowrap;position: relative;
-  &::before{content: "";width: 4px;height: 1.4em;background:$house_border_color;margin: 0px 0.8em 0 0;position: absolute;top:0;left: 0;}
+  align-items: center;
+  justify-content: flex-start;
+  // white-space: nowrap;
+  position: relative;
+  &::after {
+    content: '';
+    width: 4px;
+    height: 1.4em;
+    background: $house_border_color;
+    margin: 0px 0.8em 0 0;
+    position: absolute;
+    top: 0;
+    left: size(160);
+  }
   &:nth-of-type(even) {
     margin-right: 0;
   }
 
   .label {
-    font-size:1em;
+    font-size: 1em;
     color: $house_label_color;
     margin-bottom: 0;
-    margin-right:0.8em;
+    margin-right: 0.8em;
     white-space: nowrap;
     font-family: $family3;
     flex: 0 0 5em;
@@ -94,11 +110,12 @@ export default {
   }
 
   .desc {
-    font-size: 14px;
+    font-size: size(30);
     text-align: left;
     color: $house_desc_color;
     font-family: $family3;
     font-weight: bold;
+    white-space: nowrap;
   }
 }
 
@@ -125,6 +142,21 @@ export default {
     height: auto;
     margin-left: 20px;
     white-space: normal;
+    font-size: 14px;
+    &::after {
+      content: '';
+      width: 4px;
+      height: 1.4em;
+      background: $house_border_color;
+      margin: 0px 0.8em 0 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .desc {
+      font-size: 14px;
+    }
   }
 
   .info {

@@ -1,60 +1,85 @@
 <template>
-  <div>
-    <div class="section4">
-      <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex" data-aos="fade" data-aos-delay="1000">
-          <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
-              <div class="slide-name absolute" v-html="slide.name"></div>
-            </div>
-          </transition-group>
-          <div class="pagination absolute flex-ac" v-if="isPC">
-            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+  <div class="section4">
+    <div class="bg"></div>
+    <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex" data-aos="fade" data-aos-delay="1000">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" alt="">
+            <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
-       <!--   <div class="swipe-btns absolute flex-ac flex-jb">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-          </div> -->
+        </transition-group>
+        <div class="pagination absolute flex-ac">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+        </div>
+        <div class="swipe-btns absolute flex-ac flex-jb">
+          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
         </div>
       </div>
-      <h1 class="title" data-aos="flip-up" data-aos-delay="1200" v-if="isPC">
-        吉村靖孝 YASUTAKA YOSHIMURA
-      </h1>
-      <h1 class="title" data-aos="flip-up" data-aos-delay="1200" v-if="isMobile">
-        吉村靖孝 YASUTAKA<br />YOSHIMURA
-      </h1>
-      <h1 class="subtitle" data-aos="flip-up" data-aos-delay="1400">
-        建築家 / 早稻田大學教授
-      </h1>
-      <h1 class="desc" data-aos="fade-up" data-aos-delay="1600">
-        2018 日本建築学会作品選奨（フクマスベース）<br />
-        2018 日本建築設計学会賞大賞（フクマスベース）<br />
-        2016 WADA賞（フクマスベース）<br />
-        2014 AP賞（Window House）<br />
-        2014 日本建築学会作品選奨（中川政七商店新社屋）<br />
-        2012 日経ニューオフィス賞ニューオフィス推進賞（TBWA/HAKUHODO）<br />
-        2011 JCDデザインアワード大賞（Red Light Yokohama）<br />
-        2011 日本建築学会作品選奨（Nowhere but Sajima）<br />
-        2010 グッドデザイン賞特別賞（中川政七商店新社屋）<br />
-        2010 住宅建築賞 金賞（Nowhere but Sajima）
-      </h1>
-      <!-- <div class="more flex-ac flex-jb" data-aos="fade-right" data-aos-delay="1800">
-        8B NICEHOMES More
-        <img src="./s2/more.png" alt="">
-      </div> -->
     </div>
+    <div class="number" data-aos="fade-left" data-aos-delay="400">
+      02
+    </div>
+    <h1 class="title" data-aos="flip-up" data-aos-delay="600">
+      輕門檻躍進金融核心聚富圈<br />
+      比鄰新豪宅松江大道
+    </h1>
+    <h1 class="desc" data-aos="fade-up" data-aos-delay="800">
+      松江路台灣金融業設點分行數最多，堪稱「台灣金融華爾街」，銀行機構密度最高冠全國。東西匯、華固松疆、松江一號院陸續落成，造就松江大道截然不同的城市面貌，「佳元松江」千萬級輕門檻與億級豪宅同等國際韻味生活。
+    </h1>
+    <!-- <div class="more flex-ac flex-jb" data-aos="fade-right" data-aos-delay="1800" @click="isDialog = true">
+      8B NICEHOMES More
+      <img src="./s2/more.png" alt="">
+    </div>
+    <transition name="swipe-fade" mode="out-in">
+      <div class="dialog" v-if="isDialog">
+        <div class="dialog-bg">
+          <img src="./s2/5.jpg" alt="" class="dialog-img" v-if="isPC">
+          <h3 class="dialog-name" v-if="isPC">
+            從規劃設計到營建施工，連雲以一條龍專業團隊實踐建築最高品質
+          </h3>
+          <h3 class="dialog-name" v-if="isMobile">
+            從規劃設計到營建施工，<br />
+            連雲以一條龍專業團隊實踐建築最高品質
+          </h3>
+          <img src="./s2/5_m.jpg" alt="" class="dialog-img" v-if="isMobile">
+          <div class="dialog-title">
+            8B NICEHOMES® 好宅指標
+          </div>
+          <div class="dialog-close flex-c" @click="isDialog = false">
+            <img src="../../assets/img/close.png" alt="">
+          </div>
+          <div class="dialog-desc">
+            連雲建築領先業界提出「8B好宅」<br />
+            建築規範<br />
+            融合文化、自然、健康、科技、安全、<br />
+            便利、環保、美感等要素整合工程<br />
+            數百項準則精細規範，並逐一檢核落實<br />
+            打造全方位臻至完美的高品質好房子<br />
+            N自然環保建築Natural & Environmental Protection Building<br />
+            I 智慧建築 Intelligent Building<br />
+            C社區建築Community Building<br />
+            E雅致建築Elegant Building<br />
+            H健康建築Healthy Building<br />
+            O長效建築Open & Lifetime Building<br />
+            M維護建築Maintainable Excellence Building<br />
+            ES安心安全建築Easy & Safe Building
+          </div>
+        </div>
+      </div>
+    </transition> -->
   </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
 .section4 {
-  width:100%;
-  height: size(1080);
-  min-height: size(1080);
-  max-height: size(1080);
-  position: relative;
+  width: 100%;
+  height: size(1050);
+  min-height: size(1050);
+  max-height: size(1050);
+  // position: relative;
   // background-color: #fff;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
@@ -64,53 +89,60 @@
   // overflow: hidden;
 }
 
-.title {
-  @include img_r_pc(575, 247, 153);
-  font-size: size(30);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: normal;
-  text-align: left;
-  color: #333;
-  white-space: nowrap;
+.bg {
+  @include div_r_pc(1920, 850, 212, 0);
+  top: auto;
+  bottom: 0;
+  background-color: #040000;
 }
 
-.subtitle {
-  @include img_r_pc(575, 287, 153);
-  font-size: size(24);
-  font-weight: bold;
+.number {
+  @include img_l_pc(128, 325, 75);
+  font-size: size(118.8);
+  font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.05;
+  line-height: 1.85;
   letter-spacing: normal;
   text-align: left;
-  color: #333333;
+  color: #ffffff;
+}
+
+.title {
+  @include img_l_pc(268, 507, 75);
+  font-size: size(31.9);
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: size(1.72);
+  text-align: left;
+  color: #ffffff;
   white-space: nowrap;
 }
 
 .desc {
-  @include img_r_pc(575, 367, 153);
-  font-size: size(21);
-  font-weight: bold;
+  @include img_l_pc(394, 653, 75);
+  font-size: size(22.7);
+  font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.05;
-  letter-spacing: normal;
+  line-height: 1.45;
+  letter-spacing: size(2.61);
   text-align: left;
-  color: #333333;
-  // white-space: nowrap;
+  color: #ffffff;
 }
 
 /* Swipe */
 .swipe {
-  width: size(950);
-  height: size(820);
-  bottom: size(150);
-  left: size(178);
+  width: size(1373);
+  height: size(850);
+  bottom: size(0);
+  right: 0;
   object-fit: cover;
-  background:#0344;
+  // background: #0344;
+  // background-image: url('./s2/bg_noise_bk.gif');
+  background-size: cover;
 }
 
 // begin
@@ -165,12 +197,13 @@
 
   img {
     width: 100%;
-    height: size(850);
+    height: 100%;
+    object-fit: cover;
   }
 
   .slide-name {
-    left:2em;
-    bottom:1.2em;
+    right: 2em;
+    bottom: 1.2em;
     color: #fff;
     font-size: size(18);
     font-weight: bold;
@@ -199,7 +232,7 @@
 
 .pagination {
   width: auto;
-  bottom: size(44);
+  bottom: size(28);
   right: 0;
   left: 0;
   margin: 0 auto;
@@ -214,9 +247,9 @@
 
   span {
     display: block;
-    width: 10px;
-    height: 10px;
-    border-radius: 10px;
+    width: size(12.5);
+    height: size(12.5);
+    border-radius: size(12.5);
     box-shadow: 0 0 0 1px #fff;
     position: relative;
     background-color: transparent;
@@ -271,6 +304,89 @@
   }
 }
 
+// .dialog {
+//   width: 100vw;
+//   height: 100vh;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   background: linear-gradient(to bottom, #004471 80%, #094b76 100%);
+//   z-index: 1000;
+
+//   .dialog-bg {
+//     width: 100%;
+//     height: 100%;
+//     background-image: url('~@/projects/lj/s1/bg.png');
+//     // padding-top: $nav_pc_height;
+//     background-attachment: fixed;
+//     background-size: auto;
+//     background-position: center center;
+//     background-repeat: repeat;
+//   }
+
+//   .dialog-img {
+//     position: absolute;
+//     width: size(1350);
+//     height: auto;
+//     top: calc(50% - 21.35vw);
+//     left: 0;
+//   }
+
+//   .dialog-title {
+//     @include img_r_pc(325, 0, 179);
+//     top: calc(50% - 22vw);
+//     font-size: size(36);
+//     font-weight: bold;
+//     font-stretch: normal;
+//     font-style: normal;
+//     line-height: 1.81;
+//     letter-spacing: normal;
+//     text-align: left;
+//     color: #ffffff;
+//     text-decoration: underline;
+//   }
+
+//   .dialog-close {
+//     @include div_r_pc(42, 42, 130, 94);
+//     top: calc(50% - 22vw);
+//     border: 1px solid #fff;
+//     cursor: pointer;
+
+//     img {
+//       width: 90%;
+//     }
+//   }
+//   .dialog-name {
+//     position: absolute;
+//     left: 2em;
+//     bottom: calc(50% - 21.35vw + 1.2em);
+//     color: #fff;
+//     font-size: size(18);
+//     font-weight: bold;
+//     font-stretch: normal;
+//     font-style: normal;
+//     line-height: 1.6;
+//     letter-spacing: 0.03em;
+//     text-align: left;
+//     text-shadow: 0 0.2em 1em #000;
+//   }
+
+//   .dialog-desc {
+//     @include img_r_pc(448, 303, 52);
+//     top: auto;
+//     bottom: calc(50% - 22vw);
+//     font-size: size(18);
+//     font-weight: bold;
+//     font-stretch: normal;
+//     font-style: normal;
+//     line-height: 2.39;
+//     letter-spacing: normal;
+//     text-align: left;
+//     color: #ffffff;
+//     margin: 0 0;
+//   }
+// }
+
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -287,7 +403,7 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-    height: sizem(755);
+    height: sizem(995 + 56);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -297,75 +413,56 @@
     overflow: hidden;
   }
 
+  .bg {
+    @include div_r_m(375, 425, 56, 0);
+    bottom: auto;
+    background-color: #040000;
+  }
+
+  .number {
+    @include img_l_m(64, 112, 66);
+    font-size: sizem(59.4);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.85;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+  }
+
   .title {
-    @include img_r_m(260, 409, 71);
-    font-size: sizem(22);
-    font-weight: bold;
+    @include img_l_m(166, 200, 66);
+    font-size: sizem(19.8);
+    font-weight: 600;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: normal;
+    line-height: 1.15;
+    letter-spacing: sizem(1.07);
     text-align: left;
-    color: #333;
-    white-space: nowrap;
-  }
-
-  .hr {
-    @include img_r_m(230, 458, 102);
-    height: sizem(0.5);
-    background: #333;
-  }
-
-  .subtitle {
-    @include img_r_m(260, 470, 71);
-    font-size: size(17);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.05;
-    letter-spacing: normal;
-    text-align: left;
-    color: #333333;
+    color: #ffffff;
     white-space: nowrap;
   }
 
   .desc {
-    @include img_r_m(292, 494, 40);
-    font-size: sizem(12);
+    @include img_l_m(241, 277, 66);
+    font-size: sizem(14.2);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.88;
+    line-height: 1.58;
     letter-spacing: normal;
     text-align: left;
-    color: #333;
-    white-space: normal;
-  }
-
-  .more {
-    @include img_r_m(179 + 7 + 29, 636, 117);
-    font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.04;
-    letter-spacing: sizem(2.1);
-    text-align: left;
     color: #ffffff;
-    cursor: pointer;
-    white-space: nowrap;
-
-    img {
-      width: sizem(29);
-    }
   }
 
   /* Swipe */
   .swipe {
-    width: sizem(333);
-    height: sizem(333);
+    width: 100vw;
+    height: sizem(570);
     min-height: auto;
-    top: sizem(50);
+    top: auto;
+    bottom: 0;
     left: sizem(0);
     object-fit: cover;
   }
@@ -440,19 +537,20 @@
     //   // opacity: 1;
     // }
     .slide-name {
-      right: auto;
+      text-shadow: 6px 6px 4px rgba(0, 0, 0, 0.73);
+      left: auto;
       bottom: auto;
-      top: 1.2rem;
-      left: 1.2rem;
-      font-size: sizem(15);
+      bottom: 0.8rem;
+      right: 1.2rem;
+      font-size: sizem(12);
     }
   }
 
   .pagination {
     width: auto;
-    bottom: size(91);
-    left: 0;
-    right: 0;
+    bottom: sizem(15);
+    left: sizem(22);
+    right: auto;
     margin: 0 auto;
     justify-content: center;
   }
@@ -465,9 +563,9 @@
 
     span {
       display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
+      width: sizem(12.5);
+      height: sizem(12.5);
+      border-radius: sizem(12.5);
       box-shadow: 0 0 0 1px #fff;
       position: relative;
       background-color: rgba(0, 0, 0, 0.01);
@@ -478,8 +576,8 @@
         width: 60%;
         height: 60%;
         display: block;
-        background: #004ea2;
-        border-radius: 20px;
+        background: #fff;
+        border-radius: sizem(12.5);
         opacity: 1;
         position: absolute;
         top: 20%;
@@ -495,8 +593,8 @@
           width: 100%;
           height: 100%;
           display: block;
-          background: #004ea2;
-          border-radius: 20px;
+          background: #fff;
+          border-radius: sizem(12.5);
           opacity: 1;
           position: absolute;
           top: 0%;
@@ -525,16 +623,17 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
+import info from '@/info'
 import slider from '@/mixins/slider.js'
 
 export default {
   name: 'section4',
 
   mixins: [slider],
-  props: ['viewIndex'],
 
   data() {
     return {
+      info,
       isPC,
       isMobile,
       isTablet,
@@ -544,6 +643,14 @@ export default {
           img: isMobile ? require('./s4/1_m.jpg') : require('./s4/1.jpg'),
           name: '',
         },
+        // {
+        //   img: isMobile ? require('./s2/2_m.jpg') : require('./s2/2.jpg'),
+        //   name: '泰安連雲-連峰樓',
+        // },
+        // {
+        //   img: isMobile ? require('./s2/3_m.jpg') : require('./s2/3.jpg'),
+        //   name: '靜心連雲',
+        // },
       ],
     }
   },
@@ -555,14 +662,5 @@ export default {
   mounted() {},
 
   computed: {},
-
-  watch: {
-    // viewIndex() {
-    //   if (this.viewIndex === 5) {
-    //     this.slideIndex = 0
-    //     console.log(this.slideIndex, 'slideIndex')
-    //   }
-    // },
-  },
 }
 </script>

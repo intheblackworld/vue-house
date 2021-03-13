@@ -580,16 +580,18 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
+import info from '@/info'
 import slider from '@/mixins/slider.js'
 
 export default {
   name: 'section9',
 
   mixins: [slider],
-  props: ['viewIndex'],
+  // props: ['viewIndex'],
 
   data() {
     return {
+      info,
       isPC,
       isMobile,
       isTablet,
@@ -637,13 +639,13 @@ export default {
 
   computed: {},
 
-  watch: {
-    viewIndex() {
-      if (this.viewIndex === 5) {
-        this.slideIndex = 0
-        console.log(this.slideIndex, 'slideIndex')
-      }
-    },
-  },
+  // watch: {
+  //   viewIndex() {
+  //     if (this.viewIndex === 5) {
+  //       this.slideIndex = 0
+  //       console.log(this.slideIndex, 'slideIndex')
+  //     }
+  //   },
+  // },
 }
 </script>

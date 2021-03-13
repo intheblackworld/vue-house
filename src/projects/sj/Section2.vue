@@ -1,75 +1,8 @@
 <template>
-  <div>
-    <div class="section2">
-      <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex" data-aos="fade" data-aos-delay="1000">
-          <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
-              <div class="slide-name absolute" v-html="slide.name"></div>
-            </div>
-          </transition-group>
-          <div class="pagination absolute flex-ac" v-if="isPC">
-            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-          </div>
-          <div class="swipe-btns absolute flex-ac flex-jb">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-          </div>
-        </div>
-      </div>
-      <h1 class="title" data-aos="flip-up" data-aos-delay="1200">
-        睽違八年，用心如初。
-      </h1>
-      <div class="hr" data-aos="zoom-in-right" data-aos-delay="1400"></div>
-      <h1 class="desc" data-aos="fade-up" data-aos-delay="1600">
-        繼2012推出金獎名宅〔靜心連雲〕<br />
-        睽違八年，連雲建築回到人文景美<br />
-        精選仙岩公園首排稀珍美地<br />
-        攜手日本職人<br />
-        再創靜心學域完美經典
-      </h1>
-      <div class="more flex-ac flex-jb" data-aos="fade-right" data-aos-delay="1800" @click="isDialog = true">
-        8B NICEHOMES More
-        <img src="./s2/more.png" alt="">
-      </div>
-      <transition name="swipe-fade" mode="out-in">
-        <div class="dialog" v-if="isDialog">
-          <div class="dialog-bg">
-            <img src="./s2/5.jpg" alt="" class="dialog-img" v-if="isPC">
-            <h3 class="dialog-name" v-if="isPC">
-              從規劃設計到營建施工，連雲以一條龍專業團隊實踐建築最高品質
-            </h3>
-            <h3 class="dialog-name" v-if="isMobile">
-              從規劃設計到營建施工，<br />
-              連雲以一條龍專業團隊實踐建築最高品質
-            </h3>
-            <img src="./s2/5_m.jpg" alt="" class="dialog-img" v-if="isMobile">
-            <div class="dialog-title">
-              8B NICEHOMES® 好宅指標
-            </div>
-            <div class="dialog-close flex-c" @click="isDialog = false">
-              <img src="../../assets/img/close.png" alt="">
-            </div>
-            <div class="dialog-desc">
-              連雲建築領先業界提出「8B好宅」<br />
-              建築規範<br />
-              融合文化、自然、健康、科技、安全、<br />
-              便利、環保、美感等要素整合工程<br />
-              數百項準則精細規範，並逐一檢核落實<br />
-              打造全方位臻至完美的高品質好房子<br />
-              N自然環保建築Natural & Environmental Protection Building<br />
-              I 智慧建築 Intelligent Building<br />
-              C社區建築Community Building<br />
-              E雅致建築Elegant Building<br />
-              H健康建築Healthy Building<br />
-              O長效建築Open & Lifetime Building<br />
-              M維護建築Maintainable Excellence Building<br />
-              ES安心安全建築Easy & Safe Building
-            </div>
-          </div>
-        </div>
-      </transition>
+  <div class="section2">
+    <img src="./s2/map.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC">
+    <div v-if="isMobile">
+      <Map :bgSrc="require('./s2/map_m.jpg')" :hand="require('./s2/hand.png')"></Map>
     </div>
   </div>
 </template>
@@ -77,10 +10,10 @@
 @import '@/assets/style/function.scss';
 
 .section2 {
-  width:100%;
-  height: size(1080);
-  min-height: size(1080);
-  max-height: size(1080);
+  width: 100%;
+  // height: size(1080);
+  // min-height: size(1080);
+  // max-height: size(1080);
   // position: relative;
   // background-color: #fff;
   // min-height: size(900);
@@ -89,6 +22,20 @@
   // background-position: 0 0;
   // background-attachment: fixed;
   // overflow: hidden;
+}
+
+.bg-img {
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: auto;
+  display: block;
+  object-fit: cover;
+
+  &:nth-child(1) {
+    position: relative;
+  }
 }
 
 .title {
@@ -107,7 +54,7 @@
 .hr {
   @include img_r_pc(316, 393, 187);
   height: 35px;
-  border-top: size(0.5) solid  #fff9;
+  border-top: size(0.5) solid #fff9;
 }
 
 .desc {
@@ -148,8 +95,8 @@
   bottom: size(136);
   left: 0;
   object-fit: cover;
-  background:#0344;
- // background-image: url('./s2/bg_noise_bk.gif');
+  background: #0344;
+  // background-image: url('./s2/bg_noise_bk.gif');
   background-size: cover;
 }
 
@@ -209,8 +156,8 @@
   }
 
   .slide-name {
-    left:2em;
-    bottom:1.2em;
+    left: 2em;
+    bottom: 1.2em;
     color: #fff;
     font-size: size(18);
     font-weight: bold;
@@ -322,7 +269,7 @@
 
   .dialog-bg {
     width: 100%;
-    height:  100%;
+    height: 100%;
     background-image: url('~@/projects/lj/s1/bg.png');
     // padding-top: $nav_pc_height;
     background-attachment: fixed;
@@ -334,7 +281,7 @@
   .dialog-img {
     position: absolute;
     width: size(1350);
-    height:auto;
+    height: auto;
     top: calc(50% - 21.35vw);
     left: 0;
   }
@@ -363,10 +310,10 @@
       width: 90%;
     }
   }
- .dialog-name{
-   position: absolute;
-    left:2em;
-    bottom:calc(50% - 21.35vw + 1.2em);
+  .dialog-name {
+    position: absolute;
+    left: 2em;
+    bottom: calc(50% - 21.35vw + 1.2em);
     color: #fff;
     font-size: size(18);
     font-weight: bold;
@@ -375,11 +322,12 @@
     line-height: 1.6;
     letter-spacing: 0.03em;
     text-align: left;
-    text-shadow: 0 0.2em 1em #000;}
+    text-shadow: 0 0.2em 1em #000;
+  }
 
   .dialog-desc {
     @include img_r_pc(448, 303, 52);
-    top:auto;
+    top: auto;
     bottom: calc(50% - 22vw);
     font-size: size(18);
     font-weight: bold;
@@ -389,7 +337,7 @@
     letter-spacing: normal;
     text-align: left;
     color: #ffffff;
-    margin: 0 0 ;
+    margin: 0 0;
   }
 }
 
@@ -409,7 +357,7 @@
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    height: sizem(715);
+    height: sizem(564);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -681,14 +629,14 @@
         width: 90%;
       }
     }
- .dialog-name{
+    .dialog-name {
       right: auto;
       bottom: auto;
       top: calc(15.2vw + 1.2rem);
       left: 1.2rem;
       font-size: sizem(15);
       z-index: 2;
-      }
+    }
 
     .dialog-desc {
       @include img_r_m(313, 454, 18);
@@ -709,34 +657,23 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
-import slider from '@/mixins/slider.js'
+import Map from '@/components/Map.vue'
+import info from '@/info'
 
 export default {
   name: 'section2',
 
-  mixins: [slider],
-  props: ['viewIndex'],
+  components: {
+    Map,
+  },
 
   data() {
     return {
+      info,
       isPC,
       isMobile,
       isTablet,
       isDialog: false,
-      slideList: [
-        {
-          img: isMobile ? require('./s2/1_m.jpg') : require('./s2/1.jpg'),
-          name: '泰安連雲-接雲樓',
-        },
-        {
-          img: isMobile ? require('./s2/2_m.jpg') : require('./s2/2.jpg'),
-          name: '泰安連雲-連峰樓',
-        },
-        {
-          img: isMobile ? require('./s2/3_m.jpg') : require('./s2/3.jpg'),
-          name: '靜心連雲',
-        },
-      ],
     }
   },
 
@@ -747,14 +684,5 @@ export default {
   mounted() {},
 
   computed: {},
-
-  watch: {
-    viewIndex() {
-      if (this.viewIndex === 5) {
-        this.slideIndex = 0
-        console.log(this.slideIndex, 'slideIndex')
-      }
-    },
-  },
 }
 </script>

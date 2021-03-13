@@ -30,7 +30,7 @@ export default {
         }
       }
 
-    }, 5000)
+    }, 50000)
   },
   methods: {
     goTo(index) {

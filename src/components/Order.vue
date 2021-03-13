@@ -28,7 +28,7 @@
               data-aos="fade-down"
               data-aos-delay="100"
             >
-              <label>姓名</label>
+              <label>姓名*</label>
               <el-input
                 v-model="form.name"
                 placeholder
@@ -39,7 +39,7 @@
               data-aos="fade-down"
               data-aos-delay="200"
             >
-              <label>手機</label>
+              <label>手機*</label>
               <el-input
                 v-model="form.phone"
                 placeholder
@@ -177,7 +177,7 @@
           ></vue-recaptcha>
         </div>
         <el-button
-          class="form-submit flex-c"
+          class="form-submit flex-c bt_registration"
           type="primary"
           :disabled="!checked || !isVerify"
           @click="submit"
@@ -368,6 +368,7 @@ export default {
   .order-title {
     font-family: $family2;
     width: 80vw;
+    background-color: #040000;
     padding-top: 20px;
     padding-bottom: 20px;
     margin: 0 auto 10px;
