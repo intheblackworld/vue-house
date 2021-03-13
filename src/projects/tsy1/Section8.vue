@@ -2,6 +2,13 @@
   <div class="section8">
     <img src="./s8/new_bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC">
     <img src="./s8/new_bg_m.jpg" alt="" class="bg-img" v-if="isMobile">
+    <div class="title" data-aos="fade-up" data-aos-delay="200">
+      連結土地情感<br />
+      護佑家族世代平安
+    </div>
+    <div class="desc" data-aos="fade-up" data-aos-delay="400">
+      建築不只是居住的容器，更要能收藏土地的情感，「翠松園｣尊天敬地，用心整合這塊風⽔好地，連結在地紋理，納入信仰中心成為建築的一部分，獨立進出規劃，讓「土地公伯」福澤廣被，靜靜地護佑世代庇蔭子孫、成龍成鳳、安家立業！
+    </div>
     <!-- <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
@@ -66,256 +73,32 @@
     position: relative;
   }
 }
-.txt {
-  width: size(356);
-  top: calc(50% - 18.2vw);
-  left: size(190);
-  display: flex;
-  flex-direction: row-reverse;
-  padding: 0 0 0 0;
-}
+
 .title {
-  width: 1.2em;
-  font-size: size(44);
+  @include img_l_pc(400, 86, 198);
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  font-size: size(50);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
-  letter-spacing: 0.06em;
-  text-align: left;
-  color: #af1f24;
-  position: relative;
-  right: 0;
-  top: -0.2em;
-  span {
-    display: block;
-    width: 0.5em;
-    height: 0.5em;
-  }
-  //white-space: nowrap;
+  line-height: 1.56;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  white-space: nowrap;
 }
-.subtitle {
-  width: 1.2em;
-  font-size: size(25);
-  font-weight: bold;
-  letter-spacing: 0.07em;
-  text-align: left;
-  position: relative;
-  right: size(-6);
-  color: #323333;
-  word-break: break-all;
-  flex-direction: row-reverse;
-  word-wrap: break-word;
-}
+
 .desc {
-  font-size: size(21);
-  font-weight: normal;
+  @include img_l_pc(552, 260, 122);
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  font-size: size(26);
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
-  letter-spacing: 0.1em;
+  line-height: 1.93;
+  letter-spacing: normal;
   text-align: left;
-  color: #323333;
-  position: relative;
-  margin: size(48) size(21) 0 size(-10);
-  display: flex;
-  align-items: flex-start;
-  word-break: break-all;
-  flex-direction: row-reverse;
-  word-wrap: break-word;
-  //white-space: nowrap;
-  span {
-    writing-mode: vertical-rl;
-    width: 1.4em;
-    margin: 0 0 0 0em;
-    &.p {
-      margin: 0 0 0 0.8em;
-    }
-  }
-}
-.hr {
-  width: size(255);
-  height: size(3);
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #af1f24;
-}
-.t {
-  width: size(332);
-  top: size(105);
-  left: size(214);
-}
-
-.img {
-  width: size(208);
-  top: size(609 - 105);
-  left: size(163 - 172);
-  position: absolute;
-}
-
-/* Swipe */
-.swipe {
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  right: 0;
-  object-fit: cover;
-}
-
-// begin
-.swipe-fade-leave-to {
-  opacity: 0;
-  z-index: 0;
-}
-// end
-.swipe-fade-enter {
-  opacity: 0;
-  z-index: 1;
-}
-
-.swipe-fade-enter-active {
-  transition: all 0.5s ease;
-}
-
-.swipe-fade-leave-active {
-  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-// begin
-// .swipe-left-leave-to {
-//   margin-left: -100vw;
-//   z-index: 0;
-// }
-// // end
-// .swipe-left-enter {
-//   opacity: 0.5;
-//   margin-left: 0;
-//   z-index: 1;
-// }
-
-// .swipe-left-enter-active {
-//   transition: all 0.5s ease;
-// }
-
-// .swipe-left-leave-active {
-//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-// }
-
-.swipe-wrap {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.swipe-item {
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-
-  img {
-    width: 100%;
-  }
-
-  .slide-name {
-    left: 20px;
-    bottom: 20px;
-    color: #fff;
-    font-size: 15px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 3.11;
-    letter-spacing: 0.89px;
-    text-align: left;
-    color: #ffffff;
-  }
-
-  // &:nth-child(1) {
-  //   z-index: 1;
-  //   // opacity: 1;
-  // }
-
-  // &.base {
-  //   z-index: 1;
-  //   opacity: 1;
-  // }
-  // &.active {
-  //   z-index: 2;
-  //   // opacity: 1;
-  // }
-}
-
-.pagination {
-  width: auto;
-  bottom: size(20);
-  right: size(20);
-  justify-content: center;
-}
-
-.pagination-dot {
-  padding: 5px;
-  margin: 0 5px;
-  cursor: pointer;
-  z-index: 4;
-
-  span {
-    display: block;
-    width: 10px;
-    height: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 0 1px #fff;
-    position: relative;
-    background-color: #fff;
-    transition: all 0.5s;
-
-    &::before {
-      content: '';
-      width: 60%;
-      height: 60%;
-      display: block;
-      background: #b50005;
-      border-radius: 20px;
-      opacity: 1;
-      position: absolute;
-      top: 20%;
-      // transform: translateY(-50%);
-      left: 20%;
-      transition: all 0.3s;
-      transform-origin: center;
-      transform: scale(0);
-    }
-    &.active {
-      box-shadow: none;
-      &::before {
-        content: '';
-        width: 100%;
-        height: 100%;
-        display: block;
-        background: #b50005;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 0%;
-        // transform: translateY(-50%);
-        left: 0%;
-        transform: scale(1);
-      }
-    }
-  }
-}
-
-.swipe-btns {
-  width: 100%;
-  height: 100%;
-  padding: 0 15px;
-  z-index: 3;
-
-  .prev-btn,
-  .next-btn {
-    width: size(20);
-    cursor: pointer;
-  }
+  color: #ffffff;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -334,7 +117,7 @@
 @media screen and (max-width: 767px) {
   .section8 {
     width: 100vw;
-    height: sizem(211);
+    height: sizem(667);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -344,223 +127,31 @@
     overflow: hidden;
   }
 
-  .txt {
-    width: sizem(310);
-    top: sizem(320);
-    left: sizem(32.5);
-    display: block;
-  }
-
   .title {
-    width: 100%;
-    line-height: 1.6;
+    @include img_c_m(200, 23);
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
     font-size: sizem(25);
-    right: 0;
-    top: sizem(3);
-    span {
-      display: inline-block;
-    }
-  }
-
-  .hr {
-    width: 100%;
-    height: sizem(2);
-    position: relative;
-    right: sizem(0);
-    margin: sizem(12) 0;
-  }
-
-  .s-title {
-    top: 0;
-    left: sizem(0);
-    width: sizem(279);
-  }
-
-  .subtitle {
-    width: 100%;
-    font-size: sizem(18);
-    right: sizem(-1);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    white-space: nowrap;
   }
 
   .desc {
-    font-size: sizem(15);
-    line-height: 1.6;
-    letter-spacing: sizem(2.09);
-    white-space: nowrap;
-    display: block;
-    span {
-      writing-mode: initial;
-      display: block;
-      width: auto;
-      margin: 0 0 0em;
-      &.p {
-        margin: 0 0 0.8em;
-      }
-      &.p2 {
-        margin: 0 0 0.8em -0.5em;
-      }
-    }
-  }
-
-  .img {
-    width: sizem(142);
-    top: sizem(30);
-    left: sizem(-3);
-    position: relative;
-  }
-
-  /* Swipe */
-  .swipe {
-    width: 100vw;
-    height: sizem(211);
-    min-height: auto;
-    top: sizem(0);
-    left: sizem(0);
-    object-fit: cover;
-  }
-
-  // begin
-  .swipe-fade-leave-to {
-    opacity: 0;
-    z-index: 0;
-  }
-  // end
-  .swipe-fade-enter {
-    opacity: 0;
-    z-index: 1;
-  }
-
-  .swipe-fade-enter-active {
-    transition: all 0.5s ease;
-  }
-
-  .swipe-fade-leave-active {
-    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-
-  // begin
-  // .swipe-left-leave-to {
-  //   margin-left: -100vw;
-  //   z-index: 0;
-  // }
-  // // end
-  // .swipe-left-enter {
-  //   opacity: 0.5;
-  //   margin-left: 0;
-  //   z-index: 1;
-  // }
-
-  // .swipe-left-enter-active {
-  //   transition: all 0.5s ease;
-  // }
-
-  // .swipe-left-leave-active {
-  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  // }
-
-  .swipe-wrap {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .swipe-item {
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-
-    img {
-      width: 100%;
-      height: sizem(211);
-      object-fit: cover;
-    }
-
-    // &:nth-child(1) {
-    //   z-index: 1;
-    //   // opacity: 1;
-    // }
-
-    // &.base {
-    //   z-index: 1;
-    //   opacity: 1;
-    // }
-    // &.active {
-    //   z-index: 2;
-    //   // opacity: 1;
-    // }
-  }
-
-  .pagination {
-    width: auto;
-    bottom: sizem(11);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    justify-content: center;
-  }
-
-  .pagination-dot {
-    padding: 5px;
-    margin: 0 5px;
-    cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width: 10px;
-      height: 10px;
-      border-radius: 10px;
-      box-shadow: 0 0 0 1px #fff;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
-      transition: all 0.5s;
-
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #fff100;
-        border-radius: 10px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transition: all 0.3s;
-        transform-origin: center;
-        transform: scale(0);
-      }
-      &.active {
-        &::before {
-          content: '';
-          width: 100%;
-          height: 100%;
-          display: block;
-          background: #fff100;
-          border-radius: 10px;
-          opacity: 1;
-          position: absolute;
-          top: 0%;
-          // transform: translateY(-50%);
-          left: 0%;
-          transform: scale(1);
-        }
-      }
-    }
-  }
-
-  .swipe-btns {
-    width: 100%;
-    height: 100%;
-    padding: 0 15px;
-    z-index: 3;
-
-    .prev-btn,
-    .next-btn {
-      width: sizem(15);
-      cursor: pointer;
-    }
+    @include img_c_m(319, 110);
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+    font-size: size(16);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.88;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
   }
 }
 </style>
