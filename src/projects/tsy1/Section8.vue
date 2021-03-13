@@ -1,6 +1,8 @@
 <template>
   <div class="section8">
-    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+    <img src="./s8/new_bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC">
+    <img src="./s8/new_bg_m.jpg" alt="" class="bg-img" v-if="isMobile">
+    <!-- <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -11,12 +13,12 @@
         <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
-        <!-- <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
           <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
           <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-        </div> -->
+        </div>
       </div>
-    </div>
+    </div> -->
     <!-- <div class="txt absolute">
         <div class="subtitle">
           活在城市的焦距裡，優雅加分很正常
@@ -565,26 +567,28 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
-import slider from '@/mixins/slider.js'
+import info from '@/info'
+// import slider from '@/mixins/slider.js'
 
 export default {
   name: 'section8',
 
-  mixins: [slider],
-  props: ['viewIndex'],
+  // mixins: [slider],
+  // props: ['viewIndex'],
 
   data() {
     return {
+      info,
       isPC,
       isMobile,
       isTablet,
       isDialog: false,
-      slideList: [
-        {
-          img: require('./s8/08_img.jpg'),
-          name: '',
-        },
-      ],
+      // slideList: [
+      //   {
+      //     img: require('./s8/08_img.jpg'),
+      //     name: '',
+      //   },
+      // ],
     }
   },
 
@@ -596,12 +600,12 @@ export default {
 
   computed: {},
 
-  watch: {
-    viewIndex() {
-      if (this.viewIndex === 8) {
-        this.slideIndex = 0
-      }
-    },
-  },
+  // watch: {
+  //   viewIndex() {
+  //     if (this.viewIndex === 8) {
+  //       this.slideIndex = 0
+  //     }
+  //   },
+  // },
 }
 </script>
