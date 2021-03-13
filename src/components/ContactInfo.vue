@@ -35,7 +35,7 @@
           </span>
         </div>
         <a
-          class="btn flex-c"
+          class="btn flex-c bt_fanpage"
           :href="info.fbLink"
           target="_blank"
           data-aos="fade-down"

@@ -175,7 +175,7 @@
           ></vue-recaptcha>
         </div>
         <el-button
-          class="form-submit flex-c"
+          class="form-submit flex-c bt_registration"
           type="primary"
           :disabled="!checked || !isVerify"
           @click="submit"
