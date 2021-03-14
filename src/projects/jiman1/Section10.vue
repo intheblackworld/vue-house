@@ -1,0 +1,252 @@
+<template>
+  <div class="section10">
+    <div v-if="!isMobile">
+      <img src="./s10/10_logo_1.png" :alt="`${info.caseName}_img`" class="logo1">
+      <img src="./s10/10_logo_2.png" :alt="`${info.caseName}_img`" class="logo2">
+      <img src="./s10/10_title.png" :alt="`${info.caseName}_img`" class="title-img">
+      <div class="item1">
+        <div class="title">
+          豪宅認證指標  綠建築銀級標章
+        </div>
+        <div class="desc">
+          綠建築等級是依「綠建築九大評估指標系統」(EEWH)為分級依序，共有合格級、銅級、銀級、黃金級、鑽石級等五級，獲銀級綠建築標章肯定的自慢藏，致力為您打造安心、節能、健康的和諧共生環保家園。
+        </div>
+      </div>
+      <div class="item2">
+        <div class="title">
+          台大結構外審  建築品質會說話
+        </div>
+        <div class="desc">
+          台灣處於地震帶上，對建築結構格外要求，除了日本國土開發嚴謹精工，在結構安全上更有參與台中機場工程的「聯邦工程」為結構顧問，以國家交通建設的高標，為自慢藏的基礎工程層層把關監督，並請「台灣大學地震中心」以第三方公證單位，來作結構外審，確保建築骨架的每一道環節，安全審核滴水不露，經得起公正單位與專業數據的檢驗，才是真正安全安心的自慢建築。
+        </div>
+      </div>
+      <div class="item3">
+        <div class="title">
+          國家級保證  SRC鋼骨耐震標章
+        </div>
+        <div class="desc">
+          台灣現行的建築法規中，對於建築物耐震力的標準為0.24g，是指建築物可承受地震作用力所產生加速度的數值，相當於可抗5級地震的震度。自慢藏採用中鋼、新日鐵最頂級鋼材，高規格耐震工法，獲國家耐震建築標章認證，可達超越法規標準的6級耐震力，更能保障生命財產安全。
+        </div>
+      </div>
+      <div class="item4">
+        <div class="title">
+          防疫建築2.0  居家安全最安心
+        </div>
+        <div class="desc">
+          因應疫情的長期挑戰，「無毒設計」已不可缺，自慢藏採「建築設計防疫」、「室內設計防疫」與「建材及設備的防疫」，運用空間動線及抗菌建材、室內空氣流通、當層排氣等規劃，打造值得放心的居住環境；戶戶中空加厚隔音樓板，降低震動重擊與噪音，並具隔熱效果，能幫助調節室內溫度，降低室內能源消耗，達成環保節能的健康綠生活。
+        </div>
+      </div>
+    </div>
+    <div v-else>
+
+    </div>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+@import '@/assets/style/function.scss';
+
+.section10 {
+  width: 100%;
+  height: size(54 + 998);
+  min-height: size(54 + 998);
+  max-height: size(54 + 998);
+  // overflow: hidden;
+  position: relative;
+  background-size: auto;
+  background-color: #c07f76;
+}
+
+.bg-img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  object-fit: cover;
+  margin-top: 0;
+
+  &:nth-child(1) {
+    //  position: relative;
+  }
+}
+
+.logo1 {
+  @include img_l_pc(233, 267 + 54, 478);
+}
+
+.logo2 {
+  @include img_l_pc(246, 278 + 54, 738);
+}
+
+
+.title-img {
+  @include img_l_pc(132, 0, 174);
+}
+
+.item1 {
+  @include img_l_pc(506, 0, 483);
+}
+
+.item2 {
+  @include img_r_pc(518, 0, 231);
+}
+
+.item3 {
+  @include img_l_pc(506, 496 + 54, 483);
+}
+
+.item4 {
+  @include img_r_pc(518, 456 + 54, 231);
+}
+
+
+.title {
+  font-size: size(36);
+  line-height: size(40);
+  // letter-spacing: size(0.53);
+  text-align: left;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: size(30);
+  // white-space: nowrap;
+}
+
+.desc {
+  font-size: size(23);
+  line-height: size(43);
+  // letter-spacing: size(0.83);
+  text-align: left;
+  font-weight: 400;
+  color: #000;
+}
+
+@media only screen and (max-width: 1440px) {
+}
+@media only screen and (max-width: 1280px) and (min-width: 1025px) {
+  .fullscreen {
+    height: 100vh;
+  }
+}
+
+/* 螢幕尺寸標準 */
+/* 平板尺寸 */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+}
+
+@media screen and (max-width: 767px) {
+  .section10 {
+    width: 100vw;
+    min-height: sizem(470);
+    max-height: sizem(1337);
+    height: sizem(1337);
+    // background-image: url('./mo/1/bg.png');
+    background-size: cover;
+    background-attachment: scroll;
+  }
+
+  .bg-img {
+    width: 100vw;
+    height: 100%;
+    min-height: size(900);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    object-fit: cover;
+    margin-top: 0;
+
+    &:nth-child(1) {
+      position: relative;
+    }
+  }
+  .f3 {
+    @include img_r_m(233, 418, 0);
+    transform-origin: 100% 90%;
+    transform: skewY(2deg);
+    animation: flow1 3s 0s ease-in-out infinite alternate-reverse;
+    z-index: 3;
+  }
+
+  .f4 {
+    @include img_l_m(250, 0, 0);
+    top: auto;
+    bottom: sizem(-30);
+    transform-origin: 0% 90%;
+    animation: flow1 2.3s 0s ease-in-out infinite alternate;
+    transform: skewY(2deg);
+    z-index: 3;
+  }
+  .f5 {
+    @include img_r_m(160, 0, 0);
+    top: auto;
+    bottom: sizem(-780);
+    transform-origin: 100% 90%;
+    animation: flow1 2.3s 0s ease-in-out infinite alternate;
+    transform: skewY(3deg);
+    z-index: 3;
+    img {
+      width: 100%;
+      transform: scaleY(-1);
+    }
+  }
+
+  .t1 {
+    @include img_r_m(21.2, 70, 90);
+  }
+  .t2 {
+    @include img_r_m(10.1, 305, 66);
+  }
+  .t3 {
+    @include img_r_m(292, 934, 38);
+  }
+  .t4 {
+    @include img_r_m(298, 610, 34);
+    top: auto;
+    bottom: sizem(185);
+  }
+
+  // .logo {
+  //   @include img_r_m(479, 707, 310);
+  // }
+
+  .st1 {
+    @include img_l_m(17, 128, 157);
+  }
+
+  .st2 {
+    @include img_l_m(16, 128, 128);
+  }
+
+  .st3 {
+    @include img_l_m(17, 128, 97);
+  }
+}
+</style>
+<script>
+// @ is an alias to /src
+import { isPC, isMobile, isTablet } from '@/utils'
+import info from '@/info'
+
+export default {
+  name: 'section10',
+
+  data() {
+    return {
+      isPC,
+      isMobile,
+      isTablet,
+      info,
+    }
+  },
+
+  methods: {},
+
+  mounted() {},
+
+  created() {},
+
+  computed: {},
+}
+</script>

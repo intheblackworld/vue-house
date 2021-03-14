@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
 span,
 div,
 h1,
@@ -19,9 +20,9 @@ h2 {
   margin: 0;
   font-weight: normal;
 }
-h3, label, span {
-  font-family:'Noto Sans TC',sans-serif;
-  // font-family: 'Noto Serif TC',  'Noto Sans TC',sans-serif;
+h3, label {
+  // font-family:'Noto Sans TC',sans-serif;
+  font-family: 'cwTeXFangSong', 'Noto Serif TC',  'Noto Sans TC',sans-serif;
   margin: 0;
   //font-weight: bold;
 }
