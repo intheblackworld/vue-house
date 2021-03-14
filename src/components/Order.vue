@@ -1,6 +1,6 @@
 <template>
   <div class="order-bg">
-    <!-- <img src="@/projects/fs/order/bg.png" alt="" class="bg-img"> -->
+    <img src="@/projects/jiman1/s12/12_flower.png" alt="" class="f12">
     <!-- <img src="@/projects/fs/order/bg1.png" alt="" class="bg-img no-mix"> -->
     <!-- <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile"> -->
     <div class="order-top">
@@ -8,40 +8,18 @@
         <h3 class="title">{{order.title}}</h3>
         <div class="subtitle">{{order.subTitle}}</div>
       </div> -->
-      <div
-        class="order-title"
-        v-html="order.title"
-        data-aos="fade-down"
-        data-aos-delay="0"
-      ></div>
-      <div
-        class="order-subtitle"
-        v-html="order.subTitle"
-      ></div>
+      <div class="order-title" v-html="order.title" data-aos="fade-down" data-aos-delay="0"></div>
+      <div class="order-subtitle" v-html="order.subTitle"></div>
       <div class="order">
         <div class="form">
           <div class="group">
-            <div
-              class="row"
-              data-aos="fade-down"
-              data-aos-delay="100"
-            >
+            <div class="row" data-aos="fade-down" data-aos-delay="100">
               <label>姓名</label>
-              <el-input
-                v-model="form.name"
-                placeholder
-              ></el-input>
+              <el-input v-model="form.name" placeholder></el-input>
             </div>
-            <div
-              class="row"
-              data-aos="fade-down"
-              data-aos-delay="200"
-            >
+            <div class="row" data-aos="fade-down" data-aos-delay="200">
               <label>手機</label>
-              <el-input
-                v-model="form.phone"
-                placeholder
-              ></el-input>
+              <el-input v-model="form.phone" placeholder></el-input>
             </div>
             <!-- <div class="row" data-aos="fade-down"
         data-aos-delay="300">
@@ -85,65 +63,26 @@
               <label>E-mail</label>
               <el-input v-model="form.email" placeholder></el-input>
             </div> -->
-            <div
-              class="row"
-              data-aos="fade-down"
-              data-aos-delay="300"
-            >
+            <div class="row" data-aos="fade-down" data-aos-delay="300">
               <label>居住城市</label>
-              <el-select
-                v-model="form.city"
-                placeholder
-              >
-                <el-option
-                  v-for="city in cityList"
-                  :key="city.value"
-                  :label="city.label"
-                  :value="city.value"
-                  no-data-text="無數據"
-                ></el-option>
+              <el-select v-model="form.city" placeholder>
+                <el-option v-for="city in cityList" :key="city.value" :label="city.label" :value="city.value" no-data-text="無數據"></el-option>
               </el-select>
             </div>
-            <div
-              class="row"
-              data-aos="fade-down"
-              data-aos-delay="400"
-            >
+            <div class="row" data-aos="fade-down" data-aos-delay="400">
               <label>居住地區</label>
-              <el-select
-                v-model="form.area"
-                placeholder
-              >
-                <el-option
-                  v-for="area in areaList"
-                  :key="area.value"
-                  :label="area.label"
-                  :value="area.value"
-                  no-data-text="請先選擇居住城市"
-                ></el-option>
+              <el-select v-model="form.area" placeholder>
+                <el-option v-for="area in areaList" :key="area.value" :label="area.label" :value="area.value" no-data-text="請先選擇居住城市"></el-option>
               </el-select>
             </div>
           </div>
-          <div
-            class="group"
-            data-aos="fade-down"
-            data-aos-delay="600"
-          >
+          <div class="group" data-aos="fade-down" data-aos-delay="600">
             <div class="row">
-              <el-input
-                type="textarea"
-                :rows="2"
-                placeholder="請輸入您的留言 (選填)"
-                v-model="form.msg"
-              ></el-input>
+              <el-input type="textarea" :rows="2" placeholder="請輸入您的留言 (選填)" v-model="form.msg"></el-input>
             </div>
           </div>
         </div>
-        <div
-          class="control"
-          data-aos="fade-down"
-          data-aos-delay="500"
-        >
+        <div class="control" data-aos="fade-down" data-aos-delay="500">
           <el-checkbox v-model="checked">
             <h3>
               本人知悉並同意
@@ -152,39 +91,14 @@
             </h3>
           </el-checkbox>
         </div>
-        <div
-          style="margin: 0 auto;z-index:2;"
-          v-if="!isMobile"
-          data-aos="fade-down"
-          data-aos-delay="600"
-        >
-          <vue-recaptcha
-            :sitekey="info.recaptcha_site_key_v2"
-            @verify="isVerify = true"
-            :loadRecaptchaScript="true"
-          ></vue-recaptcha>
+        <div style="margin: 0 auto;z-index:2;" v-if="!isMobile" data-aos="fade-down" data-aos-delay="600">
+          <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
         </div>
-        <div
-          style="margin: 0 auto;z-index:2;"
-          v-if="isMobile"
-        >
-          <vue-recaptcha
-            :sitekey="info.recaptcha_site_key_v2"
-            @verify="isVerify = true"
-            :loadRecaptchaScript="true"
-          ></vue-recaptcha>
+        <div style="margin: 0 auto;z-index:2;" v-if="isMobile">
+          <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
         </div>
-        <el-button
-          class="form-submit flex-c bt_registration"
-          type="primary"
-          :disabled="!checked || !isVerify"
-          @click="submit"
-          :loading="isSubmit"
-        >立即預約</el-button>
-        <Loading
-          :loading="isSubmit"
-          :isOpacity="true"
-        />
+        <el-button class="form-submit flex-c bt_registration" type="primary" :disabled="!checked || !isVerify" @click="submit" :loading="isSubmit">立即預約</el-button>
+        <Loading :loading="isSubmit" :isOpacity="true" />
       </div>
     </div>
     <ContactInfo />
@@ -316,7 +230,7 @@ export default {
       fetch('contact-form.php', {
         method: 'POST',
         body: formData,
-      }).then(response => {
+      }).then((response) => {
         this.isSubmit = false
         if (response.status === 200) {
           window.location.href = 'formThanks'
@@ -329,6 +243,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/style/variableColor.scss';
+@import '@/assets/style/function.scss';
 .bg-img {
   width: 100vw;
   position: absolute;
@@ -342,6 +257,18 @@ export default {
   &.no-mix {
     mix-blend-mode: normal;
     height: 100%;
+  }
+}
+
+.f12 {
+  @include img_r_pc(1178, -170, -100);
+  transform-origin: 100% 80%;
+  transform: skewY(2deg);
+  animation: flow1 3s 0s ease-in-out infinite alternate;
+}
+@keyframes flow1 {
+  to {
+    transform: skewY(0);
   }
 }
 .order-bg {
@@ -442,7 +369,8 @@ export default {
     label {
       //width:10em;
       flex: 0 0 6.8em;
-      display:block;text-align: left;
+      display: block;
+      text-align: left;
       font-size: 16px;
       opacity: 0.8;
       font-weight: bold;
@@ -509,7 +437,7 @@ export default {
 
     .form {
       flex-direction: column;
-    margin-bottom: -12px ;
+      margin-bottom: -12px;
     }
 
     .group {
@@ -531,10 +459,10 @@ export default {
     }
 
     .control {
-    .el-checkbox{
-      margin:10px auto;
-    }
-     /* margin-top: 10px;
+      .el-checkbox {
+        margin: 10px auto;
+      }
+      /* margin-top: 10px;
       margin-bottom: 10px;
       */
     }
