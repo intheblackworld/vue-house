@@ -509,7 +509,7 @@ export default {
           img: require('./s7/07_slider_4.jpg'),
           name: '公設3D示意圖',
           title: '活力世代健⾝房',
-          desc: '宅在家也要下樓運動去，跑步半小時<br />燃脂又健康。',
+          desc: '宅在家也要下樓運動去，跑步半小時，燃脂又健康。',
         },
 
         {
