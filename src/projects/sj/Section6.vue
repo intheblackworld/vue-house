@@ -462,19 +462,19 @@ export default {
       isTablet,
       isDialog: false,
       slideList: [
-       /*
+       
         {
-          img: isMobile ? require('./s6/2_m.jpg') : require('./s6/2.jpg'),
+          img: isMobile ? require('./s6/1_m.jpg') : require('./s6/1.jpg'),
           name: '佳元機構 蔡錫全總經理',
         },
-        */
+        
         {
           img: isMobile ? require('./s6/2_m.jpg') : require('./s6/2.jpg'),
-          name: '佳元機構 陳克聚建築師',
+          name: '北市豪宅推手 陳克聚建築師',
         },
         {
           img: isMobile ? require('./s6/3_m.jpg') : require('./s6/3.jpg'),
-          name: '佳元機構 劉守書總監',
+          name: '與作設計事業 劉守書總監',
         },
       ],
     }

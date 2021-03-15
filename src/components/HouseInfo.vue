@@ -66,10 +66,12 @@ export default {
 .info {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  font-size: size(25);
+  padding:0 0 0 4em;
 }
 
 .item {
-  font-size: size(30);
   margin-bottom: 2em;
   // margin-right: 10em;
   width: size(700);
@@ -82,16 +84,6 @@ export default {
   justify-content: flex-start;
   // white-space: nowrap;
   position: relative;
-  &::after {
-    content: '';
-    width: 4px;
-    height: 1.4em;
-    background: $house_border_color;
-    margin: 0px 0.8em 0 0;
-    position: absolute;
-    top: 0;
-    left: size(160);
-  }
   &:nth-of-type(even) {
     margin-right: 0;
   }
@@ -101,21 +93,33 @@ export default {
     color: $house_label_color;
     margin-bottom: 0;
     margin-right: 0.8em;
+
     white-space: nowrap;
     font-family: $family3;
-    flex: 0 0 5em;
-    text-align: left;
-    width: 5em;
-    padding-left: 0.3em;
+    flex: 0 0 6em;
+    text-align: right;
+    width: 6em;
+    padding-right: 0.8em;
   }
 
   .desc {
-    font-size: size(30);
+    font-size:1em;
     text-align: left;
     color: $house_desc_color;
     font-family: $family3;
     font-weight: bold;
     white-space: nowrap;
+    position: relative;
+  &::after {
+    content: '';
+    width: size(3);
+    height: 1.4em;
+    background: $house_border_color;
+    margin: 0px 0.8em 0 0;
+    position: absolute;
+    top: 0;
+    left: -0.8em;
+  }
   }
 }
 
@@ -141,10 +145,10 @@ export default {
     margin: 0;
     width: 100%;
     height: auto;
-    margin-left: 20px;
+    margin-left:10px;
     white-space: normal;
     font-size: 14px;
-    &::after {
+  /*  &::after {
       content: '';
       width: 4px;
       height: 1.4em;
@@ -153,7 +157,7 @@ export default {
       position: absolute;
       top: 0;
       left: 0;
-    }
+    }*/
 
     .desc {
       font-size: 14px;
@@ -165,6 +169,7 @@ export default {
     flex: 1;
     justify-content: space-around;
     align-content: space-around;
+  padding:0 ;
   }
 }
 

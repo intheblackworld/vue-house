@@ -9,7 +9,7 @@
       10-27坪｜金融聚富核心 潮流居所｜行天宮站200米
     </div>
     <div class="title" data-aos="fade-up" data-aos-delay="400" v-if="isMobile">
-      10-27坪｜行天宮站200米<br />金融聚富核心 潮流居所
+      <b>10-27坪｜行天宮站200米</b><br />金融聚富核心 潮流居所
     </div>
     <div class="phone" data-aos="fade-up" data-aos-delay="600">
       2966-8888
@@ -87,9 +87,9 @@
 }
 
 .title {
-  @include img_r_pc(992, 705, 154);
+  @include img_r_pc(992, 705, 152);
   top: calc(50% + 100vw * (655 - 540) / 1920);
-  font-size: size(45.5);
+  font-size: size(46);
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
@@ -185,6 +185,7 @@
     text-align: center;
     color: #ffffff;
     // white-space: nowrap;
+    b{font-size: 0.903em}
   }
 
   .phone {
@@ -202,21 +203,21 @@
   }
 
   .btn {
-    @include div_r_m(113, 31.3, 509, 77.7);
+    @include div_r_m(150, 40, 509,57.5);
   top: calc(50% + 100vw * (509 - 302) / 375);
     border: 1px solid #fff;
-    font-size: sizem(16.5);
+    font-size: sizem(18);
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.53;
-    letter-spacing: sizem(1.65);
-    text-align: left;
+    letter-spacing: 0.1em;
+    text-align: center;
     color: #ffffff;
   }
 
   .logos {
-    @include img_l_m(60, 510, 74);
+    @include img_l_m(80, 510, 57.5);
   top: calc(50% + 100vw * (510 - 302) / 375);
   }
 }
