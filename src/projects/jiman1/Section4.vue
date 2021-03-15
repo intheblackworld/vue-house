@@ -19,10 +19,13 @@
     </div>
     <img src="./s4/04_flower.png" :alt="`${info.caseName}_f`" class="f5">
     <img src="./s4/04_title.png" :alt="`${info.caseName}_f`" class="title-img">
-    <div class="desc">
+    <div class="desc" v-if="isPC">
       珍藏大安富境最後一片濱水波光，公園水岸雙景觀，富饒市中心擁攬大山大水無邊眼界；收藏公館師大景美核心繁華，羅斯福路雙商圈齊鳴綻放。集文教區靜謐素雅，商業區富庶豐饒，政經區自若安居，景觀區悠然韻味，入則寧靜，出則富麗，藏景藏靜藏繁華，簡單，也不簡單。
     </div>
-    <div class="content">
+    <div class="desc" v-if="isMobile">
+      乘著綠園道蔥郁濃蔭，悠哉散步4分鐘即可到達捷運萬隆站，6站抵達轉運大站台北車站，南來北往快意暢行。出門直接上水源快速道路，快接萬華、中正、新店；1分鐘進40米寬羅斯福路，收納西門、台北車站、中正紀念堂、古亭、公館於掌心，富裕榮華沿線自藏。
+    </div>
+    <div class="content" v-if="isPC">
       <div class="content-title">
         捷運萬隆站
       </div>
@@ -63,6 +66,61 @@
       </div>
       <div class="content-desc">
         車行8分鐘
+      </div>
+    </div>
+    <div class="content" v-if="isMobile">
+      <div class="content-item white flex-c wrap">
+        <div class="content-title">
+          捷運萬隆站
+        </div>
+        <div class="content-desc">
+          散步4分鐘
+        </div>
+      </div>
+
+      <div class="content-item white flex-c wrap">
+        <div class="content-title">
+          公館商圈
+        </div>
+        <div class="content-desc">
+          捷運1站
+        </div>
+      </div>
+
+      <div class="content-item white flex-c wrap">
+        <div class="content-title">
+          台北車站
+        </div>
+        <div class="content-desc">
+          捷運12分鐘
+        </div>
+      </div>
+
+      <div class="content-item">
+        <div class="content-title">
+          水源快速道路
+        </div>
+        <div class="content-desc">
+          車行1分鐘
+        </div>
+      </div>
+
+      <div class="content-item">
+        <div class="content-title">
+          基隆路高架
+        </div>
+        <div class="content-desc">
+          車行3分鐘
+        </div>
+      </div>
+
+      <div class="content-item">
+        <div class="content-title">
+          信義計畫區
+        </div>
+        <div class="content-desc">
+          車行8分鐘
+        </div>
       </div>
     </div>
   </div>
@@ -334,7 +392,7 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-    height: sizem(790);
+    height: sizem(858);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -344,81 +402,86 @@
     overflow: hidden;
   }
 
-  .txt {
-    width: sizem(310);
-    top: sizem(320);
-    left: sizem(32.5);
-    display: block;
+  .f5 {
+    @include img_r_m(193, 25, -20);
+    transform-origin: 100% 80%;
+    transform: skewY(2deg);
+    animation: flow1 3s 0s ease-in-out infinite alternate;
   }
-
-  .title {
-    width: 100%;
-    line-height: 1.6;
-    font-size: sizem(25);
-    span {
-      display: inline-block;
+  @keyframes flow1 {
+    to {
+      transform: skewY(0);
     }
   }
 
-  .hr {
-    height: sizem(2);
-    position: relative;
-    right: size(0);
-    margin: sizem(12) 0;
-  }
-
-  .s-title {
-    top: sizem(2);
-    left: sizem(0);
-    width: sizem(279);
-  }
-
-  .subtitle {
-    font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.27;
-    letter-spacing: sizem(2.09);
-    text-align: left;
-    color: #323333;
-    white-space: nowrap;
+  .title-img {
+    @include img_l_m(46, 39, 40);
   }
 
   .desc {
-    font-size: sizem(15);
-    line-height: 1.6;
-    letter-spacing: sizem(2.09);
-    white-space: nowrap;
-    display: block;
-    span {
-      writing-mode: initial;
-      display: block;
-      width: auto;
-      margin: 0 0 0em;
-      &.p {
-        margin: 0 0 0.8em;
-      }
-      &.p2 {
-        margin: 0 0 0.8em -0.5em;
-      }
-    }
+    @include img_r_m(224, 157, 28.55);
+    font-size: sizem(12.5);
+    line-height: sizem(24.3);
+    letter-spacing: sizem(0.25);
+    text-align: left;
+    font-weight: 400;
+    color: #000;
   }
 
-  .img {
-    width: sizem(142);
-    top: sizem(30);
-    left: sizem(0);
-    position: relative;
+  .content {
+    @include div_r_m(321, 217, 656, 27);
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .content-item {
+    width: sizem(100);
+    margin-bottom: sizem(10);
+    &.white {
+      width: sizem(100);
+      height: sizem(100);
+      border-radius: 999px;
+      background-color: #fff;
+      align-content: center;
+      .content-title {
+        margin-bottom: sizem(10);
+      }
+      .content-title, .content-desc {
+        color: #d37f76;
+        line-height: 1;
+      }  
+    }
+    .content-title {
+      font-size: sizem(12.8);
+      line-height: sizem(21);
+      // letter-spacing: sizem(2.44);
+      text-align: center;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .content-desc {
+      font-size: sizem(15.8);
+      line-height: sizem(21);
+      // letter-spacing: sizem(2.44);
+      text-align: center;
+      font-weight: 400;
+      color: #fff;
+      margin-bottom: sizem(5);
+    }
   }
 
   /* Swipe */
   .swipe {
-    width: 100vw;
-    height: sizem(300);
+    width: sizem(321);
+    height: sizem(298);
     min-height: auto;
-    top: sizem(0);
-    left: sizem(0);
+    top: sizem(343);
+    left: sizem(26);
     object-fit: cover;
   }
 
@@ -495,7 +558,7 @@
 
   .pagination {
     width: auto;
-    bottom: size(91);
+    bottom: sizem(13);
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -504,18 +567,18 @@
 
   .pagination-dot {
     padding: 5px;
-    margin: 0 10px;
+    margin: 0 5px;
     cursor: pointer;
     z-index: 4;
 
     span {
       display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
+      width: sizem(8);
+      height: sizem(8);
+      border-radius: sizem(8);
       box-shadow: 0 0 0 1px #fff;
       position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
+      background-color: transparent;
       transition: all 0.5s;
 
       &::before {
@@ -523,7 +586,7 @@
         width: 60%;
         height: 60%;
         display: block;
-        background: #004ea2;
+        background: #fff;
         border-radius: 20px;
         opacity: 1;
         position: absolute;
@@ -535,12 +598,13 @@
         transform: scale(0);
       }
       &.active {
+        box-shadow: none;
         &::before {
           content: '';
-          width: 100%;
-          height: 100%;
+          width: 110%;
+          height: 110%;
           display: block;
-          background: #004ea2;
+          background: #fff;
           border-radius: 20px;
           opacity: 1;
           position: absolute;

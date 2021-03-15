@@ -8,19 +8,24 @@
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
-        <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+        <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
-        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isPC">
+          <img src="./all/slider_left.png" alt="" class="prev-btn" @click="decIndex">
+          <img src="./all/slider_right.png" alt="" class="next-btn" @click="addIndex">
         </div>
       </div>
     </div>
-    <img src="./s3/03_flower.png" :alt="`${info.caseName}_f`" class="f4">
+    <img src="./s3/03_flower.png" :alt="`${info.caseName}_f`" class="f4" v-if="isPC">
+    <img src="./mobile/03/03_flower_m.png" :alt="`${info.caseName}_f`" class="f4" v-if="isMobile">
+
     <img src="./s3/03_title.png" :alt="`${info.caseName}_f`" class="title-img">
-    <div class="desc">
+    <div class="desc" v-if="isPC">
       珍藏大安富境最後一片濱水波光，公園水岸雙景觀，富饒市中心擁攬大山大水無邊眼界；收藏公館師大景美核心繁華，羅斯福路雙商圈齊鳴綻放。集文教區靜謐素雅，商業區富庶豐饒，政經區自若安居，景觀區悠然韻味，入則寧靜，出則富麗，藏景藏靜藏繁華，簡單，也不簡單。
+    </div>
+    <div class="desc" v-if="isMobile">
+      珍藏大安富境最後一片濱水波光，公園水岸雙景觀，富饒市中心擁攬大山大水；收藏公館師大景美核心繁華，羅斯福路雙商圈齊鳴綻放。入則寧靜，出則富麗，簡單，也不簡單。
     </div>
     <div class="content">
       <div class="content-title">
@@ -308,7 +313,7 @@
 @media screen and (max-width: 767px) {
   .section3 {
     width: 100vw;
-    height: sizem(790);
+    height: sizem(666);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -318,81 +323,64 @@
     overflow: hidden;
   }
 
-  .txt {
-    width: sizem(310);
-    top: sizem(320);
-    left: sizem(32.5);
-    display: block;
+  .f4 {
+    @include img_l_m(158, 133, -10);
+    transform-origin: 0% 90%;
+    transform: skewY(2deg);
+    animation: flow1 4s 0s ease-in-out infinite alternate;
   }
-
-  .title {
-    width: 100%;
-    line-height: 1.6;
-    font-size: sizem(25);
-    span {
-      display: inline-block;
+  @keyframes flow1 {
+    to {
+      transform: skewY(0);
     }
   }
 
-  .hr {
-    height: sizem(2);
-    position: relative;
-    right: size(0);
-    margin: sizem(12) 0;
-  }
-
-  .s-title {
-    top: sizem(2);
-    left: sizem(0);
-    width: sizem(279);
-  }
-
-  .subtitle {
-    font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.27;
-    letter-spacing: sizem(2.09);
-    text-align: left;
-    color: #323333;
-    white-space: nowrap;
+  .title-img {
+    @include img_l_m(44.8, 35, 42);
   }
 
   .desc {
-    font-size: sizem(15);
-    line-height: 1.6;
-    letter-spacing: sizem(2.09);
-    white-space: nowrap;
-    display: block;
-    span {
-      writing-mode: initial;
-      display: block;
-      width: auto;
-      margin: 0 0 0em;
-      &.p {
-        margin: 0 0 0.8em;
-      }
-      &.p2 {
-        margin: 0 0 0.8em -0.5em;
-      }
-    }
+    @include img_r_m(210, 53.6, 26.5);
+    font-size: sizem(12.5);
+    line-height: sizem(24.3);
+    letter-spacing: sizem(0.52);
+    text-align: left;
+    font-weight: 400;
+    color: #000;
   }
 
-  .img {
-    width: sizem(142);
-    top: sizem(30);
-    left: sizem(0);
-    position: relative;
+  .content {
+    @include div_r_m(208, 130, 191, 27.5);
+    padding: sizem(8) sizem(12);
+    border: 1px solid #c07f76;
+  }
+
+  .content-title {
+    font-size: sizem(10.8);
+    line-height: sizem(14.9);
+    // letter-spacing: sizem(2.44);
+    text-align: left;
+    font-weight: 500;
+    color: #000;
+  }
+
+  .content-desc {
+    font-size: sizem(9.7);
+    line-height: sizem(14.9);
+    // letter-spacing: sizem(2.44);
+    text-align: left;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: sizem(10);
   }
 
   /* Swipe */
   .swipe {
-    width: 100vw;
-    height: sizem(300);
+    width: sizem(321);
+    height: sizem(299);
     min-height: auto;
-    top: sizem(0);
-    left: sizem(0);
+    top: sizem(341);
+    left: sizem(27);
     object-fit: cover;
   }
 
@@ -469,7 +457,7 @@
 
   .pagination {
     width: auto;
-    bottom: size(91);
+    bottom: sizem(13);
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -478,18 +466,18 @@
 
   .pagination-dot {
     padding: 5px;
-    margin: 0 10px;
+    margin: 0 5px;
     cursor: pointer;
     z-index: 4;
 
     span {
       display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
+      width: sizem(8);
+      height: sizem(8);
+      border-radius: sizem(8);
       box-shadow: 0 0 0 1px #fff;
       position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
+      background-color: transparent;
       transition: all 0.5s;
 
       &::before {
@@ -497,7 +485,7 @@
         width: 60%;
         height: 60%;
         display: block;
-        background: #004ea2;
+        background: #fff;
         border-radius: 20px;
         opacity: 1;
         position: absolute;
@@ -509,12 +497,13 @@
         transform: scale(0);
       }
       &.active {
+        box-shadow: none;
         &::before {
           content: '';
-          width: 100%;
-          height: 100%;
+          width: 110%;
+          height: 110%;
           display: block;
-          background: #004ea2;
+          background: #fff;
           border-radius: 20px;
           opacity: 1;
           position: absolute;
@@ -535,7 +524,7 @@
 
     .prev-btn,
     .next-btn {
-      width: sizem(15);
+      width: sizem(30);
       cursor: pointer;
     }
   }
@@ -562,13 +551,19 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s3/03_sloder_1.jpg'),
+          img: isMobile
+            ? require('./mobile/03/03_slider_1_m.jpg')
+            : require('./s3/03_sloder_1.jpg'),
         },
         {
-          img: require('./s3/03_sloder_2.jpg'),
+          img: isMobile
+            ? require('./mobile/03/03_slider_2_m.jpg')
+            : require('./s3/03_sloder_2.jpg'),
         },
         {
-          img: require('./s3/03_sloder_3.jpg'),
+          img: isMobile
+            ? require('./mobile/03/03_slider_3_m.jpg')
+            : require('./s3/03_sloder_3.jpg'),
         },
       ],
     }

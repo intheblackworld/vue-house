@@ -20,7 +20,19 @@
       </div>
     </div>
     <div v-else>
-
+      <img src="./mobile/02/02_flower_m.png" :alt="`${info.caseName}_f3`" class="f3">
+      <img src="./mobile/02/02_img_m.jpg" :alt="`${info.caseName}_img`" class="img">
+      <img src="./mobile/02/02_text_m.png" :alt="`${info.caseName}_img`" class="text">
+      <div class="desc">
+        懂收藏的人，有旁人難及的自豪氣概<br />
+        自豪於收藏從不看價格，而是看故事<br />
+        玻璃彈珠藏著孩提時的單純快樂<br />
+        球員卡藏著昂揚熱血的青春<br />
+        滿櫃名錶留藏難以復返的時間<br />
+        若問其中最引以為傲的藏品<br />
+        莫過一席水岸豪景<br />
+        典藏了成功人生的自慢閱歷
+      </div>
     </div>
   </div>
 </template>
@@ -121,9 +133,9 @@
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    min-height: sizem(470);
-    max-height: sizem(1337);
-    height: sizem(1337);
+    min-height: sizem(418 + 247);
+    max-height: sizem(418 + 247);
+    height: sizem(418 + 247);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -144,66 +156,32 @@
       position: relative;
     }
   }
+
   .f3 {
-    @include img_r_m(233, 418, 0);
-    transform-origin: 100% 90%;
+    @include img_r_m(308, -30, -70);
+    transform-origin: 100% 80%;
     transform: skewY(2deg);
-    animation: flow1 3s 0s ease-in-out infinite alternate-reverse;
-    z-index: 3;
+    animation: flow1 3s 0s ease-in-out infinite alternate;
+  }
+  .text {
+    @include img_l_m(46, 31, 56);
   }
 
-  .f4 {
-    @include img_l_m(250, 0, 0);
+  .img {
+    @include div_l_m(375, 247, 0, 0);
     top: auto;
-    bottom: sizem(-30);
-    transform-origin: 0% 90%;
-    animation: flow1 2.3s 0s ease-in-out infinite alternate;
-    transform: skewY(2deg);
-    z-index: 3;
-  }
-  .f5 {
-    @include img_r_m(160, 0, 0);
-    top: auto;
-    bottom: sizem(-780);
-    transform-origin: 100% 90%;
-    animation: flow1 2.3s 0s ease-in-out infinite alternate;
-    transform: skewY(3deg);
-    z-index: 3;
-    img {
-      width: 100%;
-      transform: scaleY(-1);
-    }
+    bottom: 0;
   }
 
-  .t1 {
-    @include img_r_m(21.2, 70, 90);
-  }
-  .t2 {
-    @include img_r_m(10.1, 305, 66);
-  }
-  .t3 {
-    @include img_r_m(292, 934, 38);
-  }
-  .t4 {
-    @include img_r_m(298, 610, 34);
-    top: auto;
-    bottom: sizem(185);
-  }
-
-  // .logo {
-  //   @include img_r_m(479, 707, 310);
-  // }
-
-  .st1 {
-    @include img_l_m(17, 128, 157);
-  }
-
-  .st2 {
-    @include img_l_m(16, 128, 128);
-  }
-
-  .st3 {
-    @include img_l_m(17, 128, 97);
+  .desc {
+    @include img_r_m(202, 164, 60);
+    font-size: sizem(12.2);
+    line-height: sizem(28.5);
+    // letter-spacing: size(2.44);
+    text-align: right;
+    font-weight: 400;
+    color: #fff;
+    white-space: nowrap;
   }
 }
 </style>

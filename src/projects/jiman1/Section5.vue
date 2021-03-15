@@ -452,7 +452,7 @@
 
   .pagination {
     width: auto;
-    bottom: size(91);
+    bottom: sizem(13);
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -461,18 +461,18 @@
 
   .pagination-dot {
     padding: 5px;
-    margin: 0 10px;
+    margin: 0 5px;
     cursor: pointer;
     z-index: 4;
 
     span {
       display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
+      width: sizem(8);
+      height: sizem(8);
+      border-radius: sizem(8);
       box-shadow: 0 0 0 1px #fff;
       position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
+      background-color: transparent;
       transition: all 0.5s;
 
       &::before {
@@ -480,7 +480,7 @@
         width: 60%;
         height: 60%;
         display: block;
-        background: #004ea2;
+        background: #fff;
         border-radius: 20px;
         opacity: 1;
         position: absolute;
@@ -492,12 +492,13 @@
         transform: scale(0);
       }
       &.active {
+        box-shadow: none;
         &::before {
           content: '';
-          width: 100%;
-          height: 100%;
+          width: 110%;
+          height: 110%;
           display: block;
-          background: #004ea2;
+          background: #fff;
           border-radius: 20px;
           opacity: 1;
           position: absolute;
