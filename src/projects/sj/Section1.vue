@@ -116,15 +116,21 @@
   @include div_r_pc(280, 77.3, 787, 358);
   top: calc(50% + 100vw * (737 - 540) / 1920);
   border: 1px solid #fff;
-  font-size: size(40.7);
-  font-weight: 600;
+  font-size: size(41);
+  font-weight: 700;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.53;
   letter-spacing: size(4.07);
   text-align: center;
   color: #ffffff;
+  background-color: #fffbf000;
   cursor: pointer;
+  transition: all 0.5s;
+  &:hover{
+    background-color: #fffbf0;
+    color:#c82514;
+  }
 }
 
 .logos {

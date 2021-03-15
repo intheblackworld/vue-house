@@ -237,7 +237,7 @@
   .dialog-content {
     width: 100%;
     height: auto;
-    min-width: 1800px;
+    min-width: $contact_logo_pc_width;
     min-height: 700px;
     margin: 0;
   }
