@@ -4,7 +4,7 @@ export default {
   googleSrc:
     'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3614.258618139814!2d121.5325556!3d25.0592222!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDAzJzMzLjIiTiAxMjHCsDMxJzU3LjIiRQ!5e0!3m2!1szh-TW!2stw!4v1615801563403!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/jRV143mcJBkciBKx7',
-  phone: '02-86676688',
+  phone: '02-29668888',
   fbLink: 'https://www.facebook.com/佳元松江-103677951795416',
   fbMessage: 'https://m.me/103677951795416',
   caseName: '佳元松江',
