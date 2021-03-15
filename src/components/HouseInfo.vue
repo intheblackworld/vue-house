@@ -131,6 +131,7 @@ export default {
   }
 
   .title {
+    width: 90%;
     font-size: 32px;
     margin: 0.8em 0 0.5em 0;
   }

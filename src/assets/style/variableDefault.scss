@@ -1,7 +1,7 @@
 @import './function.scss';
 /* navigation */
-$nav_pc_height: 80px;
-$nav_tablet_height: 60px;
+$nav_pc_height: size(80);
+$nav_tablet_height: size(80);
 $nav_phone_height: 0px;
 $logo_pc_width: calc(100vw * 310 / 1920);
 $logo_tablet_width: calc(100vw * 200 / 1920);
@@ -9,8 +9,8 @@ $logo_phone_width: 100px;
 
 /* contactInfo */
 $contact_logo_pc_width: size(1261);
-$contact_logo_tablet_width: 180px;
-$contact_logo_mobile_width: 240px;
+$contact_logo_tablet_width: size(1261);
+$contact_logo_mobile_width: sizem(240);
 
 // for calculate
 $nav_pc_height_number: 60;

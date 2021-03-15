@@ -25,7 +25,7 @@
 }
 
 .bg-img {
-  width: 100vw;
+  width:100%;
   position: absolute;
   top: 0;
   left: 0;

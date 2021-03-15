@@ -1,6 +1,5 @@
 <template>
   <div class="home no-padding-top">
-    <div class="bg-img">
       <Loading :loading="load" />
       <!-- <SideNavigation /> -->
       <Navigation v-if="!isMobile" />
@@ -44,7 +43,6 @@
       <vue-lazy-component class="section" id="contact">
         <ContactSection />
       </vue-lazy-component>
-    </div>
     <MobileNav />
   </div>
 </template>

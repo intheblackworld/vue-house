@@ -18,57 +18,18 @@
         </div>
       </div>
     </div>
-    <div class="number" data-aos="fade-left" data-aos-delay="400">
+   <div class="txt">
+    <div class="number" data-aos="fade-up" data-aos-delay="400">
       03
     </div>
-    <h1 class="title" data-aos="flip-up" data-aos-delay="600">
+    <h1 class="title" data-aos="fade-up" data-aos-delay="600">
       置產捷運不敗王道<br />
       200米行天宮站
     </h1>
     <h1 class="desc" data-aos="fade-up" data-aos-delay="800">
       捷運中和新蘆線與民生汐止線交會行天宮捷運站，中和新蘆線連接中永和、三重新莊與松江南京、忠孝新生、古亭東門等精華區段；民生汐止線預計由大稻埕出發，途經雙連、行天宮、小巨蛋等與東環線交會，串聯台北東西交通流量。
     </h1>
-    <!-- <div class="more flex-ac flex-jb" data-aos="fade-right" data-aos-delay="1800" @click="isDialog = true">
-      8B NICEHOMES More
-      <img src="./s2/more.png" alt="">
-    </div>
-    <transition name="swipe-fade" mode="out-in">
-      <div class="dialog" v-if="isDialog">
-        <div class="dialog-bg">
-          <img src="./s2/5.jpg" alt="" class="dialog-img" v-if="isPC">
-          <h3 class="dialog-name" v-if="isPC">
-            從規劃設計到營建施工，連雲以一條龍專業團隊實踐建築最高品質
-          </h3>
-          <h3 class="dialog-name" v-if="isMobile">
-            從規劃設計到營建施工，<br />
-            連雲以一條龍專業團隊實踐建築最高品質
-          </h3>
-          <img src="./s2/5_m.jpg" alt="" class="dialog-img" v-if="isMobile">
-          <div class="dialog-title">
-            8B NICEHOMES® 好宅指標
-          </div>
-          <div class="dialog-close flex-c" @click="isDialog = false">
-            <img src="../../assets/img/close.png" alt="">
-          </div>
-          <div class="dialog-desc">
-            連雲建築領先業界提出「8B好宅」<br />
-            建築規範<br />
-            融合文化、自然、健康、科技、安全、<br />
-            便利、環保、美感等要素整合工程<br />
-            數百項準則精細規範，並逐一檢核落實<br />
-            打造全方位臻至完美的高品質好房子<br />
-            N自然環保建築Natural & Environmental Protection Building<br />
-            I 智慧建築 Intelligent Building<br />
-            C社區建築Community Building<br />
-            E雅致建築Elegant Building<br />
-            H健康建築Healthy Building<br />
-            O長效建築Open & Lifetime Building<br />
-            M維護建築Maintainable Excellence Building<br />
-            ES安心安全建築Easy & Safe Building
-          </div>
-        </div>
-      </div>
-    </transition> -->
+  </div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -77,62 +38,53 @@
 .section5 {
   width: 100%;
   height: size(1062);
-  min-height: size(1062);
-  max-height: size(1062);
-  // position: relative;
-  // background-color: #fff;
-  // min-height: size(900);
-  // background-image: url('./s2/bg.jpg');
-  // background-size: 100% 100%;
-  // background-position: 0 0;
-  // background-attachment: fixed;
-  // overflow: hidden;
 }
 
 .bg {
   @include div_r_pc(1920, 850, 212, 0);
+  width: 100%;
   top: auto;
   bottom: 0;
   background-color: #040000;
 }
 
-.number {
-  @include img_r_pc(128, 336, 338);
-  font-size: size(118.8);
+
+.txt{
+  @include div_r_pc(394, 850, 212, 63);
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  align-content:center;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.85;
-  letter-spacing: normal;
-  text-align: left;
+  text-align: justify;
   color: #ffffff;
+  line-height: 1.6;
+  }
+
+.number {
+  font-size: size(118.8);
+  font-family: Gadugi;
+  margin: -0.3em 0 0 0;
+  letter-spacing: normal;
 }
 
 .title {
-  @include img_r_pc(268, 519, 198);
   font-size: size(31.9);
-  font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
+  font-weight: 500;
   line-height: 1.43;
-  letter-spacing: size(1.72);
-  text-align: left;
-  color: #ffffff;
+  letter-spacing: 0.054em;
   white-space: nowrap;
+  margin: 0.4em 0 1.3em 0;
 }
 
 .desc {
-  @include img_r_pc(394, 665, 72);
   font-size: size(22.7);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.45;
-  letter-spacing: size(2.61);
-  text-align: left;
-  color: #ffffff;
+  font-weight: 300;
+  letter-spacing:0.1em;
 }
-
 /* Swipe */
 .swipe {
   width: size(1373);
@@ -164,25 +116,6 @@
   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
-// begin
-// .swipe-left-leave-to {
-//   margin-left: -100vw;
-//   z-index: 0;
-// }
-// // end
-// .swipe-left-enter {
-//   opacity: 0.5;
-//   margin-left: 0;
-//   z-index: 1;
-// }
-
-// .swipe-left-enter-active {
-//   transition: all 0.5s ease;
-// }
-
-// .swipe-left-leave-active {
-//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-// }
 
 .swipe-wrap {
   width: 100%;
@@ -215,19 +148,6 @@
     text-shadow: 0 0.3em 1em #000;
   }
 
-  // &:nth-child(1) {
-  //   z-index: 1;
-  //   // opacity: 1;
-  // }
-
-  // &.base {
-  //   z-index: 1;
-  //   opacity: 1;
-  // }
-  // &.active {
-  //   z-index: 2;
-  //   // opacity: 1;
-  // }
 }
 
 .pagination {
@@ -304,88 +224,7 @@
   }
 }
 
-// .dialog {
-//   width: 100vw;
-//   height: 100vh;
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   background: linear-gradient(to bottom, #004471 80%, #094b76 100%);
-//   z-index: 1000;
 
-//   .dialog-bg {
-//     width: 100%;
-//     height: 100%;
-//     background-image: url('~@/projects/lj/s1/bg.png');
-//     // padding-top: $nav_pc_height;
-//     background-attachment: fixed;
-//     background-size: auto;
-//     background-position: center center;
-//     background-repeat: repeat;
-//   }
-
-//   .dialog-img {
-//     position: absolute;
-//     width: size(1350);
-//     height: auto;
-//     top: calc(50% - 21.35vw);
-//     left: 0;
-//   }
-
-//   .dialog-title {
-//     @include img_r_pc(325, 0, 179);
-//     top: calc(50% - 22vw);
-//     font-size: size(36);
-//     font-weight: bold;
-//     font-stretch: normal;
-//     font-style: normal;
-//     line-height: 1.81;
-//     letter-spacing: normal;
-//     text-align: left;
-//     color: #ffffff;
-//     text-decoration: underline;
-//   }
-
-//   .dialog-close {
-//     @include div_r_pc(42, 42, 130, 94);
-//     top: calc(50% - 22vw);
-//     border: 1px solid #fff;
-//     cursor: pointer;
-
-//     img {
-//       width: 90%;
-//     }
-//   }
-//   .dialog-name {
-//     position: absolute;
-//     left: 2em;
-//     bottom: calc(50% - 21.35vw + 1.2em);
-//     color: #fff;
-//     font-size: size(18);
-//     font-weight: bold;
-//     font-stretch: normal;
-//     font-style: normal;
-//     line-height: 1.6;
-//     letter-spacing: 0.03em;
-//     text-align: left;
-//     text-shadow: 0 0.2em 1em #000;
-//   }
-
-//   .dialog-desc {
-//     @include img_r_pc(448, 303, 52);
-//     top: auto;
-//     bottom: calc(50% - 22vw);
-//     font-size: size(18);
-//     font-weight: bold;
-//     font-stretch: normal;
-//     font-style: normal;
-//     line-height: 2.39;
-//     letter-spacing: normal;
-//     text-align: left;
-//     color: #ffffff;
-//     margin: 0 0;
-//   }
-// }
 
 @media only screen and (max-width: 1440px) {
 }
@@ -404,56 +243,29 @@
   .section5 {
     width: 100vw;
     height: sizem(995 + 56);
-    min-height: auto;
-    max-height: initial;
-    // background-image: url('./s2/bg.jpg');
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
     overflow: hidden;
   }
-
-  .bg {
+  
+.bg {
     @include div_r_m(375, 425, 56, 0);
     bottom: auto;
     background-color: #040000;
   }
 
+.txt{
+    @include div_l_m(250, 425, 56, 62.5);
+  }
+
   .number {
-    @include img_l_m(64, 112, 66);
     font-size: sizem(59.4);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.85;
-    letter-spacing: normal;
-    text-align: left;
-    color: #ffffff;
   }
 
   .title {
-    @include img_l_m(166, 200, 66);
     font-size: sizem(19.8);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.15;
-    letter-spacing: sizem(1.07);
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
   }
 
   .desc {
-    @include img_l_m(241, 277, 66);
     font-size: sizem(14.2);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.58;
-    letter-spacing: normal;
-    text-align: left;
-    color: #ffffff;
   }
 
   /* Swipe */
@@ -643,14 +455,14 @@ export default {
           img: isMobile ? require('./s5/1_m.jpg') : require('./s5/1.jpg'),
           name: '捷運行天宮站實景攝影',
         },
-        // {
-        //   img: isMobile ? require('./s2/2_m.jpg') : require('./s2/2.jpg'),
-        //   name: '泰安連雲-連峰樓',
-        // },
-        // {
-        //   img: isMobile ? require('./s2/3_m.jpg') : require('./s2/3.jpg'),
-        //   name: '靜心連雲',
-        // },
+        {
+          img: isMobile ? require('./s5/2_m.jpg') : require('./s5/2.jpg'),
+          name: '捷運行天宮站實景攝影',
+        },
+        {
+          img: isMobile ? require('./s5/3_m.jpg') : require('./s5/3.jpg'),
+          name: '捷運行天宮站實景攝影',
+        },
       ],
     }
   },

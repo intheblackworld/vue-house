@@ -37,20 +37,26 @@ p {
 /* animate css */
 
 /* font */
+/*
 @font-face {
   font-family: DFPingJuStd;
   src: url('~@/assets/font/DFPingJuStd-W7.otf?#iefix')
       format('embedded-opentype'),
     url('~@/assets/font/DFPingJuStd-W7.otf');
   font-weight: 300;
-}
+}*/
 
+@font-face {
+  font-family: Gadugi;
+  src: url('~@/assets/font/gadugi.ttf') format('truetype'),
+    url('~@/assets/font/gadugi.ttf');
+}
 @font-face {
   font-family: icomoon;
   src: url('~@/assets/font/icomoon.ttf') format('truetype'),
     url('~@/assets/font/icomoon.ttf');
 }
-
+/*
 @font-face {
   font-family: 'TimesNewRomanPSMT';
   src: url('~@/assets/font/TimesNewRomanPSMT.ttf') format('truetype'),
@@ -79,4 +85,4 @@ p {
   src: url('~@/assets/font/Impact.ttf') format('truetype'), url('~@/assets/font/Impact.ttf');
   font-weight: normal;
   font-style: normal;
-}
+}*/

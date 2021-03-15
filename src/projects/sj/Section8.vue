@@ -35,10 +35,11 @@
         </div>
       </div>
     </div>
-    <h1 class="title" data-aos="flip-up" data-aos-delay="600">
+   <div class="txt">
+    <h1 class="title" data-aos="fade-up" data-aos-delay="600">
       坪效美學
     </h1>
-    <div data-aos="fade-left" data-aos-delay="800">
+    <div data-aos="fade-up" data-aos-delay="800">
       <div :class="`btn btn1 ${viewIndex === 0 ? 'active' : ''}`" @click="viewIndex = 0">
         一房戶型
       </div>
@@ -50,48 +51,8 @@
     <div class="hint" data-aos="fade-up" data-aos-delay="1200">
       裝潢風格情境參考示意圖，實際坪數，格局尺度，依銷售買賣合約書為準，建設公司保有修正之權利。
     </div>
-    <!-- <div class="more flex-ac flex-jb" data-aos="fade-right" data-aos-delay="1800" @click="isDialog = true">
-      8B NICEHOMES More
-      <img src="./s2/more.png" alt="">
     </div>
-    <transition name="swipe-fade" mode="out-in">
-      <div class="dialog" v-if="isDialog">
-        <div class="dialog-bg">
-          <img src="./s2/5.jpg" alt="" class="dialog-img" v-if="isPC">
-          <h3 class="dialog-name" v-if="isPC">
-            從規劃設計到營建施工，連雲以一條龍專業團隊實踐建築最高品質
-          </h3>
-          <h3 class="dialog-name" v-if="isMobile">
-            從規劃設計到營建施工，<br />
-            連雲以一條龍專業團隊實踐建築最高品質
-          </h3>
-          <img src="./s2/5_m.jpg" alt="" class="dialog-img" v-if="isMobile">
-          <div class="dialog-title">
-            8B NICEHOMES® 好宅指標
-          </div>
-          <div class="dialog-close flex-c" @click="isDialog = false">
-            <img src="../../assets/img/close.png" alt="">
-          </div>
-          <div class="dialog-desc">
-            連雲建築領先業界提出「8B好宅」<br />
-            建築規範<br />
-            融合文化、自然、健康、科技、安全、<br />
-            便利、環保、美感等要素整合工程<br />
-            數百項準則精細規範，並逐一檢核落實<br />
-            打造全方位臻至完美的高品質好房子<br />
-            N自然環保建築Natural & Environmental Protection Building<br />
-            I 智慧建築 Intelligent Building<br />
-            C社區建築Community Building<br />
-            E雅致建築Elegant Building<br />
-            H健康建築Healthy Building<br />
-            O長效建築Open & Lifetime Building<br />
-            M維護建築Maintainable Excellence Building<br />
-            ES安心安全建築Easy & Safe Building
-          </div>
-        </div>
-      </div>
-    </transition> -->
-  </div>
+    </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
@@ -113,60 +74,70 @@
 
 .bg {
   @include div_r_pc(1920, 850, 212, 0);
+  width: 100%;
   top: auto;
   bottom: 0;
   background-color: #040000;
 }
 
-.btn {
-  font-size: size(27.2);
-  font-weight: 600;
+
+.txt{
+  @include div_l_pc(394, 850, 212, 63);
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  align-content:center;
+  font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.73;
-  letter-spacing: size(1.47);
-  text-align: center;
+  text-align: justify;
   color: #ffffff;
-  cursor: pointer;
-  border-bottom: 1px solid rgba(255, 255, 255, 0);
-  transition: border-bottom 0.5s;
-
-  &.active {
-    border-bottom: 1px solid rgba(255, 255, 255, 1);
+  line-height: 1.6;
   }
-}
 
-.btn1 {
-  @include img_l_pc(130, 563, 75);
-}
-
-.btn2 {
-  @include img_l_pc(130, 627, 75);
+.number {
+  font-size: size(118.8);
+  font-family: Gadugi;
+  margin: -0.3em 0 0 0;
+  letter-spacing: normal;
 }
 
 .title {
-  @include img_l_pc(268, 467, 75);
   font-size: size(31.9);
-  font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
+  font-weight: 500;
   line-height: 1.43;
-  letter-spacing: size(1.72);
-  text-align: left;
-  color: #ffffff;
+  letter-spacing: 0.054em;
   white-space: nowrap;
+  margin: 0em 0 1.4em 0;
 }
 
-.hint {
-  @include img_l_pc(394, 734, 72);
-  font-size: size(14.2);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.94;
-  letter-spacing: size(0.57);
-  text-align: left;
+.btn {
+  font-size: size(27.2);
+  font-weight: 600;
+  line-height: 1.73;
+  letter-spacing: 0.054em;
   color: #ffffff;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+  transition: border-bottom 0.3s;
+  margin: 0em 0 0.6em 0;
+
+  &.active,
+  &:hover.active {
+    border-bottom: 1px solid rgba(255, 255, 255, 1);
+  }
+  &:hover{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);}
+}
+
+
+.hint {
+  margin: 2.8em 0 0em 0;
+  font-size: size(14.2);
+  font-weight: 300;
+  line-height: 1.94;
+  letter-spacing:0.04em;
 }
 
 /* Swipe */
@@ -439,7 +410,7 @@
 @media screen and (max-width: 767px) {
   .section8 {
     width: 100vw;
-    height: sizem(995 + 56);
+    height: sizem(950 + 56);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -450,72 +421,33 @@
   }
 
   .bg {
-    @include div_r_m(375, 425, 56, 0);
+    @include div_r_m(375, 380, 56, 0);
     bottom: auto;
     background-color: #040000;
   }
-
-  .btn {
-    font-size: sizem(17);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.34;
-    letter-spacing: sizem(0.92);
-    text-align: left;
-    color: #ffffff;
-    cursor: pointer;
-    border-bottom: 1px solid rgba(255, 255, 255, 0);
-    transition: border-bottom 0.5s;
-
-    &.active {
-      border-bottom: 1px solid rgba(255, 255, 255, 1);
-    }
+.txt{
+    @include div_l_m(250, 380, 56, 62.5);
   }
 
-  .btn1 {
-    @include img_l_m(80, 218, 66);
-  }
-
-  .btn2 {
-    @include img_l_m(80, 267, 66);
+  .number {
+    font-size: sizem(59.4);
   }
 
   .title {
-    @include img_l_m(83, 162, 66);
     font-size: sizem(19.8);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.15;
-    letter-spacing: sizem(1.07);
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
   }
 
   .desc {
-    @include img_l_m(241, 277, 66);
     font-size: sizem(14.2);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.58;
-    letter-spacing: normal;
-    text-align: left;
-    color: #ffffff;
   }
 
+
   .hint {
-    @include img_l_m(246, 322, 66);
-    font-size: size(14.2);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
+    font-size: sizem(12);
     line-height: 1.42;
-    letter-spacing: size(0.57);
-    text-align: left;
-    color: #ffffff;
+  }
+  .btn {
+    font-size: sizem(17);
   }
 
   /* Swipe */
@@ -704,29 +636,29 @@ export default {
       slideIndex1: 0,
       slideList: [
         {
-          img: isMobile ? require('./s8/1-1m.jpg') : require('./s8/1.jpg'),
+          img: isMobile ? require('./s8/1-1m.jpg') : require('./s8/1-1.jpg'),
           name: '樣品屋裝潢風格情境參考示意圖',
         },
         {
-          img: isMobile ? require('./s8/1-2m.jpg') : require('./s8/1.jpg'),
+          img: isMobile ? require('./s8/1-2m.jpg') : require('./s8/1-2.jpg'),
           name: '樣品屋裝潢風格情境參考示意圖',
         },
         {
-          img: isMobile ? require('./s8/1-3m.jpg') : require('./s8/1.jpg'),
+          img: isMobile ? require('./s8/1-3m.jpg') : require('./s8/1-3.jpg'),
           name: '樣品屋裝潢風格情境參考示意圖',
         },
       ],
       slideList1: [
         {
-          img: isMobile ? require('./s8/2-1m.jpg') : require('./s8/1.jpg'),
+          img: isMobile ? require('./s8/2-1m.jpg') : require('./s8/2-1.jpg'),
           name: '樣品屋裝潢風格情境參考示意圖',
         },
         {
-          img: isMobile ? require('./s8/2-2m.jpg') : require('./s8/1.jpg'),
+          img: isMobile ? require('./s8/2-2m.jpg') : require('./s8/2-2.jpg'),
           name: '樣品屋裝潢風格情境參考示意圖',
         },
         {
-          img: isMobile ? require('./s8/2-3m.jpg') : require('./s8/1.jpg'),
+          img: isMobile ? require('./s8/2-3m.jpg') : require('./s8/2-3.jpg'),
           name: '樣品屋裝潢風格情境參考示意圖',
         },
       ],

@@ -1,5 +1,6 @@
 <template>
   <div class="section1">
+    <div class="o"></div>
     <img src="./s1/bg.png" :alt="`${info.caseName}_img`" class="bg-img" v-if="isPC">
     <img src="./s1/bg_m.png" :alt="`${info.caseName}_img`" class="bg-img" v-if="isMobile">
     <img src="./s1/logo.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
@@ -25,12 +26,11 @@
 
 .section1 {
   width: size(1920);
-  height: 100vh;
-  min-height: size(1080);
-  max-height: size(1080);
-  //overflow: hidden;
+  height: calc(100vh - 4.1666666667vw);
+  margin: 4.1666666667vw 0 0 0;
+  min-height: size(820);
+  max-height: size(1000);
   position: relative;
-  // background: url('./s1/bg.png') fixed;
   background-size: auto;
 }
 
@@ -43,19 +43,52 @@
   display: block;
   object-fit: cover;
   margin-top: 0;
-  opacity: 0.5;
+  opacity: 1;
 
   &:nth-child(1) {
     position: relative;
   }
 }
+.o{
+  @include img_l_pc(430, 102, 222);
+  top: calc(50% + 100vw * (102 - 540) / 1920);
+  height:size(430);
+  background-color: #fffbf0;
+  border-radius: 50%;
+  transform-origin: 50% 50%;
+  transform:scale(3)translateX(300%);
+  animation: move 5s forwards;
+}
+@keyframes move {
+    0% {
+  transform:scale(3)translateX(300%);
+    }
+
+    40% {
+  transform:scale(2) translateX(-100%);
+    }
+
+    75% {
+  transform:scale(2) translateX(250%);
+    }
+
+    90% {
+  transform:scale(2) translateX(0%);
+    }
+
+    100% {
+  transform:scale(1) translateX(0%);
+    }
+}
 
 .logo {
   @include img_r_pc(766, 330, 272);
+  top: calc(50% + 100vw * (280 - 540) / 1920);
 }
 
 .title {
   @include img_r_pc(992, 705, 154);
+  top: calc(50% + 100vw * (655 - 540) / 1920);
   font-size: size(45.5);
   font-weight: 600;
   font-stretch: normal;
@@ -68,6 +101,7 @@
 
 .phone {
   @include img_r_pc(479, 774, 667);
+  top: calc(50% + 100vw * (724 - 540) / 1920);
   font-size: size(103.6);
   font-weight: 600;
   font-stretch: normal;
@@ -80,6 +114,7 @@
 
 .btn {
   @include div_r_pc(280, 77.3, 787, 358);
+  top: calc(50% + 100vw * (737 - 540) / 1920);
   border: 1px solid #fff;
   font-size: size(40.7);
   font-weight: 600;
@@ -94,6 +129,7 @@
 
 .logos {
   @include img_r_pc(160, 787, 156);
+  top: calc(50% + 100vw * (737 - 540) / 1920);
 }
 
 @media only screen and (max-width: 1440px) {
@@ -112,20 +148,28 @@
 @media screen and (max-width: 767px) {
   .section1 {
     width: 100vw;
-    min-height: sizem(665);
-    max-height: sizem(812);
-    height: sizem(665);
-    // background-image: url('./mo/1/bg.png');
-    background-size: cover;
-    background-attachment: scroll;
+    height:calc(100vh - 63px);
+    min-height: sizem(604);
+    max-height: sizem(700);
   }
+
+.bg-img {
+  object-fit: contain;
+}
+.o{
+  @include img_l_m(103, 42, 71);
+  top: calc(50% + 100vw * (42 - 302) / 375);
+  height:sizem(103);
+}
 
   .logo {
     @include img_r_m(79.5, 44, 79.5);
+  top: calc(50% + 100vw * (44 - 302) / 375);
   }
 
   .title {
     @include img_c_m(330, 345);
+  top: calc(50% + 100vw * (345 - 302) / 375);
     font-size: sizem(25.4);
     font-weight: 600;
     font-stretch: normal;
@@ -139,6 +183,7 @@
 
   .phone {
     @include img_c_m(260, 430);
+  top: calc(50% + 100vw * (430 - 302) / 375);
     font-size: sizem(55);
     font-weight: 600;
     font-stretch: normal;
@@ -152,6 +197,7 @@
 
   .btn {
     @include div_r_m(113, 31.3, 509, 77.7);
+  top: calc(50% + 100vw * (509 - 302) / 375);
     border: 1px solid #fff;
     font-size: sizem(16.5);
     font-weight: 600;
@@ -165,6 +211,7 @@
 
   .logos {
     @include img_l_m(60, 510, 74);
+  top: calc(50% + 100vw * (510 - 302) / 375);
   }
 }
 </style>
