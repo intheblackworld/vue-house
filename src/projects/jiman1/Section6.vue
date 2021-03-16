@@ -142,9 +142,9 @@
 @media screen and (max-width: 767px) {
   .section6 {
     width: 100vw;
-    min-height: sizem(121.8 + 720);
-    max-height: sizem(121.8 + 720);
-    height: sizem(121.8 + 720);
+    min-height: sizem(121.8 + 780);
+    max-height: sizem(121.8 + 780);
+    height: sizem(121.8 + 800);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -210,7 +210,7 @@
   }
 
   .desc {
-    @include img_r_m(230, 462.5, 38);
+    @include img_r_m(240, 462.5, 38);
     font-size: sizem(12.5);
     line-height: 1.9;
     span {

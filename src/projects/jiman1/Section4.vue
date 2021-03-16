@@ -419,7 +419,7 @@
   }
 
   .desc {
-    @include img_r_m(224, 153, 28.55);
+    @include img_r_m(230, 153, 28.55);
     font-size: sizem(12.5);
   }
 

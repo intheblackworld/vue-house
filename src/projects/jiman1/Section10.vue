@@ -192,7 +192,7 @@
   .item3 {
     @include img_c_m(270, 541.6);
     .desc {
-      @include img_r_m(140, 45, 0);
+      @include img_r_m(145, 45, 0);
     }
   }
 

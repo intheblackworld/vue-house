@@ -1,18 +1,21 @@
 <template>
   <div class="section7">
 
-    <div class="img1">
-    <img src="./s7/07_img_1.jpg" :alt="`${info.caseName}_img`"><p>東京羽田機場</p>
+    <div class="img0">
+      <img src="./s7/07_img_0.jpg" :alt="`${info.caseName}_img`">
+    <!-- <img src="./s7/07_img_1.jpg" :alt="`${info.caseName}_img`"><p>東京羽田機場</p>
     </div>
     <div class="img2">
     <img src="./s7/07_img_2.jpg" :alt="`${info.caseName}_img`"><p>關西空港</p></div>
     <div class="img3">
-    <img src="./s7/07_img_3.jpg" :alt="`${info.caseName}_img`"><p>瀨戶大橋</p></div>
+    <img src="./s7/07_img_3.jpg" :alt="`${info.caseName}_img`"><p>瀨戶大橋</p>
+    -->
+    </div>
     <img src="./s7/07_logo.png" :alt="`${info.caseName}_img`" class="logo">
     <img src="./s7/07_flower.png" :alt="`${info.caseName}_f`" class="f6" v-if="isPC">
 
     <div class="title">
-      台北水岸第一次 日本國土開發營造
+      台北水岸第一次<br v-if="isMobile">日本國土開發營造
     </div>
     <div class="desc" v-if="isPC">
       創立於1951年的JDC日本國土開發株式會社，以確實的工法技術與匠心獨具的營建方式，創造多項世界級重大建設而聞名於世。自慢藏，日本國土開發獻給台北水岸第一次的純日系SRC鋼骨制震豪景觀邸，承襲70年日本血統的嚴謹職人自慢精工，結合SC及RC雙重優勢，CFT柱內灌漿，以高壓灌漿混凝土入鋼柱；採用最高10000psi高強度混凝土，水泥磅數超越法規標準；SA級鋼筋續接器，與捷運、高鐵、台北101享有同等規格的安全守護。日系精工，最高規格，打造台灣水岸最自慢的建築地標。<br /><br />
@@ -68,6 +71,10 @@
   color: #fff;
   text-shadow: 0 0 0.3em #000;
   }
+}
+.img0 {
+  @include img_l_pc(1190, 608, 394);
+  img{width: 100%}
 }
 .img1 {
   @include img_l_pc(595, 608, 394);
@@ -170,6 +177,12 @@
       position: relative;
     }
   }
+.img0 {
+  @include img_l_m(375, 0, 0);
+    top: auto;
+    bottom: 0;
+  img{width: 100%}
+}
   .img1 {
     @include img_l_m(186.7, 0, 0);
     top: auto;
@@ -192,7 +205,7 @@
   }
 
   .title {
-    @include img_l_m(156, 29.7, 105.2);
+    @include img_l_m(200, 29.7, 105.2);
     font-size: sizem(19.5);
     line-height: sizem(24.5);
     // letter-spacing: sizem(0.53);
@@ -203,7 +216,7 @@
   }
 
   .desc {
-    @include img_l_m(230, 94.5, 107.5);
+    @include img_l_m(240, 94.5, 107.5);
     font-size: sizem(12.5);
     line-height: 1.9;
     span {
