@@ -72,27 +72,27 @@
 }
 
 .title {
-  @include img_c_pc(900, 53);
+  @include img_c_pc(900, 10);
   font-size: size(30.7);
   font-weight: 900;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.14;
+  line-height: 1.5;
   letter-spacing: normal;
   text-align: center;
   color: #542e71;
 }
 
 .desc {
-  @include img_c_pc(666, 160);
-  font-size: size(16);
+  @include img_c_pc(666, 130);
+  font-size: size(18);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.8;
-  letter-spacing: normal;
+  line-height: 1.9;
+  letter-spacing:0.02em;
   text-align: center;
-  color: #707070;
+  color: #000a;
   // top: calc(50% - 9vw);
 }
 
@@ -137,12 +137,13 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.2;
-    letter-spacing: normal;
+    letter-spacing: 0.02em;
     text-align: left;
     color: #ffffff;
     position: absolute;
     left: size(35);
     bottom: size(15);
+    text-shadow: 0 0 5px #000;
   }
 }
 
@@ -336,33 +337,19 @@
   .section4 {
     min-height: auto;
     max-height: initial;
-    height: sizem(743);
+    height: sizem(695);
     background-position: right calc(100% - 63px);
     background-size: 100% auto;
   }
 
   .title {
-    @include img_c_m(325, 23);
+    @include img_c_m(325, 70);
     font-size: sizem(20);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: normal;
-    text-align: center;
-    color: #542e71;
   }
 
   .desc {
-    @include img_c_m(325, 102);
+    @include img_c_m(340, 150);
     font-size: sizem(13);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.92;
-    letter-spacing: normal;
-    text-align: center;
-    color: #707070;
     // top: calc(50% - 9vw);
   }
 
@@ -389,7 +376,7 @@
     width: 100vw;
     height: sizem(318);
     min-height: auto;
-    top: sizem(351);
+    top: sizem(380);
     left: sizem(0);
     object-fit: cover;
   }

@@ -1,6 +1,7 @@
 <template>
   <div class="section3">
-    <img src="./s3/03_img.jpg" :alt="`${info.caseName}_img`" class="img">
+    <img src="./s3/03_img_full.jpg" :alt="`${info.caseName}_img`" class="img" v-if="!isMobile">
+    <img src="./s3/03_img.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isMobile">
     <img src="./s3/03_logo.png" :alt="`${info.caseName}_logo`" class="logo" data-aos="fade-up" data-aos-delay="200">
     <h1 class="title" data-aos="fade-up" data-aos-delay="400">
       30年貴族血脈　新藝術精工建築
@@ -42,34 +43,35 @@
   }
 }
 .img {
-  @include img_c_pc(1283, 83);
+  @include img_c_pc(1920, 0);
 }
 .logo {
   @include img_c_pc(371, 733);
 }
 
 .title {
-  @include img_c_pc(830, 848);
+  @include img_c_pc(830, 830);
   font-size: size(30);
-  font-weight: 900;
+  font-weight: 700;
   font-stretch: normal;
   font-style: normal;
   line-height: 2.6;
+  letter-spacing: 0.02em;
   letter-spacing: normal;
   text-align: center;
-  color: #542e71;
+  color: #fff;
 }
 
 .desc {
-  @include img_c_pc(830, 928);
-  font-size: size(15);
-  font-weight: 500;
+  @include img_c_pc(1100, 900);
+  font-size: size(18);
+  font-weight: 300;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.6;
-  letter-spacing: normal;
+  line-height: 1.8;
+  letter-spacing: 0.04em;
   text-align: center;
-  color: #fbfbfb;
+  color: #ffffff;
   // top: calc(50% - 9vw);
 }
 @keyframes tree {
@@ -141,27 +143,14 @@
   }
 
   .title {
-    @include img_c_m(325, 338);
+    @include img_c_m(325, 330);
     font-size: sizem(20);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.95;
-    letter-spacing: normal;
-    text-align: center;
-    color: #ffffff;
   }
 
   .desc {
     @include img_c_m(325, 381);
     font-size: sizem(13);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.92;
-    letter-spacing: normal;
-    text-align: center;
-    color: #ffffff;
+    font-weight: 300;
     // top: calc(50% - 9vw);
   }
 }

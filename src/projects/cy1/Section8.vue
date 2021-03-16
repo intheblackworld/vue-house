@@ -16,7 +16,7 @@
         <div class="item-desc" data-aos="fade-up" data-aos-delay="400">
           當層排氣、英國STUDOR排水防疫系統<br />
           莎普羅吊隱式除濕機，<br />
-          居家生活舒適乾爽
+          居家生活舒適乾爽。
         </div>
       </div>
       <div class="item">
@@ -30,19 +30,19 @@
       </div>
     </div>
     <img src="./s8/07_dark_bg.png" :alt="`${info.caseName}_img`" class="mask">
-    <h1 class="title" v-if="isPC" data-aos="fade-up" data-aos-delay="200">
+    <h1 class="title" v-if="isPC" data-aos="fade-up" data-aos-delay="200" data-aos-offset="-200">
       陽光、空氣、水 健康三要素，一宅收藏!
     </h1>
-    <h1 class="title" v-if="isMobile" data-aos="fade-up" data-aos-delay="200">
+    <h1 class="title" v-if="isMobile" data-aos="fade-up" data-aos-delay="200" data-aos-offset="-200">
       陽光、空氣、水 健康三要素<br />
       一宅收藏!
     </h1>
-    <h3 class="desc" v-if="isPC" data-aos="fade-up" data-aos-delay="400">
+    <h3 class="desc" v-if="isPC" data-aos="fade-up" data-aos-delay="400" data-aos-offset="-200">
       為滿足頂客族與首購小家庭需求，規劃精緻17-33坪1-3房型，<br />
       客廳優質採光零暗房，廚房擁有通風窗，小坪數產品也享前陽台。<br />
       貼心全客變服務，隨心設計專屬的居住空間，理想好生活就在這裡！
     </h3>
-    <h3 class="desc" v-if="isMobile" data-aos="fade-up" data-aos-delay="400">
+    <h3 class="desc" v-if="isMobile" data-aos="fade-up" data-aos-delay="400" data-aos-offset="-200">
       為滿足頂客族與首購小家庭需求，<br />
       規劃精緻17-33坪1-3房型，<br />
       客廳優質採光零暗房，廚房擁有通風窗，<br />
@@ -106,15 +106,16 @@
   }
 
   .item-desc {
-    @include img_c_pc(333, 121);
-    font-size: size(16);
-    font-weight: bold;
+    @include img_c_pc(333,105);
+    font-size: size(18);
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.06;
-    letter-spacing: normal;
+    line-height: 1.9;
+    letter-spacing:0.02em;
     text-align: center;
-    color: #606060;
+    color: #000b;
+    text-shadow: 0 0 10px #fff,0 0 3px #fff;
   }
 }
 
@@ -123,25 +124,25 @@
 }
 
 .title {
-  @include img_c_pc(736, 612);
+  @include img_c_pc(736, 622);
   font-size: size(34);
-  font-weight: 900;
+  font-weight: 700;
   font-stretch: normal;
   font-style: normal;
   line-height: 2.67;
-  letter-spacing: size(1.5);
+  letter-spacing: 0.04em;
   text-align: center;
   color: #ffffff;
 }
 
 .desc {
-  @include img_c_pc(736, 692);
-  font-size: size(16);
+  @include img_c_pc(736, 705);
+  font-size: size(18);
   font-weight: 400;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.67;
-  letter-spacing: size(1.5);
+  line-height:1.9;
+  letter-spacing: 0.04em;
   text-align: center;
   color: #ffffff;
 }
@@ -233,14 +234,8 @@
     .item-desc {
       @include img_r_m(190, 90, 30);
       font-size: sizem(13);
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
       line-height: 2.54;
-      letter-spacing: normal;
       text-align: left;
-      color: #606060;
-      color: #606060;
     }
   }
 
@@ -255,15 +250,9 @@
   .title {
     @include img_c_m(268, 612);
     top: auto;
-    bottom: sizem(203);
+    bottom: sizem(190);
     font-size: sizem(20);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.6;
-    letter-spacing: sizem(2);
-    text-align: center;
-    color: #ffffff;
     white-space: nowrap;
   }
 
@@ -272,13 +261,6 @@
     top: auto;
     bottom: sizem(34);
     font-size: sizem(13);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.92;
-    letter-spacing: normal;
-    text-align: center;
-    color: #ffffff;
     white-space: nowrap;
   }
 }

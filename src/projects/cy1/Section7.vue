@@ -64,13 +64,13 @@
 }
 
 .desc {
-  @include img_c_pc(736, 140);
+  @include img_c_pc(780, 140);
   font-size: size(18);
-  font-weight: 500;
+  font-weight: 400;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.44;
-  letter-spacing: normal;
+  line-height: 1.9;
+  letter-spacing: 0.04em;
   text-align: center;
   color: #ffffff;
   text-shadow: 0 0 5px rgba(3, 27, 114, 0.75);
@@ -155,29 +155,13 @@
   }
 
   .title {
-    @include img_c_m(325, 30);
+    @include img_c_m(325, 20);
     font-size: sizem(20);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.2;
-    letter-spacing: normal;
-    text-align: center;
-    color: #ffffff;
-    text-shadow: 0 0 5px rgba(3, 27, 114, 0.75);
   }
 
   .desc {
     @include img_c_m(325, 70);
-    font-size: sizem(13);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.92;
-    letter-spacing: normal;
-    text-align: center;
-    color: #ffffff;
-    text-shadow: 0 0 5px rgba(3, 27, 114, 0.75);
+    font-size: sizem(13.5);
   }
 
   .name {
