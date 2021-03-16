@@ -703,7 +703,7 @@ export default {
         },
         {
           img: require('./s5/05_slider1_3.jpg'),
-          name: '鷺江國民小學',
+          name: '鷺江國民中學',
         },
       ],
       slideList2: [
