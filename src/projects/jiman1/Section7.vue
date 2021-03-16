@@ -75,26 +75,23 @@
   // letter-spacing: size(0.53);
   text-align: left;
   font-weight: 500;
-  color: #c07f76;
+  color: #d67f76;
   white-space: nowrap;
 }
 
 .desc {
   @include img_l_pc(909, 189, 402);
   font-size: size(23);
-  line-height: size(48);
-  letter-spacing: size(0.83);
-  text-align: left;
+  line-height:2;
+  letter-spacing: 0.02em;
+  text-align: justify;
   font-weight: 400;
   color: #000;
   // white-space: nowrap;
   span {
-    font-size: size(23);
-    line-height: size(48);
-    letter-spacing: size(0.76);
-    text-align: left;
+    font-size: size(21);
     font-weight: 600;
-    color: #000;
+  line-height:2;
   }
 }
 
@@ -177,26 +174,16 @@
     // letter-spacing: sizem(0.53);
     text-align: left;
     font-weight: 500;
-    color: #c07f76;
+    color: #d67f76;
     white-space: normal;
   }
 
   .desc {
-    @include img_l_m(226.5, 94.5, 107.5);
+    @include img_l_m(230, 94.5, 107.5);
     font-size: sizem(12.5);
-    line-height: sizem(24.3);
-    letter-spacing: sizem(0);
-    text-align: left;
-    font-weight: 400;
-    color: #000;
-    // white-space: nowrap;
+    line-height: 1.9;
     span {
       font-size: sizem(12.5);
-      line-height: sizem(24.3);
-      letter-spacing: sizem(0.76);
-      text-align: left;
-      font-weight: 600;
-      color: #000;
     }
   }
 

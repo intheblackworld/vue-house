@@ -10,7 +10,7 @@
       id="fullpage"
     > -->
     <!-- <LeafFlow /> -->
-    <vue-lazy-component class="section relative" id="section1" @init="init" style="z-index: 3;">
+    <vue-lazy-component class="section  " id="section1" @init="init" style="z-index: 3;">
       <Section1 />
     </vue-lazy-component>
 

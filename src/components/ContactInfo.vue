@@ -336,6 +336,13 @@ export default {
     margin-top: 15px;
     border-radius: 18px !important;
   }
+  .f13 {
+  @include img_l_m(200,730, -90);
+}
+
+.f14 {
+  @include img_r_m(220, 670, -30);
+}
 }
 
 @media only screen and (max-width: 321px) {

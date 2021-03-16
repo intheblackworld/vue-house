@@ -96,10 +96,10 @@
 
 .desc {
   @include img_l_pc(599, 710, 234);
-  font-size: size(23.1);
-  line-height: size(48);
-  // letter-spacing: size(2.44);
-  text-align: left;
+  font-size: size(23);
+  line-height:2;
+  letter-spacing: 0.02em;
+  text-align: justify;
   font-weight: 400;
   color: #000;
 }
@@ -107,26 +107,24 @@
 .content {
   @include div_r_pc(542, 232, 712, 508);
   padding: size(16) size(25);
-  border: 1px solid #c07f76;
+  border: 1px solid #d67f76;
+  line-height: 1.6;
+  color: #000;
 }
 
 .content-title {
-  font-size: size(25.1);
-  line-height: size(31.2);
+  font-size: size(25);
   // letter-spacing: size(2.44);
   text-align: left;
   font-weight: 500;
-  color: #000;
 }
 
 .content-desc {
-  font-size: size(20.1);
-  line-height: size(31.2);
+  font-size: size(20);
   // letter-spacing: size(2.44);
   text-align: left;
   font-weight: 400;
-  color: #000;
-  margin-bottom: size(20);
+  margin-bottom: 1em;
 }
 
 /* Swipe */
@@ -313,7 +311,7 @@
 @media screen and (max-width: 767px) {
   .section3 {
     width: 100vw;
-    height: sizem(666);
+    height: sizem(700);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -324,7 +322,7 @@
   }
 
   .f4 {
-    @include img_l_m(158, 133, -10);
+    @include img_l_m(158, 150, -10);
     transform-origin: 0% 90%;
     transform: skewY(2deg);
     animation: flow1 4s 0s ease-in-out infinite alternate;
@@ -340,47 +338,31 @@
   }
 
   .desc {
-    @include img_r_m(210, 53.6, 26.5);
+    @include img_r_m(220, 50, 26);
     font-size: sizem(12.5);
-    line-height: sizem(24.3);
-    letter-spacing: sizem(0.52);
-    text-align: left;
-    font-weight: 400;
-    color: #000;
   }
 
   .content {
-    @include div_r_m(208, 130, 191, 27.5);
+    @include div_r_m(220, 172, 191, 26);
     padding: sizem(8) sizem(12);
-    border: 1px solid #c07f76;
+    border: 1px solid #d67f76;
   }
 
   .content-title {
-    font-size: sizem(10.8);
-    line-height: sizem(14.9);
-    // letter-spacing: sizem(2.44);
-    text-align: left;
-    font-weight: 500;
-    color: #000;
+    font-size: sizem(13);
   }
 
   .content-desc {
-    font-size: sizem(9.7);
-    line-height: sizem(14.9);
-    // letter-spacing: sizem(2.44);
-    text-align: left;
-    font-weight: 400;
-    color: #000;
-    margin-bottom: sizem(10);
+    font-size: sizem(12);
   }
 
   /* Swipe */
   .swipe {
-    width: sizem(321);
+    width: sizem(325);
     height: sizem(299);
     min-height: auto;
-    top: sizem(341);
-    left: sizem(27);
+    top: sizem(380);
+    left: sizem(25);
     object-fit: cover;
   }
 

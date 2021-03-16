@@ -1,11 +1,11 @@
 @import './function.scss';
 /* navigation */
-$nav_pc_height: size(140);
-$nav_tablet_height: 60px;
-$nav_phone_height: 0px;
-$logo_pc_width: calc(100vw * 413 / 1920);
+$nav_pc_height: size(80);
+$nav_tablet_height: size(60);
+$nav_phone_height:sizem(60);
+$logo_pc_width: size(300);
 $logo_tablet_width: calc(100vw * 160 / 1920);
-$logo_phone_width: sizem(161);
+$logo_phone_width: sizem(190);
 
 /* contactInfo */
 $contact_logo_pc_width: size(463);

@@ -48,6 +48,7 @@
   width: size(1190);
   margin-left: size(394);
   padding-top: size(94);
+  line-height:1.75;
 
   .item {
     width: size(358);
@@ -60,7 +61,6 @@
     }
     .item-name {
       font-size: size(19.3);
-      line-height: size(36.6);
       // letter-spacing: size(0.53);
       text-align: left;
       font-weight: 400;
@@ -72,12 +72,13 @@
     }
     .item-title {
       font-size: size(43);
-      line-height: size(55.6);
+      line-height:1.5;
       // letter-spacing: size(0.53);
       text-align: left;
       font-weight: 600;
-      color: #c07f76;
+      color: #d67f76;
       white-space: nowrap;
+      margin-bottom: 0.3em;
       span {
         font-size: size(29);
         font-weight: 400;
@@ -85,7 +86,6 @@
     }
     .item-subtitle {
       font-size: size(24.7);
-      line-height: size(52);
       // letter-spacing: size(0.53);
       text-align: left;
       font-weight: 600;
@@ -94,9 +94,8 @@
     }
     .item-desc {
       font-size: size(17);
-      line-height: size(29.7);
       // letter-spacing: size(0.53);
-      text-align: left;
+      text-align: justify;
       font-weight: 400;
       color: #000;
       // white-space: nowrap;
@@ -106,7 +105,6 @@
       top: auto;
       bottom: 0;
       font-size: size(15.8);
-      line-height: size(31.7);
       // letter-spacing: size(0.53);
       text-align: left;
       font-weight: 400;
@@ -142,7 +140,7 @@
     // letter-spacing: sizem(0.53);
     text-align: left;
     font-weight: 600;
-    color: #c07f76;
+    color: #d67f76;
     white-space: nowrap;
     span {
       font-size: sizem(25.4);
@@ -157,13 +155,14 @@
     text-align: left;
     font-weight: 600;
     color: #000;
+    margin: 0.2em 0 0 0;
     white-space: nowrap;
   }
   .item-desc {
     font-size: sizem(12.5);
     line-height: sizem(24.3);
     // letter-spacing: sizem(0.53);
-    text-align: left;
+    text-align: justify;
     font-weight: 400;
     color: #000;
     // white-space: nowrap;
@@ -178,6 +177,7 @@
     font-weight: 400;
     color: #000;
     white-space: nowrap;
+    margin: 1em 0 0 0;
     span {
       font-weight: 600;
     }
@@ -227,7 +227,7 @@
 @media screen and (max-width: 767px) {
   .section8 {
     width: 100vw;
-    height: sizem(683.6);
+    height: sizem(720);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');

@@ -17,7 +17,7 @@
         </div>
       </div>
     </div>
-    <img src="./s4/04_flower.png" :alt="`${info.caseName}_f`" class="f5">
+    <div class="f5"><img src="./s4/04_flower.png" :alt="`${info.caseName}_f`"></div>
     <img src="./s4/04_title.png" :alt="`${info.caseName}_f`" class="title-img">
     <div class="desc" v-if="isPC">
       珍藏大安富境最後一片濱水波光，公園水岸雙景觀，富饒市中心擁攬大山大水無邊眼界；收藏公館師大景美核心繁華，羅斯福路雙商圈齊鳴綻放。集文教區靜謐素雅，商業區富庶豐饒，政經區自若安居，景觀區悠然韻味，入則寧靜，出則富麗，藏景藏靜藏繁華，簡單，也不簡單。
@@ -134,7 +134,7 @@
   min-height: size(900);
   max-height: size(1080);
   position: relative;
-  background-color: #c07f76;
+  background-color: #d67f76;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
@@ -175,23 +175,23 @@
 
 .desc {
   @include img_l_pc(905, 724, 437);
-  font-size: size(23.1);
-  line-height: size(48);
-  letter-spacing: size(0.1);
-  text-align: left;
+  font-size: size(23);
+  line-height:2;
+  letter-spacing: 0.02em;
+  text-align: justify;
   font-weight: 400;
   color: #000;
 }
 
 .content {
-  @include div_r_pc(331, 810, 139, 205);
+  @include div_r_pc(331, 780, 139, 205);
   border: 1px solid #fff;
-  padding: size(60) size(95);
+  padding: size(50) size(0);
+  font-size: size(22);
+  line-height: 1.5;
 }
 
 .content-title {
-  font-size: size(18.1);
-  line-height: size(34);
   // letter-spacing: size(2.44);
   text-align: center;
   font-weight: 500;
@@ -199,8 +199,7 @@
 }
 
 .content-desc {
-  font-size: size(23.5);
-  line-height: size(42);
+  font-size:1.26em;
   // letter-spacing: size(2.44);
   text-align: center;
   font-weight: 400;
@@ -392,7 +391,7 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-    height: sizem(858);
+    height: sizem(880);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -403,10 +402,11 @@
   }
 
   .f5 {
-    @include img_r_m(193, 25, -20);
+    @include img_r_m(250, 30, -60);
     transform-origin: 100% 80%;
     transform: skewY(2deg);
     animation: flow1 3s 0s ease-in-out infinite alternate;
+    img{width: 100%;transform: scaleX(-1);}
   }
   @keyframes flow1 {
     to {
@@ -419,28 +419,26 @@
   }
 
   .desc {
-    @include img_r_m(224, 157, 28.55);
+    @include img_r_m(224, 153, 28.55);
     font-size: sizem(12.5);
-    line-height: sizem(24.3);
-    letter-spacing: sizem(0.25);
-    text-align: left;
-    font-weight: 400;
-    color: #000;
   }
 
   .content {
-    @include div_r_m(321, 217, 656, 27);
+    @include div_r_m(321, 200, 656, 27);
     border: none;
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+      font-size: sizem(12.8);
+  line-height: 1.5;
   }
 
   .content-item {
     width: sizem(100);
     margin-bottom: sizem(10);
+    position: relative;
     &.white {
       width: sizem(100);
       height: sizem(100);
@@ -456,22 +454,18 @@
       }  
     }
     .content-title {
-      font-size: sizem(12.8);
-      line-height: sizem(21);
-      // letter-spacing: sizem(2.44);
-      text-align: center;
-      font-weight: 600;
-      color: #fff;
+        font-weight: 600;
     }
 
     .content-desc {
-      font-size: sizem(15.8);
-      line-height: sizem(21);
-      // letter-spacing: sizem(2.44);
-      text-align: center;
-      font-weight: 400;
-      color: #fff;
       margin-bottom: sizem(5);
+    }
+    &:nth-child(4),
+    &:nth-child(5){
+      &::after{content: "";
+      position: absolute;right: -0.6em;top: 0.4em;
+       width: 1px;background: #fffc;height: 2.8em;
+      }
     }
   }
 

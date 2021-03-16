@@ -21,7 +21,9 @@
     </div>
     <div v-else>
       <img src="./mobile/02/02_flower_m.png" :alt="`${info.caseName}_f3`" class="f3">
-      <img src="./mobile/02/02_img_m.jpg" :alt="`${info.caseName}_img`" class="img">
+      <div class="img">
+      <img src="./mobile/02/02_img_m.jpg" :alt="`${info.caseName}_img`">
+      </div>
       <img src="./mobile/02/02_text_m.png" :alt="`${info.caseName}_img`" class="text">
       <div class="desc">
         懂收藏的人，有旁人難及的自豪氣概<br />
@@ -42,13 +44,13 @@
 
 .section2 {
   width: 100%;
-  height: size(1080);
+  height: 100vh;
   min-height: size(900);
   max-height: size(1080);
   // overflow: hidden;
   position: relative;
   background-size: auto;
-  background-color: #c07f76;
+  background-color: #d67f76;
 }
 
 .bg-img {
@@ -79,16 +81,18 @@
 }
 
 .img {
-  @include img_l_pc(1920, 0, 0);
+  @include img_l_pc(430, 0, 0);
+  width: 100%;
   top: auto;
   bottom: 0;
 }
 
 .title {
   @include img_l_pc(917, 243, 241);
+  top: calc(50% + 100vw * (260 - 540) / 1920);
   font-size: size(53.1);
-  line-height: size(55.6);
-  letter-spacing: size(2.44);
+  line-height: 1.5;
+  letter-spacing: 0.046em;
   text-align: left;
   font-weight: 300;
   color: #000;
@@ -97,9 +101,9 @@
 
 .subtitle {
   @include img_l_pc(406, 314, 727);
+  top: calc(50% + 100vw * (345 - 540) / 1920);
   font-size: size(30.7);
-  line-height: size(49.6);
-  // letter-spacing: size(2.44);
+  line-height: 1.5;
   text-align: left;
   font-weight: 400;
   color: #000;
@@ -108,9 +112,10 @@
 
 .desc {
   @include img_r_pc(618, 98, 48);
+  top: calc(50% + 100vw * (134 - 540) / 1920);
   font-size: size(23);
-  line-height: size(57.2);
-  // letter-spacing: size(2.44);
+  line-height:2.48;
+  letter-spacing: 0.02em;
   text-align: left;
   font-weight: 400;
   color: #fff;
@@ -133,9 +138,9 @@
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    min-height: sizem(418 + 247);
-    max-height: sizem(418 + 247);
-    height: sizem(418 + 247);
+    min-height: sizem(690);
+    max-height: sizem(690);
+    height: sizem(690);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -164,20 +169,22 @@
     animation: flow1 3s 0s ease-in-out infinite alternate;
   }
   .text {
-    @include img_l_m(46, 31, 56);
+    @include img_l_m(48, 31, 50);
   }
 
   .img {
     @include div_l_m(375, 247, 0, 0);
+    width: 100%;
     top: auto;
-    bottom: 0;
+    bottom: 0;overflow:auto;
+    img{height: 100%;}
   }
 
   .desc {
-    @include img_r_m(202, 164, 60);
-    font-size: sizem(12.2);
-    line-height: sizem(28.5);
-    // letter-spacing: size(2.44);
+    @include img_r_m(300, 164, 55);
+    font-size: sizem(12.5);
+    line-height:2.4;
+    letter-spacing:0.03em;
     text-align: right;
     font-weight: 400;
     color: #fff;

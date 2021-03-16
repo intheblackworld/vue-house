@@ -27,11 +27,11 @@
 
 .section9 {
   width: size(1920);
-  height: size(1112);
-  min-height: size(1112);
-  max-height: size(1112);
+  height: size(1062);
+  min-height: size(1062);
+  max-height: size(1062);
   position: relative;
-  background-color: #c07f76;
+  background-color: #d67f76;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
@@ -58,7 +58,7 @@
 .text-img {
   @include img_c_pc(383, 0);
   top: auto;
-  bottom: size(122);
+  bottom: size(82);
 }
 
 /* Swipe */
@@ -258,7 +258,7 @@
   .text-img {
     @include img_c_m(132, 227);
     top: auto;
-    bottom: size(0);
+    bottom: 0;
   }
 
   .img {

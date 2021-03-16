@@ -28,7 +28,7 @@
         台灣處於地震帶上，對建築結構格外要求，除了日本國土開發嚴謹精工，在結構安全上更有參與台中機場工程的「聯邦工程」為結構顧問，以國家交通建設的高標，為自慢藏的基礎工程層層把關監督，並請「台灣大學地震中心」以第三方公證單位，來作結構外審，確保建築骨架的每一道環節，安全審核滴水不露，經得起公正單位與專業數據的檢驗，才是真正安全安心的自慢建築。
       </div>
       <div class="desc" v-if="isMobile">
-        自慢藏採用中鋼、新日鐵最頂級鋼材，高規格耐震工法，獲國家耐震建築標章認證，可達超越法規標準的6級耐震力，更能保障生命財產安全。
+        除了日本國土開發嚴謹精工，在結構安全上更有參與台中機場工程的「聯邦工程」為結構顧問，為自慢藏的基礎工程層層把關監督，並請「台灣大學地震中心」結構外審，經得起公正單位與專業數據的檢驗，才是真正安全安心的自慢建築。
       </div>
     </div>
     <div class="item3">
@@ -39,7 +39,7 @@
         台灣現行的建築法規中，對於建築物耐震力的標準為0.24g，是指建築物可承受地震作用力所產生加速度的數值，相當於可抗5級地震的震度。自慢藏採用中鋼、新日鐵最頂級鋼材，高規格耐震工法，獲國家耐震建築標章認證，可達超越法規標準的6級耐震力，更能保障生命財產安全。
       </div>
       <div class="desc" v-if="isMobile">
-        除了日本國土開發嚴謹精工，在結構安全上更有參與台中機場工程的「聯邦工程」為結構顧問，為自慢藏的基礎工程層層把關監督，並請「台灣大學地震中心」結構外審，經得起公正單位與專業數據的檢驗，才是真正安全安心的自慢建築。
+        自慢藏採用中鋼、新日鐵最頂級鋼材，高規格耐震工法，獲國家耐震建築標章認證，可達超越法規標準的6級耐震力，更能保障生命財產安全。
       </div>
     </div>
     <div class="item4">
@@ -67,7 +67,7 @@
   // overflow: hidden;
   position: relative;
   background-size: auto;
-  background-color: #c07f76;
+  background-color: #d67f76;
 }
 
 .bg-img {
@@ -86,49 +86,49 @@
 }
 
 .logo1 {
-  @include img_l_pc(233, 267 + 54, 478);
+  @include img_l_pc(233, 307 + 54, 478);
 }
 
 .logo2 {
-  @include img_l_pc(246, 278 + 54, 738);
+  @include img_l_pc(246, 318 + 54, 738);
 }
 
 .title-img {
-  @include img_l_pc(132, 0, 174);
+  @include img_l_pc(132, 40, 174);
 }
 
 .item1 {
-  @include img_l_pc(506, 0, 483);
+  @include img_l_pc(510, 40, 483);
 }
 
 .item2 {
-  @include img_r_pc(518, 0, 231);
+  @include img_r_pc(540, 40, 231);
 }
 
 .item3 {
-  @include img_l_pc(506, 496 + 54, 483);
+  @include img_l_pc(510, 536 + 54, 483);
 }
 
 .item4 {
-  @include img_r_pc(518, 456 + 54, 231);
+  @include img_r_pc(540, 496 + 54, 231);
 }
 
 .title {
   font-size: size(36);
-  line-height: size(40);
+  line-height:1.3;
   // letter-spacing: size(0.53);
   text-align: left;
   font-weight: 600;
   color: #fff;
-  margin-bottom: size(30);
+  margin-bottom:0.7em;
   // white-space: nowrap;
 }
 
 .desc {
   font-size: size(23);
-  line-height: size(43);
-  // letter-spacing: size(0.83);
-  text-align: left;
+  line-height:1.9;
+  letter-spacing: 0.02em;
+  text-align: justify;
   font-weight: 400;
   color: #000;
 }
@@ -186,17 +186,17 @@
   }
 
   .item1 {
-    @include img_c_m(270, 220.6);
+    @include img_c_m(290, 220.6);
   }
 
-  .item2 {
+  .item3 {
     @include img_c_m(270, 541.6);
     .desc {
       @include img_r_m(140, 45, 0);
     }
   }
 
-  .item3 {
+  .item2 {
     @include img_c_m(270, 749.6);
   }
 
@@ -207,30 +207,22 @@
   .title {
     font-size: sizem(20.4);
     line-height: sizem(22.7);
-    // letter-spacing: sizem(0.53);
-    text-align: left;
-    font-weight: 700;
-    color: #fff;
     margin-bottom: sizem(10);
     white-space: nowrap;
   }
 
   .desc {
     font-size: sizem(12.5);
-    line-height: sizem(22.6);
-    // letter-spacing: sizem(0.83);
-    text-align: left;
-    font-weight: 400;
-    color: #000;
+    letter-spacing: 0;
   }
 
   .content {
-    @include div_l_m(142.6, 126, 175, 0);
+    @include div_l_m(160, 120, 180, 0);
     border: 1px solid #fff;
-    padding: sizem(5);
-    font-size: sizem(8.6);
-    line-height: sizem(22.1);
-    letter-spacing: sizem(-1.3);
+    padding: sizem(10) 0 0  sizem(5);
+    font-size: sizem(12);
+    line-height:1.6;
+    letter-spacing:0;
     text-align: left;
     font-weight: 400;
     color: #fff;

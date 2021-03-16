@@ -31,7 +31,7 @@
         名校雲集 養浩瀚眼界
       </div>
       <div class="content-desc">
-        台灣大學、師大公館校區、台灣科技大學、中國科技大學、世新大學、靜心高中、<br />
+        台灣大學、師大公館校區、台灣科技大學、中國科技大學、世新大學、靜心高中、<br v-if="!isMobile" />
         景美女中、景美國中、民族國中
       </div>
     </div>
@@ -46,7 +46,7 @@
   min-height: size(1085);
   max-height: size(1085);
   position: relative;
-  background-color: #c07f76;
+  background-color: #d67f76;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
@@ -92,22 +92,21 @@
 
 .content-desc {
   font-size: size(23);
-  line-height: size(48);
-  letter-spacing: size(0.53);
-  text-align: left;
+  line-height:2;
+  letter-spacing: 0.02em;
+  text-align: justify;
   font-weight: 400;
   color: #000;
-  margin-bottom: size(55);
+  margin-bottom: 2.39em;
 }
 
 .content-title {
   font-size: size(30);
-  line-height: size(48);
-  letter-spacing: size(0.7);
+  line-height:2;
+  letter-spacing: 0.02em;
   text-align: left;
   font-weight: 500;
   color: #000;
-  margin-bottom: size(10);
 }
 
 /* Swipe */
@@ -320,13 +319,13 @@
 
   .content {
     @include div_r_m(213, 240, 365, 28.5);
+  line-height: 1.6;
   }
 
   .content-desc {
     font-size: sizem(12);
-    line-height: sizem(24.3);
     letter-spacing: sizem(-1.5);
-    text-align: left;
+    text-align: justify;
     font-weight: 400;
     color: #000;
     margin-bottom: sizem(18.8);
@@ -334,7 +333,6 @@
 
   .content-title {
     font-size: sizem(15.3);
-    line-height: sizem(21.5);
     letter-spacing: sizem(0.7);
     text-align: left;
     font-weight: 500;

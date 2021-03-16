@@ -3,18 +3,18 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
-          <img class="logo" src="@/assets/img/nav-logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" v-if="isPC" />
-          <img class="logo" src="@/projects/jiman1/mobile/01/menu_logo_m.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" v-if="isMobile" />
-          <div class="menu" @click="toggleSidebar" v-show="!isOpen">
-            <!-- <font-awesome-icon icon="bars" /> -->
-            <img src="@/projects/jiman1/mobile/01/menu_btn_m.png" alt="">
+          <img class="logo" src="../assets/img/nav-logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }"/>
+          <!-- <img class="logo" src="../assets/img/nav-logo_m.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" v-if="isMobile" />  -->
+          <div class="menu" @click="toggleSidebar" v-if="isMobile">
+            <div :class="`btn ${isOpen ? 'open' : ''}`"><span></span></div>
           </div>
-          <div :class="`mask ${isOpen ? 'open' : ''}`">
+          <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar">
           </div>
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
-            <div class="close" @click="isOpen = false">
+       <!--     <div class="close" @click="isOpen = false" v-if="isMobile">
               <img src="../assets/img/close.png" alt="">
-            </div>
+            <img src="@/projects/jiman1/mobile/01/menu_btn_m.png" alt="">
+            </div> -->
             <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: offset }" v-for="item in list" class="flex-c" @click="toggleSidebar">
               <span class="link">
                 <span>
@@ -133,7 +133,7 @@ export default {
   width: $logo_pc_width;
   height: auto;
   position: absolute;
-  left: size(0);
+  left:0;
   display: block;
   top: 50%;
   transform: translate(3%, -50%);
@@ -163,78 +163,33 @@ export default {
 
   .link {
     color: $nav_link_color;
-    height: 22px;
+    height:100%;
     text-align: center;
     display: block;
     cursor: pointer;
     padding: 0 0px;
-    // margin: 0 10px;
     transition: all 0.8s;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    // overflow: hidden;
-    // border-right: 1px solid $nav_link_hover_bg;
 
     &:hover {
       color: $nav_link_hover_color;
-      // background: $nav_link_hover_bg;
     }
 
-    // &::before {
-    //   content: '';
-    //   width: 0%;
-    //   height: 100%;
-    //   display: block;
-    //   background: $nav_link_hover_bg; // second bg
-    //   position: absolute;
-    //   transform: skewX(-20deg);
-    //   left: -10%;
-    //   opacity: 1;
-    //   top: 0;
-    //   z-index: 2;
-    //   transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
-    //   // box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
-    // }
-
-    // &::after {
-    //   content: '';
-    //   width: 0%;
-    //   height: 100%;
-    //   display: block;
-    //   background: #fff; // first bg
-    //   position: absolute;
-    //   transform: skewX(-20deg);
-    //   left: -10%;
-    //   opacity: 0;
-    //   top: 0;
-    //   z-index: 1;
-    //   transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
-    //   // box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
-    // }
-    // &:hover::before,
-    // &:hover::before {
-    //   opacity: 1;
-    //   width: 116%;
-    // }
-    // &:hover::after,
-    // &:hover::after {
-    //   opacity: 1;
-    //   width: 120%;
-    // }
 
     .title {
-      font-size: size(36.3) !important;
+      font-size: size(30) !important;
       font-weight: bold;
       position: relative;
       font-weight: 400;
-      width: size(200);
+      width:5.5em;
       z-index: 3;
-      // box-shadow: 0 0px 0px 1px #000;
+      letter-spacing: 0.05em;
       border-right: 1px solid #000;
       > span {
-        font-size: 24px !important;
+        font-size:size(24)!important;
       }
     }
 
@@ -263,7 +218,7 @@ export default {
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .navigation {
-    height: 70px;
+    height: $nav_tablet_height;
     justify-content: center;
     &.min {
       .logo {
@@ -310,7 +265,7 @@ export default {
     // background-color: transparent !important;
     height: $nav_phone_height;
     background-color: $nav_bg;
-    height: 70px;
+  //  height: 70px;
     justify-content: center;
     &.min {
       .logo {
@@ -336,7 +291,7 @@ export default {
     width: 100vw;
     top: $nav_phone_height;
     right: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background:#d67f76;
     position: fixed;
     height: calc(100vh - #{$nav_phone_height});
     opacity: 0;
@@ -357,15 +312,50 @@ export default {
   .menu {
     display: block;
     position: absolute;
-    top: 15px;
-    right: 15px;
-    width: sizem(31.5);
-    height: sizem(31.5);
-    padding-top: sizem(8);
+    top: 0;
+    right:0;
+    width: $nav_phone_height;
+    height: 100%;
+    padding-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     // background-color: #af1f24;
+
     z-index: 112;
+    .btn{width:60%;position: absolute;left: 20%;top: 20%;
+    color: #fff;height: 60%;
+      &::after{content: "menu";font-size: 13px;position: absolute;left: 0; right: 0;bottom: 0;}
+      span{ width: 100%;height:100%;display: block;position: absolute;left: 0; top: 0;
+        &::after,
+        &::before{
+          content: "";display: block;margin-bottom: 19%;
+          width: 100%;height: 20%;border: solid currentColor;border-width: 1px 0 1px 0;
+          transition: all .5s;
+        }
+      }
+      &.open{
+        &::after{content: "close";}
+        span{ 
+          &::after,
+          &::before{
+            margin-bottom: 0%;position: absolute;left: 5%; top: 25%;
+            width: 90%;height:1px;border-width:0;
+            background: currentColor;
+            transform: rotate(45deg);
+            transform-origin: 50% 50%;
+          }
+          &::after{
+            transform: rotate(-45deg);
+            transform-origin: 50% 50%;}
+        }
+      }
+    }
+
+
+
     img {
-      width: 100%;
+       width: sizem(35);
     }
     svg {
       width: sizem(35);
@@ -480,8 +470,10 @@ export default {
         }
 
         .title {
-          width: 100% !important;
+          width:5em;
           font-size: sizem(24) !important;
+          border-right: 1px solid #000;
+          border-left: 1px solid #000;
         }
       }
     }

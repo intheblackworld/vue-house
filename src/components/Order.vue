@@ -289,6 +289,7 @@ export default {
   .order-top {
     position: relative;
     overflow: hidden;
+    z-index: 3;
   }
   .order-title {
     font-family: $family2;
@@ -407,6 +408,10 @@ export default {
 /* 螢幕尺寸標準 */
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
+  
+.f12 {
+  @include img_r_m(415, -65, -50);
+}
   .order-bg {
     // background-image: $order_bg_image_m;
     background-size: cover;

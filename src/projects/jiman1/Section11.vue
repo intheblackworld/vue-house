@@ -31,7 +31,6 @@
   // overflow: hidden;
   position: relative;
   background-size: auto;
-  // background-color: #c07f76;
 }
 
 .bg-img {
@@ -86,22 +85,19 @@
   @include div_l_pc(625, 163, 398, 252);
   padding: size(17) size(26);
   border: 1px solid #000;
+  text-align: center;
+  line-height: 1.4;
 }
 
 .content-title {
   font-size: size(50);
-  line-height: size(62.2);
-  // letter-spacing: size(2.44);
-  text-align: center;
   font-weight: 800;
   color: #231815;
 }
 
 .content-desc {
   font-size: size(36.1);
-  line-height: size(64.2);
-  // letter-spacing: size(2.44);
-  text-align: center;
+  letter-spacing: 0.03em;
   font-weight: 300;
   color: #cb7f76;
 }
