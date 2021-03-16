@@ -20,7 +20,7 @@
         </div> -->
       </div>
     </div>
-    <div class="title" data-aos="fade-up" data-aos-delay="200">新店站<span>5</span>分鐘 300秒</div>
+    <div class="title" data-aos="fade-up" data-aos-delay="200">新店站<span>300</span>秒</div>
     <div class="desc"  data-aos="fade-up" data-aos-delay="400">
       青潭至新店捷運站之間，5分鐘車程，房價輕鬆省⼀半！首站上車永遠有座位，3站大坪林雙捷運環狀線與綠線交會、4站景美站瞬間切換近北市，新店客運總站交通樞紐，高速串聯台北市各大菁華商圈。
     </div>
@@ -244,7 +244,7 @@
   font-style: normal;
   line-height: 1.43;
   letter-spacing: normal;
-  text-align: center;
+  text-align: left;
   color: #ffffff;
   white-space: nowrap;
 

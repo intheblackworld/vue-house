@@ -58,6 +58,13 @@
 
 .child1 {
   @include img_l_pc(336, -285, 295);
+  transform-origin:center bottom;
+  animation:tree 3s linear alternate infinite ;
+}
+@keyframes tree {
+  to {
+    transform: skew(-6deg);
+  }
 }
 
 /* Swipe */

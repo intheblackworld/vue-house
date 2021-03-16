@@ -18,11 +18,11 @@
       </div>
     </div>
     <div class="balloon-bg" v-if="isPC">
-      <img src="./s5/06_balloon_1.png" :alt="`${info.caseName}_bg`" class="balloon1"  data-aos="fade-up" data-aos-delay="200">
-      <img src="./s5/06_balloon_2.png" :alt="`${info.caseName}_bg`" class="balloon2"  data-aos="fade-up" data-aos-delay="300">
+      <img src="./s5/06_balloon_1.png" :alt="`${info.caseName}_bg`" class="balloon1">
+      <img src="./s5/06_balloon_2.png" :alt="`${info.caseName}_bg`" class="balloon2">
     </div>
-    <img src="./s5/06_child_1.png" :alt="`${info.caseName}_bg`" class="child1" v-if="isPC"  data-aos="fade-up" data-aos-delay="400">
-    <img src="./s5/06_child_2.png" :alt="`${info.caseName}_bg`" class="child2" v-if="isPC"  data-aos="fade-up" data-aos-delay="600">
+    <img src="./s5/06_child_1.png" :alt="`${info.caseName}_bg`" class="child1" v-if="isPC" >
+    <img src="./s5/06_child_2.png" :alt="`${info.caseName}_bg`" class="child2" v-if="isPC" >
     <img src="./s5/06_img_1.jpg" :alt="`${info.caseName}_bg`" class="img1" v-if="isPC">
     <img src="./s5/06_img_2.jpg" :alt="`${info.caseName}_bg`" class="img2" v-if="isPC">
     <div class="title" v-if="isPC"  data-aos="fade-up" data-aos-delay="200">
@@ -99,18 +99,29 @@
 
 .child1 {
   @include img_r_pc(400, 70, 42);
+      transform: skew(5deg);
+      transform-origin: 50% 100%;
+      animation: an 2.5s linear infinite alternate;
 }
 
 .child2 {
   @include img_l_pc(130, 244, 180);
+      transform: skew(3deg);
+      transform-origin: 50% 100%;
+      animation: an 2.5s -2.5s linear infinite alternate;
 }
 
 .balloon1 {
   @include img_l_pc(65, 100, 383);
+      transform: translateY(10%);
+      animation: an 2.5s infinite alternate;
 }
 
 .balloon2 {
   @include img_r_pc(52, 42, 408);
+      transform: translateY(10%);
+      animation: an 2s -0.5s infinite alternate;
+
 }
 
 .balloon-bg {
