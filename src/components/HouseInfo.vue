@@ -93,12 +93,10 @@ export default {
     color: $house_label_color;
     margin-bottom: 0;
     margin-right: 0.8em;
-
     white-space: nowrap;
     font-family: $family3;
-    //flex: 0 0 6em;
+    flex: 0;
     text-align: right;
-    //width: 6em;
     padding-right: 0.8em;
   }
 
