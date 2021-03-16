@@ -59,6 +59,7 @@
     100% {
       height: 0;
       opacity: 0;
+      top: -300px;
       // display: none !important; not work
       z-index: -1000 !important;
     }

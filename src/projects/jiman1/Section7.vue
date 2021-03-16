@@ -1,22 +1,23 @@
 <template>
   <div class="section7">
-    <div v-if="!isMobile">
-      <img src="./s7/07_img_1.jpg" :alt="`${info.caseName}_img`" class="img1">
-      <img src="./s7/07_img_2.jpg" :alt="`${info.caseName}_img`" class="img2">
-      <img src="./s7/07_img_3.jpg" :alt="`${info.caseName}_img`" class="img3">
-      <img src="./s7/07_logo.png" :alt="`${info.caseName}_img`" class="logo">
-      <img src="./s7/07_flower.png" :alt="`${info.caseName}_f`" class="f6">
+    <img src="./s7/07_img_1.jpg" :alt="`${info.caseName}_img`" class="img1">
+    <img src="./s7/07_img_2.jpg" :alt="`${info.caseName}_img`" class="img2">
+    <img src="./s7/07_img_3.jpg" :alt="`${info.caseName}_img`" class="img3">
+    <img src="./s7/07_logo.png" :alt="`${info.caseName}_img`" class="logo">
+    <img src="./s7/07_flower.png" :alt="`${info.caseName}_f`" class="f6" v-if="isPC">
 
-      <div class="title">
-        台北水岸第一次 日本國土開發營造
-      </div>
-      <div class="desc">
-        創立於1951年的JDC日本國土開發株式會社，以確實的工法技術與匠心獨具的營建方式，創造多項世界級重大建設而聞名於世。自慢藏，日本國土開發獻給台北水岸第一次的純日系SRC鋼骨制震豪景觀邸，承襲70年日本血統的嚴謹職人自慢精工，結合SC及RC雙重優勢，CFT柱內灌漿，以高壓灌漿混凝土入鋼柱；採用最高10000psi高強度混凝土，水泥磅數超越法規標準；SA級鋼筋續接器，與捷運、高鐵、台北101享有同等規格的安全守護。日系精工，最高規格，打造台灣水岸最自慢的建築地標。<br /><br />
-        【經典業績】<span>東京羽田機場、關西空港、瀨戶大橋、北陸新幹線、三井花園飯店</span>
-      </div>
+    <div class="title">
+      台北水岸第一次 日本國土開發營造
     </div>
-    <div v-else>
+    <div class="desc" v-if="isPC">
+      創立於1951年的JDC日本國土開發株式會社，以確實的工法技術與匠心獨具的營建方式，創造多項世界級重大建設而聞名於世。自慢藏，日本國土開發獻給台北水岸第一次的純日系SRC鋼骨制震豪景觀邸，承襲70年日本血統的嚴謹職人自慢精工，結合SC及RC雙重優勢，CFT柱內灌漿，以高壓灌漿混凝土入鋼柱；採用最高10000psi高強度混凝土，水泥磅數超越法規標準；SA級鋼筋續接器，與捷運、高鐵、台北101享有同等規格的安全守護。日系精工，最高規格，打造台灣水岸最自慢的建築地標。<br /><br />
+      【經典業績】<span>東京羽田機場、關西空港、瀨戶大橋、北陸新幹線、三井花園飯店</span>
+    </div>
+    <div class="desc" v-if="isMobile">
+      創立於1951年的JDC日本國土開發株式會社，以創造多項世界級重大建設而聞名於世。自慢藏，日本國土開發獻給台北水岸第一次的純日系SRC鋼骨制震豪景觀邸，承襲70年日本血統的嚴謹職人自慢精工，結合SC及RC雙重優勢，CFT柱內灌漿，最高10000psi高強度混凝土，SA級鋼筋續接器，與捷運、高鐵、台北101同等規格的安全守護。日系精工，最高規格，打造台灣水岸最自慢的建築地標。<br /><br />
 
+      【經典業績】<span>東京羽田機場、關西空港
+        瀨戶大橋、北陸新幹線、三井花園飯店</span>
     </div>
   </div>
 </template>
@@ -125,9 +126,9 @@
 @media screen and (max-width: 767px) {
   .section7 {
     width: 100vw;
-    min-height: sizem(470);
-    max-height: sizem(1337);
-    height: sizem(1337);
+    min-height: sizem(567.2 + 85.4);
+    max-height: sizem(567.2 + 85.4);
+    height: sizem(567.2 + 85.4);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -148,66 +149,67 @@
       position: relative;
     }
   }
-  .f3 {
-    @include img_r_m(233, 418, 0);
-    transform-origin: 100% 90%;
-    transform: skewY(2deg);
-    animation: flow1 3s 0s ease-in-out infinite alternate-reverse;
-    z-index: 3;
+  .img1 {
+    @include img_l_m(186.7, 0, 0);
+    top: auto;
+    bottom: sizem(90.5);
   }
 
-  .f4 {
-    @include img_l_m(250, 0, 0);
+  .img2 {
+    @include img_r_m(186.7, 0, 0);
     top: auto;
-    bottom: sizem(-30);
-    transform-origin: 0% 90%;
-    animation: flow1 2.3s 0s ease-in-out infinite alternate;
-    transform: skewY(2deg);
-    z-index: 3;
+    bottom: sizem(90.5);
   }
-  .f5 {
-    @include img_r_m(160, 0, 0);
+  .img3 {
+    @include img_l_m(375, 0, 0);
     top: auto;
-    bottom: sizem(-780);
-    transform-origin: 100% 90%;
-    animation: flow1 2.3s 0s ease-in-out infinite alternate;
-    transform: skewY(3deg);
-    z-index: 3;
-    img {
-      width: 100%;
-      transform: scaleY(-1);
+    bottom: 0;
+  }
+
+  .logo {
+    @include img_r_m(47.3, 17.2, 42.7);
+  }
+
+  .title {
+    @include img_l_m(156, 29.7, 105.2);
+    font-size: sizem(19.5);
+    line-height: sizem(24.5);
+    // letter-spacing: sizem(0.53);
+    text-align: left;
+    font-weight: 500;
+    color: #c07f76;
+    white-space: normal;
+  }
+
+  .desc {
+    @include img_l_m(226.5, 94.5, 107.5);
+    font-size: sizem(12.5);
+    line-height: sizem(24.3);
+    letter-spacing: sizem(0);
+    text-align: left;
+    font-weight: 400;
+    color: #000;
+    // white-space: nowrap;
+    span {
+      font-size: sizem(12.5);
+      line-height: sizem(24.3);
+      letter-spacing: sizem(0.76);
+      text-align: left;
+      font-weight: 600;
+      color: #000;
     }
   }
 
-  .t1 {
-    @include img_r_m(21.2, 70, 90);
+  .f6 {
+    @include img_l_m(444, 34, 0);
+    transform-origin: 0% 90%;
+    transform: skewY(2deg);
+    animation: flow1 4s 0s ease-in-out infinite alternate;
   }
-  .t2 {
-    @include img_r_m(10.1, 305, 66);
-  }
-  .t3 {
-    @include img_r_m(292, 934, 38);
-  }
-  .t4 {
-    @include img_r_m(298, 610, 34);
-    top: auto;
-    bottom: sizem(185);
-  }
-
-  // .logo {
-  //   @include img_r_m(479, 707, 310);
-  // }
-
-  .st1 {
-    @include img_l_m(17, 128, 157);
-  }
-
-  .st2 {
-    @include img_l_m(16, 128, 128);
-  }
-
-  .st3 {
-    @include img_l_m(17, 128, 97);
+  @keyframes flow1 {
+    to {
+      transform: skewY(0);
+    }
   }
 }
 </style>

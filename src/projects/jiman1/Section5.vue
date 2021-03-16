@@ -8,24 +8,24 @@
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
-        <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+        <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
-        <!-- <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-        </div> -->
       </div>
     </div>
-    <div class="swipe-btns absolute flex-ac flex-jb">
+    <div class="swipe-btns absolute flex-ac flex-jb" v-if="isPC">
       <img src="./all/slider_left.png" alt="" class="prev-btn" @click="decIndex">
       <img src="./all/slider_right.png" alt="" class="next-btn" @click="addIndex">
     </div>
-    <img src="./s5/05_flower.png" :alt="`${info.caseName}_f`" class="f6">
-    <img src="./s4/04_title.png" :alt="`${info.caseName}_f`" class="title-img">
+    <img src="./s5/05_flower.png" :alt="`${info.caseName}_f`" class="f6" v-if="isPC">
+    <img src="./mobile/05/05_flower_m.png" :alt="`${info.caseName}_f`" class="f6" v-if="isMobile">
+    <img src="./s5/05_title.png" :alt="`${info.caseName}_f`" class="title-img">
     <div class="content">
-      <div class="content-desc">
+      <div class="content-desc" v-if="isPC">
         涵養放眼國際的識見，培植台灣第一的胸襟，昂首漫步台灣最高學府蔥蔥椰林，猶記得青青學子時的嚮往，也是所有老台北人，乃至整個時代，對完美人生起點的想望。慢渡荏苒時光，如今的你，恣意徜徉台大椰林師大樹海，沐浴獨一無二人文學養，曾深藏心中的夙願已不再只是想像。信手翻閱台大風華，引以自慢的無價收藏。
+      </div>
+      <div class="content-desc" v-if="isMobile">
+        昂首漫步台灣最高學府蔥蔥椰林，是所有老台北人，乃至整個時代，對完美人生起點的想望。如今的你，徜徉台大椰林師大樹海，沐浴獨一無二人文學養，夙願已不再只是想像。信手翻閱台大風華，引以自慢的無價收藏。
       </div>
       <div class="content-title">
         名校雲集 養浩瀚眼界
@@ -69,6 +69,7 @@
     position: relative;
   }
 }
+
 .f6 {
   @include img_r_pc(815, 669, -380);
   transform-origin: 100% 80%;
@@ -291,88 +292,60 @@
 @media screen and (max-width: 767px) {
   .section5 {
     width: 100vw;
-    height: sizem(790);
+    height: sizem(656);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
     // background-position: 0 0;
     // background-attachment: fixed;
-    overflow: hidden;
+    // overflow: hidden;
   }
 
-  .txt {
-    width: sizem(310);
-    top: sizem(320);
-    left: sizem(32.5);
-    display: block;
+  .f6 {
+    @include img_l_m(200, 176 + 310, -80);
+    transform-origin: 0% 90%;
+    transform: skewY(2deg);
+    animation: flow1 4s 0s ease-in-out infinite alternate;
   }
-
-  .title {
-    width: 100%;
-    line-height: 1.6;
-    font-size: sizem(25);
-    span {
-      display: inline-block;
+  @keyframes flow1 {
+    to {
+      transform: skewY(0);
     }
   }
 
-  .hr {
-    height: sizem(2);
-    position: relative;
-    right: size(0);
-    margin: sizem(12) 0;
+  .title-img {
+    @include img_l_m(45.3, 344, 41);
   }
 
-  .s-title {
-    top: sizem(2);
-    left: sizem(0);
-    width: sizem(279);
+  .content {
+    @include div_r_m(213, 240, 365, 28.5);
   }
 
-  .subtitle {
-    font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.27;
-    letter-spacing: sizem(2.09);
+  .content-desc {
+    font-size: sizem(12);
+    line-height: sizem(24.3);
+    letter-spacing: sizem(-1.5);
     text-align: left;
-    color: #323333;
-    white-space: nowrap;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: sizem(18.8);
   }
 
-  .desc {
-    font-size: sizem(15);
-    line-height: 1.6;
-    letter-spacing: sizem(2.09);
-    white-space: nowrap;
-    display: block;
-    span {
-      writing-mode: initial;
-      display: block;
-      width: auto;
-      margin: 0 0 0em;
-      &.p {
-        margin: 0 0 0.8em;
-      }
-      &.p2 {
-        margin: 0 0 0.8em -0.5em;
-      }
-    }
-  }
-
-  .img {
-    width: sizem(142);
-    top: sizem(30);
-    left: sizem(0);
-    position: relative;
+  .content-title {
+    font-size: sizem(15.3);
+    line-height: sizem(21.5);
+    letter-spacing: sizem(0.7);
+    text-align: left;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: sizem(0);
   }
 
   /* Swipe */
   .swipe {
     width: 100vw;
-    height: sizem(300);
+    height: sizem(310);
     min-height: auto;
     top: sizem(0);
     left: sizem(0);
@@ -546,19 +519,19 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s5/05_slider_1.jpg'),
+          img: isMobile ? require('./mobile/05/05_slider_1_m.jpg') : require('./s5/05_slider_1.jpg'),
         },
         {
-          img: require('./s5/05_slider_2.jpg'),
+          img: isMobile ? require('./mobile/05/05_slider_2_m.jpg') : require('./s5/05_slider_2.jpg'),
         },
         {
-          img: require('./s5/05_slider_3.jpg'),
+          img: isMobile ? require('./mobile/05/05_slider_3_m.jpg') : require('./s5/05_slider_3.jpg'),
         },
         {
-          img: require('./s5/05_slider_4.jpg'),
+          img: isMobile ? require('./mobile/05/05_slider_4_m.jpg') : require('./s5/05_slider_4.jpg'),
         },
         {
-          img: require('./s5/05_slider_5.jpg'),
+          img: isMobile ? require('./mobile/05/05_slider_5_m.jpg') : require('./s5/05_slider_5.jpg'),
         },
       ],
     }

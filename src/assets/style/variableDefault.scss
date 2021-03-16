@@ -3,9 +3,9 @@
 $nav_pc_height: size(140);
 $nav_tablet_height: 60px;
 $nav_phone_height: 0px;
-$logo_pc_width: calc(100vw * 200 / 1920);
+$logo_pc_width: calc(100vw * 413 / 1920);
 $logo_tablet_width: calc(100vw * 160 / 1920);
-$logo_phone_width: 100px;
+$logo_phone_width: sizem(161);
 
 /* contactInfo */
 $contact_logo_pc_width: size(463);
@@ -15,4 +15,4 @@ $contact_logo_mobile_width: 200px;
 // for calculate
 $nav_pc_height_number: 60;
 $nav_tablet_height_number: 60;
-$nav_phone_height_number: 120;
+$nav_phone_height_number: 60;

@@ -161,8 +161,10 @@ body {
 }
 @media only screen and (min-width: 1441px) {
   .layout-container {
-    width: 1800px;
-    max-width:81%;
+    width: 100%;
+    // max-width:81%;
+    padding-left: 10%;
+    padding-right: 5%;
     margin-left: auto !important;
     margin-right: auto !important;
   }

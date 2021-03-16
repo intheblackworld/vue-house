@@ -1,24 +1,21 @@
 <template>
   <div class="section11">
-    <div v-if="!isMobile">
-      <img src="./s11/11_bg.jpg" :alt="`${info.caseName}_img`" class="bg-img">
-      <img src="./s11/11_flower.png" :alt="`${info.caseName}_f3`" class="f10">
-      <img src="./s11/11_house.png" :alt="`${info.caseName}_img`" class="house">
-      <img src="./s11/11_text.png" :alt="`${info.caseName}_img`" class="text">
-      <h3 class="title">
-        見識越高 越是深藏不露
-      </h3>
-      <div class="content">
-        <div class="content-title">
-          羅斯福.汀洲路最自慢收藏
-        </div>
-        <div class="content-desc">
-          敬邀山水知己及名流雅士  自慢珍藏
-        </div>
+    <img src="./s11/11_bg.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="isPC">
+    <img src="./mobile/11/11_bg_m.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="isMobile">
+    <img src="./s11/11_flower.png" :alt="`${info.caseName}_f3`" class="f10" v-if="isPC">
+    <img src="./mobile/11/11_flower_m.png" :alt="`${info.caseName}_f3`" class="f10" v-if="isMobile">
+    <img src="./s11/11_house.png" :alt="`${info.caseName}_img`" class="house">
+    <img src="./s11/11_text.png" :alt="`${info.caseName}_img`" class="text">
+    <h3 class="title">
+      見識越高 越是深藏不露
+    </h3>
+    <div class="content">
+      <div class="content-title">
+        羅斯福.汀洲路最自慢收藏
       </div>
-    </div>
-    <div v-else>
-
+      <div class="content-desc">
+        敬邀山水知己及名流雅士 自慢珍藏
+      </div>
     </div>
   </div>
 </template>
@@ -125,18 +122,19 @@
 @media screen and (max-width: 767px) {
   .section11 {
     width: 100vw;
-    min-height: sizem(470);
-    max-height: sizem(1337);
-    height: sizem(1337);
+    min-height: sizem(825.7);
+    max-height: sizem(825.7);
+    height: sizem(825.7);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
+    background-color: #fff;
   }
 
   .bg-img {
     width: 100vw;
-    height: 100%;
-    min-height: size(900);
+    height: sizem(614);
+    min-height: size(614);
     position: absolute;
     top: 0;
     left: 0;
@@ -148,66 +146,64 @@
       position: relative;
     }
   }
-  .f3 {
-    @include img_r_m(233, 418, 0);
-    transform-origin: 100% 90%;
-    transform: skewY(2deg);
-    animation: flow1 3s 0s ease-in-out infinite alternate-reverse;
-    z-index: 3;
-  }
 
-  .f4 {
-    @include img_l_m(250, 0, 0);
-    top: auto;
-    bottom: sizem(-30);
+  .f10 {
+    @include img_l_m(327, 198, -80);
     transform-origin: 0% 90%;
-    animation: flow1 2.3s 0s ease-in-out infinite alternate;
     transform: skewY(2deg);
-    z-index: 3;
+    animation: flow1 4s 0s ease-in-out infinite alternate;
   }
-  .f5 {
-    @include img_r_m(160, 0, 0);
-    top: auto;
-    bottom: sizem(-780);
-    transform-origin: 100% 90%;
-    animation: flow1 2.3s 0s ease-in-out infinite alternate;
-    transform: skewY(3deg);
-    z-index: 3;
-    img {
-      width: 100%;
-      transform: scaleY(-1);
+  @keyframes flow1 {
+    to {
+      transform: skewY(0);
     }
   }
 
-  .t1 {
-    @include img_r_m(21.2, 70, 90);
-  }
-  .t2 {
-    @include img_r_m(10.1, 305, 66);
-  }
-  .t3 {
-    @include img_r_m(292, 934, 38);
-  }
-  .t4 {
-    @include img_r_m(298, 610, 34);
+  .house {
+    @include img_c_m(303, 0);
     top: auto;
-    bottom: sizem(185);
+    bottom: 0;
   }
 
-  // .logo {
-  //   @include img_r_m(479, 707, 310);
-  // }
-
-  .st1 {
-    @include img_l_m(17, 128, 157);
+  .text {
+    @include img_c_m(234, 200);
   }
 
-  .st2 {
-    @include img_l_m(16, 128, 128);
+  .title {
+    @include img_c_m(295, 66.7);
+    font-size: sizem(31.2);
+    line-height: sizem(37.2);
+    letter-spacing: sizem(0.69);
+    text-align: left;
+    font-weight: 500;
+    color: #000;
+    white-space: nowrap;
   }
 
-  .st3 {
-    @include img_l_m(17, 128, 97);
+  .content {
+    @include div_c_m(289.2, 75.4, 111.7);
+    padding: sizem(6) sizem(12);
+    border: 1px solid #000;
+  }
+
+  .content-title {
+    font-size: sizem(23.2);
+    line-height: sizem(28.8);
+    // letter-spacing: sizem(2.44);
+    text-align: center;
+    font-weight: 800;
+    color: #231815;
+    white-space: nowrap;
+  }
+
+  .content-desc {
+    font-size: sizem(16.7);
+    line-height: sizem(29.8);
+    // letter-spacing: sizem(2.44);
+    text-align: center;
+    font-weight: 400;
+    color: #cb7f76;
+    white-space: nowrap;
   }
 }
 </style>

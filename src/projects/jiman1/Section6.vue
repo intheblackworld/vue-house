@@ -1,26 +1,26 @@
 <template>
   <div class="section6">
-    <div v-if="!isMobile">
-      <img src="./s6/06_img_1.jpg" :alt="`${info.caseName}_img`" class="img1">
-      <img src="./s6/06_img_2.jpg" :alt="`${info.caseName}_img`" class="img2">
-      <img src="./s6/06_img_3.jpg" :alt="`${info.caseName}_img`" class="img3">
-      <img src="./s6/06_img_4.jpg" :alt="`${info.caseName}_img`" class="img4">
-      <img src="./s6/06_logo.png" :alt="`${info.caseName}_img`" class="logo">
-      <img src="./s6/06_title.png" :alt="`${info.caseName}_img`" class="title-img">
-      <img src="./s6/06_signature.png" :alt="`${info.caseName}_img`" class="sign">
-      <div class="title">
-        沅利建設40年巨作<br />
-        深藏不露的建築堅持
-      </div>
-      <div class="desc">
-        自民國67年成立至今，「誠懇踏實」的堅定理念，贏取無數口碑，成為沅家集團-沅利建設四十寒暑耕耘的最大資產。「自慢藏，累積沅利建設40年的專業堅持，也是我們最自慢的代表作」沅利建設江文章董事長認真地訴說自慢藏的營造過程及細節，不強調浮誇，不堆砌虛華，安全、穩重為最優先考量，以誠為質，以實為先，讓自慢藏站得更高、走得更遠，並將其價值延續到下一代的和諧生活面貌。<br /><br />
-        【經典業績】<br />
-        <span>新天地(捷運大坪林站共構案)、天母 上北澤、板橋 海德公園
-        </span>
-      </div>
+    <img src="./s6/06_img_1.jpg" :alt="`${info.caseName}_img`" class="img1">
+    <img src="./s6/06_img_2.jpg" :alt="`${info.caseName}_img`" class="img2">
+    <img src="./s6/06_img_3.jpg" :alt="`${info.caseName}_img`" class="img3">
+    <img src="./s6/06_img_4.jpg" :alt="`${info.caseName}_img`" class="img4">
+    <img src="./s6/06_logo.png" :alt="`${info.caseName}_img`" class="logo">
+    <img src="./s6/06_title.png" :alt="`${info.caseName}_img`" class="title-img">
+    <img src="./s6/06_signature.png" :alt="`${info.caseName}_img`" class="sign">
+    <div class="title">
+      沅利建設40年巨作<br />
+      深藏不露的建築堅持
     </div>
-    <div v-else>
-
+    <div class="desc" v-if="isPC">
+      自民國67年成立至今，「誠懇踏實」的堅定理念，贏取無數口碑，成為沅家集團-沅利建設四十寒暑耕耘的最大資產。「自慢藏，累積沅利建設40年的專業堅持，也是我們最自慢的代表作」沅利建設江文章董事長認真地訴說自慢藏的營造過程及細節，不強調浮誇，不堆砌虛華，安全、穩重為最優先考量，以誠為質，以實為先，讓自慢藏站得更高、走得更遠，並將其價值延續到下一代的和諧生活面貌。<br /><br />
+      【經典業績】<br />
+      <span>新天地(捷運大坪林站共構案)、天母 上北澤、板橋 海德公園
+      </span>
+    </div>
+    <div class="desc" v-if="isMobile">
+      「自慢藏，累積沅家集團-沅利建設40年的專業堅持，也是我們最自慢的代表作」沅家集團-沅利建設江文章董事長認真地訴說自慢藏的營造過程及細節，不強調浮誇，不堆砌虛華，安全、穩重為最優先考量，讓自慢藏站得更高、走得更遠，並將其價值延續到下一代的和諧生活面貌。<br /><br />
+      【經典業績】<span>新天地(捷運大坪林站共構案)、天母 上北澤、板橋 海德公園
+      </span>
     </div>
   </div>
 </template>
@@ -126,9 +126,9 @@
 @media screen and (max-width: 767px) {
   .section6 {
     width: 100vw;
-    min-height: sizem(470);
-    max-height: sizem(1337);
-    height: sizem(1337);
+    min-height: sizem(121.8 + 720);
+    max-height: sizem(121.8 + 720);
+    height: sizem(121.8 + 720);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -149,66 +149,67 @@
       position: relative;
     }
   }
-  .f3 {
-    @include img_r_m(233, 418, 0);
-    transform-origin: 100% 90%;
-    transform: skewY(2deg);
-    animation: flow1 3s 0s ease-in-out infinite alternate-reverse;
-    z-index: 3;
+
+  .img1 {
+    @include img_r_m(230.7, 68.4, 37.3);
   }
 
-  .f4 {
-    @include img_l_m(250, 0, 0);
+  .img2 {
+    @include img_l_m(121.8, 0, 126.6);
     top: auto;
-    bottom: sizem(-30);
-    transform-origin: 0% 90%;
-    animation: flow1 2.3s 0s ease-in-out infinite alternate;
-    transform: skewY(2deg);
-    z-index: 3;
+    bottom: 0;
   }
-  .f5 {
-    @include img_r_m(160, 0, 0);
+  .img3 {
+    @include img_l_m(121.8, 0, 0);
     top: auto;
-    bottom: sizem(-780);
-    transform-origin: 100% 90%;
-    animation: flow1 2.3s 0s ease-in-out infinite alternate;
-    transform: skewY(3deg);
-    z-index: 3;
-    img {
-      width: 100%;
-      transform: scaleY(-1);
+    bottom: 0;
+  }
+  .img4 {
+    @include img_r_m(121.8, 0, 0);
+    top: auto;
+    bottom: 0;
+  }
+
+  .logo {
+    @include img_r_m(49.2, 393.5, 220.8);
+  }
+
+  .title-img {
+    @include img_l_m(44.2, 64.5, 43);
+  }
+
+  .sign {
+    @include img_l_m(47.2, 229.5, 49);
+  }
+
+  .title {
+    @include img_r_m(178, 391.2, 36.3);
+    font-size: sizem(19.5);
+    line-height: sizem(25);
+    letter-spacing: sizem(0.29);
+    text-align: left;
+    font-weight: 500;
+    color: #c07f76;
+    white-space: nowrap;
+  }
+
+  .desc {
+    @include img_r_m(226.6, 462.5, 42.3);
+    font-size: sizem(12.5);
+    line-height: sizem(24);
+    letter-spacing: sizem(0);
+    text-align: left;
+    font-weight: 400;
+    color: #000;
+    // white-space: nowrap;
+    span {
+      font-size: sizem(12.5);
+      line-height: sizem(24);
+      letter-spacing: sizem(0.76);
+      text-align: left;
+      font-weight: 600;
+      color: #000;
     }
-  }
-
-  .t1 {
-    @include img_r_m(21.2, 70, 90);
-  }
-  .t2 {
-    @include img_r_m(10.1, 305, 66);
-  }
-  .t3 {
-    @include img_r_m(292, 934, 38);
-  }
-  .t4 {
-    @include img_r_m(298, 610, 34);
-    top: auto;
-    bottom: sizem(185);
-  }
-
-  // .logo {
-  //   @include img_r_m(479, 707, 310);
-  // }
-
-  .st1 {
-    @include img_l_m(17, 128, 157);
-  }
-
-  .st2 {
-    @include img_l_m(16, 128, 128);
-  }
-
-  .st3 {
-    @include img_l_m(17, 128, 97);
   }
 }
 </style>

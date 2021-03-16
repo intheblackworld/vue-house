@@ -19,7 +19,7 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200">
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
@@ -28,10 +28,17 @@
           </div>
         </div>
       </div>
-      <!--  <div v-if="!isMobile">
-        <img src="./s8/img.png" alt="" class="img absolute">
-        <img src="./s8/t.png" alt="" class="t absolute">
-      </div>  -->
+      <div v-if="isMobile">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList" :key="slide.img + 'item' + i" :class="`item`" v-show="slideIndex === i">
+            <div class="item-name" v-html="slide.name"></div>
+            <div class="item-title" v-html="slide.title"></div>
+            <div class="item-subtitle" v-html="slide.subtitle"></div>
+            <div class="item-desc" v-html="slide.desc"></div>
+            <div class="item-work" v-html="slide.work"></div>
+          </div>
+        </transition-group>
+      </div>
     </div>
   </div>
 </template>
@@ -111,6 +118,71 @@
     }
   }
 }
+
+@media screen and (max-width: 767px) {
+  .item {
+    @include img_c_m(306, 364);
+  }
+
+  .item-name {
+    font-size: sizem(16.5);
+    line-height: sizem(31.3);
+    // letter-spacing: sizem(0.53);
+    text-align: left;
+    font-weight: 400;
+    color: #000;
+    white-space: nowrap;
+    span {
+      font-weight: 500;
+    }
+  }
+  .item-title {
+    font-size: sizem(36.8);
+    line-height: sizem(47.5);
+    // letter-spacing: sizem(0.53);
+    text-align: left;
+    font-weight: 600;
+    color: #c07f76;
+    white-space: nowrap;
+    span {
+      font-size: sizem(25.4);
+      line-height: sizem(47.5);
+      font-weight: 400;
+    }
+  }
+  .item-subtitle {
+    font-size: sizem(21.1);
+    line-height: sizem(44.4);
+    // letter-spacing: sizem(0.53);
+    text-align: left;
+    font-weight: 600;
+    color: #000;
+    white-space: nowrap;
+  }
+  .item-desc {
+    font-size: sizem(12.5);
+    line-height: sizem(24.3);
+    // letter-spacing: sizem(0.53);
+    text-align: left;
+    font-weight: 400;
+    color: #000;
+    // white-space: nowrap;
+  }
+  .item-work {
+    // @include img_l_pc(333, 0, 0);
+    position: relative;
+    font-size: sizem(13.5);
+    line-height: sizem(27.1);
+    // letter-spacing: sizem(0.53);
+    text-align: left;
+    font-weight: 400;
+    color: #000;
+    white-space: nowrap;
+    span {
+      font-weight: 600;
+    }
+  }
+}
 </style>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
@@ -155,7 +227,7 @@
 @media screen and (max-width: 767px) {
   .section8 {
     width: 100vw;
-    height: sizem(790);
+    height: sizem(683.6);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -165,78 +237,13 @@
     overflow: hidden;
   }
 
-  .txt {
-    width: sizem(310);
-    top: sizem(320);
-    left: sizem(32.5);
-    display: block;
-  }
-
-  .title {
-    width: 100%;
-    line-height: 1.6;
-    font-size: sizem(25);
-    right: 0;
-    top: sizem(3);
-    span {
-      display: inline-block;
-    }
-  }
-
-  .hr {
-    width: 100%;
-    height: sizem(2);
-    position: relative;
-    right: sizem(0);
-    margin: sizem(12) 0;
-  }
-
-  .s-title {
-    top: 0;
-    left: sizem(0);
-    width: sizem(279);
-  }
-
-  .subtitle {
-    width: 100%;
-    font-size: sizem(18);
-    right: sizem(-1);
-  }
-
-  .desc {
-    font-size: sizem(15);
-    line-height: 1.6;
-    letter-spacing: sizem(2.09);
-    white-space: nowrap;
-    display: block;
-    span {
-      writing-mode: initial;
-      display: block;
-      width: auto;
-      margin: 0 0 0em;
-      &.p {
-        margin: 0 0 0.8em;
-      }
-      &.p2 {
-        margin: 0 0 0.8em -0.5em;
-      }
-    }
-  }
-
-  .img {
-    width: sizem(142);
-    top: sizem(30);
-    left: sizem(-3);
-    position: relative;
-  }
-
   /* Swipe */
   .swipe {
-    width: 100vw;
-    height: sizem(300);
+    width: sizem(306.5);
+    height: sizem(306.5);
     min-height: auto;
-    top: sizem(0);
-    left: sizem(0);
+    top: sizem(32.6);
+    left: sizem(34.2);
     object-fit: cover;
   }
 
@@ -292,7 +299,7 @@
 
     img {
       width: 100%;
-      height: sizem(300);
+      height: sizem(306.5);
       object-fit: cover;
     }
 
@@ -407,7 +414,9 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s8/08_img_1.jpg'),
+          img: isMobile
+            ? require('./mobile/08/08_img_1_m.jpg')
+            : require('./s8/08_img_1.jpg'),
           name: '<span>建築設計</span>｜彭繼賢建築師事務所',
           title: '彭繼賢 <span>建築師</span>',
           subtitle: '造心造景造品味 建築美學詩人',
@@ -417,7 +426,9 @@ export default {
             '【 經典業績 】<br /><span>中正威登、員邦華宴、基泰台大、金華泰蘭亭序</span>',
         },
         {
-          img: require('./s8/08_img_2.jpg'),
+          img: isMobile
+            ? require('./mobile/08/08_img_2_m.jpg')
+            : require('./s8/08_img_2.jpg'),
           name: '<span>公設規劃</span>｜伊太空間設計',
           title: '張祥鎬 <span>設計總監</span>',
           subtitle: '德國紅點、IF設計大獎空間大師',
@@ -427,7 +438,9 @@ export default {
             '【 經典業績 】<br /><span>RUIKE企業總部、ALTA 台中館、Omni台北館</span>',
         },
         {
-          img: require('./s8/08_img_3.jpg'),
+          img: isMobile
+            ? require('./mobile/08/08_img_3_m.jpg')
+            : require('./s8/08_img_3.jpg'),
           name: '<span>景觀設計</span>｜頤和設計',
           title: '李淑雲 <span>設計總監</span>',
           subtitle: '點藏山水化境 豪宅御用景觀名家',

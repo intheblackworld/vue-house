@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="section9">
-      <img src="./s9/09_text.png" :alt="`${info.caseName}_img`" class="text-img">      
+      <img src="./s9/09_text.png" :alt="`${info.caseName}_img`" class="text-img">
       <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -10,10 +10,10 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" >
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
-          <div class="swipe-btns absolute flex-ac flex-jb">
+          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isPC">
             <img src="./all/slider_left.png" alt="" class="prev-btn" @click="decIndex">
             <img src="./all/slider_right.png" alt="" class="next-btn" @click="addIndex">
           </div>
@@ -246,7 +246,7 @@
 @media screen and (max-width: 767px) {
   .section9 {
     width: 100vw;
-    height: sizem(790);
+    height: sizem(228.2);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -255,65 +255,10 @@
     // background-attachment: fixed;
     overflow: hidden;
   }
-  .txt {
-    width: sizem(310);
-    top: sizem(320);
-    left: sizem(32.5);
-    display: block;
-  }
-
-  .title {
-    width: 100%;
-    line-height: 1.6;
-    font-size: sizem(25);
-    right: 0;
-    top: sizem(3);
-    span {
-      display: inline-block;
-    }
-  }
-
-  .hr {
-    width: 100%;
-    height: sizem(2);
-    position: relative;
-    right: sizem(0);
-    margin: sizem(12) 0;
-    transform: rotate(0);
-    left: 0;
-    top: 0;
-  }
-
-  .s-title {
-    top: 0;
-    left: sizem(0);
-    width: sizem(279);
-  }
-
-  .subtitle {
-    width: 100%;
-    font-size: sizem(18);
-    right: sizem(-1);
-  }
-
-  .desc {
-    font-size: sizem(15);
-    line-height: 1.6;
-    letter-spacing: sizem(2.09);
-    white-space: nowrap;
-    display: block;
-    span {
-      writing-mode: initial;
-      display: block;
-      width: auto;
-      margin: 0 0 0em;
-      &.p {
-        margin: 0 0 0.8em;
-      }
-      &.p2 {
-        margin: 0 0 0.8em -0.5em;
-      }
-    }
+  .text-img {
+    @include img_c_m(132, 227);
+    top: auto;
+    bottom: size(0);
   }
 
   .img {
@@ -325,11 +270,12 @@
 
   /* Swipe */
   .swipe {
-    width: 100vw;
-    height: sizem(300);
+    width: sizem(328);
+    height: sizem(184);
     min-height: auto;
-    top: sizem(0);
-    left: sizem(0);
+    top: sizem(28);
+    left: sizem(23.3);
+    right: auto;
     object-fit: cover;
   }
 
@@ -385,7 +331,7 @@
 
     img {
       width: 100%;
-      height: sizem(300);
+      height: sizem(184);
       object-fit: cover;
     }
 
