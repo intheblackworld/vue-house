@@ -96,9 +96,9 @@ export default {
 
     white-space: nowrap;
     font-family: $family3;
-    flex: 0 0 6em;
+    //flex: 0 0 6em;
     text-align: right;
-    width: 6em;
+    //width: 6em;
     padding-right: 0.8em;
   }
 
