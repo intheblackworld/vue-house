@@ -1,6 +1,6 @@
 <template>
   <div class="section1">
-    <img src="./s1/bg.jpg" :alt="`${inf}_bg`" o.caseNameclass="bg-img" v-if="isPC">
+    <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC">
     <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img an" v-if="isPC">
     <img src="./s1/bg_m.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isMobile">
     <img src="./s1/t.png" :alt="`${info.caseName}_t`" class="t" v-if="isPC" data-aos="fade" data-aos-delay="200">
