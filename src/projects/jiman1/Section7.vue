@@ -1,8 +1,13 @@
 <template>
   <div class="section7">
-    <img src="./s7/07_img_1.jpg" :alt="`${info.caseName}_img`" class="img1">
-    <img src="./s7/07_img_2.jpg" :alt="`${info.caseName}_img`" class="img2">
-    <img src="./s7/07_img_3.jpg" :alt="`${info.caseName}_img`" class="img3">
+
+    <div class="img1">
+    <img src="./s7/07_img_1.jpg" :alt="`${info.caseName}_img`"><p>東京羽田機場</p>
+    </div>
+    <div class="img2">
+    <img src="./s7/07_img_2.jpg" :alt="`${info.caseName}_img`"><p>關西空港</p></div>
+    <div class="img3">
+    <img src="./s7/07_img_3.jpg" :alt="`${info.caseName}_img`"><p>瀨戶大橋</p></div>
     <img src="./s7/07_logo.png" :alt="`${info.caseName}_img`" class="logo">
     <img src="./s7/07_flower.png" :alt="`${info.caseName}_f`" class="f6" v-if="isPC">
 
@@ -51,17 +56,36 @@
   }
 }
 
+.img1 ,
+.img2 ,
+.img3 {
+  img{width: 100%}
+  p{position: absolute;
+  right: 0.5em;
+  bottom: 0.5em;
+  font-size: size(18);
+  line-height: 1.6;
+  color: #fff;
+  text-shadow: 0 0 0.3em #000;
+  }
+}
 .img1 {
-  @include img_l_pc(592, 608, 394);
+  @include img_l_pc(595, 608, 394);
+  p{
+  right:auto;
+  left: 0.5em;
+  }
 }
 
 .img2 {
-  @include img_r_pc(592, 608, 337);
+  @include img_r_pc(595, 608, 319);
+  
 }
 .img3 {
   @include img_l_pc(1190, 1046, 394);
   top: auto;
   bottom: 0;
+  
 }
 
 .logo {

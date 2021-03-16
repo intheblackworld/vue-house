@@ -1,9 +1,15 @@
 <template>
   <div class="section6">
     <img src="./s6/06_img_1.jpg" :alt="`${info.caseName}_img`" class="img1">
-    <img src="./s6/06_img_2.jpg" :alt="`${info.caseName}_img`" class="img2">
-    <img src="./s6/06_img_3.jpg" :alt="`${info.caseName}_img`" class="img3">
-    <img src="./s6/06_img_4.jpg" :alt="`${info.caseName}_img`" class="img4">
+    <div class="img2">
+    <img src="./s6/06_img_2.jpg" :alt="`${info.caseName}_img`"><p>新天地</p>
+    </div>
+    <div class="img3">
+    <img src="./s6/06_img_3.jpg" :alt="`${info.caseName}_img`"><p>天母 上北澤</p>
+    </div>
+    <div class="img4">
+    <img src="./s6/06_img_4.jpg" :alt="`${info.caseName}_img`"><p>板橋 海德公園</p>
+    </div>
     <img src="./s6/06_logo.png" :alt="`${info.caseName}_img`" class="logo">
     <img src="./s6/06_title.png" :alt="`${info.caseName}_img`" class="title-img">
     <img src="./s6/06_signature.png" :alt="`${info.caseName}_img`" class="sign">
@@ -58,6 +64,19 @@
   @include img_r_pc(479, 197, 341);
 }
 
+.img2 ,
+.img3 ,
+.img4 {
+  img{width: 100%}
+  p{position: absolute;
+  right: 0.5em;
+  bottom: 0.5em;
+  font-size: size(18);
+  line-height: 1.6;
+  color: #fff;
+  text-shadow: 0 0 0.3em #000;
+  }
+}
 .img2 {
   @include img_l_pc(382, 907, 399);
 }
