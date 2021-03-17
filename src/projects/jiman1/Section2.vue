@@ -21,8 +21,21 @@
     </div>
     <div v-else>
       <img src="./mobile/02/02_flower_m.png" :alt="`${info.caseName}_f3`" class="f3">
-      <div class="img">
-      <img src="./mobile/02/02_img_m.jpg" :alt="`${info.caseName}_img`">
+      <!-- <div class="img">
+        <img src="./mobile/02/02_img_m.jpg" :alt="`${info.caseName}_img`">
+      </div> -->
+      <div class="custom-scrollbar-container img">
+        <div ref="wrapper" class="custom-scrollbar-wrapper">
+          <img @load="onload" class="custom-scrollbar-content" :src="require('./mobile/02/02_img_m.jpg')" alt="">
+          <!-- custom-vertical-scrollbar-->
+          <!-- <div class="custom-vertical-scrollbar" ref="vertical">
+            <div class="custom-vertical-indicator"></div>
+          </div> -->
+          <!-- custom-horizontal-scrollbar-->
+          <div class="custom-horizontal-scrollbar" ref="horizontal">
+            <div class="custom-horizontal-indicator"></div>
+          </div>
+        </div>
       </div>
       <img src="./mobile/02/02_text_m.png" :alt="`${info.caseName}_img`" class="text" data-aos="fade-up" data-aos-delay="200">
       <div class="desc" data-aos="fade-up" data-aos-delay="400">
@@ -114,7 +127,7 @@
   @include img_r_pc(618, 98, 48);
   top: calc(50% + 100vw * (134 - 540) / 1920);
   font-size: size(23);
-  line-height:2.48;
+  line-height: 2.48;
   letter-spacing: 0.02em;
   text-align: left;
   font-weight: 400;
@@ -144,6 +157,52 @@
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
+  }
+
+  // .custom-scrollbar-container .custom-scrollbar-wrapper {
+  //   position: relative;
+  //   width: 280px;
+  //   height: 280px;
+  //   overflow: hidden;
+  // }
+  .custom-scrollbar-content {
+    max-width: none;
+  }
+  .custom-vertical-scrollbar {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    height: 100px;
+    width: 7px;
+    border-radius: 6px;
+    transform: translateY(-50%) translateZ(0);
+    background-color: rgb(200, 200, 200, 0.3);
+  }
+
+  .custom-vertical-indicator {
+    width: 100%;
+    height: 20px;
+    border-radius: 6px;
+    background-color: #db8090;
+  }
+
+  .custom-horizontal-scrollbar {
+    position: absolute;
+    left: 50%;
+    top: sizem(21.5);
+    width: sizem(154.5);
+    height: 7px;
+    border-radius: 6px;
+    transform: translateX(-50%) translateZ(0);
+    background-color: transparent;
+    border: 1px solid #fff;
+  }
+  .custom-horizontal-indicator {
+    height: sizem(11.2);
+    width: sizem(11.2);
+    border-radius: sizem(11.2);
+    margin-top: sizem(-3);
+    background-color: #fff;
   }
 
   .bg-img {
@@ -176,15 +235,18 @@
     @include div_l_m(375, 247, 0, 0);
     width: 100%;
     top: auto;
-    bottom: 0;overflow:auto;
-    img{height: 100%;}
+    bottom: 0;
+    // overflow: auto;
+    img {
+      height: sizem(247);
+    }
   }
 
   .desc {
     @include img_r_m(300, 164, 55);
     font-size: sizem(12.5);
-    line-height:2.4;
-    letter-spacing:0.03em;
+    line-height: 2.4;
+    letter-spacing: 0.03em;
     text-align: right;
     font-weight: 400;
     color: #fff;
@@ -196,6 +258,10 @@
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
 import info from '@/info'
+
+import BScroll from '@better-scroll/core'
+import ScrollBar from '@better-scroll/scroll-bar'
+BScroll.use(ScrollBar)
 
 export default {
   name: 'section2',
@@ -209,7 +275,23 @@ export default {
     }
   },
 
-  methods: {},
+  methods: {
+    initBscroll() {
+      this.scroll = new BScroll(this.$refs.wrapper, {
+        freeScroll: true,
+        click: true,
+        scrollbar: {
+          customElements: [this.$refs.horizontal],
+          fade: false,
+          interactive: true,
+          scrollbarTrackClickable: true,
+        },
+      })
+    },
+    onload() {
+      this.initBscroll()
+    },
+  },
 
   mounted() {},
 

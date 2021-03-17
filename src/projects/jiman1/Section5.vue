@@ -13,9 +13,13 @@
         </div>
       </div>
     </div>
-    <div class="swipe-btns absolute flex-ac flex-jb">
+    <div class="swipe-btns absolute flex-ac flex-jb" v-if="isPC">
       <img src="./all/slider_left.png" alt="" class="prev-btn" @click="decIndex">
       <img src="./all/slider_right.png" alt="" class="next-btn" @click="addIndex">
+    </div>
+    <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+      <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+      <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
     </div>
     <img src="./s5/05_flower.png" :alt="`${info.caseName}_f`" class="f6" v-if="isPC">
     <img src="./mobile/05/05_flower_m.png" :alt="`${info.caseName}_f`" class="f6" v-if="isMobile">
@@ -92,7 +96,7 @@
 
 .content-desc {
   font-size: size(23);
-  line-height:2;
+  line-height: 2;
   letter-spacing: 0.02em;
   text-align: justify;
   font-weight: 400;
@@ -102,7 +106,7 @@
 
 .content-title {
   font-size: size(30);
-  line-height:2;
+  line-height: 2;
   letter-spacing: 0.02em;
   text-align: left;
   font-weight: 500;
@@ -319,7 +323,7 @@
 
   .content {
     @include div_r_m(213, 240, 365, 28.5);
-  line-height: 1.6;
+    line-height: 1.6;
   }
 
   .content-desc {
@@ -487,6 +491,9 @@
     height: 100%;
     padding: 0 15px;
     z-index: 3;
+    @include img_r_m(375, 0, 0);
+    height: sizem(310);
+    z-index: 3;
 
     .prev-btn,
     .next-btn {
@@ -517,19 +524,29 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: isMobile ? require('./mobile/05/05_slider_1_m.jpg') : require('./s5/05_slider_1.jpg'),
+          img: isMobile
+            ? require('./mobile/05/05_slider_1_m.jpg')
+            : require('./s5/05_slider_1.jpg'),
         },
         {
-          img: isMobile ? require('./mobile/05/05_slider_2_m.jpg') : require('./s5/05_slider_2.jpg'),
+          img: isMobile
+            ? require('./mobile/05/05_slider_2_m.jpg')
+            : require('./s5/05_slider_2.jpg'),
         },
         {
-          img: isMobile ? require('./mobile/05/05_slider_3_m.jpg') : require('./s5/05_slider_3.jpg'),
+          img: isMobile
+            ? require('./mobile/05/05_slider_3_m.jpg')
+            : require('./s5/05_slider_3.jpg'),
         },
         {
-          img: isMobile ? require('./mobile/05/05_slider_4_m.jpg') : require('./s5/05_slider_4.jpg'),
+          img: isMobile
+            ? require('./mobile/05/05_slider_4_m.jpg')
+            : require('./s5/05_slider_4.jpg'),
         },
         {
-          img: isMobile ? require('./mobile/05/05_slider_5_m.jpg') : require('./s5/05_slider_5.jpg'),
+          img: isMobile
+            ? require('./mobile/05/05_slider_5_m.jpg')
+            : require('./s5/05_slider_5.jpg'),
         },
       ],
     }

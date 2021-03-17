@@ -75,7 +75,7 @@
   font-size: size(67);
   line-height: size(80);
   letter-spacing: size(1.48);
-  text-align: left;
+  text-align: center;
   font-weight: 500;
   color: #000;
   white-space: nowrap;
@@ -170,7 +170,7 @@
     font-size: sizem(31.2);
     line-height: sizem(37.2);
     letter-spacing: sizem(0.69);
-    text-align: left;
+    text-align: center;
     font-weight: 500;
     color: #000;
     white-space: nowrap;

@@ -10,12 +10,16 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" >
+          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200">
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
-          <div class="swipe-btns absolute flex-ac flex-jb">
+          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isPC">
             <img src="./all/slider_left.png" alt="" class="prev-btn" @click="decIndex">
             <img src="./all/slider_right.png" alt="" class="next-btn" @click="addIndex">
+          </div>
+          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
           </div>
         </div>
       </div>
@@ -414,6 +418,7 @@
   .swipe-btns {
     width: 100%;
     height: 100%;
+    left: 0;
     padding: 0 15px;
     z-index: 3;
 

@@ -371,15 +371,15 @@ export default {
     background-size: cover;
     width: 0%;
     right: 0;
-    top: $nav_phone_height;
+    top: 0 !important;
     height: calc(100vh - #{$nav_phone_height});
     text-align: center;
     transition: all 0.3s ease-in;
     display: block;
     transform: translateX(40%);
     padding-left: 0;
-    padding-top: 120px;
-    display: flex;
+    // padding-top: 120px;
+    display: flex !important;
     align-items: center;
     align-content: center;
     justify-content: center;

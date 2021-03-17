@@ -65,6 +65,7 @@ Vue.use(VueRellax)
 Vue.use(Vue2TouchEvents)
 
 
+
 new Vue({
   router,
   store,
@@ -75,7 +76,7 @@ new Vue({
     //   })
     // }
   },
-  created () {
+  created() {
     AOS.init()
   },
   render: h => h(App)
