@@ -13,17 +13,17 @@
     <img src="./s6/06_logo.png" :alt="`${info.caseName}_img`" class="logo">
     <img src="./s6/06_title.png" :alt="`${info.caseName}_img`" class="title-img">
     <img src="./s6/06_signature.png" :alt="`${info.caseName}_img`" class="sign">
-    <div class="title">
+    <div class="title" data-aos="fade-up" data-aos-delay="200">
       沅利建設40年巨作<br />
       深藏不露的建築堅持
     </div>
-    <div class="desc" v-if="isPC">
+    <div class="desc" v-if="isPC" data-aos="fade-up" data-aos-delay="400">
       自民國67年成立至今，「誠懇踏實」的堅定理念，贏取無數口碑，成為沅家集團-沅利建設四十寒暑耕耘的最大資產。「自慢藏，累積沅利建設40年的專業堅持，也是我們最自慢的代表作」沅利建設江文章董事長認真地訴說自慢藏的營造過程及細節，不強調浮誇，不堆砌虛華，安全、穩重為最優先考量，以誠為質，以實為先，讓自慢藏站得更高、走得更遠，並將其價值延續到下一代的和諧生活面貌。<br /><br />
       【經典業績】<br />
       <span>新天地(捷運大坪林站共構案)、天母 上北澤、板橋 海德公園
       </span>
     </div>
-    <div class="desc" v-if="isMobile">
+    <div class="desc" v-if="isMobile" data-aos="fade-up" data-aos-delay="400">
       「自慢藏，累積沅家集團-沅利建設40年的專業堅持，也是我們最自慢的代表作」沅家集團-沅利建設江文章董事長認真地訴說自慢藏的營造過程及細節，不強調浮誇，不堆砌虛華，安全、穩重為最優先考量，讓自慢藏站得更高、走得更遠，並將其價值延續到下一代的和諧生活面貌。<br /><br />
       【經典業績】<span>新天地(捷運大坪林站共構案)、天母 上北澤、板橋 海德公園
       </span>

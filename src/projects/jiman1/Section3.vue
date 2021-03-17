@@ -11,7 +11,7 @@
         <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
-        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isPC">
+        <div class="swipe-btns absolute flex-ac flex-jb">
           <img src="./all/slider_left.png" alt="" class="prev-btn" @click="decIndex">
           <img src="./all/slider_right.png" alt="" class="next-btn" @click="addIndex">
         </div>
@@ -20,14 +20,14 @@
     <img src="./s3/03_flower.png" :alt="`${info.caseName}_f`" class="f4" v-if="isPC">
     <img src="./mobile/03/03_flower_m.png" :alt="`${info.caseName}_f`" class="f4" v-if="isMobile">
 
-    <img src="./s3/03_title.png" :alt="`${info.caseName}_f`" class="title-img">
-    <div class="desc" v-if="isPC">
+    <img src="./s3/03_title.png" :alt="`${info.caseName}_f`" class="title-img" data-aos="fade-up" data-aos-delay="200">
+    <div class="desc" v-if="isPC" data-aos="fade-up" data-aos-delay="400">
       珍藏大安富境最後一片濱水波光，公園水岸雙景觀，富饒市中心擁攬大山大水無邊眼界；收藏公館師大景美核心繁華，羅斯福路雙商圈齊鳴綻放。集文教區靜謐素雅，商業區富庶豐饒，政經區自若安居，景觀區悠然韻味，入則寧靜，出則富麗，藏景藏靜藏繁華，簡單，也不簡單。
     </div>
-    <div class="desc" v-if="isMobile">
+    <div class="desc" v-if="isMobile" data-aos="fade-up" data-aos-delay="400">
       珍藏大安富境最後一片濱水波光，公園水岸雙景觀，富饒市中心擁攬大山大水；收藏公館師大景美核心繁華，羅斯福路雙商圈齊鳴綻放。入則寧靜，出則富麗，簡單，也不簡單。
     </div>
-    <div class="content">
+    <div class="content" data-aos="fade-up" data-aos-delay="600">
       <div class="content-title">
         市集熙攘 得人間百味
       </div>

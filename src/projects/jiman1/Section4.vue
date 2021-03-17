@@ -8,7 +8,7 @@
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
-        <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+        <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
         <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
@@ -18,14 +18,14 @@
       </div>
     </div>
     <div class="f5"><img src="./s4/04_flower.png" :alt="`${info.caseName}_f`"></div>
-    <img src="./s4/04_title.png" :alt="`${info.caseName}_f`" class="title-img">
-    <div class="desc" v-if="isPC">
+    <img src="./s4/04_title.png" :alt="`${info.caseName}_f`" class="title-img" data-aos="fade-up" data-aos-delay="200">
+    <div class="desc" v-if="isPC" data-aos="fade-up" data-aos-delay="400">
       珍藏大安富境最後一片濱水波光，公園水岸雙景觀，富饒市中心擁攬大山大水無邊眼界；收藏公館師大景美核心繁華，羅斯福路雙商圈齊鳴綻放。集文教區靜謐素雅，商業區富庶豐饒，政經區自若安居，景觀區悠然韻味，入則寧靜，出則富麗，藏景藏靜藏繁華，簡單，也不簡單。
     </div>
-    <div class="desc" v-if="isMobile">
+    <div class="desc" v-if="isMobile" data-aos="fade-up" data-aos-delay="400">
       乘著綠園道蔥郁濃蔭，悠哉散步4分鐘即可到達捷運萬隆站，6站抵達轉運大站台北車站，南來北往快意暢行。出門直接上水源快速道路，快接萬華、中正、新店；1分鐘進40米寬羅斯福路，收納西門、台北車站、中正紀念堂、古亭、公館於掌心，富裕榮華沿線自藏。
     </div>
-    <div class="content" v-if="isPC">
+    <div class="content" v-if="isPC" data-aos="fade-up" data-aos-delay="600">
       <div class="content-title">
         捷運萬隆站
       </div>
@@ -68,7 +68,7 @@
         車行8分鐘
       </div>
     </div>
-    <div class="content" v-if="isMobile">
+    <div class="content" v-if="isMobile" data-aos="fade-up" data-aos-delay="600">
       <div class="content-item white flex-c wrap">
         <div class="content-title">
           捷運萬隆站

@@ -1,11 +1,11 @@
 <template>
   <div class="section10">
-    <img src="./s10/10_logo_1.png" :alt="`${info.caseName}_img`" class="logo1">
-    <img src="./s10/10_logo_2.png" :alt="`${info.caseName}_img`" class="logo2" v-if="isPC">
+    <img src="./s10/10_logo_1.png" :alt="`${info.caseName}_img`" class="logo1" data-aos="fade-up" data-aos-delay="200">
+    <img src="./s10/10_logo_2.png" :alt="`${info.caseName}_img`" class="logo2" v-if="isPC" data-aos="fade-up" data-aos-delay="200">
     <img src="./mobile/10/10_logo_2.png" :alt="`${info.caseName}_img`" class="logo2" v-if="isMobile">
     <img src="./mobile/10/10_flower_m.png" :alt="`${info.caseName}_f`" class="f10" v-if="isMobile">
     <img src="./s10/10_title.png" :alt="`${info.caseName}_img`" class="title-img">
-    <div class="item1">
+    <div class="item1" data-aos="fade-up" data-aos-delay="200">
       <div class="title">
         豪宅認證指標 綠建築銀級標章
       </div>
@@ -20,7 +20,7 @@
         綠建築等級是依「綠建築九大評估指標系統」(EEWH)為分級依序，共有合格級、銅級、銀級、黃金級、鑽石級等五級，獲銀級綠建築標章肯定的自慢藏，致力為您打造安心、節能、健康的和諧共生環保家園。
       </div>
     </div>
-    <div class="item2">
+    <div class="item2" data-aos="fade-up" data-aos-delay="200">
       <div class="title">
         台大結構外審 建築品質會說話
       </div>
@@ -31,7 +31,7 @@
         除了日本國土開發嚴謹精工，在結構安全上更有參與台中機場工程的「聯邦工程」為結構顧問，為自慢藏的基礎工程層層把關監督，並請「台灣大學地震中心」結構外審，經得起公正單位與專業數據的檢驗，才是真正安全安心的自慢建築。
       </div>
     </div>
-    <div class="item3">
+    <div class="item3" data-aos="fade-up" data-aos-delay="400">
       <div class="title">
         國家級保證 SRC鋼骨耐震標章
       </div>
@@ -42,7 +42,7 @@
         自慢藏採用中鋼、新日鐵最頂級鋼材，高規格耐震工法，獲國家耐震建築標章認證，可達超越法規標準的6級耐震力，更能保障生命財產安全。
       </div>
     </div>
-    <div class="item4">
+    <div class="item4" data-aos="fade-up" data-aos-delay="400">
       <div class="title">
         防疫建築2.0 居家安全最安心
       </div>

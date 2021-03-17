@@ -13,14 +13,14 @@
         </div>
       </div>
     </div>
-    <div class="swipe-btns absolute flex-ac flex-jb" v-if="isPC">
+    <div class="swipe-btns absolute flex-ac flex-jb">
       <img src="./all/slider_left.png" alt="" class="prev-btn" @click="decIndex">
       <img src="./all/slider_right.png" alt="" class="next-btn" @click="addIndex">
     </div>
     <img src="./s5/05_flower.png" :alt="`${info.caseName}_f`" class="f6" v-if="isPC">
     <img src="./mobile/05/05_flower_m.png" :alt="`${info.caseName}_f`" class="f6" v-if="isMobile">
     <img src="./s5/05_title.png" :alt="`${info.caseName}_f`" class="title-img">
-    <div class="content">
+    <div class="content" data-aos="fade-up" data-aos-delay="200">
       <div class="content-desc" v-if="isPC">
         涵養放眼國際的識見，培植台灣第一的胸襟，昂首漫步台灣最高學府蔥蔥椰林，猶記得青青學子時的嚮往，也是所有老台北人，乃至整個時代，對完美人生起點的想望。慢渡荏苒時光，如今的你，恣意徜徉台大椰林師大樹海，沐浴獨一無二人文學養，曾深藏心中的夙願已不再只是想像。信手翻閱台大風華，引以自慢的無價收藏。
       </div>

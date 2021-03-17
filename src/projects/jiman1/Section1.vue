@@ -3,19 +3,19 @@
     <div v-if="!isMobile">
       <img src="./s1/01_bg.jpg" :alt="`${info.caseName}_img`" class="bg-img">
       <img src="./s1/01_flower_r.png" :alt="`${info.caseName}_f1`" class="f1">
-      <img src="./s1/01_logo.png" :alt="`${info.caseName}_img`" class="logo">
-      <img src="./s1/01_text.png" :alt="`${info.caseName}_img`" class="text">
-      <img src="./s1/01_title_1.png" :alt="`${info.caseName}_img`" class="title_1">
-      <img src="./s1/01_title_2.png" :alt="`${info.caseName}_img`" class="title_2">
-      <img src="./s1/01_title_3.png" :alt="`${info.caseName}_img`" class="title_3">
-      <img src="./s1/01_title_4.png" :alt="`${info.caseName}_img`" class="title_4">
+      <img src="./s1/01_logo.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade-up" data-aos-delay="200">
+      <img src="./s1/01_text.png" :alt="`${info.caseName}_img`" class="text" data-aos="fade-up" data-aos-delay="400">
+      <img src="./s1/01_title_1.png" :alt="`${info.caseName}_img`" class="title_1" data-aos="fade-up" data-aos-delay="600">
+      <img src="./s1/01_title_2.png" :alt="`${info.caseName}_img`" class="title_2" data-aos="fade-up" data-aos-delay="700">
+      <img src="./s1/01_title_3.png" :alt="`${info.caseName}_img`" class="title_3" data-aos="fade-up" data-aos-delay="800">
+      <img src="./s1/01_title_4.png" :alt="`${info.caseName}_img`" class="title_4" data-aos="fade-up" data-aos-delay="900">
     </div>
     <div v-else>
       <img src="./mobile/01/01_bg_m.jpg" :alt="`${info.caseName}_img`" class="bg-img">
       <img src="./mobile/01/01_flower_m.png" :alt="`${info.caseName}_f1`" class="f1">
-      <img src="./mobile/01/01_logo_m.png" :alt="`${info.caseName}_img`" class="logo">
-      <img src="./mobile/01/01_title_1_m.png" :alt="`${info.caseName}_img`" class="title_1">
-      <img src="./mobile/01/01_title_2_m.png" :alt="`${info.caseName}_img`" class="title_2">
+      <img src="./mobile/01/01_logo_m.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade" data-aos-delay="200">
+      <img src="./mobile/01/01_title_1_m.png" :alt="`${info.caseName}_img`" class="title_1" data-aos="fade" data-aos-delay="400">
+      <img src="./mobile/01/01_title_2_m.png" :alt="`${info.caseName}_img`" class="title_2" data-aos="fade" data-aos-delay="600">
     </div>
   </div>
 </template>

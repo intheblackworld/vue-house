@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="section9">
-      <img src="./s9/09_text.png" :alt="`${info.caseName}_img`" class="text-img">
+      <img src="./s9/09_text.png" :alt="`${info.caseName}_img`" class="text-img" data-aos="fade-up" data-aos-delay="200">
       <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -13,7 +13,7 @@
           <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" >
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isPC">
+          <div class="swipe-btns absolute flex-ac flex-jb">
             <img src="./all/slider_left.png" alt="" class="prev-btn" @click="decIndex">
             <img src="./all/slider_right.png" alt="" class="next-btn" @click="addIndex">
           </div>

@@ -5,11 +5,11 @@
     <img src="./s11/11_flower.png" :alt="`${info.caseName}_f3`" class="f10" v-if="isPC">
     <img src="./mobile/11/11_flower_m.png" :alt="`${info.caseName}_f3`" class="f10" v-if="isMobile">
     <img src="./s11/11_house.png" :alt="`${info.caseName}_img`" class="house">
-    <img src="./s11/11_text.png" :alt="`${info.caseName}_img`" class="text">
-    <h3 class="title">
+    <img src="./s11/11_text.png" :alt="`${info.caseName}_img`" class="text" data-aos="fade-up" data-aos-delay="400">
+    <h3 class="title" data-aos="fade-up" data-aos-delay="200">
       見識越高 越是深藏不露
     </h3>
-    <div class="content">
+    <div class="content" data-aos="fade-up" data-aos-delay="600">
       <div class="content-title">
         羅斯福.汀洲路最自慢收藏
       </div>

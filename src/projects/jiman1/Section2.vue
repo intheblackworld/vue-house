@@ -3,13 +3,13 @@
     <div v-if="!isMobile">
       <img src="./s2/02_flower_l.png" :alt="`${info.caseName}_f3`" class="f3">
       <img src="./s2/02_img.jpg" :alt="`${info.caseName}_img`" class="img">
-      <h3 class="title">
+      <h3 class="title" data-aos="fade-up" data-aos-delay="200">
         「 我不是收藏家，我就是一座美術館。」
       </h3>
-      <div class="subtitle">
+      <div class="subtitle" data-aos="fade-up" data-aos-delay="400">
         紐約名門收藏家 佩姬‧古根漢
       </div>
-      <div class="desc">
+      <div class="desc" data-aos="fade-up" data-aos-delay="600">
         懂收藏的人，有旁人難及的自豪氣概<br />
         自豪於收藏從不看價格，而是看故事<br />
         罐裡的玻璃彈珠，藏著孩提時的單純快樂<br />
@@ -24,8 +24,8 @@
       <div class="img">
       <img src="./mobile/02/02_img_m.jpg" :alt="`${info.caseName}_img`">
       </div>
-      <img src="./mobile/02/02_text_m.png" :alt="`${info.caseName}_img`" class="text">
-      <div class="desc">
+      <img src="./mobile/02/02_text_m.png" :alt="`${info.caseName}_img`" class="text" data-aos="fade-up" data-aos-delay="200">
+      <div class="desc" data-aos="fade-up" data-aos-delay="400">
         懂收藏的人，有旁人難及的自豪氣概<br />
         自豪於收藏從不看價格，而是看故事<br />
         玻璃彈珠藏著孩提時的單純快樂<br />
