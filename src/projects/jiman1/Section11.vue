@@ -7,7 +7,7 @@
     <img src="./s11/11_house.png" :alt="`${info.caseName}_img`" class="house">
     <img src="./s11/11_text.png" :alt="`${info.caseName}_img`" class="text" data-aos="fade-up" data-aos-delay="400">
     <h3 class="title" data-aos="fade-up" data-aos-delay="200">
-      見識越高 越是深藏不露
+      見識越高　越是深藏不露
     </h3>
     <div class="content" data-aos="fade-up" data-aos-delay="600">
       <div class="content-title">
@@ -166,14 +166,13 @@
   }
 
   .title {
-    @include img_c_m(295, 66.7);
-    font-size: sizem(31.2);
+    @include img_c_m(375, 66.7);
+    font-size: sizem(28);
     line-height: sizem(37.2);
-    letter-spacing: sizem(0.69);
+    letter-spacing:0.02em;
     text-align: center;
     font-weight: 500;
     color: #000;
-    white-space: nowrap;
   }
 
   .content {
