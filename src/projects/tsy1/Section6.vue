@@ -533,16 +533,10 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s5/05_slider_1.jpg'),
+          img: require('./s5/06_img_1.jpg'),
         },
         {
-          img: require('./s5/05_slider_2.jpg'),
-        },
-        {
-          img: require('./s5/05_slider_3.jpg'),
-        },
-        {
-          img: require('./s5/05_slider_4.jpg'),
+          img: require('./s5/06_img_2.jpg'),
         },
       ],
     }
