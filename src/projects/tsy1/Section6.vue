@@ -328,7 +328,7 @@
     max-height: initial;
     background-image: url('./bg_m.png');
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment: initial;
     overflow: hidden;
   }
 
