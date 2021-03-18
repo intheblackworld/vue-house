@@ -196,6 +196,7 @@
     transform: translateX(-50%) translateZ(0);
     background-color: transparent;
     border: 1px solid #fff;
+    z-index: 10;
   }
   .custom-horizontal-indicator {
     height: sizem(11.2);
