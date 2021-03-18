@@ -28,9 +28,9 @@
         <div ref="wrapper" class="custom-scrollbar-wrapper">
           <img @load="onload" class="custom-scrollbar-content" :src="require('./mobile/02/02_img_m.jpg')" alt="">
           <!-- custom-vertical-scrollbar-->
-          <!-- <div class="custom-vertical-scrollbar" ref="vertical">
+          <div class="custom-vertical-scrollbar" ref="vertical">
             <div class="custom-vertical-indicator"></div>
-          </div> -->
+          </div>
           <!-- custom-horizontal-scrollbar-->
           <div class="custom-horizontal-scrollbar" ref="horizontal">
             <div class="custom-horizontal-indicator"></div>
@@ -193,7 +193,7 @@
     width: sizem(154.5);
     height: 7px;
     border-radius: 6px;
-    transform: translateX(-50%) translateZ(0);
+    transform: translateX(-50%) translateZ(3px);
     background-color: transparent;
     border: 1px solid #fff;
     z-index: 10;
@@ -282,7 +282,7 @@ export default {
         freeScroll: true,
         click: true,
         scrollbar: {
-          customElements: [this.$refs.horizontal],
+          customElements: [this.$refs.horizontal, this.$refs.vertical],
           fade: false,
           interactive: true,
           scrollbarTrackClickable: true,
