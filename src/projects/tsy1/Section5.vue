@@ -400,7 +400,7 @@
     right: 16px;
     bottom: 7px;
     color: #fff;
-    font-size: 12px;
+    font-size: 12px !important;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
