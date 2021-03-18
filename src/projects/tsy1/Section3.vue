@@ -441,7 +441,7 @@
     right: 16px;
     bottom: 7px;
     color: #fff;
-    font-size: size(28);
+    font-size: 12px !important;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
