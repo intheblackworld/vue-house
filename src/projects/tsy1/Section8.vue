@@ -127,6 +127,21 @@
     overflow: hidden;
   }
 
+  .bg-img {
+    width: 100vw;
+    height: sizem(667);
+    min-height: auto;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+
+    &:nth-child(1) {
+      position: relative;
+    }
+  }
+
   .title {
     @include img_c_m(200, 23);
     text-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
@@ -144,7 +159,7 @@
   .desc {
     @include img_c_m(319, 110);
     text-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
-    font-size: size(16);
+    font-size: sizem(16);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
