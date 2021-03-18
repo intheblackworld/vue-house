@@ -391,6 +391,10 @@
     //   z-index: 2;
     //   // opacity: 1;
     // }
+
+    .slide-name {
+      font-size: 12px !important;
+    }
   }
 
   .pagination {
