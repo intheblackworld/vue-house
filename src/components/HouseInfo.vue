@@ -70,7 +70,7 @@ export default {
 .info {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 0 3em;
+  margin: 0 0 1em;
   font-size: 15px;
 }
 
@@ -132,7 +132,7 @@ export default {
     width: 100%;
     margin-bottom: 0em;
     font-size: 15px;
-    padding-bottom: 50px;
+    // padding-bottom: 50px;
   }
 
   .title {
