@@ -27,10 +27,11 @@
       <div class="custom-scrollbar-container img">
         <div ref="wrapper" class="custom-scrollbar-wrapper">
           <img @load="onload" class="custom-scrollbar-content" :src="require('./mobile/02/02_img_m.jpg')" alt="">
+          <div class="scrollbar-mask"></div>
           <!-- custom-vertical-scrollbar-->
-          <div class="custom-vertical-scrollbar" ref="vertical">
+          <!-- <div class="custom-vertical-scrollbar" ref="vertical">
             <div class="custom-vertical-indicator"></div>
-          </div>
+          </div> -->
           <!-- custom-horizontal-scrollbar-->
           <div class="custom-horizontal-scrollbar" ref="horizontal">
             <div class="custom-horizontal-indicator"></div>
@@ -157,6 +158,15 @@
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
+  }
+
+  .scrollbar-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: sizem(247);
+    transform: translateX(0px) translateY(0px) translateZ(2px);
   }
 
   // .custom-scrollbar-container .custom-scrollbar-wrapper {
