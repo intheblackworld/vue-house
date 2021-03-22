@@ -36,6 +36,9 @@ export default {
     goTo(index) {
       this.slideIndex = index
     },
+    goToMultiIndex(index, slideIndex) {
+      this[`slideIndex${slideIndex}`] = index
+    },
     addIndex() {
       this.slideIndex =
         this.slideIndex === this.slideList.length - 1 ? 0 : this.slideIndex + 1

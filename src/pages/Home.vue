@@ -3,18 +3,18 @@
     <div class="bg-img">
       <Loading :loading="load" />
       <!-- <SideNavigation /> -->
-      <!-- <Navigation v-if="!isMobile" /> -->
+      <Navigation />
       <!-- <Indigator :viewIndex="viewIndex" /> -->
       <!-- <full-page
       ref="fullPage"
       :options="options"
       id="fullpage"
     > -->
-      <!-- <vue-lazy-component class="section relative" id="section1" @init="init"> -->
-      <Section1 />
-      <!-- </vue-lazy-component> -->
+      <vue-lazy-component class="section relative" id="section1" @init="init">
+        <Section1 />
+      </vue-lazy-component>
 
-      <!-- <vue-lazy-component class="section" id="section2" style="">
+      <vue-lazy-component class="section" id="section2" style="">
         <Section2 />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section3">
@@ -22,33 +22,24 @@
       </vue-lazy-component>
       <vue-lazy-component class="section relative" id="section4">
         <Section4 />
-      </vue-lazy-component> -->
-      <!--  <vue-lazy-component
-      class="section"
-      id="section7"
-    >
-      <Section7 />
-    </vue-lazy-component> -->
-      <!-- <vue-lazy-component class="section" id="section5">
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section5">
         <Section5 />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section6">
         <Section6 />
-      </vue-lazy-component> -->
-      <!-- <vue-lazy-component
-      class="section"
-      id="section8"
-    >
-      <Section8 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section9"
-    >
-      <Section9 />
-    </vue-lazy-component> -->
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section7">
+        <Section7 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section8">
+        <Section8 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section9">
+        <Section9 />
+      </vue-lazy-component>
       <!-- <vue-lazy-component class="section" id="contact"> -->
-        <ContactSection />
+      <ContactSection />
       <!-- </vue-lazy-component> -->
     </div>
     <MobileNav />
@@ -98,15 +89,15 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/tsi/Section1.vue'
-// import Section2 from '@/projects/tsi/Section2.vue'
-// import Section3 from '@/projects/tsi/Section3.vue'
-// import Section4 from '@/projects/tsi/Section4.vue'
-// import Section5 from '@/projects/tsi/Section5.vue'
-// import Section6 from '@/projects/tsi/Section6.vue'
-// import Section7 from '@/projects/lj/Section7.vue'
-// import Section8 from '@/projects/lj/Section8.vue'
-// import Section9 from '@/projects/lj/Section9.vue'
+import Section1 from '@/projects/tsi1/Section1.vue'
+import Section2 from '@/projects/tsi1/Section2.vue'
+import Section3 from '@/projects/tsi1/Section3.vue'
+import Section4 from '@/projects/tsi1/Section4.vue'
+import Section5 from '@/projects/tsi1/Section5.vue'
+import Section6 from '@/projects/tsi1/Section6.vue'
+import Section7 from '@/projects/tsi1/Section7.vue'
+import Section8 from '@/projects/tsi1/Section8.vue'
+import Section9 from '@/projects/tsi1/Section9.vue'
 
 export default {
   name: 'home',
@@ -119,14 +110,14 @@ export default {
     ContactSection,
     MobileNav,
     Section1,
-    // Section2,
-    // Section3,
-    // Section4,
-    // Section5,
-    // Section6,
-    // Section7,
-    // Section8,
-    // Section9,
+    Section2,
+    Section3,
+    Section4,
+    Section5,
+    Section6,
+    Section7,
+    Section8,
+    Section9,
   },
 
   data() {
