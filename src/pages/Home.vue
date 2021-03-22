@@ -33,9 +33,15 @@
           isPlay: false,
         },
         {
-          title: '明誠文藻雙商圈<br />河堤綠帶散步到',
+          title: '妻子嚴選高坪效<br />聽老婆的就對了',
           img: require('@/projects/sdj1/s2/2.jpg'),
-          video: 'https://www.youtube.com/embed/g1u3UUro2VU',
+          video: 'https://www.youtube.com/embed/-LFr3WaougI',
+          isPlay: false,
+        },
+        {
+          title: '在熟悉的環境裡<br />給父母親最好的',
+          img: require('@/projects/sdj1/s2/3.jpg'),
+          video: 'https://www.youtube.com/embed/uoQ8ZL-HNXQ',
           isPlay: false,
         },
       ]"
