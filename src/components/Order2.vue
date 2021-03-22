@@ -9,7 +9,7 @@
           <!-- <div class="form-hint">* 每個欄位都是必填欄位</div> -->
           <div class="row" data-aos="fade-down" data-aos-delay="100">
             <el-select v-model="form.activity" placeholder="想報名的活動">
-              <el-option v-for="(act, index) in activies" :key="act.value + index" :label="act.label" :value="act.value" no-data-text="無數據"></el-option>
+              <el-option v-for="(act, index) in activies" :key="act.value + index" :label="act.label" :value="act.value" :disabled="act.disabled" no-data-text="無數據"></el-option>
             </el-select>
           </div>
           <div class="row" data-aos="fade-down" data-aos-delay="100">
@@ -123,22 +123,6 @@ export default {
       googleSrc: info.googleSrc,
       activies: [
         {
-          value: '2/28(日)14:00-16:00 瑪莎見面會',
-          label: '2/28(日)14:00-16:00 瑪莎見面會',
-        },
-        {
-          value: '3/6(六)14:00-16:00 春來了',
-          label: '3/6(六)14:00-16:00 春來了',
-        },
-        {
-          value: '3/13(六)14:00-16:00 海底探險家',
-          label: '3/13(六)14:00-16:00 海底探險家',
-        },
-        {
-          value: '3/20(六)14:00-15:30 親子讀報趣',
-          label: '3/20(六)14:00-15:30 親子讀報趣',
-        },
-        {
           value: '3/27(六)14:00-16:00 讀報素養闖關',
           label: '3/27(六)14:00-16:00 讀報素養闖關',
         },
@@ -151,8 +135,32 @@ export default {
           label: '4/10(六)14:00-15:30  故事魔法寶盒',
         },
         {
+          value: '4/17(六)14:00-15:00 可愛動物聯萌',
+          label: '4/17(六)14:00-15:00 可愛動物聯萌',
+        },
+        {
           value: '4/24(六)14:00-15:00 如何沖泡一杯好咖啡',
           label: '4/24(六)14:00-15:00 如何沖泡一杯好咖啡',
+        },
+        {
+          value: '2/28(日)14:00-16:00 瑪莎見面會',
+          label: '2/28(日)14:00-16:00 瑪莎見面會',
+          disabled: true,
+        },
+        {
+          value: '3/6(六)14:00-16:00 春來了',
+          label: '3/6(六)14:00-16:00 春來了',
+          disabled: true,
+        },
+        {
+          value: '3/13(六)14:00-16:00 海底探險家',
+          label: '3/13(六)14:00-16:00 海底探險家',
+          disabled: true,
+        },
+        {
+          value: '3/20(六)14:00-15:30 親子讀報趣',
+          label: '3/20(六)14:00-15:30 親子讀報趣',
+          disabled: true,
         },
         /*   {
           value: '更多精彩活動 敬請期待 即將公開',

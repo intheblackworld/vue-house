@@ -46,12 +46,12 @@
               >>我要報名
             </div>
           </div>
-          <div @click="changeAct(index)" v-scroll-to="{element: '#contact'}" class="box100"></div>
+          <div @click="changeAct(index)" v-if="!slide.hide" v-scroll-to="{element: '#contact'}" class="box100"></div>
         </slide>
       </carousel-3d>
       <div class="slide-title" v-html="slideList[slideIndex].title" v-if="isMobile">
       </div>
-      <div class="btn" v-if="isMobile" @click="changeAct(slideIndex)" v-scroll-to="{element: '#contact'}">
+      <div class="btn" v-if="isMobile && !slideList[slideIndex].hide" @click="changeAct(slideIndex)" v-scroll-to="{element: '#contact'}">
         >>我要報名
       </div>
       <div class="pagination">
@@ -761,26 +761,6 @@ export default {
       // currentIndex: 0,
       slideList: [
         {
-          title: '前20名報名者，將獲得瑪莎限量拍照牌！',
-          img: require('./s7/1.jpg'),
-          name: '情境示意圖',
-        },
-        {
-          title: '透過繪本、唱跳和動手玩創作，一起來迎接春天吧～',
-          img: require('./s7/2.jpg'),
-          name: '情境示意圖',
-        },
-        {
-          title: '聽說海底王國裡有許多故事，跟著海底探險家出發吧！',
-          img: require('./s7/3.jpg'),
-          name: '情境示意圖',
-        },
-        {
-          title: '邀請親子同樂，一起透過讀報來認識世界，創造驚喜。',
-          img: require('./s7/4.jpg'),
-          name: '情境示意圖',
-        },
-        {
           title: '國語日報特製闖關遊戲，結合閱讀，玩樂中兼具學習！',
           img: require('./s7/5.jpg'),
           name: '情境示意圖',
@@ -796,21 +776,45 @@ export default {
           name: '情境示意圖',
         },
         {
+          title: '透過唱跳遊戲、故事及手作，讓孩子認識可愛動物。',
+          img: require('./s7/8.jpg'),
+          name: '情境示意圖',
+        },
+        {
           title: '一杯口感馥郁香氣的黑色飲料，蘊藏著多少功夫細節?',
           img: require('./s7/9.jpg'),
           name: '情境示意圖',
         },
         {
-          img: require('./s7/8.jpg'),
-          name: ' ',
           title: ' ',
+          img: require('./s7/0.jpg'),
+          name: ' ',
           hide: true,
-          title: '123',
         },
-        /*   {
-          title: '一杯口感馥郁香氣的黑色飲料，蘊藏著多少功夫細節？',
-          img: require('./s7/9.jpg'),
-        }, */
+        {
+          title: '前20名報名者，將獲得瑪莎限量拍照牌！',
+          img: require('./s7/1.jpg'),
+          name: '情境示意圖',
+          hide: true,
+        },
+        {
+          title: '透過繪本、唱跳和動手玩創作，一起來迎接春天吧～',
+          img: require('./s7/2.jpg'),
+          name: '情境示意圖',
+          hide: true,
+        },
+        {
+          title: '聽說海底王國裡有許多故事，跟著海底探險家出發吧！',
+          img: require('./s7/3.jpg'),
+          name: '情境示意圖',
+          hide: true,
+        },
+        {
+          title: '邀請親子同樂，一起透過讀報來認識世界，創造驚喜。',
+          img: require('./s7/4.jpg'),
+          name: '情境示意圖',
+          hide: true,
+        },
       ],
       videoWidth: isMobile
         ? (window.innerWidth * 350) / 375
