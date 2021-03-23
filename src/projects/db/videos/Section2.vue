@@ -407,6 +407,13 @@ export default {
           video: 'https://www.youtube.com/embed/0BPv41BCVmk',
         },
         {
+          type: 1,
+          title: '【碧波白】五大建築獎',
+          desc: '',
+          img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/Shj6X2xxyoQ'
+        },
+        {
           // icon: require('./s1/icon1.png'),
           type: 3,
           title: '【東森新聞】坐擁全齡機能! 新店碧波白兩代宅躍升換屋首選',
