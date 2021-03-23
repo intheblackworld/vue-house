@@ -255,7 +255,7 @@ export default {
   }
 
   .group {
-    height: 110px;
+    height: 237px;
 
     &:nth-child(1) {
       border-right: 1px solid rgba(0, 0, 0, 0.2);
