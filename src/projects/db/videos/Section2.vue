@@ -111,7 +111,7 @@
   iframe {
     width: size(966);
     height: size(629);
-    object-fit: cover;
+    // object-fit: cover;
   }
 
   .content {
@@ -281,7 +281,7 @@
       right: 0;
       background-color: #000;
       transition: all 1s;
-      object-fit: cover;
+      // object-fit: cover;
     }
 
     .content {
