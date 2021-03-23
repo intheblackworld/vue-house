@@ -24,7 +24,7 @@
       <div class="hr" data-aos="zoom-in-right" data-aos-delay="1400"></div>
       <h1 class="desc" data-aos="fade-up" data-aos-delay="1600">
         繼2012推出金獎名宅〔靜心連雲〕<br />
-        睽違八年，連雲建築回到人文景美<br />
+        睽違十年，連雲建築回到人文景美<br />
         精選仙岩公園首排稀珍美地<br />
         攜手日本職人<br />
         再創靜心學域完美經典
