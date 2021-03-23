@@ -19,7 +19,7 @@
         </div>
       </div>
       <h1 class="title" data-aos="flip-up" data-aos-delay="1200">
-        睽違八年，用心如初。
+        睽違十年，用心如初。
       </h1>
       <div class="hr" data-aos="zoom-in-right" data-aos-delay="1400"></div>
       <h1 class="desc" data-aos="fade-up" data-aos-delay="1600">
