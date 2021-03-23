@@ -26,7 +26,7 @@
               placeholder
             ></el-input>
           </div> -->
-          <!-- <div class="row">
+          <div class="row">
             <label>居住城市</label>
             <el-select
               v-model="form.city"
@@ -39,8 +39,8 @@
                 :value="city.value"
               ></el-option>
             </el-select>
-          </div> -->
-          <!-- <div class="row">
+          </div>
+          <div class="row">
             <label>居住地區</label>
             <el-select
               v-model="form.area"
@@ -53,7 +53,7 @@
                 :value="area.value"
               ></el-option>
             </el-select>
-          </div> -->
+          </div>
         </div>
         <div class="group">
           <div class="row">
