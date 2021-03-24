@@ -10,8 +10,8 @@
 
 .section2 {
   width: 100%;
-  height: size(1080);
-  min-height: size(1080);
+  height: 100vh;
+  min-height: size(900);
   max-height: size(1080);
   // position: relative;
   // background-color: #fff;

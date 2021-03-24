@@ -1,14 +1,16 @@
 <template>
   <div class="section3">
-    <img src="./s3/03_img.png" :alt="`${info.caseName}_img`" class="bg-img">
+    <img src="./s3/03_img.png" :alt="`${info.caseName}_img`" class="bg-img"  v-if="!isMobile">
     <h3 class="title" data-aos="fade-up" data-aos-delay="200">
-      洲子洋天空再進化　讓雙北人都羨慕
+      洲子洋天空再進化<br v-if="isMobile"><span v-if="!isMobile">　</span>讓雙北人都羨慕
     </h3>
     <div class="hr" data-aos="zoom-in-right" data-aos-delay="400" data-aos-offset="100"></div>
     <div class="desc" data-aos="fade-up" data-aos-delay="600">
       15萬坪寬闊樹海濃蔭，128萬坪大臺北都會水岸公園，藍天、綠邑絕美生活別說你不羨慕！<br />
       這就是洲子洋，宜居大城持續進化，讓雙北人一眼愛上
     </div>
+<Map v-if="isMobile" :tagList="tagList" :bgSrc="isMobile ? bgmSrc: bgSrc" :hand="hand">
+    </Map>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -16,8 +18,8 @@
 
 .section3 {
   width: 100%;
-  height: size(1080);
-  min-height: size(1080);
+  height: 100vh;
+  min-height: size(900);
   max-height: size(1080);
   position: relative;
   // background-color: #fff;
@@ -31,22 +33,22 @@
 
 .bg-img {
   width: 100%;
-  height: 100%;
+  height:auto;
   position: absolute;
-  top: 0;
+  top:calc(60% - 100vw * 1096 * 0.6 / 1920 );
   left: 0;
   display: block;
   object-fit: cover;
   margin-top: 0;
   // opacity: 0.5;
-
+/*
   &:nth-child(1) {
     position: relative;
-  }
+  }*/
 }
 
 .title {
-  @include img_l_pc(762, 116, 456);
+  @include img_c_pc(762, 60);
   font-size: size(50);
   font-weight: bold;
   font-stretch: normal;
@@ -59,13 +61,13 @@
 }
 
 .hr {
-  @include img_l_pc(842, 202, 415);
+  @include img_c_pc(842, 140);
   // height: 35px;
   border-top: size(1) solid #fff;
 }
 
 .desc {
-  @include img_l_pc(838, 214, 418);
+  @include img_c_pc(838, 155);
   font-size: size(20);
   font-weight: 500;
   font-stretch: normal;
@@ -78,7 +80,7 @@
 }
 
 .more {
-  @include img_r_pc(309 + 20 + 63, 705, 110);
+  @include img_r_pc(309 + 20 + 63, 685, 110);
   font-size: size(24);
   font-weight: normal;
   font-stretch: normal;
@@ -111,7 +113,7 @@
 @media screen and (max-width: 767px) {
   .section3 {
     width: 100%;
-    height: sizem(715);
+    height: auto;
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -122,35 +124,24 @@
   }
 
   .title {
-    @include img_r_m(260, 409, 71);
+    @include img_c_m(220, 22);
     font-size: sizem(26);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
     letter-spacing: normal;
-    text-align: left;
-    color: #333;
-    white-space: nowrap;
+    z-index: 9;
   }
 
   .hr {
-    @include img_r_m(230, 458, 102);
-    height: sizem(0.5);
-    background: #333;
+    @include img_c_m(325, 104);
+    z-index: 9;
   }
 
   .desc {
-    @include img_r_m(292, 474, 40);
-    font-size: sizem(16);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
+    @include img_c_m(320, 119);
+    font-size: sizem(12);
     line-height: 1.88;
     letter-spacing: normal;
-    text-align: left;
-    color: #333;
-    white-space: nowrap;
+    white-space:normal;
+    z-index: 9;
   }
 
   .more {
@@ -170,177 +161,21 @@
       width: sizem(29);
     }
   }
-
-  /* Swipe */
-  .swipe {
-    width: sizem(333);
-    height: sizem(333);
-    min-height: auto;
-    top: sizem(50);
-    left: auto;
-    right: sizem(0);
-    object-fit: cover;
-  }
-
-  // begin
-  .swipe-fade-leave-to {
-    opacity: 0;
-    z-index: 0;
-  }
-  // end
-  .swipe-fade-enter {
-    opacity: 0;
-    z-index: 1;
-  }
-
-  .swipe-fade-enter-active {
-    transition: all 0.5s ease;
-  }
-
-  .swipe-fade-leave-active {
-    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-
-  // begin
-  // .swipe-left-leave-to {
-  //   margin-left: -100vw;
-  //   z-index: 0;
-  // }
-  // // end
-  // .swipe-left-enter {
-  //   opacity: 0.5;
-  //   margin-left: 0;
-  //   z-index: 1;
-  // }
-
-  // .swipe-left-enter-active {
-  //   transition: all 0.5s ease;
-  // }
-
-  // .swipe-left-leave-active {
-  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  // }
-
-  .swipe-wrap {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .swipe-item {
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    // &:nth-child(1) {
-    //   z-index: 1;
-    //   // opacity: 1;
-    // }
-
-    // &.base {
-    //   z-index: 1;
-    //   opacity: 1;
-    // }
-    // &.active {
-    //   z-index: 2;
-    //   // opacity: 1;
-    // }
-    .slide-name {
-      font-size: sizem(15);
-    }
-  }
-
-  .pagination {
-    width: auto;
-    bottom: size(91);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    justify-content: center;
-  }
-
-  .pagination-dot {
-    padding: 5px;
-    margin: 0 10px;
-    cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
-      box-shadow: 0 0 0 1px #fff;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
-      transition: all 0.5s;
-
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #004ea2;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transition: all 0.3s;
-        transform-origin: center;
-        transform: scale(0);
-      }
-      &.active {
-        &::before {
-          content: '';
-          width: 100%;
-          height: 100%;
-          display: block;
-          background: #004ea2;
-          border-radius: 20px;
-          opacity: 1;
-          position: absolute;
-          top: 0%;
-          // transform: translateY(-50%);
-          left: 0%;
-          transform: scale(1);
-        }
-      }
-    }
-  }
-
-  .swipe-btns {
-    width: 100%;
-    height: 100%;
-    padding: 0 15px;
-    z-index: 3;
-
-    .prev-btn,
-    .next-btn {
-      width: sizem(15);
-      cursor: pointer;
-    }
-  }
 }
 </style>
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
+import Map from '@/components/Map.vue'
 import info from '@/info'
 // import slider from '@/mixins/slider.js'
 
 export default {
   name: 'section3',
 
-  // mixins: [slider],
-  props: ['viewIndex'],
+  components: {
+    Map,
+  },
 
   data() {
     return {
@@ -349,24 +184,18 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
+      tagList: [],
+      bgmSrc: require('./s3/03_img_m.jpg'),
+      hand: require('./s3//m_2_mobile_hand.png'),
     }
   },
+
+
+  computed: {},
 
   methods: {},
 
   created() {},
-
   mounted() {},
-
-  computed: {},
-
-  watch: {
-    // viewIndex() {
-    //   if (this.viewIndex === 5) {
-    //     this.slideIndex = 0
-    //     console.log(this.slideIndex, 'slideIndex')
-    //   }
-    // },
-  },
 }
 </script>

@@ -2,7 +2,7 @@
   <div>
     <div class="section6">
       <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex" data-aos="fade" data-aos-delay="200">
+        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
               <img :src="slide.img" alt="">
@@ -18,6 +18,7 @@
           </div>
         </div>
       </div>
+      <div class="txt">
       <h3 class="title" data-aos="flip-up" data-aos-delay="400">
         迎向天空人生峰景 <span>讓別人都羨慕憧憬</span>
       </h3>
@@ -47,6 +48,7 @@
           </h3>
         </div>
       </div>
+      </div>
     </div>
   </div>
 </template>
@@ -55,9 +57,9 @@
 
 .section6 {
   width: 100%;
-  height: size(978);
-  min-height: size(978);
-  max-height: size(978);
+  height: 100vh;
+  min-height: size(900);
+  max-height: size(1080);
   position: relative;
   // background-color: #fff;
   // min-height: size(900);
@@ -66,34 +68,54 @@
   // background-position: 0 0;
   // background-attachment: fixed;
   // overflow: hidden;
+&::after,
+&::before{
+  content: "";
+  width: 120%;
+  height: size(120);
+  position: absolute;bottom:  size(-90);left:-10%;
+  background: url("./all/section_bg.jpg") fixed;
+  background-size: cover;
+  border-radius: 100% 100% 0 0;z-index: 2;
+}
+&::after{
+  border-radius: 0 0 100% 100%;top:  size(-90);bottom: auto;
 }
 
+}
+
+.txt{
+  @include img_l_pc(600, 0, 328);
+  height: 100%;filter: drop-shadow(0 0 5px #036);
+  display: flex;justify-content: center;
+    flex-direction:column;
+  }
 .title {
-  @include img_l_pc(812, 121, 328);
   font-size: size(50);
   font-weight: 900;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.44;
-  letter-spacing: size(5);
+  letter-spacing:0.01em;
   text-align: left;
   color: #ffffff;
   white-space: nowrap;
   span {
+    display: block;
     font-size: size(35);
     letter-spacing: size(3.5);
   }
 }
 
 .hr {
-  @include img_l_pc(763, 226, 327);
+  width: 100%;
   // height: 35px;
   border-top: size(1) solid #fff;
+  margin: size(15) 0;
 }
 
 .desc {
-  @include img_l_pc(418, 241, 332);
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.44);
+ // text-shadow: 0 2px 5px rgba(0, 0, 0, 0.44);
   font-size: size(18);
   font-weight: normal;
   font-stretch: normal;
@@ -106,7 +128,6 @@
 }
 
 .list {
-  @include img_l_pc(380, 417, 328);
 }
 
 .item {
@@ -121,9 +142,9 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 5.42;
-    letter-spacing: size(0.9);
+    letter-spacing:0.05em;
     text-align: left;
-    color: #666666;
+    color: #fffc;
     span {
       color: #f15a24;
     }
@@ -132,8 +153,8 @@
 
 /* Swipe */
 .swipe {
-  width: 100vw;
-  height: size(978);
+  width:100%;
+  height:100%;
   bottom: size(0);
   left: 0;
   object-fit: cover;
@@ -323,65 +344,64 @@
     // background-position: 0 0;
     // background-attachment: fixed;
     overflow: hidden;
+&::after,
+&::before{
+  display: none;
+}
   }
 
+.txt{
+    @include img_l_m(330, 25, 25);
+  height:auto;filter: drop-shadow(0 0 5px #036);display: block;
+  }
   .title {
-    @include img_r_m(260, 409, 71);
+   // @include img_r_m(260, 409, 71);
     font-size: sizem(26);
     font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
     letter-spacing: normal;
-    text-align: left;
-    color: #333;
-    white-space: nowrap;
+  line-height: 2;
+  span {
+    display: block;
+    font-size: sizem(20);
+    letter-spacing:0.01em;
+  }
   }
 
   .hr {
-    @include img_r_m(230, 458, 102);
-    height: sizem(0.5);
-    background: #333;
+  //  @include img_r_m(230, 458, 102);
+    height: sizem(1);
+    margin:sizem(12) 0;
   }
 
   .desc {
-    @include img_r_m(292, 474, 40);
-    font-size: sizem(16);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.88;
-    letter-spacing: normal;
-    text-align: left;
-    color: #333;
-    white-space: nowrap;
-  }
-
-  .more {
-    @include img_r_m(179 + 7 + 29, 636, 117);
-    font-size: sizem(15);
+   // @include img_r_m(292, 474, 40);
+    font-size: sizem(14);
     font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.04;
-    letter-spacing: sizem(2.1);
-    text-align: left;
-    color: #ffffff;
-    cursor: pointer;
-    white-space: nowrap;
-
-    img {
-      width: sizem(29);
-    }
+    letter-spacing: normal;
+    white-space: normal;
+    margin: 0 0 1.5em 0;
   }
+  .item {
+  .icon {
+    width: sizem(39);
+    margin-right:sizem(4);
+  }
+
+  .text {
+    font-size: sizem(14);
+    letter-spacing: size(0.9);
+    line-height: 3.3;
+  }
+}
+
 
   /* Swipe */
   .swipe {
-    width: sizem(333);
-    height: sizem(333);
+    width: 100%;
+    height: sizem(766);
     min-height: auto;
-    top: sizem(50);
-    left: sizem(0);
+    top: 0;
+    left: 0;
     object-fit: cover;
   }
 
@@ -456,8 +476,8 @@
     // }
     .slide-name {
       right: auto;
-      bottom: auto;
-      top: 1.2rem;
+      top: auto;
+      bottom: 1.2rem;
       left: 1.2rem;
       font-size: sizem(15);
     }
@@ -524,8 +544,11 @@
   }
 
   .swipe-btns {
+    position: absolute;
+    left: 0;
+    bottom: 0;
     width: 100%;
-    height: 100%;
+    height: sizem(370);
     padding: 0 15px;
     z-index: 3;
 
@@ -560,57 +583,57 @@ export default {
         {
           img: isMobile
             ? require('./s6/06_slider_1_m.jpg')
-            : require('./s6/06_slider_1.png'),
+            : require('./s6/01.jpg'),
+          // name: '臺北市私立靜心高級中學',
+        },
+  /*      {
+          img: isMobile
+            ? require('./s6/06_slider_2_m.jpg')
+            : require('./s6/02.jpg'),
           // name: '臺北市私立靜心高級中學',
         },
         {
           img: isMobile
-            ? require('./s6/06_slider_2_m.jpg')
-            : require('./s6/06_slider_2.png'),
-          // name: '菁英家庭優質私校首選，圖為優質校風示意圖',
-        },
-        {
-          img: isMobile
             ? require('./s6/06_slider_3_m.jpg')
-            : require('./s6/06_slider_3.png'),
-          // name: '私立靜心高級中學',
+            : require('./s6/03.jpg'),
+          // name: '臺北市私立靜心高級中學',
         },
         {
           img: isMobile
             ? require('./s6/06_slider_4_m.jpg')
-            : require('./s6/06_slider_4.png'),
+            : require('./s6/04.jpg'),
           // name: '臺北市私立靜心高級中學',
         },
         {
           img: isMobile
             ? require('./s6/06_slider_5_m.jpg')
-            : require('./s6/06_slider_5.png'),
-          // name: '菁英家庭優質私校首選，圖為優質校風示意圖',
+            : require('./s6/05.jpg'),
+          // name: '臺北市私立靜心高級中學',
         },
         {
           img: isMobile
             ? require('./s6/06_slider_6_m.jpg')
-            : require('./s6/06_slider_6.png'),
-          // name: '私立靜心高級中學',
+            : require('./s6/06.jpg'),
+          // name: '臺北市私立靜心高級中學',
         },
         {
           img: isMobile
             ? require('./s6/06_slider_7_m.jpg')
-            : require('./s6/06_slider_7.png'),
+            : require('./s6/07.jpg'),
           // name: '臺北市私立靜心高級中學',
         },
         {
           img: isMobile
             ? require('./s6/06_slider_8_m.jpg')
-            : require('./s6/06_slider_8.png'),
-          // name: '菁英家庭優質私校首選，圖為優質校風示意圖',
+            : require('./s6/08.jpg'),
+          // name: '臺北市私立靜心高級中學',
         },
         {
           img: isMobile
             ? require('./s6/06_slider_9_m.jpg')
-            : require('./s6/06_slider_9.png'),
-          // name: '私立靜心高級中學',
-        },
+            : require('./s6/09.jpg'),
+          // name: '臺北市私立靜心高級中學',
+        }, */
       ],
     }
   },

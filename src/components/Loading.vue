@@ -31,6 +31,7 @@
 
   &.opacity {
     opacity: 0.8;
+    display: none;
   }
 
   &.hide {

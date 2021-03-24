@@ -117,9 +117,9 @@ export default {
 @import '../assets/style/function.scss';
 
 .navigation {
-  background-color: $nav_bg;
+ // background-color: $nav_bg;
   // background-image: $nav_bg;
-  background-size: cover;
+ // background-size: cover;
   height: $nav_pc_height;
   z-index: 10;
   position: fixed;
@@ -128,6 +128,8 @@ export default {
   display: flex !important;
   align-items: center;
  // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+ &::after{content:"";width: 100%; height: 100%;background: #f15a24;position: absolute;top: -50%;left: 0;box-shadow:0 0 20px 40px#f15a24;}
+
 }
 
 .nav-container {
@@ -142,7 +144,7 @@ export default {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content:center;
   position: relative;
   a {
     display: block;
@@ -184,8 +186,8 @@ export default {
 
   .link {
     color: $nav_link_color;
-    height: 22px;
-    border-right: 1px solid #fff;
+    height: 100%;
+   // border-right: 1px solid #fff;
     text-align: center;
     display: block;
     cursor: pointer;
@@ -198,48 +200,32 @@ export default {
     position: relative;
     // overflow: hidden;
     // border-right: 1px solid $nav_link_hover_bg;
+      font-size: 24px !important;
 
     &:hover {
       color: $nav_link_hover_color;
       // background: $nav_link_hover_bg;
     }
 
-    // &::before {
-    //   content: '';
-    //   width: 0%;
-    //   height: 100%;
-    //   display: block;
-    //   background: $nav_link_hover_bg; // second bg
-    //   position: absolute;
-    //   transform: skewX(-20deg);
+     &::before {
+       content: '';
+       width: 0%;
+       height: 2px;
+       display: block;
+       background:#ffff00; // second bg
+       position: absolute;
+     //  transform: skewX(-20deg);
     //   left: -10%;
     //   opacity: 1;
-    //   top: 0;
-    //   z-index: 2;
-    //   transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
-    //   // box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
-    // }
+       top:calc(50% + 0.8em);
+       z-index: 2;
+       transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+     }
 
-    // &::after {
-    //   content: '';
-    //   width: 0%;
-    //   height: 100%;
-    //   display: block;
-    //   background: #fff; // first bg
-    //   position: absolute;
-    //   transform: skewX(-20deg);
-    //   left: -10%;
-    //   opacity: 0;
-    //   top: 0;
-    //   z-index: 1;
-    //   transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
-    //   // box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
-    // }
-    // &:hover::before,
-    // &:hover::before {
-    //   opacity: 1;
-    //   width: 116%;
-    // }
+     &:hover::before {
+       opacity: 1;
+       width: 70%;
+   }
     // &:hover::after,
     // &:hover::after {
     //   opacity: 1;
@@ -247,7 +233,7 @@ export default {
     // }
 
     .title {
-      font-size: 24px !important;
+      font-size: 1em !important;
       font-weight: 500;
       position: relative;
       color: #fff;
@@ -256,6 +242,7 @@ export default {
         font-size: 24px !important;
       }
     }
+    h1.title{font-family: "Noto Serif TC";}
 
     .subTitle {
       color: $nav_link_subtitle_color;
@@ -331,6 +318,9 @@ export default {
   //  background-color: #fff;
     height: 70px;
     justify-content: center;
+    &::after{display: none;}
+
+
   &.min {
     .logo {
     width: $logo_phone_width;
@@ -365,7 +355,7 @@ export default {
     width: sizem(50);
     height: sizem(50);
     padding-top: sizem(8);
-    background-color: #af1f24;
+    background-color: $mobile_nav_background;
     z-index: 112;
 
     svg {

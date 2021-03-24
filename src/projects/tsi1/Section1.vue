@@ -2,6 +2,8 @@
   <div class="section1">
     <img src="./s1/c1.png" :alt="`${info.caseName}_cloud`" class="cloud c1">
     <img src="./s1/c2.png" :alt="`${info.caseName}_cloud`" class="cloud c2">
+    <div class="c5">
+    <img src="./s1/c2.png" :alt="`${info.caseName}_cloud`" class="cloud"></div>
     <img src="./s1/c4.png" :alt="`${info.caseName}_cloud`" class="cloud c4">
     <img src="./s1/c3.png" :alt="`${info.caseName}_cloud`" class="cloud c3">
     <img src="./s1/01_bg_light.png" :alt="`${info.caseName}_img`" class="bg-img light">
@@ -26,12 +28,13 @@
 .section1 {
   width: 100%;
   height: 100vh;
-  min-height: size(1080);
+  min-height: size(900);
   max-height: size(1080);
   //overflow: hidden;
   position: relative;
   background-image: url('./s1/01_bg.jpg');
   background-size: cover;
+  background-attachment: fixed;
   // margin: 0 0 size(400) 0;
 }
 
@@ -58,7 +61,7 @@
 
 .top-logo {
   @include img_c_pc(623, 165);
-  top: calc(50% - 13vw);
+  top: calc(50% + 100vw * (298 - 540) / 1920);
 }
 
 @keyframes light {
@@ -69,6 +72,7 @@
 
 .title1 {
   @include img_c_pc(583, 505);
+  top: calc(50% + 100vw * (505 - 540) / 1920);
   font-size: size(61.6);
   font-weight: 900;
   font-stretch: normal;
@@ -85,6 +89,7 @@
 
 .title2 {
   @include img_c_pc(604, 586);
+  top: calc(50% + 100vw * (586 - 540) / 1920);
   font-size: size(51.5);
   font-weight: 900;
   font-stretch: normal;
@@ -106,48 +111,47 @@
 
 .c1 {
   left: -0.5vw;
-  top: calc(50% + 13.5vw);
+  top: calc(50% + 100vw * (658 - 540) / 1920);
   width: size(262);
   transform: translateX(-10%);
+  z-index: 2;
 }
 .c2 {
   left: -6.7vw;
-  top: calc(50% + 13.5vw);
+  top: calc(50% + 100vw * (865 - 540) / 1920);
   width: size(918);
   transform: translateX(-8%);
+  z-index: 2;
 }
 .c3 {
   right: 33vw;
-  top: calc(50% + 13.7vw);
+  top: calc(50% + 100vw * (885 - 540) / 1920);
   width: size(401);
   transform: translateX(30%);
   animation-direction: alternate-reverse;
+  z-index: 2;
 }
 .c4 {
   right: -0.5vw;
-  top: calc(50% + 11.5vw);
+  top: calc(50% + 100vw * (803 - 540) / 1920);
   width: size(1117);
   transform: translateX(5%);
   animation-direction: alternate-reverse;
+  z-index: 2;
+}
+.c5 {
+  position: absolute;
+  right: size(-500);
+  top: calc(50% + 100vw * (482 - 540) / 1920);
+  width: size(918);left: auto;
+  transform:scaleX(-1);
+  img{width: 100%;
+  top: 0;left: 0;
+  transform: translateX(5%);
+  z-index: 2;
+  animation-direction: alternate;}
 }
 
-// .t {
-//   position: absolute;
-//   width: size(1103);
-//   left: 0;
-//   right: 0;
-//   margin: 0 auto;
-//   top: calc(50% + 100vw * (1010 - 540) / 1920);
-// }
-// .o {
-//   position: absolute;
-//   width: 8.6vw;
-//   right: 28vw;
-//   margin: 0 auto;
-//   top: calc(50% + 100vw * (1108 - 540) / 1920);
-//   animation: o 2s alternate infinite;
-//   transform: rotate(10deg) scale(1.2);
-// }
 @keyframes cloud {
   to {
     transform: translateX(0);
@@ -193,10 +197,8 @@
     min-height: sizem(665);
     max-height: sizem(812);
     height: calc(100vh - 63px);
-    // background-image: url('./mo/1/bg.png');
-    background-size: cover;
-    background-attachment: scroll;
-    margin: 0 0 50vw 0;
+    margin: 0 0 -12vw 0;
+     background-size: auto size-m(750);
   }
 
   .top {

@@ -1,15 +1,95 @@
 <template>
   <div class="section9">
     <img src="./s9/09_bg.png" :alt="`${info.caseName}_img`" class="bg-img">
-    <img src="./s9/09_textbox.png" :alt="`${info.caseName}_img`" class="text-box">
-    <h3 class="title">
-      首購不委屈 天空最精彩
+    <svg version="1.1" class="text-box" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1203 431" style="enable-background:new 0 0 1203 431;" xml:space="preserve">
+
+	<g id="圖層_2">
+	</g>
+	<g id="圖層_1">
+	</g>
+	<g id="圖層_3">
+	</g>
+	<g id="圖層_4">
+		<g id="內白圈" class="an00">
+			<g>
+				<radialGradient id="SVGID_1_" cx="989.3204" cy="235.0923" r="188.7405" gradientUnits="userSpaceOnUse">
+					<stop  offset="0" style="stop-color:#1A171B"/>
+					<stop  offset="1" style="stop-color:#000000;stop-opacity:0"/>
+				</radialGradient>
+				<circle class="st13" cx="989.3" cy="235.1" r="188.7"/>
+				<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="1085" y1="317.6628" x2="862.5671" y2="95.23">
+					<stop  offset="0" style="stop-color:#E1E5E7"/>
+					<stop  offset="1" style="stop-color:#FFFFFF"/>
+				</linearGradient>
+				<circle class="st14" cx="973.8" cy="206.4" r="157.3"/>
+				<circle class="st15" cx="973.8" cy="206.4" r="153.4"/>
+			</g>
+			<g>
+				
+					<radialGradient id="SVGID_3_" cx="611.2531" cy="-1519.3394" r="188.7405" gradientTransform="matrix(1 0 0 -1 0 -1283.25)" gradientUnits="userSpaceOnUse">
+					<stop  offset="0" style="stop-color:#1A171B"/>
+					<stop  offset="1" style="stop-color:#000000;stop-opacity:0"/>
+				</radialGradient>
+				<circle class="st16" cx="611.3" cy="236.1" r="188.7"/>
+				
+					<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="706.932" y1="-1379.4763" x2="484.4991" y2="-1601.9092" gradientTransform="matrix(1 0 0 -1 0 -1283.25)">
+					<stop  offset="0" style="stop-color:#E1E5E7"/>
+					<stop  offset="1" style="stop-color:#FFFFFF"/>
+				</linearGradient>
+				<circle class="st17" cx="595.7" cy="207.4" r="157.3"/>
+				<circle class="st15" cx="595.7" cy="207.4" r="153.4"/>
+			</g>
+			<g>
+				<radialGradient id="SVGID_5_" cx="233.3614" cy="235.0923" r="188.7408" gradientUnits="userSpaceOnUse">
+					<stop  offset="0" style="stop-color:#1A171B"/>
+					<stop  offset="1" style="stop-color:#000000;stop-opacity:0"/>
+				</radialGradient>
+				<circle class="st18" cx="233.4" cy="235.1" r="188.7"/>
+				<linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="329.0403" y1="317.6628" x2="106.6075" y2="95.23">
+					<stop  offset="0" style="stop-color:#E1E5E7"/>
+					<stop  offset="1" style="stop-color:#FFFFFF"/>
+				</linearGradient>
+				<circle class="st19" cx="217.8" cy="206.4" r="157.3"/>
+				<circle class="st15" cx="217.8" cy="206.4" r="153.4"/>
+			</g>
+		</g>
+		<g id="彩色線" class="ancolorline">
+			<path class="st20" d="M785,207c0-104,84.3-188.3,188.3-188.3S1161.5,103,1161.5,207"/>
+			<g>
+				<g>
+					<path class="st21" d="M31,207c0-0.2,0-0.3,0-0.5"/>
+					<path class="st22" d="M31.6,191.5c7.9-96.7,88.9-172.8,187.6-172.8c101.3,0,183.9,80,188.1,180.3"/>
+					<path class="st21" d="M407.5,206.5c0,0.2,0,0.3,0,0.5"/>
+				</g>
+			</g>
+			<path class="st23" d="M784.5,206.8c0,104-84.3,188.3-188.3,188.3S408,310.7,408,206.8"/>
+		</g>
+		<g id="黑色線">
+			<path class="st24 andarkline-1" d="M31,207.8c0,104,84.3,188.3,188.3,188.3s188.3-84.3,188.3-188.3"/>
+			<path class="st24 andarkline-3" d="M785,207.8c0,104,84.3,188.3,188.3,188.3s188.3-84.3,188.3-188.3"/>
+			<path class="st24 andarkline-2" d="M408,208c0-104,84.3-188.3,188.3-188.3S784.5,104,784.5,208"/>
+		</g>
+		<g id="彩色小圈圈">
+			<path class="st25 ancolor-1" d="M43.2,207.3c0,7.8-6.3,14.2-14.2,14.2c-7.8,0-14.2-6.3-14.2-14.2c0-7.8,6.3-14.2,14.2-14.2
+				C36.9,193.1,43.2,199.5,43.2,207.3z"/>
+			<path class="st26 ancolor-2" d="M421.1,206.6c0-7.8-6.3-14.2-14.2-14.2s-14.2,6.3-14.2,14.2c0,7.8,6.3,14.2,14.2,14.2
+				S421.1,214.4,421.1,206.6z"/>
+			<circle class="st27 ancolor-3" cx="784.5" cy="207.4" r="14.2"/>
+			<circle class="st28 ancolor-4" cx="1161.5" cy="207.4" r="14.2"/>
+		</g>
+	</g>
+</svg>
+   <img src="./s9/09_textbox.png" :alt="`${info.caseName}_img`" class="text-box1">
+   
+    <h3 class="title" data-aos="fade-top" data-aos-delay="400">
+      首購不委屈<br v-if="isMobile"> 天空最精彩
     </h3>
-    <div class="desc">
+    <div class="desc" data-aos="fade-top" data-aos-delay="1200">
       <span>首購不委屈，讓您一次買最好！</span><br />
       「天空之邑」讓您把生活機能、交通動能、區域地標、捷運增值潛能，省錢買包，不如一次將幸福通包。
     </div>
-    <div class="list flex-ac flex-jb">
+    <div class="list flex-ac flex-jb" data-aos="fade-top" data-aos-delay="600">
       <div class="item flex-c wrap">
         <div class="item-title">
           生活機能
@@ -79,8 +159,104 @@
   }
 }
 
+.text-box1 {
+  display: none;
+  @include img_c_pc(1164, 293);}
 .text-box {
-  @include img_c_pc(1164, 293);
+  @include img_c_pc(1215, 273);
+
+  .st0{fill:none;stroke:#F15A24;stroke-width:3;stroke-miterlimit:10;}
+	.st1{fill:#F15A24;}
+	.st2{fill:#FFFFFF;}
+	.st3{fill:none;stroke:#F15A24;stroke-width:4.2543;stroke-miterlimit:10;}
+	.st4{fill:none;stroke:#169037;stroke-width:2.6206;stroke-miterlimit:10;}
+	.st5{fill:#B4337C;}
+	.st6{fill:none;stroke:#FFFFFF;stroke-width:0.7147;stroke-miterlimit:10;}
+	.st7{fill:#FFFFFF;stroke:#97A13B;stroke-width:1.3278;stroke-miterlimit:10;}
+	.st8{fill:#22A83B;}
+	.st9{fill:#7F9D26;}
+	.st10{fill:none;stroke:#FFFFFF;stroke-width:3.7219;}
+	.st11{fill:none;stroke:#589424;stroke-width:1.5239;}
+	.st12{fill:#221714;}
+	.st13{fill:url(#SVGID_1_);}
+	.st14{fill:url(#SVGID_2_);}
+	.st15{fill:#F6F6F6;}
+	.st16{fill:url(#SVGID_3_);}
+	.st17{fill:url(#SVGID_4_);}
+	.st18{fill:url(#SVGID_5_);}
+	.st19{fill:url(#SVGID_6_);}
+	.st20{fill:none;stroke:#FFFF00;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:1,15;}
+	.st21{fill:none;stroke:#FF8700;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;}
+	.st22{fill:none;stroke:#FF8700;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.999,14.9855;}
+	.st23{fill:none;stroke:#F1FFFF;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:1,15;}
+	.st24{fill:none;stroke:#58585A;stroke-width:5.0334;stroke-miterlimit:10;}
+	.st25{fill:#FF8700;}
+	.st26{fill:#F1FFFF;}
+	.st27{fill:#FFFF00;}
+	.st28{fill:#58585A;}
+
+
+	.an00 {
+		opacity: 0;
+		stroke-dashoffset: 420;
+		animation: an52 0.5s 0.5s linear forwards;
+	  }
+	  
+	  .ancolorline {
+		opacity: 0;
+		stroke-dashoffset: 420;
+		animation: an52 2s 1s linear forwards;
+	  } 
+
+
+	  .andarkline-1 {
+		stroke-dasharray: 618;
+   		 stroke-dashoffset: 618;
+		animation: an51 1s 1s linear forwards;
+	  }
+	  .andarkline-2 {
+		stroke-dasharray: 618;
+   		 stroke-dashoffset: 618;
+		animation: an51 1s 2s linear forwards;
+	  }
+	  .andarkline-3 {
+		stroke-dasharray: 618;
+   		 stroke-dashoffset: 618;
+		animation: an51 1s 3s linear forwards;
+	  } 
+	
+	  .ancolor-1 {
+		opacity: 0;
+		stroke-dashoffset: 420;
+		animation: an52 0.2s 1s linear forwards;
+	  }
+	  .ancolor-2 {
+		opacity: 0;
+		stroke-dashoffset: 420;
+		animation: an52 0.2s 2s linear forwards;
+	  }  
+	  .ancolor-3 {
+		opacity: 0;
+		stroke-dashoffset: 420;
+		animation: an52 0.2s 3s linear forwards;
+	  } 
+	  .ancolor-4 {
+		opacity: 0;
+		stroke-dashoffset: 420;
+		animation: an52 0.2s 4s linear forwards;
+	  }       
+
+
+	  @keyframes an51 {
+		to {
+		  stroke-dashoffset: 0;
+		}
+	  }
+	  @keyframes an52 {
+		to {
+		  opacity: 1;
+		}
+	  }  
 }
 
 .title {
@@ -91,14 +267,14 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.44;
-  letter-spacing: size(5);
+  letter-spacing:0.01em;
   text-align: left;
   color: #ffffff;
   white-space: nowrap;
 }
 
 .desc {
-  @include img_c_pc(868, 777);
+  @include img_c_pc(868, 720);
   font-size: size(18);
   font-weight: 500;
   font-stretch: normal;
@@ -108,6 +284,7 @@
   text-align: center;
   color: #ffffff;
   white-space: nowrap;
+  text-shadow: 0 0 1em #000c;
   span {
     font-size: size(25);
     letter-spacing: size(1.25);
@@ -180,9 +357,36 @@
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
-    margin: 0 0 50vw 0;
-  }
+    margin: 0 0 50vw 0;}
 
+.title {
+  @include img_c_m(375, 162);
+  color: #444444;
+  font-size: sizem(30);
+  text-align: center;
+  line-height: 1.6;
+  }
+  
+  .desc {
+  @include img_c_m(325, 572);
+  font-size: sizem(14);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.94;
+  letter-spacing:0.01em;
+  text-align: center;
+  color: #ffffff;
+  white-space: normal;
+  text-shadow: 0 0 1em #000c;
+  span {
+  font-size: sizem(20);
+  font-family: "Noto Serif TC";
+  }
+}
+
+
+/* 
   .top {
     position: absolute;
     width: sizem(310);
@@ -242,7 +446,7 @@
 
   .top-title2 {
     @include img_c_m(312, 409);
-  }
+  }*/
 }
 </style>
 <script>

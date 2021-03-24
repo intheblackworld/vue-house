@@ -21,8 +21,9 @@
       <img src="./s8/08_tag_box.png" :alt="`${info.caseName}_img`" class="img">
       <h3 class="label-name" v-html="slideList[slideIndex].label"></h3>
       <div class="hr"></div>
-      <img src="./s8/08_title_1.png" :alt="`${info.caseName}_img`" class="title1">
-      <img src="./s8/08_title_2.png" :alt="`${info.caseName}_img`" class="title2">
+      <h3 class="title1" v-if="isMobile">樣品屋主標<span>樣品屋小標題文字</span></h3>
+      <img src="./s8/08_title_1.png" v-if="!isMobile" :alt="`${info.caseName}_img`" class="title1">
+      <img src="./s8/08_title_2.png" v-if="!isMobile" :alt="`${info.caseName}_img`" class="title2">
       <div class="desc">
         樣品屋這一ＰＡＲＴ的內文樣品屋<br />
         樣品屋這一ＰＡＲＴ的內文樣品屋這<br />
@@ -50,17 +51,17 @@
 }
 
 .img {
-  @include img_r_pc(60, 139, 733);
+  @include img_r_pc(60, 100, 733);
 }
 
 .label-name {
-  @include img_r_pc(60, 159, 733);
+  @include img_r_pc(60, 140, 733);
   font-size: size(24);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 2.4;
-  letter-spacing: size(5.9);
+  letter-spacing:1em;
   text-align: left;
   color: #ffffff;
   writing-mode: vertical-lr;
@@ -68,20 +69,20 @@
 }
 
 .hr {
-  @include div_r_pc(1, 455, 142, 513);
+  @include div_r_pc(1, 455, 100, 513);
   background-color: #000;
 }
 
 .title1 {
-  @include img_r_pc(128, 139, 345);
+  @include img_r_pc(128, 100, 345);
 }
 
 .title2 {
-  @include img_r_pc(21, 142, 561);
+  @include img_r_pc(21, 100, 561);
 }
 
 .desc {
-  @include img_r_pc(301, 701, 290);
+  @include img_r_pc(301, 620, 290);
   font-size: size(18);
   font-weight: 500;
   font-stretch: normal;
@@ -318,7 +319,7 @@
 @media screen and (max-width: 767px) {
   .section8 {
     width: 100vw;
-    height: sizem(755);
+    height: sizem(573);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -328,28 +329,32 @@
     overflow: hidden;
   }
 
-  .title {
-    @include img_r_m(260, 409, 71);
-    font-size: sizem(22);
+   .title1 {
+    @include img_l_m(325, 34, 25);
+    font-size: sizem(30);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
+    line-height: 1.6;
     letter-spacing: normal;
     text-align: left;
-    color: #333;
     white-space: nowrap;
+    color: #fff;
+    span{
+      display: block;
+      font-size:0.666em;
+    }
   }
 
   .hr {
-    @include img_r_m(230, 458, 102);
-    height: sizem(0.5);
+    @include img_l_m(142, 124, 25);
+    height: sizem(1);
     background: #333;
   }
 
-  .subtitle {
-    @include img_r_m(260, 470, 71);
-    font-size: size(17);
+  .title2 {
+    @include img_l_m(325, 17, 25);
+    font-size: sizem(20);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
@@ -358,21 +363,17 @@
     text-align: left;
     color: #333333;
     white-space: nowrap;
+    color: #fff;
   }
 
   .desc {
-    @include img_r_m(292, 494, 40);
+    @include img_l_m(292, 141, 25);
     font-size: sizem(12);
-    font-weight: bold;
+    font-weight: 300;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.88;
-    letter-spacing: normal;
-    text-align: left;
-    color: #333;
-    white-space: normal;
   }
-
   .more {
     @include img_r_m(179 + 7 + 29, 636, 117);
     font-size: sizem(15);
@@ -390,13 +391,43 @@
       width: sizem(29);
     }
   }
+  .btns {
+  @include img_c_m(325, 305);
+}
+.img {
+  @include img_r_m(41, 264, 25);
+}
+
+.label-name{
+  @include img_r_m(41 , 264, 25);
+  font-size:4vw;
+  height:sizem(144);
+  text-align: center;
+  display: flex;
+    align-items:center;
+    flex-direction:column;
+    justify-content:center;
+  }
+.btn {
+  width: sizem(152);
+  height: sizem(27);
+
+  &.active {
+    background-image: url('./all/acitve_btn.png');
+    background-size: cover;
+    box-shadow: none;
+    color: #fff;
+  }
+}
+
 
   /* Swipe */
   .swipe {
-    width: sizem(333);
-    height: sizem(333);
+    width: 100%;
+    height: sizem(259);
     min-height: auto;
-    top: sizem(50);
+    top: auto;
+    bottom: 0;
     left: sizem(0);
     object-fit: cover;
   }
@@ -472,8 +503,8 @@
     // }
     .slide-name {
       right: auto;
-      bottom: auto;
-      top: 1.2rem;
+      top: auto;
+      bottom: 1.2rem;
       right: 1.2rem;
       font-size: sizem(15);
     }
@@ -578,32 +609,32 @@ export default {
         {
           img: require('./s8/08_slider_1.jpg'),
           name: '情境示意圖',
-          label: '兒童遊戲室',
+          label: '客廳',
         },
         {
           img: require('./s8/08_slider_1.jpg'),
           name: '情境示意圖',
-          label: '兒童遊戲室',
+          label: '客廳',
         },
         {
           img: require('./s8/08_slider_1.jpg'),
           name: '情境示意圖',
-          label: '兒童遊戲室',
+          label: '客廳',
         },
         {
           img: require('./s8/08_slider_1.jpg'),
           name: '情境示意圖',
-          label: '兒童遊戲室',
+          label: '客廳',
         },
         {
           img: require('./s8/08_slider_1.jpg'),
           name: '情境示意圖',
-          label: '兒童遊戲室',
+          label: '客廳',
         },
         {
           img: require('./s8/08_slider_1.jpg'),
           name: '情境示意圖',
-          label: '兒童遊戲室',
+          label: '客廳',
         },
       ],
     }

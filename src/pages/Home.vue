@@ -13,10 +13,10 @@
       <vue-lazy-component class="section relative" id="section1" @init="init">
         <Section1 />
       </vue-lazy-component>
-
+<!-- 
       <vue-lazy-component class="section" id="section2" style="">
         <Section2 />
-      </vue-lazy-component>
+      </vue-lazy-component>  -->
       <vue-lazy-component class="section" id="section3">
         <Section3 />
       </vue-lazy-component>
@@ -61,7 +61,7 @@
 }
 
 .bg-img {
-  background-image: url('~@/projects/lj/s1/bg.png');
+ // background-image: url('~@/projects/lj/s1/bg.png');
   // padding-top: $nav_pc_height;
   background-attachment: fixed;
   background-size: auto;
@@ -72,7 +72,7 @@
 
 @media only screen and (max-width: 767px) {
   .bg-img {
-    background-image: url('~@/projects/lj/s1/bg_m.png');
+  //  background-image: url('~@/projects/lj/s1/bg_m.png');
   }
 }
 </style>
