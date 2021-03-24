@@ -68,7 +68,6 @@ export default {
       fbq('init', '446015813377115');
       fbq('track', "PageView");`
     const n = document.createElement('noscript')
-    s.nonce = '4pvWcEuS'
     n.innerHTML = `<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=446015813377115&ev=PageView&noscript=1" />`
 
     const s2 = document.createElement('script')
