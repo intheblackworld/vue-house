@@ -601,29 +601,33 @@ export default {
       slideIndex1: 0,
       slideList: [
         {
-          img: require('./s5/05-1_img.jpg'),
-          name: '成泰路商圈+工商路',
+          img: require('./s5/05_slider_1.jpg'),
+          name: '3高匯流-中山高速公路',
         },
-        // {
-        //   img: require('./s4/04-1_slider_2.jpg'),
-        //   name: '五福市場',
-        // },
-        // {
-        //   img: require('./s4/04-1_slider_3.jpg'),
-        //   name: '區公所',
-        // },
-        // {
-        //   img: require('./s4/04-1_slider_4.jpg'),
-        //   name: '市民活動中心',
-        // },
-        // {
-        //   img: require('./s4/04-1_slider_5.jpg'),
-        //   name: '國民運動中心',
-        // },
-        // {
-        //   img: require('./s4/04-1_slider_6.jpg'),
-        //   name: '區公所',
-        // },
+        {
+          img: require('./s5/05_slider_2.jpg'),
+          name: '3高匯流-五楊高架',
+        },
+        {
+          img: require('./s5/05_slider_3.jpg'),
+          name: '3捷接軌-三蘆線-蘆洲站',
+        },
+        {
+          img: require('./s5/05_slider_4.jpg'),
+          name: '3捷接軌-捷運機場線-A5泰山站',
+        },
+        {
+          img: require('./s5/05_slider_5.jpg'),
+          name: '4快串聯-台1線',
+        },
+        {
+          img: require('./s5/05_slider_6.jpg'),
+          name: '4快串聯-台64快速道路',
+        },
+        {
+          img: require('./s5/05_slider_7.jpg'),
+          name: '4快串聯-新北環快',
+        },
       ],
       slideList1: [
         {

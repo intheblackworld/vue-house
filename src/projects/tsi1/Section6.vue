@@ -559,20 +559,56 @@ export default {
       slideList: [
         {
           img: isMobile
-            ? require('./s6/06_slider_1.png')
+            ? require('./s6/06_slider_1_m.jpg')
             : require('./s6/06_slider_1.png'),
           // name: '臺北市私立靜心高級中學',
         },
         {
           img: isMobile
-            ? require('./s6/06_slider_2.png')
+            ? require('./s6/06_slider_2_m.jpg')
             : require('./s6/06_slider_2.png'),
           // name: '菁英家庭優質私校首選，圖為優質校風示意圖',
         },
         {
           img: isMobile
-            ? require('./s6/06_slider_3.png')
+            ? require('./s6/06_slider_3_m.jpg')
             : require('./s6/06_slider_3.png'),
+          // name: '私立靜心高級中學',
+        },
+        {
+          img: isMobile
+            ? require('./s6/06_slider_4_m.jpg')
+            : require('./s6/06_slider_4.png'),
+          // name: '臺北市私立靜心高級中學',
+        },
+        {
+          img: isMobile
+            ? require('./s6/06_slider_5_m.jpg')
+            : require('./s6/06_slider_5.png'),
+          // name: '菁英家庭優質私校首選，圖為優質校風示意圖',
+        },
+        {
+          img: isMobile
+            ? require('./s6/06_slider_6_m.jpg')
+            : require('./s6/06_slider_6.png'),
+          // name: '私立靜心高級中學',
+        },
+        {
+          img: isMobile
+            ? require('./s6/06_slider_7_m.jpg')
+            : require('./s6/06_slider_7.png'),
+          // name: '臺北市私立靜心高級中學',
+        },
+        {
+          img: isMobile
+            ? require('./s6/06_slider_8_m.jpg')
+            : require('./s6/06_slider_8.png'),
+          // name: '菁英家庭優質私校首選，圖為優質校風示意圖',
+        },
+        {
+          img: isMobile
+            ? require('./s6/06_slider_9_m.jpg')
+            : require('./s6/06_slider_9.png'),
           // name: '私立靜心高級中學',
         },
       ],

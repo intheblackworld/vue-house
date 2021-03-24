@@ -18,10 +18,11 @@
       </div>
     </div>
     <div>
-      <img src="./s4/04_img.png" :alt="`${info.caseName}_img`" class="img">
+      <img src="./s7/07_tag_box.png" :alt="`${info.caseName}_img`" class="img">
+      <h3 class="label-name" v-html="slideList[slideIndex].label"></h3>
       <div class="hr"></div>
-      <img src="./s4/04-1_title_1.png" :alt="`${info.caseName}_img`" class="title1">
-      <img src="./s4/04-1_title_2.png" :alt="`${info.caseName}_img`" class="title2">
+      <img src="./s7/07_title_1.png" :alt="`${info.caseName}_img`" class="title1">
+      <img src="./s7/07_title_2.png" :alt="`${info.caseName}_img`" class="title2">
       <div class="desc">
         在這裡，生活就是渡假。<br />
         「天空之邑」打造最舒心的公設饗宴，<br />
@@ -49,24 +50,38 @@
 }
 
 .img {
-  @include img_l_pc(240, 274, 494);
+  @include img_l_pc(60, 109, 750);
+}
+
+.label-name {
+  @include img_l_pc(60, 129, 750);
+  font-size: size(24);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.4;
+  letter-spacing: size(5.9);
+  text-align: left;
+  color: #ffffff;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
 }
 
 .hr {
-  @include div_l_pc(1, 199, 67, 604);
+  @include div_l_pc(1, 370, 92, 532);
   background-color: #000;
 }
 
 .title1 {
-  @include img_l_pc(180, 69, 359);
+  @include img_l_pc(128, 89, 360);
 }
 
 .title2 {
-  @include img_l_pc(19, 70, 653);
+  @include img_l_pc(21, 92, 584);
 }
 
 .desc {
-  @include img_l_pc(396, 552, 325);
+  @include img_l_pc(320, 651, 325);
   font-size: size(18);
   font-weight: 500;
   font-stretch: normal;
@@ -120,10 +135,10 @@
 
 /* Swipe */
 .swipe {
-  width: size(800);
+  width: size(860);
   height: size(550);
-  top: size(105);
-  right: size(349);
+  top: size(127);
+  right: size(350);
   object-fit: cover;
   // background: #0344;
 }
@@ -170,7 +185,7 @@
 .swipe-wrap {
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .swipe-item {
@@ -185,8 +200,8 @@
   }
 
   .slide-name {
-    right: 2em;
-    bottom: 1.2em;
+    right: 1.2em;
+    bottom: 0.5em;
     color: #fff;
     font-size: size(18);
     font-weight: bold;
@@ -195,7 +210,7 @@
     line-height: 1.6;
     letter-spacing: 0.03em;
     text-align: left;
-    text-shadow: 0 0.3em 1em #000;
+    text-shadow: 0 0.1em 0.5em #000;
   }
 
   // &:nth-child(1) {
@@ -215,7 +230,7 @@
 
 .pagination {
   width: auto;
-  bottom: size(24);
+  bottom: size(-34);
   right: 0;
   left: 0;
   margin: 0 auto;
@@ -428,7 +443,7 @@
   .swipe-wrap {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    // overflow: hidden;
   }
 
   .swipe-item {
@@ -561,28 +576,34 @@ export default {
       slideIndex1: 0,
       slideList: [
         {
-          img: require('./s4/04-1_slider_1.jpg'),
-          name: '成泰路商圈+工商路',
+          img: require('./s7/07_slider_1.jpg'),
+          name: '情境示意圖',
+          label: '兒童遊戲室',
         },
         {
-          img: require('./s4/04-1_slider_2.jpg'),
-          name: '五福市場',
+          img: require('./s7/07_slider_1.jpg'),
+          name: '情境示意圖',
+          label: '兒童遊戲室',
         },
         {
-          img: require('./s4/04-1_slider_3.jpg'),
-          name: '區公所',
+          img: require('./s7/07_slider_1.jpg'),
+          name: '情境示意圖',
+          label: '兒童遊戲室',
         },
         {
-          img: require('./s4/04-1_slider_4.jpg'),
-          name: '市民活動中心',
+          img: require('./s7/07_slider_1.jpg'),
+          name: '情境示意圖',
+          label: '兒童遊戲室',
         },
         {
-          img: require('./s4/04-1_slider_5.jpg'),
-          name: '國民運動中心',
+          img: require('./s7/07_slider_1.jpg'),
+          name: '情境示意圖',
+          label: '兒童遊戲室',
         },
         {
-          img: require('./s4/04-1_slider_6.jpg'),
-          name: '區公所',
+          img: require('./s7/07_slider_1.jpg'),
+          name: '情境示意圖',
+          label: '兒童遊戲室',
         },
       ],
     }

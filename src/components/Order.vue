@@ -375,7 +375,7 @@ export default {
     font-weight: 700;
     line-height: 1.7;
     letter-spacing: 20px;
-    font-size: calc(100vw * 85 / 1920);
+    font-size: calc(100vw * 50 / 1920);
     text-align: center;
     color: $order_title_color;
     // border-top: 1px solid #248184;
