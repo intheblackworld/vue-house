@@ -1,50 +1,45 @@
 <template>
-  <div>
-    <div class="section4">
-      <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
-          <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
-              <div class="slide-name absolute" v-html="slide.name"></div>
-            </div>
-          </transition-group>
-          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+  <div class="section7">
+    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" alt="">
+            <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
-          <div class="swipe-btns absolute flex-ac flex-jb">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-          </div>
+        </transition-group>
+        <div class="pagination absolute flex-ac" v-if="isPC">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+        </div>
+        <div class="swipe-btns absolute flex-ac flex-jb">
+          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
         </div>
       </div>
-      <h1 class="s-title" data-aos="fade" data-aos-delay="200">
-        Future
-      </h1>
-      <h1 class="title" data-aos="fade" data-aos-delay="400">
-        一軸三星 串連雙新
-      </h1>
-      <!-- <h1 class="subtitle" data-aos="fade" data-aos-delay="600">
-        千坪綠意神農公園<span></span>少棒名校興穀國小
-      </h1> -->
-      <h1 class="desc" data-aos="fade" data-aos-delay="600">
-        未來第二行政中心落址三重左岸五谷王<br />
-        三重新都心、新莊副都心、新板特定區形成「新北鐵三角」。<br /><br />
-        工變住都更案、新北科技園區兩大人口吸力加持，三重重劃區迎接起漲點！
-      </h1>
+    </div>
+    <div>
+      <img src="./s4/04_img.png" :alt="`${info.caseName}_img`" class="img">
+      <div class="hr"></div>
+      <img src="./s4/04-1_title_1.png" :alt="`${info.caseName}_img`" class="title1">
+      <img src="./s4/04-1_title_2.png" :alt="`${info.caseName}_img`" class="title2">
+      <div class="desc">
+        在這裡，生活就是渡假。<br />
+        「天空之邑」打造最舒心的公設饗宴，<br />
+        熱情款待每個熱愛享受生活的住戶。
+      </div>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section4 {
-  width:100%;
-  height: 100vh;
-  min-height: size(900);
-  max-height: size(1080);
+.section7 {
+  width: 100%;
+  height: size(864);
+  min-height: size(864);
+  max-height: size(864);
   position: relative;
-  background-color: #fff;
+  // background-color: #fff;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
@@ -53,93 +48,84 @@
   // overflow: hidden;
 }
 
-.s-title {
-  //@include img_r_pc(345, 511, 274);
-  @include img_c(345, calc(40% - 4.5vw), size(1300));
-  font-size: size(90);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(-1.71);
-  text-align: left;
-  color: #e7ecec;
-  white-space: nowrap;
+.img {
+  @include img_l_pc(240, 274, 494);
 }
 
-.title {
-  //@include img_r_pc(300, 646, 310);
-  @include img_c(300, calc(40% + 3.2vw), size(1310));
-  font-size: size(32);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(1.25);
-  text-align: left;
-  color: #248184;
-  white-space: nowrap;
+.hr {
+  @include div_l_pc(1, 199, 67, 604);
+  background-color: #000;
 }
 
-.subtitle {
-  //include img_r_pc(434, 744, 175);
-  @include img_c(434, calc(30% + 7.6vw), size(1310));
-  font-size: size(24);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.25;
-  letter-spacing: size(0.94);
-  text-align: left;
-  color: #221815;
-  white-space: nowrap;
+.title1 {
+  @include img_l_pc(180, 69, 359);
+}
 
-  span {
-    width: 1.2em;
-    height: 1.2em;
-    position: relative;
-    display: inline-block;
-    text-align: center;
-  }
-
-  span:before,
-  span:after {
-    content: '';
-    position: absolute;
-    width: 1px;
-    height: 100%;
-    background-color: #248184;
-    top: 0.2em;
-  }
-
-  span:before {
-    transform: rotate(45deg) translateX(-50%);
-  }
-  span:after {
-    transform: rotate(-45deg) translateX(-50%);
-  }
+.title2 {
+  @include img_l_pc(19, 70, 653);
 }
 
 .desc {
-  //@include img_r_pc(440, 816, 170);
-  @include img_c(440, calc(35% + 11vw), size(1310));
-  font-size: size(20);
+  @include img_l_pc(396, 552, 325);
+  font-size: size(18);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.2;
-  letter-spacing: size(0.96);
-  text-align: justify;
-  color: #221815;
+  line-height: 1.94;
+  letter-spacing: size(0.9);
+  text-align: left;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.btns {
+  @include img_l_pc(176 * 2 + 24, 701, 325);
+}
+
+.btn {
+  box-shadow: inset 0 0 0 1px #000000;
+  width: size(176);
+  height: size(30);
+  cursor: pointer;
+  color: #000;
+
+  &.active {
+    background-image: url('./all/acitve_btn.png');
+    background-size: cover;
+    box-shadow: none;
+    color: #fff;
+  }
+}
+
+// begin
+.fade-up-leave-to {
+  transform: translateY(15px);
+  opacity: 0;
+  z-index: 0;
+}
+// end
+.fade-up-enter {
+  transform: translateY(55px);
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-up-enter-active {
+  transition: all 0.5s ease;
+}
+
+.fade-up-leave-active {
+  transition: all 0.1s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
 /* Swipe */
 .swipe {
-  width: size(1198);
-  height: size(850);
-  bottom: 0;
-  left: 0;
+  width: size(800);
+  height: size(550);
+  top: size(105);
+  right: size(349);
   object-fit: cover;
+  // background: #0344;
 }
 
 // begin
@@ -154,11 +140,11 @@
 }
 
 .swipe-fade-enter-active {
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
 }
 
 .swipe-fade-leave-active {
-  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
 // begin
@@ -194,23 +180,24 @@
 
   img {
     width: 100%;
-    height: size(850);
+    height: 100%;
+    object-fit: cover;
   }
 
-
   .slide-name {
-    left:2em;
-    bottom:1.2em;
+    right: 2em;
+    bottom: 1.2em;
     color: #fff;
-    font-size:  size(18);
-    font-weight: normal;
+    font-size: size(18);
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.6;
-    letter-spacing:0.03em;
+    letter-spacing: 0.03em;
     text-align: left;
-    text-shadow: 0 0.3em 1em #0003;
+    text-shadow: 0 0.3em 1em #000;
   }
+
   // &:nth-child(1) {
   //   z-index: 1;
   //   // opacity: 1;
@@ -228,7 +215,7 @@
 
 .pagination {
   width: auto;
-  bottom: size(44);
+  bottom: size(24);
   right: 0;
   left: 0;
   margin: 0 auto;
@@ -314,9 +301,9 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section4 {
+  .section7 {
     width: 100vw;
-    height: sizem(427 + 277);
+    height: sizem(755);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -326,89 +313,75 @@
     overflow: hidden;
   }
 
-  .s-title {
-    @include img_r_m(222, 58, 114);
-    font-size: sizem(58);
+  .title {
+    @include img_r_m(260, 409, 71);
+    font-size: sizem(22);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.2;
-    letter-spacing: sizem(-0.3);
+    letter-spacing: normal;
     text-align: left;
-    color: #e7ecec;
+    color: #333;
     white-space: nowrap;
   }
 
-  .title {
-    @include img_l_m(222, 140, 40);
-    font-size: sizem(19);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(1.5);
-    text-align: left;
-    color: #248184;
-    white-space: nowrap;
+  .hr {
+    @include img_r_m(230, 458, 102);
+    height: sizem(0.5);
+    background: #333;
   }
 
   .subtitle {
-    @include img_r_m(271, 193, 64);
-    font-size: sizem(15);
+    @include img_r_m(260, 470, 71);
+    font-size: size(17);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.25;
-    letter-spacing: sizem(1.24);
+    line-height: 2.05;
+    letter-spacing: normal;
     text-align: left;
-    color: #221815;
+    color: #333333;
     white-space: nowrap;
-
-    span {
-      width: 1.2em;
-      height: 1.2em;
-      position: relative;
-      display: inline-block;
-      text-align: center;
-    }
-
-    span:before,
-    span:after {
-      content: '';
-      position: absolute;
-      width: 1px;
-      height: 100%;
-      background-color: #248184;
-      top: 0.2em;
-    }
-
-    span:before {
-      transform: rotate(45deg) translateX(-50%);
-    }
-    span:after {
-      transform: rotate(-45deg) translateX(-50%);
-    }
   }
 
   .desc {
-    @include img_r_m(300, 187, 35);
-    font-size: sizem(15);
+    @include img_r_m(292, 494, 40);
+    font-size: sizem(12);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.2;
-    letter-spacing: sizem(0.72);
+    line-height: 1.88;
+    letter-spacing: normal;
     text-align: left;
-    color: #221815;
+    color: #333;
+    white-space: normal;
+  }
+
+  .more {
+    @include img_r_m(179 + 7 + 29, 636, 117);
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.04;
+    letter-spacing: sizem(2.1);
+    text-align: left;
+    color: #ffffff;
+    cursor: pointer;
+    white-space: nowrap;
+
+    img {
+      width: sizem(29);
+    }
   }
 
   /* Swipe */
   .swipe {
-    width: 100vw;
-    height: sizem(277);
+    width: sizem(333);
+    height: sizem(333);
     min-height: auto;
-    top: auto;
-    bottom: 0;
+    top: sizem(50);
     left: sizem(0);
     object-fit: cover;
   }
@@ -465,7 +438,7 @@
 
     img {
       width: 100%;
-      height: sizem(277);
+      height: 100%;
       object-fit: cover;
     }
 
@@ -482,9 +455,13 @@
     //   z-index: 2;
     //   // opacity: 1;
     // }
-  .slide-name {
-    font-size: sizem(15);
-  }
+    .slide-name {
+      right: auto;
+      bottom: auto;
+      top: 1.2rem;
+      right: 1.2rem;
+      font-size: sizem(15);
+    }
   }
 
   .pagination {
@@ -495,7 +472,6 @@
     margin: 0 auto;
     justify-content: center;
   }
-
 
   .pagination-dot {
     padding: 5px;
@@ -569,7 +545,7 @@ import info from '@/info'
 import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section4',
+  name: 'section7',
 
   mixins: [slider],
   props: ['viewIndex'],
@@ -581,18 +557,32 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
+      blockIndex: 0,
+      slideIndex1: 0,
       slideList: [
         {
-          img: require('./s7/1.jpg'),
-          name: '新北大橋',
+          img: require('./s4/04-1_slider_1.jpg'),
+          name: '成泰路商圈+工商路',
         },
         {
-          img: require('./s7/2.jpg'),
-          name: '新莊地區空拍',
+          img: require('./s4/04-1_slider_2.jpg'),
+          name: '五福市場',
         },
         {
-          img: require('./s7/3.jpg'),
-          name: '新板特區',
+          img: require('./s4/04-1_slider_3.jpg'),
+          name: '區公所',
+        },
+        {
+          img: require('./s4/04-1_slider_4.jpg'),
+          name: '市民活動中心',
+        },
+        {
+          img: require('./s4/04-1_slider_5.jpg'),
+          name: '國民運動中心',
+        },
+        {
+          img: require('./s4/04-1_slider_6.jpg'),
+          name: '區公所',
         },
       ],
     }
@@ -607,12 +597,12 @@ export default {
   computed: {},
 
   watch: {
-    viewIndex() {
-      if (this.viewIndex === 5) {
-        this.slideIndex = 0
-        console.log(this.slideIndex, 'slideIndex')
-      }
-    },
+    // viewIndex() {
+    //   if (this.viewIndex === 5) {
+    //     this.slideIndex = 0
+    //     console.log(this.slideIndex, 'slideIndex')
+    //   }
+    // },
   },
 }
 </script>

@@ -371,12 +371,9 @@
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
 import info from '@/info'
-import slider from '@/mixins/slider.js'
 
 export default {
   name: 'section2',
-  mixins: [slider],
-  props: ['viewIndex'],
 
   data() {
     return {
@@ -385,20 +382,6 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
-      slideList: [
-        {
-          img: isMobile ? require('./s2/1_m.jpg') : require('./s2/1.jpg'),
-          name: '泰安連雲-接雲樓',
-        },
-        {
-          img: isMobile ? require('./s2/2_m.jpg') : require('./s2/2.jpg'),
-          name: '泰安連雲-連峰樓',
-        },
-        {
-          img: isMobile ? require('./s2/3_m.jpg') : require('./s2/3.jpg'),
-          name: '靜心連雲',
-        },
-      ],
     }
   },
 
@@ -411,12 +394,6 @@ export default {
   computed: {},
 
   watch: {
-    viewIndex() {
-      if (this.viewIndex === 5) {
-        this.slideIndex = 0
-        console.log(this.slideIndex, 'slideIndex')
-      }
-    },
   },
 }
 </script>
