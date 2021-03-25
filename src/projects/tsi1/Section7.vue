@@ -23,7 +23,6 @@
       <div class="hr"></div>
       <h3 class="title1" v-if="isMobile">極致生活美學<span>享生活 不用等放假</span></h3>
       <img src="./s7/07_title_1.png" v-if="!isMobile" :alt="`${info.caseName}_img`" class="title1">
-      <img src="./s7/07_title_2.png" v-if="!isMobile" :alt="`${info.caseName}_img`" class="title2">
       <div class="desc">
         在這裡，生活就是渡假。<br v-if="!isMobile" />
         「天空之邑」打造最舒心的公設饗宴，<br v-if="!isMobile" />
@@ -57,6 +56,7 @@
 
 .label-name {
   @include img_l_pc(60, 110, 750);
+  height: sizem(30);
   font-size: size(24);
   font-weight: bold;
   font-stretch: normal;
@@ -67,6 +67,9 @@
   color: #ffffff;
   writing-mode: vertical-lr;
   text-orientation: upright;
+  display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hr {
@@ -82,6 +85,20 @@
   @include img_l_pc(21, 92, 584);
 }
 
+  .slide-desc {
+    @include img_l_pc(21, 92, 584);
+    font-size: sizem(4);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: sizem(1);
+    text-align: left;
+    color: #ffffff;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+  }
+
 .desc {
   @include img_l_pc(320, 610, 325);
   font-size: size(18);
@@ -92,7 +109,6 @@
   letter-spacing: size(0.9);
   text-align: left;
   color: #ffffff;
-  white-space: nowrap;
 }
 
 .btns {
@@ -304,6 +320,8 @@
   }
 }
 
+
+
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -323,8 +341,8 @@
     height: sizem(573);
     min-height: auto;
     max-height: initial;
-    background-image: url('./all/section_bg.jpg');
-    background-attachment: scroll;
+    //background-image: url('./all/section_bg.jpg');
+    //background-attachment: scroll;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
     // background-position: 0 0;
@@ -369,16 +387,17 @@
   }
 
   .desc {
-    @include img_l_m(292, 141, 25);
-    font-size: sizem(12);
-    font-weight: 300;
+    @include img_l_m(320, 141, 25);
+    font-size: sizem(15);
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.88;
+    word-wrap:break-word;
   }
 
   .slide-desc {
-    @include img_l_m(196, 243, 27);
+    @include img_l_m(250, 260, 27);
     font-size: sizem(18);
     font-weight: bold;
     font-stretch: normal;
@@ -387,7 +406,9 @@
     letter-spacing: sizem(1.8);
     text-align: left;
     color: #ffffff;
-    white-space: nowrap;
+    word-wrap:break-word;
+    -webkit-writing-mode: horizontal-tb	;
+    writing-mode: horizontal-tb	;
   }
   .more {
     @include img_r_m(179 + 7 + 29, 636, 117);
@@ -623,38 +644,50 @@ export default {
         {
           img: require('./s7/07_slider_1.jpg'),
           name: '情境示意圖',
-          label: '兒童遊戲室',
-          desc: '把歡樂與笑聲裝滿孩子<br />幸福的童年',
+          label: '迎賓門廳',
+          desc: '挑高時尚設計，優質生活從進門就開始',
         },
         {
-          img: require('./s7/07_slider_1.jpg'),
+          img: require('./s7/07_slider_2.jpg'),
           name: '情境示意圖',
-          label: '兒童遊戲室',
-          desc: '把歡樂與笑聲裝滿孩子<br />幸福的童年',
+          label: '空中花園',
+          desc: '用自然香味，讓身心靈就此沉澱寧靜',
         },
         {
-          img: require('./s7/07_slider_1.jpg'),
+          img: require('./s7/07_slider_3.jpg'),
           name: '情境示意圖',
-          label: '兒童遊戲室',
-          desc: '把歡樂與笑聲裝滿孩子<br />幸福的童年',
+          label: '瑜珈教室',
+          desc: '向天空伸展肢體，放鬆都市人緊繃肌肉',
         },
         {
-          img: require('./s7/07_slider_1.jpg'),
+          img: require('./s7/07_slider_4.jpg'),
           name: '情境示意圖',
-          label: '兒童遊戲室',
-          desc: '把歡樂與笑聲裝滿孩子<br />幸福的童年',
+          label: '健身房',
+          desc: '用汗水淬練身體完美線條，紓壓不二法門',
         },
         {
-          img: require('./s7/07_slider_1.jpg'),
+          img: require('./s7/07_slider_5.jpg'),
           name: '情境示意圖',
-          label: '兒童遊戲室',
-          desc: '把歡樂與笑聲裝滿孩子<br />幸福的童年',
+          label: '拳擊區',
+          desc: '正拳、鉤拳用痛快揮擊，把負能量都趕走',
         },
         {
-          img: require('./s7/07_slider_1.jpg'),
+          img: require('./s7/07_slider_6.jpg'),
           name: '情境示意圖',
-          label: '兒童遊戲室',
-          desc: '把歡樂與笑聲裝滿孩子<br />幸福的童年',
+          label: '私人KTV',
+          desc: '麥克風在手，您就是演唱會的超級巨星',
+        },
+        {
+          img: require('./s7/07_slider_7.jpg'),
+          name: '情境示意圖',
+          label: '媽媽教室',
+          desc: '寵愛家人，用香味與美味攏絡家人的胃',
+        },
+        {
+          img: require('./s7/07_slider_8.jpg'),
+          name: '情境示意圖',
+          label: '兒童遊戲區',
+          desc: '把歡樂與笑聲裝滿孩子幸福的童年',
         },
       ],
     }
