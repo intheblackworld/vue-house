@@ -3,13 +3,13 @@
     <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
-          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img  + i" :class="`swipe-item absolute`">
             <img :src="slide.img" alt="">
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
         <div class="pagination absolute flex-ac" v-if="isPC">
-          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot' + index" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
         <div class="swipe-btns absolute flex-ac flex-jb">
           <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
@@ -29,6 +29,7 @@
         樣品屋這一ＰＡＲＴ的內文樣品屋這<br />
         樣品屋這樣品屋這一ＰＡＲＴ的內文
       </div>
+      <h3 class="slide-desc" v-html="slideList[slideIndex].desc"></h3>
     </div>
   </div>
 </template>
@@ -61,7 +62,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 2.4;
-  letter-spacing:1em;
+  letter-spacing: 1em;
   text-align: left;
   color: #ffffff;
   writing-mode: vertical-lr;
@@ -329,7 +330,7 @@
     overflow: hidden;
   }
 
-   .title1 {
+  .title1 {
     @include img_l_m(325, 34, 25);
     font-size: sizem(30);
     font-weight: bold;
@@ -340,9 +341,9 @@
     text-align: left;
     white-space: nowrap;
     color: #fff;
-    span{
+    span {
       display: block;
-      font-size:0.666em;
+      font-size: 0.666em;
     }
   }
 
@@ -374,6 +375,20 @@
     font-style: normal;
     line-height: 1.88;
   }
+
+  .slide-desc {
+    @include img_l_m(196, 243, 27);
+    font-size: sizem(18);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: sizem(1.8);
+    text-align: left;
+    color: #ffffff;
+    white-space: nowrap;
+  }
+
   .more {
     @include img_r_m(179 + 7 + 29, 636, 117);
     font-size: sizem(15);
@@ -392,34 +407,33 @@
     }
   }
   .btns {
-  @include img_c_m(325, 305);
-}
-.img {
-  @include img_r_m(41, 264, 25);
-}
-
-.label-name{
-  @include img_r_m(41 , 264, 25);
-  font-size:4vw;
-  height:sizem(144);
-  text-align: center;
-  display: flex;
-    align-items:center;
-    flex-direction:column;
-    justify-content:center;
+    @include img_c_m(325, 305);
   }
-.btn {
-  width: sizem(152);
-  height: sizem(27);
-
-  &.active {
-    background-image: url('./all/acitve_btn.png');
-    background-size: cover;
-    box-shadow: none;
-    color: #fff;
+  .img {
+    @include img_r_m(41, 264, 25);
   }
-}
 
+  .label-name {
+    @include img_r_m(41, 264, 25);
+    font-size: 4vw;
+    height: sizem(144);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .btn {
+    width: sizem(152);
+    height: sizem(27);
+
+    &.active {
+      background-image: url('./all/acitve_btn.png');
+      background-size: cover;
+      box-shadow: none;
+      color: #fff;
+    }
+  }
 
   /* Swipe */
   .swipe {
@@ -610,31 +624,37 @@ export default {
           img: require('./s8/08_slider_1.jpg'),
           name: '情境示意圖',
           label: '客廳',
+          desc: '樣品屋說明文ＯＯＸＸＯ'
         },
         {
           img: require('./s8/08_slider_1.jpg'),
           name: '情境示意圖',
           label: '客廳',
+          desc: '樣品屋說明文ＯＯＸＸＯ'
         },
         {
           img: require('./s8/08_slider_1.jpg'),
           name: '情境示意圖',
           label: '客廳',
+          desc: '樣品屋說明文ＯＯＸＸＯ'
         },
         {
           img: require('./s8/08_slider_1.jpg'),
           name: '情境示意圖',
           label: '客廳',
+          desc: '樣品屋說明文ＯＯＸＸＯ'
         },
         {
           img: require('./s8/08_slider_1.jpg'),
           name: '情境示意圖',
           label: '客廳',
+          desc: '樣品屋說明文ＯＯＸＸＯ'
         },
         {
           img: require('./s8/08_slider_1.jpg'),
           name: '情境示意圖',
           label: '客廳',
+          desc: '樣品屋說明文ＯＯＸＸＯ'
         },
       ],
     }

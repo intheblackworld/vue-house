@@ -3,13 +3,13 @@
     <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
-          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img + i" :class="`swipe-item absolute`">
             <img :src="slide.img" alt="">
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
         <div class="pagination absolute flex-ac" v-if="isPC">
-          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot' + index" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
         <div class="swipe-btns absolute flex-ac flex-jb">
           <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
@@ -21,14 +21,15 @@
       <img src="./s7/07_tag_box.png" :alt="`${info.caseName}_img`" class="img">
       <h3 class="label-name" v-html="slideList[slideIndex].label"></h3>
       <div class="hr"></div>
-        <h3 class="title1" v-if="isMobile">極致生活美學<span>享生活 不用等放假</span></h3>
+      <h3 class="title1" v-if="isMobile">極致生活美學<span>享生活 不用等放假</span></h3>
       <img src="./s7/07_title_1.png" v-if="!isMobile" :alt="`${info.caseName}_img`" class="title1">
       <img src="./s7/07_title_2.png" v-if="!isMobile" :alt="`${info.caseName}_img`" class="title2">
       <div class="desc">
         在這裡，生活就是渡假。<br />
-「天空之邑」打造最舒心的公設饗宴，<br />
-熱情款待每個熱愛享受生活的住戶。
+        「天空之邑」打造最舒心的公設饗宴，<br />
+        熱情款待每個熱愛享受生活的住戶。
       </div>
+      <h3 class="slide-desc" v-html="slideList[slideIndex].desc"></h3>
     </div>
   </div>
 </template>
@@ -339,9 +340,9 @@
     text-align: left;
     white-space: nowrap;
     color: #fff;
-    span{
+    span {
       display: block;
-      font-size:0.666em;
+      font-size: 0.666em;
     }
   }
 
@@ -373,6 +374,19 @@
     font-style: normal;
     line-height: 1.88;
   }
+
+  .slide-desc {
+    @include img_l_m(196, 243, 27);
+    font-size: sizem(18);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: sizem(1.8);
+    text-align: left;
+    color: #ffffff;
+    white-space: nowrap;
+  }
   .more {
     @include img_r_m(179 + 7 + 29, 636, 117);
     font-size: sizem(15);
@@ -391,34 +405,33 @@
     }
   }
   .btns {
-  @include img_c_m(325, 305);
-}
-.img {
-  @include img_r_m(41, 264, 25);
-}
-
-.label-name{
-  @include img_r_m(41 , 264, 25);
-  font-size:4vw;
-  height:sizem(144);
-  text-align: center;
-  display: flex;
-    align-items:center;
-    flex-direction:column;
-    justify-content:center;
+    @include img_c_m(325, 305);
   }
-.btn {
-  width: sizem(152);
-  height: sizem(27);
-
-  &.active {
-    background-image: url('./all/acitve_btn.png');
-    background-size: cover;
-    box-shadow: none;
-    color: #fff;
+  .img {
+    @include img_r_m(41, 264, 25);
   }
-}
 
+  .label-name {
+    @include img_r_m(41, 264, 25);
+    font-size: 4vw;
+    height: sizem(144);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .btn {
+    width: sizem(152);
+    height: sizem(27);
+
+    &.active {
+      background-image: url('./all/acitve_btn.png');
+      background-size: cover;
+      box-shadow: none;
+      color: #fff;
+    }
+  }
 
   /* Swipe */
   .swipe {
@@ -609,31 +622,37 @@ export default {
           img: require('./s7/07_slider_1.jpg'),
           name: '情境示意圖',
           label: '兒童遊戲室',
+          desc: '把歡樂與笑聲裝滿孩子<br />幸福的童年',
         },
         {
           img: require('./s7/07_slider_1.jpg'),
           name: '情境示意圖',
           label: '兒童遊戲室',
+          desc: '把歡樂與笑聲裝滿孩子<br />幸福的童年',
         },
         {
           img: require('./s7/07_slider_1.jpg'),
           name: '情境示意圖',
           label: '兒童遊戲室',
+          desc: '把歡樂與笑聲裝滿孩子<br />幸福的童年',
         },
         {
           img: require('./s7/07_slider_1.jpg'),
           name: '情境示意圖',
           label: '兒童遊戲室',
+          desc: '把歡樂與笑聲裝滿孩子<br />幸福的童年',
         },
         {
           img: require('./s7/07_slider_1.jpg'),
           name: '情境示意圖',
           label: '兒童遊戲室',
+          desc: '把歡樂與笑聲裝滿孩子<br />幸福的童年',
         },
         {
           img: require('./s7/07_slider_1.jpg'),
           name: '情境示意圖',
           label: '兒童遊戲室',
+          desc: '把歡樂與笑聲裝滿孩子<br />幸福的童年',
         },
       ],
     }

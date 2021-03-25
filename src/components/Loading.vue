@@ -31,7 +31,6 @@
 
   &.opacity {
     opacity: 0.8;
-    display: none;
   }
 
   &.hide {
@@ -61,7 +60,7 @@
       height: 0;
       opacity: 0;
       // display: none !important; not work
-      z-index: -1000 !important;
+      z-index: -1000;
     }
   }
 }

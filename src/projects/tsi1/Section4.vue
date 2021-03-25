@@ -39,7 +39,7 @@
     <transition-group name="fade-up" mode="out-in">
       <div v-if="blockIndex === 0" key="block0">
 <svg version="1.1" class="img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 250 250" style="enable-background:new 0 0 250 250;" xml:space="preserve">
+	 viewBox="0 0 250 250" style="enable-background:new 0 0 250 250;" xml:space="preserve" v-if="viewIndex === 3 || viewIndex === 4">
 
 <g id="圖層_1">
 	<g id="外圓圈" class="an01">

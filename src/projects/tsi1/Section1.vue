@@ -3,21 +3,20 @@
     <img src="./s1/c1.png" :alt="`${info.caseName}_cloud`" class="cloud c1">
     <img src="./s1/c2.png" :alt="`${info.caseName}_cloud`" class="cloud c2">
     <div class="c5">
-    <img src="./s1/c2.png" :alt="`${info.caseName}_cloud`" class="cloud"></div>
+      <img src="./s1/c2.png" :alt="`${info.caseName}_cloud`" class="cloud">
+    </div>
     <img src="./s1/c4.png" :alt="`${info.caseName}_cloud`" class="cloud c4">
     <img src="./s1/c3.png" :alt="`${info.caseName}_cloud`" class="cloud c3">
     <img src="./s1/01_bg_light.png" :alt="`${info.caseName}_img`" class="bg-img light">
     <div>
       <img src="./s1/top_logo.png" :alt="`${info.caseName}_top`" class="top-logo" v-if="isPC" data-aos="fade-top" data-aos-delay="200">
-        <h3 class="title1" v-if="isPC" data-aos="fade-top" data-aos-delay="400">
-          洲子洋<span>24</span>層雙塔地標
-        </h3>
-        <h3 class="title2" v-if="isPC" data-aos="fade-top" data-aos-delay="400">
-          千坪日式莊園｜捷運<span>2</span>-<span>3</span>房
-        </h3>
-        <img src="./s1/top_logo_m.png" :alt="`${info.caseName}_top`" class="top-logo" v-if="isMobile" data-aos="fade-top" data-aos-delay="200">
-        <img src="./s1/top_title_1_m.png" :alt="`${info.caseName}_top`" class="top-title1" v-if="isMobile" data-aos="fade-top" data-aos-delay="400">
-        <img src="./s1/top_title_2_m.png" :alt="`${info.caseName}_top`" class="top-title2" v-if="isMobile" data-aos="fade-top" data-aos-delay="600">
+      <h3 class="title1" data-aos="fade-top" data-aos-delay="400">
+        洲子洋<span>24</span>層雙塔地標
+      </h3>
+      <h3 class="title2" data-aos="fade-top" data-aos-delay="400">
+        千坪日式莊園｜捷運<span>2</span>-<span>3</span>房
+      </h3>
+      <img src="./s1/top_logo_m.png" :alt="`${info.caseName}_top`" class="top-logo" v-if="isMobile" data-aos="fade-top" data-aos-delay="200">
     </div>
   </div>
 </template>
@@ -28,7 +27,7 @@
 .section1 {
   width: 100%;
   height: 100vh;
-  min-height: size(900);
+  min-height: size(1080);
   max-height: size(1080);
   //overflow: hidden;
   position: relative;
@@ -143,13 +142,17 @@
   position: absolute;
   right: size(-500);
   top: calc(50% + 100vw * (482 - 540) / 1920);
-  width: size(918);left: auto;
-  transform:scaleX(-1);
-  img{width: 100%;
-  top: 0;left: 0;
-  transform: translateX(5%);
-  z-index: 2;
-  animation-direction: alternate;}
+  width: size(918);
+  left: auto;
+  transform: scaleX(-1);
+  img {
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform: translateX(5%);
+    z-index: 2;
+    animation-direction: alternate;
+  }
 }
 
 @keyframes cloud {
@@ -198,7 +201,41 @@
     max-height: sizem(812);
     height: calc(100vh - 63px);
     margin: 0 0 -12vw 0;
-     background-size: auto size-m(750);
+    background-size: auto size-m(750);
+  }
+
+  .title1 {
+    @include img_c_m(313, 258);
+    // top: calc(50% + 100vw * (505 - 540) / 1920);
+    font-size: sizem(33);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff000;
+    white-space: nowrap;
+    span {
+      font-size: sizem(38);
+    }
+  }
+
+  .title2 {
+    @include img_c_m(306, 310);
+    // top: calc(50% + 100vw * (586 - 540) / 1920);
+    font-size: sizem(26);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+    white-space: nowrap;
+    span {
+      font-size: sizem(29);
+    }
   }
 
   .top {

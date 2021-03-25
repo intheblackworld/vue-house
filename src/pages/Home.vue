@@ -2,8 +2,8 @@
   <div class="home no-padding-top">
     <div class="bg-img">
       <Loading :loading="load" />
-      <!-- <SideNavigation /> -->
-      <Navigation />
+      <SideNavigation v-if="isMobile" />
+      <Navigation v-if="!isMobile" />
       <!-- <Indigator :viewIndex="viewIndex" /> -->
       <!-- <full-page
       ref="fullPage"
@@ -13,18 +13,17 @@
       <vue-lazy-component class="section relative" id="section1" @init="init">
         <Section1 />
       </vue-lazy-component>
-<!-- 
       <vue-lazy-component class="section" id="section2" style="">
-        <Section2 />
-      </vue-lazy-component>  -->
+        <!-- <Section2 /> -->
+      </vue-lazy-component>
       <vue-lazy-component class="section" id="section3">
         <Section3 />
       </vue-lazy-component>
-      <vue-lazy-component class="section relative" id="section4">
-        <Section4 />
+      <vue-lazy-component class="section relative" id="section4" >
+        <Section4 :viewIndex="viewIndex" />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section5">
-        <Section5 />
+        <Section5 :viewIndex="viewIndex" />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section6">
         <Section6 />
@@ -36,7 +35,7 @@
         <Section8 />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section9">
-        <Section9 />
+        <Section9 :viewIndex="viewIndex" />
       </vue-lazy-component>
       <!-- <vue-lazy-component class="section" id="contact"> -->
       <ContactSection />
@@ -82,7 +81,7 @@
 import $ from 'jquery'
 import Navigation from '@/layouts/Navigation.vue'
 import { isMobile } from '@/utils'
-// import SideNavigation from '@/layouts/SideNavigation.vue'
+import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
@@ -105,7 +104,7 @@ export default {
     Loading,
     // Indigator,
     Navigation,
-    // SideNavigation,
+    SideNavigation,
     // LeafFlow,
     ContactSection,
     MobileNav,
@@ -164,7 +163,7 @@ export default {
     // window.location = "https://ywh.nhc888.com.tw/"
   },
   mounted() {
-    // window.addEventListener('scroll', this.onScroll, false)
+    window.addEventListener('scroll', this.onScroll, false)
     // this.action = this.$refs.fullPage.api
     // if (this.isMobile) {
     //   this.$refs.fullPage.api.setResponsive(true)
@@ -172,31 +171,32 @@ export default {
   },
   methods: {
     init() {},
-    // onScroll() {
-    //   // 获取所有锚点元素
-    //   const navContents = document.querySelectorAll('.section')
-    //   // 所有锚点元素的 offsetTop
-    //   const offsetTopArr = []
-    //   navContents.forEach(item => {
-    //     offsetTopArr.push(item.offsetTop)
-    //   })
-    //   // 获取当前文档流的 scrollTop
-    //   const scrollTop =
-    //     document.documentElement.scrollTop || document.body.scrollTop
-    //   // 定义当前点亮的导航下标
-    //   let navIndex = 0
-    //   for (let n = 0; n < offsetTopArr.length; n++) {
-    //     // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
-    //     // 那么此时导航索引就应该是n了
-    //     if (scrollTop >= offsetTopArr[n] - 100) {
-    //       navIndex = n
-    //     }
-    //   }
-    //   if (this.viewIndex === navIndex + 1) {
-    //     this.viewIndex = navIndex + 1
-    //   }
-    //   // this.viewIndex = navIndex + 1
-    // },
+    onScroll() {
+      // 获取所有锚点元素
+      const navContents = document.querySelectorAll('.section')
+      // 所有锚点元素的 offsetTop
+      const offsetTopArr = []
+      navContents.forEach(item => {
+        offsetTopArr.push(item.offsetTop)
+      })
+      // 获取当前文档流的 scrollTop
+      const scrollTop =
+        document.documentElement.scrollTop || document.body.scrollTop
+      // 定义当前点亮的导航下标
+      let navIndex = 0
+      for (let n = 0; n < offsetTopArr.length; n++) {
+        // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
+        // 那么此时导航索引就应该是n了
+        if (scrollTop >= offsetTopArr[n] - 100) {
+          navIndex = n
+        }
+      }
+      // console.log(navIndex + 1)
+      if (this.viewIndex !== navIndex + 1) {
+        this.viewIndex = navIndex + 1
+      }
+      // this.viewIndex = navIndex + 1
+    },
 
     // onLeave(origin, destination, direction) {
     //   if (!this.isMobile) {

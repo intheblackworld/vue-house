@@ -582,8 +582,20 @@ export default {
       slideList: [
         {
           img: isMobile
+            ? require('./s6/06_slider_2_m.jpg')
+            : require('./s6/02.jpg'),
+          // name: '臺北市私立靜心高級中學',
+        },
+        {
+          img: isMobile
             ? require('./s6/06_slider_1_m.jpg')
-            : require('./s6/01.jpg'),
+            : require('./s6/001.jpg'),
+          // name: '臺北市私立靜心高級中學',
+        },
+        {
+          img: isMobile
+            ? require('./s6/06_slider_3_m.jpg')
+            : require('./s6/002.jpg'),
           // name: '臺北市私立靜心高級中學',
         },
   /*      {
