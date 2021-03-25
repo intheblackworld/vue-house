@@ -348,7 +348,7 @@ export default {
 }
 .order-bg {
   // background-color: $order_bg_color;
-  background-image: $order_bg_image;
+ // background-image: $order_bg_image;
   background-repeat: no-repeat;
   position: relative;
   padding-top: 130px;
@@ -486,7 +486,7 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .order-bg {
-    background-image: $order_bg_image;
+   // background-image: $order_bg_image;
     background-size: cover;
     padding-top: 40px;
     margin: 0;

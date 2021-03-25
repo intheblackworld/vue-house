@@ -29,7 +29,7 @@
         樣品屋這一ＰＡＲＴ的內文樣品屋這<br />
         樣品屋這樣品屋這一ＰＡＲＴ的內文
       </div>
-      <h3 class="slide-desc" v-html="slideList[slideIndex].desc"></h3>
+      <h3 class="slide-desc" v-if="isMobile" v-html="slideList[slideIndex].desc"></h3>
     </div>
   </div>
 </template>

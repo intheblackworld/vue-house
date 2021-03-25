@@ -27,13 +27,14 @@
 .section1 {
   width: 100%;
   height: 100vh;
-  min-height: size(1080);
+  min-height: size(900);
   max-height: size(1080);
   //overflow: hidden;
   position: relative;
   background-image: url('./s1/01_bg.jpg');
   background-size: cover;
   background-attachment: fixed;
+  z-index: 3;
   // margin: 0 0 size(400) 0;
 }
 
@@ -202,6 +203,7 @@
     height: calc(100vh - 63px);
     margin: 0 0 -12vw 0;
     background-size: auto size-m(750);
+  z-index:initial;
   }
 
   .title1 {
