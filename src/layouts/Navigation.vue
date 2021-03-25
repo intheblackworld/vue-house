@@ -128,7 +128,9 @@ export default {
   display: flex !important;
   align-items: center;
  // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
- &::after{content:"";width: 100%; height: 100%;background: #f15a24;position: absolute;top: -50%;left: 0;box-shadow:0 0 20px 40px#f15a24;}
+
+
+ &::after{content:"";width: 100%; height: 100%;background:url("data:image/svg+xml,%3Csvg version='1.1' id='圖層_1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 1920 80' xml:space='preserve'%3E%3Cpath fill='%23f15a24' d='M960,68.6c339.9,0,664,4,960,11.4V0H0v80C296,72.7,620.1,68.6,960,68.6z'/%3E%3C/svg%3E");position: absolute;top: 0;left: 0;}
 
 }
 
@@ -209,32 +211,44 @@ export default {
 
      &::before {
        content: '';
-       width: 0%;
-       height: 2px;
+       width:5px;
+       height:5px;
        display: block;
        background:#ffff00; // second bg
        position: absolute;
+       border-radius: 50%;
      //  transform: skewX(-20deg);
     //   left: -10%;
     //   opacity: 1;
-       top:calc(50% + 0.8em);
+       top:calc(50% - 0.9em);
        z-index: 2;
-       transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+       transition: all 0.3s cubic-bezier(0.77, 0, 0.175, 1);
      }
 
      &:hover::before {
-       opacity: 1;
+       //opacity: 1;
+  animation: light 0.6s linear alternate infinite;
        width: 70%;
+       top:calc(50% + 0.8em);
    }
     // &:hover::after,
     // &:hover::after {
     //   opacity: 1;
     //   width: 120%;
     // }
+@keyframes light {
+  0%{
+    transform: translateX(-5%);
+  }
+  to {
+    transform: translateX(5%);
+  }
+}
+
 
     .title {
       font-size: 1em !important;
-      font-weight: 500;
+      font-weight: 800;
       position: relative;
       color: #fff;
       z-index: 3;

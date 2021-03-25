@@ -6,7 +6,7 @@
     </h3>
     <div class="hr" data-aos="zoom-in-right" data-aos-delay="400" data-aos-offset="100"></div>
     <div class="desc" data-aos="fade-up" data-aos-delay="600">
-      15萬坪寬闊樹海濃蔭，128萬坪大臺北都會水岸公園，藍天、綠邑絕美生活別說你不羨慕！<br />
+      15萬坪寬闊樹海濃蔭，424公頃大台北都會水岸公園，藍天、綠邑絕美生活別說你不羨慕！<br />
       這就是洲子洋，宜居大城持續進化，讓雙北人一眼愛上
     </div>
 <Map v-if="isMobile" :tagList="tagList" :bgSrc="isMobile ? bgmSrc: bgSrc" :hand="hand">

@@ -1293,8 +1293,8 @@ export default {
           name: '3高匯流-五楊高架',
         },
         {
-          img: require('./s5/05_slider_3.jpg'),
-          name: '3捷接軌-三蘆線-蘆洲站',
+          img: require('./s5/3-3.jpg'),
+          name: 'p4-3 3高匯流-汐五高架',
         },
         {
           img: require('./s5/05_slider_4.jpg'),
@@ -1311,6 +1311,10 @@ export default {
         {
           img: require('./s5/05_slider_7.jpg'),
           name: '4快串聯-新北環快',
+        },
+        {
+          img: require('./s5/3-8.jpg'),
+          name: '4快串聯-台65快速道路',
         },
       ],
       slideList1: [
