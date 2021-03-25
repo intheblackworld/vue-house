@@ -349,8 +349,18 @@ img[lazy="loaded"] {
     // background-image: $order_bg_image_m;
     // background-repeat: no-repeat;
     background-size: auto size-m(750);
-    background-attachment: scroll;
+    background-attachment: fixed;
     // background-position: 0% 50%;
+    &::before{content: ' ';
+      position: fixed;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: center 0 no-repeat;
+      background-image: $bg;
+      background-size: cover;}
 
     &.no-padding-top {
       padding-top: 0;

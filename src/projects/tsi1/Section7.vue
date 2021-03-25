@@ -25,8 +25,8 @@
       <img src="./s7/07_title_1.png" v-if="!isMobile" :alt="`${info.caseName}_img`" class="title1">
       <img src="./s7/07_title_2.png" v-if="!isMobile" :alt="`${info.caseName}_img`" class="title2">
       <div class="desc">
-        在這裡，生活就是渡假。<br />
-        「天空之邑」打造最舒心的公設饗宴，<br />
+        在這裡，生活就是渡假。<br v-if="!isMobile" />
+        「天空之邑」打造最舒心的公設饗宴，<br v-if="!isMobile" />
         熱情款待每個熱愛享受生活的住戶。
       </div>
       <h3 class="slide-desc" v-html="slideList[slideIndex].desc"></h3>

@@ -336,7 +336,7 @@
 @media screen and (max-width: 767px) {
   .section6 {
     width: 100vw;
-    height: sizem(715);
+    height: sizem(650);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -398,7 +398,7 @@
   /* Swipe */
   .swipe {
     width: 100%;
-    height: sizem(766);
+    height: 100%;
     min-height: auto;
     top: 0;
     left: 0;
@@ -457,8 +457,10 @@
 
     img {
       width: 100%;
-      height: 100%;
+      height: auto;
       object-fit: cover;
+      position: absolute;
+      left: 0;bottom: 0;
     }
 
     // &:nth-child(1) {

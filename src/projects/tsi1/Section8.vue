@@ -25,8 +25,8 @@
       <img src="./s8/08_title_1.png" v-if="!isMobile" :alt="`${info.caseName}_img`" class="title1">
       <img src="./s8/08_title_2.png" v-if="!isMobile" :alt="`${info.caseName}_img`" class="title2">
       <div class="desc">
-        樣品屋這一ＰＡＲＴ的內文樣品屋<br />
-        樣品屋這一ＰＡＲＴ的內文樣品屋這<br />
+        樣品屋這一ＰＡＲＴ的內文樣品屋<br v-if="!isMobile" />
+        樣品屋這一ＰＡＲＴ的內文樣品屋這<br v-if="!isMobile" />
         樣品屋這樣品屋這一ＰＡＲＴ的內文
       </div>
       <h3 class="slide-desc" v-if="isMobile" v-html="slideList[slideIndex].desc"></h3>

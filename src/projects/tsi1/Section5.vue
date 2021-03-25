@@ -355,8 +355,8 @@
         <img src="./s5/05-1_title_1.png" :alt="`${info.caseName}_img`" class="title1" v-if="!isMobile">
         <img src="./s5/05-1_title_2.png" :alt="`${info.caseName}_img`" class="title2" v-if="!isMobile">
         <div class="desc">
-          散步五分鐘，未來五泰輕軌五股站近在咫尺，<br />
-          銜接機場捷運、新蘆線、環狀線，坐落一高、<br />
+          散步五分鐘，未來五泰輕軌五股站近在咫尺，<br v-if="!isMobile" />
+          銜接機場捷運、新蘆線、環狀線，坐落一高、<br v-if="!isMobile" />
           台64、台65最前沿，輕取雙北繁華大城。
         </div>
       </div>
@@ -678,8 +678,8 @@
         <img src="./s5/05-2_title_1.png" :alt="`${info.caseName}_img`" class="title1" v-if="!isMobile">
         <img src="./s5/05-2_title_2.png" :alt="`${info.caseName}_img`" class="title2" v-if="!isMobile">
         <div class="desc">
-          進入實質審查階段的五泰輕軌，將成為翻轉洲子洋<br />
-          的最強助力，「天空之邑」距F09站約450公尺<br />
+          進入實質審查階段的五泰輕軌，將成為翻轉洲子洋<br v-if="!isMobile" />
+          的最強助力，「天空之邑」距F09站約450公尺<br v-if="!isMobile" />
           輕鬆散步抵達，為您提前預約地段增值紅利。
         </div>
       </div>
@@ -812,16 +812,24 @@
   width: size(176);
   height: size(30);
   cursor: pointer;
+    background:#fff0;
+    animation:btn 0.5s infinite alternate ;
   color: #000;
 
-  &.active {
-    background-image: url('./all/acitve_btn.png');
+  &.active ,&:hover {
+    animation:none ;
+    background:#ff662abb;
+
     background-size: cover;
     box-shadow: none;
     color: #fff;
   }
 }
-
+@keyframes btn {
+  to {
+    background:#fff3;
+  }
+}
 // begin
 .fade-up-leave-to {
   transform: translateY(15px);
@@ -1031,8 +1039,8 @@
     height: sizem(610);
     min-height: auto;
     max-height: initial;
-    background-image: url('./all/section_bg.jpg');
-    background-attachment: scroll;
+  //  background-image: url('./all/section_bg.jpg');
+   // background-attachment: scroll;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
     // background-position: 0 0;
@@ -1040,7 +1048,7 @@
     overflow: hidden;
   }
   .img {
-  @include img_r_m(143, 142, 20);
+  @include img_r_m(160, 120, 5);
 }
 
   .title1 {
@@ -1049,7 +1057,7 @@
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
+    line-height: 1.5;
     letter-spacing: normal;
     text-align: left;
     white-space: nowrap;
@@ -1081,24 +1089,14 @@
   }
 
   .desc {
-    @include img_r_m(292, 494, 40);
-    font-size: sizem(12);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.88;
-    letter-spacing: normal;
-    text-align: left;
-    color: #333;
-    white-space: normal;
-  }
-
-  .desc {
-  @include img_l_m(160, 146, 25);
+  @include img_l_m(170, 140, 25);
   font-size: sizem(14);
   font-weight: 400;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
+    line-height:1.6;
+  text-align: justify;
   color: #fff;
+    white-space: normal;
   }
 
   .more {
@@ -1126,9 +1124,9 @@
   width: sizem(152);
   height: sizem(27);
 
-  &.active {
-    background-image: url('./all/acitve_btn.png');
-    background-size: cover;
+ &.active:hover {
+    animation:none ;
+    background:#ff662abb;
     box-shadow: none;
     color: #fff;
   }

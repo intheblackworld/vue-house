@@ -254,8 +254,8 @@
         <img src="./s4/04-1_title_1.png" v-if="!isMobile" :alt="`${info.caseName}_img`" class="title1">
         <img src="./s4/04-1_title_2.png" v-if="!isMobile" :alt="`${info.caseName}_img`" class="title2">
         <div class="desc">
-          立足洲子洋最前沿，五股新市鎮、五股市區、<br />
-          新莊副都心、洲子洋四大區眾星拱月緊密環抱，<br />
+          立足洲子洋最前沿，五股新市鎮、五股市區、<br v-if="!isMobile" />
+          新莊副都心、洲子洋四大區眾星拱月緊密環抱，<br v-if="!isMobile" />
           確立洲子洋天空特區最精華區段地位
         </div>
       </div>
@@ -476,8 +476,8 @@
         <img src="./s4/04-2_title_1.png" :alt="`${info.caseName}_img`" class="title1" v-if="blockIndex === 1 && !isMobile">
         <img src="./s4/04-2_title_2.png" :alt="`${info.caseName}_img`" class="title2" v-if="blockIndex === 1 && !isMobile">
         <div class="desc">
-          新北市長展現魄力，決心翻轉五股城市樣貌，<br />
-打造169公頃城市新生計畫，保留16.6公頃<br />
+          新北市長展現魄力，決心翻轉五股城市樣貌，<br v-if="!isMobile" />
+打造169公頃城市新生計畫，保留16.6公頃<br v-if="!isMobile" />
 滯洪公園，將為您和孩子留下一塊最美樂活綠地。
         </div>
       </div>
@@ -622,13 +622,20 @@
   width: size(176);
   height: size(30);
   cursor: pointer;
+    background:#fff0;
+    animation:btn 0.5s infinite alternate ;
   color: #000;
 
-  &.active {
-    background-image: url('./all/acitve_btn.png');
-    background-size: cover;
+  &.active ,&:hover {
+    animation:none ;
+    background:#ff662abb;
     box-shadow: none;
     color: #fff;
+  }
+}
+@keyframes btn {
+  to {
+    background:#fff3;
   }
 }
 
@@ -841,15 +848,15 @@
     height: sizem(610);
     min-height: auto;
     max-height: initial;
-    background-image: url('./all/section_bg.jpg');
-    background-attachment: scroll;
+   // background-image: url('./all/section_bg.jpg');
+   // background-attachment: scroll;
     // background-size: 100% 100%;
     // background-position: 0 0;
     // background-attachment: fixed;
     overflow: hidden;
   }
   .img {
-  @include img_r_m(143, 142, 20);
+  @include img_r_m(160, 120, 5);
 }
 
   .title1 {
@@ -858,7 +865,7 @@
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
+    line-height: 1.5;
     letter-spacing: normal;
     text-align: left;
     white-space: nowrap;
@@ -888,7 +895,7 @@
     white-space: nowrap;
     color: #fff;
   }
-
+/*
   .desc {
     @include img_r_m(292, 494, 40);
     font-size: sizem(12);
@@ -899,15 +906,17 @@
     letter-spacing: normal;
     text-align: left;
     color: #333;
-    white-space: normal;
-  }
+  } */
 
   .desc {
-  @include img_l_m(160, 146, 25);
+  @include img_l_m(170, 140, 25);
   font-size: sizem(14);
   font-weight: 400;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
+    line-height:1.6;
+  text-align: justify;
   color: #fff;
+    white-space: normal;
   }
 
   .more {
@@ -934,10 +943,15 @@
 .btn {
   width: sizem(152);
   height: sizem(27);
-
-  &.active {
-    background-image: url('./all/acitve_btn.png');
-    background-size: cover;
+ &:hover {
+    animation:btn 0.5s infinite alternate ;
+    background:#fff0;
+  box-shadow: inset 0 0 0 1px #000000;
+  color: #000;
+  }
+ &.active:hover {
+    animation:none ;
+    background:#ff662abb;
     box-shadow: none;
     color: #fff;
   }
