@@ -841,7 +841,8 @@
     height: sizem(610);
     min-height: auto;
     max-height: initial;
-    // background-image: url('./s2/bg.jpg');
+    background-image: url('./all/section_bg.jpg');
+    background-attachment: scroll;
     // background-size: 100% 100%;
     // background-position: 0 0;
     // background-attachment: fixed;
