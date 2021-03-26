@@ -18,19 +18,21 @@
       </div>
       <img src="./s1/img_m.png" :alt="`${info.caseName}_img`" class="img-2" v-if="isMobile">
     </div>
-    <div class="view">
-      <img src="./s1/logo.png" :alt="`${info.caseName}_logo`" class="logo view-3" v-if="isPC">
-      <img src="./s1/logo_m.png" :alt="`${info.caseName}_logo`" class="logo view-3" v-if="isMobile">
-      <h1 class="info1 view-3">
+    <div class="view txt view-3">
+      <img src="./s1/logo.png" :alt="`${info.caseName}_logo`" class="logo" v-if="isPC">
+      <img src="./s1/logo_m.png" :alt="`${info.caseName}_logo`" class="logo" v-if="isMobile">
+      <div class="info1">
         仙岩公園首排 吉村靖孝美學
-      </h1>
-      <h1 class="info2 view-3">
-        靜心學園 2-4房 ｜ 8932-2888
-      </h1>
-      <h1 class="btn flex-c view-3" v-scroll-to="{element: `#contact`}">
+      </div>
+      <div class="info2">靜心學園25-45坪 2-4房
+      </div>
+      <div class="info3">
+        8932-2888
+      </div>
+      <img src="./s1/logo2.png" :alt="`${info.caseName}_logo2`" class="logo2">
+      <div class="btn flex-c" v-scroll-to="{element: `#contact`}">
         立即預約
-      </h1>
-      <img src="./s1/logo2.png" :alt="`${info.caseName}_logo2`" class="logo2 view-3">
+      </div>
     </div>
   </div>
 </template>
@@ -99,64 +101,8 @@ transform-origin: 98% 80%;}
   }
 }
 
-.logo {
-  @include img_r_pc(565, 400, 240);
-  top:calc(50% - 9vw);
-}
 
-.info1 {
-  @include img_r_pc(560, 554, 247);
-  top:calc(50% - 2vw);
-  font-size: size(45.7);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.94;
-  letter-spacing: normal;
-  text-align: left;
-  color: #ffffff;
-}
 
-.info2 {
-  @include img_r_pc(578, 632, 228);
-  top:calc(50% + 2.5vw);
-  font-size: size(42);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.66;
-  letter-spacing: normal;
-  text-align: left;
-  color: #ffffff;
-}
-
-.logo2 {
-  @include img_r_pc(130, 734, 246);
-  top:calc(50% + 8vw);
-}
-
-.btn {
-  // @include div_r_pc(280, 77, 863, 375);
-  @include div_r_pc(382, 78, 729, 418);
-  top:calc(50% + 8vw);
-  border: 1px solid #fff;
-  font-size: size(28);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.25;
-  letter-spacing: normal;
-  text-align: left;
-  color: #ffffff;
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s;
-
-  &:hover {
-    background-color: #fff;
-    color: #004471;
-  }
-}
 
 .view {
   width: 100%;
@@ -180,6 +126,80 @@ transform-origin: 98% 80%;}
 .view-3{
   opacity: 0;
   animation: fade_left 2.5s 4s ease-in-out forwards;
+}
+h1{font-weight: 600}
+.txt{
+  @include img_r_pc(580, 0, 230);
+  height: 100%;
+// top:calc(50% - 9vw);
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.66;
+  letter-spacing: normal;
+  text-align: center;
+  display: flex;
+  color: #ffffff;
+ // flex-direction:column;
+ flex-wrap: wrap;
+  justify-content:center;
+  align-items:center;
+  align-content:center;
+  font-size: size(45);
+  padding: 3em 0 0 0;
+}
+
+.logo {
+  width: size(560);
+  // @include img_r_pc(565, 400, 240);
+}
+
+.info1 {
+  margin: 1.1em 0 0 0;
+}
+
+.info2 {
+  font-size:1.19em;
+  margin:0 0 -0.3em 0;
+}
+
+.info3 {
+  font-size:2em;display: inline-block;
+  margin: -0.05em 0.55em 0 -0.2em;
+  letter-spacing:-0.03em;
+  font-weight: 500;
+  position: relative;
+  //transform: scaleX(0.98);
+  font-family: "Times New Roman";
+  &::after{content: "";
+  position: absolute;
+  right: -0.25em;
+  top: calc(50% - 0.4em);
+    width: 1px;
+    height: 0.8em;
+    background: currentColor;display: inline-block;opacity: 0.7;
+  }
+}
+
+.logo2 {
+  width: size(130);
+}
+
+.btn {
+  width: size(400);
+  height:size(78);
+  margin:1em auto 0;
+  border: 1px solid #fff;
+  font-size: size(28);
+  color: #ffffff;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: #fff;
+    color: #004471;
+  }
 }
 
 @keyframes fade_out {
