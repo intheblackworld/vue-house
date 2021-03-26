@@ -52,7 +52,7 @@
 
   .item {
     width: size(358);
-    min-height: size(55 + 354 + 397);
+    min-height: size(750);
     position: relative;
 
     img {
@@ -102,14 +102,17 @@
     }
     .item-work {
       @include img_l_pc(333, 0, 0);
+      width:100%;
       top: auto;
       bottom: 0;
+      transform: translateY(100%);
+
       font-size: size(15.8);
       // letter-spacing: size(0.53);
-      text-align: left;
+      text-align: justify;
       font-weight: 400;
       color: #000;
-      white-space: nowrap;
+      white-space:normal;
       span {
         font-weight: 600;
       }
@@ -176,7 +179,6 @@
     text-align: left;
     font-weight: 400;
     color: #000;
-    white-space: nowrap;
     margin: 1em 0 0 0;
     span {
       font-weight: 600;
@@ -450,7 +452,7 @@ export default {
             ? '得大山大水之寵，自慢藏擁有水岸公園雙首排的自慢環境，與自然相融，和環境共榮擴大生活領域而不侵擾，於山水襯底間勾勒出生機豐饒的造景。'
             : '得大山大水之寵，自慢藏擁有水岸公園雙首排的自慢環境，與自然相融，和環境共榮，結合都市、建築、人文、動線、自然、生態等元素，擴大生活領域而不侵擾，於山水襯底間勾勒出生機豐饒的造景，及季節多樣性的景觀庭園。',
           work:
-            '【 經典業績 】<br /><span>維多利亞酒店、碧波白、墾丁凱薩飯店-Villa<br>、大直ATT百貨</span>',
+            '【 經典業績 】<br /><span>維多利亞酒店、墾丁凱薩飯店-Villa、碧波白、大直ATT百貨</span>',
         },
       ],
     }
