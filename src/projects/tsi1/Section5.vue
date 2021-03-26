@@ -1296,6 +1296,10 @@ export default {
           img: require('./s5/3-3.jpg'),
           name: '3高匯流-汐五高架',
         },
+		{
+          img: require('./s5/05_slider_3.jpg'),
+          name: '3捷接軌-三蘆線-蘆洲站',
+        },
         {
           img: require('./s5/05_slider_4.jpg'),
           name: '3捷接軌-捷運機場線-A5泰山站',
