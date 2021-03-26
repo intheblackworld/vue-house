@@ -130,7 +130,9 @@ export default {
  // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
 
 
- &::after{content:"";width: 100%; height: 100%;background:url("data:image/svg+xml,%3Csvg version='1.1' id='圖層_1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 1920 80' xml:space='preserve'%3E%3Cpath fill='%23f15a24' d='M960,68.6c339.9,0,664,4,960,11.4V0H0v80C296,72.7,620.1,68.6,960,68.6z'/%3E%3C/svg%3E");position: absolute;top: 0;left: 0;}
+ &::after{content:"";width: 100%; height: 100%;background:url("data:image/svg+xml,%3Csvg version='1.1' id='圖層_1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 1920 80' xml:space='preserve'%3E%3Cpath fill='%23f15a24' d='M960,68.6c339.9,0,664,4,960,11.4V0H0v80C296,72.7,620.1,68.6,960,68.6z'/%3E%3C/svg%3E") no-repeat center;
+ background-size: cover;
+ position: absolute;top: 0;left: 0;}
 
 }
 
@@ -174,7 +176,7 @@ export default {
   align-items: center;
   justify-content: center;
   height: 100%;
-  overflow: hidden;
+ // overflow: hidden;
   padding-left: 30px;
   li {
     height: 100%;
@@ -193,7 +195,7 @@ export default {
     text-align: center;
     display: block;
     cursor: pointer;
-    padding: 0 22px;
+    padding: 0 1.2em;
     // margin: 0 10px;
     transition: all 0.8s;
     display: flex;
@@ -203,6 +205,7 @@ export default {
     // overflow: hidden;
     // border-right: 1px solid $nav_link_hover_bg;
       font-size: 24px !important;
+      line-height: 1.6;
 
     &:hover {
       color: $nav_link_hover_color;
@@ -211,8 +214,8 @@ export default {
 
      &::before {
        content: '';
-       width:5px;
-       height:5px;
+       width:1em;
+       height:1em;
        display: block;
        background:#ffff00; // second bg
        position: absolute;
@@ -220,22 +223,27 @@ export default {
      //  transform: skewX(-20deg);
     //   left: -10%;
     //   opacity: 1;
-       top:calc(50% - 0.9em);
+       top:calc(50% - 1.5em);
        z-index: 2;
-       transition: all 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+       transition: all 0.3s cubic-bezier(0.77, 0, 0.175, 1);transform-origin: 50% 50%;
+       box-shadow: 0 0 0.03em #fff;
+     transform:scale(0.3) translateX(0%);
      }
 
      &:hover::before {
        //opacity: 1;
   animation: light 0.6s linear alternate infinite;
-       width: 70%;
-       top:calc(50% + 0.8em);
+      // width: 70%;
+     //  top:calc(50% + 0.8em);
+     transform:scale(7) translateY(-16%);
    }
     // &:hover::after,
     // &:hover::after {
     //   opacity: 1;
     //   width: 120%;
     // }
+
+    /*
 @keyframes light {
   0%{
     transform: translateX(-5%);
@@ -244,16 +252,17 @@ export default {
     transform: translateX(5%);
   }
 }
+*/
 
 
     .title {
       font-size: 1em !important;
       font-weight: 800;
       position: relative;
-      color: #fff;
+   //   color: #fff;
       z-index: 3;
       > span {
-        font-size: 24px !important;
+      //  font-size: 24px !important;
       }
     }
     h1.title{font-family: "Noto Serif TC";}

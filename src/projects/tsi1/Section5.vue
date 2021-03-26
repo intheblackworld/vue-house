@@ -1294,7 +1294,7 @@ export default {
         },
         {
           img: require('./s5/3-3.jpg'),
-          name: 'p4-3 3高匯流-汐五高架',
+          name: '3高匯流-汐五高架',
         },
         {
           img: require('./s5/05_slider_4.jpg'),
