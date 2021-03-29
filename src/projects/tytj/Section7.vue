@@ -291,24 +291,29 @@ export default {
       },
       slideList: [
         {
-          img: require('./s7/p1_1.jpg'),
+          img: require('./s7/public_1.jpg'),
           title: '精華公設',
-          subtitle: '迎賓大廳',
+          subtitle: '1F交誼廳',
         },
         {
-          img: require('./s7/p2_1.jpg'),
+          img: require('./s7/public_2.jpg'),
           title: '精華公設',
-          subtitle: '交誼廳',
+          subtitle: '3F宴會廳',
         },
         {
-          img: require('./s7/p3_1.jpg'),
+          img: require('./s7/public_3.jpg'),
           title: '精華公設',
-          subtitle: '宴會廳',
+          subtitle: '3F宴會廳',
         },
         {
-          img: require('./s7/p4_1.jpg'),
+          img: require('./s7/public_4.jpg'),
           title: '精華公設',
-          subtitle: '星空Bar',
+          subtitle: '3F閱讀室',
+        },
+        {
+          img: require('./s7/public_5.jpg'),
+          title: '精華公設',
+          subtitle: '頂樓酒吧',
         },
       ],
     }
