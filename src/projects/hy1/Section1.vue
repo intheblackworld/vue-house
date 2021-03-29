@@ -4,16 +4,16 @@
       <img src="./s1/bg.jpg" :alt="`${info.caseName}_cloud`" class="cloud-item">
       <img src="./s1/bg.jpg" :alt="`${info.caseName}_cloud`" class="cloud-item">
     </div>
-    <img src="./s1/bg.png" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC">
-    <img src="./s1/bg_m.png" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isMobile">
-    <div class="logo absolute">
+    <img src="./s1/bg.png" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC" data-aos="fade" data-aos-delay="0">
+    <img src="./s1/bg_m.png" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isMobile" data-aos="fade" data-aos-delay="0">
+    <div class="logo absolute" data-aos="fade-up" data-aos-delay="200" data-aos-offset="-300">
       <img src="./s1/logo.png" :alt="`${info.caseName}_img`">
     </div>
-    <h1 class="title">
+    <h1 class="title" data-aos="fade-up" data-aos-delay="400">
       以中路之名 於風禾屏息
     </h1>
-    <div class="hr"></div>
-    <h1 class="desc">
+    <div class="hr" data-aos="zoom-in-right" data-aos-delay="600"></div>
+    <h1 class="desc" data-aos="fade-up" data-aos-delay="800">
       26層ARTDECO摩天地標 55 •62• 69坪 菁英專屬
     </h1>
   </div>
@@ -39,6 +39,7 @@
   display: block;
   object-fit: cover;
   margin-top: 0;
+  z-index: 3;
   &:nth-child(1) {
     position: relative;
   }
@@ -49,6 +50,7 @@
   top: 0;
   left: 0;
   height: 100%;
+  // z-index: 2;
 }
 
 .cloud-item {
@@ -65,6 +67,7 @@
 
 .logo {
   @include img_r_pc(252, 300, 274);
+  z-index: 4;
   img {
     width: 100%;
   }
@@ -80,12 +83,14 @@
   letter-spacing: size(3.2);
   text-align: center;
   color: #000000;
+  z-index: 4;
   white-space: nowrap;
 }
 
 .hr {
   @include div_r_pc(540, 1, 591, 133);
   background-color: #77623c;
+  z-index: 4;
 }
 
 .desc {
@@ -97,6 +102,7 @@
   line-height: 2.59;
   letter-spacing: size(0.23);
   text-align: center;
+  z-index: 4;
   color: #000000;
 }
 /*

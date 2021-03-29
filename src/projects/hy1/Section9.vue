@@ -2,8 +2,8 @@
   <div class="section9">
     <!-- <img src="./s9/bg.png" :alt="`${info.caseName}_img`" class="bg-img">
     <img src="./s9/bg_m.png" :alt="`${info.caseName}_img`" class="bg-img" v-if="isMobile"> -->
-    <img src="./s3/icon.png" :alt="`${info.caseName}_img`" class="icon">
-    <h1 class="title">
+    <img src="./s3/icon.png" :alt="`${info.caseName}_img`" class="icon" data-aos="fade-up" data-aos-delay="200">
+    <h1 class="title" data-aos="fade-up" data-aos-delay="200">
       古典融匯當代 一流名品 空間美學
     </h1>
     <carousel-3d ref="mycarousel" :width="slideWidth" :height="slideHeight" :perspective="61" :disable3d="isMobile ? true : false" :border="0" :display="isMobile ? 1 : 3" :inverseScaling="window.screen.width * (340 / 1920)" :space="isMobile ? 'auto' : window.screen.width * (830 / 1920)" @after-slide-change="onAfterSlideChange">
@@ -104,13 +104,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.pagination {
-  width: 100vw;
-  top: size(983);
-  right: 0;
-  justify-content: center;
 }
 
 .pagination {

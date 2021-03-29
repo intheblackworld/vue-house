@@ -4,10 +4,10 @@
     <!-- <img src="./s7/bg_m.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="isMobile"> -->
     <img src="./s8/bottom.png" :alt="`${info.caseName}_img`" class="bottom">
     <img src="./s8/top.png" :alt="`${info.caseName}_img`" class="top">
-    <h1 class="subtitle">
+    <h1 class="subtitle" data-aos="fade-up" data-aos-delay="200">
       星級飯店會館
     </h1>
-    <h1 class="title">
+    <h1 class="title" data-aos="fade-up" data-aos-delay="400">
       風華耀眼 名流相聚
     </h1>
   </div>

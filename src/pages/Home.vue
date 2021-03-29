@@ -10,14 +10,14 @@
       :options="options"
       id="fullpage"
     > -->
-      <vue-lazy-component class="section relative" id="section1" @init="init">
+      <vue-lazy-component class="section" id="section1" @init="init">
         <Section1 />
       </vue-lazy-component>
-      <vue-lazy-component class="section" id="section2" style="">
+      <vue-lazy-component class="section section2" id="section2" style="">
         <Section2 />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section3">
-        <Section3 />
+        <Section3 :viewIndex="viewIndex" />
       </vue-lazy-component>
       <vue-lazy-component class="section relative" id="section4" >
         <Section4 :viewIndex="viewIndex" />
@@ -54,6 +54,10 @@
 .section .fp-slide,
 .section .fp-tableCell {
   height: auto !important;
+}
+
+.section2 {
+  position: static;
 }
 #contact {
   z-index: 3;

@@ -1,19 +1,19 @@
 <template>
   <div class="section6">
     <img src="./s6/1.jpg" :alt="`${info.caseName}_img`" class="bg">
-    <img src="./s6/img.png" :alt="`${info.caseName}_img`" class="img" v-if="isPC">
-    <img src="./s6/img_m.png" :alt="`${info.caseName}_img`" class="img" v-if="isMobile">
-    <img src="./s3/icon.png" :alt="`${info.caseName}_img`" class="icon">
-    <h1 class="label">
+    <img src="./s6/img.png" :alt="`${info.caseName}_img`" class="img" v-if="isPC" data-aos="fade-up" data-aos-delay="400">
+    <img src="./s6/img_m.png" :alt="`${info.caseName}_img`" class="img" v-if="isMobile" data-aos="fade-up" data-aos-delay="400">
+    <img src="./s3/icon.png" :alt="`${info.caseName}_img`" class="icon" data-aos="fade-up" data-aos-delay="200">
+    <h1 class="label" data-aos="fade-up" data-aos-delay="200">
       ARTDECO
     </h1>
-    <h1 class="title">
+    <h1 class="title" data-aos="fade-up" data-aos-delay="400">
       26層凌空美學
     </h1>
-    <h3 class="subtitle">
+    <h3 class="subtitle" data-aos="fade-up" data-aos-delay="600">
       凌空住宅美學 再造經典
     </h3>
-    <h3 class="desc">
+    <h3 class="desc" data-aos="fade-up" data-aos-delay="800">
       以古典融會現代的「ARTDECO」裝飾風藝術設計，選用頂級石材建構外觀，以精工裝飾雕琢，成就公園首排最美城市天際線。
     </h3>
   </div>

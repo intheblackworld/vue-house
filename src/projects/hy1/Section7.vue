@@ -2,23 +2,23 @@
   <div class="section7">
     <img src="./s7/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="isPC">
     <img src="./s7/bg_m.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="isMobile">
-    <img src="./s7/bg.png" :alt="`${info.caseName}_img`" class="img">
-    <h1 class="title">
+    <img src="./s7/bg.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-up" data-aos-delay="400">
+    <h1 class="title" data-aos="fade-up" data-aos-delay="0">
       雙雄制震 頂規穩固
     </h1>
-    <h3 class="title1">
+    <h3 class="title1" data-aos="fade-up" data-aos-delay="200">
       Alfa Safe耐震結構
     </h3>
-    <h3 class="desc1">
+    <h3 class="desc1" data-aos="fade-up" data-aos-delay="400">
       「台灣建築結構教父」建築安全履歷協會理事長<br />
       「戴雲發」專利設計<br />
       實驗結果證明「抗震韌性提升100%，<br />
       為傳統柱抗震韌性的2倍」
     </h3>
-    <h3 class="title2">
+    <h3 class="title2" data-aos="fade-up" data-aos-delay="200">
       EDS制震壁
     </h3>
-    <h3 class="desc2">
+    <h3 class="desc2" data-aos="fade-up" data-aos-delay="400">
       普丞土木結構事務所「廖偉信博士」專利研發<br />
       將建築物的振動轉換成制震壁體的相對運動，並利用此相對運動所產生的抵抗力來吸收地震能量。<br />
       鴻苑「獨家採用144 組EDS制震壁，可達六級抗震效能」

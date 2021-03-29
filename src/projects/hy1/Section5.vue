@@ -9,8 +9,8 @@
         <img src="./s5/bg.jpg" alt="img">
       </div>
     </div>
-    <div class="border-frame"></div>
-    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+    <div class="border-frame" data-aos="fade-left" data-aos-delay="400"></div>
+    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-left" data-aos-delay="200">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img  + i" :class="`swipe-item absolute`">
@@ -21,33 +21,33 @@
         <div class="pagination absolute flex-ac" v-if="isPC">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot' + index" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
-        <div class="swipe-btns absolute flex-ac flex-jb">
+        <div class="swipe-btns absolute flex-ac flex-jb"  v-if="isMobile">
           <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
           <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
         </div>
       </div>
     </div>
-    <img src="./s3/icon.png" :alt="`${info.caseName}_img`" class="icon">
-    <h1 class="label">
+    <img src="./s3/icon.png" :alt="`${info.caseName}_img`" class="icon" data-aos="fade-up" data-aos-delay="200">
+    <h1 class="label" data-aos="fade-up" data-aos-delay="200">
       PARK
     </h1>
-    <h1 class="s-title">
+    <h1 class="s-title" data-aos="fade-up" data-aos-delay="400">
       台灣各大城市 都在追求一席公園豪邸
     </h1>
-    <h1 class="title">
+    <h1 class="title" data-aos="fade-up" data-aos-delay="500">
       綠意首席 眾城皆求
     </h1>
-    <h3 class="s-desc">
+    <h3 class="s-desc" data-aos="fade-up" data-aos-delay="600">
       大安森林公園：台北市心綠肺，週邊第一排豪邸極度高貴。<br />
       新北四號公園：雙和皆知其尊貴地位，首席名邸歷久不衰。<br />
       台中市綠園道：週邊第一席稀少不凡，層峰爭搶綿延綠意。<br />
       高雄美術館特區：綠意成就人文，高雄港督豪邸聚集之地。
     </h3>
-    <h3 class="desc">
+    <h3 class="desc" data-aos="fade-up" data-aos-delay="700">
       公園宅的價值，各大城市皆尊貴珍稀<br />
       「鴻苑」位於桃園最大萬坪「風禾公園」第一排，以極佳的角度坐擁綠景。
     </h3>
-    <h3 class="subtitle">
+    <h3 class="subtitle" data-aos="fade-up" data-aos-delay="800">
       以綠意構築價值 以首席堆疊尊榮
     </h3>
     <img src="./s3/img2.png" :alt="`${info.caseName}_img`" class="arrow2" data-aos="fade-left" data-aos-delay="800">
@@ -318,10 +318,10 @@
 
 .pagination {
   width: auto;
-  bottom: size(-34);
-  right: 0;
-  left: 0;
-  margin: 0 auto;
+  bottom: size(25);
+  // right: 0;
+  left: size(33);
+  // margin: 0 auto;
   justify-content: center;
 }
 
@@ -333,12 +333,12 @@
 
   span {
     display: block;
-    width: 10px;
-    height: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 0 1px #fff;
+    width: size(20);
+    height: size(20);
+    border-radius: 0px;
+    box-shadow: 0 0 0 1px #aa915e;
     position: relative;
-    background-color: transparent;
+    background-color: #aa915e;
     transition: all 0.5s;
 
     &::before {
@@ -346,7 +346,7 @@
       width: 60%;
       height: 60%;
       display: block;
-      background: #fff;
+      background: #aa915e;
       border-radius: 20px;
       opacity: 1;
       position: absolute;
@@ -358,14 +358,14 @@
       transform: scale(0);
     }
     &.active {
-      box-shadow: none;
+      box-shadow: 0 0 0 1px #fff;
       &::before {
         content: '';
         width: 100%;
         height: 100%;
         display: block;
         background: #fff;
-        border-radius: 20px;
+        border-radius: 0px;
         opacity: 1;
         position: absolute;
         top: 0%;
@@ -733,12 +733,12 @@ export default {
   computed: {},
 
   watch: {
-    // viewIndex() {
-    //   if (this.viewIndex === 5) {
-    //     this.slideIndex = 0
-    //     console.log(this.slideIndex, 'slideIndex')
-    //   }
-    // },
+    viewIndex() {
+      if (this.viewIndex === 5) {
+        this.slideIndex = 0
+        console.log(this.slideIndex, 'slideIndex')
+      }
+    },
   },
 }
 </script>
