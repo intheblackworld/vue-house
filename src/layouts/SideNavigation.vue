@@ -117,16 +117,7 @@ export default {
     transform: skewY(5deg) translateY(83%);
     opacity: 0;
     transition: all 1s;
-    transition-delay: .5s;
-  }
-
-  .logo {
-    position: absolute;
-    width: size(102);
-    top: size(24);
-    left: size(111);
-    z-index: 110;
-    transition: all 0.3s;
+    transition-delay: 0.5s;
   }
 
   .logo {
@@ -432,6 +423,197 @@ export default {
 /* 螢幕尺寸標準 */
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
+  .menu {
+    width: sizem(60);
+    padding-top: sizem(10);
+    .bg {
+      position: fixed;
+      width: 100vw;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      z-index: 20;
+      height: sizem(558);
+      background: radial-gradient(
+        ellipse at 50%,
+        rgb(164, 31, 50) 9%,
+        rgb(13, 22, 21) 100%
+      );
+      transform: skewY(-5deg) translateY(-88%);
+      transform-origin: 0 0;
+      overflow: hidden;
+      transition: all 0.8s;
+    }
+
+    .building {
+      display: none;
+      // @include img_r_m(531, 282, 388);
+      // transform-origin: 0 0;
+      // transform: skewY(5deg) translateY(83%);
+      // opacity: 0;
+      // transition: all 1s;
+      // transition-delay: 0.5s;
+    }
+
+    .logo {
+      position: absolute;
+      width: sizem(56.7);
+      top: sizem(13);
+      left: sizem(61);
+      z-index: 110;
+      transition: all 0.3s;
+    }
+  }
+
+  .close {
+    position: fixed;
+    width: sizem(28);
+    top: sizem(24);
+    left: sizem(26);
+    z-index: 310;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .menu_icon,
+  .menu_icon::after,
+  .menu_icon::before {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: sizem(3);
+    left: 0;
+    background-color: #fff;
+    content: '';
+    transition: all 0.3s;
+    top: 0;
+    z-index: 112;
+  }
+  .menu_icon {
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    text-indent: -9999px;
+    line-height: 0;
+    top: 40%;
+    left: 25%;
+    width: 50%;
+    margin-top: -2px;
+  }
+
+  .menu_icon::before {
+    -webkit-transform: translateY(300%);
+    transform: translateY(300%);
+  }
+
+  .menu_icon::after {
+    -webkit-transform: translateY(-300%);
+    transform: translateY(-300%);
+  }
+
+  .menu_text {
+    display: block;
+    font-size: 1em;
+    font-family: 'Barlow Condensed';
+    font-weight: bold;
+    margin: sizem(50) 0 sizem(10) 0;
+    transition: all 0.5s;
+    overflow: hidden;
+  }
+
+  .open {
+    .menu_icon {
+      width: 0;
+    }
+
+    .logo {
+      width: sizem(157);
+      top: sizem(25);
+      left: sizem(108);
+    }
+
+    .menu {
+      .bg {
+        transform: skewY(-5deg);
+      }
+
+      .building {
+        transform-origin: 0 0;
+        transform: skewY(5deg) translateY(0%);
+        transition: all 1s;
+        opacity: 1;
+      }
+    }
+  }
+
+  .navlist {
+    li {
+      height: sizem(43);
+    }
+    .link {
+      height: 60px;
+      width: 100%;
+      font-size: 17px;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      position: relative;
+      cursor: pointer;
+      padding: 0 20px 0 0;
+
+      img,
+      span {
+        display: block;
+      }
+      span {
+        line-height: 16px;
+        white-space: nowrap;
+      }
+
+      &::before {
+        position: absolute;
+        display: block;
+        right: 185px;
+        content: '';
+        top: calc(50% - 0.5em);
+        width: 45px;
+        height: 1px;
+        opacity: 1;
+        transition: all 0.3s;
+        border: 1px solid #fff;
+        border-width: 1px 1px 0 0;
+      }
+      &:hover:before {
+        background: none;
+        width: 15px;
+        height: 15px;
+        margin-top: -5px;
+        border-color: #c00;
+        transform: rotate(45deg);
+        animation: menu_l 0.3s infinite alternate ease-out;
+      }
+
+      .subTitle {
+        font-family: 'Barlow Condensed', sans-serif;
+        margin-top: 5px;
+        color: $nav_link_subtitle_color;
+      }
+      .title {
+        font-size: sizem(22);
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.33;
+        letter-spacing: size(0.22);
+        text-align: left;
+        color: $nav_link_color;
+        margin-top: sizem(-10);
+        color: #fff;
+      }
+    }
+  }
+
   /* .navigation {
     height: $nav_phone_height;
     z-index: 110;

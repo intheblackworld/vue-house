@@ -21,7 +21,7 @@
         <div class="pagination absolute flex-ac" v-if="isPC">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot' + index" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
-        <div class="swipe-btns absolute flex-ac flex-jb"  v-if="isMobile">
+        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
           <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
           <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
         </div>
@@ -37,14 +37,27 @@
     <h1 class="title" data-aos="fade-up" data-aos-delay="500">
       綠意首席 眾城皆求
     </h1>
-    <h3 class="s-desc" data-aos="fade-up" data-aos-delay="600">
+    <h3 class="s-desc" data-aos="fade-up" data-aos-delay="600" v-if="isPC">
       大安森林公園：台北市心綠肺，週邊第一排豪邸極度高貴。<br />
       新北四號公園：雙和皆知其尊貴地位，首席名邸歷久不衰。<br />
       台中市綠園道：週邊第一席稀少不凡，層峰爭搶綿延綠意。<br />
       高雄美術館特區：綠意成就人文，高雄港督豪邸聚集之地。
     </h3>
-    <h3 class="desc" data-aos="fade-up" data-aos-delay="700">
+    <h3 class="s-desc" data-aos="fade-up" data-aos-delay="600" v-if="isMobile">
+      大安森林公園<br />
+      台北市心綠肺，週邊第一排豪邸極度高貴。<br /><br />
+      新北四號公園<br />
+      雙和皆知其尊貴地位，首席名邸歷久不衰。<br /><br />
+      台中市綠園道<br />
+      週邊第一席稀少不凡，層峰爭搶綿延綠意。<br /><br />
+      高雄美術館特區<br />綠意成就人文，高雄港督豪邸聚集之地。<br />
+    </h3>
+    <h3 class="desc" data-aos="fade-up" data-aos-delay="700" v-if="isPC">
       公園宅的價值，各大城市皆尊貴珍稀<br />
+      「鴻苑」位於桃園最大萬坪「風禾公園」第一排，以極佳的角度坐擁綠景。
+    </h3>
+    <h3 class="desc" data-aos="fade-up" data-aos-delay="700" v-if="isMobile">
+      公園宅的價值，各大城市皆尊貴珍稀<br /><br />
       「鴻苑」位於桃園最大萬坪「風禾公園」第一排，以極佳的角度坐擁綠景。
     </h3>
     <h3 class="subtitle" data-aos="fade-up" data-aos-delay="800">
@@ -406,132 +419,178 @@
 @media screen and (max-width: 767px) {
   .section5 {
     width: 100vw;
-    height: sizem(573);
+    height: sizem(751 + 182);
     min-height: auto;
     max-height: initial;
-    background-image: url('./all/section_bg.jpg');
-    background-attachment: scroll;
+    // background-image: url('./all/section_bg.jpg');
+    // background-attachment: scroll;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
     // background-position: 0 0;
     // background-attachment: fixed;
-    overflow: hidden;
+    // overflow: hidden;
   }
 
-  .title1 {
-    @include img_l_m(325, 34, 25);
-    font-size: sizem(30);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.6;
-    letter-spacing: normal;
-    text-align: left;
-    white-space: nowrap;
-    color: #fff;
-    span {
-      display: block;
-      font-size: 0.666em;
+  .wide-img {
+    @include div_l_m(375, 182, 0, 0);
+    height: sizem(182);
+    object-fit: cover;
+    overflow: hidden;
+    > div {
+      transform-origin: center center;
+      height: 300px;
+      top: calc(50% - 100px);
+    }
+    img {
+      width: 100%;
+      height: sizem(380);
+      top: 0;
+      transform: translateY(-173%);
     }
   }
 
-  .hr {
-    @include img_l_m(142, 124, 25);
-    height: sizem(1);
-    background: #333;
+  .icon {
+    @include img_l_m(46.6, 200, 30);
   }
 
-  .title2 {
-    @include img_l_m(325, 17, 25);
-    font-size: sizem(20);
+  .label {
+    @include img_l_m(42, 182 + 42, 81);
+    font-size: sizem(13);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.05;
+    line-height: 2.38;
+    letter-spacing: sizem(1.82);
+    text-align: left;
+    color: #666666;
+    white-space: nowrap;
+  }
+  .s-title {
+    @include img_l_m(141, 182 + 85, 33);
+    font-size: sizem(21);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.48;
+    letter-spacing: sizem(1.05);
+    text-align: left;
+    color: #6e0000;
+    white-space: normal;
+  }
+  .title {
+    @include img_l_m(172, 182 + 189, 33);
+    font-size: sizem(33);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.21;
     letter-spacing: normal;
     text-align: left;
-    color: #333333;
-    white-space: nowrap;
-    color: #fff;
+    color: #6e0000;
+    white-space: normal;
   }
 
-  .desc {
-    @include img_l_m(292, 141, 25);
-    font-size: sizem(12);
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.88;
-  }
-
-  .slide-desc {
-    @include img_l_m(196, 243, 27);
+  .subtitle {
+    @include img_l_m(292, 182 + 612, 33);
     font-size: sizem(18);
-    font-weight: bold;
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.33;
-    letter-spacing: sizem(1.8);
+    line-height: 1.67;
+    letter-spacing: sizem(2.52);
     text-align: left;
-    color: #ffffff;
+    color: #530000;
     white-space: nowrap;
   }
 
-  .more {
-    @include img_r_m(179 + 7 + 29, 636, 117);
+  .s-desc {
+    @include img_l_m(314, 182 + 297, 33);
+    padding-left: sizem(12);
+    border-left: 1px solid #000000;
     font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.04;
-    letter-spacing: sizem(2.1);
+    line-height: 1.27;
+    letter-spacing: sizem(0.15);
     text-align: left;
-    color: #ffffff;
-    cursor: pointer;
     white-space: nowrap;
+    color: #000000;
+  }
+  .desc {
+    @include img_l_m(314, 182 + 528, 33);
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.23;
+    letter-spacing: sizem(0.75);
+    text-align: left;
+    white-space: normal;
+    color: #000000;
+  }
 
-    img {
-      width: sizem(29);
-    }
-  }
-  .btns {
-    @include img_c_m(325, 305);
-  }
-  .img {
-    @include img_r_m(41, 264, 25);
+  .arrow1 {
+    @include img_r_m(190, 0, 0);
+    top: auto;
+    bottom: size(181);
+    display: none;
   }
 
-  .label-name {
-    @include img_r_m(41, 264, 25);
-    font-size: 4vw;
-    height: sizem(144);
-    text-align: center;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+  .arrow2 {
+    @include img_r_m(135, 0, 0);
+    top: auto;
+    bottom: size(128);
+    display: none;
   }
-  .btn {
-    width: sizem(152);
-    height: sizem(27);
 
-    &.active {
-      background-image: url('./all/acitve_btn.png');
-      background-size: cover;
-      box-shadow: none;
-      color: #fff;
+  // begin
+  .fade-up-leave-to {
+    transform: translateY(15px);
+    opacity: 0;
+    z-index: 0;
+  }
+  // end
+  .fade-up-enter {
+    transform: translateY(55px);
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .fade-up-enter-active {
+    transition: all 0.5s ease;
+  }
+
+  .fade-up-leave-active {
+    transition: all 0.1s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  .border-frame {
+    @include div_r_m(194, 234, 182 + 51, 0);
+    border: solid 1px #aa915e;
+
+    &::after {
+      content: '';
+      @include div_l_m(23, 23, 0, 0);
+      top: auto;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: sizem(23) 0 0 sizem(23);
+      border-color: transparent transparent transparent #aa915e;
+      z-index: 2;
     }
   }
 
   /* Swipe */
   .swipe {
-    width: 100%;
-    height: sizem(259);
-    min-height: auto;
-    top: auto;
-    bottom: 0;
-    left: sizem(0);
+    width: sizem(185);
+    height: sizem(233);
+    top: sizem(182 + 43);
+    right: sizem(0);
     object-fit: cover;
+    // background: #0344;
   }
 
   // begin

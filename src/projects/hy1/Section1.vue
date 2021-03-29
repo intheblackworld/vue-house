@@ -129,27 +129,60 @@
 @media screen and (max-width: 767px) {
   .section1 {
     width: 100vw;
-    min-height: sizem(604);
+    min-height: sizem(641);
     max-height: sizem(812);
     height: 100vh;
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
   }
+
+  .cloud-item {
+    width: 100vw;
+    height: 100%;
+    object-fit: initial;
+  }
   .logo {
-    width: sizem(230);
-    height: sizem(177);
-    max-height: 26%;
-    left: sizem(40);
-    top: calc(70% - 30vw);
-    svg {
-      height: 100%;
+    @include img_c_m(149, 100);
+    z-index: 4;
+    img {
+      width: 100%;
     }
   }
-  .cloud-item {
-    width: auto;
-    height: 120%;
-    // height:auto;
+
+  .title {
+    @include img_c_m(232, 219);
+    font-size: sizem(21);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.9;
+    letter-spacing: sizem(1.68);
+    text-align: center;
+    color: #000000;
+    z-index: 4;
+    white-space: nowrap;
+  }
+
+  .hr {
+    @include img_c_m(241, 258);
+    height: sizem(1);
+    background-color: #77623c;
+    z-index: 4;
+  }
+
+  .desc {
+    @include img_c_m(224, 263);
+    font-size: sizem(20);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: sizem(0.2);
+    text-align: center;
+    color: #000000;
+    z-index: 4;
+    color: #000000;
   }
 }
 </style>

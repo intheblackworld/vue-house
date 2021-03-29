@@ -343,130 +343,110 @@
 @media screen and (max-width: 767px) {
   .section3 {
     width: 100vw;
-    height: sizem(573);
+    height: sizem(654);
     min-height: auto;
     max-height: initial;
-    background-image: url('./all/section_bg.jpg');
-    background-attachment: scroll;
+    // background-image: url('./all/section_bg.jpg');
+    // background-attachment: scroll;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
     // background-position: 0 0;
     // background-attachment: fixed;
-    overflow: hidden;
+    // overflow: hidden;
   }
 
-  .title1 {
-    @include img_l_m(325, 34, 25);
-    font-size: sizem(30);
+  .icon {
+    @include img_l_m(47, 299, 30);
+  }
+
+  .label {
+    @include img_l_m(147, 325, 81);
+    font-size: sizem(13);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.6;
-    letter-spacing: normal;
+    line-height: 2.38;
+    letter-spacing: sizem(1.82);
     text-align: left;
+    color: #666666;
     white-space: nowrap;
-    color: #fff;
-    span {
-      display: block;
-      font-size: 0.666em;
-    }
   }
 
-  .hr {
-    @include img_l_m(142, 124, 25);
-    height: sizem(1);
-    background: #333;
-  }
-
-  .title2 {
-    @include img_l_m(325, 17, 25);
-    font-size: sizem(20);
+  .title {
+    @include img_l_m(172, 367, 30);
+    font-size: sizem(33);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.05;
-    letter-spacing: normal;
+    line-height: 1.36;
+    letter-spacing: sizem(1.65);
     text-align: left;
-    color: #333333;
+    color: #6e0000;
     white-space: nowrap;
-    color: #fff;
+  }
+
+  .subtitle {
+    @include img_l_m(226, 426, 33);
+    font-size: sizem(21);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.57;
+    letter-spacing: sizem(1.05);
+    text-align: left;
+    color: #000000;
+    white-space: nowrap;
   }
 
   .desc {
-    @include img_l_m(292, 141, 25);
-    font-size: sizem(12);
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.88;
-  }
-
-  .slide-desc {
-    @include img_l_m(196, 243, 27);
-    font-size: sizem(18);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.33;
-    letter-spacing: sizem(1.8);
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
-  }
-
-  .more {
-    @include img_r_m(179 + 7 + 29, 636, 117);
+    @include img_l_m(310, 473, 33);
     font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.04;
-    letter-spacing: sizem(2.1);
+    line-height: 1.73;
+    letter-spacing: sizem(0.15);
     text-align: left;
-    color: #ffffff;
-    cursor: pointer;
-    white-space: nowrap;
-
-    img {
-      width: sizem(29);
-    }
-  }
-  .btns {
-    @include img_c_m(325, 305);
-  }
-  .img {
-    @include img_r_m(41, 264, 25);
+    color: #000000;
   }
 
-  .label-name {
-    @include img_r_m(41, 264, 25);
-    font-size: 4vw;
-    height: sizem(144);
-    text-align: center;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+  .arrow1 {
+    @include img_r_m(83, 0, 0);
+    top: auto;
+    bottom: sizem(-25);
   }
-  .btn {
-    width: sizem(152);
-    height: sizem(27);
 
-    &.active {
-      background-image: url('./all/acitve_btn.png');
-      background-size: cover;
-      box-shadow: none;
-      color: #fff;
+  .arrow2 {
+    @include img_r_m(59, 0, 0);
+    top: auto;
+    bottom: sizem(-40);
+  }
+
+  .border-frame {
+    @include div_l_m(350, 242, 41, 10);
+    border: solid 1px #aa915e;
+
+    &::after {
+      content: '';
+      @include div_r_m(27, 27, 0, 0);
+      top: auto;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 0 sizem(27) sizem(27);
+      border-color: transparent transparent #aa915e transparent;
+      z-index: 2;
     }
   }
 
   /* Swipe */
   .swipe {
-    width: 100%;
-    height: sizem(259);
+    width: sizem(350);
+    height: sizem(242);
     min-height: auto;
-    top: auto;
-    bottom: 0;
+    top: sizem(31);
+    bottom: auto;
     left: sizem(0);
     object-fit: cover;
   }
