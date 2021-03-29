@@ -215,14 +215,14 @@ export default {
               img: require('./mo/5/3.jpg'),
             },
             {
-              img: require('./mo/5/4.jpg'),
+            //  img: require('./mo/5/4.jpg'),
             },
           ]
         : [
             { img: require('./s5/1.jpg') },
             { img: require('./s5/2.jpg') },
             { img: require('./s5/3.jpg') },
-            { img: require('./s5/4.jpg') },
+          //  { img: require('./s5/4.jpg') },
           ],
     }
   },
