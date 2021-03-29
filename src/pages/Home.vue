@@ -2,8 +2,8 @@
   <div class="home no-padding-top">
     <div class="bg-img">
       <Loading :loading="load" />
-      <SideNavigation v-if="isMobile" />
-      <Navigation v-if="!isMobile" />
+      <SideNavigation />
+      <!-- <Navigation v-if="!isMobile" /> -->
       <!-- <Indigator :viewIndex="viewIndex" /> -->
       <!-- <full-page
       ref="fullPage"
@@ -14,7 +14,7 @@
         <Section1 />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section2" style="">
-        <!-- <Section2 /> -->
+        <Section2 />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section3">
         <Section3 />
@@ -88,15 +88,15 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/tsi1/Section1.vue'
-import Section2 from '@/projects/tsi1/Section2.vue'
-import Section3 from '@/projects/tsi1/Section3.vue'
-import Section4 from '@/projects/tsi1/Section4.vue'
-import Section5 from '@/projects/tsi1/Section5.vue'
-import Section6 from '@/projects/tsi1/Section6.vue'
-import Section7 from '@/projects/tsi1/Section7.vue'
-import Section8 from '@/projects/tsi1/Section8.vue'
-import Section9 from '@/projects/tsi1/Section9.vue'
+import Section1 from '@/projects/hy1/Section1.vue'
+import Section2 from '@/projects/hy1/Section2.vue'
+import Section3 from '@/projects/hy1/Section3.vue'
+import Section4 from '@/projects/hy1/Section4.vue'
+import Section5 from '@/projects/hy1/Section5.vue'
+import Section6 from '@/projects/hy1/Section6.vue'
+import Section7 from '@/projects/hy1/Section7.vue'
+import Section8 from '@/projects/hy1/Section8.vue'
+import Section9 from '@/projects/hy1/Section9.vue'
 
 export default {
   name: 'home',

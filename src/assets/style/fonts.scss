@@ -1,6 +1,5 @@
 span,
 div,
-h1,
 h2,
 h3,
 h4,
@@ -9,12 +8,12 @@ p {
   // font-family:inherit;
   margin: 0;
   // font-family: 'Noto Serif TC', serif;
-  font-family:inherit;
+  font-family: inherit;
   // font-family: '微軟正黑體', 'Microsoft JhengHei', 'Helvetica Neue', Helvetica,
   // Arial;
 
   span {
-    font-family:inherit;
+    font-family: inherit;
   }
 }
 
@@ -23,19 +22,19 @@ h2 {
   margin: 0;
   font-weight: normal;
 }
-h3{
-font-family: $family2;}
+h1, h3 {
+  font-family: $family2;
+}
 label,
 span {
   // font-family:'Noto Sans TC',sans-serif;
-    font-family:inherit;
+  font-family: inherit;
   margin: 0;
   //font-weight: bold;
 }
 
-p,
-.desc {
-  font-family:inherit;
+p {
+  font-family: inherit;
   // font-family: 'Noto Serif TC','Noto Sans TC', serif;
   // font-family: '微軟正黑體', 'Microsoft JhengHei', 'Helvetica Neue', Helvetica,
   //   Arial;

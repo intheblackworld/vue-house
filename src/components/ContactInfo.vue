@@ -2,6 +2,8 @@
   <div>
     <div class="contact-info" id="contact-info" data-aos="fade" data-aos-delay="0">
       <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
+      <img src="~@/projects/hy1/s3/img2.png" :alt="`${info.caseName}_img`" class="arrow2" data-aos="fade-left" data-aos-delay="800">
+      <img src="~@/projects/hy1/s3/img1.png" :alt="`${info.caseName}_img`" class="arrow1" data-aos="fade-left" data-aos-delay="600">
       <!-- <img
         v-if="isMobile"
         class="logo"
@@ -92,16 +94,17 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/style/variableColor.scss';
 @import '@/assets/style/variableDefault.scss';
+@import '@/assets/style/function.scss';
 
 .contact-info {
   background: $contact_bg;
   // background-image: url('../assets/img/contact_bg.jpg');
   background-size: cover;
-  background: linear-gradient(
-    to bottom,
-    rgba(243, 149, 1, 1) 0%,
-    rgba(218, 71, 19, 1) 100%
-  );
+  // background: linear-gradient(
+  //   to bottom,
+  //   rgba(243, 149, 1, 1) 0%,
+  //   rgba(218, 71, 19, 1) 100%
+  // );
   //box-shadow: $contact_shadow;
   display: flex;
   flex-direction: column;
@@ -111,13 +114,25 @@ export default {
   z-index: 3;
   //width: 1200px;
   width: 100%;
-  height: 560px;
+  height: 420px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
   transform: translateY(0);
   margin: 2vw auto 0;
   padding: 30px 0 40px;
+}
+
+.arrow1 {
+  @include img_r_pc(190, 0, 0);
+  top: auto;
+  bottom: size(300);
+}
+
+.arrow2 {
+  @include img_r_pc(135, 0, 0);
+  top: auto;
+  bottom: size(255);
 }
 
 .logo {
