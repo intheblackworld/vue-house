@@ -1,6 +1,14 @@
 <template>
   <div class="section5">
-		<img src="./s5/bg.jpg" alt="" class="wide-img">
+    <div class="wide-img">
+      <div v-rellax="{
+          // Rellax Options
+          // See: https://github.com/dixonandmoe/rellax#features
+          speed: -3
+        }">
+        <img src="./s5/bg.jpg" alt="img">
+      </div>
+    </div>
     <div class="border-frame"></div>
     <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -66,9 +74,21 @@
 }
 
 .wide-img {
-	@include img_l_pc(1920, 0, 0);
-	height: size(680);
-	object-fit: cover;
+  @include div_l_pc(1920, 680, 0, 0);
+  height: size(680);
+  object-fit: cover;
+  overflow: hidden;
+  > div {
+    transform-origin: center center;
+    height: 1400px;
+    top: calc(50% - 800px);
+  }
+  img {
+    width: 100%;
+    height: size(1080);
+    top: 0%;
+    transform: translateY(-53%);
+  }
 }
 
 .icon {
@@ -127,8 +147,8 @@
 
 .s-desc {
   @include img_l_pc(454, 272 + 680, 241);
-	padding-left: size(13);
-	border-left: 1px solid #000000;
+  padding-left: size(13);
+  border-left: 1px solid #000000;
   font-size: size(19);
   font-weight: normal;
   font-stretch: normal;
@@ -136,7 +156,7 @@
   line-height: 1.89;
   letter-spacing: size(0.95);
   text-align: left;
-	white-space: nowrap;
+  white-space: nowrap;
   color: #000000;
 }
 .desc {
@@ -148,7 +168,7 @@
   line-height: 1.89;
   letter-spacing: size(0.95);
   text-align: left;
-	white-space: nowrap;
+  white-space: nowrap;
   color: #000000;
 }
 
@@ -691,13 +711,13 @@ export default {
         {
           img: require('./s5/1.jpg'),
         },
-				{
+        {
           img: require('./s5/2.jpg'),
         },
-				{
+        {
           img: require('./s5/3.jpg'),
         },
-				{
+        {
           img: require('./s5/4.jpg'),
         },
       ],

@@ -27,7 +27,11 @@
   min-height: size(800);
   max-height: size(800);
   position: relative;
-  background: linear-gradient(to bottom, #c40000, #000);
+  background: radial-gradient(
+      ellipse at 50%,
+      rgb(164, 31, 50) 9%,
+      rgb(13, 22, 21) 100%
+    );
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;

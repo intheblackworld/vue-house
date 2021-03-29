@@ -5,7 +5,11 @@
         <span data-v-8ecc579a="" class="menu_icon"></span>
         <span data-v-8ecc579a="" class="menu_text"></span>
         <img src="../projects/hy1/s1/menulogo.png" alt="" class="logo">
+        <div class="bg">
+          <img src="../projects/hy1/s1/menubg.png" alt="" class="building">
+        </div>
       </div>
+      <img src="../assets/img/close.png" alt="" class="close" v-if="isOpen" @click="isOpen = false">
       <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
       <ul :class="`navlist ${isOpen ? 'open': ''}`">
         <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: offset }" v-for="item in list" class="flex-ac" @click="toggleSidebar">
@@ -88,20 +92,40 @@ export default {
   width: 80px;
   cursor: pointer;
 
-  &::after {
-    content: '';
+  .bg {
     position: fixed;
     width: 100vw;
     top: 0;
     left: 0;
     width: 100vw;
-    z-index: 111;
-    height: size(118);
-    background: transparent;
-    z-index: 100;
-    border-style: solid;
-    border-width: size(118) 100vw 0 0;
-    border-color: #c40000 transparent transparent transparent;
+    z-index: 20;
+    height: size(968);
+    background: radial-gradient(
+      ellipse at 50%,
+      rgb(164, 31, 50) 9%,
+      rgb(13, 22, 21) 100%
+    );
+    transform: skewY(-5deg) translateY(-83%);
+    transform-origin: 0 0;
+    overflow: hidden;
+    transition: all 0.8s;
+  }
+
+  .building {
+    @include img_r_pc(531, 282, 388);
+    transform-origin: 0 0;
+    transform: skewY(5deg) translateY(83%);
+    opacity: 0;
+    transition: all 1s;
+    transition-delay: .5s;
+  }
+
+  .logo {
+    position: absolute;
+    width: size(102);
+    top: size(24);
+    left: size(111);
+    z-index: 110;
     transition: all 0.3s;
   }
 
@@ -117,12 +141,16 @@ export default {
   img {
     width: 100%;
   }
+}
 
-  .close {
-    width: 40px;
-    margin-top: 0px;
-    margin-right: 0px;
-  }
+.close {
+  position: fixed;
+  width: size(36);
+  top: size(31);
+  left: size(34);
+  z-index: 310;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 .menu_icon,
 .menu_icon::after,
@@ -168,25 +196,6 @@ export default {
   overflow: hidden;
 }
 
-// .nav {
-//   &.open {
-//     &::after {
-//       content: '';
-//       position: fixed;
-//       width: 100vw;
-//       top: 0;
-//       left: 0;
-//       width: 100vw;
-//       z-index: 111;
-//       height: size(118);
-//       background: transparent;
-//       z-index: 100;
-//       border-style: solid;
-//       border-width: size(968) 100vw 0 0;
-//       border-color: #c40000 transparent transparent transparent;
-//     }
-//   }
-// }
 .open {
   .menu_icon {
     width: 0;
@@ -206,6 +215,19 @@ export default {
   .menu_text {
     transform: translate(0) rotate(90deg);
     font-size: 1.5em;
+  }
+
+  .menu {
+    .bg {
+      transform: skewY(-5deg);
+    }
+
+    .building {
+      transform-origin: 0 0;
+      transform: skewY(5deg) translateY(0%);
+      transition: all 1s;
+      opacity: 1;
+    }
   }
 }
 .navlist {
@@ -251,7 +273,6 @@ export default {
       white-space: nowrap;
     }
 
-
     &::before {
       position: absolute;
       display: block;
@@ -269,6 +290,7 @@ export default {
       background: none;
       width: 15px;
       height: 15px;
+      margin-top: -5px;
       border-color: #c00;
       transform: rotate(45deg);
       animation: menu_l 0.3s infinite alternate ease-out;
@@ -289,7 +311,7 @@ export default {
       text-align: left;
       color: $nav_link_color;
       margin-top: size(-10);
-      color: #000;
+      color: #fff;
     }
   }
   @keyframes menu_l {
@@ -318,6 +340,7 @@ export default {
     width: 230px;
     transform: translateX(0%);
     opacity: 1;
+    z-index: 200;
 
     .link {
       .divided {
@@ -344,7 +367,7 @@ export default {
   height: calc(100vh - #{$nav_phone_height});
   opacity: 0;
   transition: all 0.3s ease-in;
-  background: rgba(0, 0, 0, .6);
+  background: rgba(0, 0, 0, 0.6);
   // background: -moz-linear-gradient(
   //   left,
   //   rgba(255, 255, 255, 0.8) 0%,

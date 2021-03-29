@@ -15,7 +15,7 @@
         <div :class="`video-dialog ${isShowDialog ? 'show' : ''}`">
           <iframe
             ref="player"
-            src="https://www.youtube.com/embed/78tx7GS-5tY?&enablejsapi=1&playerapiid=ytplayer"
+            src="https://www.youtube.com/embed/78tx7GS-5tY?&enablejsapi=1&playerapiid=ytplayer?autoplay=1"
             frameborder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen

@@ -11,6 +11,9 @@
         <img :src="slide.img" :class="`carousel-img absolute`" />
       </slide>
     </carousel-3d>
+    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" data-aos-offset="-500">
+      <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goToSlide(index)"><span :class="`${currentIndex === index ? 'active' : ''}`"></span></div>
+    </div>
     <div class="btn-group flex-jb flex-ac flex-mobile-jb" v-if="isMobile">
       <img @click="goToSlide(currentIndex - 1)" src="./all/prev-btn.png" alt />
       <img @click="goToSlide(currentIndex + 1)" src="./all/next-btn.png" alt />
@@ -102,6 +105,75 @@
   height: 100%;
   object-fit: cover;
 }
+
+.pagination {
+  width: 100vw;
+  top: size(983);
+  right: 0;
+  justify-content: center;
+}
+
+.pagination {
+  width: size(500);
+  bottom: size(64);
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.pagination-dot {
+  padding: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+  z-index: 4;
+
+  span {
+    display: block;
+    width: size(20);
+    height: size(20);
+    border-radius: 0px;
+    box-shadow: 0 0 0 1px #aa915e;
+    position: relative;
+    background-color: #aa915e;
+    transition: all 0.5s;
+
+    &::before {
+      content: '';
+      width: 60%;
+      height: 60%;
+      display: block;
+      background: #aa915e;
+      border-radius: 20px;
+      opacity: 1;
+      position: absolute;
+      top: 20%;
+      // transform: translateY(-50%);
+      left: 20%;
+      transition: all 0.3s;
+      transform-origin: center;
+      transform: scale(0);
+    }
+    &.active {
+      box-shadow: 0 0 0 1px #6e0000;
+      &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: #6e0000;
+        border-radius: 0px;
+        opacity: 1;
+        position: absolute;
+        top: 0%;
+        // transform: translateY(-50%);
+        left: 0%;
+        transform: scale(1);
+      }
+    }
+  }
+}
+
 
 @media only screen and (max-width: 1440px) {
 }

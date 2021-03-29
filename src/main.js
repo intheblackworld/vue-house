@@ -37,6 +37,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueSvgIcon from 'vue-svgicon'
+import VuePannellum from 'vue-pannellum'
 import './plugins/element.js'
 
 // AOS.init()
@@ -63,6 +64,7 @@ Vue.use(VueLazyload)
 Vue.use(VueLazyComponent)
 Vue.use(VueRellax)
 Vue.use(Vue2TouchEvents)
+Vue.component('VPannellum', VuePannellum)
 
 
 new Vue({
