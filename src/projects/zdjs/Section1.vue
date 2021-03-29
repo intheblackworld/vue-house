@@ -9,7 +9,7 @@
     <a href="#" class="btn1">
       <img src="./s1/btn_1.png" :alt="`${info.caseName}_btn1`" data-aos="fade-up" data-aos-delay="400">
     </a>
-    <a href="#" class="btn2">
+    <a href="https://drive.google.com/file/d/1-RowSvZ_1jhFKh0bYoqxQzwY5Z8cZEKb/view?usp=sharing" class="btn2" target="_blank">
       <img src="./s1/btn_2.png" :alt="`${info.caseName}_btn2`" data-aos="fade-up" data-aos-delay="600">
     </a>
   </div>
@@ -54,7 +54,7 @@
 
 .btn1 {
   @include img_l_pc(453, 754, 293);
-  top: calc(50% + 100vw * (754 - 504) / 1920);
+  top: calc(50% + 100vw * (754 - 504) / 1920);transform: scale(0.9);
   img {
     width: 100%;
   }
@@ -62,10 +62,13 @@
 
 .btn2 {
   @include img_r_pc(453, 754, 293);
-  top: calc(50% + 100vw * (754 - 504) / 1920);
+  top: calc(50% + 100vw * (754 - 504) / 1920);transform: scale(0.9);
+  transition: all 0.3s;
+  transform-origin: 50% 100%;
   img {
     width: 100%;
   }
+  &:hover{transform: scale(1) translateY(-3%);}
 }
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
