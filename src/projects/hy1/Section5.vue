@@ -1,10 +1,17 @@
 <template>
   <div class="section5">
     <div class="wide-img">
-      <div v-rellax="{
+      <div v-if="!isMobile" v-rellax="{
           // Rellax Options
           // See: https://github.com/dixonandmoe/rellax#features
-          speed: -3
+          speed:-9
+        }">
+        <img src="./s5/bg.jpg" alt="img">
+      </div>
+      <div v-if="isMobile" v-rellax="{
+          // Rellax Options
+          // See: https://github.com/dixonandmoe/rellax#features
+          speed:-3
         }">
         <img src="./s5/bg.jpg" alt="img">
       </div>
@@ -100,7 +107,7 @@
     width: 100%;
     height: size(1080);
     top: 0%;
-    transform: translateY(-53%);
+    transform: translateY(calc(-80% - 580px));
   }
 }
 
@@ -370,6 +377,7 @@
       transform-origin: center;
       transform: scale(0);
     }
+    &:hover,
     &.active {
       box-shadow: 0 0 0 1px #fff;
       &::before {
@@ -445,7 +453,7 @@
       width: 100%;
       height: sizem(380);
       top: 0;
-      transform: translateY(-173%);
+    transform: translateY(calc(-260% + 390px));
     }
   }
 
