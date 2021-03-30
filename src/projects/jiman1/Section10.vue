@@ -68,6 +68,7 @@
   position: relative;
   background-size: auto;
   background-color: #d67f76;
+  margin-top: 60px;
 }
 
 .bg-img {
@@ -156,6 +157,7 @@
     background-size: cover;
     background-attachment: scroll;
     background-color: #d37f76;
+    margin-top: 30px;
   }
 
   .bg-img {

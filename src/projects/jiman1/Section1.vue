@@ -6,7 +6,7 @@
       <img src="./s1/01_logo.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade-up" data-aos-delay="200">
       <img src="./s1/01_text.png" :alt="`${info.caseName}_img`" class="text" data-aos="fade-up" data-aos-delay="400">
       <img src="./s1/01_title_1.png" :alt="`${info.caseName}_img`" class="title_1" data-aos="fade-up" data-aos-delay="600">
-      <img src="./s1/01_title_2.png" :alt="`${info.caseName}_img`" class="title_2" data-aos="fade-up" data-aos-delay="700">
+      <!--<img src="./s1/01_title_2.png" :alt="`${info.caseName}_img`" class="title_2" data-aos="fade-up" data-aos-delay="700">-->
       <img src="./s1/01_title_3.png" :alt="`${info.caseName}_img`" class="title_3" data-aos="fade-up" data-aos-delay="800">
       <img src="./s1/01_title_4.png" :alt="`${info.caseName}_img`" class="title_4" data-aos="fade-up" data-aos-delay="900">
     </div>
@@ -81,12 +81,12 @@
 
 .title_3 {
   @include img_c_pc(460, 831 - 20);
-  top: calc(50% + 100vw * (765 - 540) / 1920);
+  top: calc(50% + 100vw * (710 - 540) / 1920);/*765 */
 }
 
 .title_4 {
   @include img_c_pc(460, 916 - 20);
-  top: calc(50% + 100vw * (860 - 540) / 1920);
+  top: calc(50% + 100vw * (800 - 540) / 1920);/*860 */
 }
 
 @media only screen and (max-width: 1440px) {
