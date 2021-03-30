@@ -370,7 +370,7 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 2.38;
-    letter-spacing: sizem(1.82);
+    letter-spacing:0em;
     text-align: left;
     color: #666666;
     white-space: nowrap;

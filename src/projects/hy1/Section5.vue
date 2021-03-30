@@ -11,7 +11,7 @@
       <div v-if="isMobile" v-rellax="{
           // Rellax Options
           // See: https://github.com/dixonandmoe/rellax#features
-          speed:-3
+          speed:-2
         }">
         <img src="./s5/bg.jpg" alt="img">
       </div>
@@ -453,7 +453,7 @@
       width: 100%;
       height: sizem(380);
       top: 0;
-    transform: translateY(calc(-260% + 390px));
+    transform: translateY(calc(-210% + 300px));
     }
   }
 

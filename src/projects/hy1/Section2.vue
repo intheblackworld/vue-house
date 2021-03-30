@@ -136,6 +136,7 @@
   .video_box {
     width: 100%;
     position: absolute;
+    height: size-m(260);
     // top: 50%;
     // transform: translateY(-50%);
     // left: 0;
