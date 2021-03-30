@@ -312,7 +312,7 @@
   width: 100%;
   height: 100%;
   padding: 0 15px;
-  z-index: 3;
+  z-index: 6;
 
   .prev-btn,
   .next-btn {
@@ -545,7 +545,7 @@
     width: 100%;
     height: 100%;
     padding: 0 15px;
-    z-index: 3;
+    z-index: 6;
 
     .prev-btn,
     .next-btn {

@@ -62,31 +62,37 @@
 .logo {
   @include img_c_pc(620, 367);
   top: calc(50% + 100vw * (340 - 540) / 1920);
+  z-index: 6;
 }
 
 .text {
   @include img_l_pc(118, 272, 254);
   top: calc(50% + 100vw * (260 - 540) / 1920);
+  z-index: 6;
 }
 
 .title_1 {
   @include img_c_pc(380, 299 - 20);
   top: calc(50% + 100vw * (259 - 540) / 1920);
+  z-index: 6;
 }
 
 .title_2 {
   @include img_c_pc(450, 745 - 20);
   top: calc(50% + 100vw * (695 - 540) / 1920);
+  z-index: 6;
 }
 
 .title_3 {
   @include img_c_pc(460, 831 - 20);
   top: calc(50% + 100vw * (710 - 540) / 1920);/*765 */
+  z-index: 6;
 }
 
 .title_4 {
   @include img_c_pc(460, 916 - 20);
   top: calc(50% + 100vw * (800 - 540) / 1920);/*860 */
+  z-index: 6;
 }
 
 @media only screen and (max-width: 1440px) {

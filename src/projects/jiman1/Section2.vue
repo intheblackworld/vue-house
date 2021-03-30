@@ -111,6 +111,7 @@
   font-weight: 300;
   color: #000;
   white-space: nowrap;
+  z-index: 6;
 }
 
 .subtitle {
@@ -122,6 +123,7 @@
   font-weight: 400;
   color: #000;
   white-space: nowrap;
+  z-index: 6;
 }
 
 .desc {
@@ -134,6 +136,7 @@
   font-weight: 400;
   color: #fff;
   white-space: nowrap;
+  z-index: 6;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -168,7 +171,7 @@
     height: sizem(247);
     transform: translateX(0px) translateY(0px) translateZ(2px);
     // background-color: rgba(0, 0, 0, .2);
-    z-index: 1;
+    z-index: 6;
   }
 
   // .custom-scrollbar-container .custom-scrollbar-wrapper {
@@ -242,6 +245,7 @@
   }
   .text {
     @include img_l_m(48, 31, 50);
+    z-index:6;
   }
 
   .img {
@@ -252,6 +256,8 @@
     // overflow: auto;
     img {
       height: sizem(247);
+      z-index: 6;
+      position: relative;
     }
   }
 

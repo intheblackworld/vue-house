@@ -9,12 +9,12 @@
       :options="options"
       id="fullpage"
     > -->
-    <!-- <LeafFlow /> -->
-    <vue-lazy-component class="section  " id="section1" @init="init" style="z-index: 3;">
+    <LeafFlow /> 
+    <vue-lazy-component class="section  " id="section1" @init="init">
       <Section1 />
     </vue-lazy-component>
 
-    <vue-lazy-component class="section" id="section2" style="z-index: 3;">
+    <vue-lazy-component class="section" id="section2">
       <Section2 />
     </vue-lazy-component>
     <vue-lazy-component
@@ -24,16 +24,14 @@
       <Section3 :viewIndex="viewIndex" />
     </vue-lazy-component>
     <vue-lazy-component
-      class="section relative"
+      class="section"
       id="section4"
-      style="z-index: 3;"
     >
       <Section4 />
     </vue-lazy-component>
     <vue-lazy-component
       class="section"
       id="section5"
-      style="z-index: 3;"
     >
       <Section5 />
     </vue-lazy-component>
@@ -71,7 +69,6 @@
     <vue-lazy-component
       class="section"
       id="section11"
-      style="z-index: 3;"
     >
       <Section11 />
     </vue-lazy-component>
@@ -92,7 +89,7 @@
 .section .fp-tableCell {
   height: auto !important;
 }
-#contact{z-index: 3;}
+#contact{}
 </style>
 
 <script>

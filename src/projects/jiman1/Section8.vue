@@ -54,6 +54,7 @@
     width: size(530);/*358 */
     min-height: size(55 + 410 + 397);/*55 + 354 + 397 */
     position: relative;
+    z-index: 6;
 
     img {
       width: 100%;
@@ -123,6 +124,7 @@
 @media screen and (max-width: 767px) {
   .item {
     @include img_c_m(306, 364);
+    z-index:6;
   }
 
   .item-name {
@@ -247,6 +249,7 @@
     top: sizem(32.6);
     left: sizem(34.2);
     object-fit: cover;
+    z-index:6;
   }
 
   // begin

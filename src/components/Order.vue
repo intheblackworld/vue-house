@@ -265,6 +265,7 @@ export default {
   transform-origin: 100% 80%;
   transform: skewY(2deg);
   animation: flow1 3s 0s ease-in-out infinite alternate;
+  z-index: 6;
 }
 @keyframes flow1 {
   to {
@@ -289,7 +290,7 @@ export default {
   .order-top {
     position: relative;
     overflow: hidden;
-    z-index: 3;
+    z-index: 6;
   }
   .order-title {
     font-family: $family2;
@@ -418,7 +419,7 @@ export default {
     padding-top: 40px;
     margin: 0;
     position: relative;
-    z-index: 2;
+    z-index: 6;
 
     > img {
       display: block;

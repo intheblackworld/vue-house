@@ -88,10 +88,12 @@
 
 .title-img {
   @include img_r_pc(127, 76, 146);
+  z-index: 6;
 }
 
 .content {
   @include div_r_pc(473, 907, 85, 361);
+  z-index: 6;
 }
 
 .content-desc {
@@ -120,6 +122,7 @@
   top: size(85);
   left: 0;
   object-fit: cover;
+  z-index: 6;
 }
 
 // begin
@@ -270,7 +273,7 @@
 
 .swipe-btns {
   @include img_r_pc(185, 858, 660);
-  z-index: 3;
+  z-index: 7;
 
   .prev-btn,
   .next-btn {
@@ -493,7 +496,7 @@
     z-index: 3;
     @include img_r_m(375, 0, 0);
     height: sizem(310);
-    z-index: 3;
+    z-index: 7;
 
     .prev-btn,
     .next-btn {

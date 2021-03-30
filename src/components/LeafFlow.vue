@@ -11,7 +11,7 @@
   height: 100vh;
   min-height: size(1080);
   position: fixed;
-  z-index: 1;
+  z-index: 4;
 }
 </style>
 

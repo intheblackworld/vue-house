@@ -92,6 +92,7 @@
 
 .title-img {
   @include img_r_pc(125, 137, 181);
+  z-index: 6;
 }
 
 .desc {
@@ -102,6 +103,7 @@
   text-align: justify;
   font-weight: 400;
   color: #000;
+  z-index: 6;
 }
 
 .content {
@@ -110,6 +112,7 @@
   border: 1px solid #d67f76;
   line-height: 1.6;
   color: #000;
+  z-index: 6;
 }
 
 .content-title {
@@ -134,6 +137,7 @@
   top: size(143);
   left: size(235);
   object-fit: cover;
+  z-index: 6;
 }
 
 // begin

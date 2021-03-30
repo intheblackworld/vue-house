@@ -134,6 +134,7 @@ export default {
   height: auto;
   // height:;
   margin: 0 auto 20px;
+  z-index: 6;
 }
 .info {
   width: 880px;
@@ -141,6 +142,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  z-index: 6;
 }
 
 .btn {

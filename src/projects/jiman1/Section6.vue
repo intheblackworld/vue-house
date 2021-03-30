@@ -62,6 +62,7 @@
 
 .img1 {
   @include img_r_pc(479, 197, 341);
+  z-index: 6;
 }
 
 .img2 ,
@@ -75,28 +76,35 @@
   line-height: 1.6;
   color: #fff;
   text-shadow: 0 0 0.3em #000;
+  z-index: 6;
   }
 }
 .img2 {
   @include img_l_pc(382, 907, 399);
+  z-index: 6;
 }
 .img3 {
   @include img_l_pc(382, 907, 797);
+  z-index: 6;
 }
 .img4 {
   @include img_l_pc(382, 907, 1193);
+  z-index: 6;
 }
 
 .logo {
   @include img_l_pc(134, 191, 396);
+  z-index: 6;
 }
 
 .title-img {
   @include img_l_pc(124, 236, 176);
+  z-index: 6;
 }
 
 .sign {
   @include img_r_pc(118, 471, 201);
+  z-index: 6;
 }
 
 .title {
@@ -108,6 +116,7 @@
   font-weight: 500;
   color: #d67f76;
   // white-space: nowrap;
+  z-index: 6;
 }
 
 .desc {
@@ -119,6 +128,7 @@
   font-weight: 400;
   color: #000;
   // white-space: nowrap;
+  z-index: 6;
   span {
     font-size: size(21);
     font-weight: 600;
@@ -188,14 +198,17 @@
 
   .logo {
     @include img_r_m(49.2, 393.5, 220.8);
+    z-index: 6;
   }
 
   .title-img {
     @include img_l_m(44.2, 64.5, 43);
+    z-index: 6;
   }
 
   .sign {
     @include img_l_m(47.2, 229.5, 49);
+    z-index: 6;
   }
 
   .title {

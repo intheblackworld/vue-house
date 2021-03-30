@@ -64,10 +64,12 @@
   @include img_r_pc(851, 0, 153);
   top: auto;
   bottom: 0;
+  z-index: 6;
 }
 
 .text {
   @include img_l_pc(507, 591, 312);
+  z-index: 6;
 }
 
 .title {
@@ -79,6 +81,7 @@
   font-weight: 500;
   color: #000;
   white-space: nowrap;
+  z-index: 6;
 }
 
 .content {
@@ -87,6 +90,7 @@
   border: 1px solid #000;
   text-align: center;
   line-height: 1.4;
+  z-index: 6;
 }
 
 .content-title {

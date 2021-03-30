@@ -171,6 +171,7 @@
 
 .title-img {
   @include img_l_pc(129, 123, 222);
+  z-index: 6;
 }
 
 .desc {
@@ -181,6 +182,7 @@
   text-align: justify;
   font-weight: 400;
   color: #000;
+  z-index: 6;
 }
 
 .content {
@@ -189,6 +191,7 @@
   padding: size(50) size(0);
   font-size: size(22);
   line-height: 1.5;
+  z-index: 6;
 }
 
 .content-title {
@@ -214,6 +217,7 @@
   top: size(137);
   left: size(442);
   object-fit: cover;
+  z-index: 6;
 }
 
 // begin
