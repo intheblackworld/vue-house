@@ -102,14 +102,17 @@
     }
     .item-work {
       @include img_l_pc(333, 0, 0);
+      width:100%;
       top: auto;
       bottom: 0;
+      transform: translateY(100%);
+
       font-size: size(15.8);
       // letter-spacing: size(0.53);
-      text-align: left;
+      text-align: justify;
       font-weight: 400;
       color: #000;
-      white-space: nowrap;
+      white-space:normal;
       span {
         font-weight: 600;
       }
@@ -176,7 +179,6 @@
     text-align: left;
     font-weight: 400;
     color: #000;
-    white-space: nowrap;
     margin: 1em 0 0 0;
     span {
       font-weight: 600;
