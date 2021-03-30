@@ -52,7 +52,7 @@
 
   .item {
     width: size(530);/*358 */
-    min-height: size(55 + 450 + 397);/*55 + 354 + 397 */
+    min-height: size(55 + 410 + 397);/*55 + 354 + 397 */
     position: relative;
 
     img {
