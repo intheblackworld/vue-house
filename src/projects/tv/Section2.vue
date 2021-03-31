@@ -6,25 +6,35 @@
         <swiper v-show="show" :options="swiperOption" ref="mySwiper" class="slides" @slideChangeTransitionStart="slideChanged">
           <div class="slide-text">{{slideList[slideIndex].text}}</div>
           <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.src" class="item">
-            <iframe :src="slide.vsrc" :class="`item-img ${slideIndex === index ? 'active' : ''}`" title="video player" frameborder="0" ></iframe>
-           <!--   <img :src="slide.src" :class="`item-img ${slideIndex === index ? 'active' : ''}`" />  -->
+            <iframe :src="slide.vsrc" :class="`item-img ${slideIndex === index ? 'active' : ''}`" title="video player" frameborder="0" v-if="slideIndex === index"></iframe>
+            <!--   <img :src="slide.src" :class="`item-img ${slideIndex === index ? 'active' : ''}`" />  -->
             <div class="item-name" v-html="slide.name"></div>
           </swiper-slide>
         </swiper>
         <div class="content">
           <h3 class="title" data-aos="fade" data-aos-delay="400" v-html="slideList[slideIndex].title"></h3>
           <h3 class="subtitle" data-aos="fade" data-aos-delay="600" v-html="slideList[slideIndex].subtitle"></h3>
-          <ul class="desc-list">
+          <!-- <ul class="desc-list">
             <h3 v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]" data-aos="fade" :data-aos-delay="600 + (index + 1) * 200" data-aos-duration="1000" :key="text" v-html="text"></h3>
-          </ul>
+          </ul> -->
         </div>
       </div>
       <div v-if="isMobile">
         <div class="slides_box">
-          <div class="slides swiper-container">
-          <div :id="`youtube-player-${id}`" ref="player" class="swiper-wrapper"></div>
-          <img src="./s2/1.jpg" alt="" :class="`video-img absolute ${(isPlay == true) ? 'hide' : ''}`" @click="playVideo">
-        </div>
+          <swiper v-show="show" :options="swiperOption" ref="mySwiper" class="slides" @slideChangeTransitionStart="slideChanged">
+            <div class="swiper-button-prev" slot="button-prev">
+              <img class="arrow-l" src="./arrow-left.png" alt />
+            </div>
+            <div class="swiper-button-next" slot="button-next">
+              <img class="arrow-r" src="./arrow-right.png" alt />
+            </div>
+            <div class="slide-text">{{slideList[slideIndex].text}}</div>
+            <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.src" class="item">
+              <iframe :src="slide.vsrc" :class="`item-img ${slideIndex === index ? 'active' : ''}`" title="video player" frameborder="0" v-if="slideIndex === index"></iframe>
+              <!--   <img :src="slide.src" :class="`item-img ${slideIndex === index ? 'active' : ''}`" />  -->
+              <div class="item-name" v-html="slide.name"></div>
+            </swiper-slide>
+          </swiper>
           <!-- <swiper v-show="show" :options="swiperOption" ref="mySwiper" class="slides" @slideChangeTransitionStart="slideChanged">
             <div class="swiper-button-prev" slot="button-prev">
               <img class="arrow-l" src="./arrow-left.png" alt />
@@ -38,19 +48,13 @@
               <div class="item-name" v-html="slide.name"></div>
             </swiper-slide>
           </swiper>-->
-        </div> 
-        <!-- <div
-          class="slides relative"
-          data-aos="fade"
-          data-aos-delay="400"
-        >
-        </div> -->
+        </div>
         <div class="content">
           <h3 class="title" data-aos="fade" data-aos-delay="400" v-html="slideList[slideIndex].title"></h3>
-          <h3 class="subtitle" data-aos="fade" data-aos-delay="600" v-html="slideList[slideIndex].subtitle_m"></h3>
-          <ul class="desc-list">
+          <h3 class="subtitle" data-aos="fade" data-aos-delay="600" v-html="slideList[slideIndex].subtitle"></h3>
+          <!-- <ul class="desc-list">
             <h3 v-for="(text, index) in desc_list[slideList[slideIndex].contentIndex]" data-aos="fade" :data-aos-delay="600 + (index + 1) * 200" data-aos-duration="1000" :key="text" v-html="text"></h3>
-          </ul>
+          </ul> -->
         </div>
       </div>
       <div class="indigator-list flex-c">
@@ -59,9 +63,10 @@
     </div>
   </div>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 .slides {
   opacity: 0;
+  background-color: #000;
   animation: op 0.3s 0s forwards;
 }
 .desc-list {
@@ -142,10 +147,10 @@
 }
 
 .video-img {
-  width:100%;
+  width: 100%;
   height: 100%;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   z-index: 3;
   transition: all 0.3s;
 }
@@ -373,30 +378,31 @@ export default {
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
-        }, 
+        },
       },
       slideList: [
         {
-           src: require('./s2/1.jpg'),
-           vsrc: "https://www.youtube.com/embed/0wj3QNgTF7U",
-           contentIndex: 0,
-           name: '府中捷運站',
-           title: '府中捷運我愛你。',
-           subtitle: isMobile
-             ? '府中站散步5分鐘<br />一座城市多款風格<br />雙子座AB型的世界<br />只有「THE VIEW」<br />最懂我。'
-             : '府中站散步5分鐘，一座城市多款風格<br />雙子座AB型的世界，只有「THE VIEW」<br />最懂我。',
-         },
-         {
-           src: require('./s2/2.jpg'),
-           vsrc: 'https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F110815740621987%2Fvideos%2F5195981420473327%2F&show_text=false&width=560',
-           contentIndex: 1,
-           name: '府中捷運站',
-           title: '府中捷運我愛你。',
-           subtitle: isMobile
-             ? '府中站散步5分鐘<br />一座城市多款風格<br />雙子座AB型的世界<br />只有「THE VIEW」<br />最懂我。'
-             : '府中站散步5分鐘，一座城市多款風格<br />雙子座AB型的世界，只有「THE VIEW」<br />最懂我。',
-         },
-         /*
+          src: require('./s2/1.jpg'),
+          vsrc: 'https://www.youtube.com/embed/0wj3QNgTF7U',
+          contentIndex: 0,
+          name: '府中捷運站',
+          title: '府中捷運我愛你。',
+          subtitle: isMobile
+            ? '府中站散步5分鐘<br />一座城市多款風格<br />雙子座AB型的世界<br />只有「THE VIEW」<br />最懂我。'
+            : '府中站散步5分鐘，一座城市多款風格<br />雙子座AB型的世界，只有「THE VIEW」<br />最懂我。',
+        },
+        {
+          src: require('./s2/2.jpg'),
+          vsrc:
+            'https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F110815740621987%2Fvideos%2F5195981420473327%2F&show_text=false&width=560',
+          contentIndex: 1,
+          name: '府中捷運站',
+          title: '府中捷運我愛你。',
+          subtitle: isMobile
+            ? '府中站散步5分鐘<br />一座城市多款風格<br />雙子座AB型的世界<br />只有「THE VIEW」<br />最懂我。'
+            : '府中站散步5分鐘，一座城市多款風格<br />雙子座AB型的世界，只有「THE VIEW」<br />最懂我。',
+        },
+        /*
          {
            src: require('./s2/2.jpg'),
            vsrc: 'https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F110815740621987%2Fvideos%2F5195981420473327%2F&show_text=false&width=560',
@@ -426,7 +432,7 @@ export default {
            title: '',
            subtitle: '',
          }, */
-       ],
+      ],
       desc_list: [
         [''],
         [
@@ -481,6 +487,7 @@ export default {
 
     slideChanged(e) {
       const swiper = this.$refs.mySwiper.swiper
+      console.log(111)
       if (swiper.isEnd) {
         this.slideIndex = 0
       } else if (swiper.isBeginning) {
