@@ -95,7 +95,6 @@
   }
   .slides {
     height: 100%;
-    background: transparent;
   }
   .desc-list {
     > h3 {
@@ -121,7 +120,7 @@
   right: size(215);
   width: size(264);
   top: size(326);
-  mix-blend-mode: hard-light;
+  // mix-blend-mode: hard-light;
 }
 
 .container {
