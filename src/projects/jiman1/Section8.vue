@@ -51,8 +51,8 @@
   line-height:1.75;
 
   .item {
-    width: size(530);/*358 */
-    min-height: size(55 + 410 + 397);/*55 + 354 + 397 */
+    width: size(365);/*530 */
+    min-height: size(55 + 295 + 397);/*55 + 410 + 397 */
     position: relative;
     z-index: 6;
 
@@ -193,9 +193,9 @@
 
 .section8 {
   width: size(1920);
-  height: size(1050);/*1028 */
+  height: size(1028);/*1050*/
   min-height: size(1028);
-  max-height: size(1050);/*1028 */
+  max-height: size(1028);/*1050*/
   position: relative;
   background-color: #fff;
 }
@@ -444,11 +444,25 @@ export default {
         //  work:
         //    '【 經典業績 】<br /><span>RUIKE企業總部、ALTA 台中館、Omni台北館</span>',
        // },
+       {
+          img: isMobile
+            ? require('./mobile/08/08_img_2_m.jpg')
+            : require('./s8/08_img_2.jpg'),
+          name: '<span>景觀設計</span>｜頤和設計',
+          title: '李淑雲 <span>總監</span>',
+          subtitle: '點藏山水化境 豪宅御用景觀名家',
+          desc:isMobile
+            ? '得大山大水之寵，自慢藏擁有水岸公園雙首排的自慢環境，與自然相融，和環境共榮擴大生活領域而不侵擾，於山水襯底間勾勒出生機豐饒的造景。'
+            : '得大山大水之寵，自慢藏擁有水岸公園雙首排的自慢環境，與自然相融，和環境共榮，結合都市、建築、人文、動線、自然、生態等元素，擴大生活領域而不侵擾，於山水襯底間勾勒出生機豐饒的造景，及季節多樣性的景觀庭園。',
+          work:isMobile
+            ?'【 經典業績 】<br /><span>華固天鑄、勤美璞真碧湖畔、大隱豐盈海、潤泰鼎峰</span>'
+            :'【 經典業績 】<br /><span>華固天鑄、勤美璞真碧湖畔、大隱豐盈海、潤泰鼎峰</span>',
+        },
         {
           img: isMobile
             ? require('./mobile/08/08_img_3_m.jpg')
             : require('./s8/08_img_3.jpg'),
-          name: '<span>景觀設計</span>｜大漢設計',
+          name: '<span>景觀顧問</span>｜大漢設計',
           title: '徐世萃 <span>景觀顧問</span>',
           subtitle: '點藏山水化境 豪宅御用景觀名家',
           desc:isMobile
@@ -456,7 +470,7 @@ export default {
             : '得大山大水之寵，自慢藏擁有水岸公園雙首排的自慢環境，與自然相融，和環境共榮，結合都市、建築、人文、動線、自然、生態等元素，擴大生活領域而不侵擾，於山水襯底間勾勒出生機豐饒的造景，及季節多樣性的景觀庭園。',
           work:isMobile
             ?'【 經典業績 】<br /><span>維多利亞酒店、碧波白、墾丁凱薩飯店-Villa<br>、大直ATT百貨</span>'
-            :'【 經典業績 】<br /><span>維多利亞酒店、碧波白、墾丁凱薩飯店-Villa、大直ATT百貨</span>',
+            :'【 經典業績 】<br /><span>維多利亞酒店、碧波白、墾丁凱薩飯店-Villa<br>、大直ATT百貨</span>',
         },
       ],
     }
