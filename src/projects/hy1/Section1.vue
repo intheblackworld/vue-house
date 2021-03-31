@@ -1,10 +1,10 @@
 <template>
   <div class="section1">
-    <div class="cloud absolute flex">
+    <div class="cloud absolute flex" data-aos="fade" data-aos-delay="100">
       <img src="./s1/bg.jpg" :alt="`${info.caseName}_cloud`" class="cloud-item">
       <img src="./s1/bg.jpg" :alt="`${info.caseName}_cloud`" class="cloud-item">
     </div>
-    <img src="./s1/bg.png" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC">
+    <img src="./s1/bg.png" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC" data-aos="fade" data-aos-delay="0">
     <img src="./s1/bg_m.png" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isMobile" data-aos="fade" data-aos-delay="0">
     <div class="logo absolute" data-aos="fade-up" data-aos-delay="200" data-aos-offset="-300">
       <img src="./s1/logo.png" :alt="`${info.caseName}_img`">
