@@ -12,7 +12,7 @@
      <!-- <img src="../assets/img/close.png" alt="" class="close" v-if="isOpen" @click="isOpen = false">  -->
       <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
       <ul :class="`navlist ${isOpen ? 'open': ''}`">
-        <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: item.offset }" v-for="item in list" class="flex-ac" @click="toggleSidebar">
+        <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: isMobile ? item.mobileOffset:item.offset }" v-for="item in list" class="flex-ac" @click="toggleSidebar">
           <span class="link">
             <img v-if="item.imgSrc" :src="item.imgSrc" alt />
             <span>

@@ -39,10 +39,10 @@
       PARK
     </h1>
     <h1 class="s-title" data-aos="fade-up" data-aos-delay="400">
-      台灣各大城市 都在追求一席公園豪邸
+      台灣各大城市<br v-if="isMobile"> 都在追求一席<br v-if="isMobile">公園豪邸
     </h1>
     <h1 class="title" data-aos="fade-up" data-aos-delay="500">
-      綠意首席 眾城皆求
+      綠意首席<br v-if="isMobile"> 眾城皆求
     </h1>
     <h3 class="s-desc" data-aos="fade-up" data-aos-delay="600" v-if="isPC">
       大安森林公園：台北市心綠肺，週邊第一排豪邸極度高貴。<br />
@@ -462,7 +462,7 @@
   }
 
   .label {
-    @include img_l_m(42, 182 + 42, 81);
+    @include img_l_m(200, 182 + 42, 81);
     font-size: sizem(13);
     font-weight: bold;
     font-stretch: normal;
@@ -474,7 +474,7 @@
     white-space: nowrap;
   }
   .s-title {
-    @include img_l_m(141, 182 + 85, 33);
+    @include img_l_m(200, 182 + 85, 33);
     font-size: sizem(21);
     font-weight: bold;
     font-stretch: normal;
@@ -486,7 +486,7 @@
     white-space: normal;
   }
   .title {
-    @include img_l_m(172, 182 + 189, 33);
+    @include img_l_m(200, 182 + 189, 33);
     font-size: sizem(33);
     font-weight: bold;
     font-stretch: normal;

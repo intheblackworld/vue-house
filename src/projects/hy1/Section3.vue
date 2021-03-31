@@ -11,7 +11,7 @@
         <div class="pagination absolute flex-ac" v-if="isPC">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot' + index" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
-        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile && slideList[1]" >
           <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
           <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
         </div>
