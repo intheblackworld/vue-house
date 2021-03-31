@@ -326,6 +326,10 @@
     right: size-m(5);
     cursor: pointer;
   }
+
+  .item-img {
+    object-fit: fill;
+  }
 }
 </style>
 
@@ -487,7 +491,6 @@ export default {
 
     slideChanged(e) {
       const swiper = this.$refs.mySwiper.swiper
-      console.log(111)
       if (swiper.isEnd) {
         this.slideIndex = 0
       } else if (swiper.isBeginning) {
