@@ -341,13 +341,6 @@ export default {
       },
       slideList: [
         {
-          src: require('./s5/1.jpg'),
-          contentIndex: 0,
-          name: '',
-          title: '管理交給專業的安杰',
-          subtitle: '我只需顧好自己的美麗',
-        },
-        {
           src: require('./s5/2.jpg'),
           name: 'THE VIEW挑高門廳實景',
           contentIndex: 1,
