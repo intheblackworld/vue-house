@@ -31,8 +31,8 @@
     <h3 class="desc" data-aos="fade-up" data-aos-delay="600">
       國道1、2、3號，約20分鐘直達桃園機場，桃園雙鐵車站，捷運綠\棕線即將開通。
     </h3>
-    <img src="./s4/img2.png" :alt="`${info.caseName}_img`" class="arrow2" data-aos="fade-right" data-aos-delay="800">
-    <img src="./s4/img1.png" :alt="`${info.caseName}_img`" class="arrow1" data-aos="fade-right" data-aos-delay="600">
+    <img src="./s3/img1.png" :alt="`${info.caseName}_img`" class="arrow2" data-aos="fade-right" data-aos-delay="800">
+    <img src="./s3/img2.png" :alt="`${info.caseName}_img`" class="arrow1" data-aos="fade-right" data-aos-delay="600">
 
   </div>
 </template>
