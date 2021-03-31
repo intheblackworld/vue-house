@@ -106,11 +106,11 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .content {
-    height: 35em;
+    height: 25em;
     width: 100%;
     margin-bottom: 0;
     font-size: 15px;
-    padding-bottom: 50px;
+    padding-bottom: 1em;
   }
 
   .title {

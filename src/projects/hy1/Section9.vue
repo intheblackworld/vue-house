@@ -76,6 +76,12 @@
 .carousel-3d-container {
   @include img_c_pc(1920, 265);
   overflow: visible !important;
+
+  .carousel-img{border: size(13) solid #aa915e;
+  transition: border 0.3s;
+  }
+  .current .carousel-img{border: size(0) solid #aa915e;
+  }
 }
 
 .carousel-slide .current {
@@ -150,6 +156,7 @@
       transform-origin: center;
       transform: scale(0);
     }
+    &:hover,
     &.active {
       box-shadow: 0 0 0 1px #6e0000;
       &::before {
@@ -238,7 +245,7 @@
 
   .pagination {
     width: size(500);
-    bottom: size(64);
+    bottom: size(30);
     right: 0;
     left: 0;
     margin: 0 auto;
@@ -302,12 +309,12 @@
     left: 0;
     right: 0;
     margin: 0 auto;
-    bottom: 35%;
+    bottom: 33%;
     z-index: 2;
     width: 90vw;
 
     img {
-      width: sizem(25);
+      width: sizem(15);
       cursor: pointer;
     }
   }
@@ -381,7 +388,7 @@ export default {
       this.slideWidth = window.screen.width * (294 / 375)
       this.slideHeight = window.screen.width * (294 / 375)
     } else {
-      this.slideWidth = window.screen.width * (1217 / 1920)
+      this.slideWidth = window.screen.width * (1200 / 1920)
       this.slideHeight = window.screen.width * (685 / 1920)
     }
   },

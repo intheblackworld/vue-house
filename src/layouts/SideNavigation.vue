@@ -2,17 +2,17 @@
   <div class="sideNav">
     <div :class="`nav ${isOpen ? 'open' : ''}`">
       <div class="menu" @click="toggleSidebar">
-        <span data-v-8ecc579a="" class="menu_icon"></span>
-        <span data-v-8ecc579a="" class="menu_text"></span>
+        <span class="menu_icon"></span>
+        <span class="menu_text"></span>
         <img src="../projects/hy1/s1/menulogo.png" alt="" class="logo">
         <div class="bg">
           <img src="../projects/hy1/s1/menubg.png" alt="" class="building">
         </div>
       </div>
-      <img src="../assets/img/close.png" alt="" class="close" v-if="isOpen" @click="isOpen = false">
+     <!-- <img src="../assets/img/close.png" alt="" class="close" v-if="isOpen" @click="isOpen = false">  -->
       <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
       <ul :class="`navlist ${isOpen ? 'open': ''}`">
-        <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: offset }" v-for="item in list" class="flex-ac" @click="toggleSidebar">
+        <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: isMobile ? item.mobileOffset:item.offset }" v-for="item in list" class="flex-ac" @click="toggleSidebar">
           <span class="link">
             <img v-if="item.imgSrc" :src="item.imgSrc" alt />
             <span>
@@ -77,35 +77,38 @@ export default {
 }
 
 .nav {
-  position: static;
+  position: fixed;
   top: 0;
   left: 0;
+  width: 100%;z-index: 100;
+  height:$nav_pc_height;
 }
 
 .menu {
   text-align: center;
+  position: relative;
+// position: fixed;
   display: block;
-  position: fixed;
-  z-index: 112;
   top: 0;
   left: 0;
-  width: 80px;
+  width: 100%;
+  height: 100%;
   cursor: pointer;
 
   .bg {
-    position: fixed;
+  position: relative;
     width: 100vw;
     top: 0;
     left: 0;
     width: 100vw;
-    z-index: 20;
+    z-index:111;
     height: size(968);
     background: radial-gradient(
       ellipse at 50%,
       rgb(164, 31, 50) 9%,
       rgb(13, 22, 21) 100%
     );
-    transform: skewY(-5deg) translateY(-83%);
+    transform: skewY(-3.5deg) translateY(-88%);
     transform-origin: 0 0;
     overflow: hidden;
     transition: all 0.8s;
@@ -123,9 +126,9 @@ export default {
   .logo {
     position: absolute;
     width: size(102);
-    top: size(24);
+    top: size(20);
     left: size(111);
-    z-index: 110;
+    z-index: 113;
     transition: all 0.3s;
   }
 
@@ -133,7 +136,7 @@ export default {
     width: 100%;
   }
 }
-
+/*
 .close {
   position: fixed;
   width: size(36);
@@ -142,7 +145,7 @@ export default {
   z-index: 310;
   cursor: pointer;
   transition: all 0.3s;
-}
+} */
 .menu_icon,
 .menu_icon::after,
 .menu_icon::before {
@@ -155,41 +158,39 @@ export default {
   content: '';
   transition: all 0.3s;
   top: 0;
-  z-index: 112;
+  z-index: 120;
 }
 .menu_icon {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   text-indent: -9999px;
   line-height: 0;
-  top: 40%;
-  left: 25%;
-  width: 50%;
+  top: size(45);
+  left:size(40);
+  width:size(40);
   margin-top: -2px;
 }
 
 .menu_icon::before {
-  -webkit-transform: translateY(400%);
   transform: translateY(400%);
 }
 
 .menu_icon::after {
-  -webkit-transform: translateY(-400%);
   transform: translateY(-400%);
 }
 .menu_text {
   display: block;
-  font-size: 1em;
-  font-family: 'Barlow Condensed';
-  font-weight: bold;
-  margin: size(90) 0 size(20) 0;
-  transition: all 0.5s;
-  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: size(100);
+  z-index: 200;
 }
 
 .open {
-  .menu_icon {
-    width: 0;
+  .menu_icon {background-color: #fff0;
+ //   width: 0;
   }
 
   .logo {
@@ -197,17 +198,14 @@ export default {
   }
 
   .menu_icon:before {
-    opacity: 0;
+  transform: translateY(0%) rotate(45deg);
+  // opacity: 0;
   }
 
   .menu_icon:after {
-    opacity: 0;
+  transform: translateY(0%) rotate(-45deg);
+ //  opacity: 0;
   }
-  .menu_text {
-    transform: translate(0) rotate(90deg);
-    font-size: 1.5em;
-  }
-
   .menu {
     .bg {
       transform: skewY(-5deg);
@@ -331,7 +329,7 @@ export default {
     width: 230px;
     transform: translateX(0%);
     opacity: 1;
-    z-index: 200;
+ //   z-index: 200;
 
     .link {
       .divided {
@@ -350,12 +348,13 @@ export default {
 
 .mask {
   width: 100vw;
+
   top: $nav_phone_height;
   right: 0;
   background: transparent;
-  position: fixed;
+  position: absolute;
   z-index: -1;
-  height: calc(100vh - #{$nav_phone_height});
+  height:100%;
   opacity: 0;
   transition: all 0.3s ease-in;
   background: rgba(0, 0, 0, 0.6);
@@ -423,22 +422,16 @@ export default {
 /* 螢幕尺寸標準 */
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
+.nav {
+  height:0;
+  &.open{
+  height:100%;}
+}
   .menu {
     width: sizem(60);
     padding-top: sizem(10);
     .bg {
-      position: fixed;
-      width: 100vw;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      z-index: 20;
       height: sizem(558);
-      background: radial-gradient(
-        ellipse at 50%,
-        rgb(164, 31, 50) 9%,
-        rgb(13, 22, 21) 100%
-      );
       transform: skewY(-5deg) translateY(-88%);
       transform-origin: 0 0;
       overflow: hidden;
@@ -460,19 +453,8 @@ export default {
       width: sizem(56.7);
       top: sizem(13);
       left: sizem(61);
-      z-index: 110;
       transition: all 0.3s;
     }
-  }
-
-  .close {
-    position: fixed;
-    width: sizem(28);
-    top: sizem(24);
-    left: sizem(26);
-    z-index: 310;
-    cursor: pointer;
-    transition: all 0.3s;
   }
 
   .menu_icon,
@@ -484,19 +466,11 @@ export default {
     height: sizem(3);
     left: 0;
     background-color: #fff;
-    content: '';
-    transition: all 0.3s;
-    top: 0;
-    z-index: 112;
   }
   .menu_icon {
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-    text-indent: -9999px;
-    line-height: 0;
-    top: 40%;
-    left: 25%;
-    width: 50%;
+  top: sizem(30);
+  left:sizem(20);
+  width:sizem(30);
     margin-top: -2px;
   }
 
@@ -509,20 +483,14 @@ export default {
     -webkit-transform: translateY(-300%);
     transform: translateY(-300%);
   }
-
-  .menu_text {
-    display: block;
-    font-size: 1em;
-    font-family: 'Barlow Condensed';
-    font-weight: bold;
-    margin: sizem(50) 0 sizem(10) 0;
-    transition: all 0.5s;
-    overflow: hidden;
-  }
+.menu_text {
+  height: sizem(100);
+}
 
   .open {
     .menu_icon {
-      width: 0;
+  left:sizem(30);
+     // width: 0;
     }
 
     .logo {
@@ -546,6 +514,8 @@ export default {
   }
 
   .navlist {
+    height:  sizem(556);
+    padding:   sizem(130) 0 0 0;
     li {
       height: sizem(43);
     }
@@ -614,117 +584,5 @@ export default {
     }
   }
 
-  /* .navigation {
-    height: $nav_phone_height;
-    z-index: 110;
-  }
-
-  .nav-container {
-    display: block;
-    height: auto;
-  }
-
-  .logo {
-    width: $logo_phone_width;
-    left: 15px;
-  }
-
-  .nav {
-    position: static;
-    height: $nav_phone_height;
-  }
-
-  .menu {
-    display: block;
-    position: fixed;
-    left: 0px;
-    top: 20px;
-    width: 40px;
-
-    img {
-      width: 100%;
-      margin-right: -30px;
-    }
-
-    .close {
-      width: 40px;
-      margin-right: -30px;
-    }
-
-    svg {
-      color: $nav_btn_color;
-    }
-  }
-
-  .navlist {
-    position: fixed;
-    z-index: 111;
-    background: $nav_bg;
-    width: 0%;
-    right: 0;
-    top: $nav_phone_height;
-    height: calc(100vh - #{$nav_phone_height});
-    text-align: center;
-    transition: all 0.3s ease-in;
-    display: block;
-    transform: translateX(0%);
-
-    li {
-      height: 50px;
-      margin-bottom: 5px;
-    }
-
-    .link {
-      height: 50px;
-      width: 100%;
-      font-size: 17px;
-      margin-top: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      display: none;
-
-      img,
-      span {
-        display: block;
-      }
-      span {
-        line-height: 16px;
-      }
-    }
-
-    &.open {
-      width: 100%;
-      transform: translateX(0%);
-
-      .link {
-        display: flex;
-        justify-content: center;
-        span {
-          white-space: nowrap;
-        }
-        .divided {
-          display: none;
-        }
-      }
-    }
-  }
-
-  .mask {
-    width: 100vw;
-    top: $nav_phone_height;
-    right: 0;
-    background: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    height: calc(100vh - #{$nav_phone_height});
-    opacity: 0;
-    transition: all 0.3s ease-in;
-    &.open {
-      display: block;
-      width: 100vw;
-      opacity: 1;
-      z-index: 110;
-    }
-  }*/
 }
 </style>

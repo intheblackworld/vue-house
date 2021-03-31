@@ -1,6 +1,5 @@
 <template>
   <div class="section3">
-    <div class="border-frame" data-aos="fade-right" data-aos-delay="400"></div>
     <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-right" data-aos-delay="200">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
@@ -12,7 +11,7 @@
         <div class="pagination absolute flex-ac" v-if="isPC">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot' + index" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
-        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile && slideList[1]" >
           <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
           <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
         </div>
@@ -41,8 +40,8 @@
 
 .section3 {
   width: 100%;
-  height: size(1080);
-  min-height: size(1080);
+  height:100vh;
+  min-height: size(900);
   max-height: size(1080);
   position: relative;
   // background-color: #fff;
@@ -55,11 +54,13 @@
 }
 
 .icon {
-  @include img_r_pc(68, 328, 533);
+  @include img_l_pc(68, 328, 1300);
+  top:calc(50% + 100vw * (348 - 540) / 1920);
 }
 
 .label {
   @include img_r_pc(227, 371, 307);
+  top:calc(50% + 100vw * (391 - 540) / 1920);
   font-size: size(20);
   font-weight: bold;
   font-stretch: normal;
@@ -72,7 +73,8 @@
 }
 
 .title {
-  @include img_r_pc(286, 424, 331);
+  @include img_l_pc(286, 424, 1300);
+  top:calc(50% + 100vw * (444 - 540) / 1920);
   font-size: size(55);
   font-weight: bold;
   font-stretch: normal;
@@ -85,7 +87,8 @@
 }
 
 .subtitle {
-  @include img_r_pc(331, 510, 276);
+  @include img_l_pc(331, 510, 1300);
+  top:calc(50% + 100vw * (530 - 540) / 1920);
   font-size: size(30.8);
   font-weight: 500;
   font-stretch: normal;
@@ -98,7 +101,8 @@
 }
 
 .desc {
-  @include img_r_pc(456, 573, 148);
+  @include img_l_pc(456, 573, 1300);
+  top:calc(50% + 100vw * (593 - 540) / 1920);
   font-size: size(19);
   font-weight: normal;
   font-stretch: normal;
@@ -112,13 +116,13 @@
 .arrow1 {
   @include img_r_pc(190, 0, 0);
   top: auto;
-  bottom: size(45);
+  bottom: size(-45);
 }
 
 .arrow2 {
   @include img_r_pc(135, 0, 0);
   top: auto;
-  bottom: size(0);
+  bottom: size(-90);
 }
 
 // begin
@@ -142,30 +146,36 @@
   transition: all 0.1s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
-.border-frame {
-  @include div_l_pc(1200, 830, 142, 30);
-  border: solid 1px #aa915e;
-
-  &::after {
-    content: '';
-    @include div_l_pc(78, 78, 893 - 142, 1153 - 32);
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 0 size(78) size(78);
-    border-color: transparent transparent #aa915e transparent;
-    z-index: 2;
-  }
-}
-
 /* Swipe */
 .swipe {
   width: size(1200);
-  height: size(830);
-  top: size(112);
+  height:80%;
+  top:10%;
   left: size(0);
   object-fit: cover;
-  // background: #0344;
+  font-size: size(30);
+  
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: -1em;
+    bottom: -1em;
+    border: solid 1px #aa915e;
+}
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    border-style: solid;
+    border-width: 0 0 2.6em 2.6em;
+    border-color: transparent transparent #aa915e transparent;
+    z-index: 2;
+    right: -1em;
+    bottom: -1em;
+  }
 }
 
 // begin
@@ -294,6 +304,7 @@
       transform-origin: center;
       transform: scale(0);
     }
+    &:hover,
     &.active {
       box-shadow: 0 0 0 1px #fff;
       &::before {
@@ -422,23 +433,6 @@
     bottom: sizem(-40);
   }
 
-  .border-frame {
-    @include div_l_m(350, 242, 41, 10);
-    border: solid 1px #aa915e;
-
-    &::after {
-      content: '';
-      @include div_r_m(27, 27, 0, 0);
-      top: auto;
-      bottom: 0;
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 0 0 sizem(27) sizem(27);
-      border-color: transparent transparent #aa915e transparent;
-      z-index: 2;
-    }
-  }
 
   /* Swipe */
   .swipe {
@@ -447,8 +441,7 @@
     min-height: auto;
     top: sizem(31);
     bottom: auto;
-    left: sizem(0);
-    object-fit: cover;
+  font-size: sizem(13);
   }
 
   // begin

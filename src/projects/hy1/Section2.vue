@@ -32,11 +32,10 @@
 <style lang="scss">
 @import '@/assets/style/function.scss';
 .video-ifame {
-  width: 100vw;
-  height: size(1080);
+  width: 100.5%;
+  height:100.5%;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
   left: 0;
 }
 </style>
@@ -46,11 +45,10 @@
   // height: 100vh;
   overflow: hidden;
   // position: relative;
-  height: size(1080 - 160);
-  min-height: size(1080 - 160);
-  max-height: size(1080 - 160);
+  height: size(1080);
   background: #000 url('./s2/v.jpg') no-repeat center;
   background-size: cover;
+  margin: size(-125) 0  0 0;
   &::after {
     content: '';
     display: block;
@@ -66,13 +64,12 @@
   width: 100%;
   position: absolute;
   z-index: 2;
-  top: 50%;
+  top:50%;
   transform: translateY(-50%);
   left: 0;
   overflow: hidden;
-  height: size(1080);
+  height:100%;
   opacity: 0;
-  margin-top: size(-80);
   animation: op 1s 3s ease-out forwards;
 }
 @keyframes op {
@@ -139,6 +136,7 @@
   .video_box {
     width: 100%;
     position: absolute;
+    height: size-m(260);
     // top: 50%;
     // transform: translateY(-50%);
     // left: 0;

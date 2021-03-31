@@ -4,6 +4,9 @@
     <!-- <img src="./s7/bg_m.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="isMobile"> -->
     <img src="./s8/bottom.png" :alt="`${info.caseName}_img`" class="bottom">
     <img src="./s8/top.png" :alt="`${info.caseName}_img`" class="top">
+    
+    <img src="./s3/icon.png" :alt="`${info.caseName}_img`" class="icon" data-aos="fade-up" data-aos-delay="200">
+    
     <h1 class="subtitle" data-aos="fade-up" data-aos-delay="200">
       星級飯店會館
     </h1>
@@ -17,9 +20,9 @@
 
 .section8 {
   width: 100%;
-  height: size(1064);
-  min-height: size(1064);
-  max-height: size(1064);
+  height:100vh;
+  min-height: size(900);
+  max-height: size(1080);
   position: relative;
   overflow: hidden;
   // background: linear-gradient(to bottom, #c40000, #000);
@@ -51,16 +54,13 @@
 
 .bg-img {
   width: 100vw;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  height: auto;
   display: block;
   object-fit: cover;
 
-  &:nth-child(1) {
-    position: relative;
-  }
 }
 
 .top {
@@ -73,6 +73,10 @@
   width: 100vw;
   top: auto;
   bottom: 0;
+}
+.icon {
+  @include img_c_pc(68,232);
+  //top:calc(50% + 100vw * (348 - 540) / 1920);
 }
 
 .title {
@@ -139,8 +143,9 @@
   }
 
   .top {
-    @include img_c_m(375, 0);
-    width: 100vw;
+    @include img_c_m(973, 0);
+    left: calc(50% - 259.4666666667vw * .5);
+    //width: 100vw;
     height: sizem(137);
   }
 
@@ -152,8 +157,12 @@
     bottom: 0;
   }
 
+.icon {
+  @include img_c_m(39,110);
+  //top:calc(50% + 100vw * (348 - 540) / 1920);
+}
   .title {
-    @include img_c_m(272, 43);
+    @include img_c_m(272, 60);
     font-size: sizem(33);
     font-weight: bold;
     font-stretch: normal;
@@ -166,7 +175,7 @@
   }
 
   .subtitle {
-    @include img_c_m(140, 13);
+    @include img_c_m(140, 30);
     font-size: sizem(21);
     font-weight: bold;
     font-stretch: normal;

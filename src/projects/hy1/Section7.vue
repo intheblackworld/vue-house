@@ -32,9 +32,9 @@
 
 .section7 {
   width: 100%;
-  height: size(960);
-  min-height: size(960);
-  max-height: size(960);
+  height:100vh;
+  min-height: size(900);
+  max-height: size(1080);
   position: relative;
   // background: linear-gradient(to bottom, #c40000, #000);
   // min-height: size(900);
@@ -79,12 +79,13 @@
 
 .img {
   @include img_c_pc(800, 128);
-  top: auto;
+ top: auto;
   bottom: 0;
 }
 
 .title {
   @include img_c_pc(800, 128);
+  top:calc(50% + 100vw * (160 - 540) / 1920);
   font-size: size(55.1);
   font-weight: bold;
   font-stretch: normal;
@@ -97,7 +98,8 @@
 }
 
 .title1 {
-  @include img_l_pc(355, 396, 256);
+  @include img_r_pc(490, 396, 1290);
+  top:calc(50% + 100vw * (396 - 540) / 1920);
   font-size: size(35);
   font-weight: bold;
   font-stretch: normal;
@@ -110,7 +112,8 @@
 }
 
 .title2 {
-  @include img_r_pc(201, 396, 429);
+  @include img_l_pc(490, 396, 1290);
+  top:calc(50% + 100vw * (396 - 540) / 1920);
   font-size: size(35);
   font-weight: bold;
   font-stretch: normal;
@@ -123,26 +126,28 @@
 }
 
 .desc1 {
-  @include img_l_pc(470, 443, 140);
+  @include img_r_pc(500, 443, 1290);
+  top:calc(50% + 100vw * (450 - 540) / 1920);
   font-size: size(19);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.89;
-  letter-spacing: size(0.95);
+  letter-spacing:0.05em;
   text-align: right;
   color: #000000;
   white-space: nowrap;
 }
 
 .desc2 {
-  @include img_r_pc(488, 443, 142);
+  @include img_l_pc(500, 443, 1290);
+  top:calc(50% + 100vw * (450 - 540) / 1920);
   font-size: size(19);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.89;
-  letter-spacing: size(0.95);
+  letter-spacing: 0.05em;
   text-align: left;
   color: #000000;
 }

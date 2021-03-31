@@ -1,6 +1,5 @@
 <template>
   <div class="section4">
-    <div class="border-frame" data-aos="fade-left" data-aos-delay="400"></div>
     <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-left" data-aos-delay="200">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
@@ -31,9 +30,12 @@
     <h3 class="desc" data-aos="fade-up" data-aos-delay="600">
       國道1、2、3號，約20分鐘直達桃園機場，桃園雙鐵車站，捷運綠\棕線即將開通。
     </h3>
-    <img src="./s3/img1.png" :alt="`${info.caseName}_img`" class="arrow2" data-aos="fade-right" data-aos-delay="800">
-    <img src="./s3/img2.png" :alt="`${info.caseName}_img`" class="arrow1" data-aos="fade-right" data-aos-delay="600">
-
+    <div class="arrow2" data-aos="fade-right" data-aos-delay="800">
+    <img src="./s3/img2.png" :alt="`${info.caseName}_img`">
+    </div>
+    <div class="arrow1" data-aos="fade-right" data-aos-delay="600">
+    <img src="./s3/img1.png" :alt="`${info.caseName}_img`">
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -41,8 +43,8 @@
 
 .section4 {
   width: 100%;
-  height: size(1080);
-  min-height: size(1080);
+  height:100vh;
+  min-height: size(900);
   max-height: size(1080);
   position: relative;
   // background-color: #fff;
@@ -56,10 +58,12 @@
 
 .icon {
   @include img_l_pc(68, 328, 157);
+  top:calc(50% + 100vw * (348 - 540) / 1920);
 }
 
 .label {
   @include img_l_pc(227, 371, 225);
+  top:calc(50% + 100vw * (391 - 540) / 1920);
   font-size: size(20);
   font-weight: bold;
   font-stretch: normal;
@@ -73,6 +77,7 @@
 
 .title {
   @include img_l_pc(286, 424, 149);
+  top:calc(50% + 100vw * (444 - 540) / 1920);
   font-size: size(55);
   font-weight: bold;
   font-stretch: normal;
@@ -84,21 +89,10 @@
   white-space: nowrap;
 }
 
-.subtitle {
-  @include img_l_pc(331, 510, 153);
-  font-size: size(30.8);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.58;
-  letter-spacing: size(1.54);
-  text-align: left;
-  color: #000000;
-  white-space: nowrap;
-}
 
 .desc {
   @include img_l_pc(456, 523, 152);
+  top:calc(50% + 100vw * (543 - 540) / 1920);
   font-size: size(19);
   font-weight: normal;
   font-stretch: normal;
@@ -113,12 +107,14 @@
   @include img_l_pc(190, 0, 0);
   top: auto;
   bottom: size(45);
+  img{transform: scaleX(-1);width: 100%;}
 }
 
 .arrow2 {
   @include img_l_pc(135, 0, 0);
   top: auto;
   bottom: size(0);
+  img{transform: scaleX(-1);width: 100%;}
 }
 
 // begin
@@ -142,30 +138,37 @@
   transition: all 0.1s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
-.border-frame {
-  @include div_r_pc(1200, 830, 142, 30);
-  border: solid 1px #aa915e;
 
-  &::after {
-    content: '';
-    @include div_r_pc(78, 78, 893 - 142, 1153 - 32);
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: size(78) 0 0 size(78);
-    border-color: transparent transparent transparent #aa915e;
-    z-index: 2;
-  }
-}
 
 /* Swipe */
 .swipe {
   width: size(1200);
-  height: size(830);
-  top: size(112);
+  height:80%;
+  top:10%;
   right: size(0);
   object-fit: cover;
-  // background: #0344;
+  font-size: size(30);
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -1em;
+    bottom: -1em;
+    border: solid 1px #aa915e;
+}
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    border-style: solid;
+    border-width: 2.6em 0 0 2.6em ;
+    border-color: transparent transparent transparent #aa915e;
+    z-index: 2;
+    left: -1em;
+    bottom: -1em;
+  }
 }
 
 // begin
@@ -294,6 +297,7 @@
       transform-origin: center;
       transform: scale(0);
     }
+    &:hover,
     &.active {
       box-shadow: 0 0 0 1px #fff;
       &::before {
@@ -366,7 +370,7 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 2.38;
-    letter-spacing: sizem(1.82);
+    letter-spacing:0em;
     text-align: left;
     color: #666666;
     white-space: nowrap;
@@ -466,7 +470,7 @@
     top: sizem(31);
     bottom: auto;
     right: sizem(0);
-    object-fit: cover;
+  font-size: sizem(13);
   }
 
   // begin
