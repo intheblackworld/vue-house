@@ -95,6 +95,7 @@
   }
   .slides {
     height: 100%;
+    background: transparent;
   }
   .desc-list {
     > h3 {
