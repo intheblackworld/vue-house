@@ -120,8 +120,9 @@ export default {
     margin: 0;
     width: 100%;
     height: auto;
-    margin-left: 20px;
+    margin-left: 44px;
     white-space: normal;
+    top: 5vw;
   }
 
   .info {
