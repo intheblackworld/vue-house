@@ -3,14 +3,16 @@
     <div class="bg relative">
       <img src="./s2/hair.gif" alt="" class="img absolute">
       <div v-if="!isMobile" class="container flex-ac flex-jb relative left">
-        <swiper v-show="show" :options="swiperOption" ref="mySwiper" class="slides" @slideChangeTransitionStart="slideChanged">
-          <div class="slide-text">{{slideList[slideIndex].text}}</div>
+        <div class="slides swiper-container">
+          <div :id="`youtube-player-${id}`" ref="player" class="swiper-wrapper"></div>
+          <img src="./tv.jpg" alt="" :class="`video-img absolute ${(isPlay == true) ? 'hide' : ''}`" @click="playVideo">
+        </div>
+        <!-- <swiper v-show="show" :options="swiperOption" ref="mySwiper" class="slides" @slideChangeTransitionStart="slideChanged">
           <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.src" class="item">
-            <iframe :src="slide.vsrc" :class="`item-img ${slideIndex === index ? 'active' : ''}`" title="video player" frameborder="0" ></iframe>
-           <!--   <img :src="slide.src" :class="`item-img ${slideIndex === index ? 'active' : ''}`" />  -->
+            <img :src="slide.src" :class="`item-img ${slideIndex === index ? 'active' : ''}`" />
             <div class="item-name" v-html="slide.name"></div>
           </swiper-slide>
-        </swiper>
+        </swiper> -->
         <div class="content">
           <h3 class="title" data-aos="fade" data-aos-delay="400" v-html="slideList[slideIndex].title"></h3>
           <h3 class="subtitle" data-aos="fade" data-aos-delay="600" v-html="slideList[slideIndex].subtitle"></h3>
@@ -53,9 +55,9 @@
           </ul>
         </div>
       </div>
-      <div class="indigator-list flex-c">
+      <!-- <div class="indigator-list flex-c">
         <div @click="setIndex(index)" :class="`indigator ${slideIndex === index ? 'active' : ''}`" v-for="(item, index) in slideList" :key="`indigator-1-${index}`"></div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -133,7 +135,7 @@
 
 .slides {
   width: size(890);
-  height: size(500);
+  height: size(590);
   cursor: pointer;
 }
 
@@ -327,106 +329,136 @@
 <script>
 // @ is an alias to /src
 import { isMobile, isTablet } from '@/utils'
-import slider from '@/mixins/slider.js'
-import 'swiper/dist/css/swiper.css'
+// import slider from '@/mixins/slider.js'
+// import 'swiper/dist/css/swiper.css'
 
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'section2',
-  mixins: [slider],
-  components: {
-    swiper,
-    swiperSlide,
-  },
+  // mixins: [slider],
+  // components: {
+  //   swiper,
+  //   swiperSlide,
+  // },
 
-  props: ['show'],
+  // props: ['show'],
   watch: {
-    show(val) {
-      if (val) {
-        this.slideIndex = 0
-        this.swiper.slideTo(1, 1000, false)
-      }
-    },
+    // show(val) {
+    //   if (val) {
+    //     this.slideIndex = 0
+    //     this.swiper.slideTo(1, 1000, false)
+    //   }
+    // },
   },
   data() {
     return {
       isMobile,
-      swiperOption: {
-        slidesPerView: isMobile ? 1 : 1,
-        spaceBetween: isTablet ? 20 : 30,
-        slidesPerColumn: isMobile ? 1 : 1,
-        allowSlidePrev: isMobile ? true : true,
-        allowSlideNext: isMobile ? true : true,
-        // centeredSlides: true,
-        autoplay: {
-          delay: 4000,
-          disableOnInteraction: true,
-        },
-        loop: true,
-        // direction: 'vertical',
-        effect: 'fade',
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        }, 
-      },
+      isPlay: false,
+      player: '',
+      id: '0wj3QNgTF7U',
+      slideIndex: 0,
       slideList: [
         {
-           src: require('./s2/1.jpg'),
-           vsrc: "https://www.youtube.com/embed/0wj3QNgTF7U",
-           contentIndex: 0,
-           name: '府中捷運站',
-           title: '府中捷運我愛你。',
-           subtitle: isMobile
-             ? '府中站散步5分鐘<br />一座城市多款風格<br />雙子座AB型的世界<br />只有「THE VIEW」<br />最懂我。'
-             : '府中站散步5分鐘，一座城市多款風格<br />雙子座AB型的世界，只有「THE VIEW」<br />最懂我。',
-         },
-         {
-           src: require('./s2/2.jpg'),
-           vsrc: 'https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F110815740621987%2Fvideos%2F5195981420473327%2F&show_text=false&width=560',
-           contentIndex: 1,
-           name: '府中捷運站',
-           title: '府中捷運我愛你。',
-           subtitle: isMobile
-             ? '府中站散步5分鐘<br />一座城市多款風格<br />雙子座AB型的世界<br />只有「THE VIEW」<br />最懂我。'
-             : '府中站散步5分鐘，一座城市多款風格<br />雙子座AB型的世界，只有「THE VIEW」<br />最懂我。',
-         },
-         /*
-         {
-           src: require('./s2/2.jpg'),
-           vsrc: 'https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F110815740621987%2Fvideos%2F5195981420473327%2F&show_text=false&width=560',
-           contentIndex: 1,
-           name: '府中捷運站',
-           title: '',
-           subtitle: '',
-         },
-         {
-           src: require('./s2/3.jpg'),
-           contentIndex: 2,
-           name: '新板誠品商圈',
-           title: '',
-           subtitle: '',
-         },
-         {
-           src: require('./s2/4.jpg'),
-           contentIndex: 3,
-           name: '府中捷運商圈',
-           title: '',
-           subtitle: '',
-         },
-         {
-           src: require('./s2/5.jpg'),
-           contentIndex: 4,
-           name: '新板特區商圈',
-           title: '',
-           subtitle: '',
-         }, */
-       ],
+          src: require('./s2/1.jpg'),
+          contentIndex: 0,
+          name: '府中捷運站',
+          title: '府中捷運我愛你。',
+          subtitle: isMobile
+            ? '府中站散步5分鐘<br />一座城市多款風格<br />雙子座AB型的世界<br />只有「THE VIEW」<br />最懂我。'
+            : '府中站散步5分鐘，一座城市多款風格<br />雙子座AB型的世界，只有「THE VIEW」<br />最懂我。',
+        },
+        {
+          src: require('./s2/2.jpg'),
+          contentIndex: 1,
+          name: '府中捷運站',
+          title: '',
+          subtitle: '',
+        },
+        {
+          src: require('./s2/3.jpg'),
+          contentIndex: 2,
+          name: '新板誠品商圈',
+          title: '',
+          subtitle: '',
+        },
+        {
+          src: require('./s2/4.jpg'),
+          contentIndex: 3,
+          name: '府中捷運商圈',
+          title: '',
+          subtitle: '',
+        },
+        {
+          src: require('./s2/5.jpg'),
+          contentIndex: 4,
+          name: '新板特區商圈',
+          title: '',
+          subtitle: '',
+        },
+      ],
+      // swiperOption: {
+      //   slidesPerView: isMobile ? 1 : 1,
+      //   spaceBetween: isTablet ? 20 : 30,
+      //   slidesPerColumn: isMobile ? 1 : 1,
+      //   allowSlidePrev: isMobile ? true : true,
+      //   allowSlideNext: isMobile ? true : true,
+      //   // centeredSlides: true,
+      //   autoplay: {
+      //     delay: 4000,
+      //     disableOnInteraction: true,
+      //   },
+      //   loop: true,
+      //   // direction: 'vertical',
+      //   effect: 'fade',
+      //   navigation: {
+      //     nextEl: '.swiper-button-next',
+      //     prevEl: '.swiper-button-prev',
+      //   },
+      //   pagination: {
+      //     el: '.swiper-pagination',
+      //     clickable: true,
+      //   },
+      // },
+      // slideList: [
+      //   {
+      //     src: require('./s2/1.jpg'),
+      //     contentIndex: 0,
+      //     name: '府中捷運站',
+      //     title: '府中捷運我愛你。',
+      //     subtitle: isMobile
+      //       ? '府中站散步5分鐘<br />一座城市多款風格<br />雙子座AB型的世界<br />只有「THE VIEW」<br />最懂我。'
+      //       : '府中站散步5分鐘，一座城市多款風格<br />雙子座AB型的世界，只有「THE VIEW」<br />最懂我。',
+      //   },
+      //   {
+      //     src: require('./s2/2.jpg'),
+      //     contentIndex: 1,
+      //     name: '府中捷運站',
+      //     title: '',
+      //     subtitle: '',
+      //   },
+      //   {
+      //     src: require('./s2/3.jpg'),
+      //     contentIndex: 2,
+      //     name: '新板誠品商圈',
+      //     title: '',
+      //     subtitle: '',
+      //   },
+      //   {
+      //     src: require('./s2/4.jpg'),
+      //     contentIndex: 3,
+      //     name: '府中捷運商圈',
+      //     title: '',
+      //     subtitle: '',
+      //   },
+      //   {
+      //     src: require('./s2/5.jpg'),
+      //     contentIndex: 4,
+      //     name: '新板特區商圈',
+      //     title: '',
+      //     subtitle: '',
+      //   },
+      // ],
       desc_list: [
         [''],
         [
@@ -468,38 +500,81 @@ export default {
   },
 
   computed: {
-    swiper() {
-      return this.$refs.mySwiper.swiper
-    },
+    // swiper() {
+    //   return this.$refs.mySwiper.swiper
+    // },
   },
 
   methods: {
-    setIndex(index) {
-      this.slideIndex = index
-      this.swiper.slideTo(index + 1, 1000, false)
+    // setIndex(index) {
+    //   this.slideIndex = index
+    //   this.swiper.slideTo(index + 1, 1000, false)
+    // },
+
+    // slideChanged(e) {
+    //   const swiper = this.$refs.mySwiper.swiper
+    //   if (swiper.isEnd) {
+    //     this.slideIndex = 0
+    //   } else if (swiper.isBeginning) {
+    //     this.slideIndex = 1
+    //   } else {
+    //     this.slideIndex = swiper.activeIndex - 1
+    //   }
+    // },
+
+    // startSwipe() {
+    //   this.swiper.autoplay.start()
+    // },
+
+    // stopSwipe() {
+    //   this.swiper.autoplay.stop()
+    // },
+
+    onPlayerReady(event) {
+      console.log('load')
+      event.target.playVideo()
+    },
+    loadVideo() {
+      this.player = new window.YT.Player(`youtube-player-${this.id}`, {
+        videoId: this.id,
+        width: '1920',
+        height: '1080',
+        playerVars: {
+          autoplay: 1,
+          loop: 1,
+          controls: 0,
+          showinfo: 0,
+          autohide: 1,
+          modestbranding: 1,
+          mute: 1,
+          suggestedQuality: 'default',
+          iv_load_policy: 3,
+        },
+        events: {
+          onReady: this.onPlayerReady,
+          onStateChange: this.onPlayerStateChange,
+        },
+      })
     },
 
-    slideChanged(e) {
-      const swiper = this.$refs.mySwiper.swiper
-      if (swiper.isEnd) {
-        this.slideIndex = 0
-      } else if (swiper.isBeginning) {
-        this.slideIndex = 1
-      } else {
-        this.slideIndex = swiper.activeIndex - 1
+    onPlayerStateChange(e) {
+      if (e.data === window.YT.PlayerState.ENDED) {
+        this.player.loadVideoById(this.id)
       }
     },
 
-    startSwipe() {
-      this.swiper.autoplay.start()
-    },
-
-    stopSwipe() {
-      this.swiper.autoplay.stop()
+    playVideo() {
+      this.loadVideo()
+      this.isPlay = true
     },
   },
 
-  created() {},
+  created() {
+    const tag = document.createElement('script')
+    tag.src = 'https://www.youtube.com/iframe_api'
+    const firstScriptTag = document.getElementsByTagName('script')[0]
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
+  },
   mounted() {},
 }
 </script>
