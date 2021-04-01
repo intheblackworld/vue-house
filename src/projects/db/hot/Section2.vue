@@ -1017,7 +1017,7 @@ export default {
             '新店陽光公園特區，高綠覆率 <br />輕軌K8新和國小站 682米<br />千坪花園生態池',
           contact:
             '貴賓專線｜02-2211-7711<br />接待會館｜新北市新店區安興路107號',
-          link: 'https://pk88.h35.tw/',
+          link: 'https://pk.h88.tw/',
           logo: require('../works/2/0.jpg'),
           imgs: [
             require('../works/2/1.jpg'),
