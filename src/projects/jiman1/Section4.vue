@@ -653,7 +653,9 @@ export default {
           img: require('./s4/04_sloder_1.jpg'),
         },
         {
-          img: require('./s4/04_sloder_2.jpg'),
+          img: isMobile
+            ? require('./mobile/04/04_slider_2_m.jpg')
+            : require('./s4/04_sloder_2.jpg'),
         },
         {
           img: require('./s4/04_sloder_3.jpg'),
