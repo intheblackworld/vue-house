@@ -462,7 +462,7 @@ export default {
           img: isMobile
             ? require('./mobile/08/08_img_3_m.jpg')
             : require('./s8/08_img_3.jpg'),
-          name: '<span>景觀顧問</span>｜大漢設計',
+          name: '<span>園藝顧問</span>｜大漢設計',
           title: '徐世萃 <span>設計總監</span>',
           subtitle: '國際建築視野 城市花園綠藝新觀',
           desc:isMobile
