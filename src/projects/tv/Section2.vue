@@ -392,8 +392,8 @@ export default {
           name: '府中捷運站',
           title: '府中捷運我愛你。',
           subtitle: isMobile
-            ? '府中站散步5分鐘<br />一座城市多款風格<br />雙子座AB型的世界<br />只有「THE VIEW」<br />最懂我。'
-            : '府中站散步5分鐘，一座城市多款風格<br />雙子座AB型的世界，只有「THE VIEW」<br />最懂我。',
+            ? '府中站散步5分鐘<br />一座城市多款風格<br />只有「THE VIEW」<br />最懂我。'
+            : '府中站散步5分鐘，一座城市多款風格<br />只有「THE VIEW」<br />最懂我。',
         },
         {
           src: require('./s2/2.jpg'),
@@ -403,8 +403,8 @@ export default {
           name: '府中捷運站',
           title: '府中捷運我愛你。',
           subtitle: isMobile
-            ? '府中站散步5分鐘<br />一座城市多款風格<br />雙子座AB型的世界<br />只有「THE VIEW」<br />最懂我。'
-            : '府中站散步5分鐘，一座城市多款風格<br />雙子座AB型的世界，只有「THE VIEW」<br />最懂我。',
+            ? '府中站散步5分鐘<br />一座城市多款風格<br />只有「THE VIEW」<br />最懂我。'
+            : '府中站散步5分鐘，一座城市多款風格<br />只有「THE VIEW」<br />最懂我。',
         },
         /*
          {
