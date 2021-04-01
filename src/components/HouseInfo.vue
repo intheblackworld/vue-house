@@ -7,6 +7,7 @@
           <h3 class="label">{{infos[0]}}</h3>
           <p class="desc" v-html="infos[1]"></p>
         </div>
+        <div class="item"></div>
       </div>
     </div>
     <Footer />
@@ -39,7 +40,7 @@ export default {
   z-index: 6;
 }
 .content {
-  width: 686px;
+  width: 900px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -61,13 +62,16 @@ export default {
 .info {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .item {
   font-size: 15px;
   margin-bottom:2em;
-  margin-right: 10em;
-  width: 260px;
+  margin-right: 6em;
+  width: 24em;
   //height: 30px;
   line-height: 1.4;
   //border-left: 4px solid $house_border_color;
@@ -75,19 +79,18 @@ export default {
   display: flex;
   align-items: center;
   white-space: nowrap;position: relative;
-  &::before{content: "";width: 4px;height: 1.4em;background:$house_border_color;margin: 0px 0.8em 0 0;position: absolute;top:0;left: 0;}
   &:nth-of-type(even) {
-    margin-right: 0;
+    margin-right:-6em;
   }
 
-  .label {
-    font-size:1em;
+  .label {   font-size:1em;
     color: $house_label_color;
     margin-bottom: 0;
     margin-right:0.8em;
-    white-space: nowrap;
+    white-space: nowrap;text-align: left;
     font-family: $family3;
-    width: 4.5em;
+    width: 5em;
+    &::before{content: "";width: 4px;height: 1.4em;background:$house_border_color;margin: 0px 0.8em 0 0;position: absolute;top:0;left: 0;}
   }
 
   .desc {
@@ -123,6 +126,9 @@ export default {
     margin-left: 44px;
     white-space: normal;
     top: 5vw;
+  &:nth-of-type(even) {
+    margin-right:0em;
+  }
   }
 
   .info {
