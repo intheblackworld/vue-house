@@ -50,6 +50,12 @@
     </vue-lazy-component>
     <vue-lazy-component
       class="section"
+      id="section9"
+    >
+      <Section9 />
+    </vue-lazy-component>
+    <vue-lazy-component
+      class="section"
       id="section8"
     >
       <Section8 />
@@ -113,6 +119,7 @@ import Section5 from '@/projects/we/Section5.vue'
 import Section6 from '@/projects/we/Section6.vue'
 import Section7 from '@/projects/we/Section7.vue'
 import Section8 from '@/projects/we/Section8.vue'
+import Section9 from '@/projects/we/Section9.vue'
 
 export default {
   name: 'home',
@@ -132,6 +139,7 @@ export default {
     Section6,
     Section7,
     Section8,
+    Section9,
   },
 
   data() {

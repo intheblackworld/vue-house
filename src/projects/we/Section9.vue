@@ -1,55 +1,47 @@
 <template>
-  <div>
-    <div class="section4">
-      <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex" @mouseup="addIndex">
-          <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
-              <div class="slide-name absolute" v-html="slide.name"></div>
-            </div>
-          </transition-group>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <div class="prev-btn" @click="decIndex"><img src="./s2/dot.png" alt=""></div>
-            <div class="next-btn" @click="addIndex"><img src="./s2/dot.png" alt=""></div>
+  <div class="section7">
+    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex" @mouseup="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" alt="">
+            <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
+        </transition-group>
+        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+          <div class="prev-btn" @click="decIndex"><img src="./s2/dot.png" alt=""></div>
+          <div class="next-btn" @click="addIndex"><img src="./s2/dot.png" alt=""></div>
         </div>
       </div>
-      <div class="title absolute" data-aos="fade-down" data-aos-delay="400" v-if="isPC">
-        <span>板南、萬大雙捷運，</span>通勤雙北我最WIN
-      </div>
-      <div class="title absolute" data-aos="fade-down" data-aos-delay="400" v-if="isMobile">
-        <span>板南、萬大雙捷運</span>
-      </div>
-      <div class="subtitle absolute" data-aos="fade-down" data-aos-delay="700" v-if="isMobile">
-        通勤雙北我最WIN
-      </div>
-      <div class="hr absolute" data-aos="fade" data-aos-delay="200"></div>
-      <div class="desc absolute" data-aos="fade-up" data-aos-delay="300" v-if="isPC">
-        捷運板南線海山站、土城站，隨你心情動線決定回家路線；<br />
-        國道3號、65快速道路，翱翔雙北無縫接軌；<br />
-        動工中的捷運萬大線LG10站就在中正國中旁上學好近，<br />
-        未來還有北土城交流道就近通勤，新北閃耀五星的大黑馬，<br />
-        青年成家卡位這裡最好！
-      </div>
-      <div class="desc absolute" data-aos="fade-up" data-aos-delay="300" v-if="isMobile">
-        捷運板南線海山站、土城站，隨你心情動線決定回家路線；國道3號、65快速道路，翱翔雙北無縫接軌；動工中的捷運萬大線LG10站就在中正國中旁上學好近，未來還有北土城交流道就近通勤，新北閃耀五星的大黑馬，青年成家卡位這裡最好！
-      </div>
-      <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" data-aos-offset="-500" v-if="isPC">
-        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-      </div>
+    </div>
+    <div class="w-block"></div>
+    <img src="./s9/title.png" alt="最WONDERFUL的生活" class="logo">
+    <div class="title absolute" data-aos="fade-down" data-aos-delay="400" v-if="isPC">
+     超高坪享受，最正的3房
+    </div>
+    <div class="title absolute" data-aos="fade-down" data-aos-delay="400" v-if="isMobile">
+      超高坪享受<br />最正的3房
+    </div>
+    <div class="line absolute" data-aos="fade" data-aos-delay="200"></div>
+    <div class="desc absolute" data-aos="fade-up" data-aos-delay="300">
+      格局方正符合黃金比例，主次臥空間符合最大坪效，裝飾擺設符合視覺美感，陽光、空氣在室內自由流動，以完美格局規劃實力，打造真正精品好宅內涵。
+    </div>
+    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" data-aos-offset="-500" v-if="isPC">
+      <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section4 {
+.section7 {
+  width: size(1920);
+  height: size(900 + 120);
   max-height: size(1080);
   position: relative;
-  background: #5fc8ce url('./s2/rb.png') fixed no-repeat bottom right;
-  background-size: size(1200) auto;
-  min-height: size(1250 + 280);
+  // background: #fff;
+  z-index: 2;
+  // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
   // background-position: 0 0;
@@ -60,7 +52,6 @@
 .bg-img {
   width: 100vw;
   height: size(900);
-  min-height: size(900);
   position: absolute;
   display: block;
   top: 0;
@@ -72,45 +63,30 @@
   }
 }
 
-.hr {
-  @include img_l_pc(1500, 1005, 210);
-  border: solid 1.1px #888888;
+.w-block {
+	background-color: #fff;
+	@include div_r_pc(1874, 900, 0, 0);
 }
 
+.logo {
+  @include img_r_pc(677, 90, 209);
+}
 
 .title {
-  @include img_l_pc(518, 920, 210);
+  @include img_r_pc(404, 332 + 30, 416);
   font-size: size(45);
-  font-weight: 900;
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
   letter-spacing: size(1.5);
-  text-align: left;
-  color: #fff;
-  white-space: nowrap;
-  span {
-    color: #ffff00;
-  }
-}
-
-.subtitle {
-  width: size(568);
-  top: size(393);
-  right: size(252);
-  font-size: size(28);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(1.2);
-  text-align: left;
-  color: #2c9899;
+  text-align: justify;
+  color: #055e9b;
   white-space: nowrap;
 }
 
 .desc {
-  @include img_l_pc(1500, 1030, 210);
+  @include img_r_pc(610, 420 + 50, 210);
   font-size: size(25);
   font-weight: normal;
   font-stretch: normal;
@@ -120,14 +96,20 @@
   text-align: justify;
   color: #000;
 }
+.line {
+  @include img_r_pc(610, 398 + 50, 210);
+  background-color: #888;
+  height: size(2);
+}
 
 /* Swipe */
 .swipe {
-  width: size(1500);
-  height: size(844);
-  top: size(20);
+  width: size(830);
+  height: size(560);
+  top: size(229);
   left: size(210);
   object-fit: cover;
+  z-index: 2;
 }
 
 // begin
@@ -218,8 +200,8 @@
 
 .pagination {
   width: auto;
-  top: size(880);
-  right: size(200);
+  bottom: size(248);
+  left: calc(50% + 6.95vw);
   justify-content: center;
 }
 
@@ -234,11 +216,11 @@
     width: size(35);
     height:size(35);
     border-radius: 0px;
-   box-shadow: 0 0 4px 4px #5fc8ce;
+   box-shadow: 0 0 4px 4px #fff;
     border-radius:100%;
-    border: 4px solid #fff;
+    border: 4px solid #ccc;
     position: relative;
-    background-color: #5fc8ce;
+    background-color: #fff;
     transition: all 0.5s;
 
     &::before {
@@ -308,63 +290,41 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section4 {
+  .section7 {
+    width: 100vw;
+    height: sizem(722);
     min-height: auto;
     max-height: initial;
-    height: sizem(250 + 393);
-  background-position: right calc(100% - 63px);
-  background-size:100% auto;
+    background-color: #fff;
   }
 
   .logo {
-    display: none;
-  }
-
-  .hr {
-    @include img_l_m(310, 122 + 250, 33);
-    border: solid 1px #888888;
-  }
-
-  .rb {
-    @include img_r_m(375, 0, 0);
-    top: auto;
-    bottom: 0;
+    @include img_r_m(310, 67, 18);
   }
 
   .title {
-    @include img_l_m(310, 290, 33);
+    @include img_r_m(189, 437, 152);
     font-size: sizem(25);
     font-weight: 900;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
+    line-height: 1.4;
     letter-spacing: sizem(1.25);
-    text-align: left;
-    color: #fff;
-    white-space: nowrap;
-    span {
-      color: #ffff00;
-    }
-  }
-
-  .subtitle {
-    @include img_l_m(310, 330, 33);
-    font-size: sizem(20);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(1);
-    text-align: left;
-    color: #fff;
+    text-align: justify;
+    color: #055e9b;
     white-space: nowrap;
   }
 
   .desc {
-    @include img_l_m(310, 250 + 138, 33);
+    @include img_r_m(310, 538, 32);
     font-size: sizem(15);
-    line-height:1.7;
+    line-height: 1.7;
     letter-spacing:0.05em;
+  }
+  .line {
+    @include img_r_m(310, 524, 32);
+    background-color: #888;
+    height: sizem(2);
   }
 
   /* Swipe */
@@ -372,7 +332,7 @@
     width: 100vw;
     height: sizem(250);
     min-height: auto;
-    top: sizem(0);
+    top: sizem(150);
     left: sizem(0);
     object-fit: cover;
   }
@@ -505,6 +465,7 @@
       }
     }
   }
+
   .swipe-btns {
     width: 100%;
     height: 100%;
@@ -533,9 +494,12 @@
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
+
 export default {
+  name: 'section7',
+
   mixins: [slider],
-  // props: ['viewIndex'],
+  props: ['viewIndex'],
 
   data() {
     return {
@@ -545,24 +509,20 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s2/3-5.jpg'),
-          name: '捷運土城站實景',
+          img: require('./s9/1.jpg'),
+          name: 'WE時代樣品屋實景拍攝',
         },
         {
-          img: require('./s2/3-1.jpg'),
-          name: '捷運海山站實景',
+          img: require('./s9/2.jpg'),
+          name: 'WE時代樣品屋實景拍攝',
         },
         {
-          img: require('./s2/3-2.jpg'),
-          name: '65快速道路',
+          img: require('./s9/3.jpg'),
+          name: 'WE時代樣品屋實景拍攝',
         },
         {
-          img: require('./s2/3-3.jpg'),
-          name: '國道3號',
-        },
-        {
-          img: require('./s2/3-4.jpg'),
-          name: '捷運萬大線LG10站就在中正國中旁',
+          img: require('./s9/4.jpg'),
+          name: 'WE時代樣品屋實景拍攝',
         },
       ],
     }
@@ -578,7 +538,7 @@ export default {
 
   watch: {
     viewIndex() {
-      if (this.viewIndex === 3) {
+      if (this.viewIndex === 5) {
         this.slideIndex = 0
         console.log(this.slideIndex, 'slideIndex')
       }

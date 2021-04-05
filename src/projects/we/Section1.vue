@@ -1,25 +1,28 @@
 <template>
   <div class="section1">
-    <div class="w-block"></div>
-    <img src="./s1/img.png" alt="" class="rb">
+    <!-- <img src="./s1/img.png" alt="" class="rb"> -->
     <div class="hint">
       本公司保留活動修改及終止權利！！數量有限，要買要快
     </div>
     <transition-group name="swipe-fade">
-      <div class="list" v-if="pageIndex === 1" key="page1" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-
-        <!-- <img src="./s1/logo.png" alt="" class="logo">
-        <img src="./s1/1/st.png" alt="" class="st">  -->
-        <img src="./s1/1/i.jpg" alt="" class="i">
-        <div class="t1">早鳥享好康<br>好禮我最威</div>
-        <div class="t2">好禮3選2，風光成家最給力！</div>
+      <div class="list list2" v-if="pageIndex === 2" key="page2" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+        <div class="w-block"></div>
+        <img src="./s1/2/2.png" alt="" class="img1">
+        <img src="./s1/2/3.png" alt="" class="img2">
+        <img src="./s1/2/1.png" alt="" class="img3">
+        <img src="./s1/2/logo.png" alt="" class="logo">
+        <div class="t1">完銷倒數 土城家樂福<span>精品30坪 限量露台戶</span></div>
+        <div class="t2"><span>簽訂3%<span>輕鬆付款</span></span>2263-5666</div>
       </div>
-      <div class="list" v-if="pageIndex === 2" key="page2" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <img src="./s1/logo.png" alt="" class="logo2" v-if="isPC">
-        <img src="./s1/logo2.png" alt="" class="logo2" v-if="isMobile">
-        <div class="st2" v-if="isPC">金城正核心 WIN在起跑點</div>
-        <div class="t3" v-if="isPC">30坪首付38萬起 含平面車位<br>3房2衛 採光邊間 訂製你的家</div>
-        <img src="./s1/t_m.png" alt="" class="tm" v-if="isMobile">
+      <div class="list list1" v-if="pageIndex === 1" key="page1" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+        <div class="w-block"></div>
+        <img src="./s1/1/1.png" alt="" class="img1">
+        <img src="./s1/1/2.png" alt="" class="img2">
+        <img src="./s1/1/i.jpg" alt="" class="i">
+        <img src="./s1/1/logo.png" alt="" class="logo" v-if="isPC">
+        <img src="./s1/logo2.png" alt="" class="logo" v-if="isMobile">
+        <div class="t1">青年當家威時代<br>暖心加碼送給您</div>
+        <div class="t2">好禮3選2,風光入厝禮!</div>
       </div>
     </transition-group>
     <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
@@ -68,6 +71,17 @@
   @include div_l_pc(1874, 963, 0, 0);
   height: calc(100% - 4vw);
 }
+/*
+.ii{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;  
+  object-fit: contain;
+  opacity: 0.3;
+  }
+
 
 .o {
   @include img_l_pc(1920, 0, 0);
@@ -83,36 +97,14 @@
   top: calc(50% - 9vw);
 }
 
-.t1 {
-  @include img_l_pc(730, 383, 340);
-  top: calc(50% - 1.6em);
-  font-size: size(110);
-  font-weight: 900;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.22;
-  letter-spacing: 0.1em;
-  text-align: center;
-  color: #0a5a91;
+.logo1 {
+  @include img_l_pc(610, 383, 270);
+  top: calc(50% - 15vw);
 }
 
-.t2 {
-  @include img_l_pc(720, 768, 340);
-  top: calc(50% + 1.2em);
-  font-size: size(46);
-  font-weight: 900;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 3.11;
-  letter-spacing: -0.01em;
-  text-align: center;
-  color: #fe6b00;
-}
-
-.i {
-  @include img_r_pc(465, 0, 0);
-  top: calc(50% - 12vw);
-  left: calc(50% + 7.5vw);
+.logo2 {
+  @include img_l_pc(610, 383, 270);
+  top: calc(50% - 15vw);
 }
 
 .rb {
@@ -120,6 +112,14 @@
   top: auto;
   bottom: 4vw;
 }
+*/
+
+.i {
+  @include img_r_pc(690, 0, 0);
+  top: calc(50% - 11.5vw);
+  left: calc(50% + 4vw);
+}
+
 .hint {
   @include div_r_pc(450, 27, 965, 46);
   top: calc(100% - 4vw);
@@ -133,37 +133,103 @@
   text-align: right;
   color: #ffffff;
   white-space: nowrap;
+  z-index: 5;
 }
 
-.logo2 {
-  @include img_c_pc(840, 210);
-  top: calc(50% - 11vw);
-}
-
-.st2 {
-  @include img_c_pc(610, 428);
-  top: calc(50% - 2.83vw);
-  font-size: size(40);
-  font-weight: 900;
+.list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.48;
-  letter-spacing: normal;
-  text-align: center;
-  color: #535353;
-}
-
-.t3 {
-  @include img_c_pc(1054, 614);
-  top: calc(50% + 1vw);
-  font-size: size(73);
+  text-align: left;
   font-weight: 900;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.27;
-  letter-spacing: -2.58px;
-  text-align: center;
-  color: #000000;
+  line-height: 1.3;
+}
+.list1 {
+  background: #d32925;
+  .img1 {
+    @include img_r_pc(200, -5, 0);
+  }
+  .img2 {
+    @include img_l_pc(750, 0, 370);
+    top: auto;
+    bottom: 0;
+  }
+  .logo {
+    @include img_l_pc(600, 383, 270);
+    top: calc(50% - 15vw);
+  }
+  .t1 {
+    @include img_l_pc(730, 38, 260);
+    top: calc(50% - 1.4em);
+    font-size: size(81);
+    letter-spacing: 0.1em;
+    color: #0a5a91;
+  }
+  .t2 {
+    @include img_l_pc(720, 768, 260);
+    top: calc(50% + 1.85em);
+    font-size: size(59);
+    letter-spacing: 0.045em;
+    color: #d32925;
+  }
+}
+.list2 {
+  background: #6aa48c;
+  .img1 {
+    @include img_r_pc(680, -5, 0);
+  }
+  .img2 {
+    @include img_l_pc(400, 0, 290);
+    top: auto;
+    bottom: 0;
+  }
+  .img3 {
+    @include img_l_pc(340, -5, 0);
+  }
+  .logo {
+    @include img_l_pc(410, 383, 400);
+    top: calc(50% - 7.5vw);
+  }
+  .t1 {
+    @include img_l_pc(750, 428, 400);
+    top: calc(50% - 7.5vw);
+    left: calc(50% - 5vw);
+    font-size: size(78);
+    letter-spacing: -0.01em;
+    color: #000000;
+    span {
+      display: block;
+      font-size: 0.99em;
+    }
+  }
+
+  .t2 {
+    @include img_l_pc(750, 428, 400);
+    top: calc(50% + 3vw);
+    left: calc(50% - 5vw);
+    font-size: size(108);
+    font-weight: 900;
+    letter-spacing: -2.58px;
+
+    color: #ff6b00;
+    > span {
+      display: inline-block;
+      color: #000000;
+      line-height: 1.3;
+      font-size: 0.4em;
+      margin: 0 0.5em 0 0;
+      span {
+        margin: -0.15em 0 0;
+        display: block;
+        color: #000000;
+        font-size: 0.9em;
+      }
+    }
+  }
 }
 .list::after {
   content: '';
@@ -196,7 +262,7 @@
   width: 100%;
   height: 100%;
   padding: 0 15px;
- // z-index: 3;
+  // z-index: 3;
 
   .prev-btn,
   .next-btn {
@@ -209,22 +275,23 @@
   width: auto;
   top: calc(100% - 7vw);
   right: size(70);
-  justify-content: center;z-index:30;
+  justify-content: center;
+  z-index: 30;
 }
 
 .pagination-dot {
   padding: 5px;
   margin: 0 5px;
   cursor: pointer;
- // z-index: 3;
+  // z-index: 3;
 
   span {
     display: block;
     width: size(35);
-    height:size(35);
+    height: size(35);
     border-radius: 0px;
-  //  box-shadow: 0 0 4px 4px #5fc8ce;
-    border-radius:100%;
+    //  box-shadow: 0 0 4px 4px #5fc8ce;
+    border-radius: 100%;
     border: 4px solid #000;
     position: relative;
     background-color: #fff;
@@ -247,13 +314,13 @@
       transform: scale(0);
     }
     &.active {
-    border: 4px solid #000;
+      border: 4px solid #000;
       &::before {
         content: '';
         width: 100%;
         height: 100%;
         display: block;
-        border-radius:100%;
+        border-radius: 100%;
         background-image: url('./s2/dot.png');
         background-size: 52% auto;
         background-position: 54% 46%;
@@ -310,7 +377,7 @@
     @include div_l_m(361, 607 - 63, 60, 0);
     height: calc(100% - 30vw);
   }
-
+  /*
   .logo {
     @include img_l_m(223, 111, 80);
     top: calc(50% - 64vw);
@@ -331,15 +398,15 @@
     @include img_l_m(375, 296, 0);
     top: calc(50% - 29vw);
     font-size: sizem(17);
-  }
+  }*/
 
   .i {
     @include img_r_m(238, 354, 68);
-    top: calc(50% - 15vw);
+    top: calc(50% + 15vw);
   }
 
   .hint {
-    @include div_r_m(300, 18, 667, 14);
+    @include div_l_m(300, 18, 667, 10);
     top: calc(100% - 12vw);
     width: 100%;
     font-size: sizem(12);
@@ -348,14 +415,9 @@
     font-style: normal;
     line-height: 1.5;
     letter-spacing: normal;
-    text-align: right;
+    text-align: left;
     color: #ffffff;
     white-space: nowrap;
-  }
-
-  .logo2 {
-    @include img_l_m(154, 123, 99);
-    top: calc(50% - 59vw);
   }
 
   .tm {
@@ -368,6 +430,72 @@
     top: auto;
     bottom: 14vw;
   }
+  .list {
+    text-align: center;
+  }
+  .list1 {
+    .img1 {
+      @include img_r_m(100, -5, 0);
+    }
+    .img2 {
+      @include img_r_m(310, 0, -60);
+      top: auto;
+      bottom: 0;
+    }
+    .logo {
+      @include img_l_m(154, 123, 99);
+      top: calc(50% - 59vw);
+    }
+    .t1 {
+      @include img_l_m(375, 38, 0);
+      top: calc(50% - 2.5em);
+      font-size: sizem(32);
+    }
+    .t2 {
+      @include img_l_m(375, 38, 0);
+      top: calc(50% + 0.3em);
+      font-size: sizem(23.3);
+    }
+  }
+
+  .list2 {
+    .img1 {
+      @include img_r_m(270, 0, -10);
+    }
+    .img2 {
+      @include img_r_m(210, 0, -20);
+      top: auto;
+      bottom: 0;
+    }
+    .img3 {
+      @include img_l_m(150, -50, -10);
+    }
+    .logo {
+      @include img_l_m(154, 123, 99);
+      top: calc(50% - 59vw);
+    }
+    .t1 {
+      @include img_l_m(375, 38, 0);
+      top: calc(50% - 1.55em);
+      font-size: sizem(31);
+      line-height: 1.6;
+    }
+    .t2 {
+      @include img_l_m(375, 38, 0);
+      top: calc(50% + 1.7em);
+      font-size: sizem(52);
+      > span {
+        display: block;
+        font-size: 0.6em;
+        letter-spacing: 0.04em;
+        margin: 0;
+        span {
+          display: inline;
+          font-size: 1em;
+        }
+      }
+    }
+  }
 
   .swipe-btns {
     width: 100%;
@@ -378,14 +506,18 @@
     .prev-btn,
     .next-btn {
       width: sizem(25);
-      height:sizem(25);
+      height: sizem(25);
       cursor: pointer;
       background: #fff;
       border-radius: 50%;
-      border:sizem(2.5) solid #000;
-      display: flex;justify-content:center;
+      border: sizem(2.5) solid #000;
+      display: flex;
+      justify-content: center;
       align-items: center;
-      img{width: 60%;transform: rotate(45deg) translate(5%,-5%);}
+      img {
+        width: 60%;
+        transform: rotate(45deg) translate(5%, -5%);
+      }
     }
     .next-btn {
       transform: scaleX(-1);
@@ -414,12 +546,12 @@ export default {
   methods: {},
 
   mounted() {
-    clearInterval(this.interval)
+    /*  clearInterval(this.interval)
     this.interval = setInterval(() => {
       if (this.toggleTimer) {
         this.pageIndex = this.pageIndex === 1 ? 2 : 1
       }
-    }, 5000)
+    }, 5000) */
   },
 
   created() {},
