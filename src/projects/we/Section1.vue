@@ -12,7 +12,7 @@
         <img src="./s1/1/st.png" alt="" class="st">  -->
         <img src="./s1/1/i.jpg" alt="" class="i">
         <div class="t1">早鳥享好康<br>好禮我最威</div>
-        <div class="t2">好禮4選3，風光成家最給力！</div>
+        <div class="t2">好禮3選2，風光成家最給力！</div>
       </div>
       <div class="list" v-if="pageIndex === 2" key="page2" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <img src="./s1/logo.png" alt="" class="logo2" v-if="isPC">
