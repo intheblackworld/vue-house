@@ -159,6 +159,7 @@
     width: size(472);
     height: 100%;
     text-decoration: none;
+    background-color: #d67f76;
   }
 
   .item-title {
@@ -368,8 +369,9 @@
 
     a {
       display: block;
-      width: 100%;
+      width: 90%;
       height: 100%;
+      margin: 0 auto;
       text-decoration: none;
     }
 
@@ -416,6 +418,7 @@
   .swiper-button-prev,
   .swiper-button-next {
     top: 40%;
+    z-index: 10;
   }
 }
 </style>
@@ -446,13 +449,14 @@ export default {
       swiperOption: {
         slidesPerView: isMobile ? 1 : 3,
         centeredSlides: true,
-        spaceBetween: isMobile ? 0 : 30,
+        spaceBetween: isMobile ? 15 : 30,
         slidesPerColumn: isMobile ? 1 : 1,
 
         // autoplay: {
         //   delay: 30000,
         //   disableOnInteraction: true,
         // },
+        effect: isMobile ? 'fade' : '',
         loop: true,
         navigation: {
           nextEl: '.swiper-button-next',
