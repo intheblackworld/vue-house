@@ -1,16 +1,64 @@
 <template>
   <div class="section3">
-    <img src="./s3/03_img.png" :alt="`${info.caseName}_img`" class="bg-img"  v-if="!isMobile">
-    <h3 class="title" data-aos="fade-up" data-aos-delay="200">
-      洲子洋天空再進化<br v-if="isMobile"><span v-if="!isMobile">　</span>讓雙北人都羨慕
-    </h3>
-    <div class="hr" data-aos="zoom-in-right" data-aos-delay="400" data-aos-offset="100"></div>
-    <div class="desc" data-aos="fade-up" data-aos-delay="600">
-      15萬坪寬闊樹海濃蔭，424公頃大台北都會水岸公園，藍天、綠邑絕美生活別說你不羨慕！<br />
-      這就是洲子洋，宜居大城持續進化，讓雙北人一眼愛上
+    <transition-group name="trans" mode="out-in">
+      <img src="./s3/bg1.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-show="blockIndex === 0 && isPC" key="day1">
+      <img src="./s3/bg2.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-show="blockIndex === 1 && isPC" key="day2">
+      <img src="./s3/bg1_m.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-show="blockIndex === 0 && isMobile" key="day3">
+      <img src="./s3/bg2_m.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-show="blockIndex === 1 && isMobile" key="day4">
+    </transition-group>
+    <img src="./s3/bottom.png" :alt="`${info.caseName}_img`" class="grass">
+
+    <div class="content">
+      <div class="line"></div>
+      <div class="label">
+        ｜六大價值｜
+      </div>
+      <div class="title">
+        大竹最美 建築大樹 生活豐映
+      </div>
+      <div class="subtitle">
+        種一株豐盛大樹最好的時間就是現在
+      </div>
     </div>
-<Map v-if="isMobile" :tagList="tagList" :bgSrc="isMobile ? bgmSrc: bgSrc" :hand="hand">
-    </Map>
+
+    <div class="items flex-ac flex-jb wrap" v-if="isPC">
+      <div class="flex-ac flex-jb">
+        <div v-for="(slide, i) in slideList.slice(0, 3)" :key="slide.img + i + 'icon'" :class="`item`">
+          <img :src="slide.img" alt="">
+          <div>
+            <div class="item-name" v-html="slide.name"></div>
+            <div class="item-desc" v-html="slide.desc"></div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-ac flex-jb">
+        <div v-for="(slide, i) in slideList.slice(3, 7)" :key="slide.img + i + 'icon'" :class="`item`">
+          <img :src="slide.img" alt="">
+          <div>
+            <div class="item-name" v-html="slide.name"></div>
+            <div class="item-desc" v-html="slide.desc"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" alt="">
+            <div class="slide-name absolute" v-html="slide.name"></div>
+          </div>
+        </transition-group>
+        <div class="pagination absolute flex-ac" v-if="isPC">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+        </div>
+        <div class="swipe-btns absolute flex-ac flex-jb">
+          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -18,8 +66,8 @@
 
 .section3 {
   width: 100%;
-  height: 100vh;
-  min-height: size(900);
+  height: size(1080);
+  min-height: size(1080);
   max-height: size(1080);
   position: relative;
   // background-color: #fff;
@@ -33,67 +81,305 @@
 
 .bg-img {
   width: 100%;
-  height:auto;
+  height: 100%;
   position: absolute;
-  top:calc(60% - 100vw * 1096 * 0.6 / 1920 );
+  top: 0;
   left: 0;
   display: block;
   object-fit: cover;
   margin-top: 0;
   // opacity: 0.5;
-/*
-  &:nth-child(1) {
-    position: relative;
-  }*/
+
+  // &:nth-child(1) {
+  //   position: relative;
+  // }
 }
 
-.title {
-  @include img_c_pc(762, 60);
-  font-size: size(50);
-  font-weight: bold;
+.grass {
+  @include img_l_pc(939, 0, -40);
+  top: auto;
+  bottom: 0;
+  transform-origin: bottom;
+  animation: grass 4s ease-in-out alternate infinite;
+}
+
+@keyframes grass {
+  to {
+    transform: skewX(3deg);
+  }
+}
+
+// begin
+.trans-leave-to {
+  opacity: 0;
+  z-index: 0;
+}
+// end
+.trans-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.trans-enter-active {
+  transition: all 1.8s ease;
+}
+
+.trans-leave-active {
+  transition: all 1.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.line {
+  @include div_l_pc(14, 180, 168, 202);
+  background-color: #ff8700;
+}
+.label {
+  @include img_l_pc(208, 159, 246);
+  font-size: size(30.5);
+  font-weight: 400;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(-2.5);
-  text-align: center;
+  letter-spacing: size(4.89);
+  text-align: left;
   color: #ffffff;
   white-space: nowrap;
+  z-index: 2;
 }
-
-.hr {
-  @include img_c_pc(842, 140);
-  // height: 35px;
-  border-top: size(1) solid #fff;
-}
-
-.desc {
-  @include img_c_pc(838, 155);
-  font-size: size(20);
+.title {
+  @include img_l_pc(825, 204, 246);
+  font-size: size(66.1);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.25;
-  letter-spacing: size(1);
-  text-align: center;
-  color: #ffffff;
-  white-space: nowrap;
-}
-
-.more {
-  @include img_r_pc(309 + 20 + 63, 685, 110);
-  font-size: size(24);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.04;
-  letter-spacing: size(2.8);
+  line-height: 1.2;
+  letter-spacing: normal;
   text-align: left;
   color: #ffffff;
-  cursor: pointer;
   white-space: nowrap;
+  z-index: 2;
+}
+
+.subtitle {
+  @include img_l_pc(851, 301, 246);
+  font-size: size(38.2);
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(16.04);
+  text-align: left;
+  color: #ffffff;
+  white-space: nowrap;
+  z-index: 3;
+}
+
+.items {
+  @include img_l_pc(920, 428, 204);
+  > div {
+    width: 100%;
+    height: size(151 + 42);
+    border-bottom: 1px solid #fff;
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    img {
+      width: size(110);
+      margin-right: size(10);
+    }
+
+    .item-name {
+      font-size: size(44.5);
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.32;
+      letter-spacing: normal;
+      text-align: left;
+      color: #ffffff;
+      white-space: nowrap;
+    }
+
+    .item-desc {
+      font-size: size(18);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.42;
+      letter-spacing: size(1.08);
+      text-align: left;
+      color: #ffffff;
+    }
+  }
+}
+
+/* Swipe */
+.swipe {
+  width: size(800);
+  height: size(550);
+  top: size(105);
+  right: size(349);
+  object-fit: cover;
+  // background: #0344;
+}
+
+// begin
+.swipe-fade-leave-to {
+  opacity: 0;
+  z-index: 0;
+}
+// end
+.swipe-fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.swipe-fade-enter-active {
+  transition: all 1s ease;
+}
+
+.swipe-fade-leave-active {
+  transition: all 1s ease;
+}
+
+// begin
+// .swipe-left-leave-to {
+//   margin-left: -100vw;
+//   z-index: 0;
+// }
+// // end
+// .swipe-left-enter {
+//   opacity: 0.5;
+//   margin-left: 0;
+//   z-index: 1;
+// }
+
+// .swipe-left-enter-active {
+//   transition: all 0.5s ease;
+// }
+
+// .swipe-left-leave-active {
+//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+// }
+
+.swipe-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.swipe-item {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 
   img {
-    width: size(63);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .slide-name {
+    right: 2em;
+    bottom: 1.2em;
+    color: #fff;
+    font-size: size(18);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+    text-align: left;
+    text-shadow: 0 0.3em 1em #000;
+  }
+
+  // &:nth-child(1) {
+  //   z-index: 1;
+  //   // opacity: 1;
+  // }
+
+  // &.base {
+  //   z-index: 1;
+  //   opacity: 1;
+  // }
+  // &.active {
+  //   z-index: 2;
+  //   // opacity: 1;
+  // }
+}
+
+.pagination {
+  width: auto;
+  bottom: size(24);
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.pagination-dot {
+  padding: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+  z-index: 4;
+
+  span {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 1px #fff;
+    position: relative;
+    background-color: transparent;
+    transition: all 0.5s;
+
+    &::before {
+      content: '';
+      width: 60%;
+      height: 60%;
+      display: block;
+      background: #fff;
+      border-radius: 20px;
+      opacity: 1;
+      position: absolute;
+      top: 20%;
+      // transform: translateY(-50%);
+      left: 20%;
+      transition: all 0.3s;
+      transform-origin: center;
+      transform: scale(0);
+    }
+    &.active {
+      box-shadow: none;
+      &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: #fff;
+        border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 0%;
+        // transform: translateY(-50%);
+        left: 0%;
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.swipe-btns {
+  width: 100%;
+  height: 100%;
+  padding: 0 15px;
+  z-index: 3;
+
+  .prev-btn,
+  .next-btn {
+    width: size(20);
+    cursor: pointer;
   }
 }
 
@@ -112,36 +398,79 @@
 
 @media screen and (max-width: 767px) {
   .section3 {
-    width: 100%;
-    height: auto;
+    width: 100vw;
+    height: sizem(610);
     min-height: auto;
     max-height: initial;
-    // background-image: url('./s2/bg.jpg');
+    // background-image: url('./all/section_bg.jpg');
+    // background-attachment: scroll;
     // background-size: 100% 100%;
     // background-position: 0 0;
     // background-attachment: fixed;
     overflow: hidden;
   }
+  .img {
+    @include img_r_m(160, 120, 5);
+  }
 
-  .title {
-    @include img_c_m(220, 22);
-    font-size: sizem(26);
+  .title1 {
+    @include img_l_m(325, 63, 25);
+    font-size: sizem(30);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
     letter-spacing: normal;
-    z-index: 9;
+    text-align: left;
+    white-space: nowrap;
+    color: #fff;
+    span {
+      display: block;
+      font-size: 0.666em;
+    }
   }
 
   .hr {
-    @include img_c_m(325, 104);
-    z-index: 9;
+    @include img_l_m(142, 60, 25);
+    height: sizem(1);
+    background: #333;
   }
 
+  .title2 {
+    @include img_l_m(325, 17, 25);
+    font-size: sizem(20);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.05;
+    letter-spacing: normal;
+    text-align: left;
+    color: #333333;
+    white-space: nowrap;
+    color: #fff;
+  }
+  /*
   .desc {
-    @include img_c_m(320, 119);
+    @include img_r_m(292, 494, 40);
     font-size: sizem(12);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
     line-height: 1.88;
     letter-spacing: normal;
-    white-space:normal;
-    z-index: 9;
+    text-align: left;
+    color: #333;
+  } */
+
+  .desc {
+    @include img_l_m(170, 140, 25);
+    font-size: sizem(14);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+    text-align: justify;
+    color: #fff;
+    white-space: normal;
   }
 
   .more {
@@ -161,21 +490,201 @@
       width: sizem(29);
     }
   }
+  .btns {
+    @include img_c_m(325, 305);
+  }
+
+  .btn {
+    width: sizem(152);
+    height: sizem(27);
+    &:hover {
+      animation: btn 0.5s infinite alternate;
+      background: #fff0;
+      box-shadow: inset 0 0 0 1px #000000;
+      color: #000;
+    }
+    &.active:hover {
+      animation: none;
+      background: #ff662abb;
+      box-shadow: none;
+      color: #fff;
+    }
+  }
+
+  /* Swipe */
+  .swipe {
+    width: 100%;
+    height: sizem(259);
+    min-height: auto;
+    top: auto;
+    bottom: 0;
+    left: sizem(0);
+    object-fit: cover;
+  }
+
+  // begin
+  .swipe-fade-leave-to {
+    opacity: 0;
+    z-index: 0;
+  }
+  // end
+  .swipe-fade-enter {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .swipe-fade-enter-active {
+    transition: all 0.5s ease;
+  }
+
+  .swipe-fade-leave-active {
+    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  // begin
+  // .swipe-left-leave-to {
+  //   margin-left: -100vw;
+  //   z-index: 0;
+  // }
+  // // end
+  // .swipe-left-enter {
+  //   opacity: 0.5;
+  //   margin-left: 0;
+  //   z-index: 1;
+  // }
+
+  // .swipe-left-enter-active {
+  //   transition: all 0.5s ease;
+  // }
+
+  // .swipe-left-leave-active {
+  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  // }
+
+  .swipe-wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .swipe-item {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    // &:nth-child(1) {
+    //   z-index: 1;
+    //   // opacity: 1;
+    // }
+
+    // &.base {
+    //   z-index: 1;
+    //   opacity: 1;
+    // }
+    // &.active {
+    //   z-index: 2;
+    //   // opacity: 1;
+    // }
+    .slide-name {
+      right: auto;
+      top: auto;
+      bottom: 1.2rem;
+      right: 1.2rem;
+      font-size: sizem(15);
+    }
+  }
+
+  .pagination {
+    width: auto;
+    bottom: size(91);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .pagination-dot {
+    padding: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    z-index: 4;
+
+    span {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 0 1px #fff;
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.01);
+      transition: all 0.5s;
+
+      &::before {
+        content: '';
+        width: 60%;
+        height: 60%;
+        display: block;
+        background: #004ea2;
+        border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 20%;
+        // transform: translateY(-50%);
+        left: 20%;
+        transition: all 0.3s;
+        transform-origin: center;
+        transform: scale(0);
+      }
+      &.active {
+        &::before {
+          content: '';
+          width: 100%;
+          height: 100%;
+          display: block;
+          background: #004ea2;
+          border-radius: 20px;
+          opacity: 1;
+          position: absolute;
+          top: 0%;
+          // transform: translateY(-50%);
+          left: 0%;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  .swipe-btns {
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+    z-index: 3;
+
+    .prev-btn,
+    .next-btn {
+      width: sizem(15);
+      cursor: pointer;
+    }
+  }
 }
 </style>
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
-import Map from '@/components/Map.vue'
 import info from '@/info'
-// import slider from '@/mixins/slider.js'
+import slider from '@/mixins/slider.js'
 
 export default {
   name: 'section3',
 
-  components: {
-    Map,
-  },
+  mixins: [slider],
+  props: ['viewIndex'],
 
   data() {
     return {
@@ -184,18 +693,62 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
-      tagList: [],
-      bgmSrc: require('./s3/03_img_m.jpg'),
-      hand: require('./s3//m_2_mobile_hand.png'),
+      blockIndex: 0,
+      slideIndex1: 0,
+      slideList: [
+        {
+          img: require('./s3/icon1.png'),
+          name: '綠海景觀',
+          desc: '270度翠綠簇擁<br />開窗就享無垠綠景',
+        },
+        {
+          img: require('./s3/icon2.png'),
+          name: '稀有角地',
+          desc: '大福路大興路環抱<br />地段價值更珍貴',
+        },
+        {
+          img: require('./s3/icon3.png'),
+          name: '公園環繞',
+          desc: '埔心溪緩緩河廊<br />228紀念公園樹廊',
+        },
+        {
+          img: require('./s3/icon4.png'),
+          name: '十年防水',
+          desc: '職人匠心精鑄<br />自信十年防水保固',
+        },
+        {
+          img: require('./s3/icon5.png'),
+          name: '中空樓板',
+          desc: '獨家制音規劃<br />全區唯一高規設計',
+        },
+        {
+          img: require('./s3/icon6.png'),
+          name: '典藏美學',
+          desc: '東方文化美學<br />大竹全心建築地標',
+        },
+      ],
     }
   },
-
-
-  computed: {},
 
   methods: {},
 
   created() {},
-  mounted() {},
+
+  mounted() {
+    setInterval(() => {
+      this.blockIndex = this.blockIndex === 0 ? 1 : 0
+    }, 4000)
+  },
+
+  computed: {},
+
+  watch: {
+    // viewIndex() {
+    //   if (this.viewIndex === 5) {
+    //     this.slideIndex = 0
+    //     console.log(this.slideIndex, 'slideIndex')
+    //   }
+    // },
+  },
 }
 </script>

@@ -3,14 +3,14 @@
 $nav_pc_height: 80px;
 $nav_tablet_height: 60px;
 $nav_phone_height: 0px;
-$logo_pc_width: calc(100vw * 310 / 1920);
-$logo_tablet_width: calc(100vw * 200 / 1920);
-$logo_phone_width: 100px;
+$logo_pc_width: calc(100vw * 250 / 1920);
+$logo_tablet_width: calc(100vw * 150 / 1920);
+$logo_phone_width: 50px;
 
 /* contactInfo */
-$contact_logo_pc_width:calc(100vw * 250 / 1920);
-$contact_logo_tablet_width: 280px;
-$contact_logo_mobile_width: 240px;
+$contact_logo_pc_width:calc(100vw * 600 / 1920);
+$contact_logo_tablet_width: 450px;
+$contact_logo_mobile_width: 280px;
 
 // for calculate
 $nav_pc_height_number: 60;

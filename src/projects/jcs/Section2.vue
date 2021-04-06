@@ -1,40 +1,40 @@
 <template>
   <div class="section2">
-    <iframe class="bg-img" ref="player" src="https://www.youtube.com/embed/78tx7GS-5tY?&enablejsapi=1&playerapiid=ytplayer" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <img src="./s2/02_bg.png" :alt="`${info.caseName}_img`" class="top-img">
-    <img src="./s2/02_bg_bottom.png" :alt="`${info.caseName}_img`" class="bottom-img">
+    <div class="container">
+      <div class="cloud absolute flex">
+        <img src="./s2/bgcc.jpg" :alt="`${info.caseName}_cloud`" class="cloud-item">
+        <img src="./s2/bgcc.jpg" :alt="`${info.caseName}_cloud`" class="cloud-item">
+      </div>
+      <img src="./s2/bg.png" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC">
+      <img src="./s2/bg_m.png" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isMobile" data-aos="fade" data-aos-delay="0">
+      <div class="line"></div>
+      <div class="label">
+        ｜大竹崛起｜
+      </div>
+      <div class="title">
+        並肩青埔 舉目藝文<br />
+        大竹未來拭目以待
+      </div>
+      <div class="desc">
+        放眼青埔未來、跟進藝文價值，大竹地段潛力正在躍升。<br />
+        十分鐘車程，前進全台最大名品城、IKEA、Xpark享受時尚氛圍；<br />
+        享受藝文特區展演活動、市圖總館的城市書香氛圍。<br />
+        大竹並肩桃園地段價值雙引擎，成長動能無與倫比
+      </div>
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
-
 .section2 {
   width: 100%;
   height: 100vh;
-  min-height: size(900);
+  min-height: size(1080);
   max-height: size(1080);
-  // position: relative;
-  // background-color: #fff;
-  // min-height: size(900);
-  // background-image: url('./s2/bg.jpg');
-  // background-size: 100% 100%;
-  // background-position: 0 0;
-  // background-attachment: fixed;
-  // overflow: hidden;
-}
-
-.top-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-}
-
-.bottom-img {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100vw;
+  background-color: #fff;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
 }
 
 .bg-img {
@@ -46,13 +46,85 @@
   display: block;
   object-fit: cover;
   margin-top: 0;
-  // opacity: 0.5;
-
-  &:nth-child(1) {
-    position: relative;
-  }
+  z-index: 2;
 }
 
+.container {
+  @include div_c_pc(1714, 866, 111);
+  overflow: hidden;
+}
+
+.cloud {
+  animation: move 50s 0s linear infinite;
+  top: 0;
+  left: 0;
+  height: 100%;
+  // z-index: 2;
+}
+
+.cloud-item {
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes move {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.line {
+  @include div_r_pc(12.6, 226, 0, 638);
+  background-color: #ff8700;
+}
+.label {
+  @include img_r_pc(208, 21, 400);
+  font-size: size(30.5);
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(4.89);
+  text-align: left;
+  color: #ffffff;
+  white-space: nowrap;
+  z-index: 2;
+}
+.title {
+  @include img_r_pc(544, 65, 63);
+  font-size: size(66.1);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.desc {
+  @include img_l_pc(615, 660, 75);
+  font-size: size(20);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.82;
+  letter-spacing: size(1.2);
+  text-align: left;
+  color: #ffffff;
+  white-space: nowrap;
+  z-index: 3;
+}
+
+/*
+.logo2 {
+  width: size(483);
+  left: size(134);
+  top: size(462);
+}
+*/
 
 @media only screen and (max-width: 1440px) {
 }
@@ -70,300 +142,65 @@
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    height: sizem(715);
-    min-height: auto;
-    max-height: initial;
-    // background-image: url('./s2/bg.jpg');
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
-    overflow: hidden;
+    min-height: sizem(630);
+    max-height: sizem(700);
+    height: calc(100vh - 63px);
+    // background-image: url('./mo/1/bg.png');
+    background-size: cover;
+    background-attachment: scroll;
+  }
+  .bg-img {
+    top: auto;
+    height: auto;
+    min-height: 100%;
+    bottom: 0;
+  }
+  .cloud-item {
+    width: auto;
+    height: 100%;
+    object-fit: initial;
+  }
+  .logo {
+    @include img_c_m(149, 100);
+    z-index: 4;
+    img {
+      width: 100%;
+    }
   }
 
   .title {
-    @include img_r_m(260, 409, 71);
-    font-size: sizem(26);
+    @include img_c_m(360, 219);
+    font-size: sizem(21);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: normal;
-    text-align: left;
-    color: #ffffff;
+    line-height: 1.9;
+    letter-spacing: sizem(1.68);
+    text-align: center;
+    color: #000000;
+    z-index: 4;
     white-space: nowrap;
   }
 
   .hr {
-    @include img_r_m(230, 458, 102);
-    height: sizem(0.5);
-    background: #fff;
+    @include img_c_m(240, 258);
+    height: sizem(1);
+    background-color: #77623c;
+    z-index: 4;
   }
 
   .desc {
-    @include img_r_m(292, 474, 40);
-    font-size: sizem(16);
-    font-weight: bold;
+    @include img_c_m(360, 263);
+    font-size: sizem(20);
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.88;
-    letter-spacing: normal;
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
-  }
-
-  .more {
-    @include img_r_m(179 + 7 + 29, 636, 117);
-    font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.04;
-    letter-spacing: sizem(2.1);
-    text-align: left;
-    color: #ffffff;
-    cursor: pointer;
-    white-space: nowrap;
-
-    img {
-      width: sizem(29);
-    }
-  }
-
-  /* Swipe */
-  .swipe {
-    width: sizem(333);
-    height: sizem(333);
-    min-height: auto;
-    top: sizem(50);
-    left: sizem(0);
-    object-fit: cover;
-  }
-
-  // begin
-  .swipe-fade-leave-to {
-    opacity: 0;
-    z-index: 0;
-  }
-  // end
-  .swipe-fade-enter {
-    opacity: 0;
-    z-index: 1;
-  }
-
-  .swipe-fade-enter-active {
-    transition: all 0.5s ease;
-  }
-
-  .swipe-fade-leave-active {
-    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-
-  // begin
-  // .swipe-left-leave-to {
-  //   margin-left: -100vw;
-  //   z-index: 0;
-  // }
-  // // end
-  // .swipe-left-enter {
-  //   opacity: 0.5;
-  //   margin-left: 0;
-  //   z-index: 1;
-  // }
-
-  // .swipe-left-enter-active {
-  //   transition: all 0.5s ease;
-  // }
-
-  // .swipe-left-leave-active {
-  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  // }
-
-  .swipe-wrap {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .swipe-item {
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    // &:nth-child(1) {
-    //   z-index: 1;
-    //   // opacity: 1;
-    // }
-
-    // &.base {
-    //   z-index: 1;
-    //   opacity: 1;
-    // }
-    // &.active {
-    //   z-index: 2;
-    //   // opacity: 1;
-    // }
-    .slide-name {
-      right: auto;
-      bottom: auto;
-      top: 1.2rem;
-      left: 1.2rem;
-      font-size: sizem(15);
-    }
-  }
-
-  .pagination {
-    width: auto;
-    bottom: size(91);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    justify-content: center;
-  }
-
-  .pagination-dot {
-    padding: 5px;
-    margin: 0 10px;
-    cursor: pointer;
+    line-height: 1.4;
+    letter-spacing: sizem(0.2);
+    text-align: center;
+    color: #000000;
     z-index: 4;
-
-    span {
-      display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
-      box-shadow: 0 0 0 1px #fff;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
-      transition: all 0.5s;
-
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #004ea2;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transition: all 0.3s;
-        transform-origin: center;
-        transform: scale(0);
-      }
-      &.active {
-        &::before {
-          content: '';
-          width: 100%;
-          height: 100%;
-          display: block;
-          background: #004ea2;
-          border-radius: 20px;
-          opacity: 1;
-          position: absolute;
-          top: 0%;
-          // transform: translateY(-50%);
-          left: 0%;
-          transform: scale(1);
-        }
-      }
-    }
-  }
-
-  .swipe-btns {
-    width: 100%;
-    height: 100%;
-    padding: 0 15px;
-    z-index: 3;
-
-    .prev-btn,
-    .next-btn {
-      width: sizem(15);
-      cursor: pointer;
-    }
-  }
-
-  .dialog {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: linear-gradient(to bottom, #004471 80%, #3780b1 100%);
-    z-index: 1000;
-    overflow-y: scroll;
-
-    .dialog-bg {
-      width: 100%;
-      height: 112%;
-      background-image: url('~@/projects/lj/s1/bg_m.png');
-      // padding-top: $nav_pc_height;
-      background-attachment: fixed;
-      background-size: auto;
-      background-position: center center;
-      background-repeat: repeat;
-    }
-
-    .dialog-img {
-      position: absolute;
-      width: sizem(333);
-      height: sizem(333);
-      top: sizem(57);
-      left: 0;
-    }
-
-    .dialog-title {
-      @include img_r_m(302, 405, 34);
-      font-size: sizem(22);
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.81;
-      letter-spacing: normal;
-      text-align: left;
-      color: #ffffff;
-      text-decoration: underline;
-    }
-
-    .dialog-close {
-      @include div_r_m(31, 32, 10, 10);
-      border: 1px solid #fff;
-      cursor: pointer;
-
-      img {
-        width: 90%;
-      }
-    }
-    .dialog-name {
-      right: auto;
-      bottom: auto;
-      top: calc(15.2vw + 1.2rem);
-      left: 1.2rem;
-      font-size: sizem(15);
-      z-index: 2;
-    }
-
-    .dialog-desc {
-      @include img_r_m(313, 454, 18);
-      font-size: sizem(12);
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 2.39;
-      letter-spacing: normal;
-      text-align: left;
-      color: #ffffff;
-      height: auto;
-      margin: 0 0 5em;
-    }
+    color: #000000;
   }
 }
 </style>
@@ -381,7 +218,7 @@ export default {
       isPC,
       isMobile,
       isTablet,
-      isDialog: false,
+      isShow: true,
     }
   },
 
@@ -392,8 +229,5 @@ export default {
   mounted() {},
 
   computed: {},
-
-  watch: {
-  },
 }
 </script>

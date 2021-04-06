@@ -97,11 +97,11 @@ export default {
   background: $contact_bg;
   // background-image: url('../assets/img/contact_bg.jpg');
   background-size: cover;
-  background: linear-gradient(
-    to bottom,
-    rgba(243, 149, 1, 1) 0%,
-    rgba(218, 71, 19, 1) 100%
-  );
+  // background: linear-gradient(
+  //   to bottom,
+  //   rgba(243, 149, 1, 1) 0%,
+  //   rgba(218, 71, 19, 1) 100%
+  // );
   //box-shadow: $contact_shadow;
   display: flex;
   flex-direction: column;
@@ -111,7 +111,7 @@ export default {
   z-index: 3;
   //width: 1200px;
   width: 100%;
-  height: 560px;
+  height: 630px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
@@ -249,11 +249,11 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .contact-info {
-    background: linear-gradient(
-      to bottom,
-      rgba(243, 149, 1, 1) 0%,
-      rgba(218, 71, 19, 1) 100%
-    );
+    // background: linear-gradient(
+    //   to bottom,
+    //   rgba(243, 149, 1, 1) 0%,
+    //   rgba(218, 71, 19, 1) 100%
+    // );
     display: flex;
     width: 100%;
     //  max-width: 95%;
