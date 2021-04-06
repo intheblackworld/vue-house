@@ -11,16 +11,16 @@
         <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
-        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-        </div>
       </div>
+        <div class="swipe-btns absolute flex-ac flex-jb">
+         <div class="prev-btn" @click="decIndex"></div>
+         <div class="next-btn" @click="addIndex"></div>
+        </div>
     </div>
     <div class="f5"><img src="./s4/04_flower.png" :alt="`${info.caseName}_f`"></div>
     <img src="./s4/04_title.png" :alt="`${info.caseName}_f`" class="title-img" data-aos="fade-up" data-aos-delay="200">
     <div class="desc" v-if="isPC" data-aos="fade-up" data-aos-delay="400">
-      珍藏大安富境最後一片濱水波光，公園水岸雙景觀，富饒市中心擁攬大山大水無邊眼界；收藏公館師大景美核心繁華，羅斯福路雙商圈齊鳴綻放。集文教區靜謐素雅，商業區富庶豐饒，政經區自若安居，景觀區悠然韻味，入則寧靜，出則富麗，藏景藏靜藏繁華，簡單，也不簡單。
+      河岸涼風徐徐吹拂，乘著綠園道蔥郁濃蔭，悠哉散步4分鐘即可到達捷運萬隆站，2站即至大坪林站串接中和、板橋、新莊，3站到古亭站銜接中和新蘆線，6站抵達轉運大站台北車站，南來北往快意暢行。出門直接上水源快速道路，快接萬華、中正、新店；1分鐘進40米寬羅斯福路，收納西門、台北車站、中正紀念堂、古亭、公館於掌心，富裕榮華沿線自藏，繁華近了，節奏緩了，心也自然放慢下來。
     </div>
     <div class="desc" v-if="isMobile" data-aos="fade-up" data-aos-delay="400">
       乘著綠園道蔥郁濃蔭，悠哉散步4分鐘即可到達捷運萬隆站，6站抵達轉運大站台北車站，南來北往快意暢行。出門直接上水源快速道路，快接萬華、中正、新店；1分鐘進40米寬羅斯福路，收納西門、台北車站、中正紀念堂、古亭、公館於掌心，富裕榮華沿線自藏。
@@ -369,13 +369,55 @@
 .swipe-btns {
   width: 100%;
   height: 100%;
-  padding: 0 15px;
+  padding: 0 0;
   z-index: 3;
-
-  .prev-btn,
-  .next-btn {
-    width: size(20);
-    cursor: pointer;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+    .prev-btn,
+    .next-btn{
+      position: relative;
+      height: 100%;
+      width: 2em;
+      font-size:size(20);
+      cursor: pointer;
+      &::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height:100%;
+        top: 0;
+        left: 0;
+        transform:translateX(100%);
+        background-color: #cc5b4e88;
+        transition:all 0.3s;
+      }
+      &::after{
+        content: "";
+        width: 1em;
+        height: 1em;
+        position: absolute;
+        top: calc(50% - 0.5em);
+        left: calc(50% - 0.75em);
+        border: solid #FFF;
+        border-width: 0.1em 0.1em 0 0;
+        transform: rotate(45deg) translate(-10%,10%);
+      }
+      &:hover:before{
+        transform:translateX(0%);
+      }
+      &:hover:after{
+        animation: btn 0.5s ease-in-out infinite alternate;
+      }
+    }
+    .prev-btn{
+      transform:scaleX(-1);
+    }
+}
+@keyframes btn {
+  to {
+    transform: rotate(45deg) translate(10%,-10%);
   }
 }
 
@@ -526,6 +568,7 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
+  z-index: 4;
   }
 
   .swipe-item {
@@ -616,15 +659,18 @@
   }
 
   .swipe-btns {
-    width: 100%;
-    height: 100%;
-    padding: 0 15px;
-    z-index: 3;
-
+    width: 116%;
+    left: -8%;
     .prev-btn,
-    .next-btn {
-      width: sizem(15);
-      cursor: pointer;
+    .next-btn{
+      font-size:sizem(15);
+      &::before{
+        background-color: #cc5b4e00;
+      }
+      &::after{
+        border-width: 0.15em 0.15em 0 0;
+        animation: btn 0.5s ease-in-out infinite alternate;
+      }
     }
   }
 }

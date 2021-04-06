@@ -11,11 +11,13 @@
         <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
-        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-          <img src="./all/slider_left.png" alt="" class="prev-btn" @click="decIndex">
-          <img src="./all/slider_right.png" alt="" class="next-btn" @click="addIndex">
-        </div>
       </div>
+        <div class="swipe-btns absolute flex-ac flex-jb">
+       <!--   <img src="./all/slider_left.png" alt="" class="prev-btn" @click="decIndex">
+          <img src="./all/slider_right.png" alt="" class="next-btn" @click="addIndex">  -->
+          <div class="prev-btn" @click="decIndex"></div>
+          <div class="next-btn" @click="addIndex"></div>
+        </div>
     </div>
     <img src="./s3/03_flower.png" :alt="`${info.caseName}_f`" class="f4" v-if="isPC">
     <img src="./mobile/03/03_flower_m.png" :alt="`${info.caseName}_f`" class="f4" v-if="isMobile">
@@ -289,15 +291,57 @@
 .swipe-btns {
   width: 100%;
   height: 100%;
-  padding: 0 15px;
+  padding: 0 0;
   z-index: 3;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+    .prev-btn,
+    .next-btn{
+      position: relative;
+height: 100%;
+width: 2em;
+font-size:size(20);
+      cursor: pointer;
+      &::before{content: "";
+      position: absolute;
+      width: 100%;
+      height:100%;
+      top: 0;
+      left: 0;
+      transform:translateX(100%);
+background-color: #cc5b4e88;
+transition:all 0.3s;
 
-  .prev-btn,
-  .next-btn {
-    width: size(20);
-    cursor: pointer;
+      }
+      &::after{content: "";
+      width: 1em;
+      height: 1em;
+      position: absolute;
+      top: calc(50% - 0.5em);
+      left: calc(50% - 0.75em);
+      border: solid #FFF;
+      border-width: 0.1em 0.1em 0 0;
+      transform: rotate(45deg) translate(-10%,10%);
+      }
+    &:hover:before{
+      transform:translateX(0%);
+    }
+    &:hover:after{
+  animation: btn 0.5s ease-in-out infinite alternate;
+    }
+    }
+    .prev-btn{
+        transform:scaleX(-1);
+    }
+}
+@keyframes btn {
+  to {
+    transform: rotate(45deg) translate(10%,-10%);
   }
 }
+
 
 @media only screen and (max-width: 1440px) {
 }
@@ -368,6 +412,7 @@
     top: sizem(380);
     left: sizem(25);
     object-fit: cover;
+    overflow: initial;
   }
 
   // begin
@@ -413,6 +458,7 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
+  z-index: 4;
   }
 
   .swipe-item {
@@ -503,15 +549,19 @@
   }
 
   .swipe-btns {
-    width: 100%;
-    height: 100%;
-    padding: 0 15px;
-    z-index: 3;
-
+    width: 116%;
+    left: -8%;
     .prev-btn,
-    .next-btn {
-      width: sizem(30);
-      cursor: pointer;
+    .next-btn{
+      font-size:sizem(15);
+      &::before{
+background-color: #cc5b4e00;
+      }
+      &::after{
+      border-color: #d67f76;
+      border-width: 0.15em 0.15em 0 0;
+        animation: btn 0.5s ease-in-out infinite alternate;
+      }
     }
   }
 }
