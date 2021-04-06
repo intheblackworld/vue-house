@@ -32,6 +32,7 @@
     <vue-lazy-component
       class="section"
       id="section5"
+      style="z-index: 2;"
     >
       <Section5 />
     </vue-lazy-component>

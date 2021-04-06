@@ -13,7 +13,9 @@
     <div class="video_box">
       <div v-if="!isMobile" :id="`youtube-player-${id}`" ref="player" class="video-ifame"></div>
     </div>
-    <img src="~@/projects/dss/s2_play_btn.png" alt="" class="play-btn" v-if="isMobile" @click="isDialog = true">
+    <img src="./s12/madia_flower_2.png" :alt="`${info.caseName}_f3`" class="f12">
+    <img src="./s12/madia_flower_1.png" :alt="`${info.caseName}_f3`" class="f13">
+    <img src="./s12/player_icon.png" alt="" class="play-btn" v-if="isMobile" @click="isDialog = true">
     <div class="video" v-if="isDialog && isMobile">
       <div class="video_box_dialog">
         <iframe title="youtube" src="https://www.youtube.com/embed/ay9pp7TRauo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -24,7 +26,7 @@
       新聞報導
     </h3>
     <div class="line" data-aos="zoom-in-right" data-aos-delay="200"></div>
-    <swiper :options="swiperOption" ref="mySwiper" data-aos="fade" data-aos-delay="1000">
+    <swiper :options="swiperOption" ref="mySwiper">
       <!-- <div class="content"> -->
       <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="item">
         <a :href="slide.link" target="_blank">
@@ -34,7 +36,7 @@
         </a>
       </swiper-slide>
       <!-- </div> -->
-      <div class="swiper-pagination" slot="pagination"></div>
+      <div class="swiper-pagination" slot="pagination" v-if="isMobile"></div>
       <div class="swiper-button-prev" slot="button-prev">
         <img src="./all/prev-btn.png" alt />
       </div>
@@ -207,6 +209,27 @@
   top: 33%;
 }
 
+.f12 {
+  @include img_l_pc(588, -200, -70);
+  transform-origin: 0% 90%;
+  transform: skewY(2deg);
+  z-index: 5;
+  animation: flow1 4s 0s ease-in-out infinite alternate;
+}
+
+.f13 {
+  @include img_r_pc(786, 590, -100);
+  transform-origin: 100% 80%;
+  transform: skewY(2deg);
+  z-index: 5;
+  animation: flow1 3s 0s ease-in-out infinite alternate;
+}
+@keyframes flow1 {
+  to {
+    transform: skewY(0);
+  }
+}
+
 @media only screen and (max-width: 1440px) {
   .bg-img {
   }
@@ -293,7 +316,7 @@
   .play-btn {
     @include img_c_m(32, 80);
     cursor: pointer;
-    z-index: 10;
+    z-index: 3;
   }
 
   .video {
@@ -397,6 +420,7 @@
 // @ is an alias to /src
 import { isMobile } from '@/utils'
 import slider from '@/mixins/slider.js'
+import info from '@/info'
 import 'swiper/dist/css/swiper.css'
 
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
@@ -412,6 +436,7 @@ export default {
   data() {
     return {
       isMobile,
+      info,
       player: '',
       id: 'ay9pp7TRauo',
       isDialog: false,
@@ -421,10 +446,10 @@ export default {
         spaceBetween: isMobile ? 0 : 30,
         slidesPerColumn: isMobile ? 1 : 1,
 
-        autoplay: {
-          delay: 30000,
-          disableOnInteraction: true,
-        },
+        // autoplay: {
+        //   delay: 30000,
+        //   disableOnInteraction: true,
+        // },
         loop: true,
         navigation: {
           nextEl: '.swiper-button-next',
