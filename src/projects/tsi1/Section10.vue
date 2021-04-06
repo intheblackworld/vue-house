@@ -143,7 +143,7 @@
   height: size(978);
   min-height: size(978);
   max-height: size(978);
-  margin-top: size(120);
+  margin-top: size(-35);
   position: relative;
   // background-color: #fff;
   // min-height: size(900);
@@ -156,7 +156,7 @@
 
 .bg-img {
   width: 100%;
-  height: 100%;
+  height: 104%;
   position: absolute;
   top: 0;
   left: 0;
@@ -269,7 +269,7 @@
 }
 
 .c1 {
-  @include img_l_pc(493, 0, 0);
+  @include img_l_pc(493, 30, 0);
   transform: translateX(-10%);
   z-index: 2;
 }

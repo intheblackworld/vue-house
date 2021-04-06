@@ -68,19 +68,19 @@
   // background-position: 0 0;
   // background-attachment: fixed;
   // overflow: hidden;
-&::after,
-&::before{
-  content: "";
-  width: 120%;
-  height: size(120);
-  position: absolute;bottom:  size(-90);left:-10%;
-  background: url("./all/section_bg.jpg") fixed;
-  background-size: cover;
-  border-radius: 100% 100% 0 0;z-index: 2;
-}
-&::after{
-  border-radius: 0 0 100% 100%;top:  size(-90);bottom: auto;
-}
+//&::after,
+//&::before{
+//  content: "";
+//  width: 120%;
+//  height: size(120);
+//  position: absolute;bottom:  size(-90);left:-10%;
+//  background: url("./all/section_bg.jpg") fixed;
+//  background-size: cover;
+//  border-radius: 100% 100% 0 0;z-index: 2;
+//}
+//&::after{
+//  border-radius: 0 0 100% 100%;top:  size(-90);bottom: auto;
+//}
 
 }
 
