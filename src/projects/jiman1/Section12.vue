@@ -155,14 +155,10 @@
   // overflow: visible;
 
   a {
-    text-decoration: none;
-  }
-
-  .content {
-    width: 100%;
+    display: block;
+    width: size(472);
     height: 100%;
-    position: absolute;
-    overflow: hidden;
+    text-decoration: none;
   }
 
   .item-title {
@@ -370,6 +366,13 @@
       top: 0;
     }
 
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+    }
+
     .item-title {
       width: sizem(304);
       height: sizem(25);
@@ -471,7 +474,8 @@ export default {
         {
           src: require('./s12/news_img_2.jpg'),
           title: '蘋果新聞',
-          link: 'https://tw.feature.appledaily.com/house/homenews/article/212375?utm_source=line&utm_medium=messenger&utm_campaign=house_article_share&utm_content=share_link',
+          link:
+            'https://tw.feature.appledaily.com/house/homenews/article/212375?utm_source=line&utm_medium=messenger&utm_campaign=house_article_share&utm_content=share_link',
           desc:
             '成立40年的老字號建設公司沅利建設，在台北市有不少經典業績作品...',
         },
