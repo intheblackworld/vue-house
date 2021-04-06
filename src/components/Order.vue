@@ -497,11 +497,12 @@ export default {
       display: block;
     }
     .order-title {
-      width: 290px;
+      width: 310px;
       padding-top: 10px;
       padding-bottom: 0px;
       font-size: calc(100vw * 47 / 375);
       letter-spacing: 4px;
+      white-space: nowrap;
     }
 
     .order-subtitle {

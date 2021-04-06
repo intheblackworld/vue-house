@@ -1,16 +1,16 @@
 <template>
   <div class="section1">
     <img src="./s1/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img">
-    <img src="./s1/bg.png" :alt="`${info.caseName}_img`" class="grass">
+    <img src="./s1/bg.png" :alt="`${info.caseName}_img`" class="grass" data-aos="fade-top" data-aos-delay="800">
     <div>
-      <img src="./s1/logo.png" :alt="`${info.caseName}_top`" class="logo" v-if="isPC" data-aos="fade-top" data-aos-delay="200">
+      <img src="./s1/logo.png" :alt="`${info.caseName}_top`" class="logo" data-aos="fade-top" data-aos-delay="200">
       <h3 class="title" data-aos="fade-top" data-aos-delay="400">
         ｜植感生活．職人建築｜
       </h3>
-      <h3 class="subtitle">
+      <h3 class="subtitle" data-aos="fade-top" data-aos-delay="600">
         豐景 <span>2~4</span> 房
       </h3>
-      <h3 class="hint">
+      <h3 class="hint" data-aos="fade-top" data-aos-delay="800">
         寓上春樹<span>NO.2</span>
       </h3>
     </div>
@@ -123,104 +123,72 @@
     min-height: sizem(665);
     max-height: sizem(812);
     height: calc(100vh - 63px);
-    margin: 0 0 -12vw 0;
-    background-size: auto size-m(750);
+    // margin: 0 0 -12vw 0;
+    // background-size: auto size-m(750);
     z-index: initial;
   }
 
-  .title1 {
-    @include img_c_m(313, 258);
-    // top: calc(50% + 100vw * (505 - 540) / 1920);
-    font-size: sizem(33);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: normal;
-    text-align: left;
-    color: #fff000;
-    white-space: nowrap;
-    span {
-      font-size: sizem(38);
+  .grass {
+    @include img_r_m(375, 0, -40);
+    top: auto;
+    bottom: 0;
+    transform-origin: bottom;
+    animation: grass 4s ease-in-out alternate infinite;
+  }
+
+  .logo {
+    @include img_l_m(195, 50, 88);
+  }
+
+  @keyframes grass {
+    to {
+      transform: skewX(3deg);
     }
   }
 
-  .title2 {
-    @include img_c_m(306, 310);
-    // top: calc(50% + 100vw * (586 - 540) / 1920);
-    font-size: sizem(26);
-    font-weight: 900;
+  .title {
+    @include img_r_m(290, 409, 43);
+    font-size: sizem(23);
+    font-weight: 300;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: normal;
-    text-align: left;
+    line-height: 1.3;
+    letter-spacing: sizem(3.68);
+    text-align: center;
     color: #ffffff;
     white-space: nowrap;
+  }
+
+  .subtitle {
+    @include img_l_m(290, 437, 46);
+    font-size: sizem(54);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.19;
+    letter-spacing: normal;
+    text-align: left;
+    color: #231815;
+    white-space: nowrap;
     span {
-      font-size: sizem(29);
+      font-size: sizem(56);
+      font-weight: 500;
     }
   }
 
-  .top {
-    position: absolute;
-    width: sizem(310);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    top: calc(50% + 100vw * (70 - 302) / 375);
-  }
-  .c1 {
-    left: 0;
-    top: calc(50% - 77vw);
-    width: sizem(97);
-    transform: translateX(-10%);
-  }
-  .c2 {
-    left: -6.7vw;
-    top: calc(50% + 48vw);
-    width: sizem(262);
-    transform: translateX(-8%);
-  }
-  .c3 {
-    right: 55vw;
-    top: calc(50% + 72vw);
-    width: sizem(132);
-    transform: translateX(30%);
-    animation-direction: alternate-reverse;
-  }
-  .c4 {
-    right: -1.5vw;
-    top: calc(50% + 60vw);
-    width: sizem(369);
-    transform: translateX(5%);
-    animation-direction: alternate-reverse;
-  }
-
-  .t {
-    position: absolute;
-    width: sizem(310);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    top: calc(50% + 100vw * (650 - 302) / 375);
-  }
-  .o {
-    width: sizem(40);
-    right: 19.7vw;
-    top: calc(50% + 100vw * (676 - 302) / 375);
-  }
-
-  .top-logo {
-    @include img_c_m(315, 135);
-  }
-
-  .top-title1 {
-    @include img_c_m(315, 274);
-  }
-
-  .top-title2 {
-    @include img_c_m(312, 409);
+  .hint {
+    @include img_r_m(113, 363, 52);
+    font-size: sizem(16);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.19;
+    letter-spacing: sizem(0.32);
+    text-align: left;
+    color: #00101d;
+    span {
+      font-weight: 500;
+    }
   }
 }
 </style>

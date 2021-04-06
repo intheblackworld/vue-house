@@ -9,13 +9,13 @@
             alt
              v-scroll-to="{ element: `#section1`, offset: offset }"
           />
-          <div
+          <!-- <div
             class="menu"
             @click="toggleSidebar"
             v-show="!isOpen"
           >
             <font-awesome-icon icon="bars" />
-          </div>
+          </div> -->
           <div :class="`mask ${isOpen ? 'open' : ''}`">
             <div
               class="close"
@@ -30,17 +30,17 @@
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
             <li
               :key="item.name"
-              v-scroll-to="{ element: `#${item.section}`, offset: item.offset }"
+              v-scroll-to="{ element: `#${item.section}`, offset: offset }"
               v-for="item in list"
               class="flex-c"
               @click="toggleSidebar"
             >
               <span class="link">
-                <span class="flex-c">
-                  <h1
+                <span>
+                  <p
                     class="title"
                     v-html="item.name"
-                  ></h1>
+                  ></p>
                   <span class="subTitle">{{item.subTitle}}</span>
                 </span>
               </span>
@@ -92,24 +92,28 @@ export default {
 }
 </script>
 <style lang="scss">
-// .navigation {
-//   .title {
-//     font-size: 19px !important;
-//     width: 140px;
-//     height: 40px;
-//     color: #fff;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     background-image: linear-gradient(to right, #d70032 0%, #eb5500 100%);
-//     border-radius: 20px / 20px;
-//     position: relative;
-//     z-index: 3;
-//     &:hover {
-//       background-image: linear-gradient(to left, #d70032 0%, #eb5500 100%);
-//     }
-//   }
-// }
+@import '../assets/style/function.scss';
+.navigation {
+  .title {
+    font-size: size(30.5);
+    width: size(137);
+    // width: 140px;
+    height: 40px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // padding: 0 size(10);
+    // background-image: linear-gradient(to right, #d70032 0%, #eb5500 100%);
+    border-radius: 20px / 20px;
+    position: relative;
+    white-space: nowrap;
+    z-index: 3;
+    &:hover {
+      // background-image: linear-gradient(to left, #d70032 0%, #eb5500 100%);
+    }
+  }
+}
 </style>
 <style lang="scss" scoped>
 @import '../assets/style/variableColor.scss';
@@ -117,9 +121,9 @@ export default {
 @import '../assets/style/function.scss';
 
 .navigation {
- // background-color: $nav_bg;
+  background-color: $nav_bg;
   // background-image: $nav_bg;
- // background-size: cover;
+  background-size: cover;
   height: $nav_pc_height;
   z-index: 10;
   position: fixed;
@@ -127,13 +131,20 @@ export default {
   width: 100vw;
   display: flex !important;
   align-items: center;
- // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
-
-
- &::after{content:"";width: 100%; height: 100%;background:url("data:image/svg+xml,%3Csvg version='1.1' id='圖層_1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 1920 80' xml:space='preserve'%3E%3Cpath fill='%23f15a24' d='M960,68.6c339.9,0,664,4,960,11.4V0H0v80C296,72.7,620.1,68.6,960,68.6z'/%3E%3C/svg%3E") no-repeat center;
- background-size: cover;
- position: absolute;top: 0;left: 0;}
-
+  transition: all 0.3s;
+  // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+  .logo {
+    opacity: 0;
+    transition: all .3s;
+  }
+  &.min {
+    height: 70px;
+    background-image: url('~@/projects/jcs/s1/bg.jpg');
+    .logo {
+      opacity: 1;
+      width: size(218);
+    }
+  }
 }
 
 .nav-container {
@@ -148,7 +159,7 @@ export default {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content:center;
+  justify-content: flex-end;
   position: relative;
   a {
     display: block;
@@ -176,27 +187,20 @@ export default {
   align-items: center;
   justify-content: center;
   height: 100%;
- // overflow: hidden;
+  overflow: hidden;
   padding-left: 30px;
   li {
     height: 100%;
-
-    &:nth-last-child(1) {
-      .link {
-        border-right: none;
-      }
-    }
   }
 
   .link {
     color: $nav_link_color;
-    height: 100%;
-   // border-right: 1px solid #fff;
+    height: 22px;
     text-align: center;
     display: block;
     cursor: pointer;
-    padding: 0 1.2em;
-    // margin: 0 10px;
+    padding: 0 0px;
+    // margin: 0 5px;
     transition: all 0.8s;
     display: flex;
     align-items: center;
@@ -204,68 +208,62 @@ export default {
     position: relative;
     // overflow: hidden;
     // border-right: 1px solid $nav_link_hover_bg;
-      font-size: 24px !important;
-      line-height: 1.6;
 
     &:hover {
       color: $nav_link_hover_color;
       // background: $nav_link_hover_bg;
     }
 
-     &::before {
-       content: '';
-       width:1em;
-       height:1em;
-       display: block;
-       background:#ffff00; // second bg
-       position: absolute;
-       border-radius: 50%;
-     //  transform: skewX(-20deg);
+    // &::before {
+    //   content: '';
+    //   width: 0%;
+    //   height: 100%;
+    //   display: block;
+    //   background: $nav_link_hover_bg; // second bg
+    //   position: absolute;
+    //   transform: skewX(-20deg);
     //   left: -10%;
     //   opacity: 1;
-       top:calc(50% - 1.5em);
-       z-index: 2;
-       transition: all 0.3s cubic-bezier(0.77, 0, 0.175, 1);transform-origin: 50% 50%;
-       box-shadow: 0 0 0.03em #fff;
-     transform:scale(0.3) translateX(0%);
-     }
+    //   top: 0;
+    //   z-index: 2;
+    //   transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+    //   // box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
+    // }
 
-     &:hover::before {
-       //opacity: 1;
-  animation: light 0.6s linear alternate infinite;
-      // width: 70%;
-     //  top:calc(50% + 0.8em);
-     transform:scale(7) translateY(-16%);
-   }
+    // &::after {
+    //   content: '';
+    //   width: 0%;
+    //   height: 100%;
+    //   display: block;
+    //   background: #fff; // first bg
+    //   position: absolute;
+    //   transform: skewX(-20deg);
+    //   left: -10%;
+    //   opacity: 0;
+    //   top: 0;
+    //   z-index: 1;
+    //   transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
+    //   // box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
+    // }
+    // &:hover::before,
+    // &:hover::before {
+    //   opacity: 1;
+    //   width: 116%;
+    // }
     // &:hover::after,
     // &:hover::after {
     //   opacity: 1;
     //   width: 120%;
     // }
 
-    /*
-@keyframes light {
-  0%{
-    transform: translateX(-5%);
-  }
-  to {
-    transform: translateX(5%);
-  }
-}
-*/
-
-
     .title {
-      font-size: 1em !important;
-      font-weight: 800;
+      font-size: 24px;
       position: relative;
-   //   color: #fff;
       z-index: 3;
       > span {
-      //  font-size: 24px !important;
+        font-size: 24px !important;
       }
     }
-    h1.title{font-family: "Noto Serif TC";}
 
     .subTitle {
       color: $nav_link_subtitle_color;
@@ -336,14 +334,10 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .navigation {
-    background-color: transparent !important;
     height: $nav_phone_height;
   //  background-color: #fff;
     height: 70px;
     justify-content: center;
-    &::after{display: none;}
-
-
   &.min {
     .logo {
     width: $logo_phone_width;
@@ -361,8 +355,10 @@ export default {
 
   .logo {
     width: $logo_phone_width;
-    left: 15px;
-    display: none;
+    left: size-m(20);
+    top: 50%;
+  transform: translate(0, -40%);
+    // left: 45px;
   }
 
   .nav {
@@ -373,63 +369,25 @@ export default {
   .menu {
     display: block;
     position: absolute;
+    z-index: 3;
     top: 15px;
     right: 15px;
-    width: sizem(50);
-    height: sizem(50);
-    padding-top: sizem(8);
-    background-color: $mobile_nav_background;
-    z-index: 112;
+    font-size: 30px;
 
     svg {
-      width: sizem(35);
-      height: sizem(35);
       color: $nav_btn_color;
     }
   }
 
-  .navlist {
-    position: absolute;
-    z-index: 111;
-    background: transparent;
-    background-size: cover;
-    width: 0%;
-    right: 0;
-    top: $nav_phone_height;
-    height: calc(100vh - #{$nav_phone_height});
-    text-align: center;
-    transition: all 0.3s ease-in;
+  .close {
     display: block;
-    transform: translateX(40%);
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    li {
-      width: 100vw;
-      height: 70px;
-      margin-bottom:0;
-    }
-
-    .link {
-      height: 50px;
+    position: absolute;
+    z-index: 3;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    img {
       width: 100%;
-      font-size: 17px;
-      margin-top:0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      display: none;
-
-      img,
-      span {
-        display: block;
-      }
-      span {
-        line-height: 16px;
-      }
     }
   }
 

@@ -5,25 +5,39 @@
     <img src="./s5/t.png" :alt="`${info.caseName}_img`" class="grass">
 
     <div class="content">
-      <div class="line"></div>
-      <div class="label">
+      <div class="line" data-aos="zoom-in-down" data-aos-delay="200">
+
+			</div>
+      <div class="label" data-aos="fade-left" data-aos-delay="400">
         ｜質感生活｜
       </div>
-      <div class="title">
+      <div class="title" v-if="isPC" data-aos="fade-left" data-aos-delay="600">
         豐收生活 把日子過得舒舒服服
       </div>
-      <div class="subtitle">
+      <div class="title" v-if="isMobile" data-aos="fade-left" data-aos-delay="600">
+        豐收生活<br />把日子過得舒舒服服
+      </div>
+      <div class="subtitle" data-aos="fade-left" data-aos-delay="800">
         大竹路滿分商圈、書香學校、陂塘步道、林映樹廊…活出舒適小日子
       </div>
-      <div class="list-info flex-ac flex-jb">
+      <div class="list-info flex-ac flex-jb" v-if="isPC" data-aos="fade-left" data-aos-delay="800">
         <div v-for="item in list" :key="item.title" class="info">
           <img :src="item.img" alt="">
           <div class="info-title" v-html="item.title"></div>
           <div class="info-desc" v-html="item.desc"></div>
         </div>
       </div>
+      <div class="list-info flex-ac flex-jb" v-if="isMobile" data-aos="fade-left" data-aos-delay="800">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(item, index) in list" :key="item.title" class="info" v-show="Math.round((slideIndex + 1) / 2) === index + 1">
+            <img :src="item.img" alt="">
+            <div class="info-title" v-html="item.title"></div>
+            <div class="info-desc" v-html="item.desc"></div>
+          </div>
+        </transition-group>
+      </div>
     </div>
-    <swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="800">
+    <swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" @slideChangeTransitionEnd="slideChanged">
       <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide + index" class="item">
         <img :src="slide" :class="`item-img`" />
       </swiper-slide>
@@ -198,7 +212,7 @@
 @media screen and (max-width: 767px) {
   .section5 {
     width: 100vw;
-    height: sizem(610);
+    height: sizem(898);
     min-height: auto;
     max-height: initial;
     // background-image: url('./all/section_bg.jpg');
@@ -208,94 +222,131 @@
     // background-attachment: fixed;
     overflow: hidden;
   }
-  .img {
-    @include img_r_m(160, 120, 5);
+  .grass {
+    @include img_r_m(173, -100, 0);
+    // top: auto;
+    // bottom: sizem(-80);
+    transform-origin: bottom;
+    animation: grass 4s ease-in-out alternate infinite;
   }
 
-  .title1 {
-    @include img_l_m(325, 63, 25);
-    font-size: sizem(30);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: normal;
-    text-align: left;
-    white-space: nowrap;
-    color: #fff;
-    span {
-      display: block;
-      font-size: 0.666em;
+  @keyframes grass {
+    to {
+      transform: skewX(3deg);
     }
   }
 
-  .hr {
-    @include img_l_m(142, 60, 25);
-    height: sizem(1);
-    background: #333;
+  // begin
+  .trans-leave-to {
+    opacity: 0;
+    z-index: 0;
+  }
+  // end
+  .trans-enter {
+    opacity: 0;
+    z-index: 1;
   }
 
-  .title2 {
-    @include img_l_m(325, 17, 25);
-    font-size: sizem(20);
-    font-weight: bold;
+  .trans-enter-active {
+    transition: all 1.8s ease;
+  }
+
+  .trans-leave-active {
+    transition: all 1.8s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  .line {
+    @include div_l_m(7, 177, 39, 33);
+    background-color: #00808e;
+  }
+  .label {
+    @include img_l_m(116, 39, 55);
+    font-size: sizem(17);
+    font-weight: 400;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.05;
+    line-height: 1.53;
+    letter-spacing: sizem(2.72);
+    text-align: left;
+    color: #595757;
+    white-space: nowrap;
+    z-index: 2;
+  }
+  .title {
+    @include img_l_m(250, 72, 55);
+    font-size: sizem(25);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
     letter-spacing: normal;
     text-align: left;
-    color: #333333;
+    color: #595757;
     white-space: nowrap;
-    color: #fff;
+    z-index: 2;
   }
 
-  .desc {
-    @include img_l_m(170, 140, 25);
-    font-size: sizem(14);
-    font-weight: 400;
-    letter-spacing: 0.01em;
-    line-height: 1.6;
-    text-align: justify;
-    color: #fff;
-    white-space: normal;
-  }
-
-  .more {
-    @include img_r_m(179 + 7 + 29, 636, 117);
-    font-size: sizem(15);
+  .subtitle {
+    @include img_l_m(300, 156, 55);
+    font-size: sizem(16);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.04;
-    letter-spacing: sizem(2.1);
+    line-height: 1.63;
+    letter-spacing: sizem(0.96);
     text-align: left;
-    color: #ffffff;
-    cursor: pointer;
-    white-space: nowrap;
+    color: #595757;
+    white-space: normal;
+    z-index: 3;
+  }
 
+  .list-info {
+    @include img_c_m(310, 233);
     img {
-      width: sizem(29);
+      width: sizem(245);
+      margin: 0 auto sizem(17);
     }
-  }
-  .btns {
-    @include img_c_m(325, 305);
+    .info {
+			position: absolute;
+			top: 0;
+			left: 0;
+      width: sizem(310);
+      padding: 0;
+    }
+
+    .info-title {
+      width: sizem(310);
+      font-size: sizem(22);
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.18;
+      letter-spacing: normal;
+      text-align: left;
+      color: #000000;
+			margin-bottom: sizem(15);
+    }
+
+    .info-desc {
+      width: sizem(310);
+      font-size: sizem(15);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.53;
+      letter-spacing: sizem(0.6);
+      text-align: left;
+      color: #595757;
+    }
   }
 
-  .btn {
-    width: sizem(152);
-    height: sizem(27);
-    &:hover {
-      animation: btn 0.5s infinite alternate;
-      background: #fff0;
-      box-shadow: inset 0 0 0 1px #000000;
-      color: #000;
-    }
-    &.active:hover {
-      animation: none;
-      background: #ff662abb;
-      box-shadow: none;
-      color: #fff;
-    }
+  .swiper-container {
+    @include img_c_m(375, 577);
+  }
+
+  .item-img {
+    width: 90%;
+    margin: 0 auto;
   }
 
   /* Swipe */
@@ -487,7 +538,7 @@ export default {
       isDialog: false,
       swiperOption: {
         slidesPerView: isMobile ? 1 : 3,
-        slidesPerGroup: 3,
+        slidesPerGroup: isMobile ? 1 : 3,
         spaceBetween: isTablet ? 20 : 30,
         slidesPerColumn: isMobile ? 1 : 1,
         allowSlidePrev: isMobile ? true : true,
@@ -503,26 +554,35 @@ export default {
           prevEl: '.swiper-button-prev',
         },
       },
-      slideList: [
-        require('./s5/1-1.jpg'),
-        require('./s5/2-1.jpg'),
-        require('./s5/3-1.jpg'),
-        require('./s5/1-2.jpg'),
-        require('./s5/2-2.jpg'),
-        require('./s5/3-2.jpg'),
-        require('./s5/1-3.jpg'),
-        require('./s5/2-1.jpg'),
-        require('./s5/3-3.jpg'),
-        require('./s5/1-4.jpg'),
-        require('./s5/2-2.jpg'),
-        require('./s5/3-1.jpg'),
-        require('./s5/1-5.jpg'),
-        require('./s5/2-1.jpg'),
-        require('./s5/3-2.jpg'),
-        require('./s5/1-6.jpg'),
-        require('./s5/2-2.jpg'),
-        require('./s5/3-3.jpg'),
-      ],
+      slideList: isMobile
+        ? [
+            require('./s5/1-1.jpg'),
+            require('./s5/1-2.jpg'),
+            require('./s5/2-1.jpg'),
+            require('./s5/2-2.jpg'),
+            require('./s5/3-1.jpg'),
+            require('./s5/3-2.jpg'),
+          ]
+        : [
+            require('./s5/1-1.jpg'),
+            require('./s5/2-1.jpg'),
+            require('./s5/3-1.jpg'),
+            require('./s5/1-2.jpg'),
+            require('./s5/2-2.jpg'),
+            require('./s5/3-2.jpg'),
+            require('./s5/1-3.jpg'),
+            require('./s5/2-1.jpg'),
+            require('./s5/3-3.jpg'),
+            require('./s5/1-4.jpg'),
+            require('./s5/2-2.jpg'),
+            require('./s5/3-1.jpg'),
+            require('./s5/1-5.jpg'),
+            require('./s5/2-1.jpg'),
+            require('./s5/3-2.jpg'),
+            require('./s5/1-6.jpg'),
+            require('./s5/2-2.jpg'),
+            require('./s5/3-3.jpg'),
+          ],
       list: [
         {
           img: require('./s5/icon1.png'),
@@ -546,7 +606,18 @@ export default {
     }
   },
 
-  methods: {},
+  methods: {
+		slideChanged(e) {
+      const swiper = this.$refs.mySwiper.swiper
+      if (swiper.isEnd) {
+        this.slideIndex = 0
+      } else if (swiper.isBeginning) {
+        this.slideIndex = swiper.slides.length - 3
+      } else {
+        this.slideIndex = swiper.activeIndex - 1
+      }
+    },
+	},
 
   created() {},
 

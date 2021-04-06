@@ -3,7 +3,8 @@
     <div class="bg-img">
       <Loading :loading="load" />
       <SideNavigation v-if="isMobile" />
-      <Navigation v-if="!isMobile" />
+      
+      <Navigation v-if="!isMobile" :min="isNavMin" />
       <!-- <Indigator :viewIndex="viewIndex" /> -->
       <!-- <full-page
       ref="fullPage"
@@ -130,6 +131,7 @@ export default {
       isSide: false,
       load: false,
       viewIndex: 0,
+      isNavMin: false,
       // action: {
       //   moveTo: () => {},
       // },
@@ -177,29 +179,38 @@ export default {
   methods: {
     init() {},
     onScroll() {
-      // 获取所有锚点元素
-      const navContents = document.querySelectorAll('.section')
-      // 所有锚点元素的 offsetTop
-      const offsetTopArr = []
-      navContents.forEach(item => {
-        offsetTopArr.push(item.offsetTop)
-      })
-      // 获取当前文档流的 scrollTop
       const scrollTop =
         document.documentElement.scrollTop || document.body.scrollTop
       // 定义当前点亮的导航下标
-      let navIndex = 0
-      for (let n = 0; n < offsetTopArr.length; n++) {
-        // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
-        // 那么此时导航索引就应该是n了
-        if (scrollTop >= offsetTopArr[n] - 100) {
-          navIndex = n
-        }
+      // let navIndex = 0
+      if (scrollTop > 200) {
+        this.isNavMin = true
+      } else {
+        this.isNavMin = false
       }
-      // console.log(navIndex + 1)
-      if (this.viewIndex !== navIndex + 1) {
-        this.viewIndex = navIndex + 1
-      }
+      // 获取所有锚点元素
+      // const navContents = document.querySelectorAll('.section')
+      // // 所有锚点元素的 offsetTop
+      // const offsetTopArr = []
+      // navContents.forEach(item => {
+      //   offsetTopArr.push(item.offsetTop)
+      // })
+      // // 获取当前文档流的 scrollTop
+      // const scrollTop =
+      //   document.documentElement.scrollTop || document.body.scrollTop
+      // // 定义当前点亮的导航下标
+      // let navIndex = 0
+      // for (let n = 0; n < offsetTopArr.length; n++) {
+      //   // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
+      //   // 那么此时导航索引就应该是n了
+      //   if (scrollTop >= offsetTopArr[n] - 100) {
+      //     navIndex = n
+      //   }
+      // }
+      // // console.log(navIndex + 1)
+      // if (this.viewIndex !== navIndex + 1) {
+      //   this.viewIndex = navIndex + 1
+      // }
       // this.viewIndex = navIndex + 1
     },
 

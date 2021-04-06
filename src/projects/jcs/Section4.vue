@@ -3,27 +3,32 @@
     <img src="./s4/t.png" :alt="`${info.caseName}_img`" class="grass">
 
     <div class="content">
-      <div class="line"></div>
-      <div class="label">
+      <div class="line" data-aos="zoom-in-down" data-aos-delay="200">
+
+      </div>
+      <div class="label" data-aos="fade-left" data-aos-delay="400">
         ｜職人品牌｜
       </div>
-      <div class="title">
+      <div class="title" data-aos="fade-left" data-aos-delay="600">
         玖登開發／種大樹的人
       </div>
-      <div class="subtitle">
+      <div class="subtitle" v-if="isPC" data-aos="fade-left" data-aos-delay="800">
         每棟建築都是根植沃土細膩照顧的大樹<br />
         玖登開發耕耘大竹土地，開出茁壯茂盛的枝葉<br />
         勾勒環境與風土的氣韻，從種子到綠芽澆灌更盛大的未來
       </div>
-      <div class="work-title">
+      <div class="subtitle" v-if="isMobile" data-aos="fade-left" data-aos-delay="800">
+        每棟建築都是根植沃土細膩照顧的大樹，玖登開發耕耘大竹土地，開出茁壯茂盛的枝葉，勾勒環境與風土的氣韻，從種子到綠芽澆灌更盛大的未來
+      </div>
+      <div class="work-title" data-aos="fade-left" data-aos-delay="800">
         【代表作品／寓上春樹】
       </div>
-      <div class="work-desc">
+      <div class="work-desc" data-aos="fade-left" data-aos-delay="800">
         雙公園景觀宅，格柵獨美身段，在埔心溪河廊映襯出雅緻美學
       </div>
     </div>
 
-    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-left" data-aos-delay="800">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -368,7 +373,7 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-    height: sizem(610);
+    height: sizem(782);
     min-height: auto;
     max-height: initial;
     // background-image: url('./all/section_bg.jpg');
@@ -376,118 +381,124 @@
     // background-size: 100% 100%;
     // background-position: 0 0;
     // background-attachment: fixed;
-    overflow: hidden;
+    overflow: visible;
   }
-  .img {
-    @include img_r_m(160, 120, 5);
+  .grass {
+    @include img_r_m(173, 0, 0);
+    top: auto;
+    bottom: sizem(-80);
+    transform-origin: bottom;
+    animation: grass 4s ease-in-out alternate infinite;
   }
 
-  .title1 {
-    @include img_l_m(325, 63, 25);
-    font-size: sizem(30);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: normal;
-    text-align: left;
-    white-space: nowrap;
-    color: #fff;
-    span {
-      display: block;
-      font-size: 0.666em;
+  @keyframes grass {
+    to {
+      transform: skewX(3deg);
     }
   }
 
-  .hr {
-    @include img_l_m(142, 60, 25);
-    height: sizem(1);
-    background: #333;
+  // begin
+  .trans-leave-to {
+    opacity: 0;
+    z-index: 0;
+  }
+  // end
+  .trans-enter {
+    opacity: 0;
+    z-index: 1;
   }
 
-  .title2 {
-    @include img_l_m(325, 17, 25);
-    font-size: sizem(20);
-    font-weight: bold;
+  .trans-enter-active {
+    transition: all 1.8s ease;
+  }
+
+  .trans-leave-active {
+    transition: all 1.8s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  .line {
+    @include div_l_m(7, 177, 39, 33);
+    background-color: #40220f;
+  }
+  .label {
+    @include img_l_m(116, 39, 55);
+    font-size: sizem(17);
+    font-weight: 300;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.05;
-    letter-spacing: normal;
+    line-height: 1.53;
+    letter-spacing: sizem(2.72);
     text-align: left;
-    color: #333333;
+    color: #40220f;
+    color: #40220f;
     white-space: nowrap;
-    color: #fff;
+    z-index: 2;
   }
-  /*
-  .desc {
-    @include img_r_m(292, 494, 40);
-    font-size: sizem(12);
-    font-weight: bold;
+  .title {
+    @include img_l_m(250, 72, 55);
+    font-size: sizem(25);
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.88;
+    line-height: 1.6;
     letter-spacing: normal;
     text-align: left;
-    color: #333;
-  } */
-
-  .desc {
-    @include img_l_m(170, 140, 25);
-    font-size: sizem(14);
-    font-weight: 400;
-    letter-spacing: 0.01em;
-    line-height: 1.6;
-    text-align: justify;
-    color: #fff;
-    white-space: normal;
+    color: #40220f;
+    white-space: nowrap;
+    z-index: 2;
   }
 
-  .more {
-    @include img_r_m(179 + 7 + 29, 636, 117);
-    font-size: sizem(15);
+  .subtitle {
+    @include img_l_m(300, 116, 55);
+    font-size: sizem(16);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.04;
-    letter-spacing: sizem(2.1);
+    line-height: 1.63;
+    letter-spacing: sizem(0.96);
     text-align: left;
-    color: #ffffff;
-    cursor: pointer;
+    color: #40220f;
+    white-space: normal;
+    z-index: 3;
+  }
+
+  .work-title {
+    @include img_l_m(255, 626, 20);
+    top: auto;
+    bottom: sizem(123);
+    font-size: sizem(22);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.98;
+    letter-spacing: sizem(1.32);
+    text-align: left;
+    color: #40220f;
     white-space: nowrap;
-
-    img {
-      width: sizem(29);
-    }
   }
-  .btns {
-    @include img_c_m(325, 305);
-  }
-
-  .btn {
-    width: sizem(152);
-    height: sizem(27);
-    &:hover {
-      animation: btn 0.5s infinite alternate;
-      background: #fff0;
-      box-shadow: inset 0 0 0 1px #000000;
-      color: #000;
-    }
-    &.active:hover {
-      animation: none;
-      background: #ff662abb;
-      box-shadow: none;
-      color: #fff;
-    }
+  .work-desc {
+    @include img_l_m(170, 301, 33);
+    top: auto;
+    bottom: sizem(40);
+    font-size: sizem(15);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.7;
+    letter-spacing: sizem(0.9);
+    text-align: left;
+    color: #40220f;
+    white-space: normal;
   }
 
   /* Swipe */
   .swipe {
-    width: 100%;
-    height: sizem(259);
+    width: sizem(310);
+    height: sizem(357);
     min-height: auto;
-    top: auto;
-    bottom: 0;
-    left: sizem(0);
+    top: sizem(255);
+    bottom: auto;
+    left: sizem(33);
     object-fit: cover;
   }
 

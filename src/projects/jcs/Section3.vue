@@ -9,19 +9,24 @@
     <img src="./s3/bottom.png" :alt="`${info.caseName}_img`" class="grass">
 
     <div class="content">
-      <div class="line"></div>
-      <div class="label">
+      <div class="line" data-aos="zoom-in-down" data-aos-delay="200">
+
+      </div>
+      <div class="label" data-aos="fade-left" data-aos-delay="400">
         ｜六大價值｜
       </div>
-      <div class="title">
+      <div class="title" v-if="isPC" data-aos="fade-left" data-aos-delay="600">
         大竹最美 建築大樹 生活豐映
       </div>
-      <div class="subtitle">
+      <div class="title" v-if="isMobile" data-aos="fade-left" data-aos-delay="600">
+        大竹最美 建築大樹<br />生活豐映
+      </div>
+      <div class="subtitle" data-aos="fade-left" data-aos-delay="800">
         種一株豐盛大樹最好的時間就是現在
       </div>
     </div>
 
-    <div class="items flex-ac flex-jb wrap" v-if="isPC">
+    <div class="items flex-ac flex-jb wrap" v-if="isPC" data-aos="fade-left" data-aos-delay="800">
       <div class="flex-ac flex-jb">
         <div v-for="(slide, i) in slideList.slice(0, 3)" :key="slide.img + i + 'icon'" :class="`item`">
           <img :src="slide.img" alt="">
@@ -46,16 +51,26 @@
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-            <img :src="slide.img" alt="">
-            <div class="slide-name absolute" v-html="slide.name"></div>
+
+            <div class="half-item">
+              <img :src="slide.img" alt="">
+              <div class="slide-name" v-html="slide.name"></div>
+              <div class="slide-desc" v-html="slide.desc"></div>
+            </div>
+            <div class="half-item">
+              <img :src="slideList[slideIndex === slideList.length ? 0 : slideIndex + 1].img" alt="">
+              <div class="slide-name" v-html="slideList[slideIndex === slideList.length ? 0 : slideIndex + 1].name"></div>
+              <div class="slide-desc" v-html="slideList[slideIndex === slideList.length ? 0 : slideIndex + 1].desc"></div>
+            </div>
+
           </div>
         </transition-group>
         <div class="pagination absolute flex-ac" v-if="isPC">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
         <div class="swipe-btns absolute flex-ac flex-jb">
-          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex2">
+          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex2">
         </div>
       </div>
     </div>
@@ -399,9 +414,10 @@
 @media screen and (max-width: 767px) {
   .section3 {
     width: 100vw;
-    height: sizem(610);
+    height: sizem(711);
     min-height: auto;
     max-height: initial;
+    background-color: #2157c1;
     // background-image: url('./all/section_bg.jpg');
     // background-attachment: scroll;
     // background-size: 100% 100%;
@@ -409,105 +425,132 @@
     // background-attachment: fixed;
     overflow: hidden;
   }
-  .img {
-    @include img_r_m(160, 120, 5);
+
+  .grass {
+    @include img_l_m(215, 0, -40);
+    top: auto;
+    bottom: 0;
+    transform-origin: bottom;
+    animation: grass 4s ease-in-out alternate infinite;
   }
 
-  .title1 {
-    @include img_l_m(325, 63, 25);
-    font-size: sizem(30);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: normal;
-    text-align: left;
-    white-space: nowrap;
-    color: #fff;
-    span {
-      display: block;
-      font-size: 0.666em;
+  @keyframes grass {
+    to {
+      transform: skewX(3deg);
     }
   }
 
-  .hr {
-    @include img_l_m(142, 60, 25);
-    height: sizem(1);
-    background: #333;
+  .bg-img {
+    width: 100vw;
+    height: auto;
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
   }
 
-  .title2 {
-    @include img_l_m(325, 17, 25);
-    font-size: sizem(20);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.05;
-    letter-spacing: normal;
-    text-align: left;
-    color: #333333;
-    white-space: nowrap;
-    color: #fff;
+  // begin
+  .trans-leave-to {
+    opacity: 0;
+    z-index: 0;
   }
-  /*
-  .desc {
-    @include img_r_m(292, 494, 40);
-    font-size: sizem(12);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.88;
-    letter-spacing: normal;
-    text-align: left;
-    color: #333;
-  } */
+  // end
+  .trans-enter {
+    opacity: 0;
+    z-index: 1;
+  }
 
-  .desc {
-    @include img_l_m(170, 140, 25);
-    font-size: sizem(14);
+  .trans-enter-active {
+    transition: all 1.8s ease;
+  }
+
+  .trans-leave-active {
+    transition: all 1.8s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  .line {
+    @include div_l_m(7, 135, 44, 33);
+    background-color: #ff8700;
+  }
+  .label {
+    @include img_l_m(208, 40, 56);
+    font-size: sizem(17);
     font-weight: 400;
-    letter-spacing: 0.01em;
-    line-height: 1.6;
-    text-align: justify;
-    color: #fff;
-    white-space: normal;
-  }
-
-  .more {
-    @include img_r_m(179 + 7 + 29, 636, 117);
-    font-size: sizem(15);
-    font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.04;
-    letter-spacing: sizem(2.1);
+    line-height: 1.53;
+    letter-spacing: sizem(2.2);
     text-align: left;
     color: #ffffff;
-    cursor: pointer;
     white-space: nowrap;
-
-    img {
-      width: sizem(29);
-    }
+    z-index: 2;
   }
-  .btns {
-    @include img_c_m(325, 305);
+  .title {
+    @include img_l_m(206, 72, 56);
+    font-size: sizem(25);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+    white-space: nowrap;
+    z-index: 2;
   }
 
-  .btn {
-    width: sizem(152);
-    height: sizem(27);
-    &:hover {
-      animation: btn 0.5s infinite alternate;
-      background: #fff0;
-      box-shadow: inset 0 0 0 1px #000000;
-      color: #000;
+  .subtitle {
+    @include img_l_m(270, 157, 56);
+    font-size: sizem(16);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.63;
+    letter-spacing: sizem(0.96);
+    text-align: left;
+    color: #ffffff;
+    white-space: nowrap;
+    z-index: 3;
+  }
+
+  .items {
+    @include img_l_m(920, 428, 204);
+    > div {
+      width: 100%;
+      height: size(151 + 42);
+      border-bottom: 1px solid #fff;
     }
-    &.active:hover {
-      animation: none;
-      background: #ff662abb;
-      box-shadow: none;
-      color: #fff;
+
+    .item {
+      display: flex;
+      align-items: center;
+      img {
+        width: size(110);
+        margin-right: size(10);
+      }
+
+      .item-name {
+        font-size: size(44.5);
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.32;
+        letter-spacing: normal;
+        text-align: left;
+        color: #ffffff;
+        white-space: nowrap;
+      }
+
+      .item-desc {
+        font-size: size(18);
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.42;
+        letter-spacing: size(1.08);
+        text-align: left;
+        color: #ffffff;
+      }
     }
   }
 
@@ -516,8 +559,8 @@
     width: 100%;
     height: sizem(259);
     min-height: auto;
-    top: auto;
-    bottom: 0;
+    top: sizem(163);
+    bottom: auto;
     left: sizem(0);
     object-fit: cover;
   }
@@ -571,10 +614,15 @@
     width: 100%;
     height: 100%;
     z-index: 0;
-
+    display: flex;
+    align-items: center;
+    .half-item {
+      width: 50%;
+      position: relative;
+    }
     img {
-      width: 100%;
-      height: 100%;
+      width: sizem(65);
+      height: sizem(65);
       object-fit: cover;
     }
 
@@ -592,11 +640,34 @@
     //   // opacity: 1;
     // }
     .slide-name {
+      position: relative;
       right: auto;
       top: auto;
-      bottom: 1.2rem;
-      right: 1.2rem;
-      font-size: sizem(15);
+      bottom: auto;
+      right: auto;
+      font-size: sizem(20);
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.65;
+      letter-spacing: normal;
+      text-align: center;
+      color: #ffffff;
+    }
+    .slide-desc {
+      position: relative;
+      right: auto;
+      top: auto;
+      bottom: auto;
+      right: auto;
+      font-size: sizem(14);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.64;
+      letter-spacing: sizem(0.84);
+      text-align: center;
+      color: #ffffff;
     }
   }
 
@@ -730,7 +801,17 @@ export default {
     }
   },
 
-  methods: {},
+  methods: {
+    addIndex2() {
+      this.slideIndex =
+        this.slideIndex === this.slideList.length - 2 ? 0 : this.slideIndex + 2
+    },
+
+    decIndex2() {
+      this.slideIndex =
+        this.slideIndex === 0 ? this.slideList.length - 2 : this.slideIndex - 2
+    }
+  },
 
   created() {},
 

@@ -15,11 +15,14 @@
         並肩青埔 舉目藝文<br />
         大竹未來拭目以待
       </div>
-      <div class="desc">
+      <div class="desc" v-if="isPC">
         放眼青埔未來、跟進藝文價值，大竹地段潛力正在躍升。<br />
         十分鐘車程，前進全台最大名品城、IKEA、Xpark享受時尚氛圍；<br />
         享受藝文特區展演活動、市圖總館的城市書香氛圍。<br />
         大竹並肩桃園地段價值雙引擎，成長動能無與倫比
+      </div>
+      <div class="desc" v-if="isMobile">
+        放眼青埔未來、跟進藝文價值，大竹地段潛力正在躍升。十分鐘車程，前進全台最大名品城、IKEA、Xpark享受時尚氛圍；享受藝文特區展演活動、市圖總館的城市書香氛圍。大竹並肩桃園地段價值雙引擎，成長動能無與倫比
       </div>
     </div>
   </div>
@@ -144,7 +147,7 @@
     width: 100vw;
     min-height: sizem(630);
     max-height: sizem(700);
-    height: calc(100vh - 63px);
+    height: sizem(667);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
@@ -155,52 +158,73 @@
     min-height: 100%;
     bottom: 0;
   }
-  .cloud-item {
-    width: auto;
-    height: 100%;
-    object-fit: initial;
+  .container {
+    @include div_c_m(375, 667, 0);
+    overflow: hidden;
   }
-  .logo {
-    @include img_c_m(149, 100);
-    z-index: 4;
-    img {
-      width: 100%;
+
+  .cloud {
+    animation: move 50s 0s linear infinite;
+    top: 0;
+    left: 0;
+    height: 100%;
+    // z-index: 2;
+  }
+
+  .cloud-item {
+    width: sizem(1920);
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @keyframes move {
+    to {
+      transform: translateX(-50%);
     }
   }
-
-  .title {
-    @include img_c_m(360, 219);
-    font-size: sizem(21);
-    font-weight: bold;
+  .line {
+    @include div_l_m(7, 118, 33, 39);
+    background-color: #ff8700;
+  }
+  .label {
+    @include img_l_m(208, 43, 56);
+    font-size: sizem(17);
+    font-weight: 400;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.9;
-    letter-spacing: sizem(1.68);
-    text-align: center;
-    color: #000000;
-    z-index: 4;
+    line-height: 1.53;
+    letter-spacing: sizem(2.72);
+    text-align: left;
+    color: #ffffff;
     white-space: nowrap;
+    z-index: 2;
   }
-
-  .hr {
-    @include img_c_m(240, 258);
-    height: sizem(1);
-    background-color: #77623c;
-    z-index: 4;
-  }
-
-  .desc {
-    @include img_c_m(360, 263);
-    font-size: sizem(20);
+  .title {
+    @include img_l_m(310, 70, 56);
+    font-size: sizem(25);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.4;
-    letter-spacing: sizem(0.2);
-    text-align: center;
-    color: #000000;
-    z-index: 4;
-    color: #000000;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+    white-space: nowrap;
+    z-index: 2;
+  }
+
+  .desc {
+    @include img_l_m(310, 475, 33);
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.73;
+    letter-spacing: sizem(0.9);
+    text-align: left;
+    color: #ffffff;
+    white-space: normal;
+    z-index: 3;
   }
 }
 </style>

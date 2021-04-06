@@ -97,7 +97,7 @@ export default {
   right: 30px;
   width: 40px;
   height: 40px;
-  background-color: #c49b63;
+  background: transparent;
   cursor: pointer;
 
   // img {
@@ -365,8 +365,8 @@ export default {
   .menu {
     display: flex;
     position: fixed;
-    right: 30px;
-    top: 30px;
+    right: 15px;
+    top: 15px;
 
     img {
       width: 100%;
@@ -430,7 +430,7 @@ export default {
     width: 100vw;
     top: $nav_phone_height;
     right: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: #ff8700;
     position: fixed;
     height: calc(100vh - #{$nav_phone_height});
     opacity: 0;

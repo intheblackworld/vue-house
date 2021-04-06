@@ -5,17 +5,22 @@
     <img src="./s6/t.png" :alt="`${info.caseName}_img`" class="grass">
 
     <div class="content">
-      <div class="line"></div>
-      <div class="label">
+      <div class="line" data-aos="zoom-in-down" data-aos-delay="200">
+
+      </div>
+      <div class="label" data-aos="fade-left" data-aos-delay="400">
         ｜精心規劃｜
       </div>
-      <div class="title">
+      <div class="title" v-if="isPC" data-aos="fade-left" data-aos-delay="600">
         感心規劃 有質感的家分享受
       </div>
-      <div class="subtitle">
+      <div class="title" v-if="isMobile" data-aos="fade-left" data-aos-delay="600">
+        感心規劃<br />有質感的家分享受
+      </div>
+      <div class="subtitle" data-aos="fade-left" data-aos-delay="800">
         A級規劃／中空樓板設計／十年防水保固
       </div>
-      <div class="list-info">
+      <div class="list-info" data-aos="fade-left" data-aos-delay="800">
         <div v-for="item in list" :key="item.title" class="info flex-ac">
           <div class="info-title" v-html="item.title"></div>
           <div class="info-desc" v-html="item.desc"></div>
@@ -194,7 +199,7 @@
 @media screen and (max-width: 767px) {
   .section6 {
     width: 100vw;
-    height: sizem(610);
+    height: sizem(990);
     min-height: auto;
     max-height: initial;
     // background-image: url('./all/section_bg.jpg');
@@ -204,255 +209,96 @@
     // background-attachment: fixed;
     overflow: hidden;
   }
-  .img {
-    @include img_r_m(160, 120, 5);
+  .grass {
+    @include img_l_m(172, 757, -40);
+    transform-origin: bottom;
+    animation: grass 4s ease-in-out alternate infinite;
   }
 
-  .title1 {
-    @include img_l_m(325, 63, 25);
-    font-size: sizem(30);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: normal;
-    text-align: left;
-    white-space: nowrap;
-    color: #fff;
-    span {
-      display: block;
-      font-size: 0.666em;
+  @keyframes grass {
+    to {
+      transform: skewX(3deg);
     }
   }
 
-  .hr {
-    @include img_l_m(142, 60, 25);
-    height: sizem(1);
-    background: #333;
+  .line {
+    @include div_l_m(7, 147, 39, 33);
+    background-color: #3d2f25;
   }
-
-  .title2 {
-    @include img_l_m(325, 17, 25);
-    font-size: sizem(20);
-    font-weight: bold;
+  .label {
+    @include img_l_m(116, 39, 55);
+    font-size: sizem(17);
+    font-weight: 400;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.05;
+    line-height: 1.53;
+    letter-spacing: sizem(2.72);
+    text-align: left;
+    color: #3d2f25;
+    white-space: nowrap;
+    z-index: 2;
+  }
+  .title {
+    @include img_l_m(250, 72, 55);
+    font-size: sizem(25);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
     letter-spacing: normal;
     text-align: left;
-    color: #333333;
+    color: #3d2f25;
     white-space: nowrap;
-    color: #fff;
+    z-index: 2;
   }
 
-  .desc {
-    @include img_l_m(170, 140, 25);
-    font-size: sizem(14);
-    font-weight: 400;
-    letter-spacing: 0.01em;
-    line-height: 1.6;
-    text-align: justify;
-    color: #fff;
-    white-space: normal;
-  }
-
-  .more {
-    @include img_r_m(179 + 7 + 29, 636, 117);
-    font-size: sizem(15);
+  .subtitle {
+    @include img_l_m(300, 156, 55);
+    font-size: sizem(16);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.04;
-    letter-spacing: sizem(2.1);
+    line-height: 1.63;
+    letter-spacing: sizem(0.96);
     text-align: left;
-    color: #ffffff;
-    cursor: pointer;
-    white-space: nowrap;
-
-    img {
-      width: sizem(29);
-    }
-  }
-  .btns {
-    @include img_c_m(325, 305);
-  }
-
-  .btn {
-    width: sizem(152);
-    height: sizem(27);
-    &:hover {
-      animation: btn 0.5s infinite alternate;
-      background: #fff0;
-      box-shadow: inset 0 0 0 1px #000000;
-      color: #000;
-    }
-    &.active:hover {
-      animation: none;
-      background: #ff662abb;
-      box-shadow: none;
-      color: #fff;
-    }
-  }
-
-  /* Swipe */
-  .swipe {
-    width: 100%;
-    height: sizem(259);
-    min-height: auto;
-    top: auto;
-    bottom: 0;
-    left: sizem(0);
-    object-fit: cover;
-  }
-
-  // begin
-  .swipe-fade-leave-to {
-    opacity: 0;
-    z-index: 0;
-  }
-  // end
-  .swipe-fade-enter {
-    opacity: 0;
-    z-index: 1;
-  }
-
-  .swipe-fade-enter-active {
-    transition: all 0.5s ease;
-  }
-
-  .swipe-fade-leave-active {
-    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-
-  // begin
-  // .swipe-left-leave-to {
-  //   margin-left: -100vw;
-  //   z-index: 0;
-  // }
-  // // end
-  // .swipe-left-enter {
-  //   opacity: 0.5;
-  //   margin-left: 0;
-  //   z-index: 1;
-  // }
-
-  // .swipe-left-enter-active {
-  //   transition: all 0.5s ease;
-  // }
-
-  // .swipe-left-leave-active {
-  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  // }
-
-  .swipe-wrap {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .swipe-item {
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    // &:nth-child(1) {
-    //   z-index: 1;
-    //   // opacity: 1;
-    // }
-
-    // &.base {
-    //   z-index: 1;
-    //   opacity: 1;
-    // }
-    // &.active {
-    //   z-index: 2;
-    //   // opacity: 1;
-    // }
-    .slide-name {
-      right: auto;
-      top: auto;
-      bottom: 1.2rem;
-      right: 1.2rem;
-      font-size: sizem(15);
-    }
-  }
-
-  .pagination {
-    width: auto;
-    bottom: size(91);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    justify-content: center;
-  }
-
-  .pagination-dot {
-    padding: 5px;
-    margin: 0 10px;
-    cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
-      box-shadow: 0 0 0 1px #fff;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
-      transition: all 0.5s;
-
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #004ea2;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transition: all 0.3s;
-        transform-origin: center;
-        transform: scale(0);
-      }
-      &.active {
-        &::before {
-          content: '';
-          width: 100%;
-          height: 100%;
-          display: block;
-          background: #004ea2;
-          border-radius: 20px;
-          opacity: 1;
-          position: absolute;
-          top: 0%;
-          // transform: translateY(-50%);
-          left: 0%;
-          transform: scale(1);
-        }
-      }
-    }
-  }
-
-  .swipe-btns {
-    width: 100%;
-    height: 100%;
-    padding: 0 15px;
+    color: #3d2f25;
+    white-space: normal;
     z-index: 3;
+  }
 
-    .prev-btn,
-    .next-btn {
-      width: sizem(15);
-      cursor: pointer;
+  .list-info {
+    @include img_l_m(310, 206, 31);
+
+    .info {
+      margin-bottom: sizem(20);
+      flex-wrap: wrap;
+    }
+
+    .info-title {
+      width: sizem(310);
+      font-size: sizem(25);
+      font-weight: 300;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.36;
+      letter-spacing: sizem(6);
+      text-align: left;
+      color: #3d2f25;
+      white-space: nowrap;
+      margin-right: sizem(0);
+    }
+
+    .info-desc {
+      width: sizem(300);
+      font-size: sizem(15);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.73;
+      letter-spacing: normal;
+      text-align: left;
+      color: #000000;
+      white-space: normal;
     }
   }
 }
