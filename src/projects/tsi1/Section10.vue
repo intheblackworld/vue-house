@@ -5,13 +5,13 @@
     <img src="./s10/team_style_2.png" :alt="`${info.caseName}_cloud`" class="cloud c2">
     <img src="./s10/team_style_3.png" :alt="`${info.caseName}_cloud`" class="cloud c3">
     <img src="./s10/team_style_4.png" :alt="`${info.caseName}_cloud`" class="cloud c4">
-    <h3 class="title">
+    <h3 class="title"  data-aos="fade-top">
       國際建築菁英群
     </h3>
-    <h3 class="subtitle">
+    <h3 class="subtitle"  data-aos="fade-top">
       打造最美天空
     </h3>
-    <div class="desc">
+    <div class="desc"  data-aos="fade-top"  data-aos-delay="400">
       「天空之邑」雙塔地標定義洲子洋天際線，簡約、對稱的建築語彙，國際精品、奢華飯店級享受，領先國際建築趨勢，邀集GERMAN DESIGN AWARD、義大利A'DESIGN、園冶獎等建築金獎菁英群，以頂級飯店、豪宅設計經驗，深切置入建築設計脈絡中，為洲子洋生活美學揭開新頁。
     </div>
     <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" key="swipe-0">
@@ -24,7 +24,7 @@
             <h3 class="slide-name absolute" v-html="slide.text"></h3>
           </div>
         </transition-group>
-        <div class="swipe-btns absolute flex-ac flex-jb">
+        <div class="swipe-btns absolute flex-ac flex-jb pc-displaynone">
           <img src="./s10/public_left.png" alt="" class="prev-btn" @click="decIndex">
           <img src="./s10/public_right.png" alt="" class="next-btn" @click="addIndex">
         </div>
@@ -77,6 +77,10 @@
     color: #2e2e2e;
     font-family: 'Noto Serif TC', serif;
   }
+}
+
+@media screen and (min-width: 767px) { 
+  .pc-displaynone{display: none !important;}
 }
 
 @media screen and (max-width: 767px) {
