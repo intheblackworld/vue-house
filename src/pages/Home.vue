@@ -9,7 +9,7 @@
       :options="options"
       id="fullpage"
     > -->
-    <LeafFlow /> 
+    <!-- <LeafFlow />  -->
     <vue-lazy-component class="section  " id="section1" @init="init">
       <Section1 />
     </vue-lazy-component>
@@ -68,15 +68,15 @@
     </vue-lazy-component>
     <vue-lazy-component
       class="section"
-      id="section11"
-    >
-      <Section11 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
       id="section12"
     >
       <Section12 />
+    </vue-lazy-component>
+    <vue-lazy-component
+      class="section"
+      id="section11"
+    >
+      <Section11 />
     </vue-lazy-component>
     <vue-lazy-component class="section" id="contact">
       <ContactSection />
