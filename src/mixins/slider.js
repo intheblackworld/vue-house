@@ -8,29 +8,29 @@ export default {
   },
 
   mounted() {
-    // setInterval(() => {
-    //   if (this.toggleTimer) {
-    //     if (this.slideList && !this.stopAutoPlay) {
-    //       this.addIndex()
-    //     }
-    //     if (this.slideList1) {
-    //       this.addMultiIndex(1)
-    //     }
+    setInterval(() => {
+      if (this.toggleTimer) {
+        if (this.slideList && !this.stopAutoPlay) {
+          this.addIndex()
+        }
+        if (this.slideList1) {
+          this.addMultiIndex(1)
+        }
 
-    //     if (this.slideList2) {
-    //       this.addMultiIndex(2)
-    //     }
+        if (this.slideList2) {
+          this.addMultiIndex(2)
+        }
 
-    //     if (this.slideList3) {
-    //       this.addMultiIndex(3)
-    //     }
+        if (this.slideList3) {
+          this.addMultiIndex(3)
+        }
 
-    //     if (this.slideList4) {
-    //       this.addMultiIndex(4)
-    //     }
-    //   }
+        if (this.slideList4) {
+          this.addMultiIndex(4)
+        }
+      }
 
-    // }, 5000)
+    }, 5000)
   },
   methods: {
     goTo(index) {

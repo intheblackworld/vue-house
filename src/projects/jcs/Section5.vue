@@ -7,7 +7,7 @@
     <div class="content">
       <div class="line" data-aos="zoom-in-down" data-aos-delay="200">
 
-			</div>
+      </div>
       <div class="label" data-aos="fade-left" data-aos-delay="400">
         ｜質感生活｜
       </div>
@@ -27,30 +27,61 @@
           <div class="info-desc" v-html="item.desc"></div>
         </div>
       </div>
-      <div class="list-info flex-ac flex-jb" v-if="isMobile" data-aos="fade-left" data-aos-delay="800" data-aos-offset="-600">
-        <transition-group name="swipe-fade" mode="out-in">
-          <div v-for="(item, index) in list" :key="item.title" class="info" v-show="Math.round((slideIndex + 1) / 2) === index + 1">
-            <img :src="item.img" alt="">
-            <div class="info-title" v-html="item.title"></div>
-            <div class="info-desc" v-html="item.desc"></div>
-          </div>
-        </transition-group>
-      </div>
     </div>
-    <div class="btn" v-if="isMobile">
-     <div class="btn_l"><img :src="list[1].img" alt=""></div>
-    <div class="btn_r"><img :src="list[2].img" alt=""></div>
-    </div>
-    <swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" @slideChangeTransitionEnd="slideChanged">
-      <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide + index" class="item" >
+		<swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" @slideChangeTransitionEnd="slideChanged">
+      <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide + index" class="item">
         <img :src="slide" :class="`item-img`" />
       </swiper-slide>
-      
+
       <div class="swiper-button-prev prev-btn" slot="button-prev">
       </div>
       <div class="swiper-button-next next-btn" slot="button-next">
       </div>
     </swiper>
+
+		<swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" @slideChangeTransitionEnd="slideChanged" v-show="isMobile && blockIndex === 0">
+      <swiper-slide v-for="(slide, index) in slideList[0]" :index="index" :key="slide + index" class="item">
+        <img :src="slide" :class="`item-img`" />
+      </swiper-slide>
+
+      <div class="swiper-button-prev prev-btn" slot="button-prev">
+      </div>
+      <div class="swiper-button-next next-btn" slot="button-next">
+      </div>
+    </swiper>
+		<swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" @slideChangeTransitionEnd="slideChanged" v-show="isMobile && blockIndex === 1">
+      <swiper-slide v-for="(slide, index) in slideList[1]" :index="index" :key="slide + index" class="item">
+        <img :src="slide" :class="`item-img`" />
+      </swiper-slide>
+
+      <div class="swiper-button-prev prev-btn" slot="button-prev">
+      </div>
+      <div class="swiper-button-next next-btn" slot="button-next">
+      </div>
+    </swiper>
+		<swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" @slideChangeTransitionEnd="slideChanged" v-show="isMobile && blockIndex === 2">
+      <swiper-slide v-for="(slide, index) in slideList[2]" :index="index" :key="slide + index" class="item">
+        <img :src="slide" :class="`item-img`" />
+      </swiper-slide>
+
+      <div class="swiper-button-prev prev-btn" slot="button-prev">
+      </div>
+      <div class="swiper-button-next next-btn" slot="button-next">
+      </div>
+    </swiper>
+    <div class="btn" v-if="isMobile">
+      <div class="btn_l" @click="blockIndex = prevIndex"><img :src="list[prevIndex].img" alt=""></div>
+      <div class="btn_r" @click="blockIndex = nextIndex"><img :src="list[nextIndex].img" alt=""></div>
+    </div>
+    <div class="list-info flex-ac flex-jb" v-if="isMobile" data-aos="fade-left" data-aos-delay="800" data-aos-offset="-600">
+      <transition-group name="swipe-fade" mode="out-in">
+        <div v-for="(item, index) in list" :key="item.title" class="info" v-show="blockIndex === index">
+          <img :src="item.img" alt="" @click="blockIndex = index">
+          <div class="info-title" v-html="item.title"></div>
+          <div class="info-desc" v-html="item.desc"></div>
+        </div>
+      </transition-group>
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -189,52 +220,52 @@
   margin: 0 auto;
 }
 
-
-    .prev-btn,
-    .next-btn{
-height: 100%;
-width: 2em;
-font-size:size(20);
-        right: 1em;
-        top: 0;
-        margin: 0;
-      cursor: pointer;
-      &::before{content: "";
-      position: absolute;
-      width: 100%;
-      height:100%;
-      top: 0;
-      left: 0;
-      transform:translateX(200%);
-background-color: #df6c0088;
-transition:all 0.3s;
-
-      }
-      &::after{content: "";
-      width: 1em;
-      height: 1em;
-      position: absolute;
-      top: calc(50% - 0.5em);
-      left: calc(50% - 0.75em);
-      border: solid #FFF;
-      border-width: 0.1em 0.1em 0 0;
-      transform: rotate(45deg) translate(-10%,10%);
-      }
-    &:hover:before{
-      transform:translateX(0%);
-    }
-    &:hover:after{
-  animation: btn 0.5s ease-in-out infinite alternate;
-    }
-    }
-    .prev-btn{
-        transform:scaleX(-1);
-        right: auto;
-        left: 1em;
-    }
+.prev-btn,
+.next-btn {
+  height: 100%;
+  width: 2em;
+  font-size: size(20);
+  right: 1em;
+  top: 0;
+  margin: 0;
+  cursor: pointer;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translateX(200%);
+    background-color: #df6c0088;
+    transition: all 0.3s;
+  }
+  &::after {
+    content: '';
+    width: 1em;
+    height: 1em;
+    position: absolute;
+    top: calc(50% - 0.5em);
+    left: calc(50% - 0.75em);
+    border: solid #fff;
+    border-width: 0.1em 0.1em 0 0;
+    transform: rotate(45deg) translate(-10%, 10%);
+  }
+  &:hover:before {
+    transform: translateX(0%);
+  }
+  &:hover:after {
+    animation: btn 0.5s ease-in-out infinite alternate;
+  }
+}
+.prev-btn {
+  transform: scaleX(-1);
+  right: auto;
+  left: 1em;
+}
 @keyframes btn {
   to {
-    transform: rotate(45deg) translate(10%,-10%);
+    transform: rotate(45deg) translate(10%, -10%);
   }
 }
 
@@ -349,9 +380,9 @@ transition:all 0.3s;
       margin: 0 auto sizem(17);
     }
     .info {
-			position: absolute;
-			top: 0;
-			left: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
       width: sizem(310);
       padding: 0;
     }
@@ -366,7 +397,7 @@ transition:all 0.3s;
       letter-spacing: normal;
       text-align: left;
       color: #000000;
-			margin-bottom: sizem(15);
+      margin-bottom: sizem(15);
     }
 
     .info-desc {
@@ -391,28 +422,32 @@ transition:all 0.3s;
     margin: 0 auto;
   }
 
-  .btn{
+  .btn {
     position: absolute;
-    top:sizem(250);
+    top: sizem(250);
     width: 100%;
     left: 0;
-.btn_l,
-.btn_r{
-    position: absolute;
-    top:sizem(0);
-    border-radius:sizem(50);
-    background:#0001;    
-    transition: all 0.3s;
-    padding: 3vw;
-    &:hover{
-      
-    background:#0003;    
+    .btn_l,
+    .btn_r {
+      position: absolute;
+      top: sizem(0);
+      border-radius: sizem(50);
+      background: #0001;
+      transition: all 0.3s;
+      padding: 3vw;
+      &:hover {
+        background: #0003;
+      }
     }
+    .btn_l {
+      right: sizem(327);
     }
-.btn_l{right:sizem(327);}
-.btn_r{left:sizem(327);}
-    img{height: sizem(80);}
-
+    .btn_r {
+      left: sizem(327);
+    }
+    img {
+      height: sizem(80);
+    }
   }
 
   /* Swipe */
@@ -564,18 +599,18 @@ transition:all 0.3s;
     }
   }
 
-    .prev-btn,
-    .next-btn{
-      font-size:sizem(15);
-      &::before{
-background-color: #cc5b4e00;
-      }
-      &::after{
+  .prev-btn,
+  .next-btn {
+    font-size: sizem(15);
+    &::before {
+      background-color: #cc5b4e00;
+    }
+    &::after {
       border-color: #fff;
       border-width: 0.15em 0.15em 0 0;
-        animation: btn 0.5s ease-in-out infinite alternate;
-      }
+      animation: btn 0.5s ease-in-out infinite alternate;
     }
+  }
 }
 </style>
 <script>
@@ -602,6 +637,7 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
+      blockIndex: 0,
       swiperOption: {
         slidesPerView: isMobile ? 1 : 3,
         slidesPerGroup: isMobile ? 1 : 3,
@@ -609,8 +645,8 @@ export default {
         slidesPerColumn: isMobile ? 1 : 1,
         allowSlidePrev: isMobile ? true : true,
         allowSlideNext: isMobile ? true : true,
-  // effect : 'fade',
-   /*   fadeEffect: {
+        // effect : 'fade',
+        /*   fadeEffect: {
     crossFade: true,
   },*/
         // centeredSlides: true,
@@ -626,12 +662,9 @@ export default {
       },
       slideList: isMobile
         ? [
-            require('./s5/1-1.jpg'),
-            require('./s5/1-2.jpg'),
-            require('./s5/2-1.jpg'),
-            require('./s5/2-2.jpg'),
-            require('./s5/3-1.jpg'),
-            require('./s5/3-2.jpg'),
+            [require('./s5/1-1.jpg'), require('./s5/1-2.jpg')],
+            [require('./s5/2-1.jpg'), require('./s5/2-2.jpg')],
+            [require('./s5/3-1.jpg'), require('./s5/3-2.jpg')],
           ]
         : [
             require('./s5/1-1.jpg'),
@@ -677,7 +710,7 @@ export default {
   },
 
   methods: {
-		slideChanged(e) {
+    slideChanged(e) {
       const swiper = this.$refs.mySwiper.swiper
       if (swiper.isEnd) {
         this.slideIndex = 0
@@ -687,13 +720,29 @@ export default {
         this.slideIndex = swiper.activeIndex - 1
       }
     },
-	},
+  },
 
   created() {},
 
   mounted() {},
 
-  computed: {},
+  computed: {
+
+		prevIndex() {
+			if (this.blockIndex === 0) {
+				return 2
+			} else {
+				return this.blockIndex - 1
+			}
+		},
+		nextIndex() {
+			if (this.blockIndex === 2) {
+				return 0
+			} else {
+				return this.blockIndex + 1
+			}
+		}
+	},
 
   watch: {
     // viewIndex() {
