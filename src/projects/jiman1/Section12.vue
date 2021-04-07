@@ -26,25 +26,35 @@
       新聞報導
     </h3>
     <div class="line" data-aos="zoom-in-right" data-aos-delay="200"></div>
-    <swiper :options="swiperOption" ref="mySwiper">
-      <!-- <div class="content"> -->
-      <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="item">
-        <a :href="slide.link" target="_blank">
-          <img :src="slide.src" :class="`item-img`" />
-          <div class="item-title" v-html="slide.title"></div>
-          <div class="item-desc" v-html="slide.desc"></div>
-        </a>
-      </swiper-slide>
-      <!-- </div> -->
-      <div class="swiper-pagination" slot="pagination" v-if="isMobile"></div>
-      <div class="swiper-button-prev" slot="button-prev">
-        <img src="./all/prev-btn.png" alt />
+    <div class="news-container" v-if="isPC">
+      <a :href="slide.link" target="_blank" v-for="(slide, i) in slideList" :key="slide.src + 'a' + i">
+        <img :src="slide.src" :class="`item-img`" />
+        <div class="item-title" v-html="slide.title"></div>
+        <div class="item-desc" v-html="slide.desc"></div>
+      </a>
+    </div>
+    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.src" :class="`swipe-item absolute`">
+            <a :href="slide.link" target="_blank">
+              <img :src="slide.src" :class="`item-img`" />
+              <div class="item-title" v-html="slide.title"></div>
+              <div class="item-desc" v-html="slide.desc"></div>
+            </a>
+          </div>
+        </transition-group>
+        <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.src + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+        </div>
       </div>
-      <div class="swiper-button-next" slot="button-next">
-        <img src="./all/next-btn.png" alt />
+      <div class="swipe-btns absolute flex-ac flex-jb">
+        <!--   <img src="./all/slider_left.png" alt="" class="prev-btn" @click="decIndex">
+          <img src="./all/slider_right.png" alt="" class="next-btn" @click="addIndex">  -->
+        <div class="prev-btn" @click="decIndex"></div>
+        <div class="next-btn" @click="addIndex"></div>
       </div>
-    </swiper>
-
+    </div>
     <!-- div class="line-bg" data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAQAAADYv8WvAAAADUlEQVQIHWNkSGOAAAADRABoDg6qmwAAAABJRU5ErkJggg=="></div -->
   </div>
 </template>
@@ -56,16 +66,6 @@
   position: absolute;
   top: 0;
   left: 0;
-}
-.swiper-pagination-bullet {
-  background-color: transparent;
-  box-shadow: inset 0 0 0 1px #fff;
-  width: 15px;
-  height: 15px;
-  opacity: 1;
-}
-.swiper-pagination-bullet-active {
-  background-color: #fff;
 }
 </style>
 <style lang="scss" scoped>
@@ -150,16 +150,18 @@
   @include div_l_pc(1136, 5, 257 + 907, 560);
   background-color: #fff;
 }
-.swiper-container {
+.news-container {
   @include div_c_pc(472 * 3 + 21 * 2, 480, 312 + 907);
   // overflow: visible;
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
   a {
     display: block;
     width: size(472);
-    height: 100%;
+    height: 90%;
     text-decoration: none;
-    background-color: #d67f76;
   }
 
   .item-title {
@@ -191,19 +193,211 @@
   margin: 0 auto;
 }
 
-.swiper-button-prev,
-.swiper-container-rtl .swiper-button-next {
-  left: size(-50);
+/* Swipe */
+.swipe {
+  @include div_c_pc(472 * 3 + 21 * 2, 480, 312 + 907);
+  z-index: 2;
 }
 
-.swiper-button-next,
-.swiper-container-rtl .swiper-button-prev {
-  right: size(-50);
+// begin
+.swipe-fade-leave-to {
+  opacity: 0;
+  z-index: 0;
+}
+// end
+.swipe-fade-enter {
+  opacity: 0;
+  z-index: 1;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  top: 33%;
+.swipe-fade-enter-active {
+  transition: all 0.5s ease;
+}
+
+.swipe-fade-leave-active {
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+// begin
+// .swipe-left-leave-to {
+//   margin-left: -100vw;
+//   z-index: 0;
+// }
+// // end
+// .swipe-left-enter {
+//   opacity: 0.5;
+//   margin-left: 0;
+//   z-index: 1;
+// }
+
+// .swipe-left-enter-active {
+//   transition: all 0.5s ease;
+// }
+
+// .swipe-left-leave-active {
+//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+// }
+
+.swipe-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.swipe-item {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .slide-name {
+    left: 20px;
+    bottom: 20px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 3.11;
+    letter-spacing: 0.89px;
+    text-align: left;
+    color: #ffffff;
+  }
+
+  // &:nth-child(1) {
+  //   z-index: 1;
+  //   // opacity: 1;
+  // }
+
+  // &.base {
+  //   z-index: 1;
+  //   opacity: 1;
+  // }
+  // &.active {
+  //   z-index: 2;
+  //   // opacity: 1;
+  // }
+}
+
+.pagination {
+  width: 50%;
+  bottom: size(20);
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.pagination-dot {
+  padding: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+  z-index: 4;
+
+  span {
+    display: block;
+    width: size(17);
+    height: size(17);
+    border-radius: size(17);
+    box-shadow: 0 0 0 1px #fff;
+    position: relative;
+    background-color: transparent;
+    transition: all 0.5s;
+
+    &::before {
+      content: '';
+      width: 60%;
+      height: 60%;
+      display: block;
+      background: #fff;
+      border-radius: 20px;
+      opacity: 1;
+      position: absolute;
+      top: 20%;
+      // transform: translateY(-50%);
+      left: 20%;
+      transition: all 0.3s;
+      transform-origin: center;
+      transform: scale(0);
+    }
+    &.active {
+      box-shadow: none;
+      &::before {
+        content: '';
+        width: 110%;
+        height: 110%;
+        display: block;
+        background: #fff;
+        border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 0%;
+        // transform: translateY(-50%);
+        left: 0%;
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.swipe-btns {
+  width: 100%;
+  height: 100%;
+  padding: 0 0;
+  z-index: 3;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  .prev-btn,
+  .next-btn {
+    position: relative;
+    height: 100%;
+    width: 2em;
+    font-size: size(20);
+    cursor: pointer;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      transform: translateX(100%);
+      background-color: #cc5b4e88;
+      transition: all 0.3s;
+    }
+    &::after {
+      content: '';
+      width: 1em;
+      height: 1em;
+      position: absolute;
+      top: calc(50% - 0.5em);
+      left: calc(50% - 0.75em);
+      border: solid #fff;
+      border-width: 0.1em 0.1em 0 0;
+      transform: rotate(45deg) translate(-10%, 10%);
+    }
+    &:hover:before {
+      transform: translateX(0%);
+    }
+    &:hover:after {
+      animation: btn 0.5s ease-in-out infinite alternate;
+    }
+  }
+  .prev-btn {
+    transform: scaleX(-1);
+  }
+}
+@keyframes btn {
+  to {
+    transform: rotate(45deg) translate(10%, -10%);
+  }
 }
 
 .f12 {
@@ -359,19 +553,76 @@
     @include div_l_m(186, 3, 59 + 177, 154);
     background-color: #fff;
   }
-  .swiper-container {
-    @include div_c_m(375, 280, 177 + 98);
-    // overflow: visible;
+  /* Swipe */
+  .swipe {
+    width: sizem(304);
+    height: sizem(282);
+    min-height: auto;
+    top: sizem(177 + 96);
+    left: sizem(35);
+    margin: 0;
+    object-fit: cover;
+    overflow: initial;
+  }
 
-    .item {
-      top: 0;
+  // begin
+  .swipe-fade-leave-to {
+    opacity: 0;
+    z-index: 0;
+  }
+  // end
+  .swipe-fade-enter {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .swipe-fade-enter-active {
+    transition: all 0.5s ease;
+  }
+
+  .swipe-fade-leave-active {
+    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  // begin
+  // .swipe-left-leave-to {
+  //   margin-left: -100vw;
+  //   z-index: 0;
+  // }
+  // // end
+  // .swipe-left-enter {
+  //   opacity: 0.5;
+  //   margin-left: 0;
+  //   z-index: 1;
+  // }
+
+  // .swipe-left-enter-active {
+  //   transition: all 0.5s ease;
+  // }
+
+  // .swipe-left-leave-active {
+  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  // }
+
+  .swipe-wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 4;
+  }
+
+  .swipe-item {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+    img {
+      width: 100%;
+      // height: sizem(300);
+      object-fit: cover;
     }
 
     a {
-      display: block;
-      width: 90%;
-      height: 100%;
-      margin: 0 auto;
       text-decoration: none;
     }
 
@@ -398,75 +649,125 @@
       text-align: left;
       padding-left: 0;
     }
+
+    .item-img {
+      width: sizem(304);
+      height: sizem(162);
+      margin: 0 auto;
+    }
+
+    // &:nth-child(1) {
+    //   z-index: 1;
+    //   // opacity: 1;
+    // }
+
+    // &.base {
+    //   z-index: 1;
+    //   opacity: 1;
+    // }
+    // &.active {
+    //   z-index: 2;
+    //   // opacity: 1;
+    // }
   }
 
-  .item-img {
-    width: sizem(304);
+  .pagination {
+    width: auto;
+    bottom: sizem(13);
+    left: 0;
+    right: 0;
     margin: 0 auto;
+    justify-content: center;
   }
 
-  .swiper-button-prev,
-  .swiper-container-rtl .swiper-button-next {
-    left: size(0);
+  .pagination-dot {
+    padding: 5px;
+    margin: 0 5px;
+    cursor: pointer;
+    z-index: 4;
+
+    span {
+      display: block;
+      width: sizem(8);
+      height: sizem(8);
+      border-radius: sizem(8);
+      box-shadow: 0 0 0 1px #fff;
+      position: relative;
+      background-color: transparent;
+      transition: all 0.5s;
+
+      &::before {
+        content: '';
+        width: 60%;
+        height: 60%;
+        display: block;
+        background: #fff;
+        border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 20%;
+        // transform: translateY(-50%);
+        left: 20%;
+        transition: all 0.3s;
+        transform-origin: center;
+        transform: scale(0);
+      }
+      &.active {
+        box-shadow: none;
+        &::before {
+          content: '';
+          width: 110%;
+          height: 110%;
+          display: block;
+          background: #fff;
+          border-radius: 20px;
+          opacity: 1;
+          position: absolute;
+          top: 0%;
+          // transform: translateY(-50%);
+          left: 0%;
+          transform: scale(1);
+        }
+      }
+    }
   }
 
-  .swiper-button-next,
-  .swiper-container-rtl .swiper-button-prev {
-    right: size(0);
-  }
-
-  .swiper-button-prev,
-  .swiper-button-next {
-    top: 40%;
-    z-index: 10;
+  .swipe-btns {
+    width: 120%;
+    left: -10%;
+    top: -15%;
+    .prev-btn,
+    .next-btn {
+      font-size: sizem(15);
+      &::before {
+        background-color: #cc5b4e00;
+      }
+      &::after {
+        border-color: #fff;
+        border-width: 0.15em 0.15em 0 0;
+        animation: btn 0.5s ease-in-out infinite alternate;
+      }
+    }
   }
 }
 </style>
 <script>
 // @ is an alias to /src
-import { isMobile } from '@/utils'
+import { isPC, isMobile } from '@/utils'
 import slider from '@/mixins/slider.js'
 import info from '@/info'
-import 'swiper/dist/css/swiper.css'
-
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'section12',
   mixins: [slider],
-  components: {
-    swiper,
-    swiperSlide,
-    // Parallax,
-  },
   data() {
     return {
+      isPC,
       isMobile,
       info,
       player: '',
       id: 'ay9pp7TRauo',
       isDialog: false,
-      swiperOption: {
-        slidesPerView: isMobile ? 1 : 3,
-        centeredSlides: true,
-        spaceBetween: isMobile ? 15 : 30,
-        slidesPerColumn: isMobile ? 1 : 1,
-
-        // autoplay: {
-        //   delay: 30000,
-        //   disableOnInteraction: true,
-        // },
-        effect: isMobile ? 'fade' : '',
-        loop: true,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-      },
 
       slideList: [
         {
