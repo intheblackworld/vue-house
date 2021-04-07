@@ -3,8 +3,12 @@
     <transition-group name="trans" mode="out-in">
       <img src="./s3/bg1.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-show="blockIndex === 0 && isPC" key="day1">
       <img src="./s3/bg2.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-show="blockIndex === 1 && isPC" key="day2">
-      <img src="./s3/bg1_m.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-show="blockIndex === 0 && isMobile" key="day3">
-      <img src="./s3/bg2_m.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-show="blockIndex === 1 && isMobile" key="day4">
+      <div class="bg-img bg1" v-show="blockIndex === 0 && isMobile" key="day3">
+        <img src="./s3/bg1_m.jpg" :alt="`${info.caseName}_img`">
+      </div>
+      <div class="bg-img bg2" v-show="blockIndex === 1 && isMobile" key="day4">
+        <img src="./s3/bg2_m.jpg" :alt="`${info.caseName}_img`">
+      </div>
     </transition-group>
     <img src="./s3/bottom.png" :alt="`${info.caseName}_img`" class="grass">
 
@@ -50,7 +54,7 @@
     <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
-          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute ${slideIndex === index ? 'active' : ''}`">
 
             <div class="half-item">
               <img :src="slide.img" alt="">
@@ -81,9 +85,9 @@
 
 .section3 {
   width: 100%;
-  height: size(1080);
-  min-height: size(1080);
-  max-height: size(1080);
+  height: calc(100vh - 70px);
+  min-height: size(850);
+  max-height: size(1010);
   position: relative;
   // background-color: #fff;
   // min-height: size(900);
@@ -91,14 +95,14 @@
   // background-size: 100% 100%;
   // background-position: 0 0;
   // background-attachment: fixed;
-  // overflow: hidden;
+  overflow: hidden;
 }
 
 .bg-img {
   width: 100%;
-  height: 100%;
+  height: auto;
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   display: block;
   object-fit: cover;
@@ -145,10 +149,12 @@
 
 .line {
   @include div_l_pc(14, 180, 168, 202);
+  top:calc(50% + 100vw * (168 - 540) / 1920);
   background-color: #ff8700;
 }
 .label {
   @include img_l_pc(208, 159, 246);
+  top:calc(50% + 100vw * (159 - 540) / 1920);
   font-size: size(30.5);
   font-weight: 400;
   font-stretch: normal;
@@ -162,6 +168,7 @@
 }
 .title {
   @include img_l_pc(825, 204, 246);
+  top:calc(50% + 100vw * (204 - 540) / 1920);
   font-size: size(66.1);
   font-weight: 500;
   font-stretch: normal;
@@ -176,6 +183,7 @@
 
 .subtitle {
   @include img_l_pc(851, 301, 246);
+  top:calc(50% + 100vw * (301 - 540) / 1920);
   font-size: size(38.2);
   font-weight: 300;
   font-stretch: normal;
@@ -190,41 +198,37 @@
 
 .items {
   @include img_l_pc(920, 428, 204);
+  top:calc(50% + 100vw * (380 - 540) / 1920);
   > div {
     width: 100%;
-    height: size(151 + 42);
+    height: size(170);
     border-bottom: 1px solid #fff;
   }
 
   .item {
     display: flex;
     align-items: center;
+      font-stretch: normal;
+      font-style: normal;
+      font-size: size(17);
+      font-weight: normal;
+      line-height: 1.4;
+      color: #ffffff;
+      text-align: left;
     img {
-      width: size(110);
+      width: size(90);
       margin-right: size(10);
     }
 
     .item-name {
-      font-size: size(44.5);
+      font-size:2.5em;
       font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.32;
       letter-spacing: normal;
-      text-align: left;
-      color: #ffffff;
       white-space: nowrap;
     }
 
     .item-desc {
-      font-size: size(18);
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.42;
-      letter-spacing: size(1.08);
-      text-align: left;
-      color: #ffffff;
+      letter-spacing:0.06em;
     }
   }
 }
@@ -234,6 +238,7 @@
   width: size(800);
   height: size(550);
   top: size(105);
+  top:calc(50% + 100vw * (105 - 540) / 1920);
   right: size(349);
   object-fit: cover;
   // background: #0344;
@@ -417,7 +422,6 @@
     height: sizem(711);
     min-height: auto;
     max-height: initial;
-    background-color: #2157c1;
     // background-image: url('./all/section_bg.jpg');
     // background-attachment: scroll;
     // background-size: 100% 100%;
@@ -441,12 +445,23 @@
   }
 
   .bg-img {
-    width: 100vw;
-    height: auto;
+    width: 100%;
+    height:100%;
     position: absolute;
     top: auto;
     bottom: 0;
     left: 0;
+    &.bg1,
+    &.bg2{
+    img{width: 100%;
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;}}
+    &.bg1{
+    background-color: #2157c1;}
+    &.bg2{
+    background-color: #22389b;}
   }
 
   // begin

@@ -134,8 +134,16 @@ export default {
     margin: 0;
     width: 100%;
     height: auto;
-    margin-left: 20px;
-    white-space: normal;
+    margin-left:0;padding: 0;
+      white-space: normal;
+      line-height: 1.6;
+      .label{margin: 0;
+      font-size: calc(100vw * 14 / 375);
+      line-height:inherit;}
+    .desc {
+      font-size: calc(100vw * 14 / 375);
+      line-height:inherit;
+    }
   }
 
   .info {

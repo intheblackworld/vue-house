@@ -8,20 +8,20 @@
       <img src="./s2/bg.png" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC">
       <img src="./s2/bg_m.png" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isMobile" data-aos="fade" data-aos-delay="0">
       <div class="line"></div>
-      <div class="label">
+      <div class="label" data-aos="fade" data-aos-delay="300">
         ｜大竹崛起｜
       </div>
-      <div class="title">
+      <div class="title" data-aos="fade" data-aos-delay="200">
         並肩青埔 舉目藝文<br />
         大竹未來拭目以待
       </div>
-      <div class="desc" v-if="isPC">
+      <div class="desc" v-if="isPC" data-aos="fade" data-aos-delay="400">
         放眼青埔未來、跟進藝文價值，大竹地段潛力正在躍升。<br />
         十分鐘車程，前進全台最大名品城、IKEA、Xpark享受時尚氛圍；<br />
         享受藝文特區展演活動、市圖總館的城市書香氛圍。<br />
         大竹並肩桃園地段價值雙引擎，成長動能無與倫比
       </div>
-      <div class="desc" v-if="isMobile">
+      <div class="desc" v-if="isMobile" data-aos="fade" data-aos-delay="400">
         放眼青埔未來、跟進藝文價值，大竹地段潛力正在躍升。十分鐘車程，前進全台最大名品城、IKEA、Xpark享受時尚氛圍；享受藝文特區展演活動、市圖總館的城市書香氛圍。大竹並肩桃園地段價值雙引擎，成長動能無與倫比
       </div>
     </div>
@@ -31,15 +31,14 @@
 @import '@/assets/style/function.scss';
 .section2 {
   width: 100%;
-  height: 100vh;
-  min-height: size(1080);
-  max-height: size(1080);
+  height: calc(100vh - 40px);
+  min-height: calc(46.875vw - 40px);
+  max-height: calc(56.25vw - 40px);
   background-color: #fff;
   background-size: cover;
   background-attachment: fixed;
   position: relative;
 }
-
 .bg-img {
   width: 100%;
   height: 100%;
@@ -54,6 +53,9 @@
 
 .container {
   @include div_c_pc(1714, 866, 111);
+  max-height: 90%;
+  top:50%;
+  transform: translateY(-50%);
   overflow: hidden;
 }
 
@@ -109,6 +111,8 @@
 
 .desc {
   @include img_l_pc(615, 660, 75);
+  top: auto;
+  bottom: 0;
   font-size: size(20);
   font-weight: normal;
   font-stretch: normal;
@@ -161,7 +165,11 @@
   .container {
     @include div_c_m(375, 667, 0);
     overflow: hidden;
+  max-height: 100%;
+  top:0%;
+  transform: translateY(0%);
   }
+
 
   .cloud {
     animation: move 50s 0s linear infinite;

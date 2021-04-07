@@ -1,7 +1,7 @@
 <template>
   <div class="section6">
     <img src="./s6/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC">
-    <img src="./s6/bg_m.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isMobile" data-aos="fade" data-aos-delay="0">
+    <img src="./s6/bg_m.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isMobile" data-aos="fade" data-aos-delay="0" data-aos-offset="-500">
     <img src="./s6/t.png" :alt="`${info.caseName}_img`" class="grass">
 
     <div class="content">
@@ -34,11 +34,11 @@
 
 .section6 {
   width: 100%;
-  height: size(1080);
-  min-height: size(1080);
-  max-height: size(1080);
+  height: calc(100vh - 70px);
+  min-height: size(830);
+  max-height: size(1010);
   position: relative;
-  background-color: #df6c00;
+  background-color: #efd8ae;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
@@ -65,6 +65,7 @@
 
 .grass {
   @include img_l_pc(280, 351, -30);
+  top:calc(55% + 100vw * (351 - 1080 * .55) / 1920);
   transform-origin: bottom;
   animation: grass 4s ease-in-out alternate infinite;
 }
@@ -77,10 +78,12 @@
 
 .line {
   @include div_l_pc(14, 176, 168, 202);
+  top:calc(50% + 100vw * (168 - 540) / 1920); 
   background-color: #40220f;
 }
 .label {
   @include img_l_pc(208, 159, 246);
+  top:calc(50% + 100vw * (159 - 540) / 1920);
   font-size: size(30.5);
   font-weight: 400;
   font-stretch: normal;
@@ -94,6 +97,7 @@
 }
 .title {
   @include img_l_pc(825, 204, 246);
+  top:calc(50% + 100vw * (204 - 540) / 1920);
   font-size: size(66.1);
   font-weight: 500;
   font-stretch: normal;
@@ -108,6 +112,7 @@
 
 .subtitle {
   @include img_l_pc(851, 301, 246);
+  top:calc(50% + 100vw * (301 - 540) / 1920);
   font-size: size(38.2);
   font-weight: 300;
   font-stretch: normal;
@@ -122,6 +127,7 @@
 
 .work-title {
   @include img_l_pc(458, 301, 476);
+  top:calc(50% + 100vw * (301 - 540) / 1920);
   top: auto;
   bottom: size(123);
   font-size: size(36.3);
@@ -136,6 +142,7 @@
 }
 .work-desc {
   @include img_l_pc(514, 301, 496);
+  top:calc(50% + 100vw * (301 - 540) / 1920);
   top: auto;
   bottom: size(88);
   font-size: size(18);
@@ -151,6 +158,7 @@
 
 .list-info {
   @include img_l_pc(227 + 34 + 678, 429, 250);
+  top:calc(65% + 100vw * (429 - 1080 * .65) / 1920);
 
   .info {
     margin-bottom: size(26);
@@ -209,6 +217,12 @@
     // background-attachment: fixed;
     overflow: hidden;
   }
+
+  .bg-img {
+  height:auto;
+  top: auto;
+  bottom: 0;
+}
   .grass {
     @include img_l_m(172, 757, -40);
     transform-origin: bottom;
@@ -272,6 +286,7 @@
     .info {
       margin-bottom: sizem(20);
       flex-wrap: wrap;
+    
     }
 
     .info-title {
@@ -289,7 +304,7 @@
     }
 
     .info-desc {
-      width: sizem(300);
+      width: sizem(320);
       font-size: sizem(15);
       font-weight: normal;
       font-stretch: normal;
@@ -341,7 +356,7 @@ export default {
         },
         {
           title: '精品配備',
-          desc: '櫻花系統廚具、KARAT凱樂衛浴，完美頂規享受',
+          desc: isMobile?'櫻花系統廚具、KARAT凱樂衛浴<br>完美頂規享受':'櫻花系統廚具、KARAT凱樂衛浴，完美頂規享受',
         },
       ],
     }

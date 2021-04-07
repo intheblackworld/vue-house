@@ -27,7 +27,7 @@
           <div class="info-desc" v-html="item.desc"></div>
         </div>
       </div>
-      <div class="list-info flex-ac flex-jb" v-if="isMobile" data-aos="fade-left" data-aos-delay="800">
+      <div class="list-info flex-ac flex-jb" v-if="isMobile" data-aos="fade-left" data-aos-delay="800" data-aos-offset="-600">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(item, index) in list" :key="item.title" class="info" v-show="Math.round((slideIndex + 1) / 2) === index + 1">
             <img :src="item.img" alt="">
@@ -37,15 +37,18 @@
         </transition-group>
       </div>
     </div>
-    <swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" @slideChangeTransitionEnd="slideChanged">
-      <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide + index" class="item">
+    <div class="btn" v-if="isMobile">
+     <div class="btn_l"><img :src="list[1].img" alt=""></div>
+    <div class="btn_r"><img :src="list[2].img" alt=""></div>
+    </div>
+    <swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" @slideChangeTransitionEnd="slideChanged">
+      <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide + index" class="item" >
         <img :src="slide" :class="`item-img`" />
       </swiper-slide>
-      <div class="swiper-button-prev" slot="button-prev">
-        <img src="./all/prev-btn.png" alt />
+      
+      <div class="swiper-button-prev prev-btn" slot="button-prev">
       </div>
-      <div class="swiper-button-next" slot="button-next">
-        <img src="./all/next-btn.png" alt />
+      <div class="swiper-button-next next-btn" slot="button-next">
       </div>
     </swiper>
   </div>
@@ -186,14 +189,53 @@
   margin: 0 auto;
 }
 
-.swiper-button-prev,
-.swiper-container-rtl .swiper-button-next {
-  left: 2vw;
-}
 
-.swiper-button-next,
-.swiper-container-rtl .swiper-button-prev {
-  right: 2vw;
+    .prev-btn,
+    .next-btn{
+height: 100%;
+width: 2em;
+font-size:size(20);
+        right: 1em;
+        top: 0;
+        margin: 0;
+      cursor: pointer;
+      &::before{content: "";
+      position: absolute;
+      width: 100%;
+      height:100%;
+      top: 0;
+      left: 0;
+      transform:translateX(200%);
+background-color: #df6c0088;
+transition:all 0.3s;
+
+      }
+      &::after{content: "";
+      width: 1em;
+      height: 1em;
+      position: absolute;
+      top: calc(50% - 0.5em);
+      left: calc(50% - 0.75em);
+      border: solid #FFF;
+      border-width: 0.1em 0.1em 0 0;
+      transform: rotate(45deg) translate(-10%,10%);
+      }
+    &:hover:before{
+      transform:translateX(0%);
+    }
+    &:hover:after{
+  animation: btn 0.5s ease-in-out infinite alternate;
+    }
+    }
+    .prev-btn{
+        transform:scaleX(-1);
+        right: auto;
+        left: 1em;
+    }
+@keyframes btn {
+  to {
+    transform: rotate(45deg) translate(10%,-10%);
+  }
 }
 
 @media only screen and (max-width: 1440px) {
@@ -349,6 +391,30 @@
     margin: 0 auto;
   }
 
+  .btn{
+    position: absolute;
+    top:sizem(250);
+    width: 100%;
+    left: 0;
+.btn_l,
+.btn_r{
+    position: absolute;
+    top:sizem(0);
+    border-radius:sizem(50);
+    background:#0001;    
+    transition: all 0.3s;
+    padding: 3vw;
+    &:hover{
+      
+    background:#0003;    
+    }
+    }
+.btn_l{right:sizem(327);}
+.btn_r{left:sizem(327);}
+    img{height: sizem(80);}
+
+  }
+
   /* Swipe */
   .swipe {
     width: 100%;
@@ -498,18 +564,18 @@
     }
   }
 
-  .swipe-btns {
-    width: 100%;
-    height: 100%;
-    padding: 0 15px;
-    z-index: 3;
-
     .prev-btn,
-    .next-btn {
-      width: sizem(15);
-      cursor: pointer;
+    .next-btn{
+      font-size:sizem(15);
+      &::before{
+background-color: #cc5b4e00;
+      }
+      &::after{
+      border-color: #fff;
+      border-width: 0.15em 0.15em 0 0;
+        animation: btn 0.5s ease-in-out infinite alternate;
+      }
     }
-  }
 }
 </style>
 <script>
@@ -539,16 +605,20 @@ export default {
       swiperOption: {
         slidesPerView: isMobile ? 1 : 3,
         slidesPerGroup: isMobile ? 1 : 3,
-        spaceBetween: isTablet ? 20 : 30,
+        spaceBetween: isTablet ? 20 : 0,
         slidesPerColumn: isMobile ? 1 : 1,
         allowSlidePrev: isMobile ? true : true,
         allowSlideNext: isMobile ? true : true,
+  // effect : 'fade',
+   /*   fadeEffect: {
+    crossFade: true,
+  },*/
         // centeredSlides: true,
         // autoplay: {
         //   delay: 2500,
         //   disableOnInteraction: false,
         // },
-        loop: isMobile,
+        loop: true,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',

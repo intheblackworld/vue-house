@@ -30,7 +30,7 @@
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
             <li
               :key="item.name"
-              v-scroll-to="{ element: `#${item.section}`, offset: offset }"
+              v-scroll-to="{ element: `#${item.section}`, offset:  isMobile ? (item.mobileOffset ? item.mobileOffset : offset) : (item.offset ? item.offset : offset)}"
               v-for="item in list"
               class="flex-c"
               @click="toggleSidebar"
@@ -95,10 +95,10 @@ export default {
 @import '../assets/style/function.scss';
 .navigation {
   .title {
-    font-size: size(30.5);
-    width: size(137);
+ //   font-size: size(30.5);
+  //  width: size(137);
     // width: 140px;
-    height: 40px;
+  //  height: 40px;
     color: #000;
     display: flex;
     align-items: center;
@@ -132,6 +132,8 @@ export default {
   display: flex !important;
   align-items: center;
   transition: all 0.3s;
+  font-size:size(24);
+  line-height: 1.5;
   // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
   .logo {
     opacity: 0;
@@ -191,11 +193,15 @@ export default {
   padding-left: 30px;
   li {
     height: 100%;
+    &:nth-child(1){
+      .link {
+    border-left: 1px solid $nav_link_hover_bg;}
+    }
   }
 
   .link {
     color: $nav_link_color;
-    height: 22px;
+    //height: 22px;
     text-align: center;
     display: block;
     cursor: pointer;
@@ -206,62 +212,63 @@ export default {
     align-items: center;
     justify-content: center;
     position: relative;
-    // overflow: hidden;
-    // border-right: 1px solid $nav_link_hover_bg;
+    overflow: hidden;
+    border-right: 1px solid $nav_link_hover_bg;
+    width:5.7em;
 
     &:hover {
       color: $nav_link_hover_color;
       // background: $nav_link_hover_bg;
     }
 
-    // &::before {
-    //   content: '';
-    //   width: 0%;
-    //   height: 100%;
-    //   display: block;
-    //   background: $nav_link_hover_bg; // second bg
-    //   position: absolute;
-    //   transform: skewX(-20deg);
-    //   left: -10%;
-    //   opacity: 1;
-    //   top: 0;
-    //   z-index: 2;
-    //   transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
-    //   // box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
-    // }
+     &::before {
+       content: '';
+       width: 0%;
+       height: 100%;
+       display: block;
+       background: #fff6; // second bg
+       position: absolute;
+       transform: skewX(-20deg);
+       left: -10%;
+       opacity: 1;
+       top: 0;
+       z-index: 2;
+       transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+       //box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
+     }
 
-    // &::after {
-    //   content: '';
-    //   width: 0%;
-    //   height: 100%;
-    //   display: block;
-    //   background: #fff; // first bg
-    //   position: absolute;
-    //   transform: skewX(-20deg);
-    //   left: -10%;
-    //   opacity: 0;
-    //   top: 0;
-    //   z-index: 1;
-    //   transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
-    //   // box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
-    // }
-    // &:hover::before,
-    // &:hover::before {
-    //   opacity: 1;
-    //   width: 116%;
-    // }
-    // &:hover::after,
-    // &:hover::after {
-    //   opacity: 1;
-    //   width: 120%;
-    // }
+    &::after {
+       content: '';
+       width: 0%;
+       height: 100%;
+       display: block;
+       background: #fff3; // first bg
+       position: absolute;
+       transform: skewX(-20deg);
+       left: -10%;
+       opacity: 0;
+       top: 0;
+       z-index: 1;
+       transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
+       box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
+     }
+     &:hover::before {
+       opacity: 1;
+       width: 200%;
+       transform:translateX(100%) skewX(-20deg);
+     }
+     &:hover::after {
+       opacity: 1;
+       width: 150%;
+       transform:translateX(100%) skewX(-20deg);
+     }
 
     .title {
-      font-size: 24px;
+    //  font-size: 24px;
       position: relative;
       z-index: 3;
       > span {
-        font-size: 24px !important;
+     //   font-size: 24px !important;
       }
     }
 
@@ -283,8 +290,8 @@ export default {
 }
 
 .link {
-  color: rgba(0, 0, 0, 0.7);
-  font-size: 16px;
+ // color: rgba(0, 0, 0, 0.7);
+  // font-size: 16px;
 }
 
 /* 平板尺寸 */
