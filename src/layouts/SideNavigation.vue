@@ -394,8 +394,7 @@ export default {
     display: block;
     transform: translateX(40%);
 
-    li {
-    }
+   
 
     .link {
       display: none;
@@ -3861,7 +3860,7 @@ main {
 .modal-agreement.on .modal_circle_path {
   stroke: #b8a57e;
   stroke-dashoffset: 0;
-  åtransition: stroke-dashoffset 1.4s cubic-bezier(0.075, 0.82, 0.165, 1),
+  transition: stroke-dashoffset 1.4s cubic-bezier(0.075, 0.82, 0.165, 1),
     stroke 0.3s;
 }
 .modal-agreement .agreement_title {

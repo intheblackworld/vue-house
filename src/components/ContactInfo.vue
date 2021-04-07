@@ -310,12 +310,14 @@ export default {
   .google-btn {
     width: 100%;
   }
+  /*
   .google-btn {
-    /* border-top-right-radius: 0px;
+     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
     border-bottom-right-radius: 30px;
-    border-bottom-left-radius: 30px;*/
+    border-bottom-left-radius: 30px;
   }
+  */
   .address {
     // width: 280px;
     padding: 0.8em 1em;

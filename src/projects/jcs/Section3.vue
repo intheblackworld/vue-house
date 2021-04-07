@@ -154,7 +154,7 @@
 }
 .label {
   @include img_l_pc(208, 159, 246);
-  top:calc(50% + 100vw * (159 - 540) / 1920);
+  top:calc(50% + 100vw * (162 - 540) / 1920);
   font-size: size(30.5);
   font-weight: 400;
   font-stretch: normal;
@@ -168,7 +168,7 @@
 }
 .title {
   @include img_l_pc(825, 204, 246);
-  top:calc(50% + 100vw * (204 - 540) / 1920);
+  top:calc(50% + 100vw * (208 - 540) / 1920);
   font-size: size(66.1);
   font-weight: 500;
   font-stretch: normal;
@@ -184,7 +184,7 @@
 .subtitle {
   @include img_l_pc(851, 301, 246);
   top:calc(50% + 100vw * (301 - 540) / 1920);
-  font-size: size(38.2);
+  font-size: size(37);
   font-weight: 300;
   font-stretch: normal;
   font-style: normal;
@@ -202,7 +202,7 @@
   > div {
     width: 100%;
     height: size(170);
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #0004;
   }
 
   .item {
@@ -419,9 +419,9 @@
 @media screen and (max-width: 767px) {
   .section3 {
     width: 100vw;
-    height: sizem(711);
-    min-height: auto;
-    max-height: initial;
+    min-height: sizem(667);
+    max-height: sizem(812);
+    height:100vh;
     // background-image: url('./all/section_bg.jpg');
     // background-attachment: scroll;
     // background-size: 100% 100%;
@@ -574,7 +574,7 @@
     width: 100%;
     height: sizem(259);
     min-height: auto;
-    top: sizem(163);
+    top: sizem(155);
     bottom: auto;
     left: sizem(0);
     object-fit: cover;
@@ -630,9 +630,10 @@
     height: 100%;
     z-index: 0;
     display: flex;
-    align-items: center;
+    align-items: center; justify-content:center;
+
     .half-item {
-      width: 50%;
+      width: 40%;
       position: relative;
     }
     img {

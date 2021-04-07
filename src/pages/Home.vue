@@ -74,9 +74,9 @@
 }
 
 @media only screen and (max-width: 767px) {
-  .bg-img {
+  //.bg-img {
   //  background-image: url('~@/projects/lj/s1/bg_m.png');
-  }
+  //}
 }
 </style>
 

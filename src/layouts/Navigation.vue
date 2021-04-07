@@ -109,9 +109,11 @@ export default {
     position: relative;
     white-space: nowrap;
     z-index: 3;
+    /*
     &:hover {
-      // background-image: linear-gradient(to left, #d70032 0%, #eb5500 100%);
+      background-image: linear-gradient(to left, #d70032 0%, #eb5500 100%);
     }
+    */
   }
 }
 </style>
@@ -267,9 +269,9 @@ export default {
     //  font-size: 24px;
       position: relative;
       z-index: 3;
-      > span {
+     /* > span {
      //   font-size: 24px !important;
-      }
+      } */
     }
 
     .subTitle {
@@ -288,11 +290,11 @@ export default {
 .menu {
   display: none;
 }
-
+/*
 .link {
  // color: rgba(0, 0, 0, 0.7);
   // font-size: 16px;
-}
+} */
 
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {

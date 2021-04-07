@@ -34,9 +34,9 @@
 
 .section6 {
   width: 100%;
-  height: calc(100vh - 70px);
-  min-height: size(830);
-  max-height: size(1010);
+  height: calc(100vh + 80px);
+  min-height: calc(46.875vw + 80px);
+  max-height: calc(56.25vw + 80px);
   position: relative;
   background-color: #efd8ae;
   // min-height: size(900);
@@ -157,15 +157,18 @@
 }
 
 .list-info {
-  @include img_l_pc(227 + 34 + 678, 429, 250);
+  @include img_l_pc(227 + 70 + 678, 429, 250);
   top:calc(65% + 100vw * (429 - 1080 * .65) / 1920);
+  height: calc(100% - 27vw);
+  display: flex;
+    flex-direction:column;
+    justify-content:space-between;
 
-  .info {
-    margin-bottom: size(26);
-  }
+
+
 
   .info-title {
-    width: size(227);
+    width: size(250);
     font-size: size(48);
     font-weight: 300;
     font-stretch: normal;
@@ -267,7 +270,7 @@
   }
 
   .subtitle {
-    @include img_l_m(300, 156, 55);
+    @include img_l_m(320, 156, 55);
     font-size: sizem(16);
     font-weight: normal;
     font-stretch: normal;
@@ -282,6 +285,7 @@
 
   .list-info {
     @include img_l_m(310, 206, 31);
+  height:auto;
 
     .info {
       margin-bottom: sizem(20);

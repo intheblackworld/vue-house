@@ -194,7 +194,7 @@
 
 /* Swipe */
 .swipe {
-  width: size(766);
+  width: size(660);
   height:90%;
   top:5%;
   right: size(116);
