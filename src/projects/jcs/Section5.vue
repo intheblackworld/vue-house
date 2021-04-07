@@ -650,10 +650,10 @@ export default {
     crossFade: true,
   },*/
         // centeredSlides: true,
-        // autoplay: {
-        //   delay: 2500,
-        //   disableOnInteraction: false,
-        // },
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
         loop: true,
         navigation: {
           nextEl: '.swiper-button-next',
