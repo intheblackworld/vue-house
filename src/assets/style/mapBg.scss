@@ -46,9 +46,12 @@
     overflow-x: scroll;
     overflow-y: hidden;
     width: 100vw;
+    bottom: 0;
+    position: absolute;
+    z-index: 6;
     .map-bg {
       width: auto;
-      height: sizem(604);
+      height: sizem(247);
     }
 
     .map-text {
@@ -69,14 +72,16 @@
     .mask {
       width: 200vw;
       height: sizem(57);
-      background-color: rgba(0, 53, 97, 0.72);
+      background-color: rgba(0, 53, 97, 0.4);
       // animation: swing 2.5s ease-in-out 0s infinite;
       left: 35vw;
       position: absolute;
-      top: sizem(285);
+      top: auto;
+      bottom: sizem(108);
       left: 0;
       opacity: 0;
       transition: opacity .5s;
+      z-index: 7;
       &.active {
         opacity: 1;
       }
@@ -85,15 +90,17 @@
     .hand {
       position: absolute;
       z-index: 3;
-      width: sizem(87) !important;
+      width: sizem(67) !important;
       height: auto !important;
-      left: sizem(475);
+      left: sizem(515);
       right: 0;
       margin: 0 auto;
-      top: sizem(298) !important;
+      top: auto !important;
+      bottom: sizem(78) !important;
       display: block;
       animation: swing 2.5s ease-in-out 0s infinite alternate-reverse;
       opacity: 0;
+      z-index: 8;
       transition: opacity .5s;
       &.active {
         opacity: 1;

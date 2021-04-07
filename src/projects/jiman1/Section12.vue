@@ -44,10 +44,10 @@
               <div class="item-title" v-html="slide.title"></div>
               <div class="item-desc" v-html="slide.desc"></div>
             </a>
-            <a :href="slideList[slideIndex === 3 ? 0 : slideIndex + 1].link" target="_blank">
-              <img :src="slideList[slideIndex === 3 ? 0 : slideIndex + 1].src" :class="`item-img`" />
-              <div class="item-title" v-html="slideList[slideIndex === 3 ? 0 : slideIndex + 1].title"></div>
-              <div class="item-desc" v-html="slideList[slideIndex === 3 ? 0 : slideIndex + 1].desc"></div>
+            <a :href="slideList[secIndex].link" target="_blank">
+              <img :src="slideList[secIndex].src" :class="`item-img`" />
+              <div class="item-title" v-html="slideList[secIndex].title"></div>
+              <div class="item-desc" v-html="slideList[secIndex].desc"></div>
             </a>
             <a :href="slideList[lastIndex].link" target="_blank">
               <img :src="slideList[lastIndex].src" :class="`item-img`" />
@@ -964,10 +964,17 @@ export default {
   },
 
   computed: {
-    lastIndex() {
-      if (this.slideIndex === 2) {
+    secIndex() {
+      if (this.slideIndex === 4) {
         return 0
-      } else if (this.slideIndex === 3) {
+      } else {
+        return this.slideIndex + 1
+      }
+    },
+    lastIndex() {
+      if (this.slideIndex === 3) {
+        return 0
+      } else if (this.slideIndex === 4) {
         return 2
       } else {
         return this.slideIndex + 2

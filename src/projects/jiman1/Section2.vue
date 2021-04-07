@@ -21,6 +21,8 @@
     </div>
     <div v-else>
       <img src="./mobile/02/02_flower_m.png" :alt="`${info.caseName}_f3`" class="f3">
+      <Map :bgSrc="bgSrc" :hand="hand">
+      </Map>
       <!-- <div class="img">
         <img src="./mobile/02/02_img_m.jpg" :alt="`${info.caseName}_img`">
       </div> -->
@@ -37,7 +39,7 @@
           </div>
         </div>
       </div> -->
-      <div class="scrollbar-mask"></div>
+      <!-- <div class="scrollbar-mask"></div> -->
       <img src="./mobile/02/02_text_m.png" :alt="`${info.caseName}_img`" class="text" data-aos="fade-up" data-aos-delay="200">
       <div class="desc" data-aos="fade-up" data-aos-delay="400">
         懂收藏的人，有旁人難及的自豪氣概<br />
@@ -245,7 +247,7 @@
   }
   .text {
     @include img_l_m(48, 31, 50);
-    z-index:6;
+    z-index: 6;
   }
 
   .img {
@@ -277,10 +279,10 @@
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
 import info from '@/info'
-
-import BScroll from '@better-scroll/core'
-import ScrollBar from '@better-scroll/scroll-bar'
-BScroll.use(ScrollBar)
+import Map from '@/components/Map.vue'
+// import BScroll from '@better-scroll/core'
+// import ScrollBar from '@better-scroll/scroll-bar'
+// BScroll.use(ScrollBar)
 
 export default {
   name: 'section2',
@@ -291,25 +293,32 @@ export default {
       isMobile,
       isTablet,
       info,
+      bgSrc: require('./s2/02_img.jpg'),
+      // bgmSrc: require('./s3_bg_m.jpg'),
+      hand: require('./s2/m_2_mobile_hand.png'),
     }
   },
 
+  components: {
+    Map,
+  },
+
   methods: {
-    initBscroll() {
-      this.scroll = new BScroll(this.$refs.wrapper, {
-        freeScroll: true,
-        click: true,
-        scrollbar: {
-          customElements: [this.$refs.horizontal, this.$refs.vertical],
-          fade: false,
-          interactive: true,
-          scrollbarTrackClickable: true,
-        },
-      })
-    },
-    onload() {
-      this.initBscroll()
-    },
+    // initBscroll() {
+    //   this.scroll = new BScroll(this.$refs.wrapper, {
+    //     freeScroll: true,
+    //     click: true,
+    //     scrollbar: {
+    //       customElements: [this.$refs.horizontal, this.$refs.vertical],
+    //       fade: false,
+    //       interactive: true,
+    //       scrollbarTrackClickable: true,
+    //     },
+    //   })
+    // },
+    // onload() {
+    //   this.initBscroll()
+    // },
   },
 
   mounted() {},
