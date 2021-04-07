@@ -54,7 +54,8 @@
         data-aos="fade" data-aos-delay="400"
         class="logo absolute"
       >
-
+      <h3 class="title1 absolute">總價<b>1588</b>萬起</h3>
+<h3 class="title2 absolute">買海濱地王</h3>
       <img
         src="./s1/img.jpg"
         class="item-img absolute"
@@ -214,6 +215,8 @@
         alt="聯上海棠"
         class="logo absolute"
       >
+      <h3 class="title1 absolute">總價<b>1588</b>萬起</h3>
+<h3 class="title2 absolute">買海濱地王</h3>
 
       <img
         v-lazy="require('./mo/1/img.jpg')"
@@ -417,6 +420,26 @@
   top: size(278);
   left: size(378);
 }
+.title1{
+  top:calc(50% + -2vw);
+  left: size(355);
+  font-size: size(30);
+  b{font-size: 1.7em;letter-spacing:-0.05em;display: inline-block;position: relative;top: 0.05em;}
+  }
+.title2{
+  top:calc(50% + 2vw);
+  left: size(362);
+  color: #0009;
+  font-size: size(25);
+  &::before,
+  &::after{
+    content: "";
+    display: inline-block;
+    height: 1px;
+    width: 2.35vw;position: relative;top:-0.3em;
+    background: currentColor;
+  }
+  }
 
 @keyframes scroll-top {
   0% {
@@ -483,8 +506,32 @@
 
   .logo {
     width: size-m(95);
-    top: size-m(52);
-    left: size-m(132);
+    top: size-m(20);
+    left: size-m(140);
+  }
+  .title1{
+  top:size-m(128);
+  left: 0;
+  width: 100%;
+  font-size: size-m(20);
+  text-align: center;
+  b{font-size: 1.7em;letter-spacing:-0.05em;display: inline-block;position: relative;top: 0.05em;}
+  }
+.title2{
+  top:size-m(168);
+  left:0;
+  width: 100%;
+  color: #0009;
+  text-align: center;
+  font-size: size-m(15);
+  &::before,
+  &::after{
+    content: "";
+    display: inline-block;
+    height: 1px;
+    width: 2.35vw;position: relative;top:-0.3em;
+    background: currentColor;
+  }
   }
 
   .item-img {
