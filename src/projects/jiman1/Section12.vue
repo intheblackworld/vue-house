@@ -275,7 +275,7 @@
 .swipe-item {
   width: 100%;
   height: 100%;
-  z-index: 0;
+  z-index: 7;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
