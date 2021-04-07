@@ -72,7 +72,7 @@
     .mask {
       width: 200vw;
       height: sizem(57);
-      background-color: rgba(0, 53, 97, 0.4);
+      background: rgba(0, 53, 97, 0.4) !important;
       // animation: swing 2.5s ease-in-out 0s infinite;
       left: 35vw;
       position: absolute;
@@ -92,11 +92,11 @@
       z-index: 3;
       width: sizem(67) !important;
       height: auto !important;
-      left: sizem(515);
+      left: sizem(510);
       right: 0;
       margin: 0 auto;
       top: auto !important;
-      bottom: sizem(78) !important;
+      bottom: sizem(65) !important;
       display: block;
       animation: swing 2.5s ease-in-out 0s infinite alternate-reverse;
       opacity: 0;

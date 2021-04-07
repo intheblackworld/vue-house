@@ -322,7 +322,7 @@
   left: 0;
   margin: 0 auto;
   justify-content: center;
-  z-index: 6;
+  z-index: 7;
 }
 
 .pagination-dot {
