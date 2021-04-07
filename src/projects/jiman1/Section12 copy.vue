@@ -26,8 +26,6 @@
       新聞報導
     </h3>
     <div class="line" data-aos="zoom-in-right" data-aos-delay="200"></div>
-
-
     <div class="news-container" v-if="isPC">
       <a :href="slide.link" target="_blank" v-for="(slide, i) in slideList" :key="slide.src + 'a' + i">
         <img :src="slide.src" :class="`item-img`" />
@@ -35,7 +33,6 @@
         <div class="item-desc" v-html="slide.desc"></div>
       </a>
     </div>
-
     <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
