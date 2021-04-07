@@ -27,18 +27,36 @@
     </h3>
     <div class="line" data-aos="zoom-in-right" data-aos-delay="200"></div>
 
-
-    <div class="news-container" v-if="isPC">
+    <!-- <div class="news-container" v-if="isPC">
       <a :href="slide.link" target="_blank" v-for="(slide, i) in slideList" :key="slide.src + 'a' + i">
         <img :src="slide.src" :class="`item-img`" />
         <div class="item-title" v-html="slide.title"></div>
         <div class="item-desc" v-html="slide.desc"></div>
       </a>
-    </div>
+    </div> -->
 
-    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile">
+    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
-        <transition-group name="swipe-fade" mode="out-in">
+        <transition-group name="swipe-fade" mode="out-in" v-if="isPC">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.src" :class="`swipe-item absolute`">
+            <a :href="slide.link" target="_blank">
+              <img :src="slide.src" :class="`item-img`" />
+              <div class="item-title" v-html="slide.title"></div>
+              <div class="item-desc" v-html="slide.desc"></div>
+            </a>
+            <a :href="slideList[slideIndex === 3 ? 0 : slideIndex + 1].link" target="_blank">
+              <img :src="slideList[slideIndex === 3 ? 0 : slideIndex + 1].src" :class="`item-img`" />
+              <div class="item-title" v-html="slideList[slideIndex === 3 ? 0 : slideIndex + 1].title"></div>
+              <div class="item-desc" v-html="slideList[slideIndex === 3 ? 0 : slideIndex + 1].desc"></div>
+            </a>
+            <a :href="slideList[lastIndex].link" target="_blank">
+              <img :src="slideList[lastIndex].src" :class="`item-img`" />
+              <div class="item-title" v-html="slideList[lastIndex].title"></div>
+              <div class="item-desc" v-html="slideList[lastIndex].desc"></div>
+            </a>
+          </div>
+        </transition-group>
+        <transition-group name="swipe-fade" mode="out-in" v-if="isMobile">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.src" :class="`swipe-item absolute`">
             <a :href="slide.link" target="_blank">
               <img :src="slide.src" :class="`item-img`" />
@@ -51,8 +69,14 @@
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.src + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
       </div>
-      <div class="swipe-btns absolute flex-ac flex-jb">
-        <!--   <img src="./all/slider_left.png" alt="" class="prev-btn" @click="decIndex">
+      <div class="swipe-btns absolute flex-ac flex-jb" v-if="isPC">
+        <img src="./all/slider_left.png" alt="" class="prev-btn" @click="decIndex">
+        <img src="./all/slider_right.png" alt="" class="next-btn" @click="addIndex">
+        <!-- <div class="prev-btn" @click="decIndex"></div>
+        <div class="next-btn" @click="addIndex"></div> -->
+      </div>
+      <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+        <!-- <img src="./all/slider_left.png" alt="" class="prev-btn" @click="decIndex">
           <img src="./all/slider_right.png" alt="" class="next-btn" @click="addIndex">  -->
         <div class="prev-btn" @click="decIndex"></div>
         <div class="next-btn" @click="addIndex"></div>
@@ -161,10 +185,21 @@
   justify-content: space-between;
   align-items: center;
   z-index: 6;
+}
+
+.item-img {
+  width: size(472);
+  margin: 0 auto;
+}
+
+/* Swipe */
+.swipe {
+  @include div_c_pc(472 * 3 + 21 * 2, 480, 312 + 907);
+  z-index: 6;
+
   a {
     display: block;
     width: size(472);
-    height: 90%;
     text-decoration: none;
   }
 
@@ -190,17 +225,6 @@
     text-align: left;
     padding-left: 0;
   }
-}
-
-.item-img {
-  width: size(472);
-  margin: 0 auto;
-}
-
-/* Swipe */
-.swipe {
-  @include div_c_pc(472 * 3 + 21 * 2, 480, 312 + 907);
-  z-index: 6;
 }
 
 // begin
@@ -252,6 +276,9 @@
   width: 100%;
   height: 100%;
   z-index: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 
   img {
     width: 100%;
@@ -295,6 +322,7 @@
   left: 0;
   margin: 0 auto;
   justify-content: center;
+  z-index: 6;
 }
 
 .pagination-dot {
@@ -354,35 +382,45 @@
   height: 100%;
   padding: 0 0;
   z-index: 5;
-  overflow: hidden;
+  overflow: visible;
   position: absolute;
   top: 0;
   left: 0;
+
+  .prev-btn {
+    left: -4em;
+    top: -2em;
+  }
+
+  .next-btn {
+    right: -4em;
+    top: -2em;
+  }
   .prev-btn,
   .next-btn {
     position: relative;
-    height: 100%;
-    width: 2em;
+    // height: 100%;
+    width: 3em;
     font-size: size(20);
     cursor: pointer;
-    &::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      transform: translateX(100%);
-      background-color: #cc5b4e88;
-      transition: all 0.3s;
-    }
+    // &::before {
+    //   content: '';
+    //   position: absolute;
+    //   width: 100%;
+    //   height: 100%;
+    //   top: 0;
+    //   left: size(40);
+    //   transform: translateX(100%);
+    //   background-color: #cc5b4e88;
+    //   transition: all 0.3s;
+    // }
     &::after {
       content: '';
       width: 1em;
       height: 1em;
       position: absolute;
-      top: calc(50% - 0.5em);
-      left: calc(50% - 0.75em);
+      top: calc(50% - 4.5em);
+      left: calc(50% + 2.75em);
       border: solid #fff;
       border-width: 0.1em 0.1em 0 0;
       transform: rotate(45deg) translate(-10%, 10%);
@@ -395,7 +433,7 @@
     }
   }
   .prev-btn {
-    transform: scaleX(-1);
+    // transform: scaleX(-1);
   }
 }
 @keyframes btn {
@@ -735,11 +773,69 @@
       }
     }
   }
-
   .swipe-btns {
-    width: 120%;
-    left: -10%;
-    top: -15%;
+    width: 100%;
+    height: 100%;
+    padding: 0 0;
+    z-index: 5;
+    overflow: visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .prev-btn {
+      left: 0;
+      top: 0;
+    }
+
+    .next-btn {
+      right: 0;
+      top: 0;
+    }
+    .prev-btn,
+    .next-btn {
+      position: relative;
+      height: 100%;
+      // width: 3em;
+      // font-size: size(20);
+      cursor: pointer;
+      // &::before {
+      //   content: '';
+      //   position: absolute;
+      //   width: 100%;
+      //   height: 100%;
+      //   top: 0;
+      //   left: size(40);
+      //   transform: translateX(100%);
+      //   background-color: #cc5b4e88;
+      //   transition: all 0.3s;
+      // }
+      &::after {
+        content: '';
+        width: 1em;
+        height: 1em;
+        position: absolute;
+        top: calc(50% - 4.5em);
+        left: calc(50% - 0.75em);
+        border: solid #fff;
+        border-width: 0.1em 0.1em 0 0;
+        transform: rotate(45deg) translate(-10%, 10%);
+      }
+      &:hover:before {
+        transform: translateX(0%);
+      }
+      &:hover:after {
+        animation: btn 0.5s ease-in-out infinite alternate;
+      }
+    }
+    .prev-btn {
+      transform: scaleX(-1);
+    }
+  }
+  .swipe-btns {
+    width: 130%;
+    left: -15%;
+    top: 5%;
     .prev-btn,
     .next-btn {
       font-size: sizem(15);
@@ -795,13 +891,13 @@ export default {
           desc:
             '台北城南人文薈萃，擁有豐富的人文地景與歷史文化，捷運帶來交通上的便利...',
         },
-        //{
-        //  src: require('./s12/news_img_4.jpg'),
-        //  title: '自由新聞',
-        //  link: 'https://market.ltn.com.tw/article/10226',
-        //  desc:
-        //    '台北市可開發的土地一塊難求，尤其繁華的汀洲路四段上，要取得超過500坪土地就很困難了...',
-        //},
+        {
+          src: require('./s12/news_img_4.jpg'),
+          title: '自由新聞',
+          link: 'https://market.ltn.com.tw/article/10226',
+          desc:
+            '台北市可開發的土地一塊難求，尤其繁華的汀洲路四段上，要取得超過500坪土地就很困難了...',
+        },
       ],
     }
   },
@@ -860,6 +956,16 @@ export default {
     }, 2500)
   },
 
-  computed: {},
+  computed: {
+    lastIndex() {
+      if (this.slideIndex === 2) {
+        return 0
+      } else if (this.slideIndex === 3) {
+        return 2
+      } else {
+        return this.slideIndex + 2
+      }
+    },
+  },
 }
 </script>
