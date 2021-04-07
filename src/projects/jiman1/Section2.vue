@@ -24,19 +24,19 @@
       <!-- <div class="img">
         <img src="./mobile/02/02_img_m.jpg" :alt="`${info.caseName}_img`">
       </div> -->
-      <div class="custom-scrollbar-container img">
+      <!-- <div class="custom-scrollbar-container img">
         <div ref="wrapper" class="custom-scrollbar-wrapper">
           <img @load="onload" class="custom-scrollbar-content" :src="require('./mobile/02/02_img_m.jpg')" alt="">
-          <!-- custom-vertical-scrollbar-->
-          <!-- <div class="custom-vertical-scrollbar" ref="vertical">
+          custom-vertical-scrollbar
+          <div class="custom-vertical-scrollbar" ref="vertical">
             <div class="custom-vertical-indicator"></div>
-          </div> -->
-          <!-- custom-horizontal-scrollbar-->
+          </div>
+          custom-horizontal-scrollbar
           <div class="custom-horizontal-scrollbar" ref="horizontal">
             <div class="custom-horizontal-indicator"></div>
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="scrollbar-mask"></div>
       <img src="./mobile/02/02_text_m.png" :alt="`${info.caseName}_img`" class="text" data-aos="fade-up" data-aos-delay="200">
       <div class="desc" data-aos="fade-up" data-aos-delay="400">
