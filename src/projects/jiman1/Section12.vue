@@ -92,7 +92,7 @@
   @include div_c_pc(1920, 907, 0);
   background: #000 url('./s12/news_img.jpg') no-repeat center;
   position: absolute;
-  z-index: 2;
+  z-index: 6;
   left: 0;
   overflow: hidden;
 
@@ -144,6 +144,7 @@
   font-weight: 400;
   color: #fff;
   white-space: nowrap;
+  z-index: 6;
 }
 
 .line {
@@ -156,7 +157,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 3;
+  z-index: 6;
   a {
     display: block;
     width: size(472);
@@ -196,7 +197,7 @@
 /* Swipe */
 .swipe {
   @include div_c_pc(472 * 3 + 21 * 2, 480, 312 + 907);
-  z-index: 2;
+  z-index: 6;
 }
 
 // begin
@@ -349,7 +350,7 @@
   width: 100%;
   height: 100%;
   padding: 0 0;
-  z-index: 3;
+  z-index: 6;
   overflow: hidden;
   position: absolute;
   top: 0;
@@ -404,7 +405,7 @@
   @include img_l_pc(588, -200, -70);
   transform-origin: 0% 90%;
   transform: skewY(2deg);
-  z-index: 5;
+  z-index: 6;
   animation: flow1 4s 0s ease-in-out infinite alternate;
 }
 
@@ -412,7 +413,7 @@
   @include img_r_pc(786, 590, -100);
   transform-origin: 100% 80%;
   transform: skewY(2deg);
-  z-index: 5;
+  z-index: 6;
   animation: flow1 3s 0s ease-in-out infinite alternate;
 }
 @keyframes flow1 {
@@ -507,7 +508,7 @@
   .play-btn {
     @include img_c_m(32, 80);
     cursor: pointer;
-    z-index: 3;
+    z-index: 6;
   }
 
   .video {
@@ -608,13 +609,13 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: 4;
+    z-index: 6;
   }
 
   .swipe-item {
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: 6;
 
     img {
       width: 100%;
@@ -684,7 +685,7 @@
     padding: 5px;
     margin: 0 5px;
     cursor: pointer;
-    z-index: 4;
+    z-index: 6;
 
     span {
       display: block;
