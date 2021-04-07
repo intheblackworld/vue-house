@@ -795,13 +795,13 @@ export default {
           desc:
             '台北城南人文薈萃，擁有豐富的人文地景與歷史文化，捷運帶來交通上的便利...',
         },
-        {
-          src: require('./s12/news_img_4.jpg'),
-          title: '自由新聞',
-          link: 'https://market.ltn.com.tw/article/10226',
-          desc:
-            '台北市可開發的土地一塊難求，尤其繁華的汀洲路四段上，要取得超過500坪土地就很困難了...',
-        },
+        //{
+        //  src: require('./s12/news_img_4.jpg'),
+        //  title: '自由新聞',
+        //  link: 'https://market.ltn.com.tw/article/10226',
+        //  desc:
+        //    '台北市可開發的土地一塊難求，尤其繁華的汀洲路四段上，要取得超過500坪土地就很困難了...',
+        //},
       ],
     }
   },
