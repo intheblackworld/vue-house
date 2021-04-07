@@ -73,7 +73,7 @@
       <div class="btn_l" @click="blockIndex = prevIndex"><img :src="list[prevIndex].img" alt=""></div>
       <div class="btn_r" @click="blockIndex = nextIndex"><img :src="list[nextIndex].img" alt=""></div>
     </div>
-    <div class="list-info flex-ac flex-jb" v-if="isMobile" data-aos="fade-left" data-aos-delay="800" data-aos-offset="-600">
+    <div class="list-info flex-ac flex-jb" v-if="isMobile" data-aos="fade-left" data-aos-delay="800" data-aos-offset="-600" v-touch:swipe.left="decBlockIndex" v-touch:swipe.right="addBlockIndex">
       <transition-group name="swipe-fade" mode="out-in">
         <div v-for="(item, index) in list" :key="item.title" class="info" v-show="blockIndex === index">
           <img :src="item.img" alt="" @click="blockIndex = index">
@@ -650,10 +650,10 @@ export default {
     crossFade: true,
   },*/
         // centeredSlides: true,
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false,
-        },
+        // autoplay: {
+        //   delay: 5000,
+        //   disableOnInteraction: false,
+        // },
         loop: true,
         navigation: {
           nextEl: '.swiper-button-next',
@@ -720,6 +720,14 @@ export default {
         this.slideIndex = swiper.activeIndex - 1
       }
     },
+
+		addBlockIndex() {
+			this.blockIndex = this.nextIndex
+		},
+
+		decBlockIndex() {
+			this.blockIndex = this.prevIndex
+		}
   },
 
   created() {},

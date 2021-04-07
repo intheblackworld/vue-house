@@ -41,9 +41,9 @@
         </div>
       </div>
       <div class="swipe-btns absolute flex-ac flex-jb">
-          <div class="prev-btn" @click="decIndex"></div>
-          <div class="next-btn" @click="addIndex"></div>
-        </div>
+        <div class="prev-btn" @click="decIndex"></div>
+        <div class="next-btn" @click="addIndex"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -116,12 +116,12 @@
 
 .line {
   @include div_l_pc(14, 214, 168, 202);
-  top:calc(50% + 100vw * (168 - 540) / 1920);
+  top: calc(50% + 100vw * (168 - 540) / 1920);
   background-color: #40220f;
 }
 .label {
   @include img_l_pc(208, 159, 246);
-  top:calc(50% + 100vw * (159 - 540) / 1920);
+  top: calc(50% + 100vw * (159 - 540) / 1920);
   font-size: size(30.5);
   font-weight: 400;
   font-stretch: normal;
@@ -135,7 +135,7 @@
 }
 .title {
   @include img_l_pc(825, 204, 246);
-  top:calc(50% + 100vw * (204 - 540) / 1920);
+  top: calc(50% + 100vw * (204 - 540) / 1920);
   font-size: size(66.1);
   font-weight: 500;
   font-stretch: normal;
@@ -150,7 +150,7 @@
 
 .subtitle {
   @include img_l_pc(851, 301, 246);
-  top:calc(50% + 100vw * (301 - 540) / 1920);
+  top: calc(50% + 100vw * (301 - 540) / 1920);
   font-size: size(18);
   font-weight: normal;
   font-stretch: normal;
@@ -165,7 +165,7 @@
 
 .work-title {
   @include img_l_pc(458, 301, 476);
-  top:auto;
+  top: auto;
   bottom: calc(5% + 1.5vw);
   font-size: size(36.3);
   font-weight: 300;
@@ -179,7 +179,7 @@
 }
 .work-desc {
   @include img_l_pc(514, 301, 496);
-  top:auto;
+  top: auto;
   bottom: 5%;
   font-size: size(18);
   font-weight: 300;
@@ -195,8 +195,8 @@
 /* Swipe */
 .swipe {
   width: size(766);
-  height:90%;
-  top:5%;
+  height: 90%;
+  top: 5%;
   right: size(116);
   object-fit: cover;
   // background: #0344;
@@ -348,7 +348,6 @@
   }
 }
 
-
 .swipe-btns {
   width: 100%;
   height: 100%;
@@ -358,48 +357,49 @@
   position: absolute;
   top: 0;
   left: 0;
-    .prev-btn,
-    .next-btn{
-      position: relative;
-height: 100%;
-width: 2em;
-font-size:size(20);
-      cursor: pointer;
-      &::before{content: "";
+  .prev-btn,
+  .next-btn {
+    position: relative;
+    height: 100%;
+    width: 2em;
+    font-size: size(20);
+    cursor: pointer;
+    &::before {
+      content: '';
       position: absolute;
       width: 100%;
-      height:100%;
+      height: 100%;
       top: 0;
       left: 0;
-      transform:translateX(100%);
-background-color: #0004;
-transition:all 0.3s;
-
-      }
-      &::after{content: "";
+      transform: translateX(100%);
+      background-color: #0004;
+      transition: all 0.3s;
+    }
+    &::after {
+      content: '';
       width: 1em;
       height: 1em;
       position: absolute;
       top: calc(50% - 0.5em);
       left: calc(50% - 0.75em);
-      border: solid #FFF;
+      border: solid #fff;
       border-width: 0.1em 0.1em 0 0;
-      transform: rotate(45deg) translate(-10%,10%);
-      }
-    &:hover:before{
-      transform:translateX(0%);
+      transform: rotate(45deg) translate(-10%, 10%);
     }
-    &:hover:after{
-  animation: btn 0.5s ease-in-out infinite alternate;
+    &:hover:before {
+      transform: translateX(0%);
     }
+    &:hover:after {
+      animation: btn 0.5s ease-in-out infinite alternate;
     }
-    .prev-btn{
-        transform:scaleX(-1);
-    }
+  }
+  .prev-btn {
+    transform: scaleX(-1);
+  }
 }
 @keyframes btn {
   to {
-    transform: rotate(45deg) translate(10%,-10%);
+    transform: rotate(45deg) translate(10%, -10%);
   }
 }
 
@@ -690,14 +690,14 @@ transition:all 0.3s;
     width: 116%;
     left: -8%;
     .prev-btn,
-    .next-btn{
-      font-size:sizem(15);
-      &::before{
-background-color: #cc5b4e00;
+    .next-btn {
+      font-size: sizem(15);
+      &::before {
+        background-color: #cc5b4e00;
       }
-      &::after{
-      border-color: #fff;
-      border-width: 0.15em 0.15em 0 0;
+      &::after {
+        border-color: #fff;
+        border-width: 0.15em 0.15em 0 0;
         animation: btn 0.5s ease-in-out infinite alternate;
       }
     }

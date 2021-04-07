@@ -54,7 +54,7 @@
     <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
-          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute ${slideIndex === index ? 'active' : ''}`">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute ${slideIndex === i ? 'active' : ''}`">
 
             <div class="half-item">
               <img :src="slide.img" alt="">
@@ -62,9 +62,9 @@
               <div class="slide-desc" v-html="slide.desc"></div>
             </div>
             <div class="half-item">
-              <img :src="slideList[slideIndex === slideList.length ? 0 : slideIndex + 1].img" alt="">
-              <div class="slide-name" v-html="slideList[slideIndex === slideList.length ? 0 : slideIndex + 1].name"></div>
-              <div class="slide-desc" v-html="slideList[slideIndex === slideList.length ? 0 : slideIndex + 1].desc"></div>
+              <img :src="slideList[secIndex].img" alt="">
+              <div class="slide-name" v-html="slideList[secIndex].name"></div>
+              <div class="slide-desc" v-html="slideList[secIndex].desc"></div>
             </div>
 
           </div>
@@ -73,8 +73,8 @@
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
         <div class="swipe-btns absolute flex-ac flex-jb">
-          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex2">
-          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex2">
+          <div class="prev-btn" @click="decIndex"></div>
+          <div class="next-btn" @click="addIndex"></div>
         </div>
       </div>
     </div>
@@ -149,12 +149,12 @@
 
 .line {
   @include div_l_pc(14, 180, 168, 202);
-  top:calc(50% + 100vw * (168 - 540) / 1920);
+  top: calc(50% + 100vw * (168 - 540) / 1920);
   background-color: #ff8700;
 }
 .label {
   @include img_l_pc(208, 159, 246);
-  top:calc(50% + 100vw * (159 - 540) / 1920);
+  top: calc(50% + 100vw * (159 - 540) / 1920);
   font-size: size(30.5);
   font-weight: 400;
   font-stretch: normal;
@@ -168,7 +168,7 @@
 }
 .title {
   @include img_l_pc(825, 204, 246);
-  top:calc(50% + 100vw * (204 - 540) / 1920);
+  top: calc(50% + 100vw * (204 - 540) / 1920);
   font-size: size(66.1);
   font-weight: 500;
   font-stretch: normal;
@@ -183,7 +183,7 @@
 
 .subtitle {
   @include img_l_pc(851, 301, 246);
-  top:calc(50% + 100vw * (301 - 540) / 1920);
+  top: calc(50% + 100vw * (301 - 540) / 1920);
   font-size: size(38.2);
   font-weight: 300;
   font-stretch: normal;
@@ -198,7 +198,7 @@
 
 .items {
   @include img_l_pc(920, 428, 204);
-  top:calc(50% + 100vw * (380 - 540) / 1920);
+  top: calc(50% + 100vw * (380 - 540) / 1920);
   > div {
     width: 100%;
     height: size(170);
@@ -208,27 +208,27 @@
   .item {
     display: flex;
     align-items: center;
-      font-stretch: normal;
-      font-style: normal;
-      font-size: size(17);
-      font-weight: normal;
-      line-height: 1.4;
-      color: #ffffff;
-      text-align: left;
+    font-stretch: normal;
+    font-style: normal;
+    font-size: size(17);
+    font-weight: normal;
+    line-height: 1.4;
+    color: #ffffff;
+    text-align: left;
     img {
       width: size(90);
       margin-right: size(10);
     }
 
     .item-name {
-      font-size:2.5em;
+      font-size: 2.5em;
       font-weight: 500;
       letter-spacing: normal;
       white-space: nowrap;
     }
 
     .item-desc {
-      letter-spacing:0.06em;
+      letter-spacing: 0.06em;
     }
   }
 }
@@ -238,7 +238,7 @@
   width: size(800);
   height: size(550);
   top: size(105);
-  top:calc(50% + 100vw * (105 - 540) / 1920);
+  top: calc(50% + 100vw * (105 - 540) / 1920);
   right: size(349);
   object-fit: cover;
   // background: #0344;
@@ -246,21 +246,23 @@
 
 // begin
 .swipe-fade-leave-to {
+  margin-top: -10px;
   opacity: 0;
   z-index: 0;
 }
 // end
 .swipe-fade-enter {
+  margin-top: 30px;
   opacity: 0;
   z-index: 1;
 }
 
 .swipe-fade-enter-active {
-  transition: all 1s ease;
+  transition: all 0.3s ease;
 }
 
 .swipe-fade-leave-active {
-  transition: all 1s ease;
+  transition: all 0.3s ease;
 }
 
 // begin
@@ -403,6 +405,55 @@
   }
 }
 
+.prev-btn,
+.next-btn {
+  height: 100%;
+  width: 2em;
+  font-size: size(20);
+  right: 1em;
+  top: 0;
+  margin: 0;
+  cursor: pointer;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translateX(200%);
+    background-color: #df6c0088;
+    transition: all 0.3s;
+  }
+  &::after {
+    content: '';
+    width: 1em;
+    height: 1em;
+    position: absolute;
+    top: calc(50% - 0.5em);
+    left: calc(95% - 0.75em);
+    border: solid #fff;
+    border-width: 0.1em 0.1em 0 0;
+    transform: rotate(45deg) translate(-10%, 10%);
+  }
+  &:hover:before {
+    transform: translateX(0%);
+  }
+  &:hover:after {
+    animation: btn 0.5s ease-in-out infinite alternate;
+  }
+}
+.prev-btn {
+  transform: scaleX(-1);
+  right: auto;
+  left: 1em;
+}
+
+@keyframes btn {
+  to {
+    transform: rotate(45deg) translate(10%, -10%);
+  }
+}
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -446,22 +497,27 @@
 
   .bg-img {
     width: 100%;
-    height:100%;
+    height: 100%;
     position: absolute;
     top: auto;
     bottom: 0;
     left: 0;
     &.bg1,
-    &.bg2{
-    img{width: 100%;
-    position: absolute;
-    top: auto;
-    bottom: 0;
-    left: 0;}}
-    &.bg1{
-    background-color: #2157c1;}
-    &.bg2{
-    background-color: #22389b;}
+    &.bg2 {
+      img {
+        width: 100%;
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        left: 0;
+      }
+    }
+    &.bg1 {
+      background-color: #2157c1;
+    }
+    &.bg2 {
+      background-color: #22389b;
+    }
   }
 
   // begin
@@ -748,14 +804,18 @@
 
   .swipe-btns {
     width: 100%;
-    height: 100%;
-    padding: 0 15px;
-    z-index: 3;
-
+    left: 0%;
     .prev-btn,
     .next-btn {
-      width: sizem(15);
-      cursor: pointer;
+      font-size: sizem(15);
+      &::before {
+        background-color: #cc5b4e00;
+      }
+      &::after {
+        border-color: #fff;
+        border-width: 0.15em 0.15em 0 0;
+        animation: btn 0.5s ease-in-out infinite alternate;
+      }
     }
   }
 }
@@ -825,7 +885,7 @@ export default {
     decIndex2() {
       this.slideIndex =
         this.slideIndex === 0 ? this.slideList.length - 2 : this.slideIndex - 2
-    }
+    },
   },
 
   created() {},
@@ -836,7 +896,11 @@ export default {
     }, 4000)
   },
 
-  computed: {},
+  computed: {
+    secIndex() {
+      return this.slideIndex === this.slideList.length ? 0 : this.slideIndex + 1
+    },
+  },
 
   watch: {
     // viewIndex() {
