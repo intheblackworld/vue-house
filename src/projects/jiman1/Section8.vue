@@ -508,7 +508,7 @@ export default {
             ? require('./mobile/08/08_img_2_m.jpg')
             : require('./s8/08_img_2.jpg'),
           name: '<span>景觀設計</span>｜頤和設計',
-          title: '李淑雲 <span>建築師</span>',
+          title: '李淑雲 <span>設計師</span>',
           subtitle: '點藏山水化境 豪宅御用景觀名家',
           desc:isMobile
             ? '適地適木，逐綠而生，點化建築藏入山水逸景，規劃天地原色森林庭園，台灣原生喬木羅列其間，為自慢藏於山水襯底間勾勒出生機豐饒的造景。'

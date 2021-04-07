@@ -898,6 +898,13 @@ export default {
           desc:
             '台北市可開發的土地一塊難求，尤其繁華的汀洲路四段上，要取得超過500坪土地就很困難了...',
         },
+        {
+          src: require('./s12/news_img_5.jpg'),
+          title: '商周新聞',
+          link: 'https://www.businessweekly.com.tw/business/indep/1001357',
+          desc:
+            '北市萬隆站一帶鄰近大安信義繁華商圈，卻有著都市難得的水岸綠地...',
+        },
       ],
     }
   },
