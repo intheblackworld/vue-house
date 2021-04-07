@@ -975,7 +975,7 @@ export default {
       if (this.slideIndex === 3) {
         return 0
       } else if (this.slideIndex === 4) {
-        return 2
+        return 1
       } else {
         return this.slideIndex + 2
       }
