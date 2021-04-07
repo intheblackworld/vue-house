@@ -460,17 +460,17 @@ font-size:sizem(12);
     }
     .btn_l {
       right: sizem(327);
-  animation: btn 0.6s ease-in-out infinite alternate-reverse;
+  animation: btn1 0.6s ease-in-out infinite alternate-reverse;
     }
     .btn_r {
       left: sizem(327);
-  animation: btn 0.6s ease-in-out infinite alternate;
+  animation: btn1 0.6s ease-in-out infinite alternate;
     }
     img {
       height: sizem(80);
     }
   }
-@keyframes btn {
+@keyframes btn1 {
   to {
     transform:translateX(-3%);
   }
