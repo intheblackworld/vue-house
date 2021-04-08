@@ -1,15 +1,17 @@
 <template>
   <div class="section3">
-    <transition-group name="trans" mode="out-in">
-      <img src="./s3/bg1.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="blockIndex === 0 && isPC" key="day1">
-      <img src="./s3/bg2.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="blockIndex === 1 && isPC" key="day2">
-      <div class="bg-img bg1" v-if="blockIndex === 0 && isMobile" key="day3">
-        <img src="./s3/bg1_m.jpg" :alt="`${info.caseName}_img`">
-      </div>
-      <div class="bg-img bg2" v-if="blockIndex === 1 && isMobile" key="day4">
-        <img src="./s3/bg2_m.jpg" :alt="`${info.caseName}_img`">
-      </div>
-    </transition-group>
+    <div>
+      <transition-group name="block" mode="out-in">
+        <img src="./s3/bg1.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="blockIndex === 0 && isPC" key="day1">
+        <img src="./s3/bg2.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="blockIndex === 1 && isPC" key="day2">
+        <div class="bg-img bg1" v-if="blockIndex === 0 && isMobile" key="day3">
+          <img src="./s3/bg1_m.jpg" :alt="`${info.caseName}_img`">
+        </div>
+        <div class="bg-img bg2" v-if="blockIndex === 1 && isMobile" key="day4">
+          <img src="./s3/bg2_m.jpg" :alt="`${info.caseName}_img`">
+        </div>
+      </transition-group>
+    </div>
     <img src="./s3/bottom.png" :alt="`${info.caseName}_img`" class="grass">
 
     <div class="content">
@@ -129,21 +131,21 @@
 }
 
 // begin
-.trans-leave-to {
+.block-leave-to {
   opacity: 0;
   z-index: 0;
 }
 // end
-.trans-enter {
+.block-enter {
   opacity: 0;
   z-index: 1;
 }
 
-.trans-enter-active {
+.block-enter-active {
   transition: all 1s ease;
 }
 
-.trans-leave-active {
+.block-leave-active {
   transition: all 1s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
@@ -893,7 +895,7 @@ export default {
   mounted() {
     setInterval(() => {
       this.blockIndex = this.blockIndex === 0 ? 1 : 0
-    }, 4000)
+    }, 2000)
   },
 
   computed: {
