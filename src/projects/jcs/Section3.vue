@@ -1,16 +1,12 @@
 <template>
   <div class="section3">
-    <div>
-      <transition-group name="block" mode="out-in">
-        <img src="./s3/bg1.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="blockIndex === 0 && isPC" key="day1">
-        <img src="./s3/bg2.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="blockIndex === 1 && isPC" key="day2">
-        <div class="bg-img bg1" v-if="blockIndex === 0 && isMobile" key="day3">
-          <img src="./s3/bg1_m.jpg" :alt="`${info.caseName}_img`">
-        </div>
-        <div class="bg-img bg2" v-if="blockIndex === 1 && isMobile" key="day4">
-          <img src="./s3/bg2_m.jpg" :alt="`${info.caseName}_img`">
-        </div>
-      </transition-group>
+    <img src="./s3/bg1.jpg" :alt="`${info.caseName}_img`" class="bg-img bg1" v-if="isPC" key="day1">
+    <img src="./s3/bg2.jpg" :alt="`${info.caseName}_img`" class="bg-img bg2" v-if="isPC" key="day2">
+    <div class="bg-img bg1" v-if="isMobile">
+      <img src="./s3/bg1_m.jpg" :alt="`${info.caseName}_img`">
+    </div>
+    <div class="bg-img bg2" v-if="isMobile">
+      <img src="./s3/bg2_m.jpg" :alt="`${info.caseName}_img`">
     </div>
     <img src="./s3/bottom.png" :alt="`${info.caseName}_img`" class="grass">
 
@@ -91,7 +87,7 @@
   min-height: size(850);
   max-height: size(1010);
   position: relative;
-  // background-color: #fff;
+  background-color: #2157c1;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
@@ -130,6 +126,30 @@
   }
 }
 
+.bg1 {
+  opacity: 0;
+  animation: block 4s ease-in-out alternate infinite;
+}
+
+.bg2 {
+  opacity: 0;
+  animation: block 4s 4s ease-in-out alternate infinite;
+}
+
+@keyframes block {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 // begin
 .block-leave-to {
   opacity: 0;
@@ -156,7 +176,7 @@
 }
 .label {
   @include img_l_pc(208, 159, 246);
-  top:calc(50% + 100vw * (162 - 540) / 1920);
+  top: calc(50% + 100vw * (162 - 540) / 1920);
   font-size: size(30.5);
   font-weight: 400;
   font-stretch: normal;
@@ -170,7 +190,7 @@
 }
 .title {
   @include img_l_pc(825, 204, 246);
-  top:calc(50% + 100vw * (208 - 540) / 1920);
+  top: calc(50% + 100vw * (208 - 540) / 1920);
   font-size: size(66);
   font-weight: 500;
   font-stretch: normal;
@@ -185,7 +205,7 @@
 
 .subtitle {
   @include img_l_pc(851, 301, 246);
-  top:calc(50% + 100vw * (301 - 540) / 1920);
+  top: calc(50% + 100vw * (301 - 540) / 1920);
   font-size: size(37);
   font-weight: 300;
   font-stretch: normal;
@@ -364,13 +384,12 @@
   width: 100%;
   height: 100%;
   z-index: 3;
-
 }
 
 .prev-btn,
 .next-btn {
   height: 100%;
-  width:50%;
+  width: 50%;
   font-size: size(20);
   right: 0;
   top: 0;
@@ -435,7 +454,7 @@
     width: 100vw;
     min-height: sizem(667);
     max-height: sizem(812);
-    height:100vh;
+    height: 100vh;
     // background-image: url('./all/section_bg.jpg');
     // background-attachment: scroll;
     // background-size: 100% 100%;
@@ -601,7 +620,8 @@
     height: 100%;
     z-index: 0;
     display: flex;
-    align-items: center; justify-content:center;
+    align-items: center;
+    justify-content: center;
 
     .half-item {
       width: 40%;
@@ -733,7 +753,6 @@ export default {
   name: 'section3',
 
   mixins: [slider],
-  props: ['viewIndex'],
 
   data() {
     return {
