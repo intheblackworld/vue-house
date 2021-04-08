@@ -28,7 +28,7 @@
   // background-size: 100% 100%;
   // background-position: 0 0;
   // background-attachment: fixed;
-  // overflow: hidden;
+   overflow: hidden;
 }
 
 .bg-img {

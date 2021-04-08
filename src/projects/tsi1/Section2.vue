@@ -36,11 +36,12 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .section2 {
-  // height: 100vh;
+  height:calc(100vh - 70px);
   overflow: hidden;
   // position: relative;
-  height: size(1080);
-  background: #000 url('./s2/video_img.png') no-repeat center;
+    min-height:calc(46.875vw - 70px);
+    max-height:calc(56.25vw - 70px);
+  //background: #000 url('./s2/video_img.png') no-repeat center;
   background-color: #000;
   background-size: contain;
   // margin: size(-125) 0 0 0;
@@ -59,8 +60,7 @@
   width: 100%;
   position: absolute;
   z-index: 2;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
   left: 0;
   overflow: hidden;
   height: 100%;
@@ -133,8 +133,8 @@
     width: 100%;
     position: absolute;
     height: size-m(180);
-    // top: 50%;
-    // transform: translateY(-50%);
+     top: 50%;
+     transform: translateY(-50%);
     // left: 0;
     // overflow: hidden;
     // height: size(910);
@@ -236,8 +236,8 @@ export default {
     loadVideo() {
       this.player = new window.YT.Player(`youtube-player-${this.id}`, {
         videoId: this.id,
-        width: window.screen.width,
-        height: window.screen.width * (1080 / 1920),
+        width:"100%",
+        height:"100%",
         playerVars: {
           autoplay: 1,
           loop: 1,
