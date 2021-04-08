@@ -127,13 +127,13 @@
 }
 
 .bg1 {
-  opacity: 0;
-  animation: block 4s ease-in-out alternate infinite;
+  opacity: 1;
+  // animation: block 4s ease-in-out alternate infinite;
 }
 
 .bg2 {
   opacity: 0;
-  animation: block 4s 4s ease-in-out alternate infinite;
+  animation: block 5s 0s ease-in-out alternate infinite;
 }
 
 @keyframes block {
@@ -141,33 +141,36 @@
     opacity: 0;
   }
 
-  50% {
-    opacity: 1;
+  40% {
+    opacity: 0;
   }
 
+  60% {
+    opacity: 1;
+  }
   100% {
     opacity: 1;
   }
 }
 
-// begin
-.block-leave-to {
-  opacity: 0;
-  z-index: 0;
-}
-// end
-.block-enter {
-  opacity: 0;
-  z-index: 1;
-}
+// // begin
+// .block-leave-to {
+//   opacity: 0;
+//   z-index: 0;
+// }
+// // end
+// .block-enter {
+//   opacity: 0;
+//   z-index: 1;
+// }
 
-.block-enter-active {
-  transition: all 1s ease;
-}
+// .block-enter-active {
+//   transition: all 1s ease;
+// }
 
-.block-leave-active {
-  transition: all 1s cubic-bezier(1, 0.5, 0.8, 1);
-}
+// .block-leave-active {
+//   transition: all 1s cubic-bezier(1, 0.5, 0.8, 1);
+// }
 
 .line {
   @include div_l_pc(14, 180, 168, 202);
