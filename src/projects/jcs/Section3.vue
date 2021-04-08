@@ -8,6 +8,7 @@
     <div class="bg-img bg2" v-if="isMobile">
       <img src="./s3/bg2_m.jpg" :alt="`${info.caseName}_img`">
     </div>
+    <div class="stxt">外觀模擬圖</div>
     <img src="./s3/bottom.png" :alt="`${info.caseName}_img`" class="grass">
 
     <div class="content">
@@ -439,6 +440,22 @@
     transform: rotate(45deg) translate(10%, -10%);
   }
 }
+
+.stxt{
+  position: absolute;
+    right:2em;
+    bottom:1.2em;
+    color: #fffc;
+    font-size: size(15);
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+    text-align: left;
+    text-shadow: 0 0.3em 1em #000;
+    z-index: 5;
+}
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -744,6 +761,10 @@
       }
     }
   }
+  
+.stxt{
+    font-size: sizem(12);
+}
 }
 </style>
 <script>
