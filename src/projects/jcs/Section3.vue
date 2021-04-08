@@ -265,26 +265,6 @@
   transition: all 0.3s ease;
 }
 
-// begin
-// .swipe-left-leave-to {
-//   margin-left: -100vw;
-//   z-index: 0;
-// }
-// // end
-// .swipe-left-enter {
-//   opacity: 0.5;
-//   margin-left: 0;
-//   z-index: 1;
-// }
-
-// .swipe-left-enter-active {
-//   transition: all 0.5s ease;
-// }
-
-// .swipe-left-leave-active {
-//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-// }
-
 .swipe-wrap {
   width: 100%;
   height: 100%;
@@ -498,7 +478,6 @@
     }
   }
 
-
   .line {
     @include div_l_m(7, 135, 44, 33);
   }
@@ -613,7 +592,6 @@
   .swipe-fade-leave-active {
     transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
   }
-
 
   .swipe-wrap {
     width: 100%;

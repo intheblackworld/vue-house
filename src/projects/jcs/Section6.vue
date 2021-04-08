@@ -78,7 +78,7 @@
 
 .line {
   @include div_l_pc(14, 176, 168, 202);
-  top:calc(50% + 100vw * (168 - 540) / 1920); 
+  top:calc(50% + 100vw * (168 - 540) / 1920);
   background-color: #40220f;
 }
 .label {
@@ -161,12 +161,8 @@
   top:calc(65% + 100vw * (429 - 1080 * .65) / 1920);
   height: calc(100% - 27vw);
   display: flex;
-    flex-direction:column;
-    justify-content:space-between;
-
-
-
-
+  flex-direction:column;
+  justify-content:space-between;
   .info-title {
     width: size(250);
     font-size: size(48);
@@ -290,7 +286,6 @@
     .info {
       margin-bottom: sizem(20);
       flex-wrap: wrap;
-    
     }
 
     .info-title {
@@ -360,7 +355,7 @@ export default {
         },
         {
           title: '精品配備',
-          desc: isMobile?'櫻花系統廚具、KARAT凱樂衛浴<br>完美頂規享受':'櫻花系統廚具、KARAT凱樂衛浴，完美頂規享受',
+          desc: isMobile ? '櫻花系統廚具、KARAT凱樂衛浴<br/>完美頂規享受' : '櫻花系統廚具、KARAT凱樂衛浴，完美頂規享受',
         },
       ],
     }

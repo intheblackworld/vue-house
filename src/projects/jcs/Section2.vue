@@ -150,7 +150,7 @@
   .section2 {
     width: 100vw;
     min-height: sizem(604);
-    max-height: sizem(750);
+    max-height: sizem(760);
     height: calc(100vh - 63px);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
@@ -165,11 +165,11 @@
   .container {
     @include div_c_m(375, 667, 0);
     overflow: hidden;
-  max-height: 100%;
-  top:0%;
-  transform: translateY(0%);
+    height: 100%;
+    max-height: 100%;
+    top:0%;
+    transform: translateY(0%);
   }
-
 
   .cloud {
     animation: move 50s 0s linear infinite;
