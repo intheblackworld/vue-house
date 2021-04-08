@@ -8,19 +8,19 @@
       <div class="line" data-aos="zoom-in-down" data-aos-delay="200">
 
       </div>
-      <div class="label" data-aos="fade-left" data-aos-delay="400">
+      <div class="label" data-aos="fade-down" data-aos-delay="400">
         ｜質感生活｜
       </div>
-      <div class="title" v-if="isPC" data-aos="fade-left" data-aos-delay="600">
+      <div class="title" v-if="isPC" data-aos="fade-down" data-aos-delay="600">
         豐收生活 把日子過得舒舒服服
       </div>
-      <div class="title" v-if="isMobile" data-aos="fade-left" data-aos-delay="600">
+      <div class="title" v-if="isMobile" data-aos="fade-down" data-aos-delay="600">
         豐收生活<br />把日子過得舒舒服服
       </div>
-      <div class="subtitle" data-aos="fade-left" data-aos-delay="800">
+      <div class="subtitle" data-aos="fade-down" data-aos-delay="800">
         大竹路滿分商圈、書香學校、陂塘步道、林映樹廊…活出舒適小日子
       </div>
-      <div class="list-info flex-ac flex-jb" v-if="isPC" data-aos="fade-left" data-aos-delay="800">
+      <div class="list-info flex-ac flex-jb" v-if="isPC" data-aos="fade-down" data-aos-delay="800">
         <div v-for="item in list" :key="item.title" class="info">
           <img :src="item.img" alt="">
           <div class="info-title" v-html="item.title"></div>
@@ -30,7 +30,8 @@
     </div>
 		<swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" @slideChangeTransitionEnd="slideChanged">
       <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide + index" class="item">
-        <img :src="slide" :class="`item-img`" />
+        <img :src="slide.img" :class="`item-img`" />
+        <p v-html="slide.p"></p>
       </swiper-slide>
 
       <div class="swiper-button-prev prev-btn" slot="button-prev">
@@ -41,7 +42,8 @@
 
 		<swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" @slideChangeTransitionEnd="slideChanged" v-show="isMobile && blockIndex === 0">
       <swiper-slide v-for="(slide, index) in slideList[0]" :index="index" :key="slide + index" class="item">
-        <img :src="slide" :class="`item-img`" />
+        <img :src="slide.img" :class="`item-img`" />
+        <p v-html="slide.p"></p>
       </swiper-slide>
 
       <div class="swiper-button-prev prev-btn" slot="button-prev">
@@ -51,7 +53,8 @@
     </swiper>
 		<swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" @slideChangeTransitionEnd="slideChanged" v-show="isMobile && blockIndex === 1">
       <swiper-slide v-for="(slide, index) in slideList[1]" :index="index" :key="slide + index" class="item">
-        <img :src="slide" :class="`item-img`" />
+        <img :src="slide.img" :class="`item-img`" />
+        <p v-html="slide.p"></p>
       </swiper-slide>
 
       <div class="swiper-button-prev prev-btn" slot="button-prev">
@@ -61,7 +64,8 @@
     </swiper>
 		<swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" @slideChangeTransitionEnd="slideChanged" v-show="isMobile && blockIndex === 2">
       <swiper-slide v-for="(slide, index) in slideList[2]" :index="index" :key="slide + index" class="item">
-        <img :src="slide" :class="`item-img`" />
+        <img :src="slide.img" :class="`item-img`" />
+        <p v-html="slide.p"></p>
       </swiper-slide>
 
       <div class="swiper-button-prev prev-btn" slot="button-prev">
@@ -73,7 +77,7 @@
       <div class="btn_l" @click="blockIndex = prevIndex"><img :src="list[prevIndex].img" alt=""></div>
       <div class="btn_r" @click="blockIndex = nextIndex"><img :src="list[nextIndex].img" alt=""></div>
     </div>
-    <div class="list-info flex-ac flex-jb" v-if="isMobile" data-aos="fade-left" data-aos-delay="800" data-aos-offset="-600" v-touch:swipe.left="decBlockIndex" v-touch:swipe.right="addBlockIndex">
+    <div class="list-info flex-ac flex-jb" v-if="isMobile" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" v-touch:swipe.left="decBlockIndex" v-touch:swipe.right="addBlockIndex">
       <transition-group name="swipe-fade" mode="out-in">
         <div v-for="(item, index) in list" :key="item.title" class="info" v-show="blockIndex === index">
           <img :src="item.img" alt="" @click="blockIndex = index">
@@ -215,6 +219,15 @@
   @include img_c_pc(425 * 2 + 451, 867);
 }
 
+.item{
+p{position: absolute;
+bottom: 0.5em;
+right: 2em;
+color: #FFF;
+text-align: right;
+font-size:size(15);
+}
+}
 .item-img {
   width: 90%;
   margin: 0 auto;
@@ -417,6 +430,11 @@
     @include img_c_m(375, 577);
   }
 
+.item{
+p{
+font-size:sizem(12);
+}
+}
   .item-img {
     width: 90%;
     margin: 0 auto;
@@ -435,21 +453,28 @@
       background: #0001;
       transition: all 0.3s;
       padding: 3vw;
+    transform:translateX(3%);
       &:hover {
         background: #0003;
       }
     }
     .btn_l {
       right: sizem(327);
+  animation: btn1 0.6s ease-in-out infinite alternate-reverse;
     }
     .btn_r {
       left: sizem(327);
+  animation: btn1 0.6s ease-in-out infinite alternate;
     }
     img {
       height: sizem(80);
     }
   }
-
+@keyframes btn1 {
+  to {
+    transform:translateX(-3%);
+  }
+}
   /* Swipe */
   .swipe {
     width: 100%;
@@ -662,11 +687,111 @@ export default {
       },
       slideList: isMobile
         ? [
-            [require('./s5/1-1.jpg'), require('./s5/1-2.jpg')],
-            [require('./s5/2-1.jpg'), require('./s5/2-2.jpg')],
-            [require('./s5/3-1.jpg'), require('./s5/3-2.jpg')],
+            [
+            {
+              img:require('./s5/1-1.jpg'),
+              p:"華泰名品城"
+            },
+            {
+              img:require('./s5/1-4.jpg'),
+              p:"桃園機場捷運A18站"
+            },
+            ],
+            [
+            {
+              img:require('./s5/2-1.jpg'),
+              p:"大竹路商圈"
+            },
+            {
+              img:require('./s5/2-2.jpg'),
+              p:"大竹路商圈"
+            },
+            ],
+            [
+            {
+              img:require('./s5/3-1.jpg'),
+              p:"埤塘公園"
+            },
+            {
+              img:require('./s5/3-2.jpg'),
+              p:"二二八公園"
+            },
+            ],
           ]
         : [
+            {
+              img:require('./s5/1-1.jpg'),
+              p:"華泰名品城"
+            },
+            {
+              img:require('./s5/2-1.jpg'),
+              p:"大竹路商圈"
+            },
+            {
+              img:require('./s5/3-1.jpg'),
+              p:"埤塘公園"
+            },
+            {
+              img:require('./s5/1-2.jpg'),
+              p:"大江購物中心"
+            },
+            {
+              img:require('./s5/2-2.jpg'),
+              p:"大竹路商圈"
+            },
+            {
+              img:require('./s5/3-2.jpg'),
+              p:"二二八公園"
+            },
+            {
+              img:require('./s5/1-3.jpg'),
+              p:"台茂購物中心"
+            },
+            {
+              img:require('./s5/2-1.jpg'),
+              p:"大竹路商圈"
+            },
+            {
+              img:require('./s5/3-3.jpg'),
+              p:"小公園"
+            },
+            {
+              img:require('./s5/1-4.jpg'),
+              p:"桃園機場捷運A18站"
+            },
+            {
+              img:require('./s5/2-2.jpg'),
+              p:"大竹路商圈"
+            },
+            {
+              img:require('./s5/3-1.jpg'),
+              p:"埤塘公園"
+            },
+            {
+              img:require('./s5/1-5.jpg'),
+              p:"宜家家居"
+            },
+            {
+              img:require('./s5/2-1.jpg'),
+              p:"大竹路商圈"
+            },
+            {
+              img:require('./s5/3-2.jpg'),
+              p:"二二八公園"
+            },
+            {
+              img:require('./s5/1-6.jpg'),
+              p:"興仁市民活動中心"
+            },
+            {
+              img:require('./s5/2-2.jpg'),
+              p:"大竹路商圈"
+            },
+            {
+              img:require('./s5/3-3.jpg'),
+              p:"小公園"
+            },
+            /*
             require('./s5/1-1.jpg'),
             require('./s5/2-1.jpg'),
             require('./s5/3-1.jpg'),
@@ -684,7 +809,7 @@ export default {
             require('./s5/3-2.jpg'),
             require('./s5/1-6.jpg'),
             require('./s5/2-2.jpg'),
-            require('./s5/3-3.jpg'),
+            require('./s5/3-3.jpg'),*/
           ],
       list: [
         {

@@ -2150,11 +2150,11 @@
   top:calc(50% + 100vw * (150 - 540) / 1920);
   .st0{fill:#2F041B;
   animation: op 0.5s 3s linear reverse backwards;}
-	.st1{fill:#F4D321;
+.st1{fill:#F4D321;
   animation: op 0.5s 3.2s linear reverse backwards;}
 	.st2{fill:#000;
   animation: op 0.5s 3.5s linear reverse backwards;}
-	.st3{
+.st3{
    clip-path:url(#SVGID_2_);
   stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;fill:none;stroke:#FFFFFF}
 	.st4{stroke-width:32;}
@@ -2177,203 +2177,202 @@
 	.st21{stroke-width:20;}
 	.st22{stroke-width:17;}
 	.st23{stroke-width:24;}
-  .l1{
-  stroke-dasharray: 104;
-  stroke-dashoffset: 104;
-  animation: stroke1 0.13s linear forwards;
-  }
-  .l4{
-  stroke-dasharray: 87;
-  stroke-dashoffset:87;
-  animation: stroke1 0.11s 0.13s linear forwards;
-  }
-  .l3{
-  stroke-dasharray:130;
-  stroke-dashoffset: 130;
-  animation: stroke1 0.16s 0.24s linear forwards;
-  }
-  .l2{
-  stroke-dasharray:67;
-  stroke-dashoffset:67;
-  animation: stroke1 0.065s 0.40s linear forwards;
-  }
-  .l5{
-  stroke-dasharray: 97;
-  stroke-dashoffset: 97;
-  animation: stroke1 0.12s 0.465s linear forwards;
-  }
-  .l6{
-  stroke-dasharray: 64;
-  stroke-dashoffset:64;
-  animation: stroke1 0.105s 0.605s linear forwards;
-  }
-  .l8{
-  stroke-dasharray:10;
-  stroke-dashoffset:10;
-  animation: stroke1 0.015s 0.71s linear forwards;
-  }
-  .l7{
-  stroke-dasharray: 106;
-  stroke-dashoffset: 106;
-  animation: stroke1 0.135s 0.725s linear forwards;
-  }
-  .l9{
-  stroke-dasharray: 150;
-  stroke-dashoffset: 150;
-  animation: stroke1 0.19s 0.86s linear forwards;
-  }
-  .l10{
-  stroke-dasharray: 150;
-  stroke-dashoffset: 150;
-  animation: stroke1 0.19s 1.05s linear forwards;
-  }
-  .l11{
-  stroke-dasharray:60;
-  stroke-dashoffset:60;
-  animation: stroke1 0.075s 1.24s linear forwards;
-  }
-  .l12{
-  stroke-dasharray:60;
-  stroke-dashoffset:60;
-  animation: stroke1 0.075s 1.315s linear forwards;
-  }
-  .l13{
-  stroke-dasharray:70;
-  stroke-dashoffset:70;
-  animation: stroke1 0.09s 1.39s linear forwards;
-  }
-  .l14{
-  stroke-dasharray: 190;
-  stroke-dashoffset:190;
-  animation: stroke1 0.235s 1.48s linear forwards;
-  }
-  .l15{
-  stroke-dasharray: 144;
-  stroke-dashoffset:144;
-  animation: stroke1 0.18s 1.715s linear forwards;
-  }
-  .l17{
-  stroke-dasharray:45;
-  stroke-dashoffset:45;
-  animation: stroke1 0.055s 1.895s linear forwards;
-  }
-  .l16{
-  stroke-dasharray:67;
-  stroke-dashoffset:67;
-  animation: stroke1 0.085s 1.965s linear forwards;
-  }
-  .l18{
-  stroke-dasharray:150;
-  stroke-dashoffset:150;
-  animation: stroke1 0.19s 2.035s linear forwards;
-  }
-  .l19{
-  stroke-dasharray:190;
-  stroke-dashoffset:190;
-  animation: stroke1 0.235s 2.225s linear forwards;
-  }
-  .l20{
-  stroke-dasharray: 132;
-  stroke-dashoffset: 132;
-  animation: stroke1 0.165s 2.46s linear forwards;
-  }
-  .l21{
-  stroke-dasharray: 51;
-  stroke-dashoffset: 51;
-  animation: stroke1 0.065s 2.625s linear forwards;
-  }
-  .l22{
-  stroke-dasharray:114;
-  stroke-dashoffset:114;
-  animation: stroke1 0.145s 2.69s linear forwards;
-  }
-  .l23{
-  stroke-dasharray:37;
-  stroke-dashoffset:37;
-  animation: stroke1 0.045s 2.835s linear forwards;
-  }
-  .l24{
-  stroke-dasharray: 51;
-  stroke-dashoffset:51;
-  animation: stroke1 0.13s 2.76s linear forwards;
-  }
-  .l25{
-  stroke-dasharray:85;
-  stroke-dashoffset:85;
-  animation: stroke1 0.105s 2.945s linear forwards;
-  }
-  .l26{
-  stroke-dasharray:187;
-  stroke-dashoffset:187;
-  animation: stroke1 0.235s 3.05s linear forwards;
-  }
-  .l27{
-  stroke-dasharray:141;
-  stroke-dashoffset:141;
-  animation: stroke1 0.0655s 3.285s linear forwards;
-  }
-  .l28{
-  stroke-dasharray: 69;
-  stroke-dashoffset:69;
-  animation: stroke1 0.085s 3.35s linear forwards;
-  }
-  .l29{
-  stroke-dasharray: 130;
-  stroke-dashoffset: 130;
-  animation: stroke1 0.165s 3.435s linear forwards;
-  }
-  .l30{
-  stroke-dasharray: 57;
-  stroke-dashoffset: 57;
-  animation: stroke1 0.065s 3.60s linear forwards;
-  }
-  .l31{
-  stroke-dasharray: 52;
-  stroke-dashoffset: 52;
-  animation: stroke1 0.065s 3.665s linear forwards;
-  }
-  .l32{
-  stroke-dasharray: 79;
-  stroke-dashoffset: 79;
-  animation: stroke1 0.10s 3.73s linear forwards;
-  }
-  .l33{
-  stroke-dasharray: 36;
-  stroke-dashoffset: 36;
-  animation: stroke1 0.045s 3.83s linear forwards;
-  }
-  .l34{
-  stroke-dasharray: 35;
-  stroke-dashoffset: 35;
-  animation: stroke1 0.045s 3.875s linear forwards;
-  }
-  .l35{
-  stroke-dasharray: 44;
-  stroke-dashoffset: 44;
-  animation: stroke1 0.055s 3.93s linear forwards;
-  }
-  .l36{
-  stroke-dasharray: 76;
-  stroke-dashoffset: 76;
-  animation: stroke1 0.095s 4.025s linear forwards;
-  }
-  .l37{
-  stroke-dasharray: 97;
-  stroke-dashoffset: 97;
-  animation: stroke1 0.12s 4.145s linear forwards;
-  }
-  .l38{
-  stroke-dasharray: 225;
-  stroke-dashoffset: 225;
-  animation: stroke1 0.28s 4.425s linear forwards;
-  }
-  .l39{
-  stroke-dasharray:84;
-  stroke-dashoffset:84;
-  animation: stroke1 0.105s 4.7s linear forwards;
-  }
+	.l1{
+		stroke-dasharray: 104;
+		stroke-dashoffset: 104;
+		animation: stroke1 0.13s linear forwards;
+	}
+	.l4{
+		stroke-dasharray: 87;
+		stroke-dashoffset:87;
+		animation: stroke1 0.11s 0.13s linear forwards;
+	}
+	.l3{
+		stroke-dasharray:130;
+		stroke-dashoffset: 130;
+		animation: stroke1 0.16s 0.24s linear forwards;
+	}
+	.l2{
+		stroke-dasharray:67;
+		stroke-dashoffset:67;
+		animation: stroke1 0.065s 0.40s linear forwards;
+	}
+	.l5{
+		stroke-dasharray: 97;
+		stroke-dashoffset: 97;
+		animation: stroke1 0.12s 0.465s linear forwards;
+	}
+	.l6{
+		stroke-dasharray: 64;
+		stroke-dashoffset:64;
+		animation: stroke1 0.105s 0.605s linear forwards;
+	}
+	.l8{
+		stroke-dasharray:10;
+		stroke-dashoffset:10;
+		animation: stroke1 0.015s 0.71s linear forwards;
+	}
+	.l7{
+		stroke-dasharray: 106;
+		stroke-dashoffset: 106;
+		animation: stroke1 0.135s 0.725s linear forwards;
+	}
+	.l9{
+		stroke-dasharray: 150;
+		stroke-dashoffset: 150;
+		animation: stroke1 0.19s 0.86s linear forwards;
+	}
+	.l10{
+		stroke-dasharray: 150;
+		stroke-dashoffset: 150;
+		animation: stroke1 0.19s 1.05s linear forwards;
+	}
+	.l11{
+		stroke-dasharray:60;
+		stroke-dashoffset:60;
+		animation: stroke1 0.075s 1.24s linear forwards;
+	}
+	.l12{
+		stroke-dasharray:60;
+		stroke-dashoffset:60;
+		animation: stroke1 0.075s 1.315s linear forwards;
+	}
+	.l13{
+		stroke-dasharray:70;
+		stroke-dashoffset:70;
+		animation: stroke1 0.09s 1.39s linear forwards;
+	}
+	.l14{
+		stroke-dasharray: 190;
+		stroke-dashoffset:190;
+		animation: stroke1 0.235s 1.48s linear forwards;
+	}
+	.l15{
+		stroke-dasharray: 144;
+		stroke-dashoffset:144;
+		animation: stroke1 0.18s 1.715s linear forwards;
+	}
+	.l17{
+		stroke-dasharray:45;
+		stroke-dashoffset:45;
+		animation: stroke1 0.055s 1.895s linear forwards;
+	}
+	.l16{
+		stroke-dasharray:67;
+		stroke-dashoffset:67;
+		animation: stroke1 0.085s 1.965s linear forwards;
+	}
+	.l18{
+		stroke-dasharray:150;
+		stroke-dashoffset:150;
+		animation: stroke1 0.19s 2.035s linear forwards;
+	}
+	.l19{
+		stroke-dasharray:190;
+		stroke-dashoffset:190;
+		animation: stroke1 0.235s 2.225s linear forwards;
+	}
+	.l20{
+		stroke-dasharray: 132;
+		stroke-dashoffset: 132;
+		animation: stroke1 0.165s 2.46s linear forwards;
+	}
+	.l21{
+		stroke-dasharray: 51;
+		stroke-dashoffset: 51;
+		animation: stroke1 0.065s 2.625s linear forwards;
+	}
+	.l22{
+		stroke-dasharray:114;
+		stroke-dashoffset:114;
+		animation: stroke1 0.145s 2.69s linear forwards;
+	}
+	.l23{
+		stroke-dasharray:37;
+		stroke-dashoffset:37;
+		animation: stroke1 0.045s 2.835s linear forwards;
+	}
+	.l24{
+		stroke-dasharray: 51;
+		stroke-dashoffset:51;
+		animation: stroke1 0.13s 2.76s linear forwards;
+	}
+	.l25{
+		stroke-dasharray:85;
+		stroke-dashoffset:85;
+		animation: stroke1 0.105s 2.945s linear forwards;
+	}
+	.l26{
+		stroke-dasharray:187;
+		stroke-dashoffset:187;
+		animation: stroke1 0.235s 3.05s linear forwards;
+	}
+	.l27{
+		stroke-dasharray:141;
+		stroke-dashoffset:141;
+		animation: stroke1 0.0655s 3.285s linear forwards;
+	}
+	.l28{
+		stroke-dasharray: 69;
+		stroke-dashoffset:69;
+		animation: stroke1 0.085s 3.35s linear forwards;
+	}
+	.l29{
+		stroke-dasharray: 130;
+		stroke-dashoffset: 130;
+		animation: stroke1 0.165s 3.435s linear forwards;
+	}
+	.l30{
+		stroke-dasharray: 57;
+		stroke-dashoffset: 57;
+		animation: stroke1 0.065s 3.60s linear forwards;
+	}
+	.l31{
+		stroke-dasharray: 52;
+		stroke-dashoffset: 52;
+		animation: stroke1 0.065s 3.665s linear forwards;
+	}
+	.l32{
+		stroke-dasharray: 79;
+		stroke-dashoffset: 79;
+		animation: stroke1 0.10s 3.73s linear forwards;
+	}
+	.l33{
+		stroke-dasharray: 36;
+		stroke-dashoffset: 36;
+		animation: stroke1 0.045s 3.83s linear forwards;
+	}
+	.l34{
+		stroke-dasharray: 35;
+		stroke-dashoffset: 35;
+		animation: stroke1 0.045s 3.875s linear forwards;
+	}
+	.l35{
+		stroke-dasharray: 44;
+		stroke-dashoffset: 44;
+		animation: stroke1 0.055s 3.93s linear forwards;
+	}
+	.l36{
+		stroke-dasharray: 76;
+		stroke-dashoffset: 76;
+		animation: stroke1 0.095s 4.025s linear forwards;
+	}
+	.l37{
+		stroke-dasharray: 97;
+		stroke-dashoffset: 97;
+		animation: stroke1 0.12s 4.145s linear forwards;
+	}
+	.l38{
+		stroke-dasharray: 225;
+		stroke-dashoffset: 225;
+		animation: stroke1 0.28s 4.425s linear forwards;
+	}
+	.l39{
+		stroke-dasharray:84;
+		stroke-dashoffset:84;
+		animation: stroke1 0.105s 4.7s linear forwards;
+	}
 }
-
 @keyframes stroke1 {
   to {
     stroke-dashoffset: 0;
@@ -2386,7 +2385,6 @@
 }
 .logo1 {
   @include img_l_pc(437, 142, 600);
-  
 }
 
 @keyframes grass {

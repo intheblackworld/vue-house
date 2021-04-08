@@ -186,39 +186,26 @@ export default {
     height: 60px;
     margin-bottom: 0;
     width: 100%;
+    &:nth-child(1){
+      .link {
+      border-top: 1px solid $nav_link_hover_bg;}
+    }
   }
 
   .link {
     position: relative;
     overflow: hidden;
-    height: 60px;
-    width: 100%;
+    height:100%;
+    width: 80%;
+    margin-left: 10%;
     font-size: 24px;
-    margin-top: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     display: none;
     background-size: cover;
     position: relative;
-
-    // &::after {
-    //   display: block;
-    //   content: '';
-    //   width: 0%;
-    //   height: 1px;
-    //   background: #ddd75f;
-    //   transition: all 0.4s;
-    //   left: 50%;
-    //   bottom: 0;
-    //   position: absolute;
-    // }
-
-    // &:hover:after {
-    //   width: 80%;
-    //   left: 10%;
-    // }
-
+    border-bottom: 1px solid $nav_link_hover_bg;
     img,
     span {
       display: block;
@@ -293,18 +280,34 @@ export default {
   width: 100vw;
   top: $nav_phone_height;
   right: 0;
-  background: transparent;
   position: fixed;
   z-index: -1;
   height: calc(100vh - #{$nav_phone_height});
   opacity: 0;
   transition: all 0.3s ease-in;
+  background: #0006;
   &.open {
     display: block;
     width: 100vw;
     opacity: 1;
     z-index: 110;
   }
+ /*
+    &:before {
+  content: ' ';
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: center 0 no-repeat;
+  background-image: $bg;
+  background-size: cover;
+}
+*/
 }
 
 /* 平板尺寸 */
@@ -393,9 +396,11 @@ export default {
     transition: all 0.3s ease-in;
     display: block;
     transform: translateX(40%);
+  background:center 0 no-repeat;
+  background-image: url('~@/projects/jcs/s1/bg_m.jpg');
+  background-size: cover;
 
-    li {
-    }
+   
 
     .link {
       display: none;
@@ -410,9 +415,8 @@ export default {
     }
 
     &.open {
-      width: 100%;
+      width: 70%;
       transform: translateX(0%);
-
       .link {
         display: flex;
         justify-content: center;
@@ -430,7 +434,7 @@ export default {
     width: 100vw;
     top: $nav_phone_height;
     right: 0;
-    background: #ff8700;
+   // background: #ff8700;
     position: fixed;
     height: calc(100vh - #{$nav_phone_height});
     opacity: 0;
@@ -3861,7 +3865,7 @@ main {
 .modal-agreement.on .modal_circle_path {
   stroke: #b8a57e;
   stroke-dashoffset: 0;
-  åtransition: stroke-dashoffset 1.4s cubic-bezier(0.075, 0.82, 0.165, 1),
+  transition: stroke-dashoffset 1.4s cubic-bezier(0.075, 0.82, 0.165, 1),
     stroke 0.3s;
 }
 .modal-agreement .agreement_title {

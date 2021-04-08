@@ -6,29 +6,29 @@
       <div class="line" data-aos="zoom-in-down" data-aos-delay="200">
 
       </div>
-      <div class="label" data-aos="fade-left" data-aos-delay="400">
+      <div class="label" data-aos="fade-down" data-aos-delay="400">
         ｜職人品牌｜
       </div>
-      <div class="title" data-aos="fade-left" data-aos-delay="600">
+      <div class="title" data-aos="fade-down" data-aos-delay="600">
         玖登開發／種大樹的人
       </div>
-      <div class="subtitle" v-if="isPC" data-aos="fade-left" data-aos-delay="800">
+      <div class="subtitle" v-if="isPC" data-aos="fade-down" data-aos-delay="800">
         每棟建築都是根植沃土細膩照顧的大樹<br />
         玖登開發耕耘大竹土地，開出茁壯茂盛的枝葉<br />
         勾勒環境與風土的氣韻，從種子到綠芽澆灌更盛大的未來
       </div>
-      <div class="subtitle" v-if="isMobile" data-aos="fade-left" data-aos-delay="800">
+      <div class="subtitle" v-if="isMobile" data-aos="fade-down" data-aos-delay="800">
         每棟建築都是根植沃土細膩照顧的大樹，玖登開發耕耘大竹土地，開出茁壯茂盛的枝葉，勾勒環境與風土的氣韻，從種子到綠芽澆灌更盛大的未來
       </div>
-      <div class="work-title" data-aos="fade-left" data-aos-delay="800" data-aos-offset="-300">
+      <div class="work-title" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-300">
         【代表作品／寓上春樹】
       </div>
-      <div class="work-desc" data-aos="fade-left" data-aos-delay="800" data-aos-offset="-300">
+      <div class="work-desc" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-300">
         雙公園景觀宅，格柵獨美身段，在埔心溪河廊映襯出雅緻美學
       </div>
     </div>
 
-    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-left" data-aos-delay="800">
+    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="800">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -194,9 +194,9 @@
 
 /* Swipe */
 .swipe {
-  width: size(766);
-  height: 90%;
-  top: 5%;
+  width: size(660);
+  height:90%;
+  top:5%;
   right: size(116);
   object-fit: cover;
   // background: #0344;
@@ -481,7 +481,7 @@
     z-index: 2;
   }
   .title {
-    @include img_l_m(250, 72, 55);
+    @include img_l_m(250, 69, 55);
     font-size: sizem(25);
     font-weight: 500;
     font-stretch: normal;

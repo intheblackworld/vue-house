@@ -18,21 +18,21 @@
       <div class="line" data-aos="zoom-in-down" data-aos-delay="200">
 
       </div>
-      <div class="label" data-aos="fade-left" data-aos-delay="400">
+      <div class="label" data-aos="fade-down" data-aos-delay="400">
         ｜六大價值｜
       </div>
-      <div class="title" v-if="isPC" data-aos="fade-left" data-aos-delay="600">
+      <div class="title" v-if="isPC" data-aos="fade-down" data-aos-delay="600">
         大竹最美 建築大樹 生活豐映
       </div>
-      <div class="title" v-if="isMobile" data-aos="fade-left" data-aos-delay="600">
+      <div class="title" v-if="isMobile" data-aos="fade-down" data-aos-delay="600">
         大竹最美 建築大樹<br />生活豐映
       </div>
-      <div class="subtitle" data-aos="fade-left" data-aos-delay="800">
+      <div class="subtitle" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-50">
         種一株豐盛大樹最好的時間就是現在
       </div>
     </div>
 
-    <div class="items flex-ac flex-jb wrap" v-if="isPC" data-aos="fade-left" data-aos-delay="800">
+    <div class="items flex-ac flex-jb wrap" v-if="isPC" data-aos="fade-down" data-aos-delay="800">
       <div class="flex-ac flex-jb">
         <div v-for="(slide, i) in slideList.slice(0, 3)" :key="slide.img + i + 'icon'" :class="`item`">
           <img :src="slide.img" alt="">
@@ -53,7 +53,7 @@
       </div>
     </div>
 
-    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile">
+    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile" data-aos="fade-down" data-aos-delay="800">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute ${slideIndex === i ? 'active' : ''}`">
@@ -156,7 +156,7 @@
 }
 .label {
   @include img_l_pc(208, 159, 246);
-  top: calc(50% + 100vw * (159 - 540) / 1920);
+  top:calc(50% + 100vw * (162 - 540) / 1920);
   font-size: size(30.5);
   font-weight: 400;
   font-stretch: normal;
@@ -170,8 +170,8 @@
 }
 .title {
   @include img_l_pc(825, 204, 246);
-  top: calc(50% + 100vw * (204 - 540) / 1920);
-  font-size: size(66.1);
+  top:calc(50% + 100vw * (208 - 540) / 1920);
+  font-size: size(66);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -185,8 +185,8 @@
 
 .subtitle {
   @include img_l_pc(851, 301, 246);
-  top: calc(50% + 100vw * (301 - 540) / 1920);
-  font-size: size(38.2);
+  top:calc(50% + 100vw * (301 - 540) / 1920);
+  font-size: size(37);
   font-weight: 300;
   font-stretch: normal;
   font-style: normal;
@@ -204,7 +204,7 @@
   > div {
     width: 100%;
     height: size(170);
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #0004;
   }
 
   .item {
@@ -267,26 +267,6 @@
   transition: all 0.3s ease;
 }
 
-// begin
-// .swipe-left-leave-to {
-//   margin-left: -100vw;
-//   z-index: 0;
-// }
-// // end
-// .swipe-left-enter {
-//   opacity: 0.5;
-//   margin-left: 0;
-//   z-index: 1;
-// }
-
-// .swipe-left-enter-active {
-//   transition: all 0.5s ease;
-// }
-
-// .swipe-left-leave-active {
-//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-// }
-
 .swipe-wrap {
   width: 100%;
   height: 100%;
@@ -317,20 +297,6 @@
     text-align: left;
     text-shadow: 0 0.3em 1em #000;
   }
-
-  // &:nth-child(1) {
-  //   z-index: 1;
-  //   // opacity: 1;
-  // }
-
-  // &.base {
-  //   z-index: 1;
-  //   opacity: 1;
-  // }
-  // &.active {
-  //   z-index: 2;
-  //   // opacity: 1;
-  // }
 }
 
 .pagination {
@@ -397,25 +363,20 @@
 .swipe-btns {
   width: 100%;
   height: 100%;
-  padding: 0 15px;
   z-index: 3;
 
-  .prev-btn,
-  .next-btn {
-    width: size(20);
-    cursor: pointer;
-  }
 }
 
 .prev-btn,
 .next-btn {
   height: 100%;
-  width: 2em;
+  width:50%;
   font-size: size(20);
-  right: 1em;
+  right: 0;
   top: 0;
   margin: 0;
   cursor: pointer;
+  position: absolute;
   &::before {
     content: '';
     position: absolute;
@@ -433,7 +394,7 @@
     height: 1em;
     position: absolute;
     top: calc(50% - 0.5em);
-    left: calc(95% - 0.75em);
+    left: calc(90% - 0.75em);
     border: solid #fff;
     border-width: 0.1em 0.1em 0 0;
     transform: rotate(45deg) translate(-10%, 10%);
@@ -448,7 +409,7 @@
 .prev-btn {
   transform: scaleX(-1);
   right: auto;
-  left: 1em;
+  left: 0;
 }
 
 @keyframes btn {
@@ -472,9 +433,9 @@
 @media screen and (max-width: 767px) {
   .section3 {
     width: 100vw;
-    height: sizem(711);
-    min-height: auto;
-    max-height: initial;
+    min-height: sizem(667);
+    max-height: sizem(812);
+    height:100vh;
     // background-image: url('./all/section_bg.jpg');
     // background-attachment: scroll;
     // background-size: 100% 100%;
@@ -487,14 +448,6 @@
     @include img_l_m(215, 0, -40);
     top: auto;
     bottom: 0;
-    transform-origin: bottom;
-    animation: grass 4s ease-in-out alternate infinite;
-  }
-
-  @keyframes grass {
-    to {
-      transform: skewX(3deg);
-    }
   }
 
   .bg-img {
@@ -522,28 +475,8 @@
     }
   }
 
-  // begin
-  .trans-leave-to {
-    opacity: 0;
-    z-index: 0;
-  }
-  // end
-  .trans-enter {
-    opacity: 0;
-    z-index: 1;
-  }
-
-  .trans-enter-active {
-    transition: all 1.8s ease;
-  }
-
-  .trans-leave-active {
-    transition: all 1.8s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-
   .line {
     @include div_l_m(7, 135, 44, 33);
-    background-color: #ff8700;
   }
   .label {
     @include img_l_m(208, 40, 56);
@@ -632,7 +565,7 @@
     width: 100%;
     height: sizem(259);
     min-height: auto;
-    top: sizem(163);
+    top: sizem(155);
     bottom: auto;
     left: sizem(0);
     object-fit: cover;
@@ -657,26 +590,6 @@
     transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
   }
 
-  // begin
-  // .swipe-left-leave-to {
-  //   margin-left: -100vw;
-  //   z-index: 0;
-  // }
-  // // end
-  // .swipe-left-enter {
-  //   opacity: 0.5;
-  //   margin-left: 0;
-  //   z-index: 1;
-  // }
-
-  // .swipe-left-enter-active {
-  //   transition: all 0.5s ease;
-  // }
-
-  // .swipe-left-leave-active {
-  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  // }
-
   .swipe-wrap {
     width: 100%;
     height: 100%;
@@ -688,9 +601,10 @@
     height: 100%;
     z-index: 0;
     display: flex;
-    align-items: center;
+    align-items: center; justify-content:center;
+
     .half-item {
-      width: 50%;
+      width: 40%;
       position: relative;
     }
     img {
@@ -699,19 +613,6 @@
       object-fit: cover;
     }
 
-    // &:nth-child(1) {
-    //   z-index: 1;
-    //   // opacity: 1;
-    // }
-
-    // &.base {
-    //   z-index: 1;
-    //   opacity: 1;
-    // }
-    // &.active {
-    //   z-index: 2;
-    //   // opacity: 1;
-    // }
     .slide-name {
       position: relative;
       right: auto;
@@ -879,12 +780,12 @@ export default {
   },
 
   methods: {
-    addIndex2() {
+    addIndex() {
       this.slideIndex =
         this.slideIndex === this.slideList.length - 2 ? 0 : this.slideIndex + 2
     },
 
-    decIndex2() {
+    decIndex() {
       this.slideIndex =
         this.slideIndex === 0 ? this.slideList.length - 2 : this.slideIndex - 2
     },

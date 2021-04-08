@@ -8,20 +8,20 @@
       <div class="line" data-aos="zoom-in-down" data-aos-delay="200">
 
       </div>
-      <div class="label" data-aos="fade-left" data-aos-delay="400">
+      <div class="label" data-aos="fade-down" data-aos-delay="400">
         ｜精心規劃｜
       </div>
-      <div class="title" v-if="isPC" data-aos="fade-left" data-aos-delay="600">
+      <div class="title" v-if="isPC" data-aos="fade-down" data-aos-delay="600">
         感心規劃 有質感的家分享受
       </div>
-      <div class="title" v-if="isMobile" data-aos="fade-left" data-aos-delay="600">
+      <div class="title" v-if="isMobile" data-aos="fade-down" data-aos-delay="600">
         感心規劃<br />有質感的家分享受
       </div>
-      <div class="subtitle" data-aos="fade-left" data-aos-delay="800">
+      <div class="subtitle" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-50">
         A級規劃／中空樓板設計／十年防水保固
       </div>
-      <div class="list-info" data-aos="fade-left" data-aos-delay="800">
-        <div v-for="item in list" :key="item.title" class="info flex-ac">
+      <div class="list-info">
+        <div v-for="item in list" :key="item.title" class="info flex-ac" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-50">
           <div class="info-title" v-html="item.title"></div>
           <div class="info-desc" v-html="item.desc"></div>
         </div>
@@ -34,9 +34,9 @@
 
 .section6 {
   width: 100%;
-  height: calc(100vh - 70px);
-  min-height: size(830);
-  max-height: size(1010);
+  height: calc(100vh + 80px);
+  min-height: calc(46.875vw + 80px);
+  max-height: calc(56.25vw + 80px);
   position: relative;
   background-color: #efd8ae;
   // min-height: size(900);
@@ -78,7 +78,7 @@
 
 .line {
   @include div_l_pc(14, 176, 168, 202);
-  top:calc(50% + 100vw * (168 - 540) / 1920); 
+  top:calc(50% + 100vw * (168 - 540) / 1920);
   background-color: #40220f;
 }
 .label {
@@ -157,15 +157,14 @@
 }
 
 .list-info {
-  @include img_l_pc(227 + 34 + 678, 429, 250);
+  @include img_l_pc(227 + 70 + 678, 429, 250);
   top:calc(65% + 100vw * (429 - 1080 * .65) / 1920);
-
-  .info {
-    margin-bottom: size(26);
-  }
-
+  height: calc(100% - 27vw);
+  display: flex;
+  flex-direction:column;
+  justify-content:space-between;
   .info-title {
-    width: size(227);
+    width: size(250);
     font-size: size(48);
     font-weight: 300;
     font-stretch: normal;
@@ -267,7 +266,7 @@
   }
 
   .subtitle {
-    @include img_l_m(300, 156, 55);
+    @include img_l_m(320, 156, 55);
     font-size: sizem(16);
     font-weight: normal;
     font-stretch: normal;
@@ -282,11 +281,11 @@
 
   .list-info {
     @include img_l_m(310, 206, 31);
+  height:auto;
 
     .info {
       margin-bottom: sizem(20);
       flex-wrap: wrap;
-    
     }
 
     .info-title {
@@ -356,7 +355,7 @@ export default {
         },
         {
           title: '精品配備',
-          desc: isMobile?'櫻花系統廚具、KARAT凱樂衛浴<br>完美頂規享受':'櫻花系統廚具、KARAT凱樂衛浴，完美頂規享受',
+          desc: isMobile ? '櫻花系統廚具、KARAT凱樂衛浴<br/>完美頂規享受' : '櫻花系統廚具、KARAT凱樂衛浴，完美頂規享受',
         },
       ],
     }
