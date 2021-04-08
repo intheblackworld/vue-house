@@ -13,15 +13,15 @@
     <div class="order">
       <div class="form">
         <div class="group">
-          <div class="form-hint">* 每個欄位都是必填欄位</div>
+          <!-- <div class="form-hint">* 每個欄位都是必填欄位</div> -->
           <div class="row" data-aos="fade-down" data-aos-delay="100">
-            <el-input id="form-name" v-model="form.name" placeholder="姓名"></el-input>
+            <el-input id="form-name" v-model="form.name" placeholder="姓名 (必填)"></el-input>
           </div>
           <div class="row" data-aos="fade-down" data-aos-delay="200">
-            <el-input id="form-phone" v-model="form.phone" placeholder="電話"></el-input>
+            <el-input id="form-phone" v-model="form.phone" placeholder="電話 (必填)"></el-input>
           </div>
           <div class="row" data-aos="fade-down" data-aos-delay="200">
-            <el-input id="form-phone" v-model="form.type" placeholder="想了解的建案"></el-input>
+            <el-input id="form-phone" v-model="form.type" placeholder="想了解的建案 (必填)"></el-input>
           </div>
           <div class="row" data-aos="fade-down" data-aos-delay="200">
             <el-input type="textarea" :rows="5" placeholder="請輸入您的留言，將有專人為您服務" v-model="form.msg"></el-input>
@@ -37,9 +37,9 @@
             </div>
             <el-checkbox v-model="checked">
               <div>
-                本人已悉知以上個人資料蒐集聲明事項
-                <!-- <span @click="showPolicyDialog">「個資告知事項聲明」</span> -->
-                <!-- 內容 -->
+                本人知悉並同意
+                <span @click="showPolicyDialog">「個資告知事項聲明」</span>
+                內容
               </div>
             </el-checkbox>
           </div>
@@ -253,7 +253,7 @@ export default {
   height: auto;
   background-image: $order_bg_image;
   background-repeat: repeat;
-  position: relative;
+  // position: relative;
   // background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 80% 0%;
@@ -431,7 +431,7 @@ export default {
     height: auto;
     padding-top: 120px;
     margin: 0;
-    position: relative;
+    // position: relative;
     z-index: 2;
 
     > img {
