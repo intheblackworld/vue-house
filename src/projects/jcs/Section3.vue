@@ -1,12 +1,12 @@
 <template>
   <div class="section3">
     <transition-group name="trans" mode="out-in">
-      <img src="./s3/bg1.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-show="blockIndex === 0 && isPC" key="day1">
-      <img src="./s3/bg2.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-show="blockIndex === 1 && isPC" key="day2">
-      <div class="bg-img bg1" v-show="blockIndex === 0 && isMobile" key="day3">
+      <img src="./s3/bg1.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="blockIndex === 0 && isPC" key="day1">
+      <img src="./s3/bg2.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="blockIndex === 1 && isPC" key="day2">
+      <div class="bg-img bg1" v-if="blockIndex === 0 && isMobile" key="day3">
         <img src="./s3/bg1_m.jpg" :alt="`${info.caseName}_img`">
       </div>
-      <div class="bg-img bg2" v-show="blockIndex === 1 && isMobile" key="day4">
+      <div class="bg-img bg2" v-if="blockIndex === 1 && isMobile" key="day4">
         <img src="./s3/bg2_m.jpg" :alt="`${info.caseName}_img`">
       </div>
     </transition-group>
@@ -140,11 +140,11 @@
 }
 
 .trans-enter-active {
-  transition: all 1.8s ease;
+  transition: all 1s ease;
 }
 
 .trans-leave-active {
-  transition: all 1.8s cubic-bezier(1, 0.5, 0.8, 1);
+  transition: all 1s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
 .line {
