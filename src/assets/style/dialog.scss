@@ -1,7 +1,11 @@
 @import './variableColor.scss';
 
+.el-dialog.is-fullscreen {
+  height: 100% !important;
+  margin-top: 0 !important;
+}
 .el-dialog{
-    // height:auto !important;margin-top: 60px !important;align-self:center;
+    height:auto !important;margin-top: 60px !important;align-self:center;
     &__wrapper{
       height: 100%;
       display: flex;
