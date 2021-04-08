@@ -111,7 +111,8 @@
 	</g>
 </g>
     </svg>
-    <img src="./s1/t.png" :alt="`${info.caseName}_logo`" class="t">
+    <img src="./s1/t.png" :alt="`${info.caseName}_logo`" class="t" v-if="isPC">
+    <img src="./s1/t_m.png" :alt="`${info.caseName}_logo`" class="t" v-if="isMobile">
   </div>
 </template>
 <style lang="scss" scoped>
@@ -218,7 +219,7 @@
 
 
 .t {
-  @include img_c_pc(553, 737);
+  @include img_c_pc(730, 737);
   top:calc(50% + 100vw * (790 - 540) / 1920);
   animation: an1 0.8s 4s linear forwards;opacity: 0;
 }
@@ -253,7 +254,7 @@
     @include img_r_m(128, 43, 39);
   }
   .img3 {
-    @include img_l_m(183, 165, 23);
+    @include img_l_m(183, 155, 23);
   }
   .img4 {
     @include img_r_m(238, 143, 17);
@@ -263,7 +264,7 @@
     @include img_c_m(337, 0);
   }
   .t {
-    @include img_c_m(310, 420);
+    @include img_c_m(320, 380);
   }
 }
 </style>

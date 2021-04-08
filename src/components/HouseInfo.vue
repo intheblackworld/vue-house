@@ -87,16 +87,17 @@ export default {
 
   &:nth-last-child(1) {
     height: auto;
-    border-left: none;
-    align-items: flex-start;
+  //  border-left: none;
+  //  align-items: flex-start;
 
-    .label {
+   /* .label {
       height: 30px;
       border-left: 4px solid $house_label_color;
       padding-left: 12px;
       padding-top: 6px;
       margin-left: -12px;
     }
+    */ 
   }
 
   .label {
@@ -112,6 +113,7 @@ export default {
     text-align: left;
     line-height: 1.4;
     color: $house_desc_color;
+    padding: 0 1em 0 0;
   }
 }
 
