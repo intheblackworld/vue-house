@@ -257,7 +257,7 @@ export default {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    position: relative;
+    // position: relative;
     z-index: 3;
   }
 
@@ -413,7 +413,7 @@ export default {
       width: 85% !important;
       margin: 0 auto;
       padding: 0;
-      position: relative;
+      // position: relative;
       z-index: 2;
     }
 
