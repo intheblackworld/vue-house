@@ -1,5 +1,5 @@
 <template>
-  <el-dialog title="隱私權聲明" :visible.sync="policyVisible" width="600px" fullscreen>
+  <el-dialog title="隱私權聲明" :visible.sync="policyVisible" width="600px" fullscreen :modal="false">
     <div class="policy-dialog-content">
       <div
         class="subtitle"
