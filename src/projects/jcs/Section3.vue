@@ -73,8 +73,8 @@
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
         <div class="swipe-btns absolute flex-ac flex-jb">
-          <div class="prev-btn" @click="decIndex2"></div>
-          <div class="next-btn" @click="addIndex2"></div>
+          <div class="prev-btn" @click="decIndex"></div>
+          <div class="next-btn" @click="addIndex"></div>
         </div>
       </div>
     </div>
@@ -778,23 +778,15 @@ export default {
   },
 
   methods: {
-    addIndex2() {
+    addIndex() {
       this.slideIndex =
         this.slideIndex === this.slideList.length - 2 ? 0 : this.slideIndex + 2
     },
 
-    decIndex2() {
+    decIndex() {
       this.slideIndex =
         this.slideIndex === 0 ? this.slideList.length - 2 : this.slideIndex - 2
     },
-
-		addBlockIndex() {
-			this.blockIndex = this.nextIndex
-		},
-
-		decBlockIndex() {
-			this.blockIndex = this.prevIndex
-		}
   },
 
   created() {},
