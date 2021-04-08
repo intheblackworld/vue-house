@@ -619,6 +619,11 @@ export default {
           en: ' ',
           name: '德國進口超耐磨木地板',
         },
+        {
+          img: require('./s10/11.jpg'),
+          en: ' ',
+          name: '大金空調室外機',
+        },
       ],
     }
   },
