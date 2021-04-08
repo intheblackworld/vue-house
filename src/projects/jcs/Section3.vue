@@ -361,25 +361,20 @@
 .swipe-btns {
   width: 100%;
   height: 100%;
-  padding: 0 15px;
   z-index: 3;
 
-  .prev-btn,
-  .next-btn {
-    width: size(20);
-    cursor: pointer;
-  }
 }
 
 .prev-btn,
 .next-btn {
   height: 100%;
-  width: 2em;
+  width:50%;
   font-size: size(20);
-  right: 1em;
+  right: 0;
   top: 0;
   margin: 0;
   cursor: pointer;
+  position: absolute;
   &::before {
     content: '';
     position: absolute;
@@ -397,7 +392,7 @@
     height: 1em;
     position: absolute;
     top: calc(50% - 0.5em);
-    left: calc(95% - 0.75em);
+    left: calc(90% - 0.75em);
     border: solid #fff;
     border-width: 0.1em 0.1em 0 0;
     transform: rotate(45deg) translate(-10%, 10%);
@@ -412,7 +407,7 @@
 .prev-btn {
   transform: scaleX(-1);
   right: auto;
-  left: 1em;
+  left: 0;
 }
 
 @keyframes btn {
@@ -792,6 +787,14 @@ export default {
       this.slideIndex =
         this.slideIndex === 0 ? this.slideList.length - 2 : this.slideIndex - 2
     },
+
+		addBlockIndex() {
+			this.blockIndex = this.nextIndex
+		},
+
+		decBlockIndex() {
+			this.blockIndex = this.prevIndex
+		}
   },
 
   created() {},

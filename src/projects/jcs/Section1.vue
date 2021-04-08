@@ -2150,11 +2150,11 @@
   top:calc(50% + 100vw * (150 - 540) / 1920);
   .st0{fill:#2F041B;
   animation: op 0.5s 3s linear reverse backwards;}
-	.st1{fill:#F4D321;
+.st1{fill:#F4D321;
   animation: op 0.5s 3.2s linear reverse backwards;}
 	.st2{fill:#000;
   animation: op 0.5s 3.5s linear reverse backwards;}
-	.st3{
+.st3{
    clip-path:url(#SVGID_2_);
   stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;fill:none;stroke:#FFFFFF}
 	.st4{stroke-width:32;}
