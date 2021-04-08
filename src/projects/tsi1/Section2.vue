@@ -1,65 +1,121 @@
 <template>
   <div class="section2">
-    <iframe class="bg-img" ref="player" src="https://www.youtube.com/embed/KM6kZXsakok?&enablejsapi=1&playerapiid=ytplayer" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <img src="./s2/02_bg.png" :alt="`${info.caseName}_img`" class="top-img">
-    <img src="./s2/02_bg_bottom.png" :alt="`${info.caseName}_img`" class="bottom-img">
+    <!-- https://codepen.io/ciprian/pen/WqLwvE -->
+    <!-- https://codepen.io/dudleystorey/pen/PZyMrd -->
+    <!-- <iframe
+      v-if="!isMobile"
+      ref
+      class="video-bg"
+      src="https://www.youtube.com/embed/eflYegCFh4M?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=eflYegCFh4M"
+      frameborder="0"
+      allowfullscreen
+    ></iframe> -->
+    <div class="video_box">
+      <div v-if="!isMobile" :id="`youtube-player-${id}`" ref="player" class="video-ifame"></div>
+    </div>
+    <img
+      src="./s2/s2_play_btn.png"
+      alt=""
+      class="play-btn"
+      v-if="isMobile"
+      @click="isDialog = true"
+    >
+    <div class="video" v-if="isDialog && isMobile">
+      <div class="video_box">
+        <iframe title="youtube" src="https://www.youtube.com/embed/KM6kZXsakok" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <img class="close" @click="isDialog = false" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABABAMAAABYR2ztAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAhUExURUdwTP////Pw8PLx8fLw8PLw8PPx8fHx8fLy8vLw8PXr6/Zeio0AAAALdFJOUwADRMS156s3KfgaAiHMOAAAAXtJREFUSMeFlr9qwzAQxnVZajoVLRLZTEMfoBAadywIt11t/AAGETqGhOzGoS/g0r20D1qRxLYsS/oy5Y/uk+/ud/eFnRoWecmcfTzdhX+n/Tf763bhAyJ7Z4l+DErQfdkw+izS0AGutiZY6JeABK2q8/XHMo0JhCXooUqvb/wSXNfXwIVXwjxBOmj5JLiqhzCh5+WkQzVG0bGYlVOscytIvG0cCWq/JjGn7md6YJlNQ5LsefKZfjsHA+cL6QQwdpvZidDevZKx1uZCZJtZ3okauaBVOQeRDmM5uco9tR+b2nPgSgxcjG1023uRGDiYA3KRCAn0EkGBXkKoOjgHC8OFna6nFsVOrvPILBou2tgoGkw6TxemXHTRdWA4iB+AV6CHNGk2UkXS5DqPFgqWGjULthsBA5GzoS19tUDYSzA4Zpzjo7dEw4vGX4IFYjiIryC0xHxr8MbGHy1SuIo5WObQDjgwFApZEnF9tiRkatAWobFCa4bmDv4evP4DsmNwZSA8CfQAAAAASUVORK5CYII=" />
+    </div>
+    <!-- div class="line-bg" data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAQAAADYv8WvAAAADUlEQVQIHWNkSGOAAAADRABoDg6qmwAAAABJRU5ErkJggg=="></div -->
   </div>
 </template>
-<style lang="scss" scoped>
+<style lang="scss">
 @import '@/assets/style/function.scss';
-
-.section2 {
-  width: 100%;
-  height: 100vh;
-  min-height: size(900);
-  max-height: size(1080);
-  // position: relative;
-  // background-color: #fff;
-  // min-height: size(900);
-  // background-image: url('./s2/bg.jpg');
-  // background-size: 100% 100%;
-  // background-position: 0 0;
-  // background-attachment: fixed;
-  // overflow: hidden;
-}
-
-.top-img {
+.video-ifame {
+  width: 100.5%;
+  height:100.5%;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
 }
-
-.bottom-img {
-  position: absolute;
-  bottom: 2.8vw;
-  left: 0;
-  width: 100vw;
+</style>
+<style lang="scss" scoped>
+@import '@/assets/style/function.scss';
+.section2 {
+  // height: 100vh;
+  overflow: hidden;
+  // position: relative;
+  height: size(1080);
+  background: #000 url('./s2/video_img.png') no-repeat center;
+  background-color: #000;
+  background-size: cover;
+  margin: size(-125) 0  0 0;
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
 }
-
-.bg-img {
+.video_box {
   width: 100%;
+  position: absolute;
+  z-index: 2;
+  top:50%;
+  transform: translateY(-50%);
+  left: 0;
+  overflow: hidden;
+  height:100%;
+  opacity: 0;
+  animation: op 1s 3s ease-out forwards;
+}
+@keyframes op {
+  to {
+    opacity: 1;
+  }
+}
+.video-bg {
+  width: 100vw;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  display: block;
-  object-fit: cover;
-  margin-top: 0;
-  // opacity: 0.5;
-
-  &:nth-child(1) {
-    position: relative;
-  }
+  pointer-events: none;
+  //z-index: 3;
 }
 
+.line-bg {
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAQAAADYv8WvAAAADUlEQVQIHWNkSGOAAAADRABoDg6qmwAAAABJRU5ErkJggg==');
+}
+
+.logo {
+  width: size(318);
+  left: size(58);
+  top: size(64);
+  z-index: 1;
+}
+
+.txt {
+  width: size(525);
+  top: size(396);
+  right: size(113);
+  z-index: 1;
+}
 
 @media only screen and (max-width: 1440px) {
+  .bg-img {
+  }
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
-  .fullscreen {
-    height: 100vh;
-  }
 }
 
 /* 螢幕尺寸標準 */
@@ -69,331 +125,162 @@
 
 @media screen and (max-width: 767px) {
   .section2 {
+    margin: 0 0 0 0;
+    overflow: hidden;
     width: 100vw;
-    height: sizem(715);
-    min-height: auto;
-    max-height: initial;
-    // background-image: url('./s2/bg.jpg');
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
-    overflow: hidden;
+    height: sizem(240);
+    min-height: sizem(240);
+    max-height: sizem(240);
+    // margin-top: sizem(-60);
   }
 
-  .title {
-    @include img_r_m(260, 409, 71);
-    font-size: sizem(26);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: normal;
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
+  .video_box {
+    width: 100%;
+    position: absolute;
+    height: size-m(260);
+    // top: 50%;
+    // transform: translateY(-50%);
+    // left: 0;
+    // overflow: hidden;
+    // height: size(910);
+    opacity: 1;
+    // animation: op 1s 3s ease-out forwards;
   }
-
-  .hr {
-    @include img_r_m(230, 458, 102);
-    height: sizem(0.5);
-    background: #fff;
-  }
-
-  .desc {
-    @include img_r_m(292, 474, 40);
-    font-size: sizem(16);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.88;
-    letter-spacing: normal;
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
-  }
-
-  .more {
-    @include img_r_m(179 + 7 + 29, 636, 117);
-    font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.04;
-    letter-spacing: sizem(2.1);
-    text-align: left;
-    color: #ffffff;
-    cursor: pointer;
-    white-space: nowrap;
-
-    img {
-      width: sizem(29);
-    }
-  }
-
-  /* Swipe */
-  .swipe {
-    width: sizem(333);
-    height: sizem(333);
-    min-height: auto;
-    top: sizem(50);
-    left: sizem(0);
+  .video-bg {
+    width: size-m(1190);
+    height: size-m(667);
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
     object-fit: cover;
+    object-position: center;
   }
 
-  // begin
-  .swipe-fade-leave-to {
-    opacity: 0;
-    z-index: 0;
-  }
-  // end
-  .swipe-fade-enter {
-    opacity: 0;
-    z-index: 1;
-  }
-
-  .swipe-fade-enter-active {
-    transition: all 0.5s ease;
-  }
-
-  .swipe-fade-leave-active {
-    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-
-  // begin
-  // .swipe-left-leave-to {
-  //   margin-left: -100vw;
-  //   z-index: 0;
-  // }
-  // // end
-  // .swipe-left-enter {
-  //   opacity: 0.5;
-  //   margin-left: 0;
-  //   z-index: 1;
-  // }
-
-  // .swipe-left-enter-active {
-  //   transition: all 0.5s ease;
-  // }
-
-  // .swipe-left-leave-active {
-  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  // }
-
-  .swipe-wrap {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .swipe-item {
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    // &:nth-child(1) {
-    //   z-index: 1;
-    //   // opacity: 1;
-    // }
-
-    // &.base {
-    //   z-index: 1;
-    //   opacity: 1;
-    // }
-    // &.active {
-    //   z-index: 2;
-    //   // opacity: 1;
-    // }
-    .slide-name {
-      right: auto;
-      bottom: auto;
-      top: 1.2rem;
-      left: 1.2rem;
-      font-size: sizem(15);
-    }
-  }
-
-  .pagination {
-    width: auto;
-    bottom: size(91);
+  .logo {
+    width: size-m(154);
     left: 0;
     right: 0;
     margin: 0 auto;
-    justify-content: center;
+    top: size-m(240);
   }
 
-  .pagination-dot {
-    padding: 5px;
-    margin: 0 10px;
+  .txt {
+    width: size-m(157);
+    top: auto;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: size-m(47);
+  }
+
+  .play-btn {
+    @include img_c_m(32, 100);
     cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
-      box-shadow: 0 0 0 1px #fff;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
-      transition: all 0.5s;
-
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #004ea2;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transition: all 0.3s;
-        transform-origin: center;
-        transform: scale(0);
-      }
-      &.active {
-        &::before {
-          content: '';
-          width: 100%;
-          height: 100%;
-          display: block;
-          background: #004ea2;
-          border-radius: 20px;
-          opacity: 1;
-          position: absolute;
-          top: 0%;
-          // transform: translateY(-50%);
-          left: 0%;
-          transform: scale(1);
-        }
-      }
-    }
+    z-index: 10;
   }
 
-  .swipe-btns {
-    width: 100%;
-    height: 100%;
-    padding: 0 15px;
-    z-index: 3;
-
-    .prev-btn,
-    .next-btn {
-      width: sizem(15);
-      cursor: pointer;
-    }
-  }
-
-  .dialog {
+  .video {
     width: 100vw;
     height: 100vh;
     position: fixed;
+    left: size-m(0);
     top: 0;
-    left: 0;
-    background: linear-gradient(to bottom, #004471 80%, #3780b1 100%);
-    z-index: 1000;
-    overflow-y: scroll;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 200;
+    transition: opacity 0.5s;
 
-    .dialog-bg {
-      width: 100%;
-      height: 112%;
-      background-image: url('~@/projects/lj/s1/bg_m.png');
-      // padding-top: $nav_pc_height;
-      background-attachment: fixed;
-      background-size: auto;
-      background-position: center center;
-      background-repeat: repeat;
-    }
-
-    .dialog-img {
-      position: absolute;
-      width: sizem(333);
-      height: sizem(333);
-      top: sizem(57);
+    iframe {
+      width: 100vw;
+      height: size-m(260);
       left: 0;
+      right: 0;
+      margin: 0 auto;
+      // top: 50%;
+      // transform: translateY(-50%);
+      position: absolute;
+      background-color: #fff;
     }
 
-    .dialog-title {
-      @include img_r_m(302, 405, 34);
-      font-size: sizem(22);
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.81;
-      letter-spacing: normal;
-      text-align: left;
-      color: #ffffff;
-      text-decoration: underline;
-    }
-
-    .dialog-close {
-      @include div_r_m(31, 32, 10, 10);
-      border: 1px solid #fff;
+    .close {
+      position: absolute;
       cursor: pointer;
-
-      img {
-        width: 90%;
-      }
-    }
-    .dialog-name {
-      right: auto;
-      bottom: auto;
-      top: calc(15.2vw + 1.2rem);
-      left: 1.2rem;
-      font-size: sizem(15);
-      z-index: 2;
-    }
-
-    .dialog-desc {
-      @include img_r_m(313, 454, 18);
-      font-size: sizem(12);
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 2.39;
-      letter-spacing: normal;
-      text-align: left;
-      color: #ffffff;
-      height: auto;
-      margin: 0 0 5em;
+      right: 15px;
+      top: 50px;
+      width: size-m(30);
     }
   }
 }
 </style>
 <script>
 // @ is an alias to /src
-import { isPC, isMobile, isTablet } from '@/utils'
-import info from '@/info'
+import { isMobile } from '@/utils'
 
 export default {
   name: 'section2',
-
   data() {
     return {
-      info,
-      isPC,
       isMobile,
-      isTablet,
+      player: '',
+      id: 'KM6kZXsakok',
       isDialog: false,
     }
   },
 
-  methods: {},
+  methods: {
+    onPlayerReady(event) {
+      console.log('load')
+      event.target.playVideo()
+    },
+    loadVideo() {
+      this.player = new window.YT.Player(`youtube-player-${this.id}`, {
+        videoId: this.id,
+        width: '1920',
+        height: '1080',
+        playerVars: {
+          autoplay: 1,
+          loop: 1,
+          controls: 0,
+          showinfo: 0,
+          autohide: 1,
+          modestbranding: 1,
+          mute: 1,
+          suggestedQuality: 'default',
+          iv_load_policy: 3,
+        },
+        events: {
+          onReady: this.onPlayerReady,
+          onStateChange: this.onPlayerStateChange,
+        },
+      })
+    },
 
-  created() {},
+    onPlayerStateChange(e) {
+      if (e.data === window.YT.PlayerState.ENDED) {
+        this.player.loadVideoById(this.id)
+      }
+    },
+  },
 
-  mounted() {},
+  created() {
+    const tag = document.createElement('script')
+    tag.src = 'https://www.youtube.com/iframe_api'
+    const firstScriptTag = document.getElementsByTagName('script')[0]
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
+  },
+
+  mounted() {
+    setTimeout(() => {
+      if (!this.isMobile) {
+        if (!window.YT) {
+          window.onYouTubeIframeAPIReady = this.loadVideo
+        } else {
+          this.loadVideo()
+        }
+      }
+    }, 2500)
+  },
 
   computed: {},
-
-  watch: {
-  },
 }
 </script>

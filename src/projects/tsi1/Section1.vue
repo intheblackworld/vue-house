@@ -255,20 +255,20 @@
   }
   .c2 {
     left: -6.7vw;
-    top: calc(50% + 48vw);
+    top: calc(50% + 44vw);
     width: sizem(262);
     transform: translateX(-8%);
   }
   .c3 {
     right: 55vw;
-    top: calc(50% + 72vw);
+    top: calc(50% + 68vw);
     width: sizem(132);
     transform: translateX(30%);
     animation-direction: alternate-reverse;
   }
   .c4 {
     right: -1.5vw;
-    top: calc(50% + 60vw);
+    top: calc(50% + 50vw);
     width: sizem(369);
     transform: translateX(5%);
     animation-direction: alternate-reverse;
