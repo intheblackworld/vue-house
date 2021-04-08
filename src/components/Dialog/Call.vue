@@ -3,14 +3,18 @@
     <font-awesome-icon icon="phone" />
     <div class="dialog-desc">賞屋專線</div>
     <div class="info">{{phone}}</div>
-    <div
-      class="cta"
-      @click="redirectToPhoneThanks"
-    >撥打電話</div>
+    <div class="cta" @click="redirectToPhoneThanks" v-if="isMobile">撥打電話</div>
   </div>
 </template>
-
+<style lang="scss" scoped>
+// .cta{display: none;}
+// /* 手機尺寸 */
+// @media only screen and (max-width: 767px) {
+// .cta{display: block;}
+// }
+ </style>
 <script>
+import { isMobile } from '@/utils'
 export default {
   name: 'CallDialog',
   components: {},
@@ -18,6 +22,7 @@ export default {
   data() {
     return {
       window,
+      isMobile
     }
   },
 
