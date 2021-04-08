@@ -1,29 +1,22 @@
 <template>
   <div>
     <div class="section2">
-      <div class="swiper-frame">
-          <swiper
-            :options="swiperOption"
-            ref="mySwiper"
-            data-aos="fade"
-            data-aos-delay="1000"
-          >
-            <swiper-slide
-              v-for="(slide, index) in slideList"
-              :index="index"
-              :key="slide.img"
-              class="item"
-            >
-              <img
-                :src="slide.img"
-                :class="`item-img`"
-              />
-              <div
-                class="text"
-                v-html="slide.name"
-              ></div>
-            </swiper-slide>
-          </swiper>
+      <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex" data-aos="fade" data-aos-delay="1000">
+          <transition-group name="swipe-fade" mode="out-in">
+            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+              <img :src="slide.img" alt="">
+              <div class="slide-name absolute" v-html="slide.name"></div>
+            </div>
+          </transition-group>
+          <div class="pagination absolute flex-ac" v-if="isPC">
+            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+          </div>
+          <div class="swipe-btns absolute flex-ac flex-jb">
+            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+          </div>
+        </div>
       </div>
       <h1 class="title" data-aos="flip-up" data-aos-delay="1200">
         睽違十年，用心如初。
@@ -148,48 +141,6 @@
   }
 }
 
-.swiper-frame {
-  position: absolute;
-  width: size(1350);
-  height: size(820);
-  bottom: size(136);
-  left: size(0);
-  overflow: hidden;
-}
-
-.swiper-container {
-  position: absolute;
-  width:100%;
-  height:100%;
-  top:0;
-  left: 0;
-  margin-left:0;
-.item{
-  width:size(560);
-  margin-right: size(30);
-}
-  img{width:100%;
-  height:100%;}
-
-  .text {
-  position: absolute;
-    right:1.5em;
-    bottom:1.2em;
-    color: #fff;
-    font-size: size(18);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.6;
-    letter-spacing: 0.03em;
-    text-align: left;
-    text-shadow: 0 0.3em 1em #000;
-    span {
-      color: #242424;
-    }
-  }
-}
-
 /* Swipe */
 .swipe {
   width: size(1350);
@@ -254,7 +205,7 @@
 
   img {
     width: 100%;
-  height: 100%;
+    height: size(850);
   }
 
   .slide-name {
@@ -518,30 +469,6 @@
     }
   }
 
-  .swiper-frame {
-    width: 100%;
-    height: sizem(333);
-    min-height: auto;
-    top: sizem(50);
-    left: sizem(0);bottom: auto;
-}
-
-.swiper-container {
-  width:100%;
-  height:100%;
-  top: size(0);
-  left: size(0);
-  margin-left: size(0);
-.item{
-  width:sizem(228);
-  margin-right: sizem(6);
-}
-
-  .text {
-      font-size: sizem(15);
-  }
-}
-
   /* Swipe */
   .swipe {
     width: sizem(333);
@@ -783,19 +710,12 @@
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
-// import Parallax from '@/components/Parallax.vue'
-import 'swiper/dist/css/swiper.css'
-
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'section2',
 
   mixins: [slider],
-  components: {
-    swiper,
-    swiperSlide,
-  },
+  props: ['viewIndex'],
 
   data() {
     return {
@@ -803,22 +723,6 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
-      swiperOption: {
-        slidesPerView: "auto",
-        spaceBetween:  0,
-        loop: true,
-        loopFillGroupWithBlank: true,
-        centeredSlides: isMobile ? true : false ,
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
-        },
-        /*slidesPerColumn: isMobile ? 1 : 1,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },*/
-      },
       slideList: [
         {
           img: isMobile ? require('./s2/1_m.jpg') : require('./s2/1.jpg'),
@@ -833,17 +737,24 @@ export default {
           name: '靜心連雲',
         },
       ],
-
-      imgIndex: 0,
-      isShowDialog: false,
     }
   },
-
-  computed: {},
 
   methods: {},
 
   created() {},
+
   mounted() {},
+
+  computed: {},
+
+  watch: {
+    viewIndex() {
+      if (this.viewIndex === 5) {
+        this.slideIndex = 0
+        console.log(this.slideIndex, 'slideIndex')
+      }
+    },
+  },
 }
 </script>
