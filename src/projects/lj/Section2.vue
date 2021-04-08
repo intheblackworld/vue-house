@@ -821,15 +821,15 @@ export default {
       },
       slideList: [
         {
-          img: isMobile ? require('./s2/1_m.jpg') : require('./s2/1.jpg'),
+          img:require('./s2/1.jpg'),
           name: '泰安連雲-接雲樓',
         },
         {
-          img: isMobile ? require('./s2/2_m.jpg') : require('./s2/2.jpg'),
+          img:require('./s2/2.jpg'),
           name: '泰安連雲-連峰樓',
         },
         {
-          img: isMobile ? require('./s2/3_m.jpg') : require('./s2/3.jpg'),
+          img: require('./s2/3.jpg'),
           name: '靜心連雲',
         },
       ],

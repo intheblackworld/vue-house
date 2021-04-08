@@ -182,12 +182,12 @@ h1{font-weight: 600}
 }
 
 .logo2 {
-  width: size(130);
+  width: 2.8889em;
 }
 
 .btn {
-  width: size(400);
-  height:size(78);
+  width: 14.5em;
+  height:2.8em;
   margin:1em auto 0;
   border: 1px solid #fff;
   font-size: size(28);
@@ -338,58 +338,9 @@ transform: skewY(5deg);
 
   .logo {
     @include img_l_m(50, 91, 62);
+    top:calc(50% - 72vw);
   }
 
-  .info1 {
-    @include img_l_m(375 - 58, 380, 58);
-    font-size: sizem(21);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.9;
-    letter-spacing: sizem(0.15);
-    text-align: left;
-    color: #ffffff;
-  }
-
-  .info2 {
-    @include img_l_m(375 - 58, 423, 58);
-    font-size: sizem(19);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.66;
-    letter-spacing: sizem(0.3);
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
-  }
-
-  .logo2 {
-    @include img_r_m(62, 473, 58);
-  }
-
-  .btn {
-    // @include div_r_pc(280, 77, 863, 375);
-    @include div_r_m(180, 48, 465, 135);
-    border: 1px solid #fff;
-    font-size: sizem(17);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.25;
-    letter-spacing: normal;
-    text-align: left;
-    color: #ffffff;
-    background: transparent;
-    cursor: pointer;
-    transition: all 0.3s;
-
-    &:hover {
-      background-color: #fff;
-      color: #004471;
-    }
-  }
 
   .view {
     width: 100%;
@@ -415,6 +366,37 @@ transform: skewY(5deg);
     animation: fade_right 2.5s 4s ease-in-out forwards;
   }
 
+
+.txt{
+  font-size: sizem(21);
+} 
+.info1 {  
+  margin: 7em 0 0 0;
+  
+}
+  .btn {
+    font-size: sizem(17);
+  margin:0.5em auto 0;
+    // @include div_r_pc(280, 77, 863, 375);
+  /*  @include div_r_m(180, 48, 465, 135);
+    border: 1px solid #fff;
+    font-size: sizem(17);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: #fff;
+      color: #004471;
+    }*/
+  }
   .scroll-indigator {
     @include div_c_m(1, 150, 555);
 
