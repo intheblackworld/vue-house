@@ -33,7 +33,6 @@
   position: relative;
   background-image: url('./s1/01_bg.jpg');
   background-size: cover;
-  background-attachment: fixed;
   z-index: 3;
   // margin: 0 0 size(400) 0;
 }

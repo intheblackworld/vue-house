@@ -1,6 +1,6 @@
 <template>
   <div class="section2">
-    <iframe class="bg-img" ref="player" src="https://www.youtube.com/embed/78tx7GS-5tY?&enablejsapi=1&playerapiid=ytplayer" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe class="bg-img" ref="player" src="https://www.youtube.com/embed/KM6kZXsakok?&enablejsapi=1&playerapiid=ytplayer" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <img src="./s2/02_bg.png" :alt="`${info.caseName}_img`" class="top-img">
     <img src="./s2/02_bg_bottom.png" :alt="`${info.caseName}_img`" class="bottom-img">
   </div>
@@ -32,7 +32,7 @@
 
 .bottom-img {
   position: absolute;
-  bottom: 0;
+  bottom: 2.8vw;
   left: 0;
   width: 100vw;
 }
