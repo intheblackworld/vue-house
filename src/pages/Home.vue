@@ -13,8 +13,8 @@
       <vue-lazy-component class="section relative" id="section1" @init="init">
         <Section1 />
       </vue-lazy-component>
-      <vue-lazy-component class="section" id="section2" style="">
-         <Section2 /> 
+      <!--<vue-lazy-component class="section" id="section2" style="">
+         <Section2 /> -->
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section3">
         <Section3 />
