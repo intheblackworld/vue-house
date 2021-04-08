@@ -110,7 +110,7 @@ export default {
     position: relative;
   &::after {
     content: '';
-    width: size(3);
+    width:1px;
     height: 1.4em;
     background: $house_border_color;
     margin: 0px 0.8em 0 0;
