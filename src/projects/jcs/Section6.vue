@@ -8,20 +8,20 @@
       <div class="line" data-aos="zoom-in-down" data-aos-delay="200">
 
       </div>
-      <div class="label" data-aos="fade-left" data-aos-delay="400">
+      <div class="label" data-aos="fade-down" data-aos-delay="400">
         ｜精心規劃｜
       </div>
-      <div class="title" v-if="isPC" data-aos="fade-left" data-aos-delay="600">
+      <div class="title" v-if="isPC" data-aos="fade-down" data-aos-delay="600">
         感心規劃 有質感的家分享受
       </div>
-      <div class="title" v-if="isMobile" data-aos="fade-left" data-aos-delay="600">
+      <div class="title" v-if="isMobile" data-aos="fade-down" data-aos-delay="600">
         感心規劃<br />有質感的家分享受
       </div>
-      <div class="subtitle" data-aos="fade-left" data-aos-delay="800">
+      <div class="subtitle" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-50">
         A級規劃／中空樓板設計／十年防水保固
       </div>
-      <div class="list-info" data-aos="fade-left" data-aos-delay="800">
-        <div v-for="item in list" :key="item.title" class="info flex-ac">
+      <div class="list-info">
+        <div v-for="item in list" :key="item.title" class="info flex-ac" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-50">
           <div class="info-title" v-html="item.title"></div>
           <div class="info-desc" v-html="item.desc"></div>
         </div>

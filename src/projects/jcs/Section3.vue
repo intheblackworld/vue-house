@@ -16,21 +16,21 @@
       <div class="line" data-aos="zoom-in-down" data-aos-delay="200">
 
       </div>
-      <div class="label" data-aos="fade-left" data-aos-delay="400">
+      <div class="label" data-aos="fade-down" data-aos-delay="400">
         ｜六大價值｜
       </div>
-      <div class="title" v-if="isPC" data-aos="fade-left" data-aos-delay="600">
+      <div class="title" v-if="isPC" data-aos="fade-down" data-aos-delay="600">
         大竹最美 建築大樹 生活豐映
       </div>
-      <div class="title" v-if="isMobile" data-aos="fade-left" data-aos-delay="600">
+      <div class="title" v-if="isMobile" data-aos="fade-down" data-aos-delay="600">
         大竹最美 建築大樹<br />生活豐映
       </div>
-      <div class="subtitle" data-aos="fade-left" data-aos-delay="800">
+      <div class="subtitle" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-50">
         種一株豐盛大樹最好的時間就是現在
       </div>
     </div>
 
-    <div class="items flex-ac flex-jb wrap" v-if="isPC" data-aos="fade-left" data-aos-delay="800">
+    <div class="items flex-ac flex-jb wrap" v-if="isPC" data-aos="fade-down" data-aos-delay="800">
       <div class="flex-ac flex-jb">
         <div v-for="(slide, i) in slideList.slice(0, 3)" :key="slide.img + i + 'icon'" :class="`item`">
           <img :src="slide.img" alt="">
@@ -51,10 +51,10 @@
       </div>
     </div>
 
-    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile">
+    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile" data-aos="fade-down" data-aos-delay="800">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
-          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute ${slideIndex === index ? 'active' : ''}`">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute ${slideIndex === i ? 'active' : ''}`">
 
             <div class="half-item">
               <img :src="slide.img" alt="">
@@ -62,9 +62,9 @@
               <div class="slide-desc" v-html="slide.desc"></div>
             </div>
             <div class="half-item">
-              <img :src="slideList[slideIndex === slideList.length ? 0 : slideIndex + 1].img" alt="">
-              <div class="slide-name" v-html="slideList[slideIndex === slideList.length ? 0 : slideIndex + 1].name"></div>
-              <div class="slide-desc" v-html="slideList[slideIndex === slideList.length ? 0 : slideIndex + 1].desc"></div>
+              <img :src="slideList[secIndex].img" alt="">
+              <div class="slide-name" v-html="slideList[secIndex].name"></div>
+              <div class="slide-desc" v-html="slideList[secIndex].desc"></div>
             </div>
 
           </div>
@@ -73,8 +73,8 @@
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
         <div class="swipe-btns absolute flex-ac flex-jb">
-          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex2">
-          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex2">
+          <div class="prev-btn" @click="decIndex2"></div>
+          <div class="next-btn" @click="addIndex2"></div>
         </div>
       </div>
     </div>
@@ -149,7 +149,7 @@
 
 .line {
   @include div_l_pc(14, 180, 168, 202);
-  top:calc(50% + 100vw * (168 - 540) / 1920);
+  top: calc(50% + 100vw * (168 - 540) / 1920);
   background-color: #ff8700;
 }
 .label {
@@ -169,7 +169,7 @@
 .title {
   @include img_l_pc(825, 204, 246);
   top:calc(50% + 100vw * (208 - 540) / 1920);
-  font-size: size(66.1);
+  font-size: size(66);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -198,7 +198,7 @@
 
 .items {
   @include img_l_pc(920, 428, 204);
-  top:calc(50% + 100vw * (380 - 540) / 1920);
+  top: calc(50% + 100vw * (380 - 540) / 1920);
   > div {
     width: 100%;
     height: size(170);
@@ -208,27 +208,27 @@
   .item {
     display: flex;
     align-items: center;
-      font-stretch: normal;
-      font-style: normal;
-      font-size: size(17);
-      font-weight: normal;
-      line-height: 1.4;
-      color: #ffffff;
-      text-align: left;
+    font-stretch: normal;
+    font-style: normal;
+    font-size: size(17);
+    font-weight: normal;
+    line-height: 1.4;
+    color: #ffffff;
+    text-align: left;
     img {
       width: size(90);
       margin-right: size(10);
     }
 
     .item-name {
-      font-size:2.5em;
+      font-size: 2.5em;
       font-weight: 500;
       letter-spacing: normal;
       white-space: nowrap;
     }
 
     .item-desc {
-      letter-spacing:0.06em;
+      letter-spacing: 0.06em;
     }
   }
 }
@@ -238,7 +238,7 @@
   width: size(800);
   height: size(550);
   top: size(105);
-  top:calc(50% + 100vw * (105 - 540) / 1920);
+  top: calc(50% + 100vw * (105 - 540) / 1920);
   right: size(349);
   object-fit: cover;
   // background: #0344;
@@ -246,21 +246,23 @@
 
 // begin
 .swipe-fade-leave-to {
+  margin-top: -10px;
   opacity: 0;
   z-index: 0;
 }
 // end
 .swipe-fade-enter {
+  margin-top: 30px;
   opacity: 0;
   z-index: 1;
 }
 
 .swipe-fade-enter-active {
-  transition: all 1s ease;
+  transition: all 0.3s ease;
 }
 
 .swipe-fade-leave-active {
-  transition: all 1s ease;
+  transition: all 0.3s ease;
 }
 
 // begin
@@ -313,20 +315,6 @@
     text-align: left;
     text-shadow: 0 0.3em 1em #000;
   }
-
-  // &:nth-child(1) {
-  //   z-index: 1;
-  //   // opacity: 1;
-  // }
-
-  // &.base {
-  //   z-index: 1;
-  //   opacity: 1;
-  // }
-  // &.active {
-  //   z-index: 2;
-  //   // opacity: 1;
-  // }
 }
 
 .pagination {
@@ -403,6 +391,55 @@
   }
 }
 
+.prev-btn,
+.next-btn {
+  height: 100%;
+  width: 2em;
+  font-size: size(20);
+  right: 1em;
+  top: 0;
+  margin: 0;
+  cursor: pointer;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translateX(200%);
+    background-color: #df6c0088;
+    transition: all 0.3s;
+  }
+  &::after {
+    content: '';
+    width: 1em;
+    height: 1em;
+    position: absolute;
+    top: calc(50% - 0.5em);
+    left: calc(95% - 0.75em);
+    border: solid #fff;
+    border-width: 0.1em 0.1em 0 0;
+    transform: rotate(45deg) translate(-10%, 10%);
+  }
+  &:hover:before {
+    transform: translateX(0%);
+  }
+  &:hover:after {
+    animation: btn 0.5s ease-in-out infinite alternate;
+  }
+}
+.prev-btn {
+  transform: scaleX(-1);
+  right: auto;
+  left: 1em;
+}
+
+@keyframes btn {
+  to {
+    transform: rotate(45deg) translate(10%, -10%);
+  }
+}
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -434,58 +471,36 @@
     @include img_l_m(215, 0, -40);
     top: auto;
     bottom: 0;
-    transform-origin: bottom;
-    animation: grass 4s ease-in-out alternate infinite;
-  }
-
-  @keyframes grass {
-    to {
-      transform: skewX(3deg);
-    }
   }
 
   .bg-img {
     width: 100%;
-    height:100%;
+    height: 100%;
     position: absolute;
     top: auto;
     bottom: 0;
     left: 0;
     &.bg1,
-    &.bg2{
-    img{width: 100%;
-    position: absolute;
-    top: auto;
-    bottom: 0;
-    left: 0;}}
-    &.bg1{
-    background-color: #2157c1;}
-    &.bg2{
-    background-color: #22389b;}
+    &.bg2 {
+      img {
+        width: 100%;
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        left: 0;
+      }
+    }
+    &.bg1 {
+      background-color: #2157c1;
+    }
+    &.bg2 {
+      background-color: #22389b;
+    }
   }
 
-  // begin
-  .trans-leave-to {
-    opacity: 0;
-    z-index: 0;
-  }
-  // end
-  .trans-enter {
-    opacity: 0;
-    z-index: 1;
-  }
-
-  .trans-enter-active {
-    transition: all 1.8s ease;
-  }
-
-  .trans-leave-active {
-    transition: all 1.8s cubic-bezier(1, 0.5, 0.8, 1);
-  }
 
   .line {
     @include div_l_m(7, 135, 44, 33);
-    background-color: #ff8700;
   }
   .label {
     @include img_l_m(208, 40, 56);
@@ -599,25 +614,6 @@
     transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
   }
 
-  // begin
-  // .swipe-left-leave-to {
-  //   margin-left: -100vw;
-  //   z-index: 0;
-  // }
-  // // end
-  // .swipe-left-enter {
-  //   opacity: 0.5;
-  //   margin-left: 0;
-  //   z-index: 1;
-  // }
-
-  // .swipe-left-enter-active {
-  //   transition: all 0.5s ease;
-  // }
-
-  // .swipe-left-leave-active {
-  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  // }
 
   .swipe-wrap {
     width: 100%;
@@ -642,19 +638,6 @@
       object-fit: cover;
     }
 
-    // &:nth-child(1) {
-    //   z-index: 1;
-    //   // opacity: 1;
-    // }
-
-    // &.base {
-    //   z-index: 1;
-    //   opacity: 1;
-    // }
-    // &.active {
-    //   z-index: 2;
-    //   // opacity: 1;
-    // }
     .slide-name {
       position: relative;
       right: auto;
@@ -749,14 +732,18 @@
 
   .swipe-btns {
     width: 100%;
-    height: 100%;
-    padding: 0 15px;
-    z-index: 3;
-
+    left: 0%;
     .prev-btn,
     .next-btn {
-      width: sizem(15);
-      cursor: pointer;
+      font-size: sizem(15);
+      &::before {
+        background-color: #cc5b4e00;
+      }
+      &::after {
+        border-color: #fff;
+        border-width: 0.15em 0.15em 0 0;
+        animation: btn 0.5s ease-in-out infinite alternate;
+      }
     }
   }
 }
@@ -826,7 +813,7 @@ export default {
     decIndex2() {
       this.slideIndex =
         this.slideIndex === 0 ? this.slideList.length - 2 : this.slideIndex - 2
-    }
+    },
   },
 
   created() {},
@@ -837,7 +824,11 @@ export default {
     }, 4000)
   },
 
-  computed: {},
+  computed: {
+    secIndex() {
+      return this.slideIndex === this.slideList.length ? 0 : this.slideIndex + 1
+    },
+  },
 
   watch: {
     // viewIndex() {

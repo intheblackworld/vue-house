@@ -7,21 +7,21 @@
       </div>
       <img src="./s2/bg.png" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC">
       <img src="./s2/bg_m.png" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isMobile" data-aos="fade" data-aos-delay="0">
-      <div class="line"></div>
-      <div class="label" data-aos="fade" data-aos-delay="300">
+      <div class="line" data-aos="fade-down" data-aos-delay="0"></div>
+      <div class="label" data-aos="fade-down" data-aos-delay="100">
         ｜大竹崛起｜
       </div>
-      <div class="title" data-aos="fade" data-aos-delay="200">
+      <div class="title" data-aos="fade-down" data-aos-delay="300">
         並肩青埔 舉目藝文<br />
         大竹未來拭目以待
       </div>
-      <div class="desc" v-if="isPC" data-aos="fade" data-aos-offset="-600" data-aos-delay="400">
+      <div class="desc" v-if="isPC" data-aos="fade-down" data-aos-offset="-600" data-aos-delay="500">
         放眼青埔未來、跟進藝文價值，大竹地段潛力正在躍升。<br />
         十分鐘車程，前進全台最大名品城、IKEA、Xpark享受時尚氛圍；<br />
         享受藝文特區展演活動、市圖總館的城市書香氛圍。<br />
         大竹並肩桃園地段價值雙引擎，成長動能無與倫比
       </div>
-      <div class="desc" v-if="isMobile" data-aos="fade" data-aos-delay="400">
+      <div class="desc" v-if="isMobile" data-aos="fade-down" data-aos-delay="500">
         放眼青埔未來、跟進藝文價值，大竹地段潛力正在躍升。十分鐘車程，前進全台最大名品城、IKEA、Xpark享受時尚氛圍；享受藝文特區展演活動、市圖總館的城市書香氛圍。大竹並肩桃園地段價值雙引擎，成長動能無與倫比
       </div>
     </div>
