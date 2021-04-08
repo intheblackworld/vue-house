@@ -377,6 +377,14 @@ export default {
         {
           // icon: require('./s1/icon1.png'),
           type:1,
+          title: '【神采飛洋】 HOUSE OF HAPPINESS｜設計師篇',
+          desc: '',
+          img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/qa-XGxKFT-4',
+        },
+        {
+          // icon: require('./s1/icon1.png'),
+          type:1,
           title: '【太陽帝國】不是王牌出手 雙和第一峰',
           desc: '',
           img: require('../hot/s1/imgbg.jpg'),
