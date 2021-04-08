@@ -196,6 +196,12 @@
     background-color: rgb(200, 200, 200, 0.3);
   }
 
+
+     .map .mask {
+      width: 400vw !important;
+      background: rgba(0, 53, 97, 0.4) !important;
+      }
+
   .custom-vertical-indicator {
     width: 100%;
     height: 20px;
