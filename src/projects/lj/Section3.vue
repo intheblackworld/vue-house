@@ -165,7 +165,7 @@
   }
 
   .slide-name {
-    left:2em;
+    left:1.5em;
     bottom:1.2em;
     color: #fff;
     font-size: size(18);
@@ -424,7 +424,7 @@
     //   // opacity: 1;
     // }
     .slide-name {
-      font-size: sizem(15);
+      font-size: sizem(14);
     }
   }
 
