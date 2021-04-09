@@ -813,20 +813,20 @@ export default {
           delay: 2500,
           disableOnInteraction: false,
         },
-        /*slidesPerColumn: isMobile ? 1 : 1,
+        /* slidesPerColumn: isMobile ? 1 : 1,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
-        },*/
+        }, */
       },
       slideList: [
         {
-          img:require('./s2/1.jpg'),
-          name: '泰安連雲-接雲樓',
+          img: require('./s2/1.jpg'),
+          name: '泰安連雲-連峰樓',
         },
         {
-          img:require('./s2/2.jpg'),
-          name: '泰安連雲-連峰樓',
+          img: require('./s2/2.jpg'),
+          name: '泰安連雲-接雲樓',
         },
         {
           img: require('./s2/3.jpg'),
