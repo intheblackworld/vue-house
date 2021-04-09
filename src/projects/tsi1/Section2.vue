@@ -41,10 +41,9 @@
   // position: relative;
     min-height:calc(46.875vw - 70px);
     max-height:calc(56.25vw - 70px);
-  //background: #000 url('./s2/video_img.png') no-repeat center;
-  background-color: #000;
+  background: #000 url('./s2/video_img.png') no-repeat center;
   background-size: contain;
-  // margin: size(-125) 0 0 0;
+  margin: size(-0) 0 0 0;
   &::after {
     content: '';
     display: block;
