@@ -5,7 +5,7 @@
     <img src="./s4/i_m.jpg" :alt="`${info.caseName}_i`" class="img" v-if="isMobile" data-aos="fade" data-aos-delay="100">
     <img src="./s4/title.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isPC" data-aos="fade-down" data-aos-delay="600">
     <img src="./s4/title_m.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isMobile">
-    <img src="./s4/more.png" :alt="`${info.caseName}_more`" class="btn" @click="$router.push('/products')" data-aos="fade-down" data-aos-delay="600">
+    <div class="btn" @click="$router.push('/products')" data-aos="fade" data-aos-delay="600">LEARN MORE</div>
     <h1 class="title" data-aos="fade" data-aos-delay="400" v-if="isMobile">經典建案</h1>
     <h1 class="subtitle" data-aos="fade" data-aos-delay="600">
       以經典　再造風華
@@ -77,9 +77,34 @@
     color: #ff8200;
   }
 }
-
 .btn {
   @include img_r_pc(217, 777, 175);
+  cursor: pointer;
+  font-family: "gothic";
+  font-size: size(25);
+  color: #fff;
+  line-height: 1.3;
+  z-index:2;
+  &::before{content: "";
+  background:#008FBB;
+  position: absolute;
+  transition:all 0.2s;
+  top: 0;left: 0;width: 100%;height: 100%;
+  transform-origin: 50% 50%;
+  animation: btn 0.5s ease-in-out infinite alternate;
+  z-index: -1;}
+  &:hover:before{
+    transform: scaleY(1.3);
+  }
+}
+@keyframes btn {
+  to {
+  background:#005c79;
+  }
+}
+
+.btn1 {
+  @include img_r_pc(217, 677, 175);
   cursor: pointer;
 }
 
@@ -162,6 +187,7 @@
     cursor: pointer;
     top:auto;
     bottom:sizem(60);
+    font-size: sizem(18);
   }
 }
 </style>

@@ -253,7 +253,7 @@ export default {
   height: auto;
   background-image: $order_bg_image;
   background-repeat: repeat;
-  // position: relative;
+  position: relative;
   // background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 80% 0%;
@@ -396,8 +396,8 @@ export default {
   }
 
   .google-map {
-    margin-top: 35px;
-    margin-bottom: 15px;
+    margin-top: 0;
+    margin-bottom: 20px;
   }
 }
 .el-textarea .el-textarea__inner,

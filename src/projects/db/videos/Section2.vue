@@ -377,10 +377,25 @@ export default {
         {
           // icon: require('./s1/icon1.png'),
           type:1,
+          title: '【自慢藏】 『見識越高，越是深藏不露』',
+          desc: '',
+          img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/sGt9eLJhhpU',
+        },
+        {
+          // icon: require('./s1/icon1.png'),
+          type:1,
           title: '【神采飛洋】 HOUSE OF HAPPINESS｜設計師篇',
           desc: '',
           img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/qa-XGxKFT-4',
+        },
+        {
+          type: 1,
+          title: '【碧波白】五大建築獎',
+          desc: '',
+          img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/Shj6X2xxyoQ'
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -413,13 +428,6 @@ export default {
           desc: '',
           img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/0BPv41BCVmk',
-        },
-        {
-          type: 1,
-          title: '【碧波白】五大建築獎',
-          desc: '',
-          img: require('../hot/s1/imgbg.jpg'),
-          video: 'https://www.youtube.com/embed/Shj6X2xxyoQ'
         },
         {
           // icon: require('./s1/icon1.png'),
