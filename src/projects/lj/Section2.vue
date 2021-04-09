@@ -804,11 +804,11 @@ export default {
       isTablet,
       isDialog: false,
       swiperOption: {
-        slidesPerView: "auto",
-        spaceBetween:  0,
+        slidesPerView: 'auto',
+        spaceBetween: 0,
         loop: true,
         loopFillGroupWithBlank: true,
-        centeredSlides: isMobile ? true : false ,
+        centeredSlides: isMobile,
         autoplay: {
           delay: 2500,
           disableOnInteraction: false,

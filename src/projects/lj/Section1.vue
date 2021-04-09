@@ -100,10 +100,6 @@ transform-origin: 98% 80%;}
   to {transform: skew(0deg,0deg);
   }
 }
-
-
-
-
 .view {
   width: 100%;
   height: 100%;
@@ -328,20 +324,16 @@ h1{font-weight: 600}
     text-align: center;
     color: #ffffff;
   }
-
   .img-2 {
     @include img_l_m(375, 0, 0);
 height: auto;
 transform-origin: 100% 100%;
 transform: skewY(5deg);
   }
-
   .logo {
     @include img_l_m(50, 91, 62);
     top:calc(50% - 72vw);
   }
-
-
   .view {
     width: 100%;
     height: 100%;
@@ -350,32 +342,26 @@ transform: skewY(5deg);
     left: 0;
     // animation: fade_out 3s 0s ease-in-out forwards;
   }
-
   .view-1 {
     opacity: 1;
     animation: fade_out 4s 2s ease-in-out forwards;
   }
-
   .view-2 {
     opacity: 0;
     animation: fade_left 2.5s 4s ease-in-out forwards;
   }
-
   .view-3 {
     opacity: 0;
     animation: fade_right 2.5s 4s ease-in-out forwards;
   }
-
-
 .txt{
   font-size: sizem(21);
-} 
-.info1 {  
+}
+.info1 {
   margin: 7em 0 0 0;
-  
 }
   .btn {
-    font-size: sizem(17);
+  font-size: sizem(17);
   margin:0.5em auto 0;
     // @include div_r_pc(280, 77, 863, 375);
   /*  @include div_r_m(180, 48, 465, 135);
