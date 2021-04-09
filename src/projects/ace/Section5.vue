@@ -141,7 +141,6 @@
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background-image: url('./menu/bg.jpg');
   background-size: cover;
   left: 100%;
   top: 0;
