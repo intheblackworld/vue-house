@@ -18,7 +18,7 @@
         豐收生活<br />把日子過得舒舒服服
       </div>
       <div class="subtitle" data-aos="fade-down" data-aos-delay="800">
-        大竹路滿分商圈、書香學校、陂塘步道、林映樹廊…活出舒適小日子
+        大竹路滿分商圈、書香學校、埤塘步道、林映樹廊…活出舒適小日子
       </div>
       <div class="list-info flex-ac flex-jb" v-if="isPC" data-aos="fade-down" data-aos-delay="800">
         <div v-for="item in list" :key="item.title" class="info">
@@ -28,7 +28,7 @@
         </div>
       </div>
     </div>
-		<swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" @slideChangeTransitionEnd="slideChanged">
+		<swiper :options="swiperOption" v-if="isPC" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" @slideChangeTransitionEnd="slideChanged">
       <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide + index" class="item">
         <img :src="slide.img" :class="`item-img`" />
         <p v-html="slide.p"></p>
@@ -40,7 +40,7 @@
       </div>
     </swiper>
 
-		<swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" @slideChangeTransitionEnd="slideChanged" v-show="isMobile && blockIndex === 0">
+		<swiper :options="swiperOption" v-if="isMobile" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" @slideChangeTransitionEnd="slideChanged" v-show="isMobile && blockIndex === 0">
       <swiper-slide v-for="(slide, index) in slideList[0]" :index="index" :key="slide + index" class="item">
         <img :src="slide.img" :class="`item-img`" />
         <p v-html="slide.p"></p>
@@ -51,7 +51,7 @@
       <div class="swiper-button-next next-btn" slot="button-next">
       </div>
     </swiper>
-		<swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" @slideChangeTransitionEnd="slideChanged" v-show="isMobile && blockIndex === 1">
+		<swiper :options="swiperOption" v-if="isMobile" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" @slideChangeTransitionEnd="slideChanged" v-show="isMobile && blockIndex === 1">
       <swiper-slide v-for="(slide, index) in slideList[1]" :index="index" :key="slide + index" class="item">
         <img :src="slide.img" :class="`item-img`" />
         <p v-html="slide.p"></p>
@@ -62,7 +62,7 @@
       <div class="swiper-button-next next-btn" slot="button-next">
       </div>
     </swiper>
-		<swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" @slideChangeTransitionEnd="slideChanged" v-show="isMobile && blockIndex === 2">
+		<swiper :options="swiperOption" v-if="isMobile" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" @slideChangeTransitionEnd="slideChanged" v-show="isMobile && blockIndex === 2">
       <swiper-slide v-for="(slide, index) in slideList[2]" :index="index" :key="slide + index" class="item">
         <img :src="slide.img" :class="`item-img`" />
         <p v-html="slide.p"></p>
@@ -72,7 +72,7 @@
       </div>
       <div class="swiper-button-next next-btn" slot="button-next">
       </div>
-    </swiper>
+    </swiper> 
     <div class="btn" v-if="isMobile">
       <div class="btn_l" @click="blockIndex = prevIndex"><img :src="list[prevIndex].img" alt=""></div>
       <div class="btn_r" @click="blockIndex = nextIndex"><img :src="list[nextIndex].img" alt=""></div>
@@ -180,7 +180,11 @@
 }
 
 .list-info {
-  @include img_c_pc(425 * 2 + 451, 369);
+  @include img_c_pc(425 * 2 + 451, 350);
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.54;
+    letter-spacing:0.06em;
   img {
     width: size(335);
     margin: 0 auto size(77);
@@ -194,23 +198,16 @@
     width: size(375);
     font-size: size(26);
     font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.54;
-    letter-spacing: size(1.56);
-    text-align: left;
     color: #000000;
+    text-align:left;
+    margin: 0 0 0.5em;
   }
 
   .info-desc {
     width: size(375);
     font-size: size(18);
     font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.42;
-    letter-spacing: size(1.08);
-    text-align: left;
+    text-align: justify;
     color: #595757;
   }
 }
@@ -298,7 +295,7 @@ font-size:size(15);
 @media screen and (max-width: 767px) {
   .section5 {
     width: 100vw;
-    height: sizem(898);
+    height: sizem(910);
     min-height: auto;
     max-height: initial;
     // background-image: url('./all/section_bg.jpg');
@@ -403,31 +400,16 @@ font-size:size(15);
     .info-title {
       width: sizem(310);
       font-size: sizem(22);
-      font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.18;
-      letter-spacing: normal;
-      text-align: left;
-      color: #000000;
-      margin-bottom: sizem(15);
     }
 
     .info-desc {
       width: sizem(310);
       font-size: sizem(15);
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.53;
-      letter-spacing: sizem(0.6);
-      text-align: left;
-      color: #595757;
     }
   }
 
   .swiper-container {
-    @include img_c_m(375, 577);
+    @include img_c_m(375, 590);
   }
 
 .item{
@@ -689,47 +671,47 @@ export default {
         ? [
             [
             {
-              img:require('./s5/1-1.jpg'),
-              p:"華泰名品城"
+              img: require('./s5/1-1.jpg'),
+              p: "華泰名品城",
             },
             {
-              img:require('./s5/1-4.jpg'),
-              p:"桃園機場捷運A18站"
+              img: require('./s5/1-4.jpg'),
+              p: "桃園機場捷運A18站",
             },
             ],
             [
             {
-              img:require('./s5/2-1.jpg'),
-              p:"大竹路商圈"
+              img: require('./s5/2-1.jpg'),
+              p: "大竹路商圈"
             },
             {
               img:require('./s5/2-2.jpg'),
-              p:"大竹路商圈"
+              p: "大竹路商圈"
             },
             ],
             [
             {
-              img:require('./s5/3-1.jpg'),
-              p:"埤塘公園"
+              img: require('./s5/3-1.jpg'),
+              p: "埤塘公園"
             },
             {
-              img:require('./s5/3-2.jpg'),
-              p:"二二八公園"
+              img: require('./s5/3-2.jpg'),
+              p: "二二八公園"
             },
             ],
           ]
         : [
             {
-              img:require('./s5/1-1.jpg'),
-              p:"華泰名品城"
+              img: require('./s5/1-1.jpg'),
+              p: "華泰名品城"
             },
             {
-              img:require('./s5/2-1.jpg'),
-              p:"大竹路商圈"
+              img: require('./s5/2-1.jpg'),
+              p: "大竹路商圈"
             },
             {
-              img:require('./s5/3-1.jpg'),
-              p:"埤塘公園"
+              img: require('./s5/3-1.jpg'),
+              p: "埤塘公園"
             },
             {
               img:require('./s5/1-2.jpg'),
@@ -760,15 +742,15 @@ export default {
               p:"桃園機場捷運A18站"
             },
             {
-              img:require('./s5/2-2.jpg'),
-              p:"大竹路商圈"
+              img: require('./s5/2-2.jpg'),
+              p: "大竹路商圈"
             },
             {
-              img:require('./s5/3-1.jpg'),
+              img: require('./s5/3-1.jpg'),
               p:"埤塘公園"
             },
             {
-              img:require('./s5/1-5.jpg'),
+              img: require('./s5/1-5.jpg'),
               p:"宜家家居"
             },
             {
@@ -784,12 +766,12 @@ export default {
               p:"興仁市民活動中心"
             },
             {
-              img:require('./s5/2-2.jpg'),
-              p:"大竹路商圈"
+              img: require('./s5/2-2.jpg'),
+              p: "大竹路商圈"
             },
             {
-              img:require('./s5/3-3.jpg'),
-              p:"小公園"
+              img: require('./s5/3-3.jpg'),
+              p: "小公園"
             },
             /*
             require('./s5/1-1.jpg'),
@@ -816,7 +798,7 @@ export default {
           img: require('./s5/icon1.png'),
           title: '青埔國際視野、藝文書香都心，大竹迎接蛻變新未來',
           desc:
-            '大竹位居桃園地理軸心，十分鐘銜接青埔版圖、藝文核心，兩種節奏與身段，自遊選擇生活頻率，華泰名品城、台茂、大江、Xpark、IKEA、棒球場、市立圖書館、展演中心，各種場景全方位輕鬆切換',
+            '大竹位居桃園地理軸心，十分鐘銜接青埔版圖、藝文核心，兩種節奏與身段，自遊選擇生活頻率，華泰名品城、台茂、Xpark、IKEA、大江、棒球場、市立圖書館、展演中心，各種場景全方位輕鬆切換',
         },
         {
           img: require('./s5/icon2.png'),
@@ -828,7 +810,7 @@ export default {
           img: require('./s5/icon3.png'),
           title: '埔心溪河廊、大竹觀光休閒公園，四季漫步',
           desc:
-            '私房散步路線，埔心溪白鷺鷥飛翔、大竹休閒公園粼粼波光、陂塘公園、上竹公園滿滿的大樹綠意；去年底全新開幕市立圖書館大竹分館，藝文書香讓親子相處的時光充滿歡笑幸福',
+            '私房散步路線，埔心溪白鷺鷥飛翔、大竹休閒公園粼粼波光、埤塘公園、上竹公園滿滿的大樹綠意；去年底全新開幕市立圖書館大竹分館，藝文書香讓親子相處的時光充滿歡笑幸福',
         },
       ],
     }
@@ -860,7 +842,6 @@ export default {
   mounted() {},
 
   computed: {
-
 		prevIndex() {
 			if (this.blockIndex === 0) {
 				return 2
@@ -876,14 +857,7 @@ export default {
 			}
 		}
 	},
-
   watch: {
-    // viewIndex() {
-    //   if (this.viewIndex === 5) {
-    //     this.slideIndex = 0
-    //     console.log(this.slideIndex, 'slideIndex')
-    //   }
-    // },
-  },
+  }
 }
 </script>
