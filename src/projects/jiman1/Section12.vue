@@ -866,7 +866,7 @@ export default {
       isMobile,
       info,
       player: '',
-      id: 'ay9pp7TRauo',
+      id: 'sGt9eLJhhpU',
       isDialog: false,
 
       slideList: [
