@@ -330,8 +330,6 @@
     background: #000;
     height: 100%;
   }
-
-
   .title_t {
     @include img_r_m(286, 52, 44);
     top:calc(50% + ((70 - 302) * 0.266666vw));
@@ -500,8 +498,6 @@
       }
     }
   }
-
-  
   .swipe-btns {
     width: 90%;
     left: 5%;
@@ -510,7 +506,6 @@
     z-index: 1;
     position: absolute;
     top:calc(50% + 10vw);
-
     .prev-btn,
     .next-btn {
       width:auto;
@@ -550,9 +545,7 @@ export default {
       isPC,
       isMobile,
       isTablet,
-
-      slideList: isMobile
-        ? [
+      slideList: isMobile ? [
             {
               icon: require('./s2/icon.png'),
               name: '36層浩瀚之境<br />獻給王與后的專屬天空',

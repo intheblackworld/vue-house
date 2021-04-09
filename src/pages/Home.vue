@@ -102,13 +102,13 @@
 <script>
 // @ is an alias to /src
 import $ from 'jquery'
-import Navigation from '@/layouts/Navigation.vue'
+// import Navigation from '@/layouts/Navigation.vue'
 import { isMobile } from '@/utils'
 import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
-import Indigator from '@/components/Indigator.vue'
+// import Indigator from '@/components/Indigator.vue'
 
 import Section1 from '@/projects/ace/Section1.vue'
 import Section2 from '@/projects/ace/Section2.vue'
@@ -127,7 +127,7 @@ export default {
   components: {
     Loading,
     // Indigator,
-    Navigation,
+    // Navigation,
     SideNavigation,
     ContactSection,
     MobileNav,
@@ -178,7 +178,7 @@ export default {
       }
       const imageLoaded = () => {
         imagesLoaded++
-        if (imagesLoaded == totalImages) {
+        if (imagesLoaded === totalImages) {
           allImagesLoaded()
         }
       }

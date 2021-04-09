@@ -8,7 +8,7 @@
       <img src="./s1/p12.png" :alt="`${info.caseName}_p12`" class="p12" v-if="isPC" data-aos="fade-up">
       <img src="./mo/1/p2.png" :alt="`${info.caseName}_bg`" class="p2" v-if="isMobile" data-aos="zoom-in">
       <img src="./mo/1/p1.png" :alt="`${info.caseName}_bg`" class="p12" v-if="isMobile" data-aos="fade-up">
-      <img src="./s1/預約紐.png" :alt="`${info.caseName}_order_btn`" class="order-btn" v-scroll-to="{ element: `#contact` }">
+      <div class="order-btn" v-scroll-to="{ element: `#contact` }"><span>預約鑑賞</span></div>
       <h1 class="title" data-aos="fade-up">
         不是王牌不出手<br />
         唯有贏家能擁有
@@ -20,47 +20,13 @@
 
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
-// 新增 mixin 代表意義：
-// @mixin img_r_pc($width, $top, $right) {
-//   position: absolute;
-//   width: size($width);
-//   top: size($top);
-//   right: size($right);
-// }
-
-// @mixin img_r_m($width, $top, $right) {
-//   position: absolute;
-//   width: sizem($width);
-//   top: sizem($top);
-//   right: sizem($right);
-// }
-
-// @mixin img_l_pc($width, $top, $left) {
-//   position: absolute;
-//   width: size($width);
-//   top: size($top);
-//   left: size($left);
-// }
-
-// @mixin img_l_m($width, $top, $left) {
-//   position: absolute;
-//   width: sizem($width);
-//   top: sizem($top);
-//   left: sizem($left);
-// }
-
 .section1 {
   width: size(1920);
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);
-  // background-color:#d1c6b7;
-  // background-size: cover;
-  // background-attachment: fixed;
   overflow: hidden;
-  //animation: bg 5s 0s linear infinite alternate-reverse;
 }
-
 .bg-img {
   width: size(1920);
   height: 100%;
@@ -95,11 +61,48 @@
   @include img_r_pc(45, 803, 69);
   cursor: pointer;
   top: auto;
-  bottom:1vw;
-  opacity: 0.6;
+  bottom:1.5vw;
   transition: all 0.5s;
-  &:hover{ opacity: 0.8;}
+  font-size: size(24);
+  line-height: 1.2;
+  font-weight: 400;
+  color:#c39f6d;
+  text-align:center;
+  span{width:100%;
+  display: inline-block;
+  padding: 0.8em 0.2em;
+  color: #fff;
+  z-index:1;
+  background: #c39f6d;border-radius: 0.5em;
+  position: relative;
+  }
+  &::before{
+    content: "";
+    width: 0.25em;
+    height: 0.25em;
+    border-radius: 50%;background: currentColor;
+  display: inline-block;
+  transform:translateY(-1.5em);
+  }
+  &::after{
+    content: "";
+    width: 0.08em;
+    height:100%;background: currentColor;
+    position: absolute;left:calc(50% - 0.04em);
+    top:1em;
+  transform:translateY(-1.5em);
+  display:inline-block;
+  z-index: 0;}
+  &:hover:before,
+  &:hover:after{
+  animation: btn 0.5s ease-in-out infinite alternate;}
 }
+@keyframes btn {
+  to {
+    transform:translateY(-2.5em);
+  }
+}
+
   .title {
     @include img_r_pc(338, 336, 315);
     top:calc(50% + 9vw);

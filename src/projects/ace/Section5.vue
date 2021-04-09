@@ -306,7 +306,7 @@
     @include img_r_m(375, 0, 0);
     left: 50%;transform: translateX(-50%);
     background: #fff;
-    height: 100%; 
+    height: 100%;
   }
 
   .title {

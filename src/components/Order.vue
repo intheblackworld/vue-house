@@ -436,7 +436,6 @@ export default {
       height: sizem(50);top: 0;
       margin: 0 auto;
       background: rgba(0, 0, 0, 0.8);
-      
     }
     .order-top {
       width: 100%;

@@ -1,10 +1,10 @@
 <template>
-  <div class="map" id="map" refs="map" @scroll="handleScroll">
+  <div class="map" id="map1" refs="map" @scroll="handleScroll">
     <img :src="hand" alt :class="`hand ${showMask ? 'active' : ''}`" />
     <img class="map-bg" :src="bgSrc" alt ref="mapbg" />
     <img class="map-text" :src="bgText" alt />
     <div :class="`mask ${showMask ? 'active' : ''}`">
-    </div>    
+    </div>
     <img
       :src="tag"
       data-aos="fade-down"
@@ -38,7 +38,7 @@
 <script>
 import { isMobile } from '@/utils'
 export default {
-  name: 'map',
+  name: 'map1',
   props: ['tagList', 'bgSrc', 'hand', 'bgText'],
   data() {
     return {

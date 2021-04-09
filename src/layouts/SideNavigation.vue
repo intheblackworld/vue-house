@@ -213,9 +213,6 @@ export default {
   text-align: center;
   transition: all 0.5s ease-in-out;
   display: block;
-  // transform: translateX(40%);
-
-
   .list {
     @include img_l_pc(122, 282, 651);
   }

@@ -17,9 +17,6 @@ import VueLazyComponent from '@xunlei/vue-lazy-component'
 import VueRellax from 'vue-rellax'
 import Vue2TouchEvents from 'vue2-touch-events'
 import VuePannellum from 'vue-pannellum'
-
-
-
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   faBars,
@@ -65,8 +62,6 @@ Vue.use(VueLazyComponent)
 Vue.use(VueRellax)
 Vue.use(Vue2TouchEvents)
 Vue.component('VPannellum', VuePannellum)
-
-
 new Vue({
   router,
   store,

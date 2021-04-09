@@ -1,5 +1,6 @@
 import { isMobile } from '../utils/index'
 export default {
+  isMobile,
   address: '新北市中和區景新街337號',
   googleSrc:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.2607941892597!2d121.50979001500541!3d24.991252783992437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34680274835f1b4f%3A0xe726b38ca2ec6556!2zMjM15paw5YyX5biC5Lit5ZKM5Y2A5pmv5paw6KGXMzM36Jmf!5e0!3m2!1szh-TW!2stw!4v1613802554258!5m2!1szh-TW!2stw',
@@ -21,7 +22,7 @@ export default {
     ['燈光設計', '蘭克斯燈光照明',],
     ['園藝設計', '大漢景觀設計',],
     ['基地面積', '1128.34坪',],
-    ['規劃坪數', '19-39坪',],
+    ['規劃坪數', '21-34坪',],
     ['企劃銷售', '得邦廣告',],
   ],
 

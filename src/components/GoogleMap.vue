@@ -1,6 +1,6 @@
 <template>
-  <div class="google-map" id="google-map">
-    <iframe
+<div class="google-map" id="google-map">
+     <iframe
       title="googlemap"
       :src="googleSrc"
       width="100%"
@@ -8,7 +8,7 @@
       frameborder="0"
       style="border: 0"
       allowfullscreen
-    />
+    /> 
   </div>
 </template>
 <script>

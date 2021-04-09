@@ -1,5 +1,5 @@
 <template>
-<div :class="`loading-bg ${loading ? '' : 'hide'} ${isOpacity ? 'opacity': ''}`">
+  <div :class="`loading-bg ${loading ? '' : 'hide'} ${isOpacity ? 'opacity': ''}`">
     <img
       src="~@/assets/img/loading_b.gif"
       alt
@@ -67,6 +67,7 @@
 
 @media screen and (max-width: 767px) {
   .loading-bg {
+    display: none;
     &.hide {
       display: none;
     }

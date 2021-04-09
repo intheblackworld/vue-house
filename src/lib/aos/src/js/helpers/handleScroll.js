@@ -82,5 +82,4 @@ const applyClasses = (el, top) => {
  */
 const handleScroll = $elements =>
   $elements.forEach((el, i) => applyClasses(el, window.pageYOffset));
-
 export default handleScroll;
