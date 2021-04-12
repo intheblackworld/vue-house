@@ -351,6 +351,7 @@ export default {
   .pc1 {
     @include img_r_pc(1920, 197, 0);
     z-index: 1;
+    display:none;
   }
 
   .pc2 {
