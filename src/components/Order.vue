@@ -175,8 +175,7 @@ export default {
       this.isSubmit = true
       if (
         !this.form.name ||
-        !this.form.phone
-        ||
+        !this.form.phone ||
         // !this.form.time_start ||
         // !this.form.time_end
         // ||
@@ -237,6 +236,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/style/variableColor.scss';
+@import '@/assets/style/function.scss';
 .bg-img {
   width: 100vw;
   position: absolute;
@@ -280,10 +280,29 @@ export default {
     display: inline-block;
     font-weight: 900;
     line-height: 1.7;
-    letter-spacing: 20px;
+    letter-spacing: 10px;
     font-size: calc(100vw * 50 / 1920);
     text-align: center;
     color: $order_title_color;
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 329px;
+      border-top: 1px solid #fff000;
+      position: absolute;
+      right: 215px;
+      top: 50%;
+    }
+
+    &::before {
+      content: '';
+      width: 310px;
+      border-top: 1px solid #fff000;
+      position: absolute;
+      left: 220px;
+      top: 50%;
+    }
     // border-top: 1px solid #248184;
     // border-bottom: 1px solid #248184;
   }
@@ -407,8 +426,26 @@ export default {
       width: 290px;
       padding-top: 10px;
       padding-bottom: 0px;
-      font-size: calc(100vw * 47 / 375);
+      font-size: calc(100vw * 35 / 375);
       letter-spacing: 4px;
+
+      &::after {
+        content: '';
+        width: 60px;
+        border-top: 2px solid #fff000;
+        position: absolute;
+        right: -10px;
+        top: 50%;
+      }
+
+      &::before {
+        content: '';
+        width: 60px;
+        border-top: 2px solid #fff000;
+        position: absolute;
+        left: -10px;
+        top: 50%;
+      }
     }
 
     .order-subtitle {

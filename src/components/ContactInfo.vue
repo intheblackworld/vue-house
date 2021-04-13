@@ -141,7 +141,7 @@ export default {
   margin-bottom: 20px;
   cursor: pointer;
   text-decoration: none;
-  //border-radius: 60px / 60px;
+  border-radius: 60px / 60px;
   color: $contact_btn_color;
   background: $contact_btn_bg;
   box-shadow: $contact_btn_border;
@@ -200,6 +200,8 @@ export default {
   color: $contact_btn_border;
   font-weight: bold;
   box-shadow: $contact_btn_border;
+  border-top-left-radius: 60px;
+  border-bottom-left-radius: 60px;
 }
 .google-btn {
   width: 280px;
@@ -208,8 +210,8 @@ export default {
   cursor: pointer;
   text-decoration: none;
   font-weight: 900;
-  // border-top-right-radius: 60px;
-  //border-bottom-right-radius: 60px;
+  border-top-right-radius: 60px;
+  border-bottom-right-radius: 60px;
   color: $contact_google_btn_color;
   background: $contact_google_btn_bg;
   background-position: center !important;
@@ -251,11 +253,11 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .contact-info {
-    background: linear-gradient(
-      to bottom,
-      rgba(243, 149, 1, 1) 0%,
-      rgba(218, 71, 19, 1) 100%
-    );
+    // background: linear-gradient(
+    //   to bottom,
+    //   rgba(243, 149, 1, 1) 0%,
+    //   rgba(218, 71, 19, 1) 100%
+    // );
     display: flex;
     width: 100%;
     //  max-width: 95%;
@@ -313,10 +315,10 @@ export default {
     width: 100%;
   }
   .google-btn {
-    /* border-top-right-radius: 0px;
+    border-top-right-radius: 0px;
     border-top-left-radius: 0px;
     border-bottom-right-radius: 30px;
-    border-bottom-left-radius: 30px;*/
+    border-bottom-left-radius: 30px;
   }
   .address {
     // width: 280px;
@@ -324,6 +326,10 @@ export default {
     text-align: justify;
     line-height: 1.5;
     height: auto;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
   }
   .google-btn {
     margin-top: 0;
