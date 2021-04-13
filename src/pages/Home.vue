@@ -92,8 +92,8 @@ import Section4 from '@/projects/hg1/Section4.vue'
 import Section5 from '@/projects/hg1/Section5.vue'
 import Section6 from '@/projects/hg1/Section6.vue'
 import Section7 from '@/projects/hg1/Section7.vue'
-// import Section8 from '@/projects/hg1/Section8.vue'
-// import Section9 from '@/projects/hg1/Section9.vue'
+import Section8 from '@/projects/hg1/Section8.vue'
+import Section9 from '@/projects/hg1/Section9.vue'
 import Section10 from '@/projects/hg1/Section10.vue'
 import Section11 from '@/projects/hg1/Section11.vue'
 
@@ -113,8 +113,8 @@ export default {
     Section5,
     Section6,
     Section7,
-    // Section8,
-    // Section9,
+    Section8,
+    Section9,
     Section10,
     Section11,
   },
