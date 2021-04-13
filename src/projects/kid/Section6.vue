@@ -761,21 +761,6 @@ export default {
       // currentIndex: 0,
       slideList: [
         {
-          title: '國語日報特製闖關遊戲，結合閱讀，玩樂中兼具學習！',
-          img: require('./s7/5.jpg'),
-          name: '情境示意圖',
-        },
-        {
-          title: '激發孩子創造力，活動筋骨，擁有開心健康的兒童節！',
-          img: require('./s7/6.jpg'),
-          name: '情境示意圖',
-        },
-        {
-          title: '讓姊姊說好聽好玩的故事，感受不同的週末親子時光。',
-          img: require('./s7/7.jpg'),
-          name: '情境示意圖',
-        },
-        {
           title: '透過唱跳遊戲、故事及手作，讓孩子認識可愛動物。',
           img: require('./s7/8.jpg'),
           name: '情境示意圖',
@@ -812,6 +797,24 @@ export default {
         {
           title: '邀請親子同樂，一起透過讀報來認識世界，創造驚喜。',
           img: require('./s7/4.jpg'),
+          name: '情境示意圖',
+          hide: true,
+        },
+        {
+          title: '國語日報特製闖關遊戲，結合閱讀，玩樂中兼具學習！',
+          img: require('./s7/5.jpg'),
+          name: '情境示意圖',
+          hide: true,
+        },
+        {
+          title: '激發孩子創造力，活動筋骨，擁有開心健康的兒童節！',
+          img: require('./s7/6.jpg'),
+          name: '情境示意圖',
+          hide: true,
+        },
+        {
+          title: '讓姊姊說好聽好玩的故事，感受不同的週末親子時光。',
+          img: require('./s7/7.jpg'),
           name: '情境示意圖',
           hide: true,
         },
