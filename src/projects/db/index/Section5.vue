@@ -181,9 +181,7 @@
 
   .btn {
     @include img_r_m(151, 456, 32);
-    cursor: pointer;
-    top:auto;
-    bottom:sizem(60);z-index: 3;
+    cursor: pointer;top:auto;bottom:sizem(60);z-index: 3;font-size: sizem(18);
   }
 }
 </style>

@@ -610,23 +610,10 @@ span{flex: 1;
       cursor: pointer;
     }
   }
-  .back {
-    @include img_r_m(107, 0, 134);
-    font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.09;
-    letter-spacing: sizem(3.3);
-    text-align: left;
-    color: #008fbb;
-    white-space: nowrap;
-    cursor: pointer;
-    top: auto;
-    bottom: sizem(80);
-  }
-  .breadcrumb{font-size:size(18);}
-  .pn{font-size:size(18);}
+  
+  .breadcrumb{font-size:sizem(13);}
+  .pn{font-size:sizem(15);
+line-height: 2.3;}
 }
 </style>
 <script>
