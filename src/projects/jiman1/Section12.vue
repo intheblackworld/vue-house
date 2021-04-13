@@ -905,6 +905,13 @@ export default {
           desc:
             '北市萬隆站一帶鄰近大安信義繁華商圈，卻有著都市難得的水岸綠地...',
         },
+        {
+          src: require('./s12/news_img_6.jpg'),
+          title: '佳展房屋網',
+          link: 'https://www.myhousing.com.tw/index.php?option=com_flexicontent&view=item&cid=62:market-news&id=94318:2021-04-07-03-40-33&Itemid=558',
+          desc:
+            '位處首善之都台北的文山區，因區內文教氣息濃厚、且擁有都會區少見的依山傍水清幽環境...',
+        },
       ],
     }
   },
@@ -965,16 +972,16 @@ export default {
 
   computed: {
     secIndex() {
-      if (this.slideIndex === 4) {
+      if (this.slideIndex === this.slideList.length - 1) {
         return 0
       } else {
         return this.slideIndex + 1
       }
     },
     lastIndex() {
-      if (this.slideIndex === 3) {
+      if (this.slideIndex === this.slideList.length - 2) {
         return 0
-      } else if (this.slideIndex === 4) {
+      } else if (this.slideIndex === this.slideList.length - 1) {
         return 1
       } else {
         return this.slideIndex + 2
