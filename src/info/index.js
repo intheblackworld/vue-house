@@ -2,10 +2,10 @@ import { isMobile } from '../utils/index'
 export default {
   address: '接待會館：新北市五股區成泰路三段171號(對面)',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.2907122557103!2d121.44305321542826!3d25.092018683945213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a601fb82c025%3A0xa0eb02e41c8374ec!2zMjQ45paw5YyX5biC5LqU6IKh5Y2A5oiQ5rOw6Lev5LiJ5q61MTcx6Jmf!5e0!3m2!1szh-TW!2stw!4v1612155242808!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/BEp2gd6h3otsGDwd6',
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7231.658232756988!2d121.2874233!3d25.0059219!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDAwJzIxLjMiTiAxMjHCsDE3JzMwLjUiRQ!5e0!3m2!1szh-TW!2stw!4v1618267854178!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/9xdcURNeHnyLXxxc8',
   phone: '02-2292-2255',
-  fbLink: 'https://www.facebook.com/sky0222922255/',
+  fbLink: 'https://www.facebook.com/%E5%98%89%E7%92%9F%E4%B8%80%E5%93%81%E7%A1%AF-102835311925785',
   fbMessage: 'https://m.me/102772851839341',
   caseName: '天空之邑',
   indigatorLength: 10,

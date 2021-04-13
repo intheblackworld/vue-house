@@ -8,42 +8,18 @@
         <h3 class="title">{{order.title}}</h3>
         <div class="subtitle">{{order.subTitle}}</div>
       </div> -->
-      <h3
-        class="order-title"
-        v-html="order.title"
-        data-aos="fade-down"
-        data-aos-delay="0"
-      ></h3>
-      <div
-        class="order-subtitle"
-        data-aos="fade-down"
-        data-aos-delay="100"
-        v-html="order.subTitle"
-      ></div>
+      <h3 class="order-title" v-html="order.title" data-aos="fade-down" data-aos-delay="0"></h3>
+      <div class="order-subtitle" data-aos="fade-down" data-aos-delay="100" v-html="order.subTitle"></div>
       <div class="order">
         <div class="form">
           <div class="group">
-            <div
-              class="row"
-              data-aos="fade-down"
-              data-aos-delay="100"
-            >
+            <div class="row" data-aos="fade-down" data-aos-delay="100">
               <label>姓名</label>
-              <el-input
-                v-model="form.name"
-                placeholder
-              ></el-input>
+              <el-input v-model="form.name" placeholder></el-input>
             </div>
-            <div
-              class="row"
-              data-aos="fade-down"
-              data-aos-delay="200"
-            >
+            <div class="row" data-aos="fade-down" data-aos-delay="200">
               <label>手機</label>
-              <el-input
-                v-model="form.phone"
-                placeholder
-              ></el-input>
+              <el-input v-model="form.phone" placeholder></el-input>
             </div>
             <!-- <div class="row" data-aos="fade-down"
         data-aos-delay="300">
@@ -71,81 +47,36 @@
                 }"
               ></el-time-select>
             </div> -->
-            <!-- <div class="row">
-              <label>想看房型</label>
+            <div class="row">
+              <label>需求坪數</label>
               <el-select v-model="form.house" placeholder>
-                <el-option
-                  v-for="city in ['甜蜜2房', '幸福3房', '都想看看']"
-                  :key="city"
-                  :label="city"
-                  :value="city"
-                  no-data-text=""
-                ></el-option>
+                <el-option v-for="city in ['22坪', '30坪', '42坪', '53坪']" :key="city" :label="city" :value="city" no-data-text=""></el-option>
               </el-select>
-            </div> -->
+            </div>
             <!-- <div class="row">
               <label>E-mail</label>
               <el-input v-model="form.email" placeholder></el-input>
             </div> -->
-            <div
-              class="row"
-              data-aos="fade-down"
-              data-aos-delay="300"
-            >
+            <div class="row" data-aos="fade-down" data-aos-delay="300">
               <label>居住城市</label>
-              <el-select
-                v-model="form.city"
-                placeholder
-              >
-                <el-option
-                  v-for="city in cityList"
-                  :key="city.value"
-                  :label="city.label"
-                  :value="city.value"
-                  no-data-text="無數據"
-                ></el-option>
+              <el-select v-model="form.city" placeholder>
+                <el-option v-for="city in cityList" :key="city.value" :label="city.label" :value="city.value" no-data-text="無數據"></el-option>
               </el-select>
             </div>
-            <div
-              class="row"
-              data-aos="fade-down"
-              data-aos-delay="400"
-            >
+            <div class="row" data-aos="fade-down" data-aos-delay="400">
               <label>居住地區</label>
-              <el-select
-                v-model="form.area"
-                placeholder
-              >
-                <el-option
-                  v-for="area in areaList"
-                  :key="area.value"
-                  :label="area.label"
-                  :value="area.value"
-                  no-data-text="請先選擇居住城市"
-                ></el-option>
+              <el-select v-model="form.area" placeholder>
+                <el-option v-for="area in areaList" :key="area.value" :label="area.label" :value="area.value" no-data-text="請先選擇居住城市"></el-option>
               </el-select>
             </div>
           </div>
-          <div
-            class="group"
-            data-aos="fade-down"
-            data-aos-delay="600"
-          >
+          <div class="group" data-aos="fade-down" data-aos-delay="600">
             <div class="row">
-              <el-input
-                type="textarea"
-                :rows="2"
-                placeholder="請輸入您的留言 (選填)"
-                v-model="form.msg"
-              ></el-input>
+              <el-input type="textarea" :rows="2" placeholder="請輸入您的留言 (選填)" v-model="form.msg"></el-input>
             </div>
           </div>
         </div>
-        <div
-          class="control"
-          data-aos="fade-down"
-          data-aos-delay="500"
-        >
+        <div class="control" data-aos="fade-down" data-aos-delay="500">
           <el-checkbox v-model="checked">
             <h3>
               本人知悉並同意
@@ -154,39 +85,14 @@
             </h3>
           </el-checkbox>
         </div>
-        <div
-          style="margin: 0 auto;z-index:2;"
-          v-if="!isMobile"
-          data-aos="fade-down"
-          data-aos-delay="600"
-        >
-          <vue-recaptcha
-            :sitekey="info.recaptcha_site_key_v2"
-            @verify="isVerify = true"
-            :loadRecaptchaScript="true"
-          ></vue-recaptcha>
+        <div style="margin: 0 auto;z-index:2;" v-if="!isMobile" data-aos="fade-down" data-aos-delay="600">
+          <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
         </div>
-        <div
-          style="margin: 0 auto;z-index:2;"
-          v-if="isMobile"
-        >
-          <vue-recaptcha
-            :sitekey="info.recaptcha_site_key_v2"
-            @verify="isVerify = true"
-            :loadRecaptchaScript="true"
-          ></vue-recaptcha>
+        <div style="margin: 0 auto;z-index:2;" v-if="isMobile">
+          <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
         </div>
-        <el-button
-          class="form-submit flex-c"
-          type="primary"
-          :disabled="!checked || !isVerify"
-          @click="submit"
-          :loading="isSubmit"
-        >立即預約</el-button>
-        <Loading
-          :loading="isSubmit"
-          :isOpacity="true"
-        />
+        <el-button class="form-submit flex-c" type="primary" :disabled="!checked || !isVerify" @click="submit" :loading="isSubmit">立即預約</el-button>
+        <Loading :loading="isSubmit" :isOpacity="true" />
       </div>
     </div>
     <ContactInfo />
@@ -270,13 +176,13 @@ export default {
       if (
         !this.form.name ||
         !this.form.phone
-        // ||
+        ||
         // !this.form.time_start ||
         // !this.form.time_end
         // ||
         // !this.form.email ||
         // !this.form.city ||
-        // !this.form.area
+        !this.form.house
       ) {
         this.alertValidate()
         this.isSubmit = false
@@ -309,7 +215,7 @@ export default {
       const sec = time.getSeconds()
       const date = `${year}-${month}-${day} ${hour}:${min}:${sec}`
       fetch(
-        `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&email=${this.form.email}&cityarea=${this.form.city}${this.form.area}&msg=${this.form.msg}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
+        `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&house=${this.form.house}&email=${this.form.email}&cityarea=${this.form.city}${this.form.area}&msg=${this.form.msg}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
       `,
         {
           method: 'GET',
@@ -318,7 +224,7 @@ export default {
       fetch('contact-form.php', {
         method: 'POST',
         body: formData,
-      }).then(response => {
+      }).then((response) => {
         this.isSubmit = false
         if (response.status === 200) {
           window.location.href = 'formThanks'
@@ -348,7 +254,7 @@ export default {
 }
 .order-bg {
   // background-color: $order_bg_color;
- // background-image: $order_bg_image;
+  background-image: $order_bg_image;
   background-repeat: no-repeat;
   // position: relative;
   padding-top: 130px;
@@ -372,7 +278,7 @@ export default {
     padding-bottom: 20px;
     margin: 0 auto 10px;
     display: inline-block;
-    font-weight: 700;
+    font-weight: 900;
     line-height: 1.7;
     letter-spacing: 20px;
     font-size: calc(100vw * 50 / 1920);
@@ -413,11 +319,11 @@ export default {
   }
 
   .group {
-    height: 250px;
+    height: 315px;
     margin-bottom: 40px;
 
     &:nth-child(1) {
-      border-right: 1px solid rgba(0, 0, 0, 0.2);
+      border-right: 1px solid #fff000;
       .row {
         justify-content: flex-start;
       }
@@ -447,11 +353,12 @@ export default {
 
     label {
       //width:10em;
-      flex: 0 0 6.8em;
-      display:block;text-align: left;
-      font-size: 16px;
+      flex: 0 0 5.8em;
+      display: block;
+      text-align: left;
+      font-size: 20px;
       opacity: 0.8;
-      font-weight: bold;
+      font-weight: 900;
       color: $order_input_label_color;
 
       span {
@@ -486,8 +393,8 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .order-bg {
-  //  background-image: $order_bg_image;
-  //  background-size: cover;
+    //  background-image: $order_bg_image;
+    //  background-size: cover;
     padding-top: 40px;
     margin: 0;
     // position: relative;
@@ -517,7 +424,7 @@ export default {
 
     .form {
       flex-direction: column;
-    margin-bottom: -12px ;
+      margin-bottom: -12px;
     }
 
     .group {
@@ -539,10 +446,10 @@ export default {
     }
 
     .control {
-    .el-checkbox{
-      margin:10px auto;
-    }
-     /* margin-top: 10px;
+      .el-checkbox {
+        margin: 10px auto;
+      }
+      /* margin-top: 10px;
       margin-bottom: 10px;
       */
     }

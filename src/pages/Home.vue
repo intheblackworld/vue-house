@@ -2,8 +2,8 @@
   <div class="home no-padding-top">
     <div class="bg-img">
       <Loading :loading="load" />
-      <SideNavigation v-if="isMobile" />
-      <Navigation v-if="!isMobile" />
+      <!-- <SideNavigation v-if="isMobile" />
+      <Navigation v-if="!isMobile" /> -->
       <!-- <Indigator :viewIndex="viewIndex" /> -->
       <!-- <full-page
       ref="fullPage"
@@ -13,8 +13,8 @@
       <vue-lazy-component class="section relative" id="section1" @init="init">
         <Section1 />
       </vue-lazy-component>
-      <!--<vue-lazy-component class="section" id="section2" style="">
-         <Section2 /> -->
+      <!-- <vue-lazy-component class="section" id="section2" style="">
+         <Section2 />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section3">
         <Section3 />
@@ -35,11 +35,11 @@
           <Section7 /> 
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section8">
-        <!--  <Section8 /> -->
+         <Section8 />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section9">
         <Section9 :viewIndex="viewIndex" />
-      </vue-lazy-component>
+      </vue-lazy-component> -->
       <!-- <vue-lazy-component class="section" id="contact"> -->
       <ContactSection />
       <!-- </vue-lazy-component> -->
@@ -91,37 +91,37 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/tsi1/Section1.vue'
-import Section2 from '@/projects/tsi1/Section2.vue'
-import Section3 from '@/projects/tsi1/Section3.vue'
-import Section4 from '@/projects/tsi1/Section4.vue'
-import Section5 from '@/projects/tsi1/Section5.vue'
-import Section6 from '@/projects/tsi1/Section6.vue'
-import Section7 from '@/projects/tsi1/Section7.vue'
-import Section8 from '@/projects/tsi1/Section8.vue'
-import Section9 from '@/projects/tsi1/Section9.vue'
-import Section10 from '@/projects/tsi1/Section10.vue'
+import Section1 from '@/projects/ypy/Section1.vue'
+// import Section2 from '@/projects/tsi1/Section2.vue'
+// import Section3 from '@/projects/tsi1/Section3.vue'
+// import Section4 from '@/projects/tsi1/Section4.vue'
+// import Section5 from '@/projects/tsi1/Section5.vue'
+// import Section6 from '@/projects/tsi1/Section6.vue'
+// import Section7 from '@/projects/tsi1/Section7.vue'
+// import Section8 from '@/projects/tsi1/Section8.vue'
+// import Section9 from '@/projects/tsi1/Section9.vue'
+// import Section10 from '@/projects/tsi1/Section10.vue'
 
 export default {
   name: 'home',
   components: {
     Loading,
     // Indigator,
-    Navigation,
-    SideNavigation,
+    // Navigation,
+    // SideNavigation,
     // LeafFlow,
     ContactSection,
     MobileNav,
     Section1,
-    Section2,
-    Section3,
-    Section4,
-    Section5,
-    Section6,
-    Section7,
-    Section8,
-    Section9,
-    Section10,
+    // Section2,
+    // Section3,
+    // Section4,
+    // Section5,
+    // Section6,
+    // Section7,
+    // Section8,
+    // Section9,
+    // Section10,
   },
 
   data() {
@@ -168,7 +168,7 @@ export default {
     // window.location = "https://ywh.nhc888.com.tw/"
   },
   mounted() {
-    window.addEventListener('scroll', this.onScroll, false)
+    // window.addEventListener('scroll', this.onScroll, false)
     // this.action = this.$refs.fullPage.api
     // if (this.isMobile) {
     //   this.$refs.fullPage.api.setResponsive(true)
@@ -176,32 +176,32 @@ export default {
   },
   methods: {
     init() {},
-    onScroll() {
-      // 获取所有锚点元素
-      const navContents = document.querySelectorAll('.section')
-      // 所有锚点元素的 offsetTop
-      const offsetTopArr = []
-      navContents.forEach(item => {
-        offsetTopArr.push(item.offsetTop)
-      })
-      // 获取当前文档流的 scrollTop
-      const scrollTop =
-        document.documentElement.scrollTop || document.body.scrollTop
-      // 定义当前点亮的导航下标
-      let navIndex = 0
-      for (let n = 0; n < offsetTopArr.length; n++) {
-        // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
-        // 那么此时导航索引就应该是n了
-        if (scrollTop >= offsetTopArr[n] - 100) {
-          navIndex = n
-        }
-      }
-      // console.log(navIndex + 1)
-      if (this.viewIndex !== navIndex + 1) {
-        this.viewIndex = navIndex + 1
-      }
-      // this.viewIndex = navIndex + 1
-    },
+    // onScroll() {
+    //   // 获取所有锚点元素
+    //   const navContents = document.querySelectorAll('.section')
+    //   // 所有锚点元素的 offsetTop
+    //   const offsetTopArr = []
+    //   navContents.forEach(item => {
+    //     offsetTopArr.push(item.offsetTop)
+    //   })
+    //   // 获取当前文档流的 scrollTop
+    //   const scrollTop =
+    //     document.documentElement.scrollTop || document.body.scrollTop
+    //   // 定义当前点亮的导航下标
+    //   let navIndex = 0
+    //   for (let n = 0; n < offsetTopArr.length; n++) {
+    //     // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
+    //     // 那么此时导航索引就应该是n了
+    //     if (scrollTop >= offsetTopArr[n] - 100) {
+    //       navIndex = n
+    //     }
+    //   }
+    //   // console.log(navIndex + 1)
+    //   if (this.viewIndex !== navIndex + 1) {
+    //     this.viewIndex = navIndex + 1
+    //   }
+    //   // this.viewIndex = navIndex + 1
+    // },
 
     // onLeave(origin, destination, direction) {
     //   if (!this.isMobile) {

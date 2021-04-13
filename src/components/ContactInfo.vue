@@ -97,11 +97,11 @@ export default {
   background: $contact_bg;
   // background-image: url('../assets/img/contact_bg.jpg');
   background-size: cover;
-  background: linear-gradient(
-    to bottom,
-    rgba(243, 149, 1, 1) 0%,
-    rgba(218, 71, 19, 1) 100%
-  );
+  // background: linear-gradient(
+  //   to bottom,
+  //   rgba(243, 149, 1, 1) 0%,
+  //   rgba(218, 71, 19, 1) 100%
+  // );
   //box-shadow: $contact_shadow;
   display: flex;
   flex-direction: column;
@@ -137,7 +137,7 @@ export default {
 .btn {
   width: 280px;
   height: 60px;
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 20px;
   cursor: pointer;
   text-decoration: none;
@@ -148,7 +148,7 @@ export default {
   transition: all 0.5s;
   position: relative;
   overflow: hidden;
-  font-weight: 600;
+  font-weight: 900;
   &.half {
     width: 49%;
   }
@@ -194,6 +194,8 @@ export default {
 .address {
   width: 600px;
   height: 60px;
+  font-size: 18px;
+  font-weight: 900;
   background: #fff;
   color: $contact_btn_border;
   font-weight: bold;
@@ -202,10 +204,10 @@ export default {
 .google-btn {
   width: 280px;
   height: 60px;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 900;
   // border-top-right-radius: 60px;
   //border-bottom-right-radius: 60px;
   color: $contact_google_btn_color;

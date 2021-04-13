@@ -51,10 +51,9 @@ export default {
   font-size: 32px;
   line-height: 36px;
   margin: 60px 0;
-  font-weight: 500;
+  font-weight: 900;
   color: $house_title_color;
   font-family: $family3;
-  font-weight: bold;
   letter-spacing: 15px;
 }
 
@@ -81,7 +80,7 @@ export default {
   }
 
   .label {
-    font-size:1em;
+    font-size:1.2em;
     color: $house_label_color;
     margin-bottom: 0;
     margin-right:0.8em;
