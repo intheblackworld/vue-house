@@ -83,13 +83,13 @@
 
 .item {
   width: size(496);
-  height: size(618);
+  height: size(590);
   background-color: #fff;
   margin: 0 size(18) size(50);
-  cursor: pointer;
+  cursor: pointer;position: relative;
+  &::after{content: "";position: absolute; width: 100%;height:100%;top: 0;left: 0;transition: all 0.3s;border: 1px solid #08b0;}
+  &:hover:after{ height:100%;border: 1px solid #08b;transform: scale(1.04);}
 
-  .add {
-  }
 
   img {
     width: 100%;
@@ -98,7 +98,7 @@
   }
 
   .content {
-    height: size(130);
+    height: size(115);
     padding: 0 0;
   }
 
@@ -292,6 +292,24 @@ export default {
       type: 1, // 1 最新消息, 2 媒體報導
       currentType: 2,
       item_list: [
+        {
+          icon: require('./s1/icon2.png'),
+          type: 2,
+          desc: '【商周】萬隆捷運站新建案《自慢藏》 珍藏人生最美風景',
+          img: require('../newimg/9/3e6e77c8-960a-1bf1-ea24-310cedcf7ef3.jpg'),
+        },
+        {
+          icon: require('./s1/icon2.png'),
+          type: 2,
+          desc: '【蘋果新聞網】沅利建設十年磨一劍「自慢藏」台大水岸代表作公開',
+          img: require('../newimg/10/3c47049f966d810b27760fa1a50b93fc.jpg'),
+        },
+        {
+          icon: require('./s1/icon2.png'),
+          type: 2,
+          desc: '【中時新聞網】沅利建設攜手日本國土開發營造商 打造水岸宅「自...',
+          img: require('../newimg/11/20210330002199.jpg'),
+        },
         {
           icon: require('./s1/icon2.png'),
           type: 2,

@@ -1,5 +1,5 @@
 <template>
-  <div class="section1">
+  <div class="section1" v-scroll-to="{ element: `#top` }">
     <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img an">
     <h1 class="title">關於<span  v-if="isPC">我們</span>
     <svg version="1.1" id="圖層_1" v-if="isMobile" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 268.7 59" style="enable-background:new 0 0 268.7 59;" xml:space="preserve" >
@@ -8,6 +8,7 @@
     <div class="line"></div>
     <img src="./s1/title.png" :alt="`${info.caseName}_title`" class="title-img">
     <div class="bottom"></div>
+    <div id="top" class="link_in"></div>
   </div>
 </template>
 
@@ -24,6 +25,10 @@
   background-image: #008fbb;
   background-size: auto;
 }
+.link_in{
+  position: absolute;
+  bottom:size(470);
+  left: 0;}
 
 .bg-img {
   width: size(1920);
@@ -109,6 +114,9 @@
     background-size: cover;
     background-attachment: scroll;
   }
+.link_in{
+  top:0;
+  bottom: auto;}
 
   .bg-img {
     width: sizem(375);

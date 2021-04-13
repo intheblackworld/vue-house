@@ -1,11 +1,12 @@
 <template>
-  <div class="section1">
+  <div class="section1" v-scroll-to="{ element: `#top` }">
     <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
     <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img an">
     <h1 class="title">經典建案</h1>
     <h1 class="subtitle">以經典　再造風華</h1>
     <img src="./s1/title.png" :alt="`${info.caseName}_title`" class="title-img">
     <div class="bottom"></div>
+    <div id="top" class="link_in"></div>
   </div>
 </template>
 
@@ -20,6 +21,10 @@
   background-image: #008fbb;
   background-size: auto;
 }
+.link_in{
+  position: absolute;
+  bottom:size(470);
+  left: 0;}
 
 .bg-img {
   width: size(1920);
@@ -109,6 +114,9 @@
     background-size: cover;
     background-attachment: scroll;
   }
+.link_in{
+  top:0;
+  bottom: auto;}
 
   .bg-img {
     width: sizem(375);

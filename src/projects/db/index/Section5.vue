@@ -3,8 +3,8 @@
     <img src="./s5/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
     <img src="./s5/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img an">
     <img src="./s5/title.png" :alt="`${info.caseName}_title`" class="title-img" data-aos="fade-right" data-aos-delay="100">
-    <div class="title flex-ac" @click="$router.push('/news')" data-aos="fade" data-aos-delay="600">房產資訊</div>
-    <div class="btn" @click="$router.push('/news')" data-aos="fade" data-aos-delay="600">LEARN MORE</div>
+    <div class="title flex-ac" @click="$router.push('/news/#top')" data-aos="fade" data-aos-delay="600">房產資訊</div>
+    <div class="btn" @click="$router.push('/news/#top')" data-aos="fade" data-aos-delay="600">READ MORE</div>
   </div>
 </template>
 
@@ -45,7 +45,7 @@
 
 
 .title {
-  @include div_r_pc(520, 73, 705, 176);
+  @include div_r_pc(520, 73, 715, 176);
   font-size: size(58);
   font-weight: normal;
   font-stretch: normal;
@@ -53,7 +53,7 @@
   line-height: 1.81;
   letter-spacing: size(10.44);
   text-align: left;
-  color: #000000;
+  color: #ffe900;
   white-space: nowrap;
   cursor: pointer;
   padding-left: size(15);
@@ -79,27 +79,34 @@
 }
 
 .btn {
-  @include img_r_pc(217, 746, 175);
+  @include img_r_pc(217, 731, 175);
   cursor: pointer;
   font-family: "gothic";
   font-size: size(25);
   color: #000;
-  line-height: 1.3;
+  line-height: 1.8;
+  background:#ffe900;
   z-index:2;
   &::before{content: "";
-  background:#ffe900;
   position: absolute;
   transition:all 0.2s;
-  bottom: 0;right: 0;width: 240%;height: 215%;
+  bottom: 0;right: 0;width:100%;height: 100%;
   transform-origin: 50% 50%;
   animation: btn 0.5s ease-in-out infinite alternate;
+  border: 0.1em solid #fff0;
+  transform: scale(1.07,1.4);     
   z-index: -1;}
   &:hover:before{
-    transform: scaleY(1.3);}
+  transform: scale(1);  
+  border: 0.1em solid #ffff;  
+  animation:none;
+  z-index: -1;
+  }
 }
 @keyframes btn {
   to {
-  background:#fff;
+  border: 0.1em solid #ffff;
+  transform: scale(1);
   }
 }
 @media only screen and (max-width: 1440px) {

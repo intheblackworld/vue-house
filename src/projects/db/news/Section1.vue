@@ -1,10 +1,11 @@
 <template>
-  <div class="section1">
+  <div class="section1" v-scroll-to="{ element: `#top` }">
     <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
     <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img an">
     <h1 class="title1" v-show="$route.query.type == 1">最新消息</h1>
     <h1 class="title2" v-show="$route.query.type == 2">媒體報導</h1>
     <div class="bottom"></div>
+    <div id="top" class="link_in"></div>
     <img src="./s1/title.png" :alt="`${info.caseName}_title`" class="title-img">
   </div>
 </template>
@@ -13,16 +14,21 @@
 @import '@/assets/style/function.scss';
 
 .section1 {
-  width: size(1920);
+  width:100%;
   height: size(643);
   overflow: hidden;
   position: relative;
   background-image: #008fbb;
   background-size: auto;
+  margin-bottom: size(-90);
 }
+.link_in{
+  position: absolute;
+  bottom:size(470);
+  left: 0;}
 
 .bg-img {
-  width: size(1920);
+  width:100%;
   height: auto;
   position: absolute;
   top: 0;
@@ -67,7 +73,7 @@
 }
 
 .title-img {
-  @include img_l_pc(548, 220, 181);
+  @include img_l_pc(650, 190, 181);
 }
 
 .bottom {
@@ -104,6 +110,9 @@
     background-size: cover;
     background-attachment: scroll;
   }
+.link_in{
+  top:0;
+  bottom: auto;}
 
   .bg-img {
     width: sizem(375);

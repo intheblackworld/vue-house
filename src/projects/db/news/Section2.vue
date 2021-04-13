@@ -1,6 +1,10 @@
 <template>
   <div class="section2">
     <div class="news-container">
+      <ol class="breadcrumb">
+<li class="bc_li" @click="$router.push('/#section5')">首頁</li>
+<li class="bc_li" @click="$router.push('/news/#top')">新聞列表</li>
+</ol>
       <div class="news-title">{{currentItem.title}}</div>
       <div class="news-subtitle">
         {{currentItem.subtitle}}
@@ -31,9 +35,14 @@
       <div class="pagination flex-c">
         <a class="pagi" target="_blank" v-for="(link, index) in currentItem.links" :key="'pagi' + index" :href="link.url">{{link.title}}</a>
       </div>
-      <div class="back" @click="$router.push('/news')">
-        ［回上一頁］
-      </div>
+      <div class="navigation">
+<span class="pn">
+<span class="back" @click="$router.push('/news/#top')">
+        回新聞列表</span>
+<span class="pnprev" @click="$router.push(`/news/${currentNum - 1}?type=${currentItem.type}`)" aria-label="上一頁"></span>
+<span class="pnnext" @click="$router.push(`/news/${currentNum + 1}?type=${currentItem.type}`)" aria-label="下一頁"></span>
+</span>
+</div>
     </div>
   </div>
 </template>
@@ -65,7 +74,7 @@
 }
 .news-container {
   width: size(1330);
-  margin: size(80) auto;
+  margin: size(0) auto;
   padding-bottom: size(80);
 }
 .news-title {
@@ -114,10 +123,6 @@
   margin-bottom: size(15);
 }
 
-.back {
-  margin-top: size(15);
-  cursor: pointer;
-}
 
 .swipe {
   width: size(1280);
@@ -290,6 +295,38 @@
     }
   }
 }
+.breadcrumb{font-size:size(18);display:block; padding:0.9em 0.3em 1em 0.3em;
+text-align: left;
+&::after{content:" "; display:block; clear:both;}
+li{display:inline-block;font-weight:normal;color: #555;white-space:nowrap;
+&::before{content:">"; display: inline-block; margin: 0 0.3em}
+&:first-child:before{display:none}
+&:hover{text-decoration: underline}
+&:hover:before{ text-decoration: none;}
+}
+}
+
+.pn{font-size:size(18);background: #08A;
+text-align: center;display: flex;padding:0;color:#FFF;margin:3em 0 0.5em 0;
+line-height: 1.7;
+> *{color:#FFF;transition:all 0.2s;padding:6px 0 7px 0;}
+span{flex: 1;
+&:hover{background:#666;display:inline;transition:all 0.2s;}
+}
+.pnnext::after,
+.pnprev::before,
+.pnmore::before{
+  content:"";display: inline-block;width: 0.5em;height: 0.5em;border: 2px solid currentColor;border-width:2px 2px 0 0;margin:0 0.5em 1px 0.5em;
+  }
+.pnnext::after{transform: rotate(45deg)}
+.pnprev::before{transform: rotate(-135deg)}
+.pnmore::before{transform: rotate(135deg);margin:0 0.5em 3px 0.5em;}
+.back{width: 6em; order:2;display: inline-block;text-align: center;
+  cursor: pointer;}
+.back ~ .pnnext{text-align:left;order:3;}
+.back ~ .pnprev{text-align:right;order:1;}
+}
+
 
 @media only screen and (max-width: 1440px) {
 }
@@ -588,6 +625,8 @@
     top: auto;
     bottom: sizem(80);
   }
+  .breadcrumb{font-size:size(18);}
+  .pn{font-size:size(18);}
 }
 </style>
 <script>
@@ -608,9 +647,87 @@ export default {
       tabIndex: 0,
       item_list: [
         {
+          type: 2,
+          title: '【商周】萬隆捷運站新建案《自慢藏》 珍藏人生最美風景',
+          subtitle: '',
+          date: '2021.04.07',
+          author: '商周 廣編企劃',
+          imgs: [
+            require('../newimg/9/3e6e77c8-960a-1bf1-ea24-310cedcf7ef3.jpg'),
+            require('../newimg/9/baa57624-44c5-5bbf-f771-cf9a5e62efbb.jpg'),
+          ],
+          desc:
+            '北市萬隆站一帶鄰近大安信義繁華商圈，卻有著都市難得的水岸綠地，以及台大、師大最高學府的人文書香環繞，卻少有建地釋出。近期一個名為《自慢藏》的建案卻吸引了不少區域客的注意，不僅前後水岸綠意雙景觀、鄰近台大師大的極佳位置，吸引區域客和大學教授們青睞，高標準的嚴謹施工品質，更引起左鄰右舍不少討論。<br><br>萬隆是北市開發已久的區域，交通便利機能成熟又有著水岸綠意，日間漫步河濱公園，夜間住宅區巷弄靜謐，是台北市難得的宜居空間，卻罕有新屋建案，因為區內30年以上舊公寓林立、早已無可建空間，都更案沒有高容積獎勵下吃力不討好，一般建商願意投入者也不多。，這次整合了國有財產署戰基地約40%的土地面積加入，才有了「自慢藏」860坪的大基地面積，饒是如此，該案仍數度轉易不同建商，最後才由40年的台北市在地建商沅利建設接手，與日本國土開發營造商攜手，打造地下四樓、地面22層的SRC鋼骨雙塔耐震水岸景觀豪邸。<br><br><b>日系自慢建築工藝 藏山、藏水、藏台大</b><br>《自慢藏》基地位於汀洲路四段219號旁，鄰近師大分部，正對萬坪河濱帶狀公園入口，後方隔著僅4樓高的古亭地政事務所，就是從景美圖書館開始連成一片的萬和1、2、3號公園老樹綠蔭，坐擁前後水岸綠意雙景觀，同時坐擁公館羅斯福繁華商圈便利機能，收納公館、台大、師大商圈的豐富生活機能。交通上也十分便利，散步4分鐘就到捷運萬隆站，1分鐘即可上水源快速道路，快速銜接雙北。<br><br>為了與珍稀的地理位置相得益彰，建商特別邀請曾參與東京機場、關西空港、北陸新幹線、三井花園飯店等開發營造工程的「JDC日本國土開發株式會社」，承襲70年日本血統的嚴謹精工，以最高規格打造台灣水岸最自慢的建築地標。例如結合SC及RC雙重優勢，CFT柱內灌漿，以高壓灌漿混凝土入鋼柱提升結構穩固性；水泥磅數也超越法規標準，採用最高8000psi高強度混凝土；SA級鋼筋續接器，則是和捷運、高鐵、台北101同等的最高安全規格，並採用連續壁+扶壁+地中壁工法，使結構更加穩固。<br><br><b>珍稀自慢 細琢典藏</b><br>建築規劃同樣令人眼睛一亮，《自慢藏》總戶數165戶分別以35、45和60坪三種坪數規劃，一層四戶、戶戶邊間雙面採光的設計，在台北市極為稀少。戶戶加厚22公分中空樓板，強化隔音隔熱效果，提升居家品質。本案還罕見地拿到銀級綠建築和SRC鋼骨耐震標章，目前大台北地區僅有9個建案獲得該雙標章認證。<br><br>高坪效是《自慢藏》的另一大亮點，31.9%的低公設比加上雨遮不計坪、不計價，相當於直皆多買到數坪的室內空間。雖然公設比低，《自慢藏》規劃設計的公設十分豐富，包括媽媽教室、交誼宴會廳、閱覽室、健身房、琴房/多功能教室、廚藝教室、兒童遊戲室，頂樓空中花園外，室外還有中庭花園和左側櫻花大道的雙花園規畫，地下室車位則全以坡道平面車位規劃。呼應所在區域的人文氣息，《自慢藏》也規劃與商周出版社合作，首批由商周編輯選書千冊，從童書、成長、商業到人文藝術，以豐富的藏書富住戶的心靈。<br><br><b>見識越高 越是深藏不露的建築堅持</b><br>相較於大型知名建商動輒百億推案量，沅利建設卻有著「十年磨一件」打造高品質的耐性。<br>本次案名《自慢藏》除了引自日文自慢「值得引以為傲」和「珍藏傳家」的意思，也代表著沅利建設40年來的企業精神。沅利建設江文章董事長表示：「沅利建設從上一代至今40年，一直都是用一種『自慢藏』的精神，專注在專業上的努力，務實、無私地經營，能夠抬頭挺胸地面對大眾。」這樣的精神反映在沅利建設的作品上，是安心、可靠的高建設品質，更以參與國家建設、提高居住安全回饋社會為榮，過去沅利建設曾籌辦位於北市文山區的溪州街都更案、新北市大坪林捷運共構的聯合開發案，甚至獲選為捷運聯合開發評估第一名的優良建商，嚴謹踏實可見一斑。<br><br><b>沅利建設40年 水岸自慢代表作</b><br>《自慢藏》前後花了9年整合，最早核准的內容並不包含綠建築和耐震標章，建商則堅持與時俱進，不惜增加成本、延長工期，也要打造當代最足以自豪的作品。「這個案子有很大一部分是國有地、人民的財產，很感謝國家願意把這個責任交給我們的信任，國有財產署一路走來也參與我們所有的工程進度。」除了和日本國土開發營造商攜手，沅利建設在結構安全上還找來參與台中機場工程的「聯邦工程顧問」，以國家交通建設的高標為自慢藏的基礎工程層層把關監督，另外請來「台灣大學地震中心」以第三方公證單位角色進行結構外審。一步一腳印打造萬丈高樓的同時，也以專業數據標準的檢驗，驗證建商在安全結構、細節工法上的細膩用心，值得追尋建築真價值的人士「自慢」收藏。<br><br>《自慢藏》預計於4月正式公開、年底完工，2022年第三季交屋。雖然所有規劃、團隊、建材用料都以頂規打造，但建商強調將採區域行情銷售，已吸引不少沅利建設的忠實VIP客戶預約下訂。',
+          links: [
+            {
+              title: '原文',
+              id: '1',
+              url: 'https://www.businessweekly.com.tw/business/indep/1001357',
+            },
+            {
+              title: '自慢藏',
+              id: '2',
+              url: 'https://jiman.debang.tw/',
+            },
+          ],
+        },
+        {
+          type: 2,
+          title: '【蘋果新聞網】沅利建設十年磨一劍「自慢藏」台大水岸代表作公開',
+          subtitle: '',
+          date: '2021-03-31',
+          author: '蘋果新聞網',
+          imgs: [
+            require('../newimg/10/3c47049f966d810b27760fa1a50b93fc.jpg'),
+            require('../newimg/10/6ec896a7b0061345193adef53d31dd25.jpg'),
+            require('../newimg/10/6f3caf5e598be1d1546667293708423d.jpg'),
+            require('../newimg/10/7V44J6V6SZFVFE3E5B7TN2BJWA.jpg'),
+          ],
+          desc:
+            '成立40年的老字號建設公司沅利建設，在台北市有不少經典業績作品，一直秉持著只做高品質建築的沅利建設，近期在素地珍稀的台大、師大生活圈，推出緊鄰水岸與河濱公園的「自慢藏」，優越條件加上精細規劃，光是VIP客戶預約就已達七成，引起市場注目。<br><br>「自慢藏」基地位置位於汀洲路四段上，基地面積廣達860坪，規劃地上22層、地下4層，單層四併，35、45、60坪產品。從基地條件來看，具有緊鄰水岸與公園的雙重優勢，步行至捷運萬隆站，也僅要4分鐘。該案公設比僅31.9%低公設比，坪效高，相當受到精打細算購屋族的青睞。<br><br>由於該案為沅利建設40年集大成代表作，建設公司禮聘創立於1951年的JDC日本國土開發株式會社共同開發營造，曾參與過東京機場、關西空港、北陸新幹線等營造工程的國土開發，以日本嚴謹精工聞名，此次台日攜手合作營造，將以最高規格打造安全堡壘。<br><br>除此之外，本案也特別以SRC鋼骨耐震、CFT柱內灌漿，再採用超越法規標準的最高8000psi高強度混凝土，以及與捷運、高鐵、台北101享有同等規格的SA級鋼筋續接器，不只獲得台灣建築中心認證的建築耐震標章，同時取得內政部國家認證銀級綠建築標章雙重認證，並有聯邦工程顧問把關、台灣大學地震中心結構外審，打造水岸地標建築。建材配備上，更有中鋼、新日鐵最頂級鋼材、戶戶中空加厚隔音樓板，配備頂級。<br><br>回應「自慢藏」案名的發想理念，沅利建設董事長江文章表示，從事建築開發營造這麼多年來，最讓他「自慢」的一件事就是，買沅利建設的房子，不會讓消費者變成孤兒，「我們在任何區塊都可能是消費者，非常了解售服的重要性。」秉持著對購屋客的誠懇信念，江董表示：「見識越高越是深藏不露。」接下來會再推出讓購屋客滿意的好建築。<br><br>「自慢藏」基本資料<br>投資興建：沅利建設<br>建築結構：SRC鋼骨耐震<br>樓層規劃：地上22層、地下4層<br>坪數規劃：35、45、60坪<br>基地位置：台北市文山區汀洲路四段281、291號<br>洽詢電話：02-2933-1888',
+          links: [
+            {
+              title: '原文',
+              id: '1',
+              url: 'https://tw.appledaily.com/headline/20210408/2LXPLTA5ERDOJMAJVBXDTUWA24/',
+            },
+            {
+              title: '自慢藏',
+              id: '2',
+              url: 'https://jiman.debang.tw/',
+            },
+          ],
+        },
+        {
+          type: 2,
+          title: '【中時新聞網】沅利建設攜手日本國土開發營造商 打造水岸宅「自慢藏」 4月初正式公開',
+          subtitle: '',
+          date: '11:25 2021/03/30',
+          author: '中時新聞網 房產網 葉思含',
+          imgs: [
+            require('../newimg/11/20210330002197.jpg'),
+            require('../newimg/11/20210330002199.jpg'),
+          ],
+          desc:
+            '台北市文山區捷運萬隆站旁水岸宅向來少有推案，元家集團沅利建設推出40年代表作「自慢藏」，攜手日本國土開發營造商，主打台灣水岸自慢代表作，基地面積達860坪，規劃35~60坪，未公開已吸引不少購屋客和VIP客層看屋，且預約已達7成，預計4月初正式公開。<br><br>元家集團沅利建設是北市老牌建商，從萬華起家，興建超過20~30件知名作品，此次「自慢藏」為沅利建設史上最大案量指標案，緊鄰台大、師大生活圈，一次囊括水岸景觀、地段與建設品牌等條件，沅利建設董事長江文章表示，基地位台北市文山區汀洲路四段281、291號，緊鄰新店溪水岸、師大分部、萬和公園旁圖書館綠園道，步行至捷運萬隆站4分鐘，因此未公開即受到當地不少區域客及台師大教授青睞，更有購屋客直接指定樓層和水岸景觀戶別。<br><br>江文章指出，為打造40年代表作，元家集團沅利建設特別邀請創立於1951年的JDC日本國土開發營造商共同開發營造，日本國土參與過東京機場、關西空港、北陸新幹線、三井花園飯店等開發營造工程。同時認真投入環境保護與資源有效利用，曾獲第5次地球環境大賞「經濟團體聯合會會長獎」，實力與業績有目共睹。因此「自慢藏」主打承襲70年日本血統的嚴謹精工，規劃SRC鋼骨耐震、CFT柱內灌漿，以高壓灌漿混凝土入鋼柱；並採用超越法規標準的最高8000psi高強度混凝土，以及與捷運、高鐵、台北101享有同等規格的SA級鋼筋續接器，江文章透露，將以日系精工最高規格，打造台灣水岸最自慢的建築地標為理念，故命名為「自慢藏」。<br><br>「自慢藏」基地四面臨路，面積860坪，是在地難得的四面臨路方形基地，前擁新店溪水岸，後享公園綠地景觀，主打在地唯一雙景觀SRC建築。總銷60億，規劃地上22樓、地下4樓雙棟建築，每棟單層4戶，規劃35、45、60坪，共165戶，負責銷售的得邦廣告專案經理林松憲表示，「自慢藏」規劃31.9%低公設比，且雨遮不計坪、不計價，因此坪效相當高，以相同產品來看，35坪比一般建案多出3~4坪，60坪產品則多出6~7坪，對購屋族來說相當划算。<br><br>特別的是，「自慢藏」不只獲得台灣建築中心認證的建築耐震標章，同時取得內政部國家認證銀級綠建築標章雙重認證，並有聯邦工程顧問把關+台灣大學地震中心結構外審，採用中鋼、新日鐵最頂級鋼材、戶戶中空加厚隔音樓板。',
+          links: [
+            {
+              title: '原文',
+              id: '1',
+              url: 'https://house.chinatimes.com/20210330002195-264401',
+            },
+            {
+              title: '自慢藏',
+              id: '2',
+              url: 'https://jiman.debang.tw/',
+            },
+          ],
+        },
+        {
+          type: 2,
           title: '【中時新聞網】睽違20年 南勢角迎來首座鋼骨大樓',
           subtitle: '',
-          date: '16:062020/12/14',
+          date: '16:06 2020/12/14',
           author: '中時新聞網 朱立君',
           imgs: [
             require('../newimg/8/中時1.jpg'),
@@ -629,6 +746,7 @@ export default {
           ],
         },
         {
+          type: 2,
           title:
             '【經濟日報】住宅安全受重視 中和地標「太陽帝國」全棟採鋼骨結構為換屋首選',
           subtitle: '',
@@ -649,6 +767,7 @@ export default {
           ],
         },
         {
+          type: 2,
           title: '【東森新聞】36層全棟鋼骨制震宅 南勢角建案太陽帝國熱銷',
           subtitle: '',
           date: '2020/11/13 16:53',
@@ -667,6 +786,7 @@ export default {
 
         //以下為神采飛洋新聞2篇
         {
+          type: 2,
           title: '【中時新聞網】百萬自備款買新北三房 神采飛洋賣破七成',
           subtitle: '',
           date: '2020/11/25',
@@ -688,6 +808,7 @@ export default {
           ],
         },
         {
+          type: 2,
           title:
             '【三立新聞】租不如買！「神采飛洋」區域最低價　入住洲子洋蛋黃區',
           subtitle: '',
@@ -714,6 +835,7 @@ export default {
 
         //以下為碧波白新聞3篇
         {
+          type: 2,
           title:
             '【中時新聞網】MUSE Design Awards得獎公布 台灣之光「碧波白」雙料',
           subtitle: '',
@@ -736,6 +858,7 @@ export default {
           ],
         },
         {
+          type: 2,
           title: '【東森新聞】坐擁全齡機能！新店碧波白兩代宅躍升換屋首選',
           subtitle: '',
           date: '2020/07/07 13:01',
@@ -752,6 +875,7 @@ export default {
           ],
         },
         {
+          type: 2,
           title: '【東森新聞】翻修老屋不如換新房！ 換屋客搶進新店碧波白',
           subtitle: '',
           date: '2020/06/23 14:10',
@@ -783,8 +907,9 @@ export default {
   methods: {},
 
   mounted() {
-    this.slideList = this.item_list[this.$route.params.id].imgs
+    this.slideList = this.item_list[this.$route.params.id].imgs    
     this.currentItem = this.item_list[this.$route.params.id]
+    this.currentNum = Number(this.$route.params.id)
   },
 
   created() {},

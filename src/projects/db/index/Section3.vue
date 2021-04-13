@@ -8,7 +8,7 @@
       好的建築　真心推薦
     </h1>
     <img src="./s3/title.png" :alt="`${info.caseName}_title`" class="title-img" data-aos="fade-right" data-aos-delay="100">
-    <div class="btn" @click="$router.push('/hot')" data-aos="fade" data-aos-delay="600">LEARN MORE</div>
+    <div class="btn" @click="$router.push('/hot/#top')" data-aos="fade" data-aos-delay="600">READ MORE</div>
   </div>
 </template>
 
@@ -85,29 +85,35 @@
   @include img_l_pc(732, 699, 177);
 }
 .btn {
-  @include img_r_pc(217, 837, 175);
+  @include img_r_pc(217, 832, 175);
   cursor: pointer;
   font-family: "gothic";
   font-size: size(25);
   color: #000;
-  line-height: 1.3;
+  line-height: 1.8;
   z-index:2;
+  background:#ffe900;
   box-shadow: 0 0 0.5em #0006;
   &::before{content: "";
-  background:#ffe900;
   position: absolute;
   transition:all 0.2s;
   top: 0;left: 0;width: 100%;height: 100%;
   transform-origin: 50% 50%;
   animation: btn 0.5s ease-in-out infinite alternate;
+  border: 0.1em solid #fff0;
+  transform: scale(1.07,1.4);     
   z-index: -1;}
   &:hover:before{
-    transform: scaleY(1.3);
+  transform: scale(1);  
+  border: 0.1em solid #ffff;  
+  animation:none;
+  z-index: -1;
   }
 }
 @keyframes btn {
   to {
-  background:#fff;
+  border: 0.1em solid #ffff;
+  transform: scale(1);
   }
 }
 

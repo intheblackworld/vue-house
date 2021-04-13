@@ -5,7 +5,7 @@
     <img src="./s4/i_m.jpg" :alt="`${info.caseName}_i`" class="img" v-if="isMobile" data-aos="fade" data-aos-delay="100">
     <img src="./s4/title.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isPC" data-aos="fade-down" data-aos-delay="600">
     <img src="./s4/title_m.png" :alt="`${info.caseName}_title`" class="title-img" v-if="isMobile">
-    <div class="btn" @click="$router.push('/products')" data-aos="fade" data-aos-delay="600">LEARN MORE</div>
+    <div class="btn" @click="$router.push('/products/#top')" data-aos="fade" data-aos-delay="600">READ MORE</div>
     <h1 class="title" data-aos="fade" data-aos-delay="400" v-if="isMobile">經典建案</h1>
     <h1 class="subtitle" data-aos="fade" data-aos-delay="600">
       以經典　再造風華
@@ -78,28 +78,34 @@
   }
 }
 .btn {
-  @include img_r_pc(217, 777, 175);
+  @include img_r_pc(217, 767, 175);
   cursor: pointer;
   font-family: "gothic";
   font-size: size(25);
   color: #fff;
-  line-height: 1.3;
+  line-height: 1.8;
   z-index:2;
-  &::before{content: "";
   background:#008FBB;
+  &::before{content: "";
   position: absolute;
   transition:all 0.2s;
   top: 0;left: 0;width: 100%;height: 100%;
   transform-origin: 50% 50%;
   animation: btn 0.5s ease-in-out infinite alternate;
+  border: 0.1em solid #0590;
+  transform: scale(1.07,1.4);     
   z-index: -1;}
   &:hover:before{
-    transform: scaleY(1.3);
+  transform: scale(1);  
+  border: 0.1em solid #0599;  
+  animation:none;
+  z-index: -1;
   }
 }
 @keyframes btn {
   to {
-  background:#005c79;
+  border: 0.1em solid #0599;
+  transform: scale(1);
   }
 }
 

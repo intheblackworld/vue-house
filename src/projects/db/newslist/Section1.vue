@@ -1,10 +1,11 @@
 <template>
-  <div class="section1">
+  <div class="section1" v-scroll-to="{ element: `#top` }">
     <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img">
     <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img an">
     <!-- <h1 class="title">關於我們</h1> -->
     <img src="./s1/title.png" :alt="`${info.caseName}_title`" class="title-img">
     <div class="bottom"></div>
+    <div id="top" class="link_in"></div>
   </div>
 </template>
 
@@ -21,7 +22,10 @@
   background-image: #008fbb;
   background-size: auto;
 }
-
+.link_in{
+  position: absolute;
+  bottom:size(470);
+  left: 0;}
 .bg-img {
   width: size(1920);
   height: auto;
@@ -63,7 +67,7 @@
 }
 
 .title-img {
-  @include img_l_pc(548, 745, 181);
+  @include img_l_pc(650, 745, 181);
   top: auto;
   bottom:size(320);
 }
@@ -102,6 +106,9 @@
     background-size: cover;
     background-attachment: scroll;
   }
+.link_in{
+  top:0;
+  bottom: auto;}
 
   .bg-img {
     width: sizem(375);

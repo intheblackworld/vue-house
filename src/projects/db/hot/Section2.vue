@@ -8,6 +8,7 @@
     </div>
     <div class="container flex wrap">
       <div class="item" v-for="(item, index) in item_list" :key="item.title + index" @click="showProjectDialog(item)">
+        <span></span>
         <img :src="item.img" :alt="`${info.caseName}`">
         <div class="add"></div>
         <div class="content flex flex-ac wrap" v-if="!item.isEmpty">
@@ -155,16 +156,14 @@
   background-color: #f7f8f8;
   margin: 0 size(18) size(50);
   position: relative;
-  cursor: pointer;
-
-  .add {
-  }
+  cursor: pointer;position: relative;
 
   img {
     width: 100%;
     height: size(487);
     object-fit: cover;
   }
+  > span{
   &::before,
   &::after {
     content: '';
@@ -180,6 +179,9 @@
     transform-origin: 50% 50%;
     transform: rotate(90deg);
   }
+}
+  &::after{content: "";position: absolute; width: 100%;height:100%;top: 0;left: 0;transition: all 0.3s;border: 1px solid #08b0;}
+  &:hover:after{ height:100%;border: 1px solid #08b;transform: scale(1.04);}
 
   .content {
     height: size(130);
