@@ -62,9 +62,9 @@
 .section .fp-tableCell {
   height: auto !important;
 }
-#contact {
-  z-index: 3;
-}
+// #contact {
+//   z-index: 3;
+// }
 
 .top-bg {
   width: 100vw;

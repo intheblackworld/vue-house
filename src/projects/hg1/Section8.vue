@@ -614,31 +614,31 @@ export default {
       slideList: [
         {
           img: require('./s8/01.jpg'),
-          name: '公設圖說',
+          name: '大廳3D情境示意圖',
         },
         {
           img: require('./s8/02.jpg'),
-          name: '公設圖說',
+          name: '咖啡廳3D情境示意圖',
         },
         {
           img: require('./s8/03.jpg'),
-          name: '公設圖說',
+          name: '健身房3D情境示意圖',
         },
         {
           img: require('./s8/04.jpg'),
-          name: '公設圖說',
+          name: '跑道、千書牆3D情境示意圖',
         },
         {
           img: require('./s8/05.jpg'),
-          name: '公設圖說',
+          name: '跑道、遊樂區3D情境示意圖',
         },
         {
           img: require('./s8/06.jpg'),
-          name: '公設圖說',
+          name: '跑道、樹屋3D情境示意圖',
         },
         {
           img: require('./s8/07.jpg'),
-          name: '公設圖說',
+          name: '宴會廳3D情境示意圖',
         },
       ],
     }
