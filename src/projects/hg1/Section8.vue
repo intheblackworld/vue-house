@@ -613,7 +613,31 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s8/public_img.jpg'),
+          img: require('./s8/01.jpg'),
+          name: '公設圖說',
+        },
+        {
+          img: require('./s8/02.jpg'),
+          name: '公設圖說',
+        },
+        {
+          img: require('./s8/03.jpg'),
+          name: '公設圖說',
+        },
+        {
+          img: require('./s8/04.jpg'),
+          name: '公設圖說',
+        },
+        {
+          img: require('./s8/05.jpg'),
+          name: '公設圖說',
+        },
+        {
+          img: require('./s8/06.jpg'),
+          name: '公設圖說',
+        },
+        {
+          img: require('./s8/07.jpg'),
           name: '公設圖說',
         },
       ],
