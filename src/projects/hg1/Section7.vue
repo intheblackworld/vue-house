@@ -151,11 +151,11 @@
 }
 
 .big-title {
-  @include img_r_pc(1070, 782, 166);
+  @include img_r_pc(850, 782, 166);
   top: auto;
   bottom: size(20);
   text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.75);
-  font-size: size(189.8);
+  font-size: size(130.8);
   font-weight: 300;
   font-stretch: normal;
   font-style: normal;

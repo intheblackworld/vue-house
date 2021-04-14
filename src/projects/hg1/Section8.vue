@@ -27,16 +27,16 @@
       </div>
     </div>
     <div v-if="isPC">
-      <div class="title" data-aos="fade" data-aos-delay="400">
+      <div class="title title-box1" data-aos="fade" data-aos-delay="400">
         享受生活的主角
       </div>
-      <div class="subtitle" data-aos="fade" data-aos-delay="600">
+      <div class="subtitle title-box2" data-aos="fade" data-aos-delay="600">
         PUBLIC
       </div>
-      <div class="desc" data-aos="fade" data-aos-delay="800">
+      <div class="desc title-box3" data-aos="fade" data-aos-delay="800">
         全方位北歐風公設，享受被建築療癒的日常！全桃園首創室內跑道，創新公設接軌國際，將室內外空間融合延伸，創造令人紓壓放鬆的全齡新樂園。
       </div>
-      <img src="./s8/style_arrow_4.png" :alt="`${info.caseName}_style_arrow`" class="arrow" data-aos="fade-up" data-aos-delay="200">
+      <img src="./s8/style_arrow_4.png" :alt="`${info.caseName}_style_arrow`" class="arrow title-box4" data-aos="fade" data-aos-delay="200">
     </div>
     <div v-if="isMobile">
       <div class="title">
@@ -149,11 +149,25 @@
   }
 }
 
+.title-box1{
+   top: calc(50% - -14.5vw);
+}
+.title-box2{
+   top: calc(50% - -14vw);
+}
+.title-box3{
+   top: calc(50% - -14.5vw);
+}
+
+.title-box4{
+   top: calc(50% - -15.5vw) !important;
+}
+
 /* Swipe */
 .swipe {
+  top: calc(50% - 20.5vw);
   width: size(1561);
   height: size(760);
-  top: size(65 + 100);
   right: 0;
   left: 0;
   margin: 0 auto;
@@ -420,7 +434,7 @@
     }
 
     .mo1 {
-      @include img_r_m(80, 150, 0);
+      @include img_r_m(80, 300, 0);
       z-index: 10;
     }
 
@@ -525,6 +539,7 @@
     right: 0;
     margin: auto;
     justify-content: center;
+    display: none;
   }
 
   .pagination-dot {
