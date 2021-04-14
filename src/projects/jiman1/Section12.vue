@@ -920,7 +920,6 @@ export default {
 
   methods: {
     onPlayerReady(event) {
-      console.log('load')
       event.target.playVideo()
     },
     loadVideo() {
@@ -1012,9 +1011,9 @@ export default {
             window.onYouTubeIframeAPIReady = this.loadVideo
           } else {
             this.loadVideo()
-            setTimeout((() => {
-              this.player.playVideo()
-            }).bind(this), 2500)
+            // setTimeout((() => {
+            //   this.player.playVideo()
+            // }).bind(this), 2500)
           }
         }
       }
