@@ -139,6 +139,7 @@ export default {
       line-height: 1.6;
       .label{margin: 0;
       font-size: calc(100vw * 14 / 375);
+    width: 10em;
       line-height:inherit;}
     .desc {
       font-size: calc(100vw * 14 / 375);

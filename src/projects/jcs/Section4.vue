@@ -20,15 +20,9 @@
       <div class="subtitle" v-if="isMobile" data-aos="fade-down" data-aos-delay="800">
         每棟建築都是根植沃土細膩照顧的大樹，玖登開發耕耘大竹土地，開出茁壯茂盛的枝葉，勾勒環境與風土的氣韻，從種子到綠芽澆灌更盛大的未來
       </div>
-      <div class="work-title" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-300">
-        【代表作品／寓上春樹】
-      </div>
-      <div class="work-desc" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-300">
-        雙公園景觀宅，格柵獨美身段，在埔心溪河廊映襯出雅緻美學
-      </div>
     </div>
 
-    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="800">
+    <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="800">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -45,6 +39,12 @@
         <div class="next-btn" @click="addIndex"></div>
       </div>
     </div>
+      <div class="work-title" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-300">
+        【代表作品／寓上春樹】
+      </div>
+      <div class="work-desc" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-300">
+        雙公園景觀宅，格柵獨美身段，在埔心溪河廊映襯出雅緻美學
+      </div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -113,54 +113,44 @@
 .trans-leave-active {
   transition: all 1.8s cubic-bezier(1, 0.5, 0.8, 1);
 }
+.content{ @include img_l_pc(825,168, 202);
+  top: calc(50% + 100vw * (168 - 540) / 1920);
+width: auto;
+font-size: size(30);
+padding: 0 0 0 1.5em;
+  font-stretch: normal;
+  font-style: normal;
+  color: #40220f;
+  text-align: left;
+  line-height: 1.5;
+  z-index: 2;
+}
 
 .line {
-  @include div_l_pc(14, 214, 168, 202);
-  top: calc(50% + 100vw * (168 - 540) / 1920);
+  @include div_l_pc(14, 180, 0, 0);
+  width: 0.5em;
+  height: 100%;
+  z-index: 2;
   background-color: #40220f;
 }
 .label {
-  @include img_l_pc(208, 159, 246);
-  top: calc(50% + 100vw * (159 - 540) / 1920);
-  font-size: size(30.5);
+  position: relative;
+  font-size: 1em;
   font-weight: 400;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(4.89);
-  text-align: left;
-  color: #40220f;
-  white-space: nowrap;
-  z-index: 2;
+  letter-spacing:0.16em;
+  left: -0.3em;
 }
 .title {
-  @include img_l_pc(825, 204, 246);
-  top: calc(50% + 100vw * (204 - 540) / 1920);
-  font-size: size(66.1);
+  font-size: 2.2em;
   font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.2;
-  letter-spacing: normal;
-  text-align: left;
-  color: #40220f;
-  white-space: nowrap;
-  z-index: 2;
+  margin: 0.3em 0;
 }
 
 .subtitle {
-  @include img_l_pc(851, 301, 246);
-  top: calc(50% + 100vw * (301 - 540) / 1920);
-  font-size: size(18);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.42;
-  letter-spacing: size(1.08);
-  text-align: left;
-  color: #40220f;
-  white-space: nowrap;
-  z-index: 3;
+  font-size: 0.6em;
+  font-weight: 300;
+  letter-spacing:0.06em;
 }
 
 .work-title {
@@ -199,6 +189,7 @@
   top:5%;
   right: size(116);
   object-fit: cover;
+  position: absolute;
   // background: #0344;
 }
 
@@ -419,7 +410,7 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-    height: sizem(782);
+    height: auto;
     min-height: auto;
     max-height: initial;
     // background-image: url('./all/section_bg.jpg');
@@ -462,56 +453,26 @@
     transition: all 1.8s cubic-bezier(1, 0.5, 0.8, 1);
   }
 
-  .line {
-    @include div_l_m(7, 177, 39, 33);
-    background-color: #40220f;
-  }
-  .label {
-    @include img_l_m(116, 39, 55);
+  .content{@include img_l_m(7, 44, 20);
+width: auto;
     font-size: sizem(17);
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.53;
-    letter-spacing: sizem(2.72);
-    text-align: left;
-    color: #40220f;
-    color: #40220f;
-    white-space: nowrap;
-    z-index: 2;
+    position: relative;
   }
   .title {
-    @include img_l_m(250, 69, 55);
-    font-size: sizem(25);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.6;
-    letter-spacing: normal;
-    text-align: left;
-    color: #40220f;
-    white-space: nowrap;
-    z-index: 2;
+    font-size: 1.47em;
   }
 
   .subtitle {
-    @include img_l_m(300, 116, 55);
-    font-size: sizem(16);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.63;
-    letter-spacing: sizem(0.96);
-    text-align: left;
-    color: #40220f;
-    white-space: normal;
-    z-index: 3;
+    font-size:0.9em;
+  letter-spacing:0.2em;
+  padding:0 1.5em 0 0 ;
   }
 
   .work-title {
     @include img_l_m(255, 626, 20);
+    width: auto;
     top: auto;
-    bottom: sizem(123);
+    bottom: sizem(0);
     font-size: sizem(22);
     font-weight: 300;
     font-stretch: normal;
@@ -521,11 +482,12 @@
     text-align: left;
     color: #40220f;
     white-space: nowrap;
+    position: relative;
   }
   .work-desc {
-    @include img_l_m(170, 301, 33);
+    @include img_l_m(180, 301, 33);
     top: auto;
-    bottom: sizem(40);
+    bottom: sizem(0);
     font-size: sizem(15);
     font-weight: 300;
     font-stretch: normal;
@@ -535,6 +497,8 @@
     text-align: left;
     color: #40220f;
     white-space: normal;
+    position: relative;
+    padding:0 0 3em ;
   }
 
   /* Swipe */
@@ -542,10 +506,12 @@
     width: sizem(310);
     height: sizem(357);
     min-height: auto;
-    top: sizem(255);
+    top: sizem(80);
     bottom: auto;
     left: sizem(33);
     object-fit: cover;
+    position: relative;
+    margin-bottom: sizem(100);
   }
 
   // begin

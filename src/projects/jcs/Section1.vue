@@ -2488,37 +2488,40 @@
   }
 
   .title {
-    @include img_r_m(290, 409, 43);
-    font-size: sizem(23);
+    @include img_r_m(290, 409, 0);
+	width: 100%;
+    font-size: sizem(22);
     font-weight: 300;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.3;
-    letter-spacing: sizem(3.68);
+    letter-spacing:0.16em;
     text-align: center;
     color: #ffffff;
     white-space: nowrap;
   }
 
   .subtitle {
-    @include img_l_m(290, 437, 46);
-    font-size: sizem(54);
+    @include img_l_m(290, 437,0);
+	width: 100%;
+    font-size: sizem(52);
     font-weight: 900;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.19;
     letter-spacing: normal;
-    text-align: left;
+    text-align: center;
     color: #231815;
     white-space: nowrap;
     span {
-      font-size: sizem(56);
-      font-weight: 500;
+    font-size: 1.28em;
+		margin: 0 -0.15em;
     }
   }
 
   .hint {
     @include img_r_m(113, 363, 52);
+	width:auto;
     font-size: sizem(16);
     font-weight: bold;
     font-stretch: normal;
@@ -2527,6 +2530,7 @@
     letter-spacing: sizem(0.32);
     text-align: left;
     color: #00101d;
+	//white-space: nowrap;
     span {
       font-weight: 500;
     }

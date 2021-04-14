@@ -20,6 +20,7 @@
       <div class="subtitle" data-aos="fade-down" data-aos-delay="800">
         大竹路滿分商圈、書香學校、埤塘步道、林映樹廊…活出舒適小日子
       </div>
+    </div>
       <div class="list-info flex-ac flex-jb" v-if="isPC" data-aos="fade-down" data-aos-delay="800">
         <div v-for="item in list" :key="item.title" class="info">
           <img :src="item.img" alt="">
@@ -27,7 +28,6 @@
           <div class="info-desc" v-html="item.desc"></div>
         </div>
       </div>
-    </div>
 		<swiper :options="swiperOption" v-if="isPC" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" @slideChangeTransitionEnd="slideChanged">
       <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide + index" class="item">
         <img :src="slide.img" :class="`item-img`" />
@@ -39,8 +39,21 @@
       <div class="swiper-button-next next-btn" slot="button-next">
       </div>
     </swiper>
-
-		<swiper :options="swiperOption" v-if="isMobile" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" @slideChangeTransitionEnd="slideChanged" v-show="isMobile && blockIndex === 0">
+    <div class="btn" v-if="isMobile">
+      <div class="btn_l" @click="blockIndex = prevIndex"><img :src="list[prevIndex].img" alt=""></div>
+      <div class="btn_r" @click="blockIndex = nextIndex"><img :src="list[nextIndex].img" alt=""></div>
+    </div>
+    <div class="list-info flex-ac flex-jb" v-if="isMobile" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" v-touch:swipe.left="decBlockIndex" v-touch:swipe.right="addBlockIndex">
+      <transition-group name="swipe-fade" mode="out-in">
+        <div v-for="(item, index) in list" :key="item.title" :class="`info${blockIndex === index ? ' active' : ''}`" v-show="blockIndex === index">
+          <img :src="item.img" alt="" @click="blockIndex = index">
+          <div class="info-title" v-html="item.title"></div>
+          <div class="info-desc" v-html="item.desc"></div>
+        </div>
+      </transition-group>
+    </div>
+    <div class="swipeall" v-if="isMobile">
+		<swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" @slideChangeTransitionEnd="slideChanged" v-show="isMobile && blockIndex === 0">
       <swiper-slide v-for="(slide, index) in slideList[0]" :index="index" :key="slide + index" class="item">
         <img :src="slide.img" :class="`item-img`" />
         <p v-html="slide.p"></p>
@@ -51,7 +64,7 @@
       <div class="swiper-button-next next-btn" slot="button-next">
       </div>
     </swiper>
-		<swiper :options="swiperOption" v-if="isMobile" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" @slideChangeTransitionEnd="slideChanged" v-show="isMobile && blockIndex === 1">
+		<swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" @slideChangeTransitionEnd="slideChanged" v-show="isMobile && blockIndex === 1">
       <swiper-slide v-for="(slide, index) in slideList[1]" :index="index" :key="slide + index" class="item">
         <img :src="slide.img" :class="`item-img`" />
         <p v-html="slide.p"></p>
@@ -62,7 +75,7 @@
       <div class="swiper-button-next next-btn" slot="button-next">
       </div>
     </swiper>
-		<swiper :options="swiperOption" v-if="isMobile" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" @slideChangeTransitionEnd="slideChanged" v-show="isMobile && blockIndex === 2">
+		<swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" @slideChangeTransitionEnd="slideChanged" v-show="isMobile && blockIndex === 2">
       <swiper-slide v-for="(slide, index) in slideList[2]" :index="index" :key="slide + index" class="item">
         <img :src="slide.img" :class="`item-img`" />
         <p v-html="slide.p"></p>
@@ -72,19 +85,7 @@
       </div>
       <div class="swiper-button-next next-btn" slot="button-next">
       </div>
-    </swiper> 
-    <div class="btn" v-if="isMobile">
-      <div class="btn_l" @click="blockIndex = prevIndex"><img :src="list[prevIndex].img" alt=""></div>
-      <div class="btn_r" @click="blockIndex = nextIndex"><img :src="list[nextIndex].img" alt=""></div>
-    </div>
-    <div class="list-info flex-ac flex-jb" v-if="isMobile" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" v-touch:swipe.left="decBlockIndex" v-touch:swipe.right="addBlockIndex">
-      <transition-group name="swipe-fade" mode="out-in">
-        <div v-for="(item, index) in list" :key="item.title" class="info" v-show="blockIndex === index">
-          <img :src="item.img" alt="" @click="blockIndex = index">
-          <div class="info-title" v-html="item.title"></div>
-          <div class="info-desc" v-html="item.desc"></div>
-        </div>
-      </transition-group>
+    </swiper>
     </div>
   </div>
 </template>
@@ -134,49 +135,41 @@
   }
 }
 
+.content{ @include img_l_pc(825,70, 326);
+width: auto;
+font-size: size(30);
+padding: 0 0 0 1.5em;
+  font-stretch: normal;
+  font-style: normal;
+  color: #595757;
+  text-align: left;
+  line-height: 1.5;
+  z-index: 2;
+}
 .line {
-  @include div_l_pc(14, 176, 168 - 30, 326);
+  @include div_l_pc(14, 180, 0, 0);
+  width: 0.5em;
+  height: 100%;
+  z-index: 2;
   background-color: #40220f;
 }
 .label {
-  @include img_l_pc(208, 159 - 30, 370);
-  font-size: size(30.5);
+  position: relative;
+  font-size: 1em;
   font-weight: 400;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(4.89);
-  text-align: left;
-  color: #595757;
-  white-space: nowrap;
-  z-index: 2;
+  letter-spacing:0.16em;
+  left: -0.3em;
 }
 .title {
-  @include img_l_pc(825, 204 - 30, 370);
-  font-size: size(66.1);
+  font-size: 2.2em;
   font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.2;
-  letter-spacing: normal;
-  text-align: left;
-  color: #595757;
-  white-space: nowrap;
-  z-index: 2;
+  margin: 0.3em 0;
 }
-
 .subtitle {
-  @include img_l_pc(851, 301 - 30, 370);
-  font-size: size(31);
+  font-size: 1em;
   font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(-1.24);
-  text-align: left;
-  color: #595757;
-  white-space: nowrap;
-  z-index: 3;
+  letter-spacing:-0.04em;
 }
 
 .list-info {
@@ -295,7 +288,7 @@ font-size:size(15);
 @media screen and (max-width: 767px) {
   .section5 {
     width: 100vw;
-    height: sizem(910);
+    height: auto;
     min-height: auto;
     max-height: initial;
     // background-image: url('./all/section_bg.jpg');
@@ -304,6 +297,7 @@ font-size:size(15);
     // background-position: 0 0;
     // background-attachment: fixed;
     overflow: hidden;
+    padding:0 0 0;
   }
   .grass {
     @include img_r_m(173, -100, 0);
@@ -338,53 +332,26 @@ font-size:size(15);
     transition: all 1.8s cubic-bezier(1, 0.5, 0.8, 1);
   }
 
-  .line {
-    @include div_l_m(7, 177, 39, 33);
-    background-color: #00808e;
-  }
-  .label {
-    @include img_l_m(116, 39, 55);
+  .content{@include img_l_m(7, 44, 20);
+width: auto;
     font-size: sizem(17);
-    font-weight: 400;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.53;
-    letter-spacing: sizem(2.72);
-    text-align: left;
-    color: #595757;
-    white-space: nowrap;
-    z-index: 2;
+    position: relative;
   }
   .title {
-    @include img_l_m(250, 72, 55);
-    font-size: sizem(25);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.6;
-    letter-spacing: normal;
-    text-align: left;
-    color: #595757;
-    white-space: nowrap;
-    z-index: 2;
+    font-size: 1.47em;
   }
 
   .subtitle {
-    @include img_l_m(300, 156, 55);
-    font-size: sizem(16);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.63;
-    letter-spacing: sizem(0.96);
-    text-align: left;
-    color: #595757;
-    white-space: normal;
-    z-index: 3;
+    font-size:0.9em;
+  letter-spacing:0.06em;
+  padding:0 2em 0 0 ;
   }
 
   .list-info {
-    @include img_c_m(310, 233);
+    @include img_c_m(310, 70);
+    position: relative;
+    font-size: sizem(15);
+    //margin-bottom: 40em;
     img {
       width: sizem(245);
       margin: 0 auto sizem(17);
@@ -393,8 +360,11 @@ font-size:size(15);
       position: absolute;
       top: 0;
       left: 0;
-      width: sizem(310);
+      width:100%;
       padding: 0;
+    &.active{
+    position: relative;
+    }
     }
 
     .info-title {
@@ -409,7 +379,9 @@ font-size:size(15);
   }
 
   .swiper-container {
-    @include img_c_m(375, 590);
+    @include img_c_m(375, 0);
+    position: relative;
+    margin-top:sizem(90);
   }
 
 .item{
@@ -423,8 +395,8 @@ font-size:sizem(12);
   }
 
   .btn {
-    position: absolute;
-    top: sizem(250);
+    position: relative;
+    top: sizem(85);
     width: 100%;
     left: 0;
     .btn_l,
@@ -457,6 +429,18 @@ font-size:sizem(12);
     transform:translateX(-3%);
   }
 }
+
+.swipeall{
+    width: 100%;
+    height:auto;
+    min-height: auto;
+    top: 0;
+    left:0;
+    object-fit: cover;
+    position: relative;
+    margin-bottom: sizem(40);
+   // margin-bottom: sizem(300);
+  }
   /* Swipe */
   .swipe {
     width: 100%;

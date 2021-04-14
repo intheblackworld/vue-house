@@ -6,7 +6,6 @@
 
     <div class="content">
       <div class="line" data-aos="zoom-in-down" data-aos-delay="200">
-
       </div>
       <div class="label" data-aos="fade-down" data-aos-delay="400">
         ｜精心規劃｜
@@ -20,13 +19,13 @@
       <div class="subtitle" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-50">
         A級規劃／中空樓板設計／十年防水保固
       </div>
+    </div>
       <div class="list-info">
         <div v-for="item in list" :key="item.title" class="info flex-ac" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-50">
           <div class="info-title" v-html="item.title"></div>
           <div class="info-desc" v-html="item.desc"></div>
         </div>
       </div>
-    </div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -76,53 +75,43 @@
   }
 }
 
-.line {
-  @include div_l_pc(14, 176, 168, 202);
+.content{ @include img_l_pc(825,168, 202);
   top:calc(50% + 100vw * (168 - 540) / 1920);
+width: auto;
+font-size: size(30);
+padding: 0 0 0 1.5em;
+  font-stretch: normal;
+  font-style: normal;
+  color: #3d2f25;
+  text-align: left;
+  line-height: 1.5;
+  z-index: 2;
+}
+.line {
+  @include div_l_pc(14, 180, 0, 0);
+  width: 0.5em;
+  height: 100%;
+  z-index: 2;
   background-color: #40220f;
 }
 .label {
-  @include img_l_pc(208, 159, 246);
-  top:calc(50% + 100vw * (159 - 540) / 1920);
-  font-size: size(30.5);
+  position: relative;
+  font-size: 1em;
   font-weight: 400;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(4.89);
-  text-align: left;
-  color: #40220f;
-  white-space: nowrap;
-  z-index: 2;
+  letter-spacing:0.16em;
+  left: -0.3em;
 }
 .title {
-  @include img_l_pc(825, 204, 246);
-  top:calc(50% + 100vw * (204 - 540) / 1920);
-  font-size: size(66.1);
+  font-size: 2.2em;
   font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.2;
-  letter-spacing: normal;
-  text-align: left;
-  color: #40220f;
-  white-space: nowrap;
-  z-index: 2;
+  margin: 0.3em 0;
 }
 
 .subtitle {
-  @include img_l_pc(851, 301, 246);
-  top:calc(50% + 100vw * (301 - 540) / 1920);
-  font-size: size(38.2);
+  font-size: 1.27em;
   font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(9.16);
-  text-align: left;
-  color: #3d2f25;
-  white-space: nowrap;
-  z-index: 3;
+  letter-spacing:0.24em;
 }
 
 .work-title {
@@ -206,7 +195,7 @@
 @media screen and (max-width: 767px) {
   .section6 {
     width: 100vw;
-    height: sizem(990);
+    height: auto;
     min-height: auto;
     max-height: initial;
     // background-image: url('./all/section_bg.jpg');
@@ -224,6 +213,8 @@
 }
   .grass {
     @include img_l_m(172, 757, -40);
+    top: auto;
+    bottom: 0;
     transform-origin: bottom;
     animation: grass 4s ease-in-out alternate infinite;
   }
@@ -233,55 +224,25 @@
       transform: skewX(3deg);
     }
   }
-
-  .line {
-    @include div_l_m(7, 147, 39, 33);
-    background-color: #3d2f25;
-  }
-  .label {
-    @include img_l_m(116, 39, 55);
+  .content{@include img_l_m(7, 44, 20);
+width: auto;
     font-size: sizem(17);
-    font-weight: 400;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.53;
-    letter-spacing: sizem(2.72);
-    text-align: left;
-    color: #3d2f25;
-    white-space: nowrap;
-    z-index: 2;
+    position: relative;
   }
   .title {
-    @include img_l_m(250, 72, 55);
-    font-size: sizem(25);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.6;
-    letter-spacing: normal;
-    text-align: left;
-    color: #3d2f25;
-    white-space: nowrap;
-    z-index: 2;
+    font-size: 1.47em;
   }
-
   .subtitle {
-    @include img_l_m(320, 156, 55);
-    font-size: sizem(16);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.63;
-    letter-spacing: sizem(0.96);
-    text-align: left;
-    color: #3d2f25;
-    white-space: normal;
-    z-index: 3;
+    font-size:0.9em;
+  letter-spacing:0.06em;
+  padding-right: 1.5em;
   }
 
   .list-info {
-    @include img_l_m(310, 206, 31);
+    @include img_c_m(310,60);
+    position: relative;
   height:auto;
+      margin-bottom: sizem(320);
 
     .info {
       margin-bottom: sizem(20);

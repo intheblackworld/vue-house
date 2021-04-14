@@ -50,7 +50,7 @@
       </div>
     </div>
 
-    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile" data-aos="fade-down" data-aos-delay="800">
+    <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile" data-aos="fade-down" data-aos-delay="800">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute ${slideIndex === i ? 'active' : ''}`">
@@ -154,72 +154,45 @@
   }
 }
 
-// // begin
-// .block-leave-to {
-//   opacity: 0;
-//   z-index: 0;
-// }
-// // end
-// .block-enter {
-//   opacity: 0;
-//   z-index: 1;
-// }
-
-// .block-enter-active {
-//   transition: all 1s ease;
-// }
-
-// .block-leave-active {
-//   transition: all 1s cubic-bezier(1, 0.5, 0.8, 1);
-// }
+.content{ @include img_l_pc(825,168,202);
+top: calc(50% + 100vw * (168 - 540) / 1920);
+width: auto;
+font-size: size(30);
+padding: 0 0 0 1.5em;
+  font-stretch: normal;
+  font-style: normal;
+  color: #ffffff;
+  text-align: left;
+  line-height: 1.5;
+  z-index: 2;
+}
 
 .line {
-  @include div_l_pc(14, 180, 168, 202);
-  top: calc(50% + 100vw * (168 - 540) / 1920);
+  @include div_l_pc(14, 180, 0, 0);
+  width: 0.5em;
+  height: 100%;
+  z-index: 2;
   background-color: #ff8700;
 }
 .label {
-  @include img_l_pc(208, 159, 246);
-  top: calc(50% + 100vw * (162 - 540) / 1920);
-  font-size: size(30.5);
+  position: relative;
+  font-size: 1em;
   font-weight: 400;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(4.89);
-  text-align: left;
-  color: #ffffff;
-  white-space: nowrap;
-  z-index: 2;
+  letter-spacing:0.16em;
+  left: -0.3em;
+  
 }
 .title {
-  @include img_l_pc(825, 204, 246);
-  top: calc(50% + 100vw * (208 - 540) / 1920);
-  font-size: size(66);
+  font-size: 2.2em;
   font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.2;
-  letter-spacing: normal;
-  text-align: left;
-  color: #ffffff;
-  white-space: nowrap;
-  z-index: 2;
+  margin: 0.3em 0;
 }
 
 .subtitle {
-  @include img_l_pc(851, 301, 246);
-  top: calc(50% + 100vw * (301 - 540) / 1920);
-  font-size: size(37);
+  font-size: 1.23em;
   font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(16.04);
-  text-align: left;
-  color: #ffffff;
-  white-space: nowrap;
-  z-index: 3;
+  letter-spacing:0.4em;
 }
 
 .items {
@@ -472,9 +445,9 @@
 @media screen and (max-width: 767px) {
   .section3 {
     width: 100vw;
-    min-height: sizem(667);
+    min-height: sizem(604);
     max-height: sizem(812);
-    height: 100vh;
+    height: auto;
     // background-image: url('./all/section_bg.jpg');
     // background-attachment: scroll;
     // background-size: 100% 100%;
@@ -513,57 +486,24 @@
       background-color: #22389b;
     }
   }
-
-  .line {
-    @include div_l_m(7, 135, 44, 33);
-  }
-  .label {
-    @include img_l_m(208, 40, 56);
+  .content{@include img_l_m(7, 44, 20);
+width: auto;
     font-size: sizem(17);
-    font-weight: 400;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.53;
-    letter-spacing: sizem(2.2);
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
-    z-index: 2;
+    position: relative;
   }
   .title {
-    @include img_l_m(206, 72, 56);
-    font-size: sizem(25);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.6;
-    letter-spacing: normal;
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
-    z-index: 2;
+    font-size: 1.47em;
   }
-
   .subtitle {
-    @include img_l_m(270, 157, 56);
-    font-size: sizem(16);
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.63;
-    letter-spacing: sizem(0.96);
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
-    z-index: 3;
+    font-size:0.9em;
+  letter-spacing:0.2em;
   }
 
   .items {
     @include img_l_m(920, 428, 204);
     > div {
       width: 100%;
-      height: size(151 + 42);
-      border-bottom: 1px solid #fff;
+      height: sizem(151 + 42);
     }
 
     .item {
@@ -604,10 +544,13 @@
     width: 100%;
     height: sizem(259);
     min-height: auto;
-    top: sizem(155);
+    top: sizem(30);
     bottom: auto;
     left: sizem(0);
     object-fit: cover;
+    position: relative;
+    margin-bottom: sizem(300);
+    
   }
 
   // begin
@@ -644,8 +587,14 @@
     justify-content: center;
 
     .half-item {
-      width: 40%;
+      width:auto;
+      min-width:10.71em;
       position: relative;
+      font-size: sizem(14);
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.64;
+      color: #ffffff;margin: 0 0.2em;
     }
     img {
       width: sizem(65);
@@ -659,14 +608,10 @@
       top: auto;
       bottom: auto;
       right: auto;
-      font-size: sizem(20);
+      font-size: 1.43em;
       font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.65;
-      letter-spacing: normal;
       text-align: center;
-      color: #ffffff;
+      letter-spacing: normal;
     }
     .slide-desc {
       position: relative;
@@ -674,14 +619,9 @@
       top: auto;
       bottom: auto;
       right: auto;
-      font-size: sizem(14);
       font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.64;
-      letter-spacing: sizem(0.84);
       text-align: center;
-      color: #ffffff;
+      letter-spacing: 0.06;
     }
   }
 

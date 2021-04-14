@@ -495,12 +495,13 @@ export default {
       display: block;
     }
     .order-title {
-      width: 310px;
+      width:100%;
       padding-top: 10px;
       padding-bottom: 0px;
-      font-size: calc(100vw * 47 / 375);
+      font-size: calc(100vw * 40 / 375);
       letter-spacing: 4px;
       white-space: nowrap;
+      text-align: center;
     }
 
     .order-subtitle {
