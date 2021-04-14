@@ -346,15 +346,16 @@
 @media screen and (max-width: 767px) {
   .section8 {
     width: 100vw;
-    height: sizem(474);
+    height: sizem(360);
     min-height: auto;
     max-height: initial;
-    background-color: #0083be;
+    background-color: #2d73ab;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
     // background-position: 0 0;
     // background-attachment: fixed;
     overflow: visible;
+  margin-top: 70px;
   }
   .container {
     height: sizem(474);
@@ -539,7 +540,6 @@
     right: 0;
     margin: auto;
     justify-content: center;
-    display: none;
   }
 
   .pagination-dot {

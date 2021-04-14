@@ -408,6 +408,7 @@
     text-align: left;
     opacity: 1 !important;
     color: #fff;
+    z-index: 5;
   }
 
   .animate-slide {

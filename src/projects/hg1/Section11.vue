@@ -920,7 +920,7 @@
     }
 
     .mo1 {
-      @include img_r_m(375, 0, 0);
+      @include img_r_m(375, -100, 0);
       z-index: 1;
     }
 

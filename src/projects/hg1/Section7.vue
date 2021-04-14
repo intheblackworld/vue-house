@@ -124,7 +124,7 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  // z-index: 3;
+  z-index: 0;
   top: 0;
   left: 0;
   transition: all 0.5s;
@@ -212,6 +212,8 @@
     color: #ffffff;
     white-space: nowrap;
   }
+
+
 
   .arrow {
     @include img_r_m(24, 269 - 100, 34);
