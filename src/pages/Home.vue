@@ -66,12 +66,12 @@
     >-->
       <Section10 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
+    <div
+      class="section relative"
       id="section10"
     >
       <Section12 :viewIndex="viewIndex" />
-    </vue-lazy-component>
+    </div>
     <vue-lazy-component
       class="section"
       id="section11"
@@ -223,7 +223,8 @@ export default {
           navIndex = n
         }
       }
-      if (this.viewIndex === navIndex + 1 || this.viewIndex === navIndex) {
+      if (this.viewIndex !== navIndex + 1) {
+        console.log(this.viewIndex, 'asfasfdasd',navIndex)
         this.viewIndex = navIndex + 1
       }
       // this.viewIndex = navIndex + 1
