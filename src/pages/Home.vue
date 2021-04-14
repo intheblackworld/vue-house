@@ -68,9 +68,9 @@
     </vue-lazy-component>
     <vue-lazy-component
       class="section"
-      id="section12"
+      id="section10"
     >
-      <Section12 />
+      <Section12 :viewIndex="viewIndex" />
     </vue-lazy-component>
     <vue-lazy-component
       class="section"
@@ -223,7 +223,7 @@ export default {
           navIndex = n
         }
       }
-      if (this.viewIndex === navIndex + 1) {
+      if (this.viewIndex === navIndex + 1 || this.viewIndex === navIndex) {
         this.viewIndex = navIndex + 1
       }
       // this.viewIndex = navIndex + 1

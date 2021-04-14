@@ -860,6 +860,7 @@ import info from '@/info'
 export default {
   name: 'section12',
   mixins: [slider],
+  props: ['viewIndex'],
   data() {
     return {
       isPC,
@@ -908,7 +909,8 @@ export default {
         {
           src: require('./s12/news_img_6.jpg'),
           title: '佳展房屋網',
-          link: 'https://www.myhousing.com.tw/index.php?option=com_flexicontent&view=item&cid=62:market-news&id=94318:2021-04-07-03-40-33&Itemid=558',
+          link:
+            'https://www.myhousing.com.tw/index.php?option=com_flexicontent&view=item&cid=62:market-news&id=94318:2021-04-07-03-40-33&Itemid=558',
           desc:
             '位處首善之都台北的文山區，因區內文教氣息濃厚、且擁有都會區少見的依山傍水清幽環境...',
         },
@@ -918,8 +920,8 @@ export default {
 
   methods: {
     onPlayerReady(event) {
-      console.log('load');
-      event.target.playVideo();
+      console.log('load')
+      event.target.playVideo()
     },
     loadVideo() {
       this.player = new window.YT.Player(`youtube-player-${this.id}`, {
@@ -933,7 +935,7 @@ export default {
           showinfo: 0,
           autohide: 1,
           modestbranding: 1,
-          mute:0,
+          mute: 0,
           suggestedQuality: 'default',
           iv_load_policy: 3,
         },
@@ -944,14 +946,14 @@ export default {
       })
     },
 
-    videoPlayer(){
-      console.log('videoPlayer');
-      this.player.playVideo();
-    },
+    // videoPlayer() {
+    //   console.log('videoPlayer')
+    //   this.player.playVideo()
+    // },
     onPlayerStateChange(e) {
       if (e.data === window.YT.PlayerState.ENDED) {
-        this.player.loadVideoById(this.id);     
-      };
+        this.player.loadVideoById(this.id)
+      }
     },
   },
 
@@ -963,24 +965,24 @@ export default {
   },
 
   mounted() {
-    setTimeout(() => {
-      if (!this.isMobile) {
-        if (!window.YT) {
-          window.onYouTubeIframeAPIReady = this.loadVideo
-        } else {
-          this.loadVideo()
-        }
-      }  
-    }, 2500)
-    setTimeout(() => {
-      if (!this.isMobile) {
-        if (!window.YT) {
-          window.onYouTubeIframeAPIReady = this.loadVideo
-        } else {
-          this.player.playVideo();
-        }
-      }  
-    }, 5000)
+    // setTimeout(() => {
+    //   if (!this.isMobile) {
+    //     if (!window.YT) {
+    //       window.onYouTubeIframeAPIReady = this.loadVideo
+    //     } else {
+    //       this.loadVideo()
+    //     }
+    //   }
+    // }, 2500)
+    // setTimeout(() => {
+    //   if (!this.isMobile) {
+    //     if (!window.YT) {
+    //       window.onYouTubeIframeAPIReady = this.loadVideo
+    //     } else {
+    //       this.player.playVideo()
+    //     }
+    //   }
+    // }, 5000)
   },
 
   computed: {
@@ -998,6 +1000,23 @@ export default {
         return 1
       } else {
         return this.slideIndex + 2
+      }
+    },
+  },
+
+  watch: {
+    viewIndex(val) {
+      if (val === 9) {
+        if (!this.isMobile) {
+          if (!window.YT) {
+            window.onYouTubeIframeAPIReady = this.loadVideo
+          } else {
+            this.loadVideo()
+            setTimeout((() => {
+              this.player.playVideo()
+            }).bind(this), 2500)
+          }
+        }
       }
     },
   },
