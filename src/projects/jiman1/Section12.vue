@@ -918,8 +918,8 @@ export default {
 
   methods: {
     onPlayerReady(event) {
-      console.log('load')
-      event.target.playVideo()
+      console.log('load');
+      event.target.playVideo();
     },
     loadVideo() {
       this.player = new window.YT.Player(`youtube-player-${this.id}`, {
@@ -929,11 +929,11 @@ export default {
         playerVars: {
           autoplay: 1,
           loop: 1,
-          controls: 0,
+          controls: 1,
           showinfo: 0,
           autohide: 1,
           modestbranding: 1,
-          mute: 1,
+          mute:0,
           suggestedQuality: 'default',
           iv_load_policy: 3,
         },
@@ -944,10 +944,14 @@ export default {
       })
     },
 
+    videoPlayer(){
+      console.log('videoPlayer');
+      this.player.playVideo();
+    },
     onPlayerStateChange(e) {
       if (e.data === window.YT.PlayerState.ENDED) {
-        this.player.loadVideoById(this.id)
-      }
+        this.player.loadVideoById(this.id);     
+      };
     },
   },
 
@@ -966,8 +970,17 @@ export default {
         } else {
           this.loadVideo()
         }
-      }
+      }  
     }, 2500)
+    setTimeout(() => {
+      if (!this.isMobile) {
+        if (!window.YT) {
+          window.onYouTubeIframeAPIReady = this.loadVideo
+        } else {
+          this.player.playVideo();
+        }
+      }  
+    }, 5000)
   },
 
   computed: {
