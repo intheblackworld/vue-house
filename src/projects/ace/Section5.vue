@@ -3,6 +3,7 @@
     <img src="./s5/bg.png" :alt="`${info.caseName}_bgimg`" class="bg" v-if="isPC">
     <!-- <img src="./mo/w2.png" :alt="`${info.caseName}_bgimg`" class="bg" v-if="isMobile"> -->
     <div class="bg" v-if="isMobile"></div>
+    <div class="txt">
     <div class="title" data-aos="fade-down" data-aos-delay="100">
       四大王牌
     </div>
@@ -12,6 +13,7 @@
     <h1 class="subtitle" v-if="isMobile" data-aos="fade-down" data-aos-delay="200">
       國際團隊打造<br />時尚精品飯店宅
     </h1>
+    </div>
    <!-- <div class="desc flex-c" data-aos="fade-down" data-aos-delay="300">
       買名牌包 不如收藏精品宅
     </div> -->
@@ -68,7 +70,7 @@
 
 .section5 {
   width: size(1920);
-  height: size(1080);
+  height:100vh;
   min-height: size(900);
   max-height: size(1080);
   background-size: cover;
@@ -77,52 +79,47 @@
 }
 
 .bg {
-  @include img_r_pc(1655, 0, 0);
-  left: 50%;
-  transform: translateX(-50%);
+  @include img_c_pc(1655, 0);
+  height: 102%;
 }
 
-.title {
-  @include img_c_pc(180, 123);
-  font-size: size(45);
+.txt{
+  @include img_c_pc(580, 123);
+  top: calc(50% + 100vw * (160 - 540) / 1920);
+  width: 100%;
+  font-size: size(30);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.36;
   letter-spacing: normal;
-  text-align: left;
+  text-align: center;
+  line-height: 1.4;
+}
+.title {
+  font-size:1.5em;
   color: #285065;
   white-space: nowrap;
 }
 
 .subtitle {
-  @include img_c_pc(636, 188);
-  font-size: size(48);
+  font-size:1.6em;
   font-weight: 900;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2.22;
-  letter-spacing: normal;
-  text-align: left;
   color: #685335;
-  white-space: nowrap;
+  margin: 0.1em 0 0.33em 0;
 }
 
 .desc {
-  @include img_c_pc(356, 290);
-  font-size: size(30);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2.08;
-  letter-spacing: size(-1.2);
-  text-align: left;
+  font-size:1em;
+  letter-spacing:-0.04em;
   color: #ffffff;
   background-color: #685335;
+  line-height: 1.5;
+  padding: 0.2em 0.7em;
 }
 
 .imgs {
   @include div_c_pc(302 * 4 + 28 * 3, 400, 385);
+  top: calc(50% + 100vw * (400 - 540) / 1920);
 
   div {
     width: size(302);
@@ -295,7 +292,7 @@
 @media screen and (max-width: 767px) {
   .section5 {
     width: 100%;
-    height: sizem(667);
+    height:auto;
     //height:calc(100vh - 63px);
     min-height: sizem(604);
     max-height: sizem(750);
@@ -307,54 +304,23 @@
     background: #fff;
     height: 100%;
   }
-
-  .title {
-    @include img_l_m(96, 35, 141);
-    font-size: sizem(24);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.33;
-    letter-spacing: normal;
-    text-align: left;
-    color: #285065;
-    white-space: nowrap;
-  }
-
-  .subtitle {
-    @include img_l_m(210, 85, 82);
-    font-size: sizem(25);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.3;
-    letter-spacing: normal;
-    text-align: center;
-    color: #685335;
-    white-space: nowrap;
-  }
-
-  .desc {
-    @include div_l_m(310, 27, 162, 31);
-    font-size: sizem(15);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.07;
-    letter-spacing: sizem(0.3);
-    text-align: center;
-    color: #ffffff;
-    background-color: #685335;
-  }
-
+.txt{
+  position: relative;
+  width:  sizem(310);
+  top: sizem(40);
+  font-size: sizem(15);
+}
   .imgs {
-    @include div_c_m(330, 450, 180);
+    @include img_c_m(330, 0);
+    height:auto;
+    position: relative;
     flex-wrap: wrap;
+    margin-top:sizem(60);
 
     > div {
       position: relative;
       flex: 1 1 40%;
-      height: 35%;
+      height:auto;
       margin: sizem(10);
     }
   }

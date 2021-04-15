@@ -12,26 +12,25 @@ export default {
   indigatorLength: 10,
 
   houseInfos: [
-    ['投資興建', '美聯開發股份有限公司',],
-    ['不動產信託', '安泰商業銀行',],
-    ['建照號碼', '103中建第00315號',],
-    ['結構安全', '吳志強永安結構顧問',],
-    ['外觀設計', '澳洲PTW建築師事務所',],
-    ['建築設計', '九騰建築師事務所',],
-    ['公設設計', '珩荷空間設計',],
-    ['燈光設計', '蘭克斯燈光照明',],
-    ['園藝設計', '大漢景觀設計',],
-    ['基地面積', '1128.34坪',],
-    ['規劃坪數', '21-34坪',],
-    ['企劃銷售', '得邦廣告',],
+    ['投資興建', '美聯開發股份有限公司'],
+    ['不動產信託', '安泰商業銀行'],
+    ['建照號碼', '103中建第00315號'],
+    ['結構安全', '吳志強永安結構顧問'],
+    ['外觀設計', '澳洲PTW建築師事務所'],
+    ['建築設計', '九騰建築師事務所'],
+    ['公設設計', '珩荷空間設計'],
+    ['燈光設計', '蘭克斯燈光照明'],
+    ['園藝設計', '大漢景觀設計'],
+    ['基地面積', '1128.34坪'],
+    ['規劃坪數', '21-34坪'],
+    ['企劃銷售', '得邦廣告'],
   ],
 
   gtmCode: ['KVNRLFH'], // 可放置多個
-
-  //得邦金鑰
-  recaptcha_site_key_v2: '6LfGUjEaAAAAANYvhZQx5imGm23pRt0V-rOvkpNC',
-  recaptcha_site_key: '6LfGUjEaAAAAAFR9F5m6Lg1RfS-D07l64KWmoLcK', // recaptcha v3
-  recaptcha_user_token: '6LfGUjEaAAAAAFR9F5m6Lg1RfS-D07l64KWmoLcK',
+  // 得邦金鑰
+  recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
+  recaptcha_site_key: '6Lep-78UAAAAAIDMeDQOBwK-OK3yNooejpZeNCsS', // recaptcha v3
+  recaptcha_user_token: '6Lep-78UAAAAAIDMeDQOBwK-OK3yNooejpZeNCsS',
   order: {
     title: '立即預約',
     subTitle: ''

@@ -39,23 +39,25 @@ export default {
   z-index: 1;
 }
 .content {
-  width: 686px;
+  width:46em;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  font-size:calc(100vw * 16 / 1920); //建案資訊內文大小
+  line-height: 1.6;
+  padding: 2em 0; //建案資訊塊的上下間距
 }
 
 .title {
-  font-size: 32px;
-  line-height: 36px;
-  margin: 60px 0;
+  font-size: 2.1em;
+  margin: 1em 0;
   font-weight: 500;
   color: $house_title_color;
   font-family: $family3;
   font-weight: bold;
-  letter-spacing: 15px;
+  letter-spacing: 0.5em;
 }
 
 .info {
@@ -64,14 +66,13 @@ export default {
 }
 
 .item {
-  font-size: 15px;
   margin-bottom:2em;
   margin-right: 10em;
-  width: 260px;
+  width: 17em;
   //height: 30px;
   line-height: 1.4;
   //border-left: 4px solid $house_border_color;
-  padding-left: 10px;
+  padding-left:0.6em;
   display: flex;
   align-items: center;
   white-space: nowrap;position: relative;
@@ -91,7 +92,6 @@ export default {
   }
 
   .desc {
-    font-size: 14px;
     text-align: left;
     color: $house_desc_color;
     font-family: $family3;
@@ -103,16 +103,15 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .content {
-    height: 35em;
+    height: 45em;
     width: 100%;
-    margin-bottom: 0;
-    font-size: 15px;
-    padding-bottom: 50px;
+   //margin-bottom: 0;
+    font-size:calc(100vw * 16 / 375);
+   // padding-bottom: 1em;
   }
 
   .title {
-    font-size: 32px;
-    margin: 0.8em 0 0.5em 0;
+    margin: 0.3em 0;
   }
 
   .item {
@@ -120,7 +119,7 @@ export default {
     margin: 0;
     width: 100%;
     height: auto;
-    margin-left: 20px;
+    margin-left:1.3em;
     white-space: normal;
   }
 

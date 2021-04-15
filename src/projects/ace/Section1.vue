@@ -179,7 +179,8 @@
   }
 
   .title {
-    @include img_l_m(166, 336, 94);
+    @include img_c_m(166, 336);
+    width: 100%;
     top:calc(50% + ((336 - 302) * 0.266666vw));
     font-size: sizem(23);
     font-weight: 900;

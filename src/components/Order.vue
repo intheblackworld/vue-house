@@ -1,4 +1,5 @@
 <template>
+  <div>
   <div class="order-bg">
     <!-- <img src="@/projects/fs/order/bg.png" alt="" class="bg-img"> -->
     <!-- <img src="@/projects/fs/order/bg1.png" alt="" class="bg-img no-mix"> -->
@@ -9,89 +10,50 @@
         <h3 class="title">{{order.title}}</h3>
         <div class="subtitle">{{order.subTitle}}</div>
       </div> -->
-      <div class="order-title" v-html="order.title" data-aos="fade-down" data-aos-delay="0"></div>
-      <div class="order-subtitle" v-html="order.subTitle"></div>
+      <div class="order-title_text">
+      <div class="order-title" v-html="order.title" v-if="order.title"></div>
+      <div class="order-subtitle" v-html="order.subTitle" v-if="order.subTitle"></div>
+      </div>
       <div class="order">
         <div class="form">
           <div class="group">
-            <div class="row" data-aos="fade-down" data-aos-delay="100">
+            <div class="row">
               <label>姓名</label>
               <el-input v-model="form.name" placeholder></el-input>
             </div>
-            <div class="row" data-aos="fade-down" data-aos-delay="200">
+            <div class="row">
               <label>手機</label>
               <el-input v-model="form.phone" placeholder></el-input>
             </div>
-            <!-- <div class="row" data-aos="fade-down"
-        data-aos-delay="300">
-              <label>聯絡時間(起)</label>
-              <el-time-select
-                v-model="form.time_start"
-                :editable="false"
-                :picker-options="{
-                  start: '10:00',
-                  step: '01:00',
-                  end: '18:00',
-                }"
-              ></el-time-select>
-            </div>
-            <div class="row" data-aos="fade-down"
-        data-aos-delay="400">
-              <label>聯絡時間(迄)</label>
-              <el-time-select
-                v-model="form.time_end"
-                :editable="false"
-                :picker-options="{
-                  start: '10:00',
-                  step: '01:00',
-                  end: '18:00',
-                }"
-              ></el-time-select>
-            </div> -->
-            <!-- <div class="row">
-              <label>想看房型</label>
-              <el-select v-model="form.house" placeholder>
-                <el-option
-                  v-for="city in ['甜蜜2房', '幸福3房', '都想看看']"
-                  :key="city"
-                  :label="city"
-                  :value="city"
-                  no-data-text=""
-                ></el-option>
-              </el-select>
-            </div> -->
-            <!-- <div class="row">
-              <label>E-mail</label>
-              <el-input v-model="form.email" placeholder></el-input>
-            </div> -->
-            <div class="row" data-aos="fade-down" data-aos-delay="300">
+            <div class="row">
               <label>居住城市</label>
               <el-select v-model="form.city" placeholder>
                 <el-option v-for="city in cityList" :key="city.value" :label="city.label" :value="city.value" no-data-text="無數據"></el-option>
               </el-select>
             </div>
-            <div class="row" data-aos="fade-down" data-aos-delay="400">
+            <div class="row">
               <label>居住地區</label>
               <el-select v-model="form.area" placeholder>
                 <el-option v-for="area in areaList" :key="area.value" :label="area.label" :value="area.value" no-data-text="請先選擇居住城市"></el-option>
               </el-select>
             </div>
           </div>
-          <div class="group" data-aos="fade-down" data-aos-delay="600">
+          <div class="group">
             <div class="row">
               <el-input type="textarea" :rows="2" placeholder="請輸入您的留言 (選填)" v-model="form.msg"></el-input>
             </div>
           </div>
         </div>
-        <div class="control" data-aos="fade-down" data-aos-delay="500">
-          <el-checkbox v-model="checked">
+        <div class="control">
+          <el-checkbox v-model="checked" checked>
             <h3>
-              本人知悉並同意
+              本人知悉並同意<br v-if="isMobile">
               <span @click="showPolicyDialog">「個資告知事項聲明」</span>
               內容
             </h3>
           </el-checkbox>
         </div>
+        <!--
         <div style="margin: 0 auto;z-index:2;" v-if="!isMobile" data-aos="fade-down" data-aos-delay="600">
           <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
         </div>
@@ -99,11 +61,14 @@
           <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
         </div>
         <el-button class="form-submit flex-c" type="primary" :disabled="!checked || !isVerify" @click="submit" :loading="isSubmit">立即預約</el-button>
+        -->
+        <el-button class="form-submit flex-c" type="primary" @click="submit" :loading="isSubmit">立即預約</el-button>
         <Loading :loading="isSubmit" :isOpacity="true" />
       </div>
     </div>
     <ContactInfo />
     <GoogleMap />
+  </div>
     <PolicyDialog :policyVisible="policyVisible" />
   </div>
 </template>
@@ -127,7 +92,6 @@ export default {
     Loading,
     VueRecaptcha,
   },
-
   data() {
     return {
       cityList,
@@ -170,7 +134,7 @@ export default {
         message: h(
           'i',
           { style: 'color: #82191d' },
-          '「姓名、手機」是必填欄位',
+          '「姓名、手機，並勾選個資法聲明」',
         ),
       })
     },
@@ -296,7 +260,7 @@ export default {
 
   .order-tt {position: relative;
     width: size(1440);
-    height: size(400);
+    height: size(350);
     margin: 0 auto size(-300);
     top: size(-300);
     background: rgba(0, 0, 0, 0.8);
@@ -308,26 +272,25 @@ export default {
     position: relative;
     overflow: hidden;
   }
+  .order-title_text{
+    font-size: calc(100vw * 16 / 1920);
+    text-align: center;
+    line-height: 1.6;
+    padding: 1em 0;
+  }
   .order-title {
     font-family: $family2;
     width: 100%;
-    padding-top: 20px;
-    padding-bottom: 8px;
     font-weight: 900;
-    line-height: 1.3;
-    letter-spacing: 20px;
-    font-size: calc(100vw * 40 / 1920);
-    text-align: center;
+    letter-spacing: 0.5em;
     color: $order_title_color;
+    font-size: 2.1em;
   }
 
   .order-subtitle {
-    width: 100vw;
-    font-size: 20px;
-    text-align: center;
+    width: 100%;
+    font-size:1em;
     color: $order_subtitle_color;
-    margin-bottom: 40px;
-    padding-bottom: 18px;
   }
 
   .order {
@@ -401,13 +364,13 @@ export default {
 
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /*
   .order-title {
-    font-size: 32px;
   }
 
   .order-subtitle {
-    font-size: 16px;
   }
+  */
 
   .order {
     width: 920px;
@@ -433,7 +396,8 @@ export default {
 
     .order-tt {
       width: 100%;
-      height: sizem(50);top: 0;
+      height: sizem(20);
+      top: 0;
       margin: 0 auto;
       background: rgba(0, 0, 0, 0.8);
     }
@@ -444,16 +408,10 @@ export default {
       position: relative;
       overflow: hidden;
     }
-    .order-title {
-      padding-top: 10px;
-      padding-bottom: 5px;
-      font-size: calc(100vw * 25 / 375);
-      letter-spacing: 4px;
+    .order-title_text{
+      font-size: calc(100vw * 16 / 375);
     }
-
-    .order-subtitle {
-      // display: none;
-      font-size: 21px;
+    .order-title {
     }
     .order {
       width: 95% !important;

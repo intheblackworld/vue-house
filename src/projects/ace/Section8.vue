@@ -3,6 +3,7 @@
     <img src="./s8/bg.png" :alt="`${info.caseName}_bgimg`" class="bg-img" v-if="isPC">
     <!-- <img src="./mo/b.png" :alt="`${info.caseName}_bgimg`" class="bg" v-if="isMobile"> -->
     <div class="bg" v-if="isMobile"></div>
+    <div class="txt">
     <div class="title" data-aos="fade-down" data-aos-delay="100">
       公設王牌
     </div>
@@ -15,6 +16,7 @@
       <li data-aos="fade-down" data-aos-delay="500">雲頂層峰視野．凌空百米俯覽城市</li>
       <li data-aos="fade-down" data-aos-delay="600">飯店式管理．盡享大牌隱私尊榮</li>
     </ul>
+    </div>
     <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
@@ -31,7 +33,6 @@
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
       </div>
-    </div>
     <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
       <div class="prev-btn flex-c">
         <img src="./all/prev-btn.png" alt="" @click="decIndex">
@@ -39,6 +40,7 @@
       <div class="next-btn flex-c">
         <img src="./all/next-btn.png" alt="" @click="addIndex">
       </div>
+    </div>
     </div>
   </div>
 </template>
@@ -70,48 +72,41 @@
   }
 }
 
-.title {
-  @include img_l_pc(180, 334, 118);
+.txt{
+  @include img_l_pc(501, 334, 118);
   top: calc(50% - 10.729vw);
-  font-size: size(45);
+  font-size: size(30);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.36;
   letter-spacing: normal;
-  text-align: left;
+  text-align: justify;
+  line-height: 1.4;
+}
+.title {
+  font-size:1.5em;
   color: #285065;
   white-space: nowrap;
 }
 
 .subtitle {
-  @include img_l_pc(384, 417, 118);
-  top: calc(50% + ((417 - 540) * 0.0520833333333333vw));
-  font-size: size(48);
+  font-size:1.6em;
   font-weight: 900;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.3;
-  letter-spacing: normal;
-  text-align: left;
   color: #685335;
-  white-space: nowrap;
+  margin: 0.1em 0 0.33em 0;
 }
-
 .desc {
-  @include img_l_pc(501, 487, 118);
-  top: calc(50% + ((487 - 540) * 0.0520833333333333vw));
-  font-size: size(30);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2;
-  letter-spacing: normal;
-  text-align: left;
+  font-size:0.9em;
+  line-height: 1.5;
   color: #284e62;
-  white-space: nowrap;
-  li::before{content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 9' fill='%23c7a578'%3E%3Crect x='0' y='0' width='5' height='5' transform='translate(4 0) rotate(45)'/%3E%3C/svg%3E");
-    width: 0.7em;height: 0.7em;display: inline-block;margin: 0 0.3em 0 0;
+  padding-bottom:1em;
+  li{position: relative;
+  padding:0.32em 0 0.32em 1em;}
+  li::before{
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 9' fill='%23c7a578'%3E%3Crect x='0' y='0' width='5' height='5' transform='translate(4 0) rotate(45)'/%3E%3C/svg%3E");
+    width: 0.7em;height: 0.7em;
+    display: inline-block;
+    margin: 0 0.3em 0 -1em;position: relative
   }
 }
 
@@ -298,8 +293,9 @@
 @media screen and (max-width: 767px) {
   .section8 {
     width: 100vw;
-    height: sizem(529);
-    min-height: sizem(529);
+    height:auto;
+    min-height: sizem(0);
+    max-height: sizem(2000);
   }
   .bg {
     @include img_r_m(375, 0, 0);
@@ -307,6 +303,16 @@
     background: #fff;
     height: 100%;
   }
+  
+.txt{
+  position: relative;
+  width:  sizem(310);
+  font-size: sizem(15);
+  top: auto;
+  left: auto;
+  margin: auto;
+}
+/* 
   .title {
     @include img_l_m(104, 60, 40);
     font-size: sizem(24);
@@ -337,16 +343,22 @@
     @include div_l_m(310, 27, 155, 40);
     font-size: sizem(16);
     // background-color: #685335;
+  } */
+  .desc {
+    font-size: 1.06em;
+    padding-bottom: 1.8em;
   }
 
   /* Swipe */
   .swipe {
+    position: relative;
   width: sizem(345);
   height: sizem(196);
     // min-height: sizem(750);
-    top: sizem(309);
+    top: sizem(0);
     left: calc(50% - 46vw);
     object-fit: cover;
+    margin-bottom: sizem(30);
   }
 
   // begin
@@ -490,7 +502,8 @@
     padding: 0px;
     z-index: 1;
     position: absolute;
-    top: sizem(395);
+    top:50%;
+    transform: translateY(-50%);
 
     .prev-btn,
     .next-btn {

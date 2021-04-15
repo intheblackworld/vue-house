@@ -4,8 +4,8 @@
     <!--<img src="./mo/b.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isMobile"> -->
     <div class="bg" v-if="isMobile"></div>
     <img src="./s3/img_r.png" :alt="`${info.caseName}_img_r`" class="img_r" data-aos="fade-down" data-aos-delay="100" @click="showDialog">
-    <img src="./s3/img_l.jpg" :alt="`${info.caseName}_img_l`" class="img_l" data-aos="fade-down" data-aos-delay="400">
     <div class="icon" @click="showDialog"></div>
+    <div class="txt">
     <div class="title" data-aos="fade-down" data-aos-delay="100">
       地段王牌
     </div>
@@ -14,6 +14,8 @@
     </h1>
     <div class="desc flex-c" data-aos="fade-down" data-aos-delay="300">
       富貴線正中心 一高二捷三快五商圈六大橋
+    </div>
+    <img src="./s3/img_l.jpg" :alt="`${info.caseName}_img_l`" class="img_l" data-aos="fade-down" data-aos-delay="400">
     </div>
     <transition name="swipe-fade" mode="out-in">
       <div class="dialog" v-if="isDialog">
@@ -48,50 +50,43 @@
 }
 
 .img_l {
-  @include img_l_pc(518, 461, 243);
-  top: calc(50% - 0.5vw);
+  width: size(518);
+  margin: 0.8em auto 0 0;
+  float:right;
 }
 
-.title {
-  @include img_l_pc(518, 239, 186);
-  font-size: size(45);
+.txt{
+  @include img_l_pc(580, 239, 186);
   top: calc(50% - 12.5vw);
+  font-size: size(30);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.36;
   letter-spacing: normal;
-  text-align: left;
+  text-align: justify;
+  line-height: 1.4;
+}
+.title {
+  font-size:1.5em;
   color: #285065;
   white-space: nowrap;
 }
 
 .subtitle {
-  @include img_l_pc(518, 295, 186);
-  top: calc(50% - 9vw);
-  font-size: size(48);
+  font-size:1.6em;
   font-weight: 900;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2.22;
-  letter-spacing: normal;
-  text-align: left;
   color: #685335;
-  white-space: nowrap;
+  margin: 0.1em 0 0.33em 0;
 }
 
 .desc {
-  @include div_l_pc(574, 43, 392, 187);
-  top: calc(50% - 4vw);
-  font-size: size(30);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2.08;
-  letter-spacing: size(-1.2);
-  text-align: left;
+  font-size:1em;
+  letter-spacing:-0.04em;
   color: #ffffff;
   background-color: #685335;
+  line-height: 1.5;
+  padding: 0.2em 0.7em;
+
 }
 
 @media only screen and (max-width: 1440px) {
@@ -110,8 +105,8 @@
 @media screen and (max-width: 767px) {
   .section3 {
     width: 100vw;
-    height: sizem(674);
-    min-height: sizem(674);
+    height:auto;
+    min-height: sizem(600);
     max-height: sizem(900);
     overflow-x: scroll;
   }
@@ -125,10 +120,14 @@
 
   .img_r {
     @include img_r_m(375, 20, 0);
+    position: relative;
+    margin: 0 0  sizem(-50) 0;
   }
 
   .img_l {
-    @include img_l_m(310, 447, 33);
+    width: 100%;
+    //@include img_l_m(310, 447, 33);
+  margin-bottom: sizem(30);
   }
   .icon {
     @include img_r_m(45, 180, 165);
@@ -153,44 +152,12 @@
       transform: translateY(-50%) rotate(90deg);
     }
   }
-  .title {
-    @include img_l_m(96, 328, 33);
-    font-size: sizem(24);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.33;
-    letter-spacing: normal;
-    text-align: left;
-    color: #285065;
-    white-space: nowrap;
-  }
-
-  .subtitle {
-    @include img_l_m(300, 362, 34);
-    font-size: sizem(25);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.2;
-    letter-spacing: normal;
-    text-align: left;
-    color: #685335;
-    white-space: nowrap;
-  }
-
-  .desc {
-    @include div_l_m(309, 27, 409, 34);
-    font-size: sizem(15);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.07;
-    letter-spacing: sizem(0.3);
-    text-align: center;
-    color: #ffffff;
-    background-color: #685335;
-  }
+  
+.txt{
+  position: relative;
+  width:  sizem(310);
+  font-size: sizem(15);
+}
 
   .dialog {
     position: fixed;

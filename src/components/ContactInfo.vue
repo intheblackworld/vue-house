@@ -8,15 +8,11 @@
         class="logo"
         src="@/assets/img/contact-logo.png"
         :alt="info.caseName"
-        data-aos="fade-down"
-        data-aos-delay="0"
       />
       <div class="info">
         <div
           class="btn flex-c"
           @click="showCallDialog"
-          data-aos="fade-down"
-          data-aos-delay="100"
         >
           <span class="flex-c">
             <font-awesome-icon icon="phone" />
@@ -26,8 +22,6 @@
         <div
           class="btn flex-c"
           @click="showMessengerDialog"
-          data-aos="fade-down"
-          data-aos-delay="200"
         >
           <span class="flex-c">
             <font-awesome-icon :icon="['fab', 'facebook-messenger']" /><span>FB 諮詢</span>
@@ -37,8 +31,6 @@
           class="btn flex-c"
           :href="info.fbLink"
           target="_blank"
-          data-aos="fade-down"
-          data-aos-delay="300"
         >
           <span class="flex-c">
             <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
@@ -46,13 +38,9 @@
         </a>
         <div
           class="address flex-c"
-          data-aos="fade-down"
-          data-aos-delay="400"
         >{{info.address}}</div>
         <div
           class="google-btn flex-c"
-          data-aos="fade-down"
-          data-aos-delay="400"
           @click="showMapDialog"
         >
           <span class="flex-c">

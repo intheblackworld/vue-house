@@ -4,7 +4,7 @@
     <!-- <img src="./mo/b.png" :alt="`${info.caseName}_bgimg`" class="bg" v-if="isMobile"> -->
     <div class="bg" v-if="isMobile"></div>
     <img src="./s6/img.jpg" :alt="`${info.caseName}_img`" class="img">
-    <img src="./s6/logoall.png" :alt="`${info.caseName}_logoall`" class="logoall" data-aos="fade-down" data-aos-delay="800">
+    <div class="txt">
     <div class="title" data-aos="fade-down" data-aos-delay="100">
       結構王牌
     </div>
@@ -18,6 +18,8 @@
       <li data-aos="fade-down" data-aos-delay="600">業界領導品牌加持 101同級萬磅混凝土</li>
       <li data-aos="fade-down" data-aos-delay="700">地基深扎岩盤 達到最佳耐震力</li>
     </ul>
+    <img src="./s6/logoall.png" :alt="`${info.caseName}_logoall`" class="logoall" data-aos="fade-down" data-aos-delay="800">
+    </div>
   </div>
 </template>
 
@@ -25,7 +27,7 @@
 @import '@/assets/style/function.scss';
 
 .section6 {
-  width: size(1920);
+  width: 100%;
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);
@@ -35,60 +37,49 @@
 }
 
 .bg-img {
-  width: size(1920);
-  height: 100%;
+  width: 100%;
+  height: 101%;
   position: absolute;
   top: 0;
   left: 0;
-  display: block;
-  left:50%;transform: translateX(-50%)
+  object-fit: initial;
 }
 
-.title {
-  @include img_l_pc(180, 168, 679);
+.txt{
+  @include img_l_pc(540, 168, 679);
   left: calc(50% + 5vw);
   top: calc(50% - 19vw);
-  font-size: size(45);
+  font-size: size(30);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.36;
   letter-spacing: normal;
-  text-align: left;
+  text-align: justify;
+  line-height: 1.4;
+}
+.title {
+  font-size:1.5em;
   color: #285065;
   white-space: nowrap;
 }
-
 .subtitle {
-  @include img_l_pc(390, 245, 469);
-  left: calc(50% + 5vw);
-  top: calc(50% - 14vw);
-  font-size: size(48);
+  font-size:1.6em;
   font-weight: 900;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.3;
-  letter-spacing: normal;
-  text-align: left;
   color: #685335;
-  white-space: nowrap;
+  margin: 0.1em 0 0.33em 0;
 }
-
 .desc {
-  @include img_l_pc(538, 400, 0);
-  left: calc(50% + 5vw);
-  width: auto;
-  top: calc(50% - 6.5vw);
-  font-size: size(27);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2.15;
-  letter-spacing: normal;
-  text-align: left;
+  font-size:0.9em;
+  line-height: 1.5;
   color: #284e62;
-  li::before{content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 9' fill='%23c7a578'%3E%3Crect x='0' y='0' width='5' height='5' transform='translate(4 0) rotate(45)'/%3E%3C/svg%3E");
-    width: 0.7em;height: 0.7em;display: inline-block;margin: 0 0.3em 0 0;
+  padding-bottom:1em;
+  li{position: relative;
+  padding:0.32em 0 0.32em 1em;}
+  li::before{
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 9' fill='%23c7a578'%3E%3Crect x='0' y='0' width='5' height='5' transform='translate(4 0) rotate(45)'/%3E%3C/svg%3E");
+    width: 0.7em;height: 0.7em;
+    display: inline-block;
+    margin: 0 0.3em 0 -1em;position: relative
   }
 
 }
@@ -104,9 +95,10 @@
 }
 
 .logoall {
-  @include img_l_pc(384, 743, 478);
+  width: size(384);
+  /* @include img_l_pc(384, 743, 478);
   left: calc(50% + 5vw);
-  top: calc(50% + 11vw);
+  top: calc(50% + 11vw);*/
 }
 
 @media only screen and (max-width: 1440px) {
@@ -125,9 +117,9 @@
 @media screen and (max-width: 767px) {
   .section6 {
     width: 100vw;
-    height: sizem(990);
+    height:auto;
     min-height: sizem(990);
-    max-height: sizem(990);
+    max-height: sizem(2000);
   }
 /*
   .bg {
@@ -143,53 +135,31 @@
     height: 100%;
   }
 
-  .title {
-    @include img_l_m(96, 515, 33);
-    font-size: sizem(24);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.33;
-    letter-spacing: normal;
-    text-align: left;
-    color: #285065;
-    white-space: nowrap;
-  }
-
-  .subtitle {
-    @include img_l_m(252, 567, 33);
-    font-size: sizem(25);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.3;
-    letter-spacing: normal;
-    text-align: left;
-    color: #685335;
-    white-space: nowrap;
-  }
+.txt{
+  position: relative;
+  width:  sizem(310);
+  font-size: sizem(15);
+  top: auto;
+  left: auto;
+  margin: auto;
+}
 
   .desc {
-    @include div_l_m(310, 27, 650, 25);
-    font-size: sizem(16);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.07;
-    letter-spacing: sizem(0.3);
-    text-align: left;
-    color: #284e62;
-    // background-color: #685335;
+    font-size: 1.06em;
+    padding-bottom: 1.8em;
   }
 
   .img {
-    @include img_l_m(310, 35, 28);
+    @include img_c_m(310, 0);
+    position: relative;
+    margin:  sizem(35) 0 sizem(30) 0;
   height:auto;
   max-height: sizem(2000);
   }
 
   .logoall {
-    @include img_r_m(310, 850, 32);
+    width:sizem(310);
+    padding-bottom: 1.8em;
   }
 }
 </style>

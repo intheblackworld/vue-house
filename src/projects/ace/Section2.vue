@@ -337,7 +337,7 @@
 
   /* Swipe */
   .swipe {
-    width: sizem(250);
+    width: 100%;
     height: sizem(330);
     // min-height: sizem(750);
     top:calc(50% + ((190 - 302) * 0.266666vw));

@@ -16,7 +16,7 @@
 @import '@/assets/style/function.scss';
 
 .section7 {
-  width: size(1920);
+  width: 100%;
   height:100vh;
   min-height: size(900);
   max-height: size(1080);
@@ -26,13 +26,13 @@
 }
 
 .bg-img {
-  width: size(1920);
+  width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   display: block;
-  object-fit: cover;
+  object-fit: initial;
 
   &:nth-child(1) {
     position: relative;
