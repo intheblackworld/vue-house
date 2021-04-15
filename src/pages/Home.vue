@@ -66,14 +66,14 @@
     >-->
       <Section10 />
     </vue-lazy-component>
-    <div
+    <vue-lazy-component
       class="section relative"
       id="section10"
     >
       <Section12 :viewIndex="viewIndex" />
-    </div>
+    </vue-lazy-component>
     <vue-lazy-component
-      class="section"
+      class="section relative"
       id="section11"
     >
       <Section11 />
