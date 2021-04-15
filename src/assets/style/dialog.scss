@@ -1,54 +1,56 @@
 @import './variableColor.scss';
 
 .el-dialog{
+  font-size:calc(100vw * 18 / 1920);
 }
 .el-dialog__title {
-  font-size: 32px !important;
+  font-size:2em !important;
   line-height:2 !important;
 }
+.el-dialog__body{
+  font-size:1em !important;
+}
 .policy-dialog-content {
-  width: 980px;
+  width:61.25em;
+  min-width: 980px;
   margin: 0 auto;
   background: #fff;
   padding: 40px;
+  text-align: justify;
   //overflow-y: scroll;
   .title {
-    font-size: 24px;
+    font-size: 1.5em;
     font-family: 'Noto Sans TC', serif;
     font-weight: bold;
     color: rgba(0, 0, 0, 0.8);
-    line-height: 1.5;
-    margin-bottom: 20px;
+    line-height: 1.6;
+    margin-bottom:0.83em;
     text-align: center;
   }
 
   .subtitle {
-    font-size: 16px;
+    font-size:1em;
     font-family: 'Noto Sans TC', serif;
     color: rgba(0, 0, 0, 0.6);
-    line-height: 1.5;
-    text-align: left;
+    line-height: 1.6;
   }
 
   h3 {
     color: rgb(47, 171, 209);
-    font-size: 24px;
-    line-height: 1.8;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    text-align: left;
+    font-size: 1.5em;
+    line-height: 1.6;
+    margin-top: 1.25em;
+    margin-bottom:0.62em;
   }
 
   p {
-    font-size: 16px;
-    line-height: 1.5;
-    text-align: left;
+    font-size: 1em;
+    line-height: 1.6;
   }
 
   li {
-    margin-bottom: 15px;
-    line-height: 1.5;
-    text-align: left;
+    margin-bottom:0.937em;
+    line-height: 1.6;
   }
 }
 
@@ -58,17 +60,22 @@
 
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
+ .el-dialog{
+    font-size:calc(100vw * 20 / 375);
+}
   .policy-dialog-content {
+    min-width: 100%;
     width: 100% !important;
     height: 80% !important;
-    padding: 20px !important;
+    padding:0 !important;
+    margin: auto;
   }
 }
 
 
 .dialog-content {
   width: auto;
-  height: 295px;
+  height:19em;
   //border-radius: 5px;
   //margin: -30px 0;
   background-color: $mobile_dialog_bg;
