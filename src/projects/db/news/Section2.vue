@@ -2,9 +2,9 @@
   <div class="section2">
     <div class="news-container">
       <ol class="breadcrumb">
-<li class="bc_li" @click="$router.push('/#section5')">首頁</li>
-<li class="bc_li" @click="$router.push('/news/#top')">新聞列表</li>
-</ol>
+        <li class="bc_li" @click="$router.push('/#section5')">首頁</li>
+        <li class="bc_li" @click="$router.push('/news/#top')">新聞列表</li>
+      </ol>
       <div class="news-title">{{currentItem.title}}</div>
       <div class="news-subtitle">
         {{currentItem.subtitle}}
@@ -36,13 +36,13 @@
         <a class="pagi" target="_blank" v-for="(link, index) in currentItem.links" :key="'pagi' + index" :href="link.url">{{link.title}}</a>
       </div>
       <div class="navigation">
-<span class="pn">
-<span class="back" @click="$router.push('/news/#top')">
-        回新聞列表</span>
-<span class="pnprev" @click="$router.push(`/news/${currentNum - 1}?type=${currentItem.type}`)" aria-label="上一頁"></span>
-<span class="pnnext" @click="$router.push(`/news/${currentNum + 1}?type=${currentItem.type}`)" aria-label="下一頁"></span>
-</span>
-</div>
+        <span class="pn">
+          <span class="back" @click="$router.push('/news/#top')">
+            回新聞列表</span>
+          <span class="pnprev" @click="$router.push(`/news/${currentNum === 0 ? item_list.length - 1 : currentNum - 1}?type=${currentItem.type}`)" aria-label="上一頁"></span>
+          <span class="pnnext" @click="$router.push(`/news/${currentNum === item_list.length -  1 ? 0 : currentNum + 1}?type=${currentItem.type}`)" aria-label="下一頁"></span>
+        </span>
+      </div>
     </div>
   </div>
 </template>
@@ -122,7 +122,6 @@
   color: #666666;
   margin-bottom: size(15);
 }
-
 
 .swipe {
   width: size(1280);
@@ -295,38 +294,97 @@
     }
   }
 }
-.breadcrumb{font-size:size(18);display:block; padding:0.9em 0.3em 1em 0.3em;
-text-align: left;
-&::after{content:" "; display:block; clear:both;}
-li{display:inline-block;font-weight:normal;color: #555;white-space:nowrap;
-&::before{content:">"; display: inline-block; margin: 0 0.3em}
-&:first-child:before{display:none}
-&:hover{text-decoration: underline}
-&:hover:before{ text-decoration: none;}
-}
-}
-
-.pn{font-size:size(18);background: #08A;
-text-align: center;display: flex;padding:0;color:#FFF;margin:3em 0 0.5em 0;
-line-height: 1.7;
-> *{color:#FFF;transition:all 0.2s;padding:6px 0 7px 0;}
-span{flex: 1;
-&:hover{background:#666;display:inline;transition:all 0.2s;}
-}
-.pnnext::after,
-.pnprev::before,
-.pnmore::before{
-  content:"";display: inline-block;width: 0.5em;height: 0.5em;border: 2px solid currentColor;border-width:2px 2px 0 0;margin:0 0.5em 1px 0.5em;
+.breadcrumb {
+  font-size: size(18);
+  display: block;
+  padding: 0.9em 0.3em 1em 0.3em;
+  text-align: left;
+  &::after {
+    content: ' ';
+    display: block;
+    clear: both;
   }
-.pnnext::after{transform: rotate(45deg)}
-.pnprev::before{transform: rotate(-135deg)}
-.pnmore::before{transform: rotate(135deg);margin:0 0.5em 3px 0.5em;}
-.back{width: 6em; order:2;display: inline-block;text-align: center;
-  cursor: pointer;}
-.back ~ .pnnext{text-align:left;order:3;}
-.back ~ .pnprev{text-align:right;order:1;}
+  li {
+    display: inline-block;
+    font-weight: normal;
+    color: #555;
+    white-space: nowrap;
+    &::before {
+      content: '>';
+      display: inline-block;
+      margin: 0 0.3em;
+    }
+    &:first-child:before {
+      display: none;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+    &:hover:before {
+      text-decoration: none;
+    }
+  }
 }
 
+.pn {
+  font-size: size(18);
+  background: #08a;
+  text-align: center;
+  display: flex;
+  padding: 0;
+  color: #fff;
+  margin: 3em 0 0.5em 0;
+  line-height: 1.7;
+  > * {
+    color: #fff;
+    transition: all 0.2s;
+    padding: 6px 0 7px 0;
+  }
+  span {
+    flex: 1;
+    &:hover {
+      background: #666;
+      display: inline;
+      transition: all 0.2s;
+    }
+  }
+  .pnnext::after,
+  .pnprev::before,
+  .pnmore::before {
+    content: '';
+    display: inline-block;
+    width: 0.5em;
+    height: 0.5em;
+    border: 2px solid currentColor;
+    border-width: 2px 2px 0 0;
+    margin: 0 0.5em 1px 0.5em;
+  }
+  .pnnext::after {
+    transform: rotate(45deg);
+  }
+  .pnprev::before {
+    transform: rotate(-135deg);
+  }
+  .pnmore::before {
+    transform: rotate(135deg);
+    margin: 0 0.5em 3px 0.5em;
+  }
+  .back {
+    width: 6em;
+    order: 2;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+  }
+  .back ~ .pnnext {
+    text-align: left;
+    order: 3;
+  }
+  .back ~ .pnprev {
+    text-align: right;
+    order: 1;
+  }
+}
 
 @media only screen and (max-width: 1440px) {
 }
@@ -610,10 +668,14 @@ span{flex: 1;
       cursor: pointer;
     }
   }
-  
-  .breadcrumb{font-size:sizem(13);}
-  .pn{font-size:sizem(15);
-line-height: 2.3;}
+
+  .breadcrumb {
+    font-size: sizem(13);
+  }
+  .pn {
+    font-size: sizem(15);
+    line-height: 2.3;
+  }
 }
 </style>
 <script>
@@ -676,7 +738,8 @@ export default {
             {
               title: '原文',
               id: '1',
-              url: 'https://tw.appledaily.com/headline/20210408/2LXPLTA5ERDOJMAJVBXDTUWA24/',
+              url:
+                'https://tw.appledaily.com/headline/20210408/2LXPLTA5ERDOJMAJVBXDTUWA24/',
             },
             {
               title: '自慢藏',
@@ -687,7 +750,8 @@ export default {
         },
         {
           type: 2,
-          title: '【中時新聞網】沅利建設攜手日本國土開發營造商 打造水岸宅「自慢藏」 4月初正式公開',
+          title:
+            '【中時新聞網】沅利建設攜手日本國土開發營造商 打造水岸宅「自慢藏」 4月初正式公開',
           subtitle: '',
           date: '11:25 2021/03/30',
           author: '中時新聞網 房產網 葉思含',
@@ -885,22 +949,27 @@ export default {
         require('../newimg/8/中時3.jpg'),
         require('../newimg/8/中時4.jpg'),
       ],
-      pageCount: 3,
-      currentPage: 1,
       currentItem: {},
     }
   },
 
   methods: {},
 
-  mounted() {
-    this.slideList = this.item_list[this.$route.params.id].imgs    
+  mounted() {},
+
+  created() {
+    this.slideList = this.item_list[this.$route.params.id].imgs
     this.currentItem = this.item_list[this.$route.params.id]
     this.currentNum = Number(this.$route.params.id)
   },
 
-  created() {},
-
   computed: {},
+
+  watch: {
+    $route() {
+      this.currentItem = this.item_list[this.$route.params.id]
+      this.currentNum = Number(this.$route.params.id)
+    },
+  },
 }
 </script>
