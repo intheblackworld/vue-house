@@ -497,12 +497,12 @@ export default {
           title: '品味交誼小學堂',
           desc: '中島吧規劃，廚藝、手作、家教、聚會皆適宜。',
         },
-        {
-          img: require('./s7/07_slider_2.jpg'),
-          name: '公設3D示意圖',
-          title: '星光影音娛樂廳',
-          desc: '親朋相約K歌歡唱看電影，慶生辦趴一起嗨。',
-        },
+        //{
+        //  img: require('./s7/07_slider_2.jpg'),
+        //  name: '公設3D示意圖',
+        //  title: '星光影音娛樂廳',
+        //  desc: '親朋相約K歌歡唱看電影，慶生辦趴一起嗨。',
+        //},
         {
           img: require('./s7/07_slider_3.jpg'),
           name: '公設3D示意圖',

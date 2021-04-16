@@ -110,18 +110,24 @@
 
 .name1 {
   @include img_r_pc(70, 465, 454);
+  top: calc(50% + 100vw * (480 - 1080 * .5) / 1920);
 }
 
 .name2 {
   @include img_r_pc(140, 465, 100);
+   top: calc(50% + 100vw * (480 - 1080 * .5) / 1920);
 }
 
 .name3 {
   @include img_r_pc(70, 970, 960);
+   top: auto;
+   bottom:3%;
 }
 
 .name4 {
   @include img_r_pc(185, 970, 100);
+   top: auto;
+   bottom:3%;
 }
 
 .child1 {
