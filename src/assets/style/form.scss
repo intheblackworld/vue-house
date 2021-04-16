@@ -60,9 +60,10 @@
 .el-checkbox__input{
   position: absolute !important;
   font-size:calc(100vw * 20 / 1920);
-  top:0.8em;
+  // top:0.8em;
   left: 0;
-  transform: translate(-100% ,-50%);}
+  transform: translate(50% ,-50%);
+}
 .el-checkbox__label {
   p, h3 {
     font-size:calc(100vw * 20 / 1920);
@@ -74,6 +75,7 @@
   span {
     color: $order_check_span_color;
     text-decoration: underline;
+    cursor: pointer;
   }
 }
 
