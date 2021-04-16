@@ -31,6 +31,7 @@
       <vue-lazy-component class="section" id="section8">
         <Section8 />
       </vue-lazy-component>
+      
     </full-page>
     <!-- <vue-lazy-component
       class="section relative"
