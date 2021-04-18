@@ -12,7 +12,7 @@
       <div class="order-subtitle" data-aos="fade-down" data-aos-delay="100" v-html="order.subTitle"></div>
       <div class="order">
         <div class="form">
-          <div class="group">
+          <div class="group" data-aos="fade-down" data-aos-delay="0">
             <div class="row" data-aos="fade-down" data-aos-delay="100">
               <label>姓名</label>
               <el-input v-model="form.name" placeholder></el-input>
@@ -47,7 +47,7 @@
                 }"
               ></el-time-select>
             </div> -->
-            <div class="row">
+            <div class="row" data-aos="fade-down" data-aos-delay="200">
               <label>需求坪數</label>
               <el-select v-model="form.house" placeholder>
                 <el-option v-for="city in ['22坪', '30坪', '42坪', '53坪']" :key="city" :label="city" :value="city" no-data-text=""></el-option>
