@@ -260,6 +260,18 @@ export default {
       })
     },
 
+    alertValidatePhone() {
+      const h = this.$createElement
+      this.$notify({
+        title: '手機長度不對',
+        message: h(
+          'i',
+          { style: 'color: #82191d' },
+          '手機請填寫10位數',
+        ),
+      })
+    },
+
     submit() {
       if (this.isSubmit) return
       if (!this.isVerify) return
@@ -277,6 +289,11 @@ export default {
         // !this.form.area
       ) {
         this.alertValidate()
+        this.isSubmit = false
+        return
+      }
+      if (this.form.phone.length !== 10) {
+        this.alertValidatePhone()
         this.isSubmit = false
         return
       }
