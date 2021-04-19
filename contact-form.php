@@ -271,7 +271,7 @@ if ($bCheck == true) { //if start
         $url .= "&email=" . $user_email;
         $url .= "&city=" . $city;
         $url .= "&area=" . $area;
-        $url .= "&message=" . $msg;
+        $url .= "&message="."需求坪數：".$house.";留言：".$msg;
         $url .= "&utm_source=" . $utm_source;
         $url .= "&utm_medium=" . $utm_medium;
         $url .= "&utm_content=" . $utm_content;

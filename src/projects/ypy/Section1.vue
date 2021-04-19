@@ -311,24 +311,29 @@
 
   .t1 {
     @include img_c_m(351, 323);
+    top: calc(50% + -11vw);
   }
 
   .t2 {
     @include img_c_m(174, 372);
+    top: calc(50% + 3vw);
   }
 
   .hr1 {
     @include img_l_m(78, 385, 12.5);
     border-top: 2px solid #fff;
+    top: calc(50% + 7vw);
   }
 
   .hr2 {
     @include img_r_m(78, 385, 12.5);
     border-top: 2px solid #fff;
+    top: calc(50% + 7vw);
   }
 
   .logo {
     @include div_c_m(277, 180, 119);
+    top: calc(50% + -70vw);
   }
 
   .btn {
@@ -345,6 +350,8 @@
 
     background: #fff000;
     border-radius: 33px / 33px;
+    top: calc(50% + 20vw);
+
   }
 }
 </style>
