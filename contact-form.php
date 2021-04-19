@@ -21,7 +21,7 @@ $case_name = $dataList[0]['casename'];
 $name         = isset($_POST['name']) ? $_POST['name'] : '';
 $phone        = isset($_POST['phone']) ? $_POST['phone'] : '';
 $user_email   = isset($_POST['email']) ? $_POST['email'] : '';
-$house         = isset($_POST['house']) ? $_POST['house'] : '';
+$house        = isset($_POST['house']) ? $_POST['house'] : '';
 $city         = isset($_POST['city']) ? $_POST['city'] : '';
 $area         = isset($_POST['area']) ? $_POST['area'] : '';
 $msg          = isset($_POST['msg']) ? $_POST['msg'] : '';
@@ -31,8 +31,6 @@ $utm_content  = isset($_POST['utm_content']) ? $_POST['utm_content'] : '';
 $utm_campaign = isset($_POST['utm_campaign']) ? $_POST['utm_campaign'] : '';
 $datetime     = date("Y-m-d H:i:s", mktime(date('H'), date('i'), date('s'), date('m'), date('d'), date('Y')));
 
-# 鳳翔 fs 客製資料：房型
-$house        = isset($_POST['house']) ? $_POST['house'] : '';
 
 # 好站 hj 客製資料：可聯絡時間
 $time_start        = isset($_POST['time_start']) ? $_POST['time_start'] : '';
