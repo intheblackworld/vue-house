@@ -240,7 +240,7 @@
 .section1 {
   width: 100%;
   height: 100vh;
-  min-height: size(1080);
+  min-height: size(900);
   max-height: size(1080);
   //overflow: hidden;
   position: relative;
@@ -268,14 +268,17 @@
 
 .t1 {
   @include img_c_pc(785, 696);
+  top: calc(50% + 7vw);
 }
 
 .t2 {
   @include img_l_pc(393, 789, 567);
+  top: calc(50% + 13vw);
 }
 
 .logo {
   @include div_c_pc(667, 433, 227);
+  top: calc(50% + -18vw);
 }
 
 .btn {
@@ -292,6 +295,7 @@
 
   background: #fff000;
   border-radius: 33px / 33px;
+  top: calc(50% + 12.5vw);
 }
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
