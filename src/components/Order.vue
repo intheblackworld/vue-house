@@ -201,6 +201,7 @@ export default {
       // formData.append('time_end', this.form.time_end)
       formData.append('city', this.form.city)
       formData.append('area', this.form.area)
+      formData.append('house', this.form.house)
       formData.append('utm_source', utmSource)
       formData.append('utm_medium', utmMedium)
       formData.append('utm_content', utmContent)
