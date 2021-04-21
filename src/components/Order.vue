@@ -48,7 +48,7 @@
               ></el-time-select>
             </div> -->
             <div class="row" data-aos="fade-down" data-aos-delay="200">
-              <label for="order-house">需求坪數</label>
+              <label for="order-house">需求坪數<span>*</span></label>
               <el-select v-model="form.house" name="order-house" id="order-house" placeholder>
                 <el-option v-for="city in ['22坪', '30坪', '42坪', '53坪']" :key="city" :label="city" :value="city" no-data-text=""></el-option>
               </el-select>
@@ -163,7 +163,7 @@ export default {
         message: h(
           'i',
           { style: 'color: #82191d' },
-          '「姓名、手機」是必填欄位',
+          '「姓名、手機、需求坪數」',
         ),
       })
     },
