@@ -36,6 +36,7 @@
         <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
+        <img src="./s9/btn_0.png" class="btn flex-c" v-if="isMobile" @click="isDialog = true" />
         <div class="swipe-btns absolute flex-ac flex-jb">
           <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
           <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
@@ -53,6 +54,10 @@
       2-3房戶戶雙採光，引風養綠，讓您品味自然的健康空間，無敵高坪效，一次收藏最稀有的繁華轉身！從此在家不僅是過日子，而是享受生活。
     </div>
     <img src="./s8/style_arrow_5.png" :alt="`${info.caseName}_style_arrow`" class="arrow" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="200">
+    <div class="dialog" v-show="isDialog">
+      <img class="close" @click="isDialog = false" src="./all/close.png" alt="close">
+      <img :src="slideList[slideIndex].img" alt="" class="dialog-img">
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -364,19 +369,19 @@
   // }
 
   .arrow {
-    @include img_l_m(21, 168, 130);
+    @include img_l_m(21, 168 + 50, 130);
     opacity: 1 !important;
     z-index: 10;
   }
 
   .content-bg {
-    @include div_l_m(375, 196, 151, 0);
+    @include div_l_m(375, 196, 151 + 50, 0);
     background-color: rgba(255, 255, 255, 0.75);
     z-index: 10;
   }
 
   .title {
-    @include img_l_m(143, 156, 32);
+    @include img_l_m(143, 156 + 50, 32);
     font-size: sizem(20);
     font-weight: bold;
     font-stretch: normal;
@@ -394,7 +399,7 @@
   }
 
   .subtitle {
-    @include img_l_m(80, 160, 175);
+    @include img_l_m(80, 160 + 50, 175);
     font-size: sizem(24);
     font-weight: 300;
     font-stretch: normal;
@@ -409,7 +414,7 @@
   }
 
   .desc {
-    @include img_l_m(310, 220, 33);
+    @include img_l_m(310, 220 + 30, 33);
     font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
@@ -447,6 +452,30 @@
     .mo2 {
       @include img_l_m(95, 360, -30);
     }
+  }
+
+  .btn {
+    @include img_c_m(100, 60);
+    position: absolute;
+    z-index: 32;
+    //height: sizem(81);
+    min-height: auto;
+    // top: auto;
+    // bottom: 0;
+    // left: 0;
+    // right: 0;
+    // margin: 0 auto;
+    // padding: 0.3em 0;
+    // // background-color: #af1f24;
+    // font-size: sizem(15);
+    // font-weight: normal;
+    // font-stretch: normal;
+    // font-style: normal;
+    // line-height: 1.38;
+    // letter-spacing: sizem(2.31);
+    // text-align: center;
+    // color: #ffffff;
+    // border-radius: 0.5em 0.5em 0 0;
   }
 
   /* Swipe */
@@ -610,6 +639,35 @@
       cursor: pointer;
     }
   }
+
+  .dialog {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: scroll;
+
+    .slide-content {
+      left: 0;
+    }
+
+    .dialog-img {
+      width: auto;
+      height: 100vh;
+      background-color: #fff;
+    }
+
+    .close {
+      width: 35px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 5px;
+      position: fixed;
+      right: 10px;
+      top: 10px;
+    }
+  }
 }
 </style>
 <script>
@@ -633,8 +691,10 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s8/space_img.jpg'),
-          name: '樣品屋圖說',
+          img: isMobile
+            ? require('./s9/mobile_0.jpg')
+            : require('./s9/pc_0.jpg'),
+          name: '',
         },
       ],
     }
