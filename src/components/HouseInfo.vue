@@ -45,16 +45,17 @@ export default {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 .title {
-  font-size: 32px;
-  line-height: 36px;
-  margin: 60px 0;
+  font-size:2em;
+  margin:1.5em 0;
   font-weight: 900;
   color: $house_title_color;
   font-family: $family3;
-  letter-spacing: 15px;
+  letter-spacing:0.4em;
 }
 
 .info {
@@ -63,7 +64,7 @@ export default {
 }
 
 .item {
-  font-size: 15px;
+  font-size:1em;
   margin-bottom:2em;
   margin-right: 10em;
   width: 270px;
@@ -80,7 +81,7 @@ export default {
   }
 
   .label {
-    font-size:1.2em;
+    font-size:1.1em;
     color: $house_label_color;
     margin-bottom: 0;
     margin-right:0.8em;
@@ -93,7 +94,7 @@ export default {
   }
 
   .desc {
-    font-size: 14px;
+    font-size: 1em;
     text-align: left;
     color: $house_desc_color;
     font-family: $family3;
@@ -105,7 +106,7 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .content {
-    height: 35em;
+    height: 25em;
     width: 100%;
     margin-bottom: 0;
     font-size: 15px;
@@ -113,7 +114,6 @@ export default {
   }
 
   .title {
-    font-size: 32px;
     margin: 0.8em 0 0.5em 0;
   }
 

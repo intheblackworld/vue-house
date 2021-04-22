@@ -292,11 +292,24 @@
   text-align: left;
   color: #1d2088;
   cursor: pointer;
-
   background: #fff000;
-  border-radius: 33px / 33px;
+  border-radius:1em;
   top: calc(50% + 12.5vw);
+  transition:0.5s all;
+  &::before{content: "";position: absolute;top: 0;left:0;width: 100%;height: 100%;border:0.05em solid #fff000;
+  border-radius:1em;
+  animation: btn 1s ease-in-out infinite;}
+  &:hover{
+    transform:scale(1.1);
+  }
 }
+@keyframes btn {
+  to {
+    border:0.05em solid #FFF0;
+    transform:scaleX(1.1);
+  }
+}
+
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {

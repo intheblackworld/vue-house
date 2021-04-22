@@ -12,14 +12,14 @@
       <div class="order-subtitle" data-aos="fade-down" data-aos-delay="100" v-html="order.subTitle"></div>
       <div class="order">
         <div class="form">
-          <div class="group" data-aos="fade-down" data-aos-delay="0">
+          <div class="group form_input" data-aos="fade-down" data-aos-delay="0">
             <div class="row" data-aos="fade-down" data-aos-delay="100">
-              <label>姓名</label>
-              <el-input v-model="form.name" placeholder></el-input>
+              <label for="order-name">姓名<span>*</span></label>
+              <el-input v-model="form.name" name="order-name" id="order-name" placeholder></el-input>
             </div>
             <div class="row" data-aos="fade-down" data-aos-delay="200">
-              <label>手機</label>
-              <el-input v-model="form.phone" placeholder></el-input>
+              <label for="order-phone">手機<span>*</span></label>
+              <el-input v-model="form.phone" name="order-phone" id="order-phone" placeholder></el-input>
             </div>
             <!-- <div class="row" data-aos="fade-down"
         data-aos-delay="300">
@@ -48,8 +48,8 @@
               ></el-time-select>
             </div> -->
             <div class="row" data-aos="fade-down" data-aos-delay="200">
-              <label>需求坪數</label>
-              <el-select v-model="form.house" placeholder>
+              <label for="order-house">需求坪數<span>*</span></label>
+              <el-select v-model="form.house" name="order-house" id="order-house" placeholder>
                 <el-option v-for="city in ['22坪', '30坪', '42坪', '53坪']" :key="city" :label="city" :value="city" no-data-text=""></el-option>
               </el-select>
             </div>
@@ -58,14 +58,14 @@
               <el-input v-model="form.email" placeholder></el-input>
             </div> -->
             <div class="row" data-aos="fade-down" data-aos-delay="300">
-              <label>居住城市</label>
-              <el-select v-model="form.city" placeholder>
+              <label for="order-city">居住城市</label>
+              <el-select v-model="form.city" name="order-city" id="order-city" placeholder>
                 <el-option v-for="city in cityList" :key="city.value" :label="city.label" :value="city.value" no-data-text="無數據"></el-option>
               </el-select>
             </div>
             <div class="row" data-aos="fade-down" data-aos-delay="400">
-              <label>居住地區</label>
-              <el-select v-model="form.area" placeholder>
+              <label for="order-area">居住地區</label>
+              <el-select v-model="form.area" name="order-area" id="order-area" placeholder>
                 <el-option v-for="area in areaList" :key="area.value" :label="area.label" :value="area.value" no-data-text="請先選擇居住城市"></el-option>
               </el-select>
             </div>
@@ -163,7 +163,7 @@ export default {
         message: h(
           'i',
           { style: 'color: #82191d' },
-          '「姓名、手機」是必填欄位',
+          '「姓名、手機、需求坪數」',
         ),
       })
     },
@@ -327,41 +327,31 @@ export default {
   }
 
   .form {
+    font-size:16px !important;
     width: 100%;
     display: flex;
-    align-items: flex-start;
+   // align-items: flex-start;
     margin: 0 auto;
     justify-content: space-between;
+    margin-bottom: 1.5em;
+    align-items:stretch;
     > .group {
       flex: 1;
       align-items: flex-start;
-    }
-  }
-
-  .group {
-    height: 315px;
-    margin-bottom: 40px;
-
-    &:nth-child(1) {
-      border-right: 1px solid #fff000;
-      .row {
-        justify-content: flex-start;
-      }
-    }
-
     &:nth-child(2) {
       .row {
-        justify-content: flex-end;
-        align-items: flex-start;
         height: 100%;
       }
     }
   }
 
+
+  }
+
   .row {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 0.935em;
 
     &.house {
       margin-top: 50px;
@@ -373,19 +363,33 @@ export default {
 
     label {
       //width:10em;
-      flex: 0 0 5.8em;
+      flex: 0 0 6.5em;
       display: block;
       text-align: left;
-      font-size: 20px;
+      font-size:1em;
       opacity: 0.8;
       font-weight: 900;
+      padding: 0 0 0 0.6em;
       color: $order_input_label_color;
 
       span {
         color: #ff0000;
       }
     }
+  //  .el-input{flex: 1;}
   }
+
+  .form_input{
+     border-right: 1px solid #fff000;
+     padding-right:3%;
+     margin-right:3%;
+    .row{
+    background: $order_input_bg;
+    border: $order_input_border;
+    color: $order_input_color;
+    }
+  }
+
 
   .control {
     margin-top: 0px;
@@ -413,11 +417,8 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .order-bg {
-    //  background-image: $order_bg_image;
-    //  background-size: cover;
     padding-top: 40px;
     margin: 0;
-    // position: relative;
     z-index: 2;
 
     > img {
@@ -462,26 +463,19 @@ export default {
 
     .form {
       flex-direction: column;
-      margin-bottom: -12px;
     }
-
-    .group {
-      width: 100%;
-      height: auto !important;
-      margin-bottom: 0px !important;
-      border: none !important;
-    }
-
     .row {
-      margin-bottom: 12px !important;
-
-      &.house {
-        margin-top: 20px;
-      }
       label {
         width: 30% !important;
       }
     }
+
+.form_input{
+     border-right:0px solid #fff000;
+     padding-right:0%;
+     margin-right:0%;
+    margin-bottom: 0.935em;
+  }
 
     .control {
       .el-checkbox {
