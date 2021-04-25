@@ -10,6 +10,14 @@
       :options="options"
       id="fullpage"
     > -->
+      <div class="animate-bg">
+        <div class="bg1">
+        </div>
+        <div class="bg2">
+        </div>
+        <div class="bg3">
+        </div>
+      </div>
       <vue-lazy-component class="section relative" id="section1" @init="init">
         <Section1 />
       </vue-lazy-component>
@@ -63,7 +71,7 @@
 }
 
 .bg-img {
- // background-image: url('~@/projects/lj/s1/bg.png');
+  // background-image: url('~@/projects/lj/s1/bg.png');
   // padding-top: $nav_pc_height;
   background-attachment: fixed;
   background-size: auto;
@@ -72,9 +80,54 @@
   overflow: hidden; //試底下多的那塊哪來的
 }
 
+.animate-bg {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 152, 205, 1) 0%,
+      rgba(141, 194, 31, 1) 100%
+    )
+    fixed;
+}
+
+.animate-bg > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 114%;
+  height: 100%;
+}
+
+.bg1 {
+  background: url('~@/projects/oh/s1/1.png');
+  animation: bga 3s ease-in-out infinite alternate;
+  background-size: size(641) auto;
+}
+
+.bg2 {
+  background: url('~@/projects/oh/s1/2.png');
+  animation: bga 3s 0s ease-in-out infinite alternate;
+  background-size: size(641) auto;
+}
+
+.bg3 {
+  background: url('~@/projects/oh/s1/3.png');
+  animation: bga 3s 1s ease-in-out infinite alternate;
+  background-size: size(641) auto;
+}
+
+@keyframes bga {
+  to {
+    transform: translate(-7%, 3%) scale(0.95);
+  }
+}
+
 @media only screen and (max-width: 767px) {
   .bg-img {
-  //  background-image: url('~@/projects/lj/s1/bg_m.png');
+    //  background-image: url('~@/projects/lj/s1/bg_m.png');
   }
 }
 </style>
@@ -91,16 +144,16 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/ypy/Section1.vue'
-// import Section2 from '@/projects/tsi1/Section2.vue'
-// import Section3 from '@/projects/tsi1/Section3.vue'
-// import Section4 from '@/projects/tsi1/Section4.vue'
-// import Section5 from '@/projects/tsi1/Section5.vue'
-// import Section6 from '@/projects/tsi1/Section6.vue'
-// import Section7 from '@/projects/tsi1/Section7.vue'
-// import Section8 from '@/projects/tsi1/Section8.vue'
-// import Section9 from '@/projects/tsi1/Section9.vue'
-// import Section10 from '@/projects/tsi1/Section10.vue'
+import Section1 from '@/projects/oh/Section1.vue'
+// import Section2 from '@/projects/oh/Section2.vue'
+// import Section3 from '@/projects/oh/Section3.vue'
+// import Section4 from '@/projects/oh/Section4.vue'
+// import Section5 from '@/projects/oh/Section5.vue'
+// import Section6 from '@/projects/oh/Section6.vue'
+// import Section7 from '@/projects/oh/Section7.vue'
+// import Section8 from '@/projects/oh/Section8.vue'
+// import Section9 from '@/projects/oh/Section9.vue'
+// import Section10 from '@/projects/oh/Section10.vue'
 
 export default {
   name: 'home',

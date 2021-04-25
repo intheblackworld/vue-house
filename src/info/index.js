@@ -7,7 +7,7 @@ export default {
   phone: '03-301-3777',
   fbLink: 'https://www.facebook.com/%E5%98%89%E7%92%9F%E4%B8%80%E5%93%81%E7%A1%AF-102835311925785',
   fbMessage: 'https://m.me/102835311925785',
-  caseName: '一品硯',
+  caseName: '名軒海樂地',
   indigatorLength: 10,
 
   houseInfos: [

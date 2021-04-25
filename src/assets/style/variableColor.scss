@@ -5,8 +5,8 @@ $bg_m: url('~@/projects/ypy/s1/bg_m.png');
 /* font-family */
 /* 1主要字體  2次要字體  3表單字體 */
 $family1: "Noto Sans TC", sans-serif;
-$family2: "Noto Serif TC", serif;
-$family3: "Noto Serif TC", serif;
+$family2: "Noto Sans TC", serif;
+$family3: "Noto Sans TC", serif;
 
 /* navigation */
 $nav_bg: #c49b63;
@@ -48,7 +48,7 @@ $order_input_selected_color: solid 1px rgba(0, 0, 0, 1) !important;
 $order_check_desc_color: #fff !important;
 $order_check_span_color: #fff000 !important;
 $order_submit_bg: #fff000 !important;
-$order_submit_color: #1d2088 !important;
+$order_submit_color: #000 !important;
 $order_sumbit_disable_bg: rgba(243, 149, 1, .4) !important;
 
 // contactInfo
@@ -57,40 +57,40 @@ $contact_bg_m: transparent;
 $contact_shadow: 0 0 80px 0 rgba(0, 0, 0, 0.2);
 
 $contact_btn_border: none;
-$contact_btn_color: #1d2088;
-$contact_btn_icon: #1d2088;
+$contact_btn_color: #000;
+$contact_btn_icon: #000;
 $contact_btn_bg: #fff000;
-$contact_btn_hover_color: #1d2088;
-$contact_btn_hover_icon: #1d2088;
+$contact_btn_hover_color: #000;
+$contact_btn_hover_icon: #000;
 $contact_btn_hover_bg: #fff9ca;
 
-$contact_google_btn_color: #1d2088;
-$contact_google_btn_icon: #1d2088;
+$contact_google_btn_color: #000;
+$contact_google_btn_icon: #000;
 $contact_google_btn_bg: #fff000;
-$contact_google_hover_btn_color: #1d2088;
-$contact_google_hover_btn_icon: #1d2088;
+$contact_google_hover_btn_color: #000;
+$contact_google_hover_btn_icon: #000;
 $contact_google_hover_btn_bg: #fff9ca;
 
-$contact_google_hover_btn_color: #1d2088;
-$contact_google_hover_btn_icon: #1d2088;
+$contact_google_hover_btn_color: #000;
+$contact_google_hover_btn_icon: #000;
 $contact_google_hover_btn_bg: #fff9ca;
 // houseInfo
 $house_bg: #fff;
-$house_title_color: #aa915e;
-$house_border_color: #aa915e;
-$house_label_color: #aa915e;
+$house_title_color: #000;
+$house_border_color: #ff0031;
+$house_label_color: #000;
 $house_desc_color: #000;
 
 // mobileNav
-$mobile_nav_background: #fff000;
-$mobile_nav_color: #1d2088;
-$mobile_nav_border: #fff000;
-$mobile_nav_icon: #1d2088;
+$mobile_nav_background: linear-gradient(to right, #00b3ec, #49bbbc);;
+$mobile_nav_color: #fff;
+$mobile_nav_border: #fff;
+$mobile_nav_icon: #fff;
 
 $mobile_dialog_bg: #fff;
-$mobile_dialog_icon: #1d2088;
+$mobile_dialog_icon: #00b3ec;
 $mobile_dialog_desc: #000;
-$mobile_dialog_submit_bg: #1d2088;
+$mobile_dialog_submit_bg: #00b3ec;
 $mobile_dialog_submit_color: #fff;
 
 /* dialog */
