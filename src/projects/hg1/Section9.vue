@@ -370,20 +370,20 @@
 
   .arrow {
     @include img_l_m(21, 168 + 50, 130);
-    top: calc(50% + 10vw);
+    top: calc(50% + 15vw);
     opacity: 1 !important;
     z-index: 10;
   }
 
   .content-bg {
-    @include div_l_m(375, 196, 132 + 50, 0);
+    @include div_l_m(375, 210, 132 + 50, 0);
     background-color: rgba(255, 255, 255, 0.75);
-    z-index: 10;
+    z-index: 9;
   }
 
   .title {
     @include img_l_m(143, 156 + 50, 32);
-    top: calc(50% + 7vw);
+    top: calc(50% + 12.3vw);
     font-size: sizem(20);
     font-weight: bold;
     font-stretch: normal;
@@ -402,7 +402,7 @@
 
   .subtitle {
     @include img_l_m(80, 160 + 50, 175);
-    top: calc(50% + 8vw);
+    top: calc(50% + 13.3vw);
     font-size: sizem(24);
     font-weight: 300;
     font-stretch: normal;
@@ -418,7 +418,7 @@
 
   .desc {
     @include img_l_m(310, 220 + 30, 33);
-    top: calc(50% + 18vw);
+    top: calc(50% + 23vw);
     font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
@@ -459,12 +459,12 @@
   }
 
   .btn {
-    @include img_c_m(100, 45);
+    @include img_c_m(200, 45);
     position: absolute;
     z-index: 32;
     //height: sizem(81);
     min-height: auto;
-    top: calc(50% + -12vw);
+    top: calc(50% + 22vw);
     // top: auto;
     // bottom: 0;
     // left: 0;
