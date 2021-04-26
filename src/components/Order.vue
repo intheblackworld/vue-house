@@ -47,12 +47,12 @@
                 }"
               ></el-time-select>
             </div> -->
-            <div class="row" data-aos="fade-down" data-aos-delay="200">
+            <!-- <div class="row" data-aos="fade-down" data-aos-delay="200">
               <label for="order-house">需求坪數<span>*</span></label>
               <el-select v-model="form.house" name="order-house" id="order-house" placeholder>
                 <el-option v-for="city in ['22坪', '30坪', '42坪', '53坪']" :key="city" :label="city" :value="city" no-data-text=""></el-option>
               </el-select>
-            </div>
+            </div> -->
             <!-- <div class="row">
               <label>E-mail</label>
               <el-input v-model="form.email" placeholder></el-input>
@@ -175,13 +175,14 @@ export default {
       this.isSubmit = true
       if (
         !this.form.name ||
-        !this.form.phone ||
+        !this.form.phone 
+        // ||
         // !this.form.time_start ||
         // !this.form.time_end
         // ||
         // !this.form.email ||
         // !this.form.city ||
-        !this.form.house
+        // !this.form.house
       ) {
         this.alertValidate()
         this.isSubmit = false
@@ -215,7 +216,7 @@ export default {
       const sec = time.getSeconds()
       const date = `${year}-${month}-${day} ${hour}:${min}:${sec}`
       fetch(
-        `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&house=${this.form.house}&email=${this.form.email}&cityarea=${this.form.city}${this.form.area}&msg=${this.form.msg}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
+        `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&email=${this.form.email}&cityarea=${this.form.city}${this.form.area}&msg=${this.form.msg}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
       `,
         {
           method: 'GET',
