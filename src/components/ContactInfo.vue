@@ -95,6 +95,7 @@ export default {
 
 .contact-info {
   background: $contact_bg;
+ // background: #6669;
   // background-image: url('../assets/img/contact_bg.jpg');
   background-size: cover;
   // background: linear-gradient(
@@ -111,23 +112,25 @@ export default {
   z-index: 3;
   //width: 1200px;
   width: 100%;
-  height: 590px;
+  //height: 590px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
   transform: translateY(0);
   margin: 2vw auto 2vw;
-  padding: 30px 0 40px;
+  padding: 2em 0 2.2em;
+  font-size: 18px;
 }
 
 .logo {
   width: $contact_logo_pc_width;
   height: auto;
   // height:;
-  margin: 0 auto 0px;
+  margin: 0 auto 2em;
 }
 .info {
   width: 880px;
+  max-width: 95%;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -135,10 +138,9 @@ export default {
 }
 
 .btn {
-  width: 280px;
-  height: 60px;
-  font-size: 18px;
-  margin-bottom: 20px;
+  width: 31.8%;
+  height: 3.333em;
+  margin-bottom:1em;
   cursor: pointer;
   text-decoration: none;
   // border-radius: 60px / 60px;
@@ -148,15 +150,15 @@ export default {
   transition: all 0.5s;
   position: relative;
   overflow: hidden;
-  font-weight: 900;
+  font-weight: 700;
   &.half {
     width: 49%;
   }
   svg {
     color: $contact_btn_icon;
-    width: 24px;
-    height: 24px;
-    margin-right: 12px;
+    width:1.33em;
+    height:1.33em;
+    margin-right:0.66em;
     transition: all 0.5s;
   }
 
@@ -192,10 +194,9 @@ export default {
   }
 }
 .address {
-  width: 600px;
-  height: 60px;
-  font-size: 18px;
-  font-weight: 900;
+  width: calc(100% - 31.8%);
+  height: 3.333em;
+  font-weight: 700;
   background: #fff;
   color: $contact_btn_border;
   font-weight: bold;
@@ -204,12 +205,11 @@ export default {
   // border-bottom-left-radius: 60px;
 }
 .google-btn {
-  width: 280px;
-  height: 60px;
-  font-size: 18px;
+  width: 31.8%;
+  height: 3.333em;
   cursor: pointer;
   text-decoration: none;
-  font-weight: 900;
+  font-weight: 700;
   // border-top-right-radius: 60px;
   // border-bottom-right-radius: 60px;
   color: $contact_google_btn_color;
@@ -220,9 +220,9 @@ export default {
 
   svg {
     color: $contact_google_btn_icon;
-    width: 24px;
-    height: 24px;
-    margin-right: 12px;
+    width:1.33em;
+    height:1.33em;
+    margin-right:0.66em;
     transition: all 0.5s;
   }
 
@@ -291,6 +291,7 @@ export default {
 
   .info {
     width: 100%;
+  max-width: 100%;
     justify-content: center;
     text-align: center;
     //margin-bottom: 40px;

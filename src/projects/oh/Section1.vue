@@ -1,20 +1,12 @@
 <template>
   <div class="section1">
-    <div class="animate-bg">
-      <div class="bg1">
-      </div>
-      <div class="bg2">
-      </div>
-      <div class="bg3">
-      </div>
-    </div>
     <img src="./s1/logo.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade-up" data-aos-delay="0">
     <img src="./s1/t1.png" :alt="`${info.caseName}_img`" class="t1" data-aos="fade-up" data-aos-delay="200">
     <img src="./s1/t2.png" :alt="`${info.caseName}_img`" class="t2" data-aos="fade-up" data-aos-delay="400">
     <img src="./s1/img_b.png" :alt="`${info.caseName}_img`" class="img-b" v-if="isPC"  data-aos="zoom-in" data-aos-delay="0">
-    <img src="./s1/img_b_mo.png" :alt="`${info.caseName}_img`" class="img-b" v-if="isMobile"   data-aos="zoom-in" data-aos-delay="400">
-    <img src="./s1/img_ct.png" :alt="`${info.caseName}_img`" class="img-ct"   data-aos="zoom-in" data-aos-delay="600">
-    <img src="./s1/img_lt.png" :alt="`${info.caseName}_img`" class="img-lt"   data-aos="zoom-in" data-aos-delay="800">
+    <img src="./s1/img_b_mo.png" :alt="`${info.caseName}_img`" class="img-b" v-if="isMobile" data-aos="zoom-in" data-aos-delay="400" data-aos-offset="-500">
+    <img src="./s1/img_ct.png" :alt="`${info.caseName}_img`" class="img-ct" data-aos="zoom-in" data-aos-delay="600">
+    <img src="./s1/img_lt.png" :alt="`${info.caseName}_img`" class="img-lt" data-aos="zoom-in" data-aos-delay="800">
 
     <!-- <div class="hr1" v-if="isMobile"></div>
     <div class="hr2" v-if="isMobile"></div>
@@ -30,7 +22,7 @@
 .section1 {
   width: 100%;
   height: 100vh;
-  min-height: size(1080);
+  min-height: size(900);
   max-height: size(1080);
   //overflow: hidden;
   position: relative;
@@ -58,14 +50,17 @@
 
 .logo {
   @include img_c_pc(457, 133);
+  top:calc(50% + 100vw * (123 - 540) / 1920)
 }
 
 .t1 {
   @include img_c_pc(538, 584);
+  top:calc(50% + 100vw * (574 - 540) / 1920)
 }
 
 .t2 {
   @include img_c_pc(538, 805);
+  top:calc(50% + 100vw * (795 - 540) / 1920);
 }
 
 .img-b {
@@ -76,6 +71,7 @@
 
 .img-ct {
   @include img_r_pc(226, 326, 404);
+  top:calc(50% + 100vw * (316 - 540) / 1920);
 }
 
 .img-lt {
@@ -100,24 +96,28 @@
 
   .logo {
     @include img_c_m(274, 65);
+  top:calc(50% + 100vw * (15 - 604 * .5) / 375);
   }
 
   .t1 {
     @include img_c_m(272, 330);
+  top:calc(50% + 100vw * (280 - 604 * .5) / 375);
   }
 
   .t2 {
     @include img_c_m(272, 441);
+  top:calc(50% + 100vw * (390 - 604 * .5) / 375);
   }
 
   .img-b {
-    @include img_l_m(375, -250, 0);
+    @include img_l_m(454, -250, -40);
     top: auto;
-    bottom: sizem(-120);
+    bottom: sizem(-140);
   }
 
   .img-ct {
     @include img_r_m(100, 105, -50);
+  top:calc(50% + 100vw * (55 - 604 * .5) / 375);
   }
 
   .img-lt {

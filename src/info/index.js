@@ -1,22 +1,26 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '接待會館：桃園市桃園區大興西路三段、吉安一街口',
+  address: '接待會館：新北市淡水區濱海路一段221號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1807.914999453805!2d121.29053917825567!3d25.00589191843555!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDAwJzIxLjMiTiAxMjHCsDE3JzMwLjUiRQ!5e0!3m2!1szh-TW!2stw!4v1618801965239!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/1VZrCX8shg94GaAG8',
-  phone: '03-301-3777',
-  fbLink: 'https://www.facebook.com/%E5%98%89%E7%92%9F%E4%B8%80%E5%93%81%E7%A1%AF-102835311925785',
-  fbMessage: 'https://m.me/102835311925785',
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14441.667847824308!2d121.4297412!3d25.1891574!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442baae99a969a5%3A0xe237443136d4542c!2zMjUx5paw5YyX5biC5reh5rC05Y2A5r-x5rW36Lev5LiA5q61MjIx6Jmf!5e0!3m2!1szh-TW!2stw!4v1619420285955!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/ni3y9Fgx5pkodSaPA',
+  phone: '02-2805-5588',
+  fbLink: 'https://www.facebook.com/名軒海樂地-Ocean-Holiday-100895095426997',
+  fbMessage: 'https://m.me/100895095426997',
   caseName: '名軒海樂地',
   indigatorLength: 10,
 
   houseInfos: [
-    ['投資興建', '嘉璟建設'],
-    ['營造公司', '全勝營造'],
-    ['建築設計', '聶玉璞(拓璞聯合建築師事務所)'],
-
-    ['企劃銷售', '萬騰廣告'],
-    ['接待中心', '桃園市桃園區大興西路三段、吉安一街口'],
+    ['投資興建', '名軒開發'],
+    ['工程營造', '中福營造'],
+    ['建築設計', '呂文成、林大俊建築師事務所'],
+    ['公設規劃', '十口人聯合建築師事務所、杜墨設計有限公司'],
+    ['外觀設計', '陳明偉建築師事務所'],
+    ['景觀規劃', '綠點有限公司'],
+    ['燈光設計', '陳明偉建築師事務所'],
+    ['建築代言', '綠堡機構'],
+    ['企劃設計', '元吉整合行銷·曉塘廣告'],
+    ['建造執照', '104淡建字第00472-01號'],
   ],
 
   gtmCode: [''], // 可放置多個
