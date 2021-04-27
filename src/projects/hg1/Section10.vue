@@ -278,11 +278,11 @@
   }
 
   .item-list {
-    @include img_r_m(375 - 64 + 20, 252, 32);
+    @include img_r_m(375 - 34 + 10, 265, 15);
     z-index: 10;
     img {
-      min-width: sizem(89);
-      margin: sizem(9) sizem(10);
+      min-width: sizem(78);
+      margin: sizem(9) sizem(3);
       opacity: 1 !important;
     }
   }
@@ -354,6 +354,9 @@ export default {
         },
         {
           img: require('./s10/materials_list_9.png'),
+        },
+        {
+          img: require('./s10/materials_list_10.png'),
         },
       ],
     }
