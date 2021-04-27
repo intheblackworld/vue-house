@@ -5,7 +5,7 @@
         <div class="nav">
           <img
             class="logo"
-            src="@/assets/img/nav-logo.png"
+            src="@/projects/sj/s1/logo.png"
             alt
              v-scroll-to="{ element: `#section1`, offset: offset }"
           />
@@ -185,7 +185,7 @@ export default {
   .link {
     color: $nav_link_color;
     height: 22px;
-    border-right: 1px solid #fff;
+    border-right: 1px solid #de8a2d;
     text-align: center;
     display: block;
     cursor: pointer;
