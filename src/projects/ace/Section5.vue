@@ -147,6 +147,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #000;
 
   &.active {
     left: 0;

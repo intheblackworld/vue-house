@@ -55,7 +55,7 @@
               </h3>
             </div>
           </div>
-          <!--
+          
         <div style="margin: 0 auto;z-index:2;" v-if="!isMobile" data-aos="fade-down" data-aos-delay="600">
           <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
         </div>
@@ -63,7 +63,7 @@
           <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
         </div>
         <el-button class="form-submit flex-c" type="primary" :disabled="!checked || !isVerify" @click="submit" :loading="isSubmit">立即預約</el-button>
-        -->
+       
           <el-button class="form-submit flex-c" type="primary" @click="submit" :loading="isSubmit">立即預約</el-button>
           <Loading :loading="isSubmit" :isOpacity="true" />
         </div>
@@ -179,7 +179,7 @@ export default {
       },
       checked: false,
       isSubmit: false,
-      isVerify: true, // google 機器人驗證
+      isVerify: false, // google 機器人驗證
       policyVisible: false,
       showValidateDialog: false,
     }
