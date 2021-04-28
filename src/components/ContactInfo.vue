@@ -50,11 +50,11 @@
       <div class="address flex-c">{{info.address}}</div>
       <div
         class="btn flex-c"
+         @click="showMapDialog"
         v-if="isMobile"
       >
         <span
           class="flex-c"
-          @click="showMapDialog"
         >
           <font-awesome-icon icon="map-marker-alt" />導航 Google 地圖
         </span>
