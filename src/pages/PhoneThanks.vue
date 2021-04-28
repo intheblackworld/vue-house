@@ -1,5 +1,6 @@
 <template>
   <div class="thanks">
+    <div ref="gtmNoScript" />
     <h3>感謝您</h3>
     <p>感謝您的來電</p>
     <a href="/">回到首頁</a>
