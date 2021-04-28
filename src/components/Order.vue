@@ -63,7 +63,7 @@
       <el-button
         class="form-submit"
         type="primary"
-        :disabled="!checked"
+        :disabled="!checked || !isVerify"
         @click="submit"
         :loading="isSubmit"
       ><h3>立即預約</h3></el-button>
@@ -109,7 +109,7 @@ export default {
       },
       checked: false,
       isSubmit: false,
-      isVerify: true, // google 機器人驗證
+      isVerify: false, // google 機器人驗證
       policyVisible: false,
       showValidateDialog: false,
     }
@@ -140,7 +140,7 @@ export default {
 
     submit() {
       if (this.isSubmit) return
-      // if (!this.isVerify) return
+      if (!this.isVerify) return
       if (!this.checked) return
       this.isSubmit = true
       if (
