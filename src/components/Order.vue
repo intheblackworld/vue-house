@@ -64,7 +64,7 @@
         </div>
         <el-button class="form-submit flex-c" type="primary" :disabled="!checked || !isVerify" @click="submit" :loading="isSubmit">立即預約</el-button>
        
-          <el-button class="form-submit flex-c" type="primary" @click="submit" :loading="isSubmit">立即預約</el-button>
+          <!-- <el-button class="form-submit flex-c" type="primary" @click="submit" :loading="isSubmit">立即預約</el-button> -->
           <Loading :loading="isSubmit" :isOpacity="true" />
         </div>
       </div>
