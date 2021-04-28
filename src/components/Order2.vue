@@ -9,11 +9,11 @@
           <!-- <div class="form-hint">* 每個欄位都是必填欄位</div> -->
           <div class="row" data-aos="fade-down" data-aos-delay="100">
             <el-select v-model="form.activity" placeholder="想報名的活動">
-              <el-option v-for="(act, index) in activies" :key="act.value + index" :label="act.label" :value="act.value" no-data-text="無數據"></el-option>
+              <el-option v-for="(act, index) in activies" :key="act.value + index" :label="act.label" :value="act.value" :disabled="act.disabled" no-data-text="無數據"></el-option>
             </el-select>
           </div>
           <div class="row" data-aos="fade-down" data-aos-delay="100">
-            <el-input id="form-people" type="number" v-model="form.count" placeholder="報名人數" :max="6"></el-input>
+            <el-input id="form-people" type="number" v-model="form.count" placeholder="報名人數" :min="1" :max="6"></el-input>
           </div>
           <div class="row" data-aos="fade-down" data-aos-delay="100">
             <el-input id="form-name" v-model="form.name" placeholder="姓名*"></el-input>
@@ -83,6 +83,7 @@
                 粉絲專頁
               </div>
             </a>
+          <img src="~@/projects/kid/c/map2.png" class="map_img" alt="停車資訊地圖">
           </div>
         </div>
       </div>
@@ -122,22 +123,6 @@ export default {
       googleSrc: info.googleSrc,
       activies: [
         {
-          value: '2/28(日)14:00-16:00 瑪莎見面會',
-          label: '2/28(日)14:00-16:00 瑪莎見面會',
-        },
-        {
-          value: '3/6(六)14:00-16:00 春來了',
-          label: '3/6(六)14:00-16:00 春來了',
-        },
-        {
-          value: '3/13(六)14:00-16:00 海底探險家',
-          label: '3/13(六)14:00-16:00 海底探險家',
-        },
-        {
-          value: '3/20(六)14:00-15:30 親子讀報趣',
-          label: '3/20(六)14:00-15:30 親子讀報趣',
-        },
-        {
           value: '3/27(六)14:00-16:00 讀報素養闖關',
           label: '3/27(六)14:00-16:00 讀報素養闖關',
         },
@@ -150,8 +135,32 @@ export default {
           label: '4/10(六)14:00-15:30  故事魔法寶盒',
         },
         {
-          value: '4月 敬請期待  如何沖泡一杯好咖啡',
-          label: '4月 敬請期待  如何沖泡一杯好咖啡',
+          value: '4/17(六)14:00-15:00 可愛動物聯萌',
+          label: '4/17(六)14:00-15:00 可愛動物聯萌',
+        },
+        {
+          value: '4/24(六)14:00-15:00 如何沖泡一杯好咖啡',
+          label: '4/24(六)14:00-15:00 如何沖泡一杯好咖啡',
+        },
+        {
+          value: '2/28(日)14:00-16:00 瑪莎見面會',
+          label: '2/28(日)14:00-16:00 瑪莎見面會',
+          disabled: true,
+        },
+        {
+          value: '3/6(六)14:00-16:00 春來了',
+          label: '3/6(六)14:00-16:00 春來了',
+          disabled: true,
+        },
+        {
+          value: '3/13(六)14:00-16:00 海底探險家',
+          label: '3/13(六)14:00-16:00 海底探險家',
+          disabled: true,
+        },
+        {
+          value: '3/20(六)14:00-15:30 親子讀報趣',
+          label: '3/20(六)14:00-15:30 親子讀報趣',
+          disabled: true,
         },
         /*   {
           value: '更多精彩活動 敬請期待 即將公開',
@@ -402,7 +411,12 @@ export default {
     flex: 1 1 auto;
     // height: 250px;
     margin-bottom: 40px;
-
+    &:nth-child(1) {
+      flex: 1 1 55%;
+    }
+    &:nth-child(2) {
+      flex: 1 1 45%;
+    }
     // &:nth-child(1) {
     //   border-right: 1px solid rgba(0, 0, 0, 0.2);
     //   padding: 0 29px 0 0;
@@ -466,9 +480,13 @@ export default {
 
   .google-map {
     // margin-top: 35px;
-    height: size(420);
-    margin-bottom: 15px;
+    display: block;
+    width:100%;
+    height: size(200);
+    margin:0 auto size(15) auto;
   }
+  .map_img{
+    width:105%;margin:size(70) 0 size(15) -5%;}
 }
 .el-textarea .el-textarea__inner,
 .el-input__inner {
@@ -591,9 +609,14 @@ export default {
       }
     }
     .google-map {
-      // margin-top: 35px;
       height: sizem(248);
+    margin:0 auto sizem(15) auto;
     }
+
+  .map_img{
+    width:100%;margin:sizem(120) 0 0 0;}
+
+
     .google-map-btn {
       @include div_l_m(70, 70, 45, 0);
     }
