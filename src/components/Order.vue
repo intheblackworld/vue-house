@@ -418,7 +418,7 @@ export default {
     margin-bottom: 40px;
 
     &:nth-child(1) {
-      border-right: 1px solid rgba(0, 0, 0, 0.2);
+      border-right: 1px solid #ee8600;
       .row {
         justify-content: flex-start;
       }
