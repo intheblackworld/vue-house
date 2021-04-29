@@ -120,9 +120,9 @@
 }
 
 .item-list {
-  @include img_r_pc(1085, 220, 185);
+  @include img_r_pc(1085, 270, 185);
   img {
-    width: size(177);
+    width: size(140);
     margin: size(10) size(20);
   }
 }
@@ -357,6 +357,8 @@ export default {
         },
         {
           img: require('./s10/materials_list_10.png'),
+        },{
+          img: require('./s10/materials_list_11.png'),
         },
       ],
     }
