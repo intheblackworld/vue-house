@@ -43,6 +43,12 @@
               </div>
             </el-checkbox>
           </div>
+          <div style="margin: 0 auto;z-index:2;" v-if="!isMobile" data-aos="fade-down" data-aos-delay="600">
+            <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
+          </div>
+          <div style="margin: 0 auto;z-index:2;" v-if="isMobile">
+            <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
+          </div>
           <el-button class="form-submit flex-c" type="primary" :disabled="!checked || !isVerify" @click="submit" :loading="isSubmit">確認送出</el-button>
         </div>
         <div class="group">
@@ -57,12 +63,6 @@
         </div>
       </div>
       <!-- <img src="./" alt="" class="bottom-img"> -->
-      <!-- <div style="margin: 0 auto;z-index:2;" v-if="!isMobile" data-aos="fade-down" data-aos-delay="600">
-        <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
-      </div> -->
-      <!-- <div style="margin: 0 auto;z-index:2;" v-if="isMobile">
-        <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
-      </div> -->
       <Loading :loading="isSubmit" :isOpacity="true" />
     </div>
     <PolicyDialog :policyVisible="policyVisible" />
@@ -106,7 +106,7 @@ export default {
       },
       checked: false,
       isSubmit: false,
-      isVerify: true, // google 機器人驗證
+      isVerify: false, // google 機器人驗證
       policyVisible: false,
       showValidateDialog: false,
     }
@@ -390,7 +390,7 @@ export default {
     color: #ffffff;
 
     p {
-   //   line-height: 1.7;
+      //   line-height: 1.7;
       margin-bottom: 12px;
     }
   }
