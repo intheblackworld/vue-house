@@ -35,6 +35,12 @@
               </div>
             </el-checkbox>
           </div>
+          <div style="margin: 0 auto;z-index:2;" v-if="!isMobile" data-aos="fade-down" data-aos-delay="600">
+            <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
+          </div>
+          <div style="margin: 0 auto;z-index:2;" v-if="isMobile">
+            <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
+          </div>
           <el-button class="form-submit flex-c" type="primary" :disabled="!checked || !isVerify" @click="submit" :loading="isSubmit">確認送出</el-button>
         </div>
         <div class="group">
@@ -49,12 +55,6 @@
         </div>
       </div>
       <!-- <img src="./" alt="" class="bottom-img"> -->
-      <!-- <div style="margin: 0 auto;z-index:2;" v-if="!isMobile" data-aos="fade-down" data-aos-delay="600">
-        <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
-      </div> -->
-      <!-- <div style="margin: 0 auto;z-index:2;" v-if="isMobile">
-        <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
-      </div> -->
       <Loading :loading="isSubmit" :isOpacity="true" />
     </div>
     <PolicyDialog :policyVisible="policyVisible" />
@@ -97,7 +97,7 @@ export default {
       },
       checked: false,
       isSubmit: false,
-      isVerify: true, // google 機器人驗證
+      isVerify: false, // google 機器人驗證
       policyVisible: false,
       showValidateDialog: false,
     }
@@ -214,7 +214,7 @@ export default {
 .order-bg {
   // background-color: $order_bg_color;
   width: 100vw;
-  height:auto;
+  height: auto;
   background-image: $order_bg_image;
   background-repeat: repeat;
   // position: relative;
@@ -270,8 +270,8 @@ export default {
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height:30px;
-    letter-spacing:0.02em;
+    line-height: 30px;
+    letter-spacing: 0.02em;
     text-align: left;
     color: $order_subtitle_color;
     margin-bottom: 5px;
@@ -286,7 +286,9 @@ export default {
     > .group {
       // flex: 1;
       align-items: flex-start;
-      &:nth-child(1){margin: 0 size(40) 0 0;}
+      &:nth-child(1) {
+        margin: 0 size(40) 0 0;
+      }
     }
   }
 
@@ -361,8 +363,9 @@ export default {
   }
 }
 .el-textarea .el-textarea__inner,
-.el-input__inner{
-    font-size: size(20) !important;}
+.el-input__inner {
+  font-size: size(20) !important;
+}
 
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -447,9 +450,9 @@ export default {
       margin-bottom: 10px;
     }
 
-  .control-desc {
-    font-size: sizem(15);
-  }
+    .control-desc {
+      font-size: sizem(15);
+    }
   }
 }
 </style>
