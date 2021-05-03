@@ -1,6 +1,7 @@
 <template>
   <div class="section5">
     <div class="bg"></div>
+    <div class="section"><img src="./all/section.png"></div>
     <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex" data-aos="fade" data-aos-delay="1000">
         <transition-group name="swipe-fade" mode="out-in">
@@ -46,6 +47,10 @@
   top: auto;
   bottom: 0;
   background-color: #040000;
+}
+.section{
+  @include img_c_pc(530, 80);
+  img{width: 100%;}
 }
 
 
@@ -251,6 +256,9 @@
     bottom: auto;
     background-color: #040000;
   }
+.section{
+  @include img_c_m(170, 20);
+}
 
 .txt{
     @include div_l_m(250, 425, 56, 62.5);

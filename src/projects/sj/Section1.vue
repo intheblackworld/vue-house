@@ -1,8 +1,11 @@
 <template>
   <div class="section1">
-    <div class="o"></div>
+    <img src="./s1/1.png" :alt="`${info.caseName}_img`" class="img1" data-aos="fade" data-aos-delay="600">
+    <img src="./s1/2.png" :alt="`${info.caseName}_img`" class="img2" data-aos="fade" data-aos-delay="800">
+    <img src="./s1/3.png" :alt="`${info.caseName}_img`" class="img3" data-aos="fade" data-aos-delay="1000">
+    <!-- <div class="o"></div>
     <img src="./s1/bg.png" :alt="`${info.caseName}_img`" class="bg-img" v-if="isPC">
-    <img src="./s1/bg_m.png" :alt="`${info.caseName}_img`" class="bg-img" v-if="isMobile">
+    <img src="./s1/bg_m.png" :alt="`${info.caseName}_img`" class="bg-img" v-if="isMobile"> -->
     <img src="./s1/logo.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
     <img src="./s1/logo_m.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade-up" data-aos-delay="200" v-if="isMobile">
     <div class="title" data-aos="fade-up" data-aos-delay="400" v-if="isPC">
@@ -63,6 +66,13 @@
   &:nth-child(1) {
     position: relative;
   }
+}
+.img1,
+.img2,
+.img3{
+  @include img_l_pc(870, 0, -50);
+  top: calc(50% + 100vw * (-190 - 540) / 1920);
+  transform: translate(-7%,-5%);
 }
 .o{
   @include img_l_pc(430, 102, 222);
@@ -180,7 +190,7 @@
     width: 100vw;
     height:calc(100vh - 63px);
     min-height: sizem(604);
-    max-height: sizem(700);
+    max-height: sizem(690);
   }
 
 .bg-img {
@@ -191,14 +201,21 @@
   top: calc(50% + 100vw * (42 - 302) / 375);
   height:sizem(103);
 }
+.img1,
+.img2,
+.img3{
+  @include img_l_m(250, 0, -35);
+  top: calc(50% + 100vw * (80 - 604 * .5) / 375);
+  transform: translate(-7%,-5%);
+}
 
   .logo {
-    @include img_r_m(190, 74, 40);
+    @include img_r_m(190, 74, 30);
   top: calc(50% + 100vw * (74 - 302) / 375);
   }
 
   .title {
-    @include img_r_m(330, 250, -50);
+    @include img_r_m(330, 250, 32);
   top: calc(50% + 100vw * (250 - 302) / 375);
     font-size: sizem(18);
     font-weight: 600;
@@ -207,19 +224,21 @@
     line-height: 1.51;
     letter-spacing: normal;
     color: #ee8600;
+    text-align: right;
     // white-space: nowrap;
-    b{font-size: 0.903em}
+    b{
+    text-align: right;font-size: 0.903em}
   }
 
   .title.new1{
-    @include img_r_m(330, 310, -49);
+    @include img_r_m(330, 310, 32);
     top: calc(50% + 100vw * (310 - 302) / 375);
     font-size: sizem(14);
     color: #000 !important;
   }
 
   .title.new1.phone {
-    @include img_r_m(260, 340, -14);
+    @include img_r_m(260, 340, 32);
   top: calc(50% + 100vw * (340 - 302) / 375);
     font-size: sizem(31);
     font-weight: 600;
@@ -227,12 +246,12 @@
     font-style: normal;
     line-height: 0.94;
     letter-spacing: sizem(-0.55);
-    text-align: center;
+    text-align: right;
     white-space: nowrap;
   }
 
   .btn {
-    @include div_r_m(140, 40, 390,47);
+    @include div_r_m(150, 40, 390,30);
   top: calc(50% + 100vw * (390 - 302) / 375);
     border: 1px solid #ee8600;
     font-size: sizem(16);
@@ -246,8 +265,8 @@
   }
 
   .logos {
-    @include img_r_m(80, 480, 50);
-  top: calc(50% + 100vw * (480 - 302) / 375);
+    @include img_r_m(100, 480, 32);
+  top: calc(50% + 100vw * (470 - 302) / 375);
   text-align: right;
   }
 }
