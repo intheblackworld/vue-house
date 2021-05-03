@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="contact-info" id="contact-info">
+    <div class="contact-info" id="contact-info" data-aos="fade" data-aos-delay="0">
       <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
       <!-- <img
         v-if="isMobile"
@@ -11,13 +11,13 @@
         data-aos-delay="0"
       /> -->
       <div class="info">
-        <div class="btn flex-c" @click="showCallDialog">
+        <div class="btn flex-c" @click="showCallDialog" data-aos="fade-down" data-aos-delay="100">
           <span class="flex-c">
             <font-awesome-icon icon="phone" />
             <span>{{info.phone}}</span>
           </span>
         </div>
-        <div class="btn flex-c" @click="showMessengerDialog">
+        <div class="btn flex-c" @click="showMessengerDialog" data-aos="fade-down" data-aos-delay="200">
           <span class="flex-c">
             <font-awesome-icon :icon="['fab', 'facebook-messenger']" /><span>FB 諮詢</span>
           </span>
@@ -27,8 +27,8 @@
             <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
           </span>
         </a>
-        <div class="address flex-c">{{info.address}}</div>
-        <div class="google-btn flex-c" @click="showMapDialog">
+        <div class="address flex-c" data-aos="fade-down" data-aos-delay="400">{{info.address}}</div>
+        <div class="google-btn flex-c" data-aos="fade-down" data-aos-delay="400" @click="showMapDialog">
           <span class="flex-c">
             <font-awesome-icon icon="map-marker-alt" /><span>導航 Google 地圖</span>
           </span>
@@ -200,6 +200,7 @@ export default {
   color: $contact_btn_border;
   font-weight: bold;
   box-shadow: $contact_btn_border;
+  z-index: 1;
   // border-top-left-radius: 60px;
   // border-bottom-left-radius: 60px;
 }
@@ -217,6 +218,7 @@ export default {
   background-position: center !important;
   border: $contact_btn_border;
   transition: all 0.5s;
+  z-index: 1;
 
   svg {
     color: $contact_google_btn_icon;

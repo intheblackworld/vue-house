@@ -3,7 +3,7 @@
     <div class="content">
       <h3 class="title" data-aos="fade-down" data-aos-delay="0">建案資訊</h3>
       <div class="info">
-        <div class="item" :key="infos[0]" v-for="(infos, index) in houseInfos" data-aos="fade-right" :data-aos-delay="100 + index * 100">
+        <div class="item" :key="infos[0]" v-for="(infos, index) in houseInfos" data-aos="fade-right" :data-aos-delay="100 + index * 100" data-aos-offset="-300">
           <h3 class="label">{{infos[0]}}</h3>
           <p class="desc" v-html="infos[1]"></p>
         </div>
@@ -106,7 +106,7 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .content {
-    height: 25em;
+    min-height: 25em;
     width: 100%;
     margin-bottom: 0;
     font-size: 15px;
@@ -122,8 +122,8 @@ export default {
     margin: 0;
     width: 100%;
     height: auto;
-    margin-left: 20px;
     white-space: normal;
+    margin: 0.5em 20px;
   }
 
   .info {

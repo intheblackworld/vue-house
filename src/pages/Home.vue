@@ -126,9 +126,12 @@
 }
 
 @media only screen and (max-width: 767px) {
-  .bg-img {
-    //  background-image: url('~@/projects/lj/s1/bg_m.png');
-  }
+.bg1,
+.bg2,
+.bg3 {
+  background-size: sizem(430) auto;
+}
+
 }
 </style>
 
