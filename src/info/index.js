@@ -23,9 +23,9 @@ export default {
   ],
 
   gtmCode: ['MXF8KJB'], // 可放置多個
-  recaptcha_site_key_v2: '6LfGUjEaAAAAANYvhZQx5imGm23pRt0V-rOvkpNC',
+  recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
   recaptcha_site_key: '6LfGUjEaAAAAAFR9F5m6Lg1RfS-D07l64KWmoLcK', // recaptcha v3
-  recaptcha_user_token: '6LfGUjEaAAAAAFR9F5m6Lg1RfS-D07l64KWmoLcK',
+  recaptcha_user_token: '6Lep-78UAAAAAIDMeDQOBwK-OK3yNooejpZeNCsS',
   order: {
     title: '報名遊玩',
     subTitle: ''
