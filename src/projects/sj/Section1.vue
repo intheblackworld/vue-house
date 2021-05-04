@@ -74,6 +74,9 @@
   top: calc(50% + 100vw * (-190 - 540) / 1920);
   transform: translate(-7%,-5%);
 }
+.img1{
+  top: calc(50% + 100vw * (-195 - 540) / 1920);
+}
 .o{
   @include img_l_pc(430, 102, 222);
   top: calc(50% + 100vw * (102 - 540) / 1920);
@@ -107,14 +110,14 @@
 }
 
 .logo {
-  @include img_r_pc(766, 330, 272);
+  @include img_r_pc(735, 330, 285);
   top: calc(50% + 100vw * (280 - 540) / 1920);
 }
 
 .title {
   @include img_r_pc(1000, 600, 152);
   top: calc(50% + 100vw * (600 - 540) / 1920);
-  font-size: size(46);
+  font-size: size(47.3);
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
@@ -128,6 +131,7 @@
 .title.new1{
   top: calc(50% + 100vw * (670 - 540) / 1920);
   color: #000; 
+  font-size: size(45.6);
 } 
 .title.new1 span{
   color: #ee8600;
@@ -168,8 +172,8 @@
 }
 
 .logos {
-  @include img_r_pc(160, 787, 860);
-  top: calc(50% + 100vw * (765 - 540) / 1920);
+  @include img_r_pc(240, 758, 773);
+  top: calc(50% + 100vw * (758 - 540) / 1920);
 }
 
 @media only screen and (max-width: 1440px) {
@@ -208,6 +212,9 @@
   top: calc(50% + 100vw * (80 - 604 * .5) / 375);
   transform: translate(-7%,-5%);
 }
+.img1{
+  top: calc(50% + 100vw * (75 - 604 * .5) / 375);
+}
 
   .logo {
     @include img_r_m(190, 74, 30);
@@ -215,9 +222,9 @@
   }
 
   .title {
-    @include img_r_m(330, 250, 32);
+    @include img_r_m(330, 250, 31.5);
   top: calc(50% + 100vw * (250 - 302) / 375);
-    font-size: sizem(18);
+    font-size: sizem(18.5);
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
