@@ -622,12 +622,12 @@
 
   .slide-title {
     @include img_r_m(310, 250, 32);
-    font-size: sizem(30);
-    font-weight: bold;
+    font-size: sizem(22);
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: normal;
+    line-height: 1.6;
+    letter-spacing:0.06em;
     text-align: left;
     color: #faee00;
     cursor: pointer;
@@ -636,7 +636,7 @@
   }
 
   .btn {
-    @include img_r_m(130, 350, 32);
+    @include img_r_m(130, 355, 32);
     font-size: sizem(25);
     font-weight: 900;
     font-stretch: normal;
@@ -761,13 +761,8 @@ export default {
       // currentIndex: 0,
       slideList: [
         {
-          title: '透過唱跳遊戲、故事及手作，讓孩子認識可愛動物。',
-          img: require('./s7/8.jpg'),
-          name: '情境示意圖',
-        },
-        {
-          title: '一杯口感馥郁香氣的黑色飲料，蘊藏著多少功夫細節?',
-          img: require('./s7/9.jpg'),
+          title: '搭配母親節和即將到來的端午節，國語日報用故事和小寶貝動動小手，歡度佳節！',
+          img: require('./s7/10.jpg'),
           name: '情境示意圖',
         },
         {
@@ -815,6 +810,18 @@ export default {
         {
           title: '讓姊姊說好聽好玩的故事，感受不同的週末親子時光。',
           img: require('./s7/7.jpg'),
+          name: '情境示意圖',
+          hide: true,
+        },
+        {
+          title: '透過唱跳遊戲、故事及手作，讓孩子認識可愛動物。',
+          img: require('./s7/8.jpg'),
+          name: '情境示意圖',
+          hide: true,
+        },
+        {
+          title: '一杯口感馥郁香氣的黑色飲料，蘊藏著多少功夫細節?',
+          img: require('./s7/9.jpg'),
           name: '情境示意圖',
           hide: true,
         },
