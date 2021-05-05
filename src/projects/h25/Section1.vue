@@ -111,8 +111,9 @@
 	</g>
 </g>
     </svg>
-    <img src="./s1/t.png" :alt="`${info.caseName}_logo`" class="t" v-if="isPC">
-    <img src="./s1/t_m.png" :alt="`${info.caseName}_logo`" class="t" v-if="isMobile">
+<div class="t1"><span>精彩生活 不只24小時</span></div>
+<div class="t2"><span>華山特區｜雙捷運<b v-if="!isMobile">｜</b><br v-if="isMobile"><b><span>13．17．35</span>坪 風雅潮居</b></span></div>
+
   </div>
 </template>
 <style lang="scss" scoped>
@@ -216,13 +217,41 @@
     opacity:0;
   }
 }
-
-
-.t {
+.t1 {
   @include img_c_pc(730, 737);
   top:calc(50% + 100vw * (790 - 540) / 1920);
+  color:#BF945B;
+  border: 1px solid currentColor;
+  border-width: 1px 0 1px 0;
+  font-size: size(63);
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing:0.03em;
+  span{transform: scaleX(0.95);
+  transform-origin: 50% 50%}
   animation: an1 0.8s 4s linear forwards;opacity: 0;
 }
+.t2{
+  @include img_c_pc(730, 737);
+  top:calc(50% + 100vw * (900 - 540) / 1920);
+  color:#fff;
+  font-family: 'Noto Sans TC', serif;
+  font-size: size(40);
+  font-weight: 700;
+  animation: an1 0.8s 4.5s linear forwards;opacity: 0;
+  span{font-family: 'Noto Sans TC', serif;}
+  > span{
+    position: relative;
+    width: 120%;
+    left: -10%;
+    display: block;
+    text-align: center;
+    transform: scaleX(0.94);
+  transform-origin: 50% 50%}
+  b > span{letter-spacing:-0.05em;}
+}
+
+ 
 @keyframes an {
   to {
     transform: translateY(0);
@@ -263,9 +292,25 @@
   .logo {
     @include img_c_m(337, 0);
   }
-  .t {
+  
+.t1 {
     @include img_c_m(320, 380);
+  font-size: sizem(32);
+  line-height: 1.7;
   }
+.t2{
+    @include img_c_m(370, 445);
+  font-size: sizem(32);
+  letter-spacing:0.09em;
+  line-height: 1.7;
+b{
+    position: relative;
+    width: 120%;
+    left: -10%;
+  font-size: sizem(30);
+    display: block;transform: scaleX(0.88);
+  letter-spacing:0.03em;}
+}
 }
 </style>
 
