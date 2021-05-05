@@ -222,7 +222,7 @@ export default {
   background-color: transparent;
   background-image: $order_bg_image;
   background-size: cover;
-  // position: relative;
+  position: relative;
   // padding-top: calc(100vw * 200 / 1920);
   // overflow: hidden;
 
