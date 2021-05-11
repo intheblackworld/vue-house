@@ -17,7 +17,7 @@
             width="100%"
             height="100%"
             v-if="isPlay"
-            src="https://www.youtube.com/embed/RDXrCp8NZQk?rel=0&autoplay=1"
+            src="https://www.youtube.com/embed/xOEsaB3KiUw?rel=0&autoplay=1"
             frameborder="0"
             class="video"
             allowfullscreen
