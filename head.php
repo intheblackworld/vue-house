@@ -1,5 +1,11 @@
 <?php
-$case_code = 'tv'; 
+#下3段式抓 為案件編號 $case_code
+#$case_code_test 是用來判斷是否為1的測試頁
+#$case_code = "jw";特殊案使用
+$src =$_SERVER['SERVER_NAME']; 
+$case_code_test = substr(substr($src,0,strpos($src,'.')),-1);
+$case_code = substr($src,0,strpos($src,$case_code_test=='1'?'1':$case_code_test=='5'?'-':'.'));
+
 $pdo = new pdo('mysql:host=localhost;dbname=htw_web', 'htw', '748aSgl5Ni');
 $pdo->exec("SET NAMES 'utf8'");
 $sql = "SELECT title,description,keyword FROM susers WHERE email = '" . $case_code . "'";
@@ -11,6 +17,9 @@ $keyWords = $dataList[0]['keyword'];
 $ogType = 'website';
 ?>
 <title><?php echo $docTitle; ?></title>
+<title><?php echo $case_code_test; ?></title>
+<title><?php echo $case_code_test2; ?></title>
+<title><?php echo $case_code; ?></title>
 <meta name="description" content="<?php echo $docDesc ?>">
 <meta name="keywords" content="<?php echo $keyWords ?>">
 <meta property="og:locale" content="zh_TW" />
