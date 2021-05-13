@@ -149,9 +149,9 @@ export default {
       isSide: false,
       load: true,
       viewIndex: 0,
-      // action: {
-      //   moveTo: () => {},
-      // },
+      action: {
+        moveTo: () => {},
+      },
       // options: {
       //   menu: '#menu',
       //   anchors: [],

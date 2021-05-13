@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="section1">
+
       <transition-group name="swipe-fade" mode="out-in">
         <img :src="slide" v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide" :class="`bg-img absolute`" />
       </transition-group>
@@ -343,7 +344,7 @@
           c-1.4-2.7-0.9-5.3-0.4-8c0.2-1.2-0.1-1.9-1.3-2.3c-3.2-1.2-5.3-3.5-6.6-6.6c-0.4-1-1.2-0.9-1.9-0.4c-1.9,1.5-3.8,3.1-5.5,4.8
           c-0.4,0.3-0.5,1.1-0.6,1.6s0,1.3-0.3,1.5c-2,1.5-0.4,2.7,0.4,3.6c1.2,1.5,2.7,2.7,3.2,4.7c0,0.2,0.2,0.5,0.3,0.6
           c2.2,1.8,4.5,3.5,6.7,5.2c0.6,0.4,1,0.9,1.8,1.6C77.6,761.2,74.3,760.6,70.9,759.1z M192.1,869.9c-0.1-1.3-0.1-2.7-0.2-4
-          c0.2,0,0.4,0,0.7,0c0,1.3,0,2.7,0,4C192.4,869.9,192.2,869.9,192.1,869.9z"/>
+          c0.2,0,0.4,0,0.7,0c0,1.3,0,2.7,0,4C192.4,869.9,192.2,869.9,192.1,869.9z" />
         <g>
           <g>
             <defs>
@@ -679,66 +680,66 @@
                 c0.2-0.7,0.9-1.7,0.6-2.1c-1.4-2.7-0.9-5.3-0.4-8c0.2-1.2-0.1-1.9-1.3-2.3c-3.2-1.2-5.3-3.5-6.6-6.6c-0.4-1-1.2-0.9-1.9-0.4
                 c-1.9,1.5-3.8,3.1-5.5,4.8c-0.4,0.3-0.5,1.1-0.6,1.6s0,1.3-0.3,1.5c-2,1.5-0.4,2.7,0.4,3.6c1.2,1.5,2.7,2.7,3.2,4.7
                 c0,0.2,0.2,0.5,0.3,0.6c2.2,1.8,4.5,3.5,6.7,5.2c0.6,0.4,1,0.9,1.8,1.6C77.6,761.2,74.3,760.6,70.9,759.1z M192.1,869.9
-                c-0.1-1.3-0.1-2.7-0.2-4c0.2,0,0.4,0,0.7,0c0,1.3,0,2.7,0,4C192.4,869.9,192.2,869.9,192.1,869.9z"/>
+                c-0.1-1.3-0.1-2.7-0.2-4c0.2,0,0.4,0,0.7,0c0,1.3,0,2.7,0,4C192.4,869.9,192.2,869.9,192.1,869.9z" />
             </defs>
             <clipPath id="SVGID_2_">
-              <use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+              <use xlink:href="#SVGID_1_" style="overflow:visible;" />
             </clipPath>
             <g class="st2">
-              <polyline class="st3 ld1" points="81.3,736.4 89.1,747.5 66.7,779.3 93.1,820.8 59.1,865.8 88.1,915 133,859.5 			"/>
-              <path class="st4 ld2" d="M136.1,735.3c16.6-21.6,65.9-45.7,95.5-41"/>
-              <path class="st5 ld3" d="M161.9,758.1c16.4-7.3,25.6-12.8,31-18.2"/>
-              <path class="st6 ld4" d="M127.2,823c21.9-27.8,82.5-64.9,120.6-64.9"/>
-              <path class="st7 ld5" d="M229.5,733.4c-22.5,43.5-101.8,82.7-104.4,86.9"/>
-              <path class="st8 ld6" d="M187.5,675.4c9.5,20.9-5.7,88.5-3.6,96.5"/>
-              <path class="st9 ld7" d="M173.9,825c-5.9,20-18.5,89.9,11.2,125.3"/>
-              <path class="st9 ld8" d="M172.9,828.8c8.1-9.9,23-23.2,31.9-19.9c26.8,10,9.6,115,15.2,128.8c5.6,13.8-19.6-7.1-19.6-7.1"/>
-              <path class="st9 ld9" d="M178.5,851.6c11.3-8.7,18.5-8.5,23.5,0s-10.1,19.7-5.9,28.3c5.2,10.7,11.2,26.3,21.1,33"/>
-              <path class="st4 ld10" d="M319.3,707.7c1.4,22.7,13.3,47.7,19.3,51.8"/>
-              <path class="st4 ld11" d="M325.5,700.2c7.8-6.9,50.4-29.4,66.9-20c16.6,9.4,2.7,56.6-6.1,68.7"/>
-              <path class="st10 ld12" d="M334.7,732.3c31.5-15.8,55.1-23.6,59.5-22.6"/>
-              <path class="st11 ld13" d="M346.9,755.1c4.2-2.4,37.3-17.1,37.6-17.8"/>
-              <line class="st11 ld14" x1="361.9" y1="753.1" x2="367.6" y2="764.9"/>
-              <path class="st12 ld15" d="M293.3,799.4c18.7-15.3,104.1-41.5,148.7-45.2"/>
-              <path class="st13 ld16" d="M333.7,816.4c4.9,22.1,14.6,35.1,20.7,38.2"/>
-              <path class="st3 ld17" d="M340.5,828.8c20.4-14.5,76.1-32.9,76-15.6s-18.8,35.9-18.8,35.9"/>
-              <path class="st14 ld18" d="M357.8,858.8c17.1-9.4,24.6-7.2,27.2-7.7"/>
-              <path class="st13 ld19" d="M377.6,882.4c7.4,13.2,10.7,43.1,2,41c-8.7-2.1-35.9-19-39-13.7c-3.1,5.2,3.9,20.5,7.7,23.5"/>
-              <path class="st15 ld20" d="M454.5,891.9c0,9.1-2.4,15.1-4.4,18.3"/>
-              <path class="st15 ld21" d="M561.5,704.3c7.2,11.8,0.6,16.6,0.6,16.6"/>
-              <path class="st10 ld22" d="M547.7,749.5c0,0,28.2-19.5,41.3-15"/>
-              <path class="st16 ld23" d="M547.7,771.4c-14,20.8-54.9,64.2-50.6,125.2"/>
-              <path class="st17 ld24" d="M531.3,801.9c36.9-27.5,72-41.9,73.6-33.6c1.6,8.3-12,23.9-12,23.9"/>
-              <path class="st18 ld25" d="M538.6,828.2c12.1-13.8,44.7-31.7,53.9-32.7"/>
-              <path class="st18 ld26" d="M553,783.4c4.2,18.8,8.5,25.5,8.5,25.5"/>
-              <path class="st18 ld27" d="M577.3,740.6c-3.1,13.5,0.7,57.8,0.7,57.8"/>
-              <path class="st6 ld28" d="M540.9,840.9c-9.9,8.6,3.7,35.3,14.5,31c10.7-4.2-6.4-34.8,14-24.9"/>
-              <path class="st17 ld29" d="M583.3,809.4c-2.2,11.1-6.2,45.6,4.8,54.4"/>
-              <path class="st18 ld30" d="M590,835.6c16.6,4.7,19.8,8.5,9.9,18.2"/>
-              <path class="st6 ld31" d="M624.4,753.8c16.1-3.9,55.5-41.9,72.6-35.7"/>
-              <path class="st14 ld32" d="M662,670.5c20.5,27.1-3.1,55.3,0.6,106.4"/>
-              <path class="st6 ld33" d="M673.2,661.4c9.7,9.9-2.8,17.6-3.5,24.4"/>
-              <path class="st9 ld34" d="M631.1,703.3c14.2,26.7,71.1-50.3,59.3-17.9c-4.8,13.3-33.6,40.5-33.6,40.5"/>
-              <path class="st18 ld35" d="M647.5,763.9c-5.3,12.8-10.3,18.9-7.5,16.9s23.2-15.9,31.1-26"/>
-              <path class="st12 ld36" d="M700,748.5c-19.7,8.8-64.2,70.3-82.1,103.2"/>
-              <path class="st19 ld37" d="M641,803.3c6.5,1.6,8.4,69.5-26,79.1"/>
-              <path class="st11 ld38" d="M649.5,840.6c16.7-22.9,46.5-49.9,71.2-37.3"/>
-              <path class="st9 ld39" d="M709.7,805.2c-27.1,18.8-44.9,58.3-40,58.6c4.9,0.3,31.9-20.2,59.1-30.2"/>
-              <path class="st17 ld40" d="M706.8,766.4c3.6,1.4-6.3,161.6-9.9,201.8"/>
+              <polyline class="st3 ld1" points="81.3,736.4 89.1,747.5 66.7,779.3 93.1,820.8 59.1,865.8 88.1,915 133,859.5 			" />
+              <path class="st4 ld2" d="M136.1,735.3c16.6-21.6,65.9-45.7,95.5-41" />
+              <path class="st5 ld3" d="M161.9,758.1c16.4-7.3,25.6-12.8,31-18.2" />
+              <path class="st6 ld4" d="M127.2,823c21.9-27.8,82.5-64.9,120.6-64.9" />
+              <path class="st7 ld5" d="M229.5,733.4c-22.5,43.5-101.8,82.7-104.4,86.9" />
+              <path class="st8 ld6" d="M187.5,675.4c9.5,20.9-5.7,88.5-3.6,96.5" />
+              <path class="st9 ld7" d="M173.9,825c-5.9,20-18.5,89.9,11.2,125.3" />
+              <path class="st9 ld8" d="M172.9,828.8c8.1-9.9,23-23.2,31.9-19.9c26.8,10,9.6,115,15.2,128.8c5.6,13.8-19.6-7.1-19.6-7.1" />
+              <path class="st9 ld9" d="M178.5,851.6c11.3-8.7,18.5-8.5,23.5,0s-10.1,19.7-5.9,28.3c5.2,10.7,11.2,26.3,21.1,33" />
+              <path class="st4 ld10" d="M319.3,707.7c1.4,22.7,13.3,47.7,19.3,51.8" />
+              <path class="st4 ld11" d="M325.5,700.2c7.8-6.9,50.4-29.4,66.9-20c16.6,9.4,2.7,56.6-6.1,68.7" />
+              <path class="st10 ld12" d="M334.7,732.3c31.5-15.8,55.1-23.6,59.5-22.6" />
+              <path class="st11 ld13" d="M346.9,755.1c4.2-2.4,37.3-17.1,37.6-17.8" />
+              <line class="st11 ld14" x1="361.9" y1="753.1" x2="367.6" y2="764.9" />
+              <path class="st12 ld15" d="M293.3,799.4c18.7-15.3,104.1-41.5,148.7-45.2" />
+              <path class="st13 ld16" d="M333.7,816.4c4.9,22.1,14.6,35.1,20.7,38.2" />
+              <path class="st3 ld17" d="M340.5,828.8c20.4-14.5,76.1-32.9,76-15.6s-18.8,35.9-18.8,35.9" />
+              <path class="st14 ld18" d="M357.8,858.8c17.1-9.4,24.6-7.2,27.2-7.7" />
+              <path class="st13 ld19" d="M377.6,882.4c7.4,13.2,10.7,43.1,2,41c-8.7-2.1-35.9-19-39-13.7c-3.1,5.2,3.9,20.5,7.7,23.5" />
+              <path class="st15 ld20" d="M454.5,891.9c0,9.1-2.4,15.1-4.4,18.3" />
+              <path class="st15 ld21" d="M561.5,704.3c7.2,11.8,0.6,16.6,0.6,16.6" />
+              <path class="st10 ld22" d="M547.7,749.5c0,0,28.2-19.5,41.3-15" />
+              <path class="st16 ld23" d="M547.7,771.4c-14,20.8-54.9,64.2-50.6,125.2" />
+              <path class="st17 ld24" d="M531.3,801.9c36.9-27.5,72-41.9,73.6-33.6c1.6,8.3-12,23.9-12,23.9" />
+              <path class="st18 ld25" d="M538.6,828.2c12.1-13.8,44.7-31.7,53.9-32.7" />
+              <path class="st18 ld26" d="M553,783.4c4.2,18.8,8.5,25.5,8.5,25.5" />
+              <path class="st18 ld27" d="M577.3,740.6c-3.1,13.5,0.7,57.8,0.7,57.8" />
+              <path class="st6 ld28" d="M540.9,840.9c-9.9,8.6,3.7,35.3,14.5,31c10.7-4.2-6.4-34.8,14-24.9" />
+              <path class="st17 ld29" d="M583.3,809.4c-2.2,11.1-6.2,45.6,4.8,54.4" />
+              <path class="st18 ld30" d="M590,835.6c16.6,4.7,19.8,8.5,9.9,18.2" />
+              <path class="st6 ld31" d="M624.4,753.8c16.1-3.9,55.5-41.9,72.6-35.7" />
+              <path class="st14 ld32" d="M662,670.5c20.5,27.1-3.1,55.3,0.6,106.4" />
+              <path class="st6 ld33" d="M673.2,661.4c9.7,9.9-2.8,17.6-3.5,24.4" />
+              <path class="st9 ld34" d="M631.1,703.3c14.2,26.7,71.1-50.3,59.3-17.9c-4.8,13.3-33.6,40.5-33.6,40.5" />
+              <path class="st18 ld35" d="M647.5,763.9c-5.3,12.8-10.3,18.9-7.5,16.9s23.2-15.9,31.1-26" />
+              <path class="st12 ld36" d="M700,748.5c-19.7,8.8-64.2,70.3-82.1,103.2" />
+              <path class="st19 ld37" d="M641,803.3c6.5,1.6,8.4,69.5-26,79.1" />
+              <path class="st11 ld38" d="M649.5,840.6c16.7-22.9,46.5-49.9,71.2-37.3" />
+              <path class="st9 ld39" d="M709.7,805.2c-27.1,18.8-44.9,58.3-40,58.6c4.9,0.3,31.9-20.2,59.1-30.2" />
+              <path class="st17 ld40" d="M706.8,766.4c3.6,1.4-6.3,161.6-9.9,201.8" />
             </g>
           </g>
         </g>
         <g class="op3">
           <g>
             <path class="st0" d="M815.9,818c0,13-10.5,23.6-23.6,23.6c-12.8,0-23.4-10.2-23.4-23.6c0-14.4,11.3-23.4,23.4-23.4
-              C804.5,794.6,815.9,804,815.9,818z"/>
+              C804.5,794.6,815.9,804,815.9,818z" />
           </g>
           <path class="st0" d="M1041.6,893.8c-3.2-1.5-5.5-4.7-6.9-9.7c-0.8-2.5-1.1-5.3-1-8.5c0.2-3.2,0.7-7.2,1.6-12.1l1.8-10.1
             c0.3-1.6,0.8-4.2,1.4-7.7l-2.9-1.1c-7.9,18.7-15,32.5-21.2,41.6c-6.2,8.9-12.7,14.6-19.3,17c-6.6,2.4-18.9,3.7-36.7,4
             c-9.8,0.2-20.7-0.2-32.7-1.1c-12-0.9-19.8-1.9-23.4-2.8c-3.6-0.9-6-2.3-7-4.2c-1-1.9-1.5-4.5-1.5-7.6v-63.5v-27.1h99.8h36.2v-96.6
             v-8.6h-37h-99v-0.3h-34.7v197.5c0,6.9,1,14.7,3.1,23.5c2.1,8.8,11.1,14.8,27.1,18c16,3.2,38.7,4.4,68.2,3.5
             c25.9-0.7,43.3-2,52.2-4.2c9-2.1,15.6-5.7,20.1-10.6c4.4-4.9,7.9-9,10.3-12.3c2.4-3.3,4.2-5.9,5.3-8c1.8-3.2,2.5-5.2,1.9-5.8
-            C1046.7,896.5,1044.8,895.3,1041.6,893.8z M958.8,715.2h34.7v66h-34.7V715.2z M893.8,715.2h32.9v66h-32.9V715.2z"/>
+            C1046.7,896.5,1044.8,895.3,1041.6,893.8z M958.8,715.2h34.7v66h-34.7V715.2z M893.8,715.2h32.9v66h-32.9V715.2z" />
           <path class="st0" d="M1271.5,907.4c-0.4-1-0.9-1.7-1.4-2c-0.6-0.3-2.7-0.9-6.5-1.9c-3.7-0.9-6-3.8-7-8.6c-1-4.8-1.5-10.2-1.5-16.2
             c-0.1-6-0.1-12.2,0-18.7l-5-0.3l-1.5,13.7l-1.5,14.7c-0.2,1.5-0.6,4-1.3,7.7c-0.7,3.7-1.4,7.1-2.1,10.3c-0.8,3.1-2.6,5.1-5.5,5.9
             c-2.9,0.7-7.2,1.1-12.7,1c-7.4,0-11.6-0.6-12.7-1.8c-1.1-1.2-1.6-3.7-1.6-7.5V831h1.8h3.2h33.7v-70.7h-34.9h-29.7v-21v-2.8h84.8
@@ -747,285 +748,337 @@
             c8-5.4,14.5-11.6,19.7-18.6c5.2-7,9.3-14.1,12.3-21.2c3-7.1,4.9-15.3,5.6-24.6c0.8-8.8,1.3-16.4,1.7-22.9l0,0c0,0,0-0.2,0-0.6
             c0-0.2,0-0.4,0-0.5l0,0c0.1-1.8,0.2-5.1,0.1-6.4h18v80.7c0,8.2,1,14.2,3,18c2,3.8,5.2,6.6,9.8,8.4c4.6,1.8,16.1,2.7,34.5,2.6
             c11.1,0,19.1-0.4,23.9-1.2c4.8-0.8,8.5-2.3,11.1-4.3c2.6-2,5-5.3,7.1-9.7c2.1-4.4,3.7-9,4.7-13.8
-            C1271.9,909.8,1271.9,908.4,1271.5,907.4z M1124.3,812.8v-34.2h91.9v34.2H1124.3z"/>
+            C1271.9,909.8,1271.9,908.4,1271.5,907.4z M1124.3,812.8v-34.2h91.9v34.2H1124.3z" />
           <g>
             <path class="st0" d="M1314.8,702.6c2.4,3.3,4.5,7.3,6.3,11.8c1.9,4.5,3.4,7.7,4.5,9.7c1.1,1.9,2.7,3.6,4.7,4.8
               c2.1,1.2,4.5,1.8,7.4,1.8c5.5,0.2,10-1.6,13.4-5.4c3.4-3.8,4.2-10.3,2.1-19.4c-2-9.1-9.5-14.1-22.6-14.8
-              c-13.1-0.8-21.7-1.2-25.8-1.3l-1.4,3.9C1308.7,696.2,1312.4,699.2,1314.8,702.6z"/>
+              c-13.1-0.8-21.7-1.2-25.8-1.3l-1.4,3.9C1308.7,696.2,1312.4,699.2,1314.8,702.6z" />
             <path class="st0" d="M1461,920.1c5.3-4.4,9.2-8.3,11.5-11.5c2.3-3.2,6.5-9.3,12.4-18.4l-28.7-2.3l-0.6,5.5
               c-0.3,2.3-0.9,5.8-1.9,10.4c-1,4.6-2.6,10-4.8,16.4h-26.1c0.8-1.1,1.6-2.5,2.3-4.1c1.5-1.6,2.2-4.5,2.3-8.7c0-0.8,0-1.5-0.2-2.3
               c-0.4-6.1-4.8-11.1-13.1-15.1c-9.5-4.6-16-7.6-19.3-9h13.6v-0.1h53.8v0.1h29.1v-47.5h-111.8v47.5h14.7l-2.1,2.3
               c3.2,3.8,5.1,7.3,5.9,10.7c0.8,3.4,1.2,7.1,1.2,11.2c0,2,0,3.6,0.1,5c-0.1,1.6,0,2.9,0.2,3.9v0.1c0.2,1.9,1,3.6,2.2,5.3
-              c0.2,0.2,0.4,0.5,0.7,0.8H1365v16.8h136.4v-16.8H1461z M1408.5,849.8h53.8V864h-53.8V849.8z"/>
+              c0.2,0.2,0.4,0.5,0.7,0.8H1365v16.8h136.4v-16.8H1461z M1408.5,849.8h53.8V864h-53.8V849.8z" />
             <path class="st0" d="M1374.8,835.3c1.1-1,2.1-2.1,3.1-3.3c1.9-2.8,2.7-5.4,3.1-7.5l0.2-2c0-0.5,0-0.9,0-1.2c0-0.5-0.1-1.2-0.3-2.2
               h110.5v-16.2H1373v4.9c-4.5-3.7-11.9-7.9-22-12.5v-5.7l17.3-43.4v-3.7h-66.9v18h29.7l-3.5,17.7c-0.4,2.1-1.9,7.5-4.5,16.2
               c-2.6,8.7-5.6,17.3-8.8,25.8c-3.2,8.6-6,15.2-8.4,20c-2.3,4.8-4.9,9.7-7.7,14.7l2.7,2.6c7.4-7.5,14.8-15.4,21.8-23.7v108.6h28.2
               V804.8l3,7.4c0.6,1.4,1.1,4.2,1.5,8.4c0.4,4.2,0.7,7.1,1,8.6c0.2,1.5,1.1,3.1,2.7,4.8c1.5,1.7,4.1,2.7,7.6,3.1
-              C1370.4,837.5,1373,836.9,1374.8,835.3z"/>
+              C1370.4,837.5,1373,836.9,1374.8,835.3z" />
             <path class="st0" d="M1495.9,706.1h-25.9H1459v-16.6h-20.8v16.6h-12.1v-17.9h-19.6v17.9h-10.5h-25v83.5h124.8V706.1z
               M1406.5,773.4h-10.5v-17.9h10.5V773.4z M1406.5,739h-10.5v-16.5h10.5V739z M1438.2,773.4h-12.1v-17.9h12.1V773.4z M1438.2,739
-              h-12.1v-16.5h12.1V739z M1471.1,773.4H1459v-17.9h12.1V773.4z M1471.1,739H1459v-16.5h12.1V739z"/>
+              h-12.1v-16.5h12.1V739z M1471.1,773.4H1459v-17.9h12.1V773.4z M1471.1,739H1459v-16.5h12.1V739z" />
           </g>
         </g>
 
-
       </svg>
       <div class="txt absolute">南台南新都心<br>準備大賺三代</div>
-     <!-- <img src="./s1/txt.png" alt="" class="title-img absolute" data-aos="fade-down" data-aos-delay="800">  -->
+      <!-- <img src="./s1/txt.png" alt="" class="title-img absolute" data-aos="fade-down" data-aos-delay="800">  -->
     </div>
   </div>
 </template>
 <style lang="scss">
-	.st0{fill:#FFFFFF;}
-	.st1{fill:none;}
-	.st2{clip-path:url(#SVGID_2_);fill:none;stroke:#FFFFFF;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st3{stroke-width:46;}
-	.st4{stroke-width:33;}
-	.st5{stroke-width:30;}
-	.st6{stroke-width:21;}
-	.st7{stroke-width:22;}
-	.st8{stroke-width:36;}
-	.st9{stroke-width:27;}
-	.st10{stroke-width:24;}
-	.st11{stroke-width:19;}
-	.st12{stroke-width:23;}
-	.st13{stroke-width:40;}
-	.st14{stroke-width:16;}
-	.st15{stroke-width:34;}
-	.st16{stroke-width:29;}
-	.st17{stroke-width:20;}
-	.st18{stroke-width:18;}
-  .st19{stroke-width:25;}
-	.st20{fill:#FFF100;stroke:#FFF100;stroke-width:3.8675;stroke-miterlimit:10;}
-  .ld1{
-    stroke-dasharray: 300;
-    stroke-dashoffset: 300;
-    animation: letterDraw 0.1s linear forwards;
-    }
-  .ld2{
-    stroke-dasharray:120;
-    stroke-dashoffset: 120;
-    animation: letterDraw 0.1s 0.1s linear forwards;
-  }
-  .ld3{
-    stroke-dasharray: 46;
-    stroke-dashoffset:46;
-    animation: letterDraw 0.1s 0.2s linear  forwards;
-    }
-  .ld4{
-    stroke-dasharray: 155;
-    stroke-dashoffset: 155;
-    animation: letterDraw 0.1s 0.3s linear  forwards;
-    }
-  .ld5{
-    stroke-dasharray:300;
-    stroke-dashoffset:300;
-    animation: letterDraw 0.2s 0.4s linear  forwards;
-    }
-  .ld6{
-    stroke-dasharray:150;
-    stroke-dashoffset:150;
-    animation: letterDraw 0.1s 0.6s linear  forwards;
-    }
-  .ld7{
-    stroke-dasharray:150;
-    stroke-dashoffset:150;
-    animation: letterDraw 0.1s 0.7s linear  forwards;
-    }
-  .ld8{
-    stroke-dasharray:250;
-    stroke-dashoffset:250;
-    animation: letterDraw 0.2s 0.8s linear  forwards;
-    }
-  .ld9{
-    stroke-dasharray:110;
-    stroke-dashoffset: 110;
-    animation: letterDraw 0.1s 1s linear  forwards;
-    }
-  .ld10{
-    stroke-dasharray: 65;
-    stroke-dashoffset:65;
-    animation: letterDraw 0.1s 1.1s linear  forwards;
-    }
-  .ld11{
-    stroke-dasharray:175;
-    stroke-dashoffset:175;
-    animation: letterDraw 0.1s 1.2s linear  forwards;
-    }
-  .ld12{
-    stroke-dasharray: 70;
-    stroke-dashoffset: 70;
-    animation: letterDraw 0.1s 1.3s linear  forwards;
-    }
-  .ld13{
-    stroke-dasharray: 75;
-    stroke-dashoffset: 75;
-    animation: letterDraw 0.1s 1.4s linear  forwards;
-    }
-  .ld14{
-    stroke-dasharray: 50;
-    stroke-dashoffset: 50;
-    animation: letterDraw 0.1s 1.5s linear  forwards;
-    }
-  .ld15{
-    stroke-dasharray: 180;
-    stroke-dashoffset:180;
-    animation: letterDraw 0.2s 1.6s linear  forwards;
-    }
-  .ld16{
-    stroke-dasharray: 58;
-    stroke-dashoffset:58;
-    animation: letterDraw 0.1s 1.8s linear  forwards;
-    }
-  .ld17{
-    stroke-dasharray: 150;
-    stroke-dashoffset: 150;
-    animation: letterDraw 0.2s 1.9s linear  forwards;
-    }
-  .ld18{
-    stroke-dasharray:40;
-    stroke-dashoffset:40;
-    animation: letterDraw 0.05s 2.1s linear  forwards;
-    }
-  .ld19{
-    stroke-dasharray: 120;
-    stroke-dashoffset: 120;
-    animation: letterDraw 0.1s 2.15s  linear  forwards;
-    }
-  .ld20{
-    stroke-dasharray: 40;
-    stroke-dashoffset: 40;
-    animation: letterDraw 0.05s 2.25s  linear  forwards;
-    }
-  .ld21{
-    stroke-dasharray: 70;
-    stroke-dashoffset: 70;
-    animation: letterDraw 0.1s 2.2s  linear  forwards;
-    }
-  .ld22{
-    stroke-dasharray: 70;
-    stroke-dashoffset:70;
-    animation: letterDraw 0.1s 2.3s  linear  forwards;
-    }
-  .ld23{
-    stroke-dasharray: 150;
-    stroke-dashoffset:150;
-    animation: letterDraw 0.2s 2.4s  linear  forwards;
-    }
-  .ld24{
-    stroke-dasharray: 130;
-    stroke-dashoffset:130;
-    animation: letterDraw 0.1s 2.6s linear  forwards;
-    }
-  .ld25{
-    stroke-dasharray: 80;
-    stroke-dashoffset: 80;
-    animation: letterDraw 0.1s 2.7s linear  forwards;
-    }
-  .ld26{
-    stroke-dasharray: 40;
-    stroke-dashoffset: 40;
-    animation: letterDraw 0.1s 2.8s linear  forwards;
-    }
-  .ld27{
-    stroke-dasharray: 80;
-    stroke-dashoffset: 80;
-    animation: letterDraw 0.1s 2.9s linear  forwards;
-    }
-  .ld28{
-    stroke-dasharray: 100;
-    stroke-dashoffset: 100;
-    animation: letterDraw 0.1s 3s linear  forwards;
-    }
-  .ld29{
-    stroke-dasharray: 60;
-    stroke-dashoffset: 60;
-    animation: letterDraw 0.05s 3.1s linear  forwards;
-    }
-  .ld30{
-    stroke-dasharray: 60;
-    stroke-dashoffset: 60;
-    animation: letterDraw 0.05s 3.15s linear  forwards;
-    }
-  .ld31{
-    stroke-dasharray: 100;
-    stroke-dashoffset: 100;
-    animation: letterDraw 0.1s 3.2s linear  forwards;
-    }
-  .ld32{
-    stroke-dasharray: 120;
-    stroke-dashoffset: 120;
-    animation: letterDraw 0.05s 3.3s linear  forwards;
-    }
-  .ld33{
-    stroke-dasharray: 30;
-    stroke-dashoffset: 30;
-    animation: letterDraw 0.05s 3.3s linear  forwards;
-    }
-  .ld34{
-    stroke-dasharray:190;
-    stroke-dashoffset: 190;
-    animation: letterDraw 0.1s 3.4s linear  forwards;
-    }
-  .ld35{
-    stroke-dasharray: 70;
-    stroke-dashoffset: 70;;
-    animation: letterDraw 0.1s 3.5s linear  forwards;
-    }
-  .ld36{
-    stroke-dasharray:150;
-    stroke-dashoffset: 150;
-    animation: letterDraw 0.1s 3.6s linear  forwards;
-    }
-  .ld37{
-    stroke-dasharray: 110;
-    stroke-dashoffset: 110;
-    animation: letterDraw 0.1s 3.7s linear  forwards;
-    }
-  .ld38{
-    stroke-dasharray: 100;
-    stroke-dashoffset: 100;
-    animation: letterDraw 0.05s 3.8s linear  forwards;
-    }
-  .ld39{
-    stroke-dasharray: 175;
-    stroke-dashoffset:175;
-    animation: letterDraw 0.15s 3.85s linear  forwards;
-    }
-  .ld40{
-    stroke-dasharray: 230;
-    stroke-dashoffset: 230;
-    animation: letterDraw 0.1s 4s linear  forwards;
-    }
-    .op3{
-    animation: op 0.2s 4.6s  forwards;opacity: 0;}
-  @keyframes letterDraw {
-    to {
-        stroke-dashoffset: 0
-    }
+.st0 {
+  fill: #ffffff;
 }
-  @keyframes op {
-    to {opacity: 1;
-    }
+.st1 {
+  fill: none;
+}
+.st2 {
+  clip-path: url(#SVGID_2_);
+  fill: none;
+  stroke: #ffffff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+.st3 {
+  stroke-width: 46;
+}
+.st4 {
+  stroke-width: 33;
+}
+.st5 {
+  stroke-width: 30;
+}
+.st6 {
+  stroke-width: 21;
+}
+.st7 {
+  stroke-width: 22;
+}
+.st8 {
+  stroke-width: 36;
+}
+.st9 {
+  stroke-width: 27;
+}
+.st10 {
+  stroke-width: 24;
+}
+.st11 {
+  stroke-width: 19;
+}
+.st12 {
+  stroke-width: 23;
+}
+.st13 {
+  stroke-width: 40;
+}
+.st14 {
+  stroke-width: 16;
+}
+.st15 {
+  stroke-width: 34;
+}
+.st16 {
+  stroke-width: 29;
+}
+.st17 {
+  stroke-width: 20;
+}
+.st18 {
+  stroke-width: 18;
+}
+.st19 {
+  stroke-width: 25;
+}
+.st20 {
+  fill: #fff100;
+  stroke: #fff100;
+  stroke-width: 3.8675;
+  stroke-miterlimit: 10;
+}
+.ld1 {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: letterDraw 0.1s linear forwards;
+}
+.ld2 {
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
+  animation: letterDraw 0.1s 0.1s linear forwards;
+}
+.ld3 {
+  stroke-dasharray: 46;
+  stroke-dashoffset: 46;
+  animation: letterDraw 0.1s 0.2s linear forwards;
+}
+.ld4 {
+  stroke-dasharray: 155;
+  stroke-dashoffset: 155;
+  animation: letterDraw 0.1s 0.3s linear forwards;
+}
+.ld5 {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: letterDraw 0.2s 0.4s linear forwards;
+}
+.ld6 {
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+  animation: letterDraw 0.1s 0.6s linear forwards;
+}
+.ld7 {
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+  animation: letterDraw 0.1s 0.7s linear forwards;
+}
+.ld8 {
+  stroke-dasharray: 250;
+  stroke-dashoffset: 250;
+  animation: letterDraw 0.2s 0.8s linear forwards;
+}
+.ld9 {
+  stroke-dasharray: 110;
+  stroke-dashoffset: 110;
+  animation: letterDraw 0.1s 1s linear forwards;
+}
+.ld10 {
+  stroke-dasharray: 65;
+  stroke-dashoffset: 65;
+  animation: letterDraw 0.1s 1.1s linear forwards;
+}
+.ld11 {
+  stroke-dasharray: 175;
+  stroke-dashoffset: 175;
+  animation: letterDraw 0.1s 1.2s linear forwards;
+}
+.ld12 {
+  stroke-dasharray: 70;
+  stroke-dashoffset: 70;
+  animation: letterDraw 0.1s 1.3s linear forwards;
+}
+.ld13 {
+  stroke-dasharray: 75;
+  stroke-dashoffset: 75;
+  animation: letterDraw 0.1s 1.4s linear forwards;
+}
+.ld14 {
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: letterDraw 0.1s 1.5s linear forwards;
+}
+.ld15 {
+  stroke-dasharray: 180;
+  stroke-dashoffset: 180;
+  animation: letterDraw 0.2s 1.6s linear forwards;
+}
+.ld16 {
+  stroke-dasharray: 58;
+  stroke-dashoffset: 58;
+  animation: letterDraw 0.1s 1.8s linear forwards;
+}
+.ld17 {
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+  animation: letterDraw 0.2s 1.9s linear forwards;
+}
+.ld18 {
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  animation: letterDraw 0.05s 2.1s linear forwards;
+}
+.ld19 {
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
+  animation: letterDraw 0.1s 2.15s linear forwards;
+}
+.ld20 {
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  animation: letterDraw 0.05s 2.25s linear forwards;
+}
+.ld21 {
+  stroke-dasharray: 70;
+  stroke-dashoffset: 70;
+  animation: letterDraw 0.1s 2.2s linear forwards;
+}
+.ld22 {
+  stroke-dasharray: 70;
+  stroke-dashoffset: 70;
+  animation: letterDraw 0.1s 2.3s linear forwards;
+}
+.ld23 {
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+  animation: letterDraw 0.2s 2.4s linear forwards;
+}
+.ld24 {
+  stroke-dasharray: 130;
+  stroke-dashoffset: 130;
+  animation: letterDraw 0.1s 2.6s linear forwards;
+}
+.ld25 {
+  stroke-dasharray: 80;
+  stroke-dashoffset: 80;
+  animation: letterDraw 0.1s 2.7s linear forwards;
+}
+.ld26 {
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  animation: letterDraw 0.1s 2.8s linear forwards;
+}
+.ld27 {
+  stroke-dasharray: 80;
+  stroke-dashoffset: 80;
+  animation: letterDraw 0.1s 2.9s linear forwards;
+}
+.ld28 {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: letterDraw 0.1s 3s linear forwards;
+}
+.ld29 {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 60;
+  animation: letterDraw 0.05s 3.1s linear forwards;
+}
+.ld30 {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 60;
+  animation: letterDraw 0.05s 3.15s linear forwards;
+}
+.ld31 {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: letterDraw 0.1s 3.2s linear forwards;
+}
+.ld32 {
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
+  animation: letterDraw 0.05s 3.3s linear forwards;
+}
+.ld33 {
+  stroke-dasharray: 30;
+  stroke-dashoffset: 30;
+  animation: letterDraw 0.05s 3.3s linear forwards;
+}
+.ld34 {
+  stroke-dasharray: 190;
+  stroke-dashoffset: 190;
+  animation: letterDraw 0.1s 3.4s linear forwards;
+}
+.ld35 {
+  stroke-dasharray: 70;
+  stroke-dashoffset: 70;
+  animation: letterDraw 0.1s 3.5s linear forwards;
+}
+.ld36 {
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+  animation: letterDraw 0.1s 3.6s linear forwards;
+}
+.ld37 {
+  stroke-dasharray: 110;
+  stroke-dashoffset: 110;
+  animation: letterDraw 0.1s 3.7s linear forwards;
+}
+.ld38 {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: letterDraw 0.05s 3.8s linear forwards;
+}
+.ld39 {
+  stroke-dasharray: 175;
+  stroke-dashoffset: 175;
+  animation: letterDraw 0.15s 3.85s linear forwards;
+}
+.ld40 {
+  stroke-dasharray: 230;
+  stroke-dashoffset: 230;
+  animation: letterDraw 0.1s 4s linear forwards;
+}
+.op3 {
+  animation: op 0.2s 4.6s forwards;
+  opacity: 0;
+}
+@keyframes letterDraw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes op {
+  to {
+    opacity: 1;
+  }
 }
 </style>
 
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .section1 {
-  width:100%;
+  width: 100%;
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);
   overflow: hidden;
   position: relative;
   z-index: 1;
-  background: url("./s1/bg.jpg");
+  background: url('./s1/bg.jpg');
 }
 
 .bg-img {
   width: 100%;
-  height:100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -1036,9 +1089,9 @@
   //   position: relative;
   // }
 }
-.bg-img2{
+.bg-img2 {
   width: 100%;
-  height:auto;
+  height: auto;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1050,46 +1103,63 @@
   // }
 }
 
-.img{position: absolute;}
-.img1{right: 6vw;
-    bottom: 5vw;
-    width: 25vw;animation: tr 4s ease-in infinite alternate;
-    transform: translateY(0)skew(0deg,0)rotate(5deg);
-    transform-origin: left bottom;
+.img {
+  position: absolute;
 }
-.img2{
-    left: -3vw;
-    top: -11vw;
-    width: 31vw;animation: tr 5s ease-in infinite alternate;
-    transform: translateY(-6%)skew(5deg,0)rotate(-6deg);
-    transform-origin: left bottom;}
-.img3{
-    right: -14vw;
-    top: -5vw;
-    width: 31vw;animation: tr 6s ease-in infinite alternate;
-    transform: translateY(-6%)skew(5deg,0)rotate(-6deg);
-    transform-origin: left bottom;}
-.img4{
-    left: -12vw;
-    bottom: 5vw;
-    width: 31vw;animation: tr 6s ease-in infinite alternate;
-    transform: translateY(-6%)skew(5deg,0)rotate(-6deg);
-    transform-origin: left bottom;}
-.img5{mix-blend-mode: lighten;
-    left: -12vw;
-    bottom: 5vw;
-    opacity: 0.3;
-    width: 31vw;animation: tr 1s -1s ease-in infinite alternate;}
-.img6{mix-blend-mode: lighten;
-    right: -5vw;
-    top: 5vw;
-    opacity: 0.3;
-    width: 40vw;animation: tr 1s ease-in infinite alternate;}
+.img1 {
+  right: 6vw;
+  bottom: 5vw;
+  width: 25vw;
+  animation: tr 4s ease-in infinite alternate;
+  transform: translateY(0) skew(0deg, 0) rotate(5deg);
+  transform-origin: left bottom;
+}
+.img2 {
+  left: -3vw;
+  top: -11vw;
+  width: 31vw;
+  animation: tr 5s ease-in infinite alternate;
+  transform: translateY(-6%) skew(5deg, 0) rotate(-6deg);
+  transform-origin: left bottom;
+}
+.img3 {
+  right: -14vw;
+  top: -5vw;
+  width: 31vw;
+  animation: tr 6s ease-in infinite alternate;
+  transform: translateY(-6%) skew(5deg, 0) rotate(-6deg);
+  transform-origin: left bottom;
+}
+.img4 {
+  left: -12vw;
+  bottom: 5vw;
+  width: 31vw;
+  animation: tr 6s ease-in infinite alternate;
+  transform: translateY(-6%) skew(5deg, 0) rotate(-6deg);
+  transform-origin: left bottom;
+}
+.img5 {
+  mix-blend-mode: lighten;
+  left: -12vw;
+  bottom: 5vw;
+  opacity: 0.3;
+  width: 31vw;
+  animation: tr 1s -1s ease-in infinite alternate;
+}
+.img6 {
+  mix-blend-mode: lighten;
+  right: -5vw;
+  top: 5vw;
+  opacity: 0.3;
+  width: 40vw;
+  animation: tr 1s ease-in infinite alternate;
+}
 
-    
-  @keyframes tr {
-    to {transform: translateY(0)skew(0deg,0)rotate(0deg);opacity: 1;
-    }
+@keyframes tr {
+  to {
+    transform: translateY(0) skew(0deg, 0) rotate(0deg);
+    opacity: 1;
+  }
 }
 // begin
 .swipe-fade-leave-to {
@@ -1111,8 +1181,8 @@
 }
 .logo {
   width: size(400);
-  height:calc(39% - 10vw);
-  max-height:size(230);
+  height: calc(39% - 10vw);
+  max-height: size(230);
   min-height: size(200);
   margin: 0 auto;
   position: relative;
@@ -1128,12 +1198,12 @@
 }
 .txt {
   color: #fff;
-  font-size:size(90);
+  font-size: size(90);
   line-height: 1.35;
   font-weight: bold;
-  letter-spacing:0.06em;
-  width:100%;
-  bottom:calc(61% - 2vw);
+  letter-spacing: 0.06em;
+  width: 100%;
+  bottom: calc(61% - 2vw);
   left: 0;
   right: 0;
   padding: 0 0 0 0.06em;
@@ -1160,8 +1230,8 @@
     width: 100vw;
     min-height: auto;
     height: calc(100vh - 63px);
-  min-height: sizem(604);
-  max-height: sizem(812);
+    min-height: sizem(604);
+    max-height: sizem(812);
     //background-image: url('./mo/1/00.jpg');
     background-size: cover;
     background-attachment: scroll;
@@ -1197,36 +1267,45 @@
     right: 0;
     margin: 0 auto;
   }
-.img1{right: -16vw;
+  .img1 {
+    right: -16vw;
     bottom: -5vw;
     width: 50vw;
-}
-.img2{
+  }
+  .img2 {
     left: -2vw;
     top: -22vw;
-    width: 61vw;}
-.img3{
+    width: 61vw;
+  }
+  .img3 {
     right: -14vw;
     top: -5vw;
-    width: 41vw;}
-.img4{left: -12vw;
+    width: 41vw;
+  }
+  .img4 {
+    left: -12vw;
     bottom: 52vw;
-    width: 44vw;}
-.img5{mix-blend-mode: lighten;
+    width: 44vw;
+  }
+  .img5 {
+    mix-blend-mode: lighten;
     left: -12vw;
     bottom: 55vw;
     opacity: 0.3;
-    width: 71vw;}
-.img6{mix-blend-mode: lighten;
+    width: 71vw;
+  }
+  .img6 {
+    mix-blend-mode: lighten;
     right: -5vw;
     top: 5vw;
     opacity: 0.3;
-    width: 80vw;}
-.txt {
-  font-size:sizem(45);
-  bottom:calc(50% - 2vw);
-
-}}
+    width: 80vw;
+  }
+  .txt {
+    font-size: sizem(45);
+    bottom: calc(50% - 2vw);
+  }
+}
 </style>
 <script>
 // @ is an alias to /src

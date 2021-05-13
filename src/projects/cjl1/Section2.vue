@@ -9,9 +9,11 @@
       </div>
       <div class="bg">
         <div class="leaf-1 absolute" data-aos="zoom-in-left" data-aos-delay="200" data-aos-duration="1200">
-        <img src="./s2/leaf (1).png" alt="leaf"></div>
+          <img src="./s2/leaf (1).png" alt="leaf">
+        </div>
         <div class="leaf-2 absolute" data-aos="zoom-in-left" data-aos-delay="200" data-aos-duration="1200">
-        <img src="./s2/leaf (2).png" alt="leaf"></div>
+          <img src="./s2/leaf (2).png" alt="leaf">
+        </div>
       </div>
       <div class="container relative flex-c wrap" v-if="!isMobile">
         <div class="text-item flex-ac wrap">
@@ -45,14 +47,14 @@
   </div>
 </template>
 <style lang="scss">
-  .hr {
-    width: 15vw;
-    height: 0.3vw;
-    background: #08607f;
-    display: inline-block;
-    margin: 0.8vw auto;
-    clip-path: polygon(50% 0%,100% 50%,50% 100%,0 50%);
-  }
+.hr {
+  width: 15vw;
+  height: 0.3vw;
+  background: #08607f;
+  display: inline-block;
+  margin: 0.8vw auto;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0 50%);
+}
 @keyframes leaf {
   to {
     transform: skewY(0deg);
@@ -63,7 +65,7 @@
 @import '@/assets/style/function.scss';
 
 .section2 {
-  width:100%;
+  width: 100%;
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);
@@ -72,7 +74,7 @@
 
 .bg-img {
   width: 100%;
-  height:100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -87,8 +89,8 @@
 .text-item {
   width: size(464);
   margin-right: size(116);
-    font-stretch: normal;
-    font-style: normal;
+  font-stretch: normal;
+  font-style: normal;
   .title {
     font-size: size(59.1);
     font-weight: bold;
@@ -117,30 +119,37 @@
 }
 
 .ink-1 {
-  width:size(1600);
+  width: size(1600);
   top: size(-180);
-  right:calc(50% - 7vw);
-  img{width: 100%;transform: scaleX(-1);}
+  right: calc(50% - 7vw);
+  img {
+    width: 100%;
+    transform: scaleX(-1);
+  }
 }
 
 .leaf-1 {
   width: size(950);
   top: size(-180);
   right: size(0);
-  img{width: 100%;
-  animation: leaf 3s ease-in-out infinite alternate;
-  transform: skewY(5deg);
-  transform-origin:100% 50%;}
+  img {
+    width: 100%;
+    animation: leaf 3s ease-in-out infinite alternate;
+    transform: skewY(5deg);
+    transform-origin: 100% 50%;
+  }
 }
 
 .leaf-2 {
   width: size(317);
   top: size(782);
   right: size(0);
-  img{width: 100%;
-  animation: leaf 3s ease-in-out infinite alternate;
-  transform: skewY(8deg);
-  transform-origin:100% 70%;}
+  img {
+    width: 100%;
+    animation: leaf 3s ease-in-out infinite alternate;
+    transform: skewY(8deg);
+    transform-origin: 100% 70%;
+  }
 }
 
 .opacity-3-bg {
@@ -167,17 +176,18 @@
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    height:auto;
-  min-height: sizem(500);
-  max-height: sizem(812);
+    height: auto;
+    min-height: sizem(500);
+    max-height: sizem(812);
     background-size: cover;
-    background-attachment: scroll;align-items:flex-start;
+    background-attachment: scroll;
+    align-items: flex-start;
   }
 
   .text-item {
     width: sizem(310);
     margin-right: auto;
-    margin:sizem(30) auto;
+    margin: sizem(30) auto;
     > * {
       width: sizem(310);
     }
@@ -226,21 +236,29 @@
     width: sizem(390);
     top: sizem(81);
     left: sizem(-200);
-  img{width: 100%;transform: scaleX(-1);}
+    img {
+      width: 100%;
+      transform: scaleX(-1);
+    }
   }
   .ink-3 {
     width: sizem(200);
     bottom: sizem(-130);
-    right:sizem(-100);
-  img{width: 100%;transform: scaleX(1);}
+    right: sizem(-100);
+    img {
+      width: 100%;
+      transform: scaleX(1);
+    }
   }
   .ink-4 {
     width: sizem(300);
     bottom: sizem(-150);
     right: sizem(-150);
-  img{width: 100%;transform:rotate(-70deg) scaleX(-1);}
+    img {
+      width: 100%;
+      transform: rotate(-70deg) scaleX(-1);
+    }
   }
-
 
   .leaf-1 {
     display: none;
@@ -249,7 +267,7 @@
   .leaf-2 {
     width: sizem(116);
     top: sizem(248);
-    right:sizem(0);
+    right: sizem(0);
   }
 }
 </style>
