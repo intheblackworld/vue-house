@@ -17,7 +17,6 @@ $sql_name = "SELECT casename FROM susers WHERE email = '" . $case_code . "'";
 $dataList = $pdo->query($sql_name)->fetchAll();
 $case_name = $dataList[0]['casename'];
 
-
     $name         = isset($_POST['name']) ? $_POST['name'] : '';
     $phone        = isset($_POST['phone']) ? $_POST['phone'] : '';
     $user_email   = isset($_POST['email']) ? $_POST['email'] : '';
