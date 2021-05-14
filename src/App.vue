@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <div ref="gtmNoScript" />
     <AstrictMask />
     <router-view />
   </div>
