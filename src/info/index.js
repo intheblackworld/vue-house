@@ -1,9 +1,9 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '桃園市桃園區慈文路、文中一路(風禾公園正對面)',
+  address: '桃園市慈文路及慈文路827巷交叉路口',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1807.9874005491745!2d121.29162785808023!3d25.000972195996976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDAwJzAzLjUiTiAxMjHCsDE3JzMzLjgiRQ!5e0!3m2!1szh-TW!2stw!4v1617107492624!5m2!1szh-TW!2stw"',
-  googleLink: 'https://goo.gl/maps/ZqxcvTt3wan7ZQhL9',
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8600.20220053574!2d121.28767738507747!3d25.00216823810232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc6f7bac8fdc14ce7!2z6bS76IuRIOaOpeW-heS4reW_gw!5e0!3m2!1szh-TW!2stw!4v1620958964456!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/EHzYa4sNo23dyS3X9',
   phone: '03-3788899',
   fbLink: 'https://www.facebook.com/%E9%B4%BB%E8%8B%91-103436774533254/',
   fbMessage: 'https://m.me/103436774533254',
