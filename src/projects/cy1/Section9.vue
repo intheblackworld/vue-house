@@ -280,7 +280,7 @@ export default {
         {
           index:1,
           title:isMobile ? '' : require('./s9/09_01_item_text1.png'),
-          text: '城堡地標<br>　<br>名宅傳奇',
+          text: '歐風語彙<br>　<br>歷久彌新',
           // url: '#',
           image: isMobile
             ? require('./s9/08_item_4_m.jpg')
@@ -289,7 +289,7 @@ export default {
         {
           index:2,
           title:isMobile ? '' : require('./s9/09_02_item_text1.png'),
-          text: '與生俱來<br>　<br>無可取代',
+          text: '城堡地標<br>　<br>名宅傳奇',
           // url: '#',
           image: isMobile
             ? require('./s9/08_item_1_m.jpg')
