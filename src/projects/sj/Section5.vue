@@ -465,11 +465,11 @@ export default {
         },
         {
           img: isMobile ? require('./s5/2_m.jpg') : require('./s5/2.jpg'),
-          name: '捷運行天宮站實景攝影',
+          name: '捷運情境示意圖',
         },
         {
           img: isMobile ? require('./s5/3_m.jpg') : require('./s5/3.jpg'),
-          name: '捷運行天宮站實景攝影',
+          name: '捷運情境示意圖',
         },
       ],
     }
