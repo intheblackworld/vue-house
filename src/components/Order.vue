@@ -283,7 +283,7 @@ export default {
     width: 80vw;
     padding-top: 20px;
     padding-bottom: 20px;
-    margin: 0 auto 10px;
+    margin: 0 auto 0;
     display: inline-block;
     font-weight: 700;
     line-height: 1.7;
@@ -296,11 +296,14 @@ export default {
   }
 
   .order-subtitle {
+    font-family: $family2;
     width: 100vw;
-    font-size: 20px;
+    font-size: calc(100vw * 18 / 1920);
+    font-weight: 700;
+    line-height: 1.7;
     text-align: center;
     color: $order_subtitle_color;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     padding-bottom: 8px;
   }
 
@@ -419,9 +422,8 @@ export default {
     }
 
     .order-subtitle {
-      // display: none;
-      font-weight: bold;
-      font-size: 14px;
+      font-size: calc(100vw * 16 / 375);
+      padding: 0 1em;
     }
     .order {
       width: 84%;

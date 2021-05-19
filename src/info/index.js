@@ -25,6 +25,6 @@ export default {
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
   order: {
     title: isMobile ? '預約賞屋' : '預約賞屋',
-    subTitle: ''
+    subTitle: isMobile ? '配合政府防疫政策，即日起賞屋採<br>「全面預約制」，賞屋前敬請先預約登記。' :'配合政府防疫政策，即日起賞屋採「全面預約制」，賞屋前敬請先預約登記。'
   }
 }
