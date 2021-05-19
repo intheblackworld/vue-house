@@ -11,7 +11,7 @@
       :options="options"
       id="fullpage"
     > -->
-      <vue-lazy-component class="section relative" id="section1" @init="init">
+      <vue-lazy-component class="" id="section1" @init="init">
         <Section1 />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section2" style="">
@@ -28,6 +28,9 @@
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section6">
         <Section6 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section7">
+        <Section7 />
       </vue-lazy-component>
       <!-- <vue-lazy-component class="section" id="section10">
         <Section10 :viewIndex="viewIndex" />
@@ -92,13 +95,13 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/jcs/Section1.vue'
-import Section2 from '@/projects/jcs/Section2.vue'
-import Section3 from '@/projects/jcs/Section3.vue'
-import Section4 from '@/projects/jcs/Section4.vue'
-import Section5 from '@/projects/jcs/Section5.vue'
-import Section6 from '@/projects/jcs/Section6.vue'
-// import Section7 from '@/projects/jcs/Section7.vue'
+import Section1 from '@/projects/ymsj/Section1.vue'
+import Section2 from '@/projects/ymsj/Section2.vue'
+import Section3 from '@/projects/ymsj/Section3.vue'
+import Section4 from '@/projects/ymsj/Section4.vue'
+import Section5 from '@/projects/ymsj/Section5.vue'
+import Section6 from '@/projects/ymsj/Section6.vue'
+import Section7 from '@/projects/ymsj/Section7.vue'
 // import Section8 from '@/projects/jcs/Section8.vue'
 // import Section9 from '@/projects/jcs/Section9.vue'
 // import Section10 from '@/projects/jcs/Section10.vue'
@@ -119,7 +122,7 @@ export default {
     Section4,
     Section5,
     Section6,
-    // Section7,
+    Section7,
     // Section8,
     // Section9,
     // Section10,

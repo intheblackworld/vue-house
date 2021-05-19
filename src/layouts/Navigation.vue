@@ -93,29 +93,29 @@ export default {
 </script>
 <style lang="scss">
 @import '../assets/style/function.scss';
-.navigation {
-  .title {
- //   font-size: size(30.5);
-  //  width: size(137);
-    // width: 140px;
-  //  height: 40px;
-    color: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    // padding: 0 size(10);
-    // background-image: linear-gradient(to right, #d70032 0%, #eb5500 100%);
-    border-radius: 20px / 20px;
-    position: relative;
-    white-space: nowrap;
-    z-index: 3;
-    /*
-    &:hover {
-      background-image: linear-gradient(to left, #d70032 0%, #eb5500 100%);
-    }
-    */
-  }
-}
+// .navigation {
+//   .title {
+//  //   font-size: size(30.5);
+//   //  width: size(137);
+//     // width: 140px;
+//   //  height: 40px;
+//     color: #000;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     // padding: 0 size(10);
+//     // background-image: linear-gradient(to right, #d70032 0%, #eb5500 100%);
+//     border-radius: 20px / 20px;
+//     position: relative;
+//     white-space: nowrap;
+//     z-index: 3;
+//     /*
+//     &:hover {
+//       background-image: linear-gradient(to left, #d70032 0%, #eb5500 100%);
+//     }
+//     */
+//   }
+// }
 </style>
 <style lang="scss" scoped>
 @import '../assets/style/variableColor.scss';
@@ -143,7 +143,8 @@ export default {
   }
   &.min {
     height: 70px;
-    background-image: url('~@/projects/jcs/s1/bg.jpg');
+    // background-image: url('~@/projects/jcs/s1/bg.jpg');
+    background-color: #fff;
     .logo {
       opacity: 1;
       width: size(218);

@@ -348,11 +348,11 @@ export default {
 }
 .order-bg {
   // background-color: $order_bg_color;
- // background-image: $order_bg_image;
+ background-image: $order_bg_image;
   background-repeat: no-repeat;
   padding-top: 130px;
   background-size: 100vw 100%;
-  // background-attachment: fixed;
+  background-attachment: fixed;
   background-position: 0% 0%;
   font-family: $family3;
   input,

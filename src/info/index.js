@@ -11,15 +11,12 @@ export default {
   indigatorLength: 10,
 
   houseInfos: [
-    ['｜投資興建｜', '玖登開發投資有限公司'],
-    ['｜建築設計｜', '張建鴻建築師事務所'],
-    ['｜營建施工｜', '振昇營造股份有限公司'],
-    ['｜樓層規劃｜', '地上15層，地下3層'],
-    ['｜格局規劃｜', '二房(23~29坪) 、 三房(37坪) 、 四房(43坪)'],
-    ['｜公設比例｜', '32.9%'],
-    ['｜企劃銷售｜', '鴻智行銷'],
-    ['｜創意整合｜', '天彤企劃'],
-    ['｜建造執照｜', '109桃市都建執照字第01197-02號'],
+    ['全案規劃', '萬家興建設'],
+    ['營建施工', '英順營造'],
+    ['景觀設計', '太研規劃 吳書原景觀建築師'],
+    ['規劃顧問', '春秋國際'],
+    ['建築美學', '自然洋行建築團隊 曾志偉建築師'],
+    ['企劃執行', '玖壹士廣告．葛里芬廣告'],
   ],
 
   gtmCode: ['NXPZLM6'], // 可放置多個
@@ -27,7 +24,7 @@ export default {
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
   order: {
-    title: isMobile ? '｜預約賞屋｜' : '｜預約賞屋｜',
+    title: isMobile ? '預約賞屋' : '預約賞屋',
     subTitle: ''
   }
 }

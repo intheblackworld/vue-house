@@ -111,7 +111,7 @@ export default {
   z-index: 3;
   //width: 1200px;
   width: 100%;
-  height: 630px;
+  height: 510px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
@@ -148,7 +148,7 @@ export default {
   transition: all 0.5s;
   position: relative;
   overflow: hidden;
-  font-weight: 600;
+  font-weight: 900;
   &.half {
     width: 49%;
   }
@@ -205,7 +205,7 @@ export default {
   font-size: 16px;
   cursor: pointer;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 900;
   // border-top-right-radius: 60px;
   //border-bottom-right-radius: 60px;
   color: $contact_google_btn_color;
