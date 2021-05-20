@@ -9,13 +9,7 @@
       </div>
       <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
       <ul :class="`navlist ${isOpen ? 'open': ''}`">
-        <li
-          :key="item.name"
-          v-scroll-to="{ element: `#${item.section}`, offset: isMobile ? (item.mobileOffset ? item.mobileOffset : offset) : (item.offset ? item.offset : offset) }"
-          v-for="item in list"
-          class="flex-ac"
-          @click="toggleSidebar"
-        >
+        <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: isMobile ? (item.mobileOffset ? item.mobileOffset : offset) : (item.offset ? item.offset : offset) }" v-for="item in list" class="flex-ac" @click="toggleSidebar">
           <span class="link">
             <img v-if="item.imgSrc" :src="item.imgSrc" alt />
             <span>
@@ -125,8 +119,8 @@ export default {
 .menu-icon {
   position: relative;
   width: 30px;
-  height: 3px;
-  background-color: #fff;
+  height: 1px;
+  background-color: #686868;
 }
 
 .menu-icon::before {
@@ -136,8 +130,8 @@ export default {
   content: '';
   display: block;
   width: 30px;
-  height: 3px;
-  background-color: #fff;
+  height: 1px;
+  background-color: #686868;
   transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
 }
 
@@ -148,8 +142,8 @@ export default {
   content: '';
   display: block;
   width: 30px;
-  height: 3px;
-  background-color: #fff;
+  height: 1px;
+  background-color: #686868;
   transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
 }
 
@@ -186,16 +180,17 @@ export default {
     height: 60px;
     margin-bottom: 0;
     width: 100%;
-    &:nth-child(1){
+    &:nth-child(1) {
       .link {
-      border-top: 1px solid $nav_link_hover_bg;}
+        // border-top: 1px solid $nav_link_hover_bg;
+      }
     }
   }
 
   .link {
     position: relative;
     overflow: hidden;
-    height:100%;
+    height: 100%;
     width: 80%;
     margin-left: 10%;
     font-size: 24px;
@@ -205,7 +200,7 @@ export default {
     display: none;
     background-size: cover;
     position: relative;
-    border-bottom: 1px solid $nav_link_hover_bg;
+    // border-bottom: 1px solid $nav_link_hover_bg;
     img,
     span {
       display: block;
@@ -292,7 +287,7 @@ export default {
     opacity: 1;
     z-index: 110;
   }
- /*
+  /*
     &:before {
   content: ' ';
   position: fixed;
@@ -396,11 +391,9 @@ export default {
     transition: all 0.3s ease-in;
     display: block;
     transform: translateX(40%);
-  background:center 0 no-repeat;
-  background-image: url('~@/projects/jcs/s1/bg_m.jpg');
-  background-size: cover;
-
-   
+    background: center 0 no-repeat;
+    background-color: #fff;
+    background-size: cover;
 
     .link {
       display: none;
@@ -434,7 +427,7 @@ export default {
     width: 100vw;
     top: $nav_phone_height;
     right: 0;
-   // background: #ff8700;
+    // background: #ff8700;
     position: fixed;
     height: calc(100vh - #{$nav_phone_height});
     opacity: 0;
@@ -1732,7 +1725,7 @@ body {
   width: 120px;
   height: 100%;
   display: none;
-  background-image: url("~@/assets/img/contact_mb-bg.png");
+  background-image: url('~@/assets/img/contact_mb-bg.png');
 }
 @media (min-width: 992px) {
   .sidenav {

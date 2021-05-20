@@ -68,18 +68,18 @@
 
 .btn {
   @include img_c_pc(290, 644);
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .mask {
   @include img_c_pc(1920, 0);
   top: auto;
   bottom: size(-175);
-	z-index: 8;
+  z-index: 8;
 }
 
 .title {
-	@include img_c_pc(702, 468);
+  @include img_c_pc(702, 468);
   font-size: size(51.5);
   font-weight: bold;
   font-stretch: normal;
@@ -88,11 +88,11 @@
   letter-spacing: size(4.58);
   text-align: center;
   color: #cc8b00;
-	white-space: nowrap;
+  white-space: nowrap;
 }
 
 .subtitle {
-	@include img_c_pc(190, 555);
+  @include img_c_pc(190, 555);
   font-size: size(29.9);
   font-weight: 500;
   font-stretch: normal;
@@ -101,52 +101,52 @@
   letter-spacing: size(2.24);
   text-align: center;
   color: #686868;
-	white-space: nowrap;
+  white-space: nowrap;
 
-	&::after {
-		content: "";
-		position: absolute;
-		@include img_l_pc(254, 18, -265);
-		border-top: 1px solid #686868;
-	}
+  &::after {
+    content: '';
+    position: absolute;
+    @include img_l_pc(254, 18, -265);
+    border-top: 1px solid #686868;
+  }
 
-	&::before {
-		content: "";
-		position: absolute;
-		@include img_r_pc(254, 18, -265);
-		border-top: 1px solid #686868;
-	}
+  &::before {
+    content: '';
+    position: absolute;
+    @include img_r_pc(254, 18, -265);
+    border-top: 1px solid #686868;
+  }
 }
 
 .cloud-bg {
   .cloud {
-		animation: cloud 5s ease-in-out alternate infinite;
+    animation: cloud 5s ease-in-out alternate infinite;
   }
 
-	.cloud1 {
-		@include img_l_pc(173, 181, -30);
-		transform: translateX(-10%);
-	}
+  .cloud1 {
+    @include img_l_pc(173, 181, -30);
+    transform: translateX(-10%);
+  }
 
-	.cloud2 {
-		@include img_r_pc(460, 286, -50);
-		transform: translateX(-15%);
-	}
+  .cloud2 {
+    @include img_r_pc(460, 286, -50);
+    transform: translateX(-15%);
+  }
 
-	.cloud3 {
-		@include img_r_pc(537, 234, 150);
-		transform: translateX(-8%);
-	}
+  .cloud3 {
+    @include img_r_pc(537, 234, 150);
+    transform: translateX(-8%);
+  }
 
-	.cloud4 {
-		@include img_r_pc(747, 680, -20);
-		transform: translateX(20%);
-	}
+  .cloud4 {
+    @include img_r_pc(747, 680, -20);
+    transform: translateX(20%);
+  }
 
-	.cloud5 {
-		@include img_l_pc(1112, 716, -120);
-		transform: translateX(-5%);
-	}
+  .cloud5 {
+    @include img_l_pc(1112, 716, -120);
+    transform: translateX(-5%);
+  }
 }
 @keyframes cloud {
   to {
@@ -161,80 +161,101 @@
 @media screen and (max-width: 767px) {
   .section1 {
     width: 100vw;
-    min-height: sizem(604);
+    min-height: sizem(666);
     max-height: sizem(750);
-    height: calc(100vh - 63px);
+    height: sizem(666);
     // margin: 0 0 -12vw 0;
     // background-size: auto size-m(750);
     z-index: initial;
-    &:before {
-      background-image: url('./s1/bg_m.jpg');
-    }
-  }
-
-  .grass {
-    @include img_r_m(375, 0, -40);
-    top: auto;
-    bottom: 0;
-    transform-origin: bottom;
-    animation: grass 4s ease-in-out alternate infinite;
+    // &:before {
+    //   background-image: url('./s1/bg_m.jpg');
+    // }
   }
 
   .logo {
-    @include img_l_m(195, 50, 88);
-  }
-  .logo1 {
-    @include img_l_m(195, 50, 88);
+    @include img_c_m(236, 177);
   }
 
-  @keyframes grass {
-    to {
-      transform: skewX(3deg);
-    }
+  .btn {
+    @include img_c_m(216, 416);
+    cursor: pointer;
+  }
+
+  .mask {
+    @include img_c_m(375, 0);
+    top: auto;
+    bottom: sizem(-35);
+    z-index: 8;
   }
 
   .title {
-    @include img_r_m(290, 409, 43);
-    font-size: sizem(23);
-    font-weight: 300;
+    @include img_c_m(300, 328);
+    font-size: sizem(22);
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.3;
-    letter-spacing: sizem(3.68);
+    line-height: 1.23;
+    letter-spacing: sizem(1.96);
     text-align: center;
-    color: #ffffff;
+    color: #cc8b00;
     white-space: nowrap;
   }
 
   .subtitle {
-    @include img_l_m(290, 437, 46);
-    font-size: sizem(54);
-    font-weight: 900;
+    @include img_c_m(102, 373);
+    font-size: sizem(16);
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.19;
-    letter-spacing: normal;
-    text-align: left;
-    color: #231815;
+    line-height: 0.94;
+    letter-spacing: sizem(1.2);
+    text-align: center;
+    color: #686868;
     white-space: nowrap;
-    span {
-      font-size: sizem(56);
-      font-weight: 500;
+
+    &::after {
+      content: '';
+      position: absolute;
+      @include img_l_m(90, 8, -100);
+      border-top: 1px solid #686868;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      @include img_r_m(90, 8, -100);
+      border-top: 1px solid #686868;
     }
   }
 
-  .hint {
-    @include img_r_m(113, 363, 52);
-    font-size: sizem(16);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.19;
-    letter-spacing: sizem(0.32);
-    text-align: left;
-    color: #00101d;
-    span {
-      font-weight: 500;
+  .cloud-bg {
+    .cloud {
+      animation: cloud 5s ease-in-out alternate infinite;
+    }
+
+    .cloud1 {
+      @include img_l_m(76, 118, -20);
+      transform: translateX(-10%);
+    }
+
+    .cloud2 {
+      @include img_r_m(286, 79, -50);
+      transform: translateX(-15%);
+    }
+
+    .cloud3 {
+      @include img_r_m(151, 104, 20);
+      transform: translateX(-8%);
+    }
+
+    .cloud4 {
+      @include img_r_m(209, 499, -40);
+      transform: translateX(20%);
+    }
+
+    .cloud5 {
+      @include img_l_m(322, 561, -50);
+      transform: translateX(-5%);
     }
   }
 }

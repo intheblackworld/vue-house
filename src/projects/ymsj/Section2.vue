@@ -92,18 +92,18 @@
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    min-height: sizem(604);
-    max-height: sizem(812);
-    height: calc(100vh - 63px);
+    min-height: sizem(211);
+    max-height: sizem(211);
+    height: sizem(211);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
   }
   .video {
-    width: sizem(300);
-    height: sizem(530);
-    top: sizem(34);
-    right: sizem(37);
+    width: sizem(375);
+    height: sizem(211);
+    top: sizem(0);
+    right: sizem(0);
   }
 
   .bg-img {

@@ -141,9 +141,9 @@
     // margin: 0 0 -12vw 0;
     // background-size: auto size-m(750);
     z-index: initial;
-    &:before {
-      background-image: url('./s1/bg_m.jpg');
-    }
+    // &:before {
+    //   background-image: url('./s1/bg_m.jpg');
+    // }
   }
 
   .grass {
