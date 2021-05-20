@@ -144,10 +144,10 @@ export default {
   &.min {
     height: 70px;
     // background-image: url('~@/projects/jcs/s1/bg.jpg');
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, .7);
     .logo {
       opacity: 1;
-      width: size(218);
+      width: size(128);
     }
   }
 }

@@ -1,13 +1,13 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '接待中心：桃園市蘆竹區大福路145號',
+  address: '接待會館｜台北市士林區中山北路五段512號1樓',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14461.58242481766!2d121.24736666770482!3d25.020645183978576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34682102351fe553%3A0x80d36070ed716d14!2z5qSN5pil5qi5!5e0!3m2!1szh-TW!2stw!4v1617774811235!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/aMWGVKfV4YeWXcgM7',
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3613.2572972709113!2d121.5260833!3d25.0931502!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aea4802a1839%3A0xe686305dd1e54a2d!2zMTEx5Y-w5YyX5biC5aOr5p6X5Y2A5Lit5bGx5YyX6Lev5LqU5q61NTEy6Jmf!5e0!3m2!1szh-TW!2stw!4v1621474761676!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/7LUNotAvbRr7vEPR6',
   phone: '03-3235850',
-  fbLink: 'https://www.facebook.com/植春樹-103761678229425',
-  fbMessage: 'https://m.me/103761678229425',
-  caseName: '植春樹',
+  fbLink: 'https://www.facebook.com/%E9%99%BD%E6%98%8E%E5%B1%B1%E8%8E%8A-Pattsiran-Formosa-108764311348067',
+  fbMessage: 'https://m.me/108764311348067/',
+  caseName: '陽明山莊',
   indigatorLength: 10,
 
   houseInfos: [
