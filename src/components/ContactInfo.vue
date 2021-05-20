@@ -14,7 +14,7 @@
           <font-awesome-icon :icon="['fab', 'facebook-messenger']" /><span>FB 諮詢</span>
         </span>
       </div>
-      <a class="btn flex-c" :href="info.fbLink" target="_blank">
+      <a class="btn flex-c" :href="info.fbLink" target="_blank" @click="window.gtag_report_conversion(info.fbLink)">
         <span class="flex-c">
           <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
         </span>
@@ -59,6 +59,7 @@ export default {
   },
   data() {
     return {
+      window,
       info,
 
       isMobile,
