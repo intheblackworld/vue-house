@@ -94,7 +94,7 @@
         <div style="margin: 0 auto;z-index:2;" v-if="isMobile">
           <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
         </div>
-        <el-button class="form-submit" type="primary" :disabled="!checked || !isVerify" @click="window.gtag_report_conversion(`${window.location.href}formThanks`);submit" :loading="isSubmit">立即預約</el-button>
+        <el-button class="form-submit" type="primary" :disabled="!checked || !isVerify" @click="submit" :loading="isSubmit">立即預約</el-button>
         <Loading :loading="isSubmit" :isOpacity="true" />
       </div>
     </div>
@@ -194,6 +194,7 @@ export default {
         this.isSubmit = false
         return
       }
+      window.gtag_report_conversion(`${window.location.href}formThanks`)
       const urlParams = new URLSearchParams(window.location.search)
       const utmSource = urlParams.get('utm_source')
       const utmMedium = urlParams.get('utm_medium')
