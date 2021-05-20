@@ -3,6 +3,6 @@ export default {
   once: false, // 出現一次
   mirror: false, // 出現一次
   delay: 0,
-  duration: 1200,
+  duration: 800,
   easing: 'ease-in-out-quint'
 }

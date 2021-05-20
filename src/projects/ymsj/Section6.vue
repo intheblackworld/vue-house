@@ -1,13 +1,13 @@
 <template>
   <div class="section6">
-    <div class="title">
+    <div class="title" data-aos="fade-up" data-aos-delay="200">
       因為稀有所以珍貴
     </div>
-    <div class="subtitle">
+    <div class="subtitle" data-aos="fade-up" data-aos-delay="400">
       陽明山保護區限建規範<br />
       住戶更惜售
     </div>
-    <img src="./s6/style_1.png" :alt="`${info.caseName}_img`" class="style1">
+    <img src="./s6/style_1.png" :alt="`${info.caseName}_img`" class="style1" data-aos="fade-up" data-aos-delay="600">
     <img src="./s6/t_style.png" :alt="`${info.caseName}_img`" class="t_style">
     <img src="./s6/bird.png" :alt="`${info.caseName}_img`" class="bird">
 
@@ -30,14 +30,14 @@
     <div class="cloud-bg">
       <img src="./s6/style_3.png" :alt="`${info.caseName}_img`" class="cloud cloud1">
     </div>
-    <div class="desc desc1">
+    <div class="desc desc1" data-aos="fade-up" data-aos-delay="800">
       「富貴山頭」陽明山豪墅交易連年創天價，美景讓許多富豪趨之若鶩<br />
       因受國家森林公園保護區管制，無法改建及擴建<br />
       造成陽明山的土地稀有，住戶都相當惜售<br />
       可開發土地與房屋稀少，造成一宅難求的現象<br />
       陽明山別墅價值因此居高不下
     </div>
-    <div class="desc desc2">
+    <div class="desc desc2" data-aos="fade-up" data-aos-delay="1000">
       連原本有望開發的<br />
       「陽明山保變住六之六」開發案都充滿變數<br />
       (此案初估每坪上看200萬元)<br />
@@ -154,9 +154,24 @@
 }
 .bird {
   @include img_r_pc(389, 841, 838);
+  animation: jump 1.5s linear alternate infinite;
+}
+
+@keyframes jump {
+  0% {
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  }
+  40% {
+    transform: translate3d(0, 5%, 0) scale3d(1, 1.02, 1);
+  }
+  100% {
+    transform: translate3d(0, 2.5%, 0) scale3d(1, 1, 1);
+  }
 }
 .leaf {
   @include img_l_pc(251, 913, -70);
+  animation: grass 4s ease-in-out alternate infinite;
+  transform-origin: left;
 }
 
 @keyframes strech {
@@ -165,6 +180,11 @@
   }
 }
 
+@keyframes grass {
+  to {
+    transform: skewY(5deg);
+  }
+}
 .cloud-bg {
   .cloud {
     animation: cloud 5s ease-in-out alternate infinite;

@@ -63,7 +63,7 @@ export default {
   computed: {
     offset() {
       if (this.isMobile) {
-        return -100
+        return 0
       }
 
       if (this.isTablet) {
@@ -100,7 +100,7 @@ export default {
   position: fixed;
   bottom: 0;
   z-index: 100;
-  box-shadow: 0 -2px 8px 0 #0006;
+  box-shadow: 0 -2px 5px 0 #000;
   display: none;
   transition: all .5s;
 

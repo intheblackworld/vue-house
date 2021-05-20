@@ -1,15 +1,15 @@
 <template>
   <div class="section1">
     <img src="./s1/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img">
-    <img src="./s1/btn.png" :alt="`${info.caseName}_img`" class="btn" v-scroll-to="{ element: `#contact`, offset: 0 }">
-    <img src="./s1/logo.png" :alt="`${info.caseName}_img`" class="logo">
+    <img src="./s1/logo.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade-up" data-aos-delay="200">
     <img src="./s1/mask.png" :alt="`${info.caseName}_img`" class="mask">
-    <h1 class="title">
+    <h1 class="title"  data-aos="fade-up" data-aos-delay="400">
       層峰富豪夢想 一生難得一遇
     </h1>
-    <h3 class="subtitle">
+    <h3 class="subtitle"  data-aos="fade-up" data-aos-delay="600">
       即將與您相逢
     </h3>
+    <img src="./s1/btn.png" :alt="`${info.caseName}_img`" class="btn" v-scroll-to="{ element: `#contact`, offset: 0 }" data-aos="fade-up" data-aos-delay="800">
     <div class="cloud-bg">
       <img src="./s1/style_1.png" :alt="`${info.caseName}_img`" class="cloud cloud1">
       <img src="./s1/style_2.png" :alt="`${info.caseName}_img`" class="cloud cloud2">

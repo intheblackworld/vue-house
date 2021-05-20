@@ -3,23 +3,23 @@
     <!-- <img src="./s1/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img"> -->
     <!-- <img src="./s1/btn.png" :alt="`${info.caseName}_img`" class="btn" v-scroll-to="{ element: `#contact`, offset: 0 }"> -->
     <Map :bgSrc="bgSrc" :hand="hand" v-if="isMobile"></Map>
-    <h1 class="title">
+    <h1 class="title" data-aos="fade-up" data-aos-delay="200">
       陽明山國家公園旁、13萬6千坪度假別墅
     </h1>
-    <img src="./s7/logo.png" :alt="`${info.caseName}_img`" class="logo">
-    <h1 class="subtitle subtitle1">
+    <img src="./s7/logo.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade-up" data-aos-delay="400">
+    <h1 class="subtitle subtitle1" data-aos="fade-up" data-aos-delay="600">
       樂活養生新天地 即將登場
     </h1>
-    <h3 class="desc desc1" v-if="isPC">
+    <h3 class="desc desc1" v-if="isPC" data-aos="fade-up" data-aos-delay="800">
       一個隱於山林的別墅聚落 、 一個全新設計概念的別墅美學
     </h3>
-    <h3 class="desc desc1" v-if="isMobile">
+    <h3 class="desc desc1" v-if="isMobile" data-aos="fade-up" data-aos-delay="800">
       一個隱於山林的別墅聚落<br />一個全新設計概念的別墅美學
     </h3>
     <div class="items flex-ac flex-jb">
-      <img src="./s7/item_1.png" :alt="`${info.caseName}_img`">
-      <img src="./s7/item_2.png" :alt="`${info.caseName}_img`">
-      <img src="./s7/item_3.png" :alt="`${info.caseName}_img`">
+      <img src="./s7/item_1.png" :alt="`${info.caseName}_img`" data-aos="fade-up" data-aos-delay="900">
+      <img src="./s7/item_2.png" :alt="`${info.caseName}_img`" data-aos="fade-up" data-aos-delay="1000">
+      <img src="./s7/item_3.png" :alt="`${info.caseName}_img`" data-aos="fade-up" data-aos-delay="1100">
     </div>
     <h3 class="desc desc2">
       為您量身打造<br />
@@ -34,9 +34,9 @@
       野奢莊園 ・ 即將展開 ・ 敬請期待
     </div>
     
-    <img src="./s7/img_line.png" class="img_line">
+    <img src="./s7/img_line.png" class="img_line" data-aos="fade-up" data-aos-delay="400">
     <img src="./s7/img.jpg" alt="" class="img" v-if="isPC">
-    <img src="./s7/img_style_1.png" class="img_style_1">
+    <img src="./s7/img_style_1.png" class="img_style_1" data-aos="fade-up" data-aos-delay="600">
   </div>
 </template>
 

@@ -1,18 +1,18 @@
 <template>
   <div class="section3">
-    <div class="desc">
+    <div class="desc"  data-aos="fade-up" data-aos-delay="600">
       陽明山 ，台北最珍貴的一座山<br />
       陽明山景觀席向來是台灣企業富豪獨鍾的層峰聚落<br />
       在這裡 ，有萬頃的自然森林與生態<br />
       分秒都有不同的景致 ，一天可看盡春夏秋冬，收藏四季風華
     </div>
-    <div class="title" v-if="isMobile">
+    <div class="title" v-if="isMobile" data-aos="fade-up" data-aos-delay="200">
       私藏一座
     </div>
-    <div class="subtitle" v-if="isMobile">
+    <div class="subtitle" v-if="isMobile" data-aos="fade-up" data-aos-delay="400">
       陽明山國家公園
     </div>
-    <img src="./s3/title.png" :alt="`${info.caseName}_img`" class="title" v-if="isPC">
+    <img src="./s3/title.png" :alt="`${info.caseName}_img`" class="title" v-if="isPC" data-aos="fade-up" data-aos-delay="200">
     <img src="./s3/img.png" :alt="`${info.caseName}_img`" class="img">
     <img src="./s3/t_style.png" :alt="`${info.caseName}_img`" class="t_style">
     <div class="cloud-bg">

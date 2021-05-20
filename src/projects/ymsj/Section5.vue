@@ -1,42 +1,46 @@
 <template>
   <div class="section5">
-    <div class="title">
+    <div :class="`dialog ${isShow ? 'show' : ''}`">
+      <img :src="dialogImg" alt class="dialog-img" />
+      <img src="~@/assets/img/close.png" alt class="close" @click="closeDialog" />
+    </div>
+    <div class="title" data-aos="fade-up" data-aos-delay="200">
       自然景觀豐富稀有
     </div>
-    <div class="subtitle">
+    <div class="subtitle" data-aos="fade-up" data-aos-delay="400">
       名人政要別墅聚落
     </div>
-    <div class="desc desc1" v-if="isPC">
+    <div class="desc desc1" v-if="isPC" data-aos="fade-up" data-aos-delay="600">
       陽明山自然森林資源豐富，四季色彩繽紛<br />
       居高臨下，更可看到美麗的大台北景色<br />
       居住在山林之間，不僅有清新的空氣，還有滿山的綠意<br />
       瞬間所有的煩惱與壓力全都消散
     </div>
-    <div class="desc desc2" v-if="isPC">
+    <div class="desc desc2" v-if="isPC" data-aos="fade-up" data-aos-delay="800">
       正因為陽明山擁有獨特的自然環境與景觀、隱密性又佳<br />
       這裡的景觀別墅，更吸引企業名人爭相置產與收藏
     </div>
-    <div class="desc desc1" v-if="isMobile">
+    <div class="desc desc1" v-if="isMobile" data-aos="fade-up" data-aos-delay="600">
       陽明山自然森林資源豐富，四季色彩繽紛<br />
       居高臨下，更可看到美麗的大台北景色<br />
       居住在山林之間，不僅有清新的空氣，還有滿山的綠意，瞬間所有的煩惱與壓力全都消散
     </div>
-    <div class="desc desc2" v-if="isMobile">
+    <div class="desc desc2" v-if="isMobile" data-aos="fade-up" data-aos-delay="800">
       正因為陽明山擁有獨特的自然環境與景觀、隱密性又佳，這裡的景觀別墅，更吸引企業名人爭相置產與收藏
     </div>
-    <img src="./s5/style.png" :alt="`${info.caseName}_img`" class="style_l">
-    <img src="./s5/style.png" :alt="`${info.caseName}_img`" class="style_r">
-    <img src="./s5/t_style_l.png" :alt="`${info.caseName}_img`" class="t_style_l">
-    <img src="./s5/t_style_r.png" :alt="`${info.caseName}_img`" class="t_style_r">
+    <img src="./s5/style.png" :alt="`${info.caseName}_img`" class="style_l" data-aos="fade-up" data-aos-delay="200">
+    <img src="./s5/style.png" :alt="`${info.caseName}_img`" class="style_r" data-aos="fade-up" data-aos-delay="200">
+    <img src="./s5/t_style_l.png" :alt="`${info.caseName}_img`" class="t_style_l" data-aos="fade-right" data-aos-delay="400">
+    <img src="./s5/t_style_r.png" :alt="`${info.caseName}_img`" class="t_style_r" data-aos="fade-left" data-aos-delay="400">
     <swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" @slideChangeTransitionEnd="slideChanged">
       <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide + index" class="item">
-        <img :src="slide.img" :class="`item-img`" />
+        <img :src="slide.img" :class="`item-img`"  @click="showDialog(index)" />
         <p v-html="slide.p"></p>
       </swiper-slide>
 
       <div class="swiper-button-prev prev-btn" slot="button-prev" v-if="isMobile">
       </div>
-      <div class="swiper-button-next next-btn" slot="button-next"  v-if="isMobile">
+      <div class="swiper-button-next next-btn" slot="button-next" v-if="isMobile">
       </div>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
@@ -173,6 +177,7 @@
   height: size(546);
   object-fit: cover;
   margin: 0 auto;
+  cursor: pointer;
 }
 
 .swiper-pagination {
@@ -232,6 +237,45 @@
 @keyframes btn {
   to {
     transform: rotate(45deg) translate(10%, -10%);
+  }
+}
+
+.dialog {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s;
+  display: none;
+
+  &.show {
+    display: block;
+    z-index: 210;
+    opacity: 1;
+  }
+
+  .dialog-img {
+    width: calc(90vh * 1920 / 1080 - 80px);
+    height: calc(90vh - 70px);
+    max-width: calc(90vw - 70px);
+    max-height: calc(90vw * 1080 / 1920 - 70px);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+  }
+
+  .close {
+    position: absolute;
+    cursor: pointer;
+    right: 35px;
+    top: 25px;
+    width: 40px;
   }
 }
 
@@ -471,6 +515,8 @@ export default {
               img: require('./s5/slider_3.png'),
             },
           ],
+      dialogImg: '',
+      isShow: false,
     }
   },
 
@@ -486,12 +532,12 @@ export default {
       }
     },
 
-    addBlockIndex() {
-      this.blockIndex = this.nextIndex
+    showDialog(index) {
+      this.dialogImg = this.slideList[index].img
+      this.isShow = true
     },
-
-    decBlockIndex() {
-      this.blockIndex = this.prevIndex
+    closeDialog() {
+      this.isShow = false
     },
   },
 
