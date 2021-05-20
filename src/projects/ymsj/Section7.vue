@@ -1,7 +1,8 @@
 <template>
-  <div class="section1">
+  <div class="section7">
     <!-- <img src="./s1/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img"> -->
     <!-- <img src="./s1/btn.png" :alt="`${info.caseName}_img`" class="btn" v-scroll-to="{ element: `#contact`, offset: 0 }"> -->
+    <Map :bgSrc="bgSrc" :hand="hand" v-if="isMobile"></Map>
     <h1 class="title">
       陽明山國家公園旁、13萬6千坪度假別墅
     </h1>
@@ -9,8 +10,11 @@
     <h1 class="subtitle subtitle1">
       樂活養生新天地 即將登場
     </h1>
-    <h3 class="desc desc1">
+    <h3 class="desc desc1" v-if="isPC">
       一個隱於山林的別墅聚落 、 一個全新設計概念的別墅美學
+    </h3>
+    <h3 class="desc desc1" v-if="isMobile">
+      一個隱於山林的別墅聚落<br />一個全新設計概念的別墅美學
     </h3>
     <div class="items flex-ac flex-jb">
       <img src="./s7/item_1.png" :alt="`${info.caseName}_img`">
@@ -29,15 +33,16 @@
     <div class="subtitle subtitle2">
       野奢莊園 ・ 即將展開 ・ 敬請期待
     </div>
+    
     <img src="./s7/img_line.png" class="img_line">
-    <img src="./s7/img.jpg" alt="" class="img">
+    <img src="./s7/img.jpg" alt="" class="img" v-if="isPC">
     <img src="./s7/img_style_1.png" class="img_style_1">
   </div>
 </template>
 
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
-.section1 {
+.section7 {
   width: 100%;
   height: size(1737);
   min-height: size(1737);
@@ -120,20 +125,6 @@
   text-align: center;
   color: #cc8b00;
   white-space: nowrap;
-
-  // &::after {
-  // 	content: "";
-  // 	position: absolute;
-  // 	@include img_l_pc(254, 18, -265);
-  // 	border-top: 1px solid #686868;
-  // }
-
-  // &::before {
-  // 	content: "";
-  // 	position: absolute;
-  // 	@include img_r_pc(254, 18, -265);
-  // 	border-top: 1px solid #686868;
-  // }
 }
 .subtitle1 {
   @include img_c_pc(508, 303);
@@ -200,11 +191,11 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section1 {
+  .section7 {
     width: 100vw;
-    min-height: sizem(604);
-    max-height: sizem(750);
-    height: calc(100vh - 63px);
+    min-height: sizem(753);
+    max-height: sizem(753);
+    height: sizem(753);
     // margin: 0 0 -12vw 0;
     // background-size: auto size-m(750);
     z-index: initial;
@@ -213,69 +204,111 @@
     // }
   }
 
-  .grass {
-    @include img_r_m(375, 0, -40);
+  .logo {
+    @include img_c_m(161, 58);
+  }
+
+  .img {
+    @include img_c_m(375, 0);
     top: auto;
     bottom: 0;
-    transform-origin: bottom;
-    animation: grass 4s ease-in-out alternate infinite;
   }
 
-  .logo {
-    @include img_l_m(195, 50, 88);
-  }
-  .logo1 {
-    @include img_l_m(195, 50, 88);
+  .img_line {
+    @include img_c_m(375, 0);
+    top: auto;
+    bottom: 0;
   }
 
-  @keyframes grass {
-    to {
-      transform: skewX(3deg);
-    }
+  .img_style_1 {
+    @include img_l_m(126, 518, 0);
+    z-index: 5;
   }
 
   .title {
-    @include img_r_m(290, 409, 43);
-    font-size: sizem(23);
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.3;
-    letter-spacing: sizem(3.68);
-    text-align: center;
-    color: #ffffff;
-    white-space: nowrap;
-  }
-
-  .subtitle {
-    @include img_l_m(290, 437, 46);
-    font-size: sizem(54);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.19;
-    letter-spacing: normal;
-    text-align: left;
-    color: #231815;
-    white-space: nowrap;
-    span {
-      font-size: sizem(56);
-      font-weight: 500;
-    }
-  }
-
-  .hint {
-    @include img_r_m(113, 363, 52);
+    @include img_c_m(308, 22);
     font-size: sizem(16);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.19;
-    letter-spacing: sizem(0.32);
-    text-align: left;
-    color: #00101d;
+    line-height: 1.2;
+    letter-spacing: sizem(1.04);
+    text-align: center;
+    color: #000000;
+    white-space: nowrap;
+  }
+
+  .subtitle {
+    font-size: sizem(14);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.57;
+    letter-spacing: sizem(1.82);
+    text-align: center;
+    color: #cc8b00;
+    white-space: nowrap;
+  }
+  .subtitle1 {
+    @include img_c_m(178, 114);
+  }
+  .subtitle2 {
+    font-size: sizem(18);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.94;
+    letter-spacing: sizem(1.04);
+    text-align: center;
+    color: #cc8b00;
+    @include img_c_m(288, 462);
+  }
+
+  .items {
+    @include img_c_m(81 * 3 + 36 * 2, 264);
+
+    img {
+      width: sizem(81);
+    }
+  }
+
+  .desc {
+    font-size: sizem(14);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.86;
+    letter-spacing: sizem(0.7);
+    text-align: center;
+    color: #4d4d4d;
+    white-space: nowrap;
+  }
+
+  .desc1 {
+    @include img_c_m(198, 147);
+  }
+
+  .desc2 {
+    @include img_c_m(258, 383);
     span {
-      font-weight: 500;
+      font-weight: bold;
+      color: #cc8b00;
+    }
+  }
+
+  .cloud-bg {
+    .cloud {
+      animation: cloud 5s ease-in-out alternate infinite;
+    }
+
+    .cloud1 {
+      @include img_l_m(206, 197, -40);
+      transform: translateX(-10%);
+    }
+
+    .cloud2 {
+      @include img_r_m(190, 215, -50);
+      transform: translateX(-15%);
     }
   }
 }
@@ -283,11 +316,14 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
+import Map from '@/components/Map.vue'
 import info from '@/info'
 
 export default {
-  name: 'section1',
-
+  name: 'section7',
+  components: {
+    Map,
+  },
   data() {
     return {
       info,
@@ -295,6 +331,9 @@ export default {
       isMobile,
       isTablet,
       // blockIndex: 0,
+      bgSrc: require('./s7/img.jpg'),
+      // bgmSrc: require('./s3_bg_m.jpg'),
+      hand: require('./s7/arrow_hand.png'),
     }
   },
 

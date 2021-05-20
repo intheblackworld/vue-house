@@ -148,7 +148,7 @@ export default {
   }
 
   .info {
-    width: 100%;
+    width: 85%;
     flex: 1;
     justify-content: space-around;
     align-content: space-around;

@@ -1,19 +1,36 @@
 <template>
   <div class="section4">
-    <div class="desc desc1">
+    <div class="desc desc1" v-if="isPC">
       陽明山溫泉位於大屯山系，擁有豐富的溫泉資源<br />
       溫泉泉質以白磺泉為主、青磺泉次之<br />
       與北投溫泉、關子嶺溫泉、四重溪溫泉並列為臺灣四大溫泉
     </div>
-    <div class="desc desc2">
+    <div class="desc desc2"  v-if="isPC">
       陽明山除了知名溫泉<br />
       更有稀有的冷泉，如冷水坑及富士坪古道的野溪冷泉<br />
       在盎然綠意的大自然洗禮下<br />
       充分享受著青春的泉源、養生的能量、身心靈徹底放鬆
     </div>
-    <img src="./s4/title.png" :alt="`${info.caseName}_img`" class="title">
-    <img src="./s4/line_style.png" :alt="`${info.caseName}_img`" class="line_style">
-    <img src="./s4/img.png" :alt="`${info.caseName}_img`" class="img">
+    <div class="desc desc1" v-if="isMobile">
+      陽明山溫泉位於大屯山系，擁有豐富的溫泉資源<br />
+      溫泉泉質以白磺泉為主、青磺泉次之，與北投溫泉、關子嶺溫泉、四重溪溫泉並列為臺灣四大溫泉
+    </div>
+    <div class="desc desc2"  v-if="isMobile">
+      陽明山除了知名溫泉<br />
+      更有稀有的冷泉，如冷水坑及富士坪古道的野溪冷泉，在盎然綠意的大自然洗禮下<br />
+      充分享受著青春的泉源、養生的能量、身心靈徹底放鬆
+    </div>
+    <div class="title" v-if="isMobile">
+      陽明青春泉源
+    </div>
+    <div class="subtitle" v-if="isMobile">
+      自然養生能量
+    </div>
+    <img src="./s4/title.png" :alt="`${info.caseName}_img`" class="title" v-if="isPC">
+    <img src="./s4/line_style.png" :alt="`${info.caseName}_img`" class="line_style"  v-if="isPC">
+    <img src="./s4/line_style_m.png" :alt="`${info.caseName}_img`" class="line_style"  v-if="isMobile">
+    <img src="./s4/img.png" :alt="`${info.caseName}_img`" class="img" v-if="isPC">
+    <img src="./s4/img_m.png" :alt="`${info.caseName}_img`" class="img" v-if="isMobile">
     <img src="./s4/t_style.png" :alt="`${info.caseName}_img`" class="t_style">
     <div class="cloud-bg">
       <img src="./s4/style_1.png" :alt="`${info.caseName}_img`" class="cloud cloud1">
@@ -62,15 +79,6 @@
   object-fit: cover;
   margin-top: 0;
   // opacity: 0.5;
-}
-
-.logo {
-  @include img_c_pc(406, 266);
-}
-
-.btn {
-  @include img_c_pc(290, 644);
-  cursor: pointer;
 }
 
 .img {
@@ -155,9 +163,9 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-    min-height: sizem(604);
+    min-height: sizem(740);
     max-height: sizem(750);
-    height: calc(100vh - 63px);
+    height: sizem(740);
     // margin: 0 0 -12vw 0;
     // background-size: auto size-m(750);
     z-index: initial;
@@ -166,69 +174,85 @@
     // }
   }
 
-  .grass {
-    @include img_r_m(375, 0, -40);
+  .img {
+    @include img_l_m(375, 40, 0);
+  }
+
+  .mask {
+    @include img_c_m(375, 0);
     top: auto;
-    bottom: 0;
-    transform-origin: bottom;
-    animation: grass 4s ease-in-out alternate infinite;
-  }
-
-  .logo {
-    @include img_l_m(195, 50, 88);
-  }
-  .logo1 {
-    @include img_l_m(195, 50, 88);
-  }
-
-  @keyframes grass {
-    to {
-      transform: skewX(3deg);
-    }
+    bottom: size(-35);
+    z-index: 8;
   }
 
   .title {
-    @include img_r_m(290, 409, 43);
-    font-size: sizem(23);
-    font-weight: 300;
+    @include img_l_m(133, 72, 32);
+    font-size: sizem(20);
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.3;
-    letter-spacing: sizem(3.68);
+    line-height: 1.5;
+    letter-spacing: sizem(2.6);
     text-align: center;
-    color: #ffffff;
+    color: #cc8b00;
     white-space: nowrap;
   }
 
   .subtitle {
-    @include img_l_m(290, 437, 46);
-    font-size: sizem(54);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.19;
-    letter-spacing: normal;
-    text-align: left;
-    color: #231815;
-    white-space: nowrap;
-    span {
-      font-size: sizem(56);
-      font-weight: 500;
-    }
-  }
-
-  .hint {
-    @include img_r_m(113, 363, 52);
-    font-size: sizem(16);
+    @include img_l_m(133, 100, 32);
+    font-size: sizem(20);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.19;
-    letter-spacing: sizem(0.32);
+    line-height: 1.5;
+    letter-spacing: sizem(2.6);
+    text-align: center;
+    color: #000;
+    white-space: nowrap;
+  }
+
+  .desc {
+    font-size: sizem(14);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.86;
+    letter-spacing: sizem(0.7);
     text-align: left;
-    color: #00101d;
-    span {
-      font-weight: 500;
+    color: #4d4d4d;
+    white-space: normal;
+  }
+
+  .desc1 {
+    @include img_c_m(315, 449);
+  }
+
+  .desc2 {
+    @include img_c_m(315, 563);
+  }
+
+  .line_style {
+    @include img_l_m(375, 100, 0);
+    animation: strech 5s ease-in-out alternate infinite;
+  }
+  .t_style {
+    @include img_l_m(218, 40, 0);
+    animation: strech 5s ease-in-out alternate infinite;
+  }
+
+  .cloud-bg {
+    .cloud {
+      animation: cloud 5s ease-in-out alternate infinite;
+    }
+
+    .cloud1 {
+      @include img_l_m(217, 390, -20);
+      transform: translateX(-10%);
+    }
+
+    .cloud2 {
+      @include img_r_m(145, 370, 20);
+      transform: translateX(-15%);
     }
   }
 }

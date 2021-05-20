@@ -6,7 +6,13 @@
       在這裡 ，有萬頃的自然森林與生態<br />
       分秒都有不同的景致 ，一天可看盡春夏秋冬，收藏四季風華
     </div>
-    <img src="./s3/title.png" :alt="`${info.caseName}_img`" class="title">
+    <div class="title" v-if="isMobile">
+      私藏一座
+    </div>
+    <div class="subtitle" v-if="isMobile">
+      陽明山國家公園
+    </div>
+    <img src="./s3/title.png" :alt="`${info.caseName}_img`" class="title" v-if="isPC">
     <img src="./s3/img.png" :alt="`${info.caseName}_img`" class="img">
     <img src="./s3/t_style.png" :alt="`${info.caseName}_img`" class="t_style">
     <div class="cloud-bg">
@@ -58,24 +64,8 @@
   // opacity: 0.5;
 }
 
-.logo {
-  @include img_c_pc(406, 266);
-}
-
-.btn {
-  @include img_c_pc(290, 644);
-  cursor: pointer;
-}
-
 .img {
   @include img_l_pc(979, 180, 167);
-}
-
-.mask {
-  @include img_c_pc(1920, 0);
-  top: auto;
-  bottom: size(-175);
-  z-index: 8;
 }
 
 .title {
@@ -106,7 +96,6 @@
   }
 }
 
-
 .cloud-bg {
   .cloud {
     animation: cloud 5s ease-in-out alternate infinite;
@@ -135,9 +124,9 @@
 @media screen and (max-width: 767px) {
   .section3 {
     width: 100vw;
-    min-height: sizem(604);
-    max-height: sizem(750);
-    height: calc(100vh - 63px);
+    min-height: sizem(530);
+    max-height: sizem(530);
+    height: sizem(530);
     // margin: 0 0 -12vw 0;
     // background-size: auto size-m(750);
     z-index: initial;
@@ -146,69 +135,67 @@
     // }
   }
 
-  .grass {
-    @include img_r_m(375, 0, -40);
-    top: auto;
-    bottom: 0;
-    transform-origin: bottom;
-    animation: grass 4s ease-in-out alternate infinite;
-  }
-
-  .logo {
-    @include img_l_m(195, 50, 88);
-  }
-  .logo1 {
-    @include img_l_m(195, 50, 88);
-  }
-
-  @keyframes grass {
-    to {
-      transform: skewX(3deg);
-    }
+  .img {
+    @include img_c_m(315, 110);
   }
 
   .title {
-    @include img_r_m(290, 409, 43);
-    font-size: sizem(23);
-    font-weight: 300;
+    @include img_r_m(88, 43, 31);
+    font-size: sizem(20);
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.3;
-    letter-spacing: sizem(3.68);
+    line-height: 1.5;
+    letter-spacing: sizem(2.6);
     text-align: center;
-    color: #ffffff;
+    color: #cc8b00;
     white-space: nowrap;
   }
 
   .subtitle {
-    @include img_l_m(290, 437, 46);
-    font-size: sizem(54);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.19;
-    letter-spacing: normal;
-    text-align: left;
-    color: #231815;
-    white-space: nowrap;
-    span {
-      font-size: sizem(56);
-      font-weight: 500;
-    }
-  }
-
-  .hint {
-    @include img_r_m(113, 363, 52);
-    font-size: sizem(16);
+    @include img_r_m(156, 77, 31);
+    font-size: sizem(20);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.19;
-    letter-spacing: sizem(0.32);
+    line-height: 1.5;
+    letter-spacing: sizem(2.6);
+    text-align: center;
+    color: #000;
+    white-space: nowrap;
+  }
+
+  .desc {
+    @include img_r_m(315, 347, 30);
+    font-size: sizem(14);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.86;
+    letter-spacing: sizem(0.7);
     text-align: left;
-    color: #00101d;
-    span {
-      font-weight: 500;
+    color: #4d4d4d;
+    white-space: normal;
+  }
+
+  .t_style {
+    @include img_r_m(218, 0, 0);
+    animation: strech 5s ease-in-out alternate infinite;
+  }
+
+  .cloud-bg {
+    .cloud {
+      animation: cloud 5s ease-in-out alternate infinite;
+    }
+
+    .cloud1 {
+      @include img_l_m(213, 92, -20);
+      transform: translateX(-10%);
+    }
+
+    .cloud2 {
+      @include img_r_m(237, 510, -20);
+      transform: translateX(-15%);
     }
   }
 }

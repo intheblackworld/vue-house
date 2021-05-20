@@ -141,7 +141,7 @@ export default {
   margin-bottom: 20px;
   cursor: pointer;
   text-decoration: none;
-  //border-radius: 60px / 60px;
+  border-radius: 8px / 8px;
   color: $contact_btn_color;
   background: $contact_btn_bg;
   box-shadow: $contact_btn_border;
@@ -206,8 +206,8 @@ export default {
   cursor: pointer;
   text-decoration: none;
   font-weight: 900;
-  // border-top-right-radius: 60px;
-  //border-bottom-right-radius: 60px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
   color: $contact_google_btn_color;
   background: $contact_google_btn_bg;
   background-position: center !important;
@@ -310,16 +310,17 @@ export default {
   .google-btn {
     width: 100%;
   }
-  /*
+
   .google-btn {
      border-top-right-radius: 0px;
     border-top-left-radius: 0px;
-    border-bottom-right-radius: 30px;
-    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
   }
-  */
   .address {
     // width: 280px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
     padding: 0.8em 1em;
     text-align: justify;
     line-height: 1.5;

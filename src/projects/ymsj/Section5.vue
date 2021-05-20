@@ -6,15 +6,23 @@
     <div class="subtitle">
       名人政要別墅聚落
     </div>
-    <div class="desc desc1">
+    <div class="desc desc1" v-if="isPC">
       陽明山自然森林資源豐富，四季色彩繽紛<br />
       居高臨下，更可看到美麗的大台北景色<br />
       居住在山林之間，不僅有清新的空氣，還有滿山的綠意<br />
       瞬間所有的煩惱與壓力全都消散
     </div>
-    <div class="desc desc2">
+    <div class="desc desc2" v-if="isPC">
       正因為陽明山擁有獨特的自然環境與景觀、隱密性又佳<br />
       這裡的景觀別墅，更吸引企業名人爭相置產與收藏
+    </div>
+    <div class="desc desc1" v-if="isMobile">
+      陽明山自然森林資源豐富，四季色彩繽紛<br />
+      居高臨下，更可看到美麗的大台北景色<br />
+      居住在山林之間，不僅有清新的空氣，還有滿山的綠意，瞬間所有的煩惱與壓力全都消散
+    </div>
+    <div class="desc desc2" v-if="isMobile">
+      正因為陽明山擁有獨特的自然環境與景觀、隱密性又佳，這裡的景觀別墅，更吸引企業名人爭相置產與收藏
     </div>
     <img src="./s5/style.png" :alt="`${info.caseName}_img`" class="style_l">
     <img src="./s5/style.png" :alt="`${info.caseName}_img`" class="style_r">
@@ -26,10 +34,10 @@
         <p v-html="slide.p"></p>
       </swiper-slide>
 
-      <!-- <div class="swiper-button-prev prev-btn" slot="button-prev">
+      <div class="swiper-button-prev prev-btn" slot="button-prev" v-if="isMobile">
       </div>
-      <div class="swiper-button-next next-btn" slot="button-next">
-      </div> -->
+      <div class="swiper-button-next next-btn" slot="button-next"  v-if="isMobile">
+      </div>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
     <!-- <div class="btn" v-if="isMobile">
@@ -175,13 +183,13 @@
   justify-content: center;
   top: auto;
   bottom: -7%;
-  left: size(550 / 2)
+  left: size(550 / 2);
 }
 
 .prev-btn,
 .next-btn {
   height: 100%;
-  width: 2em;
+  width: 10em;
   font-size: size(20);
   right: 1em;
   top: 0;
@@ -195,13 +203,13 @@
     top: 0;
     left: 0;
     transform: translateX(200%);
-    background-color: #df6c0088;
+    // background-color: #df6c0088;
     transition: all 0.3s;
   }
   &::after {
     content: '';
-    width: 1em;
-    height: 1em;
+    width: 5em;
+    height: 5em;
     position: absolute;
     top: calc(50% - 0.5em);
     left: calc(50% - 0.75em);
@@ -243,7 +251,7 @@
 @media screen and (max-width: 767px) {
   .section5 {
     width: 100vw;
-    height: sizem(898);
+    height: sizem(560);
     min-height: auto;
     max-height: initial;
     // background-image: url('./all/section_bg.jpg');
@@ -253,126 +261,72 @@
     // background-attachment: fixed;
     overflow: hidden;
   }
-  .grass {
-    @include img_r_m(173, -100, 0);
-    // top: auto;
-    // bottom: sizem(-80);
-    transform-origin: bottom;
-    animation: grass 4s ease-in-out alternate infinite;
+  .t_style_l {
+    @include img_l_m(39, 24, 30);
   }
 
-  @keyframes grass {
-    to {
-      transform: skewX(3deg);
-    }
+  .t_style_r {
+    @include img_r_m(39, 24, 30);
   }
 
-  // begin
-  .trans-leave-to {
-    opacity: 0;
-    z-index: 0;
-  }
-  // end
-  .trans-enter {
-    opacity: 0;
-    z-index: 1;
+  .style_l {
+    // @include img_l_m(665, 0, 0);
+    display: none;
   }
 
-  .trans-enter-active {
-    transition: all 1.8s ease;
+  .style_r {
+    @include img_r_m(262, 104, 0);
   }
 
-  .trans-leave-active {
-    transition: all 1.8s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-
-  .line {
-    @include div_l_m(7, 177, 39, 33);
-    background-color: #00808e;
-  }
-  .label {
-    @include img_l_m(116, 39, 55);
-    font-size: sizem(17);
-    font-weight: 400;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.53;
-    letter-spacing: sizem(2.72);
-    text-align: left;
-    color: #595757;
-    white-space: nowrap;
-    z-index: 2;
-  }
   .title {
-    @include img_l_m(250, 72, 55);
-    font-size: sizem(25);
-    font-weight: 500;
+    @include img_c_m(178, 0);
+    font-size: sizem(20);
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.6;
-    letter-spacing: normal;
-    text-align: left;
-    color: #595757;
+    line-height: 1.5;
+    letter-spacing: sizem(2.6);
+    text-align: center;
+    color: #000000;
     white-space: nowrap;
-    z-index: 2;
   }
 
   .subtitle {
-    @include img_l_m(300, 156, 55);
-    font-size: sizem(16);
-    font-weight: normal;
+    @include img_c_m(178, 32);
+    font-size: sizem(20);
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.63;
-    letter-spacing: sizem(0.96);
-    text-align: left;
-    color: #595757;
-    white-space: normal;
-    z-index: 3;
+    line-height: 1.5;
+    letter-spacing: sizem(2.6);
+    text-align: center;
+    color: #cc8b00;
+    white-space: nowrap;
   }
 
-  .list-info {
-    @include img_c_m(310, 233);
-    img {
-      width: sizem(245);
-      margin: 0 auto sizem(17);
-    }
-    .info {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: sizem(310);
-      padding: 0;
-    }
+  .desc {
+    font-size: sizem(14);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.86;
+    letter-spacing: sizem(0.7);
+    text-align: center;
+    color: #4d4d4d;
+    white-space: normal;
+  }
 
-    .info-title {
-      width: sizem(310);
-      font-size: sizem(22);
-      font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.18;
-      letter-spacing: normal;
-      text-align: left;
-      color: #000000;
-      margin-bottom: sizem(15);
-    }
+  .desc1 {
+    @include img_c_m(315, 82);
+  }
 
-    .info-desc {
-      width: sizem(310);
-      font-size: sizem(15);
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.53;
-      letter-spacing: sizem(0.6);
-      text-align: left;
-      color: #595757;
-    }
+  .desc2 {
+    @include img_c_m(315, 201);
   }
 
   .swiper-container {
-    @include img_c_m(375, 577);
+    @include img_c_m(315, 304);
+    overflow: visible;
   }
 
   .item {
@@ -384,91 +338,6 @@
     width: 90%;
     margin: 0 auto;
   }
-
-  .btn {
-    position: absolute;
-    top: sizem(250);
-    width: 100%;
-    left: 0;
-    .btn_l,
-    .btn_r {
-      position: absolute;
-      top: sizem(0);
-      border-radius: sizem(50);
-      background: #0001;
-      transition: all 0.3s;
-      padding: 3vw;
-      transform: translateX(3%);
-      &:hover {
-        background: #0003;
-      }
-    }
-    .btn_l {
-      right: sizem(327);
-      animation: btn1 0.6s ease-in-out infinite alternate-reverse;
-    }
-    .btn_r {
-      left: sizem(327);
-      animation: btn1 0.6s ease-in-out infinite alternate;
-    }
-    img {
-      height: sizem(80);
-    }
-  }
-  @keyframes btn1 {
-    to {
-      transform: translateX(-3%);
-    }
-  }
-  /* Swipe */
-  .swipe {
-    width: 100%;
-    height: sizem(259);
-    min-height: auto;
-    top: auto;
-    bottom: 0;
-    left: sizem(0);
-    object-fit: cover;
-  }
-
-  // begin
-  .swipe-fade-leave-to {
-    opacity: 0;
-    z-index: 0;
-  }
-  // end
-  .swipe-fade-enter {
-    opacity: 0;
-    z-index: 1;
-  }
-
-  .swipe-fade-enter-active {
-    transition: all 0.5s ease;
-  }
-
-  .swipe-fade-leave-active {
-    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-
-  // begin
-  // .swipe-left-leave-to {
-  //   margin-left: -100vw;
-  //   z-index: 0;
-  // }
-  // // end
-  // .swipe-left-enter {
-  //   opacity: 0.5;
-  //   margin-left: 0;
-  //   z-index: 1;
-  // }
-
-  // .swipe-left-enter-active {
-  //   transition: all 0.5s ease;
-  // }
-
-  // .swipe-left-leave-active {
-  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  // }
 
   .swipe-wrap {
     width: 100%;
@@ -509,77 +378,22 @@
     }
   }
 
-  .pagination {
-    width: auto;
-    bottom: size(91);
-    left: 0;
-    right: 0;
+  .item-img {
+    width: 100%;
+    height: sizem(187);
+    object-fit: cover;
     margin: 0 auto;
+  }
+
+  .swiper-pagination {
+    transform: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
     justify-content: center;
-  }
-
-  .pagination-dot {
-    padding: 5px;
-    margin: 0 10px;
-    cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
-      box-shadow: 0 0 0 1px #fff;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
-      transition: all 0.5s;
-
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #004ea2;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transition: all 0.3s;
-        transform-origin: center;
-        transform: scale(0);
-      }
-      &.active {
-        &::before {
-          content: '';
-          width: 100%;
-          height: 100%;
-          display: block;
-          background: #004ea2;
-          border-radius: 20px;
-          opacity: 1;
-          position: absolute;
-          top: 0%;
-          // transform: translateY(-50%);
-          left: 0%;
-          transform: scale(1);
-        }
-      }
-    }
-  }
-
-  .prev-btn,
-  .next-btn {
-    font-size: sizem(15);
-    &::before {
-      background-color: #cc5b4e00;
-    }
-    &::after {
-      border-color: #fff;
-      border-width: 0.15em 0.15em 0 0;
-      animation: btn 0.5s ease-in-out infinite alternate;
-    }
+    top: auto;
+    bottom: -12%;
+    left: sizem(0 / 2);
   }
 }
 </style>
@@ -620,22 +434,32 @@ export default {
     crossFade: true,
   },*/
         // centeredSlides: true,
-        // autoplay: {
-        //   delay: 5000,
-        //   disableOnInteraction: false,
-        // },
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
         loop: true,
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
         },
-        // navigation: {
-        //   nextEl: '.swiper-button-next',
-        //   prevEl: '.swiper-button-prev',
-        // },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
       },
       slideList: isMobile
-        ? []
+        ? [
+            {
+              img: require('./s5/slider_1.png'),
+            },
+            {
+              img: require('./s5/slider_2.png'),
+            },
+            {
+              img: require('./s5/slider_3.png'),
+            },
+          ]
         : [
             {
               img: require('./s5/slider_1.png'),
