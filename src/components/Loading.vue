@@ -19,8 +19,8 @@
   left: 0;
   top: 0;
   z-index: 1000;
- //display: flex;
- display: none;
+ display: flex;
+//  display: none;
   align-items: center;
   justify-content: center;
   width: 100vw;
