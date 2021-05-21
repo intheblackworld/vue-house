@@ -3,12 +3,7 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
-          <img
-            class="logo"
-            src="@/assets/img/nav-logo.png"
-            alt
-             v-scroll-to="{ element: `#section1`, offset: offset }"
-          />
+          <img class="logo" src="@/assets/img/nav-logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" />
           <!-- <div
             class="menu"
             @click="toggleSidebar"
@@ -17,30 +12,15 @@
             <font-awesome-icon icon="bars" />
           </div> -->
           <div :class="`mask ${isOpen ? 'open' : ''}`">
-            <div
-              class="close"
-              @click="isOpen = false"
-            >
-              <img
-                src="../assets/img/close.png"
-                alt=""
-              >
+            <div class="close" @click="isOpen = false">
+              <img src="../assets/img/close.png" alt="">
             </div>
           </div>
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
-            <li
-              :key="item.name"
-              v-scroll-to="{ element: `#${item.section}`, offset:  isMobile ? (item.mobileOffset ? item.mobileOffset : offset) : (item.offset ? item.offset : offset)}"
-              v-for="item in list"
-              class="flex-c"
-              @click="toggleSidebar"
-            >
+            <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset:  isMobile ? (item.mobileOffset ? item.mobileOffset : offset) : (item.offset ? item.offset : offset)}" v-for="item in list" class="flex-c" @click="toggleSidebar">
               <span class="link">
                 <span>
-                  <p
-                    class="title"
-                    v-html="item.name"
-                  ></p>
+                  <p class="title" v-html="item.name"></p>
                   <span class="subTitle">{{item.subTitle}}</span>
                 </span>
               </span>
@@ -134,17 +114,17 @@ export default {
   display: flex !important;
   align-items: center;
   transition: all 0.3s;
-  font-size:size(24);
+  font-size: size(24);
   line-height: 1.5;
   // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
   .logo {
     opacity: 0;
-    transition: all .3s;
+    transition: all 0.3s;
   }
   &.min {
     height: 70px;
     // background-image: url('~@/projects/jcs/s1/bg.jpg');
-    background-color: rgba(255, 255, 255, .7);
+    background-color: rgba(255, 255, 255, 0.7);
     .logo {
       opacity: 1;
       width: size(128);
@@ -180,7 +160,7 @@ export default {
   display: block;
   top: 50%;
   transform: translate(3%, -50%);
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .mask {
@@ -196,9 +176,10 @@ export default {
   padding-left: 30px;
   li {
     height: 100%;
-    &:nth-child(1){
+    &:nth-child(1) {
       .link {
-    border-left: 1px solid $nav_link_hover_bg;}
+        border-left: 1px solid $nav_link_hover_bg;
+      }
     }
   }
 
@@ -217,60 +198,60 @@ export default {
     position: relative;
     overflow: hidden;
     border-right: 1px solid $nav_link_hover_bg;
-    width:5.7em;
+    width: 5.7em;
 
     &:hover {
       color: $nav_link_hover_color;
       // background: $nav_link_hover_bg;
     }
 
-     &::before {
-       content: '';
-       width: 0%;
-       height: 100%;
-       display: block;
-       background: #fff6; // second bg
-       position: absolute;
-       transform: skewX(-20deg);
-       left: -10%;
-       opacity: 1;
-       top: 0;
-       z-index: 2;
-       transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-       //box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
-     }
+    &::before {
+      content: '';
+      width: 0%;
+      height: 100%;
+      display: block;
+      background: #fff6; // second bg
+      position: absolute;
+      transform: skewX(-20deg);
+      left: -10%;
+      opacity: 1;
+      top: 0;
+      z-index: 2;
+      transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+      //box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
+    }
 
     &::after {
-       content: '';
-       width: 0%;
-       height: 100%;
-       display: block;
-       background: #fff3; // first bg
-       position: absolute;
-       transform: skewX(-20deg);
-       left: -10%;
-       opacity: 0;
-       top: 0;
-       z-index: 1;
-       transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
-       box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
-     }
-     &:hover::before {
-       opacity: 1;
-       width: 200%;
-       transform:translateX(100%) skewX(-20deg);
-     }
-     &:hover::after {
-       opacity: 1;
-       width: 150%;
-       transform:translateX(100%) skewX(-20deg);
-     }
+      content: '';
+      width: 0%;
+      height: 100%;
+      display: block;
+      background: #fff3; // first bg
+      position: absolute;
+      transform: skewX(-20deg);
+      left: -10%;
+      opacity: 0;
+      top: 0;
+      z-index: 1;
+      transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
+      box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
+    }
+    &:hover::before {
+      opacity: 1;
+      width: 200%;
+      transform: translateX(100%) skewX(-20deg);
+    }
+    &:hover::after {
+      opacity: 1;
+      width: 150%;
+      transform: translateX(100%) skewX(-20deg);
+    }
 
     .title {
-    //  font-size: 24px;
+      //  font-size: 24px;
       position: relative;
       z-index: 3;
-     /* > span {
+      /* > span {
      //   font-size: 24px !important;
       } */
     }
@@ -302,12 +283,12 @@ export default {
   .navigation {
     height: 70px;
     justify-content: center;
-  &.min {
-    .logo {
-    width: $logo_tablet_width;
+    &.min {
+      .logo {
+        width: $logo_tablet_width;
+      }
     }
   }
-}
 
   .logo {
     width: $logo_tablet_width;
@@ -345,16 +326,15 @@ export default {
 @media only screen and (max-width: 767px) {
   .navigation {
     height: $nav_phone_height;
-  //  background-color: #fff;
+    //  background-color: #fff;
     height: 70px;
     justify-content: center;
-  &.min {
-    .logo {
-    width: $logo_phone_width;
+    &.min {
+      .logo {
+        width: $logo_phone_width;
+      }
     }
   }
-}
-
 
   .nav-container {
     display: block;
@@ -367,13 +347,13 @@ export default {
     width: $logo_phone_width;
     left: size-m(20);
     top: 50%;
-  transform: translate(0, -40%);
+    transform: translate(0, -40%);
     // left: 45px;
   }
 
   .nav {
     position: static;
-    height:60px;
+    height: 60px;
   }
 
   .menu {

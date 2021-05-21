@@ -195,6 +195,7 @@
     top: auto;
     bottom: size(30);
     transform: translateX(-10%);
+    animation: none;
   }
 }
 @keyframes cloud {
@@ -292,6 +293,7 @@
   }
   .leaf {
     @include img_l_m(88, 440, -20);
+    z-index: 10;
   }
 
   @keyframes strech {
@@ -320,7 +322,7 @@
     width: 10em;
     font-size: size(20);
     right: 1em;
-    top: 0;
+    top: -5%;
     margin: 0;
     cursor: pointer;
     &::before {
@@ -365,7 +367,8 @@
 
   .swiper-container {
     @include img_c_m(315, 472);
-    overflow: visible;
+    height: sizem(217);
+    // overflow: visible;
   }
 
   .item {
@@ -431,7 +434,7 @@
     align-items: center;
     justify-content: center;
     top: auto;
-    bottom: -12%;
+    bottom: 0%;
     left: sizem(0 / 2);
   }
 }

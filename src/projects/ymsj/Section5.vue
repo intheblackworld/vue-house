@@ -34,7 +34,7 @@
     <img src="./s5/t_style_r.png" :alt="`${info.caseName}_img`" class="t_style_r" data-aos="fade-left" data-aos-delay="400">
     <swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" @slideChangeTransitionEnd="slideChanged">
       <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide + index" class="item">
-        <img :src="slide.img" :class="`item-img`"  @click="showDialog(index)" />
+        <img :src="slide.img" :class="`item-img`" @click="showDialog(index)" />
         <p v-html="slide.p"></p>
       </swiper-slide>
 
@@ -72,7 +72,7 @@
   min-height: size(1320);
   max-height: size(1320);
   position: relative;
-  background-color: #fff;
+  // background-color: #fff;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
@@ -158,8 +158,9 @@
 }
 
 .swiper-container {
-  @include img_l_pc(1920 + 550, 712, -550);
-  overflow: visible;
+  @include img_l_pc(1920 + 920, 712, 0 - 460);
+  height: size(576)
+  // overflow: visible;
 }
 
 .item {
@@ -187,8 +188,8 @@
   align-items: center;
   justify-content: center;
   top: auto;
-  bottom: -7%;
-  left: size(550 / 2);
+  bottom: 0%;
+  left: size(0 / 2);
 }
 
 .prev-btn,
@@ -197,7 +198,7 @@
   width: 10em;
   font-size: size(20);
   right: 1em;
-  top: 0;
+  top: -5%;
   margin: 0;
   cursor: pointer;
   &::before {
@@ -370,7 +371,8 @@
 
   .swiper-container {
     @include img_c_m(315, 304);
-    overflow: visible;
+    height: sizem(217);
+    // overflow: visible;
   }
 
   .item {
@@ -436,8 +438,49 @@
     align-items: center;
     justify-content: center;
     top: auto;
-    bottom: -12%;
+    bottom: 0%;
     left: sizem(0 / 2);
+  }
+
+  .dialog {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s;
+    display: none;
+    overflow: scroll;
+
+    &.show {
+      display: block;
+      z-index: 210;
+      opacity: 1;
+    }
+
+    .dialog-img {
+      width: auto;
+      height: 90vh;
+      max-width: none;
+      max-height: none;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      top: 50%;
+      transform: translateY(-50%);
+      position: absolute;
+    }
+
+    .close {
+      position: fixed;
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0.6);
+      right: 0px;
+      top: 0px;
+      width: 40px;
+    }
   }
 }
 </style>
@@ -467,7 +510,7 @@ export default {
       isDialog: false,
       blockIndex: 0,
       swiperOption: {
-        slidesPerView: isMobile ? 1 : 2.42,
+        slidesPerView: isMobile ? 1 : 3,
         slidesPerGroup: isMobile ? 1 : 1,
         spaceBetween: isTablet ? 20 : 10,
         slidesPerColumn: isMobile ? 1 : 1,

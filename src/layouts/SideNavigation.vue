@@ -1,7 +1,8 @@
 <template>
-  <div class="sideNav">
+  <div :class="`navigation ${min ? 'min' : ''}`">
     <div class="nav relative">
       <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
+      <img class="logo" src="@/assets/img/nav-logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" />
       <div class="menu" @click="toggleSidebar">
         <div :class="`menu-icon ${isOpen ? 'menu-icon-active' : ''}`"></div>
         <!-- <img v-if="isOpen" src="@/projects/jh/s4/close.png" class="close" alt />
@@ -31,6 +32,7 @@ import info from '@/info'
 export default {
   name: 'sideNavigation',
   components: {},
+  props: ['min'],
   data() {
     return {
       isOpen: false,
@@ -341,8 +343,32 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .navigation {
-    height: $nav_phone_height;
+    width: 100vw;
+    height: 60px;
     z-index: 110;
+    position: fixed;
+
+    .logo {
+      opacity: 0;
+      transition: all 0.3s;
+    }
+    &.min {
+      height: 70px;
+      // background-image: url('~@/projects/jcs/s1/bg.jpg');
+      background-color: rgba(255, 255, 255, 0.7);
+      .logo {
+        opacity: 1;
+        width: sizem(86);
+      }
+    }
+
+    .logo {
+      width: $logo_phone_width;
+      left: size-m(20);
+      top: 50%;
+      transform: translate(0, -40%);
+      // left: 45px;
+    }
   }
 
   .nav-container {

@@ -2,7 +2,7 @@
   <div class="home no-padding-top">
     <div class="bg-img">
       <Loading :loading="load" />
-      <SideNavigation v-if="isMobile" />
+      <SideNavigation v-if="isMobile" :min="isNavMin" />
       
       <Navigation v-if="!isMobile" :min="isNavMin" />
       <!-- <Indigator :viewIndex="viewIndex" /> -->

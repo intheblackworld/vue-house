@@ -139,8 +139,9 @@
   }
 
   .cloud4 {
-    @include img_r_pc(747, 680, -20);
+    @include img_r_pc(747, 680, 0);
     transform: translateX(20%);
+		animation: none;
   }
 
   .cloud5 {

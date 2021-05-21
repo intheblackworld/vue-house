@@ -1,7 +1,7 @@
 export default [
   					
   // { name: '首頁 ', imgSrc: '', subTitle: '', section: 'section1', svgSrc: '', offset: 0 },
-  { name: '國家公園', imgSrc: '', subTitle: '', section: 'section2', svgSrc: '', offset: -40 },
+  { name: '國家公園', imgSrc: '', subTitle: '', section: 'section3', svgSrc: '', offset: -40 },
   { name: '青春泉源', imgSrc: '', subTitle: '', section: 'section4', svgSrc: '', offset: 0 },
   { name: '名人聚落', imgSrc: '', subTitle: '', section: 'section5', svgSrc: '', offset: 20 },
   { name: '稀珍價值', imgSrc: '', subTitle: '', section: 'section6', svgSrc: '', offset: 20 },
