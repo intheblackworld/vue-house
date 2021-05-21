@@ -276,16 +276,17 @@ export default {
 .mask {
   width: 100vw;
   top: $nav_phone_height;
-  right: 0;
+  right: -100vw;
   position: fixed;
   z-index: -1;
   height: calc(100vh - #{$nav_phone_height});
   opacity: 0;
-  transition: all 0.3s ease-in;
+  // transition: all 0.3s ease-in;
   background: #0006;
   &.open {
     display: block;
     width: 100vw;
+    right: 0;
     opacity: 1;
     z-index: 110;
   }
@@ -452,15 +453,16 @@ export default {
   .mask {
     width: 100vw;
     top: $nav_phone_height;
-    right: 0;
+    right: -100vw;
     // background: #ff8700;
     position: fixed;
     height: calc(100vh - #{$nav_phone_height});
     opacity: 0;
-    transition: all 0.3s ease-in;
+    // transition: all 0.3s ease-in;
     &.open {
       display: block;
       width: 100vw;
+      right: 0;
       opacity: 1;
       z-index: 110;
     }

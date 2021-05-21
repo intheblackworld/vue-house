@@ -34,7 +34,7 @@
       野奢莊園 ・ 即將展開 ・ 敬請期待
     </div>
     
-    <img src="./s7/img_line.png" class="img_line" data-aos="fade-up" data-aos-delay="400">
+    <img src="./s7/img_line.png" class="img_line" data-aos-offset="-500" data-aos="fade-up" data-aos-delay="400">
     <img src="./s7/img.jpg" alt="" class="img" v-if="isPC">
     <img src="./s7/img_style_1.png" class="img_style_1" data-aos="fade-up" data-aos-delay="600">
   </div>
