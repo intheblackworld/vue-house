@@ -44,7 +44,7 @@
   // height: auto;
   // min-height: calc(1920 * );
   // max-height: size(1080);
-  background-color: #000;
+  background: transparent;
   background-size: contain;
   // margin: size(-125) 0 0 0;
   // &::after {
