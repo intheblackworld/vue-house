@@ -128,7 +128,7 @@
 .mask {
   @include img_c_pc(1920, 0);
   top: auto;
-  bottom: size(-175);
+  bottom: size(-245);
   z-index: 8;
 }
 
@@ -277,10 +277,11 @@ export default {
       event.target.playVideo()
     },
     loadVideo() {
+      console.log(window, 'window.screen.width')
       this.player = new window.YT.Player(`youtube-player-${this.id}`, {
         videoId: this.id,
-        width: window.screen.width,
-        height: window.screen.width * (1080 / 1920),
+        width: window.innerWidth,
+        height: window.innerWidth * (810 / 1440),
         playerVars: {
           autoplay: 1,
           loop: 1,

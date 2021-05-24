@@ -74,7 +74,7 @@
 .mask {
   @include img_c_pc(1920, 0);
   top: auto;
-  bottom: size(-175);
+  bottom: size(-165);
   z-index: 8;
 }
 
