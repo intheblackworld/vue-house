@@ -82,7 +82,7 @@
   transform: translateY(-50%);
   left: 0;
   overflow: hidden;
-  height: 100%;
+  // height: 100%;
   opacity: 0;
   cursor: pointer;
   animation: op 1s 3s ease-out forwards;
@@ -280,8 +280,8 @@ export default {
       console.log(window, 'window.screen.width')
       this.player = new window.YT.Player(`youtube-player-${this.id}`, {
         videoId: this.id,
-        width: window.innerWidth,
-        height: window.innerWidth * (810 / 1440),
+        width: window.innerHeight * (1440 / 810),
+        height: window.innerHeight,
         playerVars: {
           autoplay: 1,
           loop: 1,
