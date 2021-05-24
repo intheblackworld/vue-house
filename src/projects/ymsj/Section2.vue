@@ -13,7 +13,7 @@
     <div class="video_box" @click="isDialog = true">
       <div v-if="!isMobile" :id="`youtube-player-${id}`" ref="player" class="video-ifame"></div>
     </div>
-    <img src="./s2/mask.png" :alt="`${info.caseName}_img`" class="mask">
+    
     <img src="./s2/style_1.png" :alt="`${info.caseName}_img`" class="style1"  data-aos="fade-up" data-aos-delay="200">
     <img src="./s2/style_2.png" :alt="`${info.caseName}_img`" class="style2"  data-aos="fade-up" data-aos-delay="400">
     <div class="video video-dialog" v-if="isDialog && isMobile">
