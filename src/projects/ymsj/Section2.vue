@@ -41,9 +41,9 @@
   // height: 100vh;
   overflow: hidden;
   // position: relative;
-  height: 100vh;
-  min-height: size(900);
-  max-height: size(1080);
+  // height: auto;
+  // min-height: calc(1920 * );
+  // max-height: size(1080);
   background-color: #000;
   background-size: contain;
   // margin: size(-125) 0 0 0;
@@ -75,10 +75,10 @@
 
 .video_box {
   width: 100%;
-  position: absolute;
+  position: relative;
   z-index: 2;
-  top: 50%;
-  transform: translateY(-50%);
+  // top: 50%;
+  // transform: translateY(-50%);
   left: 0;
   overflow: hidden;
   // height: 100%;
