@@ -194,7 +194,7 @@ export default {
         this.isSubmit = false
         return
       }
-      window.gtag_report_conversion(`${window.location.href}formThanks`)
+      window.gtag_report_conversion_submit(`${window.location.href}formThanks`)
       const urlParams = new URLSearchParams(window.location.search)
       const utmSource = urlParams.get('utm_source')
       const utmMedium = urlParams.get('utm_medium')

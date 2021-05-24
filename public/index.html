@@ -4,7 +4,7 @@
     <!-- Event snippet for 預約賞屋 conversion page
 In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
 <script>
-  function gtag_report_conversion(url) {
+  function gtag_report_conversion_submit(url) {
     console.log('conversion')
     var callback = function () {
     };
@@ -14,9 +14,47 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
     });
     return false;
   }
-  </script>
-<!-- Event snippet for 地圖導航 conversion page v
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+  
+  function gtag_report_conversion_map(url) {
+    var callback = function () {};
+    gtag('event', 'conversion', {
+        'send_to': 'AW-686280099/9nDbCPfh6I0CEKObn8cC',
+        'event_callback': callback
+    });
+    return false;
+  }
+
+  function gtag_report_conversion_fb(url) {
+    var callback = function () {
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-686280099/h7nWCILn6I0CEKObn8cC',
+        'event_callback': callback
+    });
+    return false;
+  }
+
+  function gtag_report_conversion_call(url) {
+    var callback = function () {
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-686280099/cUHdCP-a440CEKObn8cC',
+        'event_callback': callback
+    });
+    return false;
+  }
+
+  function gtag_report_conversion_chat(url) {
+    var callback = function () {};
+    gtag('event', 'conversion', {
+        'send_to': 'AW-686280099/rZmMCMGe440CEKObn8cC',
+        'event_callback': callback
+    });
+    return false;
+  }
+
+
+</script>
 <!-- Event snippet for Facebook粉絲專頁 conversion page v
 In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
 <!-- Event snippet for 06-299-2788 conversion page v

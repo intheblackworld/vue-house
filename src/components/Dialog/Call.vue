@@ -19,7 +19,7 @@ export default {
       window.location.href = `tel:${this.phone.replace('-', '')}`
       setTimeout(() => {
         window.location.href = 'phoneThanks'
-        window.gtag_report_conversion(window.location.href)
+        window.gtag_report_conversion_call(window.location.href)
       }, 1000)
     },
   },
