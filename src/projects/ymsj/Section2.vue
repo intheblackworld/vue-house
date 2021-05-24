@@ -44,7 +44,6 @@
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);
-  background: #000 url('./s2/video_img.jpg') no-repeat center;
   background-color: #000;
   background-size: contain;
   // margin: size(-125) 0 0 0;
@@ -167,6 +166,7 @@
     min-height: sizem(180);
     max-height: sizem(180);
     background-size: cover;
+    background: #000 url('./s2/video_img.jpg') no-repeat center;
     // margin-top: sizem(-60);
   }
 
@@ -277,7 +277,6 @@ export default {
       event.target.playVideo()
     },
     loadVideo() {
-      console.log(window, 'window.screen.width')
       this.player = new window.YT.Player(`youtube-player-${this.id}`, {
         videoId: this.id,
         width: window.innerHeight * (1440 / 810),
