@@ -26,7 +26,7 @@
   width: 100%;
   height: 100vh;
   min-height: size(1080);
-  max-height: auto;
+  max-height: size(900);
   //overflow: hidden;
   // position: relative;
   // background-image: url('./s1/01_bg.jpg');
@@ -75,7 +75,7 @@
   @include img_c_pc(1920, 0);
   top: auto;
   bottom: size(-165);
-  z-index: 8;
+  z-index:2;
 }
 
 .title {
@@ -186,7 +186,6 @@
     @include img_c_m(375, 0);
     top: auto;
     bottom: sizem(-35);
-    z-index: 8;
   }
 
   .title {

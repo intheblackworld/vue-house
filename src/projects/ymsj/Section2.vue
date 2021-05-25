@@ -10,15 +10,20 @@
       frameborder="0"
       allowfullscreen
     ></iframe> -->
-    <div class="video_box" @click="isDialog = true">
-      <div v-if="!isMobile" :id="`youtube-player-${id}`" ref="player" class="video-ifame"></div>
+    <div class="video_box" v-if="!isMobile" @click="isDialog = true">
+      <div :id="`youtube-player-${id}`" ref="player" class="video-ifame"></div>
     </div>
     
+    <div class="isDialog" v-if="isMobile" @click="isDialog = true">
+    </div>
     <img src="./s2/style_1.png" :alt="`${info.caseName}_img`" class="style1"  data-aos="fade-up" data-aos-delay="200">
     <img src="./s2/style_2.png" :alt="`${info.caseName}_img`" class="style2"  data-aos="fade-up" data-aos-delay="400">
     <div class="video video-dialog" v-if="isDialog && isMobile">
-      <div class="video_box">
+      <div class="mask" @click="isDialog = false"></div>
+      <div class="video-bg">
+        <div class="video_box">
         <iframe title="youtube" src="https://www.youtube.com/embed/zksd-v3IqvQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
       </div>
       <img class="close" @click="isDialog = false" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABABAMAAABYR2ztAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAhUExURUdwTP////Pw8PLx8fLw8PLw8PPx8fHx8fLy8vLw8PXr6/Zeio0AAAALdFJOUwADRMS156s3KfgaAiHMOAAAAXtJREFUSMeFlr9qwzAQxnVZajoVLRLZTEMfoBAadywIt11t/AAGETqGhOzGoS/g0r20D1qRxLYsS/oy5Y/uk+/ud/eFnRoWecmcfTzdhX+n/Tf763bhAyJ7Z4l+DErQfdkw+izS0AGutiZY6JeABK2q8/XHMo0JhCXooUqvb/wSXNfXwIVXwjxBOmj5JLiqhzCh5+WkQzVG0bGYlVOscytIvG0cCWq/JjGn7md6YJlNQ5LsefKZfjsHA+cL6QQwdpvZidDevZKx1uZCZJtZ3okauaBVOQeRDmM5uco9tR+b2nPgSgxcjG1023uRGDiYA3KRCAn0EkGBXkKoOjgHC8OFna6nFsVOrvPILBou2tgoGkw6TxemXHTRdWA4iB+AV6CHNGk2UkXS5DqPFgqWGjULthsBA5GzoS19tUDYSzA4Zpzjo7dEw4vGX4IFYjiIryC0xHxr8MbGHy1SuIo5WObQDjgwFApZEnF9tiRkatAWobFCa4bmDv4evP4DsmNwZSA8CfQAAAAASUVORK5CYII=" />
     </div>
@@ -40,6 +45,7 @@
 .section2 {
   // height: 100vh;
   overflow: hidden;
+  height:  size(830);position: relative;
   // position: relative;
   // height: auto;
   // min-height: calc(1920 * );
@@ -74,14 +80,13 @@
 }
 
 .video_box {
-  width: 100%;
-  position: relative;
-  z-index: 2;
-  // top: 50%;
-  // transform: translateY(-50%);
-  left: 0;
+  width: size(1475);
+  height: calc(100% + 170px *2);
+  top: -170px;
+  left:calc(50% - 50vw * 1475 / 1920);
+  position: absolute;
+  z-index: 3;
   overflow: hidden;
-  // height: 100%;
   opacity: 0;
   cursor: pointer;
   animation: op 1s 3s ease-out forwards;
@@ -92,17 +97,10 @@
   }
 }
 .video-bg {
-  width: 100vw;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  //z-index: 3;
 }
 
 .line-bg {
-  width: 100vw;
+  width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
@@ -132,12 +130,12 @@
 }
 
 .style1 {
-  @include img_l_pc(310, -350, 0);
+  @include img_l_pc(310, -180, 0);
   z-index: 8;
 }
 
 .style2 {
-  @include img_r_pc(455, 320, 0);
+  @include img_r_pc(455, 180, 0);
   z-index: 8;
 }
 
@@ -168,29 +166,44 @@
     background-size: cover;
     background: #000 url('./s2/video_img.jpg') no-repeat center;
     // margin-top: sizem(-60);
+    z-index: 3;
   }
 
+  .isDialog {
+    width: 100%;
+    position: absolute;
+    height:100%;
+    top: 0;
+    left: 0;
+  }
+  .mask{
+    width: 100%;
+    position: absolute;
+    height:100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: #000 url("./s2/load.gif") no-repeat center;
+    background-size:size-m(50);
+    opacity: .5;
+  }
   .video_box {
     width: 100%;
     position: absolute;
-    height: size-m(180);
-    // top: 50%;
-    // transform: translateY(-50%);
-    // left: 0;
-    // overflow: hidden;
-    // height: size(910);
-    opacity: 1;
-    // animation: op 1s 3s ease-out forwards;
+    height:calc(100% + 200px * 2);
+    top:-200px;
+    left: 0;
+    z-index: 5;
   }
   .video-bg {
-    width: size-m(1190);
-    height: size-m(667);
+    width: 100%;
     position: absolute;
-    top: 0;
+    height:size-m(212);
+    overflow: hidden;
+    top:50%;
+    transform: translateY(-50%);
     left: 0;
-    pointer-events: none;
-    object-fit: cover;
-    object-position: center;
+    z-index: 5;
   }
 
   .logo {
@@ -216,12 +229,6 @@
     z-index: 10;
   }
 
-  .video-dialog {
-    .video_box {
-      height: sizem(260);
-    }
-  }
-
   .video {
     width: 100vw;
     height: 100vh;
@@ -233,8 +240,8 @@
     transition: opacity 0.5s;
 
     iframe {
-      width: 100vw;
-      height: size-m(260);
+      width: 100%;
+      height:100%;
       left: 0;
       right: 0;
       margin: 0 auto;
@@ -248,7 +255,7 @@
       position: absolute;
       cursor: pointer;
       right: 15px;
-      top: 50px;
+      top:calc(50% - 47vw);
       width: size-m(30);
     }
   }
@@ -279,8 +286,8 @@ export default {
     loadVideo() {
       this.player = new window.YT.Player(`youtube-player-${this.id}`, {
         videoId: this.id,
-        width: window.innerHeight * (1440 / 810),
-        height: window.innerHeight,
+        width: "100%",
+        height: "100%",
         playerVars: {
           autoplay: 1,
           loop: 1,
