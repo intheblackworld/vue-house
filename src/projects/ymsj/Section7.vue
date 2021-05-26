@@ -142,11 +142,11 @@
 }
 
 .desc {
-  font-size: size(20);
+  font-size: size(25);
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.65;
+  line-height: 2;
   letter-spacing: size(2);
   text-align: center;
   color: #4d4d4d;
@@ -154,11 +154,11 @@
 }
 
 .desc1 {
-  @include img_c_pc(562, 378);
+  @include img_c_pc(690, 378);
 }
 
 .desc2 {
-  @include img_c_pc(386, 717);
+  @include img_c_pc(450, 717);
   span {
     font-weight: bold;
     color: #cc8b00;
@@ -239,7 +239,7 @@
   }
 
   .subtitle {
-    font-size: sizem(14);
+    font-size: sizem(16);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
@@ -250,7 +250,7 @@
     white-space: nowrap;
   }
   .subtitle1 {
-    @include img_c_m(178, 114);
+    @include img_c_m(280, 114);
   }
   .subtitle2 {
     font-size: sizem(18);
@@ -261,7 +261,7 @@
     letter-spacing: sizem(1.04);
     text-align: center;
     color: #cc8b00;
-    @include img_c_m(288, 462);
+    @include img_c_m(280, 470);
   }
 
   .items {
@@ -273,7 +273,7 @@
   }
 
   .desc {
-    font-size: sizem(14);
+    font-size: sizem(16);
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
@@ -285,11 +285,11 @@
   }
 
   .desc1 {
-    @include img_c_m(198, 147);
+    @include img_c_m(258, 147);
   }
 
   .desc2 {
-    @include img_c_m(258, 383);
+    @include img_c_m(300, 383);
     span {
       font-weight: bold;
       color: #cc8b00;
@@ -302,7 +302,7 @@
     }
 
     .cloud1 {
-      @include img_l_m(206, 197, -40);
+      @include img_l_m(206, 210, -40);
       transform: translateX(-10%);
     }
 

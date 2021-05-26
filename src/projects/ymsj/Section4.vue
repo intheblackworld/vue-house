@@ -88,11 +88,11 @@
 }
 
 .desc {
-  font-size: size(20);
+  font-size: size(25);
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.65;
+  line-height: 2.4;
   letter-spacing: size(2);
   text-align: left;
   color: #4d4d4d;
@@ -203,7 +203,7 @@
   }
 
   .desc {
-    font-size: sizem(14);
+    font-size: sizem(16);
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
