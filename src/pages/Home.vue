@@ -3,8 +3,8 @@
     <div class="bg-img">
       <Loading :loading="load" />
       <SideNavigation v-if="isMobile" :min="isNavMin" />
-      
-      <Navigation v-if="!isMobile" :min="isNavMin" />
+
+      <Navigation v-if="!isMobile" :min="isNavMin" :hide="isHide" />
       <!-- <Indigator :viewIndex="viewIndex" /> -->
       <!-- <full-page
       ref="fullPage"
@@ -20,7 +20,7 @@
       <vue-lazy-component class="section" id="section3">
         <Section3 />
       </vue-lazy-component>
-      <vue-lazy-component class="section relative" id="section4" >
+      <vue-lazy-component class="section relative" id="section4">
         <Section4 :viewIndex="viewIndex" />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section5">
@@ -67,7 +67,7 @@
 }
 
 .bg-img {
- // background-image: url('~@/projects/lj/s1/bg.png');
+  // background-image: url('~@/projects/lj/s1/bg.png');
   // padding-top: $nav_pc_height;
   background-attachment: fixed;
   background-size: auto;
@@ -85,7 +85,8 @@
 
 <script>
 // @ is an alias to /src
-import $ from 'jquery'
+// import $ from 'jquery'
+import _ from 'lodash'
 import Navigation from '@/layouts/Navigation.vue'
 import { isMobile } from '@/utils'
 import SideNavigation from '@/layouts/SideNavigation.vue'
@@ -135,6 +136,8 @@ export default {
       load: false,
       viewIndex: 0,
       isNavMin: false,
+      isHide: false,
+      scrollPos: 0,
       // action: {
       //   moveTo: () => {},
       // },
@@ -173,7 +176,7 @@ export default {
     // window.location = "https://ywh.nhc888.com.tw/"
   },
   mounted() {
-    window.addEventListener('scroll', this.onScroll, false)
+    window.addEventListener('scroll', _.throttle(this.onScroll, 200), false)
     // this.action = this.$refs.fullPage.api
     // if (this.isMobile) {
     //   this.$refs.fullPage.api.setResponsive(true)
@@ -186,6 +189,14 @@ export default {
         document.documentElement.scrollTop || document.body.scrollTop
       // 定义当前点亮的导航下标
       // let navIndex = 0
+
+      if (document.body.getBoundingClientRect().top > this.scrollPos) {
+        this.isHide = false
+      } else {
+        this.isHide = true
+      }
+      // saves the new position for iteration.
+      this.scrollPos = document.body.getBoundingClientRect().top
       if (scrollTop > 200) {
         this.isNavMin = true
       } else {

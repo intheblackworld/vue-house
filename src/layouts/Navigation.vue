@@ -1,5 +1,5 @@
 <template>
-  <div :class="`navigation ${min ? 'min' : ''}`">
+  <div :class="`navigation ${min ? 'min' : ''} ${hide ? 'hide' : ''}`">
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
@@ -48,7 +48,7 @@ export default {
     }
   },
 
-  props: ['min'],
+  props: ['min', 'hide'],
 
   computed: {
     offset() {
@@ -129,6 +129,10 @@ export default {
       opacity: 1;
       width: size(128);
     }
+  }
+
+  &.hide {
+    top: -70px;
   }
 }
 
