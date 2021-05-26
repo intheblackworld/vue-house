@@ -35,13 +35,6 @@
       因受國家森林公園保護區管制，無法改建及擴建<br />
       造成陽明山的土地稀有，住戶都相當惜售<br />
       可開發土地與房屋稀少，造成一宅難求的現象<br />
-      陽明山別墅價值因此居高不下
-    </div>
-    <div class="desc desc2" data-aos="fade-up" data-aos-delay="1000">
-      連原本有望開發的<br />
-      「陽明山保變住六之六」開發案都充滿變數<br />
-      (此案初估每坪上看200萬元)<br />
-      讓陽明山因土地與住宅的稀有性更顯珍貴
     </div>
   </div>
 </template>
@@ -153,7 +146,7 @@
   animation: strech 5s ease-in-out alternate infinite;
 }
 .bird {
-  @include img_r_pc(389, 841, 838);
+  @include img_r_pc(389, 700, 838);
   animation: jump 1.5s linear alternate infinite;
 }
 
@@ -169,7 +162,7 @@
   }
 }
 .leaf {
-  @include img_l_pc(251, 913, -70);
+  @include img_l_pc(251, 613, -70);
   animation: grass 4s ease-in-out alternate infinite;
   transform-origin: left;
 }
@@ -211,9 +204,9 @@
 @media screen and (max-width: 767px) {
   .section6 {
     width: 100vw;
-    min-height: sizem(752);
-    max-height: sizem(752);
-    height: sizem(752);
+    min-height: sizem(582);
+    max-height: sizem(582);
+    height: sizem(582);
     // margin: 0 0 -12vw 0;
     // background-size: auto size-m(750);
     z-index: initial;
@@ -292,7 +285,7 @@
     @include img_r_m(117, 0, 0);
   }
   .leaf {
-    @include img_l_m(88, 440, -20);
+    @include img_l_m(88, 270, -20);
     z-index: 10;
   }
 
@@ -366,7 +359,7 @@
   }
 
   .swiper-container {
-    @include img_c_m(315, 472);
+    @include img_c_m(315, 302);
     height: sizem(217);
     // overflow: visible;
   }

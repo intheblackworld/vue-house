@@ -11,19 +11,16 @@
       名人政要別墅聚落
     </div>
     <div class="desc desc1" v-if="isPC" data-aos="fade-up" data-aos-delay="600">
-      陽明山自然森林資源豐富，四季色彩繽紛<br />
+      陽明山自然森林資源豐富<br />
       居高臨下，更可看到美麗的大台北景色<br />
-      居住在山林之間，不僅有清新的空氣，還有滿山的綠意<br />
-      瞬間所有的煩惱與壓力全都消散
     </div>
     <div class="desc desc2" v-if="isPC" data-aos="fade-up" data-aos-delay="800">
       正因為陽明山擁有獨特的自然環境與景觀、隱密性又佳<br />
       這裡的景觀別墅，更吸引企業名人爭相置產與收藏
     </div>
     <div class="desc desc1" v-if="isMobile" data-aos="fade-up" data-aos-delay="600">
-      陽明山自然森林資源豐富，四季色彩繽紛<br />
+      陽明山自然森林資源豐富<br />
       居高臨下，更可看到美麗的大台北景色<br />
-      居住在山林之間，不僅有清新的空氣，還有滿山的綠意，瞬間所有的煩惱與壓力全都消散
     </div>
     <div class="desc desc2" v-if="isMobile" data-aos="fade-up" data-aos-delay="800">
       正因為陽明山擁有獨特的自然環境與景觀、隱密性又佳，這裡的景觀別墅，更吸引企業名人爭相置產與收藏
@@ -97,11 +94,11 @@
   // }
 }
 .t_style_l {
-  @include img_l_pc(80, 167, 600);
+  @include img_l_pc(80, 267, 600);
 }
 
 .t_style_r {
-  @include img_r_pc(80, 167, 600);
+  @include img_r_pc(80, 267, 600);
 }
 
 .style_l {
@@ -113,7 +110,7 @@
 }
 
 .title {
-  @include img_c_pc(356, 114);
+  @include img_c_pc(356, 214);
   font-size: size(40);
   font-weight: bold;
   font-stretch: normal;
@@ -126,7 +123,7 @@
 }
 
 .subtitle {
-  @include img_c_pc(356, 185);
+  @include img_c_pc(356, 285);
   font-size: size(40);
   font-weight: bold;
   font-stretch: normal;
@@ -144,13 +141,13 @@
   font-style: normal;
   line-height: 2.65;
   letter-spacing: size(2);
-  text-align: left;
+  text-align: center;
   color: #4d4d4d;
   white-space: nowrap;
 }
 
 .desc1 {
-  @include img_c_pc(526, 290);
+  @include img_c_pc(526, 380);
 }
 
 .desc2 {
@@ -296,7 +293,7 @@
 @media screen and (max-width: 767px) {
   .section5 {
     width: 100vw;
-    height: sizem(560);
+    height: sizem(510);
     min-height: auto;
     max-height: initial;
     // background-image: url('./all/section_bg.jpg');
@@ -366,11 +363,11 @@
   }
 
   .desc2 {
-    @include img_c_m(315, 201);
+    @include img_c_m(315, 150);
   }
 
   .swiper-container {
-    @include img_c_m(315, 304);
+    @include img_c_m(315, 254);
     height: sizem(217);
     // overflow: visible;
   }

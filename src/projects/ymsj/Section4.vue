@@ -1,21 +1,12 @@
 <template>
   <div class="section4">
-    <div class="desc desc1" v-if="isPC"  data-aos="fade-up" data-aos-delay="600">
-      陽明山溫泉位於大屯山系，擁有豐富的溫泉資源<br />
-      溫泉泉質以白磺泉為主、青磺泉次之<br />
-      與北投溫泉、關子嶺溫泉、四重溪溫泉並列為臺灣四大溫泉
-    </div>
-    <div class="desc desc2"  v-if="isPC"  data-aos="fade-up" data-aos-delay="800">
+    <div class="desc desc1"  v-if="isPC"  data-aos="fade-up" data-aos-delay="800">
       陽明山除了知名溫泉<br />
       更有稀有的冷泉，如冷水坑及富士坪古道的野溪冷泉<br />
       在盎然綠意的大自然洗禮下<br />
       充分享受著青春的泉源、養生的能量、身心靈徹底放鬆
     </div>
-    <div class="desc desc1" v-if="isMobile"  data-aos="fade-up" data-aos-delay="600">
-      陽明山溫泉位於大屯山系，擁有豐富的溫泉資源<br />
-      溫泉泉質以白磺泉為主、青磺泉次之，與北投溫泉、關子嶺溫泉、四重溪溫泉並列為臺灣四大溫泉
-    </div>
-    <div class="desc desc2"  v-if="isMobile"  data-aos="fade-up" data-aos-delay="800">
+    <div class="desc desc1"  v-if="isMobile"  data-aos="fade-up" data-aos-delay="800">
       陽明山除了知名溫泉<br />
       更有稀有的冷泉，如冷水坑及富士坪古道的野溪冷泉，在盎然綠意的大自然洗禮下<br />
       充分享受著青春的泉源、養生的能量、身心靈徹底放鬆
@@ -93,7 +84,7 @@
 }
 
 .title {
-  @include img_l_pc(109, 50, 179);
+  @include img_l_pc(109, 80, 179);
 }
 
 .desc {
@@ -109,7 +100,7 @@
 }
 
 .desc1 {
-  @include img_l_pc(570, 167, 363);
+  @include img_l_pc(570, 197, 363);
 }
 
 .desc2 {
@@ -163,9 +154,9 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-    min-height: sizem(740);
-    max-height: sizem(750);
-    height: sizem(740);
+    min-height: sizem(640);
+    max-height: sizem(650);
+    height: sizem(640);
     // margin: 0 0 -12vw 0;
     // background-size: auto size-m(750);
     z-index: initial;
