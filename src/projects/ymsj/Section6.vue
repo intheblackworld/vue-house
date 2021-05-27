@@ -30,11 +30,17 @@
     <div class="cloud-bg">
       <img src="./s6/style_3.png" :alt="`${info.caseName}_img`" class="cloud cloud1">
     </div>
-    <div class="desc desc1" data-aos="fade-up" data-aos-delay="800">
-      「富貴山頭」陽明山豪墅交易連年創天價，美景讓許多富豪趨之若鶩<br />
+    <div class="desc desc1" v-if="isPC" data-aos="fade-up" data-aos-delay="800">
+      「富貴山頭」陽明山豪墅交易連年創天價<br>美景讓許多富豪趨之若鶩<br />
       因受國家森林公園保護區管制，無法改建及擴建<br />
       造成陽明山的土地稀有，住戶都相當惜售<br />
       可開發土地與房屋稀少，造成一宅難求的現象<br />
+    </div>
+    <div class="desc desc1" v-if="isMobile" data-aos="fade-up" data-aos-delay="800">
+      「富貴山頭」陽明山豪墅交易連年創天價<br>美景讓許多富豪趨之若鶩<br />
+      因受國家森林公園保護區管制<br />無法改建及擴建<br />
+      造成陽明山的土地稀有，住戶都相當惜售<br />
+      可開發土地與房屋稀少<br />造成一宅難求的現象<br />
     </div>
   </div>
 </template>
@@ -108,11 +114,11 @@
 }
 
 .desc {
-  font-size: size(20);
+  font-size: size(25);
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.65;
+  line-height: 2.4;
   letter-spacing: size(2);
   text-align: left;
   color: #4d4d4d;
@@ -204,9 +210,9 @@
 @media screen and (max-width: 767px) {
   .section6 {
     width: 100vw;
-    min-height: sizem(582);
-    max-height: sizem(582);
-    height: sizem(582);
+    min-height: sizem(662);
+    max-height: sizem(662);
+    height: sizem(662);
     // margin: 0 0 -12vw 0;
     // background-size: auto size-m(750);
     z-index: initial;
@@ -242,7 +248,7 @@
   }
 
   .desc {
-    font-size: sizem(14);
+    font-size: sizem(16);
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
@@ -285,7 +291,7 @@
     @include img_r_m(117, 0, 0);
   }
   .leaf {
-    @include img_l_m(88, 270, -20);
+    @include img_l_m(88, 350, -20);
     z-index: 10;
   }
 
@@ -359,7 +365,7 @@
   }
 
   .swiper-container {
-    @include img_c_m(315, 302);
+    @include img_c_m(315, 382);
     height: sizem(217);
     // overflow: visible;
   }

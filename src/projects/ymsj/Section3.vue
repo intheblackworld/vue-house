@@ -1,10 +1,16 @@
 <template>
   <div class="section3">
-    <div class="desc"  data-aos="fade-up" data-aos-delay="600">
+    <div class="desc" v-if="isPC"  data-aos="fade-up" data-aos-delay="600">
       陽明山 ，台北最珍貴的一座山<br />
       陽明山景觀席向來是台灣企業富豪獨鍾的層峰聚落<br />
       在這裡 ，有萬頃的自然森林與生態<br />
-      分秒都有不同的景致 ，一天可看盡春夏秋冬，收藏四季風華
+      分秒都有不同的景致 ，一天可看盡春夏秋冬<br>收藏四季風華
+    </div>
+    <div class="desc" v-if="isMobile"  data-aos="fade-up" data-aos-delay="600">
+      陽明山，台北最珍貴的一座山<br />
+      陽明山景觀席向來是台灣企業富豪<br>獨鍾的層峰聚落<br />
+      在這裡，有萬頃的自然森林與生態<br />
+      分秒都有不同的景致 <br>一天可看盡春夏秋冬，收藏四季風華
     </div>
     <div class="title" v-if="isMobile" data-aos="fade-up" data-aos-delay="200">
       私藏一座
@@ -73,12 +79,12 @@
 }
 
 .desc {
-  @include img_r_pc(577, 650, 152);
-  font-size: size(20);
+  @include img_r_pc(577, 580, 152);
+  font-size: size(25);
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.65;
+  line-height: 2.4;
   letter-spacing: size(2);
   text-align: left;
   color: #4d4d4d;
@@ -167,7 +173,7 @@
 
   .desc {
     @include img_r_m(315, 347, 30);
-    font-size: sizem(14);
+    font-size: sizem(16);
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
@@ -194,7 +200,7 @@
     }
 
     .cloud2 {
-      @include img_r_m(237, 510, -20);
+      @include img_r_m(200, 520, -20);
       transform: translateX(-15%);
     }
   }

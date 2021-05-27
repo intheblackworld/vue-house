@@ -19,9 +19,10 @@ export default {
     ['景觀設計', '太妍規劃設計顧問有限公司-吳書原景觀建築師'],
     ['交易鑑證', '中國建築經理股份有限公司'],
     ['不動產經紀人', '(105)新北經字第003227號 姚佳利'],
+    ['企劃執行', '玖壹士廣告・葛里芬廣告'],
   ],
   
-  gtmCode: [''], // 可放置多個
+  gtmCode: ['TDJZ5DF'], // 可放置多個
   recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
