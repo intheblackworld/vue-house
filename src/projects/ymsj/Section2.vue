@@ -161,11 +161,11 @@
     margin: 0 0 0 0;
     overflow: hidden;
     width: 100vw;
-    height: sizem(270);
-    min-height: sizem(270);
-    max-height: sizem(270);
+    height: sizem(210);
+    min-height: sizem(210);
+    max-height: sizem(210);
+    background: #000 url('./s2/video_img.jpg');
     background-size: cover;
-    background: #000 url('./s2/video_img.jpg') no-repeat center;
     // margin-top: sizem(-60);
     z-index: 3;
   }
