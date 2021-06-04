@@ -100,6 +100,27 @@ export default new Router({
     },
 
     {
+      path: '/process',
+      name: 'processlist',
+      // route level code-splitting
+      // this generates a separate chunk (process.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () =>
+        import(/* webpackChunkName: "process" */ './pages/ProcessList.vue')
+    },
+
+    {
+      path: '/process/:id',
+      name: 'process',
+      // route level code-splitting
+      // this generates a separate chunk (process.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () =>
+        import(/* webpackChunkName: "process" */ './pages/Process.vue')
+    },
+
+
+    {
       path: '/contacts',
       name: 'contacts',
       // route level code-splitting

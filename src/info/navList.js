@@ -5,6 +5,7 @@ export default [
   { name: '熱銷建案', path: 'hot'},
   { name: '歷年業績', path: 'past'},
   { name: '最新消息', path: 'news'},
+  { name: '工程進度', path: 'process'},
   { name: '聯絡我們', path: 'contacts'},
   // { name: '地圖導航', imgSrc: '', subTitle: '', section: 'google-map', svgSrc: '', mobileOffset: 0 },
 ]
