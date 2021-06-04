@@ -1,5 +1,6 @@
 <template>
   <div class="section2">
+    <img src="../process/s1/rb.png" alt="" class="rb">
     <div class="process-container">
       <div class="process-item" v-for="(item, index) in list" :key="item.title + index" @click="goTo(item.isFinished, index)">
         <img :src="item.img" alt="" class="process-img">
@@ -33,7 +34,11 @@
   background: #fff;
   background-size: auto;
 }
-
+.rb {
+  @include img_r_pc(340, 0 , 115);
+  top: auto;
+  bottom: 30px;
+}
 .bg-img {
   width: size(1920);
   height: auto;
@@ -266,7 +271,6 @@ export default {
       isTablet,
       tabIndex: 0,
       list: [
-        //...Array(18).keys()].map((i) => ({
         {
           img: require('../process/list/1/0.jpg'),
           title: '2021 立瑾WAY',
@@ -303,12 +307,7 @@ export default {
           subtitle: '已完售，預計2023年初完工。',
           isFinished: false,
         },
-        /*{
-        img: require('../news/s2/no.png'),
-        title: '立瑾醞 享受大三房、水岸景觀之美',
-      },
-      */
-      ], //)),
+      ],
       pageCount: 3,
       currentPage: 1,
     }
