@@ -109,9 +109,9 @@ export default {
   justify-content: space-between;
   position: relative;
   z-index: 3;
-  //width: 1200px;
-  width: 100%;
-  height: 560px;
+  // width: 100%;
+  width: 85%;
+  height: 520px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
@@ -253,6 +253,7 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .contact-info {
+    background: none;
     // background: linear-gradient(
     //   to bottom,
     //   rgba(243, 149, 1, 1) 0%,

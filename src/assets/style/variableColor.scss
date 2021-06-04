@@ -1,19 +1,19 @@
 /* html, body */
-$bg: url('~@/projects/ypy/s1/bg.jpg');
-$bg_m: url('~@/projects/ypy/s1/bg_m.png');
+$bg: url('~@/projects/ypy1/s4/bg.jpg');
+$bg_m: url('~@/projects/ypy1/s4/bg.jpg');
 
 /* font-family */
 /* 1主要字體  2次要字體  3表單字體 */
-$family1: "Noto Sans TC", sans-serif;
+$family1: "Noto Serif TC", sans-serif;
 $family2: "Noto Serif TC", serif;
 $family3: "Noto Serif TC", serif;
 
 /* navigation */
-$nav_bg: #c49b63;
+$nav_bg: transparent;
 $nav_btn_color: #fff;
 $nav_link_color: #fff;
 $nav_link_subtitle_color: #fff;
-$nav_link_hover_color: #c82514;
+$nav_link_hover_color: #fff000;
 $nav_link_hover_bg: #eee;
 
 /* loading */
@@ -34,8 +34,8 @@ $mask_icon_color: #c82514;
 /* contactSection */
 // order
 $order_bg_color: transparent;
-$order_bg_image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #0c0d37 18%, #1d2083 60%, rgba(29, 32, 131, 0) 73%);
-$order_bg_image_m: linear-gradient(to bottom, rgba(0, 0, 0, 0), #0c0d37 18%, #1d2083 60%, rgba(29, 32, 131, 0) 73%);
+$order_bg_image: url('~@/projects/ypy1/c/bg.jpg');
+$order_bg_image_m: url('~@/projects/ypy1/m/c/bg_t.png');
 $order_title_color: #fff000;
 $order_subtitle_color: #fff;
 $order_input_label_color: #000;
@@ -52,8 +52,8 @@ $order_submit_color: #1d2088 !important;
 $order_sumbit_disable_bg: rgba(243, 149, 1, .4) !important;
 
 // contactInfo
-$contact_bg: transparent;
-$contact_bg_m: transparent;
+$contact_bg: linear-gradient(to top, transparent 0%, rgba(0,0,0, .5) 84%);
+$contact_bg_m: linear-gradient(to top, transparent 0%, rgba(0,0,0, .5) 84%);
 $contact_shadow: 0 0 80px 0 rgba(0, 0, 0, 0.2);
 
 $contact_btn_border: none;

@@ -1,6 +1,7 @@
 <template>
   <div class="order-bg">
-    <!-- <img src="@/projects/fs/order/bg.png" alt="" class="bg-img"> -->
+    <img src="@/projects/ypy1/c/bg.png" alt="" class="bg-img" v-if="isPC">
+    <img src="@/projects/ypy1/m/c/bg_t.png" alt="" class="bg-img" v-if="isMobile">
     <!-- <img src="@/projects/fs/order/bg1.png" alt="" class="bg-img no-mix"> -->
     <!-- <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile"> -->
     <div class="order-top">
@@ -241,7 +242,7 @@ export default {
 .bg-img {
   width: 100vw;
   position: absolute;
-  top: 0;
+  top: size(-310);
   left: 0;
   height: auto;
   display: block;
@@ -257,8 +258,8 @@ export default {
   // background-color: $order_bg_color;
   background-image: $order_bg_image;
   background-repeat: no-repeat;
-  // position: relative;
-  padding-top: 130px;
+  position: relative;
+  // padding-top: 130px;
   background-size: 100vw 100%;
   // background-attachment: fixed;
   background-position: 0% 0%;
@@ -417,9 +418,10 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .order-bg {
-    padding-top: 40px;
+    padding-top: sizem(160);
     margin: 0;
     z-index: 2;
+    background-image: url('~@/projects/ypy1/m/c/bg.jpg');
 
     > img {
       display: block;
@@ -448,6 +450,11 @@ export default {
         left: -10px;
         top: 50%;
       }
+    }
+
+    .bg-img {
+      background-color: #fff;
+      top: 0;
     }
 
     .order-subtitle {
