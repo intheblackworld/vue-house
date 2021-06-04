@@ -17,15 +17,15 @@
         </div>
       </div>
     </div>
-    <div class="hr" data-aos="zoom-in-down" data-aos-delay="200"></div>
-    <h3 class="label" data-aos="fade-right" data-aos-delay="400">
+    <div class="hr" data-aos="zoom-in-down" data-aos-delay="0" data-aos-duration="400"></div>
+    <h3 class="label" data-aos="fade-up" data-aos-delay="0" data-aos-duration="400">
       空間一品
     </h3>
-    <h3 class="title" data-aos="fade-right" data-aos-delay="600">
+    <h3 class="title" data-aos="fade-up" data-aos-delay="100" data-aos-duration="400">
       名師時尚設計<br />
       勾勒幸福空間
     </h3>
-    <div class="desc" data-aos="fade-right" data-aos-delay="800">透過優雅的色系，點綴完美的空間。經由不同材質，演繹低調奢華情調。從客廳、餐廳至臥室，打造令人賞心悅目的美學空間。
+    <div class="desc" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400">透過優雅的色系，點綴完美的空間。經由不同材質，演繹低調奢華情調。從客廳、餐廳至臥室，打造令人賞心悅目的美學空間。
     </div>
   </div>
 </template>
@@ -38,7 +38,7 @@
   min-height: size(898);
   max-height: size(898);
   position: relative;
-  z-index: 1;
+  z-index: 3;
   // min-height: size(900);
   // background-image: url('./s4/bg.jpg');
   background-color: rgba(96, 96, 96, 0.3);
@@ -55,7 +55,8 @@
 }
 
 .label {
-  @include img_r_pc(120, 110 + 166, 506);
+  @include img_l_pc(120, 110 + 166, 1270);
+  width: auto;
   font-size: size(30);
   font-weight: 500;
   font-stretch: normal;
@@ -67,7 +68,8 @@
 }
 
 .title {
-  @include img_r_pc(437, 154 + 166, 189);
+  @include img_l_pc(437, 154 + 166, 1270);
+  width: auto;
   font-size: size(35);
   font-weight: 900;
   font-stretch: normal;
@@ -80,7 +82,7 @@
 }
 
 .desc {
-  @include img_r_pc(440, 311 + 136, 186);
+  @include img_l_pc(440, 311 + 136, 1270);
   font-size: size(20);
   font-weight: normal;
   font-stretch: normal;
@@ -121,26 +123,6 @@
   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
-// begin
-// .swipe-left-leave-to {
-//   margin-left: -100vw;
-//   z-index: 0;
-// }
-// // end
-// .swipe-left-enter {
-//   opacity: 0.5;
-//   margin-left: 0;
-//   z-index: 1;
-// }
-
-// .swipe-left-enter-active {
-//   transition: all 0.5s ease;
-// }
-
-// .swipe-left-leave-active {
-//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-// }
-
 .swipe-wrap {
   width: 100%;
   height: 100%;
@@ -171,20 +153,6 @@
     text-align: left;
     text-shadow: 0 0.3em 1em #000;
   }
-
-  // &:nth-child(1) {
-  //   z-index: 1;
-  //   // opacity: 1;
-  // }
-
-  // &.base {
-  //   z-index: 1;
-  //   opacity: 1;
-  // }
-  // &.active {
-  //   z-index: 2;
-  //   // opacity: 1;
-  // }
 }
 
 .pagination {
@@ -249,18 +217,41 @@
 }
 
 .swipe-btns {
-  width: 100%;
-  height: 100%;
-  padding: 0 15px;
-  z-index: 3;
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+    z-index: 3;
 
-  .prev-btn,
-  .next-btn {
-    width: size(20);
-    cursor: pointer;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+
+    .prev-btn,
+    .next-btn {
+      position: absolute;
+      height: 100%;
+      width: sizem(28);
+      top: 0;
+    }
+
+    .prev-btn {
+      left: 0;
+    }
+    .next-btn {
+      right: 0;
+      transform: scaleX(-1);
+    }
+    .prev-btn::after,
+    .next-btn::after {
+      content: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 30 80' xml:space='preserve'%3E%3Cpolygon fill='%23FFFFFF' points='15,40 30,0 15,20 0,40 15,60 30,80 '/%3E%3C/svg%3E");
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50%;
+    }
   }
-}
-
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -296,6 +287,7 @@
 
   .label {
     @include img_l_m(84, 50, 44);
+  width: auto;
     font-size: sizem(21);
     font-weight: 500;
     font-stretch: normal;
@@ -308,6 +300,7 @@
 
   .title {
     @include img_l_m(169, 83, 44);
+  width: auto;
     font-size: sizem(25);
     font-weight: 900;
     font-stretch: normal;
@@ -327,7 +320,7 @@
     font-style: normal;
     line-height: 1.73;
     letter-spacing: normal;
-    text-align: left;
+    text-align: justify;
     color: #000000;
     // white-space: nowrap;
   }
@@ -362,26 +355,6 @@
     transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
   }
 
-  // begin
-  // .swipe-left-leave-to {
-  //   margin-left: -100vw;
-  //   z-index: 0;
-  // }
-  // // end
-  // .swipe-left-enter {
-  //   opacity: 0.5;
-  //   margin-left: 0;
-  //   z-index: 1;
-  // }
-
-  // .swipe-left-enter-active {
-  //   transition: all 0.5s ease;
-  // }
-
-  // .swipe-left-leave-active {
-  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  // }
-
   .swipe-wrap {
     width: 100%;
     height: 100%;
@@ -399,19 +372,6 @@
       object-fit: cover;
     }
 
-    // &:nth-child(1) {
-    //   z-index: 1;
-    //   // opacity: 1;
-    // }
-
-    // &.base {
-    //   z-index: 1;
-    //   opacity: 1;
-    // }
-    // &.active {
-    //   z-index: 2;
-    //   // opacity: 1;
-    // }
     .slide-name {
       right: auto;
       top: auto;
@@ -478,49 +438,6 @@
           transform: scale(1);
         }
       }
-    }
-  }
-
-  .swipe-btns {
-    width: 100%;
-    height: 100%;
-    padding: 0 15px;
-    z-index: 3;
-
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 3;
-
-    // .btn {
-    //   position: absolute;
-    //   width: 100%;
-    //   height: 100%;
-    // }
-    .prev-btn,
-    .next-btn {
-      position: absolute;
-      height: 100%;
-      width: sizem(28);
-      // background: #0003;
-      top: 0;
-    }
-
-    .prev-btn {
-      left: 0;
-    }
-    .next-btn {
-      right: 0;
-      transform: scaleX(-1);
-    }
-    .prev-btn::after,
-    .next-btn::after {
-      content: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 30 80' xml:space='preserve'%3E%3Cpolygon fill='%23FFFFFF' points='15,40 30,0 15,20 0,40 15,60 30,80 '/%3E%3C/svg%3E");
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 50%;
     }
   }
 }

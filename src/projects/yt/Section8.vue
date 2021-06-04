@@ -15,8 +15,8 @@
         <!-- <img src="./s8/mo/img.gif" alt="耘耕美築 恆久淳萃 公園綠景第一排" class="bg-img" />
         <img src="./s8/mo/2.png" alt="耘耕美築 恆久淳萃 公園綠景第一排" class="bg-img" />
         <img src="./s8/mo/3.png" alt="耘耕美築 恆久淳萃 公園綠景第一排" class="bg-img" /> -->
-        <h3 class="title" data-aos="fade-down" data-aos-delay="400">更好的 生活九大精品設備</h3>
-        <div class="desc" data-aos="fade-down" data-aos-delay="600">
+        <h3 class="title" data-aos="fade-up" data-aos-delay="400">更好的 生活九大精品設備</h3>
+        <div class="desc" data-aos="fade-up" data-aos-delay="600">
           貼心為您呵護生活的每一天<br />
           精選九大建材設備，細心讓生活更幸福
         </div>

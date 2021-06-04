@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="section6">
-      <img src="./s6/bg_b.png" :alt="`${info.caseName}_img`" class="bg-img bg-b" v-if="isPC">
       <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -21,18 +20,18 @@
       </div>
       <transition-group name="swipe-fade" mode="out-in">
         <div v-for="(slide, index) in slideList" v-show="slideIndex === index" :key="slide.img + index" :class="`txt absolute`">
-          <div class="hr1"></div>
-          <h3 class="title" v-html="slide.title"></h3>
+          <div class="hr1" data-aos="zoom-in-down" data-aos-delay="0" data-aos-duration="400"></div>
+          <h3 class="title" v-html="slide.title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="400"></h3>
           <h3 class="subtitle" v-html="slide.subtitle"></h3>
           <div class="hr2"></div>
           <h3 class="name" v-html="slide.name"></h3>
           <h3 class="job-title" v-html="slide.job_title"></h3>
-          <h3 class="desc" v-html="slide.desc"></h3>
-          <h3 class="works-title">| 經典作品 |</h3>
-          <h3 class="works">
+          <p class="desc" v-html="slide.desc"></p>
+          <p class="works-title">| 經典作品 |</p>
+          <ul class="works">
             <li v-for="(work, index) in slide.works" :key="work + index" v-html="work">
             </li>
-          </h3>
+          </ul>
         </div>
       </transition-group>
     </div>
@@ -48,6 +47,7 @@
   max-height: size(875);
   background-image: url('./s6/bg_t.jpg');
   position: relative;
+  background-size: 100% 100%;
 }
 
 .bg-b {
@@ -57,6 +57,7 @@
   left: 0;
   top: auto;
   bottom: 0;
+  transform: translateY(100%)
 }
 
 .hr1 {
@@ -66,6 +67,7 @@
 }
 .title {
   @include img_l_pc(500, 96, 321);
+  width: auto;
   font-size: size(60);
   font-weight: 900;
   font-stretch: normal;
@@ -78,6 +80,7 @@
 }
 .subtitle {
   @include img_l_pc(214, 216, 321);
+  width: auto;
   font-size: size(33);
   font-weight: 900;
   font-stretch: normal;
@@ -96,6 +99,7 @@
 }
 .name {
   @include img_l_pc(158, 285, 321);
+  width: auto;
   font-size: size(52);
   font-weight: 900;
   font-stretch: normal;
@@ -108,6 +112,7 @@
 }
 .job-title {
   @include img_l_pc(261, 301, 496);
+  width: auto;
   font-size: size(21);
   font-weight: 500;
   font-stretch: normal;
@@ -126,11 +131,11 @@
   font-style: normal;
   line-height: 1.5;
   letter-spacing: normal;
-  text-align: left;
+  text-align: justify;
   color: #ffffff;
 }
 .works-title {
-  @include img_l_pc(121, 519, 321);
+  @include img_l_pc(564, 519, 321);
   font-size: size(20);
   font-weight: normal;
   font-stretch: normal;
@@ -143,7 +148,7 @@
 .works {
   position: absolute;
   top: size(564);
-  left: size(321);
+  left: size(350);
   width: size(508);
   white-space: nowrap;
   font-size: size(20);
@@ -166,7 +171,8 @@
   top: size(112);
   right: 0;
   object-fit: cover;
-  // background:#0344;
+  z-index: 2;
+  clip-path:polygon(11.5% 0%, 100% 0, 100% 100%, 0 100%);
 }
 
 // begin
@@ -187,26 +193,6 @@
 .swipe-fade-leave-active {
   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
 }
-
-// begin
-// .swipe-left-leave-to {
-//   margin-left: -100vw;
-//   z-index: 0;
-// }
-// // end
-// .swipe-left-enter {
-//   opacity: 0.5;
-//   margin-left: 0;
-//   z-index: 1;
-// }
-
-// .swipe-left-enter-active {
-//   transition: all 0.5s ease;
-// }
-
-// .swipe-left-leave-active {
-//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-// }
 
 .swipe-wrap {
   width: 100%;
@@ -239,19 +225,6 @@
     text-shadow: 0 0.3em 1em #000;
   }
 
-  // &:nth-child(1) {
-  //   z-index: 1;
-  //   // opacity: 1;
-  // }
-
-  // &.base {
-  //   z-index: 1;
-  //   opacity: 1;
-  // }
-  // &.active {
-  //   z-index: 2;
-  //   // opacity: 1;
-  // }
 }
 
 .pagination {
@@ -365,6 +338,7 @@
   }
   .title {
     @include img_l_m(209, 60, 45);
+    width: auto;
     font-size: sizem(25);
     font-weight: 900;
     font-stretch: normal;
@@ -377,6 +351,7 @@
   }
   .subtitle {
     @include img_l_m(123, 122, 53);
+    width: auto;
     font-size: sizem(19);
     font-weight: 900;
     font-stretch: normal;
@@ -395,6 +370,7 @@
   }
   .name {
     @include img_l_m(90, 169, 53);
+    width: auto;
     font-size: sizem(29);
     font-weight: 900;
     font-stretch: normal;
@@ -407,6 +383,7 @@
   }
   .job-title {
     @include img_l_m(134, 177, 146);
+    width: auto;
     font-size: sizem(11);
     font-weight: 500;
     font-stretch: normal;
@@ -425,11 +402,10 @@
     font-style: normal;
     line-height: 1.73;
     letter-spacing: normal;
-    text-align: left;
     color: #ffffff;
   }
   .works-title {
-    @include img_l_m(73, 635, 20);
+    @include img_l_m(310, 635, 20);
     font-size: sizem(12);
     font-weight: normal;
     font-stretch: normal;
@@ -442,7 +418,7 @@
   .works {
     position: absolute;
     top: sizem(660);
-    left: sizem(25);
+    left: sizem(40);
     width: sizem(350);
     white-space: nowrap;
     font-size: sizem(12);
@@ -729,7 +705,7 @@ export default {
           ]
         : [
             {
-              img: require('./s6/1.png'),
+              img: require('./m/7/1.jpg'),
               title: '大師團隊·聯手擘劃',
               subtitle: '十大建築名師',
               name: '聶玉璞',

@@ -1,10 +1,10 @@
 <template>
   <div class="section2">
     <img src="./s2/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="!isMobile">
-    <h3 class="title" data-aos="fade-up" data-aos-delay="200">
+    <h3 class="title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="400">
       桃園豪宅品牌．嘉璟機構
     </h3>
-    <h3 class="subtitle" data-aos="fade-up" data-aos-delay="400">
+    <h3 class="subtitle" data-aos="fade-up" data-aos-delay="100" data-aos-duration="400">
       中路特區｜領空鉅作
     </h3>
     <Map v-if="isMobile" :tagList="tagList" :bgSrc="isMobile ? bgmSrc: bgSrc" :hand="hand">
@@ -16,9 +16,7 @@
 
 .section2 {
   width: 100%;
-  height: size(839 - 150);
-  min-height: size(839 - 150);
-  max-height: size(839 - 150);
+  height: auto;
   position: relative;
   // background-color: #fff;
   // min-height: size(900);
@@ -32,8 +30,8 @@
 .bg-img {
   width: 100%;
   height: auto;
-  position: absolute;
-  top: size(-150);
+  position: relative;
+  bottom:0;
   left: 0;
   display: block;
   object-fit: cover;
@@ -46,8 +44,9 @@
 }
 
 .title {
-  @include img_c_pc(444, 5);
+  @include img_c_pc(444, 105);
   font-size: size(40);
+  width: auto;
   font-weight: 900;
   font-stretch: normal;
   font-style: normal;
@@ -59,8 +58,9 @@
 }
 
 .subtitle {
-  @include img_c_pc(446, 67);
+  @include img_c_pc(446, 167);
   font-size: size(49);
+  width: auto;
   font-weight: 900;
   font-stretch: normal;
   font-style: normal;
@@ -117,6 +117,7 @@
 
   .title {
     @include img_c_m(234, 78);
+  width: auto;
     font-size: sizem(21);
     font-weight: 900;
     font-stretch: normal;
@@ -131,6 +132,7 @@
 
   .subtitle {
     @include img_c_m(236, 115);
+  width: auto;
     font-size: sizem(26);
     font-weight: 900;
     font-stretch: normal;
@@ -167,7 +169,7 @@ export default {
       isDialog: false,
       tagList: [],
       bgmSrc: require('./s2/bg.jpg'),
-      hand: require('./all/hand.png'),
+      hand: require('./s2/hand.png'),
     }
   },
 

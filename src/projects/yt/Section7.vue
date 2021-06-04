@@ -11,8 +11,8 @@
         <img src="./s7/mo/img.gif" alt="生活中的美 只待你發現" class="bg-img" data-aos="fade" data-aos-delay="1200" />
         <img src="./s7/mo/2.png" alt="生活中的美 只待你發現" class="bg-img" data-aos="fade" data-aos-delay="1000" />
         <img src="./s7/mo/3.png" alt="生活中的美 只待你發現" class="bg-img" data-aos="fade" data-aos-delay="800" />
-        <h3 class="title" data-aos="fade-down" data-aos-delay="400">生活中的美 只待你發現</h3>
-        <div class="desc" data-aos="fade-down" data-aos-delay="600">
+        <h3 class="title" data-aos="fade-up" data-aos-delay="400">生活中的美 只待你發現</h3>
+        <div class="desc" data-aos="fade-up" data-aos-delay="600">
           雕塑家羅丹如此說，建築必須越看
           <br />越美「頤昌耘萃」讓美走進心底
         </div>

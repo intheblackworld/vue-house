@@ -1,12 +1,14 @@
 <template>
   <div class="section9">
+    <img src="./c/bg.png" :alt="`${info.caseName}_img`" class="bg-img bg-b" v-if="isPC">
+    <img src="./m/c/bg_t.png" :alt="`${info.caseName}_img`" class="bg-img bg-b" v-if="isMobile">
     <div class="content">
       <transition-group name="fade-up" mode="out-in">
         <div v-if="blockIndex === 0" key="block0" class="text">
-          <h3 class="title">
+          <h3 class="title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="400">
             1分鐘 南桃園交流道
           </h3>
-          <h3 class="desc">
+          <p class="desc" data-aos="fade-up" data-aos-delay="100" data-aos-duration="400">
             <span>【嘉璟一品硯】</span><br />
             座落60米大興西路林蔭大道，<br />
             媲美台北市仁愛、敦南綠園道情境。<br />
@@ -14,42 +16,42 @@
             約16分鐘到國際機場、<br />
             約18分鐘到高鐵桃園站、<br />
             約12分鐘抵桃園火車站，掌握桃園門戶地位。
-          </h3>
+          </p>
         </div>
         <div v-if="blockIndex === 1" key="block1" class="text">
           <h3 class="title cursor" @click="changeItem(0)">
             <div :class="`icon ${itemIndex === 0 ? 'active' : ''}`"></div>
             約200公尺 風禾公園當窗景
           </h3>
-          <h3 :class="`dropdown ${itemIndex === 0 ? 'active' : ''}`">
+          <p :class="`dropdown ${itemIndex === 0 ? 'active' : ''}`">
             散步即達4.6公頃風禾公園，特色遊具，<br v-if="isPC" />
             如：50米滾輪溜滑梯，媲美沖繩公園，是全家大小的遊樂場。<br v-if="isPC" />
             【嘉璟一品硯】 限定席次，<br v-if="isPC" />
             窗前即可對望風禾公園，在家坐享無限視野。<br v-if="isPC" />
             李科永紀念圖書館計劃，讓未來綠意生活更充實。
-          </h3>
+          </p>
           <h3 class="title cursor" @click="changeItem(1)">
             <div :class="`icon ${itemIndex === 1 ? 'active' : ''}`"></div>
             鄰近商場、全聯旗艦店、中茂新天地
           </h3>
-          <h3 :class="`dropdown ${itemIndex === 1 ? 'active' : ''}`">
+          <p :class="`dropdown ${itemIndex === 1 ? 'active' : ''}`">
             散步就到農會商場預定地及風禾公園旁全聯旗艦店，<br v-if="isPC" />
             結合知名的永安、慈文、力行路商圈，<br v-if="isPC" />
             特色餐飲、在地市集，滿足全家生活需求。<br v-if="isPC" />
             車行約7分鐘即抵中茂新天地，<br v-if="isPC" />
             藝文特區人氣商圈，給全家多元選擇。
-          </h3>
-          <h3 class="title cursor" @click="changeItem(2)">
+          </p>
+          <h3 class="title cursor" @click="changeItem(2)" data-aos-delay="300" data-aos-duration="400">
             <div :class="`icon ${itemIndex === 2 ? 'active' : ''}`"></div>
             校園第一排 近何嘉仁、康萊爾
           </h3>
-          <h3 :class="`dropdown ${itemIndex === 2 ? 'active' : ''}`">
+          <p :class="`dropdown ${itemIndex === 2 ? 'active' : ''}`">
             【嘉璟一品硯】<br v-if="isPC" />
             位校園預定地首排，日後接送孩子上下學，家長超輕鬆。<br v-if="isPC" />
             鄰近何嘉仁美語、康萊爾雙語中小學、普利斯堡美語、<br v-if="isPC" />
             文山國小（附設幼兒園）、中興國中等名校，書香文風<br v-if="isPC" />
             成就優質生活環境。
-          </h3>
+          </p>
         </div>
       </transition-group>
       <div class="hr"></div>
@@ -73,8 +75,8 @@
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
           <div class="swipe-btns absolute flex-ac flex-jb">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+            <div class="prev-btn" @click="decIndex"></div>
+            <div class="next-btn" @click="addIndex"></div>
           </div>
         </div>
       </div>
@@ -90,8 +92,8 @@
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList1[itemIndex]" :key="slide.img + '-dot'" @click="goToIndexNest(index)"><span :class="`${slideIndex1 === index ? 'active' : ''}`"></span></div>
           </div>
           <div class="swipe-btns absolute flex-ac flex-jb">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndexNest">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndexNest">
+            <div class="prev-btn" @click="decIndexNest"></div>
+            <div class="next-btn" @click="decIndexNest"></div>
           </div>
         </div>
       </div>
@@ -103,22 +105,35 @@
 
 .section9 {
   width: 100%;
-  height: size(1280);
-  min-height: size(1280);
-  max-height: size(1280);
+  height: 100vh;
+  min-height: size(900);
+  max-height: size(1080);
   position: relative;
-  z-index: 0;
+  margin-bottom:size(307);
   // background-color: #fff;
   // min-height: size(900);
-  background-image: url('./s4/bg.jpg');
+  //background-image: url('./s4/bg.jpg');
   // background-size: 100% 100%;
   // background-position: 0 0;
   // background-attachment: fixed;
   // overflow: hidden;
 }
+.bg-img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  object-fit: cover;
+  margin-top: 0;
+  transform: translateY(101%);
+    z-index: 3;
+  }
 
 .content {
   @include div_l_pc(1308, 788, 101, 172);
+  top: calc(50% + (101 - 1080 * .5) * 100vw / 1920);
   background-color: rgba(96, 96, 96, 0.3);
 }
 
@@ -221,10 +236,12 @@
 
 .menu {
   @include img_l_pc(176 * 2 + 70, 81, 142);
+  font-family: "Noto Serif TC", serif;
   ul {
     width: 100%;
     list-style-type: none;
-    font-size: 30px;
+    font-size: size(30);
+    font-weight: 700;
     display: flex;
     justify-content: space-between;
     align-content: center;
@@ -286,7 +303,7 @@
 .swipe {
   width: size(907);
   height: size(807);
-  top: size(169);
+  top: calc(50% + (169 - 1080 * .5) * 100vw / 1920);
   right: size(134);
   object-fit: cover;
   // background: #0344;
@@ -446,19 +463,42 @@
     }
   }
 }
-
 .swipe-btns {
-  width: 100%;
-  height: 100%;
-  padding: 0 15px;
-  z-index: 3;
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+    z-index: 3;
 
-  .prev-btn,
-  .next-btn {
-    width: size(20);
-    cursor: pointer;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+
+    .prev-btn,
+    .next-btn {
+      position: absolute;
+      height: 100%;
+      width: size(28);
+      top: 0;
+    }
+
+    .prev-btn {
+      left: 0;
+    }
+    .next-btn {
+      right: 0;
+      transform: scaleX(-1);
+    }
+    .prev-btn::after,
+    .next-btn::after {
+      content: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 30 80' xml:space='preserve'%3E%3Cpolygon fill='%23FFFFFF' points='15,40 30,0 15,20 0,40 15,60 30,80 '/%3E%3C/svg%3E");
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50%;
+    }
   }
-}
 
 @media only screen and (max-width: 1440px) {
 }
@@ -479,13 +519,7 @@
     height: sizem(710);
     min-height: auto;
     max-height: initial;
-    //  background-image: url('./all/section_bg.jpg');
-    // background-attachment: scroll;
-    // background-image: url('./s2/bg.jpg');
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
-    overflow: hidden;
+  margin-bottom:sizem(440);
   }
 
   .content {
@@ -596,7 +630,7 @@
     ul {
       width: 100%;
       list-style-type: none;
-      font-size: sizem(24);
+      font-size: sizem(23);
       display: flex;
       justify-content: space-between;
       align-content: center;
@@ -791,17 +825,10 @@
       }
     }
   }
-
   .swipe-btns {
-    width: 100%;
-    height: 100%;
-    padding: 0 15px;
-    z-index: 3;
-
     .prev-btn,
     .next-btn {
-      width: sizem(15);
-      cursor: pointer;
+      width: sizem(28)
     }
   }
 }

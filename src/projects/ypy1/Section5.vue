@@ -9,15 +9,15 @@
       <div class="swiper-button-next next-btn" slot="button-next">
       </div>
     </swiper>
-    <div class="hr" data-aos="zoom-in-down" data-aos-delay="200"></div>
-    <h3 class="label" data-aos="fade-right" data-aos-delay="400">
+    <div class="hr" data-aos="zoom-in-down" data-aos-delay="0" data-aos-duration="400"></div>
+    <h3 class="label" data-aos="fade-up" data-aos-delay="0" data-aos-duration="400">
       團隊一品
     </h3>
-    <h3 class="title" data-aos="fade-right" data-aos-delay="600">
+    <h3 class="title" data-aos="fade-up" data-aos-delay="100" data-aos-duration="400">
       台灣誠信建商認證 嘉璟機構<br />
       嘉璟出品．豪宅一品
     </h3>
-    <div class="desc" data-aos="fade-right" data-aos-delay="800">逾20年勤耕建築路，<br />
+    <div class="desc" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400">逾20年勤耕建築路，<br />
       嘉璟機構以精工品質贏得住戶肯定。<br />
       傳承豪邸理念，於中路特區，<br />
       以領袖豪宅思維，鉅鑄精緻名宅！</div>
@@ -49,7 +49,8 @@
 }
 
 .label {
-  @include img_r_pc(120, 110, 506);
+  @include img_l_pc(120, 110, 1270);
+  width: auto;
   font-size: size(30);
   font-weight: 500;
   font-stretch: normal;
@@ -61,7 +62,8 @@
 }
 
 .title {
-  @include img_r_pc(437, 154, 189);
+  @include img_l_pc(437, 154, 1270);
+  width: auto;
   font-size: size(35);
   font-weight: 900;
   font-stretch: normal;
@@ -74,7 +76,7 @@
 }
 
 .desc {
-  @include img_r_pc(440, 311, 186);
+  @include img_l_pc(440, 311, 1270);
   font-size: size(20);
   font-weight: normal;
   font-stretch: normal;
@@ -158,6 +160,7 @@
 
   .label {
     @include img_l_m(84, 10, 41);
+    width: auto;
     font-size: sizem(21);
     font-weight: 500;
     font-stretch: normal;
@@ -170,6 +173,7 @@
 
   .title {
     @include img_l_m(312, 42, 41);
+    width: auto;
     font-size: sizem(25);
     font-weight: 900;
     font-stretch: normal;

@@ -35,13 +35,14 @@
         </div>
       </div>
     </div>
-    <div class="hr hr1" data-aos="zoom-in-down" data-aos-delay="200"></div>
-    <h3 class="title1 title" data-aos="fade-right" data-aos-delay="400">三面臨路近二千坪基地‧千坪庭園</h3>
-    <div class="desc1 desc" data-aos="fade-right" data-aos-delay="600"><span>【嘉璟一品硯】</span> 坐擁三面臨路醒目地位，廣達近二千坪大器基地，
+    <div class="hr hr1" data-aos="zoom-in-down" data-aos-delay="0" data-aos-duration="400"></div>
+    <h3 class="title1 title" v-if="!isMobile" data-aos="fade-up" data-aos-delay="0" data-aos-duration="400">三面臨路近二千坪基地‧千坪庭園</h3>
+    <h3 class="title1 title" v-if="isMobile" data-aos="fade-up" data-aos-delay="0" data-aos-duration="400">三面臨路近二千坪基地<br>千坪庭園</h3>
+    <div class="desc1 desc" data-aos="fade-up" data-aos-delay="100" data-aos-duration="400"><span>【嘉璟一品硯】</span> 坐擁三面臨路醒目地位，廣達近二千坪大器基地，
       規劃千坪庭園景觀，臨路大方謙退，打造桃園國道門面名牌。</div>
-    <div class="hr hr2" data-aos="zoom-in-down" data-aos-delay="200"></div>
-    <h3 class="title2 title" data-aos="fade-right" data-aos-delay="400">全齡化休閒公設<br />全家樂遊心天地</h3>
-    <div class="desc2 desc" data-aos="fade-right" data-aos-delay="600">是尊榮的禮遇，更是愉悅的生活。規劃星級飯店式禮賓門廳、健身房、交誼廳、兒童遊戲區、KTV、多媒體娛樂室等多元化休閒會館，天天在家，就像渡假般享受</div>
+    <div class="hr hr2" data-aos="zoom-in-down" data-aos-delay="0" data-aos-duration="400"></div>
+    <h3 class="title2 title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="400">全齡化休閒公設<br />全家樂遊心天地</h3>
+    <div class="desc2 desc" data-aos="fade-up" data-aos-delay="100" data-aos-duration="400">是尊榮的禮遇，更是愉悅的生活。規劃星級飯店式禮賓門廳、健身房、交誼廳、兒童遊戲區、KTV、多媒體娛樂室等多元化休閒會館，天天在家，就像渡假般享受</div>
     <img src="./s4/bg_b.png" :alt="`${info.caseName}_img`" class="bg-img bg-b" v-if="isPC">
     <img src="./m/5/bg_b.png" :alt="`${info.caseName}_img`" class="bg-img bg-b" v-if="isMobile">
   </div>
@@ -98,10 +99,12 @@
 
 .title1 {
   @include img_l_pc(525, 847, 408);
+  width: auto;
 }
 
 .title2 {
   @include img_l_pc(323, 1722, 408);
+  width: auto;
 }
 
 .desc {
@@ -399,10 +402,12 @@
 
   .title1 {
     @include img_l_m(275, 43, 41);
+  width: auto;
   }
 
   .title2 {
     @include img_l_m(231, 493, 41);
+  width: auto;
   }
 
   .desc {

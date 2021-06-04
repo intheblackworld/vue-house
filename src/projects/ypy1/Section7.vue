@@ -1,14 +1,15 @@
 <template>
   <div class="section7">
     <img src="./m/7/bg_b.png" :alt="`${info.caseName}_img`" class="bg-img bg-tt" v-if="isMobile">
-    <img src="./s7/bg_t.jpg" :alt="`${info.caseName}_img`" class="bg-img bg-t" v-if="isPC">
+    <img src="./s7/bg_t.jpg" :alt="`${info.caseName}_img`" class="bg-img bg-tt" v-if="isPC">
     <img src="./m/8/bg_t.jpg" :alt="`${info.caseName}_img`" class="bg-img bg-t" v-if="isMobile">
     <img src="./s7/bg_b.png" :alt="`${info.caseName}_img`" class="bg-img bg-b">
+      <img src="./s6/bg_b.png" :alt="`${info.caseName}_img`" class="bg-img bg-t" v-if="isPC">
     <img src="./m/8/bg_b.png" :alt="`${info.caseName}_img`" class="bg-img bg-b" v-if="isMobile">
-    <img src="./s7/img.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-    <img src="./m/8/img.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-up" data-aos-delay="200" v-if="isMobile">
-    <div class="hr" data-aos="zoom-in-down" data-aos-delay="200"></div>
-    <h3 class="title" data-aos="fade-up" data-aos-delay="400">建材一品</h3>
+    <img src="./s7/img.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400" v-if="isPC">
+    <img src="./m/8/img.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400" v-if="isMobile">
+    <div class="hr" data-aos="zoom-in-down" data-aos-delay="0" data-aos-duration="400"></div>
+    <h3 class="title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="400">建材一品</h3>
   </div>
 </template>
 
@@ -17,10 +18,8 @@
 
 .section7 {
   width: 100%;
-  height: size(906);
-  min-height: size(906);
-  max-height: size(906);
-  //overflow: hidden;
+  height:auto;
+  overflow: hidden;
   position: relative;
   background-color: #fff;
   background-size: cover;
@@ -47,6 +46,7 @@
 .bg-b {
   top: auto;
   bottom: 0;
+  transform: translateY(100%);
 }
 
 .img {
@@ -107,6 +107,7 @@
 
   .title {
     @include img_l_m(84, 20 + 50, 50);
+    width: auto;
     font-size: sizem(21);
     font-weight: 500;
     font-stretch: normal;

@@ -1,7 +1,7 @@
 <template>
   <div class="order-bg">
-    <img src="@/projects/ypy1/c/bg.png" alt="" class="bg-img" v-if="isPC">
-    <img src="@/projects/ypy1/m/c/bg_t.png" alt="" class="bg-img" v-if="isMobile">
+  <!--  <img src="@/projects/ypy1/c/bg.png" alt="" class="bg-img" v-if="isPC">
+    <img src="@/projects/ypy1/m/c/bg_t.png" alt="" class="bg-img" v-if="isMobile">-->
     <!-- <img src="@/projects/fs/order/bg1.png" alt="" class="bg-img no-mix"> -->
     <!-- <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile"> -->
     <div class="order-top">
@@ -9,16 +9,16 @@
         <h3 class="title">{{order.title}}</h3>
         <div class="subtitle">{{order.subTitle}}</div>
       </div> -->
-      <h3 class="order-title" v-html="order.title" data-aos="fade-down" data-aos-delay="0"></h3>
-      <div class="order-subtitle" data-aos="fade-down" data-aos-delay="100" v-html="order.subTitle"></div>
+      <h3 class="order-title" v-html="order.title" data-aos="fade-down" data-aos-delay="0" data-aos-duration="400"></h3>
+      <div class="order-subtitle" data-aos="fade-down" data-aos-delay="100" data-aos-duration="400" v-html="order.subTitle"></div>
       <div class="order">
         <div class="form">
-          <div class="group form_input" data-aos="fade-down" data-aos-delay="0">
-            <div class="row" data-aos="fade-down" data-aos-delay="100">
+          <div class="group form_input" data-aos="fade-down" data-aos-delay="0" data-aos-duration="400">
+            <div class="row" data-aos="fade-down" data-aos-delay="100" data-aos-duration="400">
               <label for="order-name">姓名<span>*</span></label>
               <el-input v-model="form.name" name="order-name" id="order-name" placeholder></el-input>
             </div>
-            <div class="row" data-aos="fade-down" data-aos-delay="200">
+            <div class="row" data-aos="fade-down" data-aos-delay="200" data-aos-duration="400">
               <label for="order-phone">手機<span>*</span></label>
               <el-input v-model="form.phone" name="order-phone" id="order-phone" placeholder></el-input>
             </div>
@@ -48,7 +48,7 @@
                 }"
               ></el-time-select>
             </div> -->
-            <div class="row" data-aos="fade-down" data-aos-delay="200">
+            <div class="row" data-aos="fade-down" data-aos-delay="200" data-aos-duration="400">
               <label for="order-house">需求坪數<span>*</span></label>
               <el-select v-model="form.house" name="order-house" id="order-house" placeholder>
                 <el-option v-for="city in ['22坪', '30坪', '42坪', '53坪']" :key="city" :label="city" :value="city" no-data-text=""></el-option>
@@ -58,26 +58,26 @@
               <label>E-mail</label>
               <el-input v-model="form.email" placeholder></el-input>
             </div> -->
-            <div class="row" data-aos="fade-down" data-aos-delay="300">
+            <div class="row" data-aos="fade-down" data-aos-delay="300" data-aos-duration="400">
               <label for="order-city">居住城市</label>
               <el-select v-model="form.city" name="order-city" id="order-city" placeholder>
                 <el-option v-for="city in cityList" :key="city.value" :label="city.label" :value="city.value" no-data-text="無數據"></el-option>
               </el-select>
             </div>
-            <div class="row" data-aos="fade-down" data-aos-delay="400">
+            <div class="row" data-aos="fade-down" data-aos-delay="400" data-aos-duration="400">
               <label for="order-area">居住地區</label>
               <el-select v-model="form.area" name="order-area" id="order-area" placeholder>
                 <el-option v-for="area in areaList" :key="area.value" :label="area.label" :value="area.value" no-data-text="請先選擇居住城市"></el-option>
               </el-select>
             </div>
           </div>
-          <div class="group" data-aos="fade-down" data-aos-delay="600">
+          <div class="group" data-aos="fade-down" data-aos-delay="500" data-aos-duration="400">
             <div class="row">
               <el-input type="textarea" :rows="2" placeholder="請輸入您的留言 (選填)" v-model="form.msg"></el-input>
             </div>
           </div>
         </div>
-        <div class="control" data-aos="fade-down" data-aos-delay="500">
+        <div class="control" data-aos="fade-down" data-aos-delay="500" data-aos-duration="400">
           <el-checkbox v-model="checked">
             <h3>
               本人知悉並同意
@@ -86,7 +86,7 @@
             </h3>
           </el-checkbox>
         </div>
-        <div style="margin: 0 auto;z-index:2;" v-if="!isMobile" data-aos="fade-down" data-aos-delay="600">
+        <div style="margin: 0 auto;z-index:2;" v-if="!isMobile" data-aos="fade-down" data-aos-delay="600" data-aos-duration="300">
           <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
         </div>
         <div style="margin: 0 auto;z-index:2;" v-if="isMobile">
@@ -257,10 +257,9 @@ export default {
 .order-bg {
   // background-color: $order_bg_color;
   background-image: $order_bg_image;
-  background-repeat: no-repeat;
   position: relative;
   // padding-top: 130px;
-  background-size: 100vw 100%;
+  background-size:100% auto;
   // background-attachment: fixed;
   background-position: 0% 0%;
   font-family: $family3;
@@ -272,41 +271,32 @@ export default {
   .order-top {
     position: relative;
     overflow: hidden;
+    z-index: 3;
   }
   .order-title {
     font-family: $family2;
-    width: 80vw;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin: 0 auto 10px;
-    display: inline-block;
+    width:920px;
+    margin: 0 auto 0.2em;
+    display:flex;align-items: center;
     font-weight: 900;
     line-height: 1.7;
-    letter-spacing: 10px;
+    letter-spacing:0.2em;
     font-size: calc(100vw * 50 / 1920);
     text-align: center;
+    text-indent:0.2em;
     color: $order_title_color;
-    position: relative;
+    position: relative;left: 0.1em;
 
-    &::after {
-      content: '';
-      width: 329px;
-      border-top: 1px solid #fff000;
-      position: absolute;
-      right: 215px;
-      top: 50%;
-    }
-
+    &::after,
     &::before {
       content: '';
-      width: 310px;
-      border-top: 1px solid #fff000;
-      position: absolute;
-      left: 220px;
-      top: 50%;
+      width: auto;
+      flex: 1;
+      background:#fff000;
+      height: 1px;left: -0.1em;position: relative;
     }
-    // border-top: 1px solid #248184;
-    // border-bottom: 1px solid #248184;
+    &::after{margin-left: 0.5em;}
+    &::before {margin-right: 0.5em;}
   }
 
   .order-subtitle {
@@ -418,21 +408,31 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .order-bg {
-    padding-top: sizem(160);
+  //  padding-top: sizem(160);
+  padding-top:0;
     margin: 0;
-    z-index: 2;
+    margin-top: sizem(-160);
     background-image: url('~@/projects/ypy1/m/c/bg.jpg');
+    background-position: 50% sizem(160);
 
     > img {
       display: block;
     }
     .order-title {
       width: 290px;
+      font-size: calc(100vw * 35 / 375);
+    &::after,
+    &::before {height: 2px;}
+/*
       padding-top: 10px;
       padding-bottom: 0px;
-      font-size: calc(100vw * 35 / 375);
-      letter-spacing: 4px;
+      &::after {
+        border-top: 2px solid #fff000;right:7em;
+      }
 
+      &::before {
+        border-top: 2px solid #fff000;left:7em;
+      }
       &::after {
         content: '';
         width: 60px;
@@ -449,7 +449,7 @@ export default {
         position: absolute;
         left: -10px;
         top: 50%;
-      }
+      }*/
     }
 
     .bg-img {

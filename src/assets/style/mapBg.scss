@@ -69,7 +69,7 @@
     .mask {
       width: 300vw;
       height: sizem(57);
-      background-color: rgba(179, 57, 0, 0.6);
+     // background-color: rgba(179, 57, 0, 0.6);
       // animation: swing 2.5s ease-in-out 0s infinite;
       left: 35vw;
       position: absolute;
@@ -85,14 +85,14 @@
     .hand {
       position: absolute;
       z-index: 3;
-      width: sizem(87) !important;
+      width: sizem(70) !important;
       height: auto !important;
-      left: sizem(625);
+      left: sizem(650);
       right: 0;
       margin: 0 auto;
-      top: sizem(298) !important;
+      top: sizem(190) !important;
       display: block;
-      animation: swing 2.5s ease-in-out 0s infinite alternate-reverse;
+      animation: swing 2s ease-in-out 0s infinite alternate-reverse;
       opacity: 0;
       transition: opacity .5s;
       &.active {
