@@ -35,7 +35,7 @@
   background-size: auto;
 }
 .rb {
-  @include img_r_pc(340, 0 , 115);
+  @include img_r_pc(340, 0, 115);
   top: auto;
   bottom: 30px;
 }
@@ -89,9 +89,8 @@
   border: 1px solid #707070;
   cursor: pointer;
 
-
   &:nth-child(n + 3) {
-    opacity: .5;
+    opacity: 0.5;
   }
 }
 
@@ -207,8 +206,14 @@
   }
   .process-item {
     width: sizem(310);
+    height: sizem(414);
     margin: 0 auto sizem(40);
     cursor: pointer;
+  }
+
+  .process-b {
+    border-top: 1px solid #707070;
+    padding: sizem(15) sizem(10);
   }
 
   .process-img {
@@ -219,14 +224,31 @@
   }
 
   .process-title {
-    font-size: sizem(26);
+    font-size: sizem(24);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.31;
-    letter-spacing: sizem(3.16);
+    line-height: 1.58;
+    letter-spacing: normal;
     text-align: left;
-    color: #ff9e00;
+    color: #000000;
+  }
+
+  .process-link {
+    width: sizem(102);
+    height: sizem(26);
+    border-radius: sizem(13);
+    background-color: #221714;
+    cursor: pointer;
+    font-size: sizem(12);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: size(0.6);
+    text-align: left;
+    color: #ffffff;
+    float: right;
   }
 
   .pagination {
@@ -318,7 +340,7 @@ export default {
       if (isFinished) {
         this.$router.push(`/process/${index}`)
       }
-    }
+    },
     // @slideChangeTransitionEnd="slideChanged"
     // slideChanged(e) {
     //   const swiper = this.$refs.mySwiper.swiper

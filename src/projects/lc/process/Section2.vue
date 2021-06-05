@@ -5,11 +5,11 @@
         <router-link to="/">首頁</router-link> >
         <router-link to="/process">工程進度</router-link> >
       </div>
-      <div class="title" v-html="list[$route.params.id][0].o_title"></div>
-      <div class="subtitle" v-html="list[$route.params.id][0].o_subtitle"></div>
+      <div class="title" v-html="slideList[0].o_title"></div>
+      <div class="subtitle" v-html="slideList[0].o_subtitle"></div>
     </div>
     <div class="process-container">
-      <div class="process-item" v-for="(item, index) in list[$route.params.id]" :key="item.title + index" @click="showDialog(item.isFinished, index)">
+      <div class="process-item" v-for="(item, index) in slideList" :key="item.title + index" @click="showDialog(item.isFinished, index)">
         <img :src="item.img" alt="" class="process-img">
         <div class="process-b">
           <div class="process-title">
@@ -19,12 +19,38 @@
           </div>
         </div>
       </div>
-      <div class="back">
+      <div class="back" @click="$router.push('/process')">
         回工程進度
       </div>
       <!-- <div class="pagination flex-c">
         <div :class="`pagi flex-c ${index === currentPage ? 'active' : ''}`" v-for="index in pageCount" :key="'pagi' + index" @click="currentPage = index">{{index}}</div>
       </div> -->
+    </div>
+    <div :class="`dialog ${isDialog ? 'show' : ''}`">
+      <img src="../../../assets/img/close.png" alt="" class="close" @click="isDialog = false">
+
+      <div class="dialog-content">
+        <div class="dialog-head">
+          首頁 > 工程進度 > {{ slideList[0].o_title }}> {{ slideList[slideIndex].title }}
+        </div>
+        <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+          <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+            <transition-group name="swipe-fade" mode="out-in">
+              <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img + i" :class="`swipe-item absolute`">
+                <img :src="slide.img" :alt="slide.name">
+                <div class="name absolute" v-html="slide.name"></div>
+              </div>
+            </transition-group>
+            <div class="swipe-btns absolute flex-ac flex-jb">
+              <div class="prev-btn" @click="decIndex"></div>
+              <div class="next-btn" @click="addIndex"></div>
+            </div>
+            <div class="pagination absolute flex-ac" v-if="isPC">
+              <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot' + index" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -119,6 +145,7 @@
   letter-spacing: size(0.6);
   text-align: left;
   color: #000000;
+  cursor: pointer;
 }
 
 .process-title {
@@ -155,9 +182,9 @@
   text-align: left;
   cursor: pointer;
 
-  &:nth-child(n + 3) {
-    opacity: 0.5;
-  }
+  // &:nth-child(n + 3) {
+  //   opacity: 0.5;
+  // }
 }
 
 .process-b {
@@ -216,6 +243,243 @@
   }
 }
 
+.dialog {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s;
+  display: none;
+
+  &.show {
+    display: block;
+    z-index: 210;
+    opacity: 1;
+  }
+
+  .dialog-head {
+    @include img_l_pc(0, 30, 194);
+    width: auto;
+    font-size: size(27);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: size(0.81);
+    text-align: left;
+    color: #000000;
+    z-index: 3;
+  }
+
+  .dialog-content {
+    width: size(1700);
+    height: size(900);
+    max-height: 96vh;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+  }
+
+  .close {
+    position: absolute;
+    cursor: pointer;
+    right: 35px;
+    top: 25px;
+    width: 40px;
+  }
+}
+
+/* Swipe */
+.swipe {
+  width: size(1280);
+  height: size(720);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  z-index: 2;
+  object-fit: cover;
+}
+
+// begin
+.swipe-fade-leave-to {
+  opacity: 0;
+  z-index: 0;
+}
+// end
+.swipe-fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.swipe-fade-enter-active {
+  transition: all 0.5s ease;
+}
+
+.swipe-fade-leave-active {
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+// begin
+// .swipe-left-leave-to {
+//   margin-left: -100vw;
+//   z-index: 0;
+// }
+// // end
+// .swipe-left-enter {
+//   opacity: 0.5;
+//   margin-left: 0;
+//   z-index: 1;
+// }
+
+// .swipe-left-enter-active {
+//   transition: all 0.5s ease;
+// }
+
+// .swipe-left-leave-active {
+//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+// }
+
+.swipe-wrap {
+  width: 100%;
+  height: 100%;
+  // overflow: hidden;
+}
+
+.swipe-item {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .name {
+    right: 1.5em;
+    bottom: 1em;
+    font-size: size(15);
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    text-align: left;
+    color: #fff;
+    text-shadow: 0 0.1em 0.3em #000;
+  }
+
+  // &:nth-child(1) {
+  //   z-index: 1;
+  //   // opacity: 1;
+  // }
+
+  // &.base {
+  //   z-index: 1;
+  //   opacity: 1;
+  // }
+  // &.active {
+  //   z-index: 2;
+  //   // opacity: 1;
+  // }
+}
+
+.pagination {
+  width: auto;
+  right: 0;
+  left: 0;
+  top: auto;
+  bottom: -60px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.pagination-dot {
+  padding: 5px;
+  margin: 0 10px;
+  cursor: pointer;
+  z-index: 4;
+
+  span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 0 1px #333;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.38);
+    transition: all 0.5s;
+
+    &::before {
+      content: '';
+      width: 60%;
+      height: 60%;
+      display: block;
+      background: #333;
+      border-radius: 20px;
+      opacity: 1;
+      position: absolute;
+      top: 20%;
+      // transform: translateY(-50%);
+      left: 20%;
+      transition: all 0.3s;
+      transform-origin: center;
+      transform: scale(0);
+    }
+    &.active {
+      &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: #333;
+        border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 0%;
+        // transform: translateY(-50%);
+        left: 0%;
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.swipe-btns {
+  width: 120%;
+  left: -10%;
+  height: 100%;
+  padding: 0 15px;
+  z-index: 3;
+
+  .prev-btn,
+  .next-btn {
+    width: size(55.4);
+    height: size(55.4);
+    border-top: 2px solid #000;
+    border-right: 2px solid #000;
+    cursor: pointer;
+    transform-origin: center;
+  }
+
+  .prev-btn {
+    transform: rotate(-135deg);
+  }
+  .next-btn {
+    transform: rotate(45deg);
+  }
+}
+
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -263,35 +527,103 @@
     background-attachment: fixed;
   }
 
+  .head {
+    width: sizem(310);
+    margin: size(32) auto;
+
+    .breads {
+      font-size: sizem(15);
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 2.4;
+      letter-spacing: sizem(0.45);
+      text-align: left;
+      color: #000000;
+      a {
+        color: #000;
+        text-decoration: none;
+      }
+    }
+
+    .title {
+      font-size: sizem(28);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.29;
+      letter-spacing: normal;
+      text-align: left;
+      color: #ff9e00;
+    }
+
+    .subtitle {
+      font-size: sizem(14);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 2.57;
+      letter-spacing: normal;
+      text-align: left;
+      color: #444444;
+    }
+  }
+
   .process-container {
     width: sizem(375);
-    margin: sizem(60) auto;
+    margin: sizem(20) auto;
     padding-bottom: sizem(60);
     display: flex;
     flex-wrap: wrap;
   }
-  .process-item {
-    width: sizem(310);
-    margin: 0 auto sizem(40);
-    cursor: pointer;
+
+  .process-b {
+    border-top: 1px solid #707070;
+    padding: sizem(15) sizem(10);
   }
 
   .process-img {
     width: 100%;
     height: sizem(280);
     object-fit: cover;
-    margin-bottom: sizem(10);
+    margin-bottom: sizem(0);
   }
 
   .process-title {
-    font-size: sizem(26);
+    font-size: sizem(21);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.31;
     letter-spacing: sizem(3.16);
     text-align: left;
-    color: #ff9e00;
+    color: #fff;
+  }
+
+  .process-subtitle {
+    font-size: size(20);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+    margin-top: size(15);
+  }
+
+  .process-item {
+    width: sizem(310);
+    min-height: size(414);
+    margin: 0 auto;
+    margin-bottom: size(47);
+    border: 1px solid #707070;
+    text-align: left;
+    cursor: pointer;
+
+    // &:nth-child(n + 3) {
+    //   opacity: 0.5;
+    // }
   }
 
   .pagination {
@@ -320,21 +652,262 @@
       }
     }
   }
+
+  .dialog {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s;
+    display: none;
+
+    &.show {
+      display: block;
+      z-index: 210;
+      opacity: 1;
+    }
+
+    .dialog-head {
+      @include img_l_m(0, 17, 30);
+      width: auto;
+      font-size: sizem(15);
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 0.67;
+      letter-spacing: sizem(0.45);
+      text-align: left;
+      color: #000000;
+      z-index: 3;
+    }
+
+    .dialog-content {
+      width: sizem(375);
+      height: sizem(384);
+      max-height: 96vh;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      top: 50%;
+      transform: translateY(-50%);
+      position: absolute;
+    }
+
+    .close {
+      position: absolute;
+      cursor: pointer;
+      right: 13px;
+      top: 75px;
+      width: 35px;
+    }
+  }
+
+  /* Swipe */
+  .swipe {
+    width: sizem(375);
+    height: sizem(210);
+    z-index: 2;
+    margin: sizem(25) 0;
+    left: sizem(0);
+    float: none;
+    object-fit: cover;
+  }
+
+  // begin
+  .swipe-fade-leave-to {
+    opacity: 0;
+    z-index: 0;
+  }
+  // end
+  .swipe-fade-enter {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .swipe-fade-enter-active {
+    transition: all 0.5s ease;
+  }
+
+  .swipe-fade-leave-active {
+    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  // begin
+  // .swipe-left-leave-to {
+  //   margin-left: -100vw;
+  //   z-index: 0;
+  // }
+  // // end
+  // .swipe-left-enter {
+  //   opacity: 0.5;
+  //   margin-left: 0;
+  //   z-index: 1;
+  // }
+
+  // .swipe-left-enter-active {
+  //   transition: all 0.5s ease;
+  // }
+
+  // .swipe-left-leave-active {
+  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  // }
+
+  .swipe-wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .swipe-item {
+    width: 100%;
+    z-index: 0;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      bottom: 0;
+      left: 0;
+    }
+
+    .name {
+      font-size: sizem(12);
+    }
+
+    // &:nth-child(1) {
+    //   z-index: 1;
+    //   // opacity: 1;
+    // }
+
+    // &.base {
+    //   z-index: 1;
+    //   opacity: 1;
+    // }
+    // &.active {
+    //   z-index: 2;
+    //   // opacity: 1;
+    // }
+  }
+
+  .pagination {
+    width: auto;
+    top: sizem(10);
+    // left: 0;
+    right: sizem(0);
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .pagination-dot {
+    padding: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    z-index: 4;
+
+    span {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 0 1px #333;
+      position: relative;
+      background-color: rgba(255, 255, 255, 0.38);
+      transition: all 0.5s;
+
+      &::before {
+        content: '';
+        width: 60%;
+        height: 60%;
+        display: block;
+        background: #333;
+        border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 20%;
+        // transform: translateY(-50%);
+        left: 20%;
+        transition: all 0.3s;
+        transform-origin: center;
+        transform: scale(0);
+      }
+      &.active {
+        &::before {
+          content: '';
+          width: 100%;
+          height: 100%;
+          display: block;
+          background: #333;
+          border-radius: 20px;
+          opacity: 1;
+          position: absolute;
+          top: 0%;
+          // transform: translateY(-50%);
+          left: 0%;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  .swipe-btns {
+    width: 100%;
+    left: 0%;
+    height: 100%;
+    padding: 0 15px;
+    z-index: 3;
+
+    .prev-btn,
+    .next-btn {
+      width: sizem(22);
+      height: sizem(22);
+      border-top: 2px solid #fff;
+      border-right: 2px solid #fff;
+      cursor: pointer;
+      transform-origin: center;
+    }
+
+    .prev-btn {
+      transform: rotate(-135deg);
+    }
+    .next-btn {
+      transform: rotate(45deg);
+    }
+  }
 }
 </style>
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
+import slider from '@/mixins/slider.js'
 
 export default {
   name: 'section2',
+  mixins: [slider],
 
   data() {
     return {
       isPC,
       isMobile,
       isTablet,
+      isDialog: false,
       tabIndex: 0,
+      slideList: [
+        [
+          {
+            img: require('../process/list/1/1.jpg'),
+            o_title: '2021 立瑾WAY',
+            o_subtitle: '已完售，預計2023年初完工。',
+            title: '2021/4',
+            subtitle: '基礎工程啟動<br/>地下室開挖工程按部進行。',
+            isFinished: true,
+          },
+        ],
+      ],
       list: [
         //...Array(18).keys()].map((i) => ({
         [
@@ -344,16 +917,37 @@ export default {
             o_subtitle: '已完售，預計2023年初完工。',
             title: '2021/4',
             subtitle: '基礎工程啟動<br/>地下室開挖工程按部進行。',
+            isFinished: true,
           },
           {
-            img: require('../process/list/noimg.png'),
+            img: require('../process/list/1/2.jpg'),
             title: '2021/5',
             subtitle: '第一期工程',
+            isFinished: true,
           },
           {
-            img: require('../process/list/noimg.png'),
-            title: '2021/6',
-            subtitle: '第二期工程',
+            img: require('../process/list/1/3.jpg'),
+            title: '2021/5',
+            subtitle: '第一期工程',
+            isFinished: true,
+          },
+          {
+            img: require('../process/list/1/4.jpg'),
+            title: '2021/5',
+            subtitle: '第一期工程',
+            isFinished: true,
+          },
+          {
+            img: require('../process/list/1/5.jpg'),
+            title: '2021/5',
+            subtitle: '第一期工程',
+            isFinished: true,
+          },
+          {
+            img: require('../process/list/1/6.jpg'),
+            title: '2021/5',
+            subtitle: '第一期工程',
+            isFinished: true,
           },
         ],
         /*{
@@ -370,6 +964,8 @@ export default {
   methods: {
     showDialog(isFinished, index) {
       if (isFinished) {
+        this.isDialog = true
+        this.slideIndex = index
       }
     },
 
@@ -387,7 +983,10 @@ export default {
     // },
   },
 
-  mounted() {},
+  mounted() {
+    this.toggleTimer = false
+    this.slideList = this.list[this.$route.params.id]
+  },
 
   created() {},
 

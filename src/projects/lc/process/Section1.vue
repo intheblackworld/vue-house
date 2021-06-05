@@ -107,7 +107,7 @@
   }
 
   .title {
-    @include div_l_m(147, 47, 180, 114);
+    @include div_l_m(147, 47, 279, 49);
     font-size: sizem(32);
     font-weight: 500;
     font-stretch: normal;
@@ -120,7 +120,7 @@
   }
 
   .subtitle {
-    @include div_l_m(64, 22, 160, 156);
+    @include div_l_m(64, 22, 260, 49);
     font-size: sizem(15);
     font-weight: 500;
     font-stretch: normal;
