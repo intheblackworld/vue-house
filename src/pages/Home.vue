@@ -2,8 +2,8 @@
   <div class="home no-padding-top">
     <div class="bg-img">
       <Loading :loading="load" />
-      <SideNavigation v-if="isMobile" /> 
-      <Navigation v-if="!isMobile" />
+      <SideNavigation v-if="isMobile" @updateBlockIndex="updateBlockIndex" /> 
+      <Navigation v-if="!isMobile" @updateBlockIndex="updateBlockIndex" />
       <!-- <Indigator :viewIndex="viewIndex" /> -->
       <!-- <full-page
       ref="fullPage"
@@ -35,7 +35,7 @@
          <Section8 />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section9">
-        <Section9 />
+        <Section9 :block="blockIndex" />
       </vue-lazy-component>
       <!-- <vue-lazy-component class="section" id="contact"> -->
       <ContactSection />
@@ -127,6 +127,7 @@ export default {
       isSide: false,
       load: false,
       viewIndex: 0,
+      blockIndex: 0,
       // action: {
       //   moveTo: () => {},
       // },
@@ -173,6 +174,9 @@ export default {
   },
   methods: {
     init() {},
+    updateBlockIndex(index) {
+      this.blockIndex = index
+    }
     // onScroll() {
     //   // 获取所有锚点元素
     //   const navContents = document.querySelectorAll('.section')

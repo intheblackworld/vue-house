@@ -14,7 +14,7 @@
           v-scroll-to="{ element: `#${item.section}`, offset: isMobile ? (item.mobileOffset ? item.mobileOffset : offset) : (item.offset ? item.offset : offset) }"
           v-for="item in list"
           class="flex-ac"
-          @click="toggleSidebar"
+          @click="toggleSidebar(item.blockIndex)"
         >
           <span class="link">
             <img v-if="item.imgSrc" :src="item.imgSrc" alt />
@@ -54,7 +54,11 @@ export default {
   },
 
   methods: {
-    toggleSidebar() {
+    toggleSidebar(blockIndex) {
+      if (blockIndex >= 0) {
+        console.log(blockIndex)
+        this.$emit('updateBlockIndex', blockIndex)
+      }
       this.isOpen = !this.isOpen
     },
   },

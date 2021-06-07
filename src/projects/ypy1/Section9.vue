@@ -843,7 +843,7 @@ export default {
   name: 'section9',
 
   mixins: [slider],
-  props: ['viewIndex'],
+  props: ['block'],
 
   data() {
     return {
@@ -955,6 +955,9 @@ export default {
   },
 
   watch: {
+    block(val) {
+      this.blockIndex = val
+    },
     // viewIndex() {
     //   if (this.viewIndex === 5) {
     //     this.slideIndex = 0

@@ -18,7 +18,7 @@
             </div>
           </div>
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
-            <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: item.offset }" v-for="item in list" class="flex-c" @click="toggleSidebar">
+            <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: item.offset }" v-for="item in list" class="flex-c" @click="toggleSidebar(item.blockIndex)">
               <span class="link">
                 <span class="flex-c">
                   <h1 class="title" v-html="item.name"></h1>
@@ -66,7 +66,10 @@ export default {
   },
 
   methods: {
-    toggleSidebar() {
+    toggleSidebar(blockIndex) {
+      if (blockIndex >= 0) {
+        this.$emit('updateBlockIndex', blockIndex)
+      }
       this.isOpen = !this.isOpen
     },
   },
