@@ -19,6 +19,8 @@
           </div>
         </div>
       </div>
+      <div class="process-item0"></div>
+      <div class="process-item0"></div>
       <div class="back" @click="$router.push('/process')">
         回工程進度
       </div>
@@ -31,7 +33,9 @@
 
       <div class="dialog-content">
         <div class="dialog-head">
-          首頁 > 工程進度 > {{ slideList[0].o_title }}> {{ slideList[slideIndex].title }}
+          <router-link to="/">首頁</router-link> >
+          <router-link to="/process">工程進度</router-link> > 
+          <span @click="isDialog = false">{{ slideList[0].o_title }}</span> > {{ slideList[slideIndex].title }}
         </div>
         <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
           <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -98,6 +102,13 @@
     a {
       color: #000;
       text-decoration: none;
+      transition: all 0.3s;
+      position: relative;
+      display:inline-block;
+      &:hover{
+        color: #C00;
+        text-decoration: underline;
+      }
     }
   }
 
@@ -159,6 +170,7 @@
   color: #ffffff;
   background-color: #7d7d7d;
   padding: size(5) size(40);
+  transition: background-color 0.3s;
   border-radius: 10px;
   display: inline-block;
 }
@@ -181,11 +193,21 @@
   border: 1px solid #707070;
   text-align: left;
   cursor: pointer;
+  position: relative;
+  transition: background-color 0.5s;
+  &:hover{background: #0002;
+  .process-img{opacity: 0.8;}
+  .process-link {
+  background-color: #ff9e00;}
+  .process-title{
+  background-color: #666;}
+  }
 
   // &:nth-child(n + 3) {
   //   opacity: 0.5;
   // }
 }
+.process-item0 {width: size(403);}
 
 .process-b {
   border-top: 1px solid #707070;
@@ -272,6 +294,17 @@
     text-align: left;
     color: #000000;
     z-index: 3;
+    a,span{
+      color: #000;
+      text-decoration: none;
+      transition: all 0.3s;
+      position: relative;
+      display:inline-block;
+      &:hover{
+        color: #C00;
+        text-decoration: underline;
+      }
+      }
   }
 
   .dialog-content {
@@ -925,7 +958,7 @@ export default {
             subtitle: '第一期工程',
             isFinished: true,
           },
-          {
+    /*      {
             img: require('../process/list/1/3.jpg'),
             title: '2021/5',
             subtitle: '第一期工程',
@@ -937,6 +970,7 @@ export default {
             subtitle: '第一期工程',
             isFinished: true,
           },
+
           {
             img: require('../process/list/1/5.jpg'),
             title: '2021/5',
@@ -949,6 +983,7 @@ export default {
             subtitle: '第一期工程',
             isFinished: true,
           },
+      */
         ],
         /*{
         img: require('../news/s2/no.png'),

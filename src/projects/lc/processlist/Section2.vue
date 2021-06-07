@@ -16,6 +16,8 @@
           </div>
         </div>
       </div>
+      <div class="process-item0"></div>
+      <div class="process-item0"></div>
       <div class="pagination flex-c">
         <div :class="`pagi flex-c ${index === currentPage ? 'active' : ''}`" v-for="index in pageCount" :key="'pagi' + index" @click="currentPage = index">{{index}}</div>
       </div>
@@ -88,11 +90,20 @@
   margin-bottom: size(70);
   border: 1px solid #707070;
   cursor: pointer;
-
+  position: relative;
+  transition: background-color 0.5s;
+/*
   &:nth-child(n + 3) {
     opacity: 0.5;
   }
+  */
+  &:hover{background: #0002;
+  .process-img{opacity: 0.8;}
+  .process-link {
+  background-color: #ff9e00;}
+  }
 }
+.process-item0 {width: size(403);}
 
 .process-b {
   border-top: 1px solid #707070;
@@ -103,6 +114,7 @@
   width: 100%;
   height: size(363);
   object-fit: cover;
+  transition: opacity 0.5s;
   // margin-bottom: size(10);
 }
 
@@ -110,7 +122,8 @@
   width: size(132);
   height: size(34);
   border-radius: size(17);
-  background-color: #221714;
+  background-color: #000;
+  transition: background-color 0.3s;
   cursor: pointer;
   font-size: size(12);
   font-weight: normal;
@@ -305,7 +318,7 @@ export default {
           subtitle: '即將公開，敬請期待。',
           isFinished: false,
         },
-        {
+ /*       {
           img: require('../process/list/1/0.jpg'),
           title: '2021 立瑾WAY',
           subtitle: '已完售，預計2023年初完工。',
@@ -329,6 +342,7 @@ export default {
           subtitle: '已完售，預計2023年初完工。',
           isFinished: false,
         },
+        */
       ],
       pageCount: 3,
       currentPage: 1,
