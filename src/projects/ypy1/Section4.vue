@@ -35,14 +35,13 @@
         </div>
       </div>
     </div>
-    <div class="hr hr1" data-aos="zoom-in-down" data-aos-delay="0" data-aos-duration="400"></div>
-    <h3 class="title1 title" v-if="!isMobile" data-aos="fade-up" data-aos-delay="0" data-aos-duration="400">三面臨路近二千坪基地‧千坪庭園</h3>
-    <h3 class="title1 title" v-if="isMobile" data-aos="fade-up" data-aos-delay="0" data-aos-duration="400">三面臨路近二千坪基地<br>千坪庭園</h3>
-    <div class="desc1 desc" data-aos="fade-up" data-aos-delay="100" data-aos-duration="400"><span>【嘉璟一品硯】</span> 坐擁三面臨路醒目地位，廣達近二千坪大器基地，
-      規劃千坪庭園景觀，臨路大方謙退，打造桃園國道門面名牌。</div>
-    <div class="hr hr2" data-aos="zoom-in-down" data-aos-delay="0" data-aos-duration="400"></div>
-    <h3 class="title2 title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="400">全齡化休閒公設<br />全家樂遊心天地</h3>
-    <div class="desc2 desc" data-aos="fade-up" data-aos-delay="100" data-aos-duration="400">是尊榮的禮遇，更是愉悅的生活。規劃星級飯店式禮賓門廳、健身房、交誼廳、兒童遊戲區、KTV、多媒體娛樂室等多元化休閒會館，天天在家，就像渡假般享受</div>
+    <div class="hr hr1" data-aos="zoom-in-down" data-aos-delay="0"></div>
+    <h3 class="title1 title" v-if="!isMobile" data-aos="fade-up" data-aos-delay="0">三面臨路近二千坪基地‧千坪庭園</h3>
+    <h3 class="title1 title" v-if="isMobile" data-aos="fade-up" data-aos-delay="0">三面臨路近二千坪基地<br>千坪庭園</h3>
+    <div class="desc1 desc" data-aos="fade-up" data-aos-delay="100">坐擁三面臨路醒目地位，廣達近二千坪大器基地，<br v-if="isPC">規劃千坪庭園景觀，臨路大方謙退，打造桃園國道門面名牌。</div>
+    <div class="hr hr2" data-aos="zoom-in-down" data-aos-delay="0"></div>
+    <h3 class="title2 title" data-aos="fade-up" data-aos-delay="0">全齡化休閒公設<br />全家樂遊心天地</h3>
+    <div class="desc2 desc" data-aos="fade-up" data-aos-delay="100">是尊榮的禮遇，更是愉悅的生活。規劃星級飯店式禮賓門廳、健身房、交誼廳、兒童遊戲區、KTV、多媒體娛樂室等多元化休閒會館，天天在家，就像渡假般享受！</div>
     <img src="./s4/bg_b.png" :alt="`${info.caseName}_img`" class="bg-img bg-b" v-if="isPC">
     <img src="./m/5/bg_b.png" :alt="`${info.caseName}_img`" class="bg-img bg-b" v-if="isMobile">
   </div>
@@ -252,7 +251,7 @@
     bottom: 1.2em;
     color: #fff;
     font-size: size(18);
-    font-weight: bold;
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.6;
@@ -524,9 +523,9 @@
     .slide-name {
       right: auto;
       top: auto;
-      bottom: 1.2rem;
-      right: 1.2rem;
-      font-size: sizem(15);
+      bottom: 0.8em;
+      right: 1.2em;
+      font-size: sizem(13);
     }
   }
 
@@ -655,19 +654,47 @@ export default {
           img: require('./s4/1.jpg'),
           name: '',
         },
-        {
-          img: require('./s4/1.jpg'),
-          name: '',
-        },
       ],
       slideList1: [
         {
-          img: require('./s4/2.jpg'),
-          name: '',
+          img: require('./s4/KTV透視圖.jpg'),
+          name: 'KTV透視圖',
         },
         {
-          img: require('./s4/2.jpg'),
-          name: '',
+          img: require('./s4/lobby透視圖.jpg'),
+          name: 'lobby透視圖',
+        },
+        {
+          img: require('./s4/交誼廳透視圖.jpg'),
+          name: '交誼廳透視圖',
+        },
+        {
+          img: require('./s4/酒吧廊道透視圖.jpg'),
+          name: '酒吧廊道透視圖',
+        },
+        {
+          img: require('./s4/健身房透視圖.jpg'),
+          name: '健身房透視圖',
+        },
+        {
+          img: require('./s4/會議室透視圖.jpg'),
+          name: '會議室透視圖',
+        },
+        {
+          img: require('./s4/瑜珈室透視圖.jpg'),
+          name: '瑜珈室透視圖',
+        },
+        {
+          img: require('./s4/遊戲室透視圖.jpg'),
+          name: '遊戲室透視圖',
+        },
+        {
+          img: require('./s4/閱覽室透視圖.jpg'),
+          name: '閱覽室透視圖',
+        },
+        {
+          img: require('./s4/親子室透視圖.jpg'),
+          name: '親子室透視圖',
         },
       ],
     }

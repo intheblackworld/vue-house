@@ -176,7 +176,7 @@ export default {
 .navlist {
   position: fixed;
   z-index: 111;
-  background: $nav_bg;
+  background:#0499;
   width: 0%;
   right: 0;
   top: $nav_phone_height;
@@ -205,7 +205,8 @@ export default {
     display: none;
     background-size: cover;
     position: relative;
-
+    font-family: "Noto Serif TC";
+    font-weight: 800;
     // &::after {
     //   display: block;
     //   content: '';

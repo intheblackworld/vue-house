@@ -3,21 +3,22 @@
     <swiper :options="swiperOption" ref="mySwiper">
       <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="item">
         <img :src="slide.img" :class="`item-img`" />
+            <div class="slide-name absolute" v-html="slide.name"></div>
       </swiper-slide>
       <div class="swiper-button-prev prev-btn" slot="button-prev">
       </div>
       <div class="swiper-button-next next-btn" slot="button-next">
       </div>
     </swiper>
-    <div class="hr" data-aos="zoom-in-down" data-aos-delay="0" data-aos-duration="400"></div>
-    <h3 class="label" data-aos="fade-up" data-aos-delay="0" data-aos-duration="400">
+    <div class="hr" data-aos="zoom-in-down" data-aos-delay="0"></div>
+    <h3 class="label" data-aos="fade-up" data-aos-delay="0">
       團隊一品
     </h3>
-    <h3 class="title" data-aos="fade-up" data-aos-delay="100" data-aos-duration="400">
+    <h3 class="title" data-aos="fade-up" data-aos-delay="100">
       台灣誠信建商認證 嘉璟機構<br />
       嘉璟出品．豪宅一品
     </h3>
-    <div class="desc" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400">逾20年勤耕建築路，<br />
+    <div class="desc" data-aos="fade-up" data-aos-delay="200">逾20年勤耕建築路，<br />
       嘉璟機構以精工品質贏得住戶肯定。<br />
       傳承豪邸理念，於中路特區，<br />
       以領袖豪宅思維，鉅鑄精緻名宅！</div>
@@ -43,7 +44,7 @@
 }
 
 .hr {
-  @include img_r_pc(4, 118, 638);
+  @include img_l_pc(4, 118, 1270 - 12);
   height: size(128);
   background: #fff;
 }
@@ -91,6 +92,19 @@
 .swiper-container {
   @include img_l_pc(428 + 780, 97, 0);
 }
+.slide-name {
+    right: 2em;
+    bottom: 1.2em;
+    color: #fff;
+    font-size: size(18);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+    text-align: left;
+    text-shadow: 0 0.3em 1em #000;
+  }
 
 .item-img {
   width: 100%;
@@ -293,9 +307,9 @@
     .slide-name {
       right: auto;
       top: auto;
-      bottom: 1.2rem;
-      right: 1.2rem;
-      font-size: sizem(15);
+      bottom: 0.8em;
+      right: 1.2em;
+      font-size: sizem(13);
     }
   }
 
@@ -414,19 +428,43 @@ export default {
       slideList: [
         {
           img: require('./s5/1.jpg'),
-          name: '',
+          name: '臻第 實景',
         },
         {
           img: require('./s5/2.jpg'),
-          name: '',
+          name: '臻之御 實景',
         },
         {
           img: require('./s5/3.jpg'),
-          name: '',
+          name: '昭揚縱橫 實景',
         },
         {
-          img: require('./s5/3.jpg'),
-          name: '',
+          img: require('./s5/4.jpg'),
+          name: '昭揚乾坤 實景',
+        },
+        {
+          img: require('./s5/5.jpg'),
+          name: '昭揚大器 實景',
+        },
+        {
+          img: require('./s5/6.jpg'),
+          name: '自遊人 實景',
+        },
+        {
+          img: require('./s5/7.jpg'),
+          name: '華爾道夫 實景',
+        },
+        {
+          img: require('./s5/8.jpg'),
+          name: '華爾道夫大廳 實景',
+        },
+        {
+          img: require('./s5/9.jpg'),
+          name: '華爾道夫園藝 實景',
+        },
+        {
+          img: require('./s5/10.jpg'),
+          name: '大河戀大廳 實景',
         },
       ],
     }

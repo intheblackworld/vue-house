@@ -1,16 +1,20 @@
 <template>
   <div class="section2">
-    <img src="./s3/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="!isMobile">
-    <img src="./m/3/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="!isPC">
+    <img src="./s3/bg_02.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="!isMobile">
+    <img src="./s3/bg_01.png" :alt="`${info.caseName}_img`" class="bg-img bg-t" v-if="!isMobile">
+    <img src="./s3/bg_03.png" :alt="`${info.caseName}_img`" class="bg-img bg-b" v-if="!isMobile">
+    <img src="./m/3/bg_02.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="isMobile">
+    <img src="./m/3/bg_01.png" :alt="`${info.caseName}_img`" class="bg-img bg-t" v-if="isMobile">
+    <img src="./m/3/bg_03.png" :alt="`${info.caseName}_img`" class="bg-img bg-b" v-if="isMobile">
     <div class="hr" data-aos="zoom-in-up" data-aos-delay="0"></div>
-    <h3 class="label" data-aos="fade-up" data-aos-delay="0" data-aos-duration="400">氣度一品</h3>
-    <h3 class="title" data-aos="fade-up" data-aos-delay="100" data-aos-duration="400">
+    <h3 class="label" data-aos="fade-up" data-aos-delay="0">氣度一品</h3>
+    <h3 class="title" data-aos="fade-up" data-aos-delay="100">
       天際皇冠 24層領空帝標
     </h3>
-    <h3 class="subtitle" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400">
+    <h3 class="subtitle" data-aos="fade-up" data-aos-delay="200">
       【嘉璟一品硯】
     </h3>
-    <p class="desc" data-aos="fade-up" data-aos-delay="300" data-aos-duration="400">
+    <p class="desc" data-aos="fade-up" data-aos-delay="300">
       正臨60米大興西路，拔高24層凌雲尺度，<br />
       左右對稱黃金比例美學，基座列柱群圍塑護城氣勢。<br />
       頂端以圓型皇冠加冕，成就璀璨的天際景觀美學。
@@ -26,6 +30,7 @@
   min-height: size(900);
   max-height: size(1080);
   position: relative;
+  z-index: 2;
 }
 
 .bg-img {
@@ -37,10 +42,18 @@
   display: block;
   object-fit: cover;
   margin-top: 0;
+  &.bg-t{
+  height:auto;
+  transform: translateY(-99%)
+  }
+  &.bg-b{
+  height:auto;top:auto;bottom: 0;
+  transform: translateY(99%)
+  }
 }
 
 .hr {
-  @include img_r_pc(4, 163, 745);
+  @include img_l_pc(4, 163, 1170 - 12);
   height: size(89);
   background: #000;
 }
@@ -122,7 +135,7 @@
     // background-size: 100% 100%;
     // background-position: 0 0;
     // background-attachment: fixed;
-    overflow: hidden;
+   // overflow: hidden;
   }
 
   .hr {

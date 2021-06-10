@@ -1,5 +1,7 @@
 <template>
   <div class="section8">
+    <img src="./s8/t1.png" :alt="`${info.caseName}_img`" class="img t1">
+    <img src="./s8/t2.png" :alt="`${info.caseName}_img`" class="img t2">
     <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
@@ -17,15 +19,15 @@
         </div>
       </div>
     </div>
-    <div class="hr" data-aos="zoom-in-down" data-aos-delay="0" data-aos-duration="400"></div>
-    <h3 class="label" data-aos="fade-up" data-aos-delay="0" data-aos-duration="400">
+    <div class="hr" data-aos="zoom-in-down" data-aos-delay="0"></div>
+    <h3 class="label" data-aos="fade-up" data-aos-delay="0">
       空間一品
     </h3>
-    <h3 class="title" data-aos="fade-up" data-aos-delay="100" data-aos-duration="400">
+    <h3 class="title" data-aos="fade-up" data-aos-delay="100">
       名師時尚設計<br />
       勾勒幸福空間
     </h3>
-    <div class="desc" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400">透過優雅的色系，點綴完美的空間。經由不同材質，演繹低調奢華情調。從客廳、餐廳至臥室，打造令人賞心悅目的美學空間。
+    <div class="desc" data-aos="fade-up" data-aos-delay="200">透過優雅的色系，點綴完美的空間。<br v-if="isPC">經由不同材質，演繹低調奢華情調。<br v-if="isPC">從客廳、餐廳至臥室，打造令人賞心悅目的美學空間。
     </div>
   </div>
 </template>
@@ -47,9 +49,15 @@
   background-attachment: fixed;
   // overflow: hidden;
 }
-
+.t1{ @include img_r_pc(459,0, 0);
+top: auto;
+bottom: size(-299 * .6);
+z-index: 5;
+}
+.t2{ @include img_l_pc(463,-459 * .5, 0);
+z-index: 5;}
 .hr {
-  @include img_r_pc(4, 118 + 166, 638);
+  @include img_l_pc(4, 118 + 166, 1270 - 12);
   height: size(128);
   background: #000000;
 }
@@ -82,7 +90,7 @@
 }
 
 .desc {
-  @include img_l_pc(440, 311 + 136, 1270);
+  @include img_l_pc(550, 311 + 136, 1270);
   font-size: size(20);
   font-weight: normal;
   font-stretch: normal;
@@ -277,8 +285,15 @@
     // background-size: 100% 100%;
     // background-position: 0 0;
     // background-attachment: fixed;
-    overflow: hidden;
+    // overflow: hidden;
   }
+  .t1{ @include img_r_m(147,0, 0);
+top: auto;
+bottom: size(-128 * .6);
+z-index: 5;
+}
+.t2{ @include img_l_m(172,-170 * .5, 0);
+z-index: 5;}
   .hr {
     @include img_l_m(4, 51, 32);
     height: sizem(104);

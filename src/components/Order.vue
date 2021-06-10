@@ -9,16 +9,16 @@
         <h3 class="title">{{order.title}}</h3>
         <div class="subtitle">{{order.subTitle}}</div>
       </div> -->
-      <h3 class="order-title" v-html="order.title" data-aos="fade-down" data-aos-delay="0" data-aos-duration="400"></h3>
-      <div class="order-subtitle" data-aos="fade-down" data-aos-delay="100" data-aos-duration="400" v-html="order.subTitle"></div>
+      <h3 class="order-title" v-html="order.title" data-aos="fade-down" data-aos-delay="0"></h3>
+      <div class="order-subtitle" data-aos="fade-down" data-aos-delay="100" v-html="order.subTitle"></div>
       <div class="order">
         <div class="form">
-          <div class="group form_input" data-aos="fade-down" data-aos-delay="0" data-aos-duration="400">
-            <div class="row" data-aos="fade-down" data-aos-delay="100" data-aos-duration="400">
+          <div class="group form_input" data-aos="fade-down" data-aos-delay="0">
+            <div class="row" data-aos="fade-down" data-aos-delay="100">
               <label for="order-name">姓名<span>*</span></label>
               <el-input v-model="form.name" name="order-name" id="order-name" placeholder></el-input>
             </div>
-            <div class="row" data-aos="fade-down" data-aos-delay="200" data-aos-duration="400">
+            <div class="row" data-aos="fade-down" data-aos-delay="200">
               <label for="order-phone">手機<span>*</span></label>
               <el-input v-model="form.phone" name="order-phone" id="order-phone" placeholder></el-input>
             </div>
@@ -48,7 +48,7 @@
                 }"
               ></el-time-select>
             </div> -->
-            <div class="row" data-aos="fade-down" data-aos-delay="200" data-aos-duration="400">
+            <div class="row" data-aos="fade-down" data-aos-delay="200">
               <label for="order-house">需求坪數<span>*</span></label>
               <el-select v-model="form.house" name="order-house" id="order-house" placeholder>
                 <el-option v-for="city in ['22坪', '30坪', '42坪', '53坪']" :key="city" :label="city" :value="city" no-data-text=""></el-option>
@@ -58,26 +58,26 @@
               <label>E-mail</label>
               <el-input v-model="form.email" placeholder></el-input>
             </div> -->
-            <div class="row" data-aos="fade-down" data-aos-delay="300" data-aos-duration="400">
+            <div class="row" data-aos="fade-down" data-aos-delay="300">
               <label for="order-city">居住城市</label>
               <el-select v-model="form.city" name="order-city" id="order-city" placeholder>
                 <el-option v-for="city in cityList" :key="city.value" :label="city.label" :value="city.value" no-data-text="無數據"></el-option>
               </el-select>
             </div>
-            <div class="row" data-aos="fade-down" data-aos-delay="400" data-aos-duration="400">
+            <div class="row" data-aos="fade-down" data-aos-delay="400">
               <label for="order-area">居住地區</label>
               <el-select v-model="form.area" name="order-area" id="order-area" placeholder>
                 <el-option v-for="area in areaList" :key="area.value" :label="area.label" :value="area.value" no-data-text="請先選擇居住城市"></el-option>
               </el-select>
             </div>
           </div>
-          <div class="group" data-aos="fade-down" data-aos-delay="500" data-aos-duration="400">
+          <div class="group" data-aos="fade-down" data-aos-delay="500">
             <div class="row">
               <el-input type="textarea" :rows="2" placeholder="請輸入您的留言 (選填)" v-model="form.msg"></el-input>
             </div>
           </div>
         </div>
-        <div class="control" data-aos="fade-down" data-aos-delay="500" data-aos-duration="400">
+        <div class="control" data-aos="fade-down" data-aos-delay="500">
           <el-checkbox v-model="checked">
             <h3>
               本人知悉並同意

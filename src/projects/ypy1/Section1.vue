@@ -99,11 +99,20 @@
 	c-2.1-0.9-3.8-2.6-4.7-4.7h-42c-0.9,2.1-2.6,3.8-4.7,4.7v0V111.8z M307.2,8.1c2.3-0.8,4.1-2.6,4.9-4.9h43c0.8,2.3,2.6,4.1,4.9,4.9
 	v104.1c-2.3,0.8-4.1,2.6-4.9,4.9h-43c-0.8-2.3-2.6-4.1-4.9-4.9V8.1z" />
       </svg>
-    <h1 class="title" data-aos="fade-up" data-aos-delay="400" data-aos-offset="-200" data-aos-duration="400">中路一品窗景</h1>
-    <h1 class="subtitle" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-200" data-aos-duration="400">風禾公園 詠恆棟距</h1>
-    <h1 class="desc" data-aos="fade-up" data-aos-delay="800" data-aos-offset="-200" data-aos-duration="400">
+    <h1 class="t1" data-aos="fade-up" data-aos-delay="400" data-aos-offset="-200"><span>24層領空帝標 60米大興西路</span></h1>
+    <div class="hr1" v-if="isMobile"></div>
+    <div class="hr2" v-if="isMobile"></div>
+    <h1 class="t2" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-200">22-53坪｜<span>03-301-3777</span><!-- <h3 class="btn" v-scroll-to="{ element: `#contact` }">
+      立即預約
+    </h3>  --></h1>
+
+<!--
+    <h1 class="title" data-aos="fade-up" data-aos-delay="400" data-aos-offset="-200">中路一品窗景</h1>
+    <h1 class="subtitle" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-200">風禾公園 詠恆棟距</h1>
+    <h1 class="desc" data-aos="fade-up" data-aos-delay="800" data-aos-offset="-200">
       60米大興西路 ｜ 30、42、53坪 ｜ <span>03-301-3777</span>
     </h1>
+    -->
   </div>
 </template>
 <style type="text/css">
@@ -247,6 +256,9 @@
   background-size: cover;
   z-index: 3;
   // margin: 0 0 size(400) 0;
+  color: #FFF;
+  text-align: center;
+  font-size: size(39);
 }
 
 .bg-img {
@@ -262,15 +274,16 @@
 .bg-t {
   transform: translateY(-99.7%);
 }
+/*
 .logo {
   @include img_c_pc(368, 282);
-  top: calc(40% + (318 - 1080 * .4) * 100vw / 1920);
+  top: calc(40% + (250 - 1080 * .4) * 100vw / 1920);
 }
 
 .title {
   @include img_c_pc(342, 606);
   width: auto;
-  top: calc(40% + (556 - 1080 * .4) * 100vw / 1920);
+  top: calc(40% + (576 - 1080 * .4) * 100vw / 1920);
   font-size: size(57);
   font-weight: 600;
   font-stretch: normal;
@@ -285,7 +298,7 @@
 .subtitle {
   @include img_c_pc(342, 683);
   width: auto;
-  top: calc(40% + (633 - 1080 * .4) * 100vw / 1920);
+  top: calc(40% + (653 - 1080 * .4) * 100vw / 1920);
   font-size: size(40);
   font-weight: 600;
   font-stretch: normal;
@@ -300,7 +313,7 @@
 .desc {
   @include img_c_pc(554, 752);
   width: auto;
-  top: calc(40% + (702 - 1080 * .4) * 100vw / 1920);
+  top: calc(40% + (722 - 1080 * .4) * 100vw / 1920);
   font-size: size(27);
   font-weight: 600;
   font-stretch: normal;
@@ -316,6 +329,58 @@
     letter-spacing: size(-2.02);
     color: #fff000;
   }
+}*/
+
+.t1 {
+  @include img_c_pc(900, 696);
+  top: calc(50% + 6vw);
+  letter-spacing: 0.07em;
+  font-weight: 600;
+  span{transform: scaleX(0.95);transform-origin: center;display: block;}
+}
+
+.t2 {
+  @include img_c_pc(900, 789);
+  top: calc(50% + 10vw);
+  letter-spacing: 0.12em;
+  span{color: #FFF000;}
+.btn {
+  @include div_r_pc(343, 77, 0, 0);
+  position: relative;
+  display: inline-flex;
+  font-size: size(41.6);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: #1d2088;
+  cursor: pointer;
+  background: #fff000;
+  border-radius:1em;
+  transition:0.5s all;margin:0 3.2em 0 1em;
+  &::before{content: "";position: absolute;top: 0;left:0;width: 100%;height: 100%;border:0.05em solid #fff000;
+  border-radius:1em;
+  animation: btn 1s ease-in-out infinite;}
+  &:hover{
+    transform:scale(1.1);
+  }
+}
+}
+
+.logo {
+  @include img_c_pc(500, 227);
+  top: calc(50% - 13.5vw);
+}
+
+@keyframes btn {
+  to {
+    border:0.05em solid #FFF0;
+    transform:scaleX(1.1);
+  }
 }
 
 /* 螢幕尺寸標準 */
@@ -328,14 +393,54 @@
     min-height: sizem(667);
     max-height: sizem(667);
     height: calc(100vh - 63px);
+  font-size: sizem(27);
   }
 
-  .logo {
-    @include img_c_m(234, 161);
-  }
 .bg-img {
   top:sizem(589);
 }
+ .t1 {
+    @include img_c_m(375, 323);
+    top: calc(50% + -1vw);
+  }
+
+  .t2 {
+    @include img_c_m(375, 372);
+    top: calc(50% + 13vw);
+ /* font-size: sizem(29);
+  span{display: block;}
+  .btn {display: flex;
+    @include div_c_m(248, 55, 450);
+    top: calc(50% + 20vw);
+    font-size: sizem(29);
+    left: 50%;
+    transform: translateX(-50%);
+    }*/
+  }
+/*
+  .hr1 {
+    @include img_l_m(78, 385, 12.5);
+    border-top: 2px solid #fff;
+    top: calc(50% + 7vw);
+  }
+
+  .hr2 {
+    @include img_r_m(78, 385, 12.5);
+    border-top: 2px solid #fff;
+    top: calc(50% + 7vw);
+  }*/
+
+  .logo {
+    @include div_c_m(277, 180, 119);
+    top: calc(50% + -60vw);
+  }
+
+  
+
+/*
+  .logo {
+    @include img_c_m(234, 161);
+  }
   .title {
     @include img_c_m(216, 363);
   width: auto;
@@ -379,7 +484,7 @@
       letter-spacing: size(-2.02);
       color: #fff000;
     }
-  }
+  }*/
 }
 </style>
 <script>

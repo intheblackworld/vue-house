@@ -6,10 +6,10 @@
     <img src="./s7/bg_b.png" :alt="`${info.caseName}_img`" class="bg-img bg-b">
       <img src="./s6/bg_b.png" :alt="`${info.caseName}_img`" class="bg-img bg-t" v-if="isPC">
     <img src="./m/8/bg_b.png" :alt="`${info.caseName}_img`" class="bg-img bg-b" v-if="isMobile">
-    <img src="./s7/img.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400" v-if="isPC">
-    <img src="./m/8/img.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400" v-if="isMobile">
-    <div class="hr" data-aos="zoom-in-down" data-aos-delay="0" data-aos-duration="400"></div>
-    <h3 class="title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="400">建材一品</h3>
+    <img src="./s7/img.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+    <img src="./m/8/img.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-up" data-aos-delay="200" v-if="isMobile">
+    <div class="hr" data-aos="zoom-in-down" data-aos-delay="0"></div>
+    <h3 class="title" data-aos="fade-up" data-aos-delay="0">建材一品</h3>
   </div>
 </template>
 
@@ -78,8 +78,8 @@
 
 @media screen and (max-width: 767px) {
   .section7 {
-    width: 100vw;
-    min-height: sizem(665);
+    width: 100%;
+    min-height: sizem(667);
     max-height: sizem(812);
     height: calc(100vh - 63px);
     margin: 0 0 0vw 0;
@@ -88,13 +88,16 @@
   }
 
   .bg-tt {
-    width: 100vw;
+    width:100%;
     top: 0;
     left: 0;
     position: absolute;
     z-index: 2;
   }
-
+.bg-b{ top: sizem(648);
+transform: translateY(0);
+bottom: auto;
+}
   .img {
     @include img_c_m(348, 130);
   }

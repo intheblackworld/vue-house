@@ -20,8 +20,8 @@
       </div>
       <transition-group name="swipe-fade" mode="out-in">
         <div v-for="(slide, index) in slideList" v-show="slideIndex === index" :key="slide.img + index" :class="`txt absolute`">
-          <div class="hr1" data-aos="zoom-in-down" data-aos-delay="0" data-aos-duration="400"></div>
-          <h3 class="title" v-html="slide.title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="400"></h3>
+          <div class="hr1" data-aos="zoom-in-down" data-aos-delay="0"></div>
+          <h3 class="title" v-html="slide.title" data-aos="fade-up" data-aos-delay="0"></h3>
           <h3 class="subtitle" v-html="slide.subtitle"></h3>
           <div class="hr2"></div>
           <h3 class="name" v-html="slide.name"></h3>

@@ -102,8 +102,9 @@ export default {
 
 .navigation {
   // background-color: $nav_bg;
-  // background-image: $nav_bg;
-  // background-size: cover;
+   background-image: $nav_bg;
+   background-position: top center;
+   background-size: 100% auto;
   height: $nav_pc_height;
   z-index: 10;
   position: fixed;
@@ -111,12 +112,13 @@ export default {
   width: 100vw;
   display: flex !important;
   align-items: center;
+
  // background-image: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, .3) 80%);
   // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
 
-    &::after{content:"";
+   /* &::after{content:"";
   width: 100%; height: 100%;background:#000;
-    position: absolute;bottom:100%;left: 0;box-shadow:0 0 140px 10px rgb(0 0 0);}
+    position: absolute;bottom:100%;left: 0;box-shadow:0 0 100px 50px rgb(0 0 0);}*/
 }
 
 .nav-container {
@@ -188,19 +190,28 @@ export default {
     // overflow: hidden;
     border-bottom: 3px solid #fff0;
     // margin-top: -30px;
-    font-size: size(21);
+    font-size: size(24);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: 3.3;
     letter-spacing: normal;
     text-align: left;
-    color: #ffffff;
+    &::after{content:"";
+    background:url('~@/projects/ypy1/s1/menul.png');
+    background-size: 100% 100%;
+    width: calc(100vw * 0 / 1920);
+    height: calc(100vw * 0 / 1920);
+    position: absolute;
+    left:calc(50% - 50vw * 140 / 1920);bottom:.8vw;width:0;transform: translate(0,80%);transition: all 0.3s;
+    }
 
     &:hover {
-      color: $nav_link_hover_color;
-      // background: $nav_link_hover_bg;
-    border-bottom: 3px solid #FFF000;
+    color:$nav_link_hover_color;
+    &:after{
+    width: calc(100vw * 140 / 1920);
+    height: calc(100vw * 26 / 1920);
+    }
     }
 
     //  &::before {
@@ -328,7 +339,9 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .navigation {
-    background-color: transparent !important;
+    
+   background-image:none;
+    background-color:#0699;
     height: $nav_phone_height;
     //  background-color: #fff;
     height: 70px;

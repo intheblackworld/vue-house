@@ -1,10 +1,10 @@
 <template>
   <div class="section2">
     <img src="./s2/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="!isMobile">
-    <h3 class="title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="400">
+    <h3 class="title" data-aos="fade-up" data-aos-delay="0">
       桃園豪宅品牌．嘉璟機構
     </h3>
-    <h3 class="subtitle" data-aos="fade-up" data-aos-delay="100" data-aos-duration="400">
+    <h3 class="subtitle" data-aos="fade-up" data-aos-delay="100">
       中路特區｜領空鉅作
     </h3>
     <Map v-if="isMobile" :tagList="tagList" :bgSrc="isMobile ? bgmSrc: bgSrc" :hand="hand">

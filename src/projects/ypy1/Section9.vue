@@ -5,10 +5,10 @@
     <div class="content">
       <transition-group name="fade-up" mode="out-in">
         <div v-if="blockIndex === 0" key="block0" class="text">
-          <h3 class="title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="400">
+          <h3 class="title" data-aos="fade-up" data-aos-delay="0">
             1分鐘 南桃園交流道
           </h3>
-          <p class="desc" data-aos="fade-up" data-aos-delay="100" data-aos-duration="400">
+          <p class="desc" data-aos="fade-up" data-aos-delay="100">
             <span>【嘉璟一品硯】</span><br />
             座落60米大興西路林蔭大道，<br />
             媲美台北市仁愛、敦南綠園道情境。<br />
@@ -41,7 +41,7 @@
             車行約7分鐘即抵中茂新天地，<br v-if="isPC" />
             藝文特區人氣商圈，給全家多元選擇。
           </p>
-          <h3 class="title cursor" @click="changeItem(2)" data-aos-delay="300" data-aos-duration="400">
+          <h3 class="title cursor" @click="changeItem(2)">
             <div :class="`icon ${itemIndex === 2 ? 'active' : ''}`"></div>
             校園第一排 近何嘉仁、康萊爾
           </h3>
