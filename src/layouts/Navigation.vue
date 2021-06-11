@@ -16,8 +16,9 @@
             <div class="close" @click="isOpen = false" v-if="isMobile">
               <img src="../assets/img/close.png" alt="">
             </div>
-            <img src="@/projects/lc/menu/icon_f.png" alt="" class="fb" @click="showMessengerDialog" v-if="isMobile">
-            <img src="@/projects/lc/menu/icon_l.png" alt="" class="line" v-if="isMobile">
+            <img src="@/projects/lc/menu/icon_f.png" alt="fb" class="icon_f" @click="showMessengerDialog" v-if="isMobile">
+           <!-- <img src="@/projects/lc/menu/icon_l.png" alt="line" class="icon_l" @click="showMessengerDialog" v-if="isMobile">  -->
+            <a href="https://www.104.com.tw/company/1a2x6bjs2o" target="_blank"><img src="@/projects/lc/menu/icon_104.png" alt="104" class="icon_104" v-if="isMobile"></a>
             <!-- <li v-if="isMobile" alt v-scroll-to="{ element: `#section1`, offset: offset }"><img class="navlogo" src="@/assets/img/nav-logo.png" /></li> -->
             <li :key="item.name" v-for="item in list" class="flex-c">
               <span :class="`link ${item.path == $route.name ? 'active' : ''}`" @click="toggleSidebar(item.path)">
@@ -28,7 +29,14 @@
               </span>
             </li>
             <li class="flex-c" @click="showMessengerDialog">
-          <img src="@/projects/lc/menu/icon_f.png" class="fb" alt="fb">
+          <img src="@/projects/lc/menu/icon_f.png" class="icon_f" alt="fb">
+            </li>
+          <!--   <li class="flex-c" @click="showMessengerDialog">
+          <img src="@/projects/lc/menu/icon_l.png" class="line" alt="line">
+          </li> -->
+            <li class="flex-c">
+              <a href="https://www.104.com.tw/company/1a2x6bjs2o" target="_blank">
+          <img src="@/projects/lc/menu/icon_104.png" class="icon_104" alt="104"></a>
             </li>
            <!-- <li class="flex-c">
           <img src="@/projects/lc/menu/icon_l.png" class="line" alt="line">
@@ -164,15 +172,10 @@ export default {
   }
 }
 
-.line {
-  width:1.5em;
-  display: block;
-  
-  cursor: pointer;
-    margin: 0 1.5em 0 0;
-}
-.fb {
-  width:1.5em;
+.icon_l,
+.icon_f,
+.icon_104 {
+  height:1.5em;
   display: block;
   cursor: pointer;
     margin: 0 1.5em 0 0;
@@ -454,7 +457,7 @@ export default {
       .link {
         display: flex;
         justify-content: center;
-        color: #fff;
+        color: #fff;    margin: 0;
         .title {
           border-right: none;
         }
@@ -500,8 +503,8 @@ export default {
     transform: translateX(100%);
   }
 
-  .line {
-    width: sizem(40);
+  .icon_l {
+    height: sizem(40);
     position: absolute;
     right: sizem(130);
     display: block;
@@ -510,10 +513,19 @@ export default {
     cursor: pointer;
   }
 
-  .fb {
-    width: sizem(40);
+  .icon_f {
+    height: sizem(40);
     position: absolute;
-    right: 205px;
+    right: sizem(200);
+    display: block;
+    top: auto;
+    bottom: sizem(90);
+    cursor: pointer;
+  }
+  .icon_104 {
+    height:sizem(40);
+    position: absolute;
+    right: sizem(120);
     display: block;
     top: auto;
     bottom: sizem(90);

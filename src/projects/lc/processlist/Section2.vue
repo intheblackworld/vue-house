@@ -18,9 +18,11 @@
       </div>
       <div class="process-item0"></div>
       <div class="process-item0"></div>
+      <!--
       <div class="pagination flex-c">
         <div :class="`pagi flex-c ${index === currentPage ? 'active' : ''}`" v-for="index in pageCount" :key="'pagi' + index" @click="currentPage = index">{{index}}</div>
       </div>
+      -->
     </div>
   </div>
 </template>
@@ -119,21 +121,43 @@
 }
 
 .process-link {
-  width: size(132);
-  height: size(34);
-  border-radius: size(17);
+  width: 9em;
+  height:2.2em;
+  border-radius:1em;
   background-color: #000;
   transition: background-color 0.3s;
   cursor: pointer;
-  font-size: size(12);
+  font-size:calc(12px + 0.05vw);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(0.6);
+  letter-spacing:0.05em;
   text-align: left;
   color: #ffffff;
   float: right;
+  position: relative;
+  &::after{
+    content: "";display: inline-block;
+    width: 1.5em;height: 1.5em;
+    margin: -0.25em -0.5em 0 0.2em;
+    border: 1px solid #FFF;
+    border-radius: 50%;
+
+  }
+  &::before{
+    content: "";
+    position: absolute;
+    right: 10%;
+    top: 31%;
+    width: .7em;
+    height: .7em;
+    border: 1px solid #FFF;
+    border-bottom: 0px;
+    border-left: 0px;
+    transform: rotate(45deg);
+    transform-origin: center center;
+  }
 }
 
 .pagination {
@@ -142,8 +166,8 @@
   margin-top: size(40);
 
   .pagi {
-    width: size(45);
-    height: size(45);
+    width:  2.25em;
+    height: 2.25em;
     font-size: size(20);
     font-weight: 300;
     font-stretch: normal;
@@ -153,7 +177,7 @@
     text-align: left;
     border: solid 1px #ff9e00;
     color: #666666;
-    margin: 0 size(15);
+    margin: 0 0.75em;
     cursor: pointer;
 
     &.active {
@@ -221,18 +245,14 @@
     width: sizem(310);
     height: sizem(414);
     margin: 0 auto sizem(40);
-    cursor: pointer;
   }
 
   .process-b {
-    border-top: 1px solid #707070;
     padding: sizem(15) sizem(10);
   }
 
   .process-img {
-    width: 100%;
     height: sizem(280);
-    object-fit: cover;
     margin-bottom: sizem(10);
   }
 
@@ -248,20 +268,7 @@
   }
 
   .process-link {
-    width: sizem(102);
-    height: sizem(26);
-    border-radius: sizem(13);
-    background-color: #221714;
-    cursor: pointer;
     font-size: sizem(12);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: size(0.6);
-    text-align: left;
-    color: #ffffff;
-    float: right;
   }
 
   .pagination {
@@ -270,24 +277,7 @@
     margin-top: sizem(40);
 
     .pagi {
-      width: sizem(45);
-      height: sizem(45);
       font-size: sizem(20);
-      font-weight: 300;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.2;
-      letter-spacing: normal;
-      text-align: left;
-      border: solid 1px #ff9e00;
-      color: #666666;
-      margin: 0 sizem(15);
-      cursor: pointer;
-
-      &.active {
-        color: #ffffff;
-        background-color: #ff9e00;
-      }
     }
   }
 }

@@ -157,6 +157,20 @@
   text-align: left;
   color: #000000;
   cursor: pointer;
+  &::before{
+    content: "";
+    width: 3em;
+    height: 1em;
+    display: inline-block;
+    border-bottom: 1px solid currentColor;
+    border-left: 1px solid currentColor;
+    transform:skewX(-45deg);
+    transition: all 0.3s;
+  }
+  &:hover:before{
+    width: 4em;
+
+  }
 }
 
 .process-title {
@@ -284,7 +298,7 @@
   }
 
   .dialog-head {
-    @include img_l_pc(0, 30, 194);
+    @include img_l_pc(0, 20, 194);
     width: auto;
     font-size: size(27);
     font-weight: 500;
@@ -396,7 +410,7 @@
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   .name {
@@ -563,7 +577,7 @@
 
   .head {
     width: sizem(310);
-    margin: size(32) auto;
+    margin: sizem(32) auto;
 
     .breads {
       font-size: sizem(15);
@@ -635,25 +649,15 @@
   }
 
   .process-subtitle {
-    font-size: size(20);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.8;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000000;
-    margin-top: size(15);
+    font-size: sizem(18);
   }
 
   .process-item {
     width: sizem(310);
-    min-height: size(414);
+    min-height: sizem(414);
     margin: 0 auto;
-    margin-bottom: size(47);
-    border: 1px solid #707070;
-    text-align: left;
-    cursor: pointer;
+    margin-bottom: sizem(47);
+   // text-align: left;
 
     // &:nth-child(n + 3) {
     //   opacity: 0.5;
@@ -720,12 +724,12 @@
 
     .dialog-content {
       width: sizem(375);
-      height: sizem(384);
+      height: sizem(500);
       max-height: 96vh;
       left: 0;
       right: 0;
       margin: 0 auto;
-      top: 50%;
+      top:calc(50% + 35px);
       transform: translateY(-50%);
       position: absolute;
     }
@@ -741,13 +745,14 @@
 
   /* Swipe */
   .swipe {
-    width: sizem(375);
-    height: sizem(210);
+    width:100%;
+    height: sizem(400);
     z-index: 2;
     margin: sizem(25) 0;
     left: sizem(0);
     float: none;
     object-fit: cover;
+    
   }
 
   // begin
@@ -964,7 +969,7 @@ export default {
           {
             img: require('../process/list/2/7.jpg'),
             title: '2021/5',
-            subtitle: '第一期工程',
+            subtitle: '安全支撐工程<br>地下室支撐施作進行中。',
             isFinished: true,
             imgs: [
               require('../process/list/2/7.jpg'),
