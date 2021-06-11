@@ -19,6 +19,7 @@
       左右對稱黃金比例美學，基座列柱群圍塑護城氣勢。<br />
       頂端以圓型皇冠加冕，成就璀璨的天際景觀美學。
     </p>
+    <div class="bg-name">3D外觀示意圖</div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -26,9 +27,9 @@
 
 .section2 {
   width: 100%;
-  height: 100vh;
-  min-height: size(900);
-  max-height: size(1080);
+  height:auto;
+ /* min-height: size(900);
+  max-height: size(1080);*/
   position: relative;
   z-index: 2;
 }
@@ -42,13 +43,14 @@
   display: block;
   object-fit: cover;
   margin-top: 0;
+  &:first-child{position: relative;}
   &.bg-t{
   height:auto;
   transform: translateY(-99%)
   }
   &.bg-b{
   height:auto;top:auto;bottom: 0;
-  transform: translateY(99%)
+  transform: translateY(99.5%)
   }
 }
 
@@ -111,7 +113,13 @@
   color: #4d4d4d;
   white-space: nowrap;
 }
-
+.bg-name{position: absolute;bottom: 0;
+left:1em;
+color: #FFF;
+font-size:size(15);
+text-shadow: 0 0 0.5em #0009; opacity: 0.5; 
+  
+  }
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -128,9 +136,9 @@
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100%;
-    height: sizem(600);
+  /*  height: sizem(600);
     min-height: sizem(600);
-    max-height: sizem(600);
+    max-height: sizem(600);*/
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
     // background-position: 0 0;

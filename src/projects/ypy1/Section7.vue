@@ -19,7 +19,7 @@
 .section7 {
   width: 100%;
   height:auto;
-  overflow: hidden;
+  //overflow: hidden;
   position: relative;
   background-color: #fff;
   background-size: cover;

@@ -117,7 +117,7 @@
   position: absolute;
   height: 100%;
   width: 3em;
-  background: #0003;
+  //background: #0003;
   top: 0;
 }
 
@@ -434,7 +434,7 @@ export default {
           img: require('./s5/2.jpg'),
           name: '臻之御 實景',
         },
-        {
+        /* {
           img: require('./s5/3.jpg'),
           name: '昭揚縱橫 實景',
         },
@@ -445,7 +445,7 @@ export default {
         {
           img: require('./s5/5.jpg'),
           name: '昭揚大器 實景',
-        },
+        },*/
         {
           img: require('./s5/6.jpg'),
           name: '自遊人 實景',
@@ -454,6 +454,7 @@ export default {
           img: require('./s5/7.jpg'),
           name: '華爾道夫 實景',
         },
+        /*
         {
           img: require('./s5/8.jpg'),
           name: '華爾道夫大廳 實景',
@@ -466,6 +467,7 @@ export default {
           img: require('./s5/10.jpg'),
           name: '大河戀大廳 實景',
         },
+        */
       ],
     }
   },

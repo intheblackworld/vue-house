@@ -31,9 +31,10 @@
       <vue-lazy-component class="section" id="section7">
           <Section7 /> 
       </vue-lazy-component>
-      <vue-lazy-component class="section" id="section8">
+    <!--  <vue-lazy-component class="section" id="section8">
          <Section8 />
-      </vue-lazy-component>
+      </vue-lazy-component>  -->
+
       <vue-lazy-component class="section" id="section9">
         <Section9 :block="blockIndex" />
       </vue-lazy-component>

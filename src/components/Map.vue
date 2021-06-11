@@ -7,20 +7,40 @@
     </div>
     <img
       :src="tag"
+      alt
+      v-for="(tag, index) in tagList"
+      :key="tag"
+      :class="`map${index + 1}`"
+    />
+    <!--
+    <img
+      :src="tag"
       data-aos="fade-down"
       :data-aos-delay="`${index + 1}00`"
       alt
       v-for="(tag, index) in tagList"
       :key="tag"
     />
+    -->
   </div>
 </template>
 <style lang="scss" scoped>
 @import '../assets/style/function.scss';
 .map {
   // padding-top: size-m(150);
-  background-color: rgba(172, 221, 254, 1)
+ // background-color: rgba(172, 221, 254, 1);
+
+.map1,
+.map2{animation: mapop 1.5s ease-in-out infinite alternate;}
+.map2{animation-direction: alternate-reverse;}
 }
+@keyframes mapop {
+  to {
+    opacity: 0;
+  }
+}
+
+
 .desc {
   width: size-m(310);
   left: 0;

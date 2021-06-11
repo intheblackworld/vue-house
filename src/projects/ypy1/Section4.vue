@@ -1,6 +1,7 @@
 <template>
   <div class="section4">
     <div class="swipe swipe1 absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" key="swipe-0">
+      <div class="sw_box1" data-aos="fade"></div><div class="sw_box2" data-aos="fade"></div>
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img + i" :class="`swipe-item absolute`">
@@ -8,6 +9,7 @@
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
+        <!--  等有圖輪播在顯示
         <div class="pagination absolute flex-ac" v-if="isPC">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + index + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
@@ -15,10 +17,12 @@
           <div class="prev-btn" @click="decIndex"></div>
           <div class="next-btn" @click="addIndex"></div>
         </div>
+         -->
       </div>
     </div>
 
     <div class="swipe swipe2 absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" key="swipe-1">
+      <div class="sw_box1" data-aos="fade"></div><div class="sw_box2" data-aos="fade"></div>
       <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(1)" v-touch:swipe.right="() => addMultiIndex(1)">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, index) in slideList1" v-show="slideIndex1 === index" :key="slide.img + index" :class="`swipe-item absolute`">
@@ -160,25 +164,26 @@
   object-fit: cover;
   position: absolute;
   // background: #0344;
-
-  &::before {
-    content: '';
-    background-color: #909090;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: size(-20);
-    right: size(-20);
-  }
-
-  &::after {
-    content: '';
-    border: solid size(2.4) #998675;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: size(20);
-    right: size(20);
+  .sw_box1{
+    left: 0;top: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #909090;
+      top: size(-20);
+      left: size(20);
+    transform: translate(size(-20),size(20));
+      z-index: 1;
+    }
+  .sw_box2{
+      border: solid size(2.4) #998675;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: size(20);
+      left:size(-20);
+    transform: translate(size(20),size(-20));
+      z-index: 3;
   }
 }
 
@@ -233,12 +238,13 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  //z-index: 2;
 }
 
 .swipe-item {
   width: 100%;
   height: 100%;
-  z-index: 0;
+  z-index:2;
 
   img {
     width: 100%;
@@ -250,8 +256,8 @@
     right: 2em;
     bottom: 1.2em;
     color: #fff;
-    font-size: size(18);
-    font-weight: 500;
+    font-size: size(15);
+    font-weight: 400;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.6;
@@ -282,6 +288,7 @@
   left: 0;
   margin: 0 auto;
   justify-content: center;
+      z-index: 4;
 }
 
 .pagination-dot {
@@ -499,7 +506,7 @@
   .swipe-item {
     width: 100%;
     height: 100%;
-    z-index: 0;
+   // z-index: 2;
 
     img {
       width: 100%;
@@ -652,49 +659,49 @@ export default {
       slideList: [
         {
           img: require('./s4/1.jpg'),
-          name: '',
+          name: '3D外觀示意圖',
         },
       ],
       slideList1: [
         {
           img: require('./s4/KTV透視圖.jpg'),
-          name: 'KTV透視圖',
+          name: 'KTV示意圖',
         },
         {
           img: require('./s4/lobby透視圖.jpg'),
-          name: 'lobby透視圖',
+          name: 'lobby示意圖',
         },
         {
           img: require('./s4/交誼廳透視圖.jpg'),
-          name: '交誼廳透視圖',
+          name: '交誼廳示意圖',
         },
         {
           img: require('./s4/酒吧廊道透視圖.jpg'),
-          name: '酒吧廊道透視圖',
+          name: '酒吧廊道示意圖',
         },
         {
           img: require('./s4/健身房透視圖.jpg'),
-          name: '健身房透視圖',
+          name: '健身房示意圖',
         },
         {
           img: require('./s4/會議室透視圖.jpg'),
-          name: '會議室透視圖',
+          name: '會議室示意圖',
         },
         {
           img: require('./s4/瑜珈室透視圖.jpg'),
-          name: '瑜珈室透視圖',
+          name: '瑜珈室示意圖',
         },
         {
           img: require('./s4/遊戲室透視圖.jpg'),
-          name: '遊戲室透視圖',
+          name: '遊戲室示意圖',
         },
         {
           img: require('./s4/閱覽室透視圖.jpg'),
-          name: '閱覽室透視圖',
+          name: '閱覽室示意圖',
         },
         {
           img: require('./s4/親子室透視圖.jpg'),
-          name: '親子室透視圖',
+          name: '親子室示意圖',
         },
       ],
     }

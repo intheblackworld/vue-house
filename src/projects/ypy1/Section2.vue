@@ -1,13 +1,14 @@
 <template>
   <div class="section2">
     <img src="./s2/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="!isMobile">
+    <div class="map"></div>
     <h3 class="title" data-aos="fade-up" data-aos-delay="0">
       桃園豪宅品牌．嘉璟機構
     </h3>
     <h3 class="subtitle" data-aos="fade-up" data-aos-delay="100">
       中路特區｜領空鉅作
     </h3>
-    <Map v-if="isMobile" :tagList="tagList" :bgSrc="isMobile ? bgmSrc: bgSrc" :hand="hand">
+    <Map :tagList="tagList" :bgSrc="isMobile ? bgmSrc: bgSrc" :hand="hand">
     </Map>
   </div>
 </template>
@@ -70,7 +71,14 @@
   color: #000000;
   white-space: nowrap;
 }
-
+.map {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 // .more {
 //   @include img_r_pc(309 + 20 + 63, 685, 110);
 //   font-size: size(24);
@@ -144,6 +152,14 @@
     z-index: 10;
     white-space: nowrap;
   }
+.map {
+    position: relative;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width:auto;
+    height: auto;
+}
 }
 </style>
 <script>
@@ -167,7 +183,7 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
-      tagList: [],
+      tagList: [require('./s2/3.png'),require('./s2/2.png'),require('./s2/1.png'),],
       bgmSrc: require('./s2/bg.jpg'),
       hand: require('./s2/hand.png'),
     }
