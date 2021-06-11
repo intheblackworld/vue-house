@@ -61,7 +61,7 @@
 }
 
 .label {
-  @include img_l_pc(120, 157, 1170);
+  @include img_l_pc(300, 157, 1170);
   font-size: size(30);
   font-weight: 500;
   width: auto;

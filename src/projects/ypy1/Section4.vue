@@ -256,14 +256,14 @@
     right: 2em;
     bottom: 1.2em;
     color: #fff;
-    font-size: size(15);
+    font-size: size(16);
     font-weight: 400;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.6;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.06em;
     text-align: left;
-    text-shadow: 0 0.3em 1em #000;
+    text-shadow: 0 0.3em 1.5em #000, 0 0em 0.5em #000,;
   }
 
   // &:nth-child(1) {

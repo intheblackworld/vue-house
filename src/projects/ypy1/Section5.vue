@@ -50,8 +50,7 @@
 }
 
 .label {
-  @include img_l_pc(120, 110, 1270);
-  width: auto;
+  @include img_l_pc(430, 110, 1270);
   font-size: size(30);
   font-weight: 500;
   font-stretch: normal;
@@ -60,10 +59,12 @@
   letter-spacing: normal;
   text-align: left;
   color: #ffffff;
+  white-space: nowrap;
+  width: auto;
 }
 
 .title {
-  @include img_l_pc(437, 154, 1270);
+  @include img_l_pc(447, 154, 1270);
   width: auto;
   font-size: size(35);
   font-weight: 900;
@@ -173,7 +174,7 @@
   }
 
   .label {
-    @include img_l_m(84, 10, 41);
+    @include img_l_m(312, 10, 41);
     width: auto;
     font-size: sizem(21);
     font-weight: 500;

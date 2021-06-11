@@ -63,7 +63,7 @@ z-index: 5;}
 }
 
 .label {
-  @include img_l_pc(120, 110 + 166, 1270);
+  @include img_l_pc(437, 110 + 166, 1270);
   width: auto;
   font-size: size(30);
   font-weight: 500;
@@ -76,7 +76,7 @@ z-index: 5;}
 }
 
 .title {
-  @include img_l_pc(437, 154 + 166, 1270);
+  @include img_l_pc(447, 154 + 166, 1270);
   width: auto;
   font-size: size(35);
   font-weight: 900;
