@@ -5,11 +5,11 @@
         <router-link to="/">首頁</router-link> >
         <router-link to="/process">工程進度</router-link> >
       </div>
-      <div class="title" v-html="slideList[0].o_title"></div>
-      <div class="subtitle" v-html="slideList[0].o_subtitle"></div>
+      <div class="title" v-html="list[this.$route.params.id][0].o_title"></div>
+      <div class="subtitle" v-html="list[this.$route.params.id][0].o_subtitle"></div>
     </div>
     <div class="process-container">
-      <div class="process-item" v-for="(item, index) in slideList" :key="item.title + index" @click="showDialog(item.isFinished, index)">
+      <div class="process-item" v-for="(item, index) in list[this.$route.params.id]" :key="item.title + index" @click="showDialog(item.isFinished, index)">
         <img :src="item.img" alt="" class="process-img">
         <div class="process-b">
           <div class="process-title">
@@ -31,22 +31,22 @@
 
       <div class="dialog-content">
         <div class="dialog-head">
-          首頁 > 工程進度 > {{ slideList[0].o_title }}> {{ slideList[slideIndex].title }}
+          首頁 > 工程進度 > {{ list[this.$route.params.id][0].o_title }}> {{ list[this.$route.params.id][dialogIndex].title }}
         </div>
         <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
           <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
             <transition-group name="swipe-fade" mode="out-in">
-              <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img + i" :class="`swipe-item absolute`">
-                <img :src="slide.img" :alt="slide.name">
-                <div class="name absolute" v-html="slide.name"></div>
+              <div v-for="(img, i) in list[this.$route.params.id][dialogIndex].imgs" v-show="slideIndex === i" :key="img + i" :class="`swipe-item absolute`">
+                <img :src="img" :alt="img">
+                <!-- <div class="name absolute" v-html="slide.name"></div> -->
               </div>
             </transition-group>
             <div class="swipe-btns absolute flex-ac flex-jb">
-              <div class="prev-btn" @click="decIndex"></div>
-              <div class="next-btn" @click="addIndex"></div>
+              <div class="prev-btn" @click="dec"></div>
+              <div class="next-btn" @click="add"></div>
             </div>
             <div class="pagination absolute flex-ac" v-if="isPC">
-              <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot' + index" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+              <div :class="`pagination-dot`" v-for="(slide, index) in list[this.$route.params.id][dialogIndex].imgs" :key="slide.img + '-dot' + index" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
             </div>
           </div>
         </div>
@@ -128,7 +128,7 @@
   margin: size(40) auto;
   padding-bottom: size(80);
   position: relative;
-  justify-content: space-between;
+  // justify-content: space-between;
   display: flex;
   flex-wrap: wrap;
 }
@@ -177,6 +177,7 @@
 .process-item {
   width: size(403);
   min-height: size(537);
+  margin: size(20);
   margin-bottom: size(70);
   border: 1px solid #707070;
   text-align: left;
@@ -895,6 +896,7 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
+      dialogIndex: 0,
       tabIndex: 0,
       slideList: [
         [
@@ -918,36 +920,23 @@ export default {
             title: '2021/4',
             subtitle: '基礎工程啟動<br/>地下室開挖工程按部進行。',
             isFinished: true,
+            imgs: [
+              require('../process/list/1/1.jpg'),
+              require('../process/list/1/2.jpg'),
+              require('../process/list/1/3.jpg'),
+              require('../process/list/1/4.jpg'),
+              require('../process/list/1/5.jpg'),
+            ],
           },
           {
-            img: require('../process/list/1/2.jpg'),
+            img: require('../process/list/2/7.jpg'),
             title: '2021/5',
             subtitle: '第一期工程',
             isFinished: true,
-          },
-          {
-            img: require('../process/list/1/3.jpg'),
-            title: '2021/5',
-            subtitle: '第一期工程',
-            isFinished: true,
-          },
-          {
-            img: require('../process/list/1/4.jpg'),
-            title: '2021/5',
-            subtitle: '第一期工程',
-            isFinished: true,
-          },
-          {
-            img: require('../process/list/1/5.jpg'),
-            title: '2021/5',
-            subtitle: '第一期工程',
-            isFinished: true,
-          },
-          {
-            img: require('../process/list/1/6.jpg'),
-            title: '2021/5',
-            subtitle: '第一期工程',
-            isFinished: true,
+            imgs: [
+              require('../process/list/2/7.jpg'),
+              require('../process/list/2/8.jpg'),
+            ]
           },
         ],
         /*{
@@ -965,8 +954,18 @@ export default {
     showDialog(isFinished, index) {
       if (isFinished) {
         this.isDialog = true
-        this.slideIndex = index
+        this.dialogIndex = index
       }
+    },
+
+    add() {
+       this.slideIndex =
+        this.slideIndex === this.list[this.$route.params.id][this.dialogIndex].imgs.length - 1 ? 0 : this.slideIndex + 1
+    },
+
+    dec() {
+      this.slideIndex =
+        this.slideIndex === 0 ? this.list[this.$route.params.id][this.dialogIndex].imgs.length - 1 : this.slideIndex - 1
     },
 
     closeDialog() {},
@@ -983,9 +982,9 @@ export default {
     // },
   },
 
-  mounted() {
+  created() {
     this.toggleTimer = false
-    this.slideList = this.list[this.$route.params.id]
+    // this.slideList = this.list[this.$route.params.id]
   },
 
   created() {},

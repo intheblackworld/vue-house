@@ -2,7 +2,7 @@ export default {
   data() {
     return {
       slideIndex: 0,
-      toggleTimer: true,
+      toggleTimer: false,
       stopAutoPlay: false,
     }
   },
