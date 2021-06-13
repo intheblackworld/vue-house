@@ -939,7 +939,7 @@ export default {
       slideList: [
         [
           {
-            img: require('../process/list/1/1.jpg'),
+            img: require('../process/list/1/0.jpg'),
             o_title: '2021 立瑾WAY',
             o_subtitle: '已完售，預計2023年初完工。',
             title: '2021/4',
@@ -952,28 +952,29 @@ export default {
         //...Array(18).keys()].map((i) => ({
         [
           {
-            img: require('../process/list/1/1.jpg'),
+            img: require('../process/list/1/7.jpg'),
             o_title: '2021 立瑾WAY',
             o_subtitle: '已完售，預計2023年初完工。',
             title: '2021/4',
             subtitle: '基礎工程啟動<br/>地下室開挖工程按部進行。',
             isFinished: true,
             imgs: [
-              require('../process/list/1/1.jpg'),
-              require('../process/list/1/2.jpg'),
-              require('../process/list/1/3.jpg'),
-              require('../process/list/1/4.jpg'),
-              require('../process/list/1/5.jpg'),
+              require('../process/list/1/7.jpg'),
+              require('../process/list/1/8.jpg'),
             ],
           },
           {
-            img: require('../process/list/2/7.jpg'),
+            img: require('../process/list/2/1.jpg'),
             title: '2021/5',
             subtitle: '安全支撐工程<br>地下室支撐施作進行中。',
             isFinished: true,
             imgs: [
-              require('../process/list/2/7.jpg'),
-              require('../process/list/2/8.jpg'),
+              require('../process/list/2/1.jpg'),
+              require('../process/list/2/2.jpg'),
+              require('../process/list/2/3.jpg'),
+              require('../process/list/2/4.jpg'),
+              require('../process/list/2/5.jpg'),
+              require('../process/list/2/6.jpg'),
             ]
           },
         ],
