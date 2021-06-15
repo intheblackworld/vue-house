@@ -109,8 +109,8 @@ export default {
   justify-content: space-between;
   position: relative;
   z-index: 3;
-  //width: 1200px;
-  width: 100%;
+  width: 1200px;
+  // width: size;
   height: 590px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
@@ -141,7 +141,7 @@ export default {
   margin-bottom: 20px;
   cursor: pointer;
   text-decoration: none;
-  // border-radius: 60px / 60px;
+  border-radius: 60px / 60px;
   color: $contact_btn_color;
   background: $contact_btn_bg;
   box-shadow: $contact_btn_border;
@@ -201,8 +201,8 @@ export default {
   font-weight: bold;
   box-shadow: $contact_btn_border;
   z-index: 1;
-  // border-top-left-radius: 60px;
-  // border-bottom-left-radius: 60px;
+  border-top-left-radius: 60px;
+  border-bottom-left-radius: 60px;
 }
 .google-btn {
   width: 280px;
@@ -211,8 +211,8 @@ export default {
   cursor: pointer;
   text-decoration: none;
   font-weight: 900;
-  // border-top-right-radius: 60px;
-  // border-bottom-right-radius: 60px;
+  border-top-right-radius: 60px;
+  border-bottom-right-radius: 60px;
   color: $contact_google_btn_color;
   background: $contact_google_btn_bg;
   background-position: center !important;
@@ -317,10 +317,10 @@ export default {
     width: 100%;
   }
   .google-btn {
-    // border-top-right-radius: 0px;
-    // border-top-left-radius: 0px;
-    // border-bottom-right-radius: 30px;
-    // border-bottom-left-radius: 30px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
   }
   .address {
     // width: 280px;
@@ -328,10 +328,10 @@ export default {
     text-align: justify;
     line-height: 1.5;
     height: auto;
-    // border-top-right-radius: 30px;
-    // border-top-left-radius: 30px;
-    // border-bottom-right-radius: 0px;
-    // border-bottom-left-radius: 0px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
   }
   .google-btn {
     margin-top: 0;

@@ -255,8 +255,8 @@ export default {
   }
 }
 .order-bg {
-  // background-color: $order_bg_color;
-  background-image: $order_bg_image;
+  background-color: $order_bg_color;
+  // background-image: $order_bg_image;
   background-repeat: no-repeat;
   // position: relative;
   padding-top: 130px;
@@ -288,23 +288,23 @@ export default {
     color: $order_title_color;
     position: relative;
 
-    &::after {
-      content: '';
-      width: 329px;
-      border-top: 1px solid #fff000;
-      position: absolute;
-      right: 215px;
-      top: 50%;
-    }
+    // &::after {
+    //   content: '';
+    //   width: 329px;
+    //   border-top: 1px solid #fff000;
+    //   position: absolute;
+    //   right: 215px;
+    //   top: 50%;
+    // }
 
-    &::before {
-      content: '';
-      width: 310px;
-      border-top: 1px solid #fff000;
-      position: absolute;
-      left: 220px;
-      top: 50%;
-    }
+    // &::before {
+    //   content: '';
+    //   width: 310px;
+    //   border-top: 1px solid #fff000;
+    //   position: absolute;
+    //   left: 220px;
+    //   top: 50%;
+    // }
     // border-top: 1px solid #248184;
     // border-bottom: 1px solid #248184;
   }
@@ -381,7 +381,7 @@ export default {
   }
 
   .form_input{
-     border-right: 1px solid #fff000;
+     border-right: 1px solid $order_subtitle_color;
      padding-right:3%;
      margin-right:3%;
     .row{

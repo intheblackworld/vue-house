@@ -1,16 +1,35 @@
 <template>
   <div class="section3">
-    <img src="./s3/03_img.png" :alt="`${info.caseName}_img`" class="bg-img"  v-if="!isMobile">
-    <h3 class="title" data-aos="fade-up" data-aos-delay="200">
-      洲子洋天空再進化<br v-if="isMobile"><span v-if="!isMobile">　</span>讓雙北人都羨慕
-    </h3>
-    <div class="hr" data-aos="zoom-in-right" data-aos-delay="400" data-aos-offset="100"></div>
-    <div class="desc" data-aos="fade-up" data-aos-delay="600">
-      15萬坪寬闊樹海濃蔭，424公頃大台北都會水岸公園，藍天、綠邑絕美生活別說你不羨慕！<br />
-      這就是洲子洋，宜居大城持續進化，讓雙北人一眼愛上
+    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" alt="">
+            <!-- <div class="slide-name absolute" v-html="slide.name"></div> -->
+          </div>
+        </transition-group>
+        <div class="pagination absolute flex-ac" v-if="isPC">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+        </div>
+        <div class="swipe-btns absolute flex-ac flex-jb">
+          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+        </div>
+      </div>
     </div>
-<Map v-if="isMobile" :tagList="tagList" :bgSrc="isMobile ? bgmSrc: bgSrc" :hand="hand">
-    </Map>
+    <div class="txt">
+      <h3 class="title title1" data-aos="fade-up" data-aos-delay="400">
+        都會人生節奏
+      </h3>
+      <h3 class="title title2" data-aos="fade-up" data-aos-delay="400">
+        世界盡其在我
+      </h3>
+      <div class="hr" data-aos="zoom-in-right" data-aos-delay="600"></div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="800">
+        淡海新市鎮位居海空雙港樞紐、大台北門戶核心，西接台北港、桃園機場，東連大屯山、北海岸風景區，南銜台北科技走廊，僅約16公里直抵台北市中心。<br />
+        掌握都會脈動，用速度改寫時間與空間定義，左右逢源、四通八達，整個北台灣都是我的生活圈！
+      </div>
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -19,7 +38,7 @@
 .section3 {
   width: 100%;
   height: 100vh;
-  min-height: size(900);
+  min-height: size(1080);
   max-height: size(1080);
   position: relative;
   // background-color: #fff;
@@ -29,71 +48,244 @@
   // background-position: 0 0;
   // background-attachment: fixed;
   // overflow: hidden;
+  // &::after {
+  //   content: '';
+  //   width: 120%;
+  //   height: size(120);
+  //   position: absolute;
+  //   bottom: size(-90);
+  //   left: -10%;
+  //   background: url('./all/section_bg.jpg') fixed;
+  //   background-size: cover;
+  //   border-radius: 100% 100% 0 0;
+  //   z-index: 2;
+  // }
+  // &::after {
+  //   border-radius: 0 0 100% 100%;
+  //   top: size(-90);
+  //   bottom: auto;
+  // }
 }
 
-.bg-img {
-  width: 100%;
-  height:auto;
-  position: absolute;
-  top:calc(60% - 100vw * 1096 * 0.6 / 1920 );
-  left: 0;
-  display: block;
-  object-fit: cover;
-  margin-top: 0;
-  // opacity: 0.5;
-/*
-  &:nth-child(1) {
-    position: relative;
-  }*/
+.txt {
+  @include div_r_pc(594, 547, 308, 198);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 152, 205, 0.8),
+    rgba(141, 194, 31, 0.8)
+  );
+  padding: size(40) size(20);
 }
-
 .title {
-  @include img_c_pc(762, 60);
+  width: 90%;
+  margin: 0 auto;
   font-size: size(50);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(-2.5);
-  text-align: center;
-  color: #ffffff;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff000;
   white-space: nowrap;
+}
+
+.title1 {
+}
+
+.title2 {
+  text-align: right;
 }
 
 .hr {
-  @include img_c_pc(842, 140);
+  width: 100%;
   // height: 35px;
   border-top: size(1) solid #fff;
+  margin: size(15) 0;
 }
 
 .desc {
-  @include img_c_pc(838, 155);
-  font-size: size(20);
+  // text-shadow: 0 2px 5px rgba(0, 0, 0, 0.44);
+  width: 90%;
+  margin: 0 auto;
+  font-size: size(23);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.25;
-  letter-spacing: size(1);
-  text-align: center;
-  color: #ffffff;
-  white-space: nowrap;
-}
-
-.more {
-  @include img_r_pc(309 + 20 + 63, 685, 110);
-  font-size: size(24);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.04;
-  letter-spacing: size(2.8);
+  line-height: 1.91;
+  letter-spacing: normal;
   text-align: left;
   color: #ffffff;
-  cursor: pointer;
-  white-space: nowrap;
+  // white-space: nowrap;
+}
+
+/* Swipe */
+.swipe {
+  width: 100%;
+  height: 100%;
+  bottom: size(0);
+  left: 0;
+  object-fit: cover;
+  // background:#0344;
+}
+
+// begin
+.swipe-fade-leave-to {
+  opacity: 0;
+  z-index: 0;
+}
+// end
+.swipe-fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.swipe-fade-enter-active {
+  transition: all 0.5s ease;
+}
+
+.swipe-fade-leave-active {
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+// begin
+// .swipe-left-leave-to {
+//   margin-left: -100vw;
+//   z-index: 0;
+// }
+// // end
+// .swipe-left-enter {
+//   opacity: 0.5;
+//   margin-left: 0;
+//   z-index: 1;
+// }
+
+// .swipe-left-enter-active {
+//   transition: all 0.5s ease;
+// }
+
+// .swipe-left-leave-active {
+//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+// }
+
+.swipe-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.swipe-item {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 
   img {
-    width: size(63);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .slide-name {
+    left: 2em;
+    bottom: 1.2em;
+    color: #fff;
+    font-size: size(18);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+    text-align: left;
+    text-shadow: 0 0.3em 1em #000;
+  }
+
+  // &:nth-child(1) {
+  //   z-index: 1;
+  //   // opacity: 1;
+  // }
+
+  // &.base {
+  //   z-index: 1;
+  //   opacity: 1;
+  // }
+  // &.active {
+  //   z-index: 2;
+  //   // opacity: 1;
+  // }
+}
+
+.pagination {
+  width: auto;
+  bottom: size(44);
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.pagination-dot {
+  padding: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+  z-index: 4;
+
+  span {
+    display: block;
+    width: size(25);
+    height: size(25);
+    border-radius: size(25);
+    // box-shadow: 0 0 0 1px #fff;
+    // background: #fff;
+    position: relative;
+    background-color: #fff;
+    transition: all 0.5s;
+
+    &::before {
+      content: '';
+      width: 60%;
+      height: 60%;
+      display: block;
+      background: #fff;
+      border-radius: 20px;
+      opacity: 1;
+      position: absolute;
+      top: 20%;
+      // transform: translateY(-50%);
+      left: 20%;
+      transition: all 0.3s;
+      transform-origin: center;
+      transform: scale(0);
+    }
+    &.active {
+      box-shadow: none;
+      &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: #fff000;
+        border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 0%;
+        // transform: translateY(-50%);
+        left: 0%;
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.swipe-btns {
+  width: 100%;
+  height: 100%;
+  padding: 0 15px;
+  z-index: 3;
+
+  .prev-btn,
+  .next-btn {
+    width: size(20);
+    cursor: pointer;
   }
 }
 
@@ -112,8 +304,8 @@
 
 @media screen and (max-width: 767px) {
   .section3 {
-    width: 100%;
-    height: auto;
+    width: 100vw;
+    height: sizem(650);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -121,44 +313,222 @@
     // background-position: 0 0;
     // background-attachment: fixed;
     overflow: hidden;
+    &::after,
+    &::before {
+      display: none;
+    }
   }
 
+  .txt {
+    @include img_l_m(330, 25, 25);
+    height: auto;
+    filter: drop-shadow(0 0 5px #036);
+    display: block;
+  }
   .title {
-    @include img_c_m(220, 22);
+    // @include img_r_m(260, 409, 71);
     font-size: sizem(26);
+    font-weight: bold;
     letter-spacing: normal;
-    z-index: 9;
+    line-height: 2;
+    span {
+      display: block;
+      font-size: sizem(20);
+      letter-spacing: 0.01em;
+    }
   }
 
   .hr {
-    @include img_c_m(325, 104);
-    z-index: 9;
+    //  @include img_r_m(230, 458, 102);
+    height: sizem(1);
+    margin: sizem(12) 0;
   }
 
   .desc {
-    @include img_c_m(320, 119);
-    font-size: sizem(12);
-    line-height: 1.88;
+    // @include img_r_m(292, 474, 40);
+    font-size: sizem(14);
+    font-weight: normal;
     letter-spacing: normal;
-    white-space:normal;
-    z-index: 9;
+    white-space: normal;
+    margin: 0 0 1.5em 0;
+  }
+  .item {
+    .icon {
+      width: sizem(39);
+      margin-right: sizem(4);
+    }
+
+    .text {
+      font-size: sizem(14);
+      letter-spacing: size(0.9);
+      line-height: 3.3;
+    }
   }
 
-  .more {
-    @include img_r_m(179 + 7 + 29, 636, 117);
-    font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.04;
-    letter-spacing: sizem(2.1);
-    text-align: left;
-    color: #ffffff;
-    cursor: pointer;
-    white-space: nowrap;
+  /* Swipe */
+  .swipe {
+    width: 100%;
+    height: 100%;
+    min-height: auto;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+
+  // begin
+  .swipe-fade-leave-to {
+    opacity: 0;
+    z-index: 0;
+  }
+  // end
+  .swipe-fade-enter {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .swipe-fade-enter-active {
+    transition: all 0.5s ease;
+  }
+
+  .swipe-fade-leave-active {
+    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  // begin
+  // .swipe-left-leave-to {
+  //   margin-left: -100vw;
+  //   z-index: 0;
+  // }
+  // // end
+  // .swipe-left-enter {
+  //   opacity: 0.5;
+  //   margin-left: 0;
+  //   z-index: 1;
+  // }
+
+  // .swipe-left-enter-active {
+  //   transition: all 0.5s ease;
+  // }
+
+  // .swipe-left-leave-active {
+  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  // }
+
+  .swipe-wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .swipe-item {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
 
     img {
-      width: sizem(29);
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+
+    // &:nth-child(1) {
+    //   z-index: 1;
+    //   // opacity: 1;
+    // }
+
+    // &.base {
+    //   z-index: 1;
+    //   opacity: 1;
+    // }
+    // &.active {
+    //   z-index: 2;
+    //   // opacity: 1;
+    // }
+    .slide-name {
+      right: auto;
+      top: auto;
+      bottom: 1.2rem;
+      left: 1.2rem;
+      font-size: sizem(15);
+    }
+  }
+
+  .pagination {
+    width: auto;
+    bottom: size(91);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .pagination-dot {
+    padding: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    z-index: 4;
+
+    span {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 0 1px #fff;
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.01);
+      transition: all 0.5s;
+
+      &::before {
+        content: '';
+        width: 60%;
+        height: 60%;
+        display: block;
+        background: #004ea2;
+        border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 20%;
+        // transform: translateY(-50%);
+        left: 20%;
+        transition: all 0.3s;
+        transform-origin: center;
+        transform: scale(0);
+      }
+      &.active {
+        &::before {
+          content: '';
+          width: 100%;
+          height: 100%;
+          display: block;
+          background: #004ea2;
+          border-radius: 20px;
+          opacity: 1;
+          position: absolute;
+          top: 0%;
+          // transform: translateY(-50%);
+          left: 0%;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  .swipe-btns {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: sizem(370);
+    padding: 0 15px;
+    z-index: 3;
+
+    .prev-btn,
+    .next-btn {
+      width: sizem(15);
+      cursor: pointer;
     }
   }
 }
@@ -166,16 +536,14 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
-import Map from '@/components/Map.vue'
 import info from '@/info'
-// import slider from '@/mixins/slider.js'
+import slider from '@/mixins/slider.js'
 
 export default {
   name: 'section3',
 
-  components: {
-    Map,
-  },
+  mixins: [slider],
+  props: ['viewIndex'],
 
   data() {
     return {
@@ -184,18 +552,32 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
-      tagList: [],
-      bgmSrc: require('./s3/03_img_m.jpg'),
-      hand: require('./s3//m_2_mobile_hand.png'),
+      slideList: [
+        {
+          img: isMobile ? require('./s3/1_m.jpg') : require('./s3/1.jpg'),
+        },
+        {
+          img: isMobile ? require('./s3/2_m.jpg') : require('./s3/2.jpg'),
+        },
+      ],
     }
   },
-
-
-  computed: {},
 
   methods: {},
 
   created() {},
+
   mounted() {},
+
+  computed: {},
+
+  watch: {
+    // viewIndex() {
+    //   if (this.viewIndex === 5) {
+    //     this.slideIndex = 0
+    //     console.log(this.slideIndex, 'slideIndex')
+    //   }
+    // },
+  },
 }
 </script>

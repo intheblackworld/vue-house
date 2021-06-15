@@ -1,53 +1,32 @@
 <template>
-  <div>
-    <div class="section6">
-      <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
-          <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
-              <div class="slide-name absolute" v-html="slide.name"></div>
-            </div>
-          </transition-group>
-          <div class="pagination absolute flex-ac" v-if="isPC">
-            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+  <div class="section6">
+    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" alt="">
+            <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
-          <div class="swipe-btns absolute flex-ac flex-jb">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-          </div>
+        </transition-group>
+        <div class="pagination absolute flex-ac" v-if="isPC">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+        </div>
+        <div class="swipe-btns absolute flex-ac flex-jb">
+          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
         </div>
       </div>
-      <div class="txt">
-      <h3 class="title" data-aos="flip-up" data-aos-delay="400">
-        迎向天空人生峰景 <span>讓別人都羨慕憧憬</span>
+    </div>
+    <div class="txt">
+      <h3 class="title title1" data-aos="fade-up" data-aos-delay="400">
+        不管晴天、雨天
+      </h3>
+      <h3 class="title title2" data-aos="fade-up" data-aos-delay="400">
+        365天都是Holiday
       </h3>
       <div class="hr" data-aos="zoom-in-right" data-aos-delay="600"></div>
       <div class="desc" data-aos="fade-up" data-aos-delay="800">
-        洲子洋即將迎來最美的天空，<br />
-        「天空之邑」近兩千坪寬闊基地、千坪日式庭園，<br />
-        打造稀有24層雙塔地標，晉級洲子洋宜居新指標。
-      </div>
-      <div class="list">
-        <div class="flex-ac item" data-aos="fade-up" data-aos-delay="1000">
-          <img src="./s6/06_text_1.png" alt="" class="icon">
-          <h3 class="text">
-            <span>地標</span> 區域稀有24層雙塔新地標
-          </h3>
-        </div>
-        <div class="flex-ac item" data-aos="fade-up" data-aos-delay="1100">
-          <img src="./s6/06_text_2.png" alt="" class="icon">
-          <h3 class="text">
-            <span>基地</span> 區域稀有近兩千坪寬闊基地
-          </h3>
-        </div>
-        <div class="flex-ac item" data-aos="fade-up" data-aos-delay="1200">
-          <img src="./s6/06_text_3.png" alt="" class="icon">
-          <h3 class="text">
-            <span>生活</span> 區域稀有千坪日式雅致莊園
-          </h3>
-        </div>
-      </div>
+        俱樂部公設採「公園室內化」設計概念，不用受限於氣候，下樓即享6000坪俱樂部公設；全齡化的貼心設計，讓全家人不論男女老少，都能找到自己的主場，享受專屬的快樂，從動到靜一應俱全，想玩就玩，不必看天氣！
       </div>
     </div>
   </div>
@@ -58,7 +37,7 @@
 .section6 {
   width: 100%;
   height: 100vh;
-  min-height: size(900);
+  min-height: size(1080);
   max-height: size(1080);
   position: relative;
   // background-color: #fff;
@@ -68,42 +47,53 @@
   // background-position: 0 0;
   // background-attachment: fixed;
   // overflow: hidden;
-&::after{
-  content: "";
-  width: 120%;
-  height: size(120);
-  position: absolute;bottom:  size(-90);left:-10%;
-  background: url("./all/section_bg.jpg") fixed;
-  background-size: cover;
-  border-radius: 100% 100% 0 0;z-index: 2;
-}
-&::after{
-  border-radius: 0 0 100% 100%;top:  size(-90);bottom: auto;
+  // &::after {
+  //   content: '';
+  //   width: 120%;
+  //   height: size(120);
+  //   position: absolute;
+  //   bottom: size(-90);
+  //   left: -10%;
+  //   background: url('./all/section_bg.jpg') fixed;
+  //   background-size: cover;
+  //   border-radius: 100% 100% 0 0;
+  //   z-index: 2;
+  // }
+  // &::after {
+  //   border-radius: 0 0 100% 100%;
+  //   top: size(-90);
+  //   bottom: auto;
+  // }
 }
 
+.txt {
+  @include div_l_pc(639, 467, 280, 112);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 152, 205, 0.8),
+    rgba(141, 194, 31, 0.8)
+  );
+  padding: size(40) size(20);
 }
-
-.txt{
-  @include img_l_pc(600, 0, 328);
-  height: 100%;filter: drop-shadow(0 0 5px #036);
-  display: flex;justify-content: center;
-    flex-direction:column;
-  }
 .title {
+  width: 90%;
+  margin: 0 auto;
   font-size: size(50);
-  font-weight: 900;
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.44;
-  letter-spacing:0.01em;
+  line-height: 1.2;
+  letter-spacing: normal;
   text-align: left;
-  color: #ffffff;
+  color: #fff000;
   white-space: nowrap;
-  span {
-    display: block;
-    font-size: size(35);
-    letter-spacing: size(3.5);
-  }
+}
+
+.title1 {
+}
+
+.title2 {
+  text-align: right;
 }
 
 .hr {
@@ -114,46 +104,24 @@
 }
 
 .desc {
- // text-shadow: 0 2px 5px rgba(0, 0, 0, 0.44);
-  font-size: size(18);
-  font-weight: normal;
+  // text-shadow: 0 2px 5px rgba(0, 0, 0, 0.44);
+  width: 90%;
+  margin: 0 auto;
+  font-size: size(23);
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.94;
-  letter-spacing: size(0.9);
+  line-height: 1.91;
+  letter-spacing: normal;
   text-align: left;
   color: #ffffff;
-  white-space: nowrap;
-}
-
-.list {
-}
-
-.item {
-  .icon {
-    width: size(68);
-    margin-right: 10px;
-  }
-
-  .text {
-    font-size: size(18);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 5.42;
-    letter-spacing:0.05em;
-    text-align: left;
-    color: #fffc;
-    span {
-      color: #f15a24;
-    }
-  }
+  // white-space: nowrap;
 }
 
 /* Swipe */
 .swipe {
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
   bottom: size(0);
   left: 0;
   object-fit: cover;
@@ -217,7 +185,7 @@
   }
 
   .slide-name {
-    left: 2em;
+    right: 2em;
     bottom: 1.2em;
     color: #fff;
     font-size: size(18);
@@ -262,12 +230,13 @@
 
   span {
     display: block;
-    width: 10px;
-    height: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 0 1px #fff;
+    width: size(25);
+    height: size(25);
+    border-radius: size(25);
+    // box-shadow: 0 0 0 1px #fff;
+    // background: #fff;
     position: relative;
-    background-color: transparent;
+    background-color: #fff;
     transition: all 0.5s;
 
     &::before {
@@ -293,7 +262,7 @@
         width: 100%;
         height: 100%;
         display: block;
-        background: #fff;
+        background: #fff000;
         border-radius: 20px;
         opacity: 1;
         position: absolute;
@@ -343,37 +312,39 @@
     // background-position: 0 0;
     // background-attachment: fixed;
     overflow: hidden;
-&::after,
-&::before{
-  display: none;
-}
+    &::after,
+    &::before {
+      display: none;
+    }
   }
 
-.txt{
+  .txt {
     @include img_l_m(330, 25, 25);
-  height:auto;filter: drop-shadow(0 0 5px #036);display: block;
+    height: auto;
+    filter: drop-shadow(0 0 5px #036);
+    display: block;
   }
   .title {
-   // @include img_r_m(260, 409, 71);
+    // @include img_r_m(260, 409, 71);
     font-size: sizem(26);
     font-weight: bold;
     letter-spacing: normal;
-  line-height: 2;
-  span {
-    display: block;
-    font-size: sizem(20);
-    letter-spacing:0.01em;
-  }
+    line-height: 2;
+    span {
+      display: block;
+      font-size: sizem(20);
+      letter-spacing: 0.01em;
+    }
   }
 
   .hr {
-  //  @include img_r_m(230, 458, 102);
+    //  @include img_r_m(230, 458, 102);
     height: sizem(1);
-    margin:sizem(12) 0;
+    margin: sizem(12) 0;
   }
 
   .desc {
-   // @include img_r_m(292, 474, 40);
+    // @include img_r_m(292, 474, 40);
     font-size: sizem(14);
     font-weight: normal;
     letter-spacing: normal;
@@ -381,18 +352,17 @@
     margin: 0 0 1.5em 0;
   }
   .item {
-  .icon {
-    width: sizem(39);
-    margin-right:sizem(4);
-  }
+    .icon {
+      width: sizem(39);
+      margin-right: sizem(4);
+    }
 
-  .text {
-    font-size: sizem(14);
-    letter-spacing: size(0.9);
-    line-height: 3.3;
+    .text {
+      font-size: sizem(14);
+      letter-spacing: size(0.9);
+      line-height: 3.3;
+    }
   }
-}
-
 
   /* Swipe */
   .swipe {
@@ -459,7 +429,8 @@
       height: auto;
       object-fit: cover;
       position: absolute;
-      left: 0;bottom: 0;
+      left: 0;
+      bottom: 0;
     }
 
     // &:nth-child(1) {
@@ -582,71 +553,29 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: isMobile
-            ? require('./s6/06_slider_8_m.jpg')
-            : require('./s6/02_mask.jpg'),
-           name: '3D外觀示意',
+          img: require('./s6/1運動紓壓.jpg'),
+          name: '運動紓壓',
         },
         {
-          img: isMobile
-            ? require('./s6/06_slider_10_m.jpg')
-            : require('./s6/10_mask.jpg'),
-           name: '日式庭園示意圖',
+          img: require('./s6/2精緻禮遇.jpg'),
+          name: '精緻禮遇',
         },
         {
-          img: isMobile
-            ? require('./s6/06_slider_11_m.jpg')
-            : require('./s6/13_mask.jpg'),
-           name: '日式庭園示意圖',
-        },
-  /*      {
-          img: isMobile
-            ? require('./s6/06_slider_2_m.jpg')
-            : require('./s6/02.jpg'),
-          // name: '臺北市私立靜心高級中學',
+          img: require('./s6/3貴族休閒.jpg'),
+          name: '貴族休閒',
         },
         {
-          img: isMobile
-            ? require('./s6/06_slider_3_m.jpg')
-            : require('./s6/03.jpg'),
-          // name: '臺北市私立靜心高級中學',
+          img: require('./s6/4親子樂活.jpg'),
+          name: '親子樂活',
         },
         {
-          img: isMobile
-            ? require('./s6/06_slider_4_m.jpg')
-            : require('./s6/04.jpg'),
-          // name: '臺北市私立靜心高級中學',
+          img: require('./s6/5戶外綠意.jpg'),
+          name: '戶外綠意',
         },
         {
-          img: isMobile
-            ? require('./s6/06_slider_5_m.jpg')
-            : require('./s6/05.jpg'),
-          // name: '臺北市私立靜心高級中學',
+          img: require('./s6/6社交歡聚.jpg'),
+          name: '社交歡聚',
         },
-        {
-          img: isMobile
-            ? require('./s6/06_slider_6_m.jpg')
-            : require('./s6/06.jpg'),
-          // name: '臺北市私立靜心高級中學',
-        },
-        {
-          img: isMobile
-            ? require('./s6/06_slider_7_m.jpg')
-            : require('./s6/07.jpg'),
-          // name: '臺北市私立靜心高級中學',
-        },
-        {
-          img: isMobile
-            ? require('./s6/06_slider_8_m.jpg')
-            : require('./s6/08.jpg'),
-          // name: '臺北市私立靜心高級中學',
-        },
-        {
-          img: isMobile
-            ? require('./s6/06_slider_9_m.jpg')
-            : require('./s6/09.jpg'),
-          // name: '臺北市私立靜心高級中學',
-        }, */
       ],
     }
   },

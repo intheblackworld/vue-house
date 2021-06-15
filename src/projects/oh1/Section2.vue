@@ -1,115 +1,117 @@
 <template>
-  <div class="section2">
-    <!-- https://codepen.io/ciprian/pen/WqLwvE -->
-    <!-- https://codepen.io/dudleystorey/pen/PZyMrd -->
-    <!-- <iframe
-      v-if="!isMobile"
-      ref
-      class="video-bg"
-      src="https://www.youtube.com/embed/eflYegCFh4M?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=eflYegCFh4M"
-      frameborder="0"
-      allowfullscreen
-    ></iframe> -->
-    <div class="video_box">
-      <div v-if="!isMobile" :id="`youtube-player-${id}`" ref="player" class="video-ifame"></div>
-    </div>
-    <img src="./s2/s2_play_btn.png" alt="" class="play-btn" v-if="isMobile" @click="isDialog = true">
-    <div class="video video-dialog" v-if="isDialog && isMobile">
-      <div class="video_box">
-        <iframe title="youtube" src="https://www.youtube.com/embed/KM6kZXsakok" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <div>
+    <div v-if="!isMobile" class="section2">
+      <img src="./s2/bg.jpg" alt="" class="bg-img">
+      <div class="title title1">
+        海灣城市
       </div>
-      <img class="close" @click="isDialog = false" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABABAMAAABYR2ztAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAhUExURUdwTP////Pw8PLx8fLw8PLw8PPx8fHx8fLy8vLw8PXr6/Zeio0AAAALdFJOUwADRMS156s3KfgaAiHMOAAAAXtJREFUSMeFlr9qwzAQxnVZajoVLRLZTEMfoBAadywIt11t/AAGETqGhOzGoS/g0r20D1qRxLYsS/oy5Y/uk+/ud/eFnRoWecmcfTzdhX+n/Tf763bhAyJ7Z4l+DErQfdkw+izS0AGutiZY6JeABK2q8/XHMo0JhCXooUqvb/wSXNfXwIVXwjxBOmj5JLiqhzCh5+WkQzVG0bGYlVOscytIvG0cCWq/JjGn7md6YJlNQ5LsefKZfjsHA+cL6QQwdpvZidDevZKx1uZCZJtZ3okauaBVOQeRDmM5uco9tR+b2nPgSgxcjG1023uRGDiYA3KRCAn0EkGBXkKoOjgHC8OFna6nFsVOrvPILBou2tgoGkw6TxemXHTRdWA4iB+AV6CHNGk2UkXS5DqPFgqWGjULthsBA5GzoS19tUDYSzA4Zpzjo7dEw4vGX4IFYjiIryC0xHxr8MbGHy1SuIo5WObQDjgwFApZEnF9tiRkatAWobFCa4bmDv4evP4DsmNwZSA8CfQAAAAASUVORK5CYII=" />
+      <div class="title title2">
+        魅力無限
+      </div>
+      <div class="subtitle">
+        Charming City
+      </div>
+      <div class="desc">
+        交通建設、商業機能陸續到位，身價更上層樓，淡海新市鎮發展一日千里，躍升雙北菁英移居首選，<br />
+        人口可望躍升近30萬，逐步向國際海洋城市大步邁進，如舊金山、雪梨、東京…成功經驗，未來不可限量。<br />
+        [名軒海樂地] 位處淡海中心商業區、輕軌出站就到家，地利天成、無可複製，打造海灣俱樂部名宅新指標！
+      </div>
     </div>
-    <!-- div class="line-bg" data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAQAAADYv8WvAAAADUlEQVQIHWNkSGOAAAADRABoDg6qmwAAAABJRU5ErkJggg=="></div -->
+
+    <div v-if="isMobile" class="section2">
+      <ul class="desc">
+        <li v-for="(text, index) in text_list" data-aos="fade-right" :data-aos-delay="200 + (index + 1) * 200" data-aos-duration="1000" :key="text">{{text}}</li>
+      </ul>
+      <Map :bgSrc="require('./s2/bg.jpg')" v-if="isMobile" :hand="require('./s2/hand.png')">
+      </Map>
+    </div>
   </div>
 </template>
-<style lang="scss">
-@import '@/assets/style/function.scss';
-// .video-ifame {
-//   width: 100.5%;
-//   height: 100.5%;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-// }
-</style>
+
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
+
 .section2 {
-  // height: 100vh;
+  width: size(1920);
+  height: 100vh;
+  min-height: size(900);
+  // background-image: url('./s2/bg.jpg');
+  // background-size: 100% 100%;
+  // background-position: 0 0;
+  // background-attachment: fixed;
   overflow: hidden;
-  // position: relative;
-  height: size(1080);
-  background: #000 url('./s2/video_img.png') no-repeat center;
-  background-color: #000;
-  background-size: contain;
-  // margin: size(-125) 0 0 0;
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-  }
 }
-.video_box {
-  width: 100%;
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 0;
-  overflow: hidden;
-  height: 100%;
-  opacity: 0;
-  animation: op 1s 3s ease-out forwards;
-}
-@keyframes op {
-  to {
-    opacity: 1;
-  }
-}
-.video-bg {
+
+.bg-img {
   width: 100vw;
-  height: 100%;
+  height: 100vh;
+  min-height: size(900);
   position: absolute;
+  display: block;
   top: 0;
   left: 0;
-  pointer-events: none;
-  //z-index: 3;
+  object-fit: cover;
+
+  &:nth-child(1) {
+    position: relative;
+  }
 }
 
-.line-bg {
-  width: 100vw;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAQAAADYv8WvAAAADUlEQVQIHWNkSGOAAAADRABoDg6qmwAAAABJRU5ErkJggg==');
+.title {
+  font-size: size(55);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(7.7);
+  text-align: left;
+  color: #ffffff;
+  white-space: nowrap;
 }
 
-.logo {
-  width: size(318);
-  left: size(58);
-  top: size(64);
-  z-index: 1;
+.title1 {
+  @include img_l_pc(243, 53, 230);
 }
 
-.txt {
-  width: size(525);
-  top: size(396);
-  right: size(113);
-  z-index: 1;
+.title2 {
+  @include img_l_pc(243, 119, 337);
+}
+
+.subtitle {
+  @include img_r_pc(657, 0, 57);
+  top: auto;
+  bottom: size(30);
+  font-family: Arial;
+  font-size: size(100);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(2);
+  text-align: left;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.desc {
+  @include img_r_pc(1183, 53, 86);
+  font-size: size(23);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.43;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+  white-space: nowrap;
 }
 
 @media only screen and (max-width: 1440px) {
-  .bg-img {
-  }
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
+  .fullscreen {
+    height: 100vh;
+  }
 }
 
 /* 螢幕尺寸標準 */
@@ -119,168 +121,75 @@
 
 @media screen and (max-width: 767px) {
   .section2 {
-    margin: 0 0 0 0;
-    overflow: hidden;
     width: 100vw;
-    height: sizem(180);
-    min-height: sizem(180);
-    max-height: sizem(180);
+    height: calc(100vh - 63px);
+    // height: size-m(804);
+    // background-image: url('./mo/1/bg.jpg');
     background-size: cover;
-    // margin-top: sizem(-60);
+    background-attachment: scroll;
   }
-
-  .video_box {
+  .desc {
+    z-index: 5;
+    left: 0;
+    right: 0;
+    margin: auto;
     width: 100%;
-    position: absolute;
-    height: size-m(180);
-    // top: 50%;
-    // transform: translateY(-50%);
-    // left: 0;
-    // overflow: hidden;
-    // height: size(910);
-    opacity: 1;
-    // animation: op 1s 3s ease-out forwards;
-  }
-  .video-bg {
-    width: size-m(1190);
-    height: size-m(667);
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  .logo {
-    width: size-m(154);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    top: size-m(240);
-  }
-
-  .txt {
-    width: size-m(157);
-    top: auto;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    bottom: size-m(47);
-  }
-
-  .play-btn {
-    @include img_c_m(32, 80);
-    cursor: pointer;
-    z-index: 10;
-  }
-
-  .video-dialog {
-    .video_box {
-      height: sizem(260)
+    top: calc(30% - 36vw);
+    li {
+      font-size: size-m(15);
+      text-align: center;
+      line-height: 2.08;
+      color: #036c;
     }
-  }
-
-  .video {
+    /*.bg-img {
     width: 100vw;
-    height: 100vh;
-    position: fixed;
-    left: size-m(0);
+    height: auto;
+    position: absolute;
+    display: block;
     top: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 200;
-    transition: opacity 0.5s;
+    left: 0;
+    object-fit: cover;
 
-    iframe {
-      width: 100vw;
-      height: size-m(260);
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      // top: 50%;
-      // transform: translateY(-50%);
-      position: absolute;
-      background-color: #fff;
+    &:nth-child(1) {
+      position: relative;
     }
-
-    .close {
-      position: absolute;
-      cursor: pointer;
-      right: 15px;
-      top: 50px;
-      width: size-m(30);
-    }
+  }*/
   }
 }
 </style>
 <script>
 // @ is an alias to /src
-import { isMobile } from '@/utils'
+import { isMobile, isTablet } from '@/utils'
+import Map from '@/components/Map.vue'
 
 export default {
   name: 'section2',
+
+  components: {
+    Map,
+  },
+
   data() {
     return {
       isMobile,
-      player: '',
-      id: 'KM6kZXsakok',
-      isDialog: false,
+      isTablet,
+      text_list: [
+        '大安區好人家，才看得起的大安選房學',
+        '瑞安街為首，大安森林首環，頭等艙位置',
+        '鞏固城市中心點，綠海寫生、静巷養生',
+        isMobile
+          ? '高隱密静巷宅、第一直擊大安森林者'
+          : '高隱密静巷宅、第一直擊大安森林者，只有瑞安自在',
+        isMobile ? '只有瑞安自在' : '',
+      ],
     }
   },
 
-  methods: {
-    onPlayerReady(event) {
-      console.log('load')
-      event.target.playVideo()
-    },
-    loadVideo() {
-      this.player = new window.YT.Player(`youtube-player-${this.id}`, {
-        videoId: this.id,
-        width: window.screen.width,
-        height: window.screen.width * (1080 / 1920),
-        playerVars: {
-          autoplay: 1,
-          loop: 1,
-          controls: 0,
-          showinfo: 0,
-          autohide: 1,
-          modestbranding: 1,
-          mute: 1,
-          suggestedQuality: 'default',
-          iv_load_policy: 3,
-        },
-        events: {
-          onReady: this.onPlayerReady,
-          onStateChange: this.onPlayerStateChange,
-        },
-      })
-    },
+  methods: {},
 
-    onPlayerStateChange(e) {
-      if (e.data === window.YT.PlayerState.ENDED) {
-        this.player.loadVideoById(this.id)
-      }
-    },
-  },
+  created() {},
 
-  created() {
-    const tag = document.createElement('script')
-    tag.src = 'https://www.youtube.com/iframe_api'
-    const firstScriptTag = document.getElementsByTagName('script')[0]
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
-  },
-
-  mounted() {
-    setTimeout(() => {
-      if (!this.isMobile) {
-        if (!window.YT) {
-          window.onYouTubeIframeAPIReady = this.loadVideo
-        } else {
-          this.loadVideo()
-        }
-      }
-    }, 2500)
-  },
+  mounted() {},
 
   computed: {},
 }

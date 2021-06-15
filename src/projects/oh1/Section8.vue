@@ -3,13 +3,13 @@
     <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
-          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img  + i" :class="`swipe-item absolute`">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
             <img :src="slide.img" alt="">
-            <div class="slide-name absolute" v-html="slide.name"></div>
+            <!-- <div class="slide-name absolute" v-html="slide.name"></div> -->
           </div>
         </transition-group>
         <div class="pagination absolute flex-ac" v-if="isPC">
-          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot' + index" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
         <div class="swipe-btns absolute flex-ac flex-jb">
           <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
@@ -17,19 +17,23 @@
         </div>
       </div>
     </div>
-    <div>
-      <img src="./s8/08_tag_box.png" :alt="`${info.caseName}_img`" class="img">
-      <h3 class="label-name" v-html="slideList[slideIndex].label"></h3>
-      <div class="hr"></div>
-      <h3 class="title1" v-if="isMobile">樣品屋主標<span>樣品屋小標題文字</span></h3>
-      <img src="./s8/08_title_1.png" v-if="!isMobile" :alt="`${info.caseName}_img`" class="title1">
-      <img src="./s8/08_title_2.png" v-if="!isMobile" :alt="`${info.caseName}_img`" class="title2">
-      <div class="desc">
-        樣品屋這一ＰＡＲＴ的內文樣品屋<br v-if="!isMobile" />
-        樣品屋這一ＰＡＲＴ的內文樣品屋這<br v-if="!isMobile" />
-        樣品屋這樣品屋這一ＰＡＲＴ的內文
+    <div class="txt txt1">
+      <h3 class="title title1" data-aos="fade-up" data-aos-delay="400">
+        上市資優股―名軒開發(1442)<br />
+        傾力打造劃時代海灣休閒名宅
+      </h3>
+      <div class="hr" data-aos="zoom-in-right" data-aos-delay="600"></div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="800">
+        融合麗寶集團40多年雄厚的優勢資源，引領國際生活新趨勢，導入藝術人文與精緻服務，秉持「交通、機能、增值力」三大選地原則，空間更開闊、房價更親民，新婚族、薪水族也買得起，助年輕人提早圓夢，成就人生第一桶金，<br />
+        選擇[名軒海樂地]，天天度假不遠求、輕鬆成家非夢事！
       </div>
-      <h3 class="slide-desc" v-if="isMobile" v-html="slideList[slideIndex].desc"></h3>
+    </div>
+    <div class="img-list flex-ac flex-jb">
+      <div v-for="(slide, i) in slideList" :key="slide.img + i + 'item'" :class="`item-img ${slideIndex === i ? 'active' : ''}`" @click="goTo(i)">
+        <img :src="slide.img" alt="">
+        <div class="mask"></div>
+        <div class="item-name absolute" v-html="slide.name"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -38,9 +42,9 @@
 
 .section8 {
   width: 100%;
-  height: size(896);
-  min-height: size(896);
-  max-height: size(896);
+  height: 100vh;
+  min-height: size(1080);
+  max-height: size(1080);
   position: relative;
   // background-color: #fff;
   // min-height: size(900);
@@ -49,100 +53,135 @@
   // background-position: 0 0;
   // background-attachment: fixed;
   // overflow: hidden;
+  // &::after {
+  //   content: '';
+  //   width: 120%;
+  //   height: size(120);
+  //   position: absolute;
+  //   bottom: size(-90);
+  //   left: -10%;
+  //   background: url('./all/section_bg.jpg') fixed;
+  //   background-size: cover;
+  //   border-radius: 100% 100% 0 0;
+  //   z-index: 2;
+  // }
+  // &::after {
+  //   border-radius: 0 0 100% 100%;
+  //   top: size(-90);
+  //   bottom: auto;
+  // }
 }
 
-.img {
-  @include img_r_pc(60, 100, 733);
+.txt {
+  @include div_r_pc(700, 222, 178, 124);
+  background-image: transparent;
+  padding: 0;
 }
-
-.label-name {
-  @include img_r_pc(60, 140, 733);
-  font-size: size(24);
+.title {
+  width: 100%;
+  margin: 0 auto;
+  font-size: size(49);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.4;
-  letter-spacing: 1em;
-  text-align: left;
-  color: #ffffff;
-  writing-mode: vertical-lr;
-  text-orientation: upright;
-}
-
-.hr {
-  @include div_r_pc(1, 455, 100, 513);
-  background-color: #000;
-}
-
-.title1 {
-  @include img_r_pc(128, 100, 345);
-}
-
-.title2 {
-  @include img_r_pc(21, 100, 561);
-}
-
-.desc {
-  @include img_r_pc(301, 620, 290);
-  font-size: size(18);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.94;
-  letter-spacing: size(0.9);
-  text-align: left;
-  color: #ffffff;
+  line-height: 1.2;
+  letter-spacing: size(3.92);
+  text-align: center;
+  color: #fff000;
   white-space: nowrap;
 }
 
-.btns {
-  @include img_l_pc(176 * 2 + 24, 701, 325);
+.title1 {
 }
 
-.btn {
-  box-shadow: inset 0 0 0 1px #000000;
-  width: size(176);
-  height: size(30);
-  cursor: pointer;
-  color: #000;
+.title2 {
+  text-align: right;
+}
 
-  &.active {
-    background-image: url('./all/acitve_btn.png');
-    background-size: cover;
-    box-shadow: none;
-    color: #fff;
+.hr {
+  width: 100%;
+  // height: 35px;
+  border-top: size(1) solid #fff;
+  margin: size(15) 0;
+}
+
+.desc {
+  // text-shadow: 0 2px 5px rgba(0, 0, 0, 0.44);
+  width: 100%;
+  margin: 0 auto;
+  margin-left: 0;
+  font-size: size(23);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.32;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+  // white-space: nowrap;
+}
+
+.img-list {
+  @include img_c_pc(1673, 0);
+  top: auto;
+  bottom: 0;
+
+  .item-img {
+    width: size(313);
+    position: relative;
+    cursor: pointer;
+
+    &.active {
+      .mask {
+        opacity: 0;
+      }
+
+      .item-name {
+        opacity: 0;
+        margin-top: 30px;
+      }
+    }
+    .mask {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      background: rgba(35, 24, 21, .7);
+      transition: all .3s;
+    }
+    img {
+      width: 100%;
+    }
+
+    .item-name {
+      position: absolute;
+      z-index: 2;
+      bottom: 1em;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      font-size: size(36);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.2;
+      letter-spacing: normal;
+      text-align: center;
+      color: #ffffff;
+      transition: all .3s;
+    }
   }
 }
-
-// begin
-.fade-up-leave-to {
-  transform: translateY(15px);
-  opacity: 0;
-  z-index: 0;
-}
-// end
-.fade-up-enter {
-  transform: translateY(55px);
-  opacity: 0;
-  z-index: 1;
-}
-
-.fade-up-enter-active {
-  transition: all 0.5s ease;
-}
-
-.fade-up-leave-active {
-  transition: all 0.1s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
 /* Swipe */
 .swipe {
-  width: size(860);
-  height: size(550);
-  top: size(127);
-  left: size(369);
+  width: size(900);
+  height: size(670);
+  top: size(59);
+  left: size(124);
   object-fit: cover;
-  // background: #0344;
+  // background:#0344;
 }
 
 // begin
@@ -157,11 +196,11 @@
 }
 
 .swipe-fade-enter-active {
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 .swipe-fade-leave-active {
-  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
 // begin
@@ -187,7 +226,7 @@
 .swipe-wrap {
   width: 100%;
   height: 100%;
-  // overflow: hidden;
+  overflow: hidden;
 }
 
 .swipe-item {
@@ -202,8 +241,8 @@
   }
 
   .slide-name {
-    right: 1.2em;
-    bottom: 0.5em;
+    left: 2em;
+    bottom: 1.2em;
     color: #fff;
     font-size: size(18);
     font-weight: bold;
@@ -212,7 +251,7 @@
     line-height: 1.6;
     letter-spacing: 0.03em;
     text-align: left;
-    text-shadow: 0 0.1em 0.5em #000;
+    text-shadow: 0 0.3em 1em #000;
   }
 
   // &:nth-child(1) {
@@ -232,10 +271,10 @@
 
 .pagination {
   width: auto;
-  bottom: size(-34);
-  right: 0;
-  left: 0;
-  margin: 0 auto;
+  bottom: size(18);
+  right: size(18);
+  left: auto;
+  // margin: 0 auto;
   justify-content: center;
 }
 
@@ -247,12 +286,13 @@
 
   span {
     display: block;
-    width: 10px;
-    height: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 0 1px #fff;
+    width: size(25);
+    height: size(25);
+    border-radius: size(25);
+    // box-shadow: 0 0 0 1px #fff;
+    // background: #fff;
     position: relative;
-    background-color: transparent;
+    background-color: #fff;
     transition: all 0.5s;
 
     &::before {
@@ -278,7 +318,7 @@
         width: 100%;
         height: 100%;
         display: block;
-        background: #fff;
+        background: #fff000;
         border-radius: 20px;
         opacity: 1;
         position: absolute;
@@ -320,131 +360,73 @@
 @media screen and (max-width: 767px) {
   .section8 {
     width: 100vw;
-    height: sizem(573);
+    height: sizem(650);
     min-height: auto;
     max-height: initial;
-    background-image: url('./all/section_bg.jpg');
-    background-attachment: scroll;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
     // background-position: 0 0;
     // background-attachment: fixed;
     overflow: hidden;
+    &::after,
+    &::before {
+      display: none;
+    }
   }
 
-  .title1 {
-    @include img_l_m(325, 34, 25);
-    font-size: sizem(30);
+  .txt {
+    @include img_l_m(330, 25, 25);
+    height: auto;
+    filter: drop-shadow(0 0 5px #036);
+    display: block;
+  }
+  .title {
+    // @include img_r_m(260, 409, 71);
+    font-size: sizem(26);
     font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.6;
     letter-spacing: normal;
-    text-align: left;
-    white-space: nowrap;
-    color: #fff;
+    line-height: 2;
     span {
       display: block;
-      font-size: 0.666em;
+      font-size: sizem(20);
+      letter-spacing: 0.01em;
     }
   }
 
   .hr {
-    @include img_l_m(142, 124, 25);
+    //  @include img_r_m(230, 458, 102);
     height: sizem(1);
-    background: #333;
-  }
-
-  .title2 {
-    @include img_l_m(325, 17, 25);
-    font-size: sizem(20);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.05;
-    letter-spacing: normal;
-    text-align: left;
-    color: #333333;
-    white-space: nowrap;
-    color: #fff;
+    margin: sizem(12) 0;
   }
 
   .desc {
-    @include img_l_m(292, 141, 25);
-    font-size: sizem(12);
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.88;
-  }
-
-  .slide-desc {
-    @include img_l_m(196, 243, 27);
-    font-size: sizem(18);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.33;
-    letter-spacing: sizem(1.8);
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
-  }
-
-  .more {
-    @include img_r_m(179 + 7 + 29, 636, 117);
-    font-size: sizem(15);
+    // @include img_r_m(292, 474, 40);
+    font-size: sizem(14);
     font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.04;
-    letter-spacing: sizem(2.1);
-    text-align: left;
-    color: #ffffff;
-    cursor: pointer;
-    white-space: nowrap;
-
-    img {
-      width: sizem(29);
+    letter-spacing: normal;
+    white-space: normal;
+    margin: 0 0 1.5em 0;
+  }
+  .item {
+    .icon {
+      width: sizem(39);
+      margin-right: sizem(4);
     }
-  }
-  .btns {
-    @include img_c_m(325, 305);
-  }
-  .img {
-    @include img_r_m(41, 264, 25);
-  }
 
-  .label-name {
-    @include img_r_m(41, 264, 25);
-    font-size: 4vw;
-    height: sizem(144);
-    text-align: center;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .btn {
-    width: sizem(152);
-    height: sizem(27);
-
-    &.active {
-      background-image: url('./all/acitve_btn.png');
-      background-size: cover;
-      box-shadow: none;
-      color: #fff;
+    .text {
+      font-size: sizem(14);
+      letter-spacing: size(0.9);
+      line-height: 3.3;
     }
   }
 
   /* Swipe */
   .swipe {
     width: 100%;
-    height: sizem(259);
+    height: 100%;
     min-height: auto;
-    top: auto;
-    bottom: 0;
-    left: sizem(0);
+    top: 0;
+    left: 0;
     object-fit: cover;
   }
 
@@ -490,7 +472,7 @@
   .swipe-wrap {
     width: 100%;
     height: 100%;
-    // overflow: hidden;
+    overflow: hidden;
   }
 
   .swipe-item {
@@ -500,8 +482,11 @@
 
     img {
       width: 100%;
-      height: 100%;
+      height: auto;
       object-fit: cover;
+      position: absolute;
+      left: 0;
+      bottom: 0;
     }
 
     // &:nth-child(1) {
@@ -521,7 +506,7 @@
       right: auto;
       top: auto;
       bottom: 1.2rem;
-      right: 1.2rem;
+      left: 1.2rem;
       font-size: sizem(15);
     }
   }
@@ -587,8 +572,11 @@
   }
 
   .swipe-btns {
+    position: absolute;
+    left: 0;
+    bottom: 0;
     width: 100%;
-    height: 100%;
+    height: sizem(370);
     padding: 0 15px;
     z-index: 3;
 
@@ -619,44 +607,26 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
-      blockIndex: 0,
-      slideIndex1: 0,
       slideList: [
         {
-          img: require('./s8/08_slider_1.jpg'),
-          name: '情境示意圖',
-          label: '客廳',
-          desc: '樣品屋說明文ＯＯＸＸＯ'
+          img: require('./s4/1漁人碼頭、情人橋.jpg'),
+          name: '漁人碼頭、情人橋',
         },
         {
-          img: require('./s8/08_slider_1.jpg'),
-          name: '情境示意圖',
-          label: '客廳',
-          desc: '樣品屋說明文ＯＯＸＸＯ'
+          img: require('./s4/2美麗新淡海影城.jpg'),
+          name: '美麗新淡海影城',
         },
         {
-          img: require('./s8/08_slider_1.jpg'),
-          name: '情境示意圖',
-          label: '客廳',
-          desc: '樣品屋說明文ＯＯＸＸＯ'
+          img: require('./s4/3淡水紅毛城.jpg'),
+          name: '淡水紅毛城',
         },
         {
-          img: require('./s8/08_slider_1.jpg'),
-          name: '情境示意圖',
-          label: '客廳',
-          desc: '樣品屋說明文ＯＯＸＸＯ'
+          img: require('./s4/4淡水老街(中正路).jpg'),
+          name: '淡水老街(中正路)',
         },
         {
-          img: require('./s8/08_slider_1.jpg'),
-          name: '情境示意圖',
-          label: '客廳',
-          desc: '樣品屋說明文ＯＯＸＸＯ'
-        },
-        {
-          img: require('./s8/08_slider_1.jpg'),
-          name: '情境示意圖',
-          label: '客廳',
-          desc: '樣品屋說明文ＯＯＸＸＯ'
+          img: require('./s4/5紅樹林自然保留區.jpg'),
+          name: '紅樹林自然保留區',
         },
       ],
     }

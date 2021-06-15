@@ -2,6 +2,12 @@
   <div class="section3">
     <div class="bg fullscreen" v-if="!isMobile">
       <div class="container">
+        <div class="video-container">
+          <div :class="`video-item ${slideIndex == sIndex ? 'active' : ''}`" v-for="(slide, sIndex) in slideList" :key="slide.img">
+            <img :src="slide.img" alt class="video-bg" />
+            <img :src="playBtn" alt class="video-btn" @click="openDialog" />
+          </div>
+        </div>
         <div class="content">
           <h3 class="title">{{title}}</h3>
           <div class="list">
@@ -10,65 +16,33 @@
             </div>
           </div>
         </div>
-        <div class="video-container">
-          <div
-            :class="`video-item ${slideIndex == sIndex ? 'active' : ''}`"
-            v-for="(slide, sIndex) in slideList"
-            :key="slide.img"
-          >
-            <img :src="slide.img" alt class="video-bg" />
-            <img :src="playBtn" alt class="video-btn" @click="openDialog" />
-          </div>
-        </div>
       </div>
       <div :class="`video-dialog ${isShowDialog ? 'show' : ''}`">
-        <iframe
-          ref="player"
-          :src="slideList[slideIndex].video"
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+        <iframe ref="player" :src="slideList[slideIndex].video" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <img :src="close" alt class="close" @click="closeDialog" />
       </div>
     </div>
     <div class="bg fullscreen" v-if="isMobile">
       <h3 class="title">{{title}}</h3>
       <div class="video-container">
-        <div
-          :class="`video-item ${slideIndex === sIndex ? 'active' : ''}`"
-          v-for="(slide, sIndex) in slideList"
-          :key="slide.img"
-        >
+        <div :class="`video-item ${slideIndex === sIndex ? 'active' : ''}`" v-for="(slide, sIndex) in slideList" :key="slide.img">
           <img :src="slide.img" alt class="video-bg" />
           <img :src="playBtn" alt class="video-btn" @click="openDialog" />
         </div>
       </div>
       <div class="btn-group">
-        <div
-          class="btn"
-          @click="slideIndex =
-        slideIndex === 0 ? slideList.length - 1 : slideIndex - 1"
-        >
+        <div class="btn" @click="slideIndex =
+        slideIndex === 0 ? slideList.length - 1 : slideIndex - 1">
           <img :src="arrows[0]" alt />
         </div>
         <div class="btn-title">{{slideList[slideIndex].title}}</div>
-        <div
-          class="btn"
-          @click="slideIndex =
-        slideIndex === slideList.length - 1 ? 0 : slideIndex + 1"
-        >
+        <div class="btn" @click="slideIndex =
+        slideIndex === slideList.length - 1 ? 0 : slideIndex + 1">
           <img :src="arrows[1]" alt />
         </div>
       </div>
       <div :class="`video-dialog ${isShowDialog ? 'show' : ''}`">
-        <iframe
-          ref="player"
-          :src="slideList[slideIndex].video"
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+        <iframe ref="player" :src="slideList[slideIndex].video" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <img :src="close" alt class="close" @click="closeDialog" />
       </div>
     </div>
@@ -376,12 +350,18 @@ export default {
   methods: {
     openDialog() {
       this.isShowDialog = true
-      this.$refs.player.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*')
+      this.$refs.player.contentWindow.postMessage(
+        '{"event":"command","func":"playVideo","args":""}',
+        '*',
+      )
     },
     closeDialog() {
       this.isShowDialog = false
-      this.$refs.player.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*')
-    }
+      this.$refs.player.contentWindow.postMessage(
+        '{"event":"command","func":"stopVideo","args":""}',
+        '*',
+      )
+    },
   },
 }
 </script>

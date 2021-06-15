@@ -1,18 +1,24 @@
 <template>
   <div class="section1">
     <img src="./s1/logo.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade-up" data-aos-delay="0">
-    <img src="./s1/t1.png" :alt="`${info.caseName}_img`" class="t1" data-aos="fade-up" data-aos-delay="200">
-    <img src="./s1/t2.png" :alt="`${info.caseName}_img`" class="t2" data-aos="fade-up" data-aos-delay="400">
-    <img src="./s1/img_b.png" :alt="`${info.caseName}_img`" class="img-b" v-if="isPC"  data-aos="zoom-in" data-aos-delay="0">
-    <img src="./s1/img_b_mo.png" :alt="`${info.caseName}_img`" class="img-b" v-if="isMobile" data-aos="zoom-in" data-aos-delay="400" data-aos-offset="-500">
-    <img src="./s1/img_ct.png" :alt="`${info.caseName}_img`" class="img-ct" data-aos="zoom-in" data-aos-delay="600">
-    <img src="./s1/img_lt.png" :alt="`${info.caseName}_img`" class="img-lt" data-aos="zoom-in" data-aos-delay="800">
-
-    <!-- <div class="hr1" v-if="isMobile"></div>
-    <div class="hr2" v-if="isMobile"></div>
+    <img src="./s1/0.png" :alt="`${info.caseName}_img`" class="bg-img" v-if="isPC">
+    <img src="./s1/0_m.png" :alt="`${info.caseName}_img`" class="bg-img" v-if="isMobile">
+    <img src="./s1/1.png" :alt="`${info.caseName}_img`" class="bg-img">
+    <img src="./s1/2.png" :alt="`${info.caseName}_img`" class="bg-img">
+    <img src="./s1/3.png" :alt="`${info.caseName}_img`" class="bg-img">
+    <img src="./s1/4.png" :alt="`${info.caseName}_img`" class="bg-img">
+    <img src="./s1/5.png" :alt="`${info.caseName}_img`" class="img-train">
+    <h3 class="title">
+      海灣新樂園 城市心天地
+    </h3>
+    <h3 class="subtitle">
+      淡海最大6000坪俱樂部宅
+    </h3>
     <h3 class="btn flex-c" v-scroll-to="{ element: `#contact` }">
       搶先預約
-    </h3> -->
+    </h3>
+    <!-- <div class="hr1" v-if="isMobile"></div>
+    <div class="hr2" v-if="isMobile"></div> -->
   </div>
 </template>
 
@@ -22,7 +28,7 @@
 .section1 {
   width: 100%;
   height: 100vh;
-  min-height: size(900);
+  min-height: size(1080);
   max-height: size(1080);
   //overflow: hidden;
   position: relative;
@@ -49,33 +55,58 @@
 }
 
 .logo {
-  @include img_c_pc(457, 133);
-  top:calc(50% + 100vw * (123 - 540) / 1920)
+  @include img_l_pc(363, 190, 306);
 }
 
-.t1 {
-  @include img_c_pc(538, 584);
-  top:calc(50% + 100vw * (574 - 540) / 1920)
+.img1 {
+  @include img_r_pc(363, 190, 306);
 }
 
-.t2 {
-  @include img_c_pc(538, 805);
-  top:calc(50% + 100vw * (795 - 540) / 1920);
-}
-
-.img-b {
-  @include img_l_pc(1899, -250, -50);
+.img-train {
+  @include img_r_pc(436, 0, 600);
   top: auto;
-  bottom: size(-250);
+  bottom: 0;
 }
 
-.img-ct {
-  @include img_r_pc(226, 326, 404);
-  top:calc(50% + 100vw * (316 - 540) / 1920);
+.subtitle {
+  @include img_l_pc(545, 532, 222);
+  padding: size(10) size(15);
+  font-size: size(38.6);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(5.41);
+  text-align: left;
+  color: #fff000;
+  border: solid 2px #fff000;
 }
 
-.img-lt {
-  @include img_l_pc(360, -30, -60);
+.title {
+  @include img_r_pc(550, 310, 620);
+  font-size: size(50);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(7.7);
+  text-align: left;
+  color: #ffffff;
+  white-space: nowrap
+}
+
+.btn {
+  @include div_l_pc(240, 63.6, 622, 364);
+  background-image: linear-gradient(to right, #b81c22 0%, #e95504 100%);
+  font-size: size(38.6);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(5.41);
+  text-align: left;
+  color: #ffffff;
+  border-radius: 8px;
 }
 
 /* 螢幕尺寸標準 */
@@ -96,17 +127,17 @@
 
   .logo {
     @include img_c_m(274, 65);
-  top:calc(50% + 100vw * (15 - 604 * .5) / 375);
+    top: calc(50% + 100vw * (15 - 604 * 0.5) / 375);
   }
 
   .t1 {
     @include img_c_m(272, 330);
-  top:calc(50% + 100vw * (280 - 604 * .5) / 375);
+    top: calc(50% + 100vw * (280 - 604 * 0.5) / 375);
   }
 
   .t2 {
     @include img_c_m(272, 441);
-  top:calc(50% + 100vw * (390 - 604 * .5) / 375);
+    top: calc(50% + 100vw * (390 - 604 * 0.5) / 375);
   }
 
   .img-b {
@@ -117,7 +148,7 @@
 
   .img-ct {
     @include img_r_m(100, 105, -50);
-  top:calc(50% + 100vw * (55 - 604 * .5) / 375);
+    top: calc(50% + 100vw * (55 - 604 * 0.5) / 375);
   }
 
   .img-lt {

@@ -2,52 +2,75 @@
   <div class="home no-padding-top">
     <div class="bg-img">
       <Loading :loading="load" />
-      <!-- <SideNavigation v-if="isMobile" />
-      <Navigation v-if="!isMobile" /> -->
+      <SideNavigation />
+      <!-- <Navigation v-if="!isMobile" /> -->
       <!-- <Indigator :viewIndex="viewIndex" /> -->
       <!-- <full-page
       ref="fullPage"
       :options="options"
       id="fullpage"
     > -->
-      <div class="animate-bg">
+      <!-- <div class="animate-bg">
         <div class="bg1">
         </div>
         <div class="bg2">
         </div>
         <div class="bg3">
         </div>
-      </div>
+      </div> -->
       <vue-lazy-component class="section relative" id="section1" @init="init">
         <Section1 />
       </vue-lazy-component>
-      <!-- <vue-lazy-component class="section" id="section2" style="">
-         <Section2 />
+      <vue-lazy-component class="section" id="section2" style="">
+        <Section2 />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section3">
         <Section3 />
       </vue-lazy-component>
-      <vue-lazy-component class="section relative" id="section4" >
-        <Section4 :viewIndex="viewIndex" />
+      <vue-lazy-component class="section relative" id="section4">
+        <Section4 />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section5">
-        <Section5 :viewIndex="viewIndex" />
+        <Section5 />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section6">
         <Section6 />
       </vue-lazy-component>
-      <vue-lazy-component class="section" id="section10">
-        <Section10 :viewIndex="viewIndex" />
-      </vue-lazy-component>
       <vue-lazy-component class="section" id="section7">
-          <Section7 /> 
+        <Section7 />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section8">
-         <Section8 />
+        <Section8 />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section9">
-        <Section9 :viewIndex="viewIndex" />
-      </vue-lazy-component> -->
+        <Section9 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section10">
+        <Section10 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section11">
+        <Section11 />
+      </vue-lazy-component>
+      <VideoSection1 :playBtn="require('@/projects/sfdy/video/play-btn.png')" title="開箱系列影片" :close="require('@/projects/sfdy/video/close.png')" :arrows="[require('@/projects/sfdy/video/arrow-left.png'), require('@/projects/sfdy/video/arrow-right.png')]" :slideList="[
+        {
+          title: '釋放壓力，回家就是享受的開始',
+          img: require('@/projects/sfdy/video/1.jpg'),
+          video: 'https://www.youtube.com/embed/-60Gqkr3TtU?&enablejsapi=1&playerapiid=ytplayer',
+          isPlay: false,
+        },
+        {
+          title: '內容街景大公開',
+          img: require('@/projects/sfdy/video/1.jpg'),
+          video: 'https://www.youtube.com/embed/-60Gqkr3TtU',
+          isPlay: false,
+        },
+        {
+          title: '屋內機密大公開',
+          img: require('@/projects/sfdy/video/1.jpg'),
+          video: 'https://www.youtube.com/embed/454jJog_1xI',
+          isPlay: false,
+        },
+      ]" />
       <!-- <vue-lazy-component class="section" id="contact"> -->
       <ContactSection />
       <!-- </vue-lazy-component> -->
@@ -126,37 +149,38 @@
 }
 
 @media only screen and (max-width: 767px) {
-.bg1,
-.bg2,
-.bg3 {
-  background-size: sizem(430) auto;
-}
-
+  .bg1,
+  .bg2,
+  .bg3 {
+    background-size: sizem(430) auto;
+  }
 }
 </style>
 
 <script>
 // @ is an alias to /src
 import $ from 'jquery'
-import Navigation from '@/layouts/Navigation.vue'
+// import Navigation from '@/layouts/Navigation.vue'
 import { isMobile } from '@/utils'
 import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
-import Indigator from '@/components/Indigator.vue'
+import VideoSection1 from '@/components/VideoSection1.vue'
+// import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
 import Section1 from '@/projects/oh1/Section1.vue'
-// import Section2 from '@/projects/oh1/Section2.vue'
-// import Section3 from '@/projects/oh1/Section3.vue'
-// import Section4 from '@/projects/oh1/Section4.vue'
-// import Section5 from '@/projects/oh1/Section5.vue'
-// import Section6 from '@/projects/oh1/Section6.vue'
-// import Section7 from '@/projects/oh1/Section7.vue'
-// import Section8 from '@/projects/oh1/Section8.vue'
-// import Section9 from '@/projects/oh1/Section9.vue'
-// import Section10 from '@/projects/oh1/Section10.vue'
+import Section2 from '@/projects/oh1/Section2.vue'
+import Section3 from '@/projects/oh1/Section3.vue'
+import Section4 from '@/projects/oh1/Section4.vue'
+import Section5 from '@/projects/oh1/Section5.vue'
+import Section6 from '@/projects/oh1/Section6.vue'
+import Section7 from '@/projects/oh1/Section7.vue'
+import Section8 from '@/projects/oh1/Section8.vue'
+import Section9 from '@/projects/oh1/Section9.vue'
+import Section10 from '@/projects/oh1/Section10.vue'
+import Section11 from '@/projects/oh1/Section11.vue'
 
 export default {
   name: 'home',
@@ -164,20 +188,22 @@ export default {
     Loading,
     // Indigator,
     // Navigation,
-    // SideNavigation,
+    SideNavigation,
     // LeafFlow,
     ContactSection,
     MobileNav,
     Section1,
-    // Section2,
-    // Section3,
-    // Section4,
-    // Section5,
-    // Section6,
-    // Section7,
-    // Section8,
-    // Section9,
-    // Section10,
+    Section2,
+    Section3,
+    Section4,
+    Section5,
+    Section6,
+    Section7,
+    Section8,
+    Section9,
+    Section10,
+    Section11,
+    VideoSection1,
   },
 
   data() {
