@@ -12,13 +12,17 @@
         <div class="pagination absolute flex-ac" v-if="isPC">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
-        <div class="swipe-btns absolute flex-ac flex-jb">
-          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+          <div class="prev-btn" @click="decIndex">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16.28 28.67' preserveAspectRatio='xMidyMid' fill='%23338000'%3E%3Cpolygon points='14.33 28.67 16.28 26.72 3.79 14.23 16.18 1.84 14.33 0 0 14.33 14.33 28.67'/%3E%3C/svg%3E" alt="">
+          </div>
+          <div class="next-btn" @click="addIndex">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16.28 28.67' preserveAspectRatio='xMidyMid' fill='%23338000'%3E%3Cpolygon points='14.33 28.67 16.28 26.72 3.79 14.23 16.18 1.84 14.33 0 0 14.33 14.33 28.67'/%3E%3C/svg%3E" alt="">
+          </div>
         </div>
       </div>
     </div>
-    <div class="txt txt1">
+    <div class="txt txt1" data-aos="fade-up" data-aos-delay="0">
       <h3 class="title title1" data-aos="fade-up" data-aos-delay="400">
         時尚樂活．玩美人生
       </h3>
@@ -28,7 +32,7 @@
         車行至淡海新市鎮，彷彿進入了另一個新國度，主幹道40米以上的大型街廓，臨路建築皆退縮12米以上，看不到礙眼的電線桿，瓦斯、管線、網路都已地下化，優質生活拉升幸福指數，造就花園城市新典範。
       </div>
     </div>
-    <div class="txt2">
+    <div class="txt2" data-aos="fade-up" data-aos-delay="200">
       <h3 class="title title1" data-aos="fade-up" data-aos-delay="400">
         2024淡海大不同
       </h3>
@@ -383,7 +387,7 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-    height: sizem(650);
+    height: sizem(536 + 287);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -398,57 +402,122 @@
   }
 
   .txt {
-    @include img_l_m(330, 25, 25);
-    height: auto;
-    filter: drop-shadow(0 0 5px #036);
-    display: block;
+    @include div_r_m(375, 334, 0, 0);
+    background-image: transparent;
+    padding: sizem(30) sizem(30);
   }
   .title {
-    // @include img_r_m(260, 409, 71);
-    font-size: sizem(26);
+    width: sizem(320);
+    margin: 0 auto 0;
+    font-size: sizem(25);
     font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
     letter-spacing: normal;
-    line-height: 2;
-    span {
-      display: block;
-      font-size: sizem(20);
-      letter-spacing: 0.01em;
-    }
+    text-align: left;
+    color: #fff000;
+    white-space: nowrap;
+  }
+
+  .title1 {
+  }
+
+  .title2 {
+    text-align: left;
+    padding-left: sizem(70);
   }
 
   .hr {
-    //  @include img_r_m(230, 458, 102);
-    height: sizem(1);
-    margin: sizem(12) 0;
+    width: sizem(320);
+    // height: 35px;
+    border-top: size(1) solid #fff;
+    margin: sizem(10) auto;
   }
 
   .desc {
-    // @include img_r_m(292, 474, 40);
-    font-size: sizem(14);
-    font-weight: normal;
+    // text-shadow: 0 2px 5px rgba(0, 0, 0, 0.44);
+    width: sizem(320);
+    margin: 0 auto;
+    font-size: sizem(15);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.73;
     letter-spacing: normal;
-    white-space: normal;
-    margin: 0 0 1.5em 0;
+    text-align: left;
+    color: #ffffff;
+    // white-space: nowrap;
   }
-  .item {
-    .icon {
-      width: sizem(39);
-      margin-right: sizem(4);
+
+  .txt2 {
+    padding: sizem(15) sizem(30);
+    @include div_l_m(347, 287, 536, 0);
+    background-image: linear-gradient(
+      to right,
+      rgba(184, 28, 34, 0.9),
+      rgba(233, 85, 4, 0.9)
+    );
+    .title {
+      font-size: sizem(22);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.38;
+      letter-spacing: normal;
+      text-align: left;
+      color: #ffffff;
     }
 
-    .text {
-      font-size: sizem(14);
-      letter-spacing: size(0.9);
-      line-height: 3.3;
+    .title1 {
+      text-align: left;
     }
+
+    .title2 {
+      text-align: left;
+      padding-left: sizem(130);
+    }
+
+    .hr {
+      display: none;
+    }
+
+    .desc {
+      width: 100%;
+      font-size: sizem(14);
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.84;
+      letter-spacing: normal;
+      text-align: left;
+      color: #ffffff;
+    }
+  }
+
+  .slogan {
+    @include img_r_m(201, 499, 30);
+    top: sizem(499);
+    bottom: auto;
+    font-family: Arial;
+    font-size: sizem(30);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(0.6);
+    text-align: left;
+    color: #ffffff;
+    white-space: nowrap;
   }
 
   /* Swipe */
   .swipe {
     width: 100%;
-    height: 100%;
+    height: sizem(234);
     min-height: auto;
-    top: 0;
+    top: sizem(326);
+    bottom: auto;
     left: 0;
     object-fit: cover;
   }
@@ -599,14 +668,37 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    height: sizem(370);
-    padding: 0 15px;
+    height: sizem(270);
+    padding: 0;
     z-index: 3;
 
     .prev-btn,
     .next-btn {
-      width: sizem(15);
+      width: sizem(50);
+      height: sizem(50);
+      border-radius: 999px;
+      background-color: #fff000;
       cursor: pointer;
+      img {
+        width: sizem(10);
+      }
+    }
+
+    .prev-btn {
+      margin-left: sizem(-25);
+      img {
+        margin-top: 30%;
+        margin-left: 35%;
+      }
+    }
+
+    .next-btn {
+      margin-right: sizem(-25);
+      img {
+        margin-top: 30%;
+        margin-right: 35%;
+        transform: rotate(180deg);
+      }
     }
   }
 }

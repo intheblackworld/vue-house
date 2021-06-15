@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div v-if="!isMobile" class="section2">
-      <img src="./s2/bg.jpg" alt="" class="bg-img">
+    <div class="section2">
+      <img src="./s2/bg.jpg" alt="" class="bg-img" v-if="!isMobile">
       <div class="title title1">
         海灣城市
       </div>
@@ -11,17 +11,15 @@
       <div class="subtitle">
         Charming City
       </div>
-      <div class="desc">
+      <div class="desc" v-if="!isMobile">
         交通建設、商業機能陸續到位，身價更上層樓，淡海新市鎮發展一日千里，躍升雙北菁英移居首選，<br />
         人口可望躍升近30萬，逐步向國際海洋城市大步邁進，如舊金山、雪梨、東京…成功經驗，未來不可限量。<br />
         [名軒海樂地] 位處淡海中心商業區、輕軌出站就到家，地利天成、無可複製，打造海灣俱樂部名宅新指標！
       </div>
-    </div>
-
-    <div v-if="isMobile" class="section2">
-      <ul class="desc">
-        <li v-for="(text, index) in text_list" data-aos="fade-right" :data-aos-delay="200 + (index + 1) * 200" data-aos-duration="1000" :key="text">{{text}}</li>
-      </ul>
+      <div class="desc" v-if="isMobile">
+        交通建設、商業機能陸續到位，身價更上層樓，淡海新市鎮發展一日千里，躍升雙北菁英移居首選，人口可望躍升近30萬，逐步向國際海洋城市大步邁進，如舊金山、雪梨、東京…成功經驗，未來不可限量。<br />
+        [名軒海樂地] 位處淡海中心商業區、輕軌出站就到家，地利天成、無可複製，打造海灣俱樂部名宅新指標！
+      </div>
       <Map :bgSrc="require('./s2/bg.jpg')" v-if="isMobile" :hand="require('./s2/hand.png')">
       </Map>
     </div>
@@ -122,38 +120,62 @@
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    height: calc(100vh - 63px);
+    height: sizem(815);
     // height: size-m(804);
-    // background-image: url('./mo/1/bg.jpg');
+    background-color: #003c95;
     background-size: cover;
     background-attachment: scroll;
   }
-  .desc {
+  .title {
+    font-size: sizem(25);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(3.5);
+    text-align: left;
+    color: #ffffff;
+    white-space: nowrap;
     z-index: 5;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 100%;
-    top: calc(30% - 36vw);
-    li {
-      font-size: size-m(15);
-      text-align: center;
-      line-height: 2.08;
-      color: #036c;
-    }
-    /*.bg-img {
-    width: 100vw;
-    height: auto;
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    object-fit: cover;
+  }
 
-    &:nth-child(1) {
-      position: relative;
-    }
-  }*/
+  .title1 {
+    @include img_l_m(111, 35, 31);
+  }
+
+  .title2 {
+    @include img_l_m(111, 66, 82);
+  }
+
+  .subtitle {
+    @include img_r_m(767, 0, 27);
+    top: auto;
+    bottom: sizem(15);
+    font-family: Arial;
+    font-size: sizem(30);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: sizem(0.6);
+    text-align: right;
+    color: #ffffff;
+    white-space: nowrap;
+    z-index: 5;
+  }
+
+  .desc {
+    @include img_c_m(320, 114);
+    z-index: 5;
+    font-size: sizem(15);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.73;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+    white-space: normal;
   }
 }
 </style>

@@ -9,12 +9,12 @@ $family2: "Noto Serif TC", serif;
 $family3: "Noto Serif TC", serif;
 
 /* navigation */
-$nav_bg: #c49b63;
+$nav_bg: linear-gradient(to right, #b81c22, #e95504 100%);
 $nav_btn_color: #fff;
 $nav_link_color: #fff;
 $nav_link_subtitle_color: #fff;
-$nav_link_hover_color: #c82514;
-$nav_link_hover_bg: #eee;
+$nav_link_hover_color: #fef001;
+$nav_link_hover_bg: transparent;
 
 /* loading */
 $loading_bg_color: #ccc;
@@ -45,7 +45,7 @@ $order_input_bg: #fff !important;
 $order_input_border: solid 1px #004471;
 $order_input_focus_border: solid 1px rgba(0, 0, 0, 1) !important;
 $order_input_selected_color: solid 1px rgba(0, 0, 0, 1) !important;
-$order_check_desc_color: #fff !important;
+$order_check_desc_color: #808080 !important;
 $order_check_span_color: #009d95 !important;
 $order_submit_bg: linear-gradient(to right, #b81c22, #e95504 100%) !important;
 $order_submit_color: #fff !important;

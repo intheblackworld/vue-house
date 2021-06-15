@@ -1,6 +1,6 @@
 <template>
   <div class="section11">
-    <div class="title">
+    <div class="title"  data-aos="fade-up" data-aos-delay="400">
       樣品屋樣品屋
     </div>
     <carousel-3d ref="mycarousel" :width="imgWidth" :height="imgHeight" :autoplay="true" :autoplayTimeout="5000" :autoplayHoverPause="true" :perspective="0" :disable3d="isMobile ? true : false" :border="0" :display="isMobile ? 1 : 3" :space="isMobile ? 'auto' : 'auto'" @after-slide-change="onAfterSlideChange">
@@ -8,7 +8,7 @@
         <img :src="slide.img" :class="`carousel-3d-img`" :alt="slide.alt" />
       </slide>
     </carousel-3d>
-    <div class="desc" v-html="slideList[slideIndex].desc"></div>
+    <div class="desc" v-html="slideList[slideIndex].desc"  data-aos="fade-up" data-aos-delay="200"></div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -42,7 +42,7 @@
   @include img_c_pc(360, 0);
   width: 100%;
   top: auto;
-  bottom: size(50);
+  bottom: size(150);
   font-size: size(40);
   font-weight: normal;
   font-stretch: normal;
@@ -80,24 +80,27 @@
 
   .title {
     width: 100vw;
+    font-size: sizem(25);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffd300;
+    top: sizem(-50);
   }
 
-  .txt1 {
-    width: 80vw;
-  }
-
-  .txt2 {
-    width: 65vw;
-  }
-
-  .frame {
-    width: 100vw;
-    top: calc(-100vw * (200 / 750));
-  }
-
-  .icon {
-    width: 20px;
-    top: calc(100vw * (420 / 750));
+  .desc {
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.73;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    bottom: sizem(-70);
   }
 
   .carousel-3d-container {
@@ -165,7 +168,7 @@ export default {
     }
     if (this.isMobile) {
       this.imgWidth = window.screen.width
-      this.imgHeight = window.screen.width * (570 / 750)
+      this.imgHeight = window.screen.width * (240 / 375)
     } else {
       this.imgWidth = window.screen.width * (995 / 1920)
       this.imgHeight = window.screen.width * (747 / 1920)

@@ -230,6 +230,7 @@
   .video-container {
     width: 100vw;
     height: calc(100vw * 280 / 375);
+    margin: 0;
     &::before {
       display: none;
     }

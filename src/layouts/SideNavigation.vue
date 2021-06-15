@@ -9,13 +9,7 @@
       </div>
       <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
       <ul :class="`navlist ${isOpen ? 'open': ''}`">
-        <li
-          :key="item.name"
-          v-scroll-to="{ element: `#${item.section}`, offset: isMobile ? (item.mobileOffset ? item.mobileOffset : offset) : (item.offset ? item.offset : offset) }"
-          v-for="item in list"
-          class="flex-ac"
-          @click="toggleSidebar"
-        >
+        <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: isMobile ? (item.mobileOffset ? item.mobileOffset : offset) : (item.offset ? item.offset : offset) }" v-for="item in list" class="flex-ac" @click="toggleSidebar">
           <span class="link">
             <img v-if="item.imgSrc" :src="item.imgSrc" alt />
             <span>
@@ -97,7 +91,7 @@ export default {
   right: 30px;
   width: 40px;
   height: 40px;
-  background-color: #c49b63;
+  background-color: transparent;
   cursor: pointer;
 
   // img {
@@ -183,21 +177,26 @@ export default {
   transform: translateX(40%);
 
   li {
-    height: 60px;
+    height: auto;
     margin-bottom: 0;
     width: 100%;
+    justify-content: flex-end;
+    padding-right: 10%;
+    margin-bottom: 20px;
   }
 
   .link {
+    height: auto;
     position: relative;
     overflow: hidden;
-    height: 60px;
-    width: 100%;
-    font-size: 24px;
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 19px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.11;
+    letter-spacing: 2.66px;
+    text-align: right;
+    color: #ffffff;
     display: none;
     background-size: cover;
     position: relative;
@@ -224,7 +223,7 @@ export default {
       display: block;
     }
     span {
-      line-height: 16px;
+      // line-height: 16px;
     }
 
     &:hover {
@@ -233,25 +232,25 @@ export default {
       background-position: center;
       background-size: cover;
     }
-    &:before {
-      content: '';
-      width: 40%;
-      height: 100%;
-      display: block;
-      background: #fff;
-      position: absolute;
-      transform: skewX(-20deg);
-      left: -10%;
-      opacity: 0;
-      top: 0;
-      z-index: 5;
-      transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
-    }
-    &:hover:before {
-      opacity: 1;
-      width: 90%;
-      left: 140%;
-    }
+    // &:before {
+    //   content: '';
+    //   width: 40%;
+    //   height: 100%;
+    //   display: block;
+    //   background: #fff;
+    //   position: absolute;
+    //   transform: skewX(-20deg);
+    //   left: -10%;
+    //   opacity: 0;
+    //   top: 0;
+    //   z-index: 5;
+    //   transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
+    // }
+    // &:hover:before {
+    //   opacity: 1;
+    //   width: 90%;
+    //   left: 140%;
+    // }
   }
 
   &.open {
@@ -259,12 +258,15 @@ export default {
     transform: translateX(0%);
     display: flex;
     flex-wrap: wrap;
-    align-content: center;
+    align-content: flex-start;
+    padding-top: 10%;
 
     .link {
       display: flex;
-      justify-content: center;
+      height: auto;
+      // justify-content: center;
       cursor: pointer;
+      text-align: right;
       span {
         white-space: nowrap;
       }
@@ -1728,7 +1730,7 @@ body {
   width: 120px;
   height: 100%;
   display: none;
-  background-image: url("~@/assets/img/contact_mb-bg.png");
+  background-image: url('~@/assets/img/contact_mb-bg.png');
 }
 @media (min-width: 992px) {
   .sidenav {

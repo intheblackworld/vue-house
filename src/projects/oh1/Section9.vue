@@ -11,9 +11,13 @@
         <div class="pagination absolute flex-ac" v-if="isPC">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
-        <div class="swipe-btns absolute flex-ac flex-jb">
-          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+          <div class="prev-btn" @click="decIndex">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16.28 28.67' preserveAspectRatio='xMidyMid' fill='%23338000'%3E%3Cpolygon points='14.33 28.67 16.28 26.72 3.79 14.23 16.18 1.84 14.33 0 0 14.33 14.33 28.67'/%3E%3C/svg%3E" alt="">
+          </div>
+          <div class="next-btn" @click="addIndex">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16.28 28.67' preserveAspectRatio='xMidyMid' fill='%23338000'%3E%3Cpolygon points='14.33 28.67 16.28 26.72 3.79 14.23 16.18 1.84 14.33 0 0 14.33 14.33 28.67'/%3E%3C/svg%3E" alt="">
+          </div>
         </div>
       </div>
     </div>
@@ -306,7 +310,7 @@
 @media screen and (max-width: 767px) {
   .section9 {
     width: 100vw;
-    height: sizem(650);
+    height: sizem(640);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -368,10 +372,10 @@
 
   /* Swipe */
   .swipe {
-    width: 100%;
-    height: 100%;
+    width: sizem(320);
+    height: sizem(600);
     min-height: auto;
-    top: 0;
+    top: sizem(39);
     left: 0;
     object-fit: cover;
   }
@@ -418,7 +422,7 @@
   .swipe-wrap {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .swipe-item {
@@ -519,17 +523,41 @@
 
   .swipe-btns {
     position: absolute;
-    left: 0;
+    left: sizem(-27.5);
+    right: auto;
     bottom: 0;
-    width: 100%;
-    height: sizem(370);
-    padding: 0 15px;
+    width: sizem(375);
+    height: sizem(600);
+    padding: 0;
     z-index: 3;
 
     .prev-btn,
     .next-btn {
-      width: sizem(15);
+      width: sizem(50);
+      height: sizem(50);
+      border-radius: 999px;
+      background-color: #fff000;
       cursor: pointer;
+      img {
+        width: sizem(10);
+      }
+    }
+
+    .prev-btn {
+      margin-left: sizem(-25);
+      img {
+        margin-top: 30%;
+        margin-left: 35%;
+      }
+    }
+
+    .next-btn {
+      margin-right: sizem(-25);
+      img {
+        margin-top: 30%;
+        margin-right: 35%;
+        transform: rotate(180deg);
+      }
     }
   }
 }

@@ -1,8 +1,8 @@
 <template>
   <div class="section10">
-    <img src="./s10/img.png" alt="" class="img">
+    <img src="./s10/img.png" alt="" class="img" data-aos="fade-up" data-aos-delay="0">
     <div class="item-list flex wrap flex-ac flex-ja">
-      <div class="item flex-c">
+      <div class="item flex-c" data-aos="fade-up" data-aos-delay="200">
         <h3 class="item-text">
           <span>
             7600
@@ -11,7 +11,7 @@
           壯闊大基地
         </h3>
       </div>
-      <div class="item flex-c">
+      <div class="item flex-c" data-aos="fade-up" data-aos-delay="300">
         <h3 class="item-text">
           輕軌<span>
             V11
@@ -19,7 +19,7 @@
           出站就到家
         </h3>
       </div>
-      <div class="item flex-c">
+      <div class="item flex-c" data-aos="fade-up" data-aos-delay="400">
         <h3 class="item-text">
           <span>
             6000
@@ -28,7 +28,7 @@
           海灣俱樂部
         </h3>
       </div>
-      <div class="item flex-c">
+      <div class="item flex-c" data-aos="fade-up" data-aos-delay="500">
         <h3 class="item-text">
           <span>
             18
@@ -41,7 +41,7 @@
     <h3 class="title title1" data-aos="fade-up" data-aos-delay="400">
       1+1～3+1房時尚輕旅宅
     </h3>
-    <h3 class="desc">
+    <h3 class="desc" data-aos="fade-up" data-aos-delay="600">
       基地位置｜淡水 沙崙路二段×新市六路一段<br />
       接待會館｜新北市淡水區濱海路一段221號<br />
       禮賓專線｜02-2805-5588
@@ -146,7 +146,7 @@
 @media screen and (max-width: 767px) {
   .section10 {
     width: 100vw;
-    height: sizem(650);
+    height: sizem(840);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -160,49 +160,71 @@
     }
   }
 
-  .txt {
-    @include img_l_m(330, 25, 25);
-    height: auto;
-    filter: drop-shadow(0 0 5px #036);
-    display: block;
-  }
   .title {
-    // @include img_r_m(260, 409, 71);
-    font-size: sizem(26);
+    @include div_c_m(303, 40, 636);
+    background-image: linear-gradient(
+      to right,
+      rgba(184, 28, 34, 0.9),
+      rgba(233, 85, 4, 0.9)
+    );
+    padding: 0;
+    font-size: sizem(25);
     font-weight: bold;
-    letter-spacing: normal;
-    line-height: 2;
-    span {
-      display: block;
-      font-size: sizem(20);
-      letter-spacing: 0.01em;
-    }
-  }
-
-  .hr {
-    //  @include img_r_m(230, 458, 102);
-    height: sizem(1);
-    margin: sizem(12) 0;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: sizem(1);
+    text-align: center;
+    color: #ffffff;
+    white-space: nowrap;
   }
 
   .desc {
-    // @include img_r_m(292, 474, 40);
-    font-size: sizem(14);
-    font-weight: normal;
+    @include img_c_m(290, 0);
+    top: auto;
+    bottom: sizem(85);
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.75);
+    font-size: sizem915;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.73;
     letter-spacing: normal;
-    white-space: normal;
-    margin: 0 0 1.5em 0;
+    text-align: left;
+    color: #ffffff;
+    white-space: nowrap;
   }
-  .item {
-    .icon {
-      width: sizem(39);
-      margin-right: sizem(4);
+
+  .img {
+    @include img_c_m(366, 384);
+  }
+
+  .item-list {
+    @include img_c_m(315, 40);
+    .item {
+      width: sizem(145);
+      height: sizem(145);
+      border: solid sizem(4) #fefefe;
+      box-shadow: inset 0 0 3px 0 #333;
+      border-radius: 999px;
+      margin-bottom: sizem(16);
     }
 
-    .text {
-      font-size: sizem(14);
-      letter-spacing: size(0.9);
-      line-height: 3.3;
+    .item-text {
+      font-size: sizem(20);
+      font-weight: 600;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.3;
+      letter-spacing: normal;
+      text-align: center;
+      color: #ffffff;
+
+      span {
+        font-size: sizem(25);
+        font-weight: bold;
+        color: #fff000;
+      }
     }
   }
 }

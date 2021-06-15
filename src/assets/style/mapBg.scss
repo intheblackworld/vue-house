@@ -46,9 +46,14 @@
     overflow-x: scroll;
     overflow-y: hidden;
     width: 100vw;
+    position: absolute;
+    bottom: 0;
+    left: 0;
     .map-bg {
       width: auto;
       height: sizem(604);
+      top: auto;
+      bottom: 0;
     }
 
     .map-text {
@@ -68,10 +73,10 @@
 
     .mask {
       width: 200vw;
-      height: sizem(57);
-      background-color: rgba(179, 57, 0, 0.6);
+      height: sizem(40);
+      background-color: rgba(255, 255, 255, 0.6);
       // animation: swing 2.5s ease-in-out 0s infinite;
-      left: 35vw;
+      left: 25vw;
       position: absolute;
       top: sizem(285);
       left: 0;
@@ -87,8 +92,8 @@
       z-index: 3;
       width: sizem(87) !important;
       height: auto !important;
-      left: sizem(425);
-      right: 0;
+      left: sizem(155);
+      right: auto;
       margin: 0 auto;
       top: sizem(298) !important;
       display: block;

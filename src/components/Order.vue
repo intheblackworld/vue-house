@@ -432,23 +432,23 @@ export default {
       font-size: calc(100vw * 35 / 375);
       letter-spacing: 4px;
 
-      &::after {
-        content: '';
-        width: 60px;
-        border-top: 2px solid #fff000;
-        position: absolute;
-        right: -10px;
-        top: 50%;
-      }
+      // &::after {
+      //   content: '';
+      //   width: 60px;
+      //   border-top: 2px solid #fff000;
+      //   position: absolute;
+      //   right: -10px;
+      //   top: 50%;
+      // }
 
-      &::before {
-        content: '';
-        width: 60px;
-        border-top: 2px solid #fff000;
-        position: absolute;
-        left: -10px;
-        top: 50%;
-      }
+      // &::before {
+      //   content: '';
+      //   width: 60px;
+      //   border-top: 2px solid #fff000;
+      //   position: absolute;
+      //   left: -10px;
+      //   top: 50%;
+      // }
     }
 
     .order-subtitle {

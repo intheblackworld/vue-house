@@ -8,13 +8,13 @@
     <img src="./s1/3.png" :alt="`${info.caseName}_img`" class="bg-img">
     <img src="./s1/4.png" :alt="`${info.caseName}_img`" class="bg-img">
     <img src="./s1/5.png" :alt="`${info.caseName}_img`" class="img-train">
-    <h3 class="title">
+    <h3 class="title" data-aos="fade-up" data-aos-delay="200">
       海灣新樂園 城市心天地
     </h3>
-    <h3 class="subtitle">
+    <h3 class="subtitle" data-aos="fade-up" data-aos-delay="400">
       淡海最大6000坪俱樂部宅
     </h3>
-    <h3 class="btn flex-c" v-scroll-to="{ element: `#contact` }">
+    <h3 class="btn flex-c" v-scroll-to="{ element: `#contact` }" data-aos="fade-up" data-aos-delay="600">
       搶先預約
     </h3>
     <!-- <div class="hr1" v-if="isMobile"></div>
@@ -58,10 +58,6 @@
   @include img_l_pc(363, 190, 306);
 }
 
-.img1 {
-  @include img_r_pc(363, 190, 306);
-}
-
 .img-train {
   @include img_r_pc(436, 0, 600);
   top: auto;
@@ -92,7 +88,7 @@
   letter-spacing: size(7.7);
   text-align: left;
   color: #ffffff;
-  white-space: nowrap
+  white-space: nowrap;
 }
 
 .btn {
@@ -107,6 +103,7 @@
   text-align: left;
   color: #ffffff;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 /* 螢幕尺寸標準 */
@@ -121,38 +118,71 @@
     max-height: sizem(812);
     height: calc(100vh - 63px);
     margin: 0 0 0vw 0;
+    overflow: hidden;
     // background-size: auto size-m(750);
     z-index: initial;
   }
 
-  .logo {
-    @include img_c_m(274, 65);
-    top: calc(50% + 100vw * (15 - 604 * 0.5) / 375);
-  }
-
-  .t1 {
-    @include img_c_m(272, 330);
-    top: calc(50% + 100vw * (280 - 604 * 0.5) / 375);
-  }
-
-  .t2 {
-    @include img_c_m(272, 441);
-    top: calc(50% + 100vw * (390 - 604 * 0.5) / 375);
-  }
-
-  .img-b {
-    @include img_l_m(454, -250, -40);
+  .bg-img {
+    width: 50%;
+    height: 50%;
+    position: absolute;
     top: auto;
-    bottom: sizem(-140);
+    bottom: -5%;
+    left: auto;
+    right: 0%;
+    display: block;
+    object-fit: cover;
+    margin-top: 0;
+    // opacity: 0.5;
+
+    &:nth-child(1) {
+      position: relative;
+    }
   }
 
-  .img-ct {
-    @include img_r_m(100, 105, -50);
-    top: calc(50% + 100vw * (55 - 604 * 0.5) / 375);
+  .logo {
+    @include img_c_m(250, 84);
   }
 
-  .img-lt {
-    @include img_l_m(150, -30, -60);
+  .img-train {
+    @include img_l_m(359, 0, 0);
+    top: auto;
+    bottom: 0;
+  }
+
+  .subtitle {
+    @include img_c_m(343, 324);
+    padding: sizem(10) sizem(15);
+    font-size: sizem(24);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: sizem(3.36);
+    text-align: center;
+    color: #fff000;
+    border: solid 2px #fff000;
+    white-space: nowrap;
+  }
+
+  .title {
+    display: none;
+  }
+
+  .btn {
+    @include div_c_m(160, 42, 382);
+    background-image: linear-gradient(to right, #b81c22 0%, #e95504 100%);
+    font-size: sizem(25);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(3.5);
+    text-align: left;
+    color: #ffffff;
+    border-radius: 18px;
+    cursor: pointer;
   }
 }
 </style>
