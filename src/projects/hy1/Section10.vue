@@ -49,7 +49,7 @@ iframe {
 @media screen and (max-width: 767px) {
   .section10 {
     width: 100vw;
-    height: 100vh;
+    height: sizem(604);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
