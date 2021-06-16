@@ -93,7 +93,7 @@
           </div>
           <div class="swipe-btns absolute flex-ac flex-jb">
             <div class="prev-btn" @click="decIndexNest"></div>
-            <div class="next-btn" @click="decIndexNest"></div>
+            <div class="next-btn" @click="addIndexNest"></div>
           </div>
         </div>
       </div>
@@ -109,7 +109,7 @@
   min-height: size(900);
   max-height: size(1080);
   position: relative;
-  margin-bottom:size(307);
+  margin-bottom: size(307);
   // background-color: #fff;
   // min-height: size(900);
   //background-image: url('./s4/bg.jpg');
@@ -128,12 +128,12 @@
   object-fit: cover;
   margin-top: 0;
   transform: translateY(101%);
-    z-index: 3;
-  }
+  z-index: 3;
+}
 
 .content {
   @include div_l_pc(1308, 788, 101, 172);
-  top: calc(50% + (101 - 1080 * .5) * 100vw / 1920);
+  top: calc(50% + (101 - 1080 * 0.5) * 100vw / 1920);
   background-color: rgba(96, 96, 96, 0.3);
 }
 
@@ -236,7 +236,7 @@
 
 .menu {
   @include img_l_pc(176 * 2 + 70, 81, 142);
-  font-family: "Noto Serif TC", serif;
+  font-family: 'Noto Serif TC', serif;
   ul {
     width: 100%;
     list-style-type: none;
@@ -303,7 +303,7 @@
 .swipe {
   width: size(907);
   height: size(807);
-  top: calc(50% + (169 - 1080 * .5) * 100vw / 1920);
+  top: calc(50% + (169 - 1080 * 0.5) * 100vw / 1920);
   right: size(134);
   object-fit: cover;
   // background: #0344;
@@ -464,41 +464,41 @@
   }
 }
 .swipe-btns {
-    width: 100%;
-    height: 100%;
-    padding: 0 15px;
-    z-index: 3;
+  width: 100%;
+  height: 100%;
+  padding: 0 15px;
+  z-index: 3;
 
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+
+  .prev-btn,
+  .next-btn {
     position: absolute;
-    width: 100%;
     height: 100%;
-    z-index: 3;
-
-    .prev-btn,
-    .next-btn {
-      position: absolute;
-      height: 100%;
-      width: size(28);
-      top: 0;
-    }
-
-    .prev-btn {
-      left: 0;
-    }
-    .next-btn {
-      right: 0;
-      transform: scaleX(-1);
-    }
-    .prev-btn::after,
-    .next-btn::after {
-      content: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 30 80' xml:space='preserve'%3E%3Cpolygon fill='%23FFFFFF' points='15,40 30,0 15,20 0,40 15,60 30,80 '/%3E%3C/svg%3E");
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 50%;
-    }
+    width: size(28);
+    top: 0;
   }
+
+  .prev-btn {
+    left: 0;
+  }
+  .next-btn {
+    right: 0;
+    transform: scaleX(-1);
+  }
+  .prev-btn::after,
+  .next-btn::after {
+    content: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 30 80' xml:space='preserve'%3E%3Cpolygon fill='%23FFFFFF' points='15,40 30,0 15,20 0,40 15,60 30,80 '/%3E%3C/svg%3E");
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+  }
+}
 
 @media only screen and (max-width: 1440px) {
 }
@@ -519,7 +519,7 @@
     height: sizem(710);
     min-height: auto;
     max-height: initial;
-  margin-bottom:sizem(440);
+    margin-bottom: sizem(440);
   }
 
   .content {
@@ -828,7 +828,7 @@
   .swipe-btns {
     .prev-btn,
     .next-btn {
-      width: sizem(28)
+      width: sizem(28);
     }
   }
 }
@@ -837,12 +837,12 @@
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
 import info from '@/info'
-import slider from '@/mixins/slider.js'
+// import slider from '@/mixins/slider.js'
 
 export default {
   name: 'section9',
 
-  mixins: [slider],
+  // mixins: [slider],
   props: ['block'],
 
   data() {
@@ -853,6 +853,9 @@ export default {
       isTablet,
       isDialog: false,
       blockIndex: 0, // 0 門戶一品 1 風景一品
+      slideIndex: 0,
+      toggleTimer: true,
+      stopAutoPlay: false,
       itemIndex: 0,
       slideIndex1: 0,
       slideList: [
@@ -922,6 +925,31 @@ export default {
   },
 
   methods: {
+    goTo(index) {
+      this.slideIndex = index
+    },
+    goToMultiIndex(index, slideIndex) {
+      this[`slideIndex${slideIndex}`] = index
+    },
+    addIndex() {
+      this.slideIndex =
+        this.slideIndex === this.slideList.length - 1 ? 0 : this.slideIndex + 1
+    },
+
+    decIndex() {
+      this.slideIndex =
+        this.slideIndex === 0 ? this.slideList.length - 1 : this.slideIndex - 1
+    },
+    // 一個區塊有多個輪播組件
+    addMultiIndex(index) {
+      this[`slideIndex${index}`] =
+        this[`slideIndex${index}`] === this[`slideList${index}`].length - 1 ? 0 : this[`slideIndex${index}`] + 1
+    },
+
+    decMultiIndex(index) {
+      this[`slideIndex${index}`] =
+        this[`slideIndex${index}`] === 0 ? this[`slideList${index}`].length - 1 : this[`slideIndex${index}`] - 1
+    },
     changeItem(i) {
       this.slideIndex1 = 0
       this.itemIndex = i
@@ -945,7 +973,18 @@ export default {
   created() {},
 
   mounted() {
-    this.toggleTimer = false
+    // this.toggleTimer = false
+
+    setInterval(() => {
+      if (this.toggleTimer) {
+        if (this.slideList && !this.stopAutoPlay) {
+          this.addIndex()
+        }
+        if (this.slideList1) {
+          this.addIndexNest()
+        }
+      }
+    }, 5000)
   },
 
   computed: {
