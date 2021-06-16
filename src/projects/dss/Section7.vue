@@ -29,7 +29,7 @@
               </div>
             </div>
             <div class="box3">
-              <div class="box4" data-aos="fade" data-aos-delay="600">
+              <div class="box4" data-aos="fade" data-aos-delay="600"  @click="showDialog = true">
                 <img src="./s7/img_04.jpg" />
                 <img src="./s7/txt_04.jpg" class="txt" />
               </div>
