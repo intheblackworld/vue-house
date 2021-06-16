@@ -4,13 +4,7 @@
     <div class="bg fullscreen">
       <div class="relative m-container" v-if="isMobile">
         <div class="slide relative" data-aos="fade" data-aos-delay="500">
-          <img
-            v-for="(slide, index) in slideList"
-            :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
-            :key="`s4-slide-${index}`"
-            :src="slide.img"
-            alt
-          />
+          <img v-for="(slide, index) in slideList" :class="`slide-img ${slideIndex === index ? 'active' : ''}`" :key="`s4-slide-${index}`" @click="showDialogCheck(index)" :src="slide.img" alt />
           <div class="btn-group flex-jb flex-ac flex-mobile-jb">
             <img @click="decIndex" src="./small_left_btn.png" alt />
             <img @click="addIndex" src="./small_right_btn.png" alt />
@@ -47,6 +41,14 @@
           </div>
         </div>
       </div>
+      <div class="scale-img-dialog" v-if="showDialog">
+        <div class="mask">
+          <img @click="showDialog = false" class="close" src="@/assets/img/close.png" alt />
+          <div class="content">
+            <iframe src="https://www.youtube.com/embed/B9eScZn-kvc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -71,9 +73,48 @@
 }
 .box2:first-child {
   margin: 1px 0 0 0;
+  &:hover .txt {
+    opacity: 1;
+  }
 }
 .box4 {
   margin: 1px 0 0 1px;
+
+  &:hover {
+    .play-btn {
+      opacity: 1;
+    }
+
+    .txt {
+      opacity: 1;
+    }
+  }
+}
+
+.play-btn {
+  width: 140px;
+  height: 40px;
+  line-height: 1.5;
+  border: 1px solid #fff;
+  border-radius: 999px;
+  font-size: 18px;
+  color: #fff;
+  position: absolute;
+  top: 30%;
+  left: 45%;
+  z-index: 2;
+  opacity: 0;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  .tri {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 0 10px 20px;
+    border-color: transparent transparent transparent #fff;
+    margin-right: 10px;
+  }
 }
 img {
   width: 100%;
@@ -91,10 +132,6 @@ img {
   opacity: 0;
   transition: all 0.5s;
 }
-.txt:hover {
-  opacity: 1;
-}
-
 .fullscreen {
   max-height: 900px;
 }
@@ -151,6 +188,7 @@ export default {
   data() {
     return {
       isMobile,
+      showDialog: false,
       slideList: [
         {
           img: require('./s7/img1m.jpg'),
@@ -176,6 +214,12 @@ export default {
     }
   },
 
-  methods: {},
+  methods: {
+    showDialogCheck(index) {
+      if (index ===2 ) {
+        this.showDialog = true
+      }
+    }
+  },
 }
 </script>
