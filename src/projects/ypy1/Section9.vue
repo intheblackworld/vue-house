@@ -134,7 +134,7 @@
 .content {
   @include div_l_pc(1308, 788, 101, 172);
   top: calc(50% + (101 - 1080 * .5) * 100vw / 1920);
-  background-color: rgba(96, 96, 96, 0.3);
+  background-color: rgba(96, 96, 96, 0.3);z-index: 3;
 }
 
 .text {
@@ -305,7 +305,7 @@
   height: size(807);
   top: calc(50% + (169 - 1080 * .5) * 100vw / 1920);
   right: size(134);
-  object-fit: cover;
+  object-fit: cover;z-index: 4;
   // background: #0344;
   &::before {
     content: '';
@@ -361,6 +361,8 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  background: url("./s9/loading.gif") no-repeat center;
+  background-size:10% auto;
 }
 
 .swipe-item {
@@ -378,14 +380,14 @@
     right: 2em;
     bottom: 1.2em;
     color: #fff;
-    font-size: size(18);
-    font-weight: bold;
+    font-size: size(16);
+    font-weight: 400;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.6;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.06em;
     text-align: left;
-    text-shadow: 0 0.3em 1em #000;
+    text-shadow: 0 0.3em 1.5em #000, 0 0em 0.5em #000,;
   }
 
   // &:nth-child(1) {
@@ -760,9 +762,9 @@
     .slide-name {
       right: auto;
       top: auto;
-      bottom: 1.2rem;
-      right: 1.2rem;
-      font-size: sizem(15);
+      bottom: 0.8em;
+      right: 1.2em;
+      font-size: sizem(13);
     }
   }
 
@@ -858,26 +860,30 @@ export default {
       slideList: [
         {
           img: require('./s9/1-1.jpg'),
-          name: '',
+          name: '南桃園交流道 實景拍攝',
         },
         {
           img: require('./s9/1-2.jpg'),
-          name: '',
+          name: '南桃園交流道 實景拍攝',
         },
       ],
       slideList1: [
         [
           {
             img: require('./s9/2-1-1.jpg'),
+            name: '風禾公園 實景拍攝',
           },
           {
             img: require('./s9/2-1-2.jpg'),
+            name: '風禾公園 實景拍攝',
           },
           {
             img: require('./s9/2-1-3.jpg'),
+            name: '風禾公園 實景拍攝',
           },
           {
             img: require('./s9/2-1-4.jpg'),
+            name: '風禾公園 實景拍攝',
           },
         ],
         [

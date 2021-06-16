@@ -659,49 +659,49 @@ export default {
       slideList: [
         {
           img: require('./s4/1.jpg'),
-          name: '3D外觀示意圖',
+          name: '嘉環一品硯 外觀3D示意圖',
         },
       ],
       slideList1: [
         {
           img: require('./s4/KTV透視圖.jpg'),
-          name: 'KTV示意圖',
+          name: '嘉環一品硯KTV 風格示意圖',
         },
         {
           img: require('./s4/lobby透視圖.jpg'),
-          name: 'lobby示意圖',
+          name: '嘉環一品硯lobby 風格示意圖',
         },
         {
           img: require('./s4/交誼廳透視圖.jpg'),
-          name: '交誼廳示意圖',
+          name: '嘉環一品硯交誼廳 風格示意圖',
         },
         {
           img: require('./s4/酒吧廊道透視圖.jpg'),
-          name: '酒吧廊道示意圖',
+          name: '嘉環一品硯酒吧廊道 風格示意圖',
         },
         {
           img: require('./s4/健身房透視圖.jpg'),
-          name: '健身房示意圖',
+          name: '嘉環一品硯健身房 風格示意圖',
         },
         {
           img: require('./s4/會議室透視圖.jpg'),
-          name: '會議室示意圖',
+          name: '嘉環一品硯會議室 風格示意圖',
         },
         {
           img: require('./s4/瑜珈室透視圖.jpg'),
-          name: '瑜珈室示意圖',
+          name: '嘉環一品硯瑜珈室 風格示意圖',
         },
         {
           img: require('./s4/遊戲室透視圖.jpg'),
-          name: '遊戲室示意圖',
+          name: '嘉環一品硯遊戲室 風格示意圖',
         },
         {
           img: require('./s4/閱覽室透視圖.jpg'),
-          name: '閱覽室示意圖',
+          name: '嘉環一品硯閱覽室 風格示意圖',
         },
         {
           img: require('./s4/親子室透視圖.jpg'),
-          name: '親子室示意圖',
+          name: '嘉環一品硯親子室 風格示意圖',
         },
       ],
     }
