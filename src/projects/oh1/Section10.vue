@@ -121,11 +121,13 @@
     letter-spacing: normal;
     text-align: center;
     color: #ffffff;
+    white-space: nowrap;
 
     span {
       font-size: size(42);
       font-weight: bold;
       color: #fff000;
+    white-space: nowrap;
     }
   }
 }

@@ -69,26 +69,29 @@
 
 .subtitle {
   @include img_l_pc(545, 532, 222);
-  padding: size(10) size(15);
+  top: calc(50% + (532 - 540) * 100vw / 1920);
+  padding: size(10) 0;
   font-size: size(38.6);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(5.41);
-  text-align: left;
+  letter-spacing:0.14em;
+  text-align: center;
   color: #fff000;
   border: solid 2px #fff000;
+    white-space: nowrap;
 }
 
 .title {
-  @include img_r_pc(550, 310, 620);
+  @include img_l_pc(600, 310, 787);
+  top: calc(50% + (310 - 540) * 100vw / 1920);
   font-size: size(50);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(7.7);
+  letter-spacing:0.15em;
   text-align: left;
   color: #ffffff;
   white-space: nowrap;
@@ -96,17 +99,19 @@
 
 .btn {
   @include div_l_pc(240, 63.6, 622, 364);
+  top: calc(50% + (622 - 540) * 100vw / 1920);
   background-image: linear-gradient(to right, #b81c22 0%, #e95504 100%);
   font-size: size(38.6);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(5.41);
-  text-align: left;
+  letter-spacing:0.14em;
+  text-align: center;
   color: #ffffff;
-  border-radius: 8px;
+  border-radius:0.72em;
   cursor: pointer;
+  flex-wrap:nowrap;
 }
 .img1{
   height: auto;
@@ -201,36 +206,22 @@
 
   .subtitle {
     @include img_c_m(343, 324);
-    padding: sizem(10) sizem(15);
+    padding: sizem(10) 0;
     font-size: sizem(24);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.17;
-    letter-spacing: sizem(3.36);
-    text-align: center;
-    color: #fff000;
-    border: solid 2px #fff000;
-    white-space: nowrap;
   }
 
   .title {
-    display: none;
+   // display: none;459.61
+    @include img_l_m(300, 460, 14);
+    top: auto;
+    bottom: sizem(140);
+    font-size: sizem(20);
   }
 
   .btn {
-    @include div_c_m(160, 42, 382);
+    @include div_c_m(180, 42, 382);
     background-image: linear-gradient(to right, #b81c22 0%, #e95504 100%);
     font-size: sizem(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(3.5);
-    text-align: left;
-    color: #ffffff;
-    border-radius: 18px;
-    cursor: pointer;
   }
 }
 </style>
