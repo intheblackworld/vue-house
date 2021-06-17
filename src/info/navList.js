@@ -1,5 +1,5 @@
 export default [
-  { name: '名軒海樂地', imgSrc: '', subTitle: '', section: 'section1', svgSrc: '', offset: 0 },
+ // { name: '名軒海樂地', imgSrc: '', subTitle: '', section: 'section1', svgSrc: '', offset: 0 },
   { name: '海灣魅力 ', imgSrc: '', subTitle: '', section: 'section4', svgSrc: '', offset: 0 },
   { name: '百變玩家 ', imgSrc: '', subTitle: '', section: 'section5', svgSrc: '', offset:0 },
   { name: '享樂生活 ', imgSrc: '', subTitle: '', section: 'section7', svgSrc: '', offset: 0 },
