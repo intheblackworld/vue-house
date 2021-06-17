@@ -51,7 +51,8 @@
       <vue-lazy-component class="section" id="section11">
         <Section11 />
       </vue-lazy-component>
-      <VideoSection1 :playBtn="require('@/projects/sfdy/video/play-btn.png')" title="開箱系列影片" :close="require('@/projects/sfdy/video/close.png')" :arrows="[require('@/projects/sfdy/video/arrow-left.png'), require('@/projects/sfdy/video/arrow-right.png')]" :slideList="[
+      <vue-lazy-component class="section" id="section12">
+        <VideoSection1 :playBtn="require('@/projects/sfdy/video/play-btn.png')" title="開箱系列影片" :close="require('@/projects/sfdy/video/close.png')" :arrows="[require('@/projects/sfdy/video/arrow-left.png'), require('@/projects/sfdy/video/arrow-right.png')]" :slideList="[
         {
           title: '釋放壓力，回家就是享受的開始',
           img: require('@/projects/sfdy/video/1.jpg'),
@@ -71,6 +72,7 @@
           isPlay: false,
         },
       ]" />
+      </vue-lazy-component>
       <!-- <vue-lazy-component class="section" id="contact"> -->
       <ContactSection />
       <!-- </vue-lazy-component> -->
@@ -89,7 +91,9 @@
 .section .fp-tableCell {
   height: auto !important;
 }
-.section{min-height: 50vh;}
+.section {
+  min-height: 50vh;
+}
 #contact {
   z-index: 3;
 }
@@ -155,8 +159,10 @@
   .bg3 {
     background-size: sizem(430) auto;
   }
-  
-.section{min-height: 50vw;}
+
+  .section {
+    min-height: 50vw;
+  }
 }
 </style>
 
