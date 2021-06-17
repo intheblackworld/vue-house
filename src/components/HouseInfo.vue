@@ -89,7 +89,6 @@ export default {
     font-family: $family3;
     flex: 0 0 5em;
     text-align: left;
-    width: 5em;
     padding-left: 0.3em;
   }
 

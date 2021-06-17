@@ -83,10 +83,11 @@ bottom:size(-200);
 
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .bg {
-
-  }
+  /*
+  .bg {}
+  */
 }
+
 
 @media screen and (max-width: 767px) {
   .section11 {

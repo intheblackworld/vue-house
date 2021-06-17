@@ -98,7 +98,7 @@
 }
 
 .btn {
-  @include div_l_pc(240, 63.6, 622, 364);
+  @include div_l_pc(260, 63.6, 622, 354);
   top: calc(50% + (622 - 540) * 100vw / 1920);
   background-image: linear-gradient(to right, #b81c22 0%, #e95504 100%);
   font-size: size(38.6);
@@ -112,6 +112,7 @@
   border-radius:0.72em;
   cursor: pointer;
   flex-wrap:nowrap;
+  white-space: nowrap;
 }
 .img1{
   height: auto;

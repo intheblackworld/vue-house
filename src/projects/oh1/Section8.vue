@@ -374,7 +374,7 @@
   }
 
   .txt {
-    @include div_r_m(375, 331, 0, 0);
+    @include div_r_m(375, 310, 0, 0);
     background-image: linear-gradient(
       to bottom,
       rgba(0, 152, 205, 0.8),
@@ -426,7 +426,7 @@
   /* Swipe */
   .swipe {
     width: 100%;
-    height: sizem(239);
+    height: sizem(260);
     min-height: auto;
     top: auto;
     bottom: 0;
@@ -486,7 +486,7 @@
 
     img {
       width: 100%;
-      height: auto;
+    height: 100%;
       object-fit: cover;
       position: absolute;
       left: 0;
@@ -580,7 +580,7 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    height: sizem(239);
+    height: sizem(260);
     padding: 0;
     z-index: 3;
 

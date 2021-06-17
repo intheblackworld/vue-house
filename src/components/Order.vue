@@ -163,7 +163,7 @@ export default {
         message: h(
           'i',
           { style: 'color: #82191d' },
-          '「姓名、手機、需求坪數」',
+          '「姓名、手機」',
         ),
       })
     },
