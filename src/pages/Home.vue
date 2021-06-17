@@ -89,6 +89,7 @@
 .section .fp-tableCell {
   height: auto !important;
 }
+.section{min-height: 50vh;}
 #contact {
   z-index: 3;
 }
@@ -154,6 +155,8 @@
   .bg3 {
     background-size: sizem(430) auto;
   }
+  
+.section{min-height: 50vw;}
 }
 </style>
 
