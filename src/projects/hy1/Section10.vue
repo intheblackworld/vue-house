@@ -1,16 +1,18 @@
 <template>
   <div class="section10">
     <iframe src="https://www.h35.banner.tw/hy/" frameborder="0"></iframe>
+  <div class="box_l"></div>
+  <div class="box_r"></div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
 .section10 {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  // min-height: size(1080);
-  // max-height: size(1080);
+  min-height: size(900);
+  max-height: size(1080);
   position: relative;
 }
 iframe {
@@ -30,7 +32,23 @@ iframe {
   //   position: relative;
   // }
 }
-
+.box_l,
+.box_r{
+  position: absolute;
+  top: 0;
+  width:size(300);
+  height:calc(100% - 93px);
+  &::before{content: "";width: 8px;height: 100px;position: absolute;
+  top: 100%;}
+}
+.box_l{
+  left: 0;
+  &::before{left: 0;}
+}
+.box_r{
+  right: 0;
+  &::before{right: 0;}
+}
 
 
 @media only screen and (max-width: 1440px) {
@@ -48,7 +66,7 @@ iframe {
 
 @media screen and (max-width: 767px) {
   .section10 {
-    width: 100vw;
+    width: 100%;
     height: sizem(604);
     min-height: auto;
     max-height: initial;
@@ -62,6 +80,10 @@ iframe {
       display: none;
     }
   }
+.box_l,
+.box_r{
+  width:sizem(60);
+}
 
   
 }
