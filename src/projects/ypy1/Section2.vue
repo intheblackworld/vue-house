@@ -26,6 +26,9 @@
   // background-position: 0 0;
   // background-attachment: fixed;
   // overflow: hidden;
+  &::before{content: "";width: 100%;height:3vw;background: #fff;position: absolute;bottom: 100%;left: 0;
+  box-shadow: 0 0 2vw 1vw #fff,0 0 2vw #fff;z-index: 2;
+  }
 }
 
 .bg-img {
@@ -121,6 +124,9 @@
     // background-position: 0 0;
     // background-attachment: fixed;
     overflow: hidden;
+  &::before{content: "";width: 100%;height:10vw;background: #fff;position: absolute;bottom: 100%;left: 0;
+  box-shadow: 0 0 10vw 5vw #fff,0 0 10vw #fff
+  }
   }
 
   .title {

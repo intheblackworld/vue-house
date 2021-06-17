@@ -375,12 +375,19 @@
     height: sizem(750 + 145 + 207);
     min-height: auto;
     max-height: initial;
-    background-image: url('./m/4/bg.jpg');
-    // background-attachment: scroll;
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
     overflow: hidden;
+    &::before {
+  content: ' ';
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  
+  background: url('./m/4/bg.jpg') center 0;
+  background-size:100% auto;
+}
   }
 
   .hr {
@@ -659,49 +666,49 @@ export default {
       slideList: [
         {
           img: require('./s4/1.jpg'),
-          name: '嘉環一品硯 外觀3D示意圖',
+          name: '嘉璟一品硯 外觀3D示意圖',
         },
       ],
       slideList1: [
         {
           img: require('./s4/KTV透視圖.jpg'),
-          name: '嘉環一品硯KTV 風格示意圖',
+          name: '嘉璟一品硯KTV 風格示意圖',
         },
         {
           img: require('./s4/lobby透視圖.jpg'),
-          name: '嘉環一品硯lobby 風格示意圖',
+          name: '嘉璟一品硯lobby 風格示意圖',
         },
         {
           img: require('./s4/交誼廳透視圖.jpg'),
-          name: '嘉環一品硯交誼廳 風格示意圖',
+          name: '嘉璟一品硯交誼廳 風格示意圖',
         },
         {
           img: require('./s4/酒吧廊道透視圖.jpg'),
-          name: '嘉環一品硯酒吧廊道 風格示意圖',
+          name: '嘉璟一品硯酒吧廊道 風格示意圖',
         },
         {
           img: require('./s4/健身房透視圖.jpg'),
-          name: '嘉環一品硯健身房 風格示意圖',
+          name: '嘉璟一品硯健身房 風格示意圖',
         },
         {
           img: require('./s4/會議室透視圖.jpg'),
-          name: '嘉環一品硯會議室 風格示意圖',
+          name: '嘉璟一品硯會議室 風格示意圖',
         },
         {
           img: require('./s4/瑜珈室透視圖.jpg'),
-          name: '嘉環一品硯瑜珈室 風格示意圖',
+          name: '嘉璟一品硯瑜珈室 風格示意圖',
         },
         {
           img: require('./s4/遊戲室透視圖.jpg'),
-          name: '嘉環一品硯遊戲室 風格示意圖',
+          name: '嘉璟一品硯遊戲室 風格示意圖',
         },
         {
           img: require('./s4/閱覽室透視圖.jpg'),
-          name: '嘉環一品硯閱覽室 風格示意圖',
+          name: '嘉璟一品硯閱覽室 風格示意圖',
         },
         {
           img: require('./s4/親子室透視圖.jpg'),
-          name: '嘉環一品硯親子室 風格示意圖',
+          name: '嘉璟一品硯親子室 風格示意圖',
         },
       ],
     }
