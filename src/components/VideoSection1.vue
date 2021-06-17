@@ -59,11 +59,11 @@
   align-items: center;
   justify-content: center;
   background: $video_section_bg;
-  padding: 60px 0 0 0;
+  padding: 0;
 }
 .container {
   width: calc(100vw * 1550 / 1920);
-  margin: 0 auto;
+  margin: 60px auto;
   display: flex;
   justify-content: space-between;
   align-items: stretch;

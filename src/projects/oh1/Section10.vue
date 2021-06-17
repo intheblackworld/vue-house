@@ -19,7 +19,7 @@
           出站就到家
         </h3>
       </div>
-      <div class="item flex-c" data-aos="fade-up" data-aos-delay="400">
+      <div class="item flex-c" data-aos="fade-up" data-aos-delay="300">
         <h3 class="item-text">
           <span>
             6000
@@ -28,7 +28,7 @@
           海灣俱樂部
         </h3>
       </div>
-      <div class="item flex-c" data-aos="fade-up" data-aos-delay="500">
+      <div class="item flex-c" data-aos="fade-up" data-aos-delay="400">
         <h3 class="item-text">
           <span>
             18
@@ -184,7 +184,7 @@
     top: auto;
     bottom: sizem(85);
     text-shadow: 0 0 3px rgba(0, 0, 0, 0.75);
-    font-size: sizem915;
+    font-size: sizem(15);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;

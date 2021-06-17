@@ -22,17 +22,17 @@
       </div>
     </div>
     <div class="txt txt1" data-aos="fade-up" data-aos-delay="0">
-      <h3 class="title title1" data-aos="fade-up" data-aos-delay="400">
+      <h3 class="title title1" data-aos="fade-up" data-aos-delay="200">
         上市資優股―名軒開發(1442)<br />
         傾力打造劃時代海灣休閒名宅
       </h3>
-      <div class="hr" data-aos="zoom-in-right" data-aos-delay="600"></div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="800">
+      <div class="hr" data-aos="zoom-in-right" data-aos-delay="500"></div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="200">
         融合麗寶集團40多年雄厚的優勢資源，引領國際生活新趨勢，導入藝術人文與精緻服務，秉持「交通、機能、增值力」三大選地原則，空間更開闊、房價更親民，新婚族、薪水族也買得起，助年輕人提早圓夢，成就人生第一桶金，<br />
         選擇[名軒海樂地]，天天度假不遠求、輕鬆成家非夢事！
       </div>
     </div>
-    <div class="img-list flex-ac flex-jb" v-if="isPC" data-aos="fade-up" data-aos-delay="0">
+    <div class="img-list flex-ac flex-jb" v-if="isPC" data-aos="fade-up" data-aos-delay="0" data-aos-offset="-500">
       <div v-for="(slide, i) in slideList" :key="slide.img + i + 'item'" :class="`item-img ${slideIndex === i ? 'active' : ''}`" @click="goTo(i)">
         <img :src="slide.img" alt="">
         <div class="mask"></div>
@@ -46,9 +46,7 @@
 
 .section8 {
   width: 100%;
-  height: 100vh;
-  min-height: size(1080);
-  max-height: size(1080);
+  height: size(1000);
   position: relative;
   // background-color: #fff;
   // min-height: size(900);
@@ -93,9 +91,6 @@
   text-align: center;
   color: #fff000;
   white-space: nowrap;
-}
-
-.title1 {
 }
 
 .title2 {
@@ -183,7 +178,7 @@
   width: size(900);
   height: size(670);
   top: size(59);
-  left: size(124);
+  left:calc(50% - 43.55vw);
   object-fit: cover;
   // background:#0344;
 }
@@ -399,9 +394,6 @@
     text-align: left;
     color: #fff000;
     white-space: nowrap;
-  }
-
-  .title1 {
   }
 
   .title2 {
@@ -644,24 +636,24 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s4/1漁人碼頭、情人橋.jpg'),
-          name: '漁人碼頭、情人橋',
+          img: require('./s8/1國家PARK羅東.jpg'),
+          name: '國家PARK羅東',
         },
         {
-          img: require('./s4/2美麗新淡海影城.jpg'),
-          name: '美麗新淡海影城',
+          img: require('./s8/2名軒夢享家-桃園.jpg'),
+          name: '名軒夢享家-桃園',
         },
         {
-          img: require('./s4/3淡水紅毛城.jpg'),
-          name: '淡水紅毛城',
+          img: require('./s8/3名軒美好莊園-台中東區.jpg'),
+          name: '名軒夏卡爾',
         },
         {
-          img: require('./s4/4淡水老街(中正路).jpg'),
+          img: require('./s8/4名軒富麗-新莊.jpg'),
           name: '淡水老街(中正路)',
         },
         {
-          img: require('./s4/5紅樹林自然保留區.jpg'),
-          name: '紅樹林自然保留區',
+          img: require('./s8/5名軒湯本源-宜蘭礁溪.jpg'),
+          name: '名軒湯本源-宜蘭礁溪',
         },
       ],
     }

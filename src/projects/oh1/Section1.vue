@@ -2,12 +2,12 @@
   <div class="section1">
     <img src="./s1/logo.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade-up" data-aos-delay="0">
     <img src="./s1/0.png" :alt="`${info.caseName}_img`" class="bg-img" v-if="isPC">
-    <img src="./s1/0_m.png" :alt="`${info.caseName}_img`" class="bg-img" v-if="isMobile">
-    <img src="./s1/1.png" :alt="`${info.caseName}_img`" class="bg-img">
-    <img src="./s1/2.png" :alt="`${info.caseName}_img`" class="bg-img">
-    <img src="./s1/3.png" :alt="`${info.caseName}_img`" class="bg-img">
-    <img src="./s1/4.png" :alt="`${info.caseName}_img`" class="bg-img">
-    <img src="./s1/5.png" :alt="`${info.caseName}_img`" class="img-train">
+   <!-- <img src="./s1/0_m.png" :alt="`${info.caseName}_img`" class="bg-img" v-if="isMobile"> -->
+    <img src="./s1/1.png" :alt="`${info.caseName}_img`" class="bg-img img1">
+    <img src="./s1/5.png" :alt="`${info.caseName}_img`" class="img-train" data-aos="fade" data-aos-delay="200" data-aos-offset="-300">
+    <img src="./s1/2.png" :alt="`${info.caseName}_img`" class="bg-img img2">
+    <img src="./s1/3.png" :alt="`${info.caseName}_img`" class="bg-img img3">
+    <img src="./s1/4.png" :alt="`${info.caseName}_img`" class="bg-img img4">
     <h3 class="title" data-aos="fade-up" data-aos-delay="200">
       海灣新樂園 城市心天地
     </h3>
@@ -28,9 +28,9 @@
 .section1 {
   width: 100%;
   height: 100vh;
-  min-height: size(1080);
+  min-height: size(900);
   max-height: size(1080);
-  //overflow: hidden;
+  overflow: hidden;
   position: relative;
   // background-image: url('./s1/01_bg.jpg');
   background-size: cover;
@@ -42,7 +42,7 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  top: 0;
+  top: auto;bottom: 0;
   left: 0;
   display: block;
   object-fit: cover;
@@ -56,12 +56,15 @@
 
 .logo {
   @include img_l_pc(363, 190, 306);
+  top: calc(50% + (190 - 540) * 100vw / 1920);
 }
 
 .img-train {
   @include img_r_pc(436, 0, 600);
   top: auto;
-  bottom: 0;
+  bottom: -1px;
+  transform: scale(0.5);
+  transform-origin: 80% 80%
 }
 
 .subtitle {
@@ -105,7 +108,33 @@
   border-radius: 8px;
   cursor: pointer;
 }
-
+.img1{
+  height: auto;
+  animation: img 3s 0s ease-in-out infinite alternate;
+  transform-origin: 92% 77%;
+    transform: rotate(3deg);
+    bottom:-3vw;
+}
+.img2{
+  height: auto;
+  animation: img 3s 0s ease-in-out infinite alternate;
+    transform: translateY(3%);
+}
+.img3{
+  height: auto;
+  animation: img 3s 1s ease-in-out infinite alternate;
+    transform: translateY(3%);
+}
+.img4{
+  height: auto;
+  animation: img 6s 0s ease-in-out infinite alternate;
+    transform: translateX(-3%);
+}
+@keyframes img {
+  to {
+    transform:translate(0);
+  }
+}
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -113,42 +142,61 @@
 
 @media screen and (max-width: 767px) {
   .section1 {
-    width: 100vw;
-    min-height: sizem(665);
-    max-height: sizem(812);
+    width: 100%;
     height: calc(100vh - 63px);
-    margin: 0 0 0vw 0;
+    min-height: sizem(604);
+    max-height: sizem(750);
+    margin: 0 ;
     overflow: hidden;
     // background-size: auto size-m(750);
     z-index: initial;
   }
 
   .bg-img {
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
     position: absolute;
     top: auto;
-    bottom: -5%;
+    bottom:0;
     left: auto;
     right: 0%;
     display: block;
     object-fit: cover;
     margin-top: 0;
-    // opacity: 0.5;
 
     &:nth-child(1) {
       position: relative;
     }
   }
-
+.img1{
+  width:auto;
+  height:sizem(241);
+  left:sizem(-53);
+}
+.img2{
+  width:auto;
+  height:sizem(288);
+  left:sizem(-136);
+}
+.img3{
+  width:auto;
+  height:sizem(222);
+  left:sizem(-36);
+}
+.img4{
+  width:auto;
+  height:sizem(222);
+  left:sizem(0);
+}
   .logo {
     @include img_c_m(250, 84);
   }
 
   .img-train {
-    @include img_l_m(359, 0, 0);
+    @include img_l_m(207, 0, 39);
     top: auto;
-    bottom: 0;
+  bottom: -1px;
+  z-index: 2
   }
 
   .subtitle {

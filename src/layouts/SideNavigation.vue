@@ -2,8 +2,8 @@
   <div class="sideNav">
     <div class="nav relative">
       <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
-      <div class="menu" @click="toggleSidebar">
-        <div :class="`menu-icon ${isOpen ? 'menu-icon-active' : ''}`"></div>
+      <div :class="`menu ${isOpen ? 'menu-active' : ''}`" @click="toggleSidebar">
+        <div class="menu-icon"><span>MENU</span></div>
         <!-- <img v-if="isOpen" src="@/projects/jh/s4/close.png" class="close" alt />
         <img v-else src="@/assets/img/menu-btn.png" alt />-->
       </div>
@@ -63,6 +63,7 @@ export default {
 .navigation {
   height: $nav_phone_height;
   z-index: 110;
+  font-size: calc(100vw * 20 / 1920);
 }
 
 .nav-container {
@@ -87,22 +88,82 @@ export default {
   justify-content: center;
   align-items: center;
   z-index: 112;
-  top: 30px;
-  right: 30px;
-  width: 40px;
-  height: 40px;
+  top:0;
+  right:0;
+  width: 2.5em;
+  height:6em;
   background-color: transparent;
   cursor: pointer;
-
-  // img {
-  //   width: 100%;
-  // }
-
-  // .close {
-  //   width: 40px;
-  //   margin-top: 20px;
-  //   margin-right: 0px;
-  // }
+  font-size: calc(100vw * 20 / 1920);
+  font-family: "Noto Serif TC",serif;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  transition: all 0.2s ease-in;
+  &::after{position: absolute;content: "";width: 100%;left: 0;top: 0;height: 100%;
+  transition:all 0.5s;
+  background: linear-gradient(to bottom, #0098cd, #0098cd00);}
+  .menu-icon {
+    position: relative;
+    width:100%;
+    height:100%;
+  // background-color: #fff;
+    z-index: 3;
+    span{transition:transform 0.5s;transform: rotate(90deg);position: absolute;width: 5em;top: 0;left:0;transform-origin: 10% 100%;}
+   &::before {
+  position: absolute;
+  left:0;
+  top:0;
+  content: '';
+  display: block;
+  width:1px;
+  height:100%;
+  background-color: currentColor;
+  transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+  transform-origin: 50%;
+}
+&:after {
+  position: absolute;
+  left: -0.4em;
+  top:100%;
+  content: '';
+  display: block;
+  width: 0.8em;
+  height: 0.8em;
+  border-radius: 50%;
+  background-color: #fff000;
+  transform:translateY(-100%);
+  transition: all 0.2s ease-in;transform-origin: 50%;
+}
+  }
+  &.menu-active{
+  width: 2em;
+  height:2em;
+   transform:translate(-0em,1em);
+  &::after{
+    transform: translateY(-100%);opacity: 0;
+  }
+  .menu-icon{
+    span{transform:translateY(-7em) rotate(90deg);}
+       &::before {
+        left:0;
+        top:0;
+        width:1px;
+        height:100%;
+        background-color: currentColor;
+  transform:rotate(-45deg);
+      }
+      &:after {
+        left:0em;
+        top:0;
+        width:1px;
+        height:100%;
+        border-radius:0%;
+        background-color: #fff;
+  transform:rotate(45deg);
+      }
+  }
+  }
 }
 
 .logo {
@@ -116,36 +177,7 @@ export default {
   transform: translateY(0%);
 }
 
-.menu-icon {
-  position: relative;
-  width: 30px;
-  height: 3px;
-  background-color: #fff;
-}
 
-.menu-icon::before {
-  position: absolute;
-  left: 0;
-  top: -10px;
-  content: '';
-  display: block;
-  width: 30px;
-  height: 3px;
-  background-color: #fff;
-  transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
-}
-
-.menu-icon::after {
-  position: absolute;
-  left: 0;
-  top: 10px;
-  content: '';
-  display: block;
-  width: 30px;
-  height: 3px;
-  background-color: #fff;
-  transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
-}
 
 .menu-icon.menu-icon-active {
   background-color: transparent;
@@ -170,53 +202,53 @@ export default {
   width: 0%;
   right: 0;
   top: $nav_phone_height;
-  height: calc(100vh - #{$nav_phone_height});
+  height:29em;
   text-align: center;
   transition: all 0.3s ease-in-out;
   display: block;
   transform: translateX(40%);
-
-  li {
-    height: auto;
-    margin-bottom: 0;
-    width: 100%;
-    justify-content: flex-end;
-    padding-right: 10%;
-    margin-bottom: 20px;
-  }
-
-  .link {
-    height: auto;
-    position: relative;
-    overflow: hidden;
     font-size: 19px;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: 2.11;
     letter-spacing: 2.66px;
+
+  li {
+    height: auto;
+    margin-bottom: 0;
+    width: 100%;
+    justify-content: flex-end;
+    padding-right: 2em;
+    margin-bottom: 20px;
+  }
+
+  .link {
+    height: auto;
+    position: relative;
     text-align: right;
     color: #ffffff;
     display: none;
     background-size: cover;
     position: relative;
+    padding-right: 2em;
 
-    // &::after {
-    //   display: block;
-    //   content: '';
-    //   width: 0%;
-    //   height: 1px;
-    //   background: #ddd75f;
-    //   transition: all 0.4s;
-    //   left: 50%;
-    //   bottom: 0;
-    //   position: absolute;
-    // }
+     &::after {
+       display: block;
+       content: '';
+       width:1em;
+       height:1em;
+       border-radius: 50%;
+       background: #fff000;
+       transition: all 0.4s;
+       right:0;
+       top:calc(50% - 0.5em);
+       transform: scale(0.8);transform-origin: 50% 50%;
+       position: absolute;
+       transition: all 0.3s;
+       border: 2px solid #fff00000;
+    }
 
-    // &:hover:after {
-    //   width: 80%;
-    //   left: 10%;
-    // }
 
     img,
     span {
@@ -231,26 +263,14 @@ export default {
       background: $nav_link_hover_bg;
       background-position: center;
       background-size: cover;
+      
+     &::after {
+       transform: scale(1);
+       background: #fff00000;
+       border: 2px solid #fff000;
+
     }
-    // &:before {
-    //   content: '';
-    //   width: 40%;
-    //   height: 100%;
-    //   display: block;
-    //   background: #fff;
-    //   position: absolute;
-    //   transform: skewX(-20deg);
-    //   left: -10%;
-    //   opacity: 0;
-    //   top: 0;
-    //   z-index: 5;
-    //   transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
-    // }
-    // &:hover:before {
-    //   opacity: 1;
-    //   width: 90%;
-    //   left: 140%;
-    // }
+    }
   }
 
   &.open {
@@ -259,7 +279,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    padding-top: 10%;
+    padding-top:5em;
 
     .link {
       display: flex;
@@ -298,7 +318,7 @@ export default {
   background: transparent;
   position: fixed;
   z-index: -1;
-  height: calc(100vh - #{$nav_phone_height});
+  height:100vh;
   opacity: 0;
   transition: all 0.3s ease-in;
   &.open {
@@ -347,6 +367,7 @@ export default {
   .navigation {
     height: $nav_phone_height;
     z-index: 110;
+  font-size: calc(100vw * 14 / 375);
   }
 
   .nav-container {
@@ -365,10 +386,7 @@ export default {
   }
 
   .menu {
-    display: flex;
-    position: fixed;
-    right: 30px;
-    top: 30px;
+  font-size: calc(100vw * 14 / 375);
 
     img {
       width: 100%;
@@ -390,7 +408,7 @@ export default {
     width: 0%;
     right: 0;
     top: $nav_phone_height;
-    height: calc(100vh - #{$nav_phone_height});
+    //height: calc(100vh - #{$nav_phone_height});
     text-align: center;
     transition: all 0.3s ease-in;
     display: block;
@@ -407,12 +425,12 @@ export default {
         display: block;
       }
       span {
-        line-height: 16px;
+       // line-height: 16px;
       }
     }
 
     &.open {
-      width: 100%;
+      width: 90%;
       transform: translateX(0%);
 
       .link {
@@ -430,11 +448,11 @@ export default {
 
   .mask {
     width: 100vw;
-    top: $nav_phone_height;
+    top:0;
     right: 0;
     background: rgba(0, 0, 0, 0.5);
     position: fixed;
-    height: calc(100vh - #{$nav_phone_height});
+    //height: calc(100vh - #{$nav_phone_height});
     opacity: 0;
     transition: all 0.3s ease-in;
     &.open {

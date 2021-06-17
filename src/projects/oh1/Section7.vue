@@ -4,7 +4,8 @@
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-            <img :src="slide.img" alt="">
+            <img :src="slide.img" :alt="slide-name" v-if="isMobile" class="swipe-bg">
+            <img :src="slide.img" :alt="slide-name">
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
@@ -22,14 +23,14 @@
       </div>
     </div>
     <div class="txt" data-aos="fade-up" data-aos-delay="0">
-      <h3 class="title title1" data-aos="fade-up" data-aos-delay="400">
+      <h3 class="title title1" data-aos="fade-up" data-aos-delay="200">
         公設預留
       </h3>
-      <h3 class="title title2" data-aos="fade-up" data-aos-delay="400">
+      <h3 class="title title2" data-aos="fade-up" data-aos-delay="200">
         公設預留公設預留
       </h3>
-      <div class="hr" data-aos="zoom-in-right" data-aos-delay="600"></div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="800">
+      <div class="hr" data-aos="zoom-in-right" data-aos-delay="500"></div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="200">
         公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設
       </div>
     </div>
@@ -41,7 +42,7 @@
 .section7 {
   width: 100%;
   height: 100vh;
-  min-height: size(1080);
+  min-height: size(900);
   max-height: size(1080);
   position: relative;
   // background-color: #fff;
@@ -91,9 +92,6 @@
   text-align: left;
   color: #fff000;
   white-space: nowrap;
-}
-
-.title1 {
 }
 
 .title2 {
@@ -345,9 +343,6 @@
     white-space: nowrap;
   }
 
-  .title1 {
-  }
-
   .title2 {
     text-align: left;
     padding-left: sizem(70);
@@ -378,7 +373,7 @@
   /* Swipe */
   .swipe {
     width: 100%;
-    height: sizem(317);
+    //height: sizem(317);
     min-height: auto;
     top: auto;
     bottom: 0;
@@ -435,6 +430,10 @@
     width: 100%;
     height: 100%;
     z-index: 0;
+    .swipe-bg{
+       width: 100%;filter: blur(3px);
+       height: 100%;
+    }
 
     img {
       width: 100%;

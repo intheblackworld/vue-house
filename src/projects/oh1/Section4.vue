@@ -23,26 +23,26 @@
       </div>
     </div>
     <div class="txt txt1" data-aos="fade-up" data-aos-delay="0">
-      <h3 class="title title1" data-aos="fade-up" data-aos-delay="400">
+      <h3 class="title title1" data-aos="fade-up" data-aos-delay="200">
         時尚樂活．玩美人生
       </h3>
-      <div class="hr" data-aos="zoom-in-right" data-aos-delay="600"></div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="800">
+      <div class="hr" data-aos="zoom-in-right" data-aos-delay="500"></div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="200">
         淡水，擁有豐富的自然景觀及全球最美的七星級夕陽，集古蹟、老街、人文、藝術、美食、生態等休閒元素於一身。<br />
         車行至淡海新市鎮，彷彿進入了另一個新國度，主幹道40米以上的大型街廓，臨路建築皆退縮12米以上，看不到礙眼的電線桿，瓦斯、管線、網路都已地下化，優質生活拉升幸福指數，造就花園城市新典範。
       </div>
-    </div>
-    <div class="txt2" data-aos="fade-up" data-aos-delay="200">
-      <h3 class="title title1" data-aos="fade-up" data-aos-delay="400">
-        2024淡海大不同
-      </h3>
-      <h3 class="title title2" data-aos="fade-up" data-aos-delay="400">
-        精彩未來可期
-      </h3>
-      <div class="hr" data-aos="zoom-in-right" data-aos-delay="600"></div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="800">
-        淡江大橋、淡北快速道路預計2024年完工通車，南山水公園、科技園區、醫療專用園區等建設百花齊放，「職、住、遊、憩」海灣城市成型，即將華麗變身！<br />
-        捷運、影城、藝文、公園、商場、親水休閒一次滿足，卡位房市起漲點、輕鬆坐享未來，就趁現在！
+      <div class="txt2" data-aos="fade-up" data-aos-delay="0">
+        <h3 class="title title1" data-aos="fade-up" data-aos-delay="200">
+          2024淡海大不同
+        </h3>
+        <h3 class="title title2" data-aos="fade-up" data-aos-delay="200">
+          精彩未來可期
+        </h3>
+        <div class="hr" data-aos="zoom-in-right" data-aos-delay="500"></div>
+        <div class="desc" data-aos="fade-up" data-aos-delay="200">
+          淡江大橋、淡北快速道路預計2024年完工通車，南山水公園、科技園區、醫療專用園區等建設百花齊放，「職、住、遊、憩」海灣城市成型，即將華麗變身！<br />
+          捷運、影城、藝文、公園、商場、親水休閒一次滿足，卡位房市起漲點、輕鬆坐享未來，就趁現在！
+        </div>
       </div>
     </div>
     <div class="slogan">
@@ -56,7 +56,7 @@
 .section4 {
   width: 100%;
   height: 100vh;
-  min-height: size(1080);
+  min-height: size(900);
   max-height: size(1080);
   position: relative;
   // background-color: #fff;
@@ -86,25 +86,24 @@
 }
 
 .txt {
-  @include div_l_pc(479, 460, 156, 165);
+  @include img_r_pc(479, 156, 1296);
+  top: calc(50% + (156 - 540) * 100vw / 1920);
   background-image: transparent;
   padding: 0;
-}
-.title {
-  width: 100%;
-  margin: 0 auto;
-  font-size: size(50);
-  font-weight: bold;
+  width:20em;
+  font-size:size(23);
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
+  line-height: 1.9;
   letter-spacing: normal;
-  text-align: center;
+  text-align: justify;
+}
+.title {
+  font-size:2.17em;
+  font-weight: bold;
+  line-height: 1.2;
   color: #fff000;
   white-space: nowrap;
-}
-
-.title1 {
 }
 
 .title2 {
@@ -113,44 +112,39 @@
 
 .hr {
   width: 100%;
-  // height: 35px;
-  border-top: size(1) solid #fff;
-  margin: size(15) 0;
+  border-top: 1px solid #fff;
+  margin: 0.65em 0;
 }
 
 .desc {
-  // text-shadow: 0 2px 5px rgba(0, 0, 0, 0.44);
-  width: 93%;
+  //width: 93%;
   margin: 0 auto;
   margin-left: 0;
-  font-size: size(23);
   font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.91;
-  letter-spacing: normal;
-  text-align: left;
   color: #ffffff;
-  // white-space: nowrap;
 }
 
 .txt2 {
   padding: size(20) size(30);
-  @include div_l_pc(540, 351, 648, 280);
+  @include img_l_pc(540, 648, 124);
+  top:calc(100% + 2em);
   background-image: linear-gradient(
     to right,
     rgba(184, 28, 34, 0.9),
     rgba(233, 85, 4, 0.9)
   );
-  .title {
-    font-size: size(40);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: normal;
-    text-align: left;
+  width:27em;
+  font-size:size(20);
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.9;
+  letter-spacing: normal;
+  text-align: justify;
     color: #ffffff;
+  .title {
+    font-size:2em;
+    font-weight: bold;
+    line-height: 1.2;
   }
 
   .title1 {
@@ -163,21 +157,14 @@
 
   .desc {
     width: 100%;
-    font-size: size(20);
     font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.94;
-    letter-spacing: normal;
-    text-align: left;
-    color: #ffffff;
   }
 }
 
 .slogan {
   @include img_r_pc(669, 0, 69);
-  top: auto;
-  bottom: 0;
+  top: calc(50% + (947 - 540) * 100vw / 1920);
   font-family: Arial;
   font-size: size(100);
   font-weight: normal;
@@ -205,8 +192,8 @@
 .swipe {
   width: size(1105);
   height: size(745);
-  top: size(167);
-  right: size(63);
+  top: calc(50% + (166 - 540) * 100vw / 1920);
+  left: size(752);
   object-fit: cover;
   // background:#0344;
 }
@@ -418,9 +405,6 @@
     text-align: left;
     color: #fff000;
     white-space: nowrap;
-  }
-
-  .title1 {
   }
 
   .title2 {

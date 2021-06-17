@@ -1,5 +1,7 @@
 <template>
   <div class="section11">
+    <img src="./s11/cloud1.png" class="cloud1">
+    <img src="./s11/cloud2.png" class="cloud2">
     <div class="title"  data-aos="fade-up" data-aos-delay="400">
       樣品屋樣品屋
     </div>
@@ -8,7 +10,7 @@
         <img :src="slide.img" :class="`carousel-3d-img`" :alt="slide.alt" />
       </slide>
     </carousel-3d>
-    <div class="desc" v-html="slideList[slideIndex].desc"  data-aos="fade-up" data-aos-delay="200"></div>
+    <div class="desc" v-html="slideList[slideIndex].desc"  data-aos="fade-up" data-aos-delay="200" ></div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -16,14 +18,26 @@
 
 .section11 {
   width: 100%;
-  height: 100vh;
-  min-height: size(1080);
-  max-height: size(1080);
+  height: size(960);
   position: relative;
 }
 
 .carousel-3d-slide {
   background-color: transparent;
+}
+.cloud1{ @include img_r_pc(612, -120,0);
+top: auto;
+bottom:size(-200);
+  animation: img 6s 0s ease-in-out infinite alternate;
+    transform: translateX(3%);
+}
+.cloud2{ @include img_l_pc(418, -300,0);
+  animation: img 3s 1s ease-in-out infinite alternate;
+    transform: translateX(-3%);}
+@keyframes img {
+  to {
+    transform:translate(0);
+  }
 }
 
 .title {
@@ -70,13 +84,25 @@
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .bg {
+
   }
 }
 
 @media screen and (max-width: 767px) {
+  .section11 {
+  height: sizem(300);
+}
+
   .fullscreen {
     height: auto !important;
   }
+.cloud1{ @include img_r_m(206, -140,0);
+}
+.cloud2{
+  @include img_l_m(260, -300,0);
+top: auto;
+bottom:sizem(-200);
+}
 
   .title {
     width: 100vw;
@@ -100,7 +126,7 @@
     letter-spacing: normal;
     text-align: center;
     color: #ffffff;
-    bottom: sizem(-70);
+    //bottom:;
   }
 
   .carousel-3d-container {
@@ -167,11 +193,11 @@ export default {
       this.imgHeight = 650
     }
     if (this.isMobile) {
-      this.imgWidth = window.screen.width
-      this.imgHeight = window.screen.width * (240 / 375)
+      this.imgWidth = window.innerWidth
+      this.imgHeight = window.innerWidth * (240 / 375)
     } else {
-      this.imgWidth = window.screen.width * (995 / 1920)
-      this.imgHeight = window.screen.width * (747 / 1920)
+      this.imgWidth = window.innerWidth * (995 / 1920)
+      this.imgHeight = window.innerWidth * (747 / 1920)
     }
   },
 

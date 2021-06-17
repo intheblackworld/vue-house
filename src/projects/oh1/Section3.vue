@@ -4,7 +4,8 @@
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-            <img :src="slide.img" alt="">
+            <img :src="slide.img" :alt="slide-name" v-if="isMobile" class="swipe-bg">
+            <img :src="slide.img" :alt="slide-name">
             <!-- <div class="slide-name absolute" v-html="slide.name"></div> -->
           </div>
         </transition-group>
@@ -22,14 +23,14 @@
       </div>
     </div>
     <div class="txt"  data-aos="fade-up" data-aos-delay="0">
-      <h3 class="title title1" data-aos="fade-up" data-aos-delay="400">
+      <h3 class="title title1" data-aos="fade-up" data-aos-delay="200">
         都會人生節奏
       </h3>
-      <h3 class="title title2" data-aos="fade-up" data-aos-delay="400">
+      <h3 class="title title2" data-aos="fade-up" data-aos-delay="200">
         世界盡其在我
       </h3>
-      <div class="hr" data-aos="zoom-in-right" data-aos-delay="600"></div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="800">
+      <div class="hr" data-aos="zoom-in-right" data-aos-delay="500"></div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="200">
         淡海新市鎮位居海空雙港樞紐、大台北門戶核心，西接台北港、桃園機場，東連大屯山、北海岸風景區，南銜台北科技走廊，僅約16公里直抵台北市中心。<br />
         掌握都會脈動，用速度改寫時間與空間定義，左右逢源、四通八達，整個北台灣都是我的生活圈！
       </div>
@@ -42,7 +43,7 @@
 .section3 {
   width: 100%;
   height: 100vh;
-  min-height: size(1080);
+  min-height: size(900);
   max-height: size(1080);
   position: relative;
   // background-color: #fff;
@@ -72,30 +73,32 @@
 }
 
 .txt {
-  @include div_r_pc(594, 547, 308, 198);
+  @include img_r_pc(594, 308, 198);
+  top: calc(50% + (308 - 540) * 100vw / 1920);
+  width:26.5em;
   background-image: linear-gradient(
     to bottom,
     rgba(0, 152, 205, 0.8),
     rgba(141, 194, 31, 0.8)
   );
-  padding: size(40) size(20);
+  padding: 1.6em 0.8em;
+  font-size:size(23);
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.9;
+  letter-spacing: normal;
+  text-align: justify;
 }
 .title {
   width: 90%;
   margin: 0 auto;
-  font-size: size(50);
+  font-size:2.17em;
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: normal;
-  text-align: left;
   color: #fff000;
+  line-height: 1.2;
   white-space: nowrap;
 }
 
-.title1 {
-}
 
 .title2 {
   text-align: right;
@@ -104,21 +107,15 @@
 .hr {
   width: 100%;
   // height: 35px;
-  border-top: size(1) solid #fff;
-  margin: size(15) 0;
+  border-top: 1px solid #fff;
+  margin: 0.65em 0;
 }
 
 .desc {
   // text-shadow: 0 2px 5px rgba(0, 0, 0, 0.44);
   width: 90%;
   margin: 0 auto;
-  font-size: size(23);
   font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.91;
-  letter-spacing: normal;
-  text-align: left;
   color: #ffffff;
   // white-space: nowrap;
 }
@@ -346,9 +343,6 @@
     white-space: nowrap;
   }
 
-  .title1 {
-  }
-
   .title2 {
     text-align: left;
     padding-left: sizem(70);
@@ -379,7 +373,7 @@
   /* Swipe */
   .swipe {
     width: 100%;
-    height: sizem(270);
+   // height: sizem(270);
     min-height: auto;
     top: auto;
     bottom: 0;
@@ -429,14 +423,17 @@
   .swipe-wrap {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+   // overflow: hidden;
   }
 
   .swipe-item {
     width: 100%;
     height: 100%;
     z-index: 0;
-
+    .swipe-bg{
+       width: 100%;filter: blur(3px);
+       height: 100%;
+    }
     img {
       width: 100%;
       height: auto;

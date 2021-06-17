@@ -261,9 +261,10 @@ export default {
       position: relative;
    //   color: #fff;
       z-index: 3;
-      > span {
+     /* > span {
       //  font-size: 24px !important;
       }
+      */
     }
     h1.title{font-family: "Noto Serif TC";}
 
