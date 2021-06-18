@@ -5,7 +5,16 @@
       本公司保留活動修改及終止權利！！數量有限，要買要快
     </div>
     <transition-group name="swipe-fade">
-      <div class="list list2" v-if="pageIndex === 2" key="page2" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="list list3" v-if="pageIndex === 3" key="page2" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? this.pageIndex === 2 ? 3 : 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+        <div class="w-block"></div>
+        <img src="./s1/2/2.png" alt="" class="img1">
+        <img src="./s1/2/3.png" alt="" class="img2">
+        <img src="./s1/2/1.png" alt="" class="img3">
+        <img src="./s1/2/logo.png" alt="" class="logo">
+        <div class="t1">完銷倒數 土城家樂福<span>精品33坪 限量露台戶</span></div>
+        <div class="t2"><span>簽訂3%<span>輕鬆付款</span></span>2263-5666</div>
+      </div>
+      <div class="list list2" v-if="pageIndex === 2" key="page2" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? this.pageIndex === 2 ? 3 : 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="w-block"></div>
         <img src="./s1/2/2.png" alt="" class="img1">
         <img src="./s1/2/3.png" alt="" class="img2">
@@ -14,24 +23,25 @@
         <div class="t1">完銷倒數 土城家樂福<span>精品30坪 限量露台戶</span></div>
         <div class="t2"><span>簽訂3%<span>輕鬆付款</span></span>2263-5666</div>
       </div>
-      <div class="list list1" v-if="pageIndex === 1" key="page1" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="list list1" v-if="pageIndex === 1" key="page1" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? this.pageIndex === 2 ? 3 : 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="w-block"></div>
         <img src="./s1/1/1.png" alt="" class="img1">
         <img src="./s1/1/2.png" alt="" class="img2">
         <img src="./s1/1/i.jpg" alt="" class="i">
-        <img src="./s1/1/logo.png" alt="" class="logo" v-if="isPC">
+        <img src="./s1/logo.png" alt="" class="logo" v-if="isPC">
         <img src="./s1/logo2.png" alt="" class="logo" v-if="isMobile">
         <div class="t1">青年當家威時代<br>暖心加碼送給您</div>
         <div class="t2">好禮3選2,風光入厝禮!</div>
       </div>
     </transition-group>
     <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-      <div class="prev-btn" @click="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1"><img src="./s2/dot.png" alt=""></div>
-      <div class="next-btn" @click="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1"><img src="./s2/dot.png" alt=""></div>
+      <div class="prev-btn" @click="() => this.pageIndex = this.pageIndex === 1 ? this.pageIndex === 2 ? 3 : 2 : 1"><img src="./s2/dot.png" alt=""></div>
+      <div class="next-btn" @click="() => this.pageIndex = this.pageIndex === 1 ? this.pageIndex === 2 ? 3 : 2 : 1"><img src="./s2/dot.png" alt=""></div>
     </div>
     <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
       <div :class="`pagination-dot`" @click="pageIndex = 1"><span :class="`${pageIndex === 1 ? 'active' : ''}`"></span></div>
       <div :class="`pagination-dot`" @click="pageIndex = 2"><span :class="`${pageIndex === 2 ? 'active' : ''}`"></span></div>
+      <div :class="`pagination-dot`" @click="pageIndex = 3"><span :class="`${pageIndex === 3 ? 'active' : ''}`"></span></div>
     </div>
   </div>
 </template>
@@ -149,7 +159,7 @@
   line-height: 1.3;
 }
 .list1 {
-  background: #d32925;
+  background: #6A9F87;
   .img1 {
     @include img_r_pc(200, -5, 0);
   }
@@ -167,7 +177,7 @@
     top: calc(50% - 1.4em);
     font-size: size(81);
     letter-spacing: 0.1em;
-    color: #0a5a91;
+    color: #07421C;
   }
   .t2 {
     @include img_l_pc(720, 768, 260);
@@ -178,7 +188,7 @@
   }
 }
 .list2 {
-  background: #6aa48c;
+  background: #6A9F87;
   .img1 {
     @include img_r_pc(680, -5, 0);
   }

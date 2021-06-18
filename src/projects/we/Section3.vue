@@ -40,8 +40,8 @@
 .section3 {
   max-height: size(1080);
   position: relative;
-  background: #5fc8ce url('./s2/rb.png') fixed no-repeat bottom right;
-  background-size: size(1200) auto;
+  background:  url('./s2/rb.png') fixed no-repeat bottom right;
+  background-size: size(476) auto;
   min-height: size(1072);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
@@ -67,7 +67,7 @@
 
 .hr {
   @include img_l_pc(1500, 1210, 210);
-  border: solid 1.1px #888888;
+  border: solid 1px #E9F6DB;
 }
 
 .title {
@@ -227,11 +227,11 @@
     width: size(35);
     height:size(35);
     border-radius: 0px;
-   box-shadow: 0 0 4px 4px #5fc8ce;
+   box-shadow: 0 0 4px 4px #6A9F87;
     border-radius:100%;
     border: 4px solid #fff;
     position: relative;
-    background-color: #5fc8ce;
+    background-color: #6A9F87;
     transition: all 0.5s;
 
     &::before {

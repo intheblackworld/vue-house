@@ -9,10 +9,10 @@
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
-        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+    <!--    <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
           <div class="prev-btn" @click="decIndex"><img src="./s2/dot.png" alt=""></div>
           <div class="next-btn" @click="addIndex"><img src="./s2/dot.png" alt=""></div>
-        </div>
+        </div> -->
       </div>
     </div>
     <img src="./s5/logo.png" alt="最wee建築" class="logo">
@@ -42,12 +42,6 @@
   position: relative;
   background: #fff;
   z-index: 2;
-  // min-height: size(900);
-  // background-image: url('./s2/bg.jpg');
-  // background-size: 100% 100%;
-  // background-position: 0 0;
-  // background-attachment: fixed;
-  // overflow: hidden;
 }
 
 .bg-img {
@@ -504,7 +498,7 @@ export default {
           img: require('./s5/1.jpg'),
           name: '外觀3D示意圖',
         },
-        {
+  /*      {
           img: require('./s5/2.jpg'),
           name: '大廳3D示意圖',
         },
@@ -512,6 +506,7 @@ export default {
           img: require('./s5/3.jpg'),
           name: '大廳3D示意圖',
         },
+  */
       ],
     }
   },

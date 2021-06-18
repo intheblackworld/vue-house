@@ -1,10 +1,10 @@
   <template>
   <div class="section6">
     <div>
-      <img src="./s6/i1.png" alt="" class="i1">
-      <img src="./s6/i2.png" alt="" class="i2">
+      <div class="i1"></div>
+      <svg class="i2" id="i2" viewBox="0 0 500 500"><polyline points="430,437 67,437 67,60 "/></svg>
       <img src="./s6/1.jpg" alt="" class="img">
-      <img src="./s6/logo.png" alt="最wow建材" class="logo">
+      <img src="./s6/title.png" alt="最wow建材" class="logo">
       <div class="title" v-if="isPC">
         建材從優 享受從寬 CP值最威
       </div>
@@ -28,7 +28,7 @@
   max-height: size(1080);
   overflow: hidden;
   position: relative;
-  background: #34c2ce;
+  background: #6A9F87;
   background-size: auto;
 }
 
@@ -57,13 +57,14 @@
   border-radius: size(55)
 }
 
-.i1 {
-  @include img_l_pc(677, 0, 0);
-}
 
-.i2 {
-  @include img_l_pc(461, 266, 849);
+.i1 { 
+  @include div_l_pc(1500, 1500,0 ,-820);
+  top: calc(50% + -750 * 100vw / 1920);
+  border: size(140) solid #81BFA3;border-radius: 50%;
 }
+.i2{@include img_l_pc(500, 255, 830);fill:none;stroke:#076D1C;stroke-width:95;stroke-linecap:round;stroke-miterlimit:10;}
+
 
 .title {
   @include img_r_pc(732, 290, 205);
@@ -134,14 +135,9 @@
     border-radius: 20px;
   }
 
-  .i1 {
-    display: none;
-  }
+.i2{@include img_r_m(140, 650, 12);transform: rotate(270deg);}
 
-  .i2 {
-    @include img_r_m(129, 656, 18);
-    transform: rotate(270deg);
-  }
+
 
   .title {
     @include img_r_m(223, 522, 119);

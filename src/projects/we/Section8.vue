@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="section8">
-      <img src="./s8/logo.png" alt="" class="logo">
-      <div class="title">
+      <img src="./s8/logo2.png" alt="" class="logo">
+  <!--    <div class="title">
         威地段&emsp;輕首付&emsp;訂製宅&emsp;幸福住
       </div>
       <div class="subtitle">
         <span>悅峰WE時代&ensp;</span>我們的威時代
       </div>
-      <div class="g-block"></div>
+      <div class="g-block"></div>  -->
     </div>
   </div>
 </template>
@@ -48,7 +48,7 @@
 }
 
 .logo {
-  @include img_c_pc(482, 112);
+  @include img_c_pc(760, 112);
 }
 
 .title {

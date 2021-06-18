@@ -15,8 +15,8 @@
           </div>
         </div>
       </div>
-      <img src="./s2/logo.png" alt="最Win地段" class="logo">
-      <div class="title absolute" data-aos="fade-down" data-aos-delay="400" v-if="isPC">
+      <img src="./s10/title.png" alt="最Win產品" class="logo">
+     <!-- <div class="title absolute" data-aos="fade-down" data-aos-delay="400" v-if="isPC">
         <span>雙捷運x雙商圈x雙公園</span> 輕取美好生活
       </div>
       <div class="title absolute" data-aos="fade-down" data-aos-delay="400" v-if="isMobile">
@@ -28,7 +28,7 @@
       <div class="hr absolute" data-aos="fade" data-aos-delay="200"></div>
       <div class="desc absolute" data-aos="fade-up" data-aos-delay="300">
         金城正核心雙捷商圈，同時擁有重劃區新街廓與舊市區的生活便利，<br v-if="isPC">地段力、交通力、生活力、增值力一次到位，第一次買房就WIN在起跑點。
-      </div>
+      </div>  -->
       <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" data-aos-offset="-500" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
@@ -41,14 +41,15 @@
 .section2 {
   max-height: size(1080);
   position: relative;
-  background:  url('./s2/rb.png') fixed no-repeat bottom right;
+  background: #fff url('./s2/rb.png') fixed no-repeat bottom right;
   background-size: size(476) auto;
-  min-height: size(1238 + 200);
+  min-height: size(1238);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
   // background-position: 0 0;
   // background-attachment: fixed;
   // overflow: hidden;
+  &::before{content: "";position: absolute;width: 100%;height:size(50);left: 0;bottom: 0;background: #6A9F87;}
 }
 
 .bg-img {
@@ -538,12 +539,12 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s2/1-1.jpg'),
+          img: require('./s10/1.jpg'),
           name: ' ',
         },
         {
-          img: require('./s2/1-2.jpg'),
-          name: 'WE鳥瞰',
+          img: require('./s10/2.jpg'),
+          name: '',
         },
       ],
     }
