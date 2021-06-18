@@ -252,7 +252,7 @@
   max-height: size(1080);
   //overflow: hidden;
   position: relative;
-  background-color: #fff;
+  background-color: #009cda;
   background-size: cover;
   z-index: 3;
   // margin: 0 0 size(400) 0;

@@ -26,8 +26,8 @@
   // background-position: 0 0;
   // background-attachment: fixed;
   // overflow: hidden;
-  &::before{content: "";width: 100%;height:3vw;background: #fff;position: absolute;bottom: 100%;left: 0;
-  box-shadow: 0 0 2vw 1vw #fff,0 0 2vw #fff;z-index: 2;
+  &::before{content: "";width: 100%;height:3vw;background: #009cda;position: absolute;bottom: 100%;left: 0;
+  box-shadow: 0 0 2vw 1vw #009cda,0 0 2vw #009cda;z-index: 2;
   }
 }
 
@@ -48,7 +48,7 @@
 }
 
 .title {
-  @include img_c_pc(444, 105);
+  @include img_c_pc(444, 55);
   font-size: size(40);
   width: auto;
   font-weight: 900;
@@ -57,12 +57,12 @@
   line-height: 1.2;
   letter-spacing: size(0.4);
   text-align: center;
-  color: #000000;
+  color: #fff;
   white-space: nowrap;
 }
 
 .subtitle {
-  @include img_c_pc(446, 167);
+  @include img_c_pc(446, 117);
   font-size: size(49);
   width: auto;
   font-weight: 900;
@@ -71,7 +71,7 @@
   line-height: 1.22;
   letter-spacing: size(0.69);
   text-align: center;
-  color: #000000;
+  color: #fff;
   white-space: nowrap;
 }
 .map {
