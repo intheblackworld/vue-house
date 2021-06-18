@@ -306,7 +306,7 @@
     max-height: initial;
     height: sizem(255 + 183);
   background-position: right calc(100% - 63px);
-  background-size:100% auto;
+  background-size:50% auto;
   }
 
   .hr {

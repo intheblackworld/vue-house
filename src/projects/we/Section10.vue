@@ -309,9 +309,11 @@
   .section2 {
     min-height: auto;
     max-height: initial;
-    height: sizem(700);
-  background-position: right calc(100% - 63px);
-  background-size:100% auto;
+    height: sizem(500);
+  background-position: right bottom;
+  background-size:50% auto;
+
+  background-attachment:unset;
   }
 
   .logo {

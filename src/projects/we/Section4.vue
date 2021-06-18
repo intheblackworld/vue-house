@@ -313,7 +313,7 @@
     max-height: initial;
     height: sizem(250 + 393);
   background-position: right calc(100% - 63px);
-  background-size:100% auto;
+  background-size:50% auto;
   }
 
   .logo {

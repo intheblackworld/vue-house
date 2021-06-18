@@ -5,15 +5,33 @@
       本公司保留活動修改及終止權利！！數量有限，要買要快
     </div>
     <transition-group name="swipe-fade">
-      <div class="list list3" v-if="pageIndex === 3" key="page2" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? this.pageIndex === 2 ? 3 : 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="list list5" v-if="pageIndex === 5" key="page2" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? this.pageIndex === 2 ? 3 : 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+        <div class="w-block"></div>
+        <img src="./s1/2/2.png" alt="" class="img1">
+        <img src="./s1/2/3.png"
+         alt="" class="img2">
+        <img src="./s1/2/1.png" alt="" class="img3">
+        <img src="./s1/5/img.jpg" alt="" class="logo">
+        <img src="./s1/5/t.png" alt="" class="t">
+      </div>
+      <div class="list list4" v-if="pageIndex === 4" key="page2" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? this.pageIndex === 2 ? 3 : 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+        <div class="w-block"></div>
+        <img src="./s1/2/2.png" alt="" class="img1">
+        <img src="./s1/2/3.png"
+         alt="" class="img2">
+        <img src="./s1/2/1.png" alt="" class="img3">
+        <img src="./s1/4/img.jpg" alt="" class="logo">
+        <img src="./s1/4/t.png" alt="" class="t">
+      </div>
+     <div class="list list3" v-if="pageIndex === 3" key="page2" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? this.pageIndex === 2 ? 3 : 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="w-block"></div>
         <img src="./s1/2/2.png" alt="" class="img1">
         <img src="./s1/2/3.png" alt="" class="img2">
         <img src="./s1/2/1.png" alt="" class="img3">
-        <img src="./s1/2/logo.png" alt="" class="logo">
-        <div class="t1">完銷倒數 土城家樂福<span>精品33坪 限量露台戶</span></div>
-        <div class="t2"><span>簽訂3%<span>輕鬆付款</span></span>2263-5666</div>
+        <img src="./s1/3/img.jpg" alt="" class="logo">
+        <img src="./s1/3/t.png" alt="" class="t">
       </div>
+ 
       <div class="list list2" v-if="pageIndex === 2" key="page2" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? this.pageIndex === 2 ? 3 : 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="w-block"></div>
         <img src="./s1/2/2.png" alt="" class="img1">
@@ -42,6 +60,8 @@
       <div :class="`pagination-dot`" @click="pageIndex = 1"><span :class="`${pageIndex === 1 ? 'active' : ''}`"></span></div>
       <div :class="`pagination-dot`" @click="pageIndex = 2"><span :class="`${pageIndex === 2 ? 'active' : ''}`"></span></div>
       <div :class="`pagination-dot`" @click="pageIndex = 3"><span :class="`${pageIndex === 3 ? 'active' : ''}`"></span></div>
+      <div :class="`pagination-dot`" @click="pageIndex = 4"><span :class="`${pageIndex === 4 ? 'active' : ''}`"></span></div>
+      <div :class="`pagination-dot`" @click="pageIndex = 5"><span :class="`${pageIndex === 5 ? 'active' : ''}`"></span></div>
     </div>
   </div>
 </template>
@@ -81,49 +101,6 @@
   @include div_l_pc(1874, 963, 0, 0);
   height: calc(100% - 4vw);
 }
-/*
-.ii{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;  
-  object-fit: contain;
-  opacity: 0.3;
-  }
-
-
-.o {
-  @include img_l_pc(1920, 0, 0);
-  height: 100%;
-}
-.logo {
-  @include img_l_pc(677, 209, 232);
-  top: calc(50% - 16.2vw);
-}
-
-.st {
-  @include img_l_pc(272, 347, 434);
-  top: calc(50% - 9vw);
-}
-
-.logo1 {
-  @include img_l_pc(610, 383, 270);
-  top: calc(50% - 15vw);
-}
-
-.logo2 {
-  @include img_l_pc(610, 383, 270);
-  top: calc(50% - 15vw);
-}
-
-.rb {
-  @include img_l_pc(889, 410, 0);
-  top: auto;
-  bottom: 4vw;
-}
-*/
-
 .i {
   @include img_r_pc(690, 0, 0);
   top: calc(50% - 11.5vw);
@@ -239,6 +216,77 @@
         font-size: 0.9em;
       }
     }
+  }
+}
+.list3 {
+  background: #6A9F87;
+  .img1 {
+    @include img_r_pc(680, -5, 0);
+  }
+  .img2 {
+    @include img_l_pc(400, 0, 290);
+    top: auto;
+    bottom: 0;
+  }
+  .img3 {
+    @include img_l_pc(340, -5, 0);
+  }
+  .logo {
+    @include img_r_pc(410, 0, 1040);
+    width:auto;
+    height: calc(100% - 4vw);
+  }
+  .t{
+    @include img_l_pc(600, 285, 965);
+    top: calc(50% + 100vw * (285 - 540) / 1920);
+  }
+}
+.list4 {
+  background: #6A9F87;
+  .img1 {
+    @include img_r_pc(680, -5, 0);
+  }
+  .img2 {
+    @include img_l_pc(400, 0, 290);
+    top: auto;
+    bottom: 0;
+  }
+  .img3 {
+    @include img_l_pc(340, -5, 0);
+    z-index: 2
+  }
+  .logo {
+    @include img_r_pc(410, 0, 950);
+    top: 7.2vw;
+    width:auto;
+    height: calc(100% - 15.7vw);
+  }
+  .t{
+    @include img_l_pc(590, 285, 1070);
+    top: calc(50% + 100vw * (330 - 540) / 1920);
+  }
+}
+.list5 {
+  background: #6A9F87;
+  .img1 {
+    @include img_r_pc(680, -5, 0);
+  }
+  .img2 {
+    @include img_l_pc(400, 0, 290);
+    top: auto;
+    bottom: 0;
+  }
+  .img3 {
+    @include img_l_pc(340, -5, 0);
+  }
+  .logo {
+    @include img_r_pc(410, 0, 1260);
+    width:auto;
+    height:100%;
+  }
+  .t{
+    @include img_l_pc(1150, 285, 830);
+    top: calc(50% + 100vw * (280 - 540) / 1920);
   }
 }
 .list::after {
@@ -469,6 +517,120 @@
   }
 
   .list2 {
+    .img1 {
+      @include img_r_m(270, 0, -10);
+    }
+    .img2 {
+      @include img_r_m(210, 0, -20);
+      top: auto;
+      bottom: 0;
+    }
+    .img3 {
+      @include img_l_m(150, -50, -10);
+    }
+    .logo {
+      @include img_l_m(154, 123, 99);
+      top: calc(50% - 59vw);
+    }
+    .t1 {
+      @include img_l_m(375, 38, 0);
+      top: calc(50% - 1.55em);
+      font-size: sizem(31);
+      line-height: 1.6;
+    }
+    .t2 {
+      @include img_l_m(375, 38, 0);
+      top: calc(50% + 1.7em);
+      font-size: sizem(52);
+      > span {
+        display: block;
+        font-size: 0.6em;
+        letter-spacing: 0.04em;
+        margin: 0;
+        span {
+          display: inline;
+          font-size: 1em;
+        }
+      }
+    }
+  }
+  .list3 {
+    .img1 {
+      @include img_r_m(270, 0, -10);
+    }
+    .img2 {
+      @include img_r_m(210, 0, -20);
+      top: auto;
+      bottom: 0;
+    }
+    .img3 {
+      @include img_l_m(150, -50, -10);
+    }
+    .logo {
+      @include img_l_m(154, 123, 99);
+      top: calc(50% - 59vw);
+    }
+    .t1 {
+      @include img_l_m(375, 38, 0);
+      top: calc(50% - 1.55em);
+      font-size: sizem(31);
+      line-height: 1.6;
+    }
+    .t2 {
+      @include img_l_m(375, 38, 0);
+      top: calc(50% + 1.7em);
+      font-size: sizem(52);
+      > span {
+        display: block;
+        font-size: 0.6em;
+        letter-spacing: 0.04em;
+        margin: 0;
+        span {
+          display: inline;
+          font-size: 1em;
+        }
+      }
+    }
+  }
+  .list4 {
+    .img1 {
+      @include img_r_m(270, 0, -10);
+    }
+    .img2 {
+      @include img_r_m(210, 0, -20);
+      top: auto;
+      bottom: 0;
+    }
+    .img3 {
+      @include img_l_m(150, -50, -10);
+    }
+    .logo {
+      @include img_l_m(154, 123, 99);
+      top: calc(50% - 59vw);
+    }
+    .t1 {
+      @include img_l_m(375, 38, 0);
+      top: calc(50% - 1.55em);
+      font-size: sizem(31);
+      line-height: 1.6;
+    }
+    .t2 {
+      @include img_l_m(375, 38, 0);
+      top: calc(50% + 1.7em);
+      font-size: sizem(52);
+      > span {
+        display: block;
+        font-size: 0.6em;
+        letter-spacing: 0.04em;
+        margin: 0;
+        span {
+          display: inline;
+          font-size: 1em;
+        }
+      }
+    }
+  }
+  .list5 {
     .img1 {
       @include img_r_m(270, 0, -10);
     }
