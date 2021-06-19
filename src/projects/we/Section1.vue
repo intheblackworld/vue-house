@@ -10,8 +10,10 @@
         <img src="./s1/2/2.png" alt="" class="img1">
         <img src="./s1/2/3.png" alt="" class="img2">
         <img src="./s1/2/1.png" alt="" class="img3">
-        <img src="./s1/5/img.jpg" alt="" class="logo">
-        <img src="./s1/5/t.png" alt="" class="t">
+        <img src="./s1/5/img.jpg" alt="" class="logo" v-if="isPC">
+        <img src="./s1/5/img_m.jpg" alt="" class="logo" v-if="isMobile">
+        <img src="./s1/5/t.png" alt="" class="t" v-if="isPC">
+        <img src="./s1/5/t_m.png" alt="" class="t" v-if="isMobile">
       </div>
       <div class="list list4" v-if="pageIndex === 4" key="page4" v-touch:swipe.left="() => {this.decPageIndex(4)}" v-touch:swipe.right="() => this.addPageIndex(4)" @mouseup="addPageIndex(4)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="w-block"></div>
@@ -26,7 +28,8 @@
         <img src="./s1/2/2.png" alt="" class="img1">
         <img src="./s1/2/3.png" alt="" class="img2">
         <img src="./s1/2/1.png" alt="" class="img3">
-        <img src="./s1/3/img.jpg" alt="" class="logo">
+        <img src="./s1/3/img.jpg" alt="" class="logo" v-if="isPC">
+        <img src="./s1/3/img_m.jpg" alt="" class="logo" v-if="isMobile">
         <img src="./s1/3/t.png" alt="" class="t">
       </div>
 
@@ -479,6 +482,7 @@
     text-align: left;
     color: #ffffff;
     white-space: nowrap;
+    z-index: 10;
   }
 
   .tm {
@@ -573,29 +577,13 @@
       @include img_l_m(150, -50, -10);
     }
     .logo {
-      @include img_l_m(154, 123, 99);
-      top: calc(50% - 59vw);
+      @include img_l_m(375, 123, 0);
+      height: auto;
+      top: calc(50% + 29vw);
     }
-    .t1 {
-      @include img_l_m(375, 38, 0);
-      top: calc(50% - 1.55em);
-      font-size: sizem(31);
-      line-height: 1.6;
-    }
-    .t2 {
-      @include img_l_m(375, 38, 0);
-      top: calc(50% + 1.7em);
-      font-size: sizem(52);
-      > span {
-        display: block;
-        font-size: 0.6em;
-        letter-spacing: 0.04em;
-        margin: 0;
-        span {
-          display: inline;
-          font-size: 1em;
-        }
-      }
+    .t{
+      @include img_l_m(255, 38, 58);
+      top: calc(50% - 40vw);
     }
   }
   .list4 {
@@ -612,29 +600,13 @@
       @include img_l_m(150, -50, -10);
     }
     .logo {
-      @include img_l_m(154, 123, 99);
-      top: calc(50% - 59vw);
+      @include img_l_m(350, 123, -30);
+      height: auto;
+      top: calc(50% + 10vw);
     }
-    .t1 {
-      @include img_l_m(375, 38, 0);
-      top: calc(50% - 1.55em);
-      font-size: sizem(31);
-      line-height: 1.6;
-    }
-    .t2 {
-      @include img_l_m(375, 38, 0);
-      top: calc(50% + 1.7em);
-      font-size: sizem(52);
-      > span {
-        display: block;
-        font-size: 0.6em;
-        letter-spacing: 0.04em;
-        margin: 0;
-        span {
-          display: inline;
-          font-size: 1em;
-        }
-      }
+    .t{
+      @include img_l_m(255, 38, 58);
+      top: calc(50% - 50vw);z-index: 3
     }
   }
   .list5 {
@@ -651,29 +623,13 @@
       @include img_l_m(150, -50, -10);
     }
     .logo {
-      @include img_l_m(154, 123, 99);
-      top: calc(50% - 59vw);
+      @include img_l_m(375, 123, 0);
+      height: auto;
+      top: calc(50% + 29vw);
     }
-    .t1 {
-      @include img_l_m(375, 38, 0);
-      top: calc(50% - 1.55em);
-      font-size: sizem(31);
-      line-height: 1.6;
-    }
-    .t2 {
-      @include img_l_m(375, 38, 0);
-      top: calc(50% + 1.7em);
-      font-size: sizem(52);
-      > span {
-        display: block;
-        font-size: 0.6em;
-        letter-spacing: 0.04em;
-        margin: 0;
-        span {
-          display: inline;
-          font-size: 1em;
-        }
-      }
+    .t{
+      @include img_l_m(255, 38, 58);
+      top: calc(50% - 40vw);
     }
   }
 
