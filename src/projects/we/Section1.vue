@@ -5,25 +5,23 @@
       本公司保留活動修改及終止權利！！數量有限，要買要快
     </div>
     <transition-group name="swipe-fade">
-      <div class="list list5" v-if="pageIndex === 5" key="page2" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? this.pageIndex === 2 ? 3 : 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="list list5" v-if="pageIndex === 5" key="page5" v-touch:swipe.left="() => {this.decPageIndex(5)}" v-touch:swipe.right="() => this.addPageIndex(5)" @mouseup="addPageIndex(5)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="w-block"></div>
         <img src="./s1/2/2.png" alt="" class="img1">
-        <img src="./s1/2/3.png"
-         alt="" class="img2">
+        <img src="./s1/2/3.png" alt="" class="img2">
         <img src="./s1/2/1.png" alt="" class="img3">
         <img src="./s1/5/img.jpg" alt="" class="logo">
         <img src="./s1/5/t.png" alt="" class="t">
       </div>
-      <div class="list list4" v-if="pageIndex === 4" key="page2" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? this.pageIndex === 2 ? 3 : 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="list list4" v-if="pageIndex === 4" key="page4" v-touch:swipe.left="() => {this.decPageIndex(4)}" v-touch:swipe.right="() => this.addPageIndex(4)" @mouseup="addPageIndex(4)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="w-block"></div>
         <img src="./s1/2/2.png" alt="" class="img1">
-        <img src="./s1/2/3.png"
-         alt="" class="img2">
+        <img src="./s1/2/3.png" alt="" class="img2">
         <img src="./s1/2/1.png" alt="" class="img3">
         <img src="./s1/4/img.jpg" alt="" class="logo">
         <img src="./s1/4/t.png" alt="" class="t">
       </div>
-     <div class="list list3" v-if="pageIndex === 3" key="page2" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? this.pageIndex === 2 ? 3 : 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="list list3" v-if="pageIndex === 3" key="page3" v-touch:swipe.left="() => {this.decPageIndex(3)}" v-touch:swipe.right="() => this.addPageIndex(3)" @mouseup="addPageIndex(3)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="w-block"></div>
         <img src="./s1/2/2.png" alt="" class="img1">
         <img src="./s1/2/3.png" alt="" class="img2">
@@ -31,8 +29,8 @@
         <img src="./s1/3/img.jpg" alt="" class="logo">
         <img src="./s1/3/t.png" alt="" class="t">
       </div>
- 
-      <div class="list list2" v-if="pageIndex === 2" key="page2" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? this.pageIndex === 2 ? 3 : 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+
+      <div class="list list2" v-if="pageIndex === 2" key="page2" v-touch:swipe.left="() => {this.decPageIndex(2)}" v-touch:swipe.right="() => this.addPageIndex(2)" @mouseup="addPageIndex(2)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="w-block"></div>
         <img src="./s1/2/2.png" alt="" class="img1">
         <img src="./s1/2/3.png" alt="" class="img2">
@@ -41,7 +39,7 @@
         <div class="t1">完銷倒數 土城家樂福<span>精品30坪 限量露台戶</span></div>
         <div class="t2"><span>簽訂3%<span>輕鬆付款</span></span>2263-5666</div>
       </div>
-      <div class="list list1" v-if="pageIndex === 1" key="page1" v-touch:swipe.left="() => this.pageIndex = this.pageIndex === 1 ? this.pageIndex === 2 ? 3 : 2 : 1" v-touch:swipe.right="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseup="() => this.pageIndex = this.pageIndex === 1 ? 2 : 1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="list list1" v-if="pageIndex === 1" key="page1" v-touch:swipe.left="() => {this.decPageIndex(1)}" v-touch:swipe.right="() => this.addPageIndex(1)" @mouseup="addPageIndex(1)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="w-block"></div>
         <img src="./s1/1/1.png" alt="" class="img1">
         <img src="./s1/1/2.png" alt="" class="img2">
@@ -136,11 +134,12 @@
   line-height: 1.3;
 }
 .list1 {
-  background: #6A9F87;
+  background: #6a9f87;
   .img1 {
     @include img_r_pc(200, -5, 0);
   }
   .img2 {
+    z-index: 5;
     @include img_l_pc(750, 0, 370);
     top: auto;
     bottom: 0;
@@ -154,7 +153,7 @@
     top: calc(50% - 1.4em);
     font-size: size(81);
     letter-spacing: 0.1em;
-    color: #07421C;
+    color: #07421c;
   }
   .t2 {
     @include img_l_pc(720, 768, 260);
@@ -165,11 +164,12 @@
   }
 }
 .list2 {
-  background: #6A9F87;
+  background: #6a9f87;
   .img1 {
     @include img_r_pc(680, -5, 0);
   }
   .img2 {
+    z-index: 5;
     @include img_l_pc(400, 0, 290);
     top: auto;
     bottom: 0;
@@ -219,11 +219,12 @@
   }
 }
 .list3 {
-  background: #6A9F87;
+  background: #6a9f87;
   .img1 {
     @include img_r_pc(680, -5, 0);
   }
   .img2 {
+    z-index: 5;
     @include img_l_pc(400, 0, 290);
     top: auto;
     bottom: 0;
@@ -233,45 +234,47 @@
   }
   .logo {
     @include img_r_pc(410, 0, 1040);
-    width:auto;
+    width: auto;
     height: calc(100% - 4vw);
   }
-  .t{
+  .t {
     @include img_l_pc(600, 285, 965);
     top: calc(50% + 100vw * (285 - 540) / 1920);
   }
 }
 .list4 {
-  background: #6A9F87;
+  background: #6a9f87;
   .img1 {
     @include img_r_pc(680, -5, 0);
   }
   .img2 {
+    z-index: 5;
     @include img_l_pc(400, 0, 290);
     top: auto;
     bottom: 0;
   }
   .img3 {
     @include img_l_pc(340, -5, 0);
-    z-index: 2
+    z-index: 2;
   }
   .logo {
     @include img_r_pc(410, 0, 950);
     top: 7.2vw;
-    width:auto;
+    width: auto;
     height: calc(100% - 15.7vw);
   }
-  .t{
+  .t {
     @include img_l_pc(590, 285, 1070);
     top: calc(50% + 100vw * (330 - 540) / 1920);
   }
 }
 .list5 {
-  background: #6A9F87;
+  background: #6a9f87;
   .img1 {
     @include img_r_pc(680, -5, 0);
   }
   .img2 {
+    z-index: 5;
     @include img_l_pc(400, 0, 290);
     top: auto;
     bottom: 0;
@@ -281,10 +284,10 @@
   }
   .logo {
     @include img_r_pc(410, 0, 1260);
-    width:auto;
-    height:100%;
+    width: auto;
+    height: 100%;
   }
-  .t{
+  .t {
     @include img_l_pc(1150, 285, 830);
     top: calc(50% + 100vw * (280 - 540) / 1920);
   }
@@ -296,7 +299,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 3;
+  z-index: 5;
 }
 .swipe-fade-leave-to {
   opacity: 0;
@@ -320,7 +323,7 @@
   width: 100%;
   height: 100%;
   padding: 0 15px;
-  // z-index: 3;
+  // z-index: 5;
 
   .prev-btn,
   .next-btn {
@@ -341,7 +344,7 @@
   padding: 5px;
   margin: 0 5px;
   cursor: pointer;
-  // z-index: 3;
+  // z-index: 5;
 
   span {
     display: block;
@@ -496,6 +499,7 @@
       @include img_r_m(100, -5, 0);
     }
     .img2 {
+      z-index: 5;
       @include img_r_m(310, 0, -60);
       top: auto;
       bottom: 0;
@@ -521,6 +525,7 @@
       @include img_r_m(270, 0, -10);
     }
     .img2 {
+      z-index: 5;
       @include img_r_m(210, 0, -20);
       top: auto;
       bottom: 0;
@@ -559,6 +564,7 @@
       @include img_r_m(270, 0, -10);
     }
     .img2 {
+      z-index: 5;
       @include img_r_m(210, 0, -20);
       top: auto;
       bottom: 0;
@@ -597,6 +603,7 @@
       @include img_r_m(270, 0, -10);
     }
     .img2 {
+      z-index: 5;
       @include img_r_m(210, 0, -20);
       top: auto;
       bottom: 0;
@@ -635,6 +642,7 @@
       @include img_r_m(270, 0, -10);
     }
     .img2 {
+      z-index: 5;
       @include img_r_m(210, 0, -20);
       top: auto;
       bottom: 0;
@@ -673,7 +681,7 @@
     width: 100%;
     height: 100%;
     padding: 0 15px;
-    //z-index: 3;
+    //z-index: 5;
 
     .prev-btn,
     .next-btn {
@@ -710,12 +718,29 @@ export default {
       isMobile,
       isTablet,
       pageIndex: 1,
+      pageLength: 5,
       interval: null,
       toggleTimer: true,
     }
   },
 
-  methods: {},
+  methods: {
+    addPageIndex(index) {
+      if (index) {
+        this.pageIndex = index === this.pageLength ? 1 : index + 1
+      } else {
+        this.pageIndex = this.pageIndex === this.pageLength ? 1 : this.pageIndex + 1
+      }
+    },
+
+    decPageIndex(index) {
+      if (index) {
+        this.pageIndex = index === 1 ? this.pageLength : index - 1
+      } else {
+        this.pageIndex = this.pageIndex === 0 ? this.pageLength : this.pageIndex - 1
+      }
+    },
+  },
 
   mounted() {
     /*  clearInterval(this.interval)
