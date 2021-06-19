@@ -2,16 +2,19 @@
   <div class="section8">
     <img src="./s8/08_green_style.png" :alt="`${info.caseName}_grass`" class="grass">
     <div class="title" v-if="isPC"  data-aos="fade-up" data-aos-delay="200">
-      <span>15</span>項全齡聚樂部<br />
-      讓生活更有味
+      <span>5</span>米大面寬<br />單層大主臥・尊寵電梯禮遇
     </div>
     <div class="title" v-if="isMobile"  data-aos="fade-up" data-aos-delay="200">
-      15項全齡聚樂部 讓生活更有味
+      5米大面寬・單層大主臥・尊寵電梯禮遇
     </div>
     <div class="hr"  data-aos="fade-right" data-aos-delay="200"></div>
-    <div class="desc"  data-aos="fade-up" data-aos-delay="400">
-      ［立瑾Way］規劃豐富多彩的VIP休閒設施。交誼、休憩、氧身、娛樂，親子共享、好友齊聚，讓居住成為一種生活品味，回家就是度假的開始。
-    </div>
+    <ul class="desc"  data-aos="fade-up" data-aos-delay="400">
+      <li>建築語彙之美:新古典建築美學，別墅街廓名宅聚落</li>
+<li>空間尊寵之美: 5米大面寬，專屬電梯規劃，獨門獨院大戶享受</li>
+<li>景觀意境之美:獨立後院，單層主臥景觀大露台，頂樓賞景空間</li>
+<li>精工品質之美:10年防水保固＋5年建材保固，高規格建材品質再提升</li>
+
+    </ul>
     <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isPC">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">

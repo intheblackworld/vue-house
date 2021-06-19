@@ -8,15 +8,15 @@
     <img src="./s1/01_logo_box.png" :alt="`${info.caseName}_logo-box`" class="logo-box" data-aos="fade" data-aos-delay="0" data-aos-offset="-300">
     <img src="./s1/01_logo.png" :alt="`${info.caseName}_logo`" class="logo" data-aos="fade" data-aos-delay="0" data-aos-offset="-500">
     <img src="./s1/boutique_logo.png" :alt="`${info.caseName}_b-logo`" class="b-logo" data-aos="fade" data-aos-delay="0">
-    <h1 class="title" v-if="isPC" data-aos="fade-up" data-aos-delay="200">建築對味 幸福到位</h1>
-    <h1 class="title" v-if="isMobile" data-aos="fade-up" data-aos-delay="200">建築對味<br />幸福到位</h1>
+    <h1 class="title" v-if="isPC" data-aos="fade-up" data-aos-delay="200">價值恆傳 幸福詠綻</h1>
+    <h1 class="title" v-if="isMobile" data-aos="fade-up" data-aos-delay="200">價值恆傳<br />幸福詠綻</h1>
     <div class="subtitle" v-if="isPC">
-      <h3 class="subtitle1 flex-ac" data-aos="fade-up" data-aos-delay="400">遇見鳳鳴特區<span class="flex-ac">Destiny That Brought You To Me</span></h3>
-      <h3 class="subtitle2 flex-ac" data-aos="fade-up" data-aos-delay="600">北歐幸福生活<span class="flex-ac">Is Living A Happy Life</span></h3>
+      <h3 class="subtitle1 flex-ac" data-aos="fade-up" data-aos-delay="400">鳳鳴特區 限量稀藏 <span class="flex-ac">Destiny That Brought You To Me</span></h3>
+      <h3 class="subtitle2 flex-ac" data-aos="fade-up" data-aos-delay="600">極致禮遇 電梯豪墅<span class="flex-ac">Is Living A Happy Life</span></h3>
     </div>
     <div class="subtitle" v-if="isMobile">
-      <h3 class="subtitle1 flex-ac wrap" data-aos="fade-up" data-aos-delay="400" >遇見鳳鳴特區<br /><span class="flex-ac">Destiny That Brought You To Me</span></h3>
-      <h3 class="subtitle2 flex-ac wrap" data-aos="fade-up" data-aos-delay="600" >北歐幸福生活<br /><span class="flex-ac">Is Living A Happy Life</span></h3>
+      <h3 class="subtitle1 flex-ac wrap" data-aos="fade-up" data-aos-delay="400" >鳳鳴特區 限量稀藏<br /><span class="flex-ac">Destiny That Brought You To Me</span></h3>
+      <h3 class="subtitle2 flex-ac wrap" data-aos="fade-up" data-aos-delay="600" >極致禮遇 電梯豪墅<br /><span class="flex-ac">Is Living A Happy Life</span></h3>
     </div>
   </div>
 </template>

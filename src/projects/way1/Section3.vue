@@ -11,11 +11,11 @@
     <div class="title" v-if="isPC"  data-aos="fade-up" data-aos-delay="400">
       超前部署<br />
       建設願景<br />
-      鳳鳴站啟動，交通好Way
+      鳳鳴站啟動，交通好勁
     </div>
     <div class="title" v-if="isMobile">
       超前部署 建設願景<br />
-      鳳鳴站啟動，交通好Way
+      鳳鳴站啟動，交通好勁
     </div>
     <div class="hr"  data-aos="fade-right" data-aos-delay="400"></div>
     <div class="desc"  data-aos="fade-up" data-aos-delay="600">

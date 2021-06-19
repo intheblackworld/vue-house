@@ -3,19 +3,19 @@
     <img src="./s7/07_img.jpg" :alt="`${info.caseName}_img`" class="img">
     <div class="name">3D示意</div>
     <div class="title" v-if="isPC" data-aos="fade-up" data-aos-delay="200">
-      空間很有味<br />
-      好宅一次到位
+      高機能 新美墅<br />
+      世代傳承 限量稀藏 
     </div>
     <div class="title" v-if="isMobile" data-aos="fade-up" data-aos-delay="200">
-      空間很有味 好宅一次到位
+      高機能 新美墅 世代傳承 限量稀藏 
     </div>
     <div class="hr" data-aos="fade-right" data-aos-delay="200"></div>
     <div class="subtitle" data-aos="fade-up" data-aos-delay="400">
-      北歐風格美學<br />
-      簡潔框景建築
+      當代新古典<br />
+      價值恆久遠
     </div>
     <div class="desc" data-aos="fade-up" data-aos-delay="600">
-      以北歐風格簡潔美學營造建築大器立面，水平橫幅延伸視野，流動著晨昏的光影與季節的變換，大地色系交織白色框景，俐落身段雋永耐看。
+      融匯當代新古典建築美學，呈現低調奢華、大器不凡的雋永質感。以沈穩厚實的石材基座，勾勒建築立面優雅身段，彰顯與眾不同的尊貴品味。
     </div>
   </div>
 </template>
@@ -73,7 +73,7 @@
 }
 
 .title {
-  @include img_r_pc(338, 285, 298);
+  @include img_r_pc(550, 285, 198);
   font-size: size(53.6);
   font-weight: 500;
   font-stretch: normal;

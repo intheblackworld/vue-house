@@ -3,7 +3,7 @@
     <img src="./s4/04_green_style.png" :alt="`${info.caseName}_grass`" class="grass">
     <h1 class="label"  data-aos="fade-up" data-aos-delay="200"><span>尋味</span>宜居優境</h1>
     <h1 class="title"  data-aos="fade-up" data-aos-delay="400">Taste Of City Feng Ming</h1>
-    <h1 class="subtitle"  data-aos="fade-up" data-aos-delay="600">鳳鳴站350米</h1>
+    <h1 class="subtitle"  data-aos="fade-up" data-aos-delay="600">鳳鳴站400米</h1>
     <div class="hr"  data-aos="fade-right" data-aos-delay="400"></div>
     <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">

@@ -1,6 +1,6 @@
 <template>
   <div class="section9">
-    <h1 class="label"  data-aos="fade-up" data-aos-delay="200"><span>品味</span>精質內涵</h1>
+    <h1 class="label"  data-aos="fade-up" data-aos-delay="200">立瑾建築機構</h1>
     <h1 class="title"  data-aos="fade-up" data-aos-delay="400">Taste Of Building Materials</h1>
     <h1 class="subtitle" v-if="isPC" data-aos="fade-up" data-aos-delay="600">為你營造家的幸福滋味</h1>
     <h1 class="subtitle" v-if="isMobile" data-aos="fade-up" data-aos-delay="600">為你營造<br />家的幸福滋味</h1>
@@ -24,11 +24,15 @@
     </div>
     <div class="block-hr"  data-aos="fade-right" data-aos-delay="400"></div>
     <div class="block-title"  data-aos="fade-up" data-aos-delay="200">
-      24-36坪高坪效質感生活<br />
-      夠好.夠住.夠用心
+      懂建築 需兩位<br />
+      一位懂得蓋 一位懂得住
     </div>
     <div class="block-desc"  data-aos="fade-up" data-aos-delay="600">
-      不用多但要好，適合的最剛好。［立瑾Way］想給你的，比你想要的多更多。
+對立瑾來說<br />
+建築是有感情的作品<br />
+我們為你築一個家<br />
+更期待有緣知音<br />
+在此植下家園的根基  
     </div>
   </div>
 </template>
