@@ -91,7 +91,7 @@ export default {
       transition: all 0.5s;
     &:hover,
     &.active {
-      border-bottom: size(3.5) solid #11a4aa;
+      border-bottom: size(3.5) solid #6A9F87;
     }
 
     &.btn {
@@ -360,7 +360,7 @@ export default {
         width: $logo_phone_width;
       }
     }
-    &::after{box-shadow:0 0 sizem(40) sizem(40) #218388;}
+    &::after{box-shadow:0 0 sizem(40) sizem(40) #6A9F87;}
   }
 
   .btn {
