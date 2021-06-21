@@ -21,37 +21,37 @@
       <div class="section relative" id="section1" @init="init">
         <Section1 />
       </div>
-      <div class="section" id="section2" style="">
+      <div class="section relative" id="section2" style="">
         <Section2 />
       </div>
-      <div class="section" id="section3">
+      <div class="section relative" id="section3">
         <Section3 />
       </div>
       <div class="section relative" id="section4">
         <Section4 />
       </div>
-      <div class="section" id="section5">
+      <div class="section relative" id="section5">
         <Section5 />
       </div>
-      <div class="section" id="section6">
+      <div class="section relative" id="section6">
         <Section6 />
       </div>
-      <div class="section" id="section7">
+      <div class="section relative" id="section7">
         <Section7 />
       </div>
-      <div class="section" id="section8">
+      <div class="section relative" id="section8">
         <Section8 />
       </div>
-      <div class="section" id="section9">
+      <div class="section relative" id="section9">
         <Section9 />
       </div>
-      <div class="section" id="section10">
+      <div class="section relative" id="section10">
         <Section10 />
       </div>
-      <div class="section" id="section11">
+      <div class="section relative" id="section11">
         <Section11 />
       </div>
-      <div class="section" id="section12">
+      <div class="section relative" id="section12">
         <VideoSection1 :playBtn="require('@/projects/sfdy/video/play-btn.png')" title="開箱系列影片" :close="require('@/projects/sfdy/video/close.png')" :arrows="[require('@/projects/sfdy/video/arrow-left.png'), require('@/projects/sfdy/video/arrow-right.png')]" :slideList="[
         {
           title: '釋放壓力，回家就是享受的開始',
