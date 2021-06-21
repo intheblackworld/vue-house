@@ -303,7 +303,7 @@
 
 @media screen and (max-width: 767px) {
   .section7 {
-    width: 100vw;
+    width: 100%;
     height: sizem(726 + 34);
     min-height: auto;
     max-height: initial;
@@ -331,8 +331,8 @@
   }
 
   .title {
-    @include img_l_m(272, 7, 28);
-    font-size: sizem(23.2);
+    @include img_c_m(360, 7);
+    font-size: sizem(20.5);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;

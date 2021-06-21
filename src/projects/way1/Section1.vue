@@ -61,6 +61,7 @@
   top:calc(50% + 100vw * (550 - 540) / 1920);
   animation: arrow 1s 0s ease-in-out alternate-reverse infinite;
   cursor: pointer;
+  z-index: 5;
 }
 
 @keyframes arrow {
@@ -166,7 +167,7 @@
 
   .arrow {
     @include img_l_m(36.6, 380, 65);
-    top: calc(48% + 100vw * (380 - 302) / 375);
+    top: calc(48% + 100vw * (420 - 302) / 375);
   }
 
   .btn {

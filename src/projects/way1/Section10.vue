@@ -13,6 +13,36 @@
         靜音舒適工學
       </div>
       <div class="desc"  data-aos="fade-up" data-aos-delay="300">
+      ●力霸氣密隔音窗
+      </div>
+      <div class="title"  data-aos="fade-up" data-aos-delay="400">
+        創新進化工學
+      </div>
+      <div class="desc"  data-aos="fade-up" data-aos-delay="500">
+      ●冷熱水管採不鏽鋼管保溫披覆<br />
+      ●10年防水保固＋5年建材保固
+      </div>
+      <div class="title"  data-aos="fade-up" data-aos-delay="600">
+        防疫健康工學
+      </div>
+      <div class="desc"  data-aos="fade-up" data-aos-delay="700">
+      ●ICI金利登水泥漆＋長庚健康塗料
+      </div>
+      <div class="title"  data-aos="fade-up" data-aos-delay="800">
+        嚴選頂規建材
+      </div>
+      <div class="desc"  data-aos="fade-up" data-aos-delay="900">
+      ●戶戶配備太平洋電梯<br />
+      ●RAKＸROMAN精品磁磚<br />
+      ●INAX日本質感衛浴<br />
+      ●hansgrohe德國衞浴五金<br />
+      ●櫻花整體廚具
+      </div>
+     <!-- 
+      <div class="title"  data-aos="fade-up" data-aos-delay="200">
+        靜音舒適工學
+      </div>
+      <div class="desc"  data-aos="fade-up" data-aos-delay="300">
         ●台灣MUCA美木家隔音樓板<br />
         ●力霸氣密隔音窗<br />
         ●5+5mm膠合玻璃
@@ -40,6 +70,7 @@
         ●hansgrohe德國衞浴五金<br />
         ●APD指紋電子密碼鎖
       </div>
+      -->
     </div>
     <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -110,31 +141,25 @@
 
 .content {
   @include img_l_pc(558, 15, 99);
-}
-.title {
-  font-size: size(31.5);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: size(1.89);
-  text-align: left;
-  color: #009fb1;
-  margin: size(10) 0 size(15);
-  span {
-    font-size: size(49);
-  }
-}
-
-.desc {
   font-size: size(25.4);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.61;
-  letter-spacing: size(0.51);
+  line-height: 2;
+  letter-spacing:0.02em;
   text-align: left;
   color: #302d2c;
+}
+.title {
+  font-size: 1.24em;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing:0.06em;
+  color: #009fb1;
+  margin:0.5em 0 0.3em;
+  span {
+    font-size:1.55em;
+  }
 }
 
 /* Swipe */

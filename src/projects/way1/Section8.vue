@@ -9,10 +9,10 @@
     </div>
     <div class="hr"  data-aos="fade-right" data-aos-delay="200"></div>
     <ul class="desc"  data-aos="fade-up" data-aos-delay="400">
-      <li>建築語彙之美:新古典建築美學，別墅街廓名宅聚落</li>
-<li>空間尊寵之美: 5米大面寬，專屬電梯規劃，獨門獨院大戶享受</li>
-<li>景觀意境之美:獨立後院，單層主臥景觀大露台，頂樓賞景空間</li>
-<li>精工品質之美:10年防水保固＋5年建材保固，高規格建材品質再提升</li>
+      <li><b>建築語彙之美:</b>新古典建築美學，別墅街廓名宅聚落</li>
+<li><b>空間尊寵之美:</b>5米大面寬，專屬電梯規劃，獨門獨院大戶享受</li>
+<li><b>景觀意境之美:</b>獨立後院，單層主臥景觀大露台，頂樓賞景空間</li>
+<li><b>精工品質之美:</b>10年防水保固＋5年建材保固，高規格建材品質再提升</li>
 
     </ul>
     <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isPC">
@@ -105,7 +105,7 @@
 }
 
 .title {
-  @include img_l_pc(316, 307, 267);
+  @include img_l_pc(616, 307, 117);
   font-size: size(40.5);
   font-weight: 500;
   font-stretch: normal;
@@ -125,7 +125,7 @@
   border-bottom: solid size(4) #009fb1;
 }
 .desc {
-  @include img_l_pc(500, 507, 178);
+  @include img_l_pc(520, 507, 168);
   font-size: size(22);
   font-weight: normal;
   font-stretch: normal;
@@ -340,7 +340,7 @@
   .section8 {
     min-height: auto;
     max-height: initial;
-    height: sizem(253 + 245 + 245);
+    height: sizem(253 + 245 + 245 + 70);
   }
 
   .grass {
@@ -348,7 +348,7 @@
   }
 
   .title {
-    @include img_c_m(252, 109 + 245);
+    @include img_c_m(360, 100 + 244);
     font-size: sizem(17.7);
     font-weight: normal;
     font-stretch: normal;
@@ -366,18 +366,18 @@
   .hr {
     @include img_c_m(46, 245 + 18);
     width: 1px;
-    height: sizem(75);
+    height: sizem(70);
     border-left: solid size(4) #009fb1;
   }
   .desc {
-    @include img_c_m(325, 148 + 245);
-    font-size: sizem(14.3);
+    @include img_c_m(330, 138 + 245);
+    font-size: sizem(14);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.61;
     letter-spacing:0.03em;
-    text-align: justify;
+    text-align: left;
     color: #2f2c2c;
   }
 

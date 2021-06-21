@@ -126,18 +126,18 @@
 }
 
 .content-block {
-  @include div_r_pc(1062, 940, 565, 9);
-  background-image: url('./s9/09_font_box.png');
-  background-size: cover;
+  @include div_l_pc(760, 520, 720, 1050);
+  background: #fff;
+  box-shadow:3vw 5vw 40vw #0004;
 }
 
 .block-hr {
-  @include img_r_pc(53, 1005, 460);
+  @include img_r_pc(53, 950, 460);
   border-bottom: solid size(4) #009fb1;
 }
 
 .block-title {
-  @include img_r_pc(480, 840, 249);
+  @include img_r_pc(480, 790, 249);
   font-size: size(40.5);
   font-weight: 500;
   font-stretch: normal;
@@ -150,14 +150,14 @@
 }
 
 .block-desc {
-  @include img_r_pc(522, 1041, 202);
+  @include img_r_pc(480, 991, 249);
   font-size: size(22);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.65;
   letter-spacing: normal;
-  text-align: left;
+  text-align: center;
   color: #2f2c2c;
 }
 
@@ -365,7 +365,7 @@
   .section9 {
     min-height: auto;
     max-height: initial;
-    height: sizem(455 + 270);
+    height: sizem(455 + 340);
   }
 
   .label {
@@ -452,7 +452,7 @@
     width: sizem(375);
     height: sizem(270);
     min-height: auto;
-    top: sizem(455);
+    top: sizem(525);
     left: sizem(0);
     object-fit: cover;
   }
