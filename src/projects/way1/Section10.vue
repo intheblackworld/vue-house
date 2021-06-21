@@ -602,7 +602,7 @@ export default {
       isTablet,
       isDialog: false,
       slideList: [
-        {
+      /*  {
           img: require('./s10/10_slider_01.jpg'),
           name: '樣品屋實景',
         },
@@ -617,6 +617,26 @@ export default {
         {
           img: require('./s10/10_slider_04.jpg'),
           name: '樣品屋實景',
+        },*/
+        {
+          img: require('./s10/10_slider_05.jpg'),
+          name: '家庭廚具情境示意',
+        },
+        {
+          img: require('./s10/10_slider_06.jpg'),
+          name: 'INAX衛浴境示意僅供參考',
+        },
+        {
+          img: require('./s10/10_slider_07.jpg'),
+          name: '櫻花廚具情境示意僅共參考',
+        },
+        {
+          img: require('./s10/10_slider_08.jpg'),
+          name: '衛浴五金情境示意僅供參考',
+        },
+        {
+          img: require('./s10/10_slider_09.jpg'),
+          name: '電梯情境示意僅供參考',
         },
       ],
     }
