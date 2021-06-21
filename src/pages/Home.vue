@@ -18,40 +18,40 @@
         <div class="bg3">
         </div>
       </div> -->
-      <vue-lazy-component class="section relative" id="section1" @init="init">
+      <div class="section relative" id="section1" @init="init">
         <Section1 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section2" style="">
+      </div>
+      <div class="section" id="section2" style="">
         <Section2 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section3">
+      </div>
+      <div class="section" id="section3">
         <Section3 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section relative" id="section4">
+      </div>
+      <div class="section relative" id="section4">
         <Section4 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section5">
+      </div>
+      <div class="section" id="section5">
         <Section5 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section6">
+      </div>
+      <div class="section" id="section6">
         <Section6 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section7">
+      </div>
+      <div class="section" id="section7">
         <Section7 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section8">
+      </div>
+      <div class="section" id="section8">
         <Section8 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section9">
+      </div>
+      <div class="section" id="section9">
         <Section9 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section10">
+      </div>
+      <div class="section" id="section10">
         <Section10 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section11">
+      </div>
+      <div class="section" id="section11">
         <Section11 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section12">
+      </div>
+      <div class="section" id="section12">
         <VideoSection1 :playBtn="require('@/projects/sfdy/video/play-btn.png')" title="開箱系列影片" :close="require('@/projects/sfdy/video/close.png')" :arrows="[require('@/projects/sfdy/video/arrow-left.png'), require('@/projects/sfdy/video/arrow-right.png')]" :slideList="[
         {
           title: '釋放壓力，回家就是享受的開始',
@@ -72,7 +72,7 @@
           isPlay: false,
         },
       ]" />
-      </vue-lazy-component>
+      </div>
       <!-- <vue-lazy-component class="section" id="contact"> -->
       <ContactSection />
       <!-- </vue-lazy-component> -->
