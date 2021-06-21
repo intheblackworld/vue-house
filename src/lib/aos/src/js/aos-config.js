@@ -4,5 +4,5 @@ export default {
   mirror: false, // 出現一次
   delay: 0,
   duration: 1200,
-  easing: 'ease-in-out-quint'
+  easing: 'ease-in'
 }
