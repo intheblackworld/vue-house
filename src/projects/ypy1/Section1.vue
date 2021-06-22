@@ -1,7 +1,7 @@
 <template>
   <div class="section1">
-    <img src="./s1/bg_t.jpg" :alt="`${info.caseName}_img`" class="bg-img bg-t" v-if="isPC">
-    <img src="./s1/bg_b.png" :alt="`${info.caseName}_img`" class="bg-img bg-b" v-if="isPC">
+    <img src="./s1/bg1.jpg" :alt="`${info.caseName}_img`" class="bg-img bg-t" v-if="isPC">
+    <img src="./s1/bg2.png" :alt="`${info.caseName}_img`" class="bg-img bg-b" v-if="isPC">
     <img src="./m/1/bg_t.jpg" :alt="`${info.caseName}_img`" class="bg-img bg-t" v-if="isMobile">
     <img src="./m/1/bg_b.png" :alt="`${info.caseName}_img`" class="bg-img bg-b" v-if="isMobile">
     <svg version="1.1" id="圖層_1" class="logo" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 665 432" >
@@ -252,7 +252,7 @@
   max-height: size(1080);
   //overflow: hidden;
   position: relative;
-  background-color: #009cda;
+  background-color: #FFF;
   background-size: cover;
   z-index: 3;
   // margin: 0 0 size(400) 0;
@@ -265,7 +265,7 @@
   width: 100%;
   height: auto;
   position: absolute;
-  top:calc(30% + 30.6vw);
+  top:calc(30% + 25vw);
   left: 0;
   display: block;
   object-fit: cover;

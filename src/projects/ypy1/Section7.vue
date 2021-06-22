@@ -1,10 +1,10 @@
 <template>
   <div class="section7">
-    <img src="./m/7/bg_b.png" :alt="`${info.caseName}_img`" class="bg-img bg-tt" v-if="isMobile">
+    <img src="./m/4/bg_04.png" :alt="`${info.caseName}_img`" class="bg-img bg-t0" v-if="isMobile">
     <img src="./s7/bg_t.jpg" :alt="`${info.caseName}_img`" class="bg-img bg-tt" v-if="isPC">
     <img src="./m/8/bg_t.jpg" :alt="`${info.caseName}_img`" class="bg-img bg-t" v-if="isMobile">
     <img src="./s7/bg_b.png" :alt="`${info.caseName}_img`" class="bg-img bg-b">
-      <img src="./s6/bg_b.png" :alt="`${info.caseName}_img`" class="bg-img bg-t" v-if="isPC">
+      <img src="./s4/0a_04.png" :alt="`${info.caseName}_img`" class="bg-img bg-t0" v-if="isPC">
     <img src="./m/8/bg_b.png" :alt="`${info.caseName}_img`" class="bg-img bg-b" v-if="isMobile">
     <img src="./s7/img.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
     <img src="./m/8/img.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-up" data-aos-delay="200" v-if="isMobile">
@@ -42,7 +42,10 @@
     position: relative;
   }
 }
-
+.bg-t0{
+  
+  top: -5vw;
+}
 .bg-b {
   top: auto;
   bottom: 0;
@@ -97,6 +100,9 @@
 .bg-b{ top: sizem(648);
 transform: translateY(0);
 bottom: auto;
+}
+.bg-t0{
+  top: -20vw;z-index: 3;
 }
   .img {
     @include img_c_m(348, 130);

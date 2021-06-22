@@ -46,8 +46,8 @@
     <div class="hr hr2" data-aos="zoom-in-down" data-aos-delay="0"></div>
     <h3 class="title2 title" data-aos="fade-up" data-aos-delay="0">全齡化休閒公設<br />全家樂遊心天地</h3>
     <div class="desc2 desc" data-aos="fade-up" data-aos-delay="100">是尊榮的禮遇，更是愉悅的生活。規劃星級飯店式禮賓門廳、健身房、交誼廳、兒童遊戲區、KTV、多媒體娛樂室等多元化休閒會館，天天在家，就像渡假般享受！</div>
-    <img src="./s4/bg_b.png" :alt="`${info.caseName}_img`" class="bg-img bg-b" v-if="isPC">
-    <img src="./m/5/bg_b.png" :alt="`${info.caseName}_img`" class="bg-img bg-b" v-if="isMobile">
+    <img src="./s4/0a_01.png" :alt="`${info.caseName}_img`" class="bg-img bg-b" v-if="isPC">
+    <img src="./m/4/bg_01.png" :alt="`${info.caseName}_img`" class="bg-img bg-b" v-if="isMobile">
   </div>
 </template>
 <style lang="scss" scoped>
@@ -74,7 +74,7 @@
   height: auto;
   left: 0;
   top: auto;
-  bottom: 0;
+  bottom:-3.1vw;
 }
 
 .hr {
@@ -375,7 +375,6 @@
     height: sizem(750 + 145 + 207);
     min-height: auto;
     max-height: initial;
-    overflow: hidden;
     &::before {
   content: ' ';
   position: fixed;
@@ -384,7 +383,6 @@
   right: 0;
   bottom: 0;
   left: 0;
-  
   background: url('./m/4/bg.jpg') center 0;
   background-size:100% auto;
 }

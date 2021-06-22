@@ -36,8 +36,8 @@
   z-index: 1;
   // background-color: #fff;
   // min-height: size(900);
-  background-image: url('./s5/bg_b.jpg');
-  background-size: cover;
+  background: url('./s4/0a_02.jpg') no-repeat 0 100%;
+  background-size: 100% calc(100% - 3vw);
   // background-position: 0 0;
   // background-attachment: fixed;
   // overflow: hidden;
@@ -158,7 +158,7 @@
     height: sizem(567);
     min-height: auto;
     max-height: initial;
-    background-image: url('./m/6/bg_b.jpg');
+    background-image: url('./m/4/bg_02.jpg');
     // background-attachment: scroll;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;

@@ -26,8 +26,11 @@
   // background-position: 0 0;
   // background-attachment: fixed;
   // overflow: hidden;
-  &::before{content: "";width: 100%;height:3vw;background: #009cda;position: absolute;bottom: 100%;left: 0;
-  box-shadow: 0 0 2vw 1vw #009cda,0 0 2vw #009cda;z-index: 2;
+  &::before{content: "";width: 140%;
+  height:25vw;
+  background:linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+  position: absolute;top:-1px;left:0%;
+  z-index: 2;
   }
 }
 
@@ -57,8 +60,9 @@
   line-height: 1.2;
   letter-spacing: size(0.4);
   text-align: center;
-  color: #fff;
+  color: #000;
   white-space: nowrap;
+  z-index: 3;
 }
 
 .subtitle {
@@ -71,8 +75,9 @@
   line-height: 1.22;
   letter-spacing: size(0.69);
   text-align: center;
-  color: #fff;
+  color: #000;
   white-space: nowrap;
+  z-index: 3;
 }
 .map {
     position: absolute;
@@ -124,8 +129,7 @@
     // background-position: 0 0;
     // background-attachment: fixed;
     overflow: hidden;
-  &::before{content: "";width: 100%;height:10vw;background: #fff;position: absolute;bottom: 100%;left: 0;
-  box-shadow: 0 0 10vw 5vw #fff,0 0 10vw #fff
+  &::before{content: "";width: 100%;height:55vw;
   }
   }
 

@@ -411,9 +411,10 @@ export default {
   //  padding-top: sizem(160);
   padding-top:0;
     margin: 0;
-    margin-top: sizem(-160);
+    margin-top: sizem(0);
+top: 0;
     background-image: url('~@/projects/ypy1/m/c/bg.jpg');
-    background-position: 50% sizem(160);
+    background-position: 0 0;
 
     > img {
       display: block;

@@ -45,9 +45,9 @@
   height: size(875);
   min-height: size(875);
   max-height: size(875);
-  background-image: url('./s6/bg_t.jpg');
+  background: url('./s4/0a_03.jpg') no-repeat 0 0;
   position: relative;
-  background-size: 100% 100%;
+  background-size: 100% calc(100% - 5vw);
 }
 
 .bg-b {
@@ -320,11 +320,8 @@
     height: sizem(872);
     min-height: auto;
     max-height: initial;
-    background-image: url('./m/7/bg_t.jpg');
-    background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
-    overflow: hidden;
+    background-image: url('./m/4/bg_03.jpg');
+  background-size: 100% calc(100% - 20vw);
     &::after,
     &::before {
       display: none;

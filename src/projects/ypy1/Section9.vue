@@ -521,7 +521,7 @@
     height: sizem(710);
     min-height: auto;
     max-height: initial;
-    margin-bottom: sizem(440);
+    margin-bottom: sizem(100);
   }
 
   .content {
