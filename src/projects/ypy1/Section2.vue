@@ -134,7 +134,7 @@
   }
 
   .title {
-    @include img_c_m(234, 78);
+    @include img_c_m(234, 53);
   width: auto;
     font-size: sizem(21);
     font-weight: 900;
@@ -149,7 +149,7 @@
   }
 
   .subtitle {
-    @include img_c_m(236, 115);
+    @include img_c_m(236, 90);
   width: auto;
     font-size: sizem(26);
     font-weight: 900;
