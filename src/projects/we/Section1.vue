@@ -5,7 +5,7 @@
       本公司保留活動修改及終止權利！！數量有限，要買要快
     </div>
     <transition-group name="swipe-fade">
-      <div class="list list5" v-if="pageIndex === 5" key="page5" v-touch:swipe.left="() => {this.decPageIndex(5)}" v-touch:swipe.right="() => this.addPageIndex(5)" @mouseup="addPageIndex(5)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="list list5" v-if="pageIndex === 4" key="page4" v-touch:swipe.left="() => {this.decPageIndex(4)}" v-touch:swipe.right="() => this.addPageIndex(4)" @mouseup="addPageIndex(4)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="w-block"></div>
         <img src="./s1/2/2.png" alt="" class="img1">
         <img src="./s1/2/3.png" alt="" class="img2">
@@ -15,7 +15,7 @@
         <img src="./s1/5/t.png" alt="" class="t" v-if="isPC">
         <img src="./s1/5/t_m.png" alt="" class="t" v-if="isMobile">
       </div>
-      <div class="list list4" v-if="pageIndex === 4" key="page4" v-touch:swipe.left="() => {this.decPageIndex(4)}" v-touch:swipe.right="() => this.addPageIndex(4)" @mouseup="addPageIndex(4)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="list list4" v-if="pageIndex === 3" key="page3" v-touch:swipe.left="() => {this.decPageIndex(3)}" v-touch:swipe.right="() => this.addPageIndex(3)" @mouseup="addPageIndex(3)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="w-block"></div>
         <img src="./s1/2/2.png" alt="" class="img1">
         <img src="./s1/2/3.png" alt="" class="img2">
@@ -23,7 +23,7 @@
         <img src="./s1/4/img.jpg" alt="" class="logo">
         <img src="./s1/4/t.png" alt="" class="t">
       </div>
-      <div class="list list3" v-if="pageIndex === 3" key="page3" v-touch:swipe.left="() => {this.decPageIndex(3)}" v-touch:swipe.right="() => this.addPageIndex(3)" @mouseup="addPageIndex(3)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="list list3" v-if="pageIndex === 2" key="page2" v-touch:swipe.left="() => {this.decPageIndex(2)}" v-touch:swipe.right="() => this.addPageIndex(2)" @mouseup="addPageIndex(2)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="w-block"></div>
         <img src="./s1/2/2.png" alt="" class="img1">
         <img src="./s1/2/3.png" alt="" class="img2">
@@ -33,7 +33,7 @@
         <img src="./s1/3/t.png" alt="" class="t">
       </div>
 
-      <div class="list list2" v-if="pageIndex === 2" key="page2" v-touch:swipe.left="() => {this.decPageIndex(2)}" v-touch:swipe.right="() => this.addPageIndex(2)" @mouseup="addPageIndex(2)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="list list2" v-if="pageIndex === 1" key="page2" v-touch:swipe.left="() => {this.decPageIndex(1)}" v-touch:swipe.right="() => this.addPageIndex(1)" @mouseup="addPageIndex(1)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="w-block"></div>
         <img src="./s1/2/2.png" alt="" class="img1">
         <img src="./s1/2/3.png" alt="" class="img2">
@@ -42,7 +42,7 @@
         <div class="t1">完銷倒數 土城家樂福<span>精品30坪 限量露台戶</span></div>
         <div class="t2"><span>簽訂3%<span>輕鬆付款</span></span>2263-5666</div>
       </div>
-      <div class="list list1" v-if="pageIndex === 1" key="page1" v-touch:swipe.left="() => {this.decPageIndex(1)}" v-touch:swipe.right="() => this.addPageIndex(1)" @mouseup="addPageIndex(1)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="list list1" v-if="pageIndex === 5" key="page5" v-touch:swipe.left="() => {this.decPageIndex(5)}" v-touch:swipe.right="() => this.addPageIndex(5)" @mouseup="addPageIndex(5)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="w-block"></div>
         <img src="./s1/1/1.png" alt="" class="img1">
         <img src="./s1/1/2.png" alt="" class="img2">

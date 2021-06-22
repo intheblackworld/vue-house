@@ -16,15 +16,12 @@
       </div>
     </div>
     <img src="./s5/logo.png" alt="最wee建築" class="logo">
-    <div class="title absolute" data-aos="fade-down" data-aos-delay="400" v-if="isPC">
-      高顏值建築門面 威3房圓夢款
-    </div>
-    <div class="title absolute" data-aos="fade-down" data-aos-delay="400" v-if="isMobile">
-      高顏值建築門面<br />威3房圓夢款
+    <div class="title absolute" data-aos="fade-down" data-aos-delay="400">
+      全棟冠軍磁磚<br /> 從裡到外精工打造
     </div>
     <div class="line absolute" data-aos="fade" data-aos-delay="200"></div>
     <div class="desc absolute" data-aos="fade-up" data-aos-delay="300">
-      建築外觀以低調的深灰與謙遜的萃白，演繹現代主義包浩斯美學。精品商旅時尚門廳、坡道平面車位、一層三戶淳芳鄰、戶戶邊間雙面採光、剛剛好的3房2衛精實坪效，小資價格升級名宅規格。
+      選用磁磚界第一品牌，台灣唯一榮獲綠建材標章的冠軍磁磚，整合綠色環保與數位技術，從建築外飾到居家空間，以大自然的細膩紋理與最高品質，體驗全新的生活感動。
     </div>
     <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" data-aos-offset="-500" v-if="isPC">
       <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
@@ -64,7 +61,7 @@
 }
 
 .title {
-  @include img_r_pc(404, 320, 416);
+  @include img_r_pc(404, 260, 416);
   font-size: size(45);
   font-weight: 900;
   font-stretch: normal;
