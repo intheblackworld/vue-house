@@ -7,6 +7,10 @@
           <h3 class="label">{{infos[0]}}</h3>
           <p class="desc" v-html="infos[1]"></p>
         </div>
+        <div class="item f-logo">
+         <h3 class="label">行銷企劃</h3>
+          <p class="desc"><img src="@/assets/img/f-logo.png" alt="上揚國際"></p>
+        </div>
       </div>
     </div>
     <Footer />
@@ -93,7 +97,11 @@ export default {
     text-align: left;
     line-height: 1.4;
     color: $house_desc_color;
+    img{height: 1.73em;}
   }
+  &.f-logo{
+ // border-left: 0px solid $house_border_color;
+ }
 }
 
 /* 螢幕尺寸標準 */
