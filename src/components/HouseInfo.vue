@@ -99,12 +99,25 @@ export default {
     color: $house_desc_color;
     img{height: 1.73em;}
   }
-  &.f-logo{
- // border-left: 0px solid $house_border_color;
- }
 }
 
 /* 螢幕尺寸標準 */
+/* 平板尺寸 */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .content {
+    width: 686px;
+  }
+
+  .title {
+    font-size: 32px;
+    margin: 40px 0 24px;
+  }
+
+  .item {
+    margin-bottom: 20px;
+  }
+}
+
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .content {
@@ -124,30 +137,14 @@ export default {
     height: auto;
     margin-left: 20px;
     white-space: normal;
-    &:last-child{
-  .desc{
+  .desc {
     font-size: 14px;
-  }}
+    img{height: 1.6em;}
+  }
   }
 
   .info {
     width: 100%;
-  }
-}
-
-/* 平板尺寸 */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .content {
-    width: 686px;
-  }
-
-  .title {
-    font-size: 32px;
-    margin: 40px 0 24px;
-  }
-
-  .item {
-    margin-bottom: 20px;
   }
 }
 
