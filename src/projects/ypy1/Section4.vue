@@ -372,7 +372,7 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-    height: sizem(750 + 145 + 207);
+    height: sizem(750 + 145 + 157);
     min-height: auto;
     max-height: initial;
     &::before {
@@ -387,6 +387,10 @@
   background-size:100% auto;
 }
   }
+.bg-b {
+  bottom:-0.15vw;
+}
+
 
   .hr {
     background-color: #000;

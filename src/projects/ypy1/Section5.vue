@@ -159,6 +159,7 @@
     min-height: auto;
     max-height: initial;
     background-image: url('./m/4/bg_02.jpg');
+    background-size: 100% 100%;
     // background-attachment: scroll;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
