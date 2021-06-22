@@ -16,7 +16,7 @@
         </div>
       </div>
     </div> -->
-<svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg v-if="viewIndex === 5" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 984 1070" class="svg2" style="enable-background:new 0 0 984 1070;" xml:space="preserve">
 
 <g>
@@ -557,7 +557,7 @@ export default {
   name: 'section5',
 
   // mixins: [slider],
-  // props: ['viewIndex'],
+  props: ['viewIndex'],
 
   data() {
     return {
