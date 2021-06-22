@@ -15,8 +15,9 @@
 <li><b>精工品質之美:</b>10年防水保固＋5年建材保固，高規格建材品質再提升</li>
 
     </ul>
-    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isPC">
-      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true"
+    >
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex" v-if="isPC">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
             <img :src="slide.img" alt="">
@@ -39,7 +40,6 @@
           </div>
         </transition-group>
         <div class="swipe-btns absolute flex-ac flex-jb">
-          <!-- <div class="order-index">{{slideIndex1 + 1}}/{{slideList.length}}</div> -->
           <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decMultiIndex(1)">
           <img src="./all/next-btn.png" alt="" class="next-btn" @click="addMultiIndex(1)">
         </div>
@@ -54,7 +54,6 @@
           </div>
         </transition-group>
         <div class="swipe-btns absolute flex-ac flex-jb">
-          <!-- <div class="order-index">{{slideIndex2 + 1}}/{{slideList.length}}</div> -->
           <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decMultiIndex(2)">
           <img src="./all/next-btn.png" alt="" class="next-btn" @click="addMultiIndex(2)">
         </div>
@@ -566,6 +565,7 @@ export default {
       isTablet,
       isDialog: false,
       slideList: [
+        /*
         {
           img: require('./s8/08_slider_01.jpg'),
           name: '文詠閱覽會議區3D示意',
@@ -590,41 +590,42 @@ export default {
           img: require('./s8/08_slider_06.jpg'),
           name: '舒韻瑜珈教室3D示意',
         },
+        */
         {
-          img: require('./s8/08_slider_07.jpg'),
-          name: '童趣兒童遊戲區3D示意',
+          img: require('./s8/08_slider_08.jpg'),
+          name: '居家空間示意圖',
+        },
+        {
+          img: require('./s8/08_slider_09.jpg'),
+          name: '居家空間示意圖',
+        },
+        {
+          img: require('./s8/08_slider_10.jpg'),
+          name: '居家空間示意圖',
+        },
+        {
+          img: require('./s8/08_slider_11.jpg'),
+          name: '居家空間示意圖',
         },
       ],
       slideList1: [
         {
-          img: require('./s8/08_slider_01.jpg'),
-          name: '文詠閱覽會議區3D示意',
+          img: require('./s8/08_slider_08.jpg'),
+          name: '居家空間示意圖',
         },
         {
-          img: require('./s8/08_slider_02.jpg'),
-          name: '澄品多功能資訊室3D示意',
-        },
-        {
-          img: require('./s8/08_slider_03.jpg'),
-          name: '采藝媽媽教室3D示意',
-        },
-        {
-          img: require('./s8/08_slider_04.jpg'),
-          name: '清寬迎賓門廳3D示意',
+          img: require('./s8/08_slider_09.jpg'),
+          name: '居家空間示意圖',
         },
       ],
       slideList2: [
         {
-          img: require('./s8/08_slider_05.jpg'),
-          name: '樂活健身房3D示意',
+          img: require('./s8/08_slider_10.jpg'),
+          name: '居家空間示意圖',
         },
         {
-          img: require('./s8/08_slider_06.jpg'),
-          name: '舒韻瑜珈教室3D示意',
-        },
-        {
-          img: require('./s8/08_slider_07.jpg'),
-          name: '童趣兒童遊戲區3D示意',
+          img: require('./s8/08_slider_11.jpg'),
+          name: '居家空間示意圖',
         },
       ],
     }

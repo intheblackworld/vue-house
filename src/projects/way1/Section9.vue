@@ -622,6 +622,7 @@ export default {
       isTablet,
       isDialog: false,
       slideList: [
+        /*
         {
           img: require('./s9/09_slider_01.jpg'),
           name: '樣品屋實景',
@@ -645,6 +646,14 @@ export default {
         {
           img: require('./s9/09_slider_06.jpg'),
           name: '樣品屋實景',
+        },*/
+        {
+          img: require('./s9/09_slider_07.jpg'),
+          name: '立瑾Way',
+        },
+        {
+          img: require('./s9/09_slider_08.jpg'),
+          name: '立瑾醞',
         },
       ],
     }
