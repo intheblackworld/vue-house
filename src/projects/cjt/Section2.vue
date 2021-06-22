@@ -1,8 +1,8 @@
 <template>
   <div class="section2 relative">
-<iframe class="if" src="https://www.youtube.com/embed/cjXgvnwu2bc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe class="if" src="https://www.youtube.com/embed/s8mOFLwdKR4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <div class="bg relative" v-if="!isMobile"><img src="./s2/0.png" alt="輕井澤" class="bg-img" data-aos="fade" data-aos-delay="300" />
-   <!--   <img src="./s2/1.png" alt="輕井澤" class="bg-img" data-aos="fade" data-aos-delay="300" />
+      <!--   <img src="./s2/1.png" alt="輕井澤" class="bg-img" data-aos="fade" data-aos-delay="300" />
       <img src="./s2/2.png" alt="海佃商圈" class="bg-img" data-aos="fade" data-aos-delay="400" />
       <img src="./s2/3.png" alt="鹽水溪" class="bg-img" data-aos="fade" data-aos-delay="500" />
       <img src="./s2/4.png" alt="嘉南大圳" class="bg-img" data-aos="fade" data-aos-delay="600" />
@@ -21,11 +21,11 @@
         <h3 class="title">未來領漲</h3>
         <h4 class="subtitle">國家重點建設、民間企業開發聯手到位</h4>
         <p>土地貴，別墅價值跟著水漲船高，席次稀缺有目共睹<br>
-把握機會立即搶進，預約好生活也為資產超前佈署</p>
+          把握機會立即搶進，預約好生活也為資產超前佈署</p>
       </div>
     </div>
     <div class="bg relative" v-else><img src="./s2/mo/0.png" alt="輕井澤" class="bg-img" data-aos="fade" data-aos-delay="300" />
-    <!--     <img src="./s2/mo/1.png" alt="輕井澤" class="bg-img" data-aos="fade" data-aos-delay="300" />
+      <!--     <img src="./s2/mo/1.png" alt="輕井澤" class="bg-img" data-aos="fade" data-aos-delay="300" />
       <img src="./s2/mo/2.png" alt="海佃商圈" class="bg-img" data-aos="fade" data-aos-delay="400" />
       <img src="./s2/mo/3.png" alt="鹽水溪" class="bg-img" data-aos="fade" data-aos-delay="500" />
       <img src="./s2/mo/4.png" alt="嘉南大圳" class="bg-img" data-aos="fade" data-aos-delay="600" />
@@ -44,7 +44,7 @@
         <h3 class="title">未來領漲</h3>
         <h4 class="subtitle">國家重點建設、民間企業開發聯手到位</h4>
         <p>土地貴，別墅價值跟著水漲船高，席次稀缺有目共睹<br>
-把握機會立即搶進，預約好生活也為資產超前佈署</p>
+          把握機會立即搶進，預約好生活也為資產超前佈署</p>
         <p></p>
       </div>
     </div>
@@ -59,36 +59,43 @@
   top: calc(100vw * (85 / 1920));
   color: #ffffff;
   line-height: 1.6;
-  width:100%;
+  width: 100%;
   font-stretch: normal;
   font-style: normal;
-  letter-spacing:0.1em;
+  letter-spacing: 0.1em;
   text-align: center;
-  font-size: calc(100vw * (18 / 1920));overflow: hidden;
+  font-size: calc(100vw * (18 / 1920));
+  overflow: hidden;
 
   .title {
-    font-size:4.44em;
+    font-size: 4.44em;
     font-weight: bold;
     line-height: normal;
-    img{width:100%;}
+    img {
+      width: 100%;
+    }
   }
 
-  .subtitle {margin: 0.1em 0 0 0;
-    font-size:1.67em;
-    font-weight: 600;transform: scaleX(0.9);
+  .subtitle {
+    margin: 0.1em 0 0 0;
+    font-size: 1.67em;
+    font-weight: 600;
+    transform: scaleX(0.9);
   }
-  p{margin: 0.5em 0 1em 0;
-    font-size:1em;}
+  p {
+    margin: 0.5em 0 1em 0;
+    font-size: 1em;
+  }
 }
 @media screen and (max-width: 767px) {
   .text {
     top: calc(100vw * (35 / 375));
     font-size: calc(100vw * (13 / 375));
     .title {
-    font-size:3em;
+      font-size: 3em;
     }
     .subtitle {
-    font-size:1.56em;
+      font-size: 1.56em;
     }
   }
 }
@@ -99,7 +106,11 @@
   background-position: center;
   background-size: 100% auto;
 }
-.if{width:calc(80vh * 1920 / 1080);height: 80vh;margin:0 0 10vh;}
+.if {
+  width: calc(80vh * 1920 / 1080);
+  height: 80vh;
+  margin: 0 0 10vh;
+}
 .bg-img {
   width: 100vw;
   height: auto;
@@ -121,7 +132,12 @@
   .imgM {
     display: block;
   }
-.if{width:100vw;height:calc(100vw * 211 / 375);margin:0 0 10vh;}
+
+  .if {
+    width: 100vw;
+    height: calc(150vw * 375 / 667);
+    margin: 0 0 10vh;
+  }
 }
 </style>
 
