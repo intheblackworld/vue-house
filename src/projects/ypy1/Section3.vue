@@ -32,6 +32,7 @@
   max-height: size(1080);*/
   position: relative;
   z-index: 2;
+  margin-bottom: 8vw;
 }
 
 .bg-img {
@@ -117,7 +118,7 @@
 left:1em;
 color: #FFF;
 font-size:size(15);
-text-shadow: 0 0 0.5em #0009; opacity: 0.5; 
+text-shadow: 0 0 0.5em #0009;
   
   }
 @media only screen and (max-width: 1440px) {
