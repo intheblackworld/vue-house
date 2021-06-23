@@ -1,6 +1,6 @@
 <template>
   <div class="contact" id="contact">
-    <Order />
+  <!--  <Order /> -->
     <HouseInfo />
   </div>
 </template>
@@ -9,13 +9,13 @@
 </style>
 
 <script>
-import Order from '@/components/Order.vue'
+//import Order from '@/components/Order.vue'
 import HouseInfo from '@/components/HouseInfo.vue'
 
 export default {
   name: 'contactSection',
   components: {
-    Order,
+    //Order,
     HouseInfo,
   },
 
