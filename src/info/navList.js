@@ -5,5 +5,5 @@ export default [
   { name: '精緻公設', imgSrc: '', subTitle: '', section: 'section5', svgSrc: '' },
   { name: '分享生活', imgSrc: '', subTitle: '', section: 'section6', svgSrc: '' },
   { name: '心靈散步', imgSrc: '', subTitle: '', section: 'section7', svgSrc: '' },
-  { name: '預約賞屋', imgSrc: '', subTitle: '', section: 'contact', svgSrc: '' },
+ // { name: '預約賞屋', imgSrc: '', subTitle: '', section: 'contact', svgSrc: '' },
 ]
