@@ -1,20 +1,131 @@
 <template>
   <div class="section10">
+    <div class="button">
+      <div class="button1" @click="showDialog('https://www.eyehouse.co/i?c=c7957066829')"><h3>A1樣品屋<br>VR 720 實境觀看</h3></div>
+      <div class="button2" @click="showDialog('https://www.eyehouse.co/i?c=c6935839981')"><h3>B1樣品屋<br>VR 720 實境觀看</h3></div>
+      <div class="button3" @click="showDialog('https://www.eyehouse.co/i?c=c533952085')"><h3>風禾公園<br>VR 720 實境觀看</h3></div>
+    </div>
+      <div :class="`dialog ${isShowDialog ? '' : 'hide'}`">
+        <div
+          class="close"
+          @click="closeDialog"
+        >
+          <img
+            src="../jh/s4/close.png"
+            alt
+          />
+        </div>
+        <div class="dialog-content">
+           <iframe
+            width="560"
+            height="315"
+            :src="link"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+  </div>
+  <!-- <div class="section10">
     <iframe src="https://www.h35.banner.tw/hy/" frameborder="0"></iframe>
   <div class="box_l"></div>
   <div class="box_r"></div>
-  </div>
+  </div> -->
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
 .section10 {
   width: 100%;
-  height: 100vh;
-  min-height: size(900);
-  max-height: size(1080);
+  height: size(500);
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size:size(30);
+.button{
+  width: size(1720);
+  margin:size(100) auto auto auto;
+  display: flex;
+   justify-content:space-between;
+div{
+  width: size(557);
+  height: size(443);
+  background-position: center center;
+  background-size: cover;
+  border: 1px solid #aa915e;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+  line-height: 1.6;
+  letter-spacing: 0.06em;
+  &::before{position: absolute;width: 100%; height: 100%;left: 0;top:0;
+  background: #000;opacity:0.7;transition:opacity 0.5s;content: "";z-index: 1;
+  }
+  h3{opacity:1;transition:opacity 0.5s; position: relative;z-index: 2;}
+  &:hover{
+
+  h3{opacity:0;}
+    &:before{opacity:0;}
+  }
 }
+.button1{background-image: url("./s10/1.jpg");}
+.button2{background-image: url("./s10/2.jpg");}
+.button3{background-image: url("./s10/3.jpg");}
+
+
+}
+
+.dialog {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  z-index: 150;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #0006 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='margin: auto; background: none; display: block; shape-rendering: auto; animation-play-state: running; animation-delay: 0s;' width='370px' height='370px' viewBox='0 0 100 100' preserveAspectRatio='xMidYMid'%3E%3Cg transform='rotate(0 50 50)' style='animation-play-state: running; animation-delay: 0s;'%3E%3Crect x='47.5' y='23' rx='2.4' ry='2.4' width='5' height='16' fill='%23d1914c' style='animation-play-state: running; animation-delay: 0s;'%3E%3Canimate attributeName='opacity' values='1;0' keyTimes='0;1' dur='1s' begin='-0.9166666666666666s' repeatCount='indefinite' style='animation-play-state: running; animation-delay: 0s;'%3E%3C/animate%3E%3C/rect%3E%3C/g%3E%3Cg transform='rotate(30 50 50)' style='animation-play-state: running; animation-delay: 0s;'%3E%3Crect x='47.5' y='23' rx='2.4' ry='2.4' width='5' height='16' fill='%23d1914c' style='animation-play-state: running; animation-delay: 0s;'%3E%3Canimate attributeName='opacity' values='1;0' keyTimes='0;1' dur='1s' begin='-0.8333333333333334s' repeatCount='indefinite' style='animation-play-state: running; animation-delay: 0s;'%3E%3C/animate%3E%3C/rect%3E%3C/g%3E%3Cg transform='rotate(60 50 50)' style='animation-play-state: running; animation-delay: 0s;'%3E%3Crect x='47.5' y='23' rx='2.4' ry='2.4' width='5' height='16' fill='%23d1914c' style='animation-play-state: running; animation-delay: 0s;'%3E%3Canimate attributeName='opacity' values='1;0' keyTimes='0;1' dur='1s' begin='-0.75s' repeatCount='indefinite' style='animation-play-state: running; animation-delay: 0s;'%3E%3C/animate%3E%3C/rect%3E%3C/g%3E%3Cg transform='rotate(90 50 50)' style='animation-play-state: running; animation-delay: 0s;'%3E%3Crect x='47.5' y='23' rx='2.4' ry='2.4' width='5' height='16' fill='%23d1914c' style='animation-play-state: running; animation-delay: 0s;'%3E%3Canimate attributeName='opacity' values='1;0' keyTimes='0;1' dur='1s' begin='-0.6666666666666666s' repeatCount='indefinite' style='animation-play-state: running; animation-delay: 0s;'%3E%3C/animate%3E%3C/rect%3E%3C/g%3E%3Cg transform='rotate(120 50 50)' style='animation-play-state: running; animation-delay: 0s;'%3E%3Crect x='47.5' y='23' rx='2.4' ry='2.4' width='5' height='16' fill='%23d1914c' style='animation-play-state: running; animation-delay: 0s;'%3E%3Canimate attributeName='opacity' values='1;0' keyTimes='0;1' dur='1s' begin='-0.5833333333333334s' repeatCount='indefinite' style='animation-play-state: running; animation-delay: 0s;'%3E%3C/animate%3E%3C/rect%3E%3C/g%3E%3Cg transform='rotate(150 50 50)' style='animation-play-state: running; animation-delay: 0s;'%3E%3Crect x='47.5' y='23' rx='2.4' ry='2.4' width='5' height='16' fill='%23d1914c' style='animation-play-state: running; animation-delay: 0s;'%3E%3Canimate attributeName='opacity' values='1;0' keyTimes='0;1' dur='1s' begin='-0.5s' repeatCount='indefinite' style='animation-play-state: running; animation-delay: 0s;'%3E%3C/animate%3E%3C/rect%3E%3C/g%3E%3Cg transform='rotate(180 50 50)' style='animation-play-state: running; animation-delay: 0s;'%3E%3Crect x='47.5' y='23' rx='2.4' ry='2.4' width='5' height='16' fill='%23d1914c' style='animation-play-state: running; animation-delay: 0s;'%3E%3Canimate attributeName='opacity' values='1;0' keyTimes='0;1' dur='1s' begin='-0.4166666666666667s' repeatCount='indefinite' style='animation-play-state: running; animation-delay: 0s;'%3E%3C/animate%3E%3C/rect%3E%3C/g%3E%3Cg transform='rotate(210 50 50)' style='animation-play-state: running; animation-delay: 0s;'%3E%3Crect x='47.5' y='23' rx='2.4' ry='2.4' width='5' height='16' fill='%23d1914c' style='animation-play-state: running; animation-delay: 0s;'%3E%3Canimate attributeName='opacity' values='1;0' keyTimes='0;1' dur='1s' begin='-0.3333333333333333s' repeatCount='indefinite' style='animation-play-state: running; animation-delay: 0s;'%3E%3C/animate%3E%3C/rect%3E%3C/g%3E%3Cg transform='rotate(240 50 50)' style='animation-play-state: running; animation-delay: 0s;'%3E%3Crect x='47.5' y='23' rx='2.4' ry='2.4' width='5' height='16' fill='%23d1914c' style='animation-play-state: running; animation-delay: 0s;'%3E%3Canimate attributeName='opacity' values='1;0' keyTimes='0;1' dur='1s' begin='-0.25s' repeatCount='indefinite' style='animation-play-state: running; animation-delay: 0s;'%3E%3C/animate%3E%3C/rect%3E%3C/g%3E%3Cg transform='rotate(270 50 50)' style='animation-play-state: running; animation-delay: 0s;'%3E%3Crect x='47.5' y='23' rx='2.4' ry='2.4' width='5' height='16' fill='%23d1914c' style='animation-play-state: running; animation-delay: 0s;'%3E%3Canimate attributeName='opacity' values='1;0' keyTimes='0;1' dur='1s' begin='-0.16666666666666666s' repeatCount='indefinite' style='animation-play-state: running; animation-delay: 0s;'%3E%3C/animate%3E%3C/rect%3E%3C/g%3E%3Cg transform='rotate(300 50 50)' style='animation-play-state: running; animation-delay: 0s;'%3E%3Crect x='47.5' y='23' rx='2.4' ry='2.4' width='5' height='16' fill='%23d1914c' style='animation-play-state: running; animation-delay: 0s;'%3E%3Canimate attributeName='opacity' values='1;0' keyTimes='0;1' dur='1s' begin='-0.08333333333333333s' repeatCount='indefinite' style='animation-play-state: running; animation-delay: 0s;'%3E%3C/animate%3E%3C/rect%3E%3C/g%3E%3Cg transform='rotate(330 50 50)' style='animation-play-state: running; animation-delay: 0s;'%3E%3Crect x='47.5' y='23' rx='2.4' ry='2.4' width='5' height='16' fill='%23d1914c' style='animation-play-state: running; animation-delay: 0s;'%3E%3Canimate attributeName='opacity' values='1;0' keyTimes='0;1' dur='1s' begin='0s' repeatCount='indefinite' style='animation-play-state: running; animation-delay: 0s;'%3E%3C/animate%3E%3C/rect%3E%3C/g%3E%3C/svg%3E") no-repeat center center;
+  background-size:3em auto;
+
+  .close {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    img {
+      width: 100%;
+    }
+
+    position: fixed;
+    z-index: 10;
+    top: 30px;
+    right: 30px;
+  }
+
+  &.hide {
+    display: none;
+  }
+
+  .dialog-content {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) !important;
+    background: transparent;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+}
+/*
 iframe {
   width: 100%;
   height: 100%;
@@ -49,7 +160,7 @@ iframe {
   right: 0;
   &::before{right: 0;}
 }
-
+*/
 
 @media only screen and (max-width: 1440px) {
 }
@@ -68,6 +179,20 @@ iframe {
   .section10 {
     width: 100%;
     height: sizem(604);
+  font-size:sizem(17);
+  
+.button{
+  width:100%;height:sizem(500);align-items:center;
+  margin:sizem(30) auto auto auto;flex-direction:column;
+div{
+  width:sizem(310);
+  height: sizem(154);
+}
+  }
+  }
+ /* .section10 {
+    width: 100%;
+    height: sizem(604);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -84,7 +209,7 @@ iframe {
 .box_r{
   width:sizem(60);
 }
-
+*/
   
 }
 </style>
@@ -104,10 +229,26 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
+      showMask: isMobile,
+      isShowDialog: false,
+      link: '',
     }
   },
 
   methods: {
+    hideMask() {
+      this.showMask = false
+    },
+
+    showDialog(link) {
+      this.link = link
+      this.isShowDialog = true
+    },
+
+    closeDialog() {
+      this.isShowDialog = false
+      // this.$refs[`dialogVideo${index}`].pause()
+    },
   },
 
   created() {},
@@ -117,13 +258,5 @@ export default {
 
   computed: {},
 
-  watch: {
-    // viewIndex() {
-    //   if (this.viewIndex === 5) {
-    //     this.slideIndex = 0
-    //     console.log(this.slideIndex, 'slideIndex')
-    //   }
-    // },
-  },
 }
 </script>
