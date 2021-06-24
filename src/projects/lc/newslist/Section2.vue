@@ -221,6 +221,10 @@ export default {
       list: [
         //...Array(18).keys()].map((i) => ({
         {
+          img: require('../news/s2/7/01.jpg'),
+          title: '因應COVID-19新冠肺炎 立瑾建築機構自主快篩',
+        },
+        {
           img: require('../news/s2/6/1.jpg'),
           title: '鶯歌最夯建案 立瑾WAY 3/6即將開案',
         },
