@@ -586,11 +586,11 @@ export default {
        slideList: [
          {
            img: require('./s7/07_img1.jpg'),
-           name: '',
+           name: '3D外觀示意圖',
          },
          {
            img: require('./s7/07_img2.jpg'),
-           name: '',
+           name: '3D外觀示意圖',
          },
       //   {
       //     img: require('./s7/3.jpg'),

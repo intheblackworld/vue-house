@@ -649,11 +649,11 @@ export default {
         },*/
         {
           img: require('./s9/09_slider_07.jpg'),
-          name: '立瑾Way',
+          name: '立瑾Way3D外觀示意圖',
         },
         {
           img: require('./s9/09_slider_08.jpg'),
-          name: '立瑾醞',
+          name: '立瑾醞3D外觀示意圖',
         },
       ],
     }

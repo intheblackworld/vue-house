@@ -9,10 +9,10 @@
     </div>
     <div class="hr"  data-aos="fade-right" data-aos-delay="200"></div>
     <ul class="desc"  data-aos="fade-up" data-aos-delay="400">
-      <li><b>建築語彙之美:</b>新古典建築美學，別墅街廓名宅聚落</li>
-<li><b>空間尊寵之美:</b>5米大面寬，專屬電梯規劃，獨門獨院大戶享受</li>
-<li><b>景觀意境之美:</b>獨立後院，單層主臥景觀大露台，頂樓賞景空間</li>
-<li><b>精工品質之美:</b>10年防水保固＋5年建材保固，高規格建材品質再提升</li>
+      <li><b>建築語彙之美:</b>新古典建築美學，呈現低調奢華、大器不凡的名宅街廓</li>
+<li><b>空間尊寵之美:</b>5米大面寬，專屬電梯規劃，獨門獨院的大戶居住享受</li>
+<li><b>景觀意境之美:</b>戶戶享獨立後院，單層主臥景觀大露台，頂樓賞景空間</li>
+<li><b>精工品質之美:</b>嚴選高規格建材，以精工細膩的營建品質，提升建築價值</li>
 
     </ul>
     <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true"
@@ -93,18 +93,18 @@
 
 .grass {
   @include img_l_pc(550, 664, 626);
-
+transform-origin: 50% 0%;
   animation: grass 2s 0s ease-in-out alternate-reverse infinite;
 }
 
 @keyframes grass {
   to {
-    transform: skewX(5deg);
+    transform:rotate(3deg)skewX(-2deg);
   }
 }
 
 .title {
-  @include img_l_pc(616, 307, 117);
+  @include img_l_pc(616, 267, 117);
   font-size: size(40.5);
   font-weight: 500;
   font-stretch: normal;
@@ -120,19 +120,24 @@
 }
 
 .hr {
-  @include img_l_pc(46, 466, 390);
+  @include img_l_pc(46, 426, 390);
   border-bottom: solid size(4) #009fb1;
 }
 .desc {
-  @include img_l_pc(520, 507, 168);
+  @include img_l_pc(505, 467, 168);
   font-size: size(22);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.67;
-  letter-spacing: size(2.6);
+  line-height: 1.6;
+  letter-spacing:0.03em;
   text-align: justify;
   color: #2f2c2c;
+  list-style-type: disc;
+  margin: 0;
+  li{margin: 0 0 0.7em  1.2em;;
+  list-style:inherit;
+  }
 }
 
 /* Swipe */
@@ -339,7 +344,7 @@
   .section8 {
     min-height: auto;
     max-height: initial;
-    height: sizem(253 + 245 + 245 + 70);
+    height: sizem(253 + 580);
   }
 
   .grass {
@@ -347,7 +352,7 @@
   }
 
   .title {
-    @include img_c_m(360, 100 + 244);
+    @include img_c_m(360, 324);
     font-size: sizem(17.7);
     font-weight: normal;
     font-stretch: normal;
@@ -365,19 +370,12 @@
   .hr {
     @include img_c_m(46, 245 + 18);
     width: 1px;
-    height: sizem(70);
+    height: sizem(50);
     border-left: solid size(4) #009fb1;
   }
   .desc {
-    @include img_c_m(330, 138 + 245);
+    @include img_c_m(330, 118 + 245);
     font-size: sizem(14);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.61;
-    letter-spacing:0.03em;
-    text-align: left;
-    color: #2f2c2c;
   }
 
   /* Swipe */

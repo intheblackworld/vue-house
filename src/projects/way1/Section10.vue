@@ -33,7 +33,7 @@
       </div>
       <div class="desc"  data-aos="fade-up" data-aos-delay="900">
       ●戶戶配備太平洋電梯<br />
-      ●RAKＸROMAN精品磁磚<br />
+      ●RAK x ROMAN精品磁磚<br />
       ●INAX日本質感衛浴<br />
       ●hansgrohe德國衞浴五金<br />
       ●櫻花整體廚具
