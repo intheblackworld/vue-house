@@ -17,9 +17,12 @@
         </div>
     <div
       class="contact-indigator"
-      v-scroll-to="{ element: `#contact` }"
       @click="closeDialog"
+    >
+    <div
+      v-scroll-to="{ element: `#contact` }"
     >預約賞屋</div>
+    </div>
         <div class="dialog-content">
            <iframe
             width="560"
@@ -149,6 +152,8 @@ div{
     background: #900;
    // background: rgba(0, 40, 130, 0.4);
     }
+    div{width: 100%;height: 100%;
+    position: relative;}
   }
 }
 
