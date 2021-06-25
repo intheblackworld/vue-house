@@ -10,19 +10,15 @@
           class="close"
           @click="closeDialog"
         >
-          <img
-            src="../jh/s4/close.png"
-            alt
-          />
         </div>
-    <div
+ <!--    <div
       class="contact-indigator"
       @click="closeDialog"
     >
-    <div
+   <div
       v-scroll-to="{ element: `#contact` }"
-    >預約賞屋</div>
-    </div>
+    >預約賞屋</div> 
+    </div> -->
         <div class="dialog-content">
            <iframe
             width="560"
@@ -106,9 +102,8 @@ div{
     z-index: 10;
     top: 18px;
     right: 20px;
-    img {
-      width: 100%;
-    }
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30' fill='none' stroke-linecap='round'%3E%3Cg stroke='%230006'%3E%3Cline x1='1' y1='1.5' x2='29' y2='29.5'/%3E%3Cline x1='29' y1='1.5' x2='1' y2='29.5'/%3E%3C/g%3E%3Cg stroke='%23fff'%3E%3Cline x1='1' y1='.5' x2='29' y2='28.5'/%3E%3Cline x1='29' y1='.5' x2='1' y2='28.5'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:contain;
   }
 
   &.hide {
