@@ -5,7 +5,7 @@
       <div class="button2" @click="showDialog('https://www.eyehouse.co/i?c=c6935839981')"><h3>B1樣品屋<br>VR 720 實境觀看</h3></div>
       <div class="button3" @click="showDialog('https://www.eyehouse.co/i?c=c533952085')"><h3>風禾公園<br>VR 720 實境觀看</h3></div>
     </div>
-      <div :class="`dialog ${isShowDialog ? '' : 'hide'}`">
+      <div :class="`dialog`" v-if="isShowDialog">
         <div
           class="close"
           @click="closeDialog"
@@ -71,9 +71,9 @@ div{
     &:before{opacity:0;}
   }
 }
-.button1{background-image: url("./s10/1.jpg");}
-.button2{background-image: url("./s10/2.jpg");}
-.button3{background-image: url("./s10/3.jpg");}
+.button1{background-image: url("./s10/1.jpg");cursor: pointer;}
+.button2{background-image: url("./s10/2.jpg");cursor: pointer;}
+.button3{background-image: url("./s10/3.jpg");cursor: pointer;}
 
 
 }
