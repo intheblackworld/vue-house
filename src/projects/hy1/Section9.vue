@@ -385,11 +385,11 @@ export default {
 
   mounted() {
     if (this.isMobile) {
-      this.slideWidth = window.screen.width * (294 / 375)
-      this.slideHeight = window.screen.width * (294 / 375)
+      this.slideWidth = window.innerWidth * (294 / 375)
+      this.slideHeight = window.innerWidth * (294 / 375)
     } else {
-      this.slideWidth = window.screen.width * (1200 / 1920)
-      this.slideHeight = window.screen.width * (685 / 1920)
+      this.slideWidth = window.innerWidth * (1200 / 1920)
+      this.slideHeight = window.innerWidth * (685 / 1920)
     }
   },
 

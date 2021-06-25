@@ -15,6 +15,11 @@
             alt
           />
         </div>
+    <div
+      class="contact-indigator"
+      v-scroll-to="{ element: `#contact` }"
+      @click="closeDialog"
+    >預約賞屋</div>
         <div class="dialog-content">
            <iframe
             width="560"
@@ -79,7 +84,7 @@ div{
 }
 
 .dialog {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: block;
   z-index: 150;
@@ -93,14 +98,14 @@ div{
     width: 30px;
     height: 30px;
     cursor: pointer;
-    img {
-      width: 100%;
-    }
 
     position: fixed;
     z-index: 10;
-    top: 30px;
-    right: 30px;
+    top: 18px;
+    right: 20px;
+    img {
+      width: 100%;
+    }
   }
 
   &.hide {
@@ -108,7 +113,7 @@ div{
   }
 
   .dialog-content {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     position: absolute;
     margin: 0 auto;
@@ -124,7 +129,29 @@ div{
     }
   }
 }
+
+  .contact-indigator {
+    position: absolute;
+    top: 3em;
+    right: .2em;
+    background: #C00;
+    margin: 0;
+    padding: 0.4em;
+    color: #fff;
+    border-radius: .5em;
+    cursor: pointer;
+    line-height: 1.5;
+    width: 7em;
+    transition: all 0.3s;
+    z-index: 8;
+    font-size: 23px;
+    &:hover {
+    background: #900;
+   // background: rgba(0, 40, 130, 0.4);
+    }
+  }
 }
+
 /*
 iframe {
   width: 100%;
