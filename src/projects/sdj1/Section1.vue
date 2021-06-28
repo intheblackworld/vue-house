@@ -85,19 +85,23 @@
         </div>
       </Map>
     </div>
+    <div class="logos"><img src="@/assets/img/f-logo.png" alt="上揚國際"></div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .relative {
+  width: 100%;
     background: #05123C;
   // height: 100vh;
   // overflow: hidden;
   // background: #eee4cb;
 }
-
+.logos{position: fixed;right: 0;bottom: 0;height:20px;opacity: 0.7;
+z-index: 20;
+img{height: 100%;}}
 .bg-img {
-  width: 100vw;
+  width: 100%;
   height: auto;
   max-height: 200vh;
   position: absolute;
@@ -310,6 +314,7 @@
     background: #05123C;
   }
 
+.logos{bottom:63px;}
   .bg-img {
     width: auto;
     top: 0;
