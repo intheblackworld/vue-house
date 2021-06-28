@@ -112,7 +112,7 @@ div{
 
   .dialog-content {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: absolute;
     margin: 0 auto;
     left: 0;
@@ -205,7 +205,8 @@ iframe {
 @media screen and (max-width: 767px) {
   .section10 {
     width: 100%;
-    height: sizem(604);
+    height: 100vw;
+    min-height: sizem(570);
   font-size:sizem(17);
   
 .button{
