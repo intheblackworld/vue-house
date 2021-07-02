@@ -673,44 +673,44 @@ export default {
       ],
       slideList1: [
         {
-          img: require('./s4/KTV透視圖.jpg'),
-          name: '嘉璟一品硯KTV 風格示意圖',
+          img: require('./s4/01.jpg'),
+          name: '嘉璟一品硯 門廳 風格示意圖',
         },
         {
-          img: require('./s4/lobby透視圖.jpg'),
-          name: '嘉璟一品硯lobby 風格示意圖',
+          img: require('./s4/02.jpg'),
+          name: '嘉璟一品硯 閱覽室 風格示意圖',
         },
         {
-          img: require('./s4/交誼廳透視圖.jpg'),
-          name: '嘉璟一品硯交誼廳 風格示意圖',
+          img: require('./s4/03.jpg'),
+          name: '嘉璟一品硯 交誼廳 風格示意圖',
         },
         {
-          img: require('./s4/酒吧廊道透視圖.jpg'),
-          name: '嘉璟一品硯酒吧廊道 風格示意圖',
+          img: require('./s4/04.jpg'),
+          name: '嘉璟一品硯 廊道酒吧 風格示意圖',
         },
         {
-          img: require('./s4/健身房透視圖.jpg'),
-          name: '嘉璟一品硯健身房 風格示意圖',
+          img: require('./s4/05.jpg'),
+          name: '嘉璟一品硯 瑜珈室 風格示意圖',
         },
         {
-          img: require('./s4/會議室透視圖.jpg'),
-          name: '嘉璟一品硯會議室 風格示意圖',
+          img: require('./s4/06.jpg'),
+          name: '嘉璟一品硯 健身房 風格示意圖',
         },
         {
-          img: require('./s4/瑜珈室透視圖.jpg'),
-          name: '嘉璟一品硯瑜珈室 風格示意圖',
+          img: require('./s4/07.jpg'),
+          name: '嘉璟一品硯 遊戲室 風格示意圖',
         },
         {
-          img: require('./s4/遊戲室透視圖.jpg'),
-          name: '嘉璟一品硯遊戲室 風格示意圖',
+          img: require('./s4/08.jpg'),
+          name: '嘉璟一品硯 親子室 風格示意圖',
         },
         {
-          img: require('./s4/閱覽室透視圖.jpg'),
-          name: '嘉璟一品硯閱覽室 風格示意圖',
+          img: require('./s4/09.jpg'),
+          name: '嘉璟一品硯 KTV 風格示意圖',
         },
         {
-          img: require('./s4/親子室透視圖.jpg'),
-          name: '嘉璟一品硯親子室 風格示意圖',
+          img: require('./s4/10.jpg'),
+          name: '嘉璟一品硯 會議室 風格示意圖',
         },
       ],
     }
