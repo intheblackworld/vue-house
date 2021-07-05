@@ -6,10 +6,10 @@
     <img src="./s1/logo_icon.png" :alt="`${info.caseName}_logo`" class="logo" data-aos="fade-up" data-aos-delay="0">
     <img src="./s1/logo_title.png" :alt="`${info.caseName}_title`" class="title" data-aos="fade-up" data-aos-delay="200">
 
-    <a href="#" class="btn1">
+    <a href="https://drive.google.com/file/d/1323vWyJN6iwqFYvTjfPYXoiwHS_92cJS/view?usp=sharing" class="btn1">
       <img src="./s1/btn_1.png" :alt="`${info.caseName}_btn1`" data-aos="fade-up" data-aos-delay="400">
     </a>
-    <a href="https://drive.google.com/file/d/1-RowSvZ_1jhFKh0bYoqxQzwY5Z8cZEKb/view?usp=sharing" class="btn2" target="_blank">
+    <a href="https://drive.google.com/drive/folders/1Gyc3BiP1cwhlCj325VsxJgyPPB9tD26i?usp=sharing" class="btn2" target="_blank">
       <img src="./s1/btn_2.png" :alt="`${info.caseName}_btn2`" data-aos="fade-up" data-aos-delay="600">
     </a>
   </div>
@@ -44,12 +44,12 @@
 
 .logo {
   @include img_c_pc(396, 147);
-  top: calc(50% + 100vw * (147 - 504) / 1920);
+  top: calc(50% + 100vw * (107 - 504) / 1920);
 }
 
 .title {
   @include img_c_pc(396, 547);
-  top: calc(50% + 100vw * (547 - 504) / 1920);
+  top: calc(50% + 100vw * (487 - 504) / 1920);
 }
 
 .btn1 {
@@ -103,13 +103,13 @@
   }
 
   .title {
-    @include img_c_m(185, 283);
+    @include img_c_m(235, 283);
   top: calc(50% + 100vw * (263 - 302) / 375);
   }
 
   .btn1 {
     @include img_c_m(270, 378);
-  top: calc(50% + 100vw * (358 - 302) / 375);
+  top: calc(50% + 100vw * (448 - 302) / 375);
     img {
       width: 100%;
     }
@@ -117,7 +117,7 @@
 
   .btn2 {
     @include img_c_m(270, 490);
-  top: calc(50% + 100vw * (470 - 302) / 375);
+  top: calc(50% + 100vw * (550 - 302) / 375);
     img {
       width: 100%;
     }
