@@ -99,12 +99,12 @@
 
   .logo {
     @include img_c_m(185, 94);
-  top: calc(50% + 100vw * (74 - 302) / 375);
+  top: calc(50% + 100vw * (14 - 302) / 375);
   }
 
   .title {
-    @include img_c_m(235, 283);
-  top: calc(50% + 100vw * (263 - 302) / 375);
+    @include img_c_m(275, 283);
+  top: calc(50% + 100vw * (203 - 302) / 375);
   }
 
   .btn1 {
