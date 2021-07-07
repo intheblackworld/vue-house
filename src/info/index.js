@@ -5,16 +5,16 @@ export default {
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.898160807022!2d121.33052711542625!3d24.969579284002585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34681f06b2c3b155%3A0xcb0c54b0e24835ff!2zMjM55paw5YyX5biC6bav5q2M5Y2A6bav5q2M6LevMTM46Jmf!5e0!3m2!1szh-TW!2stw!4v1613701470590!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/KSXXeNHshFKyR3eQ7',
   phone: '02-2670-7777',
-  fbLink: 'https://www.facebook.com/立瑾Way-102495151749492/  ',
+  fbLink: 'https://www.facebook.com/立瑾Way-102495151749492/',
   fbMessage: 'https://m.me/102495151749492/',
-  caseName: '立瑾WAY',
+  caseName: '立瑾綻',
   indigatorLength: 10,
 
   houseInfos: [
     ['投資興建', '立瑾建築機構-立澄建設'],
     ['規劃坪數', ''],
     ['建築設計', '蔡廷芳建築師事務所'],
-    ['建照號碼', ''],
+    ['建照號碼', '110鶯建字第00297號'],
     ['營造公司', '鴻駿營造有限公司'],
     ['不動產信託', ''],
 
