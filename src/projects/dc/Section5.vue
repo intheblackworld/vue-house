@@ -31,7 +31,7 @@
 @import '@/assets/style/function.scss';
 
 .section5 {
-  width: size(1920);
+  width:100%;
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);
@@ -43,12 +43,15 @@
   // background-position: 0 0;
   // background-attachment: fixed;
   // overflow: hidden;
+  .flex{
+  width: 100%;
+  height: 100%;
+  position: relative;}
 }
 
 .bg-img {
-  width: 100vw;
-  height: 100vh;
-  min-height: size(900);
+  width: 100%;
+  width: 100%;
   position: absolute;
   display: block;
   top: 0;
@@ -61,15 +64,14 @@
 }
 
 .block {
-  width: calc(100vw / 3);
-  height: calc(100vh / 3);
+  width: calc(100% / 3);
+  height: calc(100% / 3);
   min-height: size(300);
 }
 
 .block-img {
   width: 100%;
-  height: calc(100vh / 3);
-  min-height: size(300);
+  height: 100%;
   object-fit: cover;
   position: absolute;
   top: 0;
