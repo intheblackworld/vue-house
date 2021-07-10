@@ -1,7 +1,7 @@
 <template>
   <div class="house-info" id="house-info">
     <div class="content">
-      <h3 class="title" data-aos="fade-down" data-aos-delay="0">｜建案資訊｜</h3>
+      <h3 class="title" data-aos="fade-down" data-aos-delay="0">建案資訊</h3>
       <div class="info">
         <div class="item" :key="infos[0]" v-for="(infos, index) in houseInfos" data-aos="fade-right" :data-aos-delay="100 + index * 100">
           <h3 class="label">{{infos[0]}}</h3>
@@ -92,7 +92,8 @@ export default {
   }
 
   .label {
-    font-size: 1em;
+    border-left: 4px solid $house_border_color;
+    font-size: 1.2em;
     color: $house_label_color;
     margin-bottom: 0;
     margin-right: 0.8em;
@@ -105,7 +106,7 @@ export default {
   }
 
   .desc {
-    font-size: 14px;
+    font-size: 18px;
     text-align: left;
     color: $house_desc_color;
     font-family: $family3;
@@ -134,16 +135,20 @@ export default {
     margin: 0;
     width: 100%;
     height: auto;
-    margin-left:0;padding: 0;
-      white-space: normal;
-      line-height: 1.6;
-      .label{margin: 0;
+    margin-left: 20px;
+    padding: 0;
+    white-space: normal;
+    line-height: 1.6;
+    .label {
+      margin: 0;
       font-size: calc(100vw * 14 / 375);
-    width: 10em;
-      line-height:inherit;}
+      width: 10em;
+      line-height: inherit;
+      border-left: 5px solid $house_border_color;
+    }
     .desc {
       font-size: calc(100vw * 14 / 375);
-      line-height:inherit;
+      line-height: inherit;
     }
   }
 

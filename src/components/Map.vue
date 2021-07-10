@@ -56,14 +56,14 @@ export default {
 
     if (this.isMobile) {
       setTimeout(() => {
-        const map = document.querySelector('.map')
+        // const map = document.querySelector('.map')
         const mapBg = document.querySelector('.map-bg')
         const text = document.querySelector('.map .text')
         if (text) {
           text.style.left = `${mapBg.clientWidth / 2 - 100}px`
         }
 
-        map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2 - 10, 0)
+        // map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2 - 10, 0)
       }, 1200)
 
       setTimeout(() => {

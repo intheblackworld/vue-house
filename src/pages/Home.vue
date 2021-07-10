@@ -3,8 +3,8 @@
     <div class="bg-img">
       <Loading :loading="load" />
       <SideNavigation v-if="isMobile" />
-      
-      <Navigation v-if="!isMobile" :min="isNavMin" />
+
+      <Navigation v-if="!isMobile" :min="true" />
       <!-- <Indigator :viewIndex="viewIndex" /> -->
       <!-- <full-page
       ref="fullPage"
@@ -20,27 +20,27 @@
       <vue-lazy-component class="section" id="section3">
         <Section3 />
       </vue-lazy-component>
-      <vue-lazy-component class="section relative" id="section4" >
-        <Section4 :viewIndex="viewIndex" />
+      <vue-lazy-component class="section relative" id="section4">
+        <Section4 />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section5">
-        <Section5 :viewIndex="viewIndex" />
+        <Section5 />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section6">
         <Section6 />
       </vue-lazy-component>
-      <!-- <vue-lazy-component class="section" id="section10">
-        <Section10 :viewIndex="viewIndex" />
-      </vue-lazy-component>
       <vue-lazy-component class="section" id="section7">
-          <Section7 /> 
+        <Section7 />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section8">
          <Section8 />
       </vue-lazy-component>
-      <vue-lazy-component class="section" id="section9">
-        <Section9 :viewIndex="viewIndex" />
-      </vue-lazy-component> -->
+       <vue-lazy-component class="section" id="section9">
+        <Section9 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section10">
+        <Section10 />
+      </vue-lazy-component>
       <!-- <vue-lazy-component class="section" id="contact"> -->
       <ContactSection />
       <!-- </vue-lazy-component> -->
@@ -64,7 +64,7 @@
 }
 
 .bg-img {
- // background-image: url('~@/projects/lj/s1/bg.png');
+  // background-image: url('~@/projects/lj/s1/bg.png');
   // padding-top: $nav_pc_height;
   background-attachment: fixed;
   background-size: auto;
@@ -80,28 +80,29 @@
 }
 </style>
 
+
 <script>
 // @ is an alias to /src
-import $ from 'jquery'
+// import $ from 'jquery'
 import Navigation from '@/layouts/Navigation.vue'
 import { isMobile } from '@/utils'
 import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
-import Indigator from '@/components/Indigator.vue'
+// import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/jcs/Section1.vue'
-import Section2 from '@/projects/jcs/Section2.vue'
-import Section3 from '@/projects/jcs/Section3.vue'
-import Section4 from '@/projects/jcs/Section4.vue'
-import Section5 from '@/projects/jcs/Section5.vue'
-import Section6 from '@/projects/jcs/Section6.vue'
-// import Section7 from '@/projects/jcs/Section7.vue'
-// import Section8 from '@/projects/jcs/Section8.vue'
-// import Section9 from '@/projects/jcs/Section9.vue'
-// import Section10 from '@/projects/jcs/Section10.vue'
+import Section1 from '@/projects/ymsy/Section1.vue'
+import Section2 from '@/projects/ymsy/Section2.vue'
+import Section3 from '@/projects/ymsy/Section3.vue'
+import Section4 from '@/projects/ymsy/Section4.vue'
+import Section5 from '@/projects/ymsy/Section5.vue'
+import Section6 from '@/projects/ymsy/Section6.vue'
+import Section7 from '@/projects/ymsy/Section7.vue'
+import Section8 from '@/projects/ymsy/Section8.vue'
+import Section9 from '@/projects/ymsy/Section9.vue'
+import Section10 from '@/projects/ymsy/Section10.vue'
 
 export default {
   name: 'home',
@@ -119,10 +120,10 @@ export default {
     Section4,
     Section5,
     Section6,
-    // Section7,
-    // Section8,
-    // Section9,
-    // Section10,
+    Section7,
+    Section8,
+    Section9,
+    Section10,
   },
 
   data() {
@@ -170,7 +171,7 @@ export default {
     // window.location = "https://ywh.nhc888.com.tw/"
   },
   mounted() {
-    window.addEventListener('scroll', this.onScroll, false)
+    // window.addEventListener('scroll', this.onScroll, false)
     // this.action = this.$refs.fullPage.api
     // if (this.isMobile) {
     //   this.$refs.fullPage.api.setResponsive(true)
@@ -179,15 +180,15 @@ export default {
   methods: {
     init() {},
     onScroll() {
-      const scrollTop =
-        document.documentElement.scrollTop || document.body.scrollTop
-      // 定义当前点亮的导航下标
-      // let navIndex = 0
-      if (scrollTop > 200) {
-        this.isNavMin = true
-      } else {
-        this.isNavMin = false
-      }
+      // const scrollTop =
+      //   document.documentElement.scrollTop || document.body.scrollTop
+      // // 定义当前点亮的导航下标
+      // // let navIndex = 0
+      // if (scrollTop > 200) {
+      //   this.isNavMin = true
+      // } else {
+      //   this.isNavMin = false
+      // }
       // 获取所有锚点元素
       // const navContents = document.querySelectorAll('.section')
       // // 所有锚点元素的 offsetTop

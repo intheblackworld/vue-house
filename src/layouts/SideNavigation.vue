@@ -397,7 +397,7 @@ export default {
     display: block;
     transform: translateX(40%);
   background:center 0 no-repeat;
-  background-image: url('~@/projects/jcs/s1/bg_m.jpg');
+  background-image: url('~@/projects/ymsy/all/section_bg.jpg');
   background-size: cover;
 
    

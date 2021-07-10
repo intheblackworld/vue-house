@@ -2,6 +2,10 @@
   <div>
     <div class="contact-info" id="contact-info" data-aos="fade" data-aos-delay="0">
       <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
+      <img src="../projects/ymsy/s1/cloud_1.png" :alt="`${info.caseName}_img`" class="cloud cloud1">
+    <img src="../projects/ymsy/s1/cloud_2.png" :alt="`${info.caseName}_img`" class="cloud cloud2">
+    <img src="../projects/ymsy/s1/hill.png" :alt="`${info.caseName}_img`" class="hill1">
+    <img src="../projects/ymsy/s1/hill_2.png" :alt="`${info.caseName}_img`" class="hill2">
       <!-- <img
         v-if="isMobile"
         class="logo"
@@ -92,21 +96,18 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/style/variableColor.scss';
 @import '@/assets/style/variableDefault.scss';
+@import '@/assets/style/function.scss';
 
 .contact-info {
   background: $contact_bg;
   // background-image: url('../assets/img/contact_bg.jpg');
   background-size: cover;
-  // background: linear-gradient(
-  //   to bottom,
-  //   rgba(243, 149, 1, 1) 0%,
-  //   rgba(218, 71, 19, 1) 100%
-  // );
+  background: green;
   //box-shadow: $contact_shadow;
   display: flex;
   flex-direction: column;
   align-content: center;
-  justify-content: space-between;
+  // justify-content: space-between;
   position: relative;
   z-index: 3;
   //width: 1200px;
@@ -118,13 +119,38 @@ export default {
   transform: translateY(0);
   margin: 2vw auto 0;
   padding: 30px 0 40px;
+  overflow: hidden;
+}
+
+@keyframes cloud {
+  to {
+    transform: translateX(-40px);
+  }
+}
+.cloud1 {
+  @include img_l_pc(1009, -71, 0);
+  animation: cloud 2.5s ease-in-out alternate infinite;
+}
+.cloud2 {
+  @include img_r_pc(926, 20, -40);
+  animation: cloud 2s ease-in-out alternate infinite;
+}
+.hill1 {
+  @include img_l_pc(1665, 0, 0);
+  top: auto;
+  bottom: 0;
+}
+.hill2 {
+  @include img_r_pc(1338, 0, 0);
+  top: auto;
+  bottom: size(-80);
 }
 
 .logo {
   width: $contact_logo_pc_width;
   height: auto;
   // height:;
-  margin: 0 auto 0px;
+  margin: 0 auto 40px;
 }
 .info {
   width: 880px;

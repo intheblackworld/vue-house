@@ -91,7 +91,7 @@ export default {
   },
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 @import '../assets/style/function.scss';
 .navigation {
   .title {
@@ -99,7 +99,7 @@ export default {
   //  width: size(137);
     // width: 140px;
   //  height: 40px;
-    color: #000;
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -115,6 +115,7 @@ export default {
     }
     */
   }
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
 }
 </style>
 <style lang="scss" scoped>
@@ -142,8 +143,7 @@ export default {
     transition: all .3s;
   }
   &.min {
-    height: 70px;
-    background-image: url('~@/projects/jcs/s1/bg.jpg');
+    height: 90px;
     .logo {
       opacity: 1;
       width: size(218);
