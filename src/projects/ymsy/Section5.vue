@@ -1,6 +1,6 @@
 <template>
   <div class="section5">
-    <img src="./s5/flower.png" :alt="`${info.caseName}_img`" class="flower" data-aos="fade-up" data-aos-delay="0">
+    <img src="./s5/flower.png" :alt="`${info.caseName}_img`" class="flower" data-aos="fade-in" data-aos-delay="0">
 
     <div class="content">
       <div class="title" data-aos="fade-up" data-aos-delay="0">
@@ -41,7 +41,7 @@
   min-height: size(900);
   max-height: size(1080);
   position: relative;
-  overflow-x: hidden;
+  //overflow-x: hidden;
   // min-height: size(900);
   background-image: url('./all/section_bg.jpg');
   background-size: 100% 100%;
@@ -67,8 +67,8 @@
 }
 
 .title {
-  @include img_l_pc(597, 174, 84);
-  font-size: size(83.4);
+  @include img_l_pc(597, 230, 84);
+  font-size: size(75);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -80,8 +80,8 @@
 }
 
 .desc {
-  @include img_l_pc(708, 483, 79);
-  font-size: size(24);
+  @include img_l_pc(660, 483, 79);
+  font-size: size(22);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -92,9 +92,9 @@
 }
 
 .flower {
-  @include img_l_pc(360, 0, 530);
+  @include img_l_pc(285, 0, 580);
   top: auto;
-  bottom: size(-25);
+  bottom: calc(50% + -24vw);
   z-index: 2;
 }
 
@@ -360,7 +360,8 @@
   }
 
   .flower {
-    @include img_r_m(77, 69, 0);
+    @include img_r_m(77, 69, -25);
+    top:calc(50% + ( -960 - 1080 * 0.5) * 100vw / 1920);
     z-index: 2;
   }
 

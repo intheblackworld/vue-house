@@ -1,7 +1,7 @@
 <template>
   <div class="section7">
     <img src="./s7/flower.png" :alt="`${info.caseName}_img`" class="flower grass" v-if="isPC">
-    <img src="./mobile/07/flower.png" :alt="`${info.caseName}_img`" class="flower grass" v-if="isMobile" data-aos="fade-up" data-aos-delay="200">
+    <img src="./mobile/07/flower.png" :alt="`${info.caseName}_img`" class="flower" v-if="isMobile" data-aos="fade-up" data-aos-delay="200">
 
     <div class="content">
       <div class="title" data-aos="fade-up" data-aos-delay="0">
@@ -13,10 +13,10 @@
       </div>
     </div>
     <div class="img-list" v-if="isPC">
-      <img src="./s7/img_1.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-up" data-aos-delay="300">
-      <img src="./s7/img_2.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-up" data-aos-delay="400">
-      <img src="./s7/img_3.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-up" data-aos-delay="500">
-      <img src="./s7/img_4.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-up" data-aos-delay="600">
+      <img src="./s7/img_1.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-in" data-aos-delay="300">
+      <img src="./s7/img_2.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-in" data-aos-delay="400">
+      <img src="./s7/img_3.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-in" data-aos-delay="500">
+      <img src="./s7/img_4.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-in" data-aos-delay="600">
     </div>
 
     <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade" data-aos-delay="200" v-if="isMobile">
@@ -47,7 +47,7 @@
   min-height: size(900);
   max-height: size(1080);
   position: relative;
-  overflow-x: hidden;
+  //overflow-x: hidden;
   // min-height: size(900);
   background-image: url('./all/section_bg.jpg');
   background-size: 100% 100%;
@@ -74,7 +74,7 @@
 
 .title {
   @include img_l_pc(597, 233, 63);
-  font-size: size(83.4);
+  font-size: size(75);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -86,8 +86,8 @@
 }
 
 .desc {
-  @include img_l_pc(674, 513, 65);
-  font-size: size(24);
+  @include img_l_pc(602, 513, 65);
+  font-size: size(22);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -98,19 +98,21 @@
 }
 
 .img-list {
-  @include img_r_pc(566 + 607, 104, 0);
+  @include img_r_pc(500 + 550, 130, 0);
+  top:calc(50% + ( 130 - 1080 * 0.5) * 100vw / 1920);
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 
   img {
-    width: size(566);
+    width: size(500);
     margin-bottom: size(38);
   }
 }
 
 .flower {
-  @include img_l_pc(267, 670, -80);
+  @include img_l_pc(180, 753, -30);
+  top:calc(50% + ( 753 - 1080 * 0.5) * 100vw / 1920);
   z-index: 2;
 }
 

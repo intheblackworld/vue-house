@@ -2,13 +2,13 @@
   <div class="section9">
     <img src="./s9/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="isPC">
     <div class="content">
-      <div class="label" data-aos="fade-up" data-aos-delay="400">
+      <div class="label" data-aos="fade-in" data-aos-delay="400">
         興益發業績實景 詠大直
       </div>
-      <div class="title" data-aos="fade-up" data-aos-delay="0">
+      <div class="title" data-aos="fade-in" data-aos-delay="0">
         興益發建設
       </div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="200">
+      <div class="desc" data-aos="fade-in" data-aos-delay="200">
         一年一案，細細琢磨<br />
         以獨到精準眼光，勤耕生活美學<br />
         讓愛家的人更愛回家
@@ -45,7 +45,7 @@
   min-height: size(1100);
   max-height: size(1100);
   position: relative;
-  overflow-x: hidden;
+  //overflow-x: hidden;
   // min-height: size(900);
   background-image: url('./all/section_bg.jpg');
   background-size: 100% 100%;

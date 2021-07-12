@@ -49,7 +49,7 @@
   min-height: size(1100);
   max-height: size(1100);
   position: relative;
-  overflow-x: hidden;
+  //overflow-x: hidden;
   // min-height: size(900);
   background-image: url('./all/section_bg.jpg');
   background-size: 100% 100%;
@@ -88,8 +88,8 @@
 }
 
 .title {
-  @include img_c_pc(917, 160);
-  font-size: size(83.4);
+  @include img_c_pc(840, 160);
+  font-size: size(75);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -111,7 +111,7 @@
     }
 
     .team-title {
-      font-size: size(42.1);
+      font-size: size(35);
       font-weight: bold;
       font-stretch: normal;
       font-style: normal;
@@ -123,11 +123,11 @@
     }
 
     .team-desc {
-      font-size: size(24);
+      font-size: size(22);
       font-weight: 300;
       font-stretch: normal;
       font-style: normal;
-      line-height: 2.01;
+      line-height: 1.5;
       letter-spacing: normal;
       text-align: center;
       color: #000000;

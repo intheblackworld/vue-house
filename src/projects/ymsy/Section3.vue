@@ -23,7 +23,7 @@
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);
-  overflow-x: hidden;
+ // overflow-x: hidden;
   position: relative;
   // background-image: url('./s1/01_bg.jpg');
   background-size: cover;
@@ -45,18 +45,20 @@
 }
 
 .img {
-  @include img_r_pc(1920, 0, 0);
-  top: auto;
+  @include img_r_pc(1920, 409, 0);
+  top:calc(50% + ( 409 - 1080 * 0.5) * 100vw / 1920);
   bottom: 0;
 }
 
 .bird {
-  @include img_r_pc(706, 369, 0);
+  @include img_r_pc(706, 322, 0);
+  top:calc(50% + ( 322 - 1080 * 0.5) * 100vw / 1920);
 }
 
 .title {
   @include img_c_pc(1020, 146);
-  font-size: size(83.4);
+  top:calc(50% + ( 146 - 1080 * 0.5) * 100vw / 1920);
+  font-size: size(75);
   font-weight: 900;
   font-stretch: normal;
   font-style: normal;
@@ -68,8 +70,9 @@
 }
 
 .subtitle {
-  @include img_c_pc(1560, 331);
-  font-size: size(28.1);
+  @include img_c_pc(1560, 300);
+  top:calc(50% + ( 300 - 1080 * 0.5) * 100vw / 1920);
+  font-size: size(22);
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;

@@ -44,7 +44,7 @@
   min-height: size(900);
   max-height: size(1080);
   position: relative;
-  overflow-x: hidden;
+  //overflow-x: hidden;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
@@ -71,7 +71,7 @@
 
 .title {
   @include img_r_pc(597, 174, 84);
-  font-size: size(83.4);
+  font-size: size(75);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -84,7 +84,7 @@
 
 .desc {
   @include img_r_pc(602, 483, 79);
-  font-size: size(24);
+  font-size: size(22);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;

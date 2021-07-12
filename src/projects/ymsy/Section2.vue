@@ -39,8 +39,9 @@
 }
 
 .title {
-  @include img_c_pc(854, 74);
-  font-size: size(83.4);
+  @include img_c_pc(854, 80);
+  top:calc(40% + ( 80 - 1080 * 0.4) * 100vw / 1920);
+  font-size: size(75);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;

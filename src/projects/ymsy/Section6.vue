@@ -43,7 +43,7 @@
   min-height: size(900);
   max-height: size(1080);
   position: relative;
-  overflow-x: hidden;
+  //overflow-x: hidden;
   // min-height: size(900);
   background-image: url('./all/section_bg.jpg');
   background-size: cover;
@@ -87,7 +87,7 @@
 
 .title {
   @include img_r_pc(597, 333, 84);
-  font-size: size(83.4);
+  font-size: size(75);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
