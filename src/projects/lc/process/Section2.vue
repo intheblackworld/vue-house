@@ -203,7 +203,7 @@
 .process-item {
   width: size(403);
   min-height: size(537);
-  margin: size(20);
+  margin: size(15);
   margin-bottom: size(70);
   border: 1px solid #707070;
   text-align: left;
@@ -975,6 +975,39 @@ export default {
               require('../process/list/2/4.jpg'),
               require('../process/list/2/5.jpg'),
               require('../process/list/2/6.jpg'),
+            ]
+          },
+          {
+            img: require('../process/list/3/1.jpg'),
+            title: '2021/6',
+            subtitle: '穩紮穩打的施做工程。<br>底板鋼筋綁紮施做進行中。',
+            isFinished: true,
+            imgs: [
+              require('../process/list/3/1.jpg'),
+              require('../process/list/3/2.jpg'),
+              require('../process/list/3/3.jpg'),
+              require('../process/list/3/4.jpg'),
+              require('../process/list/3/5.jpg'),
+              require('../process/list/3/6.jpg'),
+              require('../process/list/3/7.jpg'),
+              require('../process/list/3/8.jpg'),
+              require('../process/list/3/9.jpg'),
+            ]
+          },
+          {
+            img: require('../process/list/4/1.jpg'),
+            title: '2021/6',
+            subtitle: '堅若磐石的施工品質<br>FS版灌漿施做進行中。',
+            isFinished: true,
+            imgs: [
+              require('../process/list/4/1.jpg'),
+              require('../process/list/4/2.jpg'),
+              require('../process/list/4/3.jpg'),
+              require('../process/list/4/4.jpg'),
+              require('../process/list/4/5.jpg'),
+              require('../process/list/4/6.jpg'),
+              require('../process/list/4/7.jpg'),
+              require('../process/list/4/8.jpg'),
             ]
           },
         ],
