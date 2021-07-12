@@ -564,28 +564,28 @@ export default {
         },
         {
           img: isMobile ? require('./mobile/04/slider_2.jpg') : require('./s4/slider_2.jpg'),
-          name: '捷運復興崗站',
+          name: 'COSTCO美式生活',
           // desc: '大福路大興路環抱<br />地段價值更珍貴',
         },
         {
           img: isMobile ? require('./mobile/04/slider_3.jpg') : require('./s4/slider_3.jpg'),
-          name: '捷運復興崗站',
+          name: '北投圖書館',
         },
         {
           img: isMobile ? require('./mobile/04/slider_4.jpg') : require('./s4/slider_4.jpg'),
-          name: '捷運復興崗站',
+          name: '北投溫泉博物館',
         },
         {
           img: isMobile ? require('./mobile/04/slider_5.jpg') : require('./s4/slider_5.jpg'),
-          name: '捷運復興崗站',
+          name: '三層崎公園',
         },
         {
           img: isMobile ? require('./mobile/04/slider_6.jpg') : require('./s4/slider_6.jpg'),
-          name: '捷運復興崗站',
+          name: '地熱谷',
         },
         {
           img: isMobile ? require('./mobile/04/slider_7.jpg') : require('./s4/slider_7.jpg'),
-          name: '捷運復興崗站',
+          name: '薇閣高級中學',
         },
       ],
     }

@@ -22,7 +22,7 @@ export default {
     ['建築規劃', '地上五層、地下三層'],
   ],
 
-  gtmCode: ['NXPZLM6', 'NVH86BK'], // 可放置多個
+  gtmCode: ['KC6DKK5'], // 可放置多個
   recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',

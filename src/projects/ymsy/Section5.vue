@@ -552,12 +552,12 @@ export default {
       slideList: [
         {
           img: isMobile ? require('./mobile/05/slider_1.jpg') : require('./s5/slider_1.jpg'),
-          name: '關渡科學園區 ',
+          name: '關渡科學園區',
           // desc: '270度翠綠簇擁<br />開窗就享無垠綠景',
         },
         {
           img: isMobile ? require('./mobile/05/slider_2.jpg') : require('./s5/slider_2.jpg'),
-          name: '關渡科學園區 ',
+          name: '榮總醫院',
           // name: '稀有角地',
           // desc: '大福路大興路環抱<br />地段價值更珍貴',
         },
