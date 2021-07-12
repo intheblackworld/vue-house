@@ -98,6 +98,7 @@ export default {
 
   display: flex;
   position: fixed;
+  left: 0;
   bottom: 0;
   z-index: 100;
   box-shadow: 0 -2px 8px 0 #0006;

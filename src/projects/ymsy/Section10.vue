@@ -36,13 +36,14 @@
 @import '@/assets/style/function.scss';
 
 .section10 {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);
   overflow: hidden;
   position: relative;
   background: green;
+  overflow-x: hidden;
   // background-image: url('./s1/01_bg.jpg');
   background-size: cover;
   background-attachment: fixed;
@@ -223,9 +224,7 @@
   }
 
   .bird {
-    @include img_r_m(238, 0, 0);
-    top: auto;
-    bottom: 0;
+    display: none;
   }
 
   @keyframes cloud {

@@ -225,9 +225,7 @@
   }
 
   .bird {
-    @include img_r_m(238, 0, 0);
-    top: auto;
-    bottom: 0;
+    display: none;
   }
 
   @keyframes cloud {
@@ -276,7 +274,7 @@
   }
 
   .title-en {
-    @include img_l_pc(337, 15, 0);
+    @include img_l_m(337, 15, 0);
   }
 
   .title1 {

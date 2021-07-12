@@ -19,7 +19,7 @@
       <img src="./s7/img_4.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-up" data-aos-delay="600">
     </div>
 
-    <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="200" v-if="isMobile">
+    <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade" data-aos-delay="200" v-if="isMobile">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -47,6 +47,7 @@
   min-height: size(900);
   max-height: size(1080);
   position: relative;
+  overflow-x: hidden;
   // min-height: size(900);
   background-image: url('./all/section_bg.jpg');
   background-size: 100% 100%;
@@ -357,6 +358,7 @@
     // background-position: 0 0;
     // background-attachment: fixed;
     overflow: visible;
+    overflow-x: hidden;
   }
   .title {
     @include img_c_m(292, 66);

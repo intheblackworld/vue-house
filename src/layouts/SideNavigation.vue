@@ -368,7 +368,7 @@ export default {
   .menu {
     display: flex;
     position: fixed;
-    right: 15px;
+    left: calc(375px - 15px);
     top: 15px;
 
     img {

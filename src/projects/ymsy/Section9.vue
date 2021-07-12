@@ -40,11 +40,12 @@
 @import '@/assets/style/function.scss';
 
 .section9 {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   min-height: size(1100);
   max-height: size(1100);
   position: relative;
+  overflow-x: hidden;
   // min-height: size(900);
   background-image: url('./all/section_bg.jpg');
   background-size: 100% 100%;

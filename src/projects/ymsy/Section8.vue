@@ -21,7 +21,7 @@
     <div class="team-title" v-html="slideList[slideIndex].title" data-aos="fade-up" data-aos-delay="400"></div>
     <div class="team-desc" v-html="slideList[slideIndex].desc" data-aos="fade-up" data-aos-delay="500"></div>
 
-    <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="200" v-if="isMobile">
+    <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade" data-aos-delay="200" v-if="isMobile">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -44,11 +44,12 @@
 @import '@/assets/style/function.scss';
 
 .section8 {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   min-height: size(1100);
   max-height: size(1100);
   position: relative;
+  overflow-x: hidden;
   // min-height: size(900);
   background-image: url('./all/section_bg.jpg');
   background-size: 100% 100%;
@@ -368,6 +369,7 @@
     // background-position: 0 0;
     // background-attachment: fixed;
     overflow: visible;
+    overflow-x: hidden;
   }
 
   .label {

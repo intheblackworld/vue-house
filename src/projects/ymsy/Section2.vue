@@ -15,7 +15,7 @@
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);
-  //overflow: hidden;
+  overflow-x: hidden;
   position: relative;
   // background-image: url('./s1/01_bg.jpg');
   background-size: cover;
@@ -74,6 +74,8 @@
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
+    overflow: visible;
+    overflow-x: hidden;
   }
   .bg-img {
     top: auto;
