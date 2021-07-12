@@ -12,6 +12,7 @@
         近三千坪完整基地，隨著緩坡而上讓您漸入佳境，每天，與大自然的肌理親密地生活，處處有風光。多項匠心公設、精緻飯店物管，回家，當山的主人，訂製最美好的莊園人生。
       </div>
     </div>
+    <img src="./s2/flash.png" :alt="`${info.caseName}_img`" class="flash" v-if="isMobile">
 
     <img src="./s6/bird.png" :alt="`${info.caseName}_img`" class="bird" data-aos="fade-up" data-aos-delay="300">
 
@@ -48,7 +49,7 @@
   background-image: url('./all/section_bg.jpg');
   background-size: cover;
   // background-position: 0 0;
-  // background-attachment: fixed;
+  background-attachment: fixed;
   // overflow: hidden;
 }
 
@@ -350,8 +351,19 @@
     // background-size: 100% 100%;
     // background-position: 0 0;
     // background-attachment: fixed;
-    overflow: visible;
-    overflow-x: hidden;
+  }
+
+  .flash {
+    @include img_r_m(1000, -45, -438);
+    animation: flash 1s ease-in-out alternate infinite;
+    opacity: 0;
+    z-index: 3;
+  }
+
+  @keyframes flash {
+    to {
+      opacity: 1;
+    }
   }
 
   .bird {

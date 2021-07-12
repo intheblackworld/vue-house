@@ -15,7 +15,6 @@
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);
-  overflow-x: hidden;
   position: relative;
   // background-image: url('./s1/01_bg.jpg');
   background-size: cover;
@@ -35,7 +34,15 @@
 
 .flash {
   @include img_r_pc(1000, -45, -238);
+  animation: flash 1s ease-in-out alternate infinite;
+  opacity: 0;
   z-index: 3;
+}
+
+@keyframes flash {
+  to {
+    opacity: 1;
+  }
 }
 
 .title {
@@ -52,6 +59,7 @@
   z-index: 3;
   white-space: nowrap;
 }
+
 
 @media only screen and (max-width: 1440px) {
 }
@@ -76,7 +84,6 @@
     background-size: cover;
     background-attachment: scroll;
     overflow: visible;
-    overflow-x: hidden;
   }
   .bg-img {
     top: auto;

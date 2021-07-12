@@ -2,6 +2,7 @@
   <div class="section4">
     <img src="./s4/fly_1.png" :alt="`${info.caseName}_img`" class="fly1" data-aos="fade-up" data-aos-delay="0">
     <img src="./s4/fly_2.png" :alt="`${info.caseName}_img`" class="fly2" data-aos="fade-up" data-aos-delay="0">
+    <img src="./s2/flash.png" :alt="`${info.caseName}_img`" class="flash">
 
     <div class="content">
       <div class="title" data-aos="fade-up" data-aos-delay="0">
@@ -93,6 +94,19 @@
   text-align: left;
   color: #000000;
   white-space: nowrap;
+}
+
+.flash {
+  @include img_r_pc(1000, -90, -238);
+  animation: flash 1s ease-in-out alternate infinite;
+  opacity: 0;
+  z-index: 3;
+}
+
+@keyframes flash {
+  to {
+    opacity: 1;
+  }
 }
 
 .fly1 {
@@ -335,8 +349,11 @@
     // background-size: 100% 100%;
     // background-position: 0 0;
     // background-attachment: fixed;
-    overflow: visible;
-    overflow-x: hidden;
+  }
+
+  .flash {
+    @include img_r_m(1000, -45, -438);
+    z-index: 3;
   }
   .title {
     @include img_c_m(262, 66);

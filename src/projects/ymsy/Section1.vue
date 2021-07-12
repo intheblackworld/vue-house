@@ -98,7 +98,7 @@
   animation: cloud 2.5s ease-in-out alternate infinite;
 }
 .cloud2 {
-  @include img_r_pc(926, 270, -40);
+  @include img_r_pc(926, 270, -70);
   animation: cloud 2s ease-in-out alternate infinite;
 }
 .hill1 {
@@ -197,9 +197,9 @@
 @media screen and (max-width: 767px) {
   .section1 {
     width: 100vw;
-    min-height: sizem(752);
-    max-height: sizem(752);
-    height: sizem(752);
+    min-height: sizem(680);
+    max-height: sizem(680);
+    height: sizem(680);
     // margin: 0 0 -12vw 0;
     // background-size: auto size-m(750);
     overflow: hidden;
@@ -221,7 +221,7 @@
   }
 
   .logo {
-    @include img_c_m(304, 163);
+    @include img_c_m(304, 163 - 52);
   }
 
   .bird {
@@ -238,7 +238,7 @@
     animation: cloud 2.5s ease-in-out alternate infinite;
   }
   .cloud2 {
-    @include img_r_m(375, 24, -40);
+    @include img_r_m(375, 0, -40);
     animation: cloud 2s ease-in-out alternate infinite;
   }
   .hill1 {
@@ -282,7 +282,7 @@
   }
 
   .title2 {
-    @include img_c_m(161, 139);
+    @include img_c_m(161, 139 - 52);
     font-size: sizem(11.1);
     font-weight: 500;
     font-stretch: normal;
@@ -295,7 +295,7 @@
   }
 
   .title3 {
-    @include img_c_m(280, 250);
+    @include img_c_m(280, 250 - 52);
     font-size: sizem(21.4);
     font-weight: 500;
     font-family: 'Noto Sans TC';
@@ -329,7 +329,7 @@
   }
 
   .title4 {
-    @include img_c_m(218, 425);
+    @include img_c_m(218, 425 - 52);
     text-shadow: 0 0 5px #1b4a20;
     font-family: 'Noto Sans TC';
     font-size: sizem(43.1);

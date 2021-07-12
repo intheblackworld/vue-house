@@ -42,6 +42,15 @@
 
 .flash {
   @include img_r_pc(1000, -45, -238);
+  animation: flash 1s ease-in-out alternate infinite;
+  opacity: 0;
+  z-index: 3;
+}
+
+@keyframes flash {
+  to {
+    opacity: 1;
+  }
 }
 
 .img {
@@ -104,8 +113,6 @@
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
-    overflow: visible;
-    overflow-x: hidden;
   }
   .bg-img {
     top: auto;

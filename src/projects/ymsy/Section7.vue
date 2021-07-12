@@ -1,7 +1,8 @@
 <template>
   <div class="section7">
     <img src="./s7/flower.png" :alt="`${info.caseName}_img`" class="flower grass" v-if="isPC">
-    <img src="./mobile/07/flower.png" :alt="`${info.caseName}_img`" class="flower" v-if="isMobile" data-aos="fade-up" data-aos-delay="200">
+    <img src="./mobile/07/flower.png" :alt="`${info.caseName}_img`" class="flower" v-if="isMobile" data-aos="fade" data-aos-delay="200">
+    <img src="./s2/flash.png" :alt="`${info.caseName}_img`" class="flash" v-if="isMobile">
 
     <div class="content">
       <div class="title" data-aos="fade-up" data-aos-delay="0">
@@ -52,7 +53,7 @@
   background-image: url('./all/section_bg.jpg');
   background-size: 100% 100%;
   // background-position: 0 0;
-  // background-attachment: fixed;
+  background-attachment: fixed;
   // overflow: hidden;
 }
 
@@ -99,7 +100,7 @@
 
 .img-list {
   @include img_r_pc(500 + 550, 130, 0);
-  top:calc(50% + ( 130 - 1080 * 0.5) * 100vw / 1920);
+  top: calc(50% + (130 - 1080 * 0.5) * 100vw / 1920);
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -112,7 +113,7 @@
 
 .flower {
   @include img_l_pc(180, 753, -30);
-  top:calc(50% + ( 753 - 1080 * 0.5) * 100vw / 1920);
+  top: calc(50% + (753 - 1080 * 0.5) * 100vw / 1920);
   z-index: 2;
 }
 
@@ -359,8 +360,18 @@
     // background-size: 100% 100%;
     // background-position: 0 0;
     // background-attachment: fixed;
-    overflow: visible;
-    overflow-x: hidden;
+  }
+  .flash {
+    @include img_r_m(1000, -45, -438);
+    animation: flash 1s ease-in-out alternate infinite;
+    opacity: 0;
+    z-index: 3;
+  }
+
+  @keyframes flash {
+    to {
+      opacity: 1;
+    }
   }
   .title {
     @include img_c_m(292, 66);

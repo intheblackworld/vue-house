@@ -1,6 +1,7 @@
 <template>
   <div class="section5">
     <img src="./s5/flower.png" :alt="`${info.caseName}_img`" class="flower" data-aos="fade-in" data-aos-delay="0">
+    <img src="./s2/flash.png" :alt="`${info.caseName}_img`" class="flash" v-if="isMobile">
 
     <div class="content">
       <div class="title" data-aos="fade-up" data-aos-delay="0">
@@ -46,7 +47,7 @@
   background-image: url('./all/section_bg.jpg');
   background-size: 100% 100%;
   // background-position: 0 0;
-  // background-attachment: fixed;
+  background-attachment: fixed;
   // overflow: hidden;
 }
 
@@ -330,8 +331,19 @@
     // background-size: 100% 100%;
     // background-position: 0 0;
     // background-attachment: fixed;
-    overflow: visible;
-    overflow-x: hidden;
+  }
+
+  .flash {
+    @include img_r_m(1000, -45, -438);
+    animation: flash 1s ease-in-out alternate infinite;
+    opacity: 0;
+    z-index: 3;
+  }
+
+  @keyframes flash {
+    to {
+      opacity: 1;
+    }
   }
   .title {
     @include img_c_m(292, 66);
@@ -361,7 +373,7 @@
 
   .flower {
     @include img_r_m(77, 69, -25);
-    top:calc(50% + ( -960 - 1080 * 0.5) * 100vw / 1920);
+    top: calc(50% + (-960 - 1080 * 0.5) * 100vw / 1920);
     z-index: 2;
   }
 
@@ -551,12 +563,16 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: isMobile ? require('./mobile/05/slider_1.jpg') : require('./s5/slider_1.jpg'),
+          img: isMobile
+            ? require('./mobile/05/slider_1.jpg')
+            : require('./s5/slider_1.jpg'),
           name: '關渡科學園區',
           // desc: '270度翠綠簇擁<br />開窗就享無垠綠景',
         },
         {
-          img: isMobile ? require('./mobile/05/slider_2.jpg') : require('./s5/slider_2.jpg'),
+          img: isMobile
+            ? require('./mobile/05/slider_2.jpg')
+            : require('./s5/slider_2.jpg'),
           name: '榮總醫院',
           // name: '稀有角地',
           // desc: '大福路大興路環抱<br />地段價值更珍貴',

@@ -16,17 +16,29 @@
         <div class="team-desc" v-html="slide.desc" data-aos="fade-up" data-aos-delay="500"></div>
       </div>
     </div>
+    <div v-if="isMobile">
+      <div class="team-item relative">
+        <div class="team-label">｜匠心團隊｜</div>
+        <div class="team-name" v-html="slideList[0].name" data-aos="fade-up" data-aos-delay="400"></div>
+        <div class="team-title" v-html="slideList[0].title" data-aos="fade-up" data-aos-delay="400"></div>
+        <div class="team-desc" v-html="slideList[0].desc" data-aos="fade-up" data-aos-delay="500"></div>
+        <img class="team-img" :src="slideList[0].img" alt="">
+      </div>
+      <div class="team-item relative">
+        <div class="team-label">｜匠心團隊｜</div>
+        <div class="team-name" v-html="slideList[1].name" data-aos="fade-up" data-aos-delay="400"></div>
+        <div class="team-title" v-html="slideList[1].title" data-aos="fade-up" data-aos-delay="400"></div>
+        <div class="team-desc" v-html="slideList[1].desc" data-aos="fade-up" data-aos-delay="500"></div>
+        <img class="team-img" :src="slideList[1].img" alt="">
+      </div>
+    </div>
 
-    <div class="team-name" v-html="slideList[slideIndex].name" data-aos="fade-up" data-aos-delay="400"></div>
-    <div class="team-title" v-html="slideList[slideIndex].title" data-aos="fade-up" data-aos-delay="400"></div>
-    <div class="team-desc" v-html="slideList[slideIndex].desc" data-aos="fade-up" data-aos-delay="500"></div>
-
-    <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade" data-aos-delay="200" v-if="isMobile">
+    <!-- <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade" data-aos-delay="200" v-if="isMobile">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
-          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+          <div v-for="(slide, i) in slideList" :key="slide.img" :class="`swipe-item`">
             <img :src="slide.img" alt="">
-            <!-- <div class="slide-name absolute" v-html="slide.name"></div> -->
+            <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
         <div class="pagination absolute flex-ac" v-if="isPC">
@@ -37,7 +49,7 @@
         <div class="prev-btn" @click="decIndex"></div>
         <div class="next-btn" @click="addIndex"></div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 <style lang="scss" scoped>
@@ -54,7 +66,7 @@
   background-image: url('./all/section_bg.jpg');
   background-size: 100% 100%;
   // background-position: 0 0;
-  // background-attachment: fixed;
+  background-attachment: fixed;
   // overflow: hidden;
 }
 
@@ -360,7 +372,7 @@
 @media screen and (max-width: 767px) {
   .section8 {
     width: 100vw;
-    height: sizem(750);
+    height: sizem(1500);
     min-height: auto;
     max-height: initial;
     // background-image: url('./all/section_bg.jpg');
@@ -372,8 +384,13 @@
     overflow-x: hidden;
   }
 
-  .label {
-    @include img_c_m(98, 73);
+  .team-item {
+    width: 100vw;
+    height: sizem(750);
+  }
+
+  .team-label {
+    @include img_c_m(98, 33);
     font-size: sizem(14);
     font-weight: 500;
     font-stretch: normal;
@@ -424,173 +441,16 @@
     white-space: normal;
   }
 
+  .team-img {
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+
   .flower {
     @include img_r_m(127, 219, 0);
     z-index: 2;
-  }
-
-  /* Swipe */
-  .swipe {
-    @include div_l_m(375, 454, 0, 0);
-    top: auto;
-    bottom: 0;
-    object-fit: cover;
-    // background: #0344;
-  }
-
-  // begin
-  .swipe-fade-leave-to {
-    opacity: 0;
-    z-index: 0;
-  }
-  // end
-  .swipe-fade-enter {
-    opacity: 0;
-    z-index: 1;
-  }
-
-  .swipe-fade-enter-active {
-    transition: all 0.5s ease;
-  }
-
-  .swipe-fade-leave-active {
-    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-
-  // begin
-  // .swipe-left-leave-to {
-  //   margin-left: -100vw;
-  //   z-index: 0;
-  // }
-  // // end
-  // .swipe-left-enter {
-  //   opacity: 0.5;
-  //   margin-left: 0;
-  //   z-index: 1;
-  // }
-
-  // .swipe-left-enter-active {
-  //   transition: all 0.5s ease;
-  // }
-
-  // .swipe-left-leave-active {
-  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  // }
-
-  .swipe-wrap {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .swipe-item {
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    // &:nth-child(1) {
-    //   z-index: 1;
-    //   // opacity: 1;
-    // }
-
-    // &.base {
-    //   z-index: 1;
-    //   opacity: 1;
-    // }
-    // &.active {
-    //   z-index: 2;
-    //   // opacity: 1;
-    // }
-    .slide-name {
-      right: 1.2rem;
-      top: 1.2rem;
-      bottom: auto;
-      left: auto;
-      font-size: sizem(15);
-    }
-  }
-
-  .pagination {
-    width: auto;
-    bottom: size(91);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    justify-content: center;
-  }
-
-  .pagination-dot {
-    padding: 5px;
-    margin: 0 10px;
-    cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
-      box-shadow: 0 0 0 1px #fff;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
-      transition: all 0.5s;
-
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #004ea2;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transition: all 0.3s;
-        transform-origin: center;
-        transform: scale(0);
-      }
-      &.active {
-        &::before {
-          content: '';
-          width: 100%;
-          height: 100%;
-          display: block;
-          background: #004ea2;
-          border-radius: 20px;
-          opacity: 1;
-          position: absolute;
-          top: 0%;
-          // transform: translateY(-50%);
-          left: 0%;
-          transform: scale(1);
-        }
-      }
-    }
-  }
-
-  .swipe-btns {
-    width: 116%;
-    left: -8%;
-    .prev-btn,
-    .next-btn {
-      font-size: sizem(15);
-      &::before {
-        background-color: #cc5b4e00;
-      }
-      &::after {
-        border-color: #fff;
-        border-width: 0.15em 0.15em 0 0;
-        animation: btn 0.5s ease-in-out infinite alternate;
-      }
-    }
   }
 }
 </style>

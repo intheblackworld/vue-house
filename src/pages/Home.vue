@@ -2,7 +2,7 @@
   <div class="home no-padding-top">
     <div class="bg-img">
       <Loading :loading="load" />
-      <SideNavigation v-if="isMobile" />
+      <!-- <SideNavigation v-if="isMobile" /> -->
 
       <Navigation v-if="!isMobile" :min="true" />
       <!-- <Indigator :viewIndex="viewIndex" /> -->
@@ -86,7 +86,7 @@
 // import $ from 'jquery'
 import Navigation from '@/layouts/Navigation.vue'
 import { isMobile } from '@/utils'
-import SideNavigation from '@/layouts/SideNavigation.vue'
+// import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
@@ -110,7 +110,7 @@ export default {
     Loading,
     // Indigator,
     Navigation,
-    SideNavigation,
+    // SideNavigation,
     // LeafFlow,
     ContactSection,
     MobileNav,
