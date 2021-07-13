@@ -1,7 +1,7 @@
 <template>
   <div class="order-bg">
     <div class="animate-slide" v-if="isPC">
-      <img src="../projects/hg1/s12/漂浮物件_分層/11_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
+     <img src="../projects/hg1/s12/漂浮物件_分層/11_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
       <img src="../projects/hg1/s12/漂浮物件_分層/11_class_2.png" :alt="`${info.caseName}_logo`" class="pc2" data-parallax="4">
     </div>
     <div class="animate-slide aaa" v-if="isMobile">
@@ -218,7 +218,7 @@ export default {
   background-color: transparent;
   background-image: $order_bg_image;
   background-size: cover;
-  // position: relative;
+  position: relative;
   padding-top: calc(100vw * 200 / 1920);
   // overflow: hidden;
 
