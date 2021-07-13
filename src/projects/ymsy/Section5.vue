@@ -334,7 +334,8 @@
   }
 
   .flash {
-    @include img_r_m(1000, -45, -438);
+    @include img_l_m(1041, 709, -232);
+    top:calc(50% + ( -85 - 667 * 0.5) * 100vw / 375);
     animation: flash 1s ease-in-out alternate infinite;
     opacity: 0;
     z-index: 3;

@@ -41,7 +41,8 @@
 }
 
 .flash {
-  @include img_r_pc(1000, -45, -238);
+  @include img_r_pc(1000, -31, -238);
+  top:calc(50% + ( -31 - 1080 * 0.5) * 100vw / 1920);
   animation: flash 1s ease-in-out alternate infinite;
   opacity: 0;
   z-index: 3;
@@ -123,7 +124,8 @@
     bottom: 0;
   }
   .flash {
-    @include img_r_m(1000, -45, -438);
+    @include img_l_m(1041, 709, -232);
+    top:calc(50% + ( -85 - 667 * 0.5) * 100vw / 375);
     z-index: 3;
   }
 

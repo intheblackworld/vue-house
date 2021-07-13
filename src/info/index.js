@@ -5,8 +5,8 @@ export default {
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3611.813664623801!2d121.48627601500841!3d25.141989783921876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442afb255a147cb%3A0x1fb2054eb2fa0c5a!2zMTEy5Y-w5YyX5biC5YyX5oqV5Y2A56i76aaZ6LevMTYx5be3!5e0!3m2!1szh-TW!2stw!4v1625897944660!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/yZtHjckuCPk28Unq7',
   phone: '02-28979888',
-  fbLink: 'https://www.facebook.com/植春樹-103761678229425',
-  fbMessage: 'https://m.me/103761678229425',
+  fbLink: '#',
+  fbMessage: '#',
   caseName: '陽明森悅',
   indigatorLength: 10,
 

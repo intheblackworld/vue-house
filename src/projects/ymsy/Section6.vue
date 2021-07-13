@@ -16,7 +16,10 @@
 
     <img src="./s6/bird.png" :alt="`${info.caseName}_img`" class="bird" data-aos="fade-up" data-aos-delay="300">
 
-    <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade" data-aos-delay="800">
+    <img src="./s6/img.jpg" :alt="`${info.caseName}_img`" class="img1" data-aos="fade-up" data-aos-delay="800" v-if="isPC">
+
+
+    <div class="swipe"  data-aos="fade" data-aos-delay="800" v-if="isMobile">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -119,9 +122,15 @@
   @include img_r_pc(87, 385, 626);
 }
 
+.img1 {
+  @include div_l_pc(1172, 901, 95, 0);
+}
+
+
 /* Swipe */
 .swipe {
   @include div_l_pc(1172, 901, 95, 0);
+  top:calc(50% + ( 901 - 1080 * 0.5) * 100vw / 1920);
   object-fit: cover;
   // background: #0344;
 }
@@ -354,7 +363,8 @@
   }
 
   .flash {
-    @include img_r_m(1000, -45, -438);
+    @include img_l_m(1041, 709, -232);
+    top:calc(50% + ( -85 - 667 * 0.5) * 100vw / 375);
     animation: flash 1s ease-in-out alternate infinite;
     opacity: 0;
     z-index: 3;
