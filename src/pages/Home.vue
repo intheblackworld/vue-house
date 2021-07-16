@@ -144,25 +144,25 @@ export default {
     }
   },
   created() {
-    $(document).ready(() => {
-      // Images loaded is zero because we're going to process a new set of images.
-      var imagesLoaded = 0
-      // Total images is still the total number of <img> elements on the page.
-      var totalImages = $('img').length
+    // $(document).ready(() => {
+    //   // Images loaded is zero because we're going to process a new set of images.
+    //   var imagesLoaded = 0
+    //   // Total images is still the total number of <img> elements on the page.
+    //   var totalImages = $('img').length
 
-      const allImagesLoaded = () => {
-        this.load = false
-      }
-      const imageLoaded = () => {
-        imagesLoaded++
-        if (imagesLoaded == totalImages) {
-          allImagesLoaded()
-        }
-      }
-      $('img').each(function (idx, img) {
-        $('<img>').on('load', imageLoaded).attr('src', $(img).attr('src'))
-      })
-    })
+    //   const allImagesLoaded = () => {
+    //     this.load = false
+    //   }
+    //   const imageLoaded = () => {
+    //     imagesLoaded++
+    //     if (imagesLoaded == totalImages) {
+    //       allImagesLoaded()
+    //     }
+    //   }
+    //   $('img').each(function (idx, img) {
+    //     $('<img>').on('load', imageLoaded).attr('src', $(img).attr('src'))
+    //   })
+    // })
     // window.location = "https://ywh.nhc888.com.tw/"
   },
   mounted() {
