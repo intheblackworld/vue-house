@@ -5,7 +5,7 @@
         <div class="nav">
           <img
             class="logo"
-            src="@/assets/img/nav-logo.png"
+            src="@/projects/sj/s1/logo.png"
             alt
              v-scroll-to="{ element: `#section1`, offset: offset }"
           />
@@ -127,7 +127,7 @@ export default {
   width: 100vw;
   display: flex !important;
   align-items: center;
- // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.15) ,0 0px 8px 0 rgba(0, 0, 0, 0.15);
 }
 
 .nav-container {
@@ -185,7 +185,7 @@ export default {
   .link {
     color: $nav_link_color;
     height: 22px;
-    border-right: 1px solid #fff;
+    border-right: 1px solid #de8a2d;
     text-align: center;
     display: block;
     cursor: pointer;

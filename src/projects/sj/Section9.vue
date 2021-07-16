@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="section9">
+    <div class="section"><img src="./all/section.png"></div>
       <div class="swipe swipe1 absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-show="(isPC && tabIndex == 1) || isMobile">
         <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(1)" v-touch:swipe.right="() => addMultiIndex(1)">
           <transition-group name="swipe-fade" mode="out-in">
@@ -106,6 +107,10 @@
   // background-position: 0 0;
   // background-attachment: fixed;
   // overflow: hidden;
+}
+.section{
+  @include img_c_pc(530, 80);
+  img{width: 100%;}
 }
 .txt{display: flex;overflow: hidden;position: relative;flex-direction:column;
    @include div_r_pc(325, 850, 0, 236);justify-content:space-between;
@@ -355,6 +360,9 @@
     // background-attachment: fixed;
     overflow: hidden;
   }
+.section{
+  @include img_c_m(170, 20);
+}
 
   .btn {
     width: sizem(316);
