@@ -144,6 +144,9 @@ export default {
     }
   },
   created() {
+    setTimeout(() => {
+      this.load = false
+    }, 500)
     // $(document).ready(() => {
     //   // Images loaded is zero because we're going to process a new set of images.
     //   var imagesLoaded = 0
