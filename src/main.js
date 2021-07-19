@@ -15,6 +15,7 @@ import VueLazyload from 'vue-lazyload' // 圖片 lazy load
 import VueFullPage from 'vue-fullpage.js'
 import VueLazyComponent from '@xunlei/vue-lazy-component'
 import VueRellax from 'vue-rellax'
+import VueParticles from 'vue-particles'
 import Vue2TouchEvents from 'vue2-touch-events'
 
 
@@ -63,7 +64,7 @@ Vue.use(VueLazyload)
 Vue.use(VueLazyComponent)
 Vue.use(VueRellax)
 Vue.use(Vue2TouchEvents)
-
+Vue.use(VueParticles)
 
 new Vue({
   router,

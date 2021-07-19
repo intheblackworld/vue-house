@@ -18,6 +18,13 @@ module.exports = {
     //     maxSize: 20000
     //   }
     // }
+    plugins: [
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'windows.jQuery': 'jquery',
+      }),
+    ],
   },
 
   // publicPath: '/event',
@@ -59,14 +66,5 @@ module.exports = {
       })
     // remove the prefetch plugin
     config.plugins.delete('prefetch')
-  },
-  configureWebpack: {
-    plugins: [
-      new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        'windows.jQuery': 'jquery',
-      }),
-    ],
   },
 }

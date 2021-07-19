@@ -14,7 +14,7 @@
 html,
 body {
   // background: $bg !important;
-  overflow-x: hidden;
+  // overflow-x: hidden;
   /*
   *::-webkit-scrollbar {
     // display: none;
@@ -48,7 +48,7 @@ body {
   background-size: cover;
   background-position: cover;
   background-repeat: no-repeat;
-  overflow: hidden; //試底下多的那塊哪來的
+  // overflow: hidden; //試底下多的那塊哪來的
   font-family: $family1;
 
   &.no-padding-top {
@@ -57,6 +57,11 @@ body {
     .fullscreen {
       height: 100vh;
     }
+  }
+
+  > .section {
+    overflow-x: hidden !important;
+    width: 100vw !important;
   }
 }
 

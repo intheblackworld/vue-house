@@ -124,7 +124,7 @@ export default {
   &.min {
     height: 70px;
     // background-image: url('~@/projects/jcs/s1/bg.jpg');
-    background-color: rgba(255, 255, 255, 0.7);
+    // background-color: rgba(255, 255, 255, 0.7);
     .logo {
       opacity: 1;
       width: size(128);
@@ -180,11 +180,11 @@ export default {
   padding-left: 30px;
   li {
     height: 100%;
-    &:nth-child(1) {
-      .link {
-        border-left: 1px solid $nav_link_hover_bg;
-      }
-    }
+    // &:nth-child(1) {
+    //   .link {
+    //     border-left: 1px solid $nav_link_hover_bg;
+    //   }
+    // }
   }
 
   .link {
@@ -201,7 +201,7 @@ export default {
     justify-content: center;
     position: relative;
     overflow: hidden;
-    border-right: 1px solid $nav_link_hover_bg;
+    // border-right: 1px solid $nav_link_hover_bg;
     width: 5.7em;
 
     &:hover {
@@ -252,7 +252,7 @@ export default {
     }
 
     .title {
-      //  font-size: 24px;
+      font-size: size(20);
       position: relative;
       z-index: 3;
       /* > span {

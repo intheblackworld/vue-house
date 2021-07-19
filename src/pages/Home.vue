@@ -1,38 +1,36 @@
 <template>
   <div class="home no-padding-top">
-    <div class="bg-img">
-      <Loading :loading="load" />
-      <SideNavigation v-if="isMobile" :min="isNavMin" />
-
-      <Navigation v-if="!isMobile" :min="isNavMin" :hide="isHide" />
-      <!-- <Indigator :viewIndex="viewIndex" /> -->
-      <!-- <full-page
+    <Loading :loading="load" />
+    <SideNavigation v-if="isMobile" :min="isNavMin" />
+    <!-- <Indigator :viewIndex="viewIndex" /> -->
+    <!-- <full-page
       ref="fullPage"
       :options="options"
       id="fullpage"
     > -->
-      <vue-lazy-component class="" id="section1" @init="init">
-        <Section1 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section2" style="">
-        <Section2 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section3">
-        <Section3 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section relative" id="section4">
-        <Section4 :viewIndex="viewIndex" />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section5">
-        <Section5 :viewIndex="viewIndex" />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section6">
-        <Section6 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section7">
-        <Section7 />
-      </vue-lazy-component>
-      <!-- <vue-lazy-component class="section" id="section10">
+    <vue-lazy-component class="section" id="section1" @init="init">
+      <Section1 />
+    </vue-lazy-component>
+    <Navigation v-if="!isMobile" :min="isNavMin" :hide="isHide" />
+    <vue-lazy-component class="section" id="section2" style="">
+      <Section2 />
+    </vue-lazy-component>
+    <vue-lazy-component class="section" id="section3">
+      <Section3 />
+    </vue-lazy-component>
+    <vue-lazy-component class="section relative" id="section4">
+      <Section4 :viewIndex="viewIndex" />
+    </vue-lazy-component>
+    <vue-lazy-component class="section" id="section5">
+      <Section5 :viewIndex="viewIndex" />
+    </vue-lazy-component>
+    <vue-lazy-component class="section" id="section6">
+      <Section6 />
+    </vue-lazy-component>
+    <vue-lazy-component class="section" id="section7">
+      <Section7 />
+    </vue-lazy-component>
+    <!-- <vue-lazy-component class="section" id="section10">
         <Section10 :viewIndex="viewIndex" />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section7">
@@ -44,10 +42,9 @@
       <vue-lazy-component class="section" id="section9">
         <Section9 :viewIndex="viewIndex" />
       </vue-lazy-component> -->
-      <!-- <vue-lazy-component class="section" id="contact"> -->
-      <ContactSection />
-      <!-- </vue-lazy-component> -->
-    </div>
+    <!-- <vue-lazy-component class="section" id="contact"> -->
+    <ContactSection />
+    <!-- </vue-lazy-component> -->
     <MobileNav />
   </div>
 </template>
@@ -93,16 +90,16 @@ import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
-import Indigator from '@/components/Indigator.vue'
+// import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/ymsj/Section1.vue'
-import Section2 from '@/projects/ymsj/Section2.vue'
-import Section3 from '@/projects/ymsj/Section3.vue'
-import Section4 from '@/projects/ymsj/Section4.vue'
-import Section5 from '@/projects/ymsj/Section5.vue'
-import Section6 from '@/projects/ymsj/Section6.vue'
-import Section7 from '@/projects/ymsj/Section7.vue'
+import Section1 from '@/projects/icf/Section1.vue'
+import Section2 from '@/projects/icf/Section2.vue'
+import Section3 from '@/projects/icf/Section3.vue'
+import Section4 from '@/projects/icf/Section4.vue'
+import Section5 from '@/projects/icf/Section5.vue'
+import Section6 from '@/projects/icf/Section6.vue'
+import Section7 from '@/projects/icf/Section7.vue'
 // import Section8 from '@/projects/jcs/Section8.vue'
 // import Section9 from '@/projects/jcs/Section9.vue'
 // import Section10 from '@/projects/jcs/Section10.vue'
@@ -135,8 +132,8 @@ export default {
       isSide: false,
       load: false,
       viewIndex: 0,
-      isNavMin: false,
-      isHide: false,
+      isNavMin: true,
+      isHide: true,
       scrollPos: 0,
       // action: {
       //   moveTo: () => {},
@@ -185,47 +182,53 @@ export default {
   methods: {
     init() {},
     onScroll() {
-      const scrollTop =
-        document.documentElement.scrollTop || document.body.scrollTop
+      // const scrollTop =
+      //   document.documentElement.scrollTop || document.body.scrollTop
       // 定义当前点亮的导航下标
       // let navIndex = 0
 
-      if (document.body.getBoundingClientRect().top > this.scrollPos) {
-        this.isHide = false
-      } else {
-        this.isHide = true
-      }
+      // if (document.body.getBoundingClientRect().top > this.scrollPos) {
+      //   this.isHide = false
+      // } else {
+      //   this.isHide = true
+      // }
       // saves the new position for iteration.
       this.scrollPos = document.body.getBoundingClientRect().top
-      if (scrollTop > 200) {
-        this.isNavMin = true
-      } else {
-        this.isNavMin = false
-      }
-      // 获取所有锚点元素
-      // const navContents = document.querySelectorAll('.section')
-      // // 所有锚点元素的 offsetTop
-      // const offsetTopArr = []
-      // navContents.forEach(item => {
-      //   offsetTopArr.push(item.offsetTop)
-      // })
-      // // 获取当前文档流的 scrollTop
-      // const scrollTop =
-      //   document.documentElement.scrollTop || document.body.scrollTop
-      // // 定义当前点亮的导航下标
-      // let navIndex = 0
-      // for (let n = 0; n < offsetTopArr.length; n++) {
-      //   // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
-      //   // 那么此时导航索引就应该是n了
-      //   if (scrollTop >= offsetTopArr[n] - 100) {
-      //     navIndex = n
-      //   }
+      // if (scrollTop > 200) {
+      //   this.isNavMin = true
+      // } else {
+      //   this.isNavMin = false
       // }
-      // // console.log(navIndex + 1)
+      // 获取所有锚点元素
+      const navContents = document.querySelectorAll('.section')
+      // 所有锚点元素的 offsetTop
+      const offsetTopArr = []
+      navContents.forEach(item => {
+        offsetTopArr.push(item.offsetTop)
+      })
+      // 获取当前文档流的 scrollTop
+      const scrollTop =
+        document.documentElement.scrollTop || document.body.scrollTop
+      // 定义当前点亮的导航下标
+      let navIndex = 0
+      for (let n = 0; n < offsetTopArr.length; n++) {
+        // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
+        // 那么此时导航索引就应该是n了
+        if (scrollTop >= offsetTopArr[n] - 100) {
+          navIndex = n
+        }
+      }
+      // console.log(navIndex + 1)
       // if (this.viewIndex !== navIndex + 1) {
       //   this.viewIndex = navIndex + 1
       // }
       // this.viewIndex = navIndex + 1
+      if (navIndex === 0 && !this.isHide) {
+        this.isHide = true
+      }
+      if (navIndex >= 1 && this.isHide) {
+        this.isHide = false
+      }
     },
 
     // onLeave(origin, destination, direction) {
