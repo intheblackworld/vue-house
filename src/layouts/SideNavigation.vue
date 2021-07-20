@@ -2,7 +2,7 @@
   <div :class="`navigation ${min ? 'min' : ''}`">
     <div class="nav relative">
       <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
-      <img class="logo" src="@/assets/img/nav-logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" />
+      <img class="logo" src="@/assets/img/nav-logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" v-if="isPC" />
       <div class="menu" @click="toggleSidebar">
         <div :class="`menu-icon ${isOpen ? 'menu-icon-active' : ''}`"></div>
         <!-- <img v-if="isOpen" src="@/projects/jh/s4/close.png" class="close" alt />
@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { isMobile, isTablet } from '@/utils'
+import { isPC, isMobile, isTablet } from '@/utils'
 import navList from '@/info/navList'
 import info from '@/info'
 
@@ -36,6 +36,7 @@ export default {
   data() {
     return {
       isOpen: false,
+      isPC,
       isMobile,
       isTablet,
       list: navList,
@@ -122,7 +123,7 @@ export default {
   position: relative;
   width: 30px;
   height: 1px;
-  background-color: #686868;
+  background-color: #fff;
 }
 
 .menu-icon::before {
@@ -133,7 +134,7 @@ export default {
   display: block;
   width: 30px;
   height: 1px;
-  background-color: #686868;
+  background-color: #fff;
   transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
 }
 
@@ -145,7 +146,7 @@ export default {
   display: block;
   width: 30px;
   height: 1px;
-  background-color: #686868;
+  background-color: #fff;
   transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
 }
 
@@ -356,7 +357,7 @@ export default {
     &.min {
       height: 70px;
       // background-image: url('~@/projects/jcs/s1/bg.jpg');
-      background-color: rgba(255, 255, 255, 0.7);
+      // background-color: rgba(255, 255, 255, 0.7);
       .logo {
         opacity: 1;
         width: sizem(86);
@@ -390,6 +391,9 @@ export default {
   .menu {
     display: flex;
     position: fixed;
+    width: sizem(40);
+    height: sizem(40);
+    background-color: #717071;
     right: 15px;
     top: 15px;
 
@@ -419,7 +423,7 @@ export default {
     display: block;
     transform: translateX(40%);
     background: center 0 no-repeat;
-    background-color: #fff;
+    background-color: rgba(18, 45, 109, 0.83);
     background-size: cover;
 
     .link {
@@ -435,7 +439,7 @@ export default {
     }
 
     &.open {
-      width: 70%;
+      width: 100%;
       transform: translateX(0%);
       .link {
         display: flex;

@@ -30,11 +30,14 @@
     <vue-lazy-component class="section" id="section7">
       <Section7 />
     </vue-lazy-component>
+    <vue-lazy-component class="section" id="section8">
+      <Section8 />
+    </vue-lazy-component>
     <!-- <vue-lazy-component class="section" id="section10">
         <Section10 :viewIndex="viewIndex" />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section7">
-          <Section7 /> 
+          <Section7 />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section8">
          <Section8 />
@@ -100,7 +103,7 @@ import Section4 from '@/projects/icf/Section4.vue'
 import Section5 from '@/projects/icf/Section5.vue'
 import Section6 from '@/projects/icf/Section6.vue'
 import Section7 from '@/projects/icf/Section7.vue'
-// import Section8 from '@/projects/jcs/Section8.vue'
+import Section8 from '@/projects/icf/Section8.vue'
 // import Section9 from '@/projects/jcs/Section9.vue'
 // import Section10 from '@/projects/jcs/Section10.vue'
 
@@ -121,7 +124,7 @@ export default {
     Section5,
     Section6,
     Section7,
-    // Section8,
+    Section8,
     // Section9,
     // Section10,
   },
@@ -203,7 +206,7 @@ export default {
       const navContents = document.querySelectorAll('.section')
       // 所有锚点元素的 offsetTop
       const offsetTopArr = []
-      navContents.forEach(item => {
+      navContents.forEach((item) => {
         offsetTopArr.push(item.offsetTop)
       })
       // 获取当前文档流的 scrollTop

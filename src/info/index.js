@@ -1,25 +1,25 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '接待會館｜台北市士林區中山北路五段512號1樓',
+  address: '高雄市鼓山區至聖路320號',
   googleSrc:
     'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3613.2572972709113!2d121.5260833!3d25.0931502!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aea4802a1839%3A0xe686305dd1e54a2d!2zMTEx5Y-w5YyX5biC5aOr5p6X5Y2A5Lit5bGx5YyX6Lev5LqU5q61NTEy6Jmf!5e0!3m2!1szh-TW!2stw!4v1621474761676!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/7LUNotAvbRr7vEPR6',
-  phone: '02-28830808',
+  phone: '07-5550077',
   fbLink: 'https://www.facebook.com/%E9%99%BD%E6%98%8E%E5%B1%B1%E8%8E%8A-Pattsiran-Formosa-108764311348067',
   fbMessage: 'https://m.me/108764311348067/',
-  caseName: '陽明山莊',
+  caseName: '京城IFC',
   indigatorLength: 10,
 
   houseInfos: [
-    ['全案規劃', '萬家興建設股份有限公司'],
-    ['規劃顧問', '春秋國際股份有限公司'],
-    ['建築美學', '自然洋行建築團隊-曾志偉建築師'],
-    ['建築設計', '姚嘉志建築師事務所'],
-    ['建築執照', '羅中燡建築師事務所'],
-    ['景觀設計', '太妍規劃設計顧問有限公司-吳書原景觀建築師'],
-    ['交易鑑證', '中國建築經理股份有限公司'],
-    ['不動產經紀人', '(105)新北經字第003227號 姚佳利'],
-    ['企劃執行', '玖壹士廣告・葛里芬廣告'],
+    ['投資興建', '京成建設股份有限公司'],
+    ['建築規劃', '張文明建築師事務所'],
+    ['外觀設計', '張文明建築師事務所'],
+    ['建築結構', '鑫龍土木結構聯合技師事務所'],
+    ['公設規劃', '京城集團規劃部'],
+    ['景觀規劃', '蕥園景觀設計有限公司'],
+    ['燈光設計', '日光設計Art Light Design'],
+    ['工程營造', '百鋐營造股份有限公司'],
+    ['企劃銷售', '上揚國際建築團隊'],
   ],
   
   gtmCode: ['TDJZ5DF'], // 可放置多個

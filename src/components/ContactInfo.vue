@@ -1,6 +1,8 @@
 <template>
   <div>
     <div class="contact-info" id="contact-info" data-aos="fade" data-aos-delay="0">
+      <vue-particles class="particle" color="#fff" :particleOpacity="0.7" :particlesNumber="80" shapeType="circle" :particleSize="4" linesColor="#fff" :linesWidth="1" :lineLinked="true" :lineOpacity="0.4" :linesDistance="150" :moveSpeed="3" :hoverEffect="true" hoverMode="grab" :clickEffect="true" clickMode="push">
+      </vue-particles>
       <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
       <!-- <img
         v-if="isMobile"
@@ -109,15 +111,21 @@ export default {
   justify-content: space-between;
   position: relative;
   z-index: 3;
-  //width: 1200px;
-  width: 100%;
-  height: 510px;
+  // width: 100%;
+  width: 1482px;
+  height: 370px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
   transform: translateY(0);
   margin: 2vw auto 0;
   padding: 30px 0 40px;
+}
+
+.particle {
+  position: absolute;
+  width: 100%;
+  z-index: 0;
 }
 
 .logo {
@@ -198,6 +206,8 @@ export default {
   color: $contact_btn_border;
   font-weight: bold;
   box-shadow: $contact_btn_border;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 .google-btn {
   width: 280px;
@@ -269,7 +279,15 @@ export default {
     }
   }
 
+  .particle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
   .btn {
+    z-index: 1;
     &.half {
       width: 280px;
     }
@@ -290,6 +308,8 @@ export default {
     justify-content: center;
     text-align: center;
     //margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
 
     > * {
       margin-bottom: 12px;
@@ -312,7 +332,7 @@ export default {
   }
 
   .google-btn {
-     border-top-right-radius: 0px;
+    border-top-right-radius: 0px;
     border-top-left-radius: 0px;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
@@ -321,6 +341,7 @@ export default {
     // width: 280px;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
+    border-bottom-left-radius: 0px;
     padding: 0.8em 1em;
     text-align: justify;
     line-height: 1.5;

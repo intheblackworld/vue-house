@@ -13,7 +13,7 @@
     <!-- <div class="video_box" v-if="!isMobile" @click="isDialog = true">
       <div :id="`youtube-player-${id}`" ref="player" class="video-ifame"></div>
     </div> -->
-    
+
     <img src="./s2/player.png" :alt="`${info.caseName}_img`" class="play-btn" @click="isDialog = true">
 
     <div class="isDialog" v-if="isMobile" @click="isDialog = true">
@@ -175,10 +175,15 @@ iframe {
     height: sizem(210);
     min-height: sizem(210);
     max-height: sizem(210);
-    background: #000 url('./s2/video_img.jpg');
+    background: #000 url('./s2/video_bg.jpg');
     background-size: cover;
     // margin-top: sizem(-60);
     z-index: 3;
+  }
+
+  .play-btn {
+    @include img_c_m(38, 87);
+    cursor: pointer;
   }
 
   .style1 {
@@ -328,7 +333,6 @@ export default {
     //     },
     //   })
     // },
-
     // onPlayerStateChange(e) {
     //   if (e.data === window.YT.PlayerState.ENDED) {
     //     this.player.loadVideoById(this.id)

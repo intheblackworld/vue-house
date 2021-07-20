@@ -1,26 +1,28 @@
 <template>
   <div class="section1">
-    <img src="./s1/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img">
-    <div class="linear-dark absolute"></div>
-    <!-- <div class="partical-bg absolute">
-      <vue-particles color="#dedede" :particleOpacity="0.7" :particlesNumber="80" shapeType="circle" :particleSize="4" linesColor="#dedede" :linesWidth="1" :lineLinked="true" :lineOpacity="0.4" :linesDistance="150" :moveSpeed="3" :hoverEffect="true" hoverMode="grab" :clickEffect="true" clickMode="push">
+    <img src="./s1/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="isPC">
+    <img src="./mobile/01/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="isMobile">
+    <div class="linear-dark absolute" data-aos="fade-right" data-aos-delay="0" v-if="isPC"></div>
+    <div class="linear-dark absolute" data-aos="fade-down" data-aos-delay="0" v-if="isMobile"></div>
+    <div class="partical-bg absolute">
+      <vue-particles color="#fff" :particleOpacity="0.7" :particlesNumber="80" shapeType="circle" :particleSize="4" linesColor="#fff" :linesWidth="1" :lineLinked="true" :lineOpacity="0.4" :linesDistance="150" :moveSpeed="3" :hoverEffect="true" hoverMode="grab" :clickEffect="true" clickMode="push">
       </vue-particles>
-    </div> -->
+    </div>
 
     <img src="./s1/logo.png" :alt="`${info.caseName}_img`" class="logo">
-    <div class="title">
+    <div class="title" data-aos="fade-up" data-aos-delay="200">
       企業門面升級首選
     </div>
-    <div class="subtitle">
+    <div class="subtitle" data-aos="fade-up" data-aos-delay="400">
       更具國際發展的 凹子底商業特區
     </div>
-    <div class="desc">
+    <div class="desc" data-aos="fade-up" data-aos-delay="600">
       最好的地段 最好的企業總部
     </div>
-    <div class="label">
+    <div class="label" data-aos="fade-up" data-aos-delay="800">
       農16特區 唯一A商辦
     </div>
-    <div class="btn flex-c">
+    <div class="btn flex-c" data-aos="fade-up" data-aos-delay="1000">
       60 ．140 ．680 坪
     </div>
   </div>
@@ -182,89 +184,95 @@
   }
 
   .logo {
-    @include img_c_m(236, 177);
+    @include img_c_m(184, 126);
   }
 
-  .btn {
-    @include img_c_m(216, 416);
-    cursor: pointer;
+  .linear-dark {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .7), transparent);
   }
 
-  .mask {
-    @include img_c_m(375, 0);
-    top: auto;
-    bottom: sizem(-35);
-  }
+  .partical-bg {
+    @include div_l_m(375, 667, -320, 100);
+    transform: rotate(-65deg);
+    overflow: hidden;
 
+    > div {
+      position: absolute;
+      width: 100%;
+      height: sizem(667);
+    }
+  }
   .title {
-    @include img_c_m(300, 328);
-    font-size: sizem(22);
-    font-weight: bold;
+    @include img_c_m(254, 244);
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
+    font-size: sizem(30);
+    font-weight: 900;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.23;
-    letter-spacing: sizem(1.96);
+    line-height: 2.88;
+    letter-spacing: sizem(1.8);
     text-align: center;
-    color: #cc8b00;
+    color: #ffffff;
     white-space: nowrap;
   }
 
   .subtitle {
-    @include img_c_m(102, 373);
-    font-size: sizem(16);
-    font-weight: 500;
+    @include img_c_m(302, 312);
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
+    font-size: sizem(20);
+    font-weight: 900;
     font-stretch: normal;
     font-style: normal;
-    line-height: 0.94;
+    line-height: 2.4;
     letter-spacing: sizem(1.2);
     text-align: center;
-    color: #686868;
+    color: #ffffff;
     white-space: nowrap;
-
-    &::after {
-      content: '';
-      position: absolute;
-      @include img_l_m(90, 8, -100);
-      border-top: 1px solid #686868;
-    }
-
-    &::before {
-      content: '';
-      position: absolute;
-      @include img_r_m(90, 8, -100);
-      border-top: 1px solid #686868;
-    }
   }
 
-  .cloud-bg {
-    .cloud {
-      animation: cloud 5s ease-in-out alternate infinite;
-    }
+  .desc {
+    @include div_c_m(303, 35, 372);
+    text-shadow: none;
+    font-size: sizem(20);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: sizem(1.2);
+    text-align: center;
+    color: #253a7e;
+    background-color: rgba(255, 255, 255, 0.82);
+  }
 
-    .cloud1 {
-      @include img_l_m(76, 118, -20);
-      transform: translateX(-10%);
-    }
+  .label {
+    @include div_c_m(239, 61, 487);
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+    font-size: sizem(16);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.42;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    background-color: #0097e2;
+  }
 
-    .cloud2 {
-      @include img_r_m(286, 79, -50);
-      transform: translateX(-15%);
-    }
-
-    .cloud3 {
-      @include img_r_m(151, 104, 20);
-      transform: translateX(-8%);
-    }
-
-    .cloud4 {
-      @include img_r_m(209, 499, -40);
-      transform: translateX(20%);
-    }
-
-    .cloud5 {
-      @include img_l_m(322, 561, -50);
-      transform: translateX(-5%);
-    }
+  .btn {
+    @include img_c_m(168, 526);
+    font-size: sizem(18);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.22;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+    background-color: #0097e2;
   }
 }
 </style>

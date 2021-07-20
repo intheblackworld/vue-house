@@ -92,7 +92,7 @@ export default {
 @import '@/assets/style/variableColor.scss';
 
 .mobile-nav {
-  width: 100%;
+  width: 100vw;
   height: 63px;
   background: $mobile_nav_background;
 
