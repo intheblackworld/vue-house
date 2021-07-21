@@ -69,12 +69,12 @@
 
 <script>
 // @ is an alias to /src
-import $ from 'jquery'
-import Navigation from '@/layouts/Navigation.vue'
+// import $ from 'jquery'
+// import Navigation from '@/layouts/Navigation.vue'
 import { isMobile } from '@/utils'
-import SideNavigation from '@/layouts/SideNavigation.vue'
-import ContactSection from '@/layouts/ContactSection.vue'
-import MobileNav from '@/layouts/MobileNav.vue'
+// import SideNavigation from '@/layouts/SideNavigation.vue'
+// import ContactSection from '@/layouts/ContactSection.vue'
+// import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 // import Indigator from '@/components/Indigator.vue'
 
@@ -96,9 +96,9 @@ export default {
     Loading,
     // Indigator,
     // Navigation,
-    SideNavigation,
-    ContactSection,
-    MobileNav,
+    // SideNavigation,
+    // ContactSection,
+    // MobileNav,
     Section1,
     // Section2,
     // Section3,
@@ -116,7 +116,7 @@ export default {
     return {
       isMobile,
       isSide: false,
-      load: true,
+      load: false,
       // viewIndex: 0,
       // action: {
       //   moveTo: () => {},
@@ -135,25 +135,25 @@ export default {
     }
   },
   created() {
-    $(document).ready(() => {
-      // Images loaded is zero because we're going to process a new set of images.
-      var imagesLoaded = 0
-      // Total images is still the total number of <img> elements on the page.
-      var totalImages = $('img').length
+    // $(document).ready(() => {
+    //   // Images loaded is zero because we're going to process a new set of images.
+    //   var imagesLoaded = 0
+    //   // Total images is still the total number of <img> elements on the page.
+    //   var totalImages = $('img').length
 
-      const allImagesLoaded = () => {
-        this.load = false
-      }
-      const imageLoaded = () => {
-        imagesLoaded++
-        if (imagesLoaded == totalImages) {
-          allImagesLoaded()
-        }
-      }
-      $('img').each(function (idx, img) {
-        $('<img>').on('load', imageLoaded).attr('src', $(img).attr('src'))
-      })
-    })
+    //   const allImagesLoaded = () => {
+    //     this.load = false
+    //   }
+    //   const imageLoaded = () => {
+    //     imagesLoaded++
+    //     if (imagesLoaded == totalImages) {
+    //       allImagesLoaded()
+    //     }
+    //   }
+    //   $('img').each(function (idx, img) {
+    //     $('<img>').on('load', imageLoaded).attr('src', $(img).attr('src'))
+    //   })
+    // })
     // window.location = "https://ywh.nhc888.com.tw/"
   },
   mounted() {
