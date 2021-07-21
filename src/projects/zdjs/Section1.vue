@@ -23,7 +23,7 @@
   height: 100vh;
   min-height: size(900);
   //max-height: size(1080);
-  background: #2d73ab;
+  background: #fff;
   // background-size: cover;
 }
 
