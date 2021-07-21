@@ -6,10 +6,10 @@
     <img src="./s1/logo_icon.png" :alt="`${info.caseName}_logo`" class="logo" data-aos="fade-up" data-aos-delay="0">
     <img src="./s1/logo_title.png" :alt="`${info.caseName}_title`" class="title" data-aos="fade-up" data-aos-delay="200">
 
-    <a href="#" class="btn1">
+    <a href="https://drive.google.com/file/d/1323vWyJN6iwqFYvTjfPYXoiwHS_92cJS/view?usp=sharing" class="btn1">
       <img src="./s1/btn_1.png" :alt="`${info.caseName}_btn1`" data-aos="fade-up" data-aos-delay="400">
     </a>
-    <a href="#" class="btn2">
+    <a href="https://drive.google.com/drive/folders/1Gyc3BiP1cwhlCj325VsxJgyPPB9tD26i?usp=sharing" class="btn2" target="_blank">
       <img src="./s1/btn_2.png" :alt="`${info.caseName}_btn2`" data-aos="fade-up" data-aos-delay="600">
     </a>
   </div>
@@ -21,15 +21,15 @@
   position: relative;
   // z-index: 5;
   height: 100vh;
-  min-height: size(1080);
+  min-height: size(900);
+  //max-height: size(1080);
   background: #2d73ab;
   // background-size: cover;
 }
 
 .bg-img {
-  width: size(1920);
+  width: 100%;
   height: 100%;
-  min-height: size(900);
   position: absolute;
   top: 0;
   left: 0;
@@ -44,14 +44,18 @@
 
 .logo {
   @include img_c_pc(396, 147);
+  top: calc(50% + 100vw * (107 - 504) / 1920);
 }
 
 .title {
   @include img_c_pc(396, 547);
+  top: calc(50% + 100vw * (487 - 504) / 1920);
 }
 
 .btn1 {
   @include img_l_pc(453, 754, 293);
+  top: calc(50% + 100vw * (754 - 504) / 1920);
+  transform: scale(0.9);
   img {
     width: 100%;
   }
@@ -59,8 +63,15 @@
 
 .btn2 {
   @include img_r_pc(453, 754, 293);
+  top: calc(50% + 100vw * (754 - 504) / 1920);
+  transform: scale(0.9);
+  transition: all 0.3s;
+  transform-origin: 50% 100%;
   img {
     width: 100%;
+  }
+  &:hover {
+    transform: scale(1) translateY(-3%);
   }
 }
 /* 平板尺寸 */
@@ -99,14 +110,17 @@
 
   .logo {
     @include img_c_m(185, 94);
+    top: calc(50% + 100vw * (14 - 302) / 375);
   }
 
   .title {
-    @include img_c_m(185, 283);
+    @include img_c_m(275, 283);
+    top: calc(50% + 100vw * (203 - 302) / 375);
   }
 
   .btn1 {
     @include img_c_m(270, 378);
+    top: calc(50% + 100vw * (448 - 302) / 375);
     img {
       width: 100%;
     }
@@ -114,6 +128,7 @@
 
   .btn2 {
     @include img_c_m(270, 490);
+    top: calc(50% + 100vw * (550 - 302) / 375);
     img {
       width: 100%;
     }
