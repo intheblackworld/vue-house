@@ -96,14 +96,14 @@ import Loading from '@/components/Loading.vue'
 // import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/icf/Section1.vue'
-import Section2 from '@/projects/icf/Section2.vue'
-import Section3 from '@/projects/icf/Section3.vue'
-import Section4 from '@/projects/icf/Section4.vue'
-import Section5 from '@/projects/icf/Section5.vue'
-import Section6 from '@/projects/icf/Section6.vue'
-import Section7 from '@/projects/icf/Section7.vue'
-import Section8 from '@/projects/icf/Section8.vue'
+import Section1 from '@/projects/fll/Section1.vue'
+import Section2 from '@/projects/fll/Section2.vue'
+import Section3 from '@/projects/fll/Section3.vue'
+import Section4 from '@/projects/fll/Section4.vue'
+import Section5 from '@/projects/fll/Section5.vue'
+import Section6 from '@/projects/fll/Section6.vue'
+import Section7 from '@/projects/fll/Section7.vue'
+import Section8 from '@/projects/fll/Section8.vue'
 // import Section9 from '@/projects/jcs/Section9.vue'
 // import Section10 from '@/projects/jcs/Section10.vue'
 
@@ -135,8 +135,8 @@ export default {
       isSide: false,
       load: false,
       viewIndex: 0,
-      isNavMin: true,
-      isHide: true,
+      isNavMin: false,
+      isHide: false,
       scrollPos: 0,
       // action: {
       //   moveTo: () => {},
@@ -226,11 +226,11 @@ export default {
       //   this.viewIndex = navIndex + 1
       // }
       // this.viewIndex = navIndex + 1
-      if (navIndex === 0 && !this.isHide) {
-        this.isHide = true
+      if (navIndex === 0 && this.isNavMin) {
+        this.isNavMin = false
       }
-      if (navIndex >= 1 && this.isHide) {
-        this.isHide = false
+      if (navIndex >= 1 && !this.isNavMin) {
+        this.isNavMin = true
       }
     },
 

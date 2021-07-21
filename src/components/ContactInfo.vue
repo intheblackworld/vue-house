@@ -1,9 +1,8 @@
 <template>
   <div>
     <div class="contact-info" id="contact-info" data-aos="fade" data-aos-delay="0">
-      <vue-particles class="particle" color="#fff" :particleOpacity="0.7" :particlesNumber="80" shapeType="circle" :particleSize="4" linesColor="#fff" :linesWidth="1" :lineLinked="true" :lineOpacity="0.4" :linesDistance="150" :moveSpeed="3" :hoverEffect="true" hoverMode="grab" :clickEffect="true" clickMode="push">
-      </vue-particles>
       <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
+      <img class="mouse" src="./mouse.png" :alt="info.caseName" data-aos="fade-left" data-aos-delay="0" />
       <!-- <img
         v-if="isMobile"
         class="logo"
@@ -112,8 +111,8 @@ export default {
   position: relative;
   z-index: 3;
   // width: 100%;
-  width: 1482px;
-  height: 370px;
+  width: 1114px;
+  height: 506px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
@@ -132,7 +131,14 @@ export default {
   width: $contact_logo_pc_width;
   height: auto;
   // height:;
-  margin: 0 auto 0px;
+  margin: 100px 0 0px 120px;
+}
+
+.mouse {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
 }
 .info {
   width: 880px;
@@ -149,7 +155,7 @@ export default {
   margin-bottom: 20px;
   cursor: pointer;
   text-decoration: none;
-  border-radius: 8px / 8px;
+  border-radius: 28px / 28px;
   color: $contact_btn_color;
   background: $contact_btn_bg;
   box-shadow: $contact_btn_border;
@@ -205,9 +211,9 @@ export default {
   background: #fff;
   color: $contact_btn_border;
   font-weight: bold;
-  box-shadow: $contact_btn_border;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
+  // box-shadow: $contact_btn_border;
+  border-top-left-radius: 28px;
+  border-bottom-left-radius: 28px;
 }
 .google-btn {
   width: 280px;
@@ -216,8 +222,8 @@ export default {
   cursor: pointer;
   text-decoration: none;
   font-weight: 900;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-top-right-radius: 28px;
+  border-bottom-right-radius: 28px;
   color: $contact_google_btn_color;
   background: $contact_google_btn_bg;
   background-position: center !important;

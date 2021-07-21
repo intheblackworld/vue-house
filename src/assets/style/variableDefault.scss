@@ -1,6 +1,6 @@
-@import './function.scss';
+@import "./function.scss";
 /* navigation */
-$nav_pc_height: 141px;
+$nav_pc_height: size(100);
 $nav_tablet_height: 60px;
 $nav_phone_height: 0px;
 $logo_pc_width: calc(100vw * 100 / 1920);
@@ -8,9 +8,9 @@ $logo_tablet_width: calc(100vw * 150 / 1920);
 $logo_phone_width: 50px;
 
 /* contactInfo */
-$contact_logo_pc_width:calc(100vw * 278 / 1920);
-$contact_logo_tablet_width: 200px;
-$contact_logo_mobile_width: 180px;
+$contact_logo_pc_width: 700px;
+$contact_logo_tablet_width: size(500);
+$contact_logo_mobile_width: sizem(180);
 
 // for calculate
 $nav_pc_height_number: 60;

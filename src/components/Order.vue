@@ -1,7 +1,7 @@
 <template>
   <div class="order-bg">
-    <!-- <img src="@/projects/fs/order/bg.png" alt="" class="bg-img"> -->
-    <!-- <img src="@/projects/fs/order/bg1.png" alt="" class="bg-img no-mix"> -->
+    <img src="@/projects/fll/form/style_1.png" alt="" class="style1">
+    <img src="@/projects/fll/form/style_2.png" alt="" class="style2">
     <!-- <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile"> -->
     <div class="order-top">
       <!-- <div class="title-block">
@@ -331,6 +331,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/style/variableColor.scss';
+@import '@/assets/style/function.scss';
 .bg-img {
   width: 100vw;
   position: absolute;
@@ -346,9 +347,28 @@ export default {
     height: 100%;
   }
 }
+
+.style1 {
+  @include img_r_pc(482, -250, 0);
+  opacity: .5;
+  animation: bling 1.2s 0.5s ease-in-out infinite alternate;
+}
+
+.style2 {
+  @include img_l_pc(593, 702, 0);
+  opacity: .5;
+  animation: bling 1s 0.3s ease-in-out infinite alternate;
+}
+
+@keyframes bling {
+  to {
+    opacity: 1;
+  }
+}
 .order-bg {
-  // background-color: $order_bg_color;
- background-image: $order_bg_image;
+  background-color: $order_bg_color;
+  position: relative;
+//  background-image: $order_bg_image;
   background-repeat: no-repeat;
   padding-top: 130px;
   background-size: 100vw 100%;

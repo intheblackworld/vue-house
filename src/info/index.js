@@ -1,6 +1,6 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '高雄市鼓山區至聖路320號',
+  address: '新竹縣湖口鄉文化路112號旁',
   googleSrc:
     'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3613.2572972709113!2d121.5260833!3d25.0931502!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aea4802a1839%3A0xe686305dd1e54a2d!2zMTEx5Y-w5YyX5biC5aOr5p6X5Y2A5Lit5bGx5YyX6Lev5LqU5q61NTEy6Jmf!5e0!3m2!1szh-TW!2stw!4v1621474761676!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/7LUNotAvbRr7vEPR6',
@@ -28,6 +28,6 @@ export default {
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
   order: {
     title: isMobile ? '預約賞屋' : '預約賞屋',
-    subTitle: ''
+    subTitle: '若想了解建案資訊，歡迎填寫表單或來電洽詢，將由專人為您服務，謝謝！'
   }
 }

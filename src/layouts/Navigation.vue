@@ -1,32 +1,30 @@
 <template>
   <div :class="`navigation ${min ? 'min' : ''} ${hide ? 'hide' : ''}`">
     <div class="layout-container-fluid nav-container">
-      <div class="layout-container nav-container">
-        <div class="nav">
-          <img class="logo" src="@/assets/img/nav-logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" />
-          <!-- <div
+      <div class="nav">
+        <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" /> -->
+        <!-- <div
             class="menu"
             @click="toggleSidebar"
             v-show="!isOpen"
           >
             <font-awesome-icon icon="bars" />
           </div> -->
-          <div :class="`mask ${isOpen ? 'open' : ''}`">
-            <div class="close" @click="isOpen = false">
-              <img src="../assets/img/close.png" alt="">
-            </div>
+        <div :class="`mask ${isOpen ? 'open' : ''}`">
+          <div class="close" @click="isOpen = false">
+            <img src="../assets/img/close.png" alt="">
           </div>
-          <ul :class="`navlist ${isOpen ? 'open': ''}`">
-            <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset:  isMobile ? (item.mobileOffset ? item.mobileOffset : offset) : (item.offset ? item.offset : offset)}" v-for="item in list" class="flex-c" @click="toggleSidebar">
-              <span class="link">
-                <span>
-                  <p class="title" v-html="item.name"></p>
-                  <span class="subTitle">{{item.subTitle}}</span>
-                </span>
-              </span>
-            </li>
-          </ul>
         </div>
+        <ul :class="`navlist ${isOpen ? 'open': ''}`">
+          <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset:  isMobile ? (item.mobileOffset ? item.mobileOffset : offset) : (item.offset ? item.offset : offset)}" v-for="item in list" class="flex-c" @click="toggleSidebar">
+            <span class="link">
+              <span>
+                <p class="title" v-html="item.name"></p>
+                <span class="subTitle">{{item.subTitle}}</span>
+              </span>
+            </span>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -122,12 +120,21 @@ export default {
     transition: all 0.3s;
   }
   &.min {
-    height: 70px;
+    height: size(100);
     // background-image: url('~@/projects/jcs/s1/bg.jpg');
-    // background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(35, 24, 21, 0.65);
     .logo {
       opacity: 1;
       width: size(128);
+    }
+
+    .link {
+      color: #fff;
+      border-right: 2px solid #fff;
+
+      &:hover {
+        color: #ffff21;
+      }
     }
   }
 
@@ -148,7 +155,7 @@ export default {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   position: relative;
   a {
     display: block;
@@ -180,11 +187,11 @@ export default {
   padding-left: 30px;
   li {
     height: 100%;
-    // &:nth-child(1) {
-    //   .link {
-    //     border-left: 1px solid $nav_link_hover_bg;
-    //   }
-    // }
+    &:nth-child(1) {
+      .link {
+        // border-left: 2px solid $nav_link_hover_bg;
+      }
+    }
   }
 
   .link {
@@ -201,8 +208,8 @@ export default {
     justify-content: center;
     position: relative;
     overflow: hidden;
-    // border-right: 1px solid $nav_link_hover_bg;
-    width: 5.7em;
+    border-right: 2px solid $nav_link_hover_bg;
+    width: size(193);
 
     &:hover {
       color: $nav_link_hover_color;
@@ -252,7 +259,7 @@ export default {
     }
 
     .title {
-      font-size: size(20);
+      font-size: size(30);
       position: relative;
       z-index: 3;
       /* > span {
