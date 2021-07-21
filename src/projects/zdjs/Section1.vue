@@ -73,25 +73,28 @@
     background-size: cover;
     margin: 0;
     height: 100vh;
+    min-height: sizem(670);
+    background-image: url('./s1/m_bg.jpg');
     position: relative;
     z-index: 2;
     // overflow: hidden;
   }
 
   .bg-img {
-    width: sizem(375);
-    height: 100vh;
-    min-height: sizem(667);
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    object-fit: cover;
-    margin-top: 0;
+    display: none;
+    // width: 100vw;
+    // height: 100vh;
+    // min-height: sizem(670);
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // display: block;
+    // object-fit: cover;
+    // margin-top: 0;
 
-    &:nth-child(1) {
-      position: relative;
-    }
+    // &:nth-child(1) {
+    //   position: relative;
+    // }
   }
 
   .logo {
