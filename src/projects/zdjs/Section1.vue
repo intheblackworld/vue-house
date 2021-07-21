@@ -81,13 +81,13 @@
 @media screen and (max-width: 767px) {
   .bg {
     width: 100vw;
-    background-size: cover;
     margin: 0;
     height: 100vh;
     min-height: sizem(670);
     background-image: url('./s1/m_bg.jpg');
     position: relative;
     z-index: 2;
+    background-size: cover;
     // overflow: hidden;
   }
 
