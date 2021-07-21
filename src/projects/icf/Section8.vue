@@ -390,12 +390,13 @@
   }
 
   .title {
-    @include img_r_m(360, 10, 182);
+    @include img_r_m(360, 7, 182);
     font-size: sizem(14);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.79;
+    line-height: sizem(35);
+    height: sizem(35);
     letter-spacing: sizem(0.62);
     text-align: right;
     color: #000000;
@@ -403,12 +404,13 @@
   }
 
   .subtitle {
-    @include img_l_m(575, 10, 207);
+    @include img_l_m(575, 7, 207);
     font-size: sizem(20);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.9;
+    line-height: sizem(35);
+    height: sizem(35);
     letter-spacing: sizem(0.88);
     text-align: left;
     color: #000000;

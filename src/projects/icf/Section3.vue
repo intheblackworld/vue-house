@@ -126,7 +126,7 @@
 
   .content {
     width: 100%;
-    height: sizem(320);
+    height: sizem(334);
     position: relative;
   }
   .img {
