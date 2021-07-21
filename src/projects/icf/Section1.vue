@@ -173,9 +173,9 @@
 @media screen and (max-width: 767px) {
   .section1 {
     width: 100vw;
-    min-height: sizem(667);
-    max-height: sizem(667);
-    height: sizem(667);
+    min-height: sizem(670);
+    max-height: sizem(670);
+    height: sizem(670);
     // margin: 0 0 -12vw 0;
     // background-size: auto size-m(750);
     z-index: initial;
