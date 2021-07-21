@@ -2,7 +2,7 @@
   <div>
     <div class="section4 flex wrap">
       <div class="content">
-        <img src="./s4/style.jpg" :alt="`${info.caseName}_img`" class="img" data-aos="fade" data-aos-delay="0">
+        <img src="./s4/style.jpg" :alt="`${info.caseName}_img`" class="img ball" data-aos="fade" data-aos-delay="200">
         <h1 class="title" data-aos="flip-up" data-aos-delay="200">
           每個城市都有一座<br />國際企業總部帝標
         </h1>
@@ -112,7 +112,7 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100%;
-    height: sizem(668);
+    height: sizem(348 * 2);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -124,13 +124,20 @@
 
   .content {
     width: 100%;
-    height: sizem(320);
+    height: sizem(348);
     position: relative;
   }
   .img {
     width: 100%;
     height: sizem(348);
     object-fit: cover;
+
+    &.ball {
+      height: sizem(108);
+      position: absolute;
+      bottom: sizem(0);
+      left: 0;
+    }
   }
 
   .title {

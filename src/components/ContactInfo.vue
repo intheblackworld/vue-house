@@ -120,11 +120,13 @@ export default {
   transform: translateY(0);
   margin: 2vw auto 0;
   padding: 30px 0 40px;
+  overflow: hidden;
 }
 
 .particle {
   position: absolute;
   width: 100%;
+  height: 100%;
   z-index: 0;
 }
 
@@ -208,6 +210,8 @@ export default {
   box-shadow: $contact_btn_border;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
+  position: relative;
+  z-index: 1;
 }
 .google-btn {
   width: 280px;
@@ -222,6 +226,8 @@ export default {
   background: $contact_google_btn_bg;
   background-position: center !important;
   border: $contact_btn_border;
+  position: relative;
+  z-index: 1;
   transition: all 0.5s;
 
   svg {
@@ -282,7 +288,8 @@ export default {
   .particle {
     position: absolute;
     width: 100%;
-    height: 100%;
+    left: 0;
+    height: sizem(470);
     z-index: 0;
   }
 

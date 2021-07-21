@@ -1,26 +1,24 @@
 <template>
-  <div>
-    <div class="section3 flex wrap">
-      <div class="content">
-        <img src="./s3/style.jpg" :alt="`${info.caseName}_img`" class="img" data-aos="fade" data-aos-delay="0">
-        <h1 class="title" data-aos="flip-up" data-aos-delay="200" v-if="isPC">
-          台灣科技佈局高雄 串連南北商業脈絡
-        </h1>
-        <h1 class="title" data-aos="flip-up" data-aos-delay="200" v-if="isMobile">
-          台灣科技佈局高雄<br />串連南北商業脈絡
-        </h1>
-        <div class="subtitle" data-aos="flip-up" data-aos-delay="400">
-          5G金流半導體產業新聚落 升級在高雄!
-        </div>
-        <h1 class="desc" data-aos="fade-up" data-aos-delay="600">
-          受惠台積電擴廠與台商回流帶動了一波資金狂潮，而其龐大的企業主南移，<br />
-          更帶動頂級商辦自用的需求，而高雄凹子底公園鄰近左營高鐵、楠梓科技產業園區及橋科園區，形成科技、電子與生技產業匯聚之地，吸引許多上市櫃企業主喜愛在此地段置產。<br /><br />
-          【京城IFC】規劃高雄少見稀有頂級辦公空間，從外觀、公設與電子硬體，軟體系統全面整合，尤以坪數格局利於企業彈性規劃，發揮最大效能，以決勝速度提升企業競爭力。
-        </h1>
+  <div class="section3 flex wrap">
+    <div class="content">
+      <img src="./s3/style.jpg" :alt="`${info.caseName}_img`" class="img ball" data-aos="fade" data-aos-delay="200">
+      <h1 class="title" data-aos="flip-up" data-aos-delay="200" v-if="isPC">
+        台灣科技佈局高雄 串連南北商業脈絡
+      </h1>
+      <h1 class="title" data-aos="flip-up" data-aos-delay="200" v-if="isMobile">
+        台灣科技佈局高雄<br />串連南北商業脈絡
+      </h1>
+      <div class="subtitle" data-aos="flip-up" data-aos-delay="400">
+        5G金流半導體產業新聚落 升級在高雄!
       </div>
-      <div class="content">
-        <img src="./s3/img.jpg" :alt="`${info.caseName}_img`" class="img">
-      </div>
+      <h1 class="desc" data-aos="fade-up" data-aos-delay="600">
+        受惠台積電擴廠與台商回流帶動了一波資金狂潮，而其龐大的企業主南移，<br />
+        更帶動頂級商辦自用的需求，而高雄凹子底公園鄰近左營高鐵、楠梓科技產業園區及橋科園區，形成科技、電子與生技產業匯聚之地，吸引許多上市櫃企業主喜愛在此地段置產。<br /><br />
+        【京城IFC】規劃高雄少見稀有頂級辦公空間，從外觀、公設與電子硬體，軟體系統全面整合，尤以坪數格局利於企業彈性規劃，發揮最大效能，以決勝速度提升企業競爭力。
+      </h1>
+    </div>
+    <div class="content">
+      <img src="./s3/img.jpg" :alt="`${info.caseName}_img`" class="img">
     </div>
   </div>
 </template>
@@ -45,11 +43,21 @@
   width: 50%;
   height: 100%;
   position: relative;
+  background-color: #f2f2f2;
 }
+
 .img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+
+  &.ball {
+    width: 70%;
+    height: 70%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
 
 .title {

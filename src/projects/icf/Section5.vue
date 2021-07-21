@@ -1,7 +1,7 @@
 <template>
   <div class="section5 flex wrap">
     <div class="content">
-      <img src="./s5/style.jpg" :alt="`${info.caseName}_img`" class="img" data-aos="fade" data-aos-delay="0">
+      <img src="./s5/style.jpg" :alt="`${info.caseName}_img`" class="img ball" data-aos="fade" data-aos-delay="200">
       <h1 class="title" data-aos="flip-up" data-aos-delay="200">
         定錨農十六高雄核心<br />建設商機爭先啟動
       </h1>
@@ -46,11 +46,20 @@
   width: 50%;
   height: 100%;
   position: relative;
+  background-color: #f2f2f2;
 }
 .img {
   width: 100%;
-  height: 100%;
+  height: 95%;
   object-fit: cover;
+
+  &.ball {
+    width: 75%;
+    height: 75%;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
 
 .title {

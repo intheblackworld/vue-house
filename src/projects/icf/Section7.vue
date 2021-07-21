@@ -306,6 +306,10 @@
       animation: btn 0.5s ease-in-out infinite alternate;
     }
   }
+
+  .next-btn {
+    width: 3em;
+  }
   .prev-btn {
     transform: scaleX(-1);
   }
@@ -561,6 +565,7 @@
     left: 0%;
     .prev-btn,
     .next-btn {
+      width: 2em;
       font-size: sizem(15);
       background-color: rgba(0, 0, 0, 0.34);
       &::before {

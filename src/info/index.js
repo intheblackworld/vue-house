@@ -2,11 +2,11 @@ import { isMobile } from '../utils/index'
 export default {
   address: '高雄市鼓山區至聖路320號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3613.2572972709113!2d121.5260833!3d25.0931502!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aea4802a1839%3A0xe686305dd1e54a2d!2zMTEx5Y-w5YyX5biC5aOr5p6X5Y2A5Lit5bGx5YyX6Lev5LqU5q61NTEy6Jmf!5e0!3m2!1szh-TW!2stw!4v1621474761676!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/7LUNotAvbRr7vEPR6',
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7363.967493584655!2d120.3026645!3d22.6543946!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xda79e4871eca0e63!2z5Lqs5Z-OSUZD5o6l5b6F5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1626847811438!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/tq7tpdZH2jiHTb5q7',
   phone: '07-5550077',
-  fbLink: 'https://www.facebook.com/%E9%99%BD%E6%98%8E%E5%B1%B1%E8%8E%8A-Pattsiran-Formosa-108764311348067',
-  fbMessage: 'https://m.me/108764311348067/',
+  fbLink: 'https://www.facebook.com/%E4%BA%AC%E5%9F%8EIFC-102863098673350',
+  fbMessage: 'https://m.me/102863098673350/',
   caseName: '京城IFC',
   indigatorLength: 10,
 

@@ -60,7 +60,8 @@
 
 .bg-img {
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  // min-height: size(1080);
   position: absolute;
   top: 0;
   left: 0;
@@ -172,9 +173,9 @@
 @media screen and (max-width: 767px) {
   .section1 {
     width: 100vw;
-    min-height: sizem(666);
+    min-height: calc(100vh - 63px);
     max-height: sizem(750);
-    height: sizem(666);
+    height: calc(100vh - 63px);
     // margin: 0 0 -12vw 0;
     // background-size: auto size-m(750);
     z-index: initial;
