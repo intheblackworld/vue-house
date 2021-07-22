@@ -20,7 +20,7 @@
       最好的地段 最好的企業總部
     </div>
     <div class="label" data-aos="fade-up" data-aos-delay="800">
-      農16特區 唯一A商辦
+      農16特區 唯一A級商辦
     </div>
     <div class="btn flex-c" data-aos="fade-up" data-aos-delay="1000">
       60 ．140 ．680 坪
