@@ -6,7 +6,7 @@
     <!-- <div class="animate-slide" v-if="isMobile">
       <img src="./mo/s2/漂浮物件_分層/m_2_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
     </div> -->
-    <img src="./s2/2_bg.png" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC">
+    <img src="./s2/2_bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC">
     <!-- <h1 class="title">
       桃園新都心
     </h1> -->
@@ -42,6 +42,7 @@
   // overflow: hidden;
   background-color: #fff;
   position: relative;
+  z-index: 2;
 }
 
 .bg-img {
@@ -53,6 +54,7 @@
   top: 0;
   left: 0;
   display: block;
+  clip-path: polygon(0 0,100% 0,100% 100%,0 97%);
   // object-fit: cover;
   // margin-top: 0;
 }

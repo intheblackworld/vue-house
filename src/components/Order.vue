@@ -257,8 +257,8 @@ export default {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    // position: relative;
-    z-index: 3;
+    position: relative;
+    z-index: 5;
   }
 
   .form {
@@ -334,7 +334,7 @@ export default {
   width: 100%;
   height: 100%;
   position: absolute;
-  // z-index: 3;
+  z-index: 3;
   top: 0;
   left: 0;
   transition: all 0.5s;
@@ -397,7 +397,7 @@ export default {
       width: 100vw;
       height: 30px;
       position: relative;
-      z-index: 2;
+      z-index: 5;
       white-space: nowrap;
       text-align: center;
       // display: none;
@@ -415,7 +415,7 @@ export default {
       margin: 0 auto;
       padding: 0;
       // position: relative;
-      z-index: 2;
+      z-index: 5;
     }
 
     .form {
