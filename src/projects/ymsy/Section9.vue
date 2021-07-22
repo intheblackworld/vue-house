@@ -2,7 +2,7 @@
   <div class="section9">
     <img src="./s9/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="isPC">
     <div class="content">
-      <div class="label" data-aos="fade-in" data-aos-delay="400">
+      <div class="label">
         興益發業績實景 詠大直
       </div>
       <div class="title" data-aos="fade-in" data-aos-delay="0">
@@ -14,7 +14,9 @@
         讓愛家的人更愛回家
       </div>
     </div>
-    <Map :bgSrc="bgSrc" v-if="isMobile" :hand="hand">
+
+    <div class="new-text">銷售企劃：興益發建設自建自售</div>
+      <Map :bgSrc="bgSrc" v-if="isMobile" :hand="hand">
     </Map>
 
     <!-- <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="800">
@@ -71,8 +73,7 @@
 }
 
 .label {
-  @include img_l_pc(277, 0, 73);
-  top: auto;
+  @include img_l_pc(277, 30, 73);
   bottom: size(57);
   font-size: size(27.1);
   font-weight: 500;
@@ -83,10 +84,11 @@
   text-align: left;
   color: #ffffff;
   white-space: nowrap;
+  text-shadow: 0 0.3em 1em #000;
 }
 
 .title {
-  @include img_l_pc(417, 205, 89);
+  @include img_l_pc(417, 825, 89);
   font-size: size(83.4);
   font-weight: 900;
   font-stretch: normal;
@@ -96,10 +98,11 @@
   text-align: left;
   color: #ffffff;
   white-space: nowrap;
+  text-shadow: 0 0.3em 1em #000;
 }
 
 .desc {
-  @include img_l_pc(466, 198, 574);
+  @include img_l_pc(466, 798, 574);
   font-size: size(28.1);
   font-weight: bold;
   font-stretch: normal;
@@ -109,6 +112,23 @@
   text-align: left;
   color: #ffffff;
   white-space: nowrap;
+  text-shadow: 0 0.3em 1em #000;
+  
+}
+
+.new-text {
+  @include img_r_pc(500, 1010, 30);
+  top:calc(40% + ( 1010 - 1080 * 0.4) * 100vw / 1920);
+  font-size: size(25);
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: right;
+  color: #ffffff;
+  z-index: 3;
+  white-space: nowrap;
+  text-shadow: 0em 0em 0.3em #000;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -138,23 +158,37 @@
     overflow: visible;
   }
   .label {
-    @include img_l_pc(277, 0, 73);
-    top: auto;
+    @include img_r_pc(650, 100, 50);
     bottom: size(57);
-    font-size: size(27.1);
+    font-size: size(40);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.2;
     letter-spacing: normal;
-    text-align: left;
+    text-align: right;
     color: #ffffff;
     white-space: nowrap;
     z-index: 10;
   }
 
+  .new-text {
+  @include img_c_pc(1100, 1010);
+  top:calc(50% + ( 600 - 667 * 0.5) * 100vw / 375);
+  font-size: size(80);
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  z-index: 3;
+  white-space: nowrap;
+  text-shadow: 0em 0em 0.3em #000;
+}
+
   .title {
-    @include img_c_m(183, 61);
+    @include img_c_m(183, 420);
     font-size: sizem(36.5);
     font-weight: bold;
     font-stretch: normal;
@@ -168,7 +202,7 @@
   }
 
   .desc {
-    @include img_c_m(232, 137);
+    @include img_c_m(232, 480);
     font-size: sizem(14);
     font-weight: 500;
     font-stretch: normal;
@@ -180,6 +214,8 @@
     white-space: nowrap;
     z-index: 10;
   }
+
+  
 }
 </style>
 <script>

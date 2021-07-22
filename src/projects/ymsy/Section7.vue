@@ -6,12 +6,13 @@
 
     <div class="content">
       <div class="title" data-aos="fade-up" data-aos-delay="0">
-        回家吧！<br />
+        回家！<br />
         擁抱一座森林花園
       </div>
       <div class="desc" data-aos="fade-up" data-aos-delay="200">
         陽明森悦植樹造林、開拓社區道路，依循人文水文的自然性底，社區綠覆超過法定標準，超過300株常綠喬灌木，2棵百年樟樹、63棵櫻花盛開環抱，山茶花、梔緬、楓香綻滿四季。
       </div>
+      <div class="new-text">銷售企劃：興益發建設自建自售</div>
     </div>
     <div class="img-list" v-if="isPC">
       <img src="./s7/img_1.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-in" data-aos-delay="300">
@@ -71,6 +72,20 @@
   // &:nth-child(1) {
   //   position: relative;
   // }
+}
+
+.new-text {
+  @include img_r_pc(500, 1010, 30);
+  top:calc(40% + ( 1010 - 1080 * 0.4) * 100vw / 1920);
+  font-size: size(25);
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: right;
+  color: #000;
+  z-index: 3;
+  white-space: nowrap;
 }
 
 .title {
@@ -368,6 +383,21 @@
     opacity: 0;
     z-index: 3;
   }
+
+   .new-text {
+  @include img_c_pc(1100, 1010);
+  top:calc(50% + ( 670 - 667 * 0.5) * 100vw / 375);
+  font-size: size(80);
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  z-index: 3;
+  white-space: nowrap;
+  text-shadow: 0em 0em 0.3em #000;
+}
 
   @keyframes flash {
     to {

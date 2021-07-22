@@ -1,7 +1,8 @@
 <template>
   <div class="section2">
-    <div class="title" data-aos="fade-up" data-aos-delay="0" v-if="isPC">捷運紅線 最美好的期待</div>
-    <div class="title" data-aos="fade-up" data-aos-delay="0" v-if="isMobile">捷運紅線<br />最美好的期待</div>
+    <div class="title" data-aos="fade-up" data-aos-delay="0" v-if="isPC">北投陽明生活圈 住得優越過得精采</div>
+    <div class="title" data-aos="fade-up" data-aos-delay="0" v-if="isMobile">北投陽明生活圈 <br />住得優越過得精采</div>
+    <div class="new-text">銷售企劃：興益發建設自建自售</div>
     <img src="./s2/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="isPC">
     <img src="./s2/flash.png" :alt="`${info.caseName}_img`" class="flash">
     <Map :bgSrc="bgSrc" v-if="isMobile" :hand="hand">
@@ -46,7 +47,7 @@
 }
 
 .title {
-  @include img_c_pc(854, 80);
+  @include img_c_pc(1300, 80);
   top:calc(40% + ( 80 - 1080 * 0.4) * 100vw / 1920);
   font-size: size(75);
   font-weight: bold;
@@ -58,6 +59,21 @@
   color: #ffffff;
   z-index: 3;
   white-space: nowrap;
+}
+
+.new-text {
+  @include img_r_pc(500, 1010, 30);
+  top:calc(40% + ( 1010 - 1080 * 0.4) * 100vw / 1920);
+  font-size: size(25);
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: right;
+  color: #ffffff;
+  z-index: 3;
+  white-space: nowrap;
+  text-shadow: 0em 0em 0.3em #000;
 }
 
 
@@ -85,6 +101,8 @@
     background-attachment: scroll;
     overflow: visible;
   }
+
+
   .bg-img {
     top: auto;
     height: auto;
@@ -92,7 +110,22 @@
     width: 108%;
     left: -4%;
     bottom: 0;
-  }
+  
+  
+  .new-text {
+  @include img_c_pc(1100, 1010);
+  top:calc(50% + ( 600 - 667 * 0.5) * 100vw / 375);
+  font-size: size(80);
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  z-index: 3;
+  white-space: nowrap;
+  text-shadow: 0em 0em 0.3em #000;
+}}
 
   .flash {
     @include img_l_m(1041, 709, -232);
@@ -101,12 +134,12 @@
   }
 
   .title {
-    @include img_c_m(250, 42);
-    font-size: sizem(41.7);
+    @include img_c_m(350, 30);
+    font-size: sizem(35);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
+    line-height: 1.3;
     letter-spacing: normal;
     text-align: center;
     color: #ffffff;

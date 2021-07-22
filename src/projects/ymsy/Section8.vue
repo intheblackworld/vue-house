@@ -6,9 +6,12 @@
         ｜匠心團隊｜
       </div>
       <div class="title" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-        興益發Ｘ李天鐸Ｘ梁正芳
+        興益發 <span>●</span> 李天鐸 <span>●</span> 梁正芳
       </div>
+      
     </div>
+    <div class="new-text01" v-if="isMobile">銷售企劃：興益發建設自建自售</div>
+    <div class="new-text02" v-if="isMobile">銷售企劃：興益發建設自建自售</div>
     <div class="team-list" v-if="isPC">
       <div class="team" v-for="slide in slideList" :key="slide.desc">
         <img :src="slide.img" :alt="`${info.caseName}_img`" class="team-img" data-aos="fade-up" data-aos-delay="300">
@@ -70,6 +73,20 @@
   // overflow: hidden;
 }
 
+.new-text {
+  @include img_r_pc(500, 1010, 30);
+  top:calc(40% + ( 1010 - 1080 * 0.4) * 100vw / 1920);
+  font-size: size(25);
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: right;
+  color: #000;
+  z-index: 3;
+  white-space: nowrap;
+}
+
 .bg-img {
   width: 100%;
   height: 100%;
@@ -111,6 +128,11 @@
   color: #006b31;
   white-space: nowrap;
 }
+.title span{
+  font-size: size(30);
+  position: relative;
+  bottom: 13px;
+}
 
 .team-list {
   @include img_c_pc(705 * 2 + 244, 301);
@@ -129,8 +151,8 @@
       font-style: normal;
       line-height: 1.69;
       letter-spacing: normal;
-      text-align: center;
-      color: #4b5a52;
+      text-align: left;
+      color: #006837;
       margin-top: size(20);
     }
 
@@ -141,7 +163,7 @@
       font-style: normal;
       line-height: 1.5;
       letter-spacing: normal;
-      text-align: center;
+      text-align: left;
       color: #000000;
       margin-top: size(10);
     }
@@ -389,6 +411,43 @@
     height: sizem(750);
   }
 
+   .team-item span{
+    font-size: size(20);
+    position: relative;
+    bottom: 13px;
+  }
+
+  .new-text01{
+  @include img_c_pc(1100, 1010);
+  top:calc(50% + (300 - 667 * 0.5) * 100vw / 375);
+  font-size: size(80);
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  z-index: 3;
+  white-space: nowrap;
+  text-shadow: 0em 0em 0.3em #000;
+}
+
+ .new-text02{
+  @include img_c_pc(1100, 1010);
+  top:calc(50% + ( 1050 - 667 * 0.5) * 100vw / 375);
+  font-size: size(80);
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  z-index: 3;
+  white-space: nowrap;
+  text-shadow: 0em 0em 0.3em #000;
+}
+
+
   .team-label {
     @include img_c_m(98, 33);
     font-size: sizem(14);
@@ -478,8 +537,10 @@ export default {
           img: isMobile
             ? require('./mobile/08/team_1.jpg')
             : require('./s8/team_1.png'),
-          name: '興益發Ｘ李天鐸',
-          title: '李天鐸，引領台灣建築新風潮',
+          name: '興益發．李天鐸',
+          title: isMobile
+            ? '豪宅建築教父'
+            : '豪宅建築教父 李天鐸',
           desc: '大師親炙城市森活新價值，最適合的建築，要將人帶進自然。<br />「若是住進沒有綠意、不開闊的空間中，這棟建築是沒有表情的，更無需談論到生活了。」李天鐸的堅持，在陽明森悅實現了。',
           // desc: '270度翠綠簇擁<br />開窗就享無垠綠景',
         },
@@ -487,8 +548,10 @@ export default {
           img: isMobile
             ? require('./mobile/08/team_2.jpg')
             : require('./s8/team_2.png'),
-          name: '興益發Ｘ梁正芳',
-          title: '梁正芳，訂製住的藝術 創造完美的家',
+          name: '興益發．梁正芳',
+          title: isMobile
+            ? '台灣十大建築師'
+            : '台灣十大建築師　梁正芳',
           desc: '每一座建築，因地段、基地與居住者不同，必然擁有獨特的思考與實踐，就像「陽明森悅」，從空間格局到機能，由裡而外悠揚北市森活美學，引領都會世代的夢想，是話題，更是傳奇。',
           // name: '稀有角地',
           // desc: '大福路大興路環抱<br />地段價值更珍貴',

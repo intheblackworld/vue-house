@@ -34,6 +34,7 @@
         <div class="next-btn" @click="addIndex"></div>
       </div>
     </div>
+    <div class="new-text">銷售企劃：興益發建設自建自售</div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -80,6 +81,20 @@
   letter-spacing: normal;
   text-align: left;
   color: #006b31;
+  white-space: nowrap;
+}
+
+.new-text {
+  @include img_r_pc(500, 1010, 30);
+  top:calc(40% + ( 1010 - 1080 * 0.4) * 100vw / 1920);
+  font-size: size(25);
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: right;
+  color: #000;
+  z-index: 3;
   white-space: nowrap;
 }
 
@@ -183,7 +198,7 @@
 
   .slide-name {
     right: 2em;
-    bottom: 1.2em;
+    top: 1.2em;
     color: #fff;
     font-size: size(18);
     font-weight: bold;
@@ -351,6 +366,21 @@
     // background-position: 0 0;
     // background-attachment: fixed;
   }
+
+  .new-text {
+  @include img_c_pc(1100, 1010);
+  top:calc(50% + ( 670 - 667 * 0.5) * 100vw / 375);
+  font-size: size(80);
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  z-index: 3;
+  white-space: nowrap;
+  text-shadow: 0em 0em 0.3em #000;
+}
 
   .flash {
     @include img_l_m(1041, 709, -232);

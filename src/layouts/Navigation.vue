@@ -1,8 +1,11 @@
 <template>
   <div :class="`navigation ${min ? 'min' : ''}`">
+    
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
+         
         <div class="nav">
+          
           <img
             class="logo"
             src="@/assets/img/nav-logo.png"

@@ -10,6 +10,10 @@
       台北市難得近三千坪的夢想藍圖，<br />後收陽明山系豪景，前攏關渡平原胸襟，<br />大地的畫布，任您恣意揮灑。<br /><br />
       且讓稻香、花香交響名為生活的樂章。
     </div>
+    <div class="subtitle-text" v-if="isMobile">
+      現場實景
+    </div>
+    <div class="new-text">銷售企劃：興益發建設自建自售</div>
     <img src="./s3/bg.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isPC">
     <img src="./mobile/03/bg.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isMobile">
     <img src="./s3/bird.png" :alt="`${info.caseName}_img`" class="bird" data-aos="fade-left" data-aos-delay="400">
@@ -46,6 +50,20 @@
   animation: flash 1s ease-in-out alternate infinite;
   opacity: 0;
   z-index: 3;
+}
+.new-text {
+  @include img_r_pc(500, 980, 30);
+  top:calc(40% + ( 980 - 1080 * 0.4) * 100vw / 1920);
+  font-size: size(25);
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: right;
+  color: #ffffff;
+  z-index: 3;
+  white-space: nowrap;
+  text-shadow: 0em 0em 0.3em #000;
 }
 
 @keyframes flash {
@@ -92,6 +110,7 @@
   color: #000000;
 }
 
+
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -115,6 +134,21 @@
     background-size: cover;
     background-attachment: scroll;
   }
+
+    .new-text {
+  @include img_c_pc(1100, 1010);
+  top:calc(50% + ( 670 - 667 * 0.5) * 100vw / 375);
+  font-size: size(80);
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  z-index: 3;
+  white-space: nowrap;
+  text-shadow: 0em 0em 0.3em #000;
+}
   .bg-img {
     top: auto;
     height: auto;
@@ -169,6 +203,21 @@
     text-align: left;
     color: #fff;
     writing-mode: vertical-rl;
+    text-orientation: upright;
+    z-index: 3;
+    white-space: normal;
+  }
+
+  .subtitle-text {
+    @include img_r_m(110, 10, -30);
+    font-size: sizem(15);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.71;
+    letter-spacing: size(5.61);
+    text-align: left;
+    color: #fff;
     text-orientation: upright;
     z-index: 3;
     white-space: normal;

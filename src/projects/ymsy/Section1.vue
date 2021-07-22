@@ -22,15 +22,16 @@
     </div>
     <div class="title3" data-aos="fade-up" data-aos-delay="400" v-if="isPC">
       <span>北市稀有 近三千坪大基地</span><br />
-      李天鐸大樹莊園│景觀 捷運│ 2-3房
+      李天鐸陽明莊園│景觀 捷運│ 2-3房
     </div>
     <div class="title3" data-aos="fade-up" data-aos-delay="400" v-if="isMobile">
       北市稀有 近三千坪大基地<br />
-      <span>李天鐸大樹莊園<br />景觀│捷運 <span>2-3</span>房</span>
+      <span>李天鐸陽明莊園<br />景觀│捷運 <span>2-3</span>房</span>
     </div>
     <div class="title4" data-aos="fade-up" data-aos-delay="600">
       2897-9888
     </div>
+    <div class="new-text">銷售企劃：興益發建設自建自售</div>
   </div>
 </template>
 
@@ -62,6 +63,21 @@
   object-fit: cover;
   margin-top: 0;
   // opacity: 0.5;
+}
+
+.new-text {
+  @include img_r_pc(500, 1010, 30);
+  top:calc(40% + ( 1010 - 1080 * 0.4) * 100vw / 1920);
+  font-size: size(25);
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: right;
+  color: #ffffff;
+  z-index: 3;
+  white-space: nowrap;
+  text-shadow: 0em 0em 0.3em #000;
 }
 
 .grass {
@@ -205,6 +221,21 @@
     overflow: hidden;
     position: relative;
   }
+
+  .new-text {
+  @include img_c_pc(1100, 1010);
+  top:calc(50% + ( 640 - 667 * 0.5) * 100vw / 375);
+  font-size: size(80);
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  z-index: 3;
+  white-space: nowrap;
+  text-shadow: 0em 0em 0.3em #000;
+}
 
   .grass {
     // @include img_r_pc(1600, 0, -50);

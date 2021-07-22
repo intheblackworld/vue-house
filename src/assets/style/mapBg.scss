@@ -85,12 +85,12 @@
     .hand {
       position: absolute;
       z-index: 3;
-      width: sizem(87) !important;
+      width: sizem(75) !important;
       height: auto !important;
       left: sizem(5);
       right: 0;
       margin: 0 auto;
-      top: sizem(298) !important;
+      top: sizem(298);
       display: block;
       animation: swing 2.5s ease-in-out 0s infinite alternate-reverse;
       opacity: 0;
