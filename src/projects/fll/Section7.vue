@@ -1,9 +1,13 @@
 <template>
   <div class="section7 flex">
+    <img src="./s7/style_1.png" :alt="`${info.caseName}_img`" class="style1">
+    <img src="./s7/style_2.png" :alt="`${info.caseName}_img`" class="style2">
+    <img src="./s7/style_3.png" :alt="`${info.caseName}_img`" class="style3">
+    <img src="./s7/mouse.png" :alt="`${info.caseName}_img`" class="mouse">
     <div class="btns">
-      <div class="btn" @click="changePage(0)">37坪</div>
-      <div class="btn" @click="changePage(1)">25坪</div>
-      <div class="btn" @click="changePage(2)">26坪</div>
+      <div :class="`btn ${pageIndex === 0 ? 'active': ''}`" @click="changePage(0)">37坪</div>
+      <div :class="`btn ${pageIndex === 1 ? 'active': ''}`" @click="changePage(1)">25坪</div>
+      <div :class="`btn ${pageIndex === 2 ? 'active': ''}`" @click="changePage(2)">26坪</div>
     </div>
     <div class="content left">
       <div class="title1" v-html="list[pageIndex].title1"></div>
@@ -17,7 +21,7 @@
       <img :src="list[pageIndex].area" :alt="`${info.caseName}_img`" class="area">
     </div>
     <div class="content">
-      <div class="swipe relative" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe relative" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="list[pageIndex].slideList.length > 0">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -35,6 +39,11 @@
             <div class="next-btn" @click="addIndex"></div>
           </div>
         </div>
+      </div>
+      <div class="title2" v-html="list[pageIndex].title2"></div>
+      <div class="line"></div>
+      <div class="desc2">
+        <li v-for="desc in list[pageIndex].desc1" v-html="desc" :key="desc"></li>
       </div>
     </div>
     <img src="./mobile/07/touch.png" :alt="`${info.caseName}_img`" class="touch" v-if="isMobile" @click="showDialog">
@@ -93,6 +102,10 @@
     &:nth-child(2) {
       border-left: 1px solid #fff;
       border-right: 1px solid #fff;
+    }
+
+    &.active {
+      color: #ffee00;
     }
   }
 }
@@ -158,24 +171,44 @@
   height: auto;
 }
 
+.title2 {
+  width: size(520);
+  font-size: size(44);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: size(2.3);
+  text-align: center;
+  color: #cf0065;
+  margin-bottom: size(20);
+}
+
+.line {
+  width: size(520);
+  border-top: 2px solid #231815;
+  margin-bottom: size(20);
+}
+
+.desc2 {
+  width: size(520);
+  li {
+    font-size: size(29);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.2;
+    letter-spacing: size(0.5);
+    text-align: left;
+    color: #221814;
+  }
+}
+
 /* Swipe */
 .swipe {
-  width: size(561);
-  height: auto;
+  width: size(579);
+  height: size(346);
   object-fit: cover;
-
-  .swipe1 {
-    width: size(561);
-    height: size(585);
-  }
-  .swipe2 {
-    width: size(544);
-    height: size(805);
-  }
-  .swipe3 {
-    width: size(544);
-    height: size(757);
-  }
 }
 
 // begin
@@ -235,7 +268,7 @@
 
   .slide-name {
     font-family: "Noto Sans TC";
-    right: 2em;
+    left: 2em;
     bottom: 1.2em;
     color: #fff;
     font-size: size(18);
@@ -263,10 +296,10 @@
 }
 
 .pagination {
-  @include img_l_pc(296, 155, 522);
+  // @include img_l_pc(296, 155, 522);
   // width: auto;
-  // bottom: size(44);
-  // right: 0;
+  bottom: size(10);
+  right: size(10);
   // left: 0;
   // margin: 0 auto;
   justify-content: center;
@@ -285,7 +318,7 @@
     border-radius: 10px;
     box-shadow: 0 0 0 1px #fff;
     position: relative;
-    background-color: transparent;
+    background-color: #fff;
     transition: all 0.5s;
 
     &::before {
@@ -311,7 +344,8 @@
         width: 100%;
         height: 100%;
         display: block;
-        background: #fff;
+        box-shadow: 0 0 0 1px #cf0065;
+        background: #cf0065;
         border-radius: 20px;
         opacity: 1;
         position: absolute;
@@ -377,6 +411,33 @@
 @keyframes btn {
   to {
     transform: rotate(45deg) translate(10%, -10%);
+  }
+}
+
+.mouse {
+  @include img_l_pc(343, 767, 79);
+}
+.style1 {
+  @include img_l_pc(800, 764, -130);
+  opacity: 0.3;
+  animation: bling 1s .3s ease-in-out infinite alternate;
+}
+
+.style2 {
+  @include img_r_pc(885, 776, -243);
+  opacity: 0.3;
+  animation: bling 1.2s .5s ease-in-out infinite alternate;
+}
+
+.style3 {
+  @include img_r_pc(885, -300, -400);
+  opacity: 0.3;
+  animation: bling 1.5s 0s ease-in-out infinite alternate;
+}
+
+@keyframes bling {
+  to {
+    opacity: 1;
   }
 }
 
@@ -733,7 +794,25 @@ export default {
             "戶戶衛浴皆有對外窗，空氣流通不易潮濕",
             "戶戶邊間採光極佳，無暗房暗廳問題"
           ],
-          area: require('./s7/1-img.png'),
+          area: require("./s7/1-img.png"),
+          slideList: [
+            {
+              img: require("./s7/2-1.jpg"),
+              name: "樣品屋實景"
+            },
+            {
+              img: require("./s7/2-2.jpg"),
+              name: "樣品屋實景"
+            },
+            {
+              img: require("./s7/2-3.jpg"),
+              name: "樣品屋實景"
+            },
+            {
+              img: require("./s7/2-4.jpg"),
+              name: "樣品屋實景"
+            }
+          ]
         },
         {
           title1: "25坪實用雙套房",
@@ -747,7 +826,8 @@ export default {
 
           title2: "出租置產 高投報率 ",
           desc2: ["一邊自用 一邊收租 開啟斜槓人生", "抵制高速通膨的絕佳產品"],
-          area: require('./s7/2-img.png'),
+          area: require("./s7/2-img.png"),
+          slideList: [],
         },
         {
           title1: "26坪高效正2房",
@@ -765,58 +845,29 @@ export default {
             "戶戶衛浴皆有對外窗，空氣流通不易潮濕",
             "戶戶邊間採光極佳，無暗房暗廳問題"
           ],
-          area: require('./s7/3-img.png'),
+          area: require("./s7/3-img.png"),
+          slideList: [
+            {
+              img: require("./s7/1-1.jpg"),
+              name: "樣品屋實景"
+            },
+            {
+              img: require("./s7/1-2.jpg"),
+              name: "樣品屋實景"
+            },
+            {
+              img: require("./s7/1-3.jpg"),
+              name: "樣品屋實景"
+            },
+            {
+              img: require("./s7/1-4.jpg"),
+              name: "樣品屋實景"
+            }
+          ]
         }
       ],
       slideList: [
-        // {
-        //   img: isMobile
-        //     ? require('./mobile/07/slider_1.jpg')
-        //     : require('./s7/slider_1.jpg'),
-        //   full: require('./mobile/07/slider_1_full.jpg'),
-        //   name: '3D景觀示意圖',
-        //   area: '大廳',
-        // },
-        // {
-        //   img: isMobile
-        //     ? require('./mobile/07/slider_2.jpg')
-        //     : require('./s7/slider_2.jpg'),
-        //   full: require('./mobile/07/slider_2_full.jpg'),
-        //   name: '3D景觀示意圖',
-        //   area: '健身房',
-        // },
-        // {
-        //   img: isMobile
-        //     ? require('./mobile/07/slider_3.jpg')
-        //     : require('./s7/slider_3.jpg'),
-        //   full: require('./mobile/07/slider_3_full.jpg'),
-        //   name: '3D景觀示意圖',
-        //   area: '空中花園',
-        // },
-        // {
-        //   img: isMobile
-        //     ? require('./mobile/07/slider_4.jpg')
-        //     : require('./s7/slider_4.jpg'),
-        //   full: require('./mobile/07/slider_4_full.jpg'),
-        //   name: '3D景觀示意圖',
-        //   area: '會議室',
-        // },
-        // {
-        //   img: isMobile
-        //     ? require('./mobile/07/slider_5.jpg')
-        //     : require('./s7/slider_5.jpg'),
-        //   full: require('./mobile/07/slider_5_full.jpg'),
-        //   name: '3D景觀示意圖',
-        //   area: '輕食區',
-        // },
-        // {
-        //   img: isMobile
-        //     ? require('./mobile/07/slider_6.jpg')
-        //     : require('./s7/slider_6.jpg'),
-        //   full: require('./mobile/07/slider_6_full.jpg'),
-        //   name: '3D景觀示意圖',
-        //   area: '戶外空間',
-        // },
+
       ]
     };
   },
@@ -833,15 +884,17 @@ export default {
     },
 
     changePage(index) {
-      this.slideIndex = 0;
       this.slideList = this.list[index].slideList;
+      this.slideIndex = 0;
       this.pageIndex = index;
     }
   },
 
   created() {},
 
-  mounted() {},
+  mounted() {
+    this.slideList = this.list[this.pageIndex].slideList;
+  },
 
   computed: {},
 
