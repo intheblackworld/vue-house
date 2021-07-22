@@ -251,6 +251,7 @@
 
   .label {
     @include div_c_m(239, 61, 487);
+    top:calc(50% + ( 450 - 667 * 0.5) * 100vw / 375);
     text-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
     font-size: sizem(16);
     font-weight: 900;
@@ -265,6 +266,7 @@
 
   .btn {
     @include img_c_m(168, 526);
+    top:calc(50% + ( 487 - 667 * 0.5) * 100vw / 375);
     font-size: sizem(18);
     font-weight: 900;
     font-stretch: normal;
