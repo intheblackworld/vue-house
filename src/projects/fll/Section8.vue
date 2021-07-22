@@ -598,21 +598,21 @@ export default {
       isTablet,
       isDialog: false,
       slideList: [
-        {
-          img: require('./s8/slider_1.jpg'),
-          name: '張文明',
-          title: '國際建築大師',
-        },
-        {
-          img: require('./s8/slider_2.jpg'),
-          name: '日光設計',
-          title: '大師級燈光藝術導演',
-        },
-        {
-          img: require('./s8/slider_3.jpg'),
-          name: '蕥園景觀',
-          title: '豪宅御用景觀師',
-        },
+        // {
+        //   img: require('./s8/slider_1.jpg'),
+        //   name: '張文明',
+        //   title: '國際建築大師',
+        // },
+        // {
+        //   img: require('./s8/slider_2.jpg'),
+        //   name: '日光設計',
+        //   title: '大師級燈光藝術導演',
+        // },
+        // {
+        //   img: require('./s8/slider_3.jpg'),
+        //   name: '蕥園景觀',
+        //   title: '豪宅御用景觀師',
+        // },
       ],
     }
   },

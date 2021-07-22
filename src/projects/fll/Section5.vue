@@ -147,6 +147,8 @@
   height: size(1080);
   top: 0;
   left: 0;
+  position: absolute;
+  z-index: 1;
   object-fit: cover;
 }
 

@@ -28,7 +28,7 @@
         <div class="subtitle" data-aos="flip-up" data-aos-delay="400">
           科技5G×AI新境界Ｘ新觀點進駐
         </div>
-        <h1 class="desc" data-aos="fade-up" data-aos-delay="600" v-html="slideList[slideIndex].area"></h1>
+        <!-- <h1 class="desc" data-aos="fade-up" data-aos-delay="600" v-html="slideList[slideIndex].area"></h1> -->
       </div>
       <img src="./mobile/07/touch.png" :alt="`${info.caseName}_img`" class="touch" v-if="isMobile" @click="showDialog">
       <transition name="swipe-fade" mode="out-in">
@@ -653,54 +653,54 @@ export default {
       dialogImg: null,
       showMask: false,
       slideList: [
-        {
-          img: isMobile
-            ? require('./mobile/07/slider_1.jpg')
-            : require('./s7/slider_1.jpg'),
-          full: require('./mobile/07/slider_1_full.jpg'),
-          name: '3D景觀示意圖',
-          area: '大廳',
-        },
-        {
-          img: isMobile
-            ? require('./mobile/07/slider_2.jpg')
-            : require('./s7/slider_2.jpg'),
-          full: require('./mobile/07/slider_2_full.jpg'),
-          name: '3D景觀示意圖',
-          area: '健身房',
-        },
-        {
-          img: isMobile
-            ? require('./mobile/07/slider_3.jpg')
-            : require('./s7/slider_3.jpg'),
-          full: require('./mobile/07/slider_3_full.jpg'),
-          name: '3D景觀示意圖',
-          area: '空中花園',
-        },
-        {
-          img: isMobile
-            ? require('./mobile/07/slider_4.jpg')
-            : require('./s7/slider_4.jpg'),
-          full: require('./mobile/07/slider_4_full.jpg'),
-          name: '3D景觀示意圖',
-          area: '會議室',
-        },
-        {
-          img: isMobile
-            ? require('./mobile/07/slider_5.jpg')
-            : require('./s7/slider_5.jpg'),
-          full: require('./mobile/07/slider_5_full.jpg'),
-          name: '3D景觀示意圖',
-          area: '輕食區',
-        },
-        {
-          img: isMobile
-            ? require('./mobile/07/slider_6.jpg')
-            : require('./s7/slider_6.jpg'),
-          full: require('./mobile/07/slider_6_full.jpg'),
-          name: '3D景觀示意圖',
-          area: '戶外空間',
-        },
+        // {
+        //   img: isMobile
+        //     ? require('./mobile/07/slider_1.jpg')
+        //     : require('./s7/slider_1.jpg'),
+        //   full: require('./mobile/07/slider_1_full.jpg'),
+        //   name: '3D景觀示意圖',
+        //   area: '大廳',
+        // },
+        // {
+        //   img: isMobile
+        //     ? require('./mobile/07/slider_2.jpg')
+        //     : require('./s7/slider_2.jpg'),
+        //   full: require('./mobile/07/slider_2_full.jpg'),
+        //   name: '3D景觀示意圖',
+        //   area: '健身房',
+        // },
+        // {
+        //   img: isMobile
+        //     ? require('./mobile/07/slider_3.jpg')
+        //     : require('./s7/slider_3.jpg'),
+        //   full: require('./mobile/07/slider_3_full.jpg'),
+        //   name: '3D景觀示意圖',
+        //   area: '空中花園',
+        // },
+        // {
+        //   img: isMobile
+        //     ? require('./mobile/07/slider_4.jpg')
+        //     : require('./s7/slider_4.jpg'),
+        //   full: require('./mobile/07/slider_4_full.jpg'),
+        //   name: '3D景觀示意圖',
+        //   area: '會議室',
+        // },
+        // {
+        //   img: isMobile
+        //     ? require('./mobile/07/slider_5.jpg')
+        //     : require('./s7/slider_5.jpg'),
+        //   full: require('./mobile/07/slider_5_full.jpg'),
+        //   name: '3D景觀示意圖',
+        //   area: '輕食區',
+        // },
+        // {
+        //   img: isMobile
+        //     ? require('./mobile/07/slider_6.jpg')
+        //     : require('./s7/slider_6.jpg'),
+        //   full: require('./mobile/07/slider_6_full.jpg'),
+        //   name: '3D景觀示意圖',
+        //   area: '戶外空間',
+        // },
       ],
     }
   },

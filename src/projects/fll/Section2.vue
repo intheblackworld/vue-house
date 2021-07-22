@@ -175,7 +175,7 @@ iframe {
     height: sizem(210);
     min-height: sizem(210);
     max-height: sizem(210);
-    background: #000 url('./s2/video_bg.jpg');
+    // background: #000 url('./s2/video_bg.jpg');
     background-size: cover;
     // margin-top: sizem(-60);
     z-index: 3;
@@ -210,7 +210,7 @@ iframe {
     top: 0;
     left: 0;
     z-index: 1;
-    background: #000 url('./s2/load.gif') no-repeat center;
+    // background: #000 url('./s2/load.gif') no-repeat center;
     background-size: size-m(50);
     opacity: 0.5;
   }

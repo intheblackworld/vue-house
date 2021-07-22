@@ -1,5 +1,5 @@
 <template>
-  <div class="section3 flex wrap">
+  <div class="section3 flex">
     <img src="./s3/style_1.png" :alt="`${info.caseName}_img`" class="style1">
     <img src="./s3/style_2.png" :alt="`${info.caseName}_img`" class="style2">
     <img src="./s3/style_2.png" :alt="`${info.caseName}_img`" class="style3">
