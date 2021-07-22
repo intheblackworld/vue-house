@@ -88,7 +88,7 @@
 }
 
 .desc {
-  @include img_l_pc(717, 211, 34);
+  @include img_l_pc(730, 211, 34);
   font-size: size(20);
   font-weight: 300;
   font-stretch: normal;
