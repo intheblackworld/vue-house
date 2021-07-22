@@ -1,6 +1,6 @@
 <template>
   <div :class="`navigation ${min ? 'min' : ''}`">
-    
+    <img  class="flower" src="../assets/img/flower.png">
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
          
@@ -152,6 +152,10 @@ export default {
       width: size(218);
     }
   }
+}
+
+.flower{
+  position: absolute;
 }
 
 .nav-container {

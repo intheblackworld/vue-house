@@ -5,7 +5,7 @@
         ｜大樹莊園，與自然呼應的建築｜
       </div>
       <div class="title" data-aos="fade-up" data-aos-delay="200">
-        訂製陽明<br />
+        預約陽明<br />
         莊園度假生活
       </div>
       <div class="desc" data-aos="fade-up" data-aos-delay="400">

@@ -158,9 +158,9 @@
     overflow: visible;
   }
   .label {
-    @include img_r_pc(650, 100, 50);
-    bottom: size(57);
-    font-size: size(40);
+    @include img_r_pc(750, 100, 50);
+    bottom: size(60);
+    font-size: size(70);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
