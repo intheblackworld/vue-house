@@ -1,16 +1,34 @@
 <template>
-  <div>
-    <div class="section7">
-      <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+  <div class="section7 flex">
+    <div class="btns">
+      <div class="btn" @click="changePage(0)">37坪</div>
+      <div class="btn" @click="changePage(1)">25坪</div>
+      <div class="btn" @click="changePage(2)">26坪</div>
+    </div>
+    <div class="content left">
+      <div class="title1" v-html="list[pageIndex].title1"></div>
+      <div class="subtitle" v-html="list[pageIndex].subtitle"></div>
+      <img src="./s7/arrowline.png" :alt="`${info.caseName}_img`" class="arrowline">
+      <div class="desc1">
+        <li v-for="desc in list[pageIndex].desc1" v-html="desc" :key="desc"></li>
+      </div>
+    </div>
+    <div class="content">
+      <img :src="list[pageIndex].area" :alt="`${info.caseName}_img`" class="area">
+    </div>
+    <div class="content">
+      <div class="swipe relative" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
+              <img :src="slide.img" alt>
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
           <div class="pagination absolute flex-ac" data-aos="fade" data-aos-delay="200" v-if="isPC">
-            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)">
+              <span :class="`${slideIndex === index ? 'active' : ''}`"></span>
+            </div>
           </div>
           <div class="swipe-btns absolute flex-ac flex-jb">
             <div class="prev-btn" @click="decIndex"></div>
@@ -18,43 +36,31 @@
           </div>
         </div>
       </div>
-      <div class="content" data-aos="fade" data-aos-delay="0">
-        <h1 class="title" data-aos="flip-up" data-aos-delay="200" v-if="isPC">
-          辦公新亮點！ 智慧潮流拼上國際
-        </h1>
-        <h1 class="title" data-aos="flip-up" data-aos-delay="200" v-if="isMobile">
-          辦公新亮點！<br />智慧潮流拼上國際
-        </h1>
-        <div class="subtitle" data-aos="flip-up" data-aos-delay="400">
-          科技5G×AI新境界Ｘ新觀點進駐
-        </div>
-        <!-- <h1 class="desc" data-aos="fade-up" data-aos-delay="600" v-html="slideList[slideIndex].area"></h1> -->
-      </div>
-      <img src="./mobile/07/touch.png" :alt="`${info.caseName}_img`" class="touch" v-if="isMobile" @click="showDialog">
-      <transition name="swipe-fade" mode="out-in">
-        <div class="dialog" v-if="isDialog" @scroll="handleScroll">
-          <div class="dialog-bg">
-            <div class="dialog-close flex-c" @click="isDialog = false">
-              <img src="../../assets/img/close.png" alt="">
-            </div>
-            <img :src="dialogImg" alt="" class="dialog-img">
-            <img src="./mobile/07/swipe-here.png" alt="" :class="`dialog-hand ${showMask ? 'active' : ''}`">
-          </div>
-        </div>
-      </transition>
     </div>
+    <img src="./mobile/07/touch.png" :alt="`${info.caseName}_img`" class="touch" v-if="isMobile" @click="showDialog">
+    <transition name="swipe-fade" mode="out-in">
+      <div class="dialog" v-if="isDialog" @scroll="handleScroll">
+        <div class="dialog-bg">
+          <div class="dialog-close flex-c" @click="isDialog = false">
+            <img src="../../assets/img/close.png" alt>
+          </div>
+          <img :src="dialogImg" alt class="dialog-img">
+          <img src="./mobile/07/swipe-here.png" alt :class="`dialog-hand ${showMask ? 'active' : ''}`">
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 <style lang="scss" scoped>
-@import '@/assets/style/function.scss';
+@import "@/assets/style/function.scss";
 
 .section7 {
   width: 100%;
-  height: size(1005);
-  min-height: size(1005);
-  max-height: size(1005);
+  height: 100vh;
+  min-height: size(1080);
+  max-height: size(1080);
   position: relative;
-  background-color: #fff;
+  background-color: #bccf00;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
@@ -63,56 +69,113 @@
   // overflow: hidden;
 }
 
-.content {
-  @include div_l_pc(648, 287, 47, 162);
-  background-color: rgba(54, 54, 54, 0.8);
+.btns {
+  @include div_l_pc(360, 63, 221, 129);
+  background-color: #de1373;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  .btn {
+    width: 33.33%;
+    height: 80%;
+    font-size: size(38);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: size(1.5);
+    text-align: center;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    &:nth-child(2) {
+      border-left: 1px solid #fff;
+      border-right: 1px solid #fff;
+    }
+  }
 }
 
-.title {
-  @include img_l_pc(360, 46, 37);
-  font-size: size(40);
-  font-weight: 900;
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding-left: size(100);
+
+  &.left {
+    width: size(592);
+  }
+}
+
+.title1 {
+  font-size: size(55);
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: normal;
-  text-align: left;
-  color: #fff;
-  white-space: nowrap;
+  letter-spacing: size(3.3);
+  text-align: center;
+  color: #cf0065;
+  margin-bottom: size(20);
 }
 
 .subtitle {
-  @include img_l_pc(575, 122, 43);
-  font-family: 'Noto Sans TC';
-  font-size: size(25);
-  font-weight: 500;
+  font-size: size(32);
+  font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
-  letter-spacing: normal;
+  line-height: 1.3;
+  letter-spacing: size(0.7);
   text-align: left;
-  color: #00afd5;
+  color: #221814;
+  margin-bottom: size(20);
 }
 
-.desc {
-  @include img_l_pc(717, 204, 34);
-  font-size: size(40);
-  font-weight: 900;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: normal;
-  text-align: left;
-  color: #ffffff;
+.arrowline {
+  width: size(454);
+  margin-bottom: size(20);
+}
+
+.desc1 {
+  width: size(454);
+  li {
+    font-size: size(25);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: size(2.5);
+    text-align: left;
+    color: #221814;
+  }
+}
+
+.area {
+  width: size(545);
+  height: auto;
 }
 
 /* Swipe */
 .swipe {
-  width: size(1920);
-  height: size(865);
-  bottom: 0;
-  left: 0;
+  width: size(561);
+  height: auto;
   object-fit: cover;
+
+  .swipe1 {
+    width: size(561);
+    height: size(585);
+  }
+  .swipe2 {
+    width: size(544);
+    height: size(805);
+  }
+  .swipe3 {
+    width: size(544);
+    height: size(757);
+  }
 }
 
 // begin
@@ -167,11 +230,11 @@
 
   img {
     width: 100%;
-    height: size(865);
+    height: 100%;
   }
 
   .slide-name {
-    font-family: 'Noto Sans TC';
+    font-family: "Noto Sans TC";
     right: 2em;
     bottom: 1.2em;
     color: #fff;
@@ -226,7 +289,7 @@
     transition: all 0.5s;
 
     &::before {
-      content: '';
+      content: "";
       width: 60%;
       height: 60%;
       display: block;
@@ -244,7 +307,7 @@
     &.active {
       box-shadow: none;
       &::before {
-        content: '';
+        content: "";
         width: 100%;
         height: 100%;
         display: block;
@@ -278,7 +341,7 @@
     font-size: size(20);
     cursor: pointer;
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       width: 100%;
       height: 100%;
@@ -289,7 +352,7 @@
       transition: all 0.3s;
     }
     &::after {
-      content: '';
+      content: "";
       width: 1em;
       height: 1em;
       position: absolute;
@@ -369,7 +432,7 @@
 
   .subtitle {
     @include img_l_m(250, 91, 30);
-    font-family: 'Noto Sans TC';
+    font-family: "Noto Sans TC";
     font-size: sizem(16);
     font-weight: 500;
     font-stretch: normal;
@@ -382,7 +445,7 @@
 
   .desc {
     @include img_l_m(320, 124, 30);
-    font-family: 'Noto Serif TC';
+    font-family: "Noto Serif TC";
     font-size: sizem(25);
     font-weight: 900;
     font-stretch: normal;
@@ -399,13 +462,13 @@
     z-index: 12;
     opacity: 0.5;
     animation: showHide 1s ease-in-out 0s infinite alternate-reverse;
-    }
+  }
 
-    @keyframes showHide {
-      to {
-        opacity: 1;
-      }
+  @keyframes showHide {
+    to {
+      opacity: 1;
     }
+  }
 
   /* Swipe */
   .swipe {
@@ -522,7 +585,7 @@
       transition: all 0.5s;
 
       &::before {
-        content: '';
+        content: "";
         width: 60%;
         height: 60%;
         display: block;
@@ -539,7 +602,7 @@
       }
       &.active {
         &::before {
-          content: '';
+          content: "";
           width: 100%;
           height: 100%;
           display: block;
@@ -617,7 +680,7 @@
     .dialog-hand {
       @include img_l_m(80, 334, 148);
       opacity: 0;
-      transition: opacity .5s;
+      transition: opacity 0.5s;
       &.active {
         opacity: 1;
       }
@@ -634,12 +697,12 @@
 </style>
 <script>
 // @ is an alias to /src
-import { isPC, isMobile, isTablet } from '@/utils'
-import slider from '@/mixins/slider.js'
-import info from '@/info'
+import { isPC, isMobile, isTablet } from "@/utils";
+import slider from "@/mixins/slider.js";
+import info from "@/info";
 
 export default {
-  name: 'section7',
+  name: "section7",
 
   mixins: [slider],
 
@@ -652,6 +715,59 @@ export default {
       isDialog: false,
       dialogImg: null,
       showMask: false,
+      pageIndex: 0,
+      list: [
+        {
+          title1: "37坪採光大3房",
+          subtitle: "",
+          desc1: [
+            "玄關規劃好收納",
+            "擁低台度大面開窗，及前後大陽台",
+            "雙衛浴皆開窗不易潮濕",
+            "3間主、次臥皆有雙人床空間"
+          ],
+
+          title2: "格局規劃佳，舒適不將就",
+          desc2: [
+            "無廊道高坪效規劃，空間好利用",
+            "戶戶衛浴皆有對外窗，空氣流通不易潮濕",
+            "戶戶邊間採光極佳，無暗房暗廳問題"
+          ],
+          area: require('./s7/1-img.png'),
+        },
+        {
+          title1: "25坪實用雙套房",
+          subtitle: "園區萬人租客，入主現成房東<br />自住置產實用優勢大集合：",
+          desc1: [
+            "電表分離配置",
+            "包租代管2年",
+            "專有玄關緩衝",
+            "便利私有陽台"
+          ],
+
+          title2: "出租置產 高投報率 ",
+          desc2: ["一邊自用 一邊收租 開啟斜槓人生", "抵制高速通膨的絕佳產品"],
+          area: require('./s7/2-img.png'),
+        },
+        {
+          title1: "26坪高效正2房",
+          subtitle: "",
+          desc1: [
+            "玄關規劃好收納",
+            "低台度大面開窗",
+            "客廳對外明亮空間",
+            "主臥大空間好收納"
+          ],
+
+          title2: "格局規劃佳，舒適不將就",
+          desc2: [
+            "無廊道高坪效規劃，空間好利用",
+            "戶戶衛浴皆有對外窗，空氣流通不易潮濕",
+            "戶戶邊間採光極佳，無暗房暗廳問題"
+          ],
+          area: require('./s7/3-img.png'),
+        }
+      ],
       slideList: [
         // {
         //   img: isMobile
@@ -701,19 +817,25 @@ export default {
         //   name: '3D景觀示意圖',
         //   area: '戶外空間',
         // },
-      ],
-    }
+      ]
+    };
   },
 
   methods: {
     showDialog() {
-      this.isDialog = true
-      this.showMask = true
-      this.dialogImg = this.slideList[this.slideIndex].full
+      this.isDialog = true;
+      this.showMask = true;
+      this.dialogImg = this.slideList[this.slideIndex].full;
     },
 
     handleScroll() {
-      this.showMask = false
+      this.showMask = false;
+    },
+
+    changePage(index) {
+      this.slideIndex = 0;
+      this.slideList = this.list[index].slideList;
+      this.pageIndex = index;
     }
   },
 
@@ -723,6 +845,6 @@ export default {
 
   computed: {},
 
-  watch: {},
-}
+  watch: {}
+};
 </script>
