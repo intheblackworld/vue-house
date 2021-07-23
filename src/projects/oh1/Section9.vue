@@ -309,7 +309,7 @@
 @media screen and (max-width: 767px) {
   .section9 {
     width: 100vw;
-    height: sizem(640);
+    height: sizem(508);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -372,7 +372,7 @@
   /* Swipe */
   .swipe {
     width: sizem(320);
-    height: sizem(600);
+    height: sizem(430);
     min-height: auto;
     top: sizem(39);
     left: 0;
@@ -526,7 +526,7 @@
     right: auto;
     bottom: 0;
     width: sizem(375);
-    height: sizem(600);
+    height: sizem(430);
     padding: 0;
     z-index: 3;
 

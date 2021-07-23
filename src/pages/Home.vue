@@ -48,8 +48,11 @@
       <div class="section relative" id="section10">
         <Section10 />
       </div>
-      <div class="section relative" id="section11">
+   <!--   <div class="section relative" id="section11">
         <Section11 />
+      </div>  -->
+      <div class="section relative" id="section13">
+        <Section13 />
       </div>
       <div class="section relative" id="section12">
         <VideoSection1 :playBtn="require('@/projects/sfdy/video/play-btn.png')" title="開箱系列影片" :close="require('@/projects/sfdy/video/close.png')" :arrows="[require('@/projects/sfdy/video/arrow-left.png'), require('@/projects/sfdy/video/arrow-right.png')]" :slideList="[
@@ -190,6 +193,7 @@ import Section8 from '@/projects/oh1/Section8.vue'
 import Section9 from '@/projects/oh1/Section9.vue'
 import Section10 from '@/projects/oh1/Section10.vue'
 import Section11 from '@/projects/oh1/Section11.vue'
+import Section13 from '@/projects/oh1/Section13.vue'
 
 export default {
   name: 'home',
@@ -212,6 +216,7 @@ export default {
     Section9,
     Section10,
     Section11,
+    Section13,
     VideoSection1,
   },
 
