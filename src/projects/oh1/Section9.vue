@@ -242,6 +242,7 @@
     position: relative;
     background-color: #fff;
     transition: all 0.5s;
+    border: 1px solid #004ea2;
 
     &::before {
       content: '';
@@ -580,10 +581,12 @@ export default {
       isTablet,
       isDialog: false,
       slideList: [
-        {
-          img: isMobile ? require('./s9/1_m.png') : require('./s9/1.png'),
-          // name: '公設',
-        },
+        {img: isMobile ? require('./s9/1m.jpg') : require('./s9/1.jpg'),},
+        {img: isMobile ? require('./s9/2m.jpg') : require('./s9/2.jpg'),},
+        {img: isMobile ? require('./s9/3m.jpg') : require('./s9/3.jpg'),},
+        {img: isMobile ? require('./s9/4m.jpg') : require('./s9/4.jpg'),},
+        {img: isMobile ? require('./s9/5m.jpg') : require('./s9/5.jpg'),},
+        {img: isMobile ? require('./s9/6m.jpg') : require('./s9/6.jpg'),},
       ],
     }
   },
