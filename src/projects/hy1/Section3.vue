@@ -5,10 +5,10 @@
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img  + i" :class="`swipe-item absolute`">
             <img :src="slide.img" alt="">
-            <!-- <div class="slide-name absolute" v-html="slide.name"></div> -->
+            <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
-        <div class="pagination absolute flex-ac" v-if="isPC">
+        <div class="pagination absolute flex-ac" v-if="isPC && slideList[1]">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot' + index" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
         <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile && slideList[1]" >
@@ -238,8 +238,8 @@
     right: 1.2em;
     bottom: 0.5em;
     color: #fff;
-    font-size: size(18);
-    font-weight: bold;
+    font-size: size(15);
+    font-weight: 400;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.6;
@@ -516,69 +516,9 @@
     .slide-name {
       right: auto;
       top: auto;
-      bottom: 1.2rem;
-      right: 1.2rem;
-      font-size: sizem(15);
-    }
-  }
-
-  .pagination {
-    width: auto;
-    bottom: size(91);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    justify-content: center;
-  }
-
-  .pagination-dot {
-    padding: 5px;
-    margin: 0 10px;
-    cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
-      box-shadow: 0 0 0 1px #fff;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
-      transition: all 0.5s;
-
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #004ea2;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transition: all 0.3s;
-        transform-origin: center;
-        transform: scale(0);
-      }
-      &.active {
-        &::before {
-          content: '';
-          width: 100%;
-          height: 100%;
-          display: block;
-          background: #004ea2;
-          border-radius: 20px;
-          opacity: 1;
-          position: absolute;
-          top: 0%;
-          // transform: translateY(-50%);
-          left: 0%;
-          transform: scale(1);
-        }
-      }
+      bottom: 0.8em;
+      right: 0.8em;
+      font-size: sizem(12);
     }
   }
 
@@ -620,6 +560,7 @@ export default {
       slideList: [
         {
           img: require('./s3/1.jpg'),
+          name:"實景空拍3D合成示意圖"
         },
       ],
     }
