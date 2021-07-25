@@ -348,6 +348,11 @@ export default {
   },
 
   mounted() {
+    if (this.isMobile) {
+      this.isDialog = false
+    } else {
+      this.isDialog = true
+    }
     // setTimeout(() => {
     //   if (!this.isMobile) {
     //     if (!window.YT) {
