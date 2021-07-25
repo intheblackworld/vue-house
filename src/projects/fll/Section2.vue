@@ -182,7 +182,7 @@ iframe {
   }
 
   .play-btn {
-    @include img_c_m(38, 87);
+    @include img_c_m(52, 87);
     cursor: pointer;
   }
 

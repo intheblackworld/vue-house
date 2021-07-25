@@ -1,14 +1,28 @@
 <template>
   <div class="section4">
     <img src="./s4/balloon.png" :alt="`${info.caseName}_img`" class="balloon">
-    <img src="./s4/map.png" :alt="`${info.caseName}_img`" class="map">
+    <img src="./s4/map.png" :alt="`${info.caseName}_img`" class="map" v-if="isPC">
+    <img src="./s4/map.png" :alt="`${info.caseName}_img`" class="map" v-if="isPC" @click="showDialog">
     <img src="./s4/style.png" :alt="`${info.caseName}_img`" class="style1">
     <img src="./s4/mouse.png" :alt="`${info.caseName}_img`" class="mouse">
+    <div class="btn flex-c" v-if="isMobile" @click="showDialog">點擊圖片放大觀看</div>
+    <transition name="swipe-fade" mode="out-in">
+      <div class="dialog" v-if="isDialog" @scroll="handleScroll">
+        <div class="dialog-bg">
+          <div class="dialog-close flex-c" @click="isDialog = false">
+            <img src="../../assets/img/close.png" alt>
+          </div>
+          <img src="./s4/map.png" alt class="dialog-img">
+          <div :class="`mask ${showMask ? 'active' : ''}`"></div>
+          <img src="./mobile/06/swipe-here.png" alt :class="`dialog-hand ${showMask ? 'active' : ''}`">
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 
 <style lang="scss" scoped>
-@import '@/assets/style/function.scss';
+@import "@/assets/style/function.scss";
 .section4 {
   width: 100%;
   height: 100vh;
@@ -82,9 +96,9 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-    min-height: sizem(666);
+    min-height: sizem(398);
     max-height: sizem(750);
-    height: sizem(666);
+    height: sizem(398);
     // margin: 0 0 -12vw 0;
     // background-size: auto size-m(750);
     z-index: initial;
@@ -93,106 +107,124 @@
     // }
   }
 
-  .logo {
-    @include img_c_m(184, 126);
+  .balloon {
+    @include img_r_m(88, 17, 11);
+  }
+  .map {
+    @include img_c_m(375, 62);
+  }
+  .mouse {
+    @include img_l_m(79, 318, 20);
+    top: auto;
+    bottom: 0;
+    z-index: 1;
   }
 
-  .linear-dark {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
+  .style1 {
+    @include img_r_m(416, 577, -208);
+    opacity: 0.3;
+    animation: bling 1s 0.3s ease-in-out infinite alternate;
   }
 
-  .partical-bg {
-    @include div_l_m(375, 667, -320, 100);
-    transform: rotate(-65deg);
-    overflow: hidden;
-
-    > div {
-      position: absolute;
-      width: 100%;
-      height: sizem(667);
+  @keyframes bling {
+    to {
+      opacity: 1;
     }
   }
-  .title {
-    @include img_c_m(254, 244);
-    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
-    font-size: sizem(30);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.88;
-    letter-spacing: sizem(1.8);
-    text-align: center;
-    color: #ffffff;
-    white-space: nowrap;
-  }
-
-  .subtitle {
-    @include img_c_m(302, 312);
-    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
-    font-size: sizem(20);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.4;
-    letter-spacing: sizem(1.2);
-    text-align: center;
-    color: #ffffff;
-    white-space: nowrap;
-  }
-
-  .desc {
-    @include div_c_m(303, 35, 372);
-    text-shadow: none;
-    font-size: sizem(20);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.6;
-    letter-spacing: sizem(1.2);
-    text-align: center;
-    color: #253a7e;
-    background-color: rgba(255, 255, 255, 0.82);
-  }
-
-  .label {
-    @include div_c_m(239, 61, 487);
-    text-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
-    font-size: sizem(16);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.42;
-    letter-spacing: normal;
-    text-align: center;
-    color: #ffffff;
-    background-color: #0097e2;
-  }
-
   .btn {
-    @include img_c_m(168, 526);
-    font-size: sizem(18);
+    @include div_l_m(227, 46, 0, 118);
+    top: auto;
+    bottom: 0;
+    font-size: sizem(20);
     font-weight: 900;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.22;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000000;
-    background-color: #0097e2;
+    line-height: 1.3;
+    letter-spacing: sizem(1.2);
+    text-align: center;
+    background-color: #cf0065;
+    color: #fff;
+  }
+
+  .dialog {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.34);
+    z-index: 1000;
+    overflow-y: scroll;
+
+    .dialog-bg {
+      width: 100%;
+      height: 100%;
+      // padding-top: $nav_pc_height;
+      background-attachment: fixed;
+      background-size: auto;
+      background-position: center center;
+      background-repeat: repeat;
+    }
+
+    .dialog-img {
+      position: absolute;
+      width: auto;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      background-color: #bccf00;
+    }
+
+    .dialog-close {
+      @include div_r_m(31, 32, 10, 10);
+      // border: 1px solid #fff;
+      position: fixed;
+      cursor: pointer;
+      background-color: rgba(54, 54, 54, 0.8);
+      z-index: 2;
+
+      img {
+        width: 90%;
+      }
+    }
+
+    .dialog-hand {
+      @include img_l_m(80, 334, 148);
+      opacity: 0;
+      transition: opacity 0.5s;
+      &.active {
+        opacity: 1;
+      }
+      animation: swing 1.5s ease-in-out 0s infinite alternate-reverse;
+    }
+
+    .mask {
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(54, 54, 54, 0.4);
+      position: absolute;
+      opacity: 0;
+      transition: opacity 0.1s;
+      &.active {
+        opacity: 1;
+      }
+    }
+
+    @keyframes swing {
+      to {
+        transform: translateX(-25%);
+      }
+    }
   }
 }
 </style>
 <script>
 // @ is an alias to /src
-import { isPC, isMobile, isTablet } from '@/utils'
-import info from '@/info'
+import { isPC, isMobile, isTablet } from "@/utils";
+import info from "@/info";
 
 export default {
-  name: 'section4',
+  name: "section4",
 
   data() {
     return {
@@ -200,11 +232,22 @@ export default {
       isPC,
       isMobile,
       isTablet,
+      isDialog: false,
+      showMask: false
       // blockIndex: 0,
-    }
+    };
   },
 
-  methods: {},
+  methods: {
+    showDialog() {
+      this.isDialog = true;
+      this.showMask = true;
+    },
+
+    handleScroll() {
+      this.showMask = false;
+    }
+  },
 
   mounted() {
     // setTimeout(() => {
@@ -214,6 +257,6 @@ export default {
 
   created() {},
 
-  computed: {},
-}
+  computed: {}
+};
 </script>

@@ -1,9 +1,9 @@
 <template>
   <div class="section7 flex">
-    <img src="./s7/style_1.png" :alt="`${info.caseName}_img`" class="style1">
-    <img src="./s7/style_2.png" :alt="`${info.caseName}_img`" class="style2">
-    <img src="./s7/style_3.png" :alt="`${info.caseName}_img`" class="style3">
-    <img src="./s7/mouse.png" :alt="`${info.caseName}_img`" class="mouse">
+    <img src="./s7/style_1.png" :alt="`${info.caseName}_img`" class="style1" />
+    <img src="./s7/style_2.png" :alt="`${info.caseName}_img`" class="style2" />
+    <img src="./s7/style_3.png" :alt="`${info.caseName}_img`" class="style3" />
+    <img src="./s7/mouse.png" :alt="`${info.caseName}_img`" class="mouse" />
     <div class="btns">
       <div :class="`btn ${pageIndex === 0 ? 'active': ''}`" @click="changePage(0)">37坪</div>
       <div :class="`btn ${pageIndex === 1 ? 'active': ''}`" @click="changePage(1)">25坪</div>
@@ -12,20 +12,25 @@
     <div class="content left">
       <div class="title1" v-html="list[pageIndex].title1"></div>
       <div class="subtitle" v-html="list[pageIndex].subtitle"></div>
-      <img src="./s7/arrowline.png" :alt="`${info.caseName}_img`" class="arrowline">
+      <img src="./s7/arrowline.png" :alt="`${info.caseName}_img`" class="arrowline" />
       <div class="desc1">
         <li v-for="desc in list[pageIndex].desc1" v-html="desc" :key="desc"></li>
       </div>
     </div>
     <div class="content">
-      <img :src="list[pageIndex].area" :alt="`${info.caseName}_img`" class="area">
+      <img :src="list[pageIndex].area" :alt="`${info.caseName}_img`" class="area" v-if="isPC">
+    <img :src="list[pageIndex].area" :alt="`${info.caseName}_img`" class="area" v-if="isPC" @click="showDialog">
+      <div class="touch" v-if="isMobile" @click="showDialog">
+        點擊圖片
+        <br />放大觀看
+      </div>
     </div>
     <div class="content">
       <div class="swipe relative" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="list[pageIndex].slideList.length > 0">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt>
+              <img :src="slide.img" alt />
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
@@ -43,18 +48,17 @@
       <div class="title2" v-html="list[pageIndex].title2"></div>
       <div class="line"></div>
       <div class="desc2">
-        <li v-for="desc in list[pageIndex].desc1" v-html="desc" :key="desc"></li>
+        <li v-for="desc in list[pageIndex].desc2" v-html="desc" :key="desc"></li>
       </div>
     </div>
-    <img src="./mobile/07/touch.png" :alt="`${info.caseName}_img`" class="touch" v-if="isMobile" @click="showDialog">
     <transition name="swipe-fade" mode="out-in">
       <div class="dialog" v-if="isDialog" @scroll="handleScroll">
         <div class="dialog-bg">
           <div class="dialog-close flex-c" @click="isDialog = false">
-            <img src="../../assets/img/close.png" alt>
+            <img src="../../assets/img/close.png" alt />
           </div>
-          <img :src="dialogImg" alt class="dialog-img">
-          <img src="./mobile/07/swipe-here.png" alt :class="`dialog-hand ${showMask ? 'active' : ''}`">
+          <img :src="dialogImg" alt class="dialog-img" />
+          <img src="./mobile/06/swipe-here.png" alt :class="`dialog-hand ${showMask ? 'active' : ''}`" />
         </div>
       </div>
     </transition>
@@ -150,6 +154,7 @@
 .arrowline {
   width: size(454);
   margin-bottom: size(20);
+  display: none;
 }
 
 .desc1 {
@@ -420,13 +425,13 @@
 .style1 {
   @include img_l_pc(800, 764, -130);
   opacity: 0.3;
-  animation: bling 1s .3s ease-in-out infinite alternate;
+  animation: bling 1s 0.3s ease-in-out infinite alternate;
 }
 
 .style2 {
   @include img_r_pc(885, 776, -243);
   opacity: 0.3;
-  animation: bling 1.2s .5s ease-in-out infinite alternate;
+  animation: bling 1.2s 0.5s ease-in-out infinite alternate;
 }
 
 .style3 {
@@ -457,7 +462,7 @@
 @media screen and (max-width: 767px) {
   .section7 {
     width: 100vw;
-    height: sizem(601);
+    height: auto;
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -465,78 +470,175 @@
     // background-position: 0 0;
     // background-attachment: fixed;
     overflow: hidden;
+    flex-wrap: wrap;
+  }
+  .mouse,
+  .style1,
+  .style2,
+  .style3 {
+    display: none;
+  }
+
+  .btns {
+    @include div_c_m(216, 38, 42);
+    background-color: #de1373;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    .btn {
+      width: 33.33%;
+      height: 80%;
+      font-size: sizem(21);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 2;
+      letter-spacing: sizem(1);
+      text-align: center;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      &:nth-child(2) {
+        border-left: 1px solid #fff;
+        border-right: 1px solid #fff;
+      }
+
+      &.active {
+        color: #ffee00;
+      }
+    }
   }
 
   .content {
-    @include div_l_m(345, 192, 34, 0);
-    background-color: rgba(54, 54, 54, 0.8);
-  }
-
-  .img {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+    padding-left: sizem(30);
+    padding-bottom: sizem(30);
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    &.left {
+      width: 100%;
+      margin-top: sizem(115);
+      width: sizem(220);
+    }
   }
 
-  .title {
-    @include img_l_m(225, 14, 30);
-    font-size: sizem(25);
-    font-weight: 900;
+  .title1 {
+    width: 100%;
+    font-size: sizem(20);
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.4;
-    letter-spacing: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(1.3);
     text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
+    color: #cf0065;
+    margin-bottom: sizem(20);
   }
 
   .subtitle {
-    @include img_l_m(250, 91, 30);
-    font-family: "Noto Sans TC";
-    font-size: sizem(16);
-    font-weight: 500;
+    font-size: sizem(14);
+    font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.38;
-    letter-spacing: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(1.4);
     text-align: left;
-    color: #33cfff;
+    color: #221814;
+    margin-bottom: size(0);
   }
 
-  .desc {
-    @include img_l_m(320, 124, 30);
-    font-family: "Noto Serif TC";
-    font-size: sizem(25);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.75;
-    letter-spacing: normal;
-    text-align: left;
-    color: #ffffff;
+  .arrowline {
+    width: 100%;
+    margin-bottom: size(20);
+  }
+
+  .desc1 {
+    width: 100%;
+    li {
+      font-size: sizem(14);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.2;
+      letter-spacing: sizem(1.4);
+      text-align: left;
+      color: #221814;
+    }
+  }
+
+  .area {
+    width: sizem(125);
+    height: sizem(130);
+    object-fit: cover;
+    position: absolute;
+    top: sizem(104);
+    right: sizem(30);
   }
 
   .touch {
-    @include img_c_m(102, 367);
-    cursor: pointer;
-    z-index: 12;
-    opacity: 0.5;
-    animation: showHide 1s ease-in-out 0s infinite alternate-reverse;
+    width: sizem(125);
+    height: sizem(50);
+    object-fit: cover;
+    position: absolute;
+    top: sizem(232);
+    right: sizem(30);
+    padding-top: sizem(10);
+    font-size: sizem(16);
+    font-weight: 700;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(1);
+    text-align: center;
+    color: #fff;
+    background-color: #de1373;
   }
 
-  @keyframes showHide {
-    to {
-      opacity: 1;
+  .title2 {
+    width: 100%;
+    font-size: sizem(20);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: sizem(1.3);
+    text-align: center;
+    color: #cf0065;
+    margin-bottom: size(20);
+  }
+
+  .line {
+    display: none;
+    // width: size(520);
+    // border-top: 2px solid #231815;
+    // margin-bottom: size(20);
+  }
+
+  .desc2 {
+    width: 100%;
+    li {
+      font-size: sizem(14);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 2.2;
+      letter-spacing: size(1.5);
+      text-align: left;
+      color: #221814;
     }
   }
 
   /* Swipe */
   .swipe {
-    width: 100vw;
-    height: sizem(375);
+    width: sizem(313);
+    height: sizem(187);
     min-height: auto;
-    top: sizem(226);
+    top: sizem(0);
     bottom: auto;
     left: sizem(0);
     object-fit: cover;
@@ -827,7 +929,7 @@ export default {
           title2: "出租置產 高投報率 ",
           desc2: ["一邊自用 一邊收租 開啟斜槓人生", "抵制高速通膨的絕佳產品"],
           area: require("./s7/2-img.png"),
-          slideList: [],
+          slideList: []
         },
         {
           title1: "26坪高效正2房",
@@ -866,9 +968,7 @@ export default {
           ]
         }
       ],
-      slideList: [
-
-      ]
+      slideList: []
     };
   },
 
@@ -876,7 +976,7 @@ export default {
     showDialog() {
       this.isDialog = true;
       this.showMask = true;
-      this.dialogImg = this.slideList[this.slideIndex].full;
+      this.dialogImg = this.list[this.pageIndex].area;
     },
 
     handleScroll() {

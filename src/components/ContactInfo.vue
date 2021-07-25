@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="contact-info" id="contact-info" data-aos="fade" data-aos-delay="0">
-      <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
-      <img class="mouse" src="./mouse.png" :alt="info.caseName" data-aos="fade-left" data-aos-delay="0" />
+      <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0">
+      <img class="mouse" src="./mouse.png" :alt="info.caseName" data-aos="fade-left" data-aos-delay="0">
       <!-- <img
         v-if="isMobile"
         class="logo"
@@ -10,56 +10,59 @@
         :alt="info.caseName"
         data-aos="fade-down"
         data-aos-delay="0"
-      /> -->
+      />-->
       <div class="info">
         <div class="btn flex-c" @click="showCallDialog" data-aos="fade-down" data-aos-delay="100">
           <span class="flex-c">
-            <font-awesome-icon icon="phone" />
+            <font-awesome-icon icon="phone"/>
             <span>{{info.phone}}</span>
           </span>
         </div>
         <div class="btn flex-c" @click="showMessengerDialog" data-aos="fade-down" data-aos-delay="200">
           <span class="flex-c">
-            <font-awesome-icon :icon="['fab', 'facebook-messenger']" /><span>FB 諮詢</span>
+            <font-awesome-icon :icon="['fab', 'facebook-messenger']"/>
+            <span>FB 諮詢</span>
           </span>
         </div>
         <a class="btn flex-c" :href="info.fbLink" target="_blank" data-aos="fade-down" data-aos-delay="300">
           <span class="flex-c">
-            <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
+            <font-awesome-icon :icon="['fab', 'facebook-f']"/>
+            <span>前往粉絲專頁</span>
           </span>
         </a>
         <div class="address flex-c" data-aos="fade-down" data-aos-delay="400">{{info.address}}</div>
         <div class="google-btn flex-c" data-aos="fade-down" data-aos-delay="400" @click="showMapDialog">
           <span class="flex-c">
-            <font-awesome-icon icon="map-marker-alt" /><span>導航 Google 地圖</span>
+            <font-awesome-icon icon="map-marker-alt"/>
+            <span>導航 Google 地圖</span>
           </span>
         </div>
       </div>
     </div>
     <el-dialog title :visible.sync="isShowCallDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
-      <CallDialog :phone="info.phone" />
+      <CallDialog :phone="info.phone"/>
     </el-dialog>
     <el-dialog title :visible.sync="isShowMessengerDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
-      <MessengerDialog :messenger="info.fbMessage" />
+      <MessengerDialog :messenger="info.fbMessage"/>
     </el-dialog>
     <el-dialog title :visible.sync="isShowMapDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
-      <MapDialog :link="info.googleLink" :address="info.address" />
+      <MapDialog :link="info.googleLink" :address="info.address"/>
     </el-dialog>
   </div>
 </template>
 
 <script>
-import info from '@/info'
-import { isMobile, isTablet } from '@/utils'
-import CallDialog from '@/components/Dialog/Call'
-import MessengerDialog from '@/components/Dialog/Messenger'
-import MapDialog from '@/components/Dialog/Map'
+import info from "@/info";
+import { isMobile, isTablet } from "@/utils";
+import CallDialog from "@/components/Dialog/Call";
+import MessengerDialog from "@/components/Dialog/Messenger";
+import MapDialog from "@/components/Dialog/Map";
 export default {
-  name: 'contactInfo',
+  name: "contactInfo",
   components: {
     CallDialog,
     MessengerDialog,
-    MapDialog,
+    MapDialog
   },
   data() {
     return {
@@ -69,30 +72,30 @@ export default {
       isTablet,
       isShowCallDialog: false,
       isShowMessengerDialog: false,
-      isShowMapDialog: false,
-    }
+      isShowMapDialog: false
+    };
   },
   methods: {
     showCallDialog() {
       // if (!this.isMobile) return
-      this.isShowCallDialog = true
+      this.isShowCallDialog = true;
     },
     showMessengerDialog() {
       // if (!this.isMobile) return
-      this.isShowMessengerDialog = true
+      this.isShowMessengerDialog = true;
     },
 
     showMapDialog() {
       // if (!this.isMobile) return
-      this.isShowMapDialog = true
-    },
-  },
-}
+      this.isShowMapDialog = true;
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/style/variableColor.scss';
-@import '@/assets/style/variableDefault.scss';
+@import "@/assets/style/variableColor.scss";
+@import "@/assets/style/variableDefault.scss";
 
 .contact-info {
   background: $contact_bg;
@@ -185,7 +188,7 @@ export default {
     }
   }
   &::before {
-    content: '';
+    content: "";
     width: 40%;
     height: 100%;
     display: block;
@@ -276,20 +279,21 @@ export default {
     height: auto;
     padding: 5%;
     transform: none;
-    position: static;
+    position: relative;
     margin: 0;
 
     .logo {
       width: $contact_logo_mobile_width;
       margin: 5% auto 10%;
+      margin-top: sizem(70);
     }
   }
 
-  .particle {
+  .mouse {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
+    top: 0;
+    right: 0;
+    width: sizem(138);
   }
 
   .btn {

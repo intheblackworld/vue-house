@@ -1,19 +1,16 @@
 <template>
   <div class="section1">
     <img src="./s1/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="isPC">
+    <img src="./mobile/01/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="isMobile">
     <img src="./s1/style_1.png" :alt="`${info.caseName}_img`" class="style1">
     <img src="./s1/style_2.png" :alt="`${info.caseName}_img`" class="style2">
     <img src="./s1/style_1.png" :alt="`${info.caseName}_img`" class="style3">
     <img src="./s1/logo.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade" data-aos-delay="0">
     <img src="./s1/logotitle.png" :alt="`${info.caseName}_img`" class="logotitle" data-aos="fade" data-aos-delay="200">
-    <div class="title" data-aos="fade" data-aos-delay="400">
-      商圈一分鐘 區域最稀有 住宅熱銷王
-    </div>
+    <div class="title" data-aos="fade" data-aos-delay="400">商圈一分鐘 區域最稀有 住宅熱銷王</div>
     <img src="./s1/arrow.png" :alt="`${info.caseName}_img`" class="arrow" data-aos="fade-right" data-aos-delay="600">
-    <div class="subtitle" data-aos="fade" data-aos-delay="800">
-      25坪雙套房｜2房26坪 ｜大3房37坪
-    </div>
-    <img src="./s1/btn.png" :alt="`${info.caseName}_img`" class="btn" data-aos="fade" data-aos-delay="1000">
+    <div class="subtitle" data-aos="fade" data-aos-delay="800">25坪雙套房｜2房26坪 ｜大3房37坪</div>
+    <img src="./s1/btn.png" :alt="`${info.caseName}_img`" class="btn" data-aos="fade" data-aos-delay="1000" v-scroll-to="{ element: `#contact` }">
     <img src="./s1/building.png" :alt="`${info.caseName}_img`" class="building" data-aos="fade-left" data-aos-delay="1000">
     <img src="./s1/mouse.png" :alt="`${info.caseName}_img`" class="mouse" data-aos="fade-right" data-aos-delay="1000">
     <img src="./s1/textball.png" :alt="`${info.caseName}_img`" class="textball" data-aos="fade" data-aos-delay="1200">
@@ -21,7 +18,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import '@/assets/style/function.scss';
+@import "@/assets/style/function.scss";
 .section1 {
   width: 100%;
   height: 100vh;
@@ -91,13 +88,13 @@
 .style1 {
   @include img_l_pc(588, 844, -220);
   opacity: 0.3;
-  animation: bling 1s .3s ease-in-out infinite alternate;
+  animation: bling 1s 0.3s ease-in-out infinite alternate;
 }
 
 .style2 {
   @include img_l_pc(428, 695, 243);
   opacity: 0.3;
-  animation: bling 1.2s .5s ease-in-out infinite alternate;
+  animation: bling 1.2s 0.5s ease-in-out infinite alternate;
 }
 
 .style3 {
@@ -141,12 +138,6 @@
   color: #231815;
   white-space: nowrap;
 }
-
-@keyframes cloud {
-  to {
-    transform: translateX(0);
-  }
-}
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -167,114 +158,97 @@
   }
 
   .logo {
-    @include img_c_m(184, 126);
+    @include img_c_m(210, 47);
   }
 
-  .linear-dark {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
+  .arrow {
+    @include img_c_m(352, 199);
+  }
+  .btn {
+    @include img_c_m(185, 248);
+  }
+  .building {
+    @include img_c_m(291, 0);
+    top: auto;
+    bottom: 0;
   }
 
-  .partical-bg {
-    @include div_l_m(375, 667, -320, 100);
-    transform: rotate(-65deg);
-    overflow: hidden;
-
-    > div {
-      position: absolute;
-      width: 100%;
-      height: sizem(667);
-    }
+  .logotitle {
+    @include img_c_m(179, 135);
   }
+
+  .mouse {
+    @include img_r_m(89, 355, 0);
+  }
+  .style1 {
+    @include img_r_m(160, 361, 0);
+    opacity: 0.3;
+    animation: bling 1s 0.3s ease-in-out infinite alternate;
+  }
+
+  .style2 {
+    @include img_c_m(169, 231);
+    opacity: 0.3;
+    animation: bling 1.2s 0.5s ease-in-out infinite alternate;
+  }
+
+  .style3 {
+    @include img_l_m(169, 322, 0);
+    opacity: 0.3;
+    animation: bling 1.5s 0s ease-in-out infinite alternate;
+  }
+
+  .textball {
+    @include img_l_m(148, 338, 12);
+  }
+
   .title {
-    @include img_c_m(254, 244);
-    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
-    font-size: sizem(30);
-    font-weight: 900;
+    @include img_c_m(375, 155);
+    font-size: sizem(20);
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.88;
-    letter-spacing: sizem(1.8);
+    line-height: 3;
+    letter-spacing: sizem(1.2);
     text-align: center;
-    color: #ffffff;
+    color: #de1373;
     white-space: nowrap;
   }
 
   .subtitle {
-    @include img_c_m(302, 312);
-    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
-    font-size: sizem(20);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.4;
-    letter-spacing: sizem(1.2);
-    text-align: center;
-    color: #ffffff;
-    white-space: nowrap;
-  }
-
-  .desc {
-    @include div_c_m(303, 35, 372);
-    text-shadow: none;
-    font-size: sizem(20);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.6;
-    letter-spacing: sizem(1.2);
-    text-align: center;
-    color: #253a7e;
-    background-color: rgba(255, 255, 255, 0.82);
-  }
-
-  .label {
-    @include div_c_m(239, 61, 487);
-    text-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+    @include img_c_m(375, 211);
     font-size: sizem(16);
-    font-weight: 900;
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.42;
-    letter-spacing: normal;
+    line-height: 1.59;
+    letter-spacing: sizem(0.8);
     text-align: center;
-    color: #ffffff;
-    background-color: #0097e2;
-  }
+    color: #231815;
+    white-space: nowrap;
 
-  .btn {
-    @include img_c_m(168, 526);
-    font-size: sizem(18);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.22;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000000;
-    background-color: #0097e2;
+    span {
+      font-size: sizem(20);
+    }
   }
 }
 </style>
 <script>
 // @ is an alias to /src
-import { isPC, isMobile, isTablet } from '@/utils'
-import info from '@/info'
+import { isPC, isMobile, isTablet } from "@/utils";
+import info from "@/info";
 
 export default {
-  name: 'section1',
+  name: "section1",
 
   data() {
     return {
       info,
       isPC,
       isMobile,
-      isTablet,
+      isTablet
       // blockIndex: 0,
-    }
+    };
   },
 
   methods: {},
@@ -287,6 +261,6 @@ export default {
 
   created() {},
 
-  computed: {},
-}
+  computed: {}
+};
 </script>

@@ -4,38 +4,40 @@
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-            <img :src="slide.img" alt="">
+            <img :src="slide.img" alt>
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
-        <div class="pagination absolute flex-ac" data-aos="fade" data-aos-delay="200" v-if="isPC">
-          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+        <div class="pagination absolute flex-ac" data-aos="fade" data-aos-delay="200">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)">
+            <span :class="`${slideIndex === index ? 'active' : ''}`"></span>
+          </div>
         </div>
         <div class="swipe-btns absolute flex-ac flex-jb">
-          <img src="./s6/arrow_l.png" alt="" class="prev-btn" @click="decIndex">
-          <img src="./s6/arrow_r.png" alt="" class="next-btn" @click="addIndex">
+          <div class="prev-btn" @click="decIndex"></div>
+          <div class="next-btn" @click="addIndex"></div>
         </div>
       </div>
     </div>
     <div class="content" data-aos="fade" data-aos-delay="0">
       <h1 class="desc" data-aos="fade-up" data-aos-delay="200" v-html="slideList[slideIndex].area"></h1>
     </div>
-    <img src="./mobile/07/touch.png" :alt="`${info.caseName}_img`" class="touch" v-if="isMobile" @click="showDialog">
+    <img src="./mobile/06/touch.png" :alt="`${info.caseName}_img`" class="touch" v-if="isMobile" @click="showDialog">
     <transition name="swipe-fade" mode="out-in">
       <div class="dialog" v-if="isDialog" @scroll="handleScroll">
         <div class="dialog-bg">
           <div class="dialog-close flex-c" @click="isDialog = false">
-            <img src="../../assets/img/close.png" alt="">
+            <img src="../../assets/img/close.png" alt>
           </div>
-          <img :src="dialogImg" alt="" class="dialog-img">
-          <img src="./mobile/07/swipe-here.png" alt="" :class="`dialog-hand ${showMask ? 'active' : ''}`">
+          <img :src="dialogImg" alt class="dialog-img">
+          <img src="./mobile/06/swipe-here.png" alt :class="`dialog-hand ${showMask ? 'active' : ''}`">
         </div>
       </div>
     </transition>
   </div>
 </template>
 <style lang="scss" scoped>
-@import '@/assets/style/function.scss';
+@import "@/assets/style/function.scss";
 
 .section6 {
   width: 100%;
@@ -134,7 +136,7 @@
   }
 
   .slide-name {
-    font-family: 'Noto Sans TC';
+    font-family: "Noto Sans TC";
     right: 2em;
     bottom: 1.2em;
     color: #fff;
@@ -190,7 +192,7 @@
     transition: all 0.5s;
 
     &::before {
-      content: '';
+      content: "";
       width: 60%;
       height: 60%;
       display: block;
@@ -208,7 +210,7 @@
     &.active {
       box-shadow: 0 0 0 1px #cf0065;
       &::before {
-        content: '';
+        content: "";
         width: 100%;
         height: 100%;
         display: block;
@@ -228,13 +230,50 @@
 .swipe-btns {
   width: 100%;
   height: 100%;
-  padding: 0 15px;
+  padding: 0 0;
   z-index: 3;
-
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
   .prev-btn,
   .next-btn {
-    width: size(130);
+    position: relative;
+    height: 100%;
+    width: 2em;
+    font-size: size(20);
     cursor: pointer;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      transform: translateX(100%);
+      background-color: #0004;
+      transition: all 0.3s;
+    }
+    &::after {
+      content: "";
+      width: 1em;
+      height: 1em;
+      position: absolute;
+      top: calc(50% - 0.5em);
+      left: calc(50% - 0.75em);
+      border: solid #fff;
+      border-width: 0.1em 0.1em 0 0;
+      transform: rotate(45deg) translate(-10%, 10%);
+    }
+    &:hover:before {
+      transform: translateX(0%);
+    }
+    &:hover:after {
+      animation: btn 0.5s ease-in-out infinite alternate;
+    }
+  }
+  .prev-btn {
+    transform: scaleX(-1);
   }
 }
 
@@ -254,9 +293,10 @@
 @media screen and (max-width: 767px) {
   .section6 {
     width: 100vw;
-    height: sizem(601);
+    height: sizem(304);
     min-height: auto;
     max-height: initial;
+    background-color: #bccf00;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
     // background-position: 0 0;
@@ -265,57 +305,24 @@
   }
 
   .content {
-    @include div_l_m(345, 192, 34, 0);
-    background-color: rgba(54, 54, 54, 0.8);
-  }
-
-  .img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .title {
-    @include img_l_m(225, 14, 30);
-    font-size: sizem(25);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.4;
-    letter-spacing: normal;
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
-  }
-
-  .subtitle {
-    @include img_l_m(250, 91, 30);
-    font-family: 'Noto Sans TC';
-    font-size: sizem(16);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.38;
-    letter-spacing: normal;
-    text-align: left;
-    color: #33cfff;
+    @include div_l_m(345, 46, 48, 0);
+    background: linear-gradient(to right, #dfdd00 50%, transparent);
   }
 
   .desc {
-    @include img_l_m(320, 124, 30);
-    font-family: 'Noto Serif TC';
+    @include img_l_m(345, 4, 30);
     font-size: sizem(25);
-    font-weight: 900;
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.75;
-    letter-spacing: normal;
+    line-height: 1.4;
+    letter-spacing: sizem(4);
     text-align: left;
-    color: #ffffff;
+    color: #cf0065;
   }
 
   .touch {
-    @include img_c_m(102, 367);
+    @include img_c_m(102, 149);
     cursor: pointer;
     z-index: 12;
     opacity: 0.5;
@@ -331,9 +338,9 @@
   /* Swipe */
   .swipe {
     width: 100vw;
-    height: sizem(375);
+    height: sizem(211);
     min-height: auto;
-    top: sizem(226);
+    top: sizem(93);
     bottom: auto;
     left: sizem(0);
     object-fit: cover;
@@ -419,7 +426,7 @@
 
   .pagination {
     width: auto;
-    bottom: size(91);
+    bottom: sizem(12);
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -434,20 +441,20 @@
 
     span {
       display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
+      width: sizem(10);
+      height: sizem(10);
+      border-radius:sizem(10);
       box-shadow: 0 0 0 1px #fff;
       position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
+      background-color: #fff;
       transition: all 0.5s;
 
       &::before {
-        content: '';
+        content: "";
         width: 60%;
         height: 60%;
         display: block;
-        background: #004ea2;
+        background: #d00065;
         border-radius: 20px;
         opacity: 1;
         position: absolute;
@@ -460,14 +467,15 @@
       }
       &.active {
         &::before {
-          content: '';
+          content: "";
           width: 100%;
           height: 100%;
           display: block;
-          background: #004ea2;
+          background: #d00065;
           border-radius: 20px;
           opacity: 1;
           position: absolute;
+          box-shadow: 0 0 0 1px #d00065;
           top: 0%;
           // transform: translateY(-50%);
           left: 0%;
@@ -555,12 +563,12 @@
 </style>
 <script>
 // @ is an alias to /src
-import { isPC, isMobile, isTablet } from '@/utils'
-import slider from '@/mixins/slider.js'
-import info from '@/info'
+import { isPC, isMobile, isTablet } from "@/utils";
+import slider from "@/mixins/slider.js";
+import info from "@/info";
 
 export default {
-  name: 'section6',
+  name: "section6",
 
   mixins: [slider],
 
@@ -575,43 +583,37 @@ export default {
       showMask: false,
       slideList: [
         {
-          img: isMobile
-            ? require('./mobile/07/slider_1.jpg')
-            : require('./s6/slider_1.jpg'),
-          full: require('./mobile/07/slider_1_full.jpg'),
-          name: '3D景觀示意圖',
-          area: '雅砌悦賓大廳',
+          img: require("./s6/slider_1.jpg"),
+          full: require("./s6/slider_1.jpg"),
+          name: "3D景觀示意圖",
+          area: "雅砌悦賓大廳"
         },
         {
-          img: isMobile
-            ? require('./mobile/07/slider_2.jpg')
-            : require('./s6/slider_2.jpg'),
-          full: require('./mobile/07/slider_2_full.jpg'),
-          name: '3D景觀示意圖',
-          area: '雅砌悦賓大廳',
+          img: require("./s6/slider_2.jpg"),
+          full: require("./s6/slider_2.jpg"),
+          name: "3D景觀示意圖",
+          area: "雅砌悦賓大廳"
         },
         {
-          img: isMobile
-            ? require('./mobile/07/slider_3.jpg')
-            : require('./s6/slider_3.jpg'),
-          full: require('./mobile/07/slider_3_full.jpg'),
-          name: '3D景觀示意圖',
-          area: '雅砌悦賓大廳',
-        },
-      ],
-    }
+          img: require("./s6/slider_3.jpg"),
+          full: require("./s6/slider_3.jpg"),
+          name: "3D景觀示意圖",
+          area: "雅砌悦賓大廳"
+        }
+      ]
+    };
   },
 
   methods: {
     showDialog() {
-      this.isDialog = true
-      this.showMask = true
-      this.dialogImg = this.slideList[this.slideIndex].full
+      this.isDialog = true;
+      this.showMask = true;
+      this.dialogImg = this.slideList[this.slideIndex].full;
     },
 
     handleScroll() {
-      this.showMask = false
-    },
+      this.showMask = false;
+    }
   },
 
   created() {},
@@ -620,6 +622,6 @@ export default {
 
   computed: {},
 
-  watch: {},
-}
+  watch: {}
+};
 </script>
