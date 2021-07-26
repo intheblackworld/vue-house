@@ -9,23 +9,20 @@
       <div :class="`btn ${pageIndex === 1 ? 'active': ''}`" @click="changePage(1)">25坪</div>
       <div :class="`btn ${pageIndex === 2 ? 'active': ''}`" @click="changePage(2)">26坪</div>
     </div>
-    <div class="content left">
+    <div :class="`content left ${pageIndex === 1 ? 'big' : ''}`">
       <div class="title1" v-html="list[pageIndex].title1"></div>
       <div class="subtitle" v-html="list[pageIndex].subtitle"></div>
       <img src="./s7/arrowline.png" :alt="`${info.caseName}_img`" class="arrowline" />
-      <div class="desc1">
+      <div :class="`desc1 ${pageIndex === 1 ? 'big' : ''}`">
         <li v-for="desc in list[pageIndex].desc1" v-html="desc" :key="desc"></li>
       </div>
     </div>
-    <div class="content">
-      <img :src="list[pageIndex].area" :alt="`${info.caseName}_img`" class="area" v-if="isPC">
-    <img :src="list[pageIndex].area" :alt="`${info.caseName}_img`" class="area" v-if="isPC" @click="showDialog">
-      <div class="touch" v-if="isMobile" @click="showDialog">
-        點擊圖片
-        <br />放大觀看
-      </div>
+    <div :class="`content ${pageIndex === 1 ? 'big-middle' : ''}`">
+      <img :src="list[pageIndex].area" :alt="`${info.caseName}_img`" class="area" v-if="isPC" />
+      <img :src="list[pageIndex].area" :alt="`${info.caseName}_img`" :class="`area ${pageIndex === 1 ? 'big' : ''}`" v-if="isMobile" @click="showDialog" />
+      <div class="touch" v-if="isMobile && pageIndex !== 1" @click="showDialog">點擊圖片<br />放大觀看</div>
     </div>
-    <div class="content">
+    <div class="content right">
       <div class="swipe relative" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="list[pageIndex].slideList.length > 0">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -47,7 +44,7 @@
       </div>
       <div class="title2" v-html="list[pageIndex].title2"></div>
       <div class="line"></div>
-      <div class="desc2">
+      <div :class="`desc2 ${pageIndex === 1 ? 'big' : ''}`">
         <li v-for="desc in list[pageIndex].desc2" v-html="desc" :key="desc"></li>
       </div>
     </div>
@@ -74,6 +71,7 @@
   max-height: size(1080);
   position: relative;
   background-color: #bccf00;
+  overflow: hidden;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
@@ -120,9 +118,12 @@
   align-items: center;
   align-content: center;
   justify-content: center;
-  padding-left: size(100);
-
+  padding-left: size(40);
+  &.right {
+    padding-left: size(0);
+  }
   &.left {
+    padding-left: size(90);
     width: size(592);
   }
 }
@@ -154,11 +155,10 @@
 .arrowline {
   width: size(454);
   margin-bottom: size(20);
-  display: none;
 }
 
 .desc1 {
-  width: size(454);
+  width: size(579);
   li {
     font-size: size(25);
     font-weight: normal;
@@ -186,17 +186,18 @@
   letter-spacing: size(2.3);
   text-align: center;
   color: #cf0065;
+  margin-top: size(20);
   margin-bottom: size(20);
 }
 
 .line {
-  width: size(520);
+  width: size(579);
   border-top: 2px solid #231815;
   margin-bottom: size(20);
 }
 
 .desc2 {
-  width: size(520);
+  width: size(579);
   li {
     font-size: size(29);
     font-weight: normal;
@@ -274,7 +275,7 @@
   .slide-name {
     font-family: "Noto Sans TC";
     left: 2em;
-    bottom: 1.2em;
+    bottom: 0.2em;
     color: #fff;
     font-size: size(18);
     font-weight: normal;
@@ -517,13 +518,22 @@
     align-items: center;
     align-content: center;
     justify-content: flex-start;
-    padding-left: sizem(30);
-    padding-bottom: sizem(30);
+    padding-left: sizem(30) !important;
+    padding-bottom: sizem(30) !important;
     width: 100%;
     &.left {
-      width: 100%;
       margin-top: sizem(115);
       width: sizem(220);
+    }
+
+
+    &.big {
+      width: 100% !important;
+      padding-right: sizem(30);
+    }
+
+    &.big-middle, &.right {
+      padding-left: 0 !important;
     }
   }
 
@@ -555,16 +565,30 @@
   .arrowline {
     width: 100%;
     margin-bottom: size(20);
+    display: none;
   }
 
   .desc1 {
     width: 100%;
+    &.big {
+      width: sizem(315);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: sizem(15);
+
+      li {
+        width: 50%;
+        text-align: left;
+      }
+    }
     li {
       font-size: sizem(14);
       font-weight: normal;
       font-stretch: normal;
       font-style: normal;
-      line-height: 1.2;
+      line-height: 1.4;
       letter-spacing: sizem(1.4);
       text-align: left;
       color: #221814;
@@ -578,6 +602,15 @@
     position: absolute;
     top: sizem(104);
     right: sizem(30);
+
+    &.big {
+      width: sizem(213);
+      position: relative;
+      margin: sizem(20) auto;
+      right: auto;
+      top: auto;
+      height: auto;
+    }
   }
 
   .touch {
@@ -621,6 +654,13 @@
 
   .desc2 {
     width: 100%;
+    padding-left: sizem(30);
+    &.big {
+      padding-left: sizem(0);
+      li {
+        text-align: center;
+      }
+    }
     li {
       font-size: sizem(14);
       font-weight: normal;
@@ -640,7 +680,7 @@
     min-height: auto;
     top: sizem(0);
     bottom: auto;
-    left: sizem(0);
+    left: sizem(30);
     object-fit: cover;
   }
 
@@ -884,17 +924,17 @@ export default {
           title1: "37坪採光大3房",
           subtitle: "",
           desc1: [
-            "玄關規劃好收納",
-            "擁低台度大面開窗，及前後大陽台",
-            "雙衛浴皆開窗不易潮濕",
-            "3間主、次臥皆有雙人床空間"
+            "█ 玄關規劃好收納",
+            "█ 擁低台度大面開窗，及前後大陽台",
+            "█ 雙衛浴皆開窗不易潮濕",
+            "█ 3間主、次臥皆有雙人床空間"
           ],
 
           title2: "格局規劃佳，舒適不將就",
           desc2: [
-            "無廊道高坪效規劃，空間好利用",
-            "戶戶衛浴皆有對外窗，空氣流通不易潮濕",
-            "戶戶邊間採光極佳，無暗房暗廳問題"
+            "█ 無廊道高坪效規劃，空間好利用",
+            "█ 戶戶衛浴皆有對外窗，空氣流通不易潮濕",
+            "█ 戶戶邊間採光極佳，無暗房暗廳問題"
           ],
           area: require("./s7/1-img.png"),
           slideList: [
@@ -918,12 +958,12 @@ export default {
         },
         {
           title1: "25坪實用雙套房",
-          subtitle: "園區萬人租客，入主現成房東<br />自住置產實用優勢大集合：",
+          subtitle: isMobile ? "園區萬人租客，入主現成房東自住置產實用優勢大集合：":  "園區萬人租客，入主現成房東<br />自住置產實用優勢大集合：",
           desc1: [
-            "電表分離配置",
-            "包租代管2年",
-            "專有玄關緩衝",
-            "便利私有陽台"
+            "█ 電表分離配置",
+            "█ 包租代管2年",
+            "█ 專有玄關緩衝",
+            "█ 便利私有陽台"
           ],
 
           title2: "出租置產 高投報率 ",
@@ -935,17 +975,17 @@ export default {
           title1: "26坪高效正2房",
           subtitle: "",
           desc1: [
-            "玄關規劃好收納",
-            "低台度大面開窗",
-            "客廳對外明亮空間",
-            "主臥大空間好收納"
+            "█ 玄關規劃好收納",
+            "█ 低台度大面開窗",
+            "█ 客廳對外明亮空間",
+            "█ 主臥大空間好收納"
           ],
 
           title2: "格局規劃佳，舒適不將就",
           desc2: [
-            "無廊道高坪效規劃，空間好利用",
-            "戶戶衛浴皆有對外窗，空氣流通不易潮濕",
-            "戶戶邊間採光極佳，無暗房暗廳問題"
+            "█ 無廊道高坪效規劃，空間好利用",
+            "█ 戶戶衛浴皆有對外窗，空氣流通不易潮濕",
+            "█ 戶戶邊間採光極佳，無暗房暗廳問題"
           ],
           area: require("./s7/3-img.png"),
           slideList: [
@@ -974,9 +1014,11 @@ export default {
 
   methods: {
     showDialog() {
-      this.isDialog = true;
+      if (this.pageIndex !== 1) {
+        this.isDialog = true;
       this.showMask = true;
       this.dialogImg = this.list[this.pageIndex].area;
+      }
     },
 
     handleScroll() {

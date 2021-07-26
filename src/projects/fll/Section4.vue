@@ -2,7 +2,7 @@
   <div class="section4">
     <img src="./s4/balloon.png" :alt="`${info.caseName}_img`" class="balloon">
     <img src="./s4/map.png" :alt="`${info.caseName}_img`" class="map" v-if="isPC">
-    <img src="./s4/map.png" :alt="`${info.caseName}_img`" class="map" v-if="isPC" @click="showDialog">
+    <img src="./s4/map.png" :alt="`${info.caseName}_img`" class="map" v-if="isMobile" @click="showDialog">
     <img src="./s4/style.png" :alt="`${info.caseName}_img`" class="style1">
     <img src="./s4/mouse.png" :alt="`${info.caseName}_img`" class="mouse">
     <div class="btn flex-c" v-if="isMobile" @click="showDialog">點擊圖片放大觀看</div>

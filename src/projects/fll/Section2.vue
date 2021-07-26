@@ -301,7 +301,7 @@ export default {
       isMobile,
       player: '',
       id: 'b_5BLmJ0tbo',
-      isDialog: false,
+      isDialog: true,
     }
   },
 
@@ -348,6 +348,11 @@ export default {
   },
 
   mounted() {
+    if (this.isMobile) {
+      this.isDialog = false
+    } else {
+      this.isDialog = true
+    }
     // setTimeout(() => {
     //   if (!this.isMobile) {
     //     if (!window.YT) {

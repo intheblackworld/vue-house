@@ -60,7 +60,7 @@
 }
 
 .desc {
-  @include img_l_pc(572, 12, 0);
+  @include img_l_pc(572, 7, 0);
   font-size: size(50);
   font-weight: bold;
   font-stretch: normal;
@@ -236,6 +236,9 @@
   position: absolute;
   top: 0;
   left: 0;
+  .next-btn {
+    width: 3em;
+  }
   .prev-btn,
   .next-btn {
     position: relative;

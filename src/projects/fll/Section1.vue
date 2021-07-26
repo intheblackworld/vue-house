@@ -1,19 +1,21 @@
 <template>
   <div class="section1">
-    <img src="./s1/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="isPC">
-    <img src="./mobile/01/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="isMobile">
-    <img src="./s1/style_1.png" :alt="`${info.caseName}_img`" class="style1">
-    <img src="./s1/style_2.png" :alt="`${info.caseName}_img`" class="style2">
-    <img src="./s1/style_1.png" :alt="`${info.caseName}_img`" class="style3">
-    <img src="./s1/logo.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade" data-aos-delay="0">
-    <img src="./s1/logotitle.png" :alt="`${info.caseName}_img`" class="logotitle" data-aos="fade" data-aos-delay="200">
+    <img src="./s1/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="isPC" />
+    <img src="./mobile/01/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="isMobile" />
+    <div data-aos="fade" data-aos-delay="800">
+      <img src="./s1/style_1.png" :alt="`${info.caseName}_img`" class="style1" />
+      <img src="./s1/style_2.png" :alt="`${info.caseName}_img`" class="style2" />
+      <img src="./s1/style_1.png" :alt="`${info.caseName}_img`" class="style3" />
+    </div>
+    <img src="./s1/logo.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade" data-aos-delay="0" />
+    <img src="./s1/logotitle.png" :alt="`${info.caseName}_img`" class="logotitle" data-aos="fade" data-aos-delay="200" />
     <div class="title" data-aos="fade" data-aos-delay="400">商圈一分鐘 區域最稀有 住宅熱銷王</div>
-    <img src="./s1/arrow.png" :alt="`${info.caseName}_img`" class="arrow" data-aos="fade-right" data-aos-delay="600">
+    <img src="./s1/arrow.png" :alt="`${info.caseName}_img`" class="arrow" data-aos="fade-right" data-aos-delay="600" />
     <div class="subtitle" data-aos="fade" data-aos-delay="800">25坪雙套房｜2房26坪 ｜大3房37坪</div>
-    <img src="./s1/btn.png" :alt="`${info.caseName}_img`" class="btn" data-aos="fade" data-aos-delay="1000" v-scroll-to="{ element: `#contact` }">
-    <img src="./s1/building.png" :alt="`${info.caseName}_img`" class="building" data-aos="fade-left" data-aos-delay="1000">
-    <img src="./s1/mouse.png" :alt="`${info.caseName}_img`" class="mouse" data-aos="fade-right" data-aos-delay="1000">
-    <img src="./s1/textball.png" :alt="`${info.caseName}_img`" class="textball" data-aos="fade" data-aos-delay="1200">
+    <img src="./s1/btn.png" :alt="`${info.caseName}_img`" class="btn" data-aos="fade" data-aos-delay="1000" v-scroll-to="{ element: `#contact` }" />
+    <img src="./s1/building.png" :alt="`${info.caseName}_img`" class="building" data-aos="fade-left" data-aos-delay="1000" />
+    <img src="./s1/mouse.png" :alt="`${info.caseName}_img`" class="mouse" data-aos="fade-right" data-aos-delay="1000" />
+    <img src="./s1/textball.png" :alt="`${info.caseName}_img`" class="textball" data-aos="fade" data-aos-delay="1200" />
   </div>
 </template>
 
@@ -155,6 +157,12 @@
     // &:before {
     //   background-image: url('./s1/bg_m.jpg');
     // }
+  }
+
+  .bg-img {
+    min-height: sizem(666);
+    max-height: sizem(750);
+    height: sizem(666);
   }
 
   .logo {

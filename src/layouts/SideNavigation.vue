@@ -423,7 +423,7 @@ export default {
     display: block;
     transform: translateX(40%);
     background: center 0 no-repeat;
-    background-color: rgba(18, 45, 109, 0.83);
+    background-color: rgba(79, 93, 20, 0.8);
     background-size: cover;
 
     .link {
