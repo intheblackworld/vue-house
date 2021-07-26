@@ -11,7 +11,7 @@
     <img src="./s1/logotitle.png" :alt="`${info.caseName}_img`" class="logotitle" data-aos="fade" data-aos-delay="200" />
     <div class="title" data-aos="fade" data-aos-delay="400">商圈一分鐘 區域最稀有 住宅熱銷王</div>
     <img src="./s1/arrow.png" :alt="`${info.caseName}_img`" class="arrow" data-aos="fade-right" data-aos-delay="600" />
-    <div class="subtitle" data-aos="fade" data-aos-delay="800">25坪雙套房｜2房26坪 ｜大3房37坪</div>
+    <div class="subtitle" data-aos="fade" data-aos-delay="800">25坪雙套房｜正2房26坪 ｜大3房37坪</div>
     <img src="./s1/btn.png" :alt="`${info.caseName}_img`" class="btn" data-aos="fade" data-aos-delay="1000" v-scroll-to="{ element: `#contact` }" />
     <img src="./s1/building.png" :alt="`${info.caseName}_img`" class="building" data-aos="fade-left" data-aos-delay="1000" />
     <img src="./s1/mouse.png" :alt="`${info.caseName}_img`" class="mouse" data-aos="fade-right" data-aos-delay="1000" />
@@ -129,7 +129,7 @@
 }
 
 .subtitle {
-  @include img_l_pc(631, 620, 182);
+  @include img_l_pc(631, 620, 178);
   font-size: size(33.4);
   font-weight: bold;
   font-stretch: normal;
