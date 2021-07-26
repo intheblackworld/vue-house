@@ -238,6 +238,7 @@
   left: 0;
   .next-btn {
     width: 3em;
+    right: 15px;
   }
   .prev-btn,
   .next-btn {
@@ -491,6 +492,10 @@
   .swipe-btns {
     width: 100%;
     left: 0%;
+    
+    .next-btn{
+      right: 0px;
+    }
     .prev-btn,
     .next-btn {
       font-size: sizem(15);

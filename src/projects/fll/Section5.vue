@@ -88,13 +88,14 @@
 
 .subtitle {
   width: size(387);
+  margin-top: 35px;
   font-size: size(36);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.48;
+  line-height: 0.8;
   letter-spacing: size(2.16);
-  text-align: left;
+  text-align: center;
   color: #221814;
   span {
     font-size: size(48);
@@ -108,11 +109,12 @@
 
 .desc {
   width: size(487);
+  margin-top: 35px;
   font-size: size(22);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.44;
+  line-height: 2;
   letter-spacing: size(0.22);
   text-align: left;
   color: #000000;
@@ -402,13 +404,14 @@
 
   .subtitle {
     width: sizem(290);
+    margin-top: 10px;
     font-size: sizem(20);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.5;
+    line-height: 1.8;
     letter-spacing: sizem(1.2);
-    text-align: left;
+    text-align: center;
     color: #221814;
     span {
       font-size: sizem(25);
@@ -422,11 +425,12 @@
 
   .desc {
     width: sizem(306);
+    margin-top: 10px;
     font-size: sizem(14);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2;
+    line-height: 1.8;
     letter-spacing: sizem(0.22);
     text-align: left;
     color: #000000;
