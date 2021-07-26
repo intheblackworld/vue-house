@@ -5,34 +5,94 @@
     <img src="./s7/style_3.png" :alt="`${info.caseName}_img`" class="style3" />
     <img src="./s7/mouse.png" :alt="`${info.caseName}_img`" class="mouse" />
     <div class="btns">
-      <div :class="`btn ${pageIndex === 0 ? 'active': ''}`" @click="changePage(0)">37坪</div>
-      <div :class="`btn ${pageIndex === 1 ? 'active': ''}`" @click="changePage(1)">25坪</div>
-      <div :class="`btn ${pageIndex === 2 ? 'active': ''}`" @click="changePage(2)">26坪</div>
+      <div
+        :class="`btn ${pageIndex === 0 ? 'active' : ''}`"
+        @click="changePage(0)"
+      >
+        37坪
+      </div>
+      <div
+        :class="`btn ${pageIndex === 1 ? 'active' : ''}`"
+        @click="changePage(1)"
+      >
+        25坪
+      </div>
+      <div
+        :class="`btn ${pageIndex === 2 ? 'active' : ''}`"
+        @click="changePage(2)"
+      >
+        26坪
+      </div>
     </div>
     <div :class="`content left ${pageIndex === 1 ? 'big' : ''}`">
       <div class="title1" v-html="list[pageIndex].title1"></div>
       <div class="subtitle" v-html="list[pageIndex].subtitle"></div>
-      <img src="./s7/arrowline.png" :alt="`${info.caseName}_img`" class="arrowline" />
+      <img
+        src="./s7/arrowline.png"
+        :alt="`${info.caseName}_img`"
+        class="arrowline"
+      />
       <div :class="`desc1 ${pageIndex === 1 ? 'big' : ''}`">
-        <li v-for="desc in list[pageIndex].desc1" v-html="desc" :key="desc"></li>
+        <li
+          v-for="desc in list[pageIndex].desc1"
+          v-html="desc"
+          :key="desc"
+        ></li>
       </div>
     </div>
     <div :class="`content ${pageIndex === 1 ? 'big-middle' : ''}`">
-      <img :src="list[pageIndex].area" :alt="`${info.caseName}_img`" class="area" v-if="isPC" />
-      <img :src="list[pageIndex].area" :alt="`${info.caseName}_img`" :class="`area ${pageIndex === 1 ? 'big' : ''}`" v-if="isMobile" @click="showDialog" />
-      <div class="touch" v-if="isMobile && pageIndex !== 1" @click="showDialog">點擊圖片<br />放大觀看</div>
+      <img
+        :src="list[pageIndex].area"
+        :alt="`${info.caseName}_img`"
+        class="area"
+        v-if="isPC"
+      />
+      <img
+        :src="list[pageIndex].area"
+        :alt="`${info.caseName}_img`"
+        :class="`area ${pageIndex === 1 ? 'big' : ''}`"
+        v-if="isMobile"
+        @click="showDialog"
+      />
+      <div class="touch" v-if="isMobile && pageIndex !== 1" @click="showDialog">
+        點擊圖片<br />放大觀看
+      </div>
     </div>
     <div class="content right">
-      <div class="swipe relative" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="list[pageIndex].slideList.length > 0">
-        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+      <div
+        class="swipe relative"
+        @mouseenter.stop="toggleTimer = false"
+        @mouseleave.stop="toggleTimer = true"
+        v-if="list[pageIndex].slideList.length > 0"
+      >
+        <div
+          class="swipe-wrap relative"
+          v-touch:swipe.left="decIndex"
+          v-touch:swipe.right="addIndex"
+        >
           <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+            <div
+              v-for="(slide, i) in slideList"
+              v-show="slideIndex === i"
+              :key="slide.img"
+              :class="`swipe-item absolute`"
+            >
               <img :src="slide.img" alt />
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-          <div class="pagination absolute flex-ac" data-aos="fade" data-aos-delay="200" v-if="isPC">
-            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)">
+          <div
+            class="pagination absolute flex-ac"
+            data-aos="fade"
+            data-aos-delay="200"
+            v-if="isPC"
+          >
+            <div
+              :class="`pagination-dot`"
+              v-for="(slide, index) in slideList"
+              :key="slide.img + '-dot'"
+              @click="goTo(index)"
+            >
               <span :class="`${slideIndex === index ? 'active' : ''}`"></span>
             </div>
           </div>
@@ -45,7 +105,11 @@
       <div class="title2" v-html="list[pageIndex].title2"></div>
       <div class="line"></div>
       <div :class="`desc2 ${pageIndex === 1 ? 'big' : ''}`">
-        <li v-for="desc in list[pageIndex].desc2" v-html="desc" :key="desc"></li>
+        <li
+          v-for="desc in list[pageIndex].desc2"
+          v-html="desc"
+          :key="desc"
+        ></li>
       </div>
     </div>
     <transition name="swipe-fade" mode="out-in">
@@ -55,7 +119,11 @@
             <img src="../../assets/img/close.png" alt />
           </div>
           <img :src="dialogImg" alt class="dialog-img" />
-          <img src="./mobile/06/swipe-here.png" alt :class="`dialog-hand ${showMask ? 'active' : ''}`" />
+          <img
+            src="./mobile/06/swipe-here.png"
+            alt
+            :class="`dialog-hand ${showMask ? 'active' : ''}`"
+          />
         </div>
       </div>
     </transition>
@@ -526,13 +594,13 @@
       width: sizem(220);
     }
 
-
     &.big {
       width: 100% !important;
       padding-right: sizem(30);
     }
 
-    &.big-middle, &.right {
+    &.big-middle,
+    &.right {
       padding-left: 0 !important;
     }
   }
@@ -936,7 +1004,7 @@ export default {
             "█ 戶戶衛浴皆有對外窗，空氣流通不易潮濕",
             "█ 戶戶邊間採光極佳，無暗房暗廳問題"
           ],
-          area: require("./s7/1-img.png"),
+          area: require("./s7/3-img.png"),
           slideList: [
             {
               img: require("./s7/2-1.jpg"),
@@ -958,7 +1026,9 @@ export default {
         },
         {
           title1: "25坪實用雙套房",
-          subtitle: isMobile ? "園區萬人租客，入主現成房東自住置產實用優勢大集合：":  "園區萬人租客，入主現成房東<br />自住置產實用優勢大集合：",
+          subtitle: isMobile
+            ? "園區萬人租客，入主現成房東自住置產實用優勢大集合："
+            : "園區萬人租客，入主現成房東<br />自住置產實用優勢大集合：",
           desc1: [
             "█ 電表分離配置",
             "█ 包租代管2年",
@@ -968,7 +1038,7 @@ export default {
 
           title2: "出租置產 高投報率 ",
           desc2: ["一邊自用 一邊收租 開啟斜槓人生", "抵制高速通膨的絕佳產品"],
-          area: require("./s7/2-img.png"),
+          area: require("./s7/1-img.png"),
           slideList: []
         },
         {
@@ -987,7 +1057,7 @@ export default {
             "█ 戶戶衛浴皆有對外窗，空氣流通不易潮濕",
             "█ 戶戶邊間採光極佳，無暗房暗廳問題"
           ],
-          area: require("./s7/3-img.png"),
+          area: require("./s7/2-img.png"),
           slideList: [
             {
               img: require("./s7/1-1.jpg"),
@@ -1016,8 +1086,8 @@ export default {
     showDialog() {
       if (this.pageIndex !== 1) {
         this.isDialog = true;
-      this.showMask = true;
-      this.dialogImg = this.list[this.pageIndex].area;
+        this.showMask = true;
+        this.dialogImg = this.list[this.pageIndex].area;
       }
     },
 
