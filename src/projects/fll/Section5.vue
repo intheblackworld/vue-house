@@ -410,7 +410,7 @@
 
   .subtitle {
     width: sizem(290);
-    margin-top: 10px;
+    margin-top: 5px;
     font-size: sizem(20);
     font-weight: bold;
     font-stretch: normal;
@@ -431,12 +431,12 @@
 
   .desc {
     width: sizem(306);
-    margin-top: 10px;
-    font-size: sizem(14);
+    margin-top: 5px;
+    font-size: sizem(12);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.8;
+    line-height: 2;
     letter-spacing: sizem(0.22);
     text-align: left;
     color: #000000;
