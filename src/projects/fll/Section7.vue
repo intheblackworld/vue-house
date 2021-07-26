@@ -620,7 +620,7 @@
     position: absolute;
     top: sizem(232);
     right: sizem(30);
-    padding-top: sizem(10);
+    padding-top: sizem(7);
     font-size: sizem(16);
     font-weight: 700;
     font-stretch: normal;

@@ -24,7 +24,7 @@
         永續服務，安心保固
         <br>嚴選建材，就是講究
       </div>
-      <div class="subtitle" v-if="isPC" v-html="slideList[slideIndex].subtitle">
+      <div class="subtitle" v-html="slideList[slideIndex].subtitle">
       </div>
       <div class="desc" v-html="slideList[slideIndex].desc"></div>
     </div>
@@ -366,8 +366,8 @@
 @media screen and (max-width: 767px) {
   .section5 {
     width: 100vw;
-    height: sizem(667);
-    min-height: auto;
+    min-height: sizem(730);
+    height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
@@ -378,6 +378,7 @@
 
   .content {
     @include div_r_m(375, 345, 0, 0);
+    height: 100%;
     min-height: auto;
     background: #bccf00;
     padding-top: sizem(59);
@@ -453,8 +454,8 @@
     width: 100vw;
     height: sizem(322);
     min-height: auto;
-    top: sizem(345);
-    bottom: auto;
+    top: auto;
+    bottom: 0;
     left: sizem(0);
     object-fit: cover;
   }
@@ -700,7 +701,7 @@ export default {
           img: require("./s5/slider_1.jpg"),
           name: "",
           area: "",
-          subtitle: '<span>15</span>年結構保固<br /><span>5</span>年防水保',
+          subtitle: isMobile ? '<span>15</span>年結構保固<br /><span>5</span>年防水保' : '<div class="subtitle"><span>15</span>年結構保固</div><br /><div class="subtitle right"><span>5</span>年防水保</div>',
           desc: '珍惜每一位客戶,，看重每一個承諾,超越傳住宅標準，用心做到最好。為住宅品質把關,再提供售服保，,讓住戶買得安心，住得滿意'
         },
         {
