@@ -88,13 +88,14 @@
 
 .subtitle {
   width: size(387);
+  margin-top: 35px;
   font-size: size(36);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.48;
+  line-height: 0.8;
   letter-spacing: size(2.16);
-  text-align: left;
+  text-align: center;
   color: #221814;
   span {
     font-size: size(48);
@@ -108,16 +109,23 @@
 
 .desc {
   width: size(487);
-  font-size: size(22);
+  margin-top: 35px;
+  font-size: size(20);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.44;
+  line-height: 2;
   letter-spacing: size(0.22);
   text-align: left;
   color: #000000;
   white-space: normal;
+
+  span{
+  font-size: size(10);
+  }
 }
+
+
 
 .mouse {
   @include img_r_pc(276, 0, -50);
@@ -402,13 +410,14 @@
 
   .subtitle {
     width: sizem(290);
+    margin-top: 5px;
     font-size: sizem(20);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.5;
+    line-height: 1.8;
     letter-spacing: sizem(1.2);
-    text-align: left;
+    text-align: center;
     color: #221814;
     span {
       font-size: sizem(25);
@@ -422,7 +431,8 @@
 
   .desc {
     width: sizem(306);
-    font-size: sizem(14);
+    margin-top: 5px;
+    font-size: sizem(12);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -431,6 +441,9 @@
     text-align: left;
     color: #000000;
     white-space: normal;
+  }
+  .desc span{
+
   }
 
   .mouse {
@@ -702,21 +715,21 @@ export default {
           name: "",
           area: "",
           subtitle: isMobile ? '<span>15</span>年結構保固<br /><span>5</span>年防水保' : '<div class="subtitle"><span>15</span>年結構保固</div><br /><div class="subtitle right"><span>5</span>年防水保</div>',
-          desc: '珍惜每一位客戶,，看重每一個承諾,超越傳住宅標準，用心做到最好。為住宅品質把關,再提供售服保，,讓住戶買得安心，住得滿意'
+          desc: '珍惜每一位客戶，看重每一個承諾，超越傳住宅標準，用心做到最好。<br />為住宅品質把關，再提供售服保，讓住戶買得安心，住得滿意。'
         },
         {
           img: require("./s5/slider_2.jpg"),
           name: "",
           area: "",
           subtitle: '5+5mm膠合氣密窗',
-          desc: '歐美國家豪宅級建材首選高性能、低輻射、冬暖夏涼，舒適又健康<br />阻隔輻射：有效阻隔紅外線、紫外線、輻射熱，冬暖夏涼好健康<br />隔音性佳：厚達5＋5的膠節能玻璃，隔音效果約35db安靜低噪音<br />節能省電：光遞率高、隔熱控溫，節省燈光與空調耗損，減碳環保'
+          desc: '歐美國家豪宅級建材首選高性能、低輻射、冬暖夏涼，舒適又健康。<br />【阻隔輻射】<br /><span>有效阻隔紅外線、紫外線、輻射熱，冬暖夏涼好健康</span><br />【隔音性佳】<br /><span>厚達5＋5的膠節能玻璃，隔音效果約35db安靜低噪音</span><br />【節能省電】<br /><span>光遞率高、隔熱控溫，節省燈光與空調耗損，減碳環保</span>'
         },
         {
           img: require("./s5/slider_3.jpg"),
           name: "",
           area: "",
           subtitle: '銀力淨乳膠漆',
-          desc: '台灣精工品牌，榮獲綠建材標章，通過日本JIS Z2911防霉測試，無添加甲醛、鉛、汞等八大重金屬。<br />微米級抗菌銀離子：有效抑制6百多種細菌。持久抗菌，不受時間、日照、水洗影響抗菌效果。<br />珪藻土：由珪藻的細胞壁沉積而成。多孔性的結構，可幫忙吸收濕度、隔熱、噪音、吸收廢氣以提高室內空氣品質。',
+          desc: '台灣精工品牌，榮獲綠建材標章，通過日本JIS Z2911防霉測試，無添加甲醛、鉛、汞等八大重金屬。<br />【微米級抗菌銀離子】<br />有效抑制6百多種細菌。持久抗菌，不受時間、日照、水洗影響抗菌效果。<br />【珪藻土】<br />由珪藻的細胞壁沉積而成。多孔性的結構，可幫忙吸收濕度、隔熱、噪音、吸收廢氣以提高室內空氣品質。',
         }
       ]
     };

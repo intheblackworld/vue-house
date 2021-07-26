@@ -66,6 +66,7 @@
 
 .balloon {
   @include img_l_pc(228, 92, 45);
+  z-index: 10;
 }
 .map {
   @include img_c_pc(1458, 0);
@@ -74,6 +75,7 @@
   @include img_l_pc(325, 0, 85);
   top: auto;
   bottom: 0;
+  z-index: 10;
 }
 
 .style1 {

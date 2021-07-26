@@ -2,12 +2,12 @@ import { isMobile } from '../utils/index'
 export default {
   address: '新竹縣湖口鄉文化路112號旁',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3613.2572972709113!2d121.5260833!3d25.0931502!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aea4802a1839%3A0xe686305dd1e54a2d!2zMTEx5Y-w5YyX5biC5aOr5p6X5Y2A5Lit5bGx5YyX6Lev5LqU5q61NTEy6Jmf!5e0!3m2!1szh-TW!2stw!4v1621474761676!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/7LUNotAvbRr7vEPR6',
-  phone: '07-5550077',
-  fbLink: 'https://www.facebook.com/%E9%99%BD%E6%98%8E%E5%B1%B1%E8%8E%8A-Pattsiran-Formosa-108764311348067',
-  fbMessage: 'https://m.me/108764311348067/',
-  caseName: '京城IFC',
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14479.169226020316!2d121.0159571!3d24.8709422!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfdc5981c60c90c1f!2z5a-M5L6G5qiC5o6l5b6F5pyD6aSo!5e0!3m2!1szh-TW!2stw!4v1627286080384!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/EutYpjp3yR7zEp9x7',
+  phone: '03-5971568',
+  fbLink: 'https://www.facebook.com/fulaileee',
+  fbMessage: 'https://m.me/fulaileee/',
+  caseName: '富來樂',
   indigatorLength: 10,
 
   houseInfos: [
