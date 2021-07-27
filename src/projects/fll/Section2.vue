@@ -14,7 +14,7 @@
       <div :id="`youtube-player-${id}`" ref="player" class="video-ifame"></div>
     </div> -->
 
-    <img src="./s2/player.png" :alt="`${info.caseName}_img`" class="play-btn" @click="isDialog = true">
+    <img src="./s2/player_d.png" :alt="`${info.caseName}_img`" class="play-btn" @click="isDialog = true">
 
     <div class="isDialog" v-if="isMobile" @click="isDialog = true">
     </div>
@@ -182,7 +182,7 @@ iframe {
   }
 
   .play-btn {
-    @include img_c_m(52, 87);
+    @include img_c_m(80, 87);
     cursor: pointer;
   }
 
@@ -251,7 +251,7 @@ iframe {
   }
 
   .play-btn {
-    @include img_c_m(32, 80);
+    @include img_c_m(60, 76);
     cursor: pointer;
     z-index: 10;
   }
