@@ -714,7 +714,7 @@ export default {
           img: require("./s5/slider_1.jpg"),
           name: "",
           area: "",
-          subtitle: isMobile ? '<span>15</span>年結構保固<br /><span>5</span>年防水保' : '<div class="subtitle"><span>15</span>年結構保固</div><br /><div class="subtitle right"><span>5</span>年防水保</div>',
+          subtitle: isMobile ? '<span>15</span>年結構保固<br /><span>5</span>年防水保固' : '<div class="subtitle"><span>15</span>年結構保固</div><br /><div class="subtitle right"><span>5</span>年防水保固</div>',
           desc: '珍惜每一位客戶，看重每一個承諾，超越傳住宅標準，用心做到最好。<br />為住宅品質把關，再提供售服保，讓住戶買得安心，住得滿意。'
         },
         {

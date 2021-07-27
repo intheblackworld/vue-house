@@ -664,12 +664,11 @@
   }
 
   .area {
-    width: sizem(125);
-    height: sizem(130);
     object-fit: cover;
     position: absolute;
     top: sizem(104);
     right: sizem(30);
+    bottom: sizem(0);
 
     &.big {
       width: sizem(213);
@@ -681,15 +680,17 @@
     }
   }
 
+
+
   .touch {
-    width: sizem(125);
-    height: sizem(50);
+    width: sizem(107);
+    height: sizem(35);
     object-fit: cover;
     position: absolute;
-    top: sizem(232);
+    top: sizem(253);
     right: sizem(30);
-    padding-top: sizem(7);
-    font-size: sizem(16);
+    padding-top: sizem(2);
+    font-size: sizem(13);
     font-weight: 700;
     font-stretch: normal;
     font-style: normal;
@@ -1004,7 +1005,7 @@ export default {
             "█ 戶戶衛浴皆有對外窗，空氣流通不易潮濕",
             "█ 戶戶邊間採光極佳，無暗房暗廳問題"
           ],
-          area: require("./s7/3-img.png"),
+          area: require("./s7/3-img_1.jpg"),
           slideList: [
             {
               img: require("./s7/2-1.jpg"),
@@ -1026,7 +1027,7 @@ export default {
         },
         {
           title1: "25坪實用雙套房",
-          subtitle: isMobile ? "園區萬人租客，入主現成房東自住置產實用優勢大集合":  "園區萬人租客，入主現成房東<br />自住置產實用優勢大集合",
+          subtitle: isMobile ? "園區萬人租客，入主現成房東<br />自住置產實用優勢大集合！":  "園區萬人租客，入主現成房東<br />自住置產實用優勢大集合！",
           desc1: [
             "█ 電表分離配置",
             "█ 包租代管2年",
