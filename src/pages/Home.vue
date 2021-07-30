@@ -2,9 +2,9 @@
   <div class="home no-padding-top">
     <div class="bg-img">
       <Loading :loading="load" />
-      <SideNavigation v-if="isMobile" />
-      <Navigation v-if="!isMobile" />
-      <!-- <Indigator :viewIndex="viewIndex" /> -->
+      <!-- <SideNavigation v-if="isMobile" />
+      <Navigation v-if="!isMobile" /> -->
+      <Indigator :viewIndex="viewIndex" />
       <!-- <full-page
       ref="fullPage"
       :options="options"
@@ -13,8 +13,8 @@
       <vue-lazy-component class="section relative" id="section1" @init="init">
         <Section1 />
       </vue-lazy-component>
-      <vue-lazy-component class="section" id="section2" style="">
-         <Section2 /> 
+      <vue-lazy-component class="section" id="section2">
+         <Section2 />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section3">
         <Section3 />
@@ -28,17 +28,17 @@
       <vue-lazy-component class="section" id="section6">
         <Section6 />
       </vue-lazy-component>
-      <vue-lazy-component class="section" id="section10">
-        <Section10 :viewIndex="viewIndex" />
-      </vue-lazy-component>
       <vue-lazy-component class="section" id="section7">
-          <Section7 /> 
+          <Section7 />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section8">
-        <!--  <Section8 /> -->
+         <Section8 :viewIndex="viewIndex" />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section9">
         <Section9 :viewIndex="viewIndex" />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section10">
+        <Section10 :viewIndex="viewIndex" />
       </vue-lazy-component>
       <!-- <vue-lazy-component class="section" id="contact"> -->
       <ContactSection />
@@ -82,33 +82,33 @@
 <script>
 // @ is an alias to /src
 import $ from 'jquery'
-import Navigation from '@/layouts/Navigation.vue'
+// import Navigation from '@/layouts/Navigation.vue'
 import { isMobile } from '@/utils'
-import SideNavigation from '@/layouts/SideNavigation.vue'
+// import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/tsi1/Section1.vue'
-import Section2 from '@/projects/tsi1/Section2.vue'
-import Section3 from '@/projects/tsi1/Section3.vue'
-import Section4 from '@/projects/tsi1/Section4.vue'
-import Section5 from '@/projects/tsi1/Section5.vue'
-import Section6 from '@/projects/tsi1/Section6.vue'
-import Section7 from '@/projects/tsi1/Section7.vue'
-import Section8 from '@/projects/tsi1/Section8.vue'
-import Section9 from '@/projects/tsi1/Section9.vue'
-import Section10 from '@/projects/tsi1/Section10.vue'
+import Section1 from '@/projects/tsi2/Section1.vue'
+import Section2 from '@/projects/tsi2/Section2.vue'
+import Section3 from '@/projects/tsi2/Section3.vue'
+import Section4 from '@/projects/tsi2/Section4.vue'
+import Section5 from '@/projects/tsi2/Section5.vue'
+import Section6 from '@/projects/tsi2/Section6.vue'
+import Section7 from '@/projects/tsi2/Section7.vue'
+import Section8 from '@/projects/tsi2/Section8.vue'
+import Section9 from '@/projects/tsi2/Section9.vue'
+import Section10 from '@/projects/tsi2/Section10.vue'
 
 export default {
   name: 'home',
   components: {
     Loading,
-    // Indigator,
-    Navigation,
-    SideNavigation,
+    Indigator,
+    // Navigation,
+    // SideNavigation,
     // LeafFlow,
     ContactSection,
     MobileNav,
@@ -147,24 +147,24 @@ export default {
     }
   },
   created() {
-    // $(document).ready(() => {
-    //   // Images loaded is zero because we're going to process a new set of images.
-    //   var imagesLoaded = 0
-    //   // Total images is still the total number of <img> elements on the page.
-    //   var totalImages = $('img').length
-    //   const allImagesLoaded = () => {
-    //     this.load = false
-    //   }
-    //   const imageLoaded = () => {
-    //     imagesLoaded++
-    //     if (imagesLoaded == totalImages) {
-    //       allImagesLoaded()
-    //     }
-    //   }
-    //   $('img').each(function (idx, img) {
-    //     $('<img>').on('load', imageLoaded).attr('src', $(img).attr('src'))
-    //   })
-    // })
+    $(document).ready(() => {
+      // Images loaded is zero because we're going to process a new set of images.
+      var imagesLoaded = 0
+      // Total images is still the total number of <img> elements on the page.
+      var totalImages = $('img').length
+      const allImagesLoaded = () => {
+        this.load = false
+      }
+      const imageLoaded = () => {
+        imagesLoaded++
+        if (imagesLoaded == totalImages) {
+          allImagesLoaded()
+        }
+      }
+      $('img').each(function (idx, img) {
+        $('<img>').on('load', imageLoaded).attr('src', $(img).attr('src'))
+      })
+    })
     // window.location = "https://ywh.nhc888.com.tw/"
   },
   mounted() {
