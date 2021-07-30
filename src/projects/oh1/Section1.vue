@@ -1,20 +1,20 @@
 <template>
   <div class="section1">
-    <img src="./s1/logo.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade-up" data-aos-delay="0" data-aos-offset="-300">
+    <img src="./s1/logo.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade-up" data-aos-delay="0" data-aos-offset="-500">
     <img src="./s1/0.png" :alt="`${info.caseName}_img`" class="bg-img" v-if="isPC">
    <!-- <img src="./s1/0_m.png" :alt="`${info.caseName}_img`" class="bg-img" v-if="isMobile"> -->
     <img src="./s1/1.png" :alt="`${info.caseName}_img`" class="bg-img img1">
-    <img src="./s1/5.png" :alt="`${info.caseName}_img`" class="img-train" data-aos="fade" data-aos-delay="100" data-aos-offset="-300">
+    <img src="./s1/5.png" :alt="`${info.caseName}_img`" class="img-train" data-aos="fade" data-aos-delay="100" data-aos-offset="-500">
     <img src="./s1/2.png" :alt="`${info.caseName}_img`" class="bg-img img2">
     <img src="./s1/3.png" :alt="`${info.caseName}_img`" class="bg-img img3">
     <img src="./s1/4.png" :alt="`${info.caseName}_img`" class="bg-img img4">
-    <h3 class="title" data-aos="fade-up" data-aos-delay="200" data-aos-offset="-300">
+    <h3 class="title" data-aos="fade-up" data-aos-delay="200" data-aos-offset="-500">
       海灣新樂園 城市心天地
     </h3>
-    <h3 class="subtitle" data-aos="fade-up" data-aos-delay="300" data-aos-offset="-300">
+    <h3 class="subtitle" data-aos="fade-up" data-aos-delay="300" data-aos-offset="-500">
       淡海最大6000坪俱樂部宅
     </h3>
-    <h3 class="btn flex-c" v-scroll-to="{ element: `#contact` }" data-aos="fade-up" data-aos-delay="400" data-aos-offset="-300">
+    <h3 class="btn flex-c" v-scroll-to="{ element: `#contact` }" data-aos="fade-up" data-aos-delay="400" data-aos-offset="-500">
       搶先預約
     </h3>
     <!-- <div class="hr1" v-if="isMobile"></div>
