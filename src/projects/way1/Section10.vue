@@ -1,6 +1,5 @@
 <template>
   <div class="section10">
-    <img src="./s10/10_house.png" :alt="`${info.caseName}_house`" class="house">
     <div class="hr" v-if="isMobile"></div>
     <div class="big-title" v-if="isPC" data-aos="fade-up" data-aos-delay="200">
       嚴選頂規建材 滿足你講究的品味
@@ -94,9 +93,8 @@
 
 .section10 {
   width: 100vw;
-  height: size(1236);
-  max-height: size(1236);
-  min-height: size(1236);
+  //height: size(1236);
+  height: size(800);
   position: relative;
   // background-color: tt;
   // background-size: 100% 100%;
@@ -370,7 +368,7 @@
   .section10 {
     min-height: auto;
     max-height: initial;
-    height: sizem(1025 + 104);
+    height: sizem(900);
   }
 
   .house {

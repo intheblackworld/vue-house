@@ -1,5 +1,6 @@
 <template>
   <div class="section9">
+    <img src="./s10/10_house.png" :alt="`${info.caseName}_house`" class="house">
     <h1 class="label"  data-aos="fade-up" data-aos-delay="200">立瑾建築機構</h1>
     <h1 class="title"  data-aos="fade-up" data-aos-delay="400">Taste Of Building Materials</h1>
     <h1 class="subtitle" v-if="isPC" data-aos="fade-up" data-aos-delay="600">為你營造家的幸福滋味</h1>
@@ -41,9 +42,7 @@
 
 .section9 {
   width: 100vw;
-  height: size(1410);
-  max-height: size(1410);
-  min-height: size(1410);
+  height: size(1410 + 350 );
   position: relative;
   // background-color: #fff;
   // background-size: 100% 100%;
@@ -65,6 +64,11 @@
   &:nth-child(1) {
     position: relative;
   }
+}
+.house {
+  @include img_c_pc(640, 664);
+  top: auto;
+  bottom: 0;
 }
 
 .grass {
@@ -365,7 +369,12 @@
   .section9 {
     min-height: auto;
     max-height: initial;
-    height: sizem(455 + 340);
+    height: sizem(455 + 340 + 220);
+  }
+  .house {
+    @include img_c_m(274, 664);
+    top: auto;
+    bottom: 0;
   }
 
   .label {
