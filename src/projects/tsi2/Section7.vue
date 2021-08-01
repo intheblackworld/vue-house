@@ -1,11 +1,11 @@
 <template>
   <div class="section7">
     <img src="./s7/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img">
-    <img src="./s7/360山河美景.png" :alt="`${info.caseName}_img`" class="title-img">
-    <div class="line"></div>
-    <h3 class="title">洲子洋史上最強    層峰景觀頭等艙</h3>
-    <h3 class="desc">
-      「天空之邑」以區域稀有24層地標，獨佔洲子洋極景制高點，<br />觀音山、大台北都會公園山河美景360°環繞，彷如坐擁景觀頭等艙，美景無界盡在您視線。
+    <img src="./s7/360山河美景.png" :alt="`${info.caseName}_img`" class="title-img"  data-aos="fade" data-aos-delay="200">
+    <div class="line"  data-aos="fade-down" data-aos-delay="400"></div>
+    <h3 class="title"  data-aos="fade" data-aos-delay="600">洲子洋史上最強 層峰景觀頭等艙</h3>
+    <h3 class="desc"  data-aos="fade" data-aos-delay="800">
+      「天空之邑」以區域稀有24層地標，獨佔洲子<br v-if="isMobile" />洋極景制高點，<br v-if="isPC"/>觀音山、大台北都會公園山河<br v-if="isMobile" />美景360°環繞，彷如坐擁景觀頭等艙，美景無<br v-if="isMobile" />界盡在您視線。
     </h3>
 
   </div>
@@ -77,7 +77,6 @@
   white-space: nowrap;
 }
 
-
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -94,7 +93,7 @@
 @media screen and (max-width: 767px) {
   .section7 {
     width: 100%;
-    height: auto;
+    height: sizem(706);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -104,43 +103,39 @@
     overflow: hidden;
   }
 
-  .title {
-    @include img_c_m(220, 22);
-    font-size: sizem(26);
-    letter-spacing: normal;
-    z-index: 9;
+  .title-img {
+    @include img_c_m(57, 63);
   }
 
-  .hr {
-    @include img_c_m(325, 104);
-    z-index: 9;
+  .line {
+    @include div_c_m(1, 97, 220);
+    background-color: #003177;
+  }
+
+  .title {
+    @include img_c_m(284, 330);
+    font-size: sizem(19);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.74;
+    letter-spacing: normal;
+    text-align: center;
+    color: #003177;
+    white-space: nowrap;
   }
 
   .desc {
-    @include img_c_m(320, 119);
-    font-size: sizem(12);
-    line-height: 1.88;
-    letter-spacing: normal;
-    white-space:normal;
-    z-index: 9;
-  }
-
-  .more {
-    @include img_r_m(179 + 7 + 29, 636, 117);
+    @include img_c_m(310, 374);
     font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.04;
-    letter-spacing: sizem(2.1);
-    text-align: left;
-    color: #ffffff;
-    cursor: pointer;
+    line-height: 1.73;
+    letter-spacing: normal;
+    text-align: center;
+    color: #636363;
     white-space: nowrap;
-
-    img {
-      width: sizem(29);
-    }
   }
 }
 </style>

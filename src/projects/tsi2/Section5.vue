@@ -80,7 +80,23 @@
       font-size: size(12);
     }
   }
+}
+
+@media screen and (max-width: 767px) {
+  .slide-name {
+    .slide-name-big {
+      font-size: sizem(16);
+
+      .sep {
+        color: #d38700;
+      }
+
+      .small {
+        font-size: sizem(12);
+      }
+    }
   }
+}
 </style>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
@@ -104,6 +120,13 @@
   @include img_c_pc(1920, 0);
   top: auto;
   bottom: 0;
+  animation: an_x 4s 0s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes an_x {
+  to {
+    transform: scaleX(1.03);
+  }
 }
 
 .title1 {
@@ -158,16 +181,17 @@
   width: size(174);
   height: size(28);
   cursor: pointer;
-  background:#fff;
-  transition: all .3s;
+  background: #fff;
+  transition: all 0.3s;
   font-weight: bold;
   font-size: size(18);
   // animation:btn 0.5s infinite alternate ;
   color: #606060;
 
-  &.active ,&:hover {
+  &.active,
+  &:hover {
     box-shadow: -2px 2px 0 0 #003177;
-    background:#fff;
+    background: #fff;
     color: #003177;
   }
 }
@@ -396,11 +420,11 @@
 @media screen and (max-width: 767px) {
   .section5 {
     width: 100vw;
-    height: sizem(610);
+    height: sizem(682);
     min-height: auto;
     max-height: initial;
-  //  background-image: url('./all/section_bg.jpg');
-   // background-attachment: scroll;
+    //  background-image: url('./all/section_bg.jpg');
+    // background-attachment: scroll;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
     // background-position: 0 0;
@@ -408,98 +432,93 @@
     overflow: hidden;
   }
   .img {
-  @include img_r_m(160, 120, 5);
-}
-
-  .title1 {
-    @include img_l_m(325, 63, 25);
-    font-size: sizem(30);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: normal;
-    text-align: left;
-    white-space: nowrap;
-    color: #fff;
-    span{
-      display: block;
-      font-size:0.666em;
-    }
+    @include img_c_m(375, 0);
+    top: auto;
+    bottom: 0;
   }
 
-  .hr {
-    @include img_l_m(142, 60, 25);
-    height: sizem(1);
-    background: #333;
+  .title1 {
+    @include div_l_m(178, 41, 294, 43);
+    font-size: sizem(23);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.91;
+    letter-spacing: sizem(2.3);
+    text-align: center;
+    color: #ffffff;
+    background-color: #003177;
+    padding-top: 0;
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
   }
 
   .title2 {
-    @include img_l_m(325, 17, 25);
-    font-size: sizem(20);
+    @include div_l_m(228, 27, 312 + 28, 43);
+    font-size: sizem(18);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.05;
-    letter-spacing: normal;
+    line-height: 1.27;
+    letter-spacing: sizem(3.6);
     text-align: left;
-    color: #333333;
-    white-space: nowrap;
-    color: #fff;
+    color: #003177;
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
   }
 
   .desc {
-  @include img_l_m(170, 140, 25);
-  font-size: sizem(14);
-  font-weight: 400;
-  letter-spacing: 0.01em;
-    line-height:1.6;
-  text-align: justify;
-  color: #fff;
-    white-space: normal;
-  }
-
-  .more {
-    @include img_r_m(179 + 7 + 29, 636, 117);
+    @include div_l_m(310, 238, 355 + 38, 43);
     font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.04;
-    letter-spacing: sizem(2.1);
+    line-height: 1.73;
+    letter-spacing: normal;
     text-align: left;
-    color: #ffffff;
-    cursor: pointer;
-    white-space: nowrap;
+    color: #606060;
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+  }
 
-    img {
-      width: sizem(29);
+  .btns {
+    @include img_c_m(140 * 2 + 11, 0);
+  }
+
+  .btn {
+    width: sizem(140);
+    height: sizem(30);
+    cursor: pointer;
+    background: #fff;
+    transition: all 0.3s;
+    font-size: sizem(19);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: sizem(1.9);
+    text-align: left;
+    color: #606060;
+
+    &.active,
+    &:hover {
+      box-shadow: -2px 2px 0 0 #003177;
+      background: #fff;
+      color: #003177;
     }
   }
-  .btns {
-  @include img_c_m(325, 305);
-}
-
-.btn {
-  width: sizem(152);
-  height: sizem(27);
-
- &.active:hover {
-    animation:none ;
-    background:#ff662abb;
-    box-shadow: none;
-    color: #fff;
+  .circle {
+    @include img_r_m(71, 250, 32);
+    animation: circle 5s linear 0s infinite;
   }
-}
-
 
   /* Swipe */
   .swipe {
     width: 100%;
-    height: sizem(259);
+    height: sizem(214);
     min-height: auto;
-    top: auto;
-    bottom: 0;
+    top: sizem(54);
+    bottom: auto;
     left: sizem(0);
     object-fit: cover;
   }
@@ -686,32 +705,31 @@ export default {
           img: require('./s5/1-2.jpg'),
           name: '情境示意',
         },
-
       ],
       slideList1: [
         {
           img: require('./s5/2-1.jpg'),
-          name: '<div class="slide-name-big">迎賓門廳<span class="sep">｜</span>挑高時尚設計，優質生活從進門就開始<span class="small">3D示意</span></div>',
+          name: '<div class="slide-name-big">迎賓門廳<span class="sep">｜</span>挑高時尚設計，優質生活從進門就開始 <span class="small">3D示意</span></div>',
         },
         {
           img: require('./s5/2-2.jpg'),
-          name: '<div class="slide-name-big">空中花園<span class="sep">｜</span>用自然香味，讓身心靈就此沉澱寧靜<span class="small">3D示意</span></div>',
+          name: '<div class="slide-name-big">空中花園<span class="sep">｜</span>用自然香味，讓身心靈就此沉澱寧靜 <span class="small">3D示意</span></div>',
         },
         {
           img: require('./s5/2-3.jpg'),
-          name: '<div class="slide-name-big">健身房<span class="sep">｜</span>用汗水淬練身體完美線條，紓壓不二法門<span class="small">3D示意</span></div>',
+          name: '<div class="slide-name-big">健身房<span class="sep">｜</span>用汗水淬練身體完美線條，紓壓不二法門 <span class="small">3D示意</span></div>',
         },
         {
           img: require('./s5/2-4.jpg'),
-          name: '<div class="slide-name-big">拳擊區<span class="sep">｜</span>正拳、鉤拳用痛快揮擊，把負能量都趕走<span class="small">3D示意</span></div>',
+          name: '<div class="slide-name-big">拳擊區<span class="sep">｜</span>正拳、鉤拳用痛快揮擊，把負能量都趕走 <span class="small">3D示意</span></div>',
         },
         {
           img: require('./s5/2-5.jpg'),
-          name: '<div class="slide-name-big">媽媽教室<span class="sep">｜</span>寵愛家人，用香味與美味攏絡家人的胃<span class="small">3D示意</span></div>',
+          name: '<div class="slide-name-big">媽媽教室<span class="sep">｜</span>寵愛家人，用香味與美味攏絡家人的胃 <span class="small">3D示意</span></div>',
         },
         {
           img: require('./s5/2-6.jpg'),
-          name: '<div class="slide-name-big">兒童遊戲區<span class="sep">｜</span>把歡樂與笑聲裝滿孩子幸福的童年<span class="small">3D示意</span></div>',
+          name: '<div class="slide-name-big">兒童遊戲區<span class="sep">｜</span>把歡樂與笑聲裝滿孩子幸福的童年 <span class="small">3D示意</span></div>',
         },
         // {
         //   img: require('./s5/05-2_img.jpg'),

@@ -2,10 +2,10 @@
   <div class="section10">
     <img src="./s10/bg1.png" :alt="`${info.caseName}_img`" class="bgimg">
     <img src="./s10/bg2.png" :alt="`${info.caseName}_img`" class="bgimg">
-    <div class="title">
+    <div class="title"  data-aos="fade" data-aos-delay="0">
       天空御選
     </div>
-    <img src="./s3/line.png" :alt="`${info.caseName}_img`" class="title-line">
+    <img src="./s3/line.png" :alt="`${info.caseName}_img`" class="title-line"  data-aos="zoom-in-right" data-aos-delay="100">
     <div v-if="isPC">
       <div class="item-list flex-ac flex-jb wrap">
         <div class="item" v-for="(slide, index) in slideList" :key="slide.img" @click="showDialog(index)">
@@ -19,34 +19,38 @@
     </div>
     <transition name="swipe-fade" mode="out-in">
       <div class="dialog" v-if="isDialog">
-        <img src="~@/assets/img/close.png" alt class="close" @click="closeDialog" />
-        <img :src="current.avatar" alt="" class="dialog-avatar">
-        <div class="dialog-text" v-html="current.text"></div>
-        <h3 class="dialog-desc" v-html="current.desc"></h3>
-        <div class="dialog-company" v-html="current.company"></div>
-        <div class="dialog-name" v-html="current.name"></div>
-        <h3 class="dialog-work1" v-html="current.work1"></h3>
-        <h3 class="dialog-work2" v-html="current.work2"></h3>
-        <img :src="current.img2" alt="" class="dialog-work-img">
-      </div>
-    </transition>
-    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" key="swipe-0" v-if="isMobile">
-      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
-        <transition-group name="swipe-fade" mode="out-in">
-          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-            <img :src="slide.img" alt="">
-            <h3 class="slide-name absolute" v-html="slide.text"></h3>
-          </div>
-        </transition-group>
-        <div class="swipe-btns absolute flex-ac flex-jb pc-displaynone">
-          <img src="./s10/public_left.png" alt="" class="prev-btn" @click="decIndex">
-          <img src="./s10/public_right.png" alt="" class="next-btn" @click="addIndex">
+        <div>
+          <img src="~@/assets/img/close.png" alt class="close" @click="closeDialog" />
+          <img :src="current.avatar" alt="" class="dialog-avatar">
+          <div class="dialog-text" v-html="current.text"></div>
+          <h3 class="dialog-desc" v-html="current.desc"></h3>
+          <div class="dialog-company" v-html="current.company"></div>
+          <div class="dialog-name" v-html="current.name"></div>
+          <h3 class="dialog-work1" v-html="current.work1"></h3>
+          <h3 class="dialog-work2" v-html="current.work2"></h3>
+          <img :src="current.img2" alt="" class="dialog-work-img">
         </div>
       </div>
-    </div>
-    <div class="pagination absolute flex-ac" v-if="isMobile">
+    </transition>
+    <swiper v-if="isMobile" :options="swiperOption" data-aos="fade" data-aos-delay="200" class="swipe absolute">
+      <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img">
+        <img :src="slide.img" alt="" class="item-img" @click="showDialog(index)">
+        <div class="item-text" v-html="slide.text"></div>
+        <div class="item-name" v-html="slide.name"></div>
+        <div class="item-company" v-html="slide.company"></div>
+        <div class="item-line"></div>
+        <div class="item-btn flex-c" @click="showDialog(index)">名師介紹</div>
+      </swiper-slide>
+      <!-- <div class="swiper-button-prev" slot="button-prev">
+        <img src="./all/prev-btn.png" alt="" class="prev-btn">
+      </div>
+      <div class="swiper-button-next" slot="button-next">
+        <img src="./all/next-btn.png" alt="" class="next-btn">
+      </div> -->
+    </swiper>
+    <!-- <div class="pagination absolute flex-ac" v-if="isMobile">
       <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-    </div>
+    </div> -->
     <!-- <transition-group name="fade-up" mode="out-in">
       <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`content absolute`">
         <h3 class="content-company" v-html="slide.company"></h3>
@@ -121,57 +125,59 @@
 }
 
 @media screen and (min-width: 767px) {
-  .pc-displaynone{display: none !important;}
+  .pc-displaynone {
+    display: none !important;
+  }
 }
 
 @media screen and (max-width: 767px) {
-  .content-name {
-    @include img_l_m(350, 544, 25);
+  .item-name {
+    @include img_l_m(375, 0, 15);
+    top: auto;
+    bottom: sizem(70);
     font-size: sizem(16);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.8;
-    letter-spacing: sizem(1.6);
+    line-height: 1.44;
+    letter-spacing: normal;
     text-align: left;
     font-family: 'Noto Sans TC', sans-serif;
-    color: #636363;
+    color: #fff;
 
     span {
-      font-size: sizem(24);
+      font-size: sizem(33);
       font-weight: 900;
       font-stretch: normal;
       font-style: normal;
-      line-height: 1.8;
-      letter-spacing: sizem(2.4);
+      line-height: 1.44;
+      letter-spacing: normal;
       text-align: left;
-      color: #2e2e2e;
+      color: #fff;
       font-family: 'Noto Serif TC', serif;
     }
   }
-
-  .content-work {
-    @include img_l_m(320, 620, 25);
-    font-size: sizem(12);
-    font-weight: normal;
+  .dialog-name {
+    font-size: sizem(15);
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.28;
-    letter-spacing: sizem(2.4);
+    line-height: 1.44;
+    letter-spacing: sizem(3.29);
     text-align: left;
-    color: #7a7a7a;
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #fff;
 
     span {
-      font-weight: 500;
-      color: #000000;
-    }
-
-    .content-row {
-      margin-bottom: sizem(10);
-
-      img {
-        width: sizem(22);
-      }
+      font-size: sizem(30);
+      font-weight: 900;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.44;
+      letter-spacing: sizem(5);
+      text-align: left;
+      color: #fff;
+      font-family: 'Noto Serif TC', serif;
     }
   }
 }
@@ -225,26 +231,32 @@
 .item {
   width: size(430);
   position: relative;
-  background-color: #F1E8DD;
+  background-color: #f1e8dd;
   cursor: pointer;
 
   img {
     width: 100%;
     mix-blend-mode: luminosity;
-    transition: all .5s;
+    transition: all 0.5s;
   }
 
-  .item-text, .item-company, .item-name, .item-line {
+  .item-text,
+  .item-company,
+  .item-name,
+  .item-line {
     margin-top: 30px;
     opacity: 0;
-    transition: all .5s;
+    transition: all 0.5s;
   }
 
   &:hover {
     img {
       mix-blend-mode: normal;
     }
-    .item-text, .item-company, .item-name, .item-line {
+    .item-text,
+    .item-company,
+    .item-name,
+    .item-line {
       margin-top: 0px;
       opacity: 1;
     }
@@ -379,7 +391,6 @@
     @include img_r_pc(712, 279, 200);
   }
 }
-
 
 // begin
 .fade-up-leave-to {
@@ -585,7 +596,7 @@
 @media screen and (max-width: 767px) {
   .section10 {
     width: 100vw;
-    height: sizem(667);
+    height: sizem(537);
     min-height: auto;
     max-height: initial;
     // background-image: url('./all/section_bg.jpg');
@@ -596,305 +607,216 @@
     overflow: hidden;
   }
   .title {
-    @include img_c_m(228, 25);
-    font-size: sizem(30);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.4;
-    letter-spacing: sizem(3);
-    text-align: left;
-    color: #2e2e2e;
-    white-space: nowrap;
-  }
-
-  .subtitle {
-    @include img_c_m(163, 77);
+    @include img_c_m(108, 50);
     font-size: sizem(25);
-    font-weight: 900;
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.68;
+    line-height: 2;
     letter-spacing: sizem(2.5);
-    text-align: left;
-    color: #d38700;
+    text-align: center;
+    color: #003177;
     white-space: nowrap;
   }
-
-  .desc {
-    @include img_c_m(325, 114);
-    font-size: sizem(14);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.79;
-    letter-spacing: sizem(0.7);
-    text-align: left;
-    color: #7a7a7a;
+  .title-line {
+    @include img_c_m(225, 98);
   }
 
-  .content {
-    top: 0;
-    left: 0;
+  .swipe {
+    @include div_c_m(375, 350, 124);
   }
 
-  .content-company {
-    @include img_l_m(355, 509, 25);
+  .swiper-slide {
+  }
+
+  .item-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .item {
+    width: sizem(430);
+    position: relative;
+    background-color: #f1e8dd;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      mix-blend-mode: luminosity;
+      transition: all 0.5s;
+    }
+
+    .item-text,
+    .item-company,
+    .item-name,
+    .item-line {
+      margin-top: 30px;
+      opacity: 0;
+      transition: all 0.5s;
+    }
+
+    &:hover {
+      img {
+        mix-blend-mode: normal;
+      }
+      .item-text,
+      .item-company,
+      .item-name,
+      .item-line {
+        margin-top: 0px;
+        opacity: 1;
+      }
+    }
+  }
+
+  .item-text {
+    @include img_r_m(23, 8, 9);
     font-size: sizem(20);
     font-weight: 900;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.1;
+    line-height: 1.2;
     letter-spacing: sizem(2);
     text-align: left;
-    color: #d38700;
+    color: #ffffff;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
   }
 
-  .content-hr {
-    @include img_r_m(108, 523, 24);
-    border-bottom: 1px solid #d38700;
-  }
-  .content-work {
-    @include img_l_m(320, 590, 25);
-    font-size: sizem(12);
-    font-weight: normal;
+  .item-company {
+    @include img_l_m(238, 0, 15);
+    top: auto;
+    bottom: sizem(110);
+    font-size: sizem(16);
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(2.4);
+    line-height: 2.19;
+    letter-spacing: normal;
     text-align: left;
-    color: #7a7a7a;
-
-    span {
-      font-weight: 500;
-      color: #000000;
-    }
-
-    .content-row {
-      margin-bottom: sizem(10);
-
-      img {
-        width: sizem(22);
-        margin-right: 8px;
-      }
-    }
+    color: #ffffff;
   }
 
-  .slide-mask {
-    @include img_r_m(375, 150, 0);
-    width: sizem(375) !important;
-    height: auto !important;
-    top: sizem(150) !important;
-    right: sizem(0) !important;
-  }
-
-  .cloud {
+  .item-line {
+    width: 100%;
+    height: sizem(11);
+    background: #d38700;
     position: absolute;
-    animation: cloud 5s ease-in-out alternate infinite;
+    bottom: sizem(50);
+    left: 0;
   }
 
-  @keyframes cloud {
-    to {
-      transform: translateX(0);
-    }
-  }
-
-  .c1 {
-    @include img_l_m(140, 0, 0);
-    transform: translateX(-10%);
-    z-index: 2;
-  }
-  .c2 {
-    @include img_l_m(77, 58, -30);
-    transform: translateX(-8%);
-    z-index: 2;
-  }
-  .c3 {
-    @include img_r_m(127, 525, -30);
-    transform: translateX(30%);
-    animation-direction: alternate-reverse;
-    z-index: 2;
-  }
-  .c4 {
-    @include img_r_m(109, 561, 40);
-    transform: translateX(5%);
-    animation-direction: alternate-reverse;
-    z-index: 2;
-  }
-
-  /* Swipe */
-  .swipe {
-    width: 100%;
-    height: sizem(210);
-    min-height: auto;
-    top: sizem(279);
+  .item-btn {
+    @include div_c_m(158, 45, 0);
+    top: auto;
     bottom: 0;
-    left: sizem(0);
-    object-fit: cover;
+    border-radius: 25px / 25px;
+    background-color: #d38700;
+    font-size: sizem(18);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.89;
+    letter-spacing: sizem(1.8);
+    text-align: left;
+    color: #ffffff;
   }
 
-  // begin
-  .swipe-fade-leave-to {
-    opacity: 0;
-    z-index: 0;
-  }
-  // end
-  .swipe-fade-enter {
-    opacity: 0;
-    z-index: 1;
-  }
+  .dialog {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background-image: url('./s1/test.jpg');
+    background-size: cover;
+    background-position: center bottom;
+    overflow-y: scroll;
 
-  .swipe-fade-enter-active {
-    transition: all 0.5s ease;
-  }
-
-  .swipe-fade-leave-active {
-    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-
-  // begin
-  // .swipe-left-leave-to {
-  //   margin-left: -100vw;
-  //   z-index: 0;
-  // }
-  // // end
-  // .swipe-left-enter {
-  //   opacity: 0.5;
-  //   margin-left: 0;
-  //   z-index: 1;
-  // }
-
-  // .swipe-left-enter-active {
-  //   transition: all 0.5s ease;
-  // }
-
-  // .swipe-left-leave-active {
-  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  // }
-
-  .swipe-wrap {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .swipe-item {
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    > div {
+      height: sizem(934 + 50);
     }
 
-    // &:nth-child(1) {
-    //   z-index: 1;
-    //   // opacity: 1;
-    // }
+    .close {
+      position: absolute;
+      top: 2em;
+      right: 2em;
+      cursor: pointer;
+    }
 
-    // &.base {
-    //   z-index: 1;
-    //   opacity: 1;
-    // }
-    // &.active {
-    //   z-index: 2;
-    //   // opacity: 1;
-    // }
-    .slide-name {
-      width: sizem(300);
-      bottom: sizem(15);
-      right: 0;
-      left: 0;
-      margin: 0 auto;
-      font-size: sizem(20);
+    .dialog-avatar {
+      @include img_r_m(196, 216, 16);
+      border-radius: 999px;
+    }
+
+    .dialog-text {
+      @include img_l_m(310, 43, 38);
+      font-size: sizem(23);
       font-weight: 900;
       font-stretch: normal;
       font-style: normal;
-      line-height: 1.45;
-      letter-spacing: sizem(2);
-      text-align: center;
-      color: #ffffff;
+      line-height: 1.2;
+      letter-spacing: normal;
+      text-align: left;
+      color: #d38700;
     }
-  }
-
-  .pagination {
-    width: auto;
-    bottom: size(91);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    justify-content: center;
-  }
-
-  .pagination-dot {
-    padding: 5px;
-    margin: 0 10px;
-    cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
-      box-shadow: 0 0 0 1px #fff;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
-      transition: all 0.5s;
-
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #004ea2;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transition: all 0.3s;
-        transform-origin: center;
-        transform: scale(0);
-      }
-      &.active {
-        &::before {
-          content: '';
-          width: 100%;
-          height: 100%;
-          display: block;
-          background: #004ea2;
-          border-radius: 20px;
-          opacity: 1;
-          position: absolute;
-          top: 0%;
-          // transform: translateY(-50%);
-          left: 0%;
-          transform: scale(1);
-        }
-      }
+    .dialog-desc {
+      @include img_l_m(310, 85, 39);
+      font-size: sizem(15);
+      font-weight: 600;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.7;
+      letter-spacing: normal;
+      text-align: left;
+      color: #fff;
+      white-space: normal;
     }
-  }
-
-  .swipe-btns {
-    width: 100%;
-    height: 100%;
-    padding: 0px;
-    z-index: 3;
-    .prev-btn {
-      left: 0;
+    .dialog-company {
+      @include img_l_m(310, 413, 39);
+      font-size: sizem(19);
+      font-weight: 900;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 2.2;
+      letter-spacing: normal;
+      text-align: left;
+      color: #d38700;
     }
 
-    .next-btn {
-      right: 0;
+    .dialog-name {
+      @include img_l_m(310, 440, 39);
     }
-    .prev-btn,
-    .next-btn {
-      width: sizem(43);
-      cursor: pointer;
+
+    .dialog-work1 {
+      @include img_l_m(310, 495, 39);
+      font-size: sizem(13.5);
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.6;
+      letter-spacing: sizem(1.2);
+      text-align: left;
+      color: #fff;
+      border-left: 5px solid #d38700;
+      padding-left: 10px;
+    }
+    .dialog-work2 {
+      @include img_l_m(310, 523, 39);
+      font-size: sizem(13.5);
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.6;
+      letter-spacing: sizem(1.2);
+      text-align: left;
+      color: #fff;
+      border-left: 5px solid #d38700;
+      padding-left: 10px;
+    }
+    .dialog-work-img {
+      @include img_r_m(365, 585, 10);
     }
   }
 }
@@ -904,12 +826,20 @@
 import { isPC, isMobile, isTablet } from '@/utils'
 import info from '@/info'
 import slider from '@/mixins/slider.js'
+import 'swiper/dist/css/swiper.css'
+
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'section10',
 
   mixins: [slider],
   props: ['viewIndex'],
+
+  components: {
+    swiper,
+    swiperSlide,
+  },
 
   data() {
     return {
@@ -918,33 +848,55 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
+      swiperOption: {
+        slidesPerView: isMobile ? 1.8 : 1,
+        spaceBetween: isTablet ? 20 : 15,
+        slidesPerColumn: isMobile ? 1 : 1,
+        allowSlidePrev: isMobile ? true : true,
+        allowSlideNext: isMobile ? true : true,
+        centeredSlides: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        loop: true,
+        // effect: 'fade',
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      },
       current: {
         img: require('./s10/1.jpg'),
         avatar: require('./s10/1s.jpg'),
-        text: isPC ? '國際空間設計金獎' : '國際空間<br />設計金獎',
+        text: '國際空間設計金獎',
         company: '呈境室內設計',
         name: '<span>袁世賢</span> /設計師',
         work1: 'IF DESIGN AWARD–最佳餐飲、住宅空間',
         work2: `義大利A'DESIGN 設計大獎-銀獎`,
-        desc: '「天空之邑」以雙塔地標，重新定義洲子洋天際線，<br />簡約、對稱的建築語彙，國際精品、奢華飯店級享受，領先國際建築趨勢，以頂級飯店、豪宅設計語彙，<br />融入建築設計脈絡中，為您的幸福生活揭開新頁。',
-        img2: require('./s10/1.png')
+        desc: isMobile
+          ? '「天空之邑」以雙塔地標，重新定義洲子洋天際線，簡約、對稱的建築語彙，國際精品、奢華飯店級享受，領先國際建築趨勢，以頂級飯店、豪宅設計語彙，融入建築設計脈絡中，為您的幸福生活揭開新頁。'
+          : '「天空之邑」以雙塔地標，重新定義洲子洋天際線，<br />簡約、對稱的建築語彙，國際精品、奢華飯店級享受，<br />領先國際建築趨勢，以頂級飯店、豪宅設計語彙，<br />融入建築設計脈絡中，為您的幸福生活揭開新頁。',
+        img2: require('./s10/1.png'),
       },
       slideList: [
         {
           img: require('./s10/1.jpg'),
           avatar: require('./s10/1s.jpg'),
-          text: isPC ? '國際空間設計金獎' : '國際空間<br />設計金獎',
+          text: '國際空間設計金獎',
           company: '呈境室內設計',
           name: '<span>袁世賢</span> /設計師',
           work1: 'IF DESIGN AWARD–最佳餐飲、住宅空間',
           work2: `義大利A'DESIGN 設計大獎-銀獎`,
-          desc: '「天空之邑」以雙塔地標，重新定義洲子洋天際線，<br />簡約、對稱的建築語彙，國際精品、奢華飯店級享受，<br />領先國際建築趨勢，以頂級飯店、豪宅設計語彙，<br />融入建築設計脈絡中，為您的幸福生活揭開新頁。',
-          img2: require('./s10/1.png')
+          desc: isMobile
+            ? '「天空之邑」以雙塔地標，重新定義洲子洋天際線，簡約、對稱的建築語彙，國際精品、奢華飯店級享受，領先國際建築趨勢，以頂級飯店、豪宅設計語彙，融入建築設計脈絡中，為您的幸福生活揭開新頁。'
+            : '「天空之邑」以雙塔地標，重新定義洲子洋天際線，<br />簡約、對稱的建築語彙，國際精品、奢華飯店級享受，<br />領先國際建築趨勢，以頂級飯店、豪宅設計語彙，<br />融入建築設計脈絡中，為您的幸福生活揭開新頁。',
+          img2: require('./s10/1.png'),
         },
         {
           img: require('./s10/2.jpg'),
           avatar: require('./s10/2s.jpg'),
-          text: isPC ? '北台灣精品名宅推手' : '北台灣精品<br />名宅推手',
+          text: '北台灣精品名宅推手',
           company: 'A8聯合建築師事務所',
           name: '<span>陳朝雄</span> /建築師',
           work1: isMobile
@@ -953,21 +905,23 @@ export default {
           work2: isMobile
             ? '<span>板橋江子翠重劃區：</span>江翠ONE、江翠PARK'
             : '板橋江子翠重劃區：江翠ONE、江翠PARK',
-          desc: '「天空之邑」以雙塔地標，重新定義洲子洋天際線，<br />簡約、對稱的建築語彙，國際精品、奢華飯店級享受，<br />領先國際建築趨勢，以頂級飯店、豪宅設計語彙，<br />融入建築設計脈絡中，為您的幸福生活揭開新頁。',
-          img2: require('./s10/2.png')
+          desc: isMobile
+            ? '「天空之邑」以雙塔地標，重新定義洲子洋天際線，簡約、對稱的建築語彙，國際精品、奢華飯店級享受，領先國際建築趨勢，以頂級飯店、豪宅設計語彙，融入建築設計脈絡中，為您的幸福生活揭開新頁。'
+            : '「天空之邑」以雙塔地標，重新定義洲子洋天際線，<br />簡約、對稱的建築語彙，國際精品、奢華飯店級享受，<br />領先國際建築趨勢，以頂級飯店、豪宅設計語彙，<br />融入建築設計脈絡中，為您的幸福生活揭開新頁。',
+          img2: require('./s10/2.png'),
         },
         {
           img: require('./s10/3.jpg'),
           avatar: require('./s10/3s.jpg'),
-          text: isPC
-            ? '飯店、豪宅御用造景團隊'
-            : '飯店、豪宅<br />御用造景團隊',
+          text: '飯店、豪宅御用造景團隊',
           company: '大漢設計工程',
           name: '<span>徐世萃</span> /設計師',
           work1: '台北大直維多麗亞酒店 庭園設計',
           work2: '台北大直ATT百貨 庭園設計',
-          desc: '「天空之邑」以雙塔地標，重新定義洲子洋天際線，<br />簡約、對稱的建築語彙，國際精品、奢華飯店級享受，領先國際建築趨勢，以頂級飯店、豪宅設計語彙，<br />融入建築設計脈絡中，為您的幸福生活揭開新頁。',
-          img2: require('./s10/2.png')
+          desc: isMobile
+            ? '「天空之邑」以雙塔地標，重新定義洲子洋天際線，簡約、對稱的建築語彙，國際精品、奢華飯店級享受，領先國際建築趨勢，以頂級飯店、豪宅設計語彙，融入建築設計脈絡中，為您的幸福生活揭開新頁。'
+            : '「天空之邑」以雙塔地標，重新定義洲子洋天際線，<br />簡約、對稱的建築語彙，國際精品、奢華飯店級享受，<br />領先國際建築趨勢，以頂級飯店、豪宅設計語彙，<br />融入建築設計脈絡中，為您的幸福生活揭開新頁。',
+          img2: require('./s10/2.png'),
         },
       ],
     }
@@ -976,11 +930,12 @@ export default {
   methods: {
     showDialog(index) {
       this.isDialog = true
+      console.log(123123)
       this.current = this.slideList[index]
     },
     closeDialog() {
       this.isDialog = false
-    }
+    },
   },
 
   created() {},
@@ -989,7 +944,6 @@ export default {
 
   computed: {},
 
-  watch: {
-  },
+  watch: {},
 }
 </script>

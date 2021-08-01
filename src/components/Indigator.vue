@@ -2,13 +2,7 @@
   <div>
     <div :class="`indigator ${isLight ? 'light' : ''}`">
       <div class="list-indigator">
-        <div
-          :class="`dot ${index == indigatorIndex ? 'active' : ''}`"
-          v-for="index in info.indigatorLength"
-          :key="`indigator-${index}`"
-          v-scroll-to="{ element: `#section${index}` }"
-          @click="setIndigator(index)"
-        ></div>
+        <div :class="`dot ${index == indigatorIndex ? 'active' : ''}`" v-for="index in info.indigatorLength" :key="`indigator-${index}`" v-scroll-to="{ element: `#section${index}` }" @click="setIndigator(index)"></div>
         <!-- <div
         :class="`dot ${(info.indigatorLength + 1) === indigatorIndex ? 'active' : '' }`"
         v-scroll-to="{ element: `#contact` }"
@@ -16,19 +10,14 @@
       ></div> -->
       </div>
     </div>
-    <div
-      :class="`contact-indigator flex-c`"
-      v-scroll-to="{ element: `#contact` }"
-      @click="setIndigator(navList.length - 1 + 1)"
-      v-if="isPC"
-    >
+    <div :class="`contact-indigator flex-c`" v-scroll-to="{ element: `#contact` }" @click="setIndigator(navList.length - 1 + 1)" v-if="isPC">
       預約<br />賞屋
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-@import "../assets/style/function.scss";
+@import '../assets/style/function.scss';
 .indigator {
   font-size: 16px;
   position: fixed;
@@ -41,7 +30,6 @@
     padding: 8px;
     border-radius: 20px;
   }
-
 
   &.light {
     .dot {
@@ -67,7 +55,7 @@
     cursor: pointer;
     border-radius: 999px;
     &::before {
-      content: "";
+      content: '';
       display: block;
       width: 100%;
       height: 100%;
@@ -93,7 +81,7 @@
   position: fixed;
   left: size(22);
   bottom: size(150);
-  background-image: url("./button.png");
+  background-image: url('./button.png');
   background-size: cover;
   width: size(98);
   height: size(98);
@@ -108,53 +96,56 @@
 @media screen and (max-width: 767px) {
   .indigator {
     // display: none;
-    right: -3.5vw;
+    width: sizem(30);
+    left: 0vw;
+    z-index: 25;
     .contact-indigator {
       display: none;
     }
     .dot {
-      width: 2em;
-      height: 3em;
+      width: sizem(20);
+      height: sizem(20);
+      margin: sizem(15) 0;
     }
   }
 }
 </style>
 
 <script>
-import info from "@/info";
-import { isPC, isMobile } from "@/utils";
+import info from '@/info'
+import { isPC, isMobile } from '@/utils'
 
 export default {
-  name: "Indigator",
+  name: 'Indigator',
 
   data() {
     return {
       info,
       indigatorIndex: 1,
       isPC,
-      isMobile
-    };
+      isMobile,
+    }
   },
 
-  props: ["viewIndex"],
+  props: ['viewIndex'],
 
   watch: {
     viewIndex(val) {
       // console.log(val)
-      this.indigatorIndex = val;
-    }
+      this.indigatorIndex = val
+    },
   },
 
   computed: {
     isLight() {
       return this.indigatorIndex === 2
-    }
+    },
   },
 
   methods: {
     setIndigator(index) {
-      this.indigatorIndex = index;
-    }
-  }
-};
+      this.indigatorIndex = index
+    },
+  },
+}
 </script>

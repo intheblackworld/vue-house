@@ -713,110 +713,119 @@ svg {
 @media screen and (max-width: 767px) {
   .section9 {
     width: 100vw;
-    height: sizem(610);
+    height: sizem(893);
     min-height: auto;
     max-height: initial;
-  //  background-image: url('./all/section_bg.jpg');
-   // background-attachment: scroll;
+    //  background-image: url('./all/section_bg.jpg');
+    // background-attachment: scroll;
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
     // background-position: 0 0;
     // background-attachment: fixed;
     overflow: hidden;
   }
-  .img {
-  @include img_r_m(160, 120, 5);
-}
-
-  .title1 {
-    @include img_l_m(325, 63, 25);
-    font-size: sizem(30);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: normal;
-    text-align: left;
-    white-space: nowrap;
-    color: #fff;
-    span{
-      display: block;
-      font-size:0.666em;
-    }
+  svg {
+    @include div_l_m(190, 190, 0, 33);
+    top: auto;
+    bottom: sizem(47);
   }
 
-  .hr {
-    @include img_l_m(142, 60, 25);
-    height: sizem(1);
-    background: #333;
+  .title1 {
+    @include div_l_m(178, 41, 92, 34);
+    font-size: sizem(23);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.91;
+    letter-spacing: sizem(2.3);
+    text-align: center;
+    color: #ffffff;
+    background-color: #003177;
+    padding-top: 0;
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
   }
 
   .title2 {
-    @include img_l_m(325, 17, 25);
-    font-size: sizem(20);
+    @include div_l_m(258, 27, 57, 34);
+    font-size: sizem(18);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.05;
-    letter-spacing: normal;
+    line-height: 1.27;
+    letter-spacing: sizem(3.6);
     text-align: left;
-    color: #333333;
-    white-space: nowrap;
-    color: #fff;
+    color: #003177;
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+  }
+
+  .subtitle {
+    @include div_r_m(310, 30, 471, 32);
+    font-size: size(15);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: size(1);
+    text-align: left;
+    color: #000;
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
   }
 
   .desc {
-  @include img_l_m(170, 140, 25);
-  font-size: sizem(14);
-  font-weight: 400;
-  letter-spacing: 0.01em;
-    line-height:1.6;
-  text-align: justify;
-  color: #fff;
-    white-space: normal;
-  }
-
-  .more {
-    @include img_r_m(179 + 7 + 29, 636, 117);
+    @include div_r_m(310, 30, 497, 32);
     font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.04;
-    letter-spacing: sizem(2.1);
+    line-height: 1.73;
+    letter-spacing: normal;
     text-align: left;
-    color: #ffffff;
-    cursor: pointer;
-    white-space: nowrap;
+    color: #606060;
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+  }
 
-    img {
-      width: sizem(29);
+  .btns {
+    @include img_c_m(140 * 2 + 11, 170);
+  }
+
+  .btn {
+    width: sizem(140);
+    height: sizem(30);
+    cursor: pointer;
+    background: #fff;
+    transition: all 0.3s;
+    font-size: sizem(19);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: sizem(1.9);
+    text-align: left;
+    color: #606060;
+
+    &.active,
+    &:hover {
+      box-shadow: -2px 2px 0 0 #003177;
+      background: #fff;
+      color: #003177;
     }
   }
-  .btns {
-  @include img_c_m(325, 305);
-}
-
-.btn {
-  width: sizem(152);
-  height: sizem(27);
-
- &.active:hover {
-    animation:none ;
-    background:#ff662abb;
-    box-shadow: none;
-    color: #fff;
+  .circle {
+    @include img_r_m(133, 708, -35);
+    animation: circle 5s linear 0s infinite;
   }
-}
-
 
   /* Swipe */
   .swipe {
     width: 100%;
-    height: sizem(259);
+    height: sizem(243);
     min-height: auto;
-    top: auto;
-    bottom: 0;
+    top: sizem(210);
+    bottom: auto;
     left: sizem(0);
     object-fit: cover;
   }

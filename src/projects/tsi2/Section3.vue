@@ -1,30 +1,30 @@
 <template>
   <div class="section3">
-    <div class="title">
+    <div class="title" data-aos="fade" data-aos-delay="0">
       天空御選
     </div>
-    <img src="./s3/line.png" :alt="`${info.caseName}_img`" class="title-line">
+    <img src="./s3/line.png" :alt="`${info.caseName}_img`" class="title-line"  data-aos="zoom-in" data-aos-delay="0">
     <div class="content">
-      <h3 class="label">
+      <h3 class="label"  data-aos="fade" data-aos-delay="200">
         家最堅實的後盾
       </h3>
-      <div class="content-line"></div>
-      <h1 class="subtitle">
+      <div class="content-line"  data-aos="zoom-in-right" data-aos-delay="300"></div>
+      <h1 class="subtitle"  data-aos="fade" data-aos-delay="400">
         東和鋼鐵╳力泰混凝土
       </h1>
-      <h3 class="desc">
+      <h3 class="desc"  data-aos="fade" data-aos-delay="500">
         特選用雙北超高樓層建築、國際指標豪宅、旗艦公共工程欽定建材，「東和鋼鐵」、「力泰一級廠預拌混凝土」雙強聯手變身全家的守護者，以堅強實力捍衛您的居住安全，安心規劃一次到位，「天空之邑」為您從內至外完整把關。住安全，安心規劃一次到位，<br />「天空之邑」為您從內至外完整把關。
       </h3>
     </div>
     <div class="imgs">
-      <div class="item relative">
+      <div class="item relative"  data-aos="fade" data-aos-delay="600">
         <img src="./s3/img1.jpg" :alt="`${info.caseName}_img`" class="item-img">
         <div class="mask"></div>
         <img src="./s3/logo1.png" :alt="`${info.caseName}_img`" class="logo">
         <h3 class="item-title">東和鋼鐵 北市豪宅業績</h3>
         <h3 class="item-desc">華固建設-華固天鑄(38層)<br />南國建設-南國Ellipse(38層)<br />文心建設-文心AIT(26層)</h3>
       </div>
-      <div class="item relative">
+      <div class="item relative"  data-aos="fade" data-aos-delay="800">
         <img src="./s3/img2.jpg" :alt="`${info.caseName}_img`" class="item-img">
         <div class="mask"></div>
         <img src="./s3/logo2.png" :alt="`${info.caseName}_img`" class="logo">
@@ -47,7 +47,7 @@
   // background-size: 100% 100%;
   // background-position: 0 0;
   // background-attachment: fixed;
-   overflow: hidden;
+  overflow: hidden;
 }
 
 .title {
@@ -128,8 +128,10 @@
       .logo {
         @include img_c_pc(230, -64);
       }
-      .mask, .item-title, .item-desc {
-        opacity: 1
+      .mask,
+      .item-title,
+      .item-desc {
+        opacity: 1;
       }
     }
   }
@@ -141,7 +143,7 @@
   }
   .logo {
     @include img_c_pc(275, 148);
-    transition: all .7s;
+    transition: all 0.7s;
   }
 
   .mask {
@@ -150,9 +152,9 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, .85);
+    background-color: rgba(255, 255, 255, 0.85);
     opacity: 0;
-    transition: all .3s;
+    transition: all 0.3s;
   }
 
   .item-title {
@@ -167,7 +169,7 @@
     text-align: center;
     color: #636363;
     white-space: nowrap;
-    transition: all .3s;
+    transition: all 0.3s;
     opacity: 0;
   }
 
@@ -182,7 +184,7 @@
     text-align: center;
     color: #636363;
     white-space: nowrap;
-    transition: all .5s;
+    transition: all 0.5s;
     opacity: 0;
   }
 }
@@ -203,7 +205,7 @@
 @media screen and (max-width: 767px) {
   .section3 {
     width: 100%;
-    height: auto;
+    height: sizem(690);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -214,41 +216,141 @@
   }
 
   .title {
-    @include img_c_m(220, 22);
-    font-size: sizem(26);
-    letter-spacing: normal;
-    z-index: 9;
+    @include img_c_m(108, 50);
+    font-size: sizem(25);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: sizem(2.5);
+    text-align: center;
+    color: #003177;
+    white-space: nowrap;
   }
 
-  .hr {
-    @include img_c_m(325, 104);
-    z-index: 9;
+  .title-line {
+    @include img_c_m(225, 98);
+  }
+
+  .content {
+    @include img_c_m(310, 132);
+  }
+
+  .content-line {
+    border-top: 1px solid #d38700;
+    @include img_r_m(160, 10, 0);
+  }
+
+  .label {
+    @include img_l_m(151, 0, 0);
+    font-size: sizem(19);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: sizem(1.9);
+    text-align: center;
+    color: #d38700;
+    white-space: nowrap;
+  }
+
+  .subtitle {
+    @include img_l_m(310, 34, 0);
+    font-size: sizem(23);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: sizem(2.3);
+    text-align: left;
+    color: #003177;
+    white-space: nowrap;
   }
 
   .desc {
-    @include img_c_m(320, 119);
-    font-size: sizem(12);
-    line-height: 1.88;
-    letter-spacing: normal;
-    white-space:normal;
-    z-index: 9;
-  }
-
-  .more {
-    @include img_r_m(179 + 7 + 29, 636, 117);
+    @include img_l_m(310, 80, 0);
     font-size: sizem(15);
-    font-weight: normal;
+    font-weight: 600;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.04;
-    letter-spacing: sizem(2.1);
+    line-height: 1.8;
+    letter-spacing: sizem(0.3);
     text-align: left;
-    color: #ffffff;
-    cursor: pointer;
-    white-space: nowrap;
+    color: #636363;
+  }
 
-    img {
-      width: sizem(29);
+  .imgs {
+    @include img_c_m(375 - 27, 445);
+    display: flex;
+    justify-content: space-between;
+    .item {
+      width: sizem(170);
+      height: sizem(186);
+      position: relative;
+      cursor: pointer;
+      &:hover {
+        box-shadow: 0 0 0 3px #003177;
+        .logo {
+          @include img_c_m(83, -34);
+        }
+        .mask,
+        .item-title,
+        .item-desc {
+          opacity: 1;
+        }
+      }
+    }
+
+    .item-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .logo {
+      @include img_c_m(100, 53);
+      transition: all 0.7s;
+    }
+
+    .mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.85);
+      opacity: 0;
+      transition: all 0.3s;
+    }
+
+    .item-title {
+      @include div_c_m(153, 25, 48);
+      box-shadow: 0 0 0 1px #606060;
+      font-size: sizem(13);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.8;
+      letter-spacing: sizem(0.85);
+      text-align: center;
+      color: #636363;
+      white-space: nowrap;
+      transition: all 0.3s;
+      opacity: 0;
+    }
+
+    .item-desc {
+      @include img_c_m(180, 80);
+      font-size: sizem(12);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.8;
+      letter-spacing: sizem(1.25);
+      text-align: center;
+      color: #636363;
+      white-space: nowrap;
+      transition: all 0.5s;
+      opacity: 0;
     }
   }
 }
@@ -271,7 +373,6 @@ export default {
       isDialog: false,
     }
   },
-
 
   computed: {},
 

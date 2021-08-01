@@ -48,7 +48,7 @@
     width: 100vw;
     .map-bg {
       width: auto;
-      height: sizem(604);
+      height: sizem(530);
     }
 
     .map-text {
@@ -58,7 +58,7 @@
 
     img {
       width: auto;
-      height: sizem(604);
+      height: sizem(530);
     }
 
     .mask {
@@ -68,8 +68,8 @@
 
     .mask {
       width: 200vw;
-      height: sizem(57);
-      background-color: rgba(179, 57, 0, 0.6);
+      height: sizem(44);
+      background-color: rgba(255, 255, 255, 0.53);
       // animation: swing 2.5s ease-in-out 0s infinite;
       left: 35vw;
       position: absolute;
@@ -87,7 +87,7 @@
       z-index: 3;
       width: sizem(87) !important;
       height: auto !important;
-      left: sizem(425);
+      left: sizem(285);
       right: 0;
       margin: 0 auto;
       top: sizem(298) !important;

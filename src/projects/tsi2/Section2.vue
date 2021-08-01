@@ -5,27 +5,48 @@
     <img src="./s2/bg.png" :alt="`${info.caseName}_cloud`" class="wave">
     <img src="./s2/3d.png" :alt="`${info.caseName}_cloud`" class="img3d">
     <div class="title1 title">
-        一次買最好
-      </div>
-      <div class="title2 title">
-        住五股
-      </div>
-    <div class="item-list flex-jb flex-as">
-      <div :class="`item ${isCurrent ? 'active' : ''}`" v-for="item in item_list" :key="item.title1">
+      一次買最好
+    </div>
+    <div class="title2 title">
+      住五股
+    </div>
+    <swiper :options="swiperOption" ref="mySwiper" data-aos="fade" data-aos-delay="200" @slideChangeTransitionStart="slideChanged" class="item-list flex-jb flex-as">
+      <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" :class="`item ${slideIndex === index ? 'active': ''}`">
+        <div class="item-circle flex-c">
+          <h3 v-html="slide.title1"></h3>
+        </div>
+        <div class="item-title" v-if="isPC">
+          <h3 v-html="slide.title2"></h3>
+        </div>
+        <div class="item-desc">
+          <h3 v-html="slide.desc"></h3>
+        </div>
+      </swiper-slide>
+    </swiper>
+    <!-- <div class="item-list flex-jb flex-as">
+      <div :class="`item ${isCurrent ? 'active' : ''}`" v-for="item in slideList" :key="item.title1">
         <div class="item-circle flex-c">
           <h3 v-html="item.title1"></h3>
         </div>
-        <div class="item-title">
+        <div class="item-title" v-if="isPC">
           <h3 v-html="item.title2"></h3>
         </div>
         <div class="item-desc">
           <h3 v-html="item.desc"></h3>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
-
+<style lang="scss">
+@media screen and (max-width: 767px) {
+  .item-list .item.swiper-slide-active {
+    .item-desc {
+      display: block;
+    }
+  }
+}
+</style>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
@@ -98,13 +119,15 @@
 }
 
 .item-list {
-  @include img_c_pc(1450, 869);
+  @include img_c_pc(1620, 869);
+  padding: 15px;
 
   .item {
     width: size(133);
+    height: size(600);
     position: relative;
     cursor: pointer;
-    transition: all .3s;
+    transition: all 0.3s;
 
     &:hover {
       .item-circle {
@@ -116,35 +139,40 @@
       }
     }
 
-    &:nth-child(1), &:nth-child(10) {
-      .item-circle {
-        margin-top: size(-35);
-      }
-    }
+    // &:nth-child(1),
+    // &:nth-child(10) {
+    //   .item-circle {
+    //     margin-top: size(-35);
+    //   }
+    // }
 
-    &:nth-child(2), &:nth-child(9) {
-      .item-circle {
-        margin-top: size(45);
-      }
-    }
+    // &:nth-child(2),
+    // &:nth-child(9) {
+    //   .item-circle {
+    //     margin-top: size(45);
+    //   }
+    // }
 
-    &:nth-child(3), &:nth-child(8) {
-      .item-circle {
-        margin-top: size(100);
-      }
-    }
+    // &:nth-child(3),
+    // &:nth-child(8) {
+    //   .item-circle {
+    //     margin-top: size(100);
+    //   }
+    // }
 
-    &:nth-child(4), &:nth-child(7) {
-      .item-circle {
-        margin-top: size(150);
-      }
-    }
+    // &:nth-child(4),
+    // &:nth-child(7) {
+    //   .item-circle {
+    //     margin-top: size(150);
+    //   }
+    // }
 
-    &:nth-child(5), &:nth-child(6) {
-      .item-circle {
-        margin-top: size(170);
-      }
-    }
+    // &:nth-child(5),
+    // &:nth-child(6) {
+    //   .item-circle {
+    //     margin-top: size(170);
+    //   }
+    // }
   }
 
   .item-circle {
@@ -161,7 +189,7 @@
     letter-spacing: size(2.5);
     text-align: left;
     color: #d38700;
-    transition: all .3s;
+    transition: all 0.3s;
   }
 
   .item-title {
@@ -225,107 +253,158 @@
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    min-height: sizem(665);
-    max-height: sizem(812);
-    height: calc(100vh - 63px);
-    margin: 0 0 -12vw 0;
-    background-size: auto size-m(750);
-  z-index:initial;
+    min-height: sizem(770);
+    max-height: sizem(770);
+    height: sizem(770);
+  }
+
+  .img3d {
+    @include img_l_m(640, 154, -130);
+  }
+
+  .wave {
+    @include img_l_m(800, 244, -240);
+  }
+
+  .title {
+    font-size: sizem(23);
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.09;
+    letter-spacing: sizem(2.3);
+    text-align: right;
+    color: #003177;
+    background-color: #fff;
+    padding-right: sizem(16);
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
   }
 
   .title1 {
-    @include img_c_m(313, 258);
-    // top: calc(50% + 100vw * (505 - 540) / 1920);
-    font-size: sizem(33);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: normal;
-    text-align: left;
-    color: #fff000;
-    white-space: nowrap;
-    span {
-      font-size: sizem(38);
-    }
+    @include div_r_m(181, 41, 107, 36);
   }
 
   .title2 {
-    @include img_c_m(306, 310);
-    // top: calc(50% + 100vw * (586 - 540) / 1920);
-    font-size: sizem(26);
-    font-weight: 900;
+    @include div_r_m(145, 41, 56, 36);
+  }
+
+  .desc {
+    @include img_l_m(476, 96, 353);
+    font-size: size(20);
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: normal;
+    line-height: 1.8;
+    letter-spacing: size(1.6);
     text-align: left;
     color: #ffffff;
-    white-space: nowrap;
-    span {
-      font-size: sizem(29);
+  }
+
+  .item-list {
+    @include img_l_m(375, 516, 0);
+    padding-top: sizem(45);
+
+    .item {
+      width: sizem(95);
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        .item-circle {
+          font-size: sizem(20);
+          letter-spacing: size(1.43);
+          font-weight: 900;
+          background-color: #fff;
+          box-shadow: none;
+        }
+      }
+
+      // &:nth-child(1),
+      // &:nth-child(10) {
+      //   .item-circle {
+      //     margin-top: sizem(-200);
+      //   }
+      // }
+
+      // &:nth-child(2),
+      // &:nth-child(9) {
+      //   .item-circle {
+      //     margin-top: sizem(-150);
+      //   }
+      // }
+
+      // &:nth-child(3),
+      // &:nth-child(8),
+      // &:nth-child(7) {
+      //   .item-circle {
+      //     margin-top: sizem(-70);
+      //   }
+      // }
+
+      // &:nth-child(4),
+      // &:nth-child(6) {
+      //   .item-circle {
+      //     margin-top: sizem(-30);
+      //   }
+      // }
+
+      // &:nth-child(5) {
+      //   .item-circle {
+      //     margin-top: sizem(0);
+      //   }
+      // }
     }
-  }
 
-  .top {
-    position: absolute;
-    width: sizem(310);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    top: calc(50% + 100vw * (70 - 302) / 375);
-  }
-  .c1 {
-    left: 0;
-    top: calc(50% - 77vw);
-    width: sizem(97);
-    transform: translateX(-10%);
-  }
-  .c2 {
-    left: -6.7vw;
-    top: calc(50% + 44vw);
-    width: sizem(262);
-    transform: translateX(-8%);
-  }
-  .c3 {
-    right: 55vw;
-    top: calc(50% + 68vw);
-    width: sizem(132);
-    transform: translateX(30%);
-    animation-direction: alternate-reverse;
-  }
-  .c4 {
-    right: -1.5vw;
-    top: calc(50% + 50vw);
-    width: sizem(369);
-    transform: translateX(5%);
-    animation-direction: alternate-reverse;
-  }
+    .item-circle {
+      width: sizem(85);
+      height: sizem(85);
+      border-radius: 999px;
+      background-color: #003177;
+      box-shadow: 0 0 0 3px #d38700;
+      font-size: sizem(15);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.3;
+      letter-spacing: sizem(1.5);
+      text-align: left;
+      color: #d38700;
+      transition: all 0.3s;
+    }
 
-  .t {
-    position: absolute;
-    width: sizem(310);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    top: calc(50% + 100vw * (650 - 302) / 375);
-  }
-  .o {
-    width: sizem(40);
-    right: 19.7vw;
-    top: calc(50% + 100vw * (676 - 302) / 375);
-  }
+    .item-title {
+      @include img_r_m(36, 133 + 184, 20);
+      width: size(133);
+      height: size(266);
+      font-size: size(25);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.3;
+      letter-spacing: size(2.5);
+      text-align: left;
+      color: #d38700;
+      writing-mode: horizontal-tb;
+      text-orientation: mixed;
+    }
 
-  .top-logo {
-    @include img_c_m(315, 135);
-  }
-
-  .top-title1 {
-    @include img_c_m(315, 274);
-  }
-
-  .top-title2 {
-    @include img_c_m(312, 409);
+    .item-desc {
+      @include img_l_m(310, 100, -110);
+      min-height: sizem(70);
+      font-size: sizem(15);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 2;
+      letter-spacing: sizem(0.75);
+      text-align: center;
+      color: #fff;
+      writing-mode: horizontal-tb;
+      text-orientation: mixed;
+      display: none;
+    }
   }
 }
 </style>
@@ -333,9 +412,18 @@
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
 import info from '@/info'
+import slider from '@/mixins/slider.js'
+import 'swiper/dist/css/swiper.css'
+
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'section2',
+
+  components: {
+    swiper,
+    swiperSlide,
+  },
 
   data() {
     return {
@@ -344,7 +432,25 @@ export default {
       isMobile,
       isTablet,
       isAnimateBg: true,
-      item_list: [
+      swiperOption: {
+        slidesPerView: isMobile ? 3.5 : 10,
+        spaceBetween: isTablet ? 20 : 30,
+        slidesPerColumn: isMobile ? 1 : 1,
+        allowSlidePrev: isMobile ? true : true,
+        allowSlideNext: isMobile ? true : true,
+        centeredSlides: isMobile ? true : false,
+        autoplay: {
+          delay: 30000,
+          disableOnInteraction: false,
+        },
+        loop: true,
+        // effect: 'fade',
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      },
+      slideList: [
         {
           title1: '龍首<br />地標',
           title2: '● 龍首地標',
@@ -395,21 +501,25 @@ export default {
           title2: '● 防疫規劃',
           desc: '當層排氣系統排除室內廢氣，療癒六感庭園舒緩身心',
         },
-      ]
+      ],
     }
   },
 
-  methods: {},
+  methods: {
+  },
 
   mounted() {
+    if (this.isMobile) {
+      this.toggleTimer = false
+    }
   },
 
   created() {},
 
   computed: {
-    isCurrent() {
-      return true
-    }
+    // isCurrent() {
+    //   return this.slideIndex
+    // },
   },
 }
 </script>
