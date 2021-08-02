@@ -1,8 +1,8 @@
 <template>
   <div class="section1">
     <!-- 藍色那張 -->
-    <transition name="slide-fade" mode="out-in">
-      <div v-if="isAnimateBg" class="animate-bg">
+    <transition-group name="slide-fade" mode="out-in">
+      <div v-if="isAnimateBg" class="animate-bg" key="animate-bg">
         <img src="./s1/bgimg2.png" :alt="`${info.caseName}_cloud`" class="img2" v-if="isPC">
         <img src="./s1/bgimg2m.png" :alt="`${info.caseName}_cloud`" class="img2" v-if="isMobile">
         <img src="./s1/bgimg1.png" :alt="`${info.caseName}_cloud`" class="img1" v-if="isPC">
@@ -13,7 +13,7 @@
           <img src="./s1/t1.png" :alt="`${info.caseName}_cloud`">
         </div>
       </div>
-      <div v-else>
+      <div v-else key="default-bg">
         <img src="./s1/map_bg.jpg" :alt="`${info.caseName}_cloud`" class="map-img" v-if="isPC">
         <div class="map-bg-frame">
           <Map v-if="isMobile" :bgSrc="bgmSrc" :hand="hand">
@@ -30,7 +30,7 @@
           15萬坪寬闊樹海濃蔭，128萬坪大臺北都會水岸公園，藍天綠邑絕美生活別說你不羨慕！這就是洲子洋，宜居大城持續進化，讓雙北人一眼愛上。
         </h3>
       </div>
-    </transition>
+    </transition-group>
   </div>
 </template>
 
@@ -43,7 +43,7 @@
   min-height: size(900);
   max-height: size(1080);
   //overflow: hidden;
-  position: relative;
+  // position: relative;
     z-index: 2;
     background: #fff;
   //z-index: 3;
@@ -316,7 +316,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.isAnimateBg = false
-    }, 500)//6000
+    }, 1000) //6000
   },
 
   created() {},

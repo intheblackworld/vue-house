@@ -1,10 +1,10 @@
 <template>
   <div class="section10">
     <img src="./s10/bg1.png" :alt="`${info.caseName}_img`" class="bgimg">
-    <div class="title"  data-aos="fade" data-aos-delay="0">
+    <div class="title" data-aos="fade" data-aos-delay="0">
       天空御選
     </div>
-    <img src="./s3/line.png" :alt="`${info.caseName}_img`" class="title-line"  data-aos="zoom-in-right" data-aos-delay="100">
+    <img src="./s3/line.png" :alt="`${info.caseName}_img`" class="title-line" data-aos="zoom-in-right" data-aos-delay="100">
     <div v-if="isPC">
       <div class="item-list flex-ac flex-jb wrap">
         <div class="item" v-for="(slide, index) in slideList" :key="slide.img" @click="showDialog(index)">
@@ -18,7 +18,8 @@
     </div>
     <transition name="swipe-fade" mode="out-in">
       <div class="dialog" v-if="isDialog">
-        <div><img src="./s10/bg2.png" :alt="`${info.caseName}_img`" class="bgimg">
+        <div>
+          <img src="./s10/bg2.png" :alt="`${info.caseName}_img`" class="bgimg" v-if="isPC">
           <img src="~@/assets/img/close.png" alt class="close" @click="closeDialog" />
           <img :src="current.avatar" alt="" class="dialog-avatar">
           <div class="dialog-text" v-html="current.text"></div>
@@ -32,13 +33,15 @@
       </div>
     </transition>
     <swiper v-if="isMobile" :options="swiperOption" data-aos="fade" data-aos-delay="200" class="swipe absolute">
-      <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" @click="showDialog(index)">
-        <img :src="slide.img" alt="" class="item-img" @click="showDialog(index)">
-        <div class="item-text" v-html="slide.text"></div>
-        <div class="item-name" v-html="slide.name"></div>
-        <div class="item-company" v-html="slide.company"></div>
-        <div class="item-line"></div>
-        <div class="item-btn flex-c" @click="showDialog(index)">名師介紹</div>
+      <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img">
+        <div @click="showDialog(index)">
+          <img :src="slide.img" alt="" class="item-img">
+          <div class="item-text" v-html="slide.text"></div>
+          <div class="item-name" v-html="slide.name"></div>
+          <div class="item-company" v-html="slide.company"></div>
+          <div class="item-line"></div>
+          <div class="item-btn flex-c" @click="showDialog(index)">名師介紹</div>
+        </div>
       </swiper-slide>
       <!-- <div class="swiper-button-prev" slot="button-prev">
         <img src="./all/prev-btn.png" alt="" class="prev-btn">
@@ -190,8 +193,8 @@
   min-height: size(902);
   max-height: size(902);
   position: relative;
-    background: #fff;
-    z-index: 9;
+  background: #fff;
+  z-index: 9;
   // background-color: #fff;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
@@ -205,8 +208,10 @@
   width: 102vw;
   position: absolute;
   left: 0;
-  bottom: 0;transform-origin: 50% 100%;
-  animation: img 5s -0.5s ease-in-out infinite alternate;}
+  bottom: 0;
+  transform-origin: 50% 100%;
+  animation: img 5s -0.5s ease-in-out infinite alternate;
+}
 @keyframes img {
   to {
     transform: scaleX(1.1) translate(0%, 0%);
@@ -312,18 +317,19 @@
   z-index: 10;
   top: 0;
   left: 0;
-  background:#003176;
+  background: #003176;
   overflow-y: auto;
-  overflow-x:hidden;
+  overflow-x: hidden;
   //background-image: url('./s1/test.jpg');   ./s10/bg2.png
   background-size: cover;
   background-position: center bottom;
-  > div{
-  width: 100%;
-  height: 100vh;
-  min-height: size(900);
-  max-height: size(1080);
-  position: relative;}
+  > div {
+    width: 100%;
+    height: 100vh;
+    min-height: size(900);
+    max-height: size(1080);
+    position: relative;
+  }
 
   .close {
     position: absolute;
@@ -680,7 +686,7 @@
       transition: all 0.5s;
     }
 
-  &.swiper-slide-active,
+    &.swiper-slide-active,
     &:hover {
       img {
         mix-blend-mode: normal;
@@ -747,32 +753,46 @@
     text-align: left;
     color: #ffffff;
   }
-  .swiper-slide{
-    &::before{content:"";display: block;z-index: 1;background-color: #f1e8dd;position: absolute;top: 0;left: 0;width: 100%;height:sizem(300);}
-  img {
+  .swiper-slide {
+    &::before {
+      content: '';
+      display: block;
+      z-index: 1;
+      background-color: #f1e8dd;
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      mix-blend-mode: luminosity;position: relative;
-      transition: all 0.5s;z-index: 2;
+      height: sizem(300);
+    }
+    img {
+      width: 100%;
+      mix-blend-mode: luminosity;
+      position: relative;
+      transition: all 0.5s;
+      z-index: 2;
     }
     .item-text,
     .item-company,
     .item-name,
-    .item-line,.item-btn{z-index: 3;
+    .item-line,
+    .item-btn {
+      z-index: 3;
       opacity: 0;
       transition: all 0.5s;
     }
-    &.swiper-slide-active{
-  img {
-      mix-blend-mode: normal;
-    }
+    &.swiper-slide-active {
+      img {
+        mix-blend-mode: normal;
+      }
 
-    .item-text,
-    .item-company,
-    .item-name,
-    .item-line,.item-btn{
-      opacity: 1;
-    }
-
+      .item-text,
+      .item-company,
+      .item-name,
+      .item-line,
+      .item-btn {
+        opacity: 1;
+      }
     }
   }
 
@@ -790,6 +810,8 @@
 
     > div {
       height: sizem(934 + 50);
+      min-height: auto;
+      max-height:sizem(934 + 50);
     }
 
     .close {
@@ -797,6 +819,7 @@
       top: 2em;
       right: 2em;
       cursor: pointer;
+      z-index: 3;
     }
 
     .dialog-avatar {
@@ -984,7 +1007,6 @@ export default {
   methods: {
     showDialog(index) {
       this.isDialog = true
-      console.log(123123)
       this.current = this.slideList[index]
     },
     closeDialog() {

@@ -107,7 +107,7 @@
   min-height: size(1046);
   max-height: size(1046);
   position: relative;
-  z-index: 8;
+  z-index: 2;
     background: #fff;
   // background-color: #fff;
   // min-height: size(900);

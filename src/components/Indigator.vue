@@ -1,13 +1,12 @@
 <template>
   <div>
     <div :class="`indigator ${isLight ? 'light' : ''}`">
-      <div class="list-indigator">
+      <div class="list-indigator active" v-if="!isExtend">
+        <div :class="`dot`" @click="isExtend = true"></div>
+      </div>
+      <div class="list-indigator" v-if="isExtend">
+        <img src="@/projects/jh/s4/close.png" alt="" v-if="isMobile" class="close" @click="isExtend = false">
         <div :class="`dot ${index == indigatorIndex ? 'active' : ''}`" v-for="index in info.indigatorLength" :key="`indigator-${index}`" v-scroll-to="{ element: `#section${index}` }" @click="setIndigator(index)"></div>
-        <!-- <div
-        :class="`dot ${(info.indigatorLength + 1) === indigatorIndex ? 'active' : '' }`"
-        v-scroll-to="{ element: `#contact` }"
-        @click="setIndigator(info.indigatorLength + 1)"
-      ></div> -->
       </div>
     </div>
     <div :class="`contact-indigator flex-c`" v-scroll-to="{ element: `#contact` }" @click="setIndigator(navList.length - 1 + 1)" v-if="isPC">
@@ -90,24 +89,40 @@
   color: #003177;
   z-index: 10;
   transition: all 0.3s;
-  cursor:pointer;
+  cursor: pointer;
   border-radius: 50%;
-  box-shadow: 0 0.5em .5em -.1em #0006;
-  &::before{content:"";position: absolute;width: 100%;height: 100%;z-index: -1;top: 0;left: 0;
-  transition: all 20s;transition-timing-function:linear;
-  background: url('./button.png') 0 0;
-  background-size: cover;}
-  &:hover{
-    &:before{transform: rotate(700deg);}
-
+  box-shadow: 0 0.5em 0.5em -0.1em #0006;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    transition: all 20s;
+    transition-timing-function: linear;
+    background: url('./button.png') 0 0;
+    background-size: cover;
+  }
+  &:hover {
+    &:before {
+      transform: rotate(700deg);
+    }
   }
 }
 @media screen and (max-width: 767px) {
   .indigator {
     // display: none;
+    top: sizem(0);
+    transform: none;
     width: sizem(30);
     left: 0vw;
     z-index: 25;
+
+    .list-indigator {
+      padding: sizem(8);
+    }
     .contact-indigator {
       display: none;
     }
@@ -115,6 +130,14 @@
       width: sizem(20);
       height: sizem(20);
       margin: sizem(15) 0;
+    }
+
+    .close {
+      width: sizem(20);
+      height: sizem(20);
+      padding: sizem(3);
+      background-color: rgba(0, 0, 0, 0.4);
+      // margin: 0px size-m(3) 30px;
     }
   }
 }
@@ -133,6 +156,7 @@ export default {
       indigatorIndex: 1,
       isPC,
       isMobile,
+      isExtend: !isMobile,
     }
   },
 

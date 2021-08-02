@@ -10,7 +10,7 @@
       :options="options"
       id="fullpage"
     > -->
-      <vue-lazy-component class="section relative" id="section1" @init="init">
+      <vue-lazy-component class="section" id="section1" @init="init">
         <Section1 />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section2">
