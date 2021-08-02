@@ -474,7 +474,7 @@
   }
 
   .desc {
-    @include div_l_m(310, 238, 355 + 15, 43);
+    @include div_l_m(310, 238, 355 + 35, 43);
     font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;

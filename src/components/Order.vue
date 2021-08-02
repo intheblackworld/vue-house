@@ -14,6 +14,7 @@
         data-aos="fade-down"
         data-aos-delay="0"
       ></h3>
+      <img src="@/projects/tsi2/s10/line.png" :alt="`${info.caseName}_img`" class="title-line"  data-aos="fade" data-aos-delay="100">
       <div
         class="order-subtitle"
         data-aos="fade-down"
@@ -385,11 +386,11 @@ export default {
     overflow: hidden;
   }
   .order-title {
-    font-family: $family2;
+    font-family: $family1;
     width: 80vw;
     padding-top: 20px;
-    padding-bottom: 20px;
-    margin: 0 auto 10px;
+    padding-bottom:0;
+    margin: 0 auto 0;
     display: inline-block;
     font-weight: 700;
     line-height: 1.7;
@@ -397,9 +398,15 @@ export default {
     font-size: calc(100vw * 50 / 1920);
     text-align: center;
     color: $order_title_color;
+
     // border-top: 1px solid #248184;
     // border-bottom: 1px solid #248184;
   }
+  .title-line {
+    width: calc(450 * 100vw / 1920);
+    padding-bottom:20px;
+    transform: scaleX(0.5);
+}
 
   .order-subtitle {
     width: 100vw;
@@ -519,9 +526,13 @@ export default {
       width: 290px;
       padding-top: 10px;
       padding-bottom: 0px;
-      font-size: calc(100vw * 47 / 375);
+      font-size: calc(100vw * 25 / 375);
       letter-spacing: 4px;
+
     }
+  .title-line {
+    width:calc(100vw * 225 / 375);
+  }
 
     .order-subtitle {
       // display: none;

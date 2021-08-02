@@ -32,7 +32,7 @@
       </div>
     </transition>
     <swiper v-if="isMobile" :options="swiperOption" data-aos="fade" data-aos-delay="200" class="swipe absolute">
-      <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img">
+      <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" @click="showDialog(index)">
         <img :src="slide.img" alt="" class="item-img" @click="showDialog(index)">
         <div class="item-text" v-html="slide.text"></div>
         <div class="item-name" v-html="slide.name"></div>
