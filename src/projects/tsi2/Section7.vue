@@ -24,6 +24,10 @@
   // background-position: 0 0;
   // background-attachment: fixed;
   //  overflow: hidden;
+  &::after{width: 100%;content: "";display: block;position: absolute;height: 10vw;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,.95) 90%,rgba(255,255,255,1) 100%);}
 }
 
 .bg-img {
@@ -38,7 +42,9 @@
   // opacity: 0.5;
 
   &:nth-child(1) {
-    position: relative;
+    position: fixed;
+    z-index: -1;
+    top: auto;bottom: 0
   }
 }
 

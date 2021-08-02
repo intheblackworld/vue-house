@@ -98,7 +98,7 @@ export default {
     text-align: left;
     color: $house_desc_color;
     font-family: $family3;
-    font-weight: bold;
+    font-weight: 500;
   }
 }
 
@@ -125,6 +125,10 @@ export default {
     height: auto;
     margin-left: 20px;
     white-space: normal;
+  font-size: calc(16 * 100vw / 375);
+  .desc {
+  font-size: calc(16 * 100vw / 375);
+  }
   }
 
   .info {

@@ -105,20 +105,20 @@ export default {
   z-index: 3;
   //width: 1200px;
   width: 100%;
-  height: 460px;
+  //height: 460px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
   transform: translateY(0);
   margin: 2vw auto 0;
-  padding: 30px 0 40px;
+  padding: calc(30 * 100vw / 1920) 0 calc(130 * 100vw / 1920);
 }
 
 .logo {
   width: $contact_logo_pc_width;
   height: auto;
   // height:;
-  margin: 0 auto 0px;
+  margin: 0 auto calc(50 * 100vw / 1920) ;
 }
 .info {
   width: 880px;
@@ -249,7 +249,7 @@ export default {
     height: auto;
     padding: 5%;
     transform: none;
-    position: static;
+    position: relative;
     margin: 0;
 
     .logo {

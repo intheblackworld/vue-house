@@ -21,6 +21,7 @@
       </div>
     </div>
     <img src="./s4/img.jpg" :alt="`${info.caseName}_img`" class="img"  data-aos="fade" data-aos-delay="200">
+    <h3 class="img-name">情境示意圖</h3>
     <img src="./s4/img.png" :alt="`${info.caseName}_img`" class="circle"  data-aos="fade" data-aos-delay="600">
   </div>
 </template>
@@ -38,6 +39,8 @@
   // background-position: 0 0;
   // background-attachment: fixed;
   //  overflow: hidden;
+    z-index: 2;
+    background: #fff;
 }
 
 .content {
@@ -99,10 +102,20 @@
 .img {
   @include img_l_pc(533, 102, 394);
 }
-
+  .img-name{
+  @include img_l_pc(533, 575, 610);
+    font-size: size(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: 0.06em;
+    color: #fff;
+    text-shadow:0 0 0.8em #000;
+  }
 .circle {
   @include img_l_pc(197, 432, 230);
-  animation: circle 5s linear 0s infinite;
+  animation: circle 30s linear 0s infinite;
 }
 
 @keyframes circle {
@@ -198,17 +211,23 @@
   .img {
     @include img_r_m(276, 390, 0);
   }
+  .img-name{
+  @include img_r_m(276, 630, 0);
+  width: auto;
+    font-size: sizem(12);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: 0.06em;
+    color: #fff;
+    text-shadow:0 0 0.8em #000;
+  }
 
   .circle {
     @include img_l_m(103, 420, 43);
-    animation: circle 5s linear 0s infinite;
   }
 
-  @keyframes circle {
-    to {
-      transform: rotate(360deg);
-    }
-  }
 }
 </style>
 <script>

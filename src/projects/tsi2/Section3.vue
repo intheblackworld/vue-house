@@ -23,6 +23,7 @@
         <img src="./s3/logo1.png" :alt="`${info.caseName}_img`" class="logo">
         <h3 class="item-title">東和鋼鐵 北市豪宅業績</h3>
         <h3 class="item-desc">華固建設-華固天鑄(38層)<br />南國建設-南國Ellipse(38層)<br />文心建設-文心AIT(26層)</h3>
+        <div class="item-name">情境示意圖</div>
       </div>
       <div class="item relative"  data-aos="fade" data-aos-delay="800">
         <img src="./s3/img2.jpg" :alt="`${info.caseName}_img`" class="item-img">
@@ -30,6 +31,7 @@
         <img src="./s3/logo2.png" :alt="`${info.caseName}_img`" class="logo">
         <h3 class="item-title">力泰混凝土 雙北豪宅業績</h3>
         <h3 class="item-desc">遠雄建設-遠雄九五(42樓)<br />元利建設-信義聯勤(35樓)<br />威京集團-陶朱隱園(21樓)</h3>
+        <div class="item-name">情境示意圖</div>
       </div>
     </div>
   </div>
@@ -48,12 +50,14 @@
   // background-position: 0 0;
   // background-attachment: fixed;
   overflow: hidden;
+    z-index: 2;
+    background: #fff;
 }
 
 .title {
   @include img_c_pc(216, 67);
   font-size: size(50);
-  font-weight: bold;
+  font-weight:800;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.5;
@@ -105,7 +109,7 @@
 .desc {
   @include img_l_pc(489, 155, 0);
   font-size: size(20);
-  font-weight: 600;
+  font-weight:500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.8;
@@ -133,6 +137,9 @@
       .item-desc {
         opacity: 1;
       }
+      .item-name {
+        opacity:0;
+      }
     }
   }
 
@@ -158,7 +165,7 @@
   }
 
   .item-title {
-    @include div_c_pc(256, 37, 205);
+    @include div_c_pc(270, 37, 205);
     box-shadow: 0 0 0 1px #606060;
     font-size: size(22);
     font-weight: bold;
@@ -186,6 +193,22 @@
     white-space: nowrap;
     transition: all 0.5s;
     opacity: 0;
+  }
+  .item-name{
+    @include img_r_pc(467, 0 , 15);
+    width: auto;
+    top: auto;
+    bottom: 0;
+    font-size: size(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: 0.06em;
+    color: #fff;
+    text-shadow:0 0 0.8em #000;
+    transition: all 0.5s;
+    opacity: 1;
   }
 }
 
@@ -218,7 +241,7 @@
   .title {
     @include img_c_m(108, 50);
     font-size: sizem(25);
-    font-weight: bold;
+    //font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: 2;
@@ -270,7 +293,7 @@
   .desc {
     @include img_l_m(310, 80, 0);
     font-size: sizem(15);
-    font-weight: 600;
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.8;
@@ -352,6 +375,13 @@
       transition: all 0.5s;
       opacity: 0;
     }
+  .item-name{
+    @include img_r_m(467, 0 , 5);
+    width: auto;
+    top: auto;
+    bottom: 0;
+    font-size: sizem(12);
+  }
   }
 }
 </style>

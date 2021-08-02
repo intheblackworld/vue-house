@@ -1,7 +1,6 @@
 <template>
   <div class="section10">
     <img src="./s10/bg1.png" :alt="`${info.caseName}_img`" class="bgimg">
-    <img src="./s10/bg2.png" :alt="`${info.caseName}_img`" class="bgimg">
     <div class="title"  data-aos="fade" data-aos-delay="0">
       天空御選
     </div>
@@ -19,7 +18,7 @@
     </div>
     <transition name="swipe-fade" mode="out-in">
       <div class="dialog" v-if="isDialog">
-        <div>
+        <div><img src="./s10/bg2.png" :alt="`${info.caseName}_img`" class="bgimg">
           <img src="~@/assets/img/close.png" alt class="close" @click="closeDialog" />
           <img :src="current.avatar" alt="" class="dialog-avatar">
           <div class="dialog-text" v-html="current.text"></div>
@@ -191,6 +190,8 @@
   min-height: size(902);
   max-height: size(902);
   position: relative;
+    background: #fff;
+    z-index: 9;
   // background-color: #fff;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
@@ -201,10 +202,15 @@
 }
 
 .bgimg {
-  width: 100vw;
+  width: 102vw;
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 0;transform-origin: 50% 100%;
+  animation: img 5s -0.5s ease-in-out infinite alternate;}
+@keyframes img {
+  to {
+    transform: scaleX(1.1) translate(0%, 0%);
+  }
 }
 
 .title {
@@ -300,15 +306,24 @@
   left: 0;
 }
 .dialog {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   position: fixed;
   z-index: 10;
   top: 0;
   left: 0;
-  background-image: url('./s1/test.jpg');
+  background:#003176;
+  overflow-y: auto;
+  overflow-x:hidden;
+  //background-image: url('./s1/test.jpg');   ./s10/bg2.png
   background-size: cover;
   background-position: center bottom;
+  > div{
+  width: 100%;
+  height: 100vh;
+  min-height: size(900);
+  max-height: size(1080);
+  position: relative;}
 
   .close {
     position: absolute;
@@ -319,11 +334,13 @@
 
   .dialog-avatar {
     @include img_l_pc(315, 246, 129);
-    border-radius: 999px;
+    top: calc(50% + (246 - 540) * 100vw / 1920);
+    border-radius: 50%;
   }
 
   .dialog-text {
     @include img_l_pc(480, 279, 485);
+    top: calc(50% + (279 - 540) * 100vw / 1920);
     font-size: size(35);
     font-weight: 900;
     font-stretch: normal;
@@ -335,8 +352,9 @@
   }
   .dialog-desc {
     @include img_l_pc(480, 329, 485);
+    top: calc(50% + (329 - 540) * 100vw / 1920);
     font-size: size(20);
-    font-weight: 600;
+    font-weight: 300;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.6;
@@ -347,6 +365,7 @@
   }
   .dialog-company {
     @include img_l_pc(480, 542, 485);
+    top: calc(50% + (542 - 540) * 100vw / 1920);
     font-size: size(35);
     font-weight: 900;
     font-stretch: normal;
@@ -359,10 +378,12 @@
 
   .dialog-name {
     @include img_l_pc(480, 586, 485);
+    top: calc(50% + (586 - 540) * 100vw / 1920);
   }
 
   .dialog-work1 {
     @include img_l_pc(480, 676, 485);
+    top: calc(50% + (676 - 540) * 100vw / 1920);
     font-size: size(22);
     font-weight: 900;
     font-stretch: normal;
@@ -373,9 +394,11 @@
     color: #fff;
     border-left: 5px solid #d38700;
     padding-left: 10px;
+    font-weight: 400;
   }
   .dialog-work2 {
     @include img_l_pc(480, 720, 485);
+    top: calc(50% + (720 - 540) * 100vw / 1920);
     font-size: size(22);
     font-weight: 900;
     font-stretch: normal;
@@ -386,9 +409,11 @@
     color: #fff;
     border-left: 5px solid #d38700;
     padding-left: 10px;
+    font-weight: 400;
   }
   .dialog-work-img {
     @include img_r_pc(712, 279, 200);
+    top: calc(50% + (279 - 540) * 100vw / 1920);
   }
 }
 
@@ -655,6 +680,7 @@
       transition: all 0.5s;
     }
 
+  &.swiper-slide-active,
     &:hover {
       img {
         mix-blend-mode: normal;
@@ -702,7 +728,7 @@
     height: sizem(11);
     background: #d38700;
     position: absolute;
-    bottom: sizem(50);
+    bottom: sizem(49);
     left: 0;
   }
 
@@ -720,6 +746,34 @@
     letter-spacing: sizem(1.8);
     text-align: left;
     color: #ffffff;
+  }
+  .swiper-slide{
+    &::before{content:"";display: block;z-index: 1;background-color: #f1e8dd;position: absolute;top: 0;left: 0;width: 100%;height:sizem(300);}
+  img {
+      width: 100%;
+      mix-blend-mode: luminosity;position: relative;
+      transition: all 0.5s;z-index: 2;
+    }
+    .item-text,
+    .item-company,
+    .item-name,
+    .item-line,.item-btn{z-index: 3;
+      opacity: 0;
+      transition: all 0.5s;
+    }
+    &.swiper-slide-active{
+  img {
+      mix-blend-mode: normal;
+    }
+
+    .item-text,
+    .item-company,
+    .item-name,
+    .item-line,.item-btn{
+      opacity: 1;
+    }
+
+    }
   }
 
   .dialog {

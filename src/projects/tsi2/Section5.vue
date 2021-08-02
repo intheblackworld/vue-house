@@ -108,6 +108,7 @@
   max-height: size(1046);
   position: relative;
   z-index: 8;
+    background: #fff;
   // background-color: #fff;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
@@ -143,6 +144,7 @@
   background-color: #003177;
   writing-mode: vertical-rl;
   text-orientation: upright;
+    z-index: 2;
 }
 
 .title2 {
@@ -160,7 +162,7 @@
 }
 
 .desc {
-  @include div_l_pc(123, 566, 238, 502);
+  @include div_l_pc(123, 566, 230, 502);
   font-size: size(16);
   font-weight: 400;
   font-stretch: normal;
@@ -197,7 +199,7 @@
 }
 .circle {
   @include img_r_pc(197, 137, 124);
-  animation: circle 5s linear 0s infinite;
+  animation: circle 20s linear 0s infinite;
 }
 
 @keyframes circle {
@@ -432,7 +434,9 @@
     overflow: hidden;
   }
   .img {
-    @include img_c_m(375, 0);
+    @include img_r_m(375, 0, -260);
+    width: auto;
+    height: sizem(275);
     top: auto;
     bottom: 0;
   }
@@ -440,15 +444,17 @@
   .title1 {
     @include div_l_m(178, 41, 294, 43);
     font-size: sizem(23);
-    font-weight: 900;
+    height: auto;
+    font-weight: 700;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.91;
+    line-height: 1.5;
     letter-spacing: sizem(2.3);
-    text-align: center;
+    text-align: left;
     color: #ffffff;
     background-color: #003177;
     padding-top: 0;
+    padding-left: 0.5em;
     writing-mode: horizontal-tb;
     text-orientation: mixed;
   }
@@ -468,7 +474,7 @@
   }
 
   .desc {
-    @include div_l_m(310, 238, 355 + 38, 43);
+    @include div_l_m(310, 238, 355 + 15, 43);
     font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
@@ -509,7 +515,6 @@
   }
   .circle {
     @include img_r_m(71, 250, 32);
-    animation: circle 5s linear 0s infinite;
   }
 
   /* Swipe */
@@ -594,10 +599,14 @@
     // }
     .slide-name {
       right: auto;
+      width: auto;
       top: auto;
-      bottom: 1.2rem;
-      right: 1.2rem;
-      font-size: sizem(15);
+      bottom: 1.2em;
+      right: 0.5em;
+      text-align: right;
+      font-size: sizem(12);
+      font-family: "Noto Sans TC", serif;
+      font-weight: 400;
     }
   }
 
@@ -699,11 +708,11 @@ export default {
       slideList: [
         {
           img: require('./s5/1-1.jpg'),
-          name: '情境示意',
+          name: '六感庭園情境示意圖',
         },
         {
           img: require('./s5/1-2.jpg'),
-          name: '情境示意',
+          name: '六感庭園情境示意圖',
         },
       ],
       slideList1: [

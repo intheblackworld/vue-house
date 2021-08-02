@@ -81,8 +81,6 @@
   position: fixed;
   left: size(22);
   bottom: size(150);
-  background-image: url('./button.png');
-  background-size: cover;
   width: size(98);
   height: size(98);
   font-size: size(24);
@@ -92,6 +90,17 @@
   color: #003177;
   z-index: 10;
   transition: all 0.3s;
+  cursor:pointer;
+  border-radius: 50%;
+  box-shadow: 0 0.5em .5em -.1em #0006;
+  &::before{content:"";position: absolute;width: 100%;height: 100%;z-index: -1;top: 0;left: 0;
+  transition: all 20s;transition-timing-function:linear;
+  background: url('./button.png') 0 0;
+  background-size: cover;}
+  &:hover{
+    &:before{transform: rotate(700deg);}
+
+  }
 }
 @media screen and (max-width: 767px) {
   .indigator {

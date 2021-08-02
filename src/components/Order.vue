@@ -1,7 +1,7 @@
 <template>
   <div class="order-bg">
-    <!-- <img src="@/projects/fs/order/bg.png" alt="" class="bg-img"> -->
-    <!-- <img src="@/projects/fs/order/bg1.png" alt="" class="bg-img no-mix"> -->
+    <img src="@/projects/tsi2/s1/bgimg2.png" alt="" class="bg-img2">
+   <img src="@/projects/tsi2/s1/bgimg1.png" alt="" class="bg-img1">
     <!-- <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile"> -->
     <div class="order-top">
       <!-- <div class="title-block">
@@ -346,16 +346,35 @@ export default {
     height: 100%;
   }
 }
+.bg-img1,
+.bg-img2 {
+  position: absolute;
+  width:calc(2561 * 100vw / 1920);
+  left: 50%;
+  bottom: 555px;
+  animation: img 7s 0s ease-in-out infinite alternate;
+  transform-origin: 20% 100%;
+    transform: scaleY(0.96) translate(-50%, 0);
+}
+.bg-img2 {
+  animation: img 7s -1s ease-in-out infinite alternate;}
+
+@keyframes img {
+  to {
+    transform: scaleX(0.97) translate(-50%, 5%);
+  }
+}
 .order-bg {
-  // background-color: $order_bg_color;
-  background-image: $order_bg_image;
+  background-color: $order_bg_color;
+ // background-image: $order_bg_image;
   background-repeat: no-repeat;
-  // position: relative;
+  position: relative;
   padding-top: 130px;
   background-size: 100vw 100%;
   background-attachment: fixed;
   background-position: 0% 0%;
   font-family: $family3;
+  overflow: hidden;
   input,
   textarea,
   button {

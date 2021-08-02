@@ -1,7 +1,7 @@
 <template>
   <div class="section2">
-    <img src="./s1/bg1.jpg" :alt="`${info.caseName}_cloud`" class="bg-img" v-if="isPC">
-    <img src="./s1/bg_m.jpg" :alt="`${info.caseName}_cloud`" class="bg-img" v-if="isMobile">
+   <!-- <img src="./s1/bg1.jpg" :alt="`${info.caseName}_cloud`" class="bg-img" v-if="isPC">
+    <img src="./s1/bg_m.jpg" :alt="`${info.caseName}_cloud`" class="bg-img" v-if="isMobile">  -->
     <img src="./s2/bg.png" :alt="`${info.caseName}_cloud`" class="wave">
     <img src="./s2/3d.png" :alt="`${info.caseName}_cloud`" class="img3d">
     <div class="title1 title">
@@ -18,9 +18,8 @@
         <div class="item-title" v-if="isPC">
           <h3 v-html="slide.title2"></h3>
         </div>
-        <div class="item-desc">
-          <h3 v-html="slide.desc"></h3>
-        </div>
+        <h3 class="item-desc" v-html="slide.desc">
+        </h3>
       </swiper-slide>
     </swiper>
     <!-- <div class="item-list flex-jb flex-as">
@@ -39,12 +38,107 @@
   </div>
 </template>
 <style lang="scss">
-@media screen and (max-width: 767px) {
-  .item-list .item.swiper-slide-active {
-    .item-desc {
-      display: block;
+@media screen and (min-width: 767px) {
+.item-list{
+  .item-circle{transition: all 0.3s;transform: translateY(-30%);}
+  .item.swiper-slide-active {
+    .item-circle{transform: translate(20%,10%);}
+    & + .swiper-slide{
+    .item-title { opacity: 0.1;}
+    .item-desc { opacity: 0.1;}
+    .item-circle{transform: translate(5%,85%);}
+    & + .swiper-slide{
+    .item-title { opacity: 0.3;}
+    .item-desc { opacity: 0.3;}
+    .item-circle{transform: translate(0,135%);}
+    & + .swiper-slide{
+    .item-circle{transform: translate(-5%,180%);}
+    .item-title { opacity: 0.5;}
+    .item-desc { opacity: 0.5;}
+    & + .swiper-slide{
+      .item-circle {
+        font-size: size(34);
+        letter-spacing: size(3.43);
+        font-weight: 900;
+        background-color: #fff;
+        box-shadow: none;
+     transform: translateY(200%);}
+    .item-title { opacity: 1;}
+    .item-desc { opacity: 1;}
+    & + .swiper-slide{
+    .item-title { opacity: 0.5;}
+    .item-desc { opacity: 0.5;}
+    .item-circle{transform: translate(5%,180%);}
+    & + .swiper-slide{
+    .item-title { opacity: 0.3;}
+    .item-desc { opacity: 0.3;}
+    .item-circle{transform: translate(0,135%);}
+    & + .swiper-slide{
+    .item-title { opacity: 0.1;}
+    .item-desc { opacity: 0.1;}
+    .item-circle{transform: translate(-5%,85%);}
+    & + .swiper-slide{
+    .item-circle{transform: translate(-20%,10%);}
+    }
+    }
+    }
+    }
+    }
+    }
+    }
     }
   }
+  /* */
+}
+}
+@media screen and (max-width: 767px) {
+.item-list{
+  .item-circle{transition: all 0.3s;transform: translateY(-30%);}
+.item.swiper-slide-active {
+    .item-circle{transform: translate(0,20%);
+        font-size: sizem(34);
+        letter-spacing:0.1em;
+        font-weight: 900;
+        background-color: #fff;
+        box-shadow: none;}
+    .item-title { opacity: 1;}
+    .item-desc { opacity: 1;}
+}
+.swiper-slide-prev,
+.swiper-slide-next{
+    .item-circle{transform: translate(0,5%);}
+
+}
+
+ /*.item.swiper-slide-active {
+    .item-circle{transform: translate(0,20%);}
+    & + .swiper-slide{
+    .item-circle{transform: translate(0,30%);}
+    & + .swiper-slide{
+      .item-circle {
+        font-size: size(34);
+        letter-spacing: size(3.43);
+        font-weight: 900;
+        background-color: #fff;
+        box-shadow: none;
+     transform: translate(0,50%);}
+    .item-title { opacity: 1;}
+    .item-desc { opacity: 1;}
+    & + .swiper-slide{
+    .item-title { opacity: 0.5;}
+    .item-desc { opacity: 0.5;}
+    .item-circle{transform: translate(0,30%);}
+    & + .swiper-slide{
+    .item-title { opacity: 0.3;}
+    .item-desc { opacity: 0.3;}
+    .item-circle{transform: translate(0,20%);}
+    }
+    }
+    }
+    }
+  }*/
+  /* */
+}
 }
 </style>
 <style lang="scss" scoped>
@@ -57,6 +151,8 @@
   position: relative;
   background-size: cover;
   // margin: 0 0 size(400) 0;
+  background:#003176;
+    z-index: 2;
 }
 
 .img3d {
@@ -65,6 +161,15 @@
 
 .wave {
   @include img_c_pc(1920, 521);
+  animation: img 8s 0s ease-in-out infinite alternate;
+  transform-origin:50% 70%;
+    transform: scaleY(0.8) translate(0, 0);
+}
+
+@keyframes img {
+  to {
+    transform: scaleX(0.96) translate(0, 5%);
+  }
 }
 
 .bg-img {
@@ -99,11 +204,11 @@
 }
 
 .title1 {
-  @include div_l_pc(70, 391, 157, 440);
+  @include div_r_pc(70, 391, 157, 440);
 }
 
 .title2 {
-  @include div_l_pc(70, 289, 157, 352);
+  @include div_r_pc(70, 289, 157, 352);
 }
 
 .desc {
@@ -119,12 +224,12 @@
 }
 
 .item-list {
-  @include img_c_pc(1620, 869);
+  @include img_c_pc(1620, 760);
   padding: 15px;
 
   .item {
     width: size(133);
-    height: size(600);
+    height: size(800);
     position: relative;
     cursor: pointer;
     transition: all 0.3s;
@@ -193,7 +298,7 @@
   }
 
   .item-title {
-    @include img_r_pc(36, 133 + 184, 20);
+    @include img_r_pc(36, 420, 40);
     width: size(133);
     height: size(266);
     font-size: size(25);
@@ -205,15 +310,20 @@
     text-align: left;
     color: #d38700;
     writing-mode: vertical-rl;
-    text-orientation: upright;
+    text-orientation: upright;  opacity: 0;
+    transition: all 0.3s;
+    h3::before{
+    font-size: 0.7em;content: "";display:inline-block;width: 1em;height: 1em;
+    margin-bottom: 0.5em;
+    border-radius: 50%;background: currentColor;}
   }
 
   .item-desc {
-    @include img_r_pc(36, 133 + 247, 65);
+    @include img_r_pc(36, 476, 85);
     width: size(133);
     min-height: size(266);
     font-size: size(16);
-    font-weight: bold;
+    font-weight: 400;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.3;
@@ -221,7 +331,8 @@
     text-align: left;
     color: #fff;
     writing-mode: vertical-rl;
-    text-orientation: upright;
+    text-orientation: upright; opacity: 0;
+    transition: all 0.3s;
   }
 }
 
@@ -298,15 +409,16 @@
     line-height: 1.8;
     letter-spacing: size(1.6);
     text-align: left;
-    color: #ffffff;
+    color: #ffffff;  
   }
 
   .item-list {
-    @include img_l_m(375, 516, 0);
-    padding-top: sizem(45);
+    @include img_l_m(375, 450, 0);
+    padding: sizem(45) 0 0 0;
 
     .item {
       width: sizem(95);
+      height:sizem(500);
       position: relative;
       cursor: pointer;
       transition: all 0.3s;
@@ -391,10 +503,10 @@
     }
 
     .item-desc {
-      @include img_l_m(310, 100, -110);
+      @include img_l_m(310, 130, -110);
       min-height: sizem(70);
       font-size: sizem(15);
-      font-weight: bold;
+      font-weight: 400;
       font-stretch: normal;
       font-style: normal;
       line-height: 2;
@@ -403,7 +515,13 @@
       color: #fff;
       writing-mode: horizontal-tb;
       text-orientation: mixed;
-      display: none;
+    &::before{
+    font-size: 0.7em;content: "";display:block;width: 1em;height: 1em;
+    position: absolute;
+    left:calc(50% - 0.5em);
+    top:-1em;
+    margin-bottom: 0.5em;
+    border-radius: 50%;background:#d38700;}
     }
   }
 }
@@ -433,12 +551,19 @@ export default {
       isTablet,
       isAnimateBg: true,
       swiperOption: {
-        slidesPerView: isMobile ? 3.5 : 10,
+        slidesPerView: isMobile ? 4: 9,
         spaceBetween: isTablet ? 20 : 30,
         slidesPerColumn: isMobile ? 1 : 1,
         allowSlidePrev: isMobile ? true : true,
         allowSlideNext: isMobile ? true : true,
         centeredSlides: isMobile ? true : false,
+ /* effect: 'coverflow',
+  coverflowEffect: {
+    depth:50,
+    rotate:0,
+    slideShadows: false,
+    stretch:10,
+  },*/
         autoplay: {
           delay: 30000,
           disableOnInteraction: false,
@@ -453,52 +578,52 @@ export default {
       slideList: [
         {
           title1: '龍首<br />地標',
-          title2: '● 龍首地標',
+          title2: '龍首地標',
           desc: '區域稀有24層雙塔新地標',
         },
         {
           title1: '寬廣<br />基地',
-          title2: '● 寬廣基地',
+          title2: '寬廣基地',
           desc: '區域稀有近兩千坪大尺度寬廣基地',
         },
         {
           title1: '高雅<br />生活',
-          title2: '● 高雅生活',
+          title2: '高雅生活',
           desc: '區域僅有日式千坪東京六感御花園',
         },
         {
           title1: '生活<br />機能',
-          title2: '● 生活機能',
+          title2: '生活機能',
           desc: '五股市區、新市鎮、新莊副都心、洲子洋生活機能全包',
         },
         {
           title1: '交通<br />動能',
-          title2: '● 交通動能',
+          title2: '交通動能',
           desc: '雙北各大城暢行無阻，「3高3捷4特快」交通機能全包',
         },
         {
           title1: '增值<br />潛能',
-          title2: '● 增值潛能',
+          title2: '增值潛能',
           desc: '稀有雙塔地標、五泰輕軌雙議題，讓您將增值潛能全包',
         },
         {
           title1: '豪宅<br />建材',
-          title2: '● 豪宅建材',
+          title2: '豪宅建材',
           desc: '嚴選東和鋼鐵、力泰水泥等豪宅級頂級建材',
         },
         {
           title1: '城市<br />新生',
-          title2: '● 城市新生',
+          title2: '城市新生',
           desc: '轉五股樣貌，「五股夏綠地」開發計畫帶來16公頃公園綠景',
         },
         {
           title1: '綠邑<br />生活',
-          title2: '● 綠邑生活',
+          title2: '綠邑生活',
           desc: '鄰近15萬坪寬闊樹海濃蔭、128萬坪大臺北都會水岸公園',
         },
         {
           title1: '防疫<br />規劃',
-          title2: '● 防疫規劃',
+          title2: '防疫規劃',
           desc: '當層排氣系統排除室內廢氣，療癒六感庭園舒緩身心',
         },
       ],
