@@ -316,7 +316,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.isAnimateBg = false
-    }, 500)//6000
+    }, 6000)//6000
   },
 
   created() {},
