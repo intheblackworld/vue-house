@@ -148,8 +148,7 @@
     .item.swiper-slide-active {
       .item-circle {
         transform: translate(0, 20%);
-        font-size: sizem(34);
-        letter-spacing: 0.1em;
+        font-size: calc(3400vw / 375);
         font-weight: 900;
         background-color: #fff;
         box-shadow: none;
@@ -697,7 +696,8 @@ export default {
     }
   },
 
-  methods: {},
+  methods: {
+  },
 
   mounted() {
     if (this.isMobile) {
