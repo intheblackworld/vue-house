@@ -39,7 +39,7 @@
   // background-position: 0 0;
   // background-attachment: fixed;
   //  overflow: hidden;
-    z-index: 2;
+    z-index: 3;
     background: #fff;
 }
 

@@ -18,7 +18,7 @@
         </div>
       </div>
     </div>
-    <swiper v-if="isMobile" :options="swiperOption2" data-aos="fade" data-aos-delay="200" class="swipe absolute">
+    <swiper v-if="isMobile" :options="swiperOption2" ref="swiper2" data-aos="fade" data-aos-delay="200" class="swipe absolute">
       <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img">
         <img :src="slide.img" alt="" class="swipe-img">
       </swiper-slide>
@@ -29,7 +29,7 @@
         <img src="./all/next-btn.png" alt="" class="next-btn">
       </div>
     </swiper>
-    <swiper v-if="isMobile" :options="swiperOption" ref="mySwiper" data-aos="fade" data-aos-delay="200" @slideChangeTransitionStart="slideChanged" class="swipe-pagi">
+    <swiper v-if="isMobile" :options="swiperOption" ref="swiper1" data-aos="fade" data-aos-delay="200" class="swipe-pagi">
       <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img">
         <div :class="`pagination-dot flex-c ${slideIndex === index ? 'active': ''}`" v-html="slide.name"></div>
       </swiper-slide>
@@ -37,6 +37,17 @@
     <div class="title">天空美學</div>
   </div>
 </template>
+<style lang="scss">
+@media screen and (max-width: 767px) {
+  .swiper-slide-active .pagination-dot {
+    font-weight: bold !important;
+    color: #d38700 !important;
+    background-color: #fff !important;
+    text-shadow: none !important;
+    box-shadow: 0 0 6px 0 rgba(79, 55, 7, 0.85) !important;
+  }
+}
+</style>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
@@ -46,7 +57,7 @@
   min-height: size(900);
   max-height: size(1080);
   position: relative;
-    z-index: 2;
+  z-index: 2;
   // background-color: #fff;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
@@ -284,13 +295,21 @@
     // background-size: 100% 100%;
     // background-position: 0 0;
     // background-attachment: fixed;
-    &::after{
-      content: "";
+    &::after {
+      content: '';
       position: absolute;
-      top: 0;left: 0;z-index: 2;
+      top: 0;
+      left: 0;
+      z-index: 2;
       width: sizem(375);
-  height: sizem(331);
-      display: block; background-image: linear-gradient(to bottom, #958e81, #ccb895 86%, rgba(204, 184, 149, 0));
+      height: sizem(331);
+      display: block;
+      background-image: linear-gradient(
+        to bottom,
+        #958e81,
+        #ccb895 86%,
+        rgba(204, 184, 149, 0)
+      );
     }
   }
 
@@ -443,10 +462,10 @@
 
     &.active {
       font-weight: bold;
-      color: #d38700;
-      background-color: #fff;
-      text-shadow: none;
-      box-shadow: 0 0 6px 0 rgba(79, 55, 7, 0.85);
+      color: #fff;
+      background-color: transparent;
+      text-shadow: 0 0 1px #000;
+      box-shadow: inset 0 0 6px 0 rgba(79, 55, 7, 0.85);
     }
   }
 
@@ -500,6 +519,7 @@ export default {
         allowSlidePrev: isMobile ? true : true,
         allowSlideNext: isMobile ? true : true,
         centeredSlides: true,
+        slideToClickedSlide: true,
         autoplay: {
           delay: 4000,
           disableOnInteraction: false,
@@ -575,17 +595,17 @@ export default {
   },
 
   methods: {
-    slideChanged(e) {
-      const swiper = this.$refs.mySwiper.swiper
-      // console.log(swiper.activeIndex, swiper.isBeginning, swiper.isEnd, this.slideIndex)
-      if (swiper.isEnd) {
-        this.slideIndex = 0
-      } else if (swiper.isBeginning) {
-        this.slideIndex = swiper.slides.length - 7
-      } else {
-        this.slideIndex = swiper.activeIndex - 3
-      }
-    },
+    // slideChanged(e) {
+    //   const swiper = this.$refs.mySwiper.swiper
+    //   // console.log(swiper.activeIndex, swiper.isBeginning, swiper.isEnd, this.slideIndex)
+    //   if (swiper.isEnd) {
+    //     this.slideIndex = 0
+    //   } else if (swiper.isBeginning) {
+    //     this.slideIndex = swiper.slides.length - 7
+    //   } else {
+    //     this.slideIndex = swiper.activeIndex - 3
+    //   }
+    // },
   },
 
   created() {},
@@ -593,6 +613,12 @@ export default {
   mounted() {
     if (this.isMobile) {
       this.toggleTimer = false
+      this.$nextTick(() => {
+        const swiper1 = this.$refs.swiper1.swiper
+        const swiper2 = this.$refs.swiper2.swiper
+        swiper1.controller.control = swiper2
+        // swiper2.controller.control = swiper1
+      })
     }
   },
 
