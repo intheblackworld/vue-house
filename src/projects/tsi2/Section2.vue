@@ -80,8 +80,8 @@
             }
             & + .swiper-slide {
               .item-circle {
-                font-size: size(34);
-                letter-spacing: size(3.43);
+                font-size:calc(3400vw / 1920);
+                letter-spacing: 0.1em;
                 font-weight: 900;
                 background-color: #fff;
                 box-shadow: none;
