@@ -132,6 +132,7 @@ export default {
 
 .logo {
   width: $contact_logo_pc_width;
+  
   height: auto;
   // height:;
   margin: 0 auto 0px;
@@ -249,7 +250,7 @@ export default {
 }
 
 /* 平板尺寸 */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+@media only screen and (min-width: 768px) and (max-width: 1483px) {
   .contact-info {
     display: flex;
     width: 90% !important;
@@ -258,6 +259,7 @@ export default {
 
     .logo {
       width: $contact_logo_tablet_width;
+      margin-bottom: 40px;
     }
   }
 }
