@@ -1,12 +1,13 @@
 <template>
   <div class="section7">
-    <img src="./s7/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img">
+  <!--  <img src="./s7/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img"> -->
     <img src="./s7/360山河美景.png" :alt="`${info.caseName}_img`" class="title-img"  data-aos="fade" data-aos-delay="200">
     <div class="line"  data-aos="fade-down" data-aos-delay="400"></div>
     <h3 class="title"  data-aos="fade" data-aos-delay="600">洲子洋史上最強 層峰景觀頭等艙</h3>
     <h3 class="desc"  data-aos="fade" data-aos-delay="800">
       「天空之邑」以區域稀有24層地標，獨佔洲子<br v-if="isMobile" />洋極景制高點，<br v-if="isPC"/>觀音山、大台北都會公園山河<br v-if="isMobile" />美景360°環繞，彷如坐擁景觀頭等艙，美景無<br v-if="isMobile" />界盡在您視線。
     </h3>
+    <div class="name">高樓層景觀 實景拍攝</div>
 
   </div>
 </template>
@@ -19,11 +20,20 @@
   position: relative;
   // background-color: #fff;
   // min-height: size(900);
-  // background-image: url('./s2/bg.jpg');
+   background:linear-gradient(to top, rgba(255,255,255,0) 30% , rgba(255,255,255,.95) 70%,rgba(255,255,255,1) 100%) fixed, url('./s7/bg.jpg') no-repeat fixed 50% 100%;
+   background-size: cover, cover;
+  // background-attachment:scroll;
   // background-size: 100% 100%;
   // background-position: 0 0;
   // background-attachment: fixed;
   //  overflow: hidden;
+ /*  z-index: 1;
+  &::before{width: 100%;content: "";display: block;position: fixed;height: 30vw;
+  left: 0;
+  top: 0;
+  background: linear-gradient(to top, rgba(255,255,255,0) 0%, rgba(255,255,255,.95) 60%,rgba(255,255,255,1) 100%);}
+
+  */
   &::after{width: 100%;content: "";display: block;position: absolute;height: 10vw;
   left: 0;
   bottom: 0;
@@ -82,6 +92,23 @@
   color: #636363;
   white-space: nowrap;
 }
+.name{
+  position: absolute;
+  right: 1em;
+  bottom:4em;
+  z-index:2;
+  font-family: "Noto Sans TC", serif;
+  font-size: size(15);
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.8;
+  letter-spacing: 0.1em;
+  text-align: center;
+  color: #666;
+  white-space: nowrap;
+  text-shadow:0 0 1em #fff,0 0 0.5em #fff,0 0 0.2em #fff;
+  }
 
 @media only screen and (max-width: 1440px) {
 }
@@ -107,6 +134,8 @@
     // background-position: 0 0;
     // background-attachment: fixed;
     overflow: hidden;
+   background:linear-gradient(to top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) calc(20vw + 63px), rgba(255,255,255,.95) calc(60vw + 63px), rgba(255,255,255,1) calc(75vw + 63px), rgba(255,255,255,1) 100%) fixed, url('./s7/bg.jpg') no-repeat fixed 50% calc(100% - 63px);
+   background-size:cover,170% auto;
   }
 
   .title-img {

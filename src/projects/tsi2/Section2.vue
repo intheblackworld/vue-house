@@ -10,7 +10,7 @@
     <div class="title2 title">
       住五股
     </div>
-    <swiper :options="swiperOption" ref="mySwiper" data-aos="fade" data-aos-delay="200" class="item-list flex-jb flex-as">
+    <swiper :navigation="true" :options="swiperOption" ref="mySwiper" data-aos="fade" data-aos-delay="200" class="item-list flex-jb flex-as">
       <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" :class="`item ${slideIndex === index ? 'active': ''}`">
         <div class="item-circle flex-c">
           <h3 v-html="slide.title1"></h3>
@@ -21,6 +21,8 @@
         <h3 class="item-desc" v-html="slide.desc">
         </h3>
       </swiper-slide>
+	     <div class="swiper-button-prev" slot="button-prev" v-if="isPC"></div>
+	     <div class="swiper-button-next" slot="button-next" v-if="isPC"></div>
     </swiper>
     <!-- <div class="item-list flex-jb flex-as">
       <div :class="`item ${isCurrent ? 'active' : ''}`" v-for="item in slideList" :key="item.title1">
@@ -147,8 +149,8 @@
     }
     .item.swiper-slide-active {
       .item-circle {
-        transform: translate(0, 20%);
-        font-size: calc(3400vw / 375);
+        transform: translate(0, 20%) scale(1.2);
+        font-size: calc(1800vw / 375);
         font-weight: 900;
         background-color: #fff;
         box-shadow: none;
@@ -160,10 +162,14 @@
         opacity: 1;
       }
     }
-    .swiper-slide-prev,
+    .swiper-slide-prev {
+      .item-circle {
+        transform: translate(-6%, 5%);
+      }
+    }
     .swiper-slide-next {
       .item-circle {
-        transform: translate(0, 5%);
+        transform: translate(6%, 5%);
       }
     }
 
@@ -421,6 +427,13 @@
 .slide-fade-leave-active {
   transition: all 1s cubic-bezier(1, 0.5, 0.8, 1);
 }
+.swiper-button-prev,
+.swiper-button-next{
+  top: 0;
+  height: 100%;
+  width: 50%;
+}
+
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -490,48 +503,11 @@
 
       &:hover {
         .item-circle {
-          font-size: sizem(20);
-          letter-spacing: size(1.43);
-          font-weight: 900;
-          background-color: #fff;
-          box-shadow: none;
+        background-color: #fff;
+        box-shadow: none;
+      font-size: sizem(15);
         }
       }
-
-      // &:nth-child(1),
-      // &:nth-child(10) {
-      //   .item-circle {
-      //     margin-top: sizem(-200);
-      //   }
-      // }
-
-      // &:nth-child(2),
-      // &:nth-child(9) {
-      //   .item-circle {
-      //     margin-top: sizem(-150);
-      //   }
-      // }
-
-      // &:nth-child(3),
-      // &:nth-child(8),
-      // &:nth-child(7) {
-      //   .item-circle {
-      //     margin-top: sizem(-70);
-      //   }
-      // }
-
-      // &:nth-child(4),
-      // &:nth-child(6) {
-      //   .item-circle {
-      //     margin-top: sizem(-30);
-      //   }
-      // }
-
-      // &:nth-child(5) {
-      //   .item-circle {
-      //     margin-top: sizem(0);
-      //   }
-      // }
     }
 
     .item-circle {
@@ -631,7 +607,7 @@ export default {
 
         slideToClickedSlide: isMobile ? true : false,
         autoplay: {
-          delay: 30000,
+          delay: 3000,
           disableOnInteraction: false,
         },
         loop: true,

@@ -44,7 +44,7 @@
   max-height: size(1080);
   //overflow: hidden;
   // position: relative;
-    z-index: 2;
+    z-index:2;
     background: #fff;
   //z-index: 3;
   // margin: 0 0 size(400) 0;
@@ -316,7 +316,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.isAnimateBg = false
-    }, 6000)//6000
+    }, 4000)//6000
   },
 
   created() {},

@@ -43,12 +43,10 @@
           <div class="item-btn flex-c" @click="showDialog(index)">名師介紹</div>
         </div>
       </swiper-slide>
-      <!-- <div class="swiper-button-prev" slot="button-prev">
-        <img src="./all/prev-btn.png" alt="" class="prev-btn">
+      <div class="swiper-button-prev" slot="button-prev">
       </div>
       <div class="swiper-button-next" slot="button-next">
-        <img src="./all/next-btn.png" alt="" class="next-btn">
-      </div> -->
+      </div>
     </swiper>
     <!-- <div class="pagination absolute flex-ac" v-if="isMobile">
       <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
@@ -654,7 +652,7 @@
   }
 
   .swipe {
-    @include div_c_m(375, 350, 124);
+    @include div_l_m(675, 370, 124, -150);
   }
 
   .swiper-slide {
@@ -763,7 +761,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: sizem(300);
+      height: sizem(320);
     }
     img {
       width: 100%;
@@ -926,7 +924,7 @@ export default {
       isTablet,
       isDialog: false,
       swiperOption: {
-        slidesPerView: isMobile ? 1.8 : 1,
+        slidesPerView: isMobile ? 3 : 1,
         spaceBetween: isTablet ? 20 : 15,
         slidesPerColumn: isMobile ? 1 : 1,
         allowSlidePrev: isMobile ? true : true,
