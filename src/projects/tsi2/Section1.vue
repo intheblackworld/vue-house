@@ -188,7 +188,7 @@
 @media screen and (max-width: 767px) {
   .section1 {
     min-height: sizem(667);
-    max-height: sizem(812);
+    max-height: sizem(667);
     height:100vh;
     margin:0;
   }
