@@ -112,15 +112,11 @@ export default {
       this.policyVisible = true
     },
 
-    alertValidate() {
+    alertValidate(mes) {
       const h = this.$createElement
       this.$notify({
         title: '請填寫必填欄位',
-        message: h(
-          'i',
-          { style: 'color: #82191d' },
-          '「姓名、手機、 E-mail、居住城市、居住地區」是必填欄位',
-        ),
+        message: h('i', { style: 'color: #82191d' }, mes),
       })
     },
 
@@ -135,10 +131,16 @@ export default {
         !this.form.city ||
         !this.form.area
       ) {
-        this.alertValidate()
+        this.alertValidate('「姓名、手機、居住地區」是必填欄位')
         this.isSubmit = false
         return
       }
+      if (this.form.phone.length !== 10) {
+        this.alertValidate('手機號碼請填10碼')
+        this.isSubmit = false
+        return
+      }
+
       const urlParams = new URLSearchParams(window.location.search)
       const utmSource = urlParams.get('utm_source')
       const utmMedium = urlParams.get('utm_medium')
