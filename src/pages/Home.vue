@@ -26,7 +26,7 @@
         <Section5 :viewIndex="viewIndex" />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section6">
-        <Section6 />
+        <Section6 :viewIndex="viewIndex"/>
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section7">
           <Section7 />
@@ -199,6 +199,7 @@ export default {
       // console.log(navIndex + 1)
       if (this.viewIndex !== navIndex + 1) {
         this.viewIndex = navIndex + 1
+        // console.log(this.viewIndex)
       }
       // this.viewIndex = navIndex + 1
     },

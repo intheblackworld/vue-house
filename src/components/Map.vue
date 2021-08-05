@@ -19,8 +19,9 @@
 @import '../assets/style/function.scss';
 .map {
   // padding-top: size-m(150);
-  background-color: rgba(172, 221, 254, 1)
+  background-color: rgba(172, 221, 254, 1);
 }
+
 .desc {
   width: size-m(310);
   left: 0;
@@ -63,7 +64,7 @@ export default {
           text.style.left = `${mapBg.clientWidth / 2 - 100}px`
         }
 
-        map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2 - 10, 0)
+        map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2 - 0, 0)
       }, 1200)
 
       setTimeout(() => {

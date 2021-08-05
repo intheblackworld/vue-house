@@ -13,7 +13,7 @@
           <img src="./s1/t1.png" :alt="`${info.caseName}_cloud`">
         </div>
       </div>
-      <div v-else key="default-bg">
+      <div key="default-bg">
         <img src="./s1/map_bg.jpg" :alt="`${info.caseName}_cloud`" class="map-img" v-if="isPC">
         <div class="map-bg-frame">
           <Map v-if="isMobile" :bgSrc="bgmSrc" :hand="hand">

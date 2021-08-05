@@ -18,7 +18,7 @@
         </div>
       </div>
     </div>
-    <swiper v-if="isMobile" :options="swiperOption2" ref="swiper2" data-aos="fade" data-aos-delay="200" class="swipe absolute">
+    <swiper v-if="isMobile && viewIndex >= 6" :options="swiperOption2" ref="swiper2" data-aos="fade" data-aos-delay="200" class="swipe absolute">
       <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img">
         <img :src="slide.img" alt="" class="swipe-img">
       </swiper-slide>
@@ -29,7 +29,7 @@
         <img src="./all/next-btn.png" alt="" class="next-btn">
       </div>
     </swiper>
-    <swiper v-if="isMobile" :options="swiperOption" ref="swiper1" data-aos="fade" data-aos-delay="200" class="swipe-pagi">
+    <swiper v-if="isMobile && viewIndex >= 6" :options="swiperOption" ref="swiper1" data-aos="fade" data-aos-delay="200" class="swipe-pagi">
       <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img">
         <div :class="`pagination-dot flex-c ${slideIndex === index ? 'active': ''}`" v-html="slide.name"></div>
       </swiper-slide>
@@ -625,12 +625,14 @@ export default {
   computed: {},
 
   watch: {
-    // viewIndex() {
-    //   if (this.viewIndex === 5) {
-    //     this.slideIndex = 0
-    //     console.log(this.slideIndex, 'slideIndex')
-    //   }
-    // },
+    viewIndex() {
+      if (this.viewIndex === 6) {
+        this.slideIndex = 0
+        // this.$refs.swiper1.swiper.slideTo(0, 1000, false)
+        // this.$refs.swiper2.swiper.slideTo(0, 1000, false)
+        // console.log(this.slideIndex, 'slideIndex')
+      }
+    },
   },
 }
 </script>

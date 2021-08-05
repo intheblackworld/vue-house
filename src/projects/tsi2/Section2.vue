@@ -11,7 +11,7 @@
       住五股
     </div>
     <swiper :navigation="true" :options="swiperOption" ref="mySwiper" data-aos="fade" data-aos-delay="200" class="item-list flex-jb flex-as">
-      <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" :class="`item ${slideIndex === index ? 'active': ''}`">
+      <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" :class="`item`">
         <div class="item-circle flex-c">
           <h3 v-html="slide.title1"></h3>
         </div>
