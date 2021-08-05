@@ -126,15 +126,15 @@
 @media screen and (max-width: 767px) {
   .section7 {
     width: 100%;
-    height: sizem(706);
-    min-height: auto;
-    max-height: initial;
+    height:100vh;
+    min-height: calc(66700vw / 375 - 123px);
+    max-height: calc(81200vw / 375 - 123px);
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
     // background-position: 0 0;
     // background-attachment: fixed;
     overflow: hidden;
-   background:linear-gradient(to top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) calc(20vw + 63px), rgba(255,255,255,.95) calc(60vw + 63px), rgba(255,255,255,1) calc(75vw + 63px), rgba(255,255,255,1) 100%) fixed, url('./s7/bg.jpg') no-repeat fixed 50% calc(100% - 63px);
+   background:linear-gradient(to top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 20vw, rgba(255,255,255,.95) 60vw, rgba(255,255,255,1) 75vw, rgba(255,255,255,1) 100%), url('./s7/bg.jpg') no-repeat 50% 100%;
    background-size:cover,170% auto;
   }
 
