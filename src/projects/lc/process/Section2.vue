@@ -952,29 +952,29 @@ export default {
         //...Array(18).keys()].map((i) => ({
         [
           {
-            img: require('../process/list/1/7.jpg'),
-            o_title: '2021 立瑾WAY',
-            o_subtitle: '已完售，預計2023年初完工。',
-            title: '2021/4',
-            subtitle: '基礎工程啟動<br/>地下室開挖工程按部進行。',
+            img: require('../process/list/5/1.jpg'),
+            title: '2021/7',
+            subtitle: 'B3、FL，版灌漿及粉光工程，施做進行中。',
             isFinished: true,
             imgs: [
-              require('../process/list/1/7.jpg'),
-              require('../process/list/1/8.jpg'),
-            ],
+              require('../process/list/5/1.jpg'),
+              require('../process/list/5/2.jpg'),
+            ]
           },
           {
-            img: require('../process/list/2/1.jpg'),
-            title: '2021/5',
-            subtitle: '安全支撐工程<br>地下室支撐施作進行中。',
+            img: require('../process/list/4/1.jpg'),
+            title: '2021/6',
+            subtitle: '堅若磐石的施工品質<br>FS版灌漿施做進行中。',
             isFinished: true,
             imgs: [
-              require('../process/list/2/1.jpg'),
-              require('../process/list/2/2.jpg'),
-              require('../process/list/2/3.jpg'),
-              require('../process/list/2/4.jpg'),
-              require('../process/list/2/5.jpg'),
-              require('../process/list/2/6.jpg'),
+              require('../process/list/4/1.jpg'),
+              require('../process/list/4/2.jpg'),
+              require('../process/list/4/3.jpg'),
+              require('../process/list/4/4.jpg'),
+              require('../process/list/4/5.jpg'),
+              require('../process/list/4/6.jpg'),
+              require('../process/list/4/7.jpg'),
+              require('../process/list/4/8.jpg'),
             ]
           },
           {
@@ -995,20 +995,30 @@ export default {
             ]
           },
           {
-            img: require('../process/list/4/1.jpg'),
-            title: '2021/6',
-            subtitle: '堅若磐石的施工品質<br>FS版灌漿施做進行中。',
+            img: require('../process/list/2/1.jpg'),
+            title: '2021/5',
+            subtitle: '安全支撐工程<br>地下室支撐施作進行中。',
             isFinished: true,
             imgs: [
-              require('../process/list/4/1.jpg'),
-              require('../process/list/4/2.jpg'),
-              require('../process/list/4/3.jpg'),
-              require('../process/list/4/4.jpg'),
-              require('../process/list/4/5.jpg'),
-              require('../process/list/4/6.jpg'),
-              require('../process/list/4/7.jpg'),
-              require('../process/list/4/8.jpg'),
+              require('../process/list/2/1.jpg'),
+              require('../process/list/2/2.jpg'),
+              require('../process/list/2/3.jpg'),
+              require('../process/list/2/4.jpg'),
+              require('../process/list/2/5.jpg'),
+              require('../process/list/2/6.jpg'),
             ]
+          },
+          {
+            img: require('../process/list/1/7.jpg'),
+            o_title: '2021 立瑾WAY',
+            o_subtitle: '已完售，預計2023年初完工。',
+            title: '2021/4',
+            subtitle: '基礎工程啟動<br/>地下室開挖工程按部進行。',
+            isFinished: true,
+            imgs: [
+              require('../process/list/1/7.jpg'),
+              require('../process/list/1/8.jpg'),
+            ],
           },
         ],
         /*{
