@@ -590,20 +590,24 @@ export default {
         },
         */
         {
-          img: require('./s8/08_slider_08.jpg'),
-          name: '居家空間示意圖',
-        },
-        {
           img: require('./s8/08_slider_09.jpg'),
           name: '居家空間示意圖',
         },
         {
-          img: require('./s8/08_slider_10.jpg'),
+          img: require('./s8/08_slider_08.jpg'),
           name: '居家空間示意圖',
         },
         {
-          img: require('./s8/08_slider_11.jpg'),
-          name: '居家空間示意圖',
+          img: require('./s8/08_slider_15.jpg'),
+          name: '參考示意圖',
+        },
+        {
+          img: require('./s8/08_slider_12.jpg'),
+          name: '參考示意圖',
+        },
+        {
+          img: require('./s8/08_slider_14.jpg'),
+          name: '參考示意圖',
         },
       ],
       slideList1: [

@@ -633,7 +633,7 @@ export default {
           name: '衛浴五金情境示意僅供參考',
         },
         {
-          img: require('./s10/10_slider_09.jpg'),
+          img: require('./s8/08_slider_13.jpg'),
           name: '電梯情境示意僅供參考',
         },
       ],
