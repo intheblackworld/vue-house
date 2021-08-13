@@ -114,7 +114,7 @@
 @media screen and (max-width: 767px) {
   .section3 {
     width: 100%;
-    height: sizem(668);
+    height: sizem(685);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -126,7 +126,7 @@
 
   .content {
     width: 100%;
-    height: sizem(334);
+    height: sizem(380);
     position: relative;
   }
   .img {

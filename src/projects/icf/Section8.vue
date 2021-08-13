@@ -424,7 +424,7 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.75;
-    letter-spacing: sizem(1.2);
+    //letter-spacing: sizem(1.2);
     text-align: left;
     color: #ffffff;
   }

@@ -13,11 +13,15 @@
           相較台北動輒百萬的房價，凹子底擁有更大上漲空間，海陸空交通條件更具國際發展性，投報率更超強沒得比！<br /><br />
           萬坪公園及豪宅百貨組成頂級聚落，有台灣的華爾街之稱，繁榮程度成為企業門面升級、軟體科技業、回流台商進駐首選地段。
         </h1>
+        
       </div>
       <div class="content" v-if="isPC">
         <img src="./s4/img.jpg" :alt="`${info.caseName}_img`" class="img full">
       </div>
       <img src="./s4/img.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isMobile">
+      <h1 class="stext">
+         3D外觀參考示意圖
+        </h1>
     </div>
   </div>
 </template>
@@ -44,6 +48,18 @@
   height: 100%;
   position: relative;
   background-color: #808080;
+}
+.stext{
+  @include img_l_pc(666, 820, 760);
+  font-size: size(20);
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.8;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
+  text-shadow:0px 0px 3px #000;
 }
 .img {
   width: 100%;
@@ -165,6 +181,21 @@
     text-align: left;
     color: #75e3ff;
   }
+
+
+  .stext{
+   @include img_r_m(315, 670, -180);
+    font-family: 'Noto Sans TC';
+    font-size: sizem(15);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+  text-shadow:0px 0px 3px #000;
+}
 
   .desc {
     @include img_l_m(315, 130, 30);

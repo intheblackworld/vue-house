@@ -23,6 +23,9 @@
     <div class="content">
       <img src="./s5/img.jpg" :alt="`${info.caseName}_img`" class="img">
     </div>
+    <h1 class="stext">
+         3D外觀參考示意圖
+        </h1>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -74,7 +77,18 @@
   color: #000000;
   white-space: nowrap;
 }
-
+.stext{
+  @include img_r_pc(666, 780, -480);
+  font-size: size(20);
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.8;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
+  text-shadow:0px 0px 3px #000;
+}
 .subtitle {
   @include img_l_pc(650, 370, 160);
   font-family: 'Noto Sans TC';
@@ -175,6 +189,21 @@
     text-align: left;
     color: #000;
   }
+
+  .stext{
+   @include img_r_m(315, 640, -180);
+   z-index: 99;
+    font-family: 'Noto Sans TC';
+    font-size: sizem(15);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+  text-shadow:0px 0px 3px #000;
+}
 }
 </style>
 <script>
