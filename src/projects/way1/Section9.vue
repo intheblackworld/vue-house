@@ -7,6 +7,7 @@
     <h1 class="subtitle" v-if="isMobile" data-aos="fade-up" data-aos-delay="600">為你營造<br />家的幸福滋味</h1>
     <div class="hr" data-aos="fade-right" data-aos-delay="400"></div>
     <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe-txt">完消佳作</div>
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -173,7 +174,7 @@
   left: size(104);
   object-fit: cover;
 }
-
+.swipe-txt{position: absolute;top: .5em;left: 0.7em;color: #FFF;z-index: 1;font-size: size(40);}
 // begin
 .swipe-fade-leave-to {
   opacity: 0;
@@ -465,6 +466,7 @@
     left: sizem(0);
     object-fit: cover;
   }
+.swipe-txt{font-size: sizem(20);}
 
   // begin
   .swipe-fade-leave-to {
