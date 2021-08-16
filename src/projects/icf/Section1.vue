@@ -235,7 +235,7 @@ img{height: 100%;}}
   }
 
   .subtitle {
-    @include img_c_m(302, 312);
+    @include img_c_m(375, 312);
     text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
     font-size: sizem(20);
     font-weight: 900;
@@ -249,7 +249,7 @@ img{height: 100%;}}
   }
 
   .desc {
-    @include div_c_m(303, 35, 372);
+    @include div_c_m(320, 35, 372);
     text-shadow: none;
     font-size: sizem(20);
     font-weight: 900;
@@ -263,7 +263,7 @@ img{height: 100%;}}
   }
 
   .label {
-    @include div_c_m(239, 61, 487);
+    @include div_c_m(250, 61, 487);
     top:calc(50% + ( 450 - 667 * 0.5) * 100vw / 375);
     text-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
     font-size: sizem(16);
@@ -278,7 +278,7 @@ img{height: 100%;}}
   }
 
   .btn {
-    @include img_c_m(168, 526);
+    @include img_c_m(375, 526);
     top:calc(50% + ( 487 - 667 * 0.5) * 100vw / 375);
     font-size: sizem(18);
     font-weight: 900;
@@ -288,7 +288,7 @@ img{height: 100%;}}
     letter-spacing: normal;
     text-align: left;
     color: #000000;
-    background-color: #0097e2;
+    background-color: #0097e200;
   }
 }
 </style>
