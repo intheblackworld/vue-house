@@ -12,7 +12,7 @@
     <h1 class="title" v-if="isMobile" data-aos="fade-up" data-aos-delay="200">鳳鳴站前<br />電梯豪墅</h1>
     <div class="subtitle" v-if="isPC">
       <h3 class="subtitle1 flex-ac" data-aos="fade-up" data-aos-delay="400">價值恆傳 限量稀藏 <span class="flex-ac">Destiny That Brought You To Me</span></h3>
-      <h3 class="subtitle2 flex-ac" data-aos="fade-up" data-aos-delay="600">極致禮遇 頂歸建材<span class="flex-ac">Is Living A Happy Life</span></h3>
+      <h3 class="subtitle2 flex-ac" data-aos="fade-up" data-aos-delay="600">極致禮遇 頂規建材<span class="flex-ac">Is Living A Happy Life</span></h3>
     </div>
     <div class="subtitle" v-if="isMobile">
       <h3 class="subtitle1 flex-ac wrap" data-aos="fade-up" data-aos-delay="400" >價值恆傳 限量稀藏<br /><span class="flex-ac">Destiny That Brought You To Me</span></h3>
