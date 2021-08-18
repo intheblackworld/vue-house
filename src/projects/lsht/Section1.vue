@@ -54,8 +54,8 @@
         data-aos="fade" data-aos-delay="400"
         class="logo absolute"
       >
-      <h3 class="title1 absolute">總價<b>1588</b>萬起</h3>
-<h3 class="title2 absolute">買海濱地王</h3>
+      <h3 class="title1 absolute">總價<b>1888</b>萬起</h3>
+<h3 class="title2 absolute">絕美視野 壓軸倒數</h3>
       <img
         src="./s1/img.jpg"
         class="item-img absolute"
@@ -215,8 +215,8 @@
         alt="聯上海棠"
         class="logo absolute"
       >
-      <h3 class="title1 absolute">總價<b>1588</b>萬起</h3>
-<h3 class="title2 absolute">買海濱地王</h3>
+      <h3 class="title1 absolute">總價<b>1888</b>萬起</h3>
+<h3 class="title2 absolute">絕美視野 壓軸倒數</h3>
 
       <img
         v-lazy="require('./mo/1/img.jpg')"
@@ -437,15 +437,15 @@ img{height: 100%;}}
   }
 .title2{
   top:calc(50% + 2vw);
-  left: size(362);
+  left: size(356);
   color: #0009;
-  font-size: size(25);
+  font-size: size(22);
   &::before,
   &::after{
     content: "";
     display: inline-block;
     height: 1px;
-    width: 2.35vw;position: relative;top:-0.3em;
+    width: 1.2vw;position: relative;top:-0.3em;
     background: currentColor;
   }
   }
