@@ -2,7 +2,7 @@
   <div class="home no-padding-top">
     <div class="bg-img">
       <Loading :loading="load" />
-      <SideNavigation v-if="isMobile" :min="isNavMin" />
+      <SideNavigation :min="isNavMin" />
 
       <Navigation v-if="!isMobile" :min="isNavMin" :hide="isHide" />
       <!-- <Indigator :viewIndex="viewIndex" /> -->
@@ -96,13 +96,13 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/ymsj/Section1.vue'
-import Section2 from '@/projects/ymsj/Section2.vue'
-import Section3 from '@/projects/ymsj/Section3.vue'
-import Section4 from '@/projects/ymsj/Section4.vue'
-import Section5 from '@/projects/ymsj/Section5.vue'
-import Section6 from '@/projects/ymsj/Section6.vue'
-import Section7 from '@/projects/ymsj/Section7.vue'
+import Section1 from '@/projects/pjr/Section1.vue'
+import Section2 from '@/projects/pjr/Section2.vue'
+import Section3 from '@/projects/pjr/Section3.vue'
+import Section4 from '@/projects/pjr/Section4.vue'
+import Section5 from '@/projects/pjr/Section5.vue'
+import Section6 from '@/projects/pjr/Section6.vue'
+import Section7 from '@/projects/pjr/Section7.vue'
 // import Section8 from '@/projects/jcs/Section8.vue'
 // import Section9 from '@/projects/jcs/Section9.vue'
 // import Section10 from '@/projects/jcs/Section10.vue'

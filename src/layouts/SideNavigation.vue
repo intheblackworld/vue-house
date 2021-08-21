@@ -2,7 +2,7 @@
   <div :class="`navigation ${min ? 'min' : ''}`">
     <div class="nav relative">
       <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
-      <img class="logo" src="@/assets/img/nav-logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" />
+      <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" /> -->
       <div class="menu" @click="toggleSidebar">
         <div :class="`menu-icon ${isOpen ? 'menu-icon-active' : ''}`"></div>
         <!-- <img v-if="isOpen" src="@/projects/jh/s4/close.png" class="close" alt />
