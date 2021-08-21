@@ -10,7 +10,7 @@
         <img :src="slide.img" :class="`carousel-3d-img`" :alt="slide.alt" />
       </slide>
     </carousel-3d>
-    <div class="desc" v-html="slideList[slideIndex].desc"  data-aos="fade-up" data-aos-delay="200" ></div>
+    <div class="desc" v-html="slideList[slideIndex].desc"  data-aos="fade-up" data-aos-delay="200" >標題標題標題標題標題標題</div>
   </div>
 </template>
 <style lang="scss" scoped>

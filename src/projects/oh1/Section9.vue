@@ -242,6 +242,7 @@
     position: relative;
     background-color: #fff;
     transition: all 0.5s;
+    border: 1px solid #004ea2;
 
     &::before {
       content: '';
@@ -308,7 +309,7 @@
 @media screen and (max-width: 767px) {
   .section9 {
     width: 100vw;
-    height: sizem(640);
+    height: sizem(508);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -371,7 +372,7 @@
   /* Swipe */
   .swipe {
     width: sizem(320);
-    height: sizem(600);
+    height: sizem(430);
     min-height: auto;
     top: sizem(39);
     left: 0;
@@ -525,7 +526,7 @@
     right: auto;
     bottom: 0;
     width: sizem(375);
-    height: sizem(600);
+    height: sizem(430);
     padding: 0;
     z-index: 3;
 
@@ -580,10 +581,12 @@ export default {
       isTablet,
       isDialog: false,
       slideList: [
-        {
-          img: isMobile ? require('./s9/1_m.png') : require('./s9/1.png'),
-          // name: '公設',
-        },
+        {img: isMobile ? require('./s9/1m.jpg') : require('./s9/1.jpg'),},
+        {img: isMobile ? require('./s9/2m.jpg') : require('./s9/2.jpg'),},
+        {img: isMobile ? require('./s9/3m.jpg') : require('./s9/3.jpg'),},
+        {img: isMobile ? require('./s9/4m.jpg') : require('./s9/4.jpg'),},
+        {img: isMobile ? require('./s9/5m.jpg') : require('./s9/5.jpg'),},
+        {img: isMobile ? require('./s9/6m.jpg') : require('./s9/6.jpg'),},
       ],
     }
   },
