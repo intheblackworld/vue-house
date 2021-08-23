@@ -5,7 +5,7 @@
       Hot Case
     </h3>
   <!--  <img src="./s4/1.jpg" alt="" class="img1" @click="$router.push('/hot?index=1#section1')"> -->
-    <img src="./s4/02.jpg" alt="" class="img4" @click="$router.push('/hot?index=2#section1')">
+    <img src="./s4/02.jpg" alt="" class="img4" @click="$router.push('/hot?index=1#section1')">
     <img src="./s4/bg.png" alt="" class="img3">
     <div class="btn flex-c" @click="$router.push('/hot')">瞭解更多</div>
   </div>
