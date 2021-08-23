@@ -4,8 +4,8 @@
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-            <img :src="slide.img" alt="">
-            <!-- <div class="slide-name absolute" v-html="slide.name"></div> -->
+            <img :src="slide.img" :alt="slide.name">
+            <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
         <div class="pagination absolute flex-ac" v-if="isPC">
@@ -240,6 +240,7 @@
   }
 
   .slide-name {
+    position: absolute;
     left: 2em;
     bottom: 1.2em;
     color: #fff;
@@ -509,8 +510,8 @@
     .slide-name {
       right: auto;
       top: auto;
-      bottom: 1.2rem;
-      left: 1.2rem;
+      bottom: 0.8em;
+      left: 1.2em;
       font-size: sizem(15);
     }
   }
