@@ -588,6 +588,24 @@ export default {
           // name: '台北101',
         },
       ],
+      slideList2: [
+        {
+          img:require('../works/2/1.jpg'),
+          // name: '台北101',
+        },
+        {
+          img: require('../works/2/2.jpg'),
+          // name: '台北101',
+        },
+        {
+          img: require('../works/2/3.jpg'),
+          // name: '台北101',
+        },
+        {
+          img: require('../works/2/4.jpg'),
+          // name: '台北101',
+        },
+      ],
     }
   },
 

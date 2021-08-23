@@ -303,9 +303,9 @@ export default {
           isFinished: true,
         },
         {
-          img: require('../process/list/noimg.png'),
+          img: require('../works/3/1.jpg'),
           title: '2021 鶯歌鳳福段',
-          subtitle: '即將公開，敬請期待。',
+          subtitle: '公開銷售中',
           isFinished: false,
         },
  /*       {

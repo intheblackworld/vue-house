@@ -46,18 +46,16 @@
           現正熱銷
         </div>
         <div class="content-title">
-          鶯歌鳳鳴 立瑾Way
+          鶯歌鳳福段 立瑾綻
         </div>
         <div class="content-desc">
-          2020年11月<br />
-          延續著住戶的期盼，<br />
-          今年11月19日於鶯歌鳳鳴重劃區，<br />
-          辦理開工動土祈福典禮，<br />
-          將接續公開新案「立瑾way」，<br />
-          只為給您最好的居家。<br />
-          <span>基地地址：鶯歌鳳鳴段</span>
+          2021年7月份<br />
+有多少少年年輕時在外打拼<br />只為了有天可以孝敬長輩<br />
+有多少已進入老邁的年紀<br />仍住著每天爬樓梯的老舊房子<br /><br />
+<b>立瑾建築</b>用心打造三代同堂的溫情住宅<br />
+<br />
         </div>
-        <a class="btn flex-c" href="https://way.h35.tw/" target="_blank">
+        <a class="btn flex-c" href="https://jhan.lc-h35.tw/" target="_blank">
           官網預約
         </a>
         <!-- <img src="./s1/youtube.jpg" alt="" class="video">  -->
@@ -1037,7 +1035,7 @@ export default {
           name: ' 立瑾醞',
           desc:'<b>基地位置：</b>三重區神農街433號～439號<br><b>完工時間：</b>2020年<br><b>規劃樓層：</b>地上12層，地下2層<br><b>個案特色：</b><br>◆  校園第一排、河畔第一境<br>◆  結合陽光、空氣、水的絕美建築<br>◆ 低建蔽率，高公共生活空間',
         },
-        */
+       
         {
           img: require('../works/2/1.jpg'),
           alt: '',
@@ -1058,15 +1056,16 @@ export default {
           name: ' 立瑾way',
           desc:
             '鶯歌鳳鳴 立瑾Way2020年11月<br>延續著住戶的期盼，<br>今年11月19日於鶯歌鳳鳴重劃區，<br>辦理開工動土祈福典禮，<br>將接續公開新案「立瑾way」，<br>只為給您最好的居家。<br>基地地址：鶯歌鳳鳴段',
-        },
+        }, */
         {
           img: require('../works/3/1.jpg'),
           alt: '',
-          name: ' 鳳福段',
+          name: '立瑾綻',
           desc:
             '<b>基地位置：</b>三重區神農街433號～439號<br>完工時間： 2020年<br>規劃樓層： 地上12層，地下2層<br>個案特色：<br>◆  校園第一排、河畔第一境<br>◆  結合陽光、空氣、水的絕美建築<br>◆ 低建蔽率，高公共生活空間',
         },
       ],
+      /*
       slideList2: [
         {
           img: require('../works/2/1.jpg'),
@@ -1085,19 +1084,20 @@ export default {
           name: '',
         },
       ],
-      slideList3: [
+      */
+      slideList2: [
         {
           img: require('../works/3/1.jpg'),
           name: '3D模擬示意圖',
         },
-        {
+     /*   {
           img: require('../works/3/2.jpg'),
           name: '3D模擬示意圖',
         },
         {
           img: require('../works/3/3.jpg'),
           name: '3D模擬示意圖',
-        },
+        },*/
       ],
     }
   },

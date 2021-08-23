@@ -4,8 +4,8 @@
     <h3 class="subtitle">
       Hot Case
     </h3>
-    <img src="./s4/1.jpg" alt="" class="img1" @click="$router.push('/hot?index=1#section1')">
-    <img src="./s4/2.jpg" alt="" class="img2" @click="$router.push('/hot?index=2#section1')">
+  <!--  <img src="./s4/1.jpg" alt="" class="img1" @click="$router.push('/hot?index=1#section1')"> -->
+    <img src="./s4/02.jpg" alt="" class="img4" @click="$router.push('/hot?index=2#section1')">
     <img src="./s4/bg.png" alt="" class="img3">
     <div class="btn flex-c" @click="$router.push('/hot')">瞭解更多</div>
   </div>
@@ -71,6 +71,10 @@
 
 .img1 {
   @include img_l_pc(270, 190, 287);
+  cursor: pointer;
+}
+.img4 {
+  @include img_l_pc(600, 190, 287);
   cursor: pointer;
 }
 
@@ -159,6 +163,9 @@
 
   .img1 {
     @include img_l_m(156, 218, 22);
+  }
+  .img4{
+    @include img_l_m(330, 218, 22);
   }
 
   .img2 {
