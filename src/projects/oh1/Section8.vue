@@ -161,7 +161,7 @@
       left: 0;
       right: 0;
       margin: 0 auto;
-      font-size: size(36);
+      font-size: size(30);
       font-weight: bold;
       font-stretch: normal;
       font-style: normal;
@@ -649,7 +649,7 @@ export default {
         },
         {
           img: require('./s8/4名軒富麗-新莊.jpg'),
-          name: '淡水老街(中正路)',
+          name: '名軒富麗',
         },
         {
           img: require('./s8/5名軒湯本源-宜蘭礁溪.jpg'),
