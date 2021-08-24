@@ -89,7 +89,7 @@ export default {
   justify-content: center;
   align-items: center;
   z-index: 112;
-  top: 30px;
+  top: 10px;
   right: 30px;
   width: 40px;
   height: 40px;
@@ -122,7 +122,7 @@ export default {
   position: relative;
   width: 30px;
   height: 1px;
-  background-color: #686868;
+  background-color: #fff;
 }
 
 .menu-icon::before {
@@ -133,7 +133,7 @@ export default {
   display: block;
   width: 30px;
   height: 1px;
-  background-color: #686868;
+  background-color: #fff;
   transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
 }
 
@@ -145,7 +145,7 @@ export default {
   display: block;
   width: 30px;
   height: 1px;
-  background-color: #686868;
+  background-color: #fff;
   transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
 }
 

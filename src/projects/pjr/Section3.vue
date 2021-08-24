@@ -1,29 +1,14 @@
 <template>
   <div class="section3">
-    <div class="desc" v-if="isPC"  data-aos="fade-up" data-aos-delay="600">
-      陽明山 ，台北最珍貴的一座山<br />
-      陽明山景觀席向來是台灣企業富豪獨鍾的層峰聚落<br />
-      在這裡 ，有萬頃的自然森林與生態<br />
-      分秒都有不同的景致 ，一天可看盡春夏秋冬<br>收藏四季風華
+    <img src="./s3/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img">
+    <h3 class="desc" v-if="isPC" data-aos="fade-up" data-aos-delay="400">
+      攤開中山北路世紀繪卷，台灣第一條現代化大道，40米林蔭壯闊綿延，日本天皇敕使御道，國家外交官道，顯赫人物踏響中山北獨有貴族身世，人文熟釀的精緻風土，終於迎來最懂品味的璞真。中山北路二段最高俯望，23層國際樹海巔峰，天地靜謐，時光盡為奢華而生。
+    </h3>
+    <div class="title" v-if="isPC" data-aos="fade-up" data-aos-delay="200">
+      百年林蔭最高俯望<br />璞真訂製傳世眼界
     </div>
-    <div class="desc" v-if="isMobile"  data-aos="fade-up" data-aos-delay="600">
-      陽明山，台北最珍貴的一座山<br />
-      陽明山景觀席向來是台灣企業富豪<br>獨鍾的層峰聚落<br />
-      在這裡，有萬頃的自然森林與生態<br />
-      分秒都有不同的景致 <br>一天可看盡春夏秋冬，收藏四季風華
-    </div>
-    <div class="title" v-if="isMobile" data-aos="fade-up" data-aos-delay="200">
-      私藏一座
-    </div>
-    <div class="subtitle" v-if="isMobile" data-aos="fade-up" data-aos-delay="400">
-      陽明山國家公園
-    </div>
-    <img src="./s3/title.png" :alt="`${info.caseName}_img`" class="title" v-if="isPC" data-aos="fade-up" data-aos-delay="200">
-    <img src="./s3/img.png" :alt="`${info.caseName}_img`" class="img">
-    <img src="./s3/t_style.png" :alt="`${info.caseName}_img`" class="t_style">
-    <div class="cloud-bg">
-      <img src="./s3/style_1.png" :alt="`${info.caseName}_img`" class="cloud cloud1">
-      <img src="./s3/style_2.png" :alt="`${info.caseName}_img`" class="cloud cloud2">
+    <div class="subtitle" v-if="isPC" data-aos="fade-up" data-aos-delay="400">
+      中山北路
     </div>
   </div>
 </template>
@@ -32,12 +17,9 @@
 @import '@/assets/style/function.scss';
 .section3 {
   width: 100%;
-  height: 100vh;
-  min-height: size(1080);
+  height: size(900);
+  min-height: size(900);
   max-height: auto;
-  //overflow: hidden;
-  // position: relative;
-  // background-image: url('./s1/01_bg.jpg');
   background-size: cover;
   background-attachment: fixed;
 
@@ -70,57 +52,43 @@
   // opacity: 0.5;
 }
 
-.img {
-  @include img_l_pc(979, 180, 167);
-}
-
 .title {
-  @include img_r_pc(109, 180, 168);
-}
-
-.desc {
-  @include img_r_pc(577, 580, 152);
-  font-size: size(25);
-  font-weight: 600;
+  @include img_l_pc(272, 505, 143);
+  font-size: size(34);
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.4;
-  letter-spacing: size(2);
+  line-height: 1.2;
+  letter-spacing: normal;
   text-align: left;
-  color: #4d4d4d;
+  color: #fff;
   white-space: nowrap;
 }
 
-.t_style {
-  @include img_r_pc(673, 180, 0);
-  animation: strech 5s ease-in-out alternate infinite;
+.desc {
+  @include img_l_pc(464, 618, 143);
+  font-size: size(16);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.63;
+  letter-spacing: size(1.6);
+  text-align: left;
+  color: #fff;
 }
 
-@keyframes strech {
-  to {
-    transform: skewX(10deg);
-  }
-}
-
-.cloud-bg {
-  .cloud {
-    animation: cloud 5s ease-in-out alternate infinite;
-  }
-
-  .cloud1 {
-    @include img_l_pc(781, 80, -50);
-    transform: translateX(-10%);
-  }
-
-  .cloud2 {
-    @include img_r_pc(537, 900, -20);
-    transform: translateX(-15%);
-  }
-}
-@keyframes cloud {
-  to {
-    transform: translateX(0);
-  }
+.subtitle {
+  @include img_l_pc(32, 71, 54);
+  font-size: size(28);
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: center;
+  color: #f3b2c1;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
 }
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */

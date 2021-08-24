@@ -1,62 +1,49 @@
 <template>
   <div class="section6">
-    <div class="title" data-aos="fade-up" data-aos-delay="200">
-      因為稀有所以珍貴
+    <img src="./s6/0.jpg" :alt="`${info.caseName}_img`" class="img" data-aos="fade-down" data-aos-delay="600">
+    <h3 class="desc" v-if="isPC" data-aos="fade-up" data-aos-delay="400">
+      半輩子縱橫江山，滿胸懷超然際遇，繫念中山北路樹海第一排的窗，台北歷史最悠遠的林蔭大道，心上永恆富裕原鄉。樟楓漫天綠浪開道，企業總部、縉紳豪邸蓬勃盛放。繁華燈火在腳下波瀾，四面群山濃淡疊翠，頂峰之上，照看歲月寧靜壯遊。
+    </h3>
+    <div class="title" v-if="isPC" data-aos="fade-up" data-aos-delay="200">
+      建築摯美生活初衷<br />讓建築好好地長<br />就像那些很紮實的大樹
     </div>
-    <div class="subtitle" data-aos="fade-up" data-aos-delay="400">
-      陽明山保護區限建規範<br />
-      住戶更惜售
+    <div class="subtitle" v-if="isPC" data-aos="fade-up" data-aos-delay="400">
+      璞真建設
     </div>
-    <img src="./s6/style_1.png" :alt="`${info.caseName}_img`" class="style1" data-aos="fade-up" data-aos-delay="600">
-    <img src="./s6/t_style.png" :alt="`${info.caseName}_img`" class="t_style">
-    <img src="./s6/bird.png" :alt="`${info.caseName}_img`" class="bird">
-
-    <swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" @slideChangeTransitionEnd="slideChanged" v-if="isMobile">
-      <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide + index" class="item">
-        <img :src="slide.img" :class="`item-img`" />
-        <p v-html="slide.p"></p>
-      </swiper-slide>
-
-      <div class="swiper-button-prev prev-btn" slot="button-prev" v-if="isMobile">
-      </div>
-      <div class="swiper-button-next next-btn" slot="button-next" v-if="isMobile">
-      </div>
-      <div class="swiper-pagination" slot="pagination"></div>
-    </swiper>
-    <img src="./s6/leaf.png" :alt="`${info.caseName}_img`" class="leaf">
-    <img src="./s6/img_1.png" :alt="`${info.caseName}_img`" class="img1">
-    <img src="./s6/img_2.png" :alt="`${info.caseName}_img`" class="img2">
-    <img src="./s6/style_2.png" :alt="`${info.caseName}_img`" class="style2">
-    <div class="cloud-bg">
-      <img src="./s6/style_3.png" :alt="`${info.caseName}_img`" class="cloud cloud1">
+    <div class="title title2" data-aos="fade-up" data-aos-delay="600">
+      璞真建設跨界美學之道
     </div>
-    <div class="desc desc1" v-if="isPC" data-aos="fade-up" data-aos-delay="800">
-      「富貴山頭」陽明山豪墅交易連年創天價<br>美景讓許多富豪趨之若鶩<br />
-      因受國家森林公園保護區管制，無法改建及擴建<br />
-      造成陽明山的土地稀有，住戶都相當惜售<br />
-      可開發土地與房屋稀少，造成一宅難求的現象<br />
-    </div>
-    <div class="desc desc1" v-if="isMobile" data-aos="fade-up" data-aos-delay="800">
-      「富貴山頭」陽明山豪墅交易連年創天價<br>美景讓許多富豪趨之若鶩<br />
-      因受國家森林公園保護區管制<br />無法改建及擴建<br />
-      造成陽明山的土地稀有，住戶都相當惜售<br />
-      可開發土地與房屋稀少<br />造成一宅難求的現象<br />
-    </div>
+    <silent-box data-aos="fade-up" data-aos-delay="400" class="gallery flex-ac flex-jb wrap" :gallery="gallery"></silent-box>
   </div>
 </template>
-
+<style lang="scss">
+@import '@/assets/style/function.scss';
+.gallery {
+  .silentbox-item {
+    width: size(83);
+    height: size(83);
+    margin-top: size(26);
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+</style>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .section6 {
   width: 100%;
   height: auto;
-  min-height: size(1163 + 205);
+  min-height: size(801);
   max-height: auto;
   //overflow: hidden;
   // position: relative;
   // background-image: url('./s1/01_bg.jpg');
   background-size: cover;
   background-attachment: fixed;
+  background-color: #bcdbdb;
 
   // margin: 0 0 size(400) 0;
 
@@ -88,119 +75,53 @@
 }
 
 .title {
-  @include img_l_pc(356, 236, 165);
-  font-size: size(40);
+  @include img_l_pc(272, 193, 143);
+  font-size: size(34);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(5.2);
-  text-align: center;
-  color: #000000;
-  white-space: nowrap;
-}
-
-.subtitle {
-  @include img_l_pc(356, 306, 165);
-  font-size: size(40);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(5.2);
+  letter-spacing: normal;
   text-align: left;
-  color: #cc8b00;
+  color: #267f9c;
   white-space: nowrap;
+
+  &.title2 {
+    @include img_l_pc(272, 531, 143);
+  }
 }
 
 .desc {
-  font-size: size(25);
+  @include img_l_pc(464, 346, 143);
+  font-size: size(16);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.63;
+  letter-spacing: size(1.6);
+  text-align: left;
+  color: #3e3a39;
+}
+
+.subtitle {
+  @include img_l_pc(32, 100, 54);
+  font-size: size(28);
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.4;
-  letter-spacing: size(2);
-  text-align: left;
-  color: #4d4d4d;
-  white-space: nowrap;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: center;
+  color: #f3b2c1;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
 }
 
-.desc1 {
-  @include img_l_pc(658, 453, 174);
+.img {
+  @include img_r_pc(1050, 101, 136);
 }
-
-.desc2 {
-  @include img_l_pc(416, 747, 174);
-}
-.style1 {
-  @include img_r_pc(434, 142, 610);
-}
-
-.style2 {
-  @include img_r_pc(243, 311, 40);
-}
-
-.img1 {
-  @include img_r_pc(843, 296, 0);
-}
-.img2 {
-  @include img_r_pc(843, 769, 0);
-}
-
-.t_style {
-  @include img_l_pc(578, 43, 0);
-  animation: strech 5s ease-in-out alternate infinite;
-}
-.bird {
-  @include img_r_pc(389, 700, 838);
-  animation: jump 1.5s linear alternate infinite;
-}
-
-@keyframes jump {
-  0% {
-    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
-  }
-  40% {
-    transform: translate3d(0, 5%, 0) scale3d(1, 1.02, 1);
-  }
-  100% {
-    transform: translate3d(0, 2.5%, 0) scale3d(1, 1, 1);
-  }
-}
-.leaf {
-  @include img_l_pc(251, 613, -70);
-  animation: grass 4s ease-in-out alternate infinite;
-  transform-origin: left;
-}
-
-@keyframes strech {
-  to {
-    transform: skewX(10deg);
-  }
-}
-
-@keyframes grass {
-  to {
-    transform: skewY(5deg);
-  }
-}
-.cloud-bg {
-  .cloud {
-    animation: cloud 5s ease-in-out alternate infinite;
-  }
-
-  .cloud1 {
-    @include img_r_pc(745, 80, -150);
-    top: auto;
-    bottom: size(30);
-    transform: translateX(-10%);
-    animation: none;
-  }
-}
-@keyframes cloud {
-  to {
-    transform: translateX(0);
-  }
+.gallery {
+  @include img_l_pc(403, 608 - 26, 142);
 }
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
@@ -441,19 +362,10 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
-import slider from '@/mixins/slider.js'
-import 'swiper/dist/css/swiper.css'
-
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import info from '@/info'
 
 export default {
   name: 'section6',
-  mixins: [slider],
-  components: {
-    swiper,
-    swiperSlide,
-  },
 
   data() {
     return {
@@ -461,56 +373,66 @@ export default {
       isPC,
       isMobile,
       isTablet,
-      // blockIndex: 0,
-      swiperOption: {
-        slidesPerView: isMobile ? 1 : 2.42,
-        slidesPerGroup: isMobile ? 1 : 1,
-        spaceBetween: isTablet ? 20 : 10,
-        slidesPerColumn: isMobile ? 1 : 1,
-        allowSlidePrev: isMobile ? true : true,
-        allowSlideNext: isMobile ? true : true,
-        // effect : 'fade',
-        /*   fadeEffect: {
-    crossFade: true,
-  },*/
-        // centeredSlides: true,
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false,
-        },
-        loop: true,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-      },
-      slideList: [
+      gallery: [
         {
-          img: require('./s6/img_1.png'),
+          src: require('./s6/01-2009台中勤美誠品.jpg'),
+          description: 'Star Night Sky Ravine by Mark Basarab, from Unsplash.',
+          alt: 'Blue starry night photo.',
+          thumbnailWidth: '20vw',
         },
         {
-          img: require('./s6/img_2.png'),
+          src: require('./s6/02-購物-金典綠園道.jpg'),
+          description: 'Corno Nero, Italy by Luca Zanon, from Unsplash.',
+          alt: 'Landscape photo of mountain with fog.',
+          thumbnailWidth: '20vw',
+        },
+        {
+          src: require('./s6/03-2011勤美璞真.jpg'),
+          description:
+            'Remote forest path in Gävle, Sweden by Geran de Klerk, from Unsplash.',
+          alt: 'Low angle photo of pine trees.',
+          thumbnailWidth: '20vw',
+        },
+        {
+          src: require('./s6/04-健身房情境示意圖.jpg'),
+          description:
+            'Remote forest path in Gävle, Sweden by Geran de Klerk, from Unsplash.',
+          alt: 'Low angle photo of pine trees.',
+          thumbnailWidth: '20vw',
+        },
+        {
+          src: require('./s6/05-飯店情境示意圖.jpg'),
+          description:
+            'Remote forest path in Gävle, Sweden by Geran de Klerk, from Unsplash.',
+          alt: 'Low angle photo of pine trees.',
+          thumbnailWidth: '20vw',
+        },
+        {
+          src: require('./s6/06-購物-金典綠園道-(14).jpg'),
+          description:
+            'Remote forest path in Gävle, Sweden by Geran de Klerk, from Unsplash.',
+          alt: 'Low angle photo of pine trees.',
+          thumbnailWidth: '20vw',
+        },
+        {
+          src: require('./s6/07-勤美術館2.jpg'),
+          description:
+            'Remote forest path in Gävle, Sweden by Geran de Klerk, from Unsplash.',
+          alt: 'Low angle photo of pine trees.',
+          thumbnailWidth: '20vw',
+        },
+        {
+          src: require('./s6/08-勤美術館.jpg'),
+          description:
+            'Remote forest path in Gävle, Sweden by Geran de Klerk, from Unsplash.',
+          alt: 'Low angle photo of pine trees.',
+          thumbnailWidth: '20vw',
         },
       ],
     }
   },
 
-  methods: {
-    slideChanged(e) {
-      const swiper = this.$refs.mySwiper.swiper
-      if (swiper.isEnd) {
-        this.slideIndex = 0
-      } else if (swiper.isBeginning) {
-        this.slideIndex = swiper.slides.length - 3
-      } else {
-        this.slideIndex = swiper.activeIndex - 1
-      }
-    },
-  },
+  methods: {},
 
   mounted() {
     // setTimeout(() => {

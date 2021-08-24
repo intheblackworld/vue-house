@@ -8,42 +8,18 @@
         <h3 class="title">{{order.title}}</h3>
         <div class="subtitle">{{order.subTitle}}</div>
       </div> -->
-      <h3
-        class="order-title"
-        v-html="order.title"
-        data-aos="fade-down"
-        data-aos-delay="0"
-      ></h3>
-      <div
-        class="order-subtitle"
-        data-aos="fade-down"
-        data-aos-delay="100"
-        v-html="order.subTitle"
-      ></div>
+      <h3 class="order-title" v-html="order.title" data-aos="fade-down" data-aos-delay="0"></h3>
+      <div class="order-subtitle" data-aos="fade-down" data-aos-delay="100" v-html="order.subTitle"></div>
       <div class="order">
         <div class="form">
           <div class="group">
-            <div
-              class="row"
-              data-aos="fade-down"
-              data-aos-delay="100"
-            >
+            <div class="row" data-aos="fade-down" data-aos-delay="100">
               <label>姓名</label>
-              <el-input
-                v-model="form.name"
-                placeholder
-              ></el-input>
+              <el-input v-model="form.name" placeholder></el-input>
             </div>
-            <div
-              class="row"
-              data-aos="fade-down"
-              data-aos-delay="200"
-            >
+            <div class="row" data-aos="fade-down" data-aos-delay="200">
               <label>手機</label>
-              <el-input
-                v-model="form.phone"
-                placeholder
-              ></el-input>
+              <el-input v-model="form.phone" placeholder></el-input>
             </div>
             <!-- <div class="row" data-aos="fade-down"
         data-aos-delay="300">
@@ -87,65 +63,26 @@
               <label>E-mail</label>
               <el-input v-model="form.email" placeholder></el-input>
             </div> -->
-            <div
-              class="row"
-              data-aos="fade-down"
-              data-aos-delay="300"
-            >
+            <div class="row" data-aos="fade-down" data-aos-delay="300">
               <label>居住城市</label>
-              <el-select
-                v-model="form.city"
-                placeholder
-              >
-                <el-option
-                  v-for="city in cityList"
-                  :key="city.value"
-                  :label="city.label"
-                  :value="city.value"
-                  no-data-text="無數據"
-                ></el-option>
+              <el-select v-model="form.city" placeholder>
+                <el-option v-for="city in cityList" :key="city.value" :label="city.label" :value="city.value" no-data-text="無數據"></el-option>
               </el-select>
             </div>
-            <div
-              class="row"
-              data-aos="fade-down"
-              data-aos-delay="400"
-            >
+            <div class="row" data-aos="fade-down" data-aos-delay="400">
               <label>居住地區</label>
-              <el-select
-                v-model="form.area"
-                placeholder
-              >
-                <el-option
-                  v-for="area in areaList"
-                  :key="area.value"
-                  :label="area.label"
-                  :value="area.value"
-                  no-data-text="請先選擇居住城市"
-                ></el-option>
+              <el-select v-model="form.area" placeholder>
+                <el-option v-for="area in areaList" :key="area.value" :label="area.label" :value="area.value" no-data-text="請先選擇居住城市"></el-option>
               </el-select>
             </div>
           </div>
-          <div
-            class="group"
-            data-aos="fade-down"
-            data-aos-delay="600"
-          >
+          <div class="group" data-aos="fade-down" data-aos-delay="600">
             <div class="row">
-              <el-input
-                type="textarea"
-                :rows="2"
-                placeholder="請輸入您的留言 (選填)"
-                v-model="form.msg"
-              ></el-input>
+              <el-input type="textarea" :rows="2" placeholder="請輸入您的留言 (選填)" v-model="form.msg"></el-input>
             </div>
           </div>
         </div>
-        <div
-          class="control"
-          data-aos="fade-down"
-          data-aos-delay="500"
-        >
+        <div class="control" data-aos="fade-down" data-aos-delay="500">
           <el-checkbox v-model="checked">
             <h3>
               本人知悉並同意
@@ -154,39 +91,14 @@
             </h3>
           </el-checkbox>
         </div>
-        <div
-          style="margin: 0 auto;z-index:2;"
-          v-if="!isMobile"
-          data-aos="fade-down"
-          data-aos-delay="600"
-        >
-          <vue-recaptcha
-            :sitekey="info.recaptcha_site_key_v2"
-            @verify="isVerify = true"
-            :loadRecaptchaScript="true"
-          ></vue-recaptcha>
+        <div style="margin: 0 auto;z-index:2;" v-if="!isMobile" data-aos="fade-down" data-aos-delay="600">
+          <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
         </div>
-        <div
-          style="margin: 0 auto;z-index:2;"
-          v-if="isMobile"
-        >
-          <vue-recaptcha
-            :sitekey="info.recaptcha_site_key_v2"
-            @verify="isVerify = true"
-            :loadRecaptchaScript="true"
-          ></vue-recaptcha>
+        <div style="margin: 0 auto;z-index:2;" v-if="isMobile">
+          <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
         </div>
-        <el-button
-          class="form-submit flex-c"
-          type="primary"
-          :disabled="!checked || !isVerify"
-          @click="submit"
-          :loading="isSubmit"
-        >立即預約</el-button>
-        <Loading
-          :loading="isSubmit"
-          :isOpacity="true"
-        />
+        <el-button class="form-submit flex-c" type="primary" :disabled="!checked || !isVerify" @click="submit" :loading="isSubmit">立即預約</el-button>
+        <Loading :loading="isSubmit" :isOpacity="true" />
       </div>
     </div>
     <ContactInfo />
@@ -245,9 +157,46 @@ export default {
     },
   },
 
+  mounted() {
+    this.generateGUID()
+    console.log(this.getCookie('hiyes_case_uid'))
+    // this.getMobileValidCode()
+  },
+
   methods: {
     showPolicyDialog() {
       this.policyVisible = true
+    },
+
+    getCookie(name) {
+      var nameEQ = name + '='
+      var ca = document.cookie.split(';')
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i]
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length)
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length)
+      }
+      return null
+    },
+
+    setCookie(name, value, days) {
+      var expires = ''
+      if (days) {
+        var date = new Date()
+        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000)
+        expires = '; expires=' + date.toUTCString()
+      }
+      document.cookie = name + '=' + (value || '') + expires + '; path=/'
+    },
+
+    listCookie() {
+      const cookieArray = document.cookie.split(';')
+      for (var i = 0; i < cookieArray.length; i++) {
+        let thisCookie = cookieArray[i].split('=')
+        let cName = unescape(thisCookie[0])
+        let cValue = unescape(thisCookie[1])
+        console.log(cName, cValue)
+      }
     },
 
     alertValidate() {
@@ -259,6 +208,55 @@ export default {
           { style: 'color: #82191d' },
           '「姓名、手機」是必填欄位',
         ),
+      })
+    },
+
+    recordPageView(state) {
+      if (state === 1) {
+        fetch('https://data.hiyes.tw/rec/pv', {
+          method: 'POST',
+          body: {
+            guid: this.getCookie('hiyes_case_uid'),
+            project: info.caseName,
+            phone: this.form.phone,
+            state,
+          },
+        })
+      } else {
+        fetch('https://data.hiyes.tw/rec/pv', {
+          method: 'POST',
+          body: {
+            guid: this.getCookie('hiyes_case_uid'),
+            project: info.caseName,
+            state,
+          },
+        })
+      }
+    },
+
+    generateGUID() {
+      fetch('https://data.hiyes.tw/rec/uuid', {
+        method: 'GET',
+      })
+        .then((response) => {
+          return response.text()
+        })
+        .then((guid) => {
+          if (!this.getCookie('hiyes_case_uid')) {
+            this.setCookie('hiyes_case_uid', guid, 2)
+          }
+        })
+    },
+
+    // 跨域問題待處理
+    getMobileValidCode() {
+      fetch('https://www.hiyes.tw/Auth/SendSmsVerifyCode', {
+        method: 'POST',
+        body: {
+          mobilePhone: this.form.phone,
+        },
+      }).then((response) => {
+        console.log(response)
       })
     },
 
@@ -287,43 +285,63 @@ export default {
       const utmMedium = urlParams.get('utm_medium')
       const utmContent = urlParams.get('utm_content')
       const utmCampaign = urlParams.get('utm_campaign')
-      const formData = new FormData()
-      formData.append('name', this.form.name)
-      formData.append('phone', this.form.phone)
-      formData.append('email', this.form.email)
-      formData.append('msg', this.form.msg)
-      // formData.append('time_start', this.form.time_start)
-      // formData.append('time_end', this.form.time_end)
-      formData.append('city', this.form.city)
-      formData.append('area', this.form.area)
-      formData.append('utm_source', utmSource)
-      formData.append('utm_medium', utmMedium)
-      formData.append('utm_content', utmContent)
-      formData.append('utm_campaign', utmCampaign)
-      const time = new Date()
-      const year = time.getFullYear()
-      const month = time.getMonth() + 1
-      const day = time.getDate()
-      const hour = time.getHours()
-      const min = time.getMinutes()
-      const sec = time.getSeconds()
-      const date = `${year}-${month}-${day} ${hour}:${min}:${sec}`
-      fetch(
-        `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&email=${this.form.email}&cityarea=${this.form.city}${this.form.area}&msg=${this.form.msg}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
-      `,
-        {
-          method: 'GET',
-        },
-      )
-      fetch('contact-form.php', {
+      // const formData = new FormData()
+      // formData.append('name', this.form.name)
+      // formData.append('phone', this.form.phone)
+      // formData.append('email', this.form.email)
+      // formData.append('msg', this.form.msg)
+      // // formData.append('time_start', this.form.time_start)
+      // // formData.append('time_end', this.form.time_end)
+      // formData.append('city', this.form.city)
+      // formData.append('area', this.form.area)
+      // formData.append('utm_source', utmSource)
+      // formData.append('utm_medium', utmMedium)
+      // formData.append('utm_content', utmContent)
+      // formData.append('utm_campaign', utmCampaign)
+      // const time = new Date()
+      // const year = time.getFullYear()
+      // const month = time.getMonth() + 1
+      // const day = time.getDate()
+      // const hour = time.getHours()
+      // const min = time.getMinutes()
+      // const sec = time.getSeconds()
+      // const date = `${year}-${month}-${day} ${hour}:${min}:${sec}`
+      // fetch(
+      //   `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&email=${this.form.email}&cityarea=${this.form.city}${this.form.area}&msg=${this.form.msg}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
+      // `,
+      //   {
+      //     method: 'GET',
+      //   },
+      // )
+      fetch('https://www.hiyes.tw/BuildingCase/Booking', {
         method: 'POST',
-        body: formData,
-      }).then(response => {
+        body: {
+          name: this.form.name,
+          email: this.form.email,
+          mobilePhone: this.form.phone,
+          city: this.form.city,
+          dist: this.form.area,
+          ProjectId: 'hiyes case id', // 這裡不確定 case id 是多少
+          utm_source: utmSource,
+          utm_medium: utmMedium,
+          utm_content: utmContent,
+          utm_campaign: utmCampaign,
+        },
+      }).then((response) => {
         this.isSubmit = false
-        if (response.status === 200) {
-          window.location.href = 'formThanks'
-        }
+        window.location.href = 'formThanks'
+        this.recordPageView(1) // record user behavior
       })
+
+      // fetch('contact-form.php', {
+      //   method: 'POST',
+      //   body: formData,
+      // }).then((response) => {
+      //   this.isSubmit = false
+      //   if (response.status === 200) {
+      //     window.location.href = 'formThanks'
+      //   }
+      // })
     },
   },
 }
@@ -348,7 +366,7 @@ export default {
 }
 .order-bg {
   // background-color: $order_bg_color;
- background-image: $order_bg_image;
+  background-image: $order_bg_image;
   background-repeat: no-repeat;
   padding-top: 130px;
   background-size: 100vw 100%;
@@ -447,7 +465,8 @@ export default {
     label {
       //width:10em;
       flex: 0 0 6.8em;
-      display:block;text-align: left;
+      display: block;
+      text-align: left;
       font-size: 16px;
       opacity: 0.8;
       font-weight: bold;
@@ -485,8 +504,8 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .order-bg {
-  //  background-image: $order_bg_image;
-  //  background-size: cover;
+    //  background-image: $order_bg_image;
+    //  background-size: cover;
     padding-top: 40px;
     margin: 0;
     z-index: 2;
@@ -516,7 +535,7 @@ export default {
 
     .form {
       flex-direction: column;
-    margin-bottom: -12px ;
+      margin-bottom: -12px;
     }
 
     .group {
@@ -538,10 +557,10 @@ export default {
     }
 
     .control {
-    .el-checkbox{
-      margin:10px auto;
-    }
-     /* margin-top: 10px;
+      .el-checkbox {
+        margin: 10px auto;
+      }
+      /* margin-top: 10px;
       margin-bottom: 10px;
       */
     }

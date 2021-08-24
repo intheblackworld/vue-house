@@ -17,11 +17,31 @@
             </div>
           </div>
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
-            <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset:  isMobile ? (item.mobileOffset ? item.mobileOffset : offset) : (item.offset ? item.offset : offset)}" v-for="item in list" class="flex-c" @click="toggleSidebar">
+            <li class="flex-ac" v-scroll-to="{element: '#contact-info', offset: 0}">
               <span class="link">
                 <span>
-                  <p class="title" v-html="item.name"></p>
-                  <span class="subTitle">{{item.subTitle}}</span>
+                  <div class="title">立即來電</div>
+                </span>
+              </span>
+            </li>
+            <li class="flex-ac">
+              <span class="link">
+                <span>
+                  <div class="title">LINE諮詢</div>
+                </span>
+              </span>
+            </li>
+            <li class="flex-ac" v-scroll-to="{element: '#contact-info', offset: 0}">
+              <span class="link">
+                <span>
+                  <div class="title">粉絲專頁</div>
+                </span>
+              </span>
+            </li>
+            <li class="flex-ac" v-scroll-to="{element: '#google-map', offset: 0}">
+              <span class="link">
+                <span>
+                  <div class="title">地圖導航</div>
                 </span>
               </span>
             </li>
@@ -114,7 +134,8 @@ export default {
   display: flex !important;
   align-items: center;
   transition: all 0.3s;
-  font-size: size(24);
+  font-size: size(18);
+  font-weight: 600;
   line-height: 1.5;
   // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
   .logo {
@@ -190,10 +211,11 @@ export default {
   .link {
     color: $nav_link_color;
     //height: 22px;
+    width: 7em;
     text-align: center;
     display: block;
     cursor: pointer;
-    padding: 0 0px;
+    padding: 0 0;
     // margin: 0 5px;
     transition: all 0.8s;
     display: flex;
@@ -202,54 +224,53 @@ export default {
     position: relative;
     overflow: hidden;
     border-right: 1px solid $nav_link_hover_bg;
-    width: 5.7em;
 
     &:hover {
       color: $nav_link_hover_color;
       // background: $nav_link_hover_bg;
     }
 
-    &::before {
-      content: '';
-      width: 0%;
-      height: 100%;
-      display: block;
-      background: #fff6; // second bg
-      position: absolute;
-      transform: skewX(-20deg);
-      left: -10%;
-      opacity: 1;
-      top: 0;
-      z-index: 2;
-      transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-      //box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
-    }
+    // &::before {
+    //   content: '';
+    //   width: 0%;
+    //   height: 100%;
+    //   display: block;
+    //   background: #fff6; // second bg
+    //   position: absolute;
+    //   transform: skewX(-20deg);
+    //   left: -10%;
+    //   opacity: 1;
+    //   top: 0;
+    //   z-index: 2;
+    //   transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    //   //box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
+    // }
 
-    &::after {
-      content: '';
-      width: 0%;
-      height: 100%;
-      display: block;
-      background: #fff3; // first bg
-      position: absolute;
-      transform: skewX(-20deg);
-      left: -10%;
-      opacity: 0;
-      top: 0;
-      z-index: 1;
-      transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
-      box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
-    }
-    &:hover::before {
-      opacity: 1;
-      width: 200%;
-      transform: translateX(100%) skewX(-20deg);
-    }
-    &:hover::after {
-      opacity: 1;
-      width: 150%;
-      transform: translateX(100%) skewX(-20deg);
-    }
+    // &::after {
+    //   content: '';
+    //   width: 0%;
+    //   height: 100%;
+    //   display: block;
+    //   background: #fff3; // first bg
+    //   position: absolute;
+    //   transform: skewX(-20deg);
+    //   left: -10%;
+    //   opacity: 0;
+    //   top: 0;
+    //   z-index: 1;
+    //   transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
+    //   box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
+    // }
+    // &:hover::before {
+    //   opacity: 1;
+    //   width: 200%;
+    //   transform: translateX(100%) skewX(-20deg);
+    // }
+    // &:hover::after {
+    //   opacity: 1;
+    //   width: 150%;
+    //   transform: translateX(100%) skewX(-20deg);
+    // }
 
     .title {
       //  font-size: 24px;

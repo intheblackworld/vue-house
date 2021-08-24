@@ -45,7 +45,7 @@
 .section2 {
   // height: 100vh;
   overflow: hidden;
-  height: size(830);
+  height: size(840);
   position: relative;
   // position: relative;
   // height: auto;
@@ -81,10 +81,10 @@
 }
 
 .video_box {
-  width: size(1475);
-  height: calc(100% + 171px * 2);
-  top: -171px;
-  left: calc(50% - 50vw * 1475 / 1920);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
   position: absolute;
   z-index: 3;
   overflow: hidden;
@@ -97,6 +97,7 @@
     opacity: 1;
   }
 }
+
 .video-bg {
 }
 

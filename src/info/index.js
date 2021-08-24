@@ -7,7 +7,7 @@ export default {
   phone: '02-28830808',
   fbLink: 'https://www.facebook.com/%E9%99%BD%E6%98%8E%E5%B1%B1%E8%8E%8A-Pattsiran-Formosa-108764311348067',
   fbMessage: 'https://m.me/108764311348067/',
-  caseName: '陽明山莊',
+  caseName: '璞真之道',
   indigatorLength: 10,
 
   houseInfos: [

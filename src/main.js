@@ -16,6 +16,7 @@ import VueFullPage from 'vue-fullpage.js'
 import VueLazyComponent from '@xunlei/vue-lazy-component'
 import VueRellax from 'vue-rellax'
 import Vue2TouchEvents from 'vue2-touch-events'
+import VueSilentbox from 'vue-silentbox'
 
 
 
@@ -63,7 +64,7 @@ Vue.use(VueLazyload)
 Vue.use(VueLazyComponent)
 Vue.use(VueRellax)
 Vue.use(Vue2TouchEvents)
-
+Vue.use(VueSilentbox)
 
 new Vue({
   router,

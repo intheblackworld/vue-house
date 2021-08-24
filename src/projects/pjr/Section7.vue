@@ -1,73 +1,43 @@
 <template>
   <div class="section7">
-    <!-- <img src="./s1/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img"> -->
-    <!-- <img src="./s1/btn.png" :alt="`${info.caseName}_img`" class="btn" v-scroll-to="{ element: `#contact`, offset: 0 }"> -->
-    <Map :bgSrc="bgSrc" :hand="hand" v-if="isMobile"></Map>
-    <h1 class="title" data-aos="fade-up" data-aos-delay="200">
-      陽明山國家公園旁、13萬6千坪度假別墅
-    </h1>
-    <img src="./s7/logo.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade-up" data-aos-delay="400">
-    <h1 class="subtitle subtitle1" data-aos="fade-up" data-aos-delay="600">
-      樂活養生新天地 即將登場
-    </h1>
-    <h3 class="desc desc1" v-if="isPC" data-aos="fade-up" data-aos-delay="800">
-      一個隱於山林的別墅聚落 、 一個全新設計概念的別墅美學
+    <h3 class="desc" v-if="isPC" data-aos="fade-up" data-aos-delay="400">
+      建築不只精密科學計算，而是有溫度、有情感、有故事的生活聚場，從結構形體昇華至精神領域。璞真願意花更多時間探索生活，量身訂製創新空間提案，以綠建築、智慧建築設計導入低碳思維。當建築擁有獨一無二的性格，自然吸引居住品味相契的人們，回歸生活最樸實且真摯的樣貌。
     </h3>
-    <h3 class="desc desc1" v-if="isMobile" data-aos="fade-up" data-aos-delay="800">
-      一個隱於山林的別墅聚落<br />一個全新設計概念的別墅美學
-    </h3>
-    <div class="items flex-ac flex-jb">
-      <img src="./s7/item_1.png" :alt="`${info.caseName}_img`" data-aos="fade-up" data-aos-delay="900">
-      <img src="./s7/item_2.png" :alt="`${info.caseName}_img`" data-aos="fade-up" data-aos-delay="1000">
-      <img src="./s7/item_3.png" :alt="`${info.caseName}_img`" data-aos="fade-up" data-aos-delay="1100">
+    <div class="title" v-if="isPC" data-aos="fade-up" data-aos-delay="200">
+      建築、自然永恆詩境<br />鐫刻城市美學指標
     </div>
-    <h3 class="desc desc2">
-      為您量身打造<br />
-      輕鬆擁有陽明山的萬頃綠意景觀<br />
-      輕鬆享有山林裡的 <span>溫泉養生</span> 與休閒樂活
-    </h3>
-    <div class="cloud-bg">
-      <img src="./s7/style_1.png" :alt="`${info.caseName}_img`" class="cloud cloud1">
-      <img src="./s7/style_2.png" :alt="`${info.caseName}_img`" class="cloud cloud2">
+
+    <div class="subtitle" v-if="isPC" data-aos="fade-up" data-aos-delay="400">2024 天母 璞真荣華</div>
+
+    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="800">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" alt="">
+            <div class="slide-name absolute" v-html="slide.name"></div>
+          </div>
+        </transition-group>
+        <div class="pagination absolute flex-ac" v-if="isPC">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+        </div>
+      </div>
+      <div class="swipe-btns absolute flex-ac flex-jb">
+        <div class="prev-btn" @click="decIndex"></div>
+        <div class="next-btn" @click="addIndex"></div>
+      </div>
     </div>
-    <div class="subtitle subtitle2">
-      野奢莊園 ・ 即將展開 ・ 敬請期待
-    </div>
-    
-    <img src="./s7/img_line.png" class="img_line" data-aos-offset="-500" data-aos="fade-up" data-aos-delay="400">
-    <img src="./s7/img.jpg" alt="" class="img" v-if="isPC">
-    <img src="./s7/img_style_1.png" class="img_style_1" data-aos="fade-up" data-aos-delay="600">
   </div>
 </template>
-
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .section7 {
   width: 100%;
-  height: size(1737);
-  min-height: size(1737);
+  height: size(999);
+  min-height: size(999);
   max-height: auto;
-  //overflow: hidden;
-  // position: relative;
-  // background-image: url('./s1/01_bg.jpg');
   background-size: cover;
   background-attachment: fixed;
-
-  // margin: 0 0 size(400) 0;
-
-  // &:before {
-  //   content: ' ';
-  //   position: fixed;
-  //   z-index: -1;
-  //   top: 0;
-  //   right: 0;
-  //   bottom: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 100%;
-  //   background: url('./s1/bg.jpg') center 0 no-repeat;
-  //   background-size: cover;
-  // }
+  background-color: #bcdbdb;
 }
 
 .bg-img {
@@ -82,109 +52,265 @@
   // opacity: 0.5;
 }
 
-.logo {
-  @include img_c_pc(357, 200);
-}
-
-.img {
-  @include img_c_pc(1920, 0);
-  top: auto;
-  bottom: 0;
-}
-
-.img_line {
-  @include img_c_pc(1920, 0);
-  top: auto;
-  bottom: 0;
-}
-
-.img_style_1 {
-  @include img_l_pc(401, 1080, 0);
-}
-
 .title {
-  @include img_c_pc(770, 90);
-  font-size: size(40);
+  @include img_r_pc(306, 400, 427);
+  font-size: size(34);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(2.6);
-  text-align: center;
-  color: #000000;
+  letter-spacing: normal;
+  text-align: left;
+  color: #267f9c;
   white-space: nowrap;
-}
-
-.subtitle {
-  font-size: size(40);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(5.2);
-  text-align: center;
-  color: #cc8b00;
-  white-space: nowrap;
-}
-.subtitle1 {
-  @include img_c_pc(508, 303);
-}
-.subtitle2 {
-  @include img_c_pc(680, 885);
-}
-
-.items {
-  @include img_c_pc(141 * 3 + 63 * 2, 478);
-
-  img {
-    width: size(141);
-  }
 }
 
 .desc {
-  font-size: size(25);
+  @include img_r_pc(464, 511, 270);
+  font-size: size(16);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.63;
+  letter-spacing: size(1.6);
+  text-align: left;
+  color: #3e3a39;
+}
+
+.subtitle {
+  @include img_l_pc(20, 676, 287);
+  font-size: size(15);
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2;
-  letter-spacing: size(2);
+  line-height: 1.13;
+  letter-spacing: normal;
   text-align: center;
-  color: #4d4d4d;
-  white-space: nowrap;
+  color: #f3b2c1;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
 }
 
-.desc1 {
-  @include img_c_pc(690, 378);
+/* Swipe */
+.swipe {
+  width: size(700);
+  height: size(700);
+  top: size(200);
+  left: size(350);
+  object-fit: cover;
+  // background: #0344;
 }
 
-.desc2 {
-  @include img_c_pc(450, 717);
-  span {
+// begin
+.swipe-fade-leave-to {
+  opacity: 0;
+  z-index: 0;
+}
+// end
+.swipe-fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.swipe-fade-enter-active {
+  transition: all 1s ease;
+}
+
+.swipe-fade-leave-active {
+  transition: all 1s ease;
+}
+
+// begin
+// .swipe-left-leave-to {
+//   margin-left: -100vw;
+//   z-index: 0;
+// }
+// // end
+// .swipe-left-enter {
+//   opacity: 0.5;
+//   margin-left: 0;
+//   z-index: 1;
+// }
+
+// .swipe-left-enter-active {
+//   transition: all 0.5s ease;
+// }
+
+// .swipe-left-leave-active {
+//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+// }
+
+.swipe-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.swipe-item {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .slide-name {
+    right: 2em;
+    bottom: 1.2em;
+    color: #fff;
+    font-size: size(18);
     font-weight: bold;
-    color: #cc8b00;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+    text-align: left;
+    text-shadow: 0 0.3em 1em #000;
+  }
+
+  // &:nth-child(1) {
+  //   z-index: 1;
+  //   // opacity: 1;
+  // }
+
+  // &.base {
+  //   z-index: 1;
+  //   opacity: 1;
+  // }
+  // &.active {
+  //   z-index: 2;
+  //   // opacity: 1;
+  // }
+}
+
+.pagination {
+  width: auto;
+  bottom: size(-35);
+  right: auto;
+  left: size(-10);
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.pagination-dot {
+  padding: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+  z-index: 4;
+
+  span {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 0px;
+    box-shadow: 0 0 0 1px #fff;
+    position: relative;
+    background-color: #fff;
+    transition: all 0.5s;
+
+    &::before {
+      content: '';
+      width: 60%;
+      height: 60%;
+      display: block;
+      background: #fff;
+      border-radius: 20px;
+      opacity: 1;
+      position: absolute;
+      top: 20%;
+      // transform: translateY(-50%);
+      left: 20%;
+      transition: all 0.3s;
+      transform-origin: center;
+      transform: scale(0);
+    }
+    &.active {
+      box-shadow: none;
+      &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: #267f9c;
+        border-radius: 0px;
+        opacity: 1;
+        position: absolute;
+        top: 0%;
+        box-shadow: 0 0 0 1px #267f9c;
+        // transform: translateY(-50%);
+        left: 0%;
+        transform: scale(1);
+      }
+    }
   }
 }
 
-.cloud-bg {
-  .cloud {
-    animation: cloud 5s ease-in-out alternate infinite;
+.swipe-btns {
+  width: 100%;
+  height: 100%;
+  padding: 0 0;
+  z-index: 3;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  .prev-btn,
+  .next-btn {
+    position: relative;
+    height: 100%;
+    width: 2em;
+    font-size: size(20);
+    cursor: pointer;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      transform: translateX(100%);
+      background-color: #0004;
+      transition: all 0.3s;
+    }
+    &::after {
+      content: '';
+      width: 1em;
+      height: 1em;
+      position: absolute;
+      top: calc(50% - 0.5em);
+      left: calc(50% - 0.75em);
+      border: solid #fff;
+      border-width: 0.1em 0.1em 0 0;
+      transform: rotate(45deg) translate(-10%, 10%);
+    }
+    &:hover:before {
+      transform: translateX(0%);
+    }
+    &:hover:after {
+      animation: btn 0.5s ease-in-out infinite alternate;
+    }
   }
-
-  .cloud1 {
-    @include img_l_pc(606, 218, -80);
-    transform: translateX(-10%);
-  }
-
-  .cloud2 {
-    @include img_r_pc(597, 391, -60);
-    transform: translateX(-15%);
+  .prev-btn {
+    transform: scaleX(-1);
   }
 }
-@keyframes cloud {
+@keyframes btn {
   to {
-    transform: translateX(0);
+    transform: rotate(45deg) translate(10%, -10%);
   }
 }
+
+@media only screen and (max-width: 1440px) {
+}
+@media only screen and (max-width: 1280px) and (min-width: 1025px) {
+  .fullscreen {
+    height: 100vh;
+  }
+}
+
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -193,122 +319,287 @@
 @media screen and (max-width: 767px) {
   .section7 {
     width: 100vw;
-    min-height: sizem(753);
-    max-height: sizem(753);
-    height: sizem(753);
-    // margin: 0 0 -12vw 0;
-    // background-size: auto size-m(750);
-    z-index: initial;
-    // &:before {
-    //   background-image: url('./s1/bg_m.jpg');
-    // }
+    height: sizem(782);
+    min-height: auto;
+    max-height: initial;
+    // background-image: url('./all/section_bg.jpg');
+    // background-attachment: scroll;
+    // background-size: 100% 100%;
+    // background-position: 0 0;
+    // background-attachment: fixed;
+    overflow: visible;
   }
-
-  .logo {
-    @include img_c_m(161, 58);
-  }
-
-  .img {
-    @include img_c_m(375, 0);
+  .grass {
+    @include img_r_m(173, 0, 0);
     top: auto;
-    bottom: 0;
+    bottom: sizem(-80);
+    transform-origin: bottom;
+    animation: grass 4s ease-in-out alternate infinite;
   }
 
-  .img_line {
-    @include img_c_m(375, 0);
-    top: auto;
-    bottom: 0;
+  @keyframes grass {
+    to {
+      transform: skewX(3deg);
+    }
   }
 
-  .img_style_1 {
-    @include img_l_m(126, 518, 0);
-    z-index: 5;
+  // begin
+  .trans-leave-to {
+    opacity: 0;
+    z-index: 0;
+  }
+  // end
+  .trans-enter {
+    opacity: 0;
+    z-index: 1;
   }
 
-  .title {
-    @include img_c_m(308, 22);
-    font-size: sizem(16);
-    font-weight: bold;
+  .trans-enter-active {
+    transition: all 1.8s ease;
+  }
+
+  .trans-leave-active {
+    transition: all 1.8s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  .line {
+    @include div_l_m(7, 177, 39, 33);
+    background-color: #40220f;
+  }
+  .label {
+    @include img_l_m(116, 39, 55);
+    font-size: sizem(17);
+    font-weight: 300;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(1.04);
-    text-align: center;
-    color: #000000;
+    line-height: 1.53;
+    letter-spacing: sizem(2.72);
+    text-align: left;
+    color: #40220f;
+    color: #40220f;
     white-space: nowrap;
+    z-index: 2;
+  }
+  .title {
+    @include img_l_m(250, 69, 55);
+    font-size: sizem(25);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-align: left;
+    color: #40220f;
+    white-space: nowrap;
+    z-index: 2;
   }
 
   .subtitle {
+    @include img_l_m(300, 116, 55);
     font-size: sizem(16);
-    font-weight: bold;
+    font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.57;
-    letter-spacing: sizem(1.82);
-    text-align: center;
-    color: #cc8b00;
-    white-space: nowrap;
-  }
-  .subtitle1 {
-    @include img_c_m(280, 114);
-  }
-  .subtitle2 {
-    font-size: sizem(18);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.94;
-    letter-spacing: sizem(1.04);
-    text-align: center;
-    color: #cc8b00;
-    @include img_c_m(280, 470);
+    line-height: 1.63;
+    letter-spacing: sizem(0.96);
+    text-align: left;
+    color: #40220f;
+    white-space: normal;
+    z-index: 3;
   }
 
-  .items {
-    @include img_c_m(81 * 3 + 36 * 2, 264);
+  .work-title {
+    @include img_l_m(255, 626, 20);
+    top: auto;
+    bottom: sizem(123);
+    font-size: sizem(22);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.98;
+    letter-spacing: sizem(1.32);
+    text-align: left;
+    color: #40220f;
+    white-space: nowrap;
+  }
+  .work-desc {
+    @include img_l_m(170, 301, 33);
+    top: auto;
+    bottom: sizem(40);
+    font-size: sizem(15);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.7;
+    letter-spacing: sizem(0.9);
+    text-align: left;
+    color: #40220f;
+    white-space: normal;
+  }
+
+  /* Swipe */
+  .swipe {
+    width: sizem(310);
+    height: sizem(357);
+    min-height: auto;
+    top: sizem(255);
+    bottom: auto;
+    left: sizem(33);
+    object-fit: cover;
+  }
+
+  // begin
+  .swipe-fade-leave-to {
+    opacity: 0;
+    z-index: 0;
+  }
+  // end
+  .swipe-fade-enter {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .swipe-fade-enter-active {
+    transition: all 0.5s ease;
+  }
+
+  .swipe-fade-leave-active {
+    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  // begin
+  // .swipe-left-leave-to {
+  //   margin-left: -100vw;
+  //   z-index: 0;
+  // }
+  // // end
+  // .swipe-left-enter {
+  //   opacity: 0.5;
+  //   margin-left: 0;
+  //   z-index: 1;
+  // }
+
+  // .swipe-left-enter-active {
+  //   transition: all 0.5s ease;
+  // }
+
+  // .swipe-left-leave-active {
+  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  // }
+
+  .swipe-wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .swipe-item {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
 
     img {
-      width: sizem(81);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    // &:nth-child(1) {
+    //   z-index: 1;
+    //   // opacity: 1;
+    // }
+
+    // &.base {
+    //   z-index: 1;
+    //   opacity: 1;
+    // }
+    // &.active {
+    //   z-index: 2;
+    //   // opacity: 1;
+    // }
+    .slide-name {
+      right: auto;
+      top: auto;
+      bottom: 1.2rem;
+      right: 1.2rem;
+      font-size: sizem(15);
     }
   }
 
-  .desc {
-    font-size: sizem(16);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.86;
-    letter-spacing: sizem(0.7);
-    text-align: center;
-    color: #4d4d4d;
-    white-space: nowrap;
+  .pagination {
+    width: auto;
+    bottom: size(91);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    justify-content: center;
   }
 
-  .desc1 {
-    @include img_c_m(258, 147);
-  }
+  .pagination-dot {
+    padding: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    z-index: 4;
 
-  .desc2 {
-    @include img_c_m(300, 383);
     span {
-      font-weight: bold;
-      color: #cc8b00;
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 0 1px #fff;
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.01);
+      transition: all 0.5s;
+
+      &::before {
+        content: '';
+        width: 60%;
+        height: 60%;
+        display: block;
+        background: #004ea2;
+        border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 20%;
+        // transform: translateY(-50%);
+        left: 20%;
+        transition: all 0.3s;
+        transform-origin: center;
+        transform: scale(0);
+      }
+      &.active {
+        &::before {
+          content: '';
+          width: 100%;
+          height: 100%;
+          display: block;
+          background: #004ea2;
+          border-radius: 20px;
+          opacity: 1;
+          position: absolute;
+          top: 0%;
+          // transform: translateY(-50%);
+          left: 0%;
+          transform: scale(1);
+        }
+      }
     }
   }
 
-  .cloud-bg {
-    .cloud {
-      animation: cloud 5s ease-in-out alternate infinite;
-    }
-
-    .cloud1 {
-      @include img_l_m(206, 210, -40);
-      transform: translateX(-10%);
-    }
-
-    .cloud2 {
-      @include img_r_m(190, 215, -50);
-      transform: translateX(-15%);
+  .swipe-btns {
+    width: 116%;
+    left: -8%;
+    .prev-btn,
+    .next-btn {
+      font-size: sizem(15);
+      &::before {
+        background-color: #cc5b4e00;
+      }
+      &::after {
+        border-color: #fff;
+        border-width: 0.15em 0.15em 0 0;
+        animation: btn 0.5s ease-in-out infinite alternate;
+      }
     }
   }
 }
@@ -316,37 +607,47 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
-import Map from '@/components/Map.vue'
 import info from '@/info'
+import slider from '@/mixins/slider.js'
 
 export default {
   name: 'section7',
-  components: {
-    Map,
-  },
+
+  mixins: [slider],
+  props: ['viewIndex'],
+
   data() {
     return {
       info,
       isPC,
       isMobile,
       isTablet,
-      // blockIndex: 0,
-      bgSrc: require('./s7/img.jpg'),
-      // bgmSrc: require('./s3_bg_m.jpg'),
-      hand: require('./s7/arrow_hand.png'),
+      isDialog: false,
+      slideList: [
+        {
+          img: require('./s7/1.jpg'),
+          name: '外觀3D示意圖',
+          // desc: '270度翠綠簇擁<br />開窗就享無垠綠景',
+        },
+      ],
     }
   },
 
   methods: {},
 
-  mounted() {
-    // setTimeout(() => {
-    //   this.blockIndex = 1
-    // }, 6000)
-  },
-
   created() {},
 
+  mounted() {},
+
   computed: {},
+
+  watch: {
+    // viewIndex() {
+    //   if (this.viewIndex === 5) {
+    //     this.slideIndex = 0
+    //     console.log(this.slideIndex, 'slideIndex')
+    //   }
+    // },
+  },
 }
 </script>

@@ -4,7 +4,8 @@
       <Loading :loading="load" />
       <SideNavigation :min="isNavMin" />
 
-      <Navigation v-if="!isMobile" :min="isNavMin" :hide="isHide" />
+      <!-- <Navigation v-if="!isMobile" :min="isNavMin" :hide="isHide" /> -->
+      <Navigation v-if="!isMobile" />
       <!-- <Indigator :viewIndex="viewIndex" /> -->
       <!-- <full-page
       ref="fullPage"
@@ -14,9 +15,9 @@
       <vue-lazy-component class="" id="section1" @init="init">
         <Section1 />
       </vue-lazy-component>
-      <vue-lazy-component class="section" id="section2" style="">
+      <!-- <vue-lazy-component class="section" id="section2" style="">
         <Section2 />
-      </vue-lazy-component>
+      </vue-lazy-component> -->
       <vue-lazy-component class="section" id="section3">
         <Section3 />
       </vue-lazy-component>
@@ -31,6 +32,42 @@
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section7">
         <Section7 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section8">
+        <Section8 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section9">
+        <Section9 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section10">
+        <Section10 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section11">
+        <Section11 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section12">
+        <Section12 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section13">
+        <Section13 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section14">
+        <Section14 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section15">
+        <Section15 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section16">
+        <Section16 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section17">
+        <Section17 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section18">
+        <Section18 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section19">
+        <Section19 />
       </vue-lazy-component>
       <!-- <vue-lazy-component class="section" id="section10">
         <Section10 :viewIndex="viewIndex" />
@@ -93,7 +130,7 @@ import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
-import Indigator from '@/components/Indigator.vue'
+// import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
 import Section1 from '@/projects/pjr/Section1.vue'
@@ -103,7 +140,18 @@ import Section4 from '@/projects/pjr/Section4.vue'
 import Section5 from '@/projects/pjr/Section5.vue'
 import Section6 from '@/projects/pjr/Section6.vue'
 import Section7 from '@/projects/pjr/Section7.vue'
-// import Section8 from '@/projects/jcs/Section8.vue'
+import Section8 from '@/projects/pjr/Section8.vue'
+import Section9 from '@/projects/pjr/Section9.vue'
+import Section10 from '@/projects/pjr/Section10.vue'
+import Section11 from '@/projects/pjr/Section11.vue'
+import Section12 from '@/projects/pjr/Section12.vue'
+import Section13 from '@/projects/pjr/Section13.vue'
+import Section14 from '@/projects/pjr/Section14.vue'
+import Section15 from '@/projects/pjr/Section15.vue'
+import Section16 from '@/projects/pjr/Section16.vue'
+import Section17 from '@/projects/pjr/Section17.vue'
+import Section18 from '@/projects/pjr/Section18.vue'
+import Section19 from '@/projects/pjr/Section19.vue'
 // import Section9 from '@/projects/jcs/Section9.vue'
 // import Section10 from '@/projects/jcs/Section10.vue'
 
@@ -124,6 +172,18 @@ export default {
     Section5,
     Section6,
     Section7,
+    Section8,
+    Section9,
+    Section10,
+    Section11,
+    Section12,
+    Section13,
+    Section14,
+    Section15,
+    Section16,
+    Section17,
+    Section18,
+    Section19,
     // Section8,
     // Section9,
     // Section10,

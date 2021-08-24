@@ -1,81 +1,45 @@
 <template>
   <div class="section5">
-    <div :class="`dialog ${isShow ? 'show' : ''}`">
-      <img :src="dialogImg" alt class="dialog-img" />
-      <img src="~@/assets/img/close.png" alt class="close" @click="closeDialog" />
+    <img src="./s5/1.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-down" data-aos-delay="600">
+    <h3 class="desc" v-if="isPC" data-aos="fade-up" data-aos-delay="400">
+      勤美（1532）集團成立於1972年，鑄造業起家，為亞洲第一專業鑄造廠，迄今為台灣（勤美，股票代號TW1532）、香港（勤美達，股票代號HK0319）雙上市集團，為大中華地區最大民營鑄造集團。近年轉型跨國控股公司，旗下擁有建設公司、大型商場、文化美學、基金會等大型事業部，追求人文美善的多角化經營。
+    </h3>
+    <div class="title" v-if="isPC" data-aos="fade-up" data-aos-delay="200">
+      台灣香港雙上市，跨國控股集團<br />職人精神，專心做好一件事
     </div>
-    <div class="title" data-aos="fade-up" data-aos-delay="200">
-      自然景觀豐富稀有
+    <div class="subtitle" v-if="isPC" data-aos="fade-up" data-aos-delay="400">
+      勤美集團
     </div>
-    <div class="subtitle" data-aos="fade-up" data-aos-delay="400">
-      名人政要別墅聚落
-    </div>
-    <div class="desc desc1" v-if="isPC" data-aos="fade-up" data-aos-delay="600">
-      陽明山自然森林資源豐富<br />
-      居高臨下，更可看到美麗的大台北景色<br />
-    </div>
-    <div class="desc desc2" v-if="isPC" data-aos="fade-up" data-aos-delay="800">
-      正因為陽明山擁有獨特的自然環境與景觀、隱密性又佳<br />
-      這裡的景觀別墅，更吸引企業名人爭相置產與收藏
-    </div>
-    <div class="desc desc1" v-if="isMobile" data-aos="fade-up" data-aos-delay="600">
-      陽明山自然森林資源豐富<br />
-      居高臨下，更可看到美麗的大台北景色<br />
-    </div>
-    <div class="desc desc2" v-if="isMobile" data-aos="fade-up" data-aos-delay="800">
-      正因為陽明山擁有獨特的自然環境與景觀、隱密性又佳，這裡的景觀別墅，更吸引企業名人爭相置產與收藏
-    </div>
-    <img src="./s5/style.png" :alt="`${info.caseName}_img`" class="style_l" data-aos="fade-up" data-aos-delay="200">
-    <img src="./s5/style.png" :alt="`${info.caseName}_img`" class="style_r" data-aos="fade-up" data-aos-delay="200">
-    <img src="./s5/t_style_l.png" :alt="`${info.caseName}_img`" class="t_style_l" data-aos="fade-right" data-aos-delay="400">
-    <img src="./s5/t_style_r.png" :alt="`${info.caseName}_img`" class="t_style_r" data-aos="fade-left" data-aos-delay="400">
-    <swiper :options="swiperOption" ref="mySwiper" data-aos="fade-down" data-aos-delay="800" data-aos-offset="-600" @slideChangeTransitionEnd="slideChanged">
-      <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide + index" class="item">
-        <img :src="slide.img" :class="`item-img`" @click="showDialog(index)" />
-        <p v-html="slide.p"></p>
-      </swiper-slide>
-
-      <div class="swiper-button-prev prev-btn" slot="button-prev" v-if="isMobile">
-      </div>
-      <div class="swiper-button-next next-btn" slot="button-next" v-if="isMobile">
-      </div>
-      <div class="swiper-pagination" slot="pagination"></div>
-    </swiper>
-    <!-- <div class="btn" v-if="isMobile">
-      <div class="btn_l" @click="blockIndex = prevIndex"><img :src="list[prevIndex].img" alt=""></div>
-      <div class="btn_r" @click="blockIndex = nextIndex"><img :src="list[nextIndex].img" alt=""></div>
-    </div> -->
+    <a href="http://www.cmp.com.tw/"  target="_blank" class="btn flex-c"  data-aos="fade-up" data-aos-delay="600">前往勤美集團網站</a>
   </div>
 </template>
-<style lang="scss">
-.swiper-pagination-bullet {
-  width: 14px;
-  height: 14px;
-  background: #000;
-  box-shadow: inset 0 0 0 0px #000;
-  opacity: 1;
-}
-.swiper-pagination-bullet-active {
-  background: #fff;
-  box-shadow: inset 0 0 0 1px #000;
-}
-</style>
+
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
-
 .section5 {
   width: 100%;
-  height: size(1320);
-  min-height: size(1320);
-  max-height: size(1320);
-  position: relative;
-  // background-color: #fff;
-  // min-height: size(900);
-  // background-image: url('./s2/bg.jpg');
-  // background-size: 100% 100%;
-  // background-position: 0 0;
-  // background-attachment: fixed;
-  // overflow: hidden;
+  height: size(900);
+  min-height: size(900);
+  max-height: auto;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: #fff;
+
+  // margin: 0 0 size(400) 0;
+
+  // &:before {
+  //   content: ' ';
+  //   position: fixed;
+  //   z-index: -1;
+  //   top: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   background: url('./s1/bg.jpg') center 0 no-repeat;
+  //   background-size: cover;
+  // }
 }
 
 .bg-img {
@@ -88,203 +52,70 @@
   object-fit: cover;
   margin-top: 0;
   // opacity: 0.5;
-
-  // &:nth-child(1) {
-  //   position: relative;
-  // }
-}
-.t_style_l {
-  @include img_l_pc(80, 267, 600);
 }
 
-.t_style_r {
-  @include img_r_pc(80, 267, 600);
-}
-
-.style_l {
-  @include img_l_pc(665, 0, 0);
-}
-
-.style_r {
-  @include img_r_pc(648, 314, 0);
+.img {
+  @include img_l_pc(1050, 93, 143);
 }
 
 .title {
-  @include img_c_pc(356, 214);
-  font-size: size(40);
+  @include img_r_pc(464, 262, 143);
+  font-size: size(34);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(5.2);
-  text-align: center;
-  color: #000000;
+  letter-spacing: normal;
+  text-align: left;
+  color: #267f9c;
   white-space: nowrap;
+}
+
+.desc {
+  @include img_r_pc(464, 375, 143);
+  font-size: size(16);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.63;
+  letter-spacing: size(1.6);
+  text-align: left;
+  color: #3e3a39;
 }
 
 .subtitle {
-  @include img_c_pc(356, 285);
-  font-size: size(40);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(5.2);
-  text-align: center;
-  color: #cc8b00;
-  white-space: nowrap;
-}
-.desc {
-  font-size: size(25);
+  @include img_r_pc(32, 71, 54);
+  font-size: size(28);
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.4;
-  letter-spacing: size(2);
+  line-height: 1;
+  letter-spacing: normal;
   text-align: center;
-  color: #4d4d4d;
-  white-space: nowrap;
+  color: #f3b2c1;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
 }
 
-.desc1 {
-  @include img_c_pc(526, 380);
-}
+.btn {
+  @include div_r_pc(238, 71, 550, 363);
+  font-size: size(26);
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #267f9c;
+  text-decoration: none;
+  border: 1px solid #267f9c;
+  transition: all .3s;
 
-.desc2 {
-  @include img_c_pc(630, 516);
-}
-
-.swiper-container {
-  @include img_l_pc(1920 + 920, 712, 0 - 460);
-  height: size(576)
-  // overflow: visible;
-}
-
-.item {
-  p {
-    position: absolute;
-    bottom: 0.5em;
-    right: 2em;
+  &:hover {
     color: #fff;
-    text-align: right;
-    font-size: size(15);
+    background-color: #267f9c;
   }
 }
-.item-img {
-  width: 100%;
-  height: size(546);
-  object-fit: cover;
-  margin: 0 auto;
-  cursor: pointer;
-}
-
-.swiper-pagination {
-  transform: none;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: auto;
-  bottom: 0%;
-  left: size(0 / 2);
-}
-
-.prev-btn,
-.next-btn {
-  height: 100%;
-  width: 10em;
-  font-size: size(20);
-  right: 1em;
-  top: -5%;
-  margin: 0;
-  cursor: pointer;
-  &::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    transform: translateX(200%);
-    // background-color: #df6c0088;
-    transition: all 0.3s;
-  }
-  &::after {
-    content: '';
-    width: 5em;
-    height: 5em;
-    position: absolute;
-    top: calc(50% - 0.5em);
-    left: calc(50% - 0.75em);
-    border: solid #fff;
-    border-width: 0.1em 0.1em 0 0;
-    transform: rotate(45deg) translate(-10%, 10%);
-  }
-  &:hover:before {
-    transform: translateX(0%);
-  }
-  &:hover:after {
-    animation: btn 0.5s ease-in-out infinite alternate;
-  }
-}
-.prev-btn {
-  transform: scaleX(-1);
-  right: auto;
-  left: 1em;
-}
-@keyframes btn {
-  to {
-    transform: rotate(45deg) translate(10%, -10%);
-  }
-}
-
-.dialog {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.5s;
-  display: none;
-
-  &.show {
-    display: block;
-    z-index: 210;
-    opacity: 1;
-  }
-
-  .dialog-img {
-    width: calc(90vh * 1920 / 1080 - 80px);
-    height: calc(90vh - 70px);
-    max-width: calc(90vw - 70px);
-    max-height: calc(90vw * 1080 / 1920 - 70px);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    top: 50%;
-    transform: translateY(-50%);
-    position: absolute;
-  }
-
-  .close {
-    position: absolute;
-    cursor: pointer;
-    right: 35px;
-    top: 25px;
-    width: 40px;
-  }
-}
-
-@media only screen and (max-width: 1440px) {
-}
-@media only screen and (max-width: 1280px) and (min-width: 1025px) {
-  .fullscreen {
-    height: 100vh;
-  }
-}
-
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -293,48 +124,23 @@
 @media screen and (max-width: 767px) {
   .section5 {
     width: 100vw;
-    height: sizem(510);
-    min-height: auto;
-    max-height: initial;
-    // background-image: url('./all/section_bg.jpg');
-    // background-attachment: scroll;
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
-    overflow: hidden;
-  }
-  .t_style_l {
-    @include img_l_m(39, 24, 30);
+    min-height: sizem(530);
+    max-height: sizem(530);
+    height: sizem(530);
+    // margin: 0 0 -12vw 0;
+    // background-size: auto size-m(750);
+    z-index: initial;
+    // &:before {
+    //   background-image: url('./s1/bg_m.jpg');
+    // }
   }
 
-  .t_style_r {
-    @include img_r_m(39, 24, 30);
-  }
-
-  .style_l {
-    // @include img_l_m(665, 0, 0);
-    display: none;
-  }
-
-  .style_r {
-    @include img_r_m(262, 104, 0);
+  .img {
+    @include img_c_m(315, 110);
   }
 
   .title {
-    @include img_c_m(178, 0);
-    font-size: sizem(20);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: sizem(2.6);
-    text-align: center;
-    color: #000000;
-    white-space: nowrap;
-  }
-
-  .subtitle {
-    @include img_c_m(178, 32);
+    @include img_r_m(88, 43, 31);
     font-size: sizem(20);
     font-weight: bold;
     font-stretch: normal;
@@ -346,137 +152,50 @@
     white-space: nowrap;
   }
 
+  .subtitle {
+    @include img_r_m(156, 77, 31);
+    font-size: sizem(20);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: sizem(2.6);
+    text-align: center;
+    color: #000;
+    white-space: nowrap;
+  }
+
   .desc {
+    @include img_r_m(315, 347, 30);
     font-size: sizem(16);
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.86;
     letter-spacing: sizem(0.7);
-    text-align: center;
+    text-align: left;
     color: #4d4d4d;
     white-space: normal;
   }
 
-  .desc1 {
-    @include img_c_m(315, 82);
+  .t_style {
+    @include img_r_m(218, 0, 0);
+    animation: strech 5s ease-in-out alternate infinite;
   }
 
-  .desc2 {
-    @include img_c_m(315, 150);
-  }
-
-  .swiper-container {
-    @include img_c_m(315, 254);
-    height: sizem(217);
-    // overflow: visible;
-  }
-
-  .item {
-    p {
-      font-size: sizem(12);
-    }
-  }
-  .item-img {
-    width: 90%;
-    margin: 0 auto;
-  }
-
-  .swipe-wrap {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .swipe-item {
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+  .cloud-bg {
+    .cloud {
+      animation: cloud 5s ease-in-out alternate infinite;
     }
 
-    // &:nth-child(1) {
-    //   z-index: 1;
-    //   // opacity: 1;
-    // }
-
-    // &.base {
-    //   z-index: 1;
-    //   opacity: 1;
-    // }
-    // &.active {
-    //   z-index: 2;
-    //   // opacity: 1;
-    // }
-    .slide-name {
-      right: auto;
-      top: auto;
-      bottom: 1.2rem;
-      right: 1.2rem;
-      font-size: sizem(15);
-    }
-  }
-
-  .item-img {
-    width: 100%;
-    height: sizem(187);
-    object-fit: cover;
-    margin: 0 auto;
-  }
-
-  .swiper-pagination {
-    transform: none;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: auto;
-    bottom: 0%;
-    left: sizem(0 / 2);
-  }
-
-  .dialog {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.5s;
-    display: none;
-    overflow: scroll;
-
-    &.show {
-      display: block;
-      z-index: 210;
-      opacity: 1;
+    .cloud1 {
+      @include img_l_m(213, 92, -20);
+      transform: translateX(-10%);
     }
 
-    .dialog-img {
-      width: auto;
-      height: 90vh;
-      max-width: none;
-      max-height: none;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      top: 50%;
-      transform: translateY(-50%);
-      position: absolute;
-    }
-
-    .close {
-      position: fixed;
-      cursor: pointer;
-      background: rgba(0, 0, 0, 0.6);
-      right: 0px;
-      top: 0px;
-      width: 40px;
+    .cloud2 {
+      @include img_r_m(200, 520, -20);
+      transform: translateX(-15%);
     }
   }
 }
@@ -484,19 +203,10 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
-import slider from '@/mixins/slider.js'
-import 'swiper/dist/css/swiper.css'
-
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import info from '@/info'
 
 export default {
   name: 'section5',
-  mixins: [slider],
-  components: {
-    swiper,
-    swiperSlide,
-  },
 
   data() {
     return {
@@ -504,96 +214,20 @@ export default {
       isPC,
       isMobile,
       isTablet,
-      isDialog: false,
-      blockIndex: 0,
-      swiperOption: {
-        slidesPerView: isMobile ? 1 : 3,
-        slidesPerGroup: isMobile ? 1 : 1,
-        spaceBetween: isTablet ? 20 : 10,
-        slidesPerColumn: isMobile ? 1 : 1,
-        allowSlidePrev: isMobile ? true : true,
-        allowSlideNext: isMobile ? true : true,
-        // effect : 'fade',
-        /*   fadeEffect: {
-    crossFade: true,
-  },*/
-        // centeredSlides: true,
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false,
-        },
-        loop: true,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-      },
-      slideList: isMobile
-        ? [
-            {
-              img: require('./s5/slider_1.png'),
-            },
-            {
-              img: require('./s5/slider_2.png'),
-            },
-            {
-              img: require('./s5/slider_3.png'),
-            },
-          ]
-        : [
-            {
-              img: require('./s5/slider_1.png'),
-            },
-            {
-              img: require('./s5/slider_2.png'),
-            },
-            {
-              img: require('./s5/slider_3.png'),
-            },
-          ],
-      dialogImg: '',
-      isShow: false,
+      // blockIndex: 0,
     }
   },
 
-  methods: {
-    slideChanged(e) {
-      const swiper = this.$refs.mySwiper.swiper
-      if (swiper.isEnd) {
-        this.slideIndex = 0
-      } else if (swiper.isBeginning) {
-        this.slideIndex = swiper.slides.length - 3
-      } else {
-        this.slideIndex = swiper.activeIndex - 1
-      }
-    },
+  methods: {},
 
-    showDialog(index) {
-      this.dialogImg = this.slideList[index].img
-      this.isShow = true
-    },
-    closeDialog() {
-      this.isShow = false
-    },
+  mounted() {
+    // setTimeout(() => {
+    //   this.blockIndex = 1
+    // }, 6000)
   },
 
   created() {},
 
-  mounted() {},
-
   computed: {},
-
-  watch: {
-    // viewIndex() {
-    //   if (this.viewIndex === 5) {
-    //     this.slideIndex = 0
-    //     console.log(this.slideIndex, 'slideIndex')
-    //   }
-    // },
-  },
 }
 </script>
