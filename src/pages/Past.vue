@@ -10,11 +10,11 @@
       id="fullpage"
     > -->
     <div class="section relative" id="section1" @init="init">
-      <Section1 />
+      <Section1 @changeContentIndex="changeContentIndex" />
     </div>
 
     <div class="section" id="section2">
-      <Section2 />
+      <Section2 :contentIndex="contentIndex" />
     </div>
     <div class="section" id="contact">
       <ContactSection :hideOrder="true" />
@@ -45,7 +45,7 @@ import { isMobile } from '@/utils'
 import ContactSection from '@/layouts/ContactSection2.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
-import Indigator from '@/components/Indigator.vue'
+// import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
 import Section1 from '@/projects/lc/past/Section1.vue'
@@ -71,6 +71,7 @@ export default {
       isSide: false,
       load: true,
       viewIndex: 0,
+      contentIndex: 0,
       // action: {
       //   moveTo: () => {},
       // },
@@ -117,9 +118,14 @@ export default {
     // if (this.isMobile) {
     //   this.$refs.fullPage.api.setResponsive(true)
     // }
+    this.contentIndex = this.$route.query.index
   },
   methods: {
     init() {},
+
+    changeContentIndex(index) {
+      this.contentIndex = index
+    },
     // onScroll() {
     //   // 获取所有锚点元素
     //   const navContents = document.querySelectorAll('.section')

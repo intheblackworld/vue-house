@@ -6,7 +6,7 @@
     </div>
     <img src="./s1/top.jpg" alt="" class="bg-img" v-if="isPC">
     <img src="./s1/top_m.jpg" alt="" class="bg-img" v-if="isMobile">
-    <carousel-3d ref="mycarousel" :width="imgWidth" :height="imgHeight" :autoplay="true" :autoplayTimeout="5000" :autoplayHoverPause="true" :perspective="0" :disable3d="isMobile ? false : false" :border="0" :display="isMobile ? 3 : 3" :space="isMobile ? 'auto' : 'auto'" @after-slide-change="onAfterSlideChange">
+    <carousel-3d ref="mycarousel" :width="imgWidth" :height="imgHeight" :autoplay="false" :autoplayTimeout="5000" :autoplayHoverPause="true" :perspective="0" :disable3d="isMobile ? false : false" :border="0" :display="isMobile ? 3 : 3" :space="isMobile ? 'auto' : 'auto'" @after-slide-change="onAfterSlideChange">
       <slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="carousel-3d-item">
         <img :src="slide.img" :class="`carousel-3d-img`" :alt="slide.alt" />
         <div class="mask">
@@ -284,6 +284,8 @@ export default {
   name: 'section1',
   mixins: [slider],
 
+  props: ['contentIndex'],
+
   components: {
     Carousel3d,
     Slide,
@@ -294,33 +296,32 @@ export default {
       isPC,
       isMobile,
       isTablet,
-      currentIndex: 0,
       imgWidth: window.innerWidth * 0.187,
-      imgHeight:  window.innerWidth * 0.156,
+      imgHeight: window.innerWidth * 0.156,
       slideList: [
         {
           img: require('../works/1/1.jpg'),
           alt: '',
           name: ' 立瑾醞',
-          desc:'<b>基地位置：</b>三重區神農街433號～439號<br><b>完工時間：</b>2020年<br><b>規劃樓層：</b>地上12層，地下2層<br><b>個案特色：</b><br>◆  校園第一排、河畔第一境<br>◆  結合陽光、空氣、水的絕美建築<br>◆ 低建蔽率，高公共生活空間',
+          desc: '<b>基地位置：</b>三重區神農街433號～439號<br><b>完工時間：</b>2020年<br><b>規劃樓層：</b>地上12層，地下2層<br><b>個案特色：</b><br>◆  校園第一排、河畔第一境<br>◆  結合陽光、空氣、水的絕美建築<br>◆ 低建蔽率，高公共生活空間',
         },
         {
           img: require('../works/2/1.jpg'),
           alt: '',
           name: ' 立瑾Way',
-          desc:'鶯歌鳳鳴 立瑾Way2020年11月<br>延續著住戶的期盼，<br>2020年11月19日於鶯歌鳳鳴重劃區，<br>辦理開工動土祈福典禮，<br>將接續公開新案「立瑾way」，<br>只為給您最好的居家。<br>基地地址：鶯歌鳳鳴段',
+          desc: '鶯歌鳳鳴 立瑾Way2020年11月<br>延續著住戶的期盼，<br>2020年11月19日於鶯歌鳳鳴重劃區，<br>辦理開工動土祈福典禮，<br>將接續公開新案「立瑾way」，<br>只為給您最好的居家。<br>基地地址：鶯歌鳳鳴段',
         },
         {
           img: require('../works/1/1.jpg'),
           alt: '',
           name: ' 立瑾醞',
-          desc:'<b>基地位置：</b>三重區神農街433號～439號<br><b>完工時間：</b>2020年<br><b>規劃樓層：</b>地上12層，地下2層<br><b>個案特色：</b><br>◆  校園第一排、河畔第一境<br>◆  結合陽光、空氣、水的絕美建築<br>◆ 低建蔽率，高公共生活空間',
+          desc: '<b>基地位置：</b>三重區神農街433號～439號<br><b>完工時間：</b>2020年<br><b>規劃樓層：</b>地上12層，地下2層<br><b>個案特色：</b><br>◆  校園第一排、河畔第一境<br>◆  結合陽光、空氣、水的絕美建築<br>◆ 低建蔽率，高公共生活空間',
         },
         {
           img: require('../works/2/1.jpg'),
           alt: '',
           name: ' 立瑾Way',
-          desc:'鶯歌鳳鳴 立瑾Way2020年11月<br>延續著住戶的期盼，<br>2020年11月19日於鶯歌鳳鳴重劃區，<br>辦理開工動土祈福典禮，<br>將接續公開新案「立瑾way」，<br>只為給您最好的居家。<br>基地地址：鶯歌鳳鳴段',
+          desc: '鶯歌鳳鳴 立瑾Way2020年11月<br>延續著住戶的期盼，<br>2020年11月19日於鶯歌鳳鳴重劃區，<br>辦理開工動土祈福典禮，<br>將接續公開新案「立瑾way」，<br>只為給您最好的居家。<br>基地地址：鶯歌鳳鳴段',
         },
         /*
         {
@@ -335,11 +336,10 @@ export default {
 
   methods: {
     goToSlide(index) {
-      this.currentIndex = index
       this.$refs.mycarousel.goSlide(index)
     },
     onAfterSlideChange(index) {
-      this.currentIndex = index
+      this.$emit('changeContentIndex', index)
     },
   },
 
@@ -347,6 +347,14 @@ export default {
     if (this.isMobile) {
       this.imgWidth = window.screen.width * 0.6
       this.imgHeight = window.screen.width * 0.6 * (272 / 312)
+    }
+
+    if (this.$route.query.index == 1 || this.$route.query.index == 3) {
+      this.goToSlide(0)
+    }
+
+    if (this.$route.query.index == 2 || this.$route.query.index == 4) {
+      this.goToSlide(1)
     }
   },
 

@@ -49,7 +49,7 @@ import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
 import Section1 from '@/projects/lc/hot/Section1.vue'
-import Section2 from '@/projects/lc/hot/Section2.vue'
+// import Section2 from '@/projects/lc/hot/Section2.vue'
 
 export default {
   name: 'hot',
@@ -62,7 +62,7 @@ export default {
     ContactSection,
     MobileNav,
     Section1,
-    Section2,
+    // Section2,
   },
 
   data() {

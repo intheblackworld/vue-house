@@ -5,10 +5,10 @@
       Products
     </div>
     <img src="./s5/bg.png" alt="" class="bg-img s-bg">
-    <carousel-3d ref="mycarousel" :width="imgWidth" :height="imgHeight" :autoplay="true" :autoplayTimeout="5000" :autoplayHoverPause="true" :perspective="0" :disable3d="isMobile ? false : false" :border="0" :display="isMobile ? 3 : 3" :space="isMobile ? 'auto' : 'auto'" @after-slide-change="onAfterSlideChange">
+    <carousel-3d ref="mycarousel" :width="imgWidth" :height="imgHeight" :autoplay="false" :autoplayTimeout="5000" :autoplayHoverPause="true" :perspective="0" :disable3d="isMobile ? false : false" :border="0" :display="isMobile ? 3 : 3" :space="isMobile ? 'auto' : 'auto'" @after-slide-change="onAfterSlideChange">
       <slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="carousel-3d-item">
         <img :src="slide.img" :class="`carousel-3d-img`" :alt="slide.alt" />
-        <div class="mask" @click="$router.push('/past')">
+        <div class="mask" @click="$router.push(`/past?index=${index + 1}`)">
           <div class="border flex-c">
             {{slide.name}}
           </div>
@@ -18,8 +18,8 @@
     <img src="./s5/s.png" alt="" class="shadow">
     <div class="info">
       <div class="info-item">
-        <div class="info-desc" v-html="slideList[slideIndex].desc"></div>
-       <!-- <div class="info-title">
+        <div class="info-desc" v-html="slideList[currentIndex].desc"></div>
+        <!-- <div class="info-title">
           基地位置：
         </div>
         <div class="info-desc">
@@ -55,7 +55,7 @@
 
 .section5 {
   width: size(1920);
-  height:auto;
+  height: auto;
   // overflow: hidden;
   position: static;
   background: #fff;
@@ -112,27 +112,27 @@
 .carousel-3d-container {
   z-index: 3 !important;
   //position: absolute;
-  margin:0 auto size(500) !important;
+  margin: 0 auto size(500) !important;
   top: size(500);
-
 }
 
 .carousel-3d-item {
   // position: relative;
 
   &.current {
-      .mask {
-        opacity: 1;
-      }
+    .mask {
+      opacity: 1;
+    }
     &:hover {
       .mask {
         opacity: 0;
       }
-   }
+    }
   }
-  }
+}
 .carousel-3d-img {
-  height: 100%;object-fit: cover;
+  height: 100%;
+  object-fit: cover;
 }
 .mask {
   width: 100%;
@@ -166,13 +166,13 @@
 .shadow {
   //@include img_l_pc(1388, 770, 266);
   width: size(1380);
-  margin:size(-70) auto size(30);
+  margin: size(-70) auto size(30);
 }
 
 .info {
   width: size(1244);
   //height: 276px;
- // position: absolute;
+  // position: absolute;
   left: 0;
   right: 0;
   margin: 0 auto size(50);
@@ -185,9 +185,9 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.65;
-  letter-spacing:0.05em;
+  letter-spacing: 0.05em;
   color: #ff8200;
-    text-align: center;
+  text-align: center;
   .info-item {
     width: 100%;
   }
@@ -219,7 +219,7 @@
 
   .bg-img {
     width: sizem(375);
-    height: sizem(402); 
+    height: sizem(402);
     position: absolute;
     top: 0;
     left: 0;
@@ -353,25 +353,25 @@ export default {
           img: require('../works/1/1.jpg'),
           alt: '',
           name: ' 立瑾醞',
-          desc:'<b>基地位置：</b>三重區神農街433號～439號<br><b>完工時間：</b>2020年<br><b>規劃樓層：</b>地上12層，地下2層<br><b>個案特色：</b><br>◆  校園第一排、河畔第一境<br>◆  結合陽光、空氣、水的絕美建築<br>◆ 低建蔽率，高公共生活空間',
+          desc: '<b>基地位置：</b>三重區神農街433號～439號<br><b>完工時間：</b>2020年<br><b>規劃樓層：</b>地上12層，地下2層<br><b>個案特色：</b><br>◆  校園第一排、河畔第一境<br>◆  結合陽光、空氣、水的絕美建築<br>◆ 低建蔽率，高公共生活空間',
         },
         {
           img: require('../works/2/1.jpg'),
           alt: '',
           name: ' 立瑾Way',
-          desc:'鶯歌鳳鳴 立瑾Way2020年11月<br>延續著住戶的期盼，<br>2020年11月19日於鶯歌鳳鳴重劃區，<br>辦理開工動土祈福典禮，<br>將接續公開新案「立瑾way」，<br>只為給您最好的居家。<br>基地地址：鶯歌鳳鳴段',
+          desc: '鶯歌鳳鳴 立瑾Way<br />2020年11月<br>延續著住戶的期盼，<br>2020年11月19日於鶯歌鳳鳴重劃區，<br>辦理開工動土祈福典禮，<br>將接續公開新案「立瑾way」，<br>只為給您最好的居家。<br>基地地址：鶯歌鳳鳴段',
         },
         {
           img: require('../works/1/1.jpg'),
           alt: '',
           name: ' 立瑾醞',
-          desc:'<b>基地位置：</b>三重區神農街433號～439號<br><b>完工時間：</b>2020年<br><b>規劃樓層：</b>地上12層，地下2層<br><b>個案特色：</b><br>◆  校園第一排、河畔第一境<br>◆  結合陽光、空氣、水的絕美建築<br>◆ 低建蔽率，高公共生活空間',
+          desc: '<b>基地位置：</b>三重區神農街433號～439號<br><b>完工時間：</b>2020年<br><b>規劃樓層：</b>地上12層，地下2層<br><b>個案特色：</b><br>◆  校園第一排、河畔第一境<br>◆  結合陽光、空氣、水的絕美建築<br>◆ 低建蔽率，高公共生活空間',
         },
         {
           img: require('../works/2/1.jpg'),
           alt: '',
           name: ' 立瑾Way',
-          desc:'鶯歌鳳鳴 立瑾Way2020年11月<br>延續著住戶的期盼，<br>2020年11月19日於鶯歌鳳鳴重劃區，<br>辦理開工動土祈福典禮，<br>將接續公開新案「立瑾way」，<br>只為給您最好的居家。<br>基地地址：鶯歌鳳鳴段',
+          desc: '鶯歌鳳鳴 立瑾Way2020年11月<br>延續著住戶的期盼，<br>2020年11月19日於鶯歌鳳鳴重劃區，<br>辦理開工動土祈福典禮，<br>將接續公開新案「立瑾way」，<br>只為給您最好的居家。<br>基地地址：鶯歌鳳鳴段',
         },
         /*{
           img: require('../works/3/1.jpg'),

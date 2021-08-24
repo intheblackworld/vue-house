@@ -1,6 +1,6 @@
 <template>
   <div class="section2">
-    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="contentIndex % 2 === 0">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -14,20 +14,32 @@
         </div>
       </div>
     </div>
-    <!-- <img src="./s1/01.jpg" alt="" class="img"> -->
+    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="contentIndex % 2 === 1">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList2" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" alt="">
+            <div class="slide-name absolute" v-html="slide.name"></div>
+          </div>
+        </transition-group>
+        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+          <img src="../about/s3/l.png" alt="" class="prev-btn" @click="decIndex">
+          <img src="../about/s3/r.png" alt="" class="next-btn" @click="addIndex">
+        </div>
+      </div>
+    </div>
     <div class="txt">
-    <div class="content-title">立瑾醞</div>
-    <div class="content-desc">
-      基地位置： 三重區神農街433號～439號<br />
-      完工時間： 2020年<br />
-      規劃樓層： 地上12層，地下2層<br />
-      個案特色：<br />
-      ◆ 校園第一排、河畔第一境<br />
-      ◆ 結合陽光、空氣、水的絕美建築<br />
-      ◆ 低建蔽率，高公共生活空間
-    </div></div>
-    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
+      <div class="content-title" v-html="contentList[contentIndex].title"></div>
+      <div class="content-desc" v-html="contentList[contentIndex].desc"></div>
+      <a class="btn flex-c" :href="contentList[contentIndex].link" target="_blank" v-if="contentList[contentIndex].link">
+        官網賞析
+      </a>
+    </div>
+    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC && contentIndex % 2 === 0">
       <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+    </div>
+    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC && contentIndex % 2 === 1">
+      <div :class="`pagination-dot`" v-for="(slide, index) in slideList2" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
     </div>
   </div>
 </template>
@@ -102,9 +114,11 @@
   color: #ff8200;
   white-space: nowrap;
 }
-.txt{
-width: size(583);
-right:0;bottom: size(370);position: absolute;
+.txt {
+  width: size(583);
+  right: 0;
+  bottom: size(370);
+  position: absolute;
   color: #ff8100;
   text-align: justify;
   font-size: size(20);
@@ -113,9 +127,16 @@ right:0;bottom: size(370);position: absolute;
   font-style: normal;
   line-height: 1.8;
   letter-spacing: 0.05em;
-  &::after{content: "";width:calc(100% + 5vw);display: block;
-   height: 1px; right: 0;bottom: size(-5);position: absolute;
-   background:#ff8100;}
+  &::after {
+    content: '';
+    width: calc(100% + 5vw);
+    display: block;
+    height: 1px;
+    right: 0;
+    bottom: size(-5);
+    position: absolute;
+    background: #ff8100;
+  }
 }
 .content-title {
   font-size: size(40);
@@ -131,7 +152,10 @@ right:0;bottom: size(370);position: absolute;
 }
 
 .btn {
-  @include div_r_pc(200, 40, 850, 260);
+  width: size(200);
+  height: size(40);
+  text-decoration: none;
+  margin-top: size(80);
   font-size: size(20);
   font-weight: normal;
   font-stretch: normal;
@@ -329,7 +353,7 @@ right:0;bottom: size(370);position: absolute;
   .section2 {
     width: 100vw;
     min-height: sizem(0);
-    max-height:initial;
+    max-height: initial;
     height: auto;
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
@@ -358,37 +382,49 @@ right:0;bottom: size(370);position: absolute;
     // background-image: url('./s1/bg.png');
     background-attachment: fixed;
   }
-.txt{
-width: sizem(310);
-right:sizem(0);bottom:auto;top:sizem(0);position: relative;
-  color: #ff8100;margin:sizem(50) sizem(0) sizem(0) sizem(40);
-  text-align: justify;
-  font-size: sizem(15);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.8;
-  letter-spacing: 0.05em;
-  margin-bottom: sizem(50);;
-  &::after{content: "";width:1px;display: block;
-   height: calc(100% + 10vw);left: -3vw; right:auto;bottom: sizem(-5);position: absolute;
-   background:#ff8100;}
-}
-.content-title {
-  font-size: sizem(25);
-  font-weight: bold;
-}
-.content-desc {
-  margin: 0 0 0.5em;
-
-  span {
+  .txt {
+    width: sizem(310);
+    right: sizem(0);
+    bottom: auto;
+    top: sizem(0);
+    position: relative;
+    color: #ff8100;
+    margin: sizem(50) sizem(0) sizem(0) sizem(40);
+    text-align: justify;
     font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+    margin-bottom: sizem(50);
+    &::after {
+      content: '';
+      width: 1px;
+      display: block;
+      height: calc(100% + 10vw);
+      left: -3vw;
+      right: auto;
+      bottom: sizem(-5);
+      position: absolute;
+      background: #ff8100;
+    }
+  }
+  .content-title {
+    font-size: sizem(25);
     font-weight: bold;
   }
-}
+  .content-desc {
+    margin: 0 0 0.5em;
+
+    span {
+      font-size: sizem(15);
+      font-weight: bold;
+    }
+  }
 
   .content-desc {
-   // @include div_r_m(310, 260, 356, 22);
+    // @include div_r_m(310, 260, 356, 22);
     font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
@@ -403,6 +439,25 @@ right:sizem(0);bottom:auto;top:sizem(0);position: relative;
       font-weight: bold;
       letter-spacing: sizem(1.15);
     }
+  }
+
+  .btn {
+    width: sizem(150);
+    height: sizem(40);
+    font-size: sizem(23);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.65;
+    letter-spacing: sizem(1);
+    text-align: left;
+    background-color: #ff8200;
+    color: #fff;
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
   }
 
   /* Swipe */
@@ -568,15 +623,37 @@ export default {
   name: 'section2',
   mixins: [slider],
 
+  props: ['contentIndex'],
+
   data() {
     return {
       isPC,
       isMobile,
       isTablet,
       tabIndex: 0,
+      contentList: [
+        {
+          title: '立瑾醞',
+          desc: '基地位置： 三重區神農街433號～439號<br />完工時間： 2020年<br />規劃樓層： 地上12層，地下2層<br />個案特色：<br />◆ 校園第一排、河畔第一境<br />◆ 結合陽光、空氣、水的絕美建築<br />◆ 低建蔽率，高公共生活空間',
+        },
+        {
+          title: '鶯歌鳳鳴 立瑾Way',
+          desc: '2020年11月<br>延續著住戶的期盼，<br>2020年11月19日於鶯歌鳳鳴重劃區，<br>辦理開工動土祈福典禮，<br>將接續公開新案「立瑾way」，<br>只為給您最好的居家。<br><b>基地地址：鶯歌鳳鳴段</b>',
+          link: 'https://way.h35.tw/',
+        },
+        {
+          title: '立瑾醞',
+          desc: '基地位置： 三重區神農街433號～439號<br />完工時間： 2020年<br />規劃樓層： 地上12層，地下2層<br />個案特色：<br />◆ 校園第一排、河畔第一境<br />◆ 結合陽光、空氣、水的絕美建築<br />◆ 低建蔽率，高公共生活空間',
+        },
+        {
+          title: '鶯歌鳳鳴 立瑾Way',
+          desc: '2020年11月<br>延續著住戶的期盼，<br>2020年11月19日於鶯歌鳳鳴重劃區，<br>辦理開工動土祈福典禮，<br>將接續公開新案「立瑾way」，<br>只為給您最好的居家。<br><b>基地地址：鶯歌鳳鳴段</b>',
+          link: 'https://way.h35.tw/',
+        },
+      ],
       slideList: [
         {
-          img:require('../works/1/1.jpg'),
+          img: require('../works/1/1.jpg'),
           // name: '台北101',
         },
         {
@@ -590,7 +667,7 @@ export default {
       ],
       slideList2: [
         {
-          img:require('../works/2/1.jpg'),
+          img: require('../works/2/1.jpg'),
           // name: '台北101',
         },
         {
@@ -623,10 +700,17 @@ export default {
     // },
   },
 
-  mounted() {},
+  mounted() {
+  },
 
   created() {},
 
   computed: {},
+
+  watch: {
+    contentIndex(val) {
+      this.slideIndex = 0
+    },
+  },
 }
 </script>
