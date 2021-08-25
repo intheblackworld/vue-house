@@ -263,8 +263,8 @@ export default {
         slidesPerView: isMobile ? 1 : 3,
         spaceBetween: isTablet ? 20 : 30,
         slidesPerColumn: isMobile ? 1 : 1,
-        allowSlidePrev: isMobile ? true : true,
-        allowSlideNext: isMobile ? true : true,
+        allowSlidePrev: true,
+        allowSlideNext: true,
         centeredSlides: true,
         autoplay: {
           delay: 4000,

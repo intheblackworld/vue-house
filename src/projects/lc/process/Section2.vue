@@ -1041,8 +1041,8 @@ export default {
     },
 
     add() {
-       this.slideIndex =
-        this.slideIndex === this.list[this.$route.params.id][this.dialogIndex].imgs.length - 1 ? 0 : this.slideIndex + 1
+      this.slideIndex =
+      this.slideIndex === this.list[this.$route.params.id][this.dialogIndex].imgs.length - 1 ? 0 : this.slideIndex + 1
     },
 
     dec() {
