@@ -2,7 +2,7 @@
   <div>
     <div class="section1">
       <!--<img src="./s1/bg.png" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC">-->
-      <img src="./s1/bg_1.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC">
+      <img src="./s1/bg_1.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC" data-aos="fade">
       <img src="./mo/1/bg_1_m.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isMobile">
       <!--<img src="./mo/1/bg.png" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isMobile">-->
       <img src="./s1/logo_1.png" :alt="`${info.caseName}_logo`" class="logo" data-aos="fade-down">
@@ -23,25 +23,25 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .section1 {
+  background: #000;
   width: size(1920);
   height: 100vh;
-  min-height: size(1080);
+  min-height: size(900);
   max-height: size(1080);
   overflow: hidden;
+  position: relative;
 }
 .bg-img {
-  width: size(1920);
-  height: 100%;
+  width:100%;
+  height:100%;
   //min-height: 900px;
   position: absolute;
   top: 0;
   left: 0;
   display: block;
   object-fit: cover;
+transform: scaley(1.3) rotate(10deg);
 
-  &:nth-child(1) {
-    position: relative;
-  }
 }
 
 .logo {
