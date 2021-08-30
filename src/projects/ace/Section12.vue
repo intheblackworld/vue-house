@@ -263,7 +263,7 @@ export default {
 
   watch: {
     viewIndex(val) {
-      if (val === 9) {
+      if (val === 1) {
         if (!this.isMobile) {
           if (!window.YT) {
             window.onYouTubeIframeAPIReady = this.loadVideo
