@@ -258,7 +258,7 @@ export default {
 
   .order {
     width: size(1440);
-    margin: 0 auto;
+    margin:3vw auto;
     display: flex;
     flex-direction: column;
     margin-bottom: 3rem;
@@ -358,7 +358,7 @@ export default {
   }
 
   .google-map {
-    margin-top: 35px;
+   // margin-top: 35px;
     margin-bottom: 15px;
   }
 }
