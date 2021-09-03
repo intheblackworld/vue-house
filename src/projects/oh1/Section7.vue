@@ -6,12 +6,12 @@
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
             <img :src="slide.img" :alt="slide-name" v-if="isMobile" class="swipe-bg">
             <img :src="slide.img" :alt="slide-name">
-            <div class="slide-name absolute" v-html="slide.name"></div>
+          <!--  <div class="slide-name absolute" v-html="slide.name"></div>  -->
           </div>
         </transition-group>
-        <div class="pagination absolute flex-ac" v-if="isPC">
+      <!--  <div class="pagination absolute flex-ac" v-if="isPC">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-        </div>
+        </div> 
         <div class="swipe-btns absolute flex-ac flex-jb">
           <div class="prev-btn" @click="decIndex">
             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16.28 28.67' preserveAspectRatio='xMidyMid' fill='%23338000'%3E%3Cpolygon points='14.33 28.67 16.28 26.72 3.79 14.23 16.18 1.84 14.33 0 0 14.33 14.33 28.67'/%3E%3C/svg%3E" alt="">
@@ -19,9 +19,11 @@
           <div class="next-btn" @click="addIndex">
             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16.28 28.67' preserveAspectRatio='xMidyMid' fill='%23338000'%3E%3Cpolygon points='14.33 28.67 16.28 26.72 3.79 14.23 16.18 1.84 14.33 0 0 14.33 14.33 28.67'/%3E%3C/svg%3E" alt="">
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
+
+    <!-- 
     <div class="txt" data-aos="fade-up" data-aos-delay="0">
       <h3 class="title title1" data-aos="fade-up" data-aos-delay="200">
         公設預留
@@ -34,6 +36,8 @@
         公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設
       </div>
     </div>
+
+    -->
   </div>
 </template>
 <style lang="scss" scoped>
@@ -179,11 +183,12 @@
   width: 100%;
   height: 100%;
   z-index: 0;
+  background: #fff;
 
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   .slide-name {
@@ -305,8 +310,9 @@
 
 @media screen and (max-width: 767px) {
   .section7 {
-    width: 100vw;
-    height: sizem(604);
+    width: 100%;
+    height: sizem(317);
+  //  height: sizem(604);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -587,7 +593,7 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s7/img.jpg'),
+          img: require('./s7/螢幕截圖加工版.png'),
           name: '公設',
         },
       ],

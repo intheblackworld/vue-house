@@ -3,12 +3,12 @@
     <img src="./s11/cloud1.png" class="cloud1">
     <img src="./s11/cloud2.png" class="cloud2">
     <div class="title"  data-aos="fade-up" data-aos-delay="400">
-      樣品屋樣品屋
+      實品屋
     </div>
     <div class="button">
-      <div class="button1" @click="showDialog('https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://pannellum.org/images/cerro-toco-0.jpg&autoLoad=true')"><h3>樣品屋<br>VR 720 實境觀看</h3></div>
-      <div class="button2" @click="showDialog('https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://pannellum.org/images/cerro-toco-0.jpg&autoLoad=true')"><h3>樣品屋<br>VR 720 實境觀看</h3></div>
-      <div class="button3" @click="showDialog('https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://pannellum.org/images/cerro-toco-0.jpg&autoLoad=true')"><h3>樣品屋<br>VR 720 實境觀看</h3></div>
+      <div class="button1" @click="showDialog('http://yourhouse.tw/VRocean/H2/')"><h3>精品2房<br>VR 720 虛擬環景</h3></div>
+ <!--     <div class="button2" @click="showDialog('')"><h3>樣品屋<br>VR 720 實境觀看</h3></div>
+      <div class="button3" @click="showDialog('')"><h3>樣品屋<br>VR 720 實境觀看</h3></div> -->
     </div>
       <div :class="`dialog`" v-if="isShowDialog">
         <div
@@ -38,8 +38,8 @@
     <iframe src="https://www.h35.banner.tw/hy/" frameborder="0"></iframe>
   <div class="box_l"></div>
   <div class="box_r"></div>
-  </div> -->
-    <div class="desc" data-aos="fade-up" data-aos-delay="200" >文案文案文案文案</div>
+  </div>
+    <div class="desc" data-aos="fade-up" data-aos-delay="200" >文案文案文案文案</div> -->
 </div>
 </template>
 <style lang="scss" scoped>
@@ -61,7 +61,7 @@
   width: size(1720);
   margin:size(30) auto size(30) auto;
   display: flex;
-   justify-content:space-between;
+   justify-content:center;
 div{
   width: size(557);
   height: size(443);
@@ -261,7 +261,7 @@ iframe {
   padding: sizem(80) 0;
   
 .button{
-  width:100%;height:sizem(500);align-items:center;
+  width:100%;height:sizem(200);align-items:center;
   margin:sizem(30) auto sizem(30) auto;flex-direction:column;
 div{
   width:sizem(310);
