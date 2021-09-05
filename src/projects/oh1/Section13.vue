@@ -6,7 +6,7 @@
       實品屋
     </div>
     <div class="button">
-      <div class="button1" @click="showDialog('http://yourhouse.tw/VRocean/H2/')"><h3>精品2房<br>VR 720 虛擬環景</h3></div>
+      <div class="button1" @click="showDialog('https://yourhouse.tw/VRocean/H2/')"><h3>精品2房<br>VR 720 虛擬環景</h3></div>
  <!--     <div class="button2" @click="showDialog('')"><h3>樣品屋<br>VR 720 實境觀看</h3></div>
       <div class="button3" @click="showDialog('')"><h3>樣品屋<br>VR 720 實境觀看</h3></div> -->
     </div>
