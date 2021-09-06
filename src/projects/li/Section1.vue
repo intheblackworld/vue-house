@@ -3,10 +3,12 @@
     <img src="./s1/t0.png" class="t1" alt="麗昇陽_終於等到"
           data-aos="fade"
           data-aos-delay="0">
-          <div class="t2">爭藏中壢的第一次</div>
+          <div class="t2"
+          data-aos="fade"
+          data-aos-delay="100">爭藏中壢的第一次</div>
     <img src="./s1/t2.png" class="t3" alt="中壢國小30-47坪昇陽建設"
           data-aos="fade"
-          data-aos-delay="0">
+          data-aos-delay="200">
     <img src="./s1/logo.png" class="logo" alt="麗昇陽_終於等到，爭藏中壢的第一次"
           data-aos="fade"
           data-aos-delay="0">
