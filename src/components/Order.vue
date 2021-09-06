@@ -381,7 +381,7 @@ export default {
   }
 
   .form_input{
-     border-right: 1px solid #fff000;
+     border-right: 1px solid #000c;
      padding-right:3%;
      margin-right:3%;
     .row{
@@ -452,7 +452,7 @@ export default {
     }
 
 .form_input{
-     border-right:0px solid #fff000;
+     border-right:0px solid #000C;
      padding-right:0%;
      margin-right:0%;
     margin-bottom: 0.935em;

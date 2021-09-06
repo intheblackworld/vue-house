@@ -148,7 +148,7 @@ export default {
   transition: all 0.5s;
   position: relative;
   overflow: hidden;
-  font-weight: 900;
+  //font-weight: 900;
   &.half {
     width: 49%;
   }
@@ -210,7 +210,7 @@ export default {
   font-size: 18px;
   cursor: pointer;
   text-decoration: none;
-  font-weight: 900;
+  //font-weight: 900;
   // border-top-right-radius: 60px;
   // border-bottom-right-radius: 60px;
   color: $contact_google_btn_color;
