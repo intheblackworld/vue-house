@@ -306,7 +306,7 @@ export default {
   }
 
   .logo {
-    margin-bottom: 20px;
+   // margin-bottom: 20px;
     margin: 0 auto 30px;
     left: auto;
     position: relative;

@@ -9,7 +9,7 @@
       ref="fullPage"
       :options="options"
       id="fullpage"
-    > -->
+    >
       <div class="animate-bg">
         <div class="bg1">
         </div>
@@ -17,7 +17,7 @@
         </div>
         <div class="bg3">
         </div>
-      </div>
+      </div> -->
       <vue-lazy-component class="section relative" id="section1" @init="init">
         <Section1 />
       </vue-lazy-component>
@@ -69,7 +69,7 @@
 #contact {
   z-index: 3;
 }
-
+/* 
 .bg-img {
   // background-image: url('~@/projects/lj/s1/bg.png');
   // padding-top: $nav_pc_height;
@@ -79,60 +79,7 @@
   background-repeat: repeat;
   overflow: hidden; //試底下多的那塊哪來的
 }
-
-.animate-bg {
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  position: fixed;
-  background: linear-gradient(
-      to bottom,
-      rgba(0, 152, 205, 1) 0%,
-      rgba(141, 194, 31, 1) 100%
-    )
-    fixed;
-}
-
-.animate-bg > div {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 114%;
-  height: 100%;
-}
-
-.bg1 {
-  background: url('~@/projects/oh/s1/1.png');
-  animation: bga 3s ease-in-out infinite alternate;
-  background-size: size(641) auto;
-}
-
-.bg2 {
-  background: url('~@/projects/oh/s1/2.png');
-  animation: bga 3s 0s ease-in-out infinite alternate;
-  background-size: size(641) auto;
-}
-
-.bg3 {
-  background: url('~@/projects/oh/s1/3.png');
-  animation: bga 3s 1s ease-in-out infinite alternate;
-  background-size: size(641) auto;
-}
-
-@keyframes bga {
-  to {
-    transform: translate(-7%, 3%) scale(0.95);
-  }
-}
-
-@media only screen and (max-width: 767px) {
-.bg1,
-.bg2,
-.bg3 {
-  background-size: sizem(430) auto;
-}
-
-}
+ */
 </style>
 
 <script>

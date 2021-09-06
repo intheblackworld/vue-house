@@ -39,9 +39,10 @@ body {
 }
 
 .home {
-  background-image: $bg;
+  //background-image: $bg;
   // background-image: url('~@/projects/lj/s1/bg.png');
   // padding-top: $nav_pc_height;
+  background: linear-gradient(to right, #911 0%,#e4002f 80%,#e6002f 100%);
   background-attachment: fixed;
   background-size: cover;
   background-position: cover;

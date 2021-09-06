@@ -256,7 +256,7 @@ export default {
 }
 .order-bg {
   // background-color: $order_bg_color;
-  background-image: $order_bg_image;
+ // background-image: $order_bg_image;
   background-repeat: no-repeat;
   // position: relative;
   padding-top: 130px;
@@ -276,18 +276,18 @@ export default {
   .order-title {
     font-family: $family2;
     width: 80vw;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin: 0 auto 10px;
+    padding-top: 0.4em;
+    padding-bottom: 0;
+    margin: 0 auto 0.2em;
     display: inline-block;
-    font-weight: 900;
+    font-weight:700;
     line-height: 1.7;
-    letter-spacing: 10px;
+    letter-spacing: 0.11em;
     font-size: calc(100vw * 50 / 1920);
     text-align: center;
     color: $order_title_color;
     position: relative;
-
+/* 
     &::after {
       content: '';
       width: 329px;
@@ -304,7 +304,7 @@ export default {
       position: absolute;
       left: 220px;
       top: 50%;
-    }
+    } */
     // border-top: 1px solid #248184;
     // border-bottom: 1px solid #248184;
   }
@@ -427,28 +427,8 @@ export default {
     }
     .order-title {
       width: 290px;
-      padding-top: 10px;
-      padding-bottom: 0px;
+      padding-bottom: 0;
       font-size: calc(100vw * 35 / 375);
-      letter-spacing: 4px;
-
-      &::after {
-        content: '';
-        width: 60px;
-        border-top: 2px solid #fff000;
-        position: absolute;
-        right: -10px;
-        top: 50%;
-      }
-
-      &::before {
-        content: '';
-        width: 60px;
-        border-top: 2px solid #fff000;
-        position: absolute;
-        left: -10px;
-        top: 50%;
-      }
     }
 
     .order-subtitle {

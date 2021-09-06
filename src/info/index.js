@@ -1,24 +1,22 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '接待會館：新北市淡水區濱海路一段221號',
+  address: '桃園市中壢區大同路186號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14441.667847824308!2d121.4297412!3d25.1891574!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442baae99a969a5%3A0xe237443136d4542c!2zMjUx5paw5YyX5biC5reh5rC05Y2A5r-x5rW36Lev5LiA5q61MjIx6Jmf!5e0!3m2!1szh-TW!2stw!4v1619420285955!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/ni3y9Fgx5pkodSaPA',
-  phone: '02-2805-5588',
-  fbLink: 'https://www.facebook.com/名軒海樂地-Ocean-Holiday-100895095426997',
-  fbMessage: 'https://m.me/100895095426997',
-  caseName: '名軒海樂地',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.2977358294615!2d121.21881161537769!3d24.955982847567636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468224a47c85d5f%3A0xe9ce48c6dd51fd48!2zMzIw5qGD5ZyS5biC5Lit5aOi5Y2A5aSn5ZCM6LevMTg26Jmf!5e0!3m2!1szh-TW!2stw!4v1630914350973!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/2v4Ded5m8UZowX19A',
+  phone: '',
+  fbLink: 'https://www.facebook.com/',
+  fbMessage: 'https://m.me/',
+  caseName: '麗昇陽',
   indigatorLength: 10,
 
   houseInfos: [
-    ['投資興建', '麗寶集團-名軒開發'],
-    ['門廳公設', '杜墨設計．十口人聯合建築師事務所．設計總監-李美文'],
-    ['建築設計', '呂文程、林大俊建築師'],
-    ['景觀規劃', '綠點有限公司'],
-    ['結構設計', '豐立工程顧問有限公司'],
-    ['建築工程', '中福營造股份有限公司'],
-    ['外觀美學＆燈光設計', '陳明偉建築師'],
-    ['企劃銷售', '綠堡機構-寶穎廣告'],
+    ['投資興建', ''],
+    ['門廳公設', ''],
+    ['建築設計', ''],
+    ['景觀規劃', ''],
+    ['結構設計', ''],
+    ['企劃銷售', ''],
   ],
 
   gtmCode: ['MD49K2X','TDZ62ZS'], // 可放置多個
