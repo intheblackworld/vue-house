@@ -10,14 +10,7 @@
       :options="options"
       id="fullpage"
     >
-      <div class="animate-bg">
-        <div class="bg1">
-        </div>
-        <div class="bg2">
-        </div>
-        <div class="bg3">
-        </div>
-      </div> -->
+    -->
       <vue-lazy-component class="section relative" id="section1" @init="init">
         <Section1 />
       </vue-lazy-component>
@@ -69,17 +62,6 @@
 #contact {
   z-index: 3;
 }
-/* 
-.bg-img {
-  // background-image: url('~@/projects/lj/s1/bg.png');
-  // padding-top: $nav_pc_height;
-  background-attachment: fixed;
-  background-size: auto;
-  background-position: center center;
-  background-repeat: repeat;
-  overflow: hidden; //試底下多的那塊哪來的
-}
- */
 </style>
 
 <script>
@@ -94,16 +76,16 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/oh/Section1.vue'
-// import Section2 from '@/projects/oh/Section2.vue'
-// import Section3 from '@/projects/oh/Section3.vue'
-// import Section4 from '@/projects/oh/Section4.vue'
-// import Section5 from '@/projects/oh/Section5.vue'
-// import Section6 from '@/projects/oh/Section6.vue'
-// import Section7 from '@/projects/oh/Section7.vue'
-// import Section8 from '@/projects/oh/Section8.vue'
-// import Section9 from '@/projects/oh/Section9.vue'
-// import Section10 from '@/projects/oh/Section10.vue'
+import Section1 from '@/projects/li/Section1.vue'
+// import Section2 from '@/projects/li/Section2.vue'
+// import Section3 from '@/projects/li/Section3.vue'
+// import Section4 from '@/projects/li/Section4.vue'
+// import Section5 from '@/projects/li/Section5.vue'
+// import Section6 from '@/projects/li/Section6.vue'
+// import Section7 from '@/projects/li/Section7.vue'
+// import Section8 from '@/projects/li/Section8.vue'
+// import Section9 from '@/projects/li/Section9.vue'
+// import Section10 from '@/projects/li/Section10.vue'
 
 export default {
   name: 'home',

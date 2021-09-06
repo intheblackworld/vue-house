@@ -39,10 +39,9 @@ body {
 }
 
 .home {
-  //background-image: $bg;
+  background: $bg;
   // background-image: url('~@/projects/lj/s1/bg.png');
   // padding-top: $nav_pc_height;
-  background: linear-gradient(to right, #911 0%,#e4002f 80%,#e6002f 100%);
   background-attachment: fixed;
   background-size: cover;
   background-position: cover;
@@ -360,7 +359,7 @@ img[lazy="loaded"] {
       bottom: 0;
       left: 0;
       background: center 0 no-repeat;
-      background-image: $bg;
+      background: $bg;
       background-size: cover;}
 
     &.no-padding-top {

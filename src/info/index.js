@@ -5,8 +5,8 @@ export default {
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.2977358294615!2d121.21881161537769!3d24.955982847567636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468224a47c85d5f%3A0xe9ce48c6dd51fd48!2zMzIw5qGD5ZyS5biC5Lit5aOi5Y2A5aSn5ZCM6LevMTg26Jmf!5e0!3m2!1szh-TW!2stw!4v1630914350973!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/2v4Ded5m8UZowX19A',
   phone: '',
-  fbLink: 'https://www.facebook.com/',
-  fbMessage: 'https://m.me/',
+  fbLink: 'https://www.facebook.com/麗昇陽-106746481749011',
+  fbMessage: 'https://m.me/106746481749011',
   caseName: '麗昇陽',
   indigatorLength: 10,
 
