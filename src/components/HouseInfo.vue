@@ -81,7 +81,7 @@ export default {
   }
 
   .label {
-    font-size:1.1em;
+    font-size:1em;
     color: $house_label_color;
     margin-bottom: 0;
     margin-right:0.8em;
@@ -99,7 +99,7 @@ export default {
     text-align: left;
     color: $house_desc_color;
     font-family: $family3;
-    font-weight: bold;
+    font-weight: 500;
   }
 }
 
@@ -110,7 +110,7 @@ export default {
     min-height: 25em;
     width: 100%;
     margin-bottom: 0;
-    font-size: 15px;
+    font-size: 14px;
     padding-bottom: 50px;
   }
 

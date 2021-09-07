@@ -13,12 +13,6 @@
           data-aos="fade"
           data-aos-delay="0">
 
-
-    <!-- <div class="hr1" v-if="isMobile"></div>
-    <div class="hr2" v-if="isMobile"></div>
-    <h3 class="btn flex-c" v-scroll-to="{ element: `#contact` }">
-      搶先預約
-    </h3> -->
   </div>
 </template>
 

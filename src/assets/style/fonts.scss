@@ -19,7 +19,7 @@ p {
 }
 
 h2 {
-  font-family: "DFPingJuStd";
+  font-family:$family2;
   margin: 0;
   font-weight: normal;
 }
@@ -44,14 +44,14 @@ p,
 
 /* animate css */
 
-/* font */
+/* font
 @font-face {
   font-family: DFPingJuStd;
   src: url("~@/assets/font/DFPingJuStd-W7.otf?#iefix")
       format("embedded-opentype"),
     url("~@/assets/font/DFPingJuStd-W7.otf");
   font-weight: 300;
-}
+} */
 
 @font-face {
   font-family: icomoon;
@@ -66,7 +66,7 @@ p,
   font-weight: normal;
   font-style: normal;
 }
-
+/*
 @font-face {
   font-family: "khmer";
   src: url("~@/assets/font/KhmerMN.ttf") format("truetype"),
@@ -80,8 +80,8 @@ p,
   src: url("~@/assets/font/futurabq-medium.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
-}
-
+}*/
+/*
 @font-face {
   font-family: Impact;
   src: url("~@/assets/font/Impact.ttf") format("truetype"),
@@ -89,3 +89,4 @@ p,
   font-weight: normal;
   font-style: normal;
 }
+*/

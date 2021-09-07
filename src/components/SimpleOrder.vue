@@ -67,7 +67,7 @@
         :disabled="!checked"
         @click="submit"
         :loading="isSubmit"
-      >立即預約</el-button>
+      >確認送出</el-button>
     </div>
     <div class="info-group">
       <div class="info-address">{{info.address}}</div>

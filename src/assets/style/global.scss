@@ -348,19 +348,19 @@ img[lazy="loaded"] {
     //background-image: url('~@/projects/tsi/s1/bg_m.jpg');
     // background-image: $order_bg_image_m;
     // background-repeat: no-repeat;
-    background-size: auto size-m(750);
+    background-size:100%;
     background-attachment: fixed;
     // background-position: 0% 50%;
-    &::before{content: ' ';
+ /*   &::before{content: ' ';
       position: fixed;
       z-index: -1;
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
+width: 100%;
       background: center 0 no-repeat;
-      background: $bg;
-      background-size: cover;}
+      background: $bg;}*/
 
     &.no-padding-top {
       padding-top: 0;
