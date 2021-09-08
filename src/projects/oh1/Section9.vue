@@ -587,6 +587,7 @@ export default {
         {img: isMobile ? require('./s9/4m.jpg') : require('./s9/4.jpg'),},
         {img: isMobile ? require('./s9/5m.jpg') : require('./s9/5.jpg'),},
         {img: isMobile ? require('./s9/6m.jpg') : require('./s9/6.jpg'),},
+        {img: isMobile ? require('./s9/7m.jpg') : require('./s9/7.jpg'),},
       ],
     }
   },
