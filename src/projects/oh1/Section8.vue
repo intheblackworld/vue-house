@@ -638,7 +638,7 @@ export default {
       slideList: [
         {
           img: require('./s8/1國家PARK羅東.jpg'),
-          name: '國家PARK羅東',
+          name: '國家PARK-宜蘭羅東',
         },
         {
           img: require('./s8/2名軒夢享家-桃園.jpg'),
@@ -646,11 +646,11 @@ export default {
         },
         {
           img: require('./s8/3名軒美好莊園-台中東區.jpg'),
-          name: '名軒夏卡爾',
+          name: '名軒夏卡爾-台中',
         },
         {
           img: require('./s8/4名軒富麗-新莊.jpg'),
-          name: '名軒富麗',
+          name: '名軒富麗-新莊',
         },
         {
           img: require('./s8/5名軒湯本源-宜蘭礁溪.jpg'),
