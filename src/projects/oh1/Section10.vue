@@ -31,10 +31,8 @@
       <div class="item flex-c" data-aos="fade-up" data-aos-delay="400">
         <h3 class="item-text">
           <span>
-            18
-          </span>
-          項<br />
-          全年齡化公設
+            全齡化<br />
+         主題式公設
         </h3>
       </div>
     </div>
