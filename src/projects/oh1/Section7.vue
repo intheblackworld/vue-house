@@ -4,7 +4,7 @@
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-            <img :src="slide.img" :alt="slide-name" v-if="isMobile" class="swipe-bg">
+          <!--   <img :src="slide.img" :alt="slide-name" v-if="isMobile" class="swipe-bg">  -->
             <img :src="slide.img" :alt="slide-name">
           <!--  <div class="slide-name absolute" v-html="slide.name"></div>  -->
           </div>
@@ -21,7 +21,10 @@
           </div>
         </div> -->
       </div>
-    </div>
+      <h3 class="title">
+        全齡化主題式公設 
+      </h3>
+      </div>
 
     <!-- 
     <div class="txt" data-aos="fade-up" data-aos-delay="0">
@@ -83,7 +86,7 @@
     rgba(141, 194, 31, 0.8)
   );
   padding: size(40) size(20);
-}
+}/*
 .title {
   width: 90%;
   margin: 0 auto;
@@ -95,6 +98,22 @@
   letter-spacing: normal;
   text-align: left;
   color: #fff000;
+  white-space: nowrap;
+}
+*/
+
+.title {
+  @include img_r_pc(860, 308, 100);
+  top:calc(50% - 0.8em);
+  font-size: size(50);
+  padding: 0 0 0 20%;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+  color: #009d95;
   white-space: nowrap;
 }
 
@@ -189,6 +208,7 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
+    object-position: 20% 50%;
   }
 
   .slide-name {
@@ -311,7 +331,7 @@
 @media screen and (max-width: 767px) {
   .section7 {
     width: 100%;
-    height: sizem(317);
+    height: sizem(377);
   //  height: sizem(604);
     min-height: auto;
     max-height: initial;
@@ -336,7 +356,9 @@
     padding: sizem(30) sizem(30);
   }
   .title {
-    width: sizem(320);
+    width: sizem(330);
+    top:sizem(30);
+    padding: 0;
     margin: 0 auto 0;
     font-size: sizem(25);
     font-weight: bold;
@@ -345,7 +367,7 @@
     line-height: 1.2;
     letter-spacing: normal;
     text-align: left;
-    color: #fff000;
+    //color: #fff000;
     white-space: nowrap;
   }
 
