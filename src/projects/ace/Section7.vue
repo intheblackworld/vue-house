@@ -1,14 +1,27 @@
 <template>
   <div class="section7">
-    <img src="./s7/bg.png" :alt="`${info.caseName}_bgimg`" class="bg-img" v-if="isPC">
+    <img src="./s7/bg.jpg" :alt="`${info.caseName}_bgimg`" class="bg-img" v-if="isPC">
     <!-- <img src="./mo/w2.png" :alt="`${info.caseName}_bgimg`" class="bg" v-if="isMobile"> -->
     <div class="bg" v-if="isMobile"></div>
-    <img src="./s7/1.png" :alt="`${info.caseName}_img1`" class="img1" data-aos="fade" data-aos-delay="100">
-    <img src="./s7/2.png" :alt="`${info.caseName}_img2`" class="img2" data-aos="fade" data-aos-delay="300">
-    <img src="./s7/3.png" :alt="`${info.caseName}_img3`" class="img3" data-aos="fade" data-aos-delay="500">
-    <div data-aos="fade" data-aos-delay="700" class="img4"><img src="./s7/4.png" :alt="`${info.caseName}_img4`"></div>
-    <img src="./s7/5.png" :alt="`${info.caseName}_img5`" class="img5" data-aos="fade" data-aos-delay="900">
-    <img src="./s7/6.png" :alt="`${info.caseName}_img6`" class="img6" data-aos="fade" data-aos-delay="1100">
+    <div class="txt1">
+      <h3 class="title">全棟鋼骨結構</h3>
+      <svg version="1.1" id="svgbg1" class="svgbg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 963 704">
+<path fill="#BC926249" d="M926.9,703.9H141.1c-19.5,0-35.3-15.8-35.3-35.3L0.5,35.4c0-19.5,15.8-35.3,35.3-35.3h891.4 c19.5,0,35.3,15.8,35.3,35.3v633.2C962.5,688.1,946.4,703.9,926.9,703.9z"/>
+</svg>
+      <img src="./s7/1.png" :alt="`${info.caseName}_img1`" class="img1" data-aos="fade" data-aos-delay="100">
+      <img src="./s7/2.png" :alt="`${info.caseName}_img2`" class="img2" data-aos="fade" data-aos-delay="300">
+      <img src="./s7/3.png" :alt="`${info.caseName}_img3`" class="img3" data-aos="fade" data-aos-delay="500">
+      <div data-aos="fade" data-aos-delay="700" class="img4">
+      <img src="./s7/4.png" :alt="`${info.caseName}_img4`"></div>
+      <img src="./s7/5.png" :alt="`${info.caseName}_img5`" class="img5" data-aos="fade" data-aos-delay="900">
+    </div>
+    <div class="txt2">
+      <h3 class="title">內外柱灌漿</h3>
+      <svg version="1.1" id="svgbg2" class="svgbg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 599 704">
+<path fill="#BC926249" d="M467.5,703.9H35.8c-19.5,0-35.3-15.8-35.3-35.3V35.4c0-19.5,15.8-35.3,35.3-35.3h527.4 c19.5,0,35.3,15.8,35.3,35.3l-95.7,633.2C502.8,688.1,487,703.9,467.5,703.9z"/>
+</svg>
+      <img src="./s7/6.png" :alt="`${info.caseName}_img6`" class="img6" data-aos="fade" data-aos-delay="1100">
+    </div>
   </div>
 </template>
 
@@ -23,6 +36,13 @@
   background-size: cover;
   background-attachment: fixed;
   overflow: hidden;
+  font-size: size(30);
+  line-height: 1.4;
+  .title{
+  font-size:1.5em;
+  text-align: justify;
+  margin: 0 0 0 0.5em;
+  color: #685335;}
 }
 
 .bg-img {
@@ -38,21 +58,29 @@
     position: relative;
   }
 }
+.txt1{
+  @include img_l_pc(962, 80, 130);
+  top:calc(50% + 100vw * (150 - 540) / 1920);
+.svgbg{width: 100%;}
+}
+.txt2{
+  @include img_r_pc(599, 80, 130);
+  top:calc(50% + 100vw * (150 - 540) / 1920);
+.svgbg{width: 100%;}
+}
+
 
 .img1 {
-  @include img_l_pc(422, 124, 178);
-  top: calc(50% - 21.66vw);
+  @include img_l_pc(294, 110, 110);
   //(540 - 124)*100 / 1920
 }
 
 .img2 {
-  @include img_l_pc(86, 560, 507);
-  top: calc(50% + 1.04vw);
+  @include img_l_pc(78, 390, 330);
 }
 
 .img3 {
-  @include img_l_pc(128, 330, 669);
-  top: calc(50% - 11vw);
+  @include img_l_pc(90, 250, 460);
 }
 
 .img4 {

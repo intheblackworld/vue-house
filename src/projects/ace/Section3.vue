@@ -130,7 +130,7 @@
   margin-bottom: sizem(30);
   }
   .icon {
-    @include img_r_m(45, 180, 165);
+    @include img_r_m(45, 250,290);
     height: sizem(45);
     background: #68533599;
     border-radius: 50%;
