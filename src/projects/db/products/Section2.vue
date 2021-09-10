@@ -37,10 +37,10 @@
         <img :src="dialogData.logo" alt="" class="logo">
         <div class="slide-imgs flex-as flex-jb">
           <img :src="dialogData.imgs[0]" :alt="`${info.caseName}`" class="main" @click="selectImg(dialogData.imgs[0])">
-          <div class="imgs">
+          <div class="imgs" v-if="dialogData.imgs[1]">
             <img :src="dialogData.imgs[1]" :alt="`${info.caseName}`" @click="selectImg(dialogData.imgs[1])">
-            <img :src="dialogData.imgs[2]" :alt="`${info.caseName}`" @click="selectImg(dialogData.imgs[2])">
-            <img :src="dialogData.imgs[3]" :alt="`${info.caseName}`" @click="selectImg(dialogData.imgs[3])">
+            <img :src="dialogData.imgs[2]" v-if="dialogData.imgs[2]" :alt="`${info.caseName}`" @click="selectImg(dialogData.imgs[2])">
+            <img :src="dialogData.imgs[3]" v-if="dialogData.imgs[3]" :alt="`${info.caseName}`" @click="selectImg(dialogData.imgs[3])">
           </div>
         </div>
       </div>
@@ -145,7 +145,7 @@
 
 .container {
   width: size(496 * 3 + 72 + 36);
-  margin: size(50) auto size(170);
+  margin: size(100) auto size(170);
 }
 
 .item {
@@ -153,10 +153,8 @@
   height: size(618);
   background-color: #f7f8f8;
   margin: 0 size(18) size(50);
-  cursor: pointer;
-  position: relative;position: relative;
-  &::after{content: "";position: absolute; width: 100%;height:100%;top: 0;left: 0;transition: all 0.3s;border: 1px solid #08b0;}
-  &:hover:after{ height:100%;border: 1px solid #08b;transform: scale(1.04);}
+  position: relative;
+  cursor: pointer;position: relative;
 
   img {
     width: 100%;
@@ -180,10 +178,11 @@
     transform: rotate(90deg);
   }
 }
+  &::after{content: "";position: absolute; width: 100%;height:100%;top: 0;left: 0;transition: all 0.3s;border: 1px solid #08b0;}
+  &:hover:after{ height:100%;border: 1px solid #08b;transform: scale(1.04);}
 
   .content {
     height: size(130);
-    padding: 0 size(15);
   }
 
   .item-title {
@@ -200,12 +199,12 @@
 
   .item-desc {
     width: 70%;
-    font-size: size(20);
+    font-size: size(19);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.37;
-    letter-spacing: size(0.92);
+    letter-spacing: 0.04em;
     text-align: left;
     color: #4d4d4d;
   }
@@ -230,7 +229,13 @@
   top: 0;
   left: 0;
   z-index: 10000;
-  .product-close{position: absolute;top:0;left: 0;width: 100%;height: 100%;}
+  .product-close {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .border-container {
@@ -246,21 +251,25 @@
   background-color: #008fbb;
   cursor: pointer;
   &::before,
-  &::after{
+  &::after {
     position: absolute;
     left: 0;
-    content: "";
+    content: '';
     display: block;
     width: 100%;
     height: 2px;
-    background-color: #fff;transform: rotate(-45deg);transform-origin: center;
-    top:calc(50% - 1px);
+    background-color: #fff;
+    transform: rotate(-45deg);
+    transform-origin: center;
+    top: calc(50% - 1px);
   }
-  &::before{transform: rotate(45deg);}
+  &::before {
+    transform: rotate(45deg);
+  }
 }
 
 .product-title {
-  @include img_l_pc(207, 48 + 50, 884);
+  @include img_l_pc(207, 48, 884);
   font-size: size(51);
   font-weight: normal;
   font-stretch: normal;
@@ -278,7 +287,7 @@
 }
 
 .product-info1 {
-  @include img_l_pc(340, 130 + 50, 884);
+  @include img_l_pc(340, 130, 884);
   font-size: size(23);
   font-weight: normal;
   font-stretch: normal;
@@ -290,7 +299,7 @@
   white-space: nowrap;
 }
 .txt {
-  @include img_l_pc(640, 308, 884);
+  @include img_l_pc(640, 305, 884);
   font-size: size(19);
   font-weight: normal;
   font-stretch: normal;
@@ -300,14 +309,21 @@
   text-align: left;
   color: #008fbb;
 }
-
 .product-info2 {
-  margin: 0 0 0.6em;
+  margin: 0 0 1.3em;
+}
+
+.info-title {
+  line-height: 1.4;
 }
 
 .product-info3 {
   line-height: 1.4;
+  position: relative;
+  top: -1.35em;
+  margin: 0 0 -0.6em 5.3em;
 }
+
 .product-contact {
   color: #4d4d4d;
 }
@@ -340,22 +356,36 @@
   width: size(598 + 206);
   margin-left: size(55);
   margin-top: size(48);
-  &::before{
+  overflow: hidden;
+  justify-content: center;
+  .text {
     white-space: pre;
     font-size: size(12);
     line-height: 1.6;
-    content:"本圖為示意圖,依核准之執照圖說及\A合約副圖為準,建設公司保有修改權";
-    position: absolute;bottom:4em;left:5em;opacity: 0.9;
-    color: #fff;text-shadow: 0 0 0.6em #000;}
+    // content: '';
+    position: absolute;
+    bottom: 4em;
+    left: 5em;
+    opacity: 0.9;
+    color: #fff;
+    text-shadow: 0 0 0.6em #000;
+  }
 
   .main {
-    width: size(586);
+    // width: size(586);
+    // max-width: size(586);
+    width: 70%;
+    flex: 1 1 73%;
     height: size(580);
     object-fit: cover;
   }
 
   .imgs {
-    width: size(206);
+    // width: size(206);
+    width: 30%;
+    flex: 0 0 30%;
+    max-width: size(206);
+    margin-left: size(12);
 
     img {
       width: 100%;
@@ -419,7 +449,7 @@
     }
 
     .subtitle {
-      @include div_r_m(200, 29, 258, 32);
+      @include div_r_m(300, 29, 255, 32);
       font-size: sizem(20);
       font-weight: normal;
       font-stretch: normal;
@@ -432,7 +462,7 @@
     }
 
     .title-img {
-      @include img_l_m(186, 205, 33);
+      @include img_l_m(180, 208, 33);
     }
 
     .bottom {
@@ -446,7 +476,6 @@
       border-color: transparent transparent #fff transparent;
     }
   }
-
   .section2 {
     width: 100vw;
     min-height: auto;
@@ -474,15 +503,14 @@
 
   .container {
     width: sizem(310);
-    margin: sizem(60) auto sizem(80);
+    margin: sizem(50) auto sizem(80);
   }
 
   .item {
     width: 100%;
-    height: sizem(400);
+    height: sizem(450);
     margin: 0 sizem(0) sizem(70);
     border-bottom: none;
-    position: relative;
     cursor: pointer;
 
     .add {
@@ -500,8 +528,9 @@
 
     .content {
       // margin-top: sizem(221);
-      height: sizem(70);
-      padding: 0 sizem(15);
+      align-content: center;
+      height: sizem(146);
+      padding: 0 sizem(15) sizem(15);
     }
 
     .item-icon {
@@ -528,12 +557,12 @@
       font-weight: normal;
       font-stretch: normal;
       font-style: normal;
-      line-height: 1.62;
-      letter-spacing: sizem(1.16);
+      line-height: 1.6;
+      letter-spacing: 0.06em;
       text-align: left;
       justify-content: flex-start;
       color: #333333;
-      // margin-bottom: 15px;
+      margin-bottom: sizem(10);
     }
 
     .item-coming {
@@ -547,7 +576,6 @@
       color: #8e8e8e;
     }
   }
-
   .product-dialog {
     width: 100vw;
     height: 100vh;
@@ -569,9 +597,9 @@
   }
 
   .close {
-  @include div_r_m(40, 40, 15, 15);
-  z-index: 5;
-  position: fixed;
+    @include div_r_m(40, 40, 15, 15);
+    z-index: 5;
+    position: fixed;
   }
 
   .product-title {
@@ -588,7 +616,7 @@
   }
 
   .hr {
-    @include div_l_m(320, 2, 460, 32);
+    @include div_l_m(320, 2, 500, 32);
     background-color: #008fbb;
   }
 
@@ -604,11 +632,13 @@
     color: #4d4d4d;
     white-space: nowrap;
   }
+
   .txt {
-    @include img_l_m(330, 482, 30);
+    @include img_l_m(330, 522, 30);
     font-size: sizem(16);
     padding: 0 0 10.5em 0;
   }
+
   .product-btn {
     // @include div_l_pc(107, 26, 815, 229);
     font-size: sizem(15);
@@ -626,7 +656,7 @@
   }
 
   .back {
-    @include img_r_m(107, 820, 134);
+    @include img_r_m(107, 0, 134);
     top: auto;
     bottom: 5em;
     font-size: sizem(15);
@@ -673,13 +703,21 @@
     left: sizem(33);
     object-fit: cover;
     position: relative !important;
-    &::before{
-    white-space: pre;
-    font-size: sizem(12);transform: scale(0.9);transform-origin: 0 100%;
-    line-height: 1.6;
-    content:"本圖為示意圖,依核准之執照圖說及\A合約副圖為準,建設公司保有修改權";
-    position: absolute;bottom:0.3em;left:0.3em;opacity: 0.8;z-index: 5;
-    color: #fff;text-shadow: 0 0 0.6em #000;}
+    .text {
+      white-space: pre;
+      font-size: sizem(12);
+      transform: scale(0.9);
+      transform-origin: 0 100%;
+      line-height: 1.6;
+     //content: '本圖為示意圖,依核准之執照圖說及\A合約副圖為準,建設公司保有修改權';
+      position: absolute;
+      bottom: 0.3em;
+      left: 0.3em;
+      opacity: 0.8;
+      z-index: 5;
+      color: #fff;
+      text-shadow: 0 0 0.6em #000;
+    }
   }
 
   // begin
@@ -863,17 +901,60 @@ export default {
         require('../works/5/4.jpg'),
       ],
       item_list: [
+        //陽光
         {
-          title: '容邑PARK',
+          title: '陽光<br />PARK',
+          title2: '陽光PARK',
+          desc: '新北市｜新店區<br />27-54坪<br />新店陽光公園特區生態建築',
+          img: require('../works/2/0.jpg'),
+          isEmpty: false,
+          info1: '新北市｜新店區<br />27-54坪，新店陽光公園特區生態建築',
+          info2:
+            '建設公司：統一工商綜合區開發股份有限公司<br />坪數規劃：27-54坪',
+          info3:
+            '新店陽光公園特區，高綠覆率 <br />輕軌K8新和國小站 682米<br />千坪花園生態池',
+          contact: '貴賓專線｜02-2211-7711<br />接待會館｜新北市新店區安興路107號',
+          logo: require('../works/2/0.jpg'),
+          link: 'https://pk.h88.tw/',
+          imgs: [
+            require('../works/2/1.jpg'),
+            require('../works/2/2.jpg'),
+            require('../works/2/3.jpg'),
+            require('../works/2/4.jpg'),
+          ],
+          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
+        },
+        //自慢藏
+        {
+          title: '自慢藏',
+          title2: '自慢藏',
+          desc: '台北市｜台大旁 汀州路四段<br />35·45·60坪<br />藏山藏水藏台大 見識越高越是深藏不露',
+          img: require('../works/6/3.jpg'),
+          isEmpty: false,
+          info1: '台北市｜台大旁 汀州路四段<br />35·45·60坪<br />藏山藏水藏台大 見識越高越是深藏不露',
+          info2:
+            '投資興建：沅利建設<br />坪數房型：35、45、60坪',
+          info3:
+            '台大師大雙文、公園水岸雙景觀<br />台大最後一塊珍稀水岸、沅家集團-沅利建設40年代表作<br />日本國土開發台北水岸第一次<br />SRC鋼骨耐震標章建築<br />中鋼、新日鐵台日頂級鋼材<br />台灣大學地震中心結構外審',
+          contact: '貴賓專線｜02-2933-1888<br />接待會館｜台北市羅斯福路五段216號之2',
+          logo: require('../works/6/3.jpg'),
+          link: 'https://jiman.debang.tw/',
+          imgs: [
+            require('../works/6/4.jpg'),
+          ],
+        },
+        //容邑PARK
+        {
+          title: '容邑<br />PARK',
           title2: '容邑PARK',
-          desc: '新北市｜新莊副都心',
+          desc: '新北市｜新莊副都心<br />信義區機能+重劃區規格+超甜蜜價格',
           img: require('../works/5/0.jpg'),
           isEmpty: false,
           info1: '新北市｜新莊副都心',
           info2:
-            '信義區機能+重劃區規格+超甜蜜價格，你想要的人生好味在容邑PARK一席通包。感受新莊副都心完熟機能，就在【容邑PARK】',
+            '感受新莊副都心完熟機能，就在【容邑PARK】<br />建案資訊：完工時間｜2019年',
           info3:
-            '完工時間｜2019年<br />規劃樓層｜地上15層，地下6層<br />格局規劃｜開放格局(15-33坪)<br />基地地址｜新北市新莊區富貴路182號<br />建案特色｜新莊副都心，機能完整<br />機場捷運A3新北產業園區站，散步即達<br />步行2分鐘，抵達塭仔底生態公園',
+            '規劃樓層｜地上15層，地下6層<br />格局規劃｜開放格局(15-33坪)<br />基地地址｜新北市新莊區富貴路182號<br />建案特色｜ 你想要的人生好味在容邑PARK一席通包<br />新莊副都心，機能完整<br />機場捷運A3新北產業園區站，散步即達<br />步行2分鐘，抵達塭仔底生態公園',
           contact: '',
           logo: require('../works/5/0.jpg'),
           link: '',

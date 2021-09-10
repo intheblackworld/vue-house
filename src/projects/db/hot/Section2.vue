@@ -32,7 +32,7 @@
           <div class="info-title">建案特色：</div>
           <div class="product-info3" v-html="dialogData.info3"></div>
           <div class="product-contact" v-html="dialogData.contact"></div>
-          <a class="product-btn" :href="dialogData.link" target="_blank">建案官網</a>
+          <a class="product-btn" :href="dialogData.link" target="_blank" v-if="dialogData.link">建案官網</a>
         </div>
         <img src="./s1/rb.png" :alt="`${info.caseName}`" class="rb">
         <img :src="dialogData.logo" alt="" class="logo">
@@ -81,7 +81,7 @@
           <div class="info-title">建案特色：</div>
           <div class="product-info3" v-html="dialogData.info3"></div>
           <div class="product-contact" v-html="dialogData.contact"></div>
-          <a class="product-btn" :href="dialogData.link" target="_blank">建案官網</a>
+          <a class="product-btn" :href="dialogData.link" target="_blank" v-if="dialogData.link">建案官網</a>
           <img src="./s1/rb.png" :alt="`${info.caseName}`" class="rb">
           <div class="back" @click="isProjectDialog = false">
             ［回上一頁］
@@ -903,6 +903,31 @@ export default {
         require('../works/1/4.jpg'),
       ],
       item_list: [
+         //太陽
+        {
+          title: '太陽<br />帝國',
+          title2: '太陽帝國',
+          desc:
+            '新北市｜中和區<br />19-39坪 2-3房<br />不是王牌不出手 唯有贏家能擁有',
+          img: require('../works/4/0.jpg'),
+          isEmpty: false,
+          info1:
+            '新北市｜中和區<br />19-39坪 2-3房<br />不是王牌不出手 唯有贏家能擁有',
+          info2: '投資興建：美聯開發股份有限公司<br />規劃坪數：19-39坪',
+          info3:
+            '澳洲PTW建築團隊巨鑄<br />雙和第一高峰36層地標<br />全棟144隻BRB制震器',
+          contact:
+            '貴賓專線｜02-8668-7373<br />接待會館｜新北市中和區景新街337號',
+          link: 'https://ace.debang.tw/',
+          logo: require('../works/4/0.jpg'),
+          imgs: [
+            require('../works/4/1.jpg'),
+            require('../works/4/2.jpg'),
+            require('../works/4/3.jpg'),
+            require('../works/4/4.jpg'),
+          ],
+          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
+        },
         //碧波白
         {
           title: '碧波白',
@@ -934,51 +959,6 @@ export default {
           ],
           hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
         },
-        //太陽
-        {
-          title: '太陽<br />帝國',
-          title2: '太陽帝國',
-          desc:
-            '新北市｜中和區<br />19-39坪 2-3房<br />不是王牌不出手 唯有贏家能擁有',
-          img: require('../works/4/0.jpg'),
-          isEmpty: false,
-          info1:
-            '新北市｜中和區<br />19-39坪 2-3房<br />不是王牌不出手 唯有贏家能擁有',
-          info2: '投資興建：美聯開發股份有限公司<br />規劃坪數：19-39坪',
-          info3:
-            '澳洲PTW建築團隊巨鑄<br />雙和第一高峰36層地標<br />全棟144隻BRB制震器',
-          contact:
-            '貴賓專線｜02-8668-7373<br />接待會館｜新北市中和區景新街337號',
-          link: 'https://ace.debang.tw/',
-          logo: require('../works/4/0.jpg'),
-          imgs: [
-            require('../works/4/1.jpg'),
-            require('../works/4/2.jpg'),
-            require('../works/4/3.jpg'),
-            require('../works/4/4.jpg'),
-          ],
-          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
-        },
-        //自慢藏
-        {
-          title: '自慢藏',
-          title2: '自慢藏',
-          desc:
-            '台北市｜台大旁 汀州路四段<br />35·45·60坪<br />藏山藏水藏台大 見識越高越是深藏不露',
-          img: require('../works/6/0.jpg'),
-          isEmpty: false,
-          info1:
-            '台北市｜台大旁 汀州路四段<br />35·45·60坪<br />藏山藏水藏台大 見識越高越是深藏不露',
-          info2: '投資興建：沅利建設<br />坪數房型：35、45、60坪',
-          info3:
-            '台大師大雙文、公園水岸雙景觀<br />台大最後一塊珍稀水岸、沅家集團-沅利建設40年代表作<br />日本國土開發台北水岸第一次<br />SRC鋼骨耐震標章建築<br />中鋼、新日鐵台日頂級鋼材<br />台灣大學地震中心結構外審',
-          contact:
-            '貴賓專線｜02-2933-1888<br />接待會館｜台北市羅斯福路五段216號之2',
-          link: 'https://jiman.debang.tw/',
-          logo: require('../works/6/0.jpg'),
-          imgs: [require('../works/6/1.jpg')],
-          hint: '',
-        },
         //神采
         {
           title: '神采<br />飛洋',
@@ -1004,6 +984,45 @@ export default {
             require('../works/3/4.jpg'),
           ],
           hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
+        },
+        //陽明迴鄉
+        {
+          title: '陽明<br />迴鄉',
+          title2: '陽明迴鄉',
+          desc:
+            '台北市│新北投 翠嶺路<br />戶戶三面環景2-3房<br />薇閣富人特區　珍稀捷運雙併',
+          img: require('../works/7/0.jpg'),
+          isEmpty: false,
+          info1:
+            '台北市│新北投 翠嶺路<br />戶戶三面環景2-3房<br />薇閣富人特區　珍稀捷運雙併',
+          info2: '投資興建：寶程國際<br />坪數房型：2-3房',
+          info3:
+            '陽明山下出將入相富人特區<br />高綠覆低建蔽濃蔭街廓<br />近擁薇閣高中郁郁文風<br />近享捷運新北投站增值通勤<br />戶戶三面採光通風，防疫級規劃',
+          contact:
+            '賞屋專線｜02–28971888<br />迎賓會館｜台北市北投區中和街239號',
+          logo: require('../works/7/0.jpg'),
+          imgs: [require('../works/7/1.jpg')],
+          hint: '',
+        },
+        //自慢藏
+        {
+          title: '自慢藏',
+          title2: '自慢藏',
+          desc:
+            '台北市｜台大旁 汀州路四段<br />35·45·60坪<br />藏山藏水藏台大 見識越高越是深藏不露',
+          img: require('../works/6/0.jpg'),
+          isEmpty: false,
+          info1:
+            '台北市｜台大旁 汀州路四段<br />35·45·60坪<br />藏山藏水藏台大 見識越高越是深藏不露',
+          info2: '投資興建：沅利建設<br />坪數房型：35、45、60坪',
+          info3:
+            '台大師大雙文、公園水岸雙景觀<br />台大最後一塊珍稀水岸、沅家集團-沅利建設40年代表作<br />日本國土開發台北水岸第一次<br />SRC鋼骨耐震標章建築<br />中鋼、新日鐵台日頂級鋼材<br />台灣大學地震中心結構外審',
+          contact:
+            '貴賓專線｜02-2933-1888<br />接待會館｜台北市羅斯福路五段216號之2',
+          link: 'https://jiman.debang.tw/',
+          logo: require('../works/6/0.jpg'),
+          imgs: [require('../works/6/1.jpg')],
+          hint: '',
         },
         //陽光
         {

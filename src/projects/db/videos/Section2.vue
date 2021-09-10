@@ -377,6 +377,14 @@ export default {
         {
           // icon: require('./s1/icon1.png'),
           type:1,
+          title: '【太陽帝國】 『仰望雙和的新高度』',
+          desc: '',
+          img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/irs0m1qWkl8',
+        },
+        {
+          // icon: require('./s1/icon1.png'),
+          type:1,
           title: '【自慢藏】 『見識越高，越是深藏不露』',
           desc: '',
           img: require('../hot/s1/imgbg.jpg'),
