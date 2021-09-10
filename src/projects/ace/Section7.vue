@@ -148,8 +148,8 @@
   height:sizem(310);
 }
 .txt2{
-  margin: 3em auto 0;
-  height:sizem(563);
+  margin: 5.5em auto 0;
+  height:sizem(553);
   }
   .img1 {
     @include img_c_m(334, 29);

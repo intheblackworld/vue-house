@@ -34,12 +34,8 @@
         </div>
       </div>
     <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-      <div class="prev-btn flex-c">
-        <img src="./all/prev-btn.png" alt="" @click="decIndex">
-      </div>
-      <div class="next-btn flex-c">
-        <img src="./all/next-btn.png" alt="" @click="addIndex">
-      </div>
+          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
     </div>
     </div>
   </div>
@@ -267,13 +263,19 @@
 .swipe-btns {
   width: 100%;
   height: 100%;
-  padding: 0 15px;
+  padding: 0 0;
   z-index: 3;
 
   .prev-btn,
   .next-btn {
-    width: size(46);
+    width: size(50);
     cursor: pointer;
+    height: 100%;
+    object-fit:contain;
+    background: #0000;
+    transition: all 0.3s;
+    padding: size(10);
+    &:hover{background: #0004;}
   }
 }
 
@@ -496,9 +498,9 @@
   }
 
   .swipe-btns {
-    width: 90%;
-    left: 5%;
-    height: sizem(30);
+    width: 100%;
+    left: 0%;
+    height: 100%;
     padding: 0px;
     z-index: 1;
     position: absolute;
@@ -507,13 +509,16 @@
 
     .prev-btn,
     .next-btn {
-      width:auto;
+    width: sizem(40);
+    padding: sizem(10);
+    /*  width:auto;
       height:100%;
       cursor: pointer;
       // background-color: #ec6300;
       img {
         height: 100%;
       }
+      */
     }
 
     // .prev-btn {
@@ -548,34 +553,34 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s8/1.jpg'),
+          img: require('./s8/slider_1.jpg'),
         },
         {
-          img: require('./s8/2.jpg'),
+          img: require('./s8/slider_2.jpg'),
         },
         {
-          img: require('./s8/3.jpg'),
+          img: require('./s8/slider_3.jpg'),
         },
         {
-          img: require('./s8/4.jpg'),
+          img: require('./s8/slider_4.jpg'),
         },
         {
-          img: require('./s8/5.jpg'),
+          img: require('./s8/slider_5.jpg'),
         },
         {
-          img: require('./s8/6.jpg'),
+          img: require('./s8/slider_6.jpg'),
         },
         {
-          img: require('./s8/7.jpg'),
+          img: require('./s8/slider_7.jpg'),
         },
         {
-          img: require('./s8/8.jpg'),
+          img: require('./s8/slider_8.jpg'),
         },
         {
-          img: require('./s8/9.jpg'),
+          img: require('./s8/slider_9.jpg'),
         },
         {
-          img: require('./s8/10.jpg'),
+          img: require('./s8/slider_10.jpg'),
         },
       ],
     }
