@@ -7,7 +7,7 @@ export default {
   phone: '02-28979888',
   fbLink: 'https://www.facebook.com/YANGMINGMANOR',
   fbMessage: 'https://m.me/YANGMINGMANOR/',
-  caseName: '陽明森悅',
+  caseName: '綠山丘',
   indigatorLength: 10,
 
   houseInfos: [

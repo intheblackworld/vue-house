@@ -1,7 +1,7 @@
 <template>
   <div class="section3">
-    <div class="title" data-aos="fade-up" data-aos-delay="0" v-if="isPC">開門見山，陽明森悅 來了！</div>
-    <div class="title" data-aos="fade-up" data-aos-delay="0" v-if="isMobile">開門見山<br />陽明森悅 來了！</div>
+    <div class="title" data-aos="fade-up" data-aos-delay="0" v-if="isPC">開門見山，綠山丘 來了！</div>
+    <div class="title" data-aos="fade-up" data-aos-delay="0" v-if="isMobile">開門見山<br />綠山丘 來了！</div>
     <div class="subtitle" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
       台北市難得近三千坪的夢想藍圖，後收陽明山系豪景，前攏關渡平原胸襟，大地的畫布，任您恣意揮灑。<br />
       且讓稻香、花香交響名為生活的樂章。

@@ -2,10 +2,10 @@
   <div>
     <div class="contact-info" id="contact-info" data-aos="fade" data-aos-delay="0">
       <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
+      <img src="../projects/ymsy/s1/cloud_2.png" :alt="`${info.caseName}_img`" class="cloud cloud2">
       <img src="../projects/ymsy/s1/cloud_1.png" :alt="`${info.caseName}_img`" class="cloud cloud1">
-    <img src="../projects/ymsy/s1/cloud_2.png" :alt="`${info.caseName}_img`" class="cloud cloud2">
-    <img src="../projects/ymsy/s1/hill.png" :alt="`${info.caseName}_img`" class="hill1">
-    <img src="../projects/ymsy/s1/hill_2.png" :alt="`${info.caseName}_img`" class="hill2">
+    
+    <img src="../projects/ymsy/s1/style.png" :alt="`${info.caseName}_img`" class="hill2"  data-aos-delay="0">
       <!-- <img
         v-if="isMobile"
         class="logo"
@@ -99,10 +99,8 @@ export default {
 @import '@/assets/style/function.scss';
 
 .contact-info {
-  background: $contact_bg;
-  // background-image: url('../assets/img/contact_bg.jpg');
   background-size: cover;
-  background: green;
+  background-image: url('../assets/img/bg.jpg');
   //box-shadow: $contact_shadow;
   display: flex;
   flex-direction: column;
@@ -128,12 +126,16 @@ export default {
   }
 }
 .cloud1 {
-  @include img_l_pc(1009, -71, 0);
+  @include img_r_pc(1000, 0, 700);
+  top: auto;
+  bottom: size(10);
   animation: cloud 2.5s ease-in-out alternate infinite;
 }
 .cloud2 {
-  @include img_r_pc(926, 20, -40);
-  animation: cloud 2s ease-in-out alternate infinite;
+  @include img_l_pc(800, 0, 0);
+  top: auto;
+  bottom: size(-10);
+  animation: cloud 4s ease-in-out alternate infinite;
 }
 .hill1 {
   @include img_l_pc(1665, 0, 0);
@@ -141,9 +143,9 @@ export default {
   bottom: 0;
 }
 .hill2 {
-  @include img_r_pc(1338, 0, 0);
+  @include img_r_pc(1920, 0, 0);
   top: auto;
-  bottom: size(-80);
+  bottom: size(-60);
 }
 
 .logo {
