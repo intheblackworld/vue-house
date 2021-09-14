@@ -152,6 +152,85 @@
   }
 }
 
+.line {
+  background: #c8a064;
+  //大小間距條這邊
+  height: 2px;
+  span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    left: 0;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 300%;
+      height: 100%;
+      top: 0;
+      left: 50%;
+      background: linear-gradient(
+        to right,
+        rgba(200, 160, 100, 1) 0%,
+        rgba(229, 198, 128, 1) 33%,
+        rgba(245, 224, 153, 1) 43%,
+        rgba(255, 253, 206, 1) 50%,
+        rgba(245, 224, 153, 1) 57%,
+        rgba(229, 198, 128, 1) 67%,
+        rgba(229, 198, 128, 1) 67%,
+        rgba(200, 160, 100, 1) 100%
+      );
+      animation: hrl 3s linear infinite;
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+  }
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 300%;
+    height: 6000%;
+    top: calc(50% - 3000%);
+    left: 50%;
+    background: url('../../projects/tk/s1/l.png');
+    background-size: 100% 100%;
+    animation: hrl 3s linear infinite;
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+@keyframes hrl {
+  0% {
+    transform: translateX(-70%) scaleX(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-50%) scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-30%) scaleX(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes hrr {
+  0% {
+    transform: translateX(-30%) scaleX(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-50%) scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-70%) scaleX(0.5);
+    opacity: 0;
+  }
+}
+
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {

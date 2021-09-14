@@ -10,9 +10,6 @@
     <vue-lazy-component class="section" id="section2">
       <Section2 />
     </vue-lazy-component>
-    <!-- <vue-lazy-component>
-        
-      </vue-lazy-component> -->
     <vue-lazy-component class="section" id="section3">
       <Section3 />
     </vue-lazy-component>
@@ -22,19 +19,19 @@
     <vue-lazy-component class="section" id="section5">
       <Section5 />
     </vue-lazy-component>
-    <!-- <vue-lazy-component class="section" id="section6">
+    <vue-lazy-component class="section" id="section6">
       <Section6 />
-    </vue-lazy-component> -->
+    </vue-lazy-component>
     <vue-lazy-component class="section" id="section7">
       <Section7 />
     </vue-lazy-component>
-    <!-- <vue-lazy-component class="section" id="section8">
+    <vue-lazy-component class="section" id="section8">
       <Section8 />
     </vue-lazy-component>
     <vue-lazy-component class="section" id="section9">
       <Section9 />
     </vue-lazy-component> 
-    <vue-lazy-component class="section" id="section10">
+    <!--  <vue-lazy-component class="section" id="section10">
       <Section10 />
     </vue-lazy-component>
     -->
@@ -95,17 +92,17 @@ import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 // import Indigator from '@/components/Indigator.vue'
 
-import Section1 from '@/projects/h25/Section1.vue'
-import Section2 from '@/projects/h25/Section2.vue'
-import Section3 from '@/projects/h25/Section3.vue'
-import Section4 from '@/projects/h25/Section4.vue'
-import Section5 from '@/projects/h25/Section5.vue'
-// import Section6 from '@/projects/h25/Section6.vue'
-import Section7 from '@/projects/h25/Section7.vue'
-// import Section8 from '@/projects/h25/Section8.vue'
-// import Section9 from '@/projects/h25/Section9.vue'
-// import Section10 from '@/projects/h25/Section10.vue'
-// import Section11 from '@/projects/h25/Section11.vue'
+import Section1 from '@/projects/tk/Section1.vue'
+import Section2 from '@/projects/tk/Section2.vue'
+import Section3 from '@/projects/tk/Section3.vue'
+import Section4 from '@/projects/tk/Section4.vue'
+import Section5 from '@/projects/tk/Section5.vue'
+import Section6 from '@/projects/tk/Section6.vue'
+import Section7 from '@/projects/tk/Section7.vue'
+import Section8 from '@/projects/tk/Section8.vue'
+import Section9 from '@/projects/tk/Section9.vue'
+// import Section10 from '@/projects/tk/Section10.vue'
+// import Section11 from '@/projects/tk/Section11.vue'
 
 export default {
   name: 'home',
@@ -121,10 +118,10 @@ export default {
     Section3,
     Section4,
     Section5,
-    // Section6,
+    Section6,
     Section7,
-    // Section8,
-    // Section9,
+    Section8,
+    Section9,
     // Section10,
     // Section11,
   },

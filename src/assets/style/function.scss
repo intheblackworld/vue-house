@@ -96,6 +96,16 @@
   margin: 0 auto;
 }
 
+@mixin div_c_pc($width, $height, $top) {
+  position: absolute;
+  width: size($width);
+  height: size($height);
+  top: size($top);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
 
 @function sizem($size) {
   $c-size: 100vw * $size / 375;

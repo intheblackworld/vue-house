@@ -1,6 +1,5 @@
 <template>
   <div class="house-info" id="house-info">
-    <img src="~@/projects/h25/c/bbg.png" alt="" class="bg">
     <div class="content">
       <div class="title">建案資訊</div>
       <div class="info">
@@ -102,7 +101,7 @@ export default {
 
   .label {
     font-size: 16px;
-    color: $house_label_color;
+    color: $house_title_color;
     margin-bottom: 0;
     margin-right: 20px;
     white-space: nowrap;

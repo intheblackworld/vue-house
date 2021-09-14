@@ -1,20 +1,8 @@
 <template>
   <div class="order-bg">
-    <img src="~@/projects/h25/c/bg.png" alt="" class="bg">
-    <div class="order-top">
-      <div class="order-top-desc">
-        讓精彩生活變得平易近人，讓日常細節變得風格動人<br />
-        獨佔市中心的一座貴賓席，開啟神秘的第<span>25</span>個小時
-      </div>
-      <div class="order-top-title1">
-        精彩錯過不再
-      </div>
-      <div class="order-top-title2">
-        歡迎預約搶藏
-      </div>
-    </div>
-    <!-- <div class="order-title" v-scroll-to="{ element: `#contact` }">{{order.title}}</div>
-    <h3 class="order-subtitle">{{order.subTitle}}</h3> -->
+    <div class="order-top"></div>
+    <div class="order-title" v-scroll-to="{ element: `#contact` }">{{order.title}}</div>
+    <h3 class="order-subtitle">{{order.subTitle}}</h3>
     <div class="order">
       <div class="form">
         <div class="group">
@@ -220,7 +208,7 @@ export default {
 .order-bg {
   // background-color: $order_bg_color;transparent
   background-color: transparent;
-  background-image: $order_bg_image;
+  background-image: url('../projects/tk/s10/bg.jpg');
   background-size: cover;
   position: relative;
   // padding-top: calc(100vw * 200 / 1920);
@@ -234,7 +222,7 @@ export default {
   }
   .order-top {
     width: 880px;
-    height: size(357);
+    height: size(157);
     padding-top: size(141);
     padding-bottom: size(50);
     margin: 0 auto;
@@ -254,33 +242,11 @@ export default {
         letter-spacing: size(2.17);
       }
     }
-
-    .order-top-title1,
-    .order-top-title2 {
-      width: 400px;
-      margin-top: 25px;
-      font-size: size(45.3);
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.58;
-      letter-spacing: size(-1.81);
-      text-align: left;
-      color: #ffffff;
-    }
-
-    .order-top-title1 {
-      float: left;
-    }
-
-    .order-top-title2 {
-      float: right;
-    }
   }
   .order-title {
     margin-top: 0;
     margin-bottom: 0.1em;
-    font-size: calc(100vw * 85 / 1920);
+    font-size: calc(100vw * 60 / 1920);
     font-weight: 800;
     line-height: 1.5;
     letter-spacing: 0.15em;
@@ -363,6 +329,7 @@ export default {
       background: $order_input_bg;
       margin-left: 21px;
       padding: 0.5em;
+      font-family: 'Noto Sans TC', serif !important;
 
       span {
         color: #c00;
@@ -370,6 +337,7 @@ export default {
     }
     .el-input {
       width: auto;
+      font-family: 'Noto Sans TC', serif !important;
     }
     .el-input__inner {
       width: auto !important;
@@ -535,6 +503,7 @@ export default {
       label {
         width: 40% !important;
         margin-left: 0;
+        font-family: 'Noto Sans TC', serif !important;
       }
       .el-input {
         width: 100%;

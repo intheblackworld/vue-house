@@ -93,11 +93,11 @@ export default {
   justify-content: center;
   align-items: center;
   z-index: 112;
-  top: 30px;
-  right: 30px;
+  top: 0px;
+  right: 0px;
   width: 40px;
   height: 40px;
-  background-color: #c3985b;
+  background-image: linear-gradient(to right, rgba(63, 40, 86, 0), #3f2856);
   cursor: pointer;
 
   // img {

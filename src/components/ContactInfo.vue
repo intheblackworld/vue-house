@@ -140,7 +140,7 @@ export default {
   position: relative;
   z-index: 4;
   width: 1023px;
-  height: 337px;
+  height: 537px;
   padding: 10px;
   margin: 80px auto;
 }
@@ -196,7 +196,9 @@ export default {
   height: 60px;
   background: #eee;
   //box-shadow: inset 0 0 0 1px #999;
-  color: #444;
+  color: #000;
+  font-weight: bold;
+  font-family: 'Noto Sans TC', serif;
   border-radius: 18px 0 0 18px;
 
   &::v-deep span {

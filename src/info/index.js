@@ -22,12 +22,12 @@ export default {
     ['格局規劃', '1房(13-17坪)'],
     ['樓層規劃', '地上7樓，地下2層'],
   ],
-  gtmCode: ['K5CDGVJ'], // 可放置多個
+  gtmCode: ['52F5VGR'], // 可放置多個
   recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
   order: {
-    title: '眼鑑為真 敬邀體驗' ,
+    title: '預約賞屋' ,
     subTitle: '若想了解建案資訊，歡迎填寫表單或來電洽詢，將由專人為您服務，謝謝！'
   },
 }
