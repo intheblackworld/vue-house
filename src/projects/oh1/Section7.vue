@@ -615,7 +615,7 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s7/螢幕截圖加工版.png'),
+          img: require('./s7/img1.jpg'),
           name: '公設',
         },
       ],
