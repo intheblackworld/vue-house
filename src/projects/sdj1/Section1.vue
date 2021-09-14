@@ -42,7 +42,7 @@
         :alt="`${info.caseName}_light`"
         class="absolute light"
       >
-      <div class="txt absolute">正3房38坪<span class="l">888<span>需另購車位</span></span>萬起<br><span class="s">工程結構0付款</span></div>
+      <div class="txt absolute">正3房38坪<span class="l">988<span>需另購車位</span></span>萬起<br><span class="s">工程結構0付款</span></div>
     </div>
     <div class="s2 relative">
       <Map :bgSrc="require('./s1/bg_02.jpg')">
