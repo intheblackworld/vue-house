@@ -52,9 +52,9 @@
    <!--   <div class="section relative" id="section11">
         <Section11 />
       </div>  -->
-      <div class="section relative" id="section13">
+  <!--    <div class="section relative" id="section13">
         <Section13 />
-      </div>
+      </div>  -->
   <!--      <div class="section relative" id="section12">
         <VideoSection1 :playBtn="require('@/projects/sfdy/video/play-btn.png')" title="開箱系列影片" :close="require('@/projects/sfdy/video/close.png')" :arrows="[require('@/projects/sfdy/video/arrow-left.png'), require('@/projects/sfdy/video/arrow-right.png')]" :slideList="[
         {
