@@ -1,6 +1,6 @@
 <template>
   <div class="section6 flex-ac">
-    <div class="animate-slide" v-if="!isMobile">
+    <div class="animate-slide">
       <img src="./s6/bg.jpg" :alt="`${info.caseName}_logo`" class="">
       <img src="./s6/bg.jpg" :alt="`${info.caseName}_logo`" class="">
     </div>
@@ -121,15 +121,93 @@
 @media screen and (max-width: 767px) {
   .section6 {
     width: 100vw;
-    height: sizem(420);
+    height: sizem(480);
     min-height: auto;
     max-height: initial;
-    background-color: #fff;
-    // background-image: url('./s2/bg.jpg');
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
-    overflow: hidden;
+    background-image: url('./s3/bg.jpg');
+    background-position: initial;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .animate-slide {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 200vw;
+    height: sizem(249);
+    display: flex;
+    animation: an 30s 1s linear infinite alternate;
+    img {
+      height: 100%;
+    }
+  }
+
+  .border {
+    @include div_c_m(335, 602, 30);
+    border: 2px solid #c9a063;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: sizem(34) sizem(34) 0 0;
+      border-color: #c9a063 transparent transparent transparent;
+    }
+
+    &::after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 0 sizem(34) sizem(34);
+      border-color: transparent transparent #c9a063 transparent;
+    }
+  }
+
+  .border-bottom {
+    @include img_c_m(335, 0);
+    top: auto;
+    bottom: size(20);
+    border: 2px solid #c9a063;
+  }
+
+  .line {
+    @include img_c_m(306, 157);
+  }
+
+  .title {
+    @include img_l_m(268, 39, 33);
+    font-size: sizem(25);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.44;
+    letter-spacing: sizem(1.88);
+    text-align: left;
+    color: #c8a064;
+    white-space: nowrap;
+  }
+
+  .subtitle {
+    @include img_c_m(310, 124);
+    font-size: sizem(15);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.4;
+    letter-spacing: sizem(0.45);
+    text-align: left;
+    color: #fff;
+    white-space: normal;
   }
 }
 </style>

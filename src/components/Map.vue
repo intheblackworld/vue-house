@@ -4,6 +4,7 @@
     <div class="mask" v-show="!hide"></div>
     <img class="map-bg" :src="bgSrc" alt />
     <slot></slot>
+    <img src="../projects/tk/s2/logo.png" alt="" class="logo">
     <img
       :src="tag"
       data-aos="fade-down"

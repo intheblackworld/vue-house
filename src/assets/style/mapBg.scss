@@ -71,13 +71,21 @@
 
     .mask {
       width: 300vw;
-      height: size-m(94);
+      height: 100%;
       position: absolute;
-      top: size-m(315);
+      top: size-m(0);
       left: 0;
       background-color: #004880;
       opacity: .6;
       z-index: 1;
+    }
+
+    .logo {
+      position: absolute;
+      width: sizem(40);
+      height: auto;
+      top: 0;
+      left: sizem(620);
     }
   }
 }

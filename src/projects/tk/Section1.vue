@@ -2,15 +2,19 @@
   <div class="section1">
     <img src="./s1/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img">
     <!-- <img src="./s1/背景亮亮.gif" :alt="`${info.caseName}_img`" class="bg-img mix"> -->
-    <img src="./s1/logo.png" :alt="`${info.caseName}_img`" class="logo"  data-aos="fade" data-aos-delay="200">
-    <div class="title"  data-aos="fade" data-aos-delay="400">
+    <img src="./s1/logo.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade" data-aos-delay="200">
+    <div class="title" data-aos="fade" data-aos-delay="400" v-if="isPC">
       發現 東京地標宅 起漲 高雄雙捷運
     </div>
-    <div class="subtitle"  data-aos="fade" data-aos-delay="600">
-      總價588萬起 全新落成 優雅入住
+    <div class="title" data-aos="fade" data-aos-delay="400" v-if="isMobile">
+      發現 東京地標宅<br />起漲 高雄雙捷運
     </div>
-    <div class="line line-left"><span></span></div>
-    <div class="line line-right"><span></span></div>
+    <div class="subtitle" data-aos="fade" data-aos-delay="600">
+      總價<span>588</span>萬起 全新落成 優雅入住
+    </div>
+    <div class="line line-bottom" data-aos="fade-right" data-aos-delay="600" v-if="isMobile"><span></span></div>
+    <div class="line line-left" data-aos="fade-right" data-aos-delay="600" v-if="isPC"><span></span></div>
+    <div class="line line-right" data-aos="fade-left" data-aos-delay="600" v-if="isPC"><span></span></div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -86,7 +90,7 @@
 }
 
 .line-right {
-  @include img_r_pc(275, 885, 378);
+  @include img_r_pc(275, 885, 358);
   &::before {
     animation: hrr 3s linear infinite;
   }
@@ -108,42 +112,64 @@
     // overflow: hidden;
   }
 
-  .img1 {
-    @include img_l_m(231, -50, 12);
+  .bg-img {
+    width: 100vw;
+    height: calc(100vh - 63px);
+    min-height: auto;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+
+    &:nth-child(1) {
+      position: relative;
+    }
   }
-  .img2 {
-    @include img_r_m(128, 43, 39);
-  }
-  .img3 {
-    @include img_l_m(183, 155, 23);
-  }
-  .img4 {
-    @include img_r_m(238, 143, 17);
+
+  .mix {
+    mix-blend-mode: multiply;
   }
 
   .logo {
-    @include img_c_m(337, 0);
+    @include img_c_m(313, 141);
   }
 
-  .t1 {
-    @include img_c_m(320, 380);
-    font-size: sizem(32);
-    line-height: 1.7;
+  .title {
+    @include img_c_m(231, 335);
+    text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.75);
+    font-size: sizem(29);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.34;
+    letter-spacing: sizem(2.9);
+    text-align: right;
+    color: #fff;
+    white-space: nowrap;
   }
-  .t2 {
-    @include img_c_m(370, 445);
-    font-size: sizem(32);
-    letter-spacing: 0.09em;
-    line-height: 1.7;
-    b {
-      position: relative;
-      width: 120%;
-      left: -10%;
-      font-size: sizem(30);
-      display: block;
-      transform: scaleX(0.88);
-      letter-spacing: 0.03em;
+
+  .subtitle {
+    @include img_c_m(307, 469);
+    text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.75);
+    font-size: sizem(19);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.32;
+    letter-spacing: 0.95px;
+    text-align: right;
+    color: #fff;
+
+    span {
+      font-family: 'Noto Serif TC', serif;
+      font-size: sizem(29);
+      color: #c8a064;
     }
+  }
+
+  .line-bottom {
+    @include img_c_m(314, 457);
   }
 }
 </style>

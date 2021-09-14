@@ -1,5 +1,5 @@
 <template>
-  <div class="section5">
+  <div class="section9">
     <div class="title">
       跨足國際品牌<br />達麗建設堅實未來
     </div>
@@ -35,7 +35,7 @@
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
-.section5 {
+.section9 {
   width: 100%;
   height: size(1065);
   position: relative;
@@ -278,9 +278,9 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section5 {
+  .section9 {
     width: 100vw;
-    height: sizem(578 + 250);
+    height: sizem(578 + 280);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -290,59 +290,161 @@
     overflow: hidden;
   }
 
-  .img {
-    @include img_l_m(375, 0, 0);
-    height: sizem(250);
-    object-fit: cover;
-  }
+  .border {
+    @include div_c_m(335, 572, 30);
+    border: 2px solid #c9a063;
 
-  .content {
-    @include div_l_m(346, 250, 240, 12);
-    background-color: #100b09;
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: sizem(34) sizem(34) 0 0;
+      border-color: #c9a063 transparent transparent transparent;
+    }
 
-    .t_bg {
-      @include img_r_m(220, 0, 0);
-      top: auto;
+    &::after {
+      position: absolute;
+      right: 0;
       bottom: 0;
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 0 sizem(34) sizem(34);
+      border-color: transparent transparent #c9a063 transparent;
     }
   }
 
-  .border {
-    @include div_l_m(346, 250, 245, 17.8);
-    border: 2px solid #866231;
+  .border-bottom {
+    @include img_c_m(335, 0);
+    top: auto;
+    bottom: size(20);
+    border: 2px solid #c9a063;
+  }
+
+  .line {
+    @include img_c_m(306, 127);
   }
 
   .title {
-    @include img_l_m(231, 265, 33);
+    @include img_l_m(268, 39, 33);
     font-size: sizem(25);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.44;
-    letter-spacing: sizem(0.75);
+    letter-spacing: sizem(1.88);
     text-align: left;
-    color: #c3985b;
+    color: #c8a064;
     white-space: nowrap;
   }
 
   .subtitle {
-    @include img_l_m(310, 340, 33);
+    @include img_c_m(310, 144);
     font-size: sizem(15);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.2;
-    letter-spacing: sizem(2.4);
+    line-height: 1.4;
+    letter-spacing: sizem(0.45);
     text-align: left;
-    color: #ffffff;
+    color: #fff;
     white-space: normal;
   }
 
-  .desc {
-    @include img_c_m(310, 250 + 265);
+  .swiper {
+    @include img_c_m(375, 345);
+  }
+  // .swiper-slide {
+  //   width: calc(33.33% - 10px);
+  // }
+  .item-img {
+    width: sizem(225);
+    cursor: pointer;
+  }
+
+  .swiper-button-prev,
+  .swiper-container-rtl .swiper-button-next,
+  .swiper-button-next,
+  .swiper-container-rtl .swiper-button-prev {
+    background: transparent;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
+
+  .swiper-button-prev {
+    left: size(220);
+  }
+
+  .swiper-button-next {
+    right: size(220);
+  }
+
+  .bottom-title {
+    @include img_c_m(340, 0);
+    top: auto;
+    bottom: sizem(130);
+    text-shadow: 10px 10px 5px rgba(0, 0, 0, 0.75);
+    font-size: sizem(28);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: sizem(2.5);
+    text-align: center;
+    color: #fff;
+    white-space: nowrap;
+
+    span {
+      font-size: sizem(19);
+      letter-spacing: sizem(2);
+      white-space: nowrap;
+    }
+
+    .color {
+      font-size: sizem(42);
+      font-weight: 900;
+      letter-spacing: normal;
+      color: #c8a064;
+      white-space: nowrap;
+    }
+  }
+
+  .bottom-line {
+    @include img_c_m(320, 0);
+    top: auto;
+    bottom: sizem(110);
+  }
+
+  .bottom-subtitle {
+    @include img_c_m(330, 0);
+    top: auto;
+    bottom: 0;
+    text-shadow: 10px 10px 5px rgba(0, 0, 0, 0.9);
+    font-family: NotoSansCJKtc;
     font-size: sizem(15);
-    line-height: 1.98;
-    letter-spacing: 0.18em;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.21;
+    letter-spacing: sizem(1.2);
+    text-align: center;
+    color: #fff;
+    white-space: normal;
+
+    span {
+      font-size: sizem(16);
+      letter-spacing: sizem(1.8);
+      font-family: 'Noto Sans TC', serif;
+      white-space: nowrap;
+    }
   }
 }
 </style>
@@ -356,7 +458,7 @@ import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
-  name: 'section5',
+  name: 'section9',
 
   mixins: [slider],
 
@@ -373,7 +475,7 @@ export default {
       isTablet,
       info,
       swiperOption: {
-        slidesPerView: isMobile ? 1 : 3,
+        slidesPerView: isMobile ? 1.7 : 3,
         centeredSlides: true,
         spaceBetween: isTablet ? 20 : 10,
         slidesPerColumn: isMobile ? 1 : 1,

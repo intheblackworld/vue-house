@@ -47,6 +47,7 @@ export default {
     },
     // 一個區塊有多個輪播組件
     addMultiIndex(index) {
+      console.log(index, this.slideList1)
       this[`slideIndex${index}`] =
         this[`slideIndex${index}`] === this[`slideList${index}`].length - 1 ? 0 : this[`slideIndex${index}`] + 1
     },

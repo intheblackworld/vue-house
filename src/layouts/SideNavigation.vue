@@ -9,13 +9,7 @@
       </div>
       <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
       <ul :class="`navlist ${isOpen ? 'open': ''}`">
-        <li
-          :key="item.name"
-          v-scroll-to="{ element: `#${item.section}`, offset: isMobile ? (item.mobileOffset ? item.mobileOffset : offset) : (item.offset ? item.offset : offset) }"
-          v-for="item in list"
-          class="flex-ac"
-          @click="toggleSidebar"
-        >
+        <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: isMobile ? (item.mobileOffset ? item.mobileOffset : offset) : (item.offset ? item.offset : offset) }" v-for="item in list" class="flex-ac" @click="toggleSidebar">
           <span class="link">
             <img v-if="item.imgSrc" :src="item.imgSrc" alt />
             <span>
@@ -185,7 +179,9 @@ export default {
   li {
     height: 60px;
     margin-bottom: 0;
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
+    border-bottom: solid 1px #b79261;
   }
 
   .link {
@@ -395,6 +391,9 @@ export default {
     transform: translateX(40%);
 
     li {
+      width: 80%;
+      margin: 0 auto;
+      border-bottom: solid 1px #b79261;
     }
 
     .link {
@@ -407,10 +406,15 @@ export default {
       span {
         line-height: 16px;
       }
+
+      .title {
+        font-size: 16px;
+        font-family: 'Noto Sans TC', serif;
+      }
     }
 
     &.open {
-      width: 100%;
+      width: 60%;
       transform: translateX(0%);
 
       .link {
@@ -1493,6 +1497,10 @@ body {
   flex: 1 0 50%;
   margin-bottom: 1rem;
   text-align: center;
+
+  right: 0px;
+  top: 0;
+  left: auto;
 }
 
 .menu_switch {
@@ -1728,7 +1736,7 @@ body {
   width: 120px;
   height: 100%;
   display: none;
-  background-image: url("~@/assets/img/contact_mb-bg.png");
+  background-image: url('~@/assets/img/contact_mb-bg.png');
 }
 @media (min-width: 992px) {
   .sidenav {

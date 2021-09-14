@@ -415,7 +415,7 @@ export default {
 
     .order-top {
       width: sizem(310);
-      height: sizem(240);
+      height: sizem(80);
       padding-top: sizem(25);
       padding-bottom: sizem(31);
       margin: 0 auto;

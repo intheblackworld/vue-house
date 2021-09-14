@@ -6,7 +6,7 @@
       </div>
     </div>
 
-    <div class="swipe1 absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -14,19 +14,48 @@
             <h3 class="slide-name absolute" v-html="slide.name"></h3>
           </div>
         </transition-group>
+        <!-- <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex1 === index ? 'active' : ''}`"></span></div>
+        </div> -->
+        <!-- <img src="./s5/n.png" alt="" class="slide-btn" v-if="slideIndex1 === 0" @click="goTo(1)">
+        <img src="./s5/s.png" alt="" class="slide-btn"  v-if="slideIndex1 === 1"  @click="goTo(0)"> -->
+        <div class="swipe-btns absolute flex-ac flex-jb">
+          <img src="./all/arrow-prev.png" alt="" class="prev-btn" @click="decIndex">
+          <img src="./all/arrow-next.png" alt="" class="next-btn" @click="addIndex">
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-content" v-if="isMobile">
+      <div class="slide-title" v-html="slideList[slideIndex].title"></div>
+      <div class="slide-line"></div>
+      <div class="slide-subtitle" v-html="slideList[slideIndex].subtitle"></div>
+      <div class="slide-more" @click="addIndex">
+        More
+      </div>
+    </div>
+
+    <div class="swipe1 absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isPC">
+      <div class="swipe-wrap relative">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList1" v-show="slideIndex1 === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" alt="">
+            <h3 class="slide-name absolute" v-html="slide.name"></h3>
+          </div>
+        </transition-group>
         <div class="slide-content">
-          <div class="slide-title" v-html="slideList[slideIndex].title"></div>
+          <div class="slide-title" v-html="slideList1[slideIndex1].title"></div>
           <div class="slide-line"></div>
-          <div class="slide-subtitle" v-html="slideList[slideIndex].subtitle"></div>
-          <div class="slide-more" @click="addIndex">
+          <div class="slide-subtitle" v-html="slideList1[slideIndex1].subtitle"></div>
+          <div class="slide-more" @click="addMultiIndex(1)">
             More
           </div>
         </div>
         <!-- <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex1 === index ? 'active' : ''}`"></span></div>
         </div> -->
-        <!-- <img src="./s5/n.png" alt="" class="slide-btn" v-if="slideIndex === 0" @click="goTo(1)">
-        <img src="./s5/s.png" alt="" class="slide-btn"  v-if="slideIndex === 1"  @click="goTo(0)"> -->
+        <!-- <img src="./s5/n.png" alt="" class="slide-btn" v-if="slideIndex1 === 0" @click="goTo(1)">
+        <img src="./s5/s.png" alt="" class="slide-btn"  v-if="slideIndex1 === 1"  @click="goTo(0)"> -->
         <!-- <div class="swipe-btns absolute flex-ac flex-jb">
           <img src="./all/arrow-prev.png" alt="" class="prev-btn" @click="decIndex">
           <img src="./all/arrow-next.png" alt="" class="next-btn" @click="addIndex">
@@ -34,22 +63,22 @@
       </div>
     </div>
 
-    <div class="swipe2 absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+    <div class="swipe2 absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isPC">
+      <div class="swipe-wrap relative">
         <transition-group name="swipe-fade" mode="out-in">
-          <div v-for="(slide, i) in slideList1" v-show="slideIndex1 === i" :key="slide.img" :class="`swipe-item absolute`">
+          <div v-for="(slide, i) in slideList2" v-show="slideIndex2 === i" :key="slide.img" :class="`swipe-item absolute`">
             <img :src="slide.img" alt="">
             <h3 class="slide-name absolute" v-html="slide.name"></h3>
           </div>
         </transition-group>
         <!-- <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex1 === index ? 'active' : ''}`"></span></div>
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex2 === index ? 'active' : ''}`"></span></div>
         </div> -->
         <div class="slide-content">
-          <div class="slide-title" v-html="slideList1[slideIndex1].title"></div>
+          <div class="slide-title" v-html="slideList2[slideIndex2].title"></div>
           <div class="slide-line"></div>
-          <div class="slide-subtitle" v-html="slideList1[slideIndex1].subtitle"></div>
-          <div class="slide-more" @click="addMultiIndex(1)">
+          <div class="slide-subtitle" v-html="slideList2[slideIndex2].subtitle"></div>
+          <div class="slide-more" @click="addMultiIndex(2)">
             More
           </div>
         </div>
@@ -422,7 +451,7 @@
 @media screen and (max-width: 767px) {
   .section8 {
     width: 100vw;
-    height: sizem(578 + 250);
+    height: sizem(578 + 100);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -432,59 +461,279 @@
     overflow: hidden;
   }
 
-  .img {
-    @include img_l_m(375, 0, 0);
-    height: sizem(250);
-    object-fit: cover;
-  }
+  .border {
+    @include div_c_m(335, 100, 30);
+    border: 2px solid #c9a063;
 
-  .content {
-    @include div_l_m(346, 250, 240, 12);
-    background-color: #100b09;
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: sizem(34) sizem(34) 0 0;
+      border-color: #c9a063 transparent transparent transparent;
+    }
 
-    .t_bg {
-      @include img_r_m(220, 0, 0);
-      top: auto;
+    &::after {
+      position: absolute;
+      right: 0;
       bottom: 0;
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 0 sizem(34) sizem(34);
+      border-color: transparent transparent #c9a063 transparent;
     }
   }
 
-  .border {
-    @include div_l_m(346, 250, 245, 17.8);
-    border: 2px solid #866231;
+  .line {
+    @include img_c_m(306, 157);
   }
 
-  .title {
-    @include img_l_m(231, 265, 33);
+  .label {
+    @include img_c_m(341, 18);
     font-size: sizem(25);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.44;
-    letter-spacing: sizem(0.75);
-    text-align: left;
-    color: #c3985b;
+    line-height: 3;
+    letter-spacing: sizem(1.88);
+    text-align: center;
+    color: #fff;
     white-space: nowrap;
   }
 
   .subtitle {
-    @include img_l_m(310, 340, 33);
+    @include img_c_m(310, 143);
     font-size: sizem(15);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.2;
-    letter-spacing: sizem(2.4);
-    text-align: left;
-    color: #ffffff;
+    line-height: 2.4;
+    letter-spacing: sizem(0.45);
+    text-align: center;
+    color: #fff;
     white-space: normal;
   }
 
-  .desc {
-    @include img_c_m(310, 250 + 265);
-    font-size: sizem(15);
-    line-height: 1.98;
-    letter-spacing: 0.18em;
+  /* Swipe */
+  .swipe {
+    @include div_c_m(335, 344, 140);
+  }
+
+  // begin
+  .swipe-fade-leave-to {
+    opacity: 0;
+    z-index: 0;
+  }
+  // end
+  .swipe-fade-enter {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .swipe-fade-enter-active {
+    transition: all 0.5s ease;
+  }
+
+  .swipe-fade-leave-active {
+    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  // begin
+  // .swipe-left-leave-to {
+  //   margin-left: -100vw;
+  //   z-index: 0;
+  // }
+  // // end
+  // .swipe-left-enter {
+  //   opacity: 0.5;
+  //   margin-left: 0;
+  //   z-index: 1;
+  // }
+
+  // .swipe-left-enter-active {
+  //   transition: all 0.5s ease;
+  // }
+
+  // .swipe-left-leave-active {
+  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  // }
+
+  .slide-content {
+    @include div_c_m(335, 153, 0);
+    top: auto;
+    bottom: sizem(25);
+    border-radius: 22.2px;
+    background-color: rgba(0, 0, 0, 0.75);
+    padding-top: sizem(15);
+
+    .slide-title {
+      font-size: sizem(16);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.31;
+      letter-spacing: sizem(0.8);
+      text-align: center;
+      color: #c8a064;
+    }
+
+    .slide-line {
+      width: sizem(330);
+      margin: 15px auto;
+      border-top: 1px solid #fff;
+    }
+
+    .slide-subtitle {
+      width: sizem(291);
+      margin: 0 auto;
+      font-size: sizem(15);
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.78;
+      letter-spacing: sizem(0.75);
+      text-align: center;
+      color: #fff;
+    }
+
+    .slide-more {
+      display: none;
+    }
+  }
+
+  .swipe-wrap {
+    width: 100%;
+    height: 100%;
+    // overflow: hidden;
+  }
+
+  .slide-btn {
+    @include img_r_pc(100, 30, 30);
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .swipe-item {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .slide-name {
+      right: 20px;
+      bottom: 0px;
+      color: #fff;
+      text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.75);
+      font-size: 22px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 3.11;
+      letter-spacing: 0.89px;
+      text-align: left;
+      color: #ffffff;
+    }
+
+    // &:nth-child(1) {
+    //   z-index: 1;
+    //   // opacity: 1;
+    // }
+
+    // &.base {
+    //   z-index: 1;
+    //   opacity: 1;
+    // }
+    // &.active {
+    //   z-index: 2;
+    //   // opacity: 1;
+    // }
+  }
+
+  .pagination {
+    width: auto;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: size(-60);
+    z-index: 2;
+    justify-content: center;
+  }
+
+  .pagination-dot {
+    padding: 5px;
+    margin: 0 5px;
+    cursor: pointer;
+    z-index: 4;
+
+    span {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 0 1px #fff;
+      position: relative;
+      background-color: transparent;
+      transition: all 0.5s;
+
+      &::before {
+        content: '';
+        width: 60%;
+        height: 60%;
+        display: block;
+        background: transparent;
+        border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 20%;
+        // transform: translateY(-50%);
+        left: 20%;
+        transition: all 0.3s;
+        transform-origin: center;
+        transform: scale(0);
+      }
+      &.active {
+        box-shadow: 0 0 0 1px #fff;
+        &::before {
+          content: '';
+          width: 100%;
+          height: 100%;
+          display: block;
+          background: #fff;
+          border-radius: 20px;
+          opacity: 1;
+          position: absolute;
+          top: 0%;
+          // transform: translateY(-50%);
+          left: 0%;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  .swipe-btns {
+    width: 120%;
+    left: -10%;
+    height: 100%;
+    padding: 0 15px;
+    z-index: 3;
+
+    .prev-btn,
+    .next-btn {
+      width: sizem(37);
+      cursor: pointer;
+    }
   }
 }
 </style>
@@ -506,6 +755,7 @@ export default {
       isTablet,
       info,
       slideIndex1: 0,
+      slideIndex2: 0,
       slideList: [
         {
           img: require('./s8/1-1.jpg'),
@@ -527,8 +777,50 @@ export default {
           title: '時尚開放 客餐整合',
           subtitle: '釋放空間的最舒適！收納、配備巧思，簡單家庭正合心意',
         },
+        {
+          img: require('./s8/2-1.jpg'),
+          title: '廚房衛浴 配備到位',
+          subtitle: '一卡皮箱好入住！廚房電器一應俱全，清爽衛浴乾溼分離',
+        },
+        {
+          img: require('./s8/2-2.jpg'),
+          title: '廚房衛浴 配備到位',
+          subtitle: '一卡皮箱好入住！廚房電器一應俱全，清爽衛浴乾溼分離',
+        },
+        {
+          img: require('./s8/2-3.jpg'),
+          title: '廚房衛浴 配備到位',
+          subtitle: '一卡皮箱好入住！廚房電器一應俱全，清爽衛浴乾溼分離',
+        },
+        {
+          img: require('./s8/2-4.jpg'),
+          title: '廚房衛浴 配備到位',
+          subtitle: '一卡皮箱好入住！廚房電器一應俱全，清爽衛浴乾溼分離',
+        },
       ],
       slideList1: [
+        {
+          img: require('./s8/1-1.jpg'),
+          title: '時尚開放 客餐整合',
+          subtitle: '釋放空間的最舒適！收納、配備巧思，簡單家庭正合心意',
+        },
+        {
+          img: require('./s8/1-2.jpg'),
+          title: '時尚開放 客餐整合',
+          subtitle: '釋放空間的最舒適！收納、配備巧思，簡單家庭正合心意',
+        },
+        {
+          img: require('./s8/1-3.jpg'),
+          title: '時尚開放 客餐整合',
+          subtitle: '釋放空間的最舒適！收納、配備巧思，簡單家庭正合心意',
+        },
+        {
+          img: require('./s8/1-4.jpg'),
+          title: '時尚開放 客餐整合',
+          subtitle: '釋放空間的最舒適！收納、配備巧思，簡單家庭正合心意',
+        },
+      ],
+      slideList2: [
         {
           img: require('./s8/2-1.jpg'),
           title: '廚房衛浴 配備到位',
@@ -557,7 +849,13 @@ export default {
 
   created() {},
 
-  mounted() {},
+  mounted() {
+    if (this.isMobile) {
+      this.toggleTimer = true
+    } else {
+      this.toggleTimer = false
+    }
+  },
 
   computed: {},
 
