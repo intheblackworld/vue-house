@@ -1,9 +1,9 @@
 <template>
   <div class="section8">
     <div class="border">
-      <div class="label">
+      <h3 class="label">
         景觀二房 頂規配備好入住
-      </div>
+      </h3>
     </div>
 
     <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile">

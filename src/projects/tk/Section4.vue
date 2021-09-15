@@ -298,20 +298,19 @@ text-shadow: 0 0 2vw #3E2855, 0 0 1vw #3E2855, 0 0 1vw #3E2855;
 
 @media screen and (max-width: 767px) {
   .section4 {
-    width: 100vw;
     height: sizem(576);
-    min-height: auto;
-    max-height: initial;
-    // background-image: url('./s2/bg.jpg');
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
-    overflow: hidden;
+  &::before{
+    top: calc(-10% - 100vw);
+    left:calc(30% - 80vw);
+    width:160vw;
+    height:200vw;
+    background: radial-gradient(ellipse at center, rgba(63,40,86,1) 30%,rgba(63,40,86,0) 70%);
+  }
   }
 
   .border {
     @include div_c_m(335, 508, 30);
-    border: 2px solid #c9a063;
+    border: 1px solid #c9a063;
 
     &::before {
       position: absolute;

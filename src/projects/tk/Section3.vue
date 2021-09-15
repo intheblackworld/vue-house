@@ -382,35 +382,19 @@
 
 @media screen and (max-width: 767px) {
   .section3 {
-    width: 100vw;
     height: sizem(576);
-    min-height: auto;
-    max-height: initial;
-    // background-image: url('./s2/bg.jpg');
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
-    overflow: hidden;
+  &::before{
+    top: calc(-10% - 100vw);
+    left:calc(30% - 80vw);
+    width:160vw;
+    height:200vw;
+    background: radial-gradient(ellipse at center, rgba(63,40,86,1) 30%,rgba(63,40,86,0) 70%);
   }
-
-  .img-name {
-    position: absolute;
-    right: size(18);
-    bottom: size(16);
-    text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.75);
-    font-size: size(20);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: size(8);
-    text-align: left;
-    color: #fff;
   }
 
   .border {
     @include div_c_m(335, 508, 30);
-    border: 2px solid #c9a063;
+    border:1px solid #c9a063;
 
   &::before {
     position: absolute;

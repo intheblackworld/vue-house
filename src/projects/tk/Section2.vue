@@ -22,16 +22,18 @@
 
 .section2 {
   width: 100%;
-  height: 100vh;
+  height: size(1080);
+  /*
   min-height: size(1080);
   max-height: size(1080);
+  */
   position: relative;
   z-index: 5;
 }
 
 .bg-img {
-  width: size(1920);
-  height: size(1080);
+  width:  100%;
+  height:  100%;
   // border-top: 1px solid red;
   position: absolute;
   top: 0;
@@ -88,13 +90,8 @@
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    min-height: sizem(812);
-    max-height: sizem(812);
     height: sizem(812);
     background-color: #002d87;
-    // background-image: url('./mo/1/bg.png');
-    background-size: cover;
-    background-attachment: scroll;
   }
   .bg-img {
     width: sizem(375);

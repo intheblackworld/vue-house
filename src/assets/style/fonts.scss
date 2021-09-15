@@ -1,16 +1,15 @@
-span,
+body{ font-family: 'Noto Sans TC', serif;}
 div,
 h1,
 h2,
 h3,
 h4,
 h5,
-p {
-  font-family: 'Noto Sans TC', serif;
+p {font-family:initial;
   // font-family: '微軟正黑體', 'Microsoft JhengHei', 'Helvetica Neue', Helvetica,
     // Arial;
 }
-
+span{ font-family:initial;}
 h3{
   font-family: 'Noto Serif TC', serif;
   // font-family: 'Noto Sans TC', serif;
@@ -28,6 +27,8 @@ p {
 /* animate css */
 
 /* font */
+
+/*
 @font-face {
   font-family: DFPingJuStd;
   src: url('~@/assets/font/DFPingJuStd-W7.otf?#iefix')
@@ -57,3 +58,4 @@ p {
   font-weight: normal;
   font-style: normal;
 }
+*/

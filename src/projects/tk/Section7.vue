@@ -26,13 +26,13 @@
     <div class="label">
       飯店公設管理
     </div>
-    <div class="title">
+    <h3 class="title">
       20項豐富公設 24小時飯店管理<br />尊榮感提升儀式感 讓生活 回家就開始
-    </div>
-    <!-- <div class="line"></div> -->
-    <h3 class="subtitle">
-      樂部規劃！鋼琴lounge bar、TV沙發區…享樂，不同以往。
     </h3>
+    <!-- <div class="line"></div> -->
+    <p class="subtitle">
+      樂部規劃！鋼琴lounge bar、TV沙發區…享樂，不同以往。
+    </p>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -105,7 +105,7 @@
 }
 
 .label {
-  @include img_c_pc(297, 203);
+  @include img_c_pc(874, 203);
   font-size: size(36);
   font-weight: bold;
   font-stretch: normal;
@@ -131,14 +131,14 @@
 }
 
 .subtitle {
-  @include img_c_pc(668, 432);
-  font-size: size(24);
+  @include img_c_pc(874, 432);
+  font-size: size(20);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.71;
   letter-spacing: size(1.2);
-  text-align: right;
+  text-align: center;
   color: #fff;
   white-space: nowrap;
 }

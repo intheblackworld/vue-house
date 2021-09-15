@@ -347,19 +347,19 @@
 
 @media screen and (max-width: 767px) {
   .section5 {
-    width: 100vw;
     height: sizem(578 + 100);
-    min-height: auto;
-    max-height: initial;
-    // background-image: url('./s2/bg.jpg');
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
+  &::before{
+    top: calc(60% -200vw);
+    left:calc(30% - 80vw);
+    width:160vw;
+    height:400vw;
+    background: radial-gradient(ellipse at center, rgba(63,40,86,1) 50%,rgba(63,40,86,0) 70%);
+  }
   }
 
   .border {
     @include div_c_m(335, 602, 30);
-    border: 2px solid #c9a063;
+    border: 1px solid #c9a063;
 
     &::before {
       position: absolute;
@@ -427,24 +427,20 @@
   /* Swipe */
   .swipe {
     @include div_c_m(355, 250, 390);
-    z-index: 2;
   }
 
   .slide-btn {
-    @include img_r_m(50, -30, 30);
+    @include div_r_m(50,50, -30, 30);
     cursor: pointer;
-    z-index: 10;
   }
 
   // begin
   .swipe-fade-leave-to {
     opacity: 0;
-    z-index: 0;
   }
   // end
   .swipe-fade-enter {
     opacity: 0;
-    z-index: 1;
   }
 
   .swipe-fade-enter-active {
@@ -484,7 +480,6 @@
   .swipe-item {
     width: 100%;
     height: 100%;
-    z-index: 0;
 
     img {
       width: 100%;
@@ -506,20 +501,6 @@
       text-align: left;
       color: #ffffff;
     }
-
-    // &:nth-child(1) {
-    //   z-index: 1;
-    //   // opacity: 1;
-    // }
-
-    // &.base {
-    //   z-index: 1;
-    //   opacity: 1;
-    // }
-    // &.active {
-    //   z-index: 2;
-    //   // opacity: 1;
-    // }
   }
 
   .pagination {
@@ -528,7 +509,6 @@
     left: 0;
     right: 0;
     bottom: size(-60);
-    z-index: 2;
     justify-content: center;
   }
 
@@ -536,7 +516,6 @@
     padding: 5px;
     margin: 0 5px;
     cursor: pointer;
-    z-index: 4;
 
     span {
       display: block;
@@ -588,7 +567,6 @@
     width: 100%;
     height: 100%;
     padding: 0 15px;
-    z-index: 3;
 
     .prev-btn,
     .next-btn {

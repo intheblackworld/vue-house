@@ -1,23 +1,22 @@
 <template>
   <div class="section6 flex-ac">
-      <div v-if="!isMobile" v-rellax="{
+     <!--  <div v-if="!isMobile" v-rellax="{
           // Rellax Options
           // See: https://github.com/dixonandmoe/rellax#features
           speed:-9
         }">
         <img src="./s6/bg.jpg" alt="img">
-      </div>
-    <!--<div class="animate-slide">
+      </div> -->
+   <div class="animate-slide">
       <img src="./s6/bg.jpg" :alt="`${info.caseName}_logo`" class="">
-      <img src="./s6/bg.jpg" :alt="`${info.caseName}_logo`" class="">
-    </div>-->
+    </div>
     <!-- <img src="./s6/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img"> -->
     <h3 class="title">
       國際視野高空泳池<br />
       城市之上我獨享
     </h3>
     <p class="subtitle">
-      達麗給您無邊際想像！<br>晨泳、消暑、池畔PARTY…<br>會館人生。
+      達麗給您無邊際想像！<br v-if="isPC">晨泳、消暑、池畔PARTY…<br v-if="isPC">會館人生。
     </p>
     <p class="name">
       空中泳池3D外觀合成模擬圖
@@ -29,8 +28,7 @@
 
 .section6 {
   width: 100%;
-  height: size(910);
-  max-height: size(1080);
+  height: size(800);
   position: relative;
   background-size: cover;
   background-position: 100%;
@@ -46,16 +44,18 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 200vw;
+  height: 100%;
   display: flex;
-  animation: an 30s 1s linear infinite alternate;
+  transform: translateX(6%);
+  img{
+  height:100%;
+  animation: an 20s 1s linear infinite alternate;}
 }
-/*
 @keyframes an {
   to {
-    transform: translateX(-100%);
+    transform: translateX(17%);
   }
-}*/
+}
 
 .bg-img {
   width: 100%;
@@ -88,7 +88,7 @@
 .subtitle {
   @include img_r_pc(335, 240, 298);
   text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.75);
-  font-size: size(24);
+  font-size: size(20);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -138,18 +138,20 @@
   }
 
   .animate-slide {
-    position: absolute;
     top: auto;
     bottom: 0;
-    left: 0;
-    width: 200vw;
     height: sizem(249);
     display: flex;
-    animation: an 30s 1s linear infinite alternate;
+  transform: translateX(19%);
     img {
       height: 100%;
-    }
+    animation: an 15s 1s linear infinite alternate;}
   }
+@keyframes an {
+  to {
+    transform: translateX(25%);
+  }
+}
 
   .border {
     @include div_c_m(335, 602, 30);

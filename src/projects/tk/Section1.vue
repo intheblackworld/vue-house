@@ -3,16 +3,16 @@
     <img src="./s1/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img">
     <img src="./s1/v.gif" :alt="`${info.caseName}_img`" class="bg-img mix">
     <img src="./s1/logo.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade" data-aos-delay="200">
-    <div class="title" data-aos="fade" data-aos-delay="400" v-if="isPC">
+    <h3 class="title" data-aos="fade" data-aos-delay="400" v-if="isPC">
       發現 東京地標宅 起漲 高雄雙捷運
-    </div>
-    <div class="title" data-aos="fade" data-aos-delay="400" v-if="isMobile">
+    </h3>
+    <h3 class="title" data-aos="fade" data-aos-delay="400" v-if="isMobile">
       發現 東京地標宅<br />起漲 高雄雙捷運
-    </div>
-    <div class="subtitle" data-aos="fade" data-aos-delay="600">
-      總價<span>588</span>萬起 全新落成 優雅入住
-    </div>
-    <div class="line line-bottom" data-aos="fade-right" data-aos-delay="600" v-if="isMobile"><span></span></div>
+    </h3>
+    <h3 class="subtitle" data-aos="fade" data-aos-delay="600">
+      總價<span>638</span>萬起 全新落成 優雅入住
+    </h3>
+    <div class="line_c line-bottom" v-if="isMobile"><span></span></div>
     <div class="line line-left" data-aos="fade-right" data-aos-delay="600" v-if="isPC"><span></span></div>
     <div class="line line-right" data-aos="fade-left" data-aos-delay="600" v-if="isPC"><span></span></div>
   </div>
@@ -38,9 +38,8 @@
 }
 
 .bg-img {
-  width: 100vw;
-  height: size(1080);
-  min-height: size(900);
+  width: 100%;
+  height: 100%;
   position: fixed;
   display: block;
   top: 0;
@@ -75,16 +74,24 @@
 
 .subtitle {
   @include img_c_pc(582, 857);
-  top:calc(50% + 100vw * (857 - 540) / 1920);
+  top:calc(50% + 100vw * (850 - 540) / 1920);
   text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.75);
   font-size: size(36);
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.33;
-  letter-spacing: size(1.8);
+  letter-spacing:0.05em;
   text-align: right;
   color: #fff;
+  vertical-align: middle;
+    span {
+      font-size:1.6em;
+      color: #c8a064;
+  font-weight: 900;
+  letter-spacing:0em;
+  vertical-align:-.07em;
+    }
 }
 
 .line-left {
@@ -105,17 +112,15 @@
 
 @media screen and (max-width: 767px) {
   .section1 {
-    width: 100vw;
     background-size: cover;
     margin: 0;
     height: calc(100vh - 63px);
     min-height: sizem(604);
     max-height: sizem(750);
     position: relative;
-    z-index: 2;
     // overflow: hidden;
   }
-
+/*
   .bg-img {
     width: 100vw;
     height: calc(100vh - 63px);
@@ -131,16 +136,15 @@
     }
   }
 
-  .mix {
-    mix-blend-mode: multiply;
-  }
-
+*/
   .logo {
     @include img_c_m(313, 141);
+  top:calc(50% + 100vw * (141 - 302) / 375);
   }
 
   .title {
-    @include img_c_m(231, 335);
+    @include img_c_m(375, 335);
+  top:calc(50% + 100vw * (335 - 302) / 375);
     text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.75);
     font-size: sizem(29);
     font-weight: bold;
@@ -148,13 +152,14 @@
     font-style: normal;
     line-height: 1.34;
     letter-spacing: sizem(2.9);
-    text-align: right;
+    text-align: center;
     color: #fff;
     white-space: nowrap;
   }
 
   .subtitle {
-    @include img_c_m(307, 469);
+    @include img_c_m(375, 469);
+  top:calc(50% + 100vw * (469 - 302) / 375);
     text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.75);
     font-size: sizem(19);
     font-weight: 600;
@@ -162,18 +167,17 @@
     font-style: normal;
     line-height: 1.32;
     letter-spacing: 0.95px;
-    text-align: right;
+    text-align: center;
     color: #fff;
-
     span {
-      font-family: 'Noto Serif TC', serif;
-      font-size: sizem(29);
-      color: #c8a064;
+      font-size:2em;
     }
+
   }
 
   .line-bottom {
     @include img_c_m(314, 457);
+  top:calc(50% + 100vw * (457 - 302) / 375);
   }
 }
 </style>

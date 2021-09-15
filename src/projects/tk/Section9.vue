@@ -1,14 +1,14 @@
 <template>
   <div class="section9">
-    <div class="title">
+    <h3 class="title">
       跨足國際品牌<br />達麗建設堅實未來
-    </div>
+    </h3>
     <div class="line"></div>
-    <h3 class="subtitle">
+    <p class="subtitle">
       股票上市品牌達麗建設（代號6177）佈局北中南豪宅地標！<br />
       近年更跨足了美國西雅圖、舊金山不動產，商場經營投資！<br />
       多角經營彰顯實力品牌典範，為您的生活，迎接安心未來！
-    </h3>
+    </p>
     <div class="border">
     </div>
     <swiper :options="swiperOption" ref="mySwiper" class="swiper">
@@ -22,15 +22,15 @@
     <div class="swiper-button-prev">
       <img src="./all/arrow-prev.png" alt="">
     </div>
-    <div class="bottom-title">
-      總價 <span class="color">588</span> 萬起 <br />
+    <h3 class="bottom-title">
+      總價 <span class="color">638</span> 萬起 <br />
       <span>全新完工 國際飯店宅即刻 Check in</span>
-    </div>
-    <div class="line bottom-line"></div>
-    <div class="bottom-subtitle">
+    </h3>
+    <div class="line_c bottom-line"></div>
+    <p class="bottom-subtitle">
       美麗島雙捷運線生活圈│高雄新站門戶未來│起漲蛋黃金區|空中泳池會館│20項豐富公設<br />
       <span>配備到位 一卡皮箱就入住</span>
-    </div>
+    </p>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -63,59 +63,6 @@
   object-fit: cover;
 }
 
-.img-content {
-  @include img_l_pc(1215, 54, 0);
-  height: size(417 + 515 + 10);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.img1 {
-  width: 100%;
-  margin-bottom: 15px;
-  position: relative;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-.img2 {
-  width: 60%;
-  position: relative;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-.img3 {
-  width: 38%;
-  position: relative;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-.img-name {
-  position: absolute;
-  right: size(18);
-  bottom: size(16);
-  text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.75);
-  font-size: size(20);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(8);
-  text-align: left;
-  color: #fff;
-}
 
 .border {
   @include div_c_pc(1276, 188, 0);
@@ -142,7 +89,8 @@
 }
 
 .line {
-  @include img_l_pc(128, 90, 828);
+  @include img_l_pc(128, 90, 818);
+  transform: rotate(90deg);z-index: 3;
 }
 
 .title {
@@ -237,6 +185,7 @@
 
 .bottom-line {
   @include img_c_pc(1103, 0);
+  transform: rotate(0deg);
   top: auto;
   bottom: size(143);
 }
@@ -327,11 +276,12 @@
   }
 
   .line {
-    @include img_c_m(306, 127);
+    @include img_c_m(306, 147);
+  transform: rotate(0deg);
   }
 
   .title {
-    @include img_l_m(268, 39, 33);
+    @include img_l_m(268, 59, 33);
     font-size: sizem(25);
     font-weight: bold;
     font-stretch: normal;
@@ -344,7 +294,7 @@
   }
 
   .subtitle {
-    @include img_c_m(310, 144);
+    @include img_c_m(310, 164);
     font-size: sizem(15);
     font-weight: 500;
     font-stretch: normal;
@@ -396,7 +346,7 @@
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.5;
+    line-height: 1.4;
     letter-spacing: sizem(2.5);
     text-align: center;
     color: #fff;
