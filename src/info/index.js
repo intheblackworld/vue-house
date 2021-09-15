@@ -17,6 +17,7 @@ export default {
     ['使照號碼', '(110)高市工建築使字第01284號'],
     ['工程營造', '寶信營造股份有限公司'],
     ['廣告銷售', '上揚國際建築團隊'],
+    ['接待會館', '高雄市前金區六合二路98號'],
   ],
   gtmCode: ['52F5VGR'], // 可放置多個
   recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
