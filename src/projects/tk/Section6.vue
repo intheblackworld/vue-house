@@ -1,9 +1,16 @@
 <template>
   <div class="section6 flex-ac">
-    <div class="animate-slide">
+      <div v-if="!isMobile" v-rellax="{
+          // Rellax Options
+          // See: https://github.com/dixonandmoe/rellax#features
+          speed:-9
+        }">
+        <img src="./s6/bg.jpg" alt="img">
+      </div>
+    <!--<div class="animate-slide">
       <img src="./s6/bg.jpg" :alt="`${info.caseName}_logo`" class="">
       <img src="./s6/bg.jpg" :alt="`${info.caseName}_logo`" class="">
-    </div>
+    </div>-->
     <!-- <img src="./s6/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img"> -->
     <h3 class="title">
       國際視野高空泳池<br />
