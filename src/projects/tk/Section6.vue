@@ -5,16 +5,16 @@
       <img src="./s6/bg.jpg" :alt="`${info.caseName}_logo`" class="">
     </div>
     <!-- <img src="./s6/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img"> -->
-    <div class="title">
+    <h3 class="title">
       國際視野高空泳池<br />
       城市之上我獨享
-    </div>
-    <h3 class="subtitle">
-      達麗給您無邊際想像！晨泳、消暑、池畔PARTY…會館人生。
     </h3>
-    <h3 class="name">
+    <p class="subtitle">
+      達麗給您無邊際想像！<br>晨泳、消暑、池畔PARTY…<br>會館人生。
+    </p>
+    <p class="name">
       空中泳池3D外觀合成模擬圖
-    </h3>
+    </p>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -38,17 +38,17 @@
 .animate-slide {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   width: 200vw;
   display: flex;
   animation: an 30s 1s linear infinite alternate;
 }
-
+/*
 @keyframes an {
   to {
     transform: translateX(-100%);
   }
-}
+}*/
 
 .bg-img {
   width: 100%;
@@ -65,7 +65,7 @@
 }
 
 .title {
-  @include img_r_pc(320, 104, 318);
+  @include img_r_pc(400, 104, 318);
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.75);
   font-size: size(42);
   font-weight: bold;
@@ -73,13 +73,13 @@
   font-style: normal;
   line-height: 1.5;
   letter-spacing: size(3);
-  text-align: center;
+  text-align: right;
   color: #c8a064;
   white-space: nowrap;
 }
 
 .subtitle {
-  @include img_r_pc(283, 240, 318);
+  @include img_r_pc(335, 240, 298);
   text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.75);
   font-size: size(24);
   font-weight: 500;
@@ -87,7 +87,7 @@
   font-style: normal;
   line-height: 1.71;
   letter-spacing: size(1.2);
-  text-align: right;
+  text-align: left;
   color: #fff;
 }
 

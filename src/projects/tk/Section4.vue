@@ -23,9 +23,9 @@
         緊鄰學區人文純境
       </h3>
       <div class="line"></div>
-      <h3 class="subtitle">
+      <p class="subtitle">
         六合商圈正核心！【達麗東京】實現離塵不離城！週圍緊鄰校園綠地，環境單純，孩子走路上學，美食、採購、學區優勢一目了然，現買現享受！
-      </h3>
+      </p>
     </div>
   </div>
 </template>
@@ -36,17 +36,16 @@
   width: 100%;
   height: size(935);
   position: relative;
-  background-image: url('./s3/bg.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  // background-size: cover;
-  // background-position: 100%;
-  // min-height: size(900);
-  // background-image: url('./s2/bg.jpg');
-  // background-size: 100% 100%;
-  // background-position: 0 0;
-  // background-attachment: fixed;
-  // overflow: hidden;
+  &::before{
+    content: "";z-index: 1;
+  position: absolute;
+    display: block;
+    top: calc(50% - 40vw);
+    right:calc(20% - 60vw);
+    width:120vw;
+    height:80vw;
+    background: radial-gradient(ellipse at center, rgba(63,40,86,1) 50%,rgba(63,40,86,0) 70%);
+  }
 }
 
 .bg-img {
@@ -59,63 +58,10 @@
   object-fit: cover;
 }
 
-.img-content {
-  @include img_l_pc(1215, 54, 0);
-  height: size(417 + 515 + 10);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.img1 {
-  width: 100%;
-  margin-bottom: 15px;
-  position: relative;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-.img2 {
-  width: 60%;
-  position: relative;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-.img3 {
-  width: 38%;
-  position: relative;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-.img-name {
-  position: absolute;
-  right: size(18);
-  bottom: size(16);
-  text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.75);
-  font-size: size(20);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(8);
-  text-align: left;
-  color: #fff;
-}
-
 .border {
   @include div_l_pc(484, 800, 0, 242);
-  border: 2px solid #c9a063;
+  border: 2px solid #c9a063;z-index:3;
+text-shadow: 0 0 2vw #3E2855, 0 0 1vw #3E2855, 0 0 1vw #3E2855;
 
   &::before {
     position: absolute;
@@ -173,7 +119,7 @@
 
 /* Swipe */
 .swipe {
-  @include div_r_pc(1160, 800, 0, 0);
+  @include div_r_pc(1160, 800, 0, 0);z-index:3;
 }
 
 // begin

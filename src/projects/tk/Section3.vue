@@ -43,16 +43,16 @@
         捷奏生活無往不利
       </h3>
       <div class="line"></div>
-      <h3 class="subtitle" v-if="isPC">
+      <p class="subtitle" v-if="isPC">
         【達麗東京】步行近距離雙線捷運生活圈！<br />
         未來輕軌綠線、捷運黃線，串聯城市全錄網！<br />
         即刻把握軌道經濟學，投資、起漲攻守兼備！
-      </h3>
-      <h3 class="subtitle" v-if="isMobile">
+      </p>
+      <p class="subtitle" v-if="isMobile">
         【達麗東京】步行近距離雙線捷運生活圈！
         未來輕軌綠線、捷運黃線，串聯城市全錄網！
         即刻把握軌道經濟學，投資、起漲攻守兼備！
-      </h3>
+      </p>
     </div>
   </div>
 </template>
@@ -63,17 +63,16 @@
   width: 100%;
   height: size(1135);
   position: relative;
-  background-image: url('./s3/bg.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  // background-size: cover;
-  // background-position: 100%;
-  // min-height: size(900);
-  // background-image: url('./s2/bg.jpg');
-  // background-size: 100% 100%;
-  // background-position: 0 0;
-  // background-attachment: fixed;
-  // overflow: hidden;
+  &::before{
+    content: "";z-index: 1;
+  position: absolute;
+    display: block;
+    top: calc(-20% - 30vw);
+    left:calc(50% - 80vw);
+    width:160vw;
+    height:60vw;
+    background: radial-gradient(ellipse at center, rgba(63,40,86,1) 50%,rgba(63,40,86,0) 70%);
+  }
 }
 
 .bg-img {
@@ -92,6 +91,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  z-index: 3;
 }
 
 .img1 {
@@ -143,30 +143,32 @@
 .border {
   @include div_r_pc(484, 650, 154, 160);
   border: 2px solid #c9a063;
+  z-index: 3;
+  text-shadow: 0 0 2vw #3E2855, 0 0 1vw #3E2855, 0 0 1vw #3E2855;
 
-  &::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: '';
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: sizem(34) sizem(34) 0 0;
-    border-color: #c9a063 transparent transparent transparent;
-  }
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: size(34) size(34) 0 0;
+      border-color: #c9a063 transparent transparent transparent;
+    }
 
-  &::after {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    content: '';
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 0 sizem(34) sizem(34);
-    border-color: transparent transparent #c9a063 transparent;
-  }
+    &::after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 0 size(34) size(34);
+      border-color: transparent transparent #c9a063 transparent;
+    }
 }
 
 .line {
@@ -410,29 +412,29 @@
     @include div_c_m(335, 508, 30);
     border: 2px solid #c9a063;
 
-    &::before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      content: '';
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: size(34) size(34) 0 0;
-      border-color: #c9a063 transparent transparent transparent;
-    }
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: sizem(34) sizem(34) 0 0;
+    border-color: #c9a063 transparent transparent transparent;
+  }
 
-    &::after {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      content: '';
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 0 0 size(34) size(34);
-      border-color: transparent transparent #c9a063 transparent;
-    }
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 sizem(34) sizem(34);
+    border-color: transparent transparent #c9a063 transparent;
+  }
   }
 
   .line {

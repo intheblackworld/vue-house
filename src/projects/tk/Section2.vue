@@ -23,14 +23,10 @@
 .section2 {
   width: 100%;
   height: 100vh;
-  min-height: size(900);
+  min-height: size(1080);
   max-height: size(1080);
-  background: none;
-  background-size: auto;
-  background-attachment: fixed;
-  // overflow: hidden;
-  background-color: #fff;
   position: relative;
+  z-index: 5;
 }
 
 .bg-img {

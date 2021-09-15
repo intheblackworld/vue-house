@@ -11,9 +11,19 @@
         <!-- <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div> -->
+        <div class="slide-btn s" v-if="slideIndex === 0" @click="goTo(1)">
+          <svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+           <path d="M74.3,49.6c0,13.2-10.7,23.9-23.9,23.9S26.5,62.8,26.5,49.6s10.7-23.9,23.9-23.9S74.3,36.4,74.3,49.6z M41.9,79 l8.3,8.3l8.3-8.3H41.9z M58.4,20.2l-8.3-8.3l-8.3,8.3H58.4z M71.6,71.7l11.3-3l-3-11.3L71.6,71.7z M29,27.9l-11.3,3l3,11.3L29,27.9z M80.1,42.3l3-11.3l-11.3-3L80.1,42.3z M20.9,57.3l-3,11.3l11.3,3L20.9,57.3z"/>
+          </svg></div>
+        <div class="slide-btn n" v-if="slideIndex === 1" @click="goTo(0)">
+          <svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+           <path d="M49.1,49.9c0-12.5,8.2-23,19.4-26.7c-3.5-1.5-7.4-2.3-11.4-2.3c-16,0-29,13-29,29s13,29,29,29 c4.1,0,7.9-0.8,11.4-2.3C57.3,72.9,49.1,62.3,49.1,49.9z"/>
+          </svg>
+        </div>
+        <!-- 
         <img src="./s5/n.png" alt="" class="slide-btn" v-if="slideIndex === 0" @click="goTo(1)">
         <img src="./s5/s.png" alt="" class="slide-btn" v-if="slideIndex === 1" @click="goTo(0)">
-        <!-- <div class="swipe-btns absolute flex-ac flex-jb">
+        <div class="swipe-btns absolute flex-ac flex-jb">
           <img src="./all/arrow-prev.png" alt="" class="prev-btn" @click="decIndex">
           <img src="./all/arrow-next.png" alt="" class="next-btn" @click="addIndex">
         </div> -->
@@ -21,18 +31,15 @@
     </div>
     <div class="border">
     </div>
-    <div class="title" v-if="isPC">
-      高雄晴空地標 東京時尚天際
-    </div>
-    <div class="title" v-if="isMobile">
-      高雄晴空地標<br />東京時尚天際
-    </div>
+    <h3 class="title">
+      高雄晴空地標<br v-if="isMobile" /> 東京時尚天際
+    </h3>
     <div class="line"></div>
-    <h3 class="subtitle">
+    <p class="subtitle">
       全新落成、高雄市中心頂級視野，超高精品地標展魅力！<br />
       俐落風格、簡約時尚，城市、行人、居住者視角全方位！<br />
       高雄稀有蛋黃，頂尖景觀生活，現在馬上入住、馬上起漲！
-    </h3>
+    </p>
     <div class="border-bottom">
     </div>
   </div>
@@ -43,17 +50,16 @@
   width: 100%;
   height: size(1165);
   position: relative;
-  background-image: url('./s3/bg.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  // background-size: cover;
-  // background-position: 100%;
-  // min-height: size(900);
-  // background-image: url('./s2/bg.jpg');
-  // background-size: 100% 100%;
-  // background-position: 0 0;
-  // background-attachment: fixed;
-  // overflow: hidden;
+  &::before{
+    content: "";z-index: 1;
+  position: absolute;
+    display: block;
+    bottom: 0;
+    left:0;
+    width:100%;
+    height:80vw;
+    background:  linear-gradient(to top, rgba(63,40,86,1) 0%,rgba(63,40,86,0) 100%);
+  }
 }
 
 .bg-img {
@@ -66,64 +72,11 @@
   object-fit: cover;
 }
 
-.img-content {
-  @include img_l_pc(1215, 54, 0);
-  height: size(417 + 515 + 10);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.img1 {
-  width: 100%;
-  margin-bottom: 15px;
-  position: relative;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-.img2 {
-  width: 60%;
-  position: relative;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-.img3 {
-  width: 38%;
-  position: relative;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-.img-name {
-  position: absolute;
-  right: size(18);
-  bottom: size(16);
-  text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.75);
-  font-size: size(20);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(8);
-  text-align: left;
-  color: #fff;
-}
 
 .border {
-  @include div_c_pc(1450, 820, 200);
-  border: 2px solid #c9a063;
-
+  @include div_c_pc(1500, 850, 180);
+  border: 1px solid #c9a063;z-index: 3;
+ 
   &::before {
     position: absolute;
     top: 0;
@@ -158,11 +111,11 @@
 
 .line {
   @include img_l_pc(128, 50, 848);
-  transform: rotate(90deg);
+  transform: rotate(90deg);z-index: 3;
 }
 
 .title {
-  @include img_l_pc(566, 25, 322);
+  @include img_l_pc(566, 25, 250);
   font-size: size(42);
   font-weight: bold;
   font-stretch: normal;
@@ -171,19 +124,21 @@
   letter-spacing: size(3);
   text-align: center;
   color: #c8a064;
-  white-space: nowrap;
+  white-space: nowrap;z-index: 3;
+  text-shadow: 0 0 2vw #3E2855, 0 0 1vw #3E2855, 0 0 1vw #3E2855;
 }
 
 .subtitle {
   @include img_r_pc(927, 0, 322);
-  font-size: size(24);
+  font-size: size(20);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.71;
   letter-spacing: size(1.2);
   text-align: right;
-  color: #fff;
+  color: #fff;z-index: 3;
+  text-shadow: 0 0 2vw #3E2855, 0 0 1vw #3E2855, 0 0 1vw #3E2855;
 }
 
 /* Swipe */
@@ -237,15 +192,34 @@
 }
 
 .slide-btn {
-  @include img_r_pc(100, 30, 30);
+  @include div_r_pc(100,100, 30, 30);
   cursor: pointer;
   z-index: 10;
+  border-radius: 50%;
+  transition:color 0.3s;
+  box-shadow: 0 0 .5vw #ffF9,0 0 3vw #fC39;
+  background: radial-gradient(ellipse at center, #623F93 0%,#3E2855 60%);
+  svg{fill: #FFF;
+  transition:fill .5s;}
+  &:hover{
+  background: radial-gradient(ellipse at center, #C1ADD6 0%,#FFF 60%);
+    svg{fill: #3E2855;}
+  }
+  &.n{
+  background: radial-gradient(ellipse at center, #C1ADD6 0%,#FFF 60%);
+  svg{fill: #3E2855;
+  transition:fill .5s;}
+  &:hover{
+  background: radial-gradient(ellipse at center, #623F93 0%,#3E2855 60%);
+    svg{fill: #FFF;}
+  }
+  }
 }
 
 .swipe-item {
   width: 100%;
   height: 100%;
-  z-index: 0;
+  z-index: 0;z-index: 3;
 
   img {
     width: 100%;
@@ -254,15 +228,15 @@
   }
 
   .slide-name {
-    right: 20px;
+    right: size(50);
     bottom: 0px;
     color: #fff;
-    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.75);
-    font-size: 22px;
-    font-weight: normal;
+    text-shadow: 0 0 2.5vw rgba(0, 0, 0, 1), 0 0 2vw rgba(0, 0, 0, 1),0 0 1vw rgba(0, 0, 0, 1);
+    font-size:size(15);
+    font-weight: 400;
     font-stretch: normal;
     font-style: normal;
-    line-height: 3.11;
+    line-height: 2.5;
     letter-spacing: 0.89px;
     text-align: left;
     color: #ffffff;

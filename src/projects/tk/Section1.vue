@@ -1,7 +1,7 @@
 <template>
   <div class="section1">
     <img src="./s1/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img">
-    <!-- <img src="./s1/背景亮亮.gif" :alt="`${info.caseName}_img`" class="bg-img mix"> -->
+    <img src="./s1/v.gif" :alt="`${info.caseName}_img`" class="bg-img mix">
     <img src="./s1/logo.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade" data-aos-delay="200">
     <div class="title" data-aos="fade" data-aos-delay="400" v-if="isPC">
       發現 東京地標宅 起漲 高雄雙捷運
@@ -25,7 +25,9 @@
   position: relative;
   overflow: visible;
   width: 100%;
-  height: size(1080);
+  height: 100vh;
+  min-height: size(900);
+  max-height: size(1080);
   // background: linear-gradient(
   //   to bottom,
   //   rgba(0, 131, 190, 0) 13%,
@@ -39,27 +41,26 @@
   width: 100vw;
   height: size(1080);
   min-height: size(900);
-  position: absolute;
+  position: fixed;
   display: block;
   top: 0;
   left: 0;
   object-fit: cover;
 
-  &:nth-child(1) {
-    position: relative;
-  }
 }
 
 .mix {
-  mix-blend-mode: multiply;
+  mix-blend-mode: overlay;
 }
 
 .logo {
   @include img_c_pc(560, 322);
+  top:calc(50% + 100vw * (322 - 540) / 1920);
 }
 
 .title {
   @include img_c_pc(818, 791);
+  top:calc(50% + 100vw * (791 - 540) / 1920);
   text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.75);
   font-size: size(50);
   font-weight: bold;
@@ -74,6 +75,7 @@
 
 .subtitle {
   @include img_c_pc(582, 857);
+  top:calc(50% + 100vw * (857 - 540) / 1920);
   text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.75);
   font-size: size(36);
   font-weight: 600;
@@ -87,10 +89,12 @@
 
 .line-left {
   @include img_l_pc(275, 885, 378);
+  top:calc(50% + 100vw * (885 - 540) / 1920);
 }
 
 .line-right {
   @include img_r_pc(275, 885, 358);
+  top:calc(50% + 100vw * (885 - 540) / 1920);
   &::before {
     animation: hrr 3s linear infinite;
   }
