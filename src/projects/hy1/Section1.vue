@@ -14,7 +14,7 @@
     </h1>
     <div class="hr" data-aos="zoom-in-right" data-aos-delay="600"></div>
     <h1 class="desc" data-aos="fade-up" data-aos-delay="800">
-      26層ARTDECO摩天地標<br v-if="isMobile"> 55 •62• 69坪 菁英專屬
+      26層ARTDECO摩天地標<br v-if="isMobile"> 62• 69坪 菁英專屬
     </h1>
   </div>
 </template>
