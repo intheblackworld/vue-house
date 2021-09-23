@@ -6,7 +6,7 @@
         ｜匠心團隊｜
       </div>
       <div class="title" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-        興益發 <span>●</span> 李天鐸 <span>●</span> 梁正芳
+        興益發 <span>✕</span> 李天鐸 <span>✕</span> 梁正芳
       </div>
       
     </div>
@@ -66,7 +66,7 @@
   position: relative;
   //overflow-x: hidden;
   // min-height: size(900);
-  background-image: url('./all/section_bg.jpg');
+  //background-image: url('./all/section_bg.jpg');
   background-size: 100% 100%;
   // background-position: 0 0;
   background-attachment: fixed;
@@ -106,7 +106,7 @@
 .label {
   @include img_c_pc(210, 99);
   font-size: size(30);
-  font-weight: 500;
+  font-weight: 600;
   font-stretch: normal;
   font-style: normal;
   line-height: 2.37;
@@ -146,7 +146,7 @@
 
     .team-title {
       font-size: size(35);
-      font-weight: bold;
+      font-weight: 900;
       font-stretch: normal;
       font-style: normal;
       line-height: 1.69;
@@ -158,7 +158,7 @@
 
     .team-desc {
       font-size: size(22);
-      font-weight: 300;
+      font-weight: 500;
       font-stretch: normal;
       font-style: normal;
       line-height: 1.5;
@@ -495,7 +495,7 @@
     font-style: normal;
     line-height: 2.01;
     letter-spacing: normal;
-    text-align: left;
+    text-align: center;
     color: #000000;
     white-space: normal;
   }
@@ -537,22 +537,26 @@ export default {
           img: isMobile
             ? require('./mobile/08/team_1.jpg')
             : require('./s8/team_1.png'),
-          name: '興益發．李天鐸',
+          name: '李天鐸<span>✕</span>興益發',
           title: isMobile
             ? '豪宅建築教父'
             : '豪宅建築教父 李天鐸',
-          desc: '大師親炙城市森活新價值，最適合的建築，要將人帶進自然。<br />「若是住進沒有綠意、不開闊的空間中，這棟建築是沒有表情的，更無需談論到生活了。」李天鐸的堅持，在綠山丘實現了。',
+          desc: isMobile
+            ? '大師豪宅手筆，鍛造城市森活價值，<br>揮灑格柵與石材的完美比例。'
+            : '鍛造城市森活價值，大師豪宅手筆，揮灑格柵與石材的完美比例。<br />得獎紀錄：<br />中華建築金石獎-信義文匯、TRAA台灣住宅建築獎-Jade12、國家建築金質獎-泰安展曜觀邸',
           // desc: '270度翠綠簇擁<br />開窗就享無垠綠景',
         },
         {
           img: isMobile
             ? require('./mobile/08/team_2.jpg')
             : require('./s8/team_2.png'),
-          name: '興益發．梁正芳',
+          name: '梁正芳<span>✕</span>興益發',
           title: isMobile
             ? '台灣十大建築師'
             : '台灣十大建築師　梁正芳',
-          desc: '每一座建築，因地段、基地與居住者不同，必然擁有獨特的思考與實踐，就像「綠山丘」，從空間格局到機能，由裡而外悠揚北市森活美學，引領都會世代的夢想，是話題，更是傳奇。',
+          desc: isMobile
+            ? '興富發集團御用建築師，完美結合建築的格局和機能<br>引領都會世代夢想。'
+            : '興富發集團御用建築師，完美結合建築的格局和機能，引領都會世代夢想。<br />得獎紀錄：兩岸名宅大獎-圓山一號院<br />代表作品：詠大直、百達悦麗、藏富',
           // name: '稀有角地',
           // desc: '大福路大興路環抱<br />地段價值更珍貴',
         },

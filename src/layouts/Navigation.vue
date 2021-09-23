@@ -106,6 +106,8 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Noto Sans TC';
+    font-weight: 300;
     // padding: 0 size(10);
     // background-image: linear-gradient(to right, #d70032 0%, #eb5500 100%);
     border-radius: 20px / 20px;
@@ -127,7 +129,7 @@ export default {
 @import '../assets/style/function.scss';
 
 .navigation {
-  background-color: $nav_bg;
+  background-image: $nav_bg;
   // background-image: $nav_bg;
   background-size: cover;
   height: $nav_pc_height;
@@ -140,6 +142,7 @@ export default {
   transition: all 0.3s;
   font-size:size(24);
   line-height: 1.5;
+  z-index: 99;
   // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
   .logo {
     opacity: 0;

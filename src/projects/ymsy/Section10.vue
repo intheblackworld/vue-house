@@ -1,19 +1,18 @@
 <template>
   <div class="section10">
-     <img src="./s1/main.png" :alt="`${info.caseName}_img`" class="bird">
-    <img src="./s1/cloud_2.png" :alt="`${info.caseName}_img`" class="cloud cloud2">
-    <img src="./s1/cloud_1.png" :alt="`${info.caseName}_img`" class="cloud cloud1">
-    <img src="./s1/style.png" :alt="`${info.caseName}_img`" class="hill2"  data-aos-delay="0">
-    <img src="./s1/logo.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade-up" data-aos-delay="0">
+    <img src="./s10/cloud_2.png" :alt="`${info.caseName}_img`" class="cloud cloud2">
+    <img src="./s10/cloud_1.png" :alt="`${info.caseName}_img`" class="cloud cloud1">
+    <img src="./s10/style_1.png" :alt="`${info.caseName}_img`" class="hill2"  data-aos-delay="0">
+    <img src="./s10/style_2.png" :alt="`${info.caseName}_img`" class="hill3"  data-aos-delay="0">
+    <img src="./s1/logo.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade-up" data-aos-delay="0" v-if="isPC">
+    <img src="./mobile/01/logo_m.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade-up" data-aos-delay="0" v-if="isMobile">
+    <img src="./s1/text_box.png" :alt="`${info.caseName}_img`" class="text-box" data-aos="fade-up" data-aos-delay="0">
    
-    <div class="title3" data-aos="fade-up" data-aos-delay="400" v-if="isPC">
-      天涯海角，還是回家最好
-    </div>
-    <div class="title3" data-aos="fade-up" data-aos-delay="400" v-if="isMobile">
-      天涯海角<br />還是回家最好
+    <div class="title3" data-aos="fade-up" data-aos-delay="400">
+      人生幾何 能夠如此心動
     </div>
     <div class="title4" data-aos="fade-up" data-aos-delay="600">
-      景觀︱捷運︱<span>2-3</span>房
+      2897-9888
     </div>
 
     <div class="new-text">銷售企劃：興益發建設自建自售</div>
@@ -50,7 +49,7 @@
 
 .new-text {
   @include img_r_pc(500, 1010, 30);
-  top:calc(40% + ( 950 - 1080 * 0.4) * 100vw / 1920);
+  top:calc(40% + ( 1000 - 1080 * 0.4) * 100vw / 1920);
   font-size: size(25);
   font-stretch: normal;
   font-style: normal;
@@ -78,7 +77,7 @@
 }
 
 .logo {
-  @include img_l_pc(430, 150, 200);
+  @include img_c_pc(400, 350);
 }
 
 .bird {
@@ -94,25 +93,28 @@
   }
 }
 .cloud1 {
-  @include img_r_pc(1434, 700, 200);
+  @include img_r_pc(622, 30, 80);
   animation: cloud 2.5s ease-in-out alternate infinite;
+  z-index: 5;
 }
 .cloud2 {
-  @include img_l_pc(926, 860, 0);
+  @include img_l_pc(1057, 750, 0);
   animation: cloud 4s ease-in-out alternate infinite;
+  z-index: 5;
 }
-.hill1 {
-  @include img_l_pc(1665, 0, 0);
+.hill3 {
+  @include img_l_pc(1656, 0, 0);
   top: auto;
   bottom: 0;
 }
 .hill2 {
-  @include img_c_pc(1920, 0);
-  top: auto;
-  bottom: size(-30);
+  @include img_r_pc(970, 0, 0);
 }
 .logo {
-  @include img_l_pc(700, 220 , 155);
+  @include img_c_pc(600, 320);
+}
+.text-box {
+  @include img_l_pc(71, 560, 690);
 }
 .style1 {
   @include img_l_pc(438, 0, -40);
@@ -146,7 +148,7 @@
 }
 
 .title2 {
-  @include img_c_pc(410, 478);
+  @include img_c_pc(410, 578);
   font-size: size(28.3);
   font-weight: bold;
   font-stretch: normal;
@@ -159,28 +161,30 @@
 }
 
 .title3 {
-  @include img_l_pc(1084, 420, 150);
-  font-size: size(83.4);
-  font-weight: 900;
+  @include img_c_pc(520, 490);
+  font-size: size(30);
+  font-family: 'Noto Sans TC';
+  font-weight: 600;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(16.67);
-  text-align: left;
+  letter-spacing: size(20);
+  text-align: center;
   color: #ffffff;
   white-space: nowrap;
 }
 
 .title4 {
-  @include img_l_pc(764, 550, 140);
+  @include img_l_pc(764, 543, 610);
   font-size: size(78.6);
+  font-family: 'Noto Sans TC';
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(7.86);
+  letter-spacing: size(3);
   text-align: center;
-  color: #ffffff;
+  color: #F5F4C4;
   white-space: nowrap;
 
   span {
@@ -197,16 +201,18 @@
 @media screen and (max-width: 767px) {
   .section10 {
     width: 100vw;
+    background-image: url('./mobile/01/bg_m.jpg');
     min-height: sizem(752);
-    max-height: sizem(752);
-    height: sizem(752);
+    max-height: sizem(667);
+    height: sizem(667);
     // margin: 0 0 -12vw 0;
-     background-size: auto size-m(890);
+     background-size: auto size-m(850);
+     background-position:center center;
     overflow: hidden;
     position: relative;
   }
 
-    .new-text {
+  .new-text {
   @include img_c_pc(1100, 1010);
   top:calc(50% + ( 670 - 667 * 0.5) * 100vw / 375);
   font-size: size(80);
@@ -236,7 +242,7 @@
   }
 
   .logo {
-    @include img_c_m(250, 90);
+    @include img_c_m(250, 220);
   }
 
   .bird {
@@ -249,21 +255,20 @@
     }
   }
   .cloud1 {
-    @include img_r_m(550, 480, -200);
+    @include img_r_m(400, 10, -40);
     animation: cloud 2.5s ease-in-out alternate infinite;
   }
   .cloud2 {
-    @include img_l_m(600, 560, -50);
+    @include img_l_m(400, 630, 80);
     animation: cloud 4s ease-in-out alternate infinite;
   }
-  .hill1 {
-    @include img_l_m(375, 0, 0);
-    top: auto;
-    bottom: 0;
-  }
     .hill2 {
-    @include img_l_m(1100, 0, -700);
-    top:calc(50% + ( 475 - 667 * 0.5) * 100vw / 375);
+    @include img_r_m(500, -50, 0);
+    top:calc(50% + ( -50 - 667 * 0.5) * 100vw / 375);
+  }
+    .hill3 {
+    @include img_l_m(850, 600, 0);
+    top:calc(50% + ( 600 - 667 * 0.5) * 100vw / 375);
   }
 
   .style1 {
@@ -294,10 +299,13 @@
   .title1 {
     @include img_c_m(92, 115);
   }
+  .text-box {
+  @include img_l_m(35, 425, 45);
+}
 
   .title2 {
     @include img_c_m(161, 220);
-    font-size: sizem(11.1);
+    font-size: sizem(8);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
@@ -309,8 +317,8 @@
   }
 
   .title3 {
-    @include img_c_m(256, 170);
-    font-size: sizem(36.5);
+    @include img_c_m(300, 380);
+    font-size: sizem(20);
     font-weight: 900;
     font-stretch: normal;
     font-style: normal;
@@ -322,17 +330,17 @@
   }
 
   .title4 {
-    @include img_c_m(268, 280);
+    @include img_r_m(200, 415, 80);
     text-shadow: 0 0 5px #1b4a20;
     font-family: 'Noto Sans TC';
-    font-size: sizem(27.3);
-    font-weight: normal;
+    font-weight: bold;
+    font-size: sizem(41);
     font-stretch: normal;
     font-style: normal;
     line-height: 1.2;
     letter-spacing: sizem(2.73);
     text-align: center;
-    color: #ffffff;
+    color: #F5F4C4;
     white-space: nowrap;
     span {
       font-size: sizem(31.5);

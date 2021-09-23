@@ -126,24 +126,26 @@ export default {
   }
 }
 .cloud1 {
-  @include img_r_pc(1000, 0, 700);
+  @include img_r_pc(800, 0, 900);
   top: auto;
-  bottom: size(10);
+  bottom: size(-20);
   animation: cloud 2.5s ease-in-out alternate infinite;
+  z-index: 5;
 }
 .cloud2 {
-  @include img_l_pc(800, 0, 0);
+  @include img_l_pc(900, 0, -200);
   top: auto;
-  bottom: size(-10);
+  bottom: size(-50);
   animation: cloud 4s ease-in-out alternate infinite;
+  z-index: 5;
 }
 .hill1 {
-  @include img_l_pc(1665, 0, 0);
+  @include img_l_pc(1500, 0, 0);
   top: auto;
   bottom: 0;
 }
 .hill2 {
-  @include img_r_pc(1920, 0, 0);
+  @include img_r_pc(1500, 0, 0);
   top: auto;
   bottom: size(-60);
 }

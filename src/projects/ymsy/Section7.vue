@@ -6,11 +6,14 @@
 
     <div class="content">
       <div class="title" data-aos="fade-up" data-aos-delay="0">
-        回家！<br />
-        擁抱一座森林花園
+        擁抱一座森林花園<br />
+        四時寫意 有景也有情
       </div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="200">
-        陽明森悦植樹造林、開拓社區道路，依循人文水文的自然性底，社區綠覆超過法定標準，超過300株常綠喬灌木，2棵百年樟樹、63棵櫻花盛開環抱，山茶花、梔緬、楓香綻滿四季。
+      <div class="desc" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+        在鳥語花香之地享受北市難得的香榭大道，百年樟樹、櫻花繽紛、梔緬、楓香綻滿四季，舞動名為生命與自然的樂章。門前庭園搖曳清新生命力，哲思散策、親子同樂、鄰里交流，難得清幽的秘境。
+      </div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="200" v-if="isMobile">
+        在鳥語花香之地享受北市難得的香榭大道，百年樟樹、櫻花繽紛、梔緬、楓香綻滿四季，舞動名為生命與自然的樂章。
       </div>
       <div class="new-text">銷售企劃：興益發建設自建自售</div>
     </div>
@@ -51,7 +54,7 @@
   position: relative;
   //overflow-x: hidden;
   // min-height: size(900);
-  background-image: url('./all/section_bg.jpg');
+  //background-image: url('./all/section_bg.jpg');
   background-size: 100% 100%;
   // background-position: 0 0;
   background-attachment: fixed;
@@ -90,8 +93,8 @@
 
 .title {
   @include img_l_pc(597, 233, 63);
-  font-size: size(75);
-  font-weight: bold;
+  font-size: size(65);
+  font-weight: 800;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
@@ -102,7 +105,7 @@
 }
 
 .desc {
-  @include img_l_pc(602, 513, 65);
+  @include img_l_pc(650, 480, 65);
   font-size: size(22);
   font-weight: 500;
   font-stretch: normal;
@@ -405,20 +408,20 @@
     }
   }
   .title {
-    @include img_c_m(292, 66);
-    font-size: sizem(36.6);
-    font-weight: bold;
+    @include img_l_m(262, 50, 30);
+    font-size: sizem(32);
+    font-weight: 900;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.22;
     letter-spacing: normal;
-    text-align: center;
+    text-align: left;
     color: #006b31;
     white-space: nowrap;
   }
 
   .desc {
-    @include img_c_m(339, 170);
+    @include img_l_m(320, 150, 30);
     font-size: sizem(12);
     font-weight: 500;
     font-stretch: normal;

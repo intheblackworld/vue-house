@@ -17,15 +17,15 @@
       <vue-lazy-component class="section" id="section2" style="">
         <Section2 />
       </vue-lazy-component>
-      <vue-lazy-component class="section" id="section3">
-        <Section3 />
-      </vue-lazy-component>
       <vue-lazy-component class="section relative" id="section4">
         <Section4 />
       </vue-lazy-component>
-      <vue-lazy-component class="section" id="section5">
-        <Section5 />
+      <vue-lazy-component class="section" id="section3">
+        <Section3 />
       </vue-lazy-component>
+     <!-- <vue-lazy-component class="section" id="section5">
+        <Section5 />
+      </vue-lazy-component>-->
       <vue-lazy-component class="section" id="section6">
         <Section6 />
       </vue-lazy-component>
@@ -35,9 +35,9 @@
       <vue-lazy-component class="section" id="section8">
          <Section8 />
       </vue-lazy-component>
-       <vue-lazy-component class="section" id="section9">
+      <!-- <vue-lazy-component class="section" id="section9">
         <Section9 />
-      </vue-lazy-component>
+      </vue-lazy-component>-->
       <vue-lazy-component class="section" id="section10">
         <Section10 />
       </vue-lazy-component>

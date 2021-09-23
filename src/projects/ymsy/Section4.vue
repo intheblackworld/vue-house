@@ -6,14 +6,18 @@
 
     <div class="content">
       <div class="title" data-aos="fade-up" data-aos-delay="0">
-        氧尊處悠<br />
-        10分完美的森活
+        城市浪漫詩人<br />
+        10分完美的生活
+      </div>
+      <div class="desc-1" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+        掌握時間的人更容易掌握機運，而每一次的選擇與追求，都攸關品味。<br>
+        只要10分鐘，在城市裡穿梭、在巷弄中編織，讓風景成詩，送給未來的自己。
       </div>
       <div class="desc" data-aos="fade-up" data-aos-delay="200">
-        10分鐘捷運紅線、洲美快，一杯咖啡的時間品味市中心<br />
+        10分鐘捷運紅線洲美快，一杯咖啡的時間品味市中心<br />
         10分鐘好市多、關渡科技園區，愛、生活、雄心不需妥協<br />
         10分鐘優質文教區，世界這本大書何必遠求<br />
-        10分鐘北投溫泉地、陽明山保育地，享受國家級的療浴
+        10分鐘北投溫泉地、陽明山保育地，享受國家級的款待
       </div>
     </div>
 
@@ -73,8 +77,8 @@
 
 .title {
   @include img_r_pc(597, 174, 84);
-  font-size: size(75);
-  font-weight: bold;
+  font-size: size(65);
+  font-weight: 800;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
@@ -86,7 +90,7 @@
 
 .new-text {
   @include img_r_pc(500, 1010, 30);
-  top:calc(40% + ( 1010 - 1080 * 0.4) * 100vw / 1920);
+  top:calc(40% + ( 980 - 1080 * 0.4) * 100vw / 1920);
   font-size: size(25);
   font-stretch: normal;
   font-style: normal;
@@ -110,10 +114,21 @@
   color: #000000;
   white-space: nowrap;
 }
+.desc-1 {
+  @include img_r_pc(602, 350, 79);
+  font-size: size(18);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+  white-space: nowrap;
+}
 
 .flash {
-  @include img_r_pc(1000, -72, -238);
-  top:calc(50% + ( -72 - 1080 * 0.5) * 100vw / 1920);
+  @include img_r_pc(1000, -40, -238);
   animation: flash 1s ease-in-out alternate infinite;
   opacity: 0;
   z-index: 3;
@@ -126,11 +141,11 @@
 }
 
 .fly1 {
-  @include img_r_pc(109, 193, 204);
+  @include img_r_pc(109, 140, 80);
 }
 
 .fly2 {
-  @include img_r_pc(87, 385, 626);
+  @include img_r_pc(87, 295, 660);
 }
 
 /* Swipe */
@@ -200,6 +215,7 @@
     right: 2em;
     top: 1.2em;
     color: #fff;
+    font-family: 'Noto Sans TC';
     font-size: size(18);
     font-weight: bold;
     font-stretch: normal;
@@ -388,14 +404,14 @@
     z-index: 3;
   }
   .title {
-    @include img_c_m(262, 66);
+    @include img_l_m(262, 50, 30);
     font-size: sizem(36.6);
-    font-weight: bold;
+    font-weight: 900;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.22;
     letter-spacing: normal;
-    text-align: center;
+    text-align: left;
     color: #006b31;
     white-space: nowrap;
   }
@@ -414,11 +430,11 @@
   }
 
   .fly1 {
-    @include img_r_m(54, 85, 3);
+    @include img_r_m(70, 40, 20);
   }
 
   .fly2 {
-    @include img_l_m(43, 139, 17);
+    @include img_l_m(43, 129, 10);
   }
 
   /* Swipe */

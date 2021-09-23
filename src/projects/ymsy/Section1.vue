@@ -3,17 +3,21 @@
     <img src="./s1/main.png" :alt="`${info.caseName}_img`" class="bird">
     <img src="./s1/cloud_2.png" :alt="`${info.caseName}_img`" class="cloud cloud2">
     <img src="./s1/cloud_1.png" :alt="`${info.caseName}_img`" class="cloud cloud1">
-    <img src="./s1/style.png" :alt="`${info.caseName}_img`" class="hill2"  data-aos-delay="0">
-    <img src="./s1/logo.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade-up" data-aos-delay="0">
-    <img src="./s1/text_box.png" :alt="`${info.caseName}_img`" class="text-box" data-aos="fade-up" data-aos-delay="0">
+    <img src="./s1/style.png" :alt="`${info.caseName}_img`" class="hill2"  data-aos-delay="0" v-if="isPC">
+    <img src="./mobile/01/style_m.png" :alt="`${info.caseName}_img`" class="hill2"  data-aos-delay="0" v-if="isMobile">
+    <img src="./s1/logo.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade-up" data-aos-delay="0" v-if="isPC">
+    <img src="./mobile/01/logo_m.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade-up" data-aos-delay="0" v-if="isMobile">
     <div class="title3" data-aos="fade-up" data-aos-delay="400" v-if="isPC">
-      北投生活圈 李天鐸莊園
+      北市稀有 近三千坪大基地
     </div>
     <div class="title3" data-aos="fade-up" data-aos-delay="400" v-if="isMobile">
-      北投生活圈 李天鐸莊園
+      北市稀有 近三千坪大基地
     </div>
-    <div class="title4" data-aos="fade-up" data-aos-delay="600">
-      2897-9888
+    <div class="title4" data-aos="fade-up" data-aos-delay="600" v-if="isPC">
+      北投生活圈｜李天鐸莊園｜捷運<span>2-3</span>房
+    </div>
+    <div class="title4" data-aos="fade-up" data-aos-delay="600" v-if="isMobile">
+      北投生活圈<br>李天鐸莊園｜捷運<span>2-3</span>房
     </div>
     <div class="new-text">銷售企劃：興益發建設自建自售</div>
   </div>
@@ -82,9 +86,8 @@
 }
 
 .bird {
-  @include img_r_pc(530, 0, 60);
-  top: auto;
-  bottom: 0;
+  @include img_r_pc(500, 0, 300);
+  top:calc(50% + ( 300 - 1080 * 0.5) * 100vw / 1920);
   z-index: 9;
 }
 
@@ -94,11 +97,11 @@
   }
 }
 .cloud1 {
-  @include img_r_pc(1434, 700, 200);
+  @include img_r_pc(1200, 750, 100);
   animation: cloud 2.5s ease-in-out alternate infinite;
 }
 .cloud2 {
-  @include img_l_pc(926, 860, 0);
+  @include img_l_pc(1035, 900, 300);
   animation: cloud 4s ease-in-out alternate infinite;
 }
 .hill1 {
@@ -107,9 +110,9 @@
   bottom: 0;
 }
 .hill2 {
-  @include img_c_pc(1920, 0);
+  @include img_r_pc(1446, 0, 0);
   top: auto;
-  bottom: size(-30);
+  bottom: size(-100);
 }
 .logo {
   @include img_l_pc(880, 220 , 155);
@@ -157,15 +160,16 @@
 }
 
 .title3 {
-  @include img_l_pc(770, 450, 150);
-  font-size: size(80);
+  @include img_l_pc(770, 450, 200);
+  font-size: size(50);
+  font-family: 'Noto Sans TC';
   font-stretch: normal;
-  font-weight: 700;
+  font-weight: 500;
   font-style: normal;
   line-height: 1.2;
   letter-spacing: size(4.35);
   text-align: center;
-  color: #ffffff;
+  color: #FFF000;
   white-space: nowrap;
 
   span {
@@ -176,15 +180,15 @@
 }
 
 .title4 {
-  @include img_l_pc(1000, 540, 310);
+  @include img_l_pc(1000, 540, 220);
   text-shadow: 0 0 5px #1b4a20;
   font-family: 'Noto Sans TC';
-  font-size: size(150);
-  font-weight: 400;
+  font-size: size(40);
+  font-weight: 600;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(-2.15);
+  letter-spacing: size(5);
   text-align: left;
   color: #f9f8c7;
 }
@@ -239,11 +243,11 @@
   }
 
   .logo {
-    @include img_c_m(304, 50);
+    @include img_c_m(250, 30);
   }
 
   .bird {
-    @include img_c_m(280, 250);
+    @include img_c_m(220, 330);
   }
 
   @keyframes cloud {
@@ -252,11 +256,11 @@
     }
   }
   .cloud1 {
-    @include img_r_m(550, 420, -200);
+    @include img_r_m(500, 550, -100);
     animation: cloud 2.5s ease-in-out alternate infinite;
   }
   .cloud2 {
-    @include img_l_m(600, 500, -50);
+    @include img_l_m(300, 620, -90);
     animation: cloud 4s ease-in-out alternate infinite;
   }
   .hill1 {
@@ -265,8 +269,9 @@
     bottom: 0;
   }
   .hill2 {
-    @include img_l_m(1100, 0, -700);
-    top:calc(50% + ( 440 - 667 * 0.5) * 100vw / 375);
+    @include img_c_m(435, 0);
+    top: auto;
+    bottom: 0;
   }
 
   .style1 {
@@ -312,15 +317,15 @@
   }
 
   .title3 {
-    @include img_c_m(350, 130);
-    font-size: sizem(28);
-    font-weight: 700;
+    @include img_c_m(350, 180);
+    font-size: sizem(23);
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.2;
     letter-spacing: sizem(2.14);
     text-align: center;
-    color: #fff;
+    color: #FFF000;
     white-space: normal;
 
     > span {
@@ -345,17 +350,17 @@
   }
 
   .title4 {
-    @include img_r_m(218, 170, 50 );
+    @include img_c_m(300, 220);
     text-shadow: 0 0 5px #1b4a20;
     font-family: 'Noto Sans TC';
-    font-size: sizem(50);
-    font-weight: 400;
+    font-size: sizem(22);
+    font-weight: 600;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(-1.08);
-    text-align: left;
-    color: #f9f8c7;
+    line-height: 1.5;
+    letter-spacing: sizem(2);
+    text-align: center;
+    color: #fff;
     white-space: nowrap;
   }
   .text-box {

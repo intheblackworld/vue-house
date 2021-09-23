@@ -1,8 +1,9 @@
 <template>
   <div class="section2">
-    <div class="title" data-aos="fade-up" data-aos-delay="0" v-if="isPC">北投陽明生活圈 住得優越過得精采</div>
-    <div class="title" data-aos="fade-up" data-aos-delay="0" v-if="isMobile">北投陽明生活圈 <br />住得優越過得精采</div>
+    <div class="title" data-aos="fade-up" data-aos-delay="0" v-if="isPC">一樣的台北市，不一樣的樹山丘</div>
+    <div class="title" data-aos="fade-up" data-aos-delay="0" v-if="isMobile">一樣的台北市 <br />不一樣的樹山丘</div>
     <div class="new-text">銷售企劃：興益發建設自建自售</div>
+    <div class="new-text-l">3D透視合成示意圖</div>
     <img src="./s2/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="isPC">
     <img src="./s2/flash.png" :alt="`${info.caseName}_img`" class="flash">
     <Map :bgSrc="bgSrc" v-if="isMobile" :hand="hand">
@@ -34,7 +35,7 @@
 }
 
 .flash {
-  @include img_r_pc(1000, -45, -238);
+  @include img_r_pc(1000, -40, -238);
   animation: flash 1s ease-in-out alternate infinite;
   opacity: 0;
   z-index: 3;
@@ -49,8 +50,9 @@
 .title {
   @include img_c_pc(1300, 80);
   top:calc(40% + ( 80 - 1080 * 0.4) * 100vw / 1920);
-  font-size: size(75);
-  font-weight: bold;
+  font-family: 'Noto Sans TC';
+  font-weight: 400;
+  font-size: size(60);
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
@@ -63,8 +65,23 @@
 
 .new-text {
   @include img_r_pc(500, 1010, 30);
+  top:calc(40% + ( 1000 - 1080 * 0.4) * 100vw / 1920);
+  font-size: size(25);
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: right;
+  color: #ffffff;
+  z-index: 3;
+  white-space: nowrap;
+  text-shadow: 0em 0em 0.3em #000;
+}
+.new-text-l {
+  @include img_l_pc(500, 1010, -260);
   top:calc(40% + ( 1010 - 1080 * 0.4) * 100vw / 1920);
   font-size: size(25);
+  font-family: 'Noto Sans TC';
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
@@ -125,7 +142,22 @@
   z-index: 3;
   white-space: nowrap;
   text-shadow: 0em 0em 0.3em #000;
-}}
+}
+.new-text-l {
+  @include img_c_pc(1100, 1010);
+  top:calc(50% + ( 570 - 667 * 0.5) * 100vw / 375);
+  font-size: size(80);
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  z-index: 3;
+  white-space: nowrap;
+  text-shadow: 0em 0em 0.3em #000;
+}
+}
 
   .flash {
     @include img_l_m(1041, 709, -232);

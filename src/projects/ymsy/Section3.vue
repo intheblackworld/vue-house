@@ -1,14 +1,12 @@
 <template>
   <div class="section3">
-    <div class="title" data-aos="fade-up" data-aos-delay="0" v-if="isPC">開門見山，綠山丘 來了！</div>
-    <div class="title" data-aos="fade-up" data-aos-delay="0" v-if="isMobile">開門見山<br />綠山丘 來了！</div>
+    <div class="title" data-aos="fade-up" data-aos-delay="0" v-if="isPC">這是我家<br>綠山丘</div>
+    <div class="title" data-aos="fade-up" data-aos-delay="0" v-if="isMobile">這是我家<br />綠山丘</div>
     <div class="subtitle" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-      台北市難得近三千坪的夢想藍圖，後收陽明山系豪景，前攏關渡平原胸襟，大地的畫布，任您恣意揮灑。<br />
-      且讓稻香、花香交響名為生活的樂章。
+      開窗四季，令人意猶未盡
     </div>
     <div class="subtitle" data-aos="fade-up" data-aos-delay="200" v-if="isMobile">
-      台北市難得近三千坪的夢想藍圖，<br />後收陽明山系豪景，前攏關渡平原胸襟，<br />大地的畫布，任您恣意揮灑。<br /><br />
-      且讓稻香、花香交響名為生活的樂章。
+      開窗四季，令人意猶未盡
     </div>
     <div class="subtitle-text" v-if="isMobile">
       現場實景
@@ -16,7 +14,6 @@
     <div class="new-text">銷售企劃：興益發建設自建自售</div>
     <img src="./s3/bg.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isPC">
     <img src="./mobile/03/bg.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isMobile">
-    <img src="./s3/bird.png" :alt="`${info.caseName}_img`" class="bird" data-aos="fade-left" data-aos-delay="400">
     <img src="./s2/flash.png" :alt="`${info.caseName}_img`" class="flash">
   </div>
 </template>
@@ -53,7 +50,7 @@
 }
 .new-text {
   @include img_r_pc(500, 980, 30);
-  top:calc(40% + ( 980 - 1080 * 0.4) * 100vw / 1920);
+  top:calc(40% + ( 940 - 1080 * 0.4) * 100vw / 1920);
   font-size: size(25);
   font-stretch: normal;
   font-style: normal;
@@ -73,9 +70,10 @@
 }
 
 .img {
-  @include img_r_pc(1920, 409, 0);
-  top:calc(50% + ( 409 - 1080 * 0.5) * 100vw / 1920);
+  @include img_c_pc(1902, 0);
+  top:calc(50% + ( 10 - 1080 * 0.5) * 100vw / 1920);
   bottom: 0;
+  z-index: 1;
 }
 
 .bird {
@@ -84,30 +82,36 @@
 }
 
 .title {
-  @include img_c_pc(1020, 146);
-  top:calc(50% + ( 146 - 1080 * 0.5) * 100vw / 1920);
-  font-size: size(75);
+  @include img_l_pc(1020, 80, 530);
+  top:calc(50% + ( 80 - 1080 * 0.5) * 100vw / 1920);
+  text-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.8);
+  font-size: size(90);
+  font-family: 'Noto Sans TC';
   font-weight: 900;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
   letter-spacing: normal;
-  text-align: center;
-  color: #006b31;
+  text-align: left;
+  color: #fff;
   white-space: nowrap;
+  z-index: 3;
 }
 
 .subtitle {
-  @include img_c_pc(1560, 300);
+  @include img_l_pc(1560, 300, 530);
   top:calc(50% + ( 300 - 1080 * 0.5) * 100vw / 1920);
-  font-size: size(22);
-  font-weight: 600;
+  text-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.8);
+  font-size: size(35);
+  font-family: 'Noto Sans TC';
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.71;
-  letter-spacing: size(5.61);
-  text-align: center;
-  color: #000000;
+  letter-spacing: size(2);
+  text-align: left;
+  color: #fff;
+  z-index: 3;
 }
 
 
@@ -177,8 +181,8 @@
   }
 
   .title {
-    @include img_r_m(88, 76, 30);
-    font-size: sizem(38);
+    @include img_l_m(250, 30, 30);
+    font-size: sizem(48);
     font-weight: 900;
     font-stretch: normal;
     font-style: normal;
@@ -186,15 +190,14 @@
     letter-spacing: 1px;
     text-align: left;
     color: #fff;
-    writing-mode: vertical-rl;
     text-orientation: upright;
     z-index: 3;
     white-space: normal;
   }
 
   .subtitle {
-    @include img_r_m(110, 75, 157);
-    font-size: sizem(13);
+    @include img_l_m(280, 150, 30);
+    font-size: sizem(20);
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
@@ -202,7 +205,6 @@
     letter-spacing: size(5.61);
     text-align: left;
     color: #fff;
-    writing-mode: vertical-rl;
     text-orientation: upright;
     z-index: 3;
     white-space: normal;

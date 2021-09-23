@@ -1,24 +1,26 @@
 <template>
   <div class="section6">
     <div class="content">
-      <div class="label" data-aos="fade-up" data-aos-delay="0">
-        ｜大樹莊園，與自然呼應的建築｜
-      </div>
       <div class="title" data-aos="fade-up" data-aos-delay="200">
-        預約陽明<br />
-        莊園度假生活
+        星級莊園人生<br />
+        回家逛美術館
       </div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="400">
-        近三千坪完整基地，隨著緩坡而上讓您漸入佳境，每天，與大自然的肌理親密地生活，處處有風光。多項匠心公設、精緻飯店物管，回家，當山的主人，訂製最美好的莊園人生。
+      <div class="desc" data-aos="fade-up" data-aos-delay="400" v-if="isPC">
+        呼吸陽明山的風，漫步近3千坪夢想藍圖，在動感的日常中感動。恰如其分地收納多項匠心公設、精緻飯店物管。<br>知名新銳創作者蔡尉成作品《片片》迎賓，讓藝術之美滋養心靈，才知道最奢侈的不過是生活。
+      </div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="400" v-if="isMobile">
+        呼吸陽明山的風，漫步近3千坪夢想藍圖，在動感的日常中感動。恰如其分地收納多項匠心公設、精緻飯店物管。知名新銳創作者蔡尉成作品《片片》迎賓。
       </div>
     </div>
     <img src="./s2/flash.png" :alt="`${info.caseName}_img`" class="flash" v-if="isMobile">
 
-    <img src="./s6/bird.png" :alt="`${info.caseName}_img`" class="bird" data-aos="fade-up" data-aos-delay="300">
+    <img src="./s6/main.png" :alt="`${info.caseName}_img`" class="main">
 
     <img src="./s6/img.jpg" :alt="`${info.caseName}_img`" class="img1" data-aos="fade-up" data-aos-delay="800" v-if="isPC">
 
     <div class="new-text">銷售企劃：興益發建設自建自售</div>
+    <div class="new-text-1">蔡尉成雕塑創作《片片》w148 x 129 x H252cm</div>
+    <div class="new-text-2">飯店式物業管理服務實景圖</div>
 
 
     <div class="swipe"  data-aos="fade" data-aos-delay="800" v-if="isMobile">
@@ -51,7 +53,6 @@
   position: relative;
   //overflow-x: hidden;
   // min-height: size(900);
-  background-image: url('./all/section_bg.jpg');
   background-size: cover;
   // background-position: 0 0;
   background-attachment: fixed;
@@ -88,8 +89,38 @@
   white-space: nowrap;
 }
 
-.bird {
-  @include img_r_pc(125, 373, 84);
+.new-text-1 {
+  @include img_r_pc(500, 1010, 30);
+  top:calc(40% + ( 900 - 1080 * 0.4) * 100vw / 1920);
+  font-size: size(20);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: right;
+  color: #000;
+  z-index: 3;
+  white-space: nowrap;
+}
+.new-text-2 {
+  @include img_l_pc(500, 950, -230);
+  top:calc(40% + ( 950 - 1080 * 0.4) * 100vw / 1920);
+  font-family: 'Noto Sans TC';
+  font-size: size(20);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: right;
+  color: #fff;
+  z-index: 3;
+  white-space: nowrap;
+}
+
+.main {
+  @include img_r_pc(320, 370, 20);
 }
 
 .label {
@@ -106,9 +137,9 @@
 }
 
 .title {
-  @include img_r_pc(597, 333, 84);
-  font-size: size(75);
-  font-weight: bold;
+  @include img_r_pc(597, 200, 84);
+  font-size: size(65);
+  font-weight: 800;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
@@ -119,12 +150,12 @@
 }
 
 .desc {
-  @include img_r_pc(602, 594, 79);
+  @include img_r_pc(390, 520, 295);
   font-size: size(22);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.97;
+  line-height: 2.5;
   letter-spacing: size(0.6);
   text-align: left;
   color: #000000;
@@ -371,7 +402,6 @@
     height: sizem(750);
     min-height: auto;
     max-height: initial;
-    // background-image: url('./all/section_bg.jpg');
     // background-attachment: scroll;
     // background-size: 100% 100%;
     // background-position: 0 0;
@@ -393,6 +423,35 @@
   text-shadow: 0em 0em 0.3em #000;
 }
 
+.new-text-1 {
+  @include img_r_m(260, 250, 15);
+  top:calc(50% + ( 235 - 667 * 0.5) * 100vw / 375);
+  font-size: size(60);
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+  color: #000;
+  z-index: 3;
+  white-space: nowrap;
+}
+
+.new-text-2 {
+  @include img_r_m(200, 250, 15);
+  top:calc(50% + ( 280 - 667 * 0.5) * 100vw / 375);
+  font-size: size(80);
+  font-stretch: normal;
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+  color: #fff;
+  z-index: 3;
+  white-space: nowrap;
+  text-shadow: 0em 0em 0.3em #000;
+}
   .flash {
     @include img_l_m(1041, 709, -232);
     top:calc(50% + ( -85 - 667 * 0.5) * 100vw / 375);
@@ -407,8 +466,8 @@
     }
   }
 
-  .bird {
-    @include img_r_m(62, 97, 23);
+  .main {
+    @include img_r_m(140, 50, 15);
   }
 
   .label {
@@ -424,22 +483,22 @@
     white-space: nowrap;
   }
   .title {
-    @include img_c_m(220, 92);
-    font-size: sizem(36.6);
-    font-weight: bold;
+    @include img_l_m(270, 60, 30);
+    font-size: sizem(30);
+    font-weight: 900;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.22;
     letter-spacing: normal;
-    text-align: center;
+    text-align: left;
     color: #006b31;
     white-space: nowrap;
   }
 
   .desc {
-    @include img_c_m(327, 199);
+    @include img_l_m(220, 160, 30);
     font-size: sizem(12);
-    font-weight: 500;
+    font-weight: 600;
     font-stretch: normal;
     font-style: normal;
     line-height: 2.01;
