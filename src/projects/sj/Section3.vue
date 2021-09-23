@@ -276,7 +276,6 @@
 
 @media screen and (max-width: 767px) {
   .section3 {
-    width: 100vw;
     height: sizem(995 + 56);
     overflow: hidden;
   }
@@ -284,7 +283,6 @@
   .bg {
     @include div_r_m(375, 425, 56, 0);
     bottom: auto;
-    background-color: #040000;
   }
 .section{
   @include img_c_m(170, 20);

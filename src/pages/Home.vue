@@ -60,9 +60,9 @@
 #contact {
   z-index: 3;
 }
-
+/* 
 .bg-img {
-  background-image: url('~@/projects/lj/s1/bg.png');
+ // background-image: url('~@/projects/lj/s1/bg.png');
   // padding-top: $nav_pc_height;
   background-attachment: fixed;
   background-size: auto;
@@ -73,9 +73,10 @@
 
 @media only screen and (max-width: 767px) {
   .bg-img {
-    background-image: url('~@/projects/lj/s1/bg_m.png');
+    //background-image: url('~@/projects/lj/s1/bg_m.png');
   }
 }
+ */
 </style>
 
 <script>

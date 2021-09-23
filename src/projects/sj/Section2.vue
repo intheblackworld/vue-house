@@ -11,19 +11,8 @@
 
 .section2 {
   width: 100%;
-  // height: size(1080);
-  // min-height: size(1080);
-  // max-height: size(1080);
-  // position: relative;
-  // background-color: #fff;
-  // min-height: size(900);
-  // background-image: url('./s2/bg.jpg');
-  // background-size: 100% 100%;
-  // background-position: 0 0;
-  // background-attachment: fixed;
-  // overflow: hidden;
 }
-
+/*
 .bg-img {
   width:100%;
   position: absolute;
@@ -51,11 +40,6 @@
   white-space: nowrap;
 }
 
-.hr {
-  @include img_r_pc(316, 393, 187);
-  height: 35px;
-  border-top: size(0.5) solid #fff9;
-}
 
 .desc {
   @include img_r_pc(368, 436, 133);
@@ -87,8 +71,9 @@
     width: size(63);
   }
 }
-
+*/
 /* Swipe */
+/*
 .swipe {
   width: size(1350);
   height: size(820);
@@ -270,12 +255,6 @@
   .dialog-bg {
     width: 100%;
     height: 100%;
-    background-image: url('~@/projects/lj/s1/bg.png');
-    // padding-top: $nav_pc_height;
-    background-attachment: fixed;
-    background-size: auto;
-    background-position: center center;
-    background-repeat: repeat;
   }
 
   .dialog-img {
@@ -340,7 +319,7 @@
     margin: 0 0;
   }
 }
-
+*/
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -355,36 +334,17 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section2 {
-    width: 100vw;
+ /*
+ .section2 {
     height: sizem(564);
-    min-height: auto;
-    max-height: initial;
-    // background-image: url('./s2/bg.jpg');
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
     overflow: hidden;
   }
 
   .title {
     @include img_r_m(260, 409, 71);
     font-size: sizem(26);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: normal;
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
   }
 
-  .hr {
-    @include img_r_m(230, 458, 102);
-    height: sizem(0.5);
-    background: #fff;
-  }
 
   .desc {
     @include img_r_m(292, 474, 40);
@@ -416,8 +376,9 @@
       width: sizem(29);
     }
   }
-
+*/
   /* Swipe */
+  /*
   .swipe {
     width: sizem(333);
     height: sizem(333);
@@ -591,12 +552,6 @@
     .dialog-bg {
       width: 100%;
       height: 112%;
-      background-image: url('~@/projects/lj/s1/bg_m.png');
-      // padding-top: $nav_pc_height;
-      background-attachment: fixed;
-      background-size: auto;
-      background-position: center center;
-      background-repeat: repeat;
     }
 
     .dialog-img {
@@ -652,6 +607,7 @@
       margin: 0 0 5em;
     }
   }
+  */
 }
 </style>
 <script>
