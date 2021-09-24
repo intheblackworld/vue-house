@@ -1,7 +1,7 @@
 <template>
   <div class="section3">
-    <div class="title" data-aos="fade-up" data-aos-delay="0" v-if="isPC">這是我家<br>綠山丘</div>
-    <div class="title" data-aos="fade-up" data-aos-delay="0" v-if="isMobile">這是我家<br />綠山丘</div>
+    <div class="title" data-aos="fade-up" data-aos-delay="0" v-if="isPC">這是我家<br>樹山丘</div>
+    <div class="title" data-aos="fade-up" data-aos-delay="0" v-if="isMobile">這是我家<br />樹山丘</div>
     <div class="subtitle" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
       開窗四季，令人意猶未盡
     </div>
@@ -21,24 +21,14 @@
 @import '@/assets/style/function.scss';
 .section3 {
   width: 100%;
-  height: 100vh;
-  min-height: size(900);
-  max-height: size(1080);
+  height:auto;
+  /* min-height: size(900);
+  max-height: size(1080); */
  // overflow-x: hidden;
   position: relative;
   // background-image: url('./s1/01_bg.jpg');
   background-size: cover;
   background-attachment: fixed;
-}
-.bg-img {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  object-fit: cover;
-  margin-top: 0;
 }
 
 .flash {
@@ -49,16 +39,18 @@
   z-index: 3;
 }
 .new-text {
-  @include img_r_pc(500, 980, 30);
-  top:calc(40% + ( 940 - 1080 * 0.4) * 100vw / 1920);
-  font-size: size(25);
+  @include img_r_pc(500, 1010, 30);
+  top:auto;
+  bottom: 1em;
+  right: 1.2em;
+  font-size: size(18);
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: normal;
+  letter-spacing: 0.06em;
   text-align: right;
   color: #ffffff;
-  z-index: 3;
+  z-index: 10;
   white-space: nowrap;
   text-shadow: 0em 0em 0.3em #000;
 }
@@ -70,10 +62,13 @@
 }
 
 .img {
+  position: relative;
+  width: 100%;
+  /*
   @include img_c_pc(1902, 0);
   top:calc(50% + ( 10 - 1080 * 0.5) * 100vw / 1920);
   bottom: 0;
-  z-index: 1;
+  z-index: 1;*/
 }
 
 .bird {
@@ -139,20 +134,13 @@
     background-attachment: scroll;
   }
 
-    .new-text {
-  @include img_c_pc(1100, 1010);
-  top:calc(50% + ( 670 - 667 * 0.5) * 100vw / 375);
-  font-size: size(80);
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: normal;
-  text-align: center;
-  color: #ffffff;
-  z-index: 3;
-  white-space: nowrap;
-  text-shadow: 0em 0em 0.3em #000;
-}
+  .new-text {
+    @include img_c_m(375, 0);
+    top:auto;
+    bottom: 1em;
+    font-size: sizem(15);
+    text-align: center;
+  }
   .bg-img {
     top: auto;
     height: auto;

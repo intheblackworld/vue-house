@@ -36,30 +36,17 @@
   background-image: url('./s1/bg.jpg');
   background-size: cover;
   background-attachment: fixed;
-
-  // margin: 0 0 size(400) 0;
 }
-
-.bg-img {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  object-fit: cover;
-  margin-top: 0;
-  // opacity: 0.5;
-}
-
 .new-text {
   @include img_r_pc(500, 1010, 30);
-  top:calc(40% + ( 990 - 1080 * 0.4) * 100vw / 1920);
-  font-size: size(25);
+  top:auto;
+  bottom: 1em;
+  right: 1.2em;
+  font-size: size(18);
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: normal;
+  letter-spacing: 0.06em;
   text-align: right;
   color: #ffffff;
   z-index: 10;
@@ -67,22 +54,10 @@
   text-shadow: 0em 0em 0.3em #000;
 }
 
-.grass {
-  @include img_r_pc(1600, 0, -50);
-  top: auto;
-  bottom: 0;
-  transform-origin: bottom;
-  animation: grass 2s ease-in-out alternate infinite;
-}
-
-@keyframes grass {
-  to {
-    transform: skewX(-5deg);
-  }
-}
 
 .logo {
-  @include img_l_pc(430, 150, 30);
+  @include img_l_pc(880, 220 , 155);
+  top:calc(50% + ( 220 - 1080 * 0.5) * 100vw / 1920);
 }
 
 .bird {
@@ -93,107 +68,53 @@
 
 @keyframes cloud {
   to {
-    transform: translateX(-40px);
+    transform: translateX(-10%);
   }
 }
 .cloud1 {
   @include img_r_pc(1200, 750, 100);
+  top:calc(50% + ( 750 - 1080 * 0.5) * 100vw / 1920);
   animation: cloud 2.5s ease-in-out alternate infinite;
 }
 .cloud2 {
   @include img_l_pc(1035, 900, 300);
+  top:calc(50% + ( 900 - 1080 * 0.5) * 100vw / 1920);
   animation: cloud 4s ease-in-out alternate infinite;
-}
-.hill1 {
-  @include img_l_pc(1665, 0, 0);
-  top: auto;
-  bottom: 0;
 }
 .hill2 {
   @include img_r_pc(1446, 0, 0);
   top: auto;
   bottom: size(-100);
 }
-.logo {
-  @include img_l_pc(880, 220 , 155);
-}
-.style1 {
-  @include img_l_pc(438, 0, -40);
-  top: auto;
-  bottom: 0;
-}
-.style2 {
-  @include img_l_pc(481, 0, -40);
-  top: auto;
-  bottom: 0;
-}
-.style3 {
-  @include img_r_pc(494, 0, 0);
-  top: auto;
-  bottom: 0;
-}
-.style4 {
-  @include img_r_pc(1045, 0, -100);
-  top: auto;
-  bottom: 0;
-}
-
-.title-en {
-  @include img_c_pc(1166, 5);
-}
-
-.title1 {
-  @include img_c_pc(235, 169);
-}
-
-.title2 {
-  @include img_c_pc(410, 478);
-  font-size: size(28.3);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(9.89);
-  text-align: left;
-  color: #ffffff;
-  white-space: nowrap;
-}
 
 .title3 {
   @include img_l_pc(770, 450, 200);
+  top:calc(50% + ( 450 - 1080 * 0.5) * 100vw / 1920);
   font-size: size(50);
   font-family: 'Noto Sans TC';
   font-stretch: normal;
   font-weight: 500;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(4.35);
+  letter-spacing:0.087EM;
   text-align: center;
   color: #FFF000;
   white-space: nowrap;
-
-  span {
-    font-size: size(50.1);
-    letter-spacing: size(5.01);
-    color: #fff100;
-  }
 }
 
 .title4 {
   @include img_l_pc(1000, 540, 220);
+  top:calc(50% + ( 540 - 1080 * 0.5) * 100vw / 1920);
   text-shadow: 0 0 5px #1b4a20;
   font-family: 'Noto Sans TC';
   font-size: size(40);
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(5);
+  line-height: 1.5;
+  letter-spacing: 0.09em;
   text-align: left;
   color: #f9f8c7;
-}
-.text-box {
-  @include img_l_pc(120, 580, 155);
 }
 
 /* 螢幕尺寸標準 */
@@ -203,169 +124,56 @@
 
 @media screen and (max-width: 767px) {
   .section1 {
-    width: 100vw;
-    min-height: sizem(680);
-    max-height: sizem(680);
-    height: sizem(680);
-    // margin: 0 0 -12vw 0;
+    height:calc(100vh - 63px);
+    min-height: sizem(604);
+    max-height: sizem(750);
     background-size: auto size-m(750);
-    overflow: hidden;
-    position: relative;
   }
 
   .new-text {
-  @include img_c_pc(1100, 1010);
-  top:calc(50% + ( 640 - 667 * 0.5) * 100vw / 375);
-  font-size: size(80);
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: normal;
-  text-align: center;
-  color: #ffffff;
-  z-index: 10;
-  white-space: nowrap;
-  text-shadow: 0em 0em 0.3em #000;
-}
-
-  .grass {
-    // @include img_r_pc(1600, 0, -50);
-    top: auto;
-    bottom: 0;
-    transform-origin: bottom;
-    animation: grass 2s ease-in-out alternate infinite;
+    @include img_c_m(375, 0);
+    top:auto;
+    bottom: 1em;
+    font-size: sizem(15);
+    text-align: center;
   }
-
-  @keyframes grass {
-    to {
-      transform: skewX(-5deg);
-    }
-  }
-
   .logo {
     @include img_c_m(250, 30);
+  top:calc(40% + ( 30 - 604 * 0.4) * 100vw / 375);
   }
 
   .bird {
     @include img_c_m(220, 330);
+  top:calc(50% + ( 320 - 604 * 0.5) * 100vw / 375);
   }
 
-  @keyframes cloud {
-    to {
-      transform: translateX(-40px);
-    }
-  }
   .cloud1 {
     @include img_r_m(500, 550, -100);
-    animation: cloud 2.5s ease-in-out alternate infinite;
+  top:calc(90% + ( 470 - 604 * 0.9) * 100vw / 375);
   }
   .cloud2 {
     @include img_l_m(300, 620, -90);
-    animation: cloud 4s ease-in-out alternate infinite;
-  }
-  .hill1 {
-    @include img_l_m(500, 0, 0);
-    top: auto;
-    bottom: 0;
+  top:calc(80% + ( 480 - 604 * 0.8) * 100vw / 375);
   }
   .hill2 {
     @include img_c_m(435, 0);
     top: auto;
     bottom: 0;
   }
-
-  .style1 {
-    @include img_r_m(368, 0, -20);
-    top: auto;
-    bottom: 0;
-  }
-  .style2 {
-    @include img_l_pc(481, 0, -40);
-    top: auto;
-    bottom: 0;
-  }
-  .style3 {
-    @include img_r_m(238, 0, 0);
-    top: auto;
-    bottom: 0;
-  }
-  .style4 {
-    @include img_r_pc(1045, 0, -100);
-    top: auto;
-    bottom: 0;
-  }
-
-  .title-en {
-    @include img_l_m(337, 15, 18);
-  }
-
-  .title1 {
-    @include img_c_m(150, 59);
-  }
-
-  .title2 {
-    @include img_c_m(210, 150 - 52);
-    font-size: sizem(15);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(3.89);
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
-  }
-
   .title3 {
     @include img_c_m(350, 180);
+  top:calc(40% + ( 180 - 604 * 0.4) * 100vw / 375);
     font-size: sizem(23);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(2.14);
-    text-align: center;
-    color: #FFF000;
-    white-space: normal;
-
-    > span {
-      display: block;
-      margin-top: sizem(20);
-      font-size: sizem(31.6);
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.2;
-      letter-spacing: sizem(3.16);
-      text-align: center;
-      color: #ffffff;
-      white-space: nowrap;
-      > span {
-        font-size: sizem(36.4);
-        font-weight: 900;
-        letter-spacing: sizem(2.62);
-        color: #fff;
-      }
-    }
   }
 
   .title4 {
     @include img_c_m(300, 220);
+  top:calc(40% + ( 220 - 604 * 0.4) * 100vw / 375);
     text-shadow: 0 0 5px #1b4a20;
     font-family: 'Noto Sans TC';
     font-size: sizem(22);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: sizem(2);
-    text-align: center;
-    color: #fff;
-    white-space: nowrap;
+  text-align:center;
   }
-  .text-box {
-  @include img_l_m(50, 177, 35);
-}
 }
 </style>
 <script>

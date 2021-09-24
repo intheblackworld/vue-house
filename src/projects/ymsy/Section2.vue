@@ -51,12 +51,12 @@
   @include img_c_pc(1300, 80);
   top:calc(40% + ( 80 - 1080 * 0.4) * 100vw / 1920);
   font-family: 'Noto Sans TC';
-  font-weight: 400;
+  font-weight: 600;
   font-size: size(60);
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
-  letter-spacing: normal;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
   text-align: center;
   color: #ffffff;
   z-index: 3;
@@ -65,30 +65,35 @@
 
 .new-text {
   @include img_r_pc(500, 1010, 30);
-  top:calc(40% + ( 1000 - 1080 * 0.4) * 100vw / 1920);
-  font-size: size(25);
+  top:auto;
+  bottom: 1em;
+  right: 1.2em;
+  font-size: size(18);
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: normal;
+  letter-spacing: 0.06em;
   text-align: right;
   color: #ffffff;
-  z-index: 3;
+  z-index: 10;
   white-space: nowrap;
   text-shadow: 0em 0em 0.3em #000;
 }
 .new-text-l {
-  @include img_l_pc(500, 1010, -260);
-  top:calc(40% + ( 1010 - 1080 * 0.4) * 100vw / 1920);
-  font-size: size(25);
+  @include img_l_pc(500, 1010, 0);
   font-family: 'Noto Sans TC';
+  top:auto;
+  bottom: 1em;
+  left:1.2em;
+  opacity: 0.9;
+  font-size: size(18);
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: normal;
-  text-align: right;
+  letter-spacing: 0.06em;
+  text-align: left;
   color: #ffffff;
-  z-index: 3;
+  z-index: 10;
   white-space: nowrap;
   text-shadow: 0em 0em 0.3em #000;
 }
@@ -130,33 +135,19 @@
   
   
   .new-text {
-  @include img_c_pc(1100, 1010);
-  top:calc(50% + ( 600 - 667 * 0.5) * 100vw / 375);
-  font-size: size(80);
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: normal;
-  text-align: center;
-  color: #ffffff;
-  z-index: 3;
-  white-space: nowrap;
-  text-shadow: 0em 0em 0.3em #000;
-}
+    @include img_c_m(375, 0);
+    top:auto;
+    bottom: 1em;
+    font-size: sizem(15);
+    text-align: center;
+  }
 .new-text-l {
-  @include img_c_pc(1100, 1010);
-  top:calc(50% + ( 570 - 667 * 0.5) * 100vw / 375);
-  font-size: size(80);
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: normal;
-  text-align: center;
-  color: #ffffff;
-  z-index: 3;
-  white-space: nowrap;
-  text-shadow: 0em 0em 0.3em #000;
-}
+    @include img_c_m(375, 0);
+    top:auto;
+    bottom: 3.5em;
+    font-size: sizem(13);
+    text-align: center;
+  }
 }
 
   .flash {
@@ -168,15 +159,6 @@
   .title {
     @include img_c_m(350, 30);
     font-size: sizem(35);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.3;
-    letter-spacing: normal;
-    text-align: center;
-    color: #ffffff;
-    z-index: 3;
-    white-space: nowrap;
   }
 }
 </style>

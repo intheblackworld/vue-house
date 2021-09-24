@@ -90,18 +90,19 @@
 
 .new-text {
   @include img_r_pc(500, 1010, 30);
-  top:calc(40% + ( 980 - 1080 * 0.4) * 100vw / 1920);
-  font-size: size(25);
+  top:auto;
+  bottom: 1em;
+  right: 1.2em;
+  font-size: size(18);
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: normal;
+  letter-spacing: 0.06em;
   text-align: right;
   color: #000;
-  z-index: 3;
+  z-index: 10;
   white-space: nowrap;
 }
-
 .desc {
   @include img_r_pc(602, 483, 79);
   font-size: size(22);
@@ -384,17 +385,12 @@
   }
 
   .new-text {
-  @include img_c_pc(1100, 1010);
-  top:calc(50% + ( 670 - 667 * 0.5) * 100vw / 375);
-  font-size: size(80);
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: normal;
-  text-align: center;
-  color: #ffffff;
-  z-index: 3;
-  white-space: nowrap;
+    @include img_c_m(375, 0);
+    top:auto;
+    bottom: 1em;
+    font-size: sizem(15);
+    text-align: center;
+    color: #fff;
   text-shadow: 0em 0em 0.3em #000;
 }
 

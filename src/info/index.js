@@ -2,12 +2,12 @@ import { isMobile } from '../utils/index'
 export default {
   address: '台北市北投區稻香路161巷',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3611.813664623801!2d121.48627601500841!3d25.141989783921876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442afb255a147cb%3A0x1fb2054eb2fa0c5a!2zMTEy5Y-w5YyX5biC5YyX5oqV5Y2A56i76aaZ6LevMTYx5be3!5e0!3m2!1szh-TW!2stw!4v1625897944660!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/yZtHjckuCPk28Unq7',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3611.8151853186164!2d121.48595451500837!3d25.141938383921985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442afb6a8fd040f%3A0xb0fa08ec57a3f2!2z5qi55bGx5LiYIOaOpeW-heS4reW_gw!5e0!3m2!1szh-TW!2stw!4v1632453057861!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/j7hpAToJQJRn9SJK7',
   phone: '02-28979888',
   fbLink: 'https://www.facebook.com/YANGMINGMANOR',
   fbMessage: 'https://m.me/YANGMINGMANOR/',
-  caseName: '綠山丘',
+  caseName: '樹山丘',
   indigatorLength: 10,
 
   houseInfos: [
