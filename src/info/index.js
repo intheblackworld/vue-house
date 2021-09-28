@@ -5,8 +5,8 @@ export default {
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3611.8151853186164!2d121.48595451500837!3d25.141938383921985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442afb6a8fd040f%3A0xb0fa08ec57a3f2!2z5qi55bGx5LiYIOaOpeW-heS4reW_gw!5e0!3m2!1szh-TW!2stw!4v1632453057861!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/j7hpAToJQJRn9SJK7',
   phone: '02-28979888',
-  fbLink: 'https://www.facebook.com/YANGMINGMANOR',
-  fbMessage: 'https://m.me/YANGMINGMANOR/',
+  fbLink: 'https://www.facebook.com/citynaturehouse/',
+  fbMessage: 'https://m.me/citynaturehouse/',
   caseName: '樹山丘',
   indigatorLength: 10,
 

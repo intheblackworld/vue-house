@@ -162,6 +162,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  z-index: 10;
 }
 
 .btn {
