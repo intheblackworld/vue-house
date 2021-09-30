@@ -4,8 +4,8 @@
     <div class="title" data-aos="fade-up" data-aos-delay="0" v-if="isMobile">一樣的台北市 <br />不一樣的樹山丘</div>
     <div class="new-text">銷售企劃：興益發建設自建自售</div>
     <div class="new-text-l">3D透視合成示意圖</div>
-    <img src="./s2/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="isPC">
-    <img src="./s2/flash.png" :alt="`${info.caseName}_img`" class="flash">
+    <img loading="lazy" src="./s2/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="isPC">
+    <img loading="lazy" src="./s2/flash.png" :alt="`${info.caseName}_img`" class="flash">
     <Map :bgSrc="bgSrc" v-if="isMobile" :hand="hand">
     </Map>
   </div>

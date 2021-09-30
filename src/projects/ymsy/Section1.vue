@@ -1,12 +1,12 @@
 <template>
   <div class="section1">
-    <img src="./s1/main.png" :alt="`${info.caseName}_img`" class="bird">
-    <img src="./s1/cloud_2.png" :alt="`${info.caseName}_img`" class="cloud cloud2">
-    <img src="./s1/cloud_1.png" :alt="`${info.caseName}_img`" class="cloud cloud1">
-    <img src="./s1/style.png" :alt="`${info.caseName}_img`" class="hill2"  data-aos-delay="0" v-if="isPC">
-    <img src="./mobile/01/style_m.png" :alt="`${info.caseName}_img`" class="hill2"  data-aos-delay="0" v-if="isMobile">
-    <img src="./s1/logo.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade-up" data-aos-delay="0" v-if="isPC">
-    <img src="./mobile/01/logo_m.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade-up" data-aos-delay="0" v-if="isMobile">
+    <img loading="lazy" src="./s1/main.png" :alt="`${info.caseName}_img`" class="bird">
+    <img loading="lazy" src="./s1/cloud_2.png" :alt="`${info.caseName}_img`" class="cloud cloud2">
+    <img loading="lazy" src="./s1/cloud_1.png" :alt="`${info.caseName}_img`" class="cloud cloud1">
+    <img loading="lazy" src="./s1/style.png" :alt="`${info.caseName}_img`" class="hill2"  data-aos-delay="0" v-if="isPC">
+    <img loading="lazy" src="./mobile/01/style_m.png" :alt="`${info.caseName}_img`" class="hill2"  data-aos-delay="0" v-if="isMobile">
+    <img loading="lazy" src="./s1/logo.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade-up" data-aos-delay="0" v-if="isPC">
+    <img loading="lazy" src="./mobile/01/logo_m.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade-up" data-aos-delay="0" v-if="isMobile">
     <div class="title3" data-aos="fade-up" data-aos-delay="400" v-if="isPC">
       北市稀有 近三千坪大基地
     </div>

@@ -12,11 +12,11 @@
         呼吸陽明山的風，漫步近3千坪夢想藍圖，在動感的日常中感動。恰如其分地收納多項匠心公設、精緻飯店物管。知名新銳創作者蔡尉成作品《片片》迎賓。
       </div>
     </div>
-    <img src="./s2/flash.png" :alt="`${info.caseName}_img`" class="flash" v-if="isMobile">
+    <img loading="lazy" src="./s2/flash.png" :alt="`${info.caseName}_img`" class="flash" v-if="isMobile">
 
-    <img src="./s6/main.png" :alt="`${info.caseName}_img`" class="main">
+    <img loading="lazy" src="./s6/main.png" :alt="`${info.caseName}_img`" class="main">
 
-    <img src="./s6/img.jpg" :alt="`${info.caseName}_img`" class="img1" data-aos="fade-up" data-aos-delay="800" v-if="isPC">
+    <img loading="lazy" src="./s6/img.jpg" :alt="`${info.caseName}_img`" class="img1" data-aos="fade-up" data-aos-delay="800" v-if="isPC">
 
     <div class="new-text">銷售企劃：興益發建設自建自售</div>
     <div class="new-text-1">蔡尉成雕塑創作《片片》w148 x 129 x H252cm</div>
@@ -27,7 +27,7 @@
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-            <img :src="slide.img" alt="">
+            <img loading="lazy" :src="slide.img" alt="">
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>

@@ -1,8 +1,8 @@
 <template>
   <div class="section7">
-    <img src="./s7/flower.png" :alt="`${info.caseName}_img`" class="flower grass" v-if="isPC">
-    <img src="./mobile/07/flower.png" :alt="`${info.caseName}_img`" class="flower" v-if="isMobile" data-aos="fade" data-aos-delay="200">
-    <img src="./s2/flash.png" :alt="`${info.caseName}_img`" class="flash" v-if="isMobile">
+    <img loading="lazy" src="./s7/flower.png" :alt="`${info.caseName}_img`" class="flower grass" v-if="isPC">
+    <img loading="lazy" src="./mobile/07/flower.png" :alt="`${info.caseName}_img`" class="flower" v-if="isMobile" data-aos="fade" data-aos-delay="200">
+    <img loading="lazy" src="./s2/flash.png" :alt="`${info.caseName}_img`" class="flash" v-if="isMobile">
 
     <div class="content">
       <div class="title" data-aos="fade-up" data-aos-delay="0">
@@ -18,17 +18,17 @@
       <div class="new-text">銷售企劃：興益發建設自建自售</div>
     </div>
     <div class="img-list" v-if="isPC">
-      <img src="./s7/img_1.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-in" data-aos-delay="300">
-      <img src="./s7/img_2.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-in" data-aos-delay="400">
-      <img src="./s7/img_3.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-in" data-aos-delay="500">
-      <img src="./s7/img_4.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-in" data-aos-delay="600">
+      <img loading="lazy" src="./s7/img_1.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-in" data-aos-delay="300">
+      <img loading="lazy" src="./s7/img_2.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-in" data-aos-delay="400">
+      <img loading="lazy" src="./s7/img_3.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-in" data-aos-delay="500">
+      <img loading="lazy" src="./s7/img_4.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-in" data-aos-delay="600">
     </div>
 
     <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade" data-aos-delay="200" v-if="isMobile">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-            <img :src="slide.img" alt="">
+            <img loading="lazy" :src="slide.img" alt="">
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>

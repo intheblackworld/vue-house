@@ -12,9 +12,9 @@
       現場實景
     </div>
     <div class="new-text">銷售企劃：興益發建設自建自售</div>
-    <img src="./s3/bg.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isPC">
-    <img src="./mobile/03/bg.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isMobile">
-    <img src="./s2/flash.png" :alt="`${info.caseName}_img`" class="flash">
+    <img loading="lazy" src="./s3/bg.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isPC">
+    <img loading="lazy" src="./mobile/03/bg.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isMobile">
+    <img loading="lazy" src="./s2/flash.png" :alt="`${info.caseName}_img`" class="flash">
   </div>
 </template>
 <style lang="scss" scoped>

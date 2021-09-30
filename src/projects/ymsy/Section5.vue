@@ -1,7 +1,7 @@
 <template>
   <div class="section5">
-    <img src="./s5/flower.png" :alt="`${info.caseName}_img`" class="flower" data-aos="fade-in" data-aos-delay="0">
-    <img src="./s2/flash.png" :alt="`${info.caseName}_img`" class="flash" v-if="isMobile">
+    <img loading="lazy" src="./s5/flower.png" :alt="`${info.caseName}_img`" class="flower" data-aos="fade-in" data-aos-delay="0">
+    <img loading="lazy" src="./s2/flash.png" :alt="`${info.caseName}_img`" class="flash" v-if="isMobile">
 
     <div class="content">
       <div class="title" data-aos="fade-up" data-aos-delay="0">
@@ -18,7 +18,7 @@
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-            <img :src="slide.img" alt="">
+            <img loading="lazy" :src="slide.img" alt="">
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>

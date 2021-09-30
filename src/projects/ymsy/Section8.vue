@@ -14,7 +14,7 @@
     <div class="new-text02" v-if="isMobile">銷售企劃：興益發建設自建自售</div>
     <div class="team-list" v-if="isPC">
       <div class="team" v-for="slide in slideList" :key="slide.desc">
-        <img :src="slide.img" :alt="`${info.caseName}_img`" class="team-img" data-aos="fade-up" data-aos-delay="300">
+        <img loading="lazy" :src="slide.img" :alt="`${info.caseName}_img`" class="team-img" data-aos="fade-up" data-aos-delay="300">
         <div class="team-title" v-html="slide.title" data-aos="fade-up" data-aos-delay="400"></div>
         <div class="team-desc" v-html="slide.desc" data-aos="fade-up" data-aos-delay="500"></div>
       </div>
@@ -25,14 +25,14 @@
         <div class="team-name" v-html="slideList[0].name" data-aos="fade-up" data-aos-delay="400"></div>
         <div class="team-title" v-html="slideList[0].title" data-aos="fade-up" data-aos-delay="400"></div>
         <div class="team-desc" v-html="slideList[0].desc" data-aos="fade-up" data-aos-delay="500"></div>
-        <img class="team-img" :src="slideList[0].img" alt="">
+        <img loading="lazy" class="team-img" :src="slideList[0].img" alt="">
       </div>
       <div class="team-item relative">
         <div class="team-label">｜匠心團隊｜</div>
         <div class="team-name" v-html="slideList[1].name" data-aos="fade-up" data-aos-delay="400"></div>
         <div class="team-title" v-html="slideList[1].title" data-aos="fade-up" data-aos-delay="400"></div>
         <div class="team-desc" v-html="slideList[1].desc" data-aos="fade-up" data-aos-delay="500"></div>
-        <img class="team-img" :src="slideList[1].img" alt="">
+        <img loading="lazy" class="team-img" :src="slideList[1].img" alt="">
       </div>
     </div>
 
@@ -40,7 +40,7 @@
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" :key="slide.img" :class="`swipe-item`">
-            <img :src="slide.img" alt="">
+            <img loading="lazy" :src="slide.img" alt="">
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>

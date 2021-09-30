@@ -1,6 +1,6 @@
 <template>
   <div class="section9">
-    <img src="./s9/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="isPC">
+    <img loading="lazy" src="./s9/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="isPC">
     <div class="content">
       <div class="label">
         興益發業績實景 詠大直
@@ -23,7 +23,7 @@
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-            <img :src="slide.img" alt="">
+            <img loading="lazy" :src="slide.img" alt="">
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
