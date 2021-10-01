@@ -1,19 +1,19 @@
 <template>
   <div class="section6 flex-ac">
     <div class="animate-slide" v-if="!isMobile">
-      <img src="./s6/漂浮物件_分層/6_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
+      <img loading="lazy" src="./s6/漂浮物件_分層/6_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
     </div>
     <div class="animate-slide" v-if="isMobile">
-      <!-- <img src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
-      <img src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2"> -->
-      <!-- <img src="./s1/mo1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1"> -->
+      <!-- <img loading="lazy" src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
+      <img loading="lazy" src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2"> -->
+      <!-- <img loading="lazy" src="./s1/mo1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1"> -->
     </div>
     <div class="relative container">
       <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
+              <img loading="lazy" :src="slide.img" alt="">
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
@@ -21,8 +21,8 @@
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
           <div class="swipe-btns absolute flex-ac flex-jb">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+            <img loading="lazy" src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+            <img loading="lazy" src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
           </div>
         </div>
       </div>
@@ -36,7 +36,7 @@
       <div class="desc" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="800">
         十分鐘生活圈，家樂福、藝文特區、南崁COSTCO、特力屋、台茂購物中心等五大商圈環繞，多彩多姿的超強機能，食衣住行一次滿足，讓您擁有一城之富。
       </div>
-      <img src="./s6/style_arrow_3.png" :alt="`${info.caseName}_style_arrow`" class="arrow" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="200">
+      <img loading="lazy" src="./s6/style_arrow_3.png" :alt="`${info.caseName}_style_arrow`" class="arrow" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="200">
     </div>
   </div>
 </template>
@@ -49,7 +49,7 @@
   min-height: size(900);
   max-height: size(1080);
   position: relative;
-  background-image: url('~@/projects/hg1/s3/technology_bg.png');
+  background-image: url('~@/projects/hg1/s3/technology_bg.jpg');
   background-size: cover;
   background-position: 100%;
   // min-height: size(900);

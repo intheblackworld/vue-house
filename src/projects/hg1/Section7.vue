@@ -1,14 +1,14 @@
 <template>
   <div class="section7">
-    <img src="./s7/w.jpg" :alt="`${info.caseName}_img`" class="bg-img bg1" v-if="isPC" key="day1">
-    <img src="./s7/d.jpg" :alt="`${info.caseName}_img`" class="bg-img bg2" v-if="isPC" key="day2">
+    <img loading="lazy" src="./s7/w.jpg" :alt="`${info.caseName}_img`" class="bg-img bg1" v-if="isPC" key="day1">
+    <img loading="lazy" src="./s7/d.jpg" :alt="`${info.caseName}_img`" class="bg-img bg2" v-if="isPC" key="day2">
     <div class="bg-img bg1" v-if="isMobile">
-      <img src="./s7/w_m.jpg" :alt="`${info.caseName}_img`">
+      <img loading="lazy" src="./s7/w_m.jpg" :alt="`${info.caseName}_img`">
     </div>
     <div class="bg-img bg2" v-if="isMobile">
-      <img src="./s7/d_m.jpg" :alt="`${info.caseName}_img`">
+      <img loading="lazy" src="./s7/d_m.jpg" :alt="`${info.caseName}_img`">
     </div>
-    <!-- <img src="./mo/s7/m.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isMobile"> -->
+    <!-- <img loading="lazy" src="./mo/s7/m.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isMobile"> -->
     <div class="m-title" v-if="isMobile">
       ARCHITECTURE
     </div>
@@ -21,14 +21,14 @@
     <div class="big-title" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="800">
       STRUCTURE
     </div>
-    <img src="./s5/style_arrow_2.png" :alt="`${info.caseName}_style_arrow`" class="arrow" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="200">
+    <img loading="lazy" src="./s5/style_arrow_2.png" :alt="`${info.caseName}_style_arrow`" class="arrow" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="200">
     <div class="animate-slide" v-if="!isMobile">
-      <img src="./s7/漂浮物件_分層/7_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
+      <img loading="lazy" src="./s7/漂浮物件_分層/7_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
     </div>
     <div class="animate-slide" v-if="isMobile">
-      <!-- <img src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
-      <img src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2"> -->
-      <img src="./mo/s7/漂浮物件_分層/m_7_class_1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
+      <!-- <img loading="lazy" src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
+      <img loading="lazy" src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2"> -->
+      <img loading="lazy" src="./mo/s7/漂浮物件_分層/m_7_class_1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
     </div>
   </div>
 </template>

@@ -1,15 +1,15 @@
 <template>
   <div class="section11">
     <div class="animate-slide" v-if="!isMobile">
-      <img src="./s11/漂浮物件_分層/10_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
-      <img src="./s11/漂浮物件_分層/10_class_2.png" :alt="`${info.caseName}_logo`" class="pc2" data-parallax="4">
+      <img loading="lazy" src="./s11/漂浮物件_分層/10_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
+      <img loading="lazy" src="./s11/漂浮物件_分層/10_class_2.png" :alt="`${info.caseName}_logo`" class="pc2" data-parallax="4">
     </div>
     <div class="animate-slide" v-if="isMobile">
-      <!-- <img src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
-      <img src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2"> -->
-      <img src="./mo/s10/漂浮物件_分層/m_9_class_1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
+      <!-- <img loading="lazy" src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
+      <img loading="lazy" src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2"> -->
+      <img loading="lazy" src="./mo/s10/漂浮物件_分層/m_9_class_1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
     </div>
-    <img src="./s11/masterteam_bg.png" :alt="`${info.caseName}_masterteam_bg`" class="bg-img" data-aos="fade-up" data-aos-delay="0">
+    <img loading="lazy" src="./s11/masterteam_bg.png" :alt="`${info.caseName}_masterteam_bg`" class="bg-img" data-aos="fade-up" data-aos-delay="0">
     <div class="bg-img blue"></div>
     <div class="title" data-aos="fade" data-aos-delay="400" v-if="isPC">
       大師團隊<br />四強聯手
@@ -20,24 +20,24 @@
     <div class="subtitle" data-aos="fade" data-aos-delay="600">
       MASTER<br />TEAM
     </div>
-    <img src="./s11/style_arrow_7.png" :alt="`${info.caseName}_style_arrow`" class="arrow" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="200">
+    <img loading="lazy" src="./s11/style_arrow_7.png" :alt="`${info.caseName}_style_arrow`" class="arrow" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="200">
     <div class="item-list" v-if="isPC">
-      <img :src="item.img" :alt="`${info.caseName}_item`" data-aos="fade-up" :data-aos-delay="200 + index * 50" v-for="(item, index) in item_list" :key="item.img + index" @click="showDialog(index)">
+      <img loading="lazy" :src="item.img" :alt="`${info.caseName}_item`" data-aos="fade-up" :data-aos-delay="200 + index * 50" v-for="(item, index) in item_list" :key="item.img + index" @click="showDialog(index)">
     </div>
 
     <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isMobile">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`" @click="showDialog(i)">
-            <img :src="slide.img" alt="">
-            <!-- <img :src="slide.name" alt="" class="slide-name-img"> -->
+            <img loading="lazy" :src="slide.img" alt="">
+            <!-- <img loading="lazy" :src="slide.name" alt="" class="slide-name-img"> -->
           </div>
         </transition-group>
         <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
-      <!--   <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-        <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex"> -->
+      <!--   <img loading="lazy" src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+        <img loading="lazy" src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex"> -->
         <div class="prev-btn" @click="decIndex"></div>
         <div class="next-btn" @click="addIndex"></div>
 
@@ -47,15 +47,15 @@
 
     <div :class="`dialog ${isDialog ? 'show' : ''}`">
       <div class="animate-slide" v-if="!isMobile">
-        <img src="./s11/漂浮物件_分層/10_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
-        <img src="./s11/漂浮物件_分層/10_class_2.png" :alt="`${info.caseName}_logo`" class="pc2" data-parallax="4">
+        <img loading="lazy" src="./s11/漂浮物件_分層/10_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
+        <img loading="lazy" src="./s11/漂浮物件_分層/10_class_2.png" :alt="`${info.caseName}_logo`" class="pc2" data-parallax="4">
       </div>
       <div class="animate-slide" v-if="isMobile">
-        <img src="./mo/s10/漂浮物件_分層/m_9_class_1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
+        <img loading="lazy" src="./mo/s10/漂浮物件_分層/m_9_class_1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
       </div>
-      <img src="./pop-up/pop_bg.png" :alt="`${info.caseName}_masterteam_bg`" class="bg-img dialog-bg" data-aos="fade-up" data-aos-delay="0">
+      <img loading="lazy" src="./pop-up/pop_bg.png" :alt="`${info.caseName}_masterteam_bg`" class="bg-img dialog-bg" data-aos="fade-up" data-aos-delay="0">
       <div class="bg-img blue light"></div>
-      <img src="~@/assets/img/close.png" alt class="close" @click="closeDialog" />
+      <img loading="lazy" src="~@/assets/img/close.png" alt class="close" @click="closeDialog" />
       <transition-group name="swipe-fade" mode="out-in" class="absolute dialog-content">
         <div class="dialog-content" v-if="isDialog1" key="dialog-1">
           <div class="dialog-slogan dialog-slogan1">
@@ -75,9 +75,9 @@
             經典作品／<br />
             築億丰盛、築億築藝、大樹小墅<br />時上逸品、曉學堂
           </div>
-          <img class="dialog-img dialog-img1" src="./pop-up/01/pop_1_man.png" :alt="`${info.caseName}_dialog_img`" v-if="isPC">
-          <img class="dialog-img dialog-img1" src="./mo/pop-up/01/masterteam_man1_m_popup.png" :alt="`${info.caseName}_dialog_img`" v-if="isMobile">
-          <img class="dialog-img dialog-name" src="./mo/pop-up/01/name_1_m_popup.png" :alt="`${info.caseName}_dialog_img`" v-if="isMobile">
+          <img loading="lazy" class="dialog-img dialog-img1" src="./pop-up/01/pop_1_man.png" :alt="`${info.caseName}_dialog_img`" v-if="isPC">
+          <img loading="lazy" class="dialog-img dialog-img1" src="./mo/pop-up/01/masterteam_man1_m_popup.png" :alt="`${info.caseName}_dialog_img`" v-if="isMobile">
+          <img loading="lazy" class="dialog-img dialog-name" src="./mo/pop-up/01/name_1_m_popup.png" :alt="`${info.caseName}_dialog_img`" v-if="isMobile">
         </div>
         <div class="dialog-content" v-if="isDialog2" key="dialog-2">
           <div class="dialog-slogan dialog-slogan2">
@@ -93,9 +93,9 @@
             經典業績／<br />
             中悦美樹花園、中悦國寶、葛里法系列
           </div>
-          <img class="dialog-img dialog-img2" src="./pop-up/02/pop_2_man.png" :alt="`${info.caseName}_dialog_img`" v-if="isPC">
-          <img class="dialog-img dialog-img2" src="./mo/pop-up/02/masterteam_man4_m_popup.png" :alt="`${info.caseName}_dialog_img`" v-if="isMobile">
-          <img class="dialog-img dialog-name" src="./mo/pop-up/02/name_2_m_popup.png" :alt="`${info.caseName}_dialog_img`" v-if="isMobile">
+          <img loading="lazy" class="dialog-img dialog-img2" src="./pop-up/02/pop_2_man.png" :alt="`${info.caseName}_dialog_img`" v-if="isPC">
+          <img loading="lazy" class="dialog-img dialog-img2" src="./mo/pop-up/02/masterteam_man4_m_popup.png" :alt="`${info.caseName}_dialog_img`" v-if="isMobile">
+          <img loading="lazy" class="dialog-img dialog-name" src="./mo/pop-up/02/name_2_m_popup.png" :alt="`${info.caseName}_dialog_img`" v-if="isMobile">
         </div>
         <div class="dialog-content" v-if="isDialog3" key="dialog-3">
           <div class="dialog-slogan dialog-slogan3">
@@ -113,12 +113,12 @@
             達永秋鄉<br />
             昭揚君璽
           </div>
-          <img class="dialog-img dialog-img3" src="./pop-up/03/pop_3_man.png" :alt="`${info.caseName}_dialog_img`" v-if="isPC">
-          <img src="./pop-up/03/pop_3_img.png" alt="" class="dialog-struc" v-if="isPC">
-          <img src="./mo/pop-up/03/3d_img_logo.png" alt="" class="dialog-3d" v-if="isMobile">
-          <img src="./mo/pop-up/03/popup_3d_img.png" alt="" class="dialog-struc" v-if="isMobile">
-          <img class="dialog-img dialog-img3" src="./mo/pop-up/03/masterteam_man3_m_popup.png" :alt="`${info.caseName}_dialog_img`" v-if="isMobile">
-          <img class="dialog-img dialog-name" src="./mo/pop-up/03/name_3_m_popup.png" :alt="`${info.caseName}_dialog_img`" v-if="isMobile">
+          <img loading="lazy" class="dialog-img dialog-img3" src="./pop-up/03/pop_3_man.png" :alt="`${info.caseName}_dialog_img`" v-if="isPC">
+          <img loading="lazy" src="./pop-up/03/pop_3_img.png" alt="" class="dialog-struc" v-if="isPC">
+          <img loading="lazy" src="./mo/pop-up/03/3d_img_logo.png" alt="" class="dialog-3d" v-if="isMobile">
+          <img loading="lazy" src="./mo/pop-up/03/popup_3d_img.png" alt="" class="dialog-struc" v-if="isMobile">
+          <img loading="lazy" class="dialog-img dialog-img3" src="./mo/pop-up/03/masterteam_man3_m_popup.png" :alt="`${info.caseName}_dialog_img`" v-if="isMobile">
+          <img loading="lazy" class="dialog-img dialog-name" src="./mo/pop-up/03/name_3_m_popup.png" :alt="`${info.caseName}_dialog_img`" v-if="isMobile">
         </div>
         <div class="dialog-content absolute" v-if="isDialog4" key="dialog-4">
           <div class="dialog-slogan dialog-slogan4">
@@ -137,10 +137,10 @@
             中國 Idea-Tops Award<br />
             日本 Good-design Award
           </div>
-          <img class="dialog-img dialog-img4" src="./pop-up/04/pop_4_man.png" :alt="`${info.caseName}_dialog_img`" v-if="isPC">
-          <img class="dialog-img dialog-img4" src="./mo/pop-up/04/masterteam_man2_m_popup.png" :alt="`${info.caseName}_dialog_img`" v-if="isMobile">
-          <img class="dialog-img dialog-reward" src="./pop-up/04/popup_04_logo_class.png" :alt="`${info.caseName}_dialog_img`">
-          <img class="dialog-img dialog-name" src="./mo/pop-up/04/name_4_m_popup.png" :alt="`${info.caseName}_dialog_img`" v-if="isMobile">
+          <img loading="lazy" class="dialog-img dialog-img4" src="./pop-up/04/pop_4_man.png" :alt="`${info.caseName}_dialog_img`" v-if="isPC">
+          <img loading="lazy" class="dialog-img dialog-img4" src="./mo/pop-up/04/masterteam_man2_m_popup.png" :alt="`${info.caseName}_dialog_img`" v-if="isMobile">
+          <img loading="lazy" class="dialog-img dialog-reward" src="./pop-up/04/popup_04_logo_class.png" :alt="`${info.caseName}_dialog_img`">
+          <img loading="lazy" class="dialog-img dialog-name" src="./mo/pop-up/04/name_4_m_popup.png" :alt="`${info.caseName}_dialog_img`" v-if="isMobile">
         </div>
       </transition-group>
     </div>
@@ -1158,20 +1158,16 @@ export default {
       slideList: [
         {
           img: require('./mo/s11/masterteam_man1_m_class.png'),
-          name: require('./mo/s11/name_1_m.png'),
         },
         {
           img: require('./mo/s11/masterteam_man4_m_class.png'),
-          name: require('./mo/s11/name_4_m.png'),
         },
         {
           img: require('./mo/s11/masterteam_man3_m_class.png'),
-          name: require('./mo/s11/name_3_m.png'),
         },
 
         {
           img: require('./mo/s11/masterteam_man2_m_class.png'),
-          name: require('./mo/s11/name_2_m.png'),
         },
         // {
         //   img: require('./s11/1.jpg'),

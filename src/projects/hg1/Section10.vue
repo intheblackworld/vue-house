@@ -1,16 +1,16 @@
 <template>
   <div class="section10">
     <div class="animate-slide" v-if="!isMobile">
-      <img src="./s10/漂浮物件_分層/9_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
-      <img src="./s10/漂浮物件_分層/9_class_2.png" :alt="`${info.caseName}_logo`" class="pc2" data-parallax="4">
+      <img loading="lazy" src="./s10/漂浮物件_分層/9_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
+      <img loading="lazy" src="./s10/漂浮物件_分層/9_class_2.png" :alt="`${info.caseName}_logo`" class="pc2" data-parallax="4">
     </div>
     <div class="animate-slide" v-if="isMobile">
-      <!-- <img src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
-      <img src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2"> -->
-      <img src="./mo/s10/漂浮物件_分層/m_9_class_1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
+      <!-- <img loading="lazy" src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
+      <img loading="lazy" src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2"> -->
+      <img loading="lazy" src="./mo/s10/漂浮物件_分層/m_9_class_1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
     </div>
-    <img src="./s10/materials_bg.png" :alt="`${info.caseName}_style_arrow`" class="img1" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="200" v-if="isPC">
-    <img src="./mo/s10/m_materials_bg.png" :alt="`${info.caseName}_style_arrow`" class="img1" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="200" v-if="isMobile">
+    <img loading="lazy" src="./s10/materials_bg.png" :alt="`${info.caseName}_style_arrow`" class="img1" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="200" v-if="isPC">
+    <img loading="lazy" src="./mo/s10/m_materials_bg.png" :alt="`${info.caseName}_style_arrow`" class="img1" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="200" v-if="isMobile">
     <div class="title" data-aos="fade" data-aos-delay="400">
       精品建材
     </div>
@@ -21,9 +21,9 @@
       名品建材 升級享受
     </div>
     <div class="hr" :data-aos="isPC ? 'scale-right' : 'fade'" data-aos-delay="200"></div>
-    <img src="./s10/style_arrow_6.png" :alt="`${info.caseName}_style_arrow`" class="arrow" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="200">
+    <img loading="lazy" src="./s10/style_arrow_6.png" :alt="`${info.caseName}_style_arrow`" class="arrow" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="200">
     <div class="item-list flex-c wrap">
-      <img :src="item.img" :alt="`${info.caseName}_item`" :data-aos="isPC ? 'fade-up' : 'fade'" :data-aos-delay="200 + index * 50" v-for="(item, index) in item_list" :key="item.img + index">
+      <img loading="lazy" :src="item.img" :alt="`${info.caseName}_item`" :data-aos="isPC ? 'fade-up' : 'fade'" :data-aos-delay="200 + index * 50" v-for="(item, index) in item_list" :key="item.img + index">
     </div>
   </div>
 </template>

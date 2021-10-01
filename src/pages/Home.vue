@@ -68,7 +68,7 @@
 
 .top-bg {
   width: 100vw;
-  background-image: url('~@/projects/hg1/s3/technology_bg.png');
+  background-image: url('~@/projects/hg1/s3/technology_bg.jpg');
   background-size: cover;
   margin-top: -30px;
 }

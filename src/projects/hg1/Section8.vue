@@ -1,19 +1,19 @@
 <template>
   <div class="section8">
     <div class="animate-slide" v-if="!isMobile">
-      <img src="./s8/漂浮物件_分層/8_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
+      <img loading="lazy" src="./s8/漂浮物件_分層/8_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
     </div>
     <div class="animate-slide" v-if="isMobile">
-      <!-- <img src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
-      <img src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2"> -->
-      <img src="./mo/s8/漂浮物件_單一/m_8_single_1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
-      <img src="./mo/s8/漂浮物件_單一/m_8_single_2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="1">
+      <!-- <img loading="lazy" src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3">
+      <img loading="lazy" src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2"> -->
+      <img loading="lazy" src="./mo/s8/漂浮物件_單一/m_8_single_1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
+      <img loading="lazy" src="./mo/s8/漂浮物件_單一/m_8_single_2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="1">
     </div>
     <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-            <img :src="slide.img" alt="">
+            <img loading="lazy" :src="slide.img" alt="">
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
@@ -21,8 +21,8 @@
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
         <div class="swipe-btns absolute flex-ac flex-jb">
-          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+          <img loading="lazy" src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+          <img loading="lazy" src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
         </div>
       </div>
     </div>
@@ -36,7 +36,7 @@
       <div class="desc title-box3" data-aos="fade" data-aos-delay="800">
         全方位北歐風公設，享受被建築療癒的日常！全桃園首創室內跑道，創新公設接軌國際，將室內外空間融合延伸，創造令人紓壓放鬆的全齡新樂園。
       </div>
-      <img src="./s8/style_arrow_4.png" :alt="`${info.caseName}_style_arrow`" class="arrow title-box4" data-aos="fade" data-aos-delay="200">
+      <img loading="lazy" src="./s8/style_arrow_4.png" :alt="`${info.caseName}_style_arrow`" class="arrow title-box4" data-aos="fade" data-aos-delay="200">
     </div>
     <div v-if="isMobile">
       <div class="title">
@@ -48,7 +48,7 @@
       <div class="desc">
         全方位北歐風公設，享受被建築療癒的日常！全桃園首創室內跑道，創新公設接軌國際，將室內外空間融合延伸，創造令人紓壓放鬆的全齡新樂園。
       </div>
-      <img src="./s8/style_arrow_4.png" :alt="`${info.caseName}_style_arrow`" class="arrow">
+      <img loading="lazy" src="./s8/style_arrow_4.png" :alt="`${info.caseName}_style_arrow`" class="arrow">
     </div>
   </div>
 </template>

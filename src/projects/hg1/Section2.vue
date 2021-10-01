@@ -1,19 +1,19 @@
 <template>
   <div class="section2">
     <div class="animate-slide" v-if="!isMobile">
-      <img src="./s2/漂浮物件_分層/2_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
+      <img loading="lazy" src="./s2/漂浮物件_分層/2_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
     </div>
     <!-- <div class="animate-slide" v-if="isMobile">
-      <img src="./mo/s2/漂浮物件_分層/m_2_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
+      <img loading="lazy" src="./mo/s2/漂浮物件_分層/m_2_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
     </div> -->
-    <img src="./s2/2_bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC">
+    <img loading="lazy" src="./s2/2_bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC">
     <!-- <h1 class="title">
       桃園新都心
     </h1> -->
     <!-- <h1 class="subtitle" v-if="isMobile">
       LOCATION
     </h1> -->
-    <img src="./s2/02_title_m.png" alt="" class="title-img">
+    <img loading="lazy" src="./s2/02_title_m.png" alt="" class="title-img">
     <Map :tagList="tagList" :bgSrc="bgSrc" :hand="hand" v-if="isMobile">
       <!-- <div class="text">
         <div class="title" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1500">國際線上 雙北暢遊</div>

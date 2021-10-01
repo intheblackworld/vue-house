@@ -4,7 +4,7 @@
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-            <img :src="slide.img" alt="">
+            <img loading="lazy" :src="slide.img" alt="">
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
@@ -12,8 +12,8 @@
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
         <div class="swipe-btns absolute flex-ac flex-jb">
-          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+          <img loading="lazy" src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+          <img loading="lazy" src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
         </div>
       </div>
     </div>
@@ -22,7 +22,7 @@
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
+              <img loading="lazy" :src="slide.img" alt="">
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
@@ -30,8 +30,8 @@
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
           <div class="swipe-btns absolute flex-ac flex-jb">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+            <img loading="lazy" src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+            <img loading="lazy" src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
           </div>
         </div>
       </div>
@@ -44,9 +44,9 @@
       <div class="desc" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="800">
         1分鐘即刻擁有轉運站全天候330班次暢行全台；3分鐘國道一號，擁南崁 / 中正北雙交流道，台北好近；未來再享捷運G12站增值潛力，黃金地段天生優越！
       </div>
-      <img src="./s3/style_arrow.png" :alt="`${info.caseName}_style_arrow`" class="arrow" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="200">
-      <img src="./s4/timeline.png" alt="" class="timeline" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="800" v-if="isPC">
-      <img src="./s4/timeline.png" alt="" class="timeline" v-if="isMobile">
+      <img loading="lazy" src="./s3/style_arrow.png" :alt="`${info.caseName}_style_arrow`" class="arrow" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="200">
+      <img loading="lazy" src="./s4/timeline.png" alt="" class="timeline" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="800" v-if="isPC">
+      <img loading="lazy" src="./s4/timeline.png" alt="" class="timeline" v-if="isMobile">
     </div>
   </div>
 </template>
@@ -59,7 +59,7 @@
   min-height: size(900);
   max-height: size(1080);
   position: relative;
-  background-image: url('~@/projects/hg1/s3/technology_bg.png');
+  background-image: url('~@/projects/hg1/s3/technology_bg.jpg');
   background-size: cover;
   background-position: 100%;
   // min-height: size(900);

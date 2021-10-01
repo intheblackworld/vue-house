@@ -1,41 +1,41 @@
 <template>
   <div class="section3">
     <div class="animate-slide" v-if="!isMobile">
-      <img src="./s3/漂浮物件_分層/3_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
+      <img loading="lazy" src="./s3/漂浮物件_分層/3_class_1.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
     </div>
     <div class="animate-slide" v-if="isMobile">
-      <!-- <img src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3"> -->
-      <img src="./mo/s3/漂浮物件_單一/m_3_single_1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="2">
-      <!-- <img src="./s1/mo1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1"> -->
+      <!-- <img loading="lazy" src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3"> -->
+      <img loading="lazy" src="./mo/s3/漂浮物件_單一/m_3_single_1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="2">
+      <!-- <img loading="lazy" src="./s1/mo1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1"> -->
     </div>
-    <img src="./s3/technology_line.png" :alt="`${info.caseName}_technology_line`" class="tech-line" data-aos="fade" data-aos-delay="0">
-    <img src="./s3/city.png" :alt="`${info.caseName}_city`" class="city" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-    <img src="./s3/city_m.png" :alt="`${info.caseName}_city`" class="city" data-aos="fade-up" data-aos-delay="200" v-if="isMobile">
+    <img loading="lazy" src="./s3/technology_line.png" :alt="`${info.caseName}_technology_line`" class="tech-line" data-aos="fade" data-aos-delay="0">
+    <img loading="lazy" src="./s3/city.png" :alt="`${info.caseName}_city`" class="city" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+    <img loading="lazy" src="./s3/city_m.png" :alt="`${info.caseName}_city`" class="city" data-aos="fade-up" data-aos-delay="200" v-if="isMobile">
     <div class="balloon-1" data-aos="fade-down" data-aos-delay="400">
-      <img src="./s3/balloon_1.png" :alt="`${info.caseName}_balloon_1`">
+      <img loading="lazy" src="./s3/balloon_1.png" :alt="`${info.caseName}_balloon_1`">
     <div class="item title-1" data-aos="fade-down" data-aos-delay="500">
       南崁台茂<br />生活圈
     </div>
     </div>
     <div class="balloon-2" data-aos="fade-down" data-aos-delay="600">
-      <img src="./s3/balloon_2.png" :alt="`${info.caseName}_balloon_2`">
+      <img loading="lazy" src="./s3/balloon_2.png" :alt="`${info.caseName}_balloon_2`">
     <div class="item title-2" data-aos="fade-down" data-aos-delay="700">
       春日路<br />商圈
     </div>
     </div>
     <div class="balloon-3" data-aos="fade-down" data-aos-delay="800">
-      <img src="./s3/balloon_3.png" :alt="`${info.caseName}_balloon_3`">
+      <img loading="lazy" src="./s3/balloon_3.png" :alt="`${info.caseName}_balloon_3`">
     <div class="item title-3" data-aos="fade-down" data-aos-delay="900">
       經國特區<br />商圈
     </div>
     </div>
     <div class="balloon-4" data-aos="fade-down" data-aos-delay="1000">
-      <img src="./s3/balloon_4.png" :alt="`${info.caseName}_balloon_4`">
+      <img loading="lazy" src="./s3/balloon_4.png" :alt="`${info.caseName}_balloon_4`">
     <div class="item title-4" data-aos="fade-down" data-aos-delay="1100">
       中正藝文<br />商圈
     </div>
     </div>
-    <img src="./s3/style_arrow.png" :alt="`${info.caseName}_style_arrow`" class="arrow" data-aos="fade-up" data-aos-delay="200">
+    <img loading="lazy" src="./s3/style_arrow.png" :alt="`${info.caseName}_style_arrow`" class="arrow" data-aos="fade-up" data-aos-delay="200">
     <h1 class="title" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="400">
       信義區<span>2.0</span>的 超人
     </h1>
@@ -57,7 +57,7 @@
   min-height: size(900);
   max-height: size(1080);
   position: relative;
-  background-image: url('~@/projects/hg1/s3/technology_bg.png');
+  background-image: url('~@/projects/hg1/s3/technology_bg.jpg');
   background-size: cover;
   background-position: 100%;
   // min-height: size(900);

@@ -1,18 +1,18 @@
 <template>
   <div class="section9">
     <div class="animate-slide" v-if="!isMobile">
-      <img src="./s8/漂浮物件_分層/8_class_2.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
+      <img loading="lazy" src="./s8/漂浮物件_分層/8_class_2.png" :alt="`${info.caseName}_logo`" class="pc1" data-parallax="4">
     </div>
     <div class="animate-slide" v-if="isMobile">
-      <!-- <img src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3"> -->
-      <img src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2">
-      <img src="./s1/mo1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
+      <!-- <img loading="lazy" src="./s1/mo3.png" :alt="`${info.caseName}_bg`" class="mo3" data-parallax="3"> -->
+      <img loading="lazy" src="./s1/mo2.png" :alt="`${info.caseName}_bg`" class="mo2" data-parallax="2">
+      <img loading="lazy" src="./s1/mo1.png" :alt="`${info.caseName}_bg`" class="mo1" data-parallax="1">
     </div>
     <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isPC">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-            <img :src="slide.img" alt="">
+            <img loading="lazy" :src="slide.img" alt="">
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
@@ -20,8 +20,8 @@
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
         <div class="swipe-btns absolute flex-ac flex-jb">
-          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+          <img loading="lazy" src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+          <img loading="lazy" src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
         </div>
       </div>
     </div>
@@ -29,17 +29,17 @@
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-            <img :src="slide.img" alt="">
+            <img loading="lazy" :src="slide.img" alt="">
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
         <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
-        <img src="./s9/btn_0.png" class="btn flex-c" v-if="isMobile" @click="isDialog = true" />
+        <img loading="lazy" src="./s9/btn_0.png" class="btn flex-c" v-if="isMobile" @click="isDialog = true" />
         <div class="swipe-btns absolute flex-ac flex-jb">
-          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+          <img loading="lazy" src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+          <img loading="lazy" src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
         </div>
       </div>
     </div>
@@ -53,10 +53,10 @@
     <div class="desc" data-aos="fade" data-aos-delay="800">
       2-3房戶戶雙採光，引風養綠，讓您品味自然的健康空間，無敵高坪效，一次收藏最稀有的繁華轉身！從此在家不僅是過日子，而是享受生活。
     </div>
-    <img src="./s8/style_arrow_5.png" :alt="`${info.caseName}_style_arrow`" class="arrow" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="200">
+    <img loading="lazy" src="./s8/style_arrow_5.png" :alt="`${info.caseName}_style_arrow`" class="arrow" :data-aos="isPC ? 'fade-up' : 'fade'" data-aos-delay="200">
     <div class="dialog" v-show="isDialog">
-      <img class="close" @click="isDialog = false" src="./all/close.png" alt="close">
-      <img :src="slideList[slideIndex].img" alt="" class="dialog-img">
+      <img loading="lazy" class="close" @click="isDialog = false" src="./all/close.png" alt="close">
+      <img loading="lazy" :src="slideList[slideIndex].img" alt="" class="dialog-img">
     </div>
   </div>
 </template>
