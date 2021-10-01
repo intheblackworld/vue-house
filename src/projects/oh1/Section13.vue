@@ -7,8 +7,8 @@
     </div>
     <div class="button">
       <div class="button1" @click="showDialog('https://yourhouse.tw/VRocean/H2/')"><h3>精品2房<br>VR 720 虛擬環景</h3></div>
- <!--     <div class="button2" @click="showDialog('')"><h3>樣品屋<br>VR 720 實境觀看</h3></div>
-      <div class="button3" @click="showDialog('')"><h3>樣品屋<br>VR 720 實境觀看</h3></div> -->
+      <div class="button2" @click="showDialog('https://yourhouse.tw/VRocean/B1')"><h3>A6戶 3+1房<br>VR 720 實境觀看</h3></div>
+      <div class="button3" @click="showDialog('https://yourhouse.tw/VRocean/A6')"><h3>B1戶3+1房<br>VR 720 實境觀看</h3></div>
     </div>
       <div :class="`dialog`" v-if="isShowDialog">
         <div
@@ -86,7 +86,7 @@ div{
   }
 }
 .button1{background-image: url("./s13/1.jpg");cursor: pointer;}
-.button2{background-image: url("./s13/2.jpg");cursor: pointer;}
+.button2{background-image: url("./s13/2.jpg");cursor: pointer;margin:auto 2vw;}
 .button3{background-image: url("./s13/3.jpg");cursor: pointer;}
 
 
@@ -261,12 +261,13 @@ iframe {
   padding: sizem(80) 0;
   
 .button{
-  width:100%;height:sizem(200);align-items:center;
+  width:100%;height:sizem(500);align-items:center;
   margin:sizem(30) auto sizem(30) auto;flex-direction:column;
 div{
   width:sizem(310);
   height: sizem(154);
 }
+.button2{margin: 3vw auto ;}
   }
   }
 
