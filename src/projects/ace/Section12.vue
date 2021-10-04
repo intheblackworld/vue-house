@@ -280,7 +280,7 @@ export default {
       const index = Math.floor(Math.random() * 2)
       const ids = [
         'irs0m1qWkl8',
-        'BskijZgYEGw',
+        'e43e1I7kPY8',
       ]
       console.log(index, ids[index])
       return ids[index]
@@ -290,7 +290,7 @@ export default {
       const index = Math.floor(Math.random() * 2)
       const mobileLinks = [
         'https://i.imgur.com/L2Jyobm.mp4',
-        'https://i.imgur.com/YTAq6Ri.mp4',
+        'https://i.imgur.com/EgIQDkt.mp4',
       ]
       return mobileLinks[index]
     },
