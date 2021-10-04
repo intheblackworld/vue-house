@@ -9,62 +9,32 @@
       :options="options"
       id="fullpage"
     > -->
-    <vue-lazy-component
-      class="section"
-      id="section1"
-      @init="init"
-    >
+    <vue-lazy-component class="section" id="section1" @init="init">
       <Section1 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section12"
-      @init="init"
-    >
+    <vue-lazy-component class="section" id="section12" @init="init">
       <Section12 :viewIndex="viewIndex" />
     </vue-lazy-component>
 
-    <vue-lazy-component
-      class="section"
-      id="section2"
-    >
+    <vue-lazy-component class="section" id="section2">
       <Section2 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section3"
-    >
+    <vue-lazy-component class="section" id="section3">
       <Section3 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section4"
-    >
+    <vue-lazy-component class="section" id="section4">
       <Section4 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section5"
-    >
+    <vue-lazy-component class="section" id="section5">
       <Section5 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section6"
-    >
+    <vue-lazy-component class="section" id="section6">
       <Section6 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section7"
-    >
+    <vue-lazy-component class="section" id="section7">
       <Section7 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section8"
-      style="z-index: 2;"
-    >
+    <vue-lazy-component class="section" id="section8" style="z-index: 2;">
       <Section8 />
     </vue-lazy-component>
     <!-- <vue-lazy-component
@@ -85,10 +55,7 @@
     >
       <Section11 />
     </vue-lazy-component> -->
-    <vue-lazy-component
-      class="section"
-      id="contact"
-    >
+    <vue-lazy-component class="section" id="contact">
       <ContactSection />
     </vue-lazy-component>
     <MobileNav />
@@ -191,10 +158,8 @@ export default {
           allImagesLoaded()
         }
       }
-      $('img').each(function(idx, img) {
-        $('<img>')
-          .on('load', imageLoaded)
-          .attr('src', $(img).attr('src'))
+      $('img').each(function (idx, img) {
+        $('<img>').on('load', imageLoaded).attr('src', $(img).attr('src'))
       })
     })
   },
@@ -213,7 +178,7 @@ export default {
       const navContents = document.querySelectorAll('.section')
       // 所有锚点元素的 offsetTop
       const offsetTopArr = []
-      navContents.forEach(item => {
+      navContents.forEach((item) => {
         offsetTopArr.push(item.offsetTop)
       })
       // 获取当前文档流的 scrollTop
@@ -229,10 +194,9 @@ export default {
         }
       }
       if (this.viewIndex !== navIndex + 1) {
-        console.log(this.viewIndex, 'asfasfdasd',navIndex)
         this.viewIndex = navIndex + 1
-        }
-  },
+      }
+    },
 
     // onLeave(origin, destination, direction) {
     //   if (!this.isMobile) {

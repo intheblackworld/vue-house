@@ -11,15 +11,20 @@
       allowfullscreen
     ></iframe> -->
     <div class="video_box">
-      <div v-if="!isMobile" :id="`youtube-player-${id}`" ref="player" class="video-ifame"></div>
+      <div v-if="!isMobile" :id="`youtube-player-${randomId}`" ref="player" class="video-ifame"></div>
+      <video loop autoplay playsinline class="video">
+        <source :src="videoUrl" type="video/mp4">
+        <!-- <source src="movie.ogg" type="video/ogg"> -->
+        Your browser does not support the video tag.
+      </video>
     </div>
-    <img src="./s12/player_icon.png" alt="" class="play-btn" v-if="isMobile" @click="isDialog = true">
-    <div class="video" v-if="isDialog && isMobile">
+    <!-- <img src="./s12/player_icon.png" alt="" class="play-btn" v-if="isMobile" @click="isDialog = true"> -->
+    <!-- <div class="video" v-if="isDialog && isMobile">
       <div class="video_box_dialog">
-        <iframe title="youtube" src="https://www.youtube.com/embed/irs0m1qWkl8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe title="youtube" :src="videoUrl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <img class="close" @click="isDialog = false" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABABAMAAABYR2ztAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAhUExURUdwTP////Pw8PLx8fLw8PLw8PPx8fHx8fLy8vLw8PXr6/Zeio0AAAALdFJOUwADRMS156s3KfgaAiHMOAAAAXtJREFUSMeFlr9qwzAQxnVZajoVLRLZTEMfoBAadywIt11t/AAGETqGhOzGoS/g0r20D1qRxLYsS/oy5Y/uk+/ud/eFnRoWecmcfTzdhX+n/Tf763bhAyJ7Z4l+DErQfdkw+izS0AGutiZY6JeABK2q8/XHMo0JhCXooUqvb/wSXNfXwIVXwjxBOmj5JLiqhzCh5+WkQzVG0bGYlVOscytIvG0cCWq/JjGn7md6YJlNQ5LsefKZfjsHA+cL6QQwdpvZidDevZKx1uZCZJtZ3okauaBVOQeRDmM5uco9tR+b2nPgSgxcjG1023uRGDiYA3KRCAn0EkGBXkKoOjgHC8OFna6nFsVOrvPILBou2tgoGkw6TxemXHTRdWA4iB+AV6CHNGk2UkXS5DqPFgqWGjULthsBA5GzoS19tUDYSzA4Zpzjo7dEw4vGX4IFYjiIryC0xHxr8MbGHy1SuIo5WObQDjgwFApZEnF9tiRkatAWobFCa4bmDv4evP4DsmNwZSA8CfQAAAAASUVORK5CYII=" />
-    </div>
+    </div> -->
   </div>
 </template>
 <style lang="scss">
@@ -78,7 +83,6 @@
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAQAAADYv8WvAAAADUlEQVQIHWNkSGOAAAADRABoDg6qmwAAAABJRU5ErkJggg==');
 }
 
-
 .news-container {
   @include div_c_pc(472 * 3 + 21 * 2, 480, 312 + 907);
   // overflow: visible;
@@ -92,7 +96,6 @@
   width: size(472);
   margin: 0 auto;
 }
-
 
 @media only screen and (max-width: 1440px) {
   .bg-img {
@@ -111,16 +114,16 @@
     margin: 0 0 0 0;
     overflow: hidden;
     width: 100vw;
-    height: sizem(177);
+    height: sizem(210);
     min-height: 0;
-    max-height: sizem(177);
+    max-height: sizem(210);
     // margin-top: sizem(-60);
   }
 
   .video_box {
     width: 100%;
     position: absolute;
-    height:100%;
+    height: 100%;
     background: #000 url('./s12/video_img.jpg') no-repeat center;
     background-size: cover;
     opacity: 1;
@@ -159,25 +162,35 @@
 
   .video {
     width: 100vw;
-    height: 100vh;
-    position: fixed;
-    left: size-m(0);
+    height: size-m(210);
+    left: 0;
+    right: 0;
     top: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 200;
-    transition: opacity 0.5s;
+    margin: 0 auto;
+    // top: 50%;
+    // transform: translateY(-50%);
+    position: absolute;
+    // background-color: #000;
+    // width: 100vw;
+    // height: 100vh;
+    // position: fixed;
+    // left: size-m(0);
+    // top: 0;
+    // background: rgba(0, 0, 0, 0.6);
+    // z-index: 200;
+    // transition: opacity 0.5s;
 
-    iframe {
-      width: 100vw;
-      height: size-m(260);
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      // top: 50%;
-      // transform: translateY(-50%);
-      position: absolute;
-      background-color: #fff;
-    }
+    // iframe {
+    //   width: 100vw;
+    //   height: size-m(260);
+    //   left: 0;
+    //   right: 0;
+    //   margin: 0 auto;
+    //   // top: 50%;
+    //   // transform: translateY(-50%);
+    //   position: absolute;
+    //   background-color: #fff;
+    // }
 
     .close {
       position: absolute;
@@ -205,7 +218,7 @@ export default {
       isMobile,
       info,
       player: '',
-      id: 'irs0m1qWkl8',
+      // id: 'irs0m1qWkl8',
       isDialog: false,
     }
   },
@@ -215,8 +228,9 @@ export default {
       event.target.playVideo()
     },
     loadVideo() {
-      this.player = new window.YT.Player(`youtube-player-${this.id}`, {
-        videoId: this.id,
+      console.log(`youtube-player-${this.randomId}`)
+      this.player = new window.YT.Player(`youtube-player-${this.randomId}`, {
+        videoId: this.randomId,
         width: '1920',
         height: '1080',
         playerVars: {
@@ -255,10 +269,27 @@ export default {
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
   },
 
-  mounted() {
-  },
+  mounted() {},
 
   computed: {
+    randomId() {
+      const index = Math.floor(Math.random() * 2)
+      const ids = [
+        'irs0m1qWkl8',
+        'BskijZgYEGw',
+      ]
+      console.log(index, ids[index])
+      return ids[index]
+    },
+
+    videoUrl() {
+      const index = Math.floor(Math.random() * 2)
+      const mobileLinks = [
+        'https://i.imgur.com/L2Jyobm.mp4',
+        'https://i.imgur.com/YTAq6Ri.mp4',
+      ]
+      return mobileLinks[index]
+    },
   },
 
   watch: {
