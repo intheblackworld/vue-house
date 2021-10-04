@@ -12,7 +12,7 @@
     ></iframe> -->
     <div class="video_box">
       <div v-if="!isMobile" :id="`youtube-player-${randomId}`" ref="player" class="video-ifame"></div>
-      <video muted loop autoplay playsinline class="video">
+      <video muted loop autoplay playsinline class="video" v-else>
         <source :src="videoUrl" type="video/mp4">
         <!-- <source src="movie.ogg" type="video/ogg"> -->
         Your browser does not support the video tag.
