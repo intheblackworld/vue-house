@@ -114,9 +114,9 @@
     margin: 0 0 0 0;
     overflow: hidden;
     width: 100vw;
-    height: sizem(210);
+    height: sizem(205);
     min-height: 0;
-    max-height: sizem(210);
+    max-height: sizem(205);
     // margin-top: sizem(-60);
   }
 
@@ -162,7 +162,7 @@
 
   .video {
     width: 100vw;
-    height: size-m(210);
+    height: size-m(205);
     left: 0;
     right: 0;
     top: 0;
