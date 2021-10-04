@@ -162,7 +162,7 @@
 
   .video {
     width: 100vw;
-    height: size-m(205);
+    height: size-m(215);
     left: 0;
     right: 0;
     top: 0;
@@ -173,7 +173,7 @@
     position: absolute;
     > source {
       width: 100vw;
-      height:  size-m(205);
+      height:  size-m(215);
     }
     // width: 100vw;
     // height: 100vh;
