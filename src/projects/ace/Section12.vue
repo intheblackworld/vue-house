@@ -170,6 +170,10 @@
     // top: 50%;
     // transform: translateY(-50%);
     position: absolute;
+    > source {
+      width: 100vw;
+      height:  size-m(205);
+    }
     // background-color: #000;
     // width: 100vw;
     // height: 100vh;
