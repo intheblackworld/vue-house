@@ -1,7 +1,7 @@
 <template>
   <div class="map" id="map1" refs="map" @scroll="handleScroll">
     <img :src="hand" alt :class="`hand ${showMask ? 'active' : ''}`" />
-    <img class="map-bg" :src="bgSrc" alt ref="mapbg" />
+      <img class="map-bg" :src="bgSrc" alt />
     <img class="map-text" :src="bgText" alt />
     <div :class="`mask ${showMask ? 'active' : ''}`">
     </div>

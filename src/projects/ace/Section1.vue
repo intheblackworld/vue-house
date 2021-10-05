@@ -3,7 +3,7 @@
     <div class="section1">
       <!--<img src="./s1/bg.png" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC">-->
       <img src="./s1/bg_1.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC" data-aos="fade">
-      <img src="./mo/1/bg_1_m.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isMobile">
+      <img src="./mo/1/bg_1_m.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isMobile" data-aos="fade">
       <!--<img src="./mo/1/bg.png" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isMobile">-->
       <img src="./s1/logo_1.png" :alt="`${info.caseName}_logo`" class="logo" data-aos="fade-down">
       <!-- <img src="./s1/p2.png" :alt="`${info.caseName}_p2`" class="p2" v-if="isPC" data-aos="zoom-in">-->
@@ -40,9 +40,16 @@
   left: 0;
   display: block;
   object-fit: cover;
-transform: scaley(1.3) rotate(10deg);
+transform: scaleY(1.3) rotate(10deg);
+   //   animation: flip 5s 0s ease-in-out alternate infinite;
 
 }
+@keyframes flip {
+  to {
+    transform:scale(1.05,1.2) rotate(4deg);
+  }
+}
+
 
 .logo {
   @include img_r_pc(331, 227, 457);

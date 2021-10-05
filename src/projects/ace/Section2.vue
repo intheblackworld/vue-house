@@ -147,11 +147,14 @@
 }
 
 .complex-item {
-  width: size(180);
-  margin: size(0) size(60);
+  width: size(240);
+  margin: size(10) size(30);
 
   &.turn {
     img {
+      border: 7px solid #0000;
+      border-radius: 50%;
+      box-shadow:0 0 0 3px #a67c27;
       animation: flip 1s 0s ease-in-out forwards;
     }
   }
@@ -400,11 +403,15 @@
     left: 0;
 
     img {
-      width: sizem(161);
-      height: sizem(194);
+      width: sizem(225);
+      height: sizem(225);
       // height: sizem(330);
+      margin: 3px auto;
       bottom: 0;
-      left: 0;
+      left: 0; border: 7px solid #0000;
+      border-radius: 50%;
+      box-shadow:0 0 0 3px #a67c27;
+      animation: flip 1s 0s ease-in-out forwards;
     }
 
     .name {
@@ -547,43 +554,43 @@ export default {
       isTablet,
       slideList: isMobile ? [
             {
-              icon: require('./s2/icon.png'),
+              icon: require('./s2/icon/1.jpg'),
               name: '36層浩瀚之境<br />獻給王與后的專屬天空',
             },
             {
-              icon: require('./s2/icon.png'),
+              icon: require('./s2/icon/2.jpg'),
               name: '澳洲PTW集131年大成<br />重寫雙和摩天史',
             },
             {
-              icon: require('./s2/icon.png'),
+              icon: require('./s2/icon/3.jpg'),
               name: '近760坪沙龍花園會館<br />獨家3層私人會所',
             },
             {
-              icon: require('./s2/icon.png'),
+              icon: require('./s2/icon/4.jpg'),
               name: '101燈光設計<br />信義豪宅4大建築團隊精鑄',
             },
             {
-              icon: require('./s2/icon.png'),
+              icon: require('./s2/icon/5.jpg'),
               name: '黃金級綠建築<br />每次呼吸都是博物館的空氣',
             },
             {
-              icon: require('./s2/icon.png'),
+              icon: require('./s2/icon/6.jpg'),
               name: '七星級飯店式物業管理<br />生生世世養尊處優',
             },
             {
-              icon: require('./s2/icon.png'),
+              icon: require('./s2/icon/7.jpg'),
               name: '雙和核心、1高2捷3快環繞<br />大台北速度贏家',
             },
             {
-              icon: require('./s2/icon.png'),
+              icon: require('./s2/icon/8.jpg'),
               name: '中和線、環狀線<br />雙捷運3分鐘腳程增值南都心',
             },
             {
-              icon: require('./s2/icon.png'),
+              icon: require('./s2/icon/9.jpg'),
               name: '雙和市中心<br />購物中心、COSTCO..眾星拱月',
             },
             {
-              icon: require('./s2/icon.png'),
+              icon: require('./s2/icon/10.jpg'),
               name: '雙和唯一，15萬噸鋼骨用量<br />BRB+CFT柱雙制震',
             },
           ]
@@ -591,23 +598,23 @@ export default {
             {
               items: [
                 {
-                  icon: require('./s2/icon.png'),
+                  icon: require('./s2/icon/1.jpg'),
                   name: '36層浩瀚之境<br />獻給王與后的專屬天空',
                 },
                 {
-                  icon: require('./s2/icon.png'),
+                  icon: require('./s2/icon/2.jpg'),
                   name: '澳洲PTW集131年大成<br />重寫雙和摩天史',
                 },
                 {
-                  icon: require('./s2/icon.png'),
+                  icon: require('./s2/icon/3.jpg'),
                   name: '近760坪沙龍花園會館<br />獨家3層私人會所',
                 },
                 {
-                  icon: require('./s2/icon.png'),
+                  icon: require('./s2/icon/4.jpg'),
                   name: '101燈光設計<br />信義豪宅4大建築團隊精鑄',
                 },
                 {
-                  icon: require('./s2/icon.png'),
+                  icon: require('./s2/icon/5.jpg'),
                   name: '黃金級綠建築<br />每次呼吸都是博物館的空氣',
                 },
               ],
@@ -615,23 +622,23 @@ export default {
             {
               items: [
                 {
-                  icon: require('./s2/icon.png'),
+                  icon: require('./s2/icon/6.jpg'),
                   name: '七星級飯店式物業管理<br />生生世世養尊處優',
                 },
                 {
-                  icon: require('./s2/icon.png'),
+                  icon: require('./s2/icon/7.jpg'),
                   name: '雙和核心、1高2捷3快環繞<br />大台北速度贏家',
                 },
                 {
-                  icon: require('./s2/icon.png'),
+                  icon: require('./s2/icon/8.jpg'),
                   name: '中和線、環狀線<br />雙捷運3分鐘腳程增值南都心',
                 },
                 {
-                  icon: require('./s2/icon.png'),
+                  icon: require('./s2/icon/9.jpg'),
                   name: '雙和市中心<br />購物中心、COSTCO..眾星拱月',
                 },
                 {
-                  icon: require('./s2/icon.png'),
+                  icon: require('./s2/icon/10.jpg'),
                   name: '雙和唯一，1.5萬噸鋼骨用量<br />BRB+CFT柱雙制震',
                 },
               ],
