@@ -3,23 +3,23 @@
     <!-- 藍色那張 -->
     <transition-group name="slide-fade" mode="out-in">
       <div v-if="isAnimateBg" class="animate-bg" key="animate-bg">
-        <img src="./s1/bgimg2.png" :alt="`${info.caseName}_cloud`" class="img2" v-if="isPC">
-        <img src="./s1/bgimg2m.png" :alt="`${info.caseName}_cloud`" class="img2" v-if="isMobile">
-        <img src="./s1/bgimg1.png" :alt="`${info.caseName}_cloud`" class="img1" v-if="isPC">
-        <img src="./s1/bgimg1m.png" :alt="`${info.caseName}_cloud`" class="img1" v-if="isMobile">
+        <img loading="lazy" src="./s1/bgimg2.png" :alt="`${info.caseName}_cloud`" class="img2" v-if="isPC">
+        <img loading="lazy" src="./s1/bgimg2m.png" :alt="`${info.caseName}_cloud`" class="img2" v-if="isMobile">
+        <img loading="lazy" src="./s1/bgimg1.png" :alt="`${info.caseName}_cloud`" class="img1" v-if="isPC">
+        <img loading="lazy" src="./s1/bgimg1m.png" :alt="`${info.caseName}_cloud`" class="img1" v-if="isMobile">
 
-        <img src="./s1/logo.png" :alt="`${info.caseName}_cloud`" class="logo">
+        <img loading="lazy" src="./s1/logo.png" :alt="`${info.caseName}_cloud`" class="logo">
         <div class="t1 flex-c">
-          <img src="./s1/t1.png" :alt="`${info.caseName}_cloud`">
+          <img loading="lazy" src="./s1/t1.png" :alt="`${info.caseName}_cloud`">
         </div>
       </div>
       <div key="default-bg">
-        <img src="./s1/map_bg.jpg" :alt="`${info.caseName}_cloud`" class="map-img" v-if="isPC">
+        <img loading="lazy" src="./s1/map_bg.jpg" :alt="`${info.caseName}_cloud`" class="map-img" v-if="isPC">
         <div class="map-bg-frame">
           <Map v-if="isMobile" :bgSrc="bgmSrc" :hand="hand">
           </Map>
         </div>
-        <img src="./s1/map_t.png" :alt="`${info.caseName}_cloud`" class="map-t"  data-aos="fade" data-aos-delay="200">
+        <img loading="lazy" src="./s1/map_t.png" :alt="`${info.caseName}_cloud`" class="map-t"  data-aos="fade" data-aos-delay="200">
         <div class="title1 title" data-aos="fade" data-aos-delay="0">
           洲子洋天空再進化
         </div>

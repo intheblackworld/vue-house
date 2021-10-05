@@ -1,14 +1,14 @@
 <template>
   <div class="section10">
-    <img src="./s10/bg1.png" :alt="`${info.caseName}_img`" class="bgimg">
+    <img loading="lazy" src="./s10/bg1.png" :alt="`${info.caseName}_img`" class="bgimg">
     <div class="title" data-aos="fade" data-aos-delay="0">
       天空御選
     </div>
-    <img src="./s3/line.png" :alt="`${info.caseName}_img`" class="title-line" data-aos="zoom-in-right" data-aos-delay="100">
+    <img loading="lazy" src="./s3/line.png" :alt="`${info.caseName}_img`" class="title-line" data-aos="zoom-in-right" data-aos-delay="100">
     <div v-if="isPC">
       <div class="item-list flex-ac flex-jb wrap">
         <div class="item" v-for="(slide, index) in slideList" :key="slide.img" @click="showDialog(index)">
-          <img :src="slide.img" alt="">
+          <img loading="lazy" :src="slide.img" alt="">
           <div class="item-text" v-html="slide.text"></div>
           <div class="item-name" v-html="slide.name"></div>
           <div class="item-company" v-html="slide.company"></div>
@@ -19,23 +19,23 @@
     <transition name="swipe-fade" mode="out-in">
       <div class="dialog" v-if="isDialog">
         <div>
-          <img src="./s10/bg2.png" :alt="`${info.caseName}_img`" class="bgimg" v-if="isPC">
-          <img src="~@/assets/img/close.png" alt class="close" @click="closeDialog" />
-          <img :src="current.avatar" alt="" class="dialog-avatar">
+          <img loading="lazy" src="./s10/bg2.png" :alt="`${info.caseName}_img`" class="bgimg" v-if="isPC">
+          <img loading="lazy" src="~@/assets/img/close.png" alt class="close" @click="closeDialog" />
+          <img loading="lazy" :src="current.avatar" alt="" class="dialog-avatar">
           <div class="dialog-text" v-html="current.text"></div>
           <h3 class="dialog-desc" v-html="current.desc"></h3>
           <div class="dialog-company" v-html="current.company"></div>
           <div class="dialog-name" v-html="current.name"></div>
           <h3 class="dialog-work1" v-html="current.work1"></h3>
           <h3 class="dialog-work2" v-html="current.work2"></h3>
-          <img :src="current.img2" alt="" class="dialog-work-img">
+          <img loading="lazy" :src="current.img2" alt="" class="dialog-work-img">
         </div>
       </div>
     </transition>
     <swiper v-if="isMobile" :options="swiperOption" data-aos="fade" data-aos-delay="200" class="swipe absolute">
       <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img">
         <div @click="showDialog(index)">
-          <img :src="slide.img" alt="" class="item-img">
+          <img loading="lazy" :src="slide.img" alt="" class="item-img">
           <div class="item-text" v-html="slide.text"></div>
           <div class="item-name" v-html="slide.name"></div>
           <div class="item-company" v-html="slide.company"></div>
@@ -58,11 +58,11 @@
         <h3 class="content-name" v-html="slide.name"></h3>
         <div class="content-work">
           <div class="content-row flex-ac">
-            <img src="./s10/team_list_style.png" alt="">
+            <img loading="lazy" src="./s10/team_list_style.png" alt="">
             <div class="content-desc" v-html="slide.work1"></div>
           </div>
           <div class="content-row flex-ac">
-            <img src="./s10/team_list_style.png" alt="">
+            <img loading="lazy" src="./s10/team_list_style.png" alt="">
             <div class="content-desc" v-html="slide.work2"></div>
           </div>
         </div>
@@ -996,7 +996,7 @@ export default {
           desc: isMobile
             ? '「天空之邑」以雙塔地標，重新定義洲子洋天際線，簡約、對稱的建築語彙，國際精品、奢華飯店級享受，領先國際建築趨勢，以頂級飯店、豪宅設計語彙，融入建築設計脈絡中，為您的幸福生活揭開新頁。'
             : '「天空之邑」以雙塔地標，重新定義洲子洋天際線，<br />簡約、對稱的建築語彙，國際精品、奢華飯店級享受，<br />領先國際建築趨勢，以頂級飯店、豪宅設計語彙，<br />融入建築設計脈絡中，為您的幸福生活揭開新頁。',
-          img2: require('./s10/2.png'),
+          img2: require('./s10/3.png'),
         },
       ],
     }

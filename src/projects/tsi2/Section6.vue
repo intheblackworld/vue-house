@@ -4,7 +4,7 @@
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex" v-if="isPC">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-            <img :src="slide.img" alt="">
+            <img loading="lazy" :src="slide.img" alt="">
             <div class="slide-name absolute" v-html="slide.hint"></div>
           </div>
         </transition-group>
@@ -13,20 +13,20 @@
           </h3>
         </div>
         <div class="swipe-btns absolute flex-ac flex-jb">
-          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+          <img loading="lazy" src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+          <img loading="lazy" src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
         </div>
       </div>
     </div>
     <swiper v-if="isMobile && viewIndex >= 6" :options="swiperOption2" ref="swiper2" data-aos="fade" data-aos-delay="200" class="swipe absolute">
       <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img">
-        <img :src="slide.img" alt="" class="swipe-img">
+        <img loading="lazy" :src="slide.img" alt="" class="swipe-img">
       </swiper-slide>
       <div class="swiper-button-prev" slot="button-prev">
-        <img src="./all/prev-btn.png" alt="" class="prev-btn">
+        <img loading="lazy" src="./all/prev-btn.png" alt="" class="prev-btn">
       </div>
       <div class="swiper-button-next" slot="button-next">
-        <img src="./all/next-btn.png" alt="" class="next-btn">
+        <img loading="lazy" src="./all/next-btn.png" alt="" class="next-btn">
       </div>
     </swiper>
     <swiper v-if="isMobile && viewIndex >= 6" :options="swiperOption" ref="swiper1" data-aos="fade" data-aos-delay="200" class="swipe-pagi">

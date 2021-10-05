@@ -1,9 +1,9 @@
 <template>
   <div class="section2">
-    <!-- <img src="./s1/bg1.jpg" :alt="`${info.caseName}_cloud`" class="bg-img" v-if="isPC">
-    <img src="./s1/bg_m.jpg" :alt="`${info.caseName}_cloud`" class="bg-img" v-if="isMobile">  -->
-    <img src="./s2/bg.png" :alt="`${info.caseName}_cloud`" class="wave">
-    <img src="./s2/3d.png" :alt="`${info.caseName}_cloud`" class="img3d">
+    <!-- <img loading="lazy" src="./s1/bg1.jpg" :alt="`${info.caseName}_cloud`" class="bg-img" v-if="isPC">
+    <img loading="lazy" src="./s1/bg_m.jpg" :alt="`${info.caseName}_cloud`" class="bg-img" v-if="isMobile">  -->
+    <img loading="lazy" src="./s2/bg.png" :alt="`${info.caseName}_cloud`" class="wave">
+    <img loading="lazy" src="./s2/3d.png" :alt="`${info.caseName}_cloud`" class="img3d">
     <div class="title1 title">
       一次買最好
     </div>

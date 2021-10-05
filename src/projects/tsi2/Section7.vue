@@ -1,7 +1,7 @@
 <template>
   <div class="section7">
-  <!--  <img src="./s7/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img"> -->
-    <img src="./s7/360山河美景.png" :alt="`${info.caseName}_img`" class="title-img"  data-aos="fade" data-aos-delay="200">
+  <!--  <img loading="lazy" src="./s7/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img"> -->
+    <img loading="lazy" src="./s7/360山河美景.png" :alt="`${info.caseName}_img`" class="title-img"  data-aos="fade" data-aos-delay="200">
     <div class="line"  data-aos="fade-down" data-aos-delay="400"></div>
     <h3 class="title"  data-aos="fade" data-aos-delay="600">洲子洋史上最強 層峰景觀頭等艙</h3>
     <h3 class="desc"  data-aos="fade" data-aos-delay="800">

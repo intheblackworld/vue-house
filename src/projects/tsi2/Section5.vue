@@ -1,12 +1,12 @@
 <template>
   <div class="section5">
-    <img src="./s5/bg.png" :alt="`${info.caseName}_img`" class="img">
+    <img loading="lazy" src="./s5/bg.png" :alt="`${info.caseName}_img`" class="img">
     <transition-group name="fade-up" mode="out-in">
       <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="blockIndex === 0" key="swipe-0">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
+              <img loading="lazy" :src="slide.img" alt="">
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
@@ -14,8 +14,8 @@
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div> -->
           <div class="swipe-btns absolute flex-ac flex-jb">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+            <img loading="lazy" src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+            <img loading="lazy" src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
           </div>
         </div>
       </div>
@@ -23,7 +23,7 @@
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList1" v-show="slideIndex1 === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
+              <img loading="lazy" :src="slide.img" alt="">
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
@@ -31,8 +31,8 @@
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList1" :key="slide.img + '-dot'" @click="goToMultiIndex(index, 1)"><span :class="`${slideIndex1 === index ? 'active' : ''}`"></span></div>
           </div> -->
           <div class="swipe-btns absolute flex-ac flex-jb">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decMultiIndex(1)">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addMultiIndex(1)">
+            <img loading="lazy" src="./all/prev-btn.png" alt="" class="prev-btn" @click="decMultiIndex(1)">
+            <img loading="lazy" src="./all/next-btn.png" alt="" class="next-btn" @click="addMultiIndex(1)">
           </div>
         </div>
       </div>
@@ -55,7 +55,7 @@
         </h3>
       </div>
     </transition-group>
-    <img src="./s4/img.png" :alt="`${info.caseName}_img`" class="circle">
+    <img loading="lazy" src="./s4/img.png" :alt="`${info.caseName}_img`" class="circle">
     <div class="btns flex-ac flex-jb">
       <h3 :class="`btn flex-c ${blockIndex === 0 ? 'active' : ''}`" @click="blockIndex = 0">
         六感花園

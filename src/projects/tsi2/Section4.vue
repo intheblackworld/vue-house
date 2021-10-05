@@ -20,9 +20,9 @@
         </h3>
       </div>
     </div>
-    <img src="./s4/img.jpg" :alt="`${info.caseName}_img`" class="img"  data-aos="fade" data-aos-delay="200">
+    <img loading="lazy" src="./s4/img.jpg" :alt="`${info.caseName}_img`" class="img"  data-aos="fade" data-aos-delay="200">
     <h3 class="img-name">情境示意圖</h3>
-    <img src="./s4/img.png" :alt="`${info.caseName}_img`" class="circle"  data-aos="fade" data-aos-delay="600">
+    <img loading="lazy" src="./s4/img.png" :alt="`${info.caseName}_img`" class="circle"  data-aos="fade" data-aos-delay="600">
   </div>
 </template>
 <style lang="scss" scoped>
