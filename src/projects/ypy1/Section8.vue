@@ -24,10 +24,10 @@
       空間一品
     </h3>
     <h3 class="title" data-aos="fade-up" data-aos-delay="100">
-      名師時尚設計<br />
-      勾勒幸福空間
+      美式品味  雅仕42坪<br />
+      玄關化身防疫第一關
     </h3>
-    <div class="desc" data-aos="fade-up" data-aos-delay="200">透過優雅的色系，點綴完美的空間。<br v-if="isPC">經由不同材質，演繹低調奢華情調。<br v-if="isPC">從客廳、餐廳至臥室，打造令人賞心悅目的美學空間。
+    <div class="desc" data-aos="fade-up" data-aos-delay="200">參酌曼哈頓名流風格，以入口玄關做為回家的心境轉場，亦可配合主人需求，擺放殺菌消毒小物，瞬間化身防疫第一關，安心踏進一體成型的客餐廳空間，溫潤的木質元素，搭配白色系傢飾及圓弧造型天花板，勾勒清爽視野。優雅的主臥佈置，搭配活潑的兒童房設計，強化空間表情，運用間接照明方式，柔化空間質感，塑造溫馨又時尚的仕紳品味。
     </div>
   </div>
 </template>
@@ -295,13 +295,13 @@ z-index: 5;
 .t2{ @include img_l_m(172,-170 * .5, 0);
 z-index: 5;}
   .hr {
-    @include img_l_m(4, 51, 32);
+    @include img_l_m(4, 21, 32);
     height: sizem(104);
     background: #000000;
   }
 
   .label {
-    @include img_l_m(84, 50, 44);
+    @include img_l_m(84, 20, 44);
   width: auto;
     font-size: sizem(21);
     font-weight: 500;
@@ -311,10 +311,11 @@ z-index: 5;}
     letter-spacing: normal;
     text-align: left;
     color: #4d4d4d;
+    z-index: 6;
   }
 
   .title {
-    @include img_l_m(169, 83, 44);
+    @include img_l_m(169, 50, 44);
   width: auto;
     font-size: sizem(25);
     font-weight: 900;
@@ -325,11 +326,12 @@ z-index: 5;}
     text-align: left;
     color: #000000;
     white-space: nowrap;
+    z-index: 6;
   }
 
   .desc {
-    @include img_l_m(310, 174, 32.5);
-    font-size: sizem(15);
+    @include img_l_m(310, 144, 32.5);
+    font-size: sizem(12);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
@@ -343,7 +345,7 @@ z-index: 5;}
   /* Swipe */
   .swipe {
     width: 100%;
-    height: sizem(271);
+    height: sizem(241);
     min-height: auto;
     top: auto;
     bottom: 0;
@@ -501,8 +503,28 @@ export default {
       },
       slideList: [
         {
-          img: require('./s4/2.jpg'),
-          name: '',
+          img: require('./s8/01.jpg'),
+          name: '樣品屋實景拍攝',
+        },
+        {
+          img: require('./s8/02.jpg'),
+          name: '樣品屋實景拍攝',
+        },
+        {
+          img: require('./s8/03.jpg'),
+          name: '樣品屋實景拍攝',
+        },
+        {
+          img: require('./s8/04.jpg'),
+          name: '樣品屋實景拍攝',
+        },
+        {
+          img: require('./s8/05.jpg'),
+          name: '樣品屋實景拍攝',
+        },
+        {
+          img: require('./s8/06.jpg'),
+          name: '樣品屋實景拍攝',
         },
       ],
     }
