@@ -244,7 +244,7 @@ export default {
           showinfo: 0,
           autohide: 1,
           modestbranding: 1,
-          mute: 0,
+          mute: 1,
           suggestedQuality: 'default',
           iv_load_policy: 3,
         },
