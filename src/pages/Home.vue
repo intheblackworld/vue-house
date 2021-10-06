@@ -76,7 +76,7 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/li/Section1.vue'
+import Section1 from '@/projects/ryc/Section1.vue'
 // import Section2 from '@/projects/li/Section2.vue'
 // import Section3 from '@/projects/li/Section3.vue'
 // import Section4 from '@/projects/li/Section4.vue'
