@@ -111,7 +111,7 @@ export default {
   z-index: 3;
   //width: 1200px;
   width: 100%;
-  height: 600px;
+ // height: 600px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
@@ -124,7 +124,7 @@ export default {
   width: $contact_logo_pc_width;
   height: auto;
   // height:;
-  margin: 0 auto 0px;
+  margin: 0 auto 30px;
 }
 .info {
   width: 880px;
@@ -145,6 +145,7 @@ export default {
   color: $contact_btn_color;
   background: $contact_btn_bg;
   box-shadow: $contact_btn_border;
+  border-radius:1.8em !important;
   transition: all 0.5s;
   position: relative;
   overflow: hidden;
@@ -192,15 +193,19 @@ export default {
   }
 }
 .address {
-  width: 600px;
+  width: 700px;
   height: 60px;
   font-size: 18px;
   font-weight: 900;
   background: #fff;
+  border: 1px solid #87C1E8;
+  border-radius:1.8em !important;
   color: $contact_btn_border;
   font-weight: bold;
   box-shadow: $contact_btn_border;
   z-index: 1;
+  padding: 0 100px 0 0;
+  margin-right: -100px;
   // border-top-left-radius: 60px;
   // border-bottom-left-radius: 60px;
 }
@@ -217,6 +222,7 @@ export default {
   background: $contact_google_btn_bg;
   background-position: center !important;
   border: $contact_btn_border;
+  border-radius:1.8em !important;
   transition: all 0.5s;
   z-index: 1;
 
@@ -324,17 +330,18 @@ export default {
   }
   .address {
     // width: 280px;
-    padding: 0.8em 1em;
+    padding: 0.8em 1em 3.5em 1em;
     text-align: justify;
     line-height: 1.5;
     height: auto;
+    margin:0 0 0 0;
     // border-top-right-radius: 30px;
     // border-top-left-radius: 30px;
     // border-bottom-right-radius: 0px;
     // border-bottom-left-radius: 0px;
   }
   .google-btn {
-    margin-top: 0;
+    margin-top:-2.7em;
   }
 }
 

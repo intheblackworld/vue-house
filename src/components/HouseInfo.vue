@@ -71,11 +71,15 @@ export default {
   //height: 30px;
   line-height: 1.4;
   //border-left: 4px solid $house_border_color;
-  padding-left: 10px;
+  padding-left:1.5em;
   display: flex;
   align-items: center;justify-content:flex-start;
   white-space: nowrap;position: relative;
-  &::before{content: "";width: 4px;height: 1.4em;background:$house_border_color;margin: 0px 0.8em 0 0;position: absolute;top:0;left: 0;}
+  &::before{
+    content:url("data:image/svg+xml,%3Csvg version='1.1' id='圖層_1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30' %3E%3Cpath fill='%2389D0F3' d='M0,15c8.3,0,15-6.7,15-15H0V15z'/%3E%3Cpath fill='%23D0EEFC' d='M30,15c-8.3,0-15,6.7-15,15h15V15z'/%3E%3Cpath fill='%2300A3DE' d='M30,15V0H15C15,8.3,21.7,15,30,15z'/%3E%3Cpath fill='%239BD59D' d='M0.2,15c-0.1,0-0.1,0-0.2,0v15h15c0-0.1,0-0.1,0-0.2C15,21.6,8.4,15,0.2,15z'/%3E%3C/svg%3E%0A");
+    width:  1.2em;height: 1.2em;
+  //background:$house_border_color;
+  margin: .2em 0.8em 0 0;position: absolute;top:0;left: 0;}
   &:nth-of-type(even) {
     margin-right: 0;
   }
