@@ -1,7 +1,7 @@
 <template>
   <div class="section9">
-    <img src="./s9/09_bg.png" :alt="`${info.caseName}_img`" class="bg-img" v-if="isPC">
-    <img src="./s9/09_bg_m.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="isMobile">
+    <img loading="lazy" src="./s9/09_bg.png" :alt="`${info.caseName}_img`" class="bg-img" v-if="isPC">
+    <img loading="lazy" src="./s9/09_bg_m.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="isMobile">
     <svg version="1.1" :class="`text-box ${position === 0 ? 'left': ''} ${position === 2 ? 'right': ''}`" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1203 431" style="enable-background:new 0 0 1203 431;" xml:space="preserve" v-if="viewIndex === 9 || viewIndex === 8">
 
       <g id="圖層_2">
@@ -80,7 +80,7 @@
         </g>
       </g>
     </svg>
-    <img src="./s9/09_textbox.png" :alt="`${info.caseName}_img`" class="text-box1">
+    <img loading="lazy" src="./s9/09_textbox.png" :alt="`${info.caseName}_img`" class="text-box1">
 
     <h3 class="title" data-aos="fade-top" data-aos-delay="400">
       首購不委屈<br v-if="isMobile"> 天空最精彩
@@ -127,10 +127,10 @@
       </div>
     </div>
     <div class="next-btn flex-c" @click="add" v-if="isMobile">
-      <img src="./all/next-btn.png" alt="">
+      <img loading="lazy" src="./all/next-btn.png" alt="">
     </div>
     <div class="prev-btn flex-c" @click="dec" v-if="isMobile">
-      <img src="./all/prev-btn.png" alt="">
+      <img loading="lazy" src="./all/prev-btn.png" alt="">
     </div>
   </div>
 </template>

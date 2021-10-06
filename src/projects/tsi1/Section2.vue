@@ -1,8 +1,8 @@
 <template>
   <div class="section2">
     <iframe class="bg-img" ref="player" src="https://www.youtube.com/embed/78tx7GS-5tY?&enablejsapi=1&playerapiid=ytplayer" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <img src="./s2/02_bg.png" :alt="`${info.caseName}_img`" class="top-img">
-    <img src="./s2/02_bg_bottom.png" :alt="`${info.caseName}_img`" class="bottom-img">
+    <img loading="lazy" src="./s2/02_bg.png" :alt="`${info.caseName}_img`" class="top-img">
+    <img loading="lazy" src="./s2/02_bg_bottom.png" :alt="`${info.caseName}_img`" class="bottom-img">
   </div>
 </template>
 <style lang="scss" scoped>

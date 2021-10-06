@@ -12,6 +12,8 @@
         data-aos="fade-down"
         data-aos-delay="0"
       /> -->
+    
+
       <div class="info">
         <div class="btn flex-c" @click="showCallDialog" data-aos="fade-down" data-aos-delay="100">
           <span class="flex-c">
@@ -147,6 +149,34 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.fix-phone {
+  @include img_l_pc(82, 200, 30);
+  top:calc(50% + 100vw * (150 - 540) / 1920);
+  position: fixed;
+  z-index: 4;
+  img {
+    width: 100%;
+  }
+}
+.fix-home {
+  @include img_l_pc(82, 200, 30);
+  top:calc(50% + 100vw * (250 - 540) / 1920);
+  position: fixed;
+  z-index: 4;
+  img {
+    width: 100%;
+  }
+}
+.fix-map {
+  @include img_l_pc(82, 200, 30);
+  top:calc(50% + 100vw * (350 - 540) / 1920);
+  position: fixed;
+  z-index: 4;
+  img {
+    width: 100%;
+  }
 }
 
 .btn {

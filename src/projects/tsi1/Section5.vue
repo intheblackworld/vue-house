@@ -5,7 +5,7 @@
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
+              <img loading="lazy" :src="slide.img" alt="">
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
@@ -13,8 +13,8 @@
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
           <div class="swipe-btns absolute flex-ac flex-jb">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+            <img loading="lazy" src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+            <img loading="lazy" src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
           </div>
         </div>
       </div>
@@ -22,7 +22,7 @@
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList1" v-show="slideIndex1 === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
+              <img loading="lazy" :src="slide.img" alt="">
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
@@ -30,8 +30,8 @@
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList1" :key="slide.img + '-dot'" @click="goToMultiIndex(index, 1)"><span :class="`${slideIndex1 === index ? 'active' : ''}`"></span></div>
           </div>
           <div class="swipe-btns absolute flex-ac flex-jb">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decMultiIndex(1)">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addMultiIndex(1)">
+            <img loading="lazy" src="./all/prev-btn.png" alt="" class="prev-btn" @click="decMultiIndex(1)">
+            <img loading="lazy" src="./all/next-btn.png" alt="" class="next-btn" @click="addMultiIndex(1)">
           </div>
         </div>
       </div>
@@ -352,8 +352,8 @@
 <div class="hr"></div>
         <h3 class="title1" v-if="isMobile">四通八達  交通新核心<span>我的天空無限廣</span></h3>
         <h3 class="title2" v-if="isMobile">交通新核心</h3>
-        <img src="./s5/05-1_title_1.png" :alt="`${info.caseName}_img`" class="title1" v-if="!isMobile">
-        <img src="./s5/05-1_title_2.png" :alt="`${info.caseName}_img`" class="title2" v-if="!isMobile">
+        <img loading="lazy" src="./s5/05-1_title_1.png" :alt="`${info.caseName}_img`" class="title1" v-if="!isMobile">
+        <img loading="lazy" src="./s5/05-1_title_2.png" :alt="`${info.caseName}_img`" class="title2" v-if="!isMobile">
         <div class="desc">
           散步五分鐘，未來五泰輕軌五股站近在咫尺，<br />
           銜接機場捷運、新蘆線、環狀線，坐落一高、<br />
@@ -675,8 +675,8 @@
         <div class="hr"></div>
         <h3 class="title1" v-if="isMobile">散步  輕鬆抵達捷運站<span>預約地段紅利</span></h3>
         <h3 class="title2" v-if="isMobile">便利捷運</h3>
-        <img src="./s5/05-2_title_1.png" :alt="`${info.caseName}_img`" class="title1" v-if="!isMobile">
-        <img src="./s5/05-2_title_2.png" :alt="`${info.caseName}_img`" class="title2" v-if="!isMobile">
+        <img loading="lazy" src="./s5/05-2_title_1.png" :alt="`${info.caseName}_img`" class="title1" v-if="!isMobile">
+        <img loading="lazy" src="./s5/05-2_title_2.png" :alt="`${info.caseName}_img`" class="title2" v-if="!isMobile">
         <div class="desc">
           進入實質審查階段的五泰輕軌，將成為翻轉洲子洋<br />
           的最強助力，「天空之邑」距F09站約450公尺<br />

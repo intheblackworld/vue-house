@@ -5,7 +5,7 @@
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
+              <img loading="lazy" :src="slide.img" alt="">
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
@@ -13,8 +13,8 @@
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
           <div class="swipe-btns absolute flex-ac flex-jb">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+            <img loading="lazy" src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+            <img loading="lazy" src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
           </div>
         </div>
       </div>
@@ -22,7 +22,7 @@
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList1" v-show="slideIndex1 === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
+              <img loading="lazy" :src="slide.img" alt="">
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
@@ -30,8 +30,8 @@
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList1" :key="slide.img + '-dot'" @click="goToMultiIndex(index, 1)"><span :class="`${slideIndex1 === index ? 'active' : ''}`"></span></div>
           </div>
           <div class="swipe-btns absolute flex-ac flex-jb">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decMultiIndex(1)">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addMultiIndex(1)">
+            <img loading="lazy" src="./all/prev-btn.png" alt="" class="prev-btn" @click="decMultiIndex(1)">
+            <img loading="lazy" src="./all/next-btn.png" alt="" class="next-btn" @click="addMultiIndex(1)">
           </div>
         </div>
       </div>
@@ -251,8 +251,8 @@
 <div class="hr"></div>
         <h3 class="title1" v-if="isMobile">四大區  眾星拱月<span>好美的天空啊</span></h3>
         <h3 class="title2" v-if="isMobile">精華地段</h3>
-        <img src="./s4/04-1_title_1.png" v-if="!isMobile" :alt="`${info.caseName}_img`" class="title1">
-        <img src="./s4/04-1_title_2.png" v-if="!isMobile" :alt="`${info.caseName}_img`" class="title2">
+        <img loading="lazy" src="./s4/04-1_title_1.png" v-if="!isMobile" :alt="`${info.caseName}_img`" class="title1">
+        <img loading="lazy" src="./s4/04-1_title_2.png" v-if="!isMobile" :alt="`${info.caseName}_img`" class="title2">
         <div class="desc">
           立足洲子洋最前沿，五股新市鎮、五股市區、<br />
           新莊副都心、洲子洋四大區眾星拱月緊密環抱，<br />
@@ -473,8 +473,8 @@
         <div class="hr"></div>
         <h3 class="title1" v-if="isMobile">新北市　翻轉五股<span>全力助攻新市鎮</span></h3>
         <h3 class="title2" v-if="isMobile">樂活綠地</h3>
-        <img src="./s4/04-2_title_1.png" :alt="`${info.caseName}_img`" class="title1" v-if="blockIndex === 1 && !isMobile">
-        <img src="./s4/04-2_title_2.png" :alt="`${info.caseName}_img`" class="title2" v-if="blockIndex === 1 && !isMobile">
+        <img loading="lazy" src="./s4/04-2_title_1.png" :alt="`${info.caseName}_img`" class="title1" v-if="blockIndex === 1 && !isMobile">
+        <img loading="lazy" src="./s4/04-2_title_2.png" :alt="`${info.caseName}_img`" class="title2" v-if="blockIndex === 1 && !isMobile">
         <div class="desc">
           新北市長展現魄力，決心翻轉五股城市樣貌，<br />
 打造169公頃城市新生計畫，保留16.6公頃<br />

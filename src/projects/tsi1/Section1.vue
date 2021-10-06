@@ -1,22 +1,22 @@
 <template>
   <div class="section1">
-    <img src="./s1/c1.png" :alt="`${info.caseName}_cloud`" class="cloud c1">
-    <img src="./s1/c2.png" :alt="`${info.caseName}_cloud`" class="cloud c2">
+    <img loading="lazy" src="./s1/c1.png" :alt="`${info.caseName}_cloud`" class="cloud c1">
+    <img loading="lazy" src="./s1/c2.png" :alt="`${info.caseName}_cloud`" class="cloud c2">
     <div class="c5">
-      <img src="./s1/c2.png" :alt="`${info.caseName}_cloud`" class="cloud">
+      <img loading="lazy" src="./s1/c2.png" :alt="`${info.caseName}_cloud`" class="cloud">
     </div>
-    <img src="./s1/c4.png" :alt="`${info.caseName}_cloud`" class="cloud c4">
-    <img src="./s1/c3.png" :alt="`${info.caseName}_cloud`" class="cloud c3">
-    <img src="./s1/01_bg_light.png" :alt="`${info.caseName}_img`" class="bg-img light">
+    <img loading="lazy" src="./s1/c4.png" :alt="`${info.caseName}_cloud`" class="cloud c4">
+    <img loading="lazy" src="./s1/c3.png" :alt="`${info.caseName}_cloud`" class="cloud c3">
+    <img loading="lazy" src="./s1/01_bg_light.png" :alt="`${info.caseName}_img`" class="bg-img light">
     <div>
-      <img src="./s1/top_logo.png" :alt="`${info.caseName}_top`" class="top-logo" v-if="isPC" data-aos="fade-top" data-aos-delay="200">
+      <img loading="lazy" src="./s1/top_logo.png" :alt="`${info.caseName}_top`" class="top-logo" v-if="isPC" data-aos="fade-top" data-aos-delay="200">
       <h3 class="title1" data-aos="fade-top" data-aos-delay="400">
         洲子洋<span>24</span>層雙塔地標
       </h3>
       <h3 class="title2" data-aos="fade-top" data-aos-delay="400">
         千坪日式莊園｜捷運<span>2</span>-<span>3</span>房
       </h3>
-      <img src="./s1/top_logo_m.png" :alt="`${info.caseName}_top`" class="top-logo" v-if="isMobile" data-aos="fade-top" data-aos-delay="200">
+      <img loading="lazy" src="./s1/top_logo_m.png" :alt="`${info.caseName}_top`" class="top-logo" v-if="isMobile" data-aos="fade-top" data-aos-delay="200">
     </div>
   </div>
 </template>

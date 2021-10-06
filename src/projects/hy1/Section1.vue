@@ -9,6 +9,10 @@
     <div class="logo absolute" data-aos="fade-up" data-aos-delay="200" data-aos-offset="-300">
       <img src="./s1/logo.png" :alt="`${info.caseName}_img`">
     </div>
+
+
+ 
+
     <h1 class="title" data-aos="fade-up" data-aos-delay="400">
       以中路之名 於風禾屏息
     </h1>
@@ -18,6 +22,9 @@
     </h1>
   </div>
 </template>
+
+
+
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .section1 {

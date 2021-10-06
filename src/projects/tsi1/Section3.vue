@@ -1,6 +1,6 @@
 <template>
   <div class="section3">
-    <img src="./s3/03_img.png" :alt="`${info.caseName}_img`" class="bg-img"  v-if="!isMobile">
+    <img loading="lazy" src="./s3/03_img.png" :alt="`${info.caseName}_img`" class="bg-img"  v-if="!isMobile">
     <h3 class="title" data-aos="fade-up" data-aos-delay="200">
       洲子洋天空再進化<br v-if="isMobile"><span v-if="!isMobile">　</span>讓雙北人都羨慕
     </h3>

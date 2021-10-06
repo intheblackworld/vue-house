@@ -5,7 +5,7 @@
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
+              <img loading="lazy" :src="slide.img" alt="">
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
@@ -13,8 +13,8 @@
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
           <div class="swipe-btns absolute flex-ac flex-jb">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+            <img loading="lazy" src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+            <img loading="lazy" src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
           </div>
         </div>
       </div>
@@ -30,19 +30,19 @@
       </div>
       <div class="list">
         <div class="flex-ac item" data-aos="fade-up" data-aos-delay="1000">
-          <img src="./s6/06_text_1.png" alt="" class="icon">
+          <img loading="lazy" src="./s6/06_text_1.png" alt="" class="icon">
           <h3 class="text">
             <span>地標</span> 區域稀有24層雙塔新地標
           </h3>
         </div>
         <div class="flex-ac item" data-aos="fade-up" data-aos-delay="1100">
-          <img src="./s6/06_text_2.png" alt="" class="icon">
+          <img loading="lazy" src="./s6/06_text_2.png" alt="" class="icon">
           <h3 class="text">
             <span>基地</span> 區域稀有近兩千坪寬闊基地
           </h3>
         </div>
         <div class="flex-ac item" data-aos="fade-up" data-aos-delay="1200">
-          <img src="./s6/06_text_3.png" alt="" class="icon">
+          <img loading="lazy" src="./s6/06_text_3.png" alt="" class="icon">
           <h3 class="text">
             <span>生活</span> 區域稀有千坪日式雅致莊園
           </h3>
