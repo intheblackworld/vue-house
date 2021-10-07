@@ -7,7 +7,7 @@ export default {
   phone: '02-8666-0588',
   fbLink: 'https://www.facebook.com/',
   fbMessage: 'https://m.me/',
-  caseName: '睿陽沁',
+  caseName: '睿暘沁',
   indigatorLength: 10,
 
   houseInfos: [

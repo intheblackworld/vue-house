@@ -13,14 +13,14 @@
 
 <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="62.6866" y1="85.1198" x2="603.8442" y2="397.5573">
 	<stop  offset="0" stop-color="#FFF0"/>
-      <stop offset="50%" stop-color="#FFF0" stop-opacity=".5">
-        <animate attributeName="offset" values="0;.0;.6;1;1;1;1;1;1" dur="3s" repeatCount="indefinite" />
+      <stop offset="50%" stop-color="#ACF0" stop-opacity=".5">
+        <animate attributeName="offset" values="0;.0;.6;1;1;1;1;1;1;1;1" dur="3s" repeatCount="indefinite" />
       </stop>
       <stop offset="50%" stop-color="#FFF" stop-opacity=".5">
-        <animate attributeName="offset" values="0;.1;.7;1;1;1;1;1;1" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="offset" values="0;.3;.7;1;1;1;1;1;1;1;1" dur="3s" repeatCount="indefinite" />
       </stop>
-      <stop offset="50%" stop-color="#FFF0" stop-opacity=".5">
-        <animate attributeName="offset" values="0;.3;.9;1;1;1;1;1;1" dur="3s" repeatCount="indefinite" />
+      <stop offset="50%" stop-color="#ACF0" stop-opacity=".5">
+        <animate attributeName="offset" values="0;.7;.9;1;1;1;1;1;1;1;1" dur="3s" repeatCount="indefinite" />
       </stop>
       <stop offset="100%" stop-color="#FFF0"> </stop>
 </linearGradient>
