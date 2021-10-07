@@ -17,7 +17,7 @@
       <li data-aos="fade-down" data-aos-delay="600">飯店式管理．盡享大牌隱私尊榮</li>
     </ul>
     </div>
-    <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="viewIndex === 8">
+    <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -597,11 +597,11 @@ export default {
   computed: {},
 
   watch: {
-    // viewIndex(val) {
-    //   if (val === 8) {
-    //     this.slideIndex = 0
-    //   }
-    // },
+    viewIndex(val) {
+      if (val === 8) {
+        this.slideIndex = 0
+      }
+    },
   }
 }
 </script>
