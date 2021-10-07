@@ -35,7 +35,7 @@
       <Section7 />
     </vue-lazy-component>
     <vue-lazy-component class="section" id="section8" style="z-index: 2;">
-      <Section8 />
+      <Section8 :viewIndex="viewIndex" />
     </vue-lazy-component>
     <!-- <vue-lazy-component
       class="section"
@@ -196,6 +196,7 @@ export default {
       if (this.viewIndex !== navIndex + 1) {
         this.viewIndex = navIndex + 1
       }
+      console.log(this.viewIndex)
     },
 
     // onLeave(origin, destination, direction) {
