@@ -142,7 +142,7 @@
 
 @keyframes flip {
   to {
-    transform: rotateY(720deg);
+    transform: rotateY(360deg);
   }
 }
 
