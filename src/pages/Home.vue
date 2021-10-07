@@ -31,7 +31,8 @@
         <Section4 />
       </div>
       <div class="section relative" id="section5">
-        <Section5 :viewIndex="viewIndex" />
+        <Section5/>
+        <!-- <Section5 :viewIndex="viewIndex" />  -->
       </div>
       <div class="section relative" id="section6">
         <Section6 />

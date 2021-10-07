@@ -350,6 +350,7 @@ img[lazy="loaded"] {
     // background-repeat: no-repeat;
     background-size: auto size-m(750);
     background-attachment: fixed;
+    background: none;
     // background-position: 0% 50%;
     &::before{content: ' ';
       position: fixed;

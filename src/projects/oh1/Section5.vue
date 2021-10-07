@@ -15,8 +15,8 @@
           <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
         </div>
       </div>
-    </div> -->
-<svg v-if="viewIndex === 5" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    </div> v-if="viewIndex === 5" -->
+<svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 984 1070" class="svg2" style="enable-background:new 0 0 984 1070;" xml:space="preserve">
 
 <g>
@@ -36,7 +36,7 @@
 <g>
 	<g>
 		<defs>
-			<path id="SVGID_3_" class="an" d="M492,106.4c-219.9,0-398.1,178.2-398.1,398.1S272.1,902.6,492,902.6s398.1-178.2,398.1-398.1
+			<path id="SVGID_3_" d="M492,106.4c-219.9,0-398.1,178.2-398.1,398.1S272.1,902.6,492,902.6s398.1-178.2,398.1-398.1
 				S711.9,106.4,492,106.4z M871.2,426.2l-118.8,24.5c-5.6-28-15.8-54.8-30.3-80.1c-14.3-24.8-31.9-46.6-52.7-65.3l80-89.9
 				C810.3,269.8,854,343.1,871.2,426.2z M234.7,215.4l80.1,90.1c-43.1,38.7-71.7,90.1-82.9,145.4l-119.1-24.6
 				C130,343.1,173.7,269.8,234.7,215.4z M370.2,872l38.2-115.4c53.4,17.8,112.1,18.4,167.1,0.1L613.8,872
@@ -64,7 +64,7 @@
 			<stop  offset="0" style="stop-color:#9CC715"/>
 			<stop  offset="1" style="stop-color:#008CCA"/>
 		</linearGradient>
-		<rect x="58.9" y="92.5" class="st3" width="858.3" height="856.1"/>
+		<rect x="58.9" y="92.5" class="st3 an" width="858.3" height="856.1"/>
 	</g>
 	<g class="an">
 		<circle class="st0" cx="492" cy="504.5" r="398.1"/>
@@ -180,8 +180,11 @@ bottom: 0;
   }
 }
 @keyframes rot_r {
+  from{
+     transform:scale(.5) rotate(360deg);
+  }
   to {
-    transform:scale(.5)rotate(-360deg);
+    transform:scale(.5) rotate(0deg);
   }
 }
 .txt {
