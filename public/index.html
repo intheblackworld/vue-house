@@ -40,18 +40,71 @@
     <!-- Event snippet for 提交待開發客戶表單 conversion page
 In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
     <script>
-      function gtag_report_conversion(url) {
+      function gtag_report_conversion_order(url) {
         var callback = function () {
           if (typeof(url) != 'undefined') {
             window.location = url;
           }
         };
         gtag('event', 'conversion', {
-            'send_to': 'AW-374267634/b0E6CP225I0CEPK9u7IB',
+            'send_to': 'AW-373671502/VxsoCO2h6JwCEM6Ml7IB',
             'event_callback': callback
         });
         return false;
       }
+
+      function gtag_report_conversion_call(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-373671502/Nv24CPueyZwCEM6Ml7IB',
+            'event_callback': callback
+        });
+        return false;
+      }
+
+      function gtag_report_conversion_messenger(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-373671502/L2DrCLzLyZwCEM6Ml7IB',
+            'event_callback': callback
+        });
+        return false;
+      }
+
+      function gtag_report_conversion_fb(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-373671502/klEoCK7U8ZwCEM6Ml7IB',
+            'event_callback': callback
+        });
+        return false;
+      }
+
+      function gtag_report_conversion_map(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-373671502/ZasJCPeL8pwCEM6Ml7IB',
+            'event_callback': callback
+        });
+        return false;
+      }
+
       </script>
   </head>
   <body>

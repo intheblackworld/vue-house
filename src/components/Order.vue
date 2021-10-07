@@ -160,11 +160,7 @@ export default {
       const h = this.$createElement
       this.$notify({
         title: '請填寫必填欄位',
-        message: h(
-          'i',
-          { style: 'color: #82191d' },
-          '「姓名、手機」',
-        ),
+        message: h('i', { style: 'color: #82191d' }, '「姓名、手機」'),
       })
     },
 
@@ -175,7 +171,7 @@ export default {
       this.isSubmit = true
       if (
         !this.form.name ||
-        !this.form.phone 
+        !this.form.phone
         // ||
         // !this.form.time_start ||
         // !this.form.time_end
@@ -222,6 +218,16 @@ export default {
           method: 'GET',
         },
       )
+
+      window._lt(
+        'send',
+        'cv',
+        {
+          type: 'Conversion',
+        },
+        ['2dbeb344-9b9c-48e5-962d-ebcfd192bae4'],
+      )
+      window.gtag_report_conversion_order()
       fetch('contact-form.php', {
         method: 'POST',
         body: formData,
@@ -328,25 +334,23 @@ export default {
   }
 
   .form {
-    font-size:16px !important;
+    font-size: 16px !important;
     width: 100%;
     display: flex;
-   // align-items: flex-start;
+    // align-items: flex-start;
     margin: 0 auto;
     justify-content: space-between;
     margin-bottom: 1.5em;
-    align-items:stretch;
+    align-items: stretch;
     > .group {
       flex: 1;
       align-items: flex-start;
-    &:nth-child(2) {
-      .row {
-        height: 100%;
+      &:nth-child(2) {
+        .row {
+          height: 100%;
+        }
       }
     }
-  }
-
-
   }
 
   .row {
@@ -367,7 +371,7 @@ export default {
       flex: 0 0 6.5em;
       display: block;
       text-align: left;
-      font-size:1em;
+      font-size: 1em;
       opacity: 0.8;
       font-weight: 900;
       padding: 0 0 0 0.6em;
@@ -377,20 +381,19 @@ export default {
         color: #ff0000;
       }
     }
-  //  .el-input{flex: 1;}
+    //  .el-input{flex: 1;}
   }
 
-  .form_input{
-     border-right: 1px solid $order_subtitle_color;
-     padding-right:3%;
-     margin-right:3%;
-    .row{
-    background: $order_input_bg;
-    border: $order_input_border;
-    color: $order_input_color;
+  .form_input {
+    border-right: 1px solid $order_subtitle_color;
+    padding-right: 3%;
+    margin-right: 3%;
+    .row {
+      background: $order_input_bg;
+      border: $order_input_border;
+      color: $order_input_color;
     }
   }
-
 
   .control {
     margin-top: 0px;
@@ -471,12 +474,12 @@ export default {
       }
     }
 
-.form_input{
-     border-right:0px solid #fff000;
-     padding-right:0%;
-     margin-right:0%;
-    margin-bottom: 0.935em;
-  }
+    .form_input {
+      border-right: 0px solid #fff000;
+      padding-right: 0%;
+      margin-right: 0%;
+      margin-bottom: 0.935em;
+    }
 
     .control {
       .el-checkbox {

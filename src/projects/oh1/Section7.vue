@@ -5,7 +5,7 @@
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
           <!--   <img :src="slide.img" :alt="slide-name" v-if="isMobile" class="swipe-bg">  -->
-            <img :src="slide.img" :alt="slide-name">
+            <img :src="slide.img" alt="slide-name">
           <div class="slide-name absolute" v-html="slide.name"></div>
     <div class="slide-nametop" v-if="slide.name" >3D示意圖，實際以現場為準，建商擁有修改權利</div>
           </div>
