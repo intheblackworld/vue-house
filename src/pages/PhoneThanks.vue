@@ -50,10 +50,11 @@
 </style>
 
 <script>
-
+import head from '@/mixins/head.js'
 export default {
   name: 'phoneThanks',
   components: {},
+  mixins: [head],
 
   methods: {},
 }
