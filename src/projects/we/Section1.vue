@@ -5,6 +5,18 @@
       本公司保留活動修改及終止權利！！數量有限，要買要快
     </div>
     <transition-group name="swipe-fade">
+      <div class="list list3" v-if="pageIndex === 1" key="page4" v-touch:swipe.left="() => {this.decPageIndex(1)}" v-touch:swipe.right="() => this.addPageIndex(4)" @mouseup="addPageIndex(4)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+        <img src="./s1/01.jpg" alt="" class="img">
+      </div>
+      <div class="list list2" v-if="pageIndex === 3" key="page3" v-touch:swipe.left="() => {this.decPageIndex(3)}" v-touch:swipe.right="() => this.addPageIndex(3)" @mouseup="addPageIndex(3)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+        <img src="./s1/02.jpg" alt="" class="img">
+      </div>
+      <div class="list list1" v-if="pageIndex === 2" key="page2" v-touch:swipe.left="() => {this.decPageIndex(2)}" v-touch:swipe.right="() => this.addPageIndex(2)" @mouseup="addPageIndex(2)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+        <img src="./s1/03.jpg" alt="" class="img">
+      </div>
+    </transition-group>
+    <!--
+    <transition-group name="swipe-fade">
       <div class="list list5" v-if="pageIndex === 4" key="page4" v-touch:swipe.left="() => {this.decPageIndex(4)}" v-touch:swipe.right="() => this.addPageIndex(4)" @mouseup="addPageIndex(4)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="w-block"></div>
         <img src="./s1/2/2.png" alt="" class="img1">
@@ -43,7 +55,8 @@
         <div class="t2"><span>簽訂3%<span>輕鬆付款</span></span>2263-5666</div>
       </div>
       <div class="list list1" v-if="pageIndex === 5" key="page5" v-touch:swipe.left="() => {this.decPageIndex(5)}" v-touch:swipe.right="() => this.addPageIndex(5)" @mouseup="addPageIndex(5)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <div class="w-block"></div>
+    
+         <div class="w-block"></div>
         <img src="./s1/1/1.png" alt="" class="img1">
         <img src="./s1/1/2.png" alt="" class="img2">
         <img src="./s1/1/i.jpg" alt="" class="i">
@@ -52,17 +65,19 @@
         <div class="t1">青年當家威時代<br>暖心加碼送給您</div>
         <div class="t2">好禮3選2,風光入厝禮!</div>
       </div>
-    </transition-group>
+    </transition-group> -->
     <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
       <div class="prev-btn" @click="() => this.pageIndex = this.pageIndex === 1 ? this.pageIndex === 2 ? 3 : 2 : 1"><img src="./s2/dot.png" alt=""></div>
-      <div class="next-btn" @click="() => this.pageIndex = this.pageIndex === 1 ? this.pageIndex === 2 ? 3 : 2 : 1"><img src="./s2/dot.png" alt=""></div>
+      <div class="next-btn" @click="() => this.pageIndex = this.pageIndex === 1 ? this.pageIndex === 2 ? 1 : 2 : 3"><img src="./s2/dot.png" alt=""></div>
     </div>
     <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
       <div :class="`pagination-dot`" @click="pageIndex = 1"><span :class="`${pageIndex === 1 ? 'active' : ''}`"></span></div>
       <div :class="`pagination-dot`" @click="pageIndex = 2"><span :class="`${pageIndex === 2 ? 'active' : ''}`"></span></div>
       <div :class="`pagination-dot`" @click="pageIndex = 3"><span :class="`${pageIndex === 3 ? 'active' : ''}`"></span></div>
-      <div :class="`pagination-dot`" @click="pageIndex = 4"><span :class="`${pageIndex === 4 ? 'active' : ''}`"></span></div>
+ <!-- 
+   <div :class="`pagination-dot`" @click="pageIndex = 4"><span :class="`${pageIndex === 4 ? 'active' : ''}`"></span></div>
       <div :class="`pagination-dot`" @click="pageIndex = 5"><span :class="`${pageIndex === 5 ? 'active' : ''}`"></span></div>
+      -->
     </div>
   </div>
 </template>
@@ -136,6 +151,7 @@
   font-weight: 900;
   line-height: 1.3;
 }
+.img{width: 100%;height: 100%;object-fit: cover;}
 .list1 {
   background: #6a9f87;
   .img1 {
@@ -674,7 +690,7 @@ export default {
       isMobile,
       isTablet,
       pageIndex: 1,
-      pageLength: 5,
+      pageLength: 3,
       interval: null,
       toggleTimer: true,
     }
