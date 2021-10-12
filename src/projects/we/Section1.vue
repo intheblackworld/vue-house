@@ -5,13 +5,13 @@
       本公司保留活動修改及終止權利！！數量有限，要買要快
     </div>
     <transition-group name="swipe-fade">
-      <div class="list list3" v-if="pageIndex === 1" key="page4" v-touch:swipe.left="() => {this.decPageIndex(1)}" v-touch:swipe.right="() => this.addPageIndex(4)" @mouseup="addPageIndex(4)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="list list3" v-if="pageIndex === 1" key="page3" v-touch:swipe.left="() => {this.decPageIndex(3)}" v-touch:swipe.right="() => this.addPageIndex(2)" @mouseup="addPageIndex(2)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <img src="./s1/01.jpg" alt="" class="img">
       </div>
-      <div class="list list2" v-if="pageIndex === 3" key="page3" v-touch:swipe.left="() => {this.decPageIndex(3)}" v-touch:swipe.right="() => this.addPageIndex(3)" @mouseup="addPageIndex(3)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="list list2" v-if="pageIndex === 2" key="page2" v-touch:swipe.left="() => {this.decPageIndex(1)}" v-touch:swipe.right="() => this.addPageIndex(3)" @mouseup="addPageIndex(1)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <img src="./s1/02.jpg" alt="" class="img">
       </div>
-      <div class="list list1" v-if="pageIndex === 2" key="page2" v-touch:swipe.left="() => {this.decPageIndex(2)}" v-touch:swipe.right="() => this.addPageIndex(2)" @mouseup="addPageIndex(2)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="list list1" v-if="pageIndex === 3" key="page1" v-touch:swipe.left="() => {this.decPageIndex(2)}" v-touch:swipe.right="() => this.addPageIndex(1)" @mouseup="addPageIndex(3)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <img src="./s1/03.jpg" alt="" class="img">
       </div>
     </transition-group>
