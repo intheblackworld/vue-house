@@ -19,7 +19,7 @@ export default {
 
     scriptArray.forEach(script => {
       document.head.appendChild(script.s)
-      this.$refs.gtmNoScript.appendChild(script.n)
+      document.body.appendChild(script.n)
     })
   }
 }

@@ -12,7 +12,7 @@
 // @media only screen and (max-width: 767px) {
 // .cta{display: block;}
 // }
- </style>
+</style>
 <script>
 import { isMobile } from '@/utils'
 export default {
@@ -22,26 +22,15 @@ export default {
   data() {
     return {
       window,
-      isMobile
+      isMobile,
     }
   },
 
   methods: {
     redirectToPhoneThanks(e) {
-      window.dotq = window.dotq || []
-
-      window.dotq.push({
-        projectId: '10000',
-
-        properties: {
-          pixelId: '10101258',
-
-          qstrings: {
-            et: 'custom',
-
-            ea: 'call10101258',
-          },
-        },
+      window.gtag('event', 'click', {
+        event_category: 'link',
+        event_label: 'phone number',
       })
       e.preventDefault()
       window.location.href = `tel:${this.phone.replace('-', '')}`

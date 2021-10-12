@@ -14,7 +14,10 @@
             <font-awesome-icon :icon="['fab', 'facebook-messenger']" /><span>FB 諮詢</span>
           </span>
         </div>
-        <a class="btn flex-c bt_fanpage" :href="info.fbLink" target="_blank" data-aos="fade-down" data-aos-delay="300">
+        <a class="btn flex-c bt_fanpage" @click="window.gtag('event','click',{
+'event_category':'link',
+'event_label':'facebook'
+});" :href="info.fbLink" target="_blank" data-aos="fade-down" data-aos-delay="300">
           <span class="flex-c">
             <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
           </span>
@@ -55,7 +58,7 @@ export default {
   data() {
     return {
       info,
-
+      window,
       isMobile,
       isTablet,
       isShowCallDialog: false,
