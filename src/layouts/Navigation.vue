@@ -360,7 +360,7 @@ export default {
         width: $logo_phone_width;
       }
     }
-    &::after{box-shadow:0 0 sizem(40) sizem(40) #6A9F87;}
+    &::after{box-shadow:0 0 sizem(40) sizem(40) #105089;}
   }
 
   .btn {

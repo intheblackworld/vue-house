@@ -6,13 +6,16 @@
     </div>
     <transition-group name="swipe-fade">
       <div class="list list3" v-if="pageIndex === 1" key="page3" v-touch:swipe.left="() => {this.decPageIndex(3)}" v-touch:swipe.right="() => this.addPageIndex(2)" @mouseup="addPageIndex(2)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <img src="./s1/01.jpg" alt="" class="img">
+        <img src="./s1/01.jpg" alt="" class="img" v-if="isPC">
+        <img src="./s1/01m.jpg" alt="" class="img" v-if="isMobile">
       </div>
       <div class="list list2" v-if="pageIndex === 2" key="page2" v-touch:swipe.left="() => {this.decPageIndex(1)}" v-touch:swipe.right="() => this.addPageIndex(3)" @mouseup="addPageIndex(1)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <img src="./s1/02.jpg" alt="" class="img">
+        <img src="./s1/02.jpg" alt="" class="img" v-if="isPC">
+        <img src="./s1/02m.jpg" alt="" class="img" v-if="isMobile">
       </div>
       <div class="list list1" v-if="pageIndex === 3" key="page1" v-touch:swipe.left="() => {this.decPageIndex(2)}" v-touch:swipe.right="() => this.addPageIndex(1)" @mouseup="addPageIndex(3)" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <img src="./s1/03.jpg" alt="" class="img">
+        <img src="./s1/03.jpg" alt="" class="img" v-if="isPC">
+        <img src="./s1/03m.jpg" alt="" class="img" v-if="isMobile">
       </div>
     </transition-group>
     <!--
@@ -445,8 +448,8 @@
 @media screen and (max-width: 767px) {
   .section1 {
     width: 100vw;
-    min-height: sizem(667);
-    max-height: sizem(812);
+    min-height: sizem(604);
+    max-height: sizem(750);
     height: calc(100vh - 63px);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
@@ -487,7 +490,7 @@
 
   .hint {
     @include div_l_m(300, 18, 667, 10);
-    top: calc(100% - 12vw);
+    top: calc(100% - 9vw);
     width: 100%;
     font-size: sizem(12);
     font-weight: normal;
@@ -499,6 +502,7 @@
     color: #ffffff;
     white-space: nowrap;
     z-index: 10;
+    text-shadow: 0 0 .5em #000;
   }
 
   .tm {
