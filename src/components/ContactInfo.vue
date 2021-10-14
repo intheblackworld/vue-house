@@ -145,7 +145,7 @@ export default {
   color: $contact_btn_color;
   background: $contact_btn_bg;
   box-shadow: $contact_btn_border;
-  border-radius:1.8em !important;
+ // border-radius:1.8em !important;
   transition: all 0.5s;
   position: relative;
   overflow: hidden;
@@ -196,10 +196,10 @@ export default {
   width: 700px;
   height: 60px;
   font-size: 18px;
-  font-weight: 900;
+  font-weight: 500 !important;
   background: #fff;
-  border: 1px solid #87C1E8;
-  border-radius:1.8em !important;
+ // border: 1px solid #87C1E8;
+ // border-radius:1.8em !important;
   color: $contact_btn_border;
   font-weight: bold;
   box-shadow: $contact_btn_border;
@@ -222,9 +222,11 @@ export default {
   background: $contact_google_btn_bg;
   background-position: center !important;
   border: $contact_btn_border;
-  border-radius:1.8em !important;
+ // border-radius:1.8em !important;
   transition: all 0.5s;
   z-index: 1;
+  overflow: hidden;
+  position: relative;
 
   svg {
     color: $contact_google_btn_icon;
@@ -232,6 +234,26 @@ export default {
     height: 24px;
     margin-right: 12px;
     transition: all 0.5s;
+  }
+  &::before {
+    content: '';
+    width: 40%;
+    height: 100%;
+    display: block;
+    background: #fff;
+    position: absolute;
+    -webkit-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+    left: -10%;
+    opacity: 0;
+    top: 0;
+    z-index: 5;
+    transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
+  }
+  &:hover:before {
+    opacity: 1;
+    width: 90%;
+    left: 140%;
   }
 
   &:hover {

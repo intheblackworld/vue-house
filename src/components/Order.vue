@@ -78,11 +78,11 @@
         </div>
         <div class="control" data-aos="fade-down" data-aos-delay="500">
           <el-checkbox v-model="checked">
-            <h3>
+            <p>
               本人知悉並同意
               <span @click="showPolicyDialog">「個資告知事項聲明」</span>
               內容
-            </h3>
+            </p>
           </el-checkbox>
         </div>
         <div style="margin: 0 auto;z-index:2;" v-if="!isMobile" data-aos="fade-down" data-aos-delay="600">
@@ -280,7 +280,7 @@ export default {
     padding-bottom: 0;
     margin: 0 auto 0.2em;
     display: inline-block;
-    font-weight:700;
+    font-weight:500;
     line-height: 1.7;
     letter-spacing: 0.11em;
     font-size: calc(100vw * 50 / 1920);
@@ -369,7 +369,7 @@ export default {
       text-align: left;
       font-size:1em;
       opacity: 0.8;
-      font-weight: 900;
+      font-weight: 500;
       padding: 0 0 0 0.6em;
       color: $order_input_label_color;
 
@@ -433,7 +433,7 @@ export default {
 
     .order-subtitle {
       // display: none;
-      font-weight: bold;
+      font-weight: 500;
       font-size: 14px;
     }
     .order {

@@ -1,22 +1,19 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '新北市三重區神農街XXX',
+  address: '接待中心：新北市新莊區昌德街33號旁',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.2977358294615!2d121.21881161537769!3d24.955982847567636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468224a47c85d5f%3A0xe9ce48c6dd51fd48!2zMzIw5qGD5ZyS5biC5Lit5aOi5Y2A5aSn5ZCM6LevMTg26Jmf!5e0!3m2!1szh-TW!2stw!4v1630914350973!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/2v4Ded5m8UZowX19A',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d903.5962551936593!2d121.45608382922413!3d25.05493621390746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDAzJzE3LjgiTiAxMjHCsDI3JzIzLjkiRQ!5e0!3m2!1szh-TW!2stw!4v1634204528398!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/9iPuMyNdg2G6niwU7',
   phone: '02-8666-0588',
   fbLink: 'https://www.facebook.com/',
   fbMessage: 'https://m.me/',
-  caseName: '睿暘沁',
+  caseName: '青青',
   indigatorLength: 10,
 
   houseInfos: [
-    ['投資興建', ''],
-    ['工程營造', ''],
-    ['建築設計', ''],
-    ['公設規劃', ''],
-    ['外觀設計', ''],
-    ['景觀規劃', ''],
+    ['格局規劃', '2房(15-23坪) 2+1房(22坪) 3房(22~29坪) '],
+    ['棟戶規劃', '戶數：131戶'],
+    ['基地面績', '約487.66坪'],
     ['企劃設計', '海沃創意行銷'],
   ],
 

@@ -50,10 +50,10 @@
   .el-textarea__inner {
     height: 100% !important;
     border-radius: 0 !important;
-    color: #333;
+    color: $order_input_color;
     padding-top: 10px !important;
     border: $order_input_border !important;
-    background:#FFF;
+    background:$order_input_bg;
   font-family:$family3;
 
     &::placeholder {
@@ -92,7 +92,7 @@
   background-color: $order_submit_bg;
   background-image: $order_submit_bg;
   border:0px solid #eb5500 !important;
-  border-radius:1.8em !important;
+  //border-radius:1.8em !important;
   margin: 0 auto !important;
   margin-top: 20px !important;
   transition: all 0.3s !important;
