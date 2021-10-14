@@ -21,7 +21,7 @@ export default {
     ['公設比例', '32.5%'],
     ['樓層規劃', '地上15層，地下6層'],
     ['基地面積', '846.66坪'],
-    ['建照號碼', '102股建字第00258號等1個'],
+    ['使照號碼', '110股使字第00166號'],
   ],
   gtmCode: ['PS8ZD97'], // 可放置多個
   recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
