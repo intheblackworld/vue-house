@@ -54,7 +54,8 @@
         data-aos="fade" data-aos-delay="400"
         class="logo absolute"
       >
-      <h3 class="title1 absolute">總價<b>1888</b>萬起</h3>
+      <h3 class="title1 absolute">迎百億商城 選安平升等</h3>
+  <!--    <h3 class="title1 absolute">總價<b>1888</b>萬起</h3>  -->
 <h3 class="title2 absolute">絕美視野 壓軸倒數</h3>
       <img
         src="./s1/img.jpg"
@@ -215,7 +216,8 @@
         alt="聯上海棠"
         class="logo absolute"
       >
-      <h3 class="title1 absolute">總價<b>1888</b>萬起</h3>
+     <h3 class="title1 absolute"> 迎百億商城 選安平升等</h3>
+    <!--  <h3 class="title1 absolute">總價<b>1888</b>萬起</h3> -->
 <h3 class="title2 absolute">絕美視野 壓軸倒數</h3>
 
       <img
@@ -430,9 +432,11 @@ img{height: 100%;}}
   left: size(378);
 }
 .title1{
+  width: size(950);
   top:calc(50% + -2vw);
-  left: size(355);
+  left: size(0);
   font-size: size(30);
+  text-align: center;
   b{font-size: 1.7em;letter-spacing:-0.05em;display: inline-block;position: relative;top: 0.05em;}
   }
 .title2{
