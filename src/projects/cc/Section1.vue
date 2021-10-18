@@ -10,7 +10,7 @@
         <div class="img3"><img src="./s1/3.png" alt="青青_3"></div>
         <div class="img4"><img src="./s1/4.png" alt="青青_4"></div>
       </div>
-      <img src="./s1/2.png" class="img2" alt="青青_2"
+      <img src="./s1/2.gif" class="img2" alt="青青_2"
             data-aos="fade"
             data-aos-delay="100">
       <img src="./s1/1.png" class="img1" alt="青青_1">
@@ -35,7 +35,7 @@
       <div class="img4"><img src="./s1/3m.png" alt="青青_3"></div>
       <div class="img5"><img src="./s1/4m.png" alt="青青_4"></div>
       <div class="img8"><img src="./s1/5m.png" alt="青青_5"></div>
-      <div class="img2"><img src="./s1/6m.png" alt="青青_6"
+      <div class="img2"><img src="./s1/2m.gif" alt="青青_6"
             data-aos="fade"
             data-aos-delay="100"></div>
     </div>
