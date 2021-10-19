@@ -18,8 +18,6 @@ import VueRellax from 'vue-rellax'
 import Vue2TouchEvents from 'vue2-touch-events'
 import VueSilentbox from 'vue-silentbox'
 
-
-
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   faBars,
@@ -76,7 +74,7 @@ new Vue({
     //   })
     // }
   },
-  created () {
+  created() {
     AOS.init()
   },
   render: h => h(App)

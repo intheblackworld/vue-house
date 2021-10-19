@@ -15,9 +15,9 @@
       <vue-lazy-component class="" id="section1" @init="init">
         <Section1 />
       </vue-lazy-component>
-      <!-- <vue-lazy-component class="section" id="section2" style="">
+      <vue-lazy-component class="section" id="section2" style="">
         <Section2 />
-      </vue-lazy-component> -->
+      </vue-lazy-component>
       <vue-lazy-component class="section" id="section3">
         <Section3 />
       </vue-lazy-component>
@@ -42,10 +42,10 @@
       <vue-lazy-component class="section" id="section10">
         <Section10 />
       </vue-lazy-component>
-      <vue-lazy-component class="section" id="section11">
+      <!-- <vue-lazy-component class="section" id="section11">
         <Section11 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section12">
+      </vue-lazy-component> -->
+      <!-- <vue-lazy-component class="section" id="section12">
         <Section12 />
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section13">
@@ -68,7 +68,7 @@
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section19">
         <Section19 />
-      </vue-lazy-component>
+      </vue-lazy-component> -->
       <!-- <vue-lazy-component class="section" id="section10">
         <Section10 :viewIndex="viewIndex" />
       </vue-lazy-component>
@@ -143,15 +143,15 @@ import Section7 from '@/projects/pjr/Section7.vue'
 import Section8 from '@/projects/pjr/Section8.vue'
 import Section9 from '@/projects/pjr/Section9.vue'
 import Section10 from '@/projects/pjr/Section10.vue'
-import Section11 from '@/projects/pjr/Section11.vue'
-import Section12 from '@/projects/pjr/Section12.vue'
-import Section13 from '@/projects/pjr/Section13.vue'
-import Section14 from '@/projects/pjr/Section14.vue'
-import Section15 from '@/projects/pjr/Section15.vue'
-import Section16 from '@/projects/pjr/Section16.vue'
-import Section17 from '@/projects/pjr/Section17.vue'
-import Section18 from '@/projects/pjr/Section18.vue'
-import Section19 from '@/projects/pjr/Section19.vue'
+// import Section11 from '@/projects/pjr/Section11.vue'
+// import Section12 from '@/projects/pjr/Section12.vue'
+// import Section13 from '@/projects/pjr/Section13.vue'
+// import Section14 from '@/projects/pjr/Section14.vue'
+// import Section15 from '@/projects/pjr/Section15.vue'
+// import Section16 from '@/projects/pjr/Section16.vue'
+// import Section17 from '@/projects/pjr/Section17.vue'
+// import Section18 from '@/projects/pjr/Section18.vue'
+// import Section19 from '@/projects/pjr/Section19.vue'
 // import Section9 from '@/projects/jcs/Section9.vue'
 // import Section10 from '@/projects/jcs/Section10.vue'
 
@@ -175,15 +175,15 @@ export default {
     Section8,
     Section9,
     Section10,
-    Section11,
-    Section12,
-    Section13,
-    Section14,
-    Section15,
-    Section16,
-    Section17,
-    Section18,
-    Section19,
+    // Section11,
+    // Section12,
+    // Section13,
+    // Section14,
+    // Section15,
+    // Section16,
+    // Section17,
+    // Section18,
+    // Section19,
     // Section8,
     // Section9,
     // Section10,

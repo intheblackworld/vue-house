@@ -1,30 +1,93 @@
 <template>
   <div class="section4">
-    <h3 class="desc" v-if="isPC" data-aos="fade-up" data-aos-delay="400">
-      半輩子縱橫江山，滿胸懷超然際遇，繫念中山北路樹海第一排的窗，台北歷史最悠遠的林蔭大道，心上永恆富裕原鄉。樟楓漫天綠浪開道，企業總部、縉紳豪邸蓬勃盛放。繁華燈火在腳下波瀾，四面群山濃淡疊翠，頂峰之上，照看歲月寧靜壯遊。
-    </h3>
     <div class="title" v-if="isPC" data-aos="fade-up" data-aos-delay="200">
-      樹海人文長鏡頭<br />典藏一世紀開闊風景
+      建築、自然永恆詩境 鐫刻城市美學指標
     </div>
-    <div class="subtitle" v-if="isPC" data-aos="fade-up" data-aos-delay="400">
-      百年林蔭
-    </div>
-
-    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="800">
-      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+    <h3 class="desc" v-if="isPC" data-aos="fade-up" data-aos-delay="400">
+      建築不只精密科學計算，而是有溫度、有情感、有故事的生活聚場，從結構形體昇華至精神領域。璞真願意花更多時間探索生活，量身訂製創新空間提案，以綠建築、智慧建築設計導入低碳思維。當建築擁有獨一無二的性格，自然吸引居住品味相契的人們，回歸生活最樸實且真摯的樣貌。
+    </h3>
+    <div class="swipe1 absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="400">
+      <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(1)" v-touch:swipe.right="() => addMultiIndex(1)" @click="addMultiIndex(1)">
         <transition-group name="swipe-fade" mode="out-in">
-          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-            <img :src="slide.img" alt="">
-            <div class="slide-name absolute" v-html="slide.name"></div>
+          <div v-for="(slide, i) in slideList1" v-show="slideIndex1 === i" :key="slide.img" :class="`swipe-item absolute`">
+            <picture>
+              <source :srcset="slide.webp" type="image/webp" />
+              <source :srcset="slide.img" type="image/jpeg" />
+              <img :src="slide.img" :alt="info.caseName" class="">
+            </picture>
+            <h3 class="slide-name absolute" v-html="slide.name"></h3>
           </div>
         </transition-group>
-        <div class="pagination absolute flex-ac" v-if="isPC">
-          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-        </div>
+        <!-- <div class="pagination absolute flex-ac" v-if="isPC">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList1" :key="slide.img + '-dot'" @click="goToMultiIndex(index, 1)"><span :class="`${slideIndex1 === index ? 'active' : ''}`"></span></div>
+        </div> -->
       </div>
-      <div class="swipe-btns absolute flex-ac flex-jb">
-        <div class="prev-btn" @click="decIndex"></div>
-        <div class="next-btn" @click="addIndex"></div>
+      <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+        <div class="prev-btn" @click="decMultiIndex(1)"></div>
+        <div class="next-btn" @click="addMultiIndex(1)"></div>
+      </div>
+    </div>
+    <div class="swipe2 absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="600">
+      <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(2)" v-touch:swipe.right="() => addMultiIndex(2)" @click="addMultiIndex(2)">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList2" v-show="slideIndex2 === i" :key="slide.img" :class="`swipe-item absolute`">
+            <picture>
+              <source :srcset="slide.webp" type="image/webp" />
+              <source :srcset="slide.img" type="image/jpeg" />
+              <img :src="slide.img" :alt="info.caseName" class="">
+            </picture>
+            <h3 class="slide-name absolute" v-html="slide.name"></h3>
+          </div>
+        </transition-group>
+        <!-- <div class="pagination absolute flex-ac" v-if="isPC">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList2" :key="slide.img + '-dot'" @click="goToMultiIndex(index, 2)"><span :class="`${slideIndex2 === index ? 'active' : ''}`"></span></div>
+        </div> -->
+      </div>
+      <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+        <div class="prev-btn" @click="decMultiIndex(2)"></div>
+        <div class="next-btn" @click="addMultiIndex(2)"></div>
+      </div>
+    </div>
+    <div class="swipe3 absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="800">
+      <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(3)" v-touch:swipe.right="() => addMultiIndex(3)" @click="addMultiIndex(3)">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList3" v-show="slideIndex3 === i" :key="slide.img" :class="`swipe-item absolute`">
+            <picture>
+              <source :srcset="slide.webp" type="image/webp" />
+              <source :srcset="slide.img" type="image/jpeg" />
+              <img :src="slide.img" :alt="info.caseName" class="">
+            </picture>
+            <h3 class="slide-name absolute" v-html="slide.name"></h3>
+          </div>
+        </transition-group>
+        <!-- <div class="pagination absolute flex-ac" v-if="isPC">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList3" :key="slide.img + '-dot'" @click="goToMultiIndex(index, 3)"><span :class="`${slideIndex3 === index ? 'active' : ''}`"></span></div>
+        </div> -->
+      </div>
+      <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+        <div class="prev-btn" @click="decMultiIndex(3)"></div>
+        <div class="next-btn" @click="addMultiIndex(3)"></div>
+      </div>
+    </div>
+    <div class="swipe4 absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="1200">
+      <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(4)" v-touch:swipe.right="() => addMultiIndex(4)" @click="addMultiIndex(4)">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList4" v-show="slideIndex4 === i" :key="slide.img" :class="`swipe-item absolute`">
+            <picture>
+              <source :srcset="slide.webp" type="image/webp" />
+              <source :srcset="slide.img" type="image/jpeg" />
+              <img :src="slide.img" :alt="info.caseName" class="">
+            </picture>
+            <h3 class="slide-name absolute" v-html="slide.name"></h3>
+          </div>
+        </transition-group>
+        <!-- <div class="pagination absolute flex-ac" v-if="isPC">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList4" :key="slide.img + '-dot'" @click="goToMultiIndex(index, 4)"><span :class="`${slideIndex4 === index ? 'active' : ''}`"></span></div>
+        </div> -->
+      </div>
+      <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+        <div class="prev-btn" @click="decMultiIndex(4)"></div>
+        <div class="next-btn" @click="addMultiIndex(4)"></div>
       </div>
     </div>
   </div>
@@ -39,7 +102,14 @@
   background-size: cover;
   background-attachment: fixed;
   background-color: #fff;
-  border-bottom: 1px solid #999;
+
+  @include md {
+    width: 100vw;
+    height: sizem(782);
+    min-height: auto;
+    max-height: initial;
+    overflow: visible;
+  }
 }
 
 .bg-img {
@@ -55,52 +125,40 @@
 }
 
 .title {
-  @include img_l_pc(272, 339, 143);
-  font-size: size(34);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: normal;
-  text-align: left;
-  color: #267f9c;
-  white-space: nowrap;
-}
-
-.desc {
-  @include img_l_pc(464, 451, 143);
-  font-size: size(16);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.63;
-  letter-spacing: size(1.6);
-  text-align: left;
-  color: #3e3a39;
-}
-
-.subtitle {
-  @include img_l_pc(32, 100, 54);
-  font-size: size(28);
+  @include img_l_pc(605, 0, 79);
+  top: auto;
+  bottom: size(171);
+  font-size: size(35);
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1;
+  line-height: 1.14;
   letter-spacing: normal;
-  text-align: center;
-  color: #f3b2c1;
-  writing-mode: vertical-lr;
-  text-orientation: upright;
+  text-align: left;
+  color: #3e3a39;
+  white-space: nowrap;
+
+  @include md {
+    @include img_c_m(154, 604);
+  }
 }
 
-/* Swipe */
-.swipe {
-  width: size(1050);
-  height: size(700);
-  top: size(100);
-  right: size(136);
-  object-fit: cover;
-  // background: #0344;
+.desc {
+  @include img_l_pc(1278, 0, 79);
+  top: auto;
+  bottom: size(40);
+  font-size: size(21);
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.76;
+  letter-spacing: normal;
+  text-align: left;
+  color: #3e3a39;
+
+  @include md {
+    @include img_c_m(154, 604);
+  }
 }
 
 // begin
@@ -120,6 +178,43 @@
 
 .swipe-fade-leave-active {
   transition: all 1s ease;
+}
+
+/* Swipe */
+.swipe1 {
+  @include div_l_pc(450, 600, 0, 0);
+  object-fit: cover;
+
+  @include md {
+    @include div_c_pc(310, 357, 255);
+  }
+}
+
+.swipe2 {
+  @include div_l_pc(1020, 600, 0, 450);
+  object-fit: cover;
+
+  @include md {
+    @include div_c_pc(310, 357, 255);
+  }
+}
+
+.swipe3 {
+  @include div_l_pc(450, 600, 0, 1470);
+  object-fit: cover;
+
+  @include md {
+    @include div_c_pc(310, 357, 255);
+  }
+}
+
+.swipe4 {
+  @include div_l_pc(450, 300, 600, 1470);
+  object-fit: cover;
+
+  @include md {
+    @include div_c_pc(310, 357, 255);
+  }
 }
 
 // begin
@@ -145,6 +240,7 @@
 .swipe-wrap {
   width: 100%;
   height: 100%;
+  cursor: pointer;
   overflow: hidden;
 }
 
@@ -161,10 +257,10 @@
 
   .slide-name {
     right: 2em;
-    bottom: 1.2em;
+    top: 0.6em;
     color: #fff;
-    font-size: size(18);
-    font-weight: bold;
+    font-size: size(16);
+    font-weight: 300;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.6;
@@ -616,7 +712,7 @@ export default {
   name: 'section4',
 
   mixins: [slider],
-  props: ['viewIndex'],
+  // props: ['viewIndex'],
 
   data() {
     return {
@@ -625,21 +721,125 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
-      slideList: [
+      slideIndex1: 0,
+      slideIndex2: 0,
+      slideIndex3: 0,
+      slideIndex4: 0,
+      slideList1: [
         {
-          img: require('./s4/1.jpg'),
-          name: '中山北路實景',
+          img: require('./s4/l/2008Millord.jpg'),
+          name: '2008 Millord',
+          webp: require('./webp/s4/2008Millord.webp'),
           // desc: '270度翠綠簇擁<br />開窗就享無垠綠景',
         },
         {
-          img: require('./s4/2.jpg'),
-          name: '中山北路實景',
-          // desc: '大福路大興路環抱<br />地段價值更珍貴',
+          img: require('./s4/l/2010詠真3.jpg'),
+          name: '2010 詠真',
+          webp: require('./webp/s4/2010詠真3.webp'),
         },
         {
-          img: require('./s4/3.jpg'),
-          name: '中山北路實景',
-          // desc: '埔心溪緩緩河廊<br />228紀念公園樹廊',
+          img: require('./s4/l/2012璞真一一.jpg'),
+          name: '2012 璞真一一',
+          webp: require('./webp/s4/2012璞真一一.webp'),
+        },
+        {
+          img: require('./s4/l/2017璞真作.jpg'),
+          name: '2017 璞真作',
+          webp: require('./webp/s4/2017璞真作.webp'),
+        },
+        {
+          img: require('./s4/l/2019勤耕延吉.jpg'),
+          name: '2019 勤耕延吉',
+          webp: require('./webp/s4/2019勤耕延吉.webp'),
+        },
+        {
+          img: require('./s4/l/2020璞真仰睦２.jpg'),
+          name: '2020 璞真仰睦',
+          webp: require('./webp/s4/2020璞真仰睦２.webp'),
+        },
+        {
+          img: require('./s4/l/2024璞真合和.jpg'),
+          name: '2024 璞真合和',
+          webp: require('./webp/s4/2024璞真合和.webp'),
+        },
+        {
+          img: require('./s4/l/2024璞真永吉0.jpg'),
+          name: '2024 璞真永吉',
+          webp: require('./webp/s4/2024璞真永吉0.webp'),
+        },
+      ],
+      slideList2: [
+        {
+          img: require('./s4/c/2015 松山 璞真慶城.jpg'),
+          name: '2015 松山 璞真慶城',
+          webp: require('./webp/s4/2015 松山 璞真慶城.webp'),
+          // desc: '270度翠綠簇擁<br />開窗就享無垠綠景',
+        },
+        {
+          img: require('./s4/c/2018　內湖　勤美璞真碧湖畔.jpg'),
+          name: '2018　內湖　勤美璞真碧湖畔',
+          webp: require('./webp/s4/2018　內湖　勤美璞真碧湖畔.webp'),
+        },
+        {
+          img: require('./s4/c/2022 台中 勤美之森.jpg'),
+          name: '2022 台中 勤美之森',
+          webp: require('./webp/s4/2022 台中 勤美之森.webp'),
+        },
+        {
+          img: require('./s4/c/2024 天母 璞真荣華.jpg'),
+          name: '2024 天母 璞真荣華',
+          webp: require('./webp/s4/2024 天母 璞真荣華.webp'),
+        },
+      ],
+      slideList3: [
+        {
+          img: require('./s4/r/2005 忠孝 璞真本因坊.jpg'),
+          name: '2005 忠孝 璞真本因坊',
+          webp: require('./webp/s4/2005 忠孝 璞真本因坊.webp'),
+          // desc: '270度翠綠簇擁<br />開窗就享無垠綠景',
+        },
+        {
+          img: require('./s4/r/2007 天母 仰哲.jpg'),
+          name: '2007 天母 仰哲',
+          webp: require('./webp/s4/2007 天母 仰哲.webp'),
+        },
+        {
+          img: require('./s4/r/2008 大安 仰心.jpg'),
+          name: '2008 大安 仰心',
+          webp: require('./webp/s4/2008 大安 仰心.webp'),
+        },
+        {
+          img: require('./s4/r/2010 松山-璞真久石讓.jpg'),
+          name: '2010 松山-璞真久石讓',
+          webp: require('./webp/s4/2010 松山-璞真久石讓.webp'),
+        },
+        {
+          img: require('./s4/r/2011 大安 勤美璞真.jpg'),
+          name: '2011 大安 勤美璞真',
+          webp: require('./webp/s4/2011 大安 勤美璞真.webp'),
+        },
+      ],
+      slideList4: [
+        {
+          img: require('./s4/b/2008-台中-勤美誠品綠園道.jpg'),
+          name: '2008 台中 勤美誠品綠園道',
+          webp: require('./webp/s4/2008-台中-勤美誠品綠園道.webp'),
+          // desc: '270度翠綠簇擁<br />開窗就享無垠綠景',
+        },
+        {
+          img: require('./s4/b/2009台中勤美誠品3.jpg'),
+          name: '2009 台中 勤美誠品',
+          webp: require('./webp/s4/2009台中勤美誠品3.webp'),
+        },
+        {
+          img: require('./s4/b/2022-台中-勤美之森.jpg'),
+          name: '2022 台中 勤美之森',
+          webp: require('./webp/s4/2022-台中-勤美之森.webp'),
+        },
+        {
+          img: require('./s4/b/2023-松山-一方璞真.jpg'),
+          name: '2023 松山 一方璞真',
+          webp: require('./webp/s4/2023-松山-一方璞真.webp'),
         },
       ],
     }

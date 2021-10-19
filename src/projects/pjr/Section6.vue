@@ -1,65 +1,73 @@
 <template>
   <div class="section6">
-    <img src="./s6/0.jpg" :alt="`${info.caseName}_img`" class="img" data-aos="fade-down" data-aos-delay="600">
-    <h3 class="desc" v-if="isPC" data-aos="fade-up" data-aos-delay="400">
-      半輩子縱橫江山，滿胸懷超然際遇，繫念中山北路樹海第一排的窗，台北歷史最悠遠的林蔭大道，心上永恆富裕原鄉。樟楓漫天綠浪開道，企業總部、縉紳豪邸蓬勃盛放。繁華燈火在腳下波瀾，四面群山濃淡疊翠，頂峰之上，照看歲月寧靜壯遊。
+    <picture>
+      <source srcset="./webp/s6/1_logo.webp" type="image/webp" />
+      <source srcset="./s6/1_logo.png" type="image/jpeg" />
+      <img src="./s6/1_logo.png" alt="1" class="logo">
+    </picture>
+    <div class="label">
+      勤美集團
+    </div>
+    <div class="title">
+      亞洲第一專業鑄造集團<br />
+      職人精神 專心做好一件事
+    </div>
+
+    <h3 class="desc">
+      勤美（1532）集團成立於1972年，以「勤儉誠信，永續經營」為念，獲亞洲第一專業鑄造廠之美譽，今為台灣（勤美，股票代號TW1532）大型上市集團、大中華地區最大民營鑄造集團。近年轉型跨國控股企業，旗下擁有建設公司、大型商場、文化美學、基金會等大型事業部，追求人文美善之多角化經營。
     </h3>
-    <div class="title" v-if="isPC" data-aos="fade-up" data-aos-delay="200">
-      建築摯美生活初衷<br />讓建築好好地長<br />就像那些很紮實的大樹
+
+    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="800">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img + i" :class="`swipe-item absolute`">
+            <picture>
+              <source media="(min-width: 767px)" :srcset="slide.webp" type="image/webp" />
+              <source media="(min-width: 767px)" :srcset="slide.img" type="image/jpeg" />
+              <source media="(max-width: 767px)" :srcset="slide.webpm" type="image/webp" />
+              <source media="(max-width: 767px)" :srcset="slide.imgm" type="image/webp" />
+              <img :src="slide.img" :alt="info.caseName" class="">
+            </picture>
+            <h3 class="slide-name absolute" v-html="slide.name"></h3>
+          </div>
+        </transition-group>
+      </div>
+      <div class="swipe-btns absolute flex-ac flex-jb">
+        <div class="prev-btn" @click="decIndex"></div>
+        <div class="next-btn" @click="addIndex"></div>
+      </div>
+      <div class="slide-title" v-html="slideList[slideIndex].title"></div>
+      <div class="slide-label" v-html="slideList[slideIndex].label"></div>
+      <div class="slide-desc" v-html="slideList[slideIndex].desc"></div>
+      <picture>
+        <source :srcset="slideList[slideIndex].logo" type="image/jpeg" />
+        <source :srcset="slideList[slideIndex].logowebp" type="image/webp" />
+        <img :src="slideList[slideIndex].logo" :alt="info.caseName" class="slide-logo">
+      </picture>
     </div>
-    <div class="subtitle" v-if="isPC" data-aos="fade-up" data-aos-delay="400">
-      璞真建設
+    <div class="pagination absolute flex-ac" v-if="isPC">
+      <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot' + index" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
     </div>
-    <div class="title title2" data-aos="fade-up" data-aos-delay="600">
-      璞真建設跨界美學之道
-    </div>
-    <silent-box data-aos="fade-up" data-aos-delay="400" class="gallery flex-ac flex-jb wrap" :gallery="gallery"></silent-box>
   </div>
 </template>
-<style lang="scss">
-@import '@/assets/style/function.scss';
-.gallery {
-  .silentbox-item {
-    width: size(83);
-    height: size(83);
-    margin-top: size(26);
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-}
-</style>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .section6 {
   width: 100%;
-  height: auto;
-  min-height: size(801);
+  height: size(900);
+  min-height: size(900);
   max-height: auto;
-  //overflow: hidden;
-  // position: relative;
-  // background-image: url('./s1/01_bg.jpg');
   background-size: cover;
   background-attachment: fixed;
-  background-color: #bcdbdb;
+  background-color: #fff;
 
-  // margin: 0 0 size(400) 0;
-
-  // &:before {
-  //   content: ' ';
-  //   position: fixed;
-  //   z-index: -1;
-  //   top: 0;
-  //   right: 0;
-  //   bottom: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 100%;
-  //   background: url('./s1/bg.jpg') center 0 no-repeat;
-  //   background-size: cover;
-  // }
+  @include md {
+    width: 100vw;
+    height: sizem(782);
+    min-height: auto;
+    max-height: initial;
+    overflow: visible;
+  }
 }
 
 .bg-img {
@@ -74,176 +82,263 @@
   // opacity: 0.5;
 }
 
-.title {
-  @include img_l_pc(272, 193, 143);
-  font-size: size(34);
-  font-weight: bold;
+.logo {
+  @include img_l_pc(111, 248, 185);
+
+  @include md {
+    @include img_c_m(154, 604);
+  }
+}
+.label {
+  @include img_l_pc(373, 310, 185);
+  font-size: size(29);
+  font-weight: 600;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
+  letter-spacing: size(1.45);
+  text-align: left;
+  color: #c9a063;
+  white-space: nowrap;
+  @include md {
+  }
+}
+.title {
+  @include img_l_pc(604, 374, 185);
+  font-size: size(35);
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.14;
   letter-spacing: normal;
   text-align: left;
-  color: #267f9c;
+  color: #3e3a39;
   white-space: nowrap;
 
-  &.title2 {
-    @include img_l_pc(272, 531, 143);
+  @include md {
+    @include img_c_m(154, 604);
   }
 }
 
 .desc {
-  @include img_l_pc(464, 346, 143);
-  font-size: size(16);
+  @include img_l_pc(660, 476, 185);
+  font-size: size(21);
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.76;
+  letter-spacing: normal;
+  text-align: left;
+  color: #3e3a39;
+
+  @include md {
+    @include img_c_m(154, 604);
+  }
+}
+
+/* Swipe */
+.swipe {
+  @include div_r_pc(660, 440, 195, 185);
+  object-fit: cover;
+
+  @include md {
+    @include div_c_pc(310, 357, 255);
+  }
+}
+
+.slide-title {
+  @include img_r_pc(660, 120 - 195, 0);
+  font-size: size(34);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.63;
-  letter-spacing: size(1.6);
+  line-height: 1.18;
+  letter-spacing: normal;
   text-align: left;
   color: #3e3a39;
-}
 
-.subtitle {
-  @include img_l_pc(32, 100, 54);
-  font-size: size(28);
+  @include md {
+  }
+}
+.slide-label {
+  @include img_r_pc(660, 654 - 195, 0);
+  font-size: size(24);
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1;
-  letter-spacing: normal;
-  text-align: center;
-  color: #f3b2c1;
-  writing-mode: vertical-lr;
-  text-orientation: upright;
+  line-height: 1.2;
+  letter-spacing: size(1.2);
+  text-align: left;
+  color: #c9a063;
+  @include md {
+  }
 }
 
-.img {
-  @include img_r_pc(1050, 101, 136);
+.slide-desc {
+  @include img_r_pc(660, 708 - 195, 0);
+  font-size: size(20);
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.75;
+  letter-spacing: size(1);
+  text-align: left;
+  color: #727171;
+
+  @include md {
+  }
 }
-.gallery {
-  @include img_l_pc(403, 608 - 26, 142);
-}
-/* 螢幕尺寸標準 */
-/* 平板尺寸 */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+.slide-logo {
+  position: absolute;
+  top: size(700 - 195);
+  width: size(120);
+  right: 0;
+  @include md {
+  }
 }
 
-@media screen and (max-width: 767px) {
-  .section6 {
-    width: 100vw;
-    min-height: sizem(662);
-    max-height: sizem(662);
-    height: sizem(662);
-    // margin: 0 0 -12vw 0;
-    // background-size: auto size-m(750);
-    z-index: initial;
-    // &:before {
-    //   background-image: url('./s1/bg_m.jpg');
-    // }
+// begin
+.swipe-fade-leave-to {
+  opacity: 0;
+  z-index: 0;
+}
+// end
+.swipe-fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.swipe-fade-enter-active {
+  transition: all 1s ease;
+}
+
+.swipe-fade-leave-active {
+  transition: all 1s ease;
+}
+
+.swipe-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.swipe-item {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
-  .title {
-    @include img_l_m(178, 30, 30);
-    font-size: sizem(20);
-    font-weight: bold;
+  .slide-name {
+    right: 1.2em;
+    bottom: 0.6em;
+    color: #fff;
+    font-size: size(16);
+    font-weight: 300;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.5;
-    letter-spacing: sizem(2.6);
-    text-align: center;
-    color: #000000;
-    white-space: nowrap;
-  }
-
-  .subtitle {
-    @include img_l_m(223, 60, 30);
-    font-size: sizem(20);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: sizem(2.6);
+    line-height: 1.6;
+    letter-spacing: 0.03em;
     text-align: left;
-    color: #cc8b00;
-    white-space: nowrap;
+    text-shadow: 0 0.3em 1em #000;
   }
 
-  .desc {
-    font-size: sizem(16);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.86;
-    letter-spacing: sizem(0.7);
-    text-align: left;
-    color: #4d4d4d;
-    white-space: normal;
-  }
+  // &:nth-child(1) {
+  //   z-index: 1;
+  //   // opacity: 1;
+  // }
 
-  .desc1 {
-    @include img_l_m(315, 140, 30);
-  }
+  // &.base {
+  //   z-index: 1;
+  //   opacity: 1;
+  // }
+  // &.active {
+  //   z-index: 2;
+  //   // opacity: 1;
+  // }
+}
 
-  .desc2 {
-    @include img_l_m(315, 337, 30);
-  }
-  .style1 {
-    @include img_r_m(158, 385, 0);
-  }
+.pagination {
+  width: auto;
+  bottom: size(238);
+  left: auto;
+  right: size(186);
+  margin: 0 auto;
+  justify-content: center;
+}
 
-  .style2 {
-    display: none;
-  }
+.pagination-dot {
+  padding: 5px;
+  margin: 0 0px;
+  cursor: pointer;
+  z-index: 4;
 
-  .img1 {
-    @include img_r_m(843, 296, 0);
-    display: none;
-  }
-  .img2 {
-    @include img_r_m(843, 769, 0);
-    display: none;
-  }
+  span {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 0px;
+    box-shadow: 0 0 0 1px #c9a063;
+    position: relative;
+    background-color: transparent;
+    transition: all 0.5s;
 
-  .t_style {
-    @include img_l_m(578, 43, 0);
-    animation: strech 5s ease-in-out alternate infinite;
-  }
-  .bird {
-    @include img_r_m(117, 0, 0);
-  }
-  .leaf {
-    @include img_l_m(88, 350, -20);
-    z-index: 10;
-  }
-
-  @keyframes strech {
-    to {
-      transform: skewX(10deg);
+    &::before {
+      content: '';
+      width: 60%;
+      height: 60%;
+      display: block;
+      background: transparent;
+      border-radius: 20px;
+      opacity: 1;
+      position: absolute;
+      top: 20%;
+      // transform: translateY(-50%);
+      left: 20%;
+      transition: all 0.3s;
+      transform-origin: center;
+      transform: scale(0);
+    }
+    &.active {
+      box-shadow: none;
+      &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: #c9a063;
+        border-radius: 0px;
+        opacity: 1;
+        position: absolute;
+        top: 0%;
+        box-shadow: 0 0 0 1px #c9a063;
+        // transform: translateY(-50%);
+        left: 0%;
+        transform: scale(1);
+      }
     }
   }
+}
 
-  .cloud-bg {
-    .cloud {
-      animation: cloud 5s ease-in-out alternate infinite;
-    }
-
-    .cloud1 {
-      @include img_r_m(745, 80, -150);
-      top: auto;
-      bottom: size(30);
-      transform: translateX(-10%);
-      display: none;
-    }
-  }
-
+.swipe-btns {
+  width: 100%;
+  height: 100%;
+  padding: 0 0;
+  z-index: 3;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
   .prev-btn,
   .next-btn {
+    position: relative;
     height: 100%;
-    width: 10em;
+    width: 4em;
     font-size: size(20);
-    right: 1em;
-    top: -5%;
-    margin: 0;
     cursor: pointer;
     &::before {
       content: '';
@@ -252,54 +347,213 @@
       height: 100%;
       top: 0;
       left: 0;
-      transform: translateX(200%);
-      // background-color: #df6c0088;
+      transform: translateX(100%);
+      background-color: #0004;
       transition: all 0.3s;
     }
     &::after {
       content: '';
-      width: 5em;
-      height: 5em;
+      width: 2em;
+      height: 2em;
       position: absolute;
       top: calc(50% - 0.5em);
       left: calc(50% - 0.75em);
       border: solid #fff;
-      border-width: 0.1em 0.1em 0 0;
+      border-width: 0.15em 0.15em 0 0;
       transform: rotate(45deg) translate(-10%, 10%);
     }
-    &:hover:before {
-      transform: translateX(0%);
-    }
+    // &:hover:before {
+    //   transform: translateX(0%);
+    // }
     &:hover:after {
       animation: btn 0.5s ease-in-out infinite alternate;
     }
   }
   .prev-btn {
     transform: scaleX(-1);
-    right: auto;
-    left: 1em;
   }
-  @keyframes btn {
+}
+@keyframes btn {
+  to {
+    transform: rotate(45deg) translate(10%, -10%);
+  }
+}
+
+/* 螢幕尺寸標準 */
+/* 平板尺寸 */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+}
+
+@media screen and (max-width: 767px) {
+  .section6 {
+    width: 100vw;
+    height: sizem(782);
+    min-height: auto;
+    max-height: initial;
+    // background-image: url('./all/section_bg.jpg');
+    // background-attachment: scroll;
+    // background-size: 100% 100%;
+    // background-position: 0 0;
+    // background-attachment: fixed;
+    overflow: visible;
+  }
+  .grass {
+    @include img_r_m(173, 0, 0);
+    top: auto;
+    bottom: sizem(-80);
+    transform-origin: bottom;
+    animation: grass 4s ease-in-out alternate infinite;
+  }
+
+  @keyframes grass {
     to {
-      transform: rotate(45deg) translate(10%, -10%);
+      transform: skewX(3deg);
     }
   }
 
-  .swiper-container {
-    @include img_c_m(315, 382);
-    height: sizem(217);
-    // overflow: visible;
+  // begin
+  .trans-leave-to {
+    opacity: 0;
+    z-index: 0;
+  }
+  // end
+  .trans-enter {
+    opacity: 0;
+    z-index: 1;
   }
 
-  .item {
-    p {
-      font-size: sizem(12);
-    }
+  .trans-enter-active {
+    transition: all 1.8s ease;
   }
-  .item-img {
-    width: 90%;
-    margin: 0 auto;
+
+  .trans-leave-active {
+    transition: all 1.8s cubic-bezier(1, 0.5, 0.8, 1);
   }
+
+  .line {
+    @include div_l_m(7, 177, 39, 33);
+    background-color: #40220f;
+  }
+  .label {
+    @include img_l_m(116, 39, 55);
+    font-size: sizem(17);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.53;
+    letter-spacing: sizem(2.72);
+    text-align: left;
+    color: #40220f;
+    color: #40220f;
+    white-space: nowrap;
+    z-index: 2;
+  }
+  .title {
+    @include img_l_m(250, 69, 55);
+    font-size: sizem(25);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-align: left;
+    color: #40220f;
+    white-space: nowrap;
+    z-index: 2;
+  }
+
+  .subtitle {
+    @include img_l_m(300, 116, 55);
+    font-size: sizem(16);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.63;
+    letter-spacing: sizem(0.96);
+    text-align: left;
+    color: #40220f;
+    white-space: normal;
+    z-index: 3;
+  }
+
+  .work-title {
+    @include img_l_m(255, 626, 20);
+    top: auto;
+    bottom: sizem(123);
+    font-size: sizem(22);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.98;
+    letter-spacing: sizem(1.32);
+    text-align: left;
+    color: #40220f;
+    white-space: nowrap;
+  }
+  .work-desc {
+    @include img_l_m(170, 301, 33);
+    top: auto;
+    bottom: sizem(40);
+    font-size: sizem(15);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.7;
+    letter-spacing: sizem(0.9);
+    text-align: left;
+    color: #40220f;
+    white-space: normal;
+  }
+
+  /* Swipe */
+  .swipe {
+    width: sizem(310);
+    height: sizem(357);
+    min-height: auto;
+    top: sizem(255);
+    bottom: auto;
+    left: sizem(33);
+    object-fit: cover;
+  }
+
+  // begin
+  .swipe-fade-leave-to {
+    opacity: 0;
+    z-index: 0;
+  }
+  // end
+  .swipe-fade-enter {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .swipe-fade-enter-active {
+    transition: all 0.5s ease;
+  }
+
+  .swipe-fade-leave-active {
+    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  // begin
+  // .swipe-left-leave-to {
+  //   margin-left: -100vw;
+  //   z-index: 0;
+  // }
+  // // end
+  // .swipe-left-enter {
+  //   opacity: 0.5;
+  //   margin-left: 0;
+  //   z-index: 1;
+  // }
+
+  // .swipe-left-enter-active {
+  //   transition: all 0.5s ease;
+  // }
+
+  // .swipe-left-leave-active {
+  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  // }
 
   .swipe-wrap {
     width: 100%;
@@ -340,22 +594,81 @@
     }
   }
 
-  .item-img {
-    width: 100%;
-    height: sizem(187);
-    object-fit: cover;
+  .pagination {
+    width: auto;
+    bottom: size(91);
+    left: 0;
+    right: 0;
     margin: 0 auto;
+    justify-content: center;
   }
 
-  .swiper-pagination {
-    transform: none;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: auto;
-    bottom: 0%;
-    left: sizem(0 / 2);
+  .pagination-dot {
+    padding: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    z-index: 4;
+
+    span {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 0 1px #fff;
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.01);
+      transition: all 0.5s;
+
+      &::before {
+        content: '';
+        width: 60%;
+        height: 60%;
+        display: block;
+        background: #004ea2;
+        border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 20%;
+        // transform: translateY(-50%);
+        left: 20%;
+        transition: all 0.3s;
+        transform-origin: center;
+        transform: scale(0);
+      }
+      &.active {
+        &::before {
+          content: '';
+          width: 100%;
+          height: 100%;
+          display: block;
+          background: #004ea2;
+          border-radius: 20px;
+          opacity: 1;
+          position: absolute;
+          top: 0%;
+          // transform: translateY(-50%);
+          left: 0%;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  .swipe-btns {
+    width: 116%;
+    left: -8%;
+    .prev-btn,
+    .next-btn {
+      font-size: sizem(15);
+      &::before {
+        background-color: #cc5b4e00;
+      }
+      &::after {
+        border-color: #fff;
+        border-width: 0.15em 0.15em 0 0;
+        animation: btn 0.5s ease-in-out infinite alternate;
+      }
+    }
   }
 }
 </style>
@@ -363,9 +676,13 @@
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
 import info from '@/info'
+import slider from '@/mixins/slider.js'
 
 export default {
   name: 'section6',
+
+  mixins: [slider],
+  props: ['viewIndex'],
 
   data() {
     return {
@@ -373,60 +690,107 @@ export default {
       isPC,
       isMobile,
       isTablet,
-      gallery: [
+      isDialog: false,
+      slideList: [
         {
-          src: require('./s6/01-2009台中勤美誠品.jpg'),
-          description: 'Star Night Sky Ravine by Mark Basarab, from Unsplash.',
-          alt: 'Blue starry night photo.',
-          thumbnailWidth: '20vw',
+          img: require('./s6/1情境示意圖.jpg'),
+          webp: require('./webp/s6/1情境示意圖.webp'),
+          logo: require('./s6/1_logo.png'),
+          logowebp: require('./webp/s6/1_logo.webp'),
+          name: '情境示意圖',
+          title: '翻轉傳統產業 開啟綠色生產新頁',
+          label: '金屬成型事業',
+          desc: '勤美新竹、勤美楊梅、化新精密、<br />天津勤威、蘇州勤堡、武漢勤美達',
         },
         {
-          src: require('./s6/02-購物-金典綠園道.jpg'),
-          description: 'Corno Nero, Italy by Luca Zanon, from Unsplash.',
-          alt: 'Landscape photo of mountain with fog.',
-          thumbnailWidth: '20vw',
+          img: require('./s6/2璞真建設作品 勤美璞真 碧湖畔.jpg'),
+          webp: require('./webp/s6/2璞真建設作品 勤美璞真 碧湖畔.webp'),
+          logo: require('./s6/2_logo.png'),
+          logowebp: require('./webp/s6/2_logo.webp'),
+          name: '璞真建設作品 勤美璞真 碧湖畔',
+          title: '翻轉傳統產業 開啟綠色生產新頁',
+          label: '金屬成型事業',
+          desc: '勤美新竹、勤美楊梅、化新精密、<br />天津勤威、蘇州勤堡、武漢勤美達',
         },
         {
-          src: require('./s6/03-2011勤美璞真.jpg'),
-          description:
-            'Remote forest path in Gävle, Sweden by Geran de Klerk, from Unsplash.',
-          alt: 'Low angle photo of pine trees.',
-          thumbnailWidth: '20vw',
+          img: require('./s6/3全國大飯店.jpg'),
+          webp: require('./webp/s6/3全國大飯店.webp'),
+          logo: require('./s6/3_logo.png'),
+          logowebp: require('./webp/s6/3_logo.webp'),
+          name: '全國大飯店',
+          title: '翻轉傳統產業 開啟綠色生產新頁',
+          label: '金屬成型事業',
+          desc: '勤美新竹、勤美楊梅、化新精密、<br />天津勤威、蘇州勤堡、武漢勤美達',
         },
         {
-          src: require('./s6/04-健身房情境示意圖.jpg'),
-          description:
-            'Remote forest path in Gävle, Sweden by Geran de Klerk, from Unsplash.',
-          alt: 'Low angle photo of pine trees.',
-          thumbnailWidth: '20vw',
+          img: require('./s6/4日華金典國際酒店.jpg'),
+          webp: require('./webp/s6/4日華金典國際酒店.webp'),
+          logo: require('./s6/4_logo.png'),
+          logowebp: require('./webp/s6/4_logo.webp'),
+          name: '日華金典國際酒店',
+          title: '翻轉傳統產業 開啟綠色生產新頁',
+          label: '金屬成型事業',
+          desc: '勤美新竹、勤美楊梅、化新精密、<br />天津勤威、蘇州勤堡、武漢勤美達',
         },
         {
-          src: require('./s6/05-飯店情境示意圖.jpg'),
-          description:
-            'Remote forest path in Gävle, Sweden by Geran de Klerk, from Unsplash.',
-          alt: 'Low angle photo of pine trees.',
-          thumbnailWidth: '20vw',
+          img: require('./s6/5勤美學山那村.jpg'),
+          webp: require('./webp/s6/5勤美學山那村.webp'),
+          logo: require('./s6/5_logo.png'),
+          logowebp: require('./webp/s6/5_logo.webp'),
+          name: '勤美學山那村',
+          title: '翻轉傳統產業 開啟綠色生產新頁',
+          label: '金屬成型事業',
+          desc: '勤美新竹、勤美楊梅、化新精密、<br />天津勤威、蘇州勤堡、武漢勤美達',
         },
         {
-          src: require('./s6/06-購物-金典綠園道-(14).jpg'),
-          description:
-            'Remote forest path in Gävle, Sweden by Geran de Klerk, from Unsplash.',
-          alt: 'Low angle photo of pine trees.',
-          thumbnailWidth: '20vw',
+          img: require('./s6/6勤美誠品綠園道.jpg'),
+          webp: require('./webp/s6/6勤美誠品綠園道.webp'),
+          logo: require('./s6/6_logo.png'),
+          logowebp: require('./webp/s6/6_logo.webp'),
+          name: '勤美誠品綠園道',
+          title: '翻轉傳統產業 開啟綠色生產新頁',
+          label: '金屬成型事業',
+          desc: '勤美新竹、勤美楊梅、化新精密、<br />天津勤威、蘇州勤堡、武漢勤美達',
         },
         {
-          src: require('./s6/07-勤美術館2.jpg'),
-          description:
-            'Remote forest path in Gävle, Sweden by Geran de Klerk, from Unsplash.',
-          alt: 'Low angle photo of pine trees.',
-          thumbnailWidth: '20vw',
+          img: require('./s6/7金典綠園道商場.jpg'),
+          webp: require('./webp/s6/7金典綠園道商場.webp'),
+          logo: require('./s6/7_logo.png'),
+          logowebp: require('./webp/s6/7_logo.webp'),
+          name: '金典綠園道商場',
+          title: '翻轉傳統產業 開啟綠色生產新頁',
+          label: '金屬成型事業',
+          desc: '勤美新竹、勤美楊梅、化新精密、<br />天津勤威、蘇州勤堡、武漢勤美達',
         },
         {
-          src: require('./s6/08-勤美術館.jpg'),
-          description:
-            'Remote forest path in Gävle, Sweden by Geran de Klerk, from Unsplash.',
-          alt: 'Low angle photo of pine trees.',
-          thumbnailWidth: '20vw',
+          img: require('./s6/8台中綠園道展覽.jpg'),
+          webp: require('./webp/s6/8台中綠園道展覽.webp'),
+          logo: require('./s6/8_logo.png'),
+          logowebp: require('./webp/s6/8_logo.webp'),
+          name: '台中綠園道展覽',
+          title: '翻轉傳統產業 開啟綠色生產新頁',
+          label: '金屬成型事業',
+          desc: '勤美新竹、勤美楊梅、化新精密、<br />天津勤威、蘇州勤堡、武漢勤美達',
+        },
+        {
+          img: require('./s6/9台中勤美術館.jpg'),
+          webp: require('./webp/s6/9台中勤美術館.webp'),
+          logo: require('./s6/9_logo.png'),
+          logowebp: require('./webp/s6/9_logo.webp'),
+          name: '台中勤美術館',
+          title: '翻轉傳統產業 開啟綠色生產新頁',
+          label: '金屬成型事業',
+          desc: '勤美新竹、勤美楊梅、化新精密、<br />天津勤威、蘇州勤堡、武漢勤美達',
+        },
+        {
+          img: require('./s6/10情境示意圖.jpg'),
+          webp: require('./webp/s6/10情境示意圖.webp'),
+          logo: require('./s6/10_logo.png'),
+          logowebp: require('./webp/s6/10_logo.webp'),
+          name: '情境示意圖',
+          title: '翻轉傳統產業 開啟綠色生產新頁',
+          label: '金屬成型事業',
+          desc: '勤美新竹、勤美楊梅、化新精密、<br />天津勤威、蘇州勤堡、武漢勤美達',
         },
       ],
     }
@@ -434,14 +798,19 @@ export default {
 
   methods: {},
 
-  mounted() {
-    // setTimeout(() => {
-    //   this.blockIndex = 1
-    // }, 6000)
-  },
-
   created() {},
 
+  mounted() {},
+
   computed: {},
+
+  watch: {
+    // viewIndex() {
+    //   if (this.viewIndex === 5) {
+    //     this.slideIndex = 0
+    //     console.log(this.slideIndex, 'slideIndex')
+    //   }
+    // },
+  },
 }
 </script>

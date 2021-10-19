@@ -6,87 +6,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <?php include('head.php'); ?>
     <link rel="icon" href="<%= BASE_URL %>favicon.png" />
-
-    <script>
-      (function(i, s, o, g, r, a, m) {
-        i["GoogleAnalyticsObject"] = r;
-        (i[r] =
-          i[r] ||
-          function() {
-            (i[r].q = i[r].q || []).push(arguments);
-          }),
-          (i[r].l = 1 * new Date());
-        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m);
-      })(
-        window,
-        document,
-        "script",
-        "//www.google-analytics.com/analytics.js",
-        "ga"
-      );
-      ga("create", "UA-17198937-1", "auto");
-      ga("send", "pageview");
-    </script>
-    <script>
-      (function(w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({
-          "gtm.start": new Date().getTime(),
-          event: "gtm.js",
-        });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-5SGDFVQ");
-    </script>
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-173897133-50"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "UA-173897133-50");
-    </script>
-    <script>
-      (function(w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-T6F7BQ9");
-    </script>
   </head>
   <body>
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SGDFVQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T6F7BQ9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <noscript>
-      <strong
-        >We're sorry but vue-house doesn't work properly without JavaScript
-        enabled. Please enable it to continue.</strong
-      >
-    </noscript>
     <div id="app"></div>
     <div id="fb-root"></div>
-    <script
-      async
-      defer
-      crossorigin="anonymous"
-      src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.2&appId=542185515968935&autoLogAppEvents=1"
-    ></script>
-    <link
+    <!-- <link
       rel="stylesheet"
       type="text/css"
       href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
@@ -95,7 +19,7 @@
       src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit"
       async
       defer
-    ></script>
+    ></script> -->
 
     <!-- built files will be auto injected -->
   </body>

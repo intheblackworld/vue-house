@@ -2906,8 +2906,8 @@ body {
   font-size: 1.25rem;
   font-weight: bold;
   letter-spacing: 4px;
-  font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-    'Droid Sans';
+  // font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+  //   'Droid Sans';
 }
 @media (min-width: 576px) {
   .about_entitle {

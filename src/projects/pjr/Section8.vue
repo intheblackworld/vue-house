@@ -1,62 +1,207 @@
 <template>
   <div class="section8">
-    <img src="./s8/0.jpg" :alt="`${info.caseName}_img`" class="img" data-aos="fade-down" data-aos-delay="600">
-    <h3 class="desc" v-if="isPC" data-aos="fade-up" data-aos-delay="400">
-      香港巴馬丹拿集團成立於1868年，是東南亞歷史最悠久、規模最龐大、地位最崇高的建築集團，辦事處橫跨亞洲數十座重要城市。兩世紀來操刀無數富紳豪邸、跨國總部、五星酒店，持續締造劃時代建築地標。香港中環金融總部群像，定義維港天際新風貌；上海外灘萬國建築博覽，更有二分之一出自P&T手筆；台北遠企香格里拉飯店、信義計畫區多幢百坪豪邸，亦為P&T經典鉅著。
-    </h3>
-    <div class="title" v-if="isPC" data-aos="fade-up" data-aos-delay="200">
-      縱橫兩世紀<br />全球百年建築巨擘<br />改寫亞洲建築史
+    <div class="container flex flex-jb flex-ac wrap">
+      <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="400">
+        <div class="label">
+          精品商圈
+        </div>
+        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(1)" v-touch:swipe.right="() => addMultiIndex(1)" @click="addMultiIndex(1)">
+          <transition-group name="swipe-fade" mode="out-in">
+            <div v-for="(slide, i) in slideList1" v-show="slideIndex1 === i" :key="slide.img" :class="`swipe-item absolute`">
+              <picture>
+                <source :srcset="slide.webp" type="image/webp" />
+                <source :srcset="slide.img" type="image/jpeg" />
+                <img :src="slide.img" :alt="info.caseName" class="">
+              </picture>
+              <h3 class="slide-name absolute" v-html="slide.name"></h3>
+            </div>
+          </transition-group>
+        </div>
+        <div class="swipe-btns absolute flex-ac flex-jb">
+          <div class="prev-btn" @click="decMultiIndex(1)"></div>
+          <div class="next-btn" @click="addMultiIndex(1)"></div>
+        </div>
+        <div class="title">
+          中山、雙連雙捷核心 盛裝優雅日常時光
+        </div>
+        <h3 class="desc">
+          停下黑頭車，以步行雙捷運品味自在奢華，漫步中山晶華商圈，頂級SVIP您是座上賓，國際精品櫥窗競豔，全球限量才與您匹配。穿梭赤峰藏寶圖，時尚、美食與老屋風情交織，再來場鬆餅的甜蜜約會，奢逸生活不只手捧名牌精品，而是逛不膩的大道巷弄間，總有新鮮事等著你。
+        </h3>
+      </div>
+      <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="600">
+        <div class="label">
+          美食聚落
+        </div>
+        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(2)" v-touch:swipe.right="() => addMultiIndex(2)" @click="addMultiIndex(2)">
+          <transition-group name="swipe-fade" mode="out-in">
+            <div v-for="(slide, i) in slideList2" v-show="slideIndex2 === i" :key="slide.img" :class="`swipe-item absolute`">
+              <picture>
+                <source :srcset="slide.webp" type="image/webp" />
+                <source :srcset="slide.img" type="image/jpeg" />
+                <img :src="slide.img" :alt="info.caseName" class="">
+              </picture>
+              <h3 class="slide-name absolute" v-html="slide.name"></h3>
+            </div>
+          </transition-group>
+          <!-- <div class="pagination absolute flex-ac" v-if="isPC">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList2" :key="slide.img + '-dot'" @click="goToMultiIndex(index, 2)"><span :class="`${slideIndex2 === index ? 'active' : ''}`"></span></div>
+        </div> -->
+        </div>
+        <div class="swipe-btns absolute flex-ac flex-jb">
+          <div class="prev-btn" @click="decMultiIndex(2)"></div>
+          <div class="next-btn" @click="addMultiIndex(2)"></div>
+        </div>
+        <div class="title">
+          雙連、寧夏生活質蘊 難忘市井好滋味
+        </div>
+        <h3 class="desc">
+          台北最有滋有味的日常，優雅品嚐米其林餐廳，拐彎是道地庶民小吃，一甲子圓仔湯、快炒沙茶牛肉，走過百年風味依舊；寧夏夜市鮮香豬肝湯和肥美蚵仔煎令人垂涎，小吃攤肩並肩，蝦仁蛋包湯、知高飯，置身台北上河圖。
+        </h3>
+      </div>
+      <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="800">
+        <div class="label">
+          文化大道
+        </div>
+        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(3)" v-touch:swipe.right="() => addMultiIndex(3)" @click="addMultiIndex(3)">
+          <transition-group name="swipe-fade" mode="out-in">
+            <div v-for="(slide, i) in slideList3" v-show="slideIndex3 === i" :key="slide.img" :class="`swipe-item absolute`">
+              <picture>
+                <source :srcset="slide.webp" type="image/webp" />
+                <source :srcset="slide.img" type="image/jpeg" />
+                <img :src="slide.img" :alt="info.caseName" class="">
+              </picture>
+              <h3 class="slide-name absolute" v-html="slide.name"></h3>
+            </div>
+          </transition-group>
+          <!-- <div class="pagination absolute flex-ac" v-if="isPC">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList3" :key="slide.img + '-dot'" @click="goToMultiIndex(index, 3)"><span :class="`${slideIndex3 === index ? 'active' : ''}`"></span></div>
+        </div> -->
+        </div>
+        <div class="swipe-btns absolute flex-ac flex-jb">
+          <div class="prev-btn" @click="decMultiIndex(3)"></div>
+          <div class="next-btn" @click="addMultiIndex(3)"></div>
+        </div>
+        <div class="title">
+          百年古蹟藝術聚落 豐釀人文胸豁
+        </div>
+        <h3 class="desc">
+          關上中山大道簇擁的歡騰，尋咖啡香拜訪古蹟藝術聚落，當代藝術館、台北光點、蔡瑞月舞蹈社、台北美術館，沉浸國內外特展、獨家藝術電影，相遇玻璃屋裡狂舞的青春，百年建築與當代藝術厚植底蘊，探不盡的人文靈光。
+        </h3>
+      </div>
+      <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="1200">
+        <div class="label">
+          金融總部
+        </div>
+        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(4)" v-touch:swipe.right="() => addMultiIndex(4)" @click="addMultiIndex(4)">
+          <transition-group name="swipe-fade" mode="out-in">
+            <div v-for="(slide, i) in slideList4" v-show="slideIndex4 === i" :key="slide.img" :class="`swipe-item absolute`">
+              <picture>
+                <source :srcset="slide.webp" type="image/webp" />
+                <source :srcset="slide.img" type="image/jpeg" />
+                <img :src="slide.img" :alt="info.caseName" class="">
+              </picture>
+              <h3 class="slide-name absolute" v-html="slide.name"></h3>
+            </div>
+          </transition-group>
+          <!-- <div class="pagination absolute flex-ac" v-if="isPC">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList4" :key="slide.img + '-dot'" @click="goToMultiIndex(index, 4)"><span :class="`${slideIndex4 === index ? 'active' : ''}`"></span></div>
+        </div> -->
+        </div>
+        <div class="swipe-btns absolute flex-ac flex-jb">
+          <div class="prev-btn" @click="decMultiIndex(4)"></div>
+          <div class="next-btn" @click="addMultiIndex(4)"></div>
+        </div>
+        <div class="title">
+          上海、陽信雙金融總部 第一大道再鑲榮耀
+        </div>
+        <h3 class="desc">
+          大時代風華續行，新榮景蓄勢勃發，上海商銀、陽信銀行總部改建如火如荼，落址中山、民權十字金脈，國賓飯店改建案拍板、國產署旗下危老改建案等，金融特區地位鞏固，再添榮耀前景。
+        </h3>
+      </div>
+      <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="1200">
+        <div class="label">
+          五星飯店聚落
+        </div>
+        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(5)" v-touch:swipe.right="() => addMultiIndex(5)" @click="addMultiIndex(5)">
+          <transition-group name="swipe-fade" mode="out-in">
+            <div v-for="(slide, i) in slideList5" v-show="slideIndex5 === i" :key="slide.img" :class="`swipe-item absolute`">
+              <picture>
+                <source :srcset="slide.webp" type="image/webp" />
+                <source :srcset="slide.img" type="image/jpeg" />
+                <img :src="slide.img" :alt="info.caseName" class="">
+              </picture>
+              <h3 class="slide-name absolute" v-html="slide.name"></h3>
+            </div>
+          </transition-group>
+          <!-- <div class="pagination absolute flex-ac" v-if="isPC">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList5" :key="slide.img + '-dot'" @click="goToMultiIndex(index, 5)"><span :class="`${slideIndex5 === index ? 'active' : ''}`"></span></div>
+        </div> -->
+        </div>
+        <div class="swipe-btns absolute flex-ac flex-jb">
+          <div class="prev-btn" @click="decMultiIndex(5)"></div>
+          <div class="next-btn" @click="addMultiIndex(5)"></div>
+        </div>
+        <div class="title">
+          五星級飯店廊道 全球貴賓風光下榻
+        </div>
+        <h3 class="desc">
+          昂首中山北，國際五星飯店沿途磅礡坐落，全球高官政要、富商大賈匯聚的優渥，國賓、晶華、老爺、大倉久和、圓山大飯店，建築藝境、經典饗饌、極致款待，詮釋中山北路的頂級奢華。
+        </h3>
+      </div>
+      <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="1200">
+        <div class="label">
+          權掌雙國門
+        </div>
+        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(6)" v-touch:swipe.right="() => addMultiIndex(6)" @click="addMultiIndex(6)">
+          <transition-group name="swipe-fade" mode="out-in">
+            <div v-for="(slide, i) in slideList6" v-show="slideIndex6 === i" :key="slide.img" :class="`swipe-item absolute`">
+              <picture>
+                <source :srcset="slide.webp" type="image/webp" />
+                <source :srcset="slide.img" type="image/jpeg" />
+                <img :src="slide.img" :alt="info.caseName" class="">
+              </picture>
+              <h3 class="slide-name absolute" v-html="slide.name"></h3>
+            </div>
+          </transition-group>
+          <!-- <div class="pagination absolute flex-ac" v-if="isPC">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList6" :key="slide.img + '-dot'" @click="goToMultiIndex(index, 6)"><span :class="`${slideIndex6 === index ? 'active' : ''}`"></span></div>
+        </div> -->
+        </div>
+        <div class="swipe-btns absolute flex-ac flex-jb">
+          <div class="prev-btn" @click="decMultiIndex(6)"></div>
+          <div class="next-btn" @click="addMultiIndex(6)"></div>
+        </div>
+        <div class="title">
+          權掌雙國門輻輳 國際都會未來指標
+        </div>
+        <h3 class="desc">
+          起首中山北路，權掌松山國際機場、台北雙子星，佈局亞太經貿版圖，迎接世界都會新地標。「台北雙子星」600億盛大開發，擘建地上74層、56層摩天雙塔，結合五鐵，百貨、旅館、頂辦、餐廳，燃亮北市新時代。
+        </h3>
+      </div>
     </div>
-    <div class="subtitle" v-if="isPC" data-aos="fade-up" data-aos-delay="400">
-      香港巴馬丹拿集團
-    </div>
-    <silent-box data-aos="fade-up" data-aos-delay="400" class="gallery flex-ac flex-jb wrap" :gallery="gallery"></silent-box>
   </div>
 </template>
-<style lang="scss">
-@import '@/assets/style/function.scss';
-.gallery {
-  .silentbox-item {
-    width: size(83);
-    height: size(83);
-    margin-top: size(26);
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-}
-</style>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .section8 {
   width: 100%;
-  height: auto;
-  min-height: size(900);
   max-height: auto;
-  //overflow: hidden;
-  // position: relative;
-  // background-image: url('./s1/01_bg.jpg');
   background-size: cover;
   background-attachment: fixed;
   background-color: #fff;
 
-  // margin: 0 0 size(400) 0;
+  @include md {
+    width: 100vw;
+    height: sizem(782);
+    min-height: auto;
+    max-height: initial;
+    overflow: visible;
+  }
+}
 
-  // &:before {
-  //   content: ' ';
-  //   position: fixed;
-  //   z-index: -1;
-  //   top: 0;
-  //   right: 0;
-  //   bottom: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 100%;
-  //   background: url('./s1/bg.jpg') center 0 no-repeat;
-  //   background-size: cover;
-  // }
+.container {
+  width: size(1550);
+  margin: size(60) auto;
 }
 
 .bg-img {
@@ -71,176 +216,221 @@
   // opacity: 0.5;
 }
 
-.title {
-  @include img_l_pc(272, 193, 143);
-  font-size: size(34);
-  font-weight: bold;
+.label {
+  font-size: size(29);
+  font-weight: 600;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
+  letter-spacing: size(1.45);
+  text-align: left;
+  color: #c9a063;
+  white-space: nowrap;
+  margin-bottom: size(19);
+  @include md {
+  }
+}
+.title {
+  font-size: size(35);
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.14;
   letter-spacing: normal;
   text-align: left;
-  color: #267f9c;
+  color: #3e3a39;
+  margin: size(44) 0 size(21);
   white-space: nowrap;
 
-  &.title2 {
-    @include img_l_pc(272, 531, 143);
+  @include md {
+    @include img_c_m(154, 604);
   }
 }
 
 .desc {
-  @include img_l_pc(464, 346, 143);
-  font-size: size(16);
-  font-weight: bold;
+  font-size: size(21);
+  font-weight: 300;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.63;
-  letter-spacing: size(1.6);
+  line-height: 1.76;
+  letter-spacing: normal;
   text-align: left;
   color: #3e3a39;
+  margin-bottom: size(130);
+
+  @include md {
+    @include img_c_m(154, 604);
+  }
 }
 
-.subtitle {
-  @include img_l_pc(32, 100, 54);
-  font-size: size(28);
-  font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1;
-  letter-spacing: normal;
-  text-align: center;
-  color: #f3b2c1;
-  writing-mode: vertical-lr;
-  text-orientation: upright;
+// begin
+.swipe-fade-leave-to {
+  opacity: 0;
+  z-index: 0;
+}
+// end
+.swipe-fade-enter {
+  opacity: 0;
+  z-index: 1;
 }
 
-.img {
-  @include img_r_pc(1050, 101, 136);
-}
-.gallery {
-  @include img_l_pc(403, 608 - 26, 142);
-}
-/* 螢幕尺寸標準 */
-/* 平板尺寸 */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+.swipe-fade-enter-active {
+  transition: all 1s ease;
 }
 
-@media screen and (max-width: 767px) {
-  .section8 {
-    width: 100vw;
-    min-height: sizem(662);
-    max-height: sizem(662);
-    height: sizem(662);
-    // margin: 0 0 -12vw 0;
-    // background-size: auto size-m(750);
-    z-index: initial;
-    // &:before {
-    //   background-image: url('./s1/bg_m.jpg');
-    // }
+.swipe-fade-leave-active {
+  transition: all 1s ease;
+}
+
+/* Swipe */
+.swipe {
+  width: size(660);
+}
+
+// begin
+// .swipe-left-leave-to {
+//   margin-left: -100vw;
+//   z-index: 0;
+// }
+// // end
+// .swipe-left-enter {
+//   opacity: 0.5;
+//   margin-left: 0;
+//   z-index: 1;
+// }
+
+// .swipe-left-enter-active {
+//   transition: all 0.5s ease;
+// }
+
+// .swipe-left-leave-active {
+//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+// }
+
+.swipe-wrap {
+  width: 100%;
+  height: size(440);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.swipe-item {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
-  .title {
-    @include img_l_m(178, 30, 30);
-    font-size: sizem(20);
-    font-weight: bold;
+  .slide-name {
+    right: 1.2em;
+    bottom: 0.6em;
+    color: #fff;
+    font-size: size(16);
+    font-weight: 300;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.5;
-    letter-spacing: sizem(2.6);
-    text-align: center;
-    color: #000000;
-    white-space: nowrap;
-  }
-
-  .subtitle {
-    @include img_l_m(223, 60, 30);
-    font-size: sizem(20);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: sizem(2.6);
+    line-height: 1.6;
+    letter-spacing: 0.03em;
     text-align: left;
-    color: #cc8b00;
-    white-space: nowrap;
+    text-shadow: 0 0.3em 1em #000;
   }
 
-  .desc {
-    font-size: sizem(16);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.86;
-    letter-spacing: sizem(0.7);
-    text-align: left;
-    color: #4d4d4d;
-    white-space: normal;
-  }
+  // &:nth-child(1) {
+  //   z-index: 1;
+  //   // opacity: 1;
+  // }
 
-  .desc1 {
-    @include img_l_m(315, 140, 30);
-  }
+  // &.base {
+  //   z-index: 1;
+  //   opacity: 1;
+  // }
+  // &.active {
+  //   z-index: 2;
+  //   // opacity: 1;
+  // }
+}
 
-  .desc2 {
-    @include img_l_m(315, 337, 30);
-  }
-  .style1 {
-    @include img_r_m(158, 385, 0);
-  }
+.pagination {
+  width: auto;
+  bottom: size(10);
+  right: auto;
+  left: size(10);
+  margin: 0 auto;
+  justify-content: center;
+}
 
-  .style2 {
-    display: none;
-  }
+.pagination-dot {
+  padding: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+  z-index: 4;
 
-  .img1 {
-    @include img_r_m(843, 296, 0);
-    display: none;
-  }
-  .img2 {
-    @include img_r_m(843, 769, 0);
-    display: none;
-  }
+  span {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 0px;
+    box-shadow: 0 0 0 1px #fff;
+    position: relative;
+    background-color: #fff;
+    transition: all 0.5s;
 
-  .t_style {
-    @include img_l_m(578, 43, 0);
-    animation: strech 5s ease-in-out alternate infinite;
-  }
-  .bird {
-    @include img_r_m(117, 0, 0);
-  }
-  .leaf {
-    @include img_l_m(88, 350, -20);
-    z-index: 10;
-  }
-
-  @keyframes strech {
-    to {
-      transform: skewX(10deg);
+    &::before {
+      content: '';
+      width: 60%;
+      height: 60%;
+      display: block;
+      background: #fff;
+      border-radius: 20px;
+      opacity: 1;
+      position: absolute;
+      top: 20%;
+      // transform: translateY(-50%);
+      left: 20%;
+      transition: all 0.3s;
+      transform-origin: center;
+      transform: scale(0);
+    }
+    &.active {
+      box-shadow: none;
+      &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: #bcdbdb;
+        border-radius: 0px;
+        opacity: 1;
+        position: absolute;
+        top: 0%;
+        box-shadow: 0 0 0 1px #bcdbdb;
+        // transform: translateY(-50%);
+        left: 0%;
+        transform: scale(1);
+      }
     }
   }
+}
 
-  .cloud-bg {
-    .cloud {
-      animation: cloud 5s ease-in-out alternate infinite;
-    }
-
-    .cloud1 {
-      @include img_r_m(745, 80, -150);
-      top: auto;
-      bottom: size(30);
-      transform: translateX(-10%);
-      display: none;
-    }
-  }
-
+.swipe-btns {
+  width: 100%;
+  height: 100%;
+  padding: 0 0;
+  z-index: 3;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
   .prev-btn,
   .next-btn {
+    position: relative;
     height: 100%;
-    width: 10em;
+    width: 2em;
     font-size: size(20);
-    right: 1em;
-    top: -5%;
-    margin: 0;
     cursor: pointer;
     &::before {
       content: '';
@@ -249,14 +439,14 @@
       height: 100%;
       top: 0;
       left: 0;
-      transform: translateX(200%);
-      // background-color: #df6c0088;
+      transform: translateX(100%);
+      background-color: #0004;
       transition: all 0.3s;
     }
     &::after {
       content: '';
-      width: 5em;
-      height: 5em;
+      width: 1em;
+      height: 1em;
       position: absolute;
       top: calc(50% - 0.5em);
       left: calc(50% - 0.75em);
@@ -273,30 +463,197 @@
   }
   .prev-btn {
     transform: scaleX(-1);
-    right: auto;
-    left: 1em;
   }
-  @keyframes btn {
+}
+@keyframes btn {
+  to {
+    transform: rotate(45deg) translate(10%, -10%);
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+}
+@media only screen and (max-width: 1280px) and (min-width: 1025px) {
+  .fullscreen {
+    height: 100vh;
+  }
+}
+
+/* 螢幕尺寸標準 */
+/* 平板尺寸 */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+}
+
+@media screen and (max-width: 767px) {
+  .section8 {
+    width: 100vw;
+    height: sizem(782);
+    min-height: auto;
+    max-height: initial;
+    // background-image: url('./all/section_bg.jpg');
+    // background-attachment: scroll;
+    // background-size: 100% 100%;
+    // background-position: 0 0;
+    // background-attachment: fixed;
+    overflow: visible;
+  }
+  .grass {
+    @include img_r_m(173, 0, 0);
+    top: auto;
+    bottom: sizem(-80);
+    transform-origin: bottom;
+    animation: grass 4s ease-in-out alternate infinite;
+  }
+
+  @keyframes grass {
     to {
-      transform: rotate(45deg) translate(10%, -10%);
+      transform: skewX(3deg);
     }
   }
 
-  .swiper-container {
-    @include img_c_m(315, 382);
-    height: sizem(217);
-    // overflow: visible;
+  // begin
+  .trans-leave-to {
+    opacity: 0;
+    z-index: 0;
+  }
+  // end
+  .trans-enter {
+    opacity: 0;
+    z-index: 1;
   }
 
-  .item {
-    p {
-      font-size: sizem(12);
-    }
+  .trans-enter-active {
+    transition: all 1.8s ease;
   }
-  .item-img {
-    width: 90%;
-    margin: 0 auto;
+
+  .trans-leave-active {
+    transition: all 1.8s cubic-bezier(1, 0.5, 0.8, 1);
   }
+
+  .line {
+    @include div_l_m(7, 177, 39, 33);
+    background-color: #40220f;
+  }
+  .label {
+    @include img_l_m(116, 39, 55);
+    font-size: sizem(17);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.53;
+    letter-spacing: sizem(2.72);
+    text-align: left;
+    color: #40220f;
+    color: #40220f;
+    white-space: nowrap;
+    z-index: 2;
+  }
+  .title {
+    @include img_l_m(250, 69, 55);
+    font-size: sizem(25);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-align: left;
+    color: #40220f;
+    white-space: nowrap;
+    z-index: 2;
+  }
+
+  .subtitle {
+    @include img_l_m(300, 116, 55);
+    font-size: sizem(16);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.63;
+    letter-spacing: sizem(0.96);
+    text-align: left;
+    color: #40220f;
+    white-space: normal;
+    z-index: 3;
+  }
+
+  .work-title {
+    @include img_l_m(255, 626, 20);
+    top: auto;
+    bottom: sizem(123);
+    font-size: sizem(22);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.98;
+    letter-spacing: sizem(1.32);
+    text-align: left;
+    color: #40220f;
+    white-space: nowrap;
+  }
+  .work-desc {
+    @include img_l_m(170, 301, 33);
+    top: auto;
+    bottom: sizem(40);
+    font-size: sizem(15);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.7;
+    letter-spacing: sizem(0.9);
+    text-align: left;
+    color: #40220f;
+    white-space: normal;
+  }
+
+  /* Swipe */
+  .swipe {
+    width: sizem(310);
+    height: sizem(357);
+    min-height: auto;
+    top: sizem(255);
+    bottom: auto;
+    left: sizem(33);
+    object-fit: cover;
+  }
+
+  // begin
+  .swipe-fade-leave-to {
+    opacity: 0;
+    z-index: 0;
+  }
+  // end
+  .swipe-fade-enter {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .swipe-fade-enter-active {
+    transition: all 0.5s ease;
+  }
+
+  .swipe-fade-leave-active {
+    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  // begin
+  // .swipe-left-leave-to {
+  //   margin-left: -100vw;
+  //   z-index: 0;
+  // }
+  // // end
+  // .swipe-left-enter {
+  //   opacity: 0.5;
+  //   margin-left: 0;
+  //   z-index: 1;
+  // }
+
+  // .swipe-left-enter-active {
+  //   transition: all 0.5s ease;
+  // }
+
+  // .swipe-left-leave-active {
+  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  // }
 
   .swipe-wrap {
     width: 100%;
@@ -337,22 +694,81 @@
     }
   }
 
-  .item-img {
-    width: 100%;
-    height: sizem(187);
-    object-fit: cover;
+  .pagination {
+    width: auto;
+    bottom: size(91);
+    left: 0;
+    right: 0;
     margin: 0 auto;
+    justify-content: center;
   }
 
-  .swiper-pagination {
-    transform: none;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: auto;
-    bottom: 0%;
-    left: sizem(0 / 2);
+  .pagination-dot {
+    padding: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    z-index: 4;
+
+    span {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 0 1px #fff;
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.01);
+      transition: all 0.5s;
+
+      &::before {
+        content: '';
+        width: 60%;
+        height: 60%;
+        display: block;
+        background: #004ea2;
+        border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 20%;
+        // transform: translateY(-50%);
+        left: 20%;
+        transition: all 0.3s;
+        transform-origin: center;
+        transform: scale(0);
+      }
+      &.active {
+        &::before {
+          content: '';
+          width: 100%;
+          height: 100%;
+          display: block;
+          background: #004ea2;
+          border-radius: 20px;
+          opacity: 1;
+          position: absolute;
+          top: 0%;
+          // transform: translateY(-50%);
+          left: 0%;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  .swipe-btns {
+    width: 116%;
+    left: -8%;
+    .prev-btn,
+    .next-btn {
+      font-size: sizem(15);
+      &::before {
+        background-color: #cc5b4e00;
+      }
+      &::after {
+        border-color: #fff;
+        border-width: 0.15em 0.15em 0 0;
+        animation: btn 0.5s ease-in-out infinite alternate;
+      }
+    }
   }
 }
 </style>
@@ -360,9 +776,13 @@
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
 import info from '@/info'
+import slider from '@/mixins/slider.js'
 
 export default {
   name: 'section8',
+
+  mixins: [slider],
+  // props: ['viewIndex'],
 
   data() {
     return {
@@ -370,60 +790,128 @@ export default {
       isPC,
       isMobile,
       isTablet,
-      gallery: [
+      isDialog: false,
+      slideIndex1: 0,
+      slideIndex2: 0,
+      slideIndex3: 0,
+      slideIndex4: 0,
+      slideIndex5: 0,
+      slideIndex6: 0,
+      slideList1: [
         {
-          src: require('./s6/01-2009台中勤美誠品.jpg'),
-          description: 'Star Night Sky Ravine by Mark Basarab, from Unsplash.',
-          alt: 'Blue starry night photo.',
-          thumbnailWidth: '20vw',
+          img: require('./s8/1-1新光三越與誠品生活南西店.jpg'),
+          name: '新光三越與誠品生活南西店',
+          webp: require('./webp/s8/1-1新光三越與誠品生活南西店.webp'),
         },
         {
-          src: require('./s6/02-購物-金典綠園道.jpg'),
-          description: 'Corno Nero, Italy by Luca Zanon, from Unsplash.',
-          alt: 'Landscape photo of mountain with fog.',
-          thumbnailWidth: '20vw',
+          img: require('./s8/1-2捷運雙連站.jpg'),
+          name: '捷運雙連站',
+          webp: require('./webp/s8/1-2捷運雙連站.webp'),
         },
         {
-          src: require('./s6/03-2011勤美璞真.jpg'),
-          description:
-            'Remote forest path in Gävle, Sweden by Geran de Klerk, from Unsplash.',
-          alt: 'Low angle photo of pine trees.',
-          thumbnailWidth: '20vw',
+          img: require('./s8/1-3捷運中山站.jpg'),
+          name: '捷運中山站',
+          webp: require('./webp/s8/1-3捷運中山站.webp'),
         },
         {
-          src: require('./s6/04-健身房情境示意圖.jpg'),
-          description:
-            'Remote forest path in Gävle, Sweden by Geran de Klerk, from Unsplash.',
-          alt: 'Low angle photo of pine trees.',
-          thumbnailWidth: '20vw',
+          img: require('./s8/1-4赤峰商圈.jpg'),
+          name: '赤峰商圈',
+          webp: require('./webp/s8/1-4赤峰商圈.webp'),
         },
         {
-          src: require('./s6/05-飯店情境示意圖.jpg'),
-          description:
-            'Remote forest path in Gävle, Sweden by Geran de Klerk, from Unsplash.',
-          alt: 'Low angle photo of pine trees.',
-          thumbnailWidth: '20vw',
+          img: require('./s8/1-5晶華商圈.jpg'),
+          name: '晶華商圈',
+          webp: require('./webp/s8/1-5晶華商圈.webp'),
+        },
+      ],
+      slideList2: [
+        {
+          img: require('./s8/2-1寧夏夜市.jpg'),
+          name: '寧夏夜市',
+          webp: require('./webp/s8/2-1寧夏夜市.webp'),
         },
         {
-          src: require('./s6/06-購物-金典綠園道-(14).jpg'),
-          description:
-            'Remote forest path in Gävle, Sweden by Geran de Klerk, from Unsplash.',
-          alt: 'Low angle photo of pine trees.',
-          thumbnailWidth: '20vw',
+          img: require('./s8/2-2雙連站商圈美食.jpg'),
+          name: '雙連站商圈美食',
+          webp: require('./webp/s8/2-2雙連站商圈美食.webp'),
         },
         {
-          src: require('./s6/07-勤美術館2.jpg'),
-          description:
-            'Remote forest path in Gävle, Sweden by Geran de Klerk, from Unsplash.',
-          alt: 'Low angle photo of pine trees.',
-          thumbnailWidth: '20vw',
+          img: require('./s8/2-3雙連站商圈美食.jpg'),
+          name: '雙連站商圈美食',
+          webp: require('./webp/s8/2-3雙連站商圈美食.webp'),
+        },
+      ],
+      slideList3: [
+        {
+          img: require('./s8/3-1台北美術館.jpg'),
+          name: '台北美術館',
+          webp: require('./webp/s8/3-1台北美術館.webp'),
         },
         {
-          src: require('./s6/08-勤美術館.jpg'),
-          description:
-            'Remote forest path in Gävle, Sweden by Geran de Klerk, from Unsplash.',
-          alt: 'Low angle photo of pine trees.',
-          thumbnailWidth: '20vw',
+          img: require('./s8/3-2台北當代藝術館.jpg'),
+          name: '台北當代藝術館',
+          webp: require('./webp/s8/3-2台北當代藝術館.webp'),
+        },
+        {
+          img: require('./s8/3-3光點台北.jpg'),
+          name: '光點台北',
+          webp: require('./webp/s8/3-3光點台北.webp'),
+        },
+        {
+          img: require('./s8/3-4蔡瑞月舞蹈社.jpg'),
+          name: '蔡瑞月舞蹈社',
+          webp: require('./webp/s8/3-4蔡瑞月舞蹈社.webp'),
+        },
+      ],
+      slideList4: [
+        {
+          img: require('./s8/4-1上海商銀總部示意圖 資料來源 上海商銀.jpg'),
+          name: '上海商銀總部示意圖 資料來源 上海商銀',
+          webp: require('./webp/s8/4-1上海商銀總部示意圖 資料來源 上海商銀.webp'),
+        },
+        {
+          img: require('./s8/4-2陽信商銀總部示意.jpg'),
+          name: '陽信商銀總部示意',
+          webp: require('./webp/s8/4-2陽信商銀總部示意.webp'),
+        },
+      ],
+      slideList5: [
+        {
+          img: require('./s8/5-1晶華酒店.jpg'),
+          name: '晶華酒店',
+          webp: require('./webp/s8/5-1晶華酒店.webp'),
+        },
+        {
+          img: require('./s8/5-2圓山大飯店.jpg'),
+          name: '圓山大飯店',
+          webp: require('./webp/s8/5-2圓山大飯店.webp'),
+        },
+        {
+          img: require('./s8/5-3大倉久和大飯店.jpg'),
+          name: '大倉久和大飯店',
+          webp: require('./webp/s8/5-3大倉久和大飯店.webp'),
+        },
+        {
+          img: require('./s8/5-4老爺酒店.jpg'),
+          name: '老爺酒店',
+          webp: require('./webp/s8/5-4老爺酒店.webp'),
+        },
+        {
+          img: require('./s8/5-5國賓大飯店.jpg'),
+          name: '國賓大飯店',
+          webp: require('./webp/s8/5-5國賓大飯店.webp'),
+        },
+      ],
+      slideList6: [
+        {
+          img: require('./s8/6-1台北雙子星示意圖.jpg'),
+          name: '台北雙子星示意圖',
+          webp: require('./webp/s8/6-1台北雙子星示意圖.webp'),
+        },
+        {
+          img: require('./s8/6-2松山機場.jpg'),
+          name: '松山機場',
+          webp: require('./webp/s8/6-2松山機場.webp'),
         },
       ],
     }
@@ -431,14 +919,19 @@ export default {
 
   methods: {},
 
-  mounted() {
-    // setTimeout(() => {
-    //   this.blockIndex = 1
-    // }, 6000)
-  },
-
   created() {},
 
+  mounted() {},
+
   computed: {},
+
+  watch: {
+    // viewIndex() {
+    //   if (this.viewIndex === 5) {
+    //     this.slideIndex = 0
+    //     console.log(this.slideIndex, 'slideIndex')
+    //   }
+    // },
+  },
 }
 </script>

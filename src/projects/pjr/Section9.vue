@@ -1,34 +1,70 @@
 <template>
-  <div class="section4">
+  <div class="section6">
+    <div class="label">
+      P&T GROUP香港巴馬丹拿集團
+    </div>
+    <picture>
+      <source srcset="./webp/s9/m.webp" type="image/webp" />
+      <source srcset="./s9/m.jpg" type="image/jpeg" />
+      <img src="./s9/m.jpg" alt="1" class="person">
+    </picture>
+    <picture>
+      <source srcset="./webp/s9/rr_m.webp" type="image/webp" />
+      <source srcset="./s9/rr_m.png" type="image/jpeg" />
+      <img src="./s9/rr_m.png" alt="1" class="sign">
+    </picture>
+    <div class="title">
+      縱橫兩世紀 全球百年建築巨擘<br />
+      改寫亞洲建築史
+    </div>
+
+    <h3 class="desc">
+      香港巴馬丹拿集團成立於1868年，是東南亞歷史最悠久、規模最龐大、聲譽最崇高的建築集團，辦事處橫跨亞洲一線城市。兩世紀來操刀無數富紳豪邸、跨國總部、五星酒店。香港匯豐總行大廈、渣打銀行總部群像，定義中環維港新風貌；上海外灘萬國建築博覽，二分之一出自P&T手筆，奠定劃時代建築標竿；台北遠企香格里拉飯店、信義計畫區多幢百坪豪邸，亦是P&T經典鉅著。
+    </h3>
+
     <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="800">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
-          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-            <img :src="slide.img" alt="">
-            <div class="slide-name absolute" v-html="slide.name"></div>
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img + i" :class="`swipe-item absolute`">
+            <picture>
+              <source media="(min-width: 767px)" :srcset="slide.webp" type="image/webp" />
+              <source media="(min-width: 767px)" :srcset="slide.img" type="image/jpeg" />
+              <source media="(max-width: 767px)" :srcset="slide.webpm" type="image/webp" />
+              <source media="(max-width: 767px)" :srcset="slide.imgm" type="image/webp" />
+              <img :src="slide.img" :alt="info.caseName" class="">
+            </picture>
+            <h3 class="slide-name absolute" v-html="slide.name"></h3>
           </div>
         </transition-group>
-        <div class="pagination absolute flex-ac" v-if="isPC">
-          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-        </div>
       </div>
       <div class="swipe-btns absolute flex-ac flex-jb">
         <div class="prev-btn" @click="decIndex"></div>
         <div class="next-btn" @click="addIndex"></div>
       </div>
     </div>
+    <!-- <div class="pagination absolute flex-ac" v-if="isPC">
+      <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot' + index" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+    </div> -->
   </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
-.section4 {
+.section6 {
   width: 100%;
-  height: 100vh;
-  min-height: size(1080);
+  height: size(900);
+  min-height: size(900);
   max-height: auto;
   background-size: cover;
   background-attachment: fixed;
-  background-color: #fff;
+  background-color: #f7f8f8;
+
+  @include md {
+    width: 100vw;
+    height: sizem(782);
+    min-height: auto;
+    max-height: initial;
+    overflow: visible;
+  }
 }
 
 .bg-img {
@@ -43,53 +79,128 @@
   // opacity: 0.5;
 }
 
-.title {
-  @include img_l_pc(272, 339, 143);
-  font-size: size(34);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: normal;
-  text-align: left;
-  color: #267f9c;
-  white-space: nowrap;
+.person {
+  @include img_l_pc(180, 177, 184);
+
+  @include md {
+    @include img_c_m(154, 604);
+  }
 }
 
-.desc {
-  @include img_l_pc(464, 451, 143);
-  font-size: size(16);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.63;
-  letter-spacing: size(1.6);
-  text-align: left;
-  color: #3e3a39;
+.sign {
+  @include img_l_pc(172, 370, 409);
+
+  @include md {
+    @include img_c_m(154, 604);
+  }
 }
 
-.subtitle {
-  @include img_l_pc(32, 100, 54);
-  font-size: size(28);
+.label {
+  @include img_l_pc(428, 109, 185);
+  font-size: size(29);
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1;
+  line-height: 1.2;
+  letter-spacing: size(1.45);
+  text-align: left;
+  color: #c9a063;
+  white-space: nowrap;
+  @include md {
+  }
+}
+.title {
+  @include img_l_pc(464, 474, 185);
+  font-size: size(35);
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.14;
   letter-spacing: normal;
-  text-align: center;
-  color: #f3b2c1;
-  writing-mode: vertical-lr;
-  text-orientation: upright;
+  text-align: left;
+  color: #3e3a39;
+  white-space: nowrap;
+
+  @include md {
+    @include img_c_m(154, 604);
+  }
+}
+
+.desc {
+  @include img_l_pc(660, 586, 185);
+  font-size: size(21);
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.76;
+  letter-spacing: normal;
+  text-align: left;
+  color: #3e3a39;
+
+  @include md {
+    @include img_c_m(154, 604);
+  }
 }
 
 /* Swipe */
 .swipe {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  right: 0;
+  @include div_r_pc(660, 660, 118, 185);
   object-fit: cover;
-  // background: #0344;
+
+  @include md {
+    @include div_c_pc(310, 357, 255);
+  }
+}
+
+.slide-title {
+  @include img_r_pc(660, 120 - 195, 0);
+  font-size: size(34);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.18;
+  letter-spacing: normal;
+  text-align: left;
+  color: #3e3a39;
+
+  @include md {
+  }
+}
+.slide-label {
+  @include img_r_pc(660, 654 - 195, 0);
+  font-size: size(24);
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(1.2);
+  text-align: left;
+  color: #c9a063;
+  @include md {
+  }
+}
+
+.slide-desc {
+  @include img_r_pc(660, 708 - 195, 0);
+  font-size: size(20);
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.75;
+  letter-spacing: size(1);
+  text-align: left;
+  color: #727171;
+
+  @include md {
+  }
+}
+.slide-logo {
+  position: absolute;
+  top: size(700 - 195);
+  width: size(120);
+  right: 0;
+  @include md {
+  }
 }
 
 // begin
@@ -111,26 +222,6 @@
   transition: all 1s ease;
 }
 
-// begin
-// .swipe-left-leave-to {
-//   margin-left: -100vw;
-//   z-index: 0;
-// }
-// // end
-// .swipe-left-enter {
-//   opacity: 0.5;
-//   margin-left: 0;
-//   z-index: 1;
-// }
-
-// .swipe-left-enter-active {
-//   transition: all 0.5s ease;
-// }
-
-// .swipe-left-leave-active {
-//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-// }
-
 .swipe-wrap {
   width: 100%;
   height: 100%;
@@ -149,11 +240,11 @@
   }
 
   .slide-name {
-    right: 2em;
-    bottom: 1.2em;
+    right: 1.2em;
+    bottom: 0.6em;
     color: #fff;
-    font-size: size(18);
-    font-weight: bold;
+    font-size: size(16);
+    font-weight: 300;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.6;
@@ -179,27 +270,27 @@
 
 .pagination {
   width: auto;
-  bottom: size(10);
-  right: auto;
-  left: size(10);
+  bottom: size(238);
+  left: auto;
+  right: size(186);
   margin: 0 auto;
   justify-content: center;
 }
 
 .pagination-dot {
   padding: 5px;
-  margin: 0 5px;
+  margin: 0 0px;
   cursor: pointer;
   z-index: 4;
 
   span {
     display: block;
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
     border-radius: 0px;
-    box-shadow: 0 0 0 1px #fff;
+    box-shadow: 0 0 0 1px #c9a063;
     position: relative;
-    background-color: #fff;
+    background-color: transparent;
     transition: all 0.5s;
 
     &::before {
@@ -207,7 +298,7 @@
       width: 60%;
       height: 60%;
       display: block;
-      background: #fff;
+      background: transparent;
       border-radius: 20px;
       opacity: 1;
       position: absolute;
@@ -225,12 +316,12 @@
         width: 100%;
         height: 100%;
         display: block;
-        background: #bcdbdb;
+        background: #c9a063;
         border-radius: 0px;
         opacity: 1;
         position: absolute;
         top: 0%;
-        box-shadow: 0 0 0 1px #bcdbdb;
+        box-shadow: 0 0 0 1px #c9a063;
         // transform: translateY(-50%);
         left: 0%;
         transform: scale(1);
@@ -252,7 +343,7 @@
   .next-btn {
     position: relative;
     height: 100%;
-    width: 2em;
+    width: 4em;
     font-size: size(20);
     cursor: pointer;
     &::before {
@@ -268,18 +359,18 @@
     }
     &::after {
       content: '';
-      width: 1em;
-      height: 1em;
+      width: 2em;
+      height: 2em;
       position: absolute;
       top: calc(50% - 0.5em);
       left: calc(50% - 0.75em);
       border: solid #fff;
-      border-width: 0.1em 0.1em 0 0;
+      border-width: 0.15em 0.15em 0 0;
       transform: rotate(45deg) translate(-10%, 10%);
     }
-    &:hover:before {
-      transform: translateX(0%);
-    }
+    // &:hover:before {
+    //   transform: translateX(0%);
+    // }
     &:hover:after {
       animation: btn 0.5s ease-in-out infinite alternate;
     }
@@ -294,21 +385,13 @@
   }
 }
 
-@media only screen and (max-width: 1440px) {
-}
-@media only screen and (max-width: 1280px) and (min-width: 1025px) {
-  .fullscreen {
-    height: 100vh;
-  }
-}
-
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
 }
 
 @media screen and (max-width: 767px) {
-  .section4 {
+  .section6 {
     width: 100vw;
     height: sizem(782);
     min-height: auto;
@@ -602,7 +685,7 @@ import info from '@/info'
 import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section4',
+  name: 'section6',
 
   mixins: [slider],
   props: ['viewIndex'],
@@ -616,19 +699,44 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s4/1.jpg'),
-          name: '中山北路實景',
-          // desc: '270度翠綠簇擁<br />開窗就享無垠綠景',
+          img: require('./s9/1台北 Bellavita.jpg'),
+          webp: require('./webp/s9/1台北 Bellavita.webp'),
+          name: '台北 Bellavita',
         },
         {
-          img: require('./s4/2.jpg'),
-          name: '中山北路實景',
-          // desc: '大福路大興路環抱<br />地段價值更珍貴',
+          img: require('./s9/2上海國際金融中心.jpg'),
+          webp: require('./webp/s9/2上海國際金融中心.webp'),
+          name: '上海國際金融中心',
         },
         {
-          img: require('./s4/3.jpg'),
-          name: '中山北路實景',
-          // desc: '埔心溪緩緩河廊<br />228紀念公園樹廊',
+          img: require('./s9/3新加玻LeNouvel Ardmore.jpg'),
+          webp: require('./webp/s9/3新加玻LeNouvel Ardmore.webp'),
+          name: '新加玻LeNouvel Ardmore',
+        },
+        {
+          img: require('./s9/4曼谷Sathorn Square.jpg'),
+          webp: require('./webp/s9/4曼谷Sathorn Square.webp'),
+          name: '曼谷Sathorn Square',
+        },
+        {
+          img: require('./s9/5杜拜Viceroy Palm Jumeirah.jpg'),
+          webp: require('./webp/s9/5杜拜Viceroy Palm Jumeirah.webp'),
+          name: '杜拜Viceroy Palm Jumeirah',
+        },
+        {
+          img: require('./s9/6香港交易廣場.jpg'),
+          webp: require('./webp/s9/6香港交易廣場.webp'),
+          name: '香港交易廣場',
+        },
+        {
+          img: require('./s9/7香港怡和大厦.jpg'),
+          webp: require('./webp/s9/7香港怡和大厦.webp'),
+          name: '香港怡和大厦',
+        },
+        {
+          img: require('./s9/8上海和平飯店.jpg'),
+          webp: require('./webp/s9/8上海和平飯店.webp'),
+          name: '上海和平飯店',
         },
       ],
     }

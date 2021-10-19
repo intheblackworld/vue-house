@@ -8,18 +8,23 @@
         <h3 class="title">{{order.title}}</h3>
         <div class="subtitle">{{order.subTitle}}</div>
       </div> -->
-      <h3 class="order-title" v-html="order.title" data-aos="fade-down" data-aos-delay="0"></h3>
-      <div class="order-subtitle" data-aos="fade-down" data-aos-delay="100" v-html="order.subTitle"></div>
+      <h3 class="order-title" v-html="order.title"></h3>
+      <div class="order-subtitle" v-html="order.subTitle"></div>
       <div class="order">
         <div class="form">
           <div class="group">
-            <div class="row" data-aos="fade-down" data-aos-delay="100">
-              <label>姓名</label>
-              <el-input v-model="form.name" placeholder></el-input>
+            <div class="row">
+              <!-- <label>姓名</label> -->
+              <el-input v-model="form.name" placeholder="請輸入姓名"></el-input>
             </div>
-            <div class="row" data-aos="fade-down" data-aos-delay="200">
-              <label>手機</label>
-              <el-input v-model="form.phone" placeholder></el-input>
+            <div class="row">
+              <!-- <label>手機</label> -->
+              <el-input v-model="form.phone" placeholder="請輸入電話"></el-input>
+            </div>
+            <div class="row">
+              <!-- <label>手機</label> -->
+              <el-input class="valid_code_input" v-model="form.valid_code" placeholder="請輸入驗證碼"></el-input>
+              <el-button class="valid_code-submit flex-c" type="primary" @click="getMobileValidCode">獲取驗證碼</el-button>
             </div>
             <!-- <div class="row" data-aos="fade-down"
         data-aos-delay="300">
@@ -63,26 +68,32 @@
               <label>E-mail</label>
               <el-input v-model="form.email" placeholder></el-input>
             </div> -->
-            <div class="row" data-aos="fade-down" data-aos-delay="300">
-              <label>居住城市</label>
-              <el-select v-model="form.city" placeholder>
+          </div>
+          <div class="group">
+            <div class="row">
+              <!-- <label>手機</label> -->
+              <el-input v-model="form.email" placeholder="請輸入電子郵件"></el-input>
+            </div>
+            <div class="row">
+              <!-- <label>居住城市</label> -->
+              <el-select v-model="form.city" placeholder="縣市">
                 <el-option v-for="city in cityList" :key="city.value" :label="city.label" :value="city.value" no-data-text="無數據"></el-option>
               </el-select>
             </div>
-            <div class="row" data-aos="fade-down" data-aos-delay="400">
-              <label>居住地區</label>
-              <el-select v-model="form.area" placeholder>
+            <div class="row">
+              <!-- <label>居住地區</label> -->
+              <el-select v-model="form.area" placeholder="鄉鎮市區">
                 <el-option v-for="area in areaList" :key="area.value" :label="area.label" :value="area.value" no-data-text="請先選擇居住城市"></el-option>
               </el-select>
             </div>
-          </div>
-          <div class="group" data-aos="fade-down" data-aos-delay="600">
-            <div class="row">
+            <!-- <div class="row">
               <el-input type="textarea" :rows="2" placeholder="請輸入您的留言 (選填)" v-model="form.msg"></el-input>
-            </div>
+            </div> -->
           </div>
         </div>
-        <div class="control" data-aos="fade-down" data-aos-delay="500">
+        <div class="control form-desc">
+          你所登錄的個人資料將做為以下用途<br />
+          (一)本網站所載之相關事項通知(二)客戶管理與服務(三)本公司行銷業務之推廣本案實際內容以現場公布為準
           <el-checkbox v-model="checked">
             <h3>
               本人知悉並同意
@@ -91,13 +102,13 @@
             </h3>
           </el-checkbox>
         </div>
-        <div style="margin: 0 auto;z-index:2;" v-if="!isMobile" data-aos="fade-down" data-aos-delay="600">
+        <!-- <div style="margin: 0 auto;z-index:2;" v-if="!isMobile" data-aos="fade-down" data-aos-delay="600">
           <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
         </div>
         <div style="margin: 0 auto;z-index:2;" v-if="isMobile">
           <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
-        </div>
-        <el-button class="form-submit flex-c" type="primary" :disabled="!checked || !isVerify" @click="submit" :loading="isSubmit">立即預約</el-button>
+        </div> -->
+        <el-button class="form-submit flex-c" type="primary" :disabled="!checked" @click="submit" :loading="isSubmit">送出表單</el-button>
         <Loading :loading="isSubmit" :isOpacity="true" />
       </div>
     </div>
@@ -115,7 +126,7 @@ import info from '@/info'
 import { cityList, renderAreaList } from '@/info/address'
 import { isMobile } from '@/utils'
 import Loading from '@/components/Loading.vue'
-import VueRecaptcha from 'vue-recaptcha'
+// import VueRecaptcha from 'vue-recaptcha'
 
 export default {
   name: 'order',
@@ -124,7 +135,7 @@ export default {
     GoogleMap,
     PolicyDialog,
     Loading,
-    VueRecaptcha,
+    // VueRecaptcha,
   },
 
   data() {
@@ -142,6 +153,7 @@ export default {
         msg: '',
         time_start: '',
         time_end: '',
+        valid_code: '',
       },
       checked: false,
       isSubmit: false,
@@ -159,7 +171,7 @@ export default {
 
   mounted() {
     this.generateGUID()
-    console.log(this.getCookie('hiyes_case_uid'))
+    // console.log(this.getCookie('hiyes_case_uid'))
     // this.getMobileValidCode()
   },
 
@@ -262,7 +274,7 @@ export default {
 
     submit() {
       if (this.isSubmit) return
-      if (!this.isVerify) return
+      // if (!this.isVerify) return
       if (!this.checked) return
       this.isSubmit = true
       if (
@@ -316,11 +328,12 @@ export default {
       fetch('https://www.hiyes.tw/BuildingCase/Booking', {
         method: 'POST',
         body: {
-          name: this.form.name,
-          email: this.form.email,
-          mobilePhone: this.form.phone,
-          city: this.form.city,
-          dist: this.form.area,
+          Name: this.form.name,
+          Email: this.form.email,
+          MobilePhone: this.form.phone,
+          City: this.form.city,
+          Dist: this.form.area,
+          SmsVerifyCode: this.form.valid_code,
           ProjectId: 'hiyes case id', // 這裡不確定 case id 是多少
           utm_source: utmSource,
           utm_medium: utmMedium,
@@ -383,10 +396,10 @@ export default {
     overflow: hidden;
   }
   .order-title {
-    font-family: $family2;
+    font-family: $family1;
     width: 80vw;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 0px;
     margin: 0 auto 10px;
     display: inline-block;
     font-weight: 700;
@@ -400,6 +413,7 @@ export default {
   }
 
   .order-subtitle {
+    font-family: $family1;
     width: 100vw;
     font-size: 20px;
     text-align: center;
@@ -409,7 +423,7 @@ export default {
   }
 
   .order {
-    width: 920px;
+    width: 820px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -430,7 +444,7 @@ export default {
   }
 
   .group {
-    height: 250px;
+    height: 160px;
     margin-bottom: 40px;
 
     &:nth-child(1) {
@@ -442,9 +456,10 @@ export default {
 
     &:nth-child(2) {
       .row {
-        justify-content: flex-end;
-        align-items: flex-start;
-        height: 100%;
+        margin-left: 5%;
+        // justify-content: flex-end;
+        // align-items: flex-start;
+        // height: 100%;
       }
     }
   }
@@ -453,6 +468,7 @@ export default {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
+    width: 95%;
 
     &.house {
       margin-top: 50px;

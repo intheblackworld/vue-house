@@ -11,6 +11,18 @@
   @return #{$c-size};
 }
 
+@mixin xl {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
 @mixin div_r_pc($width, $height, $top, $right) {
   position: absolute;
   width: size($width);

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="contact-info" id="contact-info" data-aos="fade" data-aos-delay="0">
-      <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
+      <!-- <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" /> -->
       <!-- <img
         v-if="isMobile"
         class="logo"
@@ -111,7 +111,7 @@ export default {
   z-index: 3;
   //width: 1200px;
   width: 100%;
-  height: 510px;
+  height: 210px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
@@ -198,6 +198,8 @@ export default {
   color: $contact_btn_border;
   font-weight: bold;
   box-shadow: $contact_btn_border;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 .google-btn {
   width: 280px;
