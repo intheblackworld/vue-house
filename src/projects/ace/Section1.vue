@@ -4,16 +4,17 @@
       <!--<img src="./s1/bg.png" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC">
    <img src="./mo/1/bg.png" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isMobile">
       <img src="./mo/1/bg_1_m.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isMobile" data-aos="fade">
-      <img src="./s1/logo_1.png" :alt="`${info.caseName}_logo`" class="logo" data-aos="fade-down">
        <img src="./s1/title.png" :alt="`${info.caseName}_title`" class="title" data-aos="fade-up">
        <img src="./s1/p2.png" :alt="`${info.caseName}_p2`" class="p2" v-if="isPC" data-aos="zoom-in">
       <img src="./s1/bg_1.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC" data-aos="fade">
       <img src="./s1/01.jpg" :alt="`${info.caseName}_bg`" class="img11" v-if="isPC"> -->
       <div class="img2" data-aos="fade" ><img src="./s1/bg2.jpg" :alt="`${info.caseName}_bg`"></div>
       <div class="img3" data-aos="fade" ><img src="./s1/bg2.jpg" :alt="`${info.caseName}_bg`"></div>
-      <img src="./s1/l.gif" data-aos="fade" :alt="`${info.caseName}_bg`" class="img4">
+      <img src="./s1/logo_1.png" :alt="`${info.caseName}_logo`" class="logo" data-aos="fade-down">
+      <img src="./s1/l.gif" :alt="`${info.caseName}_title`" class="title" data-aos="fade-up">
+     <!-- <img src="./s1/l.gif" data-aos="fade" :alt="`${info.caseName}_bg`" class="img4"> -->
       <img src="./s1/building.png" :alt="`${info.caseName}_p12`" class="p12" data-aos="fade-up">
-      <!--<img src="./mo/1/p2.png" :alt="`${info.caseName}_bg`" class="p2" v-if="isMobile" data-aos="zoom-in">-->
+      <!--  <img src="./mo/1/p2.png" :alt="`${info.caseName}_bg`" class="p2" v-if="isMobile" data-aos="zoom-in"> -->
       <div class="order-btn" v-scroll-to="{ element: `#contact` }"><span>預約鑑賞</span></div>
       <!--<h1 class="title" data-aos="fade-up">
         不是王牌不出手<br />
