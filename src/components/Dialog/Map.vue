@@ -29,7 +29,7 @@ export default {
         ['2dbeb344-9b9c-48e5-962d-ebcfd192bae4'],
       )
 
-      window.gtag_report_conversion_map()
+      window.gtag_report_conversion_map('https://oh.h35.tw')
     },
   },
 }

@@ -227,7 +227,7 @@ export default {
         },
         ['2dbeb344-9b9c-48e5-962d-ebcfd192bae4'],
       )
-      window.gtag_report_conversion_order()
+      window.gtag_report_conversion_order('https://oh.h35.tw/')
       fetch('contact-form.php', {
         method: 'POST',
         body: formData,
