@@ -18,17 +18,17 @@
     </div>
     <div class="imgs">
       <div class="item relative"  data-aos="fade" data-aos-delay="600">
-        <img loading="lazy" src="./s3/img2.jpg" :alt="`${info.caseName}_img`" class="item-img">
+        <img loading="lazy" src="./s3/img1.jpg" :alt="`${info.caseName}_img`" class="item-img">
         <div class="mask"></div>
-        <img loading="lazy" src="./s3/logo1.png" :alt="`${info.caseName}_img`" class="logo">
+        <img loading="lazy" src="./s3/logo2.png" :alt="`${info.caseName}_img`" class="logo">
         <h3 class="item-title">東和鋼鐵 北市豪宅業績</h3>
         <h3 class="item-desc">華固建設-華固天鑄(38層)<br />南國建設-南國Ellipse(38層)<br />文心建設-文心AIT(26層)</h3>
         <div class="item-name">情境示意圖</div>
       </div>
       <div class="item relative"  data-aos="fade" data-aos-delay="800">
-        <img loading="lazy" src="./s3/img1.jpg" :alt="`${info.caseName}_img`" class="item-img">
+        <img loading="lazy" src="./s3/img2.jpg" :alt="`${info.caseName}_img`" class="item-img">
         <div class="mask"></div>
-        <img loading="lazy" src="./s3/logo2.png" :alt="`${info.caseName}_img`" class="logo">
+        <img loading="lazy" src="./s3/logo1.png" :alt="`${info.caseName}_img`" class="logo">
         <h3 class="item-title">力泰混凝土 雙北豪宅業績</h3>
         <h3 class="item-desc">遠雄建設-遠雄九五(42樓)<br />元利建設-信義聯勤(35樓)<br />威京集團-陶朱隱園(21樓)</h3>
         <div class="item-name">情境示意圖</div>
