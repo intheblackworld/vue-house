@@ -2,7 +2,7 @@
   <div class="relative">
     <div v-if="!isMobile">
       <img
-        v-lazy="require('./s8/8pic.png')"
+        v-lazy="require('./s8/8pic.jpg')"
         :class="`item-img absolute`"
       />
       <div class="content absolute">

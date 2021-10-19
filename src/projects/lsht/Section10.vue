@@ -531,37 +531,37 @@ export default {
       imgIndex: 0,
       imgList: [
         {
-          img: require('./s10/1.png'),
+          img: require('./s10/1.jpg'),
           title: '聯上草雲',
           desc: '高雄市前金區明仁路',
         },
         {
-          img: require('./s10/2.png'),
+          img: require('./s10/2.jpg'),
           title: '聯上涵玥',
           desc: '台北市士林區福林路',
         },
         {
-          img: require('./s10/3.png'),
+          img: require('./s10/3.jpg'),
           title: '聯上聽瀑',
           desc: '台北市士林區天母西路',
         },
         {
-          img: require('./s10/4.png'),
+          img: require('./s10/4.jpg'),
           title: '聯上世紀',
           desc: '桃園市中壢區青商路',
         },
         {
-          img: require('./s10/5.png'),
+          img: require('./s10/5.jpg'),
           title: '聯上涵景',
           desc: '高雄市左營區政德路',
         },
         {
-          img: require('./s10/6.png'),
+          img: require('./s10/6.jpg'),
           title: '聯上V1',
           desc: '高雄市苓雅區七賢路',
         },
         {
-          img: require('./s10/7.png'),
+          img: require('./s10/7.jpg'),
           title: '聯上康橋',
           desc: '台南市永康區東橋五路',
         },
