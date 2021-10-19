@@ -1,7 +1,7 @@
 <template>
   <div class="section8">
     <div class="container flex flex-jb flex-ac wrap">
-      <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="400">
+      <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade" data-aos-delay="400">
         <div class="label">
           精品商圈
         </div>
@@ -28,7 +28,7 @@
           停下黑頭車，以步行雙捷運品味自在奢華，漫步中山晶華商圈，頂級SVIP您是座上賓，國際精品櫥窗競豔，全球限量才與您匹配。穿梭赤峰藏寶圖，時尚、美食與老屋風情交織，再來場鬆餅的甜蜜約會，奢逸生活不只手捧名牌精品，而是逛不膩的大道巷弄間，總有新鮮事等著你。
         </h3>
       </div>
-      <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="600">
+      <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade" data-aos-delay="600">
         <div class="label">
           美食聚落
         </div>
@@ -58,7 +58,7 @@
           台北最有滋有味的日常，優雅品嚐米其林餐廳，拐彎是道地庶民小吃，一甲子圓仔湯、快炒沙茶牛肉，走過百年風味依舊；寧夏夜市鮮香豬肝湯和肥美蚵仔煎令人垂涎，小吃攤肩並肩，蝦仁蛋包湯、知高飯，置身台北上河圖。
         </h3>
       </div>
-      <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="800">
+      <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade" data-aos-delay="800">
         <div class="label">
           文化大道
         </div>
@@ -88,7 +88,7 @@
           關上中山大道簇擁的歡騰，尋咖啡香拜訪古蹟藝術聚落，當代藝術館、台北光點、蔡瑞月舞蹈社、台北美術館，沉浸國內外特展、獨家藝術電影，相遇玻璃屋裡狂舞的青春，百年建築與當代藝術厚植底蘊，探不盡的人文靈光。
         </h3>
       </div>
-      <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="1200">
+      <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade" data-aos-delay="1200">
         <div class="label">
           金融總部
         </div>
@@ -118,7 +118,7 @@
           大時代風華續行，新榮景蓄勢勃發，上海商銀、陽信銀行總部改建如火如荼，落址中山、民權十字金脈，國賓飯店改建案拍板、國產署旗下危老改建案等，金融特區地位鞏固，再添榮耀前景。
         </h3>
       </div>
-      <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="1200">
+      <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade" data-aos-delay="1200">
         <div class="label">
           五星飯店聚落
         </div>
@@ -148,7 +148,7 @@
           昂首中山北，國際五星飯店沿途磅礡坐落，全球高官政要、富商大賈匯聚的優渥，國賓、晶華、老爺、大倉久和、圓山大飯店，建築藝境、經典饗饌、極致款待，詮釋中山北路的頂級奢華。
         </h3>
       </div>
-      <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="1200">
+      <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade" data-aos-delay="1200">
         <div class="label">
           權掌雙國門
         </div>
@@ -192,7 +192,7 @@
 
   @include md {
     width: 100vw;
-    height: sizem(782);
+    height: auto;
     min-height: auto;
     max-height: initial;
     overflow: visible;
@@ -202,6 +202,11 @@
 .container {
   width: size(1550);
   margin: size(60) auto;
+
+  @include md {
+    width: sizem(320);
+    margin: sizem(60) auto;
+  }
 }
 
 .bg-img {
@@ -228,6 +233,15 @@
   white-space: nowrap;
   margin-bottom: size(19);
   @include md {
+    font-size: sizem(16);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.63;
+    letter-spacing: sizem(0.8);
+    text-align: left;
+    color: #c9a063;
+    margin-bottom: sizem(9);
   }
 }
 .title {
@@ -243,7 +257,15 @@
   white-space: nowrap;
 
   @include md {
-    @include img_c_m(154, 604);
+    font-size: sizem(17);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.35;
+    letter-spacing: normal;
+    text-align: left;
+    color: #3e3a39;
+    margin: sizem(31) 0 sizem(13);
   }
 }
 
@@ -259,7 +281,15 @@
   margin-bottom: size(130);
 
   @include md {
-    @include img_c_m(154, 604);
+    font-size: sizem(13);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: sizem(0.13);
+    text-align: left;
+    color: #3e3a39;
+    margin-bottom: sizem(30);
   }
 }
 
@@ -285,6 +315,10 @@
 /* Swipe */
 .swipe {
   width: size(660);
+
+  @include md {
+    width: 100%;
+  }
 }
 
 // begin
@@ -312,6 +346,9 @@
   height: size(440);
   cursor: pointer;
   overflow: hidden;
+  @include md {
+    height: sizem(213);
+  }
 }
 
 .swipe-item {
@@ -485,137 +522,6 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section8 {
-    width: 100vw;
-    height: sizem(782);
-    min-height: auto;
-    max-height: initial;
-    // background-image: url('./all/section_bg.jpg');
-    // background-attachment: scroll;
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
-    overflow: visible;
-  }
-  .grass {
-    @include img_r_m(173, 0, 0);
-    top: auto;
-    bottom: sizem(-80);
-    transform-origin: bottom;
-    animation: grass 4s ease-in-out alternate infinite;
-  }
-
-  @keyframes grass {
-    to {
-      transform: skewX(3deg);
-    }
-  }
-
-  // begin
-  .trans-leave-to {
-    opacity: 0;
-    z-index: 0;
-  }
-  // end
-  .trans-enter {
-    opacity: 0;
-    z-index: 1;
-  }
-
-  .trans-enter-active {
-    transition: all 1.8s ease;
-  }
-
-  .trans-leave-active {
-    transition: all 1.8s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-
-  .line {
-    @include div_l_m(7, 177, 39, 33);
-    background-color: #40220f;
-  }
-  .label {
-    @include img_l_m(116, 39, 55);
-    font-size: sizem(17);
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.53;
-    letter-spacing: sizem(2.72);
-    text-align: left;
-    color: #40220f;
-    color: #40220f;
-    white-space: nowrap;
-    z-index: 2;
-  }
-  .title {
-    @include img_l_m(250, 69, 55);
-    font-size: sizem(25);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.6;
-    letter-spacing: normal;
-    text-align: left;
-    color: #40220f;
-    white-space: nowrap;
-    z-index: 2;
-  }
-
-  .subtitle {
-    @include img_l_m(300, 116, 55);
-    font-size: sizem(16);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.63;
-    letter-spacing: sizem(0.96);
-    text-align: left;
-    color: #40220f;
-    white-space: normal;
-    z-index: 3;
-  }
-
-  .work-title {
-    @include img_l_m(255, 626, 20);
-    top: auto;
-    bottom: sizem(123);
-    font-size: sizem(22);
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.98;
-    letter-spacing: sizem(1.32);
-    text-align: left;
-    color: #40220f;
-    white-space: nowrap;
-  }
-  .work-desc {
-    @include img_l_m(170, 301, 33);
-    top: auto;
-    bottom: sizem(40);
-    font-size: sizem(15);
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.7;
-    letter-spacing: sizem(0.9);
-    text-align: left;
-    color: #40220f;
-    white-space: normal;
-  }
-
-  /* Swipe */
-  .swipe {
-    width: sizem(310);
-    height: sizem(357);
-    min-height: auto;
-    top: sizem(255);
-    bottom: auto;
-    left: sizem(33);
-    object-fit: cover;
-  }
-
   // begin
   .swipe-fade-leave-to {
     opacity: 0;
@@ -655,23 +561,7 @@
   //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
   // }
 
-  .swipe-wrap {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
   .swipe-item {
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
     // &:nth-child(1) {
     //   z-index: 1;
     //   // opacity: 1;
@@ -688,8 +578,8 @@
     .slide-name {
       right: auto;
       top: auto;
-      bottom: 1.2rem;
-      right: 1.2rem;
+      bottom: 0.6rem;
+      right: 0.6rem;
       font-size: sizem(15);
     }
   }

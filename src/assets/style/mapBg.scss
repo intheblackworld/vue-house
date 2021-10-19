@@ -50,7 +50,7 @@
     bottom: 0;
     .map-bg {
       width: auto;
-      height: sizem(235);
+      height: sizem(604);
     }
 
     .map-text {
@@ -60,24 +60,23 @@
 
     img {
       width: auto;
-      height: sizem(235);
+      height: sizem(604);
     }
 
-    .mask {
-    //  animation: swing 2.5s ease-in-out 0s infinite;
-      left: 50%;
-      display: none;
-    }
+    // .mask {
+    // //  animation: swing 2.5s ease-in-out 0s infinite;
+    //   left: 50%;
+    //   display: none;
+    // }
 
     .mask {
       width: 200vw;
-      height: sizem(57);
-      background-color: rgba(179, 57, 0, 0.6);
+      height: sizem(25);
+      background-color: rgba(255, 255, 255, 0.6);
       // animation: swing 2.5s ease-in-out 0s infinite;
       left: 35vw;
       position: absolute;
-      top: sizem(285);
-      left: 0;
+      top: sizem(195);
       opacity: 0;
       transition: opacity .5s;
       &.active {
@@ -90,10 +89,10 @@
       z-index: 3;
       width: sizem(50) !important;
       height: auto !important;
-      left: sizem(285);
+      left: sizem(585);
       right: 0;
       margin: 0 auto;
-      top: sizem(94) !important;
+      top: sizem(184) !important;
       display: block;
       animation: swing 2.5s ease-in-out 0s infinite alternate-reverse;
       opacity: 0;

@@ -3,21 +3,21 @@
     <picture>
       <source srcset="./webp/s6/1_logo.webp" type="image/webp" />
       <source srcset="./s6/1_logo.png" type="image/jpeg" />
-      <img src="./s6/1_logo.png" alt="1" class="logo">
+      <img src="./s6/1_logo.png" alt="1" class="logo" data-aos="fade" data-aos-delay="0">
     </picture>
-    <div class="label">
+    <div class="label" data-aos="fade" data-aos-delay="200">
       勤美集團
     </div>
-    <div class="title">
+    <div class="title" data-aos="fade" data-aos-delay="400">
       亞洲第一專業鑄造集團<br />
       職人精神 專心做好一件事
     </div>
 
-    <h3 class="desc">
+    <h3 class="desc" data-aos="fade" data-aos-delay="600">
       勤美（1532）集團成立於1972年，以「勤儉誠信，永續經營」為念，獲亞洲第一專業鑄造廠之美譽，今為台灣（勤美，股票代號TW1532）大型上市集團、大中華地區最大民營鑄造集團。近年轉型跨國控股企業，旗下擁有建設公司、大型商場、文化美學、基金會等大型事業部，追求人文美善之多角化經營。
     </h3>
 
-    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="800">
+    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade" data-aos-delay="800">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img + i" :class="`swipe-item absolute`">
@@ -63,7 +63,7 @@
 
   @include md {
     width: 100vw;
-    height: sizem(782);
+    height: sizem(763);
     min-height: auto;
     max-height: initial;
     overflow: visible;
@@ -86,7 +86,7 @@
   @include img_l_pc(111, 248, 185);
 
   @include md {
-    @include img_c_m(154, 604);
+    @include img_l_m(107, 60, 28);
   }
 }
 .label {
@@ -101,6 +101,15 @@
   color: #c9a063;
   white-space: nowrap;
   @include md {
+    @include img_l_m(206, 131, 28);
+    font-size: sizem(16);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.63;
+    letter-spacing: sizem(0.8);
+    text-align: left;
+    color: #c9a063;
   }
 }
 .title {
@@ -116,7 +125,15 @@
   white-space: nowrap;
 
   @include md {
-    @include img_c_m(154, 604);
+    @include img_l_m(209, 158, 28);
+    font-size: sizem(20);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.45;
+    letter-spacing: sizem(1);
+    text-align: left;
+    color: #3e3a39;
   }
 }
 
@@ -132,7 +149,15 @@
   color: #3e3a39;
 
   @include md {
-    @include img_c_m(154, 604);
+    @include img_l_m(320, 228, 28);
+    font-size: sizem(13);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: sizem(0.13);
+    text-align: left;
+    color: #3e3a39;
   }
 }
 
@@ -142,12 +167,12 @@
   object-fit: cover;
 
   @include md {
-    @include div_c_pc(310, 357, 255);
+    @include div_c_m(320, 213, 430);
   }
 }
 
 .slide-title {
-  @include img_r_pc(660, 120 - 195, 0);
+  @include img_l_pc(660, 120 - 195, 0);
   font-size: size(34);
   font-weight: bold;
   font-stretch: normal;
@@ -158,6 +183,15 @@
   color: #3e3a39;
 
   @include md {
+    @include img_l_m(320, -23, 0);
+    font-size: sizem(16);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.19;
+    letter-spacing: sizem(1.63);
+    text-align: left;
+    color: #3e3a39;
   }
 }
 .slide-label {
@@ -171,6 +205,15 @@
   text-align: left;
   color: #c9a063;
   @include md {
+    @include img_l_m(320, 230, 0);
+    font-size: sizem(13);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: sizem(0.65);
+    text-align: left;
+    color: #c9a063;
   }
 }
 
@@ -186,6 +229,15 @@
   color: #727171;
 
   @include md {
+    @include img_l_m(320, 250, 0);
+    font-size: sizem(12);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: sizem(0.6);
+    text-align: left;
+    color: #727171;
   }
 }
 .slide-logo {
@@ -385,137 +437,6 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section6 {
-    width: 100vw;
-    height: sizem(782);
-    min-height: auto;
-    max-height: initial;
-    // background-image: url('./all/section_bg.jpg');
-    // background-attachment: scroll;
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
-    overflow: visible;
-  }
-  .grass {
-    @include img_r_m(173, 0, 0);
-    top: auto;
-    bottom: sizem(-80);
-    transform-origin: bottom;
-    animation: grass 4s ease-in-out alternate infinite;
-  }
-
-  @keyframes grass {
-    to {
-      transform: skewX(3deg);
-    }
-  }
-
-  // begin
-  .trans-leave-to {
-    opacity: 0;
-    z-index: 0;
-  }
-  // end
-  .trans-enter {
-    opacity: 0;
-    z-index: 1;
-  }
-
-  .trans-enter-active {
-    transition: all 1.8s ease;
-  }
-
-  .trans-leave-active {
-    transition: all 1.8s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-
-  .line {
-    @include div_l_m(7, 177, 39, 33);
-    background-color: #40220f;
-  }
-  .label {
-    @include img_l_m(116, 39, 55);
-    font-size: sizem(17);
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.53;
-    letter-spacing: sizem(2.72);
-    text-align: left;
-    color: #40220f;
-    color: #40220f;
-    white-space: nowrap;
-    z-index: 2;
-  }
-  .title {
-    @include img_l_m(250, 69, 55);
-    font-size: sizem(25);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.6;
-    letter-spacing: normal;
-    text-align: left;
-    color: #40220f;
-    white-space: nowrap;
-    z-index: 2;
-  }
-
-  .subtitle {
-    @include img_l_m(300, 116, 55);
-    font-size: sizem(16);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.63;
-    letter-spacing: sizem(0.96);
-    text-align: left;
-    color: #40220f;
-    white-space: normal;
-    z-index: 3;
-  }
-
-  .work-title {
-    @include img_l_m(255, 626, 20);
-    top: auto;
-    bottom: sizem(123);
-    font-size: sizem(22);
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.98;
-    letter-spacing: sizem(1.32);
-    text-align: left;
-    color: #40220f;
-    white-space: nowrap;
-  }
-  .work-desc {
-    @include img_l_m(170, 301, 33);
-    top: auto;
-    bottom: sizem(40);
-    font-size: sizem(15);
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.7;
-    letter-spacing: sizem(0.9);
-    text-align: left;
-    color: #40220f;
-    white-space: normal;
-  }
-
-  /* Swipe */
-  .swipe {
-    width: sizem(310);
-    height: sizem(357);
-    min-height: auto;
-    top: sizem(255);
-    bottom: auto;
-    left: sizem(33);
-    object-fit: cover;
-  }
-
   // begin
   .swipe-fade-leave-to {
     opacity: 0;
@@ -655,11 +576,11 @@
   }
 
   .swipe-btns {
-    width: 116%;
-    left: -8%;
+    width: 100%;
+    left: 0%;
     .prev-btn,
     .next-btn {
-      font-size: sizem(15);
+      font-size: sizem(10);
       &::before {
         background-color: #cc5b4e00;
       }

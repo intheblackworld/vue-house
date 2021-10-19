@@ -7,18 +7,24 @@
       <source media="(max-width: 767px)" srcset="./s1/bgm.jpg" type="image/jpeg" />
       <img src="./s1/bg.jpg" :alt="info.caseName" class="bg-img">
     </picture>
-    <div class="title">
+    <div class="title" v-if="isPC" data-aos="fade-up" data-aos-delay="200">
       中山北路 看見璞真
+    </div>
+    <div class="title" v-else data-aos="fade-up" data-aos-delay="200">
+      中山北路<br />看見璞真
     </div>
 
     <picture>
       <source srcset="./webp/s1/25675888.webp" type="image/webp" />
       <source srcset="./s1/25675888.png" type="image/jpeg" />
-      <img src="./s1/25675888.png" alt="1" class="logo">
+      <img src="./s1/25675888.png" alt="1" class="logo" data-aos="fade-up" data-aos-delay="200">
     </picture>
 
-    <div class="subtitle">
+    <div class="subtitle" v-if="isPC" data-aos="fade-up" data-aos-delay="600">
       Zhongshan Art Mansion
+    </div>
+    <div class="subtitle" v-else data-aos="fade-up" data-aos-delay="600">
+      Zhongshan<br />Art<br />Mansion
     </div>
     <!-- <picture>
       <source media="(min-width: 767px)" srcset="./s1/2.png" />
@@ -67,7 +73,7 @@
   @include img_c_pc(154, 604);
 
   @include md {
-    @include img_c_m(154, 604);
+    @include img_l_m(105, 481, 47);
   }
 }
 
@@ -84,7 +90,18 @@
   white-space: nowrap;
 
   @include md {
-    @include img_c_m(154, 604);
+    font-size: sizem(66);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.03;
+    letter-spacing: normal;
+    text-align: center;
+    color: #fff;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+
+    @include img_r_m(154, 129, 42);
   }
 }
 
@@ -101,7 +118,15 @@
   white-space: nowrap;
 
   @include md {
-    @include img_c_m(154, 604);
+    font-size: sizem(19);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.37;
+    letter-spacing: sizem(0.19);
+    text-align: left;
+    color: #fff;
+    @include img_l_m(107, 375, 45);
   }
 }
 </style>

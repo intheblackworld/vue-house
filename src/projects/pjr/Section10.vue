@@ -169,7 +169,7 @@
 
   @include md {
     width: 100vw;
-    height: sizem(782);
+    height: auto;
     min-height: auto;
     max-height: initial;
     overflow: visible;
@@ -180,6 +180,10 @@
   width: size(1550);
   margin: size(60) auto;
   border-top: 1px solid #727171;
+  @include md {
+    width: sizem(320);
+    margin: sizem(60) auto;
+  }
 }
 
 .bg-img {
@@ -212,6 +216,16 @@
   white-space: nowrap;
   margin-bottom: size(8);
   @include md {
+    @include img_l_m(320, 60, 0);
+    font-size: sizem(16);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.63;
+    letter-spacing: sizem(0.8);
+    text-align: left;
+    color: #c9a063;
+    margin-bottom: sizem(0);
   }
 }
 .title {
@@ -227,7 +241,16 @@
   white-space: nowrap;
 
   @include md {
-    @include img_c_m(154, 604);
+    @include img_l_m(320, 85, 0);
+    font-size: sizem(17);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.35;
+    letter-spacing: normal;
+    text-align: left;
+    color: #3e3a39;
+    margin: sizem(0) 0 sizem(0);
   }
 }
 
@@ -242,13 +265,26 @@
   color: #3e3a39;
 
   @include md {
-    @include img_c_m(154, 604);
+    @include img_r_m(193, 127, 0);
+    font-size: sizem(13);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: sizem(0.13);
+    text-align: left;
+    color: #3e3a39;
+    margin-bottom: sizem(0);
   }
 }
 
 .avatar {
   width: size(180);
   margin-right: size(47.6);
+
+  @include md {
+    @include img_l_m(115, 131, 0);
+  }
 }
 
 // begin
@@ -277,6 +313,32 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+
+  @include md {
+    width: sizem(320);
+    height: sizem(628);
+    border-bottom: 1px solid #727171;
+  }
+
+  &:nth-last-child(1) {
+    border-bottom: none;
+  }
+
+
+  &:nth-child(2), &:nth-child(4){
+    .desc  {
+      @include md {
+        @include img_l_m(193, 127, 0);
+      }
+    }
+
+    .avatar {
+      @include md {
+        @include img_r_m(115, 131, 0);
+      }
+    }
+  }
 }
 
 // begin
@@ -304,6 +366,12 @@
   height: size(320);
   cursor: pointer;
   overflow: hidden;
+
+  @include md {
+    @include div_c_m(320, 213, 0);
+    top: auto;
+    bottom: sizem(60);
+  }
 }
 
 .swipe-item {
@@ -477,181 +545,6 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section10 {
-    width: 100vw;
-    height: sizem(782);
-    min-height: auto;
-    max-height: initial;
-    // background-image: url('./all/section_bg.jpg');
-    // background-attachment: scroll;
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
-    overflow: visible;
-  }
-  .grass {
-    @include img_r_m(173, 0, 0);
-    top: auto;
-    bottom: sizem(-80);
-    transform-origin: bottom;
-    animation: grass 4s ease-in-out alternate infinite;
-  }
-
-  @keyframes grass {
-    to {
-      transform: skewX(3deg);
-    }
-  }
-
-  // begin
-  .trans-leave-to {
-    opacity: 0;
-    z-index: 0;
-  }
-  // end
-  .trans-enter {
-    opacity: 0;
-    z-index: 1;
-  }
-
-  .trans-enter-active {
-    transition: all 1.8s ease;
-  }
-
-  .trans-leave-active {
-    transition: all 1.8s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-
-  .line {
-    @include div_l_m(7, 177, 39, 33);
-    background-color: #40220f;
-  }
-  .label {
-    @include img_l_m(116, 39, 55);
-    font-size: sizem(17);
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.53;
-    letter-spacing: sizem(2.72);
-    text-align: left;
-    color: #40220f;
-    color: #40220f;
-    white-space: nowrap;
-    z-index: 2;
-  }
-  .title {
-    @include img_l_m(250, 69, 55);
-    font-size: sizem(25);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.6;
-    letter-spacing: normal;
-    text-align: left;
-    color: #40220f;
-    white-space: nowrap;
-    z-index: 2;
-  }
-
-  .subtitle {
-    @include img_l_m(300, 116, 55);
-    font-size: sizem(16);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.63;
-    letter-spacing: sizem(0.96);
-    text-align: left;
-    color: #40220f;
-    white-space: normal;
-    z-index: 3;
-  }
-
-  .work-title {
-    @include img_l_m(255, 626, 20);
-    top: auto;
-    bottom: sizem(123);
-    font-size: sizem(22);
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.98;
-    letter-spacing: sizem(1.32);
-    text-align: left;
-    color: #40220f;
-    white-space: nowrap;
-  }
-  .work-desc {
-    @include img_l_m(170, 301, 33);
-    top: auto;
-    bottom: sizem(40);
-    font-size: sizem(15);
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.7;
-    letter-spacing: sizem(0.9);
-    text-align: left;
-    color: #40220f;
-    white-space: normal;
-  }
-
-  /* Swipe */
-  .swipe {
-    width: sizem(310);
-    height: sizem(357);
-    min-height: auto;
-    top: sizem(255);
-    bottom: auto;
-    left: sizem(33);
-    object-fit: cover;
-  }
-
-  // begin
-  .swipe-fade-leave-to {
-    opacity: 0;
-    z-index: 0;
-  }
-  // end
-  .swipe-fade-enter {
-    opacity: 0;
-    z-index: 1;
-  }
-
-  .swipe-fade-enter-active {
-    transition: all 0.5s ease;
-  }
-
-  .swipe-fade-leave-active {
-    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-
-  // begin
-  // .swipe-left-leave-to {
-  //   margin-left: -100vw;
-  //   z-index: 0;
-  // }
-  // // end
-  // .swipe-left-enter {
-  //   opacity: 0.5;
-  //   margin-left: 0;
-  //   z-index: 1;
-  // }
-
-  // .swipe-left-enter-active {
-  //   transition: all 0.5s ease;
-  // }
-
-  // .swipe-left-leave-active {
-  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  // }
-
-  .swipe-wrap {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
 
   .swipe-item {
     width: 100%;
@@ -680,8 +573,8 @@
     .slide-name {
       right: auto;
       top: auto;
-      bottom: 1.2rem;
-      right: 1.2rem;
+      bottom: 0.6rem;
+      right: 0.6rem;
       font-size: sizem(15);
     }
   }
@@ -747,8 +640,8 @@
   }
 
   .swipe-btns {
-    width: 116%;
-    left: -8%;
+    width: 100%;
+    left: 0%;
     .prev-btn,
     .next-btn {
       font-size: sizem(15);

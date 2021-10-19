@@ -5,22 +5,25 @@
       <source media="(max-width: 767px)" srcset="./s3/1m.jpg" type="image/jpeg" />
       <source media="(min-width: 767px)" srcset="./webp/s3/1.webp" type="image/webp" />
       <source media="(max-width: 767px)" srcset="./webp/s3/1m.webp" type="image/webp" />
-      <img src="./s1/bg.jpg" :alt="info.caseName" class="img">
+      <img src="./s1/bg.jpg" :alt="info.caseName" class="img" data-aos="fade" data-aos-delay="800">
     </picture>
 
     <picture>
       <source srcset="./webp/s3/logo.webp" type="image/webp" />
       <source srcset="./s3/logo.png" type="image/jpeg" />
-      <img src="./s3/logo.png" alt="1" class="logo">
+      <img src="./s3/logo.png" alt="1" class="logo" data-aos="fade" data-aos-delay="0">
     </picture>
-    <div class="label">
+    <div class="label"  data-aos="fade" data-aos-delay="200">
       璞真建設 建築摯美生活初衷
     </div>
-    <div class="title">
+    <div class="title" v-if="isPC"  data-aos="fade" data-aos-delay="400">
       讓建築好好地長 就像那些很紮實的大樹
     </div>
+    <div class="title" v-if="isMobile" data-aos="fade" data-aos-delay="400">
+      讓建築好好地長<br />就像那些很紮實的大樹
+    </div>
 
-    <h3 class="desc">
+    <h3 class="desc" data-aos="fade" data-aos-delay="600">
       「璞真建設」母公司為大中華區最大民營鑄造集團「勤美集團」（股票代號TW1532），2002年成立，以「像棵大樹」為精神指引，致力發揮土地最高價值。以人為本心，秉持自然生態與居住環境和諧共生，融入四季、晴雨、日夜、生態考量，涵養豐厚人文美學，為台灣創造感動人心的名邸，滿足居者返璞歸真的渴望。
     </h3>
   </div>
@@ -39,7 +42,7 @@
 
   @include md {
     width: 100vw;
-    height: sizem(782);
+    height: sizem(650);
     min-height: auto;
     max-height: initial;
     overflow: visible;
@@ -58,7 +61,7 @@
   @include img_l_pc(202, 228, 185);
 
   @include md {
-    @include img_c_m(154, 604);
+    @include img_l_m(107, 60, 28);
   }
 }
 .label {
@@ -73,7 +76,15 @@
   color: #c9a063;
   white-space: nowrap;
   @include md {
-
+    @include img_l_m(206, 131, 28);
+    font-size: sizem(16);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.63;
+    letter-spacing: sizem(0.8);
+    text-align: left;
+    color: #c9a063;
   }
 }
 .title {
@@ -89,7 +100,15 @@
   white-space: nowrap;
 
   @include md {
-    @include img_c_m(154, 604);
+    @include img_l_m(209, 158, 28);
+    font-size: sizem(20);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.45;
+    letter-spacing: sizem(1);
+    text-align: left;
+    color: #3e3a39;
   }
 }
 
@@ -105,15 +124,25 @@
   color: #3e3a39;
 
   @include md {
-    @include img_c_m(154, 604);
+    @include img_l_m(320, 228, 28);
+    font-size: sizem(13);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: sizem(0.13);
+    text-align: left;
+    color: #3e3a39;
   }
 }
 
 .img {
   @include img_r_pc(660, 119, 186);
-  
+
   @include md {
-    @include img_c_m(154, 604);
+    @include img_c_m(320, 0);
+    top: auto;
+    bottom: 0;
   }
 }
 </style>

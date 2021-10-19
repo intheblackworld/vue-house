@@ -1,6 +1,9 @@
 <template>
   <div :class="`navigation ${min ? 'min' : ''}`">
     <div class="nav relative">
+      <div class="nav-item" v-scroll-to="{ element: `#contact-info` }">來電洽詢</div>
+      <div class="nav-item" v-scroll-to="{ element: `#contact` }">立即預約</div>
+      <div class="nav-item" v-scroll-to="{ element: `#google-map` }">地圖導航</div>
       <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
       <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" /> -->
       <div class="menu" @click="toggleSidebar">
@@ -65,6 +68,7 @@ export default {
 .navigation {
   height: $nav_phone_height;
   z-index: 110;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .nav-container {
@@ -372,6 +376,13 @@ export default {
     }
   }
 
+  .nav-item {
+    display: inline-block;
+    color: #fff;
+    margin-top: 22px;
+    margin-right: 10px;
+  }
+
   .nav-container {
     display: block;
     height: auto;
@@ -391,7 +402,7 @@ export default {
     display: flex;
     position: fixed;
     right: 15px;
-    top: 15px;
+    top: 10px;
 
     img {
       width: 100%;
@@ -419,7 +430,7 @@ export default {
     display: block;
     transform: translateX(40%);
     background: center 0 no-repeat;
-    background-color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
     background-size: cover;
 
     .link {
@@ -435,16 +446,23 @@ export default {
     }
 
     &.open {
-      width: 70%;
+      width: 100%;
       transform: translateX(0%);
       .link {
         display: flex;
         justify-content: center;
+        border-top: 1px solid #fff;
         span {
           white-space: nowrap;
         }
         .divided {
           display: none;
+        }
+      }
+
+      li:nth-last-child(1) {
+        .link {
+          border-bottom: 1px solid #fff;
         }
       }
     }

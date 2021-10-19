@@ -13,6 +13,7 @@
       v-for="(tag, index) in tagList"
       :key="tag"
     />
+    <img src="../projects/pjr/s7/t.png" class="bg-img absolute">
   </div>
 </template>
 <style lang="scss" scoped>

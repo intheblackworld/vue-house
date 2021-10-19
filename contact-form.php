@@ -317,10 +317,8 @@ if ($bCheck == true) { //if start
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 </head>
-
 <body>
     <script src="js/jquery.js"></script>
-
     <script type="text/javascript">
         document.location.replace('formThanks');
     </script>

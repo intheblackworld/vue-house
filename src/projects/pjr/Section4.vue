@@ -1,12 +1,15 @@
 <template>
   <div class="section4">
-    <div class="title" v-if="isPC" data-aos="fade-up" data-aos-delay="200">
+    <div class="title" v-if="isPC" data-aos="fade" data-aos-delay="200">
       建築、自然永恆詩境 鐫刻城市美學指標
     </div>
-    <h3 class="desc" v-if="isPC" data-aos="fade-up" data-aos-delay="400">
+    <div class="title" v-else data-aos="fade" data-aos-delay="200">
+      建築、自然永恆詩境<br />鐫刻城市美學指標
+    </div>
+    <h3 class="desc" data-aos="fade" data-aos-delay="400">
       建築不只精密科學計算，而是有溫度、有情感、有故事的生活聚場，從結構形體昇華至精神領域。璞真願意花更多時間探索生活，量身訂製創新空間提案，以綠建築、智慧建築設計導入低碳思維。當建築擁有獨一無二的性格，自然吸引居住品味相契的人們，回歸生活最樸實且真摯的樣貌。
     </h3>
-    <div class="swipe1 absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="400">
+    <div class="swipe1 absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade" data-aos-delay="400">
       <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(1)" v-touch:swipe.right="() => addMultiIndex(1)" @click="addMultiIndex(1)">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList1" v-show="slideIndex1 === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -27,7 +30,7 @@
         <div class="next-btn" @click="addMultiIndex(1)"></div>
       </div>
     </div>
-    <div class="swipe2 absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="600">
+    <div class="swipe2 absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade" data-aos-delay="600">
       <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(2)" v-touch:swipe.right="() => addMultiIndex(2)" @click="addMultiIndex(2)">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList2" v-show="slideIndex2 === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -48,7 +51,7 @@
         <div class="next-btn" @click="addMultiIndex(2)"></div>
       </div>
     </div>
-    <div class="swipe3 absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="800">
+    <div class="swipe3 absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade" data-aos-delay="800">
       <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(3)" v-touch:swipe.right="() => addMultiIndex(3)" @click="addMultiIndex(3)">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList3" v-show="slideIndex3 === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -69,7 +72,7 @@
         <div class="next-btn" @click="addMultiIndex(3)"></div>
       </div>
     </div>
-    <div class="swipe4 absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="1200">
+    <div class="swipe4 absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade" data-aos-delay="1200">
       <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(4)" v-touch:swipe.right="() => addMultiIndex(4)" @click="addMultiIndex(4)">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList4" v-show="slideIndex4 === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -105,7 +108,7 @@
 
   @include md {
     width: 100vw;
-    height: sizem(782);
+    height: sizem(776 + 250);
     min-height: auto;
     max-height: initial;
     overflow: visible;
@@ -139,7 +142,15 @@
   white-space: nowrap;
 
   @include md {
-    @include img_c_m(154, 604);
+    @include img_l_m(209, 60, 28);
+    font-size: sizem(20);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.45;
+    letter-spacing: sizem(1);
+    text-align: left;
+    color: #3e3a39;
   }
 }
 
@@ -157,7 +168,15 @@
   color: #3e3a39;
 
   @include md {
-    @include img_c_m(154, 604);
+    @include img_l_m(320, 128, 28);
+    font-size: sizem(13);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: sizem(0.13);
+    text-align: left;
+    color: #3e3a39;
   }
 }
 
@@ -186,7 +205,7 @@
   object-fit: cover;
 
   @include md {
-    @include div_c_pc(310, 357, 255);
+    @include div_c_m(375, 220, 306);
   }
 }
 
@@ -195,7 +214,7 @@
   object-fit: cover;
 
   @include md {
-    @include div_c_pc(310, 357, 255);
+    @include div_l_m(188, 250, 526, 0);
   }
 }
 
@@ -204,7 +223,7 @@
   object-fit: cover;
 
   @include md {
-    @include div_c_pc(310, 357, 255);
+    @include div_r_m(188, 250, 526, 0);
   }
 }
 
@@ -213,7 +232,7 @@
   object-fit: cover;
 
   @include md {
-    @include div_c_pc(310, 357, 255);
+    @include div_c_m(375, 250, 776);
   }
 }
 
@@ -415,136 +434,17 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section4 {
-    width: 100vw;
-    height: sizem(782);
-    min-height: auto;
-    max-height: initial;
-    // background-image: url('./all/section_bg.jpg');
-    // background-attachment: scroll;
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
-    overflow: visible;
-  }
-  .grass {
-    @include img_r_m(173, 0, 0);
-    top: auto;
-    bottom: sizem(-80);
-    transform-origin: bottom;
-    animation: grass 4s ease-in-out alternate infinite;
-  }
 
-  @keyframes grass {
-    to {
-      transform: skewX(3deg);
-    }
-  }
-
-  // begin
-  .trans-leave-to {
-    opacity: 0;
-    z-index: 0;
-  }
-  // end
-  .trans-enter {
-    opacity: 0;
-    z-index: 1;
-  }
-
-  .trans-enter-active {
-    transition: all 1.8s ease;
-  }
-
-  .trans-leave-active {
-    transition: all 1.8s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-
-  .line {
-    @include div_l_m(7, 177, 39, 33);
-    background-color: #40220f;
-  }
-  .label {
-    @include img_l_m(116, 39, 55);
-    font-size: sizem(17);
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.53;
-    letter-spacing: sizem(2.72);
-    text-align: left;
-    color: #40220f;
-    color: #40220f;
-    white-space: nowrap;
-    z-index: 2;
-  }
-  .title {
-    @include img_l_m(250, 69, 55);
-    font-size: sizem(25);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.6;
-    letter-spacing: normal;
-    text-align: left;
-    color: #40220f;
-    white-space: nowrap;
-    z-index: 2;
-  }
-
-  .subtitle {
-    @include img_l_m(300, 116, 55);
-    font-size: sizem(16);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.63;
-    letter-spacing: sizem(0.96);
-    text-align: left;
-    color: #40220f;
-    white-space: normal;
-    z-index: 3;
-  }
-
-  .work-title {
-    @include img_l_m(255, 626, 20);
-    top: auto;
-    bottom: sizem(123);
-    font-size: sizem(22);
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.98;
-    letter-spacing: sizem(1.32);
-    text-align: left;
-    color: #40220f;
-    white-space: nowrap;
-  }
-  .work-desc {
-    @include img_l_m(170, 301, 33);
-    top: auto;
-    bottom: sizem(40);
-    font-size: sizem(15);
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.7;
-    letter-spacing: sizem(0.9);
-    text-align: left;
-    color: #40220f;
-    white-space: normal;
-  }
-
-  /* Swipe */
-  .swipe {
-    width: sizem(310);
-    height: sizem(357);
-    min-height: auto;
-    top: sizem(255);
-    bottom: auto;
-    left: sizem(33);
-    object-fit: cover;
-  }
+  // /* Swipe */
+  // .swipe {
+  //   width: sizem(310);
+  //   height: sizem(357);
+  //   min-height: auto;
+  //   top: sizem(255);
+  //   bottom: auto;
+  //   left: sizem(33);
+  //   object-fit: cover;
+  // }
 
   // begin
   .swipe-fade-leave-to {
@@ -618,8 +518,8 @@
     .slide-name {
       right: auto;
       top: auto;
-      bottom: 1.2rem;
-      right: 1.2rem;
+      bottom: 0.6rem;
+      right: 0.6rem;
       font-size: sizem(15);
     }
   }
@@ -685,8 +585,8 @@
   }
 
   .swipe-btns {
-    width: 116%;
-    left: -8%;
+    width: 100%;
+    left: 0%;
     .prev-btn,
     .next-btn {
       font-size: sizem(15);

@@ -2,7 +2,7 @@
   <div class="home no-padding-top">
     <div class="bg-img">
       <Loading :loading="load" />
-      <SideNavigation :min="isNavMin" />
+      <SideNavigation />
 
       <!-- <Navigation v-if="!isMobile" :min="isNavMin" :hide="isHide" /> -->
       <Navigation v-if="!isMobile" />
@@ -195,7 +195,7 @@ export default {
       isSide: false,
       load: false,
       viewIndex: 0,
-      isNavMin: false,
+      // isNavMin: false,
       isHide: false,
       scrollPos: 0,
       // action: {
@@ -245,23 +245,23 @@ export default {
   methods: {
     init() {},
     onScroll() {
-      const scrollTop =
-        document.documentElement.scrollTop || document.body.scrollTop
+      // const scrollTop =
+      //   document.documentElement.scrollTop || document.body.scrollTop
       // 定义当前点亮的导航下标
       // let navIndex = 0
 
-      if (document.body.getBoundingClientRect().top > this.scrollPos) {
-        this.isHide = false
-      } else {
-        this.isHide = true
-      }
+      // if (document.body.getBoundingClientRect().top > this.scrollPos) {
+      //   this.isHide = false
+      // } else {
+      //   this.isHide = true
+      // }
       // saves the new position for iteration.
-      this.scrollPos = document.body.getBoundingClientRect().top
-      if (scrollTop > 200) {
-        this.isNavMin = true
-      } else {
-        this.isNavMin = false
-      }
+      // this.scrollPos = document.body.getBoundingClientRect().top
+      // if (scrollTop > 200) {
+      //   this.isNavMin = true
+      // } else {
+      //   this.isNavMin = false
+      // }
       // 获取所有锚点元素
       // const navContents = document.querySelectorAll('.section')
       // // 所有锚点元素的 offsetTop

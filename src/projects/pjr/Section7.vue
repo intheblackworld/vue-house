@@ -29,6 +29,12 @@
   </div>
 </template>
 <style lang="scss" scoped>
+@import '@/assets/style/function.scss';
+.section7 {
+  @include md {
+    height: sizem(604);
+  }
+}
 .bg {
   background-color: #fff;
   background-position: 100% 0%;

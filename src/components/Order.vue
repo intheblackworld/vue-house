@@ -342,7 +342,7 @@ export default {
         },
       }).then((response) => {
         this.isSubmit = false
-        window.location.href = 'formThanks'
+        window.location.href = `formThanks${utmCampaign ? `?utm_campaign=${utmCampaign}` : ''}`
         this.recordPageView(1) // record user behavior
       })
 
