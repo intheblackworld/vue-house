@@ -262,6 +262,18 @@ export default {
 
     // 跨域問題待處理
     getMobileValidCode() {
+      if (!this.form.phone) {
+        const h = this.$createElement
+        this.$notify({
+          title: '提醒',
+          message: h(
+            'i',
+            { style: 'color: #82191d' },
+            '請先填寫手機號碼',
+          ),
+        })
+        return
+      }
       fetch('https://www.hiyes.tw/Auth/SendSmsVerifyCode', {
         method: 'POST',
         body: {
@@ -342,7 +354,9 @@ export default {
         },
       }).then((response) => {
         this.isSubmit = false
-        window.location.href = `formThanks${utmCampaign ? `?utm_campaign=${utmCampaign}` : ''}`
+        window.location.href = `formThanks${
+          utmCampaign ? `?utm_campaign=${utmCampaign}` : ''
+        }`
         this.recordPageView(1) // record user behavior
       })
 

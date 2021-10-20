@@ -645,11 +645,11 @@
   }
 
   .swipe-btns {
-    width: 116%;
-    left: -8%;
+    width: 100%;
+    left: 0%;
     .prev-btn,
     .next-btn {
-      font-size: sizem(15);
+      font-size: sizem(10);
       &::before {
         background-color: #cc5b4e00;
       }
