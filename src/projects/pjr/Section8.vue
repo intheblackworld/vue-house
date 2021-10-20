@@ -13,7 +13,7 @@
                 <source :srcset="slide.img" type="image/jpeg" />
                 <img :src="slide.img" :alt="info.caseName" class="">
               </picture>
-              <h3 class="slide-name absolute" v-html="slide.name"></h3>
+              <p class="slide-name absolute" v-html="slide.name"></p>
             </div>
           </transition-group>
           <div class="swipe-btns absolute flex-ac flex-jb">
@@ -40,7 +40,7 @@
                 <source :srcset="slide.img" type="image/jpeg" />
                 <img :src="slide.img" :alt="info.caseName" class="">
               </picture>
-              <h3 class="slide-name absolute" v-html="slide.name"></h3>
+              <p class="slide-name absolute" v-html="slide.name"></p>
             </div>
           </transition-group>
           <div class="swipe-btns absolute flex-ac flex-jb">
@@ -70,7 +70,7 @@
                 <source :srcset="slide.img" type="image/jpeg" />
                 <img :src="slide.img" :alt="info.caseName" class="">
               </picture>
-              <h3 class="slide-name absolute" v-html="slide.name"></h3>
+              <p class="slide-name absolute" v-html="slide.name"></p>
             </div>
           </transition-group>
           <div class="swipe-btns absolute flex-ac flex-jb">
@@ -100,7 +100,7 @@
                 <source :srcset="slide.img" type="image/jpeg" />
                 <img :src="slide.img" :alt="info.caseName" class="">
               </picture>
-              <h3 class="slide-name absolute" v-html="slide.name"></h3>
+              <p class="slide-name absolute" v-html="slide.name"></p>
             </div>
           </transition-group>
           <div class="swipe-btns absolute flex-ac flex-jb">
@@ -130,7 +130,7 @@
                 <source :srcset="slide.img" type="image/jpeg" />
                 <img :src="slide.img" :alt="info.caseName" class="">
               </picture>
-              <h3 class="slide-name absolute" v-html="slide.name"></h3>
+              <p class="slide-name absolute" v-html="slide.name"></p>
             </div>
           </transition-group>
           <div class="swipe-btns absolute flex-ac flex-jb">
@@ -160,7 +160,7 @@
                 <source :srcset="slide.img" type="image/jpeg" />
                 <img :src="slide.img" :alt="info.caseName" class="">
               </picture>
-              <h3 class="slide-name absolute" v-html="slide.name"></h3>
+              <p class="slide-name absolute" v-html="slide.name"></p>
             </div>
           </transition-group>
           <div class="swipe-btns absolute flex-ac flex-jb">
@@ -270,26 +270,19 @@
 }
 
 .desc {
-  font-size: size(21);
+  font-size: size(20);
   font-weight: 300;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.76;
-  letter-spacing: normal;
-  text-align: left;
+  letter-spacing:0.05em;
+  text-align: justify;
   color: #3e3a39;
   margin-bottom: size(130);
 
   @include md {
     font-size: sizem(13);
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 2;
-    letter-spacing: sizem(0.13);
-    text-align: left;
-    color: #3e3a39;
-    margin-bottom: sizem(30);
   }
 }
 
@@ -315,7 +308,8 @@
 /* Swipe */
 .swipe {
   width: size(660);
-
+&:nth-child(even){
+ padding-top: 8em;}
   @include md {
     width: 100%;
   }

@@ -18,7 +18,7 @@
               <source :srcset="slide.img" type="image/jpeg" />
               <img :src="slide.img" :alt="info.caseName" class="">
             </picture>
-            <h3 class="slide-name absolute" v-html="slide.name"></h3>
+            <p class="slide-name absolute" v-html="slide.name"></p>
           </div>
         </transition-group>
         <!-- <div class="pagination absolute flex-ac" v-if="isPC">
@@ -39,7 +39,7 @@
               <source :srcset="slide.img" type="image/jpeg" />
               <img :src="slide.img" :alt="info.caseName" class="">
             </picture>
-            <h3 class="slide-name absolute" v-html="slide.name"></h3>
+            <p class="slide-name absolute" v-html="slide.name"></p>
           </div>
         </transition-group>
         <!-- <div class="pagination absolute flex-ac" v-if="isPC">
@@ -60,7 +60,7 @@
               <source :srcset="slide.img" type="image/jpeg" />
               <img :src="slide.img" :alt="info.caseName" class="">
             </picture>
-            <h3 class="slide-name absolute" v-html="slide.name"></h3>
+            <p class="slide-name absolute" v-html="slide.name"></p>
           </div>
         </transition-group>
         <!-- <div class="pagination absolute flex-ac" v-if="isPC">
@@ -81,7 +81,7 @@
               <source :srcset="slide.img" type="image/jpeg" />
               <img :src="slide.img" :alt="info.caseName" class="">
             </picture>
-            <h3 class="slide-name absolute" v-html="slide.name"></h3>
+            <p class="slide-name absolute" v-html="slide.name"></p>
           </div>
         </transition-group>
         <!-- <div class="pagination absolute flex-ac" v-if="isPC">
@@ -158,25 +158,19 @@
   @include img_l_pc(1278, 0, 79);
   top: auto;
   bottom: size(40);
-  font-size: size(21);
+  font-size: size(20);
   font-weight: 300;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.76;
-  letter-spacing: normal;
-  text-align: left;
+  letter-spacing:0.05em;
+  text-align: justify;
   color: #3e3a39;
 
   @include md {
     @include img_l_m(320, 128, 28);
     font-size: sizem(13);
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 2;
-    letter-spacing: sizem(0.13);
-    text-align: left;
-    color: #3e3a39;
   }
 }
 
@@ -501,26 +495,9 @@
       height: 100%;
       object-fit: cover;
     }
-
-    // &:nth-child(1) {
-    //   z-index: 1;
-    //   // opacity: 1;
-    // }
-
-    // &.base {
-    //   z-index: 1;
-    //   opacity: 1;
-    // }
-    // &.active {
-    //   z-index: 2;
-    //   // opacity: 1;
-    // }
     .slide-name {
-      right: auto;
-      top: auto;
-      bottom: 0.6rem;
-      right: 0.6rem;
-      font-size: sizem(15);
+      right: 1em;
+      font-size: sizem(12);
     }
   }
 

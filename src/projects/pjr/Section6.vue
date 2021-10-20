@@ -28,7 +28,7 @@
               <source media="(max-width: 767px)" :srcset="slide.imgm" type="image/webp" />
               <img :src="slide.img" :alt="info.caseName" class="">
             </picture>
-            <h3 class="slide-name absolute" v-html="slide.name"></h3>
+            <p class="slide-name absolute" v-html="slide.name"></p>
           </div>
         </transition-group>
       </div>
@@ -139,25 +139,19 @@
 
 .desc {
   @include img_l_pc(660, 476, 185);
-  font-size: size(21);
+  font-size: size(20);
   font-weight: 300;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.76;
-  letter-spacing: normal;
-  text-align: left;
+  letter-spacing:0.05em;
+  text-align: justify;
   color: #3e3a39;
 
   @include md {
     @include img_l_m(320, 228, 28);
     font-size: sizem(13);
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 2;
-    letter-spacing: sizem(0.13);
-    text-align: left;
-    color: #3e3a39;
   }
 }
 
@@ -630,8 +624,8 @@ export default {
           logowebp: require('./webp/s6/2_logo.webp'),
           name: '璞真建設作品 勤美璞真 碧湖畔',
           title: '翻轉傳統產業 開啟綠色生產新頁',
-          label: '金屬成型事業',
-          desc: '勤美新竹、勤美楊梅、化新精密、<br />天津勤威、蘇州勤堡、武漢勤美達',
+          label: '不動產事業',
+          desc: '璞真建設股份有限公司',
         },
         {
           img: require('./s6/3全國大飯店.jpg'),
@@ -640,8 +634,8 @@ export default {
           logowebp: require('./webp/s6/3_logo.webp'),
           name: '全國大飯店',
           title: '翻轉傳統產業 開啟綠色生產新頁',
-          label: '金屬成型事業',
-          desc: '勤美新竹、勤美楊梅、化新精密、<br />天津勤威、蘇州勤堡、武漢勤美達',
+          label: '飯店休閒',
+          desc: '全國大飯店',
         },
         {
           img: require('./s6/4日華金典國際酒店.jpg'),
@@ -650,8 +644,8 @@ export default {
           logowebp: require('./webp/s6/4_logo.webp'),
           name: '日華金典國際酒店',
           title: '翻轉傳統產業 開啟綠色生產新頁',
-          label: '金屬成型事業',
-          desc: '勤美新竹、勤美楊梅、化新精密、<br />天津勤威、蘇州勤堡、武漢勤美達',
+          label: '飯店休閒',
+          desc: '日華金典國際酒店',
         },
         {
           img: require('./s6/5勤美學山那村.jpg'),
@@ -660,8 +654,8 @@ export default {
           logowebp: require('./webp/s6/5_logo.webp'),
           name: '勤美學山那村',
           title: '翻轉傳統產業 開啟綠色生產新頁',
-          label: '金屬成型事業',
-          desc: '勤美新竹、勤美楊梅、化新精密、<br />天津勤威、蘇州勤堡、武漢勤美達',
+          label: '藝術深耕',
+          desc: '勤美學山那村',
         },
         {
           img: require('./s6/6勤美誠品綠園道.jpg'),
@@ -670,8 +664,8 @@ export default {
           logowebp: require('./webp/s6/6_logo.webp'),
           name: '勤美誠品綠園道',
           title: '翻轉傳統產業 開啟綠色生產新頁',
-          label: '金屬成型事業',
-          desc: '勤美新竹、勤美楊梅、化新精密、<br />天津勤威、蘇州勤堡、武漢勤美達',
+          label: '人文商場',
+          desc: '勤美誠品綠園道',
         },
         {
           img: require('./s6/7金典綠園道商場.jpg'),
@@ -680,8 +674,8 @@ export default {
           logowebp: require('./webp/s6/7_logo.webp'),
           name: '金典綠園道商場',
           title: '翻轉傳統產業 開啟綠色生產新頁',
-          label: '金屬成型事業',
-          desc: '勤美新竹、勤美楊梅、化新精密、<br />天津勤威、蘇州勤堡、武漢勤美達',
+          label: '人文商場',
+          desc: '金典綠園道商場',
         },
         {
           img: require('./s6/8台中綠園道展覽.jpg'),
@@ -690,8 +684,8 @@ export default {
           logowebp: require('./webp/s6/8_logo.webp'),
           name: '台中綠園道展覽',
           title: '翻轉傳統產業 開啟綠色生產新頁',
-          label: '金屬成型事業',
-          desc: '勤美新竹、勤美楊梅、化新精密、<br />天津勤威、蘇州勤堡、武漢勤美達',
+          label: '藝術深耕',
+          desc: '勤美璞真文化藝術基金會',
         },
         {
           img: require('./s6/9台中勤美術館.jpg'),
@@ -700,8 +694,8 @@ export default {
           logowebp: require('./webp/s6/9_logo.webp'),
           name: '台中勤美術館',
           title: '翻轉傳統產業 開啟綠色生產新頁',
-          label: '金屬成型事業',
-          desc: '勤美新竹、勤美楊梅、化新精密、<br />天津勤威、蘇州勤堡、武漢勤美達',
+          label: '藝術深耕',
+          desc: '勤美術館',
         },
         {
           img: require('./s6/10情境示意圖.jpg'),
@@ -710,8 +704,8 @@ export default {
           logowebp: require('./webp/s6/10_logo.webp'),
           name: '情境示意圖',
           title: '翻轉傳統產業 開啟綠色生產新頁',
-          label: '金屬成型事業',
-          desc: '勤美新竹、勤美楊梅、化新精密、<br />天津勤威、蘇州勤堡、武漢勤美達',
+          label: '藝術深耕',
+          desc: '森大x青鳥',
         },
       ],
     }

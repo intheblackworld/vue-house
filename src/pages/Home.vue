@@ -85,7 +85,7 @@
       <ContactSection />
       <!-- </vue-lazy-component> -->
     </div>
-    <MobileNav />
+    <!-- <MobileNav /> -->
   </div>
 </template>
 
@@ -128,7 +128,7 @@ import Navigation from '@/layouts/Navigation.vue'
 import { isMobile } from '@/utils'
 import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
-import MobileNav from '@/layouts/MobileNav.vue'
+//import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 // import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
@@ -164,7 +164,7 @@ export default {
     SideNavigation,
     // LeafFlow,
     ContactSection,
-    MobileNav,
+   // MobileNav,
     Section1,
     Section2,
     Section3,

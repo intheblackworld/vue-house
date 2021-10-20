@@ -3,9 +3,10 @@
 .form-desc {
   color: #fff;
   text-align: left;
-  line-height: 1.4;
+  line-height: 1.6;
   font-weight: normal;
-  font-weight: 600;
+  letter-spacing: 0.06em;
+  font-weight: 300;
 }
 
 .el-select {
@@ -106,7 +107,7 @@
   background-color: $order_submit_bg;
   background-image: $order_submit_bg;
   border: 1px solid #eb5500 !important;
- // border-radius: 72px / 72px !important;
+  border-radius: 8px / 8px !important;
   margin: 0 auto !important;
   margin-top: 20px !important;
   transition: all 0.3s !important;
@@ -243,9 +244,9 @@
   }
 
   .valid_code-submit {
-    width: 100% !important;
-    font-size: 24px !important;
-    margin: 10px auto 20px auto !important;
+    //width: 100% !important;
+    font-size: 20px !important;
+   // margin: 10px auto 20px auto !important;
   }
 
   .el-date-editor.el-input {

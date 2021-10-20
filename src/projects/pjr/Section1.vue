@@ -7,6 +7,11 @@
       <source media="(max-width: 767px)" srcset="./s1/bgm.jpg" type="image/jpeg" />
       <img src="./s1/bg.jpg" :alt="info.caseName" class="bg-img">
     </picture>
+    <picture>
+      <source media="(min-width: 767px)" srcset="./s1/bg3.gif" type="image/jpeg" />
+      <source media="(max-width: 767px)" srcset="./s1/bg3m.gif" type="image/jpeg" />
+     <img src="./s1/bg3.gif" :alt="info.caseName" class="bg-img img2">
+    </picture>
     <div class="title" v-if="isPC" data-aos="fade-up" data-aos-delay="200">
       中山北路 看見璞真
     </div>
@@ -55,12 +60,12 @@
 
   // 手機版
   @include md {
-    height: calc(100vh - 63px);
-    min-height: calc(667 * 100vw / 375 - 63px);
-    max-height: calc(812 * 100vw / 375 - 63px);
+    height: 100vh;
+    min-height: calc(667 * 100vw / 375);
+    max-height: calc(812 * 100vw / 375);
   }
 }
-
+.img2{mix-blend-mode: overlay;}
 .bg-img {
   position: absolute;
   left: 0;

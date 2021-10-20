@@ -438,7 +438,7 @@ export default {
   }
 
   .order {
-    width: 820px;
+    width: 880px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -471,7 +471,7 @@ export default {
 
     &:nth-child(2) {
       .row {
-        margin-left: 5%;
+       // margin-left: 5%;
         // justify-content: flex-end;
         // align-items: flex-start;
         // height: 100%;
@@ -548,7 +548,7 @@ export default {
       width: 310px;
       padding-top: 10px;
       padding-bottom: 0px;
-      font-size: calc(100vw * 47 / 375);
+      font-size: calc(100vw * 30 / 375);
       letter-spacing: 4px;
       white-space: nowrap;
     }
