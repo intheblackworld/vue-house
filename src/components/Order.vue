@@ -218,7 +218,7 @@ export default {
         message: h(
           'i',
           { style: 'color: #82191d' },
-          '「姓名、手機」是必填欄位',
+          '「姓名、手機、驗證碼」是必填欄位',
         ),
       })
     },
@@ -291,7 +291,8 @@ export default {
       this.isSubmit = true
       if (
         !this.form.name ||
-        !this.form.phone
+        !this.form.phone ||
+        !this.form.valid_code
         // ||
         // !this.form.time_start ||
         // !this.form.time_end
