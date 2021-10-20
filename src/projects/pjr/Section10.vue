@@ -2,7 +2,7 @@
   <div class="section10">
     <div class="container flex flex-jb flex-ac wrap">
       <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="400">
-        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(1)" v-touch:swipe.right="() => addMultiIndex(1)" @click="addMultiIndex(1)">
+        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(1)" v-touch:swipe.right="() => addMultiIndex(1)">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList1" v-show="slideIndex1 === i" :key="slide.img" :class="`swipe-item absolute`">
               <picture>
@@ -58,7 +58,7 @@
             </h3>
           </div>
         </div>
-        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(2)" v-touch:swipe.right="() => addMultiIndex(2)" @click="addMultiIndex(2)">
+        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(2)" v-touch:swipe.right="() => addMultiIndex(2)">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList2" v-show="slideIndex2 === i" :key="slide.img" :class="`swipe-item absolute`">
               <picture>
@@ -76,7 +76,7 @@
         </div>
       </div>
       <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="800">
-        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(3)" v-touch:swipe.right="() => addMultiIndex(3)" @click="addMultiIndex(3)">
+        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(3)" v-touch:swipe.right="() => addMultiIndex(3)">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList3" v-show="slideIndex3 === i" :key="slide.img" :class="`swipe-item absolute`">
               <picture>
@@ -135,7 +135,7 @@
             </h3>
           </div>
         </div>
-        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(4)" v-touch:swipe.right="() => addMultiIndex(4)" @click="addMultiIndex(4)">
+        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(4)" v-touch:swipe.right="() => addMultiIndex(4)">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList4" v-show="slideIndex4 === i" :key="slide.img" :class="`swipe-item absolute`">
               <picture>
@@ -178,11 +178,13 @@
 
 .container {
   width: size(1550);
-  margin: size(60) auto;
+  padding: size(60) 0;
+  margin: 0 auto;
   border-top: 1px solid #727171;
   @include md {
     width: sizem(320);
-    margin: sizem(60) auto;
+    padding: sizem(60) 0;
+    margin: 0 auto;
   }
 }
 
@@ -313,6 +315,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid #727171;
   position: relative;
 
   @include md {

@@ -50,11 +50,13 @@ export default {
     },
     // 一個區塊有多個輪播組件
     addMultiIndex(index) {
+      console.log(index, '2222', this[`slideIndex${index}`])
       this[`slideIndex${index}`] =
         this[`slideIndex${index}`] === this[`slideList${index}`].length - 1 ? 0 : this[`slideIndex${index}`] + 1
     },
 
     decMultiIndex(index) {
+      console.log(index, '123123', this[`slideIndex${index}`])
       this[`slideIndex${index}`] =
         this[`slideIndex${index}`] === 0 ? this[`slideList${index}`].length - 1 : this[`slideIndex${index}`] - 1
     },

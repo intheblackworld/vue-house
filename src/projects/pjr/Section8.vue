@@ -5,7 +5,7 @@
         <div class="label">
           精品商圈
         </div>
-        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(1)" v-touch:swipe.right="() => addMultiIndex(1)" @click="addMultiIndex(1)">
+        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(1)" v-touch:swipe.right="() => addMultiIndex(1)">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList1" v-show="slideIndex1 === i" :key="slide.img" :class="`swipe-item absolute`">
               <picture>
@@ -16,10 +16,10 @@
               <h3 class="slide-name absolute" v-html="slide.name"></h3>
             </div>
           </transition-group>
-        </div>
-        <div class="swipe-btns absolute flex-ac flex-jb">
-          <div class="prev-btn" @click="decMultiIndex(1)"></div>
-          <div class="next-btn" @click="addMultiIndex(1)"></div>
+          <div class="swipe-btns absolute flex-ac flex-jb">
+            <div class="prev-btn" @click="decMultiIndex(1)"></div>
+            <div class="next-btn" @click="addMultiIndex(1)"></div>
+          </div>
         </div>
         <div class="title">
           中山、雙連雙捷核心 盛裝優雅日常時光
@@ -32,7 +32,7 @@
         <div class="label">
           美食聚落
         </div>
-        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(2)" v-touch:swipe.right="() => addMultiIndex(2)" @click="addMultiIndex(2)">
+        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(2)" v-touch:swipe.right="() => addMultiIndex(2)">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList2" v-show="slideIndex2 === i" :key="slide.img" :class="`swipe-item absolute`">
               <picture>
@@ -43,13 +43,13 @@
               <h3 class="slide-name absolute" v-html="slide.name"></h3>
             </div>
           </transition-group>
+          <div class="swipe-btns absolute flex-ac flex-jb">
+            <div class="prev-btn" @click="decMultiIndex(2)"></div>
+            <div class="next-btn" @click="addMultiIndex(2)"></div>
+          </div>
           <!-- <div class="pagination absolute flex-ac" v-if="isPC">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList2" :key="slide.img + '-dot'" @click="goToMultiIndex(index, 2)"><span :class="`${slideIndex2 === index ? 'active' : ''}`"></span></div>
         </div> -->
-        </div>
-        <div class="swipe-btns absolute flex-ac flex-jb">
-          <div class="prev-btn" @click="decMultiIndex(2)"></div>
-          <div class="next-btn" @click="addMultiIndex(2)"></div>
         </div>
         <div class="title">
           雙連、寧夏生活質蘊 難忘市井好滋味
@@ -62,7 +62,7 @@
         <div class="label">
           文化大道
         </div>
-        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(3)" v-touch:swipe.right="() => addMultiIndex(3)" @click="addMultiIndex(3)">
+        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(3)" v-touch:swipe.right="() => addMultiIndex(3)">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList3" v-show="slideIndex3 === i" :key="slide.img" :class="`swipe-item absolute`">
               <picture>
@@ -73,13 +73,13 @@
               <h3 class="slide-name absolute" v-html="slide.name"></h3>
             </div>
           </transition-group>
+          <div class="swipe-btns absolute flex-ac flex-jb">
+            <div class="prev-btn" @click="decMultiIndex(3)"></div>
+            <div class="next-btn" @click="addMultiIndex(3)"></div>
+          </div>
           <!-- <div class="pagination absolute flex-ac" v-if="isPC">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList3" :key="slide.img + '-dot'" @click="goToMultiIndex(index, 3)"><span :class="`${slideIndex3 === index ? 'active' : ''}`"></span></div>
         </div> -->
-        </div>
-        <div class="swipe-btns absolute flex-ac flex-jb">
-          <div class="prev-btn" @click="decMultiIndex(3)"></div>
-          <div class="next-btn" @click="addMultiIndex(3)"></div>
         </div>
         <div class="title">
           百年古蹟藝術聚落 豐釀人文胸豁
@@ -92,7 +92,7 @@
         <div class="label">
           金融總部
         </div>
-        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(4)" v-touch:swipe.right="() => addMultiIndex(4)" @click="addMultiIndex(4)">
+        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(4)" v-touch:swipe.right="() => addMultiIndex(4)">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList4" v-show="slideIndex4 === i" :key="slide.img" :class="`swipe-item absolute`">
               <picture>
@@ -103,13 +103,13 @@
               <h3 class="slide-name absolute" v-html="slide.name"></h3>
             </div>
           </transition-group>
+          <div class="swipe-btns absolute flex-ac flex-jb">
+            <div class="prev-btn" @click="decMultiIndex(4)"></div>
+            <div class="next-btn" @click="addMultiIndex(4)"></div>
+          </div>
           <!-- <div class="pagination absolute flex-ac" v-if="isPC">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList4" :key="slide.img + '-dot'" @click="goToMultiIndex(index, 4)"><span :class="`${slideIndex4 === index ? 'active' : ''}`"></span></div>
         </div> -->
-        </div>
-        <div class="swipe-btns absolute flex-ac flex-jb">
-          <div class="prev-btn" @click="decMultiIndex(4)"></div>
-          <div class="next-btn" @click="addMultiIndex(4)"></div>
         </div>
         <div class="title">
           上海、陽信雙金融總部 第一大道再鑲榮耀
@@ -122,7 +122,7 @@
         <div class="label">
           五星飯店聚落
         </div>
-        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(5)" v-touch:swipe.right="() => addMultiIndex(5)" @click="addMultiIndex(5)">
+        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(5)" v-touch:swipe.right="() => addMultiIndex(5)">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList5" v-show="slideIndex5 === i" :key="slide.img" :class="`swipe-item absolute`">
               <picture>
@@ -133,13 +133,13 @@
               <h3 class="slide-name absolute" v-html="slide.name"></h3>
             </div>
           </transition-group>
+          <div class="swipe-btns absolute flex-ac flex-jb">
+            <div class="prev-btn" @click="decMultiIndex(5)"></div>
+            <div class="next-btn" @click="addMultiIndex(5)"></div>
+          </div>
           <!-- <div class="pagination absolute flex-ac" v-if="isPC">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList5" :key="slide.img + '-dot'" @click="goToMultiIndex(index, 5)"><span :class="`${slideIndex5 === index ? 'active' : ''}`"></span></div>
         </div> -->
-        </div>
-        <div class="swipe-btns absolute flex-ac flex-jb">
-          <div class="prev-btn" @click="decMultiIndex(5)"></div>
-          <div class="next-btn" @click="addMultiIndex(5)"></div>
         </div>
         <div class="title">
           五星級飯店廊道 全球貴賓風光下榻
@@ -152,7 +152,7 @@
         <div class="label">
           權掌雙國門
         </div>
-        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(6)" v-touch:swipe.right="() => addMultiIndex(6)" @click="addMultiIndex(6)">
+        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(6)" v-touch:swipe.right="() => addMultiIndex(6)">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList6" v-show="slideIndex6 === i" :key="slide.img" :class="`swipe-item absolute`">
               <picture>
@@ -163,13 +163,13 @@
               <h3 class="slide-name absolute" v-html="slide.name"></h3>
             </div>
           </transition-group>
+          <div class="swipe-btns absolute flex-ac flex-jb">
+            <div class="prev-btn" @click="decMultiIndex(6)"></div>
+            <div class="next-btn" @click="addMultiIndex(6)"></div>
+          </div>
           <!-- <div class="pagination absolute flex-ac" v-if="isPC">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList6" :key="slide.img + '-dot'" @click="goToMultiIndex(index, 6)"><span :class="`${slideIndex6 === index ? 'active' : ''}`"></span></div>
         </div> -->
-        </div>
-        <div class="swipe-btns absolute flex-ac flex-jb">
-          <div class="prev-btn" @click="decMultiIndex(6)"></div>
-          <div class="next-btn" @click="addMultiIndex(6)"></div>
         </div>
         <div class="title">
           權掌雙國門輻輳 國際都會未來指標
