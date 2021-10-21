@@ -217,6 +217,8 @@
 
     @include md {
       font-size: sizem(12);
+      right: 0.6em;
+      bottom: 0.6em;
     }
   }
 }

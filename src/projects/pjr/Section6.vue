@@ -240,6 +240,10 @@
   width: size(120);
   right: 0;
   @include md {
+    position: absolute;
+    top: sizem(250);
+    width: sizem(47);
+    right: 0;
   }
 }
 
@@ -514,8 +518,8 @@
     .slide-name {
       right: auto;
       top: auto;
-      bottom: 1.2rem;
-      right: 1.2rem;
+      bottom: 0.6rem;
+      right: 0.6rem;
       font-size: sizem(15);
     }
   }

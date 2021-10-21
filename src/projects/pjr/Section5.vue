@@ -1,17 +1,35 @@
 <template>
   <div class="section5">
-    <div class="label" data-aos="fade" data-aos-delay="200">
-      你一定知道璞真建設<br />
-      但你可能不知道 他們還做了什麼
-    </div>
-    <div class="title" data-aos="fade" data-aos-delay="400">
-      璞真建設 邁向國際工業4.0<br />
-      BIM建築資訊系統
-    </div>
+    <div v-if="slideIndex === 0">
+      <div class="label" data-aos="fade" data-aos-delay="200">
+        你一定知道璞真建設<br />
+        但你可能不知道 他們還做了什麼
+      </div>
+      <div class="title" data-aos="fade" data-aos-delay="400">
+        璞真建設 邁向國際工業4.0<br />
+        BIM建築資訊系統
+      </div>
 
-    <h3 class="desc" data-aos="fade" data-aos-delay="600">
-      接軌世界潮流「BIＭ尖端技術」，建構「建築資訊系統」，強化「地震預警」及「建築體檢」，應用資訊監測及AI演算，提高自動化、精準度，安全性，締造永恆安居堡壘。
-    </h3>
+      <h3 class="desc" data-aos="fade" data-aos-delay="600">
+        接軌世界潮流「BIＭ尖端技術」，建構「建築資訊系統」，強化「地震預警」及「建築體檢」，應用資訊監測及AI演算，提高自動化、精準度，安全性，締造永恆安居堡壘。
+      </h3>
+    </div>
+    <div v-else class="content">
+      <div class="list-title" data-aos="fade" data-aos-delay="200">地震預警系統</div>
+      <div class="list-desc" data-aos="fade" data-aos-delay="200">■無畏地震震災，高速安全預警。</div>
+
+      <div class="list-title" data-aos="fade" data-aos-delay="200">建築資訊模型</div>
+      <div class="list-desc" data-aos="fade" data-aos-delay="200">■全自動化管理，高效精準施作。</div>
+
+      <div class="list-title" data-aos="fade" data-aos-delay="200">建築預防醫學</div>
+      <div class="list-desc" data-aos="fade" data-aos-delay="200">■結構安全偵測，建築例行體檢。</div>
+
+      <div class="list-title" data-aos="fade" data-aos-delay="200">售後管理平台</div>
+      <div class="list-desc" data-aos="fade" data-aos-delay="200">■完善建築履歷，高速檢修機制。</div>
+
+      <div class="list-title" data-aos="fade" data-aos-delay="200">建築履歷建置</div>
+      <div class="list-desc" data-aos="fade" data-aos-delay="200">■契合自然生態，永續居宅維養。</div>
+    </div>
 
     <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade" data-aos-delay="800">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -97,6 +115,60 @@
     color: #c9a063;
   }
 }
+
+.content {
+  @include img_r_pc(660, 180, 186);
+
+  @include md {
+    @include img_l_m(320, 20, 28);
+  }
+
+  .list-title {
+    font-size: size(35);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: normal;
+    text-align: left;
+    color: #3e3a39;
+    margin-bottom: size(12);
+
+    @include md {
+      font-size: sizem(20);
+      font-weight: 600;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.45;
+      letter-spacing: normal;
+      text-align: left;
+      color: #3e3a39;
+    }
+  }
+
+  .list-desc {
+    font-size: size(21);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.76;
+    letter-spacing: size(0.21);
+    text-align: left;
+    color: #3e3a39;
+    margin-bottom: size(20);
+
+    @include md {
+      font-size: sizem(14);
+      font-weight: 300;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.86;
+      letter-spacing: sizem(0.14);
+      text-align: left;
+      color: #3e3a39;
+    }
+  }
+}
 .title {
   @include img_r_pc(410, 378, 435);
   font-size: size(35);
@@ -129,7 +201,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.76;
-  letter-spacing:0.05em;
+  letter-spacing: 0.05em;
   text-align: justify;
   color: #3e3a39;
 
@@ -532,7 +604,7 @@ export default {
           webpm: require('./webp/s5/1情境示意圖.webp'),
           name: '情境示意圖',
           title: '地震預警系統',
-          desc: '■無畏地震震災，高速安全預警。'
+          desc: '■無畏地震震災，高速安全預警。',
           // desc: '270度翠綠簇擁<br />開窗就享無垠綠景',
         },
         {

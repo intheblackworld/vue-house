@@ -496,7 +496,8 @@
       object-fit: cover;
     }
     .slide-name {
-      right: 1em;
+      bottom: 0.6rem;
+      right: 0.6rem;
       font-size: sizem(12);
     }
   }
