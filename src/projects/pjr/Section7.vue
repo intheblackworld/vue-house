@@ -26,6 +26,7 @@
     </div> -->
     <Map :bgSrc="bgSrc" :hand="hand" v-if="isMobile">
     </Map>
+    <p class="slide-name absolute">基地位置空拍</p>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -60,6 +61,19 @@
   //   position: relative;
   // }
 }
+  .slide-name {
+    right: 1.2em;
+    bottom: 0.6em;
+    color: #fff;
+    font-size: size(16);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+    text-align: left;
+    text-shadow: 0 0.3em 1em #000;
+  }
 @media only screen and (max-width: 1440px) and (min-width: 1025px) {
   .fullscreen {
     height: 100vh;
@@ -155,6 +169,14 @@
       position: relative;
     }
   }
+    .slide-name {
+      right: auto;
+      top: auto;
+      bottom: 0.8em;
+      right: 0.8em;
+      z-index: 10;
+      font-size: sizem(12);
+    }
 }
 </style>
 

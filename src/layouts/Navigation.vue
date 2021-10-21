@@ -17,7 +17,7 @@
             </div>
           </div>
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
-            <li class="flex-ac" v-scroll-to="{element: '#contact-info', offset: 0}">
+            <li class="flex-ac" v-scroll-to="{element: '#contact-info', offset: -70}">
               <span class="link">
                 <span>
                   <div class="title">立即來電</div>
@@ -31,14 +31,14 @@
                 </span>
               </span>
             </li>
-            <li class="flex-ac" v-scroll-to="{element: '#contact-info', offset: 0}">
+            <li class="flex-ac" v-scroll-to="{element: '#contact-info', offset: -70}">
               <span class="link">
                 <span>
                   <div class="title">粉絲專頁</div>
                 </span>
               </span>
             </li>
-            <li class="flex-ac" v-scroll-to="{element: '#google-map', offset: 0}">
+            <li class="flex-ac" v-scroll-to="{element: '#contact-info', offset: -70}">
               <span class="link">
                 <span>
                   <div class="title">地圖導航</div>
@@ -203,7 +203,7 @@ export default {
     height: 100%;
     &:nth-child(1) {
       .link {
-        border-left: 1px solid $nav_link_hover_bg;
+        border-left: 1px solid #FFF6;
       }
     }
   }
@@ -223,7 +223,7 @@ export default {
     justify-content: center;
     position: relative;
     overflow: hidden;
-    border-right: 1px solid $nav_link_hover_bg;
+    border-right: 1px solid #FFF6;
 
     &:hover {
       color: $nav_link_hover_color;

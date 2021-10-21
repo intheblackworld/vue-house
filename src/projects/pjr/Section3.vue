@@ -42,7 +42,7 @@
 
   @include md {
     width: 100vw;
-    height: sizem(650);
+    height: 176vw;
     min-height: auto;
     max-height: initial;
     overflow: visible;

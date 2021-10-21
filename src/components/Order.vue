@@ -93,7 +93,7 @@
         </div>
         <div class="control form-desc">
           你所登錄的個人資料將做為以下用途<br />
-          (一)本網站所載之相關事項通知(二)客戶管理與服務(三)本公司行銷業務之推廣本案實際內容以現場公布為準
+          (一)本網站所載之相關事項通知(二)客戶管理與服務(三)本公司行銷業務之推廣本案實際內容以現場公布為準<br />
           <el-checkbox v-model="checked">
             <h3>
               本人知悉並同意
@@ -535,6 +535,7 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .order-bg {
+  background-image: $order_bg_image_m;
     //  background-image: $order_bg_image;
     //  background-size: cover;
     padding-top: 40px;
@@ -588,12 +589,20 @@ export default {
     }
 
     .control {
+    font-size: calc(100vw * 12 / 375);
+    margin: 1em 0.5em;
       .el-checkbox {
+        font-size: 1em;
         margin: 10px auto;
       }
       /* margin-top: 10px;
       margin-bottom: 10px;
       */
+      .el-checkbox__label {
+         p, h3 {
+    font-size: 12px;
+  }
+    }
     }
 
     .hint {

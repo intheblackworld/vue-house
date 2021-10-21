@@ -10,6 +10,10 @@
       建築不只精密科學計算，而是有溫度、有情感、有故事的生活聚場，從結構形體昇華至精神領域。璞真願意花更多時間探索生活，量身訂製創新空間提案，以綠建築、智慧建築設計導入低碳思維。當建築擁有獨一無二的性格，自然吸引居住品味相契的人們，回歸生活最樸實且真摯的樣貌。
     </h3>
     <div class="swipe1 absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade" data-aos-delay="400">
+      <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+        <div class="prev-btn" @click="decMultiIndex(1)"></div>
+        <div class="next-btn" @click="addMultiIndex(1)"></div>
+      </div>
       <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(1)" v-touch:swipe.right="() => addMultiIndex(1)" @click="addMultiIndex(1)">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList1" v-show="slideIndex1 === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -25,12 +29,12 @@
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList1" :key="slide.img + '-dot'" @click="goToMultiIndex(index, 1)"><span :class="`${slideIndex1 === index ? 'active' : ''}`"></span></div>
         </div> -->
       </div>
-      <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-        <div class="prev-btn" @click="decMultiIndex(1)"></div>
-        <div class="next-btn" @click="addMultiIndex(1)"></div>
-      </div>
     </div>
     <div class="swipe2 absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade" data-aos-delay="600">
+      <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+        <div class="prev-btn" @click="decMultiIndex(2)"></div>
+        <div class="next-btn" @click="addMultiIndex(2)"></div>
+      </div>
       <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(2)" v-touch:swipe.right="() => addMultiIndex(2)" @click="addMultiIndex(2)">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList2" v-show="slideIndex2 === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -46,12 +50,12 @@
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList2" :key="slide.img + '-dot'" @click="goToMultiIndex(index, 2)"><span :class="`${slideIndex2 === index ? 'active' : ''}`"></span></div>
         </div> -->
       </div>
-      <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-        <div class="prev-btn" @click="decMultiIndex(2)"></div>
-        <div class="next-btn" @click="addMultiIndex(2)"></div>
-      </div>
     </div>
     <div class="swipe3 absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade" data-aos-delay="800">
+      <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+        <div class="prev-btn" @click="decMultiIndex(3)"></div>
+        <div class="next-btn" @click="addMultiIndex(3)"></div>
+      </div>
       <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(3)" v-touch:swipe.right="() => addMultiIndex(3)" @click="addMultiIndex(3)">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList3" v-show="slideIndex3 === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -67,12 +71,12 @@
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList3" :key="slide.img + '-dot'" @click="goToMultiIndex(index, 3)"><span :class="`${slideIndex3 === index ? 'active' : ''}`"></span></div>
         </div> -->
       </div>
-      <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-        <div class="prev-btn" @click="decMultiIndex(3)"></div>
-        <div class="next-btn" @click="addMultiIndex(3)"></div>
-      </div>
     </div>
     <div class="swipe4 absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade" data-aos-delay="1200">
+      <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+        <div class="prev-btn" @click="decMultiIndex(4)"></div>
+        <div class="next-btn" @click="addMultiIndex(4)"></div>
+      </div>
       <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(4)" v-touch:swipe.right="() => addMultiIndex(4)" @click="addMultiIndex(4)">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList4" v-show="slideIndex4 === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -87,10 +91,6 @@
         <!-- <div class="pagination absolute flex-ac" v-if="isPC">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList4" :key="slide.img + '-dot'" @click="goToMultiIndex(index, 4)"><span :class="`${slideIndex4 === index ? 'active' : ''}`"></span></div>
         </div> -->
-      </div>
-      <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-        <div class="prev-btn" @click="decMultiIndex(4)"></div>
-        <div class="next-btn" @click="addMultiIndex(4)"></div>
       </div>
     </div>
   </div>
@@ -199,7 +199,7 @@
   object-fit: cover;
 
   @include md {
-    @include div_c_m(375, 220, 306);
+    @include div_c_m(375, 220, 310);
   }
 }
 
@@ -208,7 +208,7 @@
   object-fit: cover;
 
   @include md {
-    @include div_l_m(188, 250, 526, 0);
+    @include div_l_m(188, 250, 530, 0);
   }
 }
 
@@ -217,7 +217,7 @@
   object-fit: cover;
 
   @include md {
-    @include div_r_m(188, 250, 526, 0);
+    @include div_r_m(188, 250, 530, 0);
   }
 }
 
@@ -226,7 +226,7 @@
   object-fit: cover;
 
   @include md {
-    @include div_c_m(375, 250, 776);
+    @include div_c_m(375, 250, 780);
   }
 }
 
@@ -363,14 +363,14 @@
   width: 100%;
   height: 100%;
   padding: 0 0;
-  z-index: 3;
+ // z-index: 3;
   overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
   .prev-btn,
   .next-btn {
-    position: relative;
+    position: relative;z-index: 3;
     height: 100%;
     width: 2em;
     font-size: size(20);

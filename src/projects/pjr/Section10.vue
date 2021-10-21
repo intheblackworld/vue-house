@@ -183,7 +183,7 @@
   border-top: 1px solid #727171;
   @include md {
     width: sizem(320);
-    padding: sizem(60) 0;
+    padding: sizem(0) 0;
     margin: 0 auto;
   }
 }
@@ -218,7 +218,7 @@
   white-space: nowrap;
   margin-bottom: size(8);
   @include md {
-    @include img_l_m(320, 60, 0);
+    @include img_l_m(320, 50, 0);
     font-size: sizem(16);
     font-weight: 600;
     font-stretch: normal;
@@ -331,7 +331,7 @@
 
     .avatar {
       @include md {
-        @include img_r_m(115, 131, 0);
+        @include img_r_m(115, 131, 0);margin-right: 0;
       }
     }
   }
@@ -579,9 +579,9 @@
     .slide-name {
       right: auto;
       top: auto;
-      bottom: 0.6rem;
-      right: 0.6rem;
-      font-size: sizem(15);
+      bottom: 0.8em;
+      right: 0.8em;
+      font-size: sizem(12);
     }
   }
 

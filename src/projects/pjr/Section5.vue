@@ -1,6 +1,6 @@
 <template>
   <div class="section5">
-    <div v-if="slideIndex === 0">
+    <div v-if="slideIndex === 0" class="content">
       <div class="label" data-aos="fade" data-aos-delay="200">
         你一定知道璞真建設<br />
         但你可能不知道 他們還做了什麼
@@ -15,24 +15,24 @@
       </h3>
     </div>
     <div v-else class="content">
-      <div class="list-title" data-aos="fade" data-aos-delay="200">地震預警系統</div>
-      <div class="list-desc" data-aos="fade" data-aos-delay="200">■無畏地震震災，高速安全預警。</div>
+      <h3 class="title" data-aos="fade" data-aos-delay="200">地震預警系統</h3>
+      <p class="desc" data-aos="fade" data-aos-delay="200">■無畏地震震災，高速安全預警。</p>
 
-      <div class="list-title" data-aos="fade" data-aos-delay="200">建築資訊模型</div>
-      <div class="list-desc" data-aos="fade" data-aos-delay="200">■全自動化管理，高效精準施作。</div>
+      <h3 class="title" data-aos="fade" data-aos-delay="200">建築資訊模型</h3>
+      <p class="desc" data-aos="fade" data-aos-delay="200">■全自動化管理，高效精準施作。</p>
 
-      <div class="list-title" data-aos="fade" data-aos-delay="200">建築預防醫學</div>
-      <div class="list-desc" data-aos="fade" data-aos-delay="200">■結構安全偵測，建築例行體檢。</div>
+      <h3 class="title" data-aos="fade" data-aos-delay="200">建築預防醫學</h3>
+      <p class="desc" data-aos="fade" data-aos-delay="200">■結構安全偵測，建築例行體檢。</p>
 
-      <div class="list-title" data-aos="fade" data-aos-delay="200">售後管理平台</div>
-      <div class="list-desc" data-aos="fade" data-aos-delay="200">■完善建築履歷，高速檢修機制。</div>
+      <h3 class="title" data-aos="fade" data-aos-delay="200">售後管理平台</h3>
+      <p class="desc" data-aos="fade" data-aos-delay="200">■完善建築履歷，高速檢修機制。</p>
 
-      <div class="list-title" data-aos="fade" data-aos-delay="200">建築履歷建置</div>
-      <div class="list-desc" data-aos="fade" data-aos-delay="200">■契合自然生態，永續居宅維養。</div>
+      <h3 class="title" data-aos="fade" data-aos-delay="200">建築履歷建置</h3>
+      <p class="desc" data-aos="fade" data-aos-delay="200">■契合自然生態，永續居宅維養。</p>
     </div>
-
-    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade" data-aos-delay="800">
-      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+<p class="next" @click="addIndex" v-if="isMobile" data-aos="fade" data-aos-delay="200">NEXT<span></span></p>
+    <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade" data-aos-delay="800">
+      <div class="swipe-wrap relative" @click="addIndex" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
             <picture>
@@ -45,10 +45,10 @@
             <p class="slide-name absolute" v-html="slide.name"></p>
           </div>
         </transition-group>
-        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+     <!--   <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
           <div class="prev-btn" @click="decIndex"></div>
           <div class="next-btn" @click="addIndex"></div>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="pagination absolute flex-ac" v-if="isPC">
@@ -73,10 +73,11 @@
 
   @include md {
     width: 100vw;
-    height: sizem(722);
+    height: auto;
     min-height: auto;
     max-height: initial;
     overflow: visible;
+    padding-bottom: sizem(65);
   }
 }
 
@@ -92,37 +93,72 @@
   // opacity: 0.5;
 }
 
-.label {
-  @include img_r_pc(434, 293, 411);
-  font-size: size(29);
-  font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(1.45);
-  text-align: left;
-  color: #c9a063;
-  white-space: nowrap;
+.next {
   @include md {
-    @include img_l_m(206, 60, 28);
-    font-size: sizem(16);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.63;
-    letter-spacing: sizem(0.8);
-    text-align: left;
-    color: #c9a063;
+    @include img_r_m(320, 285, 30);
+    top: auto;bottom: sizem(400);
+    width: 5em;
+  }
+  font-size: sizem(13);
+  color: #3e3a39;
+  line-height: 1.6;
+  height: 1.55em;
+  text-align: left;
+  overflow: hidden;
+  span {
+    animation: vbtn 2s ease-in-out infinite alternate;
+    bottom: 0%;
+    display: block;
+    position: relative;
+    &::after {
+      content: '';
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: currentColor;
+      transform: translate(-1px, -100%);
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      border: solid currentColor;
+      display: block;
+      border-width: 1px 1px 0 0;
+      width: 1em;
+      height: 1em;
+      top: 0;
+      right: 0;
+      transform: rotate(45deg);
+      transform-origin: 100% 0;
+    }
+  }
+}
+@keyframes vbtn {
+  to {
+    transform: translateX(-10%);
   }
 }
 
 .content {
-  @include img_r_pc(660, 180, 186);
+  @include img_r_pc(660, 0, 186);
+  height: 100%;
+  font-size: size(20);
+  font-stretch: normal;
+  font-style: normal;
+  color: #3e3a39;
+  text-align: justify;
+  display: flex;
+    flex-direction:column;
+    justify-content:center;
+  letter-spacing: 0.05em;
 
   @include md {
-    @include img_l_m(320, 20, 28);
+    @include img_l_m(320, 50, 28);
+    position: relative;
+  font-size: sizem(13);
+  height: auto;
   }
-
+/*
   .list-title {
     font-size: size(35);
     font-weight: 600;
@@ -168,47 +204,45 @@
       color: #3e3a39;
     }
   }
+  */
+}
+
+.label {
+  font-size:1.45em;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #c9a063;
+  margin: 0 0 .7em 0;
+  @include md {
+ /*  font-size: sizem(16);
+    line-height: 1.63;
+    letter-spacing: sizem(0.8); */
+  }
 }
 .title {
-  @include img_r_pc(410, 378, 435);
-  font-size: size(35);
+  font-size: 1.75em;
   font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.14;
-  letter-spacing: normal;
-  text-align: left;
-  color: #3e3a39;
-  white-space: nowrap;
-
+  line-height: 1.3;
+  margin:0 0 .6em 0;
   @include md {
-    @include img_l_m(209, 118, 28);
+  /*  @include img_l_m(209, 118, 28);
     font-size: sizem(20);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.45;
-    letter-spacing: sizem(1);
-    text-align: left;
-    color: #3e3a39;
+    letter-spacing: sizem(1); */
   }
 }
 
 .desc {
-  @include img_r_pc(660, 488, 186);
-  font-size: size(20);
   font-weight: 300;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.76;
-  letter-spacing: 0.05em;
-  text-align: justify;
-  color: #3e3a39;
+  line-height: 1.6;
+  margin: 0em 0 2em 0;
 
   @include md {
-    @include img_l_m(320, 190, 28);
+  /*  @include img_l_m(320, 190, 28);
     font-size: sizem(13);
-    line-height: 2;
+    line-height: 2; */
   }
 }
 
@@ -218,7 +252,9 @@
   object-fit: cover;
 
   @include md {
-    @include div_c_m(319, 319, 329);
+    @include div_c_m(319, 319, 0);
+    position: relative;
+    margin-top: 15vw;
   }
 }
 
@@ -490,9 +526,9 @@
     .slide-name {
       right: auto;
       top: auto;
-      bottom: 0.6rem;
-      right: 0.6rem;
-      font-size: sizem(15);
+      bottom: 0.8em;
+      right: 0.8em;
+      font-size: sizem(12);
     }
   }
 

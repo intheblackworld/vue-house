@@ -63,7 +63,7 @@
 
   @include md {
     width: 100vw;
-    height: sizem(953);
+    height: sizem(943);
     min-height: auto;
     max-height: initial;
     overflow: visible;
@@ -86,7 +86,7 @@
   @include img_l_pc(180, 177, 184);
 
   @include md {
-    @include img_l_m(115, 83, 27);
+    @include img_l_m(115, 73, 27);
   }
 }
 
@@ -94,7 +94,7 @@
   @include img_l_pc(172, 370, 409);
 
   @include md {
-    @include img_l_m(134, 193, 160);
+    @include img_l_m(134, 183, 160);
   }
 }
 
@@ -110,7 +110,7 @@
   color: #c9a063;
   white-space: nowrap;
   @include md {
-    @include img_l_m(134, 82, 160);
+    @include img_l_m(134, 70, 160);
     font-size: sizem(16);
     font-weight: 600;
     font-stretch: normal;
@@ -134,7 +134,7 @@
   white-space: nowrap;
 
   @include md {
-    @include img_l_m(264, 255, 28);
+    @include img_l_m(264, 245, 28);
     font-size: sizem(17);
     font-weight: 600;
     font-stretch: normal;
@@ -159,7 +159,7 @@
   color: #3e3a39;
 
   @include md {
-    @include img_l_m(320, 339, 28);
+    @include img_l_m(320, 329, 28);
     font-size: sizem(13);
     line-height: 2;
   }
@@ -171,7 +171,7 @@
   object-fit: cover;
 
   @include md {
-    @include div_c_m(320, 320, 0);
+    @include div_c_m(320, 310, 0);
     top: auto;
     bottom: sizem(60);
   }
@@ -460,9 +460,9 @@
     .slide-name {
       right: auto;
       top: auto;
-      bottom: 0.6rem;
-      right: 0.6rem;
-      font-size: sizem(15);
+      bottom: 0.8em;
+      right: 0.8em;
+      font-size: sizem(12);
     }
   }
 

@@ -321,8 +321,7 @@ export default {
   }
   .address {
     // width: 280px;
-    border-top-right-radius: 8px;
-    border-top-left-radius: 8px;
+    border-radius: 8px 8px 0 0 ;
     padding: 0.8em 1em;
     text-align: justify;
     line-height: 1.5;

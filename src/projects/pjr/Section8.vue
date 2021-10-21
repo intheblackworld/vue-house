@@ -205,7 +205,7 @@
 
   @include md {
     width: sizem(320);
-    margin: sizem(60) auto;
+    margin: sizem(60) auto sizem(10);
   }
 }
 
@@ -227,21 +227,14 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(1.45);
+  letter-spacing:0.05em;
   text-align: left;
   color: #c9a063;
   white-space: nowrap;
-  margin-bottom: size(19);
+  margin-bottom:0.6em;
   @include md {
     font-size: sizem(16);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.63;
-    letter-spacing: sizem(0.8);
-    text-align: left;
-    color: #c9a063;
-    margin-bottom: sizem(9);
   }
 }
 .title {
@@ -258,13 +251,7 @@
 
   @include md {
     font-size: sizem(17);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.35;
-    letter-spacing: normal;
-    text-align: left;
-    color: #3e3a39;
     margin: sizem(31) 0 sizem(13);
   }
 }
@@ -313,6 +300,10 @@
   }
   @include md {
     width: 100%;
+    padding-bottom: 7vw;
+  &:nth-child(even) {
+    padding-top: 0;
+  }
   }
 }
 
@@ -584,9 +575,9 @@
     .slide-name {
       right: auto;
       top: auto;
-      bottom: 0.6rem;
-      right: 0.6rem;
-      font-size: sizem(15);
+      bottom: 0.8em;
+      right: 0.8em;
+      font-size: sizem(12);
     }
   }
 
