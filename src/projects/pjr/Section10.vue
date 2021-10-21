@@ -4,7 +4,7 @@
       <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="400">
         <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(1)" v-touch:swipe.right="() => addMultiIndex(1)">
           <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList1" v-show="slideIndex1 === i" :key="slide.img" :class="`swipe-item absolute`">
+            <div v-for="(slide, i) in slideList1" v-show="slideIndex1 === i" :key="slide.img" :class="`swipe-item absolute`" @click="addMultiIndex(1)">
               <picture>
                 <source :srcset="slide.webp" type="image/webp" />
                 <source :srcset="slide.img" type="image/jpeg" />
@@ -13,10 +13,10 @@
               <p class="slide-name absolute" v-html="slide.name"></p>
             </div>
           </transition-group>
-          <div class="swipe-btns absolute flex-ac flex-jb">
-            <div class="prev-btn" @click="decMultiIndex(1)"></div>
-            <div class="next-btn" @click="addMultiIndex(1)"></div>
-          </div>
+          <!-- <div class="swipe-btns absolute flex-ac flex-jb"> -->
+          <div class="prev-btn" @click="decMultiIndex(1)"></div>
+          <div class="next-btn" @click="addMultiIndex(1)"></div>
+          <!-- </div> -->
         </div>
         <div class="flex-ac">
           <picture>
@@ -60,7 +60,7 @@
         </div>
         <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(2)" v-touch:swipe.right="() => addMultiIndex(2)">
           <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList2" v-show="slideIndex2 === i" :key="slide.img" :class="`swipe-item absolute`">
+            <div v-for="(slide, i) in slideList2" v-show="slideIndex2 === i" :key="slide.img" :class="`swipe-item absolute`" @click="addMultiIndex(2)">
               <picture>
                 <source :srcset="slide.webp" type="image/webp" />
                 <source :srcset="slide.img" type="image/jpeg" />
@@ -69,16 +69,16 @@
               <p class="slide-name absolute" v-html="slide.name"></p>
             </div>
           </transition-group>
-          <div class="swipe-btns absolute flex-ac flex-jb">
-            <div class="prev-btn" @click="decMultiIndex(2)"></div>
-            <div class="next-btn" @click="addMultiIndex(2)"></div>
-          </div>
+          <!-- <div class="swipe-btns absolute flex-ac flex-jb"> -->
+          <div class="prev-btn" @click="decMultiIndex(2)"></div>
+          <div class="next-btn" @click="addMultiIndex(2)"></div>
+          <!-- </div> -->
         </div>
       </div>
       <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="800">
         <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(3)" v-touch:swipe.right="() => addMultiIndex(3)">
           <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList3" v-show="slideIndex3 === i" :key="slide.img" :class="`swipe-item absolute`">
+            <div v-for="(slide, i) in slideList3" v-show="slideIndex3 === i" :key="slide.img" :class="`swipe-item absolute`" @click="addMultiIndex(3)">
               <picture>
                 <source :srcset="slide.webp" type="image/webp" />
                 <source :srcset="slide.img" type="image/jpeg" />
@@ -87,10 +87,10 @@
               <p class="slide-name absolute" v-html="slide.name"></p>
             </div>
           </transition-group>
-          <div class="swipe-btns absolute flex-ac flex-jb">
-            <div class="prev-btn" @click="decMultiIndex(3)"></div>
-            <div class="next-btn" @click="addMultiIndex(3)"></div>
-          </div>
+          <!-- <div class="swipe-btns absolute flex-ac flex-jb"> -->
+          <div class="prev-btn" @click="decMultiIndex(3)"></div>
+          <div class="next-btn" @click="addMultiIndex(3)"></div>
+          <!-- </div> -->
           <!-- <div class="pagination absolute flex-ac" v-if="isPC">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList3" :key="slide.img + '-dot'" @click="goToMultiIndex(index, 3)"><span :class="`${slideIndex3 === index ? 'active' : ''}`"></span></div>
         </div> -->
@@ -137,7 +137,7 @@
         </div>
         <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(4)" v-touch:swipe.right="() => addMultiIndex(4)">
           <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList4" v-show="slideIndex4 === i" :key="slide.img" :class="`swipe-item absolute`">
+            <div v-for="(slide, i) in slideList4" v-show="slideIndex4 === i" :key="slide.img" :class="`swipe-item absolute`" @click="addMultiIndex(4)">
               <picture>
                 <source :srcset="slide.webp" type="image/webp" />
                 <source :srcset="slide.img" type="image/jpeg" />
@@ -146,10 +146,10 @@
               <p class="slide-name absolute" v-html="slide.name"></p>
             </div>
           </transition-group>
-          <div class="swipe-btns absolute flex-ac flex-jb">
-            <div class="prev-btn" @click="decMultiIndex(4)"></div>
-            <div class="next-btn" @click="addMultiIndex(4)"></div>
-          </div>
+          <!-- <div class="swipe-btns absolute flex-ac flex-jb"> -->
+          <div class="prev-btn" @click="decMultiIndex(4)"></div>
+          <div class="next-btn" @click="addMultiIndex(4)"></div>
+          <!-- </div> -->
           <!-- <div class="pagination absolute flex-ac" v-if="isPC">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList4" :key="slide.img + '-dot'" @click="goToMultiIndex(index, 4)"><span :class="`${slideIndex4 === index ? 'active' : ''}`"></span></div>
         </div> -->
@@ -262,7 +262,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.76;
-  letter-spacing:0.05em;
+  letter-spacing: 0.05em;
   text-align: justify;
   color: #3e3a39;
 
@@ -321,9 +321,9 @@
     border-bottom: none;
   }
 
-
-  &:nth-child(2), &:nth-child(4){
-    .desc  {
+  &:nth-child(2),
+  &:nth-child(4) {
+    .desc {
       @include md {
         @include img_l_m(193, 127, 0);
       }
@@ -472,55 +472,66 @@
   }
 }
 
-.swipe-btns {
-  width: 100%;
-  height: 100%;
-  padding: 0 0;
-  z-index: 3;
-  overflow: hidden;
-  position: absolute;
+// .swipe-btns {
+// width: 100%;
+// height: 100%;
+// padding: 0 0;
+// z-index: 3;
+// overflow: hidden;
+// position: absolute;
+// top: 0;
+// left: 0;
+
+.prev-btn {
   top: 0;
   left: 0;
-  .prev-btn,
-  .next-btn {
-    position: relative;
-    height: 100%;
-    width: 2em;
-    font-size: size(20);
-    cursor: pointer;
-    &::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      transform: translateX(100%);
-      background-color: #0004;
-      transition: all 0.3s;
-    }
-    &::after {
-      content: '';
-      width: 1em;
-      height: 1em;
-      position: absolute;
-      top: calc(50% - 0.5em);
-      left: calc(50% - 0.75em);
-      border: solid #fff;
-      border-width: 0.1em 0.1em 0 0;
-      transform: rotate(45deg) translate(-10%, 10%);
-    }
-    &:hover:before {
-      transform: translateX(0%);
-    }
-    &:hover:after {
-      animation: btn 0.5s ease-in-out infinite alternate;
-    }
+}
+
+.next-btn {
+  top: 0;
+  right: 0;
+}
+.prev-btn,
+.next-btn {
+  position: absolute;
+  z-index: 3;
+  height: 100%;
+  width: 2em;
+  font-size: size(20);
+  cursor: pointer;
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   width: 100%;
+  //   height: 100%;
+  //   top: 0;
+  //   left: 0;
+  //   transform: translateX(100%);
+  //   background-color: #0004;
+  //   transition: all 0.3s;
+  // }
+  &::after {
+    content: '';
+    width: 1em;
+    height: 1em;
+    position: absolute;
+    top: calc(50% - 0.5em);
+    left: calc(50% - 0.75em);
+    border: solid #fff;
+    border-width: 0.1em 0.1em 0 0;
+    transform: rotate(45deg) translate(-10%, 10%);
   }
-  .prev-btn {
-    transform: scaleX(-1);
+  &:hover:before {
+    transform: translateX(0%);
+  }
+  &:hover:after {
+    animation: btn 0.5s ease-in-out infinite alternate;
   }
 }
+.prev-btn {
+  transform: scaleX(-1);
+}
+// }
 @keyframes btn {
   to {
     transform: rotate(45deg) translate(10%, -10%);
@@ -541,7 +552,6 @@
 }
 
 @media screen and (max-width: 767px) {
-
   .swipe-item {
     width: 100%;
     height: 100%;
@@ -635,20 +645,19 @@
     }
   }
 
-  .swipe-btns {
-    width: 100%;
-    left: 0%;
-    .prev-btn,
-    .next-btn {
-      font-size: sizem(15);
-      &::before {
-        background-color: #cc5b4e00;
-      }
-      &::after {
-        border-color: #fff;
-        border-width: 0.15em 0.15em 0 0;
-        animation: btn 0.5s ease-in-out infinite alternate;
-      }
+  .prev-btn,
+  .next-btn {
+    width: 2em;
+    font-size: sizem(15);
+    &::before {
+      background-color: #cc5b4e00;
+    }
+    &::after {
+      width: 1em;
+      height: 1em;
+      border-color: #fff;
+      border-width: 0.15em 0.15em 0 0;
+      animation: btn 0.5s ease-in-out infinite alternate;
     }
   }
 }

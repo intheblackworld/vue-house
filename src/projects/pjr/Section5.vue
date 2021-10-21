@@ -36,9 +36,9 @@
     <div class="pagination absolute flex-ac" v-if="isPC">
       <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
     </div>
-    <div class="swipe-btns absolute flex-ac flex-jb" v-if="isPC">
-      <div class="prev-btn" @click="decIndex"></div>
-      <div class="next-btn" @click="addIndex"></div>
+    <div class="swipe-btns absolute flex-ac flex-jb" v-if="isPC" @click="addIndex">
+      <div class="prev-btn"></div>
+      <div class="next-btn"></div>
     </div>
   </div>
 </template>
@@ -489,11 +489,14 @@
     left: 0%;
     .prev-btn,
     .next-btn {
-      font-size: sizem(10);
+      width: 2em;
+      font-size: sizem(15);
       &::before {
         background-color: #cc5b4e00;
       }
       &::after {
+        width: 1em;
+        height: 1em;
         border-color: #fff;
         border-width: 0.15em 0.15em 0 0;
         animation: btn 0.5s ease-in-out infinite alternate;
@@ -528,6 +531,8 @@ export default {
           webp: require('./webp/s5/1情境示意圖.webp'),
           webpm: require('./webp/s5/1情境示意圖.webp'),
           name: '情境示意圖',
+          title: '地震預警系統',
+          desc: '■無畏地震震災，高速安全預警。'
           // desc: '270度翠綠簇擁<br />開窗就享無垠綠景',
         },
         {

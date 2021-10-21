@@ -18,7 +18,7 @@
     </h3>
 
     <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade" data-aos-delay="800">
-      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex" @click="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img + i" :class="`swipe-item absolute`">
             <picture>
@@ -32,10 +32,10 @@
           </div>
         </transition-group>
       </div>
-      <div class="swipe-btns absolute flex-ac flex-jb">
-        <div class="prev-btn" @click="decIndex"></div>
-        <div class="next-btn" @click="addIndex"></div>
-      </div>
+      <div class="prev-btn" @click="decIndex"></div>
+      <div class="next-btn" @click="addIndex"></div>
+      <!-- <div class="swipe-btns absolute flex-ac flex-jb">
+      </div> -->
       <div class="slide-title" v-html="slideList[slideIndex].title"></div>
       <div class="slide-label" v-html="slideList[slideIndex].label"></div>
       <div class="slide-desc" v-html="slideList[slideIndex].desc"></div>
@@ -144,7 +144,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.76;
-  letter-spacing:0.05em;
+  letter-spacing: 0.05em;
   text-align: justify;
   color: #3e3a39;
 
@@ -370,55 +370,66 @@
   }
 }
 
-.swipe-btns {
-  width: 100%;
-  height: 100%;
-  padding: 0 0;
-  z-index: 3;
-  overflow: hidden;
-  position: absolute;
+// .swipe-btns {
+// width: 100%;
+// height: 100%;
+// padding: 0 0;
+// z-index: 3;
+// overflow: hidden;
+// position: absolute;
+// top: 0;
+// left: 0;
+
+.prev-btn {
   top: 0;
   left: 0;
-  .prev-btn,
-  .next-btn {
-    position: relative;
-    height: 100%;
-    width: 4em;
-    font-size: size(20);
-    cursor: pointer;
-    &::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      transform: translateX(100%);
-      background-color: #0004;
-      transition: all 0.3s;
-    }
-    &::after {
-      content: '';
-      width: 2em;
-      height: 2em;
-      position: absolute;
-      top: calc(50% - 0.5em);
-      left: calc(50% - 0.75em);
-      border: solid #fff;
-      border-width: 0.15em 0.15em 0 0;
-      transform: rotate(45deg) translate(-10%, 10%);
-    }
-    // &:hover:before {
-    //   transform: translateX(0%);
-    // }
-    &:hover:after {
-      animation: btn 0.5s ease-in-out infinite alternate;
-    }
+}
+
+.next-btn {
+  top: 0;
+  right: 0;
+}
+.prev-btn,
+.next-btn {
+  position: absolute;
+  z-index: 3;
+  height: 100%;
+  width: 2em;
+  font-size: size(20);
+  cursor: pointer;
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   width: 100%;
+  //   height: 100%;
+  //   top: 0;
+  //   left: 0;
+  //   transform: translateX(100%);
+  //   background-color: #0004;
+  //   transition: all 0.3s;
+  // }
+  &::after {
+    content: '';
+    width: 1em;
+    height: 1em;
+    position: absolute;
+    top: calc(50% - 0.5em);
+    left: calc(50% - 0.75em);
+    border: solid #fff;
+    border-width: 0.1em 0.1em 0 0;
+    transform: rotate(45deg) translate(-10%, 10%);
   }
-  .prev-btn {
-    transform: scaleX(-1);
+  &:hover:before {
+    transform: translateX(0%);
+  }
+  &:hover:after {
+    animation: btn 0.5s ease-in-out infinite alternate;
   }
 }
+.prev-btn {
+  transform: scaleX(-1);
+}
+// }
 @keyframes btn {
   to {
     transform: rotate(45deg) translate(10%, -10%);
@@ -569,20 +580,19 @@
     }
   }
 
-  .swipe-btns {
-    width: 100%;
-    left: 0%;
-    .prev-btn,
-    .next-btn {
-      font-size: sizem(10);
-      &::before {
-        background-color: #cc5b4e00;
-      }
-      &::after {
-        border-color: #fff;
-        border-width: 0.15em 0.15em 0 0;
-        animation: btn 0.5s ease-in-out infinite alternate;
-      }
+  .prev-btn,
+  .next-btn {
+    width: 2em;
+    font-size: sizem(15);
+    &::before {
+      background-color: #cc5b4e00;
+    }
+    &::after {
+      width: 1em;
+      height: 1em;
+      border-color: #fff;
+      border-width: 0.15em 0.15em 0 0;
+      animation: btn 0.5s ease-in-out infinite alternate;
     }
   }
 }
