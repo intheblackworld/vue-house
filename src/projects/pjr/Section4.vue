@@ -255,6 +255,28 @@
   height: 100%;
   cursor: pointer;
   overflow: hidden;
+  transition: opacity 0.3s;
+  &:hover{opacity: 0.8;}
+  &::before {
+    content: '';
+    width: 40%;
+    height: 100%;
+    display: block;
+    background: #fff;
+    position: absolute;
+    -webkit-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+    left: -10%;
+    opacity: 0;
+    top: 0;
+    z-index: 5;
+    transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
+  }
+  &:hover:before {
+    opacity: 1;
+    width: 90%;
+    left: 140%;
+  }
 }
 
 .swipe-item {
@@ -606,70 +628,73 @@ export default {
       slideList1: [
         {
           img: require('./s4/l/2008Millord.jpg'),
-          name: '2008 Millord',
+          name: '2010 天母 璞MILORD',
           webp: require('./webp/s4/2008Millord.webp'),
-          // desc: '270度翠綠簇擁<br />開窗就享無垠綠景',
+        },
+        {
+          img: require('./s4/l/2020璞真仰睦２.jpg'),
+          name: '2021 土城 璞真仰睦',
+          webp: require('./webp/s4/2020璞真仰睦２.webp'),
         },
         {
           img: require('./s4/l/2010詠真3.jpg'),
-          name: '2010 詠真',
+          name: '2013 中山 璞真詠真',
           webp: require('./webp/s4/2010詠真3.webp'),
         },
         {
           img: require('./s4/l/2012璞真一一.jpg'),
-          name: '2012 璞真一一',
+          name: '2015 大安 璞真一一',
           webp: require('./webp/s4/2012璞真一一.webp'),
         },
         {
-          img: require('./s4/l/2017璞真作.jpg'),
-          name: '2017 璞真作',
-          webp: require('./webp/s4/2017璞真作.webp'),
+          img: require('./s4/l/2024璞真永吉0.jpg'),
+          name: '2024　信義　璞真永吉',
+          webp: require('./webp/s4/2024璞真永吉0.webp'),
         },
         {
           img: require('./s4/l/2019勤耕延吉.jpg'),
-          name: '2019 勤耕延吉',
+          name: '2021 松山 勤耕延吉',
           webp: require('./webp/s4/2019勤耕延吉.webp'),
         },
         {
-          img: require('./s4/l/2020璞真仰睦２.jpg'),
-          name: '2020 璞真仰睦',
-          webp: require('./webp/s4/2020璞真仰睦２.webp'),
+          img: require('./s4/l/2017璞真作.jpg'),
+          name: '2016 大安 璞真作',
+          webp: require('./webp/s4/2017璞真作.webp'),
         },
         {
-          img: require('./s4/l/2024璞真合和.jpg'),
-          name: '2024 璞真合和',
+          img: require('./s4/l/2024璞真合和.jpg'), 
           webp: require('./webp/s4/2024璞真合和.webp'),
-        },
-        {
-          img: require('./s4/l/2024璞真永吉0.jpg'),
-          name: '2024 璞真永吉',
-          webp: require('./webp/s4/2024璞真永吉0.webp'),
         },
       ],
       slideList2: [
-        {
-          img: require('./s4/c/2015 松山 璞真慶城.jpg'),
-          name: '2015 松山 璞真慶城',
-          webp: require('./webp/s4/2015 松山 璞真慶城.webp'),
-          // desc: '270度翠綠簇擁<br />開窗就享無垠綠景',
-        },
         {
           img: require('./s4/c/2018　內湖　勤美璞真碧湖畔.jpg'),
           name: '2018　內湖　勤美璞真碧湖畔',
           webp: require('./webp/s4/2018　內湖　勤美璞真碧湖畔.webp'),
         },
         {
-          img: require('./s4/c/2022 台中 勤美之森.jpg'),
-          name: '2022 台中 勤美之森',
-          webp: require('./webp/s4/2022 台中 勤美之森.webp'),
+          img: require('./s4/c/2015 松山 璞真慶城.jpg'),
+          name: '2015 松山 璞真慶城',
+          webp: require('./webp/s4/2015 松山 璞真慶城.webp'),
+          // desc: '270度翠綠簇擁<br />開窗就享無垠綠景',2024 天母 璞真荣華
         },
         {
           img: require('./s4/c/2024 天母 璞真荣華.jpg'),
           name: '2024 天母 璞真荣華',
           webp: require('./webp/s4/2024 天母 璞真荣華.webp'),
         },
+        {
+          img: require('./s4/c/2022 台中 勤美之森.jpg'),
+          name: '2022 台中 勤美之森',
+          webp: require('./webp/s4/2022 台中 勤美之森.webp'),
+        },
       ],
       slideList3: [
+        {
+          img: require('./s4/r/2011 大安 勤美璞真.jpg'),
+          name: '2011 大安 勤美璞真',
+          webp: require('./webp/s4/2011 大安 勤美璞真.webp'),
+        },
         {
           img: require('./s4/r/2005 忠孝 璞真本因坊.jpg'),
           name: '2005 忠孝 璞真本因坊',
@@ -688,27 +713,11 @@ export default {
         },
         {
           img: require('./s4/r/2010 松山-璞真久石讓.jpg'),
-          name: '2010 松山-璞真久石讓',
+          name: '2010 松山 璞真久石讓',
           webp: require('./webp/s4/2010 松山-璞真久石讓.webp'),
-        },
-        {
-          img: require('./s4/r/2011 大安 勤美璞真.jpg'),
-          name: '2011 大安 勤美璞真',
-          webp: require('./webp/s4/2011 大安 勤美璞真.webp'),
         },
       ],
       slideList4: [
-        {
-          img: require('./s4/b/2008-台中-勤美誠品綠園道.jpg'),
-          name: '2008 台中 勤美誠品綠園道',
-          webp: require('./webp/s4/2008-台中-勤美誠品綠園道.webp'),
-          // desc: '270度翠綠簇擁<br />開窗就享無垠綠景',
-        },
-        {
-          img: require('./s4/b/2009台中勤美誠品3.jpg'),
-          name: '2009 台中 勤美誠品',
-          webp: require('./webp/s4/2009台中勤美誠品3.webp'),
-        },
         {
           img: require('./s4/b/2022-台中-勤美之森.jpg'),
           name: '2022 台中 勤美之森',
@@ -718,6 +727,17 @@ export default {
           img: require('./s4/b/2023-松山-一方璞真.jpg'),
           name: '2023 松山 一方璞真',
           webp: require('./webp/s4/2023-松山-一方璞真.webp'),
+        },
+        {
+          img: require('./s4/b/2014 大安 泰然璞真.jpg'),
+          name: '2014 大安 泰然璞真',
+          webp: require('./webp/s4/2014 大安 泰然璞真.webp'),
+          // desc: '270度翠綠簇擁<br />開窗就享無垠綠景',
+        },
+        {
+          img: require('./s4/b/2009台中勤美誠品3.jpg'),
+          name: '2008 台中 勤美誠品綠園道',
+          webp: require('./webp/s4/2009台中勤美誠品3.webp'),
         },
       ],
     }

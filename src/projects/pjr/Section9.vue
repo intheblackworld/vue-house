@@ -219,14 +219,6 @@
   @include md {
   }
 }
-.slide-logo {
-  position: absolute;
-  top: size(700 - 195);
-  width: size(120);
-  right: 0;
-  @include md {
-  }
-}
 
 // begin
 .swipe-fade-leave-to {
@@ -604,7 +596,7 @@ export default {
           name: '上海和平飯店',
         },
       ],
-    }
+    } 
   },
 
   methods: {},

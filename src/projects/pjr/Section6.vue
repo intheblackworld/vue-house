@@ -18,6 +18,7 @@
     </h3>
 
     <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade" data-aos-delay="800">
+      <div class="slide-title" v-html="slideList[slideIndex].title"></div>
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex" @click="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img + i" :class="`swipe-item absolute`">
@@ -36,7 +37,6 @@
       <div class="next-btn" @click="addIndex"></div>
       <!-- <div class="swipe-btns absolute flex-ac flex-jb">
       </div> -->
-      <div class="slide-title" v-html="slideList[slideIndex].title"></div>
       <div class="slide-label" v-html="slideList[slideIndex].label"></div>
       <div class="slide-desc" v-html="slideList[slideIndex].desc"></div>
       <picture>
@@ -237,12 +237,12 @@
 .slide-logo {
   position: absolute;
   top: size(700 - 195);
-  width: size(120);
+  height: size(75);
   right: 0;
   @include md {
     position: absolute;
-    top: sizem(270);
-    width: sizem(47);
+    top: sizem(250);
+    height: sizem(40);
     right: 0;
   }
 }
