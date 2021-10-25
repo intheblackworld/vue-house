@@ -221,6 +221,10 @@ export default {
       list: [
         //...Array(18).keys()].map((i) => ({
         {
+          img: require('../news/s2/8/01.jpg'),
+          title: '立瑾綻於鳳鳴預定地隆重開工 祈求一切平安、順遂',
+        },
+        {
           img: require('../news/s2/7/01.jpg'),
           title: '因應COVID-19新冠肺炎 立瑾建築機構自主快篩',
         },
