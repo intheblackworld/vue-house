@@ -1,3 +1,15 @@
+@mixin xl {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
 @function size($size) {
   $c-size: 100vw * $size / 1920;
   @return #{$c-size};
@@ -11,15 +23,105 @@
   @return #{$c-size};
 }
 
-@mixin xl {
-  @media screen and (max-width: 1200px) {
-    @content;
+@mixin div_r($width, $height, $top, $right, $widthm, $heightm, $topm, $rightm) {
+  position: absolute;
+  width: size($width);
+  height: size($height);
+  top: size($top);
+  right: size($right);
+
+  @include md {
+    position: absolute;
+    width: sizem($widthm);
+    height: sizem($heightm);
+    top: sizem($topm);
+    right: sizem($rightm);
+    left: auto;
   }
 }
 
-@mixin md {
-  @media screen and (max-width: 767px) {
-    @content;
+@mixin div_l($width, $height, $top, $left, $widthm, $heightm, $topm, $leftm) {
+  position: absolute;
+  width: size($width);
+  height: size($height);
+  top: size($top);
+  left: size($left);
+
+  @include md {
+    position: absolute;
+    width: sizem($widthm);
+    height: sizem($heightm);
+    top: sizem($topm);
+    left: sizem($leftm);
+    right: auto;
+  }
+}
+
+@mixin div_c($width, $height, $top, $widthm, $heightm, $topm) {
+  position: absolute;
+  width: size($width);
+  height: size($height);
+  top: size($top);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+
+  @include md {
+    position: absolute;
+    width: sizem($widthm);
+    height: sizem($heightm);
+    top: sizem($topm);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+}
+
+@mixin img_l($width, $top, $left, $widthm, $topm, $leftm) {
+  position: absolute;
+  width: size($width);
+  top: size($top);
+  left: size($left);
+
+  @include md {
+    position: absolute;
+    width: sizem($widthm);
+    top: sizem($topm);
+    left: sizem($leftm);
+    right: auto;
+  }
+}
+
+@mixin img_r($width, $top, $right, $widthm, $topm, $rightm) {
+  position: absolute;
+  width: size($width);
+  top: size($top);
+  right: size($right);
+
+  @include md {
+    position: absolute;
+    width: sizem($widthm);
+    top: sizem($topm);
+    right: sizem($rightm);
+    left: auto;
+  }
+}
+
+@mixin img_c($width, $top, $widthm, $topm) {
+  position: absolute;
+  width: size($width);
+  top: size($top);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+
+  @include md {
+    position: absolute;
+    width: sizem($widthm);
+    top: sizem($topm);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
   }
 }
 

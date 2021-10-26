@@ -1,22 +1,12 @@
 @import "./variableColor.scss";
 
-.form-desc {
-  color: #fff;
-  text-align: left;
-  line-height: 1.6;
-  font-weight: normal;
-  letter-spacing: 0.06em;
-  font-weight: 300;
-}
-
 .el-select {
-  //margin-left: 21px;
-  font-family:$family3;
-  position: relative;
-  font-size: 14px;
-  display: inline-block;flex: 0 1 auto;
+  margin-left: 21px;
+  font-family: $family3;
 }
-.el-scrollbar{font-family:$family3;}
+.el-scrollbar {
+  font-family: $family3;
+}
 
 .el-date-editor.el-input {
   position: relative !important;
@@ -26,29 +16,20 @@
   margin-left: 44px;
 }
 
-.el-input, .el-select{
-  display: inline-block;flex: 0 1 auto;width: 100% !important;
-
-  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #c9a063 !important;
-    font-weight: 600;
-    opacity: 1; /* Firefox */
-  }  
+.el-select__caret{
+  color: #fff !important;
 }
 
-.valid_code_input {
-  display: inline-block;flex: 0 1 auto;width: 48% !important;
-}
 .el-input__inner {
-  width: 100% !important;
+  width: 310px !important;
   height: 48px !important;
   line-height: 48px !important;
   font-size: 16px !important;
+  border-radius: 0px !important;
   border: $order_input_border !important;
   background: $order_input_bg;
   color: $order_input_color;
-  font-family:$family3;
-  border-radius: 0 !important;
+  font-family: $family3;
 
   &:focus {
     border: $order_input_focus_border;
@@ -59,8 +40,8 @@
 }
 
 .el-textarea {
-  width: 95% !important;
-  height: 95% !important;
+  width: 420px !important;
+  height:100% !important;
   .el-textarea__inner {
     height: 100% !important;
     border-radius: 0 !important;
@@ -68,11 +49,13 @@
     padding-top: 10px !important;
     font-size: 16px !important;
     border: $order_input_border !important;
-    background:#FFF;
-  font-family:$family3;
+    border-radius: 0px !important;
+    background: transparent;
+    font-family: $family3;
 
     &::placeholder {
       color: $order_input_placeholder;
+      font-size: 15px;
     }
 
     &:focus {
@@ -82,10 +65,11 @@
 }
 
 .el-checkbox__label {
-  p, h3 {
-    font-size: 16px;
+  p,
+  h3 {
+    font-size: 14px;
     color: $order_check_desc_color;
-    font-weight: 600;
+    font-weight: normal;
   }
 
   span {
@@ -95,79 +79,15 @@
 }
 
 .form-submit {
-  width: 100% !important;
-  height: 54px !important;
+  width: 320px !important;
+  height: 72px !important;
   // opacity: 0 !important;
   border-radius: 0 !important;
   font-size: 20px !important;
-  font-weight: bold !important;
-  letter-spacing: 10px;
-  text-align: justify;
-  background-position: center !important;
-  background-color: $order_submit_bg;
-  background-image: $order_submit_bg;
-  border: 1px solid #eb5500 !important;
-  border-radius: 8px / 8px !important;
+
+
   margin: 0 auto !important;
   margin-top: 20px !important;
-  transition: all 0.3s !important;
-  color: $order_submit_color;
-  // z-index: 10;
-  border: none !important;
-  font-family: $family3;
-
-  &.is-disabled {
-    background-color: $order_sumbit_disable_bg;
-    opacity: 0.6;
-  }
-
-  svg {
-    margin-right: 15px;
-  }
-
-  position: relative;
-  overflow: hidden;
-  &::before {
-    content: "";
-    width: 40%;
-    height: 100%;
-    display: block;
-    background: #fff;
-    position: absolute;
-    transform: skewX(-20deg);
-    left: -10%;
-    opacity: 0;
-    top: 0;
-    z-index: 5;
-    transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
-  }
-
-  &:hover::before {
-    opacity: 1;
-    width: 90%;
-    left: 140%;
-  }
-  &.is-disabled:hover::before {
-    opacity: 0;
-  }
-}
-
-.valid_code-submit {
-  width: 48% !important;
-  height: 48px !important;
-  // opacity: 0 !important;
-  border-radius: 0 !important;
-  font-size: 20px !important;
-  font-weight: normal !important;
-  letter-spacing: 1px;
-  text-align: justify;
-  background-position: center !important;
-  background-color: $order_submit_bg;
-  background-image: $order_submit_bg;
-  border: 1px solid #eb5500 !important;
- // border-radius: 72px / 72px !important;
-  margin: 0 auto !important;
-  margin-top: 0px !important;
   transition: all 0.3s !important;
   color: $order_submit_color;
   // z-index: 10;
@@ -238,15 +158,9 @@
   }
 
   .form-submit {
-    width: 100% !important;
-    font-size: 24px !important;
-    margin: 10px auto 20px auto !important;
-  }
-
-  .valid_code-submit {
-    //width: 100% !important;
-    font-size: 20px !important;
-   // margin: 10px auto 20px auto !important;
+    width: 90% !important;
+    font-size: 16px !important;
+    margin: 10px auto !important;
   }
 
   .el-date-editor.el-input {

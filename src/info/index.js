@@ -27,7 +27,7 @@ export default {
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
   order: {
-    title: isMobile ? '中山北路 看見璞真' : '中山北路 看見璞真',
-    subTitle: 'Zhongshan Art Mansion'
+    title: isMobile ? '立即預約' : '立即預約',
+    subTitle: '若想了解更多資訊，歡迎填寫表單或來電洽詢，將由專人為您服務，謝謝！'
   }
 }

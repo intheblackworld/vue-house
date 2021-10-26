@@ -1,111 +1,135 @@
 /* html, body */
-$bg: #fff;
-$bg_m: #fff;
+
+$bg: url("");
 
 /* font-family */
-/* 1主要字體  2次要字體  3表單字體 */
-$family1: "Noto Serif TC", sans-serif;
-$family2: "Noto Sans TC", serif;
-$family3: "Noto Sans TC", serif;
+
+
+/* 1主要字體  2次要字體  3表單字體  4黑體 */
+
+$family1: "Noto Serif TC",
+sans-serif;
+$family2: "Noto Serif TC",
+sans-serif;
+$family3: "Noto Serif TC",
+sans-serif;
+$family4: "Noto Serif TC",
+sans-serif;
+$selection_color: grey;
 
 /* navigation */
-$nav_bg: #0003;
-$nav_btn_color: #fff;
-$nav_link_color: #fff;
-$nav_link_subtitle_color: #fff;
+
+$nav_bg: rgba(255,
+255,
+255,
+0.4);
+$nav_btn_color: #000;
+$nav_link_color: #000;
+$nav_link_subtitle_color: #000;
 $nav_link_hover_color: #fff;
-$nav_link_hover_bg: #0003;
+$nav_link_hover_bg: #976a4b;
+$nav_link_border_bg: #000;
 
 /* loading */
+
 $loading_bg_color: #ccc;
 $loading_bg_image: #ccc;
-$loading_icon_color: #dd6c00 #dd6c00 transparent;
+$loading_icon_color: #f7931e #f7931e transparent;
 
 /* astrictMask */
+
 $mask_bg_color: #fff;
-$mask_bg_image: linear-gradient(
-  to top,
-  rgba(0, 0, 0, 0.24),
-  rgba(156, 30, 35, 0)
-);
+$mask_bg_image: linear-gradient( to top,
+rgba(0, 0, 0, 0.24),
+rgba(156, 30, 35, 0));
 $mask_color: #333;
 $mask_icon_color: #c82514;
 
 /* contactSection */
+
 // order
-$order_bg_color: #ccc;
-$order_bg_image: url('~@/projects/pjr/s1/bg.jpg');
-$order_bg_image_m: url('~@/projects/pjr/s1/bgm.jpg');
-$order_title_color: #fff;
-$order_subtitle_color: #c9a063;
-$order_input_label_color: #231815;
-$order_input_color: #1a1a1a !important;
-$order_input_placeholder: #666 !important;
-$order_input_bg: #fff !important;
-$order_input_border: solid 1px #fff;
-$order_input_focus_border: solid 1px rgba(0, 0, 0, 1) !important;
-$order_input_selected_color: solid 1px rgba(0, 0, 0, 1) !important;
-$order_check_desc_color: #fff !important;
-$order_check_span_color: #fff !important;
-$order_submit_bg: #c9a063 !important;
+$order_bg_color: #006868;
+$order_bg_image: linear-gradient(0deg,
+rgba(1, 57, 1, 1) 0%,
+#3a6419 87%);
+$order_bg_image_m: linear-gradient(0deg,
+rgba(1, 57, 1, 1) 0%,
+#466e1e 90%);
+$order_title_color: #FFD990;
+$order_subtitle_color: #fff;
+$order_input_label_color: rgba(255, 255, 255, 0.8);
+$order_input_color: #fff !important;
+$order_input_placeholder: rgba(255, 255, 255, 0.8) !important;
+$order_input_bg: rgba(255, 255, 255, 0) !important;
+$order_input_border: solid 0 #fff;
+$order_input_focus_border: solid 0px #fff !important;
+$order_input_selected_color: solid 0px #fff !important;
+$order_check_desc_color: #FFF !important;
+$order_check_span_color: #ff0 !important;
+$order_submit_borderradius: 0px;
 $order_submit_color: #fff !important;
-$order_sumbit_disable_bg: rgba(243, 149, 1, .4) !important;
-
+$order_sumbit_disable_bg: linear-gradient(-90deg,
+rgba(201, 154, 29, 1) 0%,
+rgba(242, 170, 84, 1) 100%);
+$order_submit_bg: linear-gradient(-90deg,
+rgba(201, 154, 29, 1) 0%,
+rgba(242, 170, 84, 1) 100%);
 // contactInfo
-$contact_bg: transparent;
-$contact_bg_m: transparent;
-$contact_shadow: 0 0 80px 0 rgba(0, 0, 0, 0.2);
-
-$contact_btn_border: none;
-$contact_btn_color: #ffffff;
-$contact_btn_icon: #ffffff;
-$contact_btn_bg: #c9a063;
-$contact_btn_hover_color: #c9a063;
-$contact_btn_hover_icon: #c9a063;
-$contact_btn_hover_bg: #ffffff;
-
-$contact_google_btn_color: #ffffff;
-$contact_google_btn_icon: #ffffff;
-$contact_google_btn_bg: #c9a063;
-$contact_google_hover_btn_color: #c9a063;
-$contact_google_hover_btn_icon: #c9a063;
-$contact_google_hover_btn_bg: #ffffff;
-
-$contact_google_hover_btn_color: #c9a063;
-$contact_google_hover_btn_icon: #c9a063;
-$contact_google_hover_btn_bg: #ffffff;
+$contact_bg: linear-gradient(-90deg,
+rgba(201, 154, 29, 1) 0%,
+rgba(242, 170, 84, 1) 100%);
+$contact_bg_m: linear-gradient(-90deg,
+rgba(201, 154, 29, 1) 0%,
+rgba(242, 170, 84, 1) 100%);
+$contact_shadow: 0 0 80px 0 rgba(0,
+0,
+0,
+0.2);
+$contact_btn_border: inset 0 0 2px 2px #fff;
+$contact_btn_color: #fff;
+$contact_btn_icon: #fff;
+$contact_btn_bg: transparent;
+$contact_btn_hover_color: #000;
+$contact_btn_hover_icon: #000;
+$contact_btn_hover_bg: #fff;
+$contact_btn_border_radius: 5px;
+$contact_btn_addr_border_radius: 5px 0 0 5px;
+$contact_btn_gbtn_border_radius: 0 5px 5px 0;
+$contact_btn_addr_border_radius_m: 5px 5px 0 0 !important;
+$contact_btn_gbtn_border_radius_m: 0 0 5px 5px !important;
+$contact_google_btn_color: #fff;
+$contact_google_btn_icon: #fff;
+$contact_google_btn_bg: #4A4A4A;
+$contact_google_border: inset 0 0 0px 0px #333;
+$contact_google_hover_btn_color: #fff;
+$contact_google_hover_btn_icon: #fff;
+$contact_google_hover_btn_bg: #000;
+$contact_google_hover_border: inset 0 0 0px 0px #fff;
 // houseInfo
 $house_bg: #fff;
-$house_title_color: #c9a063;
-$house_border_color: #c9a063;
-$house_label_color: #454545;
-$house_desc_color: #636363;
-
+$house_title_color: #4A4A4A;
+$house_border_color: #C99A1D;
+$house_label_color: #4A4A4A;
+$house_desc_color: #4A4A4A;
 // mobileNav
-$mobile_nav_background: #216680;
+$mobile_nav_background: linear-gradient(-90deg,
+rgba(201, 154, 29, 1) 0%,
+rgba(242, 170, 84, 1) 100%);
 $mobile_nav_color: #fff;
-$mobile_nav_border: #805d2e;
+$mobile_nav_border: #fff;
 $mobile_nav_icon: #fff;
-
 $mobile_dialog_bg: #fff;
-$mobile_dialog_icon: #216680;
+$mobile_dialog_icon: #f2aa54;
 $mobile_dialog_desc: #000;
-$mobile_dialog_submit_bg: #216680;
+$mobile_dialog_submit_bg: #f2aa54;
 $mobile_dialog_submit_color: #fff;
 
 /* dialog */
+
+
 /* PhoneThanks.vue */
+
 $phone_thanks_bg: url("~@/assets/img/thank_bg.png");
 $phone_thanks_title_color: #fff;
 $phone_thanks_desc_color: #fff;
 $phone_thanks_link_color: #fff;
-
-/* VideoSection1 */
-$video_section_bg: url("~@/projects/sfdy/video/bg.jpg");
-$video_section_bg_m: url("~@/projects/sfdy/video/bg_m.jpg");
-$video_section_title_color: #ffee99;
-$video_section_item_border: #fff;
-$video_section_item_color: #fff;
-$video_section_item_bg_hover: rgba(255, 255, 255, 0.1);
-$video_section_btn_bg: rgba(255, 255, 255, 0.1);
-$video_section_btn_hover_bg: rgba(255, 255, 255, 0.5);

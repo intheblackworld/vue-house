@@ -3,97 +3,115 @@
     <!-- <img src="@/projects/fs/order/bg.png" alt="" class="bg-img"> -->
     <!-- <img src="@/projects/fs/order/bg1.png" alt="" class="bg-img no-mix"> -->
     <!-- <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile"> -->
+
     <div class="order-top">
       <!-- <div class="title-block">
         <h3 class="title">{{order.title}}</h3>
         <div class="subtitle">{{order.subTitle}}</div>
       </div> -->
       <h3 class="order-title" v-html="order.title"></h3>
+      <!-- <div class="order-title-img">
+        <img src="~@/assets/img/order-title.png" alt="" srcset="">
+      </div> -->
       <div class="order-subtitle" v-html="order.subTitle"></div>
       <div class="order">
         <div class="form">
           <div class="group">
             <div class="row">
-              <!-- <label>姓名</label> -->
-              <el-input v-model="form.name" placeholder="請輸入姓名"></el-input>
+              <label>姓名</label>
+              <el-input v-model="form.name" placeholder></el-input>
             </div>
             <div class="row">
-              <!-- <label>手機</label> -->
-              <el-input v-model="form.phone" placeholder="請輸入電話"></el-input>
+              <label>手機</label>
+              <el-input v-model="form.phone" placeholder></el-input>
             </div>
+          <!--  <div class="row">
+              <label>電子郵件</label>
+              <el-input v-model="form.email" placeholder></el-input>
+            </div>
+            -->
             <div class="row">
-              <!-- <label>手機</label> -->
-              <el-input class="valid_code_input" v-model="form.valid_code" placeholder="請輸入驗證碼"></el-input>
-              <el-button class="valid_code-submit flex-c" type="primary" @click="getMobileValidCode">獲取驗證碼</el-button>
-            </div>
-            <!-- <div class="row" data-aos="fade-down"
-        data-aos-delay="300">
-              <label>聯絡時間(起)</label>
-              <el-time-select
-                v-model="form.time_start"
-                :editable="false"
-                :picker-options="{
-                  start: '10:00',
-                  step: '01:00',
-                  end: '18:00',
-                }"
-              ></el-time-select>
-            </div>
-            <div class="row" data-aos="fade-down"
-        data-aos-delay="400">
-              <label>聯絡時間(迄)</label>
-              <el-time-select
-                v-model="form.time_end"
-                :editable="false"
-                :picker-options="{
-                  start: '10:00',
-                  step: '01:00',
-                  end: '18:00',
-                }"
-              ></el-time-select>
-            </div> -->
-            <!-- <div class="row">
-              <label>想看房型</label>
-              <el-select v-model="form.house" placeholder>
+              <label>居住城市</label>
+              <el-select v-model="form.city" placeholder>
                 <el-option
-                  v-for="city in ['甜蜜2房', '幸福3房', '都想看看']"
-                  :key="city"
-                  :label="city"
-                  :value="city"
-                  no-data-text=""
+                  v-for="city in cityList"
+                  :key="city.value"
+                  :label="city.label"
+                  :value="city.value"
+                  no-data-text="無數據"
                 ></el-option>
               </el-select>
-            </div> -->
-            <!-- <div class="row">
-              <label>E-mail</label>
-              <el-input v-model="form.email" placeholder></el-input>
-            </div> -->
+            </div>
+            <div class="row">
+              <label>居住地區</label>
+              <el-select v-model="form.area" placeholder>
+                <el-option
+                  v-for="area in areaList"
+                  :key="area.value"
+                  :label="area.label"
+                  :value="area.value"
+                  no-data-text="請先選擇居住城市"
+                ></el-option>
+              </el-select>
+            </div>
+            <div class="row">
+              <label>可聯繫時間</label>
+              <el-select v-model="form.contacttime" placeholder>
+                <el-option
+                  v-for="contacttime in ['09:00-12:00', '12:00-14:00', '14:00-18:00', '18:00-20:00']"
+                  :key="contacttime"
+                  :label="contacttime"
+                  :value="contacttime"
+                ></el-option>
+              </el-select>
+            </div>
+            <div class="row">
+              <label>所需房型</label>
+              <el-select v-model="form.room" placeholder>
+                <el-option
+                  v-for="room in ['2房', '3房']"
+                  :key="room"
+                  :label="room"
+                  :value="room"
+                ></el-option>
+              </el-select>
+            </div>
           </div>
           <div class="group">
             <div class="row">
-              <!-- <label>手機</label> -->
-              <el-input v-model="form.email" placeholder="請輸入電子郵件"></el-input>
-            </div>
-            <div class="row">
-              <!-- <label>居住城市</label> -->
-              <el-select v-model="form.city" placeholder="縣市">
-                <el-option v-for="city in cityList" :key="city.value" :label="city.label" :value="city.value" no-data-text="無數據"></el-option>
+              <label>購屋自備款</label>
+              <el-select v-model="form.money" placeholder>
+                <el-option
+                  v-for="money in ['200萬-300萬', '300萬-400萬', '400萬以上']"
+                  :key="money"
+                  :label="money"
+                  :value="money"
+                ></el-option>
               </el-select>
             </div>
             <div class="row">
-              <!-- <label>居住地區</label> -->
-              <el-select v-model="form.area" placeholder="鄉鎮市區">
-                <el-option v-for="area in areaList" :key="area.value" :label="area.label" :value="area.value" no-data-text="請先選擇居住城市"></el-option>
+              <label>購屋總預算</label>
+              <el-select v-model="form.totalmoney" placeholder>
+                <el-option
+                  v-for="totalmoney in ['1300萬-1500萬', '1800萬-2000萬', '2300萬-2500萬']"
+                  :key="totalmoney"
+                  :label="totalmoney"
+                  :value="totalmoney"
+                ></el-option>
               </el-select>
             </div>
-            <!-- <div class="row">
-              <el-input type="textarea" :rows="2" placeholder="請輸入您的留言 (選填)" v-model="form.msg"></el-input>
-            </div> -->
+            <div class="row" style="height: calc(100% - 125px)">
+              <el-input
+                type="textarea"
+                :rows="7"
+                style="color:#fff"
+                placeholder="請輸入您的留言 (選填)"
+                v-model="form.msg"
+              ></el-input>
+            </div>
           </div>
         </div>
-        <div class="control form-desc">
-          你所登錄的個人資料將做為以下用途<br />
-          (一)本網站所載之相關事項通知(二)客戶管理與服務(三)本公司行銷業務之推廣本案實際內容以現場公布為準<br />
+        <div class="control">
           <el-checkbox v-model="checked">
             <h3>
               本人知悉並同意
@@ -102,16 +120,32 @@
             </h3>
           </el-checkbox>
         </div>
-        <!-- <div style="margin: 0 auto;z-index:2;" v-if="!isMobile" data-aos="fade-down" data-aos-delay="600">
-          <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
+        <div style="margin: 0 auto; z-index: 2" v-if="!isMobile">
+          <vue-recaptcha
+            :sitekey="info.recaptcha_site_key_v2"
+            @verify="isVerify = true"
+            :loadRecaptchaScript="true"
+          ></vue-recaptcha>
         </div>
-        <div style="margin: 0 auto;z-index:2;" v-if="isMobile">
-          <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
-        </div> -->
-        <el-button class="form-submit flex-c" type="primary" :disabled="!checked" @click="submit" :loading="isSubmit">送出表單</el-button>
+        <div style="margin: 0 auto; z-index: 2" v-if="isMobile">
+          <vue-recaptcha
+            :sitekey="info.recaptcha_site_key_v2"
+            @verify="isVerify = true"
+            :loadRecaptchaScript="true"
+          ></vue-recaptcha>
+        </div>
+        <el-button
+          class="form-submit bt_registration"
+          type="primary"
+          :disabled="!checked || !isVerify"
+          @click="submit"
+          :loading="isSubmit"
+          >立即預約</el-button
+        >
         <Loading :loading="isSubmit" :isOpacity="true" />
       </div>
     </div>
+
     <ContactInfo />
     <GoogleMap />
     <PolicyDialog :policyVisible="policyVisible" />
@@ -119,23 +153,23 @@
 </template>
 
 <script>
-import ContactInfo from '@/components/ContactInfo.vue'
-import GoogleMap from '@/components/GoogleMap.vue'
-import PolicyDialog from '@/components/PolicyDialog.vue'
-import info from '@/info'
-import { cityList, renderAreaList } from '@/info/address'
-import { isMobile } from '@/utils'
-import Loading from '@/components/Loading.vue'
-// import VueRecaptcha from 'vue-recaptcha'
+import GoogleMap from "@/components/GoogleMap.vue";
+import ContactInfo from "@/components/ContactInfo.vue";
+import PolicyDialog from "@/components/PolicyDialog.vue";
+import info from "@/info";
+import { cityList, renderAreaList } from "@/info/address";
+import { isMobile } from "@/utils";
+import Loading from "@/components/Loading.vue";
+import VueRecaptcha from "vue-recaptcha";
 
 export default {
-  name: 'order',
+  name: "order",
   components: {
-    ContactInfo,
     GoogleMap,
+    ContactInfo,
     PolicyDialog,
     Loading,
-    // VueRecaptcha,
+    VueRecaptcha,
   },
 
   data() {
@@ -145,238 +179,177 @@ export default {
       order: info.order,
       isMobile,
       form: {
-        name: '',
-        phone: '',
-        email: '',
-        city: '',
-        area: '',
-        msg: '',
-        time_start: '',
-        time_end: '',
-        valid_code: '',
+        name: "",
+        phone: "",
+        email: "",
+        contacttime: "",
+        city: "",
+        area: "",
+        gender: "",
+        infosource: "",
+        parking: "",
+        room: "",
+        money: "",
+        totalmoney: "",
+        msg: "",
+        time_start: "",
+        time_end: "",
       },
       checked: false,
       isSubmit: false,
       isVerify: false, // google 機器人驗證
       policyVisible: false,
       showValidateDialog: false,
-    }
+    };
   },
 
   computed: {
     areaList() {
-      return renderAreaList(this.form.city)
+      return renderAreaList(this.form.city);
     },
-  },
-
-  mounted() {
-    this.generateGUID()
-    // console.log(this.getCookie('hiyes_case_uid'))
-    // this.getMobileValidCode()
   },
 
   methods: {
     showPolicyDialog() {
-      this.policyVisible = true
-    },
-
-    getCookie(name) {
-      var nameEQ = name + '='
-      var ca = document.cookie.split(';')
-      for (var i = 0; i < ca.length; i++) {
-        var c = ca[i]
-        while (c.charAt(0) === ' ') c = c.substring(1, c.length)
-        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length)
-      }
-      return null
-    },
-
-    setCookie(name, value, days) {
-      var expires = ''
-      if (days) {
-        var date = new Date()
-        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000)
-        expires = '; expires=' + date.toUTCString()
-      }
-      document.cookie = name + '=' + (value || '') + expires + '; path=/'
-    },
-
-    listCookie() {
-      const cookieArray = document.cookie.split(';')
-      for (var i = 0; i < cookieArray.length; i++) {
-        let thisCookie = cookieArray[i].split('=')
-        let cName = unescape(thisCookie[0])
-        let cValue = unescape(thisCookie[1])
-        console.log(cName, cValue)
-      }
+      this.policyVisible = true;
     },
 
     alertValidate() {
-      const h = this.$createElement
+      const h = this.$createElement;
       this.$notify({
-        title: '請填寫必填欄位',
+        title: "請填寫必填欄位",
         message: h(
-          'i',
-          { style: 'color: #82191d' },
-          '「姓名、手機、驗證碼」是必填欄位',
+          "i",
+          { style: "color: #82191d" },
+          "「姓名、手機、居住城市、居住地區、可聯繫時間、所需房型、購屋自備款、購屋總預算」是必填欄位"
         ),
-      })
+      });
     },
 
-    recordPageView(state) {
-      if (state === 1) {
-        fetch('https://data.hiyes.tw/rec/pv', {
-          method: 'POST',
-          body: {
-            guid: this.getCookie('hiyes_case_uid'),
-            project: info.caseName,
-            phone: this.form.phone,
-            state,
-          },
-        })
-      } else {
-        fetch('https://data.hiyes.tw/rec/pv', {
-          method: 'POST',
-          body: {
-            guid: this.getCookie('hiyes_case_uid'),
-            project: info.caseName,
-            state,
-          },
-        })
-      }
-    },
-
-    generateGUID() {
-      fetch('https://data.hiyes.tw/rec/uuid', {
-        method: 'GET',
-      })
-        .then((response) => {
-          return response.text()
-        })
-        .then((guid) => {
-          if (!this.getCookie('hiyes_case_uid')) {
-            this.setCookie('hiyes_case_uid', guid, 2)
-          }
-        })
-    },
-
-    // 跨域問題待處理
-    getMobileValidCode() {
-      if (!this.form.phone) {
-        const h = this.$createElement
-        this.$notify({
-          title: '提醒',
-          message: h(
-            'i',
-            { style: 'color: #82191d' },
-            '請先填寫手機號碼',
-          ),
-        })
-        return
-      }
-      fetch('https://www.hiyes.tw/Auth/SendSmsVerifyCode', {
-        method: 'POST',
-        body: {
-          mobilePhone: this.form.phone,
-        },
-      }).then((response) => {
-        console.log(response)
-      })
+    alertPhoneValidate() {
+      const h = this.$createElement;
+      this.$notify({
+        title: "格式錯誤",
+        message: h("i", { style: "color: #82191d" }, "「手機」需為 10 碼數字"),
+      });
     },
 
     submit() {
-      if (this.isSubmit) return
-      // if (!this.isVerify) return
-      if (!this.checked) return
-      this.isSubmit = true
+      if (this.isSubmit) return;
+      if (!this.isVerify) return;
+      if (!this.checked) return;
+      this.isSubmit = true;
       if (
         !this.form.name ||
         !this.form.phone ||
-        !this.form.valid_code
         // ||
         // !this.form.time_start ||
         // !this.form.time_end
         // ||
         // !this.form.email ||
-        // !this.form.city ||
-        // !this.form.area
+        !this.form.city ||
+        !this.form.area ||
+        !this.form.contacttime ||
+        !this.form.room ||
+        !this.form.money ||
+        !this.form.totalmoney
       ) {
-        this.alertValidate()
-        this.isSubmit = false
-        return
+        this.alertValidate();
+        this.isSubmit = false;
+        return;
       }
-      const urlParams = new URLSearchParams(window.location.search)
-      const utmSource = urlParams.get('utm_source')
-      const utmMedium = urlParams.get('utm_medium')
-      const utmContent = urlParams.get('utm_content')
-      const utmCampaign = urlParams.get('utm_campaign')
-      // const formData = new FormData()
-      // formData.append('name', this.form.name)
-      // formData.append('phone', this.form.phone)
-      // formData.append('email', this.form.email)
-      // formData.append('msg', this.form.msg)
-      // // formData.append('time_start', this.form.time_start)
-      // // formData.append('time_end', this.form.time_end)
-      // formData.append('city', this.form.city)
-      // formData.append('area', this.form.area)
-      // formData.append('utm_source', utmSource)
-      // formData.append('utm_medium', utmMedium)
-      // formData.append('utm_content', utmContent)
-      // formData.append('utm_campaign', utmCampaign)
-      // const time = new Date()
-      // const year = time.getFullYear()
-      // const month = time.getMonth() + 1
-      // const day = time.getDate()
-      // const hour = time.getHours()
-      // const min = time.getMinutes()
-      // const sec = time.getSeconds()
-      // const date = `${year}-${month}-${day} ${hour}:${min}:${sec}`
-      // fetch(
-      //   `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&email=${this.form.email}&cityarea=${this.form.city}${this.form.area}&msg=${this.form.msg}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
-      // `,
-      //   {
-      //     method: 'GET',
-      //   },
-      // )
-      fetch('https://www.hiyes.tw/BuildingCase/Booking', {
-        method: 'POST',
-        body: {
-          Name: this.form.name,
-          Email: this.form.email,
-          MobilePhone: this.form.phone,
-          City: this.form.city,
-          Dist: this.form.area,
-          SmsVerifyCode: this.form.valid_code,
-          ProjectId: 'hiyes case id', // 這裡不確定 case id 是多少
-          utm_source: utmSource,
-          utm_medium: utmMedium,
-          utm_content: utmContent,
-          utm_campaign: utmCampaign,
-        },
-      }).then((response) => {
-        this.isSubmit = false
-        window.location.href = `formThanks${
-          utmCampaign ? `?utm_campaign=${utmCampaign}` : ''
-        }`
-        this.recordPageView(1) // record user behavior
-      })
+      if (this.form.phone.length != 10) {
+        this.alertPhoneValidate();
+        this.isSubmit = false;
+        return;
+      }
+      const urlParams = new URLSearchParams(window.location.search);
+      const utmSource = urlParams.get("utm_source");
+      const utmMedium = urlParams.get("utm_medium");
+      const utmContent = urlParams.get("utm_content");
+      const utmCampaign = urlParams.get("utm_campaign");
+      const formData = new FormData();
+      formData.append("name", this.form.name);
+      formData.append("phone", this.form.phone);
+      formData.append("email", this.form.email);
+      formData.append("msg", this.form.msg);
+      // formData.append('time_start', this.form.time_start)
+      // formData.append('time_end', this.form.time_end)
+      formData.append("city", this.form.city);
+      formData.append("area", this.form.area);
 
-      // fetch('contact-form.php', {
-      //   method: 'POST',
-      //   body: formData,
-      // }).then((response) => {
-      //   this.isSubmit = false
-      //   if (response.status === 200) {
-      //     window.location.href = 'formThanks'
-      //   }
-      // })
+      formData.append("room", this.form.room);
+      formData.append("contacttime", this.form.contacttime);
+      formData.append("money", this.form.money);
+      formData.append("totalmoney", this.form.totalmoney);
+
+      formData.append("utm_source", utmSource);
+      formData.append("utm_medium", utmMedium);
+      formData.append("utm_content", utmContent);
+      formData.append("utm_campaign", utmCampaign);
+      const time = new Date();
+      const year = time.getFullYear();
+      const month = time.getMonth() + 1;
+      const day = time.getDate();
+      const hour = time.getHours();
+      const min = time.getMinutes();
+      const sec = time.getSeconds();
+      const date = `${year}-${month}-${day} ${hour}:${min}:${sec}`;
+      fetch(
+        `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&email=${this.form.email}&cityarea=${this.form.city}${this.form.area}&msg=${this.form.msg}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
+      `,
+        {
+          method: "GET",
+        }
+      );
+      fetch("contact-form.php", {
+        method: "POST",
+        body: formData,
+      }).then((response) => {
+        this.isSubmit = false;
+        if (response.status === 200) {
+          window.location.href = "formThanks";
+        }
+      });
     },
   },
-}
+};
 </script>
 
+<style lang="scss">
+.el-input {
+  border-bottom: 0px solid #eee !important;
+}
+.el-textarea {
+  width: 100% !important;
+}
+.el-textarea textarea {
+  color: #fff !important;
+}
+</style>
+
 <style lang="scss" scoped>
-@import '@/assets/style/variableColor.scss';
+@import "@/assets/style/variableColor.scss";
+
+.bird {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  z-index: 1;
+  width: 80vw;
+  transform: translate(-50%, 10%) skew(0deg, 0deg) scale(1);
+  animation: fly infinite alternate-reverse 7s;
+
+  @keyframes fly {
+    0% {
+      transform: translate(-50%, 10%) skew(0deg, 0deg) scale(0.9);
+    }
+    100% {
+      transform: translate(-55%, 12%) skew(20deg, 2deg) scale(1.1);
+    }
+  }
+}
+
 .bg-img {
   width: 100vw;
   position: absolute;
@@ -391,59 +364,91 @@ export default {
     mix-blend-mode: normal;
     height: 100%;
   }
+  padding: 0 2vw;
 }
 .order-bg {
-  // background-color: $order_bg_color;
-  background-image: $order_bg_image;
+  //background-color: $order_bg_color;
+  //background-image: $order_bg_image;
+  background: $order_bg_image no-repeat;
   background-repeat: no-repeat;
-  padding-top: 130px;
-  background-size: 100vw 100%;
-  background-attachment: fixed;
-  background-position: 0% 0%;
+  position: relative;
+  background-size: 110vw auto;
+  background-position: top;
   font-family: $family3;
+  // padding-top: 10vw;
+
   input,
   textarea,
   button {
     font-family: $family3;
+    background: $order_submit_bg;
+    border-radius: $order_submit_borderradius !important;
   }
   .order-top {
+    //background-color: $order_bg_color;
+    //background-image: url("~@/assets/img/contact_bg.jpg");
+   /*
+    background-size: cover;
+    background-position: bottom right;
+    */
     position: relative;
-    overflow: hidden;
+    z-index: 5;
+    padding: 5vw 0;
+    padding-bottom: 600px;
   }
   .order-title {
     font-family: $family1;
-    width: 80vw;
+    width: auto;
     padding-top: 20px;
-    padding-bottom: 0px;
-    margin: 0 auto 10px;
-    display: inline-block;
-    font-weight: 700;
-    line-height: 1.7;
-    letter-spacing: 20px;
-    font-size: calc(100vw * 50 / 1920);
+    padding-bottom: 0vw;
+    font-weight: bold;
+    line-height: 1.3;
+    font-size: 3vw;
     text-align: center;
     color: $order_title_color;
-    // border-top: 1px solid #248184;
-    // border-bottom: 1px solid #248184;
+    margin: 0 auto;
+    margin-bottom: 1vw;
+    display: inline-block;
+  }
+  .order-title-img {
+    width: 30vw;
+    margin: 3vh auto;
+    //margin-bottom: 1vw;
+
+    img {
+      width: 100%;
+      max-width: 500px;
+    }
+  }
+
+  .contact-brick {
+    position: absolute;
+    width: 20vw;
+    left: 15vw;
+    top: 42vw;
   }
 
   .order-subtitle {
-    font-family: $family1;
     width: 100vw;
-    font-size: 20px;
+    font-size:calc(2000vw / 1920);
     text-align: center;
     color: $order_subtitle_color;
-    margin-bottom: 20px;
-    padding-bottom: 8px;
+    margin-bottom:2em;
+    padding-bottom:0.9em;
+    line-height: 1.5;
+    letter-spacing: 0.06em;
+    font-weight: 500;
   }
 
   .order {
-    width: 880px;
+    position: relative;
+    width: 920px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    margin-bottom: 3rem;
+    padding-bottom: 3rem;
     justify-content: space-between;
+    z-index: 1;
   }
 
   .form {
@@ -459,22 +464,30 @@ export default {
   }
 
   .group {
-    height: 160px;
+    height: 360px;
     margin-bottom: 40px;
+    align-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
 
     &:nth-child(1) {
       border-right: 1px solid rgba(0, 0, 0, 0.2);
+      margin-right: 40px;
+      padding-right: 40px;
       .row {
-        justify-content: flex-start;
+        width: 100%;
+        // justify-content: flex-start;
+        .el-input {
+          width: auto;
+        }
       }
     }
-
     &:nth-child(2) {
       .row {
-       // margin-left: 5%;
-        // justify-content: flex-end;
-        // align-items: flex-start;
-        // height: 100%;
+        //justify-content: flex-end;
+        //align-items: flex-start;
+        //height: 100%;
+        width: 100%;
       }
     }
   }
@@ -482,8 +495,11 @@ export default {
   .row {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
-    width: 95%;
+    align-content: space-between;
+    justify-content: space-between;
+    //margin-bottom: 15px;
+    background: $order_input_bg;
+    border-bottom:1px solid #fff6;
 
     &.house {
       margin-top: 50px;
@@ -494,23 +510,20 @@ export default {
     }
 
     label {
-      //width:10em;
-      flex: 0 0 6.8em;
-      display: block;
-      text-align: left;
-      font-size: 16px;
-      opacity: 0.8;
-      font-weight: bold;
+      width: 5vw;
+      font-size: 15px;
+      font-weight: 500;
+      opacity: 1;
       color: $order_input_label_color;
-
-      span {
-        color: #ff0000;
-      }
+      text-align: left;
+      padding-left: 15px;
+      white-space: nowrap;
+      line-height: 1.2;
     }
   }
 
   .control {
-    margin-top: 0px;
+    margin-top: 40px;
     margin-bottom: 20px;
   }
 }
@@ -519,6 +532,10 @@ export default {
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .order-title {
     font-size: 32px;
+  }
+
+  .order-title-img {
+    width: 90vw;
   }
 
   .order-subtitle {
@@ -534,40 +551,51 @@ export default {
 /* 螢幕尺寸標準 */
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
+  .bird {
+    width: 100vw;
+  }
   .order-bg {
-  background-image: $order_bg_image_m;
-    //  background-image: $order_bg_image;
-    //  background-size: cover;
-    padding-top: 40px;
+    //background-color: $order_bg_color;
+    background-image: $order_bg_image_m;
+    background-size: contain;
+    padding-top: 0;
     margin: 0;
-    z-index: 2;
+    position: relative;
+    //z-index: 1;
 
     > img {
       display: block;
     }
     .order-title {
-      width: 310px;
       padding-top: 10px;
-      padding-bottom: 0px;
+      padding-bottom: 5px;
       font-size: calc(100vw * 30 / 375);
-      letter-spacing: 4px;
-      white-space: nowrap;
+    }
+    .order-title-img {
+      width: 80vw;
     }
 
     .order-subtitle {
       // display: none;
-      font-weight: bold;
-      font-size: 14px;
+      font-size:calc(1400vw / 375);
+      width: 23em;
+     // max-width: 80vw;
+      margin: 0 auto;
+      margin-bottom: 2.6em;
+      line-height: 1.5;
+    }
+    .order-top {
+      // top: 10vw;
+      padding-bottom: 70vw;
     }
     .order {
-      width: 84%;
+      width: 85% !important;
       margin: 0 auto;
       padding: 0;
     }
 
     .form {
       flex-direction: column;
-      margin-bottom: -12px;
     }
 
     .group {
@@ -575,8 +603,15 @@ export default {
       height: auto !important;
       margin-bottom: 0px !important;
       border: none !important;
+      padding-right: 0 !important;
+      &:nth-child(1) {
+        .row {
+          .el-input {
+            width: 100%;
+          }
+        }
+      }
     }
-
     .row {
       margin-bottom: 12px !important;
 
@@ -584,25 +619,15 @@ export default {
         margin-top: 20px;
       }
       label {
-        width: 30% !important;
+        width: 40% !important;
+        text-align: left;
+      padding-left: 8px;
       }
     }
 
     .control {
-    font-size: calc(100vw * 12 / 375);
-    margin: 1em 0.5em;
-      .el-checkbox {
-        font-size: 1em;
-        margin: 10px auto;
-      }
-      /* margin-top: 10px;
+      margin-top: 10px;
       margin-bottom: 10px;
-      */
-      .el-checkbox__label {
-         p, h3 {
-    font-size: 12px;
-  }
-    }
     }
 
     .hint {
@@ -615,6 +640,12 @@ export default {
       letter-spacing: normal;
       text-align: left;
       color: #ffffff;
+    }
+
+    @keyframes leaf {
+      100% {
+        transform: skew(2deg);
+      }
     }
   }
 }
