@@ -8,7 +8,7 @@
     <picture>
       <source srcset="./webp/s4/map.webp" type="image/webp" />
       <source srcset="./pc/s4/map.png" type="image/jpeg" />
-      <img src="./pc/s4/map.png" :alt="`${info.caseName}`" class="map">
+      <img src="./pc/s4/map.png" :alt="`${info.caseName}`" class="map" v-if="isPC">
     </picture>
     <!-- <picture>
       <source srcset="./webp/s2/sty_2.webp" type="image/webp" />
@@ -19,11 +19,13 @@
       完美生活一次收藏
     </div>
 
-    <div class="border"  data-aos="fade-right" data-aos-delay="400"></div>
+    <div class="border"  data-aos="fade-right" data-aos-delay="400" v-if="isPC"></div>
 
     <h3 class="desc"  data-aos="fade" data-aos-delay="600">
       雙語名校薇閣高中「明星學區生活圈」，新北投捷運站一下就到，更鄰近聞名世界的綠建築北投圖書館，散步近享磺港溪親水美地溫泉美湯，綠蔭文風隨手可得。
     </h3>
+    <Map :bgSrc="bgSrc" :hand="hand" v-if="isMobile">
+    </Map>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -35,11 +37,11 @@
   max-height: auto;
   background-size: cover;
   background-attachment: fixed;
-  background-color: #f7f8f8;
+  background-color: #fff;
 
   @include md {
     width: 100vw;
-    height: sizem(667);
+    height: sizem(261 + 448);
     min-height: auto;
     max-height: initial;
     overflow: visible;
@@ -86,6 +88,8 @@
     letter-spacing: normal;
     text-align: left;
     color: #000;
+    writing-mode: horizontal-tb;;
+    text-orientation: mixed;
   }
 }
 
@@ -132,11 +136,16 @@
     letter-spacing: sizem(1.5);
     text-align: left;
     color: #ffd58c;
+    writing-mode: horizontal-tb;;
+    text-orientation: mixed;
   }
 }
 
 .map {
   @include img_r_pc(1447, 0, 431);
+  @include md {
+    @include div_r_m(375, 482, 195, 0);
+  }
 }
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
@@ -150,9 +159,14 @@
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
 import info from '@/info'
+import Map from '@/components/Map.vue'
 
 export default {
   name: 'section4',
+
+  components: {
+    Map,
+  },
 
   data() {
     return {
@@ -161,6 +175,8 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
+      bgSrc: require('./pc/s4/map.png'),
+      hand: require('./m/s4/hand.png')
     }
   },
   methods: {

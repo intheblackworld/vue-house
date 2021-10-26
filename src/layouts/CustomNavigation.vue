@@ -102,7 +102,9 @@ $hamburger-layer-color: #fff;
     top: 2vw;
     z-index: 1;
     background-size: cover;
-    background-image: url("~@/assets/img/nav-btn-bg.jpg");
+    background-color: #b88c49;
+    border: 1px solid #fff;
+    // background-image: url("~@/assets/img/nav-btn-bg.jpg");
     width: 60px;
     height: 60px;
     display: flex;
@@ -115,6 +117,7 @@ $hamburger-layer-color: #fff;
       .hamburger-inner:after,
       .hamburger-inner:before {
         background-color: #fff;
+        height: 2px;
       }
     }
   }
@@ -126,7 +129,7 @@ $hamburger-layer-color: #fff;
     width: 15vw;
     height: 100vh;
     z-index: 0;
-    background: #005e3c;
+    background: #b88c49;
     transform: translateX(15vw);
     transition: all 0.5s;
 
@@ -143,19 +146,19 @@ $hamburger-layer-color: #fff;
       flex-direction: column;
 
       li {
-        font-size: 1vw;
+        font-size: 2vw;
         cursor: pointer;
         width: 100%;
         color: #fff;
         padding: 1vw 0;
 
         &.active {
-          background: yellow;
-          color: #005e3c;
+          background: #ffd58c;
+          color: #b88c49;
         }
         &:hover {
-          background: yellow;
-          color: #005e3c;
+          background: #ffd58c;
+          color: #b88c49;
         }
       }
     }
@@ -182,7 +185,7 @@ $hamburger-layer-color: #fff;
       width: 100vw;
       height: 100vh;
       z-index: 0;
-      background: #005e3c;
+      background: #b88c49;
       transform: translateX(100vw);
       transition: all 0.5s;
 
@@ -207,12 +210,12 @@ $hamburger-layer-color: #fff;
           padding: 2vh 0;
 
           &:hover {
-            background: yellow;
-            color: #005e3c;
+            background: #ffd58c;
+            color: #b88c49;
           }
           &.active {
-            background: yellow;
-            color: #005e3c;
+            background: #ffd58c;
+            color: #b88c49;
           }
           &.hover {
             background: unset;

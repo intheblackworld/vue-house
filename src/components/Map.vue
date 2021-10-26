@@ -3,7 +3,7 @@
     <img :src="hand" alt :class="`hand ${showMask ? 'active' : ''}`" />
     <img class="map-bg" :src="bgSrc" alt ref="mapbg" />
     <img class="map-text" :src="bgText" alt />
-    <div :class="`mask ${showMask ? 'active' : ''}`">
+    <div :class="`mask active`">
     </div>
     <img
       :src="tag"
@@ -13,14 +13,12 @@
       v-for="(tag, index) in tagList"
       :key="tag"
     />
-    <img src="../projects/pjr/s7/t.png" class="bg-img absolute">
   </div>
 </template>
 <style lang="scss" scoped>
 @import '../assets/style/function.scss';
 .map {
   // padding-top: size-m(150);
-  background-color: rgba(172, 221, 254, 1)
 }
 .desc {
   width: size-m(310);
