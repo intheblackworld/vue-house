@@ -47,13 +47,20 @@
           <div class="t1"
           data-aos="fade"
           data-aos-delay="200">三重新都心微型飯店宅</div>
-          <div class="t2"
+
+          <img src="./s1/text.png" class="img-text" alt="睿暘沁_l"
+          data-aos="fade"
+          data-aos-delay="100">
+
+          <!--
+            <div class="t2"
           data-aos="fade"
           data-aos-delay="300">
           <span>總價</span><b>588</b><span>萬起</span><b class="t2_bo">10-17</b>坪</div>
           <div class="t3"
           data-aos="fade"
           data-aos-delay="400">租金價買新房<span></span>送全室裝修</div>
+          -->
     </div>
 <div class="box_all">
   <span data-aos="fade" data-aos-delay="200"></span>
@@ -105,6 +112,13 @@
 .t0{
   @include img_r_pc(1920, 0,0);
 opacity: 0.3;
+}
+.img-text {
+  @include img_c_pc(640, 630);
+top:calc(50% + 100vw * (630 - 540) / 1920);
+transform: scale(0.5);
+transform-origin: 50% 70%;
+z-index: 5;
 }
 .img1 {
   @include img_c_pc(476, 330);
@@ -224,6 +238,11 @@ span{display: block;height: 8vw;background: #3A87C8;flex:1 1 8vw;transform: scal
     height: calc(100vh - 63px);
   margin: 0 0 sizem(0) 0;
   }
+
+.img-text {
+@include img_c_m(250, 165);
+  top:calc(50% + 100vw * (370 - 667 * .5) / 375);
+}
 .img1 {
   @include img_c_m(284, 165);
   top:calc(50% + 100vw * (140 - 667 * .5) / 375);
