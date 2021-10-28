@@ -35,7 +35,7 @@
   max-height: auto;
   background-size: cover;
   background-attachment: fixed;
-  background-color: #f7f8f8;
+ // background-color: #f7f8f8;
 
   @include md {
     width: 100vw;
@@ -59,31 +59,25 @@
 }
 
 .title {
-  @include img_l(456, 874, 209, 203, 20, 87.5);
+  @include img_l(456, 874, 170, 203, 40, 87.5);
   font-size: size(57);
-  font-weight: bold;
+  font-weight: 700;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: normal;
+  letter-spacing:0.06em;
   text-align: left;
   color: #00422d;
   white-space: nowrap;
 
   @include md {
     font-size: sizem(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.88;
-    letter-spacing: sizem(1.5);
-    text-align: left;
-    color: #00422d;
+    line-height: 1.6;
   }
 }
 
 .border {
-  @include div_l(1581, 126, 855, 169, 315, 94, 90, 30);
+  @include div_l(1581, 126, 855, 169, 315, 94, 95, 30);
   border-right: 2px solid #00422d;
   border-bottom: 2px solid #00422d;
   @include md {
@@ -92,9 +86,9 @@
 }
 
 .desc {
-  @include img_r(995, 862, 209, 314, 92, 30);
+  @include img_r(995, 862, 209, 314, 90, 30);
   font-size: size(30);
-  font-weight: 600;
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.77;
@@ -104,13 +98,8 @@
 
   @include md {
     font-size: sizem(14);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 2.07;
-    letter-spacing: normal;
     text-align: center;
-    color: #000;
   }
 }
 
@@ -157,11 +146,6 @@
   height: 100%;
   overflow: hidden;
 
-  @include md {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
 }
 
 .swipe-item {
@@ -169,22 +153,12 @@
   height: 100%;
   z-index: 0;
 
-  @include md {
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-  }
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 
-    @include md {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
   }
 
   .slide-name {
@@ -192,7 +166,7 @@
     bottom: 0.6em;
     color: #fff;
     font-size: size(16);
-    font-weight: 300;
+    font-weight:500;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.6;
@@ -201,8 +175,8 @@
     text-shadow: 0 0.3em 1em #000;
 
     @include md {
-      left: 1.2rem;
-      bottom: 0.6rem;
+      left: 1.2em;
+      bottom: 0.6em;
       top: auto;
       font-size: sizem(12);
     }
@@ -434,6 +408,13 @@ export default {
           webp: require('./webp/s6/1-1.webp'),
           imgm: require('./m/s6/1-1.jpg'),
           webpm: require('./webp/m/s6/1-1.webp'),
+          name: '3D情境參考示意圖',
+        },
+        {
+          img: require('./pc/s6/1-2.jpg'),
+          webp: require('./webp/s6/1-2.webp'),
+          imgm: require('./m/s6/1-2.jpg'),
+          webpm: require('./webp/m/s6/1-2.webp'),
           name: '3D情境參考示意圖',
         },
       ],

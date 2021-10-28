@@ -48,11 +48,11 @@
   max-height: auto;
   background-size: cover;
   background-attachment: fixed;
-  background-color: #f7f8f8;
+ // background-color: #f7f8f8;
 
   @include md {
     width: 100vw;
-    height: sizem(720);
+    height: sizem(730);
     min-height: auto;
     max-height: initial;
     overflow: visible;
@@ -72,31 +72,26 @@
 }
 
 .title {
-  @include img_l(490, 40, 715, 200, 20, 87.5);
+  @include img_l(920, 40, 490, 200, 40, 87.5);
   font-size: size(57);
-  font-weight: bold;
+  font-weight: 700;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: normal;
-  text-align: left;
+  letter-spacing:0.06em;
+  text-align: center;
   color: #00422d;
   white-space: nowrap;
 
   @include md {
     font-size: sizem(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.88;
-    letter-spacing: sizem(1.5);
-    text-align: left;
-    color: #00422d;
+    line-height:1.6;
+  text-align: left;
   }
 }
 
 .border {
-  @include div_l(1668, 1, 135, 126, 315, 0, 90, 30);
+  @include div_l(1668, 1, 135, 126, 315, 0, 85, 30);
   border-bottom: 2px solid #00422d;
   @include md {
     border-right: none;
@@ -104,25 +99,20 @@
 }
 
 .desc {
-  @include img_r(654, 149, 633, 314, 92, 30);
+  @include img_r(920, 149, 483, 314, 92, 30);
   font-size: size(30);
-  font-weight: 600;
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.77;
   letter-spacing: normal;
-  text-align: left;
+  text-align: center;
   color: #000;
 
   @include md {
     font-size: sizem(14);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 2.07;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000;
+  text-align: left;
   }
 }
 
@@ -161,7 +151,7 @@
 
 .item-title {
   font-size: size(40);
-  font-weight: 600;
+  font-weight: 700;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.79;
@@ -170,18 +160,13 @@
   color: #00422d;
   @include md {
     font-size: sizem(20);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.94;
     letter-spacing: sizem(0.8);
-    text-align: center;
-    color: #00422d;
   }
 }
 .item-work {
   font-size: size(28);
-  font-weight: normal;
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.34;
@@ -190,13 +175,9 @@
   color: #595757;
   @include md {
     font-size: sizem(12);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.94;
     letter-spacing: normal;
     text-align: center;
-    color: #595757;
   }
 }
 
@@ -541,14 +522,14 @@ export default {
           webp: require('./webp/s7/03.webp'),
           label: '蔡家欣建築師事務所',
           title: '蔡家欣/建築師',
-          work: '代表作品：天閣酒店、<br />台灣大學-學人會館、<br />大安區金華逸',
+          work: '代表作品：<br />天閣酒店、台灣大學-學人會館、大安區金華逸',
         },
         {
           img: require('./pc/s7/04.jpg'),
           webp: require('./webp/s7/04.webp'),
           label: '森恒設計',
           title: '林世昌/總監',
-          work: '代表作品：河南鄭州飯店、<br />板橋兆璞開禧、內湖君臨、南京葛洲壩會所',
+          work: '代表作品：河南鄭州飯店、板橋兆璞開禧、<br />內湖君臨、南京葛洲壩會所',
         },
       ],
     }

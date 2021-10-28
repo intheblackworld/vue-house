@@ -87,7 +87,6 @@ export default {
 
 <style lang="scss" scoped>
 $hamburger-layer-color: #fff;
-
 @import "../assets/style/variableColor.scss";
 /* 螢幕尺寸標準 */
 .custom-navigation {
@@ -95,6 +94,8 @@ $hamburger-layer-color: #fff;
   z-index: 10000;
   right: 0;
   top: 0;
+    font-size: calc(25 * 100vw / 1920);
+    line-height: 1.6;
 
   .custom-navigation-toggler {
     position: absolute;
@@ -110,6 +111,9 @@ $hamburger-layer-color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
+        transition: all 0.3s;
+        &:hover{
+    background-color: #996d2b;}
 
     .hamburger {
       padding: 0;
@@ -126,11 +130,11 @@ $hamburger-layer-color: #fff;
     position: absolute;
     right: 0;
     top: 0;
-    width: 15vw;
+    width: 20vw;
     height: 100vh;
     z-index: 0;
     background: #b88c49;
-    transform: translateX(15vw);
+    transform: translateX(100%);
     transition: all 0.5s;
 
     &.is-active {
@@ -146,11 +150,15 @@ $hamburger-layer-color: #fff;
       flex-direction: column;
 
       li {
-        font-size: 2vw;
+     //   font-size: 2vw;
         cursor: pointer;
         width: 100%;
         color: #fff;
-        padding: 1vw 0;
+        padding:0.8em 0;
+        border-bottom: 1px solid #ccaa78;
+        transition: all 0.3s;
+        &:first-child{
+        border-top: 1px solid #ccaa78;}
 
         &.active {
           background: #ffd58c;

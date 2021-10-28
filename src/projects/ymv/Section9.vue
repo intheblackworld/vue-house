@@ -36,7 +36,7 @@
   max-height: auto;
   background-size: cover;
   background-attachment: fixed;
-  background-color: #f7f8f8;
+ // background-color: #f7f8f8;
 
   @include md {
     width: 100vw;
@@ -60,9 +60,9 @@
 }
 
 .title {
-  @include img_l(456, 874, 209, 203, 20, 87.5);
+  @include img_l(456, 874, 209, 203, 40, 87.5);
   font-size: size(57);
-  font-weight: bold;
+  font-weight: 700;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
@@ -73,18 +73,13 @@
 
   @include md {
     font-size: sizem(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.88;
+    line-height:1.6;
     letter-spacing: sizem(1.5);
-    text-align: left;
-    color: #00422d;
   }
 }
 
 .border {
-  @include div_l(1581, 126, 855, 169, 315, 94, 90, 30);
+  @include div_l(1581, 126, 855, 169, 315, 94, 100, 30);
   border-right: 2px solid #00422d;
   border-bottom: 2px solid #00422d;
   @include md {
@@ -95,7 +90,7 @@
 .desc {
   @include img_r(995, 862, 209, 314, 92, 30);
   font-size: size(30);
-  font-weight: 600;
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.77;
@@ -105,13 +100,8 @@
 
   @include md {
     font-size: sizem(14);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 2.07;
-    letter-spacing: normal;
     text-align: center;
-    color: #000;
   }
 }
 
@@ -232,7 +222,7 @@
     bottom: 0.6em;
     color: #fff;
     font-size: size(16);
-    font-weight: 300;
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.6;
@@ -241,8 +231,8 @@
     text-shadow: 0 0.3em 1em #000;
 
     @include md {
-      right: 1.2rem;
-      bottom: 0.6rem;
+      right: 1.2em;
+      bottom: 0.6em;
       top: auto;
       font-size: sizem(12);
     }

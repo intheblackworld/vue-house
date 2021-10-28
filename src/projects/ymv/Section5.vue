@@ -1,6 +1,6 @@
 <template>
   <div class="section5">
-    <picture>
+    <picture v-if="isMobile">
       <source media="(max-width: 767px)" srcset="./webp/m/s5/sty_1.webp" type="image/webp" />
       <source media="(max-width: 767px)" srcset="./m/s5/sty_1.png" type="image/jpeg" />
       <img src="./m/s5/sty_1.png" :alt="`${info.caseName}`" class="sty_1">
@@ -43,7 +43,7 @@
   max-height: auto;
   background-size: cover;
   background-attachment: fixed;
-  background-color: #f7f8f8;
+ // background-color: #f7f8f8;
 
   @include md {
     width: 100vw;
@@ -72,11 +72,11 @@
   bottom: 1em;
 
   font-size: size(20);
-  font-weight: bold;
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(1.2);
+  letter-spacing: 0.06em;
   text-align: left;
   color: #fff;
 
@@ -84,15 +84,7 @@
     right: 1em;
     bottom: auto;
     top: sizem(350);
-
     font-size: sizem(12);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(1.2);
-    text-align: left;
-    color: #fff;
   }
 }
 
@@ -109,26 +101,21 @@
 }
 
 .title {
-  @include img_l(244, 216, 342, 218, 385, 30);
+  @include img_l(244, 216, 342, 375, 405, 0);
   font-size: size(60);
-  font-weight: bold;
+  font-weight: 700;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(3.6);
+  letter-spacing: 0.06em;
   text-align: left;
   color: #ffd58c;
   white-space: nowrap;
 
   @include md {
     font-size: sizem(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.88;
-    letter-spacing: sizem(1.5);
-    text-align: left;
-    color: #ffd58c;
+    line-height: 1.6;
+    text-align:center;
   }
 }
 
@@ -144,7 +131,7 @@
 .desc {
   @include img_l(378, 398, 276, 315, 474, 30);
   font-size: size(30);
-  font-weight: 600;
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.77;
@@ -153,14 +140,9 @@
   color: #fff;
 
   @include md {
-    font-size: sizem(14);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
+    font-size: sizem(13.4);
+  letter-spacing: 0.02em;
     line-height: 2.07;
-    letter-spacing: normal;
-    text-align: left;
-    color: #fff;
   }
 }
 
@@ -171,7 +153,7 @@
 }
 
 .sty_1 {
-  @include img_l_m(160, 273, -80);
+  @include img_l_m(180, 300, -90);
   transform: skewY(5deg);
   transform-origin: 50% 0%;
   animation: leaf 5s ease-in-out alternate infinite;
