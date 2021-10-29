@@ -79,7 +79,7 @@
 }
 
 .border {
-  @include div_l(1581, 126, 855, 169, 315, 94, 100, 30);
+  @include div_l(1581, 126, 855, 169, 340, 94, 100, 18);
   border-right: 2px solid #00422d;
   border-bottom: 2px solid #00422d;
   @include md {
@@ -88,7 +88,7 @@
 }
 
 .desc {
-  @include img_r(995, 862, 209, 314, 92, 30);
+  @include img_r(995, 862, 209, 340, 92, 18);
   font-size: size(30);
   font-weight: 500;
   font-stretch: normal;
