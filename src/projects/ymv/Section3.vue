@@ -5,7 +5,7 @@
       <source srcset="./pc/s3/sty_1.png" type="image/jpeg" />
       <img src="./pc/s3/sty_1.png" :alt="`${info.caseName}`" class="sty_1">
     </picture>
-    <picture>
+    <picture v-if="isMobile">
       <source media="(max-width: 767px)" srcset="./webp/m/s3/sty_3.webp" type="image/webp" />
       <source media="(max-width: 767px)" srcset="./m/s3/sty_3.png" type="image/jpeg" />
       <img src="./m/s3/sty_3.png" :alt="`${info.caseName}`" class="sty_2" data-aos="fade" data-aos-delay="800">
@@ -14,10 +14,10 @@
       明星學區<br />頂級地段
     </div>
 
-    <div class="border"  data-aos="fade-right" data-aos-delay="400"></div>
 
     <h3 class="desc"  data-aos="fade" data-aos-delay="600">
       沈浸人文學風，菁英教育環境，薇閣中學與圖書館近在身邊，步行磺港溪近在咫尺，舒心養身宜人宜居，北市繁華只要一線串聯，離塵不離城！
+      <b class="border"  data-aos="fade-right" data-aos-delay="400"></b>
     </h3>
 
     <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade" data-aos-delay="800">
@@ -47,7 +47,7 @@
   max-height: auto;
   background-size: cover;
   background-attachment: fixed;
-  background-color: #f7f8f8;
+  //background-color: #f7f8f8;
 
   @include md {
     width: 100vw;
@@ -73,37 +73,34 @@
 .title {
   @include img_r(251, 244, 1262, 218, 463, 30);
   font-size: size(60);
-  font-weight: bold;
+  font-weight: 700;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(3.6);
+  letter-spacing:0.06em;
   text-align: left;
   color: #00422d;
   white-space: nowrap;
 
   @include md {
     font-size: sizem(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 2.88;
-    letter-spacing: sizem(1.5);
     text-align: left;
-    color: #00422d;
   }
 }
 
 .border {
-  @include div_l(376, 100, 698, 104, 333, 89, 216, 12);
-  border-left: 2px solid #00422d;
-  border-bottom: 2px solid #00422d;
+  @include div_l(376, 100, 0, -46, 333, 89, 16, -20);
+  border-left: 2px solid #005a23;
+  border-bottom: 2px solid #005a23;
+  top: auto;
+  bottom:size(-43);
 }
 
 .desc {
   @include img_r(522, 545, 1247, 314, 201, 30);
   font-size: size(30);
-  font-weight: 600;
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.77;
@@ -113,13 +110,7 @@
 
   @include md {
     font-size: sizem(14);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 2.07;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000;
   }
 }
 
@@ -269,7 +260,7 @@
     bottom: 0.6em;
     color: #fff;
     font-size: size(16);
-    font-weight: 300;
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.6;
@@ -279,8 +270,8 @@
 
     @include md {
       left: auto;
-      right: 1.2rem;
-      bottom: 0.6rem;
+      right: 1.2em;
+      bottom: 0.6em;
       top: auto;
       font-size: sizem(12);
     }

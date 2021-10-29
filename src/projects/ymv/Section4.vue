@@ -37,11 +37,11 @@
   max-height: auto;
   background-size: cover;
   background-attachment: fixed;
-  background-color: #fff;
+ // background-color: #fff;
 
   @include md {
     width: 100vw;
-    height: sizem(261 + 448);
+    height: sizem(230 + 440);
     min-height: auto;
     max-height: initial;
     overflow: visible;
@@ -67,9 +67,9 @@
 }
 
 .desc {
-  @include div_r(400, 880, 119, 227, 315, 200, 87, 30);
+  @include div_r(400, 880, 119, 227, 315, 200, 97, 30);
   font-size: size(30);
-  font-weight: 600;
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.77;
@@ -81,13 +81,7 @@
 
   @include md {
     font-size: sizem(14);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 2.07;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000;
     writing-mode: horizontal-tb;;
     text-orientation: mixed;
   }
@@ -115,11 +109,11 @@
   background-size: 100% 100%;
 
   font-size: size(60);
-  font-weight: bold;
+  font-weight: 700;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(3.6);
+  letter-spacing:0.06em;
   text-align: left;
   color: #ffd58c;
   white-space: nowrap;
@@ -129,13 +123,7 @@
   @include md {
     background-image: url('./m/s4/title_bg.jpg');
     font-size: sizem(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 2.88;
-    letter-spacing: sizem(1.5);
-    text-align: left;
-    color: #ffd58c;
     writing-mode: horizontal-tb;;
     text-orientation: mixed;
   }

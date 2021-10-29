@@ -1,10 +1,11 @@
 <template>
+<div>
   <div class="map" id="map" refs="map" @scroll="handleScroll">
-    <img :src="hand" alt :class="`hand ${showMask ? 'active' : ''}`" />
     <img class="map-bg" :src="bgSrc" alt ref="mapbg" />
-    <img class="map-text" :src="bgText" alt />
-    <div :class="`mask active`">
-    </div>
+    <img class="map-text" :src="bgText" alt v-if="bgText" />
+    <img :src="hand" alt :class="`hand ${showMask ? 'active' : ''}`" />
+    <div :class="`mask ${showMask ? 'active' : ''}`">
+    </div> 
     <img
       :src="tag"
       data-aos="fade-down"
@@ -13,7 +14,8 @@
       v-for="(tag, index) in tagList"
       :key="tag"
     />
-  </div>
+    </div>
+</div>
 </template>
 <style lang="scss" scoped>
 @import '../assets/style/function.scss';

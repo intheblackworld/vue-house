@@ -418,16 +418,14 @@ export default {
 @media only screen and (max-width: 767px) {
   .contact-img {
     width: 90vw;
-    position: absolute;
-    top: 0;
-    left: 50%;
+   /* 
     transform: translate(-50%, -85%) skew(2deg);
     animation: skew 3s ease-in-out alternate infinite;
     @keyframes skew {
       to {
         transform: translate(-50%, -85%) skew(-2deg);
       }
-    }
+    } */
   }
   .contact-img-logo {
     width: 50vw;

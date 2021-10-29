@@ -1,6 +1,6 @@
 <template>
   <div class="section8">
-    <picture>
+    <picture v-if="isMobile">
       <source media="(max-width: 767px)" srcset="./webp/m/s8/sty_3.webp" type="image/webp" />
       <source media="(max-width: 767px)" srcset="./m/s8/sty_3.png" type="image/jpeg" />
       <img src="./m/s8/sty_3.png" :alt="`${info.caseName}`" class="sty_1">
@@ -30,11 +30,11 @@
   max-height: auto;
   background-size: cover;
   background-attachment: fixed;
-  background-color: #f7f8f8;
+ // background-color: #f7f8f8;
 
   @include md {
     width: 100vw;
-    height: sizem(134 + 278 + 164);
+    height: sizem(134 + 278 + 234);
     min-height: auto;
     max-height: initial;
     overflow: visible;
@@ -54,68 +54,56 @@
 }
 
 .title {
-  @include img_l(490, 40, 715, 218, 463, 30);
+  @include img_l(490, 40, 715, 218, 0,30);
   font-size: size(57);
-  font-weight: bold;
+  font-weight: 700;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: normal;
+  letter-spacing:0.06em;
   text-align: left;
   color: #00422d;
   white-space: nowrap;
 
   @include md {
     font-size: sizem(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 2.88;
-    letter-spacing: sizem(1.5);
-    text-align: left;
-    color: #00422d;
   }
 }
 
 .border {
-  @include div_l(1668, 1, 135, 126, 333, 89, 216, 12);
+  @include div_l(1668, 1, 135, 126, 315, 0, 0, 30);
   border-bottom: 2px solid #00422d;
   @include md {
-    display: none;
+ display: none;
   }
 }
 
 .title-bg {
-  @include div_l(355, 355, 294, 210, 164, 164, 0, 30);
+  @include div_l(355, 355, 294, 210, 164, 164, 70, 30);
   background-image: url('./pc/s8/title_bg.jpg');
   background-size: 100% 100%;
 
   font-size: size(57);
-  font-weight: bold;
+  font-weight: 700;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(4.56);
+  letter-spacing:0.06em;
   text-align: center;
   color: #ffd58c;
   white-space: nowrap;
 
   @include md {
     font-size: sizem(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.58;
-    letter-spacing: sizem(1.5);
-    text-align: center;
-    color: #ffd58c;
   }
 }
 
 .desc {
-  @include img_l(361, 679, 212, 314, 202, 30);
+  @include img_l(361, 679, 212, 314, 250, 30);
   font-size: size(30);
-  font-weight: 600;
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.77;
@@ -125,38 +113,37 @@
 
   @include md {
     font-size: sizem(14);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 2.07;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000;
   }
 }
 
 .img1 {
-  @include img_r(1107, 210, 157, 375, 298, 0);
+  @include img_r(1107, 210, 157, 375, 368, 0);
 }
 
 .logo1 {
-  @include img_r(248, 305, 967, 100, 158 + 164, 245);
+  @include img_r(248, 305, 967, 100, 158 + 234, 245);
 }
 
 .img2 {
-  @include img_r(1107, 634, 157, 375, 278 + 164, 0);
+  @include img_r(1107, 634, 157, 375, 278 + 234, 0);
 }
 
 .logo2 {
-  @include img_r(291, 731, 209, 116, 306 + 164, 30);
+  @include img_r(291, 731, 209, 116, 306 + 234, 30);
 }
 
 .sty_1 {
-  @include img_r_m(160, 0, -40);
+  @include img_r_m(200, 20, -50);
   transform: skewY(5deg);
-  transform-origin: 50% 0%;
+  transform-origin: 100% 50%;
   animation: leaf 5s ease-in-out alternate infinite;
   z-index: 5;
+}
+@keyframes leaf {
+  to {
+    transform:skewY(0);
+  }
 }
 
 /* 螢幕尺寸標準 */

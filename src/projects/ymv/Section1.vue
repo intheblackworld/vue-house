@@ -33,15 +33,14 @@
   position: relative;
   z-index: 1;
   //z-index: 100;
-  height: calc(1080 * 100vw / 1920);
-  min-height: 100vh;
+  height:100vh;
+  min-height: calc(900 * 100vw / 1920);
   max-height: calc(1080 * 100vw / 1920);
   pointer-events: none;
   overflow: hidden;
   .bg {
     width: 100%;
-    height: calc(1080 * 100vw / 1920);
-    min-height: 100vh;
+    height: 100%;
     object-fit: cover;
     position: absolute;
     top: 0;
@@ -96,7 +95,9 @@
       transform: skewY(3deg);
       transform-origin: 100% 60%;
       &.fadeIn {
-        right: -5vw;
+      width: 39vw;
+        right: -14vw;
+      top: -22vw;
       }
     }
     @keyframes leaf {
@@ -198,9 +199,10 @@
     }
     &.aa_title_1 {
       position: absolute;
-      width: 40vw;
+      width: 40vw;height: 16vw;
       left: 32vw;
       top: -9vw;
+      top: calc(50% - 16vw);
       transition: all 5s;
       mask: url('~@/projects/ymv/s1/mask.png');
       mask-size: 0%;
@@ -215,9 +217,10 @@
     }
     &.aa_title_2 {
       position: absolute;
-      width: 1.95vw;
+      width: 1.95vw;height: 16vw;
       left: 29.6vw;
       top: -9.25vw;
+      top: calc(50% - 16.25vw);
       opacity: 0;
       transition: all 1s;
       &.fadeIn {
@@ -363,18 +366,20 @@
         }
       }
       &.aa_title_1 {
-        width: 50vw;
-        left: 25vw;
-        top: -20vw;
+    width: 52vw;
+    left: 25vw;
+    height: 68vw;
+    top: calc(50% - 53vw);
         transition: all 3s;
         &.fadeIn {
           mask-size: 200%;
         }
       }
       &.aa_title_2 {
-        width: 4.85vw;
+        width: 4.85vw;height: 40vw;
         left: 19.5vw;
         top: -36.7vw;
+        top: calc(50% - 56vw);
       }
       &.aa_title_3 {
         width: 40vw;

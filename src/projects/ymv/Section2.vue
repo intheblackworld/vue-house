@@ -82,12 +82,12 @@
 @import '@/assets/style/function.scss';
 .section2 {
   width: 100%;
-  height: size(1080);
-  min-height: size(1080);
-  max-height: auto;
+  height:100vh;
+  min-height:size(950);
+  max-height:size(1080);
   background-size: cover;
   background-attachment: fixed;
-  background-color: #f7f8f8;
+  //background-color: #f7f8f8;
 
   @include md {
     width: 100vw;
@@ -112,35 +112,32 @@
 
 .title {
   @include img_l(251, 244, 1262, 218, 463, 30);
+  top: calc(50% + 100vw * (244 - 540) / 1920);
   font-size: size(60);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(3.6);
+  letter-spacing:0.06em;
   text-align: left;
   color: #00422d;
   white-space: nowrap;
 
   @include md {
     font-size: sizem(25);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 2.88;
-    letter-spacing: sizem(1.5);
-    text-align: left;
-    color: #00422d;
   }
 }
 
 .border {
-  @include img_r(282, 419, 375, 282, 520, 62);
+  @include img_r(282, 419, 375, 282, 525, 62);
+  top: calc(50% + 100vw * (419 - 540) / 1920);
   border-bottom: 2px solid #00422d;
 }
 
 .desc {
   @include img_l(522, 439, 1263, 314, 532, 31);
+  top: calc(50% + 100vw * (439 - 540) / 1920);
   font-size: size(30);
   font-weight: 600;
   font-stretch: normal;
@@ -152,13 +149,7 @@
 
   @include md {
     font-size: sizem(14);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 2.07;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000;
   }
 }
 
@@ -177,41 +168,39 @@
 
 .sty_2 {
   @include img_r(231, 97, 700, 231, 49, 144);
+  top: calc(50% + 100vw * (97 - 540) / 1920);
 }
 
 .btn-title {
   @include div_l(222, 60, 717, 1260, 144, 39, 346, 30);
+  top: calc(50% + 100vw * (717 - 540) / 1920);
   background-image: url('./pc/s2/btn_title_bg.jpg');
   background-size: 100% 100%;
-
-  font-size: size(36.2);
+  font-size: size(36);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.21;
-  letter-spacing: size(4.34);
+  letter-spacing: 0.12em;
   text-align: left;
   color: #ffd58c;
 
   @include md {
     font-size: sizem(20);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.4;
-    letter-spacing: sizem(2.4);
     text-align: center;
-    color: #ffd58c;
   }
 }
 
 .btns {
   @include img_r(472, 814, 175, 315, 402, 30);
+  top: calc(50% + 100vw * (814 - 540) / 1920);
   .btn {
     width: size(122);
     height: size(61);
-    border-bottom: 1px solid #00422d;
-    border-right: 1px solid #00422d;
+    
+    border:1px solid #00422d;
+    border-color: #00422d00 #00422d #00422d #00422d00;
     cursor: pointer;
 
     font-size: size(42);
@@ -222,25 +211,54 @@
     letter-spacing: normal;
     text-align: left;
     color: #00422d;
+    transition:all 0.5s ;
 
     @include md {
       width: sizem(79);
       height: sizem(40);
       font-size: sizem(20);
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
       line-height: 1.6;
-      letter-spacing: normal;
-      text-align: left;
-      color: #00422d;
+    }
+    &:hover{
+      animation:btn_an .5s both;
+      background:#00422d33;
+    //animation-timing-function:step-start;
     }
   }
 }
-
+    @keyframes btn_an {
+      0% {
+    border-color: #00422d00 #00422d #00422d #00422d00;
+      }
+      12% {
+    border-color: #00422d00 #00422d00 #00422d #00422d00;
+      }
+      25% {
+    border-color: #00422d00 #00422d00 #00422d #00422d;
+      }
+      37% {
+    border-color: #00422d00 #00422d00 #00422d00 #00422d;
+      }
+      50% {
+    border-color: #00422d #00422d00 #00422d00 #00422d;
+      }
+      62% {
+    border-color: #00422d #00422d00 #00422d00 #00422d00;
+      }
+      75% {
+    border-color: #00422d #00422d #00422d00 #00422d00;
+      }
+      87% {
+    border-color: #00422d00 #00422d #00422d00 #00422d00;
+      }
+      100% {
+    border-color: #00422d00 #00422d #00422d #00422d00;
+      }
+    }
 /* Swipe */
 .swipe {
   @include div_l(1177, 799, 141, 0, 363, 246, 63, 12);
+  top: calc(50% + 100vw * (141 - 540) / 1920);
   object-fit: cover;
 }
 
@@ -303,7 +321,7 @@
     bottom: 0.6em;
     color: #fff;
     font-size: size(16);
-    font-weight: 300;
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.6;
@@ -312,8 +330,8 @@
     text-shadow: 0 0.3em 1em #000;
 
     @include md {
-      left: 1.2rem;
-      bottom: 0.6rem;
+      left: 1.2em;
+      bottom: 0.6em;
       top: auto;
       font-size: sizem(12);
     }

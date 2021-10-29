@@ -138,7 +138,7 @@ export default {
     margin-left:0;padding: 0;
       white-space: normal;
       line-height: 1.6;
-      .label{margin: 0;
+      .label{margin: 0 .3em 0 0;
       font-size: calc(100vw * 14 / 375);
       line-height:inherit;}
     .desc {
