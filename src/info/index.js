@@ -1,10 +1,10 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '新北市三重區神農街XXX',
+  address: '新北市三重區光復路一段61巷31弄1號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.2977358294615!2d121.21881161537769!3d24.955982847567636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468224a47c85d5f%3A0xe9ce48c6dd51fd48!2zMzIw5qGD5ZyS5biC5Lit5aOi5Y2A5aSn5ZCM6LevMTg26Jmf!5e0!3m2!1szh-TW!2stw!4v1630914350973!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/2v4Ded5m8UZowX19A',
-  phone: '02-8666-0588',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.5561626206436!2d121.47238911551061!3d25.049132143837607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a90cf4d52a79%3A0x1a0b75168bd2a26f!2z552_5pqY5rKBIOaOpeW-heS4reW_gw!5e0!3m2!1szh-TW!2stw!4v1635484122011!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/BBW1tjmDyEbifGEY8',
+  phone: '02-2278-2685',
   fbLink: 'https://www.facebook.com/',
   fbMessage: 'https://m.me/',
   caseName: '睿暘沁',
