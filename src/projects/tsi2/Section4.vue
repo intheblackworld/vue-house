@@ -2,7 +2,7 @@
   <div class="section4">
     <div class="content">
       <h3 class="label"  data-aos="fade" data-aos-delay="0">
-        健康生活 貫徹始終
+        純淨清新  優生"健"築
       </h3>
       <div class="content-line"  data-aos="zoom-in-right" data-aos-delay="100"></div>
       <h3 class="desc"  data-aos="fade" data-aos-delay="200">
@@ -22,7 +22,7 @@
     </div>
     <img loading="lazy" src="./s4/img.jpg" :alt="`${info.caseName}_img`" class="img"  data-aos="fade" data-aos-delay="200">
     <h3 class="img-name">情境示意圖</h3>
-    <img loading="lazy" src="./s4/img.png" :alt="`${info.caseName}_img`" class="circle"  data-aos="fade" data-aos-delay="600">
+   <!-- <img loading="lazy" src="./s4/img.png" :alt="`${info.caseName}_img`" class="circle"  data-aos="fade" data-aos-delay="600">  -->
   </div>
 </template>
 <style lang="scss" scoped>
@@ -156,7 +156,7 @@
 
   .content-line {
     border-top: 1px solid #d38700;
-    @include img_r_m(127, 75, 0);
+    @include img_r_m(110, 70, 0);
   }
 
   .label {

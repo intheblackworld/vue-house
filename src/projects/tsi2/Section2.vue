@@ -1,14 +1,18 @@
 <template>
   <div class="section2">
     <!-- <img loading="lazy" src="./s1/bg1.jpg" :alt="`${info.caseName}_cloud`" class="bg-img" v-if="isPC">
-    <img loading="lazy" src="./s1/bg_m.jpg" :alt="`${info.caseName}_cloud`" class="bg-img" v-if="isMobile">  -->
-    <img loading="lazy" src="./s2/bg.png" :alt="`${info.caseName}_cloud`" class="wave">
+    <img loading="lazy" src="./s1/bg_m.jpg" :alt="`${info.caseName}_cloud`" class="bg-img" v-if="isMobile">  
+    <img loading="lazy" src="./s2/bg.png" :alt="`${info.caseName}_cloud`" class="wave"> -->
+<img loading="lazy" src="./s2/cloud.png" :alt="`${info.caseName}_cloud`" class="cloud1">
+<img loading="lazy" src="./s2/cloud.png" :alt="`${info.caseName}_cloud`" class="cloud2">
+<img loading="lazy" src="./s2/rabbit.png" :alt="`${info.caseName}_rabbit`" class="rabbit">
+<img loading="lazy" src="./s2/t.png" :alt="`${info.caseName}_t`" class="t">
     <img loading="lazy" src="./s2/3d.png" :alt="`${info.caseName}_cloud`" class="img3d">
     <div class="title1 title">
-      一次買最好
+      輕鬆成家
     </div>
     <div class="title2 title">
-      住五股
+      一步登天
     </div>
     <swiper :navigation="true" :options="swiperOption" ref="mySwiper" data-aos="fade" data-aos-delay="200" class="item-list flex-jb flex-as">
       <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" :class="`item`">
@@ -88,6 +92,7 @@
                 background-color: #fff;
                 box-shadow: none;
                 transform: translateY(200%);
+                color: #036EB7;
               }
               .item-title {
                 opacity: 1;
@@ -154,6 +159,7 @@
         font-weight: 900;
         background-color: #fff;
         box-shadow: none;
+        color: #036EB7;
       }
       .item-title {
         opacity: 1;
@@ -214,26 +220,41 @@
   position: relative;
   background-size: cover;
   // margin: 0 0 size(400) 0;
-  background: #003176;
+  background: #036EB7;
   z-index: 2;
 }
 
 .img3d {
-  @include img_c_pc(1600, 120);
+  @include img_c_pc(1690, 50);
 }
 
+//.c01{ @include img_c_pc(1920, 0);}
+.cloud1{ @include img_l_pc(256, 300, 550);
+    transform: translateX(-50%);
+  animation: cloud 8s 0s ease-in-out infinite alternate;}
+.cloud2{ @include img_r_pc(256, 600, 500);
+    transform: translateX(70%);
+  animation: cloud 8s ease-in-out infinite alternate-reverse;}
+.rabbit{ @include img_r_pc(841, 230, -350);}
+.t{ @include img_r_pc(282, 150, 350);}
 .wave {
   @include img_c_pc(1920, 521);
   animation: img 8s 0s ease-in-out infinite alternate;
   transform-origin: 50% 70%;
   transform: scaleY(0.8) translate(0, 0);
 }
-
+@keyframes cloud {
+  to {
+    transform: translate(0);
+  }
+}
+/*
 @keyframes img {
   to {
     transform: scaleX(0.96) translate(0, 5%);
   }
 }
+*/
 
 .bg-img {
   width: 100%;
@@ -260,18 +281,18 @@
   letter-spacing: size(4);
   text-align: left;
   padding-top: size(46);
-  color: #003177;
-  background-color: #ffffff;
+  color: #036EB7;
+  background-color: #fff;
   writing-mode: vertical-rl;
   text-orientation: upright;
 }
 
 .title1 {
-  @include div_r_pc(70, 391, 157, 440);
+  @include div_l_pc(70, 289, 190, 352);
 }
 
 .title2 {
-  @include div_r_pc(70, 289, 157, 352);
+  @include div_l_pc(70, 289, 150, 440);
 }
 
 .desc {
@@ -347,8 +368,8 @@
     width: size(133);
     height: size(133);
     border-radius: 999px;
-    background-color: #003177;
-    box-shadow: 0 0 0 1px #d38700;
+    background-color: #036EB7;
+    box-shadow: 0 0 0 1px #FFF000;
     font-size: size(25);
     font-weight: normal;
     font-stretch: normal;
@@ -356,7 +377,7 @@
     line-height: 1.3;
     letter-spacing: size(2.5);
     text-align: left;
-    color: #d38700;
+    color: #FFF000;
     transition: all 0.3s;
   }
 
@@ -371,7 +392,7 @@
     line-height: 1.3;
     letter-spacing: size(2.5);
     text-align: left;
-    color: #d38700;
+    color: #FFF000;
     writing-mode: vertical-rl;
     text-orientation: upright;
     opacity: 0;
@@ -387,7 +408,6 @@
       background: currentColor;
     }
   }
-
   .item-desc {
     @include img_r_pc(36, 476, 85);
     width: size(133);
@@ -454,28 +474,32 @@
   .wave {
     @include img_l_m(800, 244, -240);
   }
+.cloud1{ @include img_l_m(130, 220, 50);
+    transform: translateX(-50%);
+  animation: cloud 8s 0s ease-in-out infinite alternate;}
+.cloud2{ @include img_r_m(150, 300, 50);
+    transform: translateX(70%);
+  animation: cloud 8s ease-in-out infinite alternate-reverse;}
+  .rabbit{ @include img_r_m(320, 50, -130);}
+.t{ @include img_l_m(180,15, 20);transform: rotate();}
 
   .title {
-    font-size: sizem(23);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.09;
-    letter-spacing: sizem(2.3);
-    text-align: right;
-    color: #003177;
-    background-color: #fff;
-    padding-right: sizem(16);
+    font-size: sizem(17);
+    line-height: 1.8;
+    letter-spacing: 0.1em;
+    text-align: center;
+    padding: 0;
     writing-mode: horizontal-tb;
     text-orientation: mixed;
+    height: auto;
   }
 
   .title1 {
-    @include div_r_m(181, 41, 107, 36);
+    @include img_l_m(120, 126, 40);
   }
 
   .title2 {
-    @include div_r_m(145, 41, 56, 36);
+    @include img_l_m(120, 90, 23);
   }
 
   .desc {
@@ -514,8 +538,8 @@
       width: sizem(85);
       height: sizem(85);
       border-radius: 999px;
-      background-color: #003177;
-      box-shadow: 0 0 0 3px #d38700;
+      background-color: #036EB7;
+      box-shadow: 0 0 0 3px #FFF000;
       font-size: sizem(15);
       font-weight: normal;
       font-stretch: normal;
@@ -523,7 +547,7 @@
       line-height: 1.3;
       letter-spacing: sizem(1.5);
       text-align: left;
-      color: #d38700;
+      color: #FFF000;
       transition: all 0.3s;
     }
 
@@ -538,7 +562,7 @@
       line-height: 1.3;
       letter-spacing: size(2.5);
       text-align: left;
-      color: #d38700;
+      color: #FFF000;
       writing-mode: horizontal-tb;
       text-orientation: mixed;
     }
@@ -567,7 +591,7 @@
         top: -1em;
         margin-bottom: 0.5em;
         border-radius: 50%;
-        background: #d38700;
+        background: #FFF000;
       }
     }
   }

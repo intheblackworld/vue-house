@@ -1,6 +1,6 @@
 <template>
   <div class="section5">
-    <img loading="lazy" src="./s5/bg.png" :alt="`${info.caseName}_img`" class="img">
+   <!-- <img loading="lazy" src="./s5/bg.png" :alt="`${info.caseName}_img`" class="img">  -->
     <transition-group name="fade-up" mode="out-in">
       <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="blockIndex === 0" key="swipe-0">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -39,29 +39,28 @@
     </transition-group>
     <transition-group name="fade-up" mode="out-in">
       <div v-if="blockIndex === 0" key="block0">
-        <div class="title1">六感花園</div>
-        <h3 class="title2">五股洲子洋 不用等放假</h3>
+        <div class="title1">天空之域</div>
+        <h3 class="title2">洲子洋最大方的綠<br>1500坪六感御花園</h3>
         <h3 class="desc">
-          以東京御苑源於自然，「四時有花，六感有意，八節有景」匠心獨具的設計完美呼應觀音山、微風運河，以「園中有園，景中有景」設計手法打造，對應人之六感：視覺、聽覺、嗅覺、味覺、觸覺、心覺，以不同的方式療癒您身心。
+          19%超低建蔽率，獨領風騷，師法東京御苑自然之道，「四時有花，六感有意，八節有景」匠心獨具的設計完美呼應觀音山、微風運河，以「園中有園，景中有景」設計手法打造，對應人之六感：視覺、聽覺、嗅覺、味覺、觸覺、心覺，以不同的方式療癒您身心靈。
         </h3>
       </div>
       <div v-if="blockIndex === 1" key="block1">
-        <div class="title1">舒心饗宴</div>
-        <h3 class="title2">極致生活美學<br />享生活不用等放假</h3>
+        <div class="title1">天空之逸</div>
+        <h3 class="title2">在家度假天天享<br />玩美生活時時樂</h3>
         <h3 class="desc">
-          在這裡，生活就是渡假。<br />
-          「天空之邑」打造最舒心的公設饗宴，<br />
+          在這裡，生活就是度假。<br />「天空之邑」打造最舒適完善的會館公設，<br />
           熱情款待每個熱愛享受生活的住戶。
         </h3>
       </div>
     </transition-group>
-    <img loading="lazy" src="./s4/img.png" :alt="`${info.caseName}_img`" class="circle">
+   <!-- <img loading="lazy" src="./s4/img.png" :alt="`${info.caseName}_img`" class="circle">  -->
     <div class="btns flex-ac flex-jb">
       <h3 :class="`btn flex-c ${blockIndex === 0 ? 'active' : ''}`" @click="blockIndex = 0">
-        六感花園
+        天空之域
       </h3>
       <h3 :class="`btn flex-c ${blockIndex === 1 ? 'active' : ''}`" @click="blockIndex = 1">
-        舒心饗宴
+        天空之逸
       </h3>
     </div>
   </div>
@@ -85,14 +84,10 @@
 @media screen and (max-width: 767px) {
   .slide-name {
     .slide-name-big {
-      font-size: sizem(16);
-
-      .sep {
-        color: #d38700;
-      }
+      font-size: sizem(13);
 
       .small {
-        font-size: sizem(12);
+        font-size: sizem(11);
       }
     }
   }
@@ -103,9 +98,7 @@
 
 .section5 {
   width: 100%;
-  height: size(1046);
-  min-height: size(1046);
-  max-height: size(1046);
+  height: size(980);
   position: relative;
   z-index: 2;
     background: #fff;
@@ -141,7 +134,7 @@
   text-align: left;
   padding-top: size(46);
   color: #ffffff;
-  background-color: #003177;
+  background-color: #036EB7;
   writing-mode: vertical-rl;
   text-orientation: upright;
     z-index: 2;
@@ -156,7 +149,7 @@
   line-height: 1.4;
   letter-spacing: size(5);
   text-align: left;
-  color: #003177;
+  color: #036EB7;
   writing-mode: vertical-rl;
   text-orientation: upright;
 }
@@ -192,9 +185,9 @@
 
   &.active,
   &:hover {
-    box-shadow: -2px 2px 0 0 #003177;
+    box-shadow: -2px 2px 0 0 #036EB7;
     background: #fff;
-    color: #003177;
+    color: #036EB7;
   }
 }
 .circle {
@@ -304,17 +297,6 @@
     text-align: left;
     text-shadow: 0 0.3em 1em #000;
 
-    .slide-name-big {
-      font-size: size(22);
-
-      .sep {
-        color: #d38700;
-      }
-
-      .small {
-        font-size: size(12);
-      }
-    }
   }
 
   // &:nth-child(1) {
@@ -452,7 +434,7 @@
     letter-spacing: sizem(2.3);
     text-align: left;
     color: #ffffff;
-    background-color: #003177;
+    background-color: #036EB7;
     padding-top: 0;
     padding-left: 0.5em;
     writing-mode: horizontal-tb;
@@ -468,7 +450,7 @@
     line-height: 1.27;
     letter-spacing: sizem(3.6);
     text-align: left;
-    color: #003177;
+    color: #036EB7;
     writing-mode: horizontal-tb;
     text-orientation: mixed;
   }
@@ -508,9 +490,9 @@
 
     &.active,
     &:hover {
-      box-shadow: -2px 2px 0 0 #003177;
+      box-shadow: -2px 2px 0 0 #036EB7;
       background: #fff;
-      color: #003177;
+      color: #036EB7;
     }
   }
   .circle {
@@ -585,7 +567,7 @@
     }
 
     // &:nth-child(1) {
-    //   z-index: 1;
+    //   z-index: 1;slide-name-big
     //   // opacity: 1;
     // }
 
@@ -605,18 +587,16 @@
       right: 0.5em;
       text-align: right;
       font-size: sizem(12);
-      font-family: "Noto Sans TC", serif;
       font-weight: 400;
-    }
-  }
+    .slide-name-big {
+      font-size: sizem(12);
+      bottom: 1.2em;
 
-  .pagination {
-    width: auto;
-    bottom: size(91);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    justify-content: center;
+      .small {
+      font-size: sizem(12);
+      }
+    }
+    }
   }
 
   .pagination-dot {
@@ -708,11 +688,27 @@ export default {
       slideList: [
         {
           img: require('./s5/1-1.jpg'),
-          name: '六感庭園情境示意圖',
+          name: '<div class="slide-name-big">中庭透視圖<span class="small">3D示意</span></div>',
         },
         {
           img: require('./s5/1-2.jpg'),
-          name: '六感庭園情境示意圖',
+          name: '<div class="slide-name-big">中庭透視圖<span class="small">3D示意</span></div>',
+        },
+        {
+          img: require('./s5/1-3.jpg'),
+          name: '<div class="slide-name-big">中庭透視圖<span class="small">3D示意</span></div>',
+        },
+        {
+          img: require('./s5/1-4.jpg'),
+          name: '<div class="slide-name-big">中庭透視圖<span class="small">3D示意</span></div>',
+        },
+        {
+          img: require('./s5/1-5.jpg'),
+          name: '<div class="slide-name-big">日景半鳥瞰中庭透視圖<span class="small">3D示意</span></div>',
+        },
+        {
+          img: require('./s5/1-6.jpg'),
+          name: '<div class="slide-name-big">日景空中花園透視圖<span class="small">3D示意</span></div>',
         },
       ],
       slideList1: [
@@ -722,15 +718,16 @@ export default {
         },
         {
           img: require('./s5/2-2.jpg'),
-          name: '<div class="slide-name-big">空中花園<span class="sep">｜</span>用自然香味，讓身心靈就此沉澱寧靜 <span class="small">3D示意</span></div>',
+          name: '<div class="slide-name-big">閱讀區<span class="sep">｜</span> <span class="small">3D示意</span></div>',
         },
         {
           img: require('./s5/2-3.jpg'),
-          name: '<div class="slide-name-big">健身房<span class="sep">｜</span>用汗水淬練身體完美線條，紓壓不二法門 <span class="small">3D示意</span></div>',
+          name: '<div class="slide-name-big">閱讀區<span class="sep">｜</span> <span class="small">3D示意</span></div>',
         },
         {
           img: require('./s5/2-4.jpg'),
-          name: '<div class="slide-name-big">拳擊區<span class="sep">｜</span>正拳、鉤拳用痛快揮擊，把負能量都趕走 <span class="small">3D示意</span></div>',
+          name: '<div class="slide-name-big">KTV<span class="sep">｜</span> <span class="small">3D示意</span></div>',
+         // name: '<div class="slide-name-big">拳擊區<span class="sep">｜</span>正拳、鉤拳用痛快揮擊，把負能量都趕走 <span class="small">3D示意</span></div>',
         },
         {
           img: require('./s5/2-5.jpg'),
@@ -738,28 +735,24 @@ export default {
         },
         {
           img: require('./s5/2-6.jpg'),
+          name: '<div class="slide-name-big">媽媽教室<span class="sep">｜</span>寵愛家人，用香味與美味攏絡家人的胃 <span class="small">3D示意</span></div>',
+        },
+        {
+          img: require('./s5/2-7.jpg'),
           name: '<div class="slide-name-big">兒童遊戲區<span class="sep">｜</span>把歡樂與笑聲裝滿孩子幸福的童年 <span class="small">3D示意</span></div>',
         },
-        // {
-        //   img: require('./s5/05-2_img.jpg'),
-        //   name: '捷運示意',
-        // },
-        // {
-        //   img: require('./s4/04-2_slider_2.jpg'),
-        //   name: '新北大都會公園',
-        // },
-        // {
-        //   img: require('./s4/04-2_slider_3.jpg'),
-        //   name: '芳洲公園',
-        // },
-        // {
-        //   img: require('./s4/04-2_slider_4.jpg'),
-        //   name: '新北大都會公園',
-        // },
-        // {
-        //   img: require('./s4/04-2_slider_5.jpg'),
-        //   name: '新北大都會公園',
-        // },
+        {
+          img: require('./s5/2-8.jpg'),
+          name: '<div class="slide-name-big">接待區<span class="sep">｜</span> <span class="small">3D示意</span></div>',
+        },
+        {
+          img: require('./s5/2-9.jpg'),
+          name: '<div class="slide-name-big">健身房<span class="sep">｜</span>用汗水淬練身體完美線條，紓壓不二法門 <span class="small">3D示意</span></div>',
+        },
+        {
+          img: require('./s5/2-10.jpg'),
+          name: '<div class="slide-name-big">健身房<span class="sep">｜</span>用汗水淬練身體完美線條，紓壓不二法門 <span class="small">3D示意</span></div>',
+        },
       ],
     }
   },
@@ -773,12 +766,13 @@ export default {
   computed: {},
 
   watch: {
-    // viewIndex() {
-    //   if (this.viewIndex === 5) {
-    //     this.slideIndex = 0
-    //     console.log(this.slideIndex, 'slideIndex')
-    //   }
-    // },
+  /*   viewIndex() {
+       if (this.viewIndex === 5) {
+         this.slideIndex = 0
+       console.log(this.slideIndex, 'slideIndex')
+     }
+     },
+     */
   },
 }
 </script>

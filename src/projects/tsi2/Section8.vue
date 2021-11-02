@@ -332,16 +332,16 @@
           </g>
         </svg>
         <div class="title1">天空之翼</div>
-        <h3 class="title2">五泰輕軌領軍 預約起漲點</h3>
+        <h3 class="title2">五泰輕軌快意通 搶搭增值特快車</h3>
         <h3 class="subtitle">
-          金軸相接 馳騁台北
+          輻射雙北 價值連城
         </h3>
         <h3 class="desc">
-散步五分鐘，翻轉洲子洋最強未來助力「五泰輕軌」五股站近在咫尺，為您銜接機場捷運、新蘆線、環狀線，「天空之邑」坐落一高、台64、台65最前沿，為您提前預約地段增值紅利，讓您輕取雙北繁華大城。
+散步五分鐘，翻轉洲子洋最強未來助力「五泰輕軌」F9五股站近在咫尺，為您銜接機場捷運、新蘆線、環狀線，「天空之邑」坐落一高、台64、台65最前沿，為您提前預約地段增值紅利，讓您輕取雙北繁華大城。
         </h3>
       </div>
     </transition>
-    <img loading="lazy" src="./s4/img.png" :alt="`${info.caseName}_img`" class="circle">
+   <!-- <img loading="lazy" src="./s4/img.png" :alt="`${info.caseName}_img`" class="circle">  -->
     <div class="btns flex-ac flex-jb">
       <h3 :class="`btn flex-c ${blockIndex === 0 ? 'active' : ''}`" @click="blockIndex = 0">
         交通新核心
@@ -476,10 +476,10 @@
   }
 }
 svg {
-  @include div_r_pc(238, 238, 540, 192);
+  @include div_r_pc(238, 238, 680, 192);
 }
 .title1 {
-  @include div_r_pc(70, 464, 70, 307);
+  @include div_r_pc(70, 464, 170, 307);
   font-size: size(40);
   font-weight: 900;
   font-stretch: normal;
@@ -489,13 +489,13 @@ svg {
   text-align: left;
   padding-top: size(46);
   color: #ffffff;
-  background-color: #003177;
+  background-color: #036EB7;
   writing-mode: vertical-rl;
   text-orientation: upright;
 }
 
 .title2 {
-  @include div_r_pc(34, 558, 120, 256);
+  @include div_r_pc(34, 558, 180, 256);
   font-size: size(25);
   font-weight: 600;
   font-stretch: normal;
@@ -503,7 +503,7 @@ svg {
   line-height: 1.4;
   letter-spacing: size(5);
   text-align: left;
-  color: #003177;
+  color: #036EB7;
   writing-mode: vertical-rl;
   text-orientation: upright;
 }
@@ -553,9 +553,9 @@ svg {
 
   &.active,
   &:hover {
-    box-shadow: -2px 2px 0 0 #003177;
+    box-shadow: -2px 2px 0 0 #036EB7;
     background: #fff;
-    color: #003177;
+    color: #036EB7;
   }
 }
 .circle {
@@ -798,22 +798,22 @@ svg {
     letter-spacing: sizem(2.3);
     text-align: center;
     color: #ffffff;
-    background-color: #003177;
+    background-color: #036EB7;
     padding-top: 0;
     writing-mode: horizontal-tb;
     text-orientation: mixed;
   }
 
   .title2 {
-    @include div_l_m(258, 27, 57, 34);
+    @include div_l_m(350, 27, 57, 34);
     font-size: sizem(18);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.27;
-    letter-spacing: sizem(3.6);
+    letter-spacing:0.06em;
     text-align: left;
-    color: #003177;
+    color: #036EB7;
     writing-mode: horizontal-tb;
     text-orientation: mixed;
   }
@@ -867,9 +867,9 @@ svg {
 
     &.active,
     &:hover {
-      box-shadow: -2px 2px 0 0 #003177;
+      box-shadow: -2px 2px 0 0 #036EB7;
       background: #fff;
-      color: #003177;
+      color: #036EB7;
     }
   }
   .circle {
@@ -964,7 +964,6 @@ svg {
       right: 0.5em;
       text-align: right;
       font-size: sizem(12);
-      font-family: "Noto Sans TC", serif;
       font-weight: 400;
     }
   }

@@ -1,12 +1,12 @@
 <template>
   <div class="section3">
     <div class="title" data-aos="fade" data-aos-delay="0">
-      天空御選
+      天空之選
     </div>
     <img loading="lazy" src="./s3/line.png" :alt="`${info.caseName}_img`" class="title-line"  data-aos="zoom-in" data-aos-delay="0">
     <div class="content">
       <h3 class="label"  data-aos="fade" data-aos-delay="200">
-        家最堅實的後盾
+        雙強聯手 安全加倍
       </h3>
       <div class="content-line"  data-aos="zoom-in-right" data-aos-delay="300"></div>
       <h1 class="subtitle"  data-aos="fade" data-aos-delay="400">
@@ -63,7 +63,7 @@
   line-height: 1.5;
   letter-spacing: size(5);
   text-align: center;
-  color: #003177;
+  color: #036EB7;
   white-space: nowrap;
 }
 
@@ -77,7 +77,7 @@
 
 .content-line {
   border-top: 1px solid #d38700;
-  @include img_r_pc(218, 40, 0);
+  @include img_r_pc(158, 40, 0);
 }
 
 .label {
@@ -102,7 +102,7 @@
   line-height: 1;
   letter-spacing: size(4.5);
   text-align: center;
-  color: #003177;
+  color: #036EB7;
   white-space: nowrap;
 }
 
@@ -128,7 +128,7 @@
     position: relative;
     cursor: pointer;
     &:hover {
-      box-shadow: 0 0 0 3px #003177;
+      box-shadow: 0 0 0 3px #036EB7;
       .logo {
         @include img_c_pc(230, -64);
       }
@@ -247,7 +247,7 @@
     line-height: 2;
     letter-spacing: sizem(2.5);
     text-align: center;
-    color: #003177;
+    color: #036EB7;
     white-space: nowrap;
   }
 
@@ -261,7 +261,7 @@
 
   .content-line {
     border-top: 1px solid #d38700;
-    @include img_r_m(160, 10, 0);
+    @include img_r_m(130, 10, 0);
   }
 
   .label {
@@ -286,7 +286,7 @@
     line-height: 1;
     letter-spacing: sizem(2.3);
     text-align: left;
-    color: #003177;
+    color: #036EB7;
     white-space: nowrap;
   }
 
@@ -312,7 +312,7 @@
       position: relative;
       cursor: pointer;
       &:hover {
-        box-shadow: 0 0 0 3px #003177;
+        box-shadow: 0 0 0 3px #036EB7;
         .logo {
           @include img_c_m(83, -34);
         }

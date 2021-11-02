@@ -1,8 +1,8 @@
 <template>
   <div class="section10">
-    <img loading="lazy" src="./s10/bg1.png" :alt="`${info.caseName}_img`" class="bgimg">
+  <!--  <img loading="lazy" src="./s10/bg1.png" :alt="`${info.caseName}_img`" class="bgimg"> -->
     <div class="title" data-aos="fade" data-aos-delay="0">
-      天空御選
+      天空之藝
     </div>
     <img loading="lazy" src="./s3/line.png" :alt="`${info.caseName}_img`" class="title-line" data-aos="zoom-in-right" data-aos-delay="100">
     <div v-if="isPC">
@@ -19,7 +19,7 @@
     <transition name="swipe-fade" mode="out-in">
       <div class="dialog" v-if="isDialog">
         <div>
-          <img loading="lazy" src="./s10/bg2.png" :alt="`${info.caseName}_img`" class="bgimg" v-if="isPC">
+       <!--   <img loading="lazy" src="./s10/bg2.png" :alt="`${info.caseName}_img`" class="bgimg" v-if="isPC"> -->
           <img loading="lazy" src="~@/assets/img/close.png" alt class="close" @click="closeDialog" />
           <img loading="lazy" :src="current.avatar" alt="" class="dialog-avatar">
           <div class="dialog-text" v-html="current.text"></div>
@@ -83,7 +83,6 @@
   line-height: 1.44;
   letter-spacing: size(3.29);
   text-align: left;
-  font-family: 'Noto Sans TC', sans-serif;
   color: #fff;
 
   span {
@@ -95,7 +94,6 @@
     letter-spacing: size(5);
     text-align: left;
     color: #fff;
-    font-family: 'Noto Serif TC', serif;
   }
 }
 
@@ -108,7 +106,6 @@
   line-height: 1.44;
   letter-spacing: size(3.29);
   text-align: left;
-  font-family: 'Noto Sans TC', sans-serif;
   color: #fff;
 
   span {
@@ -120,7 +117,6 @@
     letter-spacing: size(5);
     text-align: left;
     color: #fff;
-    font-family: 'Noto Serif TC', serif;
   }
 }
 
@@ -142,7 +138,6 @@
     line-height: 1.44;
     letter-spacing: normal;
     text-align: left;
-    font-family: 'Noto Sans TC', sans-serif;
     color: #fff;
 
     span {
@@ -154,7 +149,6 @@
       letter-spacing: normal;
       text-align: left;
       color: #fff;
-      font-family: 'Noto Serif TC', serif;
     }
   }
   .dialog-name {
@@ -165,7 +159,6 @@
     line-height: 1.44;
     letter-spacing: sizem(3.29);
     text-align: left;
-    font-family: 'Noto Sans TC', sans-serif;
     color: #fff;
 
     span {
@@ -177,7 +170,6 @@
       letter-spacing: sizem(5);
       text-align: left;
       color: #fff;
-      font-family: 'Noto Serif TC', serif;
     }
   }
 }
@@ -225,7 +217,7 @@
   line-height: 1.5;
   letter-spacing: size(5);
   text-align: center;
-  color: #003177;
+  color: #036EB7;
   white-space: nowrap;
 }
 
@@ -315,7 +307,7 @@
   z-index: 10;
   top: 0;
   left: 0;
-  background: #003176;
+  background: #036EB7;
   overflow-y: auto;
   overflow-x: hidden;
   //background-image: url('./s1/test.jpg');   ./s10/bg2.png
@@ -644,7 +636,7 @@
     line-height: 2;
     letter-spacing: sizem(2.5);
     text-align: center;
-    color: #003177;
+    color: #036EB7;
     white-space: nowrap;
   }
   .title-line {
@@ -793,7 +785,6 @@
       }
     }
   }
-
   .dialog {
     width: 100vw;
     height: 100vh;
@@ -801,9 +792,9 @@
     z-index: 10;
     top: 0;
     left: 0;
-    background-image: url('./s1/test.jpg');
+   /* background-image: url('./s1/test.jpg');
     background-size: cover;
-    background-position: center bottom;
+    background-position: center bottom; */
     overflow-y: scroll;
 
     > div {

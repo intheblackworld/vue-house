@@ -2,7 +2,7 @@
   <div class="section1">
     <!-- 藍色那張 -->
     <transition-group name="slide-fade" mode="out-in">
-      <div v-if="isAnimateBg" class="animate-bg" key="animate-bg">
+    <!--  <div v-if="isAnimateBg" class="animate-bg" key="animate-bg">
         <img loading="lazy" src="./s1/bgimg2.png" :alt="`${info.caseName}_cloud`" class="img2" v-if="isPC">
         <img loading="lazy" src="./s1/bgimg2m.png" :alt="`${info.caseName}_cloud`" class="img2" v-if="isMobile">
         <img loading="lazy" src="./s1/bgimg1.png" :alt="`${info.caseName}_cloud`" class="img1" v-if="isPC">
@@ -13,22 +13,26 @@
           <img loading="lazy" src="./s1/t1.png" :alt="`${info.caseName}_cloud`">
         </div>
       </div>
+       -->
       <div key="default-bg">
         <img loading="lazy" src="./s1/map_bg.jpg" :alt="`${info.caseName}_cloud`" class="map-img" v-if="isPC">
-        <div class="map-bg-frame">
+        <img loading="lazy" v-if="isMobile" src="./s1/map_bgm.jpg" :alt="`${info.caseName}_cloud`" class="mimg">
+        <img loading="lazy" src="./s1/t.png" :alt="`${info.caseName}_cloud`" class="map-t" data-aos="fade" data-aos-delay="200">
+        <img loading="lazy" src="./s1/t2.png" :alt="`${info.caseName}_cloud`" class="map-t2" data-aos="fade" data-aos-delay="200">
+        
+       <!-- <div class="map-bg-frame">
           <Map v-if="isMobile" :bgSrc="bgmSrc" :hand="hand">
           </Map>
-        </div>
-        <img loading="lazy" src="./s1/map_t.png" :alt="`${info.caseName}_cloud`" class="map-t"  data-aos="fade" data-aos-delay="200">
+        </div>  -->
         <div class="title1 title" data-aos="fade" data-aos-delay="0">
           洲子洋天空再進化
         </div>
         <div class="title2 title" data-aos="fade" data-aos-delay="100">
           讓雙北人都羨慕
         </div>
-        <h3 class="desc" data-aos="fade" data-aos-delay="300">
+      <!--  <h3 class="desc" data-aos="fade" data-aos-delay="300">
           15萬坪寬闊樹海濃蔭，128萬坪大臺北都會水岸公園，藍天綠邑絕美生活別說你不羨慕！這就是洲子洋，宜居大城持續進化，讓雙北人一眼愛上。
-        </h3>
+        </h3> -->
       </div>
     </transition-group>
   </div>
@@ -56,7 +60,7 @@
   min-height: size(900);
   max-height: size(1080);
   position: fixed;
-  background:#003176;
+  background:#036EB7;
   z-index: 100;
   top: 0;
   left: 0;
@@ -112,14 +116,21 @@
   }
 }
 
-.map-img,
-.map-t {
+.map-img {
   @include img_r_pc(1646, 0, 0);
   object-fit: cover;
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);
   z-index: 0;
+}
+.map-t {
+  @include img_r_pc(701, 150, 390);
+  top: calc(50% + (180 - 1080 * .5) * 100vw / 1920);
+}
+.map-t2 {
+  @include img_l_pc(200, 100, 690);
+  top: calc(50% + (130 - 1080 * .5) * 100vw / 1920);
 }
 
 .title {
@@ -132,7 +143,7 @@
   text-align: left;
   padding-top: size(46);
   color: #ffffff;
-  background-color: #003177;
+  background-color: #036EB7;
   writing-mode: vertical-rl;
   text-orientation: upright;
 }
@@ -187,9 +198,9 @@
 
 @media screen and (max-width: 767px) {
   .section1 {
-    min-height: sizem(667);
-    max-height: sizem(667);
-    height:100vh;
+    min-height: sizem(604);
+    max-height: sizem(750);
+    height:calc(100vh - 63px);
     margin:0;
   }
 
@@ -224,10 +235,6 @@
     bottom: 0;
   }
 
-  .logo {
-    @include img_c_m(184, 95);
-  }
-
   .t1 {
     @include div_c_m(228, 112, 356);
     border: 1px solid #fff;
@@ -238,9 +245,33 @@
 
   .map-img,
   .map-t {
-    display: none;
   }
-
+.mimg{
+    @include img_c_m(375, 137);
+    top: auto;
+    bottom:0;
+    height: calc(100% - 36.5333333333vw);
+  }
+ /* .map{
+    @include img_c_m(375, 137);
+    top: auto;
+    bottom:0;
+    height: calc(100% - 36.5333333333vw);
+  }*/
+.map-t{
+    @include img_r_m(320, 220,18);
+    top: calc(35% - 0vw);
+}
+.map-t2{
+    @include img_l_m(150, 170,10);
+    top: calc(35% - 14vw);
+}
+  .logo {
+    @include img_c_m(360, 20);
+    top:calc(20% - 18vw);
+    height: auto;
+  }
+  
   .map-bg-frame {
     @include img_l_m(375, 137, 0);
   }
@@ -254,7 +285,7 @@
     letter-spacing: sizem(2.3);
     text-align: left;
     color: #ffffff;
-    background-color: #003177;
+    background-color: #036EB7;
     padding-left: sizem(16);
     writing-mode: horizontal-tb;
     text-orientation: mixed;

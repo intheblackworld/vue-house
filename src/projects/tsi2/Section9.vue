@@ -231,14 +231,14 @@
 	</g>
 </g>
 </svg>
-        <div class="title1">城市核心</div>
-        <h3 class="title2">五股新核心 引領新未來</h3>
+        <div class="title1">天空之城</div>
+        <h3 class="title2">五股新核心 預見大未來</h3>
         <h3 class="desc">
           新北市推動「五股夏綠地」城市新生計畫，開發面積高達169公頃，其中保留16.6公頃滯洪公園，全力翻轉五股樣貌，「天空之邑」立足洲子洋最前沿，銜接周邊發展能量，成為嶄新城市核心，未來發展能量勢不可擋。
         </h3>
       </div>
     </transition>
-    <img loading="lazy" src="./s4/img.png" :alt="`${info.caseName}_img`" class="circle">
+    <!-- <img loading="lazy" src="./s4/img.png" :alt="`${info.caseName}_img`" class="circle">  -->
     <div class="btns flex-ac flex-jb">
       <h3 :class="`btn flex-c ${blockIndex === 0 ? 'active' : ''}`" @click="blockIndex = 0">
         精華地段
@@ -346,10 +346,10 @@
 		  }
 
 svg {
-  @include div_l_pc(238, 238, 576, 206);
+  @include div_l_pc(238, 238, 610, 206);
 }
 .title1 {
-  @include div_l_pc(70, 464, 0, 270);
+  @include div_l_pc(70, 464, 100, 270);
   font-size: size(40);
   font-weight: 900;
   font-stretch: normal;
@@ -359,13 +359,13 @@ svg {
   text-align: left;
   padding-top: size(46);
   color: #ffffff;
-  background-color: #003177;
+  background-color: #036EB7;
   writing-mode: vertical-rl;
   text-orientation: upright;
 }
 
 .title2 {
-  @include div_l_pc(34, 558, 50, 363);
+  @include div_l_pc(34, 558, 150, 363);
   font-size: size(25);
   font-weight: 600;
   font-stretch: normal;
@@ -373,7 +373,7 @@ svg {
   line-height: 1.4;
   letter-spacing: size(5);
   text-align: left;
-  color: #003177;
+  color: #036EB7;
   writing-mode: vertical-rl;
   text-orientation: upright;
 }
@@ -408,9 +408,9 @@ svg {
   color: #606060;
 
   &.active ,&:hover {
-    box-shadow: -2px 2px 0 0 #003177;
+    box-shadow: -2px 2px 0 0 #036EB7;
     background:#fff;
-    color: #003177;
+    color: #036EB7;
   }
 }
 .circle {
@@ -653,7 +653,7 @@ svg {
     letter-spacing: sizem(2.3);
     text-align: center;
     color: #ffffff;
-    background-color: #003177;
+    background-color: #036EB7;
     padding-top: 0;
     writing-mode: horizontal-tb;
     text-orientation: mixed;
@@ -668,7 +668,7 @@ svg {
     line-height: 1.27;
     letter-spacing: sizem(3.6);
     text-align: left;
-    color: #003177;
+    color: #036EB7;
     writing-mode: horizontal-tb;
     text-orientation: mixed;
   }
@@ -722,9 +722,9 @@ svg {
 
     &.active,
     &:hover {
-      box-shadow: -2px 2px 0 0 #003177;
+      box-shadow: -2px 2px 0 0 #036EB7;
       background: #fff;
-      color: #003177;
+      color: #036EB7;
     }
   }
   .circle {
@@ -819,7 +819,6 @@ svg {
       right: 0.5em;
       text-align: right;
       font-size: sizem(12);
-      font-family: "Noto Sans TC", serif;
       font-weight: 400;
     }
   }

@@ -34,7 +34,7 @@
         <div :class="`pagination-dot flex-c ${slideIndex === index ? 'active': ''}`" v-html="slide.name"></div>
       </swiper-slide>
     </swiper>
-    <div class="title">天空美學</div>
+    <div class="title">天空之悅</div>
   </div>
 </template>
 <style lang="scss">
@@ -58,6 +58,7 @@
   max-height: size(1080);
   position: relative;
   z-index: 2;
+  background-color: #9e9076;
   // background-color: #fff;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
@@ -78,7 +79,7 @@
   text-align: left;
   padding-top: size(46);
   color: #ffffff;
-  background-color: #003177;
+  background-color: #036EB7;
   box-shadow: -5px -5px 0 0px #fff;
   writing-mode: vertical-rl;
   text-orientation: upright;
@@ -323,7 +324,7 @@
     letter-spacing: sizem(2.3);
     text-align: center;
     color: #ffffff;
-    background-color: #003177;
+    background-color: #036EB7;
     padding-top: 0;
     box-shadow: 5px 5px 0 0px #fff;
     writing-mode: horizontal-tb;
