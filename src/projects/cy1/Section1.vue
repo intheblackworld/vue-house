@@ -70,7 +70,7 @@
     position: relative;
   display: block;
   object-fit: cover;
-  margin-top:34vw;
+  margin-top:39vw;
 
 }
 
@@ -111,14 +111,14 @@
 }
 
 .tree1 {
-  @include img_r_pc(439, 950, 787);
+  @include img_r_pc(439, 1100, 787);
   animation: tree 4s ease-out infinite alternate;
   transform: skewX(2deg);
   transform-origin: 50% 100%;z-index: 3;
 }
 
 .tree2 {
-  @include img_r_pc(610, 827, 96);
+  @include img_r_pc(610, 977, 96);
   animation: tree 4s ease-out infinite alternate;
   transform: skewX(2deg);
   transform-origin: 50% 100%;z-index: 3;
@@ -231,7 +231,7 @@
   }
 
   .tree1 {
-    @include img_l_m(280, 440,0);
+    @include img_l_m(280, 470,0);
     // top: auto;
     // bottom: 0;
     animation: tree 4s ease-out infinite alternate;
