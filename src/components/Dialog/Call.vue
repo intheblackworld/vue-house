@@ -12,7 +12,7 @@
 // @media only screen and (max-width: 767px) {
 // .cta{display: block;}
 // }
- </style>
+</style>
 <script>
 import { isMobile } from '@/utils'
 export default {
@@ -22,29 +22,23 @@ export default {
   data() {
     return {
       window,
-      isMobile
+      isMobile,
     }
   },
 
   methods: {
     redirectToPhoneThanks(e) {
-      window.dotq = window.dotq || []
-
-      window.dotq.push({
-        projectId: '10000',
-
-        properties: {
-          pixelId: '10101258',
-
-          qstrings: {
-            et: 'custom',
-
-            ea: 'call10101258',
-          },
-        },
-      })
       e.preventDefault()
       window.location.href = `tel:${this.phone.replace('-', '')}`
+      window._lt(
+        'send',
+        'cv',
+        {
+          type: 'phonecall',
+        },
+        ['2dbeb344-9b9c-48e5-962d-ebcfd192bae4'],
+      )
+      window.gtag_report_conversion_call('https://oh.h35.tw')
       setTimeout(() => {
         window.location.href = 'phoneThanks'
       }, 1000)

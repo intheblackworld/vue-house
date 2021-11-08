@@ -52,9 +52,12 @@
 </style>
 
 <script>
-
+import gtagMixin from '@/mixins/gtag'
 export default {
   name: 'formThanks',
+  mixins: [
+    gtagMixin,
+  ],
   components: {},
 
   methods: {},

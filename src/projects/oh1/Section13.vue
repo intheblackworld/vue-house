@@ -3,12 +3,12 @@
     <img src="./s11/cloud1.png" class="cloud1">
     <img src="./s11/cloud2.png" class="cloud2">
     <div class="title"  data-aos="fade-up" data-aos-delay="400">
-      樣品屋樣品屋
+      VR虛擬實境
     </div>
     <div class="button">
-      <div class="button1" @click="showDialog('https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://pannellum.org/images/cerro-toco-0.jpg&autoLoad=true')"><h3>樣品屋<br>VR 720 實境觀看</h3></div>
-      <div class="button2" @click="showDialog('https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://pannellum.org/images/cerro-toco-0.jpg&autoLoad=true')"><h3>樣品屋<br>VR 720 實境觀看</h3></div>
-      <div class="button3" @click="showDialog('https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://pannellum.org/images/cerro-toco-0.jpg&autoLoad=true')"><h3>樣品屋<br>VR 720 實境觀看</h3></div>
+      <div class="button1" @click="showDialog('https://yourhouse.tw/VRocean/H2/')"><h3>精品2房<br>VR 720 虛擬環景</h3></div>
+      <div class="button2" @click="showDialog('https://yourhouse.tw/VRocean/B1')"><h3>A6戶 3+1房<br>VR 720 實境觀看</h3></div>
+      <div class="button3" @click="showDialog('https://yourhouse.tw/VRocean/A6')"><h3>B1戶3+1房<br>VR 720 實境觀看</h3></div>
     </div>
       <div :class="`dialog`" v-if="isShowDialog">
         <div
@@ -38,8 +38,8 @@
     <iframe src="https://www.h35.banner.tw/hy/" frameborder="0"></iframe>
   <div class="box_l"></div>
   <div class="box_r"></div>
-  </div> -->
-    <div class="desc" data-aos="fade-up" data-aos-delay="200" >文案文案文案文案</div>
+  </div>
+    <div class="desc" data-aos="fade-up" data-aos-delay="200" >文案文案文案文案</div> -->
 </div>
 </template>
 <style lang="scss" scoped>
@@ -61,7 +61,7 @@
   width: size(1720);
   margin:size(30) auto size(30) auto;
   display: flex;
-   justify-content:space-between;
+   justify-content:center;
 div{
   width: size(557);
   height: size(443);
@@ -86,7 +86,7 @@ div{
   }
 }
 .button1{background-image: url("./s13/1.jpg");cursor: pointer;}
-.button2{background-image: url("./s13/2.jpg");cursor: pointer;}
+.button2{background-image: url("./s13/2.jpg");cursor: pointer;margin:auto 2vw;}
 .button3{background-image: url("./s13/3.jpg");cursor: pointer;}
 
 
@@ -267,6 +267,7 @@ div{
   width:sizem(310);
   height: sizem(154);
 }
+.button2{margin: 3vw auto ;}
   }
   }
 

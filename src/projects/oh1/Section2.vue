@@ -16,7 +16,7 @@
         人口可望躍升近30萬，逐步向國際海洋城市大步邁進，如舊金山、雪梨、東京…成功經驗，未來不可限量。<br />
         [名軒海樂地] 位處淡海中心商業區、輕軌出站就到家，地利天成、無可複製，打造海灣俱樂部名宅新指標！
       </div>
-      <Map :bgSrc="require('./s2/bg.jpg')" v-if="isMobile" :hand="require('./s2/hand.png')">
+      <Map :bgSrc="require('./s2/bgm.jpg')" v-if="isMobile" :hand="require('./s2/hand.png')">
       </Map>
     </div>
   </div>

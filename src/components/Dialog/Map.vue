@@ -3,7 +3,7 @@
     <font-awesome-icon icon="map-marker-alt" />
     <div class="dialog-desc">接待會館</div>
     <div class="info" v-html="address"></div>
-    <a class="cta" :href="link" target="_blank">開啟導航</a>
+    <a class="cta" @click="trackMap" :href="link" target="_blank">開啟導航</a>
   </div>
 </template>
 
@@ -18,6 +18,19 @@ export default {
     }
   },
 
-  methods: {},
+  methods: {
+    trackMap() {
+      window._lt(
+        'send',
+        'cv',
+        {
+          type: 'googlemap',
+        },
+        ['2dbeb344-9b9c-48e5-962d-ebcfd192bae4'],
+      )
+
+      window.gtag_report_conversion_map('https://oh.h35.tw')
+    },
+  },
 }
 </script>

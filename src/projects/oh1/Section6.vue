@@ -4,8 +4,8 @@
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-            <img :src="slide.img" :alt="slide-name" v-if="isMobile" class="swipe-bg">
-            <img :src="slide.img" :alt="slide-name">
+            <img :src="slide.img" alt="slide-name" v-if="isMobile" class="swipe-bg">
+            <img :src="slide.img" alt="slide-name">
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>

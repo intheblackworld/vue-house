@@ -4,24 +4,30 @@
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-            <img :src="slide.img" :alt="slide-name" v-if="isMobile" class="swipe-bg">
-            <img :src="slide.img" :alt="slide-name">
-            <div class="slide-name absolute" v-html="slide.name"></div>
+          <!--   <img :src="slide.img" :alt="slide-name" v-if="isMobile" class="swipe-bg">  -->
+            <img :src="slide.img" alt="slide-name">
+          <div class="slide-name absolute" v-html="slide.name"></div>
+    <div class="slide-nametop" v-if="slide.name" >3D示意圖，實際以現場為準，建商擁有修改權利</div>
           </div>
         </transition-group>
-        <div class="pagination absolute flex-ac" v-if="isPC">
+      <div class="pagination absolute flex-ac" v-if="isPC">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-        </div>
+        </div> 
         <div class="swipe-btns absolute flex-ac flex-jb">
           <div class="prev-btn" @click="decIndex">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16.28 28.67' preserveAspectRatio='xMidyMid' fill='%23338000'%3E%3Cpolygon points='14.33 28.67 16.28 26.72 3.79 14.23 16.18 1.84 14.33 0 0 14.33 14.33 28.67'/%3E%3C/svg%3E" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16.28 28.67' preserveAspectRatio='xMidyMid' fill='%23338000'%3E%3Cpolygon points='14.3,28.7 16.3,26.7 3.8,14.2 16.2,1.8 14.3,0 0,14.3'/%3E%3C/svg%3E" alt="">
           </div>
           <div class="next-btn" @click="addIndex">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16.28 28.67' preserveAspectRatio='xMidyMid' fill='%23338000'%3E%3Cpolygon points='14.33 28.67 16.28 26.72 3.79 14.23 16.18 1.84 14.33 0 0 14.33 14.33 28.67'/%3E%3C/svg%3E" alt="">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16.28 28.67' preserveAspectRatio='xMidyMid' fill='%23338000'%3E%3Cpolygon points='14.3,28.7 16.3,26.7 3.8,14.2 16.2,1.8 14.3,0 0,14.3'/%3E%3C/svg%3E" alt="">
           </div>
         </div>
       </div>
-    </div>
+    <h3 class="title" v-if="isMobile">
+        全齡化主題式公設 
+      </h3> 
+      </div>
+
+    <!-- 
     <div class="txt" data-aos="fade-up" data-aos-delay="0">
       <h3 class="title title1" data-aos="fade-up" data-aos-delay="200">
         公設預留
@@ -34,6 +40,8 @@
         公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設公設
       </div>
     </div>
+
+    -->
   </div>
 </template>
 <style lang="scss" scoped>
@@ -79,7 +87,7 @@
     rgba(141, 194, 31, 0.8)
   );
   padding: size(40) size(20);
-}
+}/*
 .title {
   width: 90%;
   margin: 0 auto;
@@ -93,6 +101,35 @@
   color: #fff000;
   white-space: nowrap;
 }
+*/
+
+.title {
+  @include img_r_pc(860, 308, 100);
+  top:calc(50% - 0.8em);
+  font-size: size(50);
+  padding: 0 0 0 20%;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+  color: #009d95;
+  white-space: nowrap;
+}
+.slide-nametop{position: absolute;
+    left:0;
+    bottom:0;width: 100%;
+    color: #fff;
+    font-size: size(18);
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: 0.06em;
+    padding: 1em 0 1em 2em;
+    background: linear-gradient(to right, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0) 50%);
+    text-align: left;}
 
 .title2 {
   text-align: right;
@@ -179,25 +216,32 @@
   width: 100%;
   height: 100%;
   z-index: 0;
+  background: #fff;
+
+ /* img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: 20% 50%;
+  } */
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-
   .slide-name {
     right: 2em;
-    bottom: 1.2em;
+    bottom: 1em;
     color: #fff;
     font-size: size(18);
-    font-weight: bold;
+    font-weight: 400;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.6;
     letter-spacing: 0.03em;
     text-align: left;
-    text-shadow: 0 0.3em 1em #000;
+    text-shadow: 0 0em .4em #000 ,0 0.2em 1em #000;
   }
 
   // &:nth-child(1) {
@@ -217,7 +261,7 @@
 
 .pagination {
   width: auto;
-  bottom: size(44);
+  bottom: size(15);
   right: 0;
   left: 0;
   margin: 0 auto;
@@ -277,18 +321,41 @@
   }
 }
 
-.swipe-btns {
-  width: 100%;
-  height: 100%;
-  padding: 0 15px;
-  z-index: 3;
+  .swipe-btns {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height:100%;
+    padding: 0;
+    z-index: 3;
+    font-size: size(50);
 
-  .prev-btn,
-  .next-btn {
-    width: size(20);
-    cursor: pointer;
+    .prev-btn,
+    .next-btn {
+      width: 1em;
+      height: 1em;
+      border-radius: 50%;
+      background-color: #fff000;
+      cursor: pointer;
+    position: relative;
+      img {
+        width: 0.2em;
+    position: absolute;
+    top: calc(50% - 0.18em);
+    right:24%;
+    }
+    }
+
+    .prev-btn {
+      margin-left: -0.5em;
+    }
+
+    .next-btn {
+      margin-right: -0.5em;
+      transform:scaleX(-1);
+    }
   }
-}
 
 @media only screen and (max-width: 1440px) {
 }
@@ -305,8 +372,9 @@
 
 @media screen and (max-width: 767px) {
   .section7 {
-    width: 100vw;
-    height: sizem(604);
+    width: 100%;
+    height: sizem(377);
+  //  height: sizem(604);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -330,7 +398,9 @@
     padding: sizem(30) sizem(30);
   }
   .title {
-    width: sizem(320);
+    width: sizem(330);
+    top:sizem(20);
+    padding: 0;
     margin: 0 auto 0;
     font-size: sizem(25);
     font-weight: bold;
@@ -339,10 +409,13 @@
     line-height: 1.2;
     letter-spacing: normal;
     text-align: left;
-    color: #fff000;
+    //color: #fff000;
     white-space: nowrap;
   }
-
+.slide-nametop{font-size: sizem(12);
+    padding: .5em 0 .5em 1em;
+    background: linear-gradient(to right, rgba(0,0,0,0.8) 30%,rgba(0,0,0,0) 100%);
+    }
   .title2 {
     text-align: left;
     padding-left: sizem(70);
@@ -460,9 +533,9 @@
     .slide-name {
       right: auto;
       top: auto;
-      bottom: 1.2rem;
-      left: 1.2rem;
-      font-size: sizem(15);
+      bottom: 3em;
+      left: 1em;
+      font-size: sizem(12);
     }
   }
 
@@ -527,42 +600,8 @@
   }
 
   .swipe-btns {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
     height: sizem(315);
-    padding: 0;
-    z-index: 3;
-
-    .prev-btn,
-    .next-btn {
-      width: sizem(50);
-      height: sizem(50);
-      border-radius: 999px;
-      background-color: #fff000;
-      cursor: pointer;
-      img {
-        width: sizem(10);
-      }
-    }
-
-    .prev-btn {
-      margin-left: sizem(-25);
-      img {
-        margin-top: 30%;
-        margin-left: 35%;
-      }
-    }
-
-    .next-btn {
-      margin-right: sizem(-25);
-      img {
-        margin-top: 30%;
-        margin-right: 35%;
-        transform: rotate(180deg);
-      }
-    }
+    font-size: sizem(50);
   }
 }
 </style>
@@ -587,8 +626,24 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s7/img.jpg'),
-          name: '公設',
+          img:isMobile? require('./s7/img1m.jpg'):require('./s7/img1.jpg'),
+          name: '',
+        },
+        {
+          img: require('./s7/lounge bar.jpg'),
+          name: 'Lounge Bar',
+        },
+        {
+          img: require('./s7/室內溫水游泳池.jpg'),
+          name: '室內溫水游泳池',
+        },
+        {
+          img: require('./s7/多功能高爾夫球室.jpg'),
+          name: '多功能高爾夫球室',
+        },
+        {
+          img: require('./s7/VIP宴會廳.jpg'),
+          name: 'VIP宴會廳',
         },
       ],
     }

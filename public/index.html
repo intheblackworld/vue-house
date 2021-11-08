@@ -6,6 +6,110 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <?php include('head.php'); ?>
     <link rel="icon" href="<%= BASE_URL %>favicon.png" />
+    <!-- LINE Tag Base Code -->
+    <!-- Do Not Modify -->
+    <script>
+      (function(g,d,o){
+        g._ltq=g._ltq||[];g._lt=g._lt||function(){g._ltq.push(arguments)};
+        var h=location.protocol==='https:'?'https://d.line-scdn.net':'http://d.line-cdn.net';
+        var s=d.createElement('script');s.async=1;
+        s.src=o||h+'/n/line_tag/public/release/v1/lt.js';
+        var t=d.getElementsByTagName('script')[0];t.parentNode.insertBefore(s,t);
+          })(window, document);
+      _lt('init', {
+        customerType: 'lap',
+        tagId: '2dbeb344-9b9c-48e5-962d-ebcfd192bae4'
+      });
+      _lt('send', 'pv', ['2dbeb344-9b9c-48e5-962d-ebcfd192bae4']);
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+          src="https://tr.line.me/tag.gif?c_t=lap&t_id=2dbeb344-9b9c-48e5-962d-ebcfd192bae4&e=pv&noscript=1" />
+    </noscript>
+    <!-- End LINE Tag Base Code -->
+
+    <!-- Global site tag (gtag.js) - Google Ads: 373671502 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-373671502"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-373671502');
+    </script>
+    <!-- Event snippet for 提交待開發客戶表單 conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+      function gtag_report_conversion_order(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-373671502/VxsoCO2h6JwCEM6Ml7IB',
+            'event_callback': callback
+        });
+        gtag('event', 'conversion', {
+            'send_to': 'AW-374267634/b0E6CP225I0CEPK9u7IB',
+            'event_callback': callback
+        });
+        return false;
+      }
+
+      function gtag_report_conversion_call(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-373671502/Nv24CPueyZwCEM6Ml7IB',
+            'event_callback': callback
+        });
+        return false;
+      }
+
+      function gtag_report_conversion_messenger(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-373671502/L2DrCLzLyZwCEM6Ml7IB',
+            'event_callback': callback
+        });
+        return false;
+      }
+
+      function gtag_report_conversion_fb(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-373671502/klEoCK7U8ZwCEM6Ml7IB',
+            'event_callback': callback
+        });
+        return false;
+      }
+
+      function gtag_report_conversion_map(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-373671502/ZasJCPeL8pwCEM6Ml7IB',
+            'event_callback': callback
+        });
+        return false;
+      }
+
+      </script>
   </head>
   <body>
     <noscript>
@@ -15,13 +119,15 @@
       >
     </noscript>
     <div id="app"></div>
-    <div id="fb-root"></div>
+   <!--
+   <div id="fb-root"></div>
     <script
       async
       defer
       crossorigin="anonymous"
       src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.2&appId=542185515968935&autoLogAppEvents=1"
-    ></script>
+    ></script
+  --> 
     <link
       rel="stylesheet"
       type="text/css"

@@ -22,7 +22,7 @@
             <font-awesome-icon :icon="['fab', 'facebook-messenger']" /><span>FB 諮詢</span>
           </span>
         </div>
-        <a class="btn flex-c" :href="info.fbLink" target="_blank" data-aos="fade-down" data-aos-delay="300">
+        <a class="btn flex-c" @click="trackFb" :href="info.fbLink" target="_blank" data-aos="fade-down" data-aos-delay="300">
           <span class="flex-c">
             <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
           </span>
@@ -84,6 +84,19 @@ export default {
     showMapDialog() {
       // if (!this.isMobile) return
       this.isShowMapDialog = true
+    },
+
+    trackFb() {
+      window._lt(
+        'send',
+        'cv',
+        {
+          type: 'fbmessage',
+        },
+        ['2dbeb344-9b9c-48e5-962d-ebcfd192bae4'],
+      )
+
+      window.gtag_report_conversion_fb('https://oh.h35.tw')
     },
   },
 }
