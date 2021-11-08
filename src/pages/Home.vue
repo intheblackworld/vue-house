@@ -55,8 +55,15 @@
       <div class="section relative" id="section13">
         <Section13 />
       </div>
-  <!--      <div class="section relative" id="section12">
+     <div class="section relative" id="section12">
         <VideoSection1 :playBtn="require('@/projects/sfdy/video/play-btn.png')" title="開箱系列影片" :close="require('@/projects/sfdy/video/close.png')" :arrows="[require('@/projects/sfdy/video/arrow-left.png'), require('@/projects/sfdy/video/arrow-right.png')]" :slideList="[
+        {
+          title: '後疫情時代 #子晴式玩法 ，銅板旅遊來淡水就對了',
+          img: require('@/projects/oh1/video/01.jpg'),
+          video: 'https://www.youtube.com/embed/EnXDnQKtfF8?&enablejsapi=1&playerapiid=ytplayer',
+          isPlay: false,
+        },
+       /*
         {
           title: '釋放壓力，回家就是享受的開始',
           img: require('@/projects/sfdy/video/1.jpg'),
@@ -75,8 +82,9 @@
           video: 'https://www.youtube.com/embed/454jJog_1xI',
           isPlay: false,
         },
+        */
       ]" />
-      </div> -->
+      </div>   <!--  -->
       <!-- <vue-lazy-component class="section" id="contact"> -->
       <ContactSection />
       <!-- </vue-lazy-component> -->

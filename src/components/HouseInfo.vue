@@ -89,6 +89,8 @@ export default {
     font-family: $family3;
     flex: 0 0 5em;
     text-align: left;
+  //  width: 5em;
+      width: auto;
     padding-left: 0.3em;
   }
 
@@ -130,6 +132,11 @@ export default {
     flex: 1;
     justify-content: space-around;
     align-content: space-around;
+  }
+  .item {
+    .label {
+      width: auto;
+    }
   }
 }
 

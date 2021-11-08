@@ -32,12 +32,12 @@
       </div>
       <div class="btn-group">
         <div class="btn" @click="slideIndex =
-        slideIndex === 0 ? slideList.length - 1 : slideIndex - 1">
+        slideIndex === 0 ? slideList.length - 1 : slideIndex - 1" v-if="slideList[1]">
           <img :src="arrows[0]" alt />
         </div>
         <div class="btn-title">{{slideList[slideIndex].title}}</div>
         <div class="btn" @click="slideIndex =
-        slideIndex === slideList.length - 1 ? 0 : slideIndex + 1">
+        slideIndex === slideList.length - 1 ? 0 : slideIndex + 1" v-if="slideList[1]">
           <img :src="arrows[1]" alt />
         </div>
       </div>
@@ -95,7 +95,7 @@
   }
 
   .item {
-    flex: 1 1 auto;
+    flex: 0 0 auto;
     border-top: 1px solid $video_section_item_border;
     padding: 8px 0;
     cursor: pointer;
@@ -111,7 +111,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0px 15px;
+      padding: 1em 15px;
       transition: all 0.3s;
     }
 
@@ -129,7 +129,7 @@
 
 .video-container {
   width: calc(100vw * 1080 / 1920);
-  height: calc(100vw * 810 / 1920);
+  height: calc(100vw * 608 / 1920);
   position: relative;
   margin: 0 0 0 calc(100vw * 20 / 1920);
   &::before {
@@ -143,6 +143,7 @@
   }
   .video-item {
     width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -163,6 +164,8 @@
     .video-btn {
       cursor: pointer;
       z-index: 2;
+      height: 100%;
+      object-fit: cover;
     }
   }
 }
@@ -178,7 +181,7 @@
   transition: opacity 0.5s;
 
   &.show {
-    z-index: 10;
+    z-index: 112;
     opacity: 1;
   }
 
@@ -229,7 +232,7 @@
 
   .video-container {
     width: 100vw;
-    height: calc(100vw * 280 / 375);
+    height: calc(100vw * 211 / 375);
     margin: 0;
     &::before {
       display: none;
@@ -274,6 +277,7 @@
       letter-spacing: normal;
       text-align: center;
       color: $video_section_item_color;
+      margin: auto;
     }
   }
 
