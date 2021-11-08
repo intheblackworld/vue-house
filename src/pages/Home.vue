@@ -58,7 +58,7 @@
      <div class="section relative" id="section12">
         <VideoSection1 :playBtn="require('@/projects/sfdy/video/play-btn.png')" title="開箱系列影片" :close="require('@/projects/sfdy/video/close.png')" :arrows="[require('@/projects/sfdy/video/arrow-left.png'), require('@/projects/sfdy/video/arrow-right.png')]" :slideList="[
         {
-          title: '後疫情時代 #子晴式玩法 ，銅板旅遊來淡水就對了',
+          title: '淡水銅板旅遊 賞屋立即GO',
           img: require('@/projects/oh1/video/01.jpg'),
           video: 'https://www.youtube.com/embed/EnXDnQKtfF8?&enablejsapi=1&playerapiid=ytplayer',
           isPlay: false,
