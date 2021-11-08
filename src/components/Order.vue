@@ -1,7 +1,7 @@
 <template>
   <div class="order-bg">
-    <img src="@/projects/tsi2/s1/bgimg2.png" alt="" class="bg-img2">
-   <img src="@/projects/tsi2/s1/bgimg1.png" alt="" class="bg-img1">
+  <!-- <img src="@/projects/tsi2/s1/bgimg2.png" alt="" class="bg-img2">
+   <img src="@/projects/tsi2/s1/bgimg1.png" alt="" class="bg-img1"> -->
     <!-- <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile"> -->
     <div class="order-top">
       <!-- <div class="title-block">

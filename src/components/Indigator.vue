@@ -58,7 +58,7 @@
       display: block;
       width: 100%;
       height: 100%;
-      box-shadow: 0 0 0 1px #003177;
+      box-shadow: 0 0 0 1px #036EB7;
       //@function border: 1px solid #0000;
       border-radius: 999px;
       margin: calc(50% - 0.3em) auto 0 auto;
@@ -68,11 +68,11 @@
     }
     &.active {
       &::before {
-        background: #003177;
+        background: #036EB7;
       }
     }
     &:hover::before {
-      background: #003177;
+      background: #036EB7;
     }
   }
 }
@@ -86,7 +86,7 @@
   font-weight: 900;
   line-height: 1.2;
   letter-spacing: size(2.1);
-  color: #003177;
+  color: #036EB7;
   z-index: 10;
   transition: all 0.3s;
   cursor: pointer;
