@@ -4,7 +4,7 @@ export default {
   googleSrc:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14461.58242481766!2d121.24736666770482!3d25.020645183978576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34682102351fe553%3A0x80d36070ed716d14!2z5qSN5pil5qi5!5e0!3m2!1szh-TW!2stw!4v1617774811235!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/aMWGVKfV4YeWXcgM7',
-  phone: '03-3235850',
+  phone: '03-3259055',
   fbLink: 'https://www.facebook.com/植春樹-103761678229425',
   fbMessage: 'https://m.me/103761678229425',
   caseName: '植春樹',
