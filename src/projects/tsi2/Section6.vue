@@ -1,7 +1,7 @@
 <template>
   <div class="section6">
-    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex" v-if="isPC">
+    <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="isPC">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
             <img loading="lazy" :src="slide.img" alt="">
@@ -18,7 +18,7 @@
         </div>
       </div>
     </div>
-    <swiper v-if="isMobile && viewIndex >= 6" :options="swiperOption2" ref="swiper2" data-aos="fade" data-aos-delay="200" class="swipe absolute">
+    <swiper v-if="isMobile" :options="swiperOption2" ref="swiper2" data-aos="fade" data-aos-delay="200" class="swipe absolute">
       <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img">
         <img loading="lazy" :src="slide.img" alt="" class="swipe-img">
       </swiper-slide>
@@ -29,9 +29,11 @@
         <img loading="lazy" src="./all/next-btn.png" alt="" class="next-btn">
       </div>
     </swiper>
-    <swiper v-if="isMobile && viewIndex >= 6" :options="swiperOption" ref="swiper1" data-aos="fade" data-aos-delay="200" class="swipe-pagi">
+    <swiper v-if="isMobile" :options="swiperOption" ref="swiper1" data-aos="fade" data-aos-delay="200" class="swipe-pagi">
       <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img">
+        <!-- <div :class="`pagination-dot flex-c`" v-html="slideList.length == 0 ? slideList.length : slideList[slideIndex - 1].name"></div> -->
         <div :class="`pagination-dot flex-c ${slideIndex === index ? 'active': ''}`" v-html="slide.name"></div>
+        <!-- <div :class="`pagination-dot flex-c`" v-html="slideList.length == slideList.length  ? 0 : slideList[slideIndex + 1].name"></div> -->
       </swiper-slide>
     </swiper>
     <div class="title">天空之悅</div>
@@ -442,7 +444,7 @@
 
   .pagination-dot {
     padding: 5px;
-    margin: 0 5px;
+    margin: 0 auto;
     cursor: pointer;
     z-index: 4;
     width: sizem(93);
@@ -521,10 +523,10 @@ export default {
         allowSlideNext: isMobile ? true : true,
         centeredSlides: true,
         slideToClickedSlide: true,
-        autoplay: {
-          delay: 4000,
-          disableOnInteraction: false,
-        },
+        // autoplay: {
+        //   delay: 4000,
+        //   disableOnInteraction: false,
+        // },
         loop: true,
         // effect: 'fade',
         navigation: {
@@ -539,12 +541,12 @@ export default {
         allowSlidePrev: isMobile ? true : true,
         allowSlideNext: isMobile ? true : true,
         centeredSlides: true,
-        autoplay: {
-          delay: 4000,
-          disableOnInteraction: false,
-        },
+        // autoplay: {
+        //   delay: 4000,
+        //   disableOnInteraction: false,
+        // },
         loop: true,
-        effect: 'fade',
+        // effect: 'fade',
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
@@ -618,7 +620,9 @@ export default {
         const swiper1 = this.$refs.swiper1.swiper
         const swiper2 = this.$refs.swiper2.swiper
         swiper1.controller.control = swiper2
-        // swiper2.controller.control = swiper1
+        swiper2.controller.control = swiper1
+        swiper1.controller.by = 'slide'
+        swiper2.controller.by = 'slide'
       })
     }
   },
