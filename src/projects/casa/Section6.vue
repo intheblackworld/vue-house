@@ -36,18 +36,21 @@
           </div>
         </div>
       </div>
-      <div class="title1 absolute" data-aos="fade-down" data-aos-delay="200">
-        瑞天開發
-      </div>
-      <div class="desc1 absolute" data-aos="fade-up" data-aos-delay="600">
-        在大台北有不少精品建築的瑞天開發，可以說是「精緻豪宅」代言人，推案足跡遍及台北市中心、天母、汐止、土城…，擅長打造高坪效空間，讓每一塊珍稀土地，注入全新價值
-      </div>
-      <div class="title2 absolute" data-aos="fade-down" data-aos-delay="400">
+      
+      <div class="title1 absolute" data-aos="fade-down" data-aos-delay="400">
         晏京機構
       </div>
-      <div class="desc2 absolute" data-aos="fade-up" data-aos-delay="800">
+      <div class="desc1 absolute" data-aos="fade-up" data-aos-delay="800">
         「好建築，應該以居住者的立場出發，走在人們還沒想到的地方。」以優良品質、專業技術、創意延伸、貼心服務四大核心為企業精神，建築品質屢獲國家金獎肯定。
       </div>
+      <!--
+      <div class="title2 absolute" data-aos="fade-down" data-aos-delay="200">
+        瑞天開發
+      </div>
+      <div class="desc2 absolute" data-aos="fade-up" data-aos-delay="600">
+        在大台北有不少精品建築的瑞天開發，可以說是「精緻豪宅」代言人，推案足跡遍及台北市中心、天母、汐止、土城…，擅長打造高坪效空間，讓每一塊珍稀土地，注入全新價值
+      </div>
+      -->
     </div>
   </div>
 </template>
@@ -129,6 +132,8 @@
   text-align: left;
   color: #ffffff;
 }
+
+
 
 .title1,
 .desc1 {
@@ -271,6 +276,7 @@
   margin: 0 5px;
   cursor: pointer;
   z-index: 4;
+  display: none;
 
   span {
     display: block;
@@ -347,7 +353,8 @@
 @media screen and (max-width: 767px) {
   .section6 {
     width: 100vw;
-    height: sizem(1094);
+    //height: sizem(1094);
+    height: sizem(860);
     min-height: auto;
     max-height: initial;
     // background-image: url('./s2/bg.jpg');
@@ -409,12 +416,19 @@
     color: #ffffff;
   }
 
-  .title1 {
-    top: sizem(410);
-  }
+  //.title1 {
+  //  top: sizem(410);
+  //}
+  //.desc1 {
+  //  top: sizem(455);
+  //}
 
+
+  .title1 {
+    top: sizem(110);
+  }
   .desc1 {
-    top: sizem(455);
+    top: sizem(155);
   }
 
   .title2 {
@@ -440,17 +454,29 @@
     left: sizem(0);
     object-fit: cover;
 
+    //&.swipe1 {
+    //  width: sizem(375);
+    //  height: sizem(240);
+    //  top: sizem(140);
+    //  left: sizem(0);
+    //}
+    //&.swipe2 {
+    //  width: sizem(375);
+    //  height: sizem(240);
+    //  top: sizem(612);
+    //  right: sizem(0);
+    //}
     &.swipe1 {
       width: sizem(375);
       height: sizem(240);
-      top: sizem(140);
+      top: sizem(290);
       left: sizem(0);
     }
 
     &.swipe2 {
       width: sizem(375);
       height: sizem(240);
-      top: sizem(612);
+      top: sizem(550);
       right: sizem(0);
     }
   }
@@ -538,6 +564,7 @@
     margin: 0 10px;
     cursor: pointer;
     z-index: 4;
+    display: none;
 
     span {
       display: block;
@@ -617,20 +644,12 @@ export default {
       isDialog: false,
       slideList1: [
         {
-          img: require('./s6/1-1仁愛禮藏.jpg'),
-          name: '仁愛禮藏',
-        },
-        {
-          img: require('./s6/1-2半島花園.jpg'),
-          name: '半島花園',
+          img: require('./s6/2-1中正晏京.jpg'),
+          name: '中正晏京',
         },
       ],
 
       slideList2: [
-        {
-          img: require('./s6/2-1中正晏京.jpg'),
-          name: '中正晏京',
-        },
         {
           img: require('./s6/2-2宜蘭山嶼海.jpg'),
           name: '宜蘭山嶼海',
