@@ -4,9 +4,9 @@ export default {
   googleSrc:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d903.5962551936593!2d121.45608382922413!3d25.05493621390746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDAzJzE3LjgiTiAxMjHCsDI3JzIzLjkiRQ!5e0!3m2!1szh-TW!2stw!4v1634204528398!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/9iPuMyNdg2G6niwU7',
-  phone: '02-8666-0588',
-  fbLink: 'https://www.facebook.com/',
-  fbMessage: 'https://m.me/',
+  phone: '02-2276-7272',
+  fbLink: 'https://www.facebook.com/105760468592626',
+  fbMessage: 'https://m.me/105760468592626',
   caseName: '青青',
   indigatorLength: 10,
 
