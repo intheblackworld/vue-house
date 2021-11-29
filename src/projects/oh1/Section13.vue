@@ -7,8 +7,8 @@
     </div>
     <div class="button">
       <div class="button1" @click="showDialog('https://yourhouse.tw/VRocean/H2/')"><h3>精品2房<br>VR 720 虛擬環景</h3></div>
-      <div class="button2" @click="showDialog('https://yourhouse.tw/VRocean/B1')"><h3>A6戶 3+1房<br>VR 720 實境觀看</h3></div>
-      <div class="button3" @click="showDialog('https://yourhouse.tw/VRocean/A6')"><h3>B1戶3+1房<br>VR 720 實境觀看</h3></div>
+      <div class="button2" @click="showDialog('https://yourhouse.tw/VRocean/B1')"><h3>B1戶 3+1房<br>VR 720 實境觀看</h3></div>
+      <div class="button3" @click="showDialog('https://yourhouse.tw/VRocean/A6')"><h3>A6戶3+1房<br>VR 720 實境觀看</h3></div>
     </div>
       <div :class="`dialog`" v-if="isShowDialog">
         <div
