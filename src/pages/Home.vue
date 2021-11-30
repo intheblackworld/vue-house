@@ -1,5 +1,5 @@
 <template>
-  <div class="home no-padding-top">
+  <div class="home no-padding-top" >
     <div class="bg-img">
       <Loading :loading="load" />
       <!-- <SideNavigation v-if="isMobile" />
@@ -67,6 +67,7 @@
 
 <script>
 // @ is an alias to /src
+import info from '@/info'
 import $ from 'jquery'
 import Navigation from '@/layouts/Navigation.vue'
 import { isMobile } from '@/utils'
@@ -75,9 +76,10 @@ import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
+import UIkit from 'uikit';
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/cc/Section1.vue'
+import Section1 from '@/projects/wlz/Section1.vue'
 // import Section2 from '@/projects/li/Section2.vue'
 // import Section3 from '@/projects/li/Section3.vue'
 // import Section4 from '@/projects/li/Section4.vue'
@@ -98,6 +100,7 @@ export default {
     // LeafFlow,
     ContactSection,
     MobileNav,
+    UIkit,
     Section1,
     // Section2,
     // Section3,

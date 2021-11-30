@@ -1,22 +1,22 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '接待中心：新北市新莊區昌德街33號旁',
+  address: '接待中心:基隆市安樂區基金一路與武崙街口',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3614.3847262875265!2d121.4549993!3d25.0549462!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x43f7405f5c2b6594!2zMjXCsDAzJzE3LjgiTiAxMjHCsDI3JzI1LjkiRQ!5e0!3m2!1szh-TW!2stw!4v1637550814856!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/THRXYmqYuF4Ava7a6',
-  phone: '02-2276-7272',
-  fbLink: 'https://www.facebook.com/105760468592626',
-  fbMessage: 'https://m.me/105760468592626',
-  caseName: '青青',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3611.8256910510745!2d121.7047557150085!3d25.141583283922103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2ce6432f630b323d!2zMjXCsDA4JzI5LjciTiAxMjHCsDQyJzI1LjAiRQ!5e0!3m2!1szh-TW!2stw!4v1637818700801!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/djYoE4CqZaJ8sBy66',
+  phone: '02-2586-7777',
+  fbLink: 'https://www.facebook.com/100910829072500',
+  fbMessage: 'https://m.me/100910829072500',
+  caseName: '勤家樸真',
   indigatorLength: 10,
+  caseId: 'wlz',
 
   houseInfos: [
-    ['格局規劃', '16~31坪'],
-    ['棟戶規劃', '戶數：131戶'],
-    ['基地面績', '約487.66坪'],
-    ['企劃設計', '海沃創意行銷'],
+    ['投資興建', '勤家建設股份有限公司'],
+    ['建築設計', '蔡智勸建築事務所'],
+    ['建築設計', '冠宇和瑞設計事業'],
+    ['接待中心', ' 基金路一段&武崙街'],
   ],
-
   gtmCode: ['MQCH8XK'], // 可放置多個
   recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
