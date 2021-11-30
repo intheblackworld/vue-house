@@ -1,7 +1,8 @@
 <template>
   <div>
     <div class="contact-info" id="contact-info" data-aos="fade" data-aos-delay="0">
-      <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
+      <img v-if="!isMobile" class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
+      <img v-if="isMobile" class="logo" src="@/assets/img/contact-logo_m.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
       <!-- <img
         v-if="isMobile"
         class="logo"
@@ -116,15 +117,15 @@ export default {
   background-attachment: fixed;
   background-position: 0% 50%; */
   transform: translateY(0);
-  margin: 2vw auto 2vw;
-  padding: 30px 0 40px;
+  margin:0 auto 2vw;
+  padding:0 0 40px;
 }
 
 .logo {
   width: $contact_logo_pc_width;
   height: auto;
   // height:;
-  margin: 0 auto 30px;
+  margin: 0 auto 0;
 }
 .info {
   width: 880px;
@@ -198,7 +199,7 @@ export default {
   font-size: 18px;
   font-weight: 500 !important;
   background: #fff;
- // border: 1px solid #87C1E8;
+  border: 1px solid #0004;
  // border-radius:1.8em !important;
   color: $contact_btn_border;
   font-weight: bold;

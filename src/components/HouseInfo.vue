@@ -54,7 +54,7 @@ export default {
   margin:1.5em 0;
   font-weight: 900;
   color: $house_title_color;
-  font-family: $family3;
+  font-family: $family1;
   letter-spacing:0.4em;
 }
 
@@ -92,7 +92,7 @@ export default {
     margin-bottom: 0;
     margin-right:0.8em;
     white-space: nowrap;
-    font-family: $family3;
+    font-family: $family1;
     flex: 0 0 5em;
     text-align: left;
   //  width: 5em;
@@ -104,7 +104,7 @@ export default {
     font-size: 1em;
     text-align: left;
     color: $house_desc_color;
-    font-family: $family3;
+    font-family: $family1;
     font-weight: 500;
   }
 }

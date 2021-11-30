@@ -263,18 +263,18 @@ export default {
   background-size: 100vw 100%;
   // background-attachment: fixed;
   background-position: 0% 0%;
-  font-family: $family3;
+  font-family: $family1;
   input,
   textarea,
   button {
-    font-family: $family3;
+    font-family: $family1;
   }
   .order-top {
     position: relative;
     overflow: hidden;
   }
   .order-title {
-    font-family: $family2;
+    font-family: $family1;
     width: 80vw;
     padding-top: 0.4em;
     padding-bottom: 0;
@@ -311,7 +311,7 @@ export default {
 
   .order-subtitle {
     width: 100vw;
-    font-size: 20px;
+    font-size: calc(100vw * 15 / 1920);
     text-align: center;
     color: $order_subtitle_color;
     margin-bottom: 20px;
@@ -323,7 +323,7 @@ export default {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    margin-bottom: 3rem;
+    margin-bottom: 2vw;
     justify-content: space-between;
   }
 
@@ -381,7 +381,7 @@ export default {
   }
 
   .form_input{
-     border-right: 1px solid #000c;
+     border-right: 1px solid #0006;
      padding-right:3%;
      margin-right:3%;
     .row{
