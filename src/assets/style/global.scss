@@ -370,9 +370,9 @@ img[lazy="loaded"] {
       bottom: 0;
       left: 0;
       width: 100%;
-    //  background: center 0 ;
-    //  background-image: $bg_m;
-    //  background-size: cover;
+      background: center 0 ;
+      background-image: $bg_m;
+      background-size: cover;
   }
 
     &.no-padding-top {
