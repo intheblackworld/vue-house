@@ -1,6 +1,6 @@
 <template>
   <div class="section1">
-<svg version="1.1" id="logo" class="logo" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 410 535" xml:space="preserve">
+<svg version="1.1" data-aos="zoom-out" id="logo" class="logo" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 410 535" xml:space="preserve">
 <path d="M18.3,521.1c0.1,0.2,0.1,0.4,0.1,0.6l-3.6,12.5c-0.1,0.3-0.3,0.5-0.7,0.5h-1.2c-0.3,0-0.6-0.2-0.7-0.5l-2.8-9.8
 	c-0.4,1.4-0.8,2.8-1.2,4.2c-0.5,1.9-1.1,3.8-1.7,5.7c-0.1,0.3-0.3,0.5-0.7,0.5H4.7c-0.3,0-0.6-0.2-0.7-0.5l-3.6-12.5
 	c-0.1-0.1,0-0.4,0.1-0.5c0.1-0.2,0.3-0.3,0.5-0.3h0.8c0.4,0,0.6,0.2,0.7,0.6l2.7,9.8c0.4-1.4,0.8-2.7,1.2-4.1
@@ -102,17 +102,17 @@
 	c6.2-5.8,10.8-11.1,13.8-15.9c3-4.9,4.4-7.4,4.4-7.7h61.9v-9.1h-61.9V260h-18.2v18.2h-67.4v9.1h67.4c-2.7,16.1-4.6,24-5.5,23.7h-20
 	V300h-17.5v116.5h-29.8v10.9h91.6c7.2,19.7,16.8,34.1,28.8,43.1c12.6,9.5,19.6,14.2,21.2,14c-2-9.7-2.1-17-0.5-21.7
 	c1.7-4.8,2.7-7.2,3.2-7.2c-18.1-2.4-30.7-8.2-37.9-17.3c-3.7-4.7-6.4-8.3-8.1-10.9h60.1V416.6z"/>
-<rect x="224.2" y="339.3" class="st0" width="185.1" height="3.4"/>
-<rect x="224.2" y="365.1" class="st1" width="185.1" height="4.6"/>
-<rect x="224.2" y="389.3" class="st2" width="185.1" height="9.1"/>
+<line uk-parallax="stroke:20,0;viewport: 0.7" class="st1" x1="224.2" y1="341" x2="410" y2="341"/>
+<line uk-parallax="stroke:20,0;viewport: 0.7" class="st2" x1="224.2" y1="367.4" x2="410" y2="367.4"/>
+<line uk-parallax="stroke:20,0;viewport: 0.7" class="st3" x1="224.2" y1="393.8" x2="410" y2="393.8"/>
 </svg>
 
-    <div class="title1">基隆首座日系書店品牌跨界打造</div>
-    <div class="title2">一心一藝<span></span>家的頂級飯店寓所</div>
+    <div class="title1" uk-parallax="viewport:0.5;blur:0,10;y:0,-200;opacity:1,0">基隆首座日系書店品牌跨界打造</div>
+    <div class="title2" uk-parallax="viewport:0.5;blur:0,10;y:0,-200;opacity:1,0">一心一藝<span></span>家的頂級飯店寓所</div>
     <ul class="txt">
-      <li>質感公設<span></span>家的美好日常與藝術共融</li>
-      <li>絕佳地段<span></span>上山下海也鄰近城市精彩</li>
-      <li>散步學區<span></span>快樂童年就是住的近一點</li>
+      <li uk-parallax="viewport:0.3;blur:10,0;opacity:0,1;scale:2,1">質感公設<span></span>家的美好日常與藝術共融</li>
+      <li uk-parallax="viewport:0.3;blur:10,0;opacity:0,1;scale:2,1">絕佳地段<span></span>上山下海也鄰近城市精彩</li>
+      <li uk-parallax="viewport:0.3;blur:10,0;opacity:0,1;scale:2,1">散步學區<span></span>快樂童年就是住的近一點</li>
     </ul>
      <!-- <img src="./s1/mo.jpg" class="t0" alt="">
     <div v-if="isPC">
@@ -178,8 +178,18 @@
   top: calc(50% + (275 - 540) * 100vw / 1920);
 
   fill:#C79F62;
-	.st1{fill:#FFFFFF;}
-	.st2{fill:#E95513;}
+	.st1{fill:none;stroke:#C79F62;stroke-width:4;stroke-miterlimit:10;stroke-dasharray: 188 !important;
+stroke-dashoffset: 130;
+  transition: all 1s 1s;
+  }
+	.st2{fill:none;stroke:#FFFFFF;stroke-width:5;stroke-miterlimit:10;stroke-dasharray: 188 !important;
+  transition: all 1s 1s;
+stroke-dashoffset: 130;
+  }
+	.st3{fill:none;stroke:#E95513;stroke-width:9;stroke-miterlimit:10;stroke-dasharray: 188 !important;
+  transition: all 1s 1s;
+stroke-dashoffset: 130;
+  }
   }
 .title1{
   @include img_r_pc(0, 200,740);
@@ -188,6 +198,8 @@
   font-size:size(30);
   line-height: 1.3;
   color: #E95513;
+  transform: translateY(-50%)scaleY(1.2);filter: blur(6px);
+  transition: all 1s 1s;
 }
 .title2{
   @include img_r_pc(410, 370,665);
@@ -196,6 +208,8 @@
   font-size:size(30);
   line-height: 1.2;
   color: #000;
+  transform: translateY(-50%)scaleY(1.2);filter: blur(6px);
+  transition: all 1s 1.5s;
   span{width: 1em;height: 1.5em;display:flex;position: relative;
   align-items: center;justify-content:center;
   &::after{content: "";width: 0.3em;height: 0.3em;display: block;background: #E95513;transform: rotate(45deg);}
