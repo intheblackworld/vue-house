@@ -1,10 +1,10 @@
 <template>
   <div class="section2">
-    <img src="./s2/bg.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isPC">
+    <img src="./s2/bg.png" :alt="`${info.caseName}_雙和建案`" class="bg" v-if="isPC">
     <!-- <img src="./mo/w1.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isMobile"> -->
     <div class="bg" v-if="isMobile"></div>
-    <img src="./s2/img1.png" :alt="`${info.caseName}_img1`" class="img1" v-if="isPC">
-    <img src="./s2/title_t.png" :alt="`${info.caseName}_title_t`" class="title_t">
+    <img src="./s2/img1.png" :alt="`${info.caseName}_雙和建案`" class="img1" v-if="isPC">
+    <img src="./s2/title_t.png" :alt="`${info.caseName}_雙和建案`" class="title_t">
     <div class="swipe absolute" data-aos="fade-up" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex" v-if="isPC">
         <!-- <transition-group name="swipe-fade" mode="out-in"> -->
@@ -16,8 +16,8 @@
         </div>
         <!-- </transition-group> -->
         <div class="swipe-btns absolute flex-ac flex-jb" v-if="isPC">
-          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+          <img src="./all/prev-btn.png" :alt="`${info.caseName}_雙和建案`" class="prev-btn" @click="decIndex">
+          <img src="./all/next-btn.png" :alt="`${info.caseName}_雙和鋼骨`" class="next-btn" @click="addIndex">
         </div>
       </div>
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex" v-if="isMobile">
@@ -31,10 +31,10 @@
     </div>
     <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
       <div class="prev-btn flex-c">
-        <img src="./all/prev-btn.png" alt="" @click="decIndex">
+        <img src="./all/prev-btn.png" :alt="`${info.caseName}_雙和買房`" @click="decIndex">
       </div>
       <div class="next-btn flex-c">
-        <img src="./all/next-btn.png" alt="" @click="addIndex">
+        <img src="./all/next-btn.png" :alt="`${info.caseName}_雙和買房`" @click="addIndex">
       </div>
     </div>
   </div>

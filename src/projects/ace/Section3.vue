@@ -1,9 +1,9 @@
 <template>
   <div class="section3">
-    <img src="./s3/bg.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isPC">
+    <img src="./s3/bg.png" :alt="`${info.caseName}_雙和買房`" class="bg" v-if="isPC">
     <!--<img src="./mo/b.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isMobile"> -->
     <div class="bg" v-if="isMobile"></div>
-    <img src="./s3/img_r.png" :alt="`${info.caseName}_img_r`" class="img_r" data-aos="fade-down" data-aos-delay="100" @click="showDialog">
+    <img src="./s3/img_r.png" :alt="`${info.caseName}_雙和買房`" class="img_r" data-aos="fade-down" data-aos-delay="100" @click="showDialog">
     <div class="icon" @click="showDialog"></div>
     <div class="txt">
     <div class="title" data-aos="fade-down" data-aos-delay="100">
