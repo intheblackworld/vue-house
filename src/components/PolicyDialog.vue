@@ -85,5 +85,12 @@ export default {
   },
 
   props: ['policyVisible'],
+  watch:{
+    policyVisible(newVal, oldVal){
+      if (newVal == false) {
+        this.$emit('hidePolicyDialog', false);
+      }
+    }
+  }
 }
 </script>

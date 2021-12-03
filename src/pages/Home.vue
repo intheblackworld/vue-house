@@ -61,7 +61,7 @@
 }
 #contact {
   position: relative;
-  z-index: 3;
+ // z-index: 3;
 }
 </style>
 
