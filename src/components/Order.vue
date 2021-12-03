@@ -409,7 +409,7 @@ export default {
     font-size: calc(100vw * 15 / 1920);
     text-align: center;
     color: $order_subtitle_color;
-    margin-bottom: 20px;
+    margin:auto auto 20px auto;
     padding-bottom: 8px;
     line-height: 1.6;
   }
@@ -538,7 +538,7 @@ export default {
     padding-top: 0;
     margin: 0;
     position: relative;
-    z-index: 2;
+    //z-index: 2;
 
     > img {
       display: block;

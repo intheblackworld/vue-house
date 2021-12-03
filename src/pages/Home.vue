@@ -60,7 +60,7 @@
   height: auto !important;
 }
 #contact {
-  position: relative;
+ // position: relative;
  // z-index: 3;
 }
 </style>
