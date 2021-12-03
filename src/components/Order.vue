@@ -368,7 +368,7 @@ export default {
     background-size: cover;
     background-position: bottom right;
     position: relative;
-    padding: 5vw 0;
+    padding: 5vw 0 0 0;
    // padding-bottom: 700px;
   }
   .order-title {
