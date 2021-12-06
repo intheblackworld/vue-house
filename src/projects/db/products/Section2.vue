@@ -938,7 +938,6 @@ export default {
             '台大師大雙文、公園水岸雙景觀<br />台大最後一塊珍稀水岸、沅家集團-沅利建設40年代表作<br />日本國土開發台北水岸第一次<br />SRC鋼骨耐震標章建築<br />中鋼、新日鐵台日頂級鋼材<br />台灣大學地震中心結構外審',
           contact: '貴賓專線｜02-2933-1888<br />接待會館｜台北市羅斯福路五段216號之2',
           logo: require('../works/6/3.jpg'),
-          link: 'https://jiman.debang.tw/',
           imgs: [
             require('../works/6/4.jpg'),
           ],

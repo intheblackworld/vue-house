@@ -943,7 +943,7 @@ export default {
           info3:
             '碧潭水岸首席 <br />涵碧美學御所<br />澳洲PTW建築團隊巨鑄<br />2020 Muse Design Awards 建築設計、室內設計',
           contact: '貴賓專線｜02-2913-1333<br />接待會館｜新店區北新路一段79號',
-          link: 'https://www.bmwlife.com.tw/',
+          link: 'https://bbb.debang.tw/',
           logo: require('../works/1/0.jpg'),
           imgs: [
             require('../works/1/1.jpg'),
@@ -1000,6 +1000,7 @@ export default {
             '陽明山下出將入相富人特區<br />高綠覆低建蔽濃蔭街廓<br />近擁薇閣高中郁郁文風<br />近享捷運新北投站增值通勤<br />戶戶三面採光通風，防疫級規劃',
           contact:
             '賞屋專線｜02–28971888<br />迎賓會館｜台北市北投區中和街239號',
+          link: 'https://ymvilla.debang.tw/',  
           logo: require('../works/7/0.jpg'),
           imgs: [require('../works/7/1.jpg')],
           hint: '',
@@ -1019,7 +1020,6 @@ export default {
             '台大師大雙文、公園水岸雙景觀<br />台大最後一塊珍稀水岸、沅家集團-沅利建設40年代表作<br />日本國土開發台北水岸第一次<br />SRC鋼骨耐震標章建築<br />中鋼、新日鐵台日頂級鋼材<br />台灣大學地震中心結構外審',
           contact:
             '貴賓專線｜02-2933-1888<br />接待會館｜台北市羅斯福路五段216號之2',
-          link: 'https://jiman.debang.tw/',
           logo: require('../works/6/0.jpg'),
           imgs: [require('../works/6/1.jpg')],
           hint: '',
