@@ -17,7 +17,7 @@ export default {
     ['公設設計', '冠宇和瑞設計事業'],
     ['接待中心', ' 基金路一段&武崙街'],
   ],
-  gtmCode: ['MQCH8XK'], // 可放置多個
+  gtmCode: ['52SFGQ9'], // 可放置多個
   recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
