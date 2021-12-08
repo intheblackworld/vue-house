@@ -1,8 +1,7 @@
 <template>
   <div>
     <div class="section3">
-      <img src="./s2/hr.png" alt="" class="hr absolute">
-      <div class="title-d absolute-jc" data-aos="fade-down" data-aos-delay="200" >珍稀地段</div>
+<!--     <img src="./s2/hr.png" alt="" class="hr absolute">  -->
       <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -17,11 +16,15 @@
           </div>
         </div>
       </div>
-      <div class="title absolute" data-aos="fade-down" data-aos-delay="400" >繁華都心</div>
-      <div class="subtitle absolute" data-aos="fade-down" data-aos-delay="300" >信義區 全台首座國際CBD <br v-if="isMobile">站上世界舞台的繁華都心</div>
-      <div class="line absolute" data-aos="fade" data-aos-delay="200" ></div>
-      <div class="desc absolute" data-aos="fade-up" data-aos-delay="300" >
-        台灣最驕傲的經濟櫥窗信義計畫區，自1980年代進行開發，為全台首座國際中心商業區（Central Business District，CBD），數十年來，跟著國際脈絡趨勢大躍進，匯聚市政核心、企業總部、百貨商場、五星級酒店、藝文美學及億級豪宅等，放眼天際線盡是世界一流的建築名師爭相在此，留下一座座令人驚豔的搶眼地標。
+      <div class="txt">
+      <div class="title" data-aos="fade-down" data-aos-delay="200" ><span>i Playing</span>玩美國度 瘋玩森活</div>
+      <div class="subtitle" data-aos="fade-down" data-aos-delay="300" >8分鐘尋常日玩出潮風格</div>
+      <div class="line" data-aos="fade" data-aos-delay="200" ></div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300" >
+        。日月光廣場＋家樂福+延吉+學府商圈享樂全能購足<br>
+。清水國小＋中正國中，書香校園承載孩子金色未來<br>
+。土城體育場 + 運動中心＋大清運動公園運森度呼吸
+      </div>
       </div>
       <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
@@ -37,13 +40,13 @@
   height: size(900);
   max-height: size(1080);
   position: relative;
-  background: #fff;
+  //background: #fff;
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
   // background-size: 100% 100%;
   // background-position: 0 0;
   // background-attachment: fixed;
-  // overflow: hidden;
+  overflow: hidden;
 }
 
 .bg-img {
@@ -61,41 +64,23 @@
   }
 }
 
-.title-d {
-  width: size(160);
-  top: size(90);
-  font-size: size(40);
-  font-weight: 500;
+.title{
+  position: relative;
+  width: size(1500);
+  margin: size(110) auto 1em;
+  font-size: size(49);
+  font-weight: 800;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
   letter-spacing: normal;
-  text-align: center;
-  color: #005369;
-
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    right: size(-60);
-    width: size(36);
-    height: size(36);
-    background-image: url('./s2/title.png');
-    background-size: cover;
-    transform: rotate(180deg);
-    top: size(8);
-  }
-
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    left: size(-60);
-    top: size(8);
-    width: size(36);
-    height: size(36);
-    background-image: url('./s2/title.png');
-    background-size: cover;
+  text-align: left;
+  color: #000;
+  span{
+  color: #d03636;
+  font-size:1.43em;
+  font-family: Georgia;
+  margin: 0 .5em 0 0;
   }
 }
 
@@ -106,46 +91,27 @@
   opacity: 1;
 }
 
-.title {
-  width: size(125);
-  top: size(343);
-  right: size(695);
-  font-size: size(30);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(1.5);
-  text-align: left;
-  color: #005369;
-  white-space: nowrap;
-}
-
 .subtitle {
-  width: size(568);
-  top: size(393);
-  right: size(252);
-  font-size: size(24);
+  position: relative;
+  font-size: size(30);
+  margin:1.5em auto 0.8em;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
   letter-spacing: size(1.2);
   text-align: left;
-  color: #2c9899;
+  color: #d03636;
   white-space: nowrap;
 }
 .line {
+  position: relative;
   background-color: #888;
   width: size(610);
-  top: size(449);
-  right: size(210);
   height: size(2);
 }
 .desc {
-  width: size(610);
-  top: size(467);
-  right: size(210);
+  margin:1em auto;
   font-size: size(18);
   font-weight: normal;
   font-stretch: normal;

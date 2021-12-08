@@ -311,7 +311,7 @@ export default {
         right: size(-60);
         width: size(36);
         height: size(36);
-        background-image: url('../projects/casa/s6/title.png');
+        background-image: url('../projects/ihome/s6/title.png');
         background-size: cover;
         transform: rotate(180deg);
         top: size(25);
@@ -325,7 +325,7 @@ export default {
         top: size(25);
         width: size(36);
         height: size(36);
-        background-image: url('../projects/casa/s6/title.png');
+        background-image: url('../projects/ihome/s6/title.png');
         background-size: cover;
       }
     }
@@ -472,7 +472,7 @@ export default {
           width: sizem(28);
           height: sizem(28);
           top: sizem(12);
-          background-image: url('../projects/casa/s6/title.png');
+          background-image: url('../projects/ihome/s6/title.png');
           background-size: cover;
           transform: rotate(180deg);
         }
@@ -485,7 +485,7 @@ export default {
           width: sizem(28);
           height: sizem(28);
           top: sizem(12);
-          background-image: url('../projects/casa/s6/title.png');
+          background-image: url('../projects/ihome/s6/title.png');
           background-size: cover;
         }
       }

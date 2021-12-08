@@ -13,10 +13,10 @@
     <vue-lazy-component class="section relative" id="section1" @init="init" style="z-index: 3;">
       <Section1 />
     </vue-lazy-component>
-<!--
+<!---->
     <vue-lazy-component class="section" id="section2">
       <Section2 />
-    </vue-lazy-component> -->
+    </vue-lazy-component> 
     <vue-lazy-component
       class="section"
       id="section3"
@@ -105,17 +105,16 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/casa/Section1.vue'
-import Section2 from '@/projects/casa/Section2.vue'
-import Section3 from '@/projects/casa/Section3.vue'
-import Section4 from '@/projects/casa/Section4.vue'
-import Section5 from '@/projects/casa/Section5.vue'
-import Section6 from '@/projects/casa/Section6.vue'
-import Section7 from '@/projects/casa/Section7.vue'
-import Section8 from '@/projects/casa/Section8.vue'
-import Section9 from '@/projects/casa/Section9.vue'
-import Section10 from '@/projects/casa/Section10.vue'
-// import Section11 from '@/projects/casa/Section11.vue'
+import Section1 from '@/projects/ihome/Section1.vue'
+import Section2 from '@/projects/ihome/Section2.vue'
+import Section3 from '@/projects/ihome/Section3.vue'
+import Section4 from '@/projects/ihome/Section4.vue'
+import Section5 from '@/projects/ihome/Section5.vue'
+import Section6 from '@/projects/ihome/Section6.vue'
+import Section7 from '@/projects/ihome/Section7.vue'
+import Section8 from '@/projects/ihome/Section8.vue'
+import Section9 from '@/projects/ihome/Section9.vue'
+import Section10 from '@/projects/ihome/Section10.vue'
 
 export default {
   name: 'home',

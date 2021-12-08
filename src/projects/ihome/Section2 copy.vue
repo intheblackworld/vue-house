@@ -1,8 +1,8 @@
 <template>
   <div class="section2">
     <div>
-      <img src="./s2/hr.png" alt="" class="hr absolute">
-      <div class="title-d absolute-jc">
+   <!--   <img src="./s2/hr.png" alt="" class="hr absolute">  -->
+      <div class="title">
         繁華核心　轉身瞬靜
       </div>
       <div class="subtitle absolute">
