@@ -4,16 +4,20 @@ $bg:#f8dee1;
 /* font-family */
 /* 1主要字體  2次要字體  3表單字體 */
 $family1: 'Noto Sans TC',sans-serif;
-$family2: 'Noto Sans TC',sans-serif;
-$family3: 'Noto Sans TC';
+/* $family2: 'Noto Sans TC',sans-serif;
+$family3: 'Noto Sans TC',sans-serif; */
 
 /* navigation */
-$nav_bg: transparent;
-$nav_btn_color: #fff;
-$nav_link_color: #fff;
-$nav_link_subtitle_color: #fff;
-$nav_link_hover_color: #000;
-$nav_link_hover_bg: #eee;
+$nav_bg:#f8dee1;// #f8dee100;
+$nav_link_color: #000;
+$nav_line_color: #d03636;
+$nav_btn_color: #FFF;
+$nav_btn_bg: #d03636;
+$nav_link_subtitle_color: #000;
+$nav_link_hover_color: #d03636;
+$nav_link_hover_bg: #000;
+$nav_btn_hover_color: #FFF;
+$nav_btn_hover_bg: #000;
 
 /* loading */
 $loading_bg_color: #ccc;

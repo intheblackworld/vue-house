@@ -5,15 +5,19 @@ h2,
 h3,
 h4,
 h5,
-p {
-  // font-family:inherit;
+p,
+label,
+input,
+textarea
+{
   margin: 0;
+  font-family:inherit;
+  // font-family:inherit;
   // font-family: 'Noto Serif TC', serif;
-  font-family: 'Noto Sans TC';
   // font-family: '微軟正黑體', 'Microsoft JhengHei', 'Helvetica Neue', Helvetica,
     // Arial;
 }
-
+/*
 h2 {
   font-family: 'DFPingJuStd';
   margin: 0;
@@ -33,10 +37,12 @@ p {
   //   Arial;
   margin: 0;
 }
-
+*/
 /* animate css */
 
 /* font */
+
+/*
 @font-face {
   font-family: DFPingJuStd;
   src: url('~@/assets/font/DFPingJuStd-W7.otf?#iefix')
@@ -80,3 +86,4 @@ p {
   font-weight: normal;
   font-style: normal;
 }
+*/

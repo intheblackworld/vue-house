@@ -2,12 +2,12 @@
 
 .el-select {
   //margin-left: 21px;
-  font-family:$family3;
+ // font-family:$family3;
   position: relative;
   font-size: 14px;
   display: inline-block;flex: 0 1 auto;
 }
-.el-scrollbar{font-family:$family3;}
+//.el-scrollbar{font-family:$family3;}
 
 .el-date-editor.el-input {
   position: relative !important;
@@ -26,7 +26,7 @@
   border: $order_input_border !important;
   background: $order_input_bg;
   color: $order_input_color;
-  font-family:$family3;
+  //font-family:$family3;
 
   &:focus {
     border: $order_input_focus_border;
@@ -47,7 +47,7 @@
     font-size: 16px !important;
     border: $order_input_border !important;
     background:#FFF;
-  font-family:$family3;
+ // font-family:$family3;
 
     &::placeholder {
       color: $order_input_placeholder;
@@ -92,7 +92,7 @@
   color: $order_submit_color;
   // z-index: 10;
   border: none !important;
-  font-family: $family3;
+  //font-family: $family3;
 
   &.is-disabled {
     background-color: $order_sumbit_disable_bg;

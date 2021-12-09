@@ -268,18 +268,19 @@ export default {
   background-size: 100vw auto;
   // background-attachment: fixed;
   background-position: 0% 0%;
-  font-family: $family3;
-  input,
+ // font-family: $family3;
+ /* input,
   textarea,
   button {
     font-family: $family3;
   }
+  */
   .order-top {
     position: relative;
     overflow: hidden;
   }
   .order-title {
-    font-family: $family2;
+   // font-family: $family2;
     width: 100vw;
     padding-top: 20px;
     padding-bottom: 8px;

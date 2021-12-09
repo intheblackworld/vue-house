@@ -3,7 +3,7 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
-          <img class="logo" src="@/assets/img/nav-logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" />
+          <img class="logo" src="@/projects/ihome/s1/logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" />
           <div class="menu" @click="toggleSidebar" v-show="!isOpen">
             <font-awesome-icon icon="bars" />
           </div>
@@ -14,9 +14,9 @@
           </div>
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
             <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: offset }" v-for="item in list" class="flex-c" @click="toggleSidebar">
-              <span class="link">
+              <span :class="`link ${item.type}`">
                 <span>
-                  <p :class="`title ${item.type}`" v-html="item.name"></p>
+                  <p :class="`title`" v-html="item.name"></p>
                   <span class="subTitle">{{item.subTitle}}</span>
                 </span>
               </span>
@@ -68,6 +68,7 @@ export default {
 }
 </script>
 <style lang="scss">
+/*
 @import '../assets/style/function.scss';
 .navigation {
   .title {
@@ -116,7 +117,7 @@ export default {
     }
     }
   }
-}
+}*/
 </style>
 <style lang="scss" scoped>
 @import '../assets/style/variableColor.scss';
@@ -124,7 +125,7 @@ export default {
 @import '../assets/style/function.scss';
 
 .navigation {
-  background-color: $nav_bg;
+  background: $nav_bg;
   // background-image: $nav_bg;
   background-size: cover;
   height: $nav_pc_height;
@@ -135,7 +136,7 @@ export default {
   display: flex !important;
   align-items: center;
   // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
-  &::after{content: "";height:100%;width: 150%;top: -100%;left: 0;z-index:9;position: absolute;box-shadow:0 size(0) size(72) size(72)  #005566;}
+  //@function&::after{content: "";height:100%;width: 150%;top: -100%;left: 0;z-index:9;position: absolute;box-shadow:0 size(0) size(72) size(72)  #005566;}
 }
 
 .nav-container {
@@ -165,7 +166,7 @@ export default {
   left: size(0);
   display: block;
   top: 50%;
-  transform: translate(3%, -20%);
+  transform: translate(3%, -50%);
   transition: all 0.3s;
   z-index: 3;
 }
@@ -187,69 +188,38 @@ export default {
 
   .link {
     color: $nav_link_color;
-    height: 22px;
+    height:80%;
     text-align: center;
     display: block;
     cursor: pointer;
-    padding: 0 0px;
-    margin: 0 10px;
+    padding: 0 .5em;
+    margin: 0 0.5em;
     transition: all 0.8s;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    // overflow: hidden;
-    // border-right: 1px solid $nav_link_hover_bg;
+    font-size: 16px !important;
 
     &:hover {
       color: $nav_link_hover_color;
-      // background: $nav_link_hover_bg;
     }
 
-    // &::before {
-    //   content: '';
-    //   width: 0%;
-    //   height: 100%;
-    //   display: block;
-    //   background: $nav_link_hover_bg; // second bg
-    //   position: absolute;
-    //   transform: skewX(-20deg);
-    //   left: -10%;
-    //   opacity: 1;
-    //   top: 0;
-    //   z-index: 2;
-    //   transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
-    //   // box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
-    // }
+    &.btn{
+    color: $nav_btn_color;
+    background:$nav_btn_bg;
+    padding: 0 1.5em;
+    border-radius:1.5em ;
 
-    // &::after {
-    //   content: '';
-    //   width: 0%;
-    //   height: 100%;
-    //   display: block;
-    //   background: #fff; // first bg
-    //   position: absolute;
-    //   transform: skewX(-20deg);
-    //   left: -10%;
-    //   opacity: 0;
-    //   top: 0;
-    //   z-index: 1;
-    //   transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
-    //   // box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
-    // }
-    // &:hover::before,
-    // &:hover::before {
-    //   opacity: 1;
-    //   width: 116%;
-    // }
-    // &:hover::after,
-    // &:hover::after {
-    //   opacity: 1;
-    //   width: 120%;
-    // }
+    &:hover {
+      color: $nav_btn_hover_color;
+      background: $nav_btn_hover_bg;
+    }
+
+    }
+
 
     .title {
-      font-size: 16px !important;
       font-weight: bold;
       position: relative;
       z-index: 3;
@@ -264,8 +234,6 @@ export default {
     }
 
     img {
-      // width: 35px;
-      // height: 35px;
       margin-right: 10px;
     }
   }

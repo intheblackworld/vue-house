@@ -31,7 +31,7 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section2 {
+.section2 {  
   width: size(1920);
   height: size(1358);
   max-height: size(1358);
