@@ -2,7 +2,7 @@
   <div>
     <div class="section3">
 <!--     <img src="./s2/hr.png" alt="" class="hr absolute">  -->
-      <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -18,13 +18,13 @@
       </div>
       <div class="txt">
       <div class="title" data-aos="fade-down" data-aos-delay="200" ><span>i Playing</span>玩美國度 瘋玩森活</div>
-      <div class="subtitle" data-aos="fade-down" data-aos-delay="300" >8分鐘尋常日玩出潮風格</div>
       <div class="line" data-aos="fade" data-aos-delay="200" ></div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300" >
-        。日月光廣場＋家樂福+延吉+學府商圈享樂全能購足<br>
-。清水國小＋中正國中，書香校園承載孩子金色未來<br>
-。土城體育場 + 運動中心＋大清運動公園運森度呼吸
-      </div>
+      <div class="subtitle" data-aos="fade-down" data-aos-delay="300" >8分鐘尋常日玩出潮風格</div>
+      <ul class="desc">
+        <li data-aos="fade-up" data-aos-delay="300">日月光廣場＋家樂福+延吉+學府商圈享樂全能購足</li>
+        <li data-aos="fade-up" data-aos-delay="400">清水國小＋中正國中，書香校園承載孩子金色未來</li>
+        <li data-aos="fade-up" data-aos-delay="500">土城體育場 + 運動中心＋大清運動公園運森度呼吸</li>
+      </ul>
       </div>
       <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
@@ -38,97 +38,76 @@
 .section3 {
   width: size(1920);
   height: size(900);
-  max-height: size(1080);
   position: relative;
-  //background: #fff;
-  // min-height: size(900);
-  // background-image: url('./s2/bg.jpg');
-  // background-size: 100% 100%;
-  // background-position: 0 0;
-  // background-attachment: fixed;
   overflow: hidden;
+  z-index: 3;
 }
 
-.bg-img {
-  width: 100vw;
-  height: size(900);
-  min-height: size(900);
+.txt{
   position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  object-fit: cover;
-
-  &:nth-child(1) {
-    position: relative;
+  width: size(610);
+  left: size(210);
+  top: size(233);
+  font-stretch: normal;
+  font-style: normal;
+  text-align: left;
+  font-size: size(18);
+  font-weight: 500;
+  line-height: 1.2;
+  z-index: 3;
   }
-}
 
 .title{
   position: relative;
-  width: size(1500);
-  margin: size(110) auto 1em;
-  font-size: size(49);
-  font-weight: 800;
-  font-stretch: normal;
-  font-style: normal;
+  font-size:2.72em;
+  font-weight: 700;
   line-height: 1.2;
   letter-spacing: normal;
-  text-align: left;
   color: #000;
   span{
   color: #d03636;
   font-size:1.43em;
   font-family: Georgia;
   margin: 0 .5em 0 0;
+  display: block;
   }
-}
-
-.hr {
-  width: 100vw;
-  top: size(-18);
-  left: 0;
-  opacity: 1;
 }
 
 .subtitle {
   position: relative;
   font-size: size(30);
   margin:1.5em auto 0.8em;
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(1.2);
-  text-align: left;
+  letter-spacing:0.04em;
   color: #d03636;
-  white-space: nowrap;
 }
 .line {
   position: relative;
   background-color: #888;
-  width: size(610);
+  width:100%;
   height: size(2);
+  margin: 2em 0 0.5em 0;
 }
 .desc {
   margin:1em auto;
   font-size: size(18);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 2;
   letter-spacing:0.05em;
-  text-align: justify;
   color: #666666;
+  list-style: circle;
+  overflow: hidden;
+  li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
+  }
 }
 
 /* Swipe */
 .swipe {
+  position: absolute;
   width: size(840);
   height: size(560);
-  top: size(233);
-  left: size(210);
+  top: size(185);
+  right: size(210);
   object-fit: cover;
+  z-index: 3;
 }
 
 // begin
@@ -149,26 +128,6 @@
 .swipe-fade-leave-active {
   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
 }
-
-// begin
-// .swipe-left-leave-to {
-//   margin-left: -100vw;
-//   z-index: 0;
-// }
-// // end
-// .swipe-left-enter {
-//   opacity: 0.5;
-//   margin-left: 0;
-//   z-index: 1;
-// }
-
-// .swipe-left-enter-active {
-//   transition: all 0.5s ease;
-// }
-
-// .swipe-left-leave-active {
-//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-// }
 
 .swipe-wrap {
   width: 100%;
@@ -198,29 +157,15 @@
     line-height: 1;
     letter-spacing: 0.89px;
     text-align: left;
-    color: #ffffff;
+    color: #fff;
    text-shadow:0 0.1em 0.3em #000;
   }
-
-  // &:nth-child(1) {
-  //   z-index: 1;
-  //   // opacity: 1;
-  // }
-
-  // &.base {
-  //   z-index: 1;
-  //   opacity: 1;
-  // }
-  // &.active {
-  //   z-index: 2;
-  //   // opacity: 1;
-  // }
 }
 
 .pagination {
   width: auto;
   bottom: size(148);
-  left:calc(50% + 6.95vw);
+  right:calc(50% + 6.95vw);
   justify-content: center;
 }
 
@@ -232,12 +177,11 @@
 
   span {
     display: block;
-    width: 15px;
-    height: 15px;
-    border-radius: 0px;
-    box-shadow: 0 0 0 1px #ccc;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 4px solid  #ccc;
     position: relative;
-    background-color: #ccc;
     transition: all 0.5s;
 
     &::before {
@@ -245,12 +189,11 @@
       width: 60%;
       height: 60%;
       display: block;
-      background: #005369;
-      // border-radius: 20px;
+    border-radius: 50%;
+    border: 2.1px solid  #d03636;
       opacity: 1;
       position: absolute;
       top: 20%;
-      // transform: translateY(-50%);
       left: 20%;
       transition: all 0.3s;
       transform-origin: center;
@@ -259,18 +202,11 @@
     &.active {
       box-shadow: none;
       &::before {
-        content: '';
         width: 100%;
         height: 100%;
-        display: block;
-        background: #005369;
-        // border-radius: 20px;
-        opacity: 1;
-        position: absolute;
         top: 0%;
-        // transform: translateY(-50%);
         left: 0%;
-        transform: scale(1.1);
+        transform: scale(1.6);
       }
     }
   }
@@ -305,93 +241,26 @@
 @media screen and (max-width: 767px) {
   .section3 {
     width: 100vw;
-    height: sizem(806);
-    min-height: auto;
-    max-height: initial;
+    height: auto;
   }
-
-  .hr {
-    width: auto;
-    height: sizem(10);
-    top: sizem(-10);
-    left: 0;
-    opacity: 1;
+  .txt{
+  position: relative;
+  width: sizem(310);
+margin:1.5em auto 7em;
+  left:0;
+  top:0;
+  font-size: sizem(15);
   }
-
-  .title-d {
-    width: sizem(120);
-    top: sizem(50);
+.title{
     font-size: sizem(30);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.17;
-    letter-spacing: normal;
-    text-align: center;
-    color: #005369;
-
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      right: sizem(-45);
-      width: sizem(28);
-      height: sizem(28);
-      top: sizem(4);
-      background-image: url('./s2/title.png');
-      background-size: cover;
-      transform: rotate(180deg);
-    }
-
-    &::before {
-      content: '';
-      display: block;
-      position: absolute;
-      left: sizem(-45);
-      width: sizem(28);
-      height: sizem(28);
-      top: size(8);
-      background-image: url('./s2/title.png');
-      background-size: cover;
-    }
-  }
-
-  .title {
-    width: sizem(104);
-    top: sizem(411);
-    right: sizem(238);
-    font-size: sizem(25);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.44;
-    letter-spacing: sizem(1.25);
-    text-align: left;
-    color: #005369;
-    white-space: nowrap;
-  }
-
-  .subtitle {
-    width: sizem(242);
-    top: sizem(455);
-    right: sizem(100);
-    font-size: sizem(20);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.44;
-    letter-spacing: sizem(1);
-    text-align: left;
-    color: #2c9899;
-    white-space: normal;
-  }
+}
   .line {
     background-color: #888;
     width: sizem(310);
-    top: sizem(532);
-    right: sizem(32);
     height: sizem(2);
   }
+  .subtitle {
+    font-size: sizem(18);}
   .desc {
     width: sizem(310);
     top: sizem(548);
@@ -402,148 +271,22 @@
 
   /* Swipe */
   .swipe {
+    position: relative;
     width: 100vw;
     height: sizem(250);
     min-height: auto;
-    top: sizem(120);
-    left: sizem(0);
-    object-fit: cover;
-  }
-
-  // begin
-  .swipe-fade-leave-to {
-    opacity: 0;
-    z-index: 0;
-  }
-  // end
-  .swipe-fade-enter {
-    opacity: 0;
-    z-index: 1;
-  }
-
-  .swipe-fade-enter-active {
-    transition: all 0.5s ease;
-  }
-
-  .swipe-fade-leave-active {
-    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-
-  // begin
-  // .swipe-left-leave-to {
-  //   margin-left: -100vw;
-  //   z-index: 0;
-  // }
-  // // end
-  // .swipe-left-enter {
-  //   opacity: 0.5;
-  //   margin-left: 0;
-  //   z-index: 1;
-  // }
-
-  // .swipe-left-enter-active {
-  //   transition: all 0.5s ease;
-  // }
-
-  // .swipe-left-leave-active {
-  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  // }
-
-  .swipe-wrap {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+    top:0;
+    left:0;
   }
 
   .swipe-item {
-    width: 100%;
-    height: 100%;
-    z-index: 0;
     .slide-name{
       right: 1em;
     font-size: sizem(13);
     }
-
-    // &:nth-child(1) {
-    //   z-index: 1;
-    //   // opacity: 1;
-    // }
-
-    // &.base {
-    //   z-index: 1;
-    //   opacity: 1;
-    // }
-    // &.active {
-    //   z-index: 2;
-    //   // opacity: 1;
-    // }
-  }
-
-  .pagination {
-    width: auto;
-    bottom: size(91);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    justify-content: center;
-  }
-
-  .pagination-dot {
-    padding: 5px;
-    margin: 0 10px;
-    cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
-      box-shadow: 0 0 0 1px #fff;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
-      transition: all 0.5s;
-
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #004ea2;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transition: all 0.3s;
-        transform-origin: center;
-        transform: scale(0);
-      }
-      &.active {
-        &::before {
-          content: '';
-          width: 100%;
-          height: 100%;
-          display: block;
-          background: #004ea2;
-          border-radius: 20px;
-          opacity: 1;
-          position: absolute;
-          top: 0%;
-          // transform: translateY(-50%);
-          left: 0%;
-          transform: scale(1);
-        }
-      }
-    }
   }
 
   .swipe-btns {
-    width: 100%;
-    height: 100%;
-    padding: 0 15px;
-    z-index: 3;
 
     .prev-btn,
     .next-btn {
@@ -572,16 +315,24 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s3/1信義計劃區-台北101.jpg'),
-          name: '台北101',
+          img: require('./s3/1.jpg'),
+          name: '台北',
         },
         {
-          img: require('./s3/2信義計劃區-台北101.jpg'),
-          name: '台北101',
+          img: require('./s3/2.jpg'),
+          name: '台北',
         },
         {
-          img: require('./s3/3信義計劃區-台北101.jpg'),
-          name: '台北101',
+          img: require('./s3/3.jpg'),
+          name: '台北',
+        },
+        {
+          img: require('./s3/4.jpg'),
+          name: '台北',
+        },
+        {
+          img: require('./s3/5.jpg'),
+          name: '台北',
         },
       ],
     }

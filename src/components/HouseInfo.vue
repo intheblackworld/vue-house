@@ -103,7 +103,7 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .content {
-    height: 35em;
+   // height: 35em;
     width: 100%;
     margin-bottom: 0;
     font-size: 15px;
@@ -117,10 +117,9 @@ export default {
 
   .item {
     align-items: flex-start;
-    margin: 0;
+    margin: 10px 0 10px 20px;
     width: 100%;
     height: auto;
-    margin-left: 20px;
     white-space: normal;
   }
 

@@ -10,7 +10,7 @@
       id="fullpage"
     > -->
     <!-- <LeafFlow /> -->
-    <vue-lazy-component class="section relative" id="section1" @init="init" style="z-index: 3;">
+    <vue-lazy-component class="section relative" id="section1" @init="init">
       <Section1 />
     </vue-lazy-component>
 <!---->
@@ -24,9 +24,8 @@
       <Section3 :viewIndex="viewIndex" />
     </vue-lazy-component>
     <vue-lazy-component
-      class="section relative"
+      class="section"
       id="section4"
-      style="z-index: 3;"
     >
       <Section4 />
     </vue-lazy-component>
@@ -48,25 +47,25 @@
     >
       <Section7 />
     </vue-lazy-component>
-    <vue-lazy-component
+<!--      <vue-lazy-component
       class="section"
       id="section8"
     >
       <Section8 />
     </vue-lazy-component>
-<!--      <vue-lazy-component
+    <vue-lazy-component
       class="section"
       id="section9"
     >
     <Section9 />
-    </vue-lazy-component>-->
+    </vue-lazy-component>
     <vue-lazy-component
       class="section relative"
       id="section10"
       style="z-index: 3;"
     >
       <Section10 />
-    </vue-lazy-component>
+    </vue-lazy-component>-->
     <!-- <vue-lazy-component
       class="section"
       id="section11"

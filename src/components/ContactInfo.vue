@@ -96,7 +96,7 @@ export default {
   justify-content: space-between;
   position: relative;
   z-index: 3;
-  width: 1200px;
+ // width: 1200px;
   height: 380px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
@@ -239,14 +239,14 @@ export default {
     width: 100%;
     //  max-width: 95%;
     height: auto;
-    padding: 5%;
+    padding:0 5% 5% 5%;
     transform: none;
     position: static;
     margin: 0;
 
     .logo {
       width: $contact_logo_mobile_width;
-      margin: 5% auto 10%;
+      margin: 10% auto 10%;
     }
   }
 
