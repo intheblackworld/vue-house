@@ -461,23 +461,23 @@ export default {
       slideList: [
         {
           img: require('./s2/1.jpg'),
-          name: '外觀 3D情境示意圖',
+          name: '空拍圖',
         },
         {
           img: require('./s2/2.jpg'),
-          name: '外觀 3D情境示意圖',
+          name: '捷運海山站',
         },
         {
           img: require('./s2/3.jpg'),
-          name: '外觀 3D情境示意圖',
+          name: '64快速道路',
         },
         {
           img: require('./s2/4.jpg'),
-          name: '外觀 3D情境示意圖',
+          name: '環狀線',
         },
         {
           img: require('./s2/5.jpg'),
-          name: '外觀 3D情境示意圖',
+          name: '信義區',
         },
       ],
     }

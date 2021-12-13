@@ -316,23 +316,23 @@ export default {
       slideList: [
         {
           img: require('./s3/1.jpg'),
-          name: '台北',
+          name: '市立土城醫院',
         },
         {
           img: require('./s3/2.jpg'),
-          name: '台北',
+          name: '',
         },
         {
           img: require('./s3/3.jpg'),
-          name: '台北',
+          name: '新北地方法院',
         },
         {
           img: require('./s3/4.jpg'),
-          name: '台北',
+          name: '',
         },
         {
           img: require('./s3/5.jpg'),
-          name: '台北',
+          name: '日月光廣場',
         },
       ],
     }

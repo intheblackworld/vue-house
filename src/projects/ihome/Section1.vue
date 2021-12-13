@@ -28,16 +28,17 @@
 }
 .imgbg{
   position: absolute;
-  bottom: size(-5);
-  right:size(-382);
-  width: size(1068);
+  bottom:-1%;
+  right:calc(5% - 22vw);
+  //width: size(1068);
+  height:73%;
   transform: translateX(-10%);
   }
 .img{
   position: absolute;
   bottom: 0;
   right: 0;
-  width: size(636);
+  height:88%;
   transform: translate(10%,5%);
   }
 .txt{
@@ -106,11 +107,13 @@ border-width: .1em 0 .1em .1em;left: 0;}
   bottom: sizem(-1);
   right:sizem(-90);
   width: sizem(280);
+  height: auto;
   transform: translateX(-10%);
   }
 .img{
   width: sizem(165);
   transform: translate(10%,5%);
+  height: auto;
   }
 .txt{
 	position: absolute;
