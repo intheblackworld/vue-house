@@ -18,9 +18,7 @@
 
 .section2 {
   width: 100%;
-  height: size(605);
-  min-height: size(605);
-  max-height: size(1080);
+  height: size(805);
   background: none;
   background-size: auto;
   background-attachment: fixed;
@@ -43,7 +41,7 @@
 }
 
 .content {
-  @include img_c_pc(544.5, 96);
+  @include img_c_pc(544.5,250);
   padding: size(15) size(51) size(15) size(82);
   border-left: 2px solid #c3985b;
   border-right: 2px solid #c3985b;
@@ -98,15 +96,13 @@
 @media screen and (max-width: 767px) {
   .section2 {
     width: 100vw;
-    min-height: sizem(386);
-    max-height: sizem(386);
-    height: sizem(386);
+    height: sizem(450);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
   }
   .content {
-    @include img_c_m(310, 45);
+    @include img_c_m(310, 150);
     padding: sizem(15) sizem(25) sizem(15) sizem(18);
     border-left: 2px solid #c3985b;
     border-right: 2px solid #c3985b;
