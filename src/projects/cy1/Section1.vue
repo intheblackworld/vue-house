@@ -1,10 +1,14 @@
 <template>
   <div class="section1">
+    
+    <img src="./s1/bg.jpg" :alt="`${info.caseName}_bg-img`" class="bg" v-if="isPC">
+    <img src="./s1/bg-m.jpg" :alt="`${info.caseName}_bg-img`" class="bg" v-if="isMobile">
     <img src="./s1/top_bg.jpg" :alt="`${info.caseName}_bg-img`" class="bg-img" v-if="isPC">
     <Map :bgSrc="require('./s1/top_bg_m.jpg')" :hand="hand" v-if="isMobile"></Map>
-    <img src="./s1/top_logo.png" :alt="`${info.caseName}_logo`" class="logo" data-aos="fade-up" data-aos-delay="200">
+    <!-- <img src="./s1/top_logo.png" :alt="`${info.caseName}_logo`" class="logo" data-aos="fade-up" data-aos-delay="200">
     <img src="./s1/top_title_1.png" :alt="`${info.caseName}_title_1`" class="title-1" data-aos="fade-up" data-aos-delay="400">
     <img src="./s1/top_title_2.png" :alt="`${info.caseName}_title_2`" class="title-2" data-aos="fade-up" data-aos-delay="600">
+    -->
     
     <div class="video_box" v-if="!isMobile" @click="isDialog = true">
       <div :id="`youtube-player-${id}`" ref="player" class="video-ifame"></div>
@@ -17,14 +21,14 @@
       <div class="mask" @click="isDialog = false"></div>
       <div class="video-bg">
         <div class="video_box">
-          <iframe title="youtube" src="https://www.youtube.com/embed/yWsRBuYYhMc?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe title="youtube" src="https://www.youtube.com/embed/yWsRBuYYhMc?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
       <img class="close" @click="isDialog = false" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABABAMAAABYR2ztAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAhUExURUdwTP////Pw8PLx8fLw8PLw8PPx8fHx8fLy8vLw8PXr6/Zeio0AAAALdFJOUwADRMS156s3KfgaAiHMOAAAAXtJREFUSMeFlr9qwzAQxnVZajoVLRLZTEMfoBAadywIt11t/AAGETqGhOzGoS/g0r20D1qRxLYsS/oy5Y/uk+/ud/eFnRoWecmcfTzdhX+n/Tf763bhAyJ7Z4l+DErQfdkw+izS0AGutiZY6JeABK2q8/XHMo0JhCXooUqvb/wSXNfXwIVXwjxBOmj5JLiqhzCh5+WkQzVG0bGYlVOscytIvG0cCWq/JjGn7md6YJlNQ5LsefKZfjsHA+cL6QQwdpvZidDevZKx1uZCZJtZ3okauaBVOQeRDmM5uco9tR+b2nPgSgxcjG1023uRGDiYA3KRCAn0EkGBXkKoOjgHC8OFna6nFsVOrvPILBou2tgoGkw6TxemXHTRdWA4iB+AV6CHNGk2UkXS5DqPFgqWGjULthsBA5GzoS19tUDYSzA4Zpzjo7dEw4vGX4IFYjiIryC0xHxr8MbGHy1SuIo5WObQDjgwFApZEnF9tiRkatAWobFCa4bmDv4evP4DsmNwZSA8CfQAAAAASUVORK5CYII=" />
     </div>
 
 
-    <img src="./s1/top_tree_single.png" :alt="`${info.caseName}_tree1`" class="tree1" data-aos="fade-up" data-aos-delay="800">
+    <img src="./s1/top_tree_single.png" :alt="`${info.caseName}_tree1`" class="tree1" data-aos="fade" data-aos-delay="800">
     <img src="./s1/top_tree_single.png" :alt="`${info.caseName}_tree2`" class="tree2" data-aos="fade-up" data-aos-delay="900">
 
 
@@ -52,7 +56,7 @@
 @import '@/assets/style/function.scss';
 
 .section1 {
-  width: size(1920);
+  width:100%;
   // height: 100vh;
   // min-height: size(900);
   // max-height: size(1080);
@@ -62,7 +66,9 @@
   background-size: auto;
   z-index: 23;
 }
-
+.bg{
+  width: 100%;
+    position: relative;margin-bottom: -30vw;}
 .bg-img {
   width: 100%;
   // height: 100%;
@@ -77,7 +83,7 @@
 .video_box {
   width: size(1300);
   height: 38.2vw;
-  top: 12vw;
+  top: 67vw;
   left: calc(50% - 50vw * 1300 / 1920);
   position: absolute;
   z-index: 3;
@@ -111,14 +117,15 @@
 }
 
 .tree1 {
-  @include img_r_pc(439, 1100, 787);
-  animation: tree 4s ease-out infinite alternate;
-  transform: skewX(2deg);
-  transform-origin: 50% 100%;z-index: 3;
+  @include img_r_pc(200, 2060, 300);
+ animation: tree 4s ease-out infinite alternate;
+ transform: skewX(2deg);
+  transform-origin: 50% 100%;
+  z-index: 3;
 }
 
 .tree2 {
-  @include img_r_pc(610, 977, 96);
+  @include img_r_pc(370,1935, -40);
   animation: tree 4s ease-out infinite alternate;
   transform: skewX(2deg);
   transform-origin: 50% 100%;z-index: 3;
@@ -206,14 +213,16 @@
 
 @media screen and (max-width: 767px) {
   .section1 {
-    width: 100vw;
-    height: sizem(1232);
-    min-height: sizem(604);
+  //  height: sizem(1232);
+   //min-height: sizem(604);
     // max-height: sizem(750);
     // background-image: url('./mo/1/bg.png');
     background-size: cover;
     background-attachment: scroll;
     background: transparent;
+  }
+.bg{
+  margin-bottom:0;
   }
   .logo {
     @include img_c_m(291, 61);
@@ -231,12 +240,11 @@
   }
 
   .tree1 {
-    @include img_l_m(280, 470,0);
+    @include img_l_m(280, 804,0);
     // top: auto;
     // bottom: 0;
     animation: tree 4s ease-out infinite alternate;
-    transform: skewX(2deg);
-    transform-origin: 50% 100%;
+    //transform: skewX(2deg);
   }
 
   .tree2 {
@@ -244,14 +252,14 @@
   }
 
   .title-3 {
-    @include img_c_m(184, 719);
+    @include img_c_m(184, 1053);
     // top: auto;
     bottom: auto;
     font-size: sizem(34);
   }
 
   .desc {
-    @include img_c_m(296, 773);
+    @include img_c_m(296, 1107);
     // top: auto;
     bottom: auto;
     text-shadow: 0 0 6px #fff;
@@ -262,7 +270,7 @@
     width: 100%;
     position: absolute;
     height:sizem(199);
-    top:sizem(270);
+    top:sizem(604);
     left: 0;
     background: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 60 60' xml:space='preserve'%3E%3Ccircle fill='%23552E70' cx='30' cy='30' r='30'/%3E%3Cpolygon fill='%23FFF' points='21.6,15.3 44.4,30 21.6,44.7 '/%3E%3C/svg%3E") no-repeat center,url('./s1/vbg.jpg');
     background-size:10vw auto, cover;

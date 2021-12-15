@@ -90,7 +90,8 @@ export default {
   align-items: center;
   z-index: 112;
   top: size(21);
-  left: size(51);
+  left: 0;
+ // left: size(51);
   width: size(103);
   // height: size(46);
   // background-image: linear-gradient(to bottom, rgba(35, 24, 21, 0) 6%, rgba(35, 24, 21, 0.42) 12%, rgba(35, 24, 21, 0.75) 19%, rgba(35, 24, 21, 0.95) 30%, #231815 60%, rgba(35, 24, 21, 0) 107%);
@@ -126,14 +127,14 @@ export default {
 }
 
 .contact-btn {
-  @include img_l_pc(74, 133, 65);
+  @include img_l_pc(74, 133,12);
   transition: all 0.3s;
   position: fixed;
   cursor: pointer;
   z-index: 25;
 
   &.open {
-    @include img_l_pc(74, 683, 65);
+    @include img_l_pc(74, 683, 12);
     position: fixed;
   }
 }
@@ -182,26 +183,19 @@ export default {
   position: fixed;
   z-index: 24;
   background: $nav_bg;
-  width: size(185);
-  left: size(55);
-  top: size(-703);
+  width: size(158);
+ // left: size(55);
+  left: size(0);
+  top: size(0);
   padding-top: size(120);
-  padding-bottom: size(60);
+  padding-bottom:100vh;
   // height: size(703);
-  background-image: linear-gradient(
-    to bottom,
-    rgba(35, 24, 21, 0) 0%,
-    rgba(35, 24, 21, 0.24) 6%,
-    rgba(35, 24, 21, 0.3) 19%,
-    rgba(35, 24, 21, 0.38) 30%,
-    rgba(35, 24, 21, 0.48) 60%,
-    rgba(35, 24, 21, 0) 100%
-  );
+  background:#1f033d;
   // height: calc(100vh - #{$nav_phone_height});
   text-align: center;
   transition: all 0.3s ease-in-out;
   display: block;
-  // transform: translateX(40%);
+  transform: translateX(-100%);
 
   li {
     min-height: size(45);
@@ -286,9 +280,10 @@ export default {
   }
 
   &.open {
-    top: size(0);
+   // top: size(0);
     // width: size(300);
     // transform: translateX(0%);
+  transform: translateX(0%);
     display: flex;
     flex-wrap: wrap;
     align-content: center;
@@ -409,8 +404,8 @@ export default {
 
   .menu {
     display: flex;
-    @include img_l_m(53, 19, 16);
-    height: sizem(46);
+    @include img_l_m(65, 0, 0);
+    //height: sizem(46);
     position: fixed;
     z-index: 112;
 

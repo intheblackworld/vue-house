@@ -39,15 +39,15 @@
 @media screen and (max-width: 767px) {
   .map {
     overflow-x: scroll;
-    overflow-y: hidden;
+    overflow-y: hidden; //margin-top: size-m(-230);
     .map-bg {
       width: auto;
-      height: size-m(1233);
+      height: size-m(1003);
     }
 
     img {
       width: auto;
-      height: size-m(1233);
+      height: size-m(1003);
     }
 
     .hand {
