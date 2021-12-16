@@ -13,9 +13,9 @@ export default {
 
   houseInfos: [
     ['投資興建', '勤家建設股份有限公司'],
-    ['建築設計', '蔡智勸建築事務所'],
+    ['建築設計', '蔡智勸建築師事務所'],
     ['公設設計', '冠宇和瑞設計事業'],
-    ['接待中心', ' 基金路一段&武崙街'],
+    ['接待中心', ' 基金一路&武崙街'],
   ],
   gtmCode: ['52SFGQ9'], // 可放置多個
   recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
