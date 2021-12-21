@@ -5,8 +5,8 @@ export default {
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.596504345868!2d121.45709399350989!3d24.979839233554234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346802c5a4279dd1%3A0x5f5db61bcd3099b6!2zMjM25paw5YyX5biC5Zyf5Z-O5Y2A6Z2S6Zuy6LevMjUy6Jmf!5e0!3m2!1szh-TW!2stw!4v1639121121968!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/hnHWiE36Vofnu77p7',
   phone: '02-2263-5666',
-  fbLink: 'https://www.facebook.com/%E4%BF%A1%E7%BE%A9casa-110034637544471',
-  fbMessage: 'https://m.me/110034637544471',
+  fbLink: 'https://www.facebook.com/',
+  fbMessage: 'https://m.me/',
   caseName: '悅峰 i Home',
   indigatorLength: 10,
 

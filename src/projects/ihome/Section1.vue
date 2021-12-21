@@ -24,7 +24,7 @@
   overflow: hidden;
   position: relative;
   background:#f8dee1;
-  z-index: 2;
+  z-index: 2; 
 }
 .imgbg{
   position: absolute;
