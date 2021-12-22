@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="section2">
-		<img src="./all/light.png" alt="" data-aos="fade" data-aos-duration="1500" data-aos-delay="600" class="light">
+    <div class="section4">
+<!--     <img src="./s2/hr.png" alt="" class="hr absolute">  -->
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -17,17 +17,14 @@
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200" >買房不怕，姮興力挺你</div>
-      <div class="subtitle" data-aos="fade-down" data-aos-delay="300" >630萬起,有天有地很自在</div>
+      <div class="title" data-aos="fade-down" data-aos-delay="200" ><span>i Modern</span>當代藝築 唯美相寓</div>
       <div class="line" data-aos="fade" data-aos-delay="200" ></div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">
-      辛苦血汗錢，拿去繳房租？「光禾墅」超低購屋門檻本金利息輕鬆還，力挺小資一次夠足，享受時代趨勢光電宅，終身免換房！
-      </div>
-     <!-- <ul class="desc">
-        <li data-aos="fade-up" data-aos-delay="300">日月光廣場＋家樂福+延吉+學府商圈享樂全能購足</li>
-        <li data-aos="fade-up" data-aos-delay="400">清水國小＋中正國中，書香校園承載孩子金色未來</li>
-        <li data-aos="fade-up" data-aos-delay="500">土城體育場 + 運動中心＋大清運動公園運森度呼吸</li>
-      </ul>  -->
+      <div class="subtitle" data-aos="fade-down" data-aos-delay="300" >文創氣質相乘土城心驛站</div>
+      <ul class="desc">
+        <li data-aos="fade-up" data-aos-delay="300">全棟冠軍磁磚深淺色相間設計美學框架</li>
+        <li data-aos="fade-up" data-aos-delay="400">非對稱量體空中園景自然連線氧森建築</li>
+        <li data-aos="fade-up" data-aos-delay="500">黃金級綠建築防護工學綠能健康更安全</li>
+      </ul>
       </div>
       <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
@@ -38,27 +35,19 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section2 {
+.section4 {
   width: size(1920);
   height: size(900);
   position: relative;
   overflow: hidden;
-  z-index: 3;
+  background: #fff;
 }
-  .light{
-  position: absolute;
-  top:size(630);
-  left:size(60);
-  width:size(280);
-  transform: translate(40%,-20%) rotate(-30deg) scale(0.4);
-
-  }
 
 .txt{
   position: absolute;
   width: size(610);
-  left: size(210);
-  top: size(185);
+  right:size(210);
+  top: size(233);
   font-stretch: normal;
   font-style: normal;
   text-align: left;
@@ -70,44 +59,33 @@
 
 .title{
   position: relative;
-  font-size:2.5em;
-  font-weight: 500;
-  line-height:size(100);
+  font-size:2.72em;
+  font-weight: 700;
+  line-height: 1.2;
   letter-spacing: normal;
-  color: #fff;
-  &::before{content:"";position: absolute;z-index:-1;top: 0;right: 0;
-  height: 100%;width: 150%;
-  background: url("./all/r_bg.png");
-  background-size: 100% 100%;
+  color: #000;
+  span{
+  color: #d03636;
+  font-size:1.43em;
+  font-family: Georgia;
+  margin: 0 .5em 0 0;
+  display: block;
   }
 }
 
 .subtitle {
   position: relative;
   font-size: size(30);
-  margin:3em auto 0.8em;
+  margin:1.5em auto 0.8em;
   letter-spacing:0.04em;
-  color: #e38023;
+  color: #d03636;
 }
 .line {
   position: relative;
-  background-color: #FFF;
+  background-color: #888;
   width:100%;
-  height: size(3);
+  height: size(2);
   margin: 2em 0 0.5em 0;
-    z-index: -1;
-  &::before{
-    content:"";
-    display: block;
-    width: 100%;
-    position: absolute;
-    top: 0;left: 0;
-    padding:10.1% 0;
-    transform: translateY(-75%);
-    background:url('./all/title.png') no-repeat;  
-    background-size:100% auto;  
-    z-index: -1;
-  }
 }
 .desc {
   margin:1em auto;
@@ -127,7 +105,7 @@
   width: size(840);
   height: size(560);
   top: size(185);
-  right: size(210);
+  left: size(210);
   object-fit: cover;
   z-index: 3;
 }
@@ -179,15 +157,16 @@
     line-height: 1;
     letter-spacing: 0.89px;
     text-align: left;
-    color: #fff;
+    color: #ffffff;
    text-shadow:0 0.1em 0.3em #000;
   }
+
 }
 
 .pagination {
   width: auto;
   bottom: size(148);
-  right:calc(50% + 6.95vw);
+  left:calc(50% + 6.95vw);
   justify-content: center;
 }
 
@@ -212,7 +191,7 @@
       height: 60%;
       display: block;
     border-radius: 50%;
-    border: 2.1px solid  #e38023;
+    border: 2.1px solid  #d03636;
       opacity: 1;
       position: absolute;
       top: 20%;
@@ -261,10 +240,11 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section2 {
+  .section4 {
     width: 100vw;
     height: auto;
   }
+
   .txt{
   position: relative;
   width: sizem(310);
@@ -290,7 +270,6 @@ margin:1.5em auto 7em;
     font-size: sizem(15);
     line-height: 1.73;
   }
-
   /* Swipe */
   .swipe {
     position: relative;
@@ -324,7 +303,7 @@ import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section2',
+  name: 'section4',
 
   mixins: [slider],
   props: ['viewIndex'],
@@ -337,24 +316,12 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s2/1.jpg'),
-          name: '3D透視僅供參考',
+          img: require('./s4/1.jpg'),
+          name: '3D外觀參考示意',
         },
         {
-          img: require('./s2/2.jpg'),
-          name: '室內創意表現僅供參考',
-        },
-        {
-          img: require('./s2/3.jpg'),
-          name: '室內創意表現僅供參考',
-        },
-        {
-          img: require('./s2/4.jpg'),
-          name: '室內創意表現僅供參考',
-        },
-        {
-          img: require('./s2/5.jpg'),
-          name: '室內創意表現僅供參考',
+          img: require('./s4/2.jpg'),
+          name: '3D外觀參考示意',
         },
       ],
     }

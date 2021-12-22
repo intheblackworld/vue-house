@@ -1,18 +1,7 @@
 <template>
   <div>
     <div class="section6">
-<!--     <img src="./s2/hr.png" alt="" class="hr absolute">  -->
-      <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200" ><span>i Enjoy</span>精質名品  美力玩家</div>
-      <div class="line" data-aos="fade" data-aos-delay="200" ></div>
-      <div class="subtitle" data-aos="fade-down" data-aos-delay="300" >品味昇華觸動生活全心體會</div>
-      <ul class="desc">
-        <li data-aos="fade-up" data-aos-delay="300">DORIS廚具＋INAX衛浴，高質感機能極致玩美</li>
-        <li data-aos="fade-up" data-aos-delay="400">Studor吸氣閥＋氣密窗，靜音淨氣健康防疫加倍</li>
-        <li data-aos="fade-up" data-aos-delay="500">冠軍磁磚＋德國進口木地板，舒適配備全新升級</li>
-        <li data-aos="fade-up" data-aos-delay="600">水保固10年＋黃金級綠建築，創新建築永續化</li>
-      </ul>
-      </div>
+<img src="./all/light.png" alt="" data-aos="fade" data-aos-duration="1500" data-aos-delay="600" class="light">
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -21,13 +10,24 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-     <!--     <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+        <!--  <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
             <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
             <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
           </div>  -->
         </div>
       </div>
-  <!--    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
+      <div class="txt">
+      <div class="title" data-aos="fade-down" data-aos-delay="200" >開車15分鐘，房價省一半</div>
+     <!--  <div class="line" data-aos="fade" data-aos-delay="200" ></div>
+      <div class="subtitle" data-aos="fade-down" data-aos-delay="300" >文創氣質相乘土城心驛站</div>  -->
+      <ul class="desc">
+        <li data-aos="fade-up" data-aos-delay="300">南北快捷：4~5分鐘上北二高-斗六交流道，往返南北快捷。</li>
+        <li data-aos="fade-up" data-aos-delay="400">輕鬆通勤：10~15分鐘斗六上班輕鬆行。</li>
+        <li data-aos="fade-up" data-aos-delay="500">完整學區：鄰近九芎國小、林內國中、義峰高中完整學區。</li>
+        <li data-aos="fade-up" data-aos-delay="500">雙城機能：5~15分鐘樂享林內、斗六雙商圈完善機能。</li>
+      </ul>
+      </div>
+     <!--   <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div> -->
     </div>
@@ -41,15 +41,21 @@
   height: size(900);
   position: relative;
   overflow: hidden;
-//  z-index: 3;
-  background: #FFF;
 }
 
+  .light{
+  position: absolute;
+  top:size(630);
+  left:size(60);
+  width:size(280);
+  transform: translate(40%,-20%) rotate(-30deg) scale(0.4);
+
+  }
 .txt{
   position: absolute;
   width: size(610);
-  left: size(210);
-  top: size(233);
+  right:size(200);
+  top: size(185);
   font-stretch: normal;
   font-style: normal;
   text-align: left;
@@ -61,17 +67,15 @@
 
 .title{
   position: relative;
-  font-size:2.72em;
-  font-weight: 700;
-  line-height: 1.2;
+  font-size:2.5em;
+  font-weight: 500;
+  line-height:size(100);
   letter-spacing: normal;
-  color: #000;
-  span{
-  color: #d03636;
-  font-size:1.43em;
-  font-family: Georgia;
-  margin: 0 .5em 0 0;
-  display: block;
+  color: #fff;
+  &::before{content:"";position: absolute;z-index:-1;top: 0;left:-3%;
+  height: 100%;width: 150%;
+  background: url("./all/r_bg.png");
+  background-size: 100% 100%;
   }
 }
 
@@ -107,7 +111,7 @@
   width: size(840);
   height: size(560);
   top: size(185);
-  right: size(210);
+  left: size(210);
   object-fit: cover;
   z-index: 3;
 }
@@ -159,15 +163,16 @@
     line-height: 1;
     letter-spacing: 0.89px;
     text-align: left;
-    color: #fff;
+    color: #ffffff;
    text-shadow:0 0.1em 0.3em #000;
   }
+
 }
 
 .pagination {
   width: auto;
   bottom: size(148);
-  right:calc(50% + 6.95vw);
+  left:calc(50% + 6.95vw);
   justify-content: center;
 }
 
@@ -245,17 +250,17 @@
     width: 100vw;
     height: auto;
   }
+
   .txt{
   position: relative;
   width: sizem(310);
-margin:1.5em auto 1em;
+margin:1.5em auto 7em;
   left:0;
   top:0;
   font-size: sizem(15);
   }
 .title{
     font-size: sizem(30);
-  margin:2.45em auto 1em;
 }
   .line {
     background-color: #888;
@@ -271,16 +276,14 @@ margin:1.5em auto 1em;
     font-size: sizem(15);
     line-height: 1.73;
   }
-
   /* Swipe */
   .swipe {
     position: relative;
-    width: 90%;
-    height: sizem(200);
+    width: 100vw;
+    height: sizem(250);
     min-height: auto;
     top:0;
     left:0;
-    margin:auto auto 20vw auto;
   }
 
   .swipe-item {
@@ -319,8 +322,8 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s6/logoall.png'),
-          name: '',
+          img: require('./s6/1.png'),
+          name: '3D外觀參考示意',
         },
       ],
     }

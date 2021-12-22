@@ -419,13 +419,14 @@ export default {
    // padding-bottom: 500px;
   }
   .order-title {
+  position: relative;
    // font-family: $family1;
-    width: auto;
-    padding-top: 20px;
-    padding-bottom: 1vw;
+  width: size(1500);
+    padding-top:0;
+    padding-bottom:0;
     font-weight:700;
-    line-height: 1.3;
-    font-size: size(50);
+  line-height:size(100);
+  font-size: size(49);
     letter-spacing: size(10);
     text-indent: size(10);
     text-align: center;
@@ -433,8 +434,12 @@ export default {
     margin: 0 auto;
     margin-bottom: size(20);
     display: inline-block;
-    border-bottom: 3px solid #cc2617;
- //   font-family: "Noto Serif TC", serif;
+    z-index: 3;
+  &::before{content:"";position: absolute;z-index:-1;top: 0;left: 0;
+  height: 100%;width: 100%;
+  background: url("~@/projects/ghs/all/r_bg.png");
+  background-size: 100% 100%;
+  }
   }
   .order-title-img {
     width: 30vw;

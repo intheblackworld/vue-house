@@ -75,7 +75,7 @@ export default {
 .navigation {
   background: $nav_bg;
   // background-image: $nav_bg;
-  background-size: 100%;
+  background-size: 100% 100%;
   height: $nav_pc_height;
   z-index:4;
   position: fixed;

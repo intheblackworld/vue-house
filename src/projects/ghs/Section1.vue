@@ -1,14 +1,17 @@
 <template>
   <div class="section1">
     <div>
-      <img src="./s1/1.jpg" alt="" class="t0">
+ 	<!-- <img src="./s1/1.jpg" alt="" class="t0"> -->
+      <img src="./s1/bg.jpg" alt="" class="bg">
+
    	<!--   <img src="./s1/bg.jpg" alt="" class="bg">
 	<img src="./s1/pc.jpg" alt="" class="t0">
 		<img src="./s1/imgbg.png" alt="" data-aos="fade" data-aos-duration="2000" data-aos-delay="0" class="imgbg">
 		<img src="./s1/img.png" alt="" data-aos="fade" data-aos-duration="800" data-aos-delay="700" class="img">  -->
 <div class="txt">
+		<img src="./all/light.png" alt="" data-aos="fade" data-aos-duration="1500" data-aos-delay="600" class="light">
 		<img src="./s1/logo.png" alt="" data-aos="fade" data-aos-duration="1500" data-aos-delay="200" class="logo">
-		<img src="./s1/t.png" alt="" data-aos="fade" data-aos-duration="1500" data-aos-delay="200" class="t">
+		<img src="./s1/t.png" alt="" data-aos="fade" data-aos-duration="1500" data-aos-delay="300" class="t">
     </div>
     </div>
   </div>
@@ -48,14 +51,24 @@
   color: #000;
   letter-spacing: 0.1em;
 .logo{
+  position: relative;
   width:size(387);
   transform: translateY(-10%)scale(1.5);
   margin: auto auto 1.15em auto;
   }
 .t{
+  position: relative;
   width:size(437);
   transform: translateY(-10%)scale(1.5);
   margin: auto auto 1.3em auto;
+  }
+  .light{
+  position: absolute;
+  top:size(35);
+  left:size(-289);
+  width:size(415);
+  transform: translate(40%,-20%) rotate(-30deg) scale(0.4);
+
   }
   /*
   .title{font-size:2.1em;
