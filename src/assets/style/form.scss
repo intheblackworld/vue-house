@@ -87,7 +87,7 @@
   font-size: 20px !important;
   font-weight: bold !important;
   letter-spacing: 10px;
-  text-align: justify;
+  text-align: center;
   background-position: center !important;
   background-color: $order_submit_bg;
   background-image: $order_submit_bg;
@@ -188,7 +188,7 @@
   .form-submit {
     width: 100% !important;
     font-size: 24px !important;
-    margin: 10px auto 20px auto !important;
+    margin: 10px auto 0px auto !important;
   }
 
   .el-date-editor.el-input {

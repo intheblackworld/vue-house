@@ -1,6 +1,5 @@
 <template>
   <div class="home no-padding-top">
-    <div class="bg-img">
       <Loading :loading="load" />
       <!-- <SideNavigation v-if="isMobile" />
       <Navigation v-if="!isMobile" /> -->
@@ -45,7 +44,6 @@
        <!-- <ContactSection /> -->
       <!-- </vue-lazy-component> -->
     <Order />
-    </div>
 <!--    <MobileNav /> -->
   </div>
 </template>
@@ -62,7 +60,7 @@
 }
 #contact {
   position: relative;
-  z-index: 3;
+ // z-index: 3;
 }
 </style>
 

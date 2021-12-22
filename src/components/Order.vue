@@ -4,11 +4,11 @@
         <div class="form">
           <div class="group">
             <div class="row">
-              <label>姓名</label>
+              <label>姓名<b>*</b></label>
               <el-input v-model="form.name" placeholder></el-input>
             </div>
             <div class="row">
-              <label>手機</label>
+              <label>手機<b>*</b></label>
               <el-input v-model="form.phone" placeholder></el-input>
             </div>
             <div class="row">
@@ -251,7 +251,7 @@ export default {
 
 <style lang="scss">
 .el-input {
-  border-left: 1px solid #eee !important;
+  border-left: 1px solid #0001 !important;
 }
 </style>
 
@@ -337,7 +337,7 @@ export default {
 
   .order {
     position: relative;
-    width: 920px;
+   // width: 920px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -414,6 +414,7 @@ export default {
       padding-left: 15px;
       white-space: nowrap;
       line-height: 1.2;
+      b{color: #C00;}
     }
   }
 
@@ -438,7 +439,7 @@ export default {
   }
 
   .order {
-    width: 920px;
+ //   width: 920px;
     margin: 0 auto;
   }
 }
@@ -455,7 +456,7 @@ export default {
     padding-top: 0;
     margin: 0;
     position: relative;
-    z-index: 2;
+  //  z-index: 2;
 
     > img {
       display: block;
@@ -485,7 +486,8 @@ export default {
       padding-bottom: 0;
     }
     .order {
-      width: 85% !important;
+      width:100% !important;
+      min-width:304px !important;
       margin: 0 auto;
       padding: 0;
     }
@@ -515,7 +517,7 @@ export default {
         margin-top: 20px;
       }
       label {
-        width: 40% !important;
+        width: 6em !important;
         text-align: left;
       }
     }
