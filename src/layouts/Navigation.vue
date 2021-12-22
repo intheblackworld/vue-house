@@ -3,7 +3,7 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
-          <img class="logo" src="@/projects/ihome/s1/logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" />
+          <img class="logo" src="@/projects/ghs/s1/logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" />
           <div class="menu" @click="toggleSidebar" v-show="!isOpen">
             <font-awesome-icon icon="bars" />
           </div>
@@ -67,58 +67,6 @@ export default {
   },
 }
 </script>
-<style lang="scss">
-/*
-@import '../assets/style/function.scss';
-.navigation {
-  .title {
-    font-size: size(19) !important;
-    width: size(90);
-    height: size(28);
-    font-size: size(21);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: size(-1.05);
-    text-align: center;
-    border-bottom: solid 1px #ffffff;
-    color: #ffffff;
-    margin-top: 15px;
-
-    z-index: 3;
-      transition: all 0.5s;
-    &:hover,
-    &.active {
-      border-bottom: size(3.5) solid #eee93a;
-    }
-
-    &.btn {
-      font-size: size(20.9);
-      font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.2;
-      letter-spacing: size(-1.05);
-      color: #ffffff;
-      width: size(120);
-      height: size(38);
-      line-height: size(38);
-      margin-top: 5px;
-      background-color: #0a5b6a;
-      border:1px solid #ff99;
-      border-radius: 20px / 20px;
-  
-      transition: all 0.5s;
-    &:hover,
-    &.active {
-      background-color: #eee93a;
-      color: #000000;
-    }
-    }
-  }
-}*/
-</style>
 <style lang="scss" scoped>
 @import '../assets/style/variableColor.scss';
 @import '../assets/style/variableDefault.scss';
@@ -127,7 +75,7 @@ export default {
 .navigation {
   background: $nav_bg;
   // background-image: $nav_bg;
-  background-size: cover;
+  background-size: 100%;
   height: $nav_pc_height;
   z-index:4;
   position: fixed;
