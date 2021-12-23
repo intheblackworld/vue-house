@@ -424,8 +424,8 @@ export default {
   width: size(1500);
     padding-top:0;
     padding-bottom:0;
-    font-weight:700;
-  line-height:size(100);
+    font-weight:500;
+  line-height:2.222;
   font-size: size(49);
     letter-spacing: size(10);
     text-indent: size(10);
@@ -616,6 +616,7 @@ export default {
       display: block;
     }
     .order-title {
+      width: 100%;
       padding-top: 10px;
       padding-bottom: 5px;
       font-size: calc(100vw * 30 / 375);
@@ -627,9 +628,9 @@ export default {
     .order-subtitle {
       // display: none;
       font-size: 14px;
-      max-width: 80vw;
+    //  max-width: 80vw;
       margin: 0 auto;
-      margin-bottom: 10vw;
+      margin-bottom: 0;
       line-height: 1.5;
     }
     .order-top {

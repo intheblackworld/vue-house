@@ -2,6 +2,7 @@
   <div>
     <div class="section6">
 <img src="./all/light.png" alt="" data-aos="fade" data-aos-duration="1500" data-aos-delay="600" class="light">
+      <div class="title" data-aos="fade-down" data-aos-delay="200" v-if="isMobile"  >開車15分鐘，房價省一半</div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -17,7 +18,7 @@
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200" >開車15分鐘，房價省一半</div>
+      <div class="title" data-aos="fade-down" data-aos-delay="200" v-if="isPC">開車15分鐘，房價省一半</div>
      <!--  <div class="line" data-aos="fade" data-aos-delay="200" ></div>
       <div class="subtitle" data-aos="fade-down" data-aos-delay="300" >文創氣質相乘土城心驛站</div>  -->
       <ul class="desc">
@@ -46,8 +47,8 @@
   .light{
   position: absolute;
   top:size(630);
-  left:size(60);
-  width:size(280);
+  right:size(-20);
+  width:size(420);
   transform: translate(40%,-20%) rotate(-30deg) scale(0.4);
 
   }
@@ -69,9 +70,10 @@
   position: relative;
   font-size:2.5em;
   font-weight: 500;
-  line-height:size(100);
+  line-height:2.22;
   letter-spacing: normal;
   color: #fff;
+  z-index: 3;
   &::before{content:"";position: absolute;z-index:-1;top: 0;left:-3%;
   height: 100%;width: 150%;
   background: url("./all/r_bg.png");
@@ -250,31 +252,41 @@
     width: 100vw;
     height: auto;
   }
+  .light{
+  top:auto;
+bottom: 0;
+  left:sizem(190);
+  width:sizem(200);
+
+  }
 
   .txt{
   position: relative;
   width: sizem(310);
-margin:1.5em auto 7em;
+margin:1.5em auto 3em;
   left:0;
   top:0;
   font-size: sizem(15);
   }
 .title{
     font-size: sizem(30);
+  &::before{width: 100vw;
+  left: calc(50% - 50vw);
+  }
 }
   .line {
-    background-color: #888;
     width: sizem(310);
     height: sizem(2);
+  margin: 1.1em auto 1em auto;
   }
   .subtitle {
-    font-size: sizem(18);}
+    font-size: sizem(18);
+  margin:1em auto 0em;
+  }
   .desc {
-    width: sizem(310);
-    top: sizem(548);
-    right: sizem(32);
-    font-size: sizem(15);
-    line-height: 1.73;
+   //line-height: 1.73;
+  margin:0em auto;
+  font-size: sizem(15);
   }
   /* Swipe */
   .swipe {

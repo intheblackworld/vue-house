@@ -22,7 +22,7 @@
       </div>
       <div class="subtitle" data-aos="fade-down" data-aos-delay="300">有太陽就有收益，輕鬆月賺3000元</div>
       <div class="line" data-aos="fade" data-aos-delay="200" ></div>
-      <div class="desc">
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">
         屋頂架設太陽能光電板，可隔熱、遮雨、省電，又可創能售電予台電收益，每月獲利數千元，讓您輕鬆補貼房貸輕鬆繳！ 
       </div>
     </div>
@@ -39,9 +39,9 @@
 }
   .light{
   position: absolute;
-  top:size(630);
-  left:size(60);
-  width:size(280);
+  bottom:size(45);
+  right:size(-80);
+  width:size(350);
   transform: translate(40%,-20%) rotate(-30deg) scale(0.4);
 
   }
@@ -56,7 +56,7 @@
   text-align: center;
   z-index: 3;
   font-weight: 500;
-  line-height:size(100);
+  line-height:2.22;
   letter-spacing: normal;
   color: #fff;
   &::before{content:"";position: absolute;z-index:-1;top: 0;left: 0;
@@ -265,19 +265,17 @@
     min-height: auto;
     max-height: initial;
   }
-/* 
-  .hr {
-    width: auto;
-    height: sizem(10);
-    top: sizem(-10);
-    left: 0;
-    opacity: 1;
+  .light{
+  top:auto;
+bottom: 0;
+  left:sizem(190);
+  width:sizem(200);
+
   }
-  */
   .title{
-    width:sizem(310);
+    width:100%;
   font-size: sizem(30);
-  //margin: 1em auto;
+    margin:0 auto 0;
   span{
     display: block;
   }
@@ -286,16 +284,17 @@
   .subtitle {
     width:sizem(310);
     font-size: sizem(18);
-  margin:1.5em auto 1.1em;
+  margin:1.5em auto 0;
   }
   .line {
     width: sizem(310);
     height: sizem(2);
+  margin: 1.1em auto 1em auto;
   }
   .desc {
     width: sizem(310);
     font-size: sizem(15);
-  //margin:1em auto 3em auto;
+    margin:0 auto 3em auto;
   li{width:calc(100% - 1.5em);margin: 0.3em 0 0.3em 1.5em;}
   }
 
@@ -303,7 +302,7 @@
   .swipe {
     position: relative;
     width: 100vw;
-    height: sizem(260);
+    height: sizem(200);
     min-height: auto;
     top: sizem(0);
     left: sizem(0);

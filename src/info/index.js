@@ -1,18 +1,18 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '接待會館：新北市土城區青雲路252號',
+  address: '接待中心：雲林縣斗六市石榴路371號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.596504345868!2d121.45709399350989!3d24.979839233554234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346802c5a4279dd1%3A0x5f5db61bcd3099b6!2zMjM25paw5YyX5biC5Zyf5Z-O5Y2A6Z2S6Zuy6LevMjUy6Jmf!5e0!3m2!1szh-TW!2stw!4v1639121121968!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/hnHWiE36Vofnu77p7',
-  phone: '02-2263-5666',
-  fbLink: 'https://www.facebook.com/',
-  fbMessage: 'https://m.me/',
-  caseName: '悅峰 i Home',
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14607.979864091509!2d120.59399398890356!3d23.747558922478717!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1a556aef3221295d!2zMjPCsDQ0JzUxLjAiTiAxMjDCsDM2JzA5LjIiRQ!5e0!3m2!1szh-TW!2stw!4v1640236354859!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/U8cVutaF9AULKETG8',
+  phone: '05-557-0606',
+  fbLink: 'https://www.facebook.com/445149012356856',
+  fbMessage: 'https://m.me/445149012356856',
+  caseName: '姮興光禾墅',
   indigatorLength: 10,
 
   houseInfos: [
-    ['投資興建', '悅峰建設股份有限公司',],
-    ['建築設計', '吳文修建築師事務所',],
+    ['投資興建', '',],
+    ['建築設計', '',],
   ],
 
   gtmCode: ['MW7GBQQ'], // 可放置多個

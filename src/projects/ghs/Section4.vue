@@ -1,7 +1,8 @@
 <template>
   <div>
     <div class="section4">
-      <img src="./all/light.png" alt="" data-aos="fade" data-aos-duration="1500" data-aos-delay="600" class="light">
+      <div class="flip"  v-if="!isMobile"><img src="./all/light.png" alt="" data-aos="fade" data-aos-duration="1500" data-aos-delay="600" class="light"></div>
+      <img src="./all/light.png" v-if="isMobile" alt="" data-aos="fade" data-aos-duration="1500" data-aos-delay="600" class="light">
       <div class="title" data-aos="fade-down" data-aos-delay="200" >熱浪不怕，隔熱又省電</div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -22,7 +23,7 @@
       </div>
       <div class="subtitle" data-aos="fade-down" data-aos-delay="300">超隔熱節能玻璃，空調電費省很大</div>
       <div class="line" data-aos="fade" data-aos-delay="200" ></div>
-      <div class="desc">姮興開發走在業界前端，以價格親民打造全球最夯的節能好宅，一系列綠建築配備，讓你在家享受永續節能的安全居家生活！
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">姮興開發走在業界前端，以價格親民打造全球最夯的節能好宅，一系列綠建築配備，讓你在家享受永續節能的安全居家生活！
       </div>
     </div>
   </div>
@@ -36,11 +37,12 @@
   position: relative;
    overflow: hidden;
 }
+.flip{transform: scaleX(-1);}
   .light{
   position: absolute;
-  top:size(630);
-  left:size(60);
-  width:size(280);
+  top:size(1050);
+  left:size(0);
+  width:size(500);
   transform: translate(40%,-20%) rotate(-30deg) scale(0.4);
 
   }
@@ -55,7 +57,7 @@
   text-align: center;
   z-index: 3;
   font-weight: 500;
-  line-height:size(100);
+  line-height:2.22;
   letter-spacing: normal;
   color: #fff;
   &::before{content:"";position: absolute;z-index:-1;top: 0;left: 0;
@@ -263,19 +265,17 @@
     min-height: auto;
     max-height: initial;
   }
-/* 
-  .hr {
-    width: auto;
-    height: sizem(10);
-    top: sizem(-10);
-    left: 0;
-    opacity: 1;
+  .light{
+  top:auto;
+bottom: 0;
+  left:sizem(190);
+  width:sizem(200);
+
   }
-  */
   .title{
-    width:sizem(310);
+    width:100%;
   font-size: sizem(30);
-  //margin: 1em auto;
+    margin:0 auto 0;
   span{
     display: block;
   }
@@ -284,16 +284,17 @@
   .subtitle {
     width:sizem(310);
     font-size: sizem(18);
-  margin:1.5em auto 1.1em;
+  margin:1.5em auto 0;
   }
   .line {
     width: sizem(310);
     height: sizem(2);
+  margin: 1.1em auto 1em auto;
   }
   .desc {
     width: sizem(310);
     font-size: sizem(15);
-  //margin:1em auto 3em auto;
+    margin:0 auto 3em auto;
   li{width:calc(100% - 1.5em);margin: 0.3em 0 0.3em 1.5em;}
   }
 
@@ -301,7 +302,7 @@
   .swipe {
     position: relative;
     width: 100vw;
-    height: sizem(260);
+    height: sizem(210);
     min-height: auto;
     top: sizem(0);
     left: sizem(0);
