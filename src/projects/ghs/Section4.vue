@@ -472,11 +472,11 @@ export default {
       slideList: [
         {
           img: require('./s4/1.jpg'),
-          name: '空拍圖',
+          name: '',
         },
         {
           img: require('./s4/2.jpg'),
-          name: '捷運海山站',
+          name: '',
         },
       ],
     }

@@ -346,23 +346,23 @@ export default {
       slideList: [
         {
           img: require('./s5/1.jpg'),
-          name: '',
+          name: '恆星No.1',
         },
         {
           img: require('./s5/2.jpg'),
-          name: '',
+          name: '恆星No.2',
         },
         {
           img: require('./s5/3.jpg'),
-          name: '',
+          name: '恆星No.5',
         },
         {
           img: require('./s5/4.jpg'),
-          name: '',
+          name: '恆星No.6(住家)',
         },
         {
           img: require('./s5/5.jpg'),
-          name: '',
+          name: '恆星No.6(店面)',
         },
       ],
     }

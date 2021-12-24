@@ -472,15 +472,15 @@ export default {
       slideList: [
         {
           img: require('./s3/1.jpg'),
-          name: '空拍圖',
+          name: '3D透視圖僅供參',
         },
         {
           img: require('./s3/2.jpg'),
-          name: '捷運海山站',
+          name: '3D透視圖僅供參',
         },
         {
           img: require('./s3/3.jpg'),
-          name: '64快速道路',
+          name: '',
         },
       ],
     }

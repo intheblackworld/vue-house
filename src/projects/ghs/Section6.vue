@@ -335,7 +335,7 @@ export default {
       slideList: [
         {
           img: require('./s6/1.png'),
-          name: '3D外觀參考示意',
+          name: '',
         },
       ],
     }
