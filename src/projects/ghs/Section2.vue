@@ -22,7 +22,7 @@
       <div class="subtitle" data-aos="fade-down" data-aos-delay="300" >630萬起,有天有地很自在</div>
       <div class="line" data-aos="fade" data-aos-delay="200" ></div>
       <div class="desc" data-aos="fade-up" data-aos-delay="300">
-      辛苦血汗錢，拿去繳房租？「光禾墅」超低購屋門檻本金利息輕鬆還，力挺小資一次夠足，享受時代趨勢光電宅，終身免換房！
+      辛苦血汗錢，拿去繳房租？「光禾墅」超低購屋門檻本金利息輕鬆還，力挺小資一次購足，享受時代趨勢光電宅，終身免換房！
       </div>
      <!-- <ul class="desc">
         <li data-aos="fade-up" data-aos-delay="300">日月光廣場＋家樂福+延吉+學府商圈享樂全能購足</li>

@@ -22,7 +22,7 @@
       <div class="subtitle" data-aos="fade-down" data-aos-delay="300" ><img src="./s5/logo.png" alt="光禾墅"><br>百戶透天建設，真正深耕在地</div>
       <div class="line" data-aos="fade" data-aos-delay="200" ></div>
       <div class="desc" data-aos="fade-up" data-aos-delay="300">
-＜德安恆星1～6＞ 數百戶幸福家庭的暖心口碑，感謝知音相知相惜！姮興開發將持續打造您心中的夢想宅邸，靜邀收藏。
+＜德安恆星1～6＞ 數百戶幸福家庭的暖心口碑，感謝知音相知相惜！姮興開發將持續打造您心中的夢想宅邸，敬邀收藏。
       </div>
       </div>
       <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
