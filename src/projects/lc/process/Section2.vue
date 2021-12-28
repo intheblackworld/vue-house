@@ -936,7 +936,7 @@ export default {
       isDialog: false,
       dialogIndex: 0,
       tabIndex: 0,
-      slideList: [
+     /*  slideList: [
         [
           {
             img: require('../process/list/1/0.jpg'),
@@ -947,10 +947,24 @@ export default {
             isFinished: true,
           },
         ],
-      ],
+      ], */
       list: [
         //...Array(18).keys()].map((i) => ({
-        [
+        [ //立瑾way
+          {
+            img: require('../process/list/7/1.jpg'),
+            title: '2021/12',
+            subtitle: '基礎版鋼筋綁紮及混凝土灌漿',
+            isFinished: true,
+            imgs: [
+              require('../process/list/7/1.jpg'),
+              require('../process/list/7/2.jpg'),
+              require('../process/list/7/3.jpg'),
+              require('../process/list/7/4.jpg'),
+              require('../process/list/7/5.jpg'),
+              require('../process/list/7/6.jpg'),
+            ]
+          },
           {
             img: require('../process/list/5/1.jpg'),
             title: '2021/7',
@@ -1019,6 +1033,22 @@ export default {
               require('../process/list/1/7.jpg'),
               require('../process/list/1/8.jpg'),
             ],
+          },
+        ],
+        [ //立瑾綻
+          {
+            img: require('../process/list/6/1.jpg'),
+            title: '2021/12',
+            subtitle: '基礎版鋼筋綁紮及混凝土灌漿',
+            isFinished: true,
+            imgs: [
+              require('../process/list/6/1.jpg'),
+              require('../process/list/6/2.jpg'),
+              require('../process/list/6/3.jpg'),
+              require('../process/list/6/4.jpg'),
+              require('../process/list/6/5.jpg'),
+              require('../process/list/6/6.jpg'),
+            ]
           },
         ],
         /*{

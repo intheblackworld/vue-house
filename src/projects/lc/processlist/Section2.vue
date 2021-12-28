@@ -304,9 +304,9 @@ export default {
         },
         {
           img: require('../works/3/1.jpg'),
-          title: '2021 鶯歌鳳福段',
+          title: '2021 立瑾綻',
           subtitle: '公開銷售中',
-          isFinished: false,
+          isFinished: true,
         },
  /*       {
           img: require('../process/list/1/0.jpg'),
