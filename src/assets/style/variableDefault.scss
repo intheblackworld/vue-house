@@ -10,8 +10,9 @@ $logo_phone_width: 100px;
 /* contactInfo */
 $contact_logo_pc_width:calc(100vw * 422 / 1920);
 $contact_logo_tablet_width: calc(100vw * 422 / 1920);
-$contact_logo_mobile_width: calc(100vw * 314 / 375);
+$contact_logo_mobile_width: calc(100vw * 190 / 375);
 $contact_logo_pc_margin:3vw auto 3vw auto;
+$contact_logo_mobile_margin:15vw auto 15vw auto;
 
 // for calculate
 $nav_pc_height_number: 60;

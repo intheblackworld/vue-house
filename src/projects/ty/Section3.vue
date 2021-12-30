@@ -1,6 +1,7 @@
 <template>
   <div class="section3">
-    <img src="./s1/bg3.jpg" alt="檀悦s3bg" class="bg" uk-parallax="target: #section3;y:-800,1100;easing: 1">
+    <img src="./s1/bg3.jpg" alt="檀悦s3bg" class="bg" v-if="isPC" uk-parallax="target: #section3;y:-800,1100;easing: 0.8">
+    <img src="./s1/bg3-m.jpg" alt="檀悦s3bg" class="bg" v-if="isMobile" uk-parallax="target: #section3;y:-500,800;easing: 0.8">
     <div class="txt" uk-parallax="viewport:0.3;y:-200,0;blur:10,0;scale:3,1;opacity: 0,1">
     <div class="title1">中悦建設機構Ｘ璞園真誠代言</div>
     <img src="./s1/logo.png" alt="檀悦logo" class="logo">
@@ -59,38 +60,25 @@
 
 @media screen and (max-width: 767px) {
   .section3 {
-    width: 100%;
-    min-height: sizem(667);
-    max-height: sizem(812);
-    height: calc(100vh - 63px);
-  margin: 0 0 32vw;
+    min-height: sizem(604);
+    max-height: sizem(604);
+    height: sizem(604);
   }
-
-.logo {
-  @include img_l_m(200, 108,48);
-top:calc(50% + 100vw * (140 - 667 * .5) / 375);
-}
-.title1{
-  top: calc(50% + (110 - 333.5) * 100vw / 375);
-  right:sizem(85);
-  font-size:sizem(16);
-  line-height: 1.25;
-}
-.title2{
-  top: calc(50% + (190 - 333.5) * 100vw / 375);
-  right:sizem(50);
-  font-size:sizem(16);
-  line-height: 1.25;
-}
-.txt{
-  width: 100%;
-  font-size:sizem(15);
-  top: calc(50% + (585 - 333.5) * 100vw / 375);
-  letter-spacing: 0.2em;
-  span{width: 2em}
   
+.logo{width:sizem(160);}
+.txt{
+  @include img_c_m(375, 220);
+  font-size:sizem(15);
 
 }
+
+.txt2{
+  @include img_c_m(375, 150);
+  text-align: center;
+  font-size:sizem(24);
+  span{transform-origin:50% 0;}
+}
+
 
 }
 </style>

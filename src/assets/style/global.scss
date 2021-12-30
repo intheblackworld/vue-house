@@ -358,7 +358,7 @@ img[lazy="loaded"] {
     //background-image: url('~@/projects/tsi/s1/bg_m.jpg');
     // background-image: $order_bg_image_m;
     // background-repeat: no-repeat;
-    background-size:100%;
+  /* background-size:100%;
     background-attachment: fixed;
     background:none;
     // background-position: 0% 50%;
@@ -373,7 +373,7 @@ img[lazy="loaded"] {
       background: center 0 ;
       background-image: $bg_m;
       background-size: cover;
-  }
+  } */
 
     &.no-padding-top {
       padding-top: 0;

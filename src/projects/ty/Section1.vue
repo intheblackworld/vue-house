@@ -1,6 +1,6 @@
 <template>
   <div class="section1">
-   <!-- <img src="./s1/0.jpg" alt="bg" class="img0">  -->
+  <!-- <img src="./s1/1.jpg" alt="bg" class="img0">-->
     <div class="txt">
       <div class="title1" uk-parallax="viewport:0.5;blur:0,10;x:0,500;scale:1,3;opacity:1,0">流傳建築圈 &nbsp;0.3公分的堅持</div>
       <div class="title2" uk-parallax="viewport:0.5;blur:0,10;x:0,500;scale:1,3;opacity:1,0">這次不再是聽說⋯⋯</div>
@@ -20,14 +20,15 @@
   min-height: size(900);
   max-height: size(1080);
   position: relative;
-  z-index: 3;
   margin: 0;
   background: url("./s1/bg.jpg") center;
   background-size: cover;
 }
 
 .img0 {
-  @include img_c_pc(1920,-80);opacity:1;width: 100%;
+  @include img_c_pc(1920,0);opacity:0.5;width: 100%;
+  z-index: 10;
+  top: size-m(-130);
 }
 
 .title1{
@@ -74,37 +75,20 @@
 
 @media screen and (max-width: 767px) {
   .section1 {
-    width: 100%;
-    min-height: sizem(667);
-    max-height: sizem(812);
+    min-height: sizem(604);
+    max-height: sizem(750);
     height: calc(100vh - 63px);
-  margin: 0 0 32vw;
+  background-image: url("./s1/bg-m.jpg");
   }
-
-.logo {
-  @include img_l_m(200, 108,48);
-top:calc(50% + 100vw * (140 - 667 * .5) / 375);
-}
-.title1{
-  top: calc(50% + (110 - 333.5) * 100vw / 375);
-  right:sizem(85);
-  font-size:sizem(16);
-  line-height: 1.25;
-}
-.title2{
-  top: calc(50% + (190 - 333.5) * 100vw / 375);
-  right:sizem(50);
-  font-size:sizem(16);
-  line-height: 1.25;
-}
 .txt{
-  width: 100%;
-  font-size:sizem(15);
-  top: calc(50% + (585 - 333.5) * 100vw / 375);
-  letter-spacing: 0.2em;
-  span{width: 2em}
-  
-
+  @include img_l_m(375, 200,40);
+  top: calc(46% - 26vw);
+ //top: calc(50% + (390 - 540) * 100vw / 1920);
+  font-size:sizem(27);
+}
+.txt2{
+  @include img_r_m(375, 0,0);
+  font-size:sizem(59);
 }
 
 }

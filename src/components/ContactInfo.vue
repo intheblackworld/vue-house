@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="contact-info" id="contact-info" data-aos="fade" data-aos-delay="0">
-      <img v-if="!isMobile" class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
-      <img v-if="isMobile" class="logo" src="@/assets/img/contact-logo_m.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
-      <!-- <img
+      <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
+<!-- <img v-if="isMobile" class="logo" src="@/assets/img/contact-logo_m.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
+     <img
         v-if="isMobile"
         class="logo"
         src="@/assets/img/contact-logo_m.png"
@@ -300,7 +300,7 @@ export default {
 
     .logo {
       width: $contact_logo_mobile_width;
-      margin: 5% auto 10%;
+      margin: $contact_logo_mobile_margin;
     }
   }
 
