@@ -94,7 +94,7 @@ export default {
 .mobile-nav {
   display: flex;
   position: fixed;
-  top: 8em;
+  bottom: 1em;
   right: 0;
   z-index: 100;
   transition: all .5s;
@@ -116,6 +116,7 @@ export default {
     border-radius: 50%;
     margin: .5em;
     transition: all 0.3s;
+    box-shadow: 0 0.2em 0.5em #000;
     &:nth-child(1) {
       order:2;
     }
@@ -129,7 +130,7 @@ export default {
     display: none;
     }
     &:hover{
-      background: #C79F62;
+      background: #777;
     }
   }
 

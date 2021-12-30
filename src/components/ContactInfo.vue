@@ -125,7 +125,7 @@ export default {
   width: $contact_logo_pc_width;
   height: auto;
   // height:;
-  margin: 0 auto 0;
+  margin: $contact_logo_pc_margin;
 }
 .info {
   width: 880px;
