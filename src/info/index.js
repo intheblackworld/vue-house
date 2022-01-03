@@ -9,7 +9,7 @@ export default {
   fbMessage: 'https://m.me/',
   caseName: '檀悅',
   indigatorLength: 10,
-  caseId: 'ty',
+  caseId: 'tye',
 
   houseInfos: [
     ['投資興建', 'XXX'],
@@ -18,7 +18,7 @@ export default {
     ['接待中心', ' XXX'],
   ],
   gtmCode: ['52SFGQ9'], // 可放置多個
-  recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
+  recaptcha_site_key_v2: '6LfGUjEaAAAAANYvhZQx5imGm23pRt0V-rOvkpNC',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
   order: {
