@@ -6,7 +6,7 @@
           <img
             class="logo"
             src="@/assets/img/nav-logo.png"
-            alt
+             :alt="`${info.caseName}_nav-logo`"
              v-scroll-to="{ element: `#section1`, offset: offset }"
           />
           <div
@@ -23,7 +23,7 @@
             >
               <img
                 src="../assets/img/close.png"
-                alt=""
+                 :alt="`${info.caseName}_close`"
               >
             </div>
           </div>
@@ -55,12 +55,13 @@
 <script>
 import { isMobile, isTablet } from '@/utils'
 import navList from '@/info/navList'
-
+import info from '@/info'
 export default {
   name: 'navigation',
   components: {},
   data() {
     return {
+      info,
       isOpen: false,
       isMobile,
       isTablet,
@@ -91,26 +92,6 @@ export default {
   },
 }
 </script>
-<style lang="scss">
-// .navigation {
-//   .title {
-//     font-size: 19px !important;
-//     width: 140px;
-//     height: 40px;
-//     color: #fff;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     background-image: linear-gradient(to right, #d70032 0%, #eb5500 100%);
-//     border-radius: 20px / 20px;
-//     position: relative;
-//     z-index: 3;
-//     &:hover {
-//       background-image: linear-gradient(to left, #d70032 0%, #eb5500 100%);
-//     }
-//   }
-// }
-</style>
 <style lang="scss" scoped>
 @import '../assets/style/variableColor.scss';
 @import '../assets/style/variableDefault.scss';

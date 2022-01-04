@@ -79,7 +79,6 @@ import Loading from '@/components/Loading.vue'
 // import Indigator from '@/components/Indigator.vue'
 import UIkit from 'uikit';
 // import LeafFlow from '@/components/LeafFlow.vue'
-
 import Section1 from '@/projects/ty/Section1.vue'
 import Section2 from '@/projects/ty/Section2.vue'
 import Section3 from '@/projects/ty/Section3.vue'

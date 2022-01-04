@@ -7,14 +7,14 @@ export default {
   phone: '02-8502-1688',
   fbLink: 'https://www.facebook.com/zhongyuetanyue',
   fbMessage: 'https://m.me/zhongyuetanyue',
-  caseName: '檀悅',
+  caseName: '檀.悦',
   indigatorLength: 10,
   caseId: 'tye',
 
   houseInfos: [
-    ['投資興建', 'XXX'],
-    ['建築設計', 'XXX'],
-    ['接待中心', ' XXX'],
+    ['投資興建', '中森建設股份有限公司'],
+    ['戶數規劃', '106戶'],
+    ['基地面績', ' 1442坪'],
     ['企劃銷售', ' 樸新廣告'],
   ],
   gtmCode: ['52SFGQ9'], // 可放置多個

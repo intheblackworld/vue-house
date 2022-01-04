@@ -1,12 +1,12 @@
 <template>
   <div class="section3">
-    <img src="./s1/bg3.jpg" alt="檀悦s3bg" class="bg" v-if="isPC" uk-parallax="target: #section3;y:-800,1100;easing: 0.8">
-    <img src="./s1/bg3-m.jpg" alt="檀悦s3bg" class="bg" v-if="isMobile" uk-parallax="target: #section3;y:-500,800;easing: 0.8">
-    <div class="txt" uk-parallax="viewport:0.3;y:-200,0;blur:10,0;scale:3,1;opacity: 0,1">
+    <img src="./s1/bg3.jpg" :alt="`${info.caseName}_bg`" class="bg" v-if="isPC" uk-parallax="target: #section3;y:-800,1100;easing: 0.8">
+    <img src="./s1/bg3-m.jpg" :alt="`${info.caseName}_bg`" class="bg" v-if="isMobile" uk-parallax="target: #section3;y:-500,800;easing: 0.8">
+    <div class="txt" uk-parallax="viewport:0.1;y:-200,0;blur:10,0;scale:3,1;opacity: 0,1">
     <div class="title1">中悦建設機構Ｘ璞園真誠代言</div>
-    <img src="./s1/logo.png" alt="檀悦logo" class="logo">
+    <img src="./s1/logo.png" :alt="`${info.caseName}_logo`" class="logo">
     </div>
-    <div class="txt2" uk-parallax="viewport:0.3;blur:10,0;scale:3,1;opacity: 0,1"><span>定義你的成功，成就你的人生</span></div>
+    <div class="txt2" uk-parallax="viewport:0.2;blur:10,0;scale:3,1;opacity: 0,1"><span>定義你的成功，成就你的人生</span></div>
 </div>
 </template>
 
@@ -48,7 +48,7 @@
   color: #FFF;
   font-size:size(66);
   line-height: 1.04;
-  text-align: left;transition: all 1s;
+  text-align: left;//transition: all 1s;
   span{position: relative;display: block;
   transform:scaleX(0.9);
   transform-origin: 0 0;}
