@@ -14,8 +14,8 @@ export default {
   houseInfos: [
     ['投資興建', '中森建設股份有限公司'],
     ['戶數規劃', '106戶'],
-    ['基地面績', ' 1442坪'],
-    ['企劃銷售', ' 樸新廣告'],
+    ['基地面績', '1442坪'],
+    ['企劃銷售', '樸新廣告'],
   ],
   gtmCode: ['52SFGQ9'], // 可放置多個
   recaptcha_site_key_v2: '6LfGUjEaAAAAANYvhZQx5imGm23pRt0V-rOvkpNC',
