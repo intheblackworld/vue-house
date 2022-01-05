@@ -13,11 +13,12 @@ export default {
 
   houseInfos: [
     ['投資興建', '中森建設股份有限公司'],
-    ['戶數規劃', '106戶'],
+    ['戶數規劃', '104戶'],
     ['基地面績', '1442坪'],
+    ['建築規劃', '100. 200坪 30F/B3'],
     ['企劃銷售', '樸新廣告'],
   ],
-  gtmCode: ['52SFGQ9'], // 可放置多個
+  gtmCode: ['NSGQKR8'], // 可放置多個
   recaptcha_site_key_v2: '6LfGUjEaAAAAANYvhZQx5imGm23pRt0V-rOvkpNC',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',

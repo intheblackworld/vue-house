@@ -1,42 +1,19 @@
 <template>
-  <div class="section2">
-    <div class="txt">
-    <div class="title1">悦式精工<span v-if="isPC"> &nbsp;</span><br v-if="isMobile">悦式奢華</div>
-    <div class="title2">新莊副都心｜30層地標建築｜SRC百坪精工</div>
-    </div>
+  <div class="section4">
 </div>
 </template>
 
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section2{
+.section4{
   width: 100%;
-  height: size(957);
+  height: size(1080);
   position: relative;
   z-index: 3;
   margin: 0;
-  background: url("./s1/bg2.jpg") center;
+  background: url("./s1/bg4.jpg") center;
   background-size: cover;
-}
-.title1{
- transition: all 1s;
-  font-size:size(130);
-  margin: 0 0 1.1em;
-}
-.title2{
- transition: all 0.8s;
-}
-.txt{
-  @include img_c_pc(1800, 200);
-  font-size:size(80);
-  line-height: 1.6;
-  letter-spacing: 0;
-  color: #FFF;
-  transform:scaleX(0.9);
-  transform-origin: 50% 0;
-  text-align: center;
-  text-shadow:0 0 0.2em #000,0 0 0.5em #000,0 0 1em #000;
 }
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
@@ -44,9 +21,9 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section2 {
+  .section4 {
     height: sizem(490);
-  background-image: url("./s1/bg2-m.jpg");
+  background-image: url("./s1/bg4m.jpg");
 }
 .title1{
   font-size:sizem(53);
@@ -67,7 +44,7 @@ import { isPC, isMobile, isTablet } from '@/utils'
 import info from '@/info'
 import UIkit from 'uikit';
 export default {
-  name: 'section2',
+  name: 'section4',
 
   data() {
     return {

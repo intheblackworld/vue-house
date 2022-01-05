@@ -17,13 +17,13 @@
       <vue-lazy-component class="relative" id="section2" @init="init">
         <Section2 />
       </vue-lazy-component>
-      <vue-lazy-component class="relative" id="section2" @init="init">
+      <vue-lazy-component class="relative" id="section3" @init="init">
         <Section3 />
       </vue-lazy-component>
-      <!-- 
-      <vue-lazy-component class="section relative" id="section4" >
-        <Section4 :viewIndex="viewIndex" />
+      <vue-lazy-component class="relative" id="section4" @init="init">
+        <Section4 />
       </vue-lazy-component>
+      <!-- 
       <vue-lazy-component class="section" id="section5">
         <Section5 :viewIndex="viewIndex" />
       </vue-lazy-component>
@@ -82,7 +82,7 @@ import UIkit from 'uikit';
 import Section1 from '@/projects/ty/Section1.vue'
 import Section2 from '@/projects/ty/Section2.vue'
 import Section3 from '@/projects/ty/Section3.vue'
-// import Section4 from '@/projects/ty/Section4.vue'
+import Section4 from '@/projects/ty/Section4.vue'
 // import Section5 from '@/projects/ty/Section5.vue'
 // import Section6 from '@/projects/ty/Section6.vue'
 // import Section7 from '@/projects/ty/Section7.vue'
@@ -104,7 +104,7 @@ export default {
     Section1,
     Section2,
     Section3,
-    // Section4,
+    Section4,
     // Section5,
     // Section6,
     // Section7,

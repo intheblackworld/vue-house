@@ -2,10 +2,10 @@
   <div class="section1">
   <!-- <img src="./s1/1.jpg" alt="bg" class="img0">-->
     <div class="txt">
-      <div class="title1" uk-parallax="viewport:1;blur:0,10;x:0,500;scale:1,3;opacity:1,0">流傳建築圈 &nbsp;0.3公分的堅持</div>
-      <div class="title2" uk-parallax="viewport:1;blur:0,10;x:0,500;scale:1,3;opacity:1,0">這次不再是聽說⋯⋯</div>
+      <div class="title1">流傳建築圈 &nbsp;0.3公分的堅持</div>
+      <div class="title2">這次不再是聽說⋯⋯</div>
     </div>
-    <div class="txt2" uk-parallax="viewport:1;blur:0,10;x:0,200;opacity:1,0">
+    <div class="txt2">
       <span>DON’T<br>DREAM IT,<br>BE IT!</span>
     </div>
 </div>
@@ -32,14 +32,14 @@
 }
 
 .title1{
-  transform: translateX(150%)scaleX(3)scaleY(.5);filter: blur(6px);
-  opacity: 0;
-  transition: all 1s 0s;
+ // transform: translateX(150%)scaleX(3)scaleY(.5);filter: blur(6px);
+ // opacity: 0;
+ // transition: all 1s 0s;
 }
 .title2{
-  transform: translateX(150%)scaleX(3)scaleY(.5);filter: blur(6px);
-  opacity: 0;
-  transition: all 1s .2s;
+  // transform: translateX(150%)scaleX(3)scaleY(.5);filter: blur(6px);
+ // opacity: 0;
+  // transition: all 1s .2s;
 }
 .txt{
   @include img_l_pc(1000, 395,430);
@@ -61,8 +61,8 @@
   font-size:size(155);
   line-height: 1.04;
   text-align: right;
-  transform: translateX(100%);filter: blur(6px);
-  transition: all 1s .5s;
+ // transform: translateX(100%);filter: blur(6px);
+ // transition: all 1s .5s;
   span{
   transform:scaleX(0.9);
   transform-origin: 100% 0;
