@@ -13,7 +13,7 @@
 
 html,
 body {
-  background: $bg !important;
+ // background: $bg !important;
   overflow-x: hidden;
   padding-right: 0 !important;
   *::-webkit-scrollbar {
@@ -40,14 +40,8 @@ body {
 }
 
 .home {
-  background: $bg;
   padding-top: $nav_pc_height;
-  background-attachment: fixed;
-  background-size: auto;
-  background-position: center center;
-  background-repeat: repeat;
   overflow: hidden;//試底下多的那塊哪來的
-
   &.no-padding-top {
     padding-top: 0;
 
@@ -55,7 +49,19 @@ body {
       height: 100vh;
     }
   }
-  
+  &::before{
+    content: "";
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: $bg;
+    background-size: $bg-size;
+    overflow: hidden;//試底下多的那塊哪來的
+  }
 }
 
 .fullscreen {
@@ -250,12 +256,6 @@ img[lazy='loaded'] {
 
   .home {
     padding-top: $nav_tablet_height;
-    // background-color: $order_bg_color;
-    // background-image: $order_bg_image;
-    background-repeat: no-repeat;
-    background-size: 100vw auto;
-    background-attachment: fixed;
-    background-position: 0% 50%;
 
     &.no-padding-top {
       padding-top: 0;
@@ -344,13 +344,6 @@ img[lazy='loaded'] {
 
   .home {
     padding-top: $nav_phone_height;
-    background: $bg;
-    background-image: $order_bg_image_m;
-    // background-repeat: no-repeat;
-    // background-size: cover;
-    background-attachment: fixed;
-    background-position: 0% 50%;
-
     &.no-padding-top {
       padding-top: 0;
     }

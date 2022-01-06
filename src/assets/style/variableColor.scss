@@ -1,5 +1,6 @@
 /* html, body */
-$bg:#e5e7e6;
+$bg:url('~@/projects/nina/all/bg.jpg') repeat center;
+$bg-size:auto;
 
 /* font-family */
 /* 1主要字體  2次要字體  3表單字體 */
@@ -8,7 +9,7 @@ $family1: 'Noto Sans TC',sans-serif;
 $family3: 'Noto Sans TC',sans-serif; */
 
 /* navigation */
-$nav_bg:url('~@/projects/ghs/all/r_bg.png');// #f8dee100;
+$nav_bg:#93dc4033;// #f8dee100;
 $nav_link_color: #000;
 $nav_line_color: #c59d62;
 $nav_btn_color: #FFF;

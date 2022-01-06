@@ -41,7 +41,7 @@
     >
       <Section6 />
     </vue-lazy-component>
-<!--     <vue-lazy-component
+     <vue-lazy-component
       class="section"
       id="section7"
     >
@@ -59,7 +59,7 @@
     >
     <Section9 />
     </vue-lazy-component>
-    <vue-lazy-component
+<!--    <vue-lazy-component
       class="section relative"
       id="section10"
       style="z-index: 3;"
@@ -104,16 +104,16 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/ghs/Section1.vue'
-import Section2 from '@/projects/ghs/Section2.vue'
-import Section3 from '@/projects/ghs/Section3.vue'
-import Section4 from '@/projects/ghs/Section4.vue'
-import Section5 from '@/projects/ghs/Section5.vue'
-import Section6 from '@/projects/ghs/Section6.vue'
-/* import Section7 from '@/projects/ghs/Section7.vue'
-import Section8 from '@/projects/ghs/Section8.vue'
-import Section9 from '@/projects/ghs/Section9.vue'
-import Section10 from '@/projects/ghs/Section10.vue' */
+import Section1 from '@/projects/nina/Section1.vue'
+import Section2 from '@/projects/nina/Section2.vue'
+import Section3 from '@/projects/nina/Section3.vue'
+import Section4 from '@/projects/nina/Section4.vue'
+import Section5 from '@/projects/nina/Section5.vue'
+import Section6 from '@/projects/nina/Section6.vue'
+import Section7 from '@/projects/nina/Section7.vue'
+import Section8 from '@/projects/nina/Section8.vue'
+import Section9 from '@/projects/nina/Section9.vue'
+/* import Section10 from '@/projects/nina/Section10.vue' */
 
 export default {
   name: 'home',
@@ -131,10 +131,10 @@ export default {
     Section4,
     Section5,
     Section6,
-    /* Section7,
+    Section7,
     Section8,
     Section9,
-    Section10, */
+    /* Section10, */
     // Section11,
   },
 

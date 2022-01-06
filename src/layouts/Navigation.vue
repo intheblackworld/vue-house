@@ -3,7 +3,7 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
-          <img class="logo" src="@/projects/ghs/s1/logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" />
+     <!--     <img class="logo" src="@/projects/nina/s1/logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" />  -->
           <div class="menu" @click="toggleSidebar" v-show="!isOpen">
             <font-awesome-icon icon="bars" />
           </div>
@@ -73,9 +73,9 @@ export default {
 @import '../assets/style/function.scss';
 
 .navigation {
-  background: $nav_bg;
+ // background: $nav_bg;
   // background-image: $nav_bg;
-  background-size: 100% 100%;
+ // background-size: 100% 100%;
   height: $nav_pc_height;
   z-index:4;
   position: fixed;
@@ -83,6 +83,8 @@ export default {
   width: 100vw;
   display: flex !important;
   align-items: center;
+  background: $nav_bg;
+
   // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
   //@function&::after{content: "";height:100%;width: 150%;top: -100%;left: 0;z-index:9;position: absolute;box-shadow:0 size(0) size(72) size(72)  #005566;}
 }

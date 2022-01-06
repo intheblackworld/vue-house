@@ -437,7 +437,7 @@ export default {
     z-index: 3;
   &::before{content:"";position: absolute;z-index:-1;top: 0;left: 0;
   height: 100%;width: 100%;
-  background: url("~@/projects/ghs/all/r_bg.png");
+  background: url("~@/projects/nina/all/r_bg.png");
   background-size: 100% 100%;
   }
   }
