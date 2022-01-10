@@ -4,9 +4,9 @@ export default {
   googleSrc:
     'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7228.636743219547!2d121.1644956!3d25.0571962!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x428384c93ae59188!2zMjXCsDAzJzI1LjkiTiAxMjHCsDEwJzA3LjkiRQ!5e0!3m2!1szh-TW!2stw!4v1641534061186!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/LSSHwq82aCnRQKYV6',
-  phone: '05-557-0606',
-  fbLink: 'https://www.facebook.com/nina.yufong6',
-  fbMessage: 'https://m.me/nina.yufong6',
+  phone: '03-3855000',
+  fbLink: 'https://www.facebook.com/nina.yufong',
+  fbMessage: 'https://m.me/nina.yufong',
   caseName: '悅峰釀',
   indigatorLength: 10,
 

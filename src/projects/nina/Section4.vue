@@ -313,7 +313,7 @@ export default {
           name: '寶雅百貨',
         },
         {
-          img: require('./s4/4.jpg'),
+          img: require('./s4/5.jpg'),
           name: '全聯福利中心',
         },
       ],
