@@ -82,7 +82,7 @@
 .desc {
   position: relative;
   width: size(1500);
-  margin:1em auto 6em auto;
+  margin:1em auto 3em auto;
   font-size: size(18);
   font-weight: normal;
   font-stretch: normal;
@@ -100,9 +100,9 @@
 /* Swipe */
 .swipe {
   position: relative;
-  margin: auto;
+  margin: auto auto 5vw auto;
   width: size(1500);
-  height: size(844);
+  height: size(740);
   // left: size(210);
   object-fit: cover;z-index: 3;
 }
@@ -161,7 +161,7 @@
 
 .pagination {
   width: auto;
-  bottom: size(-50);
+  bottom: size(0);
   right: size(-10);
   justify-content: center;
  // display: none;
@@ -281,7 +281,7 @@
   .swipe {
     position: relative;
     width: 100vw;
-    height: sizem(260);
+    height: sizem(660);
     min-height: auto;
     top: sizem(0);
     left: sizem(0);

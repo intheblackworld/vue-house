@@ -2,6 +2,9 @@
   <div>
     <div class="section8">
       <div class="title" data-aos="fade-down" data-aos-delay="200" ><span>i Caring</span>極致體貼 滿心呵護</div>
+      <div class="subtitle" data-aos="fade-down" data-aos-delay="300">乘載全家理想的貼心家</div>
+      <div class="line" data-aos="fade" data-aos-delay="200" ></div>
+      <div class="desc">您想到的，沒想到的，安全的家，安心的住<br>多一份心的巧思，讓生活感受更暖心</div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -10,18 +13,12 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-          </div>
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
             <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
             <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
           </div>
         </div>
       </div>
-      <div class="subtitle" data-aos="fade-down" data-aos-delay="300">乘載全家理想的貼心家</div>
-      <div class="line" data-aos="fade" data-aos-delay="200" ></div>
-      <div class="desc">您想到的，沒想到的，安全的家，安心的住<br>多一份心的巧思，讓生活感受更暖心</div>
     </div>
   </div>
 </template>
@@ -32,10 +29,9 @@
   width:100%;
   height:auto;
   position: relative;
-  background: #fff;
+  //background: #fff;
    overflow: hidden;
 }
-.imgbg{position: fixed;bottom: 0;right: size(-520);width: size(805);z-index: 1;opacity: 0.6;}
 
 .title{
   position: relative;
@@ -81,7 +77,7 @@
 .desc {
   position: relative;
   width: size(1500);
-  margin:1em auto 6em auto;
+  margin:1em auto 3em auto;
   font-size: size(18);
   font-weight: normal;
   font-stretch: normal;
@@ -99,9 +95,9 @@
 /* Swipe */
 .swipe {
   position: relative;
-  margin: auto;
+  margin: auto auto 5vw auto;
   width: size(1500);
-  height: size(844);
+  height: size(740);
   // left: size(210);
   object-fit: cover;z-index: 3;
 }
@@ -160,7 +156,7 @@
 
 .pagination {
   width: auto;
-  bottom: size(-50);
+  bottom: size(0);
   right: size(-10);
   justify-content: center;
  // display: none;
@@ -280,7 +276,7 @@
   .swipe {
     position: relative;
     width: 100vw;
-    height: sizem(260);
+    height: sizem(660);
     min-height: auto;
     top: sizem(0);
     left: sizem(0);
@@ -447,26 +443,25 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
-      slideList: [
+       slideList:isMobile? [
         {
-          img: require('./s2/1.jpg'),
-          name: '空拍圖',
+          img:require('./s8/1m.png'),
+          name: '',
         },
         {
-          img: require('./s2/2.jpg'),
-          name: '捷運海山站',
+          img:require('./s8/2m.png'),
+          name: '',
         },
         {
-          img: require('./s2/3.jpg'),
-          name: '64快速道路',
+          img: require('./s8/3m.png'),
+          name: '',
         },
+      ]
+      :
+      [
         {
-          img: require('./s2/4.jpg'),
-          name: '環狀線',
-        },
-        {
-          img: require('./s2/5.jpg'),
-          name: '信義區',
+          img:require('./s8/1.png'),
+          name: '',
         },
       ],
     }

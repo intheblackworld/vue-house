@@ -19,6 +19,7 @@
   width: size(1920);
  /*  height: size(1358);
   max-height: size(1358); */
+  background: #FFF;
   position: relative;
    overflow: hidden;
 }
