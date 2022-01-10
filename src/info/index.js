@@ -7,9 +7,9 @@ export default {
   phone: '02-2586-7777',
   fbLink: 'https://www.facebook.com/100910829072500',
   fbMessage: 'https://m.me/100910829072500',
-  caseName: '勤家樸真',
+  caseName: '宜誠樂聚',
   indigatorLength: 10,
-  caseId: 'wlz',
+  caseId: 'yclj',
 
   houseInfos: [
     ['投資興建', '勤家建設股份有限公司'],

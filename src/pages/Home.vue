@@ -79,16 +79,16 @@ import Indigator from '@/components/Indigator.vue'
 import UIkit from 'uikit';
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/wlz/Section1.vue'
-// import Section2 from '@/projects/li/Section2.vue'
-// import Section3 from '@/projects/li/Section3.vue'
-// import Section4 from '@/projects/li/Section4.vue'
-// import Section5 from '@/projects/li/Section5.vue'
-// import Section6 from '@/projects/li/Section6.vue'
-// import Section7 from '@/projects/li/Section7.vue'
-// import Section8 from '@/projects/li/Section8.vue'
-// import Section9 from '@/projects/li/Section9.vue'
-// import Section10 from '@/projects/li/Section10.vue'
+import Section1 from '@/projects/yclj/Section1.vue'
+// import Section2 from '@/projects/yclj/Section2.vue'
+// import Section3 from '@/projects/yclj/Section3.vue'
+// import Section4 from '@/projects/yclj/Section4.vue'
+// import Section5 from '@/projects/yclj/Section5.vue'
+// import Section6 from '@/projects/yclj/Section6.vue'
+// import Section7 from '@/projects/yclj/Section7.vue'
+// import Section8 from '@/projects/yclj/Section8.vue'
+// import Section9 from '@/projects/yclj/Section9.vue'
+// import Section10 from '@/projects/yclj/Section10.vue'
 
 export default {
   name: 'home',
