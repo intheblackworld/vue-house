@@ -1,8 +1,8 @@
 <template>
   <div class="section1">
     <!-- <img src="./s1/0m.jpg" :alt="`${info.caseName}_bg`" class="t0">  -->
-      <img src="./s1/bg.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isMobile">
-    <div class="c">
+      <img src="./s1/bg.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isMobile" data-aos="fade" data-aos-delay="100" data-aos-duration="1700">
+    <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
       <img src="./all/7.png" :alt="`${info.caseName}_bg`" class="c7">
       <img src="./all/6.png" :alt="`${info.caseName}_bg`" class="c6" v-if="!isMobile">
       <img src="./all/5.png" :alt="`${info.caseName}_bg`" class="c5">
@@ -13,14 +13,14 @@
       <img src="./all/1.png" :alt="`${info.caseName}_bg`" class="c1">
     </div>
     <div class="logo">
-      <img src="./s1/logo1.png" :alt="`${info.caseName}_logo`" class="logo1">
-      <img src="./s1/logo2.png" :alt="`${info.caseName}_logo`" class="logo2">
+      <img src="./s1/logo1.png" data-aos="fade-down" data-aos-delay="0" :alt="`${info.caseName}_logo`" class="logo1">
+      <img src="./s1/logo2.png" data-aos="fade-down" data-aos-delay="100" :alt="`${info.caseName}_logo`" class="logo2">
     </div>
     <div class="txt">
-      <img src="./s1/t.png" :alt="`${info.caseName}_時光淬鍊．豐釀生活`" class="t1">
-      <div class="t2" v-if="!isMobile">日式前院美墅<b></b>高規精品建材<b></b>國際雙語學區</div>
-      <div class="t2" v-if="isMobile"><b></b>日式前院美墅<b></b>03-3855000<b></b></div>
-      <div class="t3" v-if="!isMobile"><span class="button" v-scroll-to="{ element: `#contact`, offset: 0 }">立即預約</span>03-3855000</div>
+      <img src="./s1/t.png" :alt="`${info.caseName}_時光淬鍊．豐釀生活`" class="t1" data-aos="fade-down" data-aos-delay="300">
+      <div class="t2" v-if="!isMobile" data-aos="fade-down" data-aos-delay="400">日式前院美墅<b></b>高規精品建材<b></b>國際雙語學區</div>
+      <div class="t2" v-if="isMobile" data-aos="fade-down" data-aos-delay="400"><b></b>日式前院美墅<b></b>03-3855000<b></b></div>
+      <div class="t3" v-if="!isMobile" data-aos="fade-down" data-aos-delay="500"><span class="button" v-scroll-to="{ element: `#contact`, offset: 0 }">立即預約</span>03-3855000</div>
     </div>
   </div>
 </template>
@@ -36,6 +36,7 @@
   //overflow: hidden;
   position: relative;
   z-index: 2; 
+  margin: 0 0 5vw;
 }
 /*
   */
@@ -50,18 +51,25 @@
       top:calc(50% + (0 - 540) * 100vw / 1920);
     img{
       position: absolute;
-    }
-    .c1{width:size(451);top:size(230);left: size(-150);}
-    .c2{width:size(319);top:size(170);left: size(600);}
-    .c3{width:size(434);top:size(145);right:size(5);}
-    .c4{width:size(633);top:size(650);right:size(-180);}
-    .c5{width:size(316);top:size(820);left: size(840);}
-    .c6{width:size(275);top:size(760);left: size(680);}
-    .c7{width:size(126);top:size(120);right:size(310);}
+      animation:an 5s ease-in-out infinite alternate;}
+    .c1{width:size(451);top:size(230);left: size(-150);transform: translateX(-8%);animation-delay: -1s;}
+    .c2{width:size(319);top:size(170);left: size(600);transform: translateX(-20%);animation-delay: -2s;}
+    .c3{width:size(434);top:size(145);right:size(5);transform: translateX(-10%);}
+    .c4{width:size(633);top:size(650);right:size(-180);transform: translateX(-15%);animation-delay: -1s;}
+    .c5{width:size(316);top:size(820);left: size(840);transform: translateX(-20%);animation-delay: -1s;}
+    .c6{width:size(275);top:size(760);left: size(680);transform: translateX(-15%);}
+    .c7{width:size(126);top:size(120);right:size(310);transform: translate(-15%,-10%)rotate(10deg);}
   }
+
+
+@keyframes an{
+    to{
+      transform: translateX(0);
+    }
+}
 .logo{
   position: absolute;left: size(200);
-      top:calc(50% + (455 - 540) * 100VW / 1920);
+      top:calc(50% + (455 - 540) * 100vw / 1920);
       width:size(389);
     .logo1{
       width:100%;
@@ -73,7 +81,7 @@
   }
 .txt{
   position: absolute;
-      top:calc(50% + (370 - 540) * 100VW / 1920);
+      top:calc(50% + (370 - 540) * 100vw / 1920);
   left:size(870);
   font-size: size(34);
   font-weight: 500;
@@ -121,6 +129,7 @@
     min-height: sizem(604);
     max-height: sizem(750);
     height: calc(100vh - 63px);
+  margin: 0 0 25vw;
   }
 
 .bg{

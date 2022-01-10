@@ -1,7 +1,10 @@
 <template>
   <div>
     <div class="section5">
-      <img src="./all/light.png" alt="" data-aos="fade" data-aos-duration="1500" data-aos-delay="600" class="light">
+    <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
+      <img src="./all/4.png" :alt="`${info.caseName}_bg`" class="c4">
+      <img src="./s2/2.png" :alt="`${info.caseName}_bg`" class="c2">
+    </div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -11,15 +14,18 @@
             </div>
           </transition-group>
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-          </div>  
+            <div class="prev-btn" @click="decIndex">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" :alt="`${info.caseName}_prev`">
+            </div>
+            <div class="next-btn" @click="addIndex">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" :alt="`${info.caseName}_next`">
+            </div>
+          </div>
         </div>
       </div>
       <div class="txt">
       <div class="title" data-aos="fade-down" data-aos-delay="200">快捷交通．離塵不離城的生活</div>
-      <div class="line" data-aos="fade" data-aos-delay="200" ></div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">高鐵、機捷與航廈，南來北往於彈指之間<br>
+      <div class="desc" data-aos="fade-down" data-aos-delay="300">高鐵、機捷與航廈，南來北往於彈指之間<br>
 核心樞紐，快捷便利<br>
 四通八達暢行北市，輕取國門<br>
 游刃有餘在慢生活與快步調之中，生活可以是如此輕盈又豐盈<br>
@@ -27,7 +33,7 @@
 
       </div>
       </div>
-      <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
+      <div class="pagination absolute flex-ac" data-aos="fade-down" data-aos-delay="500" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
     </div>
@@ -37,49 +43,55 @@
 @import '@/assets/style/function.scss';
 
 .section5 {
-  width: size(1920);
+  width:100%;
   height: size(900);
   position: relative;
-  overflow: hidden;
-  z-index: 3;
 }
-  .light{
-  position: absolute;
-  top:size(660);
-  left:size(170);
-  width:size(350);
-  transform: translate(40%,-20%) rotate(-30deg) scale(0.4);
 
+.c{
+      position: absolute;left:0;right:0;
+      top:0;
+    img{
+      position: absolute;
+      animation:an 5s ease-in-out infinite alternate;}
+    .c2{width:size(246);top:size(650);right: size(-50);transform:skewY(-3deg)rotate(-3deg);transform-origin: 100% 50%;animation-delay: -2s;}
+    .c4{width:size(550);top:size(800);right:size(-80);transform: translateX(-15%);animation-delay: -1s;}
   }
+
+@keyframes an{
+    to{
+      transform: translateX(0);
+    }
+}
 
 .txt{
   position: absolute;
   width: size(610);
   left: size(210);
-  top: size(185);
+  top: size(250);
   font-stretch: normal;
   font-style: normal;
-  text-align: left;
-  font-size: size(18);
-  font-weight: 500;
+  text-align: justify;
+  font-size: size(17);
+  font-weight: 400;
   line-height: 1.2;
   z-index: 3;
+  color: #666;
   }
 
 .title{
   position: relative;
-  font-size: size(30);
-  margin:1.5em auto 0.8em;
+  font-size: size(40);
+  margin:1em auto 0.5em;
   letter-spacing:0.04em;
   color: #52b559;
+  font-weight: 500;
 }
 
 .desc {
   margin:1em auto;
-  font-size: size(18);
   line-height: 2;
   letter-spacing:0.05em;
-  color: #666666;
   list-style: circle;
   overflow: hidden;
   li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
@@ -154,20 +166,21 @@
   bottom: size(148);
   right:calc(50% + 6.95vw);
   justify-content: center;
+  font-size: size(20);
 }
 
 .pagination-dot {
-  padding: 5px;
-  margin: 0 5px;
+  padding: 0.25em;
+  margin: 0 0.2em;
   cursor: pointer;
   z-index: 4;
 
   span {
     display: block;
-    width: 20px;
-    height: 20px;
+    width:1em;
+    height:1em;
     border-radius: 50%;
-    border: 4px solid  #ccc;
+    border: 0.2em solid  #ccc;
     position: relative;
     transition: all 0.5s;
 
@@ -177,7 +190,7 @@
       height: 60%;
       display: block;
     border-radius: 50%;
-    border: 2.1px solid  #096e90;
+    border:  0.105em solid  #d4a680;
       opacity: 1;
       position: absolute;
       top: 20%;
@@ -199,19 +212,24 @@
   }
 }
 
+
 .swipe-btns {
   width: 100%;
   height: 100%;
-  padding: 0 15px;
   z-index: 3;
+  font-size: size(20);
 
   .prev-btn,
   .next-btn {
-    width: size(20);
+    padding: 0 0.75em;
     cursor: pointer;
+    height: 100%;
+    display: flex;
+    img{
+    width: 1em;
+    }
   }
 }
-
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -230,71 +248,41 @@
     width: 100vw;
     height: auto;
   }
-  .light{
-  top:auto;
-bottom: 0;
-  left:sizem(190);
-  width:sizem(200);
-
+.c{
+    .c2{width:sizem(120);top:sizem(540);right: sizem(-30);transform:skewY(-3deg)rotate(-3deg);transform-origin: 100% 50%;}
+    .c4{width:sizem(250);top:sizem(580);left:sizem(-80);}
   }
   .txt{
   position: relative;
   width: sizem(310);
-margin:1.5em auto 3em;
+margin:1.5em auto 10em;
   left:0;
   top:0;
   font-size: sizem(15);
   }
 .title{
-    font-size: sizem(30);
-  &::before{width: 100vw;
-  left: calc(50% - 50vw);
-  }
+    font-size: sizem(29);
 }
-  .line {
-    width: sizem(310);
-    height: sizem(2);
-  margin: 1.1em auto 1em auto;
-  }
-  .subtitle {
-    font-size: sizem(18);
-  margin:1em auto 0em;
-  }
   .desc {
    //line-height: 1.73;
   margin:0em auto;
-  font-size: sizem(15);
   }
-
   /* Swipe */
   .swipe {
     position: relative;
-    width: 100vw;
-    height: sizem(250);
-    min-height: auto;
+    width: 100%;
+    height: sizem(255);
     top:0;
     left:0;
   }
-
-  .swipe-item {
-    .slide-name{
-      right: 1em;
-    font-size: sizem(13);
-    }
-  }
-
   .swipe-btns {
-
-    .prev-btn,
-    .next-btn {
-      width: sizem(15);
-      cursor: pointer;
-    }
+  font-size: sizem(15);
   }
 }
 </style>
 <script>
 // @ is an alias to /src
+import info from '@/info'
 import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
@@ -306,6 +294,7 @@ export default {
 
   data() {
     return {
+      info,
       isPC,
       isMobile,
       isTablet,

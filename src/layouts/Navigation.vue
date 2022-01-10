@@ -2,15 +2,19 @@
   <div :class="`navigation ${min ? 'min' : ''}`">
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
-        <div class="nav">
+        <div :class="`nav ${isOpen ? 'open': ''}`" >
      <!--     <img class="logo" src="@/projects/nina/s1/logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" />  -->
-          <div class="menu" @click="toggleSidebar" v-show="!isOpen">
+       <!--   <div class="menu" @click="toggleSidebar" v-show="!isOpen">
             <font-awesome-icon icon="bars" />
-          </div>
-          <div :class="`mask ${isOpen ? 'open' : ''}`">
+          </div>  -->
+
+          <div class="mask" @click="isOpen = false">
             <div class="close" @click="isOpen = false">
               <img src="../assets/img/close.png" alt="">
             </div>
+          </div>
+          <div class="menu" @click="toggleSidebar" v-if="isMobile">
+            <div :class="`menu-icon ${isOpen ? 'open': ''}`" ></div>
           </div>
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
             <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: offset }" v-for="item in list" class="flex-c" @click="toggleSidebar">
@@ -80,10 +84,11 @@ export default {
   z-index:4;
   position: fixed;
   top: 0;
-  width: 100vw;
+  width: 100%;
   display: flex !important;
   align-items: center;
   background: $nav_bg;
+  font-size:size(16);
 
   // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
   //@function&::after{content: "";height:100%;width: 150%;top: -100%;left: 0;z-index:9;position: absolute;box-shadow:0 size(0) size(72) size(72)  #005566;}
@@ -131,7 +136,7 @@ export default {
   justify-content: center;
   height: 100%;
   overflow: hidden;
-  padding-left: 30px;
+  //padding-left: 30px;
   li {
     height: 100%;
   }
@@ -140,7 +145,6 @@ export default {
     color: $nav_link_color;
     height:80%;
     text-align: center;
-    display: block;
     cursor: pointer;
     padding: 0 .5em;
     margin: 0 0.5em;
@@ -149,7 +153,6 @@ export default {
     align-items: center;
     justify-content: center;
     position: relative;
-    font-size: 16px !important;
 
     &:hover {
       color: $nav_link_hover_color;
@@ -192,12 +195,52 @@ export default {
 }
 
 .menu {
-  display: none;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 112;
+    right: 15px;
+    top: 15px;
+    width: 40px;
+    height: 40px;
+  // background-color: #008796;
+    cursor: pointer;
+    flex: 1 0 50%;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: $nav_link_color;
+}
+.menu-icon {
+    position: relative;
+    width: 30px;
+    height: 3px;
+    background-color:currentColor;
+    &::after,
+    &::before {
+    position: absolute;
+    left: 0;
+    content: "";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: currentColor;
+    transition: transform .2s ease-in,top .2s linear .2s;}
+    &::before {
+    top: -10px;
+}
+    &::after {
+    top: 10px;
+}
+&.open{
+    background-color: transparent;
+    &::after,
+    &::before {top: 0;transition: top .2s linear,transform .2s ease-in .2s;}
+    &::after{transform: rotate(-45deg);}
+    &::before{transform: rotate(45deg);}
+
 }
 
-.link {
-  color: rgba(0, 0, 0, 0.7);
-  font-size: 16px;
 }
 
 /* 平板尺寸 */
@@ -252,9 +295,8 @@ export default {
   .navigation {
     background-color: transparent !important;
     height: $nav_phone_height;
-    //  background-color: #fff;
-    height: 70px;
     justify-content: center;
+    font-size:sizem(17);
     &.min {
       .logo {
         width: $logo_phone_width;
@@ -277,69 +319,62 @@ export default {
 
   .nav {
     position: static;
-    height: 60px;
+    width: 100%;
+    height: 100%;
   }
-
-  .menu {
-    display: block;
+  .mask{
     position: absolute;
-    top: 15px;
-    right: 15px;
-    width: sizem(50);
-    height: sizem(50);
-    padding-top: sizem(8);
-    background: transparent;
-    z-index: 112;
-
-    svg {
-      width: sizem(35);
-      height: sizem(35);
-      color: $nav_btn_color;
-    }
+    top: 0;
+    left:0;
+    right: 0;
+    bottom: 0;
   }
-
   .navlist {
     position: absolute;
     z-index: 111;
     background: transparent;
+    background: #0003;
     background-size: cover;
     width: 0%;
     right: 0;
-    top: $nav_phone_height;
-    height: calc(100vh - #{$nav_phone_height});
+    top: 0;
+    height: calc(100vh - 63px);
     text-align: center;
     transition: all 0.3s ease-in;
-    display: block;
     transform: translateX(40%);
-    display: flex;
     align-items: center;
     align-content: center;
     justify-content: center;
     flex-wrap: wrap;
 
     li {
-      width: 100vw;
-      height: 70px;
+      width: 100%;
+      height:auto;
       margin-bottom: 0;
     }
 
     .link {
-      height: 50px;
+      height: 2.5em;
       width: 100%;
-      font-size: 17px;
       margin-top: 0;
-      display: flex;
       align-items: center;
       justify-content: center;
-      display: none;
+      margin: 0.35em auto;
 
       img,
       span {
         display: block;
       }
+    /*
       span {
         line-height: 16px;
       }
+      */
+      
+    &.btn{
+      height: 3em;
+      margin: 0.35em auto;
+    }
     }
   }
 
@@ -353,42 +388,16 @@ export default {
   }
 
   .navlist {
-    display: none;
+  //  display: none;
 
     &.open {
-      display: block;
+    //  display: block;
       width: 100%;
       transform: translateX(0%);
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 0;
-      padding-top: 30px;
-      .link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+      background-color: #d3e7bbbb;
     }
     .link {
-      width: auto;
-      padding: 0;
-      .title {
-        font-size: 18px !important;
-        margin-top: 0px;
-        border: none;
-        width: auto;
-        height: auto;
-        color: #fff;
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        background-image: none;
-        border-radius: 0;
-        position: relative;
-        z-index: 3;
-        &:hover {
-          background-image: none;
-        }
-      }
+      width: 10em;
     }
   }
 }

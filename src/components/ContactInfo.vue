@@ -1,6 +1,11 @@
 <template>
   <div>
     <div id="contact-info" class="contact-info" data-aos="fade" data-aos-delay="0">
+
+     <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
+      <img src="@/projects/nina/all/6.png" :alt="`${info.caseName}_bg`" class="c6">
+      <img src="@/projects/nina/all/4.png" :alt="`${info.caseName}_bg`" class="c4">
+    </div>
       <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
       <div class="info">
         <div class="btn flex-c" @click="showCallDialog" data-aos="fade-down" data-aos-delay="100">
@@ -102,15 +107,30 @@ export default {
   background-attachment: fixed;
   background-position: 0% 50%; */
   transform: translateY(0);
-  margin: 2vw auto 0;
-  padding: 30px 0 40px;
+  margin: 5vw auto;
+  //padding: 30px 0 40px;
 }
+.c{
+      position: absolute;left:0;right:0;
+      top:calc(50% + (0 - 540) * 100vw / 1920);
+    img{
+      position: absolute;
+      animation:an 5s ease-in-out infinite alternate;}
+    .c4{width:size(600);top:size(0);right:size(-180);transform: translateX(-15%);animation-delay: -1s;}
+    .c6{width:size(250);top:size(0);right: size(250);transform: translateX(-15%);}
+  }
 
+
+@keyframes an{
+    to{
+      transform: translateX(0);
+    }
+}
 .logo {
   width: $contact_logo_pc_width;
   height: auto;
   // height:;
-  margin: 0 auto 20px;
+  margin: 0 auto 3vw;
 }
 .info {
   width: 880px;
@@ -246,9 +266,14 @@ export default {
 
     .logo {
       width: $contact_logo_mobile_width;
-      margin: 10% auto 10%;
+      margin: 30% auto 10%;
     }
   }
+.c{
+    .c4{width:sizem(200);top:sizem(-160);right:sizem(-80);}
+    .c6{width:sizem(100);top:sizem(-175);right: sizem(60);}
+}
+
 
   .btn {
     &.half {

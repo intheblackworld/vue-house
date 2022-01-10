@@ -1,6 +1,9 @@
 <template>
   <div>
     <div class="section9">
+          <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
+      <img src="./all/2.png" :alt="`${info.caseName}_bg`" class="c2">
+    </div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -27,64 +30,99 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section9{  
+.section9 {  
   width:100%;
   height:auto;
   position: relative;
-   overflow: hidden;
 }
-  .light{
-  position: absolute;
-  bottom:size(45);
-  right:size(-80);
-  width:size(350);
-  transform: translate(40%,-20%) rotate(-30deg) scale(0.4);
+.c{
+      position: absolute;left:0;right:0;
+      top:calc(50% + (0 - 540) * 100vw / 1920);
+    img{
+      position: absolute;
+      animation:an 5s ease-in-out infinite alternate;}
+    .c2{width:size(319);top:size(1100);left: size(0);transform: translateX(-20%);animation-delay: -2s;}
   }
 
-  .txt{
+
+@keyframes an{
+    to{
+      transform: translateX(0);
+    }
+}
+.txt{
   position: relative;
   width: size(1500);
-  margin:2.45em auto 0;
+  margin:0 auto 10em;
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
-  font-size: size(18);
+  font-size: size(17);
   font-weight: 400;
   line-height: 1.2;
   z-index: 3;
+  color: #666;
   }
 
 .title{
   position: relative;
   font-size: size(40);
-  margin:1.5em auto 0.5em;
+  margin:1em auto 0.5em;
   letter-spacing:0.04em;
   color: #52b559;
   font-weight: 500;
 }
 .desc {
   margin:1em auto;
-  font-size: size(18);
   line-height: 2;
   letter-spacing:0.05em;
-  color: #666666;
   list-style: circle;
   overflow: hidden;
   li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
   }
 }
-
 /* Swipe */
 .swipe {
   position: relative;
   margin: auto;
   width: size(1500);
-  height: size(844);
+  height: size(840);
   // left: size(210);
-  object-fit: cover;z-index: 3;
+  object-fit: cover;
+  z-index: 3;
+}
+.slide-name {
+    right:1.5em;
+    bottom:1em;
+    color: #fff;
+    font-size: size(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.89px;
+    text-align: left;
+    color: #ffffff;
+   text-shadow:0 0.1em 0.3em #000;
 }
 
-// begin
+.swipe-wrap {
+  width: 100%;
+  height: 100%;
+}
+.swipe-item {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// 過場動畫
+// begin 
 .swipe-fade-leave-to {
   opacity: 0;
   z-index: 0;
@@ -103,59 +141,27 @@
   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
-.swipe-wrap {
-  width: 100%;
-  height: 100%;
-  // overflow: hidden;
-}
-
-.swipe-item {
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .slide-name {
-    right:1.5em;
-    bottom:1em;
-    color: #fff;
-    font-size: size(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1;
-    letter-spacing: 0.89px;
-    text-align: left;
-    color: #ffffff;
-   text-shadow:0 0.1em 0.3em #000;
-  }
-
-}
-
+// pagination
 .pagination {
   width: auto;
-  bottom: size(-50);
-  right: size(-10);
+  bottom: -2.2em;
+  right: -0.5em;
   justify-content: center;
- // display: none;
-}
+  font-size: size(20);
 
+}
 .pagination-dot {
-  padding: 5px;
-  margin: 0 4px;
+  padding: 0.25em;
+  margin: 0 0.2em;
   cursor: pointer;
   z-index: 4;
 
   span {
     display: block;
-    width: 20px;
-    height: 20px;
+    width:1em;
+    height:1em;
     border-radius: 50%;
-    border: 4px solid  #ccc;
+    border: 0.2em solid  #ccc;
     position: relative;
     transition: all 0.5s;
 
@@ -165,7 +171,7 @@
       height: 60%;
       display: block;
     border-radius: 50%;
-    border: 2.1px solid  #d4a680;
+    border:  0.105em solid  #d4a680;
       opacity: 1;
       position: absolute;
       top: 20%;
@@ -187,15 +193,17 @@
   }
 }
 
+
 .swipe-btns {
   width: 100%;
   height: 100%;
-  padding: 0 15px;
+  padding: 0 0.75em;
   z-index: 3;
+  font-size: size(20);
 
   .prev-btn,
   .next-btn {
-    width: size(20);
+    width: 1em;
     cursor: pointer;
   }
 }
@@ -214,195 +222,48 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section9{
-    width: 100vw;
+  .section9 {
+    width: 100%;
     height: auto;
     min-height: auto;
     max-height: initial;
   }
-  .light{
-  top:auto;
-bottom: 0;
-  left:sizem(190);
-  width:sizem(200);
-
-  }
+.c{
+    .c2{width:sizem(150);top:sizem(300);left: sizem(10);}
+}
 
   .txt{
-  position: relative;
-  width: sizem(310);
-margin:1.5em auto 3em;
-  left:0;
-  top:0;
-  font-size: sizem(15);
+    position: relative;
+    width: sizem(310);
+    margin:1.5em auto 10em;
+    left:0;
+    top:0;
+    font-size: sizem(15);
   }
 .title{
-    font-size: sizem(30);
-  &::before{width: 100vw;
-  left: calc(50% - 50vw);
-  }
+    font-size: sizem(29);
 }
   .desc {
   margin:0em auto;
   font-size: sizem(15);
   }
-  
   /* Swipe */
   .swipe {
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: sizem(200);
-    min-height: auto;
-    top: sizem(0);
-    left: sizem(0);
-    object-fit: cover;
+    top:0;
+    left:0;
   }
-
-  // begin
-  .swipe-fade-leave-to {
-    opacity: 0;
-    z-index: 0;
-  }
-  // end
-  .swipe-fade-enter {
-    opacity: 0;
-    z-index: 1;
-  }
-
-  .swipe-fade-enter-active {
-    transition: all 0.5s ease;
-  }
-
-  .swipe-fade-leave-active {
-    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-
-  // begin
-  // .swipe-left-leave-to {
-  //   margin-left: -100vw;
-  //   z-index: 0;
-  // }
-  // // end
-  // .swipe-left-enter {
-  //   opacity: 0.5;
-  //   margin-left: 0;
-  //   z-index: 1;
-  // }
-
-  // .swipe-left-enter-active {
-  //   transition: all 0.5s ease;
-  // }
-
-  // .swipe-left-leave-active {
-  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  // }
-
-  .swipe-wrap {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .swipe-item {
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    .slide-name{
-      right: 1em;
-    font-size: sizem(13);
-    }
-
-    // &:nth-child(1) {
-    //   z-index: 1;
-    //   // opacity: 1;
-    // }
-
-    // &.base {
-    //   z-index: 1;
-    //   opacity: 1;
-    // }
-    // &.active {
-    //   z-index: 2;
-    //   // opacity: 1;
-    // }
-  }
-
-  .pagination {
-    width: auto;
-    bottom: size(91);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    justify-content: center;
-  }
-
-  .pagination-dot {
-    padding: 5px;
-    margin: 0 10px;
-    cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
-      box-shadow: 0 0 0 1px #fff;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
-      transition: all 0.5s;
-
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #004ea2;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transition: all 0.3s;
-        transform-origin: center;
-        transform: scale(0);
-      }
-      &.active {
-        &::before {
-          content: '';
-          width: 100%;
-          height: 100%;
-          display: block;
-          background: #004ea2;
-          border-radius: 20px;
-          opacity: 1;
-          position: absolute;
-          top: 0%;
-          // transform: translateY(-50%);
-          left: 0%;
-          transform: scale(1);
-        }
-      }
-    }
-  }
-
   .swipe-btns {
-    width: 100%;
-    height: 100%;
-    padding: 0 15px;
-    z-index: 3;
-
-    .prev-btn,
-    .next-btn {
-      width: sizem(15);
-      cursor: pointer;
-    }
+  font-size: sizem(15);
   }
 }
+
 </style>
 <script>
 // @ is an alias to /src
+import info from '@/info'
 import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
@@ -414,6 +275,7 @@ export default {
 
   data() {
     return {
+      info,
       isPC,
       isMobile,
       isTablet,

@@ -3,7 +3,7 @@
     <div class="order-top">
       <div class="title-block">
         <h3 class="order-title" v-html="order.title"></h3>
-        <div class="order-subtitle" v-html="order.subTitle"></div>
+     <!--     <div class="order-subtitle" v-html="order.subTitle"></div>  -->
       </div>
       <!-- <div class="order-title-img">
         <img src="~@/assets/img/order-title.png" alt="" srcset="">
@@ -415,7 +415,7 @@ export default {
     background-size: cover;
     background-position: bottom right;
     position: relative;
-    padding: 5vw 0;
+    padding: 5vw 0 0 0;
    // padding-bottom: 500px;
   }
   .order-title {
@@ -435,11 +435,13 @@ export default {
     margin-bottom: size(20);
     display: inline-block;
     z-index: 3;
+    /*
   &::before{content:"";position: absolute;z-index:-1;top: 0;left: 0;
   height: 100%;width: 100%;
   background: url("~@/projects/nina/all/r_bg.png");
   background-size: 100% 100%;
   }
+  */
   }
   .order-title-img {
     width: 30vw;
@@ -476,7 +478,7 @@ export default {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    padding-bottom: 3rem;
+   // padding-bottom: 3rem;
     justify-content: space-between;
     z-index: 1;
   }

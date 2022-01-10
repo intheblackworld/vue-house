@@ -1,7 +1,10 @@
 <template>
   <div>
     <div class="section4">
-<img src="./all/light.png" alt="" data-aos="fade" data-aos-duration="1500" data-aos-delay="600" class="light">
+    <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
+      <img src="./all/1.png" :alt="`${info.caseName}_bg`" class="c1">
+      <img src="./all/5.png" :alt="`${info.caseName}_bg`" class="c5">
+    </div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -10,15 +13,19 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+            <div class="prev-btn" @click="decIndex">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" :alt="`${info.caseName}_prev`">
+            </div>
+            <div class="next-btn" @click="addIndex">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" :alt="`${info.caseName}_next`">
+            </div>
           </div>
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200" v-if="isPC">豐富機能．豐映生活</div>
-      <div class="desc">坐擁大園市區完善生活圈<br>
+      <div class="title" data-aos="fade-down" data-aos-delay="200">豐富機能．豐映生活</div>
+      <div class="desc" data-aos="fade-down" data-aos-delay="300">坐擁大園市區完善生活圈<br>
 鄰近零售市場與全聯，滿足一切日常採購所需<br>
 中正東路上肯德基、麥當勞、星巴克，連鎖美食一應俱全<br>
 大園區公所、戶政事務所與運動中心唾手可得<br>
@@ -35,47 +42,52 @@
 @import '@/assets/style/function.scss';
 
 .section4 {
-  width: size(1920);
+  width:100%;
   height: size(900);
   position: relative;
-  overflow: hidden;
+}
+.c{
+      position: absolute;left:0;right:0;
+      top:calc(50% + (0 - 540) * 100vw / 1920);
+    img{
+      position: absolute;
+      animation:an 5s ease-in-out infinite alternate;}
+    .c1{width:size(451);top:size(890);left: size(160);transform: translateX(-8%);animation-delay: -1s;}
+    .c5{width:size(316);top:size(980);left: size(20);transform: translateX(-20%);animation-delay: -1s;}
+  }
+@keyframes an{
+    to{
+      transform: translateX(0);
+    }
 }
 
-  .light{
-  position: absolute;
-  top:size(630);
-  right:size(-20);
-  width:size(420);
-  transform: translate(40%,-20%) rotate(-30deg) scale(0.4);
-
-  }
 .txt{
   position: absolute;
   width: size(610);
   right:size(200);
-  top: size(185);
+  top: size(280);
   font-stretch: normal;
   font-style: normal;
   text-align: left;
-  font-size: size(18);
-  font-weight: 500;
+  font-size: size(17);
+  font-weight: 400;
   line-height: 1.2;
   z-index: 3;
+  color: #666;
   }
 
 .title{
   position: relative;
-  font-size: size(30);
-  margin:1.5em auto 0.8em;
+  font-size: size(40);
+  margin:1em auto 0.5em;
   letter-spacing:0.04em;
   color: #52b559;
+  font-weight: 500;
 }
 .desc {
   margin:1em auto;
-  font-size: size(18);
   line-height: 2;
   letter-spacing:0.05em;
-  color: #666666;
   list-style: circle;
   overflow: hidden;
   li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
@@ -83,6 +95,7 @@
 }
 
 /* Swipe */
+
 .swipe {
   position: absolute;
   width: size(840);
@@ -92,8 +105,38 @@
   object-fit: cover;
   z-index: 3;
 }
+.slide-name {
+    right:1.5em;
+    bottom:1em;
+    color: #fff;
+    font-size: size(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.89px;
+    text-align: left;
+    color: #ffffff;
+   text-shadow:0 0.1em 0.3em #000;
+}
 
-// begin
+.swipe-wrap {
+  width: 100%;
+  height: 100%;
+}
+.swipe-item {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// 過場動畫
+// begin 
 .swipe-fade-leave-to {
   opacity: 0;
   z-index: 0;
@@ -112,59 +155,27 @@
   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
-.swipe-wrap {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.swipe-item {
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .slide-name {
-    right:1.5em;
-    bottom:1em;
-    color: #fff;
-    font-size: size(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1;
-    letter-spacing: 0.89px;
-    text-align: left;
-    color: #ffffff;
-   text-shadow:0 0.1em 0.3em #000;
-  }
-
-}
-
+// pagination
 .pagination {
   width: auto;
   bottom: size(148);
   left:calc(50% + 6.95vw);
   justify-content: center;
-}
+  font-size: size(20);
 
+}
 .pagination-dot {
-  padding: 5px;
-  margin: 0 5px;
+  padding: 0.25em;
+  margin: 0 0.2em;
   cursor: pointer;
   z-index: 4;
 
   span {
     display: block;
-    width: 20px;
-    height: 20px;
+    width:1em;
+    height:1em;
     border-radius: 50%;
-    border: 4px solid  #ccc;
+    border: 0.2em solid  #ccc;
     position: relative;
     transition: all 0.5s;
 
@@ -174,7 +185,7 @@
       height: 60%;
       display: block;
     border-radius: 50%;
-    border: 2.1px solid  #d4a680;
+    border:  0.105em solid  #d4a680;
       opacity: 1;
       position: absolute;
       top: 20%;
@@ -196,16 +207,22 @@
   }
 }
 
+
 .swipe-btns {
   width: 100%;
   height: 100%;
-  padding: 0 15px;
   z-index: 3;
+  font-size: size(20);
 
   .prev-btn,
   .next-btn {
-    width: size(20);
+    padding: 0 0.75em;
     cursor: pointer;
+    height: 100%;
+    display: flex;
+    img{
+    width: 1em;
+    }
   }
 }
 
@@ -224,74 +241,44 @@
 
 @media screen and (max-width: 767px) {
   .section4 {
-    width: 100vw;
+    width: 100%;
     height: auto;
   }
-  .light{
-  top:auto;
-bottom: 0;
-  left:sizem(190);
-  width:sizem(200);
-
-  }
-
+.c{
+    .c1{width:sizem(230);top:sizem(350);left: sizem(180);}
+    .c5{width:sizem(170);top:sizem(390);left: sizem(90);}
+}
   .txt{
   position: relative;
   width: sizem(310);
-margin:1.5em auto 3em;
+margin:1.5em auto 10em;
   left:0;
   top:0;
-  font-size: sizem(15);
+  font-size: sizem(14.5);
   }
 .title{
     font-size: sizem(30);
-  &::before{width: 100vw;
-  left: calc(50% - 50vw);
-  }
 }
-  .line {
-    width: sizem(310);
-    height: sizem(2);
-  margin: 1.1em auto 1em auto;
-  }
-  .subtitle {
-    font-size: sizem(18);
-  margin:1em auto 0em;
-  }
   .desc {
    //line-height: 1.73;
   margin:0em auto;
-  font-size: sizem(15);
   }
   /* Swipe */
   .swipe {
     position: relative;
-    width: 100vw;
-    height: sizem(250);
-    min-height: auto;
+    width: 100%;
+    height: sizem(255);
     top:0;
     left:0;
   }
-
-  .swipe-item {
-    .slide-name{
-      right: 1em;
-    font-size: sizem(13);
-    }
-  }
-
   .swipe-btns {
-
-    .prev-btn,
-    .next-btn {
-      width: sizem(15);
-      cursor: pointer;
-    }
+  font-size: sizem(15);
   }
 }
 </style>
 <script>
 // @ is an alias to /src
+import info from '@/info'
 import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
@@ -303,6 +290,7 @@ export default {
 
   data() {
     return {
+      info,
       isPC,
       isMobile,
       isTablet,
@@ -323,6 +311,10 @@ export default {
         {
           img: require('./s4/4.jpg'),
           name: '寶雅百貨',
+        },
+        {
+          img: require('./s4/4.jpg'),
+          name: '全聯福利中心',
         },
       ],
     }
