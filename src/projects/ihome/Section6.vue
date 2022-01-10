@@ -1,17 +1,11 @@
 <template>
   <div>
     <div class="section6">
-<!--     <img src="./s2/hr.png" alt="" class="hr absolute">  -->
-      <div class="txt">
       <div class="title" data-aos="fade-down" data-aos-delay="200" ><span>i Enjoy</span>精質名品  美力玩家</div>
+      <div class="subtitle" data-aos="fade-down" data-aos-delay="300">品味昇華觸動生活全心體會</div>
       <div class="line" data-aos="fade" data-aos-delay="200" ></div>
-      <div class="subtitle" data-aos="fade-down" data-aos-delay="300" >品味昇華觸動生活全心體會</div>
-      <ul class="desc">
-        <li data-aos="fade-up" data-aos-delay="300">DORIS廚具＋INAX衛浴，高質感機能極致玩美</li>
-        <li data-aos="fade-up" data-aos-delay="400">Studor吸氣閥＋氣密窗，靜音淨氣健康防疫加倍</li>
-        <li data-aos="fade-up" data-aos-delay="500">冠軍磁磚＋德國進口木地板，舒適配備全新升級</li>
-        <li data-aos="fade-up" data-aos-delay="600">水保固10年＋黃金級綠建築，創新建築永續化</li>
-      </ul>
+      <div class="desc">
+        高質感機能的玩美空間，創新建築永續化<br>智能生活極效化，舒適配備健康守護，讓居家感受全新UP
       </div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -21,95 +15,96 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-     <!--     <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+          </div>
+          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
             <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
             <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-          </div>  -->
+          </div>
         </div>
       </div>
-  <!--    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
-        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-      </div> -->
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section6 {
-  width: size(1920);
-  height: size(900);
+.section6 {  
+  width:100%;
+  height:auto;
   position: relative;
-  overflow: hidden;
-//  z-index: 3;
-  background: #FFF;
+  background: #fff;
+   overflow: hidden;
 }
-
-.txt{
-  position: absolute;
-  width: size(610);
-  left: size(210);
-  top: size(233);
-  font-stretch: normal;
-  font-style: normal;
-  text-align: left;
-  font-size: size(18);
-  font-weight: 500;
-  line-height: 1.2;
-  z-index: 3;
-  }
 
 .title{
   position: relative;
-  font-size:2.72em;
+  width: size(1500);
+  margin:2.45em auto 1em;
+  font-size: size(49);
   font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
   line-height: 1.2;
   letter-spacing: normal;
-  color: #000;
+  text-align: left;
+  color: #000;z-index: 3;
   span{
   color: #d03636;
   font-size:1.43em;
   font-family: Georgia;
   margin: 0 .5em 0 0;
-  display: block;
   }
 }
-
 .subtitle {
   position: relative;
-  font-size: size(30);
+  width: size(1500);
+  top:0;z-index: 3;
   margin:1.5em auto 0.8em;
-  letter-spacing:0.04em;
+  font-size: size(30);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(1.2);
+  text-align: left;
   color: #d03636;
+  white-space: nowrap;
 }
 .line {
   position: relative;
   background-color: #888;
-  width:100%;
-  height: size(2);
-  margin: 2em 0 0.5em 0;
+  width: size(1500);
+  margin: auto;
+  height: size(2);z-index: 3;
 }
 .desc {
-  margin:1em auto;
+  position: relative;
+  width: size(1500);
+  margin:1em auto 6em auto;
   font-size: size(18);
-  line-height: 2;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height:1.6;
   letter-spacing:0.05em;
+  text-align: justify;
   color: #666666;
   list-style: circle;
   overflow: hidden;
-  li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
+  li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 2.2em;width:calc(50% - 2.2em);
   }
 }
 
 /* Swipe */
 .swipe {
-  position: absolute;
-  width: size(840);
-  height: size(560);
-  top: size(185);
-  right: size(210);
-  object-fit: cover;
-  z-index: 3;
+  position: relative;
+  margin: auto;
+  width: size(1500);
+  height: size(844);
+  // left: size(210);
+  object-fit: cover;z-index: 3;
 }
 
 // begin
@@ -134,7 +129,7 @@
 .swipe-wrap {
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .swipe-item {
@@ -147,7 +142,6 @@
     height: 100%;
     object-fit: cover;
   }
-
   .slide-name {
     right:1.5em;
     bottom:1em;
@@ -159,21 +153,23 @@
     line-height: 1;
     letter-spacing: 0.89px;
     text-align: left;
-    color: #fff;
+    color: #ffffff;
    text-shadow:0 0.1em 0.3em #000;
   }
+
 }
 
 .pagination {
   width: auto;
-  bottom: size(148);
-  right:calc(50% + 6.95vw);
+  bottom: size(-50);
+  right: size(-10);
   justify-content: center;
+ // display: none;
 }
 
 .pagination-dot {
   padding: 5px;
-  margin: 0 5px;
+  margin: 0 4px;
   cursor: pointer;
   z-index: 4;
 
@@ -244,53 +240,188 @@
   .section6 {
     width: 100vw;
     height: auto;
+    min-height: auto;
+    max-height: initial;
   }
-  .txt{
-  position: relative;
-  width: sizem(310);
-margin:1.5em auto 1em;
-  left:0;
-  top:0;
-  font-size: sizem(15);
+/* 
+  .hr {
+    width: auto;
+    height: sizem(10);
+    top: sizem(-10);
+    left: 0;
+    opacity: 1;
   }
-.title{
-    font-size: sizem(30);
-  margin:2.45em auto 1em;
-}
+  */
+  .title{
+    width:sizem(310);
+  font-size: sizem(30);
+  //margin: 1em auto;
+  span{
+    display: block;
+  }
+  }
+
+  .subtitle {
+    width:sizem(310);
+    font-size: sizem(18);
+  margin:1.5em auto 1.1em;
+  }
   .line {
-    background-color: #888;
     width: sizem(310);
     height: sizem(2);
   }
-  .subtitle {
-    font-size: sizem(18);}
   .desc {
     width: sizem(310);
-    top: sizem(548);
-    right: sizem(32);
     font-size: sizem(15);
-    line-height: 1.73;
+  //margin:1em auto 3em auto;
+  li{width:calc(100% - 1.5em);margin: 0.3em 0 0.3em 1.5em;}
   }
 
   /* Swipe */
   .swipe {
     position: relative;
-    width: 90%;
-    height: sizem(200);
+    width: 100vw;
+    height: sizem(260);
     min-height: auto;
-    top:0;
-    left:0;
-    margin:auto auto 20vw auto;
+    top: sizem(0);
+    left: sizem(0);
+    object-fit: cover;
+  }
+
+  // begin
+  .swipe-fade-leave-to {
+    opacity: 0;
+    z-index: 0;
+  }
+  // end
+  .swipe-fade-enter {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .swipe-fade-enter-active {
+    transition: all 0.5s ease;
+  }
+
+  .swipe-fade-leave-active {
+    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  // begin
+  // .swipe-left-leave-to {
+  //   margin-left: -100vw;
+  //   z-index: 0;
+  // }
+  // // end
+  // .swipe-left-enter {
+  //   opacity: 0.5;
+  //   margin-left: 0;
+  //   z-index: 1;
+  // }
+
+  // .swipe-left-enter-active {
+  //   transition: all 0.5s ease;
+  // }
+
+  // .swipe-left-leave-active {
+  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  // }
+
+  .swipe-wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
   }
 
   .swipe-item {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
     .slide-name{
       right: 1em;
     font-size: sizem(13);
     }
+
+    // &:nth-child(1) {
+    //   z-index: 1;
+    //   // opacity: 1;
+    // }
+
+    // &.base {
+    //   z-index: 1;
+    //   opacity: 1;
+    // }
+    // &.active {
+    //   z-index: 2;
+    //   // opacity: 1;
+    // }
+  }
+
+  .pagination {
+    width: auto;
+    bottom: size(91);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .pagination-dot {
+    padding: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    z-index: 4;
+
+    span {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 0 1px #fff;
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.01);
+      transition: all 0.5s;
+
+      &::before {
+        content: '';
+        width: 60%;
+        height: 60%;
+        display: block;
+        background: #004ea2;
+        border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 20%;
+        // transform: translateY(-50%);
+        left: 20%;
+        transition: all 0.3s;
+        transform-origin: center;
+        transform: scale(0);
+      }
+      &.active {
+        &::before {
+          content: '';
+          width: 100%;
+          height: 100%;
+          display: block;
+          background: #004ea2;
+          border-radius: 20px;
+          opacity: 1;
+          position: absolute;
+          top: 0%;
+          // transform: translateY(-50%);
+          left: 0%;
+          transform: scale(1);
+        }
+      }
+    }
   }
 
   .swipe-btns {
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+    z-index: 3;
 
     .prev-btn,
     .next-btn {
@@ -317,9 +448,40 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
-      slideList: [
+       slideList:isMobile? [
         {
-          img: require('./s6/logoall.png'),
+          img:require('./s6/1m.png'),
+          name: '',
+        },
+        {
+          img:require('./s6/2m.png'),
+          name: '',
+        },
+        {
+          img: require('./s6/3m.png'),
+          name: '',
+        },
+        {
+          img: require('./s6/4m.png'),
+          name: '',
+        },
+        {
+          img: require('./s6/5m.png'),
+          name: '',
+        },
+        {
+          img: require('./s6/6m.png'),
+          name: '',
+        },
+      ]
+      :
+      [
+        {
+          img:require('./s6/1.png'),
+          name: '',
+        },
+        {
+          img:require('./s6/2.png'),
           name: '',
         },
       ],
@@ -336,7 +498,7 @@ export default {
 
   watch: {
     viewIndex() {
-      if (this.viewIndex === 3) {
+      if (this.viewIndex === 7) {
         this.slideIndex = 0
         console.log(this.slideIndex, 'slideIndex')
       }

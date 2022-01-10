@@ -24,7 +24,7 @@
       <div class="subtitle" data-aos="fade-down" data-aos-delay="300">15分鐘雙北生活輕盈入手</div>
       <div class="line" data-aos="fade" data-aos-delay="200" ></div>
       <ul class="desc">
-        <li data-aos="fade-up" data-aos-delay="300">捷運海山站＋萬大線LG10青水站，快捷遊城隨心遊</li>
+        <li data-aos="fade-up" data-aos-delay="300">捷運海山站＋萬大線LG10清水站，快捷遊城隨心遊</li>
         <li data-aos="fade-up" data-aos-delay="400">西門町＋台北東區＋信義計劃，時尚匯流一線到位</li>
         <li data-aos="fade-up" data-aos-delay="500">國道三號 +台三線＋65快，高速連結雙北市心精華</li>
         <li data-aos="fade-up" data-aos-delay="600">國道三號北土城交流道增設計劃，未來動能再提升</li>

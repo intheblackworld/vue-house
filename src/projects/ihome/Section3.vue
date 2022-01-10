@@ -315,24 +315,24 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s3/1.jpg'),
-          name: '市立土城醫院',
-        },
-        {
           img: require('./s3/2.jpg'),
-          name: '',
+          name: '土城國民運動中心',
         },
         {
           img: require('./s3/3.jpg'),
-          name: '新北地方法院',
-        },
-        {
-          img: require('./s3/4.jpg'),
-          name: '',
+          name: '土城家樂福',
         },
         {
           img: require('./s3/5.jpg'),
           name: '日月光廣場',
+        },
+        {
+          img: require('./s3/1.jpg'),
+          name: '新北市立土城醫院',
+        },
+        {
+          img: require('./s3/4.jpg'),
+          name: '藏壽司',
         },
       ],
     }
