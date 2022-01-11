@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200">快捷交通．離塵不離城的生活</div>
+      <div class="title" data-aos="fade-down" data-aos-delay="200">快捷交通<span v-if="isPC">．</span><br v-if="isMobile">離塵不離城的生活</div>
       <div class="desc" data-aos="fade-down" data-aos-delay="300">高鐵、機捷與航廈，南來北往於彈指之間<br>
 核心樞紐，快捷便利<br>
 四通八達暢行北市，輕取國門<br>

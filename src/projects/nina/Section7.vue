@@ -26,7 +26,7 @@
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200">嚴選名品建材．滿足講究品味</div>
+      <div class="title" data-aos="fade-down" data-aos-delay="200">嚴選名品建材<span v-if="isPC">．</span><br v-if="isMobile">滿足講究品味</div>
       <div class="desc" data-aos="fade-down" data-aos-delay="300">
         <b>SHOWA昭和氣密窗：</b>榮獲日本國家標準 JIS認證．細微用心、匠心獨具<br>
 <b>INAX：</b>傳承日式美學與工藝技術的日本質感衛浴<br>

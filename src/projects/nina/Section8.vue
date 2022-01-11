@@ -23,12 +23,17 @@
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200">快捷交通．離塵不離城的生活</div>
-      <div class="desc" data-aos="fade-down" data-aos-delay="300">高鐵、機捷與航廈，南來北往於彈指之間<br>
-核心樞紐，快捷便利<br>
-四通八達暢行北市，輕取國門<br>
-游刃有餘在慢生活與快步調之中，生活可以是如此輕盈又豐盈<br>
-基地位於大園航空城客運園區，鄰近高鐵、捷運及機場，便捷交通一住擁有，台灣從北到南，往返只要一眨眼的時間。
+      <div class="title" data-aos="fade-down" data-aos-delay="200">悅峰建設</div>
+      <div class="desc" data-aos="fade-down" data-aos-delay="300">
+擁有豐富經驗，專注於對細節的執著<br>
+嚴謹品質細細研磨、層層把關<br>
+從生活出發，堅持反覆推敲出最宜人的住宅<br>
+親力親為實踐最高品質，建造可以住一輩子的家<br>
+堅持採光通風、精簡動線的室內格局<br>
+嚴選高規格的精品建材，打造質感住家生活<br>
+已有土城建案半年完銷，年底同時推出2件新建案，屏息以待!<br><br>
+建築實績作品 / We時代、悅峰I Home
+
 
       </div>
       </div>

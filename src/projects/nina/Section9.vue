@@ -22,7 +22,7 @@
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200" >滿足每個家庭成員 真正適合生活的居家空間</div>
+      <div class="title" data-aos="fade-down" data-aos-delay="200" >滿足每個家庭成員<span v-if="isPC"> </span><br v-if="isMobile">真正適合生活的居家空間</div>
       </div>
     </div>
   </div>
@@ -234,7 +234,7 @@
 
   .txt{
     position: relative;
-    width: sizem(310);
+    width: sizem(320);
     margin:1.5em auto 10em;
     left:0;
     top:0;
@@ -242,6 +242,7 @@
   }
 .title{
     font-size: sizem(29);
+    letter-spacing: 0;
 }
   .desc {
   margin:0em auto;

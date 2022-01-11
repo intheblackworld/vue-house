@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200">暢遊青埔．時尚生活一應俱全</div>
+      <div class="title" data-aos="fade-down" data-aos-delay="200">暢遊青埔<span v-if="isPC">．</span><br v-if="isMobile">時尚生活一應俱全</div>
       <div class="desc" data-aos="fade-down" data-aos-delay="300">不僅與大園市區距離相近，輕鬆取得日常機能，更鄰近青埔商圈，Xpark水族館、新光影城、華泰名品城Outlet、IKEA旗艦館及COZZI和逸飯店等，更有坐落在青塘園生態公園旁的橫山書法藝術館，放鬆休閒及娛樂都應有盡有！
       </div>
       </div>
