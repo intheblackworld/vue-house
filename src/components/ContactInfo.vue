@@ -26,7 +26,7 @@
             <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
           </span>
         </a>
-        <div class="address flex-c" data-aos="fade-down" data-aos-delay="400">{{info.address}}</div>
+        <div class="address flex-c" data-aos="fade-down" data-aos-delay="400">接待中心：<br v-if="isMobile">{{info.address}}</div>
         <div class="google-btn flex-c" data-aos="fade-down" data-aos-delay="400" @click="showMapDialog">
           <span class="flex-c">
             <font-awesome-icon icon="map-marker-alt" /><span>導航 Google 地圖</span>
@@ -326,7 +326,7 @@ export default {
   }
   .address {
     // width: 280px;
-    //padding: 0 1em;
+    padding: 0 1em;
     text-align: justify;
   }
 
