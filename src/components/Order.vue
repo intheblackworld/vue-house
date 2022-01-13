@@ -24,8 +24,8 @@
         alt=""
         srcset=""
         uk-parallax="viewport:0.8;y:0;"
-      />-->
-      <div class="order-subtitle" v-html="order.subTitle"></div>
+      />
+      <div class="order-subtitle" v-html="order.subTitle"></div>-->
       <div class="order">
         <div class="form">
           <div class="group">
@@ -378,7 +378,7 @@ export default {
     padding-bottom: 0;
     margin: 0 auto 0.2em;
     display: inline-block;
-    font-weight:500;
+    font-weight:600;
     line-height: 1.7;
     letter-spacing: 0.11em;
     font-size: calc(100vw * 50 / 1920);

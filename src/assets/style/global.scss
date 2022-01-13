@@ -354,6 +354,7 @@ img[lazy="loaded"] {
 
   .home {
     padding-top: $nav_phone_height;
+    background:none;
     // background: linear-gradient(to bottom, #094b76, #ffffff 50%, #004471 70%);
     //background-image: url('~@/projects/tsi/s1/bg_m.jpg');
     // background-image: $order_bg_image_m;
@@ -361,7 +362,7 @@ img[lazy="loaded"] {
   /* background-size:100%;
     background-attachment: fixed;
     background:none;
-    // background-position: 0% 50%;
+    // background-position: 0% 50%; */
    &::before{content: ' ';
       position: fixed;
       z-index: -1;
@@ -373,7 +374,7 @@ img[lazy="loaded"] {
       background: center 0 ;
       background-image: $bg_m;
       background-size: cover;
-  } */
+  }
 
     &.no-padding-top {
       padding-top: 0;
