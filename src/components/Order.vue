@@ -562,11 +562,11 @@ export default {
       line-height: 1.5;
     }
     .order-top {
-     // background-image: $order_bg_image_m;
+      // background-image: $order_bg_image_m;
       background-size: contain;
       background-repeat: repeat;
       // top: 10vw;
-      padding-bottom: 0;
+      padding-bottom: 10%;
     }
     .order {
       width: 85% !important;

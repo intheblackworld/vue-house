@@ -2,7 +2,7 @@
   <div>
     <div class="contact-info" id="contact-info" data-aos="fade" data-aos-delay="0">
       <img v-if="!isMobile" class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
-      <img v-if="isMobile" class="logo" src="@/assets/img/contact-logo_m.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
+      <img v-if="isMobile" class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
       <!-- <img
         v-if="isMobile"
         class="logo"
@@ -284,16 +284,12 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .contact-info {
-    // background: linear-gradient(
-    //   to bottom,
-    //   rgba(243, 149, 1, 1) 0%,
-    //   rgba(218, 71, 19, 1) 100%
-    // );
+    background: $contact_bg;
     display: flex;
     width: 100%;
     //  max-width: 95%;
     height: auto;
-    padding: 5%;
+    padding: 10% 8%;
     transform: none;
     position: static;
     margin: 0;

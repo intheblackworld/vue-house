@@ -145,16 +145,30 @@ stroke-dashoffset: 130;
 
 @media screen and (max-width: 767px) {
   .section1 {
+    background-image: url('~@/projects/yclj/s1/bgm.jpg');
+    background-size:cover ;
     width: 100%;
     min-height: sizem(667);
     max-height: sizem(812);
     height: calc(100vh - 63px);
-  margin: 0 0 32vw;
+  margin: 0 0 10vw;
   }
 
 .logo {
-  @include img_l_m(200, 108,48);
-top:calc(50% + 100vw * (140 - 667 * .5) / 375);
+  @include img_c_m(250, 50);
+top:calc(50% + 100vw * (60 - 667 * .5) / 375);
+}
+.coming-soon {
+  @include img_c_m(250, 50);
+top:calc(50% + 100vw * (180 - 667 * .5) / 375);
+}
+.main {
+  @include img_c_m(220, 108);
+top:calc(50% + 100vw * (300 - 667 * .5) / 375);
+}
+.main-bg {
+  @include img_l_m(160, 300, 50);
+top:calc(50% + 100vw * (200 - 667 * .5) / 375);
 }
 .title1{
   top: calc(50% + (110 - 333.5) * 100vw / 375);
