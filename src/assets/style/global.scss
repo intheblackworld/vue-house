@@ -39,8 +39,9 @@ body {
 }
 
 .home {
- background-image: url('~@/projects/yclj/s1/bg.jpg');
-  // padding-top: $nav_pc_height;
+ //background-image: url('~@/projects/yclj/s1/bg.jpg');
+  padding-top: $nav_pc_height;
+  background-color: #3b3d32;
   background-attachment: fixed;
   background-size: cover;
   background-position: cover;

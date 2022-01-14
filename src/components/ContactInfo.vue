@@ -111,7 +111,7 @@ export default {
   position: relative;
   z-index: 3;
   //width: 1200px;
-  width: 100%;
+  width: 60%;
  // height: 600px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
@@ -125,7 +125,7 @@ export default {
   width: $contact_logo_pc_width;
   height: auto;
   // height:;
-  margin: 0 auto 0;
+  margin: 50px auto 50px;
 }
 .info {
   width: 880px;
