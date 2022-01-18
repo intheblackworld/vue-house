@@ -28,3 +28,5 @@ $ogType = 'website';
 <meta name="twitter:title" content="<?php echo $docTitle; ?>" />
 <meta itemprop="name" content="<?php echo $docTitle; ?>">
 <meta itemprop="description" content="<?php echo $docDesc ?>">
+
+
