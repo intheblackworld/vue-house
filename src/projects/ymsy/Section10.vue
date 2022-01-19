@@ -204,9 +204,9 @@
     background-image: url('./mobile/01/bg_m.jpg');
     min-height: sizem(752);
     max-height: sizem(667);
-    height: sizem(667);
+    height: 100vh;
     // margin: 0 0 -12vw 0;
-     background-size: auto size-m(850);
+     background-size: auto size-m(780);
      background-position:center center;
     overflow: hidden;
     position: relative;

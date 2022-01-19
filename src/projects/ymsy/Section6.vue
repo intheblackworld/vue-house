@@ -6,7 +6,7 @@
         回家逛美術館
       </div>
       <div class="desc" data-aos="fade-up" data-aos-delay="400" v-if="isPC">
-        呼吸陽明山的風，漫步近3千坪夢想藍圖，在動感的日常中感動。恰如其分地收納多項匠心公設、精緻飯店物管。<br>知名新銳創作者蔡尉成作品《片片》迎賓，讓藝術之美滋養心靈，才知道最奢侈的不過是生活。
+        呼吸陽明山的風，漫步近3千坪夢想藍圖，在動感的日常中感動。恰如其分地收納多項匠心公設、精緻飯店物管。知名新銳創作者蔡尉成作品《片片》迎賓，讓藝術之美滋養心靈，才知道最奢侈的不過是生活。
       </div>
       <div class="desc" data-aos="fade-up" data-aos-delay="400" v-if="isMobile">
         呼吸陽明山的風，漫步近3千坪夢想藍圖，在動感的日常中感動。恰如其分地收納多項匠心公設、精緻飯店物管。知名新銳創作者蔡尉成作品《片片》迎賓。
@@ -20,7 +20,7 @@
 
     <div class="new-text">銷售企劃：興益發建設自建自售</div>
     <div class="new-text-1">蔡尉成雕塑創作《片片》w148 x 129 x H252cm</div>
-    <div class="new-text-2">飯店式物業管理服務實景圖</div>
+    <div class="new-text-2">現場實景</div>
 
 
     <div class="swipe"  data-aos="fade" data-aos-delay="800" v-if="isMobile">
@@ -438,7 +438,7 @@
 }
 
 .new-text-2 {
-  @include img_r_m(200, 250, 15);
+  @include img_r_m(100, 250, 15);
   top:calc(50% + ( 280 - 667 * 0.5) * 100vw / 375);
   font-size: size(80);
   font-stretch: normal;
@@ -446,7 +446,7 @@
   font-style: normal;
   line-height: 1.2;
   letter-spacing: normal;
-  text-align: center;
+  text-align: right;
   color: #fff;
   z-index: 3;
   white-space: nowrap;

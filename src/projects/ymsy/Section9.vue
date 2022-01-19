@@ -9,13 +9,12 @@
         興益發建設
       </div>
       <div class="desc" data-aos="fade-in" data-aos-delay="200">
-        一年一案，細細琢磨<br />
-        以獨到精準眼光，勤耕生活美學<br />
-        讓愛家的人更愛回家
+        獨到精準眼光，精耕生活美學<br>
+        讓愛家的人更愛家
       </div>
     </div>
 
-    <div class="new-text">銷售企劃：興益發建設自建自售</div>
+    <!--div class="new-text">銷售企劃：興益發建設自建自售</div-->
       <Map :bgSrc="bgSrc" v-if="isMobile" :hand="hand">
     </Map>
 
@@ -73,7 +72,8 @@
 }
 
 .label {
-  @include img_l_pc(277, 30, 73);
+  @include img_r_pc(277, 1010, 73);
+  top:calc(40% + ( 1030 - 1080 * 0.4) * 100vw / 1920);
   bottom: size(57);
   font-size: size(27.1);
   font-weight: 500;
@@ -102,7 +102,7 @@
 }
 
 .desc {
-  @include img_l_pc(466, 798, 574);
+  @include img_l_pc(466, 825, 574);
   font-size: size(28.1);
   font-weight: bold;
   font-stretch: normal;

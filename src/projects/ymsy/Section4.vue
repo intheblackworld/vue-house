@@ -648,6 +648,10 @@ export default {
           img: isMobile ? require('./mobile/04/slider_7.jpg') : require('./s4/slider_7.jpg'),
           name: '薇閣高級中學',
         },
+        {
+          img: isMobile ? require('./mobile/04/slider_8.jpg') : require('./s4/slider_8.jpg'),
+          name: '貴子坑',
+        },
       ],
     }
   },

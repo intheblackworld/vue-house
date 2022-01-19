@@ -8,9 +8,9 @@
     <div class="subtitle" data-aos="fade-up" data-aos-delay="200" v-if="isMobile">
       開窗四季，令人意猶未盡
     </div>
-    <div class="subtitle-text" v-if="isMobile">
+    <!--div class="subtitle-text" v-if="isMobile">
       現場實景
-    </div>
+    </div-->
     <div class="new-text">銷售企劃：興益發建設自建自售</div>
     <img loading="lazy" src="./s3/bg.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isPC">
     <img loading="lazy" src="./mobile/03/bg.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isMobile">
@@ -77,8 +77,8 @@
 }
 
 .title {
-  @include img_l_pc(1020, 80, 530);
-  top:calc(50% + ( 80 - 1080 * 0.5) * 100vw / 1920);
+  @include img_r_pc(360, 80, 360);
+  top:calc(50% + ( 400 - 1080 * 0.5) * 100vw / 1920);
   text-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.8);
   font-size: size(90);
   font-family: 'Noto Sans TC';
@@ -94,8 +94,8 @@
 }
 
 .subtitle {
-  @include img_l_pc(1560, 300, 530);
-  top:calc(50% + ( 300 - 1080 * 0.5) * 100vw / 1920);
+  @include img_r_pc(420, 300, 300);
+  top:calc(50% + ( 620 - 1080 * 0.5) * 100vw / 1920);
   text-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.8);
   font-size: size(35);
   font-family: 'Noto Sans TC';

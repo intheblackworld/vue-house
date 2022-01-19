@@ -93,12 +93,12 @@
   font-size: size(50);
   font-family: 'Noto Sans TC';
   font-stretch: normal;
-  font-weight: 500;
+  font-weight: 600;
   font-style: normal;
   line-height: 1.2;
   letter-spacing:0.087EM;
   text-align: center;
-  color: #FFF000;
+  color: #ffc74a;
   white-space: nowrap;
 }
 
@@ -108,13 +108,13 @@
   text-shadow: 0 0 5px #1b4a20;
   font-family: 'Noto Sans TC';
   font-size: size(40);
-  font-weight: 600;
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.5;
   letter-spacing: 0.09em;
   text-align: left;
-  color: #f9f8c7;
+  color: #fff;
 }
 
 /* 螢幕尺寸標準 */

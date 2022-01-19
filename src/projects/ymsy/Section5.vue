@@ -5,12 +5,11 @@
 
     <div class="content">
       <div class="title" data-aos="fade-up" data-aos-delay="0">
-        北投新興產業聚落<br />
-        坐收世紀榮景
+        懂生活的你<br />
+        只選樹山丘
       </div>
       <div class="desc" data-aos="fade-up" data-aos-delay="200">
-        台北市政府4年27億北投再生計畫，文化重鎮與科技園區完美結合。影視音產業園區、關渡科技園區、北投士林科技園區，<br />
-        為北投提升產值、創造經濟效益，繁華盛開咫尺間。
+        盡情享受豪奢公設，飯店式物業管理、景觀健身房、廚藝教室、閱覽室、KTV、Lounge Bar、高科技維安，體驗最尊爵的生活
       </div>
     </div>
 
@@ -45,7 +44,7 @@
   position: relative;
   //overflow-x: hidden;
   // min-height: size(900);
-  background-image: url('./all/section_bg.jpg');
+  //background-image: url('./all/section_bg.jpg');
   background-size: 100% 100%;
   // background-position: 0 0;
   background-attachment: fixed;
@@ -593,16 +592,121 @@ export default {
           img: isMobile
             ? require('./mobile/05/slider_1.jpg')
             : require('./s5/slider_1.jpg'),
-          name: '關渡科學園區',
-          // desc: '270度翠綠簇擁<br />開窗就享無垠綠景',
+          name: '現場實景',
         },
         {
           img: isMobile
             ? require('./mobile/05/slider_2.jpg')
             : require('./s5/slider_2.jpg'),
-          name: '榮總醫院',
-          // name: '稀有角地',
-          // desc: '大福路大興路環抱<br />地段價值更珍貴',
+          name: '現場實景',
+        },
+        {
+          img: isMobile
+            ? require('./mobile/05/slider_3.jpg')
+            : require('./s5/slider_3.jpg'),
+          name: '現場實景',
+        },
+        {
+          img: isMobile
+            ? require('./mobile/05/slider_4.jpg')
+            : require('./s5/slider_4.jpg'),
+          name: '現場實景',
+        },
+        {
+          img: isMobile
+            ? require('./mobile/05/slider_5.jpg')
+            : require('./s5/slider_5.jpg'),
+          name: '現場實景',
+        },
+        {
+          img: isMobile
+            ? require('./mobile/05/slider_6.jpg')
+            : require('./s5/slider_6.jpg'),
+          name: '現場實景',
+        },
+        {
+          img: isMobile
+            ? require('./mobile/05/slider_7.jpg')
+            : require('./s5/slider_7.jpg'),
+          name: '現場實景',
+        },
+        {
+          img: isMobile
+            ? require('./mobile/05/slider_8.jpg')
+            : require('./s5/slider_8.jpg'),
+          name: '現場實景',
+        },
+        {
+          img: isMobile
+            ? require('./mobile/05/slider_9.jpg')
+            : require('./s5/slider_9.jpg'),
+          name: '現場實景',
+        },
+        {
+          img: isMobile
+            ? require('./mobile/05/slider_10.jpg')
+            : require('./s5/slider_10.jpg'),
+          name: '現場實景',
+        },
+        {
+          img: isMobile
+            ? require('./mobile/05/slider_11.jpg')
+            : require('./s5/slider_11.jpg'),
+          name: '現場實景',
+        },
+        {
+          img: isMobile
+            ? require('./mobile/05/slider_12.jpg')
+            : require('./s5/slider_12.jpg'),
+          name: '現場實景',
+        },
+        {
+          img: isMobile
+            ? require('./mobile/05/slider_13.jpg')
+            : require('./s5/slider_13.jpg'),
+          name: '現場實景',
+        },
+        {
+          img: isMobile
+            ? require('./mobile/05/slider_14.jpg')
+            : require('./s5/slider_14.jpg'),
+          name: '現場實景',
+        },
+        {
+          img: isMobile
+            ? require('./mobile/05/slider_15.jpg')
+            : require('./s5/slider_15.jpg'),
+          name: '現場實景',
+        },
+        {
+          img: isMobile
+            ? require('./mobile/05/slider_16.jpg')
+            : require('./s5/slider_16.jpg'),
+          name: '現場實景',
+        },
+        {
+          img: isMobile
+            ? require('./mobile/05/slider_17.jpg')
+            : require('./s5/slider_17.jpg'),
+          name: '現場實景',
+        },
+        {
+          img: isMobile
+            ? require('./mobile/05/slider_18.jpg')
+            : require('./s5/slider_18.jpg'),
+          name: '現場實景',
+        },
+        {
+          img: isMobile
+            ? require('./mobile/05/slider_19.jpg')
+            : require('./s5/slider_19.jpg'),
+          name: '現場實景',
+        },
+        {
+          img: isMobile
+            ? require('./mobile/05/slider_20.jpg')
+            : require('./s5/slider_20.jpg'),
+          name: '現場實景',
         },
       ],
     }
