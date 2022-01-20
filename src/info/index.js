@@ -7,7 +7,7 @@ export default {
   phone: '02-8502-1688',
   fbLink: 'https://www.facebook.com/zhongyuetanyue',
   fbMessage: 'https://m.me/zhongyuetanyue',
-  caseName: '檀.悦',
+  caseName: '檀悦',
   indigatorLength: 10,
   caseId: 'tye',
 

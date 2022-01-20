@@ -1,10 +1,10 @@
 <template>
   <div class="section3">
-    <img src="./s1/bg3.jpg" :alt="`${info.caseName}_bg`" class="bg" v-if="isPC">
-    <img src="./s1/bg3-m.jpg" :alt="`${info.caseName}_bg`" class="bg" v-if="isMobile">
+    <img src="./s1/bg3.jpg" alt="壇悅-背景" class="bg" v-if="isPC">
+    <img src="./s1/bg3-m.jpg" alt="壇悅-背景" class="bg" v-if="isMobile">
     <div class="txt">
-    <div class="title1">中悦建設機構Ｘ璞園真誠代言</div>
-    <img src="./s1/logo.png" :alt="`${info.caseName}_logo`" class="logo">
+    <div class="title1" title="壇悅-標語">中悦建設機構Ｘ璞園真誠代言</div>
+    <img src="./s1/logo.png" alt="壇悅-logo" class="logo">
     </div>
     <div class="txt2"><span>定義你的成功，成就你的人生</span></div>
 </div>

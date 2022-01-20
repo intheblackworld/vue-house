@@ -1,8 +1,8 @@
 <template>
   <div class="section2">
     <div class="txt">
-    <div class="title1">悦式精工<span v-if="isPC"> &nbsp;</span><br v-if="isMobile">悦式奢華</div>
-    <div class="title2">新莊副都心｜30層地標建築｜SRC百坪精工</div>
+    <div class="title1" title="壇悅">悦式精工<span v-if="isPC"> &nbsp;</span><br v-if="isMobile">悦式奢華</div>
+    <div class="title2" title="壇悅">新莊副都心｜30層地標建築｜SRC百坪精工</div>
     </div>
 </div>
 </template>

@@ -2,10 +2,10 @@
   <div class="section1">
   <!-- <img src="./s1/1.jpg" alt="bg" class="img0">-->
     <div class="txt">
-      <div class="title1">流傳建築圈 &nbsp;0.3公分的堅持</div>
-      <div class="title2">這次不再是聽說⋯⋯</div>
+      <div class="title1" title="壇悅-標語">流傳建築圈 &nbsp;0.3公分的堅持</div>
+      <div class="title2" title="壇悅-標語">這次不再是聽說⋯⋯</div>
     </div>
-    <div class="txt2">
+    <div class="txt2" title="壇悅-標語">
       <span>DON’T<br>DREAM IT,<br>BE IT!</span>
     </div>
 </div>
