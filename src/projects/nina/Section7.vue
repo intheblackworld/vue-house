@@ -39,15 +39,14 @@
 <li>10年防水保固</li>
 <li>15年結構體保固</li>
 <li>1年設備保固</li>
-<li>成立專屬官方line，售服專線-(03)3855000</li>
 </ol>
       </div>
       </div>
-      <!--
+      
       <div class="pagination absolute flex-ac" data-aos="fade-down" data-aos-delay="500" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
-      -->
+      
     </div>
   </div>
 </template>
@@ -323,6 +322,10 @@ export default {
       slideList: [
         {
           img: require('./s7/1.png'),
+          name: '',
+        },
+        {
+          img: require('./s7/2.png'),
           name: '',
         },
       ],
