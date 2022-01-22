@@ -63,8 +63,8 @@
 
 .title {
   width: size(481);
-  bottom: size(240);
-  left: size(80);
+  top: size(70);
+  left: size(160);
   font-size: size(55.1);
   font-weight: 700;
   font-stretch: normal;
@@ -73,12 +73,12 @@
   letter-spacing: size(3.31);
   text-align: left;
   color: #ff3f3f;
-  white-space: nowrap;text-shadow: 0 0 0.2em #FFF, 0 0 0.7em #FFF;
+  white-space: nowrap;
 }
 .desc {
   width: size(600);
-  bottom: size(70);
-  left: size(80);
+  top: size(160);
+  left: size(160);
   font-size: size(19);
   font-weight: normal;
   font-stretch: normal;
@@ -86,7 +86,7 @@
   line-height: 1.7;
   letter-spacing: 0.06em;
   text-align: justify;
-  color: #000;text-shadow: 0 0 0.2em #FFF, 0 0 0.7em #FFF;
+  color: #000;
 }
 
 /* Swipe */

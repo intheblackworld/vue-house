@@ -163,7 +163,7 @@ export default {
   width: $contact_logo_pc_width;
   height: auto;
   // height:;
-  margin: 0 auto 20px;
+  margin: 20px auto 20px;
 }
 .info {
   width: 880px;

@@ -1,17 +1,13 @@
 <template>
   <div>
-    <div class="section2">
+    <div class="section3">
       <img src="./s3/bg.jpg" alt="map" class="bg-img" v-if="!isMobile">
       <div class="txt">
-      <h3 class="subtitle" data-aos="fade-right" data-aos-delay="200">Relax resorts</h3>
       <h3 class="title" data-aos="fade-right" data-aos-delay="400">
         城市與河岸最舒適的距離
       </h3>
-      <svg xmlns="http://www.w3.org/2000/svg" v-if="!isMobile && viewIndex === 3" class="cls-1 absolute" viewBox="0 0 827 157.62"><title>hr</title>
-        <polyline points="0 1 826 1 826 157.62" /></svg>
-      <div class="hr" v-if="isMobile" />
       <div class="desc" data-aos="fade-right" data-aos-delay="600">
-        八里，擁有宜居環境，左右更續接了雙北生活圈，交通便利，透過快速道路、關渡大橋淡江大橋連接了新市鎮生活圈。在這有著深度的文化蘊藏，十三行博物館、左岸公園、左岸劇場，相佐水岸綠道，如此舒心閑適的居所，只有「八里 龍躍」。
+        八里，擁有宜居環境，左右更續接了雙北生活圈，交通便利，透過快速道路、關渡大橋淡江大橋連接了新市鎮生活圈64號道路連接一高、二高、濱海公路至桃園國際機場。在這有著深度的文化蘊藏，十三行博物館、左岸公園、左岸劇場，相佐水岸綠道，如此舒心閑適的居所，就只有「八里 龍躍」
       </div>
       <div class="img" v-if="isMobile" @click="showDialog"><img src="./m/3/bg.jpg" alt="map">點圖放大</div>
       </div>
@@ -43,7 +39,7 @@
     stroke-dashoffset: 0;
   }
 }
-.section2 {
+.section3 {
   width: size(1920);
   height: 100vh;
   min-height: size(900);
@@ -91,7 +87,7 @@
   top: calc(50% + 9vw);
   left: size(150);
   font-size: size(55.2);
-  font-weight: 600;
+  font-weight: 700;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.44;
@@ -163,7 +159,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section2 {
+  .section3{
     width: 100vw;
     min-height: sizem(0);
     max-height: sizem(1000);
@@ -190,7 +186,7 @@
     top:0;
     left:0;
     font-size: sizem(25);
-    color: #231815;
+  color: #c20000;
     position: relative;
   }
 
@@ -210,6 +206,7 @@
     font-size: sizem(15);
     color: #595757;
     position: relative;
+    margin: 0.5em 0 0 0;
   }
 
   .hr {
@@ -260,7 +257,7 @@ import { isPC, isMobile, isTablet } from '@/utils'
 // import Map from '@/components/Map.vue'
 
 export default {
-  name: 'section2',
+  name: 'section3',
 
   // components: {
   //   Map,

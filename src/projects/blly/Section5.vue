@@ -1,56 +1,50 @@
 <template>
   <div>
     <div class="section5">
-      <img src="./s5/bg.jpg" alt="" class="bg-img" v-if="isPC">
-      <img src="./m/5/bg.jpg" alt="" class="bg-img" v-if="isMobile">
-      <img src="./s5/cloud2.png" alt="" class="cloud cloud1 absolute">
-      <img src="./s5/cloud1.png" alt="" class="cloud cloud2 absolute">
-      <img src="./s5/cloud1.png" alt="" class="cloud cloud3 absolute">
-      <img src="./s5/img.png" alt="" class="bg-img" v-if="isPC">
-      <img src="./m/5/img.png" alt="" class="img absolute" v-if="isMobile">
-      <div class="hr absolute" v-if="isMobile" />
-      <h3 class="title absolute" data-aos="fade-right" data-aos-delay="400">Natural Baptism</h3>
-      <svg  v-if="!isMobile && viewIndex == 5"  xmlns="http://www.w3.org/2000/svg" class="cls-1 absolute" viewBox="-329 -217 2304 1080" preserveAspectRatio="xMidYMid slice"><polyline class="cls-11" points="81.05 499.06 1.5 499.06 1.5 1.5 261.62 1.5"/><polyline class="cls-12" points="610.71 1.5 1649.31 1.5 1649.31 499.06 791.28 499.06"/></svg>
-      <h3 class="subtitle absolute" data-aos="fade-right" data-aos-delay="600">山水之中 尋回第二人生</h3>
-      <div class="desc absolute" data-aos="fade-right" data-aos-delay="800">前擁海河壯闊，後倚青山翠毓，「八里 龍躍」如同一座獨立的綠色島嶼，在人生最美麗的轉彎，實現對生活的純粹，給您一間無價景觀的書房，給您一間會呼吸的屋子，用心生活、大口呼吸，在這的每一天都是享受。
-      </div>
-      <div class="desc2 absolute" data-aos="fade-right" data-aos-delay="800">
-        現場完工實景
+      <img v-if="isPC" class="bg-img" src="./newspc/5.jpg" alt="八里龍躍_1">
+      <img v-if="isMobile" class="bg-img" src="./newsmo/5.jpg" alt="八里龍躍_1">
+
+      <h3 class="title absolute">
+        山水之中 尋回真實人生
+      </h3>
+      <div class="desc absolute">
+        前擁河川壯闊，後倚青山翠毓，「八里 龍躍」如同一座獨立的綠色島嶼，給您一間無價景觀的書房，給您一間會呼吸的屋子，用心生活、大口呼吸，在這的每一天都是享受。
       </div>
     </div>
   </div>
 </template>
-
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
-.cls-1{fill:none;stroke:#FFF;stroke-miterlimit:10;stroke-width:2.01px;
-width: size(1920);
-  height:100%;
-  left:size(0);
-  top:0;
-}
-.cls-11{
-  animation: letterDraw1 .84s linear 1s forwards;
-  stroke-dasharray: 840;
-  stroke-dashoffset: 840;
-}
-.cls-12{
-  animation: letterDraw1 2.4s linear 1.84s forwards;
-  stroke-dasharray: 2400;
-  stroke-dashoffset: 2400;
+.cls-1 {
+  fill: none;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  stroke-width: 2.01px;
+  width: size(199);
+  height: size(211);
+  left: size(652);
+  bottom: size(0);
+  animation: letterDraw1 0.5s linear 1s forwards;
+  stroke-dasharray: 1536;
+  stroke-dashoffset: 1536;
 }
 @keyframes letterDraw1 {
-    to {
-        stroke-dashoffset: 0
-    }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 .section5 {
   width: size(1920);
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);
-  overflow: hidden;
   position: relative;
+  // min-height: size(900);
+  // background-image: url('./s2/bg.jpg');
+  // background-size: 100% 100%;
+  // background-position: 0 0;
+  // background-attachment: fixed;
+  // overflow: hidden;
 }
 
 .bg-img {
@@ -66,97 +60,183 @@ width: size(1920);
     position: relative;
   }
 }
-.title {
-  width: auto;
-  top:8.5%;
-  left:51%;
-  font-size: size(67.2);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.85;
-  letter-spacing:-0.04em;
-  text-align: left;
-  color: #ffffff;
-  white-space: nowrap;
-  font-family: "TrajanPro";
-}
 
-.subtitle {
-  width: size(598);
-  top:calc(36% - 2.5vw);
-  left:51%;
+.title {
+  width: size(481);
+  top: size(70);
+  left: size(160);
   font-size: size(55.1);
-  font-weight: 600;
+  font-weight: 700;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.44;
   letter-spacing: size(3.31);
   text-align: left;
-  color: #ffffff;
+  color: #ff3f3f;
   white-space: nowrap;
 }
-
 .desc {
-  width: size(606);
-  top:calc(36% + 2.5vw);
-  left:51%;
-  font-size: size(19.1);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.7;
-  letter-spacing:0.06em;
-  text-align: justify;
-  color: #ffffff;
-}
-.desc2 {
-  width:calc(100% - 140vh);
-  max-width: 36vw;
-  min-width: 21vw;
-  top: calc(63% + 2vw);
-  right:0%;
+  width: size(600);
+  top: size(160);
+  left: size(160);
   font-size: size(19);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.7;
-  letter-spacing:0.06em;
-  color: #ffffff;
+  letter-spacing: 0.06em;
+  text-align: justify;
+  color: #000;
 }
 
-.cloud1 {
-  width: size(320);
-  top: size(600);
-  left: size(150);
-  animation: scale 20s -10s linear infinite;
-    opacity:1;
-    transform:translate(0% ,0%) scale(0, 0);
+/* Swipe */
+.swipe {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
 }
 
-.cloud2 {
-  width: size(501);
-  top: size(734);
-  left: size(250);
-  animation: scale 50s -25s linear infinite;
-    opacity:1;
-    transform:translate(0% ,0%) scale(0, 0);
+// begin
+.swipe-fade-leave-to {
+  opacity: 0;
+  z-index: 0;
+}
+// end
+.swipe-fade-enter {
+  opacity: 0;
+  z-index: 1;
 }
 
-.cloud3 {
-  width: size(365);
-  top: size(692);
-  left: size(900);
-  animation: scale 40s -30s linear infinite;
-    opacity: 1;
-    transform:translate(0% ,0%) scale(0, 0);
+.swipe-fade-enter-active {
+  transition: all 0.5s ease;
 }
 
+.swipe-fade-leave-active {
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
 
-@keyframes scale {
-  to {
-    transform:translate(-200% ,-300%) scale(3, 5);
-    opacity:0;
+// begin
+// .swipe-left-leave-to {
+//   margin-left: -100vw;
+//   z-index: 0;
+// }
+// // end
+// .swipe-left-enter {
+//   opacity: 0.5;
+//   margin-left: 0;
+//   z-index: 1;
+// }
+
+// .swipe-left-enter-active {
+//   transition: all 0.5s ease;
+// }
+
+// .swipe-left-leave-active {
+//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+// }
+
+.swipe-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.swipe-item {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  // &:nth-child(1) {
+  //   z-index: 1;
+  //   // opacity: 1;
+  // }
+
+  // &.base {
+  //   z-index: 1;
+  //   opacity: 1;
+  // }
+  // &.active {
+  //   z-index: 2;
+  //   // opacity: 1;
+  // }
+}
+
+.pagination {
+  width: auto;
+  bottom: size(42);
+  right: size(40);
+  justify-content: center;
+}
+
+.pagination-dot {
+  padding: 5px;
+  margin: 0 10px;
+  cursor: pointer;
+  z-index: 4;
+
+  span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 0 1px #fff;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.01);
+    transition: all 0.5s;
+
+    &::before {
+      content: '';
+      width: 60%;
+      height: 60%;
+      display: block;
+      background: #004ea2;
+      border-radius: 20px;
+      opacity: 1;
+      position: absolute;
+      top: 20%;
+      // transform: translateY(-50%);
+      left: 20%;
+      transition: all 0.3s;
+      transform-origin: center;
+      transform: scale(0);
+    }
+    &.active {
+      &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: #004ea2;
+        border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 0%;
+        // transform: translateY(-50%);
+        left: 0%;
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.swipe-btns {
+  width: 100%;
+  height: 100%;
+  padding: 0 15px;
+  z-index: 3;
+
+  .prev-btn,
+  .next-btn {
+    width: size(20);
+    cursor: pointer;
   }
 }
 
@@ -176,94 +256,226 @@ width: size(1920);
 @media screen and (max-width: 767px) {
   .section5 {
     width: 100vw;
-    min-height:sizem(590);
-    max-height:sizem(812);
-    height:calc(100vh - 63px);
-    // background-image: url('./mo/1/bg.png');
-    background-size: cover;
-    background-attachment: scroll;
+    min-height: sizem(604);
+    max-height: sizem(812);
+    height: calc(100vh - 63px);
+    // background-image: url('./s2/bg.jpg');
+    // background-size: 100% 100%;
+    // background-position: 0 0;
+    // background-attachment: fixed;
+    overflow: hidden;
   }
 
-  .img {
-    width: 100vw;
-    height: auto;
-    bottom: 0;
+  .dark-block {
+    display: block;
+    width: 100%;
+    height: 100%;
+    bottom: auto;
+    top: 0;
     left: 0;
+    background: rgba(0, 0, 0, 0.7);
   }
 
   .title {
-    width:auto;
-    top: sizem(80 - 55);
-    right: auto;
-    left: sizem(32.5);
-    font-size: sizem(22);
-  }
-  .subtitle {
-    width:auto;
-    top: sizem(120 - 55);
-    right: auto;
-    left: sizem(32.5);
+    width: sizem(218);
+    top: sizem(57);
+    top: calc(50% + (57 - 604 * .5) * 100vw / 375);
+    left: sizem(32);
     font-size: sizem(25);
+    line-height: 1.44;
+    letter-spacing: sizem(1.5);
+    text-align: left;
+    white-space: nowrap;
   }
-
 
   .desc {
-    width: sizem(291);
-    top: sizem(130);
-    left: sizem(32.5);
+    width: sizem(310);
+    top: calc(50% + (121 - 604 * .5) * 100vw / 375);
+    left: sizem(32);
     font-size: sizem(15);
   }
-.desc2 {
-  width:auto;
-  max-width:100%;
-  min-width:0;
-  top:auto;
-  left:auto;
-  bottom:0.5em;
-  right:5%;
-  font-size: sizem(12);
-  opacity: 0.8;
-}
-
 
   .hr {
-    width: sizem(291);
+    width: sizem(310);
     height: 1px;
     background-color: #fff;
-    top: sizem(115);
+    top: sizem(106);
     right: auto;
-    left: sizem(32.5);
+    left: sizem(32);
   }
 
-  .cloud1 {
-    width: sizem(84);
-    top: sizem(294);
+  /* Swipe */
+  .swipe {
+    width: 100vw;
+    height: 100%;
+    top: sizem(0);
+    left: sizem(0);
+    object-fit: cover;
+  }
+
+  // begin
+  .swipe-fade-leave-to {
+    opacity: 0;
+    z-index: 0;
+  }
+  // end
+  .swipe-fade-enter {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .swipe-fade-enter-active {
+    transition: all 0.5s ease;
+  }
+
+  .swipe-fade-leave-active {
+    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  // begin
+  // .swipe-left-leave-to {
+  //   margin-left: -100vw;
+  //   z-index: 0;
+  // }
+  // // end
+  // .swipe-left-enter {
+  //   opacity: 0.5;
+  //   margin-left: 0;
+  //   z-index: 1;
+  // }
+
+  // .swipe-left-enter-active {
+  //   transition: all 0.5s ease;
+  // }
+
+  // .swipe-left-leave-active {
+  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  // }
+
+  .swipe-wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .swipe-item {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+    .img1 {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .img2 {
+      width: 100vw;
+      height: auto;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 5;
+    }
+
+    // &:nth-child(1) {
+    //   z-index: 1;
+    //   // opacity: 1;
+    // }
+
+    // &.base {
+    //   z-index: 1;
+    //   opacity: 1;
+    // }
+    // &.active {
+    //   z-index: 2;
+    //   // opacity: 1;
+    // }
+  }
+
+  .pagination {
+    width: auto;
+    bottom: size(91);
     left: 0;
+    right: 0;
+    margin: 0 auto;
+    justify-content: center;
   }
 
-  .cloud2 {
-    width: sizem(144);
-    top: sizem(410);
-    left: sizem(14);
+  .pagination-dot {
+    padding: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    z-index: 4;
+
+    span {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 0 1px #fff;
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.01);
+      transition: all 0.5s;
+
+      &::before {
+        content: '';
+        width: 60%;
+        height: 60%;
+        display: block;
+        background: #004ea2;
+        border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 20%;
+        // transform: translateY(-50%);
+        left: 20%;
+        transition: all 0.3s;
+        transform-origin: center;
+        transform: scale(0);
+      }
+      &.active {
+        &::before {
+          content: '';
+          width: 100%;
+          height: 100%;
+          display: block;
+          background: #004ea2;
+          border-radius: 20px;
+          opacity: 1;
+          position: absolute;
+          top: 0%;
+          // transform: translateY(-50%);
+          left: 0%;
+          transform: scale(1);
+        }
+      }
+    }
   }
 
-  .cloud3 {
-    width: sizem(104);
-    top: sizem(397);
-    left: sizem(211);
-  }
+  .swipe-btns {
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+    z-index: 3;
 
-  .cloud {
-    animation: none;
+    .prev-btn,
+    .next-btn {
+      width: sizem(15);
+      cursor: pointer;
+    }
   }
 }
 </style>
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
+import slider from '@/mixins/slider.js'
 
 export default {
   name: 'section5',
+
+  mixins: [slider],
   props: ['viewIndex'],
   data() {
     return {
@@ -271,6 +483,20 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
+      slideList: [
+        {
+          img: isMobile ? require('./m/4/1.jpg') : require('./s4/1.jpg'),
+        },
+        {
+          img: isMobile ? require('./m/4/2.jpg') : require('./s4/2.jpg'),
+        },
+        {
+          img: isMobile ? require('./m/4/3.jpg') : require('./s4/3.jpg'),
+        },
+        {
+          img: isMobile ? require('./m/4/4.jpg') : require('./s4/4.jpg'),
+        },
+      ],
     }
   },
 

@@ -32,7 +32,7 @@ $mask_icon_color: #c82514;
 
 /* contactSection */
 // order
-$order_bg_color: #e5e300;
+$order_bg_color: #ffca28;
 $order_bg_image: url('~@/assets/img/order-bg.png');
 $order_bg_image_m: url('~@/assets/img/order-bg.png');
 $order_title_color: #011949;
@@ -51,8 +51,8 @@ $order_submit_color: #fff !important;
 $order_sumbit_disable_bg: #999 !important;
 
 // contactInfo
-$contact_bg: #e4e201;
-$contact_bg_m: #e4e201;
+$contact_bg: #ffca28;
+$contact_bg_m: #ffca28;
 $contact_shadow: 0 0 80px 0 rgba(0, 0, 0, 0.2);
 
 //$contact_btn_border: inset 0 0 0px 1.5px #fff;
@@ -63,7 +63,7 @@ $contact_btn_icon: #011751;
 $contact_btn_bg: transparent;
 $contact_btn_hover_color: #011949;
 $contact_btn_hover_icon: #011949;
-$contact_btn_hover_bg: #e5e300;
+$contact_btn_hover_bg: #ffca28;
 
 $contact_google_btn_color: #fff;
 $contact_google_btn_icon: #fff;
@@ -76,8 +76,8 @@ $contact_google_hover_btn_bg: #a60d0d;
 // houseInfo
 $house_bg: #fff;
 $house_title_color: #000;
-$house_border_color: #395561;
-$house_label_color: #395561;
+$house_border_color: #a60d0d;
+$house_label_color: #a60d0d;
 $house_desc_color: #000;
 
 // mobileNav

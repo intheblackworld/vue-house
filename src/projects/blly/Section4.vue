@@ -1,7 +1,10 @@
 <template>
   <div>
     <div class="section4">
-      <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <img v-if="isPC" class="bg-img" src="./newspc/4.jpg" alt="八里龍躍_1">
+      <img v-if="isMobile" class="bg-img" src="./newsmo/4.jpg" alt="八里龍躍_1">
+    <!--
+        <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -19,18 +22,10 @@
       </div>
       <div class="pagination absolute flex-ac" data-aos="fade" data-aos-delay="200" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-      </div>
-      <div class="dark-block absolute" v-if="!isMobile">
-      </div>
+      </div>  -->
       <h3 class="title absolute">
-        RIVERSIDE TRIP
-      </h3>
-      <svg v-if="!isMobile && viewIndex == 4"  xmlns="http://www.w3.org/2000/svg" class="cls-1 absolute" viewBox="0 0 199 214">
-        <polyline points="0 1 198 1 198 214" /></svg>
-      <h3 class="subtitle absolute">
         河岸 開卷一日散策
       </h3>
-      <div class="hr absolute" v-if="isMobile" />
       <div class="desc absolute">
         步行即可抵台灣十大經典單車路線之一的「八里左岸自行車道」，沿途有關渡大橋、八里渡船頭、挖子尾生態保護區、十三行博物館等景點，依傍於淡水河邊，或騎車或鍛鍊，享受湖光山色，欣賞淡水落日餘暉，沉浸於古蹟與美食的一日散策。
       </div>
@@ -85,48 +80,23 @@
   }
 }
 
-.dark-block {
-  width: size(932);
-  height: size(344.5);
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(to right, #000, transparent);
-}
-
 .title {
-  width: size(550);
-  bottom: size(248);
-  left: size(150);
-  font-size: size(67.2);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.25;
-  letter-spacing: -0.04em;
-  text-align: left;
-  color: #ffffff;
-  white-space: nowrap;
-  font-family: 'TrajanPro';
-}
-
-.subtitle {
   width: size(481);
-  bottom: size(175);
+  top: size(60);
   left: size(150);
   font-size: size(55.1);
-  font-weight: 600;
+  font-weight: 700;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.44;
   letter-spacing: size(3.31);
   text-align: left;
-  color: #ffffff;
+  color: #c20000;
   white-space: nowrap;
 }
-
 .desc {
   width: size(580);
-  top: calc(100% - 9vw);
+  top: size(150);
   left: size(150);
   font-size: size(19);
   font-weight: normal;
@@ -135,7 +105,7 @@
   line-height: 1.7;
   letter-spacing: 0.06em;
   text-align: justify;
-  color: #ffffff;
+  color: #000;
 }
 
 /* Swipe */
@@ -326,38 +296,20 @@
   }
 
   .title {
-    width: sizem(179);
-    top: sizem(25);
-    left: sizem(32);
-    font-size: sizem(22);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.85;
-    letter-spacing: sizem(-0.88);
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
-  }
-
-  .subtitle {
     width: sizem(218);
     top: sizem(57);
+    top: calc(50% + (57 - 604 * .5) * 100vw / 375);
     left: sizem(32);
     font-size: sizem(25);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.44;
     letter-spacing: sizem(1.5);
     text-align: left;
-    color: #ffffff;
     white-space: nowrap;
   }
 
   .desc {
     width: sizem(310);
-    top: sizem(121);
+    top: calc(50% + (121 - 604 * .5) * 100vw / 375);
     left: sizem(32);
     font-size: sizem(15);
   }
