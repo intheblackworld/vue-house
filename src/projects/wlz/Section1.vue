@@ -1,5 +1,6 @@
 <template>
   <div class="section1">
+   
 <svg version="1.1" data-aos="zoom-out" id="logo" class="logo" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 410 535" xml:space="preserve">
 <path d="M18.3,521.1c0.1,0.2,0.1,0.4,0.1,0.6l-3.6,12.5c-0.1,0.3-0.3,0.5-0.7,0.5h-1.2c-0.3,0-0.6-0.2-0.7-0.5l-2.8-9.8
 	c-0.4,1.4-0.8,2.8-1.2,4.2c-0.5,1.9-1.1,3.8-1.7,5.7c-0.1,0.3-0.3,0.5-0.7,0.5H4.7c-0.3,0-0.6-0.2-0.7-0.5l-3.6-12.5

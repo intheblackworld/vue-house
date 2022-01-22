@@ -39,8 +39,9 @@ body {
 }
 
 .home {
- background-image: url('~@/projects/yclj/s1/bg.jpg');
-  // padding-top: $nav_pc_height;
+ //background-image: url('~@/projects/yclj/s1/bg.jpg');
+  padding-top: $nav_pc_height;
+  background-color: #3b3d32;
   background-attachment: fixed;
   background-size: cover;
   background-position: cover;
@@ -260,7 +261,7 @@ img[lazy="loaded"] {
 
   .home {
     padding-top: $nav_tablet_height;
-    // background-color: $order_bg_color;
+    //background-color: $order_bg_color !important;
     // background-image: $order_bg_image;
     background-repeat: no-repeat;
     background-size: 100vw auto;
@@ -333,6 +334,9 @@ img[lazy="loaded"] {
 
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
+  .home {
+    background-color: #3b3d32 !important;
+  }
   .no-padding-top {
     padding-top: 0;
 

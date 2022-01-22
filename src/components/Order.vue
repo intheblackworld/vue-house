@@ -160,7 +160,7 @@
           :disabled="!checked || !isVerify"
           @click="submit"
           :loading="isSubmit"
-          >立即預約</el-button
+          >確認送出</el-button
         >
         <Loading :loading="isSubmit" :isOpacity="true" />
       </div>
@@ -363,6 +363,7 @@ export default {
   button {
     font-family: $family1;
     background: $order_submit_bg;
+    border:2px solid #fff !important;
   }
   .order-top {
     background-size: cover;
@@ -380,7 +381,7 @@ export default {
     display: inline-block;
     font-weight:500;
     line-height: 1.7;
-    letter-spacing: 0.11em;
+    letter-spacing: 0.5em;
     font-size: calc(100vw * 50 / 1920);
     text-align: center;
     color: $order_title_color;
@@ -561,11 +562,11 @@ export default {
       line-height: 1.5;
     }
     .order-top {
-     // background-image: $order_bg_image_m;
+      // background-image: $order_bg_image_m;
       background-size: contain;
       background-repeat: repeat;
       // top: 10vw;
-      padding-bottom: 0;
+      padding-bottom: 10%;
     }
     .order {
       width: 85% !important;
