@@ -2,12 +2,13 @@
 
 .el-select {
   //margin-left: 21px;
- // font-family:$family3;
+  font-family:$family3;
   position: relative;
-  font-size: 14px;
-  display: inline-block;flex: 0 1 auto;
+  font-size:1em !important;
+  font-weight: bold;
+  display: inline-block;flex: 1;
 }
-//.el-scrollbar{font-family:$family3;}
+.el-scrollbar{font-family:$family3;}
 
 .el-date-editor.el-input {
   position: relative !important;
@@ -16,21 +17,26 @@
   width: 100% !important;
   margin-left: 44px;
 }
-/*
 .el-input{
-  display: inline-block;flex: 0 1 auto;width:auto !important;;}*/
+  display: inline-block;flex: 1;
+  width:auto !important;
+  font-size:1em !important;
+}
 .el-input__inner {
-  width: 310px !important;
+  width:100% !important;
   height: 48px !important;
   line-height: 48px !important;
-  font-size: 16px !important;
-  border: $order_input_border !important;
-  background: $order_input_bg;
+  border:0px solid #ccc !important;
+  background: #FFF0 !important;
   color: $order_input_color;
-  //font-family:$family3;
-
+  font-family:$family3;
+  border-radius: inherit;
+  transition: all 0.5s;
+  //font-size: 1em !important;
+  position: relative;
+  background: linear-gradient(to right, #fff0 100%,#ff01 100%) !important;
   &:focus {
-    border: $order_input_focus_border;
+  background: linear-gradient(to right, #fff0 50%,#ff01 100%) !important;
   }
 }
 .el-select-dropdown__item.selected {
@@ -38,17 +44,17 @@
 }
 
 .el-textarea {
-  width: 420px !important;
-  height: 95% !important;
+  width: 100% !important;
+  height: 100% !important;
+  font-size:1em !important;
   .el-textarea__inner {
     height: 100% !important;
     border-radius: 0 !important;
-    color: #333;
+    color: $order_input_color;
     padding-top: 10px !important;
-    font-size: 16px !important;
-    border: $order_input_border !important;
-    background:#FFF;
- // font-family:$family3;
+    border:0 !important;
+    background:$order_input_bg;
+  font-family:$family3;
 
     &::placeholder {
       color: $order_input_placeholder;
@@ -85,15 +91,17 @@
   background-position: center !important;
   background-color: $order_submit_bg;
   background-image: $order_submit_bg;
-  border: 1px solid #eb5500 !important;
- // border-radius: 72px / 72px !important;
+  border:0px solid #eb5500 !important;
+  //border-radius:1.8em !important;
   margin: 0 auto !important;
   margin-top: 20px !important;
   transition: all 0.3s !important;
   color: $order_submit_color;
   // z-index: 10;
   border: none !important;
-  //font-family: $family3;
+  font-family: $family3;
+  position: relative;
+  //overflow: hidden;
 
   &.is-disabled {
     background-color: $order_sumbit_disable_bg;
@@ -103,9 +111,7 @@
   svg {
     margin-right: 15px;
   }
-
-  position: relative;
-  overflow: hidden;
+/*
   &::before {
     content: "";
     width: 40%;
@@ -126,10 +132,31 @@
     width: 90%;
     left: 140%;
   }
-  &.is-disabled:hover::before {
-    opacity: 0;
+  */
+  /*
+  &::before{content: "";position: absolute;top: 0;left:0;width: 100%;
+    height: 100%;border:0.05em solid #fff000;
+  border-radius:1.7em;
+    animation: btn 1s ease-in-out infinite;}
+    &:hover{
+      transform:scale(1.1);
+    }
+    &.is-disabled {
+      transform:scale(1);
+    }
+    &.is-disabled:before {
+      opacity: 0;
+    }
+*/
+}
+/*
+@keyframes btn {
+  to {
+    border:0.05em solid #FFF0;
+    transform:scaleX(1.1);
   }
 }
+*/
 
 /* 螢幕尺寸標準 */
 /* 手機尺寸 */
@@ -160,7 +187,7 @@
 
   .form-submit {
     width: 100% !important;
-    font-size: 16px !important;
+    font-size: 24px !important;
     margin: 10px auto 20px auto !important;
   }
 

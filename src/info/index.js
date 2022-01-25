@@ -1,29 +1,30 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '桃園市大園區環區西路與科二街交叉口',
+  address: '桃園市中壢區民族路6段360號對面',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7228.636743219547!2d121.1644956!3d25.0571962!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x428384c93ae59188!2zMjXCsDAzJzI1LjkiTiAxMjHCsDEwJzA3LjkiRQ!5e0!3m2!1szh-TW!2stw!4v1641534061186!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/LSSHwq82aCnRQKYV6',
-  phone: '03-3855000',
-  fbLink: 'https://www.facebook.com/nina.yufong',
-  fbMessage: 'https://m.me/nina.yufong',
-  caseName: '悅峰釀',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.1168196807002!2d121.1563332150049!3d24.962139784006087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468253da5118539%3A0x1fb24f4c54e19faa!2z5a6c6Kqg5qiC6IGa!5e0!3m2!1szh-TW!2stw!4v1642122962353!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/gspbxmVVQ6E81xKp8',
+  phone: '03-490-9129',
+  fbLink: 'https://www.facebook.com/108931748200345/',
+  fbMessage: 'https://m.me/108931748200345',
+  caseName: '宜誠樂聚',
   indigatorLength: 10,
+  caseId: 'yclj',
 
   houseInfos: [
-    ['投資興建', '悅峰建設股份有限公司',],
-    ['建築規劃', '黃瀞萩建築師事務所',],
-    ['戶數規劃', '24戶',],
-    ['樓層規劃', '4層、5層',],
-    ['建案位置', '桃園市大園區客運路二段253、253-1地號',],
+    ['建設公司', '宜誠建設股份有限公司'],
+    ['代銷公司', '明創廣告有限公司'],
+    ['基地面績', '約1945坪'],
+    ['棟戶規劃', '三幢，232戶'],
+    ['基地地址', '桃園市新屋區民族路六段&高洲五街'],
+    ['接待中心', '桃園市中壢區民族路6段360號對面'],
   ],
-
-  gtmCode: [''], // 可放置多個
-  recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
+  gtmCode: ['KLXJ64S'], // 可放置多個
+  recaptcha_site_key_v2: '6LfGUjEaAAAAANYvhZQx5imGm23pRt0V-rOvkpNC',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
   order: {
-    title: '預約賞屋',
-    subTitle: ''
+    title: '歡迎預約',
+    subTitle: '若想了解建案資訊，歡迎填寫表單或來電洽詢，將由專人為您服務，謝謝！'
   }
 }

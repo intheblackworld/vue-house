@@ -5,84 +5,88 @@ h2,
 h3,
 h4,
 h5,
-p,
-label,
-input,
-textarea
-{
-  margin: 0;
-  font-family:inherit;
+p {
   // font-family:inherit;
+  margin: 0;
   // font-family: 'Noto Serif TC', serif;
+  font-family:inherit;
   // font-family: '微軟正黑體', 'Microsoft JhengHei', 'Helvetica Neue', Helvetica,
-    // Arial;
+  // Arial;
+
+  span {
+    font-family:inherit;
+  }
 }
-/*
+
 h2 {
-  font-family: 'DFPingJuStd';
+  font-family:$family2;
   margin: 0;
   font-weight: normal;
 }
-h3, label, span {
-  font-family:'Noto Sans TC',sans-serif;
-  // font-family: 'Noto Serif TC',  'Noto Sans TC',sans-serif;
+h3{
+font-family: $family2;}
+label,
+span {
+  // font-family:'Noto Sans TC',sans-serif;
+    font-family:inherit;
   margin: 0;
   //font-weight: bold;
 }
 
-p {
-  font-family: Arial,  'Noto Sans TC',sans-serif;
+p,
+.desc {
+  font-family:inherit;
   // font-family: 'Noto Serif TC','Noto Sans TC', serif;
   // font-family: '微軟正黑體', 'Microsoft JhengHei', 'Helvetica Neue', Helvetica,
   //   Arial;
   margin: 0;
 }
-*/
+
 /* animate css */
 
-/* font */
-
-/*
+/* font
 @font-face {
   font-family: DFPingJuStd;
-  src: url('~@/assets/font/DFPingJuStd-W7.otf?#iefix')
-      format('embedded-opentype'),
-    url('~@/assets/font/DFPingJuStd-W7.otf');
+  src: url("~@/assets/font/DFPingJuStd-W7.otf?#iefix")
+      format("embedded-opentype"),
+    url("~@/assets/font/DFPingJuStd-W7.otf");
   font-weight: 300;
-}
-
+} */
+/*
 @font-face {
   font-family: icomoon;
-  src: url('~@/assets/font/icomoon.ttf') format('truetype'),
-    url('~@/assets/font/icomoon.ttf');
+  src: url("~@/assets/font/icomoon.ttf") format("truetype"),
+    url("~@/assets/font/icomoon.ttf");
 }
 
 @font-face {
-  font-family: 'TimesNewRomanPSMT';
-  src: url('~@/assets/font/TimesNewRomanPSMT.ttf') format('truetype'),
-    url('~@/assets/font/TimesNewRomanPSMT.ttf');
+  font-family: "TimesNewRomanPSMT";
+  src: url("~@/assets/font/TimesNewRomanPSMT.ttf") format("truetype"),
+    url("~@/assets/font/TimesNewRomanPSMT.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+*/
+/*
+@font-face {
+  font-family: "khmer";
+  src: url("~@/assets/font/KhmerMN.ttf") format("truetype"),
+    url("~@/assets/font/KhmerMN.ttf");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'khmer';
-  src: url('~@/assets/font/KhmerMN.ttf') format('truetype'),
-    url('~@/assets/font/KhmerMN.ttf');
+  font-family: "futurabq";
+  src: url("~@/assets/font/futurabq-medium.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
-}
-
-@font-face {
-  font-family: 'futurabq';
-  src: url('~@/assets/font/futurabq-medium.otf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
+}*/
+/*
 @font-face {
   font-family: Impact;
-  src: url('~@/assets/font/Impact.ttf') format('truetype'), url('~@/assets/font/Impact.ttf');
+  src: url("~@/assets/font/Impact.ttf") format("truetype"),
+    url("~@/assets/font/Impact.ttf");
   font-weight: normal;
   font-style: normal;
 }

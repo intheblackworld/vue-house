@@ -3,8 +3,8 @@
     <div id="contact-info" class="contact-info" data-aos="fade" data-aos-delay="0">
 
      <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
-      <img src="@/projects/nina/all/6.png" :alt="`${info.caseName}_bg`" class="c6">
-      <img src="@/projects/nina/all/4.png" :alt="`${info.caseName}_bg`" class="c4">
+      <img src="@/projects/yclj1/all/6.png" :alt="`${info.caseName}_bg`" class="c6">
+      <img src="@/projects/yclj1/all/4.png" :alt="`${info.caseName}_bg`" class="c4">
     </div>
       <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
       <div class="info">

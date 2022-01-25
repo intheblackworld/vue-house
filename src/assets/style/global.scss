@@ -1,32 +1,31 @@
-@import './reset.scss';
-@import './animate.scss';
-@import './aos.scss';
-@import './variableDefault.scss';
-@import './variableColor.scss';
-@import './form.scss';
-@import './dialog.scss';
-@import './fonts.scss';
-@import './customClass.scss';
-@import './slide.scss';
-@import './swiper.scss'; // vue awesome swiper
-@import './mapBg.scss';
+@import "./reset.scss";
+@import "./animate.scss";
+@import "./aos.scss";
+@import "./variableDefault.scss";
+@import "./variableColor.scss";
+@import "./form.scss";
+@import "./dialog.scss";
+@import "./fonts.scss";
+@import "./customClass.scss";
+@import "./slide.scss";
+@import "./swiper.scss"; // vue awesome swiper
+@import "./mapBg.scss";
 
 html,
 body {
- // background: $bg !important;
+  // background: $bg !important;
   overflow-x: hidden;
-  padding-right: 0 !important;
   *::-webkit-scrollbar {
     // display: none;
   }
 
   * {
-   // font-family:$family1;
+    // font-family:$family1;
     outline: none !important;
   }
 
   ::selection {
-    background-color: #a90005;
+    background-color: #60c2e9;
     color: #fff;
   }
 }
@@ -40,27 +39,33 @@ body {
 }
 
 .home {
+ //background-image: url('~@/projects/yclj/s1/bg.jpg');
   padding-top: $nav_pc_height;
-  overflow: hidden;//試底下多的那塊哪來的
+  background-color: $bg;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: cover;
+  background-repeat: no-repeat;
+  overflow: hidden; //試底下多的那塊哪來的
+  font-family: $family1;
+  &::before{content: ' ';
+     position: fixed;
+     z-index: -1;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+width: 100%;
+     background: center 0 ;
+     background-color: $bg;
+     background-size: cover;}
+
   &.no-padding-top {
     padding-top: 0;
 
     .fullscreen {
       height: 100vh;
     }
-  }
-  &::before{
-    content: "";
-    display: block;
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    background: $bg;
-    background-size: $bg-size;
-    overflow: hidden;//試底下多的那塊哪來的
   }
 }
 
@@ -169,7 +174,7 @@ body {
 @media only screen and (min-width: 1441px) {
   .layout-container {
     width: 1800px;
-    max-width:81%;
+    max-width: 81%;
     margin-left: auto !important;
     margin-right: auto !important;
   }
@@ -193,23 +198,23 @@ body {
 @media only screen and (max-width: 1024px) {
   .layout-container {
     width: 100%;
-   // margin-left: 1em !important;
-   // margin-right: 1em !important;
+    // margin-left: 1em !important;
+    // margin-right: 1em !important;
   }
 }
 
 /* lazy load */
-img[lazy='loading'] {
+img[lazy="loading"] {
   opacity: 0;
   transition: opacity 1s;
 }
-img[lazy='error'] {
+img[lazy="error"] {
   /*your style here*/
   opacity: 0;
   transition: opacity 1s;
 }
 
-img[lazy='loaded'] {
+img[lazy="loaded"] {
   /*your style here*/
   opacity: 1;
   transition: opacity 1s;
@@ -219,14 +224,14 @@ img[lazy='loaded'] {
   transition: opacity 1s;
   opacity: 0;
 }
-.lazy-bg[lazy='loading'] {
+.lazy-bg[lazy="loading"] {
   opacity: 0;
 }
-.lazy-bg[lazy='error'] {
+.lazy-bg[lazy="error"] {
   /*your style here*/
   opacity: 0;
 }
-.lazy-bg[lazy='loaded'] {
+.lazy-bg[lazy="loaded"] {
   opacity: 1;
 }
 
@@ -256,6 +261,12 @@ img[lazy='loaded'] {
 
   .home {
     padding-top: $nav_tablet_height;
+    //background-color: $order_bg_color !important;
+    // background-image: $order_bg_image;
+    background-repeat: no-repeat;
+    background-size: 100vw auto;
+    background-attachment: fixed;
+    background-position: 0% 50%;
 
     &.no-padding-top {
       padding-top: 0;
@@ -323,6 +334,9 @@ img[lazy='loaded'] {
 
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
+  .home {
+    background-color: #3b3d32 !important;
+  }
   .no-padding-top {
     padding-top: 0;
 
@@ -344,11 +358,32 @@ img[lazy='loaded'] {
 
   .home {
     padding-top: $nav_phone_height;
+    // background: linear-gradient(to bottom, #094b76, #ffffff 50%, #004471 70%);
+    //background-image: url('~@/projects/tsi/s1/bg_m.jpg');
+    // background-image: $order_bg_image_m;
+    // background-repeat: no-repeat;
+    background-size:100%;
+    background-attachment: fixed;
+    background:none;
+    // background-position: 0% 50%;
+   &::before{content: ' ';
+      position: fixed;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: center 0 ;
+      background-image: $bg_m;
+      background-size: cover;
+  }
+
     &.no-padding-top {
       padding-top: 0;
     }
   }
-  
+
   .full-bg {
     height: calc(100vh - 63px);
   }

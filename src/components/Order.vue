@@ -438,7 +438,7 @@ export default {
     /*
   &::before{content:"";position: absolute;z-index:-1;top: 0;left: 0;
   height: 100%;width: 100%;
-  background: url("~@/projects/nina/all/r_bg.png");
+  background: url("~@/projects/yclj1/all/r_bg.png");
   background-size: 100% 100%;
   }
   */

@@ -14,14 +14,17 @@
       <Section1 />
     </vue-lazy-component>
 <!---->
-    <vue-lazy-component class="section" id="section2">
+    <vue-lazy-component
+      class="section"
+      id="section2"
+    >
       <Section2 />
-    </vue-lazy-component> 
+    </vue-lazy-component>
     <vue-lazy-component
       class="section"
       id="section3"
     >
-      <Section3 :viewIndex="viewIndex" />
+      <Section3 />
     </vue-lazy-component>
     <vue-lazy-component
       class="section"
@@ -46,18 +49,6 @@
       id="section7"
     >
       <Section7 />
-    </vue-lazy-component>
-     <vue-lazy-component
-      class="section"
-      id="section8"
-    >
-      <Section8 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section9"
-    >
-    <Section9 />
     </vue-lazy-component>
 <!--    <vue-lazy-component
       class="section relative"
@@ -104,16 +95,16 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/nina/Section1.vue'
-import Section2 from '@/projects/nina/Section2.vue'
-import Section3 from '@/projects/nina/Section3.vue'
-import Section4 from '@/projects/nina/Section4.vue'
-import Section5 from '@/projects/nina/Section5.vue'
-import Section6 from '@/projects/nina/Section6.vue'
-import Section7 from '@/projects/nina/Section7.vue'
-import Section8 from '@/projects/nina/Section8.vue'
-import Section9 from '@/projects/nina/Section9.vue'
-/* import Section10 from '@/projects/nina/Section10.vue' */
+import Section1 from '@/projects/yclj1/Section1.vue'
+import Section2 from '@/projects/yclj1/Section2.vue'
+import Section3 from '@/projects/yclj1/Section3.vue'
+import Section4 from '@/projects/yclj1/Section4.vue'
+import Section5 from '@/projects/yclj1/Section5.vue'
+import Section6 from '@/projects/yclj1/Section6.vue'
+import Section7 from '@/projects/yclj1/Section7.vue'
+/* import Section8 from '@/projects/yclj1/Section8.vue'
+import Section9 from '@/projects/yclj1/Section9.vue'
+import Section10 from '@/projects/yclj1/Section10.vue' */
 
 export default {
   name: 'home',
@@ -132,9 +123,9 @@ export default {
     Section5,
     Section6,
     Section7,
-    Section8,
+   /*  Section8,
     Section9,
-    /* Section10, */
+    Section10, */
     // Section11,
   },
 

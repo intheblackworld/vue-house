@@ -1,16 +1,16 @@
 @import './function.scss';
 /* navigation */
-$nav_pc_height: 3.7em;
-$nav_tablet_height:3.7em;
-$nav_phone_height:0;
-$logo_pc_width: calc(100vw * 130 / 1920);
-$logo_tablet_width: calc(100vw * 130 / 1920);
-$logo_phone_width: 120px;
+$nav_pc_height: 80px;
+$nav_tablet_height: 60px;
+$nav_phone_height: 0px;
+$logo_pc_width: calc(100vw * 310 / 1920);
+$logo_tablet_width: calc(100vw * 200 / 1920);
+$logo_phone_width: 100px;
 
 /* contactInfo */
-$contact_logo_pc_width:  calc(100vw * 750 / 1920);
-$contact_logo_tablet_width: calc(100vw * 750 / 1920);
-$contact_logo_mobile_width: calc(100vw * 310 / 375);
+$contact_logo_pc_width:calc(100vw * 320 / 1920);
+$contact_logo_tablet_width: calc(100vw * 708 / 1920);
+$contact_logo_mobile_width: calc(100vw * 250 / 375);
 
 // for calculate
 $nav_pc_height_number: 60;

@@ -3,7 +3,7 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div :class="`nav ${isOpen ? 'open': ''}`" >
-     <!--     <img class="logo" src="@/projects/nina/s1/logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" />  -->
+     <!--     <img class="logo" src="@/projects/yclj1/s1/logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" />  -->
        <!--   <div class="menu" @click="toggleSidebar" v-show="!isOpen">
             <font-awesome-icon icon="bars" />
           </div>  -->
@@ -160,7 +160,7 @@ export default {
 
     &.btn{
     color: $nav_btn_color;
-    background:$nav_btn_bg;
+     background:$nav_btn_bg;
     padding: 0 1.5em;
     border-radius:1.5em ;
 
