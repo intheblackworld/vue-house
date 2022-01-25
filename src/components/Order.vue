@@ -55,7 +55,7 @@
             <div class="row" data-aos="fade-down" data-aos-delay="300">
               <label>需求房型<span>*</span></label>
               <el-select v-model="form.house" placeholder>
-                <el-option v-for="city in ['一房','兩房', '三房']" :key="city" :label="city" :value="city" no-data-text=""></el-option>
+                <el-option v-for="city in ['一房','兩房','三房','店面','透天']" :key="city" :label="city" :value="city" no-data-text=""></el-option>
               </el-select>
             </div>
             <!-- <div class="row">
